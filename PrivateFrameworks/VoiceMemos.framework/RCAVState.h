@@ -3,51 +3,51 @@
  */
 
 @interface RCAVState : NSObject <NSSecureCoding, NSCopying> {
-    long long _AVCaptureState;
-    long long _AVPreviewState;
+    int _AVCaptureState;
+    int _AVPreviewState;
 }
 
-@property long long AVCaptureState;
-@property long long AVPreviewState;
-@property(readonly) bool isCaptureActive;
-@property(readonly) bool isCaptureActiveOrPreparing;
-@property(readonly) bool isCaptureActiveOrPreparingOrResumable;
-@property(readonly) bool isCaptureInactive;
-@property(readonly) bool isCapturePaused;
-@property(readonly) bool isCapturePreparing;
-@property(readonly) bool isPreviewActive;
-@property(readonly) bool isPreviewActiveOrPreparing;
-@property(readonly) bool isPreviewInactive;
-@property(readonly) bool isPreviewPreparing;
+@property int AVCaptureState;
+@property int AVPreviewState;
+@property(readonly) BOOL isCaptureActive;
+@property(readonly) BOOL isCaptureActiveOrPreparing;
+@property(readonly) BOOL isCaptureActiveOrPreparingOrResumable;
+@property(readonly) BOOL isCaptureInactive;
+@property(readonly) BOOL isCapturePaused;
+@property(readonly) BOOL isCapturePreparing;
+@property(readonly) BOOL isPreviewActive;
+@property(readonly) BOOL isPreviewActiveOrPreparing;
+@property(readonly) BOOL isPreviewInactive;
+@property(readonly) BOOL isPreviewPreparing;
 
 + (id)inactiveState;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (long long)AVCaptureState;
-- (long long)AVPreviewState;
-- (id)_assetStateByChangingToCaptureState:(long long)arg1 previewState:(long long)arg2;
+- (int)AVCaptureState;
+- (int)AVPreviewState;
+- (id)_assetStateByChangingToCaptureState:(int)arg1 previewState:(int)arg2;
 - (id)_assetStateByTransitioningItermediateStatesToGoalStates;
 - (id)assetStateByCaptureState;
-- (id)assetStateByChangingToCaptureState:(long long)arg1;
+- (id)assetStateByChangingToCaptureState:(int)arg1;
 - (id)assetStateByChangingToPreviewRate:(float)arg1;
-- (id)assetStateByChangingToPreviewState:(long long)arg1;
+- (id)assetStateByChangingToPreviewState:(int)arg1;
 - (id)assetStateByTogglingPreview;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isCaptureActive;
-- (bool)isCaptureActiveOrPreparing;
-- (bool)isCaptureActiveOrPreparingOrResumable;
-- (bool)isCaptureInactive;
-- (bool)isCapturePaused;
-- (bool)isCapturePreparing;
-- (bool)isEqual:(id)arg1;
-- (bool)isPreviewActive;
-- (bool)isPreviewActiveOrPreparing;
-- (bool)isPreviewInactive;
-- (bool)isPreviewPreparing;
-- (void)setAVCaptureState:(long long)arg1;
-- (void)setAVPreviewState:(long long)arg1;
+- (BOOL)isCaptureActive;
+- (BOOL)isCaptureActiveOrPreparing;
+- (BOOL)isCaptureActiveOrPreparingOrResumable;
+- (BOOL)isCaptureInactive;
+- (BOOL)isCapturePaused;
+- (BOOL)isCapturePreparing;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isPreviewActive;
+- (BOOL)isPreviewActiveOrPreparing;
+- (BOOL)isPreviewInactive;
+- (BOOL)isPreviewPreparing;
+- (void)setAVCaptureState:(int)arg1;
+- (void)setAVPreviewState:(int)arg1;
 
 @end

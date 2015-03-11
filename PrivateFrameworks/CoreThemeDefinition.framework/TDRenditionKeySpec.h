@@ -35,7 +35,7 @@
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
-- (long long)attributeCount;
+- (int)attributeCount;
 - (void)copyAttributesInto:(id)arg1;
 - (id)copyDataFromAttributes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

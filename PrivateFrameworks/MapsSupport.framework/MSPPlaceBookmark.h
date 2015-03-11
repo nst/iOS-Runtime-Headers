@@ -16,10 +16,10 @@
 }
 
 @property(retain) GEOLatLng * droppedPinCoordinate;
-@property(readonly) bool hasDroppedPinCoordinate;
-@property(readonly) bool hasMapItemStorage;
-@property bool hasOrigin;
-@property(readonly) bool hasTitle;
+@property(readonly) BOOL hasDroppedPinCoordinate;
+@property(readonly) BOOL hasMapItemStorage;
+@property BOOL hasOrigin;
+@property(readonly) BOOL hasTitle;
 @property(retain) GEOMapItemStorage * mapItemStorage;
 @property int origin;
 @property(retain) NSString * title;
@@ -31,18 +31,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)droppedPinCoordinate;
-- (bool)hasDroppedPinCoordinate;
-- (bool)hasMapItemStorage;
-- (bool)hasOrigin;
-- (bool)hasTitle;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDroppedPinCoordinate;
+- (BOOL)hasMapItemStorage;
+- (BOOL)hasOrigin;
+- (BOOL)hasTitle;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)mapItemStorage;
 - (void)mergeFrom:(id)arg1;
 - (int)origin;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDroppedPinCoordinate:(id)arg1;
-- (void)setHasOrigin:(bool)arg1;
+- (void)setHasOrigin:(BOOL)arg1;
 - (void)setMapItemStorage:(id)arg1;
 - (void)setOrigin:(int)arg1;
 - (void)setTitle:(id)arg1;

@@ -10,11 +10,11 @@
 
 @interface NewsUpdater : YQLRequest {
     <NewsUpdaterDelegate> *_delegate;
+    BOOL _firstLoad;
     StockNewsItemCollection *_lastNewsItemCollection;
     double _lastResponseTimestamp;
     Stock *_stock;
     id _updateCompletionHandler;
-    bool_firstLoad;
 }
 
 @property <NewsUpdaterDelegate> * delegate;
@@ -36,6 +36,6 @@
 - (void)resetLocale;
 - (void)saveLastResponse;
 - (void)setDelegate:(id)arg1;
-- (bool)shouldReloadOnResume;
+- (BOOL)shouldReloadOnResume;
 
 @end

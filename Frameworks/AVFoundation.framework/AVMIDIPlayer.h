@@ -7,13 +7,13 @@
  */
 
 @interface AVMIDIPlayer : NSObject {
-     /* Encoded args for previous method: ^{MIDIPlayerImpl=^{OpaqueMusicPlayer}^{OpaqueMusicSequence}d@?@}16@0:8 */
+     /* Encoded args for previous method: ^{MIDIPlayerImpl=^{OpaqueMusicPlayer}^{OpaqueMusicSequence}d@?@}8@0:4 */
     void *_impl;
 }
 
 @property double currentPosition;
 @property(readonly) double duration;
-@property(getter=isPlaying,readonly) bool playing;
+@property(getter=isPlaying,readonly) BOOL playing;
 @property float rate;
 
 - (double)beatsForHostTime:(unsigned long long)arg1;
@@ -27,7 +27,7 @@
 - (id)initBase;
 - (id)initWithContentsOfURL:(id)arg1 soundBankURL:(id)arg2 error:(id*)arg3;
 - (id)initWithData:(id)arg1 soundBankURL:(id)arg2 error:(id*)arg3;
-- (bool)isPlaying;
+- (BOOL)isPlaying;
 - (void)play:(id)arg1;
 - (void)prepareToPlay;
 - (float)rate;

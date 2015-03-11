@@ -26,17 +26,17 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithXPCDictionary:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isUISubclass;
-- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isUISubclass;
+- (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)otherSettings;
 - (void)setActions:(id)arg1;
 - (void)setAnimationFencePort:(id)arg1;
 - (void)setAnimationSettings:(id)arg1;
 - (id)transientLocalClientSettings;
-- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 
 @end

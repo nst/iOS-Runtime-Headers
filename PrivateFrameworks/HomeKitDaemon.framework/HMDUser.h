@@ -8,33 +8,33 @@
     NSString *_displayName;
     HMDHome *_home;
     NSString *_pairingUsername;
-    unsigned long long _privilege;
+    unsigned int _privilege;
     NSData *_publicKey;
+    BOOL _remoteGateway;
     NSString *_userID;
     NSUUID *_uuid;
-    bool_remoteGateway;
 }
 
 @property(retain) NSString * displayName;
 @property(readonly) HMDHome * home;
 @property(copy,readonly) NSString * pairingUsername;
-@property(readonly) unsigned long long privilege;
+@property(readonly) unsigned int privilege;
 @property(copy,readonly) NSData * publicKey;
-@property(getter=isRemoteGateway,readonly) bool remoteGateway;
+@property(getter=isRemoteGateway,readonly) BOOL remoteGateway;
 @property(copy,readonly) NSString * userID;
 @property(copy,readonly) NSUUID * uuid;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)home;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 displayName:(id)arg2 pairingUsername:(id)arg3 publicKey:(id)arg4 privilege:(unsigned long long)arg5 remoteGateway:(bool)arg6 home:(id)arg7;
-- (bool)isRemoteGateway;
+- (id)initWithName:(id)arg1 displayName:(id)arg2 pairingUsername:(id)arg3 publicKey:(id)arg4 privilege:(unsigned int)arg5 remoteGateway:(BOOL)arg6 home:(id)arg7;
+- (BOOL)isRemoteGateway;
 - (id)pairingUsername;
-- (unsigned long long)privilege;
+- (unsigned int)privilege;
 - (id)publicKey;
 - (void)setDisplayName:(id)arg1;
 - (id)userID;

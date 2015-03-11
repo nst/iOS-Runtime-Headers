@@ -15,7 +15,7 @@
     NSMutableDictionary *_collectionChangeDetailsForObjects;
     NSSet *_deletedObjectIDs;
     NSSet *_insertedObjectIDs;
-    bool_unknownMergeEvent;
+    BOOL _unknownMergeEvent;
 }
 
 + (id)handlerQueue;
@@ -24,11 +24,11 @@
 - (void).cxx_destruct;
 - (id)changeDetailsForFetchResult:(id)arg1;
 - (id)changeDetailsForObject:(id)arg1;
-- (bool)contentChangedForPHAssetOID:(id)arg1;
+- (BOOL)contentChangedForPHAssetOID:(id)arg1;
 - (id)deletedObjectIDs;
 - (id)description;
 - (id)init;
-- (id)initWithChangedIdentifiers:(id)arg1 unknownMergeEvent:(bool)arg2;
+- (id)initWithChangedIdentifiers:(id)arg1 unknownMergeEvent:(BOOL)arg2;
 - (id)insertedObjectIDs;
 - (void)preloadChangeDetailsForFetchResults:(id)arg1 handler:(id)arg2;
 - (void)preloadSimulatedChangeDetailsForManualFetchResults:(id)arg1 handler:(id)arg2;

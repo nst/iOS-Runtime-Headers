@@ -9,9 +9,9 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSArray * phrases;
-@property long long sentenceConfidence;
+@property int sentenceConfidence;
 @property(readonly) Class superclass;
 
 + (id)recognition;
@@ -21,8 +21,8 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)phrases;
-- (long long)sentenceConfidence;
+- (int)sentenceConfidence;
 - (void)setPhrases:(id)arg1;
-- (void)setSentenceConfidence:(long long)arg1;
+- (void)setSentenceConfidence:(int)arg1;
 
 @end

@@ -9,7 +9,7 @@
     NSString *_addressLabel;
     NSString *_contactName;
     NSData *_geoResult;
-    long long _resultType;
+    int _resultType;
 }
 
 @property(copy) NSURL * addressBookID;
@@ -18,11 +18,11 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) NSData * geoResult;
-@property(readonly) unsigned long long hash;
-@property long long resultType;
+@property(readonly) unsigned int hash;
+@property int resultType;
 @property(readonly) Class superclass;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)addressBookID;
@@ -32,11 +32,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)geoResult;
 - (id)initWithCoder:(id)arg1;
-- (long long)resultType;
+- (int)resultType;
 - (void)setAddressBookID:(id)arg1;
 - (void)setAddressLabel:(id)arg1;
 - (void)setContactName:(id)arg1;
 - (void)setGeoResult:(id)arg1;
-- (void)setResultType:(long long)arg1;
+- (void)setResultType:(int)arg1;
 
 @end

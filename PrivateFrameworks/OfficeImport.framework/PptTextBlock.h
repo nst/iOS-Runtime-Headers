@@ -34,7 +34,7 @@
 - (void)readStyles:(id)arg1;
 - (void)readTextBlock:(id)arg1;
 - (id)text;
-- (unsigned int)textIndex;
+- (unsigned long)textIndex;
 - (int)textType;
 - (void)writeTextBlock:(id)arg1;
 

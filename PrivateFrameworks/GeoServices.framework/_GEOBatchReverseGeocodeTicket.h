@@ -7,13 +7,13 @@
 @interface _GEOBatchReverseGeocodeTicket : NSObject <GEOMapServiceTicket> {
     GEOBatchRevGeocodeRequest *_batchReverseGeocodeRequest;
     GEOMapRegion *_resultBoundingRegion;
+    BOOL _shiftLocationsIfNeeded;
     GEOMapServiceTraits *_traits;
-    bool_shiftLocationsIfNeeded;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) GEOMapRegion * resultBoundingRegion;
 @property(readonly) Class superclass;
 @property(readonly) GEOMapServiceTraits * traits;
@@ -23,13 +23,13 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
-- (id)initWithBatchReverseGeocodeRequest:(id)arg1 shiftLocationsIfNeeded:(bool)arg2 traits:(id)arg3;
-- (bool)isEqualForHistoryToTicket:(id)arg1;
+- (id)initWithBatchReverseGeocodeRequest:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 traits:(id)arg3;
+- (BOOL)isEqualForHistoryToTicket:(id)arg1;
 - (id)resultBoundingRegion;
 - (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
+- (void)submitWithHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
 - (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithRefinedHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
+- (void)submitWithRefinedHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
 - (id)traits;
 
 @end

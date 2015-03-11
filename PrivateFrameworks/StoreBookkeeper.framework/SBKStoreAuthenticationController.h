@@ -5,11 +5,11 @@
 @class SSAccount;
 
 @interface SBKStoreAuthenticationController : NSObject {
+    BOOL _shouldAuthenticate;
     SSAccount *_storeAccount;
-    bool_shouldAuthenticate;
 }
 
-@property bool shouldAuthenticate;
+@property BOOL shouldAuthenticate;
 @property(readonly) SSAccount * storeAccount;
 
 + (void)clearLastSyncnedAccount;
@@ -21,12 +21,12 @@
 - (void).cxx_destruct;
 - (id)authenticationErrorsForTransaction:(id)arg1;
 - (id)initWithStoreAccount:(id)arg1;
-- (bool)isAuthenticationValidForTransaction:(id)arg1 error:(id*)arg2;
+- (BOOL)isAuthenticationValidForTransaction:(id)arg1 error:(id*)arg2;
 - (void)saveAccountToLastFailedSyncDefaults;
 - (void)saveAccountToLastSyncedDefaults;
-- (void)setShouldAuthenticate:(bool)arg1;
-- (bool)shouldAuthenticate;
-- (bool)shouldForceAuthenticationForTransaction:(id)arg1;
+- (void)setShouldAuthenticate:(BOOL)arg1;
+- (BOOL)shouldAuthenticate;
+- (BOOL)shouldForceAuthenticationForTransaction:(id)arg1;
 - (id)storeAccount;
 
 @end

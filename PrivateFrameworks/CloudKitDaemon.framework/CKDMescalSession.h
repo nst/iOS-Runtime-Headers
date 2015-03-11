@@ -9,25 +9,25 @@
         unsigned int IDLength; 
         unsigned char ID[20]; 
     CKDClientContext *_context;
+    BOOL _isSetup;
     NSError *_lastSetupError;
     } _mescalHWInfo;
     struct FPSAPContextOpaque_ { } *_mescalSession;
     NSObject<OS_dispatch_queue> *_opQueue;
     NSOperationQueue *_renewQueue;
     NSObject<OS_dispatch_group> *_renewalGroup;
-    bool_isSetup;
-    bool_renewing;
+    BOOL _renewing;
 }
 
 @property(readonly) CKDClientContext * context;
-@property bool isSetup;
+@property BOOL isSetup;
 @property(retain) NSError * lastSetupError;
 @property struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; } mescalHWInfo;
 @property struct FPSAPContextOpaque_ { }* mescalSession;
 @property(retain) NSObject<OS_dispatch_queue> * opQueue;
 @property(retain) NSOperationQueue * renewQueue;
 @property(retain) NSObject<OS_dispatch_group> * renewalGroup;
-@property bool renewing;
+@property BOOL renewing;
 
 - (void).cxx_destruct;
 - (void)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1 withCompletionHandler:(id)arg2;
@@ -41,7 +41,7 @@
 - (void)dealloc;
 - (void)exchangeData:(id)arg1 serverVersion:(int)arg2 withCompletionHandler:(id)arg3;
 - (id)initWithContext:(id)arg1;
-- (bool)isSetup;
+- (BOOL)isSetup;
 - (id)lastSetupError;
 - (struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; })mescalHWInfo;
 - (struct FPSAPContextOpaque_ { }*)mescalSession;
@@ -50,16 +50,16 @@
 - (void)renewMescalSessionForRequest:(id)arg1 withCallback:(id)arg2;
 - (id)renewQueue;
 - (id)renewalGroup;
-- (bool)renewing;
+- (BOOL)renewing;
 - (void)resetMescalSession;
-- (void)setIsSetup:(bool)arg1;
+- (void)setIsSetup:(BOOL)arg1;
 - (void)setLastSetupError:(id)arg1;
 - (void)setMescalHWInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; })arg1;
 - (void)setMescalSession:(struct FPSAPContextOpaque_ { }*)arg1;
 - (void)setOpQueue:(id)arg1;
 - (void)setRenewQueue:(id)arg1;
 - (void)setRenewalGroup:(id)arg1;
-- (void)setRenewing:(bool)arg1;
+- (void)setRenewing:(BOOL)arg1;
 - (void)signData:(id)arg1 forRequest:(id)arg2 withCompletionHandler:(id)arg3;
 
 @end

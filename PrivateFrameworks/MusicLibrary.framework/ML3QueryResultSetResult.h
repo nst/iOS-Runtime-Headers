@@ -5,7 +5,7 @@
 @class ML3QueryResultSet_BackingStore;
 
 @interface ML3QueryResultSetResult : NSObject {
-    unsigned long long _idx;
+    unsigned long _idx;
     ML3QueryResultSet_BackingStore *_store;
 }
 
@@ -15,9 +15,9 @@
 @property(readonly) unsigned int trackCount;
 
 - (void).cxx_destruct;
-- (id)initWithBackingStore:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)initWithBackingStore:(id)arg1 atIndex:(unsigned long)arg2;
 - (unsigned long long)persistentID;
-- (id)prefetchedPropertyAtIndex:(unsigned long long)arg1;
+- (id)prefetchedPropertyAtIndex:(unsigned long)arg1;
 - (unsigned char)section;
 - (unsigned int)subCollectionCount;
 - (unsigned int)trackCount;

@@ -8,9 +8,9 @@
 }
 
 @property(copy) NSArray * constraints;
-@property long long maxResults;
+@property int maxResults;
 @property(copy) NSArray * searchTypes;
-@property bool strict;
+@property BOOL strict;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,13 +18,13 @@
 - (id)constraints;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (long long)maxResults;
-- (bool)requiresResponse;
+- (int)maxResults;
+- (BOOL)requiresResponse;
 - (id)searchTypes;
 - (void)setConstraints:(id)arg1;
-- (void)setMaxResults:(long long)arg1;
+- (void)setMaxResults:(int)arg1;
 - (void)setSearchTypes:(id)arg1;
-- (void)setStrict:(bool)arg1;
-- (bool)strict;
+- (void)setStrict:(BOOL)arg1;
+- (BOOL)strict;
 
 @end

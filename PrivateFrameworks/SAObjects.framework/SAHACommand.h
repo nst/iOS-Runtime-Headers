@@ -17,7 +17,7 @@
 - (id)encodedClassName;
 - (id)filter;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setActions:(id)arg1;
 - (void)setFilter:(id)arg1;
 

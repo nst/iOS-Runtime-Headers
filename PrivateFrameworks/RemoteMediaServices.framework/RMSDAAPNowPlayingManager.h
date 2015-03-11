@@ -6,7 +6,7 @@
 
 @interface RMSDAAPNowPlayingManager : NSObject {
     NSURLSessionDataTask *_artworkRequest;
-    long long _artworkRequestBackoffInterval;
+    int _artworkRequestBackoffInterval;
     NSObject<OS_dispatch_source> *_artworkRetryTimer;
     NSURLSessionDataTask *_audioRoutesRequest;
     RMSControlInterface *_controlInterface;
@@ -14,21 +14,21 @@
     NSArray *_currentAudioRoutes;
     RMSNowPlayingInfo *_currentNowPlayingInfo;
     <RMSDAAPNowPlayingManagerDelegate> *_delegate;
+    BOOL _isObserving;
     NSNumber *_lastVolume;
     NSURLSessionDataTask *_nowPlayingInfoRequest;
-    long long _requestBackoffInterval;
+    BOOL _observing;
+    int _requestBackoffInterval;
     RMSDAAPRequestManager *_requestManager;
     NSURLSessionDataTask *_volumeRequest;
-    bool_isObserving;
-    bool_observing;
 }
 
 @property(retain) RMSControlInterface * controlInterface;
 @property <RMSDAAPNowPlayingManagerDelegate> * delegate;
-@property(getter=isObserving,readonly) bool observing;
+@property(getter=isObserving,readonly) BOOL observing;
 
 - (void).cxx_destruct;
-- (bool)_audioRoutes:(id)arg1 equalAudioRoutes:(id)arg2;
+- (BOOL)_audioRoutes:(id)arg1 equalAudioRoutes:(id)arg2;
 - (void)_cancelArtworkRetryTimer;
 - (void)_refreshNowPlayingInfoRequest;
 - (void)_requestArtworkDataIfNecessaryForNowPlayingInfo:(id)arg1;
@@ -41,7 +41,7 @@
 - (id)delegate;
 - (void)endObservingNowPlaying;
 - (id)initWithRequestManager:(id)arg1;
-- (bool)isObserving;
+- (BOOL)isObserving;
 - (void)setControlInterface:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

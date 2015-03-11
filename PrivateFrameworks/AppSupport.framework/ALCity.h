@@ -11,6 +11,7 @@
     NSString *_identifierForCPCity;
     float _latitude;
     NSString *_localeCode;
+    BOOL _localizationAttempted;
     float _longitude;
     NSString *_name;
     NSString *_timeZone;
@@ -18,7 +19,6 @@
     NSString *_unlocalizedCountryOverride;
     NSString *_unlocalizedName;
     NSString *_yahooCode;
-    bool_localizationAttempted;
 }
 
 @property(readonly) NSString * classicIdentifier;
@@ -41,15 +41,15 @@
 - (id)countryOverride;
 - (void)dealloc;
 - (id)description;
-- (id)displayNameIncludingCountry:(bool)arg1 withFormat:(id)arg2;
-- (id)displayNameIncludingCountry:(bool)arg1;
+- (id)displayNameIncludingCountry:(BOOL)arg1 withFormat:(id)arg2;
+- (id)displayNameIncludingCountry:(BOOL)arg1;
 - (void)ensureLocalized;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (int)identifier;
 - (id)init;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithSQLRow:(char **)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (float)latitude;
 - (id)localeCode;
 - (float)longitude;

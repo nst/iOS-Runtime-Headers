@@ -8,47 +8,47 @@
     NSLayoutConstraint *_collectionViewHeightConstraint;
     UICollectionViewFlowLayout *_collectionViewLayout;
     <UICollectionViewDelegate> *_didSelectDelegate;
+    BOOL _hasHadMenuSelection;
     MPUExtrasMainMenuSectionMetrics *_mainMenuMetrics;
     UICollectionView *_menuBarCollectionView;
     UIView *_menuBarView;
-    bool_hasHadMenuSelection;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property <UICollectionViewDelegate> * didSelectDelegate;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) UIView * menuBarView;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)_collectionView:(id)arg1 indexPathShouldDisplayAsSelected:(id)arg2;
+- (BOOL)_collectionView:(id)arg1 indexPathShouldDisplayAsSelected:(id)arg2;
 - (void)_configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)_dynamicTypeChanged;
-- (bool)_isFeatureItemAtIndexPath:(id)arg1;
+- (BOOL)_isFeatureItemAtIndexPath:(id)arg1;
 - (id)_menuItems;
 - (void)_prepareCollectionView;
 - (void)_prepareLayout;
 - (void)_recalculateSizes;
 - (void)_startBackgroundAudio;
-- (id)_textElementAtIndex:(long long)arg1;
+- (id)_textElementAtIndex:(int)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)dealloc;
 - (id)didSelectDelegate;
 - (id)initWithDocument:(id)arg1 options:(id)arg2 context:(id)arg3;
 - (id)menuBarView;
-- (long long)numberOfItemsForSectionMetrics:(id)arg1;
-- (struct CGSize { double x1; double x2; })sectionMetrics:(id)arg1 sizeForItemAtIndex:(long long)arg2 withFontDescriptor:(id)arg3;
-- (void)setCollectionViewHeight:(double)arg1;
+- (int)numberOfItemsForSectionMetrics:(id)arg1;
+- (struct CGSize { float x1; float x2; })sectionMetrics:(id)arg1 sizeForItemAtIndex:(int)arg2 withFontDescriptor:(id)arg3;
+- (void)setCollectionViewHeight:(float)arg1;
 - (void)setDidSelectDelegate:(id)arg1;
-- (bool)showsPlaceholder;
+- (BOOL)showsPlaceholder;
 - (id)templateElement;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

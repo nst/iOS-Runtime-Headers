@@ -27,14 +27,14 @@
 - (id)allKeys;
 - (id)allValues;
 - (id)copy;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (void*)existingItemForSetItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
-- (unsigned long long)getKeys:(const void**)arg1 values:(const void**)arg2;
+- (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
 - (id)init;
-- (bool)isEqual:(id)arg1;
-- (bool)mapMember:(const void*)arg1 originalKey:(const void**)arg2 value:(const void**)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)mapMember:(const void*)arg1 originalKey:(const void**)arg2 value:(const void**)arg3;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllItems;
 - (void)removeObjectForKey:(id)arg1;

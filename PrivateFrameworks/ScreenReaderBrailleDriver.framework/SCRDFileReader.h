@@ -13,11 +13,11 @@
 
 - (void)_readHandler:(id)arg1;
 - (void)dealloc;
-- (bool)hasStarted;
+- (BOOL)hasStarted;
 - (id)initWithDelegate:(id)arg1 fileHandle:(id)arg2;
 - (void)invalidate;
-- (void)invalidateWithWait:(bool)arg1;
-- (bool)isValid;
+- (void)invalidateWithWait:(BOOL)arg1;
+- (BOOL)isValid;
 - (void)start;
 
 @end

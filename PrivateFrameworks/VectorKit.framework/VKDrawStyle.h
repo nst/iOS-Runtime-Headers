@@ -25,16 +25,16 @@
             unsigned int puckOffset : 1; 
             unsigned int shieldFillColor : 1; 
         } hasValueInStylesheet; 
-        struct map<gss::PropertyID, bool, std::__1::less<gss::PropertyID>, std::__1::allocator<std::__1::pair<const gss::PropertyID, bool> > > { 
-            struct __tree<std::__1::__value_type<gss::PropertyID, bool>, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, bool>, std::__1::less<gss::PropertyID>, true>, std::__1::allocator<std::__1::__value_type<gss::PropertyID, bool> > > { 
-                struct __tree_node<std::__1::__value_type<gss::PropertyID, bool>, void *> {} *__begin_node_; 
-                struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<gss::PropertyID, bool>, void *> > > { 
+        struct map<gss::PropertyID, signed char, std::__1::less<gss::PropertyID>, std::__1::allocator<std::__1::pair<const gss::PropertyID, signed char> > > { 
+            struct __tree<std::__1::__value_type<gss::PropertyID, signed char>, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, signed char>, std::__1::less<gss::PropertyID>, true>, std::__1::allocator<std::__1::__value_type<gss::PropertyID, signed char> > > { 
+                struct __tree_node<std::__1::__value_type<gss::PropertyID, signed char>, void *> {} *__begin_node_; 
+                struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<gss::PropertyID, signed char>, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
                     } __first_; 
                 } __pair1_; 
-                struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, bool>, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, signed char>, std::__1::less<gss::PropertyID>, true> > { 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _boolMap; 
@@ -47,7 +47,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, float>, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _floatMap; 
@@ -60,7 +60,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, unsigned char>, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _uint8Map; 
@@ -73,7 +73,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, int>, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _intMap; 
@@ -86,7 +86,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, unsigned int>, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _uintMap; 
@@ -99,7 +99,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gm::Matrix<float, 4, 1> >, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _colorMap; 
@@ -112,7 +112,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _stringMap; 
@@ -125,20 +125,20 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::StyleDataPair>, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _pairMap; 
-        struct map<gss::PropertyID, gss::SparseRamp<bool>, std::__1::less<gss::PropertyID>, std::__1::allocator<std::__1::pair<const gss::PropertyID, gss::SparseRamp<bool> > > > { 
-            struct __tree<std::__1::__value_type<gss::PropertyID, gss::SparseRamp<bool> >, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::SparseRamp<bool> >, std::__1::less<gss::PropertyID>, true>, std::__1::allocator<std::__1::__value_type<gss::PropertyID, gss::SparseRamp<bool> > > > { 
-                struct __tree_node<std::__1::__value_type<gss::PropertyID, gss::SparseRamp<bool> >, void *> {} *__begin_node_; 
-                struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<gss::PropertyID, gss::SparseRamp<bool> >, void *> > > { 
+        struct map<gss::PropertyID, gss::SparseRamp<signed char>, std::__1::less<gss::PropertyID>, std::__1::allocator<std::__1::pair<const gss::PropertyID, gss::SparseRamp<signed char> > > > { 
+            struct __tree<std::__1::__value_type<gss::PropertyID, gss::SparseRamp<signed char> >, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::SparseRamp<signed char> >, std::__1::less<gss::PropertyID>, true>, std::__1::allocator<std::__1::__value_type<gss::PropertyID, gss::SparseRamp<signed char> > > > { 
+                struct __tree_node<std::__1::__value_type<gss::PropertyID, gss::SparseRamp<signed char> >, void *> {} *__begin_node_; 
+                struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<gss::PropertyID, gss::SparseRamp<signed char> >, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
                     } __first_; 
                 } __pair1_; 
-                struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::SparseRamp<bool> >, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::SparseRamp<signed char> >, std::__1::less<gss::PropertyID>, true> > { 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _boolRampMap; 
@@ -151,7 +151,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::SparseRamp<float> >, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _floatRampMap; 
@@ -164,7 +164,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::SparseRamp<unsigned char> >, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _uint8RampMap; 
@@ -177,7 +177,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::SparseRamp<int> >, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _intRampMap; 
@@ -190,7 +190,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::SparseRamp<unsigned int> >, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _uintRampMap; 
@@ -203,7 +203,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::SparseRamp<gm::Matrix<float, 4, 1> > >, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _colorRampMap; 
@@ -216,7 +216,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::SparseRamp<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> > >, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _stringRampMap; 
@@ -229,7 +229,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, gss::SparseRamp<gss::StyleDataPair> >, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _pairRampMap; 
@@ -242,7 +242,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gss::PropertyID, std::__1::__value_type<gss::PropertyID, std::__1::vector<gss::LinePattern, std::__1::allocator<gss::LinePattern> > >, std::__1::less<gss::PropertyID>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _linePatternMap; 
@@ -255,7 +255,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, gss::StyleData>, std::__1::less<int>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __pair3_; 
             } __tree_; 
         } _subStyleDataMap; 

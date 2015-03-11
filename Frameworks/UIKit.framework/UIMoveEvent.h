@@ -3,14 +3,14 @@
  */
 
 @interface UIMoveEvent : UIInternalEvent {
-    long long _moveDirection;
+    int _moveDirection;
 }
 
-@property(setter=_setMoveDirection:) long long _moveDirection;
+@property(setter=_setMoveDirection:) int _moveDirection;
 
-- (long long)_moveDirection;
+- (int)_moveDirection;
 - (void)_sendEventToResponder:(id)arg1;
-- (void)_setMoveDirection:(long long)arg1;
-- (long long)type;
+- (void)_setMoveDirection:(int)arg1;
+- (int)type;
 
 @end

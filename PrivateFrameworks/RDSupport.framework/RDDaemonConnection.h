@@ -12,7 +12,7 @@
 + (id)sharedConnection;
 
 - (void).cxx_destruct;
-- (bool)_previousApplicationWasAnAlert;
+- (BOOL)_previousApplicationWasAnAlert;
 - (void)carouselLaunchingAppWithBundleID:(id)arg1;
 - (void)carouselShowingAlertWithID:(id)arg1;
 - (void)carouselShowingAppLauncher;
@@ -34,7 +34,7 @@
 - (void)quickboardCompositionViewControllerWillBePresentedForAppWithBundleID:(id)arg1;
 - (void)quickboardEmojiCompositionViewControllerWillBePresentedForAppWithBundleID:(id)arg1;
 - (void)quickboardNoLongerAvailableForAppWithBundleID:(id)arg1;
-- (void)rebootCompanion:(bool)arg1 gizmo:(bool)arg2;
+- (void)rebootCompanion:(BOOL)arg1 gizmo:(BOOL)arg2;
 - (void)screenSaverWasDismissed;
 - (id)xpcConnection;
 

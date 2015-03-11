@@ -10,11 +10,11 @@
 
 @interface __NSOperationInternal : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
-    struct _opaque_pthread_cond_t { 
-        long long __sig; 
+        long __sig; 
         BOOL __opaque[40]; 
+    struct _opaque_pthread_cond_t { 
+        long __sig; 
+        BOOL __opaque[24]; 
     int __RC;
     id __activity;
     unsigned char __cached_isReady;
@@ -32,10 +32,10 @@
     NSOperation *__outerOp;
     struct pthread_override_s { } *__ov;
     unsigned char __pad1[8];
-    unsigned char __pad3[0];
+    unsigned char __pad3[12];
     NSOperation *__prevOp;
     BOOL __prio;
-    struct _opaque_pthread_t { long long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[8176]; } *__pthread;
+    struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } *__pthread;
     int __qoses;
     NSOperationQueue *__queue;
     long long __seqno;
@@ -46,7 +46,7 @@
     } __wait_mutex;
 }
 
-+ (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(unsigned long long)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void*)arg7;
++ (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(unsigned int)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void*)arg7;
 
 - (id)__;
 - (id)_activity;
@@ -55,16 +55,16 @@
 - (id)_completionBlock;
 - (id)_dependencies;
 - (void)_invalidate;
-- (bool)_isCancelled;
-- (bool)_isExecuting;
-- (bool)_isFinished;
-- (bool)_isReady;
+- (BOOL)_isCancelled;
+- (BOOL)_isExecuting;
+- (BOOL)_isFinished;
+- (BOOL)_isReady;
 - (id)_name;
-- (long long)_queuePriority;
+- (int)_queuePriority;
 - (void)_removeDependency:(id)arg1 outer:(id)arg2;
 - (void)_setCompletionBlock:(id)arg1 outer:(id)arg2;
 - (void)_setName:(id)arg1 outer:(id)arg2;
-- (void)_setQueuePriority:(long long)arg1 outer:(id)arg2;
+- (void)_setQueuePriority:(int)arg1 outer:(id)arg2;
 - (void)_setThreadPriority:(double)arg1 outer:(id)arg2;
 - (void)_start:(id)arg1;
 - (double)_threadPriority;

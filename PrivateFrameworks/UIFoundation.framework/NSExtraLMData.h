@@ -7,66 +7,66 @@
 @interface NSExtraLMData : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     struct _NSGlyphTree { 
         struct _NSGlyphNode {} *rootNode; 
         struct _NSGlyphNode {} *curNode; 
-        unsigned long long curCharIndex; 
-        unsigned long long curGlyphIndex; 
+        unsigned int curCharIndex; 
+        unsigned int curGlyphIndex; 
     struct _NSLayoutTree { 
         struct _NSLayoutNode {} *rootNode; 
         struct _NSLayoutNode {} *curNode; 
-        unsigned long long curGlyphIndex; 
-        double curLongitudinalOrigin; 
+        unsigned int curGlyphIndex; 
+        float curLongitudinalOrigin; 
         struct CGRect { 
             struct CGPoint { 
-                double x; 
-                double y; 
+                float x; 
+                float y; 
             } origin; 
             struct CGSize { 
-                double width; 
-                double height; 
+                float width; 
+                float height; 
             } size; 
         } extraLineFragmentRect; 
         struct CGRect { 
             struct CGPoint { 
-                double x; 
-                double y; 
+                float x; 
+                float y; 
             } origin; 
             struct CGSize { 
-                double width; 
-                double height; 
+                float width; 
+                float height; 
             } size; 
         } extraLineFragmentUsedRect; 
-        unsigned long long glyphsPerLineEstimate; 
-        double offsetPerLineEstimate; 
+        unsigned int glyphsPerLineEstimate; 
+        float offsetPerLineEstimate; 
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     struct __lmFlags2 { 
         unsigned int glyphCause : 6; 
         unsigned int layoutCause : 6; 
@@ -81,11 +81,11 @@
     NSRunStorage *_attachmentSizesRun;
     NSMutableArray *_blockRunsArray;
     } _cachedFontBounds;
-    double _cachedUnderlineAdjustment;
-    double _cachedUnderlinePosition;
+    float _cachedUnderlineAdjustment;
+    float _cachedUnderlinePosition;
     } _cachedUnderlineRange;
-    double _cachedUnderlineThickness;
-    unsigned long long _currentAttachmentIndex;
+    float _cachedUnderlineThickness;
+    unsigned int _currentAttachmentIndex;
     } _currentAttachmentRect;
     id _fillHoleLock;
     NSTextContainer *_firstTextContainer;
@@ -93,10 +93,10 @@
     } _firstTextViewVisibleOffset;
     NSRunStorage *_fragmentRunsExtras;
     } _glyphTree;
-    double _hyphenationFactor;
+    float _hyphenationFactor;
     NSMutableArray *_insertionPointCache;
     } _lastInvalidatedCharRange;
-    double _lastInvalidatedLongitudinalPosition;
+    float _lastInvalidatedLongitudinalPosition;
     NSTextContainer *_lastInvalidatedTextContainer;
     } _layoutTree;
     } _lmFlags2;
@@ -104,7 +104,7 @@
     id _temporaryAttributes;
     struct __CFDictionary { } *_textContainerGlyphIndexes;
     struct __CFDictionary { } *_textContainerIndexes;
-    long long _typesetterBehavior;
+    int _typesetterBehavior;
 }
 
 @end

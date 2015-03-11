@@ -14,44 +14,44 @@
     id _recipientResponseHandler;
 }
 
-@property unsigned long long defaultNumberOfPlayers;
+@property unsigned int defaultNumberOfPlayers;
 @property(retain) GKMatchRequestInternal * internal;
 @property(copy) NSString * inviteMessage;
 @property(copy) id inviteeResponseHandler;
-@property unsigned long long maxPlayers;
-@property unsigned long long minPlayers;
+@property unsigned int maxPlayers;
+@property unsigned int minPlayers;
 @property unsigned int playerAttributes;
-@property unsigned long long playerGroup;
+@property unsigned int playerGroup;
 @property(retain) NSArray * playersToInvite;
 @property(copy) id recipientResponseHandler;
 @property(retain) NSArray * recipients;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (bool)instancesRespondToSelector:(SEL)arg1;
-+ (unsigned long long)maxPlayersAllowedForMatchOfType:(unsigned long long)arg1;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (unsigned int)maxPlayersAllowedForMatchOfType:(unsigned int)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (bool)defaultNumberOfPlayersIsValid;
+- (BOOL)defaultNumberOfPlayersIsValid;
 - (id)description;
-- (void)ensureValidityHosted:(bool)arg1;
+- (void)ensureValidityHosted:(BOOL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)internal;
 - (id)inviteeResponseHandler;
-- (bool)isEqual:(id)arg1;
-- (bool)isTurnBasedValid;
-- (bool)isValidForHosted:(bool)arg1;
-- (bool)isValidWithMax:(unsigned long long)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isTurnBasedValid;
+- (BOOL)isValidForHosted:(BOOL)arg1;
+- (BOOL)isValidWithMax:(unsigned int)arg1;
 - (void)loadRecipientsWithCompletionHandler:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)playersToInvite;
 - (id)recipientResponseHandler;
 - (id)recipients;
 - (void)removeLocalPlayerFromPlayersToInvite;
-- (bool)respondsToSelector:(SEL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setInternal:(id)arg1;
 - (void)setInviteeResponseHandler:(id)arg1;
 - (void)setPlayersToInvite:(id)arg1;

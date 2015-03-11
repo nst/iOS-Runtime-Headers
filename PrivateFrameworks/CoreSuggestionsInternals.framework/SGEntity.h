@@ -46,12 +46,12 @@
 - (id)duplicateKey;
 - (id)extraKeyTag;
 - (id)fieldsToSaveOnConfirmation;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isCancelled;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToEntity:(id)arg1;
-- (bool)isFromForwardedMessage;
+- (BOOL)isCancelled;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToEntity:(id)arg1;
+- (BOOL)isFromForwardedMessage;
 - (double)lastModifiedTimestamp;
 - (id)loadOrigin:(id)arg1;
 - (id)locations;

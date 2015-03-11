@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSString * dialogIdentifier;
-@property long long errorCode;
+@property int errorCode;
 @property(copy) NSString * recognition;
 @property(copy) NSString * userFacingReasonDescription;
 @property(copy) NSString * userFacingReasonTitle;
@@ -18,12 +18,12 @@
 
 - (id)dialogIdentifier;
 - (id)encodedClassName;
-- (long long)errorCode;
+- (int)errorCode;
 - (id)groupIdentifier;
 - (id)recognition;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setDialogIdentifier:(id)arg1;
-- (void)setErrorCode:(long long)arg1;
+- (void)setErrorCode:(int)arg1;
 - (void)setRecognition:(id)arg1;
 - (void)setUserFacingReasonDescription:(id)arg1;
 - (void)setUserFacingReasonTitle:(id)arg1;

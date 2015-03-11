@@ -6,6 +6,6 @@
 }
 
 - (Class)__ck_chatItemClass;
-- (bool)isAttachmentContiguousWithChatItem:(id)arg1;
+- (BOOL)isAttachmentContiguousWithChatItem:(id)arg1;
 
 @end

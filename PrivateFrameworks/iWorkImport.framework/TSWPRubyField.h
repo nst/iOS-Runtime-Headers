@@ -17,11 +17,11 @@
 @property(readonly) int baseTextScript;
 @property(copy) NSString * rubyText;
 
-- (bool)allowsEditing;
+- (BOOL)allowsEditing;
 - (int)attributeArrayKind;
 - (id)baseText;
 - (int)baseTextScript;
-- (bool)canCopy:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (BOOL)canCopy:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;

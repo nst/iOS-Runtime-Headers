@@ -5,33 +5,33 @@
 @class <QLPreviewItem>, NSString, NSURL, QLPreviewThumbnailGenerator, UIImage;
 
 @interface QLPreviewUIItem : NSObject <QLPreviewUIItem> {
-    long long _index;
+    int _index;
     <QLPreviewItem> *_previewItem;
     QLPreviewThumbnailGenerator *_thumbnailGenerator;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) UIImage * icon;
-@property(readonly) bool isFolder;
-@property(readonly) long long level;
-@property(readonly) long long previewItemIndex;
+@property(readonly) BOOL isFolder;
+@property(readonly) int level;
+@property(readonly) int previewItemIndex;
 @property(readonly) NSString * previewItemTitle;
 @property(readonly) NSURL * previewItemURL;
 @property(readonly) Class superclass;
 
 + (id)genericIconForPreviewItem:(id)arg1;
-+ (id)uiItemForPreviewItem:(id)arg1 index:(long long)arg2;
++ (id)uiItemForPreviewItem:(id)arg1 index:(int)arg2;
 
 - (void)cancelIconUpdate;
 - (void)dealloc;
 - (id)icon;
-- (bool)isFolder;
-- (long long)level;
-- (long long)previewItemIndex;
+- (BOOL)isFolder;
+- (int)level;
+- (int)previewItemIndex;
 - (id)previewItemTitle;
 - (id)previewItemURL;
-- (void)updateIconWithSize:(struct CGSize { double x1; double x2; })arg1 completionBlock:(id)arg2;
+- (void)updateIconWithSize:(struct CGSize { float x1; float x2; })arg1 completionBlock:(id)arg2;
 
 @end

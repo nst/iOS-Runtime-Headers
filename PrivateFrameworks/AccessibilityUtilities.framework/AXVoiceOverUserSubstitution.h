@@ -5,48 +5,48 @@
 @class NSSet, NSString, NSUUID;
 
 @interface AXVoiceOverUserSubstitution : NSObject <NSSecureCoding, NSCopying> {
+    BOOL _active;
+    BOOL _appliesToAllApps;
     NSSet *_bundleIdentifiers;
+    BOOL _ignoreCase;
+    BOOL _isReplacementTextAllPunctuation;
+    BOOL _isReplacementTextSurroundedByPunctuation;
     NSString *_originalString;
     NSString *_replacementString;
     NSUUID *_uuid;
-    bool_active;
-    bool_appliesToAllApps;
-    bool_ignoreCase;
-    bool_isReplacementTextAllPunctuation;
-    bool_isReplacementTextSurroundedByPunctuation;
 }
 
-@property bool active;
-@property bool appliesToAllApps;
+@property BOOL active;
+@property BOOL appliesToAllApps;
 @property(copy) NSSet * bundleIdentifiers;
-@property bool ignoreCase;
-@property(readonly) bool isReplacementTextAllPunctuation;
-@property(readonly) bool isReplacementTextSurroundedByPunctuation;
+@property BOOL ignoreCase;
+@property(readonly) BOOL isReplacementTextAllPunctuation;
+@property(readonly) BOOL isReplacementTextSurroundedByPunctuation;
 @property(copy) NSString * originalString;
 @property(copy) NSString * replacementString;
 @property(retain) NSUUID * uuid;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (bool)active;
-- (bool)appliesToAllApps;
+- (BOOL)active;
+- (BOOL)appliesToAllApps;
 - (id)bundleIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)ignoreCase;
+- (BOOL)ignoreCase;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isReplacementTextAllPunctuation;
-- (bool)isReplacementTextSurroundedByPunctuation;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isReplacementTextAllPunctuation;
+- (BOOL)isReplacementTextSurroundedByPunctuation;
 - (id)originalString;
 - (id)replacementString;
-- (void)setActive:(bool)arg1;
-- (void)setAppliesToAllApps:(bool)arg1;
+- (void)setActive:(BOOL)arg1;
+- (void)setAppliesToAllApps:(BOOL)arg1;
 - (void)setBundleIdentifiers:(id)arg1;
-- (void)setIgnoreCase:(bool)arg1;
+- (void)setIgnoreCase:(BOOL)arg1;
 - (void)setOriginalString:(id)arg1;
 - (void)setReplacementString:(id)arg1;
 - (void)setUuid:(id)arg1;

@@ -3,26 +3,26 @@
  */
 
 @interface TSWPListLabelGeometry : NSObject {
-    boolmScaleWithText;
-    double mBaselineOffset;
-    double mScale;
+    float mBaselineOffset;
+    float mScale;
+    BOOL mScaleWithText;
 }
 
-@property double baselineOffset;
-@property double scale;
-@property bool scaleWithText;
+@property float baselineOffset;
+@property float scale;
+@property BOOL scaleWithText;
 
 + (id)listLabelGeometry;
 
-- (double)baselineOffset;
+- (float)baselineOffset;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)initWithScale:(double)arg1 scaleWithText:(bool)arg2 baselineOffset:(double)arg3;
-- (bool)isEqual:(id)arg1;
-- (double)scale;
-- (bool)scaleWithText;
-- (void)setBaselineOffset:(double)arg1;
-- (void)setScale:(double)arg1;
-- (void)setScaleWithText:(bool)arg1;
+- (id)initWithScale:(float)arg1 scaleWithText:(BOOL)arg2 baselineOffset:(float)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (float)scale;
+- (BOOL)scaleWithText;
+- (void)setBaselineOffset:(float)arg1;
+- (void)setScale:(float)arg1;
+- (void)setScaleWithText:(BOOL)arg1;
 
 @end

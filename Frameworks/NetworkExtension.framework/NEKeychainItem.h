@@ -5,39 +5,39 @@
 @class NEKeychainItem, NSData, NSString;
 
 @interface NEKeychainItem : NSObject <NEPrettyDescription, NSCopying, NSSecureCoding> {
-    long long _domain;
+    int _domain;
     NSString *_identifier;
+    BOOL _legacy;
     NEKeychainItem *_oldItem;
     NSString *_password;
     NSData *_persistentReference;
-    bool_legacy;
 }
 
-@property(readonly) long long domain;
+@property(readonly) int domain;
 @property(copy) NSString * identifier;
-@property(readonly) bool legacy;
+@property(readonly) BOOL legacy;
 @property(copy) NEKeychainItem * oldItem;
 @property(copy) NSString * password;
 @property(copy) NSData * persistentReference;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addOrUpdateWithConfiguration:(id)arg1 passwordType:(long long)arg2 accountName:(id)arg3 identifierSuffix:(id)arg4;
-- (bool)copyDataFromKeychainItem:(void*)arg1 outPassword:(id*)arg2 outIdentifier:(id*)arg3 outPersistentReference:(id*)arg4;
-- (id)copyKindForPasswordType:(long long)arg1;
+- (void)addOrUpdateWithConfiguration:(id)arg1 passwordType:(int)arg2 accountName:(id)arg3 identifierSuffix:(id)arg4;
+- (BOOL)copyDataFromKeychainItem:(void*)arg1 outPassword:(id*)arg2 outIdentifier:(id*)arg3 outPersistentReference:(id*)arg4;
+- (id)copyKindForPasswordType:(int)arg1;
 - (id)copyPassword;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithIndent:(int)arg1;
-- (long long)domain;
+- (int)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 domain:(long long)arg2;
-- (id)initWithLegacyIdentifier:(id)arg1 domain:(long long)arg2;
-- (id)initWithPassword:(id)arg1 domain:(long long)arg2;
-- (id)initWithPersistentReference:(id)arg1 domain:(long long)arg2;
-- (bool)legacy;
+- (id)initWithIdentifier:(id)arg1 domain:(int)arg2;
+- (id)initWithLegacyIdentifier:(id)arg1 domain:(int)arg2;
+- (id)initWithPassword:(id)arg1 domain:(int)arg2;
+- (id)initWithPersistentReference:(id)arg1 domain:(int)arg2;
+- (BOOL)legacy;
 - (void)migrateFromPreferences:(struct __SCPreferences { }*)arg1;
 - (id)oldItem;
 - (id)password;
@@ -48,6 +48,6 @@
 - (void)setOldItem:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setPersistentReference:(id)arg1;
-- (void)syncUsingConfiguration:(id)arg1 accountName:(id)arg2 passwordType:(long long)arg3 identifierSuffix:(id)arg4;
+- (void)syncUsingConfiguration:(id)arg1 accountName:(id)arg2 passwordType:(int)arg3 identifierSuffix:(id)arg4;
 
 @end

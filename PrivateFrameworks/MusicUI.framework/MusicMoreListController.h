@@ -3,18 +3,18 @@
  */
 
 @interface MusicMoreListController : UIMoreListController {
-    bool_disableNavigationItemRemoval;
+    BOOL _disableNavigationItemRemoval;
 }
 
-@property bool disableNavigationItemRemoval;
+@property BOOL disableNavigationItemRemoval;
 
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (id)_existingViewControllerAtIndexPath:(id)arg1;
 - (void)_updateEditButton;
 - (void)dealloc;
-- (bool)disableNavigationItemRemoval;
+- (BOOL)disableNavigationItemRemoval;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)setDisableNavigationItemRemoval:(bool)arg1;
+- (void)setDisableNavigationItemRemoval:(BOOL)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 

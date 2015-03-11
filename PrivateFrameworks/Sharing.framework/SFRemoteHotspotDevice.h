@@ -18,7 +18,7 @@
 @property unsigned char networkType;
 @property(retain) NSNumber * signalStrength;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)batteryLife;
 - (void)dealloc;

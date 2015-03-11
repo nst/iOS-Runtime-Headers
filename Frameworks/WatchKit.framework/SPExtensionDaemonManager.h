@@ -5,34 +5,34 @@
 @class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_source>;
 
 @interface SPExtensionDaemonManager : NSObject {
+    BOOL _active;
     NSMutableDictionary *_coreLocationAsserts;
-    long long _refCount;
+    int _refCount;
     NSMutableSet *_transactionObservers;
     NSObject<OS_dispatch_source> *_transactionTimer;
-    bool_active;
 }
 
-@property bool active;
+@property BOOL active;
 @property(retain) NSMutableDictionary * coreLocationAsserts;
-@property long long refCount;
+@property int refCount;
 @property(retain) NSMutableSet * transactionObservers;
 @property(retain) NSObject<OS_dispatch_source> * transactionTimer;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (bool)active;
+- (BOOL)active;
 - (void)addTransactionObserver:(id)arg1;
 - (void)beginTransaction;
 - (id)coreLocationAsserts;
 - (void)endTransaction;
 - (id)init;
 - (void)keepAlive;
-- (long long)refCount;
+- (int)refCount;
 - (void)removeTransactionObserver:(id)arg1;
-- (void)setActive:(bool)arg1;
+- (void)setActive:(BOOL)arg1;
 - (void)setCoreLocationAsserts:(id)arg1;
-- (void)setRefCount:(long long)arg1;
+- (void)setRefCount:(int)arg1;
 - (void)setTransactionObservers:(id)arg1;
 - (void)setTransactionTimer:(id)arg1;
 - (void)startTransactionTimer;

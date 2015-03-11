@@ -9,8 +9,8 @@
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
-@property(readonly) bool hasValue;
-@property(readonly) bool hasZoneIdentifier;
+@property(readonly) BOOL hasValue;
+@property(readonly) BOOL hasZoneIdentifier;
 @property(retain) CKDPIdentifier * value;
 @property(retain) CKDPRecordZoneIdentifier * zoneIdentifier;
 
@@ -19,12 +19,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasValue;
-- (bool)hasZoneIdentifier;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasValue;
+- (BOOL)hasZoneIdentifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)setZoneIdentifier:(id)arg1;
 - (id)value;

@@ -18,15 +18,15 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <RUMiniPlayerCoordinatorDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addStationFromItem:(id)arg1 usingArtist:(bool)arg2;
+- (void)_addStationFromItem:(id)arg1 usingArtist:(BOOL)arg2;
 - (void)_applyAttributesForItem:(id)arg1 toTrackActioningObject:(id)arg2;
 - (void)_avItemStoreIDDidChangeNotification:(id)arg1;
 - (void)_avItemTitlesDidChangeNotification:(id)arg1;
-- (void)_completeAdditionOfStation:(id)arg1 fromItem:(id)arg2 usingArtist:(bool)arg3 canShowAlert:(bool)arg4;
+- (void)_completeAdditionOfStation:(id)arg1 fromItem:(id)arg2 usingArtist:(BOOL)arg3 canShowAlert:(BOOL)arg4;
 - (id)_currentProspectivePlaybackInformation;
 - (void)_makeStationVisible:(id)arg1;
 - (Class)_miniPlayerPlaybackControlsViewClass;
@@ -35,25 +35,25 @@
 - (void)_presentAddStation;
 - (void)_presentStationActionsFromView:(id)arg1;
 - (void)_presentTrackActionsFromView:(id)arg1;
-- (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (int)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithPlaybackCoordinator:(id)arg1;
 - (id)initWithPlayer:(id)arg1;
-- (void)miniPlayerActionsViewController:(id)arg1 didSelectAction:(long long)arg2;
-- (void)modalItem:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)miniPlayerActionsViewController:(id)arg1 didSelectAction:(int)arg2;
+- (void)modalItem:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)navigationController:(id)arg1 traitCollectionDidChange:(id)arg2;
-- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
+- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)prepareForPopoverPresentation:(id)arg1;
-- (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;
+- (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(int)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)stationActionsViewController:(id)arg1 didFinishAction:(long long)arg2 withObject:(id)arg3 error:(id)arg4;
-- (void)stationActionsViewController:(id)arg1 willBeginAction:(long long)arg2;
-- (void)trackActioningObject:(id)arg1 didSelectAction:(long long)arg2 atIndex:(long long)arg3;
-- (void)transportControls:(id)arg1 addStationForItem:(id)arg2 usingArtist:(bool)arg3;
+- (void)stationActionsViewController:(id)arg1 didFinishAction:(int)arg2 withObject:(id)arg3 error:(id)arg4;
+- (void)stationActionsViewController:(id)arg1 willBeginAction:(int)arg2;
+- (void)trackActioningObject:(id)arg1 didSelectAction:(int)arg2 atIndex:(int)arg3;
+- (void)transportControls:(id)arg1 addStationForItem:(id)arg2 usingArtist:(BOOL)arg3;
 - (void)transportControls:(id)arg1 presentStationActionsForItem:(id)arg2;
 - (void)transportControls:(id)arg1 requestsStationVisibility:(id)arg2;
-- (bool)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
+- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 
 @end

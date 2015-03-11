@@ -6,20 +6,20 @@
 
 @interface MCDNowPlayingButton : UIButton {
     CALayer *_focusColorLayer;
+    BOOL _hidesLeftBorder;
     CALayer *_leftBorder;
-    bool_hidesLeftBorder;
 }
 
-@property bool hidesLeftBorder;
+@property BOOL hidesLeftBorder;
 
-+ (id)buttonWithHeight:(double)arg1;
++ (id)buttonWithHeight:(float)arg1;
 
 - (void).cxx_destruct;
 - (void)_focusStateDidChange;
-- (bool)_isFocusableElement;
-- (bool)hidesLeftBorder;
+- (BOOL)_isFocusableElement;
+- (BOOL)hidesLeftBorder;
 - (void)layoutSubviews;
-- (void)setHidesLeftBorder:(bool)arg1;
+- (void)setHidesLeftBorder:(BOOL)arg1;
 - (void)sizeToFit;
 
 @end

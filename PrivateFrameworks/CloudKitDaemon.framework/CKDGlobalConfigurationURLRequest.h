@@ -12,17 +12,17 @@
 
 - (void).cxx_destruct;
 - (id)additionalHeaderValues;
-- (bool)allowsAnonymousAccount;
+- (BOOL)allowsAnonymousAccount;
 - (id)configuration;
 - (Class)expectedResponseClass;
-- (bool)hasRequestBody;
+- (BOOL)hasRequestBody;
 - (id)httpMethod;
-- (long long)partitionType;
+- (int)partitionType;
 - (void)requestDidParsePlistObject:(id)arg1;
-- (bool)requiresConfiguration;
-- (bool)requiresDeviceID;
-- (bool)requiresSignature;
-- (long long)serverType;
+- (BOOL)requiresConfiguration;
+- (BOOL)requiresDeviceID;
+- (BOOL)requiresSignature;
+- (int)serverType;
 - (void)setConfiguration:(id)arg1;
 - (id)url;
 

@@ -52,6 +52,6 @@
 - (id)tableHeaderContainerView;
 - (id)topoLayout;
 - (id)topoView;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

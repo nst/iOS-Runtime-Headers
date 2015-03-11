@@ -8,20 +8,20 @@
     NSURL *_principalURL;
     NSMutableSet *_readDetails;
     NSMutableArray *_readPrincipalURLs;
+    BOOL _serverSupportsExpandPropertyReport;
     NSMutableSet *_writeDetails;
     NSMutableArray *_writePrincipalURLs;
-    bool_serverSupportsExpandPropertyReport;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSURL * principalURL;
 @property(retain) NSMutableSet * readDetails;
 @property(retain,readonly) NSSet * readOnlyPrincipalDetails;
 @property(retain) NSMutableArray * readPrincipalURLs;
 @property(retain,readonly) NSSet * readWritePrincipalDetails;
-@property bool serverSupportsExpandPropertyReport;
+@property BOOL serverSupportsExpandPropertyReport;
 @property(readonly) Class superclass;
 @property(retain) NSMutableSet * writeDetails;
 @property(retain) NSMutableArray * writePrincipalURLs;
@@ -29,7 +29,7 @@
 - (void)_getPrincipalDetailsForURL:(id)arg1;
 - (id)_mappingsForPrincipalDetails;
 - (id)_popFromArray:(id)arg1;
-- (void)_processDetailsFromMultiStatus:(id)arg1 allowWrite:(bool)arg2;
+- (void)_processDetailsFromMultiStatus:(id)arg1 allowWrite:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithAccountInfoProvider:(id)arg1 principalURL:(id)arg2 taskManager:(id)arg3;
 - (id)principalURL;
@@ -37,11 +37,11 @@
 - (id)readOnlyPrincipalDetails;
 - (id)readPrincipalURLs;
 - (id)readWritePrincipalDetails;
-- (bool)serverSupportsExpandPropertyReport;
+- (BOOL)serverSupportsExpandPropertyReport;
 - (void)setPrincipalURL:(id)arg1;
 - (void)setReadDetails:(id)arg1;
 - (void)setReadPrincipalURLs:(id)arg1;
-- (void)setServerSupportsExpandPropertyReport:(bool)arg1;
+- (void)setServerSupportsExpandPropertyReport:(BOOL)arg1;
 - (void)setWriteDetails:(id)arg1;
 - (void)setWritePrincipalURLs:(id)arg1;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;

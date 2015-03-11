@@ -6,6 +6,6 @@
 }
 
 - (id)description;
-- (bool)wasUndoDelete;
+- (BOOL)wasUndoDelete;
 
 @end

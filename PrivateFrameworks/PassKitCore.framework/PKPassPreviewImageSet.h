@@ -11,17 +11,17 @@
 @property(retain) PKImage * iconImage;
 
 + (id)archiveName;
-+ (long long)currentVersion;
-+ (long long)imageSetType;
-+ (bool)supportsSecureCoding;
++ (int)currentVersion;
++ (int)imageSetType;
++ (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)iconImage;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(double)arg3 suffix:(id)arg4;
-- (bool)isEqual:(id)arg1;
+- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
+- (BOOL)isEqual:(id)arg1;
 - (void)preheatImages;
 - (void)setIconImage:(id)arg1;
 

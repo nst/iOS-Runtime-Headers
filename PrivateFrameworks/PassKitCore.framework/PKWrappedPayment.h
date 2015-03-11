@@ -12,7 +12,7 @@
 @property(copy) NSData * transactionData;
 @property(copy) NSString * transactionIdentifier;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 + (id)wrappedPaymentWithTransactionResponse:(id)arg1;
 
 - (void)dealloc;

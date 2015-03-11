@@ -5,20 +5,20 @@
 @class NSString;
 
 @interface IDSServiceMonitor : NSObject {
-    long long _availability;
+    int _availability;
     NSString *_service;
     int _token;
 }
 
 @property(retain,readonly) NSString * service;
 
-- (void)_postAvailability:(long long)arg1;
+- (void)_postAvailability:(int)arg1;
 - (void)_updateAvailability;
 - (void)dealloc;
 - (void)handleActiveAccountsChanged:(id)arg1;
 - (id)initWithService:(id)arg1;
 - (id)service;
-- (long long)serviceAvailability;
+- (int)serviceAvailability;
 - (void)updateAvailability;
 
 @end

@@ -8,14 +8,14 @@
     NSURL *_attachmentURL;
     NSString *_bodyText;
     NSString *_chatIdentifier;
+    BOOL _outbound;
     NSArray *_recipientAddresses;
     NSDate *_sendDate;
     AFContactAddress *_senderAddress;
     NSString *_subjectText;
-    bool_outbound;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aceContextObjectValue;
@@ -25,14 +25,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isOutbound;
+- (BOOL)isOutbound;
 - (id)recipientAddresses;
 - (id)sendDate;
 - (id)senderAddress;
 - (void)setAttachmentURL:(id)arg1;
 - (void)setBodyText:(id)arg1;
 - (void)setChatIdentifier:(id)arg1;
-- (void)setOutbound:(bool)arg1;
+- (void)setOutbound:(BOOL)arg1;
 - (void)setRecipientAddresses:(id)arg1;
 - (void)setSendDate:(id)arg1;
 - (void)setSenderAddress:(id)arg1;

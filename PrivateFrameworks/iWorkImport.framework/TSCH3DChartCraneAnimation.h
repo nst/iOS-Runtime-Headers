@@ -11,7 +11,7 @@
 
 - (void)addAnimationToClips:(id)arg1 forScene:(id)arg2;
 - (void)addToElementTimings:(id)arg1;
-- (bool)needDynamicShadows;
+- (BOOL)needDynamicShadows;
 - (void)updateTimeRanges;
 
 @end

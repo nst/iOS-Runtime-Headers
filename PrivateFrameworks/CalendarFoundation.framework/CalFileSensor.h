@@ -13,16 +13,16 @@
     NSString *_path;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_source;
+    BOOL _started;
     int _type;
-    bool_started;
 }
 
 @property(copy) id eventBlock;
 @property(retain) NSString * path;
-@property bool started;
+@property BOOL started;
 @property int type;
 
-+ (unsigned long long)_maskForFileSensorType:(int)arg1;
++ (unsigned long)_maskForFileSensorType:(int)arg1;
 + (id)copyFileSensorTypeAsString:(int)arg1;
 
 - (void).cxx_destruct;
@@ -34,10 +34,10 @@
 - (id)path;
 - (void)setEventBlock:(id)arg1;
 - (void)setPath:(id)arg1;
-- (void)setStarted:(bool)arg1;
+- (void)setStarted:(BOOL)arg1;
 - (void)setType:(int)arg1;
 - (void)start;
-- (bool)started;
+- (BOOL)started;
 - (void)stop;
 - (int)type;
 

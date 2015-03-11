@@ -11,33 +11,33 @@
 @interface CKQueryOperation : CKDatabaseOperation {
     CKQueryCursor *_cursor;
     NSArray *_desiredKeys;
+    BOOL _isFinishing;
     CKQuery *_query;
     id _queryCompletionBlock;
     NSObject<OS_dispatch_queue> *_queryResultQueue;
     id _recordFetchedBlock;
     NSArray *_results;
     CKQueryCursor *_resultsCursor;
-    unsigned long long _resultsLimit;
+    unsigned int _resultsLimit;
+    BOOL _shouldFetchAssetContent;
     CKRecordZoneID *_zoneID;
-    bool_isFinishing;
-    bool_shouldFetchAssetContent;
 }
 
 @property(copy) CKQueryCursor * cursor;
 @property(copy) NSArray * desiredKeys;
-@property bool isFinishing;
+@property BOOL isFinishing;
 @property(copy) CKQuery * query;
 @property(copy) id queryCompletionBlock;
 @property(retain) NSObject<OS_dispatch_queue> * queryResultQueue;
 @property(copy) id recordFetchedBlock;
 @property(retain) NSArray * results;
 @property(retain) CKQueryCursor * resultsCursor;
-@property unsigned long long resultsLimit;
-@property bool shouldFetchAssetContent;
+@property unsigned int resultsLimit;
+@property BOOL shouldFetchAssetContent;
 @property(copy) CKRecordZoneID * zoneID;
 
 - (void).cxx_destruct;
-- (bool)CKOperationShouldRun:(id*)arg1;
+- (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
@@ -47,7 +47,7 @@
 - (id)init;
 - (id)initWithCursor:(id)arg1;
 - (id)initWithQuery:(id)arg1;
-- (bool)isFinishing;
+- (BOOL)isFinishing;
 - (void)performCKOperation;
 - (id)query;
 - (id)queryCompletionBlock;
@@ -55,20 +55,20 @@
 - (id)recordFetchedBlock;
 - (id)results;
 - (id)resultsCursor;
-- (unsigned long long)resultsLimit;
+- (unsigned int)resultsLimit;
 - (void)setCursor:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
-- (void)setIsFinishing:(bool)arg1;
+- (void)setIsFinishing:(BOOL)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueryCompletionBlock:(id)arg1;
 - (void)setQueryResultQueue:(id)arg1;
 - (void)setRecordFetchedBlock:(id)arg1;
 - (void)setResults:(id)arg1;
 - (void)setResultsCursor:(id)arg1;
-- (void)setResultsLimit:(unsigned long long)arg1;
-- (void)setShouldFetchAssetContent:(bool)arg1;
+- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setShouldFetchAssetContent:(BOOL)arg1;
 - (void)setZoneID:(id)arg1;
-- (bool)shouldFetchAssetContent;
+- (BOOL)shouldFetchAssetContent;
 - (id)zoneID;
 
 @end

@@ -12,11 +12,11 @@
     ADPlayer *_adPlayer;
     AVPlayerViewController *_avPlayerViewController;
     id _completionHandler;
+    BOOL _isObservingThirdPartyAVPlayer;
     MPMoviePlayerController *_moviePlayerController;
-    unsigned long long _type;
+    BOOL _setupInProgress;
+    unsigned int _type;
     ADPrerollView *_view;
-    bool_isObservingThirdPartyAVPlayer;
-    bool_setupInProgress;
 }
 
 @property(retain) ADPlayer * adPlayer;
@@ -24,21 +24,21 @@
 @property(copy) id completionHandler;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool isObservingThirdPartyAVPlayer;
+@property(readonly) unsigned int hash;
+@property BOOL isObservingThirdPartyAVPlayer;
 @property MPMoviePlayerController * moviePlayerController;
-@property bool setupInProgress;
+@property BOOL setupInProgress;
 @property(readonly) Class superclass;
-@property(readonly) unsigned long long type;
+@property(readonly) unsigned int type;
 @property(retain) ADPrerollView * view;
 
 - (id)_advertisementView;
 - (void)_appWillResignActive;
-- (bool)_beginPlayback;
-- (void)_handlePlaybackCompletion:(bool)arg1;
-- (bool)_isEmbedded;
+- (BOOL)_beginPlayback;
+- (void)_handlePlaybackCompletion:(BOOL)arg1;
+- (BOOL)_isEmbedded;
 - (void)actionButtonPressed;
-- (void)adPlayer:(id)arg1 didChangePlaybackState:(unsigned long long)arg2;
+- (void)adPlayer:(id)arg1 didChangePlaybackState:(unsigned int)arg2;
 - (void)adPlayer:(id)arg1 elapsedTime:(double)arg2 totalTime:(double)arg3;
 - (void)adPlayer:(id)arg1 readyForPlaybackWithAVPlayer:(id)arg2 impressionProperties:(id)arg3;
 - (id)adPlayer;
@@ -55,24 +55,24 @@
 - (id)init;
 - (id)initWithAVPlayerViewController:(id)arg1;
 - (id)initWithMoviePlayerController:(id)arg1;
-- (bool)isObservingThirdPartyAVPlayer;
+- (BOOL)isObservingThirdPartyAVPlayer;
 - (id)moviePlayerController;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pauseButtonPressed;
 - (void)playButtonPressed;
 - (void)playPrerollAdWithCompletion:(id)arg1;
-- (bool)prerollViewRequestsEmbeddedStatus;
+- (BOOL)prerollViewRequestsEmbeddedStatus;
 - (void)setAdPlayer:(id)arg1;
 - (void)setAvPlayerViewController:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
-- (void)setIsObservingThirdPartyAVPlayer:(bool)arg1;
+- (void)setIsObservingThirdPartyAVPlayer:(BOOL)arg1;
 - (void)setMoviePlayerController:(id)arg1;
-- (void)setSetupInProgress:(bool)arg1;
+- (void)setSetupInProgress:(BOOL)arg1;
 - (void)setView:(id)arg1;
-- (bool)setupInProgress;
+- (BOOL)setupInProgress;
 - (void)shutdown;
 - (void)skipButtonPressed;
-- (unsigned long long)type;
+- (unsigned int)type;
 - (id)view;
 - (id)viewControllerForActionFromAdPlayer:(id)arg1;
 

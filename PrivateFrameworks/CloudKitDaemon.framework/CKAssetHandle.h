@@ -22,7 +22,7 @@
 @property(retain) NSNumber * itemID;
 @property(retain) NSDate * lastUsedDate;
 
-+ (bool)getDeviceID:(id*)arg1 fileID:(id*)arg2 generationID:(id*)arg3 forFileURL:(id)arg4 erorr:(id*)arg5;
++ (BOOL)getDeviceID:(id*)arg1 fileID:(id*)arg2 generationID:(id*)arg3 forFileURL:(id)arg4 erorr:(id*)arg5;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

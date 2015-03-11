@@ -5,12 +5,12 @@
 @interface UIPlaceholderColor : UIColor {
 }
 
-- (bool)allowsWeakReference;
+- (BOOL)allowsWeakReference;
 - (id)autorelease;
 - (void)dealloc;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
-- (bool)retainWeakReference;
+- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 
 @end

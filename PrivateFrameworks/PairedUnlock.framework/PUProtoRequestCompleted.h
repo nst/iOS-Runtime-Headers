@@ -7,13 +7,13 @@
 @interface PUProtoRequestCompleted : PBCodable <NSCopying> {
     NSData *_errorData;
     unsigned int _messageID;
-    bool_success;
+    BOOL _success;
 }
 
 @property(retain) NSData * errorData;
-@property(readonly) bool hasErrorData;
+@property(readonly) BOOL hasErrorData;
 @property unsigned int messageID;
-@property bool success;
+@property BOOL success;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -21,16 +21,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)errorData;
-- (bool)hasErrorData;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasErrorData;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)messageID;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setErrorData:(id)arg1;
 - (void)setMessageID:(unsigned int)arg1;
-- (void)setSuccess:(bool)arg1;
-- (bool)success;
+- (void)setSuccess:(BOOL)arg1;
+- (BOOL)success;
 - (void)writeTo:(id)arg1;
 
 @end

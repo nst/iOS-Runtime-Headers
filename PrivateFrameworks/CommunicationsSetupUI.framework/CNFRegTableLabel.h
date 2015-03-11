@@ -8,36 +8,36 @@
     NSURL *_URLTarget;
     NSString *_URLText;
     UITableView *_cnfreg_tableView;
+    BOOL _isTopmostHeader;
     UILabel *_label;
     PSSpecifier *_specifier;
     CNFRegLearnMoreButton *_urlButton;
-    bool_isTopmostHeader;
 }
 
 @property(copy) NSURL * URLTarget;
 @property(copy) NSString * URLText;
 @property UITableView * cnfreg_tableView;
-@property bool isTopmostHeader;
+@property BOOL isTopmostHeader;
 
 - (id)URLTarget;
 - (id)URLText;
 - (id)_URLTarget;
 - (id)_URLText;
-- (double)_bottomPadding;
-- (double)_labelInset;
+- (float)_bottomPadding;
+- (float)_labelInset;
 - (id)_labelText;
-- (long long)_labelTextAlignment;
-- (double)_topPadding;
+- (int)_labelTextAlignment;
+- (float)_topPadding;
 - (void)_urlTapped:(id)arg1;
 - (void)clearSpecifier;
 - (id)cnfreg_tableView;
 - (void)dealloc;
 - (id)initWithSpecifier:(id)arg1;
-- (bool)isTopmostHeader;
+- (BOOL)isTopmostHeader;
 - (void)layoutSubviews;
-- (double)preferredHeightForWidth:(double)arg1;
+- (float)preferredHeightForWidth:(float)arg1;
 - (void)setCnfreg_tableView:(id)arg1;
-- (void)setIsTopmostHeader:(bool)arg1;
+- (void)setIsTopmostHeader:(BOOL)arg1;
 - (void)setURLTarget:(id)arg1;
 - (void)setURLText:(id)arg1;
 - (void)updateLabelText;

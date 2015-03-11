@@ -16,11 +16,11 @@
     NSString *_uid;
 }
 
-@property bool hasReviewTime;
-@property(readonly) bool hasReviewer;
-@property bool hasScore;
-@property(readonly) bool hasSnippet;
-@property(readonly) bool hasUid;
+@property BOOL hasReviewTime;
+@property(readonly) BOOL hasReviewer;
+@property BOOL hasScore;
+@property(readonly) BOOL hasSnippet;
+@property(readonly) BOOL hasUid;
 @property double reviewTime;
 @property(retain) GEOUser * reviewer;
 @property double score;
@@ -34,21 +34,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasReviewTime;
-- (bool)hasReviewer;
-- (bool)hasScore;
-- (bool)hasSnippet;
-- (bool)hasUid;
-- (unsigned long long)hash;
+- (BOOL)hasReviewTime;
+- (BOOL)hasReviewer;
+- (BOOL)hasScore;
+- (BOOL)hasSnippet;
+- (BOOL)hasUid;
+- (unsigned int)hash;
 - (id)initWithPlaceDataReview:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (double)reviewTime;
 - (id)reviewer;
 - (double)score;
-- (void)setHasReviewTime:(bool)arg1;
-- (void)setHasScore:(bool)arg1;
+- (void)setHasReviewTime:(BOOL)arg1;
+- (void)setHasScore:(BOOL)arg1;
 - (void)setReviewTime:(double)arg1;
 - (void)setReviewer:(id)arg1;
 - (void)setScore:(double)arg1;

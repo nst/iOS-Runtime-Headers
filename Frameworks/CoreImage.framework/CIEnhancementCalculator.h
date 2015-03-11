@@ -3,31 +3,31 @@
  */
 
 @interface CIEnhancementCalculator : CIEnhancementCalculation {
-    boolcurvesEnabled;
-    boolfaceBalanceEnabled;
-    boolshadowsEnabled;
-    boolvibranceEnabled;
+    BOOL curvesEnabled;
+    BOOL faceBalanceEnabled;
+    BOOL shadowsEnabled;
+    BOOL vibranceEnabled;
 }
 
-@property bool curvesEnabled;
-@property bool faceBalanceEnabled;
-@property bool shadowsEnabled;
-@property bool vibranceEnabled;
+@property BOOL curvesEnabled;
+@property BOOL faceBalanceEnabled;
+@property BOOL shadowsEnabled;
+@property BOOL vibranceEnabled;
 
 - (void)analyzeFeatures:(id)arg1 usingContext:(id)arg2 baseImage:(id)arg3;
-- (bool)curvesEnabled;
+- (BOOL)curvesEnabled;
 - (void)dealloc;
-- (bool)faceBalanceEnabled;
+- (BOOL)faceBalanceEnabled;
 - (id)histogramFromRows:(id)arg1 componentOffset:(unsigned int)arg2;
 - (id)init;
-- (void)setCurvesEnabled:(bool)arg1;
-- (void)setFaceBalanceEnabled:(bool)arg1;
-- (void)setShadowsEnabled:(bool)arg1;
-- (void)setVibranceEnabled:(bool)arg1;
+- (void)setCurvesEnabled:(BOOL)arg1;
+- (void)setFaceBalanceEnabled:(BOOL)arg1;
+- (void)setShadowsEnabled:(BOOL)arg1;
+- (void)setVibranceEnabled:(BOOL)arg1;
 - (id)setupFaceColorFromImage:(id)arg1 usingContext:(id)arg2 detectorOpts:(id)arg3;
 - (void)setupFaceColorFromImage:(id)arg1 usingContext:(id)arg2 features:(id)arg3;
 - (void)setupHistogramsUsing:(id)arg1 redIndex:(int)arg2 greenIndex:(int)arg3 blueIndex:(int)arg4;
-- (bool)shadowsEnabled;
-- (bool)vibranceEnabled;
+- (BOOL)shadowsEnabled;
+- (BOOL)vibranceEnabled;
 
 @end

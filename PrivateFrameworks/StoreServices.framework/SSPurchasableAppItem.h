@@ -5,28 +5,28 @@
 @interface SSPurchasableAppItem : SSPurchasableItem {
 }
 
-+ (id)allItemsFromDatabase:(id)arg1 forAccount:(long long)arg2 sortedBy:(id)arg3 sortAscending:(bool)arg4;
++ (id)allItemsFromDatabase:(id)arg1 forAccount:(long long)arg2 sortedBy:(id)arg3 sortAscending:(BOOL)arg4;
 + (id)allPropertyKeys;
 + (id)databaseTable;
-+ (id)itemsFromDatabase:(id)arg1 forAccount:(long long)arg2 matching:(id)arg3 sortedBy:(id)arg4 sortAscending:(bool)arg5;
++ (id)itemsFromDatabase:(id)arg1 forAccount:(long long)arg2 matching:(id)arg3 sortedBy:(id)arg4 sortAscending:(BOOL)arg5;
 + (id)sortByNameKey;
 
 - (id)accountIdentifier;
 - (id)bundleID;
 - (id)category;
 - (id)companyName;
-- (long long)contentRatingFlags;
+- (int)contentRatingFlags;
 - (id)description;
 - (id)humanReadableVersion;
 - (long long)iTunesVersion;
 - (id)iconTitle;
 - (id)iconURL;
-- (bool)isFamilyShareable;
-- (bool)isNewsstand;
+- (BOOL)isFamilyShareable;
+- (BOOL)isNewsstand;
 - (id)longTitle;
 - (unsigned int)minimumOS;
 - (id)redownloadParams;
-- (bool)supportsIPad;
-- (bool)supportsIPhone;
+- (BOOL)supportsIPad;
+- (BOOL)supportsIPhone;
 
 @end

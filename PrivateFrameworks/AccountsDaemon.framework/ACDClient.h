@@ -9,11 +9,11 @@
     NSString *_bundleID;
     NSXPCConnection *_connection;
     ACDDatabase *_database;
+    BOOL _didManuallySetBundleID;
     NSMutableDictionary *_entitlementChecks;
     NSString *_localizedAppName;
     NSString *_name;
     NSNumber *_pid;
-    bool_didManuallySetBundleID;
 }
 
 @property(readonly) NSString * adamOrDisplayID;
@@ -41,7 +41,7 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (bool)hasEntitlement:(id)arg1;
+- (BOOL)hasEntitlement:(id)arg1;
 - (id)initWithConnection:(id)arg1 database:(id)arg2;
 - (id)initWithConnection:(id)arg1;
 - (id)localizedAppName;

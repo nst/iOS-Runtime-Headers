@@ -35,21 +35,21 @@
     } _indexData;
     VKMapModel *_mapModel;
     } _mesh;
-    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; } *_renderItem;
+    BOOL _needsNewStyle;
+    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; } *_renderItem;
     } _shaderSetup;
     float _skyStartOffset;
     } _uniformData;
-    bool_needsNewStyle;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property VKMapModel * mapModel;
 @property(readonly) VKStyleManager * styleManager;
 @property(readonly) Class superclass;
 
-+ (bool)reloadOnStylesheetChange;
++ (BOOL)reloadOnStylesheetChange;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -63,7 +63,7 @@
 - (void)setFillColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
 - (void)setHorizonColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
 - (void)setMapModel:(id)arg1;
-- (bool)shouldLayoutWithoutStyleManager;
+- (BOOL)shouldLayoutWithoutStyleManager;
 - (id)styleManager;
 - (void)stylesheetDidChange;
 - (void)updateStyle;

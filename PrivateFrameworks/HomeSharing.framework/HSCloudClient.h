@@ -9,6 +9,7 @@
 @class HSConnectionConfiguration, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
 @interface HSCloudClient : NSObject <HSCloudAvailability> {
+    BOOL _active;
     HSConnectionConfiguration *_configuration;
     unsigned long long _daemonConfiguration;
     NSMutableSet *_knownArtworkIDs;
@@ -18,12 +19,11 @@
     NSObject<OS_dispatch_queue> *_pendingArtworkRequestsQueue;
     long long _preferredVideoQuality;
     id _updateInProgressChangedHandler;
-    bool_active;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(copy) id updateInProgressChangedHandler;
 
@@ -35,13 +35,13 @@
 - (void)addPlaylistWithPersistentID:(unsigned long long)arg1 name:(id)arg2 completionHandler:(id)arg3;
 - (void)addStoreItemsWithAdamIDs:(id)arg1 completion:(id)arg2;
 - (void)addStorePlaylistsWithGlobalIDs:(id)arg1 completion:(id)arg2;
-- (void)authenticateAndStartInitialImport:(bool)arg1 completionHandler:(id)arg2;
+- (void)authenticateAndStartInitialImport:(BOOL)arg1 completionHandler:(id)arg2;
 - (void)authenticateWithCompletionHandler:(id)arg1;
 - (void)becomeActive;
-- (bool)canSetItemProperty:(id)arg1;
-- (bool)canShowCloudDownloadButtons;
-- (bool)canShowCloudMusic;
-- (bool)canShowCloudVideo;
+- (BOOL)canSetItemProperty:(id)arg1;
+- (BOOL)canShowCloudDownloadButtons;
+- (BOOL)canShowCloudMusic;
+- (BOOL)canShowCloudVideo;
 - (void)cancelUpdateJaliscoGeniusDataInProgressWithCompletionHandler:(id)arg1;
 - (id)connection;
 - (void)dealloc;
@@ -49,8 +49,8 @@
 - (void)disableJaliscoGeniusWithCompletionHandler:(id)arg1;
 - (void)downloadGeniusDataWithCompletionHandler:(id)arg1;
 - (void)enableJaliscoGeniusWithCompletionHandler:(id)arg1;
-- (void)fetchKeepLocalForCollectionWithPersistentID:(long long)arg1 groupingType:(long long)arg2 completionHandler:(id)arg3;
-- (bool)hasProperNetworkConditionsToPlayMedia;
+- (void)fetchKeepLocalForCollectionWithPersistentID:(long long)arg1 groupingType:(int)arg2 completionHandler:(id)arg3;
+- (BOOL)hasProperNetworkConditionsToPlayMedia;
 - (void)importItemArtworkForPurchaseHistoryID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)importItemArtworkForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)importScreenshotForPurchaseHistoryID:(unsigned long long)arg1 completionHandler:(id)arg2;
@@ -59,7 +59,7 @@
 - (id)initWithConfiguration:(id)arg1;
 - (void)isAuthenticatedWithCompletionHandler:(id)arg1;
 - (void)isAuthenticatedWithQueue:(id)arg1 completionHandler:(id)arg2;
-- (bool)isCellularDataRestricted;
+- (BOOL)isCellularDataRestricted;
 - (void)isExpiredWithCompletionHandler:(id)arg1;
 - (void)jaliscoAppsImageDataForStoreID:(id)arg1 completionHandler:(id)arg2;
 - (void)loadArtworkDataForPurchaseHistoryIDs:(id)arg1 completionHandler:(id)arg2;
@@ -82,14 +82,14 @@
 - (void)savePlaylistWithPersistentID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 completionHandler:(id)arg3;
 - (void)searchJaliscoAppsLibrary:(id)arg1 searchMethod:(long long)arg2 completionHandler:(id)arg3;
 - (void)setDaemonConfiguration:(unsigned long long)arg1;
-- (void)setHidden:(bool)arg1 purchasedAppWithStoreID:(id)arg2 completionHandler:(id)arg3;
+- (void)setHidden:(BOOL)arg1 purchasedAppWithStoreID:(id)arg2 completionHandler:(id)arg3;
 - (void)setItemProperties:(id)arg1 forPurchaseHistoryID:(unsigned long long)arg2;
 - (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (void)setJaliscoGeniusCUID:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)setKeepLocal:(bool)arg1 forCollectionWithPersistentID:(long long)arg2 groupingType:(long long)arg3 completionHandler:(id)arg4;
+- (void)setKeepLocal:(BOOL)arg1 forCollectionWithPersistentID:(long long)arg2 groupingType:(int)arg3 completionHandler:(id)arg4;
 - (void)setPreferredVideoQuality:(long long)arg1;
 - (void)setUpdateInProgressChangedHandler:(id)arg1;
-- (bool)shouldProhibitActionsForCurrentNetworkConditions;
+- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
 - (void)unhideAllPurchasedApps:(id)arg1;
 - (void)updateArtistHeroImages;
 - (id)updateInProgressChangedHandler;

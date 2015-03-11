@@ -5,34 +5,34 @@
 @class NSString;
 
 @interface TSTEphemeralCellMap : NSObject <TSTCellMap> {
-    boolmAppliesToHidden;
-    boolmIgnoreHiddenCellsWhenApplying;
-    boolmMayModifyValuesReferencedByFormulas;
-    unsigned long long mCapacity;
+    BOOL mAppliesToHidden;
+    unsigned int mCapacity;
     struct { unsigned short x1; unsigned char x2; unsigned char x3; } *mCellIDs;
     id *mCells;
-    unsigned long long mCount;
+    unsigned int mCount;
+    BOOL mIgnoreHiddenCellsWhenApplying;
+    BOOL mMayModifyValuesReferencedByFormulas;
 }
 
-@property bool appliesToHidden;
+@property BOOL appliesToHidden;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)addCell:(id)arg1 andCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (bool)appliesToHidden;
-- (id)cellAtIndex:(unsigned long long)arg1;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cellIDAtIndex:(unsigned long long)arg1;
+- (BOOL)appliesToHidden;
+- (id)cellAtIndex:(unsigned int)arg1;
+- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cellIDAtIndex:(unsigned int)arg1;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; }*)cellIDs;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCapacity:(unsigned long long)arg1;
-- (bool)mayModifyFormulasInCells;
-- (bool)mayModifyValuesReferencedByFormulas;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (BOOL)mayModifyFormulasInCells;
+- (BOOL)mayModifyValuesReferencedByFormulas;
 - (void)popLastCell;
-- (void)setAppliesToHidden:(bool)arg1;
-- (void)setMayModifyValuesReferencedByFormulas:(bool)arg1;
+- (void)setAppliesToHidden:(BOOL)arg1;
+- (void)setMayModifyValuesReferencedByFormulas:(BOOL)arg1;
 
 @end

@@ -5,6 +5,6 @@
 @interface KNPlaceholderLayout : TSWPShapeLayout {
 }
 
-- (bool)canBeIntersected;
+- (BOOL)canBeIntersected;
 
 @end

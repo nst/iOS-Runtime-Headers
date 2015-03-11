@@ -22,9 +22,9 @@
 - (id)accessoryText;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)defaultText;
-- (unsigned long long)elementType;
+- (unsigned int)elementType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (long long)pageComponentType;
+- (int)pageComponentType;
 - (id)placeholderString;
 - (id)searchHintsURLString;
 - (id)trendingSearchURLString;

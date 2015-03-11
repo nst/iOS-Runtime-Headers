@@ -13,7 +13,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSString * name;
 @property(retain) HKUnit * reducedUnit;
 @property(retain) HKBaseUnit * reducibleBaseUnit;
@@ -35,10 +35,10 @@
 - (void).cxx_destruct;
 - (id)_baseDimensions;
 - (id)_initWithName:(id)arg1;
-- (bool)canBeReduced;
+- (BOOL)canBeReduced;
 - (id)description;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)name;
 - (id)reducedUnit;
 - (id)reducibleBaseUnit;

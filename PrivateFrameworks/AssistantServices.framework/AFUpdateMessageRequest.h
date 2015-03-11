@@ -8,7 +8,7 @@
     AFMessage *_message;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithMessage:(id)arg1;

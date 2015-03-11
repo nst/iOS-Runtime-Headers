@@ -31,8 +31,8 @@
 - (int)_getSchemaVersion;
 - (id)_keySetForMessageLogTable;
 - (void)_openDB;
-- (bool)_openDBFile:(bool)arg1;
-- (bool)_tableEmpty:(id)arg1;
+- (BOOL)_openDBFile:(BOOL)arg1;
+- (BOOL)_tableEmpty:(id)arg1;
 - (id)_unpackMessageData:(id)arg1;
 - (void)_unpackPBRequest:(id)arg1 forMessageID:(unsigned short)arg2 intoDictionary:(id)arg3;
 - (void)_unpackPBResponse:(id)arg1 forMessageID:(unsigned short)arg2 intoDictionary:(id)arg3;
@@ -48,7 +48,7 @@
 - (void)recordOutgoingMessage:(id)arg1 forService:(id)arg2;
 - (void)updateLastIncomingMessageWithError:(id)arg1;
 - (void)updateLastIncomingMessageWithProcessingTime:(double)arg1;
-- (void)updateOutgoingMessageWithIdentifier:(id)arg1 didReceiveResponse:(bool)arg2 error:(id)arg3;
-- (void)updateOutgoingMessageWithIdentifier:(id)arg1 forService:(id)arg2 sentSuccessfully:(bool)arg3 sendError:(id)arg4;
+- (void)updateOutgoingMessageWithIdentifier:(id)arg1 didReceiveResponse:(BOOL)arg2 error:(id)arg3;
+- (void)updateOutgoingMessageWithIdentifier:(id)arg1 forService:(id)arg2 sentSuccessfully:(BOOL)arg3 sendError:(id)arg4;
 
 @end

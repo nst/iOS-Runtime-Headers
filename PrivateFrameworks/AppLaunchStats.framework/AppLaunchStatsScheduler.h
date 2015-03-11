@@ -16,7 +16,7 @@
     PCPersistentTimer *pcpTimer;
     NSDate *startDate;
     id theCallback;
-    long long timeZoneSecondsFromGMT;
+    int timeZoneSecondsFromGMT;
 }
 
 - (void).cxx_destruct;

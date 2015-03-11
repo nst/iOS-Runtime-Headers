@@ -6,25 +6,25 @@
 
 @interface BBBulletinUpdate : NSObject {
     BBBulletin *_bulletin;
-    unsigned long long _feeds;
-    long long _type;
-    bool_shouldSync;
+    unsigned int _feeds;
+    BOOL _shouldSync;
+    int _type;
 }
 
 @property(retain,readonly) BBBulletin * bulletin;
-@property(readonly) unsigned long long feeds;
-@property(readonly) bool shouldSync;
-@property(readonly) long long type;
+@property(readonly) unsigned int feeds;
+@property(readonly) BOOL shouldSync;
+@property(readonly) int type;
 
-+ (id)modifyForBulletin:(id)arg1 feeds:(unsigned long long)arg2;
-+ (id)removeForBulletin:(id)arg1 feeds:(unsigned long long)arg2 shouldSync:(bool)arg3;
++ (id)modifyForBulletin:(id)arg1 feeds:(unsigned int)arg2;
++ (id)removeForBulletin:(id)arg1 feeds:(unsigned int)arg2 shouldSync:(BOOL)arg3;
 
 - (id)bulletin;
 - (void)dealloc;
-- (unsigned long long)feeds;
-- (id)initWithBulletin:(id)arg1 feeds:(unsigned long long)arg2 type:(long long)arg3 shouldSync:(bool)arg4;
-- (bool)shouldSync;
-- (long long)type;
+- (unsigned int)feeds;
+- (id)initWithBulletin:(id)arg1 feeds:(unsigned int)arg2 type:(int)arg3 shouldSync:(BOOL)arg4;
+- (BOOL)shouldSync;
+- (int)type;
 - (id)typeDescription;
 
 @end

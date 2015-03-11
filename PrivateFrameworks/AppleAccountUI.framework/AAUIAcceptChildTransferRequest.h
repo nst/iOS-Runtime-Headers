@@ -11,7 +11,7 @@
 @property(copy) NSString * requestCode;
 
 - (void).cxx_destruct;
-- (bool)isUserInitiated;
+- (BOOL)isUserInitiated;
 - (id)requestCode;
 - (void)setRequestCode:(id)arg1;
 - (id)urlRequest;

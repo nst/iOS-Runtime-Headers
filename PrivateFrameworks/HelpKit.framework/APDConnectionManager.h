@@ -5,27 +5,27 @@
 @class APDReachability;
 
 @interface APDConnectionManager : NSObject {
+    BOOL _connected;
+    BOOL _hostActive;
     APDReachability *_hostReachability;
+    BOOL _internetActive;
     APDReachability *_internetReachability;
-    bool_connected;
-    bool_hostActive;
-    bool_internetActive;
-    bool_reachabilityInitialized;
+    BOOL _reachabilityInitialized;
 }
 
-@property(getter=connected) bool connected;
-@property bool internetActive;
-@property bool reachabilityInitialized;
+@property(getter=connected) BOOL connected;
+@property BOOL internetActive;
+@property BOOL reachabilityInitialized;
 
 - (void).cxx_destruct;
-- (bool)connected;
+- (BOOL)connected;
 - (void)dealloc;
 - (id)init;
-- (bool)internetActive;
+- (BOOL)internetActive;
 - (void)onReachabilityChanged:(id)arg1;
-- (bool)reachabilityInitialized;
-- (void)setConnected:(bool)arg1;
-- (void)setInternetActive:(bool)arg1;
-- (void)setReachabilityInitialized:(bool)arg1;
+- (BOOL)reachabilityInitialized;
+- (void)setConnected:(BOOL)arg1;
+- (void)setInternetActive:(BOOL)arg1;
+- (void)setReachabilityInitialized:(BOOL)arg1;
 
 @end

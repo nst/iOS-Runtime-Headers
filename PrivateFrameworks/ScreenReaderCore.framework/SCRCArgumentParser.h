@@ -9,9 +9,9 @@
     int _argc;
     NSMutableArray *_argumentArray;
     char **_argv;
+    BOOL _isLaunchedAtLogin;
     SCRCArgumentSubcommand *_subcommand;
     NSMutableArray *_subcommandArray;
-    bool_isLaunchedAtLogin;
 }
 
 + (id)commandPath;
@@ -26,8 +26,8 @@
 - (char **)argv;
 - (void)dealloc;
 - (id)initWithArgc:(int)arg1 argv:(const char **)arg2;
-- (bool)isLaunchedAtLogin;
-- (bool)parse;
+- (BOOL)isLaunchedAtLogin;
+- (BOOL)parse;
 - (int)run;
 - (void)setAppName:(id)arg1;
 - (id)setRunningAtStartup:(id)arg1;

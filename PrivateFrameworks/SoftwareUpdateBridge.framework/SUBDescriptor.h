@@ -10,8 +10,9 @@
     NSString *_documentationID;
     long long _downloadSize;
     long long _installationSize;
+    BOOL _isAwaitingAdmissionControlForInstallation;
     NSString *_marketingVersion;
-    long long _msuHandle;
+    long _msuHandle;
     long long _msuPrepareSize;
     NSString *_productBuildVersion;
     NSString *_productSystemName;
@@ -19,9 +20,8 @@
     NSString *_publisher;
     long long _totalRequiredFreeSpace;
     long long _unarchivedSize;
-    bool_isAwaitingAdmissionControlForInstallation;
-    bool_userDidAcceptTermsAndConditions;
-    bool_willProceedWithInstallation;
+    BOOL _userDidAcceptTermsAndConditions;
+    BOOL _willProceedWithInstallation;
 }
 
 @property(retain) NSError * denialReasons;
@@ -30,9 +30,9 @@
 @property long long downloadSize;
 @property(retain,readonly) NSString * humanReadableUpdateName;
 @property long long installationSize;
-@property bool isAwaitingAdmissionControlForInstallation;
+@property BOOL isAwaitingAdmissionControlForInstallation;
 @property(retain) NSString * marketingVersion;
-@property long long msuHandle;
+@property long msuHandle;
 @property long long msuPrepareSize;
 @property(readonly) long long preparationSize;
 @property(retain) NSString * productBuildVersion;
@@ -41,12 +41,12 @@
 @property(retain) NSString * publisher;
 @property long long totalRequiredFreeSpace;
 @property long long unarchivedSize;
-@property bool userDidAcceptTermsAndConditions;
-@property bool willProceedWithInstallation;
+@property BOOL userDidAcceptTermsAndConditions;
+@property BOOL willProceedWithInstallation;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)copy;
 - (void)dealloc;
 - (id)denialReasons;
@@ -55,14 +55,14 @@
 - (id)documentationID;
 - (long long)downloadSize;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)humanReadableUpdateName;
 - (id)initWithCoder:(id)arg1;
 - (long long)installationSize;
-- (bool)isAwaitingAdmissionControlForInstallation;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isAwaitingAdmissionControlForInstallation;
+- (BOOL)isEqual:(id)arg1;
 - (id)marketingVersion;
-- (long long)msuHandle;
+- (long)msuHandle;
 - (long long)msuPrepareSize;
 - (long long)preparationSize;
 - (id)productBuildVersion;
@@ -74,9 +74,9 @@
 - (void)setDocumentationID:(id)arg1;
 - (void)setDownloadSize:(long long)arg1;
 - (void)setInstallationSize:(long long)arg1;
-- (void)setIsAwaitingAdmissionControlForInstallation:(bool)arg1;
+- (void)setIsAwaitingAdmissionControlForInstallation:(BOOL)arg1;
 - (void)setMarketingVersion:(id)arg1;
-- (void)setMsuHandle:(long long)arg1;
+- (void)setMsuHandle:(long)arg1;
 - (void)setMsuPrepareSize:(long long)arg1;
 - (void)setProductBuildVersion:(id)arg1;
 - (void)setProductSystemName:(id)arg1;
@@ -84,11 +84,11 @@
 - (void)setPublisher:(id)arg1;
 - (void)setTotalRequiredFreeSpace:(long long)arg1;
 - (void)setUnarchivedSize:(long long)arg1;
-- (void)setUserDidAcceptTermsAndConditions:(bool)arg1;
-- (void)setWillProceedWithInstallation:(bool)arg1;
+- (void)setUserDidAcceptTermsAndConditions:(BOOL)arg1;
+- (void)setWillProceedWithInstallation:(BOOL)arg1;
 - (long long)totalRequiredFreeSpace;
 - (long long)unarchivedSize;
-- (bool)userDidAcceptTermsAndConditions;
-- (bool)willProceedWithInstallation;
+- (BOOL)userDidAcceptTermsAndConditions;
+- (BOOL)willProceedWithInstallation;
 
 @end

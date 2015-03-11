@@ -5,19 +5,19 @@
 @class TSCHChartAxis, TSCHChartSeries, TSCHChartValueAxis, TSDShadow, TSDStroke, TSWPParagraphStyle;
 
 @interface TSCHLineAreaSeriesModelCache : NSObject {
-    boolmShowLabelsInFront;
-    boolmShowValueLabels;
-    double mDataPointSize;
+    float mDataPointSize;
     TSCHChartAxis *mGroupAxis;
     unsigned int mLabelPosition;
     int mLineType;
-    double mOpacity;
+    float mOpacity;
     TSWPParagraphStyle *mParagraphStyle;
     TSCHChartSeries *mSeries;
     id mSeriesFill;
-    unsigned long long mSeriesIndex;
+    unsigned int mSeriesIndex;
     TSDShadow *mSeriesShadow;
     TSDStroke *mSeriesStroke;
+    BOOL mShowLabelsInFront;
+    BOOL mShowValueLabels;
     id mSymbolFill;
     TSDStroke *mSymbolStroke;
     int mSymbolType;
@@ -25,40 +25,40 @@
     TSCHChartValueAxis *mValueAxis;
 }
 
-@property(readonly) double dataPointSize;
+@property(readonly) float dataPointSize;
 @property(readonly) TSCHChartAxis * groupAxis;
 @property(readonly) unsigned int labelPosition;
 @property(readonly) int lineType;
-@property(readonly) double opacity;
+@property(readonly) float opacity;
 @property(readonly) TSWPParagraphStyle * paragraphStyle;
 @property(readonly) TSCHChartSeries * series;
 @property(readonly) id seriesFill;
-@property(readonly) unsigned long long seriesIndex;
+@property(readonly) unsigned int seriesIndex;
 @property(readonly) TSDShadow * seriesShadow;
 @property(readonly) TSDStroke * seriesStroke;
-@property(readonly) bool showLabelsInFront;
-@property(readonly) bool showValueLabels;
+@property(readonly) BOOL showLabelsInFront;
+@property(readonly) BOOL showValueLabels;
 @property(readonly) id symbolFill;
 @property(readonly) TSDStroke * symbolStroke;
 @property(readonly) int symbolType;
 @property(readonly) struct CGPath { }* unitSymbolPath;
 @property(readonly) TSCHChartValueAxis * valueAxis;
 
-- (double)dataPointSize;
+- (float)dataPointSize;
 - (void)dealloc;
 - (id)groupAxis;
-- (id)initWithChartModel:(id)arg1 forSeries:(unsigned long long)arg2;
+- (id)initWithChartModel:(id)arg1 forSeries:(unsigned int)arg2;
 - (unsigned int)labelPosition;
 - (int)lineType;
-- (double)opacity;
+- (float)opacity;
 - (id)paragraphStyle;
 - (id)series;
 - (id)seriesFill;
-- (unsigned long long)seriesIndex;
+- (unsigned int)seriesIndex;
 - (id)seriesShadow;
 - (id)seriesStroke;
-- (bool)showLabelsInFront;
-- (bool)showValueLabels;
+- (BOOL)showLabelsInFront;
+- (BOOL)showValueLabels;
 - (id)symbolFill;
 - (id)symbolStroke;
 - (int)symbolType;

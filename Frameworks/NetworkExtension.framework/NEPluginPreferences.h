@@ -16,15 +16,15 @@
 
 - (void).cxx_destruct;
 - (id)copyAppURL;
-- (struct __CFDictionary { }*)copyPersistentDataOfType:(long long)arg1 configurationIdentifier:(id)arg2;
+- (struct __CFDictionary { }*)copyPersistentDataOfType:(long)arg1 configurationIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)initWithPluginType:(id)arg1;
-- (bool)isFlagSet:(struct __CFString { }*)arg1;
-- (bool)isPluginTypeEnabled;
+- (BOOL)isFlagSet:(struct __CFString { }*)arg1;
+- (BOOL)isPluginTypeEnabled;
 - (id)pluginType;
 - (struct __SCPreferences { }*)prefs;
-- (void)setPluginTypeEnabled:(bool)arg1 appURLData:(id)arg2;
-- (bool)setPreferences:(struct __CFDictionary { }*)arg1 ofType:(long long)arg2 configurationIdentifier:(id)arg3;
+- (void)setPluginTypeEnabled:(BOOL)arg1 appURLData:(id)arg2;
+- (BOOL)setPreferences:(struct __CFDictionary { }*)arg1 ofType:(long)arg2 configurationIdentifier:(id)arg3;
 - (void)setPrefs:(struct __SCPreferences { }*)arg1;
 
 @end

@@ -10,30 +10,30 @@
 
 @interface PKUISpringAnimationFactory : NSObject <_UIBasicAnimationFactory> {
     id _animationDelayHandler;
-    double _damping;
+    float _damping;
     double _duration;
-    double _mass;
+    float _mass;
     double _maximumVendedDelay;
-    double _stiffness;
+    BOOL _needsDurationUpdate;
+    float _stiffness;
     CAMediaTimingFunction *_timing;
-    double _velocity;
-    bool_needsDurationUpdate;
+    float _velocity;
 }
 
-@property double damping;
+@property float damping;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) double duration;
-@property(readonly) unsigned long long hash;
-@property double mass;
+@property(readonly) unsigned int hash;
+@property float mass;
 @property(readonly) double maximumVendedDelay;
-@property double stiffness;
+@property float stiffness;
 @property(readonly) Class superclass;
 @property(retain) CAMediaTimingFunction * timing;
-@property double velocity;
+@property float velocity;
 
 + (id)defaultTimingFunction;
-+ (id)springAnimationWithKeyPath:(id)arg1 velocity:(double)arg2;
++ (id)springAnimationWithKeyPath:(id)arg1 velocity:(float)arg2;
 + (id)springAnimationWithKeyPath:(id)arg1;
 
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
@@ -42,26 +42,26 @@
 - (id)_timingFunctionForAnimation;
 - (void)_updateDurationIfNecessary;
 - (id)animationDelayHandler;
-- (double)damping;
+- (float)damping;
 - (void)dealloc;
 - (double)duration;
 - (id)init;
-- (id)initWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 velocity:(double)arg4 timing:(id)arg5;
-- (id)initWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 velocity:(double)arg4;
-- (id)initWithVelocity:(double)arg1 timing:(id)arg2;
-- (id)initWithVelocity:(double)arg1;
-- (double)mass;
+- (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 velocity:(float)arg4 timing:(id)arg5;
+- (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 velocity:(float)arg4;
+- (id)initWithVelocity:(float)arg1 timing:(id)arg2;
+- (id)initWithVelocity:(float)arg1;
+- (float)mass;
 - (double)maximumVendedDelay;
 - (void)setAnimationDelayHandler:(id)arg1;
-- (void)setDamping:(double)arg1;
-- (void)setMass:(double)arg1;
-- (void)setStiffness:(double)arg1;
+- (void)setDamping:(float)arg1;
+- (void)setMass:(float)arg1;
+- (void)setStiffness:(float)arg1;
 - (void)setTiming:(id)arg1;
-- (void)setVelocity:(double)arg1;
+- (void)setVelocity:(float)arg1;
 - (id)springAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)springAnimationWithKeyPath:(id)arg1;
-- (double)stiffness;
+- (float)stiffness;
 - (id)timing;
-- (double)velocity;
+- (float)velocity;
 
 @end

@@ -16,9 +16,9 @@
 - (void)dealloc;
 - (id)description;
 - (id)eventExternalURL;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithEventExternalURL:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setAdvice:(id)arg1;
 
 @end

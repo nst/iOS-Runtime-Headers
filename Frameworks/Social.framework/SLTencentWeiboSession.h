@@ -22,7 +22,7 @@
 @property(copy) id connectionResetBlock;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) id locationInformationChangedBlock;
 @property(readonly) Class superclass;
 
@@ -32,7 +32,7 @@
 - (id)_createOrGetRemoteSession;
 - (void)acceptLocationUpdate:(id)arg1;
 - (void)beginPotentialLocationUse;
-- (long long)characterCountForText:(id)arg1 shortenedURLCost:(long long)arg2;
+- (int)characterCountForText:(id)arg1 shortenedURLCost:(int)arg2;
 - (id)connectionResetBlock;
 - (void)deferExpensiveOperations;
 - (void)endPotentialLocationUse;
@@ -53,7 +53,7 @@
 - (void)setActiveAccountIdentifier:(id)arg1;
 - (void)setClientInfo:(id)arg1;
 - (void)setConnectionResetBlock:(id)arg1;
-- (void)setGeotagAccountSetting:(bool)arg1;
+- (void)setGeotagAccountSetting:(BOOL)arg1;
 - (void)setGeotagStatus:(int)arg1;
 - (void)setLocationInformationChangedBlock:(id)arg1;
 - (void)showSettingsIfNeeded;

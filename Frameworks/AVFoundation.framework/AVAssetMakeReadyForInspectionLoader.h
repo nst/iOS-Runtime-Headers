@@ -7,11 +7,11 @@
 @interface AVAssetMakeReadyForInspectionLoader : AVAssetInspectorLoader {
     NSURL *_URL;
     AVAssetInspector *_assetInspector;
-    int _basicInspectionFailureCode;
+    long _basicInspectionFailureCode;
     struct OpaqueFigFormatReader { } *_formatReader;
     NSMutableArray *_keysAwaitingCompletion;
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
-    long long _status;
+    int _status;
 }
 
 - (id)URL;
@@ -20,20 +20,20 @@
 - (id)_dictionaryOfSpecialLoadingMethodsForKeys;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (id)_getAndPruneCompletionsWhileMutexLocked;
-- (bool)_inspectionRequiresAFormatReader;
-- (bool)_isStreaming;
+- (BOOL)_inspectionRequiresAFormatReader;
+- (BOOL)_isStreaming;
 - (id)_loadValuesUsingDefaultLoadingMethodWhileMutexLockedForKeys:(id)arg1;
 - (id)_loadValuesWhileMutexLockedForKeys:(id)arg1;
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
-- (bool)_providesAccurateTiming;
+- (BOOL)_providesAccurateTiming;
 - (void)_serverHasDied;
-- (void)_setStatus:(long long)arg1 figErrorCode:(int)arg2;
-- (long long)_status;
+- (void)_setStatus:(int)arg1 figErrorCode:(long)arg2;
+- (int)_status;
 - (id)_statusOfValueForKeyThatIsAlwaysLoaded;
-- (long long)_statusOfValueWhileMutexLockedForKey:(id)arg1 error:(id*)arg2;
-- (bool)_statusOfValuesIsTerminalWhileMutexLockedForKeys:(id)arg1;
-- (bool)_updateStatusWhileMutexLocked:(long long)arg1 figErrorCode:(int)arg2;
+- (int)_statusOfValueWhileMutexLockedForKey:(id)arg1 error:(id*)arg2;
+- (BOOL)_statusOfValuesIsTerminalWhileMutexLockedForKeys:(id)arg1;
+- (BOOL)_updateStatusWhileMutexLocked:(int)arg1 figErrorCode:(long)arg2;
 - (id)assetInspector;
 - (void)cancelLoading;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -41,14 +41,14 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)figChapterGroupInfo;
 - (void)finalize;
-- (bool)hasProtectedContent;
+- (BOOL)hasProtectedContent;
 - (id)initWithURL:(id)arg1;
-- (bool)isComposable;
-- (bool)isExportable;
-- (bool)isPlayable;
-- (bool)isReadable;
+- (BOOL)isComposable;
+- (BOOL)isExportable;
+- (BOOL)isPlayable;
+- (BOOL)isReadable;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (id)lyrics;
-- (long long)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 
 @end

@@ -11,13 +11,13 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) BBSectionInfo * sectionInfo;
 @property(readonly) Class superclass;
 @property(copy) NSString * universalSectionIdentifier;
 
 + (id)factoryFromSectionInfo:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)dataProviders;
 - (void)dealloc;

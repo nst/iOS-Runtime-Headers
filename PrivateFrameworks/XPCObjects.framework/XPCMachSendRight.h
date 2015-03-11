@@ -6,7 +6,7 @@
     unsigned int _sendRight;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 + (id)wrapSendRight:(unsigned int)arg1;
 
 - (void)dealloc;

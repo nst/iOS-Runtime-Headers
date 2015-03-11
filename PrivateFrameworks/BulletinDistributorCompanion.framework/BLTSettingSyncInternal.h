@@ -6,60 +6,60 @@
 
 @interface BLTSettingSyncInternal : NSObject <MCProfileConnectionObserver, BLTSettingSyncing> {
     BLTSettingSyncServer *_connection;
-    long long _dndStatus;
+    BOOL _dndEnabled;
+    BOOL _dndStateUpdatedAtLeastOnce;
+    int _dndStatus;
+    BOOL _isDNDMirrorEnabled;
+    BOOL _isWristDetectDisabled;
     NPSManager *_npsManager;
     BBObserver *_observer;
     BLTSectionConfiguration *_sectionConfiguration;
     BBSettingsGateway *_settingsGateway;
-    bool_dndEnabled;
-    bool_dndStateUpdatedAtLeastOnce;
-    bool_isDNDMirrorEnabled;
-    bool_isWristDetectDisabled;
 }
 
 @property(retain) BLTSettingSyncServer * connection;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool isDNDMirrorEnabled;
-@property(readonly) bool isWristDetectDisabled;
+@property(readonly) unsigned int hash;
+@property BOOL isDNDMirrorEnabled;
+@property(readonly) BOOL isWristDetectDisabled;
 @property(retain) NPSManager * npsManager;
 @property(retain) BBObserver * observer;
 @property(retain) BBSettingsGateway * settingsGateway;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)_isWristDetectionDisabled;
+- (BOOL)_isWristDetectionDisabled;
 - (id)_overriddenSectionInfoForSectionID:(id)arg1;
 - (void)_updateWristDetectSetting;
-- (bool)_wristDetectionDisabledPreference;
-- (bool)_wristDetectionEnabledRestriction;
+- (BOOL)_wristDetectionDisabledPreference;
+- (BOOL)_wristDetectionEnabledRestriction;
 - (id)connection;
 - (void)dealloc;
-- (unsigned long long)getSettingsWillPresentBlockedByReasonForSectionInfo:(id)arg1;
+- (unsigned int)getSettingsWillPresentBlockedByReasonForSectionInfo:(id)arg1;
 - (id)init;
-- (bool)isDNDMirrorEnabled;
-- (bool)isWristDetectDisabled;
+- (BOOL)isDNDMirrorEnabled;
+- (BOOL)isWristDetectDisabled;
 - (id)npsManager;
 - (id)observer;
 - (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)removeDNDHandlers;
-- (void)setBehaviorOverrideStatus:(long long)arg1;
-- (void)setBehaviorOverrideTypes:(unsigned long long)arg1;
+- (void)setBehaviorOverrideStatus:(int)arg1;
+- (void)setBehaviorOverrideTypes:(unsigned int)arg1;
 - (void)setBehaviorOverrides:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDNDHandlers;
-- (void)setDoNotDisturb:(bool)arg1 updateSettings:(bool)arg2;
-- (void)setIsDNDMirrorEnabled:(bool)arg1;
+- (void)setDoNotDisturb:(BOOL)arg1 updateSettings:(BOOL)arg2;
+- (void)setIsDNDMirrorEnabled:(BOOL)arg1;
 - (void)setNpsManager:(id)arg1;
 - (void)setObserver:(id)arg1;
-- (void)setPrivilegedSenderTypes:(unsigned long long)arg1;
+- (void)setPrivilegedSenderTypes:(unsigned int)arg1;
 - (void)setSectionInfo:(id)arg1;
-- (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(long long)arg3;
+- (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3;
 - (void)setSettingsGateway:(id)arg1;
 - (id)settingsGateway;
 - (void)updateDNDMirrorState;
 - (void)updateDNDState;
-- (unsigned long long)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2;
+- (unsigned int)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2;
 
 @end

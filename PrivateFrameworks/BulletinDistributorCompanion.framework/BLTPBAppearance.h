@@ -7,16 +7,16 @@
 @interface BLTPBAppearance : PBCodable <NSCopying> {
     struct { 
         unsigned int destructive : 1; 
+    BOOL _destructive;
     } _has;
     BLTPBImage *_image;
     NSString *_title;
-    bool_destructive;
 }
 
-@property bool destructive;
-@property bool hasDestructive;
-@property(readonly) bool hasImage;
-@property(readonly) bool hasTitle;
+@property BOOL destructive;
+@property BOOL hasDestructive;
+@property(readonly) BOOL hasImage;
+@property(readonly) BOOL hasTitle;
 @property(retain) BLTPBImage * image;
 @property(retain) NSString * title;
 
@@ -25,18 +25,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)description;
-- (bool)destructive;
+- (BOOL)destructive;
 - (id)dictionaryRepresentation;
-- (bool)hasDestructive;
-- (bool)hasImage;
-- (bool)hasTitle;
-- (unsigned long long)hash;
+- (BOOL)hasDestructive;
+- (BOOL)hasImage;
+- (BOOL)hasTitle;
+- (unsigned int)hash;
 - (id)image;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setDestructive:(bool)arg1;
-- (void)setHasDestructive:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setDestructive:(BOOL)arg1;
+- (void)setHasDestructive:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

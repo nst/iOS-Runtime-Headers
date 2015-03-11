@@ -7,9 +7,9 @@
 
 - (Class)customTimeCellClass;
 - (id)headerTitle;
-- (unsigned long long)initialNumberOfTimeSlotsToShow;
+- (unsigned int)initialNumberOfTimeSlotsToShow;
 - (void)searchForMoreTimes;
 - (id)searcherTimeSlots;
-- (bool)searchingForMoreTimes;
+- (BOOL)searchingForMoreTimes;
 
 @end

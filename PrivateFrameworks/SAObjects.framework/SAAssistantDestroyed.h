@@ -15,7 +15,7 @@
 - (id)assistantId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setAssistantId:(id)arg1;
 
 @end

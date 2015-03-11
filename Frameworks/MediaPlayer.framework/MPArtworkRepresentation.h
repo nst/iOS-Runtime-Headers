@@ -6,22 +6,22 @@
 
 @interface MPArtworkRepresentation : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     UIImage *_image;
     } _representationSize;
 }
 
 @property(retain) UIImage * image;
-@property struct CGSize { double x1; double x2; } representationSize;
+@property struct CGSize { float x1; float x2; } representationSize;
 
-+ (id)representationWithSize:(struct CGSize { double x1; double x2; })arg1 image:(id)arg2;
++ (id)representationWithSize:(struct CGSize { float x1; float x2; })arg1 image:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)debugQuickLookObject;
 - (id)image;
-- (struct CGSize { double x1; double x2; })representationSize;
+- (struct CGSize { float x1; float x2; })representationSize;
 - (void)setImage:(id)arg1;
-- (void)setRepresentationSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setRepresentationSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

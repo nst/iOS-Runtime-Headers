@@ -6,19 +6,19 @@
 
 @interface HDIDSMessagePersistentContext : NSObject <NSSecureCoding> {
     NSDate *_date;
+    BOOL _fromRequest;
     NSString *_idsIdentifier;
     unsigned short _messageID;
     NSDictionary *_userInfo;
-    bool_fromRequest;
 }
 
 @property(retain) NSDate * date;
-@property(getter=isFromRequest) bool fromRequest;
+@property(getter=isFromRequest) BOOL fromRequest;
 @property(copy) NSString * idsIdentifier;
 @property unsigned short messageID;
 @property(retain) NSDictionary * userInfo;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)date;
@@ -26,10 +26,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)idsIdentifier;
 - (id)initWithCoder:(id)arg1;
-- (bool)isFromRequest;
+- (BOOL)isFromRequest;
 - (unsigned short)messageID;
 - (void)setDate:(id)arg1;
-- (void)setFromRequest:(bool)arg1;
+- (void)setFromRequest:(BOOL)arg1;
 - (void)setIdsIdentifier:(id)arg1;
 - (void)setMessageID:(unsigned short)arg1;
 - (void)setUserInfo:(id)arg1;

@@ -18,10 +18,10 @@
 - (void)_fireValueChanged;
 - (id)description;
 - (id)down;
-- (id)initWithFlippedY:(bool)arg1 digital:(bool)arg2;
+- (id)initWithFlippedY:(BOOL)arg1 digital:(BOOL)arg2;
 - (id)left;
 - (id)right;
-- (bool)setHIDValue:(struct __IOHIDValue { }*)arg1;
+- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
 - (void)setValueChangedHandler:(id)arg1;
 - (id)up;
 - (id)valueChangedHandler;

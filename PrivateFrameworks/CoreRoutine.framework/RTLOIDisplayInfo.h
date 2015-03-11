@@ -9,9 +9,9 @@
     NSDate *_deparature;
     double _eta;
     <GEOMapItem> *_geoMapItem;
-    long long _modeOfTransportation;
+    int _modeOfTransportation;
     int _style;
-    long long _type;
+    int _type;
     NSString *_unknownTypeName;
 }
 
@@ -19,9 +19,9 @@
 @property(readonly) NSDate * deparature;
 @property(readonly) double eta;
 @property(readonly) <GEOMapItem> * geoMapItem;
-@property(readonly) long long modeOfTransportation;
+@property(readonly) int modeOfTransportation;
 @property(readonly) int style;
-@property(readonly) long long type;
+@property(readonly) int type;
 @property(readonly) NSString * unknownTypeName;
 
 - (void).cxx_destruct;
@@ -30,13 +30,13 @@
 - (id)description;
 - (double)eta;
 - (id)geoMapItem;
-- (id)initWithStyle:(int)arg1 type:(long long)arg2 geoMapItem:(id)arg3 unknownTypeName:(id)arg4 eta:(double)arg5 arrival:(id)arg6 departure:(id)arg7 modeOfTransportation:(long long)arg8;
-- (bool)isEquivalentToDisplayInfo:(id)arg1;
+- (id)initWithStyle:(int)arg1 type:(int)arg2 geoMapItem:(id)arg3 unknownTypeName:(id)arg4 eta:(double)arg5 arrival:(id)arg6 departure:(id)arg7 modeOfTransportation:(int)arg8;
+- (BOOL)isEquivalentToDisplayInfo:(id)arg1;
 - (id)localizedDescription;
 - (id)mapsURL;
-- (long long)modeOfTransportation;
+- (int)modeOfTransportation;
 - (int)style;
-- (long long)type;
+- (int)type;
 - (id)unknownTypeName;
 
 @end

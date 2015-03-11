@@ -8,35 +8,35 @@
 }
 
 @property(copy) NSString * accessKey;
-@property bool autofocus;
-@property bool disabled;
+@property BOOL autofocus;
+@property BOOL disabled;
 @property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * name;
 @property(copy) NSString * type;
 @property(copy) NSString * value;
-@property(readonly) bool willValidate;
+@property(readonly) BOOL willValidate;
 
 - (id)accessKey;
-- (bool)autofocus;
-- (bool)checkValidity;
+- (BOOL)autofocus;
+- (BOOL)checkValidity;
 - (void)click;
-- (bool)disabled;
+- (BOOL)disabled;
 - (id)form;
 - (id)formAction;
 - (id)formEnctype;
 - (id)formMethod;
-- (bool)formNoValidate;
+- (BOOL)formNoValidate;
 - (id)formTarget;
 - (id)labels;
 - (id)name;
 - (void)setAccessKey:(id)arg1;
-- (void)setAutofocus:(bool)arg1;
+- (void)setAutofocus:(BOOL)arg1;
 - (void)setCustomValidity:(id)arg1;
-- (void)setDisabled:(bool)arg1;
+- (void)setDisabled:(BOOL)arg1;
 - (void)setFormAction:(id)arg1;
 - (void)setFormEnctype:(id)arg1;
 - (void)setFormMethod:(id)arg1;
-- (void)setFormNoValidate:(bool)arg1;
+- (void)setFormNoValidate:(BOOL)arg1;
 - (void)setFormTarget:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setType:(id)arg1;
@@ -46,6 +46,6 @@
 - (id)validationMessage;
 - (id)validity;
 - (id)value;
-- (bool)willValidate;
+- (BOOL)willValidate;
 
 @end

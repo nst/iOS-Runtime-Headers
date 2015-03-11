@@ -5,9 +5,9 @@
 @interface _UIFallbackPresentationWindow : UIWindow {
 }
 
-+ (bool)_isSystemWindow;
++ (BOOL)_isSystemWindow;
 
-- (bool)_canAffectStatusBarAppearance;
-- (bool)_includeInDefaultImageSnapshot;
+- (BOOL)_canAffectStatusBarAppearance;
+- (BOOL)_includeInDefaultImageSnapshot;
 
 @end

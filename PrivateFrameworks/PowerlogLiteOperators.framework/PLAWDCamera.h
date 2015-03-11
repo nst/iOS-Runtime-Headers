@@ -9,24 +9,24 @@
     PLEntryNotificationOperatorComposition *_cameraEventCallbackBack;
     PLEntryNotificationOperatorComposition *_cameraEventCallbackFront;
     PLEntryNotificationOperatorComposition *_cameraEventCallbackTorch;
-    long long _cameraSubmitCnt;
+    long _cameraSubmitCnt;
     double _frontCameraTimestamp;
+    BOOL _prevBackCameraState;
+    BOOL _prevFrontCameraState;
+    BOOL _prevTorchCameraState;
     double _torchCameraTimestamp;
-    bool_prevBackCameraState;
-    bool_prevFrontCameraState;
-    bool_prevTorchCameraState;
 }
 
 @property double backCameraTimestamp;
 @property(retain) PLEntryNotificationOperatorComposition * cameraEventCallbackBack;
 @property(retain) PLEntryNotificationOperatorComposition * cameraEventCallbackFront;
 @property(retain) PLEntryNotificationOperatorComposition * cameraEventCallbackTorch;
-@property long long cameraSubmitCnt;
+@property long cameraSubmitCnt;
 @property double frontCameraTimestamp;
 @property PLOperator * operator;
-@property bool prevBackCameraState;
-@property bool prevFrontCameraState;
-@property bool prevTorchCameraState;
+@property BOOL prevBackCameraState;
+@property BOOL prevFrontCameraState;
+@property BOOL prevTorchCameraState;
 @property(retain) NSMutableSet * runningMetrics;
 @property double torchCameraTimestamp;
 
@@ -40,30 +40,30 @@
 - (id)cameraEventCallbackBack;
 - (id)cameraEventCallbackFront;
 - (id)cameraEventCallbackTorch;
-- (long long)cameraSubmitCnt;
+- (long)cameraSubmitCnt;
 - (double)frontCameraTimestamp;
 - (void)handleBackCameraCallback:(id)arg1;
 - (void)handleFrontCameraCallback:(id)arg1;
 - (void)handleTorchCameraCallback:(id)arg1;
 - (void)initCameraStats;
-- (bool)prevBackCameraState;
-- (bool)prevFrontCameraState;
-- (bool)prevTorchCameraState;
+- (BOOL)prevBackCameraState;
+- (BOOL)prevFrontCameraState;
+- (BOOL)prevTorchCameraState;
 - (void)reInitCameraStats;
 - (void)resetCameraTable;
 - (void)setBackCameraTimestamp:(double)arg1;
 - (void)setCameraEventCallbackBack:(id)arg1;
 - (void)setCameraEventCallbackFront:(id)arg1;
 - (void)setCameraEventCallbackTorch:(id)arg1;
-- (void)setCameraSubmitCnt:(long long)arg1;
+- (void)setCameraSubmitCnt:(long)arg1;
 - (void)setFrontCameraTimestamp:(double)arg1;
-- (void)setPrevBackCameraState:(bool)arg1;
-- (void)setPrevFrontCameraState:(bool)arg1;
-- (void)setPrevTorchCameraState:(bool)arg1;
+- (void)setPrevBackCameraState:(BOOL)arg1;
+- (void)setPrevFrontCameraState:(BOOL)arg1;
+- (void)setPrevTorchCameraState:(BOOL)arg1;
 - (void)setTorchCameraTimestamp:(double)arg1;
 - (void)startMetricCollection:(id)arg1;
 - (void)stopMetricCollection:(id)arg1;
-- (bool)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
+- (BOOL)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
 - (double)torchCameraTimestamp;
 
 @end

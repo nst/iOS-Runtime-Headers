@@ -12,7 +12,7 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (bool)_parseCoreDuetAttributeValue:(id)arg1 aceId:(id*)arg2 duration:(double*)arg3;
+- (BOOL)_parseCoreDuetAttributeValue:(id)arg1 aceId:(id*)arg2 duration:(double*)arg3;
 - (void)deleteRegisteredIdentifiers;
 - (id)init;
 - (void)registerPunchoutIdentifier:(id)arg1;

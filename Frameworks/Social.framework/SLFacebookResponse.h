@@ -5,14 +5,14 @@
 @class NSData, NSDictionary, NSHTTPURLResponse;
 
 @interface SLFacebookResponse : NSObject <NSCoding> {
-    long long _httpErrorCode;
+    int _httpErrorCode;
     NSData *_responseData;
     id _untypedResponseParameters;
     NSHTTPURLResponse *_urlResponse;
 }
 
 @property(readonly) int APIresponseErrorCode;
-@property(readonly) long long httpErrorCode;
+@property(readonly) int httpErrorCode;
 @property(readonly) NSDictionary * responseParameters;
 @property(readonly) NSHTTPURLResponse * urlResponse;
 
@@ -20,15 +20,15 @@
 - (int)APIresponseErrorCode;
 - (id)checkpointURL;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)hasBadTokenError;
-- (bool)hasError;
-- (bool)hasHTTPStatusOK;
-- (bool)hasMissingTokenOrAppID;
-- (long long)httpErrorCode;
-- (long long)httpStatusCode;
+- (BOOL)hasBadTokenError;
+- (BOOL)hasError;
+- (BOOL)hasHTTPStatusOK;
+- (BOOL)hasMissingTokenOrAppID;
+- (int)httpErrorCode;
+- (int)httpStatusCode;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithResponseData:(id)arg1 urlResponse:(id)arg2;
-- (bool)isBatchResponse;
+- (BOOL)isBatchResponse;
 - (id)responseParameters;
 - (id)untypedResponseParameters;
 - (id)urlResponse;

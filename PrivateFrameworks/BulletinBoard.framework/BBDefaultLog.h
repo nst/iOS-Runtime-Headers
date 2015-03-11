@@ -8,12 +8,12 @@
     NSMutableSet *_knownCategories;
 }
 
-- (void)_setEnabled:(bool)arg1;
-- (bool)_shouldEnableCategory:(id)arg1;
+- (void)_setEnabled:(BOOL)arg1;
+- (BOOL)_shouldEnableCategory:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (bool)isEnabled;
-- (unsigned long long)logDestinations;
+- (BOOL)isEnabled;
+- (unsigned int)logDestinations;
 - (id)logPath;
 - (id)logPreferenceDomain;
 - (id)logPreferenceName;

@@ -9,12 +9,12 @@
 }
 
 @property <PUAbstractNavigationBannerDelegate> * delegate;
-@property(readonly) double height;
+@property(readonly) float height;
 @property(readonly) UIView * view;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (double)height;
+- (float)height;
 - (void)setDelegate:(id)arg1;
 - (id)view;
 

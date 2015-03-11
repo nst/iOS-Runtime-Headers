@@ -14,10 +14,10 @@
     id _context;
     NSData *_currentBoundary;
     MFMimePart *_currentPart;
-    unsigned long long _cursor;
+    unsigned int _cursor;
     NSMutableData *_data;
     id _delegate;
-    unsigned long long _lastLength;
+    unsigned int _lastLength;
     } _parserFlags;
     NSArray *_preserveHeaders;
     MFMimePart *_topLevelPart;

@@ -10,11 +10,11 @@
 @property(copy) NSArray * emphasisRanges;
 @property(readonly) NSMutableString * mutableString;
 
-- (void)addEmphasisRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)addEmphasisRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithString:(id)arg1 emphasisRanges:(id)arg2;
 - (id)mutableString;
-- (void)removeEmphasisRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)removeEmphasisRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setEmphasisRanges:(id)arg1;
 
 @end

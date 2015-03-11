@@ -15,7 +15,7 @@
 @property(retain) <NSObject> * context;
 @property(retain) NSString * topic;
 @property(retain,readonly) NSData * underlyingData;
-@property(readonly) unsigned long long underlyingDataLength;
+@property(readonly) unsigned int underlyingDataLength;
 
 + (unsigned int)dataLengthFromHeaderData:(id)arg1;
 + (unsigned int)headerDataSize;
@@ -33,6 +33,6 @@
 - (void)setTopic:(id)arg1;
 - (id)topic;
 - (id)underlyingData;
-- (unsigned long long)underlyingDataLength;
+- (unsigned int)underlyingDataLength;
 
 @end

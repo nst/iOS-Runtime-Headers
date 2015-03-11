@@ -5,6 +5,6 @@
 @interface SUDefaultRoamingRestrictedDownloadPolicy : SUDefaultDownloadPolicy {
 }
 
-- (bool)isDownloadAllowableForCellularRoaming;
+- (BOOL)isDownloadAllowableForCellularRoaming;
 
 @end

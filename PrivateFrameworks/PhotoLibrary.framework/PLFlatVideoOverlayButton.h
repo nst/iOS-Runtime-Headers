@@ -4,16 +4,16 @@
 
 @interface PLFlatVideoOverlayButton : UIButton <PLVideoOverlayButton> {
     SEL _action;
-    long long _style;
+    int _style;
     id _target;
 }
 
-- (id)_createOverlayImageWithBackgroundWhite:(double)arg1 backgroundAlpha:(double)arg2 glyphAlpha:(double)arg3;
+- (id)_createOverlayImageWithBackgroundWhite:(float)arg1 backgroundAlpha:(float)arg2 glyphAlpha:(float)arg3;
 - (void)_handleTap:(id)arg1;
 - (id)_highlightedButtonImage;
 - (id)_normalButtonImage;
-- (id)initWithStyle:(long long)arg1;
+- (id)initWithStyle:(int)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
-- (long long)style;
+- (int)style;
 
 @end

@@ -10,9 +10,9 @@
     NSDictionary *_dictionary;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     double _expirationTime;
+    BOOL _ignoreCacheForNextLookup;
     NSMutableArray *_pendingLookups;
     NSString *_storeFrontIdentifier;
-    bool_ignoreCacheForNextLookup;
 }
 
 @property(readonly) SSURLBagContext * URLBagContext;

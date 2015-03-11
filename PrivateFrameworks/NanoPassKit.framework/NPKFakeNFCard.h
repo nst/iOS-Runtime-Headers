@@ -14,7 +14,7 @@
 @property(retain) NSString * aid;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property unsigned char lifecycleState;
 @property(readonly) Class superclass;
 

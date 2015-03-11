@@ -7,7 +7,7 @@
 
 - (id)webViewBackgroundColor;
 - (id)webViewBackgroundView;
-- (bool)webViewDrawsShadows;
-- (bool)webViewIsOpaque;
+- (BOOL)webViewDrawsShadows;
+- (BOOL)webViewIsOpaque;
 
 @end

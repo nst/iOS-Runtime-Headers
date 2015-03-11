@@ -5,12 +5,14 @@
 @class <SKUIIPadProductPageDelegate>, NSOperationQueue, NSString, NSURL, NSURLRequest, SKUIClientContext, SKUIIncompatibleAppViewController, SKUIItem, SKUILoadProductPageOperation, SKUIMessageBanner, SKUIMetricsController, SKUINetworkErrorViewController, SKUIProductPage, SKUIProductPageDetailsViewController, SKUIProductPageHeaderViewController, SKUIProductPagePlaceholderViewController, SKUIProductPageReviewsViewController, SKUISwooshArrayViewController, SSMetricsPageEvent, UIView;
 
 @interface SKUIIPadProductPageViewController : UIViewController <SKUIMetricsViewController, SKUINetworkErrorDelegate, SKUIProductPageHeaderViewDelegate, SKUIProductPageChildViewControllerDelegate, SKUIMessageBannerDelegate> {
+    BOOL _askPermission;
     SKUIMessageBanner *_banner;
     NSString *_bannerText;
     SKUIClientContext *_clientContext;
-    long long _defaultSelectedSectionIndex;
+    int _defaultSelectedSectionIndex;
     <SKUIIPadProductPageDelegate> *_delegate;
     SKUIProductPageDetailsViewController *_detailsViewController;
+    BOOL _didSendCannotOpen;
     SKUIProductPageHeaderViewController *_headerViewController;
     SKUIIncompatibleAppViewController *_incompatibleViewController;
     SKUIItem *_item;
@@ -25,20 +27,18 @@
     SKUIProductPage *_productPage;
     SKUISwooshArrayViewController *_relatedViewController;
     SKUIProductPageReviewsViewController *_reviewsViewController;
-    long long _selectedSectionIndex;
+    int _selectedSectionIndex;
     NSURLRequest *_urlRequest;
-    bool_askPermission;
-    bool_didSendCannotOpen;
 }
 
 @property(readonly) NSURL * URL;
-@property bool askPermission;
+@property BOOL askPermission;
 @property(copy) NSString * bannerText;
 @property(retain) SKUIClientContext * clientContext;
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUIIPadProductPageDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) SKUIItem * item;
 @property(readonly) SKUIProductPage * productPage;
 @property(readonly) Class superclass;
@@ -47,31 +47,31 @@
 - (id)URL;
 - (id)_detailsViewController;
 - (id)_initSKUIIPadProductPageViewController;
-- (bool)_isIncompatibleItem;
+- (BOOL)_isIncompatibleItem;
 - (void)_metricsEnterEventNotification:(id)arg1;
 - (id)_placeholderViewController;
 - (id)_relatedViewController;
 - (void)_reloadHeaderViewController;
 - (id)_reviewsViewController;
-- (void)_selectSectionIndex:(long long)arg1;
+- (void)_selectSectionIndex:(int)arg1;
 - (void)_sendCannotOpen;
-- (void)_setDefaultSectionIndexWithFragment:(long long)arg1;
+- (void)_setDefaultSectionIndexWithFragment:(int)arg1;
 - (void)_setMetricsController:(id)arg1;
 - (void)_setProductPage:(id)arg1 error:(id)arg2;
 - (void)_showBanner;
 - (void)_showError:(id)arg1;
 - (void)_showIncompatibleView;
 - (void)_showViewController:(id)arg1;
-- (id)_viewControllerForSectionIndex:(long long)arg1;
+- (id)_viewControllerForSectionIndex:(int)arg1;
 - (id)activeMetricsController;
-- (bool)askPermission;
+- (BOOL)askPermission;
 - (void)askPermissionBannerDidSelect:(id)arg1;
 - (id)bannerText;
 - (id)clientContext;
 - (void)configureMetricsWithPageEvent:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(long long)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)initWithItem:(id)arg1;
 - (id)initWithItemIdentifier:(long long)arg1;
 - (id)initWithProductPage:(id)arg1;
@@ -87,16 +87,16 @@
 - (void)productPageChildViewControllerDidLoad:(id)arg1;
 - (void)productPageChildViewControllerDidLoadScrollView:(id)arg1;
 - (void)productPageChildViewControllerDidScroll:(id)arg1;
-- (void)productPageHeaderView:(id)arg1 didSelectSectionIndex:(long long)arg2;
+- (void)productPageHeaderView:(id)arg1 didSelectSectionIndex:(int)arg2;
 - (void)productPageHeaderView:(id)arg1 didSelectURL:(id)arg2;
 - (void)productPageHeaderViewDidWantAskPermissionBanner:(id)arg1;
 - (void)reloadData;
-- (void)setAskPermission:(bool)arg1;
+- (void)setAskPermission:(BOOL)arg1;
 - (void)setBannerText:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (struct CGPoint { double x1; double x2; })topContentOffset;
+- (struct CGPoint { float x1; float x2; })topContentOffset;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

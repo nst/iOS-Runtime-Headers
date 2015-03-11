@@ -10,33 +10,33 @@
 
 @interface BLTLightsAndSirensReplyInfo : NSObject {
     NSDate *_bulletinPublicationDate;
-    unsigned long long _didPlayLightsAndSirens;
+    unsigned int _didPlayLightsAndSirens;
     NSDate *_expiration;
     id _reply;
+    BOOL _replySent;
     bool_didLogAggd;
-    bool_replySent;
 }
 
 @property(retain) NSDate * bulletinPublicationDate;
 @property bool didLogAggd;
-@property unsigned long long didPlayLightsAndSirens;
+@property unsigned int didPlayLightsAndSirens;
 @property(retain) NSDate * expiration;
 @property(copy) id reply;
-@property(readonly) bool replySent;
+@property(readonly) BOOL replySent;
 
 - (void).cxx_destruct;
 - (id)bulletinPublicationDate;
 - (bool)didLogAggd;
-- (unsigned long long)didPlayLightsAndSirens;
+- (unsigned int)didPlayLightsAndSirens;
 - (id)expiration;
-- (bool)hasExpired;
+- (BOOL)hasExpired;
 - (id)init;
 - (id)reply;
-- (bool)replySent;
-- (bool)sendReply;
+- (BOOL)replySent;
+- (BOOL)sendReply;
 - (void)setBulletinPublicationDate:(id)arg1;
 - (void)setDidLogAggd:(bool)arg1;
-- (void)setDidPlayLightsAndSirens:(unsigned long long)arg1;
+- (void)setDidPlayLightsAndSirens:(unsigned int)arg1;
 - (void)setExpiration:(id)arg1;
 - (void)setReply:(id)arg1;
 

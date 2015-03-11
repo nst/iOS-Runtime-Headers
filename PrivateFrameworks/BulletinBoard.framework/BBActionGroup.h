@@ -15,9 +15,9 @@
 - (id)actions;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setActions:(id)arg1;
 
 @end

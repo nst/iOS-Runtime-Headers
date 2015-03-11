@@ -9,15 +9,15 @@
     id _monitoringToken;
     NSURL *_observedURL;
     _UIDocumentPickerViewServiceViewController *_serviceViewController;
+    BOOL _shouldHideSortBar;
     _UIDocumentPickerSortOrderView *_sortView;
-    bool_shouldHideSortBar;
 }
 
 @property(retain) _UIDocumentPickerContainerModel * model;
 @property(retain) id monitoringToken;
 @property(retain) NSURL * observedURL;
 @property _UIDocumentPickerViewServiceViewController * serviceViewController;
-@property bool shouldHideSortBar;
+@property BOOL shouldHideSortBar;
 @property(retain) _UIDocumentPickerSortOrderView * sortView;
 
 - (void)_dynamicTypeSizeChanged:(id)arg1;
@@ -28,25 +28,25 @@
 - (id)initWithModel:(id)arg1;
 - (id)model;
 - (id)monitoringToken;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)observedURL;
 - (id)serviceViewController;
 - (void)setModel:(id)arg1;
-- (void)setMonitoring:(bool)arg1;
+- (void)setMonitoring:(BOOL)arg1;
 - (void)setMonitoringToken:(id)arg1;
 - (void)setObservedURL:(id)arg1;
 - (void)setServiceViewController:(id)arg1;
-- (void)setShouldHideSortBar:(bool)arg1;
+- (void)setShouldHideSortBar:(BOOL)arg1;
 - (void)setSortView:(id)arg1;
-- (bool)shouldHideSortBar;
+- (BOOL)shouldHideSortBar;
 - (id)sortView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 
 @end

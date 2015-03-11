@@ -18,6 +18,6 @@
 - (id)init;
 - (void)setSupportedReports:(id)arg1;
 - (id)supportedReports;
-- (bool)supportsReportWithNameSpace:(id)arg1 andName:(id)arg2;
+- (BOOL)supportsReportWithNameSpace:(id)arg1 andName:(id)arg2;
 
 @end

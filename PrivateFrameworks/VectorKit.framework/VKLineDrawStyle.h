@@ -11,10 +11,10 @@
 - (struct Matrix<float, 2, 1> { float x1[2]; })dropShadowOffsetAtZoom:(float)arg1;
 - (float)dropShadowWidthAtZoom:(float)arg1;
 - (unsigned long long)fillDashPatternAtZoom:(float)arg1;
-- (bool)hasDashAtAnyZ;
-- (bool)hasDropShadowAtZoom:(float)arg1;
-- (bool)hasFillDashAtZoom:(int)arg1;
-- (bool)hasStrokeDashAtZoom:(int)arg1;
+- (BOOL)hasDashAtAnyZ;
+- (BOOL)hasDropShadowAtZoom:(float)arg1;
+- (BOOL)hasFillDashAtZoom:(int)arg1;
+- (BOOL)hasStrokeDashAtZoom:(int)arg1;
 - (struct Matrix<float, 4, 1> { float x1[4]; })innerGlowColorAtZoom:(float)arg1;
 - (float)innerGlowRadiusAtZoom:(float)arg1;
 - (float)insetShadowAngleAtZoom:(float)arg1;

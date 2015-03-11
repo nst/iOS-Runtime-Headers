@@ -13,7 +13,7 @@
 @property(copy) id evaluatingBlock;
 
 - (void).cxx_destruct;
-- (id)evaluate:(id)arg1 :(long long)arg2 :(id)arg3;
+- (id)evaluate:(id)arg1 :(int)arg2 :(id)arg3;
 - (id)evaluatingBlock;
 - (id)initWithAppContext:(id)arg1 evaluatingBlock:(id)arg2;
 - (void)setEvaluatingBlock:(id)arg1;

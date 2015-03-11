@@ -5,6 +5,6 @@
 @interface ABLinkedCardsEditingCell : ABLinkedCardsCell {
 }
 
-+ (bool)wantsHorizontalLayout;
++ (BOOL)wantsHorizontalLayout;
 
 @end

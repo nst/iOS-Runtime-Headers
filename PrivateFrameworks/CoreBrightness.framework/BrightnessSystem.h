@@ -11,8 +11,8 @@
 - (id)copyPropertyForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (bool)isAlsSupported;
+- (BOOL)isAlsSupported;
 - (void)registerNotificationBlock:(id)arg1;
-- (bool)setProperty:(id)arg1 forKey:(id)arg2;
+- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 
 @end

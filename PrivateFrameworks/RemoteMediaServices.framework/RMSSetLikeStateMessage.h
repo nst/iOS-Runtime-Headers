@@ -16,10 +16,10 @@
 }
 
 @property unsigned long long databaseID;
-@property bool hasDatabaseID;
-@property bool hasItemID;
-@property bool hasLikeState;
-@property bool hasSessionIdentifier;
+@property BOOL hasDatabaseID;
+@property BOOL hasItemID;
+@property BOOL hasLikeState;
+@property BOOL hasSessionIdentifier;
 @property unsigned long long itemID;
 @property int likeState;
 @property int sessionIdentifier;
@@ -29,22 +29,22 @@
 - (unsigned long long)databaseID;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasDatabaseID;
-- (bool)hasItemID;
-- (bool)hasLikeState;
-- (bool)hasSessionIdentifier;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDatabaseID;
+- (BOOL)hasItemID;
+- (BOOL)hasLikeState;
+- (BOOL)hasSessionIdentifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned long long)itemID;
 - (int)likeState;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (int)sessionIdentifier;
 - (void)setDatabaseID:(unsigned long long)arg1;
-- (void)setHasDatabaseID:(bool)arg1;
-- (void)setHasItemID:(bool)arg1;
-- (void)setHasLikeState:(bool)arg1;
-- (void)setHasSessionIdentifier:(bool)arg1;
+- (void)setHasDatabaseID:(BOOL)arg1;
+- (void)setHasItemID:(BOOL)arg1;
+- (void)setHasLikeState:(BOOL)arg1;
+- (void)setHasSessionIdentifier:(BOOL)arg1;
 - (void)setItemID:(unsigned long long)arg1;
 - (void)setLikeState:(int)arg1;
 - (void)setSessionIdentifier:(int)arg1;

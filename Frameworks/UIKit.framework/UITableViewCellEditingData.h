@@ -8,19 +8,19 @@
     UITableViewCell *_cell;
     UITableViewCellDeleteConfirmationControl_Legacy *_deleteConfirmationControl;
     UITableViewCellEditControl *_editControl;
-    long long _editingStyle;
+    int _editingStyle;
     UITableViewCellReorderControl *_reorderControl;
     UIView *_reorderSeparatorView;
 }
 
-@property(getter=isDataRequired,readonly) bool dataRequired;
+@property(getter=isDataRequired,readonly) BOOL dataRequired;
 
 - (void)dealloc;
-- (id)deleteConfirmationControl:(bool)arg1;
-- (id)editControl:(bool)arg1;
-- (id)initWithTableViewCell:(id)arg1 editingStyle:(long long)arg2;
-- (bool)isDataRequired;
-- (id)reorderControl:(bool)arg1;
-- (id)reorderSeparatorView:(bool)arg1;
+- (id)deleteConfirmationControl:(BOOL)arg1;
+- (id)editControl:(BOOL)arg1;
+- (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
+- (BOOL)isDataRequired;
+- (id)reorderControl:(BOOL)arg1;
+- (id)reorderSeparatorView:(BOOL)arg1;
 
 @end

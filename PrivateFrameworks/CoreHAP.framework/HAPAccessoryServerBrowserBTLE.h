@@ -15,12 +15,12 @@
     NSMapTable *_discoveredPeripheralsWithAccessories;
     NSMapTable *_identifersWithReachabilityScanTuples;
     NSObject<OS_dispatch_source> *_lostAccessoryServerTimer;
+    BOOL _performingGeneralScan;
     NSMapTable *_peripheralsWithConnectionRequestTuples;
     NSMutableArray *_powerOnCentralManagerCompletions;
     id _reachabilityCompletion;
     NSMutableArray *_targetedScanAccessoryIdentifiers;
     NSObject<OS_dispatch_source> *_targetedScanTimer;
-    bool_performingGeneralScan;
 }
 
 @property(retain) CBCentralManager * centralManager;
@@ -29,10 +29,10 @@
 @property(retain) NSObject<OS_dispatch_queue> * delegateQueue;
 @property(copy,readonly) NSString * description;
 @property(retain) NSMapTable * discoveredPeripheralsWithAccessories;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSMapTable * identifersWithReachabilityScanTuples;
 @property(retain) NSObject<OS_dispatch_source> * lostAccessoryServerTimer;
-@property(getter=isPerformingGeneralScan) bool performingGeneralScan;
+@property(getter=isPerformingGeneralScan) BOOL performingGeneralScan;
 @property(retain) NSMapTable * peripheralsWithConnectionRequestTuples;
 @property(retain) NSMutableArray * powerOnCentralManagerCompletions;
 @property(copy) id reachabilityCompletion;
@@ -44,12 +44,12 @@
 - (void)_callPowerOnCompletionsWithError:(id)arg1;
 - (void)_cancelLostAccessoryServerTimer;
 - (void)_createHAPAccessoryAndNotifyDelegateWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3;
-- (bool)_delegateRespondsToSelector:(SEL)arg1;
+- (BOOL)_delegateRespondsToSelector:(SEL)arg1;
 - (void)_discoverAccessoryServerWithIdentifier:(id)arg1;
 - (void)_handleConnectionRequestCompletionForPeripheral:(id)arg1;
 - (void)_handleTargetedScanTimeout;
 - (void)_notifyDelegatesOfRemovedAccessoryServer:(id)arg1;
-- (bool)_parseAdvertisementData:(id)arg1 forPeripheral:(id)arg2 name:(id*)arg3 pairingUsername:(id*)arg4;
+- (BOOL)_parseAdvertisementData:(id)arg1 forPeripheral:(id)arg2 name:(id*)arg3 pairingUsername:(id*)arg4;
 - (void)_performTargetedScanForAccessoryWithIdentifier:(id)arg1;
 - (void)_performTimedConnectionRequestForIdentifier:(id)arg1;
 - (void)_performTimedScanForIdentifiers:(id)arg1 workQueue:(id)arg2 withCompletion:(id)arg3;
@@ -58,7 +58,7 @@
 - (void)_removeIdentifiersForReachabilityScan;
 - (void)_removeLostAccessoryServers;
 - (void)_setupLostAccessoryServerTimer;
-- (bool)_shouldCreateHAPAccessoryServerWithIdentifier:(id)arg1;
+- (BOOL)_shouldCreateHAPAccessoryServerWithIdentifier:(id)arg1;
 - (void)_startDiscoveringAccessoryServers;
 - (void)_startScanningForPairingPeers;
 - (void)_stopActiveScan;
@@ -77,7 +77,7 @@
 - (id)discoveredPeripheralsWithAccessories;
 - (id)identifersWithReachabilityScanTuples;
 - (id)initWithQueue:(id)arg1;
-- (bool)isPerformingGeneralScan;
+- (BOOL)isPerformingGeneralScan;
 - (id)lostAccessoryServerTimer;
 - (id)peripheralsWithConnectionRequestTuples;
 - (id)powerOnCentralManagerCompletions;
@@ -90,7 +90,7 @@
 - (void)setDiscoveredPeripheralsWithAccessories:(id)arg1;
 - (void)setIdentifersWithReachabilityScanTuples:(id)arg1;
 - (void)setLostAccessoryServerTimer:(id)arg1;
-- (void)setPerformingGeneralScan:(bool)arg1;
+- (void)setPerformingGeneralScan:(BOOL)arg1;
 - (void)setPeripheralsWithConnectionRequestTuples:(id)arg1;
 - (void)setPowerOnCentralManagerCompletions:(id)arg1;
 - (void)setReachabilityCompletion:(id)arg1;

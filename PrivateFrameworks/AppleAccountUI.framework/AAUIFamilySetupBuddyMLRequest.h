@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)iTunesAccount;
 - (id)inviteCode;
-- (bool)isUserInitiated;
+- (BOOL)isUserInitiated;
 - (void)setInviteCode:(id)arg1;
 - (void)setiTunesAccount:(id)arg1;
 - (id)urlRequest;

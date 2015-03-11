@@ -3,12 +3,12 @@
  */
 
 @interface UIAccessibilityLegacyCustomAction : UIAccessibilityCustomAction {
-    unsigned long long _actionIndex;
+    unsigned int _actionIndex;
 }
 
-@property unsigned long long actionIndex;
+@property unsigned int actionIndex;
 
-- (unsigned long long)actionIndex;
-- (void)setActionIndex:(unsigned long long)arg1;
+- (unsigned int)actionIndex;
+- (void)setActionIndex:(unsigned int)arg1;
 
 @end

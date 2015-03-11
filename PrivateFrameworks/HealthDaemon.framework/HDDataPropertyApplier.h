@@ -15,7 +15,7 @@
     NSArray *_propertyOrder;
     NSDictionary *_propertySetters;
     NSMutableDictionary *_sourceByPersistentIDCache;
-    unsigned long long _sourcePropertyIndex;
+    unsigned int _sourcePropertyIndex;
 }
 
 @property(copy,readonly) id authorizationFilter;
@@ -24,7 +24,7 @@
 @property(copy,readonly) NSArray * propertyOrder;
 @property(copy,readonly) NSDictionary * propertySetters;
 @property(retain) NSMutableDictionary * sourceByPersistentIDCache;
-@property unsigned long long sourcePropertyIndex;
+@property unsigned int sourcePropertyIndex;
 
 - (void).cxx_destruct;
 - (id)_sourceForPersistentID:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
@@ -38,8 +38,8 @@
 - (id)propertySetters;
 - (void)setMetadataValueStatement:(id)arg1;
 - (void)setSourceByPersistentIDCache:(id)arg1;
-- (void)setSourcePropertyIndex:(unsigned long long)arg1;
+- (void)setSourcePropertyIndex:(unsigned int)arg1;
 - (id)sourceByPersistentIDCache;
-- (unsigned long long)sourcePropertyIndex;
+- (unsigned int)sourcePropertyIndex;
 
 @end

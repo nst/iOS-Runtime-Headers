@@ -14,12 +14,12 @@
 @property(retain,readonly) UILabel * contentLabel;
 @property(retain,readonly) UIView * styledSeparatorView;
 
-+ (double)heightForWidth:(double)arg1;
++ (float)heightForWidth:(float)arg1;
 
 - (id)addCommentButton;
 - (id)contentLabel;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setupContent;
 - (id)styledSeparatorView;

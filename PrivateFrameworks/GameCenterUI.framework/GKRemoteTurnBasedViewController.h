@@ -12,13 +12,13 @@
 @property GKTurnBasedMatchmakerViewController * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) GKGame * game;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
-- (bool)_dismissSelfAfterGettingShouldFinish;
+- (BOOL)_dismissSelfAfterGettingShouldFinish;
 - (void)dealloc;
 - (id)delegate;
 - (void)finishWithError:(id)arg1;
@@ -27,7 +27,7 @@
 - (void)remoteViewControllerIsCanceling;
 - (void)setDelegate:(id)arg1;
 - (void)setMatchRequestInternal:(id)arg1;
-- (void)setShowExistingMatches:(bool)arg1;
+- (void)setShowExistingMatches:(BOOL)arg1;
 - (void)setupRemoteView;
 
 @end

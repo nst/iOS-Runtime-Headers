@@ -17,13 +17,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (id)serviceVersionAtIndex:(unsigned long long)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (id)serviceVersionAtIndex:(unsigned int)arg1;
 - (id)serviceVersions;
-- (unsigned long long)serviceVersionsCount;
+- (unsigned int)serviceVersionsCount;
 - (void)setServiceVersions:(id)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -6,12 +6,12 @@
 
 @interface SWSyncHost : NSObject {
     NSString *_hostName;
-    bool_secure;
+    BOOL _secure;
 }
 
 @property(readonly) NSString * hostName;
 @property(readonly) NSString * scheme;
-@property(getter=isSecure) bool secure;
+@property(getter=isSecure) BOOL secure;
 
 + (id)developmentSyncHost;
 + (id)productionLandingPageHost;
@@ -22,11 +22,11 @@
 - (id)generateTokenServiceURL;
 - (id)getPINStatusServiceURL;
 - (id)hostName;
-- (id)initWithHostName:(id)arg1 secure:(bool)arg2;
-- (bool)isSecure;
+- (id)initWithHostName:(id)arg1 secure:(BOOL)arg2;
+- (BOOL)isSecure;
 - (id)loginURLForToken:(id)arg1;
 - (id)scheme;
-- (void)setSecure:(bool)arg1;
+- (void)setSecure:(BOOL)arg1;
 - (id)syncCompleteServiceURL;
 - (id)syncServiceURL;
 

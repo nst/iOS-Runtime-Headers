@@ -16,7 +16,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) NSString * featureName;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SKUINavigationDocumentController * navigationDocumentController;
 @property(readonly) Class superclass;
 

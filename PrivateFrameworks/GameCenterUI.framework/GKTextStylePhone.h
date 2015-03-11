@@ -5,8 +5,8 @@
 @interface GKTextStylePhone : GKTextStyle {
 }
 
-+ (double)bubbleTextScale;
-+ (double)standardFontSize;
++ (float)bubbleTextScale;
++ (float)standardFontSize;
 
 - (id)bubbleHeadline;
 - (id)bubbleText;

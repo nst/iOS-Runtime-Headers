@@ -6,20 +6,20 @@
 
 @interface PSSystemPolicyForApp : NSObject {
     NSString *_bundleIdentifier;
-    unsigned long long _policyOptions;
-    bool_forcePolicyOptions;
+    BOOL _forcePolicyOptions;
+    unsigned int _policyOptions;
 }
 
 @property(copy) NSString * bundleIdentifier;
 
-+ (bool)isServiceRestricted:(id)arg1;
++ (BOOL)isServiceRestricted:(id)arg1;
 
-- (bool)_isBackgroundAppRefreshRestricted;
-- (bool)_isCellularDataRestricted;
-- (bool)_isLocationServicesRestricted;
+- (BOOL)_isBackgroundAppRefreshRestricted;
+- (BOOL)_isCellularDataRestricted;
+- (BOOL)_isLocationServicesRestricted;
 - (id)_privacyAccessForService:(struct __CFString { }*)arg1;
 - (id)_sectionInfo;
-- (bool)_supportsBackgroundAppRefresh;
+- (BOOL)_supportsBackgroundAppRefresh;
 - (id)appCellularDataEnabledForSpecifier:(id)arg1;
 - (id)authLevelStringForStatus:(int)arg1;
 - (id)backgroundAppRefreshSpecifier;
@@ -29,7 +29,7 @@
 - (id)dataUsageWorkspaceInfo;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)isBackgroundRefreshEnabled:(id)arg1;
-- (bool)isCellularBundleID:(id)arg1;
+- (BOOL)isCellularBundleID:(id)arg1;
 - (id)locationServicesSpecifier;
 - (id)locationStatus:(id)arg1;
 - (id)notificationSpecifier;
@@ -41,6 +41,6 @@
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setPrivacyAccess:(id)arg1 forSpecifier:(id)arg2;
 - (id)specifiers;
-- (id)specifiersForPolicyOptions:(unsigned long long)arg1 force:(bool)arg2;
+- (id)specifiersForPolicyOptions:(unsigned int)arg1 force:(BOOL)arg2;
 
 @end

@@ -11,7 +11,7 @@
 @property(readonly) double speed;
 @property(readonly) NSDate * timestamp;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

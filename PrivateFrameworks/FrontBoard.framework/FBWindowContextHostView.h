@@ -9,42 +9,42 @@
     FBWindowContextHostViewContentLayerDelegate *_contentLayerDelegate;
     FBWindowContextManager *_contextManager;
     NSMutableOrderedSet *_contexts;
+    BOOL _counteractUIScreenJail;
     <FBWindowContextHostViewDelegate> *_delegate;
     NSMutableSet *_hiddenContexts;
     NSMutableArray *_layerHosts;
     FBScene *_scene;
     UIScreen *_screen;
-    bool_counteractUIScreenJail;
 }
 
 @property(retain) FBWindowContextManager * contextManager;
 @property(copy,readonly) NSString * debugDescription;
 @property <FBWindowContextHostViewDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSSet * hiddenContexts;
 @property(retain,readonly) FBScene * scene;
 @property(readonly) Class superclass;
 
 - (void)_adjustLayerFrameAndTransform:(id)arg1;
-- (id)_hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
+- (id)_hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
 - (void)_noteHostingStatusChanged;
 - (id)contextManager;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (bool)hasContent;
+- (BOOL)hasContent;
 - (id)hiddenContexts;
 - (id)init;
 - (id)initWithScene:(id)arg1;
-- (bool)isHosting;
+- (BOOL)isHosting;
 - (id)scene;
 - (void)sceneDidChangeBounds:(id)arg1;
 - (void)setContextManager:(id)arg1;
-- (void)setDebug:(bool)arg1;
+- (void)setDebug:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHiddenContexts:(id)arg1;
 - (id)window;
-- (void)windowContextManager:(id)arg1 didRepositionContext:(id)arg2 from:(unsigned long long)arg3 to:(unsigned long long)arg4;
+- (void)windowContextManager:(id)arg1 didRepositionContext:(id)arg2 from:(unsigned int)arg3 to:(unsigned int)arg4;
 
 @end

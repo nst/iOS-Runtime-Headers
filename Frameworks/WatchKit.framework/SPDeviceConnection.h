@@ -5,17 +5,17 @@
 @class <SPDeviceConnectionDelegate>, NSHashTable, NSString, NSXPCConnection;
 
 @interface SPDeviceConnection : NSObject <SPLocalApplicationProtocol> {
+    BOOL _connectionIsValid;
     <SPDeviceConnectionDelegate> *_delegate;
     NSHashTable *_observers;
     NSXPCConnection *_serverConnection;
-    bool_connectionIsValid;
 }
 
-@property bool connectionIsValid;
+@property BOOL connectionIsValid;
 @property(copy,readonly) NSString * debugDescription;
 @property <SPDeviceConnectionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSHashTable * observers;
 @property(retain) NSXPCConnection * serverConnection;
 @property(readonly) Class superclass;
@@ -27,7 +27,7 @@
 - (void)_enumerateObserversSafely:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)cancelPendingInstallations;
-- (bool)connectionIsValid;
+- (BOOL)connectionIsValid;
 - (void)createXPCConnection;
 - (id)delegate;
 - (void)fetchApplicationWithContainingApplicationBundleID:(id)arg1 completion:(id)arg2;
@@ -48,12 +48,12 @@
 - (void)removeObserver:(id)arg1;
 - (id)serverConnection;
 - (void)setAlwaysInstall:(id)arg1;
-- (void)setConnectionIsValid:(bool)arg1;
+- (void)setConnectionIsValid:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLogLevel:(id)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setServerConnection:(id)arg1;
-- (void)showUserNotification:(long long)arg1 bundleID:(id)arg2;
+- (void)showUserNotification:(int)arg1 bundleID:(id)arg2;
 - (void)wakeExtensionForWatchApp:(id)arg1;
 
 @end

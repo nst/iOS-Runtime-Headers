@@ -12,6 +12,6 @@
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)init;
-- (bool)supportsVersion:(id)arg1;
+- (BOOL)supportsVersion:(id)arg1;
 
 @end

@@ -30,7 +30,7 @@
 @property(retain) <SPRemoteInterfaceDataDelegateProtocol> * dataDelegate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSMutableDictionary * interfaceControllers;
 @property(retain) NSObject<OS_dispatch_queue> * interfaceControllersAccessQueue;
 @property(retain) NSMutableDictionary * interfaceControllersOwners;
@@ -52,7 +52,7 @@
 + (void)controller:(id)arg1 presentInterfaceControllers:(id)arg2 contexts:(id)arg3;
 + (void)controller:(id)arg1 presentTextInputControllerWithSuggestions:(id)arg2 allowedInputMode:(id)arg3 completion:(id)arg4;
 + (void)controller:(id)arg1 pushInterfaceController:(id)arg2 context:(id)arg3;
-+ (id)controller:(id)arg1 setupProperties:(id)arg2 viewControllerID:(id)arg3 tableIndex:(long long)arg4 rowIndex:(long long)arg5 classForType:(int (*)())arg6;
++ (id)controller:(id)arg1 setupProperties:(id)arg2 viewControllerID:(id)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5 classForType:(int (*)())arg6;
 + (void)controllerBecomeCurrentPage:(id)arg1;
 + (void)controllerDismiss:(id)arg1;
 + (void)controllerDismissTextInputController:(id)arg1;
@@ -60,9 +60,9 @@
 + (void)controllerPopToRoot:(id)arg1;
 + (void)handleEvent:(id)arg1;
 + (void)insertPageControllerAtIndexes:(id)arg1 withNames:(id)arg2 contexts:(id)arg3;
-+ (void)movePageControllerAtIndex:(long long)arg1 toIndex:(long long)arg2;
-+ (void)notificationController:(id)arg1 showNotificationInterfaceType:(long long)arg2;
-+ (bool)openParentApplication:(id)arg1 reply:(id)arg2;
++ (void)movePageControllerAtIndex:(int)arg1 toIndex:(int)arg2;
++ (void)notificationController:(id)arg1 showNotificationInterfaceType:(int)arg2;
++ (BOOL)openParentApplication:(id)arg1 reply:(id)arg2;
 + (void)reloadRootControllersWithNames:(id)arg1 contexts:(id)arg2;
 + (void)removePageControllerAtIndexes:(id)arg1;
 + (void)sendCacheRequest:(id)arg1;
@@ -77,12 +77,12 @@
 - (void)_callDidDeactivate;
 - (void)_deregisterInterfaceControllerID:(id)arg1;
 - (void)_dumpInterfaceDictionary;
-- (void)_fillDataWithRandom:(id)arg1 length:(long long)arg2;
+- (void)_fillDataWithRandom:(id)arg1 length:(int)arg2;
 - (id)_interfaceControllerClientIDForControllerID:(id)arg1;
 - (id)_interfaceControllerID:(id)arg1;
 - (id)_interfaceControllerIDsForClientID:(id)arg1;
 - (id)_interfaceControllerWithID:(id)arg1;
-- (void)_registerInterfaceController:(id)arg1 interfaceControllerID:(id)arg2 interfaceControllerClientID:(id)arg3 applicationRootController:(bool)arg4;
+- (void)_registerInterfaceController:(id)arg1 interfaceControllerID:(id)arg2 interfaceControllerClientID:(id)arg3 applicationRootController:(BOOL)arg4;
 - (void)_sendOpenParentApplicationRequest;
 - (id)_setupSignal:(int)arg1 handler:(id)arg2;
 - (void)_setupSignalHandlers;
@@ -114,10 +114,10 @@
 - (id)interfaceControllersAccessQueue;
 - (id)interfaceControllersOwners;
 - (id)interfaceCreationContextForID:(id)arg1;
-- (void)movePageControllerAtIndex:(long long)arg1 toIndex:(long long)arg2;
+- (void)movePageControllerAtIndex:(int)arg1 toIndex:(int)arg2;
 - (id)navigatingViewControllerID;
-- (void)notificationController:(id)arg1 showNotificationInterfaceType:(long long)arg2;
-- (bool)openParentApplication:(id)arg1 reply:(id)arg2;
+- (void)notificationController:(id)arg1 showNotificationInterfaceType:(int)arg2;
+- (BOOL)openParentApplication:(id)arg1 reply:(id)arg2;
 - (id)openParentRequests;
 - (void)receiveData:(id)arg1 fromIdentifier:(id)arg2;
 - (void)receiveProtoData:(id)arg1 fromIdentifier:(id)arg2;
@@ -129,7 +129,7 @@
 - (void)sendCacheRequestMessage:(id)arg1;
 - (void)sendComplicationObject:(id)arg1;
 - (void)sendPlist:(id)arg1 clientIdentifiers:(id)arg2;
-- (void)sendTimingInfo:(id)arg1 clientIdentifiers:(id)arg2 index:(long long)arg3;
+- (void)sendTimingInfo:(id)arg1 clientIdentifiers:(id)arg2 index:(int)arg3;
 - (void)sendWillActivateReplyForController:(id)arg1;
 - (void)setActiveComplicationsConnections:(id)arg1;
 - (void)setDataDelegate:(id)arg1;

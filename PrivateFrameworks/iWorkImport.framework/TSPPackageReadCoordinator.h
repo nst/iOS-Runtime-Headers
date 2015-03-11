@@ -12,7 +12,7 @@
                     struct __hash_node<std::__1::pair<const long long, bool>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -23,7 +23,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, bool>, TSP::IdentifierHash, true> > { 
-                unsigned long long __first_; 
+                unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, bool>, std::__1::equal_to<const long long>, true> > { 
                 float __first_; 
@@ -36,7 +36,7 @@
                     struct __hash_node<std::__1::pair<const long long, bool>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -47,17 +47,19 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, bool>, TSP::IdentifierHash, true> > { 
-                unsigned long long __first_; 
+                unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, bool>, std::__1::equal_to<const long long>, true> > { 
                 float __first_; 
             } __p3_; 
         } __table_; 
+    BOOL _areExternalDataReferencesAllowed;
     TSPPackageMetadata *_cachedMetadata;
     NSObject<OS_dispatch_group> *_completionGroup;
     NSObject<OS_dispatch_queue> *_componentQueue;
     NSMutableArray *_componentsToUpgrade;
     TSPObjectContext *_context;
+    BOOL _didRequireUpgrade;
     TSPObject *_documentObject;
     TSPDocumentResourceDataProvider *_documentResourceDataProvider;
     TSPDocumentRevision *_documentRevision;
@@ -72,24 +74,22 @@
     TSPPackage *_package;
     NSURL *_packageURL;
     TSPPersistedObjectUUIDMap *_persistedUUIDMap;
-    long long _preferredPackageType;
+    int _preferredPackageType;
     NSObject<OS_dispatch_queue> *_readCompletionQueue;
     } _readExternalObjects;
     } _readIdentifiers;
     unsigned long long _readVersion;
     unsigned long long _saveToken;
     unsigned long long _writeVersion;
-    bool_areExternalDataReferencesAllowed;
-    bool_didRequireUpgrade;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) bool didRequireUpgrade;
+@property(readonly) BOOL didRequireUpgrade;
 @property(readonly) TSPDocumentRevision * documentRevision;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool isReadingFromDocument;
-@property(readonly) long long preferredPackageType;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL isReadingFromDocument;
+@property(readonly) int preferredPackageType;
 @property(readonly) unsigned long long readVersion;
 @property(readonly) unsigned long long saveToken;
 @property(readonly) Class superclass;
@@ -102,39 +102,39 @@
 - (void)didReadMetadata:(id)arg1;
 - (void)didReadObjects:(id)arg1 forComponent:(id)arg2 packageIdentifier:(unsigned char)arg3;
 - (void)didReferenceExternalObject:(id)arg1 withIdentifier:(long long)arg2;
-- (bool)didRequireUpgrade;
+- (BOOL)didRequireUpgrade;
 - (void)didUpdateLazyReferenceDelegate:(id)arg1;
 - (id)documentRevision;
-- (bool)endReading;
+- (BOOL)endReading;
 - (id)error;
-- (id)externalObjectForIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isReadFinished:(bool)arg3;
+- (id)externalObjectForIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isReadFinished:(BOOL)arg3;
 - (unsigned long long)fileFormatVersion;
 - (id)init;
-- (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 documentResourceDataProvider:(id)arg5 areExternalDataReferencesAllowed:(bool)arg6;
-- (bool)isReadingFromDocument;
-- (long long)preferredPackageType;
+- (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 documentResourceDataProvider:(id)arg5 areExternalDataReferencesAllowed:(BOOL)arg6;
+- (BOOL)isReadingFromDocument;
+- (int)preferredPackageType;
 - (void)prepareForFullDocumentUpgrade;
 - (void)prepareForFullDocumentUpgradeImpl;
-- (void)prepareToReadComponentWithIdentifier:(long long)arg1 forObjectIdentifier:(long long)arg2 isWeakReference:(bool)arg3 queue:(id)arg4 completion:(id)arg5;
+- (void)prepareToReadComponentWithIdentifier:(long long)arg1 forObjectIdentifier:(long long)arg2 isWeakReference:(BOOL)arg3 queue:(id)arg4 completion:(id)arg5;
 - (void)processMetadata:(id)arg1;
-- (void)readComponent:(id)arg1 additionalComponents:(id)arg2 requireUpgrade:(bool)arg3 completionQueue:(id)arg4 completion:(id)arg5;
+- (void)readComponent:(id)arg1 additionalComponents:(id)arg2 requireUpgrade:(BOOL)arg3 completionQueue:(id)arg4 completion:(id)arg5;
 - (void)readComponent:(id)arg1 completionQueue:(id)arg2 completion:(id)arg3;
 - (void)readComponentAsync:(id)arg1;
-- (bool)readComponentIfNeededAsync:(id)arg1;
-- (void)readExternalReferenceComponentIfNeededAsyncForObjectIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isWeak:(bool)arg3 fromComponent:(id)arg4;
+- (BOOL)readComponentIfNeededAsync:(id)arg1;
+- (void)readExternalReferenceComponentIfNeededAsyncForObjectIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isWeak:(BOOL)arg3 fromComponent:(id)arg4;
 - (void)readPackageMetadataWithComponent:(id)arg1 completionQueue:(id)arg2 completion:(id)arg3;
 - (id)readPackageMetadataWithError:(id*)arg1;
 - (void)readRootObjectWithCompletionQueue:(id)arg1 completion:(id)arg2;
 - (unsigned long long)readVersion;
-- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(bool)arg4 allowUnknownObject:(bool)arg5 fromParentObject:(id)arg6 completion:(id)arg7;
-- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(bool)arg3 allowUnknownObject:(bool)arg4 fromParentObject:(id)arg5 completion:(id)arg6;
+- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(BOOL)arg4 allowUnknownObject:(BOOL)arg5 fromParentObject:(id)arg6 completion:(id)arg7;
+- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4 fromParentObject:(id)arg5 completion:(id)arg6;
 - (void)reader:(id)arg1 didResetObjectIdentifierForObject:(id)arg2 originalObjectIdentifier:(long long)arg3;
 - (void)reader:(id)arg1 didResetObjectUUID:(id)arg2 forObjectIdentifier:(long long)arg3 originalObjectUUID:(id)arg4;
 - (id)reader:(id)arg1 wantsDataForIdentifier:(long long)arg2;
-- (bool)requestDocumentResourcesUsingDataProvider:(id)arg1;
+- (BOOL)requestDocumentResourcesUsingDataProvider:(id)arg1;
 - (unsigned long long)saveToken;
 - (void)setError:(id)arg1;
-- (id)unarchivedObjectForIdentifier:(long long)arg1 isReadFinished:(bool)arg2;
+- (id)unarchivedObjectForIdentifier:(long long)arg1 isReadFinished:(BOOL)arg2;
 - (void)updateObjectContextForSuccessfulRead;
 - (unsigned long long)writeVersion;
 

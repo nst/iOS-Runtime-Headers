@@ -11,11 +11,11 @@
 
 + (void)initialize;
 
-- (int)_setupSampleBufferProcessor;
+- (long)_setupSampleBufferProcessor;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
-- (id)initWithSensorIDDict:(id)arg1 moduleInfo:(id)arg2 requiredFormat:(id)arg3 forPanorama:(bool)arg4 motionAttachmentsSource:(int)arg5;
+- (id)initWithSensorIDDict:(id)arg1 moduleInfo:(id)arg2 requiredFormat:(id)arg3 forPanorama:(BOOL)arg4 motionAttachmentsSource:(int)arg5;
 - (id)nodeSubType;
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;

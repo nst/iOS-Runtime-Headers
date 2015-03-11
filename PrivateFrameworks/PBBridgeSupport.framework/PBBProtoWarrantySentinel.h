@@ -12,25 +12,25 @@
     NSString *_appleLocale;
     NSString *_deviceName;
     } _has;
-    bool_removeSentinel;
-    bool_sentinelExists;
+    BOOL _removeSentinel;
+    BOOL _sentinelExists;
 }
 
 @property(retain) NSMutableArray * appleLanguages;
 @property(retain) NSString * appleLocale;
 @property(retain) NSString * deviceName;
-@property(readonly) bool hasAppleLocale;
-@property(readonly) bool hasDeviceName;
-@property bool hasRemoveSentinel;
-@property bool hasSentinelExists;
-@property bool removeSentinel;
-@property bool sentinelExists;
+@property(readonly) BOOL hasAppleLocale;
+@property(readonly) BOOL hasDeviceName;
+@property BOOL hasRemoveSentinel;
+@property BOOL hasSentinelExists;
+@property BOOL removeSentinel;
+@property BOOL sentinelExists;
 
 - (void).cxx_destruct;
 - (void)addAppleLanguages:(id)arg1;
 - (id)appleLanguages;
-- (id)appleLanguagesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)appleLanguagesCount;
+- (id)appleLanguagesAtIndex:(unsigned int)arg1;
+- (unsigned int)appleLanguagesCount;
 - (id)appleLocale;
 - (void)clearAppleLanguages;
 - (void)copyTo:(id)arg1;
@@ -38,23 +38,23 @@
 - (id)description;
 - (id)deviceName;
 - (id)dictionaryRepresentation;
-- (bool)hasAppleLocale;
-- (bool)hasDeviceName;
-- (bool)hasRemoveSentinel;
-- (bool)hasSentinelExists;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasAppleLocale;
+- (BOOL)hasDeviceName;
+- (BOOL)hasRemoveSentinel;
+- (BOOL)hasSentinelExists;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (bool)removeSentinel;
-- (bool)sentinelExists;
+- (BOOL)readFrom:(id)arg1;
+- (BOOL)removeSentinel;
+- (BOOL)sentinelExists;
 - (void)setAppleLanguages:(id)arg1;
 - (void)setAppleLocale:(id)arg1;
 - (void)setDeviceName:(id)arg1;
-- (void)setHasRemoveSentinel:(bool)arg1;
-- (void)setHasSentinelExists:(bool)arg1;
-- (void)setRemoveSentinel:(bool)arg1;
-- (void)setSentinelExists:(bool)arg1;
+- (void)setHasRemoveSentinel:(BOOL)arg1;
+- (void)setHasSentinelExists:(BOOL)arg1;
+- (void)setRemoveSentinel:(BOOL)arg1;
+- (void)setSentinelExists:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -16,7 +16,7 @@
 - (void)_scheduleSessionExpirationWithIdentifier:(int)arg1 timeout:(int)arg2;
 - (int)_uniqueSessionIdentifier;
 - (void)_updatePersistedSessionIdentifiers;
-- (void)beginSession:(id)arg1 timeout:(int)arg2 shouldTakePowerAssertion:(bool)arg3 completionHandler:(id)arg4;
+- (void)beginSession:(id)arg1 timeout:(int)arg2 shouldTakePowerAssertion:(BOOL)arg3 completionHandler:(id)arg4;
 - (id)delegate;
 - (void)endSessionWithIdentifier:(int)arg1 completionHandler:(id)arg2;
 - (int)identifierForSession:(id)arg1;

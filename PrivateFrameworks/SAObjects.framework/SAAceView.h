@@ -11,7 +11,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy) NSNumber * deferredRendering;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSNumber * listenAfterSpeaking;
 @property(copy) NSString * speakableText;
 @property(readonly) Class superclass;

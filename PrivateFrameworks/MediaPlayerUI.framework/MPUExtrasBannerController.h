@@ -15,7 +15,7 @@
     UIView *_maskView;
     UIScrollView *_trackingScrollView;
     UIImageView *_vignetteImageView;
-    unsigned long long _vignetteType;
+    unsigned int _vignetteType;
 }
 
 @property(readonly) NSLayoutConstraint * anchorConstraint;
@@ -28,7 +28,7 @@
 @property(retain) UIView * maskView;
 @property UIScrollView * trackingScrollView;
 @property(retain) UIImageView * vignetteImageView;
-@property unsigned long long vignetteType;
+@property unsigned int vignetteType;
 
 - (void).cxx_destruct;
 - (void)_configureBanner;
@@ -52,9 +52,9 @@
 - (void)setMaskView:(id)arg1;
 - (void)setTrackingScrollView:(id)arg1;
 - (void)setVignetteImageView:(id)arg1;
-- (void)setVignetteType:(unsigned long long)arg1;
+- (void)setVignetteType:(unsigned int)arg1;
 - (id)trackingScrollView;
 - (id)vignetteImageView;
-- (unsigned long long)vignetteType;
+- (unsigned int)vignetteType;
 
 @end

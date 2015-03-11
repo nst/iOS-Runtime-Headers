@@ -6,17 +6,17 @@
 }
 
 - (id)defaultDataFileName;
-- (bool)drawValueLabelsForZero;
+- (BOOL)drawValueLabelsForZero;
 - (id)genericToSpecificPropertyMap;
-- (double)maxDepthRatio;
+- (float)maxDepthRatio;
 - (Class)presetImagerClass;
-- (bool)reverseSingleColumnLegendOrder;
-- (double)sageMaxDepthRatio;
+- (BOOL)reverseSingleColumnLegendOrder;
+- (float)sageMaxDepthRatio;
 - (int)stackingSignRule;
 - (id)supportedAxisScales;
-- (bool)supportsCategoryAxisSeriesNames;
-- (bool)supportsSeriesLabels;
-- (bool)supportsTrendLines;
+- (BOOL)supportsCategoryAxisSeriesNames;
+- (BOOL)supportsSeriesLabels;
+- (BOOL)supportsTrendLines;
 - (id)userInterfaceName;
 - (Class)valueAxisClassForID:(id)arg1 scale:(int)arg2;
 

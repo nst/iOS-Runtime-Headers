@@ -7,9 +7,9 @@
 @interface AVCaptureFigAudioDevice_FigRecorder : AVCaptureDevice_FigRecorder {
     struct OpaqueCMClock { } *_deviceClock;
     NSDictionary *_deviceProperties;
+    BOOL _isConnected;
+    BOOL _levelMeteringEnabled;
     NSString *_localizedName;
-    bool_isConnected;
-    bool_levelMeteringEnabled;
 }
 
 + (id)_devices;
@@ -19,17 +19,17 @@
 - (void)dealloc;
 - (struct OpaqueCMClock { }*)deviceClock;
 - (id)devicePropertiesDictionary;
-- (bool)hasMediaType:(id)arg1;
+- (BOOL)hasMediaType:(id)arg1;
 - (id)init;
 - (id)initWithProperties:(id)arg1;
-- (bool)isConnected;
-- (bool)isInUseByAnotherApplication;
-- (bool)isKindOfClass:(Class)arg1;
+- (BOOL)isConnected;
+- (BOOL)isInUseByAnotherApplication;
+- (BOOL)isKindOfClass:(Class)arg1;
 - (id)localizedName;
 - (id)modelID;
-- (bool)startUsingDevice:(id*)arg1;
+- (BOOL)startUsingDevice:(id*)arg1;
 - (void)stopUsingDevice;
-- (bool)supportsAVCaptureSessionPreset:(id)arg1;
+- (BOOL)supportsAVCaptureSessionPreset:(id)arg1;
 - (id)uniqueID;
 
 @end

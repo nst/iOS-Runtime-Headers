@@ -17,8 +17,8 @@
 - (void)dealloc;
 - (id)globalIdentifierForChat:(id)arg1;
 - (id)init;
-- (bool)isMutedChat:(id)arg1;
-- (bool)isMutedChatIdentifier:(id)arg1;
+- (BOOL)isMutedChat:(id)arg1;
+- (BOOL)isMutedChatIdentifier:(id)arg1;
 - (void)muteChat:(id)arg1 untilDate:(id)arg2;
 - (void)performMigrationIfNecessary;
 - (void)setSyncManager:(id)arg1;

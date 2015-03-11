@@ -6,34 +6,34 @@
 
 @interface TIPreferencesController : NSObject {
     NSTimer *_synchronizePreferencesTimer;
-    booldontSynchronizePreferences;
-    boolisInternalInstall;
+    BOOL dontSynchronizePreferences;
+    BOOL isInternalInstall;
 }
 
-@property bool dontSynchronizePreferences;
-@property bool isInternalInstall;
+@property BOOL dontSynchronizePreferences;
+@property BOOL isInternalInstall;
 
 + (id)sharedPreferencesController;
 
-- (bool)boolForKey:(int)arg1;
+- (BOOL)boolForKey:(int)arg1;
 - (void)clearSynchronizePreferencesTimer;
 - (void)dealloc;
 - (id)defaultForKey:(int)arg1;
-- (struct { id x1; id x2; boolx3; boolx4; unsigned long long x5; int x6; }*)domainForType:(int)arg1;
-- (struct { id x1; id x2; boolx3; boolx4; unsigned long long x5; int x6; }*)domains;
-- (bool)dontSynchronizePreferences;
+- (struct { id x1; id x2; BOOL x3; BOOL x4; unsigned long long x5; int x6; }*)domainForType:(int)arg1;
+- (struct { id x1; id x2; BOOL x3; BOOL x4; unsigned long long x5; int x6; }*)domains;
+- (BOOL)dontSynchronizePreferences;
 - (id)init;
-- (bool)isInternalInstall;
-- (bool)isKeyLockedDown:(int)arg1;
+- (BOOL)isInternalInstall;
+- (BOOL)isKeyLockedDown:(int)arg1;
 - (void)managedKeyboardSettingDidChange:(id)arg1;
 - (struct { id x1; id x2; int x3; id x4; id x5; int x6; }*)preferences;
 - (void)preferencesChangedCallback:(id)arg1;
 - (void)releaseDontSynchronizePreferences;
-- (void)setAutocorrectionEnabled:(bool)arg1;
-- (void)setCheckSpellingEnabled:(bool)arg1;
-- (void)setDontSynchronizePreferences:(bool)arg1;
-- (void)setIsInternalInstall:(bool)arg1;
-- (void)setPredictionEnabled:(bool)arg1;
+- (void)setAutocorrectionEnabled:(BOOL)arg1;
+- (void)setCheckSpellingEnabled:(BOOL)arg1;
+- (void)setDontSynchronizePreferences:(BOOL)arg1;
+- (void)setIsInternalInstall:(BOOL)arg1;
+- (void)setPredictionEnabled:(BOOL)arg1;
 - (void)setValue:(id)arg1 forKey:(int)arg2;
 - (void)setValue:(id)arg1 forManagedKey:(int)arg2;
 - (void)synchronizePreferences;

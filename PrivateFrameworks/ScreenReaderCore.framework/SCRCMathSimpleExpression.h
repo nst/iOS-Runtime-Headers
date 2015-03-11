@@ -11,18 +11,18 @@
 @property(copy) NSString * content;
 
 - (id)_functionNames;
-- (bool)canBeUsedWithBase;
+- (BOOL)canBeUsedWithBase;
 - (id)content;
 - (void)dealloc;
 - (id)description;
-- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2;
+- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
-- (long long)integerValue;
-- (bool)isFunctionName;
-- (bool)isInteger;
-- (bool)isWordOrAbbreviation;
+- (int)integerValue;
+- (BOOL)isFunctionName;
+- (BOOL)isInteger;
+- (BOOL)isWordOrAbbreviation;
 - (id)latexMathModeDescription;
 - (void)setContent:(id)arg1;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(bool)arg2;
+- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
 
 @end

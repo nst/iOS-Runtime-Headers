@@ -3,22 +3,22 @@
  */
 
 @interface PKShapeLayerPathState : NSObject {
-    double _strokeEndT0;
-    double _strokeEndT1;
-    double _strokeStartT0;
-    double _strokeStartT1;
+    float _strokeEndT0;
+    float _strokeEndT1;
+    float _strokeStartT0;
+    float _strokeStartT1;
 }
 
 - (void)dealloc;
 - (id)init;
-- (id)initWithShapeLayer:(id)arg1 reverse:(bool)arg2;
+- (id)initWithShapeLayer:(id)arg1 reverse:(BOOL)arg2;
 - (id)initWithShapeLayer:(id)arg1;
-- (id)initWithStrokeStart:(double)arg1 strokeEnd:(double)arg2;
-- (id)initWithStrokeStartT0:(double)arg1 strokeStartT1:(double)arg2 strokeEndT0:(double)arg3 strokeEndT1:(double)arg4;
-- (double)progressForShapeLayer:(id)arg1;
-- (void)setProgress:(double)arg1 onShapeLayer:(id)arg2 withAnimationHandler:(id)arg3;
-- (void)setProgress:(double)arg1 onShapeLayer:(id)arg2;
-- (double)strokeEndAtProgress:(double)arg1;
-- (double)strokeStartAtProgress:(double)arg1;
+- (id)initWithStrokeStart:(float)arg1 strokeEnd:(float)arg2;
+- (id)initWithStrokeStartT0:(float)arg1 strokeStartT1:(float)arg2 strokeEndT0:(float)arg3 strokeEndT1:(float)arg4;
+- (float)progressForShapeLayer:(id)arg1;
+- (void)setProgress:(float)arg1 onShapeLayer:(id)arg2 withAnimationHandler:(id)arg3;
+- (void)setProgress:(float)arg1 onShapeLayer:(id)arg2;
+- (float)strokeEndAtProgress:(float)arg1;
+- (float)strokeStartAtProgress:(float)arg1;
 
 @end

@@ -9,13 +9,13 @@
 @class NSArray;
 
 @interface CKDFetchSharesOperation : CKDOperation {
+    BOOL _isFetchAllSharesOperation;
     id _shareFetchedProgressBlock;
     NSArray *_shareIDsToFetch;
     NSArray *_shares;
-    bool_isFetchAllSharesOperation;
 }
 
-@property bool isFetchAllSharesOperation;
+@property BOOL isFetchAllSharesOperation;
 @property(copy) id shareFetchedProgressBlock;
 @property(retain) NSArray * shareIDsToFetch;
 @property(retain) NSArray * shares;
@@ -24,9 +24,9 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleShareFetched:(id)arg1 withID:(id)arg2 responseCode:(id)arg3;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
-- (bool)isFetchAllSharesOperation;
+- (BOOL)isFetchAllSharesOperation;
 - (void)main;
-- (void)setIsFetchAllSharesOperation:(bool)arg1;
+- (void)setIsFetchAllSharesOperation:(BOOL)arg1;
 - (void)setShareFetchedProgressBlock:(id)arg1;
 - (void)setShareIDsToFetch:(id)arg1;
 - (void)setShares:(id)arg1;

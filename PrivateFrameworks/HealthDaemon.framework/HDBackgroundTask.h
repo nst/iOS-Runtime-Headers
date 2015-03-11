@@ -22,9 +22,9 @@
 - (void)setStartDate:(id)arg1;
 - (void)setUserContext:(id)arg1;
 - (id)startDate;
-- (bool)taskExpired;
-- (bool)taskSatisfied;
-- (bool)taskValid;
+- (BOOL)taskExpired;
+- (BOOL)taskSatisfied;
+- (BOOL)taskValid;
 - (id)userContext;
 
 @end

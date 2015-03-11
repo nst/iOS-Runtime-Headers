@@ -6,46 +6,46 @@
 
 @interface UIKBEdgeEffect : NSObject <UIKBRenderEffect> {
     NSString *_colorName;
-    unsigned long long _edges;
+    unsigned int _edges;
     UIKBGradient *_gradient;
-    double _inset;
-    double _opacity;
-    double _weight;
+    float _inset;
+    float _opacity;
+    float _weight;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property unsigned long long edges;
+@property unsigned int edges;
 @property(retain) UIKBGradient * gradient;
-@property(readonly) unsigned long long hash;
-@property double inset;
-@property(readonly) bool isValid;
-@property double opacity;
+@property(readonly) unsigned int hash;
+@property float inset;
+@property(readonly) BOOL isValid;
+@property float opacity;
 @property(readonly) SEL renderSelector;
-@property(readonly) bool renderUnder;
+@property(readonly) BOOL renderUnder;
 @property(readonly) Class superclass;
-@property double weight;
+@property float weight;
 
-+ (id)effectWithColor:(id)arg1 edges:(unsigned long long)arg2 inset:(double)arg3 weight:(double)arg4;
++ (id)effectWithColor:(id)arg1 edges:(unsigned int)arg2 inset:(float)arg3 weight:(float)arg4;
 
 - (struct CGColor { }*)CGColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)edges;
+- (unsigned int)edges;
 - (id)gradient;
-- (id)initWithColor:(id)arg1 edges:(unsigned long long)arg2 inset:(double)arg3 weight:(double)arg4;
-- (double)inset;
-- (bool)isEqual:(id)arg1;
-- (bool)isValid;
-- (double)opacity;
+- (id)initWithColor:(id)arg1 edges:(unsigned int)arg2 inset:(float)arg3 weight:(float)arg4;
+- (float)inset;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isValid;
+- (float)opacity;
 - (SEL)renderSelector;
-- (bool)renderUnder;
-- (void)setEdges:(unsigned long long)arg1;
+- (BOOL)renderUnder;
+- (void)setEdges:(unsigned int)arg1;
 - (void)setGradient:(id)arg1;
-- (void)setInset:(double)arg1;
-- (void)setOpacity:(double)arg1;
-- (void)setWeight:(double)arg1;
-- (double)weight;
+- (void)setInset:(float)arg1;
+- (void)setOpacity:(float)arg1;
+- (void)setWeight:(float)arg1;
+- (float)weight;
 
 @end

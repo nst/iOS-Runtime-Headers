@@ -15,7 +15,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setStartPlaying:(id)arg1;
 - (void)setStationUrl:(id)arg1;
 - (id)startPlaying;

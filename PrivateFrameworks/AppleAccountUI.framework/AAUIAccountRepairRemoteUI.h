@@ -15,29 +15,29 @@
     NSString *_agreeURL;
     NSDictionary *_cookieHeadersForRepairRequest;
     <AAUIAccountRepairRemoteUIDelegate> *_delegate;
+    BOOL _isModal;
     id _linkLoadCompletion;
     RUILoader *_loader;
     NSMutableArray *_objectModels;
     UIViewController *_originatingViewController;
     UINavigationController *_parentNavController;
     UIAlertView *_tcConfirmationAlert;
-    bool_isModal;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <AAUIAccountRepairRemoteUIDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addHeadersToRequest:(id)arg1;
 - (void)_cancelButtonTapped:(id)arg1;
-- (void)_cleanUpAndDismissWithSuccess:(bool)arg1;
+- (void)_cleanUpAndDismissWithSuccess:(BOOL)arg1;
 - (void)_cleanupRUILoader;
 - (void)_displayConnectionErrorAndDismiss;
-- (void)_popObjectModelAnimated:(bool)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)_popObjectModelAnimated:(BOOL)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)delegate;
 - (id)initWithAccount:(id)arg1 inStore:(id)arg2;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
@@ -46,9 +46,9 @@
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3 completion:(id)arg4;
 - (void)objectModelPressedBack:(id)arg1;
 - (id)parentViewControllerForObjectModel:(id)arg1;
-- (void)presentFromViewController:(id)arg1 modal:(bool)arg2;
+- (void)presentFromViewController:(id)arg1 modal:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
-- (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
+- (unsigned int)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 - (void)useCookieHeadersForInitialRequest:(id)arg1;
 
 @end

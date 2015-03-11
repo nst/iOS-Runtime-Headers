@@ -7,42 +7,42 @@
 @interface PLPhotoTileCloudPlaceholderView : UIView <PLTilePlaceholderView> {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     <PLPhotoTileCloudPlaceholderViewDelegate> *_delegate;
     } _imageRect;
+    BOOL _indicatorIsVisible;
     double _lastViewPhaseChangeDate;
     UIView *_loadingContainerView;
     UIButton *_loadingErrorButton;
     PLRoundProgressView *_loadingIndicatorView;
-    bool_indicatorIsVisible;
-    bool_showingError;
-    bool_showingLoading;
-    bool_toolbarVisible;
+    BOOL _showingError;
+    BOOL _showingLoading;
+    BOOL _toolbarVisible;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_retryDownload;
 - (void)dealloc;
-- (void)fadeOutSoonIfNeededAndRemoveFromSuperview:(bool)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)fadeOutSoonIfNeededAndRemoveFromSuperview:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (void)setImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setRetryDelegate:(id)arg1;
-- (void)setToolbarVisible:(bool)arg1;
+- (void)setToolbarVisible:(BOOL)arg1;
 - (void)showErrorIndicator;
 - (void)showLoadingIndicator;
 - (void)showLoadingIndicatorWhenReady;
-- (void)updateCloudDownloadProgress:(double)arg1;
+- (void)updateCloudDownloadProgress:(float)arg1;
 
 @end

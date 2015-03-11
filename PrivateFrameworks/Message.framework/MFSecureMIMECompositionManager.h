@@ -11,8 +11,9 @@
     MFError *_encryptionIdentityError;
     int _encryptionPolicy;
     int _encryptionStatus;
-    unsigned long long _encryptionStatusSemaphore;
+    unsigned int _encryptionStatusSemaphore;
     NSMutableDictionary *_errorsByRecipient;
+    BOOL _invalidated;
     NSLock *_lock;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableSet *_recipients;
@@ -22,8 +23,7 @@
     MFError *_signingIdentityError;
     int _signingPolicy;
     int _signingStatus;
-    unsigned long long _signingStatusSemaphore;
-    bool_invalidated;
+    unsigned int _signingStatusSemaphore;
 }
 
 @property <MFSecureMIMECompositionManagerDelegate> * delegate;
@@ -46,11 +46,11 @@
 - (void)_notifyDelegateSigningStatusDidChange:(int)arg1 identity:(struct __SecIdentity { }*)arg2 error:(id)arg3;
 - (void)_setEncryptionIdentityError_nts:(id)arg1;
 - (void)_setSigningIdentityError_nts:(id)arg1;
-- (bool)_shouldAllowSend_nts;
-- (bool)_shouldEncrypt_nts;
-- (bool)_shouldSign_nts;
-- (bool)_updateEncryptionStatus_nts;
-- (bool)_updateSigningStatus_nts;
+- (BOOL)_shouldAllowSend_nts;
+- (BOOL)_shouldEncrypt_nts;
+- (BOOL)_shouldSign_nts;
+- (BOOL)_updateEncryptionStatus_nts;
+- (BOOL)_updateSigningStatus_nts;
 - (void)addRecipients:(id)arg1;
 - (id)compositionSpecification;
 - (void)dealloc;
@@ -67,7 +67,7 @@
 - (id)sendingAddress;
 - (void)setDelegate:(id)arg1;
 - (void)setSendingAddress:(id)arg1;
-- (bool)shouldAllowSend;
+- (BOOL)shouldAllowSend;
 - (int)signingPolicy;
 - (int)signingStatus;
 

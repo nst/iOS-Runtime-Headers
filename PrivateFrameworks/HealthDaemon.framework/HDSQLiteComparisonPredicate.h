@@ -3,11 +3,11 @@
  */
 
 @interface HDSQLiteComparisonPredicate : HDSQLitePropertyPredicate <NSCopying> {
-    long long _comparisonType;
+    int _comparisonType;
     id _value;
 }
 
-@property(readonly) long long comparisonType;
+@property(readonly) int comparisonType;
 @property(readonly) id value;
 
 + (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
@@ -16,18 +16,18 @@
 + (id)predicateWithProperty:(id)arg1 lessThanOrEqualToValue:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 lessThanValue:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 notEqualToValue:(id)arg2;
-+ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparisonType:(long long)arg3;
++ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparisonType:(int)arg3;
 
 - (void).cxx_destruct;
 - (id)SQLForEntityClass:(Class)arg1;
 - (id)_comparisonTypeString;
 - (void)bindToStatement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
-- (long long)comparisonType;
+- (int)comparisonType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned long long)hash;
-- (bool)isCompatibleWithPredicate:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isCompatibleWithPredicate:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)value;
 
 @end

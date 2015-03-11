@@ -7,7 +7,7 @@
 
 + (id)compositionWithMediaObject:(id)arg1 subject:(id)arg2;
 
-- (bool)isSaveable;
-- (bool)isSendAnimated;
+- (BOOL)isSaveable;
+- (BOOL)isSendAnimated;
 
 @end

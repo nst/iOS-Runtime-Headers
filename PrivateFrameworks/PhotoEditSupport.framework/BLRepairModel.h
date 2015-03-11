@@ -12,10 +12,10 @@
 
 - (void)buildLayerStackWithAnalysisImage:(id)arg1 andRepairImage:(id)arg2;
 - (void)dealloc;
-- (bool)hasLayerStack;
-- (bool)hasRedeye;
-- (bool)hasRepair;
-- (bool)hasRepairOrRedeye;
+- (BOOL)hasLayerStack;
+- (BOOL)hasRedeye;
+- (BOOL)hasRepair;
+- (BOOL)hasRepairOrRedeye;
 - (id)imagePatchList;
 - (id)initWithAdjustmentsDictionary:(id)arg1;
 - (id)layerStack;

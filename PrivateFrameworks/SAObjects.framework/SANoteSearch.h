@@ -18,7 +18,7 @@
 - (id)encodedClassName;
 - (id)fromDate;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setContentQuery:(id)arg1;
 - (void)setFromDate:(id)arg1;
 - (void)setToDate:(id)arg1;

@@ -12,7 +12,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) <HDHealthDaemon> * healthDaemon;
 @property(retain) NSXPCListener * listener;
 @property(retain) NSMutableArray * servers;
@@ -23,7 +23,7 @@
 - (id)diagnosticDescription;
 - (id)healthDaemon;
 - (id)initWithHealthDaemon:(id)arg1;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)listener;
 - (id)serverWithClient:(id)arg1 error:(id*)arg2;
 - (id)servers;

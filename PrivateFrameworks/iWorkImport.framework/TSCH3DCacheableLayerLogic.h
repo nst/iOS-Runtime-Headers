@@ -5,6 +5,6 @@
 @interface TSCH3DCacheableLayerLogic : TSCH3DCacheTrackingLayerLogic {
 }
 
-+ (bool)cacheable;
++ (BOOL)cacheable;
 
 @end

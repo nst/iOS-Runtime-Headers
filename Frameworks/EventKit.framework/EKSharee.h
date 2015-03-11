@@ -13,7 +13,7 @@
 @property(copy) NSString * emailAddress;
 @property(copy) NSString * externalID;
 @property(copy) NSString * firstName;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * lastName;
 @property(copy) NSString * name;
 @property(readonly) EKCalendar * owner;
@@ -32,11 +32,11 @@
 - (id)emailAddress;
 - (id)externalID;
 - (id)firstName;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)lastName;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)name;

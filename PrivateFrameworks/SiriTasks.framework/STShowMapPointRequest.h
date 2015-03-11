@@ -5,21 +5,21 @@
 @class NSData;
 
 @interface STShowMapPointRequest : AFSiriRequest {
+    BOOL _isCurrentLocation;
     NSData *_placeData;
-    bool_isCurrentLocation;
 }
 
-@property bool isCurrentLocation;
+@property BOOL isCurrentLocation;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithPlaceData:(id)arg1;
 - (id)createResponse;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isCurrentLocation;
+- (BOOL)isCurrentLocation;
 - (id)mapPointData;
-- (void)setIsCurrentLocation:(bool)arg1;
+- (void)setIsCurrentLocation:(BOOL)arg1;
 
 @end

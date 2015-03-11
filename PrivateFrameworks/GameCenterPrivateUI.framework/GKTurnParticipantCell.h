@@ -8,25 +8,25 @@
     GKLabel *_bottomLabel;
     UIButton *_detailButton;
     SEL _detailPressedAction;
+    BOOL _isDetail;
     GKTurnBasedMatch *_match;
     GKTurnBasedParticipant *_participant;
     UIImageView *_statusImageView;
     GKContiguousContainerView *_textContainerView;
     GKLabel *_topLabel;
-    bool_isDetail;
 }
 
 @property(retain) GKLabel * bottomLabel;
 @property(retain) UIButton * detailButton;
 @property SEL detailPressedAction;
-@property bool isDetail;
+@property BOOL isDetail;
 @property(retain) GKTurnBasedMatch * match;
 @property(retain) GKTurnBasedParticipant * participant;
 @property(retain) UIImageView * statusImageView;
 @property(retain) GKContiguousContainerView * textContainerView;
 @property(retain) GKLabel * topLabel;
 
-+ (double)defaultRowHeight;
++ (float)defaultRowHeight;
 + (id)itemHeightList;
 + (void)registerCellClassesForCollectionView:(id)arg1;
 
@@ -39,15 +39,15 @@
 - (SEL)detailPressedAction;
 - (void)didUpdateModel;
 - (void)establishConstraints;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isDetail;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isDetail;
 - (id)match;
-- (bool)matchWantsLocalPlayerAttention;
+- (BOOL)matchWantsLocalPlayerAttention;
 - (id)participant;
 - (void)setBottomLabel:(id)arg1;
 - (void)setDetailButton:(id)arg1;
 - (void)setDetailPressedAction:(SEL)arg1;
-- (void)setIsDetail:(bool)arg1;
+- (void)setIsDetail:(BOOL)arg1;
 - (void)setMatch:(id)arg1;
 - (void)setParticipant:(id)arg1;
 - (void)setStatusImageView:(id)arg1;

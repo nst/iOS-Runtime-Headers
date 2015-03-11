@@ -4,18 +4,18 @@
 
 @interface SUBLogger : NSObject {
     struct __asl_object_s { } *_aslHandle;
-    long long _logLevel;
+    int _logLevel;
 }
 
-@property long long logLevel;
+@property int logLevel;
 
 + (id)sharedLogger;
 
 - (void)dealloc;
 - (id)init;
-- (void)logAtLevel:(long long)arg1 label:(const char *)arg2 format:(id)arg3;
-- (long long)logLevel;
-- (void)setLogLevel:(long long)arg1;
-- (void)setLoglevel:(long long)arg1;
+- (void)logAtLevel:(int)arg1 label:(const char *)arg2 format:(id)arg3;
+- (int)logLevel;
+- (void)setLogLevel:(int)arg1;
+- (void)setLoglevel:(int)arg1;
 
 @end

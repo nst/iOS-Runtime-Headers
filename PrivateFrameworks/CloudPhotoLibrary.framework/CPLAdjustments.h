@@ -8,7 +8,7 @@
     NSString *_adjustmentCompoundVersion;
     NSString *_adjustmentCreatorCode;
     CPLResource *_adjustmentData;
-    unsigned long long _adjustmentSourceType;
+    unsigned int _adjustmentSourceType;
     NSString *_adjustmentType;
     NSString *_creatorCode;
     NSString *_otherAdjustmentsFingerprint;
@@ -19,33 +19,33 @@
 @property(copy) NSString * adjustmentCompoundVersion;
 @property(copy) NSString * adjustmentCreatorCode;
 @property(retain) CPLResource * adjustmentData;
-@property unsigned long long adjustmentSourceType;
+@property unsigned int adjustmentSourceType;
 @property(copy) NSString * adjustmentType;
 @property(copy) NSString * creatorCode;
 @property(copy) NSString * otherAdjustmentsFingerprint;
 @property(copy) NSString * similarToOriginalAdjustmentsFingerprint;
 @property(retain) NSData * simpleAdjustmentData;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)adjustmentCompoundVersion;
 - (id)adjustmentCreatorCode;
 - (id)adjustmentData;
 - (id)adjustmentSimpleDescription;
-- (unsigned long long)adjustmentSourceType;
+- (unsigned int)adjustmentSourceType;
 - (id)adjustmentType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creatorCode;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)otherAdjustmentsFingerprint;
 - (void)setAdjustmentCompoundVersion:(id)arg1;
 - (void)setAdjustmentCreatorCode:(id)arg1;
 - (void)setAdjustmentData:(id)arg1;
-- (void)setAdjustmentSourceType:(unsigned long long)arg1;
+- (void)setAdjustmentSourceType:(unsigned int)arg1;
 - (void)setAdjustmentType:(id)arg1;
 - (void)setCreatorCode:(id)arg1;
 - (void)setOtherAdjustmentsFingerprint:(id)arg1;

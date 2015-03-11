@@ -14,6 +14,6 @@
 - (id)_connectionForRequest;
 - (void)_invalidateConnection;
 - (void)dealloc;
-- (void)setHasContent:(bool)arg1 forWidgetWithBundleIdentifier:(id)arg2;
+- (void)setHasContent:(BOOL)arg1 forWidgetWithBundleIdentifier:(id)arg2;
 
 @end

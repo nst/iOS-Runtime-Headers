@@ -11,8 +11,8 @@
 @property(readonly) HKActivityCache * activityCache;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (long long)behavior;
-+ (bool)supportsSecureCoding;
++ (int)behavior;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)activityCache;

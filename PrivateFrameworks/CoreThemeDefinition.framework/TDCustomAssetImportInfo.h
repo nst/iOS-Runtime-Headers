@@ -6,21 +6,21 @@
 
 @interface TDCustomAssetImportInfo : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     } _alignmentRect;
     NSObject<TDCustomAssetSource> *_customAsset;
@@ -29,54 +29,54 @@
     NSString *_name;
     NSString *_partName;
     CUIRenditionKey *_renditionKey;
-    long long _renditionType;
+    int _renditionType;
     } _resizableSliceSize;
-    long long _resizingMode;
+    int _resizingMode;
     } _sliceInsets;
-    long long _templateRenderingMode;
+    int _templateRenderingMode;
 }
 
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } alignmentRect;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRect;
 @property(retain) NSObject<TDCustomAssetSource> * customAsset;
 @property(copy) NSString * elementName;
-@property bool isTemplate;
+@property BOOL isTemplate;
 @property(copy) NSDate * modificationDate;
 @property(copy) NSString * name;
 @property(copy) NSString * partName;
 @property(copy) CUIRenditionKey * renditionKey;
-@property long long renditionType;
-@property struct CGSize { double x1; double x2; } resizableSliceSize;
-@property long long resizingMode;
-@property struct { double x1; double x2; double x3; double x4; } sliceInsets;
-@property long long templateRenderingMode;
+@property int renditionType;
+@property struct CGSize { float x1; float x2; } resizableSliceSize;
+@property int resizingMode;
+@property struct { float x1; float x2; float x3; float x4; } sliceInsets;
+@property int templateRenderingMode;
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRect;
 - (id)customAsset;
 - (void)dealloc;
 - (id)elementName;
-- (bool)isTemplate;
+- (BOOL)isTemplate;
 - (id)modificationDate;
 - (id)name;
 - (id)partName;
 - (id)renditionKey;
-- (long long)renditionSubtype;
-- (long long)renditionType;
-- (struct CGSize { double x1; double x2; })resizableSliceSize;
-- (long long)resizingMode;
-- (void)setAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (int)renditionSubtype;
+- (int)renditionType;
+- (struct CGSize { float x1; float x2; })resizableSliceSize;
+- (int)resizingMode;
+- (void)setAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCustomAsset:(id)arg1;
 - (void)setElementName:(id)arg1;
-- (void)setIsTemplate:(bool)arg1;
+- (void)setIsTemplate:(BOOL)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPartName:(id)arg1;
 - (void)setRenditionKey:(id)arg1;
-- (void)setRenditionType:(long long)arg1;
-- (void)setResizableSliceSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setResizingMode:(long long)arg1;
-- (void)setSliceInsets:(struct { double x1; double x2; double x3; double x4; })arg1;
-- (void)setTemplateRenderingMode:(long long)arg1;
-- (struct { double x1; double x2; double x3; double x4; })sliceInsets;
-- (long long)templateRenderingMode;
+- (void)setRenditionType:(int)arg1;
+- (void)setResizableSliceSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setResizingMode:(int)arg1;
+- (void)setSliceInsets:(struct { float x1; float x2; float x3; float x4; })arg1;
+- (void)setTemplateRenderingMode:(int)arg1;
+- (struct { float x1; float x2; float x3; float x4; })sliceInsets;
+- (int)templateRenderingMode;
 
 @end

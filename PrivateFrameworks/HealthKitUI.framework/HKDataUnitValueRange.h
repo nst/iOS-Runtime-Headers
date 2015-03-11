@@ -13,7 +13,7 @@
 @property(readonly) NSNumber * minimum;
 
 - (void).cxx_destruct;
-- (bool)containsValue:(double)arg1;
+- (BOOL)containsValue:(double)arg1;
 - (id)initWithMinimum:(id)arg1 maximum:(id)arg2;
 - (id)maximum;
 - (id)minimum;

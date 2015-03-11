@@ -6,6 +6,6 @@
 }
 
 + (id)environment;
-+ (bool)isEnabled;
++ (BOOL)isEnabled;
 
 @end

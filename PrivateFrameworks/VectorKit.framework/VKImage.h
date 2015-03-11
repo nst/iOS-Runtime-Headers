@@ -11,28 +11,28 @@
 
 @interface VKImage : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     NSData *_data;
     struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; boolx12; boolx13; boolx14; unsigned int x15; unsigned int x16; int x17; int x18; } *_gglTexture;
     struct CGImage { } *_imageRef;
     NSString *_name;
     VKResourceManager *_resourceManager;
-    double _scale;
+    float _scale;
     } _size;
-    bool_usedAsTextureAndImage;
+    BOOL _usedAsTextureAndImage;
 }
 
 - (struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; boolx12; boolx13; boolx14; unsigned int x15; unsigned int x16; int x17; int x18; }*)gglTexture;
 - (id).cxx_construct;
 - (void)dealloc;
 - (struct CGImage { }*)image;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2 usedAsTextureAndImage:(bool)arg3;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2;
-- (id)initWithData:(id)arg1 scale:(double)arg2 usedAsTextureAndImage:(bool)arg3;
-- (id)initWithData:(id)arg1 scale:(double)arg2;
-- (id)initWithName:(id)arg1 scale:(double)arg2 resourceManager:(id)arg3;
-- (double)scale;
-- (struct CGSize { double x1; double x2; })size;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 usedAsTextureAndImage:(BOOL)arg3;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2;
+- (id)initWithData:(id)arg1 scale:(float)arg2 usedAsTextureAndImage:(BOOL)arg3;
+- (id)initWithData:(id)arg1 scale:(float)arg2;
+- (id)initWithName:(id)arg1 scale:(float)arg2 resourceManager:(id)arg3;
+- (float)scale;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

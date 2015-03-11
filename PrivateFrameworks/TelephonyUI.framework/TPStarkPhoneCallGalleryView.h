@@ -13,32 +13,32 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <TPStarkPhoneCallGalleryViewDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)statusStringForDisplayForCall:(id)arg1;
 
-- (void)addPrimaryPhoneCall:(id)arg1 animated:(bool)arg2;
+- (void)addPrimaryPhoneCall:(id)arg1 animated:(BOOL)arg2;
 - (id)container;
 - (void)dealloc;
 - (id)delegate;
-- (void)endPhoneCall:(id)arg1 animated:(bool)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)mergePrimaryPhoneCallsAnimated:(bool)arg1;
+- (void)endPhoneCall:(id)arg1 animated:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)mergePrimaryPhoneCallsAnimated:(BOOL)arg1;
 - (id)mergedCalls;
 - (id)mergedStringForMergedCalls;
-- (unsigned long long)numberOfViewCellsForPhoneCallContainer:(id)arg1;
-- (bool)phoneCallContainer:(id)arg1 cellIsDimmedAtIndex:(unsigned long long)arg2;
-- (void)phoneCallContainer:(id)arg1 phoneCallViewTappedAtIndex:(unsigned long long)arg2;
-- (id)phoneCallContainer:(id)arg1 subtitleForViewCellAtIndex:(unsigned long long)arg2;
-- (id)phoneCallContainer:(id)arg1 titleForViewCellAtIndex:(unsigned long long)arg2;
+- (unsigned int)numberOfViewCellsForPhoneCallContainer:(id)arg1;
+- (BOOL)phoneCallContainer:(id)arg1 cellIsDimmedAtIndex:(unsigned int)arg2;
+- (void)phoneCallContainer:(id)arg1 phoneCallViewTappedAtIndex:(unsigned int)arg2;
+- (id)phoneCallContainer:(id)arg1 subtitleForViewCellAtIndex:(unsigned int)arg2;
+- (id)phoneCallContainer:(id)arg1 titleForViewCellAtIndex:(unsigned int)arg2;
 - (void)phoneCallDataDidChange:(id)arg1;
-- (id)phoneCallForIndex:(unsigned long long)arg1 isMerged:(bool*)arg2;
+- (id)phoneCallForIndex:(unsigned int)arg1 isMerged:(BOOL*)arg2;
 - (id)primaryCalls;
 - (void)reloadPhoneCallData;
 - (void)setContainer:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIsShowingCallFailure:(bool)arg1;
+- (void)setIsShowingCallFailure:(BOOL)arg1;
 - (void)startListeningForCallNotifications;
 - (void)stopListeningForCallNotifications;
 

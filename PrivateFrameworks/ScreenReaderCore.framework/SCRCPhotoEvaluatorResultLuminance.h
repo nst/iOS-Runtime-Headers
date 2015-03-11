@@ -3,19 +3,19 @@
  */
 
 @interface SCRCPhotoEvaluatorResultLuminance : SCRCPhotoEvaluatorResult {
-    double _averageLevel;
-    double _brightnessLevel;
-    double _darknessLevel;
+    float _averageLevel;
+    float _brightnessLevel;
+    float _darknessLevel;
 }
 
-@property(readonly) double averageLevel;
-@property(readonly) double brightnessLevel;
-@property(readonly) double darknessLevel;
+@property(readonly) float averageLevel;
+@property(readonly) float brightnessLevel;
+@property(readonly) float darknessLevel;
 
-- (double)averageLevel;
-- (double)brightnessLevel;
-- (double)darknessLevel;
+- (float)averageLevel;
+- (float)brightnessLevel;
+- (float)darknessLevel;
 - (id)humanReadableResult;
-- (id)initWithDarknessLevel:(double)arg1 brightnessLevel:(double)arg2 averageLevel:(double)arg3;
+- (id)initWithDarknessLevel:(float)arg1 brightnessLevel:(float)arg2 averageLevel:(float)arg3;
 
 @end

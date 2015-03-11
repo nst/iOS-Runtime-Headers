@@ -7,13 +7,13 @@
 @interface ChartUpdater : YQLRequest {
     StockChartData *_currentChartData;
     <ChartUpdaterDelegate> *_delegate;
-    long long _interval;
+    int _interval;
     Stock *_stock;
 }
 
 @property <ChartUpdaterDelegate> * delegate;
 
-+ (id)_rangeStringForInterval:(long long)arg1;
++ (id)_rangeStringForInterval:(int)arg1;
 
 - (void).cxx_destruct;
 - (id)aggregateDictionaryDomain;
@@ -23,6 +23,6 @@
 - (void)failWithError:(id)arg1;
 - (void)parseData:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (bool)updateChartForStock:(id)arg1 interval:(long long)arg2;
+- (BOOL)updateChartForStock:(id)arg1 interval:(int)arg2;
 
 @end

@@ -5,22 +5,22 @@
 @class HKQuantity;
 
 @interface _HKHeartRateReading : NSObject <NSSecureCoding> {
-    long long _confidence;
+    int _confidence;
     HKQuantity *_heartRate;
 }
 
-@property long long confidence;
+@property int confidence;
 @property(retain) HKQuantity * heartRate;
 
-+ (id)readingWithHeartRate:(id)arg1 confidence:(long long)arg2;
-+ (bool)supportsSecureCoding;
++ (id)readingWithHeartRate:(id)arg1 confidence:(int)arg2;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (long long)confidence;
+- (int)confidence;
 - (void)encodeWithCoder:(id)arg1;
 - (id)heartRate;
 - (id)initWithCoder:(id)arg1;
-- (void)setConfidence:(long long)arg1;
+- (void)setConfidence:(int)arg1;
 - (void)setHeartRate:(id)arg1;
 
 @end

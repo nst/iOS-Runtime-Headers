@@ -8,7 +8,7 @@
     NSURL *_objectIdentifier;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithRequest:(id)arg1 objectIdentifier:(id)arg2;

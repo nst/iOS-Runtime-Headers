@@ -19,15 +19,15 @@
 - (id)containerSpecificLeftConstraint;
 - (id)containerSpecificRightConstraint;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)mainLabel;
 - (void)setContainerSpecificLeftConstraint:(id)arg1;
 - (void)setContainerSpecificRightConstraint:(id)arg1;
-- (void)setDimmed:(bool)arg1 animated:(bool)arg2;
-- (void)setEnabled:(bool)arg1;
+- (void)setDimmed:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setMainLabel:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;
-- (void)setTitle:(id)arg1 subtitle:(id)arg2 animated:(bool)arg3;
+- (void)setTitle:(id)arg1 subtitle:(id)arg2 animated:(BOOL)arg3;
 - (id)subtitleLabel;
 
 @end

@@ -19,10 +19,10 @@
 - (unsigned long long)requestedUpdates;
 - (void)sendMessage:(id)arg1 withError:(id*)arg2;
 - (void)setRequestedUpdates:(unsigned long long)arg1;
-- (void)setWantsUpdates:(bool)arg1 forIdentifier:(unsigned long long)arg2;
+- (void)setWantsUpdates:(BOOL)arg1 forIdentifier:(unsigned long long)arg2;
 - (void)setXpcConnection:(id)arg1;
 - (void)teardownConnection;
-- (bool)wantsUpdatesForIdentifier:(unsigned long long)arg1;
+- (BOOL)wantsUpdatesForIdentifier:(unsigned long long)arg1;
 - (id)xpcConnection;
 
 @end

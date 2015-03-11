@@ -10,14 +10,14 @@
 
 @interface CKFetchSharesOperation : CKOperation {
     id _fetchSharesCompletionBlock;
+    BOOL _isFetchAllSharesOperation;
     NSMutableDictionary *_shareIDErrors;
     NSArray *_shareIDs;
     NSMutableDictionary *_sharesByShareID;
-    bool_isFetchAllSharesOperation;
 }
 
 @property(copy) id fetchSharesCompletionBlock;
-@property bool isFetchAllSharesOperation;
+@property BOOL isFetchAllSharesOperation;
 @property(retain) NSMutableDictionary * shareIDErrors;
 @property(copy) NSArray * shareIDs;
 @property(retain) NSMutableDictionary * sharesByShareID;
@@ -25,16 +25,16 @@
 + (id)fetchAllSharesOperation;
 
 - (void).cxx_destruct;
-- (bool)CKOperationShouldRun:(id*)arg1;
+- (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)fetchSharesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)initWithShareIDs:(id)arg1;
-- (bool)isFetchAllSharesOperation;
+- (BOOL)isFetchAllSharesOperation;
 - (void)performCKOperation;
 - (void)setFetchSharesCompletionBlock:(id)arg1;
-- (void)setIsFetchAllSharesOperation:(bool)arg1;
+- (void)setIsFetchAllSharesOperation:(BOOL)arg1;
 - (void)setShareIDErrors:(id)arg1;
 - (void)setShareIDs:(id)arg1;
 - (void)setSharesByShareID:(id)arg1;

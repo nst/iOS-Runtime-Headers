@@ -7,14 +7,14 @@
 @interface TSDMutableBrushStroke : TSDBrushStroke {
 }
 
-@property double actualWidth;
+@property float actualWidth;
 @property int cap;
 @property(copy) TSUColor * color;
 @property int join;
-@property double miterLimit;
+@property float miterLimit;
 @property(copy) TSDStrokePattern * pattern;
 @property(copy) NSString * strokeName;
-@property double width;
+@property float width;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setPatternPropertiesFromStroke:(id)arg1;

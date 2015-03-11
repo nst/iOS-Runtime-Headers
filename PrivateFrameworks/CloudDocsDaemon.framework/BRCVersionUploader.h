@@ -13,14 +13,14 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly) BRCUploadOperationMultiplexer * uploadMultiplexer;
 
 - (void).cxx_destruct;
 - (void)_didFailUploadingContentWithItemID:(id)arg1 error:(id)arg2;
 - (void)_didUploadContentWithItemID:(id)arg1 record:(id)arg2;
-- (bool)_scheduleUploadForItem:(id)arg1;
+- (BOOL)_scheduleUploadForItem:(id)arg1;
 - (void)_scheduleUploads;
 - (id)cancelAllUploads;
 - (void)cancelUploadForItemID:(id)arg1;
@@ -29,7 +29,7 @@
 - (id)description;
 - (void)dumpToContext:(id)arg1;
 - (id)initWithLocalContainer:(id)arg1;
-- (bool)isUploadingItemID:(id)arg1;
+- (BOOL)isUploadingItemID:(id)arg1;
 - (void)resume;
 - (void)signalNeedsUploads;
 - (void)suspend;

@@ -6,11 +6,11 @@
 
 @interface CannedEncodedVideoCapture : NSObject <CannedVideoFrameFeeder> {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     int _allFrameCount;
     double _allFrameRate;
     AVAssetReader *_assetReader;
@@ -35,7 +35,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property int frameCount;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property int height;
 @property(retain) NSString * movieURLString;
 @property(retain) AVAssetReaderTrackOutput * readerVideoTrackOutput;
@@ -54,11 +54,11 @@
 - (void)getFrameRate:(double*)arg1 frameCount:(int*)arg2;
 - (int)height;
 - (id)initWithPath:(id)arg1;
-- (int)initialize;
-- (int)initializeDecoder;
+- (long)initialize;
+- (long)initializeDecoder;
 - (id)movieURLString;
 - (id)readerVideoTrackOutput;
-- (int)rotatePixelBuffer:(struct __CVBuffer { }*)arg1 andStoreTo:(struct __CVBuffer {}**)arg2;
+- (long)rotatePixelBuffer:(struct __CVBuffer { }*)arg1 andStoreTo:(struct __CVBuffer {}**)arg2;
 - (void)setAllFrameCount:(int)arg1;
 - (void)setAllFrameRate:(double)arg1;
 - (void)setAssetReader:(id)arg1;
@@ -69,7 +69,7 @@
 - (void)setReaderVideoTrackOutput:(id)arg1;
 - (void)setVideoScaler:(id)arg1;
 - (void)setVideoTrack:(id)arg1;
-- (int)setWidth:(int)arg1 height:(int)arg2;
+- (long)setWidth:(int)arg1 height:(int)arg2;
 - (void)setWidth:(int)arg1;
 - (id)videoScaler;
 - (id)videoTrack;

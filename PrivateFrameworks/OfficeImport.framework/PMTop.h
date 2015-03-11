@@ -8,20 +8,20 @@
     CMArchiveManager *_archiver;
     PMPresentationMapper *_mapper;
     PMState *_state;
-    bool_xml;
+    BOOL _xml;
 }
 
-+ (void)fillHTMLArchiveForPowerPointData:(id)arg1 fileName:(id)arg2 xmlFlag:(bool)arg3 archiver:(id)arg4;
-+ (void)fillHTMLArchiveForPowerPointFile:(id)arg1 xmlFlag:(bool)arg2 archiver:(id)arg3;
-+ (void)fillHTMLArchiveForPowerPointFrom:(id)arg1 inMemory:(bool)arg2 xmlFlag:(bool)arg3 archiver:(id)arg4;
++ (void)fillHTMLArchiveForPowerPointData:(id)arg1 fileName:(id)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
++ (void)fillHTMLArchiveForPowerPointFile:(id)arg1 xmlFlag:(BOOL)arg2 archiver:(id)arg3;
++ (void)fillHTMLArchiveForPowerPointFrom:(id)arg1 inMemory:(BOOL)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
 
 - (void)dealloc;
-- (bool)isCancelled;
-- (void)readData:(id)arg1 fileName:(id)arg2 xmlFlag:(bool)arg3 archiver:(id)arg4;
-- (void)readFile:(id)arg1 xmlFlag:(bool)arg2 archiver:(id)arg3;
-- (void)readFrom:(id)arg1 inMemory:(bool)arg2 xmlFlag:(bool)arg3 archiver:(id)arg4;
+- (BOOL)isCancelled;
+- (void)readData:(id)arg1 fileName:(id)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
+- (void)readFile:(id)arg1 xmlFlag:(BOOL)arg2 archiver:(id)arg3;
+- (void)readFrom:(id)arg1 inMemory:(BOOL)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
 - (void)readerDidEndDocument:(id)arg1;
-- (void)readerDidReadElement:(id)arg1 atIndex:(unsigned long long)arg2 inDocument:(id)arg3 isLastElement:(bool)arg4;
-- (void)readerDidStartDocument:(id)arg1 withElementCount:(long long)arg2;
+- (void)readerDidReadElement:(id)arg1 atIndex:(unsigned int)arg2 inDocument:(id)arg3 isLastElement:(BOOL)arg4;
+- (void)readerDidStartDocument:(id)arg1 withElementCount:(int)arg2;
 
 @end

@@ -12,7 +12,7 @@
 @property(readonly) SKUIDividerViewElement * viewElement;
 
 - (void).cxx_destruct;
-- (long long)componentType;
+- (int)componentType;
 - (id)dividerTitle;
 - (id)initWithCustomPageContext:(id)arg1;
 - (id)initWithDividerTitle:(id)arg1;

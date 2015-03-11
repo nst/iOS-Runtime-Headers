@@ -3,14 +3,14 @@
  */
 
 @interface AXHALiveListenController : NSObject {
-    bool_didInitializeAudioUnit;
-    boolisListening;
+    BOOL _didInitializeAudioUnit;
+    BOOL isListening;
     struct OpaqueAudioComponentInstance { } *mixerUnit;
     struct OpaqueAudioComponentInstance { } *rioUnit;
 }
 
-@property bool didInitializeAudioUnit;
-@property bool isListening;
+@property BOOL didInitializeAudioUnit;
+@property BOOL isListening;
 @property(readonly) struct OpaqueAudioComponentInstance { }* mixerUnit;
 @property(readonly) struct OpaqueAudioComponentInstance { }* rioUnit;
 
@@ -18,15 +18,15 @@
 - (void)audioRouteDidChange:(id)arg1;
 - (void)audioSessionWasInterrupted:(id)arg1;
 - (void)dealloc;
-- (bool)didInitializeAudioUnit;
+- (BOOL)didInitializeAudioUnit;
 - (id)init;
-- (bool)isListening;
+- (BOOL)isListening;
 - (void)mediaServicesWereReset:(id)arg1;
 - (struct OpaqueAudioComponentInstance { }*)mixerUnit;
 - (struct OpaqueAudioComponentInstance { }*)rioUnit;
-- (void)setDidInitializeAudioUnit:(bool)arg1;
-- (void)setIsListening:(bool)arg1;
-- (bool)startListeningWithError:(id*)arg1;
-- (bool)stopListeningWithError:(id*)arg1;
+- (void)setDidInitializeAudioUnit:(BOOL)arg1;
+- (void)setIsListening:(BOOL)arg1;
+- (BOOL)startListeningWithError:(id*)arg1;
+- (BOOL)stopListeningWithError:(id*)arg1;
 
 @end

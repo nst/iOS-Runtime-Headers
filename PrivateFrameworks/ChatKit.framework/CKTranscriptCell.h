@@ -3,18 +3,18 @@
  */
 
 @interface CKTranscriptCell : CKEditableCollectionViewCell {
-    double _drawerPercentRevealed;
+    float _drawerPercentRevealed;
     BOOL _orientation;
-    bool_wantsDrawerLayout;
+    BOOL _wantsDrawerLayout;
 }
 
-@property double drawerPercentRevealed;
+@property float drawerPercentRevealed;
 @property BOOL orientation;
-@property bool wantsDrawerLayout;
+@property BOOL wantsDrawerLayout;
 
 - (void)configureForChatItem:(id)arg1;
-- (double)drawerPercentRevealed;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (float)drawerPercentRevealed;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)layoutSubviewsForAlignmentContents;
 - (void)layoutSubviewsForContents;
@@ -23,9 +23,9 @@
 - (void)performInsertion:(id)arg1;
 - (void)performReload:(id)arg1 completion:(id)arg2;
 - (void)performRemoval:(id)arg1;
-- (void)setDrawerPercentRevealed:(double)arg1;
+- (void)setDrawerPercentRevealed:(float)arg1;
 - (void)setOrientation:(BOOL)arg1;
-- (void)setWantsDrawerLayout:(bool)arg1;
-- (bool)wantsDrawerLayout;
+- (void)setWantsDrawerLayout:(BOOL)arg1;
+- (BOOL)wantsDrawerLayout;
 
 @end

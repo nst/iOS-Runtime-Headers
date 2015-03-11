@@ -12,13 +12,13 @@
 @property(retain,readonly) NSMutableSet * listeners;
 @property(retain) IDSServiceMonitor * monitor;
 
-- (bool)addListenerID:(id)arg1;
+- (BOOL)addListenerID:(id)arg1;
 - (void)dealloc;
-- (bool)hasListenerID:(id)arg1;
+- (BOOL)hasListenerID:(id)arg1;
 - (id)initWithService:(id)arg1;
 - (id)listeners;
 - (id)monitor;
-- (bool)removeListenerID:(id)arg1;
+- (BOOL)removeListenerID:(id)arg1;
 - (void)setMonitor:(id)arg1;
 
 @end

@@ -33,7 +33,7 @@
 - (void)finalize;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isSuccessful;
+- (BOOL)isSuccessful;
 - (id)result;
 
 @end

@@ -5,8 +5,8 @@
 @class NSArray, NSMutableDictionary;
 
 @interface WBSParsecSearchResultCache : NSObject {
-    unsigned long long _cachedQueriesLimit;
-    unsigned long long _cachedResultsLimit;
+    unsigned int _cachedQueriesLimit;
+    unsigned int _cachedResultsLimit;
     NSMutableDictionary *_resultCache;
     NSMutableDictionary *_resultSetCache;
 }
@@ -19,7 +19,7 @@
 - (id)allCachedResultIdentifiers;
 - (void)cacheResult:(id)arg1;
 - (void)cacheResultSet:(id)arg1;
-- (id)initWithCachedQueriesLimit:(unsigned long long)arg1 cachedResultsLimit:(unsigned long long)arg2;
+- (id)initWithCachedQueriesLimit:(unsigned int)arg1 cachedResultsLimit:(unsigned int)arg2;
 - (id)resultForIdentifier:(id)arg1;
 - (id)resultSetForQuery:(id)arg1;
 

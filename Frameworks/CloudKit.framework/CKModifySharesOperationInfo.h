@@ -12,7 +12,7 @@
 @property(retain) NSArray * shareIDsToDelete;
 @property(retain) NSArray * sharesToSave;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

@@ -12,11 +12,11 @@
 + (id)repeatIt;
 + (id)repeatItWithDictionary:(id)arg1 context:(id)arg2;
 
-- (bool)_afui_isUsefulUserResultCommand;
+- (BOOL)_afui_isUsefulUserResultCommand;
 - (id)contingency;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setContingency:(id)arg1;
 
 @end

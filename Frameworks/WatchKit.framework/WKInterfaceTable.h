@@ -12,7 +12,7 @@
 }
 
 @property WKInterfaceController * controller;
-@property(readonly) long long numberOfRows;
+@property(readonly) int numberOfRows;
 @property(retain) NSMutableArray * rowControllerProperties;
 @property(retain) NSMutableArray * rowControllers;
 @property(copy) NSDictionary * rowDescriptions;
@@ -22,16 +22,16 @@
 - (void)_setupWithDescription:(id)arg1 forController:(id)arg2;
 - (id)controller;
 - (void)insertRowsAtIndexes:(id)arg1 withRowType:(id)arg2;
-- (long long)numberOfRows;
+- (int)numberOfRows;
 - (void)removeRowsAtIndexes:(id)arg1;
 - (void)resequenceRowControllerPropertyIndexes;
-- (id)rowControllerAtIndex:(long long)arg1;
+- (id)rowControllerAtIndex:(int)arg1;
 - (id)rowControllerProperties;
 - (id)rowControllers;
 - (id)rowDescriptions;
-- (void)scrollToRowAtIndex:(long long)arg1;
+- (void)scrollToRowAtIndex:(int)arg1;
 - (void)setController:(id)arg1;
-- (void)setNumberOfRows:(long long)arg1 withRowType:(id)arg2;
+- (void)setNumberOfRows:(int)arg1 withRowType:(id)arg2;
 - (void)setRowControllerProperties:(id)arg1;
 - (void)setRowControllers:(id)arg1;
 - (void)setRowDescriptions:(id)arg1;

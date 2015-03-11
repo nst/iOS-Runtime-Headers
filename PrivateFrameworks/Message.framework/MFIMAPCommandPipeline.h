@@ -7,20 +7,20 @@
 @interface MFIMAPCommandPipeline : NSObject {
     unsigned int _full : 1;
     unsigned int _sending : 1;
-    unsigned long long _chunkSize;
-    unsigned long long _expectedSize;
+    unsigned int _chunkSize;
+    unsigned int _expectedSize;
     NSMutableArray *_fetchUnits;
 }
 
 - (void)_removeFetchUnitMatchingResponse:(id)arg1;
-- (void)addFetchCommandForUid:(unsigned int)arg1 fetchItem:(id)arg2 expectedLength:(unsigned long long)arg3 bodyDataConsumer:(id)arg4 consumerSection:(id)arg5;
-- (unsigned long long)chunkSize;
+- (void)addFetchCommandForUid:(unsigned long)arg1 fetchItem:(id)arg2 expectedLength:(unsigned int)arg3 bodyDataConsumer:(id)arg4 consumerSection:(id)arg5;
+- (unsigned int)chunkSize;
 - (void)dealloc;
-- (unsigned long long)expectedSize;
+- (unsigned int)expectedSize;
 - (id)failureResponsesFromSendingCommandsWithConnection:(id)arg1;
-- (bool)isFull;
-- (bool)isSending;
-- (void)setChunkSize:(unsigned long long)arg1;
-- (void)setFull:(bool)arg1;
+- (BOOL)isFull;
+- (BOOL)isSending;
+- (void)setChunkSize:(unsigned int)arg1;
+- (void)setFull:(BOOL)arg1;
 
 @end

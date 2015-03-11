@@ -13,7 +13,7 @@
 @property(retain) SLDatabase * database;
 
 - (void).cxx_destruct;
-- (bool)clientHasEntitlement:(id)arg1;
+- (BOOL)clientHasEntitlement:(id)arg1;
 - (id)connection;
 - (id)database;
 - (id)initWithConnection:(id)arg1 database:(id)arg2;

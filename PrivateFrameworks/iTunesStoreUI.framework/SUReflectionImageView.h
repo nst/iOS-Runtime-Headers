@@ -8,25 +8,25 @@
     unsigned int _nonSquareImage : 1;
     UIImageView *_imageView;
     SUReflectionView *_reflection;
-    double _reflectionAlpha;
-    double _reflectionHeight;
-    double _spacing;
-    bool_useImageSize;
+    float _reflectionAlpha;
+    float _reflectionHeight;
+    float _spacing;
+    BOOL _useImageSize;
 }
 
-@property bool nonSquareImage;
-@property double reflectionSpacing;
+@property BOOL nonSquareImage;
+@property float reflectionSpacing;
 
 - (void)dealloc;
 - (id)init;
-- (id)initWithReflectionHeight:(double)arg1 spacing:(double)arg2;
-- (bool)nonSquareImage;
-- (double)reflectionSpacing;
+- (id)initWithReflectionHeight:(float)arg1 spacing:(float)arg2;
+- (BOOL)nonSquareImage;
+- (float)reflectionSpacing;
 - (void)setImage:(id)arg1;
-- (void)setNonSquareImage:(bool)arg1;
-- (void)setReflectionAlphaWhenVisible:(double)arg1;
-- (void)setReflectionSpacing:(double)arg1;
-- (void)setReflectionVisible:(bool)arg1;
-- (void)setUseImageSize:(bool)arg1;
+- (void)setNonSquareImage:(BOOL)arg1;
+- (void)setReflectionAlphaWhenVisible:(float)arg1;
+- (void)setReflectionSpacing:(float)arg1;
+- (void)setReflectionVisible:(BOOL)arg1;
+- (void)setUseImageSize:(BOOL)arg1;
 
 @end

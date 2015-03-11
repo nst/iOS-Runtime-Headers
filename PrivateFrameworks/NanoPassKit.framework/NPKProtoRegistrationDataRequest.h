@@ -9,7 +9,7 @@
 }
 
 @property(retain) NSString * authToken;
-@property(readonly) bool hasAuthToken;
+@property(readonly) BOOL hasAuthToken;
 
 - (void).cxx_destruct;
 - (id)authToken;
@@ -17,11 +17,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasAuthToken;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasAuthToken;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)writeTo:(id)arg1;
 

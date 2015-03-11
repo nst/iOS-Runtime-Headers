@@ -5,21 +5,21 @@
 @class NSCharacterSet, NSString;
 
 @interface TICharacterSetDescription : NSObject <NSCopying, NSSecureCoding> {
-    long long _baseIdentifier;
+    long _baseIdentifier;
     NSCharacterSet *_characterSet;
     NSString *_charactersAddedToBase;
-    bool_inverted;
+    BOOL _inverted;
 }
 
-@property(readonly) long long baseIdentifier;
+@property(readonly) long baseIdentifier;
 @property(readonly) NSCharacterSet * characterSet;
 @property(copy) NSString * charactersAddedToBase;
-@property(readonly) bool inverted;
+@property(readonly) BOOL inverted;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)awakeAfterUsingCoder:(id)arg1;
-- (long long)baseIdentifier;
+- (long)baseIdentifier;
 - (id)characterSet;
 - (id)charactersAddedToBase;
 - (void)clearCachedCharacterSet;
@@ -27,14 +27,14 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
-- (id)initWithBase:(long long)arg1 additionalCharacters:(id)arg2 inverted:(bool)arg3;
-- (id)initWithBaseCharacterSet:(long long)arg1;
+- (unsigned int)hash;
+- (id)initWithBase:(long)arg1 additionalCharacters:(id)arg2 inverted:(BOOL)arg3;
+- (id)initWithBaseCharacterSet:(long)arg1;
 - (id)initWithCharactersInString:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)inverted;
+- (BOOL)inverted;
 - (id)invertedSetDescription;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)newCharacterSetFromDescription;
 - (void)setCharactersAddedToBase:(id)arg1;
 

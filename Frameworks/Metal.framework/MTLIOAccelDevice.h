@@ -21,7 +21,7 @@
     } _bufferHeaps[16];
     struct MTLIOAccelCommandBufferStoragePool { struct storageQueue { struct MTLIOAccelCommandBufferStorage {} *x_1_1_1; struct MTLIOAccelCommandBufferStorage {} **x_1_1_2; } x1; int x2; int x3; int x4; id x5; } *_commandBufferStoragePool;
     unsigned int _configBits;
-    unsigned long long *_defaultBufferOptions;
+    unsigned int *_defaultBufferOptions;
     unsigned int _deviceBits;
     struct __IOAccelDevice { } *_deviceRef;
     NSObject<OS_dispatch_queue> *_device_dispatch_queue;
@@ -36,7 +36,7 @@
     unsigned long long _videoRam;
 }
 
-@property(readonly) unsigned long long* defaultBufferOptions;
+@property(readonly) unsigned int* defaultBufferOptions;
 @property(readonly) unsigned int hwResourcePoolCount;
 @property(readonly) id* hwResourcePools;
 @property(readonly) int numCommandBuffers;
@@ -45,12 +45,12 @@
 
 - (id)akPrivateResourceListPool;
 - (id)akResourceListPool;
-- (id)allocBufferSubDataWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 alignment:(int)arg3 heapIndex:(short*)arg4 bufferIndex:(short*)arg5 bufferOffset:(int*)arg6;
+- (id)allocBufferSubDataWithLength:(unsigned int)arg1 options:(unsigned int)arg2 alignment:(int)arg3 heapIndex:(short*)arg4 bufferIndex:(short*)arg5 bufferOffset:(int*)arg6;
 - (void)dealloc;
 - (void)deallocBufferSubData:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(int)arg4 length:(int)arg5;
-- (unsigned long long*)defaultBufferOptions;
+- (unsigned int*)defaultBufferOptions;
 - (struct __IOAccelDevice { }*)deviceRef;
-- (short)heapIndexWithOptions:(unsigned long long)arg1;
+- (short)heapIndexWithOptions:(unsigned int)arg1;
 - (unsigned int)hwResourcePoolCount;
 - (id*)hwResourcePools;
 - (id)initWithAcceleratorPort:(unsigned int)arg1;

@@ -4,10 +4,10 @@
 
 @interface UIPDFSquareOrCircleAnnotation : UIPDFAnnotation {
     struct CGPDFArray { } *_D;
-    double _I;
+    float _I;
     unsigned short _S;
-    double _SE;
-    double _W;
+    float _SE;
+    float _W;
 }
 
 - (id)initWithAnnotationDictionary:(struct CGPDFDictionary { }*)arg1;

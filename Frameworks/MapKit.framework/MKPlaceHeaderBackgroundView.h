@@ -5,41 +5,41 @@
 @class <MKPlaceHeaderBackgroundViewDelegate>, MKMapItem, NSString;
 
 @interface MKPlaceHeaderBackgroundView : UIView <MKPlaceHeaderViewCinematics> {
-    long long _backgroundType;
+    int _backgroundType;
     <MKPlaceHeaderBackgroundViewDelegate> *_delegate;
     MKMapItem *_mapItem;
-    long long _preparationState;
+    int _preparationState;
 }
 
-@property long long backgroundType;
+@property int backgroundType;
 @property(copy,readonly) NSString * debugDescription;
 @property <MKPlaceHeaderBackgroundViewDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) MKMapItem * mapItem;
-@property long long preparationState;
+@property int preparationState;
 @property(readonly) Class superclass;
 
-+ (long long)backgroundTypeForMapItem:(id)arg1;
-+ (id)backgroundViewForBackgroundType:(long long)arg1 mapItem:(id)arg2 headerView:(id)arg3;
++ (int)backgroundTypeForMapItem:(id)arg1;
++ (id)backgroundViewForBackgroundType:(int)arg1 mapItem:(id)arg2 headerView:(id)arg3;
 + (id)backgroundViewForMapItem:(id)arg1 headerView:(id)arg2;
-+ (Class)classForBackgroundType:(long long)arg1;
++ (Class)classForBackgroundType:(int)arg1;
 
 - (void).cxx_destruct;
-- (long long)backgroundType;
+- (int)backgroundType;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 mapItem:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mapItem:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)mapItem;
 - (void)pause;
-- (long long)preparationState;
+- (int)preparationState;
 - (void)prepareForPresentation;
 - (void)present;
 - (void)reset;
 - (void)resume;
-- (void)setBackgroundType:(long long)arg1;
+- (void)setBackgroundType:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMapItem:(id)arg1;
-- (void)setPreparationState:(long long)arg1;
+- (void)setPreparationState:(int)arg1;
 
 @end

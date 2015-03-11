@@ -9,8 +9,10 @@
 @class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface RDMulticastService : NSObject {
-    long long _connectionState;
+    int _connectionState;
     id _connectionStateChangedBlock;
+    BOOL _continueAfterHandshake;
+    BOOL _didCompleteHandshake;
     id _handshakeCompletionBlock;
     NSObject<OS_dispatch_queue> *_handshakeWorkQueue;
     NSString *_lastKnownIDSPairingRecordsState;
@@ -26,17 +28,15 @@
     int _repeatedSendFailureCount;
     int _sendSocketFd;
     double _senderTime;
+    BOOL _shouldAllowIDSReset;
+    BOOL _shouldRefetchIDSPairingState;
     int _unansweredMulticastCount;
-    bool_continueAfterHandshake;
-    bool_didCompleteHandshake;
-    bool_shouldAllowIDSReset;
-    bool_shouldRefetchIDSPairingState;
 }
 
-@property long long connectionState;
+@property int connectionState;
 @property(copy) id connectionStateChangedBlock;
-@property bool continueAfterHandshake;
-@property bool didCompleteHandshake;
+@property BOOL continueAfterHandshake;
+@property BOOL didCompleteHandshake;
 @property(copy) id handshakeCompletionBlock;
 @property(retain) NSObject<OS_dispatch_queue> * handshakeWorkQueue;
 @property(copy) NSString * lastKnownIDSPairingRecordsState;
@@ -52,8 +52,8 @@
 @property int repeatedSendFailureCount;
 @property int sendSocketFd;
 @property double senderTime;
-@property bool shouldAllowIDSReset;
-@property bool shouldRefetchIDSPairingState;
+@property BOOL shouldAllowIDSReset;
+@property BOOL shouldRefetchIDSPairingState;
 @property int unansweredMulticastCount;
 
 + (id)ipv4AddressForInterface:(id)arg1;
@@ -61,11 +61,11 @@
 
 - (void).cxx_destruct;
 - (void)beginMulticastConnectionWithPayloadCallBack:(id)arg1;
-- (long long)connectionState;
+- (int)connectionState;
 - (id)connectionStateChangedBlock;
-- (bool)continueAfterHandshake;
-- (bool)didCompleteHandshake;
-- (bool)discoverLocalInterface;
+- (BOOL)continueAfterHandshake;
+- (BOOL)didCompleteHandshake;
+- (BOOL)discoverLocalInterface;
 - (id)handshakeCompletionBlock;
 - (id)handshakeWorkQueue;
 - (id)init;
@@ -77,20 +77,20 @@
 - (id)multicastSendTimer;
 - (void)performHandshakeWithCompletionBlock:(id)arg1;
 - (id)readSource;
-- (bool)receiveHandshakeMulticast;
+- (BOOL)receiveHandshakeMulticast;
 - (int)receiveSocketFd;
 - (id)remoteIP;
 - (int)repeatedSendFailureBails;
 - (int)repeatedSendFailureCount;
 - (void)resetHandshakeState;
-- (bool)sendHandshakeMulticast;
+- (BOOL)sendHandshakeMulticast;
 - (void)sendMulticastPayload:(id)arg1;
 - (int)sendSocketFd;
 - (double)senderTime;
-- (void)setConnectionState:(long long)arg1;
+- (void)setConnectionState:(int)arg1;
 - (void)setConnectionStateChangedBlock:(id)arg1;
-- (void)setContinueAfterHandshake:(bool)arg1;
-- (void)setDidCompleteHandshake:(bool)arg1;
+- (void)setContinueAfterHandshake:(BOOL)arg1;
+- (void)setDidCompleteHandshake:(BOOL)arg1;
 - (void)setHandshakeCompletionBlock:(id)arg1;
 - (void)setHandshakeWorkQueue:(id)arg1;
 - (void)setLastKnownIDSPairingRecordsState:(id)arg1;
@@ -106,15 +106,15 @@
 - (void)setRepeatedSendFailureCount:(int)arg1;
 - (void)setSendSocketFd:(int)arg1;
 - (void)setSenderTime:(double)arg1;
-- (void)setShouldAllowIDSReset:(bool)arg1;
-- (void)setShouldRefetchIDSPairingState:(bool)arg1;
+- (void)setShouldAllowIDSReset:(BOOL)arg1;
+- (void)setShouldRefetchIDSPairingState:(BOOL)arg1;
 - (void)setUnansweredMulticastCount:(int)arg1;
-- (bool)setUpMulticastReceiveSocket;
-- (bool)setUpMulticastSendSocket;
-- (bool)setUpMulticastSendTimer;
-- (bool)setUpReceiveDispatchSource;
-- (bool)shouldAllowIDSReset;
-- (bool)shouldRefetchIDSPairingState;
+- (BOOL)setUpMulticastReceiveSocket;
+- (BOOL)setUpMulticastSendSocket;
+- (BOOL)setUpMulticastSendTimer;
+- (BOOL)setUpReceiveDispatchSource;
+- (BOOL)shouldAllowIDSReset;
+- (BOOL)shouldRefetchIDSPairingState;
 - (void)syncTimeWithSender:(double)arg1;
 - (void)tearDownMulticastSendReceiveState;
 - (int)unansweredMulticastCount;

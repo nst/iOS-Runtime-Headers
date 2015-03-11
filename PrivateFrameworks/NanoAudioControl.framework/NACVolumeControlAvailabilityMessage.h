@@ -9,13 +9,13 @@
         unsigned int volumeControlAvailable : 1; 
     NSString *_category;
     } _has;
-    bool_volumeControlAvailable;
+    BOOL _volumeControlAvailable;
 }
 
 @property(retain) NSString * category;
-@property(readonly) bool hasCategory;
-@property bool hasVolumeControlAvailable;
-@property bool volumeControlAvailable;
+@property(readonly) BOOL hasCategory;
+@property BOOL hasVolumeControlAvailable;
+@property BOOL volumeControlAvailable;
 
 - (void).cxx_destruct;
 - (id)category;
@@ -23,16 +23,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCategory;
-- (bool)hasVolumeControlAvailable;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCategory;
+- (BOOL)hasVolumeControlAvailable;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCategory:(id)arg1;
-- (void)setHasVolumeControlAvailable:(bool)arg1;
-- (void)setVolumeControlAvailable:(bool)arg1;
-- (bool)volumeControlAvailable;
+- (void)setHasVolumeControlAvailable:(BOOL)arg1;
+- (void)setVolumeControlAvailable:(BOOL)arg1;
+- (BOOL)volumeControlAvailable;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -14,7 +14,7 @@
     int _lastSavedABSequenceNumber;
     int _lastSavedCalSequenceNumber;
     NoteContext *_noteWatcher;
-    bool_watchingBookmarks;
+    BOOL _watchingBookmarks;
 }
 
 @property int lastSavedABSequenceNumber;

@@ -5,17 +5,17 @@
 @interface __NSCFNumber : NSNumber {
 }
 
-+ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (long long)_cfNumberType;
-- (unsigned long long)_cfTypeID;
-- (unsigned char)_getValue:(void*)arg1 forType:(long long)arg2;
-- (bool)_isDeallocating;
-- (long long)_reverseCompare:(id)arg1;
-- (bool)_tryRetain;
-- (bool)boolValue;
+- (long)_cfNumberType;
+- (unsigned long)_cfTypeID;
+- (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;
+- (BOOL)_isDeallocating;
+- (int)_reverseCompare:(id)arg1;
+- (BOOL)_tryRetain;
+- (BOOL)boolValue;
 - (BOOL)charValue;
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
@@ -23,25 +23,25 @@
 - (void)finalize;
 - (float)floatValue;
 - (void)getValue:(void*)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (int)intValue;
-- (long long)integerValue;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToNumber:(id)arg1;
-- (bool)isNSNumber__;
+- (int)integerValue;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToNumber:(id)arg1;
+- (BOOL)isNSNumber__;
 - (long long)longLongValue;
-- (long long)longValue;
+- (long)longValue;
 - (const char *)objCType;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 - (short)shortValue;
 - (id)stringValue;
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
-- (unsigned long long)unsignedIntegerValue;
+- (unsigned int)unsignedIntegerValue;
 - (unsigned long long)unsignedLongLongValue;
-- (unsigned long long)unsignedLongValue;
+- (unsigned long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 
 @end

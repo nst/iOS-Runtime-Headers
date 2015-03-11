@@ -10,15 +10,15 @@
 @property(copy) NSString * clientIdentifierHeader;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(getter=isForced) bool forced;
-@property(readonly) unsigned long long hash;
+@property(getter=isForced) BOOL forced;
+@property(readonly) unsigned int hash;
 @property(copy) NSArray * softwareTypes;
 @property(readonly) Class superclass;
 
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (void)setClientIdentifierHeader:(id)arg1;
-- (void)setForced:(bool)arg1;
+- (void)setForced:(BOOL)arg1;
 - (void)setSoftwareTypes:(id)arg1;
 
 @end

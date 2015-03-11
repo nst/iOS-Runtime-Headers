@@ -7,39 +7,39 @@
 @interface NPKProtoSecureElementGetCardsResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
-        unsigned long long count; 
-        unsigned long long size; 
+        unsigned int count; 
+        unsigned int size; 
     struct { 
         unsigned int *list; 
-        unsigned long long count; 
-        unsigned long long size; 
+        unsigned int count; 
+        unsigned int size; 
     struct { 
         unsigned int pending : 1; 
     } _activationStates;
     NSMutableArray *_cardAIDs;
     } _has;
     } _lifecycleStates;
-    bool_pending;
+    BOOL _pending;
 }
 
 @property(readonly) unsigned int* activationStates;
-@property(readonly) unsigned long long activationStatesCount;
+@property(readonly) unsigned int activationStatesCount;
 @property(retain) NSMutableArray * cardAIDs;
-@property bool hasPending;
+@property BOOL hasPending;
 @property(readonly) unsigned int* lifecycleStates;
-@property(readonly) unsigned long long lifecycleStatesCount;
-@property bool pending;
+@property(readonly) unsigned int lifecycleStatesCount;
+@property BOOL pending;
 
 - (void).cxx_destruct;
 - (unsigned int*)activationStates;
-- (unsigned int)activationStatesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)activationStatesCount;
+- (unsigned int)activationStatesAtIndex:(unsigned int)arg1;
+- (unsigned int)activationStatesCount;
 - (void)addActivationStates:(unsigned int)arg1;
 - (void)addCardAIDs:(id)arg1;
 - (void)addLifecycleStates:(unsigned int)arg1;
 - (id)cardAIDs;
-- (id)cardAIDsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)cardAIDsCount;
+- (id)cardAIDsAtIndex:(unsigned int)arg1;
+- (unsigned int)cardAIDsCount;
 - (void)clearActivationStates;
 - (void)clearCardAIDs;
 - (void)clearLifecycleStates;
@@ -48,20 +48,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasPending;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasPending;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int*)lifecycleStates;
-- (unsigned int)lifecycleStatesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)lifecycleStatesCount;
+- (unsigned int)lifecycleStatesAtIndex:(unsigned int)arg1;
+- (unsigned int)lifecycleStatesCount;
 - (void)mergeFrom:(id)arg1;
-- (bool)pending;
-- (bool)readFrom:(id)arg1;
-- (void)setActivationStates:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (BOOL)pending;
+- (BOOL)readFrom:(id)arg1;
+- (void)setActivationStates:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setCardAIDs:(id)arg1;
-- (void)setHasPending:(bool)arg1;
-- (void)setLifecycleStates:(unsigned int*)arg1 count:(unsigned long long)arg2;
-- (void)setPending:(bool)arg1;
+- (void)setHasPending:(BOOL)arg1;
+- (void)setLifecycleStates:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setPending:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

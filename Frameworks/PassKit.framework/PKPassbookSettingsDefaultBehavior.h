@@ -12,17 +12,17 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)dealloc;
-- (bool)deviceInRestrictedMode;
-- (bool)deviceSupportsInAppPayments;
+- (BOOL)deviceInRestrictedMode;
+- (BOOL)deviceSupportsInAppPayments;
 - (id)init;
 - (id)optionsDelegate;
 - (id)passDataProvider;
 - (id)secureElementID;
 - (id)setupDelegate;
-- (bool)showPassState;
+- (BOOL)showPassState;
 
 @end

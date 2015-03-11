@@ -12,12 +12,12 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) ABGroupWrapper * groupWrapper;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) ABStyleProvider * styleProvider;
 @property(readonly) Class superclass;
 
 - (void)dealloc;
-- (void)groupWrapper:(id)arg1 didBecomeSelected:(bool)arg2;
+- (void)groupWrapper:(id)arg1 didBecomeSelected:(BOOL)arg2;
 - (id)groupWrapper;
 - (void)setGroupWrapper:(id)arg1;
 - (void)setStyleProvider:(id)arg1;

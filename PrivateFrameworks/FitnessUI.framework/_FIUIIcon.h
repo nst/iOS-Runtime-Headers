@@ -6,61 +6,61 @@
 
 @interface _FIUIIcon : FIUIAnimatableObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGSize { 
-        double width; 
-        double height; 
-    double _alpha;
+        float width; 
+        float height; 
+    float _alpha;
     UIColor *_color;
-    double _coloration;
-    long long _currentFrameIndex;
+    float _coloration;
+    int _currentFrameIndex;
     } _firstFrameOrigin;
-    long long _frameColumns;
-    long long _frameCount;
+    int _frameColumns;
+    int _frameCount;
     } _frameSize;
     } _position;
-    double _size;
+    float _size;
 }
 
-@property double alpha;
+@property float alpha;
 @property(retain) UIColor * color;
-@property double coloration;
-@property long long currentFrameIndex;
-@property struct CGPoint { double x1; double x2; } firstFrameOrigin;
-@property long long frameColumns;
-@property long long frameCount;
-@property struct CGSize { double x1; double x2; } frameSize;
-@property struct CGPoint { double x1; double x2; } position;
-@property double size;
+@property float coloration;
+@property int currentFrameIndex;
+@property struct CGPoint { float x1; float x2; } firstFrameOrigin;
+@property int frameColumns;
+@property int frameCount;
+@property struct CGSize { float x1; float x2; } frameSize;
+@property struct CGPoint { float x1; float x2; } position;
+@property float size;
 
 - (void).cxx_destruct;
-- (id)_newAnimatablePropertyForType:(unsigned long long)arg1;
-- (void)addAnimation:(id)arg1 forRingGroupPropertyType:(unsigned long long)arg2;
-- (double)alpha;
+- (id)_newAnimatablePropertyForType:(unsigned int)arg1;
+- (void)addAnimation:(id)arg1 forRingGroupPropertyType:(unsigned int)arg2;
+- (float)alpha;
 - (id)color;
-- (double)coloration;
-- (long long)currentFrameIndex;
-- (struct CGPoint { double x1; double x2; })firstFrameOrigin;
-- (long long)frameColumns;
-- (long long)frameCount;
-- (struct CGSize { double x1; double x2; })frameSize;
+- (float)coloration;
+- (int)currentFrameIndex;
+- (struct CGPoint { float x1; float x2; })firstFrameOrigin;
+- (int)frameColumns;
+- (int)frameCount;
+- (struct CGSize { float x1; float x2; })frameSize;
 - (id)init;
-- (bool)isDrawable;
-- (struct CGPoint { double x1; double x2; })position;
-- (void)setAlpha:(double)arg1;
+- (BOOL)isDrawable;
+- (struct CGPoint { float x1; float x2; })position;
+- (void)setAlpha:(float)arg1;
 - (void)setColor:(id)arg1;
-- (void)setColoration:(double)arg1;
-- (void)setCurrentFrameIndex:(long long)arg1;
-- (void)setFirstFrameOrigin:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setFrameColumns:(long long)arg1;
-- (void)setFrameCount:(long long)arg1;
-- (void)setFrameSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setPosition:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setSize:(double)arg1;
-- (double)size;
+- (void)setColoration:(float)arg1;
+- (void)setCurrentFrameIndex:(int)arg1;
+- (void)setFirstFrameOrigin:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFrameColumns:(int)arg1;
+- (void)setFrameCount:(int)arg1;
+- (void)setFrameSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setSize:(float)arg1;
+- (float)size;
 
 @end

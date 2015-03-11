@@ -15,10 +15,10 @@
     double _score;
 }
 
-@property bool hasMaxScore;
-@property bool hasNumRatingsUsedForScore;
-@property bool hasRatingType;
-@property bool hasScore;
+@property BOOL hasMaxScore;
+@property BOOL hasNumRatingsUsedForScore;
+@property BOOL hasRatingType;
+@property BOOL hasScore;
 @property double maxScore;
 @property int numRatingsUsedForScore;
 @property int ratingType;
@@ -30,22 +30,22 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasMaxScore;
-- (bool)hasNumRatingsUsedForScore;
-- (bool)hasRatingType;
-- (bool)hasScore;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasMaxScore;
+- (BOOL)hasNumRatingsUsedForScore;
+- (BOOL)hasRatingType;
+- (BOOL)hasScore;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (double)maxScore;
 - (void)mergeFrom:(id)arg1;
 - (int)numRatingsUsedForScore;
 - (int)ratingType;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (double)score;
-- (void)setHasMaxScore:(bool)arg1;
-- (void)setHasNumRatingsUsedForScore:(bool)arg1;
-- (void)setHasRatingType:(bool)arg1;
-- (void)setHasScore:(bool)arg1;
+- (void)setHasMaxScore:(BOOL)arg1;
+- (void)setHasNumRatingsUsedForScore:(BOOL)arg1;
+- (void)setHasRatingType:(BOOL)arg1;
+- (void)setHasScore:(BOOL)arg1;
 - (void)setMaxScore:(double)arg1;
 - (void)setNumRatingsUsedForScore:(int)arg1;
 - (void)setRatingType:(int)arg1;

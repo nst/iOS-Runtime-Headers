@@ -8,7 +8,7 @@
     NSDictionary *_latestStatisticsSnapshot;
     UIBarButtonItem *_playPauseToolbarButton;
     UIButton *_resetStatisticsButton;
-    long long _statisticsPeriod;
+    int _statisticsPeriod;
     UIToolbar *_statisticsPeriodToolbar;
     struct __CFNotificationCenter { } *_updateNotificationsCtr;
     bool_isAutorefreshingStatistics;
@@ -17,24 +17,24 @@
 + (id)settingsMenuActionHandler;
 
 - (void).cxx_destruct;
-- (bool)autoupdatesEnabled;
+- (BOOL)autoupdatesEnabled;
 - (void)dealloc;
 - (void)highlightActiveStatisticsPeriodButton:(id)arg1;
 - (id)init;
 - (void)loadView;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)playPauseNavigationButton;
 - (void)reloadStatistics;
 - (void)resetStatistics;
-- (void)setStatisticsPeriod:(long long)arg1;
+- (void)setStatisticsPeriod:(int)arg1;
 - (void)setStatisticsPeriodAsDay:(id)arg1;
 - (void)setStatisticsPeriodAsHour:(id)arg1;
 - (void)setStatisticsPeriodAsMinute:(id)arg1;
 - (void)setStatisticsPeriodAsWeek:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 
 @end

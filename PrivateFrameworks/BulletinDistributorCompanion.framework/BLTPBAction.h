@@ -13,8 +13,8 @@
 
 @property int activationMode;
 @property(retain) BLTPBAppearance * appearance;
-@property(readonly) bool hasIdentifier;
-@property(readonly) bool hasLaunchURL;
+@property(readonly) BOOL hasIdentifier;
+@property(readonly) BOOL hasLaunchURL;
 @property(retain) NSString * identifier;
 @property(retain) NSString * launchURL;
 
@@ -25,14 +25,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasIdentifier;
-- (bool)hasLaunchURL;
-- (unsigned long long)hash;
+- (BOOL)hasIdentifier;
+- (BOOL)hasLaunchURL;
+- (unsigned int)hash;
 - (id)identifier;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)launchURL;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setActivationMode:(int)arg1;
 - (void)setAppearance:(id)arg1;
 - (void)setIdentifier:(id)arg1;

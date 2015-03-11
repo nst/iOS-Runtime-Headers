@@ -9,7 +9,7 @@
 + (Class)healthEntityClass;
 + (int)nanoSyncObjectType;
 + (id)sampleTypesByAgeInDaysForNanoSyncRestore;
-+ (long long)syncEntityType;
-+ (unsigned long long)syncObjectLimitForNanoSyncMessage;
++ (int)syncEntityType;
++ (unsigned int)syncObjectLimitForNanoSyncMessage;
 
 @end

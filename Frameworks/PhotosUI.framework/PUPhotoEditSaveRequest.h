@@ -12,36 +12,36 @@
     double _beginTimestamp;
     id _completionHandler;
     PHContentEditingOutput *_contentEditingOutput;
-    long long _currentState;
+    int _currentState;
     PLPhotoEditModel *_editModel;
     PHAsset *_photo;
-    long long _workImageVersion;
+    int _workImageVersion;
 }
 
 @property(readonly) PHContentEditingOutput * contentEditingOutput;
-@property(readonly) long long currentState;
+@property(readonly) int currentState;
 @property(copy,readonly) PLPhotoEditModel * editModel;
 @property(readonly) PHAsset * photo;
-@property(readonly) long long workImageVersion;
+@property(readonly) int workImageVersion;
 
 - (void).cxx_destruct;
-- (void)_finishWithSuccess:(bool)arg1;
+- (void)_finishWithSuccess:(BOOL)arg1;
 - (void)_performRevertToOriginalOperation;
 - (void)_performSaveContentEditingOutput;
 - (void)_performSaveEditsOperation;
-- (void)_renderAndSaveBaseImage:(id)arg1 withOrientation:(long long)arg2 baseImageURL:(id)arg3;
-- (void)_transitionToState:(long long)arg1;
+- (void)_renderAndSaveBaseImage:(id)arg1 withOrientation:(int)arg2 baseImageURL:(id)arg3;
+- (void)_transitionToState:(int)arg1;
 - (void)beginSaveOperationWithCompletionHandler:(id)arg1;
 - (void)cancelSaveOperation;
 - (id)contentEditingOutput;
-- (long long)currentState;
+- (int)currentState;
 - (id)editModel;
 - (id)init;
-- (id)initWithPhoto:(id)arg1 contentEditingOutput:(id)arg2 workImageVersion:(long long)arg3;
-- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 contentEditingOutput:(id)arg3 workImageVersion:(long long)arg4;
-- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 workImageVersion:(long long)arg3;
+- (id)initWithPhoto:(id)arg1 contentEditingOutput:(id)arg2 workImageVersion:(int)arg3;
+- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 contentEditingOutput:(id)arg3 workImageVersion:(int)arg4;
+- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 workImageVersion:(int)arg3;
 - (id)initWithPhotoToRevertToOriginal:(id)arg1;
 - (id)photo;
-- (long long)workImageVersion;
+- (int)workImageVersion;
 
 @end

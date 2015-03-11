@@ -18,11 +18,11 @@
 }
 
 @property(retain) NSString * activityType;
-@property(readonly) bool hasActivityType;
-@property(readonly) bool hasIdentifier;
-@property bool hasTimeDelta;
-@property bool hasTimeEnded;
-@property bool hasTimeStarted;
+@property(readonly) BOOL hasActivityType;
+@property(readonly) BOOL hasIdentifier;
+@property BOOL hasTimeDelta;
+@property BOOL hasTimeEnded;
+@property BOOL hasTimeStarted;
 @property(retain) NSString * identifier;
 @property double timeDelta;
 @property double timeEnded;
@@ -35,20 +35,20 @@
 - (id)description;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasActivityType;
-- (bool)hasIdentifier;
-- (bool)hasTimeDelta;
-- (bool)hasTimeEnded;
-- (bool)hasTimeStarted;
-- (unsigned long long)hash;
+- (BOOL)hasActivityType;
+- (BOOL)hasIdentifier;
+- (BOOL)hasTimeDelta;
+- (BOOL)hasTimeEnded;
+- (BOOL)hasTimeStarted;
+- (unsigned int)hash;
 - (id)identifier;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setActivityType:(id)arg1;
-- (void)setHasTimeDelta:(bool)arg1;
-- (void)setHasTimeEnded:(bool)arg1;
-- (void)setHasTimeStarted:(bool)arg1;
+- (void)setHasTimeDelta:(BOOL)arg1;
+- (void)setHasTimeEnded:(BOOL)arg1;
+- (void)setHasTimeStarted:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setTimeDelta:(double)arg1;
 - (void)setTimeEnded:(double)arg1;

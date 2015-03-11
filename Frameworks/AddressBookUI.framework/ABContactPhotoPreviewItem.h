@@ -11,7 +11,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * previewItemTitle;
 @property(retain) NSURL * previewItemURL;
 @property(readonly) Class superclass;

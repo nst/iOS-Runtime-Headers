@@ -9,13 +9,13 @@
     AXHARemoteMessage *_currentMessageInFlight;
     AXHAPacket *_currentPacket;
     <AXHARemoteControllerDelegate> *_delegate;
+    BOOL _didValidateHIID;
     NSMutableData *_inputBuffer;
     NSInputStream *_inputStream;
     NSMutableData *_outputBuffer;
     NSMutableArray *_outputDataQueue;
     NSOutputStream *_outputStream;
     NSNetService *_service;
-    bool_didValidateHIID;
 }
 
 @property(retain) AXHATimer * communicationTimer;
@@ -23,8 +23,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <AXHARemoteControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property bool didValidateHIID;
-@property(readonly) unsigned long long hash;
+@property BOOL didValidateHIID;
+@property(readonly) unsigned int hash;
 @property(retain) NSMutableData * inputBuffer;
 @property(retain) NSInputStream * inputStream;
 @property(retain) NSMutableData * outputBuffer;
@@ -42,16 +42,16 @@
 - (id)delegate;
 - (id)description;
 - (void)didCommunicate;
-- (bool)didValidateHIID;
+- (BOOL)didValidateHIID;
 - (void)enqueueData:(id)arg1;
 - (void)finishedSending:(id)arg1;
 - (id)init;
 - (id)initWithService:(id)arg1;
 - (id)inputBuffer;
 - (id)inputStream;
-- (bool)isConnected;
-- (bool)isConnecting;
-- (bool)isSlave;
+- (BOOL)isConnected;
+- (BOOL)isConnecting;
+- (BOOL)isSlave;
 - (void)messageWasAcked:(id)arg1;
 - (id)name;
 - (void)netService:(id)arg1 didAcceptConnectionWithInputStream:(id)arg2 outputStream:(id)arg3;
@@ -71,13 +71,13 @@
 - (void)receivedData:(id)arg1;
 - (void)resetConnection;
 - (void)sendDataChunk;
-- (bool)sendObject:(id)arg1 withSendCompletion:(id)arg2;
-- (bool)sendObject:(id)arg1;
+- (BOOL)sendObject:(id)arg1 withSendCompletion:(id)arg2;
+- (BOOL)sendObject:(id)arg1;
 - (id)service;
 - (void)setCommunicationTimer:(id)arg1;
 - (void)setCurrentMessageInFlight:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDidValidateHIID:(bool)arg1;
+- (void)setDidValidateHIID:(BOOL)arg1;
 - (void)setInputBuffer:(id)arg1;
 - (void)setInputStream:(id)arg1;
 - (void)setOutputBuffer:(id)arg1;
@@ -86,7 +86,7 @@
 - (void)setSecuritySettingsForStream:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setupStream:(id)arg1;
-- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (void)validatePairedAid;
 
 @end

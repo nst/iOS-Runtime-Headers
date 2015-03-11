@@ -5,28 +5,28 @@
 @class NSError, NSString;
 
 @interface PLCPLDownloadContext : NSObject {
+    BOOL _completed;
     NSError *_error;
     double _progress;
     NSString *_resourceTypeDescription;
     NSString *_taskIdentifier;
     double _updateLastQueuedTime;
-    bool_completed;
 }
 
-@property bool completed;
+@property BOOL completed;
 @property(retain) NSError * error;
 @property double progress;
 @property(retain) NSString * resourceTypeDescription;
 @property(retain) NSString * taskIdentifier;
 @property double updateLastQueuedTime;
 
-- (bool)completed;
+- (BOOL)completed;
 - (void)dealloc;
 - (id)description;
 - (id)error;
 - (double)progress;
 - (id)resourceTypeDescription;
-- (void)setCompleted:(bool)arg1;
+- (void)setCompleted:(BOOL)arg1;
 - (void)setError:(id)arg1;
 - (void)setProgress:(double)arg1;
 - (void)setResourceTypeDescription:(id)arg1;

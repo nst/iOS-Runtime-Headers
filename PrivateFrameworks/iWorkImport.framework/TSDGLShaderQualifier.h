@@ -6,18 +6,18 @@
 
 @interface TSDGLShaderQualifier : NSObject {
     NSString *_name;
+    BOOL _needsUpdate;
     int _uniformLocation;
-    bool_needsUpdate;
 }
 
 @property(readonly) NSString * name;
-@property(readonly) bool needsUpdate;
+@property(readonly) BOOL needsUpdate;
 @property int uniformLocation;
 
 - (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)name;
-- (bool)needsUpdate;
+- (BOOL)needsUpdate;
 - (void)setGLUniformCheckWithShader:(id)arg1;
 - (void)setGLUniformWithShader:(id)arg1;
 - (void)setUniformLocation:(int)arg1;

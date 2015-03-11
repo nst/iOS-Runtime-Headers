@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)description;
 - (void*)group;
-- (bool)isValid;
+- (BOOL)isValid;
 - (id)queryWhereString;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setGroup:(void*)arg1;

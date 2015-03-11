@@ -11,7 +11,7 @@
 @property <TSWPTextEditingDelegate> * delegate;
 
 - (id)delegate;
-- (bool)displaysInstructionalText;
+- (BOOL)displaysInstructionalText;
 - (Class)layoutClass;
 - (Class)repClass;
 - (void)setDelegate:(id)arg1;

@@ -5,42 +5,42 @@
 @class NSArray, NSString;
 
 @interface APDLocale : APDGenericData {
+    BOOL _RTL;
+    BOOL _cache;
     NSString *_cacheHTML;
     NSString *_folder;
     NSArray *_isoCodes;
     NSString *_isoName;
     NSString *_name;
-    bool_RTL;
-    bool_cache;
 }
 
-@property(getter=isRTL) bool RTL;
-@property bool cache;
+@property(getter=isRTL) BOOL RTL;
+@property BOOL cache;
 @property(copy) NSString * cacheHTML;
 @property(copy) NSString * folder;
-@property(readonly) bool isSimplifiedChinese;
+@property(readonly) BOOL isSimplifiedChinese;
 @property(copy) NSArray * isoCodes;
 @property(copy) NSString * isoName;
 @property(copy) NSString * name;
 
 - (void).cxx_destruct;
-- (bool)cache;
+- (BOOL)cache;
 - (id)cacheHTML;
 - (id)description;
 - (id)folder;
 - (id)initWithDictionary:(id)arg1;
-- (bool)isRTL;
-- (bool)isSimplifiedChinese;
+- (BOOL)isRTL;
+- (BOOL)isSimplifiedChinese;
 - (id)isoCodes;
 - (id)isoName;
 - (id)name;
-- (void)setCache:(bool)arg1;
+- (void)setCache:(BOOL)arg1;
 - (void)setCacheHTML:(id)arg1;
 - (void)setFolder:(id)arg1;
 - (void)setIsoCodes:(id)arg1;
 - (void)setIsoName:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setRTL:(bool)arg1;
+- (void)setRTL:(BOOL)arg1;
 - (id)simplifiedChineseFontFamilyName;
 
 @end

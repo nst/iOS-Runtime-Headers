@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)cannedReplies;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (id)customReplies;
 - (id)defaultReplies;
 - (id)init;

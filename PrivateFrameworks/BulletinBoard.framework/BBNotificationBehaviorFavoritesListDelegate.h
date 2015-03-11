@@ -14,12 +14,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithHandlerBlock:(id)arg1;
-- (bool)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
-- (bool)predicateShouldContinue:(id)arg1;
+- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
+- (BOOL)predicateShouldContinue:(id)arg1;
 
 @end

@@ -13,7 +13,7 @@
 - (id)displayLabel;
 - (id)displayStringForValue:(id)arg1;
 - (id)editingStringValue;
-- (bool)isEquivalentToItem:(id)arg1;
+- (BOOL)isEquivalentToItem:(id)arg1;
 - (id)profile;
 - (id)valueForDisplayString:(id)arg1;
 

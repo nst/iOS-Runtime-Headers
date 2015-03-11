@@ -14,7 +14,7 @@
 - (int)begin;
 - (int)closeFigure;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGPoint { double x1; double x2; })currentPoint;
+- (struct CGPoint { float x1; float x2; })currentPoint;
 - (void)dealloc;
 - (int)end;
 - (int)fill:(id)arg1;
@@ -22,7 +22,7 @@
 - (id)getBezierPath;
 - (id)init;
 - (id)initWithPath:(id)arg1 state:(int)arg2;
-- (bool)isOpen;
+- (BOOL)isOpen;
 - (int)state;
 - (int)stroke:(id)arg1;
 - (int)widen:(id)arg1;

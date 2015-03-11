@@ -9,7 +9,7 @@
 
 @property(copy,readonly) NSURL * absoluteLinkURL;
 @property(copy) NSString * charset;
-@property bool disabled;
+@property BOOL disabled;
 @property(copy) NSString * href;
 @property(copy) NSString * hreflang;
 @property(copy) NSString * media;
@@ -19,18 +19,18 @@
 @property(copy) NSString * target;
 @property(copy) NSString * type;
 
-- (bool)_mediaQueryMatches;
-- (bool)_mediaQueryMatchesForOrientation:(int)arg1;
+- (BOOL)_mediaQueryMatches;
+- (BOOL)_mediaQueryMatchesForOrientation:(int)arg1;
 - (id)absoluteLinkURL;
 - (id)charset;
-- (bool)disabled;
+- (BOOL)disabled;
 - (id)href;
 - (id)hreflang;
 - (id)media;
 - (id)rel;
 - (id)rev;
 - (void)setCharset:(id)arg1;
-- (void)setDisabled:(bool)arg1;
+- (void)setDisabled:(BOOL)arg1;
 - (void)setHref:(id)arg1;
 - (void)setHreflang:(id)arg1;
 - (void)setMedia:(id)arg1;

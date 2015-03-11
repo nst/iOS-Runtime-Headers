@@ -7,25 +7,25 @@
 @interface AFUIStateMachine : NSObject {
     <AFUIStateMachineDelegate> *_delegate;
     NSMutableDictionary *_endStatesByEventByStartState;
-    long long _state;
+    int _state;
 }
 
 @property <AFUIStateMachineDelegate> * delegate;
 @property(getter=_endStatesByEventByStartState,retain) NSMutableDictionary * endStatesByEventByStartState;
-@property long long state;
+@property int state;
 
 - (void).cxx_destruct;
-- (id)_descriptionForEvent:(long long)arg1;
-- (id)_endStateNumberFromDictionary:(id)arg1 forEvent:(long long)arg2;
+- (id)_descriptionForEvent:(int)arg1;
+- (id)_endStateNumberFromDictionary:(id)arg1 forEvent:(int)arg2;
 - (id)_endStatesByEventByStartState;
-- (void)_setState:(long long)arg1 forEvent:(long long)arg2;
-- (void)_setState:(long long)arg1;
-- (void)addTransitionFromState:(long long)arg1 toState:(long long)arg2 forEvent:(long long)arg3;
+- (void)_setState:(int)arg1 forEvent:(int)arg2;
+- (void)_setState:(int)arg1;
+- (void)addTransitionFromState:(int)arg1 toState:(int)arg2 forEvent:(int)arg3;
 - (id)delegate;
-- (id)initWithInitialState:(long long)arg1;
-- (void)performTransitionForEvent:(long long)arg1;
+- (id)initWithInitialState:(int)arg1;
+- (void)performTransitionForEvent:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEndStatesByEventByStartState:(id)arg1;
-- (long long)state;
+- (int)state;
 
 @end

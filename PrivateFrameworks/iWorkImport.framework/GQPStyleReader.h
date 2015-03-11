@@ -5,13 +5,13 @@
 @class GQDSStyle, GQDSStylesheet, NSString;
 
 @interface GQPStyleReader : NSObject <GQPObjectReader, GQPObjectHandler> {
-    boolmStyleIdentiferEqualsParentIdentifier;
-    boolmStyleIsIdentified;
     int mCurrentProperty;
     struct __CFArray { } *mEntries;
     char *mIdentifier;
     char *mParentIdentifier;
     GQDSStyle *mStyle;
+    BOOL mStyleIdentiferEqualsParentIdentifier;
+    BOOL mStyleIsIdentified;
     int mStyleType;
     GQDSStylesheet *mStylesheet;
     char *mUid;
@@ -19,18 +19,18 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (void)initialize;
 
-- (bool)beginProperty:(const char *)arg1;
+- (BOOL)beginProperty:(const char *)arg1;
 - (int)beginReadingFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (id)createStyle;
 - (void)dealloc;
 - (void)doneProperty;
 - (int)doneReading:(id)arg1;
-- (void)handleBoolValue:(bool)arg1;
+- (void)handleBoolValue:(BOOL)arg1;
 - (void)handleDoubleValue:(double)arg1;
 - (void)handleFloatValue:(float)arg1;
 - (void)handleIntValue:(int)arg1;

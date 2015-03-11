@@ -3,13 +3,13 @@
  */
 
 @interface SUButtonAction : NSObject {
-    bool_activated;
+    BOOL _activated;
 }
 
-@property(getter=isActivated,readonly) bool activated;
+@property(getter=isActivated,readonly) BOOL activated;
 
 - (void)_buttonAction:(id)arg1;
-- (void)_setActivated:(bool)arg1;
-- (bool)isActivated;
+- (void)_setActivated:(BOOL)arg1;
+- (BOOL)isActivated;
 
 @end

@@ -28,7 +28,7 @@
 - (void)resetResponseCatalog;
 - (id)responseCatalogEditable;
 - (id)responseCatalogNonEditable;
-- (id)responsesForCategory:(unsigned long long)arg1 gender:(unsigned long long)arg2 maximumResponses:(unsigned long long)arg3 withLanguage:(id)arg4 options:(unsigned long long)arg5;
+- (id)responsesForCategory:(unsigned int)arg1 gender:(unsigned int)arg2 maximumResponses:(unsigned int)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5;
 - (id)responsesForFixedPhrase:(id)arg1 withLanguage:(id)arg2;
 - (void)setContext:(id)arg1;
 - (void)setPhraseMap:(id)arg1;

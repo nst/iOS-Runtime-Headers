@@ -9,7 +9,7 @@
     NSDictionary *_infoPlist;
     NSString *_launchServicesBundleType;
     NSDictionary *_localizedStrings;
-    unsigned long long _sequenceNumber;
+    unsigned int _sequenceNumber;
 }
 
 @property(readonly) NSString * applicationIdentifier;
@@ -24,11 +24,11 @@
 @property(readonly) NSString * localizedDisplayName;
 @property(readonly) NSDictionary * localizedDisplayNames;
 @property(retain) NSDictionary * localizedStrings;
-@property unsigned long long sequenceNumber;
+@property unsigned int sequenceNumber;
 @property(readonly) NSArray * supportedSchemes;
 @property(readonly) NSString * vendorName;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)applicationIdentifier;
@@ -47,12 +47,12 @@
 - (id)localizedStrings;
 - (id)objectForInfoDictionaryKey:(id)arg1 localization:(id)arg2;
 - (id)objectForInfoDictionaryKey:(id)arg1;
-- (unsigned long long)sequenceNumber;
+- (unsigned int)sequenceNumber;
 - (void)setITunesPlistStrings:(id)arg1;
 - (void)setInfoPlist:(id)arg1;
 - (void)setLaunchServicesBundleType:(id)arg1;
 - (void)setLocalizedStrings:(id)arg1;
-- (void)setSequenceNumber:(unsigned long long)arg1;
+- (void)setSequenceNumber:(unsigned int)arg1;
 - (id)supportedSchemes;
 - (id)vendorName;
 

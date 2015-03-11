@@ -9,26 +9,26 @@
 @interface GEOPlaceDataProvider : NSObject {
     id _errorHandler;
     id _finishedHandler;
-    bool_isLoading;
+    BOOL _isLoading;
 }
 
 @property(copy) id errorHandler;
 @property(copy) id finishedHandler;
-@property bool isLoading;
+@property BOOL isLoading;
 
 - (void)cancelProviderRequest;
 - (void)cancelRequest;
 - (void)dealloc;
 - (id)errorHandler;
 - (id)finishedHandler;
-- (bool)isLoading;
+- (BOOL)isLoading;
 - (void)providerDidCancel;
-- (void)providerReceivedErrorCode:(long long)arg1 userInfo:(id)arg2;
+- (void)providerReceivedErrorCode:(int)arg1 userInfo:(id)arg2;
 - (void)providerReceivedResponse:(id)arg1;
 - (void)requestCompleted;
 - (void)setErrorHandler:(id)arg1;
 - (void)setFinishedHandler:(id)arg1;
-- (void)setIsLoading:(bool)arg1;
+- (void)setIsLoading:(BOOL)arg1;
 - (void)startProviderWithRequest:(id)arg1 appIdentifier:(id)arg2;
 - (void)startRequest:(id)arg1 appIdentifier:(id)arg2 finished:(id)arg3 error:(id)arg4;
 

@@ -8,8 +8,8 @@
 - (id)accountTypeIdentifier;
 - (id)activityImage;
 - (id)activityTitle;
-- (long long)authenticationStyle;
-- (bool)isFirstClassService;
+- (int)authenticationStyle;
+- (BOOL)isFirstClassService;
 - (id)serviceType;
 
 @end

@@ -6,19 +6,19 @@
 
 @interface CBPeer : NSObject <NSCopying> {
     struct __CFUUID { } *_UUID;
-    long long _hostState;
+    int _hostState;
     NSUUID *_identifier;
-    unsigned long long _mtuLength;
-    long long _pairingState;
-    bool_isLinkEncrypted;
+    BOOL _isLinkEncrypted;
+    unsigned int _mtuLength;
+    int _pairingState;
 }
 
 @property(readonly) struct __CFUUID { }* UUID;
-@property long long hostState;
+@property int hostState;
 @property(readonly) NSUUID * identifier;
-@property bool isLinkEncrypted;
-@property unsigned long long mtuLength;
-@property long long pairingState;
+@property BOOL isLinkEncrypted;
+@property unsigned int mtuLength;
+@property int pairingState;
 
 - (struct __CFUUID { }*)UUID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -27,15 +27,15 @@
 - (void)handleLinkEncryptionChanged:(id)arg1;
 - (void)handleMTUChanged:(id)arg1;
 - (void)handleMsg:(int)arg1 args:(id)arg2;
-- (long long)hostState;
+- (int)hostState;
 - (id)identifier;
 - (id)initWithInfo:(id)arg1;
-- (bool)isLinkEncrypted;
-- (unsigned long long)mtuLength;
-- (long long)pairingState;
-- (void)setHostState:(long long)arg1;
-- (void)setIsLinkEncrypted:(bool)arg1;
-- (void)setMtuLength:(unsigned long long)arg1;
-- (void)setPairingState:(long long)arg1;
+- (BOOL)isLinkEncrypted;
+- (unsigned int)mtuLength;
+- (int)pairingState;
+- (void)setHostState:(int)arg1;
+- (void)setIsLinkEncrypted:(BOOL)arg1;
+- (void)setMtuLength:(unsigned int)arg1;
+- (void)setPairingState:(int)arg1;
 
 @end

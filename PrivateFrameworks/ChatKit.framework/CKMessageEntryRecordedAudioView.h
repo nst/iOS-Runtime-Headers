@@ -23,8 +23,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <CKMessageEntryRecordedAudioViewDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool isPlaying;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL isPlaying;
 @property(retain) CKAudioProgressView * progressView;
 @property(readonly) Class superclass;
 @property double time;
@@ -42,8 +42,8 @@
 - (id)balloonImageView;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithPlaybackButton:(bool)arg1;
-- (bool)isPlaying;
+- (id)initWithPlaybackButton:(BOOL)arg1;
+- (BOOL)isPlaying;
 - (void)layoutSubviews;
 - (void)pause;
 - (void)play;
@@ -58,7 +58,7 @@
 - (void)setTimeLabel:(id)arg1;
 - (void)setWaveformImage:(id)arg1;
 - (void)setWaveformImageView:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)tapRecognized:(id)arg1;
 - (double)time;
 - (id)timeFormat;

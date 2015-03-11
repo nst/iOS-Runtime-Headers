@@ -7,12 +7,12 @@
 @interface AVCaptureMetadataOutputInternal_FigRecorder : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     AVWeakReferencingDelegateStorage *delegateStorage;
     NSArray *metadataObjectTypes;

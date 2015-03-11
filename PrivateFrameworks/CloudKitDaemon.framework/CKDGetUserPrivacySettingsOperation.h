@@ -3,15 +3,15 @@
  */
 
 @interface CKDGetUserPrivacySettingsOperation : CKDOperation {
-    long long _discoverable;
+    int _discoverable;
 }
 
-@property long long discoverable;
+@property int discoverable;
 
 - (void)_handleRetrievedPrivacySettings:(id)arg1;
-- (long long)discoverable;
+- (int)discoverable;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (void)setDiscoverable:(long long)arg1;
+- (void)setDiscoverable:(int)arg1;
 
 @end

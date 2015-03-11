@@ -5,14 +5,14 @@
 @interface MRNowPlayingArtwork : NSObject {
 }
 
-@property(readonly) bool hasArtworkData;
+@property(readonly) BOOL hasArtworkData;
 @property(readonly) unsigned int type;
 
 + (id)nowPlayingArtworkFromXPCDictionary:(id)arg1;
 
 - (void)bindToXPCDictionary:(id)arg1;
 - (id)copyImageData;
-- (bool)hasArtworkData;
+- (BOOL)hasArtworkData;
 - (unsigned int)type;
 
 @end

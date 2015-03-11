@@ -6,59 +6,59 @@
 
 @interface TSCHLegendModelCache : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
-    boolmLegendOn;
-    boolmReverseSingleColumnLegendOrder;
-    unsigned long long mCellCount;
+        float width; 
+        float height; 
+    unsigned int mCellCount;
     NSArray *mCells;
-    double mEffectiveStrokeWidth;
+    float mEffectiveStrokeWidth;
     id mFill;
-    double mHorizontalCellSpacing;
+    float mHorizontalCellSpacing;
     } mLargestCellSize;
     TSCHLegendViewCache *mLastLegendViewCache;
-    double mLastLegendWidth;
+    float mLastLegendWidth;
+    BOOL mLegendOn;
     TSCHLegendCellMetrics *mMetrics;
-    double mOpacity;
+    float mOpacity;
     TSWPParagraphStyle *mParagraphStyle;
+    BOOL mReverseSingleColumnLegendOrder;
     TSDShadow *mShadow;
     TSDStroke *mStroke;
-    double mSymbolGap;
-    double mVerticalCellSpacing;
+    float mSymbolGap;
+    float mVerticalCellSpacing;
 }
 
-@property(readonly) unsigned long long cellCount;
+@property(readonly) unsigned int cellCount;
 @property(readonly) NSArray * cells;
-@property(readonly) double effectiveStrokeWidth;
+@property(readonly) float effectiveStrokeWidth;
 @property(readonly) id fill;
-@property(readonly) double horizontalCellSpacing;
-@property(readonly) struct CGSize { double x1; double x2; } largestCellSize;
-@property(readonly) bool legendOn;
-@property(readonly) double opacity;
+@property(readonly) float horizontalCellSpacing;
+@property(readonly) struct CGSize { float x1; float x2; } largestCellSize;
+@property(readonly) BOOL legendOn;
+@property(readonly) float opacity;
 @property(readonly) TSWPParagraphStyle * paragraphStyle;
-@property(readonly) bool reverseSingleColumnLegendOrder;
+@property(readonly) BOOL reverseSingleColumnLegendOrder;
 @property(readonly) TSDShadow * shadow;
 @property(readonly) TSDStroke * stroke;
-@property(readonly) double symbolGap;
-@property(readonly) double verticalCellSpacing;
+@property(readonly) float symbolGap;
+@property(readonly) float verticalCellSpacing;
 
-- (unsigned long long)cellCount;
-- (id)cellForSeriesIndex:(unsigned long long)arg1 cellType:(int)arg2;
+- (unsigned int)cellCount;
+- (id)cellForSeriesIndex:(unsigned int)arg1 cellType:(int)arg2;
 - (id)cells;
 - (void)dealloc;
-- (double)effectiveStrokeWidth;
+- (float)effectiveStrokeWidth;
 - (id)fill;
-- (double)horizontalCellSpacing;
+- (float)horizontalCellSpacing;
 - (id)initWithChartModel:(id)arg1 textEditingSelectionPair:(id)arg2;
-- (struct CGSize { double x1; double x2; })largestCellSize;
-- (bool)legendOn;
-- (double)opacity;
+- (struct CGSize { float x1; float x2; })largestCellSize;
+- (BOOL)legendOn;
+- (float)opacity;
 - (id)paragraphStyle;
-- (bool)reverseSingleColumnLegendOrder;
+- (BOOL)reverseSingleColumnLegendOrder;
 - (id)shadow;
 - (id)stroke;
-- (double)symbolGap;
-- (double)verticalCellSpacing;
-- (id)viewCacheForWidth:(double)arg1;
+- (float)symbolGap;
+- (float)verticalCellSpacing;
+- (id)viewCacheForWidth:(float)arg1;
 
 @end

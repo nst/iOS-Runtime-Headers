@@ -6,29 +6,29 @@
 
 @interface UIWebPaginationInfo : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     NSObject<WebDocumentView> *_documentView;
     } _layoutSize;
     NSArray *_pageRects;
-    double _scaleFactor;
+    float _scaleFactor;
     UIWebDocumentView *_webDocumentView;
 }
 
-@property(readonly) double lastPageHeight;
-@property(readonly) unsigned long long pageCount;
+@property(readonly) float lastPageHeight;
+@property(readonly) unsigned int pageCount;
 @property(retain) UIWebDocumentView * webDocumentView;
 
 - (void)dealloc;
 - (id)documentView;
-- (id)initWithDocumentView:(id)arg1 scaleFactor:(double)arg2 layoutSize:(struct CGSize { double x1; double x2; })arg3 pageRects:(id)arg4;
-- (double)lastPageHeight;
-- (struct CGSize { double x1; double x2; })layoutSize;
-- (unsigned long long)pageCount;
+- (id)initWithDocumentView:(id)arg1 scaleFactor:(float)arg2 layoutSize:(struct CGSize { float x1; float x2; })arg3 pageRects:(id)arg4;
+- (float)lastPageHeight;
+- (struct CGSize { float x1; float x2; })layoutSize;
+- (unsigned int)pageCount;
 - (id)pageRects;
-- (double)scaleFactor;
+- (float)scaleFactor;
 - (void)setWebDocumentView:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForPageAtIndex:(long long)arg1;
+- (struct CGSize { float x1; float x2; })sizeForPageAtIndex:(int)arg1;
 - (id)webDocumentView;
 
 @end

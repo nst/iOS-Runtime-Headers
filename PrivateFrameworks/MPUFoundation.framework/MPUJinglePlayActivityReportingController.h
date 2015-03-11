@@ -9,16 +9,16 @@
     double _nonCatalogAggregatePlayDuration;
     double _nonCatalogAggregateStartTime;
     NSString *_nonCatalogDeviceName;
-    unsigned long long _nonCatalogSourceType;
+    BOOL _nonCatalogOffline;
+    BOOL _nonCatalogSBEnabled;
+    unsigned int _nonCatalogSourceType;
     unsigned long long _nonCatalogStoreAccountID;
     SSVPlayActivityController *_playActivityController;
-    bool_nonCatalogOffline;
-    bool_nonCatalogSBEnabled;
-    bool_shouldReportPlayActivityEvents;
+    BOOL _shouldReportPlayActivityEvents;
 }
 
 @property(readonly) SSVPlayActivityController * playActivityController;
-@property bool shouldReportPlayActivityEvents;
+@property BOOL shouldReportPlayActivityEvents;
 
 - (void).cxx_destruct;
 - (void)_applicationWillTerminateNotification:(id)arg1;
@@ -27,9 +27,9 @@
 - (void)_recordReportingEvents:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithWritingStyle:(unsigned long long)arg1;
+- (id)initWithWritingStyle:(unsigned int)arg1;
 - (id)playActivityController;
-- (void)setShouldReportPlayActivityEvents:(bool)arg1;
-- (bool)shouldReportPlayActivityEvents;
+- (void)setShouldReportPlayActivityEvents:(BOOL)arg1;
+- (BOOL)shouldReportPlayActivityEvents;
 
 @end

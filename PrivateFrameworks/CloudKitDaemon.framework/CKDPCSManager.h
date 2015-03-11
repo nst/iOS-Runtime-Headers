@@ -61,9 +61,9 @@
 - (id)etagFromPCSData:(id)arg1;
 - (id)etagFromRecordPCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (id)etagFromZonePCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
-- (void)fetchPCSForRecordWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(bool)arg3 withCompletionHandler:(id)arg4;
-- (void)fetchPCSForShareWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(bool)arg3 withCompletionHandler:(id)arg4;
-- (void)fetchPCSForZoneWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(bool)arg3 withCompletionHandler:(id)arg4;
+- (void)fetchPCSForRecordWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(BOOL)arg3 withCompletionHandler:(id)arg4;
+- (void)fetchPCSForShareWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(BOOL)arg3 withCompletionHandler:(id)arg4;
+- (void)fetchPCSForZoneWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(BOOL)arg3 withCompletionHandler:(id)arg4;
 - (id)initWithClientContext:(id)arg1;
 - (struct _PCSIdentityData { }*)myPCSIdentity;
 - (id)newAssetKey;
@@ -81,9 +81,9 @@
 - (void)setCurrentAccountIdentifier:(id)arg1;
 - (void)setMyPCSIdentity:(struct _PCSIdentityData { }*)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (void)setPCSData:(id)arg1 forFetchedRecordID:(id)arg2 withScope:(long long)arg3;
+- (void)setPCSData:(id)arg1 forFetchedRecordID:(id)arg2 withScope:(int)arg3;
 - (void)setPCSData:(id)arg1 forFetchedShareID:(id)arg2;
-- (void)setPCSData:(id)arg1 forFetchedZoneID:(id)arg2 withScope:(long long)arg3;
+- (void)setPCSData:(id)arg1 forFetchedZoneID:(id)arg2 withScope:(int)arg3;
 - (void)setRecordCacheByPrivateZoneID:(id)arg1;
 - (void)setRecordFetchAggregator:(id)arg1;
 - (void)setServiceName:(id)arg1;

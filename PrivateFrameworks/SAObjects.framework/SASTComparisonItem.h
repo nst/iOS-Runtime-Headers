@@ -11,7 +11,7 @@
 @property(copy,readonly) NSString * description;
 @property(retain) SASTComparisonEntity * firstItem;
 @property(retain) SAUIDecoratedText * footnote;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SASTComparisonEntity * secondItem;
 @property(readonly) Class superclass;
 

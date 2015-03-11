@@ -12,7 +12,7 @@
 @property(retain) SAUIDecoratedText * decoratedValue;
 @property(copy,readonly) NSString * description;
 @property(copy) NSString * footer;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(copy) NSString * value;
 

@@ -13,8 +13,8 @@
 
 @property unsigned int componentIndex;
 @property unsigned int componentValueIndex;
-@property bool hasComponentIndex;
-@property bool hasComponentValueIndex;
+@property BOOL hasComponentIndex;
+@property BOOL hasComponentValueIndex;
 
 - (unsigned int)componentIndex;
 - (unsigned int)componentValueIndex;
@@ -22,16 +22,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasComponentIndex;
-- (bool)hasComponentValueIndex;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasComponentIndex;
+- (BOOL)hasComponentValueIndex;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setComponentIndex:(unsigned int)arg1;
 - (void)setComponentValueIndex:(unsigned int)arg1;
-- (void)setHasComponentIndex:(bool)arg1;
-- (void)setHasComponentValueIndex:(bool)arg1;
+- (void)setHasComponentIndex:(BOOL)arg1;
+- (void)setHasComponentValueIndex:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

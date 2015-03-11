@@ -5,9 +5,9 @@
 @interface MusicComposersViewController : MusicArtistsViewController {
 }
 
-+ (long long)containerItemType;
-+ (id)itemPersistentIDPropertyForGroupingType:(long long)arg1;
-+ (id)persistentIDPropertyForGroupingType:(long long)arg1;
++ (int)containerItemType;
++ (id)itemPersistentIDPropertyForGroupingType:(int)arg1;
++ (id)persistentIDPropertyForGroupingType:(int)arg1;
 
 - (void)defaultsDidChange;
 

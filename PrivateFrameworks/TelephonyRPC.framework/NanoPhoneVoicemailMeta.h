@@ -4,7 +4,7 @@
 
 @class NSString, NanoPhoneVoicemailBody;
 
-@interface NanoPhoneVoicemailMeta : PBCodable <NSCopying, SYObject> {
+@interface NanoPhoneVoicemailMeta : PBCodable <SYObject, NSCopying> {
     struct { 
         unsigned int date : 1; 
         unsigned int identifier : 1; 
@@ -31,16 +31,16 @@
 @property(copy,readonly) NSString * description;
 @property int duration;
 @property int flags;
-@property(readonly) bool hasCallbackNumber;
-@property(readonly) bool hasDataPath;
-@property bool hasDate;
-@property bool hasDuration;
-@property bool hasFlags;
-@property bool hasIdentifier;
-@property bool hasRemoteUID;
-@property(readonly) bool hasSender;
-@property(readonly) bool hasVoicemailBody;
-@property(readonly) unsigned long long hash;
+@property(readonly) BOOL hasCallbackNumber;
+@property(readonly) BOOL hasDataPath;
+@property BOOL hasDate;
+@property BOOL hasDuration;
+@property BOOL hasFlags;
+@property BOOL hasIdentifier;
+@property BOOL hasRemoteUID;
+@property(readonly) BOOL hasSender;
+@property(readonly) BOOL hasVoicemailBody;
+@property(readonly) unsigned int hash;
 @property long long identifier;
 @property long long remoteUID;
 @property(retain) NSString * sender;
@@ -69,22 +69,22 @@
 - (id)displayNameFromAddressBook:(void*)arg1;
 - (int)duration;
 - (int)flags;
-- (bool)hasCallbackNumber;
-- (bool)hasDataPath;
-- (bool)hasDate;
-- (bool)hasDuration;
-- (bool)hasFlags;
-- (bool)hasIdentifier;
-- (bool)hasRemoteUID;
-- (bool)hasSender;
-- (bool)hasVoicemailBody;
-- (unsigned long long)hash;
+- (BOOL)hasCallbackNumber;
+- (BOOL)hasDataPath;
+- (BOOL)hasDate;
+- (BOOL)hasDuration;
+- (BOOL)hasFlags;
+- (BOOL)hasIdentifier;
+- (BOOL)hasRemoteUID;
+- (BOOL)hasSender;
+- (BOOL)hasVoicemailBody;
+- (unsigned int)hash;
 - (long long)identifier;
 - (id)initWithVoicemail:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)loadVoicemailBodyIfNeeded;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (long long)remoteUID;
 - (id)sender;
 - (void)setCallbackNumber:(id)arg1;
@@ -92,11 +92,11 @@
 - (void)setDate:(double)arg1;
 - (void)setDuration:(int)arg1;
 - (void)setFlags:(int)arg1;
-- (void)setHasDate:(bool)arg1;
-- (void)setHasDuration:(bool)arg1;
-- (void)setHasFlags:(bool)arg1;
-- (void)setHasIdentifier:(bool)arg1;
-- (void)setHasRemoteUID:(bool)arg1;
+- (void)setHasDate:(BOOL)arg1;
+- (void)setHasDuration:(BOOL)arg1;
+- (void)setHasFlags:(BOOL)arg1;
+- (void)setHasIdentifier:(BOOL)arg1;
+- (void)setHasRemoteUID:(BOOL)arg1;
 - (void)setIdentifier:(long long)arg1;
 - (void)setRemoteUID:(long long)arg1;
 - (void)setSender:(id)arg1;

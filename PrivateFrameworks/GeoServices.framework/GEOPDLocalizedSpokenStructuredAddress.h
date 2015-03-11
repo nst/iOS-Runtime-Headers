@@ -9,8 +9,8 @@
     GEOStructuredAddress *_spokenStructuredAddress;
 }
 
-@property(readonly) bool hasLocale;
-@property(readonly) bool hasSpokenStructuredAddress;
+@property(readonly) BOOL hasLocale;
+@property(readonly) BOOL hasSpokenStructuredAddress;
 @property(retain) NSString * locale;
 @property(retain) GEOStructuredAddress * spokenStructuredAddress;
 
@@ -19,13 +19,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasLocale;
-- (bool)hasSpokenStructuredAddress;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasLocale;
+- (BOOL)hasSpokenStructuredAddress;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)locale;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setSpokenStructuredAddress:(id)arg1;
 - (id)spokenStructuredAddress;

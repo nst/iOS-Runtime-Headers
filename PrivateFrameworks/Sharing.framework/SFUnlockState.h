@@ -12,7 +12,7 @@
 @property(readonly) NSNumber * remotePasscodeEnabled;
 @property(readonly) NSNumber * unlockEnabled;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

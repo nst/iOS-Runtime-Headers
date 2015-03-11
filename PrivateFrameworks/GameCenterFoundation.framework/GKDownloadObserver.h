@@ -11,7 +11,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) SSDownloadManager * downloadManager;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)sharedObserver;
@@ -20,7 +20,7 @@
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)downloadManager;
 - (id)init;
-- (bool)isDownloadingGame:(id)arg1;
+- (BOOL)isDownloadingGame:(id)arg1;
 - (void)setDownloadManager:(id)arg1;
 
 @end

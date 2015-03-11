@@ -6,6 +6,6 @@
 }
 
 - (void)layoutSubviews;
-- (void)setHighlighted:(bool)arg1;
+- (void)setHighlighted:(BOOL)arg1;
 
 @end

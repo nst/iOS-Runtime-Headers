@@ -6,13 +6,13 @@
 
 @interface RMSDAAPLoginManager : NSObject {
     RMSFairPlaySession *_fairPlaySession;
+    BOOL _isFairPlayRequired;
     RMSDAAPRequestManager *_requestManager;
-    bool_isFairPlayRequired;
 }
 
 - (void).cxx_destruct;
 - (void)_continueFairPlayHandshakeWithData:(id)arg1 completionHandler:(id)arg2;
-- (bool)_isFairplayRequiredForServerInfo:(id)arg1;
+- (BOOL)_isFairplayRequiredForServerInfo:(id)arg1;
 - (void)_requestControlInterfaceWithCompletionHandler:(id)arg1;
 - (void)_requestFairPlayHandshake:(id)arg1;
 - (void)_requestLoginWithCompletionHandler:(id)arg1;

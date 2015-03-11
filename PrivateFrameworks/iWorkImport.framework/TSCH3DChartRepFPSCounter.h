@@ -6,7 +6,7 @@
 
 @interface TSCH3DChartRepFPSCounter : NSObject {
     TSDFPSCounter *mCounter;
-    unsigned long long mCurrentFrameCount;
+    unsigned int mCurrentFrameCount;
     NSMutableArray *mSummaries;
 }
 

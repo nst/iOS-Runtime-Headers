@@ -5,9 +5,9 @@
 @interface SGDRelevantContacts : NSObject {
 }
 
-+ (id)_recentCallHistory:(long long)arg1;
-+ (id)_recentMessagesHistory:(long long)arg1;
-+ (void)relevantABRecordIDsWithLimit:(long long)arg1 completion:(id)arg2;
++ (id)_recentCallHistory:(int)arg1;
++ (id)_recentMessagesHistory:(int)arg1;
++ (void)relevantABRecordIDsWithLimit:(int)arg1 completion:(id)arg2;
 + (void)setABRef:(void*)arg1;
 
 @end

@@ -8,7 +8,7 @@
 + (id)defaultModel;
 
 - (void)clearAllNextActivityDates;
-- (bool)dbQueueUpgradeFromDatabaseVersion:(int)arg1 currentVersion:(int)arg2;
+- (BOOL)dbQueueUpgradeFromDatabaseVersion:(int)arg1 currentVersion:(int)arg2;
 - (id)earliestNextActivityDate;
 - (id)init;
 - (id)nextActivityDateByPersonID;

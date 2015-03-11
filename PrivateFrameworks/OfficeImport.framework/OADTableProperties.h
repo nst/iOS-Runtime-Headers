@@ -5,45 +5,45 @@
 @class NSArray, NSString, OADTableStyle;
 
 @interface OADTableProperties : OADDrawableProperties <OADEffectsParent> {
-    boolmBandColumn;
-    boolmBandRow;
-    boolmFirstColumn;
-    boolmFirstRow;
-    boolmLastColumn;
-    boolmLastRow;
-    boolmRightToLeft;
+    BOOL mBandColumn;
+    BOOL mBandRow;
     NSArray *mEffects;
+    BOOL mFirstColumn;
+    BOOL mFirstRow;
+    BOOL mLastColumn;
+    BOOL mLastRow;
+    BOOL mRightToLeft;
     OADTableStyle *mStyle;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)defaultProperties;
 
-- (bool)bandColumn;
-- (bool)bandRow;
+- (BOOL)bandColumn;
+- (BOOL)bandRow;
 - (void)dealloc;
 - (id)effects;
-- (bool)firstColumn;
-- (bool)firstRow;
-- (bool)hasBandsNormalToDir:(int)arg1;
-- (bool)hasEffects;
-- (bool)hasVectorNormalToDir:(int)arg1 atExtremePos:(int)arg2;
+- (BOOL)firstColumn;
+- (BOOL)firstRow;
+- (BOOL)hasBandsNormalToDir:(int)arg1;
+- (BOOL)hasEffects;
+- (BOOL)hasVectorNormalToDir:(int)arg1 atExtremePos:(int)arg2;
 - (id)initWithDefaults;
-- (bool)lastColumn;
-- (bool)lastRow;
-- (bool)rightToLeft;
-- (void)setBandColumn:(bool)arg1;
-- (void)setBandRow:(bool)arg1;
+- (BOOL)lastColumn;
+- (BOOL)lastRow;
+- (BOOL)rightToLeft;
+- (void)setBandColumn:(BOOL)arg1;
+- (void)setBandRow:(BOOL)arg1;
 - (void)setEffects:(id)arg1;
-- (void)setFirstColumn:(bool)arg1;
-- (void)setFirstRow:(bool)arg1;
-- (void)setLastColumn:(bool)arg1;
-- (void)setLastRow:(bool)arg1;
-- (void)setRightToLeft:(bool)arg1;
+- (void)setFirstColumn:(BOOL)arg1;
+- (void)setFirstRow:(BOOL)arg1;
+- (void)setLastColumn:(BOOL)arg1;
+- (void)setLastRow:(BOOL)arg1;
+- (void)setRightToLeft:(BOOL)arg1;
 - (void)setStyle:(id)arg1;
 - (id)style;
 

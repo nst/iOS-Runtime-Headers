@@ -14,8 +14,8 @@
 
 @property(retain) NSData * beforeDateReceived;
 @property unsigned int fullSyncVersion;
-@property(readonly) bool hasBeforeDateReceived;
-@property bool hasFullSyncVersion;
+@property(readonly) BOOL hasBeforeDateReceived;
+@property BOOL hasFullSyncVersion;
 
 - (void).cxx_destruct;
 - (id)beforeDateReceived;
@@ -24,15 +24,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)fullSyncVersion;
-- (bool)hasBeforeDateReceived;
-- (bool)hasFullSyncVersion;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasBeforeDateReceived;
+- (BOOL)hasFullSyncVersion;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setBeforeDateReceived:(id)arg1;
 - (void)setFullSyncVersion:(unsigned int)arg1;
-- (void)setHasFullSyncVersion:(bool)arg1;
+- (void)setHasFullSyncVersion:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

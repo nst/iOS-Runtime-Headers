@@ -5,17 +5,17 @@
 @class NSString, UIButton, UITextField, UIView;
 
 @interface APDSearchBar : UISearchBar {
+    BOOL _RTL;
     UIView *_clearButtonView;
     UIButton *_searchBarCancelButton;
-    double _searchBarCancelButtonOffset;
+    float _searchBarCancelButtonOffset;
     NSString *_searchBarCancelText;
     UITextField *_searchBarTextField;
-    double _searchBarTextFieldDefaultOrigin;
+    float _searchBarTextFieldDefaultOrigin;
     UIView *_searchGlassView;
-    bool_RTL;
 }
 
-@property bool RTL;
+@property BOOL RTL;
 @property UIView * clearButtonView;
 @property UIButton * searchBarCancelButton;
 @property(retain) NSString * searchBarCancelText;
@@ -23,18 +23,18 @@
 @property UIView * searchGlassView;
 
 - (void).cxx_destruct;
-- (bool)RTL;
+- (BOOL)RTL;
 - (id)clearButtonView;
 - (void)commonInit;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)searchBarCancelButton;
 - (id)searchBarCancelText;
 - (id)searchBarTextField;
 - (id)searchGlassView;
 - (void)setClearButtonView:(id)arg1;
-- (void)setRTL:(bool)arg1;
+- (void)setRTL:(BOOL)arg1;
 - (void)setSearchBarCancelButton:(id)arg1;
 - (void)setSearchBarCancelText:(id)arg1;
 - (void)setSearchBarTextField:(id)arg1;

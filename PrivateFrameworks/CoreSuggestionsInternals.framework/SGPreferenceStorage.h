@@ -8,13 +8,13 @@
 + (id)defaults;
 + (id)defaultsForTests;
 + (void)registerBlockOnSuggestionsSettingsChange:(id)arg1;
-+ (bool)reharvestKey;
++ (BOOL)reharvestKey;
 + (void)removeDeprecatedDefaults;
 + (void)resetAllPreferences;
-+ (void)setReharvestKey:(bool)arg1;
-+ (void)setSuggestionsEnabledForTests:(bool)arg1;
-+ (bool)showPastEvents;
-+ (bool)suggestionsEnabled;
-+ (long long)suggestionsLogLevel;
++ (void)setReharvestKey:(BOOL)arg1;
++ (void)setSuggestionsEnabledForTests:(BOOL)arg1;
++ (BOOL)showPastEvents;
++ (BOOL)suggestionsEnabled;
++ (int)suggestionsLogLevel;
 
 @end

@@ -10,14 +10,14 @@
 
 @property(copy,readonly) NSError * error;
 @property(copy,readonly) NSURLResponse * failureResponse;
-@property(readonly) long long previousFailureCount;
+@property(readonly) int previousFailureCount;
 @property(copy,readonly) NSURLCredential * proposedCredential;
 @property(copy,readonly) NSURLProtectionSpace * protectionSpace;
 @property(retain,readonly) <NSURLAuthenticationChallengeSender> * sender;
 
 + (id)_authenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
 + (id)_createAuthenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (struct _CFURLAuthChallenge { }*)_createCFAuthChallenge;
 - (id)_initWithCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
@@ -28,8 +28,8 @@
 - (id)init;
 - (id)initWithAuthenticationChallenge:(id)arg1 sender:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(long long)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
-- (long long)previousFailureCount;
+- (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(int)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
+- (int)previousFailureCount;
 - (id)proposedCredential;
 - (id)protectionSpace;
 - (id)sender;

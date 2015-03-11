@@ -7,16 +7,16 @@
 @interface TSDMediaRep : TSDStyledRep {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
-    boolmIsZooming;
     CALayer *mFrameMaskLayer;
     TSDFrameRep *mFrameRep;
+    BOOL mIsZooming;
     } mLastPictureFrameLayerRect;
     CAShapeLayer *mMaskLayer;
     CAShapeLayer *mStrokeLayer;
@@ -25,33 +25,33 @@
 
 @property(readonly) TSDMediaInfo * mediaInfo;
 @property(readonly) TSDMediaLayout * mediaLayout;
-@property(readonly) bool shouldShowMediaReplaceUI;
+@property(readonly) BOOL shouldShowMediaReplaceUI;
 
 - (id)additionalLayersOverLayer;
-- (bool)canResetMediaSize;
+- (BOOL)canResetMediaSize;
 - (id)commandToResetMediaToInsertedSize;
 - (id)commandToResetMediaToRawPixelSize;
-- (id)commandToResetToSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)commandToResetToSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)currentReplaceButtonHighlightedImage;
 - (id)currentReplaceButtonImage;
 - (void)dealloc;
 - (void)didEndZooming;
-- (bool)i_shouldRenderStroke:(id)arg1;
+- (BOOL)i_shouldRenderStroke:(id)arg1;
 - (void)i_updateFrameRep;
-- (bool)isPlaceholder;
+- (BOOL)isPlaceholder;
 - (id)mediaInfo;
 - (id)mediaLayout;
 - (id)overlayLayers;
 - (void)p_addLayerForReplaceButtonToArray:(id)arg1;
-- (struct CGSize { double x1; double x2; })p_replaceButtonSize;
-- (struct CGPoint { double x1; double x2; })p_scaledPositionOfImageReplaceKnob;
+- (struct CGSize { float x1; float x2; })p_replaceButtonSize;
+- (struct CGPoint { float x1; float x2; })p_scaledPositionOfImageReplaceKnob;
 - (id)p_tapToReplaceLayer;
 - (void)p_updateTapToReplaceLayerPosition;
 - (void)processChangedProperty:(int)arg1;
-- (bool)replaceButtonContainsPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (bool)shouldAllowReplacementFromDrop;
-- (bool)shouldAllowReplacementFromPaste;
-- (bool)shouldShowMediaReplaceUI;
+- (BOOL)replaceButtonContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)shouldAllowReplacementFromDrop;
+- (BOOL)shouldAllowReplacementFromPaste;
+- (BOOL)shouldShowMediaReplaceUI;
 - (id)visibleMediaReplaceButtonLayer;
 - (void)willBeginZooming;
 

@@ -17,17 +17,17 @@
 @property(readonly) NSString * offerType;
 @property(readonly) NSNumber * price;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)actionTextForType:(id)arg1;
 - (id)buyParameters;
 - (void)encodeWithCoder:(id)arg1;
 - (id)formattedPrice;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLookupItemOffer:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)offerType;
 - (id)price;
 

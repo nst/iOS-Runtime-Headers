@@ -5,30 +5,30 @@
 @class NSString;
 
 @interface _UIDatePickerMode_Date : _UIDatePickerMode {
-    double _dateDayWidth;
-    double _dateMonthWidth;
-    double _dateYearWidth;
+    float _dateDayWidth;
+    float _dateMonthWidth;
+    float _dateYearWidth;
     NSString *_dayFormat;
     NSString *_monthFormat;
     NSString *_yearFormat;
 }
 
-+ (long long)datePickerMode;
-+ (unsigned long long)extractableCalendarUnits;
++ (int)datePickerMode;
++ (unsigned int)extractableCalendarUnits;
 
-- (id)_dateForYearRow:(long long)arg1;
-- (bool)_shouldEnableValueForRow:(long long)arg1 inComponent:(long long)arg2 calendarUnit:(unsigned long long)arg3;
+- (id)_dateForYearRow:(int)arg1;
+- (BOOL)_shouldEnableValueForRow:(int)arg1 inComponent:(int)arg2 calendarUnit:(unsigned int)arg3;
 - (void)_shouldReset:(id)arg1;
-- (id)dateFormatForCalendarUnit:(unsigned long long)arg1;
+- (id)dateFormatForCalendarUnit:(unsigned int)arg1;
 - (void)dealloc;
-- (long long)displayedCalendarUnits;
+- (int)displayedCalendarUnits;
 - (id)localizedFormatString;
-- (unsigned long long)nextUnitLargerThanUnit:(unsigned long long)arg1;
-- (unsigned long long)nextUnitSmallerThanUnit:(unsigned long long)arg1;
+- (unsigned int)nextUnitLargerThanUnit:(unsigned int)arg1;
+- (unsigned int)nextUnitSmallerThanUnit:(unsigned int)arg1;
 - (void)noteCalendarChanged;
-- (long long)numberOfRowsForCalendarUnit:(unsigned long long)arg1;
+- (int)numberOfRowsForCalendarUnit:(unsigned int)arg1;
 - (void)resetComponentWidths;
-- (long long)rowForDate:(id)arg1 dateComponents:(id)arg2 component:(long long)arg3 currentRow:(long long)arg4;
-- (double)widthForCalendarUnit:(unsigned long long)arg1 font:(id)arg2 maxWidth:(double)arg3;
+- (int)rowForDate:(id)arg1 dateComponents:(id)arg2 component:(int)arg3 currentRow:(int)arg4;
+- (float)widthForCalendarUnit:(unsigned int)arg1 font:(id)arg2 maxWidth:(float)arg3;
 
 @end

@@ -5,41 +5,41 @@
 @class <CPLEngineSyncTaskDelegate>, <NSCoding>, CPLEngineLibrary, NSString;
 
 @interface CPLEngineSyncTask : NSObject {
+    BOOL _cancelled;
     <CPLEngineSyncTaskDelegate> *_delegate;
     CPLEngineLibrary *_engineLibrary;
+    BOOL _foreground;
+    BOOL _paused;
     <NSCoding> *_transportUserIdentifier;
-    bool_cancelled;
-    bool_foreground;
-    bool_paused;
 }
 
-@property(getter=isCancelled) bool cancelled;
+@property(getter=isCancelled) BOOL cancelled;
 @property(retain) <CPLEngineSyncTaskDelegate> * delegate;
 @property(readonly) CPLEngineLibrary * engineLibrary;
-@property bool foreground;
-@property(getter=isPaused) bool paused;
+@property BOOL foreground;
+@property(getter=isPaused) BOOL paused;
 @property(readonly) NSString * taskIdentifier;
 @property(retain) <NSCoding> * transportUserIdentifier;
 
 + (id)taskWithEngineLibrary:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_setCancelled:(bool)arg1;
-- (void)_setPaused:(bool)arg1;
+- (void)_setCancelled:(BOOL)arg1;
+- (void)_setPaused:(BOOL)arg1;
 - (void)cancel;
 - (id)delegate;
 - (id)description;
-- (unsigned long long)diskPressureState;
+- (unsigned int)diskPressureState;
 - (id)engineLibrary;
-- (bool)foreground;
+- (BOOL)foreground;
 - (id)initWithEngineLibrary:(id)arg1;
-- (bool)isCancelled;
-- (bool)isPaused;
+- (BOOL)isCancelled;
+- (BOOL)isPaused;
 - (void)launch;
 - (void)pause;
 - (void)resume;
 - (void)setDelegate:(id)arg1;
-- (void)setForeground:(bool)arg1;
+- (void)setForeground:(BOOL)arg1;
 - (void)setTransportUserIdentifier:(id)arg1;
 - (void)taskDidFinishWithError:(id)arg1;
 - (void)taskDidProgress:(float)arg1;

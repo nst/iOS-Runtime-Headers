@@ -13,15 +13,15 @@
 + (id)sharedStyle;
 
 - (void).cxx_destruct;
-- (id)boldFontOfSize:(double)arg1;
+- (id)boldFontOfSize:(float)arg1;
 - (id)chartHighlightColor;
 - (void)dealloc;
-- (id)fontOfSize:(double)arg1;
+- (id)fontOfSize:(float)arg1;
 - (id)gainColor;
 - (id)init;
-- (id)lightFontOfSize:(double)arg1;
+- (id)lightFontOfSize:(float)arg1;
 - (id)lossColor;
-- (id)mediumFontOfSize:(double)arg1;
+- (id)mediumFontOfSize:(float)arg1;
 - (void)resetLocale;
 
 @end

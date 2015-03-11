@@ -6,27 +6,27 @@
 
 @interface BLTPBProtobufSequenceNumberManager : NSObject {
     BLTCircularBitBuffer *_duplicateEntries;
+    BOOL _isInitialSendSequenceNumber;
     unsigned long long _recvSequenceNumber;
     unsigned long long _sendSequenceNumber;
     NSLock *_sequenceNumberAccess;
     NSString *_serviceName;
-    bool_isInitialSendSequenceNumber;
 }
 
-@property bool isInitialSendSequenceNumber;
+@property BOOL isInitialSendSequenceNumber;
 @property(copy,readonly) NSString * serviceName;
 
 - (void).cxx_destruct;
-- (bool)_isSequenceNumberInOrder:(unsigned long long)arg1;
-- (void)_readSequenceNumbersFromStoreWithInitialDuplicateCapacity:(unsigned long long)arg1;
+- (BOOL)_isSequenceNumberInOrder:(unsigned long long)arg1;
+- (void)_readSequenceNumbersFromStoreWithInitialDuplicateCapacity:(unsigned int)arg1;
 - (id)_sequenceNumbersURL;
 - (void)_writeSequenceNumbersToStore;
-- (id)initWithServiceName:(id)arg1 duplicateCapacity:(unsigned long long)arg2;
+- (id)initWithServiceName:(id)arg1 duplicateCapacity:(unsigned int)arg2;
 - (id)initWithServiceName:(id)arg1;
-- (bool)isInitialSendSequenceNumber;
+- (BOOL)isInitialSendSequenceNumber;
 - (unsigned long long)nextSendSequenceNumber;
 - (id)serviceName;
-- (void)setIsInitialSendSequenceNumber:(bool)arg1;
-- (long long)setRecvSequenceNumber:(unsigned long long)arg1 force:(bool)arg2;
+- (void)setIsInitialSendSequenceNumber:(BOOL)arg1;
+- (int)setRecvSequenceNumber:(unsigned long long)arg1 force:(BOOL)arg2;
 
 @end

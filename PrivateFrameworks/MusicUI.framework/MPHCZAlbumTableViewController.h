@@ -14,11 +14,11 @@
 @property MPUCoverZoomViewController * coverZoomViewController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (Class)_albumsDetailTableHeaderViewClass;
-+ (bool)_supportsSearch;
++ (BOOL)_supportsSearch;
 
 - (void).cxx_destruct;
 - (id)_createTableView;
@@ -28,17 +28,17 @@
 - (void)_tapAction:(id)arg1;
 - (id)coverZoomViewController;
 - (void)dealloc;
-- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)initWithDataSource:(id)arg1;
 - (id)initWithEntity:(id)arg1;
 - (void)loadView;
 - (void)reloadData;
 - (void)setCoverZoomViewController:(id)arg1;
-- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
-- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
-- (bool)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 - (void)viewDidLayoutSubviews;
 
 @end

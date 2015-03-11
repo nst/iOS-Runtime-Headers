@@ -6,6 +6,6 @@
 }
 
 - (id)peoplePickerPrompt;
-- (bool)showAvailability;
+- (BOOL)showAvailability;
 
 @end

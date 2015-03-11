@@ -7,20 +7,20 @@
 @interface GKTurnGameCell : GKBaseGameCell {
     GKLabel *_activeMatchesLabel;
     GKLabel *_localPlayerTurnsLabel;
-    unsigned long long _numberOfActiveMatches;
-    unsigned long long _numberOfLocalPlayerTurns;
+    unsigned int _numberOfActiveMatches;
+    unsigned int _numberOfLocalPlayerTurns;
     UIImageView *_statusImageView;
     GKContiguousContainerView *_textContainerView;
 }
 
 @property(retain) GKLabel * activeMatchesLabel;
 @property(retain) GKLabel * localPlayerTurnsLabel;
-@property unsigned long long numberOfActiveMatches;
-@property unsigned long long numberOfLocalPlayerTurns;
+@property unsigned int numberOfActiveMatches;
+@property unsigned int numberOfLocalPlayerTurns;
 @property(retain) UIImageView * statusImageView;
 @property(retain) GKContiguousContainerView * textContainerView;
 
-+ (double)defaultRowHeight;
++ (float)defaultRowHeight;
 + (id)itemHeightList;
 + (void)registerCellClassesForCollectionView:(id)arg1;
 
@@ -28,14 +28,14 @@
 - (void)dealloc;
 - (void)didUpdateModel;
 - (void)establishConstraints;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)localPlayerTurnsLabel;
-- (unsigned long long)numberOfActiveMatches;
-- (unsigned long long)numberOfLocalPlayerTurns;
+- (unsigned int)numberOfActiveMatches;
+- (unsigned int)numberOfLocalPlayerTurns;
 - (void)setActiveMatchesLabel:(id)arg1;
 - (void)setLocalPlayerTurnsLabel:(id)arg1;
-- (void)setNumberOfActiveMatches:(unsigned long long)arg1;
-- (void)setNumberOfLocalPlayerTurns:(unsigned long long)arg1;
+- (void)setNumberOfActiveMatches:(unsigned int)arg1;
+- (void)setNumberOfLocalPlayerTurns:(unsigned int)arg1;
 - (void)setStatusImageView:(id)arg1;
 - (void)setTextContainerView:(id)arg1;
 - (id)statusImageView;

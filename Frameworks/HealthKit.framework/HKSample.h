@@ -16,7 +16,7 @@
 
 + (id)_newSampleWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 metadata:(id)arg4 config:(id)arg5;
 + (id)_sampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 sampleType:(id)arg5 startDate:(id)arg6 endDate:(id)arg7;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_setEndDate:(id)arg1;
@@ -27,7 +27,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
-- (long long)entityType;
+- (int)entityType;
 - (id)initWithCoder:(id)arg1;
 - (id)sampleType;
 - (id)startDate;

@@ -23,7 +23,7 @@
 @property <SKUIProductPageChildViewControllerDelegate> * delegate;
 @property <SKUIProductPageChildViewController> * delegateSender;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;
 @property(copy) NSArray * sections;
 @property(readonly) Class superclass;
@@ -44,8 +44,8 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithReleaseNotes:(id)arg1 clientContext:(id)arg2;
 - (void)loadView;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)scrollToView:(id)arg1 animated:(bool)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)scrollToView:(id)arg1 animated:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)sections;
 - (void)setClientContext:(id)arg1;
@@ -57,15 +57,15 @@
 - (void)setTextLayoutCache:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView;
 - (id)textLayoutCache;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

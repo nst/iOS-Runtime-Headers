@@ -6,50 +6,50 @@
 
 @interface NSTextStorage : NSMutableAttributedString {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     struct { 
         unsigned int editedMask : 8; 
         unsigned int postWillProcess : 1; 
         unsigned int postDidProcess : 1; 
         unsigned int  : 6; 
         unsigned int disabled : 16; 
-    long long _changeInLength;
-    long long _editedDelta;
+    int _changeInLength;
+    int _editedDelta;
     } _editedRange;
     } _flags;
     NSMutableArray *_layoutManagers;
     id _sideData;
 }
 
-@property long long changeInLength;
+@property int changeInLength;
 @property <NSTextStorageDelegate> * delegate;
-@property unsigned long long editedMask;
-@property struct _NSRange { unsigned long long x1; unsigned long long x2; } editedRange;
-@property(readonly) bool fixesAttributesLazily;
+@property unsigned int editedMask;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } editedRange;
+@property(readonly) BOOL fixesAttributesLazily;
 @property(readonly) NSArray * layoutManagers;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (bool)_attributeFixingInProgress;
-- (bool)_forceFixAttributes;
-- (bool)_isEditing;
-- (bool)_lockForReading;
-- (bool)_lockForWriting;
-- (bool)_lockForWritingWithExceptionHandler:(bool)arg1;
-- (void)_notifyEdited:(unsigned long long)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 changeInLength:(long long)arg3 invalidatedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_rangeByEstimatingAttributeFixingForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (void)_setAttributeFixingInProgress:(bool)arg1;
-- (void)_setForceFixAttributes:(bool)arg1;
-- (void)_setUsesSimpleTextEffects:(bool)arg1;
-- (bool)_shouldSetOriginalFontAttribute;
-- (id)_undoRedoAttributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (BOOL)_attributeFixingInProgress;
+- (BOOL)_forceFixAttributes;
+- (BOOL)_isEditing;
+- (BOOL)_lockForReading;
+- (BOOL)_lockForWriting;
+- (BOOL)_lockForWritingWithExceptionHandler:(BOOL)arg1;
+- (void)_notifyEdited:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 changeInLength:(int)arg3 invalidatedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeByEstimatingAttributeFixingForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)_setAttributeFixingInProgress:(BOOL)arg1;
+- (void)_setForceFixAttributes:(BOOL)arg1;
+- (void)_setUsesSimpleTextEffects:(BOOL)arg1;
+- (BOOL)_shouldSetOriginalFontAttribute;
+- (id)_undoRedoAttributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_undoRedoTextOperation:(id)arg1;
 - (void)_unlock;
-- (bool)_usesSimpleTextEffects;
+- (BOOL)_usesSimpleTextEffects;
 - (void)addLayoutManager:(id)arg1;
 - (void)beginEditing;
-- (long long)changeInLength;
+- (int)changeInLength;
 - (Class)classForCoder;
 - (void)coordinateAccess:(id)arg1;
 - (void)coordinateEditing:(id)arg1;
@@ -58,24 +58,24 @@
 - (id)cuiStyleEffects;
 - (void)dealloc;
 - (id)delegate;
-- (void)edited:(unsigned long long)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 changeInLength:(long long)arg3;
-- (unsigned long long)editedMask;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })editedRange;
+- (void)edited:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 changeInLength:(int)arg3;
+- (unsigned int)editedMask;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })editedRange;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endEditing;
-- (void)ensureAttributesAreFixedInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)ensureAttributesAreFixedInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)finalize;
-- (bool)fixesAttributesLazily;
+- (BOOL)fixesAttributesLazily;
 - (void)fontSetChanged;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)invalidateAttributesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)invalidateAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)layoutManagers;
 - (void)processEditing;
 - (void)removeLayoutManager:(id)arg1;
-- (void)setChangeInLength:(long long)arg1;
+- (void)setChangeInLength:(int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEditedMask:(unsigned long long)arg1;
-- (void)setEditedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setEditedMask:(unsigned int)arg1;
+- (void)setEditedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

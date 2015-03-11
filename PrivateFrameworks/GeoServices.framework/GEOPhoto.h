@@ -13,8 +13,8 @@
     NSString *_uid;
 }
 
-@property bool hasPhotoType;
-@property(readonly) bool hasUid;
+@property BOOL hasPhotoType;
+@property(readonly) BOOL hasUid;
 @property(retain) NSMutableArray * photoInfos;
 @property int photoType;
 @property(retain) NSString * uid;
@@ -28,18 +28,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasPhotoType;
-- (bool)hasUid;
-- (unsigned long long)hash;
+- (BOOL)hasPhotoType;
+- (BOOL)hasUid;
+- (unsigned int)hash;
 - (id)initWithPlaceDataPhoto:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)photoInfoAtIndex:(unsigned long long)arg1;
+- (id)photoInfoAtIndex:(unsigned int)arg1;
 - (id)photoInfos;
-- (unsigned long long)photoInfosCount;
+- (unsigned int)photoInfosCount;
 - (int)photoType;
-- (bool)readFrom:(id)arg1;
-- (void)setHasPhotoType:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasPhotoType:(BOOL)arg1;
 - (void)setPhotoInfos:(id)arg1;
 - (void)setPhotoType:(int)arg1;
 - (void)setUid:(id)arg1;

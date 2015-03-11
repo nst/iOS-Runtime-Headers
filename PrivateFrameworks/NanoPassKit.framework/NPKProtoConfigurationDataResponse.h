@@ -9,13 +9,13 @@
         unsigned int pending : 1; 
     NSData *_configurationDataBytes;
     } _has;
-    bool_pending;
+    BOOL _pending;
 }
 
 @property(retain) NSData * configurationDataBytes;
-@property(readonly) bool hasConfigurationDataBytes;
-@property bool hasPending;
-@property bool pending;
+@property(readonly) BOOL hasConfigurationDataBytes;
+@property BOOL hasPending;
+@property BOOL pending;
 
 - (void).cxx_destruct;
 - (id)configurationDataBytes;
@@ -23,16 +23,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasConfigurationDataBytes;
-- (bool)hasPending;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasConfigurationDataBytes;
+- (BOOL)hasPending;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)pending;
-- (bool)readFrom:(id)arg1;
+- (BOOL)pending;
+- (BOOL)readFrom:(id)arg1;
 - (void)setConfigurationDataBytes:(id)arg1;
-- (void)setHasPending:(bool)arg1;
-- (void)setPending:(bool)arg1;
+- (void)setHasPending:(BOOL)arg1;
+- (void)setPending:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

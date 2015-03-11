@@ -14,17 +14,17 @@
 + (void)enableForceOverrideTCC;
 + (id)sharedInstance;
 
-- (bool)_isPhotosAccessAllowedWithScope:(long long)arg1 forceHandler:(bool)arg2 accessAllowedHandler:(id)arg3;
+- (BOOL)_isPhotosAccessAllowedWithScope:(int)arg1 forceHandler:(BOOL)arg2 accessAllowedHandler:(id)arg3;
 - (void)dealloc;
 - (id)init;
-- (bool)isPhotoLibraryReadAccessAllowed;
-- (bool)isPhotoLibrarySharingOrModificationAllowed;
-- (bool)isPhotosAccessAllowedPromptIfNeededWithHandler:(id)arg1;
-- (void)isPhotosAccessAllowedWithScope:(long long)arg1 handler:(id)arg2;
-- (bool)isPhotosAccessAllowedWithScope:(long long)arg1 promptIfNeededWithHandler:(id)arg2;
-- (bool)isPhotosTCCAccessAllowed;
-- (bool)isPhotosTCCAccessNotAllowed;
-- (bool)isPhotosTCCAccessRestricted;
+- (BOOL)isPhotoLibraryReadAccessAllowed;
+- (BOOL)isPhotoLibrarySharingOrModificationAllowed;
+- (BOOL)isPhotosAccessAllowedPromptIfNeededWithHandler:(id)arg1;
+- (void)isPhotosAccessAllowedWithScope:(int)arg1 handler:(id)arg2;
+- (BOOL)isPhotosAccessAllowedWithScope:(int)arg1 promptIfNeededWithHandler:(id)arg2;
+- (BOOL)isPhotosTCCAccessAllowed;
+- (BOOL)isPhotosTCCAccessNotAllowed;
+- (BOOL)isPhotosTCCAccessRestricted;
 - (void)photoAccessPowersActive;
 - (int)photosTCCAccessStatus;
 

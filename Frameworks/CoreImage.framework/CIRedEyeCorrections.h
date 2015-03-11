@@ -15,7 +15,7 @@
 @property(retain) CIImage * inputImage;
 
 - (id)_initFromProperties:(id)arg1;
-- (bool)_isIdentity;
+- (BOOL)_isIdentity;
 - (id)_outputProperties;
 - (id)inputCameraModel;
 - (id)inputCorrectionInfo;

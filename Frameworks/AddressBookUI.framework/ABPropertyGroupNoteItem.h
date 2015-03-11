@@ -5,8 +5,8 @@
 @interface ABPropertyGroupNoteItem : ABPropertyGroupItem {
 }
 
-- (bool)canRemove;
+- (BOOL)canRemove;
 - (id)displayLabel;
-- (bool)isEquivalentToItem:(id)arg1 whenEditing:(bool)arg2;
+- (BOOL)isEquivalentToItem:(id)arg1 whenEditing:(BOOL)arg2;
 
 @end

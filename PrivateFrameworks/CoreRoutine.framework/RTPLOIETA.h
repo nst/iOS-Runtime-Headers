@@ -20,8 +20,8 @@
 - (id)_urlName;
 - (id)description;
 - (id)displayInfo;
-- (bool)etaExceedsMinimumETA:(unsigned int)arg1;
-- (bool)hasEquivalentDisplayTo:(id)arg1;
+- (BOOL)etaExceedsMinimumETA:(unsigned int)arg1;
+- (BOOL)hasEquivalentDisplayTo:(id)arg1;
 - (id)initWithPLOI:(id)arg1 origin:(id)arg2 responseETASeconds:(unsigned int)arg3 baselineETASeconds:(unsigned int)arg4;
 - (id)localizedDescription;
 - (id)mapsURL;

@@ -7,21 +7,21 @@
 @interface PKVerificationChannel : NSObject <NSCopying, NSSecureCoding> {
     NSString *_contactPoint;
     NSString *_identifier;
+    BOOL _requiresUserInteraction;
     NSString *_sourceAddress;
-    unsigned long long _type;
+    unsigned int _type;
     NSString *_typeDescription;
-    bool_requiresUserInteraction;
 }
 
 @property(copy) NSString * contactPoint;
 @property(copy) NSString * identifier;
-@property bool requiresUserInteraction;
+@property BOOL requiresUserInteraction;
 @property(copy) NSString * sourceAddress;
-@property unsigned long long type;
+@property unsigned int type;
 @property(copy) NSString * typeDescription;
 @property(readonly) NSString * typeDescriptionUnlocalized;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 + (id)verificationChannelWithDictionary:(id)arg1;
 
 - (id)contactPoint;
@@ -30,16 +30,16 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (bool)needsServerRequest;
-- (bool)requiresUserInteraction;
+- (BOOL)needsServerRequest;
+- (BOOL)requiresUserInteraction;
 - (void)setContactPoint:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setRequiresUserInteraction:(bool)arg1;
+- (void)setRequiresUserInteraction:(BOOL)arg1;
 - (void)setSourceAddress:(id)arg1;
-- (void)setType:(unsigned long long)arg1;
+- (void)setType:(unsigned int)arg1;
 - (void)setTypeDescription:(id)arg1;
 - (id)sourceAddress;
-- (unsigned long long)type;
+- (unsigned int)type;
 - (id)typeDescription;
 - (id)typeDescriptionUnlocalized;
 

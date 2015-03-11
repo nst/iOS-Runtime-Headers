@@ -5,6 +5,6 @@
 @interface UIPrintPanelWindow : UIWindow {
 }
 
-- (bool)_canAffectStatusBarAppearance;
+- (BOOL)_canAffectStatusBarAppearance;
 
 @end

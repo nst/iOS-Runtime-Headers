@@ -6,13 +6,13 @@
 
 @interface CKAudioController : NSObject <CKAudioPlayerDelegate> {
     CKAudioPlayer *_audioPlayer;
-    unsigned long long _currentIndex;
+    unsigned int _currentIndex;
     <CKAudioControllerDelegate> *_delegate;
+    BOOL _interrupted;
     NSMutableArray *_mediaObjects;
-    bool_interrupted;
-    bool_paused;
-    bool_playing;
-    bool_shouldUseSpeaker;
+    BOOL _paused;
+    BOOL _playing;
+    BOOL _shouldUseSpeaker;
 }
 
 @property(setter=_setMediaObjects:,retain) NSMutableArray * _mediaObjects;
@@ -23,12 +23,12 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <CKAudioControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool interrupted;
+@property(readonly) unsigned int hash;
+@property BOOL interrupted;
 @property(retain,readonly) NSArray * mediaObjects;
-@property(getter=isPaused) bool paused;
-@property(getter=isPlaying) bool playing;
-@property bool shouldUseSpeaker;
+@property(getter=isPaused) BOOL paused;
+@property(getter=isPlaying) BOOL playing;
+@property BOOL shouldUseSpeaker;
 @property(readonly) Class superclass;
 
 - (id)_mediaObjects;
@@ -45,9 +45,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithMediaObjects:(id)arg1;
-- (bool)interrupted;
-- (bool)isPaused;
-- (bool)isPlaying;
+- (BOOL)interrupted;
+- (BOOL)isPaused;
+- (BOOL)isPlaying;
 - (id)mediaObjects;
 - (void)pause;
 - (void)play;
@@ -55,11 +55,11 @@
 - (void)playListenSound:(id)arg1;
 - (void)setAudioPlayer:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setInterrupted:(bool)arg1;
-- (void)setPaused:(bool)arg1;
-- (void)setPlaying:(bool)arg1;
-- (void)setShouldUseSpeaker:(bool)arg1;
-- (bool)shouldUseSpeaker;
+- (void)setInterrupted:(BOOL)arg1;
+- (void)setPaused:(BOOL)arg1;
+- (void)setPlaying:(BOOL)arg1;
+- (void)setShouldUseSpeaker:(BOOL)arg1;
+- (BOOL)shouldUseSpeaker;
 - (void)stop;
 
 @end

@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)details;
 - (id)init;
-- (bool)isSupervised;
+- (BOOL)isSupervised;
 - (id)memberQueue;
 - (id)memberQueueDetails;
 - (void)refreshDetailsFromDisk;

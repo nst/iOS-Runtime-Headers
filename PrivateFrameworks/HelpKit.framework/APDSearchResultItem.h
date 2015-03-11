@@ -6,23 +6,23 @@
 
 @interface APDSearchResultItem : APDGenericData <NSCopying> {
     NSString *_identifier;
-    long long _matchCount;
-    long long _weight;
+    int _matchCount;
+    int _weight;
 }
 
 @property(retain) NSString * identifier;
-@property long long matchCount;
-@property long long weight;
+@property int matchCount;
+@property int weight;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)identifier;
 - (id)initWithDictionary:(id)arg1;
-- (long long)matchCount;
+- (int)matchCount;
 - (void)setIdentifier:(id)arg1;
-- (void)setMatchCount:(long long)arg1;
-- (void)setWeight:(long long)arg1;
-- (long long)weight;
+- (void)setMatchCount:(int)arg1;
+- (void)setWeight:(int)arg1;
+- (int)weight;
 
 @end

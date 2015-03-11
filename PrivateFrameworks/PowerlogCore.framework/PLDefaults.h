@@ -5,61 +5,61 @@
 @class NSMutableDictionary;
 
 @interface PLDefaults : NSObject {
+    BOOL _debugEnabled;
     NSMutableDictionary *_instancePrefsCache;
     NSMutableDictionary *_managedPrefsCache;
     NSMutableDictionary *_userPrefsCache;
-    bool_debugEnabled;
 }
 
-@property bool debugEnabled;
+@property BOOL debugEnabled;
 @property(retain) NSMutableDictionary * instancePrefsCache;
 @property(retain) NSMutableDictionary * managedPrefsCache;
 @property(retain) NSMutableDictionary * userPrefsCache;
 
-+ (bool)boolForKey:(id)arg1 ifNotSet:(bool)arg2;
-+ (bool)boolForKey:(id)arg1;
-+ (bool)debugEnabled;
++ (BOOL)boolForKey:(id)arg1 ifNotSet:(BOOL)arg2;
++ (BOOL)boolForKey:(id)arg1;
++ (BOOL)debugEnabled;
 + (double)doubleForKey:(id)arg1 ifNotSet:(double)arg2;
 + (double)doubleForKey:(id)arg1;
-+ (bool)fullMode;
-+ (bool)fullModeForClass:(Class)arg1;
-+ (bool)fullPLLog;
-+ (bool)isClassDebugEnabled:(Class)arg1 forKey:(id)arg2;
-+ (bool)isClassDebugEnabled:(Class)arg1;
-+ (bool)isClassNameDebugEnabled:(id)arg1 forKey:(id)arg2;
-+ (bool)isClassNameDebugEnabled:(id)arg1;
-+ (long long)longForKey:(id)arg1 ifNotSet:(long long)arg2;
-+ (long long)longForKey:(id)arg1;
-+ (bool)objectExistsForKey:(id)arg1;
-+ (id)objectForKey:(id)arg1 forApplicationID:(id)arg2 synchronize:(bool)arg3;
-+ (id)objectForKey:(id)arg1 synchronize:(bool)arg2;
++ (BOOL)fullMode;
++ (BOOL)fullModeForClass:(Class)arg1;
++ (BOOL)fullPLLog;
++ (BOOL)isClassDebugEnabled:(Class)arg1 forKey:(id)arg2;
++ (BOOL)isClassDebugEnabled:(Class)arg1;
++ (BOOL)isClassNameDebugEnabled:(id)arg1 forKey:(id)arg2;
++ (BOOL)isClassNameDebugEnabled:(id)arg1;
++ (long)longForKey:(id)arg1 ifNotSet:(long)arg2;
++ (long)longForKey:(id)arg1;
++ (BOOL)objectExistsForKey:(id)arg1;
++ (id)objectForKey:(id)arg1 forApplicationID:(id)arg2 synchronize:(BOOL)arg3;
++ (id)objectForKey:(id)arg1 synchronize:(BOOL)arg2;
 + (id)objectForKey:(id)arg1;
 + (void)resetUserDefaultCacheForKey:(id)arg1 forApplicationID:(id)arg2;
 + (void)resetUserDefaultCacheForKey:(id)arg1;
-+ (void)setClass:(Class)arg1 debugEnabled:(bool)arg2 forKey:(id)arg3;
-+ (void)setClass:(Class)arg1 debugEnabled:(bool)arg2;
-+ (void)setClassName:(id)arg1 debugEnabled:(bool)arg2 forKey:(id)arg3;
-+ (void)setClassName:(id)arg1 debugEnabled:(bool)arg2;
-+ (void)setObject:(id)arg1 forKey:(id)arg2 forApplicationID:(id)arg3 saveToDisk:(bool)arg4;
-+ (void)setObject:(id)arg1 forKey:(id)arg2 saveToDisk:(bool)arg3;
++ (void)setClass:(Class)arg1 debugEnabled:(BOOL)arg2 forKey:(id)arg3;
++ (void)setClass:(Class)arg1 debugEnabled:(BOOL)arg2;
++ (void)setClassName:(id)arg1 debugEnabled:(BOOL)arg2 forKey:(id)arg3;
++ (void)setClassName:(id)arg1 debugEnabled:(BOOL)arg2;
++ (void)setObject:(id)arg1 forKey:(id)arg2 forApplicationID:(id)arg3 saveToDisk:(BOOL)arg4;
++ (void)setObject:(id)arg1 forKey:(id)arg2 saveToDisk:(BOOL)arg3;
 + (void)setObject:(id)arg1 forKey:(id)arg2;
 + (id)sharedDefaults;
 
 - (void).cxx_destruct;
-- (bool)debugEnabled;
+- (BOOL)debugEnabled;
 - (id)init;
 - (id)instancePrefsCache;
 - (id)instancePrefsObjectForKey:(id)arg1;
 - (id)managedPrefsCache;
-- (id)managedPrefsObjectForKey:(id)arg1 forApplicationID:(id)arg2 synchronize:(bool)arg3;
-- (id)objectForKey:(id)arg1 forApplicationID:(id)arg2 synchronize:(bool)arg3;
+- (id)managedPrefsObjectForKey:(id)arg1 forApplicationID:(id)arg2 synchronize:(BOOL)arg3;
+- (id)objectForKey:(id)arg1 forApplicationID:(id)arg2 synchronize:(BOOL)arg3;
 - (void)resetUserDefaultCacheForKey:(id)arg1 forApplicationID:(id)arg2;
-- (void)setDebugEnabled:(bool)arg1;
+- (void)setDebugEnabled:(BOOL)arg1;
 - (void)setInstancePrefsCache:(id)arg1;
 - (void)setManagedPrefsCache:(id)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2 forApplicationID:(id)arg3 saveToDisk:(bool)arg4;
+- (void)setObject:(id)arg1 forKey:(id)arg2 forApplicationID:(id)arg3 saveToDisk:(BOOL)arg4;
 - (void)setUserPrefsCache:(id)arg1;
-- (id)userDefaultsObjectForKey:(id)arg1 forApplicationID:(id)arg2 synchronize:(bool)arg3;
+- (id)userDefaultsObjectForKey:(id)arg1 forApplicationID:(id)arg2 synchronize:(BOOL)arg3;
 - (id)userPrefsCache;
 
 @end

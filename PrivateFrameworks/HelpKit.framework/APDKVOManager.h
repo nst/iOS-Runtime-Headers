@@ -11,7 +11,7 @@
 @property id observer;
 
 - (struct __CFDictionary { }*)KVODictionary;
-- (void)addKVOObject:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void*)arg4;
+- (void)addKVOObject:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
 - (void)dealloc;
 - (id)initWithObserver:(id)arg1;
 - (void)mainThreadObserveValueForKeyPath:(id)arg1;

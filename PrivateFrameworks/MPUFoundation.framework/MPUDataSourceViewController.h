@@ -6,28 +6,28 @@
 
 @interface MPUDataSourceViewController : UIViewController <UIStateRestoring, UIViewControllerRestoration> {
     MPUDataSource *_dataSource;
-    bool_hasEverReloadedData;
-    bool_shouldReloadWhenVisible;
-    bool_visible;
+    BOOL _hasEverReloadedData;
+    BOOL _shouldReloadWhenVisible;
+    BOOL _visible;
 }
 
 @property(retain) MPUDataSource * dataSource;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class objectRestorationClass;
 @property(readonly) MPUQueryDataSource * queryDataSource;
 @property(readonly) <UIStateRestoring> * restorationParent;
-@property bool shouldReloadWhenVisible;
+@property BOOL shouldReloadWhenVisible;
 @property(readonly) Class superclass;
-@property(getter=isVisible) bool visible;
+@property(getter=isVisible) BOOL visible;
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_MPUStandardViewController_dataSourceDidInvalidateNotification:(id)arg1;
 - (void)_MPUStandardViewController_dataSourceWillInvalidateNotification:(id)arg1;
-- (void)_setDataSource:(id)arg1 shouldReloadData:(bool)arg2;
+- (void)_setDataSource:(id)arg1 shouldReloadData:(BOOL)arg2;
 - (id)dataSource;
 - (void)dataSourceDidInvalidate;
 - (void)dataSourceWillInvalidate;
@@ -35,15 +35,15 @@
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithDataSource:(id)arg1;
-- (bool)isVisible;
+- (BOOL)isVisible;
 - (id)queryDataSource;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
-- (void)setShouldReloadWhenVisible:(bool)arg1;
-- (void)setVisible:(bool)arg1;
-- (bool)shouldReloadWhenVisible;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)setShouldReloadWhenVisible:(BOOL)arg1;
+- (void)setVisible:(BOOL)arg1;
+- (BOOL)shouldReloadWhenVisible;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

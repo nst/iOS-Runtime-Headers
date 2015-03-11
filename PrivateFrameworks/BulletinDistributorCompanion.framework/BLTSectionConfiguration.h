@@ -12,8 +12,8 @@
 
 - (void).cxx_destruct;
 - (id)_loadConfigurations;
-- (bool)hasSectionIDOptedOutOfAttachmentCoordination:(id)arg1;
-- (bool)hasSectionIDOptedOutOfCoordination:(id)arg1;
+- (BOOL)hasSectionIDOptedOutOfAttachmentCoordination:(id)arg1;
+- (BOOL)hasSectionIDOptedOutOfCoordination:(id)arg1;
 - (id)init;
 
 @end

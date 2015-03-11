@@ -31,7 +31,7 @@
     NSMutableDictionary *seqTracker;
     CDSession *sessionDuet;
     NSDate *startDate;
-    long long timeZoneSecondsFromGMT;
+    int timeZoneSecondsFromGMT;
     CDAttribute *userEventAttr;
 }
 
@@ -43,10 +43,10 @@
 - (void)endEvent:(id)arg1;
 - (id)init;
 - (void)initAfterClassCUnlocked;
-- (bool)isForecasted:(id)arg1;
+- (BOOL)isForecasted:(id)arg1;
 - (void)ncTriggerObserver:(id)arg1;
-- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned long long)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
-- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned long long)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
+- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
+- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
 - (void)programTimer;
 - (void)setNCLaunchRecommendationHandler:(id)arg1;
 - (void)setNCLaunchRecommendationHandlerWithCompletion:(id)arg1;

@@ -15,7 +15,7 @@
 @property(readonly) NSMutableDictionary * cacheRepresentation;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSArray * items;
 @property(copy) NSString * seeAllTitle;
 @property(copy) NSString * seeAllURLString;
@@ -29,7 +29,7 @@
 - (id)cacheRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithCacheRepresentation:(id)arg1;
-- (bool)isUnavailableItemIdentifier:(id)arg1;
+- (BOOL)isUnavailableItemIdentifier:(id)arg1;
 - (id)items;
 - (void)removeItemsAtIndexes:(id)arg1;
 - (id)seeAllTitle;

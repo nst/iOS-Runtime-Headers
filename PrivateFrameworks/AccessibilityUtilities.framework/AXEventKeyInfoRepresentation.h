@@ -6,21 +6,21 @@
 
 @interface AXEventKeyInfoRepresentation : NSObject <NSSecureCoding, NSCopying> {
     unsigned short _keyCode;
+    BOOL _keyDown;
     NSString *_modifiedInput;
     unsigned int _modifierState;
     NSString *_shiftModifiedInput;
     NSString *_unmodifiedInput;
-    bool_keyDown;
 }
 
 @property unsigned short keyCode;
-@property bool keyDown;
+@property BOOL keyDown;
 @property(retain) NSString * modifiedInput;
 @property unsigned int modifierState;
 @property(retain) NSString * shiftModifiedInput;
 @property(retain) NSString * unmodifiedInput;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_hardwareKeyboardLayout;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -28,11 +28,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned short)keyCode;
-- (bool)keyDown;
+- (BOOL)keyDown;
 - (id)modifiedInput;
 - (unsigned int)modifierState;
 - (void)setKeyCode:(unsigned short)arg1;
-- (void)setKeyDown:(bool)arg1;
+- (void)setKeyDown:(BOOL)arg1;
 - (void)setModifiedInput:(id)arg1;
 - (void)setModifierState:(unsigned int)arg1;
 - (void)setShiftModifiedInput:(id)arg1;

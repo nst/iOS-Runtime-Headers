@@ -8,9 +8,9 @@
     UIView *_leftView;
     NSNumberFormatter *_numberFormatter;
     UISlider *_slider;
-    double _sliderMargin;
+    float _sliderMargin;
     UILabel *_valueLabel;
-    double _valueWidth;
+    float _valueWidth;
 }
 
 - (void)accessibilityDecrement;
@@ -21,8 +21,8 @@
 - (id)accessibilityValue;
 - (void)dealloc;
 - (id)description;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (bool)isAccessibilityElement;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (void)setValue:(id)arg1;
 - (void)sliderValueDidChange:(id)arg1;

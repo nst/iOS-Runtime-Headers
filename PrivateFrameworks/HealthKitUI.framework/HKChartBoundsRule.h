@@ -15,7 +15,7 @@
 + (id)ruleWithDescriptor:(id)arg1;
 
 - (void).cxx_destruct;
-- (bool)adjustedValuesForMinValue:(double)arg1 maxValue:(double)arg2 minValueOut:(double*)arg3 maxValueOut:(double*)arg4;
+- (BOOL)adjustedValuesForMinValue:(double)arg1 maxValue:(double)arg2 minValueOut:(double*)arg3 maxValueOut:(double*)arg4;
 - (id)descriptor;
 - (void)setDescriptor:(id)arg1;
 

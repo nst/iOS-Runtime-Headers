@@ -10,17 +10,17 @@
 
 @interface MPArtworkCatalog : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     NSString *_cacheIdentifier;
     id _configurationBlock;
     <MPArtworkDataSource> *_dataSource;
     id _destination;
-    double _destinationScale;
+    float _destinationScale;
     } _fittingSize;
+    BOOL _loadingRepresentation;
     id _requestingContext;
     id _token;
-    bool_loadingRepresentation;
 }
 
 @property(readonly) NSCache * cache;
@@ -28,16 +28,16 @@
 @property(copy) id configurationBlock;
 @property <MPArtworkDataSource> * dataSource;
 @property id destination;
-@property double destinationScale;
-@property struct CGSize { double x1; double x2; } fittingSize;
-@property(getter=isLoadingRepresentation) bool loadingRepresentation;
+@property float destinationScale;
+@property struct CGSize { float x1; float x2; } fittingSize;
+@property(getter=isLoadingRepresentation) BOOL loadingRepresentation;
 @property id requestingContext;
-@property(readonly) struct CGSize { double x1; double x2; } scaledFittingSize;
+@property(readonly) struct CGSize { float x1; float x2; } scaledFittingSize;
 @property(retain) id token;
 
 + (id)_artworkCacheForIdentifier:(id)arg1 requestingContext:(id)arg2;
-+ (void)setCacheLimit:(unsigned long long)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
-+ (void)setCachePurgesWhenEnteringBackground:(bool)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
++ (void)setCacheLimit:(unsigned int)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
++ (void)setCachePurgesWhenEnteringBackground:(BOOL)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_loadBestRepresentationIfNeeded;
@@ -51,25 +51,25 @@
 - (void)dealloc;
 - (id)description;
 - (id)destination;
-- (double)destinationScale;
-- (struct CGSize { double x1; double x2; })fittingSize;
-- (unsigned long long)hash;
+- (float)destinationScale;
+- (struct CGSize { float x1; float x2; })fittingSize;
+- (unsigned int)hash;
 - (id)initWithToken:(id)arg1 dataSource:(id)arg2;
-- (bool)isArtworkVisuallyIdenticalToCatalog:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isLoadingRepresentation;
+- (BOOL)isArtworkVisuallyIdenticalToCatalog:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isLoadingRepresentation;
 - (void)requestImageWithCompletionHandler:(id)arg1;
 - (id)requestingContext;
-- (struct CGSize { double x1; double x2; })scaledFittingSize;
+- (struct CGSize { float x1; float x2; })scaledFittingSize;
 - (void)setCacheIdentifier:(id)arg1 forRequestingContext:(id)arg2;
 - (void)setCacheIdentifier:(id)arg1;
 - (void)setConfigurationBlock:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDestination:(id)arg1 configurationBlock:(id)arg2;
 - (void)setDestination:(id)arg1;
-- (void)setDestinationScale:(double)arg1;
-- (void)setFittingSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setLoadingRepresentation:(bool)arg1;
+- (void)setDestinationScale:(float)arg1;
+- (void)setFittingSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLoadingRepresentation:(BOOL)arg1;
 - (void)setRequestingContext:(id)arg1;
 - (void)setToken:(id)arg1;
 - (id)token;

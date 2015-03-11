@@ -9,9 +9,9 @@
     NSArray *__lineViews;
     NSLayoutConstraint *__lineWidthConstraint;
     NSArray *__overlayViews;
-    unsigned long long _handle;
-    bool_lineWeightHeavy;
-    bool_overlayHidden;
+    unsigned int _handle;
+    BOOL _lineWeightHeavy;
+    BOOL _overlayHidden;
 }
 
 @property(setter=_setLayoutReferenceView:,retain) UIView * _layoutReferenceView;
@@ -19,17 +19,17 @@
 @property(setter=_setLineWidthConstraint:,retain) NSLayoutConstraint * _lineWidthConstraint;
 @property(setter=_setOverlayViews:,retain) NSArray * _overlayViews;
 @property(readonly) NSArray * adjacentHandles;
-@property(getter=isBottom,readonly) bool bottom;
-@property(getter=isCorner,readonly) bool corner;
-@property(readonly) unsigned long long handle;
-@property(getter=isLateral,readonly) bool lateral;
+@property(getter=isBottom,readonly) BOOL bottom;
+@property(getter=isCorner,readonly) BOOL corner;
+@property(readonly) unsigned int handle;
+@property(getter=isLateral,readonly) BOOL lateral;
 @property(readonly) id layoutReferenceItem;
-@property(getter=isLeft,readonly) bool left;
-@property(getter=isLineWeightHeavy) bool lineWeightHeavy;
-@property(readonly) unsigned long long oppositeHandle;
-@property(getter=isOverlayHidden) bool overlayHidden;
-@property(getter=isRight,readonly) bool right;
-@property(getter=isTop,readonly) bool top;
+@property(getter=isLeft,readonly) BOOL left;
+@property(getter=isLineWeightHeavy) BOOL lineWeightHeavy;
+@property(readonly) unsigned int oppositeHandle;
+@property(getter=isOverlayHidden) BOOL overlayHidden;
+@property(getter=isRight,readonly) BOOL right;
+@property(getter=isTop,readonly) BOOL top;
 
 + (id)allHandles;
 
@@ -46,20 +46,20 @@
 - (void)_setOverlayViews:(id)arg1;
 - (void)_updateLineWidth;
 - (id)adjacentHandles;
-- (unsigned long long)handle;
-- (id)initForHandle:(unsigned long long)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isBottom;
-- (bool)isCorner;
-- (bool)isLateral;
-- (bool)isLeft;
-- (bool)isLineWeightHeavy;
-- (bool)isOverlayHidden;
-- (bool)isRight;
-- (bool)isTop;
+- (unsigned int)handle;
+- (id)initForHandle:(unsigned int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isBottom;
+- (BOOL)isCorner;
+- (BOOL)isLateral;
+- (BOOL)isLeft;
+- (BOOL)isLineWeightHeavy;
+- (BOOL)isOverlayHidden;
+- (BOOL)isRight;
+- (BOOL)isTop;
 - (id)layoutReferenceItem;
-- (unsigned long long)oppositeHandle;
-- (void)setLineWeightHeavy:(bool)arg1;
-- (void)setOverlayHidden:(bool)arg1;
+- (unsigned int)oppositeHandle;
+- (void)setLineWeightHeavy:(BOOL)arg1;
+- (void)setOverlayHidden:(BOOL)arg1;
 
 @end

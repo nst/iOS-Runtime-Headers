@@ -20,7 +20,7 @@
 @property(retain) NSString * inviteeLastName;
 @property(readonly) NSArray * inviteePhones;
 @property(retain) NSDate * inviteeSubscriptionDate;
-@property bool isMine;
+@property BOOL isMine;
 
 + (id)cloudSharedAlbumInvitationRecordWithGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)cloudSharedAlbumInvitationRecordsWithAlbumGUID:(id)arg1 inLibrary:(id)arg2;
@@ -33,7 +33,7 @@
 - (void)delete;
 - (id)init;
 - (id)invitationStateDescription;
-- (id)inviteeDisplayNameIncludingEmail:(bool)arg1;
+- (id)inviteeDisplayNameIncludingEmail:(BOOL)arg1;
 - (id)inviteeEmails;
 - (id)inviteePhones;
 - (void)prepareForDeletion;

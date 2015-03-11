@@ -11,9 +11,9 @@
     int _gpuPriority;
     NSDictionary *_noiseReductionOptions;
     struct opaqueCMFormatDescription { } *_outputFormatDescription;
-    bool_processLuma;
-    bool_threaded;
-    bool_useInPlaceAlgorithm;
+    BOOL _processLuma;
+    BOOL _threaded;
+    BOOL _useInPlaceAlgorithm;
 }
 
 + (void)initialize;

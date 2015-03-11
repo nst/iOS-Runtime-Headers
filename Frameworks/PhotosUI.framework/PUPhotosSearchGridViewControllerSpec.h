@@ -5,6 +5,6 @@
 @interface PUPhotosSearchGridViewControllerSpec : PUPhotosGridViewControllerPhoneSpec {
 }
 
-- (bool)canDisplaySearchActionInNavigationBar;
+- (BOOL)canDisplaySearchActionInNavigationBar;
 
 @end

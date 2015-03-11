@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface NNMKProtectedSQLiteConnection : NNMKSQLiteConnection {
+    BOOL _protectedDatabaseAttached;
     NSString *_protectedDatabaseName;
     NSString *_protectedDatabasePath;
-    bool_protectedDatabaseAttached;
 }
 
-@property(readonly) bool protectedDatabaseAttached;
+@property(readonly) BOOL protectedDatabaseAttached;
 @property(retain) NSString * protectedDatabaseName;
 @property(retain) NSString * protectedDatabasePath;
 
@@ -19,7 +19,7 @@
 - (int)attachProtectedDatabase;
 - (void)dettachProtectedDatabase;
 - (id)initWithUnprotectedDatabaseFileName:(id)arg1 protectedDatabaseFileName:(id)arg2 inDirectory:(id)arg3 protectedDatabaseName:(id)arg4 errorCode:(int*)arg5;
-- (bool)protectedDatabaseAttached;
+- (BOOL)protectedDatabaseAttached;
 - (id)protectedDatabaseName;
 - (id)protectedDatabasePath;
 - (void)setProtectedDatabaseName:(id)arg1;

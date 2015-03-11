@@ -12,22 +12,22 @@
     NSArray *_desiredKeys;
     id _fetchRecordVersionsCompletionBlock;
     id _fetchRecordVersionsProgressBlock;
+    BOOL _isDeleted;
     NSString *_minimumVersionETag;
     NSMutableDictionary *_recordErrors;
     NSArray *_recordIDs;
-    bool_isDeleted;
 }
 
 @property(copy) NSArray * desiredKeys;
 @property(copy) id fetchRecordVersionsCompletionBlock;
 @property(copy) id fetchRecordVersionsProgressBlock;
-@property bool isDeleted;
+@property BOOL isDeleted;
 @property(copy) NSString * minimumVersionETag;
 @property(retain) NSMutableDictionary * recordErrors;
 @property(copy) NSArray * recordIDs;
 
 - (void).cxx_destruct;
-- (bool)CKOperationShouldRun:(id*)arg1;
+- (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)desiredKeys;
@@ -35,7 +35,7 @@
 - (id)fetchRecordVersionsProgressBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)initWithRecordIDs:(id)arg1;
-- (bool)isDeleted;
+- (BOOL)isDeleted;
 - (id)minimumVersionETag;
 - (void)performCKOperation;
 - (id)recordErrors;
@@ -43,7 +43,7 @@
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFetchRecordVersionsCompletionBlock:(id)arg1;
 - (void)setFetchRecordVersionsProgressBlock:(id)arg1;
-- (void)setIsDeleted:(bool)arg1;
+- (void)setIsDeleted:(BOOL)arg1;
 - (void)setMinimumVersionETag:(id)arg1;
 - (void)setRecordErrors:(id)arg1;
 - (void)setRecordIDs:(id)arg1;

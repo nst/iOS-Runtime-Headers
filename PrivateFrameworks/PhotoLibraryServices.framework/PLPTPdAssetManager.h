@@ -21,14 +21,14 @@
 @property NSObject<PhotoLibraryPTPDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) NSFileManager * fileManager;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain,readonly) PLManagedObjectContext * managedObjectContext;
 @property(retain,readonly) PLPhotoLibrary * photoLibrary;
 @property(readonly) Class superclass;
 
 - (id)_allAssetObjectIDs;
 - (id)_fetchObjectIDsForAssetsExposedToPTPFromObjectIDs:(id)arg1;
-- (bool)_isPTPAlbum:(id)arg1;
+- (BOOL)_isPTPAlbum:(id)arg1;
 - (void)_performBlockAndWait:(id)arg1;
 - (void)_performTransactionAndWait:(id)arg1;
 - (id)_ptpInformationForAllAssets;
@@ -45,12 +45,12 @@
 - (id)infoForAlbum:(struct NSObject { Class x1; }*)arg1;
 - (id)infoForAsset:(struct NSObject { Class x1; }*)arg1;
 - (id)init;
-- (bool)libraryIsAvailable;
+- (BOOL)libraryIsAvailable;
 - (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssetIDs:(id)arg2 deletedAssetIDs:(id)arg3 changedAssetIDs:(id)arg4;
 - (id)managedObjectContext;
 - (id)photoLibrary;
-- (bool)ptpCanDeleteFiles;
-- (bool)ptpDeletePhotoWithKey:(struct NSObject { Class x1; }*)arg1 andExtension:(id)arg2;
+- (BOOL)ptpCanDeleteFiles;
+- (BOOL)ptpDeletePhotoWithKey:(struct NSObject { Class x1; }*)arg1 andExtension:(id)arg2;
 - (id)ptpInformationForFilesInDirectory:(id)arg1;
 - (id)ptpInformationForPhotoWithObjectID:(id)arg1;
 - (id)ptpInformationForPhotosWithPrimaryKeys:(id)arg1;

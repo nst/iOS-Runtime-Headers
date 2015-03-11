@@ -7,9 +7,9 @@
 @interface DOMHTMLKeygenElement : DOMHTMLElement {
 }
 
-@property bool autofocus;
+@property BOOL autofocus;
 @property(copy) NSString * challenge;
-@property bool disabled;
+@property BOOL disabled;
 @property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * keytype;
 @property(readonly) DOMNodeList * labels;
@@ -17,25 +17,25 @@
 @property(copy,readonly) NSString * type;
 @property(copy,readonly) NSString * validationMessage;
 @property(readonly) DOMValidityState * validity;
-@property(readonly) bool willValidate;
+@property(readonly) BOOL willValidate;
 
-- (bool)autofocus;
+- (BOOL)autofocus;
 - (id)challenge;
-- (bool)checkValidity;
-- (bool)disabled;
+- (BOOL)checkValidity;
+- (BOOL)disabled;
 - (id)form;
 - (id)keytype;
 - (id)labels;
 - (id)name;
-- (void)setAutofocus:(bool)arg1;
+- (void)setAutofocus:(BOOL)arg1;
 - (void)setChallenge:(id)arg1;
 - (void)setCustomValidity:(id)arg1;
-- (void)setDisabled:(bool)arg1;
+- (void)setDisabled:(BOOL)arg1;
 - (void)setKeytype:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)type;
 - (id)validationMessage;
 - (id)validity;
-- (bool)willValidate;
+- (BOOL)willValidate;
 
 @end

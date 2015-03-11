@@ -18,7 +18,7 @@
 - (void)inject:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;
 - (id)variableAlphaBlendValue;
 

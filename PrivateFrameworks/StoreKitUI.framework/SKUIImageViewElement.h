@@ -6,8 +6,8 @@
 
 @interface SKUIImageViewElement : SKUIViewElement {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     NSString *_alt;
     BOOL _enabled;
     SKUIImageViewElementCacheKey *_resourceCacheKey;
@@ -20,7 +20,7 @@
 @property(readonly) NSURL * URL;
 @property(readonly) id resourceCacheKey;
 @property(readonly) NSString * resourceName;
-@property(readonly) struct CGSize { double x1; double x2; } size;
+@property(readonly) struct CGSize { float x1; float x2; } size;
 @property(readonly) id transientResourceCacheKey;
 
 - (void).cxx_destruct;
@@ -28,12 +28,12 @@
 - (id)accessibilityText;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (bool)isEnabled;
-- (long long)pageComponentType;
-- (bool)rendersWithPerspective;
+- (BOOL)isEnabled;
+- (int)pageComponentType;
+- (BOOL)rendersWithPerspective;
 - (id)resourceCacheKey;
 - (id)resourceName;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (id)transientResourceCacheKey;
 
 @end

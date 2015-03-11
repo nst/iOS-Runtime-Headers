@@ -7,6 +7,6 @@
 
 + (id)classFallbacksForKeyedArchiver;
 
-- (bool)_isIBPrototypingLayoutConstraint;
+- (BOOL)_isIBPrototypingLayoutConstraint;
 
 @end

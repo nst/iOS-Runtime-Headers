@@ -9,7 +9,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)fetchNotificationForNotificationID:(id)arg1 completion:(id)arg2;
@@ -17,6 +17,6 @@
 - (void)remoteInterfaceDidDeactivate:(id)arg1;
 - (void)sendCacheRequest:(id)arg1 identifier:(id)arg2;
 - (void)sendData:(id)arg1 identifier:(id)arg2 clientIdentifiers:(id)arg3;
-- (void)sendTimingData:(id)arg1 identifier:(id)arg2 clientIdentifiers:(id)arg3 index:(long long)arg4;
+- (void)sendTimingData:(id)arg1 identifier:(id)arg2 clientIdentifiers:(id)arg3 index:(int)arg4;
 
 @end

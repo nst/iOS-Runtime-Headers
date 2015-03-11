@@ -10,43 +10,43 @@
 
 @interface NFMLeashManager : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate, CBScalablePipeManagerDelegate> {
     CBCentralManager *_centralManager;
-    long long _centralPhase;
+    int _centralPhase;
     NSObject<OS_dispatch_queue> *_centralQueue;
+    BOOL _connected;
     CBPeripheral *_discoveredPeripheral;
     NSObject<OS_dispatch_queue> *_externalQueue;
     <NFMLLeashBreakDelegate> *_leashDelegate;
     NSObject<OS_dispatch_source> *_leashDispatchSourceTimer;
     NSString *_leashIdentifier;
-    long long _leashMode;
+    int _leashMode;
+    BOOL _needsToScanForPeripheral;
     CBPeripheral *_peripheral;
     CBScalablePipe *_pipe;
     CBScalablePipeManager *_pipeManager;
     id _proximityChangeHandler;
     NSString *_serviceUUID;
-    bool_connected;
-    bool_needsToScanForPeripheral;
-    bool_testMode;
+    BOOL _testMode;
 }
 
 @property(retain) CBCentralManager * centralManager;
-@property long long centralPhase;
-@property bool connected;
+@property int centralPhase;
+@property BOOL connected;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) CBPeripheral * discoveredPeripheral;
 @property(retain) NSObject<OS_dispatch_queue> * externalQueue;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property <NFMLLeashBreakDelegate> * leashDelegate;
 @property(retain) NSObject<OS_dispatch_source> * leashDispatchSourceTimer;
 @property(copy) NSString * leashIdentifier;
-@property long long leashMode;
-@property bool needsToScanForPeripheral;
+@property int leashMode;
+@property BOOL needsToScanForPeripheral;
 @property(retain) CBPeripheral * peripheral;
 @property(retain) CBScalablePipe * pipe;
 @property(retain) CBScalablePipeManager * pipeManager;
 @property(copy) NSString * serviceUUID;
 @property(readonly) Class superclass;
-@property bool testMode;
+@property BOOL testMode;
 
 - (void).cxx_destruct;
 - (void)beginMonitoringLeash;
@@ -55,9 +55,9 @@
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
 - (id)centralManager;
 - (void)centralManagerDidUpdateState:(id)arg1;
-- (long long)centralPhase;
+- (int)centralPhase;
 - (void)connect;
-- (bool)connected;
+- (BOOL)connected;
 - (void)dealloc;
 - (id)discoveredPeripheral;
 - (id)externalQueue;
@@ -65,9 +65,9 @@
 - (id)leashDelegate;
 - (id)leashDispatchSourceTimer;
 - (id)leashIdentifier;
-- (long long)leashMode;
+- (int)leashMode;
 - (void)leashTest;
-- (bool)needsToScanForPeripheral;
+- (BOOL)needsToScanForPeripheral;
 - (id)peripheral;
 - (void)peripheralDidUpdateRSSI:(id)arg1 error:(id)arg2;
 - (id)pipe;
@@ -79,24 +79,24 @@
 - (void)scalablePipeManagerDidUpdateState:(id)arg1;
 - (id)serviceUUID;
 - (void)setCentralManager:(id)arg1;
-- (void)setCentralPhase:(long long)arg1;
-- (void)setConnected:(bool)arg1;
+- (void)setCentralPhase:(int)arg1;
+- (void)setConnected:(BOOL)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDiscoveredPeripheral:(id)arg1;
 - (void)setExternalQueue:(id)arg1;
 - (void)setLeashDelegate:(id)arg1;
 - (void)setLeashDispatchSourceTimer:(id)arg1;
 - (void)setLeashIdentifier:(id)arg1;
-- (void)setLeashMode:(long long)arg1;
-- (void)setNeedsToScanForPeripheral:(bool)arg1;
+- (void)setLeashMode:(int)arg1;
+- (void)setNeedsToScanForPeripheral:(BOOL)arg1;
 - (void)setPeripheral:(id)arg1;
 - (void)setPipe:(id)arg1;
 - (void)setPipeManager:(id)arg1;
 - (void)setProximityChangeHandler:(id)arg1;
 - (void)setServiceUUID:(id)arg1;
-- (void)setTestMode:(bool)arg1;
+- (void)setTestMode:(BOOL)arg1;
 - (void)stopMonitoringLeash;
-- (bool)testMode;
+- (BOOL)testMode;
 - (void)update:(id)arg1;
 
 @end

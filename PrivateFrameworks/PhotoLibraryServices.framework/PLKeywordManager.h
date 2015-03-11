@@ -20,6 +20,6 @@
 - (id)keywordsForAsset:(id)arg1;
 - (id)keywordsForAssetWithUUID:(id)arg1;
 - (id)keywordsForAssets:(id)arg1;
-- (bool)setKeywords:(id)arg1 forAssetUUID:(id)arg2;
+- (BOOL)setKeywords:(id)arg1 forAssetUUID:(id)arg2;
 
 @end

@@ -7,31 +7,31 @@
 @interface BLTPBHandlePairedDeviceIdentifierRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int carry : 1; 
+    BOOL _carry;
     } _has;
     NSString *_identifier;
-    bool_carry;
 }
 
-@property bool carry;
-@property bool hasCarry;
-@property(readonly) bool hasIdentifier;
+@property BOOL carry;
+@property BOOL hasCarry;
+@property(readonly) BOOL hasIdentifier;
 @property(retain) NSString * identifier;
 
 - (void).cxx_destruct;
-- (bool)carry;
+- (BOOL)carry;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCarry;
-- (bool)hasIdentifier;
-- (unsigned long long)hash;
+- (BOOL)hasCarry;
+- (BOOL)hasIdentifier;
+- (unsigned int)hash;
 - (id)identifier;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setCarry:(bool)arg1;
-- (void)setHasCarry:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setCarry:(BOOL)arg1;
+- (void)setHasCarry:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)writeTo:(id)arg1;
 

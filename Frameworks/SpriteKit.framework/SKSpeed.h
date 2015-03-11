@@ -12,11 +12,11 @@
  */
 
 @interface SKSpeed : SKAction {
-    struct SKCSpeed { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; long long x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; boolx27; boolx28; } *_mycaction;
+    struct SKCSpeed { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; BOOL x27; BOOL x28; } *_mycaction;
 }
 
-+ (id)speedBy:(double)arg1 duration:(double)arg2;
-+ (id)speedTo:(double)arg1 duration:(double)arg2;
++ (id)speedBy:(float)arg1 duration:(double)arg2;
++ (id)speedTo:(float)arg1 duration:(double)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

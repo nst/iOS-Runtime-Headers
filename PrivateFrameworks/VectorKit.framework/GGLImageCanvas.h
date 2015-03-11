@@ -15,8 +15,8 @@
 
 @interface GGLImageCanvas : NSObject <MDRenderTarget> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct unique_ptr<ggl::Texture2D, std::__1::default_delete<ggl::Texture2D> > { 
         struct __compressed_pair<ggl::Texture2D *, std::__1::default_delete<ggl::Texture2D> > { 
             struct Texture2D {} *__first_; 
@@ -61,9 +61,10 @@
         struct __compressed_pair<ggl::RenderTarget *, std::__1::default_delete<ggl::RenderTarget> > { 
             struct RenderTarget {} *__first_; 
         } __ptr_; 
+    BOOL _canMakeImage;
     } _colorBuffer;
     } _colorTexture;
-    double _contentScale;
+    float _contentScale;
     } _depthStencilBuffer;
     } _flippedColorBuffer;
     } _flippedRenderTarget;
@@ -72,26 +73,25 @@
     } _msaaColorBuffer;
     } _msaaDepthStencilBuffer;
     } _msaaRenderTarget;
+    BOOL _recreateRenderTarget;
     } _renderTarget;
     } _size;
-    bool_canMakeImage;
-    bool_recreateRenderTarget;
-    bool_useMultisampling;
+    BOOL _useMultisampling;
 }
 
-@property(readonly) struct RenderTarget { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; /* Warning: unhandled struct encoding: '{vector<ggl::FragmentBuffer *' */ struct x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; }* renderTarget; /* unknown property attribute:  std::__1::allocator<ggl::FragmentBuffer *> >=^^{FragmentBuffer}}}^{FragmentBuffer}IIB} */
-@property(readonly) struct RenderTarget { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; struct x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; oneway void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; in double x34; void*x35; const void*x36; void*x37; const void*x38; void*x39; void*x40; void*x41; int (**x42)(); struct ResourceManager {} *x43; struct RenderResource {} *x44; int (**x45)(); char *x46; struct x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; oneway void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; oneway struct RenderTarget { int (**x_74_1_1)(); struct ResourceManager {} *x_74_1_2; struct RenderResource {} *x_74_1_3; int (**x_74_1_4)(); char *x_74_1_5; struct x_74_1_6; void*x_74_1_7; void*x_74_1_8; void*x_74_1_9; void*x_74_1_10; void*x_74_1_11; void*x_74_1_12; void*x_74_1_13; void*x_74_1_14; void*x_74_1_15; void*x_74_1_16; void*x_74_1_17; } *x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; int x90; void*x91; in void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; unsigned int x115/* : ? */; void*x116; out void*x117; out void*x118; long x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; float x139; void*x140; long x141; void*x142; out void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void* x154[ /* ? */ ]; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; }* msaaRenderTarget; /* unknown property attribute:  std::__1::allocator<ggl::FragmentBuffer *> >=^^{FragmentBuffer}}}^{FragmentBuffer}IIB} */
-@property(readonly) struct RenderTarget { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; struct x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; }* finalRenderTarget; /* unknown property attribute:  std::__1::allocator<ggl::FragmentBuffer *> >=^^{FragmentBuffer}}}^{FragmentBuffer}IIB} */
+@property(readonly) struct RenderTarget { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; /* Warning: unhandled struct encoding: '{vector<ggl::FragmentBuffer *' */ struct x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; }* renderTarget; /* unknown property attribute:  std::__1::allocator<ggl::FragmentBuffer *> >=^^{FragmentBuffer}}}^{FragmentBuffer}IIB} */
+@property(readonly) struct RenderTarget { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; struct x6; void*x7; void*x8; unsigned long x9; void*x10; short x11; void*x12; const void*x13; double x14; int x15; void*x16; void*x17; unsigned int x18/* : ? */; long x19; void*x20; void*x21; long x22; unsigned int x23/* : ? */; void*x24; void*x25; void*x26; const out void*x27; out BOOL x28; out long x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; unsigned int x45; void*x46; void*x47; out void*x48; out void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; int x57; const void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; char *x64; void*x65; }* msaaRenderTarget; /* unknown property attribute:  std::__1::allocator<ggl::FragmentBuffer *> >=^^{FragmentBuffer}}}^{FragmentBuffer}IIB} */
+@property(readonly) struct RenderTarget { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; struct x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; unsigned int x18; oneway int x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; SEL x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; int x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; int x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; SEL x183; void*x184; int x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; const void*x193; void*x194; void x195; void*x196; char *x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; char *x205; void*x206; }* finalRenderTarget; /* unknown property attribute:  std::__1::allocator<ggl::FragmentBuffer *> >=^^{FragmentBuffer}}}^{FragmentBuffer}IIB} */
 @property(readonly) float averageFPS;
-@property double contentScale;
+@property float contentScale;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) struct RenderTargetOperation { int (**x1)(); int x2; }* msaaBlitOperation;
-@property struct CGSize { double x1; double x2; } size;
-@property(readonly) struct CGSize { double x1; double x2; } sizeInPixels;
+@property struct CGSize { float x1; float x2; } size;
+@property(readonly) struct CGSize { float x1; float x2; } sizeInPixels;
 @property(readonly) Class superclass;
-@property(readonly) bool useMultisampling;
+@property(readonly) BOOL useMultisampling;
 
 - (struct RenderTargetOperation { int (**x1)(); int x2; }*)msaaBlitOperation;
 - (struct RenderTarget { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; struct vector<ggl::FragmentBuffer *, std::__1::allocator<ggl::FragmentBuffer *> > { struct FragmentBuffer {} **x_6_1_1; struct FragmentBuffer {} **x_6_1_2; struct __compressed_pair<ggl::FragmentBuffer **, std::__1::allocator<ggl::FragmentBuffer *> > { struct FragmentBuffer {} **x_3_2_1; } x_6_1_3; } x6; struct FragmentBuffer {} *x7; unsigned int x8; unsigned int x9; boolx10; }*)finalRenderTarget;
@@ -103,16 +103,16 @@
 - (void)_createRenderTarget;
 - (void)_destroyMSAARenderTarget;
 - (void)_destroyRenderTarget;
-- (struct shared_ptr<ggl::BitmapDataBase> { struct BitmapDataBase {} *x1; struct __shared_weak_count {} *x2; })bitmapDataWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned long long x3; unsigned long long x4; boolx5; float x6; }*)arg1;
-- (double)contentScale;
+- (struct shared_ptr<ggl::BitmapDataBase> { struct BitmapDataBase {} *x1; struct __shared_weak_count {} *x2; })bitmapDataWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; boolx5; float x6; }*)arg1;
+- (float)contentScale;
 - (void)didDrawView;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 useMultisampling:(bool)arg3;
-- (struct CGImage { }*)newImageWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned long long x3; unsigned long long x4; boolx5; float x6; }*)arg1;
-- (void)setContentScale:(double)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })size;
-- (struct CGSize { double x1; double x2; })sizeInPixels;
-- (bool)useMultisampling;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 useMultisampling:(BOOL)arg3;
+- (struct CGImage { }*)newImageWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; boolx5; float x6; }*)arg1;
+- (void)setContentScale:(float)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { float x1; float x2; })sizeInPixels;
+- (BOOL)useMultisampling;
 - (void)willDrawView;
 
 @end

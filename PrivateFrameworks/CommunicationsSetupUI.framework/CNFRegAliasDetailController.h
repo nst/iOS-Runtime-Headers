@@ -22,10 +22,10 @@
 - (void)_buildSpecifierCache:(id)arg1;
 - (void)_setupEventHandlers;
 - (void)_showAliasValidationError:(id)arg1;
-- (void)_showResendGroup:(bool)arg1 animated:(bool)arg2;
-- (void)_updateUIAnimated:(bool)arg1;
+- (void)_showResendGroup:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_updateUIAnimated:(BOOL)arg1;
 - (id)alertHandler;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)alias;
 - (id)bundle;
 - (void)dealloc;
@@ -34,15 +34,15 @@
 - (void)resendValidationEmailTapped:(id)arg1;
 - (void)setAlertHandler:(id)arg1;
 - (void)setAlias:(id)arg1;
-- (void)setRemoveAliasEnabled:(bool)arg1 animated:(bool)arg2;
+- (void)setRemoveAliasEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)showRemoveAliasConfirmation;
 - (id)specifierList;
 - (void)systemApplicationDidEnterBackground;
 - (void)systemApplicationWillEnterForeground;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

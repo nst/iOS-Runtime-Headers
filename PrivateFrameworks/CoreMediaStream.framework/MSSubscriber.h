@@ -6,9 +6,10 @@
 
 @interface MSSubscriber : MSCupidStateMachine <MSSubscriber, MSSubscribeStreamsProtocolDelegate, MSSubscribeStorageProtocolDelegate, MSReauthorizationProtocolDelegate> {
     NSMutableArray *_assetsBeingRetrieved;
+    BOOL _checkOneMoreTime;
     MSMediaStreamDaemon *_daemon;
     <MSSubscriberDelegate> *_delegate;
-    long long _maxErrorCount;
+    int _maxErrorCount;
     NSMutableDictionary *_newSubscriptionsByStreamID;
     MSSubscribeStreamsProtocol *_protocol;
     MSReauthorizationProtocol *_reauthProtocol;
@@ -18,14 +19,13 @@
     int _state;
     <MSSubscribeStorageProtocol> *_storageProtocol;
     long long _targetRetrievalByteCount;
-    bool_checkOneMoreTime;
 }
 
 @property MSMediaStreamDaemon * daemon;
 @property(copy,readonly) NSString * debugDescription;
 @property <MSSubscriberDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property int retrievalBatchSize;
 @property(readonly) Class superclass;
 @property long long targetRetrievalByteCount;
@@ -36,7 +36,7 @@
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;
 + (id)existingSubscriberForPersonID:(id)arg1;
 + (void)forgetPersonID:(id)arg1;
-+ (bool)isInRetryState;
++ (BOOL)isInRetryState;
 + (id)nextActivityDate;
 + (id)nextActivityDateForPersonID:(id)arg1;
 + (id)personIDsWithOutstandingActivities;
@@ -52,15 +52,15 @@
 - (void)_didReceiveAuthenticationError:(id)arg1;
 - (void)_finishedRetrievingAsset:(id)arg1;
 - (void)_forget;
-- (bool)_hasOutstandingPoll;
-- (bool)_isAllowedToDownload;
-- (bool)_isInRetryState;
+- (BOOL)_hasOutstandingPoll;
+- (BOOL)_isAllowedToDownload;
+- (BOOL)_isInRetryState;
 - (void)_reauthorizeAssets;
 - (void)_refreshServerSideConfigurationParameters;
 - (void)_retrieveAssets;
 - (void)_retrieveNextAssets;
 - (void)_serverSideConfigurationDidChange:(id)arg1;
-- (void)_setHasOutstandingPoll:(bool)arg1;
+- (void)_setHasOutstandingPoll:(BOOL)arg1;
 - (void)_setSubscriptionsByStreamID:(id)arg1;
 - (void)_stopOutSubscriberState:(int*)arg1 outRetrievalState:(int*)arg2;
 - (id)_subscriptionsByStreamID;
@@ -93,7 +93,7 @@
 - (void)subscribeStreamsProtocol:(id)arg1 didFinishReceivingUpdatesForPersonID:(id)arg2 ctag:(id)arg3;
 - (void)subscribeStreamsProtocol:(id)arg1 didReceiveAssetCollections:(id)arg2 forPersonID:(id)arg3;
 - (void)subscribeStreamsProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
-- (void)subscribeStreamsProtocol:(id)arg1 willReceiveUpdatesForPersonID:(id)arg2 wasReset:(bool)arg3 metadata:(id)arg4;
+- (void)subscribeStreamsProtocol:(id)arg1 willReceiveUpdatesForPersonID:(id)arg2 wasReset:(BOOL)arg3 metadata:(id)arg4;
 - (id)subscribedStreams;
 - (long long)targetRetrievalByteCount;
 

@@ -8,11 +8,11 @@
     NSSQLGroupByIntermediate *_groupByClause;
     NSMutableArray *_groupByKeypaths;
     NSSQLHavingIntermediate *_havingClause;
+    BOOL _isDictionaryCountFetch;
     NSMutableArray *_joinIntermediates;
     NSMutableDictionary *_joinKeypaths;
     NSSQLOffsetIntermediate *_offsetClause;
     NSSQLSelectIntermediate *_selectClause;
-    bool_isDictionaryCountFetch;
 }
 
 - (id)_generateJoinSQLStringInContext:(id)arg1;
@@ -23,18 +23,18 @@
 - (id)fetchIntermediateForKeypathExpression:(id)arg1;
 - (id)finalJoinForKeypathWithComponents:(id)arg1;
 - (id)generateSQLStringInContext:(id)arg1;
-- (bool)groupByClauseContainsKeypath:(id)arg1;
+- (BOOL)groupByClauseContainsKeypath:(id)arg1;
 - (id)groupByIntermediate;
 - (id)havingIntermediate;
 - (id)initWithScope:(id)arg1;
-- (bool)isDictionaryCountFetch;
-- (bool)isFunctionScoped;
+- (BOOL)isDictionaryCountFetch;
+- (BOOL)isFunctionScoped;
 - (id)joinIntermediates;
 - (void)promoteToOuterJoinAtKeypathWithComponents:(id)arg1;
 - (void)promoteToOuterJoinsAlongKeypathWithComponents:(id)arg1;
 - (void)selectDistinct;
 - (id)selectIntermediate;
-- (void)setDictionaryCountFetch:(bool)arg1;
+- (void)setDictionaryCountFetch:(BOOL)arg1;
 - (void)setGroupByIntermediate:(id)arg1;
 - (void)setHavingIntermediate:(id)arg1;
 - (void)setOffsetIntermediate:(id)arg1;

@@ -5,7 +5,7 @@
 @class SKUIAttributedStringLayout;
 
 @interface SKUIBadgeImageRequest : NSObject {
-    unsigned long long _requestIdentifier;
+    unsigned int _requestIdentifier;
     SKUIAttributedStringLayout *_stringLayout;
 }
 

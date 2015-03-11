@@ -5,18 +5,18 @@
 @class APDNavigationItem, NSString;
 
 @interface APDNavigationItem : APDGenericData <NSCopying> {
+    BOOL _hasRead;
     NSString *_icon;
     NSString *_identifier;
-    long long _level;
+    int _level;
     NSString *_name;
     APDNavigationItem *_parent;
-    bool_hasRead;
 }
 
-@property bool hasRead;
+@property BOOL hasRead;
 @property(copy) NSString * icon;
 @property(copy) NSString * identifier;
-@property long long level;
+@property int level;
 @property(copy) NSString * name;
 @property APDNavigationItem * parent;
 
@@ -24,17 +24,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (bool)hasRead;
+- (BOOL)hasRead;
 - (id)icon;
 - (id)identifier;
 - (id)initWithDictionary:(id)arg1;
-- (long long)level;
+- (int)level;
 - (id)name;
 - (id)parent;
-- (void)setHasRead:(bool)arg1;
+- (void)setHasRead:(BOOL)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setLevel:(long long)arg1;
+- (void)setLevel:(int)arg1;
 - (void)setName:(id)arg1;
 - (void)setParent:(id)arg1;
 

@@ -5,12 +5,12 @@
 @interface VKPMatchingGraphNode : PBCodable <NSCopying> {
     struct { 
         unsigned long long *list; 
-        unsigned long long count; 
-        unsigned long long size; 
+        unsigned int count; 
+        unsigned int size; 
     struct { 
         unsigned int *list; 
-        unsigned long long count; 
-        unsigned long long size; 
+        unsigned int count; 
+        unsigned int size; 
     struct { 
         unsigned int styleReference : 1; 
     } _attributeValues;
@@ -22,19 +22,19 @@
 }
 
 @property(readonly) unsigned long long* attributeValues;
-@property(readonly) unsigned long long attributeValuesCount;
-@property bool hasStyleReference;
+@property(readonly) unsigned int attributeValuesCount;
+@property BOOL hasStyleReference;
 @property unsigned int key;
 @property(readonly) unsigned int* nodeIndices;
-@property(readonly) unsigned long long nodeIndicesCount;
+@property(readonly) unsigned int nodeIndicesCount;
 @property unsigned int score;
 @property unsigned int styleReference;
 
 - (void)addAttributeValues:(unsigned long long)arg1;
 - (void)addNodeIndices:(unsigned int)arg1;
 - (unsigned long long*)attributeValues;
-- (unsigned long long)attributeValuesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)attributeValuesCount;
+- (unsigned long long)attributeValuesAtIndex:(unsigned int)arg1;
+- (unsigned int)attributeValuesCount;
 - (void)clearAttributeValues;
 - (void)clearNodeIndices;
 - (void)copyTo:(id)arg1;
@@ -42,20 +42,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasStyleReference;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasStyleReference;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int)key;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int*)nodeIndices;
-- (unsigned int)nodeIndicesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)nodeIndicesCount;
-- (bool)readFrom:(id)arg1;
+- (unsigned int)nodeIndicesAtIndex:(unsigned int)arg1;
+- (unsigned int)nodeIndicesCount;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)score;
-- (void)setAttributeValues:(unsigned long long*)arg1 count:(unsigned long long)arg2;
-- (void)setHasStyleReference:(bool)arg1;
+- (void)setAttributeValues:(unsigned long long*)arg1 count:(unsigned int)arg2;
+- (void)setHasStyleReference:(BOOL)arg1;
 - (void)setKey:(unsigned int)arg1;
-- (void)setNodeIndices:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setNodeIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setScore:(unsigned int)arg1;
 - (void)setStyleReference:(unsigned int)arg1;
 - (unsigned int)styleReference;

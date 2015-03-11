@@ -9,24 +9,24 @@
 }
 
 @property(copy) NSString * cameraMode;
-@property long long cameraPosition;
-@property unsigned long long captureCount;
-@property(getter=isCaptureMode) bool captureMode;
+@property int cameraPosition;
+@property unsigned int captureCount;
+@property(getter=isCaptureMode) BOOL captureMode;
 @property(copy,readonly) NSString * debugDescription;
 @property <CRCodeRedeemerControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property long long exposureMode;
-@property long long focusMode;
-@property(readonly) unsigned long long hash;
+@property int exposureMode;
+@property int focusMode;
+@property(readonly) unsigned int hash;
 @property double sessionTimeout;
-@property bool showDiagnosticHUD;
+@property BOOL showDiagnosticHUD;
 @property(readonly) Class superclass;
-@property long long torchMode;
-@property long long whiteBalanceMode;
+@property int torchMode;
+@property int whiteBalanceMode;
 
-+ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1 maxStage:(unsigned long long)arg2 roi:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
-+ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1 maxStage:(unsigned long long)arg2;
-+ (unsigned long long)isCRCodeRedeemerAvailable;
++ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2 roi:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
++ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2;
++ (unsigned int)isCRCodeRedeemerAvailable;
 
 - (void).cxx_destruct;
 - (void)cameraReader:(id)arg1 didFailWithError:(id)arg2;
@@ -38,6 +38,6 @@
 - (id)delegate;
 - (id)init;
 - (void)setDelegate:(id)arg1;
-- (void)showMessage:(id)arg1 color:(id)arg2 style:(unsigned long long)arg3 duration:(double)arg4;
+- (void)showMessage:(id)arg1 color:(id)arg2 style:(unsigned int)arg3 duration:(double)arg4;
 
 @end

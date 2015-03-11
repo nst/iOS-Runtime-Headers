@@ -7,30 +7,30 @@
 @interface CAMAvalancheIndicatorView : UIView {
     UIView *__backgroundView;
     UILabel *__countLabel;
-    long long __numberOfPhotos;
-    bool_showsWhenStarted;
+    int __numberOfPhotos;
+    BOOL _showsWhenStarted;
 }
 
 @property(readonly) UIView * _backgroundView;
 @property(readonly) UILabel * _countLabel;
-@property(readonly) long long _numberOfPhotos;
-@property bool showsWhenStarted;
+@property(readonly) int _numberOfPhotos;
+@property BOOL showsWhenStarted;
 
 - (void).cxx_destruct;
 - (id)_backgroundView;
 - (void)_commonCAMAvalancheIndicatorViewInitialization;
 - (id)_countLabel;
-- (long long)_numberOfPhotos;
+- (int)_numberOfPhotos;
 - (void)_performCaptureAnimation;
 - (void)_updateCountLabelWithNumberOfPhotos;
 - (void)finishIncrementingWithCompletionHandler:(id)arg1;
-- (void)incrementWithCaptureAnimation:(bool)arg1;
+- (void)incrementWithCaptureAnimation:(BOOL)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)reset;
-- (void)setShowsWhenStarted:(bool)arg1;
-- (bool)showsWhenStarted;
+- (void)setShowsWhenStarted:(BOOL)arg1;
+- (BOOL)showsWhenStarted;
 
 @end

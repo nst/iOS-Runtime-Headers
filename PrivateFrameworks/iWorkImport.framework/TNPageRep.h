@@ -5,12 +5,12 @@
 @interface TNPageRep : TSWPPageRep {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGPath { } *_shadowPath;
     } _shadowPathRect;
@@ -19,13 +19,13 @@
 - (void)addAdditionalChildLayersToArray:(id)arg1;
 - (void)dealloc;
 - (void)didUpdateLayer:(id)arg1;
-- (bool)directlyManagesLayerContent;
+- (BOOL)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
-- (bool)isOpaque;
+- (BOOL)isOpaque;
 - (id)p_childRepForInfo:(id)arg1;
-- (bool)p_headerFooterIsVisibleAndInteractive:(int)arg1;
-- (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (BOOL)p_headerFooterIsVisibleAndInteractive:(int)arg1;
+- (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (id)p_rasterizeHeaderRep:(id)arg1 type:(int)arg2 fragment:(int)arg3;
 - (id)p_repForHeaderLayout:(id)arg1;
 - (void)p_willBeginDynamicContentScaleChange:(id)arg1;

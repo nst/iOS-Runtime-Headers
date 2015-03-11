@@ -5,44 +5,44 @@
 @class NSDictionary;
 
 @interface NEAOVPN : NSObject <NEConfigurationValidating, NEPrettyDescription, NSSecureCoding, NSCopying> {
+    BOOL _allowAllCaptiveNetworkPlugins;
+    BOOL _allowCaptiveWebSheet;
     NSDictionary *_allowedCaptiveNetworkPlugins;
+    BOOL _enabled;
     NSDictionary *_interfaceProtocolMapping;
     NSDictionary *_serviceExceptions;
-    bool_allowAllCaptiveNetworkPlugins;
-    bool_allowCaptiveWebSheet;
-    bool_enabled;
-    bool_toggleEnabled;
+    BOOL _toggleEnabled;
 }
 
-@property(getter=isAllowAllCaptiveNetworkPlugins) bool allowAllCaptiveNetworkPlugins;
-@property(getter=isAllowCaptiveWebSheet) bool allowCaptiveWebSheet;
+@property(getter=isAllowAllCaptiveNetworkPlugins) BOOL allowAllCaptiveNetworkPlugins;
+@property(getter=isAllowCaptiveWebSheet) BOOL allowCaptiveWebSheet;
 @property(copy) NSDictionary * allowedCaptiveNetworkPlugins;
-@property(getter=isEnabled) bool enabled;
+@property(getter=isEnabled) BOOL enabled;
 @property(copy) NSDictionary * interfaceProtocolMapping;
 @property(copy) NSDictionary * serviceExceptions;
-@property(getter=isToggleEnabled) bool toggleEnabled;
+@property(getter=isToggleEnabled) BOOL toggleEnabled;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)allowedCaptiveNetworkPlugins;
-- (bool)checkValidityAndCollectErrors:(id)arg1;
+- (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithIndent:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)interfaceProtocolMapping;
-- (bool)isAllowAllCaptiveNetworkPlugins;
-- (bool)isAllowCaptiveWebSheet;
-- (bool)isEnabled;
-- (bool)isToggleEnabled;
+- (BOOL)isAllowAllCaptiveNetworkPlugins;
+- (BOOL)isAllowCaptiveWebSheet;
+- (BOOL)isEnabled;
+- (BOOL)isToggleEnabled;
 - (id)serviceExceptions;
-- (void)setAllowAllCaptiveNetworkPlugins:(bool)arg1;
-- (void)setAllowCaptiveWebSheet:(bool)arg1;
+- (void)setAllowAllCaptiveNetworkPlugins:(BOOL)arg1;
+- (void)setAllowCaptiveWebSheet:(BOOL)arg1;
 - (void)setAllowedCaptiveNetworkPlugins:(id)arg1;
-- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setInterfaceProtocolMapping:(id)arg1;
 - (void)setServiceExceptions:(id)arg1;
-- (void)setToggleEnabled:(bool)arg1;
+- (void)setToggleEnabled:(BOOL)arg1;
 
 @end

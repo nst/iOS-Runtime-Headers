@@ -14,7 +14,7 @@
     NSLock *_propertyLock;
     HKHealthService *_service;
     id _sessionHandler;
-    unsigned long long _sessionIdentifier;
+    unsigned int _sessionIdentifier;
     id _transitoryDataHandler;
 }
 
@@ -23,7 +23,7 @@
 @property(retain) NSLock * propertyLock;
 @property(readonly) HKHealthService * service;
 @property(copy) id sessionHandler;
-@property unsigned long long sessionIdentifier;
+@property unsigned int sessionIdentifier;
 @property(copy) id transitoryDataHandler;
 
 - (void).cxx_destruct;
@@ -33,12 +33,12 @@
 - (id)propertyLock;
 - (id)service;
 - (id)sessionHandler;
-- (unsigned long long)sessionIdentifier;
+- (unsigned int)sessionIdentifier;
 - (void)setCharacteristicsHandler:(id)arg1;
 - (void)setInterestedTransitoryKeys:(id)arg1;
 - (void)setPropertyLock:(id)arg1;
 - (void)setSessionHandler:(id)arg1;
-- (void)setSessionIdentifier:(unsigned long long)arg1;
+- (void)setSessionIdentifier:(unsigned int)arg1;
 - (void)setTransitoryDataHandler:(id)arg1;
 - (id)transitoryDataHandler;
 

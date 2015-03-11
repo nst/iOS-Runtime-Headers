@@ -5,25 +5,25 @@
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface BLTPreviouslySentMessageStore : NSObject {
+    BOOL _dirty;
     NSMutableDictionary *_messageDigests;
     NSString *_path;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_saveTimer;
-    bool_dirty;
 }
 
-@property bool dirty;
+@property BOOL dirty;
 
 - (void).cxx_destruct;
 - (void)_cancelSave;
 - (void)_enqueueSave;
 - (void)_save;
 - (void)dealloc;
-- (bool)dirty;
+- (BOOL)dirty;
 - (id)initWithMessageStorePath:(id)arg1;
 - (void)invalidate;
 - (id)messageDigestForUnsentMessage:(id)arg1 messageKey:(id)arg2;
 - (void)recordMessageDigestAsPreviouslySent:(id)arg1 messageKey:(id)arg2;
-- (void)setDirty:(bool)arg1;
+- (void)setDirty:(BOOL)arg1;
 
 @end

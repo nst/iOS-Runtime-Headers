@@ -11,7 +11,7 @@
 @property(copy,readonly) NSString * description;
 @property(copy) NSString * descriptionText;
 @property(copy) NSString * displayLink;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSURL * link;
 @property(copy) NSString * name;
 @property(retain) SAUIAppPunchOut * punchOut;

@@ -7,22 +7,22 @@
  */
 
 @interface CKModifyBadgeOperation : CKOperation {
-    unsigned long long _badgeValue;
+    unsigned int _badgeValue;
     id _modifyBadgeCompletionBlock;
 }
 
-@property unsigned long long badgeValue;
+@property unsigned int badgeValue;
 @property(copy) id modifyBadgeCompletionBlock;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
-- (unsigned long long)badgeValue;
+- (unsigned int)badgeValue;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;
-- (id)initWithBadgeValue:(unsigned long long)arg1;
+- (id)initWithBadgeValue:(unsigned int)arg1;
 - (id)modifyBadgeCompletionBlock;
 - (void)performCKOperation;
-- (void)setBadgeValue:(unsigned long long)arg1;
+- (void)setBadgeValue:(unsigned int)arg1;
 - (void)setModifyBadgeCompletionBlock:(id)arg1;
 
 @end

@@ -8,16 +8,16 @@
 
 @interface HDNanoSyncRequestContext : NSObject {
     id _completion;
-    bool_pullRequest;
+    BOOL _pullRequest;
 }
 
 @property(copy,readonly) id completion;
-@property(getter=isPullRequest,readonly) bool pullRequest;
+@property(getter=isPullRequest,readonly) BOOL pullRequest;
 
-+ (id)requestContextWithCompletion:(id)arg1 pullRequest:(bool)arg2;
++ (id)requestContextWithCompletion:(id)arg1 pullRequest:(BOOL)arg2;
 
 - (void).cxx_destruct;
 - (id)completion;
-- (bool)isPullRequest;
+- (BOOL)isPullRequest;
 
 @end

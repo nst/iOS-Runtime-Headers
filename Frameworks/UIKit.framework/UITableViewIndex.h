@@ -6,12 +6,12 @@
 
 @interface UITableViewIndex : UIControl {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGSize { 
-        double width; 
-        double height; 
-    double _bottomPadding;
+        float width; 
+        float height; 
+    float _bottomPadding;
     } _cachedSize;
     } _cachedSizeToFit;
     NSArray *_entries;
@@ -19,21 +19,21 @@
     UIColor *_indexBackgroundColor;
     UIColor *_indexColor;
     UIColor *_indexTrackingBackgroundColor;
-    long long _selectedSection;
+    BOOL _pastBottom;
+    BOOL _pastTop;
+    int _selectedSection;
     NSArray *_titles;
-    double _topPadding;
-    double _verticalTextHeightEstimate;
-    bool_pastBottom;
-    bool_pastTop;
+    float _topPadding;
+    float _verticalTextHeightEstimate;
 }
 
 @property(retain) UIFont * font;
 @property(retain) UIColor * indexBackgroundColor;
 @property(retain) UIColor * indexColor;
 @property(retain) UIColor * indexTrackingBackgroundColor;
-@property(readonly) bool pastBottom;
-@property(readonly) bool pastTop;
-@property(readonly) long long selectedSection;
+@property(readonly) BOOL pastBottom;
+@property(readonly) BOOL pastTop;
+@property(readonly) int selectedSection;
 @property(readonly) NSString * selectedSectionTitle;
 @property(retain) NSArray * titles;
 
@@ -41,35 +41,35 @@
 - (id)_displayTitles;
 - (id)_dotImage;
 - (id)_externalDotImage;
-- (id)_fontForIdiom:(long long)arg1;
-- (long long)_idiom;
-- (double)_minLineSpacingForIdiom:(long long)arg1;
+- (id)_fontForIdiom:(int)arg1;
+- (int)_idiom;
+- (float)_minLineSpacingForIdiom:(int)arg1;
 - (void)_selectSectionForTouch:(id)arg1 withEvent:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_visibleBoundsForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 stride:(double*)arg2;
-- (void)_willChangeToIdiom:(long long)arg1 onScreen:(id)arg2;
-- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBoundsForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 stride:(float*)arg2;
+- (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
-- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)font;
 - (id)indexBackgroundColor;
 - (id)indexColor;
 - (id)indexTrackingBackgroundColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (unsigned long long)maximumNumberOfTitlesWithoutTruncationForHeight:(double)arg1;
-- (bool)pastBottom;
-- (bool)pastTop;
-- (long long)selectedSection;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned int)maximumNumberOfTitlesWithoutTruncationForHeight:(float)arg1;
+- (BOOL)pastBottom;
+- (BOOL)pastTop;
+- (int)selectedSection;
 - (id)selectedSectionTitle;
 - (void)setFont:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIndexBackgroundColor:(id)arg1;
 - (void)setIndexColor:(id)arg1;
 - (void)setIndexTrackingBackgroundColor:(id)arg1;
 - (void)setTitles:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)tintColorDidChange;
 - (id)titles;
 

@@ -7,18 +7,18 @@
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    unsigned long long _count;
+    unsigned int _count;
     } _idOfFirstOccurence;
 }
 
-@property unsigned long long count;
+@property unsigned int count;
 @property struct { unsigned short x1; unsigned char x2; unsigned char x3; } idOfFirstOccurence;
 
 - (id).cxx_construct;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (id)description;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })idOfFirstOccurence;
-- (void)setCount:(unsigned long long)arg1;
+- (void)setCount:(unsigned int)arg1;
 - (void)setIdOfFirstOccurence:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 
 @end

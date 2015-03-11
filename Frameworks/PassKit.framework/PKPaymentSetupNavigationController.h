@@ -5,7 +5,7 @@
 @class <PKPaymentSetupDelegate>, NSArray, NSString, PKPassLibrary, PKPaymentWebService;
 
 @interface PKPaymentSetupNavigationController : UINavigationController <PKPaymentSetupViewControllerDelegate> {
-    long long _context;
+    int _context;
     NSArray *_eligibleCardsOnFile;
     PKPassLibrary *_passLibrary;
     NSArray *_prefetchedCredentials;
@@ -15,7 +15,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSArray * prefetchedCredentials;
 @property <PKPaymentSetupDelegate> * setupDelegate;
 @property(readonly) Class superclass;
@@ -28,17 +28,17 @@
 - (void)handleDownloadedPasses:(id)arg1 fromViewController:(id)arg2 withCompletion:(id)arg3;
 - (void)handlePassAlreadyProvisionedError;
 - (void)handleProvisioningError:(id)arg1 forApplicationIdentifier:(id)arg2;
-- (id)initWithPaymentWebService:(id)arg1 context:(long long)arg2;
+- (id)initWithPaymentWebService:(id)arg1 context:(int)arg2;
 - (id)prefetchedCredentials;
 - (void)preflightWithCompletion:(id)arg1;
-- (void)preflightWithRequirements:(long long)arg1 completion:(id)arg2;
+- (void)preflightWithRequirements:(int)arg1 completion:(id)arg2;
 - (void)setPrefetchedCredentials:(id)arg1;
 - (void)setSetupDelegate:(id)arg1;
 - (id)setupDelegate;
-- (bool)shouldAutorotate;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (id)webService;
 
 @end

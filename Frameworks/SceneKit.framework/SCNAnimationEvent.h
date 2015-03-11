@@ -13,7 +13,7 @@
 }
 
 + (id)SCNJSExportProtocol;
-+ (id)animationEventWithKeyTime:(double)arg1 block:(id)arg2;
++ (id)animationEventWithKeyTime:(float)arg1 block:(id)arg2;
 
 - (void)dealloc;
 - (id)eventBlock;

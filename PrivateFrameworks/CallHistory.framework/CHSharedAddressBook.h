@@ -24,7 +24,7 @@
 - (id)init;
 - (void)insertAddressBookInfoIntoCache:(id)arg1 forKey:(id)arg2;
 - (void)performQuery_sync:(id)arg1;
-- (void)revertAddressBook:(bool)arg1;
+- (void)revertAddressBook:(BOOL)arg1;
 - (void)sendABChangedNotificationSyncWithUserInfo:(id)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setAddressBookCache:(id)arg1;

@@ -10,11 +10,11 @@
     NSString *_string;
 }
 
-+ (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 errorType:(unsigned long long)arg3;
-+ (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 transform:(unsigned long long)arg3 errorType:(unsigned long long)arg4;
++ (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 errorType:(unsigned int)arg3;
++ (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 errorType:(unsigned int)arg4;
 + (id)candidateWithString:(id)arg1 errorScore:(double)arg2;
-+ (id)candidateWithString:(id)arg1 errorType:(unsigned long long)arg2;
-+ (double)errorScoreForType:(unsigned long long)arg1;
++ (id)candidateWithString:(id)arg1 errorType:(unsigned int)arg2;
++ (double)errorScoreForType:(unsigned int)arg1;
 
 - (void)dealloc;
 - (id)description;

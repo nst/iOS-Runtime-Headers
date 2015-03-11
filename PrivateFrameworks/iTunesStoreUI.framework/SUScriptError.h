@@ -8,7 +8,7 @@
     NSError *_error;
 }
 
-@property(readonly) long long code;
+@property(readonly) int code;
 @property(readonly) NSString * domain;
 @property(readonly) NSString * localizedDescription;
 @property(readonly) NSString * localizedFailureReason;
@@ -19,7 +19,7 @@
 
 - (id)_className;
 - (id)attributeKeys;
-- (long long)code;
+- (int)code;
 - (void)dealloc;
 - (id)domain;
 - (id)initWithError:(id)arg1;

@@ -7,7 +7,7 @@
 @interface PKPassbookSettingsController : NSObject <PKPaymentServiceDelegate> {
     PSSpecifier *_addCardButtonSpecifier;
     PSSpecifier *_cardsGroupSpecifier;
-    long long _context;
+    int _context;
     <PKPassbookSettingsDataSource> *_dataSource;
     PSSpecifier *_defaultBillingAddressSpecifier;
     PSSpecifier *_defaultContactEmailSpecifier;
@@ -24,7 +24,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <PKPassbookSettingsDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (id)_addCardButtonSpecifier;
@@ -52,7 +52,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)done:(id)arg1;
-- (id)initWithDelegate:(id)arg1 dataSource:(id)arg2 context:(long long)arg3;
+- (id)initWithDelegate:(id)arg1 dataSource:(id)arg2 context:(int)arg3;
 - (void)refreshDefaultCard;
 - (void)refreshPasses;
 - (void)setDelegate:(id)arg1;

@@ -14,7 +14,7 @@
 
 + (struct NSObject { Class x1; }*)_shuffledAlbumWithAlbum:(struct NSObject { Class x1; }*)arg1 filter:(int)arg2 startingAsset:(id)arg3;
 
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)createShuffledIndexesMaps;
 - (void)dealloc;
 - (int)filter;

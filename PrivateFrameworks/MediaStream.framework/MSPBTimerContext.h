@@ -6,19 +6,19 @@
 
 @interface MSPBTimerContext : NSObject {
     NSDate *_date;
-    bool_isValid;
+    BOOL _isValid;
 }
 
 @property(retain) NSDate * date;
-@property bool isValid;
+@property BOOL isValid;
 
 + (id)contextWithDate:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)date;
 - (id)init;
-- (bool)isValid;
+- (BOOL)isValid;
 - (void)setDate:(id)arg1;
-- (void)setIsValid:(bool)arg1;
+- (void)setIsValid:(BOOL)arg1;
 
 @end

@@ -8,11 +8,11 @@
 }
 
 @property(retain) <SASTTemplateAction> * action;
-@property bool centered;
+@property BOOL centered;
 @property(copy,readonly) NSString * debugDescription;
 @property(retain) SAUIDecoratedText * decoratedLabel;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SAUILocalImageResource * localImageResource;
 @property(readonly) Class superclass;
 
@@ -20,13 +20,13 @@
 + (id)buttonItemWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)action;
-- (bool)centered;
+- (BOOL)centered;
 - (id)decoratedLabel;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)localImageResource;
 - (void)setAction:(id)arg1;
-- (void)setCentered:(bool)arg1;
+- (void)setCentered:(BOOL)arg1;
 - (void)setDecoratedLabel:(id)arg1;
 - (void)setLocalImageResource:(id)arg1;
 

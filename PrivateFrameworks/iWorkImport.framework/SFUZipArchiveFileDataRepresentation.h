@@ -11,18 +11,18 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (id)bufferedInputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 - (long long)dataLength;
 - (void)dealloc;
-- (bool)hasSameLocationAs:(id)arg1;
+- (BOOL)hasSameLocationAs:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (id)inputStream;
 - (id)inputStreamWithOffset:(long long)arg1 length:(long long)arg2;
-- (bool)isEncrypted;
-- (bool)isReadable;
+- (BOOL)isEncrypted;
+- (BOOL)isReadable;
 - (id)path;
 
 @end

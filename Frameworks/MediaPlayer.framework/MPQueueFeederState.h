@@ -5,25 +5,25 @@
 @class MPQueueFeeder;
 
 @interface MPQueueFeederState : NSObject {
-    unsigned long long _currentItemIndex;
+    unsigned int _currentItemIndex;
     double _currentTime;
     MPQueueFeeder *_feeder;
     int _feederMode;
 }
 
-@property unsigned long long currentItemIndex;
+@property unsigned int currentItemIndex;
 @property double currentTime;
 @property(retain) MPQueueFeeder * feeder;
 @property int feederMode;
 
 - (void).cxx_destruct;
-- (unsigned long long)currentItemIndex;
+- (unsigned int)currentItemIndex;
 - (double)currentTime;
 - (id)description;
 - (id)feeder;
 - (int)feederMode;
 - (id)initWithStateOfAVController:(id)arg1;
-- (void)setCurrentItemIndex:(unsigned long long)arg1;
+- (void)setCurrentItemIndex:(unsigned int)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setFeeder:(id)arg1;
 - (void)setFeederMode:(int)arg1;

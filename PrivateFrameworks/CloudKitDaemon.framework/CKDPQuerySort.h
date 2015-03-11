@@ -15,9 +15,9 @@
 
 @property(retain) CKDPLocationCoordinate * coordinate;
 @property(retain) CKDPRecordFieldIdentifier * fieldName;
-@property(readonly) bool hasCoordinate;
-@property(readonly) bool hasFieldName;
-@property bool hasOrder;
+@property(readonly) BOOL hasCoordinate;
+@property(readonly) BOOL hasFieldName;
+@property BOOL hasOrder;
 @property int order;
 
 - (void).cxx_destruct;
@@ -27,17 +27,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)fieldName;
-- (bool)hasCoordinate;
-- (bool)hasFieldName;
-- (bool)hasOrder;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCoordinate;
+- (BOOL)hasFieldName;
+- (BOOL)hasOrder;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)order;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCoordinate:(id)arg1;
 - (void)setFieldName:(id)arg1;
-- (void)setHasOrder:(bool)arg1;
+- (void)setHasOrder:(BOOL)arg1;
 - (void)setOrder:(int)arg1;
 - (void)writeTo:(id)arg1;
 

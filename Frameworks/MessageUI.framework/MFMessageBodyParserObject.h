@@ -3,21 +3,21 @@
  */
 
 @interface MFMessageBodyParserObject : NSObject {
+    BOOL _copyBlocks;
+    BOOL _didTimeout;
+    BOOL _shouldAbort;
     double _timeoutInterval;
     double _timeoutTime;
-    bool_copyBlocks;
-    bool_didTimeout;
-    bool_shouldAbort;
 }
 
 @property double timeoutInterval;
 
 - (void)abortParsing;
-- (bool)areBlocksCopied;
+- (BOOL)areBlocksCopied;
 - (void)copyBlocks;
 - (void)messageBodyParserWillBeginParsing:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
-- (bool)shouldProceedParsing;
+- (BOOL)shouldProceedParsing;
 - (double)timeoutInterval;
 
 @end

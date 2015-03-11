@@ -64,7 +64,7 @@
 + (id)gizmoDaemonTransformation;
 + (id)gizmoExtensions;
 + (id)gizmoIDSTopicTransformation;
-+ (bool)isWatchExtensionForNetworking:(id)arg1;
++ (BOOL)isWatchExtensionForNetworking:(id)arg1;
 + (void)load;
 + (id)railDefinitions;
 
@@ -85,7 +85,7 @@
 - (void)initAccountingEntitiesLastTime;
 - (void)initOperatorDependancies;
 - (id)ioreportCallback;
-- (bool)isAppPresentInFGDictionary:(id)arg1 app:(id)arg2;
+- (BOOL)isAppPresentInFGDictionary:(id)arg1 app:(id)arg2;
 - (double)lastBoundedTimeForAccountingWithNow:(id)arg1 withLastDate:(id)arg2;
 - (id)lastQueryRunTime;
 - (double)lastSafeTimeForSnapping;

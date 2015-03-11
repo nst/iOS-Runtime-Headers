@@ -7,79 +7,79 @@
 @interface EKDayViewContentItem : NSObject <CUIKSingleDayTimelineViewItem> {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
-    double _bottomPinningProximity;
+    float _bottomPinningProximity;
     EKCalendarDate *_endDate;
-    unsigned long long _eventIndex;
+    unsigned int _eventIndex;
     EKCalendarDate *_startDate;
-    double _topPinningProximity;
+    float _topPinningProximity;
     double _travelTime;
     } _unPinnedViewFrame;
     EKDayOccurrenceView *_view;
 }
 
-@property double bottomPinningProximity;
+@property float bottomPinningProximity;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSDate * end;
 @property(copy) EKCalendarDate * endDate;
-@property(readonly) double enoughHeightForOneLine;
+@property(readonly) float enoughHeightForOneLine;
 @property(readonly) EKEvent * event;
-@property(readonly) unsigned long long eventIndex;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool hideTravelTime;
+@property(readonly) unsigned int eventIndex;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL hideTravelTime;
 @property(readonly) NSDate * start;
 @property(copy) EKCalendarDate * startDate;
 @property(copy,readonly) EKCalendarDate * startDateIncludingTravelTime;
 @property(readonly) NSDate * startWithTravelTime;
 @property(readonly) Class superclass;
-@property double topPinningProximity;
+@property float topPinningProximity;
 @property double travelTime;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } unPinnedViewFrame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unPinnedViewFrame;
 @property(retain) EKDayOccurrenceView * view;
-@property(readonly) double viewMaxNaturalTextHeight;
-@property(readonly) bool visibleHeightLocked;
+@property(readonly) float viewMaxNaturalTextHeight;
+@property(readonly) BOOL visibleHeightLocked;
 
-+ (double)barToBarHorizontalDistanceIncludingBarWidth;
++ (float)barToBarHorizontalDistanceIncludingBarWidth;
 
 - (void).cxx_destruct;
-- (double)bottomPinningProximity;
+- (float)bottomPinningProximity;
 - (id)description;
 - (id)end;
 - (id)endDate;
-- (double)enoughHeightForOneLine;
+- (float)enoughHeightForOneLine;
 - (id)event;
-- (unsigned long long)eventIndex;
-- (bool)hideTravelTime;
-- (id)initWithEventIndex:(unsigned long long)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isPinned;
-- (void)setBottomPinningProximity:(double)arg1;
+- (unsigned int)eventIndex;
+- (BOOL)hideTravelTime;
+- (id)initWithEventIndex:(unsigned int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isPinned;
+- (void)setBottomPinningProximity:(float)arg1;
 - (void)setEndDate:(id)arg1;
-- (void)setStagedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setStagedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setStartDate:(id)arg1;
-- (void)setTopPinningProximity:(double)arg1;
+- (void)setTopPinningProximity:(float)arg1;
 - (void)setTravelTime:(double)arg1;
-- (void)setTravelTimeHeight:(double)arg1;
-- (void)setUnPinnedViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTravelTimeHeight:(float)arg1;
+- (void)setUnPinnedViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setView:(id)arg1;
-- (void)setVisibleHeight:(double)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })stagedFrame;
+- (void)setVisibleHeight:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })stagedFrame;
 - (id)start;
 - (id)startDate;
 - (id)startDateIncludingTravelTime;
 - (id)startWithTravelTime;
-- (double)topPinningProximity;
+- (float)topPinningProximity;
 - (double)travelTime;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unPinnedViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unPinnedViewFrame;
 - (id)view;
-- (double)viewMaxNaturalTextHeight;
-- (bool)visibleHeightLocked;
+- (float)viewMaxNaturalTextHeight;
+- (BOOL)visibleHeightLocked;
 
 @end

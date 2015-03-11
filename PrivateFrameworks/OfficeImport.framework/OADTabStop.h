@@ -8,7 +8,7 @@
 }
 
 - (int)align;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (int)position;
 - (void)setAlign:(int)arg1;
 - (void)setPosition:(int)arg1;

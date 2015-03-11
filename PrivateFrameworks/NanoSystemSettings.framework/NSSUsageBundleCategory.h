@@ -12,7 +12,7 @@
 @property(retain) NSString * name;
 @property unsigned long long size;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

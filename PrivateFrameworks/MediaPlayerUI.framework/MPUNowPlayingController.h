@@ -5,22 +5,22 @@
 @class <MPUNowPlayingDelegate>, NSDictionary, NSObject<OS_dispatch_source>, NSString, UIImage;
 
 @interface MPUNowPlayingController : NSObject {
+    BOOL _cachedArtworkDirty;
     UIImage *_cachedNowPlayingArtwork;
     double _currentDuration;
     double _currentElapsed;
     NSString *_currentNowPlayingAppDisplayID;
+    BOOL _currentNowPlayingAppIsRunning;
     NSDictionary *_currentNowPlayingInfo;
     <MPUNowPlayingDelegate> *_delegate;
-    long long _isPlaying;
+    int _isPlaying;
+    BOOL _isRegisteredForNowPlayingNotifications;
+    BOOL _isUpdatingNowPlayingApp;
+    BOOL _isUpdatingNowPlayingInfo;
+    BOOL _isUpdatingPlaybackState;
+    BOOL _shouldUpdateNowPlayingArtwork;
     NSObject<OS_dispatch_source> *_timeInformationTimer;
     double _timeInformationUpdateInterval;
-    bool_cachedArtworkDirty;
-    bool_currentNowPlayingAppIsRunning;
-    bool_isRegisteredForNowPlayingNotifications;
-    bool_isUpdatingNowPlayingApp;
-    bool_isUpdatingNowPlayingInfo;
-    bool_isUpdatingPlaybackState;
-    bool_shouldUpdateNowPlayingArtwork;
 }
 
 @property(readonly) double currentDuration;
@@ -28,9 +28,9 @@
 @property(readonly) UIImage * currentNowPlayingArtwork;
 @property(readonly) NSDictionary * currentNowPlayingInfo;
 @property <MPUNowPlayingDelegate> * delegate;
-@property(readonly) bool isPlaying;
+@property(readonly) BOOL isPlaying;
 @property(readonly) NSString * nowPlayingAppDisplayID;
-@property bool shouldUpdateNowPlayingArtwork;
+@property BOOL shouldUpdateNowPlayingArtwork;
 @property double timeInformationUpdateInterval;
 
 - (void).cxx_destruct;
@@ -49,12 +49,12 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (bool)isPlaying;
+- (BOOL)isPlaying;
 - (id)nowPlayingAppDisplayID;
 - (void)setDelegate:(id)arg1;
-- (void)setShouldUpdateNowPlayingArtwork:(bool)arg1;
+- (void)setShouldUpdateNowPlayingArtwork:(BOOL)arg1;
 - (void)setTimeInformationUpdateInterval:(double)arg1;
-- (bool)shouldUpdateNowPlayingArtwork;
+- (BOOL)shouldUpdateNowPlayingArtwork;
 - (void)startUpdating;
 - (void)stopUpdating;
 - (double)timeInformationUpdateInterval;

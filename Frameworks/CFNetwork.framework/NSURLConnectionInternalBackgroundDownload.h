@@ -13,12 +13,12 @@
     NSMutableArray *_pendingOps;
     NSCountedSet *_runloops;
     struct __CFRunLoopSource { } *_source;
-    bool_terminated;
+    BOOL _terminated;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (void)_enableLogging;
@@ -43,9 +43,9 @@
 - (id)description;
 - (void)downloadHandler:(id)arg1 cancelSession:(id)arg2;
 - (void)downloadHandler:(id)arg1 handleAuthenticationSession:(id)arg2;
-- (bool)downloadHandler:(id)arg1 pauseSession:(id)arg2;
+- (BOOL)downloadHandler:(id)arg1 pauseSession:(id)arg2;
 - (void)downloadHandlerDidDisconnect:(id)arg1;
-- (id)initWithInfo:(const struct InternalInit { id x1; id x2; id x3; id x4; boolx5; long long x6; }*)arg1;
+- (id)initWithInfo:(const struct InternalInit { id x1; id x2; id x3; id x4; BOOL x5; long long x6; }*)arg1;
 - (void)invokeForDelegate:(id)arg1;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;

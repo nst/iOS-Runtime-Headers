@@ -10,12 +10,12 @@
 
 @property(copy) NSArray * playerInternals;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)playerInternals;
 - (void)setPlayerInternals:(id)arg1;
 

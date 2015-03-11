@@ -9,15 +9,15 @@
 }
 
 @property SEL action;
-@property bool needsUpdate;
+@property BOOL needsUpdate;
 @property id target;
 
 - (SEL)action;
 - (id)description;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (bool)needsUpdate;
+- (BOOL)needsUpdate;
 - (void)setAction:(SEL)arg1;
-- (void)setNeedsUpdate:(bool)arg1;
+- (void)setNeedsUpdate:(BOOL)arg1;
 - (void)setNeedsUpdate;
 - (void)setTarget:(id)arg1;
 - (id)target;

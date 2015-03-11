@@ -5,68 +5,68 @@
 @class NSString, WBSHistoryItem, WBSHistoryVisit;
 
 @interface WBSHistoryVisit : NSObject {
-    long long _databaseID;
+    int _databaseID;
     long long _generation;
+    BOOL _httpNonGet;
     WBSHistoryItem *_item;
-    long long _origin;
+    BOOL _loadSuccessful;
+    int _origin;
     WBSHistoryVisit *_redirectDestination;
-    long long _redirectDestinationDatabaseID;
+    int _redirectDestinationDatabaseID;
     WBSHistoryVisit *_redirectSource;
-    long long _redirectSourceDatabaseID;
+    int _redirectSourceDatabaseID;
+    BOOL _synthesized;
     NSString *_title;
     double _visitTime;
-    bool_httpNonGet;
-    bool_loadSuccessful;
-    bool_synthesized;
 }
 
-@property long long databaseID;
+@property int databaseID;
 @property(readonly) WBSHistoryVisit * endOfRedirectChain;
 @property long long generation;
-@property(getter=wasHTTPNonGet,readonly) bool httpNonGet;
+@property(getter=wasHTTPNonGet,readonly) BOOL httpNonGet;
 @property WBSHistoryItem * item;
-@property(getter=loadWasSuccessful) bool loadSuccessful;
-@property long long origin;
+@property(getter=loadWasSuccessful) BOOL loadSuccessful;
+@property int origin;
 @property(retain) WBSHistoryVisit * redirectDestination;
-@property long long redirectDestinationDatabaseID;
+@property int redirectDestinationDatabaseID;
 @property(retain) WBSHistoryVisit * redirectSource;
-@property(readonly) unsigned long long redirectSourceChainLength;
-@property long long redirectSourceDatabaseID;
-@property(getter=isSynthesized,readonly) bool synthesized;
+@property(readonly) unsigned int redirectSourceChainLength;
+@property int redirectSourceDatabaseID;
+@property(getter=isSynthesized,readonly) BOOL synthesized;
 @property(copy) NSString * title;
 @property(readonly) double visitTime;
 
 + (id)synthesizedVisitWithHistoryItem:(id)arg1 visitTime:(double)arg2;
 
 - (void).cxx_destruct;
-- (long long)databaseID;
+- (int)databaseID;
 - (id)endOfRedirectChain;
 - (long long)generation;
-- (id)initWithHistoryItem:(id)arg1 sqliteRow:(id)arg2 baseColumnIndex:(unsigned long long)arg3;
+- (id)initWithHistoryItem:(id)arg1 sqliteRow:(id)arg2 baseColumnIndex:(unsigned int)arg3;
 - (id)initWithHistoryItem:(id)arg1 sqliteRow:(id)arg2;
-- (id)initWithHistoryItem:(id)arg1 visitTime:(double)arg2 loadWasSuccesful:(bool)arg3 wasHTTPNonGet:(bool)arg4 origin:(long long)arg5;
+- (id)initWithHistoryItem:(id)arg1 visitTime:(double)arg2 loadWasSuccesful:(BOOL)arg3 wasHTTPNonGet:(BOOL)arg4 origin:(int)arg5;
 - (id)initWithHistoryItem:(id)arg1 visitTime:(double)arg2;
-- (bool)isSynthesized;
+- (BOOL)isSynthesized;
 - (id)item;
-- (bool)loadWasSuccessful;
-- (long long)origin;
+- (BOOL)loadWasSuccessful;
+- (int)origin;
 - (id)redirectDestination;
-- (long long)redirectDestinationDatabaseID;
+- (int)redirectDestinationDatabaseID;
 - (id)redirectSource;
-- (unsigned long long)redirectSourceChainLength;
-- (long long)redirectSourceDatabaseID;
-- (void)setDatabaseID:(long long)arg1;
+- (unsigned int)redirectSourceChainLength;
+- (int)redirectSourceDatabaseID;
+- (void)setDatabaseID:(int)arg1;
 - (void)setGeneration:(long long)arg1;
 - (void)setItem:(id)arg1;
-- (void)setLoadSuccessful:(bool)arg1;
-- (void)setOrigin:(long long)arg1;
+- (void)setLoadSuccessful:(BOOL)arg1;
+- (void)setOrigin:(int)arg1;
 - (void)setRedirectDestination:(id)arg1;
-- (void)setRedirectDestinationDatabaseID:(long long)arg1;
+- (void)setRedirectDestinationDatabaseID:(int)arg1;
 - (void)setRedirectSource:(id)arg1;
-- (void)setRedirectSourceDatabaseID:(long long)arg1;
+- (void)setRedirectSourceDatabaseID:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (double)visitTime;
-- (bool)wasHTTPNonGet;
+- (BOOL)wasHTTPNonGet;
 
 @end

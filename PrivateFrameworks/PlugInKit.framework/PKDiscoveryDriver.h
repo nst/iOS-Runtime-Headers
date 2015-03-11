@@ -11,7 +11,7 @@
 @interface PKDiscoveryDriver : NSObject <LSApplicationWorkspaceObserverProtocol> {
     int _annotationNotifyToken;
     NSDictionary *_attributes;
-    unsigned long long _flags;
+    unsigned int _flags;
     NSSet *_lastResults;
     id _report;
 }
@@ -20,8 +20,8 @@
 @property(retain) NSDictionary * attributes;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property unsigned long long flags;
-@property(readonly) unsigned long long hash;
+@property unsigned int flags;
+@property(readonly) unsigned int hash;
 @property(retain) NSSet * lastResults;
 @property(copy) id report;
 @property(readonly) Class superclass;
@@ -31,16 +31,16 @@
 - (id)attributes;
 - (void)cancel;
 - (void)dealloc;
-- (unsigned long long)flags;
-- (id)initWithAttributes:(id)arg1 flags:(unsigned long long)arg2 report:(id)arg3;
+- (unsigned int)flags;
+- (id)initWithAttributes:(id)arg1 flags:(unsigned int)arg2 report:(id)arg3;
 - (id)lastResults;
-- (void)performWithPreviousResults:(id)arg1 forceNotify:(bool)arg2;
+- (void)performWithPreviousResults:(id)arg1 forceNotify:(BOOL)arg2;
 - (void)pluginsDidInstall:(id)arg1;
 - (void)pluginsDidUninstall:(id)arg1;
 - (id)report;
 - (void)setAnnotationNotifyToken:(int)arg1;
 - (void)setAttributes:(id)arg1;
-- (void)setFlags:(unsigned long long)arg1;
+- (void)setFlags:(unsigned int)arg1;
 - (void)setLastResults:(id)arg1;
 - (void)setReport:(id)arg1;
 

@@ -7,12 +7,12 @@
 @interface WKInterfaceController : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     } _contentFrame;
     NSArray *_properties;
@@ -20,31 +20,31 @@
     NSString *_viewControllerID;
 }
 
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentFrame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
 @property(copy) NSArray * properties;
 @property(retain) NSArray * topLevelObjects;
 @property(retain) NSString * viewControllerID;
 
 + (void)_insertPageControllersAtIndexes:(id)arg1 withNames:(id)arg2 contexts:(id)arg3;
-+ (void)_movePageControllerAtIndex:(long long)arg1 toIndex:(long long)arg2;
++ (void)_movePageControllerAtIndex:(int)arg1 toIndex:(int)arg2;
 + (void)_removePageControllersAtIndexes:(id)arg1;
-+ (bool)openParentApplication:(id)arg1 reply:(id)arg2;
++ (BOOL)openParentApplication:(id)arg1 reply:(id)arg2;
 + (void)reloadRootControllersWithNames:(id)arg1 contexts:(id)arg2;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })screenBounds;
-+ (double)screenScale;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBounds;
++ (float)screenScale;
 
 - (void).cxx_destruct;
-- (void)_setContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)addMenuItemWithImage:(id)arg1 title:(id)arg2 action:(SEL)arg3;
 - (void)addMenuItemWithImageNamed:(id)arg1 title:(id)arg2 action:(SEL)arg3;
-- (void)addMenuItemWithItemIcon:(long long)arg1 title:(id)arg2 action:(SEL)arg3;
+- (void)addMenuItemWithItemIcon:(int)arg1 title:(id)arg2 action:(SEL)arg3;
 - (void)awakeWithContext:(id)arg1;
 - (void)becomeCurrentPage;
 - (void)clearAllMenuItems;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentFrame;
-- (id)contextForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(long long)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrame;
+- (id)contextForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(int)arg3;
 - (id)contextForSegueWithIdentifier:(id)arg1;
-- (id)contextsForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(long long)arg3;
+- (id)contextsForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(int)arg3;
 - (id)contextsForSegueWithIdentifier:(id)arg1;
 - (void)didDeactivate;
 - (void)dismissController;
@@ -59,15 +59,15 @@
 - (void)popToRootController;
 - (void)presentControllerWithName:(id)arg1 context:(id)arg2;
 - (void)presentControllerWithNames:(id)arg1 contexts:(id)arg2;
-- (void)presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(long long)arg2 completion:(id)arg3;
+- (void)presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(int)arg2 completion:(id)arg3;
 - (id)properties;
 - (void)pushControllerWithName:(id)arg1 context:(id)arg2;
-- (void)setContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setProperties:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTopLevelObjects:(id)arg1;
 - (void)setViewControllerID:(id)arg1;
-- (void)table:(id)arg1 didSelectRowAtIndex:(long long)arg2;
+- (void)table:(id)arg1 didSelectRowAtIndex:(int)arg2;
 - (id)topLevelObjects;
 - (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3;
 - (void)updateUserActivity:(id)arg1 userInfo:(id)arg2;

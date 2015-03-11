@@ -6,20 +6,20 @@
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
         unsigned char ID[20]; 
+    BOOL _handshakeComplete;
     } _hardwareInfo;
     struct FPSAPContextOpaque_ { } *_sessionToken;
-    bool_handshakeComplete;
 }
 
-@property(getter=isHandshakeComplete,readonly) bool handshakeComplete;
+@property(getter=isHandshakeComplete,readonly) BOOL handshakeComplete;
 
-- (bool)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1;
+- (BOOL)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1;
 - (id)_hexStringForData:(id)arg1;
 - (void)dealloc;
 - (id)handshakeData;
 - (id)handshakeIterationWithData:(id)arg1;
 - (id)headerForURL:(id)arg1;
 - (void)invalidate;
-- (bool)isHandshakeComplete;
+- (BOOL)isHandshakeComplete;
 
 @end

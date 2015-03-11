@@ -21,7 +21,7 @@
 @property(retain) _HKExtendedHealthStoreProxy * connectionProxy;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -38,7 +38,7 @@
 - (void)fetchAchievementsWithCompletion:(id)arg1;
 - (void)fetchNumberOfUnviewedAchievementsWithCompletion:(id)arg1;
 - (void)fetchUnalertedAchievementsWithCompletion:(id)arg1;
-- (void)forceNanoSyncWithPullRequest:(bool)arg1 completion:(id)arg2;
+- (void)forceNanoSyncWithPullRequest:(BOOL)arg1 completion:(id)arg2;
 - (id)init;
 - (void)markAchievementAsViewed:(id)arg1 completion:(id)arg2;
 - (void)markAchievementsAlerted:(id)arg1 completion:(id)arg2;

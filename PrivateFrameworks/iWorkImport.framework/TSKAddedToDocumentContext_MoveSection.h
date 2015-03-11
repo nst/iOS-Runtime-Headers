@@ -6,6 +6,6 @@
 }
 
 - (id)description;
-- (bool)preserveChangeTracking;
+- (BOOL)preserveChangeTracking;
 
 @end

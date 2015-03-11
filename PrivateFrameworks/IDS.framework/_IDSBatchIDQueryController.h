@@ -8,18 +8,18 @@
     CUTWeakReference *_delegate;
     NSArray *_destinations;
     NSMutableArray *_destinationsToQuery;
+    BOOL _isDead;
     NSString *_listenerID;
     NSTimer *_nextQueryTimer;
     int _numberOfQueriesDone;
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_serviceName;
     NSDate *_timeOfDeath;
-    bool_isDead;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_invalidateNextQueryTimer;

@@ -7,41 +7,41 @@
 @interface GKAuthenticateResponse : GKInternalRepresentation {
     NSString *_accountName;
     NSString *_authToken;
-    long long _environment;
+    int _environment;
+    BOOL _loginDisabled;
+    BOOL _passwordChangeRequired;
     NSURL *_passwordChangeURL;
     NSString *_playerID;
-    bool_loginDisabled;
-    bool_passwordChangeRequired;
-    bool_shouldShowLinkAccountsUI;
+    BOOL _shouldShowLinkAccountsUI;
 }
 
 @property(retain) NSString * accountName;
 @property(retain) NSString * authToken;
-@property long long environment;
-@property bool loginDisabled;
-@property bool passwordChangeRequired;
+@property int environment;
+@property BOOL loginDisabled;
+@property BOOL passwordChangeRequired;
 @property(retain) NSURL * passwordChangeURL;
 @property(retain) NSString * playerID;
-@property bool shouldShowLinkAccountsUI;
+@property BOOL shouldShowLinkAccountsUI;
 
 + (id)secureCodedPropertyKeys;
 
 - (id)accountName;
 - (id)authToken;
 - (void)dealloc;
-- (long long)environment;
-- (bool)loginDisabled;
-- (bool)passwordChangeRequired;
+- (int)environment;
+- (BOOL)loginDisabled;
+- (BOOL)passwordChangeRequired;
 - (id)passwordChangeURL;
 - (id)playerID;
 - (void)setAccountName:(id)arg1;
 - (void)setAuthToken:(id)arg1;
-- (void)setEnvironment:(long long)arg1;
-- (void)setLoginDisabled:(bool)arg1;
-- (void)setPasswordChangeRequired:(bool)arg1;
+- (void)setEnvironment:(int)arg1;
+- (void)setLoginDisabled:(BOOL)arg1;
+- (void)setPasswordChangeRequired:(BOOL)arg1;
 - (void)setPasswordChangeURL:(id)arg1;
 - (void)setPlayerID:(id)arg1;
-- (void)setShouldShowLinkAccountsUI:(bool)arg1;
-- (bool)shouldShowLinkAccountsUI;
+- (void)setShouldShowLinkAccountsUI:(BOOL)arg1;
+- (BOOL)shouldShowLinkAccountsUI;
 
 @end

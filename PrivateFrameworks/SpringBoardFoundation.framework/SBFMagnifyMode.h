@@ -6,29 +6,29 @@
 
 @interface SBFMagnifyMode : NSObject <NSCopying> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     NSString *_name;
     } _size;
     float _zoomFactor;
 }
 
 @property(retain) NSString * name;
-@property struct CGSize { double x1; double x2; } size;
+@property struct CGSize { float x1; float x2; } size;
 @property float zoomFactor;
 
 + (id)currentMagnifyMode;
-+ (id)magnifyModeWithSize:(struct CGSize { double x1; double x2; })arg1 name:(id)arg2;
++ (id)magnifyModeWithSize:(struct CGSize { float x1; float x2; })arg1 name:(id)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)name;
 - (void)setName:(id)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setZoomFactor:(float)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (float)zoomFactor;
 
 @end

@@ -30,27 +30,18 @@
         int floor; 
     struct { 
         double bestAccuracy; 
-    boolfAllowsLocationPrompts;
-    boolfAllowsMapCorrection;
-    boolfBatchingLocation;
-    boolfCapabilitiesValid;
-    boolfCourtesyPromptNeeded;
-    boolfDynamicAccuracyReductionEnabled;
-    boolfMatchInfoEnabled;
-    boolfPaused;
-    boolfPersistentMonitoringEnabled;
-    boolfPreviousAuthorizationStatusValid;
-    boolfRequestingLocation;
-    boolfUpdatingHeading;
-    boolfUpdatingLocation;
-    boolfUpdatingVehicleHeading;
-    boolfUpdatingVehicleSpeed;
-    long long fActivityType;
+    int fActivityType;
+    BOOL fAllowsLocationPrompts;
+    BOOL fAllowsMapCorrection;
+    BOOL fBatchingLocation;
     } fCapabilities;
+    BOOL fCapabilitiesValid;
     struct __CLClient { } *fClient;
+    BOOL fCourtesyPromptNeeded;
     <CLLocationManagerDelegate> *fDelegate;
     double fDesiredAccuracy;
     double fDistanceFilter;
+    BOOL fDynamicAccuracyReductionEnabled;
     double fHeadingFilter;
     int fHeadingOrientation;
     } fLocation;
@@ -58,9 +49,18 @@
     double fLocationRequestAccuracy;
     double fLocationRequestTimeout;
     struct __CFRunLoopTimer { } *fLocationRequestTimer;
+    BOOL fMatchInfoEnabled;
+    BOOL fPaused;
     int fPausesLocationUpdatesAutomatically;
+    BOOL fPersistentMonitoringEnabled;
     int fPreviousAuthorizationStatus;
+    BOOL fPreviousAuthorizationStatusValid;
     NSMutableSet *fRangedRegions;
+    BOOL fRequestingLocation;
+    BOOL fUpdatingHeading;
+    BOOL fUpdatingLocation;
+    BOOL fUpdatingVehicleHeading;
+    BOOL fUpdatingVehicleSpeed;
 }
 
 @property(readonly) NSMutableSet * rangedRegions;

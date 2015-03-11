@@ -12,6 +12,7 @@
     struct _DNSServiceRef_t { } *_advertiseRef;
     id _browseCallback;
     struct _DNSServiceRef_t { } *_browseRef;
+    BOOL _checkedInWithLaunchd;
     id _connectionCallback;
     NSMutableArray *_launchdSources;
     int _listeningPort;
@@ -20,7 +21,6 @@
     NSString *_serviceDomain;
     id _serviceNameCollisionCallback;
     NSString *_serviceType;
-    bool_checkedInWithLaunchd;
 }
 
 @property struct _DNSServiceRef_t { }* advertiseRef;

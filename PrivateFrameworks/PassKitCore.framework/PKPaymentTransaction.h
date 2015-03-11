@@ -18,19 +18,19 @@
     double _locationVerticalAccuracy;
     PKMerchant *_merchant;
     NSNumber *_persistentIdentifier;
-    long long _technologyType;
+    int _technologyType;
     NSDate *_transactionDate;
     NSString *_transactionIdentifier;
-    unsigned long long _transactionSources;
-    long long _transactionStatus;
-    long long _transactionType;
+    unsigned int _transactionSources;
+    int _transactionStatus;
+    int _transactionType;
 }
 
 @property(retain) NSString * administrativeArea;
 @property(copy) NSDecimalNumber * amount;
 @property(copy) NSString * currencyCode;
 @property(readonly) NSString * displayLocation;
-@property(readonly) bool hasNotificationServiceSource;
+@property(readonly) BOOL hasNotificationServiceSource;
 @property(copy) NSString * identifier;
 @property(retain) NSString * locality;
 @property(retain) CLLocation * location;
@@ -41,18 +41,18 @@
 @property double locationLongitude;
 @property double locationVerticalAccuracy;
 @property(retain) PKMerchant * merchant;
-@property(readonly) bool originatedFromThisDevice;
+@property(readonly) BOOL originatedFromThisDevice;
 @property(copy) NSNumber * persistentIdentifier;
-@property long long technologyType;
+@property int technologyType;
 @property(copy) NSDate * transactionDate;
 @property(copy) NSString * transactionIdentifier;
-@property unsigned long long transactionSources;
-@property long long transactionStatus;
-@property long long transactionType;
+@property unsigned int transactionSources;
+@property int transactionStatus;
+@property int transactionType;
 
-+ (id)paymentTransactionFromSource:(unsigned long long)arg1 withDictionary:(id)arg2;
-+ (id)paymentTransactionFromSource:(unsigned long long)arg1;
-+ (bool)supportsSecureCoding;
++ (id)paymentTransactionFromSource:(unsigned int)arg1 withDictionary:(id)arg2;
++ (id)paymentTransactionFromSource:(unsigned int)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)administrativeArea;
 - (id)amount;
@@ -61,13 +61,13 @@
 - (id)description;
 - (id)displayLocation;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)hasNotificationServiceSource;
-- (unsigned long long)hash;
+- (BOOL)hasNotificationServiceSource;
+- (unsigned int)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToPaymentTransaction:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToPaymentTransaction:(id)arg1;
 - (id)locality;
 - (id)location;
 - (double)locationAltitude;
@@ -77,7 +77,7 @@
 - (double)locationLongitude;
 - (double)locationVerticalAccuracy;
 - (id)merchant;
-- (bool)originatedFromThisDevice;
+- (BOOL)originatedFromThisDevice;
 - (id)persistentIdentifier;
 - (void)setAdministrativeArea:(id)arg1;
 - (void)setAmount:(id)arg1;
@@ -93,17 +93,17 @@
 - (void)setLocationVerticalAccuracy:(double)arg1;
 - (void)setMerchant:(id)arg1;
 - (void)setPersistentIdentifier:(id)arg1;
-- (void)setTechnologyType:(long long)arg1;
+- (void)setTechnologyType:(int)arg1;
 - (void)setTransactionDate:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
-- (void)setTransactionSources:(unsigned long long)arg1;
-- (void)setTransactionStatus:(long long)arg1;
-- (void)setTransactionType:(long long)arg1;
-- (long long)technologyType;
+- (void)setTransactionSources:(unsigned int)arg1;
+- (void)setTransactionStatus:(int)arg1;
+- (void)setTransactionType:(int)arg1;
+- (int)technologyType;
 - (id)transactionDate;
 - (id)transactionIdentifier;
-- (unsigned long long)transactionSources;
-- (long long)transactionStatus;
-- (long long)transactionType;
+- (unsigned int)transactionSources;
+- (int)transactionStatus;
+- (int)transactionType;
 
 @end

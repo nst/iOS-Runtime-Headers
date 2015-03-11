@@ -6,7 +6,7 @@
 
 @interface AXHAPacket : NSObject {
     NSMutableData *_data;
-    unsigned long long _totalLength;
+    unsigned int _totalLength;
 }
 
 @property(retain) NSMutableData * data;
@@ -20,7 +20,7 @@
 - (id)dataPayload;
 - (void)dealloc;
 - (id)initWithHeader:(struct { short x1; int x2; })arg1;
-- (unsigned long long)missingLength;
+- (unsigned int)missingLength;
 - (id)objectPayload;
 - (void)setData:(id)arg1;
 

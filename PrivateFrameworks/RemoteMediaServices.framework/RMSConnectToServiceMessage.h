@@ -9,8 +9,8 @@
     RMSServiceMessage *_service;
 }
 
-@property(readonly) bool hasPairingGUID;
-@property(readonly) bool hasService;
+@property(readonly) BOOL hasPairingGUID;
+@property(readonly) BOOL hasService;
 @property(retain) NSString * pairingGUID;
 @property(retain) RMSServiceMessage * service;
 
@@ -19,13 +19,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasPairingGUID;
-- (bool)hasService;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasPairingGUID;
+- (BOOL)hasService;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)pairingGUID;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)service;
 - (void)setPairingGUID:(id)arg1;
 - (void)setService:(id)arg1;

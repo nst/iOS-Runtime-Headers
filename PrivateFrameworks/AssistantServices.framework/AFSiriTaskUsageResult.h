@@ -8,7 +8,7 @@
     NSString *_originatingAceID;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithOriginatingAceID:(id)arg1;

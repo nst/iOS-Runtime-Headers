@@ -13,7 +13,7 @@
 - (id)description;
 - (id)eventRouters;
 - (id)init;
-- (long long)routerDestinationForDescriptor:(id)arg1;
+- (int)routerDestinationForDescriptor:(id)arg1;
 - (void)setEventRouters:(id)arg1;
 
 @end

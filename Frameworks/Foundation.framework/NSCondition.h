@@ -23,6 +23,6 @@
 - (void)signal;
 - (void)unlock;
 - (void)wait;
-- (bool)waitUntilDate:(id)arg1;
+- (BOOL)waitUntilDate:(id)arg1;
 
 @end

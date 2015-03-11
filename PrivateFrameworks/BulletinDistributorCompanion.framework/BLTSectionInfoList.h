@@ -6,8 +6,8 @@
 
 @interface BLTSectionInfoList : NSObject <BLTSectionInfoListProviderDelegate> {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     <BLTSectionInfoListDelegate> *_delegate;
     } _lock;
     BLTSectionInfoListBridgeProvider *_overrideProvider;
@@ -18,7 +18,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <BLTSectionInfoListDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) BLTSectionInfoListBridgeProvider * overrideProvider;
 @property(retain) BLTSectionInfoListBBProvider * sectionInfoProvider;
 @property(readonly) Class superclass;

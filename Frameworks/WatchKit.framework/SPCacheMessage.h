@@ -7,19 +7,19 @@
 @interface SPCacheMessage : NSObject {
     NSData *_assetData;
     NSString *_assetKey;
-    unsigned long long _cacheType;
-    unsigned long long _error;
+    unsigned int _cacheType;
+    unsigned int _error;
     NSString *_gizmoCacheIdentifier;
-    int _messageType;
+    long _messageType;
     SPAssetCacheSyncData *_syncData;
 }
 
 @property(retain) NSData * assetData;
 @property(retain) NSString * assetKey;
-@property unsigned long long cacheType;
-@property unsigned long long error;
+@property unsigned int cacheType;
+@property unsigned int error;
 @property(retain) NSString * gizmoCacheIdentifier;
-@property int messageType;
+@property long messageType;
 @property(retain) SPAssetCacheSyncData * syncData;
 
 + (id)fromProto:(id)arg1;
@@ -28,18 +28,18 @@
 - (void).cxx_destruct;
 - (id)assetData;
 - (id)assetKey;
-- (unsigned long long)cacheType;
-- (unsigned long long)error;
+- (unsigned int)cacheType;
+- (unsigned int)error;
 - (id)gizmoCacheIdentifier;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (int)messageType;
+- (long)messageType;
 - (void)setAssetData:(id)arg1;
 - (void)setAssetKey:(id)arg1;
-- (void)setCacheType:(unsigned long long)arg1;
-- (void)setError:(unsigned long long)arg1;
+- (void)setCacheType:(unsigned int)arg1;
+- (void)setError:(unsigned int)arg1;
 - (void)setGizmoCacheIdentifier:(id)arg1;
-- (void)setMessageType:(int)arg1;
+- (void)setMessageType:(long)arg1;
 - (void)setSyncData:(id)arg1;
 - (id)syncData;
 

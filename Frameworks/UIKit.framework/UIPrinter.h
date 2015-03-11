@@ -13,9 +13,9 @@
 @property(copy,readonly) NSString * displayLocation;
 @property(copy,readonly) NSString * displayName;
 @property(copy,readonly) NSString * makeAndModel;
-@property(readonly) long long supportedJobTypes;
-@property(readonly) bool supportsColor;
-@property(readonly) bool supportsDuplex;
+@property(readonly) int supportedJobTypes;
+@property(readonly) BOOL supportsColor;
+@property(readonly) BOOL supportsDuplex;
 
 + (id)printerWithURL:(id)arg1;
 
@@ -28,8 +28,8 @@
 - (id)displayName;
 - (id)init;
 - (id)makeAndModel;
-- (long long)supportedJobTypes;
-- (bool)supportsColor;
-- (bool)supportsDuplex;
+- (int)supportedJobTypes;
+- (BOOL)supportsColor;
+- (BOOL)supportsDuplex;
 
 @end

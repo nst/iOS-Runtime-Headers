@@ -6,36 +6,36 @@
 
 @interface PUTransitionSectionInfo : NSObject {
     struct PUGridCoordinates { 
-        long long row; 
-        long long column; 
+        int row; 
+        int column; 
     NSIndexPath *_anchorRealPath;
     } _anchorShiftOffset;
-    long long _contiguousRows;
-    long long _transitionSection;
+    int _contiguousRows;
+    int _transitionSection;
     NSArray *_visualRowStartMarkers;
     NSIndexSet *_visualSections;
 }
 
 @property(retain) NSIndexPath * anchorRealPath;
-@property struct PUGridCoordinates { long long x1; long long x2; } anchorShiftOffset;
-@property long long contiguousRows;
-@property long long transitionSection;
+@property struct PUGridCoordinates { int x1; int x2; } anchorShiftOffset;
+@property int contiguousRows;
+@property int transitionSection;
 @property(retain) NSArray * visualRowStartMarkers;
 @property(retain) NSIndexSet * visualSections;
 
 - (void).cxx_destruct;
 - (id)anchorRealPath;
-- (struct PUGridCoordinates { long long x1; long long x2; })anchorShiftOffset;
-- (long long)contiguousRows;
+- (struct PUGridCoordinates { int x1; int x2; })anchorShiftOffset;
+- (int)contiguousRows;
 - (id)description;
 - (id)init;
 - (void)setAnchorRealPath:(id)arg1;
-- (void)setAnchorShiftOffset:(struct PUGridCoordinates { long long x1; long long x2; })arg1;
-- (void)setContiguousRows:(long long)arg1;
-- (void)setTransitionSection:(long long)arg1;
+- (void)setAnchorShiftOffset:(struct PUGridCoordinates { int x1; int x2; })arg1;
+- (void)setContiguousRows:(int)arg1;
+- (void)setTransitionSection:(int)arg1;
 - (void)setVisualRowStartMarkers:(id)arg1;
 - (void)setVisualSections:(id)arg1;
-- (long long)transitionSection;
+- (int)transitionSection;
 - (id)visualRowStartMarkers;
 - (id)visualSections;
 

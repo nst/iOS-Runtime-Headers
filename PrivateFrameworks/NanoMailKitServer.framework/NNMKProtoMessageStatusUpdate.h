@@ -14,9 +14,9 @@
     unsigned int _updatedStatus;
 }
 
-@property(readonly) bool hasMessageId;
-@property bool hasStatusVersion;
-@property bool hasUpdatedStatus;
+@property(readonly) BOOL hasMessageId;
+@property BOOL hasStatusVersion;
+@property BOOL hasUpdatedStatus;
 @property(retain) NSString * messageId;
 @property unsigned int statusVersion;
 @property unsigned int updatedStatus;
@@ -26,16 +26,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasMessageId;
-- (bool)hasStatusVersion;
-- (bool)hasUpdatedStatus;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasMessageId;
+- (BOOL)hasStatusVersion;
+- (BOOL)hasUpdatedStatus;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)messageId;
-- (bool)readFrom:(id)arg1;
-- (void)setHasStatusVersion:(bool)arg1;
-- (void)setHasUpdatedStatus:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasStatusVersion:(BOOL)arg1;
+- (void)setHasUpdatedStatus:(BOOL)arg1;
 - (void)setMessageId:(id)arg1;
 - (void)setStatusVersion:(unsigned int)arg1;
 - (void)setUpdatedStatus:(unsigned int)arg1;

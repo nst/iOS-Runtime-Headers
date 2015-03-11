@@ -6,20 +6,20 @@
 
 @interface NMSObfuscatableDescriptionItem : NSObject {
     NSString *_format;
+    BOOL _obfuscated;
     <NSObject> *_value;
-    bool_obfuscated;
 }
 
 @property(retain) NSString * format;
-@property bool obfuscated;
+@property BOOL obfuscated;
 @property(retain) <NSObject> * value;
 
 - (void).cxx_destruct;
 - (id)format;
-- (id)initWithFormat:(id)arg1 value:(id)arg2 obfuscated:(bool)arg3;
-- (bool)obfuscated;
+- (id)initWithFormat:(id)arg1 value:(id)arg2 obfuscated:(BOOL)arg3;
+- (BOOL)obfuscated;
 - (void)setFormat:(id)arg1;
-- (void)setObfuscated:(bool)arg1;
+- (void)setObfuscated:(BOOL)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
 

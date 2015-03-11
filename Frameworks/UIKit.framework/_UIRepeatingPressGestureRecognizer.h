@@ -3,19 +3,19 @@
  */
 
 @interface _UIRepeatingPressGestureRecognizer : UIGestureRecognizer {
-    long long _buttonType;
-    long long _delayIndex;
-    unsigned long long _numberOfTouchesRequired;
-    bool_timerOn;
+    int _buttonType;
+    int _delayIndex;
+    unsigned int _numberOfTouchesRequired;
+    BOOL _timerOn;
 }
 
-@property(setter=_setButtonType:) long long _buttonType;
-@property unsigned long long numberOfTouchesRequired;
+@property(setter=_setButtonType:) int _buttonType;
+@property unsigned int numberOfTouchesRequired;
 
-+ (double)delayForRepeatNumber:(long long)arg1;
++ (double)delayForRepeatNumber:(int)arg1;
 
 - (void)_beginPress;
-- (long long)_buttonType;
+- (int)_buttonType;
 - (void)_cancelPress;
 - (void)_clearTapTimer;
 - (void)_endPress;
@@ -26,10 +26,10 @@
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_resetGestureRecognizer;
 - (void)_scheduleNextTimer;
-- (void)_setButtonType:(long long)arg1;
+- (void)_setButtonType:(int)arg1;
 - (void)dealloc;
-- (unsigned long long)numberOfTouchesRequired;
-- (void)setNumberOfTouchesRequired:(unsigned long long)arg1;
+- (unsigned int)numberOfTouchesRequired;
+- (void)setNumberOfTouchesRequired:(unsigned int)arg1;
 - (void)setView:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

@@ -8,27 +8,27 @@
     SSAccount *_authenticatedAccount;
     NSError *_error;
     NSDictionary *_responseDictionary;
-    long long _responseType;
+    int _responseType;
 }
 
-@property long long authenticateResponseType;
+@property int authenticateResponseType;
 @property(retain) SSAccount * authenticatedAccount;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSError * error;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSDictionary * responseDictionary;
 @property(readonly) Class superclass;
 
 - (void)_setError:(id)arg1;
-- (long long)authenticateResponseType;
+- (int)authenticateResponseType;
 - (id)authenticatedAccount;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)error;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)responseDictionary;
-- (void)setAuthenticateResponseType:(long long)arg1;
+- (void)setAuthenticateResponseType:(int)arg1;
 - (void)setAuthenticatedAccount:(id)arg1;
 - (void)setResponseDictionary:(id)arg1;
 

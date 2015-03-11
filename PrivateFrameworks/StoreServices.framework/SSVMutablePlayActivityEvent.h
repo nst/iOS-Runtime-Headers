@@ -7,11 +7,11 @@
 @interface SSVMutablePlayActivityEvent : SSVPlayActivityEvent {
 }
 
-@property(getter=isSBEnabled) bool SBEnabled;
+@property(getter=isSBEnabled) BOOL SBEnabled;
 @property(copy) NSString * containerID;
-@property unsigned long long containerType;
+@property unsigned int containerType;
 @property(copy) NSString * deviceName;
-@property unsigned long long endReasonType;
+@property unsigned int endReasonType;
 @property(copy) NSDate * eventDate;
 @property(copy) NSTimeZone * eventTimeZone;
 @property(copy) NSString * externalID;
@@ -19,12 +19,12 @@
 @property double itemDuration;
 @property double itemEndTime;
 @property double itemStartTime;
-@property unsigned long long itemType;
-@property unsigned long long mediaType;
-@property(getter=isOffline) bool offline;
+@property unsigned int itemType;
+@property unsigned int mediaType;
+@property(getter=isOffline) BOOL offline;
 @property long long persistentID;
 @property(copy) NSString * personalizedContainerID;
-@property unsigned long long sourceType;
+@property unsigned int sourceType;
 @property unsigned long long storeAccountID;
 @property(copy) NSString * storeID;
 @property(copy) NSData * timedMetadata;
@@ -33,9 +33,9 @@
 - (Class)_mutableCopyClass;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setContainerID:(id)arg1;
-- (void)setContainerType:(unsigned long long)arg1;
+- (void)setContainerType:(unsigned int)arg1;
 - (void)setDeviceName:(id)arg1;
-- (void)setEndReasonType:(unsigned long long)arg1;
+- (void)setEndReasonType:(unsigned int)arg1;
 - (void)setEventDate:(id)arg1;
 - (void)setEventTimeZone:(id)arg1;
 - (void)setExternalID:(id)arg1;
@@ -43,13 +43,13 @@
 - (void)setItemDuration:(double)arg1;
 - (void)setItemEndTime:(double)arg1;
 - (void)setItemStartTime:(double)arg1;
-- (void)setItemType:(unsigned long long)arg1;
-- (void)setMediaType:(unsigned long long)arg1;
-- (void)setOffline:(bool)arg1;
+- (void)setItemType:(unsigned int)arg1;
+- (void)setMediaType:(unsigned int)arg1;
+- (void)setOffline:(BOOL)arg1;
 - (void)setPersistentID:(long long)arg1;
 - (void)setPersonalizedContainerID:(id)arg1;
-- (void)setSBEnabled:(bool)arg1;
-- (void)setSourceType:(unsigned long long)arg1;
+- (void)setSBEnabled:(BOOL)arg1;
+- (void)setSourceType:(unsigned int)arg1;
 - (void)setStoreAccountID:(unsigned long long)arg1;
 - (void)setStoreID:(id)arg1;
 - (void)setTimedMetadata:(id)arg1;

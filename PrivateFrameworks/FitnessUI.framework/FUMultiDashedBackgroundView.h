@@ -5,33 +5,33 @@
 @class UIColor, UIView;
 
 @interface FUMultiDashedBackgroundView : FUChartBackgroundView {
+    BOOL _backgroundIsTransparent;
     UIView *_lastLineView;
     UIColor *_lineColor;
-    double _lineSpacing;
-    double _lineWidth;
-    unsigned long long _numSubLines;
+    float _lineSpacing;
+    float _lineWidth;
+    unsigned int _numSubLines;
     UIColor *_subLineColor;
-    double _subLineHeight;
-    bool_backgroundIsTransparent;
+    float _subLineHeight;
 }
 
-@property bool backgroundIsTransparent;
-@property double lineSpacing;
-@property double lineWidth;
-@property double subLineHeight;
+@property BOOL backgroundIsTransparent;
+@property float lineSpacing;
+@property float lineWidth;
+@property float subLineHeight;
 
 - (void).cxx_destruct;
 - (id)_linesPatternColor;
-- (bool)backgroundIsTransparent;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)backgroundIsTransparent;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (double)lineSpacing;
-- (double)lineWidth;
-- (void)setBackgroundIsTransparent:(bool)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setLineSpacing:(double)arg1;
-- (void)setLineWidth:(double)arg1;
-- (void)setSubLineHeight:(double)arg1;
-- (double)subLineHeight;
+- (float)lineSpacing;
+- (float)lineWidth;
+- (void)setBackgroundIsTransparent:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLineSpacing:(float)arg1;
+- (void)setLineWidth:(float)arg1;
+- (void)setSubLineHeight:(float)arg1;
+- (float)subLineHeight;
 
 @end

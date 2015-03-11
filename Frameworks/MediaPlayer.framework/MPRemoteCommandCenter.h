@@ -11,6 +11,7 @@
     MPFeedbackCommand *_bookmarkCommand;
     MPPurchaseCommand *_buyAlbumCommand;
     MPPurchaseCommand *_buyTrackCommand;
+    BOOL _canBeNowPlayingApplication;
     MPPurchaseCommand *_cancelDownloadCommand;
     MPRemoteCommand *_changePlaybackPositionCommand;
     MPChangePlaybackRateCommand *_changePlaybackRateCommand;
@@ -26,6 +27,7 @@
     MPPurchaseCommand *_preOrderAlbumCommand;
     MPRemoteCommand *_previousTrackCommand;
     MPRatingCommand *_ratingCommand;
+    BOOL _scheduledSupportedCommandsChangedNotification;
     MPRemoteCommand *_seekBackwardCommand;
     MPRemoteCommand *_seekForwardCommand;
     NSObject<OS_dispatch_queue> *_serialQueue;
@@ -36,8 +38,6 @@
     MPRemoteCommand *_specialSeekForwardCommand;
     MPRemoteCommand *_stopCommand;
     MPRemoteCommand *_togglePlayPauseCommand;
-    bool_canBeNowPlayingApplication;
-    bool_scheduledSupportedCommandsChangedNotification;
 }
 
 @property(readonly) MPFeedbackCommand * bookmarkCommand;
@@ -45,7 +45,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) MPFeedbackCommand * dislikeCommand;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) MPFeedbackCommand * likeCommand;
 @property(readonly) MPRemoteCommand * nextTrackCommand;
 @property(readonly) MPRemoteCommand * pauseCommand;

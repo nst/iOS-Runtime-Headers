@@ -3,9 +3,9 @@
  */
 
 @interface PLCacheDeleteTrigger : PLCloudTrigger {
+    BOOL _activated;
     long long _goal;
     int _urgency;
-    bool_activated;
 }
 
 @property(readonly) long long goal;

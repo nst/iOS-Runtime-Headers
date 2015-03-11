@@ -6,8 +6,8 @@
 }
 
 - (id)_labelText;
-- (long long)_labelTextAlignment;
+- (int)_labelTextAlignment;
 - (id)initWithSpecifier:(id)arg1;
-- (double)preferredHeightForWidth:(double)arg1;
+- (float)preferredHeightForWidth:(float)arg1;
 
 @end

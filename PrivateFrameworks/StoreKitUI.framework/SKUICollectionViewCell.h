@@ -6,33 +6,33 @@
 
 @interface SKUICollectionViewCell : UICollectionViewCell {
     UIView *_bottomBorderView;
-    long long _position;
+    int _position;
     UIView *_rightBorderView;
     UIColor *_separatorColor;
-    long long _separatorStyle;
+    int _separatorStyle;
     UIView *_topBorderView;
 }
 
 @property(retain) UIColor * separatorColor;
-@property long long separatorStyle;
-@property bool showsCellSeparators;
+@property int separatorStyle;
+@property BOOL showsCellSeparators;
 
 - (void).cxx_destruct;
-- (void)_setPosition:(long long)arg1;
-- (bool)_showsBottomBorder;
-- (bool)_showsRightBorder;
-- (bool)_showsTopBorder;
+- (void)_setPosition:(int)arg1;
+- (BOOL)_showsBottomBorder;
+- (BOOL)_showsRightBorder;
+- (BOOL)_showsTopBorder;
 - (void)_updateBorderVisibility;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)layoutSubviews;
 - (id)separatorColor;
-- (long long)separatorStyle;
+- (int)separatorStyle;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setHighlighted:(bool)arg1;
-- (void)setSelected:(bool)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1;
 - (void)setSeparatorColor:(id)arg1;
-- (void)setSeparatorStyle:(long long)arg1;
-- (void)setShowsCellSeparators:(bool)arg1;
-- (bool)showsCellSeparators;
+- (void)setSeparatorStyle:(int)arg1;
+- (void)setShowsCellSeparators:(BOOL)arg1;
+- (BOOL)showsCellSeparators;
 
 @end

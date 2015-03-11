@@ -10,17 +10,17 @@
 
 @property(copy,readonly) NSArray * availableExternalDevices;
 @property <AVExternalDeviceControllerDelegate> * delegate;
-@property long long discoveryMode;
+@property int discoveryMode;
 
 - (id)availableExternalDevices;
 - (void)dealloc;
 - (id)delegate;
-- (long long)discoveryMode;
+- (int)discoveryMode;
 - (id)init;
-- (bool)isExternalDeviceCurrent:(id)arg1;
-- (bool)setCurrentExternalDevice:(id)arg1 withPassword:(id)arg2;
-- (bool)setCurrentExternalDevice:(id)arg1;
+- (BOOL)isExternalDeviceCurrent:(id)arg1;
+- (BOOL)setCurrentExternalDevice:(id)arg1 withPassword:(id)arg2;
+- (BOOL)setCurrentExternalDevice:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDiscoveryMode:(long long)arg1;
+- (void)setDiscoveryMode:(int)arg1;
 
 @end

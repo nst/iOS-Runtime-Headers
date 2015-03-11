@@ -16,9 +16,9 @@
     } _assetFlags;
     _UIAssetManager *_assetManager;
     NSString *_assetName;
+    BOOL _cacheContents;
     id _creationBlock;
     UITraitCollection *_defaultTraitCollection;
-    bool_cacheContents;
 }
 
 @property(readonly) _UIAssetManager * _assetManager;
@@ -26,16 +26,16 @@
 @property(copy) id creationBlock;
 
 + (id)_assetGeneratingImagesWithDrawingBlock:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_assetManager;
 - (void)_clearResolvedImageResources;
-- (bool)_containsImagesInPath:(id)arg1;
+- (BOOL)_containsImagesInPath:(id)arg1;
 - (id)_defaultTraitCollection;
 - (void)_disconnectFromAssetManager;
 - (id)_initWithAssetName:(id)arg1 forManager:(id)arg2;
 - (id)_mutableCatalog;
-- (void)_registerImage:(id)arg1 withTraitCollection:(id)arg2 cache:(bool)arg3;
+- (void)_registerImage:(id)arg1 withTraitCollection:(id)arg2 cache:(BOOL)arg3;
 - (id)_updateAssetFromBlockGenerationWithTraitCollection:(id)arg1 resolvedCatalogImage:(id)arg2;
 - (id)assetName;
 - (id)creationBlock;
@@ -44,7 +44,7 @@
 - (id)imageWithTraitCollection:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)registerImage:(id)arg1 withTraitCollection:(id)arg2;
 - (void)setAssetName:(id)arg1;
 - (void)setCreationBlock:(id)arg1;

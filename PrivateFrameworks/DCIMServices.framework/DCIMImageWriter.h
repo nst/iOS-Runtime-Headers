@@ -14,12 +14,12 @@
 + (id)largeThumbnailInflightPathExtension;
 + (id)preferredFileExtensionForType:(id)arg1;
 + (id)sharedDCIMWriter;
-+ (id)uniqueIncomingPathForAssetWithUUID:(id)arg1 andExtension:(id)arg2 isPhotoStream:(bool)arg3;
-+ (void)writeableDataForImage:(id)arg1 previewImage:(id)arg2 imageData:(id)arg3 imageUTIType:(struct __CFString { }*)arg4 exifProperties:(id)arg5 imageRefOut:(struct CGImage {}**)arg6 lowResImageRefOut:(struct CGImage {}**)arg7 thumbnailDataOut:(id*)arg8 imageUTITypeOut:(const struct __CFString {}**)arg9 exifPropertiesOut:(id*)arg10 isJPEGOut:(bool*)arg11 imageDataOut:(id*)arg12 imageOrientation:(long long)arg13;
++ (id)uniqueIncomingPathForAssetWithUUID:(id)arg1 andExtension:(id)arg2 isPhotoStream:(BOOL)arg3;
++ (void)writeableDataForImage:(id)arg1 previewImage:(id)arg2 imageData:(id)arg3 imageUTIType:(struct __CFString { }*)arg4 exifProperties:(id)arg5 imageRefOut:(struct CGImage {}**)arg6 lowResImageRefOut:(struct CGImage {}**)arg7 thumbnailDataOut:(id*)arg8 imageUTITypeOut:(const struct __CFString {}**)arg9 exifPropertiesOut:(id*)arg10 isJPEGOut:(BOOL*)arg11 imageDataOut:(id*)arg12 imageOrientation:(int)arg13;
 
 - (id)_cameraAssetExtensionForType:(short)arg1;
 - (void)_writeJPEGFromIOSurface:(struct __IOSurface { }*)arg1 toPath:(id)arg2 orientation:(int)arg3;
-- (void)_writeJPEGToPath:(id)arg1 withData:(id)arg2 thumbnail:(id)arg3 properties:(id)arg4 duringBurst:(bool)arg5;
-- (bool)saveImageJobToDisk:(id)arg1;
+- (void)_writeJPEGToPath:(id)arg1 withData:(id)arg2 thumbnail:(id)arg3 properties:(id)arg4 duringBurst:(BOOL)arg5;
+- (BOOL)saveImageJobToDisk:(id)arg1;
 
 @end

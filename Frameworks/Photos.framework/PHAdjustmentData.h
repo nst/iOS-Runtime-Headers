@@ -5,27 +5,27 @@
 @class NSData, NSString;
 
 @interface PHAdjustmentData : NSObject <NSSecureCoding> {
-    long long _baseVersion;
+    int _baseVersion;
     NSData *_data;
     NSString *_formatIdentifier;
     NSString *_formatVersion;
 }
 
-@property long long baseVersion;
+@property int baseVersion;
 @property(readonly) NSData * data;
 @property(copy) NSString * formatIdentifier;
 @property(copy) NSString * formatVersion;
-@property(getter=isOpaque,readonly) bool opaque;
+@property(getter=isOpaque,readonly) BOOL opaque;
 
-+ (long long)adjustmentBaseVersionFromImageRequestVersion:(long long)arg1;
-+ (long long)adjustmentBaseVersionFromVideoRequestVersion:(long long)arg1;
-+ (long long)imageRequestVersionFromAdjustmentBaseVersion:(long long)arg1;
++ (int)adjustmentBaseVersionFromImageRequestVersion:(int)arg1;
++ (int)adjustmentBaseVersionFromVideoRequestVersion:(int)arg1;
++ (int)imageRequestVersionFromAdjustmentBaseVersion:(int)arg1;
 + (id)opaqueAdjustmentData;
-+ (bool)supportsSecureCoding;
-+ (long long)videoRequestVersionFromAdjustmentBaseVersion:(long long)arg1;
++ (BOOL)supportsSecureCoding;
++ (int)videoRequestVersionFromAdjustmentBaseVersion:(int)arg1;
 
 - (void).cxx_destruct;
-- (long long)baseVersion;
+- (int)baseVersion;
 - (id)data;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -33,8 +33,8 @@
 - (id)formatVersion;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFormatIdentifier:(id)arg1 formatVersion:(id)arg2 data:(id)arg3;
-- (bool)isOpaque;
-- (void)setBaseVersion:(long long)arg1;
+- (BOOL)isOpaque;
+- (void)setBaseVersion:(int)arg1;
 - (void)setFormatIdentifier:(id)arg1;
 - (void)setFormatVersion:(id)arg1;
 

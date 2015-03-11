@@ -5,10 +5,10 @@
 @class UIImageView;
 
 @interface PSSoftwareUpdateAnimatedIcon : UIView {
+    BOOL _animating;
     UIImageView *_innerGearView;
     UIImageView *_outerGearShadowView;
     UIImageView *_outerGearView;
-    bool_animating;
 }
 
 @property(readonly) UIImageView * innerGearView;
@@ -16,11 +16,11 @@
 @property(readonly) UIImageView * outerGearView;
 
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)innerGearView;
 - (void)layoutSubviews;
 - (id)outerGearShadowView;
 - (id)outerGearView;
-- (void)setAnimating:(bool)arg1;
+- (void)setAnimating:(BOOL)arg1;
 
 @end

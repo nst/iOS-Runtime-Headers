@@ -6,19 +6,19 @@
 
 @interface CKDSaveUserPrivacySettingsOperation : CKDOperation {
     NSString *_applicationBundleID;
-    long long _discoverable;
+    int _discoverable;
 }
 
 @property(copy) NSString * applicationBundleID;
-@property long long discoverable;
+@property int discoverable;
 
 - (void).cxx_destruct;
 - (id)applicationBundleID;
-- (long long)discoverable;
+- (int)discoverable;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (void)setApplicationBundleID:(id)arg1;
-- (void)setDiscoverable:(long long)arg1;
-- (bool)shouldCheckAppVersion;
+- (void)setDiscoverable:(int)arg1;
+- (BOOL)shouldCheckAppVersion;
 
 @end

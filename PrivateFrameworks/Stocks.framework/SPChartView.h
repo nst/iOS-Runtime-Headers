@@ -6,58 +6,58 @@
 
 @interface SPChartView : UIView <StockGraphViewContainer> {
     StockChartData *_chartData;
+    BOOL _compactGraph;
     StockChartDisplayMode *_currentDisplayMode;
     <SPChartViewDelegate> *_delegate;
+    BOOL _glanceGraph;
     StockGraphView *_graph;
     ChartLabelInfoManager *_labelInfoManager;
-    long long _selectedInterval;
+    int _selectedInterval;
+    BOOL _showsHorizontalLines;
     Stock *_stock;
     NSMutableArray *_xAxisLabels;
     NSMutableArray *_yAxisLabels;
-    bool_compactGraph;
-    bool_glanceGraph;
-    bool_showsHorizontalLines;
 }
 
 @property(retain) StockChartData * chartData;
-@property bool compactGraph;
+@property BOOL compactGraph;
 @property(readonly) StockChartDisplayMode * currentDisplayMode;
 @property <SPChartViewDelegate> * delegate;
-@property bool glanceGraph;
-@property bool showsHorizontalLines;
+@property BOOL glanceGraph;
+@property BOOL showsHorizontalLines;
 @property(retain) Stock * stock;
 
 - (void).cxx_destruct;
 - (void)_prepareXAxisLabelsAndPositions;
 - (void)_prepareXAxisLabelsForLabelInfoArray:(id)arg1;
 - (void)_prepareYAxisLabelsAndPositions;
-- (void)_setDayLabelsWithInterval:(unsigned int)arg1 realTimePositions:(bool)arg2;
+- (void)_setDayLabelsWithInterval:(unsigned int)arg1 realTimePositions:(BOOL)arg2;
 - (void)_setHourLabels;
 - (void)_setMonthAndYearLabels;
 - (id)chartData;
 - (void)clearData;
-- (bool)compactGraph;
+- (BOOL)compactGraph;
 - (id)currentDisplayMode;
 - (void)dealloc;
 - (id)delegate;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)glanceGraph;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })graphViewFrameForMode:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)glanceGraph;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })graphViewFrameForMode:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (double)lineGraphBottomPadding;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })lineGraphFrame;
+- (float)lineGraphBottomPadding;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineGraphFrame;
 - (void)setChartData:(id)arg1;
-- (void)setCompactGraph:(bool)arg1;
+- (void)setCompactGraph:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setGlanceGraph:(bool)arg1;
-- (void)setShowsHorizontalLines:(bool)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setGlanceGraph:(BOOL)arg1;
+- (void)setShowsHorizontalLines:(BOOL)arg1;
 - (void)setStock:(id)arg1;
-- (void)setYAxisLabelCount:(unsigned long long)arg1;
-- (bool)showsHorizontalLines;
+- (void)setYAxisLabelCount:(unsigned int)arg1;
+- (BOOL)showsHorizontalLines;
 - (id)stock;
 - (void)stockGraphViewReadyForDisplay:(id)arg1;
-- (double)widestYLabelWidthForMode:(id)arg1;
+- (float)widestYLabelWidthForMode:(id)arg1;
 
 @end

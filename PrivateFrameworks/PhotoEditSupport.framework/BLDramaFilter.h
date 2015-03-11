@@ -15,8 +15,8 @@
     CIVector *_lastHueStrengthArray;
     float _lastNeutralGamma;
     float _lastPhototone;
+    BOOL _needsReprocess;
     NSData *_precomputedCube;
-    bool_needsReprocess;
 }
 
 @property(retain) CIFilter * colorCubeFilterDrama;

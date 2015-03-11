@@ -17,14 +17,14 @@
 @property(retain) NSArray * images;
 
 - (id)artKey;
-- (bool)beginContentAccess;
+- (BOOL)beginContentAccess;
 - (void)dealloc;
 - (void)discardContentIfPossible;
 - (void)endContentAccess;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)images;
 - (id)initWithArtKey:(id)arg1;
-- (bool)isContentDiscarded;
+- (BOOL)isContentDiscarded;
 - (void)setImages:(id)arg1;
 
 @end

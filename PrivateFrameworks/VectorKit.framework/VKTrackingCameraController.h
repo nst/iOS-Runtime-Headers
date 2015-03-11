@@ -20,7 +20,7 @@
             double z; 
         } position; 
         double course; 
-        boolonRoute; 
+        BOOL onRoute; 
     struct VKPoint { 
         double x; 
         double y; 
@@ -34,10 +34,10 @@
         double y; 
         double z; 
     struct VKEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     struct VKNavigationCameraModel { 
         double _halfVerticalFov; 
         double _horizontalFov; 
@@ -101,8 +101,8 @@
     struct Matrix<double, 3, 1> { 
         double _e[3]; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct fast_shared_ptr<vk::RouteLineSection> { 
         struct _fast_shared_ptr_control {} *_control; 
     struct PolylineCoordinate { 
@@ -112,19 +112,23 @@
         double x; 
         double y; 
         double z; 
+    BOOL _animatingIn;
     VKAnimation *_animation;
     } _cameraModel;
+    BOOL _canZoomIn;
+    BOOL _canZoomOut;
     id _completionHandler;
     double _cruiseHeight;
     double _cruiseHeightOverride;
     double _cruisePhi;
     double _cruisePhiOverride;
-    long long _desiredMapMode;
+    int _desiredMapMode;
     double _endZoomScale;
     } _farthestPoi;
     int _focusStyle;
     float _halfPuckSize;
     } _insets;
+    BOOL _insetsAnimating;
     VKCameraContext *_lastCameraContext;
     } _lastRouteLinePanPuckPosition;
     VKMapCanvas *_mapCanvas;
@@ -146,17 +150,22 @@
     } _panStartCameraState;
     double _panStartPitch;
     int _panStyle;
+    BOOL _panning;
     VKAnimation *_pitchAnimation;
     double _pitchOffset;
+    BOOL _pitching;
     double _previousCourse;
     double _previousOffset;
     } _previousReference;
     double _previousStepTime;
+    BOOL _puckAnimatorRunning;
     double _puckOffset;
     double _puckOffsetDelta;
     } _puckPosition;
     } _puckTargetPosition;
-    struct VKCircularBuffer<double> { struct vector<double, std::__1::allocator<double> > { double *x_1_1_1; double *x_1_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_1_1_3; } x1; unsigned long long x2; boolx3; double x4; } *_rotationRateBuffer;
+    BOOL _receivedFirstUpdate;
+    struct VKCircularBuffer<double> { struct vector<double, std::__1::allocator<double> > { double *x_1_1_1; double *x_1_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; boolx3; double x4; } *_rotationRateBuffer;
+    BOOL _shouldLimitTopDownHeight;
     double _startCourse;
     double _startDistance;
     } _startPanPoint;
@@ -165,6 +174,7 @@
     } _startPuckScreenPosition;
     double _startTime;
     double _startZoomScale;
+    BOOL _successfullyStartedRouteLinePan;
     VKAnimation *_tapZoomAnimation;
     double _tracePlaybackSpeedMultiplier;
     <VKTrackingCameraControllerDelegate> *_trackingDelegate;
@@ -176,27 +186,17 @@
     int _viewStyle;
     double _zoomScale;
     VKAnimation *_zoomScaleAnimation;
-    bool_animatingIn;
-    bool_canZoomIn;
-    bool_canZoomOut;
-    bool_insetsAnimating;
-    bool_panning;
-    bool_pitching;
-    bool_puckAnimatorRunning;
-    bool_receivedFirstUpdate;
+    BOOL _zooming;
     bool_shouldAllowMapModeTransition;
-    bool_shouldLimitTopDownHeight;
-    bool_successfullyStartedRouteLinePan;
-    bool_zooming;
 }
 
-@property(readonly) bool canZoomIn;
-@property(readonly) bool canZoomOut;
+@property(readonly) BOOL canZoomIn;
+@property(readonly) BOOL canZoomOut;
 @property VKMapCanvas * mapCanvas;
 @property(retain) VKMapModel * mapModel;
 @property int panStyle;
 @property float puckSize;
-@property bool shouldLimitTopDownHeight;
+@property BOOL shouldLimitTopDownHeight;
 @property double tracePlaybackSpeedMultiplier;
 @property <VKTrackingCameraControllerDelegate> * trackingDelegate;
 @property double userZoomFocusStyleGroundspanMeters;
@@ -214,23 +214,23 @@
 - (void)_updateCameraForStartAnimation:(double)arg1 position:(struct VKPoint { double x1; double x2; double x3; })arg2 orientation:(const struct { double x1[4][4]; }*)arg3;
 - (void)_updateCruiseHeightAndPhi;
 - (void)_updateVerticalGroundspanForCameraContext:(id)arg1 reference:(struct VKPoint { double x1; double x2; double x3; })arg2 focus:(struct VKPoint { double x1; double x2; double x3; })arg3 offset:(double)arg4;
-- (bool)canZoomIn;
-- (bool)canZoomOut;
+- (BOOL)canZoomIn;
+- (BOOL)canZoomOut;
 - (void)canvasFrameDidChange;
 - (void)dealloc;
 - (id)detailedDescription;
 - (void)edgeInsetsDidEndAnimating;
 - (void)edgeInsetsWillBeginAnimating;
 - (id)init;
-- (bool)isAtDefaultZoomScale;
-- (bool)isGesturing;
+- (BOOL)isAtDefaultZoomScale;
+- (BOOL)isGesturing;
 - (id)mapCanvas;
 - (id)mapModel;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)pan:(struct CGPoint { double x1; double x2; })arg1 worldDelta:(const struct Matrix<double, 3, 1> { double x1[3]; }*)arg2;
+- (void)pan:(struct CGPoint { float x1; float x2; })arg1 worldDelta:(const struct Matrix<double, 3, 1> { double x1[3]; }*)arg2;
 - (int)panStyle;
 - (void)pauseIfNeeded;
-- (void)puckAnimator:(id)arg1 updatedPosition:(struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; boolx3; }*)arg2;
+- (void)puckAnimator:(id)arg1 updatedPosition:(struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; }*)arg2;
 - (void)puckAnimator:(id)arg1 updatedTargetPosition:(struct VKPoint { double x1; double x2; double x3; })arg2;
 - (void)puckAnimatorDidStop:(id)arg1;
 - (float)puckSize;
@@ -238,17 +238,17 @@
 - (double)relavantMinZoomScale;
 - (double)relevantZoomScale;
 - (void)resumeIfNeeded;
-- (void)setCanZoomIn:(bool)arg1;
-- (void)setCanZoomOut:(bool)arg1;
-- (void)setEdgeInsets:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setGesturing:(bool)arg1;
+- (void)setCanZoomIn:(BOOL)arg1;
+- (void)setCanZoomOut:(BOOL)arg1;
+- (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setGesturing:(BOOL)arg1;
 - (void)setMapCanvas:(id)arg1;
 - (void)setMapModeTransitionZoomScale:(double)arg1;
 - (void)setMapModel:(id)arg1;
 - (void)setPanStyle:(int)arg1;
 - (void)setPuckSize:(float)arg1;
 - (void)setRelevantZoomScale:(double)arg1;
-- (void)setShouldLimitTopDownHeight:(bool)arg1;
+- (void)setShouldLimitTopDownHeight:(BOOL)arg1;
 - (void)setTracePlaybackSpeedMultiplier:(double)arg1;
 - (void)setTrackingDelegate:(id)arg1;
 - (void)setUserZoomFocusStyleGroundspanMeters:(double)arg1;
@@ -258,26 +258,26 @@
 - (void)setVerticalGroundspanScale:(double)arg1;
 - (void)setZoomScale:(double)arg1;
 - (void)setZoomStyle:(int)arg1;
-- (bool)shouldLimitTopDownHeight;
-- (void)startPanning:(struct CGPoint { double x1; double x2; })arg1;
-- (void)startPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)startPitchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)startWithPounce:(bool)arg1 pounceCompletionHandler:(id)arg2;
+- (BOOL)shouldLimitTopDownHeight;
+- (void)startPanning:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startWithPounce:(BOOL)arg1 pounceCompletionHandler:(id)arg2;
 - (void)stop;
-- (void)stopPanning:(struct CGPoint { double x1; double x2; })arg1;
-- (void)stopPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)stopPitchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)stopPanning:(struct CGPoint { float x1; float x2; })arg1;
+- (void)stopPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)stopPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (double)tracePlaybackSpeedMultiplier;
 - (id)trackingDelegate;
 - (void)updateCameraContext:(id)arg1;
-- (void)updatePinchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
-- (void)updatePitchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 translation:(double)arg2;
+- (void)updatePinchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
+- (void)updatePitchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
 - (void)updatedMatchedSection:(struct fast_shared_ptr<vk::RouteLineSection> { struct _fast_shared_ptr_control {} *x1; })arg1 index:(struct PolylineCoordinate { unsigned int x1; float x2; }*)arg2;
 - (double)userZoomFocusStyleGroundspanMeters;
 - (double)userZoomFocusStyleMaxGroundspanMeters;
 - (double)userZoomFocusStyleMinGroundspanMeters;
 - (double)verticalGroundspanScale;
-- (void)zoom:(double)arg1 relativeToPoint:(struct CGPoint { double x1; double x2; })arg2 completionHandler:(id)arg3;
+- (void)zoom:(double)arg1 relativeToPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id)arg3;
 - (double)zoomScale;
 
 @end

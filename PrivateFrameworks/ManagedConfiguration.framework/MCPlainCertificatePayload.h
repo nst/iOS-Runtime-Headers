@@ -28,8 +28,8 @@
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)installationWarnings;
-- (bool)isIdentity;
-- (bool)isSigned;
+- (BOOL)isIdentity;
+- (BOOL)isSigned;
 - (id)password;
 - (id)persistentResourceID;
 

@@ -15,9 +15,9 @@
     NSMutableArray *_registrationData;
 }
 
-+ (id)keychainAccessGroupForVersion:(unsigned long long)arg1;
-+ (id)keychainAccountForVersion:(unsigned long long)arg1;
-+ (id)keychainServiceForVersion:(unsigned long long)arg1;
++ (id)keychainAccessGroupForVersion:(unsigned int)arg1;
++ (id)keychainAccountForVersion:(unsigned int)arg1;
++ (id)keychainServiceForVersion:(unsigned int)arg1;
 + (id)sharedInstance;
 
 - (void)_flush;

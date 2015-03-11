@@ -3,12 +3,12 @@
  */
 
 @interface MFPBlurEffect : MFPEffect {
-    boolmExpandEdge;
+    BOOL mExpandEdge;
     float mRadius;
 }
 
 + (id)GUID;
 
-- (id)initWithRadius:(float)arg1 expandEdge:(bool)arg2;
+- (id)initWithRadius:(float)arg1 expandEdge:(BOOL)arg2;
 
 @end

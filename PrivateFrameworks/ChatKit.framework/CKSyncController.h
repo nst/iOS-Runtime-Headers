@@ -5,19 +5,19 @@
 @interface CKSyncController : NSObject {
     int _attachmentRestoredToken;
     int _restoreStateChangedToken;
-    bool_restoring;
+    BOOL _restoring;
 }
 
-@property(getter=isRestoring) bool restoring;
+@property(getter=isRestoring) BOOL restoring;
 
 + (id)sharedInstance;
 
 - (void)attachmentRestored;
 - (id)init;
-- (bool)isRestoring;
+- (BOOL)isRestoring;
 - (void)postAttachmentRestored;
 - (void)prioritizeAttachmentAtPath:(id)arg1;
-- (void)setRestoring:(bool)arg1;
+- (void)setRestoring:(BOOL)arg1;
 - (void)updateRestoreState;
 
 @end

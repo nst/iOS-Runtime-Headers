@@ -3,25 +3,25 @@
  */
 
 @interface _UITiltMotionEffect : UIMotionEffect {
-    double _maximumHorizontalTiltAngle;
-    double _maximumVerticalTiltAngle;
-    double _rotatingSphereRadius;
+    float _maximumHorizontalTiltAngle;
+    float _maximumVerticalTiltAngle;
+    float _rotatingSphereRadius;
 }
 
-@property double maximumHorizontalTiltAngle;
-@property double maximumVerticalTiltAngle;
-@property double rotatingSphereRadius;
+@property float maximumHorizontalTiltAngle;
+@property float maximumVerticalTiltAngle;
+@property float rotatingSphereRadius;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)keyPathsAndRelativeValuesForViewerOffset:(struct UIOffset { double x1; double x2; })arg1;
-- (double)maximumHorizontalTiltAngle;
-- (double)maximumVerticalTiltAngle;
-- (double)rotatingSphereRadius;
-- (void)setMaximumHorizontalTiltAngle:(double)arg1;
-- (void)setMaximumVerticalTiltAngle:(double)arg1;
-- (void)setRotatingSphereRadius:(double)arg1;
+- (id)keyPathsAndRelativeValuesForViewerOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (float)maximumHorizontalTiltAngle;
+- (float)maximumVerticalTiltAngle;
+- (float)rotatingSphereRadius;
+- (void)setMaximumHorizontalTiltAngle:(float)arg1;
+- (void)setMaximumVerticalTiltAngle:(float)arg1;
+- (void)setRotatingSphereRadius:(float)arg1;
 
 @end

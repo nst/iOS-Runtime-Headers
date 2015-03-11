@@ -7,9 +7,9 @@
 
 - (id)avalancheReviewControllerSpec;
 - (id)newPhotoBrowserControllerForPhotoAtIndexPath:(id)arg1 assetCollections:(id)arg2 dataSource:(id)arg3;
-- (bool)shouldShowPhotoScrubber;
-- (bool)shouldShowToolbarItemsInNavigationBar;
-- (bool)shouldUsePopovers;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldShowPhotoScrubber;
+- (BOOL)shouldShowToolbarItemsInNavigationBar;
+- (BOOL)shouldUsePopovers;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

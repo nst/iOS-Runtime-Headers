@@ -14,6 +14,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)invalidateTodayAndNotifyIfChanged;
-- (bool)todayChangedAfterInvalidation;
+- (BOOL)todayChangedAfterInvalidation;
 
 @end

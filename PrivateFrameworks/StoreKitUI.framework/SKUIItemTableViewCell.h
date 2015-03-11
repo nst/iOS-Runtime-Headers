@@ -5,23 +5,23 @@
 @class NSString, SKUIItemCellLayout;
 
 @interface SKUIItemTableViewCell : SKUITableViewCell <SKUICellLayoutParentView> {
-    bool_layoutNeedsLayout;
+    BOOL _layoutNeedsLayout;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) SKUIItemCellLayout * layout;
 @property(readonly) Class superclass;
 
-- (void)configureForItem:(id)arg1 clientContext:(id)arg2 rowIndex:(long long)arg3;
-- (void)configureForItem:(id)arg1 rowIndex:(long long)arg2;
+- (void)configureForItem:(id)arg1 clientContext:(id)arg2 rowIndex:(int)arg3;
+- (void)configureForItem:(id)arg1 rowIndex:(int)arg2;
 - (id)layout;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCellLayoutNeedsLayout;
-- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
-- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

@@ -8,13 +8,13 @@
     CPLEngineStore *_engineStore;
     NSString *_name;
     CPLPlatformObject *_platformObject;
-    bool_superWasCalled;
+    BOOL _superWasCalled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) CPLEngineStore * engineStore;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy,readonly) NSString * name;
 @property(readonly) CPLPlatformObject * platformObject;
 @property(readonly) Class superclass;
@@ -22,13 +22,13 @@
 + (id)platformImplementationProtocol;
 
 - (void).cxx_destruct;
-- (bool)_checkSuperWasCalled;
-- (bool)closeWithError:(id*)arg1;
+- (BOOL)_checkSuperWasCalled;
+- (BOOL)closeWithError:(id*)arg1;
 - (id)description;
 - (id)engineStore;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 - (id)name;
-- (bool)openWithError:(id*)arg1;
+- (BOOL)openWithError:(id*)arg1;
 - (id)platformObject;
 - (id)status;
 - (id)statusDictionary;

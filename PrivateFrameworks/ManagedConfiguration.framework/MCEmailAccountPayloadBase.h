@@ -5,47 +5,47 @@
 @class NSData, NSString;
 
 @interface MCEmailAccountPayloadBase : MCPayload {
+    BOOL _SMIMEEnabled;
     NSData *_SMIMEEncryptionIdentityPersistentID;
     NSString *_SMIMEEncryptionIdentityUUID;
+    BOOL _SMIMEPerMessageSwitchEnabled;
     NSData *_SMIMESigningIdentityPersistentID;
     NSString *_SMIMESigningIdentityUUID;
-    bool_SMIMEEnabled;
-    bool_SMIMEPerMessageSwitchEnabled;
-    bool_isRecentsSyncingDisabled;
-    bool_preventAppSheet;
-    bool_preventMove;
+    BOOL _isRecentsSyncingDisabled;
+    BOOL _preventAppSheet;
+    BOOL _preventMove;
 }
 
-@property bool SMIMEEnabled;
+@property BOOL SMIMEEnabled;
 @property(retain) NSData * SMIMEEncryptionIdentityPersistentID;
 @property(retain) NSString * SMIMEEncryptionIdentityUUID;
-@property bool SMIMEPerMessageSwitchEnabled;
+@property BOOL SMIMEPerMessageSwitchEnabled;
 @property(retain) NSData * SMIMESigningIdentityPersistentID;
 @property(retain) NSString * SMIMESigningIdentityUUID;
-@property bool isRecentsSyncingDisabled;
-@property bool preventAppSheet;
-@property bool preventMove;
+@property BOOL isRecentsSyncingDisabled;
+@property BOOL preventAppSheet;
+@property BOOL preventMove;
 
 - (void).cxx_destruct;
-- (bool)SMIMEEnabled;
+- (BOOL)SMIMEEnabled;
 - (id)SMIMEEncryptionIdentityPersistentID;
 - (id)SMIMEEncryptionIdentityUUID;
-- (bool)SMIMEPerMessageSwitchEnabled;
+- (BOOL)SMIMEPerMessageSwitchEnabled;
 - (id)SMIMESigningIdentityPersistentID;
 - (id)SMIMESigningIdentityUUID;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (bool)isRecentsSyncingDisabled;
+- (BOOL)isRecentsSyncingDisabled;
 - (id)payloadDescriptionKeyValueSections;
-- (bool)preventAppSheet;
-- (bool)preventMove;
-- (void)setIsRecentsSyncingDisabled:(bool)arg1;
-- (void)setPreventAppSheet:(bool)arg1;
-- (void)setPreventMove:(bool)arg1;
-- (void)setSMIMEEnabled:(bool)arg1;
+- (BOOL)preventAppSheet;
+- (BOOL)preventMove;
+- (void)setIsRecentsSyncingDisabled:(BOOL)arg1;
+- (void)setPreventAppSheet:(BOOL)arg1;
+- (void)setPreventMove:(BOOL)arg1;
+- (void)setSMIMEEnabled:(BOOL)arg1;
 - (void)setSMIMEEncryptionIdentityPersistentID:(id)arg1;
 - (void)setSMIMEEncryptionIdentityUUID:(id)arg1;
-- (void)setSMIMEPerMessageSwitchEnabled:(bool)arg1;
+- (void)setSMIMEPerMessageSwitchEnabled:(BOOL)arg1;
 - (void)setSMIMESigningIdentityPersistentID:(id)arg1;
 - (void)setSMIMESigningIdentityUUID:(id)arg1;
 - (id)stubDictionary;

@@ -10,7 +10,7 @@
 + (id)_databaseTable;
 + (id)_propertySettersForDataObject;
 + (id)_tableValuesFromDataObject:(id)arg1;
-+ (bool)associateSamples:(id)arg1 toWorkout:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (BOOL)associateSamples:(id)arg1 toWorkout:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (id)codableObjectsFromObjectCollection:(id)arg1;
 + (id)columnNameForSortIdentifier:(id)arg1;
 + (id)deleteStatementsForRelatedEntitiesInDatabase:(id)arg1;

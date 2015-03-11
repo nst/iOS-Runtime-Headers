@@ -5,16 +5,16 @@
 @class <HDHealthDaemon>, NSDate, NSString, NSUUID;
 
 @interface HDNanoPairingPersistentInfo : NSObject {
+    BOOL _activationFinished;
     <HDHealthDaemon> *_healthDaemon;
     NSUUID *_healthPairingUUID;
     NSDate *_lastActivationAttempt;
     NSString *_pairedStoragePath;
     NSUUID *_persistentPairingUUID;
     NSUUID *_registryPairingUUID;
-    bool_activationFinished;
 }
 
-@property(getter=isActivationFinished,readonly) bool activationFinished;
+@property(getter=isActivationFinished,readonly) BOOL activationFinished;
 @property <HDHealthDaemon> * healthDaemon;
 @property(readonly) NSUUID * healthPairingUUID;
 @property(readonly) NSDate * lastActivationAttempt;
@@ -29,13 +29,13 @@
 - (void)_persistValues;
 - (id)healthDaemon;
 - (id)healthPairingUUID;
-- (bool)isActivationFinished;
+- (BOOL)isActivationFinished;
 - (id)lastActivationAttempt;
 - (id)pairedStoragePath;
 - (id)persistentPairingUUID;
 - (id)registryPairingUUID;
 - (void)resetWithRegistryPairingUUID:(id)arg1 persistentPairingUUID:(id)arg2 pairedStoragePath:(id)arg3;
-- (void)setActivationFinished:(bool)arg1;
+- (void)setActivationFinished:(BOOL)arg1;
 - (void)setHealthDaemon:(id)arg1;
 - (void)setPersistentPairingUUID:(id)arg1 healthPairingUUID:(id)arg2 lastActivationAttempt:(id)arg3;
 

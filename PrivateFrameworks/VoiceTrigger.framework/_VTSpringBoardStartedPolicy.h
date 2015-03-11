@@ -4,13 +4,13 @@
 
 @interface _VTSpringBoardStartedPolicy : _VTStatePolicy {
     int _notifyToken;
-    bool_springboardStarted;
+    BOOL _springboardStarted;
 }
 
 - (void)_stopListening;
 - (void)dealloc;
 - (id)initWithCallback:(id)arg1 queue:(id)arg2;
-- (bool)isEnabled;
+- (BOOL)isEnabled;
 - (void)waitForSpringBoard;
 
 @end

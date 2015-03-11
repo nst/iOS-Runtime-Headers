@@ -19,7 +19,7 @@
 - (id)initWithServiceName:(id)arg1 type:(id)arg2 domain:(id)arg3;
 - (id)interfaceName;
 - (void)setInterfaceName:(id)arg1;
-- (bool)start;
+- (BOOL)start;
 - (void)stop;
 
 @end

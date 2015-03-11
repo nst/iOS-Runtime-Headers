@@ -9,7 +9,7 @@
     NSURL *_url;
 }
 
-- (bool)_reopenWithError:(id*)arg1;
+- (BOOL)_reopenWithError:(id*)arg1;
 - (void)dealloc;
 - (void)enumerateEntriesWithHandler:(id)arg1;
 - (id)initWithURL:(id)arg1 error:(id*)arg2;

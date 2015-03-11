@@ -9,11 +9,11 @@
 
 @interface _PFTask : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
-    struct _opaque_pthread_cond_t { 
-        long long __sig; 
+        long __sig; 
         BOOL __opaque[40]; 
+    struct _opaque_pthread_cond_t { 
+        long __sig; 
+        BOOL __opaque[24]; 
     int _cd_rc;
     void *_task;
     void *arguments;
@@ -26,13 +26,13 @@
 + (unsigned long long)getPhysicalMemory;
 + (double)getProcessorSpeed;
 
-- (bool)_isDeallocating;
-- (bool)_tryRetain;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

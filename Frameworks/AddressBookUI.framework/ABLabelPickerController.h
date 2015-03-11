@@ -14,6 +14,6 @@
 - (id)initForPropertyItem:(id)arg1;
 - (id)item;
 - (void)removeCustomItem:(id)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -8,33 +8,33 @@
     NSMutableDictionary *_inflightMessages;
     NSMutableDictionary *_pendingMessages;
     IDSService *_service;
+    BOOL _shouldSuppressTransportReachabilityTimeout;
     NSTimer *_transportReachabilityTimer;
-    bool_shouldSuppressTransportReachabilityTimeout;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSMutableDictionary * inflightMessages;
 @property(retain) NSMutableDictionary * pendingMessages;
 @property(retain) IDSService * service;
-@property bool shouldSuppressTransportReachabilityTimeout;
+@property BOOL shouldSuppressTransportReachabilityTimeout;
 @property(readonly) Class superclass;
 @property(retain) NSTimer * transportReachabilityTimer;
 
 - (void).cxx_destruct;
-- (id)_sendProtoBuf:(id)arg1 service:(id)arg2 priority:(long long)arg3 responseIdentifier:(id)arg4 expectsResponse:(bool)arg5;
+- (id)_sendProtoBuf:(id)arg1 service:(id)arg2 priority:(int)arg3 responseIdentifier:(id)arg4 expectsResponse:(BOOL)arg5;
 - (void)beginSetupTransaction;
 - (void)cancelReachabilityTimer;
 - (void)checkReachability;
-- (bool)connectionStateWithDevices:(id)arg1 accounts:(id)arg2;
+- (BOOL)connectionStateWithDevices:(id)arg1 accounts:(id)arg2;
 - (id)customDescriptionOfMessageType:(unsigned short)arg1;
 - (void)endSetupTransaction;
 - (id)inflightMessages;
 - (id)pendingMessages;
 - (void)reportConnectionForService:(id)arg1 accounts:(id)arg2 devices:(id)arg3;
-- (id)sendProtoBuf:(id)arg1 service:(id)arg2 priority:(long long)arg3 responseIdentifier:(id)arg4 expectsResponse:(bool)arg5 retryCount:(long long)arg6 retryInterval:(double)arg7;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
+- (id)sendProtoBuf:(id)arg1 service:(id)arg2 priority:(int)arg3 responseIdentifier:(id)arg4 expectsResponse:(BOOL)arg5 retryCount:(int)arg6 retryInterval:(double)arg7;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
@@ -44,10 +44,10 @@
 - (void)setInflightMessages:(id)arg1;
 - (void)setPendingMessages:(id)arg1;
 - (void)setService:(id)arg1;
-- (void)setShouldSuppressTransportReachabilityTimeout:(bool)arg1;
+- (void)setShouldSuppressTransportReachabilityTimeout:(BOOL)arg1;
 - (void)setTransportReachabilityTimer:(id)arg1;
 - (void)setupServiceMessageSelectorMappings;
-- (bool)shouldSuppressTransportReachabilityTimeout;
+- (BOOL)shouldSuppressTransportReachabilityTimeout;
 - (void)startReachabilityTimer;
 - (void)transportBecameReachable;
 - (void)transportBecameUnreachable;

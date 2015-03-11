@@ -6,32 +6,32 @@
 
 @interface HKDataUnitGroup : NSObject {
     NSAttributedString *_attributedSummaryAttribution;
-    long long _categoryID;
+    int _categoryID;
     NSString *_cautionaryText;
     HKDataUnitGroupChartingRules *_chartingRules;
     HKCorrelationType *_correlationType;
-    long long _dataUnitGroupID;
+    int _dataUnitGroupID;
     NSArray *_dataUnits;
     NSMutableDictionary *_dataUnitsByType;
     NSArray *_dataUnitsOrderedForDataEntry;
     UIImage *_detailImage;
     NSString *_displayName;
     NSString *_embeddedDisplayName;
+    BOOL _isCharacteristic;
     NSString *_joinString;
     NSString *_keywords;
     NSArray *_reversedDataUnits;
     NSString *_summary;
     NSString *_summaryAttribution;
     NSString *_unitChangeCautionaryText;
-    bool_isCharacteristic;
 }
 
 @property(readonly) NSAttributedString * attributedSummaryAttribution;
-@property(readonly) long long categoryID;
+@property(readonly) int categoryID;
 @property(readonly) NSString * cautionaryText;
 @property(readonly) HKDataUnitGroupChartingRules * chartingRules;
 @property(readonly) HKCorrelationType * correlationType;
-@property(readonly) long long dataUnitGroupID;
+@property(readonly) int dataUnitGroupID;
 @property(readonly) NSArray * dataUnits;
 @property(readonly) NSArray * dataUnitsOrderedForDataEntry;
 @property(readonly) UIImage * detailImage;
@@ -45,38 +45,38 @@
 @property(readonly) NSString * summaryAttribution;
 @property(readonly) NSString * unitChangeCautionaryText;
 @property(readonly) UIImage * unitIcon;
-@property(readonly) bool unitPreferencesRequireChangeConfirmation;
+@property(readonly) BOOL unitPreferencesRequireChangeConfirmation;
 
 - (void).cxx_destruct;
 - (void)_applyChartingProperties:(id)arg1;
 - (id)anyDataUnit;
 - (id)attributedSummaryAttribution;
-- (long long)categoryID;
+- (int)categoryID;
 - (id)cautionaryText;
 - (id)chartingRules;
 - (id)correlationType;
 - (id)dataUnitForType:(id)arg1;
-- (long long)dataUnitGroupID;
+- (int)dataUnitGroupID;
 - (id)dataUnits;
 - (id)dataUnitsOrderedForDataEntry;
 - (id)detailImage;
 - (id)displayName;
 - (id)embeddedDisplayName;
 - (id)groupIcon;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initFromDictionary:(id)arg1;
-- (bool)isCharacteristic;
-- (bool)isEqual:(id)arg1;
-- (bool)isNikeFuel;
+- (BOOL)isCharacteristic;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isNikeFuel;
 - (id)joinString;
 - (id)keywords;
 - (id)shareIcon;
-- (bool)shouldStartDayAtNoon;
+- (BOOL)shouldStartDayAtNoon;
 - (id)summary;
 - (id)summaryAttribution;
 - (id)unitChangeCautionaryText;
 - (id)unitIcon;
-- (bool)unitPreferencesRequireChangeConfirmation;
+- (BOOL)unitPreferencesRequireChangeConfirmation;
 
 @end

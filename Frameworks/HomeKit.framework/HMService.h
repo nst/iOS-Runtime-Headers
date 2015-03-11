@@ -24,7 +24,7 @@
 @property(copy,readonly) NSString * serviceType;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_handleUpdateAssociatedServiceType:(id)arg1;
@@ -35,7 +35,7 @@
 - (id)characteristics;
 - (void)configure:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)hasCharacteristic:(id)arg1;
+- (BOOL)hasCharacteristic:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)instanceID;
 - (id)msgDispatcher;

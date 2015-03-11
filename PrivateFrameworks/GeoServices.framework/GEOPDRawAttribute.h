@@ -9,8 +9,8 @@
     NSString *_value;
 }
 
-@property(readonly) bool hasKey;
-@property(readonly) bool hasValue;
+@property(readonly) BOOL hasKey;
+@property(readonly) BOOL hasValue;
 @property(retain) NSString * key;
 @property(retain) NSString * value;
 
@@ -19,13 +19,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasKey;
-- (bool)hasValue;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasKey;
+- (BOOL)hasValue;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

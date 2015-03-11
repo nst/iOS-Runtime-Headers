@@ -17,7 +17,7 @@
 
 @property(readonly) double projectedCourse;
 @property(readonly) struct { double x1; double x2; } projectedLocation;
-@property(readonly) bool projectedLocationOnRoute;
+@property(readonly) BOOL projectedLocationOnRoute;
 @property(readonly) struct VKPoint { double x1; double x2; double x3; } projectedPosition;
 @property(retain) GEORouteMatch * projectedRouteMatch;
 @property(retain) GEORouteMatch * routeMatch;
@@ -29,7 +29,7 @@
 - (void)projectFromLocation:(id)arg1 routeMatch:(id)arg2 speedMultiplier:(double)arg3;
 - (double)projectedCourse;
 - (struct { double x1; double x2; })projectedLocation;
-- (bool)projectedLocationOnRoute;
+- (BOOL)projectedLocationOnRoute;
 - (struct VKPoint { double x1; double x2; double x3; })projectedPosition;
 - (id)projectedRouteMatch;
 - (void)reset;

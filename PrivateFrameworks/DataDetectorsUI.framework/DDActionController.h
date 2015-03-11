@@ -21,7 +21,7 @@
 @property(retain) DDAction * currentAction;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) <DDDetectionControllerInteractionDelegate> * interactionDelegate;
 @property(retain) UIPopoverController * popoverController;
 @property(readonly) Class superclass;
@@ -44,7 +44,7 @@
 - (void)failedToPrepareViewControllerForAction:(id)arg1;
 - (id)init;
 - (id)interactionDelegate;
-- (bool)isPresentingInPopover;
+- (BOOL)isPresentingInPopover;
 - (void)performAction:(id)arg1;
 - (id)popoverController;
 - (void)popoverControllerDidDismissPopover:(id)arg1;

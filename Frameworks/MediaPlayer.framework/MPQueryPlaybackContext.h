@@ -7,23 +7,23 @@
 @interface MPQueryPlaybackContext : MPPlaybackContext {
     NSArray *_prefixMediaItems;
     MPMediaQuery *_query;
-    unsigned long long _startIndex;
-    bool_shouldRestartPlaybackIfQueueChanges;
+    BOOL _shouldRestartPlaybackIfQueueChanges;
+    unsigned int _startIndex;
 }
 
 @property(copy) NSArray * prefixMediaItems;
 @property(readonly) MPMediaQuery * query;
-@property bool shouldRestartPlaybackIfQueueChanges;
-@property unsigned long long startIndex;
+@property BOOL shouldRestartPlaybackIfQueueChanges;
+@property unsigned int startIndex;
 
 - (void).cxx_destruct;
 - (id)initWithQuery:(id)arg1;
 - (id)prefixMediaItems;
 - (id)query;
 - (void)setPrefixMediaItems:(id)arg1;
-- (void)setShouldRestartPlaybackIfQueueChanges:(bool)arg1;
-- (void)setStartIndex:(unsigned long long)arg1;
-- (bool)shouldRestartPlaybackIfQueueChanges;
-- (unsigned long long)startIndex;
+- (void)setShouldRestartPlaybackIfQueueChanges:(BOOL)arg1;
+- (void)setStartIndex:(unsigned int)arg1;
+- (BOOL)shouldRestartPlaybackIfQueueChanges;
+- (unsigned int)startIndex;
 
 @end

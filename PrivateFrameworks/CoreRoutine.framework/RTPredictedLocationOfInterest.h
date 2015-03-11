@@ -7,7 +7,7 @@
 @interface RTPredictedLocationOfInterest : NSObject <NSSecureCoding> {
     double _confidence;
     RTLocationOfInterest *_locationOfInterest;
-    long long _modeOfTransportation;
+    int _modeOfTransportation;
     NSDate *_nextEntryTime;
     RTRoute *_route;
     RTSource *_source;
@@ -15,25 +15,25 @@
 
 @property(readonly) double confidence;
 @property(readonly) RTLocationOfInterest * locationOfInterest;
-@property long long modeOfTransportation;
+@property int modeOfTransportation;
 @property(readonly) NSDate * nextEntryTime;
 @property(readonly) RTRoute * route;
 @property(readonly) RTSource * source;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)confidence;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLocationOfInterest:(id)arg1 confidence:(double)arg2 nextEntryTime:(id)arg3 route:(id)arg4 modeOfTransportation:(long long)arg5 source:(id)arg6;
+- (id)initWithLocationOfInterest:(id)arg1 confidence:(double)arg2 nextEntryTime:(id)arg3 route:(id)arg4 modeOfTransportation:(int)arg5 source:(id)arg6;
 - (id)locationOfInterest;
-- (long long)modeOfTransportation;
+- (int)modeOfTransportation;
 - (id)nextEntryTime;
 - (id)route;
 - (void)setConfidence:(double)arg1;
-- (void)setModeOfTransportation:(long long)arg1;
+- (void)setModeOfTransportation:(int)arg1;
 - (id)source;
 
 @end

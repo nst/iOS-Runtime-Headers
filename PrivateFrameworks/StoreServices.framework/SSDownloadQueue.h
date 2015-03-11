@@ -10,9 +10,9 @@
 @class NSArray, NSSet, NSString, SSDownloadManager;
 
 @interface SSDownloadQueue : NSObject <SSDownloadManagerObserverPrivate> {
+    BOOL _autoFinishDownloads;
     SSDownloadManager *_downloadManager;
     struct __CFSet { } *_observers;
-    bool_autoFinishDownloads;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -20,12 +20,12 @@
 @property(readonly) NSSet * downloadKinds;
 @property(readonly) SSDownloadManager * downloadManager;
 @property(readonly) NSArray * downloads;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSArray * placeholderDownloads;
 @property(readonly) NSArray * preorders;
-@property bool shouldAutomaticallyFinishDownloads;
+@property BOOL shouldAutomaticallyFinishDownloads;
 @property(readonly) Class superclass;
-@property(getter=isUsingNetwork,readonly) bool usingNetwork;
+@property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
 
 + (id)mediaDownloadKinds;
 + (id)softwareApplicationDownloadKinds;
@@ -34,15 +34,15 @@
 - (void)_handleDownloadsRemoved:(id)arg1;
 - (id)_initWithDownloadManagerOptions:(id)arg1;
 - (void)_messageObserversWithFunction:(int (*)())arg1 context:(void*)arg2;
-- (void)_sendDownloadStatusChangedAtIndex:(long long)arg1;
+- (void)_sendDownloadStatusChangedAtIndex:(int)arg1;
 - (void)_sendQueueChangedWithRemovals:(id)arg1;
 - (void)_sendQueueNetworkUsageChanged;
 - (void)_sendQueuePreOrdersChanged;
-- (bool)addDownload:(id)arg1;
+- (BOOL)addDownload:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)addPlaceholderDownloads:(id)arg1;
-- (bool)canCancelDownload:(id)arg1;
-- (bool)cancelDownload:(id)arg1;
+- (BOOL)canCancelDownload:(id)arg1;
+- (BOOL)cancelDownload:(id)arg1;
 - (void)dealloc;
 - (id)downloadForItemIdentifier:(unsigned long long)arg1;
 - (id)downloadKinds;
@@ -56,14 +56,14 @@
 - (id)init;
 - (id)initWithDownloadKinds:(id)arg1;
 - (id)initWithDownloadManagerOptions:(id)arg1;
-- (bool)isUsingNetwork;
+- (BOOL)isUsingNetwork;
 - (id)placeholderDownloads;
 - (id)preorders;
-- (bool)reloadFromServer;
+- (BOOL)reloadFromServer;
 - (void)removeObserver:(id)arg1;
 - (void)removePlaceholderDownload:(id)arg1;
-- (void)setShouldAutomaticallyFinishDownloads:(bool)arg1;
-- (bool)shouldAutomaticallyFinishDownloads;
-- (bool)startPreOrderDownload:(id)arg1;
+- (void)setShouldAutomaticallyFinishDownloads:(BOOL)arg1;
+- (BOOL)shouldAutomaticallyFinishDownloads;
+- (BOOL)startPreOrderDownload:(id)arg1;
 
 @end

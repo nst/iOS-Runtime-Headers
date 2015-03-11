@@ -7,15 +7,15 @@
 @interface MPAlternateTrack : NSObject {
     NSString *_canonicalLanguageIdentifier;
     NSString *_displayName;
+    BOOL _isDVS;
+    BOOL _isMainProgram;
     AVMediaSelectionOption *_option;
-    bool_isDVS;
-    bool_isMainProgram;
 }
 
 @property(readonly) NSString * canonicalLanguageIdentifier;
 @property(retain) NSString * displayName;
-@property(readonly) bool isDVS;
-@property(readonly) bool isMainProgram;
+@property(readonly) BOOL isDVS;
+@property(readonly) BOOL isMainProgram;
 @property(readonly) AVMediaSelectionOption * option;
 
 + (id)threeCharCodesForEncodedISO639_2_T:(id)arg1;
@@ -23,12 +23,12 @@
 - (void).cxx_destruct;
 - (void)_setDisplayNameFromOption:(id)arg1;
 - (id)canonicalLanguageIdentifier;
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)description;
 - (id)displayName;
 - (id)initWithOption:(id)arg1;
-- (bool)isDVS;
-- (bool)isMainProgram;
+- (BOOL)isDVS;
+- (BOOL)isMainProgram;
 - (id)option;
 - (void)setDisplayName:(id)arg1;
 

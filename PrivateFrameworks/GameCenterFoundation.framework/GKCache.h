@@ -6,34 +6,34 @@
 
 @interface GKCache : NSObject <GKCache> {
     GKLinkedList *_cacheList;
-    unsigned long long _count;
+    unsigned int _count;
     NSMutableDictionary *_dictionary;
-    unsigned long long _maxCount;
+    unsigned int _maxCount;
 }
 
 @property(retain) GKLinkedList * cacheList;
-@property unsigned long long count;
+@property unsigned int count;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSMutableDictionary * dictionary;
-@property(readonly) unsigned long long hash;
-@property unsigned long long maxCount;
+@property(readonly) unsigned int hash;
+@property unsigned int maxCount;
 @property(readonly) Class superclass;
 
 - (id)cacheList;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)dictionary;
-- (id)initWithMaxCount:(unsigned long long)arg1;
-- (unsigned long long)maxCount;
+- (id)initWithMaxCount:(unsigned int)arg1;
+- (unsigned int)maxCount;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setCacheList:(id)arg1;
-- (void)setCount:(unsigned long long)arg1;
+- (void)setCount:(unsigned int)arg1;
 - (void)setDictionary:(id)arg1;
-- (void)setMaxCount:(unsigned long long)arg1;
+- (void)setMaxCount:(unsigned int)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 

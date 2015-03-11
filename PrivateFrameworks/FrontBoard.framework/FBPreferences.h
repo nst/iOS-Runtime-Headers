@@ -17,7 +17,7 @@
 - (id)description;
 - (id)enabledLogNames;
 - (id)init;
-- (bool)isLogEnabled:(id)arg1;
+- (BOOL)isLogEnabled:(id)arg1;
 - (void)reload;
 
 @end

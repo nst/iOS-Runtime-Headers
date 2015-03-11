@@ -5,44 +5,44 @@
 @class ABPropertyBestFaceTimeQuery, NSArray;
 
 @interface ABContactAddFavoriteAction : ABPropertyAction <ABPropertyBestFaceTimeQueryDelegate> {
+    BOOL _allowFaceTimeAudioFavorites;
+    BOOL _allowFaceTimeFavorites;
+    BOOL _allowPhoneFavorites;
     ABPropertyBestFaceTimeQuery *_bestFaceTimeQuery;
     NSArray *_filteredPhoneItems;
-    bool_allowFaceTimeAudioFavorites;
-    bool_allowFaceTimeFavorites;
-    bool_allowPhoneFavorites;
-    bool_hasFaceTimeAudioFavorite;
-    bool_hasFaceTimeFavorite;
+    BOOL _hasFaceTimeAudioFavorite;
+    BOOL _hasFaceTimeFavorite;
 }
 
-@property bool allowFaceTimeAudioFavorites;
-@property bool allowFaceTimeFavorites;
-@property bool allowPhoneFavorites;
+@property BOOL allowFaceTimeAudioFavorites;
+@property BOOL allowFaceTimeFavorites;
+@property BOOL allowPhoneFavorites;
 @property(retain) ABPropertyBestFaceTimeQuery * bestFaceTimeQuery;
 @property(retain) NSArray * filteredPhoneItems;
-@property bool hasFaceTimeAudioFavorite;
-@property bool hasFaceTimeFavorite;
+@property BOOL hasFaceTimeAudioFavorite;
+@property BOOL hasFaceTimeFavorite;
 
 - (void)_filterFavoritedItems;
 - (void)_queryFaceTimeStatus;
 - (void)_saveFavorite:(id)arg1 withType:(int)arg2;
-- (bool)allowFaceTimeAudioFavorites;
-- (bool)allowFaceTimeFavorites;
-- (bool)allowPhoneFavorites;
+- (BOOL)allowFaceTimeAudioFavorites;
+- (BOOL)allowFaceTimeFavorites;
+- (BOOL)allowPhoneFavorites;
 - (id)bestFaceTimeQuery;
-- (bool)canPerformAction;
+- (BOOL)canPerformAction;
 - (void)dealloc;
 - (id)filteredPhoneItems;
-- (bool)hasFaceTimeAudioFavorite;
-- (bool)hasFaceTimeFavorite;
+- (BOOL)hasFaceTimeAudioFavorite;
+- (BOOL)hasFaceTimeFavorite;
 - (id)initWithContact:(id)arg1 propertyItems:(id)arg2;
 - (void)performActionWithSender:(id)arg1;
 - (void)queryComplete;
-- (void)setAllowFaceTimeAudioFavorites:(bool)arg1;
-- (void)setAllowFaceTimeFavorites:(bool)arg1;
-- (void)setAllowPhoneFavorites:(bool)arg1;
+- (void)setAllowFaceTimeAudioFavorites:(BOOL)arg1;
+- (void)setAllowFaceTimeFavorites:(BOOL)arg1;
+- (void)setAllowPhoneFavorites:(BOOL)arg1;
 - (void)setBestFaceTimeQuery:(id)arg1;
 - (void)setFilteredPhoneItems:(id)arg1;
-- (void)setHasFaceTimeAudioFavorite:(bool)arg1;
-- (void)setHasFaceTimeFavorite:(bool)arg1;
+- (void)setHasFaceTimeAudioFavorite:(BOOL)arg1;
+- (void)setHasFaceTimeFavorite:(BOOL)arg1;
 
 @end

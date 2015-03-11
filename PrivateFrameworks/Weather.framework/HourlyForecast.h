@@ -5,35 +5,35 @@
 @class NSString;
 
 @interface HourlyForecast : NSObject <NSCopying> {
-    long long _conditionCode;
+    int _conditionCode;
     NSString *_detail;
-    unsigned long long _eventType;
-    long long _hourIndex;
+    unsigned int _eventType;
+    int _hourIndex;
     float _percentPrecipitation;
     NSString *_time;
 }
 
-@property long long conditionCode;
+@property int conditionCode;
 @property(copy) NSString * detail;
-@property unsigned long long eventType;
-@property long long hourIndex;
+@property unsigned int eventType;
+@property int hourIndex;
 @property float percentPrecipitation;
 @property(copy) NSString * time;
 
-+ (long long)TimeValueFromString:(id)arg1;
++ (int)TimeValueFromString:(id)arg1;
 
-- (long long)conditionCode;
+- (int)conditionCode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)detail;
-- (unsigned long long)eventType;
-- (long long)hourIndex;
+- (unsigned int)eventType;
+- (int)hourIndex;
 - (float)percentPrecipitation;
-- (void)setConditionCode:(long long)arg1;
+- (void)setConditionCode:(int)arg1;
 - (void)setDetail:(id)arg1;
-- (void)setEventType:(unsigned long long)arg1;
-- (void)setHourIndex:(long long)arg1;
+- (void)setEventType:(unsigned int)arg1;
+- (void)setHourIndex:(int)arg1;
 - (void)setPercentPrecipitation:(float)arg1;
 - (void)setTime:(id)arg1;
 - (id)time;

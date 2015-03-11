@@ -6,17 +6,17 @@
 
 @interface STStartNavigationRequest : AFSiriRequest {
     AFLocation *_destinationLocation;
-    long long _directionsType;
+    int _directionsType;
     AFLocation *_startLocation;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithStartLocation:(id)arg1 destinationLocation:(id)arg2 directionsType:(long long)arg3;
+- (id)_initWithStartLocation:(id)arg1 destinationLocation:(id)arg2 directionsType:(int)arg3;
 - (id)createResponse;
 - (id)destinationLocation;
-- (long long)directionsType;
+- (int)directionsType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)startLocation;

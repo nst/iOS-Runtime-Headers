@@ -10,7 +10,7 @@
     GEOAlmanacRiseTransitSet *_previousRiseTransitSet;
 }
 
-@property(readonly) bool isDayLight;
+@property(readonly) BOOL isDayLight;
 @property(readonly) NSDate * nextSunrise;
 @property(readonly) NSDate * nextSunset;
 @property(readonly) NSDate * nextTransit;
@@ -29,9 +29,9 @@
 - (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1;
 - (void)calculateGeocentricDirectionForSunX:(double*)arg1 Y:(double*)arg2 Z:(double*)arg3;
 - (void)dealloc;
-- (bool)isDayLight;
-- (bool)isDayLightForDate:(id)arg1;
-- (bool)isDayLightForTime:(double)arg1;
+- (BOOL)isDayLight;
+- (BOOL)isDayLightForDate:(id)arg1;
+- (BOOL)isDayLightForTime:(double)arg1;
 - (id)nextSunrise;
 - (id)nextSunset;
 - (id)nextTransit;

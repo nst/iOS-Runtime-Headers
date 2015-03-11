@@ -6,12 +6,12 @@
 
 @interface CSLUIPBUIPluginTriggerResponse : PBCodable <NSCopying> {
     NSString *_errorString;
-    bool_success;
+    BOOL _success;
 }
 
 @property(retain) NSString * errorString;
-@property(readonly) bool hasErrorString;
-@property bool success;
+@property(readonly) BOOL hasErrorString;
+@property BOOL success;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -19,14 +19,14 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)errorString;
-- (bool)hasErrorString;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasErrorString;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setErrorString:(id)arg1;
-- (void)setSuccess:(bool)arg1;
-- (bool)success;
+- (void)setSuccess:(BOOL)arg1;
+- (BOOL)success;
 - (void)writeTo:(id)arg1;
 
 @end

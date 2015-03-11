@@ -5,20 +5,20 @@
 @class <NPKPaymentSessionDelegate>, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
 @interface NPKPaymentSession : NSObject <NPKPaymentSessionClientProtocol> {
+    BOOL _acknowledged;
     NSXPCConnection *_connection;
     NSString *_currentPassUniqueID;
     <NPKPaymentSessionDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_internalQueue;
-    bool_acknowledged;
 }
 
-@property bool acknowledged;
+@property BOOL acknowledged;
 @property(retain) NSXPCConnection * connection;
 @property(retain) NSString * currentPassUniqueID;
 @property(copy,readonly) NSString * debugDescription;
 @property <NPKPaymentSessionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSObject<OS_dispatch_queue> * internalQueue;
 @property(readonly) Class superclass;
 
@@ -26,10 +26,10 @@
 - (id)_connectionWithEndpoint:(id)arg1 rootQueue:(id)arg2;
 - (id)_delegate;
 - (id)_errorHandlerWithCompletion:(id)arg1;
-- (void)_paymentSessionIsFinishedForReason:(unsigned long long)arg1;
+- (void)_paymentSessionIsFinishedForReason:(unsigned int)arg1;
 - (id)_remoteObjectProxyWithFailureHandler:(id)arg1;
 - (void)acknowledgeSession;
-- (bool)acknowledged;
+- (BOOL)acknowledged;
 - (id)connection;
 - (id)currentPassUniqueID;
 - (void)deactivateSession;
@@ -38,10 +38,10 @@
 - (id)internalQueue;
 - (void)paymentCardDidBecomeCurrent:(id)arg1;
 - (void)paymentDidActivateForPaymentCard:(id)arg1;
-- (void)paymentSessionCompletedForReason:(unsigned long long)arg1;
+- (void)paymentSessionCompletedForReason:(unsigned int)arg1;
 - (void)paymentWillActivateForPaymentCard:(id)arg1;
 - (void)resume;
-- (void)setAcknowledged:(bool)arg1;
+- (void)setAcknowledged:(BOOL)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setCurrentPassUniqueID:(id)arg1;
 - (void)setDelegate:(id)arg1;

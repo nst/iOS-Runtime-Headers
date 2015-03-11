@@ -15,7 +15,7 @@
 - (id)domainItem;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setDomainItem:(id)arg1;
 
 @end

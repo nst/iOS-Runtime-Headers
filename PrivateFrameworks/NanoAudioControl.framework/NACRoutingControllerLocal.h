@@ -14,7 +14,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <NACRoutingControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NACAudioRoute * pickedRoute;
 @property(readonly) Class superclass;
 

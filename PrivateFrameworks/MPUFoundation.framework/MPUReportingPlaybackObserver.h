@@ -5,21 +5,21 @@
 @class MPAVController, MPAVItem, MPUReportingController, NSString;
 
 @interface MPUReportingPlaybackObserver : NSObject {
+    BOOL _SBEnabled;
+    BOOL _isReloadingWithPlaybackContext;
+    BOOL _isScrubbing;
     MPAVItem *_itemForCurrentTimeChange;
+    BOOL _offline;
     NSString *_playbackSessionID;
     MPAVController *_player;
     MPUReportingController *_reportingController;
     double _startTimeForCurrentItem;
     double _startTimeForCurrentTimeChange;
     unsigned long long _storeAccountID;
-    bool_SBEnabled;
-    bool_isReloadingWithPlaybackContext;
-    bool_isScrubbing;
-    bool_offline;
 }
 
-@property(getter=isSBEnabled) bool SBEnabled;
-@property(getter=isOffline) bool offline;
+@property(getter=isSBEnabled) BOOL SBEnabled;
+@property(getter=isOffline) BOOL offline;
 @property(readonly) MPAVController * player;
 @property(readonly) MPUReportingController * reportingController;
 @property double startTimeForCurrentItem;
@@ -38,23 +38,23 @@
 - (void)_reportPlaybackEndedForTimeoutWithItem:(id)arg1;
 - (void)_updatePlaybackSessionID;
 - (void)dealloc;
-- (void)didHitPlaybackTimeoutEndingPlayback:(bool)arg1 withCurrentItem:(id)arg2;
+- (void)didHitPlaybackTimeoutEndingPlayback:(BOOL)arg1 withCurrentItem:(id)arg2;
 - (void)didTransitionItemForBan:(id)arg1;
 - (void)didTransitionItemForQueueChange:(id)arg1;
 - (id)initWithPlayer:(id)arg1 reportingController:(id)arg2;
-- (bool)isOffline;
-- (bool)isSBEnabled;
+- (BOOL)isOffline;
+- (BOOL)isSBEnabled;
 - (id)newPlayActivityEventForMPAVItem:(id)arg1;
 - (id)newReportingPlaybackActivityEventForPlayActivityEvent:(id)arg1 MPAVItem:(id)arg2;
 - (id)player;
 - (id)reportingController;
-- (void)setOffline:(bool)arg1;
-- (void)setSBEnabled:(bool)arg1;
+- (void)setOffline:(BOOL)arg1;
+- (void)setSBEnabled:(BOOL)arg1;
 - (void)setStartTimeForCurrentItem:(double)arg1;
 - (void)setStoreAccountID:(unsigned long long)arg1;
 - (double)startTimeForCurrentItem;
 - (unsigned long long)storeAccountID;
-- (void)willHitPlaybackTimeoutEndingPlayback:(bool)arg1 withCurrentItem:(id)arg2;
+- (void)willHitPlaybackTimeoutEndingPlayback:(BOOL)arg1 withCurrentItem:(id)arg2;
 - (void)willTransitionItemForBan:(id)arg1;
 - (void)willTransitionItemForQueueChange:(id)arg1;
 

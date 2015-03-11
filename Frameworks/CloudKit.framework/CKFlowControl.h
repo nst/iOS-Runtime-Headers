@@ -6,39 +6,39 @@
 
 @interface CKFlowControl : NSObject {
     double _budget;
-    unsigned long long _budgetCap;
+    unsigned int _budgetCap;
     NSDate *_lastExpenditure;
     double _maximumThrottleTime;
     double _regenerationPerSecond;
     double _totalCost;
-    unsigned long long _totalSamples;
+    unsigned int _totalSamples;
 }
 
 @property double budget;
-@property unsigned long long budgetCap;
+@property unsigned int budgetCap;
 @property(retain) NSDate * lastExpenditure;
 @property double maximumThrottleTime;
 @property double regenerationPerSecond;
 
-+ (id)flowControlWithBudgetCap:(unsigned long long)arg1 withMaximumThrottleTime:(double)arg2 andRegenerationPerSecond:(double)arg3;
++ (id)flowControlWithBudgetCap:(unsigned int)arg1 withMaximumThrottleTime:(double)arg2 andRegenerationPerSecond:(double)arg3;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (double)_secondsUntilBudgetLimitationRemovedNoRegen;
-- (bool)attemptBudgetedExpenditureWithCost:(double)arg1;
+- (BOOL)attemptBudgetedExpenditureWithCost:(double)arg1;
 - (double)budget;
-- (unsigned long long)budgetCap;
+- (unsigned int)budgetCap;
 - (id)description;
 - (void)expendWithCost:(double)arg1;
-- (id)initWithBudgetCap:(unsigned long long)arg1 withMaximumThrottleTime:(double)arg2 andRegenerationPerSecond:(double)arg3;
-- (bool)isLimited;
+- (id)initWithBudgetCap:(unsigned int)arg1 withMaximumThrottleTime:(double)arg2 andRegenerationPerSecond:(double)arg3;
+- (BOOL)isLimited;
 - (id)lastExpenditure;
 - (double)maximumThrottleTime;
 - (void)regenerate;
 - (double)regenerationPerSecond;
 - (double)secondsUntilBudgetLimitationRemoved;
 - (void)setBudget:(double)arg1;
-- (void)setBudgetCap:(unsigned long long)arg1;
+- (void)setBudgetCap:(unsigned int)arg1;
 - (void)setLastExpenditure:(id)arg1;
 - (void)setMaximumThrottleTime:(double)arg1;
 - (void)setRegenerationPerSecond:(double)arg1;

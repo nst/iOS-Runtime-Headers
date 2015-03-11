@@ -6,18 +6,18 @@
 
 @interface WebBookmarkTitleWordTokenizer : NSObject {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     } _rangeOfNextToken;
-    unsigned long long _startOfUnclassifiedRangeBeforeNextToken;
+    unsigned int _startOfUnclassifiedRangeBeforeNextToken;
     NSString *_string;
-    unsigned long long _stringLength;
+    unsigned int _stringLength;
     TIWordTokenizer *_wordTokenizer;
 }
 
 + (void)initialize;
 
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })advanceToNextToken;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })advanceToNextToken;
 - (void)dealloc;
 - (id)init;
 - (void)setString:(id)arg1;

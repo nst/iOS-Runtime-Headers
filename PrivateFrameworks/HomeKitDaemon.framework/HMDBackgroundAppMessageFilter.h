@@ -10,13 +10,13 @@
 
 @property(retain) NSMutableSet * pidOfAppsRunningInBackground;
 
-+ (bool)isWhitelistedMessage:(id)arg1;
++ (BOOL)isWhitelistedMessage:(id)arg1;
 
 - (void).cxx_destruct;
-- (bool)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
+- (BOOL)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
 - (id)initWithName:(id)arg1;
 - (id)pidOfAppsRunningInBackground;
 - (void)setPidOfAppsRunningInBackground:(id)arg1;
-- (void)updateAppWithPid:(int)arg1 runningInBackground:(bool)arg2;
+- (void)updateAppWithPid:(int)arg1 runningInBackground:(BOOL)arg2;
 
 @end

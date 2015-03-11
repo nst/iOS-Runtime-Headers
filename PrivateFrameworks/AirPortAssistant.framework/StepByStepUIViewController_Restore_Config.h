@@ -5,7 +5,7 @@
 @class UILabel, UIView;
 
 @interface StepByStepUIViewController_Restore_Config : StepByStepUIViewController {
-    booldontRestore;
+    BOOL dontRestore;
     UIView *dontRestoreRecommendationContainerView;
     UILabel *dontRestoreRecommendationLabel;
     UIView *restoreRecommendationContainerView;
@@ -22,6 +22,6 @@
 - (void)setDontRestoreRecommendationContainerView:(id)arg1;
 - (void)setRestoreRecommendationContainerView:(id)arg1;
 - (void)setupInitialTableHeaderConfiguration;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

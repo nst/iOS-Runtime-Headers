@@ -9,10 +9,10 @@
     NSArray *_currentProxyCalls;
     <TUCallServicesDaemonDelegate> *_daemonDelegate;
     NSData *_localFrequency;
+    BOOL _muted;
     TUProxyCallModel *_proxyCallModel;
     NSData *_remoteFrequency;
     NSXPCConnection *_xpcConnection;
-    bool_muted;
 }
 
 @property(retain) TUCallCenterCallsCache * callsCache;
@@ -20,15 +20,15 @@
 @property <TUCallServicesDaemonDelegate> * daemonDelegate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSData * localFrequency;
-@property(getter=isMuted) bool muted;
+@property(getter=isMuted) BOOL muted;
 @property(retain) TUProxyCallModel * proxyCallModel;
 @property(retain) NSData * remoteFrequency;
 @property(readonly) Class superclass;
 @property(retain) NSXPCConnection * xpcConnection;
 
-+ (bool)launchesCallServicesDaemonOnDemand;
++ (BOOL)launchesCallServicesDaemonOnDemand;
 + (id)sharedInstance;
 
 - (void)_setUpXPCConnection;
@@ -54,23 +54,23 @@
 - (void)handleCallStatusChangedForProxyCall:(id)arg1;
 - (void)handleCurrentProxyCallsChanged:(id)arg1;
 - (void)handleDisconnectedReasonChangedTo:(int)arg1 forCallWithUUID:(id)arg2;
-- (void)handleEndpointOnCurrentDeviceChangedTo:(bool)arg1 forCallWithUUID:(id)arg2;
+- (void)handleEndpointOnCurrentDeviceChangedTo:(BOOL)arg1 forCallWithUUID:(id)arg2;
 - (void)handleHardPauseDigitsAvailibilityChangedTo:(unsigned short)arg1 digits:(id)arg2;
 - (void)handleLocalFrequencyChangedTo:(id)arg1;
-- (void)handleMutedChangedTo:(bool)arg1;
+- (void)handleMutedChangedTo:(BOOL)arg1;
 - (void)handleRelayCallingCapabilitiesChanged:(id)arg1;
 - (void)handleRemoteFrequencyChangedTo:(id)arg1;
-- (void)handleShouldSuppressRingtoneChangedTo:(bool)arg1 forCallWithUUID:(id)arg2;
-- (void)handleWantsHoldMusicChangedTo:(bool)arg1 forCallWithUUID:(id)arg2;
+- (void)handleShouldSuppressRingtoneChangedTo:(BOOL)arg1 forCallWithUUID:(id)arg2;
+- (void)handleWantsHoldMusicChangedTo:(BOOL)arg1 forCallWithUUID:(id)arg2;
 - (void)holdCall:(id)arg1;
 - (id)init;
-- (bool)isMuted;
+- (BOOL)isMuted;
 - (id)localFrequency;
 - (void)muteCall:(id)arg1;
 - (void)playDTMFToneForCall:(id)arg1 key:(unsigned char)arg2;
 - (id)proxyCallModel;
-- (bool)relayableClientDeviceExists;
-- (bool)relayableHostDeviceExists;
+- (BOOL)relayableClientDeviceExists;
+- (BOOL)relayableHostDeviceExists;
 - (id)remoteFrequency;
 - (void)requestHandoffForAllCalls;
 - (void)requestPendingCallNotifications;
@@ -79,15 +79,15 @@
 - (void)setCurrentProxyCalls:(id)arg1;
 - (void)setDaemonDelegate:(id)arg1;
 - (void)setDisconnectedReason:(int)arg1 forCall:(id)arg2;
-- (void)setEndpointOnCurrentDevice:(bool)arg1 forCall:(id)arg2;
-- (void)setIsSendingAudio:(bool)arg1 forCall:(id)arg2;
+- (void)setEndpointOnCurrentDevice:(BOOL)arg1 forCall:(id)arg2;
+- (void)setIsSendingAudio:(BOOL)arg1 forCall:(id)arg2;
 - (void)setLocalFrequency:(id)arg1;
-- (void)setMuted:(bool)arg1;
+- (void)setMuted:(BOOL)arg1;
 - (void)setProxyCallModel:(id)arg1;
-- (void)setRelayCallingEnabled:(bool)arg1;
+- (void)setRelayCallingEnabled:(BOOL)arg1;
 - (void)setRemoteFrequency:(id)arg1;
-- (void)setShouldSuppressRingtone:(bool)arg1 forCall:(id)arg2;
-- (void)setWantsHoldMusic:(bool)arg1 forCall:(id)arg2;
+- (void)setShouldSuppressRingtone:(BOOL)arg1 forCall:(id)arg2;
+- (void)setWantsHoldMusic:(BOOL)arg1 forCall:(id)arg2;
 - (void)setXpcConnection:(id)arg1;
 - (void)swapCalls;
 - (void)unconferenceCall:(id)arg1;

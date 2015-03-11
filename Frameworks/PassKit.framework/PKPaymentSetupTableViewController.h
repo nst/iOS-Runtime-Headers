@@ -6,33 +6,33 @@
 
 @interface PKPaymentSetupTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     UIView *_containerView;
-    long long _context;
-    long long _style;
+    int _context;
+    int _style;
     UITableView *_tableView;
     UITableViewController *_tableViewController;
 }
 
-@property long long context;
+@property int context;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly) UITableView * tableView;
 
-- (long long)context;
+- (int)context;
 - (void)dealloc;
-- (unsigned long long)edgesForExtendedLayout;
-- (bool)extendedLayoutIncludesOpaqueBars;
-- (id)initWithStyle:(long long)arg1 context:(long long)arg2;
+- (unsigned int)edgesForExtendedLayout;
+- (BOOL)extendedLayoutIncludesOpaqueBars;
+- (id)initWithStyle:(int)arg1 context:(int)arg2;
 - (void)loadView;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)setContext:(long long)arg1;
+- (void)setContext:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView;
-- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

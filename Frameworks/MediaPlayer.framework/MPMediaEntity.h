@@ -8,41 +8,41 @@
     MIPMultiverseIdentifier *_multiverseIdentifier;
 }
 
-@property(readonly) bool hasDeletableContent;
-@property(readonly) bool isDownloadable;
-@property(readonly) bool isDownloadableStoreOffer;
-@property(readonly) bool isPurchasableStoreOffer;
+@property(readonly) BOOL hasDeletableContent;
+@property(readonly) BOOL isDownloadable;
+@property(readonly) BOOL isDownloadableStoreOffer;
+@property(readonly) BOOL isPurchasableStoreOffer;
 @property(readonly) MPMediaLibrary * mediaLibrary;
 @property(readonly) MIPMultiverseIdentifier * multiverseIdentifier;
 @property(readonly) unsigned long long persistentID;
-@property(readonly) long long preferredStoreOfferVariant;
+@property(readonly) int preferredStoreOfferVariant;
 @property(readonly) MPMediaItem * representativeItem;
 
-+ (bool)canFilterByProperty:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)canFilterByProperty:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)buyOffer;
-- (id)buyOfferForVariant:(long long)arg1;
+- (id)buyOfferForVariant:(int)arg1;
 - (id)cachedValueForProperty:(id)arg1;
-- (id)completionOfferForVariant:(long long)arg1;
+- (id)completionOfferForVariant:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
-- (bool)hasDeletableContent;
-- (unsigned long long)hash;
+- (BOOL)hasDeletableContent;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMultiverseIdentifier:(id)arg1;
 - (void)invalidateCachedProperties;
-- (bool)isDownloadable;
-- (bool)isDownloadableStoreOffer;
-- (bool)isEqual:(id)arg1;
-- (bool)isPurchasableStoreOffer;
+- (BOOL)isDownloadable;
+- (BOOL)isDownloadableStoreOffer;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isPurchasableStoreOffer;
 - (id)mediaLibrary;
 - (id)multiverseIdentifier;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (unsigned long long)persistentID;
-- (long long)preferredStoreOfferVariant;
+- (int)preferredStoreOfferVariant;
 - (id)representativeItem;
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;

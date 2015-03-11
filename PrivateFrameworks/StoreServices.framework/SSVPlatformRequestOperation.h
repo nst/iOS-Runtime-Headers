@@ -16,7 +16,7 @@
     NSString *_imageProfile;
     NSArray *_itemIdentifiers;
     NSString *_keyProfile;
-    long long _personalizationStyle;
+    int _personalizationStyle;
     id _responseBlock;
     NSString *_storeFrontSuffix;
     NSNumber *_timeoutInterval;
@@ -26,7 +26,7 @@
 @property(copy) NSString * imageProfile;
 @property(copy) NSArray * itemIdentifiers;
 @property(copy) NSString * keyProfile;
-@property long long personalizationStyle;
+@property int personalizationStyle;
 @property(copy) id responseBlock;
 @property(copy) NSString * storeFrontSuffix;
 @property(copy) NSNumber * timeoutInterval;
@@ -38,7 +38,7 @@
 - (id)_lookupWithRequest:(id)arg1 error:(id*)arg2;
 - (void)_makeLocalJSSignRequest;
 - (void)_makeLocalMescalRequest;
-- (void)_makeLookupRequestWithPersonalizationStyle:(long long)arg1;
+- (void)_makeLookupRequestWithPersonalizationStyle:(int)arg1;
 - (void)_setCaller:(id)arg1;
 - (void)_setUserAgent:(id)arg1;
 - (id)imageProfile;
@@ -47,12 +47,12 @@
 - (id)itemIdentifiers;
 - (id)keyProfile;
 - (void)main;
-- (long long)personalizationStyle;
+- (int)personalizationStyle;
 - (id)responseBlock;
 - (void)setImageProfile:(id)arg1;
 - (void)setItemIdentifiers:(id)arg1;
 - (void)setKeyProfile:(id)arg1;
-- (void)setPersonalizationStyle:(long long)arg1;
+- (void)setPersonalizationStyle:(int)arg1;
 - (void)setResponseBlock:(id)arg1;
 - (void)setStoreFrontSuffix:(id)arg1;
 - (void)setTimeoutInterval:(id)arg1;

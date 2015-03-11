@@ -6,42 +6,42 @@
 
 @interface VSVoiceAsset : NSObject <NSSecureCoding> {
     NSNumber *_contentVersion;
-    long long _footprint;
-    long long _gender;
+    int _footprint;
+    int _gender;
+    BOOL _isBuiltInVoice;
+    BOOL _isInstalled;
     NSArray *_languages;
     NSString *_masteredVersion;
     NSString *_name;
-    bool_isBuiltInVoice;
-    bool_isInstalled;
 }
 
 @property(readonly) NSNumber * contentVersion;
-@property(readonly) long long footprint;
-@property(readonly) long long gender;
-@property bool isBuiltInVoice;
-@property(readonly) bool isInstalled;
+@property(readonly) int footprint;
+@property(readonly) int gender;
+@property BOOL isBuiltInVoice;
+@property(readonly) BOOL isInstalled;
 @property(readonly) NSArray * languages;
 @property(readonly) NSString * masteredVersion;
 @property(readonly) NSString * name;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)contentVersion;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)footprint;
-- (long long)gender;
+- (int)footprint;
+- (int)gender;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(long long)arg3 footprint:(long long)arg4 contentVersion:(id)arg5 masteredVersion:(id)arg6 isInstalled:(bool)arg7;
-- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(long long)arg3 footprint:(long long)arg4 isInstalled:(bool)arg5;
-- (bool)isBuiltInVoice;
-- (bool)isInstalled;
+- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(int)arg3 footprint:(int)arg4 contentVersion:(id)arg5 masteredVersion:(id)arg6 isInstalled:(BOOL)arg7;
+- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(int)arg3 footprint:(int)arg4 isInstalled:(BOOL)arg5;
+- (BOOL)isBuiltInVoice;
+- (BOOL)isInstalled;
 - (id)languages;
 - (id)masteredVersion;
 - (id)name;
-- (void)setIsBuiltInVoice:(bool)arg1;
+- (void)setIsBuiltInVoice:(BOOL)arg1;
 
 @end

@@ -7,10 +7,10 @@
 @interface _MPUSharedLibrariesViewController : UITableViewController {
     MPMediaLibrary *_connectingMediaLibrary;
     NSArray *_sharedMediaLibraries;
-    bool_showsLocalLibrary;
+    BOOL _showsLocalLibrary;
 }
 
-@property bool showsLocalLibrary;
+@property BOOL showsLocalLibrary;
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
@@ -26,12 +26,12 @@
 - (void)_updateNavigationPrompt;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)setShowsLocalLibrary:(bool)arg1;
-- (bool)showsLocalLibrary;
-- (unsigned long long)supportedInterfaceOrientations;
+- (void)setShowsLocalLibrary:(BOOL)arg1;
+- (BOOL)showsLocalLibrary;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (void)viewWillAppear:(bool)arg1;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

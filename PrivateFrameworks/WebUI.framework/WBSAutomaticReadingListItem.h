@@ -6,9 +6,11 @@
 
 @interface WBSAutomaticReadingListItem : NSObject {
     UIImage *_fallbackProfileImage;
+    BOOL _fetchingProfileImage;
     NSString *_originatorDisplayName;
     id _originatorID;
     UIImage *_originatorProfileImage;
+    BOOL _repostedByAuthenticatedUser;
     NSString *_reposterDisplayName;
     NSString *_reposterScreenName;
     NSString *_socialSourceAccountIdentifier;
@@ -17,24 +19,22 @@
     NSString *_sourceRecordText;
     NSString *_uniqueIdentifier;
     NSString *_urlString;
-    bool_fetchingProfileImage;
-    bool_repostedByAuthenticatedUser;
 }
 
 @property(readonly) NSURL * biggerOriginatorProfileImageURL;
 @property(readonly) NSString * continuousBannerDisplayString;
 @property(readonly) NSString * continuousBannerTitle;
 @property(readonly) NSString * displayString;
-@property(readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } displayURLRange;
+@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } displayURLRange;
 @property(readonly) NSString * domainString;
-@property(readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } emphasizedTextRange;
-@property bool fetchingProfileImage;
+@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } emphasizedTextRange;
+@property BOOL fetchingProfileImage;
 @property(copy,readonly) NSString * originatorDisplayName;
 @property(copy,readonly) id originatorID;
 @property(retain) UIImage * originatorProfileImage;
 @property(readonly) NSURL * originatorProfileImageURL;
 @property(readonly) NSURL * originatorProfileURL;
-@property(getter=isRepostedByAuthenticatedUser) bool repostedByAuthenticatedUser;
+@property(getter=isRepostedByAuthenticatedUser) BOOL repostedByAuthenticatedUser;
 @property(readonly) NSString * reposterDisplayName;
 @property(readonly) NSString * reposterScreenName;
 @property(readonly) WBSAutomaticReadingListSocialSource * socialSource;
@@ -49,23 +49,23 @@
 + (id)keyPathsForValuesAffectingDomainString;
 
 - (void).cxx_destruct;
-- (void)_fetchOriginatorProfileImageForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_fetchOriginatorProfileImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_getFallbackImage;
-- (id)bestOriginatorProfileImageForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)bestOriginatorProfileImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)biggerOriginatorProfileImageURL;
 - (id)continuousBannerDisplayString;
 - (id)continuousBannerTitle;
 - (id)description;
 - (id)displayString;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })displayURLRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })displayURLRange;
 - (id)domainString;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })emphasizedTextRange;
-- (bool)fetchingProfileImage;
-- (unsigned long long)hash;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })emphasizedTextRange;
+- (BOOL)fetchingProfileImage;
+- (unsigned int)hash;
 - (id)initWithDictionary:(id)arg1 socialSourceAccountIdentifier:(id)arg2;
-- (bool)isAcceptableOriginatorProfileImage:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isRepostedByAuthenticatedUser;
+- (BOOL)isAcceptableOriginatorProfileImage:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isRepostedByAuthenticatedUser;
 - (id)originatorDisplayName;
 - (id)originatorID;
 - (id)originatorProfileImage;
@@ -73,9 +73,9 @@
 - (id)originatorProfileURL;
 - (id)reposterDisplayName;
 - (id)reposterScreenName;
-- (void)setFetchingProfileImage:(bool)arg1;
+- (void)setFetchingProfileImage:(BOOL)arg1;
 - (void)setOriginatorProfileImage:(id)arg1;
-- (void)setRepostedByAuthenticatedUser:(bool)arg1;
+- (void)setRepostedByAuthenticatedUser:(BOOL)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (id)socialSource;
 - (id)socialSourceAccountIdentifier;

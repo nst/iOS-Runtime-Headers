@@ -6,20 +6,20 @@
 
 @interface HMDActionSet : NSObject <HMMessageReceiver, NSSecureCoding> {
     NSMutableArray *_currentActions;
+    BOOL _executionInProgress;
     HMDHome *_home;
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
-    bool_executionInProgress;
 }
 
 @property(readonly) NSArray * actions;
 @property(retain) NSMutableArray * currentActions;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool executionInProgress;
-@property(readonly) unsigned long long hash;
+@property BOOL executionInProgress;
+@property(readonly) unsigned int hash;
 @property HMDHome * home;
 @property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
 @property(readonly) NSUUID * messageTargetUUID;
@@ -29,7 +29,7 @@
 @property(readonly) NSUUID * uuid;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_execute:(id)arg1 writeRequestTuples:(id)arg2;
@@ -47,7 +47,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)execute:(id)arg1;
 - (void)executeWithTriggerSource:(id)arg1;
-- (bool)executionInProgress;
+- (BOOL)executionInProgress;
 - (void)fixupActionsForReplacementAccessory:(id)arg1;
 - (id)home;
 - (id)initWithCoder:(id)arg1;
@@ -61,7 +61,7 @@
 - (void)removeActionForCharacteristic:(id)arg1;
 - (void)removeService:(id)arg1;
 - (void)setCurrentActions:(id)arg1;
-- (void)setExecutionInProgress:(bool)arg1;
+- (void)setExecutionInProgress:(BOOL)arg1;
 - (void)setHome:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;

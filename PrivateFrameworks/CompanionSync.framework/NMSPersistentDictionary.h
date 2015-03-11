@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (id)_dataFromObject:(id)arg1;
 - (id)_objectFromData:(id)arg1;
-- (void)_openDBForceRecreate:(bool)arg1;
+- (void)_openDBForceRecreate:(BOOL)arg1;
 - (void)dealloc;
 - (void)enumerateObjectsSortedByExpirationDate:(id)arg1;
 - (id)init;

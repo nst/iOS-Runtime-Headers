@@ -5,9 +5,9 @@
 @class OADRelativeRect;
 
 @interface OADPathShade : OADShade {
-    boolmIsFillToRectOverridden;
-    boolmIsTypeOverridden;
     OADRelativeRect *mFillToRect;
+    BOOL mIsFillToRectOverridden;
+    BOOL mIsTypeOverridden;
     int mType;
 }
 
@@ -16,11 +16,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)fillToRect;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithDefaults;
-- (bool)isEqual:(id)arg1;
-- (bool)isFillToRectOverridden;
-- (bool)isTypeOverridden;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isFillToRectOverridden;
+- (BOOL)isTypeOverridden;
 - (void)setFillToRect:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;

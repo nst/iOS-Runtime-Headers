@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface SGEntityTag : NSObject <NSCopying> {
+    BOOL _indexed;
     NSString *_name;
-    bool_indexed;
-    bool_stored;
+    BOOL _stored;
 }
 
-@property(readonly) bool indexed;
+@property(readonly) BOOL indexed;
 @property(readonly) NSString * name;
-@property(readonly) bool stored;
+@property(readonly) BOOL stored;
 
 + (id)allDay;
 + (id)contactDetail:(id)arg1;
@@ -41,7 +41,7 @@
 + (void)initialize;
 + (id)messageWithMessageIdHash:(long long)arg1 fromSource:(id)arg2;
 + (id)remember:(id)arg1;
-+ (void)rememberPrefix:(id)arg1 stored:(bool)arg2 indexed:(bool)arg3;
++ (void)rememberPrefix:(id)arg1 stored:(BOOL)arg2 indexed:(BOOL)arg3;
 + (id)resolveName:(id)arg1;
 + (id)tagForPrefix:(id)arg1 value:(id)arg2;
 + (id)testTag:(int)arg1;
@@ -50,17 +50,17 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned long long)hash;
-- (bool)indexed;
-- (id)initWithName:(id)arg1 stored:(bool)arg2 indexed:(bool)arg3;
-- (bool)isContactDetail;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToEntityTag:(id)arg1;
-- (bool)isExtraKey;
-- (bool)isTemplateShortName;
-- (bool)isUrl;
+- (unsigned int)hash;
+- (BOOL)indexed;
+- (id)initWithName:(id)arg1 stored:(BOOL)arg2 indexed:(BOOL)arg3;
+- (BOOL)isContactDetail;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToEntityTag:(id)arg1;
+- (BOOL)isExtraKey;
+- (BOOL)isTemplateShortName;
+- (BOOL)isUrl;
 - (id)name;
-- (bool)stored;
+- (BOOL)stored;
 - (id)value;
 
 @end

@@ -10,19 +10,19 @@
 
 @interface CKFetchNotificationChangesOperation : CKOperation {
     id _fetchNotificationChangesCompletionBlock;
+    BOOL _moreComing;
     id _notificationChangedBlock;
     CKServerChangeToken *_previousServerChangeToken;
     CKServerChangeToken *_resultServerChangeToken;
-    unsigned long long _resultsLimit;
-    bool_moreComing;
+    unsigned int _resultsLimit;
 }
 
 @property(copy) id fetchNotificationChangesCompletionBlock;
-@property(readonly) bool moreComing;
+@property(readonly) BOOL moreComing;
 @property(copy) id notificationChangedBlock;
 @property(copy) CKServerChangeToken * previousServerChangeToken;
 @property(retain) CKServerChangeToken * resultServerChangeToken;
-@property unsigned long long resultsLimit;
+@property unsigned int resultsLimit;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -31,16 +31,16 @@
 - (id)fetchNotificationChangesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)initWithPreviousServerChangeToken:(id)arg1;
-- (bool)moreComing;
+- (BOOL)moreComing;
 - (id)notificationChangedBlock;
 - (void)performCKOperation;
 - (id)previousServerChangeToken;
 - (id)resultServerChangeToken;
-- (unsigned long long)resultsLimit;
+- (unsigned int)resultsLimit;
 - (void)setFetchNotificationChangesCompletionBlock:(id)arg1;
 - (void)setNotificationChangedBlock:(id)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
 - (void)setResultServerChangeToken:(id)arg1;
-- (void)setResultsLimit:(unsigned long long)arg1;
+- (void)setResultsLimit:(unsigned int)arg1;
 
 @end

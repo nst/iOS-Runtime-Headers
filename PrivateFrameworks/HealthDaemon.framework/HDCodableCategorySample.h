@@ -12,8 +12,8 @@
     long long _value;
 }
 
-@property(readonly) bool hasSample;
-@property bool hasValue;
+@property(readonly) BOOL hasSample;
+@property BOOL hasValue;
 @property(retain) HDCodableSample * sample;
 @property long long value;
 
@@ -22,14 +22,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasSample;
-- (bool)hasValue;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasSample;
+- (BOOL)hasValue;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)sample;
-- (void)setHasValue:(bool)arg1;
+- (void)setHasValue:(BOOL)arg1;
 - (void)setSample:(id)arg1;
 - (void)setValue:(long long)arg1;
 - (long long)value;

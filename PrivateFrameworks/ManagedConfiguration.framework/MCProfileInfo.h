@@ -20,7 +20,7 @@
 @property(retain) NSString * organization;
 @property(retain) NSString * profileDescription;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;

@@ -8,21 +8,21 @@
     NSString *_checksum;
     NSArray *_equivalentResources;
     NSString *_name;
-    long long _type;
+    int _type;
 }
 
 @property(readonly) NSString * checksum;
 @property(copy) NSArray * equivalentResources;
 @property(readonly) NSString * name;
-@property(readonly) long long type;
+@property(readonly) int type;
 
 - (id)checksum;
 - (void)dealloc;
 - (id)description;
 - (id)equivalentResources;
-- (id)initWithName:(id)arg1 type:(long long)arg2 checksum:(id)arg3;
+- (id)initWithName:(id)arg1 type:(int)arg2 checksum:(id)arg3;
 - (id)name;
 - (void)setEquivalentResources:(id)arg1;
-- (long long)type;
+- (int)type;
 
 @end

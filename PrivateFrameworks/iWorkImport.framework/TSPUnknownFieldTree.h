@@ -9,7 +9,7 @@
 }
 
 - (void).cxx_destruct;
-- (bool)addUnknownField:(id)arg1;
+- (BOOL)addUnknownField:(id)arg1;
 - (id)init;
 - (void)saveToArchiver:(id)arg1;
 

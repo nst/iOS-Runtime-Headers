@@ -9,8 +9,8 @@
 }
 
 - (void)dealloc;
-- (void)enumerateTokensInString:(id)arg1 withOptions:(long long)arg2 block:(id)arg3;
+- (void)enumerateTokensInString:(id)arg1 withOptions:(int)arg2 block:(id)arg3;
 - (id)init;
-- (id)newTokensFromString:(id)arg1 withOptions:(long long)arg2 outCopyRanges:(id*)arg3;
+- (id)newTokensFromString:(id)arg1 withOptions:(int)arg2 outCopyRanges:(id*)arg3;
 
 @end

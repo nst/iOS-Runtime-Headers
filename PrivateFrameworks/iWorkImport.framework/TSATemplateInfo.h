@@ -12,8 +12,8 @@
 @property(copy) NSString * displayName;
 @property(readonly) NSURL * documentURL;
 @property(readonly) NSString * identifier;
-@property(readonly) bool isAvailable;
-@property(readonly) bool isUserTemplate;
+@property(readonly) BOOL isAvailable;
+@property(readonly) BOOL isUserTemplate;
 @property(readonly) NSBundle * localizationBundle;
 @property(readonly) NSURL * previewImageURL;
 
@@ -22,8 +22,8 @@
 - (id)documentURL;
 - (id)identifier;
 - (id)initWithDisplayName:(id)arg1;
-- (bool)isAvailable;
-- (bool)isUserTemplate;
+- (BOOL)isAvailable;
+- (BOOL)isUserTemplate;
 - (id)localizationBundle;
 - (id)makeIdentifier;
 - (void)prepareForNewDocumentWithQueue:(id)arg1 completionHandler:(id)arg2;

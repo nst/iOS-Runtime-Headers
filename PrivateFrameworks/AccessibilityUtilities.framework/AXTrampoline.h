@@ -10,12 +10,12 @@
 @interface AXTrampoline : NSObject {
     id _caller;
     Class _targetClass;
-    bool_warnAboutUnknownSelectors;
+    BOOL _warnAboutUnknownSelectors;
 }
 
 @property id caller;
 @property Class targetClass;
-@property bool warnAboutUnknownSelectors;
+@property BOOL warnAboutUnknownSelectors;
 
 + (void)methodDoesNotExistSentinal;
 + (id)methodNotFoundSentinal;
@@ -23,7 +23,7 @@
 
 - (int (*)())_findIMPForSelector:(SEL)arg1;
 - (id)caller;
-- (bool)callerIsClass;
+- (BOOL)callerIsClass;
 - (void)dealloc;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
@@ -31,8 +31,8 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)setCaller:(id)arg1;
 - (void)setTargetClass:(Class)arg1;
-- (void)setWarnAboutUnknownSelectors:(bool)arg1;
+- (void)setWarnAboutUnknownSelectors:(BOOL)arg1;
 - (Class)targetClass;
-- (bool)warnAboutUnknownSelectors;
+- (BOOL)warnAboutUnknownSelectors;
 
 @end

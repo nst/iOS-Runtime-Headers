@@ -29,7 +29,7 @@
 - (id)p_customFormatList;
 - (id)p_documentRoot;
 - (id)p_formatObjectForCustomFormat:(id)arg1 customFormatID:(unsigned int)arg2;
-- (bool)process;
+- (BOOL)process;
 - (void)redo;
 - (id)replacementFormat;
 - (void)saveToArchive:(struct ReplaceCustomFormatCommandArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct CommandArchive {} *x3; struct CustomFormatArchive {} *x4; struct FormatStructArchive {} *x5; unsigned int x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;

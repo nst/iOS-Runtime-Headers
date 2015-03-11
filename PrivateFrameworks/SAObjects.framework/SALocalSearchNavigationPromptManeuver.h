@@ -15,7 +15,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)maneuverIndex;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setManeuverIndex:(id)arg1;
 
 @end

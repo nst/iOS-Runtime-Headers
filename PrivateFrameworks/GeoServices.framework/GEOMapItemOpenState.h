@@ -5,6 +5,6 @@
 @interface GEOMapItemOpenState : NSObject {
 }
 
-+ (unsigned long long)_geoMapItemOpeningHoursOptionsForOperatingHours:(id)arg1 withTimeZone:(id)arg2 andCompareDate:(id)arg3 hasOperatingHoursOnAnyDayOfTheWeek:(bool)arg4;
++ (unsigned int)_geoMapItemOpeningHoursOptionsForOperatingHours:(id)arg1 withTimeZone:(id)arg2 andCompareDate:(id)arg3 hasOperatingHoursOnAnyDayOfTheWeek:(BOOL)arg4;
 
 @end

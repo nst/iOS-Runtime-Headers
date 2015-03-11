@@ -3,16 +3,16 @@
  */
 
 @interface XPCDetailedSignature : NSObject {
-    unsigned long long _argumentCount;
+    unsigned int _argumentCount;
     Class *_classes;
 }
 
-+ (id)signatureWithArgumentCount:(unsigned long long)arg1 classes:(Class)arg2;
++ (id)signatureWithArgumentCount:(unsigned int)arg1 classes:(Class)arg2;
 + (id)signatureWithoutArguments;
 
-- (Class)argumentClassAtIndex:(unsigned long long)arg1;
+- (Class)argumentClassAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (id)initWithArgumentCount:(unsigned long long)arg1;
-- (void)setClass:(Class)arg1 forArgumentAtIndex:(unsigned long long)arg2;
+- (id)initWithArgumentCount:(unsigned int)arg1;
+- (void)setClass:(Class)arg1 forArgumentAtIndex:(unsigned int)arg2;
 
 @end

@@ -5,21 +5,21 @@
 @class NSDate, NSNumber;
 
 @interface NMSyncDefaults : NSObject {
+    BOOL _assetSyncEnabled;
     NSNumber *_assetSyncLimit;
-    unsigned long long _assetSyncLimitType;
+    unsigned int _assetSyncLimitType;
     NSNumber *_assetSyncPlaylistPersistentID;
     NSNumber *_lastFullySentAssetSyncPlaylistPersistentID;
     NSNumber *_lastFullySentAssetSyncPlaylistVersion;
     NSDate *_modificationDate;
+    BOOL _needsSync;
     int _notifyToken;
     NSNumber *_numberOfSyncedAssetSyncPlaylistSongs;
-    bool_assetSyncEnabled;
-    bool_needsSync;
 }
 
-@property(getter=isAssetSyncEnabled) bool assetSyncEnabled;
+@property(getter=isAssetSyncEnabled) BOOL assetSyncEnabled;
 @property(copy) NSNumber * assetSyncLimit;
-@property unsigned long long assetSyncLimitType;
+@property unsigned int assetSyncLimitType;
 @property(copy) NSNumber * assetSyncPlaylistPersistentID;
 @property(copy) NSNumber * lastFullySentAssetSyncPlaylistPersistentID;
 @property(copy) NSNumber * lastFullySentAssetSyncPlaylistVersion;
@@ -29,25 +29,25 @@
 + (id)sharedDefaults;
 
 - (void).cxx_destruct;
-- (void)_handleRemoteChangeIgnoringSenderPID:(bool)arg1;
+- (void)_handleRemoteChangeIgnoringSenderPID:(BOOL)arg1;
 - (void)_perDeviceSettingsDidResetNotification:(id)arg1;
 - (void)_readDefaults;
 - (void)_setNeedsSynchronize;
 - (void)_writeChanges;
 - (id)assetSyncLimit;
-- (unsigned long long)assetSyncLimitType;
+- (unsigned int)assetSyncLimitType;
 - (id)assetSyncPlaylistPersistentID;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (bool)isAssetSyncEnabled;
+- (BOOL)isAssetSyncEnabled;
 - (id)lastFullySentAssetSyncPlaylistPersistentID;
 - (id)lastFullySentAssetSyncPlaylistVersion;
 - (id)modificationDate;
 - (id)numberOfSyncedAssetSyncPlaylistSongs;
-- (void)setAssetSyncEnabled:(bool)arg1;
+- (void)setAssetSyncEnabled:(BOOL)arg1;
 - (void)setAssetSyncLimit:(id)arg1;
-- (void)setAssetSyncLimitType:(unsigned long long)arg1;
+- (void)setAssetSyncLimitType:(unsigned int)arg1;
 - (void)setAssetSyncPlaylistPersistentID:(id)arg1;
 - (void)setLastFullySentAssetSyncPlaylistPersistentID:(id)arg1;
 - (void)setLastFullySentAssetSyncPlaylistVersion:(id)arg1;

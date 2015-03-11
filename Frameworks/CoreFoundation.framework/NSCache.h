@@ -10,34 +10,34 @@
     void *_reserved;
 }
 
-@property unsigned long long countLimit;
+@property unsigned int countLimit;
 @property <NSCacheDelegate> * delegate;
-@property bool evictsObjectsWithDiscardedContent;
+@property BOOL evictsObjectsWithDiscardedContent;
 @property(copy) NSString * name;
-@property unsigned long long totalCostLimit;
+@property unsigned int totalCostLimit;
 
 - (id)CALobjectForKey:(id)arg1 calculatedWithBlock:(id)arg2;
 - (id)allObjects;
-- (unsigned long long)countLimit;
+- (unsigned int)countLimit;
 - (void)dealloc;
 - (id)delegate;
-- (bool)evictsObjectsWhenApplicationEntersBackground;
-- (bool)evictsObjectsWithDiscardedContent;
+- (BOOL)evictsObjectsWhenApplicationEntersBackground;
+- (BOOL)evictsObjectsWithDiscardedContent;
 - (void)finalize;
 - (id)init;
 - (id)name;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
-- (void)setCountLimit:(unsigned long long)arg1;
+- (void)setCountLimit:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEvictsObjectsWhenApplicationEntersBackground:(bool)arg1;
-- (void)setEvictsObjectsWithDiscardedContent:(bool)arg1;
+- (void)setEvictsObjectsWhenApplicationEntersBackground:(BOOL)arg1;
+- (void)setEvictsObjectsWithDiscardedContent:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned long long)arg3;
+- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (void)setTotalCostLimit:(unsigned long long)arg1;
-- (unsigned long long)totalCostLimit;
+- (void)setTotalCostLimit:(unsigned int)arg1;
+- (unsigned int)totalCostLimit;
 - (void)tsp_cacheComponent:(id)arg1;
 - (id)tsp_currentComponent;
 - (unsigned char)tsp_currentOperation;

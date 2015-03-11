@@ -11,19 +11,19 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) UIBarButtonItem * doneButton;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_frecencySearch;
 - (void)_updateNavigationButton;
-- (bool)alwaysShowSearchResultsTable;
+- (BOOL)alwaysShowSearchResultsTable;
 - (void)dealloc;
 - (id)doneButton;
-- (bool)homogenizePreferredServiceForiMessage;
+- (BOOL)homogenizePreferredServiceForiMessage;
 - (id)initWithConversation:(id)arg1;
 - (void)loadView;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })navigationBarInsetsForRecipientSelectionController:(id)arg1;
-- (bool)peoplePickerShouldUsePopovers;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })navigationBarInsetsForRecipientSelectionController:(id)arg1;
+- (BOOL)peoplePickerShouldUsePopovers;
 - (void)recipientAvailibilitiesDidUpdate;
 - (void)recipientSelectionController:(id)arg1 didFinishAvailaiblityLookupForRecipient:(id)arg2;
 - (void)recipientSelectionController:(id)arg1 textDidChange:(id)arg2;
@@ -33,11 +33,11 @@
 - (void)recipientSelectionControllerRequestDismissKeyboard:(id)arg1;
 - (void)recipientSelectionControllerReturnPressed:(id)arg1;
 - (void)recipientSelectionControllerSearchListDidShowOrHide:(id)arg1;
-- (bool)searchListShouldUsePopvoers;
+- (BOOL)searchListShouldUsePopvoers;
 - (void)setDoneButton:(id)arg1;
-- (bool)shouldAutorotate;
-- (bool)shouldSuppressSearchResultsTable;
+- (BOOL)shouldAutorotate;
+- (BOOL)shouldSuppressSearchResultsTable;
 - (void)viewDidAppearDeferredSetup;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

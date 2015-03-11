@@ -63,7 +63,7 @@
 
 - (id)_className;
 - (void)_connectNativeObject;
-- (bool)_isRestricted;
+- (BOOL)_isRestricted;
 - (void)_launchMusicApp;
 - (void)_launchMusicAppAfterPlayback:(id)arg1 firstItem:(id)arg2;
 - (id)attributeKeys;

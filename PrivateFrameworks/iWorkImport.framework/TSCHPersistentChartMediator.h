@@ -9,13 +9,13 @@
 
 @class NSString, TSCHChartMediator;
 
-@interface TSCHPersistentChartMediator : TSPObject <TSCHMediatorProvider, TSCHNotifyOnModify> {
+@interface TSCHPersistentChartMediator : TSPObject <TSCHNotifyOnModify, TSCHMediatorProvider> {
     TSCHChartMediator *mMediator;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain,readonly) TSCHChartMediator * mediator;
 @property(readonly) Class superclass;
 

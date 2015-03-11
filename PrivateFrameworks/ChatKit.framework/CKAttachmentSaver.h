@@ -6,7 +6,7 @@
 
 @interface CKAttachmentSaver : NSObject {
     NSMutableArray *_attachments;
-    unsigned long long _errorCount;
+    unsigned int _errorCount;
 }
 
 - (void)_done;

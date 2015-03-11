@@ -15,17 +15,17 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) TSCH3DChartElementSceneObject * sceneObject;
 @property(readonly) Class superclass;
 
 + (id)compiledDataForScene:(id)arg1;
 + (id)dataWithTimeSlice:(id)arg1 sceneObject:(id)arg2;
-+ (bool)hasCompiledDataForScene:(id)arg1;
++ (BOOL)hasCompiledDataForScene:(id)arg1;
 + (id)scenePropertiesKey;
 
 - (void)addElementArrays:(id)arg1 compiler:(id)arg2;
-- (bool)compileEntireBuffer;
+- (BOOL)compileEntireBuffer;
 - (id)compiledGeometry;
 - (id)cullBackfacesKeepingIndices:(id)arg1;
 - (struct GeometryResource { int x1; struct ObjcSharedPtr<TSCH3DResource> { id x_2_1_1; } x2; struct GeometryArrays { unsigned int x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; struct ObjcSharedPtr<TSCH3DGeometry> { id x_4_1_1; } x4; })currentGeometryResource;
@@ -38,6 +38,6 @@
 - (void)precalculateTexcoords;
 - (id)sceneObject;
 - (void)setSceneObject:(id)arg1;
-- (bool)transformBuffers;
+- (BOOL)transformBuffers;
 
 @end

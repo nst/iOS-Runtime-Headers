@@ -16,10 +16,10 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)failureDescription;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setFailureDescription:(id)arg1;
 - (void)writeTo:(id)arg1;
 

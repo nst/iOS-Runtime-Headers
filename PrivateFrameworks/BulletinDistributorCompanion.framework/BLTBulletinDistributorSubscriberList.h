@@ -11,7 +11,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
 @property(retain) NSMutableArray * subscribers;
 @property(readonly) Class superclass;
@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (void)_removeSubscribersWithMachServiceName:(id)arg1 exceptFor:(id)arg2;
 - (void)addSubscriber:(id)arg1;
-- (bool)hasSubscribersForSectionID:(id)arg1;
+- (BOOL)hasSubscribersForSectionID:(id)arg1;
 - (id)init;
 - (void)pingWithBulletin:(id)arg1;
 - (id)queue;

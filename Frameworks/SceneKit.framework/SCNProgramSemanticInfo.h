@@ -13,7 +13,7 @@
 @property(copy) NSString * semantic;
 
 + (id)infoWithSemantic:(id)arg1 options:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

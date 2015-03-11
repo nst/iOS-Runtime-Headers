@@ -13,7 +13,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSError * error;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) MPMediaItem * mediaItem;
 @property(retain) SSKeybagRequest * request;
 @property(readonly) Class superclass;

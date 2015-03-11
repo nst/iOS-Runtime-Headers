@@ -3,12 +3,12 @@
  */
 
 @interface HKBiologicalSexObject : NSObject {
-    long long _biologicalSex;
+    int _biologicalSex;
 }
 
-@property(readonly) long long biologicalSex;
+@property(readonly) int biologicalSex;
 
-- (id)_initWithBiologicalSex:(long long)arg1;
-- (long long)biologicalSex;
+- (id)_initWithBiologicalSex:(int)arg1;
+- (int)biologicalSex;
 
 @end

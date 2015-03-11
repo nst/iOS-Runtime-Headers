@@ -5,9 +5,9 @@
 @interface WeatherIconsUtility : NSObject {
 }
 
-+ (id)lookupCenteredSmallWeatherIcons:(long long)arg1;
-+ (id)lookupSmallWeatherIcons:(long long)arg1;
-+ (id)lookupWeatherDescription:(long long)arg1;
-+ (id)lookupWeatherDescriptionShort:(long long)arg1;
++ (id)lookupCenteredSmallWeatherIcons:(int)arg1;
++ (id)lookupSmallWeatherIcons:(int)arg1;
++ (id)lookupWeatherDescription:(int)arg1;
++ (id)lookupWeatherDescriptionShort:(int)arg1;
 
 @end

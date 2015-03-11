@@ -8,13 +8,13 @@
     NSXPCConnection *_connection;
     <PSYConnectionDelegate> *_delegate;
     PSYOptions *_options;
-    bool_valid;
+    BOOL _valid;
 }
 
 @property(retain) NSXPCConnection * connection;
 @property <PSYConnectionDelegate> * delegate;
 @property(retain) PSYOptions * options;
-@property(getter=isValid,readonly) bool valid;
+@property(getter=isValid,readonly) BOOL valid;
 
 - (void).cxx_destruct;
 - (void)_handleConnectionInterruption;
@@ -23,7 +23,7 @@
 - (id)connection;
 - (id)delegate;
 - (id)init;
-- (bool)isValid;
+- (BOOL)isValid;
 - (id)options;
 - (id)remoteConnection;
 - (void)setConnection:(id)arg1;

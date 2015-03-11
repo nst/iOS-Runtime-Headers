@@ -13,21 +13,21 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSObject<OS_dispatch_queue> * serialQueue;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_downloadCompletedForItemID:(id)arg1 etag:(id)arg2 downloadedObject:(id)arg3 error:(id)arg4;
 - (void)_scheduleAllDownloads;
-- (bool)_scheduleDownloadForItem:(id)arg1;
+- (BOOL)_scheduleDownloadForItem:(id)arg1;
 - (id)cancelAllDownloads;
 - (void)cancelDownloadForItemID:(id)arg1;
 - (void)close;
 - (void)dumpToContext:(id)arg1;
 - (id)initWithLocalContainer:(id)arg1;
-- (bool)isDownloadingAddition:(id)arg1;
-- (bool)isDownloadingItemID:(id)arg1;
+- (BOOL)isDownloadingAddition:(id)arg1;
+- (BOOL)isDownloadingItemID:(id)arg1;
 - (id)multiplexerForDesiredKeys:(id)arg1;
 - (void)resume;
 - (id)serialQueue;

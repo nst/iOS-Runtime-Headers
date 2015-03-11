@@ -5,50 +5,50 @@
 @class CBCentralManager, CBPeripheral, NSString;
 
 @interface AMSBTLEPeripheral : NSObject {
-    bool_changingState;
-    boolavailable;
-    boolinputAvailable;
-    boolonline;
-    booloutputAvailable;
-    boolshouldDisconnect;
+    BOOL _changingState;
+    BOOL available;
     CBCentralManager *centralManager;
+    BOOL inputAvailable;
     double lastSeen;
     NSString *name;
+    BOOL online;
+    BOOL outputAvailable;
     CBPeripheral *peripheral;
+    BOOL shouldDisconnect;
     NSString *uuid;
 }
 
-@property(getter=isAvailable) bool available;
-@property(getter=isChangingState) bool changingState;
-@property bool inputAvailable;
+@property(getter=isAvailable) BOOL available;
+@property(getter=isChangingState) BOOL changingState;
+@property BOOL inputAvailable;
 @property double lastSeen;
 @property(retain) NSString * name;
-@property(getter=isOnline) bool online;
-@property bool outputAvailable;
+@property(getter=isOnline) BOOL online;
+@property BOOL outputAvailable;
 @property(readonly) CBPeripheral * peripheral;
 @property(retain,readonly) NSString * uuid;
 
-- (bool)connect;
+- (BOOL)connect;
 - (void)dealloc;
-- (bool)disconnect;
-- (bool)hidden;
+- (BOOL)disconnect;
+- (BOOL)hidden;
 - (id)initWithID:(id)arg1 name:(id)arg2 manager:(id)arg3;
-- (bool)inputAvailable;
-- (bool)isAvailable;
-- (bool)isChangingState;
-- (bool)isOnline;
+- (BOOL)inputAvailable;
+- (BOOL)isAvailable;
+- (BOOL)isChangingState;
+- (BOOL)isOnline;
 - (double)lastSeen;
 - (id)name;
-- (bool)outputAvailable;
+- (BOOL)outputAvailable;
 - (id)peripheral;
-- (void)setAvailable:(bool)arg1;
-- (void)setChangingState:(bool)arg1;
-- (void)setInputAvailable:(bool)arg1;
+- (void)setAvailable:(BOOL)arg1;
+- (void)setChangingState:(BOOL)arg1;
+- (void)setInputAvailable:(BOOL)arg1;
 - (void)setLastSeen:(double)arg1;
 - (void)setName:(id)arg1;
-- (void)setOnline:(bool)arg1;
-- (void)setOutputAvailable:(bool)arg1;
-- (bool)updateAvailableStateChanged;
+- (void)setOnline:(BOOL)arg1;
+- (void)setOutputAvailable:(BOOL)arg1;
+- (BOOL)updateAvailableStateChanged;
 - (id)uuid;
 
 @end

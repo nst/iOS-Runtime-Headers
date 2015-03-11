@@ -6,44 +6,44 @@
 
 @interface KNMotionBlurWrapper : NSObject {
     double _duration;
+    BOOL _isBackFaceCullingEnabled;
     TSDGLMotionBlurEffect *_motionBlurEffect;
     NSMapTable *_objectDataBufferMapTable;
     TSDGLShader *_objectDefaultMotionBlurShader;
     TSDGLShader *_objectDefaultShader;
+    BOOL _shouldDisableMotionBlurFromDefaults;
+    BOOL _shouldDrawMotionBlur;
+    BOOL _shouldDrawTextOnSeparatePass;
+    BOOL _shouldDrawTexturesInReverseOrder;
+    BOOL _shouldFillBackground;
     NSArray *_textures;
-    bool_isBackFaceCullingEnabled;
-    bool_shouldDisableMotionBlurFromDefaults;
-    bool_shouldDrawMotionBlur;
-    bool_shouldDrawTextOnSeparatePass;
-    bool_shouldDrawTexturesInReverseOrder;
-    bool_shouldFillBackground;
 }
 
 @property(readonly) TSDGLMotionBlurEffect * motionBlurEffect;
 @property(readonly) TSDGLShader * objectShader;
-@property bool shouldDrawMotionBlur;
-@property bool shouldDrawTextOnSeparatePass;
-@property bool shouldDrawTexturesInReverseOrder;
+@property BOOL shouldDrawMotionBlur;
+@property BOOL shouldDrawTextOnSeparatePass;
+@property BOOL shouldDrawTexturesInReverseOrder;
 @property(retain) NSArray * textures;
 
-+ (id)newDefaultTextureDrawOptionBlockWithAnimationDict:(id)arg1 pluginContext:(id)arg2 animationContext:(id)arg3 projectionTransform:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg4 animationCacheDict:(id)arg5 animationFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg6;
++ (id)newDefaultTextureDrawOptionBlockWithAnimationDict:(id)arg1 pluginContext:(id)arg2 animationContext:(id)arg3 projectionTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg4 animationCacheDict:(id)arg5 animationFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg6;
 
 - (void)dealloc;
 - (void)drawMotionBlurWithPluginContext:(id)arg1 textureDrawOptionsBlock:(id)arg2 setupCustomShaderBlock:(id)arg3;
-- (id)initWithFramebufferSize:(struct CGSize { double x1; double x2; })arg1 slideSize:(struct CGSize { double x1; double x2; })arg2 textures:(id)arg3 duration:(double)arg4;
+- (id)initWithFramebufferSize:(struct CGSize { float x1; float x2; })arg1 slideSize:(struct CGSize { float x1; float x2; })arg2 textures:(id)arg3 duration:(double)arg4;
 - (id)motionBlurEffect;
 - (id)objectShader;
 - (id)p_drawPassesWithTextures:(id)arg1 textureDrawOptionsMap:(id)arg2;
-- (void)p_setBackFaceCullingEnabled:(bool)arg1;
+- (void)p_setBackFaceCullingEnabled:(BOOL)arg1;
 - (void)p_setupDataBuffers;
-- (id)p_textureDrawOptionsMapTableWithPercent:(double)arg1 isWarmingUp:(bool)arg2 textureDrawOptionsBlock:(id)arg3;
-- (void)setShouldDrawMotionBlur:(bool)arg1;
-- (void)setShouldDrawTextOnSeparatePass:(bool)arg1;
-- (void)setShouldDrawTexturesInReverseOrder:(bool)arg1;
+- (id)p_textureDrawOptionsMapTableWithPercent:(double)arg1 isWarmingUp:(BOOL)arg2 textureDrawOptionsBlock:(id)arg3;
+- (void)setShouldDrawMotionBlur:(BOOL)arg1;
+- (void)setShouldDrawTextOnSeparatePass:(BOOL)arg1;
+- (void)setShouldDrawTexturesInReverseOrder:(BOOL)arg1;
 - (void)setTextures:(id)arg1;
-- (bool)shouldDrawMotionBlur;
-- (bool)shouldDrawTextOnSeparatePass;
-- (bool)shouldDrawTexturesInReverseOrder;
+- (BOOL)shouldDrawMotionBlur;
+- (BOOL)shouldDrawTextOnSeparatePass;
+- (BOOL)shouldDrawTexturesInReverseOrder;
 - (id)textures;
 
 @end

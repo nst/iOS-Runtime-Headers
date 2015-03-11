@@ -14,7 +14,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)sharedURLSession;
@@ -24,8 +24,8 @@
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (id)_URLSession;
-- (bool)_isRecoverableError:(id)arg1;
-- (bool)_unsafe_retryTaskIfPossible:(id)arg1;
+- (BOOL)_isRecoverableError:(id)arg1;
+- (BOOL)_unsafe_retryTaskIfPossible:(id)arg1;
 - (void)beginDataTaskWithRequest:(id)arg1 completionHandler:(id)arg2;
 - (void)beginDataTaskWithURL:(id)arg1 completionHandler:(id)arg2;
 - (id)init;

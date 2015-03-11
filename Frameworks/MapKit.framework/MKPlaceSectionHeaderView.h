@@ -12,8 +12,8 @@
     NSString *_sectionHeaderText;
     _MKRightImageButton *_seeMoreButton;
     NSArray *_seeMoreButtonConstraints;
+    BOOL _showSeeMoreButton;
     id _target;
-    bool_showSeeMoreButton;
 }
 
 @property SEL action;
@@ -23,17 +23,17 @@
 @property(copy) NSString * sectionHeaderText;
 @property(retain) _MKRightImageButton * seeMoreButton;
 @property(retain) NSArray * seeMoreButtonConstraints;
-@property bool showSeeMoreButton;
+@property BOOL showSeeMoreButton;
 @property id target;
 
-+ (double)intrinsicContentHeight;
++ (float)intrinsicContentHeight;
 
 - (void).cxx_destruct;
 - (SEL)action;
 - (id)chevronImage;
 - (void)contentSizeDidChange;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)noSeeMoreButtonConstraints;
 - (id)scaledConstraints;
 - (id)sectionHeaderLabel;
@@ -47,10 +47,10 @@
 - (void)setSectionHeaderText:(id)arg1;
 - (void)setSeeMoreButton:(id)arg1;
 - (void)setSeeMoreButtonConstraints:(id)arg1;
-- (void)setShowSeeMoreButton:(bool)arg1;
+- (void)setShowSeeMoreButton:(BOOL)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (void)setTarget:(id)arg1;
-- (bool)showSeeMoreButton;
+- (BOOL)showSeeMoreButton;
 - (id)target;
 - (void)updateConstraints;
 

@@ -3,13 +3,13 @@
  */
 
 @interface TKPickerRowItem : TKPickerItem {
-    long long _row;
+    int _row;
 }
 
-@property long long row;
+@property int row;
 
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
-- (void)_setRow:(long long)arg1;
-- (long long)row;
+- (void)_setRow:(int)arg1;
+- (int)row;
 
 @end

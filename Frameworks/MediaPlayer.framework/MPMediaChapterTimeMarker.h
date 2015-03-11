@@ -5,21 +5,21 @@
 @class NSArray;
 
 @interface MPMediaChapterTimeMarker : MPTimeMarker {
-    unsigned long long _chapterIndex;
+    unsigned int _chapterIndex;
     NSArray *_chapters;
-    bool_hasArtworkAtPlaybackTime;
+    BOOL _hasArtworkAtPlaybackTime;
 }
 
-@property unsigned long long chapterIndex;
+@property unsigned int chapterIndex;
 @property(retain) NSArray * chapters;
-@property bool hasArtworkAtPlaybackTime;
+@property BOOL hasArtworkAtPlaybackTime;
 
 - (void).cxx_destruct;
-- (unsigned long long)chapterIndex;
+- (unsigned int)chapterIndex;
 - (id)chapters;
-- (bool)hasArtworkAtPlaybackTime;
-- (void)setChapterIndex:(unsigned long long)arg1;
+- (BOOL)hasArtworkAtPlaybackTime;
+- (void)setChapterIndex:(unsigned int)arg1;
 - (void)setChapters:(id)arg1;
-- (void)setHasArtworkAtPlaybackTime:(bool)arg1;
+- (void)setHasArtworkAtPlaybackTime:(BOOL)arg1;
 
 @end

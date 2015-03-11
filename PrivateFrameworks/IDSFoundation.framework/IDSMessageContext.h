@@ -12,19 +12,19 @@
 @property(retain) id boostContext;
 @property long long broadcastID;
 @property NSNumber * broadcastTime;
-@property bool expectsPeerResponse;
+@property BOOL expectsPeerResponse;
 @property(copy) NSString * incomingResponseIdentifier;
 @property NSNumber * originalCommand;
 @property(copy) NSString * outgoingResponseIdentifier;
 @property NSNumber * priority;
 @property(copy) NSString * storageGuid;
-@property bool wantsAppAck;
+@property BOOL wantsAppAck;
 
 - (id)boostContext;
 - (long long)broadcastID;
 - (id)broadcastTime;
 - (void)dealloc;
-- (bool)expectsPeerResponse;
+- (BOOL)expectsPeerResponse;
 - (id)incomingResponseIdentifier;
 - (id)initWithDictionary:(id)arg1 boostContext:(id)arg2;
 - (id)nfmDescription;
@@ -37,15 +37,15 @@
 - (void)setBoostContext:(id)arg1;
 - (void)setBroadcastID:(long long)arg1;
 - (void)setBroadcastTime:(id)arg1;
-- (void)setExpectsPeerResponse:(bool)arg1;
+- (void)setExpectsPeerResponse:(BOOL)arg1;
 - (void)setIncomingResponseIdentifier:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setOriginalCommand:(id)arg1;
 - (void)setOutgoingResponseIdentifier:(id)arg1;
 - (void)setPriority:(id)arg1;
 - (void)setStorageGuid:(id)arg1;
-- (void)setWantsAppAck:(bool)arg1;
+- (void)setWantsAppAck:(BOOL)arg1;
 - (id)storageGuid;
-- (bool)wantsAppAck;
+- (BOOL)wantsAppAck;
 
 @end

@@ -5,6 +5,6 @@
 @interface PKPaymentCredentialEligibilityRequest : PKPaymentWebServiceRequest {
 }
 
-+ (id)requestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 credential:(id)arg3 account:(id)arg4 certChain:(id)arg5 devSigned:(bool)arg6;
++ (id)requestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 credential:(id)arg3 account:(id)arg4 certChain:(id)arg5 devSigned:(BOOL)arg6;
 
 @end

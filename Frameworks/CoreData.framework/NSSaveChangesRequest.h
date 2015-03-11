@@ -6,7 +6,7 @@
 
 @interface NSSaveChangesRequest : NSPersistentStoreRequest {
     NSSet *_deletedObjects;
-    unsigned long long _flags;
+    unsigned long _flags;
     NSSet *_insertedObjects;
     NSSet *_optimisticallyLockedObjects;
     void *_reserved1;
@@ -25,12 +25,12 @@
 - (void)dealloc;
 - (id)deletedObjects;
 - (id)description;
-- (bool)hasChanges;
+- (BOOL)hasChanges;
 - (id)init;
 - (id)initWithInsertedObjects:(id)arg1 updatedObjects:(id)arg2 deletedObjects:(id)arg3 lockedObjects:(id)arg4;
 - (id)insertedObjects;
 - (id)lockedObjects;
-- (unsigned long long)requestType;
+- (unsigned int)requestType;
 - (void)setDeletedObjects:(id)arg1;
 - (id)updatedObjects;
 

@@ -3,27 +3,27 @@
  */
 
 @interface _UIUserNotificationAlertView : UIAlertView {
+    BOOL _runningModal;
+    BOOL _runsModal;
     id _strongDelegate;
     struct __CFUserNotification { } *_userNotification;
     struct __CFRunLoopSource { } *_userNotificationRunLoopSource;
-    bool_runningModal;
-    bool_runsModal;
 }
 
 + (void)initialize;
 
 - (void)_cancelUserNotification;
 - (void)_removeObservervations;
-- (long long)addButtonWithTitle:(id)arg1;
+- (int)addButtonWithTitle:(id)arg1;
 - (void)cancelAlertView;
 - (void)dealloc;
-- (void)dismissWithClickedButtonIndex:(long long)arg1 animated:(bool)arg2;
-- (bool)isVisible;
-- (bool)runsModal;
+- (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
+- (BOOL)isVisible;
+- (BOOL)runsModal;
 - (void)setHostedWindow:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
-- (void)setRunsModal:(bool)arg1;
+- (void)setRunsModal:(BOOL)arg1;
 - (void)show;
-- (id)textFieldAtIndex:(long long)arg1;
+- (id)textFieldAtIndex:(int)arg1;
 
 @end

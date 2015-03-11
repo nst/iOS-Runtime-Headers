@@ -6,53 +6,53 @@
 
 @interface GKMatchEventQueue : NSObject {
     NSMutableDictionary *_connectionInfo;
-    long long _deferedPlayerState;
+    BOOL _counted;
+    int _deferedPlayerState;
     NSMutableArray *_events;
+    BOOL _hasInitRelayInfo;
+    BOOL _hasUpdateRelayInfo;
+    BOOL _okToSend;
     GKPlayer *_player;
-    long long _playerState;
+    int _playerState;
+    BOOL _relayInitiated;
     unsigned int _sequenceNumber;
-    bool_counted;
-    bool_hasInitRelayInfo;
-    bool_hasUpdateRelayInfo;
-    bool_okToSend;
-    bool_relayInitiated;
 }
 
 @property(retain) NSMutableDictionary * connectionInfo;
-@property bool counted;
-@property long long deferedPlayerState;
+@property BOOL counted;
+@property int deferedPlayerState;
 @property(retain) NSMutableArray * events;
-@property bool hasInitRelayInfo;
-@property bool hasUpdateRelayInfo;
-@property bool okToSend;
+@property BOOL hasInitRelayInfo;
+@property BOOL hasUpdateRelayInfo;
+@property BOOL okToSend;
 @property(retain) GKPlayer * player;
-@property long long playerState;
-@property bool relayInitiated;
+@property int playerState;
+@property BOOL relayInitiated;
 @property unsigned int sequenceNumber;
 
 - (id)connectionInfo;
-- (bool)counted;
+- (BOOL)counted;
 - (void)dealloc;
-- (long long)deferedPlayerState;
+- (int)deferedPlayerState;
 - (id)events;
-- (bool)hasInitRelayInfo;
-- (bool)hasUpdateRelayInfo;
+- (BOOL)hasInitRelayInfo;
+- (BOOL)hasUpdateRelayInfo;
 - (id)init;
-- (bool)okToSend;
+- (BOOL)okToSend;
 - (id)player;
-- (long long)playerState;
-- (bool)relayInitiated;
+- (int)playerState;
+- (BOOL)relayInitiated;
 - (unsigned int)sequenceNumber;
 - (void)setConnectionInfo:(id)arg1;
-- (void)setCounted:(bool)arg1;
-- (void)setDeferedPlayerState:(long long)arg1;
+- (void)setCounted:(BOOL)arg1;
+- (void)setDeferedPlayerState:(int)arg1;
 - (void)setEvents:(id)arg1;
-- (void)setHasInitRelayInfo:(bool)arg1;
-- (void)setHasUpdateRelayInfo:(bool)arg1;
-- (void)setOkToSend:(bool)arg1;
+- (void)setHasInitRelayInfo:(BOOL)arg1;
+- (void)setHasUpdateRelayInfo:(BOOL)arg1;
+- (void)setOkToSend:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setPlayerState:(long long)arg1;
-- (void)setRelayInitiated:(bool)arg1;
+- (void)setPlayerState:(int)arg1;
+- (void)setRelayInitiated:(BOOL)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 
 @end

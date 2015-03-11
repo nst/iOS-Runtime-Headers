@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (struct sqlite3_blob { }*)_openBlob;
 - (long long)dataLength;
-- (bool)hasSameLocationAs:(id)arg1;
+- (BOOL)hasSameLocationAs:(id)arg1;
 - (id)initWithDatabase:(id)arg1 identifier:(long long)arg2;
 - (id)inputStream;
 

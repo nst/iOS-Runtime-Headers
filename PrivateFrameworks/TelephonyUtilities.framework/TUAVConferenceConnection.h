@@ -11,30 +11,30 @@
 @interface TUAVConferenceConnection : NSObject {
     id _didStartHandler;
     id _didStopHandler;
+    BOOL _host;
     NSString *_identifier;
-    bool_host;
-    bool_receivedDidStart;
+    BOOL _receivedDidStart;
 }
 
 @property(copy) id didStartHandler;
 @property(copy) id didStopHandler;
-@property(getter=isHost) bool host;
+@property(getter=isHost) BOOL host;
 @property(copy) NSString * identifier;
-@property bool receivedDidStart;
+@property BOOL receivedDidStart;
 
-+ (id)conferenceConnectionWithIdentifier:(id)arg1 host:(bool)arg2;
++ (id)conferenceConnectionWithIdentifier:(id)arg1 host:(BOOL)arg2;
 
 - (void)dealloc;
 - (id)description;
 - (id)didStartHandler;
 - (id)didStopHandler;
 - (id)identifier;
-- (bool)isHost;
-- (bool)receivedDidStart;
+- (BOOL)isHost;
+- (BOOL)receivedDidStart;
 - (void)setDidStartHandler:(id)arg1;
 - (void)setDidStopHandler:(id)arg1;
-- (void)setHost:(bool)arg1;
+- (void)setHost:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setReceivedDidStart:(bool)arg1;
+- (void)setReceivedDidStart:(BOOL)arg1;
 
 @end

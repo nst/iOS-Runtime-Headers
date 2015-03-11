@@ -15,7 +15,7 @@
 + (id)customAttributes;
 
 - (id)_initFromProperties:(id)arg1;
-- (bool)_isIdentity;
+- (BOOL)_isIdentity;
 - (id)_kernelNeg;
 - (id)_kernelPos;
 - (id)_outputProperties;

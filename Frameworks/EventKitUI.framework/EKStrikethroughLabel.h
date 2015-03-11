@@ -3,13 +3,13 @@
  */
 
 @interface EKStrikethroughLabel : UILabel {
-    bool_drawsStrikethrough;
+    BOOL _drawsStrikethrough;
 }
 
-@property bool drawsStrikethrough;
+@property BOOL drawsStrikethrough;
 
-- (bool)drawsStrikethrough;
-- (void)setDrawsStrikethrough:(bool)arg1;
+- (BOOL)drawsStrikethrough;
+- (void)setDrawsStrikethrough:(BOOL)arg1;
 - (void)setText:(id)arg1;
 
 @end

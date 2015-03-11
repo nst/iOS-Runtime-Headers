@@ -11,20 +11,20 @@
     PSKeychainSyncManager *_keychainSyncManager;
     NSString *_phoneNumber;
     UIAlertView *_supportVerificationAlert;
-    unsigned long long _verificationCodeLength;
+    unsigned int _verificationCodeLength;
 }
 
 @property(retain) NSString * countryCode;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSString * dialingPrefix;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property PSKeychainSyncManager * keychainSyncManager;
 @property(retain) NSString * phoneNumber;
 @property(readonly) Class superclass;
-@property unsigned long long verificationCodeLength;
+@property unsigned int verificationCodeLength;
 
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)countryCode;
 - (void)dealloc;
 - (id)dialingPrefix;
@@ -32,16 +32,16 @@
 - (id)init;
 - (id)keychainSyncManager;
 - (void)loadView;
-- (unsigned long long)numberOfPasscodeFields;
+- (unsigned int)numberOfPasscodeFields;
 - (id)phoneNumber;
 - (void)setCountryCode:(id)arg1;
 - (void)setDialingPrefix:(id)arg1;
 - (void)setKeychainSyncManager:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
-- (void)setVerificationCodeLength:(unsigned long long)arg1;
+- (void)setVerificationCodeLength:(unsigned int)arg1;
 - (void)showSupportVerification;
 - (id)specifiers;
-- (unsigned long long)verificationCodeLength;
+- (unsigned int)verificationCodeLength;
 - (void)viewDidLayoutSubviews;
 
 @end

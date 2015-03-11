@@ -25,7 +25,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property unsigned long long mapLayerPosition;
 @property(readonly) VKStyleManager * styleManager;
 @property(readonly) Class superclass;
@@ -34,7 +34,7 @@
 - (void).cxx_destruct;
 - (unsigned char)commandBufferId;
 - (void)dealloc;
-- (void)didReceiveMemoryWarning:(bool)arg1;
+- (void)didReceiveMemoryWarning:(BOOL)arg1;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (id)init;
 - (unsigned long long)mapLayerPosition;

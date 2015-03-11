@@ -6,46 +6,46 @@
 
 @interface SKUISlideshowItemViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegatePrivate> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     SKUIClientContext *_clientContext;
     <SKUISlideshowItemViewControllerDelegate> *_delegate;
     SKUISlideshowImageScrollView *_imageScrollView;
-    long long _indexInCollection;
+    int _indexInCollection;
     } _lastContentOffset;
-    double _lastZoomScale;
+    float _lastZoomScale;
     UIView *_loadingView;
-    bool_zoomingGestureThresholdBroken;
+    BOOL _zoomingGestureThresholdBroken;
 }
 
 @property(retain) SKUIClientContext * clientContext;
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUISlideshowItemViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) SKUISlideshowImageScrollView * imageScrollView;
-@property long long indexInCollection;
+@property int indexInCollection;
 @property(retain) UIImage * itemImage;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)_gestureRecognizer:(id)arg1 canBePreventedByGestureRecognizer:(id)arg2;
-- (bool)_gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
+- (BOOL)_gestureRecognizer:(id)arg1 canBePreventedByGestureRecognizer:(id)arg2;
+- (BOOL)_gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
 - (id)_newLoadingView;
 - (void)_pinchGestureAction:(id)arg1;
 - (id)clientContext;
 - (void)dealloc;
 - (id)delegate;
 - (id)imageScrollView;
-- (long long)indexInCollection;
+- (int)indexInCollection;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)itemImage;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIndexInCollection:(long long)arg1;
+- (void)setIndexInCollection:(int)arg1;
 - (void)setItemImage:(id)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
-- (void)viewDidDisappear:(bool)arg1;
+- (unsigned int)supportedInterfaceOrientations;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)viewForZoomingInScrollView:(id)arg1;
 

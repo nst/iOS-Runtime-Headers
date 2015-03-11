@@ -11,13 +11,13 @@
 @property(retain,readonly) UIView * placeheldView;
 
 + (id)placeholderForView:(id)arg1;
-+ (id)placeholderWithWidth:(double)arg1 height:(double)arg2;
++ (id)placeholderWithWidth:(float)arg1 height:(float)arg2;
 
 - (void)dealloc;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (id)placeheldView;
-- (bool)refreshPlaceholder;
+- (BOOL)refreshPlaceholder;
 
 @end

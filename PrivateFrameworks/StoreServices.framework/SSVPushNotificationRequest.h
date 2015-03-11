@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) SSVPushNotificationParameters * pushNotificationParameters;
 @property(readonly) Class superclass;
 
@@ -20,7 +20,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)pushNotificationParameters;
 - (void)setPushNotificationParameters:(id)arg1;
-- (bool)start;
+- (BOOL)start;
 - (void)startWithCompletionBlock:(id)arg1;
 - (void)startWithResponseBlock:(id)arg1;
 

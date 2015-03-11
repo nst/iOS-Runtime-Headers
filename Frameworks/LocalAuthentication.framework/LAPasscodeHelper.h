@@ -7,8 +7,8 @@
 
 + (id)sharedInstance;
 
-- (bool)isPasscodeSetWithError:(id*)arg1;
-- (bool)useLightOnDarkPasscodeScreenWithPolicy:(long long)arg1 policyOptions:(id)arg2;
-- (long long)verifyPassword:(id)arg1 acmContext:(id)arg2;
+- (BOOL)isPasscodeSetWithError:(id*)arg1;
+- (BOOL)useLightOnDarkPasscodeScreenWithPolicy:(int)arg1 policyOptions:(id)arg2;
+- (int)verifyPassword:(id)arg1 acmContext:(id)arg2;
 
 @end

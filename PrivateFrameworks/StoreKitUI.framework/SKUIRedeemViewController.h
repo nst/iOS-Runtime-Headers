@@ -5,19 +5,19 @@
 @class NSOperationQueue, NSString, SKUIClientContext, SKUIRedeemConfiguration, SKUIRedeemPreflightOperation, SKUIRedeemStepViewController;
 
 @interface SKUIRedeemViewController : UINavigationController {
+    BOOL _attempsAutomaticRedeem;
     BOOL _cameraRedeemEnabled;
-    long long _category;
+    int _category;
     SKUIClientContext *_clientContext;
     NSString *_initialCode;
     NSOperationQueue *_operationQueue;
     SKUIRedeemPreflightOperation *_preflightOperation;
     SKUIRedeemConfiguration *_redeemConfiguration;
     SKUIRedeemStepViewController *_rootViewController;
-    bool_attempsAutomaticRedeem;
 }
 
-@property bool attempsAutomaticRedeem;
-@property(readonly) long long category;
+@property BOOL attempsAutomaticRedeem;
+@property(readonly) int category;
 @property(retain) SKUIClientContext * clientContext;
 @property(copy) NSString * initialCode;
 @property(retain) NSOperationQueue * operationQueue;
@@ -29,18 +29,18 @@
 - (void)_loadRootViewController;
 - (id)_newRootViewController;
 - (void)_showRootViewController;
-- (bool)attempsAutomaticRedeem;
-- (long long)category;
+- (BOOL)attempsAutomaticRedeem;
+- (int)category;
 - (id)clientContext;
-- (id)initWithRedeemCategory:(long long)arg1;
+- (id)initWithRedeemCategory:(int)arg1;
 - (id)initialCode;
 - (id)operationQueue;
-- (void)redeemAgainAnimated:(bool)arg1;
-- (void)setAttempsAutomaticRedeem:(bool)arg1;
+- (void)redeemAgainAnimated:(BOOL)arg1;
+- (void)setAttempsAutomaticRedeem:(BOOL)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setInitialCode:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
-- (void)viewWillAppear:(bool)arg1;
+- (unsigned int)supportedInterfaceOrientations;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

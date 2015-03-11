@@ -14,10 +14,10 @@
 @property(retain) NSString * appName;
 @property(retain) NSString * deviceModel;
 @property(retain) NSString * deviceName;
-@property(readonly) bool hasAppName;
-@property(readonly) bool hasDeviceModel;
-@property(readonly) bool hasDeviceName;
-@property(readonly) bool hasPasscode;
+@property(readonly) BOOL hasAppName;
+@property(readonly) BOOL hasDeviceModel;
+@property(readonly) BOOL hasDeviceName;
+@property(readonly) BOOL hasPasscode;
 @property(retain) NSString * passcode;
 
 - (void).cxx_destruct;
@@ -28,15 +28,15 @@
 - (id)deviceModel;
 - (id)deviceName;
 - (id)dictionaryRepresentation;
-- (bool)hasAppName;
-- (bool)hasDeviceModel;
-- (bool)hasDeviceName;
-- (bool)hasPasscode;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasAppName;
+- (BOOL)hasDeviceModel;
+- (BOOL)hasDeviceName;
+- (BOOL)hasPasscode;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)passcode;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAppName:(id)arg1;
 - (void)setDeviceModel:(id)arg1;
 - (void)setDeviceName:(id)arg1;

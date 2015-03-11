@@ -6,20 +6,20 @@
 
 @interface SBFDeviceLockController : NSObject {
     SBFPasscodeLockAssertionManager *_assertionManager;
+    BOOL _cachedPasscodeLockedOrBlocked;
     double _deviceLockUnblockTime;
     PCPersistentTimer *_deviceLockUnblockTimer;
+    BOOL _hasBeenUnlockedOnceSinceBoot;
+    BOOL _isBlockedForThermalCondition;
+    BOOL _isPermanentlyBlocked;
     NSString *_lastIncorrectPasscodeAttempt;
     double _lastLockDate;
+    BOOL _lastPasscodeLockStateWasLocked;
     int _lockState;
+    BOOL _okToSendNotifications;
     struct __CFRunLoopObserver { } *_runLoopObserver;
+    BOOL _shouldFetchPasscodeLockState;
     SBFPasscodeLockDisableAssertion *_transientPasscodeCheckingAssertion;
-    bool_cachedPasscodeLockedOrBlocked;
-    bool_hasBeenUnlockedOnceSinceBoot;
-    bool_isBlockedForThermalCondition;
-    bool_isPermanentlyBlocked;
-    bool_lastPasscodeLockStateWasLocked;
-    bool_okToSendNotifications;
-    bool_shouldFetchPasscodeLockState;
 }
 
 + (id)_journalPath;
@@ -32,11 +32,11 @@
 - (void)_cachePassword:(id)arg1;
 - (void)_clearBlockedState;
 - (void)_clearUnblockTimer;
-- (void)_enablePasscodeLockImmediately:(bool)arg1;
+- (void)_enablePasscodeLockImmediately:(BOOL)arg1;
 - (void)_keybagLockStateChangedTo:(int)arg1;
 - (void)_lockStateChangedFrom:(int)arg1 to:(int)arg2;
 - (void)_noteBlockedReasonsMayHaveChanged;
-- (void)_notePasscodeLockedOrBlockedStateMayHaveChanged:(bool)arg1;
+- (void)_notePasscodeLockedOrBlockedStateMayHaveChanged:(BOOL)arg1;
 - (void)_notifyOfFirstUnlock;
 - (void)_removeDeviceLockDisableAssertion:(id)arg1;
 - (void)_scheduleUnblockTimer;
@@ -44,29 +44,29 @@
 - (void)_setDeviceLockUnblockTime:(double)arg1;
 - (void)_setLockState:(int)arg1;
 - (void)_setupRunLoopObserverIfNecessary;
-- (bool)_shouldLockDeviceNow;
-- (bool)_shouldSuppressLockOnInit;
-- (bool)_temporarilyBlocked;
+- (BOOL)_shouldLockDeviceNow;
+- (BOOL)_shouldSuppressLockOnInit;
+- (BOOL)_temporarilyBlocked;
 - (void)_unblockTimerFired;
 - (void)_uncachePasscodeIfNecessary;
 - (void)_updateDeviceLockedState;
 - (void)_wipeDevice;
-- (bool)attemptDeviceUnlockWithPassword:(id)arg1 appRequested:(bool)arg2;
+- (BOOL)attemptDeviceUnlockWithPassword:(id)arg1 appRequested:(BOOL)arg2;
 - (void)dealloc;
 - (id)description;
-- (bool)deviceHasBeenPasscodeUnlockedOnceSinceBoot;
-- (bool)deviceHasPasscodeSet;
+- (BOOL)deviceHasBeenPasscodeUnlockedOnceSinceBoot;
+- (BOOL)deviceHasPasscodeSet;
 - (void)enablePasscodeLockImmediately;
 - (id)init;
-- (bool)isBlocked;
-- (bool)isBlockedForThermalCondition;
-- (bool)isPasscodeLocked;
-- (bool)isPasscodeLockedCached;
-- (bool)isPasscodeLockedOrBlocked;
-- (bool)isPermanentlyBlocked:(double*)arg1;
+- (BOOL)isBlocked;
+- (BOOL)isBlockedForThermalCondition;
+- (BOOL)isPasscodeLocked;
+- (BOOL)isPasscodeLockedCached;
+- (BOOL)isPasscodeLockedOrBlocked;
+- (BOOL)isPermanentlyBlocked:(double*)arg1;
 - (id)lastLockDate;
-- (void)setBlockedForThermalCondition:(bool)arg1;
+- (void)setBlockedForThermalCondition:(BOOL)arg1;
 - (void)synchronize;
-- (void)updateLockControllerDefaultsWithBlock:(id)arg1 journaled:(bool)arg2;
+- (void)updateLockControllerDefaultsWithBlock:(id)arg1 journaled:(BOOL)arg2;
 
 @end

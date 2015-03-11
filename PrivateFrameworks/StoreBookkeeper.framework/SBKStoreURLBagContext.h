@@ -7,18 +7,18 @@
 @interface SBKStoreURLBagContext : NSObject <NSMutableCopying, NSCopying> {
     SSURLBag *_bag;
     NSString *_domain;
+    BOOL _domainDisabled;
     double _pollingIntervalInSeconds;
     NSURL *_pullAllKeyValueRequestURL;
     NSURL *_pullKeyValueRequestURL;
     NSURL *_pushAllKeyValueRequestURL;
     NSURL *_pushKeyValueRequestURL;
     NSURL *_syncRequestURL;
-    bool_domainDisabled;
 }
 
 @property(retain) SSURLBag * bag;
 @property(copy) NSString * domain;
-@property bool domainDisabled;
+@property BOOL domainDisabled;
 @property double pollingIntervalInSeconds;
 @property(retain) NSURL * pullAllKeyValueRequestURL;
 @property(retain) NSURL * pullKeyValueRequestURL;
@@ -33,12 +33,12 @@
 + (void)loadBagContextFromURLBag:(id)arg1 domain:(id)arg2 completionBlock:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)_initWithDomain:(id)arg1 syncRequestURL:(id)arg2 domainDisabled:(bool)arg3;
+- (id)_initWithDomain:(id)arg1 syncRequestURL:(id)arg2 domainDisabled:(BOOL)arg3;
 - (id)bag;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)domain;
-- (bool)domainDisabled;
+- (BOOL)domainDisabled;
 - (id)init;
 - (id)initWithBag:(id)arg1 domain:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -49,7 +49,7 @@
 - (id)pushKeyValueRequestURL;
 - (void)setBag:(id)arg1;
 - (void)setDomain:(id)arg1;
-- (void)setDomainDisabled:(bool)arg1;
+- (void)setDomainDisabled:(BOOL)arg1;
 - (void)setPollingIntervalInSeconds:(double)arg1;
 - (void)setPullAllKeyValueRequestURL:(id)arg1;
 - (void)setPullKeyValueRequestURL:(id)arg1;

@@ -33,7 +33,7 @@
 - (void)callAndReleaseCompletionHandler;
 - (id)completionHandler;
 - (double)duration;
-- (bool)isFinishedAnimating;
+- (BOOL)isFinishedAnimating;
 - (void)update:(double)arg1;
 - (id)valueByAddingCurrentValueToValue:(id)arg1;
 

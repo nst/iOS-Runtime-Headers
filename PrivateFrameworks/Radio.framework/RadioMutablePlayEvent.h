@@ -8,24 +8,24 @@
 }
 
 @property(retain) NSDate * datePlayed;
-@property long long endReason;
+@property int endReason;
 @property double endTimeInTrack;
 @property(copy) NSString * externalIdentifier;
 @property double startTimeInTrack;
 @property long long storeID;
 @property(copy) NSData * timedMetadata;
 @property(copy) NSDictionary * trackInfo;
-@property long long type;
+@property int type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setDatePlayed:(id)arg1;
-- (void)setEndReason:(long long)arg1;
+- (void)setEndReason:(int)arg1;
 - (void)setEndTimeInTrack:(double)arg1;
 - (void)setExternalIdentifier:(id)arg1;
 - (void)setStartTimeInTrack:(double)arg1;
 - (void)setStoreID:(long long)arg1;
 - (void)setTimedMetadata:(id)arg1;
 - (void)setTrackInfo:(id)arg1;
-- (void)setType:(long long)arg1;
+- (void)setType:(int)arg1;
 
 @end

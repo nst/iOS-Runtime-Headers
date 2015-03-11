@@ -6,19 +6,19 @@
 
 @interface BWDeviceMotionActivityDetector : NSObject {
     BWMotionSampleRingBuffer *_motionDataRingBuffer;
+    BOOL _newMotionDataAvailable;
     struct OpaqueFigSimpleMutex { } *_ringMutex;
-    bool_newMotionDataAvailable;
-    bool_stationary;
+    BOOL _stationary;
 }
 
-@property(getter=isStationary,readonly) bool stationary;
+@property(getter=isStationary,readonly) BOOL stationary;
 
 + (void)initialize;
 
 - (void)_detectIfStationary;
 - (void)dealloc;
 - (id)init;
-- (bool)isStationary;
+- (BOOL)isStationary;
 - (void)processSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 
 @end

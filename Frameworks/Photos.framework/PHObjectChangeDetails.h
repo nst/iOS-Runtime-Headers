@@ -5,23 +5,23 @@
 @class PHObject;
 
 @interface PHObjectChangeDetails : NSObject {
+    BOOL _assetContentChanged;
     PHObject *_objectAfterChanges;
     PHObject *_objectBeforeChanges;
-    bool_assetContentChanged;
 }
 
-@property(readonly) bool assetContentChanged;
+@property(readonly) BOOL assetContentChanged;
 @property(readonly) id objectAfterChanges;
 @property(readonly) id objectBeforeChanges;
-@property(readonly) bool objectWasDeleted;
+@property(readonly) BOOL objectWasDeleted;
 
 - (void).cxx_destruct;
 - (void)_calculateDiffs;
-- (bool)assetContentChanged;
+- (BOOL)assetContentChanged;
 - (id)description;
-- (id)initWithPHObject:(id)arg1 assetContentChanged:(bool)arg2;
+- (id)initWithPHObject:(id)arg1 assetContentChanged:(BOOL)arg2;
 - (id)objectAfterChanges;
 - (id)objectBeforeChanges;
-- (bool)objectWasDeleted;
+- (BOOL)objectWasDeleted;
 
 @end

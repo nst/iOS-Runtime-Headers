@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface UIRuntimeOutletCollectionConnection : UIRuntimeConnection {
-    booladdsContentToExistingCollection;
+    BOOL addsContentToExistingCollection;
     NSString *runtimeCollectionClassName;
 }
 
-@property bool addsContentToExistingCollection;
+@property BOOL addsContentToExistingCollection;
 @property(copy) NSString * runtimeCollectionClassName;
 
-- (bool)addsContentToExistingCollection;
+- (BOOL)addsContentToExistingCollection;
 - (void)connect;
 - (void)connectForSimulator;
 - (void)dealloc;
@@ -21,7 +21,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)performConnect;
 - (id)runtimeCollectionClassName;
-- (void)setAddsContentToExistingCollection:(bool)arg1;
+- (void)setAddsContentToExistingCollection:(BOOL)arg1;
 - (void)setRuntimeCollectionClassName:(id)arg1;
 
 @end

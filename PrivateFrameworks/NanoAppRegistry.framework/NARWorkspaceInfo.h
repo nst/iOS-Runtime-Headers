@@ -14,7 +14,7 @@
 @property(readonly) NSArray * applications;
 @property(readonly) NSNumber * sequenceNumber;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;

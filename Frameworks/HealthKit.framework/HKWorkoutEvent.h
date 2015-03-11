@@ -6,37 +6,37 @@
 
 @interface HKWorkoutEvent : NSObject <NSSecureCoding, HDCoding> {
     NSDate *_date;
-    long long _type;
+    int _type;
 }
 
 @property(copy,readonly) NSDate * date;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
-@property(readonly) long long type;
+@property(readonly) int type;
 
-+ (id)_newWorkoutEventWithType:(long long)arg1 date:(id)arg2;
-+ (id)_workoutEventWithType:(long long)arg1 date:(id)arg2;
++ (id)_newWorkoutEventWithType:(int)arg1 date:(id)arg2;
++ (id)_workoutEventWithType:(int)arg1 date:(id)arg2;
 + (id)createWithCodable:(id)arg1;
-+ (bool)supportsSecureCoding;
-+ (id)workoutEventWithType:(long long)arg1 date:(id)arg2;
++ (BOOL)supportsSecureCoding;
++ (id)workoutEventWithType:(int)arg1 date:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_assertPropertiesValid;
 - (id)_init;
 - (void)_setDate:(id)arg1;
-- (void)_setType:(long long)arg1;
+- (void)_setType:(int)arg1;
 - (id)_validateConfiguration;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (id)codableRepresentationForSync;
 - (id)date;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (long long)type;
+- (BOOL)isEqual:(id)arg1;
+- (int)type;
 
 @end

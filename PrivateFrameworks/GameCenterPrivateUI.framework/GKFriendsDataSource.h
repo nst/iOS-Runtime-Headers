@@ -3,18 +3,18 @@
  */
 
 @interface GKFriendsDataSource : GKBasicCollectionViewDataSource {
-    long long _kind;
+    int _kind;
 }
 
-@property long long kind;
+@property int kind;
 
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)configureCollectionView:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)kind;
+- (int)kind;
 - (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)removeItemAtIndexPath:(id)arg1 completionHandler:(id)arg2;
 - (id)sectionTitle;
-- (void)setKind:(long long)arg1;
+- (void)setKind:(int)arg1;
 
 @end

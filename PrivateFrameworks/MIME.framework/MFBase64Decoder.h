@@ -5,29 +5,29 @@
 @class NSMutableData;
 
 @interface MFBase64Decoder : MFBaseFilterDataConsumer {
+    BOOL _bound;
     unsigned int _decodedBits;
-    unsigned long long _equalCount;
+    unsigned long _equalCount;
     NSMutableData *_leftovers;
     const char *_table;
-    unsigned long long _validBytes;
-    bool_bound;
+    unsigned long _validBytes;
 }
 
-@property bool convertCommas;
-@property bool isBound;
-@property(readonly) unsigned long long unconverted;
+@property BOOL convertCommas;
+@property BOOL isBound;
+@property(readonly) unsigned long unconverted;
 
-+ (bool)isValidBase64:(id)arg1;
++ (BOOL)isValidBase64:(id)arg1;
 
-- (unsigned long long)_decodeBytes:(const char *)arg1 end:(const char *)arg2 into:(char *)arg3 length:(unsigned long long)arg4 startingAt:(unsigned long long)arg5 outEncodedOffset:(unsigned long long*)arg6;
-- (long long)appendData:(id)arg1;
-- (bool)convertCommas;
+- (unsigned long)_decodeBytes:(const char *)arg1 end:(const char *)arg2 into:(char *)arg3 length:(unsigned long)arg4 startingAt:(unsigned long)arg5 outEncodedOffset:(unsigned int*)arg6;
+- (int)appendData:(id)arg1;
+- (BOOL)convertCommas;
 - (void)dealloc;
 - (void)done;
 - (id)initWithConsumers:(id)arg1;
-- (bool)isBound;
-- (void)setConvertCommas:(bool)arg1;
-- (void)setIsBound:(bool)arg1;
-- (unsigned long long)unconverted;
+- (BOOL)isBound;
+- (void)setConvertCommas:(BOOL)arg1;
+- (void)setIsBound:(BOOL)arg1;
+- (unsigned long)unconverted;
 
 @end

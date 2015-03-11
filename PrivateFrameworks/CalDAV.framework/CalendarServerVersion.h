@@ -6,7 +6,7 @@
 }
 
 - (id)init;
-- (bool)supportsTimeRangeFilterWithoutEndDate;
+- (BOOL)supportsTimeRangeFilterWithoutEndDate;
 - (id)type;
 
 @end

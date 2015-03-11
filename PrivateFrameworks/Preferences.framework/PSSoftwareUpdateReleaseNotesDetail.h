@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * releaseNotes;
 @property(readonly) Class superclass;
 
@@ -20,6 +20,6 @@
 - (id)releaseNotes;
 - (void)setReleaseNotes:(id)arg1;
 - (id)specifiers;
-- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 
 @end

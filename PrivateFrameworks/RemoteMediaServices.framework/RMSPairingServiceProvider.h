@@ -6,7 +6,7 @@
 }
 
 - (id)searchType;
-- (long long)serviceDiscoverySource;
-- (long long)serviceLegacyFlagsFromTXTDictionary:(id)arg1;
+- (int)serviceDiscoverySource;
+- (int)serviceLegacyFlagsFromTXTDictionary:(id)arg1;
 
 @end

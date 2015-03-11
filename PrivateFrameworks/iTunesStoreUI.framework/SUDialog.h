@@ -17,17 +17,17 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) ISDialog * dialog;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (id)_alertView;
-- (void)_completeWithButtonIndex:(long long)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)_completeWithButtonIndex:(int)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)dealloc;
 - (id)dialog;
 - (id)initWithDialog:(id)arg1;
-- (bool)isEquivalent:(id)arg1;
+- (BOOL)isEquivalent:(id)arg1;
 - (void)showWithCompletionBlock:(id)arg1;
 
 @end

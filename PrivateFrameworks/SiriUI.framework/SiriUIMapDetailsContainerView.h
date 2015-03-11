@@ -5,22 +5,22 @@
 @class UIView;
 
 @interface SiriUIMapDetailsContainerView : UIView {
+    BOOL _autoCenteringDisabled;
     UIView *_detailsView;
     UIView *_mapView;
-    bool_autoCenteringDisabled;
 }
 
-@property bool autoCenteringDisabled;
+@property BOOL autoCenteringDisabled;
 @property(retain) UIView * detailsView;
 @property(retain) UIView * mapView;
 
 - (void).cxx_destruct;
-- (double)_horizontalSpacing;
-- (bool)autoCenteringDisabled;
+- (float)_horizontalSpacing;
+- (BOOL)autoCenteringDisabled;
 - (id)detailsView;
 - (void)layoutSubviews;
 - (id)mapView;
-- (void)setAutoCenteringDisabled:(bool)arg1;
+- (void)setAutoCenteringDisabled:(BOOL)arg1;
 - (void)setDetailsView:(id)arg1;
 - (void)setMapView:(id)arg1;
 

@@ -6,24 +6,24 @@
     struct { 
         unsigned int success : 1; 
     } _has;
-    bool_success;
+    BOOL _success;
 }
 
-@property bool hasSuccess;
-@property bool success;
+@property BOOL hasSuccess;
+@property BOOL success;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasSuccess;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasSuccess;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasSuccess:(bool)arg1;
-- (void)setSuccess:(bool)arg1;
-- (bool)success;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasSuccess:(BOOL)arg1;
+- (void)setSuccess:(BOOL)arg1;
+- (BOOL)success;
 - (void)writeTo:(id)arg1;
 
 @end

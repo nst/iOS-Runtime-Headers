@@ -9,18 +9,18 @@
 
 @property(readonly) int firstEmptyRegionIndex;
 @property(copy,readonly) NSString * name;
-@property(readonly) bool overset;
+@property(readonly) BOOL overset;
 
-- (void)addEventListener:(id)arg1 listener:(id)arg2 useCapture:(bool)arg3;
+- (void)addEventListener:(id)arg1 listener:(id)arg2 useCapture:(BOOL)arg3;
 - (void)dealloc;
-- (bool)dispatchEvent:(id)arg1;
+- (BOOL)dispatchEvent:(id)arg1;
 - (void)finalize;
 - (int)firstEmptyRegionIndex;
 - (id)getContent;
 - (id)getRegions;
 - (id)getRegionsByContent:(id)arg1;
 - (id)name;
-- (bool)overset;
-- (void)removeEventListener:(id)arg1 listener:(id)arg2 useCapture:(bool)arg3;
+- (BOOL)overset;
+- (void)removeEventListener:(id)arg1 listener:(id)arg2 useCapture:(BOOL)arg3;
 
 @end

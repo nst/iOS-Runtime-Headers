@@ -12,7 +12,7 @@
 @property(copy,readonly) NSData * pairingPublicKey;
 @property(copy,readonly) NSData * wirelessProximityIdentifier;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_TXTRecordRepresentation;

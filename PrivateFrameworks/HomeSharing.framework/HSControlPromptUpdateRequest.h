@@ -10,7 +10,7 @@
 
 - (id)canonicalResponseForResponse:(id)arg1;
 - (id)initWithInterfaceID:(unsigned int)arg1 promptID:(unsigned int)arg2;
-- (bool)isConcurrent;
+- (BOOL)isConcurrent;
 - (double)timeoutInterval;
 
 @end

@@ -10,8 +10,8 @@
 }
 
 @property(retain) NSArray * categories;
-@property(getter=isCopyright,readonly) bool copyright;
-@property(getter=isGlossary,readonly) bool glossary;
+@property(getter=isCopyright,readonly) BOOL copyright;
+@property(getter=isGlossary,readonly) BOOL glossary;
 @property(copy) NSString * href;
 
 - (void).cxx_destruct;
@@ -20,8 +20,8 @@
 - (id)description;
 - (id)href;
 - (id)initWithDictionary:(id)arg1;
-- (bool)isCopyright;
-- (bool)isGlossary;
+- (BOOL)isCopyright;
+- (BOOL)isGlossary;
 - (void)setCategories:(id)arg1;
 - (void)setHref:(id)arg1;
 

@@ -14,16 +14,16 @@
     int _transitionForModalViewPresentation;
 }
 
-@property bool canHideDoneAndCancelButtons;
+@property BOOL canHideDoneAndCancelButtons;
 @property <EKEventEditViewDelegate> * editViewDelegate;
 @property(retain) EKEventEditor * editor;
 @property(retain) UIColor * editorBackgroundColor;
-@property double editorNavBarLeftContentInset;
-@property double editorNavBarRightContentInset;
+@property float editorNavBarLeftContentInset;
+@property float editorNavBarRightContentInset;
 @property(retain) EKEvent * event;
 @property(retain) EKEventStore * eventStore;
-@property bool scrollToNotes;
-@property bool showAttachments;
+@property BOOL scrollToNotes;
+@property BOOL showAttachments;
 @property(retain) EKEventEditViewController * strongSelf;
 @property int transitionForModalViewPresentation;
 
@@ -31,7 +31,7 @@
 
 - (void).cxx_destruct;
 - (void)_storeChanged:(id)arg1;
-- (bool)canHideDoneAndCancelButtons;
+- (BOOL)canHideDoneAndCancelButtons;
 - (void)cancelEditing;
 - (void)completeAndSave;
 - (void)dealloc;
@@ -40,33 +40,33 @@
 - (void)editor:(id)arg1 prepareCalendarItemForEdit:(id)arg2;
 - (id)editor;
 - (id)editorBackgroundColor;
-- (double)editorNavBarLeftContentInset;
-- (double)editorNavBarRightContentInset;
+- (float)editorNavBarLeftContentInset;
+- (float)editorNavBarRightContentInset;
 - (id)event;
 - (id)eventStore;
 - (void)handleTapOutside;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)refreshStartAndEndDates;
-- (bool)saveWithSpan:(int)arg1 animated:(bool)arg2;
-- (bool)scrollToNotes;
-- (void)setCanHideDoneAndCancelButtons:(bool)arg1;
+- (BOOL)saveWithSpan:(int)arg1 animated:(BOOL)arg2;
+- (BOOL)scrollToNotes;
+- (void)setCanHideDoneAndCancelButtons:(BOOL)arg1;
 - (void)setEditViewDelegate:(id)arg1;
 - (void)setEditor:(id)arg1;
 - (void)setEditorBackgroundColor:(id)arg1;
-- (void)setEditorNavBarLeftContentInset:(double)arg1;
-- (void)setEditorNavBarRightContentInset:(double)arg1;
+- (void)setEditorNavBarLeftContentInset:(float)arg1;
+- (void)setEditorNavBarRightContentInset:(float)arg1;
 - (void)setEvent:(id)arg1;
 - (void)setEventStore:(id)arg1;
-- (void)setScrollToNotes:(bool)arg1;
-- (void)setShowAttachments:(bool)arg1;
+- (void)setScrollToNotes:(BOOL)arg1;
+- (void)setShowAttachments:(BOOL)arg1;
 - (void)setStrongSelf:(id)arg1;
 - (void)setTransitionForModalViewPresentation:(int)arg1;
-- (bool)shouldAutorotate;
-- (bool)showAttachments;
+- (BOOL)shouldAutorotate;
+- (BOOL)showAttachments;
 - (id)strongSelf;
-- (unsigned long long)supportedInterfaceOrientations;
+- (unsigned int)supportedInterfaceOrientations;
 - (int)transitionForModalViewPresentation;
-- (bool)willPresentDialogOnSave;
+- (BOOL)willPresentDialogOnSave;
 
 @end

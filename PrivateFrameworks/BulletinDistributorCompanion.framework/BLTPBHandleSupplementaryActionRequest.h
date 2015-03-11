@@ -11,10 +11,10 @@
     NSString *_sectionID;
 }
 
-@property(readonly) bool hasIdentifier;
-@property(readonly) bool hasPublisherBulletinID;
-@property(readonly) bool hasRecordID;
-@property(readonly) bool hasSectionID;
+@property(readonly) BOOL hasIdentifier;
+@property(readonly) BOOL hasPublisherBulletinID;
+@property(readonly) BOOL hasRecordID;
+@property(readonly) BOOL hasSectionID;
 @property(retain) NSString * identifier;
 @property(retain) NSString * publisherBulletinID;
 @property(retain) NSString * recordID;
@@ -25,16 +25,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasIdentifier;
-- (bool)hasPublisherBulletinID;
-- (bool)hasRecordID;
-- (bool)hasSectionID;
-- (unsigned long long)hash;
+- (BOOL)hasIdentifier;
+- (BOOL)hasPublisherBulletinID;
+- (BOOL)hasRecordID;
+- (BOOL)hasSectionID;
+- (unsigned int)hash;
 - (id)identifier;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)publisherBulletinID;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)recordID;
 - (id)sectionID;
 - (void)setIdentifier:(id)arg1;

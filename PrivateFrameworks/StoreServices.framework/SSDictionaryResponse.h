@@ -12,7 +12,7 @@
 @property(readonly) NSNumber * failureType;
 @property(readonly) NSArray * pingURLs;
 @property(readonly) NSDictionary * responseDictionary;
-@property(getter=isSupportedProtocolVersion,readonly) bool supportedProtocolVersion;
+@property(getter=isSupportedProtocolVersion,readonly) BOOL supportedProtocolVersion;
 @property(readonly) NSURL * versionMismatchURL;
 
 - (id)_copyAccount;
@@ -24,7 +24,7 @@
 - (id)failureType;
 - (id)init;
 - (id)initWithResponseDictionary:(id)arg1;
-- (bool)isSupportedProtocolVersion;
+- (BOOL)isSupportedProtocolVersion;
 - (id)pingURLs;
 - (id)responseDictionary;
 - (id)versionMismatchURL;

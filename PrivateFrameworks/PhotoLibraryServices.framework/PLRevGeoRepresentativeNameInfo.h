@@ -5,55 +5,55 @@
 @class NSMutableOrderedSet, NSString;
 
 @interface PLRevGeoRepresentativeNameInfo : NSObject {
+    BOOL _addCountyIfNeeded;
+    BOOL _allEntriesAtHome;
+    BOOL _allEntriesMatchHomeForOrderType;
     NSMutableOrderedSet *_geoPlaces;
-    unsigned long long _matchingCount;
+    unsigned int _matchingCount;
     NSString *_name;
     NSMutableOrderedSet *_remainingGeoPlaces;
-    unsigned long long _type;
-    bool_addCountyIfNeeded;
-    bool_allEntriesAtHome;
-    bool_allEntriesMatchHomeForOrderType;
+    unsigned int _type;
 }
 
-@property bool addCountyIfNeeded;
-@property bool allEntriesAtHome;
-@property bool allEntriesMatchHomeForOrderType;
+@property BOOL addCountyIfNeeded;
+@property BOOL allEntriesAtHome;
+@property BOOL allEntriesMatchHomeForOrderType;
 @property(readonly) NSMutableOrderedSet * geoPlaces;
 @property(copy,readonly) NSString * localizedName;
-@property unsigned long long matchingCount;
+@property unsigned int matchingCount;
 @property(copy) NSString * name;
 @property(readonly) NSMutableOrderedSet * remainingGeoPlaces;
-@property unsigned long long type;
+@property unsigned int type;
 
-- (void)_addResourceKeys:(id)arg1 toTypeMap:(id)arg2 forOrderType:(unsigned long long)arg3 countryCode:(id)arg4;
-- (bool)_administrativeAreaCode:(id)arg1 supportedForOrderType:(unsigned long long)arg2;
-- (bool)_currentLanguageSupportsModifiersForOrderType:(unsigned long long)arg1;
-- (id)_resourceKeysForOrderType:(unsigned long long)arg1 countryCode:(id)arg2 administrativeAreaCode:(id)arg3;
-- (id)_typeKeyForOrderType:(unsigned long long)arg1 countryCode:(id)arg2;
-- (bool)addCountyIfNeeded;
+- (void)_addResourceKeys:(id)arg1 toTypeMap:(id)arg2 forOrderType:(unsigned int)arg3 countryCode:(id)arg4;
+- (BOOL)_administrativeAreaCode:(id)arg1 supportedForOrderType:(unsigned int)arg2;
+- (BOOL)_currentLanguageSupportsModifiersForOrderType:(unsigned int)arg1;
+- (id)_resourceKeysForOrderType:(unsigned int)arg1 countryCode:(id)arg2 administrativeAreaCode:(id)arg3;
+- (id)_typeKeyForOrderType:(unsigned int)arg1 countryCode:(id)arg2;
+- (BOOL)addCountyIfNeeded;
 - (void)addGeoPlace:(id)arg1;
 - (void)addGeoPlaces:(id)arg1;
-- (bool)allEntriesAtHome;
-- (bool)allEntriesMatchHomeForOrderType;
+- (BOOL)allEntriesAtHome;
+- (BOOL)allEntriesMatchHomeForOrderType;
 - (void)clearGeoPlaces;
 - (void)dealloc;
 - (id)description;
 - (id)geoPlaces;
 - (id)init;
-- (id)initWithName:(id)arg1 type:(unsigned long long)arg2;
+- (id)initWithName:(id)arg1 type:(unsigned int)arg2;
 - (id)localizedName;
-- (unsigned long long)matchingCount;
+- (unsigned int)matchingCount;
 - (id)name;
 - (void)prepareRemainingGeoPlaces;
 - (id)remainingGeoPlaces;
 - (void)removeGeoPlacesFromRemaining:(id)arg1;
-- (void)setAddCountyIfNeeded:(bool)arg1;
-- (void)setAllEntriesAtHome:(bool)arg1;
-- (void)setAllEntriesMatchHomeForOrderType:(bool)arg1;
-- (void)setMatchingCount:(unsigned long long)arg1;
+- (void)setAddCountyIfNeeded:(BOOL)arg1;
+- (void)setAllEntriesAtHome:(BOOL)arg1;
+- (void)setAllEntriesMatchHomeForOrderType:(BOOL)arg1;
+- (void)setMatchingCount:(unsigned int)arg1;
 - (void)setName:(id)arg1;
-- (void)setType:(unsigned long long)arg1;
-- (unsigned long long)type;
+- (void)setType:(unsigned int)arg1;
+- (unsigned int)type;
 - (void)updateWithAddedNameInfo:(id)arg1;
 
 @end

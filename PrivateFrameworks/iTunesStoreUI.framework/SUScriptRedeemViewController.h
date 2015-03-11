@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface SUScriptRedeemViewController : SUScriptViewController {
-    long long _category;
+    int _category;
     NSString *_initialCode;
 }
 
 @property(copy) NSString * initialCode;
-@property(readonly) long long redeemCategoryApps;
-@property(readonly) long long redeemCategoryBooks;
-@property(readonly) long long redeemCategoryMedia;
+@property(readonly) int redeemCategoryApps;
+@property(readonly) int redeemCategoryBooks;
+@property(readonly) int redeemCategoryMedia;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
@@ -22,11 +22,11 @@
 - (id)attributeKeys;
 - (id)initialCode;
 - (id)newNativeViewController;
-- (long long)redeemCategoryApps;
-- (long long)redeemCategoryBooks;
-- (long long)redeemCategoryMedia;
+- (int)redeemCategoryApps;
+- (int)redeemCategoryBooks;
+- (int)redeemCategoryMedia;
 - (id)scriptAttributeKeys;
 - (void)setInitialCode:(id)arg1;
-- (void)setRedeemStyle:(long long)arg1;
+- (void)setRedeemStyle:(int)arg1;
 
 @end

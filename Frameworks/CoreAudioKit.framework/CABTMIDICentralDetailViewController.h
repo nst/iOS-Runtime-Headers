@@ -13,7 +13,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) AMSBTLEPeripheral * detailItem;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(retain) UIViewController<PeripheralForgottenDelegate><PeripheralConnectionStateDelegate> * viewController;
 
@@ -25,13 +25,13 @@
 - (void)forgetDevice:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setDetailItem:(id)arg1;
-- (void)setUIEnabled:(bool)arg1;
+- (void)setUIEnabled:(BOOL)arg1;
 - (void)setViewController:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (void)timeOutTimerFired:(id)arg1;
 - (id)title;
 - (void)updatePeripheralTable;

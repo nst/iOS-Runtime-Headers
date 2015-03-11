@@ -9,7 +9,7 @@
     double _currentValue;
     double _lastUpdate;
     double _startTime;
-    bool_suspended;
+    BOOL _suspended;
 }
 
 @property(readonly) double throughput;
@@ -19,6 +19,6 @@
 - (void)resume;
 - (void)suspend;
 - (double)throughput;
-- (bool)update:(double)arg1;
+- (BOOL)update:(double)arg1;
 
 @end

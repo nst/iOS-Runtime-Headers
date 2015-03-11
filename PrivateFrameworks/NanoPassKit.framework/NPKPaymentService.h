@@ -6,18 +6,18 @@
 
 @interface NPKPaymentService : NSObject <NPKPaymentServiceClientProtocol> {
     <NPKPaymentServiceDelegate> *_delegate;
-    long long _fieldDetectReferenceCount;
+    int _fieldDetectReferenceCount;
+    BOOL _requestsPaymentSessions;
     NSPointerArray *_transientPassAssertions;
     NSXPCConnection *_xpcConnection;
-    bool_requestsPaymentSessions;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <NPKPaymentServiceDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property long long fieldDetectReferenceCount;
-@property(readonly) unsigned long long hash;
-@property bool requestsPaymentSessions;
+@property int fieldDetectReferenceCount;
+@property(readonly) unsigned int hash;
+@property BOOL requestsPaymentSessions;
 @property(readonly) Class superclass;
 @property(retain) NSPointerArray * transientPassAssertions;
 @property(retain) NSXPCConnection * xpcConnection;
@@ -26,15 +26,15 @@
 
 - (void).cxx_destruct;
 - (void)_checkTransientPassAssertionState;
-- (void)_requestFieldDetectActive:(bool)arg1;
-- (void)_requestPaymentSessions:(bool)arg1;
+- (void)_requestFieldDetectActive:(BOOL)arg1;
+- (void)_requestPaymentSessions:(BOOL)arg1;
 - (void)_resyncState;
 - (void)_setTransientPaymentCard:(id)arg1;
 - (void)addTransientPassAssertion:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (long long)fieldDetectReferenceCount;
-- (void)fieldDetected:(bool)arg1 cardEmulationEnabled:(bool)arg2;
+- (int)fieldDetectReferenceCount;
+- (void)fieldDetected:(BOOL)arg1 cardEmulationEnabled:(BOOL)arg2;
 - (void)getDefaultPaymentPassUniqueIdentifierWithCompletion:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (void)invalidate;
@@ -47,11 +47,11 @@
 - (void)paymentSessionDidBeginWithEndpoint:(id)arg1 paymentCard:(id)arg2;
 - (void)removalPendingForPass:(id)arg1;
 - (void)removeTransientPassAssertion:(id)arg1;
-- (bool)requestsPaymentSessions;
+- (BOOL)requestsPaymentSessions;
 - (void)setDefaultPaymentPass:(id)arg1 withCompletion:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setFieldDetectReferenceCount:(long long)arg1;
-- (void)setRequestsPaymentSessions:(bool)arg1;
+- (void)setFieldDetectReferenceCount:(int)arg1;
+- (void)setRequestsPaymentSessions:(BOOL)arg1;
 - (void)setTransientPassAssertions:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (void)setupNewUser;

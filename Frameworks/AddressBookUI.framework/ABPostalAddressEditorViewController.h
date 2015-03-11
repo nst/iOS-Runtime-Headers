@@ -14,34 +14,34 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool isPresentingModalViewController;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL isPresentingModalViewController;
 @property(readonly) Class superclass;
 
 + (id)cellIdentifierForClass:(Class)arg1;
 + (id)cellIdentifierForEditingProperty:(id)arg1;
 
-- (void)_rebuildPropertyGroupItems:(bool)arg1;
+- (void)_rebuildPropertyGroupItems:(BOOL)arg1;
 - (void)_startEditingFirstCell;
 - (void)cancel:(id)arg1;
 - (id)contactStyle;
 - (void)dealloc;
 - (id)defaultValueForPropertyCell:(id)arg1;
 - (void)done:(id)arg1;
-- (id)initWithContact:(id)arg1 property:(int)arg2 editNames:(bool)arg3;
-- (bool)isPresentingModalViewController;
+- (id)initWithContact:(id)arg1 property:(int)arg2 editNames:(BOOL)arg3;
+- (BOOL)isPresentingModalViewController;
 - (void)propertyCell:(id)arg1 didUpdateItem:(id)arg2 withNewLabel:(id)arg3;
 - (void)propertyCell:(id)arg1 didUpdateItem:(id)arg2 withNewValue:(id)arg3;
-- (void)propertyCell:(id)arg1 performActionForItem:(id)arg2 withTransportType:(long long)arg3;
+- (void)propertyCell:(id)arg1 performActionForItem:(id)arg2 withTransportType:(int)arg3;
 - (void)propertyCellDidChangeLayout:(id)arg1;
 - (void)registerContactCellClass:(Class)arg1;
 - (void)sender:(id)arg1 dismissViewController:(id)arg2;
 - (void)sender:(id)arg1 presentViewController:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (double)tableViewSpacingForExtraSeparators:(id)arg1;
-- (void)viewDidAppear:(bool)arg1;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (float)tableViewSpacingForExtraSeparators:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

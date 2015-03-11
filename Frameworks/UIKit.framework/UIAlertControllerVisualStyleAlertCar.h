@@ -9,17 +9,17 @@
 - (id)backgroundView;
 - (id)defaultActionFont;
 - (id)highlightedActionContentColor;
-- (double)horizontalContentMargin;
-- (long long)maximumNumberOfLinesInMessageLabel;
-- (long long)maximumNumberOfLinesInTitleLabel;
-- (double)maximumWidth;
+- (float)horizontalContentMargin;
+- (int)maximumNumberOfLinesInMessageLabel;
+- (int)maximumNumberOfLinesInTitleLabel;
+- (float)maximumWidth;
 - (id)messageLabelColor;
 - (id)messageLabelFont;
-- (double)minimumActionHeight;
+- (float)minimumActionHeight;
 - (id)regularActionFont;
 - (id)titleLabelColor;
 - (id)titleLabelFont;
-- (double)verticalContentMargin;
-- (double)visualAltitude;
+- (float)verticalContentMargin;
+- (float)visualAltitude;
 
 @end

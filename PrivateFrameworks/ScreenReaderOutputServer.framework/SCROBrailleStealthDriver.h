@@ -5,33 +5,33 @@
 @class NSString;
 
 @interface SCROBrailleStealthDriver : NSObject <SCROBrailleDriverProtocol> {
-    long long _mainSize;
+    BOOL _isDriverLoaded;
+    int _mainSize;
     NSString *_modelIdentifier;
-    long long _statusSize;
-    bool_isDriverLoaded;
+    int _statusSize;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (int)brailleInputMode;
 - (void)dealloc;
 - (id)getInputEvents;
 - (id)init;
-- (unsigned long long)interfaceVersion;
-- (bool)isDriverLoaded;
-- (bool)isInputEnabled;
-- (bool)isSleeping;
+- (unsigned int)interfaceVersion;
+- (BOOL)isDriverLoaded;
+- (BOOL)isInputEnabled;
+- (BOOL)isSleeping;
 - (int)loadDriverWithIOElement:(id)arg1;
-- (long long)mainSize;
+- (int)mainSize;
 - (id)modelIdentifier;
-- (bool)postsKeyboardEvents;
-- (bool)setMainCells:(const char *)arg1 length:(long long)arg2;
-- (bool)setStatusCells:(const char *)arg1 length:(long long)arg2;
-- (long long)statusSize;
-- (bool)supportsBlinkingCursor;
-- (bool)unloadDriver;
+- (BOOL)postsKeyboardEvents;
+- (BOOL)setMainCells:(const char *)arg1 length:(int)arg2;
+- (BOOL)setStatusCells:(const char *)arg1 length:(int)arg2;
+- (int)statusSize;
+- (BOOL)supportsBlinkingCursor;
+- (BOOL)unloadDriver;
 
 @end

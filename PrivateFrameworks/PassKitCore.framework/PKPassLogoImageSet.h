@@ -26,9 +26,9 @@
 @property(retain) PKImage * networkLogoImage;
 @property(retain) PKImage * stripImage;
 
-+ (long long)imageSetType;
-+ (bool)shouldCache;
-+ (bool)supportsSecureCoding;
++ (int)imageSetType;
++ (BOOL)shouldCache;
++ (BOOL)supportsSecureCoding;
 
 - (id)backgroundImage;
 - (id)bankLogoImage;
@@ -38,15 +38,15 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)footerImage;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(double)arg3 suffix:(id)arg4;
-- (bool)isEqual:(id)arg1;
+- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
+- (BOOL)isEqual:(id)arg1;
 - (void)loadPDFArtFromBundle:(id)arg1;
 - (id)logoImage;
 - (id)networkLogoImage;
 - (void)preheatImages;
-- (void)resizeWithScreenSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)resizeWithScreenSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBankLogoImage:(id)arg1;
 - (void)setCardBackgroundCombinedImage:(id)arg1;

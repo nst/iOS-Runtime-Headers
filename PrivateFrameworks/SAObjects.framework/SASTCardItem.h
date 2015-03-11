@@ -10,7 +10,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) SAUIDecoratedText * footnote;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SAUIDecoratedText * label;
 @property(readonly) Class superclass;
 @property(retain) SAUIDecoratedText * title;

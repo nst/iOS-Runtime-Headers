@@ -6,12 +6,12 @@
 
 @interface TSPPackageWriterComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
     TSUZipFileWriter *_archiveWriter;
-    bool_isClosed;
+    BOOL _isClosed;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;

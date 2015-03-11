@@ -5,20 +5,20 @@
 @class _UIDocumentPickerContainerItem;
 
 @interface _UIDocumentPickerDocumentCell : _UIDocumentPickerCell {
+    BOOL _enabled;
     _UIDocumentPickerContainerItem *_item;
-    bool_enabled;
 }
 
-@property bool enabled;
+@property BOOL enabled;
 @property(retain) _UIDocumentPickerContainerItem * item;
 
 - (void)_showPickableDiagnostic;
 - (void)dealloc;
-- (bool)enabled;
+- (BOOL)enabled;
 - (id)item;
 - (void)prepareForReuse;
-- (void)reloadItem:(bool)arg1;
-- (void)setEnabled:(bool)arg1;
+- (void)reloadItem:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateContents;

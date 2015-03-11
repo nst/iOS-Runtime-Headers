@@ -16,7 +16,7 @@
 
 @property(copy) NSArray * animations;
 
-- (bool)_animateForInterval:(double)arg1;
+- (BOOL)_animateForInterval:(double)arg1;
 - (void)_appendSubclassDescription:(id)arg1 atLevel:(int)arg2;
 - (void)_stopAnimation;
 - (void)addAnimation:(id)arg1;

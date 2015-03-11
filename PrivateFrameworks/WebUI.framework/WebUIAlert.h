@@ -14,7 +14,7 @@
     id _context;
     int _defaultAction;
     int _hideAction;
-    long long _indexOfSelectedTableItem;
+    int _indexOfSelectedTableItem;
     int _otherAction;
     int _tableAction;
     NSMutableArray *_tableItems;
@@ -26,7 +26,7 @@
 
 - (void).cxx_destruct;
 - (id)_buttonTitleForAction:(int)arg1;
-- (int)actionForButtonTag:(long long)arg1;
+- (int)actionForButtonTag:(int)arg1;
 - (id)actionHandler;
 - (id)bodyText;
 - (id)buttonTitles;
@@ -41,7 +41,7 @@
 - (void)setActionHandler:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setHideAction:(int)arg1;
-- (void)setSelectedTableItemIndex:(long long)arg1;
+- (void)setSelectedTableItemIndex:(int)arg1;
 - (void)setTableItems:(id)arg1 withTitles:(id)arg2;
 - (int)tableAction;
 - (id)tableItems;

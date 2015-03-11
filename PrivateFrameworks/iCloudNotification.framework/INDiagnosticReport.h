@@ -5,30 +5,30 @@
 @class NSDate, NSString;
 
 @interface INDiagnosticReport : NSObject <NSSecureCoding> {
+    BOOL _disabled;
     NSDate *_nextHeartbeatDate;
     NSString *_pushEnvironment;
     NSString *_pushToken;
     NSString *_pushTopic;
-    bool_disabled;
 }
 
-@property bool disabled;
+@property BOOL disabled;
 @property(copy) NSDate * nextHeartbeatDate;
 @property(copy) NSString * pushEnvironment;
 @property(copy) NSString * pushToken;
 @property(copy) NSString * pushTopic;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)disabled;
+- (BOOL)disabled;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)nextHeartbeatDate;
 - (id)pushEnvironment;
 - (id)pushToken;
 - (id)pushTopic;
-- (void)setDisabled:(bool)arg1;
+- (void)setDisabled:(BOOL)arg1;
 - (void)setNextHeartbeatDate:(id)arg1;
 - (void)setPushEnvironment:(id)arg1;
 - (void)setPushToken:(id)arg1;

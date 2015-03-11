@@ -5,18 +5,18 @@
 @class CKShareID, CKSharedItemID, NSString;
 
 @interface CKLikeNotification : CKNotification <NSSecureCoding> {
+    BOOL _isLike;
     CKSharedItemID *_likedItemID;
     NSString *_likingUserID;
     CKShareID *_shareID;
-    bool_isLike;
 }
 
-@property bool isLike;
+@property BOOL isLike;
 @property(copy) CKSharedItemID * likedItemID;
 @property(copy) NSString * likingUserID;
 @property(copy) CKShareID * shareID;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -24,10 +24,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRemoteNotificationDictionary:(id)arg1;
-- (bool)isLike;
+- (BOOL)isLike;
 - (id)likedItemID;
 - (id)likingUserID;
-- (void)setIsLike:(bool)arg1;
+- (void)setIsLike:(BOOL)arg1;
 - (void)setLikedItemID:(id)arg1;
 - (void)setLikingUserID:(id)arg1;
 - (void)setShareID:(id)arg1;

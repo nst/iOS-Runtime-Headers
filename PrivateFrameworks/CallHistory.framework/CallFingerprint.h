@@ -6,6 +6,6 @@
 }
 
 + (id)getDatabasePredicate:(id)arg1;
-+ (bool)match:(id)arg1 :(id)arg2;
++ (BOOL)match:(id)arg1 :(id)arg2;
 
 @end

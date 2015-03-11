@@ -7,14 +7,14 @@
 @interface _HKQueryServerDataObject : NSObject <NSSecureCoding> {
     _HKFilter *_filter;
     HKSampleType *_sampleType;
-    bool_shouldStayAliveAfterInitialResults;
+    BOOL _shouldStayAliveAfterInitialResults;
 }
 
 @property(retain) _HKFilter * filter;
 @property(retain) HKSampleType * sampleType;
-@property bool shouldStayAliveAfterInitialResults;
+@property BOOL shouldStayAliveAfterInitialResults;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -23,7 +23,7 @@
 - (id)sampleType;
 - (void)setFilter:(id)arg1;
 - (void)setSampleType:(id)arg1;
-- (void)setShouldStayAliveAfterInitialResults:(bool)arg1;
-- (bool)shouldStayAliveAfterInitialResults;
+- (void)setShouldStayAliveAfterInitialResults:(BOOL)arg1;
+- (BOOL)shouldStayAliveAfterInitialResults;
 
 @end

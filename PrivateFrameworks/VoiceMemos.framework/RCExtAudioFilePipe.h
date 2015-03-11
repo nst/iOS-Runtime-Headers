@@ -26,7 +26,7 @@
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
     NSObject<OS_dispatch_queue> *_accessQueue;
-    unsigned long long _accessQueueID;
+    unsigned long _accessQueueID;
     struct OpaqueExtAudioFile { } *_audioFileRef;
     } _outputFormatDescriptionStruct;
     unsigned long long _sourceFileSize;
@@ -42,11 +42,11 @@
 - (void).cxx_destruct;
 - (void)_accessExtAudioFileWithBlock:(id)arg1;
 - (void)dealloc;
-- (id)initWithURL:(id)arg1 outputFrameRate:(double)arg2 outputFormatID:(unsigned int)arg3;
+- (id)initWithURL:(id)arg1 outputFrameRate:(double)arg2 outputFormatID:(unsigned long)arg3;
 - (struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)outputFormatDescription;
 - (void)performTransactionWithBlock:(id)arg1;
-- (int)readConvertedFramesIntoBuffer:(id)arg1 requestedFrameCount:(int)arg2;
-- (bool)seekToSourceFrameIndex:(long long)arg1;
+- (long)readConvertedFramesIntoBuffer:(id)arg1 requestedFrameCount:(long)arg2;
+- (BOOL)seekToSourceFrameIndex:(long long)arg1;
 - (long long)sourceCurrentFrameIndex;
 - (unsigned long long)sourceFileSize;
 - (struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)sourceFormatDescription;

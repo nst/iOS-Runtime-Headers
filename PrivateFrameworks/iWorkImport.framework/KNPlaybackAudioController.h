@@ -7,25 +7,25 @@
 @interface KNPlaybackAudioController : NSObject <TSKMediaPlayerControllerDelegate> {
     unsigned int mAudioPlaybackIsQueued : 1;
     unsigned int mIsObservingPlayerItemStatus : 1;
-    boolmIsPaused;
-    boolmIsPlaying;
     AVQueuePlayer *mAudioPlayer;
+    BOOL mIsPaused;
+    BOOL mIsPlaying;
     TSKAVQueuePlayerController *mPlayerController;
     KNSoundtrack *mSoundtrack;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(getter=isPlaying,readonly) bool playing;
+@property(readonly) unsigned int hash;
+@property(getter=isPlaying,readonly) BOOL playing;
 @property(readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithSoundtrack:(id)arg1;
 - (void)interruptAndReset;
-- (bool)isPlaying;
+- (BOOL)isPlaying;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)p_initAudioPlaybackAtMediaIndex:(unsigned long long)arg1;
+- (void)p_initAudioPlaybackAtMediaIndex:(unsigned int)arg1;
 - (void)p_startAudioPlayback;
 - (void)p_tearDownAudioPlayback;
 - (void)pause;
@@ -33,7 +33,7 @@
 - (void)playerController:(id)arg1 playbackDidFailWithError:(id)arg2;
 - (void)resume;
 - (void)start;
-- (void)startAtMediaIndex:(unsigned long long)arg1 time:(double)arg2;
+- (void)startAtMediaIndex:(unsigned int)arg1 time:(double)arg2;
 - (void)stop;
 
 @end

@@ -8,19 +8,19 @@
     double _accuracy;
     NSNumber *_major;
     NSNumber *_minor;
-    long long _proximity;
+    int _proximity;
     NSUUID *_proximityUUID;
-    long long _rssi;
+    int _rssi;
 }
 
 @property(readonly) double accuracy;
 @property(readonly) NSNumber * major;
 @property(readonly) NSNumber * minor;
-@property(readonly) long long proximity;
+@property(readonly) int proximity;
 @property(readonly) NSUUID * proximityUUID;
-@property(readonly) long long rssi;
+@property(readonly) int rssi;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (double)accuracy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -28,11 +28,11 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithProximityUUID:(id)arg1 major:(id)arg2 minor:(id)arg3 proximity:(long long)arg4 accuracy:(double)arg5 rssi:(long long)arg6;
+- (id)initWithProximityUUID:(id)arg1 major:(id)arg2 minor:(id)arg3 proximity:(int)arg4 accuracy:(double)arg5 rssi:(int)arg6;
 - (id)major;
 - (id)minor;
-- (long long)proximity;
+- (int)proximity;
 - (id)proximityUUID;
-- (long long)rssi;
+- (int)rssi;
 
 @end

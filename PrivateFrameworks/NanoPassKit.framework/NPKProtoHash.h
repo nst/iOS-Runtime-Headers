@@ -8,7 +8,7 @@
     NSData *_hashData;
 }
 
-@property(readonly) bool hasHashData;
+@property(readonly) BOOL hasHashData;
 @property(retain) NSData * hashData;
 
 - (void).cxx_destruct;
@@ -16,12 +16,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasHashData;
-- (unsigned long long)hash;
+- (BOOL)hasHashData;
+- (unsigned int)hash;
 - (id)hashData;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setHashData:(id)arg1;
 - (void)writeTo:(id)arg1;
 

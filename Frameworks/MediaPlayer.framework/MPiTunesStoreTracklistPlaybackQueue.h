@@ -5,17 +5,17 @@
 @class NSArray;
 
 @interface MPiTunesStoreTracklistPlaybackQueue : MPRemotePlaybackQueue {
-    unsigned long long _shuffleType;
+    unsigned int _shuffleType;
     NSArray *_storeIDs;
 }
 
-@property(readonly) unsigned long long shuffleType;
+@property(readonly) unsigned int shuffleType;
 @property(readonly) NSArray * storeIDs;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
-- (unsigned long long)shuffleType;
+- (unsigned int)shuffleType;
 - (id)storeIDs;
 
 @end

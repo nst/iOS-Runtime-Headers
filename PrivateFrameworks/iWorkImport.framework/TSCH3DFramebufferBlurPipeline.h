@@ -6,30 +6,30 @@
 
 @interface TSCH3DFramebufferBlurPipeline : TSCH3DLinkablePipeline {
     float mKernelScale;
-    unsigned long long mNumPasses;
+    unsigned int mNumPasses;
     TSCH3DGLFramebuffer *mPingpong;
-    unsigned long long mRadius;
+    unsigned int mRadius;
     <TSCH3DPipelineLinkable> *mSource;
     TSCH3DGLFramebuffer *mTarget;
 }
 
 @property float kernelScale;
-@property unsigned long long numPasses;
-@property unsigned long long radius;
+@property unsigned int numPasses;
+@property unsigned int radius;
 @property(retain) <TSCH3DPipelineLinkable> * source;
 @property(readonly) TSCH3DGLFramebuffer * target;
 
-- (bool)blur;
+- (BOOL)blur;
 - (void)dealloc;
 - (id)initWithProcessor:(id)arg1 session:(id)arg2;
 - (float)kernelScale;
-- (unsigned long long)numPasses;
+- (unsigned int)numPasses;
 - (id)pingPongFBOResource;
-- (unsigned long long)radius;
-- (bool)run;
+- (unsigned int)radius;
+- (BOOL)run;
 - (void)setKernelScale:(float)arg1;
-- (void)setNumPasses:(unsigned long long)arg1;
-- (void)setRadius:(unsigned long long)arg1;
+- (void)setNumPasses:(unsigned int)arg1;
+- (void)setRadius:(unsigned int)arg1;
 - (void)setSource:(id)arg1;
 - (id)source;
 - (id)target;

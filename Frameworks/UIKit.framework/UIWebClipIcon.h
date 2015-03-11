@@ -6,27 +6,27 @@
 
 @interface UIWebClipIcon : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     } _bestSize;
+    BOOL _precomposed;
+    BOOL _siteWide;
     NSURL *_url;
-    bool_precomposed;
-    bool_siteWide;
 }
 
-@property struct CGSize { double x1; double x2; } bestSize;
-@property(getter=isPrecomposed) bool precomposed;
-@property(getter=isSiteWide) bool siteWide;
+@property struct CGSize { float x1; float x2; } bestSize;
+@property(getter=isPrecomposed) BOOL precomposed;
+@property(getter=isSiteWide) BOOL siteWide;
 @property(retain) NSURL * url;
 
-- (struct CGSize { double x1; double x2; })bestSize;
-- (long long)compare:(id)arg1 preferringDeviceIconSizes:(bool)arg2;
+- (struct CGSize { float x1; float x2; })bestSize;
+- (int)compare:(id)arg1 preferringDeviceIconSizes:(BOOL)arg2;
 - (void)dealloc;
-- (bool)isPrecomposed;
-- (bool)isSiteWide;
-- (void)setBestSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setPrecomposed:(bool)arg1;
-- (void)setSiteWide:(bool)arg1;
+- (BOOL)isPrecomposed;
+- (BOOL)isSiteWide;
+- (void)setBestSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPrecomposed:(BOOL)arg1;
+- (void)setSiteWide:(BOOL)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 

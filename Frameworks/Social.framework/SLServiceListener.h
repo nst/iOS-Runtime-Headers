@@ -18,18 +18,18 @@
 @property(retain) NSXPCInterface * clientInterface;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * managedObjectModelPath;
 @property(retain) NSString * persistentStoreName;
 @property(retain) NSString * serviceName;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)_verifyAuthorizationForConnection:(id)arg1;
+- (BOOL)_verifyAuthorizationForConnection:(id)arg1;
 - (void)beginAcceptingConnections;
 - (id)clientInterface;
 - (id)initWithExportedSessionClass:(Class)arg1 serviceProtocol:(id)arg2;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)managedObjectModelPath;
 - (id)persistentStoreName;
 - (void)restrictToClientsWithEntitlements:(id)arg1;

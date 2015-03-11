@@ -5,9 +5,9 @@
 @interface WKInterfaceMap : WKInterfaceObject {
 }
 
-- (void)addAnnotation:(struct { double x1; double x2; })arg1 withImage:(id)arg2 centerOffset:(struct CGPoint { double x1; double x2; })arg3;
-- (void)addAnnotation:(struct { double x1; double x2; })arg1 withImageNamed:(id)arg2 centerOffset:(struct CGPoint { double x1; double x2; })arg3;
-- (void)addAnnotation:(struct { double x1; double x2; })arg1 withPinColor:(long long)arg2;
+- (void)addAnnotation:(struct { double x1; double x2; })arg1 withImage:(id)arg2 centerOffset:(struct CGPoint { float x1; float x2; })arg3;
+- (void)addAnnotation:(struct { double x1; double x2; })arg1 withImageNamed:(id)arg2 centerOffset:(struct CGPoint { float x1; float x2; })arg3;
+- (void)addAnnotation:(struct { double x1; double x2; })arg1 withPinColor:(int)arg2;
 - (void)removeAllAnnotations;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;

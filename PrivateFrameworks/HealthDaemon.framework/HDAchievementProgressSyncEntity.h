@@ -5,8 +5,8 @@
 @interface HDAchievementProgressSyncEntity : HDKeyValueSyncEntity {
 }
 
-+ (long long)category;
++ (int)category;
 + (int)nanoSyncObjectType;
-+ (long long)syncEntityType;
++ (int)syncEntityType;
 
 @end

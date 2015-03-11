@@ -33,7 +33,7 @@
 - (id)displayString;
 - (id)handles;
 - (id)initWithGUID:(id)arg1 displayString:(id)arg2 detailsString:(id)arg3 handles:(id)arg4 lastMessageDate:(id)arg5 searchTerm:(id)arg6 matchingRecipient:(id)arg7;
-- (bool)isRemovableFromSearchResults;
+- (BOOL)isRemovableFromSearchResults;
 - (id)lastMessageDate;
 - (id)matchingRecipient;
 - (void)setComposeRecipients:(id)arg1;

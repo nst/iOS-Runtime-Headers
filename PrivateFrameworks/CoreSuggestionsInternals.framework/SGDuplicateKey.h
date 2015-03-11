@@ -31,13 +31,13 @@
 - (id)emailKey;
 - (id)entityKey;
 - (long long)entityType;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)identityKey;
 - (id)initWithEntityKey:(id)arg1 entityType:(long long)arg2 parentKey:(id)arg3;
 - (id)initWithSerialized:(id)arg1;
 - (id)initWithSerializedEntityKey:(id)arg1 entityType:(long long)arg2 serializedParentKey:(id)arg3;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToDuplicateKey:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToDuplicateKey:(id)arg1;
 - (id)parentKey;
 - (id)pseudoContactKey;
 - (id)pseudoEventKey;

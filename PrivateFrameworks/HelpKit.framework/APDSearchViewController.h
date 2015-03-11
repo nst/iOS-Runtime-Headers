@@ -10,12 +10,12 @@
     UILabel *_footerViewLabel;
     APDSearchBar *_searchBar;
     APDSearchModel *_searchModel;
+    BOOL _searching;
+    BOOL _shouldHighlighViewingTopic;
+    BOOL _showSearchBarPending;
     UIView *_toolbarTopOverlapView;
     UIView *_topbarBottomStrokeView;
-    bool_searching;
-    bool_shouldHighlighViewingTopic;
-    bool_showSearchBarPending;
-    bool_viewDidAppeared;
+    BOOL _viewDidAppeared;
 }
 
 @property(retain) NSTimer * axSearchTimer;
@@ -24,9 +24,9 @@
 @property(copy,readonly) NSString * description;
 @property(retain) UIView * footerView;
 @property UILabel * footerViewLabel;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property APDSearchBar * searchBar;
-@property(getter=isSearching) bool searching;
+@property(getter=isSearching) BOOL searching;
 @property(readonly) Class superclass;
 @property UIView * toolbarTopOverlapView;
 @property UIView * topbarBottomStrokeView;
@@ -41,24 +41,24 @@
 - (id)footerViewLabel;
 - (void)hide;
 - (id)init;
-- (bool)isSearching;
-- (long long)positionForBar:(id)arg1;
+- (BOOL)isSearching;
+- (int)positionForBar:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewWillBeginDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
 - (void)searchBarCancelButtonClicked:(id)arg1;
 - (void)searchBarSearchButtonClicked:(id)arg1;
-- (bool)searchBarShouldBeginEditing:(id)arg1;
+- (BOOL)searchBarShouldBeginEditing:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
 - (void)setAxSearchTimer:(id)arg1;
 - (void)setFooterView:(id)arg1;
 - (void)setFooterViewLabel:(id)arg1;
 - (void)setSearchBar:(id)arg1;
-- (void)setSearching:(bool)arg1;
+- (void)setSearching:(BOOL)arg1;
 - (void)setToolbarTopOverlapView:(id)arg1;
 - (void)setTopbarBottomStrokeView:(id)arg1;
 - (void)show;
@@ -70,10 +70,10 @@
 - (void)updateLocalizedStrings;
 - (void)updateTableViewData;
 - (void)updateViewLayout;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

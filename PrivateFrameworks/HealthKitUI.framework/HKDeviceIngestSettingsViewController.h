@@ -7,20 +7,20 @@
 @interface HKDeviceIngestSettingsViewController : UITableViewController <HKSwitchTableViewCellDelegate> {
     NSMutableArray *_dataTypeNames;
     HKDataUnitGroupController *_dataUnitGroupController;
+    BOOL _deviceEnabled;
+    BOOL _deviceFound;
     NSUUID *_deviceIdentifier;
     HKHealthStore *_healthStore;
     HKSource *_source;
-    bool_deviceEnabled;
-    bool_deviceFound;
 }
 
 - (void).cxx_destruct;
 - (id)initWithHealthStore:(id)arg1 dataUnitGroupController:(id)arg2 source:(id)arg3;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)switchCellValueChanged:(id)arg1 value:(bool)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)switchCellValueChanged:(id)arg1 value:(BOOL)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (void)viewDidLoad;
 
 @end

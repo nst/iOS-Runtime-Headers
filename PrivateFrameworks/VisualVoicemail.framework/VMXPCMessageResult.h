@@ -6,20 +6,20 @@
 
 @interface VMXPCMessageResult : NSObject {
     NSDictionary *_message;
-    bool_wasSuccessful;
+    BOOL _wasSuccessful;
 }
 
 @property(retain) NSDictionary * message;
-@property bool wasSuccessful;
+@property BOOL wasSuccessful;
 
 + (id)result;
-+ (id)resultWithWasSuccessful:(bool)arg1 message:(id)arg2;
++ (id)resultWithWasSuccessful:(BOOL)arg1 message:(id)arg2;
 
 - (void)dealloc;
-- (id)initWithWasSuccessful:(bool)arg1 message:(id)arg2;
+- (id)initWithWasSuccessful:(BOOL)arg1 message:(id)arg2;
 - (id)message;
 - (void)setMessage:(id)arg1;
-- (void)setWasSuccessful:(bool)arg1;
-- (bool)wasSuccessful;
+- (void)setWasSuccessful:(BOOL)arg1;
+- (BOOL)wasSuccessful;
 
 @end

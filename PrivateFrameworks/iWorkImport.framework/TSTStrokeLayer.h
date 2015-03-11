@@ -12,24 +12,24 @@
     } mStrokeRuns;
 }
 
-@property(readonly) bool isEmpty;
+@property(readonly) BOOL isEmpty;
 
 + (id)strokeLayer;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)appendStroke:(id)arg1 inRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg2;
+- (void)appendStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)enumerateStrokesUsingBlock:(id)arg1;
-- (id)findStrokeAndRangeAtIndex:(long long)arg1;
+- (id)findStrokeAndRangeAtIndex:(int)arg1;
 - (id)init;
-- (void)insertStroke:(id)arg1 inRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg2;
+- (void)insertStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2;
 - (void)invalidate;
-- (void)invalidateRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
-- (bool)isEmpty;
+- (void)invalidateRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
+- (BOOL)isEmpty;
 - (id)nextStrokeAndRange:(id)arg1;
-- (void)p_mergeStrokeRunsAtPosition:(unsigned long long)arg1;
-- (long long)startingIndex;
+- (void)p_mergeStrokeRunsAtPosition:(unsigned int)arg1;
+- (int)startingIndex;
 
 @end

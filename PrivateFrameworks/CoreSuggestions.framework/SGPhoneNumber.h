@@ -11,16 +11,16 @@
 @property(readonly) NSString * phoneNumber;
 
 + (id)phoneNumber:(id)arg1 label:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPhoneNumber:(id)arg1 label:(id)arg2;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToPhoneNumber:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToPhoneNumber:(id)arg1;
 - (id)phoneNumber;
 
 @end

@@ -5,13 +5,13 @@
 @class <HDSensorDatum>, NSDictionary, _HKDelayedOperation;
 
 @interface HDAggregateDataCollector : HDDataCollector {
+    BOOL _didReceiveSensorDatum;
+    BOOL _fetchingHistoricalData;
     _HKDelayedOperation *_historicalFetchOperation;
     NSDictionary *_lastReceivedSecondaryContext;
     <HDSensorDatum> *_lastReceivedSensorDatum;
     double _maxDatumDuration;
-    bool_didReceiveSensorDatum;
-    bool_fetchingHistoricalData;
-    bool_needsHistoricalFetch;
+    BOOL _needsHistoricalFetch;
 }
 
 @property double maxDatumDuration;

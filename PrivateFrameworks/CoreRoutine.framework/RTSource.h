@@ -5,7 +5,7 @@
 @interface RTSource : NSObject <NSSecureCoding> {
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

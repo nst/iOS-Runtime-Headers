@@ -8,16 +8,16 @@
     int _currentNetworkType;
     NSHashTable *_observers;
     struct __SCNetworkReachability { } *_reachability;
-    bool_roaming;
+    BOOL _roaming;
 }
 
-+ (bool)holdsWiFiAssertion;
-+ (void)setHoldsWiFiAssertion:(bool)arg1;
++ (BOOL)holdsWiFiAssertion;
++ (void)setHoldsWiFiAssertion:(BOOL)arg1;
 + (id)sharedInstance;
 
 - (void)_carrierBundleChanged;
 - (void)_initNetworkObservation;
-- (bool)_isCurrentlyRoaming;
+- (BOOL)_isCurrentlyRoaming;
 - (int)_networkTypeFromCurrentCellularData;
 - (int)_networkTypeFromFlags:(unsigned int)arg1;
 - (void)_operatorBundleChanged;
@@ -25,11 +25,11 @@
 - (int)currentNetworkType;
 - (void)dealloc;
 - (id)init;
-- (bool)isCellularDataRoamingEnabled;
-- (bool)isCellularRoaming;
-- (bool)isNetworkTypeCellular:(int)arg1;
+- (BOOL)isCellularDataRoamingEnabled;
+- (BOOL)isCellularRoaming;
+- (BOOL)isNetworkTypeCellular:(int)arg1;
 - (void)removeObserver:(id)arg1;
-- (void)setCellularRoaming:(bool)arg1;
+- (void)setCellularRoaming:(BOOL)arg1;
 - (void)setCurrentNetworkType:(int)arg1;
 
 @end

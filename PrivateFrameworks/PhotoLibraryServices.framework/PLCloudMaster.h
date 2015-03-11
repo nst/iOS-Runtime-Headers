@@ -31,9 +31,9 @@
 
 - (void)applyPropertiesFromCPLMasterChange:(id)arg1;
 - (void)awakeFromInsert;
-- (id)cloudResourceForResourceType:(unsigned long long)arg1 forAssetUuid:(id)arg2;
-- (id)cloudResourcesForResourceType:(unsigned long long)arg1;
-- (id)cplResourceForResourceType:(unsigned long long)arg1 forAssetUuid:(id)arg2;
+- (id)cloudResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
+- (id)cloudResourcesForResourceType:(unsigned int)arg1;
+- (id)cplResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
 - (id)description;
 
 @end

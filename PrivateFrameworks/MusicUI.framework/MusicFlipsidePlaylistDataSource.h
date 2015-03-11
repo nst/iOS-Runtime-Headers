@@ -5,6 +5,6 @@
 @interface MusicFlipsidePlaylistDataSource : MusicPlaylistSongsDataSource {
 }
 
-- (bool)showsEntityCountFooter;
+- (BOOL)showsEntityCountFooter;
 
 @end

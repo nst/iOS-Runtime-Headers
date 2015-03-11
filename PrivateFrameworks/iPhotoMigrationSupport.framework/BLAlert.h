@@ -16,15 +16,15 @@
     id _context;
     id _executionBlock;
     int _options;
+    BOOL _showing;
     BLAlert *_strongSelf;
-    bool_showing;
 }
 
 @property(copy) id conditionBlock;
 @property(retain) id context;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) BLAlert * strongSelf;
 @property(readonly) Class superclass;
 
@@ -34,19 +34,19 @@
 + (void)pushPendingAlert:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)alertViewController:(id)arg1 didPressButtonAtIndex:(long long)arg2;
+- (void)alertViewController:(id)arg1 didPressButtonAtIndex:(int)arg2;
 - (void)cancelDelayedHide;
 - (id)conditionBlock;
 - (id)context;
 - (void)dealloc;
-- (void)hide:(bool)arg1;
+- (void)hide:(BOOL)arg1;
 - (void)hide;
 - (void)hideWithCompletionBlock:(id)arg1;
 - (void)hideWithDelay:(double)arg1 completionBlock:(id)arg2;
 - (void)hideWithDelay:(double)arg1;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 cancelAction:(id)arg3 otherActions:(id)arg4;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 options:(int)arg3 cancelAction:(id)arg4 otherActions:(id)arg5;
-- (bool)isShowing;
+- (BOOL)isShowing;
 - (void)setConditionBlock:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setMessage:(id)arg1;
@@ -56,6 +56,6 @@
 - (void)showPendingAlertIfNeeded;
 - (void)showWithExecutionBlock:(id)arg1;
 - (id)strongSelf;
-- (bool)wantSingular;
+- (BOOL)wantSingular;
 
 @end

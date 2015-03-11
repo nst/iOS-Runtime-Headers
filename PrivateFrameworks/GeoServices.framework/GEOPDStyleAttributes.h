@@ -14,12 +14,12 @@
 
 @property(retain) NSMutableArray * attributes;
 @property unsigned long long customIconId;
-@property bool hasCustomIconId;
+@property BOOL hasCustomIconId;
 
 - (void)addAttribute:(id)arg1;
-- (id)attributeAtIndex:(unsigned long long)arg1;
+- (id)attributeAtIndex:(unsigned int)arg1;
 - (id)attributes;
-- (unsigned long long)attributesCount;
+- (unsigned int)attributesCount;
 - (void)clearAttributes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -27,14 +27,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCustomIconId;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCustomIconId;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setCustomIconId:(unsigned long long)arg1;
-- (void)setHasCustomIconId:(bool)arg1;
+- (void)setHasCustomIconId:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

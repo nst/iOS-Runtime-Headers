@@ -6,10 +6,10 @@
 
 @interface AFContactAddress : AFSiriModelObject {
     NSString *_stringValue;
-    long long _type;
+    int _type;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aceContextObjectValue;
@@ -17,8 +17,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStringValue:(id)arg1;
-- (id)initWithType:(long long)arg1 stringValue:(id)arg2;
+- (id)initWithType:(int)arg1 stringValue:(id)arg2;
 - (id)stringValue;
-- (long long)type;
+- (int)type;
 
 @end

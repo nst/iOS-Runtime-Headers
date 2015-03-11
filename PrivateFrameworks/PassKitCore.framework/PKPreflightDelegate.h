@@ -3,13 +3,13 @@
  */
 
 @interface PKPreflightDelegate : NSObject <VRUIDelegate> {
-    unsigned long long _state;
+    unsigned int _state;
 }
 
-@property(readonly) unsigned long long state;
+@property(readonly) unsigned int state;
 
 - (void)event:(id)arg1 params:(id)arg2 reply:(id)arg3;
 - (id)init;
-- (unsigned long long)state;
+- (unsigned int)state;
 
 @end

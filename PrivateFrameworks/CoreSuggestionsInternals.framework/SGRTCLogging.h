@@ -6,8 +6,8 @@
 
 @interface SGRTCLogging : NSObject <NSCoding> {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _lock;
     NSMutableArray *_loggedEvents;
     NSString *_path;
@@ -17,7 +17,7 @@
     NSNumber *_version;
 }
 
-+ (bool)createEmptyFileAtPath:(id)arg1;
++ (BOOL)createEmptyFileAtPath:(id)arg1;
 + (id)defaultLogger;
 + (id)defaultPath;
 + (id)inMemoryLogger;
@@ -36,11 +36,11 @@
 - (id)loggedEvents;
 - (id)metricNameForShortName:(id)arg1;
 - (void)persistLogs;
-- (bool)resetLogs;
-- (bool)sendLogsUsingRTC;
+- (BOOL)resetLogs;
+- (BOOL)sendLogsUsingRTC;
 - (id)shortNameForMetricNamed:(id)arg1;
 - (double)storeAge;
-- (bool)storeToDisk;
+- (BOOL)storeToDisk;
 - (void)updateAndScheduleDiskWrite;
 - (int)version;
 

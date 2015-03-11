@@ -3,18 +3,18 @@
  */
 
 @interface NNMKPairedDeviceInfo : NSObject {
-    double _screenScale;
-    double _screenWidth;
+    float _screenScale;
+    float _screenWidth;
 }
 
-@property double screenScale;
-@property double screenWidth;
+@property float screenScale;
+@property float screenWidth;
 
-+ (id)pairedDeviceInfoWithScreenWidth:(double)arg1 screenScale:(double)arg2;
++ (id)pairedDeviceInfoWithScreenWidth:(float)arg1 screenScale:(float)arg2;
 
-- (double)screenScale;
-- (double)screenWidth;
-- (void)setScreenScale:(double)arg1;
-- (void)setScreenWidth:(double)arg1;
+- (float)screenScale;
+- (float)screenWidth;
+- (void)setScreenScale:(float)arg1;
+- (void)setScreenWidth:(float)arg1;
 
 @end

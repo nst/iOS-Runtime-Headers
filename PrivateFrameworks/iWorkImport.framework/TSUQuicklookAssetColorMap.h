@@ -13,7 +13,7 @@
 @property(retain) NSMutableDictionary * assetMap;
 
 + (id)colorForResource:(id)arg1;
-+ (bool)hasAppAssets;
++ (BOOL)hasAppAssets;
 + (id)quicklookAssetMap;
 
 - (id)appAssetPath;
@@ -22,7 +22,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 - (void)setAppAssetPath:(id)arg1;
 - (void)setAssetMap:(id)arg1;
 

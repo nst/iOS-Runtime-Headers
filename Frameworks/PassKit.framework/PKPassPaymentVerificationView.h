@@ -23,6 +23,6 @@
 - (void)didChangeVerificationPresentation;
 - (id)initWithPass:(id)arg1 passView:(id)arg2;
 - (void)layoutSubviews;
-- (void)presentVerificationViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
+- (void)presentVerificationViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 
 @end

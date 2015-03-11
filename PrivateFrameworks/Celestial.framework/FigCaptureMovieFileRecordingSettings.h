@@ -13,17 +13,17 @@
     NSDictionary *_audioSettings;
     } _movieFragmentInterval;
     NSDictionary *_movieLevelMetadata;
+    BOOL _sendThumbnailIOSurface;
+    BOOL _videoMirrored;
     int _videoOrientation;
     NSDictionary *_videoSettings;
-    bool_sendThumbnailIOSurface;
-    bool_videoMirrored;
 }
 
 @property(copy) NSDictionary * audioSettings;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 @property(copy) NSDictionary * movieLevelMetadata;
-@property bool sendThumbnailIOSurface;
-@property bool videoMirrored;
+@property BOOL sendThumbnailIOSurface;
+@property BOOL videoMirrored;
 @property int videoOrientation;
 @property(copy) NSDictionary * videoSettings;
 
@@ -34,15 +34,15 @@
 - (id)initWithCoder:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (id)movieLevelMetadata;
-- (bool)sendThumbnailIOSurface;
+- (BOOL)sendThumbnailIOSurface;
 - (void)setAudioSettings:(id)arg1;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieLevelMetadata:(id)arg1;
-- (void)setSendThumbnailIOSurface:(bool)arg1;
-- (void)setVideoMirrored:(bool)arg1;
+- (void)setSendThumbnailIOSurface:(BOOL)arg1;
+- (void)setVideoMirrored:(BOOL)arg1;
 - (void)setVideoOrientation:(int)arg1;
 - (void)setVideoSettings:(id)arg1;
-- (bool)videoMirrored;
+- (BOOL)videoMirrored;
 - (int)videoOrientation;
 - (id)videoSettings;
 

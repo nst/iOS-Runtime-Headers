@@ -7,19 +7,19 @@
 @interface TSCH3DGLSharegroup : TSCH3DSharegroup {
     TSCH3DGLContext *mGLContext;
     NSRecursiveLock *mLock;
-    long long mLockLevel;
+    int mLockLevel;
 }
 
 + (void)addInterestForSharegroupTokens:(id)arg1;
 + (void)deleteSharegroupForToken:(id)arg1;
 + (void)flushSharegroupForToken:(id)arg1;
-+ (bool)hasInterestForSharegroupToken:(id)arg1;
++ (BOOL)hasInterestForSharegroupToken:(id)arg1;
 + (void)removeInterestForSharegroupTokens:(id)arg1;
 + (id)sharegroupForToken:(id)arg1;
 
 - (id)GLContext;
 - (void)dealloc;
-- (bool)debug_isInteractive;
+- (BOOL)debug_isInteractive;
 - (id)description;
 - (void)garbageCollectAllUnretainedResources;
 - (void)garbageCollectResources:(id)arg1;

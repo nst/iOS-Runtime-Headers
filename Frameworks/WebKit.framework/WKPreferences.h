@@ -8,36 +8,36 @@
     } _preferences;
 }
 
-@property(setter=_setCompositingBordersVisible:) bool _compositingBordersVisible;
-@property(setter=_setCompositingRepaintCountersVisible:) bool _compositingRepaintCountersVisible;
-@property(setter=_setOfflineApplicationCacheIsEnabled:) bool _offlineApplicationCacheIsEnabled;
-@property(setter=_setStorageBlockingPolicy:) long long _storageBlockingPolicy;
-@property(setter=_setTelephoneNumberDetectionIsEnabled:) bool _telephoneNumberDetectionIsEnabled;
-@property(setter=_setTiledScrollingIndicatorVisible:) bool _tiledScrollingIndicatorVisible;
-@property bool javaScriptCanOpenWindowsAutomatically;
-@property bool javaScriptEnabled;
-@property double minimumFontSize;
+@property(setter=_setCompositingBordersVisible:) BOOL _compositingBordersVisible;
+@property(setter=_setCompositingRepaintCountersVisible:) BOOL _compositingRepaintCountersVisible;
+@property(setter=_setOfflineApplicationCacheIsEnabled:) BOOL _offlineApplicationCacheIsEnabled;
+@property(setter=_setStorageBlockingPolicy:) int _storageBlockingPolicy;
+@property(setter=_setTelephoneNumberDetectionIsEnabled:) BOOL _telephoneNumberDetectionIsEnabled;
+@property(setter=_setTiledScrollingIndicatorVisible:) BOOL _tiledScrollingIndicatorVisible;
+@property BOOL javaScriptCanOpenWindowsAutomatically;
+@property BOOL javaScriptEnabled;
+@property float minimumFontSize;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (bool)_compositingBordersVisible;
-- (bool)_compositingRepaintCountersVisible;
-- (bool)_offlineApplicationCacheIsEnabled;
-- (void)_setCompositingBordersVisible:(bool)arg1;
-- (void)_setCompositingRepaintCountersVisible:(bool)arg1;
-- (void)_setOfflineApplicationCacheIsEnabled:(bool)arg1;
-- (void)_setStorageBlockingPolicy:(long long)arg1;
-- (void)_setTelephoneNumberDetectionIsEnabled:(bool)arg1;
-- (void)_setTiledScrollingIndicatorVisible:(bool)arg1;
-- (long long)_storageBlockingPolicy;
-- (bool)_telephoneNumberDetectionIsEnabled;
-- (bool)_tiledScrollingIndicatorVisible;
+- (BOOL)_compositingBordersVisible;
+- (BOOL)_compositingRepaintCountersVisible;
+- (BOOL)_offlineApplicationCacheIsEnabled;
+- (void)_setCompositingBordersVisible:(BOOL)arg1;
+- (void)_setCompositingRepaintCountersVisible:(BOOL)arg1;
+- (void)_setOfflineApplicationCacheIsEnabled:(BOOL)arg1;
+- (void)_setStorageBlockingPolicy:(int)arg1;
+- (void)_setTelephoneNumberDetectionIsEnabled:(BOOL)arg1;
+- (void)_setTiledScrollingIndicatorVisible:(BOOL)arg1;
+- (int)_storageBlockingPolicy;
+- (BOOL)_telephoneNumberDetectionIsEnabled;
+- (BOOL)_tiledScrollingIndicatorVisible;
 - (id)init;
-- (bool)javaScriptCanOpenWindowsAutomatically;
-- (bool)javaScriptEnabled;
-- (double)minimumFontSize;
-- (void)setJavaScriptCanOpenWindowsAutomatically:(bool)arg1;
-- (void)setJavaScriptEnabled:(bool)arg1;
-- (void)setMinimumFontSize:(double)arg1;
+- (BOOL)javaScriptCanOpenWindowsAutomatically;
+- (BOOL)javaScriptEnabled;
+- (float)minimumFontSize;
+- (void)setJavaScriptCanOpenWindowsAutomatically:(BOOL)arg1;
+- (void)setJavaScriptEnabled:(BOOL)arg1;
+- (void)setMinimumFontSize:(float)arg1;
 
 @end

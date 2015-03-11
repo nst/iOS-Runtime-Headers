@@ -10,30 +10,30 @@
 
 @interface PSYSyncCoordinator : NSObject <NSXPCListenerDelegate, PSYActivity, PSYSyncRestrictionProviderDelegate> {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     NSXPCConnection *_connection;
     <PSYSyncCoordinatorDelegate> *_delegate;
     } _delegateLock;
     NSObject<OS_dispatch_queue> *_delegateQueue;
+    BOOL _hasStartedListening;
+    BOOL _isFullSyncInProgress;
     NSXPCListener *_listener;
     id _pendingCompletion;
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_serviceName;
-    unsigned long long _syncRestriction;
+    unsigned int _syncRestriction;
     PSYSyncRestrictionProvider *_syncRestrictionProvider;
-    bool_hasStartedListening;
-    bool_isFullSyncInProgress;
 }
 
 @property(retain) NSXPCConnection * connection;
 @property(copy,readonly) NSString * debugDescription;
 @property <PSYSyncCoordinatorDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy,readonly) NSString * serviceName;
 @property(readonly) Class superclass;
-@property unsigned long long syncRestriction;
+@property unsigned int syncRestriction;
 
 + (void)initialize;
 + (id)syncCoordinatorWithServiceName:(id)arg1;
@@ -51,26 +51,26 @@
 - (void)exitForTestInput:(id)arg1;
 - (id)initWithServiceName:(id)arg1 serviceLookupPath:(id)arg2;
 - (id)initWithServiceName:(id)arg1;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)performDelegateBlock:(id)arg1;
 - (id)persistedCompletionError;
-- (long long)persistedState;
+- (int)persistedState;
 - (id)persistedTransactionID;
 - (id)progressHandler;
 - (void)reportProgress:(double)arg1;
-- (bool)savePersistentState;
+- (BOOL)savePersistentState;
 - (id)serviceName;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setPersistedCompletionError:(id)arg1;
-- (void)setPersistedState:(long long)arg1;
+- (void)setPersistedState:(int)arg1;
 - (void)setPersistedTransactionID:(id)arg1;
-- (void)setSyncRestriction:(unsigned long long)arg1;
+- (void)setSyncRestriction:(unsigned int)arg1;
 - (void)syncDidComplete;
 - (void)syncDidCompleteSending;
 - (void)syncDidFailWithError:(id)arg1;
-- (unsigned long long)syncRestriction;
+- (unsigned int)syncRestriction;
 - (void)syncRestrictionProviderDidChangeRestriction:(id)arg1;
 
 @end

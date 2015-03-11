@@ -5,21 +5,21 @@
 @class CADisplayLink, NSMutableArray, NSString, UITextView;
 
 @interface _UICharacterStreamingManager : NSObject {
+    BOOL _committingFinalResults;
+    BOOL _discardNextHypothesis;
     double _lastAnimationUpdateTimeStamp;
     NSString *_lastHypothesis;
     double _minDurationBetweenHypotheses;
     NSMutableArray *_pendingEdits;
     NSString *_previousHypothesis;
+    BOOL _streamingAnimationActive;
     CADisplayLink *_streamingAnimationDisplayLink;
     double _streamingCharacterInsertionRate;
     NSString *_targetHypothesis;
     UITextView *_textView;
-    bool_committingFinalResults;
-    bool_discardNextHypothesis;
-    bool_streamingAnimationActive;
 }
 
-@property bool discardNextHypothesis;
+@property BOOL discardNextHypothesis;
 @property(copy) NSString * lastHypothesis;
 @property double minDurationBetweenHypotheses;
 @property(retain) NSMutableArray * pendingEdits;
@@ -32,13 +32,13 @@
 - (void)_stopStreamingAnimation;
 - (void)commitFinalResults;
 - (void)dealloc;
-- (bool)discardNextHypothesis;
+- (BOOL)discardNextHypothesis;
 - (id)initWithTextView:(id)arg1;
 - (id)lastHypothesis;
 - (double)minDurationBetweenHypotheses;
 - (id)pendingEdits;
 - (id)previousHypothesis;
-- (void)setDiscardNextHypothesis:(bool)arg1;
+- (void)setDiscardNextHypothesis:(BOOL)arg1;
 - (void)setLastHypothesis:(id)arg1;
 - (void)setMinDurationBetweenHypotheses:(double)arg1;
 - (void)setPendingEdits:(id)arg1;

@@ -16,7 +16,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)personSearches;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (id)resultsLimit;
 - (void)setPersonSearches:(id)arg1;
 - (void)setResultsLimit:(id)arg1;

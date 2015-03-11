@@ -10,9 +10,9 @@
 
 - (const void*)bytes;
 - (void)dealloc;
-- (unsigned long long)length;
+- (unsigned int)length;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

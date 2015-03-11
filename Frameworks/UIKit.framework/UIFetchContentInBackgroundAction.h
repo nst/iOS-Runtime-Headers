@@ -5,7 +5,7 @@
 @interface UIFetchContentInBackgroundAction : BSAction {
 }
 
-- (long long)UIActionType;
+- (int)UIActionType;
 - (id)initWithHandler:(id)arg1;
 - (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id)arg4;
 - (void)sendResponse:(id)arg1;

@@ -4,11 +4,11 @@
 
 @interface GQDPointPath : GQDPath {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     } mPoint;
     } mSize;
     int mType;
@@ -17,9 +17,9 @@
 - (id).cxx_construct;
 - (struct CGPath { }*)createBezierPath;
 - (int)mapStrType:(struct __CFString { }*)arg1;
-- (struct CGPoint { double x1; double x2; })point;
+- (struct CGPoint { float x1; float x2; })point;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (int)type;
 
 @end

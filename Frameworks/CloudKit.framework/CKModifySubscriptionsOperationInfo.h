@@ -12,7 +12,7 @@
 @property(retain) NSArray * subscriptionIDsToDelete;
 @property(retain) NSArray * subscriptionsToSave;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

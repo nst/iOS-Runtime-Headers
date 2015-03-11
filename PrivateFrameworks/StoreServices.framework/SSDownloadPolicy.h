@@ -5,32 +5,32 @@
 @class NSArray, NSMutableArray, NSString;
 
 @interface SSDownloadPolicy : NSObject <NSCoding, SSXPCCoding, NSCopying> {
-    long long _bagType;
+    int _bagType;
     NSString *_downloadKind;
     NSMutableArray *_policyRules;
 }
 
-@property(readonly) long long URLBagType;
+@property(readonly) int URLBagType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSString * downloadKind;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSArray * policyRules;
 @property(readonly) Class superclass;
 
-- (long long)URLBagType;
+- (int)URLBagType;
 - (id)_policyRuleForSizeLimit:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)downloadKind;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDownloadKind:(id)arg1 URLBagType:(long long)arg2;
+- (id)initWithDownloadKind:(id)arg1 URLBagType:(int)arg2;
 - (id)initWithNetworkConstraints:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)policyRules;
 - (void)setPolicyRule:(id)arg1;
 - (void)setPolicyRules:(id)arg1;

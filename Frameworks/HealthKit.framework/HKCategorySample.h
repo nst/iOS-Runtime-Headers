@@ -5,32 +5,32 @@
 @class HKCategoryType, NSString;
 
 @interface HKCategorySample : HKSample <HDCoding> {
-    long long _value;
+    int _value;
 }
 
 @property(readonly) HKCategoryType * categoryType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
-@property(readonly) long long value;
+@property(readonly) int value;
 
-+ (id)_categorySampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 categoryType:(id)arg5 startDate:(id)arg6 endDate:(id)arg7 value:(long long)arg8;
-+ (bool)_isConcreteObjectClass;
-+ (id)categorySampleWithType:(id)arg1 value:(long long)arg2 startDate:(id)arg3 endDate:(id)arg4 metadata:(id)arg5;
-+ (id)categorySampleWithType:(id)arg1 value:(long long)arg2 startDate:(id)arg3 endDate:(id)arg4;
++ (id)_categorySampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 categoryType:(id)arg5 startDate:(id)arg6 endDate:(id)arg7 value:(int)arg8;
++ (BOOL)_isConcreteObjectClass;
++ (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4 metadata:(id)arg5;
++ (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4;
 + (id)createWithCodable:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (void)_setValue:(long long)arg1;
+- (void)_setValue:(int)arg1;
 - (id)_validateConfiguration;
 - (id)_valueDescription;
-- (bool)addCodableRepresentationToCollection:(id)arg1;
+- (BOOL)addCodableRepresentationToCollection:(id)arg1;
 - (id)categoryType;
 - (id)codableRepresentationForSync;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (long long)value;
+- (int)value;
 
 @end

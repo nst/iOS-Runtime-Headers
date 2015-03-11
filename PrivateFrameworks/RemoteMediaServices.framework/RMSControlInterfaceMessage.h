@@ -8,38 +8,38 @@
         unsigned int supportsSpeakerSelection : 1; 
         unsigned int supportsVolumeControl : 1; 
     } _has;
-    bool_supportsDirectionalControl;
-    bool_supportsSpeakerSelection;
-    bool_supportsVolumeControl;
+    BOOL _supportsDirectionalControl;
+    BOOL _supportsSpeakerSelection;
+    BOOL _supportsVolumeControl;
 }
 
-@property bool hasSupportsDirectionalControl;
-@property bool hasSupportsSpeakerSelection;
-@property bool hasSupportsVolumeControl;
-@property bool supportsDirectionalControl;
-@property bool supportsSpeakerSelection;
-@property bool supportsVolumeControl;
+@property BOOL hasSupportsDirectionalControl;
+@property BOOL hasSupportsSpeakerSelection;
+@property BOOL hasSupportsVolumeControl;
+@property BOOL supportsDirectionalControl;
+@property BOOL supportsSpeakerSelection;
+@property BOOL supportsVolumeControl;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasSupportsDirectionalControl;
-- (bool)hasSupportsSpeakerSelection;
-- (bool)hasSupportsVolumeControl;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasSupportsDirectionalControl;
+- (BOOL)hasSupportsSpeakerSelection;
+- (BOOL)hasSupportsVolumeControl;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasSupportsDirectionalControl:(bool)arg1;
-- (void)setHasSupportsSpeakerSelection:(bool)arg1;
-- (void)setHasSupportsVolumeControl:(bool)arg1;
-- (void)setSupportsDirectionalControl:(bool)arg1;
-- (void)setSupportsSpeakerSelection:(bool)arg1;
-- (void)setSupportsVolumeControl:(bool)arg1;
-- (bool)supportsDirectionalControl;
-- (bool)supportsSpeakerSelection;
-- (bool)supportsVolumeControl;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasSupportsDirectionalControl:(BOOL)arg1;
+- (void)setHasSupportsSpeakerSelection:(BOOL)arg1;
+- (void)setHasSupportsVolumeControl:(BOOL)arg1;
+- (void)setSupportsDirectionalControl:(BOOL)arg1;
+- (void)setSupportsSpeakerSelection:(BOOL)arg1;
+- (void)setSupportsVolumeControl:(BOOL)arg1;
+- (BOOL)supportsDirectionalControl;
+- (BOOL)supportsSpeakerSelection;
+- (BOOL)supportsVolumeControl;
 - (void)writeTo:(id)arg1;
 
 @end

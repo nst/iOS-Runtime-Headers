@@ -5,32 +5,32 @@
 @class EDResources, NSString;
 
 @interface EDRun : NSObject <EDKeyedObject> {
-    unsigned long long mCharIndex;
-    unsigned long long mFontIndex;
+    unsigned int mCharIndex;
+    unsigned int mFontIndex;
     EDResources *mResources;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (id)runWithCharIndex:(unsigned long long)arg1 font:(id)arg2 resources:(id)arg3;
-+ (id)runWithCharIndex:(unsigned long long)arg1 fontIndex:(unsigned long long)arg2 resources:(id)arg3;
++ (id)runWithCharIndex:(unsigned int)arg1 font:(id)arg2 resources:(id)arg3;
++ (id)runWithCharIndex:(unsigned int)arg1 fontIndex:(unsigned int)arg2 resources:(id)arg3;
 + (id)runWithResources:(id)arg1;
 
-- (void)adjustIndex:(unsigned long long)arg1;
-- (unsigned long long)charIndex;
+- (void)adjustIndex:(unsigned int)arg1;
+- (unsigned int)charIndex;
 - (id)font;
-- (unsigned long long)fontIndex;
-- (id)initWithCharIndex:(unsigned long long)arg1 font:(id)arg2 resources:(id)arg3;
-- (id)initWithCharIndex:(unsigned long long)arg1 fontIndex:(unsigned long long)arg2 resources:(id)arg3;
+- (unsigned int)fontIndex;
+- (id)initWithCharIndex:(unsigned int)arg1 font:(id)arg2 resources:(id)arg3;
+- (id)initWithCharIndex:(unsigned int)arg1 fontIndex:(unsigned int)arg2 resources:(id)arg3;
 - (id)initWithResources:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToRun:(id)arg1;
-- (long long)key;
-- (void)setCharIndex:(unsigned long long)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToRun:(id)arg1;
+- (int)key;
+- (void)setCharIndex:(unsigned int)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(unsigned long long)arg1;
+- (void)setFontIndex:(unsigned int)arg1;
 
 @end

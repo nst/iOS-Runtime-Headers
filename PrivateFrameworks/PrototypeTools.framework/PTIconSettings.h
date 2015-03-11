@@ -3,24 +3,24 @@
  */
 
 @interface PTIconSettings : _UISettings {
-    double _alphaStrength;
-    double _radiusStrength;
-    bool_on;
+    float _alphaStrength;
+    BOOL _on;
+    float _radiusStrength;
 }
 
-@property double alphaStrength;
-@property bool on;
-@property double radiusStrength;
+@property float alphaStrength;
+@property BOOL on;
+@property float radiusStrength;
 
 + (id)archivedSettingsGroup;
 
-- (double)alphaStrength;
-- (bool)on;
-- (double)radiusStrength;
-- (void)setAlphaStrength:(double)arg1;
+- (float)alphaStrength;
+- (BOOL)on;
+- (float)radiusStrength;
+- (void)setAlphaStrength:(float)arg1;
 - (void)setDefaultValues;
-- (void)setOn:(bool)arg1;
-- (void)setRadiusStrength:(double)arg1;
+- (void)setOn:(BOOL)arg1;
+- (void)setRadiusStrength:(float)arg1;
 - (id)settingsHUDConfiguration;
 - (void)settingsResetByHUD;
 

@@ -9,7 +9,7 @@
     int _configLockPid;
     int _configLockRefCount;
     int _openRefCount;
-    bool_usingDevice;
+    BOOL _usingDevice;
 }
 
 @end

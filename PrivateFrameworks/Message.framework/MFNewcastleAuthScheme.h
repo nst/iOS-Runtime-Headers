@@ -8,9 +8,9 @@
 + (void)load;
 
 - (Class)authenticatorClass;
-- (bool)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
+- (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
 - (id)humanReadableName;
 - (id)name;
-- (bool)requiresPassword;
+- (BOOL)requiresPassword;
 
 @end

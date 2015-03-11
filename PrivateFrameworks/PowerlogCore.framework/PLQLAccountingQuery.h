@@ -31,14 +31,14 @@
 - (id)allRails;
 - (id)allRailsToBeAdded;
 - (id)allRailsToBeSubtracted;
-- (void)cacheRailsInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1 withSnap:(bool)arg2 cache:(bool)arg3;
+- (void)cacheRailsInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1 withSnap:(BOOL)arg2 cache:(BOOL)arg3;
 - (id)initWithName:(id)arg1 withRails:(id)arg2 withQLAccountingGroup:(id)arg3 withQueryType:(short)arg4 withAggregationKey:(id)arg5;
 - (id)initWithName:(id)arg1 withRailsToBeAdded:(id)arg2 withRailsToBeSubtracted:(id)arg3 withQLAccountingGroup:(id)arg4 withQueryType:(short)arg5 withAggregationKey:(id)arg6;
 - (double)queryHasRunTillTime;
 - (id)queryName;
 - (short)queryType;
-- (id)runQueryForTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1 withSnapRail:(bool)arg2;
-- (id)runQueryIterationWithSnap:(bool)arg1;
+- (id)runQueryForTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1 withSnapRail:(BOOL)arg2;
+- (id)runQueryIterationWithSnap:(BOOL)arg1;
 - (void)setQueryHasRunTillTime:(double)arg1;
 
 @end

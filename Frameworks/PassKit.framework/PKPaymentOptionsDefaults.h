@@ -14,7 +14,7 @@
 @property(retain) NSString * defaultPaymentPassIdentifier;
 @property(retain) CNContact * defaultShippingAddress;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)defaults;

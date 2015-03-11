@@ -5,18 +5,18 @@
 @interface ABPropertyGroupAlertItem : ABPropertyGroupItem {
 }
 
-@property(getter=isTone,readonly) bool tone;
-@property(getter=isVibration,readonly) bool vibration;
+@property(getter=isTone,readonly) BOOL tone;
+@property(getter=isVibration,readonly) BOOL vibration;
 
 - (id)_toneManager;
 - (id)_vibrationManager;
-- (bool)canRemove;
+- (BOOL)canRemove;
 - (id)description;
 - (id)displayLabel;
 - (id)displayStringForValue:(id)arg1;
-- (bool)isEquivalentToItem:(id)arg1 whenEditing:(bool)arg2;
-- (bool)isTone;
-- (bool)isValidValue:(id)arg1;
-- (bool)isVibration;
+- (BOOL)isEquivalentToItem:(id)arg1 whenEditing:(BOOL)arg2;
+- (BOOL)isTone;
+- (BOOL)isValidValue:(id)arg1;
+- (BOOL)isVibration;
 
 @end

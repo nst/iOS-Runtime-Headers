@@ -5,62 +5,62 @@
 @class NSArray, NSString, PLPhotoEditMutableModel, PUAdjustmentsMode, PUPhotoEditValuesCalculator, UIImage;
 
 @interface PUAdjustmentsMode : NSObject {
-    long long __modeType;
+    int __modeType;
     PLPhotoEditMutableModel *_photoEditModel;
     NSArray *_submodes;
     PUAdjustmentsMode *_supermode;
+    BOOL _toggleable;
+    BOOL _useAccurateStatistics;
     PUPhotoEditValuesCalculator *_valuesCalculator;
-    bool_toggleable;
-    bool_useAccurateStatistics;
 }
 
-@property(readonly) long long _modeType;
-@property(getter=isEnabled) bool enabled;
+@property(readonly) int _modeType;
+@property(getter=isEnabled) BOOL enabled;
 @property(readonly) UIImage * icon;
 @property(copy,readonly) NSString * localizedName;
 @property(readonly) PLPhotoEditMutableModel * photoEditModel;
-@property(readonly) long long sliderStyle;
+@property(readonly) int sliderStyle;
 @property(copy) NSArray * submodes;
 @property PUAdjustmentsMode * supermode;
-@property(getter=isToggleable,readonly) bool toggleable;
-@property bool useAccurateStatistics;
+@property(getter=isToggleable,readonly) BOOL toggleable;
+@property BOOL useAccurateStatistics;
 @property(readonly) PUPhotoEditValuesCalculator * valuesCalculator;
 
 + (id)newVisibleModesWithPhotoEditModel:(id)arg1 valuesCalculator:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_ensureStatisticsAreReady;
-- (long long)_modeType;
-- (bool)_needsStatistics;
-- (double)_referenceLevelOfType:(long long)arg1;
-- (double)_relativeLevel;
-- (double)_relativeLevelInModel:(id)arg1;
-- (void)_setRelativeLevel:(double)arg1;
-- (double)absoluteLevelForRenderer:(id)arg1;
+- (int)_modeType;
+- (BOOL)_needsStatistics;
+- (float)_referenceLevelOfType:(int)arg1;
+- (float)_relativeLevel;
+- (float)_relativeLevelInModel:(id)arg1;
+- (void)_setRelativeLevel:(float)arg1;
+- (float)absoluteLevelForRenderer:(id)arg1;
 - (id)adjustmentsModeWithModel:(id)arg1;
-- (double)baseLevelForRenderer:(id)arg1;
+- (float)baseLevelForRenderer:(id)arg1;
 - (void)copyLevelsFromModel:(id)arg1;
 - (id)description;
 - (id)icon;
-- (double)identityLevel;
-- (id)initWithModeType:(long long)arg1 photoEditModel:(id)arg2 valuesCalculator:(id)arg3;
-- (id)initWithModeType:(long long)arg1 toggleable:(bool)arg2 photoEditModel:(id)arg3 valuesCalculator:(id)arg4;
-- (bool)isEnabled;
-- (bool)isToggleable;
-- (bool)levelsAreEqualInModel:(id)arg1;
+- (float)identityLevel;
+- (id)initWithModeType:(int)arg1 photoEditModel:(id)arg2 valuesCalculator:(id)arg3;
+- (id)initWithModeType:(int)arg1 toggleable:(BOOL)arg2 photoEditModel:(id)arg3 valuesCalculator:(id)arg4;
+- (BOOL)isEnabled;
+- (BOOL)isToggleable;
+- (BOOL)levelsAreEqualInModel:(id)arg1;
 - (id)localizedName;
-- (double)maximumLevel;
-- (double)minimumLevel;
+- (float)maximumLevel;
+- (float)minimumLevel;
 - (id)photoEditModel;
-- (void)setAbsoluteLevel:(double)arg1 forRenderer:(id)arg2;
-- (void)setEnabled:(bool)arg1;
+- (void)setAbsoluteLevel:(float)arg1 forRenderer:(id)arg2;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setSubmodes:(id)arg1;
 - (void)setSupermode:(id)arg1;
-- (void)setUseAccurateStatistics:(bool)arg1;
-- (long long)sliderStyle;
+- (void)setUseAccurateStatistics:(BOOL)arg1;
+- (int)sliderStyle;
 - (id)submodes;
 - (id)supermode;
-- (bool)useAccurateStatistics;
+- (BOOL)useAccurateStatistics;
 - (id)valuesCalculator;
 
 @end

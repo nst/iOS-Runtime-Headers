@@ -8,16 +8,16 @@
     NSString *_displayName;
     NSArray *_emailAddresses;
     NSString *_uniqueID;
-    long long _version;
+    int _version;
 }
 
 @property(retain,readonly) NSString * displayName;
 @property(retain,readonly) NSArray * emailAddresses;
 @property(retain,readonly) NSString * uniqueID;
-@property long long version;
+@property int version;
 
 + (id)cardFromPath:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -26,12 +26,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDisplayName:(id)arg1 emailAddresses:(id)arg2 uniqueID:(id)arg3;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToMeCard:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToMeCard:(id)arg1;
 - (id)preferredEmailAddress;
-- (void)setVersion:(long long)arg1;
+- (void)setVersion:(int)arg1;
 - (id)uniqueID;
-- (long long)version;
-- (bool)writeToPath:(id)arg1;
+- (int)version;
+- (BOOL)writeToPath:(id)arg1;
 
 @end

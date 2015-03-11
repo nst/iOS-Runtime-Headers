@@ -12,13 +12,13 @@
     NSObject<OS_xpc_object> *_connection;
     id _errorHandler;
     NSObject<OS_dispatch_queue> *_internalQueue;
+    BOOL _invalidated;
     NSObject<OS_dispatch_queue> *_queue;
     Class _remoteClass;
     Protocol *_remoteProtocol;
     <XPCProxyTarget> *_target;
+    BOOL _useTraditionalEncoder;
     NSArray *_whitelistedClassNames;
-    bool_invalidated;
-    bool_useTraditionalEncoder;
 }
 
 @property(readonly) NSObject<OS_xpc_object> * connection;
@@ -26,7 +26,7 @@
 @property Class remoteClass;
 @property Protocol * remoteProtocol;
 @property <XPCProxyTarget> * target;
-@property bool useTraditionalEncoder;
+@property BOOL useTraditionalEncoder;
 
 + (void)initialize;
 
@@ -54,8 +54,8 @@
 - (void)setRemoteClass:(Class)arg1;
 - (void)setRemoteProtocol:(id)arg1;
 - (void)setTarget:(id)arg1;
-- (void)setUseTraditionalEncoder:(bool)arg1;
+- (void)setUseTraditionalEncoder:(BOOL)arg1;
 - (id)target;
-- (bool)useTraditionalEncoder;
+- (BOOL)useTraditionalEncoder;
 
 @end

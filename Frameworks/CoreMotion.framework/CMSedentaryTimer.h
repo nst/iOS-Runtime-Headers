@@ -10,15 +10,15 @@
 
 @property(readonly) CMSedentaryTimer_Internal * _internal;
 
-+ (bool)isAvailable;
++ (BOOL)isAvailable;
 
 - (id)_internal;
 - (void)dealloc;
 - (id)init;
-- (bool)isActive;
+- (BOOL)isActive;
 - (void)queryAlarmDataSince:(id)arg1 withHandler:(id)arg2;
 - (void)registerForAlarmsWithHandler:(id)arg1;
-- (void)startTimerWithStartTime:(id)arg1 periodInterval:(double)arg2 reminderInterval:(double)arg3 autoReschedule:(bool)arg4 handler:(id)arg5;
+- (void)startTimerWithStartTime:(id)arg1 periodInterval:(double)arg2 reminderInterval:(double)arg3 autoReschedule:(BOOL)arg4 handler:(id)arg5;
 - (void)stopTimerWithHandler:(id)arg1;
 
 @end

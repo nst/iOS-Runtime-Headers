@@ -10,21 +10,21 @@
         double length; 
     NSString *_accountingGroupName;
     short _accountingGroupType;
+    BOOL _closeAllAccountingEventsAtBoot;
+    BOOL _eventCacheOn;
     NSArray *_eventCacheResults;
     } _eventCacheTimeRange;
-    bool_closeAllAccountingEventsAtBoot;
-    bool_eventCacheOn;
 }
 
 @property(retain,readonly) NSString * accountingGroupName;
 @property(readonly) short accountingGroupType;
-@property bool closeAllAccountingEventsAtBoot;
+@property BOOL closeAllAccountingEventsAtBoot;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool eventCacheOn;
+@property BOOL eventCacheOn;
 @property(retain) NSArray * eventCacheResults;
 @property struct _PLTimeIntervalRange { double x1; double x2; } eventCacheTimeRange;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)accountingGroupFromAGName:(id)arg1;
@@ -40,10 +40,10 @@
 - (void)batchAddAccountingEvents:(id)arg1;
 - (void)cacheEventsForTimeInterval:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 - (void)clearEventCache;
-- (bool)closeAllAccountingEventsAtBoot;
-- (void)closeAllOpenEventAtTime:(id)arg1 withForceClose:(bool)arg2;
+- (BOOL)closeAllAccountingEventsAtBoot;
+- (void)closeAllOpenEventAtTime:(id)arg1 withForceClose:(BOOL)arg2;
 - (void)closeLastOpenEventAtTime:(id)arg1;
-- (bool)eventCacheOn;
+- (BOOL)eventCacheOn;
 - (id)eventCacheResults;
 - (struct _PLTimeIntervalRange { double x1; double x2; })eventCacheTimeRange;
 - (id)getEventsInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
@@ -51,15 +51,15 @@
 - (id)getLastOpenSnapshotForIdentifier:(id)arg1 forEntryKey:(id)arg2;
 - (id)getLastSnapshot;
 - (void)initOperatorDependancies;
-- (id)initWithName:(id)arg1 withAccountingGroupType:(short)arg2 withCloseAllAccountingEventsAtBoot:(bool)arg3;
+- (id)initWithName:(id)arg1 withAccountingGroupType:(short)arg2 withCloseAllAccountingEventsAtBoot:(BOOL)arg3;
 - (void)logEventCacheStats:(id)arg1;
 - (double)safeTimeForAccounting;
-- (void)setCloseAllAccountingEventsAtBoot:(bool)arg1;
-- (void)setEventCacheOn:(bool)arg1;
+- (void)setCloseAllAccountingEventsAtBoot:(BOOL)arg1;
+- (void)setEventCacheOn:(BOOL)arg1;
 - (void)setEventCacheResults:(id)arg1;
 - (void)setEventCacheTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 - (double)timeOfLastEndedSnapshot;
 - (double)timeOfLastSnapshot;
-- (bool)useCachedEventsForTimeInterval:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
+- (BOOL)useCachedEventsForTimeInterval:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 
 @end

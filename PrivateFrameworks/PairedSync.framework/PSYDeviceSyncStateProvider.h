@@ -6,13 +6,13 @@
 
 @interface PSYDeviceSyncStateProvider : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     unsigned long long _notifyState;
     int _notifyToken;
     NSMutableArray *_observers;
     NSObject<OS_dispatch_queue> *_queue;
-    unsigned long long _syncState;
+    unsigned int _syncState;
     } _syncStateLock;
 }
 
@@ -24,6 +24,6 @@
 - (void)enumerateObserversWithBlock:(id)arg1;
 - (id)init;
 - (void)removeObserver:(id)arg1;
-- (unsigned long long)syncState;
+- (unsigned int)syncState;
 
 @end

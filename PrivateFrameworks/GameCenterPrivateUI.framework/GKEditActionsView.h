@@ -9,7 +9,7 @@
     GKCollectionViewCell *_cell;
     NSArray *_editActionConstraints;
     CALayer *_maskLayer;
-    double _visibleWidth;
+    float _visibleWidth;
 }
 
 @property(retain) NSArray * actionButtons;
@@ -17,27 +17,27 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSArray * editActionConstraints;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) CALayer * maskLayer;
 @property(readonly) Class superclass;
-@property double visibleWidth;
+@property float visibleWidth;
 
 - (id)actionButtons;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(long long)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (id)cell;
 - (void)dealloc;
 - (void)didTouchEditAction:(id)arg1;
 - (void)didTouchMoreEditAction:(id)arg1;
 - (id)editActionConstraints;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 cell:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cell:(id)arg2;
 - (id)maskLayer;
 - (void)prepareActionButtons;
 - (void)setActionButtons:(id)arg1;
 - (void)setCell:(id)arg1;
 - (void)setEditActionConstraints:(id)arg1;
 - (void)setMaskLayer:(id)arg1;
-- (void)setVisibleWidth:(double)arg1;
-- (double)visibleWidth;
+- (void)setVisibleWidth:(float)arg1;
+- (float)visibleWidth;
 
 @end

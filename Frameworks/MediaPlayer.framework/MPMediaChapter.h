@@ -11,9 +11,9 @@
 @interface MPMediaChapter : NSObject {
     MPMediaLibraryArtworkDataSource *_artworkDataSource;
     MPMediaLibraryArtworkRequest *_artworkRequest;
-    long long _chapterType;
-    unsigned long long _indexInChaptersWithAnyType;
-    unsigned long long _indexInChaptersWithSameType;
+    int _chapterType;
+    unsigned int _indexInChaptersWithAnyType;
+    unsigned int _indexInChaptersWithSameType;
     double _playbackDuration;
     double _playbackTime;
     id _value;
@@ -22,33 +22,33 @@
 
 @property MPMediaLibraryArtworkDataSource * artworkDataSource;
 @property(retain) MPMediaLibraryArtworkRequest * artworkRequest;
-@property long long chapterType;
-@property unsigned long long indexInChaptersWithAnyType;
-@property unsigned long long indexInChaptersWithSameType;
+@property int chapterType;
+@property unsigned int indexInChaptersWithAnyType;
+@property unsigned int indexInChaptersWithSameType;
 @property double playbackDuration;
 @property double playbackTime;
 @property(retain) id value;
 @property(copy) id valueLoader;
 
 - (void).cxx_destruct;
-- (long long)_sortByChapterIndex:(id)arg1;
+- (int)_sortByChapterIndex:(id)arg1;
 - (id)artworkCatalog;
 - (id)artworkDataSource;
 - (id)artworkRequest;
-- (long long)chapterType;
+- (int)chapterType;
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)indexInChaptersWithAnyType;
-- (unsigned long long)indexInChaptersWithSameType;
+- (unsigned int)indexInChaptersWithAnyType;
+- (unsigned int)indexInChaptersWithSameType;
 - (id)initWithCoder:(id)arg1;
 - (double)playbackDuration;
 - (double)playbackTime;
 - (void)setArtworkDataSource:(id)arg1;
 - (void)setArtworkRequest:(id)arg1;
-- (void)setChapterType:(long long)arg1;
-- (void)setIndexInChaptersWithAnyType:(unsigned long long)arg1;
-- (void)setIndexInChaptersWithSameType:(unsigned long long)arg1;
+- (void)setChapterType:(int)arg1;
+- (void)setIndexInChaptersWithAnyType:(unsigned int)arg1;
+- (void)setIndexInChaptersWithSameType:(unsigned int)arg1;
 - (void)setPlaybackDuration:(double)arg1;
 - (void)setPlaybackTime:(double)arg1;
 - (void)setValue:(id)arg1;

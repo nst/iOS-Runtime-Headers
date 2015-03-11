@@ -6,7 +6,7 @@
 }
 
 + (void)allowCallForDestinationID:(id)arg1 service:(int)arg2 completionHandler:(id)arg3;
-+ (bool)allowCallForDestinationID:(id)arg1 service:(int)arg2;
++ (BOOL)allowCallForDestinationID:(id)arg1 service:(int)arg2;
 + (id)serviceIdentifierForService:(int)arg1;
 
 @end

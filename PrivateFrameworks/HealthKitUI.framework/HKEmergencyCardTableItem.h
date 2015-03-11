@@ -6,36 +6,36 @@
 
 @interface HKEmergencyCardTableItem : NSObject {
     _HKMedicalIDData *_data;
+    BOOL _isInEditMode;
     UIViewController *_owningViewController;
-    bool_isInEditMode;
 }
 
 @property(retain) _HKMedicalIDData * data;
-@property(readonly) bool isInEditMode;
+@property(readonly) BOOL isInEditMode;
 @property UIViewController * owningViewController;
 
 - (void).cxx_destruct;
 - (id)_dequeueNoValueCellInTableView:(id)arg1 withTitle:(id)arg2;
-- (bool)canEditRowAtIndex:(long long)arg1;
+- (BOOL)canEditRowAtIndex:(int)arg1;
 - (void)commitEditing;
-- (long long)commitEditingStyle:(long long)arg1 forRowAtIndex:(long long)arg2;
+- (int)commitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;
 - (id)data;
-- (void)didCommitEditingStyle:(long long)arg1 forRowAtIndex:(long long)arg2;
-- (long long)editingStyleForRowAtIndex:(long long)arg1;
-- (bool)hasPresentableData;
+- (void)didCommitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;
+- (int)editingStyleForRowAtIndex:(int)arg1;
+- (BOOL)hasPresentableData;
 - (id)init;
-- (id)initInEditMode:(bool)arg1;
-- (bool)isInEditMode;
+- (id)initInEditMode:(BOOL)arg1;
+- (BOOL)isInEditMode;
 - (void)localeDidChange:(id)arg1;
-- (long long)numberOfRows;
+- (int)numberOfRows;
 - (id)owningViewController;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
 - (void)setData:(id)arg1;
 - (void)setOwningViewController:(id)arg1;
-- (bool)shouldHighlightRowAtIndex:(long long)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndex:(long long)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndex:(long long)arg2;
+- (BOOL)shouldHighlightRowAtIndex:(int)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndex:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndex:(int)arg2;
 - (id)title;
 - (id)titleForFooter;
 - (id)titleForHeader;

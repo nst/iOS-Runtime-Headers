@@ -8,12 +8,12 @@
     UIView *_bottomSeparator;
     APDDataManager *_dataManager;
     <APDGlossaryViewControllerDelegate> *_delegate;
+    BOOL _displayAsModal;
     UIButton *_doneButton;
     APDNavigationTopic *_navigationTopic;
     APDTopicViewController *_topicViewController;
     NSArray *_viewInterfaceOrientations;
     UIView *_webViewContainer;
-    bool_displayAsModal;
 }
 
 @property UIView * bottomSeparator;
@@ -21,9 +21,9 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <APDGlossaryViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property bool displayAsModal;
+@property BOOL displayAsModal;
 @property UIButton * doneButton;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) APDNavigationTopic * navigationTopic;
 @property(readonly) Class superclass;
 @property(retain) NSArray * viewInterfaceOrientations;
@@ -33,26 +33,26 @@
 - (id)bottomSeparator;
 - (id)dataManager;
 - (id)delegate;
-- (bool)displayAsModal;
+- (BOOL)displayAsModal;
 - (id)doneButton;
 - (id)init;
 - (id)navigationTopic;
 - (void)onDone:(id)arg1;
-- (long long)positionForBar:(id)arg1;
+- (int)positionForBar:(id)arg1;
 - (void)setBottomSeparator:(id)arg1;
 - (void)setDataManager:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisplayAsModal:(bool)arg1;
+- (void)setDisplayAsModal:(BOOL)arg1;
 - (void)setDoneButton:(id)arg1;
 - (void)setNavigationTopic:(id)arg1;
 - (void)setViewInterfaceOrientations:(id)arg1;
 - (void)setWebViewContainer:(id)arg1;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 - (id)viewInterfaceOrientations;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (id)webViewContainer;
 
 @end

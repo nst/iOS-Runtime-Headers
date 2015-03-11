@@ -7,11 +7,11 @@
 @interface CPLRUDictionary : NSObject {
     struct __CFDictionary { } *_dictionary;
     CPLRUDictionaryNode *_head;
-    unsigned long long _maxCount;
+    unsigned int _maxCount;
     CPLRUDictionaryNode *_tail;
 }
 
-+ (id)dictionaryWithMaximumCapacity:(unsigned long long)arg1;
++ (id)dictionaryWithMaximumCapacity:(unsigned int)arg1;
 
 - (void)_addNodeToFront:(id)arg1;
 - (void)_moveNodeToFront:(id)arg1;
@@ -20,11 +20,11 @@
 - (id)allKeys;
 - (id)allKeysInLRUOrder;
 - (id)allValuesInLRUOrder;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
-- (id)initWithMaximumCapacity:(unsigned long long)arg1;
-- (unsigned long long)linkedListCount;
+- (id)initWithMaximumCapacity:(unsigned int)arg1;
+- (unsigned int)linkedListCount;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyWithoutAffectingLRU:(id)arg1;
 - (void)removeAllObjects;

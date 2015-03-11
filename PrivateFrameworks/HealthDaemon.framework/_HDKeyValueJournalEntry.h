@@ -5,34 +5,34 @@
 @class <NSSecureCoding>, NSDate, NSString;
 
 @interface _HDKeyValueJournalEntry : HDJournalEntry {
-    long long _category;
+    int _category;
     NSString *_domain;
     NSString *_key;
     NSDate *_modificationDate;
-    long long _provenance;
+    int _provenance;
     <NSSecureCoding> *_value;
 }
 
-@property(readonly) long long category;
+@property(readonly) int category;
 @property(readonly) NSString * domain;
 @property(readonly) NSString * key;
 @property(readonly) NSDate * modificationDate;
-@property(readonly) long long provenance;
+@property(readonly) int provenance;
 @property(readonly) <NSSecureCoding> * value;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (long long)behavior;
-+ (bool)supportsSecureCoding;
++ (int)behavior;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (long long)category;
+- (int)category;
 - (id)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithValue:(id)arg1 key:(id)arg2 domain:(id)arg3 category:(long long)arg4 provenance:(long long)arg5 modificationDate:(id)arg6;
+- (id)initWithValue:(id)arg1 key:(id)arg2 domain:(id)arg3 category:(int)arg4 provenance:(int)arg5 modificationDate:(id)arg6;
 - (id)key;
 - (id)modificationDate;
-- (long long)provenance;
+- (int)provenance;
 - (id)value;
 
 @end

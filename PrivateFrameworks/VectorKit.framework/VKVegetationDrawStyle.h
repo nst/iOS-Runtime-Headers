@@ -6,11 +6,11 @@
 }
 
 @property(readonly) float brightness;
-@property(readonly) bool visible;
+@property(readonly) BOOL visible;
 
 + (int)renderStyleID;
 
 - (float)brightness;
-- (bool)visible;
+- (BOOL)visible;
 
 @end

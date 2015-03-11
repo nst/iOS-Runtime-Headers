@@ -10,11 +10,11 @@
     float _averageUserRating;
     NSDate *_expirationDate;
     unsigned int _numberOfUserRatings;
+    BOOL _owned;
     NSString *_priceDisplay;
     NSURL *_shortViewItemURL;
     NSURL *_tellAFriendMessageContentsUrl;
     NSURL *_viewItemURL;
-    bool_owned;
 }
 
 @property(retain) NSNumber * adamID;
@@ -22,7 +22,7 @@
 @property float averageUserRating;
 @property(retain) NSDate * expirationDate;
 @property unsigned int numberOfUserRatings;
-@property bool owned;
+@property BOOL owned;
 @property(retain) NSString * priceDisplay;
 @property(retain) NSURL * shortViewItemURL;
 @property(retain) NSURL * tellAFriendMessageContentsUrl;
@@ -35,18 +35,18 @@
 - (float)averageUserRating;
 - (void)dealloc;
 - (id)expirationDate;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (bool)isValid;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isValid;
 - (unsigned int)numberOfUserRatings;
-- (bool)owned;
+- (BOOL)owned;
 - (id)priceDisplay;
 - (void)setAdamID:(id)arg1;
 - (void)setArtistName:(id)arg1;
 - (void)setAverageUserRating:(float)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setNumberOfUserRatings:(unsigned int)arg1;
-- (void)setOwned:(bool)arg1;
+- (void)setOwned:(BOOL)arg1;
 - (void)setPriceDisplay:(id)arg1;
 - (void)setShortViewItemURL:(id)arg1;
 - (void)setTellAFriendMessageContentsUrl:(id)arg1;

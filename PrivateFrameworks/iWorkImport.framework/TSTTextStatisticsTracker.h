@@ -24,7 +24,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -33,7 +33,7 @@
 - (id)initWithController:(id)arg1 andObject:(id)arg2;
 - (void)p_updateStats:(id)arg1 withCell:(id)arg2;
 - (id)statistics;
-- (void)storage:(id)arg1 didChangeRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 delta:(long long)arg3 broadcastKind:(int)arg4;
+- (void)storage:(id)arg1 didChangeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 delta:(int)arg3 broadcastKind:(int)arg4;
 - (void)syncProcessChanges:(id)arg1 forChangeSource:(id)arg2;
 - (void)tearDown;
 

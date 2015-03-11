@@ -5,18 +5,18 @@
 @class NSString;
 
 @interface SKUIFacebookViewElement : SKUIViewElement {
-    long long _facebookType;
+    int _facebookType;
     NSString *_urlString;
 }
 
 @property(readonly) NSString * URLString;
-@property(readonly) long long facebookType;
+@property(readonly) int facebookType;
 
 - (void).cxx_destruct;
 - (id)URLString;
 - (id)applyUpdatesWithElement:(id)arg1;
-- (long long)facebookType;
+- (int)facebookType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (long long)pageComponentType;
+- (int)pageComponentType;
 
 @end

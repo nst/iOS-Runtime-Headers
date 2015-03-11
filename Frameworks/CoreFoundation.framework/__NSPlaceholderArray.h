@@ -10,19 +10,19 @@
 + (void)initialize;
 + (id)mutablePlaceholder;
 
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned long long)arg2;
-- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
-- (id)objectAtIndex:(unsigned long long)arg1;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)objectAtIndex:(unsigned int)arg1;
 - (oneway void)release;
-- (void)removeObjectAtIndex:(unsigned long long)arg1;
-- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

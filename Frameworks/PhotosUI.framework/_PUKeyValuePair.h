@@ -13,10 +13,10 @@
 @property(copy,readonly) NSString * value;
 
 - (void).cxx_destruct;
-- (long long)compare:(id)arg1;
-- (unsigned long long)hash;
+- (int)compare:(id)arg1;
+- (unsigned int)hash;
 - (id)initWithKey:(id)arg1 value:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (id)value;
 

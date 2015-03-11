@@ -32,12 +32,12 @@
 - (id)containerIconWidthConstraint;
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)item;
 - (id)model;
 - (id)observerToken;
 - (void)prepareForReuse;
-- (void)reloadItem:(bool)arg1;
+- (void)reloadItem:(BOOL)arg1;
 - (void)setContainerDisplayName:(id)arg1;
 - (void)setContainerIconBottomConstraint:(id)arg1;
 - (void)setContainerIconHeightConstraint:(id)arg1;

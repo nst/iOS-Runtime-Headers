@@ -3,10 +3,10 @@
  */
 
 @interface GQDTGroupingCell : GQDTCell {
-    boolmHasValidFormulaValue;
-    boolmIsCollapsed;
     id mFormat;
     struct __CFString { } *mFormulaValue;
+    BOOL mHasValidFormulaValue;
+    BOOL mIsCollapsed;
     unsigned short mLevel;
     struct __CFBundle { } *mProcessorBundle;
     unsigned short mRowCount;
@@ -18,8 +18,8 @@
 
 - (struct __CFString { }*)createFormattedValue;
 - (void)dealloc;
-- (bool)hasFormulaValue;
-- (bool)isCollapsed;
+- (BOOL)hasFormulaValue;
+- (BOOL)isCollapsed;
 - (unsigned short)level;
 - (int)readAttributes:(struct _xmlTextReader { }*)arg1;
 - (int)readElement:(struct _xmlTextReader { }*)arg1;

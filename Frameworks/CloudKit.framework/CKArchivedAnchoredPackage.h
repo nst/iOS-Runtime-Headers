@@ -16,7 +16,7 @@
 @property(retain) NSArray * assets;
 @property(retain) NSString * packagePath;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;

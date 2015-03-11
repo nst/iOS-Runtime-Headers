@@ -9,10 +9,10 @@
 @property(readonly) double radius;
 
 + (id)circularRegionFromMapRegion:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (struct { double x1; double x2; })center;
-- (bool)containsCoordinate:(struct { double x1; double x2; })arg1;
+- (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

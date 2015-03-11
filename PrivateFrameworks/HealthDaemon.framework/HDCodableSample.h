@@ -18,10 +18,10 @@
 
 @property long long dataType;
 @property double endDate;
-@property bool hasDataType;
-@property bool hasEndDate;
-@property(readonly) bool hasObject;
-@property bool hasStartDate;
+@property BOOL hasDataType;
+@property BOOL hasEndDate;
+@property(readonly) BOOL hasObject;
+@property BOOL hasStartDate;
 @property(retain) HDCodableObject * object;
 @property double startDate;
 
@@ -39,20 +39,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)endDate;
-- (bool)hasDataType;
-- (bool)hasEndDate;
-- (bool)hasObject;
-- (bool)hasStartDate;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDataType;
+- (BOOL)hasEndDate;
+- (BOOL)hasObject;
+- (BOOL)hasStartDate;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)object;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDataType:(long long)arg1;
 - (void)setEndDate:(double)arg1;
-- (void)setHasDataType:(bool)arg1;
-- (void)setHasEndDate:(bool)arg1;
-- (void)setHasStartDate:(bool)arg1;
+- (void)setHasDataType:(BOOL)arg1;
+- (void)setHasEndDate:(BOOL)arg1;
+- (void)setHasStartDate:(BOOL)arg1;
 - (void)setObject:(id)arg1;
 - (void)setStartDate:(double)arg1;
 - (double)startDate;

@@ -22,10 +22,10 @@
 
 - (void).cxx_destruct;
 - (id)_mandatoryCharacteristicsForServiceType:(id)arg1;
-- (bool)_updateAndValidateCharacteristics;
-- (bool)_updateCharacteristic:(id)arg1;
-- (bool)_validateMandatoryCharacteristics;
-- (bool)_validateServiceCharacteristics;
+- (BOOL)_updateAndValidateCharacteristics;
+- (BOOL)_updateCharacteristic:(id)arg1;
+- (BOOL)_validateMandatoryCharacteristics;
+- (BOOL)_validateServiceCharacteristics;
 - (id)accessory;
 - (id)characteristics;
 - (id)description;
@@ -33,7 +33,7 @@
 - (id)initWithType:(id)arg1 instanceID:(id)arg2 parsedCharacteristics:(id)arg3;
 - (id)initWithType:(id)arg1 instanceID:(id)arg2;
 - (id)instanceID;
-- (bool)isEqualToService:(id)arg1;
+- (BOOL)isEqualToService:(id)arg1;
 - (void)setAccessory:(id)arg1;
 - (void)setCharacteristics:(id)arg1;
 - (void)setInstanceID:(id)arg1;

@@ -3,22 +3,22 @@
  */
 
 @interface TRDirectionalButtonPacketEvent : TRPacketEvent {
-    long long _buttonType;
-    long long _gestureState;
-    long long _gestureType;
+    int _buttonType;
+    int _gestureState;
+    int _gestureType;
 }
 
-@property(readonly) long long buttonType;
-@property(readonly) long long gestureState;
-@property(readonly) long long gestureType;
+@property(readonly) int buttonType;
+@property(readonly) int gestureState;
+@property(readonly) int gestureType;
 
 + (unsigned int)_packetEventType;
 
 - (id)_initWithVersion:(unsigned int)arg1 payloadDictionary:(id)arg2;
-- (long long)buttonType;
+- (int)buttonType;
 - (id)description;
-- (long long)gestureState;
-- (long long)gestureType;
-- (id)initWithButtonType:(long long)arg1 gestureType:(long long)arg2 gestureState:(long long)arg3;
+- (int)gestureState;
+- (int)gestureType;
+- (id)initWithButtonType:(int)arg1 gestureType:(int)arg2 gestureState:(int)arg3;
 
 @end

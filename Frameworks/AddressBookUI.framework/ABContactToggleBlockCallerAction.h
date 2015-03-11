@@ -5,11 +5,11 @@
 @interface ABContactToggleBlockCallerAction : ABContactAction {
 }
 
-@property(readonly) bool isBlocked;
+@property(readonly) BOOL isBlocked;
 
 - (id)allNumbersAndEmails;
 - (void)block;
-- (bool)isBlocked;
+- (BOOL)isBlocked;
 - (void)performActionWithSender:(id)arg1;
 - (void)unblock;
 

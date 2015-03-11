@@ -3,15 +3,15 @@
  */
 
 @interface BKSProcessAssertionCreateResponseEvent : BKSProcessAssertionEvent {
-    bool_success;
+    BOOL _success;
 }
 
-@property bool success;
+@property BOOL success;
 
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (void)setSuccess:(bool)arg1;
-- (bool)success;
+- (void)setSuccess:(BOOL)arg1;
+- (BOOL)success;
 
 @end

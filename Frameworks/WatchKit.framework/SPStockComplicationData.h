@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface SPStockComplicationData : SPComplicationData <NSSecureCoding> {
-    unsigned long long _changeDirection;
+    unsigned int _changeDirection;
     NSString *_changeInPercentText;
     NSString *_changeInPointsText;
     NSString *_changeText;
@@ -14,7 +14,7 @@
     NSString *_tickerSymbolText;
 }
 
-@property unsigned long long changeDirection;
+@property unsigned int changeDirection;
 @property(retain) NSString * changeInPercentText;
 @property(retain) NSString * changeInPointsText;
 @property(retain) NSString * changeText;
@@ -22,10 +22,10 @@
 @property(retain) NSString * priceText;
 @property(retain) NSString * tickerSymbolText;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned long long)changeDirection;
+- (unsigned int)changeDirection;
 - (id)changeInPercentText;
 - (id)changeInPointsText;
 - (id)changeText;
@@ -33,7 +33,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)marketCapText;
 - (id)priceText;
-- (void)setChangeDirection:(unsigned long long)arg1;
+- (void)setChangeDirection:(unsigned int)arg1;
 - (void)setChangeInPercentText:(id)arg1;
 - (void)setChangeInPointsText:(id)arg1;
 - (void)setChangeText:(id)arg1;

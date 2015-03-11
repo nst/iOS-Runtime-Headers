@@ -5,40 +5,40 @@
 @class NSIndexSet, NSMutableIndexSet;
 
 @interface PLImportSessionInfo : NSObject {
+    BOOL _importComplete;
     NSMutableIndexSet *_importCompleteIndexes;
     NSMutableIndexSet *_importErrorIndexes;
     NSMutableIndexSet *_importInProgressIndexes;
     NSMutableIndexSet *_importIndexes;
-    bool_importComplete;
-    bool_importStopped;
-    bool_importingSelection;
+    BOOL _importStopped;
+    BOOL _importingSelection;
 }
 
 @property(readonly) NSIndexSet * completedIndexes;
 @property(readonly) NSIndexSet * errorIndexes;
-@property bool importComplete;
+@property BOOL importComplete;
 @property(readonly) NSIndexSet * importIndexes;
-@property bool importStopped;
-@property bool importingSelection;
+@property BOOL importStopped;
+@property BOOL importingSelection;
 @property(readonly) NSIndexSet * inProgressIndexes;
 
-- (bool)_isImportCompleteForIndex:(unsigned long long)arg1;
-- (void)addIndexToImport:(unsigned long long)arg1;
-- (void)beginImportForIndex:(unsigned long long)arg1;
-- (void)completeImportForIndex:(unsigned long long)arg1 error:(bool)arg2;
+- (BOOL)_isImportCompleteForIndex:(unsigned int)arg1;
+- (void)addIndexToImport:(unsigned int)arg1;
+- (void)beginImportForIndex:(unsigned int)arg1;
+- (void)completeImportForIndex:(unsigned int)arg1 error:(BOOL)arg2;
 - (id)completedIndexes;
 - (void)dealloc;
 - (id)errorIndexes;
-- (bool)importComplete;
+- (BOOL)importComplete;
 - (id)importIndexes;
-- (bool)importStopped;
-- (bool)importingSelection;
+- (BOOL)importStopped;
+- (BOOL)importingSelection;
 - (id)inProgressIndexes;
 - (id)initWithImportIndexes:(id)arg1;
-- (void)removeIndex:(unsigned long long)arg1;
-- (void)setImportComplete:(bool)arg1;
-- (void)setImportStopped:(bool)arg1;
-- (void)setImportingSelection:(bool)arg1;
-- (void)shiftIndexesStartingAtIndex:(unsigned long long)arg1 by:(unsigned long long)arg2;
+- (void)removeIndex:(unsigned int)arg1;
+- (void)setImportComplete:(BOOL)arg1;
+- (void)setImportStopped:(BOOL)arg1;
+- (void)setImportingSelection:(BOOL)arg1;
+- (void)shiftIndexesStartingAtIndex:(unsigned int)arg1 by:(unsigned int)arg2;
 
 @end

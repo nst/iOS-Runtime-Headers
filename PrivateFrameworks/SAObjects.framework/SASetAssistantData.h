@@ -11,7 +11,7 @@
 @property(copy) NSString * aceId;
 @property(copy) NSNumber * allowUserGeneratedContent;
 @property(copy) NSString * anchor;
-@property bool censorSpeech;
+@property BOOL censorSpeech;
 @property(copy) NSString * countryCode;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy) NSNumber * debugFlags;
@@ -21,10 +21,10 @@
 @property(copy) NSString * deviceEnclosure;
 @property(copy) NSString * deviceVersion;
 @property(copy) NSString * firstName;
-@property bool handsFree;
-@property(readonly) unsigned long long hash;
+@property BOOL handsFree;
+@property(readonly) unsigned int hash;
 @property(copy) NSNumber * holdToTalkThresholdInMilliseconds;
-@property bool inRetailStoreDemoMode;
+@property BOOL inRetailStoreDemoMode;
 @property(copy) NSString * lastName;
 @property(copy) NSArray * meCards;
 @property(copy) NSString * osVersion;
@@ -39,7 +39,7 @@
 @property(copy) NSNumber * twentyFourHourTimeDisplay;
 @property(copy) NSNumber * uiScale;
 @property(copy) NSString * userInterfaceIdiom;
-@property bool voiceOver;
+@property BOOL voiceOver;
 @property(copy) NSNumber * voiceTriggerEnabled;
 @property(retain) SAWatchData * watchData;
 
@@ -49,7 +49,7 @@
 - (id)abSources;
 - (id)allowUserGeneratedContent;
 - (id)anchor;
-- (bool)censorSpeech;
+- (BOOL)censorSpeech;
 - (id)countryCode;
 - (id)debugFlags;
 - (id)deviceCapabilities;
@@ -59,9 +59,9 @@
 - (id)encodedClassName;
 - (id)firstName;
 - (id)groupIdentifier;
-- (bool)handsFree;
+- (BOOL)handsFree;
 - (id)holdToTalkThresholdInMilliseconds;
-- (bool)inRetailStoreDemoMode;
+- (BOOL)inRetailStoreDemoMode;
 - (id)lastName;
 - (id)meCards;
 - (id)osVersion;
@@ -70,7 +70,7 @@
 - (void)setAbSources:(id)arg1;
 - (void)setAllowUserGeneratedContent:(id)arg1;
 - (void)setAnchor:(id)arg1;
-- (void)setCensorSpeech:(bool)arg1;
+- (void)setCensorSpeech:(BOOL)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setDebugFlags:(id)arg1;
 - (void)setDeviceCapabilities:(id)arg1;
@@ -78,9 +78,9 @@
 - (void)setDeviceEnclosure:(id)arg1;
 - (void)setDeviceVersion:(id)arg1;
 - (void)setFirstName:(id)arg1;
-- (void)setHandsFree:(bool)arg1;
+- (void)setHandsFree:(BOOL)arg1;
 - (void)setHoldToTalkThresholdInMilliseconds:(id)arg1;
-- (void)setInRetailStoreDemoMode:(bool)arg1;
+- (void)setInRetailStoreDemoMode:(BOOL)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setMeCards:(id)arg1;
 - (void)setOsVersion:(id)arg1;
@@ -93,7 +93,7 @@
 - (void)setTwentyFourHourTimeDisplay:(id)arg1;
 - (void)setUiScale:(id)arg1;
 - (void)setUserInterfaceIdiom:(id)arg1;
-- (void)setVoiceOver:(bool)arg1;
+- (void)setVoiceOver:(BOOL)arg1;
 - (void)setVoiceTriggerEnabled:(id)arg1;
 - (void)setWatchData:(id)arg1;
 - (id)storefront;
@@ -103,7 +103,7 @@
 - (id)twentyFourHourTimeDisplay;
 - (id)uiScale;
 - (id)userInterfaceIdiom;
-- (bool)voiceOver;
+- (BOOL)voiceOver;
 - (id)voiceTriggerEnabled;
 - (id)watchData;
 

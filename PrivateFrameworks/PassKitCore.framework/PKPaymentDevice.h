@@ -12,14 +12,14 @@
     CLLocationManager *_locationManager;
     NSMutableArray *_provisioningCompletions;
     PKPaymentDeviceProvisioningData *_provisioningData;
+    BOOL _skipLocationCheck;
     NSTimer *_timer;
-    bool_skipLocationCheck;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool skipLocationCheck;
+@property(readonly) unsigned int hash;
+@property BOOL skipLocationCheck;
 @property(readonly) Class superclass;
 
 + (id)clientInfoHTTPHeader;
@@ -40,7 +40,7 @@
 - (void)rewrapDataWithDeviceIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (void)secureElementSigningKeyTypeWithCompletion:(id)arg1;
 - (void)setRegistrationFlag;
-- (void)setSkipLocationCheck:(bool)arg1;
-- (bool)skipLocationCheck;
+- (void)setSkipLocationCheck:(BOOL)arg1;
+- (BOOL)skipLocationCheck;
 
 @end

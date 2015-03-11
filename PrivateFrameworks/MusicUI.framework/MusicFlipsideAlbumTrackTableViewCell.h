@@ -6,22 +6,22 @@
 
 @interface MusicFlipsideAlbumTrackTableViewCell : MusicCollectionTrackTableViewCell {
     MPURatingControl *_ratingControl;
-    bool_showsRatingControl;
+    BOOL _showsRatingControl;
 }
 
 @property(readonly) MPURatingControl * ratingControl;
-@property bool showsRatingControl;
+@property BOOL showsRatingControl;
 
 + (Class)contentViewClass;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)ratingControl;
-- (void)setContentBoundsEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setShowsRatingControl:(bool)arg1 animated:(bool)arg2;
-- (void)setShowsRatingControl:(bool)arg1;
-- (bool)showsRatingControl;
+- (void)setContentBoundsEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setShowsRatingControl:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setShowsRatingControl:(BOOL)arg1;
+- (BOOL)showsRatingControl;
 
 @end

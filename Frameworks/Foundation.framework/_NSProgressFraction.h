@@ -4,17 +4,17 @@
 
 @interface _NSProgressFraction : NSObject <NSSecureCoding, NSCopying> {
     long long _completed;
+    BOOL _overflowed;
     long long _total;
-    bool_overflowed;
 }
 
 @property long long completed;
-@property(readonly) bool overflowed;
+@property(readonly) BOOL overflowed;
 @property long long total;
 
 + (id)fractionWithCompleted:(long long)arg1 total:(long long)arg2;
 + (id)fractionWithDouble:(double)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)_simplifyFromDouble:(double)arg1;
 - (void)addFraction:(id)arg1;
@@ -30,11 +30,11 @@
 - (double)fractionCompleted;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCompleted:(long long)arg1 total:(long long)arg2;
-- (bool)isEqual:(id)arg1;
-- (bool)isFinished;
-- (bool)isIndeterminate;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isFinished;
+- (BOOL)isIndeterminate;
 - (void)multiplyByFraction:(id)arg1;
-- (bool)overflowed;
+- (BOOL)overflowed;
 - (void)setCompleted:(long long)arg1;
 - (void)setTotal:(long long)arg1;
 - (void)simplify;

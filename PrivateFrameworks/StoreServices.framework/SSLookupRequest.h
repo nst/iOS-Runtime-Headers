@@ -6,26 +6,26 @@
 
 @interface SSLookupRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext *_authenticationContext;
-    long long _personalizationStyle;
+    int _personalizationStyle;
     SSLookupProperties *_properties;
-    long long _resultFilters;
+    int _resultFilters;
 }
 
 @property(copy,readonly) SSLookupProperties * _lookupProperties;
-@property bool authenticatesIfNeeded;
+@property BOOL authenticatesIfNeeded;
 @property(copy) SSAuthenticationContext * authenticationContext;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * keyProfile;
-@property long long localizationStyle;
-@property long long personalizationStyle;
-@property long long resultFilters;
+@property int localizationStyle;
+@property int personalizationStyle;
+@property int resultFilters;
 @property(readonly) Class superclass;
 
 - (id)_lookupProperties;
 - (void)_setTimeoutInterval:(id)arg1;
-- (bool)authenticatesIfNeeded;
+- (BOOL)authenticatesIfNeeded;
 - (id)authenticationContext;
 - (id)copyXPCEncoding;
 - (void)dealloc;
@@ -33,17 +33,17 @@
 - (id)initWithLocation:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)keyProfile;
-- (long long)localizationStyle;
-- (long long)personalizationStyle;
-- (long long)resultFilters;
-- (void)setAuthenticatesIfNeeded:(bool)arg1;
+- (int)localizationStyle;
+- (int)personalizationStyle;
+- (int)resultFilters;
+- (void)setAuthenticatesIfNeeded:(BOOL)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setKeyProfile:(id)arg1;
-- (void)setLocalizationStyle:(long long)arg1;
-- (void)setPersonalizationStyle:(long long)arg1;
-- (void)setResultFilters:(long long)arg1;
+- (void)setLocalizationStyle:(int)arg1;
+- (void)setPersonalizationStyle:(int)arg1;
+- (void)setResultFilters:(int)arg1;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
-- (bool)start;
+- (BOOL)start;
 - (void)startWithCompletionBlock:(id)arg1;
 - (void)startWithLookupBlock:(id)arg1;
 - (id)valueForRequestParameter:(id)arg1;

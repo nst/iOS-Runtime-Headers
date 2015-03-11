@@ -26,7 +26,7 @@
 - (void)remoteViewControllerIsCanceling;
 - (void)remoteViewControllerIsFinishing;
 - (unsigned int)rid;
-- (void)sendFinishedMessageToDelegateCancelled:(bool)arg1;
+- (void)sendFinishedMessageToDelegateCancelled:(BOOL)arg1;
 - (void)setDefaultMessage:(id)arg1;
 - (void)setRid:(unsigned int)arg1;
 - (void)setTheme:(id)arg1;

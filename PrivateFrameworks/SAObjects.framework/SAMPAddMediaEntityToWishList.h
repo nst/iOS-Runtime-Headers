@@ -15,7 +15,7 @@
 - (id)adamId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setAdamId:(id)arg1;
 
 @end

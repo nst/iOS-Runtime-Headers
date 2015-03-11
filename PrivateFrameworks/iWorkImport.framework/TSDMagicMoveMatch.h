@@ -5,54 +5,54 @@
 @class NSString, TSDMagicMoveMatchObject, TSDTextureContext;
 
 @interface TSDMagicMoveMatch : NSObject <TSDMatchingAlgorithmMatch> {
-    double _attributeMatchPercent;
-    double _distance;
+    float _attributeMatchPercent;
+    float _distance;
     TSDMagicMoveMatchObject *_incomingObject;
-    long long _matchCost;
-    long long _matchType;
+    int _matchCost;
+    int _matchType;
     NSString *_name;
     TSDMagicMoveMatchObject *_outgoingObject;
     TSDTextureContext *_textureContext;
-    double _zOrderDistance;
+    float _zOrderDistance;
 }
 
-@property double attributeMatchPercent;
-@property double distance;
+@property float attributeMatchPercent;
+@property float distance;
 @property(readonly) id incomingMatchObject;
 @property(readonly) TSDMagicMoveMatchObject * incomingObject;
-@property(readonly) bool isTextMatch;
-@property(readonly) long long matchCost;
-@property long long matchType;
+@property(readonly) BOOL isTextMatch;
+@property(readonly) int matchCost;
+@property int matchType;
 @property(retain) NSString * name;
 @property(readonly) id outgoingMatchObject;
 @property(readonly) TSDMagicMoveMatchObject * outgoingObject;
 @property(retain) TSDTextureContext * textureContext;
-@property double zOrderDistance;
+@property float zOrderDistance;
 
-+ (id)matchWithOutgoingObject:(id)arg1 incomingObject:(id)arg2 matchType:(long long)arg3 attributeMatchPercent:(double)arg4 textureContext:(id)arg5;
++ (id)matchWithOutgoingObject:(id)arg1 incomingObject:(id)arg2 matchType:(int)arg3 attributeMatchPercent:(float)arg4 textureContext:(id)arg5;
 
-- (double)attributeMatchPercent;
-- (long long)compareToMatch:(id)arg1;
-- (bool)conflictsWithMatch:(id)arg1;
+- (float)attributeMatchPercent;
+- (int)compareToMatch:(id)arg1;
+- (BOOL)conflictsWithMatch:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (double)distance;
+- (float)distance;
 - (id)incomingMatchObject;
 - (id)incomingObject;
-- (bool)isTextMatch;
-- (long long)matchCost;
-- (long long)matchType;
+- (BOOL)isTextMatch;
+- (int)matchCost;
+- (int)matchType;
 - (id)name;
 - (id)outgoingMatchObject;
 - (id)outgoingObject;
 - (void)p_updateMagicMoveCost;
-- (void)setAttributeMatchPercent:(double)arg1;
-- (void)setDistance:(double)arg1;
-- (void)setMatchType:(long long)arg1;
+- (void)setAttributeMatchPercent:(float)arg1;
+- (void)setDistance:(float)arg1;
+- (void)setMatchType:(int)arg1;
 - (void)setName:(id)arg1;
 - (void)setTextureContext:(id)arg1;
-- (void)setZOrderDistance:(double)arg1;
+- (void)setZOrderDistance:(float)arg1;
 - (id)textureContext;
-- (double)zOrderDistance;
+- (float)zOrderDistance;
 
 @end

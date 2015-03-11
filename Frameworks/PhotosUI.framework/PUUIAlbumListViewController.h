@@ -22,12 +22,12 @@
 - (id)newGridViewControllerForAllPhotos;
 - (id)newGridViewControllerForAssetCollection:(id)arg1;
 - (id)newGridViewControllerForFolder:(id)arg1;
-- (bool)pu_wantsNavigationBarVisible;
+- (BOOL)pu_wantsNavigationBarVisible;
 - (void)setAlbumList:(id)arg1;
-- (bool)shouldAllowEmailInAlbumSubtitle;
-- (bool)shouldShowAllPhotosItem;
-- (unsigned long long)supportedInterfaceOrientations;
-- (void)updateNavigationBarAnimated:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (BOOL)shouldAllowEmailInAlbumSubtitle;
+- (BOOL)shouldShowAllPhotosItem;
+- (unsigned int)supportedInterfaceOrientations;
+- (void)updateNavigationBarAnimated:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

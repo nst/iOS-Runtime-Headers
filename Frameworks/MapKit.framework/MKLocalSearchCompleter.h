@@ -5,12 +5,12 @@
 @class <GEOMapServiceCompletionTicket>, NSArray, NSTimer;
 
 @interface MKLocalSearchCompleter : MKSearchCompleter {
+    BOOL _dirty;
     double _lastRequestTime;
     NSArray *_results;
     int _source;
     <GEOMapServiceCompletionTicket> *_ticket;
     NSTimer *_timer;
-    bool_dirty;
 }
 
 - (void).cxx_destruct;
@@ -24,9 +24,9 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (bool)isSearching;
+- (BOOL)isSearching;
 - (id)results;
-- (bool)resultsAreCurrent;
+- (BOOL)resultsAreCurrent;
 - (void)retry;
 - (void)setBoundingRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setFragment:(id)arg1;

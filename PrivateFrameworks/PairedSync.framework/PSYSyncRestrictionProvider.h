@@ -6,25 +6,25 @@
 
 @interface PSYSyncRestrictionProvider : NSObject <PSYDeviceSyncStateObserver> {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     <PSYSyncRestrictionProviderDelegate> *_delegate;
+    BOOL _hasReceivedStartSync;
     NSURL *_pairingDataURL;
     NSObject<OS_dispatch_queue> *_queue;
     NSURL *_serviceDirectory;
     } _serviceDirectoryLock;
     NSString *_serviceName;
-    unsigned long long _syncRestriction;
-    bool_hasReceivedStartSync;
+    unsigned int _syncRestriction;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <PSYSyncRestrictionProviderDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSString * serviceName;
 @property(readonly) Class superclass;
-@property unsigned long long syncRestriction;
+@property unsigned int syncRestriction;
 
 - (void).cxx_destruct;
 - (void)_createPairingDataDirectoryIfNeeded;
@@ -33,14 +33,14 @@
 - (id)_pairingDataURL;
 - (void)_reloadPairingStorePath;
 - (void)_reloadPersistentData;
-- (unsigned long long)_restrictionForCurrentState;
+- (unsigned int)_restrictionForCurrentState;
 - (id)_serviceDirectory;
 - (void)_setServiceDirectory:(id)arg1;
 - (void)_updateSyncRestrictionIfNeeded;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)deviceSyncStateDidChange:(unsigned long long)arg1;
+- (void)deviceSyncStateDidChange:(unsigned int)arg1;
 - (id)init;
 - (id)initWithServiceName:(id)arg1 queue:(id)arg2 delegate:(id)arg3;
 - (void)keybagStateChanged;
@@ -52,8 +52,8 @@
 - (void)serviceHasReceivedStartSync;
 - (id)serviceName;
 - (void)setDelegate:(id)arg1;
-- (void)setSyncRestriction:(unsigned long long)arg1;
-- (unsigned long long)syncRestriction;
+- (void)setSyncRestriction:(unsigned int)arg1;
+- (unsigned int)syncRestriction;
 - (void)unregisterForFirstKeybagUnlockNotification;
 - (void)unregisterForNotifications;
 

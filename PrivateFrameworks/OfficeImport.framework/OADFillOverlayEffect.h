@@ -12,9 +12,9 @@
 - (int)blendMode;
 - (void)dealloc;
 - (id)fill;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setFill:(id)arg1;
 

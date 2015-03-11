@@ -12,7 +12,7 @@
     UIView *_loadingView;
     NSMutableArray *_openedSections;
     APDNavigationItem *_pendingOpenItem;
-    bool_showingHelpInfo;
+    BOOL _showingHelpInfo;
 }
 
 @property UIButton * copyrightFooterButton;
@@ -20,29 +20,29 @@
 @property <APDTOCViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property UIView * footerViewSeparatorView;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property UIActivityIndicatorView * loadingIndicator;
 @property UIView * loadingView;
 @property(retain) APDNavigationItem * pendingOpenItem;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)appendOpenedChildrenForItem:(id)arg1;
 - (void)closeNavigationItem:(id)arg1;
 - (id)copyrightFooterButton;
 - (void)dismissCellHighlight;
 - (void)ensureContentInTOC;
 - (id)footerViewSeparatorView;
-- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)init;
 - (id)loadingIndicator;
 - (id)loadingView;
-- (long long)numberOfVisibleCellsForNavigationItem:(id)arg1;
+- (int)numberOfVisibleCellsForNavigationItem:(id)arg1;
 - (void)onFooterViewLongPress:(id)arg1;
 - (void)onLoadingChanged:(id)arg1;
 - (void)onSectionListChanged:(id)arg1;
-- (void)openNavigationItem:(id)arg1 insertRowsToTableView:(bool)arg2;
+- (void)openNavigationItem:(id)arg1 insertRowsToTableView:(BOOL)arg2;
 - (id)pendingOpenItem;
 - (void)setCopyrightFooterButton:(id)arg1;
 - (void)setFooterViewSeparatorView:(id)arg1;
@@ -53,11 +53,11 @@
 - (void)showHighlightOnLastSelectedTopic;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)updateFooterView;
 - (void)updateTableViewData;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

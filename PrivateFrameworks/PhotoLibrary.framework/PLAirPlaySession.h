@@ -9,27 +9,27 @@
     MediaControlClient *_mediaControlClient;
     NSDictionary *_pickedRoute;
     AirPlayRemoteSlideshow *_remoteSlideshow;
+    BOOL _sentPhoto;
     NSMutableArray *_streamedPhotoUuids;
-    bool_sentPhoto;
-    bool_streamingLocalSlideShow;
-    bool_streamingPhotos;
-    bool_streamingRemoteSlideshow;
-    bool_supportsPhotoCaching;
+    BOOL _streamingLocalSlideShow;
+    BOOL _streamingPhotos;
+    BOOL _streamingRemoteSlideshow;
+    BOOL _supportsPhotoCaching;
 }
 
 @property <PLAirPlaySessionDataSource> * dataSource;
-@property bool streamingLocalSlideShow;
+@property BOOL streamingLocalSlideShow;
 
 + (void)beginNetworkAssertion;
-+ (bool)canDisplayMedia:(id)arg1;
++ (BOOL)canDisplayMedia:(id)arg1;
 + (void)endNetworkAssertion;
 
 - (id)_fixLegacyEvent:(id)arg1;
 - (void)_reallySendPhotoData:(id)arg1 forPhotoWithUUID:(id)arg2 withTransition:(id)arg3 andAction:(id)arg4;
-- (bool)_shouldCachePhotos;
+- (BOOL)_shouldCachePhotos;
 - (void)_streamPhoto:(id)arg1 withTransition:(id)arg2 andAction:(id)arg3;
 - (void)_streamPhotosAdjacentToPhoto:(id)arg1 withTransition:(id)arg2;
-- (bool)_streaming;
+- (BOOL)_streaming;
 - (id)dataSource;
 - (void)dealloc;
 - (id)initWithPickedRoute:(id)arg1 mediaControlClient:(id)arg2 airplayRemoteSlideshow:(id)arg3;
@@ -37,12 +37,12 @@
 - (id)pickedRouteID;
 - (id)pickedRouteName;
 - (void)setDataSource:(id)arg1;
-- (void)setStreamingLocalSlideShow:(bool)arg1;
+- (void)setStreamingLocalSlideShow:(BOOL)arg1;
 - (void)startRemoteSlideshowWithTheme:(id)arg1 remoteSlideshowDelegate:(id)arg2;
 - (void)stopRemoteSlideshow;
 - (void)stopStreaming;
 - (void)streamPhoto:(id)arg1 withTransition:(id)arg2;
-- (bool)streamingLocalSlideShow;
-- (bool)supportsRemoteSlideshow;
+- (BOOL)streamingLocalSlideShow;
+- (BOOL)supportsRemoteSlideshow;
 
 @end

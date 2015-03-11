@@ -3,7 +3,7 @@
  */
 
 @interface ML3TruthPredicate : ML3Predicate {
-    bool_truthValue;
+    BOOL _truthValue;
 }
 
 + (id)falsePredicate;
@@ -13,10 +13,10 @@
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isFalseAlways;
-- (bool)isTrueAlways;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isFalseAlways;
+- (BOOL)isTrueAlways;
 
 @end

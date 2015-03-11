@@ -3,21 +3,21 @@
  */
 
 @interface PUProtoSetShouldNotifyNextUnlock : PBCodable <NSCopying> {
-    bool_shouldNotify;
+    BOOL _shouldNotify;
 }
 
-@property bool shouldNotify;
+@property BOOL shouldNotify;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setShouldNotify:(bool)arg1;
-- (bool)shouldNotify;
+- (BOOL)readFrom:(id)arg1;
+- (void)setShouldNotify:(BOOL)arg1;
+- (BOOL)shouldNotify;
 - (void)writeTo:(id)arg1;
 
 @end

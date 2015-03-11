@@ -8,13 +8,13 @@
 + (Class)_associatedDataObjectClass;
 + (id)_objectsWithIDs:(id)arg1 healthDaemon:(id)arg2;
 + (id)_tableValuesFromDataObject:(id)arg1;
-+ (bool)acceptsObject:(id)arg1;
++ (BOOL)acceptsObject:(id)arg1;
 + (id)codableObjectsFromObjectCollection:(id)arg1;
 + (id)createTableSQL;
 + (id)deleteStatementsForRelatedEntitiesInDatabase:(id)arg1;
-+ (bool)isBackedByTable;
++ (BOOL)isBackedByTable;
 + (Class)propertyApplierClass;
 
-- (bool)deleteFromDatabase:(id)arg1 error:(id*)arg2;
+- (BOOL)deleteFromDatabase:(id)arg1 error:(id*)arg2;
 
 @end

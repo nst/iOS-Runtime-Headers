@@ -3,13 +3,13 @@
  */
 
 @interface TSCH3DTightComponent16WidenPipeline : TSCH3DFramebufferCopyPipeline {
-    boolmSelection;
+    BOOL mSelection;
 }
 
-@property bool selection;
+@property BOOL selection;
 
-- (bool)selection;
-- (void)setSelection:(bool)arg1;
+- (BOOL)selection;
+- (void)setSelection:(BOOL)arg1;
 - (void)updateShaderEffectsStates;
 
 @end

@@ -6,19 +6,19 @@
 
 @interface PURootSettings : PUSettings {
     PUFeedSettings *_feedSettings;
-    long long _imagePickerTestSourceType;
+    int _imagePickerTestSourceType;
     PUMomentsSettings *_momentsSettings;
     PUPhotoEditProtoSettings *_photoEditingSettings;
     PUPhotosGridSettings *_photosGridSettings;
-    unsigned long long _settingsVersion;
+    unsigned int _settingsVersion;
 }
 
 @property(retain) PUFeedSettings * feedSettings;
-@property long long imagePickerTestSourceType;
+@property int imagePickerTestSourceType;
 @property(retain) PUMomentsSettings * momentsSettings;
 @property(retain) PUPhotoEditProtoSettings * photoEditingSettings;
 @property(retain) PUPhotosGridSettings * photosGridSettings;
-@property unsigned long long settingsVersion;
+@property unsigned int settingsVersion;
 
 + (void)_addRandomPhoto;
 + (id)_currentViewControllerStack;
@@ -32,17 +32,17 @@
 - (void).cxx_destruct;
 - (void)_save;
 - (id)feedSettings;
-- (long long)imagePickerTestSourceType;
+- (int)imagePickerTestSourceType;
 - (id)momentsSettings;
 - (id)photoEditingSettings;
 - (id)photosGridSettings;
 - (void)setDefaultValues;
 - (void)setFeedSettings:(id)arg1;
-- (void)setImagePickerTestSourceType:(long long)arg1;
+- (void)setImagePickerTestSourceType:(int)arg1;
 - (void)setMomentsSettings:(id)arg1;
 - (void)setPhotoEditingSettings:(id)arg1;
 - (void)setPhotosGridSettings:(id)arg1;
-- (void)setSettingsVersion:(unsigned long long)arg1;
-- (unsigned long long)settingsVersion;
+- (void)setSettingsVersion:(unsigned int)arg1;
+- (unsigned int)settingsVersion;
 
 @end

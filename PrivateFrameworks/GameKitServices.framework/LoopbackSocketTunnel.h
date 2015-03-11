@@ -23,7 +23,7 @@
         BOOL sin_zero[8]; 
     NSObject<LoopbackSocketTunnelDelegate> *_delegate;
     unsigned short _port;
-    boolfoundVTPIP;
+    BOOL foundVTPIP;
     NSObject *optionalArg;
     } sa;
     int sockFD;

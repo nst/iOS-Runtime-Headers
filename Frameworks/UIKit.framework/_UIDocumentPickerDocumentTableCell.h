@@ -8,19 +8,19 @@
     SKUIItemOfferButton *_cloudButton;
     UIView *_iconCenteringView;
     UIImageView *_iconView;
+    BOOL _isContainer;
     _UIDocumentPickerContainerItem *_item;
     id _progressSubscriber;
     NSTimer *_progressTimer;
     UILabel *_subtitleLabel;
     UILabel *_titleLabel;
     _UIDocumentPickerDocumentTableViewController *_weak_tableView;
-    bool_isContainer;
 }
 
 @property(retain) SKUIItemOfferButton * cloudButton;
 @property(retain) UIView * iconCenteringView;
 @property(retain) UIImageView * iconView;
-@property bool isContainer;
+@property BOOL isContainer;
 @property(retain) _UIDocumentPickerContainerItem * item;
 @property(retain) id progressSubscriber;
 @property(retain) NSTimer * progressTimer;
@@ -28,23 +28,23 @@
 @property _UIDocumentPickerDocumentTableViewController * tableView;
 @property(retain) UILabel * titleLabel;
 
-+ (struct CGSize { double x1; double x2; })thumbnailSize;
++ (struct CGSize { float x1; float x2; })thumbnailSize;
 
 - (id)cloudButton;
 - (void)dealloc;
 - (id)iconCenteringView;
 - (id)iconView;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-- (bool)isContainer;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isContainer;
 - (id)item;
 - (void)prepareForReuse;
 - (id)progressSubscriber;
 - (id)progressTimer;
-- (void)reloadItem:(bool)arg1;
+- (void)reloadItem:(BOOL)arg1;
 - (void)setCloudButton:(id)arg1;
 - (void)setIconCenteringView:(id)arg1;
 - (void)setIconView:(id)arg1;
-- (void)setIsContainer:(bool)arg1;
+- (void)setIsContainer:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setProgressSubscriber:(id)arg1;
 - (void)setProgressTimer:(id)arg1;

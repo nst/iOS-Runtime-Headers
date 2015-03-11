@@ -11,7 +11,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -20,7 +20,7 @@
 - (id)inputForElement:(struct __IOHIDElement { }*)arg1;
 - (id)motion;
 - (id)name;
-- (void)setPlayerIndex:(long long)arg1;
+- (void)setPlayerIndex:(int)arg1;
 - (void)set_motion:(id)arg1;
 - (void)toggleSuspendResume;
 

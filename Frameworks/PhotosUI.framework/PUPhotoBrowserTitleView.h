@@ -16,12 +16,12 @@
     UILabel *_primaryTitleLabel;
     NSString *_secondaryDateString;
     UILabel *_secondaryTitleLabel;
-    bool_wantsSubtitle;
+    BOOL _wantsSubtitle;
 }
 
 @property(retain) NSDate * creationDate;
 @property(retain) NSString * geoDescription;
-@property bool wantsSubtitle;
+@property BOOL wantsSubtitle;
 
 - (void).cxx_destruct;
 - (void)_dateFormatterChanged:(id)arg1;
@@ -31,11 +31,11 @@
 - (id)creationDate;
 - (void)dealloc;
 - (id)geoDescription;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setGeoDescription:(id)arg1;
-- (void)setWantsSubtitle:(bool)arg1;
+- (void)setWantsSubtitle:(BOOL)arg1;
 - (void)updateConstraints;
-- (bool)wantsSubtitle;
+- (BOOL)wantsSubtitle;
 
 @end

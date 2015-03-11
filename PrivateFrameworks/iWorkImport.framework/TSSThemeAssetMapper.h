@@ -25,7 +25,7 @@
 - (id)mapPresetsWithKindFromPreset:(id)arg1;
 - (id)mapStyle:(id)arg1;
 - (id)mappedAssetForAsset:(id)arg1;
-- (bool)p_hasCachedMappingsForPresetsOfKind:(id)arg1;
+- (BOOL)p_hasCachedMappingsForPresetsOfKind:(id)arg1;
 - (id)toTheme;
 
 @end

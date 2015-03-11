@@ -36,11 +36,11 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setProgress:(float)arg1;
-- (void)setUsesNSTimer:(bool)arg1;
+- (void)setUsesNSTimer:(BOOL)arg1;
 - (int)state;
 - (void)stopAnimation;
 - (id)target;
 - (int)type;
-- (bool)usesNSTimer;
+- (BOOL)usesNSTimer;
 
 @end

@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface HDCodableNanoSyncRestore : PBCodable <NSCopying, HDSyncObjectCollection, HDNanoSyncDescription> {
+@interface HDCodableNanoSyncRestore : PBCodable <HDSyncObjectCollection, HDNanoSyncDescription, NSCopying> {
     struct { 
         unsigned int objectType : 1; 
     } _has;
@@ -14,8 +14,8 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool hasObjectType;
-@property(readonly) unsigned long long hash;
+@property BOOL hasObjectType;
+@property(readonly) unsigned int hash;
 @property(retain) NSMutableArray * objectDatas;
 @property int objectType;
 @property(readonly) Class superclass;
@@ -30,17 +30,17 @@
 - (id)decodedObjects;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasObjectType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasObjectType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nanoSyncDescription;
-- (id)objectDataAtIndex:(unsigned long long)arg1;
+- (id)objectDataAtIndex:(unsigned int)arg1;
 - (id)objectDatas;
-- (unsigned long long)objectDatasCount;
+- (unsigned int)objectDatasCount;
 - (int)objectType;
-- (bool)readFrom:(id)arg1;
-- (void)setHasObjectType:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasObjectType:(BOOL)arg1;
 - (void)setObjectDatas:(id)arg1;
 - (void)setObjectType:(int)arg1;
 - (void)setObjects:(id)arg1;

@@ -17,6 +17,6 @@
 - (void)registerChange:(int)arg1 details:(id)arg2 forChangeSource:(id)arg3;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

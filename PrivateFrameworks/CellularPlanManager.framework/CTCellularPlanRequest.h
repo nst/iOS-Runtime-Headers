@@ -28,7 +28,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSError * error;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property struct dispatch_queue_s { }* queue;
 @property(retain) NSMutableData * receivedData;
 @property(retain) NSMutableURLRequest * request;
@@ -36,10 +36,10 @@
 @property NSData * serializedCookies;
 @property(readonly) Class superclass;
 
-+ (id)connectionSettingsForServiceType:(long long)arg1;
++ (id)connectionSettingsForServiceType:(int)arg1;
 + (id)createSessionRequest;
 + (void)initialize;
-+ (bool)isRetriableErrorCode:(long long)arg1;
++ (BOOL)isRetriableErrorCode:(int)arg1;
 + (void)load;
 + (id)newInitiatePurchaseWithSessionId:(id)arg1 planId:(id)arg2;
 + (id)newPurchaseWithSessionId:(id)arg1 receipt:(id)arg2 userId:(id)arg3 userName:(id)arg4;
@@ -50,10 +50,10 @@
 + (id)subscriptionDetailsRequestWithIccids:(id)arg1 signIdMap:(id)arg2;
 
 - (void)_callback;
-- (bool)_canTryAnotherConnectionType;
+- (BOOL)_canTryAnotherConnectionType;
 - (id)_connectionSettingsForNextConnectionType;
 - (id)_initWithUrl:(id)arg1 httpMethod:(id)arg2 httpHeaders:(id)arg3 httpBody:(id)arg4 internetSettings:(id)arg5 bootstrapSettings:(id)arg6;
-- (bool)_isRetryableError:(id)arg1;
+- (BOOL)_isRetryableError:(id)arg1;
 - (void)_startRequestWithNextConnectionTypeOrFail;
 - (void)cancel;
 - (id)completionBlock;

@@ -9,27 +9,27 @@
 
 @property(readonly) NSEntityDescription * entity;
 @property(readonly) NSPersistentStore * persistentStore;
-@property(getter=isTemporaryID,readonly) bool temporaryID;
+@property(getter=isTemporaryID,readonly) BOOL temporaryID;
 
-+ (bool)accessInstanceVariablesDirectly;
++ (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
-+ (long long)version;
++ (int)version;
 
 - (id)URIRepresentation;
-- (bool)_isDeallocating;
-- (bool)_isPersistentStoreAlive;
+- (BOOL)_isDeallocating;
+- (BOOL)_isPersistentStoreAlive;
 - (long long)_referenceData64;
 - (id)_referenceData;
 - (id)_retainedURIString;
 - (id)_storeIdentifier;
 - (id)_storeInfo1;
-- (bool)_tryRetain;
+- (BOOL)_tryRetain;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entity;
 - (id)initWithCoder:(id)arg1;
-- (bool)isTemporaryID;
+- (BOOL)isTemporaryID;
 - (id)persistentStore;
 - (id)pl_shortURI;
 

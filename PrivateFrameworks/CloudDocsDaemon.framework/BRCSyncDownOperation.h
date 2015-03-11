@@ -6,16 +6,16 @@
 
 @interface BRCSyncDownOperation : BRCOperation <BRCOperationSubclass> {
     unsigned int _batchSize;
+    BOOL _hasCaughtUp;
+    BOOL _isConsistent;
     BRCServerContainer *_serverContainer;
-    bool_hasCaughtUp;
-    bool_isConsistent;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) bool hasCaughtUp;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool isConsistent;
+@property(readonly) BOOL hasCaughtUp;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL isConsistent;
 @property(readonly) Class superclass;
 
 + (id)syncDownAckQueue;
@@ -25,11 +25,11 @@
 - (void)_saveRecordBatchIfNecessaryWithRecords:(id)arg1 deletedStructureRecordIDs:(id)arg2;
 - (id)_zoneCreationOperationWithCompletionBlock:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (bool)hasCaughtUp;
+- (BOOL)hasCaughtUp;
 - (id)initWithServerContainer:(id)arg1;
-- (bool)isConsistent;
+- (BOOL)isConsistent;
 - (void)main;
 - (void)scheduleFetchQuotaAndSyncDown;
-- (bool)shouldRetryForError:(id)arg1;
+- (BOOL)shouldRetryForError:(id)arg1;
 
 @end

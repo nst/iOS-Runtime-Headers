@@ -3,43 +3,43 @@
  */
 
 @interface UIInputViewAnimationStyle : NSObject <NSCopying> {
-    boolanimated;
-    boolforce;
-    boolinteractivelyCancelled;
+    BOOL animated;
     double duration;
-    unsigned long long extraOptions;
+    unsigned int extraOptions;
+    BOOL force;
+    BOOL interactivelyCancelled;
 }
 
-@property bool animated;
-@property(readonly) bool canDismissWithScrollView;
+@property BOOL animated;
+@property(readonly) BOOL canDismissWithScrollView;
 @property double duration;
-@property unsigned long long extraOptions;
-@property bool force;
-@property bool interactivelyCancelled;
-@property(readonly) bool isAnimationCompleted;
+@property unsigned int extraOptions;
+@property BOOL force;
+@property BOOL interactivelyCancelled;
+@property(readonly) BOOL isAnimationCompleted;
 
-+ (id)animationStyleAnimated:(bool)arg1 duration:(double)arg2;
++ (id)animationStyleAnimated:(BOOL)arg1 duration:(double)arg2;
 + (id)animationStyleDefault;
 + (id)animationStyleImmediate;
 
-- (bool)animated;
-- (bool)canDismissWithScrollView;
+- (BOOL)animated;
+- (BOOL)canDismissWithScrollView;
 - (id)controllerForStartPlacement:(id)arg1 endPlacement:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (double)duration;
 - (id)endPlacementForInputViewSet:(id)arg1;
-- (unsigned long long)extraOptions;
-- (bool)force;
-- (bool)interactivelyCancelled;
-- (bool)isAnimationCompleted;
-- (bool)isEqual:(id)arg1;
-- (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(bool)arg5;
-- (void)setAnimated:(bool)arg1;
+- (unsigned int)extraOptions;
+- (BOOL)force;
+- (BOOL)interactivelyCancelled;
+- (BOOL)isAnimationCompleted;
+- (BOOL)isEqual:(id)arg1;
+- (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
+- (void)setAnimated:(BOOL)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setExtraOptions:(unsigned long long)arg1;
-- (void)setForce:(bool)arg1;
-- (void)setInteractivelyCancelled:(bool)arg1;
+- (void)setExtraOptions:(unsigned int)arg1;
+- (void)setForce:(BOOL)arg1;
+- (void)setInteractivelyCancelled:(BOOL)arg1;
 - (id)startPlacementForInputViewSet:(id)arg1 currentPlacement:(id)arg2;
 
 @end

@@ -11,6 +11,7 @@
         } __ptr_; 
     double _ageLimit;
     long long _cachedNumberOfDevicesInSyncCircle;
+    BOOL _commitGenerationValuesOnNextWrite;
     long long _currentGeneration;
     WBSSQLiteDatabase *_database;
     int _databaseLockingPolicy;
@@ -21,10 +22,12 @@
     NSData *_fetchThrottlerData;
     Class _historyItemClass;
     int _importState;
-    unsigned long long _itemCountLimit;
+    BOOL _isClosed;
+    unsigned int _itemCountLimit;
     NSMutableDictionary *_itemsByDatabaseID;
     NSDate *_lastMaintenanceDate;
     long long _lastSyncedGeneration;
+    BOOL _loadInProgress;
     NSArray *_loadedItems;
     NSCountedSet *_loadedStringsForUserTypedDomainExpansion;
     WBSBackgroundActivityScheduler *_maintenanceScheduler;
@@ -37,24 +40,21 @@
     } _suddenTerminationDisabler;
     NSData *_syncCircleSizeRetrievalThrottlerData;
     NSMapTable *_weakVisitsByDatabaseID;
+    BOOL _writeLastMaintenanceDateOnNextWrite;
     NSTimer *_writeTimer;
-    bool_commitGenerationValuesOnNextWrite;
-    bool_isClosed;
-    bool_loadInProgress;
-    bool_writeLastMaintenanceDateOnNextWrite;
 }
 
 @property(readonly) WBSSQLiteDatabase * database;
 @property(copy,readonly) NSString * debugDescription;
 @property <WBSHistoryStoreDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned long long)_cachedNumberOfDevicesInSyncCircleOnDatabaseQueue;
-- (bool)_checkDatabaseIntegrity;
+- (unsigned int)_cachedNumberOfDevicesInSyncCircleOnDatabaseQueue;
+- (BOOL)_checkDatabaseIntegrity;
 - (void)_clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 addingTombstone:(id)arg3 completionHandler:(id)arg4;
 - (void)_clearHistoryVisitsMatchingURLString:(id)arg1 afterDate:(id)arg2 beforeDate:(id)arg3 addingTombstone:(id)arg4 completionHandler:(id)arg5;
 - (id)_currentDate;
@@ -81,7 +81,7 @@
 - (int)_migrateToSchemaVersion_4;
 - (int)_migrateToSchemaVersion_5;
 - (int)_migrateToSchemaVersion_6;
-- (void)_openDatabase:(id)arg1 andCheckIntegrity:(bool)arg2;
+- (void)_openDatabase:(id)arg1 andCheckIntegrity:(BOOL)arg2;
 - (void)_performMaintenance;
 - (void)_processPendingDeletes;
 - (void)_processPendingVisitDeletes;
@@ -96,8 +96,8 @@
 - (void)_setLastSyncedGeneration:(unsigned long long)arg1;
 - (void)_setMetadataDataValue:(id)arg1 forKey:(id)arg2;
 - (void)_setMetadataInt64Value:(long long)arg1 forKey:(id)arg2;
-- (int)_setOrigin:(long long)arg1 forVisitsFromOrigin:(long long)arg2;
-- (bool)_shouldMigrateFromPropertyListWhenLoadingDatabase:(id)arg1;
+- (int)_setOrigin:(int)arg1 forVisitsFromOrigin:(int)arg2;
+- (BOOL)_shouldMigrateFromPropertyListWhenLoadingDatabase:(id)arg1;
 - (id)_statementForQuery:(id)arg1;
 - (id)_tombstonesNeedingSync;
 - (void)_updateGenerationForVisits:(id)arg1;
@@ -112,7 +112,7 @@
 - (id)_visitsWithOrigins:(id)arg1;
 - (void)_writeTimerFired;
 - (void)addOrUpdateItemsOnDatabaseQueue:(id)arg1;
-- (unsigned long long)cachedNumberOfDevicesInSyncCircle;
+- (unsigned int)cachedNumberOfDevicesInSyncCircle;
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id)arg3;
 - (void)clearHistoryWithCompletionHandler:(id)arg1;
 - (void)close;
@@ -127,7 +127,7 @@
 - (void)getVisitsAndTombstonesNeedingSyncWithCompletion:(id)arg1;
 - (void)historyLoader:(id)arg1 didLoadItems:(id)arg2 discardedItems:(id)arg3 stringsForUserTypeDomainExpansion:(id)arg4;
 - (void)historyLoaderDidFinishLoading:(id)arg1;
-- (id)initWithURL:(id)arg1 itemCountLimit:(unsigned long long)arg2 ageLimit:(double)arg3 historyItemClass:(Class)arg4;
+- (id)initWithURL:(id)arg1 itemCountLimit:(unsigned int)arg2 ageLimit:(double)arg3 historyItemClass:(Class)arg4;
 - (void)itemWasReplaced:(id)arg1 byItem:(id)arg2;
 - (void)itemsWereAdded:(id)arg1;
 - (void)itemsWereModified:(id)arg1;
@@ -136,7 +136,7 @@
 - (void)removePastHistoryVisitsForItem:(id)arg1 completionHandler:(id)arg2;
 - (void)replayAndAddTombstone:(id)arg1;
 - (void)savePendingChangesWithCompletionHandler:(id)arg1;
-- (void)setCachedNumberOfDevicesInSyncCircle:(unsigned long long)arg1;
+- (void)setCachedNumberOfDevicesInSyncCircle:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFetchThrottlerData:(id)arg1;
 - (void)setPushThrottlerData:(id)arg1;
@@ -146,7 +146,7 @@
 - (id)syncCircleSizeRetrievalThrottlerData;
 - (id)visitForItem:(id)arg1 row:(id)arg2;
 - (id)visitForRow:(id)arg1;
-- (void)visitIdentifiersMatchingExistingVisits:(id)arg1 populateAssociatedVisits:(bool)arg2 completion:(id)arg3;
+- (void)visitIdentifiersMatchingExistingVisits:(id)arg1 populateAssociatedVisits:(BOOL)arg2 completion:(id)arg3;
 - (void)visitsWereAdded:(id)arg1;
 - (void)visitsWereModified:(id)arg1;
 - (void)waitForLoadingToComplete;

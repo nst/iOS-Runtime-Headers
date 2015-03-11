@@ -6,58 +6,58 @@
 
 @interface TSKHighlightArrayController : NSObject <TSKPulseAnimationControllerProtocol> {
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
+    BOOL _autohide;
     } _canvasTransform;
     NSMutableArray *_controllers;
+    BOOL _creatingLayers;
     <TSKHighlightArrayControllerProtocol> *_delegate;
     } _layerTransform;
     NSMutableArray *_layers;
-    double _viewScale;
-    double _zOrder;
-    bool_autohide;
-    bool_creatingLayers;
-    bool_pulsating;
-    bool_shouldPulsate;
+    BOOL _pulsating;
+    BOOL _shouldPulsate;
+    float _viewScale;
+    float _zOrder;
 }
 
-@property bool autohide;
+@property BOOL autohide;
 @property(readonly) NSArray * layers;
-@property bool pulsating;
-@property bool shouldPulsate;
-@property struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
-@property double viewScale;
+@property BOOL pulsating;
+@property BOOL shouldPulsate;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property float viewScale;
 
-- (bool)autohide;
-- (id)buildHighlightsForSearchReferences:(id)arg1 contentsScaleForLayers:(double)arg2;
+- (BOOL)autohide;
+- (id)buildHighlightsForSearchReferences:(id)arg1 contentsScaleForLayers:(float)arg2;
 - (void)dealloc;
 - (void)disconnect;
-- (id)initWithZOrder:(double)arg1 delegate:(id)arg2;
+- (id)initWithZOrder:(float)arg1 delegate:(id)arg2;
 - (id)layers;
-- (bool)pulsating;
+- (BOOL)pulsating;
 - (void)pulseAnimationDidStopForPulse:(id)arg1;
 - (void)reset;
-- (void)setAutohide:(bool)arg1;
-- (void)setCanvasTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 layerTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
-- (void)setPulsating:(bool)arg1;
-- (void)setShouldPulsate:(bool)arg1;
-- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-- (void)setViewScale:(double)arg1;
-- (bool)shouldPulsate;
+- (void)setAutohide:(BOOL)arg1;
+- (void)setCanvasTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 layerTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (void)setPulsating:(BOOL)arg1;
+- (void)setShouldPulsate:(BOOL)arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setViewScale:(float)arg1;
+- (BOOL)shouldPulsate;
 - (void)startAnimating;
 - (void)stop;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
-- (double)viewScale;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (float)viewScale;
 
 @end

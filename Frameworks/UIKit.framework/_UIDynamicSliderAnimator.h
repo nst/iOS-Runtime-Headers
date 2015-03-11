@@ -8,6 +8,6 @@
     _UIDynamicSlider *_slider;
 }
 
-- (bool)_animatorStep:(double)arg1;
+- (BOOL)_animatorStep:(double)arg1;
 
 @end

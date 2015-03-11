@@ -10,7 +10,7 @@
 
 - (id)initWithDefaultParameters;
 - (void)setStyleAnimation:(int)arg1;
-- (bool)shouldAnimate;
+- (BOOL)shouldAnimate;
 - (int)styleAnimation;
 
 @end

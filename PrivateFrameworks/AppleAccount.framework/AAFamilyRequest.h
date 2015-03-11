@@ -8,12 +8,12 @@
     AAGrandSlamSigner *_grandSlamSigner;
 }
 
-@property(readonly) bool isUserInitiated;
+@property(readonly) BOOL isUserInitiated;
 
 - (void).cxx_destruct;
 - (id)initWithAppleAccount:(id)arg1 grandSlamAccount:(id)arg2 accountStore:(id)arg3;
 - (id)initWithGrandSlamSigner:(id)arg1;
-- (bool)isUserInitiated;
+- (BOOL)isUserInitiated;
 - (id)urlRequest;
 
 @end

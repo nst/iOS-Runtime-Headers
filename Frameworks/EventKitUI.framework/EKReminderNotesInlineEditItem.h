@@ -5,11 +5,11 @@
 @interface EKReminderNotesInlineEditItem : EKReminderInlineEditItem {
 }
 
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned long long)arg2;
-- (long long)cellStyle;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2;
+- (int)cellStyle;
 - (id)newCell;
-- (bool)saveAndDismissWithForce:(bool)arg1;
-- (bool)shouldAppearWithVisibility:(int)arg1;
+- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (BOOL)shouldAppearWithVisibility:(int)arg1;
 - (id)textFromReminder;
 
 @end

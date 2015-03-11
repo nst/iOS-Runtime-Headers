@@ -5,22 +5,22 @@
 @interface CAMPhoneApplicationSpec : CAMApplicationSpec {
 }
 
-- (long long)bottomBarOrientation;
-- (bool)shouldCreateAvalancheIndicator;
-- (bool)shouldCreateBottomBar;
-- (bool)shouldCreateElapsedTimeView;
-- (bool)shouldCreateFiltersButton;
-- (bool)shouldCreateFlashButton;
-- (bool)shouldCreateFlipButton;
-- (bool)shouldCreateHDRButton;
-- (bool)shouldCreateImageWell;
-- (bool)shouldCreateModeDial;
-- (bool)shouldCreatePanoramaView;
-- (bool)shouldCreateShutterButton;
-- (bool)shouldCreateSlalomIndicator;
-- (bool)shouldCreateStillDuringVideo;
-- (bool)shouldCreateTimerButton;
-- (bool)shouldCreateTopBar;
-- (bool)shouldCreateZoomSlider;
+- (int)bottomBarOrientation;
+- (BOOL)shouldCreateAvalancheIndicator;
+- (BOOL)shouldCreateBottomBar;
+- (BOOL)shouldCreateElapsedTimeView;
+- (BOOL)shouldCreateFiltersButton;
+- (BOOL)shouldCreateFlashButton;
+- (BOOL)shouldCreateFlipButton;
+- (BOOL)shouldCreateHDRButton;
+- (BOOL)shouldCreateImageWell;
+- (BOOL)shouldCreateModeDial;
+- (BOOL)shouldCreatePanoramaView;
+- (BOOL)shouldCreateShutterButton;
+- (BOOL)shouldCreateSlalomIndicator;
+- (BOOL)shouldCreateStillDuringVideo;
+- (BOOL)shouldCreateTimerButton;
+- (BOOL)shouldCreateTopBar;
+- (BOOL)shouldCreateZoomSlider;
 
 @end

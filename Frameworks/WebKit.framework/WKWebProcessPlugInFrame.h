@@ -12,7 +12,7 @@
 @interface WKWebProcessPlugInFrame : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebFrame> { 
         struct type { 
-            unsigned char __lx[96]; 
+            unsigned char __lx[72]; 
         } data; 
     } _frame;
 }
@@ -20,11 +20,11 @@
 @property(readonly) NSURL * URL;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 @property(readonly) NSArray * childFrames;
-@property(readonly) bool containsAnyFormElements;
+@property(readonly) BOOL containsAnyFormElements;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) _WKFrameHandle * handle;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)lookUpFrameFromHandle:(id)arg1;
@@ -34,13 +34,13 @@
 - (id)URL;
 - (id)_browserContextController;
 - (id)_certificateChain;
-- (bool)_hasCustomContentProvider;
+- (BOOL)_hasCustomContentProvider;
 - (id)_provisionalURL;
 - (id)childFrames;
-- (bool)containsAnyFormElements;
+- (BOOL)containsAnyFormElements;
 - (void)dealloc;
 - (id)handle;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)jsContextForWorld:(id)arg1;
 - (id)jsNodeForNodeHandle:(id)arg1 inWorld:(id)arg2;
 

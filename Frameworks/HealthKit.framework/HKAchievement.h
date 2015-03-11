@@ -6,70 +6,70 @@
 
 @interface HKAchievement : NSObject <NSSecureCoding, HDCoding> {
     NSUUID *_UUID;
-    unsigned long long _achievementType;
+    unsigned int _achievementType;
     NSDate *_completedDate;
     NSNumber *_value;
-    bool_viewed;
+    BOOL _viewed;
 }
 
 @property(retain) NSUUID * UUID;
-@property unsigned long long achievementType;
+@property unsigned int achievementType;
 @property(retain) NSDate * completedDate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSData * extraData;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(retain) NSNumber * value;
-@property(getter=isViewed) bool viewed;
+@property(getter=isViewed) BOOL viewed;
 
-+ (unsigned long long)_achievementTypeFromString:(id)arg1;
++ (unsigned int)_achievementTypeFromString:(id)arg1;
 + (id)_achievementTypeNameMappings;
-+ (id)_achievementWithUUID:(id)arg1 type:(unsigned long long)arg2 completedDate:(id)arg3 value:(id)arg4 extraData:(id)arg5;
++ (id)_achievementWithUUID:(id)arg1 type:(unsigned int)arg2 completedDate:(id)arg3 value:(id)arg4 extraData:(id)arg5;
 + (id)_allAchievementTypeNames;
-+ (Class)_classForAchievementType:(unsigned long long)arg1;
++ (Class)_classForAchievementType:(unsigned int)arg1;
 + (id)_nextUUID;
-+ (id)achievementWithAchievementType:(unsigned long long)arg1 completedDate:(id)arg2 value:(id)arg3 workoutActivityType:(unsigned long long)arg4;
-+ (id)achievementWithAchievementType:(unsigned long long)arg1 completedDate:(id)arg2 value:(id)arg3;
++ (id)achievementWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3 workoutActivityType:(unsigned int)arg4;
++ (id)achievementWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3;
 + (id)createWithCodable:(id)arg1;
 + (void)setOverridenUUID:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;
 - (id)_achievementTypeString;
 - (void)_decodeExtraDataWithCoder:(id)arg1;
 - (void)_encodeExtraDataWithCoder:(id)arg1;
-- (id)_fiui_URLForFullMovieName:(id)arg1 withScale:(double)arg2;
-- (id)_fiui_assetNameForSizeClass:(long long)arg1;
-- (bool)_hasExtraData;
-- (id)_localizedDescriptionForCompleteNumberOfTimes:(long long)arg1;
+- (id)_fiui_URLForFullMovieName:(id)arg1 withScale:(float)arg2;
+- (id)_fiui_assetNameForSizeClass:(int)arg1;
+- (BOOL)_hasExtraData;
+- (id)_localizedDescriptionForCompleteNumberOfTimes:(int)arg1;
 - (id)_localizedDescriptionForIncomplete;
-- (bool)_requiresValue;
-- (bool)_validateConfiguration;
-- (unsigned long long)achievementType;
+- (BOOL)_requiresValue;
+- (BOOL)_validateConfiguration;
+- (unsigned int)achievementType;
 - (id)codableRepresentationForSync;
 - (id)completedDate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)extraData;
 - (id)fiui_badgeMovieURL;
-- (id)fiui_imageForSizeClass:(long long)arg1;
-- (unsigned long long)hash;
-- (id)initWithAchievementType:(unsigned long long)arg1 completedDate:(id)arg2 value:(id)arg3;
+- (id)fiui_imageForSizeClass:(int)arg1;
+- (unsigned int)hash;
+- (id)initWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isViewed;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isViewed;
 - (id)localizedDescription;
 - (id)localizedDescriptionForAlertWithUserName:(id)arg1;
-- (id)localizedDescriptionWithNumberOfTimesAchieved:(long long)arg1;
+- (id)localizedDescriptionWithNumberOfTimesAchieved:(int)arg1;
 - (id)localizedTitle;
-- (void)setAchievementType:(unsigned long long)arg1;
+- (void)setAchievementType:(unsigned int)arg1;
 - (void)setCompletedDate:(id)arg1;
 - (void)setExtraData:(id)arg1;
 - (void)setUUID:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)setViewed:(bool)arg1;
+- (void)setViewed:(BOOL)arg1;
 - (id)value;
 
 @end

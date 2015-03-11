@@ -6,18 +6,18 @@
 
 @interface IDSSocketPairOTREncryptedMessage : IDSSocketPairMessage {
     NSData *_data;
-    unsigned long long _offset;
+    BOOL _encrypted;
+    BOOL _fileXfer;
+    unsigned int _offset;
     unsigned short _priority;
     unsigned int _sequenceNumber;
     unsigned short _streamID;
     unsigned char _versionNumber;
-    bool_encrypted;
-    bool_fileXfer;
 }
 
 @property(retain,readonly) NSData * data;
-@property(readonly) bool encrypted;
-@property(readonly) bool fileXfer;
+@property(readonly) BOOL encrypted;
+@property(readonly) BOOL fileXfer;
 @property(readonly) unsigned short priority;
 @property(readonly) unsigned int sequenceNumber;
 @property(readonly) unsigned short streamID;
@@ -27,10 +27,10 @@
 - (unsigned char)command;
 - (id)data;
 - (void)dealloc;
-- (bool)encrypted;
-- (bool)fileXfer;
+- (BOOL)encrypted;
+- (BOOL)fileXfer;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
-- (id)initWithVersion:(unsigned char)arg1 encrypted:(bool)arg2 streamID:(unsigned short)arg3 priority:(unsigned short)arg4 sequenceNumber:(unsigned int)arg5 fileXfer:(bool)arg6 data:(id)arg7;
+- (id)initWithVersion:(unsigned char)arg1 encrypted:(BOOL)arg2 streamID:(unsigned short)arg3 priority:(unsigned short)arg4 sequenceNumber:(unsigned int)arg5 fileXfer:(BOOL)arg6 data:(id)arg7;
 - (unsigned short)priority;
 - (unsigned int)sequenceNumber;
 - (unsigned short)streamID;

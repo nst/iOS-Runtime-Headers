@@ -6,7 +6,7 @@
 
 @interface TSUObjectSnapshot : NSObject {
     NSArray *mCompared;
-    unsigned long long mEntryCount;
+    unsigned long mEntryCount;
     void **mSnapshot;
 }
 

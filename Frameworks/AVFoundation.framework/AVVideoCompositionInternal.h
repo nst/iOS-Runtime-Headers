@@ -11,12 +11,12 @@
         unsigned int flags; 
         long long epoch; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     AVVideoCompositionCoreAnimationTool *animationTool;
-    boolauxiliaryTrackLayerSetLast;
+    BOOL auxiliaryTrackLayerSetLast;
     NSString *builtInCompositorName;
-    unsigned long long changeSeed;
+    unsigned int changeSeed;
     Class customCompositorClass;
     } frameDuration;
     NSArray *instructions;

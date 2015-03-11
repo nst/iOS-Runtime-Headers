@@ -7,19 +7,19 @@
 @interface WKInterfaceObject : NSObject {
     NSString *_interfaceProperty;
     NSString *_propertyIndex;
-    long long _rowIndex;
-    long long _tableIndex;
+    int _rowIndex;
+    int _tableIndex;
     NSString *_viewControllerID;
 }
 
 @property(copy) NSString * interfaceProperty;
 @property(retain) NSString * propertyIndex;
-@property long long rowIndex;
-@property long long tableIndex;
+@property int rowIndex;
+@property int tableIndex;
 @property(copy) NSString * viewControllerID;
 
 - (void).cxx_destruct;
-- (id)_initWithInterfaceProperty:(id)arg1 viewControllerID:(id)arg2 propertyIndex:(long long)arg3 tableIndex:(long long)arg4 rowIndex:(long long)arg5;
+- (id)_initWithInterfaceProperty:(id)arg1 viewControllerID:(id)arg2 propertyIndex:(int)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5;
 - (void)_sendValueChanged:(id)arg1 forProperty:(id)arg2;
 - (void)_sendValueChanged:(id)arg1;
 - (void)_setImage:(id)arg1 forProperty:(id)arg2;
@@ -29,24 +29,24 @@
 - (id)init;
 - (id)interfaceProperty;
 - (id)propertyIndex;
-- (long long)rowIndex;
+- (int)rowIndex;
 - (void)setAccessibilityHint:(id)arg1;
 - (void)setAccessibilityImageRegions:(id)arg1;
 - (void)setAccessibilityLabel:(id)arg1;
 - (void)setAccessibilityTraits:(unsigned long long)arg1;
 - (void)setAccessibilityValue:(id)arg1;
-- (void)setAlpha:(double)arg1;
-- (void)setHeight:(double)arg1;
-- (void)setHidden:(bool)arg1;
+- (void)setAlpha:(float)arg1;
+- (void)setHeight:(float)arg1;
+- (void)setHidden:(BOOL)arg1;
 - (void)setInterfaceProperty:(id)arg1;
-- (void)setIsAccessibilityElement:(bool)arg1;
+- (void)setIsAccessibilityElement:(BOOL)arg1;
 - (void)setPropertyIndex:(id)arg1;
-- (void)setRotation:(double)arg1;
-- (void)setRowIndex:(long long)arg1;
-- (void)setTableIndex:(long long)arg1;
+- (void)setRotation:(float)arg1;
+- (void)setRowIndex:(int)arg1;
+- (void)setTableIndex:(int)arg1;
 - (void)setViewControllerID:(id)arg1;
-- (void)setWidth:(double)arg1;
-- (long long)tableIndex;
+- (void)setWidth:(float)arg1;
+- (int)tableIndex;
 - (id)viewControllerID;
 
 @end

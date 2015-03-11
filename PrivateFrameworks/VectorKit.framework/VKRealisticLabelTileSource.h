@@ -6,6 +6,6 @@
 }
 
 - (unsigned char)_labelTileType;
-- (long long)minimumZoomLevel;
+- (int)minimumZoomLevel;
 
 @end

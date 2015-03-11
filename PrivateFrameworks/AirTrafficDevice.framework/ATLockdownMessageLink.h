@@ -6,6 +6,6 @@
 }
 
 - (id)initWithSocket:(id)arg1;
-- (bool)isWifiConnection;
+- (BOOL)isWifiConnection;
 
 @end

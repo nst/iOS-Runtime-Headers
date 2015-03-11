@@ -19,7 +19,7 @@
 @property(retain) UIView * contentView;
 @property(copy) UIVisualEffect * effect;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)_applyGroupNameToSubviews;
 - (void)_commonInit;

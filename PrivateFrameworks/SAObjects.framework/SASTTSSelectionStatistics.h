@@ -11,11 +11,11 @@
 @property(copy) NSString * completionType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * interactionId;
 @property(copy) NSArray * listenedItems;
 @property(copy) NSString * refId;
-@property long long selectedItemIndex;
+@property int selectedItemIndex;
 @property(copy) NSString * sessionId;
 @property(readonly) Class superclass;
 @property(copy) NSArray * timesListened;
@@ -28,12 +28,12 @@
 - (id)groupIdentifier;
 - (id)interactionId;
 - (id)listenedItems;
-- (long long)selectedItemIndex;
+- (int)selectedItemIndex;
 - (id)sessionId;
 - (void)setCompletionType:(id)arg1;
 - (void)setInteractionId:(id)arg1;
 - (void)setListenedItems:(id)arg1;
-- (void)setSelectedItemIndex:(long long)arg1;
+- (void)setSelectedItemIndex:(int)arg1;
 - (void)setSessionId:(id)arg1;
 - (void)setTimesListened:(id)arg1;
 - (id)timesListened;

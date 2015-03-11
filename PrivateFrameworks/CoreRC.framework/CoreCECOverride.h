@@ -5,6 +5,6 @@
 @interface CoreCECOverride : NSObject {
 }
 
-- (id)addDeviceWithBus:(id)arg1 logicalAddress:(unsigned char)arg2 physicalAddress:(unsigned long long)arg3 deviceType:(unsigned long long)arg4 message:(id)arg5 reason:(unsigned long long)arg6;
+- (id)addDeviceWithBus:(id)arg1 logicalAddress:(unsigned char)arg2 physicalAddress:(unsigned int)arg3 deviceType:(unsigned int)arg4 message:(id)arg5 reason:(unsigned int)arg6;
 
 @end

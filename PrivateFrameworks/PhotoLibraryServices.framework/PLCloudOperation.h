@@ -6,34 +6,34 @@
 
 @interface PLCloudOperation : NSObject {
     PLCloudPhotoLibraryManager *_connection;
-    unsigned long long _cost;
-    long long _createdAt;
+    unsigned int _cost;
+    long _createdAt;
     PLCloudOperationResource *_operationResource;
+    BOOL _running;
     PLCloudScenario *_scenario;
-    bool_running;
 }
 
 @property(readonly) PLCloudPhotoLibraryManager * connection;
-@property(readonly) unsigned long long cost;
-@property(readonly) long long createdAt;
+@property(readonly) unsigned int cost;
+@property(readonly) long createdAt;
 @property(retain) PLCloudOperationResource * operationResource;
-@property bool running;
+@property BOOL running;
 @property(readonly) PLCloudScenario * scenario;
 
 - (id)connection;
-- (unsigned long long)cost;
-- (long long)createdAt;
+- (unsigned int)cost;
+- (long)createdAt;
 - (void)dealloc;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithScenario:(id)arg1 cloudConnection:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)operationResource;
 - (void)requestCancel;
 - (id)resource;
 - (void)runOperationWithCompletionHandler:(id)arg1;
-- (bool)running;
+- (BOOL)running;
 - (id)scenario;
 - (void)setOperationResource:(id)arg1;
-- (void)setRunning:(bool)arg1;
+- (void)setRunning:(BOOL)arg1;
 
 @end

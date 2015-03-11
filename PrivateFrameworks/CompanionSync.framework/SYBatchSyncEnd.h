@@ -11,7 +11,7 @@
 }
 
 @property(retain) SYErrorInfo * error;
-@property(readonly) bool hasError;
+@property(readonly) BOOL hasError;
 @property(retain) SYMessageHeader * header;
 @property(retain) NSString * syncID;
 
@@ -21,12 +21,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)error;
-- (bool)hasError;
-- (unsigned long long)hash;
+- (BOOL)hasError;
+- (unsigned int)hash;
 - (id)header;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setSyncID:(id)arg1;

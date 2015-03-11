@@ -8,42 +8,42 @@
     NSString *_SQL;
     CKSQLite *_SQLite;
     struct sqlite3_stmt { } *_handle;
-    bool_reset;
+    BOOL _reset;
 }
 
 @property(readonly) NSString * SQL;
 @property(readonly) CKSQLite * SQLite;
 @property(readonly) struct sqlite3_stmt { }* handle;
-@property(getter=isReset) bool reset;
+@property(getter=isReset) BOOL reset;
 
 - (void).cxx_destruct;
 - (id)SQL;
 - (id)SQLite;
 - (id)allObjects;
 - (id)allObjectsByColumnName;
-- (void)bindBlob:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)bindDouble:(double)arg1 atIndex:(unsigned long long)arg2;
-- (void)bindInt64:(long long)arg1 atIndex:(unsigned long long)arg2;
-- (void)bindInt:(int)arg1 atIndex:(unsigned long long)arg2;
-- (void)bindNullAtIndex:(unsigned long long)arg1;
-- (void)bindText:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)bindValue:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)bindBlob:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)bindDouble:(double)arg1 atIndex:(unsigned int)arg2;
+- (void)bindInt64:(long long)arg1 atIndex:(unsigned int)arg2;
+- (void)bindInt:(long)arg1 atIndex:(unsigned int)arg2;
+- (void)bindNullAtIndex:(unsigned int)arg1;
+- (void)bindText:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)bindValue:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)bindValues:(id)arg1;
-- (id)blobAtIndex:(unsigned long long)arg1;
-- (unsigned long long)columnCount;
-- (id)columnNameAtIndex:(unsigned long long)arg1;
-- (int)columnTypeAtIndex:(unsigned long long)arg1;
-- (double)doubleAtIndex:(unsigned long long)arg1;
+- (id)blobAtIndex:(unsigned int)arg1;
+- (unsigned int)columnCount;
+- (id)columnNameAtIndex:(unsigned int)arg1;
+- (int)columnTypeAtIndex:(unsigned int)arg1;
+- (double)doubleAtIndex:(unsigned int)arg1;
 - (void)finalizeStatement;
 - (struct sqlite3_stmt { }*)handle;
 - (id)initWithSQLite:(id)arg1 SQL:(id)arg2 handle:(struct sqlite3_stmt { }*)arg3;
-- (long long)int64AtIndex:(unsigned long long)arg1;
-- (int)intAtIndex:(unsigned long long)arg1;
-- (bool)isReset;
-- (id)objectAtIndex:(unsigned long long)arg1;
+- (long long)int64AtIndex:(unsigned int)arg1;
+- (long)intAtIndex:(unsigned int)arg1;
+- (BOOL)isReset;
+- (id)objectAtIndex:(unsigned int)arg1;
 - (void)reset;
-- (void)setReset:(bool)arg1;
-- (bool)step;
-- (id)textAtIndex:(unsigned long long)arg1;
+- (void)setReset:(BOOL)arg1;
+- (BOOL)step;
+- (id)textAtIndex:(unsigned int)arg1;
 
 @end

@@ -115,17 +115,17 @@
 
 - (id).cxx_construct;
 - (id)applyCellDiff:(id)arg1;
-- (void)applyFormulaResult:(const struct TSCEValue { unsigned long long x1[88]; int x2; }*)arg1 context:(id)arg2 hasWarnings:(bool)arg3 outWriteDidBeginOrEndWithTextCell:(bool*)arg4;
-- (void)applyFormulaResult:(const struct TSCEValue { unsigned long long x1[88]; int x2; }*)arg1;
+- (void)applyFormulaResult:(const struct TSCEValue { unsigned int x1[68]; int x2; }*)arg1 context:(id)arg2 hasWarnings:(BOOL)arg3 outWriteDidBeginOrEndWithTextCell:(BOOL*)arg4;
+- (void)applyFormulaResult:(const struct TSCEValue { unsigned int x1[68]; int x2; }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)inflateFromStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2 suppressingFormulaInflation:(bool)arg3;
+- (void)inflateFromStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2 suppressingFormulaInflation:(BOOL)arg3;
 - (void)inflateFromStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2;
 - (id)init;
 - (id)initWithCell:(id)arg1;
 - (id)initWithStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2;
-- (bool)isCellContentsEqualToCell:(id)arg1;
+- (BOOL)isCellContentsEqualToCell:(id)arg1;
 - (void)writeToStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1;
 
 @end

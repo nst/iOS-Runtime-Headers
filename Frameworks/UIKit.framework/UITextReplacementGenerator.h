@@ -19,7 +19,7 @@
 - (id)replacements;
 - (void)setReplacementRange:(id)arg1;
 - (void)setStringToReplace:(id)arg1;
-- (bool)shouldAllowString:(id)arg1 intoReplacements:(id)arg2;
+- (BOOL)shouldAllowString:(id)arg1 intoReplacements:(id)arg2;
 - (id)stringToReplace;
 
 @end

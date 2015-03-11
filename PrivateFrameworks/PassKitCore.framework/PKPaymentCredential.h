@@ -8,8 +8,8 @@
     NSString *_applicationIdentifier;
     NSString *_cardSecurityCode;
     NSString *_cardholderName;
-    long long _credentialType;
-    long long _eligibilityStatus;
+    int _credentialType;
+    int _eligibilityStatus;
     NSString *_expiration;
     NSURL *_iconURL;
     NSString *_identifier;
@@ -17,7 +17,7 @@
     NSURL *_passURL;
     NSString *_primaryAccountNumber;
     NSString *_sanitizedPrimaryAccountNumber;
-    long long _status;
+    int _status;
     NSString *_termsID;
     NSURL *_termsURL;
 }
@@ -26,8 +26,8 @@
 @property(copy) NSString * cardSecurityCode;
 @property(readonly) NSString * cardTypeDescription;
 @property(copy) NSString * cardholderName;
-@property long long credentialType;
-@property long long eligibilityStatus;
+@property int credentialType;
+@property int eligibilityStatus;
 @property(readonly) NSString * eligibilityStatusDescription;
 @property(copy) NSString * expiration;
 @property(copy) NSURL * iconURL;
@@ -36,23 +36,23 @@
 @property(copy) NSURL * passURL;
 @property(copy) NSString * primaryAccountNumber;
 @property(copy) NSString * sanitizedPrimaryAccountNumber;
-@property long long status;
+@property int status;
 @property(readonly) NSString * statusDescription;
 @property(copy) NSString * termsID;
 @property(copy) NSURL * termsURL;
 
 + (id)credentialWithDictionary:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)applicationIdentifier;
 - (id)cardSecurityCode;
 - (id)cardTypeDescription;
 - (id)cardholderName;
-- (long long)credentialType;
+- (int)credentialType;
 - (void)dealloc;
 - (id)description;
 - (id)dictionary;
-- (long long)eligibilityStatus;
+- (int)eligibilityStatus;
 - (id)eligibilityStatusDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expiration;
@@ -67,8 +67,8 @@
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setCardSecurityCode:(id)arg1;
 - (void)setCardholderName:(id)arg1;
-- (void)setCredentialType:(long long)arg1;
-- (void)setEligibilityStatus:(long long)arg1;
+- (void)setCredentialType:(int)arg1;
+- (void)setEligibilityStatus:(int)arg1;
 - (void)setExpiration:(id)arg1;
 - (void)setIconURL:(id)arg1;
 - (void)setIdentifier:(id)arg1;
@@ -76,10 +76,10 @@
 - (void)setPassURL:(id)arg1;
 - (void)setPrimaryAccountNumber:(id)arg1;
 - (void)setSanitizedPrimaryAccountNumber:(id)arg1;
-- (void)setStatus:(long long)arg1;
+- (void)setStatus:(int)arg1;
 - (void)setTermsID:(id)arg1;
 - (void)setTermsURL:(id)arg1;
-- (long long)status;
+- (int)status;
 - (id)statusDescription;
 - (id)termsID;
 - (id)termsURL;

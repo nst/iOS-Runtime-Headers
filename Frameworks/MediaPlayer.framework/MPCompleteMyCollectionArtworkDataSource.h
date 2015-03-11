@@ -5,11 +5,11 @@
 @interface MPCompleteMyCollectionArtworkDataSource : MPAbstractNetworkArtworkDataSource {
 }
 
-- (long long)_artworkTypeForCatalog:(id)arg1;
-- (bool)areRepresentationsAvailableForCatalog:(id)arg1;
-- (bool)areRepresentationsForCatalog:(id)arg1 visuallyIdenticalToRepresentationsForCatalog:(id)arg2;
-- (id)cacheKeyForCatalog:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
-- (id)requestForCatalog:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (int)_artworkTypeForCatalog:(id)arg1;
+- (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
+- (BOOL)areRepresentationsForCatalog:(id)arg1 visuallyIdenticalToRepresentationsForCatalog:(id)arg2;
+- (id)cacheKeyForCatalog:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)requestForCatalog:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)sortedSupportedSizesForCatalog:(id)arg1;
 - (id)supportedSizesForCatalog:(id)arg1;
 

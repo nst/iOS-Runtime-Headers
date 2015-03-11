@@ -5,38 +5,38 @@
 @class NSMutableArray;
 
 @interface SPSearchResultSerializer : NSObject {
-    unsigned long long _byteVector;
+    unsigned int _byteVector;
     unsigned int _byteVectorCapacity;
     unsigned int _byteVectorCnt;
+    BOOL _completed;
+    BOOL _inProc;
     Class _lastResultClass;
+    BOOL _respondsToAuxiliarySubtitleUTF8String;
+    BOOL _respondsToAuxiliaryTitleUTF8String;
+    BOOL _respondsToBadgeValue;
+    BOOL _respondsToIdentifier;
+    BOOL _respondsToSubtitleUTF8String;
+    BOOL _respondsToSummaryUTF8String;
+    BOOL _respondsToTitleUTF8String;
+    BOOL _respondsToURL;
     NSMutableArray *_sections;
-    bool_completed;
-    bool_inProc;
-    bool_respondsToAuxiliarySubtitleUTF8String;
-    bool_respondsToAuxiliaryTitleUTF8String;
-    bool_respondsToBadgeValue;
-    bool_respondsToIdentifier;
-    bool_respondsToSubtitleUTF8String;
-    bool_respondsToSummaryUTF8String;
-    bool_respondsToTitleUTF8String;
-    bool_respondsToURL;
 }
 
-@property(readonly) bool completed;
+@property(readonly) BOOL completed;
 
-- (unsigned long long)_allocateSize:(unsigned long long)arg1;
+- (unsigned int)_allocateSize:(unsigned int)arg1;
 - (id)_convertConformingResult:(id)arg1;
-- (bool)appendResult:(id)arg1 toSection:(id)arg2;
-- (bool)appendResult:(id)arg1;
-- (bool)appendSection:(id)arg1;
-- (unsigned long long)byteVector;
+- (BOOL)appendResult:(id)arg1 toSection:(id)arg2;
+- (BOOL)appendResult:(id)arg1;
+- (BOOL)appendSection:(id)arg1;
+- (unsigned int)byteVector;
 - (unsigned int)byteVectorCount;
-- (bool)completed;
+- (BOOL)completed;
 - (void)dealloc;
 - (id)init;
-- (id)initWithInitialCapacity:(unsigned int)arg1 inProc:(bool)arg2;
+- (id)initWithInitialCapacity:(unsigned int)arg1 inProc:(BOOL)arg2;
 - (id)initWithInitialCapacity:(unsigned int)arg1;
-- (unsigned long long)sectionCount;
+- (unsigned int)sectionCount;
 - (void)serialize;
 
 @end

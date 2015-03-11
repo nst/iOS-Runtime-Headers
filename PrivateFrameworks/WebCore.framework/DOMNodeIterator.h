@@ -7,20 +7,20 @@
 @interface DOMNodeIterator : DOMObject {
 }
 
-@property(readonly) bool expandEntityReferences;
+@property(readonly) BOOL expandEntityReferences;
 @property(readonly) <DOMNodeFilter> * filter;
-@property(readonly) bool pointerBeforeReferenceNode;
+@property(readonly) BOOL pointerBeforeReferenceNode;
 @property(readonly) DOMNode * referenceNode;
 @property(readonly) DOMNode * root;
 @property(readonly) unsigned int whatToShow;
 
 - (void)dealloc;
 - (void)detach;
-- (bool)expandEntityReferences;
+- (BOOL)expandEntityReferences;
 - (id)filter;
 - (void)finalize;
 - (id)nextNode;
-- (bool)pointerBeforeReferenceNode;
+- (BOOL)pointerBeforeReferenceNode;
 - (id)previousNode;
 - (id)referenceNode;
 - (id)root;

@@ -14,8 +14,8 @@
 
 @property int errorCode;
 @property(retain) NSString * errorDescription;
-@property bool hasErrorCode;
-@property(readonly) bool hasErrorDescription;
+@property BOOL hasErrorCode;
+@property(readonly) BOOL hasErrorDescription;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -24,15 +24,15 @@
 - (id)dictionaryRepresentation;
 - (int)errorCode;
 - (id)errorDescription;
-- (bool)hasErrorCode;
-- (bool)hasErrorDescription;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasErrorCode;
+- (BOOL)hasErrorDescription;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setErrorCode:(int)arg1;
 - (void)setErrorDescription:(id)arg1;
-- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasErrorCode:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

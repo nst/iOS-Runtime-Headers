@@ -6,7 +6,7 @@
 
 @interface PUSearchResultsValue : NSObject <PUSearchResult> {
     id _albumUUID;
-    unsigned long long _approximateCount;
+    unsigned int _approximateCount;
     NSAttributedString *_attributedDisplayTitle;
     <PUSearchResultsValueDelegate> *_delegate;
     NSString *_displaySubtitle;
@@ -17,28 +17,28 @@
 }
 
 @property(retain) id albumUUID;
-@property unsigned long long approximateCount;
+@property unsigned int approximateCount;
 @property(copy,readonly) NSString * debugDescription;
 @property <PUSearchResultsValueDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * displaySubtitle;
 @property(copy,readonly) NSString * displayTitle;
 @property(setter=_setGroupResult:,retain) PSIGroupResult * groupResult;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) double score;
 @property(copy,readonly) NSString * searchString;
 @property(readonly) Class superclass;
 @property(retain) NSArray * uuids;
 
 - (void).cxx_destruct;
-- (void)_computeScoreWithMaxGroupedResultsCount:(unsigned long long)arg1;
+- (void)_computeScoreWithMaxGroupedResultsCount:(unsigned int)arg1;
 - (void)_setAlbumUUID:(id)arg1;
-- (void)_setApproximateCount:(unsigned long long)arg1;
+- (void)_setApproximateCount:(unsigned int)arg1;
 - (void)_setGroupResult:(id)arg1;
 - (void)_setUUIDs:(id)arg1;
 - (id)albumUUID;
-- (unsigned long long)approximateCount;
-- (long long)compare:(id)arg1;
+- (unsigned int)approximateCount;
+- (int)compare:(id)arg1;
 - (id)delegate;
 - (id)displaySubtitle;
 - (id)displayTitle;
@@ -46,7 +46,7 @@
 - (void)fetchRemainingUUIDs:(id)arg1;
 - (id)groupResult;
 - (id)init;
-- (bool)isFinished;
+- (BOOL)isFinished;
 - (double)score;
 - (id)searchString;
 - (void)setDelegate:(id)arg1;

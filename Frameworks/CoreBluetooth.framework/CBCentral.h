@@ -5,9 +5,9 @@
 @interface CBCentral : CBPeer {
 }
 
-@property(readonly) unsigned long long maximumUpdateValueLength;
+@property(readonly) unsigned int maximumUpdateValueLength;
 
 - (id)description;
-- (unsigned long long)maximumUpdateValueLength;
+- (unsigned int)maximumUpdateValueLength;
 
 @end

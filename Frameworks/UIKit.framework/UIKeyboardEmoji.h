@@ -6,21 +6,21 @@
 
 @interface UIKeyboardEmoji : NSObject {
     NSString *_emojiString;
-    bool_hasDingbat;
+    BOOL _hasDingbat;
 }
 
 @property(retain) NSString * emojiString;
-@property bool hasDingbat;
+@property BOOL hasDingbat;
 
-+ (id)emojiWithString:(id)arg1 hasDingbat:(bool)arg2;
++ (id)emojiWithString:(id)arg1 hasDingbat:(BOOL)arg2;
 
 - (void)dealloc;
 - (id)emojiString;
-- (bool)hasDingbat;
-- (id)initWithString:(id)arg1 hasDingbat:(bool)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDingbat;
+- (id)initWithString:(id)arg1 hasDingbat:(BOOL)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (void)setEmojiString:(id)arg1;
-- (void)setHasDingbat:(bool)arg1;
+- (void)setHasDingbat:(BOOL)arg1;
 
 @end

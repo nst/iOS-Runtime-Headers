@@ -3,12 +3,12 @@
  */
 
 @interface TSUBool : NSObject {
-    bool_value;
+    BOOL _value;
 }
 
-@property bool value;
+@property BOOL value;
 
-- (void)setValue:(bool)arg1;
-- (bool)value;
+- (void)setValue:(BOOL)arg1;
+- (BOOL)value;
 
 @end

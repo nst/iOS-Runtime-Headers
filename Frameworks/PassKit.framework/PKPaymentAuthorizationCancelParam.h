@@ -3,12 +3,12 @@
  */
 
 @interface PKPaymentAuthorizationCancelParam : PKPaymentAuthorizationParam {
-    bool_sendCallback;
+    BOOL _sendCallback;
 }
 
-@property bool sendCallback;
+@property BOOL sendCallback;
 
-- (bool)sendCallback;
-- (void)setSendCallback:(bool)arg1;
+- (BOOL)sendCallback;
+- (void)setSendCallback:(BOOL)arg1;
 
 @end

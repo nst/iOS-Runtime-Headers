@@ -14,7 +14,7 @@
 @property(readonly) NSDictionary * sectionsInfo;
 @property(readonly) NSDictionary * sortingDetails;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)canonicalLanguageIdentifier;

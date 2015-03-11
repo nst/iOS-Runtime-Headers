@@ -7,25 +7,25 @@
 @interface MKViewWithHairline : UIView {
     UIView *_bottomHairline;
     UIColor *_hairlineColor;
-    double _leftHairlineInset;
+    float _leftHairlineInset;
     UIView *_topHairline;
 }
 
-@property(getter=isBottomHairlineHidden) bool bottomHairlineHidden;
+@property(getter=isBottomHairlineHidden) BOOL bottomHairlineHidden;
 @property(retain) UIColor * hairlineColor;
-@property double leftHairlineInset;
-@property(getter=isTopHairlineHidden) bool topHairlineHidden;
+@property float leftHairlineInset;
+@property(getter=isTopHairlineHidden) BOOL topHairlineHidden;
 
 - (void).cxx_destruct;
 - (id)hairlineColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isBottomHairlineHidden;
-- (bool)isTopHairlineHidden;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isBottomHairlineHidden;
+- (BOOL)isTopHairlineHidden;
 - (void)layoutSubviews;
-- (double)leftHairlineInset;
-- (void)setBottomHairlineHidden:(bool)arg1;
+- (float)leftHairlineInset;
+- (void)setBottomHairlineHidden:(BOOL)arg1;
 - (void)setHairlineColor:(id)arg1;
-- (void)setLeftHairlineInset:(double)arg1;
-- (void)setTopHairlineHidden:(bool)arg1;
+- (void)setLeftHairlineInset:(float)arg1;
+- (void)setTopHairlineHidden:(BOOL)arg1;
 
 @end

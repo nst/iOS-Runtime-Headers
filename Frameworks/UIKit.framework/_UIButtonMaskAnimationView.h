@@ -6,28 +6,28 @@
 
 @interface _UIButtonMaskAnimationView : UIView {
     UIButton *_delegate;
-    unsigned long long _hardEdge;
+    unsigned int _hardEdge;
     UIView *_hardEdgeLine;
 }
 
 @property UIColor * borderColor;
-@property double borderWidth;
+@property float borderWidth;
 @property UIButton * delegate;
-@property unsigned long long hardEdge;
+@property unsigned int hardEdge;
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForLine;
-- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
-- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForLine;
+- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)borderColor;
-- (double)borderWidth;
+- (float)borderWidth;
 - (void)dealloc;
 - (id)delegate;
-- (unsigned long long)hardEdge;
+- (unsigned int)hardEdge;
 - (id)init;
 - (void)layoutSubviews;
 - (void)setBorderColor:(id)arg1;
-- (void)setBorderWidth:(double)arg1;
+- (void)setBorderWidth:(float)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHardEdge:(unsigned long long)arg1;
+- (void)setHardEdge:(unsigned int)arg1;
 
 @end

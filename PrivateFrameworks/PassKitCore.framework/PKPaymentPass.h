@@ -13,13 +13,13 @@
     NSSet *_paymentApplications;
     NSString *_primaryAccountIdentifier;
     NSString *_primaryAccountNumberSuffix;
+    BOOL _supportsDPANNotifications;
+    BOOL _supportsFPANNotifications;
     NSString *_transactionPushTopic;
     NSURL *_transactionServiceURL;
-    bool_supportsDPANNotifications;
-    bool_supportsFPANNotifications;
 }
 
-@property(readonly) unsigned long long activationState;
+@property(readonly) unsigned int activationState;
 @property(copy) NSString * appURLScheme;
 @property(copy) NSSet * associatedApplicationIdentifiers;
 @property(readonly) NSString * deviceAccountIdentifier;
@@ -30,14 +30,14 @@
 @property(copy) NSSet * paymentApplications;
 @property(copy) NSString * primaryAccountIdentifier;
 @property(copy) NSString * primaryAccountNumberSuffix;
-@property bool supportsDPANNotifications;
-@property bool supportsFPANNotifications;
+@property BOOL supportsDPANNotifications;
+@property BOOL supportsFPANNotifications;
 @property(copy) NSString * transactionPushTopic;
 @property(copy) NSURL * transactionServiceURL;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (unsigned long long)activationState;
+- (unsigned int)activationState;
 - (id)appURLScheme;
 - (id)associatedApplicationIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -46,15 +46,15 @@
 - (id)deviceAccountNumberSuffix;
 - (id)devicePaymentApplication;
 - (void)encodeWithCoder:(id)arg1;
-- (void)identifyDevicePaymentAppWithSecureElementID:(id)arg1 sanitize:(bool)arg2;
+- (void)identifyDevicePaymentAppWithSecureElementID:(id)arg1 sanitize:(BOOL)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (id)messagePushTopic;
 - (id)messageServiceURL;
-- (bool)npkPassIsAvailableForPaymentForSEID:(id)arg1;
-- (bool)npkPassNeedsUserActionForPaymentForSEID:(id)arg1;
-- (bool)npkPassNeedsUserVerificationForSEID:(id)arg1;
-- (long long)npkPaymentApplicationStateForSEID:(id)arg1;
+- (BOOL)npkPassIsAvailableForPaymentForSEID:(id)arg1;
+- (BOOL)npkPassNeedsUserActionForPaymentForSEID:(id)arg1;
+- (BOOL)npkPassNeedsUserVerificationForSEID:(id)arg1;
+- (int)npkPaymentApplicationStateForSEID:(id)arg1;
 - (id)paymentApplicationForAID:(id)arg1;
 - (id)paymentApplicationForSecureElementID:(id)arg1;
 - (id)paymentApplications;
@@ -68,12 +68,12 @@
 - (void)setPaymentApplications:(id)arg1;
 - (void)setPrimaryAccountIdentifier:(id)arg1;
 - (void)setPrimaryAccountNumberSuffix:(id)arg1;
-- (void)setSupportsDPANNotifications:(bool)arg1;
-- (void)setSupportsFPANNotifications:(bool)arg1;
+- (void)setSupportsDPANNotifications:(BOOL)arg1;
+- (void)setSupportsFPANNotifications:(BOOL)arg1;
 - (void)setTransactionPushTopic:(id)arg1;
 - (void)setTransactionServiceURL:(id)arg1;
-- (bool)supportsDPANNotifications;
-- (bool)supportsFPANNotifications;
+- (BOOL)supportsDPANNotifications;
+- (BOOL)supportsFPANNotifications;
 - (id)transactionPushTopic;
 - (id)transactionServiceURL;
 

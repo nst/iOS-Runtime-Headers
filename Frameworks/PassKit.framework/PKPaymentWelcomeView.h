@@ -5,7 +5,7 @@
 @interface PKPaymentWelcomeView : PKWelcomeView {
 }
 
-+ (bool)isAvailable;
++ (BOOL)isAvailable;
 
 - (void)_addCardPressed;
 - (id)init;

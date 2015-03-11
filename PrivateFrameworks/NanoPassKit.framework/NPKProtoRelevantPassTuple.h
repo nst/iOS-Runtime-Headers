@@ -9,7 +9,7 @@
     NSString *_relevantText;
 }
 
-@property(readonly) bool hasRelevantText;
+@property(readonly) BOOL hasRelevantText;
 @property(retain) NSString * passID;
 @property(retain) NSString * relevantText;
 
@@ -18,12 +18,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasRelevantText;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasRelevantText;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)passID;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)relevantText;
 - (void)setPassID:(id)arg1;
 - (void)setRelevantText:(id)arg1;

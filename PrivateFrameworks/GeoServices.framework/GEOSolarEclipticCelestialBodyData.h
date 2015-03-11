@@ -10,7 +10,7 @@
 @property(readonly) double latitude;
 @property(readonly) double longitude;
 
-- (id)initWithDate:(id)arg1 body:(long long)arg2;
+- (id)initWithDate:(id)arg1 body:(int)arg2;
 - (double)latitude;
 - (double)longitude;
 

@@ -7,21 +7,21 @@
 @interface GCControllerAxisInput : GCControllerElement {
 }
 
-@property(getter=isDigital,readonly) bool digital;
-@property(getter=isFlipped,readonly) bool flipped;
+@property(getter=isDigital,readonly) BOOL digital;
+@property(getter=isFlipped,readonly) BOOL flipped;
 @property(readonly) GCControllerButtonInput * negative;
 @property(readonly) GCControllerButtonInput * positive;
 @property(readonly) float value;
 @property(copy) id valueChangedHandler;
 
-- (bool)_setValue:(float)arg1;
+- (BOOL)_setValue:(float)arg1;
 - (id)description;
-- (bool)isAnalog;
-- (bool)isDigital;
-- (bool)isFlipped;
+- (BOOL)isAnalog;
+- (BOOL)isDigital;
+- (BOOL)isFlipped;
 - (id)negative;
 - (id)positive;
-- (bool)setHIDValue:(struct __IOHIDValue { }*)arg1;
+- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
 - (void)setValueChangedHandler:(id)arg1;
 - (float)value;
 - (id)valueChangedHandler;

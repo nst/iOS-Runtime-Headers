@@ -13,27 +13,27 @@
     NSObject<OS_dispatch_queue> *_propertyQueue;
     NSMutableDictionary *_resumeDataByType;
     <NSXPCProxyCreating> *_serverProxy;
-    long long _serverState;
-    long long _workoutState;
-    bool_shouldUseDeviceData;
+    int _serverState;
+    BOOL _shouldUseDeviceData;
+    int _workoutState;
 }
 
 @property(getter=_associatedObjectUUIDData,readonly) NSData * associatedObjectUUIDData;
 @property(copy,readonly) NSString * debugDescription;
 @property <_HKActiveWorkoutDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(getter=_lifecycleDelegate,setter=_setLifecycleDelegate:) <_HKActiveWorkoutLifecycleDelegate> * lifecycleDelegate;
 @property(readonly) NSDictionary * resumeDataByType;
-@property(readonly) long long serverState;
-@property(getter=_shouldUseDeviceData,readonly) bool shouldUseDeviceData;
+@property(readonly) int serverState;
+@property(getter=_shouldUseDeviceData,readonly) BOOL shouldUseDeviceData;
 @property(readonly) Class superclass;
-@property(readonly) long long workoutState;
+@property(readonly) int workoutState;
 
 + (id)_clientInterface;
 + (id)_serverInterface;
-+ (id)_workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalEnergyBurned:(id)arg6 totalDistance:(id)arg7 goalType:(unsigned long long)arg8 goal:(id)arg9 shouldUseDeviceData:(bool)arg10 metadata:(id)arg11;
-+ (bool)supportsSecureCoding;
++ (id)_workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalEnergyBurned:(id)arg6 totalDistance:(id)arg7 goalType:(unsigned int)arg8 goal:(id)arg9 shouldUseDeviceData:(BOOL)arg10 metadata:(id)arg11;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addSamples:(id)arg1;
@@ -44,28 +44,28 @@
 - (id)_inactiveCopy;
 - (id)_init;
 - (id)_lifecycleDelegate;
-- (bool)_objectCanBeSaved:(id*)arg1;
+- (BOOL)_objectCanBeSaved:(id*)arg1;
 - (id)_propertyQueue_serverConfiguration;
 - (void)_queue_addAssociatedObjectUUIDs:(id)arg1;
 - (void)_queue_addDistance:(id)arg1;
 - (void)_queue_addEnergyBurned:(id)arg1;
 - (void)_queue_alertDelegateDidEncounterError:(id)arg1;
-- (void)_queue_alertDelegateDidUpdateState:(long long)arg1 date:(id)arg2;
+- (void)_queue_alertDelegateDidUpdateState:(int)arg1 date:(id)arg2;
 - (void)_queue_alertDelegateWorkoutDidUpdateTotalDistance;
 - (void)_queue_alertDelegateWorkoutDidUpdateTotalEnergyBurned;
 - (void)_queue_deactivate;
 - (id)_queue_endDate;
-- (bool)_queue_serverAttached;
+- (BOOL)_queue_serverAttached;
 - (void)_queue_setEndDate:(id)arg1;
-- (void)_queue_transitionToServerState:(long long)arg1;
-- (bool)_serverAttached;
+- (void)_queue_transitionToServerState:(int)arg1;
+- (BOOL)_serverAttached;
 - (id)_serverProxy;
 - (void)_setEndDate:(id)arg1;
 - (void)_setLifecycleDelegate:(id)arg1;
 - (void)_setServerProxy:(id)arg1;
 - (void)_setTotalDistance:(id)arg1;
 - (void)_setTotalEnergyBurned:(id)arg1;
-- (bool)_shouldUseDeviceData;
+- (BOOL)_shouldUseDeviceData;
 - (id)_workoutServerWithErrorHandler:(id)arg1;
 - (void)activateWorkoutWithCompletion:(id)arg1;
 - (id)delegate;
@@ -80,11 +80,11 @@
 - (id)resumeDataByType;
 - (void)resumeWorkoutFromDate:(id)arg1 completion:(id)arg2;
 - (void)serverPausedWithDate:(id)arg1 completion:(id)arg2;
-- (long long)serverState;
+- (int)serverState;
 - (void)setDelegate:(id)arg1;
 - (id)totalDistance;
 - (id)totalEnergyBurned;
 - (void)updateTotalsWithEnergyBurned:(id)arg1 distance:(id)arg2 resumeData:(id)arg3 UUIDs:(id)arg4;
-- (long long)workoutState;
+- (int)workoutState;
 
 @end

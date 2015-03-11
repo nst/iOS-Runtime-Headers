@@ -6,18 +6,18 @@
 
 @interface BLTWatchKitAppDefinition : NSObject {
     NSString *_containerBundleID;
+    BOOL _isInstalled;
     NSString *_watchKitAppBundleID;
-    bool_isInstalled;
 }
 
 @property(readonly) NSString * containerBundleID;
-@property(readonly) bool isInstalled;
+@property(readonly) BOOL isInstalled;
 @property(readonly) NSString * watchKitAppBundleID;
 
 - (void).cxx_destruct;
 - (id)containerBundleID;
-- (id)initWithContainerBundleID:(id)arg1 watchKitAppBundleID:(id)arg2 isInstalled:(bool)arg3;
-- (bool)isInstalled;
+- (id)initWithContainerBundleID:(id)arg1 watchKitAppBundleID:(id)arg2 isInstalled:(BOOL)arg3;
+- (BOOL)isInstalled;
 - (id)watchKitAppBundleID;
 
 @end

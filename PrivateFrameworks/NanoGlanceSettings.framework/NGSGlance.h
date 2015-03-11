@@ -5,45 +5,45 @@
 @class NSString;
 
 @interface NGSGlance : NSObject <NSCopying> {
+    BOOL _active;
     NSString *_appBundleIdentifier;
+    BOOL _cannotBeDisabled;
+    BOOL _defaultGlance;
     NSString *_glanceBundleIdentifier;
     NSString *_name;
+    BOOL _prelaunch;
     NSString *_sockPuppetIdentifier;
-    bool_active;
-    bool_cannotBeDisabled;
-    bool_defaultGlance;
-    bool_prelaunch;
 }
 
-@property(getter=isActive) bool active;
+@property(getter=isActive) BOOL active;
 @property(copy) NSString * appBundleIdentifier;
-@property bool cannotBeDisabled;
-@property(getter=isDefaultGlance) bool defaultGlance;
+@property BOOL cannotBeDisabled;
+@property(getter=isDefaultGlance) BOOL defaultGlance;
 @property(copy) NSString * glanceBundleIdentifier;
 @property(readonly) NSString * glanceIdentifier;
 @property(copy) NSString * name;
-@property bool prelaunch;
+@property BOOL prelaunch;
 @property(copy) NSString * sockPuppetIdentifier;
 
 - (void).cxx_destruct;
 - (id)appBundleIdentifier;
-- (bool)cannotBeDisabled;
+- (BOOL)cannotBeDisabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)glanceBundleIdentifier;
 - (id)glanceIdentifier;
 - (id)initWithDictionary:(id)arg1;
-- (bool)isActive;
-- (bool)isDefaultGlance;
+- (BOOL)isActive;
+- (BOOL)isDefaultGlance;
 - (id)name;
-- (bool)prelaunch;
-- (void)setActive:(bool)arg1;
+- (BOOL)prelaunch;
+- (void)setActive:(BOOL)arg1;
 - (void)setAppBundleIdentifier:(id)arg1;
-- (void)setCannotBeDisabled:(bool)arg1;
-- (void)setDefaultGlance:(bool)arg1;
+- (void)setCannotBeDisabled:(BOOL)arg1;
+- (void)setDefaultGlance:(BOOL)arg1;
 - (void)setGlanceBundleIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPrelaunch:(bool)arg1;
+- (void)setPrelaunch:(BOOL)arg1;
 - (void)setSockPuppetIdentifier:(id)arg1;
 - (id)sockPuppetIdentifier;
 

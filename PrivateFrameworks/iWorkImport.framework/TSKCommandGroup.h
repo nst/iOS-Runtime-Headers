@@ -9,7 +9,7 @@
 
 @class NSArray, NSMutableArray, NSMutableIndexSet, NSString;
 
-@interface TSKCommandGroup : TSKCommand <TSKInnerCommandsProvider, TSDPropagatableCommand> {
+@interface TSKCommandGroup : TSKCommand <TSDPropagatableCommand, TSKInnerCommandsProvider> {
     NSString *_actionString;
     NSMutableArray *_commands;
     NSMutableArray *_committedCommands;
@@ -19,8 +19,8 @@
 @property(readonly) NSArray * commands;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool isEmpty;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL isEmpty;
 @property(readonly) Class superclass;
 
 - (const struct CommandGroupArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct CommandArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct IndexSet {} *x5; int x6; unsigned int x7[1]; }*)commandGroupArchiveFromUnarchiver:(id)arg1;
@@ -33,23 +33,23 @@
 - (void)dealloc;
 - (void)i_addCommittedCommand:(id)arg1;
 - (void)i_commitRemainingCommands;
-- (id)i_removeCommittedCommandAtIndex:(unsigned long long)arg1;
+- (id)i_removeCommittedCommandAtIndex:(unsigned int)arg1;
 - (id)i_uncommittedCommands;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (bool)isEmpty;
+- (BOOL)isEmpty;
 - (void)loadFromArchive:(const struct CommandGroupArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct CommandArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct IndexSet {} *x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
-- (bool)modifiesAnyObjectPassingTest:(id)arg1;
+- (BOOL)modifiesAnyObjectPassingTest:(id)arg1;
 - (void)populateChangePropagationMapAfterCommit:(id)arg1;
 - (void)populateChangePropagationMapBeforeCommit:(id)arg1;
-- (bool)process;
+- (BOOL)process;
 - (void)redo;
 - (void)saveToArchive:(struct CommandGroupArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct CommandArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct IndexSet {} *x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setActionString:(id)arg1;
 - (void)setCommandController:(id)arg1;
-- (bool)shouldBePropagated;
-- (bool)shouldRunSynchronously;
+- (BOOL)shouldBePropagated;
+- (BOOL)shouldRunSynchronously;
 - (void)undo;
 
 @end

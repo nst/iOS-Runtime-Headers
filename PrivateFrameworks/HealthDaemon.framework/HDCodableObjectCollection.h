@@ -17,8 +17,8 @@
 @property(retain) NSMutableArray * activityCaches;
 @property(retain) NSMutableArray * categorySamples;
 @property(retain) NSMutableArray * correlations;
-@property(readonly) bool hasSource;
-@property(readonly) bool hasSourceBundleIdentifier;
+@property(readonly) BOOL hasSource;
+@property(readonly) BOOL hasSourceBundleIdentifier;
 @property(retain) NSMutableArray * quantitySamples;
 @property(retain) HDCodableSource * source;
 @property(retain) NSString * sourceBundleIdentifier;
@@ -26,16 +26,16 @@
 
 - (void).cxx_destruct;
 - (id)activityCaches;
-- (id)activityCachesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)activityCachesCount;
+- (id)activityCachesAtIndex:(unsigned int)arg1;
+- (unsigned int)activityCachesCount;
 - (void)addActivityCaches:(id)arg1;
 - (void)addCategorySamples:(id)arg1;
 - (void)addCorrelations:(id)arg1;
 - (void)addQuantitySamples:(id)arg1;
 - (void)addWorkouts:(id)arg1;
 - (id)categorySamples;
-- (id)categorySamplesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)categorySamplesCount;
+- (id)categorySamplesAtIndex:(unsigned int)arg1;
+- (unsigned int)categorySamplesCount;
 - (void)clearActivityCaches;
 - (void)clearCategorySamples;
 - (void)clearCorrelations;
@@ -44,22 +44,22 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)correlations;
-- (id)correlationsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)correlationsCount;
-- (unsigned long long)count;
+- (id)correlationsAtIndex:(unsigned int)arg1;
+- (unsigned int)correlationsCount;
+- (unsigned int)count;
 - (id)decodedObjects;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasSource;
-- (bool)hasSourceBundleIdentifier;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (bool)isEquivalentToObjectCollection:(id)arg1;
+- (BOOL)hasSource;
+- (BOOL)hasSourceBundleIdentifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEquivalentToObjectCollection:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)quantitySamples;
-- (id)quantitySamplesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)quantitySamplesCount;
-- (bool)readFrom:(id)arg1;
+- (id)quantitySamplesAtIndex:(unsigned int)arg1;
+- (unsigned int)quantitySamplesCount;
+- (BOOL)readFrom:(id)arg1;
 - (void)setActivityCaches:(id)arg1;
 - (void)setCategorySamples:(id)arg1;
 - (void)setCorrelations:(id)arg1;
@@ -70,8 +70,8 @@
 - (id)source;
 - (id)sourceBundleIdentifier;
 - (id)workouts;
-- (id)workoutsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)workoutsCount;
+- (id)workoutsAtIndex:(unsigned int)arg1;
+- (unsigned int)workoutsCount;
 - (void)writeTo:(id)arg1;
 
 @end

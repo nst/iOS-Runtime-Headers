@@ -9,7 +9,7 @@
 }
 
 @property(retain) NSString * accountId;
-@property(readonly) bool hasAccountId;
+@property(readonly) BOOL hasAccountId;
 
 - (void).cxx_destruct;
 - (id)accountId;
@@ -17,11 +17,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasAccountId;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasAccountId;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAccountId:(id)arg1;
 - (void)writeTo:(id)arg1;
 

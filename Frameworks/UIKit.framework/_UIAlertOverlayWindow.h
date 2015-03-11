@@ -5,14 +5,14 @@
 @interface _UIAlertOverlayWindow : UIWindow {
 }
 
-+ (bool)_isSystemWindow;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })constrainFrameToScreen:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (BOOL)_isSystemWindow;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })constrainFrameToScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
-- (bool)_canAffectStatusBarAppearance;
+- (BOOL)_canAffectStatusBarAppearance;
 - (void)_handleMouseUp:(struct __GSEvent { }*)arg1;
 - (void)_updateTransformLayerForClassicPresentation;
-- (void)handleStatusBarChangeFromHeight:(double)arg1 toHeight:(double)arg2;
-- (bool)isInternalWindow;
+- (void)handleStatusBarChangeFromHeight:(float)arg1 toHeight:(float)arg2;
+- (BOOL)isInternalWindow;
 - (id)representation;
 - (int)textEffectsVisibilityLevel;
 

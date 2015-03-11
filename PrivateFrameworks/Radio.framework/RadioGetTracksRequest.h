@@ -8,45 +8,45 @@
     NSDictionary *_additionalRequestParameters;
     unsigned long long _globalVersion;
     NSData *_heartbeatTokenData;
-    unsigned long long _numberOfTracks;
+    BOOL _includeCleanTracksOnly;
+    unsigned int _numberOfTracks;
     RadioPlayEventCollection *_playEventCollection;
     RadioPlaybackContext *_playbackContext;
-    long long _reasonType;
+    int _reasonType;
     SSURLConnectionRequest *_request;
+    BOOL _shouldIncludeAsset;
     RadioStation *_station;
-    bool_includeCleanTracksOnly;
-    bool_shouldIncludeAsset;
 }
 
 @property(copy) NSDictionary * additionalRequestParameters;
 @property(copy) NSData * heartbeatTokenData;
-@property bool includeCleanTracksOnly;
-@property unsigned long long numberOfTracks;
+@property BOOL includeCleanTracksOnly;
+@property unsigned int numberOfTracks;
 @property(copy) RadioPlayEventCollection * playEventCollection;
 @property(copy) RadioPlaybackContext * playbackContext;
-@property long long reasonType;
-@property bool shouldIncludeAsset;
+@property int reasonType;
+@property BOOL shouldIncludeAsset;
 
 - (void).cxx_destruct;
 - (id)additionalRequestParameters;
 - (void)cancel;
 - (id)heartbeatTokenData;
-- (bool)includeCleanTracksOnly;
+- (BOOL)includeCleanTracksOnly;
 - (id)init;
 - (id)initWithStation:(id)arg1 globalVersion:(unsigned long long)arg2;
-- (unsigned long long)numberOfTracks;
+- (unsigned int)numberOfTracks;
 - (id)playEventCollection;
 - (id)playbackContext;
-- (long long)reasonType;
+- (int)reasonType;
 - (void)setAdditionalRequestParameters:(id)arg1;
 - (void)setHeartbeatTokenData:(id)arg1;
-- (void)setIncludeCleanTracksOnly:(bool)arg1;
-- (void)setNumberOfTracks:(unsigned long long)arg1;
+- (void)setIncludeCleanTracksOnly:(BOOL)arg1;
+- (void)setNumberOfTracks:(unsigned int)arg1;
 - (void)setPlayEventCollection:(id)arg1;
 - (void)setPlaybackContext:(id)arg1;
-- (void)setReasonType:(long long)arg1;
-- (void)setShouldIncludeAsset:(bool)arg1;
-- (bool)shouldIncludeAsset;
+- (void)setReasonType:(int)arg1;
+- (void)setShouldIncludeAsset:(BOOL)arg1;
+- (BOOL)shouldIncludeAsset;
 - (void)startWithCompletionHandler:(id)arg1;
 
 @end

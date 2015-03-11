@@ -9,8 +9,8 @@
 - (long long)dataState;
 - (id)fileState;
 - (id)fileURL;
-- (bool)hasDataState;
-- (bool)hasFileState;
+- (BOOL)hasDataState;
+- (BOOL)hasFileState;
 - (id)initWithIdentifier:(long long)arg1 classType:(int)arg2 dataState:(long long)arg3;
 
 @end

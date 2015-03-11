@@ -15,9 +15,9 @@
 }
 
 @property int command;
-@property bool hasCommand;
-@property(readonly) bool hasOptions;
-@property bool hasTimestamp;
+@property BOOL hasCommand;
+@property(readonly) BOOL hasOptions;
+@property BOOL hasTimestamp;
 @property(retain) _NMRCommandOptionsProtobuf * options;
 @property double timestamp;
 
@@ -27,17 +27,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCommand;
-- (bool)hasOptions;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCommand;
+- (BOOL)hasOptions;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)options;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCommand:(int)arg1;
-- (void)setHasCommand:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasCommand:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setOptions:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;

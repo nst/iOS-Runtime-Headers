@@ -15,7 +15,7 @@
 - (id)encodedClassName;
 - (id)episodePlaybackOrder;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setEpisodePlaybackOrder:(id)arg1;
 
 @end

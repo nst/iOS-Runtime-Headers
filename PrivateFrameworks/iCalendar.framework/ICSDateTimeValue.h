@@ -3,24 +3,24 @@
  */
 
 @interface ICSDateTimeValue : ICSDateValue <NSCoding> {
-    long long _hour;
-    long long _minute;
-    long long _second;
+    int _hour;
+    int _minute;
+    int _second;
 }
 
-@property(readonly) long long hour;
-@property(readonly) long long minute;
-@property(readonly) long long second;
+@property(readonly) int hour;
+@property(readonly) int minute;
+@property(readonly) int second;
 
-- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)components;
 - (int)dateType;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)hour;
+- (int)hour;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithYear:(long long)arg1 month:(long long)arg2 day:(long long)arg3 hour:(long long)arg4 minute:(long long)arg5 second:(long long)arg6;
-- (id)initWithYear:(long long)arg1 month:(long long)arg2 day:(long long)arg3;
-- (long long)minute;
-- (long long)second;
+- (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3 hour:(int)arg4 minute:(int)arg5 second:(int)arg6;
+- (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3;
+- (int)minute;
+- (int)second;
 
 @end

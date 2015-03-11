@@ -14,7 +14,7 @@
 @property(copy) NSDate * date;
 @property(copy) NSString * passUniqueID;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 + (id)verificationRequestRecordForPass:(id)arg1 channel:(id)arg2 date:(id)arg3;
 
 - (id)channel;

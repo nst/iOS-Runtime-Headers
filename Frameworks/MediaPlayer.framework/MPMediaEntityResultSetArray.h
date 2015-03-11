@@ -16,10 +16,10 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)count;
-- (id)initWithResultSet:(id)arg1 queryCriteria:(id)arg2 entityType:(unsigned long long)arg3 library:(id)arg4;
-- (void)objectAtIndex:(unsigned long long)arg1 withCompletion:(id)arg2;
-- (id)objectAtIndex:(unsigned long long)arg1;
+- (unsigned int)count;
+- (id)initWithResultSet:(id)arg1 queryCriteria:(id)arg2 entityType:(unsigned int)arg3 library:(id)arg4;
+- (void)objectAtIndex:(unsigned int)arg1 withCompletion:(id)arg2;
+- (id)objectAtIndex:(unsigned int)arg1;
 - (id)sectionInfo;
 
 @end

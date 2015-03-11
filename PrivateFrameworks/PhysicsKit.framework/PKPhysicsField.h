@@ -12,26 +12,26 @@
     struct shared_ptr<PKCField> { 
         struct PKCField {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-     /* Encoded args for previous method: 16@0:8 */
-     /* Encoded args for previous method: v32@0:816 */
-     /* Encoded args for previous method: 16@0:8 */
-     /* Encoded args for previous method: v32@0:816 */
-     /* Encoded args for previous method: v32@0:816 */
-     /* Encoded args for previous method: 16@0:8 */
+     /* Encoded args for previous method: 8@0:4 */
+     /* Encoded args for previous method: v24@0:48 */
+     /* Encoded args for previous method: 8@0:4 */
+     /* Encoded args for previous method: v24@0:48 */
+     /* Encoded args for previous method: v24@0:48 */
+     /* Encoded args for previous method: 8@0:4 */
     } _field;
+    BOOL _override;
     PKRegion *_region;
     float _rotation;
-    bool_override;
     /* Warning: Unrecognized filer type: '' using 'void*' */ void*_position;
     /* Warning: Unrecognized filer type: '' using 'void*' */ void*_scale;
 }
 
 @property unsigned int categoryBitMask;
 @property /* Warning: Unrecognized filer type: '' using 'void*' */ void* direction;
-@property(getter=isEnabled) bool enabled;
+@property(getter=isEnabled) BOOL enabled;
 @property float falloff;
 @property float minimumRadius;
-@property(getter=isOverride) bool override;
+@property(getter=isOverride) BOOL override;
 @property void* position;
 @property(retain) id region;
 @property <NSObject> * representedObject;
@@ -44,27 +44,27 @@
 - (struct shared_ptr<PKCField> { struct PKCField {} *x1; struct __shared_weak_count {} *x2; })_field;
 - (unsigned int)categoryBitMask;
 - (void)dealloc;
-- (/* Warning: Unrecognized filer type: '1' using 'void*' */ void*)direction;
+- (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)direction;
 - (float)falloff;
 - (id)init;
-- (bool)isActive;
-- (bool)isEnabled;
-- (bool)isOverride;
+- (BOOL)isActive;
+- (BOOL)isEnabled;
+- (BOOL)isOverride;
 - (float)minimumRadius;
-- (bool)override;
-- (/* Warning: Unrecognized filer type: '1' using 'void*' */ void*)position;
+- (BOOL)override;
+- (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)position;
 - (id)region;
 - (id)representedObject;
 - (float)rotation;
-- (/* Warning: Unrecognized filer type: '1' using 'void*' */ void*)scale;
-- (void)setActive:(bool)arg1;
+- (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)scale;
+- (void)setActive:(BOOL)arg1;
 - (void)setCategoryBitMask:(unsigned int)arg1;
 - (void)setDirection:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
-- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setFalloff:(float)arg1;
-- (void)setIsOverride:(bool)arg1;
+- (void)setIsOverride:(BOOL)arg1;
 - (void)setMinimumRadius:(float)arg1;
-- (void)setOverride:(bool)arg1;
+- (void)setOverride:(BOOL)arg1;
 - (void)setPosition:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
 - (void)setRegion:(id)arg1;
 - (void)setRepresentedObject:(id)arg1;

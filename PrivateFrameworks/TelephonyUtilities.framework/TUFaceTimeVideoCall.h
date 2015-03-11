@@ -8,11 +8,11 @@
 - (id)audioCategory;
 - (id)audioMode;
 - (int)callStatus;
-- (bool)hasReceivedFirstFrame;
-- (bool)isSendingVideo;
-- (bool)isVideo;
+- (BOOL)hasReceivedFirstFrame;
+- (BOOL)isSendingVideo;
+- (BOOL)isVideo;
 - (int)service;
-- (void)setIsSendingVideo:(bool)arg1;
+- (void)setIsSendingVideo:(BOOL)arg1;
 - (int)supportedModelType;
 
 @end

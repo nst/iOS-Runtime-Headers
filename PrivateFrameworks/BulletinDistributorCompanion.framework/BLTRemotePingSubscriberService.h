@@ -17,7 +17,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <BLTPingSubscribing> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSXPCListener * listener;
 @property(copy) NSString * machServiceName;
 @property(readonly) Class superclass;
@@ -33,7 +33,7 @@
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id)arg3;
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)listener;
 - (id)machServiceName;
 - (void)pingWithBulletin:(id)arg1;
@@ -44,7 +44,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setListener:(id)arg1;
 - (void)setMachServiceName:(id)arg1;
-- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(bool)arg2;
+- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(BOOL)arg2;
 - (void)subscribeToSectionID:(id)arg1;
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (void)unsubscribeFromSectionID:(id)arg1;

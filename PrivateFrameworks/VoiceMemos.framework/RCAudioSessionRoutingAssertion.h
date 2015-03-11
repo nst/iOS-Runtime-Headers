@@ -6,24 +6,24 @@
 
 @interface RCAudioSessionRoutingAssertion : NSObject {
     NSString *_debugLabel;
-    long long _priority;
-    bool_requiresActiveAudioSession;
+    int _priority;
+    BOOL _requiresActiveAudioSession;
 }
 
-@property(readonly) long long priority;
-@property(readonly) bool requiresActiveAudioSession;
+@property(readonly) int priority;
+@property(readonly) BOOL requiresActiveAudioSession;
 
 + (id)newCaptureAssertionNamed:(id)arg1;
 + (id)newForegroundAppAssertion;
-+ (id)newForegroundAppAssertionRequiringActiveAudioSession:(bool)arg1;
++ (id)newForegroundAppAssertionRequiringActiveAudioSession:(BOOL)arg1;
 + (id)newPreviewAssertionNamed:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)initWithDebugLabel:(id)arg1 requiresActiveAudioSession:(bool)arg2 priority:(long long)arg3;
-- (long long)priority;
-- (bool)requiresActiveAudioSession;
+- (id)initWithDebugLabel:(id)arg1 requiresActiveAudioSession:(BOOL)arg2 priority:(int)arg3;
+- (int)priority;
+- (BOOL)requiresActiveAudioSession;
 
 @end

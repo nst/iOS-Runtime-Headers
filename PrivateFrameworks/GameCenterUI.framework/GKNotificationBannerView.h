@@ -13,7 +13,7 @@
     double _duration;
     UIImageView *_imageView;
     GKLabel *_messageLabel;
-    double _preferredWidthPad;
+    float _preferredWidthPad;
     GKLabel *_titleLabel;
     id _touchHandler;
 }
@@ -22,11 +22,11 @@
 @property double duration;
 @property(readonly) UIImageView * imageView;
 @property(readonly) GKLabel * messageLabel;
-@property(readonly) double preferredWidthPad;
+@property(readonly) float preferredWidthPad;
 @property(readonly) GKLabel * titleLabel;
 @property(copy) id touchHandler;
 
-+ (bool)_preventsAppearanceProxyCustomization;
++ (BOOL)_preventsAppearanceProxyCustomization;
 
 - (void)_wasTouched:(id)arg1;
 - (void)callCompletionHandler;
@@ -40,7 +40,7 @@
 - (id)initWithTitle:(id)arg1 player:(id)arg2 message:(id)arg3;
 - (void)layoutSubviews;
 - (id)messageLabel;
-- (double)preferredWidthPad;
+- (float)preferredWidthPad;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setTouchHandler:(id)arg1;

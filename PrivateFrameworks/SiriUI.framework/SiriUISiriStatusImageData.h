@@ -4,12 +4,12 @@
 
 @interface SiriUISiriStatusImageData : NSData {
     void *_bytes;
-    unsigned long long _length;
+    unsigned int _length;
 }
 
 - (const void*)bytes;
 - (void)dealloc;
-- (id)initWithPath:(id)arg1 length:(unsigned long long)arg2;
-- (unsigned long long)length;
+- (id)initWithPath:(id)arg1 length:(unsigned int)arg2;
+- (unsigned int)length;
 
 @end

@@ -10,7 +10,7 @@
 
 @property(copy) NSString * alarmIdentifier;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)alarmIdentifier;

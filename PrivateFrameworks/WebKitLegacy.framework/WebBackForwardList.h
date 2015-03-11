@@ -23,7 +23,7 @@
 - (int)backListCount;
 - (id)backListWithLimit:(int)arg1;
 - (int)capacity;
-- (bool)containsItem:(id)arg1;
+- (BOOL)containsItem:(id)arg1;
 - (id)currentItem;
 - (void)dealloc;
 - (id)description;
@@ -38,10 +38,10 @@
 - (id)init;
 - (id)initWithBackForwardList:(struct PassRefPtr<WebCore::BackForwardList> { struct BackForwardList {} *x1; })arg1;
 - (id)itemAtIndex:(int)arg1;
-- (unsigned long long)pageCacheSize;
+- (unsigned int)pageCacheSize;
 - (void)removeItem:(id)arg1;
 - (void)setCapacity:(int)arg1;
-- (void)setPageCacheSize:(unsigned long long)arg1;
+- (void)setPageCacheSize:(unsigned int)arg1;
 - (void)setToMatchDictionaryRepresentation:(id)arg1;
 
 @end

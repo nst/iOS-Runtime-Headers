@@ -6,40 +6,40 @@
 
 @interface FUAchievementsView : UIView <UIScrollViewDelegate> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     UILabel *_achievementDetailLabel;
     UILabel *_achievementTitleLabel;
     NSMutableArray *_achievementViews;
     NSArray *_achievements;
     <FUAchievementsViewDelegate> *_delegate;
+    BOOL _needsSubviewRebuild;
     UIPageControl *_pageControl;
+    BOOL _pagingEnabled;
     UIScrollView *_scrollView;
     } _scrollViewContentInset;
-    long long _sizeClass;
-    bool_needsSubviewRebuild;
-    bool_pagingEnabled;
-    bool_showsAchievementTitles;
+    BOOL _showsAchievementTitles;
+    int _sizeClass;
 }
 
 @property(copy) NSArray * achievements;
 @property(copy,readonly) NSString * debugDescription;
 @property <FUAchievementsViewDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool pagingEnabled;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } scrollViewContentInset;
-@property bool showsAchievementTitles;
-@property long long sizeClass;
+@property(readonly) unsigned int hash;
+@property BOOL pagingEnabled;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } scrollViewContentInset;
+@property BOOL showsAchievementTitles;
+@property int sizeClass;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_achievementAtScrollViewPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)_achievementAtScrollViewPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_detailLabelColor;
 - (id)_detailLabelFont;
-- (void)_getPageWidth:(double*)arg1 nearestPageIndex:(unsigned long long*)arg2 forScrollViewContentOffsetX:(double)arg3;
+- (void)_getPageWidth:(float*)arg1 nearestPageIndex:(unsigned int*)arg2 forScrollViewContentOffsetX:(float)arg3;
 - (void)_hideAchievementTitleLabel;
 - (void)_hidePageControl;
 - (void)_rebuildAchievementViews;
@@ -50,23 +50,23 @@
 - (void)_showPageControl;
 - (id)_titleLabelFont;
 - (void)_updateCurrentPageDetails;
-- (id)achievementAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)achievementAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)achievements;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (bool)pagingEnabled;
+- (BOOL)pagingEnabled;
 - (void)scrollToAchievement:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })scrollViewContentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })scrollViewContentInset;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setAchievements:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPagingEnabled:(bool)arg1;
-- (void)setScrollViewContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setShowsAchievementTitles:(bool)arg1;
-- (void)setSizeClass:(long long)arg1;
-- (bool)showsAchievementTitles;
-- (long long)sizeClass;
+- (void)setPagingEnabled:(BOOL)arg1;
+- (void)setScrollViewContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setShowsAchievementTitles:(BOOL)arg1;
+- (void)setSizeClass:(int)arg1;
+- (BOOL)showsAchievementTitles;
+- (int)sizeClass;
 - (id)viewForAchievement:(id)arg1;
 
 @end

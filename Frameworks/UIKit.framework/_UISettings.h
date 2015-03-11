@@ -6,17 +6,17 @@
 
 @interface _UISettings : NSObject <_UISettingsGroupObserver, _UISettingsKeyPathObserver, NSCopying> {
     NSSet *_internal_childKeys;
+    BOOL _internal_isObservingPropertiesAndChildren;
     NSDictionary *_internal_keyClasses;
     NSHashTable *_internal_keyObservers;
     NSHashTable *_internal_keyPathObservers;
     NSDictionary *_internal_keyStructs;
     NSSet *_internal_leafKeys;
-    bool_internal_isObservingPropertiesAndChildren;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)settingsControllerModule;
@@ -35,10 +35,10 @@
 - (id)_dictionaryForStructKey:(id)arg1 ofType:(id)arg2;
 - (id)_fontForKey:(id)arg1 fromDictionary:(id)arg2;
 - (void)_handleChildGroupChange:(id)arg1;
-- (bool)_hasObservers;
+- (BOOL)_hasObservers;
 - (id)_initWithArchiveDictionary:(id)arg1;
 - (void)_introspectKeys;
-- (bool)_isObservingPropertiesAndChildren;
+- (BOOL)_isObservingPropertiesAndChildren;
 - (id)_keyForChild:(id)arg1;
 - (void)_sendKeyChanged:(id)arg1;
 - (void)_sendKeyPathChanged:(id)arg1;
@@ -55,25 +55,25 @@
 - (void)applyArchiveValue:(id)arg1 forKey:(id)arg2;
 - (id)archiveDictionary;
 - (id)archiveFilename;
-- (bool)archiveToFile:(id)arg1 error:(id*)arg2;
+- (BOOL)archiveToFile:(id)arg1 error:(id*)arg2;
 - (id)archiveValueForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithDefaultValues;
-- (bool)isSimilarToSettings:(id)arg1;
+- (BOOL)isSimilarToSettings:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)removeKeyObserver:(id)arg1;
 - (void)removeKeyPathObserver:(id)arg1;
 - (void)restoreDefaultValues;
 - (void)restoreFromArchiveDictionary:(id)arg1;
-- (bool)restoreFromArchiveFile:(id)arg1 error:(id*)arg2;
+- (BOOL)restoreFromArchiveFile:(id)arg1 error:(id*)arg2;
 - (void)setDefaultValues;
 - (void)setValuesFromModel:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
-- (void)settingsGroup:(id)arg1 didInsertSettings:(id)arg2 atIndex:(unsigned long long)arg3;
-- (void)settingsGroup:(id)arg1 didMoveSettings:(id)arg2 fromIndex:(unsigned long long)arg3 toIndex:(unsigned long long)arg4;
-- (void)settingsGroup:(id)arg1 didRemoveSettings:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)settingsGroup:(id)arg1 didInsertSettings:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)settingsGroup:(id)arg1 didMoveSettings:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;
+- (void)settingsGroup:(id)arg1 didRemoveSettings:(id)arg2 atIndex:(unsigned int)arg3;
 - (id)settingsHUDConfiguration;
 - (id)settingsHUDInfoLabelString;
 - (void)settingsResetByHUD;

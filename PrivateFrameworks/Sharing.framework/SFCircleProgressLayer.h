@@ -5,22 +5,22 @@
 @class UIColor;
 
 @interface SFCircleProgressLayer : CALayer {
-    double _oneFullRotation;
+    float _oneFullRotation;
     UIColor *_progressBackgroundColor;
     UIColor *_progressColor;
-    double _progressLineWidth;
-    long long _progressStartPoint;
-    bool_showProgressTray;
+    float _progressLineWidth;
+    int _progressStartPoint;
+    BOOL _showProgressTray;
 }
 
-@property double progress;
+@property float progress;
 @property(retain) UIColor * progressBackgroundColor;
 @property(retain) UIColor * progressColor;
-@property double progressLineWidth;
-@property long long progressStartPoint;
-@property bool showProgressTray;
+@property float progressLineWidth;
+@property int progressStartPoint;
+@property BOOL showProgressTray;
 
-+ (bool)needsDisplayForKey:(id)arg1;
++ (BOOL)needsDisplayForKey:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)drawInContext:(struct CGContext { }*)arg1;
@@ -28,13 +28,13 @@
 - (id)initWithLayer:(id)arg1;
 - (id)progressBackgroundColor;
 - (id)progressColor;
-- (double)progressLineWidth;
-- (long long)progressStartPoint;
+- (float)progressLineWidth;
+- (int)progressStartPoint;
 - (void)setProgressBackgroundColor:(id)arg1;
 - (void)setProgressColor:(id)arg1;
-- (void)setProgressLineWidth:(double)arg1;
-- (void)setProgressStartPoint:(long long)arg1;
-- (void)setShowProgressTray:(bool)arg1;
-- (bool)showProgressTray;
+- (void)setProgressLineWidth:(float)arg1;
+- (void)setProgressStartPoint:(int)arg1;
+- (void)setShowProgressTray:(BOOL)arg1;
+- (BOOL)showProgressTray;
 
 @end

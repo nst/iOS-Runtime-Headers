@@ -14,7 +14,7 @@
 
 + (void)initialize;
 
-- (bool)_attachToPlayerItem:(id)arg1;
+- (BOOL)_attachToPlayerItem:(id)arg1;
 - (void)_collectUncollectables;
 - (void)_detachFromPlayerItem;
 - (id)_figLegibleOutputsDictionaryOptions;
@@ -30,9 +30,9 @@
 - (id)initWithMediaSubtypesForNativeRepresentation:(id)arg1;
 - (void)setAdvanceIntervalForDelegateInvocation:(double)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
-- (void)setSuppressesPlayerRendering:(bool)arg1;
+- (void)setSuppressesPlayerRendering:(BOOL)arg1;
 - (void)setTextStylingResolution:(id)arg1;
-- (bool)suppressesPlayerRendering;
+- (BOOL)suppressesPlayerRendering;
 - (id)textStylingResolution;
 
 @end

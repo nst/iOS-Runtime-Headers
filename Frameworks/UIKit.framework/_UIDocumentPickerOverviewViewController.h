@@ -21,16 +21,16 @@
 - (id)currentExtensionIdentifier;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFileTypes:(id)arg1 mode:(unsigned long long)arg2 auxiliaryOptions:(id)arg3 includeManagementItem:(bool)arg4;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)initWithFileTypes:(id)arg1 mode:(unsigned int)arg2 auxiliaryOptions:(id)arg3 includeManagementItem:(BOOL)arg4;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setAllPickers:(id)arg1;
 - (void)setAuxiliaryOptions:(id)arg1;
 - (void)setCurrentExtensionIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

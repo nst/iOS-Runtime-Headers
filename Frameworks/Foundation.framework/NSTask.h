@@ -12,13 +12,13 @@
 @property(copy) NSDictionary * environment;
 @property(copy) NSString * launchPath;
 @property(readonly) int processIdentifier;
-@property long long qualityOfService;
-@property(getter=isRunning,readonly) bool running;
+@property int qualityOfService;
+@property(getter=isRunning,readonly) BOOL running;
 @property(retain) id standardError;
 @property(retain) id standardInput;
 @property(retain) id standardOutput;
 @property(copy) id terminationHandler;
-@property(readonly) long long terminationReason;
+@property(readonly) int terminationReason;
 @property(readonly) int terminationStatus;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -31,17 +31,17 @@
 - (id)environment;
 - (id)init;
 - (void)interrupt;
-- (bool)isRunning;
+- (BOOL)isRunning;
 - (void)launch;
 - (id)launchPath;
 - (int)processIdentifier;
-- (long long)qualityOfService;
-- (bool)resume;
+- (int)qualityOfService;
+- (BOOL)resume;
 - (void)setArguments:(id)arg1;
 - (void)setCurrentDirectoryPath:(id)arg1;
 - (void)setEnvironment:(id)arg1;
 - (void)setLaunchPath:(id)arg1;
-- (void)setQualityOfService:(long long)arg1;
+- (void)setQualityOfService:(int)arg1;
 - (void)setStandardError:(id)arg1;
 - (void)setStandardInput:(id)arg1;
 - (void)setStandardOutput:(id)arg1;
@@ -49,11 +49,11 @@
 - (id)standardError;
 - (id)standardInput;
 - (id)standardOutput;
-- (bool)suspend;
-- (long long)suspendCount;
+- (BOOL)suspend;
+- (int)suspendCount;
 - (void)terminate;
 - (id)terminationHandler;
-- (long long)terminationReason;
+- (int)terminationReason;
 - (int)terminationStatus;
 
 @end

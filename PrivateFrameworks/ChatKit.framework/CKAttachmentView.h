@@ -15,7 +15,7 @@
 @property(retain) UILabel * actionLabel;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) UIImageView * iconImageView;
 @property(retain) CKMediaObject * mediaObject;
 @property(retain) UILabel * subtitleLabel;
@@ -27,7 +27,7 @@
 - (void)dealloc;
 - (id)icon;
 - (id)iconImageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)mediaObject;
 - (void)prepareForDisplay;
@@ -41,7 +41,7 @@
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)subtitle;
 - (id)subtitleLabel;
 - (id)title;

@@ -5,13 +5,13 @@
 @class GEORequester, NSString;
 
 @interface GEOVoltaireDirectionsProvider : GEODirectionsProvider <PBRequesterDelegate> {
+    BOOL _cancelled;
     GEORequester *_requester;
-    bool_cancelled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) GEORequester * requester;
 @property(readonly) Class superclass;
 

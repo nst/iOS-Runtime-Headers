@@ -17,10 +17,10 @@
 - (void)dealloc;
 - (id)init;
 - (bool)isApplyToDate;
-- (id)rangeAtIndex:(unsigned long long)arg1;
-- (unsigned long long)rangeCount;
-- (id)ruleAtIndex:(unsigned long long)arg1;
-- (unsigned long long)ruleCount;
+- (id)rangeAtIndex:(unsigned int)arg1;
+- (unsigned int)rangeCount;
+- (id)ruleAtIndex:(unsigned int)arg1;
+- (unsigned int)ruleCount;
 - (id)rules;
 
 @end

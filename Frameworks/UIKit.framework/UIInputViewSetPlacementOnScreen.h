@@ -5,8 +5,8 @@
 @interface UIInputViewSetPlacementOnScreen : UIInputViewSetPlacement {
 }
 
-- (bool)inputViewWillAppear;
-- (bool)showsInputViews;
-- (bool)showsKeyboard;
+- (BOOL)inputViewWillAppear;
+- (BOOL)showsInputViews;
+- (BOOL)showsKeyboard;
 
 @end

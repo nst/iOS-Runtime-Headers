@@ -11,27 +11,27 @@
     NSConditionLock *_stateLock;
 }
 
-@property(getter=isCancelled,readonly) bool cancelled;
+@property(getter=isCancelled,readonly) BOOL cancelled;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(getter=isFinished,readonly) bool finished;
-@property(readonly) unsigned long long hash;
+@property(getter=isFinished,readonly) BOOL finished;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_addCompletionBlock:(id)arg1;
 - (void)_flushCompletionBlocks;
-- (bool)_nts_isFinished;
+- (BOOL)_nts_isFinished;
 - (void)addFailureBlock:(id)arg1;
 - (void)addSuccessBlock:(id)arg1;
-- (bool)cancel;
+- (BOOL)cancel;
 - (void)dealloc;
 - (void)didCancel;
-- (bool)finishWithError:(id)arg1;
-- (bool)finishWithResult:(id)arg1 error:(id)arg2;
-- (bool)finishWithResult:(id)arg1;
+- (BOOL)finishWithError:(id)arg1;
+- (BOOL)finishWithResult:(id)arg1 error:(id)arg2;
+- (BOOL)finishWithResult:(id)arg1;
 - (id)init;
-- (bool)isCancelled;
-- (bool)isFinished;
+- (BOOL)isCancelled;
+- (BOOL)isFinished;
 - (id)result:(id*)arg1;
 - (id)resultBeforeDate:(id)arg1 error:(id*)arg2;
 

@@ -9,12 +9,12 @@
 + (id)interactiveCanvas;
 + (id)sharegroupPool;
 
-- (bool)canBeCreatedFromOtherThread;
-- (bool)hasInterestForDiscreteGraphics;
-- (bool)isOneShot;
-- (bool)mustRunOnMainThread;
-- (bool)shouldClearCurrentContextOnOwnerChange;
-- (bool)shouldGarbageCollect;
+- (BOOL)canBeCreatedFromOtherThread;
+- (BOOL)hasInterestForDiscreteGraphics;
+- (BOOL)isOneShot;
+- (BOOL)mustRunOnMainThread;
+- (BOOL)shouldClearCurrentContextOnOwnerChange;
+- (BOOL)shouldGarbageCollect;
 - (id)targetThreadForFlushingWithOwningThread:(id)arg1;
 
 @end

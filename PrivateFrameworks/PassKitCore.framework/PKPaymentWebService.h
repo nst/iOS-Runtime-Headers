@@ -13,11 +13,11 @@
     PKPaymentWebServiceContext *_context;
     <PKPaymentProvisioningServiceDelegate> *_delegate;
     NSOperationQueue *_delegateOperationQueue;
-    unsigned long long _maxCards;
+    unsigned int _maxCards;
     NSMutableDictionary *_passesByLocalURL;
     PKPaymentDevice *_paymentDevice;
+    BOOL _sharedService;
     NSURLSession *_urlSession;
-    bool_sharedService;
 }
 
 @property(readonly) ACAccount * account;
@@ -28,18 +28,18 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <PKPaymentProvisioningServiceDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property unsigned long long maxCards;
-@property(readonly) bool needsConfiguration;
-@property(readonly) bool needsRegistration;
+@property(readonly) unsigned int hash;
+@property unsigned int maxCards;
+@property(readonly) BOOL needsConfiguration;
+@property(readonly) BOOL needsRegistration;
 @property(readonly) int paymentSetupSupportedInRegion;
 @property(readonly) NSURLSessionConfiguration * sessionConfiguration;
-@property bool sharedService;
+@property BOOL sharedService;
 @property(readonly) Class superclass;
 
 + (id)_sharedCookieStorage;
 + (id)sharedService;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id)arg3;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
@@ -49,7 +49,7 @@
 - (id)_addVerificationRequestRecordForChannel:(id)arg1 pass:(id)arg2;
 - (void)_archiveBackgroundContext;
 - (void)_archiveContext;
-- (bool)_canBypassTrustExtendedValidation;
+- (BOOL)_canBypassTrustExtendedValidation;
 - (void)_cleanupPassDownloadCache;
 - (void)_deviceConfigurationDataWithCompletion:(id)arg1;
 - (void)_deviceProvisioningDataWithCompletion:(id)arg1;
@@ -59,7 +59,7 @@
 - (void)_downloadPassAtURL:(id)arg1 completion:(id)arg2;
 - (id)_downloadPassesWithURLs:(id)arg1;
 - (id)_errorUserInfoWithData:(id)arg1;
-- (id)_errorUserInfoWithErrorCode:(long long)arg1;
+- (id)_errorUserInfoWithErrorCode:(int)arg1;
 - (id)_errorWithResult:(int)arg1 data:(id)arg2;
 - (id)_fakeVerificationChannelsWithRealChannels:(id)arg1;
 - (void)_handleAuthenticationFailureWithCompletionHandler:(id)arg1;
@@ -73,15 +73,15 @@
 - (id)_passWithFileURL:(id)arg1;
 - (id)_paymentDevice;
 - (void)_performRequest:(id)arg1 completionHandler:(id)arg2;
-- (void)_performRequest:(id)arg1 retries:(unsigned long long)arg2 authHandling:(bool)arg3 completionHandler:(id)arg4;
+- (void)_performRequest:(id)arg1 retries:(unsigned int)arg2 authHandling:(BOOL)arg3 completionHandler:(id)arg4;
 - (void)_provisionCredential:(id)arg1 completion:(id)arg2;
 - (int)_resultForResponse:(id)arg1 error:(id)arg2 successHandler:(id)arg3;
-- (int)_resultForUnexpectedStatusCode:(long long)arg1;
-- (bool)_trustPassesExtendedValidation:(struct __SecTrust { }*)arg1;
+- (int)_resultForUnexpectedStatusCode:(int)arg1;
+- (BOOL)_trustPassesExtendedValidation:(struct __SecTrust { }*)arg1;
 - (id)account;
 - (id)backgroundContext;
 - (id)backgroundDelegate;
-- (void)backgroundDownloadDevicePassesSinceLastUpdatedTag:(bool)arg1;
+- (void)backgroundDownloadDevicePassesSinceLastUpdatedTag:(BOOL)arg1;
 - (void)backgroundDownloadPassAtURL:(id)arg1;
 - (void)backgroundDownloadRemotePassAssets:(id)arg1 forSuffixesAndScreenScales:(id)arg2;
 - (void)backgroundDownloadRemotePassAssets:(id)arg1;
@@ -93,15 +93,15 @@
 - (id)delegate;
 - (void)deletePass:(id)arg1 completion:(id)arg2;
 - (void)deprovisionPass:(id)arg1 completion:(id)arg2;
-- (void)devicePassesSinceLastUpdatedTag:(bool)arg1 withCompletion:(id)arg2;
+- (void)devicePassesSinceLastUpdatedTag:(BOOL)arg1 withCompletion:(id)arg2;
 - (void)eligibilityForPaymentCredential:(id)arg1 completion:(id)arg2;
 - (void)inAppPaymentNonceForPass:(id)arg1 completion:(id)arg2;
 - (id)initWithContext:(id)arg1 delegate:(id)arg2;
 - (id)initWithContext:(id)arg1;
 - (void)invalidateBackgroundSession;
-- (unsigned long long)maxCards;
-- (bool)needsConfiguration;
-- (bool)needsRegistration;
+- (unsigned int)maxCards;
+- (BOOL)needsConfiguration;
+- (BOOL)needsRegistration;
 - (void)passAtURL:(id)arg1 completion:(id)arg2;
 - (void)passWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2 completion:(id)arg3;
 - (id)paymentServicesURL;
@@ -109,7 +109,7 @@
 - (void)provisionCredential:(id)arg1 completion:(id)arg2;
 - (void)registerDeviceWithCompletion:(id)arg1;
 - (void)registerDeviceWithConsistencyData:(id)arg1 completion:(id)arg2;
-- (void)registerDeviceWithConsistencyData:(id)arg1 retries:(unsigned long long)arg2 completion:(id)arg3;
+- (void)registerDeviceWithConsistencyData:(id)arg1 retries:(unsigned int)arg2 completion:(id)arg3;
 - (void)remotePaymentCredentialsWithCompletion:(id)arg1;
 - (void)requestVerificationCodeForPass:(id)arg1 usingChannel:(id)arg2 completion:(id)arg3;
 - (void)rewrapInAppPayment:(id)arg1 merchantIdentifier:(id)arg2 applicationData:(id)arg3 pass:(id)arg4 completion:(id)arg5;
@@ -119,10 +119,10 @@
 - (void)setBrokerURL:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMaxCards:(unsigned long long)arg1;
-- (void)setSharedService:(bool)arg1;
+- (void)setMaxCards:(unsigned int)arg1;
+- (void)setSharedService:(BOOL)arg1;
 - (void)sharedPaymentServiceChanged:(id)arg1;
-- (bool)sharedService;
+- (BOOL)sharedService;
 - (void)sharedServiceDidRegister;
 - (void)startBackgroundURLSessionWithIdentifier:(id)arg1 context:(id)arg2 backgroundDelegate:(id)arg3;
 - (void)submitVerificationCode:(id)arg1 verificationData:(id)arg2 forPass:(id)arg3 completion:(id)arg4;

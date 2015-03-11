@@ -6,16 +6,16 @@
 
 @interface AVConferencePreview : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     NSObject<OS_dispatch_queue> *avConferencePreviewNotificationQueue;
     NSObject<OS_dispatch_queue> *avConferencePreviewQueue;
-    boolclientWantsPreview;
     CALayer *caLayerBack;
     CALayer *caLayerFront;
+    BOOL clientWantsPreview;
     AVConferenceXPCClient *connection;
     unsigned int connectionAttempts;
     NSObject<AVConferencePreviewClientDelegate> *delegate;
@@ -47,22 +47,22 @@
 - (void)endPIPToPreviewAnimation;
 - (void)endPreviewToPIPAnimation;
 - (id)init;
-- (bool)isPreviewRunning;
+- (BOOL)isPreviewRunning;
 - (unsigned int)localCamera;
 - (id)localScreenAttributesForVideoAttributes:(id)arg1;
 - (id)localVideoAttributes;
-- (id)localVideoLayer:(bool)arg1;
+- (id)localVideoLayer:(BOOL)arg1;
 - (void)pausePreview;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 - (void)setDelegate:(id)arg1;
 - (void)setLocalCamera:(unsigned int)arg1;
 - (void)setLocalScreenAttributes:(id)arg1;
 - (void)setLocalVideoAttributes:(id)arg1;
-- (void)setLocalVideoLayer:(id)arg1 front:(bool)arg2;
+- (void)setLocalVideoLayer:(id)arg1 front:(BOOL)arg2;
 - (void)startPreview;
-- (void)startPreviewUnpausing:(bool)arg1;
+- (void)startPreviewUnpausing:(BOOL)arg1;
 - (void)stopPreview;
 
 @end

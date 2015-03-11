@@ -13,10 +13,10 @@
 
 @property(retain) CKDPUserAlias * alias;
 @property(retain) NSString * firstName;
-@property(readonly) bool hasAlias;
-@property(readonly) bool hasFirstName;
-@property(readonly) bool hasIdentifier;
-@property(readonly) bool hasLastName;
+@property(readonly) BOOL hasAlias;
+@property(readonly) BOOL hasFirstName;
+@property(readonly) BOOL hasIdentifier;
+@property(readonly) BOOL hasLastName;
 @property(retain) CKDPIdentifier * identifier;
 @property(retain) NSString * lastName;
 
@@ -27,16 +27,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)firstName;
-- (bool)hasAlias;
-- (bool)hasFirstName;
-- (bool)hasIdentifier;
-- (bool)hasLastName;
-- (unsigned long long)hash;
+- (BOOL)hasAlias;
+- (BOOL)hasFirstName;
+- (BOOL)hasIdentifier;
+- (BOOL)hasLastName;
+- (unsigned int)hash;
 - (id)identifier;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)lastName;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAlias:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setIdentifier:(id)arg1;

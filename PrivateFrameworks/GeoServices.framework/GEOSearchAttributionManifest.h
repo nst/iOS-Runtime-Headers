@@ -17,13 +17,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)searchAttributionSources;
-- (id)searchAttributionSourcesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)searchAttributionSourcesCount;
+- (id)searchAttributionSourcesAtIndex:(unsigned int)arg1;
+- (unsigned int)searchAttributionSourcesCount;
 - (void)setSearchAttributionSources:(id)arg1;
 - (void)writeTo:(id)arg1;
 

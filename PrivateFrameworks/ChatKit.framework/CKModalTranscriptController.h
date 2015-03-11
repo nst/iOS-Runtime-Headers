@@ -5,40 +5,40 @@
 @class NSMutableArray;
 
 @interface CKModalTranscriptController : CKTranscriptController {
+    BOOL _alreadySetUp;
+    BOOL _cameraSelectionDisabled;
     int _entryViewInvisible;
+    BOOL _forceMMS;
+    BOOL _mimeType;
     NSMutableArray *_partsToInsert;
     NSMutableArray *_typesToInsert;
-    bool_alreadySetUp;
-    bool_cameraSelectionDisabled;
-    bool_forceMMS;
-    bool_mimeType;
 }
 
-@property bool forceMMS;
-@property bool mimeType;
+@property BOOL forceMMS;
+@property BOOL mimeType;
 
 - (void)_conversationListDidFinishLoading:(id)arg1;
-- (bool)_insertMediaObject:(id)arg1;
+- (BOOL)_insertMediaObject:(id)arg1;
 - (void)_setConversation:(id)arg1;
-- (bool)_shouldAllowCameraAttachments;
-- (bool)_shouldUseDefaultFirstResponder;
-- (bool)_shouldUseExistingConversations;
+- (BOOL)_shouldAllowCameraAttachments;
+- (BOOL)_shouldUseDefaultFirstResponder;
+- (BOOL)_shouldUseExistingConversations;
 - (void)dealloc;
 - (void)disableCameraAttachments;
-- (bool)forceMMS;
-- (bool)getContainerWidth:(double*)arg1 offset:(double*)arg2;
+- (BOOL)forceMMS;
+- (BOOL)getContainerWidth:(float*)arg1 offset:(float*)arg2;
 - (void)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (void)insertFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3;
-- (bool)mimeType;
+- (BOOL)mimeType;
 - (void)registerForNotifications;
-- (void)setCanEditRecipients:(bool)arg1;
-- (void)setForceMMS:(bool)arg1;
-- (void)setMimeType:(bool)arg1;
+- (void)setCanEditRecipients:(BOOL)arg1;
+- (void)setForceMMS:(BOOL)arg1;
+- (void)setMimeType:(BOOL)arg1;
 - (void)setPendingAddresses:(id)arg1;
-- (void)setTextEntryContentsVisible:(bool)arg1;
-- (bool)shouldDismissAfterSend;
+- (void)setTextEntryContentsVisible:(BOOL)arg1;
+- (BOOL)shouldDismissAfterSend;
 - (void)transitionFromNewMessageToConversation;
-- (void)viewServiceWillAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewServiceWillAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

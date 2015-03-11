@@ -6,19 +6,19 @@
 
 @interface _UIServiceWebView : UIWebView {
     _UIServiceWebViewController *_serviceWebViewController;
-    bool_shouldDecidePolicyRemotely;
+    BOOL _shouldDecidePolicyRemotely;
 }
 
 @property _UIServiceWebViewController * serviceWebViewController;
-@property bool shouldDecidePolicyRemotely;
+@property BOOL shouldDecidePolicyRemotely;
 
 - (id)_makeAlertView;
-- (void)_webView:(id)arg1 dismissViewControllerAnimated:(bool)arg2 completion:(id)arg3;
-- (bool)_webView:(id)arg1 presentViewController:(id)arg2 animated:(bool)arg3 completion:(id)arg4;
+- (void)_webView:(id)arg1 dismissViewControllerAnimated:(BOOL)arg2 completion:(id)arg3;
+- (BOOL)_webView:(id)arg1 presentViewController:(id)arg2 animated:(BOOL)arg3 completion:(id)arg4;
 - (id)serviceWebViewController;
 - (void)setServiceWebViewController:(id)arg1;
-- (void)setShouldDecidePolicyRemotely:(bool)arg1;
-- (bool)shouldDecidePolicyRemotely;
+- (void)setShouldDecidePolicyRemotely:(BOOL)arg1;
+- (BOOL)shouldDecidePolicyRemotely;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 
 @end

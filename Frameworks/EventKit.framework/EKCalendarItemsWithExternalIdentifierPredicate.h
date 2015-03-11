@@ -8,12 +8,12 @@
     NSString *_externalIdentifier;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)evaluateWithObject:(id)arg1;
+- (BOOL)evaluateWithObject:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithExternalIdentifier:(id)arg1;
 

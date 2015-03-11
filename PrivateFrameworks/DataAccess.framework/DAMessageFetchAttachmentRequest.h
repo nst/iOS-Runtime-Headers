@@ -15,9 +15,9 @@
 - (void).cxx_destruct;
 - (id)attachmentName;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithAttachmentName:(id)arg1 andMessageServerID:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)messageID;
 - (void)setAttachmentName:(id)arg1;
 - (void)setMessageID:(id)arg1;

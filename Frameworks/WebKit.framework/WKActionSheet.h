@@ -9,29 +9,29 @@
         void *m_ptr; 
     struct RetainPtr<id<UIPopoverPresentationControllerDelegate> > { 
         void *m_ptr; 
-    unsigned long long _arrowDirections;
+    unsigned int _arrowDirections;
+    BOOL _isRotating;
     } _popoverPresentationControllerDelegateWhileRotating;
     } _presentedViewControllerWhileRotating;
+    BOOL _readyToPresentAfterRotation;
     <WKActionSheetDelegate> *_sheetDelegate;
     WKContentView *_view;
-    bool_isRotating;
-    bool_readyToPresentAfterRotation;
 }
 
-@property unsigned long long arrowDirections;
+@property unsigned int arrowDirections;
 @property <WKActionSheetDelegate> * sheetDelegate;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_didRotateAndLayout;
-- (unsigned long long)arrowDirections;
+- (unsigned int)arrowDirections;
 - (void)dealloc;
 - (void)didRotate;
 - (void)doneWithSheet;
 - (id)initWithView:(id)arg1;
-- (bool)presentSheet;
-- (bool)presentSheetFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setArrowDirections:(unsigned long long)arg1;
+- (BOOL)presentSheet;
+- (BOOL)presentSheetFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setArrowDirections:(unsigned int)arg1;
 - (void)setSheetDelegate:(id)arg1;
 - (id)sheetDelegate;
 - (void)updateSheetPosition;

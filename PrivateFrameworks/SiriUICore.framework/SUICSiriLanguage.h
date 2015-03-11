@@ -6,14 +6,14 @@
 
 @interface SUICSiriLanguage : NSObject {
     <SUICSiriLanguageDelegate> *_delegate;
+    BOOL _setupAssistantNeedsToRunAvailable;
+    BOOL _setupAssistantNeedsToRunChecked;
     NSString *_spokenLanguageCode;
-    bool_setupAssistantNeedsToRunAvailable;
-    bool_setupAssistantNeedsToRunChecked;
 }
 
 @property(getter=_delegate,readonly) <SUICSiriLanguageDelegate> * delegate;
-@property(getter=_setupAssistantNeedsToRunAvailable) bool setupAssistantNeedsToRunAvailable;
-@property bool setupAssistantNeedsToRunChecked;
+@property(getter=_setupAssistantNeedsToRunAvailable) BOOL setupAssistantNeedsToRunAvailable;
+@property BOOL setupAssistantNeedsToRunChecked;
 @property(copy) NSString * spokenLanguageCode;
 
 - (void).cxx_destruct;
@@ -21,15 +21,15 @@
 - (void)_currentLocaleDidChange:(id)arg1;
 - (id)_delegate;
 - (void)_setSpokenLanguageCode:(id)arg1;
-- (bool)_setupAssistantNeedsToRunAvailable;
+- (BOOL)_setupAssistantNeedsToRunAvailable;
 - (void)_spokenLanguageDidChange:(id)arg1;
 - (void)_updateSpokenLanguageCode;
 - (void)dealloc;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
-- (void)setSetupAssistantNeedsToRunAvailable:(bool)arg1;
-- (void)setSetupAssistantNeedsToRunChecked:(bool)arg1;
-- (bool)setupAssistantNeedsToRunChecked;
+- (void)setSetupAssistantNeedsToRunAvailable:(BOOL)arg1;
+- (void)setSetupAssistantNeedsToRunChecked:(BOOL)arg1;
+- (BOOL)setupAssistantNeedsToRunChecked;
 - (id)spokenLanguageCode;
 
 @end

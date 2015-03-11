@@ -16,9 +16,9 @@
     NSString *_hostname;
     NSNumber *_mailNumberOfPastDaysToSync;
     NSString *_password;
+    BOOL _syncDefaultFoldersOnly;
     NSNumber *_useSSL;
     NSString *_username;
-    bool_syncDefaultFoldersOnly;
 }
 
 @property(retain,readonly) NSString * accountDescription;
@@ -29,11 +29,11 @@
 @property(retain,readonly) NSData * embeddedCertificate;
 @property(retain,readonly) NSString * embeddedCertificateName;
 @property(copy) NSString * embeddedCertificatePassword;
-@property(readonly) bool hasCertificate;
+@property(readonly) BOOL hasCertificate;
 @property(retain,readonly) NSString * hostname;
 @property(retain,readonly) NSNumber * mailNumberOfPastDaysToSync;
 @property(copy) NSString * password;
-@property bool syncDefaultFoldersOnly;
+@property BOOL syncDefaultFoldersOnly;
 @property(retain) NSNumber * useSSL;
 @property(copy) NSString * username;
 
@@ -51,7 +51,7 @@
 - (id)embeddedCertificate;
 - (id)embeddedCertificateName;
 - (id)embeddedCertificatePassword;
-- (bool)hasCertificate;
+- (BOOL)hasCertificate;
 - (id)hostname;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)mailNumberOfPastDaysToSync;
@@ -62,7 +62,7 @@
 - (void)setEmailAddress:(id)arg1;
 - (void)setEmbeddedCertificatePassword:(id)arg1;
 - (void)setPassword:(id)arg1;
-- (void)setSyncDefaultFoldersOnly:(bool)arg1;
+- (void)setSyncDefaultFoldersOnly:(BOOL)arg1;
 - (void)setUseSSL:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)stubDictionary;
@@ -70,7 +70,7 @@
 - (id)subtitle1Label;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
-- (bool)syncDefaultFoldersOnly;
+- (BOOL)syncDefaultFoldersOnly;
 - (id)title;
 - (id)useSSL;
 - (id)username;

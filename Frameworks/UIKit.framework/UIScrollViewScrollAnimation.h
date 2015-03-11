@@ -4,18 +4,18 @@
 
 @interface UIScrollViewScrollAnimation : UIAnimation {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
-    double _accuracy;
+        float x; 
+        float y; 
+    float _accuracy;
+    BOOL _adjustsForContentOffsetDelta;
     } _originalOffset;
     } _targetOffset;
-    bool_adjustsForContentOffsetDelta;
 }
 
-- (void)adjustForContentOffsetDelta:(struct CGPoint { double x1; double x2; })arg1;
+- (void)adjustForContentOffsetDelta:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dealloc;
 - (void)setProgress:(float)arg1;
 

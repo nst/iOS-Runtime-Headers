@@ -5,32 +5,32 @@
 @class NSString;
 
 @interface CKAccountInfo : NSObject <NSCopying, NSSecureCoding> {
+    BOOL _accountWantsPushRegistration;
     NSString *_email;
+    BOOL _isUnitTestingAccount;
     NSString *_password;
-    bool_accountWantsPushRegistration;
-    bool_isUnitTestingAccount;
 }
 
-@property bool accountWantsPushRegistration;
+@property BOOL accountWantsPushRegistration;
 @property(readonly) NSString * email;
-@property bool isUnitTestingAccount;
+@property BOOL isUnitTestingAccount;
 @property(readonly) NSString * password;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)accountWantsPushRegistration;
+- (BOOL)accountWantsPushRegistration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)email;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEmail:(id)arg1 password:(id)arg2;
-- (bool)isEqual:(id)arg1;
-- (bool)isUnitTestingAccount;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isUnitTestingAccount;
 - (id)password;
-- (void)setAccountWantsPushRegistration:(bool)arg1;
-- (void)setIsUnitTestingAccount:(bool)arg1;
+- (void)setAccountWantsPushRegistration:(BOOL)arg1;
+- (void)setIsUnitTestingAccount:(BOOL)arg1;
 
 @end

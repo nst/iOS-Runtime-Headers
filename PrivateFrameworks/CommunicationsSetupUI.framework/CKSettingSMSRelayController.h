@@ -10,14 +10,14 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) IDSService * relayService;
 @property(readonly) Class superclass;
 
 + (id)authorizedSMSRelayDevices;
-+ (bool)deviceIsAuthorized:(id)arg1;
-+ (unsigned long long)numberOfActiveDevices;
-+ (bool)shouldShowSMSRelaySettings;
++ (BOOL)deviceIsAuthorized:(id)arg1;
++ (unsigned int)numberOfActiveDevices;
++ (BOOL)shouldShowSMSRelaySettings;
 
 - (void)dealloc;
 - (id)getDeviceActive:(id)arg1;
@@ -28,6 +28,6 @@
 - (void)setRelayService:(id)arg1;
 - (id)specifiers;
 - (void)systemApplicationWillEnterForeground;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

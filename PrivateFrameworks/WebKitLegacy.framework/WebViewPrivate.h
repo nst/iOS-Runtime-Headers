@@ -72,8 +72,8 @@
         int (*didRemoveFrameFromHierarchyFunc)(); 
         int (*webThreadDidLayoutFunc)(); 
     struct WebScriptDebugDelegateImplementationCache { 
-        booldidParseSourceExpectsBaseLineNumber; 
-        boolexceptionWasRaisedExpectsHasHandlerFlag; 
+        BOOL didParseSourceExpectsBaseLineNumber; 
+        BOOL exceptionWasRaisedExpectsHasHandlerFlag; 
         int (*didParseSourceFunc)(); 
         int (*failedToParseSourceFunc)(); 
         int (*exceptionWasRaisedFunc)(); 
@@ -85,21 +85,21 @@
         int (*setTitleFunc)(); 
         int (*populateVisitedLinksFunc)(); 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct Mutex { 
         struct _opaque_pthread_mutex_t { 
-            long long __sig; 
-            BOOL __opaque[56]; 
+            long __sig; 
+            BOOL __opaque[40]; 
         } m_mutex; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct HashMap<unsigned long, WTF::RetainPtr<id>, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id> > > { 
         struct HashTable<unsigned long, WTF::KeyValuePair<unsigned long, WTF::RetainPtr<id> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long, WTF::RetainPtr<id> > >, WTF::IntHash<unsigned long>, WTF::HashMap<unsigned long, WTF::RetainPtr<id>, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id> > >::KeyValuePairTraits, WTF::HashTraits<unsigned long> > { 
@@ -112,8 +112,8 @@
     struct RefPtr<LayerFlushController> { 
         struct LayerFlushController {} *m_ptr; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct RefPtr<WebCore::HistoryItem> { 
         struct HistoryItem {} *m_ptr; 
     struct RetainPtr<NSData> { 
@@ -125,41 +125,26 @@
     id WebMailDelegate;
     <WebCaretChangeListener> *_caretChangeListener;
     NSMutableSet *_caretChangeListeners;
+    BOOL _didPerformFirstNavigation;
     WebFixedPositionContent *_fixedPositionContent;
     <WebGeolocationProvider> *_geolocationProvider;
     } _globalHistoryItem;
     int _keyboardUIMode;
+    BOOL _keyboardUIModeAccessed;
     <WebNotificationProvider> *_notificationProvider;
+    BOOL allowsMessaging;
+    BOOL allowsUndo;
     NSString *applicationNameForUserAgent;
     struct CGColor { } *backgroundColor;
-    bool_didPerformFirstNavigation;
-    bool_keyboardUIModeAccessed;
-    boolallowsMessaging;
-    boolallowsUndo;
-    boolbecomingFirstResponder;
-    boolbecomingFirstResponderFromOutside;
-    boolclosed;
-    boolclosing;
-    booldrawsBackground;
-    boolhasSpellCheckerDocumentTag;
-    boolincludesFlattenedCompositingLayersWhenDrawingToBitmap;
-    boolinteractiveFormValidationEnabled;
-    boolisStopping;
-    boolmainFrameDocumentReady;
-    boolmainViewIsScrollingOrZooming;
-    boolneedsOneShotDrawingSynchronization;
-    boolpostsAcceleratedCompositingNotifications;
-    boolshouldCloseWithWindow;
-    boolshouldUpdateWhileOffscreen;
-    booltabKeyCyclesThroughElementsChanged;
-    booluseSiteSpecificSpoofing;
-    booluserAgentOverridden;
-    boolusesPageCache;
-    boolzoomsTextOnly;
+    BOOL becomingFirstResponder;
+    BOOL becomingFirstResponderFromOutside;
+    BOOL closed;
+    BOOL closing;
     WebNodeHighlight *currentNodeHighlight;
     float customDeviceScaleFactor;
     int didDrawTiles;
     id downloadDelegate;
+    BOOL drawsBackground;
     id editingDelegate;
     id editingDelegateForwarder;
     } fixedLayoutSize;
@@ -170,22 +155,30 @@
     } frameLoadDelegateImplementations;
     WebVideoFullscreenController *fullscreenController;
     } group;
+    BOOL hasSpellCheckerDocumentTag;
     id historyDelegate;
     } historyDelegateImplementations;
     WAKWindow *hostWindow;
     } identifierMap;
+    BOOL includesFlattenedCompositingLayersWhenDrawingToBitmap;
     WebIndicateLayer *indicateLayer;
     WebInspector *inspector;
+    BOOL interactiveFormValidationEnabled;
+    BOOL isStopping;
     } lastLayoutSize;
     } layerFlushController;
     <WebDeviceOrientationProvider> *m_deviceOrientationProvider;
+    BOOL mainFrameDocumentReady;
+    BOOL mainViewIsScrollingOrZooming;
     NSString *mediaStyle;
+    BOOL needsOneShotDrawingSynchronization;
     void *observationInfo;
     struct Page { } *page;
     } pendingFixedPositionLayoutRect;
     } pendingFixedPositionLayoutRectMutex;
     id policyDelegate;
     id policyDelegateForwarder;
+    BOOL postsAcceleratedCompositingNotifications;
     WebPreferences *preferences;
     int programmaticFocusCount;
     } resourceLoadDelegateImplementations;
@@ -193,12 +186,19 @@
     id resourceProgressDelegateForwarder;
     id scriptDebugDelegate;
     } scriptDebugDelegateImplementations;
+    BOOL shouldCloseWithWindow;
+    BOOL shouldUpdateWhileOffscreen;
     } sourceApplicationAuditData;
-    long long spellCheckerDocumentTag;
+    int spellCheckerDocumentTag;
+    BOOL tabKeyCyclesThroughElementsChanged;
+    BOOL useSiteSpecificSpoofing;
     } userAgent;
+    BOOL userAgentOverridden;
     NSURL *userStyleSheetLocation;
+    BOOL usesPageCache;
     int validationMessageTimerMagnification;
     float zoomMultiplier;
+    BOOL zoomsTextOnly;
 }
 
 + (void)initialize;

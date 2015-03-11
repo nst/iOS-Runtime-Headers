@@ -9,7 +9,7 @@
     unsigned int mNextIndex;
 }
 
-- (bool)hasNext;
+- (BOOL)hasNext;
 - (id)initWithArray:(id)arg1;
 - (id)next;
 

@@ -15,10 +15,10 @@
 }
 
 @property(retain) NSString * bundleIdentifier;
-@property(readonly) bool hasBundleIdentifier;
-@property(readonly) bool hasName;
-@property bool hasOptions;
-@property(readonly) bool hasProductType;
+@property(readonly) BOOL hasBundleIdentifier;
+@property(readonly) BOOL hasName;
+@property BOOL hasOptions;
+@property(readonly) BOOL hasProductType;
 @property(retain) NSString * name;
 @property long long options;
 @property(retain) NSString * productType;
@@ -29,19 +29,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasBundleIdentifier;
-- (bool)hasName;
-- (bool)hasOptions;
-- (bool)hasProductType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasBundleIdentifier;
+- (BOOL)hasName;
+- (BOOL)hasOptions;
+- (BOOL)hasProductType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
 - (long long)options;
 - (id)productType;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
-- (void)setHasOptions:(bool)arg1;
+- (void)setHasOptions:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setOptions:(long long)arg1;
 - (void)setProductType:(id)arg1;

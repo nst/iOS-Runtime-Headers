@@ -12,7 +12,7 @@
 @property double timeToLive;
 @property(retain) NSDate * timestamp;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

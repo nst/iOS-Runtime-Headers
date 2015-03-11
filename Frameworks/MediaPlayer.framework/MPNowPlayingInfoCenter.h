@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)_init;
-- (void)_pushNowPlayingInfoAndRetry:(bool)arg1;
+- (void)_pushNowPlayingInfoAndRetry:(BOOL)arg1;
 - (id)init;
 - (id)nowPlayingInfo;
 - (void)setNowPlayingInfo:(id)arg1;

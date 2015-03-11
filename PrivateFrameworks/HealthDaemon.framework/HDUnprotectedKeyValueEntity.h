@@ -6,6 +6,6 @@
 }
 
 + (id)databaseTable;
-+ (long long)protectionClass;
++ (int)protectionClass;
 
 @end

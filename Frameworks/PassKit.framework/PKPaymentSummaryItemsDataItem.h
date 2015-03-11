@@ -10,10 +10,10 @@
 @property(readonly) NSString * currencyCode;
 @property(readonly) NSArray * paymentSummaryItems;
 
-+ (long long)dataType;
++ (int)dataType;
 
 - (id)currencyCode;
-- (bool)isValidWithError:(id*)arg1;
+- (BOOL)isValidWithError:(id*)arg1;
 - (id)paymentSummaryItems;
 
 @end

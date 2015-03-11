@@ -12,8 +12,8 @@
     double _valueInCanonicalUnit;
 }
 
-@property(readonly) bool hasSample;
-@property bool hasValueInCanonicalUnit;
+@property(readonly) BOOL hasSample;
+@property BOOL hasValueInCanonicalUnit;
 @property(retain) HDCodableSample * sample;
 @property double valueInCanonicalUnit;
 
@@ -22,14 +22,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasSample;
-- (bool)hasValueInCanonicalUnit;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasSample;
+- (BOOL)hasValueInCanonicalUnit;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)sample;
-- (void)setHasValueInCanonicalUnit:(bool)arg1;
+- (void)setHasValueInCanonicalUnit:(BOOL)arg1;
 - (void)setSample:(id)arg1;
 - (void)setValueInCanonicalUnit:(double)arg1;
 - (double)valueInCanonicalUnit;

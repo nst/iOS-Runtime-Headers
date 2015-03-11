@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int errorCode;
 @property(readonly) NSArray * handlerReturnStatuses;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSDate * serializationDate;
 @property(readonly) Class superclass;
 

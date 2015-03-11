@@ -4,29 +4,29 @@
 
 @interface _NACVolumeRecord : NSObject <NSCoding> {
     float _EUVolumeLimit;
+    BOOL _muted;
+    BOOL _volumeControlAvailable;
     float _volumeValue;
-    bool_muted;
-    bool_volumeControlAvailable;
-    bool_volumeWarningEnabled;
+    BOOL _volumeWarningEnabled;
 }
 
 @property float EUVolumeLimit;
-@property(getter=isMuted) bool muted;
-@property(getter=isVolumeControlAvailable) bool volumeControlAvailable;
+@property(getter=isMuted) BOOL muted;
+@property(getter=isVolumeControlAvailable) BOOL volumeControlAvailable;
 @property float volumeValue;
-@property(getter=isVolumeWarningEnabled) bool volumeWarningEnabled;
+@property(getter=isVolumeWarningEnabled) BOOL volumeWarningEnabled;
 
 - (float)EUVolumeLimit;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isMuted;
-- (bool)isVolumeControlAvailable;
-- (bool)isVolumeWarningEnabled;
+- (BOOL)isMuted;
+- (BOOL)isVolumeControlAvailable;
+- (BOOL)isVolumeWarningEnabled;
 - (void)setEUVolumeLimit:(float)arg1;
-- (void)setMuted:(bool)arg1;
-- (void)setVolumeControlAvailable:(bool)arg1;
+- (void)setMuted:(BOOL)arg1;
+- (void)setVolumeControlAvailable:(BOOL)arg1;
 - (void)setVolumeValue:(float)arg1;
-- (void)setVolumeWarningEnabled:(bool)arg1;
+- (void)setVolumeWarningEnabled:(BOOL)arg1;
 - (float)volumeValue;
 
 @end

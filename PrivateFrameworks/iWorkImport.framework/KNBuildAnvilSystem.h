@@ -5,6 +5,6 @@
 @interface KNBuildAnvilSystem : TSDGLParticleSystem {
 }
 
-- (double)p_anvilGlobalScale;
+- (float)p_anvilGlobalScale;
 
 @end

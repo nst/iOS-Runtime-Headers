@@ -9,15 +9,15 @@
 }
 
 @property(readonly) NSURL * URL;
-@property(readonly) long long height;
+@property(readonly) int height;
 @property(readonly) NSDictionary * lookupDictionary;
-@property(readonly) long long width;
+@property(readonly) int width;
 
 - (id)URL;
 - (void)dealloc;
-- (long long)height;
+- (int)height;
 - (id)initWithLookupDictionary:(id)arg1;
 - (id)lookupDictionary;
-- (long long)width;
+- (int)width;
 
 @end

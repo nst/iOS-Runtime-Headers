@@ -5,25 +5,25 @@
 @class UIColor;
 
 @interface PSSegmentableSlider : UISlider {
-    unsigned long long _segmentCount;
+    unsigned int _segmentCount;
+    BOOL _segmented;
     UIColor *_trackMarkersColor;
-    bool_segmented;
 }
 
-@property unsigned long long segmentCount;
-@property(getter=isSegmented) bool segmented;
+@property unsigned int segmentCount;
+@property(getter=isSegmented) BOOL segmented;
 
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isSegmented;
-- (unsigned long long)numberOfTicks;
-- (float)offsetBetweenTicksForNumberOfTicks:(unsigned long long)arg1;
-- (unsigned long long)segmentCount;
-- (void)setSegmentCount:(unsigned long long)arg1;
-- (void)setSegmented:(bool)arg1;
-- (void)setValue:(float)arg1 animated:(bool)arg2;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isSegmented;
+- (unsigned int)numberOfTicks;
+- (float)offsetBetweenTicksForNumberOfTicks:(unsigned int)arg1;
+- (unsigned int)segmentCount;
+- (void)setSegmentCount:(unsigned int)arg1;
+- (void)setSegmented:(BOOL)arg1;
+- (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (void)sliderTapped:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

@@ -8,17 +8,17 @@
     CLIntersiloInterface *_inboundInterface;
     CLIntersiloInterface *_outboundInterface;
     CLSilo *_silo;
-    bool_valid;
+    BOOL _valid;
 }
 
 @property(readonly) CLIntersiloInterface * inboundInterface;
 @property(readonly) CLIntersiloInterface * outboundInterface;
 @property(readonly) CLSilo * silo;
-@property bool valid;
+@property BOOL valid;
 
 + (void)becameFatallyBlocked:(id)arg1;
 + (id)getSilo;
-+ (bool)isSupported;
++ (BOOL)isSupported;
 
 - (void).cxx_destruct;
 - (id)debugDescription;
@@ -26,10 +26,10 @@
 - (id)init;
 - (id)initInSilo:(id)arg1;
 - (id)initWithInboundProtocol:(id)arg1 outboundProtocol:(id)arg2 andSilo:(id)arg3;
-- (bool)isHydrated;
+- (BOOL)isHydrated;
 - (id)outboundInterface;
-- (void)setValid:(bool)arg1;
+- (void)setValid:(BOOL)arg1;
 - (id)silo;
-- (bool)valid;
+- (BOOL)valid;
 
 @end

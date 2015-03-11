@@ -3,44 +3,44 @@
  */
 
 @interface TUCallModel : NSObject {
+    BOOL _addCallAllowed;
     int _ambiguityState;
-    bool_addCallAllowed;
-    bool_ambiguous;
-    bool_endAndAnswerAllowed;
-    bool_hardPauseAvailable;
-    bool_holdAllowed;
-    bool_holdAndAnswerAllowed;
-    bool_mergeable;
-    bool_sendToVoicemailAllowed;
-    bool_swappable;
-    bool_takingCallsPrivateAllowed;
+    BOOL _ambiguous;
+    BOOL _endAndAnswerAllowed;
+    BOOL _hardPauseAvailable;
+    BOOL _holdAllowed;
+    BOOL _holdAndAnswerAllowed;
+    BOOL _mergeable;
+    BOOL _sendToVoicemailAllowed;
+    BOOL _swappable;
+    BOOL _takingCallsPrivateAllowed;
 }
 
-@property(getter=isAddCallAllowed,readonly) bool addCallAllowed;
+@property(getter=isAddCallAllowed,readonly) BOOL addCallAllowed;
 @property(readonly) int ambiguityState;
-@property(getter=isAmbiguous,readonly) bool ambiguous;
-@property(getter=isEndAndAnswerAllowed,readonly) bool endAndAnswerAllowed;
-@property(getter=isHardPauseAvailable,readonly) bool hardPauseAvailable;
-@property(getter=isHoldAllowed,readonly) bool holdAllowed;
-@property(getter=isHoldAndAnswerAllowed,readonly) bool holdAndAnswerAllowed;
-@property(getter=isMergeable,readonly) bool mergeable;
-@property(getter=isSendToVoicemailAllowed,readonly) bool sendToVoicemailAllowed;
-@property(getter=isSwappable,readonly) bool swappable;
-@property(getter=isTakingCallsPrivateAllowed,readonly) bool takingCallsPrivateAllowed;
+@property(getter=isAmbiguous,readonly) BOOL ambiguous;
+@property(getter=isEndAndAnswerAllowed,readonly) BOOL endAndAnswerAllowed;
+@property(getter=isHardPauseAvailable,readonly) BOOL hardPauseAvailable;
+@property(getter=isHoldAllowed,readonly) BOOL holdAllowed;
+@property(getter=isHoldAndAnswerAllowed,readonly) BOOL holdAndAnswerAllowed;
+@property(getter=isMergeable,readonly) BOOL mergeable;
+@property(getter=isSendToVoicemailAllowed,readonly) BOOL sendToVoicemailAllowed;
+@property(getter=isSwappable,readonly) BOOL swappable;
+@property(getter=isTakingCallsPrivateAllowed,readonly) BOOL takingCallsPrivateAllowed;
 
 + (id)sharedInstance;
 
 - (int)ambiguityState;
 - (id)description;
-- (bool)isAddCallAllowed;
-- (bool)isAmbiguous;
-- (bool)isEndAndAnswerAllowed;
-- (bool)isHardPauseAvailable;
-- (bool)isHoldAllowed;
-- (bool)isHoldAndAnswerAllowed;
-- (bool)isMergeable;
-- (bool)isSendToVoicemailAllowed;
-- (bool)isSwappable;
-- (bool)isTakingCallsPrivateAllowed;
+- (BOOL)isAddCallAllowed;
+- (BOOL)isAmbiguous;
+- (BOOL)isEndAndAnswerAllowed;
+- (BOOL)isHardPauseAvailable;
+- (BOOL)isHoldAllowed;
+- (BOOL)isHoldAndAnswerAllowed;
+- (BOOL)isMergeable;
+- (BOOL)isSendToVoicemailAllowed;
+- (BOOL)isSwappable;
+- (BOOL)isTakingCallsPrivateAllowed;
 
 @end

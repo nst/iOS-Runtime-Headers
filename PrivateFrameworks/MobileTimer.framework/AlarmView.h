@@ -15,7 +15,7 @@
     NSString *_repeatText;
     UILabel *_secondaryDesignatorLabel;
     UIView *_singleStyleDetailContainer;
-    long long _style;
+    int _style;
     DigitalClockLabel *_timeLabel;
 }
 
@@ -23,7 +23,7 @@
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) UILabel * detailLabel;
 @property(readonly) UISwitch * enabledSwitch;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * name;
 @property(retain) UIFont * nameFont;
 @property(retain,readonly) UILabel * nameLabel;
@@ -31,7 +31,7 @@
 @property(retain,readonly) UILabel * repeatLabel;
 @property(copy) NSString * repeatText;
 @property(retain,readonly) UILabel * secondaryDesignatorLabel;
-@property long long style;
+@property int style;
 @property(readonly) Class superclass;
 @property(readonly) DigitalClockLabel * timeLabel;
 
@@ -39,7 +39,7 @@
 - (void)dealloc;
 - (id)detailLabel;
 - (id)enabledSwitch;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)name;
 - (id)nameFont;
@@ -53,8 +53,8 @@
 - (void)setNameFont:(id)arg1;
 - (void)setRepeatFont:(id)arg1;
 - (void)setRepeatText:(id)arg1;
-- (void)setStyle:(long long)arg1;
-- (long long)style;
+- (void)setStyle:(int)arg1;
+- (int)style;
 - (id)timeLabel;
 
 @end

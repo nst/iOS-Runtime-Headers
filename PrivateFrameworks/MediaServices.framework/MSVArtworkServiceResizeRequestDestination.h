@@ -6,27 +6,27 @@
 
 @interface MSVArtworkServiceResizeRequestDestination : NSObject <NSSecureCoding> {
     struct CGSize { 
-        double width; 
-        double height; 
-    double _destinationCompressionQuality;
+        float width; 
+        float height; 
+    float _destinationCompressionQuality;
     } _destinationSize;
     NSURL *_destinationURL;
 }
 
-@property(readonly) double destinationCompressionQuality;
-@property(readonly) struct CGSize { double x1; double x2; } destinationSize;
+@property(readonly) float destinationCompressionQuality;
+@property(readonly) struct CGSize { float x1; float x2; } destinationSize;
 @property(readonly) NSURL * destinationURL;
 
-+ (id)destinationWithSize:(struct CGSize { double x1; double x2; })arg1 compressionQuality:(double)arg2 url:(id)arg3;
-+ (bool)supportsSecureCoding;
++ (id)destinationWithSize:(struct CGSize { float x1; float x2; })arg1 compressionQuality:(float)arg2 url:(id)arg3;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
-- (double)destinationCompressionQuality;
-- (struct CGSize { double x1; double x2; })destinationSize;
+- (float)destinationCompressionQuality;
+- (struct CGSize { float x1; float x2; })destinationSize;
 - (id)destinationURL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDestinationSize:(struct CGSize { double x1; double x2; })arg1 destinationCompressionQuality:(double)arg2 destinationURL:(id)arg3;
+- (id)initWithDestinationSize:(struct CGSize { float x1; float x2; })arg1 destinationCompressionQuality:(float)arg2 destinationURL:(id)arg3;
 
 @end

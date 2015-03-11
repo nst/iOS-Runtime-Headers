@@ -28,8 +28,8 @@
 @property(retain) BRFieldCKInfo * ckInfo;
 @property(retain) NSSet * conflictLoserEtags;
 @property(retain) NSData * contentSignature;
-@property(readonly) bool hasThumbnail;
-@property(readonly) bool isPackage;
+@property(readonly) BOOL hasThumbnail;
+@property(readonly) BOOL isPackage;
 @property(retain) NSNumber * lastEditorDeviceKey;
 @property(retain) NSString * lastEditorDeviceName;
 @property(retain) NSData * lazyXattr;
@@ -41,26 +41,26 @@
 @property long long thumbnailSize;
 @property(retain) NSData * xattrSignature;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)additionNameForItemID:(id)arg1 container:(id)arg2;
-- (bool)check:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
+- (BOOL)check:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
 - (id)ckInfo;
 - (id)conflictLoserEtags;
 - (id)contentSignature;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptionWithContext:(id)arg1;
-- (unsigned long long)diffAgainst:(id)arg1 lastEditorChanged:(bool*)arg2;
+- (unsigned long long)diffAgainst:(id)arg1 lastEditorChanged:(BOOL*)arg2;
 - (unsigned long long)diffAgainst:(id)arg1;
-- (id)displayNameWithoutExtension:(bool)arg1;
+- (id)displayNameWithoutExtension:(BOOL)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)hasThumbnail;
+- (BOOL)hasThumbnail;
 - (id)initFromResultSet:(id)arg1 pos:(int)arg2 container:(id)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithVersion:(id)arg1;
-- (bool)isPackage;
+- (BOOL)isPackage;
 - (id)lastEditorDeviceKey;
 - (id)lastEditorDeviceName;
 - (id)lastEditorDeviceNameWithDB:(id)arg1;

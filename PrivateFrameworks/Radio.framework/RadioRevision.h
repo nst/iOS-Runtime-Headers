@@ -6,13 +6,13 @@
 }
 
 @property long long revisionID;
-@property long long revisionType;
+@property int revisionType;
 @property long long stationID;
 
 - (long long)revisionID;
-- (long long)revisionType;
+- (int)revisionType;
 - (void)setRevisionID:(long long)arg1;
-- (void)setRevisionType:(long long)arg1;
+- (void)setRevisionType:(int)arg1;
 - (void)setStationID:(long long)arg1;
 - (long long)stationID;
 

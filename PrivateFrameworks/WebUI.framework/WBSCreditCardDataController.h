@@ -10,7 +10,7 @@
 
 @property(readonly) NSArray * creditCardData;
 
-+ (bool)hasCreditCardData;
++ (BOOL)hasCreditCardData;
 
 - (void).cxx_destruct;
 - (id)_neverSavedCreditCardSuffixFromCard:(id)arg1;
@@ -20,18 +20,18 @@
 - (void)clearCreditCardData;
 - (id)creditCardData;
 - (void)creditCardDataDidChange;
-- (id)defaultNameForCardOfType:(unsigned long long)arg1 cardholderName:(id)arg2;
+- (id)defaultNameForCardOfType:(unsigned int)arg1 cardholderName:(id)arg2;
 - (id)existingCardWithNumber:(id)arg1;
 - (id)init;
 - (void)invalidateCreditCardData;
-- (bool)isCreditCardDataSaved:(id)arg1;
+- (BOOL)isCreditCardDataSaved:(id)arg1;
 - (void)neverSaveCreditCardData:(id)arg1;
 - (void)removeCreditCardData:(id)arg1;
 - (void)replaceCreditCardData:(id)arg1 withCard:(id)arg2;
 - (id)savableCreditCardDataInForm:(id)arg1;
 - (void)saveCreditCardData:(id)arg1;
 - (void)saveCreditCardDataIfAllowed:(id)arg1;
-- (bool)shouldAddCardWithNumber:(id)arg1;
-- (bool)shouldNeverSaveCardWithNumber:(id)arg1;
+- (BOOL)shouldAddCardWithNumber:(id)arg1;
+- (BOOL)shouldNeverSaveCardWithNumber:(id)arg1;
 
 @end

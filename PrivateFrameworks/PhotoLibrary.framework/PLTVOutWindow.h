@@ -9,10 +9,10 @@
     UIView *_videoView;
 }
 
-- (bool)_setupTargetScreen:(id)arg1;
+- (BOOL)_setupTargetScreen:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (bool)setVideoView:(id)arg1;
+- (BOOL)setVideoView:(id)arg1;
 - (id)videoView;
 
 @end

@@ -3,18 +3,18 @@
  */
 
 @interface BLTSectionConfigurationItem : NSObject {
-    bool_optOutOfAttachmentTransmission;
-    bool_optOutOfCoordination;
+    BOOL _optOutOfAttachmentTransmission;
+    BOOL _optOutOfCoordination;
 }
 
-@property bool optOutOfAttachmentTransmission;
-@property bool optOutOfCoordination;
+@property BOOL optOutOfAttachmentTransmission;
+@property BOOL optOutOfCoordination;
 
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
-- (bool)optOutOfAttachmentTransmission;
-- (bool)optOutOfCoordination;
-- (void)setOptOutOfAttachmentTransmission:(bool)arg1;
-- (void)setOptOutOfCoordination:(bool)arg1;
+- (BOOL)optOutOfAttachmentTransmission;
+- (BOOL)optOutOfCoordination;
+- (void)setOptOutOfAttachmentTransmission:(BOOL)arg1;
+- (void)setOptOutOfCoordination:(BOOL)arg1;
 
 @end

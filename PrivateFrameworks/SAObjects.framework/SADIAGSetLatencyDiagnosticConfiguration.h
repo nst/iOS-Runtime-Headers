@@ -15,7 +15,7 @@
 - (id)diagnosticActions;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setDiagnosticActions:(id)arg1;
 
 @end

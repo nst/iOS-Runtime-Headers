@@ -7,19 +7,19 @@
 @interface FUAchievementView : UIView {
     HKAchievement *_achievement;
     UIImageView *_iconView;
-    long long _sizeClass;
+    int _sizeClass;
 }
 
 @property(retain) HKAchievement * achievement;
-@property long long sizeClass;
+@property int sizeClass;
 
 - (void).cxx_destruct;
 - (id)achievement;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setAchievement:(id)arg1;
-- (void)setSizeClass:(long long)arg1;
-- (long long)sizeClass;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSizeClass:(int)arg1;
+- (int)sizeClass;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

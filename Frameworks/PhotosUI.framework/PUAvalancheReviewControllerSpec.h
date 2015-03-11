@@ -3,19 +3,19 @@
  */
 
 @interface PUAvalancheReviewControllerSpec : NSObject {
-    double _interItemSpacing;
+    float _interItemSpacing;
 }
 
-@property(readonly) double interItemSpacing;
-@property(readonly) unsigned long long selectionBadgeCorner;
-@property(readonly) struct UIOffset { double x1; double x2; } selectionBadgeOffset;
-@property(readonly) struct CGSize { double x1; double x2; } selectionBadgeSize;
+@property(readonly) float interItemSpacing;
+@property(readonly) unsigned int selectionBadgeCorner;
+@property(readonly) struct UIOffset { float x1; float x2; } selectionBadgeOffset;
+@property(readonly) struct CGSize { float x1; float x2; } selectionBadgeSize;
 
-- (bool)allowsInterfaceRotation;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionViewLayoutContentInsetForOrientation:(long long)arg1;
-- (double)interItemSpacing;
-- (unsigned long long)selectionBadgeCorner;
-- (struct UIOffset { double x1; double x2; })selectionBadgeOffset;
-- (struct CGSize { double x1; double x2; })selectionBadgeSize;
+- (BOOL)allowsInterfaceRotation;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewLayoutContentInsetForOrientation:(int)arg1;
+- (float)interItemSpacing;
+- (unsigned int)selectionBadgeCorner;
+- (struct UIOffset { float x1; float x2; })selectionBadgeOffset;
+- (struct CGSize { float x1; float x2; })selectionBadgeSize;
 
 @end

@@ -7,9 +7,15 @@
 @interface MFNetworkController : NSObject <RadiosPreferencesDelegate> {
     NSMutableSet *_backgroundWifiClients;
     NSMutableSet *_calls;
+    BOOL _data;
     NSString *_dataIndicator;
+    BOOL _dns;
     unsigned int _flags;
-    int _interface;
+    BOOL _hasCellDataCapability;
+    BOOL _hasWiFiCapability;
+    long _interface;
+    BOOL _isRoamingAllowed;
+    BOOL _isWiFiEnabled;
     NSLock *_lock;
     NSMutableArray *_observers;
     NSObject<OS_dispatch_queue> *_prefsQueue;
@@ -22,12 +28,6 @@
     NSThread *_thread;
     struct __SCPreferences { } *_wiFiPreferences;
     void *_wifiManager;
-    bool_data;
-    bool_dns;
-    bool_hasCellDataCapability;
-    bool_hasWiFiCapability;
-    bool_isRoamingAllowed;
-    bool_isWiFiEnabled;
 }
 
 @property void* wifiManager;
@@ -39,13 +39,13 @@
 - (void)_handleNotification:(id)arg1 info:(id)arg2 forConnection:(struct __CTServerConnection { }*)arg3;
 - (void)_handleWiFiNotification:(unsigned int)arg1;
 - (void)_inititializeWifiManager;
-- (bool)_isNetworkUp_nts;
+- (BOOL)_isNetworkUp_nts;
 - (id)_networkAssertionWithIdentifier:(id)arg1;
 - (struct { int x1; int x2; })_pollDataAndCallStatus_nts;
 - (void)_setDataStatus_nts:(id)arg1;
 - (void)_setFlags:(unsigned int)arg1 forReachability:(struct __SCNetworkReachability { }*)arg2;
 - (void)_setUpTelephony_nts;
-- (bool)_simulationOverrideForType:(unsigned long long)arg1 actualValue:(bool)arg2;
+- (BOOL)_simulationOverrideForType:(unsigned int)arg1 actualValue:(BOOL)arg2;
 - (void)_tearDownTelephony_nts;
 - (void)_updateWifiClientType;
 - (void)addBackgroundWifiClient:(id)arg1;
@@ -54,15 +54,15 @@
 - (id)copyDiagnosticInformation;
 - (int)dataStatus;
 - (void)dealloc;
-- (bool)inAirplaneMode;
+- (BOOL)inAirplaneMode;
 - (id)init;
 - (void)invalidate;
-- (bool)is3GConnection;
-- (bool)is4GConnection;
-- (bool)isDataAvailable;
-- (bool)isFatPipe;
-- (bool)isNetworkUp;
-- (bool)isOnWWAN;
+- (BOOL)is3GConnection;
+- (BOOL)is4GConnection;
+- (BOOL)isDataAvailable;
+- (BOOL)isFatPipe;
+- (BOOL)isNetworkUp;
+- (BOOL)isOnWWAN;
 - (void)removeBackgroundWifiClient:(id)arg1;
 - (void)removeNetworkObserver:(id)arg1;
 - (void)setWifiManager:(void*)arg1;

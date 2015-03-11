@@ -7,36 +7,36 @@
 @interface UICalloutBarBackground : _UIBackdropView {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     UIImageView *_blurMaskView;
     } _highlightRect;
     _UIBackdropView *_separatorView;
     UIImageView *_tintMaskView;
-    double m_dividerOffsets[24];
+    float m_dividerOffsets[24];
 }
 
 @property(retain) UIImageView * blurMaskView;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } highlightRect;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } highlightRect;
 @property(retain) _UIBackdropView * separatorView;
 @property(retain) UIImageView * tintMaskView;
 
 - (id)blurMaskView;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })highlightRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })highlightRect;
 - (id)init;
 - (void)layoutSubviews;
 - (id)separatorView;
-- (void)setBlurDisabled:(bool)arg1;
+- (void)setBlurDisabled:(BOOL)arg1;
 - (void)setBlurMaskView:(id)arg1;
-- (void)setDividerOffsets:(double*)arg1;
-- (void)setHighlightRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setHighlighted:(bool)arg1 forFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)setDividerOffsets:(float*)arg1;
+- (void)setHighlightRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHighlighted:(BOOL)arg1 forFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setSeparatorView:(id)arg1;
 - (void)setTintMaskView:(id)arg1;
 - (id)tintMaskView;

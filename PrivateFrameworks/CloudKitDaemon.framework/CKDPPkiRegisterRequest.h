@@ -10,8 +10,8 @@
 }
 
 @property(retain) NSString * currentKeyHash;
-@property(readonly) bool hasCurrentKeyHash;
-@property(readonly) bool hasPublicKey;
+@property(readonly) BOOL hasCurrentKeyHash;
+@property(readonly) BOOL hasPublicKey;
 @property(retain) CKDPPublicKey * publicKey;
 
 + (id)options;
@@ -22,13 +22,13 @@
 - (id)currentKeyHash;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCurrentKeyHash;
-- (bool)hasPublicKey;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCurrentKeyHash;
+- (BOOL)hasPublicKey;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)publicKey;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCurrentKeyHash:(id)arg1;
 - (void)setPublicKey:(id)arg1;
 - (void)writeTo:(id)arg1;

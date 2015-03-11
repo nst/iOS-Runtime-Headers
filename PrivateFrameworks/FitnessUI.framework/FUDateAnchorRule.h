@@ -3,20 +3,20 @@
  */
 
 @interface FUDateAnchorRule : NSObject {
-    unsigned long long _calendarUnit;
-    long long _roundingValue;
+    unsigned int _calendarUnit;
+    int _roundingValue;
 }
 
-@property unsigned long long calendarUnit;
-@property long long roundingValue;
+@property unsigned int calendarUnit;
+@property int roundingValue;
 
 - (id)_anchorDiffComponents;
-- (bool)_componentsSuccessful:(id)arg1;
+- (BOOL)_componentsSuccessful:(id)arg1;
 - (id)_floorDate:(id)arg1;
-- (unsigned long long)calendarUnit;
+- (unsigned int)calendarUnit;
 - (id)generateAnchorFromDate:(id)arg1;
-- (long long)roundingValue;
-- (void)setCalendarUnit:(unsigned long long)arg1;
-- (void)setRoundingValue:(long long)arg1;
+- (int)roundingValue;
+- (void)setCalendarUnit:(unsigned int)arg1;
+- (void)setRoundingValue:(int)arg1;
 
 @end

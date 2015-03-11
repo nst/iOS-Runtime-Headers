@@ -14,14 +14,14 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)completeOperation:(id)arg1 withError:(id)arg2;
 - (void)consumeScenario:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1;
-- (unsigned long long)operationsBacklogLimit;
+- (unsigned int)operationsBacklogLimit;
 - (void)reporioritizeBacklogOperations;
 - (void)runNextOperation;
 

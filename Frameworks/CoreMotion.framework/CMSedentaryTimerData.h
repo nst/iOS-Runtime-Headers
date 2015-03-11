@@ -5,27 +5,27 @@
 @class NSDate;
 
 @interface CMSedentaryTimerData : NSObject <NSSecureCoding, NSCopying> {
-    boolfDidWake;
-    long long fAlarmType;
+    int fAlarmType;
+    BOOL fDidWake;
     double fFiredDate;
     double fStartDate;
 }
 
-@property(readonly) long long alarmType;
-@property(readonly) bool didWake;
+@property(readonly) int alarmType;
+@property(readonly) BOOL didWake;
 @property(readonly) NSDate * firedDate;
 @property(readonly) NSDate * startDate;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (long long)alarmType;
+- (int)alarmType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (bool)didWake;
+- (BOOL)didWake;
 - (void)encodeWithCoder:(id)arg1;
 - (id)firedDate;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartDate:(double)arg1 firedDate:(double)arg2 alarmType:(long long)arg3 didWake:(bool)arg4;
+- (id)initWithStartDate:(double)arg1 firedDate:(double)arg2 alarmType:(int)arg3 didWake:(BOOL)arg4;
 - (id)startDate;
 
 @end

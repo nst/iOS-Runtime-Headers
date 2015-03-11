@@ -5,19 +5,19 @@
 @class NSArray;
 
 @interface AFSetSettingsRequest : AFSiriRequest {
+    BOOL _applyChanges;
     NSArray *_settings;
-    bool_applyChanges;
 }
 
-@property bool applyChanges;
+@property BOOL applyChanges;
 @property(copy) NSArray * settings;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_setApplyChanges:(bool)arg1;
+- (void)_setApplyChanges:(BOOL)arg1;
 - (void)_setSettings:(id)arg1;
-- (bool)applyChanges;
+- (BOOL)applyChanges;
 - (id)createResponse;
 - (id)createResponseWithSettingChanges:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

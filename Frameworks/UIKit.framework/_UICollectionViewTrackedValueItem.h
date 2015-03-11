@@ -4,15 +4,15 @@
 
 @interface _UICollectionViewTrackedValueItem : NSObject {
     double _timeStamp;
-    double _value;
+    float _value;
 }
 
 @property double timeStamp;
-@property double value;
+@property float value;
 
 - (void)setTimeStamp:(double)arg1;
-- (void)setValue:(double)arg1;
+- (void)setValue:(float)arg1;
 - (double)timeStamp;
-- (double)value;
+- (float)value;
 
 @end

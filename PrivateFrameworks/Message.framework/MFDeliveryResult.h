@@ -3,25 +3,25 @@
  */
 
 @interface MFDeliveryResult : NSObject {
-    unsigned long long _bytesSent;
+    unsigned int _bytesSent;
     double _duration;
+    BOOL _isWifi;
     int _status;
-    bool_isWifi;
 }
 
-@property unsigned long long bytesSent;
+@property unsigned int bytesSent;
 @property double duration;
-@property bool isWifi;
+@property BOOL isWifi;
 @property int status;
 
-- (unsigned long long)bytesSent;
+- (unsigned int)bytesSent;
 - (id)description;
 - (double)duration;
 - (id)initWithStatus:(int)arg1;
-- (bool)isWifi;
-- (void)setBytesSent:(unsigned long long)arg1;
+- (BOOL)isWifi;
+- (void)setBytesSent:(unsigned int)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setIsWifi:(bool)arg1;
+- (void)setIsWifi:(BOOL)arg1;
 - (void)setStatus:(int)arg1;
 - (int)status;
 

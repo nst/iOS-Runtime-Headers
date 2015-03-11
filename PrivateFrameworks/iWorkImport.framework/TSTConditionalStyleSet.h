@@ -9,18 +9,18 @@
 }
 
 - (id)copyByOffsettingRelativeReferencesWithColumnOffset:(short)arg1 rowOffset:(int)arg2;
-- (id)copyByRemappingFormulaIDsWithMap:(struct __CFDictionary { }*)arg1 calcEngine:(id)arg2 error:(bool*)arg3;
+- (id)copyByRemappingFormulaIDsWithMap:(struct __CFDictionary { }*)arg1 calcEngine:(id)arg2 error:(BOOL*)arg3;
 - (id)copyByRewritingWithSpec:(id)arg1 inOwner:(id)arg2 inCellCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithConditionalStyleSet:(id)arg1;
 - (id)initWithContext:(id)arg1 rules:(id)arg2;
-- (bool)isEqual:(id)arg1;
-- (id)ruleAtIndex:(unsigned long long)arg1;
-- (unsigned long long)ruleCount;
+- (BOOL)isEqual:(id)arg1;
+- (id)ruleAtIndex:(unsigned int)arg1;
+- (unsigned int)ruleCount;
 - (id)rules;
 - (void)saveToArchiver:(id)arg1;
 

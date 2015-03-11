@@ -18,7 +18,7 @@
 - (void)addKeyPathPrefix:(id)arg1;
 - (id)conditionKeyPath;
 - (id)conditionPredicate;
-- (bool)evaluateWithSettings:(id)arg1;
+- (BOOL)evaluateWithSettings:(id)arg1;
 - (void)setConditionKeyPath:(id)arg1;
 - (void)setConditionPredicate:(id)arg1;
 

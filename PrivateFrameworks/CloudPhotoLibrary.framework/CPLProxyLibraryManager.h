@@ -6,22 +6,22 @@
 
 @interface CPLProxyLibraryManager : CPLPlatformObject <CPLClientLibraryManagerProtocol, NSXPCConnectionDelegate, CPLLibraryManagerImplementation> {
     NSXPCConnection *_connection;
+    BOOL _diagnosticsEnabled;
     NSCountedSet *_disablingReasons;
     NSMutableDictionary *_downloadTasks;
-    unsigned long long _foregroundCalls;
+    unsigned int _foregroundCalls;
     int _notifyToken;
     int _openingStatus;
     NSMutableDictionary *_outstandingInvocations;
-    unsigned long long _outstandingInvocationsCount;
+    unsigned int _outstandingInvocationsCount;
     NSMutableArray *_pendingBlocksAfterOpening;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_uploadTasks;
-    bool_diagnosticsEnabled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
 @property(readonly) Class superclass;
 
@@ -30,25 +30,25 @@
 
 - (void).cxx_destruct;
 - (void)_dispatchBlockWhenOpen:(id)arg1;
-- (void)_dispatchFailedDownloadTaskForResource:(id)arg1 highPriority:(bool)arg2 withError:(id)arg3 withCompletionHandler:(id)arg4;
+- (void)_dispatchFailedDownloadTaskForResource:(id)arg1 highPriority:(BOOL)arg2 withError:(id)arg3 withCompletionHandler:(id)arg4;
 - (void)_invokeOutstandingInvocationsWithTaskIdentifier:(id)arg1;
 - (void)_reallyOpenWithCompletionHandler:(id)arg1;
-- (bool)_setStatusFromDictionary:(id)arg1;
+- (BOOL)_setStatusFromDictionary:(id)arg1;
 - (id)_uploadTaskDidStartForResource:(id)arg1 withTaskIdentifier:(id)arg2;
 - (void)addInfoToLog:(id)arg1;
 - (void)backgroundDownloadDidFailForResource:(id)arg1;
 - (void)backgroundDownloadDidFinishForResource:(id)arg1;
 - (void)barrier;
-- (void)beginDownloadForResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(bool)arg3 completionHandler:(id)arg4;
+- (void)beginDownloadForResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(BOOL)arg3 completionHandler:(id)arg4;
 - (void)cancelTask:(id)arg1;
 - (void)closeWithCompletionHandler:(id)arg1;
-- (void)cloudCacheGetDescriptionForRecordWithIdentifier:(id)arg1 related:(bool)arg2 completionHandler:(id)arg3;
+- (void)cloudCacheGetDescriptionForRecordWithIdentifier:(id)arg1 related:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)compactFileCacheWithCompletionHandler:(id)arg1;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (void)deactivateWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (void)deleteResourcesIfSafe:(id)arg1 completionHandler:(id)arg2;
-- (bool)diagnosticsEnabled;
+- (BOOL)diagnosticsEnabled;
 - (void)disableSynchronizationWithReason:(id)arg1;
 - (void)dispatchBlockWhenLibraryIsOpen:(id)arg1;
 - (void)downloadDidFinishForResourceTransferTask:(id)arg1 finalResource:(id)arg2 withError:(id)arg3;
@@ -57,12 +57,12 @@
 - (void)downloadOriginalsOfType:(id)arg1 localIdentifiers:(id)arg2 destinationURL:(id)arg3 progressIdentifier:(id)arg4 completionHandler:(id)arg5;
 - (void)enableSynchronizationWithReason:(id)arg1;
 - (void)getListOfComponentsWithCompletionHandler:(id)arg1;
-- (void)getMappedIdentifiersForIdentifiers:(id)arg1 inAreLocalIdentifiers:(bool)arg2 completionHandler:(id)arg3;
+- (void)getMappedIdentifiersForIdentifiers:(id)arg1 inAreLocalIdentifiers:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)getResourcesForItemWithIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (void)getStatusArrayForComponents:(id)arg1 completionHandler:(id)arg2;
 - (void)getStatusForComponents:(id)arg1 completionHandler:(id)arg2;
 - (id)initWithAbstractObject:(id)arg1;
-- (void)libraryManagerDidUpdateSizeOfResourcesToUploadToSize:(unsigned long long)arg1 numberOfImages:(unsigned long long)arg2 numberOfVideos:(unsigned long long)arg3 numberOfOtherItems:(unsigned long long)arg4;
+- (void)libraryManagerDidUpdateSizeOfResourcesToUploadToSize:(unsigned long long)arg1 numberOfImages:(unsigned int)arg2 numberOfVideos:(unsigned int)arg3 numberOfOtherItems:(unsigned int)arg4;
 - (void)libraryManagerDidUpdateStatusWithProperties:(id)arg1;
 - (void)libraryManagerHasChangesToPull;
 - (void)noteClientIsInBackground;
@@ -73,9 +73,9 @@
 - (void)publishResource:(id)arg1 completionHandler:(id)arg2;
 - (id)queue;
 - (void)removeCloudLibraryWithCompletionHandler:(id)arg1;
-- (void)resetCacheWithOption:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (void)resetCacheWithOption:(unsigned int)arg1 completionHandler:(id)arg2;
 - (void)resetStatus;
-- (void)setDiagnosticsEnabled:(bool)arg1;
+- (void)setDiagnosticsEnabled:(BOOL)arg1;
 - (void)startSyncSession;
 - (void)takeStatisticsSnapshotSinceDate:(id)arg1 completionHandler:(id)arg2;
 - (void)uploadDidStartForResource:(id)arg1 withResourceTransferTask:(id)arg2;

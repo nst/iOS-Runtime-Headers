@@ -6,20 +6,20 @@
 
 @interface _HKAnchoredObjectQueryServerDataObject : _HKQueryServerDataObject {
     NSNumber *_anchor;
-    unsigned long long _limit;
+    unsigned int _limit;
 }
 
 @property(retain) NSNumber * anchor;
-@property unsigned long long limit;
+@property unsigned int limit;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)anchor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)limit;
+- (unsigned int)limit;
 - (void)setAnchor:(id)arg1;
-- (void)setLimit:(unsigned long long)arg1;
+- (void)setLimit:(unsigned int)arg1;
 
 @end

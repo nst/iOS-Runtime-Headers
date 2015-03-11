@@ -9,7 +9,7 @@
     AFCity *_city;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithAttributes:(id)arg1 city:(id)arg2;

@@ -17,10 +17,10 @@
 
 - (id)cachedObjectEnumerable;
 - (id)cachedObjects;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
-- (bool)hasCachedObjectForKey:(id)arg1;
+- (BOOL)hasCachedObjectForKey:(id)arg1;
 - (id)initWithMappingBlock:(id)arg1;
 - (id)keyEnumerable;
 - (id)keys;

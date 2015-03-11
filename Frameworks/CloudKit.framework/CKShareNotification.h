@@ -7,14 +7,14 @@
 @interface CKShareNotification : CKNotification <NSSecureCoding> {
     CKDiscoveredUserInfo *_participantInfo;
     CKShareID *_shareID;
-    long long _shareNotificationReason;
+    int _shareNotificationReason;
 }
 
 @property(copy) CKDiscoveredUserInfo * participantInfo;
 @property(copy) CKShareID * shareID;
-@property long long shareNotificationReason;
+@property int shareNotificationReason;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -25,8 +25,8 @@
 - (id)participantInfo;
 - (void)setParticipantInfo:(id)arg1;
 - (void)setShareID:(id)arg1;
-- (void)setShareNotificationReason:(long long)arg1;
+- (void)setShareNotificationReason:(int)arg1;
 - (id)shareID;
-- (long long)shareNotificationReason;
+- (int)shareNotificationReason;
 
 @end

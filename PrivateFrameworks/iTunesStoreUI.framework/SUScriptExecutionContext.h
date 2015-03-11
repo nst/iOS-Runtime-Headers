@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) struct OpaqueJSContext { }* globalExecutionContext;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly) id windowScriptObject;
 
@@ -21,7 +21,7 @@
 - (id)_webView;
 - (void)callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
 - (void)dealloc;
-- (bool)evaluateData:(id)arg1 MIMEType:(id)arg2 textEncodingName:(id)arg3 baseURL:(id)arg4;
+- (BOOL)evaluateData:(id)arg1 MIMEType:(id)arg2 textEncodingName:(id)arg3 baseURL:(id)arg4;
 - (void)evaluateScriptAtURL:(id)arg1;
 - (void)evaluateScriptWithURLBagKey:(id)arg1;
 - (struct OpaqueJSContext { }*)globalExecutionContext;

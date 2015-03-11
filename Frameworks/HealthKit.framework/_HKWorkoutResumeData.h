@@ -7,14 +7,14 @@
 @interface _HKWorkoutResumeData : NSObject <NSSecureCoding> {
     NSMutableArray *_gaps;
     NSUUID *_lastUUID;
-    bool_lastUUIDInJournal;
+    BOOL _lastUUIDInJournal;
 }
 
 @property(retain) NSMutableArray * gaps;
 @property(retain) NSUUID * lastUUID;
-@property bool lastUUIDInJournal;
+@property BOOL lastUUIDInJournal;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -23,9 +23,9 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)lastUUID;
-- (bool)lastUUIDInJournal;
+- (BOOL)lastUUIDInJournal;
 - (void)setGaps:(id)arg1;
 - (void)setLastUUID:(id)arg1;
-- (void)setLastUUIDInJournal:(bool)arg1;
+- (void)setLastUUIDInJournal:(BOOL)arg1;
 
 @end

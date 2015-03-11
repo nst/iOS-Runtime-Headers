@@ -9,7 +9,7 @@
 + (id)sharedCalculationEngineConfiguration;
 
 - (id)init;
-- (void)setWarnWhenFormulasReferToEmptyCells:(bool)arg1;
-- (bool)warnWhenFormulasReferToEmptyCells;
+- (void)setWarnWhenFormulasReferToEmptyCells:(BOOL)arg1;
+- (BOOL)warnWhenFormulasReferToEmptyCells;
 
 @end

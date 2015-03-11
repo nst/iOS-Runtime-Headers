@@ -12,17 +12,17 @@
     BLTPBBulletin *_bulletin;
     double _date;
     } _has;
+    BOOL _shouldPlayLightsAndSirens;
     unsigned int _updateType;
-    bool_shouldPlayLightsAndSirens;
 }
 
 @property(retain) BLTPBBulletin * bulletin;
 @property double date;
-@property(readonly) bool hasBulletin;
-@property bool hasDate;
-@property bool hasShouldPlayLightsAndSirens;
-@property bool hasUpdateType;
-@property bool shouldPlayLightsAndSirens;
+@property(readonly) BOOL hasBulletin;
+@property BOOL hasDate;
+@property BOOL hasShouldPlayLightsAndSirens;
+@property BOOL hasUpdateType;
+@property BOOL shouldPlayLightsAndSirens;
 @property unsigned int updateType;
 
 - (void).cxx_destruct;
@@ -32,22 +32,22 @@
 - (double)date;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasBulletin;
-- (bool)hasDate;
-- (bool)hasShouldPlayLightsAndSirens;
-- (bool)hasUpdateType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasBulletin;
+- (BOOL)hasDate;
+- (BOOL)hasShouldPlayLightsAndSirens;
+- (BOOL)hasUpdateType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setBulletin:(id)arg1;
 - (void)setDate:(double)arg1;
-- (void)setHasDate:(bool)arg1;
-- (void)setHasShouldPlayLightsAndSirens:(bool)arg1;
-- (void)setHasUpdateType:(bool)arg1;
-- (void)setShouldPlayLightsAndSirens:(bool)arg1;
+- (void)setHasDate:(BOOL)arg1;
+- (void)setHasShouldPlayLightsAndSirens:(BOOL)arg1;
+- (void)setHasUpdateType:(BOOL)arg1;
+- (void)setShouldPlayLightsAndSirens:(BOOL)arg1;
 - (void)setUpdateType:(unsigned int)arg1;
-- (bool)shouldPlayLightsAndSirens;
+- (BOOL)shouldPlayLightsAndSirens;
 - (unsigned int)updateType;
 - (void)writeTo:(id)arg1;
 

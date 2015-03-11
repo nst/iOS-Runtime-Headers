@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)sharedInstance;
@@ -19,7 +19,7 @@
 - (void)_reconnectObserver;
 - (void)dealloc;
 - (id)init;
-- (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned long long)arg3 playLightsAndSirens:(bool)arg4 withReply:(id)arg5;
-- (void)observer:(id)arg1 noteServerConnectionStateChanged:(bool)arg2;
+- (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 withReply:(id)arg5;
+- (void)observer:(id)arg1 noteServerConnectionStateChanged:(BOOL)arg2;
 
 @end

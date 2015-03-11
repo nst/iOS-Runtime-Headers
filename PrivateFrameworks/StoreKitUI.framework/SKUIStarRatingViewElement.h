@@ -6,21 +6,21 @@
 
 @interface SKUIStarRatingViewElement : SKUIViewElement {
     float _ratingValue;
-    long long _starType;
+    int _starType;
     SKUIViewElementText *_text;
     bool_enabled;
 }
 
 @property(readonly) float ratingValue;
-@property(readonly) long long starType;
+@property(readonly) int starType;
 @property(readonly) SKUIViewElementText * text;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (bool)isEnabled;
+- (BOOL)isEnabled;
 - (float)ratingValue;
-- (long long)starType;
+- (int)starType;
 - (id)text;
 
 @end

@@ -13,26 +13,26 @@
     UICollectionViewLayout *_layout;
 }
 
-@property bool clearsSelectionOnViewWillAppear;
+@property BOOL clearsSelectionOnViewWillAppear;
 @property(retain) UICollectionView * collectionView;
 @property(readonly) UICollectionViewLayout * collectionViewLayout;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
-@property bool useLayoutToLayoutNavigationTransitions;
+@property BOOL useLayoutToLayoutNavigationTransitions;
 
-- (void)__viewWillAppear:(bool)arg1;
-- (id)_animatorForOperation:(long long)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
+- (void)__viewWillAppear:(BOOL)arg1;
+- (id)_animatorForOperation:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
 - (void)_clearSharedView;
-- (id)_newCollectionViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
+- (id)_newCollectionViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
 - (void)_setSharedCollectionView:(id)arg1;
-- (void)_setUseLayoutToLayoutNavigationTransitions:(bool)arg1 withCheck:(bool)arg2;
+- (void)_setUseLayoutToLayoutNavigationTransitions:(BOOL)arg1 withCheck:(BOOL)arg2;
 - (id)_uiCollectionView;
 - (id)_wrappingView;
-- (bool)clearsSelectionOnViewWillAppear;
+- (BOOL)clearsSelectionOnViewWillAppear;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)collectionView;
 - (id)collectionViewLayout;
 - (id)contentScrollView;
@@ -43,13 +43,13 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCollectionViewLayout:(id)arg1;
 - (void)loadView;
-- (void)setClearsSelectionOnViewWillAppear:(bool)arg1;
+- (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
 - (void)setCollectionView:(id)arg1;
-- (void)setUseLayoutToLayoutNavigationTransitions:(bool)arg1;
+- (void)setUseLayoutToLayoutNavigationTransitions:(BOOL)arg1;
 - (void)setView:(id)arg1;
-- (bool)shouldCrossFadeBottomBars;
-- (bool)shouldCrossFadeNavigationBar;
-- (bool)useLayoutToLayoutNavigationTransitions;
+- (BOOL)shouldCrossFadeBottomBars;
+- (BOOL)shouldCrossFadeNavigationBar;
+- (BOOL)useLayoutToLayoutNavigationTransitions;
 - (void)viewWillUnload;
 
 @end

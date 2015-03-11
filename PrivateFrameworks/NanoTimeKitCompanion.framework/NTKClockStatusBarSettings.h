@@ -15,7 +15,7 @@
 - (void)_notifyClientsOfChange;
 - (void)dealloc;
 - (id)init;
-- (bool)isNotificationsIndicatorEnabled;
-- (void)setNotificationsIndicatorEnabled:(bool)arg1;
+- (BOOL)isNotificationsIndicatorEnabled;
+- (void)setNotificationsIndicatorEnabled:(BOOL)arg1;
 
 @end

@@ -6,33 +6,33 @@
 
 @interface RURadioStationsCollectionViewTemplate : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct { 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } baseSize; 
-        boolforcesIntegralX; 
-        boolforcesIntegralY; 
+        BOOL forcesIntegralX; 
+        BOOL forcesIntegralY; 
         struct UIOffset { 
-            double horizontal; 
-            double vertical; 
+            float horizontal; 
+            float vertical; 
         } maximumRelativeOffsetStep; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } sizeInsetStep; 
-        double vanishingPointY; 
+        float vanishingPointY; 
     } _artworkSize;
-    double _horizontalEdgePadding;
-    double _horizontalSpacingBetweenItems;
+    float _horizontalEdgePadding;
+    float _horizontalSpacingBetweenItems;
     } _itemSize;
     NSMutableArray *_orderedNamesOfTextElements;
     } _rootViewSize;
@@ -43,44 +43,44 @@
     UITraitCollection *_traitCollection;
 }
 
-@property(readonly) struct CGSize { double x1; double x2; } artworkSize;
-@property(readonly) double horizontalEdgePadding;
-@property(readonly) double horizontalSpacingBetweenItems;
-@property(readonly) struct CGSize { double x1; double x2; } itemSize;
+@property(readonly) struct CGSize { float x1; float x2; } artworkSize;
+@property(readonly) float horizontalEdgePadding;
+@property(readonly) float horizontalSpacingBetweenItems;
+@property(readonly) struct CGSize { float x1; float x2; } itemSize;
 @property(readonly) RURadioStationsCollectionViewTemplateTextElement * lastTextElement;
-@property struct CGSize { double x1; double x2; } rootViewSize;
-@property(readonly) struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; boolx2; boolx3; struct UIOffset { double x_4_1_1; double x_4_1_2; } x4; struct CGSize { double x_5_1_1; double x_5_1_2; } x5; double x6; } stackAttributes;
+@property struct CGSize { float x1; float x2; } rootViewSize;
+@property(readonly) struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; BOOL x2; BOOL x3; struct UIOffset { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; float x6; } stackAttributes;
 @property(retain) MPUBorderDrawingCache * stackItemBorderDrawingCache;
 @property(copy) UIColor * tintColor;
 @property(copy) UITraitCollection * traitCollection;
 
-+ (struct { unsigned long long x1; double x2; double x3; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_4_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_4_1_2; } x4; struct CGAffineTransform { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; double x_5_1_5; double x_5_1_6; } x5; double x6; double x7; double x8; })_attributesForStackItemAtIndex:(long long)arg1 displayScale:(double)arg2;
-+ (double)_horizontalEdgePaddingForHorizontalSizeClass:(long long)arg1 displayScale:(double)arg2 rootViewWidth:(double)arg3;
-+ (double)_horizontalSpacingBetweenItemsForHorizontalSizeClass:(long long)arg1 displayScale:(double)arg2 rootViewWidth:(double)arg3;
-+ (struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; boolx2; boolx3; struct UIOffset { double x_4_1_1; double x_4_1_2; } x4; struct CGSize { double x_5_1_1; double x_5_1_2; } x5; double x6; })_stackAttributesForHorizontalSizeClass:(long long)arg1 displayScale:(double)arg2 rootViewHeight:(double)arg3;
-+ (double)_stackBaseWidthForHorizontalSizeClass:(long long)arg1 displayScale:(double)arg2 rootViewWidth:(double)arg3 horizontalEdgePadding:(double)arg4 horizontalSpacingBetweenItems:(double)arg5;
-+ (double)_targetStackBaseWidthForHorizontalSizeClass:(long long)arg1 displayScale:(double)arg2 rootViewWidth:(double)arg3;
-+ (long long)numberOfStackItems;
++ (struct { unsigned int x1; float x2; float x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGAffineTransform { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; float x_5_1_5; float x_5_1_6; } x5; float x6; float x7; float x8; })_attributesForStackItemAtIndex:(int)arg1 displayScale:(float)arg2;
++ (float)_horizontalEdgePaddingForHorizontalSizeClass:(int)arg1 displayScale:(float)arg2 rootViewWidth:(float)arg3;
++ (float)_horizontalSpacingBetweenItemsForHorizontalSizeClass:(int)arg1 displayScale:(float)arg2 rootViewWidth:(float)arg3;
++ (struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; BOOL x2; BOOL x3; struct UIOffset { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; float x6; })_stackAttributesForHorizontalSizeClass:(int)arg1 displayScale:(float)arg2 rootViewHeight:(float)arg3;
++ (float)_stackBaseWidthForHorizontalSizeClass:(int)arg1 displayScale:(float)arg2 rootViewWidth:(float)arg3 horizontalEdgePadding:(float)arg4 horizontalSpacingBetweenItems:(float)arg5;
++ (float)_targetStackBaseWidthForHorizontalSizeClass:(int)arg1 displayScale:(float)arg2 rootViewWidth:(float)arg3;
++ (int)numberOfStackItems;
 
 - (void).cxx_destruct;
 - (id)_textAttributesByReplacingForegroundColorInTextAttributes:(id)arg1 withColor:(id)arg2;
 - (void)_updateForLayoutChange;
 - (void)addTextElement:(id)arg1 withName:(id)arg2;
-- (struct CGSize { double x1; double x2; })artworkSize;
-- (struct { unsigned long long x1; double x2; double x3; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_4_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_4_1_2; } x4; struct CGAffineTransform { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; double x_5_1_5; double x_5_1_6; } x5; double x6; double x7; double x8; })attributesForStackItemAtIndex:(long long)arg1;
+- (struct CGSize { float x1; float x2; })artworkSize;
+- (struct { unsigned int x1; float x2; float x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGAffineTransform { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; float x_5_1_5; float x_5_1_6; } x5; float x6; float x7; float x8; })attributesForStackItemAtIndex:(int)arg1;
 - (void)beginCoalescingTextDrawingCacheInvalidationNotifications;
 - (void)endCoalescingTextDrawingCacheInvalidationNotifications;
 - (void)enumerateTextElementsUsingBlock:(id)arg1;
-- (double)horizontalEdgePadding;
-- (double)horizontalSpacingBetweenItems;
-- (struct CGSize { double x1; double x2; })itemSize;
+- (float)horizontalEdgePadding;
+- (float)horizontalSpacingBetweenItems;
+- (struct CGSize { float x1; float x2; })itemSize;
 - (id)lastTextElement;
-- (struct CGSize { double x1; double x2; })rootViewSize;
-- (void)setRootViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })rootViewSize;
+- (void)setRootViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setStackItemBorderDrawingCache:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTraitCollection:(id)arg1;
-- (struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; boolx2; boolx3; struct UIOffset { double x_4_1_1; double x_4_1_2; } x4; struct CGSize { double x_5_1_1; double x_5_1_2; } x5; double x6; })stackAttributes;
+- (struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; BOOL x2; BOOL x3; struct UIOffset { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; float x6; })stackAttributes;
 - (id)stackItemBorderDrawingCache;
 - (id)textElementNamed:(id)arg1;
 - (id)tintColor;

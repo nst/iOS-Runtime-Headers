@@ -8,7 +8,7 @@
     NSDictionary *_componentDictionary;
     NSArray *_ineligibleGratisIdentifiers;
     NSDictionary *_items;
-    long long _layoutStyle;
+    int _layoutStyle;
     double _pageGenerationTime;
     NSDictionary *_platformKeyProfileOverrides;
     NSMutableSet *_unavailableItems;
@@ -18,7 +18,7 @@
 @property(copy) NSDictionary * componentDictionary;
 @property(copy) NSArray * ineligibleGratisIdentifiers;
 @property(copy) NSDictionary * items;
-@property long long layoutStyle;
+@property int layoutStyle;
 @property(readonly) double pageGenerationTime;
 @property(copy) NSDictionary * platformKeyProfileOverrides;
 
@@ -29,16 +29,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)ineligibleGratisIdentifiers;
 - (id)init;
-- (bool)isUnavailableItemIdentifier:(id)arg1;
+- (BOOL)isUnavailableItemIdentifier:(id)arg1;
 - (id)itemForItemIdentifier:(id)arg1;
 - (id)items;
-- (long long)layoutStyle;
+- (int)layoutStyle;
 - (double)pageGenerationTime;
 - (id)platformKeyProfileOverrides;
 - (void)setComponentDictionary:(id)arg1;
 - (void)setIneligibleGratisIdentifiers:(id)arg1;
 - (void)setItems:(id)arg1;
-- (void)setLayoutStyle:(long long)arg1;
+- (void)setLayoutStyle:(int)arg1;
 - (void)setPlatformKeyProfileOverrides:(id)arg1;
 - (void)setUnavailableItemIdentifiers:(id)arg1;
 

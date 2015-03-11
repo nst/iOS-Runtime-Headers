@@ -15,7 +15,7 @@
 @property(copy) NSString * deviceIdentifier;
 @property(copy) NSString * deviceModel;
 @property(copy) NSString * dspStatus;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * headsetAddress;
 @property(copy) NSString * headsetId;
 @property(copy) NSString * headsetName;

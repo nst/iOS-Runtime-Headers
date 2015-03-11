@@ -6,15 +6,15 @@
 
 @interface GKTextBubbleControl : GKBaseBubbleWithTextControl {
     GKTextStyle *_overrideTextStyle;
+    BOOL _smallText;
     NSString *_text;
     GKLabel *_textLabel;
     GKLabel *_textStyle;
-    bool_smallText;
 }
 
 @property(retain) NSAttributedString * attributedText;
 @property(retain) GKTextStyle * overrideTextStyle;
-@property bool smallText;
+@property BOOL smallText;
 @property(retain) NSString * text;
 @property(retain) GKLabel * textLabel;
 @property(retain) GKLabel * textStyle;
@@ -23,16 +23,16 @@
 - (id)attributedText;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)overrideTextStyle;
 - (void)setAttributedText:(id)arg1;
 - (void)setOverrideTextStyle:(id)arg1;
-- (void)setSmallText:(bool)arg1;
+- (void)setSmallText:(BOOL)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextLabel:(id)arg1;
 - (void)setTextStyle:(id)arg1;
-- (bool)smallText;
+- (BOOL)smallText;
 - (id)text;
 - (id)textLabel;
 - (id)textStyle;

@@ -9,13 +9,13 @@
     PLPhotoLibrary *_pl_library;
 }
 
-@property(readonly) bool migrationWasInterrupted;
+@property(readonly) BOOL migrationWasInterrupted;
 @property(setter=setPL_library:,retain) PLPhotoLibrary * pl_library;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (bool)_createParentDirectoryIfNecessaryWithPath:(id)arg1;
+- (BOOL)_createParentDirectoryIfNecessaryWithPath:(id)arg1;
 - (void)_decrementInFlightMigrationCount;
 - (void)_deleteiPhotoSubDirectoryWithDirectoryPath:(id)arg1 subDirectoryName:(id)arg2 description:(id)arg3;
 - (id)_displayableUuidWithUuid:(id)arg1;
@@ -25,16 +25,16 @@
 - (id)_iPhotoUuidsWithProjectDict:(id)arg1 type:(unsigned long long)arg2;
 - (id)_inFlightMigrationMarkerFilePath;
 - (void)_incrementInFlightMigrationCount;
-- (bool)_isMigrating;
+- (BOOL)_isMigrating;
 - (id)_migratediPhotoDir;
 - (void)_migrateiPhotoLibraryWorkerWithProgressHandler:(id)arg1 iPhotoLibraryDir:(id)arg2;
 - (id)_preMigratediPhotoDir;
 - (id)_premigratedProjectUuidMapTable;
-- (bool)_validateUuid:(id)arg1;
+- (BOOL)_validateUuid:(id)arg1;
 - (void)addKeywordIfDoesNotExist:(id)arg1 forAsset:(id)arg2;
 - (void)checkForUnmigratediPhotoContentWithCompletion:(id)arg1;
 - (void)fireMigrationOfiPhotoLibraryWithProgressHandler:(id)arg1;
-- (bool)migrationWasInterrupted;
+- (BOOL)migrationWasInterrupted;
 - (id)pl_library;
 - (void)setCaption:(id)arg1 forAsset:(id)arg2;
 - (void)setPL_library:(id)arg1;

@@ -6,55 +6,55 @@
 
 @interface UIKBThemedView : UIView <UIKBCacheableView> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    BOOL _active;
     CALayer *_background;
     CALayer *_borders;
     } _cacheInsets;
+    BOOL _lightKeyboard;
     int _style;
-    bool_active;
-    bool_lightKeyboard;
-    bool_usePersistentCaching;
+    BOOL _usePersistentCaching;
 }
 
-@property bool active;
-@property(readonly) bool cacheDeferable;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } cacheInsets;
+@property BOOL active;
+@property(readonly) BOOL cacheDeferable;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cacheInsets;
 @property(readonly) NSString * cacheKey;
-@property(readonly) double cachedWidth;
+@property(readonly) float cachedWidth;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool keepNonPersistent;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL keepNonPersistent;
 @property int style;
 @property(readonly) Class superclass;
-@property bool usePersistentCaching;
+@property BOOL usePersistentCaching;
 
-- (bool)_canDrawContent;
-- (bool)_hasInsets;
+- (BOOL)_canDrawContent;
+- (BOOL)_hasInsets;
 - (void)_popuplateLayer:(id)arg1 withContents:(id)arg2;
 - (void)_setRenderConfig:(id)arg1;
-- (bool)active;
+- (BOOL)active;
 - (id)borderFilterTypeForCurrentStyle;
-- (bool)cacheDeferable;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cacheInsets;
+- (BOOL)cacheDeferable;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cacheInsets;
 - (id)cacheKey;
 - (id)cacheKeysForRenderFlags:(id)arg1;
-- (double)cachedWidth;
+- (float)cachedWidth;
 - (void)didMoveToWindow;
 - (void)displayLayer:(id)arg1;
 - (void)drawContentsOfRenderers:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (bool)keepNonPersistent;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (BOOL)keepNonPersistent;
 - (void)layoutSubviews;
-- (void)setActive:(bool)arg1;
-- (void)setCacheInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setActive:(BOOL)arg1;
+- (void)setCacheInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setStyle:(int)arg1;
-- (void)setUsePersistentCaching:(bool)arg1;
+- (void)setUsePersistentCaching:(BOOL)arg1;
 - (int)style;
 - (id)traitsForCurrentStyle;
-- (bool)usePersistentCaching;
+- (BOOL)usePersistentCaching;
 
 @end

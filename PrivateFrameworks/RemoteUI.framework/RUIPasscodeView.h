@@ -7,7 +7,7 @@
 @interface RUIPasscodeView : RUIElement <RUITableFooterDelegate, RUIPasscodeFieldDelegate> {
     UIView *_footer;
     UIColor *_foregroundColor;
-    long long _keyboardAppearance;
+    int _keyboardAppearance;
     UILabel *_label;
     RUIObjectModel *_objectModel;
     RUIPage *_page;
@@ -16,7 +16,7 @@
 }
 
 @property(retain) UIColor * foregroundColor;
-@property long long keyboardAppearance;
+@property int keyboardAppearance;
 @property RUIObjectModel * objectModel;
 @property RUIPage * page;
 @property(readonly) RUIPasscodeField * passcodeField;
@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (void)footerView:(id)arg1 activatedLinkWithURL:(id)arg2;
 - (id)foregroundColor;
-- (long long)keyboardAppearance;
+- (int)keyboardAppearance;
 - (id)objectModel;
 - (id)page;
 - (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
@@ -32,12 +32,12 @@
 - (id)passcodeView;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
-- (void)setKeyboardAppearance:(long long)arg1;
+- (void)setKeyboardAppearance:(int)arg1;
 - (void)setObjectModel:(id)arg1;
 - (void)setPage:(id)arg1;
 - (void)submitPIN;
 - (void)viewDidLayout;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

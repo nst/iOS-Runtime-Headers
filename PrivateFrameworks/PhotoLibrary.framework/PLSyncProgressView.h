@@ -6,28 +6,28 @@
 
 @interface PLSyncProgressView : UIView {
     NSNumberFormatter *_countFormatter;
-    unsigned long long _currentCount;
+    unsigned int _currentCount;
     UILabel *_infoLabel;
     int _progressType;
     UIActivityIndicatorView *_spinner;
     int _style;
-    unsigned long long _totalCount;
+    unsigned int _totalCount;
 }
 
-@property(readonly) unsigned long long currentCount;
+@property(readonly) unsigned int currentCount;
 @property(readonly) int progressType;
 @property(readonly) int style;
-@property(readonly) unsigned long long totalCount;
+@property(readonly) unsigned int totalCount;
 
 - (id)_progressDescription;
-- (unsigned long long)currentCount;
+- (unsigned int)currentCount;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1;
 - (void)layoutSubviews;
 - (int)progressType;
-- (void)setCurrentCount:(unsigned long long)arg1 totalCount:(unsigned long long)arg2 progressType:(int)arg3;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCurrentCount:(unsigned int)arg1 totalCount:(unsigned int)arg2 progressType:(int)arg3;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)style;
-- (unsigned long long)totalCount;
+- (unsigned int)totalCount;
 
 @end

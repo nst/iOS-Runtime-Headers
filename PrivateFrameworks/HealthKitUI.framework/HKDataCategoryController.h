@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (id)allDataCategories;
-- (id)categoryWithID:(long long)arg1;
+- (id)categoryWithID:(int)arg1;
 - (id)init;
 
 @end

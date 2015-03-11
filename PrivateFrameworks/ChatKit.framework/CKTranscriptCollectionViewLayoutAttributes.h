@@ -7,58 +7,58 @@
 @interface CKTranscriptCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CATransform3D { 
-        double m11; 
-        double m12; 
-        double m13; 
-        double m14; 
-        double m21; 
-        double m22; 
-        double m23; 
-        double m24; 
-        double m31; 
-        double m32; 
-        double m33; 
-        double m34; 
-        double m41; 
-        double m42; 
-        double m43; 
-        double m44; 
+        float m11; 
+        float m12; 
+        float m13; 
+        float m14; 
+        float m21; 
+        float m22; 
+        float m23; 
+        float m24; 
+        float m31; 
+        float m32; 
+        float m33; 
+        float m34; 
+        float m41; 
+        float m42; 
+        float m43; 
+        float m44; 
     CKChatItem *_chatItem;
     } _contentTransform3D;
-    double _currentCenterY;
+    float _currentCenterY;
     } _currentFrame;
-    double _easing;
-    double _factor;
-    double _height;
+    float _easing;
+    float _factor;
+    float _height;
+    BOOL _hidden;
     BOOL _orientation;
-    double _targetCenterY;
-    double _targetEasing;
+    float _targetCenterY;
+    float _targetEasing;
     } _targetFrame;
-    bool_hidden;
 }
 
 @property(retain) CKChatItem * chatItem;
-@property(readonly) struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } contentTransform3D;
+@property(readonly) struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } contentTransform3D;
 
 - (id)chatItem;
-- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })contentTransform3D;
+- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })contentTransform3D;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;

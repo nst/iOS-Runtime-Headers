@@ -10,6 +10,7 @@
 
 @interface ATLegacyDeviceSyncManager : ATDeviceSyncManager <ATEnvironmentMonitorObserver, ATSessionObserver, ATLegacyAssetLinkProgressDelegate> {
     ATLegacyAssetLink *_assetLink;
+    BOOL _automaticSync;
     struct CacheDeleteToken { } *_cacheDeleteToken;
     ATClientController *_clientController;
     id _clientProgressCallback;
@@ -25,26 +26,25 @@
     ATUserDefaults *_defaults;
     NSMutableDictionary *_diskUsageInfo;
     NSObject<OS_dispatch_queue> *_diskUsageQueue;
-    unsigned int _grappaId;
+    unsigned long _grappaId;
+    BOOL _localSyncRequest;
+    BOOL _localSyncRequestCanceled;
     NSMutableArray *_messageLinks;
     NSDate *_startTime;
     ATSession *_syncSession;
     NSObject<OS_dispatch_queue> *_workQueue;
-    bool_automaticSync;
-    bool_localSyncRequest;
-    bool_localSyncRequestCanceled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(retain) ATSession * syncSession;
 
 + (id)legacyDeviceSyncManager;
 
 - (void).cxx_destruct;
-- (bool)_currentLinkIsWifiConnection;
+- (BOOL)_currentLinkIsWifiConnection;
 - (void)_handleAssetMetricsMessage:(id)arg1 fromLink:(id)arg2;
 - (void)_handleCapabilitiesMessage:(id)arg1 fromLink:(id)arg2;
 - (void)_handleFinishedSyncingMetadataMessage:(id)arg1 fromLink:(id)arg2;

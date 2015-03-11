@@ -8,13 +8,13 @@
     NSString *_descriptionString;
     NSManagedObjectModel *_destinationModel;
     NSArray *_sourceModels;
-    long long _type;
+    int _type;
 }
 
 @property(copy) NSString * descriptionString;
 @property(retain) NSManagedObjectModel * destinationModel;
 @property(copy) NSArray * sourceModels;
-@property long long type;
+@property int type;
 
 + (id)customMappingFromSourceModelName:(id)arg1 toDestinationModelName:(id)arg2;
 + (id)descriptionStringFromSourceStoreNames:(id)arg1 destinationStoreName:(id)arg2;
@@ -23,7 +23,7 @@
 + (id)modelForModelName:(id)arg1;
 
 - (void).cxx_destruct;
-- (bool)canMigrateStoreMetadata:(id)arg1;
+- (BOOL)canMigrateStoreMetadata:(id)arg1;
 - (id)description;
 - (id)descriptionString;
 - (id)destinationModel;
@@ -31,9 +31,9 @@
 - (void)setDescriptionString:(id)arg1;
 - (void)setDestinationModel:(id)arg1;
 - (void)setSourceModels:(id)arg1;
-- (void)setType:(long long)arg1;
+- (void)setType:(int)arg1;
 - (id)sourceModelForStoreMetadata:(id)arg1;
 - (id)sourceModels;
-- (long long)type;
+- (int)type;
 
 @end

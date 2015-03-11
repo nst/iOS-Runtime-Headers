@@ -14,13 +14,13 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <RUITableFooterDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)baseURL;
 - (id)delegate;
-- (double)footerHeightForWidth:(double)arg1 inTableView:(id)arg2;
+- (float)footerHeightForWidth:(float)arg1 inTableView:(id)arg2;
 - (id)initWithAttributes:(id)arg1;
 - (void)setBaseURL:(id)arg1;
 - (void)setDelegate:(id)arg1;

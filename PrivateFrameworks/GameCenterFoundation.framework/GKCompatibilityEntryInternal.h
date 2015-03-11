@@ -16,8 +16,8 @@
 
 - (id)bundleID;
 - (void)dealloc;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setVersions:(id)arg1;
 - (id)versions;

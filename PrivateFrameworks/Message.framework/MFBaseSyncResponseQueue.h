@@ -6,22 +6,22 @@
 
 @interface MFBaseSyncResponseQueue : MFBufferedQueue {
     MFIMAPConnection *_connection;
-    unsigned long long _currentUID;
+    unsigned int _currentUID;
+    BOOL _isSearching;
     NSArray *_libraryDetails;
     NSMutableArray *_missingUIDs;
+    BOOL _shouldCompact;
+    BOOL _shouldFetch;
     MFLibraryIMAPStore *_store;
     NSString *_url;
-    bool_isSearching;
-    bool_shouldCompact;
-    bool_shouldFetch;
 }
 
 - (void)dealloc;
 - (unsigned long long)flagsForItem:(id)arg1;
-- (bool)handleItems:(id)arg1;
+- (BOOL)handleItems:(id)arg1;
 - (id)init;
 - (id)sequenceIdentifierForItem:(id)arg1;
-- (bool)shouldSyncFlags;
-- (unsigned long long)uidForItem:(id)arg1;
+- (BOOL)shouldSyncFlags;
+- (unsigned int)uidForItem:(id)arg1;
 
 @end

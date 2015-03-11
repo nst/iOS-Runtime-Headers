@@ -6,52 +6,52 @@
 
 @interface CNContactStyle : NSObject {
     UIColor *_backgroundColor;
-    long long _barStyle;
-    long long _keyboardAppearance;
+    int _barStyle;
+    int _keyboardAppearance;
     UIColor *_placeholderTextColor;
     UIColor *_sectionBackgroundColor;
     UIColor *_selectedCellBackgroundColor;
-    long long _separatorBackdropOverlayBlendMode;
+    int _separatorBackdropOverlayBlendMode;
     UIColor *_separatorColor;
-    long long _separatorStyle;
+    int _separatorStyle;
     UIColor *_textColor;
-    bool_usesOpaqueBackground;
+    BOOL _usesOpaqueBackground;
 }
 
 @property(retain) UIColor * backgroundColor;
-@property long long barStyle;
-@property long long keyboardAppearance;
+@property int barStyle;
+@property int keyboardAppearance;
 @property(readonly) UIColor * placeholderTextColor;
 @property(retain) UIColor * sectionBackgroundColor;
 @property(retain) UIColor * selectedCellBackgroundColor;
-@property long long separatorBackdropOverlayBlendMode;
+@property int separatorBackdropOverlayBlendMode;
 @property(retain) UIColor * separatorColor;
-@property long long separatorStyle;
+@property int separatorStyle;
 @property(retain) UIColor * textColor;
-@property bool usesOpaqueBackground;
+@property BOOL usesOpaqueBackground;
 
 - (id)backgroundColor;
-- (long long)barStyle;
+- (int)barStyle;
 - (void)dealloc;
 - (id)init;
-- (long long)keyboardAppearance;
+- (int)keyboardAppearance;
 - (id)placeholderTextColor;
 - (id)sectionBackgroundColor;
 - (id)selectedCellBackgroundColor;
-- (long long)separatorBackdropOverlayBlendMode;
+- (int)separatorBackdropOverlayBlendMode;
 - (id)separatorColor;
-- (long long)separatorStyle;
+- (int)separatorStyle;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBarStyle:(long long)arg1;
-- (void)setKeyboardAppearance:(long long)arg1;
+- (void)setBarStyle:(int)arg1;
+- (void)setKeyboardAppearance:(int)arg1;
 - (void)setSectionBackgroundColor:(id)arg1;
 - (void)setSelectedCellBackgroundColor:(id)arg1;
-- (void)setSeparatorBackdropOverlayBlendMode:(long long)arg1;
+- (void)setSeparatorBackdropOverlayBlendMode:(int)arg1;
 - (void)setSeparatorColor:(id)arg1;
-- (void)setSeparatorStyle:(long long)arg1;
+- (void)setSeparatorStyle:(int)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setUsesOpaqueBackground:(bool)arg1;
+- (void)setUsesOpaqueBackground:(BOOL)arg1;
 - (id)textColor;
-- (bool)usesOpaqueBackground;
+- (BOOL)usesOpaqueBackground;
 
 @end

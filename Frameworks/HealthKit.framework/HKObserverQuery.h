@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
 - (id)_queue_errorHandler;
-- (bool)_queue_shouldStayAliveAfterInitialResults;
+- (BOOL)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (void)dataUpdatedInDatabaseWithAnchor:(id)arg1 query:(id)arg2;
 - (id)initWithSampleType:(id)arg1 predicate:(id)arg2 updateHandler:(id)arg3;

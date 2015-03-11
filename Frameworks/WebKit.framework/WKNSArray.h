@@ -12,7 +12,7 @@
 @interface WKNSArray : NSArray <WKObject> {
     struct ObjectStorage<API::Array> { 
         struct type { 
-            unsigned char __lx[32]; 
+            unsigned char __lx[20]; 
         } data; 
     } _array;
 }
@@ -20,14 +20,14 @@
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
-- (id)objectAtIndex:(unsigned long long)arg1;
+- (id)objectAtIndex:(unsigned int)arg1;
 
 @end

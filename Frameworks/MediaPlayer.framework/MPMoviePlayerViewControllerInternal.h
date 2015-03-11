@@ -6,7 +6,7 @@
 
 @interface MPMoviePlayerViewControllerInternal : NSObject {
     MPMoviePlayerController *_moviePlayer;
-    bool_wasDisplayedAnimated;
+    BOOL _wasDisplayedAnimated;
 }
 
 - (void).cxx_destruct;

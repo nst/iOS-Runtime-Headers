@@ -7,14 +7,14 @@
 @interface RadioUpdateStationRequest : RadioSyncRequest {
     NSString *_name;
     NSArray *_seeds;
-    long long _songMixType;
+    int _songMixType;
     RadioStation *_station;
     NSString *_stationDescription;
 }
 
 @property(copy) NSString * name;
 @property(copy) NSArray * seeds;
-@property long long songMixType;
+@property int songMixType;
 @property(copy) NSString * stationDescription;
 
 - (void).cxx_destruct;
@@ -26,9 +26,9 @@
 - (id)seeds;
 - (void)setName:(id)arg1;
 - (void)setSeeds:(id)arg1;
-- (void)setSongMixType:(long long)arg1;
+- (void)setSongMixType:(int)arg1;
 - (void)setStationDescription:(id)arg1;
-- (long long)songMixType;
+- (int)songMixType;
 - (void)startWithCompletionHandler:(id)arg1;
 - (id)stationDescription;
 

@@ -8,6 +8,7 @@
     NSURL *_audioURL;
     RCUIConfiguration *_defaultUIConfiguration;
     RCUIConfiguration *_disabledUIConfiguration;
+    BOOL _enabled;
     double _maximumDuration;
     UIView *_nonWaveformContentView;
     UIButton *_playPauseButton;
@@ -15,28 +16,27 @@
     RCPreviewController *_previewController;
     float _progress;
     RCUIConfiguration *_progressUIConfiguration;
+    BOOL _showsProgress;
     UILabel *_timeDisplayLabel;
     RCFileInputWaveformDataSource *_waveformDataSource;
     RCAVWaveformViewController *_waveformViewController;
-    bool_enabled;
-    bool_showsProgress;
 }
 
 @property(copy,readonly) NSURL * audioURL;
-@property(getter=isEnabled) bool enabled;
+@property(getter=isEnabled) BOOL enabled;
 @property(readonly) double maximumDuration;
 @property(readonly) RCPreviewController * previewController;
 @property float progress;
 @property(readonly) struct { double x1; double x2; } selectedTimeRange;
-@property bool showsProgress;
+@property BOOL showsProgress;
 
 - (void).cxx_destruct;
 - (void)_beginOrResumePreviewing;
-- (struct CGSize { double x1; double x2; })_calculatedPreferredContentSize;
+- (struct CGSize { float x1; float x2; })_calculatedPreferredContentSize;
 - (id)_currentUIConfiguration;
 - (void)_pausePreviewing;
 - (void)_playPauseAction;
-- (id)_playStateImageForAVPreviewState:(long long)arg1;
+- (id)_playStateImageForAVPreviewState:(int)arg1;
 - (void)_updateAudioStateInterface;
 - (void)_updateProgressView;
 - (id)audioURL;
@@ -44,16 +44,16 @@
 - (void)audioWaveformControllerDidChangeAVTimes:(id)arg1;
 - (void)audioWaveformControllerDidChangeWaveformDataSource:(id)arg1;
 - (id)initWithAudioURL:(id)arg1 maximumDuration:(double)arg2;
-- (bool)isEnabled;
+- (BOOL)isEnabled;
 - (void)loadView;
 - (double)maximumDuration;
 - (id)previewController;
 - (float)progress;
 - (struct { double x1; double x2; })selectedTimeRange;
-- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setProgress:(float)arg1;
-- (void)setShowsProgress:(bool)arg1;
-- (bool)showsProgress;
+- (void)setShowsProgress:(BOOL)arg1;
+- (BOOL)showsProgress;
 - (void)updateViewConstraints;
 - (void)viewDidLoad;
 

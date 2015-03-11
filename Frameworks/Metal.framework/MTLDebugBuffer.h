@@ -3,26 +3,26 @@
  */
 
 @interface MTLDebugBuffer : MTLToolsBuffer {
-    unsigned long long _options;
+    unsigned int _options;
     const void *_pointer;
-    unsigned long long _purgeableState;
-    bool_purgeableStateHasBeenSet;
+    unsigned int _purgeableState;
+    BOOL _purgeableStateHasBeenSet;
 }
 
-@property unsigned long long options;
+@property unsigned int options;
 @property(readonly) const void* pointer;
-@property(readonly) unsigned long long purgeableState;
-@property(readonly) bool purgeableStateHasBeenSet;
+@property(readonly) unsigned int purgeableState;
+@property(readonly) BOOL purgeableStateHasBeenSet;
 
 - (id)description;
-- (id)initWithBuffer:(id)arg1 device:(id)arg2 bytes:(const void*)arg3 options:(unsigned long long)arg4;
-- (id)initWithBuffer:(id)arg1 device:(id)arg2 options:(unsigned long long)arg3;
-- (id)newTextureWithDescriptor:(id)arg1 offset:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3;
-- (unsigned long long)options;
+- (id)initWithBuffer:(id)arg1 device:(id)arg2 bytes:(const void*)arg3 options:(unsigned int)arg4;
+- (id)initWithBuffer:(id)arg1 device:(id)arg2 options:(unsigned int)arg3;
+- (id)newTextureWithDescriptor:(id)arg1 offset:(unsigned int)arg2 bytesPerRow:(unsigned int)arg3;
+- (unsigned int)options;
 - (const void*)pointer;
-- (unsigned long long)purgeableState;
-- (bool)purgeableStateHasBeenSet;
-- (void)setOptions:(unsigned long long)arg1;
-- (unsigned long long)setPurgeableState:(unsigned long long)arg1;
+- (unsigned int)purgeableState;
+- (BOOL)purgeableStateHasBeenSet;
+- (void)setOptions:(unsigned int)arg1;
+- (unsigned int)setPurgeableState:(unsigned int)arg1;
 
 @end

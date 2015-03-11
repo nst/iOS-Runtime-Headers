@@ -9,7 +9,7 @@
     NSString *_name;
 }
 
-@property(getter=isActive,readonly) bool active;
+@property(getter=isActive,readonly) BOOL active;
 @property(readonly) NSString * name;
 
 + (id)activeTransactions;
@@ -22,7 +22,7 @@
 - (void)endTransaction;
 - (void)endTransactionOnDate:(id)arg1;
 - (id)initWithName:(id)arg1;
-- (bool)isActive;
+- (BOOL)isActive;
 - (id)name;
 
 @end

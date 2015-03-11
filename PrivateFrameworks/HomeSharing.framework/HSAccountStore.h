@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)_onBackgroundQueue_determineGroupIDWithCompletionHandler:(id)arg1;
 - (id)appleID;
-- (bool)canDetermineGroupID;
+- (BOOL)canDetermineGroupID;
 - (void)clearAllCredentials;
 - (void)clearCaches;
 - (void)clearGroupID;

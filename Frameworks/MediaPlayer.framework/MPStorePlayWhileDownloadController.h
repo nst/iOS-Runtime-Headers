@@ -14,7 +14,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)sharedController;
@@ -24,17 +24,17 @@
 - (id)_downloadSessionWithID:(id)arg1;
 - (id)_init;
 - (id)_openSessionWithProperties:(id)arg1 assetOptions:(id)arg2;
-- (id)_openSessionWithProperties:(id)arg1 style:(long long*)arg2;
-- (bool)_showCellularRestrictedDialogForContext:(id)arg1;
-- (bool)_showNoNetworkDialogForContext:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
-- (bool)canOpenSessionWithContext:(id)arg1;
+- (id)_openSessionWithProperties:(id)arg1 style:(int*)arg2;
+- (BOOL)_showCellularRestrictedDialogForContext:(id)arg1;
+- (BOOL)_showNoNetworkDialogForContext:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (BOOL)canOpenSessionWithContext:(id)arg1;
 - (void)dealloc;
 - (void)downloadHandler:(id)arg1 cancelSession:(id)arg2;
 - (void)downloadHandler:(id)arg1 handleSession:(id)arg2;
 - (id)init;
-- (bool)isSessionRequiredToPlayContext:(id)arg1;
+- (BOOL)isSessionRequiredToPlayContext:(id)arg1;
 - (id)openSessionWithContext:(id)arg1 attributes:(id)arg2;
-- (bool)showNetworkConstraintDialogForContext:(id)arg1;
+- (BOOL)showNetworkConstraintDialogForContext:(id)arg1;
 
 @end

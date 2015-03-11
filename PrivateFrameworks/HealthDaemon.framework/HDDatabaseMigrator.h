@@ -12,14 +12,14 @@
 
 - (void).cxx_destruct;
 - (id)database;
-- (bool)executeSQL:(id)arg1 argument:(id)arg2 error:(id*)arg3;
-- (bool)executeSQL:(id)arg1 error:(id*)arg2;
-- (bool)executeSQLStatements:(id)arg1 error:(id*)arg2;
-- (long long)fatalStatusForVersion:(long long)arg1 errorMessage:(id)arg2 error:(id*)arg3;
+- (BOOL)executeSQL:(id)arg1 argument:(id)arg2 error:(id*)arg3;
+- (BOOL)executeSQL:(id)arg1 error:(id*)arg2;
+- (BOOL)executeSQLStatements:(id)arg1 error:(id*)arg2;
+- (int)fatalStatusForVersion:(int)arg1 errorMessage:(id)arg2 error:(id*)arg3;
 - (id)init;
 - (id)initWithDatabase:(id)arg1;
-- (long long)migrateProtectedDatabaseFromVersion:(long long)arg1 toVersion:(long long)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
-- (long long)migrateUnprotectedDatabaseFromVersion:(long long)arg1 toVersion:(long long)arg2 error:(id*)arg3;
-- (long long)statusForUnhandledVersion:(long long)arg1 error:(id*)arg2;
+- (int)migrateProtectedDatabaseFromVersion:(int)arg1 toVersion:(int)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
+- (int)migrateUnprotectedDatabaseFromVersion:(int)arg1 toVersion:(int)arg2 error:(id*)arg3;
+- (int)statusForUnhandledVersion:(int)arg1 error:(id*)arg2;
 
 @end

@@ -16,7 +16,7 @@
 }
 
 @property TSADocumentRoot * documentRoot;
-@property(readonly) bool hasShortcuts;
+@property(readonly) BOOL hasShortcuts;
 
 + (id)localizedStringForShortcut:(id)arg1;
 
@@ -25,7 +25,7 @@
 - (void)documentDidLoad;
 - (id)documentRoot;
 - (void)documentWillUnload;
-- (bool)hasShortcuts;
+- (BOOL)hasShortcuts;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithDocumentRoot:(id)arg1;
 - (void)loadFromArchive:(const struct ShortcutControllerArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSA::ShortcutControllerArchive_ShortcutMapEntry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;

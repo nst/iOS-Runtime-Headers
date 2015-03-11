@@ -5,52 +5,52 @@
 @class NSString, SKUIBadgeLabel, SKUISearchAppBundleView, UIImage, UIImageView, UILabel;
 
 @interface SKUICardCellLayout : SKUIItemCellLayout {
+    BOOL _appBundle;
     SKUISearchAppBundleView *_appBundleView;
     UILabel *_artistLabel;
     SKUIBadgeLabel *_editorialBadgeLabel;
+    BOOL _hasInAppPurchases;
     UILabel *_hasInAppPurchasesLabel;
-    long long _numberOfUserRatings;
+    int _numberOfUserRatings;
     UIImageView *_screenshotImageView;
     UILabel *_titleLabel;
-    double _userRating;
+    float _userRating;
     UIImageView *_userRatingImageView;
     UILabel *_userRatingLabel;
-    bool_appBundle;
-    bool_hasInAppPurchases;
 }
 
-@property bool appBundle;
+@property BOOL appBundle;
 @property(readonly) SKUISearchAppBundleView * appBundleView;
 @property(copy) NSString * artistName;
 @property(copy) NSString * editorialBadge;
-@property bool hasInAppPurchases;
-@property long long numberOfUserRatings;
+@property BOOL hasInAppPurchases;
+@property int numberOfUserRatings;
 @property(retain) UIImage * screenshotImage;
 @property(copy) NSString * title;
-@property double userRating;
+@property float userRating;
 
 - (void).cxx_destruct;
-- (bool)appBundle;
+- (BOOL)appBundle;
 - (id)appBundleView;
 - (id)artistName;
 - (id)editorialBadge;
-- (bool)hasInAppPurchases;
+- (BOOL)hasInAppPurchases;
 - (void)layoutForItemOfferChange;
 - (void)layoutSubviews;
-- (long long)numberOfUserRatings;
+- (int)numberOfUserRatings;
 - (void)prepareForReuse;
 - (void)resetLayout;
 - (id)screenshotImage;
-- (void)setAppBundle:(bool)arg1;
+- (void)setAppBundle:(BOOL)arg1;
 - (void)setArtistName:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setEditorialBadge:(id)arg1;
-- (void)setHasInAppPurchases:(bool)arg1;
-- (void)setNumberOfUserRatings:(long long)arg1;
+- (void)setHasInAppPurchases:(BOOL)arg1;
+- (void)setNumberOfUserRatings:(int)arg1;
 - (void)setScreenshotImage:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUserRating:(double)arg1;
+- (void)setUserRating:(float)arg1;
 - (id)title;
-- (double)userRating;
+- (float)userRating;
 
 @end

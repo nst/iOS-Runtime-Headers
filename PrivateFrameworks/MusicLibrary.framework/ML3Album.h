@@ -18,9 +18,9 @@
 + (id)propertiesForGroupingKey;
 + (id)propertiesForGroupingUniqueCollections;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
-+ (bool)propertyIsCountProperty:(id)arg1;
++ (BOOL)propertyIsCountProperty:(id)arg1;
 + (id)protocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
-+ (long long)revisionTrackingCode;
++ (int)revisionTrackingCode;
 + (id)trackForeignPersistentID;
 
 - (id)multiverseIdentifier;

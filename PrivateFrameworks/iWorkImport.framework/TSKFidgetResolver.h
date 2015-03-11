@@ -4,7 +4,7 @@
 
 @interface TSKFidgetResolver : NSObject {
     double _fidgetThreshold;
-    unsigned long long _head;
+    unsigned int _head;
     double *_times;
     id *_values;
 }
@@ -17,7 +17,7 @@
 - (id)init;
 - (id)nonFidgetValue;
 - (void)p_advanceHead;
-- (unsigned long long)p_previousValidIndexFromIndex:(unsigned long long)arg1;
+- (unsigned int)p_previousValidIndexFromIndex:(unsigned int)arg1;
 - (void)pushValue:(id)arg1 withTime:(double)arg2;
 - (void)pushValue:(id)arg1;
 - (void)setFidgetThreshold:(double)arg1;

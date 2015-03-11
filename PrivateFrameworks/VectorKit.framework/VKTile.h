@@ -86,7 +86,7 @@
 - (double)birthdate;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)geometryCount;
+- (unsigned int)geometryCount;
 - (const struct Matrix<double, 4, 4> { double x1[16]; }*)gmInverseMatrix;
 - (const struct Matrix<double, 4, 4> { double x1[16]; }*)gmMatrix;
 - (const struct Matrix<float, 4, 4> { float x1[16]; }*)gmShaderMatrix;

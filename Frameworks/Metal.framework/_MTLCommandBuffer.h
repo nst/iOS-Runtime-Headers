@@ -10,11 +10,11 @@
 
 @interface _MTLCommandBuffer : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
-    struct _opaque_pthread_cond_t { 
-        long long __sig; 
+        long __sig; 
         BOOL __opaque[40]; 
+    struct _opaque_pthread_cond_t { 
+        long __sig; 
+        BOOL __opaque[24]; 
     unsigned long long _commitTime;
     struct MTLDispatch { struct MTLDispatch {} *x1; id x2; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x3; } *_completedDispatchList;
     unsigned long long _completionHandlerEnqueueTime;
@@ -31,27 +31,27 @@
     } _mutex;
     NSDictionary *_profilingResults;
     _MTLCommandQueue<MTLCommandQueue> *_queue;
+    BOOL _retainedReferences;
     struct MTLDispatch { struct MTLDispatch {} *x1; id x2; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x3; } *_scheduledDispatchList;
-    unsigned long long _status;
+    unsigned int _status;
+    BOOL _strongObjectReferences;
     unsigned long long _submitToHardwareTime;
     unsigned long long _submitToKernelTime;
+    BOOL _synchronousDebugMode;
     bool_completedCallbacksDone;
     bool_profilingEnabled;
-    bool_retainedReferences;
     bool_scheduledCallbacksDone;
     bool_skipRender;
-    bool_strongObjectReferences;
-    bool_synchronousDebugMode;
 }
 
 @property(readonly) <MTLCommandQueue> * commandQueue;
 @property(readonly) NSError * error;
 @property(copy) NSString * label;
-@property(getter=isProfilingEnabled) bool profilingEnabled;
+@property(getter=isProfilingEnabled) BOOL profilingEnabled;
 @property(readonly) NSDictionary * profilingResults;
-@property(readonly) bool retainedReferences;
-@property(readonly) unsigned long long status;
-@property(readonly) bool synchronousDebugMode;
+@property(readonly) BOOL retainedReferences;
+@property(readonly) unsigned int status;
+@property(readonly) BOOL synchronousDebugMode;
 
 + (void)initialize;
 
@@ -66,23 +66,23 @@
 - (void)didSchedule:(unsigned long long)arg1 error:(unsigned int)arg2;
 - (void)enqueue;
 - (id)error;
-- (id)initWithQueue:(id)arg1 retainedReferences:(bool)arg2 synchronousDebugMode:(bool)arg3;
-- (id)initWithQueue:(id)arg1 retainedReferences:(bool)arg2;
-- (bool)isCommitted;
-- (bool)isProfilingEnabled;
+- (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2 synchronousDebugMode:(BOOL)arg3;
+- (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2;
+- (BOOL)isCommitted;
+- (BOOL)isProfilingEnabled;
 - (void)kernelSubmitTime;
 - (id)label;
 - (void)presentDrawable:(id)arg1 atTime:(double)arg2;
 - (void)presentDrawable:(id)arg1;
 - (id)profilingResults;
-- (bool)retainedReferences;
-- (void)setCommitted:(bool)arg1;
+- (BOOL)retainedReferences;
+- (void)setCommitted:(BOOL)arg1;
 - (void)setCurrentCommandEncoder:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setProfilingEnabled:(bool)arg1;
-- (bool)skipRender;
-- (unsigned long long)status;
-- (bool)synchronousDebugMode;
+- (void)setProfilingEnabled:(BOOL)arg1;
+- (BOOL)skipRender;
+- (unsigned int)status;
+- (BOOL)synchronousDebugMode;
 - (void)waitUntilCompleted;
 - (void)waitUntilScheduled;
 

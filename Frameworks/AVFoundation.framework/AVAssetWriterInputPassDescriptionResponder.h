@@ -11,13 +11,13 @@
 @interface AVAssetWriterInputPassDescriptionResponder : NSObject {
     id _callbackBlock;
     NSObject<OS_dispatch_queue> *_callbackQueue;
+    BOOL _hasRespondedAtLeastOnce;
     AVAssetWriterInputPassDescription *_mostRecentPassDescription;
     NSObject<OS_dispatch_queue> *_serializationQueue;
     int _stoppedResponding;
-    bool_hasRespondedAtLeastOnce;
 }
 
-- (bool)_hasStoppedResponding;
+- (BOOL)_hasStoppedResponding;
 - (void)_releaseAndClearCallbackBlock_invokeOnSerializationQueue;
 - (void)dealloc;
 - (void)finalize;

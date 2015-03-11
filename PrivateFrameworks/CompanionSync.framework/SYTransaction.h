@@ -21,7 +21,7 @@
 @property(copy) NSDictionary * contextInfo;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSDictionary * idsOptions;
 @property(retain) SYStore * store;
 @property(readonly) Class superclass;
@@ -33,7 +33,7 @@
 - (void)addObject:(id)arg1;
 - (id)changes;
 - (void)commit;
-- (void)commitBlocking:(bool)arg1 reportError:(id)arg2;
+- (void)commitBlocking:(BOOL)arg1 reportError:(id)arg2;
 - (id)completion;
 - (id)contextInfo;
 - (void)deleteObject:(id)arg1 completion:(id)arg2;

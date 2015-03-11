@@ -5,41 +5,41 @@
 @class GKInviteInternal, GKPlayer, NSData, NSString;
 
 @interface GKInvite : NSObject {
+    BOOL _cancelled;
     GKInviteInternal *_internal;
     GKPlayer *_sender;
-    bool_cancelled;
 }
 
-@property(getter=isCancelled) bool cancelled;
-@property(getter=isHosted,readonly) bool hosted;
+@property(getter=isCancelled) BOOL cancelled;
+@property(getter=isHosted,readonly) BOOL hosted;
 @property(retain) GKInviteInternal * internal;
 @property(readonly) NSString * inviteID;
 @property(retain,readonly) NSString * inviter;
-@property(readonly) bool isNearby;
+@property(readonly) BOOL isNearby;
 @property(readonly) NSString * message;
 @property(readonly) unsigned int playerAttributes;
-@property(readonly) unsigned long long playerGroup;
+@property(readonly) unsigned int playerGroup;
 @property(retain,readonly) GKPlayer * sender;
 @property(readonly) NSData * sessionToken;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (bool)instancesRespondToSelector:(SEL)arg1;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 
 - (void)dealloc;
 - (id)description;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)internal;
 - (id)inviter;
-- (bool)isCancelled;
-- (bool)isEqual:(id)arg1;
-- (bool)isHosted;
+- (BOOL)isCancelled;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isHosted;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (bool)respondsToSelector:(SEL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (id)sender;
-- (void)setCancelled:(bool)arg1;
+- (void)setCancelled:(BOOL)arg1;
 - (void)setInternal:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;

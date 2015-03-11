@@ -9,9 +9,9 @@
     NSXPCConnection *_connection;
     <BKSAlternateSystemAppDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
-    long long _state;
+    int _state;
     NSObject<OS_dispatch_semaphore> *_stateChangeSemaphore;
-    bool_stateChangeWaiter;
+    BOOL _stateChangeWaiter;
 }
 
 @property(copy) NSString * bundleId;
@@ -19,19 +19,19 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <BKSAlternateSystemAppDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
-@property long long state;
+@property int state;
 @property(retain) NSObject<OS_dispatch_semaphore> * stateChangeSemaphore;
-@property bool stateChangeWaiter;
+@property BOOL stateChangeWaiter;
 @property(readonly) Class superclass;
 
 - (void)_handleInterruptedConnection;
 - (void)_handleInvalidatedConnection;
 - (void)_invalidate;
-- (void)_queue_changeState:(long long)arg1;
+- (void)_queue_changeState:(int)arg1;
 - (void)_queue_ensureConnection;
-- (void)_waitForState:(long long)arg1;
+- (void)_waitForState:(int)arg1;
 - (void)activate;
 - (void)alternateSystemAppWithBundleID:(id)arg1 didExitWithReason:(unsigned long long)arg2;
 - (void)alternateSystemAppWithBundleID:(id)arg1 failedToOpenWithResult:(id)arg2;
@@ -49,12 +49,12 @@
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setState:(long long)arg1;
+- (void)setState:(int)arg1;
 - (void)setStateChangeSemaphore:(id)arg1;
-- (void)setStateChangeWaiter:(bool)arg1;
-- (long long)state;
+- (void)setStateChangeWaiter:(BOOL)arg1;
+- (int)state;
 - (id)stateChangeSemaphore;
-- (bool)stateChangeWaiter;
+- (BOOL)stateChangeWaiter;
 - (void)terminate;
 
 @end

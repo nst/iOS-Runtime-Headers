@@ -5,8 +5,8 @@
 @interface SCRCMathNumberExpression : SCRCMathSimpleExpression {
 }
 
-- (bool)isNumber;
+- (BOOL)isNumber;
 - (id)mathMLString;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(bool)arg2;
+- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
 
 @end

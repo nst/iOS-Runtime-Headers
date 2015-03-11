@@ -5,13 +5,13 @@
 @class NSArray, NSString, UIFont;
 
 @interface CKPhoneNumberCompressor : NSObject {
-    double _desiredWidth;
+    float _desiredWidth;
     UIFont *_font;
     NSString *_phoneNumber;
     NSArray *_preferredCompressions;
 }
 
-@property double desiredWidth;
+@property float desiredWidth;
 @property(retain) UIFont * font;
 @property(copy) NSString * phoneNumber;
 @property(copy) NSArray * preferredCompressions;
@@ -19,11 +19,11 @@
 - (id)_compressPhoneNumberIfFitsInCompressionLevel:(int)arg1;
 - (id)compress;
 - (void)dealloc;
-- (double)desiredWidth;
+- (float)desiredWidth;
 - (id)font;
 - (id)phoneNumber;
 - (id)preferredCompressions;
-- (void)setDesiredWidth:(double)arg1;
+- (void)setDesiredWidth:(float)arg1;
 - (void)setFont:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setPreferredCompressions:(id)arg1;

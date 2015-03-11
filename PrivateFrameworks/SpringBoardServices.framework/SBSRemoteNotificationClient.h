@@ -9,11 +9,11 @@
 + (id)getNotificationUserInfoForToken:(int)arg1;
 + (id)getPendingNotificationUserInfo;
 + (void)getSupportedBundleIdentifiers:(id*)arg1 enabledBundleIdentifiers:(id*)arg2;
-+ (bool)isRegisteredForRemoteNotifications;
++ (BOOL)isRegisteredForRemoteNotifications;
 + (unsigned char)legacyRegisteredRemoteNotificationTypes;
 + (void)registerForRemoteNotifications;
 + (void)registerForRemoteNotificationsWithLegacyTypes:(unsigned char)arg1;
-+ (void)setAllowed:(bool)arg1 forBundleIdentifier:(id)arg2;
++ (void)setAllowed:(BOOL)arg1 forBundleIdentifier:(id)arg2;
 + (void)unregisterForRemoteNotifications;
 
 @end

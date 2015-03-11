@@ -6,24 +6,24 @@
 
 @interface VoicemailCompanionReplication : NSObject <SYStoreDelegate, PSYSyncCoordinatorDelegate> {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     NSObject<OS_dispatch_queue> *_companionSyncQueue;
     NSObject<OS_dispatch_queue> *_concurrentQueue;
     PSYSyncCoordinator *_coordinator;
+    BOOL _didSuspendCompanionSyncQueue;
     NPSDomainAccessor *_domainAccessor;
     } _domainAccessorMutexLock;
     NanoTelephonyIDSProxy *_proxy;
     SYStore *_syncStore;
     NSMutableArray *_vmAfterSyncComplete;
-    bool_didSuspendCompanionSyncQueue;
     NSObject<OS_dispatch_semaphore> *vmdIsReadySemaphore;
     NSObject<OS_dispatch_semaphore> *waitForFirstSyncCompleteSemaphore;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(retain) SYStore * syncStore;
 
@@ -42,11 +42,11 @@
 - (id)beginSyncingAllObjectsForStore:(id)arg1;
 - (id)changeSetForRemoteVoicemails:(id)arg1 fromVMVoicemails:(id)arg2;
 - (void)dealloc;
-- (long long)indexOfVoicemail:(id)arg1 inArray:(id)arg2;
+- (int)indexOfVoicemail:(id)arg1 inArray:(id)arg2;
 - (id)initWithIDSProxy:(id)arg1;
 - (id)listOfVoicemailsToSync;
-- (long long)maxVoicemailCount;
-- (long long)maxVoicemailTotalBytes;
+- (int)maxVoicemailCount;
+- (int)maxVoicemailTotalBytes;
 - (id)remoteVoicemails;
 - (void)removeFromRemoteVoicemails:(id)arg1;
 - (void)setRemoteVoicemails:(id)arg1;

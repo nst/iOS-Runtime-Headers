@@ -34,7 +34,7 @@
     int _playbackPreventNotifyToken;
     unsigned char _playbackPrevented;
     int _prefChangedNotifyToken;
-    struct AirPlayReceiverServerPrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; void *x2; id x3; struct { void *x_4_1_1; void *x_4_1_2; int (*x_4_1_3)(); int (*x_4_1_4)(); int (*x_4_1_5)(); int (*x_4_1_6)(); int (*x_4_1_7)(); } x4; unsigned char x5; unsigned long long x6; id x7; struct _DNSServiceRef_t {} *x8; unsigned char x9; unsigned char x10; struct _DNSServiceRef_t {} *x11; struct MediaControlServerPrivate {} *x12; struct AirPlayScreenServerPrivate {} *x13; id x14; unsigned char x15; int x16; unsigned char x17; unsigned char x18; unsigned char x19; unsigned char x20; unsigned char x21; unsigned char x22[6]; BOOL x23[17]; BOOL x24[64]; int x25; unsigned char x26; unsigned char x27; unsigned char x28; unsigned char x29; unsigned char x30; BOOL x31[8]; unsigned long long x32; BOOL x33[8]; unsigned char x34; BOOL x35[64]; unsigned char x36; unsigned char x37; int x38; unsigned char x39; struct __CFDictionary {} *x40; struct __CFDictionary {} *x41; } *_server;
+    struct AirPlayReceiverServerPrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; void *x2; id x3; struct { void *x_4_1_1; void *x_4_1_2; int (*x_4_1_3)(); int (*x_4_1_4)(); int (*x_4_1_5)(); int (*x_4_1_6)(); int (*x_4_1_7)(); } x4; unsigned char x5; unsigned long long x6; id x7; struct _DNSServiceRef_t {} *x8; unsigned char x9; unsigned char x10; struct _DNSServiceRef_t {} *x11; struct MediaControlServerPrivate {} *x12; struct AirPlayScreenServerPrivate {} *x13; id x14; unsigned char x15; int x16; unsigned char x17; unsigned char x18; unsigned char x19; unsigned char x20; unsigned char x21; unsigned char x22[6]; BOOL x23[17]; BOOL x24[64]; int x25; unsigned char x26; unsigned char x27; unsigned char x28; unsigned char x29; unsigned char x30; BOOL x31[8]; unsigned long long x32; BOOL x33[8]; unsigned char x34; BOOL x35[64]; unsigned char x36; unsigned char x37; int x38; unsigned char x39; struct __CFDictionary {} *x40; struct __CFDictionary {} *x41; } *_server;
     struct __CFDictionary { } *_soloDevices;
     int _systemBufferSamples;
     int _systemSampleRate;
@@ -46,11 +46,11 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_btleStart;
-- (int)_btleStartListeningForNetworkChanges;
+- (long)_btleStartListeningForNetworkChanges;
 - (void)_btleStop;
 - (void)_btleStopListeningForNetworkChanges;
 - (void)_btleUpdate;

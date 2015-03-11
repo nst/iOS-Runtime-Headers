@@ -13,7 +13,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSXPCListener * listener;
 @property(retain) Protocol * protocol;
 @property(retain) NSMutableSet * requiredEntitlements;
@@ -25,7 +25,7 @@
 - (void).cxx_destruct;
 - (void)addRequiredEntitlement:(id)arg1;
 - (id)initWithName:(id)arg1 listener:(id)arg2 protocol:(id)arg3 exportedObj:(id)arg4;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)listener;
 - (id)protocol;
 - (id)requiredEntitlements;

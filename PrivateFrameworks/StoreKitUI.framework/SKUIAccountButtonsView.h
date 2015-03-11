@@ -20,10 +20,10 @@
 @property(copy) NSString * accountCredits;
 @property(readonly) UIButton * appleIDButton;
 @property(readonly) UIButton * giftingButton;
-@property(getter=isGiftingHidden) bool giftingHidden;
+@property(getter=isGiftingHidden) BOOL giftingHidden;
 @property(readonly) UIButton * redeemButton;
 @property(readonly) UIButton * termsAndConditionsButton;
-@property(getter=isTermsAndConditionsHidden) bool termsAndConditionsHidden;
+@property(getter=isTermsAndConditionsHidden) BOOL termsAndConditionsHidden;
 
 - (void).cxx_destruct;
 - (id)ECommerceButton;
@@ -35,15 +35,15 @@
 - (id)appleIDButton;
 - (id)giftingButton;
 - (id)initWithClientContext:(id)arg1;
-- (bool)isGiftingHidden;
-- (bool)isTermsAndConditionsHidden;
+- (BOOL)isGiftingHidden;
+- (BOOL)isTermsAndConditionsHidden;
 - (void)layoutSubviews;
 - (id)redeemButton;
 - (void)setAccountCredits:(id)arg1;
 - (void)setECommerceLinkTitle:(id)arg1;
-- (void)setGiftingHidden:(bool)arg1;
-- (void)setTermsAndConditionsHidden:(bool)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setGiftingHidden:(BOOL)arg1;
+- (void)setTermsAndConditionsHidden:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)termsAndConditionsButton;
 - (void)tintColorDidChange;
 

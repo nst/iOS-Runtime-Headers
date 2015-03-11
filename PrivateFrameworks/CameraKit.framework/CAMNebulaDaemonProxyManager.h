@@ -6,16 +6,16 @@
 
 @interface CAMNebulaDaemonProxyManager : NSObject <CAMNebulaDaemonClientProtocol, CAMNebulaDaemonProtocol> {
     NSXPCConnection *__connection;
-    long long __connectionCount;
+    int __connectionCount;
     NSObject<OS_dispatch_queue> *__queue;
 }
 
 @property(readonly) NSXPCConnection * _connection;
-@property(readonly) long long _connectionCount;
+@property(readonly) int _connectionCount;
 @property(readonly) NSObject<OS_dispatch_queue> * _queue;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)_clientProtocolInterface;
@@ -25,19 +25,19 @@
 - (void).cxx_destruct;
 - (void)_closeConnectionToDaemon;
 - (id)_connection;
-- (long long)_connectionCount;
+- (int)_connectionCount;
 - (void)_ensureConnectionToDaemon;
 - (void)_getProxyForExecutingBlock:(id)arg1;
 - (id)_queue;
 - (void)closeConnectionToDaemon;
 - (void)ensureConnectionToDaemon;
 - (void)finishCaptureForNebulaWithUUID:(id)arg1;
-- (void)forceStopCaptureWithReasons:(long long)arg1;
+- (void)forceStopCaptureWithReasons:(int)arg1;
 - (id)init;
 - (void)resumeNebulaWithUUID:(id)arg1;
 - (void)startNebulaWithUUID:(id)arg1;
 - (void)stopNebulaWithUUID:(id)arg1;
 - (void)updateNebulaWithUUID:(id)arg1;
-- (void)updatePendingWorkFromDiskForceEndLastSession:(bool)arg1;
+- (void)updatePendingWorkFromDiskForceEndLastSession:(BOOL)arg1;
 
 @end

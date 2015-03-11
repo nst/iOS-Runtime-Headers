@@ -10,7 +10,7 @@
 @property(retain) <SASTTemplateAction> * action;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SAUINanoImageResource * imageResource;
 @property(readonly) Class superclass;
 @property(copy) NSString * text;

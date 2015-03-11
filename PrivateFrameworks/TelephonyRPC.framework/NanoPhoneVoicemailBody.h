@@ -9,7 +9,7 @@
     NSData *_voicemailRecording;
 }
 
-@property(readonly) bool hasVoicemailRecording;
+@property(readonly) BOOL hasVoicemailRecording;
 @property long long voicemailNumber;
 @property(retain) NSData * voicemailRecording;
 
@@ -18,11 +18,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasVoicemailRecording;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasVoicemailRecording;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setVoicemailNumber:(long long)arg1;
 - (void)setVoicemailRecording:(id)arg1;
 - (long long)voicemailNumber;

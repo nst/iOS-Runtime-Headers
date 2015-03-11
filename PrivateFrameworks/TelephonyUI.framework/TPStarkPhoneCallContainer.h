@@ -7,15 +7,15 @@
 @interface TPStarkPhoneCallContainer : UIView {
     <TPStarkPhoneCallContainerDataSource> *_dataSource;
     <TPStarkPhoneCallContainerDelegate> *_delegate;
+    BOOL _merging;
+    BOOL _shouldMerge;
     NSMutableArray *_visibleCells;
-    bool_merging;
-    bool_shouldMerge;
 }
 
 @property <TPStarkPhoneCallContainerDataSource> * dataSource;
 @property <TPStarkPhoneCallContainerDelegate> * delegate;
-@property(getter=isMerging) bool merging;
-@property bool shouldMerge;
+@property(getter=isMerging) BOOL merging;
+@property BOOL shouldMerge;
 @property(retain) NSMutableArray * visibleCells;
 
 - (id)_reloadQueue;
@@ -26,31 +26,31 @@
 - (void)animateLayoutOfViewWithCompletionBlock:(id)arg1;
 - (id)constraintToFillContainerWithLeftOfCell:(id)arg1;
 - (id)constraintToFillContainerWithRightOfCell:(id)arg1;
-- (void)createVisibleCells:(unsigned long long)arg1;
+- (void)createVisibleCells:(unsigned int)arg1;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isMerging;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isMerging;
 - (void)mergeAllCellConstraints;
 - (void)mergeVisibleCells;
 - (void)phoneCallViewCellTapped:(id)arg1;
 - (void)reloadData;
-- (void)reloadDataAnimated:(bool)arg1;
+- (void)reloadDataAnimated:(BOOL)arg1;
 - (void)removeAllConstraintsForCell:(id)arg1;
-- (void)removeVisibleCells:(unsigned long long)arg1;
+- (void)removeVisibleCells:(unsigned int)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMerging:(bool)arg1;
+- (void)setMerging:(BOOL)arg1;
 - (void)setNeedsMerge;
-- (void)setShouldMerge:(bool)arg1;
+- (void)setShouldMerge:(BOOL)arg1;
 - (void)setVisibleCells:(id)arg1;
-- (bool)shouldMerge;
-- (bool)shouldReloadCellsWithNumberOfCells:(unsigned long long)arg1;
+- (BOOL)shouldMerge;
+- (BOOL)shouldReloadCellsWithNumberOfCells:(unsigned int)arg1;
 - (void)updateAllCellConstraints;
-- (void)updateCell:(id)arg1 atIndex:(unsigned long long)arg2 animated:(bool)arg3;
-- (void)updateLayoutAnimated:(bool)arg1;
-- (void)updateNumberOfCellsWithNewValue:(unsigned long long)arg1 animated:(bool)arg2;
+- (void)updateCell:(id)arg1 atIndex:(unsigned int)arg2 animated:(BOOL)arg3;
+- (void)updateLayoutAnimated:(BOOL)arg1;
+- (void)updateNumberOfCellsWithNewValue:(unsigned int)arg1 animated:(BOOL)arg2;
 - (id)visibleCells;
 
 @end

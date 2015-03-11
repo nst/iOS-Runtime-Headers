@@ -22,7 +22,7 @@
 @property(retain) HDContentProtectionManager * contentProtectionManager;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) <HDHealthDataCollectionManager> * healthDataCollectionManager;
 @property(retain) <HDHealthDataManager> * healthDataManager;
 @property(retain) <HDHealthDatabase> * healthDatabase;
@@ -38,7 +38,7 @@
 - (void).cxx_destruct;
 - (id)backgroundTaskScheduler;
 - (void)beginTransaction:(id)arg1;
-- (bool)containsActiveWorkouts;
+- (BOOL)containsActiveWorkouts;
 - (id)contentProtectionManager;
 - (void)endTransaction:(id)arg1;
 - (id)healthDataCollectionManager;
@@ -51,7 +51,7 @@
 - (void)invalidateActivityAlertSuppressionForBundleIdentifier:(id)arg1;
 - (void)pauseActiveWorkoutsWithCompletion:(id)arg1;
 - (void)performBlockWithPowerAssertionIdentifier:(id)arg1 transactionName:(id)arg2 powerAssertionInterval:(double)arg3 block:(id)arg4;
-- (bool)persistAndNotifyDataObject:(id)arg1 error:(id*)arg2;
+- (BOOL)persistAndNotifyDataObject:(id)arg1 error:(id*)arg2;
 - (id)processStateManager;
 - (void)registerForDaemonReady:(id)arg1;
 - (void)registerForLaunchNotification:(const char *)arg1;
@@ -67,7 +67,7 @@
 - (void)setPairedWatchBundleIdentifierProvider:(id)arg1;
 - (void)setSyncEngine:(id)arg1;
 - (void)setUserCharacteristicsManager:(id)arg1;
-- (void)suppressActivityAlertsForBundleIdentifier:(id)arg1 reason:(long long)arg2;
+- (void)suppressActivityAlertsForBundleIdentifier:(id)arg1 reason:(int)arg2;
 - (id)syncEngine;
 - (void)terminate;
 - (void)unregisterForLaunchNotification:(const char *)arg1;

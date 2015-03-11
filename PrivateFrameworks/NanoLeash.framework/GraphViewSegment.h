@@ -5,10 +5,10 @@
 @class CALayer;
 
 @interface GraphViewSegment : NSObject {
-    double avghistory[33];
+    float avghistory[33];
     int index;
     CALayer *layer;
-    double rssihistory[33];
+    float rssihistory[33];
 }
 
 @property(readonly) CALayer * layer;
@@ -16,11 +16,11 @@
 - (void).cxx_destruct;
 - (id)accessibilityValue;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
-- (bool)addAvg:(double)arg1 liveRSSI:(double)arg2;
+- (BOOL)addAvg:(float)arg1 liveRSSI:(float)arg2;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)init;
-- (bool)isFull;
-- (bool)isVisibleInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)isFull;
+- (BOOL)isVisibleInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layer;
 - (void)reset;
 

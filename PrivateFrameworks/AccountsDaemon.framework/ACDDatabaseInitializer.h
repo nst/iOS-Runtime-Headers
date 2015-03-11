@@ -24,9 +24,9 @@
 - (void)_addAccessKeysAttributeToLinkedInAccountType;
 - (void)_addAccessKeysAttributeToLiverpoolAccountType;
 - (void)_addAccessKeysAttributeToTencentWeiboAccountType;
-- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 credentialType:(id)arg5 supportsAuthentication:(bool)arg6 supportsMultipleAccounts:(bool)arg7;
-- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 syncableDataclasses:(id)arg5 credentialType:(id)arg6 supportsAuthentication:(bool)arg7 supportsMultipleAccounts:(bool)arg8 credentialProtectionPolicy:(id)arg9;
-- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 syncableDataclasses:(id)arg5 credentialType:(id)arg6 supportsAuthentication:(bool)arg7 supportsMultipleAccounts:(bool)arg8;
+- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 credentialType:(id)arg5 supportsAuthentication:(BOOL)arg6 supportsMultipleAccounts:(BOOL)arg7;
+- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 syncableDataclasses:(id)arg5 credentialType:(id)arg6 supportsAuthentication:(BOOL)arg7 supportsMultipleAccounts:(BOOL)arg8 credentialProtectionPolicy:(id)arg9;
+- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 syncableDataclasses:(id)arg5 credentialType:(id)arg6 supportsAuthentication:(BOOL)arg7 supportsMultipleAccounts:(BOOL)arg8;
 - (void)_addAppleAccountType;
 - (void)_addAppleIDAccountType;
 - (void)_addAppleIDAuthenticationAccountType;
@@ -36,7 +36,7 @@
 - (void)_addCloudKitAccountType;
 - (void)_addCloudKitDataclasses;
 - (void)_addContactsCalendarsDataclassesToFB;
-- (void)_addCredentialType:(id)arg1 toAccountType:(id)arg2 supportsAuthentication:(bool)arg3;
+- (void)_addCredentialType:(id)arg1 toAccountType:(id)arg2 supportsAuthentication:(BOOL)arg3;
 - (void)_addDataclassWithName:(id)arg1;
 - (void)_addExchangeAccountType;
 - (void)_addFMFAccountType;

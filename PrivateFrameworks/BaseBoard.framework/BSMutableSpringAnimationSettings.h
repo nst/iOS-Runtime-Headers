@@ -7,21 +7,21 @@
 @interface BSMutableSpringAnimationSettings : BSSpringAnimationSettings {
 }
 
-@property double damping;
+@property float damping;
 @property double delay;
-@property double epsilon;
+@property float epsilon;
 @property double frameInterval;
-@property double mass;
-@property double stiffness;
+@property float mass;
+@property float stiffness;
 @property(retain) CAMediaTimingFunction * timingFunction;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setDamping:(double)arg1;
+- (void)setDamping:(float)arg1;
 - (void)setDelay:(double)arg1;
-- (void)setEpsilon:(double)arg1;
+- (void)setEpsilon:(float)arg1;
 - (void)setFrameInterval:(double)arg1;
-- (void)setMass:(double)arg1;
-- (void)setStiffness:(double)arg1;
+- (void)setMass:(float)arg1;
+- (void)setStiffness:(float)arg1;
 - (void)setTimingFunction:(id)arg1;
 
 @end

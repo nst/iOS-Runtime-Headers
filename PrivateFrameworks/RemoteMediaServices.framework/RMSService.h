@@ -10,9 +10,9 @@
     NSString *_hostName;
     NSString *_networkName;
     int _port;
-    long long _serviceDiscoverySource;
-    long long _serviceLegacyFlags;
-    long long _serviceType;
+    int _serviceDiscoverySource;
+    int _serviceLegacyFlags;
+    int _serviceType;
 }
 
 @property(retain) NSString * displayName;
@@ -20,9 +20,9 @@
 @property(retain) NSString * hostName;
 @property(retain) NSString * networkName;
 @property int port;
-@property long long serviceDiscoverySource;
-@property long long serviceLegacyFlags;
-@property long long serviceType;
+@property int serviceDiscoverySource;
+@property int serviceLegacyFlags;
+@property int serviceType;
 
 + (id)protobufsFromServices:(id)arg1;
 + (id)servicesFromProtobufs:(id)arg1;
@@ -35,22 +35,22 @@
 - (id)hostName;
 - (id)initWithData:(id)arg1;
 - (id)initWithProtobuf:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToService:(id)arg1;
-- (bool)isLegacy;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToService:(id)arg1;
+- (BOOL)isLegacy;
 - (id)networkName;
 - (int)port;
 - (id)protobuf;
-- (long long)serviceDiscoverySource;
-- (long long)serviceLegacyFlags;
-- (long long)serviceType;
+- (int)serviceDiscoverySource;
+- (int)serviceLegacyFlags;
+- (int)serviceType;
 - (void)setDisplayName:(id)arg1;
 - (void)setHomeSharingGroupKey:(id)arg1;
 - (void)setHostName:(id)arg1;
 - (void)setNetworkName:(id)arg1;
 - (void)setPort:(int)arg1;
-- (void)setServiceDiscoverySource:(long long)arg1;
-- (void)setServiceLegacyFlags:(long long)arg1;
-- (void)setServiceType:(long long)arg1;
+- (void)setServiceDiscoverySource:(int)arg1;
+- (void)setServiceLegacyFlags:(int)arg1;
+- (void)setServiceType:(int)arg1;
 
 @end

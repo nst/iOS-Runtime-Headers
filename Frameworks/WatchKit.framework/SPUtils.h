@@ -5,13 +5,13 @@
 @interface SPUtils : NSObject {
 }
 
-+ (bool)appExtensionFirstUnlock;
++ (BOOL)appExtensionFirstUnlock;
 + (id)deserializeObject:(id)arg1;
-+ (unsigned long long)folderSizeAtPath:(id)arg1 volumeBlockSize:(unsigned long long)arg2;
-+ (bool)isRunningInF5DemoMode;
++ (unsigned long long)folderSizeAtPath:(id)arg1 volumeBlockSize:(unsigned int)arg2;
++ (BOOL)isRunningInF5DemoMode;
 + (id)localizedStringForSystemLanguage:(id)arg1 fromBundlePath:(id)arg2;
 + (id)serializeObject:(id)arg1;
 + (id)uniqueNumber;
-+ (unsigned long long)userVolumeBlockSize;
++ (unsigned int)userVolumeBlockSize;
 
 @end

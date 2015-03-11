@@ -9,7 +9,9 @@
 @class NSInputStream, NSObject<OS_dispatch_queue>, NSOutputStream, NSString;
 
 @interface _IDSDeviceConnection : NSObject <IDSDaemonListenerProtocol> {
+    BOOL _hasTimedOut;
     NSInputStream *_inputStreamForSocket;
+    BOOL _isDefaultPairedDevice;
     NSString *_nsuuid;
     id _openSocketCompletionHandler;
     NSString *_openSocketCompletionHandlerID;
@@ -19,13 +21,11 @@
     NSString *_serviceToken;
     int _socket;
     NSString *_streamName;
-    bool_hasTimedOut;
-    bool_isDefaultPairedDevice;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain,readonly) NSInputStream * inputStream;
 @property(retain,readonly) NSOutputStream * outputStream;
 @property(readonly) int socket;
@@ -42,7 +42,7 @@
 - (id)outputStream;
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (int)socket;
-- (bool)updateConnectionWithOptions:(id)arg1 error:(id*)arg2;
+- (BOOL)updateConnectionWithOptions:(id)arg1 error:(id*)arg2;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;
 
 @end

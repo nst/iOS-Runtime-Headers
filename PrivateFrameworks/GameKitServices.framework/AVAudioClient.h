@@ -14,10 +14,10 @@
 + (id)currentInputDevice;
 + (id)defaultInputDevice;
 + (id)defaultOutputDevice;
-+ (bool)hasActiveAudioSession;
++ (BOOL)hasActiveAudioSession;
 + (void)initializeAudioSessionQ;
 + (void)setAudioSessionProperties:(id)arg1;
-+ (bool)setInputDevice:(id)arg1;
++ (BOOL)setInputDevice:(id)arg1;
 + (void)startAudioSession;
 + (void)startAudioSessionWithCompletionHandler:(id)arg1;
 + (void)stopAudioSession;

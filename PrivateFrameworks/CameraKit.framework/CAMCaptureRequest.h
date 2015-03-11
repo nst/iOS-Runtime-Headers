@@ -6,21 +6,21 @@
 
 @interface CAMCaptureRequest : NSObject <NSCopying, NSMutableCopying> {
     NSMutableDictionary *__parameterStorage;
-    long long _type;
+    int _type;
 }
 
 @property(copy,readonly) NSDictionary * _customParameterStorage;
 @property(readonly) NSMutableDictionary * _parameterStorage;
-@property(readonly) long long type;
+@property(readonly) int type;
 
 - (void).cxx_destruct;
 - (id)_customParameterStorage;
 - (id)_parameterStorage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (id)initWithType:(long long)arg1;
+- (id)initWithType:(int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)parameterForKey:(id)arg1;
-- (long long)type;
+- (int)type;
 
 @end

@@ -11,9 +11,9 @@
 }
 
 @property(retain) CKDPCommentContent * commentContent;
-@property(readonly) bool hasCommentContent;
-@property(readonly) bool hasIdentifier;
-@property(readonly) bool hasPath;
+@property(readonly) BOOL hasCommentContent;
+@property(readonly) BOOL hasIdentifier;
+@property(readonly) BOOL hasPath;
 @property(retain) CKDPCommentedOnId * identifier;
 @property(retain) NSString * path;
 
@@ -25,15 +25,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCommentContent;
-- (bool)hasIdentifier;
-- (bool)hasPath;
-- (unsigned long long)hash;
+- (BOOL)hasCommentContent;
+- (BOOL)hasIdentifier;
+- (BOOL)hasPath;
+- (unsigned int)hash;
 - (id)identifier;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)path;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setCommentContent:(id)arg1;

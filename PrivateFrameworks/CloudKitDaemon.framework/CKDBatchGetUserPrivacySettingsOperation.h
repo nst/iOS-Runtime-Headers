@@ -16,6 +16,6 @@
 - (id)containerPrivacySettings;
 - (void)main;
 - (void)setContainerPrivacySettings:(id)arg1;
-- (bool)shouldCheckAppVersion;
+- (BOOL)shouldCheckAppVersion;
 
 @end

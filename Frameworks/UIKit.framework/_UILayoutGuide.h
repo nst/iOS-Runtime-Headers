@@ -5,42 +5,42 @@
 @class NSArray, NSString;
 
 @interface _UILayoutGuide : UIView <UILayoutSupport> {
+    BOOL _allowsArchivingAsSubview;
     NSString *_archivedIdentifier;
     NSArray *_constraintsToRemoveAtRuntime;
-    bool_allowsArchivingAsSubview;
-    bool_horizontal;
+    BOOL _horizontal;
 }
 
-@property(setter=_setAllowsArchivingAsSubview:) bool _allowsArchivingAsSubview;
+@property(setter=_setAllowsArchivingAsSubview:) BOOL _allowsArchivingAsSubview;
 @property(setter=_setArchivedIdentifier:,copy) NSString * _archivedIdentifier;
 @property(setter=_setConstraintsToRemoveAtRuntime:,copy) NSArray * _constraintsToRemoveAtRuntime;
-@property(getter=isHorizontal,setter=_setHorizontal:) bool _horizontal;
+@property(getter=isHorizontal,setter=_setHorizontal:) BOOL _horizontal;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) double length;
+@property(readonly) unsigned int hash;
+@property(readonly) float length;
 @property(readonly) Class superclass;
 
 + (id)_horizontalLayoutGuide;
 + (id)_verticalLayoutGuide;
 + (id)classFallbacksForKeyedArchiver;
 
-- (bool)_allowsArchivingAsSubview;
+- (BOOL)_allowsArchivingAsSubview;
 - (id)_archivedIdentifier;
 - (id)_constraintsToRemoveAtRuntime;
-- (bool)_isFloatingLayoutItem;
+- (BOOL)_isFloatingLayoutItem;
 - (id)_layoutVariablesWithAmbiguousValue;
 - (id)_relevantLayoutVariables;
-- (void)_setAllowsArchivingAsSubview:(bool)arg1;
+- (void)_setAllowsArchivingAsSubview:(BOOL)arg1;
 - (void)_setArchivedIdentifier:(id)arg1;
 - (void)_setConstraintsToRemoveAtRuntime:(id)arg1;
-- (void)_setHorizontal:(bool)arg1;
+- (void)_setHorizontal:(BOOL)arg1;
 - (void)_setUpCounterDimensionConstraint;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isHorizontal;
-- (double)length;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isHorizontal;
+- (float)length;
 
 @end

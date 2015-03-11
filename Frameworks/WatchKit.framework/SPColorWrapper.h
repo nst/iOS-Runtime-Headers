@@ -10,7 +10,7 @@
 
 @property(readonly) UIColor * color;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 + (id)wrapperForColor:(id)arg1;
 
 - (void).cxx_destruct;

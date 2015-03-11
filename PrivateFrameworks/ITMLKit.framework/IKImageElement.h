@@ -6,45 +6,45 @@
 
 @interface IKImageElement : IKViewElement {
     NSURL *_defaultURL;
-    unsigned long long _imageType;
-    double _srcHeight;
-    double _srcWidth;
+    unsigned int _imageType;
+    float _srcHeight;
+    float _srcWidth;
     NSDictionary *_srcset;
 }
 
 @property(readonly) UIColor * borderColor;
 @property(retain) NSURL * defaultURL;
-@property(readonly) long long fill;
-@property(readonly) double height;
-@property(readonly) unsigned long long imageType;
+@property(readonly) int fill;
+@property(readonly) float height;
+@property(readonly) unsigned int imageType;
 @property(retain,readonly) NSURL * placeholderURL;
-@property(readonly) unsigned long long position;
-@property(readonly) long long reflect;
+@property(readonly) unsigned int position;
+@property(readonly) int reflect;
 @property(retain,readonly) NSDictionary * srcset;
 @property(readonly) NSURL * url;
-@property(readonly) double width;
+@property(readonly) float width;
 
-+ (bool)shouldParseChildDOMElements;
++ (BOOL)shouldParseChildDOMElements;
 
 - (void).cxx_destruct;
-- (unsigned long long)_imageTypeForTagName:(id)arg1;
-- (long long)accessoryType;
+- (unsigned int)_imageTypeForTagName:(id)arg1;
+- (int)accessoryType;
 - (id)artworkCatalog;
 - (id)bestURL;
 - (id)borderColor;
 - (id)cachePath;
 - (id)defaultURL;
-- (long long)fill;
-- (double)height;
-- (unsigned long long)imageType;
+- (int)fill;
+- (float)height;
+- (unsigned int)imageType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)placeholderURL;
-- (unsigned long long)position;
-- (long long)reflect;
+- (unsigned int)position;
+- (int)reflect;
 - (id)resourceImage;
 - (void)setDefaultURL:(id)arg1;
 - (id)srcset;
 - (id)url;
-- (double)width;
+- (float)width;
 
 @end

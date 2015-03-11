@@ -4,24 +4,24 @@
 
 @interface TPDialerSoundController : NSObject {
     unsigned int _soundsActivated : 1;
-    unsigned long long _incompleteSoundCount;
+    unsigned int _incompleteSoundCount;
     struct __CFSet { } *_inflightSounds;
 }
 
-@property unsigned long long incompleteSoundCount;
+@property unsigned int incompleteSoundCount;
 
 + (void)_delayedDeactivate;
 
-- (void)_stopAllSoundsForcingCallbacks:(bool)arg1;
+- (void)_stopAllSoundsForcingCallbacks:(BOOL)arg1;
 - (void)applicationResumedNotification:(id)arg1;
 - (void)applicationSuspendedNotification:(id)arg1;
 - (void)dealloc;
-- (unsigned long long)incompleteSoundCount;
+- (unsigned int)incompleteSoundCount;
 - (id)init;
 - (void)playSoundForDialerCharacter:(unsigned int)arg1;
-- (void)setIncompleteSoundCount:(unsigned long long)arg1;
-- (void)setSoundsActivated:(bool)arg1;
-- (void)soundCompletedPlaying:(unsigned int)arg1;
+- (void)setIncompleteSoundCount:(unsigned int)arg1;
+- (void)setSoundsActivated:(BOOL)arg1;
+- (void)soundCompletedPlaying:(unsigned long)arg1;
 - (void)stopSoundForDialerCharacter:(unsigned int)arg1;
 
 @end

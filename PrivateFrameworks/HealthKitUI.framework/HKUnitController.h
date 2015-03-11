@@ -23,7 +23,7 @@
 - (void)_postNotificationWithChangedKeys:(id)arg1;
 - (void)_refreshHKUnitPreferences;
 - (void)_unitPreferencesDidUpdate:(id)arg1;
-- (void)_updateHKUnitPreferences:(id)arg1 shouldPostNotification:(bool)arg2;
+- (void)_updateHKUnitPreferences:(id)arg1 shouldPostNotification:(BOOL)arg2;
 - (void)dealloc;
 - (id)displayNameForDataUnit:(id)arg1 unit:(id)arg2;
 - (id)displayNameForDataUnit:(id)arg1;

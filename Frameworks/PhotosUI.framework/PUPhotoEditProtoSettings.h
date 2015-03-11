@@ -3,52 +3,52 @@
  */
 
 @interface PUPhotoEditProtoSettings : PUSettings {
+    BOOL _allowAnyPlugin;
+    BOOL _autoCropEnabled;
+    BOOL _cropMaskBlurred;
     double _cropRecomposeDelay;
-    double _cropSideMargins;
-    double _cropWheelSize;
-    bool_allowAnyPlugin;
-    bool_autoCropEnabled;
-    bool_cropMaskBlurred;
-    bool_showLevelIndicator;
-    bool_showResetToolButton;
-    bool_simulateDownload;
-    bool_useOldPhotosEditor2;
+    float _cropSideMargins;
+    float _cropWheelSize;
+    BOOL _showLevelIndicator;
+    BOOL _showResetToolButton;
+    BOOL _simulateDownload;
+    BOOL _useOldPhotosEditor2;
 }
 
-@property bool allowAnyPlugin;
-@property bool autoCropEnabled;
-@property bool cropMaskBlurred;
+@property BOOL allowAnyPlugin;
+@property BOOL autoCropEnabled;
+@property BOOL cropMaskBlurred;
 @property double cropRecomposeDelay;
-@property double cropSideMargins;
-@property double cropWheelSize;
-@property bool showLevelIndicator;
-@property bool showResetToolButton;
-@property bool simulateDownload;
-@property bool useOldPhotosEditor2;
+@property float cropSideMargins;
+@property float cropWheelSize;
+@property BOOL showLevelIndicator;
+@property BOOL showResetToolButton;
+@property BOOL simulateDownload;
+@property BOOL useOldPhotosEditor2;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (bool)allowAnyPlugin;
-- (bool)autoCropEnabled;
-- (bool)cropMaskBlurred;
+- (BOOL)allowAnyPlugin;
+- (BOOL)autoCropEnabled;
+- (BOOL)cropMaskBlurred;
 - (double)cropRecomposeDelay;
-- (double)cropSideMargins;
-- (double)cropWheelSize;
-- (void)setAllowAnyPlugin:(bool)arg1;
-- (void)setAutoCropEnabled:(bool)arg1;
-- (void)setCropMaskBlurred:(bool)arg1;
+- (float)cropSideMargins;
+- (float)cropWheelSize;
+- (void)setAllowAnyPlugin:(BOOL)arg1;
+- (void)setAutoCropEnabled:(BOOL)arg1;
+- (void)setCropMaskBlurred:(BOOL)arg1;
 - (void)setCropRecomposeDelay:(double)arg1;
-- (void)setCropSideMargins:(double)arg1;
-- (void)setCropWheelSize:(double)arg1;
+- (void)setCropSideMargins:(float)arg1;
+- (void)setCropWheelSize:(float)arg1;
 - (void)setDefaultValues;
-- (void)setShowLevelIndicator:(bool)arg1;
-- (void)setShowResetToolButton:(bool)arg1;
-- (void)setSimulateDownload:(bool)arg1;
-- (void)setUseOldPhotosEditor2:(bool)arg1;
-- (bool)showLevelIndicator;
-- (bool)showResetToolButton;
-- (bool)simulateDownload;
-- (bool)useOldPhotosEditor2;
+- (void)setShowLevelIndicator:(BOOL)arg1;
+- (void)setShowResetToolButton:(BOOL)arg1;
+- (void)setSimulateDownload:(BOOL)arg1;
+- (void)setUseOldPhotosEditor2:(BOOL)arg1;
+- (BOOL)showLevelIndicator;
+- (BOOL)showResetToolButton;
+- (BOOL)simulateDownload;
+- (BOOL)useOldPhotosEditor2;
 
 @end

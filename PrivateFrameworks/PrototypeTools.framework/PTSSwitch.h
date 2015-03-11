@@ -7,23 +7,23 @@
 @interface PTSSwitch : UIView <PTSHUDControl, _UISettingsKeyPathObserver> {
     SEL _action;
     int _alignment;
-    double _height;
+    BOOL _enabled;
+    float _height;
     _UISettings *_settings;
     NSArray *_subviewConstraints;
     UISwitch *_switchControl;
     id _target;
     UILabel *_titleLabel;
     NSString *_valueKeyPath;
-    bool_enabled;
 }
 
 @property SEL action;
 @property int alignment;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool enabled;
-@property(readonly) unsigned long long hash;
-@property(readonly) double height;
+@property BOOL enabled;
+@property(readonly) unsigned int hash;
+@property(readonly) float height;
 @property _UISettings * settings;
 @property(retain) NSArray * subviewConstraints;
 @property(readonly) Class superclass;
@@ -32,7 +32,7 @@
 @property(retain) UILabel * titleLabel;
 @property(copy) NSString * valueKeyPath;
 
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultFrame;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
 + (id)switch;
 + (id)switchForSettings:(id)arg1 valueKeyPath:(id)arg2 title:(id)arg3;
 
@@ -40,10 +40,10 @@
 - (SEL)action;
 - (int)alignment;
 - (void)dealloc;
-- (bool)enabled;
+- (BOOL)enabled;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (double)height;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (float)height;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)makeSwitch;
 - (id)makeTitleLabel;
@@ -51,7 +51,7 @@
 - (void)pressed:(id)arg1;
 - (void)setAction:(SEL)arg1;
 - (void)setAlignment:(int)arg1;
-- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setSettings:(id)arg1 valueKeyPath:(id)arg2;
 - (void)setSettings:(id)arg1;
 - (void)setSubviewConstraints:(id)arg1;

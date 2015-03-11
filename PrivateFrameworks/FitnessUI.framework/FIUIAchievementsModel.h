@@ -9,7 +9,7 @@
     NSObject<OS_dispatch_queue> *_achievementsLock;
     <FIUIAchievementsModelDelegate> *_delegate;
     HKExtendedHealthStore *_extendedHealthStore;
-    bool_loadingAchievements;
+    BOOL _loadingAchievements;
 }
 
 @property <FIUIAchievementsModelDelegate> * delegate;

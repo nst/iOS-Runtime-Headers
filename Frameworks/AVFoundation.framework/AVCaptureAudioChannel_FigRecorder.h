@@ -15,7 +15,7 @@
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1;
 - (void)invalidate;
-- (bool)isKindOfClass:(Class)arg1;
+- (BOOL)isKindOfClass:(Class)arg1;
 - (float)peakHoldLevel;
 
 @end

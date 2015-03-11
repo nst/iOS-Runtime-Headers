@@ -5,21 +5,21 @@
 @class <ATSyncClient>, ATDeviceSettings, NSMutableArray;
 
 @interface ATDeviceSyncSessionSyncTask : ATDeviceSyncSessionTask {
+    BOOL _addedTransportUpgradeException;
     unsigned long long _clientCurrentItemCount;
     unsigned long long _clientTotalItemCount;
     <ATSyncClient> *_pluginClient;
     unsigned long long _serverCurrentItemCount;
     unsigned long long _serverTotalItemCount;
     ATDeviceSettings *_settings;
+    BOOL _startAssetTaskWhenFinished;
     NSMutableArray *_streamReaders;
-    unsigned long long _syncIterationCount;
+    unsigned int _syncIterationCount;
     double _taskStartTime;
     unsigned long long _totalItemsSyncedCount;
-    bool_addedTransportUpgradeException;
-    bool_startAssetTaskWhenFinished;
 }
 
-@property bool startAssetTaskWhenFinished;
+@property BOOL startAssetTaskWhenFinished;
 
 - (void).cxx_destruct;
 - (void)_applyChangesForSyncResponse:(id)arg1 toCurrentRevision:(unsigned long long)arg2 versionToken:(id)arg3 onMessageLink:(id)arg4;
@@ -39,8 +39,8 @@
 - (id)initWithDataClass:(id)arg1 onMessageLink:(id)arg2;
 - (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2;
 - (id)sessionGroupingKey;
-- (void)setStartAssetTaskWhenFinished:(bool)arg1;
+- (void)setStartAssetTaskWhenFinished:(BOOL)arg1;
 - (void)start;
-- (bool)startAssetTaskWhenFinished;
+- (BOOL)startAssetTaskWhenFinished;
 
 @end

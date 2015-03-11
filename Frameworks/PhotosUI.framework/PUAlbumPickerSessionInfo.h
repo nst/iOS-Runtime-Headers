@@ -6,6 +6,6 @@
 }
 
 - (id)initWithSourceAlbum:(struct NSObject { Class x1; }*)arg1 transferredAssets:(id)arg2;
-- (bool)isSelectingTargetAlbum;
+- (BOOL)isSelectingTargetAlbum;
 
 @end

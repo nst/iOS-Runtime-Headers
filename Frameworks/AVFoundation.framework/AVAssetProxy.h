@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithPropertyList:(id)arg1;
-- (bool)isProxy;
+- (BOOL)isProxy;
 - (id)tracks;
 
 @end

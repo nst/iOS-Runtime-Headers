@@ -9,13 +9,16 @@
     NSNumber *_bottomEnclosureMaterial;
     NSString *_deviceColor;
     NSString *_deviceEnclosureColor;
+    BOOL _diagnosticsOptInEnabled;
     NSNumber *_fcmMaterial;
     NSDate *_lastModificationDate;
+    BOOL _locationOptInEnabled;
     NSString *_marketingVersion;
     NSString *_material;
     NSString *_model;
     NSString *_name;
     NSString *_productType;
+    BOOL _siriOptInEnabled;
     NSNumber *_sizeInBytes;
     NSString *_systemBuildVersion;
     NSString *_systemVersion;
@@ -23,25 +26,22 @@
     NSUUID *_uuid;
     NSString *_watchFace;
     NSString *_watchFaceColor;
-    bool_diagnosticsOptInEnabled;
-    bool_locationOptInEnabled;
-    bool_siriOptInEnabled;
 }
 
 @property(retain) NSNumber * bcmWindowMaterial;
 @property(retain) NSNumber * bottomEnclosureMaterial;
 @property(retain) NSString * deviceColor;
 @property(retain) NSString * deviceEnclosureColor;
-@property(getter=isDiagnosticsOptInEnabled) bool diagnosticsOptInEnabled;
+@property(getter=isDiagnosticsOptInEnabled) BOOL diagnosticsOptInEnabled;
 @property(retain) NSNumber * fcmMaterial;
 @property(retain) NSDate * lastModificationDate;
-@property(getter=isLocationOptInEnabled) bool locationOptInEnabled;
+@property(getter=isLocationOptInEnabled) BOOL locationOptInEnabled;
 @property(retain) NSString * marketingVersion;
 @property(retain) NSString * material;
 @property(retain) NSString * model;
 @property(retain) NSString * name;
 @property(retain) NSString * productType;
-@property(getter=isSiriOptInEnabled) bool siriOptInEnabled;
+@property(getter=isSiriOptInEnabled) BOOL siriOptInEnabled;
 @property(retain) NSNumber * sizeInBytes;
 @property(retain) NSString * systemBuildVersion;
 @property(retain) NSString * systemVersion;
@@ -50,7 +50,7 @@
 @property(retain) NSString * watchFace;
 @property(retain) NSString * watchFaceColor;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bcmWindowMaterial;
@@ -61,9 +61,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fcmMaterial;
 - (id)initWithCoder:(id)arg1;
-- (bool)isDiagnosticsOptInEnabled;
-- (bool)isLocationOptInEnabled;
-- (bool)isSiriOptInEnabled;
+- (BOOL)isDiagnosticsOptInEnabled;
+- (BOOL)isLocationOptInEnabled;
+- (BOOL)isSiriOptInEnabled;
 - (id)lastModificationDate;
 - (id)marketingVersion;
 - (id)material;
@@ -74,16 +74,16 @@
 - (void)setBottomEnclosureMaterial:(id)arg1;
 - (void)setDeviceColor:(id)arg1;
 - (void)setDeviceEnclosureColor:(id)arg1;
-- (void)setDiagnosticsOptInEnabled:(bool)arg1;
+- (void)setDiagnosticsOptInEnabled:(BOOL)arg1;
 - (void)setFcmMaterial:(id)arg1;
 - (void)setLastModificationDate:(id)arg1;
-- (void)setLocationOptInEnabled:(bool)arg1;
+- (void)setLocationOptInEnabled:(BOOL)arg1;
 - (void)setMarketingVersion:(id)arg1;
 - (void)setMaterial:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setProductType:(id)arg1;
-- (void)setSiriOptInEnabled:(bool)arg1;
+- (void)setSiriOptInEnabled:(BOOL)arg1;
 - (void)setSizeInBytes:(id)arg1;
 - (void)setSystemBuildVersion:(id)arg1;
 - (void)setSystemVersion:(id)arg1;

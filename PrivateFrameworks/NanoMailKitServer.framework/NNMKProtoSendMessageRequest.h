@@ -13,8 +13,8 @@
 
 @property(retain) NSString * body;
 @property(retain) NSMutableArray * ccs;
-@property(readonly) bool hasBody;
-@property(readonly) bool hasSubject;
+@property(readonly) BOOL hasBody;
+@property(readonly) BOOL hasSubject;
 @property(retain) NSString * subject;
 @property(retain) NSMutableArray * tos;
 
@@ -22,29 +22,29 @@
 - (void)addCc:(id)arg1;
 - (void)addTo:(id)arg1;
 - (id)body;
-- (id)ccAtIndex:(unsigned long long)arg1;
+- (id)ccAtIndex:(unsigned int)arg1;
 - (id)ccs;
-- (unsigned long long)ccsCount;
+- (unsigned int)ccsCount;
 - (void)clearCcs;
 - (void)clearTos;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasBody;
-- (bool)hasSubject;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasBody;
+- (BOOL)hasSubject;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setBody:(id)arg1;
 - (void)setCcs:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setTos:(id)arg1;
 - (id)subject;
-- (id)toAtIndex:(unsigned long long)arg1;
+- (id)toAtIndex:(unsigned int)arg1;
 - (id)tos;
-- (unsigned long long)tosCount;
+- (unsigned int)tosCount;
 - (void)writeTo:(id)arg1;
 
 @end

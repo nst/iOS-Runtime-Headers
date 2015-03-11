@@ -9,7 +9,7 @@
     NSString *_partnerIdentifier;
     NSString *_partnerTransactionIdentifier;
     NSString *_productIdentifier;
-    long long _quantity;
+    int _quantity;
     NSData *_requestData;
     NSDictionary *_requestParameters;
 }

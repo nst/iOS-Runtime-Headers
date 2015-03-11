@@ -14,7 +14,7 @@
 @property(copy) SKUIStorePageSplit * bottomSplit;
 @property(readonly) SKUIStorePageSplit * firstSplit;
 @property(copy) SKUIStorePageSplit * leftSplit;
-@property(readonly) long long numberOfSplits;
+@property(readonly) int numberOfSplits;
 @property(copy) SKUIStorePageSplit * rightSplit;
 @property(copy) SKUIStorePageSplit * topSplit;
 
@@ -25,13 +25,13 @@
 - (void)enumerateSplitsUsingBlock:(id)arg1;
 - (id)firstSplit;
 - (id)leftSplit;
-- (long long)numberOfSplits;
+- (int)numberOfSplits;
 - (id)rightSplit;
 - (void)setBottomSplit:(id)arg1;
 - (void)setLeftSplit:(id)arg1;
 - (void)setRightSplit:(id)arg1;
 - (void)setTopSplit:(id)arg1;
-- (void)sizeSplitsToFitWidth:(double)arg1 usingBlock:(id)arg2;
+- (void)sizeSplitsToFitWidth:(float)arg1 usingBlock:(id)arg2;
 - (id)topSplit;
 
 @end

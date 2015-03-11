@@ -5,50 +5,50 @@
 @class NSArray;
 
 @interface PULayoutSampledSectioning : PULayoutSectioning {
-    long long _lastHitRangeIndex;
-    long long _lastHitRealSectionIndex;
-    long long _lastHitVisualSectionIndex;
-    long long *_maximumNumberOfVisibleItemsForVisualSection;
-    long long *_numberOfItemsForRealSection;
-    long long *_numberOfRealItemsForVisualSection;
-    long long _numberOfRealSections;
-    long long _numberOfVisualSections;
+    BOOL _hasSomeSampling;
+    int _lastHitRangeIndex;
+    int _lastHitRealSectionIndex;
+    int _lastHitVisualSectionIndex;
+    int *_maximumNumberOfVisibleItemsForVisualSection;
+    int *_numberOfItemsForRealSection;
+    int *_numberOfRealItemsForVisualSection;
+    int _numberOfRealSections;
+    int _numberOfVisualSections;
     NSArray *_realSectionIndexesForVisualSection;
+    BOOL _samplingIsValid;
     id *_sectionSamplers;
-    long long *_startIndexInVisualSectionForRealSection;
-    long long *_visualSectionForRealSection;
-    bool_hasSomeSampling;
-    bool_samplingIsValid;
-    bool_sectioningIsValid;
-    bool_supportsSamplingAndSectionGrouping;
+    BOOL _sectioningIsValid;
+    int *_startIndexInVisualSectionForRealSection;
+    BOOL _supportsSamplingAndSectionGrouping;
+    int *_visualSectionForRealSection;
 }
 
-@property bool supportsSamplingAndSectionGrouping;
+@property BOOL supportsSamplingAndSectionGrouping;
 
 - (void).cxx_destruct;
-- (long long)__debugUnsampledIndexForRealIndexPath:(struct PUSimpleIndexPath { long long x1; long long x2; })arg1;
+- (int)__debugUnsampledIndexForRealIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1;
 - (void)_cacheSectioningIfNeeded;
 - (void)_discardSamplingCache;
 - (void)_discardSectioningCache;
-- (struct PUSimpleIndexPath { long long x1; long long x2; })_mainRealItemIndexPathForVisualSection:(long long)arg1 andUnsampledItemIndex:(long long)arg2;
-- (id)_sectionSamplerForVisualSection:(long long)arg1;
-- (long long)_unsampledItemIndexForVisualItemIndex:(long long)arg1 visualSection:(long long)arg2;
-- (long long)_visualItemIndexForUnsampledItemIndex:(long long)arg1 visualSection:(long long)arg2 isMainItem:(bool*)arg3;
+- (struct PUSimpleIndexPath { int x1; int x2; })_mainRealItemIndexPathForVisualSection:(int)arg1 andUnsampledItemIndex:(int)arg2;
+- (id)_sectionSamplerForVisualSection:(int)arg1;
+- (int)_unsampledItemIndexForVisualItemIndex:(int)arg1 visualSection:(int)arg2;
+- (int)_visualItemIndexForUnsampledItemIndex:(int)arg1 visualSection:(int)arg2 isMainItem:(BOOL*)arg3;
 - (void)dealloc;
-- (void)enumerateRealMainItemIndexPathsForVisualSection:(long long)arg1 inVisualItemRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 usingBlock:(id)arg3;
-- (void)enumerateRealSectionsForVisualSection:(long long)arg1 usingBlock:(id)arg2;
-- (bool)hasSomeSampling;
+- (void)enumerateRealMainItemIndexPathsForVisualSection:(int)arg1 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id)arg3;
+- (void)enumerateRealSectionsForVisualSection:(int)arg1 usingBlock:(id)arg2;
+- (BOOL)hasSomeSampling;
 - (id)init;
 - (void)invalidateSampling;
 - (void)invalidateSections;
-- (struct PUSimpleIndexPath { long long x1; long long x2; })mainRealItemIndexPathForVisualIndexPath:(struct PUSimpleIndexPath { long long x1; long long x2; })arg1;
-- (long long)mainRealSectionForVisualSection:(long long)arg1;
-- (long long)numberOfRealItemsInVisualSection:(long long)arg1;
-- (long long)numberOfVisualItemsInVisualSection:(long long)arg1;
-- (void)setSupportsSamplingAndSectionGrouping:(bool)arg1;
-- (bool)supportsSamplingAndSectionGrouping;
+- (struct PUSimpleIndexPath { int x1; int x2; })mainRealItemIndexPathForVisualIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1;
+- (int)mainRealSectionForVisualSection:(int)arg1;
+- (int)numberOfRealItemsInVisualSection:(int)arg1;
+- (int)numberOfVisualItemsInVisualSection:(int)arg1;
+- (void)setSupportsSamplingAndSectionGrouping:(BOOL)arg1;
+- (BOOL)supportsSamplingAndSectionGrouping;
 - (id)visibleUnsampledIndexesForCombinedRealSections:(id)arg1;
-- (struct PUSimpleIndexPath { long long x1; long long x2; })visualIndexPathForRealIndexPath:(struct PUSimpleIndexPath { long long x1; long long x2; })arg1 isMainItem:(bool*)arg2;
-- (long long)visualSectionForRealSection:(long long)arg1;
+- (struct PUSimpleIndexPath { int x1; int x2; })visualIndexPathForRealIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1 isMainItem:(BOOL*)arg2;
+- (int)visualSectionForRealSection:(int)arg1;
 
 @end

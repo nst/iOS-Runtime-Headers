@@ -11,7 +11,7 @@
     AXHATimer *_deviceUpdatesTimer;
     NSMutableArray *_remoteControllers;
     AXHearingSlaveController *_slaveController;
-    long long _state;
+    int _state;
     NSMutableArray *_updateDeviceBlocks;
 }
 
@@ -19,10 +19,10 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <AXHAControllerBrowserDelegateProtocol> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSMutableArray * remoteControllers;
 @property(retain) AXHearingSlaveController * slaveController;
-@property long long state;
+@property int state;
 @property(readonly) Class superclass;
 @property(retain) NSMutableArray * updateDeviceBlocks;
 
@@ -39,11 +39,11 @@
 - (void)controllerDidFinishConnecting:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)device:(id)arg1 didUpdateProperty:(long long)arg2;
+- (void)device:(id)arg1 didUpdateProperty:(int)arg2;
 - (id)init;
-- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(bool)arg3;
+- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceBrowser:(id)arg1 didNotSearch:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(bool)arg3;
+- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceBrowserDidStopSearch:(id)arg1;
 - (void)netServiceBrowserWillSearch:(id)arg1;
 - (void)registerForPropertyUpdates:(id)arg1;
@@ -57,18 +57,18 @@
 - (void)setDelegate:(id)arg1;
 - (void)setRemoteControllers:(id)arg1;
 - (void)setSlaveController:(id)arg1;
-- (void)setState:(long long)arg1;
+- (void)setState:(int)arg1;
 - (void)setUpdateDeviceBlocks:(id)arg1;
-- (bool)shouldRelinquishConnection;
+- (BOOL)shouldRelinquishConnection;
 - (id)slaveController;
-- (long long)state;
+- (int)state;
 - (void)stop;
 - (void)stopPropertyUpdates;
 - (void)transitionToSlaveWithCompletion:(id)arg1;
 - (id)updateDeviceBlocks;
-- (void)updateProperty:(long long)arg1 forDeviceID:(id)arg2;
+- (void)updateProperty:(int)arg1 forDeviceID:(id)arg2;
 - (void)writePayload:(id)arg1 toControllers:(id)arg2;
-- (void)writeValue:(id)arg1 forProperty:(long long)arg2 forControllers:(id)arg3;
-- (void)writeValue:(id)arg1 forProperty:(long long)arg2 forDeviceID:(id)arg3;
+- (void)writeValue:(id)arg1 forProperty:(int)arg2 forControllers:(id)arg3;
+- (void)writeValue:(id)arg1 forProperty:(int)arg2 forDeviceID:(id)arg3;
 
 @end

@@ -5,6 +5,6 @@
 @interface TrimVideoNavigationItem : UINavigationItem {
 }
 
-- (long long)barStyle;
+- (int)barStyle;
 
 @end

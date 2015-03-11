@@ -6,23 +6,23 @@
 }
 
 - (id)albumPickerViewControllerSpec;
-- (struct CGSize { double x1; double x2; })baseInterItemSpacing;
-- (bool)canDisplayEditActionsInNavigationBar;
-- (bool)canDisplayOptionsInPopover;
-- (bool)canDisplaySearchActionInNavigationBar;
-- (bool)canDisplaySlideshowButton;
-- (long long)cellBannerTextAlignment;
-- (long long)cellFillMode;
-- (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(double)arg2;
-- (double)globalFooterHeight;
-- (double)maxSearchBarWidth;
+- (struct CGSize { float x1; float x2; })baseInterItemSpacing;
+- (BOOL)canDisplayEditActionsInNavigationBar;
+- (BOOL)canDisplayOptionsInPopover;
+- (BOOL)canDisplaySearchActionInNavigationBar;
+- (BOOL)canDisplaySlideshowButton;
+- (int)cellBannerTextAlignment;
+- (int)cellFillMode;
+- (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(float)arg2;
+- (float)globalFooterHeight;
+- (float)maxSearchBarWidth;
 - (id)photoBrowserSpec;
 - (id)photosPickerViewControllerSpec;
-- (bool)shouldPlaceDeleteInCenterToolbarPosition;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldPlaceDeleteInCenterToolbarPosition;
+- (unsigned int)supportedInterfaceOrientations;
 - (int)thumbnailImageFormat;
-- (bool)usesStackPopTransition;
-- (bool)wantsBackButtonTitleForPhotoBrowser;
-- (bool)wantsCustomNavigationTransition;
+- (BOOL)usesStackPopTransition;
+- (BOOL)wantsBackButtonTitleForPhotoBrowser;
+- (BOOL)wantsCustomNavigationTransition;
 
 @end

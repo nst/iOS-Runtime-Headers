@@ -7,7 +7,7 @@
 
 - (id)alias;
 - (id)compositeName;
-- (bool)isLoaded;
+- (BOOL)isLoaded;
 - (id)photos;
 - (id)playerID;
 - (void)setAlias:(id)arg1;

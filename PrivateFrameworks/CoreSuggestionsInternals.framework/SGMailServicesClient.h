@@ -5,19 +5,19 @@
 @class NSString;
 
 @interface SGMailServicesClient : NSObject <SGMailClient> {
-    bool_ignoreEmptyMessages;
+    BOOL _ignoreEmptyMessages;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool ignoreEmptyMessages;
+@property(readonly) unsigned int hash;
+@property BOOL ignoreEmptyMessages;
 @property(readonly) Class superclass;
 
 - (id)allMessagesSince:(id)arg1 onMessage:(id)arg2;
-- (bool)ignoreEmptyMessages;
+- (BOOL)ignoreEmptyMessages;
 - (id)messagesWithIds:(id)arg1 onMessage:(id)arg2;
 - (void)requestRichDownloadOfMessagesWithReferences:(id)arg1;
-- (void)setIgnoreEmptyMessages:(bool)arg1;
+- (void)setIgnoreEmptyMessages:(BOOL)arg1;
 
 @end

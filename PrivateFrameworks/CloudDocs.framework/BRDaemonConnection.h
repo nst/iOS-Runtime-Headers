@@ -5,8 +5,8 @@
 @class NSUUID;
 
 @interface BRDaemonConnection : NSXPCConnection {
+    BOOL _isUsingTokenService;
     NSUUID *_uuid;
-    bool_isUsingTokenService;
 }
 
 + (id)cloudDocsAppSupportURL;

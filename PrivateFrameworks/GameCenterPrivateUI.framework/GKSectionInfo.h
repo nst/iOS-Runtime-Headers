@@ -7,14 +7,14 @@
 @interface GKSectionInfo : NSObject {
     NSArray *_items;
     NSPredicate *_predicate;
-    long long _section;
+    int _section;
     NSArray *_sortDescriptors;
     NSString *_title;
 }
 
 @property(retain) NSArray * items;
 @property(retain) NSPredicate * predicate;
-@property long long section;
+@property int section;
 @property(retain) NSArray * sortDescriptors;
 @property(retain) NSString * title;
 
@@ -22,10 +22,10 @@
 - (id)description;
 - (id)items;
 - (id)predicate;
-- (long long)section;
+- (int)section;
 - (void)setItems:(id)arg1;
 - (void)setPredicate:(id)arg1;
-- (void)setSection:(long long)arg1;
+- (void)setSection:(int)arg1;
 - (void)setSortDescriptors:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)sortDescriptors;

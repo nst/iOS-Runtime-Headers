@@ -4,20 +4,20 @@
 
 @interface CAMDebugCaptureService : CAMCaptureService {
     double __enqueueTime;
-    bool_debugLoggingEnabled;
+    BOOL _debugLoggingEnabled;
 }
 
 @property(readonly) double _enqueueTime;
-@property(getter=isDebugLoggingEnabled) bool debugLoggingEnabled;
+@property(getter=isDebugLoggingEnabled) BOOL debugLoggingEnabled;
 
 - (double)_enqueueTime;
 - (void)didCaptureStillImageForRequest:(id)arg1;
-- (bool)isDebugLoggingEnabled;
+- (BOOL)isDebugLoggingEnabled;
 - (void)receivedStillImageForRequest:(id)arg1;
 - (void)requestWasEnqueued:(id)arg1;
 - (void)responseWasCompleted:(id)arg1 error:(id)arg2;
 - (void)responseWasGenerated:(id)arg1 error:(id)arg2;
-- (void)setDebugLoggingEnabled:(bool)arg1;
+- (void)setDebugLoggingEnabled:(BOOL)arg1;
 - (void)willCaptureStillImageForRequest:(id)arg1;
 
 @end

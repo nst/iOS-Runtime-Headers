@@ -12,7 +12,7 @@
     int _lastAmount;
     float _lastStrength;
     CIFilter *_maskFilter;
-    bool_needsReprocess;
+    BOOL _needsReprocess;
 }
 
 @property(retain) CIFilter * colorCubeFilter;

@@ -4,15 +4,15 @@
 
 @interface SKUICheckboxInputViewElement : SKUIInputViewElement {
     BOOL _disabled;
-    bool_selected;
+    BOOL _selected;
 }
 
-@property(getter=isSelected) bool selected;
+@property(getter=isSelected) BOOL selected;
 
 - (id)applyUpdatesWithElement:(id)arg1;
-- (unsigned long long)elementType;
+- (unsigned int)elementType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (bool)isSelected;
-- (void)setSelected:(bool)arg1;
+- (BOOL)isSelected;
+- (void)setSelected:(BOOL)arg1;
 
 @end

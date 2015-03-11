@@ -7,16 +7,16 @@
 @interface DOMHTMLOptGroupElement : DOMHTMLElement {
 }
 
-@property bool disabled;
+@property BOOL disabled;
 @property(copy) NSString * label;
 
 - (id)createPickerCell;
 - (id)createSelectedItem;
-- (bool)disabled;
+- (BOOL)disabled;
 - (id)itemTitle;
 - (id)label;
 - (void)populateCell:(id)arg1;
-- (void)setDisabled:(bool)arg1;
+- (void)setDisabled:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
 
 @end

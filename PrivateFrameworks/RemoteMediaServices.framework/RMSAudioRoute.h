@@ -7,14 +7,14 @@
 @interface RMSAudioRoute : NSObject {
     NSString *_displayName;
     unsigned long long _macAddress;
-    bool_selected;
-    bool_supportsVideo;
+    BOOL _selected;
+    BOOL _supportsVideo;
 }
 
 @property(retain) NSString * displayName;
 @property unsigned long long macAddress;
-@property(getter=isSelected) bool selected;
-@property bool supportsVideo;
+@property(getter=isSelected) BOOL selected;
+@property BOOL supportsVideo;
 
 + (id)audioRoutesFromProtobufs:(id)arg1;
 + (id)protobufsFromAudioRoutes:(id)arg1;
@@ -22,14 +22,14 @@
 - (void).cxx_destruct;
 - (id)displayName;
 - (id)initWithProtobuf:(id)arg1;
-- (bool)isEqualToAudioRoute:(id)arg1;
-- (bool)isSelected;
+- (BOOL)isEqualToAudioRoute:(id)arg1;
+- (BOOL)isSelected;
 - (unsigned long long)macAddress;
 - (id)protobuf;
 - (void)setDisplayName:(id)arg1;
 - (void)setMacAddress:(unsigned long long)arg1;
-- (void)setSelected:(bool)arg1;
-- (void)setSupportsVideo:(bool)arg1;
-- (bool)supportsVideo;
+- (void)setSelected:(BOOL)arg1;
+- (void)setSupportsVideo:(BOOL)arg1;
+- (BOOL)supportsVideo;
 
 @end

@@ -6,29 +6,29 @@
 
 @interface NSLengthFormatter : NSFormatter {
     void *_formatter;
+    BOOL _isForPersonHeight;
     void *_reserved[2];
-    bool_isForPersonHeight;
 }
 
-@property(getter=isForPersonHeightUse) bool forPersonHeightUse;
+@property(getter=isForPersonHeightUse) BOOL forPersonHeightUse;
 @property(copy) NSNumberFormatter * numberFormatter;
-@property long long unitStyle;
+@property int unitStyle;
 
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (void)dealloc;
-- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
 - (id)init;
-- (bool)isForPersonHeightUse;
+- (BOOL)isForPersonHeightUse;
 - (id)numberFormatter;
-- (void)setForPersonHeightUse:(bool)arg1;
+- (void)setForPersonHeightUse:(BOOL)arg1;
 - (void)setNumberFormatter:(id)arg1;
-- (void)setUnitStyle:(long long)arg1;
+- (void)setUnitStyle:(int)arg1;
 - (id)stringForObjectValue:(id)arg1;
 - (id)stringFromMeters:(double)arg1;
-- (id)stringFromValue:(double)arg1 unit:(long long)arg2;
-- (long long)targetUnitFromMeters:(double)arg1;
-- (id)unitStringFromMeters:(double)arg1 usedUnit:(long long*)arg2;
-- (id)unitStringFromValue:(double)arg1 unit:(long long)arg2;
-- (long long)unitStyle;
+- (id)stringFromValue:(double)arg1 unit:(int)arg2;
+- (int)targetUnitFromMeters:(double)arg1;
+- (id)unitStringFromMeters:(double)arg1 usedUnit:(int*)arg2;
+- (id)unitStringFromValue:(double)arg1 unit:(int)arg2;
+- (int)unitStyle;
 
 @end

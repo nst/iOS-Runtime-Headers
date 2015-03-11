@@ -10,22 +10,22 @@
 }
 
 @property(readonly) SKUICardViewElement * cardViewElement;
-@property(readonly) double horizontalContentInset;
+@property(readonly) float horizontalContentInset;
 @property(readonly) SKUIViewElementLayoutContext * layoutContext;
-@property(readonly) long long layoutStyle;
+@property(readonly) int layoutStyle;
 
-+ (bool)allowsViewElement:(id)arg1;
++ (BOOL)allowsViewElement:(id)arg1;
 + (id)layoutWithCardViewElement:(id)arg1 context:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)attributedStringForButton:(id)arg1;
 - (id)attributedStringForLabel:(id)arg1;
-- (double)bottomInsetForLastViewElement:(id)arg1 width:(double)arg2;
+- (float)bottomInsetForLastViewElement:(id)arg1 width:(float)arg2;
 - (id)cardViewElement;
-- (double)horizontalContentInset;
+- (float)horizontalContentInset;
 - (id)layoutContext;
-- (long long)layoutStyle;
-- (struct CGSize { double x1; double x2; })sizeForViewElement:(id)arg1 width:(double)arg2;
-- (double)topInsetForViewElement:(id)arg1 previousViewElement:(id)arg2 width:(double)arg3;
+- (int)layoutStyle;
+- (struct CGSize { float x1; float x2; })sizeForViewElement:(id)arg1 width:(float)arg2;
+- (float)topInsetForViewElement:(id)arg1 previousViewElement:(id)arg2 width:(float)arg3;
 
 @end

@@ -13,8 +13,8 @@
 }
 
 @property(retain) NSString * extensionName;
-@property(readonly) bool hasExtensionName;
-@property bool hasTypeCode;
+@property(readonly) BOOL hasExtensionName;
+@property BOOL hasTypeCode;
 @property unsigned int typeCode;
 
 - (void).cxx_destruct;
@@ -23,14 +23,14 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)extensionName;
-- (bool)hasExtensionName;
-- (bool)hasTypeCode;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasExtensionName;
+- (BOOL)hasTypeCode;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setExtensionName:(id)arg1;
-- (void)setHasTypeCode:(bool)arg1;
+- (void)setHasTypeCode:(BOOL)arg1;
 - (void)setTypeCode:(unsigned int)arg1;
 - (unsigned int)typeCode;
 - (void)writeTo:(id)arg1;

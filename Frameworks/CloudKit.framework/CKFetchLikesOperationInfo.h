@@ -6,23 +6,23 @@
 
 @interface CKFetchLikesOperationInfo : CKOperationInfo {
     NSArray *_itemIDs;
-    unsigned long long _resultsLimit;
+    unsigned int _resultsLimit;
     CKShareID *_shareID;
 }
 
 @property(retain) NSArray * itemIDs;
-@property unsigned long long resultsLimit;
+@property unsigned int resultsLimit;
 @property(retain) CKShareID * shareID;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)itemIDs;
-- (unsigned long long)resultsLimit;
+- (unsigned int)resultsLimit;
 - (void)setItemIDs:(id)arg1;
-- (void)setResultsLimit:(unsigned long long)arg1;
+- (void)setResultsLimit:(unsigned int)arg1;
 - (void)setShareID:(id)arg1;
 - (id)shareID;
 

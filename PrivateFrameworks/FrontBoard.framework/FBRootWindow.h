@@ -5,34 +5,34 @@
 @class NSHashTable, NSString, UIView;
 
 @interface FBRootWindow : FBWindow <FBSceneTransformTarget> {
+    BOOL _mainDisplay;
     UIView *_sceneContainerView;
     NSHashTable *_transforms;
-    bool_mainDisplay;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (bool)_isSecure;
++ (BOOL)_isSecure;
 
-- (bool)_appearsInLoupe;
-- (bool)_canBecomeKeyWindow;
-- (bool)_isClippedByScreenJail;
-- (bool)_isConstrainedByScreenJail;
-- (bool)_isOffsetByScreenJail;
-- (bool)_isRotatedByScreenJail;
-- (bool)_isScaledByScreenJail;
-- (bool)_isWindowServerHostingManaged;
+- (BOOL)_appearsInLoupe;
+- (BOOL)_canBecomeKeyWindow;
+- (BOOL)_isClippedByScreenJail;
+- (BOOL)_isConstrainedByScreenJail;
+- (BOOL)_isOffsetByScreenJail;
+- (BOOL)_isRotatedByScreenJail;
+- (BOOL)_isScaledByScreenJail;
+- (BOOL)_isWindowServerHostingManaged;
 - (void)_noteScreenDidChangeMode:(id)arg1;
-- (bool)_shouldApplyHorizontalPixelScaleTransform;
-- (bool)_shouldPrepareScreenForWindow;
+- (BOOL)_shouldApplyHorizontalPixelScaleTransform;
+- (BOOL)_shouldPrepareScreenForWindow;
 - (void)_updateTransforms;
-- (bool)_usesWindowServerHitTesting;
+- (BOOL)_usesWindowServerHitTesting;
 - (void)attachSceneTransform:(id)arg1;
 - (void)dealloc;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithDisplay:(id)arg1;
 - (void)removeSceneTransform:(id)arg1;
 - (id)sceneContainerView;

@@ -5,34 +5,34 @@
 @interface _UIKeyboardChangedInformation : NSObject <NSSecureCoding> {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     unsigned int _animationFencingPort;
+    BOOL _keyboardOnScreen;
     } _keyboardPosition;
-    bool_keyboardOnScreen;
 }
 
 @property(readonly) unsigned int animationFencingPort;
-@property(readonly) bool keyboardOnScreen;
-@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } keyboardPosition;
+@property(readonly) BOOL keyboardOnScreen;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyboardPosition;
 
 + (id)informationForKeyboardDown;
-+ (id)informationForKeyboardUp:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-+ (bool)supportsSecureCoding;
++ (id)informationForKeyboardUp:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (BOOL)supportsSecureCoding;
 
 - (unsigned int)animationFencingPort;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKeyboardRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onScreen:(bool)arg2;
+- (id)initWithKeyboardRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 onScreen:(BOOL)arg2;
 - (void)insertPermissions;
-- (bool)keyboardOnScreen;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })keyboardPosition;
+- (BOOL)keyboardOnScreen;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })keyboardPosition;
 
 @end

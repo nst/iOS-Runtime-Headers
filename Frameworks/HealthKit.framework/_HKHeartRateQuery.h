@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
 - (id)_queue_errorHandler;
-- (bool)_queue_shouldStayAliveAfterInitialResults;
+- (BOOL)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (void)deliverHeartRate:(id)arg1 forQuery:(id)arg2;
 - (id)initWithUpdateHandler:(id)arg1;

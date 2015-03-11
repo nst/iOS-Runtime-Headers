@@ -9,10 +9,10 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSArray * interpretations;
-@property bool lowConfidence;
-@property bool speechRepairApplied;
+@property BOOL lowConfidence;
+@property BOOL speechRepairApplied;
 @property(readonly) Class superclass;
 
 + (id)phrase;
@@ -22,10 +22,10 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)interpretations;
-- (bool)lowConfidence;
+- (BOOL)lowConfidence;
 - (void)setInterpretations:(id)arg1;
-- (void)setLowConfidence:(bool)arg1;
-- (void)setSpeechRepairApplied:(bool)arg1;
-- (bool)speechRepairApplied;
+- (void)setLowConfidence:(BOOL)arg1;
+- (void)setSpeechRepairApplied:(BOOL)arg1;
+- (BOOL)speechRepairApplied;
 
 @end

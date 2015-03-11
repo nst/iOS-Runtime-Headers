@@ -6,20 +6,20 @@
 
 @interface BBRemoteDataProviderConnection : NSObject <BBRemoteDataProviderDelegate, BBDataProviderConnectionServerProxy, BBDataProviderStore> {
     NSString *_bundleID;
+    BOOL _clientReady;
+    BOOL _connected;
     NSMutableDictionary *_dataProvidersBySectionID;
     NSMutableDictionary *_dataProvidersByUniversalSectionID;
     <BBRemoteDataProviderStoreDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_serviceName;
-    bool_clientReady;
-    bool_connected;
 }
 
 @property(readonly) NSString * bundleID;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool isConnected;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL isConnected;
 @property(readonly) NSString * serviceName;
 @property(readonly) Class superclass;
 
@@ -32,15 +32,15 @@
 - (id)dataProviderForUniversalSectionID:(id)arg1;
 - (void)dealloc;
 - (id)debugDescription;
-- (id)debugDescriptionWithChildren:(unsigned long long)arg1;
+- (id)debugDescriptionWithChildren:(unsigned int)arg1;
 - (id)initWithServiceName:(id)arg1 bundleID:(id)arg2 delegate:(id)arg3;
-- (bool)isConnected;
+- (BOOL)isConnected;
 - (void)loadAllDataProviders;
 - (void)performBlockOnDataProviders:(id)arg1;
 - (void)remoteDataProviderNeedsToWakeClient:(id)arg1;
 - (void)removeDataProvider:(id)arg1;
 - (void)removeDataProviderWithSectionID:(id)arg1;
 - (id)serviceName;
-- (void)setConnected:(bool)arg1 completion:(id)arg2;
+- (void)setConnected:(BOOL)arg1 completion:(id)arg2;
 
 @end

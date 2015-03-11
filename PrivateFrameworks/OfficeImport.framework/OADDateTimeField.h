@@ -8,7 +8,7 @@
 
 - (int)format;
 - (id)init;
-- (bool)isEmpty;
+- (BOOL)isEmpty;
 - (void)setFormat:(int)arg1;
 
 @end

@@ -16,27 +16,27 @@
 @property <GKGameCenterControllerDelegate> * gameCenterDelegate;
 @property(retain) NSString * leaderboardCategory;
 @property(retain) NSString * leaderboardIdentifier;
-@property long long leaderboardTimeScope;
+@property int leaderboardTimeScope;
 @property(retain) GKHostedGameCenterViewController * privateViewController;
 @property(retain) GKRemoteGameCenterViewController * remoteViewController;
-@property long long viewState;
+@property int viewState;
 @property(retain) NSMutableDictionary * volatileProperties;
 
-+ (bool)_preventsAppearanceProxyCustomization;
-+ (bool)accessInstanceVariablesDirectly;
++ (BOOL)_preventsAppearanceProxyCustomization;
++ (BOOL)accessInstanceVariablesDirectly;
 
-- (bool)_canSetPropertiesOnRemoteViewController;
+- (BOOL)_canSetPropertiesOnRemoteViewController;
 - (void)_flushVolatileProperties;
-- (bool)_remoteControllerIsPresented;
+- (BOOL)_remoteControllerIsPresented;
 - (void)_setupChildViewController;
 - (id)alertController;
-- (bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (void)dealloc;
 - (id)gameCenterDelegate;
 - (id)init;
 - (id)leaderboardCategory;
 - (id)leaderboardIdentifier;
-- (long long)leaderboardTimeScope;
+- (int)leaderboardTimeScope;
 - (void)loadView;
 - (void)notifyDelegateOnWillFinish;
 - (id)privateViewController;
@@ -45,21 +45,21 @@
 - (void)setGameCenterDelegate:(id)arg1;
 - (void)setLeaderboardCategory:(id)arg1;
 - (void)setLeaderboardIdentifier:(id)arg1;
-- (void)setLeaderboardTimeScope:(long long)arg1;
+- (void)setLeaderboardTimeScope:(int)arg1;
 - (void)setPrivateViewController:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setViewState:(long long)arg1;
+- (void)setViewState:(int)arg1;
 - (void)setVolatileProperties:(id)arg1;
-- (bool)shouldAutomaticallyForwardAppearanceMethods;
-- (bool)shouldAutomaticallyForwardRotationMethods;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)shouldAutomaticallyForwardRotationMethods;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)valueForKey:(id)arg1;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
-- (long long)viewState;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (int)viewState;
+- (void)viewWillAppear:(BOOL)arg1;
 - (id)volatileProperties;
 
 @end

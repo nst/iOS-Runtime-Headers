@@ -12,31 +12,31 @@
 }
 
 @property(retain) NSMutableSet * addedItems;
-@property(readonly) unsigned long long count;
+@property(readonly) unsigned int count;
 @property(retain) NSMutableSet * effectiveItems;
 @property(copy) NSSet * items;
-@property(readonly) bool itemsWereAdded;
-@property(readonly) bool itemsWereRemoved;
+@property(readonly) BOOL itemsWereAdded;
+@property(readonly) BOOL itemsWereRemoved;
 @property(retain) NSMutableSet * loadedItems;
 @property(retain) NSMutableSet * removedItems;
 
-- (void)_addRelatedObject:(id)arg1 setInverse:(bool)arg2 dirty:(bool)arg3;
+- (void)_addRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (id)_effectiveItems;
 - (void)_forgetRelatedObject:(id)arg1;
 - (id)_loadedItems;
-- (void)_removeRelatedObject:(id)arg1 setInverse:(bool)arg2 dirty:(bool)arg3;
+- (void)_removeRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (void)addItem:(id)arg1;
 - (id)addedItems;
 - (id)committedValue;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (void)didCommit;
 - (id)effectiveItems;
-- (bool)isWeak;
+- (BOOL)isWeak;
 - (id)items;
-- (bool)itemsWereAdded;
-- (bool)itemsWereRemoved;
+- (BOOL)itemsWereAdded;
+- (BOOL)itemsWereRemoved;
 - (id)loadedItems;
 - (void)refresh;
 - (void)removeItem:(id)arg1;
@@ -49,6 +49,6 @@
 - (void)setLoadedItems:(id)arg1;
 - (void)setRemovedItems:(id)arg1;
 - (void)updatePersistentObject;
-- (bool)validate:(id*)arg1;
+- (BOOL)validate:(id*)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface HDCodableCategoryDomainDictionary : PBCodable <NSCopying, HDSyncCodable> {
+@interface HDCodableCategoryDomainDictionary : PBCodable <HDSyncCodable, NSCopying> {
     struct { 
         unsigned int category : 1; 
     long long _category;
@@ -17,36 +17,36 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSString * domain;
-@property bool hasCategory;
-@property(readonly) bool hasDomain;
-@property(readonly) unsigned long long hash;
+@property BOOL hasCategory;
+@property(readonly) BOOL hasDomain;
+@property(readonly) unsigned int hash;
 @property(retain) NSMutableArray * keyValuePairs;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)_validateForInsertionWithError:(id*)arg1;
+- (BOOL)_validateForInsertionWithError:(id*)arg1;
 - (void)addKeyValuePairs:(id)arg1;
 - (long long)category;
 - (void)clearKeyValuePairs;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)decodedCategory;
+- (int)decodedCategory;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)domain;
-- (bool)hasCategory;
-- (bool)hasDomain;
-- (unsigned long long)hash;
-- (id)initWithCategory:(long long)arg1 domain:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCategory;
+- (BOOL)hasDomain;
+- (unsigned int)hash;
+- (id)initWithCategory:(int)arg1 domain:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (id)keyValuePairs;
-- (id)keyValuePairsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)keyValuePairsCount;
+- (id)keyValuePairsAtIndex:(unsigned int)arg1;
+- (unsigned int)keyValuePairsCount;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCategory:(long long)arg1;
 - (void)setDomain:(id)arg1;
-- (void)setHasCategory:(bool)arg1;
+- (void)setHasCategory:(BOOL)arg1;
 - (void)setKeyValuePairs:(id)arg1;
 - (void)writeTo:(id)arg1;
 

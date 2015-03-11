@@ -7,25 +7,25 @@
 @interface SSSoftwareUpdate : NSObject {
     NSDictionary *_dictionary;
     NSDate *_installDate;
-    long long _updateState;
+    int _updateState;
 }
 
 @property(readonly) NSString * bundleIdentifier;
 @property(copy) NSDate * installDate;
-@property(readonly) long long parentalControlsRank;
+@property(readonly) int parentalControlsRank;
 @property(readonly) long long storeItemIdentifier;
 @property(readonly) NSDictionary * updateDictionary;
-@property long long updateState;
+@property int updateState;
 
 - (id)bundleIdentifier;
 - (void)dealloc;
 - (id)initWithUpdateDictionary:(id)arg1;
 - (id)installDate;
-- (long long)parentalControlsRank;
+- (int)parentalControlsRank;
 - (void)setInstallDate:(id)arg1;
-- (void)setUpdateState:(long long)arg1;
+- (void)setUpdateState:(int)arg1;
 - (long long)storeItemIdentifier;
 - (id)updateDictionary;
-- (long long)updateState;
+- (int)updateState;
 
 @end

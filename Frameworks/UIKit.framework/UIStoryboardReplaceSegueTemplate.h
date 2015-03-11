@@ -3,20 +3,20 @@
  */
 
 @interface UIStoryboardReplaceSegueTemplate : UIStoryboardSegueTemplate {
-    long long _destinationContainmentContext;
-    long long _splitViewControllerIndex;
+    int _destinationContainmentContext;
+    int _splitViewControllerIndex;
 }
 
-@property long long destinationContainmentContext;
-@property long long splitViewControllerIndex;
+@property int destinationContainmentContext;
+@property int splitViewControllerIndex;
 
 - (id)defaultSegueClassName;
-- (long long)destinationContainmentContext;
+- (int)destinationContainmentContext;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)segueWithDestinationViewController:(id)arg1;
-- (void)setDestinationContainmentContext:(long long)arg1;
-- (void)setSplitViewControllerIndex:(long long)arg1;
-- (long long)splitViewControllerIndex;
+- (void)setDestinationContainmentContext:(int)arg1;
+- (void)setSplitViewControllerIndex:(int)arg1;
+- (int)splitViewControllerIndex;
 
 @end

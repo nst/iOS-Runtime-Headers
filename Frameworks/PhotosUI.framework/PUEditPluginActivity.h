@@ -10,15 +10,15 @@
 
 @property(readonly) PUEditPlugin * plugin;
 
-+ (long long)activityCategory;
++ (int)activityCategory;
 
 - (void).cxx_destruct;
 - (id)_activityImage;
 - (id)_activitySettingsImage;
-- (bool)_isHiddenByDefault;
+- (BOOL)_isHiddenByDefault;
 - (id)activityTitle;
 - (id)activityType;
-- (bool)canPerformWithActivityItems:(id)arg1;
+- (BOOL)canPerformWithActivityItems:(id)arg1;
 - (id)initWithPlugin:(id)arg1;
 - (id)plugin;
 

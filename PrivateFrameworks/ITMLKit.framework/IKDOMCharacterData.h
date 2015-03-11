@@ -8,10 +8,10 @@
 }
 
 @property(retain) NSString * data;
-@property(readonly) unsigned long long length;
+@property(readonly) unsigned int length;
 
 - (id)data;
-- (unsigned long long)length;
+- (unsigned int)length;
 - (void)setData:(id)arg1;
 
 @end

@@ -19,19 +19,19 @@
     GEOMapAccess *_map;
 }
 
-@property(readonly) unsigned long long coordinateCount;
+@property(readonly) unsigned long coordinateCount;
 @property(readonly) struct { double x1; double x2; }* coordinates;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) int formOfWay;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) double length;
 @property(readonly) int roadClass;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned long long)coordinateCount;
+- (unsigned long)coordinateCount;
 - (struct { double x1; double x2; }*)coordinates;
 - (void)dealloc;
 - (id)description;

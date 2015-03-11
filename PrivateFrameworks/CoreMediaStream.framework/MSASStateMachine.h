@@ -25,6 +25,8 @@
     NSObject<OS_dispatch_queue> *_eventQueue;
     NSString *_focusAlbumGUID;
     NSString *_focusAssetCollectionGUID;
+    BOOL _hasShutDown;
+    BOOL _isRetryingOutstandingActivities;
     int _maxMetadataRetryCount;
     NSObject<OS_dispatch_queue> *_memberQueue;
     MSBackoffManager *_metadataBackoffManager;
@@ -40,8 +42,6 @@
     id _stopHandlerBlock;
     MSImageScalingSpecification *_thumbnailImageScalingSpecification;
     NSObject<OS_dispatch_queue> *_workQueue;
-    bool_hasShutDown;
-    bool_isRetryingOutstandingActivities;
 }
 
 @property(retain) NSDictionary * MMCSBackoffManagerParameters;
@@ -56,9 +56,9 @@
 @property(retain) NSObject<OS_dispatch_queue> * eventQueue;
 @property(retain) NSString * focusAlbumGUID;
 @property(retain) NSString * focusAssetCollectionGUID;
-@property bool hasShutDown;
-@property(readonly) unsigned long long hash;
-@property bool isRetryingOutstandingActivities;
+@property BOOL hasShutDown;
+@property(readonly) unsigned int hash;
+@property BOOL isRetryingOutstandingActivities;
 @property int maxMetadataRetryCount;
 @property(retain) NSObject<OS_dispatch_queue> * memberQueue;
 @property(retain) NSDictionary * metadataBackoffManagerParameters;
@@ -76,7 +76,7 @@
 - (void).cxx_destruct;
 - (id)MMCSBackoffManagerParameters;
 - (void)MSASAssetDownloader:(id)arg1 didFinishDownloadingAsset:(id)arg2 inAlbumGUID:(id)arg3 error:(id)arg4;
-- (void)MSASAssetDownloader:(id)arg1 willBeginBatchCount:(unsigned long long)arg2;
+- (void)MSASAssetDownloader:(id)arg1 willBeginBatchCount:(unsigned int)arg2;
 - (void)MSASAssetDownloaderDidFinishBatch:(id)arg1;
 - (void)MSASAssetUploader:(id)arg1 didFinishUploadingAssetCollection:(id)arg2 intoAlbum:(id)arg3 error:(id)arg4;
 - (void)MSBackoffManagerDidUpdateNextExpiryDate:(id)arg1;
@@ -138,9 +138,9 @@
 - (void)checkForAlbumSyncedStateChangesInAlbums:(id)arg1 info:(id)arg2;
 - (void)checkForAssetCollectionUpdates:(id)arg1 inAlbum:(id)arg2 info:(id)arg3;
 - (void)checkForChangesInfo:(id)arg1;
-- (void)checkForChangesResetSync:(bool)arg1 info:(id)arg2;
+- (void)checkForChangesResetSync:(BOOL)arg1 info:(id)arg2;
 - (void)checkForCommentChanges:(id)arg1 inAlbumWithGUID:(id)arg2;
-- (void)checkForUpdatesInAlbums:(id)arg1 resetSync:(bool)arg2 info:(id)arg3;
+- (void)checkForUpdatesInAlbums:(id)arg1 resetSync:(BOOL)arg2 info:(id)arg3;
 - (void)continueAddingAssetCollections:(id)arg1 skipAssetCollections:(id)arg2 toAlbum:(id)arg3 info:(id)arg4;
 - (void)createAlbum:(id)arg1 info:(id)arg2;
 - (id)daemon;
@@ -155,13 +155,13 @@
 - (id)focusAlbumGUID;
 - (id)focusAssetCollectionGUID;
 - (void)getAccessControlsForAlbums:(id)arg1 info:(id)arg2;
-- (bool)hasEnqueuedActivities;
-- (bool)hasShutDown;
+- (BOOL)hasEnqueuedActivities;
+- (BOOL)hasShutDown;
 - (id)init;
 - (id)initWithPersonID:(id)arg1 eventQueue:(id)arg2;
 - (id)initWithPersonID:(id)arg1;
-- (bool)isInRetryState;
-- (bool)isRetryingOutstandingActivities;
+- (BOOL)isInRetryState;
+- (BOOL)isRetryingOutstandingActivities;
 - (id)latestNextActivityDate;
 - (int)maxMetadataRetryCount;
 - (id)memberQueue;
@@ -192,20 +192,20 @@
 - (void)setEventQueue:(id)arg1;
 - (void)setFocusAlbumGUID:(id)arg1;
 - (void)setFocusAssetCollectionGUID:(id)arg1;
-- (void)setHasShutDown:(bool)arg1;
-- (void)setIsRetryingOutstandingActivities:(bool)arg1;
+- (void)setHasShutDown:(BOOL)arg1;
+- (void)setIsRetryingOutstandingActivities:(BOOL)arg1;
 - (void)setMMCSBackoffManagerParameters:(id)arg1;
 - (void)setMaxMetadataRetryCount:(int)arg1;
 - (void)setMemberQueue:(id)arg1;
 - (void)setMetadataBackoffManagerParameters:(id)arg1;
-- (void)setMultipleContributorsEnabled:(bool)arg1 forAlbum:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbum:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
 - (void)setPendingRootCtag:(id)arg1;
 - (void)setPersistentObject:(id)arg1 forKey:(id)arg2;
 - (void)setPersonID:(id)arg1;
 - (void)setPhoneInvitations:(id)arg1;
 - (void)setPostCommandCompletionBlock:(id)arg1;
 - (void)setProtocol:(id)arg1;
-- (void)setPublicAccessEnabled:(bool)arg1 forAlbum:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
+- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbum:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
 - (void)setRootCtagFromPendingRootCtag;
 - (void)setServerSideConfigQueue:(id)arg1;
 - (void)setServerSideConfiguration:(id)arg1;
@@ -218,7 +218,7 @@
 - (void)unsubscribeFromAlbum:(id)arg1 info:(id)arg2;
 - (void)updateAlbum:(id)arg1 updateAlbumFlags:(int)arg2 info:(id)arg3;
 - (void)videoURLForAssetCollection:(id)arg1 inAlbum:(id)arg2 completionBlock:(id)arg3;
-- (void)videoURLsForAssetCollection:(id)arg1 forMediaAssetType:(unsigned long long)arg2 inAlbum:(id)arg3 completionBlock:(id)arg4;
+- (void)videoURLsForAssetCollection:(id)arg1 forMediaAssetType:(unsigned int)arg2 inAlbum:(id)arg3 completionBlock:(id)arg4;
 - (id)workQueue;
 - (void)workQueueApplyServerSideConfiguration;
 - (void)workQueueCancelAllCommandsFilteredByAlbumGUID:(id)arg1 assetCollectionGUID:(id)arg2;
@@ -229,7 +229,7 @@
 - (void)workQueueDidFinishCommandByLeavingCommandInQueue;
 - (void)workQueueDidFinishCommandByReplacingCurrentCommandWithCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5;
 - (void)workQueueDidFinishCommandDueToCancellation;
-- (bool)workQueueEndCommandWithError:(id)arg1 command:(id)arg2 params:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5;
+- (BOOL)workQueueEndCommandWithError:(id)arg1 command:(id)arg2 params:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5;
 - (void)workQueuePerformNextCommand;
 - (void)workQueueRefreshServerSideConfig;
 - (void)workQueueRetryOutstandingActivities;

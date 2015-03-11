@@ -3,17 +3,17 @@
  */
 
 @interface MFQuotedPrintableDecoder : MFBaseFilterDataConsumer {
+    BOOL _badlyEncoded;
+    BOOL _forTextPart;
     unsigned char _lastEncoded;
-    unsigned long long _required;
-    bool_badlyEncoded;
-    bool_forTextPart;
+    unsigned long _required;
 }
 
-@property bool forTextPart;
+@property BOOL forTextPart;
 
-- (long long)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (void)done;
-- (bool)forTextPart;
-- (void)setForTextPart:(bool)arg1;
+- (BOOL)forTextPart;
+- (void)setForTextPart:(BOOL)arg1;
 
 @end

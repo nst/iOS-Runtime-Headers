@@ -7,14 +7,14 @@
 @interface NNMKAccount : NSObject <NSSecureCoding> {
     NSString *_accountId;
     NSString *_displayName;
-    bool_shouldArchive;
+    BOOL _shouldArchive;
 }
 
 @property(retain) NSString * accountId;
 @property(retain) NSString * displayName;
-@property bool shouldArchive;
+@property BOOL shouldArchive;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountId;
@@ -24,7 +24,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)setAccountId:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setShouldArchive:(bool)arg1;
-- (bool)shouldArchive;
+- (void)setShouldArchive:(BOOL)arg1;
+- (BOOL)shouldArchive;
 
 @end

@@ -7,13 +7,13 @@
     int mKind;
 }
 
-@property(readonly) bool allowedInCommit;
+@property(readonly) BOOL allowedInCommit;
 @property(readonly) id details;
 @property(readonly) int kind;
 
 + (id)changeRecordWithKind:(int)arg1 details:(id)arg2;
 
-- (bool)allowedInCommit;
+- (BOOL)allowedInCommit;
 - (void)dealloc;
 - (id)details;
 - (id)initWithKind:(int)arg1 details:(id)arg2;

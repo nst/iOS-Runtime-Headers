@@ -16,7 +16,7 @@
     NSData *csiData;
     _CUIThemePixelRendition *rendition;
     int renditionLock;
-    unsigned long long rowbytes;
+    unsigned long rowbytes;
     _CSIRenditionBlockData *sharedBlockDataBGRX;
     _CSIRenditionBlockData *sharedBlockDataRGBX;
     } slice;

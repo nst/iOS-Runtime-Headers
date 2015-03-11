@@ -6,28 +6,28 @@
 
 @interface QLPreviewTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning, UIViewControllerInteractiveTransitioning> {
     <UIViewControllerContextTransitioning> *_transitionContext;
-    boolshowing;
+    BOOL showing;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) QLPreviewController * previewController;
-@property bool showing;
+@property BOOL showing;
 @property(readonly) Class superclass;
 @property <UIViewControllerContextTransitioning> * transitionContext;
 
-- (long long)_transitionStateForAnimationEnding:(bool)arg1;
+- (int)_transitionStateForAnimationEnding:(BOOL)arg1;
 - (void)animateTransition:(id)arg1;
-- (void)didTransitionWithAnimationEnding:(bool)arg1;
+- (void)didTransitionWithAnimationEnding:(BOOL)arg1;
 - (id)previewController;
-- (void)setShowing:(bool)arg1;
+- (void)setShowing:(BOOL)arg1;
 - (void)setTransitionContext:(id)arg1;
-- (bool)showing;
+- (BOOL)showing;
 - (void)startInteractiveTransition:(id)arg1;
 - (id)transitionContext;
 - (double)transitionDuration:(id)arg1;
 - (void)updateStatusBarWithDuration:(double)arg1;
-- (void)willTransitionWithAnimationEnding:(bool)arg1;
+- (void)willTransitionWithAnimationEnding:(BOOL)arg1;
 
 @end

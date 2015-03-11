@@ -3,23 +3,23 @@
  */
 
 @interface IDSSocketPairNAckMessage : IDSSocketPairMessage {
-    unsigned long long _offset;
+    BOOL _fileXfer;
+    unsigned int _offset;
     unsigned short _priority;
     unsigned int _sequenceNumber;
     unsigned short _streamID;
-    bool_fileXfer;
 }
 
-@property(readonly) bool fileXfer;
+@property(readonly) BOOL fileXfer;
 @property(readonly) unsigned short priority;
 @property(readonly) unsigned int sequenceNumber;
 @property(readonly) unsigned short streamID;
 
 - (id)_nonHeaderData;
 - (unsigned char)command;
-- (bool)fileXfer;
+- (BOOL)fileXfer;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
-- (id)initWithSequenceNumber:(unsigned int)arg1 streamID:(unsigned short)arg2 priority:(unsigned short)arg3 fileXfer:(bool)arg4;
+- (id)initWithSequenceNumber:(unsigned int)arg1 streamID:(unsigned short)arg2 priority:(unsigned short)arg3 fileXfer:(BOOL)arg4;
 - (unsigned short)priority;
 - (unsigned int)sequenceNumber;
 - (unsigned short)streamID;

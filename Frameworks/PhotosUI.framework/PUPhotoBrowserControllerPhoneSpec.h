@@ -6,11 +6,11 @@
 }
 
 - (id)avalancheReviewControllerSpec;
-- (double)commentsButtonLandscapeVerticalOffset;
+- (float)commentsButtonLandscapeVerticalOffset;
 - (id)newPhotoBrowserControllerForPhotoAtIndexPath:(id)arg1 assetCollections:(id)arg2 dataSource:(id)arg3;
 - (int)photoThumbnailFormat;
-- (bool)shouldShowBackButtonTitle;
-- (bool)wantsCompactCommentsLayout;
-- (bool)wantsSubtitleForPhotobrowserTitleInLandscape;
+- (BOOL)shouldShowBackButtonTitle;
+- (BOOL)wantsCompactCommentsLayout;
+- (BOOL)wantsSubtitleForPhotobrowserTitleInLandscape;
 
 @end

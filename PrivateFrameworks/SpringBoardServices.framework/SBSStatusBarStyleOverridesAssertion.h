@@ -19,28 +19,28 @@
 @property(copy) id invalidationHandler;
 @property(retain) NSRecursiveLock * invalidationLock;
 @property(retain) NSObject<OS_dispatch_queue> * invalidationQueue;
-@property(readonly) bool isExclusive;
+@property(readonly) BOOL isExclusive;
 @property(readonly) int pid;
 @property(readonly) int statusBarStyleOverrides;
 @property(copy,readonly) NSString * uniqueIdentifier;
 
-+ (id)assertionWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(bool)arg3;
++ (id)assertionWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(BOOL)arg3;
 + (id)backgroundLocationAssertionForPID:(int)arg1;
 
 - (void)_callInvalidationHandler;
 - (void)acquireWithHandler:(id)arg1 onQueue:(id)arg2;
 - (id)assertionData;
 - (void)dealloc;
-- (unsigned long long)hash;
-- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(bool)arg3;
+- (unsigned int)hash;
+- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(BOOL)arg3;
 - (id)initWithStatusBarStyleOverridesAssertionData:(id)arg1;
 - (void)invalidate;
 - (void)invalidateFromServer;
 - (id)invalidationHandler;
 - (id)invalidationLock;
 - (id)invalidationQueue;
-- (bool)isEqual:(id)arg1;
-- (bool)isExclusive;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isExclusive;
 - (int)pid;
 - (void)setAssertionData:(id)arg1;
 - (void)setInvalidationHandler:(id)arg1;

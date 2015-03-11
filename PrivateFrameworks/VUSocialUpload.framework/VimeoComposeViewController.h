@@ -10,22 +10,22 @@
     VimeoDetailsController *_detailsController;
     UIImageView *_logoView;
     NSString *_postDescription;
-    long long _privacySettings;
+    int _privacySettings;
     VimeoUploadSession *_session;
     NSArray *_tags;
-    long long _videoSize;
+    int _videoSize;
     ACAccount *_vimeoAccount;
 }
 
 @property(retain) ACAccountStore * accountStore;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * postDescription;
-@property long long privacySettings;
+@property int privacySettings;
 @property(readonly) Class superclass;
 @property(retain) NSArray * tags;
-@property long long videoSize;
+@property int videoSize;
 @property(retain) ACAccount * vimeoAccount;
 
 - (void).cxx_destruct;
@@ -34,18 +34,18 @@
 - (void)didSelectPost;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)postDescription;
-- (long long)privacySettings;
+- (int)privacySettings;
 - (void)setAccountStore:(id)arg1;
 - (void)setPostDescription:(id)arg1;
-- (void)setPrivacySettings:(long long)arg1;
+- (void)setPrivacySettings:(int)arg1;
 - (void)setTags:(id)arg1;
-- (void)setVideoSize:(long long)arg1;
+- (void)setVideoSize:(int)arg1;
 - (void)setVimeoAccount:(id)arg1;
 - (id)tags;
-- (bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementText:(id)arg3;
-- (bool)validateText:(id)arg1;
-- (long long)videoSize;
-- (void)viewDidAppear:(bool)arg1;
+- (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
+- (BOOL)validateText:(id)arg1;
+- (int)videoSize;
+- (void)viewDidAppear:(BOOL)arg1;
 - (id)vimeoAccount;
 - (void)vimeoComposeOptionsViewDidFinish:(id)arg1;
 

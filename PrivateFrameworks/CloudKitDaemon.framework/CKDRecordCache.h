@@ -7,16 +7,16 @@
 @interface CKDRecordCache : CKSQLite {
     CKDClientContext *_context;
     NSObject<OS_dispatch_queue> *_queue;
-    long long _scope;
+    int _scope;
 }
 
 @property(retain) CKDClientContext * context;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
-@property long long scope;
+@property int scope;
 
 - (void).cxx_destruct;
-- (bool)_cachedRecordHasValidAssets:(id)arg1 forRequiredKeys:(id)arg2;
-- (bool)_cachedRecordKnownUserKeyData:(id)arg1 satisfiesRequiredKeys:(id)arg2;
+- (BOOL)_cachedRecordHasValidAssets:(id)arg1 forRequiredKeys:(id)arg2;
+- (BOOL)_cachedRecordKnownUserKeyData:(id)arg1 satisfiesRequiredKeys:(id)arg2;
 - (id)_recordWithID:(id)arg1 requiredKeys:(id)arg2;
 - (id)_trimRecord:(id)arg1 toRequiredKeys:(id)arg2;
 - (void)addRecord:(id)arg1 knownUserKeys:(id)arg2;
@@ -31,9 +31,9 @@
 - (id)queue;
 - (id)recordWithID:(id)arg1 requiredKeys:(id)arg2;
 - (id)recordsWithIDs:(id)arg1 requiredKeys:(id)arg2;
-- (long long)scope;
+- (int)scope;
 - (void)setContext:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setScope:(long long)arg1;
+- (void)setScope:(int)arg1;
 
 @end

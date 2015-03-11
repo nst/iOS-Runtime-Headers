@@ -6,12 +6,12 @@
 
 @interface _CFPrefsSynchronizer : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _CFPrefsDirtySourcesLock;
+    BOOL _active;
     struct __CFSet { } *_dirtySources;
     NSObject<OS_dispatch_source> *_synchTimer;
-    bool_active;
 }
 
 + (id)sharedInstance;

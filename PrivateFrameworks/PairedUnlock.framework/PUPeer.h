@@ -10,28 +10,28 @@
     PUKeyStore *_keyStore;
     NSMutableDictionary *_responseHandlers;
     IDSService *_service;
-    bool_unlockEnabled;
+    BOOL _unlockEnabled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <PUPeerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) PUKeyStore * keyStore;
 @property(retain) NSMutableDictionary * responseHandlers;
 @property(readonly) Class superclass;
-@property(getter=isUnlockEnabled) bool unlockEnabled;
+@property(getter=isUnlockEnabled) BOOL unlockEnabled;
 
 - (void).cxx_destruct;
 - (id)_createAndStoreNewPasscodeWithCurrentPasscode:(id)arg1;
-- (bool)_isCurrentlyLocked;
-- (void)_notifyPairResult:(bool)arg1 error:(id)arg2 handler:(id)arg3;
-- (void)_notifyStateHasPasscode:(bool)arg1 isLocked:(bool)arg2 isOnlyRemoteUnlock:(bool)arg3 reliably:(bool)arg4 completionHandler:(id)arg5;
+- (BOOL)_isCurrentlyLocked;
+- (void)_notifyPairResult:(BOOL)arg1 error:(id)arg2 handler:(id)arg3;
+- (void)_notifyStateHasPasscode:(BOOL)arg1 isLocked:(BOOL)arg2 isOnlyRemoteUnlock:(BOOL)arg3 reliably:(BOOL)arg4 completionHandler:(id)arg5;
 - (id)_retrieveUnlockOnlyPasscode;
-- (id)_sendProtobuf:(id)arg1 reliably:(bool)arg2 expectsResponse:(bool)arg3 responseIdentifier:(id)arg4;
-- (id)_sendRequest:(unsigned short)arg1 data:(id)arg2 reliably:(bool)arg3 expectResponse:(bool)arg4 handler:(id)arg5;
+- (id)_sendProtobuf:(id)arg1 reliably:(BOOL)arg2 expectsResponse:(BOOL)arg3 responseIdentifier:(id)arg4;
+- (id)_sendRequest:(unsigned short)arg1 data:(id)arg2 reliably:(BOOL)arg3 expectResponse:(BOOL)arg4 handler:(id)arg5;
 - (void)_sendResponse:(unsigned short)arg1 toRequestID:(id)arg2 data:(id)arg3;
-- (void)_sendResultOfMessage:(unsigned short)arg1 requestID:(id)arg2 success:(bool)arg3 error:(id)arg4;
+- (void)_sendResultOfMessage:(unsigned short)arg1 requestID:(id)arg2 success:(BOOL)arg3 error:(id)arg4;
 - (id)delegate;
 - (void)didCompleteRequest:(id)arg1;
 - (void)didGetPasscodeState:(id)arg1;
@@ -42,25 +42,25 @@
 - (void)getPasscodeState:(id)arg1;
 - (void)getRemoteDeviceState:(id)arg1;
 - (id)init;
-- (bool)isUnlockEnabled;
-- (bool)isUnlockOnly;
+- (BOOL)isUnlockEnabled;
+- (BOOL)isUnlockOnly;
 - (id)keyStore;
 - (void)notifyCurrentState;
 - (void)notifyThisDeviceDidUnlock;
 - (void)pairForUnlockWithPasscode:(id)arg1 completionHandler:(id)arg2;
 - (void)removeLockout:(id)arg1;
 - (void)requestRemoteDeviceDisableOnlyRemoteUnlock;
-- (void)requestRemoteDevicePasscodeAction:(long long)arg1 type:(long long)arg2 completionHandler:(id)arg3;
+- (void)requestRemoteDevicePasscodeAction:(int)arg1 type:(int)arg2 completionHandler:(id)arg3;
 - (void)requestRemoteDeviceRemoveLockout:(id)arg1;
 - (void)requestRemoteDeviceUnlockNotification;
 - (id)responseHandlers;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)setDelegate:(id)arg1;
 - (void)setKeyStore:(id)arg1;
 - (void)setResponseHandlers:(id)arg1;
 - (void)setShouldNotifyNextUnlock:(id)arg1;
-- (void)setUnlockEnabled:(bool)arg1;
+- (void)setUnlockEnabled:(BOOL)arg1;
 - (void)startPasscodeAction:(id)arg1;
 - (void)unpairForUnlockWithCompletionHandler:(id)arg1;
 

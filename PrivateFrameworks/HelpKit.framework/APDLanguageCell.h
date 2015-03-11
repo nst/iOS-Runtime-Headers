@@ -3,13 +3,13 @@
  */
 
 @interface APDLanguageCell : UITableViewCell {
-    bool_RTL;
+    BOOL _RTL;
 }
 
-@property bool RTL;
+@property BOOL RTL;
 
-- (bool)RTL;
+- (BOOL)RTL;
 - (void)layoutSubviews;
-- (void)setRTL:(bool)arg1;
+- (void)setRTL:(BOOL)arg1;
 
 @end

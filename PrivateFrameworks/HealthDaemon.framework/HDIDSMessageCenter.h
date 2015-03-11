@@ -24,7 +24,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <HDIDSMessageCenterDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) IDSService * idsService;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property(readonly) Class superclass;
@@ -50,7 +50,7 @@
 - (id)queue;
 - (void)resume;
 - (void)sendRequest:(id)arg1;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;

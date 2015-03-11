@@ -10,8 +10,8 @@
 }
 
 - (void)addOperation:(id)arg1;
-- (bool)containsOperation:(id)arg1;
-- (unsigned long long)countOfOperations;
+- (BOOL)containsOperation:(id)arg1;
+- (unsigned int)countOfOperations;
 - (void)dealloc;
 - (id)init;
 - (void)removeOperation:(id)arg1;

@@ -3,28 +3,28 @@
  */
 
 @interface TSCH3DLabelBitmapContextInfo : NSObject <NSCopying> {
-    boolmHasSuppressedBackgrounds;
-    boolmIsPDF;
-    boolmIsPrinting;
+    BOOL mHasSuppressedBackgrounds;
+    BOOL mIsPDF;
+    BOOL mIsPrinting;
 }
 
-@property(readonly) bool hasSuppressedBackgrounds;
-@property(readonly) bool isPDF;
-@property(readonly) bool isPrinting;
+@property(readonly) BOOL hasSuppressedBackgrounds;
+@property(readonly) BOOL isPDF;
+@property(readonly) BOOL isPrinting;
 
 + (id)context;
 + (id)contextInfoForScene:(id)arg1;
-+ (id)contextInfoWithIsPrinting:(bool)arg1 isPDF:(bool)arg2 hasSuppressedBackgrounds:(bool)arg3;
-+ (void)setIsPrinting:(bool)arg1 isPDF:(bool)arg2 hasSuppressedBackgrounds:(bool)arg3 forScene:(id)arg4;
++ (id)contextInfoWithIsPrinting:(BOOL)arg1 isPDF:(BOOL)arg2 hasSuppressedBackgrounds:(BOOL)arg3;
++ (void)setIsPrinting:(BOOL)arg1 isPDF:(BOOL)arg2 hasSuppressedBackgrounds:(BOOL)arg3 forScene:(id)arg4;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)hasSuppressedBackgrounds;
-- (unsigned long long)hash;
+- (BOOL)hasSuppressedBackgrounds;
+- (unsigned int)hash;
 - (id)init;
-- (id)initWithIsPrinting:(bool)arg1 isPDF:(bool)arg2 hasSuppressedBackgrounds:(bool)arg3;
-- (bool)isEqual:(id)arg1;
-- (bool)isPDF;
-- (bool)isPrinting;
+- (id)initWithIsPrinting:(BOOL)arg1 isPDF:(BOOL)arg2 hasSuppressedBackgrounds:(BOOL)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isPDF;
+- (BOOL)isPrinting;
 - (void)setTSDCGContextInfoForCGContext:(struct CGContext { }*)arg1;
 
 @end

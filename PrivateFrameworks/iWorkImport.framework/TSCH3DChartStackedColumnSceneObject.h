@@ -6,14 +6,14 @@
 }
 
 + (id)chartSeriesType;
-+ (bool)growAnimationSequenceInOrderForChartDeliveryStyle:(unsigned long long)arg1;
-+ (bool)isHorizontalChart;
-+ (bool)isStacked;
++ (BOOL)growAnimationSequenceInOrderForChartDeliveryStyle:(unsigned int)arg1;
++ (BOOL)isHorizontalChart;
++ (BOOL)isStacked;
 
-- (bool)blendOpaqueForRotationAnimationElementBlendAnimationClip;
-- (bool)growAnimationSequenceInOrderForChartDeliveryStyle:(unsigned long long)arg1;
-- (bool)growNeedsPerElementAlphaBlendingForDeliveryStyle:(unsigned long long)arg1;
-- (bool)shouldUpdateBlendOpaqueForRotationAnimationElementBlendAnimationClip;
+- (BOOL)blendOpaqueForRotationAnimationElementBlendAnimationClip;
+- (BOOL)growAnimationSequenceInOrderForChartDeliveryStyle:(unsigned int)arg1;
+- (BOOL)growNeedsPerElementAlphaBlendingForDeliveryStyle:(unsigned int)arg1;
+- (BOOL)shouldUpdateBlendOpaqueForRotationAnimationElementBlendAnimationClip;
 - (void)sortElements:(struct vector<TSCH3D::RenderElementInfo, std::__1::allocator<TSCH3D::RenderElementInfo> > { struct RenderElementInfo {} *x1; struct RenderElementInfo {} *x2; struct __compressed_pair<TSCH3D::RenderElementInfo *, std::__1::allocator<TSCH3D::RenderElementInfo> > { struct RenderElementInfo {} *x_3_1_1; } x3; }*)arg1 pipeline:(id)arg2;
 
 @end

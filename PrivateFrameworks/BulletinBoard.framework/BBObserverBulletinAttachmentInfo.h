@@ -6,35 +6,35 @@
 
 @interface BBObserverBulletinAttachmentInfo : NSObject {
     NSMutableDictionary *_imageSizePairs;
+    BOOL _imagesFetched;
     NSString *_imagesRecordID;
+    BOOL _sizesFetched;
     NSString *_sizesRecordID;
-    bool_imagesFetched;
-    bool_sizesFetched;
 }
 
-@property bool imagesFetched;
+@property BOOL imagesFetched;
 @property(copy) NSString * imagesRecordID;
-@property bool sizesFetched;
+@property BOOL sizesFetched;
 @property(copy) NSString * sizesRecordID;
 
-- (id)_pairForKey:(id)arg1 create:(bool)arg2;
+- (id)_pairForKey:(id)arg1 create:(BOOL)arg2;
 - (void)dealloc;
 - (id)imageForKey:(id)arg1;
-- (bool)imagesFetched;
+- (BOOL)imagesFetched;
 - (id)imagesRecordID;
 - (id)init;
-- (bool)isImagesFetchedForRecordID:(id)arg1;
-- (bool)isSizesFetchedForRecordID:(id)arg1;
+- (BOOL)isImagesFetchedForRecordID:(id)arg1;
+- (BOOL)isSizesFetchedForRecordID:(id)arg1;
 - (void)noteImagesFetchedForRecordID:(id)arg1;
 - (void)noteSizesFetchedForRecordID:(id)arg1;
 - (void)setImage:(id)arg1 forKey:(id)arg2;
-- (void)setImagesFetched:(bool)arg1;
+- (void)setImagesFetched:(BOOL)arg1;
 - (void)setImagesRecordID:(id)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)setSizesFetched:(bool)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)setSizesFetched:(BOOL)arg1;
 - (void)setSizesRecordID:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForKey:(id)arg1;
-- (bool)sizesFetched;
+- (struct CGSize { float x1; float x2; })sizeForKey:(id)arg1;
+- (BOOL)sizesFetched;
 - (id)sizesRecordID;
 
 @end

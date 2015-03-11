@@ -6,7 +6,7 @@
 
 @interface CKShareInvitation : NSObject <NSSecureCoding, NSCopying> {
     NSString *_applicationContainer;
-    long long _environment;
+    int _environment;
     NSURL *_imageURL;
     NSDate *_invitationDate;
     NSString *_invitationID;
@@ -17,7 +17,7 @@
 }
 
 @property(retain) NSString * applicationContainer;
-@property long long environment;
+@property int environment;
 @property(retain) NSURL * imageURL;
 @property(retain) NSDate * invitationDate;
 @property(retain) NSString * invitationID;
@@ -25,9 +25,9 @@
 @property(retain) CKShareParticipant * participant;
 @property(retain) CKRecordID * senderRecordID;
 @property(retain) CKShareID * shareID;
-@property(readonly) long long status;
+@property(readonly) int status;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -36,7 +36,7 @@
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)environment;
+- (int)environment;
 - (id)imageURL;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithParticipant:(id)arg1 message:(id)arg2 imageURL:(id)arg3;
@@ -46,7 +46,7 @@
 - (id)participant;
 - (id)senderRecordID;
 - (void)setApplicationContainer:(id)arg1;
-- (void)setEnvironment:(long long)arg1;
+- (void)setEnvironment:(int)arg1;
 - (void)setImageURL:(id)arg1;
 - (void)setInvitationDate:(id)arg1;
 - (void)setInvitationID:(id)arg1;
@@ -55,6 +55,6 @@
 - (void)setSenderRecordID:(id)arg1;
 - (void)setShareID:(id)arg1;
 - (id)shareID;
-- (long long)status;
+- (int)status;
 
 @end

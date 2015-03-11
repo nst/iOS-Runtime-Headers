@@ -3,19 +3,19 @@
  */
 
 @interface MTLDebugBlitCommandEncoder : MTLToolsBlitCommandEncoder {
-    boolcanDealloc;
-    boolcanEndEncoding;
-    boolhasEndEncoding;
+    BOOL canDealloc;
+    BOOL canEndEncoding;
+    BOOL hasEndEncoding;
 }
 
 - (void)_setDefaults;
-- (void)copyFromBuffer:(id)arg1 sourceOffset:(unsigned long long)arg2 sourceBytesPerRow:(unsigned long long)arg3 sourceBytesPerImage:(unsigned long long)arg4 sourceSize:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg5 toTexture:(id)arg6 destinationSlice:(unsigned long long)arg7 destinationLevel:(unsigned long long)arg8 destinationOrigin:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg9;
-- (void)copyFromBuffer:(id)arg1 sourceOffset:(unsigned long long)arg2 toBuffer:(id)arg3 destinationOffset:(unsigned long long)arg4 size:(unsigned long long)arg5;
-- (void)copyFromTexture:(id)arg1 sourceSlice:(unsigned long long)arg2 sourceLevel:(unsigned long long)arg3 sourceOrigin:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg4 sourceSize:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg5 toBuffer:(id)arg6 destinationOffset:(unsigned long long)arg7 destinationBytesPerRow:(unsigned long long)arg8 destinationBytesPerImage:(unsigned long long)arg9;
-- (void)copyFromTexture:(id)arg1 sourceSlice:(unsigned long long)arg2 sourceLevel:(unsigned long long)arg3 sourceOrigin:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg4 sourceSize:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg5 toTexture:(id)arg6 destinationSlice:(unsigned long long)arg7 destinationLevel:(unsigned long long)arg8 destinationOrigin:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg9;
+- (void)copyFromBuffer:(id)arg1 sourceOffset:(unsigned int)arg2 sourceBytesPerRow:(unsigned int)arg3 sourceBytesPerImage:(unsigned int)arg4 sourceSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg5 toTexture:(id)arg6 destinationSlice:(unsigned int)arg7 destinationLevel:(unsigned int)arg8 destinationOrigin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg9;
+- (void)copyFromBuffer:(id)arg1 sourceOffset:(unsigned int)arg2 toBuffer:(id)arg3 destinationOffset:(unsigned int)arg4 size:(unsigned int)arg5;
+- (void)copyFromTexture:(id)arg1 sourceSlice:(unsigned int)arg2 sourceLevel:(unsigned int)arg3 sourceOrigin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg4 sourceSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg5 toBuffer:(id)arg6 destinationOffset:(unsigned int)arg7 destinationBytesPerRow:(unsigned int)arg8 destinationBytesPerImage:(unsigned int)arg9;
+- (void)copyFromTexture:(id)arg1 sourceSlice:(unsigned int)arg2 sourceLevel:(unsigned int)arg3 sourceOrigin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg4 sourceSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg5 toTexture:(id)arg6 destinationSlice:(unsigned int)arg7 destinationLevel:(unsigned int)arg8 destinationOrigin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg9;
 - (void)dealloc;
 - (void)endEncoding;
-- (void)fillBuffer:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 value:(unsigned char)arg3;
+- (void)fillBuffer:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 value:(unsigned char)arg3;
 - (void)generateMipmapsForTexture:(id)arg1;
 - (id)initWithBlitCommandEncoder:(id)arg1 commandBuffer:(id)arg2;
 

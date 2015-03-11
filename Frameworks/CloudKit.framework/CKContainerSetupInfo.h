@@ -14,7 +14,7 @@
 @property(retain) CKContainerID * containerID;
 @property(retain) NSString * sourceApplicationBundleIdentifier;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountInfoOverride;

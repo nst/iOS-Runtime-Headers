@@ -7,6 +7,6 @@
 
 + (int)type;
 
-- (bool)isForShortcutConversion;
+- (BOOL)isForShortcutConversion;
 
 @end

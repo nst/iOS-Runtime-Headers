@@ -17,7 +17,7 @@
 - (id)allDataUnitGroups;
 - (id)dataUnitGroupForType:(id)arg1;
 - (id)dataUnitGroupWithID:(id)arg1;
-- (id)dataUnitGroupsForCategoryID:(long long)arg1;
+- (id)dataUnitGroupsForCategoryID:(int)arg1;
 - (id)init;
 
 @end

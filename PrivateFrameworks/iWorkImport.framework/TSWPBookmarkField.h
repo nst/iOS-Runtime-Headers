@@ -5,27 +5,27 @@
 @class NSString;
 
 @interface TSWPBookmarkField : TSWPSmartField {
+    BOOL _forRange;
+    BOOL _hidden;
     NSString *_name;
-    bool_forRange;
-    bool_hidden;
 }
 
-@property bool forRange;
-@property bool hidden;
+@property BOOL forRange;
+@property BOOL hidden;
 @property(retain) NSString * name;
 
-- (bool)allowsEditing;
+- (BOOL)allowsEditing;
 - (int)attributeArrayKind;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
-- (bool)forRange;
-- (bool)hidden;
+- (BOOL)forRange;
+- (BOOL)hidden;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)name;
 - (void)saveToArchiver:(id)arg1;
-- (void)setForRange:(bool)arg1;
-- (void)setHidden:(bool)arg1;
+- (void)setForRange:(BOOL)arg1;
+- (void)setHidden:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (int)smartFieldKind;
 - (int)styleAttributeArrayKind;

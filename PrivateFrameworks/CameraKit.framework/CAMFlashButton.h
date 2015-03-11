@@ -7,34 +7,34 @@
 @interface CAMFlashButton : CAMExpandableMenuButton {
     UIImageView *__glyphView;
     UIImageView *__warningIndicatorView;
-    bool_allowsAutomaticFlash;
-    bool_unavailable;
+    BOOL _allowsAutomaticFlash;
+    BOOL _unavailable;
 }
 
 @property(readonly) UIImageView * _glyphView;
 @property(readonly) UIImageView * _warningIndicatorView;
-@property bool allowsAutomaticFlash;
-@property long long flashMode;
-@property(getter=isUnavailable) bool unavailable;
+@property BOOL allowsAutomaticFlash;
+@property int flashMode;
+@property(getter=isUnavailable) BOOL unavailable;
 
 - (void).cxx_destruct;
 - (void)_commonCAMFlashButtonInitialization;
 - (id)_glyphView;
 - (id)_warningIndicatorView;
-- (bool)allowsAutomaticFlash;
-- (long long)flashMode;
+- (BOOL)allowsAutomaticFlash;
+- (int)flashMode;
 - (id)headerView;
 - (id)hiddenIndexesWhileCollapsed;
-- (long long)indexForMode:(long long)arg1;
-- (id)initWithExpansionOrientation:(long long)arg1;
-- (bool)isUnavailable;
-- (long long)modeForIndex:(long long)arg1;
-- (long long)numberOfMenuItems;
+- (int)indexForMode:(int)arg1;
+- (id)initWithExpansionOrientation:(int)arg1;
+- (BOOL)isUnavailable;
+- (int)modeForIndex:(int)arg1;
+- (int)numberOfMenuItems;
 - (void)reloadData;
-- (void)setAllowsAutomaticFlash:(bool)arg1;
-- (void)setFlashMode:(long long)arg1;
-- (void)setUnavailable:(bool)arg1;
-- (bool)shouldIgnoreMenuInteraction;
-- (id)titleForMenuItemAtIndex:(long long)arg1;
+- (void)setAllowsAutomaticFlash:(BOOL)arg1;
+- (void)setFlashMode:(int)arg1;
+- (void)setUnavailable:(BOOL)arg1;
+- (BOOL)shouldIgnoreMenuInteraction;
+- (id)titleForMenuItemAtIndex:(int)arg1;
 
 @end

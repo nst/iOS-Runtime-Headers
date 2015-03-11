@@ -12,13 +12,13 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)gzipExtension;
 
-- (bool)canCreateInputStream;
-- (bool)canSeek;
+- (BOOL)canCreateInputStream;
+- (BOOL)canSeek;
 - (void)close;
 - (id)closeLocalStream;
 - (void)dealloc;
@@ -27,6 +27,6 @@
 - (long long)offset;
 - (id)path;
 - (void)seekToOffset:(long long)arg1 whence:(int)arg2;
-- (void)writeBuffer:(const char *)arg1 size:(unsigned long long)arg2;
+- (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 
 @end

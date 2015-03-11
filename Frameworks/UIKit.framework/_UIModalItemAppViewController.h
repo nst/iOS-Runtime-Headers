@@ -11,11 +11,11 @@
 @property(retain) UIWindow * rotationDelegate;
 
 - (void)dealloc;
-- (long long)preferredInterfaceOrientationForPresentation;
+- (int)preferredInterfaceOrientationForPresentation;
 - (id)rotationDelegate;
 - (void)setRotationDelegate:(id)arg1;
-- (bool)shouldAutorotate;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotate;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

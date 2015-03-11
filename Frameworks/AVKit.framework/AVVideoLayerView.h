@@ -11,10 +11,10 @@
 }
 
 @property(retain) AVPlayerController * playerController;
-@property(getter=isReadyForDisplay,readonly) bool readyForDisplay;
-@property long long videoLayerGravity;
-@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } videoRect;
-@property(getter=isVideoScaled) bool videoScaled;
+@property(getter=isReadyForDisplay,readonly) BOOL readyForDisplay;
+@property int videoLayerGravity;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
+@property(getter=isVideoScaled) BOOL videoScaled;
 
 + (id)keyPathsForValuesAffectingReadyForDisplay;
 + (id)keyPathsForValuesAffectingVideoGravity;
@@ -22,19 +22,19 @@
 + (id)keyPathsForValuesAffectingVideoScaled;
 
 - (void).cxx_destruct;
-- (bool)_isPlayingOnSecondScreen;
+- (BOOL)_isPlayingOnSecondScreen;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 videoLayer:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isReadyForDisplay;
-- (bool)isVideoScaled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 videoLayer:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isReadyForDisplay;
+- (BOOL)isVideoScaled;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (id)playerController;
 - (void)setPlayerController:(id)arg1;
-- (void)setVideoLayerGravity:(long long)arg1;
-- (void)setVideoScaled:(bool)arg1;
-- (long long)videoLayerGravity;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })videoRect;
+- (void)setVideoLayerGravity:(int)arg1;
+- (void)setVideoScaled:(BOOL)arg1;
+- (int)videoLayerGravity;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })videoRect;
 
 @end

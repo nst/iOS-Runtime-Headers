@@ -7,8 +7,8 @@
     unsigned int _type;
 }
 
-- (bool)_addBindVarForConstId:(id)arg1 ofType:(unsigned int)arg2 inContext:(id)arg3;
-- (bool)_addBindVarForConstVal1:(id)arg1 inContext:(id)arg2;
+- (BOOL)_addBindVarForConstId:(id)arg1 ofType:(unsigned int)arg2 inContext:(id)arg3;
+- (BOOL)_addBindVarForConstVal1:(id)arg1 inContext:(id)arg2;
 - (void)dealloc;
 - (id)generateSQLStringInContext:(id)arg1;
 - (id)initWithConstantValue:(id)arg1 inScope:(id)arg2;

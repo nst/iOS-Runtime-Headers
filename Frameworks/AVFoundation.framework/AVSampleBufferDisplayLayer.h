@@ -4,7 +4,7 @@
 
 @class AVSampleBufferDisplayLayerInternal, NSError, NSString;
 
-@interface AVSampleBufferDisplayLayer : CALayer <AVMediaDataRequesterConsumer, AVQueuedSampleBufferRenderingInternal, AVQueuedSampleBufferRendering> {
+@interface AVSampleBufferDisplayLayer : CALayer <AVQueuedSampleBufferRendering, AVMediaDataRequesterConsumer, AVQueuedSampleBufferRenderingInternal> {
     AVSampleBufferDisplayLayerInternal *_sampleBufferDisplayLayerInternal;
 }
 
@@ -15,37 +15,37 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) NSError * error;
 @property(readonly) NSError * error;
-@property(readonly) unsigned long long hash;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool outputObscuredDueToInsufficientExternalProtection;
-@property(getter=isReadyForMoreMediaData,readonly) bool readyForMoreMediaData;
-@property(getter=isReadyForMoreMediaData,readonly) bool readyForMoreMediaData;
-@property(readonly) long long status;
-@property(readonly) long long status;
+@property(readonly) unsigned int hash;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL outputObscuredDueToInsufficientExternalProtection;
+@property(getter=isReadyForMoreMediaData,readonly) BOOL readyForMoreMediaData;
+@property(getter=isReadyForMoreMediaData,readonly) BOOL readyForMoreMediaData;
+@property(readonly) int status;
+@property(readonly) int status;
 @property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(retain,readonly) struct OpaqueCMTimebase { }* timebase;
 @property(copy) NSString * videoGravity;
 
-+ (bool)automaticallyNotifiesObserversOfError;
-+ (bool)automaticallyNotifiesObserversOfStatus;
++ (BOOL)automaticallyNotifiesObserversOfError;
++ (BOOL)automaticallyNotifiesObserversOfStatus;
 
-- (void)_addAnimationsForContentLayer:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 gravity:(id)arg3;
+- (void)_addAnimationsForContentLayer:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 gravity:(id)arg3;
 - (void)_addFigVideoQueueListeners;
-- (int)_createVideoQueue;
+- (long)_createVideoQueue;
 - (void)_didFinishSuspension:(id)arg1;
 - (void)_forBoundsAnimations:(id)arg1 applyBlock:(id)arg2;
-- (int)_initializeTimebases;
+- (long)_initializeTimebases;
 - (void)_refreshAboveHighWaterLevel;
 - (void)_removeFigVideoQueueListeners;
-- (void)_resetStatusWithOSStatus:(int)arg1;
+- (void)_resetStatusWithOSStatus:(long)arg1;
 - (void)_setControlTimebase:(struct OpaqueCMTimebase { }*)arg1;
-- (void)_setOutputObscuredDueToInsufficientExternalProtection:(bool)arg1;
-- (void)_setStatus:(long long)arg1 error:(id)arg2;
+- (void)_setOutputObscuredDueToInsufficientExternalProtection:(BOOL)arg1;
+- (void)_setStatus:(int)arg1 error:(id)arg2;
 - (void)_setSynchronizerTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (id)_transformToAbsoluteAnimationOfBounds:(id)arg1;
-- (void)_updateLayerTreeGeometryWithVideoGravity:(id)arg1 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 presentationSize:(struct CGSize { double x1; double x2; })arg3;
-- (void)_updatePresentationSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_updateLayerTreeGeometryWithVideoGravity:(id)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 presentationSize:(struct CGSize { float x1; float x2; })arg3;
+- (void)_updatePresentationSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_weakReference;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (struct OpaqueCMTimebase { }*)controlTimebase;
@@ -57,14 +57,14 @@
 - (void)flush;
 - (void)flushAndRemoveImage;
 - (id)init;
-- (bool)isReadyForMoreMediaData;
-- (bool)outputObscuredDueToInsufficientExternalProtection;
+- (BOOL)isReadyForMoreMediaData;
+- (BOOL)outputObscuredDueToInsufficientExternalProtection;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setControlTimebase:(struct OpaqueCMTimebase { }*)arg1;
-- (bool)setRenderSynchronizer:(id)arg1;
+- (BOOL)setRenderSynchronizer:(id)arg1;
 - (void)setVideoGravity:(id)arg1;
-- (long long)status;
+- (int)status;
 - (void)stopRequestingMediaData;
 - (struct OpaqueCMTimebase { }*)timebase;
 - (id)videoGravity;

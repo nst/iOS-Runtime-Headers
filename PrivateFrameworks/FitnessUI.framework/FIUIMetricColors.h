@@ -29,7 +29,7 @@
 + (id)elapsedTimeColors;
 + (id)heartRateColors;
 + (id)keyColors;
-+ (id)metricColorsForGoalTypeIdentifier:(unsigned long long)arg1;
++ (id)metricColorsForGoalTypeIdentifier:(unsigned int)arg1;
 + (struct CGGradient { }*)newGradientForStartColor:(id)arg1 endColor:(id)arg2;
 + (id)noMetricColors;
 + (id)paceColors;

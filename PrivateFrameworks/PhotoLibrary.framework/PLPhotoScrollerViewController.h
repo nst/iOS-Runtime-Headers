@@ -3,20 +3,20 @@
  */
 
 @interface PLPhotoScrollerViewController : PLPhotoBrowserController {
-    bool_dontChangeStatusBar;
-    bool_modalSheetIsPresent;
-    bool_viewWillDisappear;
+    BOOL _dontChangeStatusBar;
+    BOOL _modalSheetIsPresent;
+    BOOL _viewWillDisappear;
 }
 
-- (id)_initWithAssetCollections:(id)arg1 dataSource:(id)arg2 lockStatusBar:(bool)arg3 currentImageIndexPath:(id)arg4 delayImageLoading:(bool)arg5;
-- (bool)dontChangeStatusBar;
+- (id)_initWithAssetCollections:(id)arg1 dataSource:(id)arg2 lockStatusBar:(BOOL)arg3 currentImageIndexPath:(id)arg4 delayImageLoading:(BOOL)arg5;
+- (BOOL)dontChangeStatusBar;
 - (void)loadView;
 - (id)remakerContainerView;
 - (void)removeRemakerContainerView;
-- (void)setDontChangeStatusBar:(bool)arg1;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)setDontChangeStatusBar:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

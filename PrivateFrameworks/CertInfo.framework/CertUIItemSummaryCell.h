@@ -16,14 +16,14 @@
 @property(retain) UILabel * itemTitleLabel;
 @property(retain) UIView * itemTitleView;
 
-+ (double)titleOriginX;
++ (float)titleOriginX;
 
 - (void).cxx_destruct;
 - (id)_profileImageAppropriateForDevice;
 - (void)_setupCell;
 - (void)_setupConstraints;
-- (double)cellHeight;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (float)cellHeight;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)itemImageView;
 - (id)itemSubtitleLabel;
 - (id)itemTitleLabel;
@@ -32,6 +32,6 @@
 - (void)setItemSubtitleLabel:(id)arg1;
 - (void)setItemTitleLabel:(id)arg1;
 - (void)setItemTitleView:(id)arg1;
-- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

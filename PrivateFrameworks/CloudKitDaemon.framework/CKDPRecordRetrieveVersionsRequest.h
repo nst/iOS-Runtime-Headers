@@ -10,9 +10,9 @@
     CKDPRequestedFields *_requestedFields;
 }
 
-@property(readonly) bool hasMinimumVersionEtag;
-@property(readonly) bool hasRecordIdentifier;
-@property(readonly) bool hasRequestedFields;
+@property(readonly) BOOL hasMinimumVersionEtag;
+@property(readonly) BOOL hasRecordIdentifier;
+@property(readonly) BOOL hasRequestedFields;
 @property(retain) NSString * minimumVersionEtag;
 @property(retain) CKDPRecordIdentifier * recordIdentifier;
 @property(retain) CKDPRequestedFields * requestedFields;
@@ -24,14 +24,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasMinimumVersionEtag;
-- (bool)hasRecordIdentifier;
-- (bool)hasRequestedFields;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasMinimumVersionEtag;
+- (BOOL)hasRecordIdentifier;
+- (BOOL)hasRequestedFields;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)minimumVersionEtag;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)recordIdentifier;
 - (unsigned int)requestTypeCode;
 - (id)requestedFields;

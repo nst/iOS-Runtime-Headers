@@ -22,8 +22,8 @@
 - (id)description;
 - (id)download;
 - (id)downloadAsset;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

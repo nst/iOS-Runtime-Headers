@@ -11,7 +11,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)formatWithFormat:(id)arg1 name:(id)arg2;
@@ -21,9 +21,9 @@
 - (id)description;
 - (id)format;
 - (id)formatName;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithFormat:(id)arg1 name:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setFormatName:(id)arg1;
 
 @end

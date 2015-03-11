@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)database;
-- (bool)deleteObjectWithPersistentID:(long long)arg1 entityClass:(Class)arg2 error:(id*)arg3;
+- (BOOL)deleteObjectWithPersistentID:(long long)arg1 entityClass:(Class)arg2 error:(id*)arg3;
 - (id)deleteStatementsByClassName;
 - (void)finish;
 - (id)initWithDatabase:(id)arg1;

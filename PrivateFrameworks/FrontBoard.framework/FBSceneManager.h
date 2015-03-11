@@ -5,6 +5,7 @@
 @class <FBSceneManagerDelegate>, FBSSceneClientSettingsDiffInspector, FBSceneEventQueue, NSHashTable, NSMapTable, NSMutableDictionary, NSString;
 
 @interface FBSceneManager : NSObject <FBSceneDelegate, FBWindowContextManagerObserver> {
+    BOOL _applyingOrientationTransform;
     FBSSceneClientSettingsDiffInspector *_clientSettingsDiffInspector;
     <FBSceneManagerDelegate> *_delegate;
     NSMutableDictionary *_displayToOcclusionsStack;
@@ -16,21 +17,20 @@
     NSMapTable *_providerToSceneMap;
     NSHashTable *_providersWithOpenTransactions;
     NSMutableDictionary *_scenesByID;
-    unsigned long long _synchronizationBlockDepth;
+    unsigned int _synchronizationBlockDepth;
     unsigned int _synchronizationPort;
-    bool_applyingOrientationTransform;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <FBSceneManagerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)sharedInstance;
 + (void)synchronizeChanges:(id)arg1;
 
-- (void)_applyMutableSettings:(id)arg1 toScene:(id)arg2 asUpdate:(bool)arg3 withTransitionContext:(id)arg4;
+- (void)_applyMutableSettings:(id)arg1 toScene:(id)arg2 asUpdate:(BOOL)arg3 withTransitionContext:(id)arg4;
 - (void)_beginSynchronizationBlock;
 - (void)_destroyScene:(id)arg1 withTransitionContext:(id)arg2;
 - (void)_endSynchronizationBlock;
@@ -40,8 +40,8 @@
 - (void)_noteSceneChangedLevel:(id)arg1;
 - (void)_noteSceneMovedToBackground:(id)arg1;
 - (void)_noteSceneMovedToForeground:(id)arg1;
-- (id)_occlusionStackForDisplay:(id)arg1 creatingIfNecessary:(bool)arg2;
-- (void)_orientationChanged:(long long)arg1;
+- (id)_occlusionStackForDisplay:(id)arg1 creatingIfNecessary:(BOOL)arg2;
+- (void)_orientationChanged:(int)arg1;
 - (void)_positionWrapperViewInRootViewOrderedCorrectly:(id)arg1 rootWindow:(id)arg2;
 - (void)_reEvaluateNeedForRootWindowOnDisplay:(id)arg1;
 - (id)_rootWindowForDisplay:(id)arg1;
@@ -72,7 +72,7 @@
 - (id)scenesMatchingPredicate:(id)arg1;
 - (id)scenesPassingTest:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)shutdown:(bool)arg1;
+- (void)shutdown:(BOOL)arg1;
 - (void)windowContextManagerDidStopTrackingContexts:(id)arg1;
 - (void)windowContextManagerWillStartTrackingContexts:(id)arg1;
 

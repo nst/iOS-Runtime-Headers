@@ -6,29 +6,29 @@
 
 @interface PSSpecifierUpdateOperation : NSObject <NSCopying> {
     NSNumber *_index;
-    long long _operation;
+    int _operation;
     PSSpecifier *_specifier;
     NSNumber *_toIndex;
 }
 
 @property(retain) NSNumber * index;
-@property(readonly) long long operation;
+@property(readonly) int operation;
 @property(retain) PSSpecifier * specifier;
 @property(retain) NSNumber * toIndex;
 
-+ (id)insertOperationWithSpecifier:(id)arg1 atIndex:(unsigned long long)arg2;
-+ (id)moveOperationWithSpecifier:(id)arg1 fromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;
-+ (id)reloadOperationWithSpecifier:(id)arg1 atIndex:(unsigned long long)arg2;
-+ (id)removeOperationWithSpecifier:(id)arg1 atIndex:(unsigned long long)arg2;
++ (id)insertOperationWithSpecifier:(id)arg1 atIndex:(unsigned int)arg2;
++ (id)moveOperationWithSpecifier:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
++ (id)reloadOperationWithSpecifier:(id)arg1 atIndex:(unsigned int)arg2;
++ (id)removeOperationWithSpecifier:(id)arg1 atIndex:(unsigned int)arg2;
 
-- (bool)applyToArray:(id)arg1;
+- (BOOL)applyToArray:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)index;
-- (id)initWithOperation:(long long)arg1 specifier:(id)arg2 fromIndex:(id)arg3 toIndex:(id)arg4;
-- (id)initWithOperation:(long long)arg1 specifier:(id)arg2 index:(id)arg3;
-- (long long)operation;
+- (id)initWithOperation:(int)arg1 specifier:(id)arg2 fromIndex:(id)arg3 toIndex:(id)arg4;
+- (id)initWithOperation:(int)arg1 specifier:(id)arg2 index:(id)arg3;
+- (int)operation;
 - (void)setIndex:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)setToIndex:(id)arg1;

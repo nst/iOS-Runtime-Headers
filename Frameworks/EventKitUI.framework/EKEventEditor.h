@@ -7,17 +7,17 @@
 @interface EKEventEditor : EKCalendarItemEditor {
     UIColor *_backgroundColor;
     EKEventDateEditItem *_dateItem;
-    bool_isTransitioning;
-    bool_showAttachments;
+    BOOL _isTransitioning;
+    BOOL _showAttachments;
 }
 
 @property(retain) UIColor * backgroundColor;
 @property(retain) EKEvent * event;
-@property bool showAttachments;
+@property BOOL showAttachments;
 
 - (void).cxx_destruct;
 - (id)_calendarItemIndexSet;
-- (bool)_canDetachSingleOccurrence;
+- (BOOL)_canDetachSingleOccurrence;
 - (void)_copyEventForPossibleRevert;
 - (id)_editItems;
 - (id)_nameForDeleteButton;
@@ -27,25 +27,25 @@
 - (id)backgroundColor;
 - (id)defaultAlertTitle;
 - (id)defaultTitleForCalendarItem;
-- (unsigned long long)entityType;
+- (unsigned int)entityType;
 - (id)event;
 - (void)loadView;
 - (id)notificationNamesForLocaleChange;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (id)preferredTitle;
 - (void)refreshInvitees;
 - (void)refreshLocation;
 - (void)refreshStartAndEndDates;
-- (bool)saveCalendarItemWithSpan:(int)arg1 error:(id*)arg2;
+- (BOOL)saveCalendarItemWithSpan:(int)arg1 error:(id*)arg2;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setEvent:(id)arg1;
-- (void)setShowAttachments:(bool)arg1;
+- (void)setShowAttachments:(BOOL)arg1;
 - (void)setupDeleteButton;
-- (bool)shouldAutorotate;
-- (bool)showAttachments;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (BOOL)shouldAutorotate;
+- (BOOL)showAttachments;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

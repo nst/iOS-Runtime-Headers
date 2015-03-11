@@ -44,6 +44,6 @@
 - (void)userNeedsPaymentPasses;
 - (void)userNeedsToProvisionPassWithUniqueID:(id)arg1;
 - (void)userViewingPassList;
-- (void)userViewingPassWithUniqueID:(id)arg1 isPaymentPass:(bool)arg2;
+- (void)userViewingPassWithUniqueID:(id)arg1 isPaymentPass:(BOOL)arg2;
 
 @end

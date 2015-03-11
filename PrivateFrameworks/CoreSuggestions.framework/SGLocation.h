@@ -9,41 +9,41 @@
     NSString *_address;
     NSString *_label;
     double _latitude;
-    unsigned long long _locationType;
+    unsigned int _locationType;
     double _longitude;
     double _quality;
 }
 
 @property(readonly) double accuracy;
 @property(readonly) NSString * address;
-@property(getter=isGeocoded,readonly) bool geocoded;
+@property(getter=isGeocoded,readonly) BOOL geocoded;
 @property(readonly) NSString * label;
 @property(readonly) double latitude;
-@property(readonly) unsigned long long locationType;
+@property(readonly) unsigned int locationType;
 @property(readonly) double longitude;
 @property(readonly) double quality;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)accuracy;
 - (id)address;
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLocation:(id)arg1 latitude:(double)arg2 longitude:(double)arg3 accuracy:(double)arg4;
-- (id)initWithType:(unsigned long long)arg1 label:(id)arg2 address:(id)arg3 accuracy:(double)arg4 quality:(double)arg5;
-- (id)initWithType:(unsigned long long)arg1 label:(id)arg2 address:(id)arg3 latitude:(double)arg4 longitude:(double)arg5 accuracy:(double)arg6 quality:(double)arg7;
-- (id)initWithType:(unsigned long long)arg1 label:(id)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(double)arg5 quality:(double)arg6;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToLocation:(id)arg1;
-- (bool)isGeocoded;
+- (id)initWithType:(unsigned int)arg1 label:(id)arg2 address:(id)arg3 accuracy:(double)arg4 quality:(double)arg5;
+- (id)initWithType:(unsigned int)arg1 label:(id)arg2 address:(id)arg3 latitude:(double)arg4 longitude:(double)arg5 accuracy:(double)arg6 quality:(double)arg7;
+- (id)initWithType:(unsigned int)arg1 label:(id)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(double)arg5 quality:(double)arg6;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToLocation:(id)arg1;
+- (BOOL)isGeocoded;
 - (id)label;
 - (double)latitude;
-- (unsigned long long)locationType;
+- (unsigned int)locationType;
 - (double)longitude;
 - (double)quality;
 

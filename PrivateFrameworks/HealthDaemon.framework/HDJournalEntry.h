@@ -6,8 +6,8 @@
 }
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (long long)behavior;
-+ (bool)supportsSecureCoding;
++ (int)behavior;
++ (BOOL)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

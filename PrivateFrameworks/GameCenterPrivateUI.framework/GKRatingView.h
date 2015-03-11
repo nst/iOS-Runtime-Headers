@@ -8,13 +8,13 @@
     UIImageView *_backgroundImageView;
     UIImageView *_foregroundImageView;
     NSLayoutConstraint *_foregroundWidthConstraint;
-    double _value;
+    float _value;
 }
 
 @property(retain) UIImageView * backgroundImageView;
 @property(retain) UIImageView * foregroundImageView;
 @property(retain) NSLayoutConstraint * foregroundWidthConstraint;
-@property double value;
+@property float value;
 
 - (void)awakeFromNib;
 - (id)backgroundImageView;
@@ -22,12 +22,12 @@
 - (void)dealloc;
 - (id)foregroundImageView;
 - (id)foregroundWidthConstraint;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)setBackgroundImageView:(id)arg1;
 - (void)setForegroundImageView:(id)arg1;
 - (void)setForegroundWidthConstraint:(id)arg1;
-- (void)setValue:(double)arg1;
-- (double)value;
+- (void)setValue:(float)arg1;
+- (float)value;
 
 @end

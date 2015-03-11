@@ -6,19 +6,19 @@
 
 @interface PUMomentsZoomLevelManager : NSObject <PUPhotosDataSourceChangeObserver> {
     NSMutableArray *_allLevelInfos;
+    BOOL _isInvalidatingLayoutOfZoomLevels;
     PUPhotosDataSource *_momentsDataSource;
     PUSessionInfo *_sessionInfo;
     PUCollectionViewIntermediateDataSource *_sharedIntermediateDataSource;
     PUZoomableGridViewControllerSpec *_zoomableGridSpec;
-    bool_isInvalidatingLayoutOfZoomLevels;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) unsigned long long highestZoomLevel;
-@property(readonly) unsigned long long lowestZoomLevel;
-@property(readonly) unsigned long long preferredDefaultZoomLevel;
+@property(readonly) unsigned int hash;
+@property(readonly) unsigned int highestZoomLevel;
+@property(readonly) unsigned int lowestZoomLevel;
+@property(readonly) unsigned int preferredDefaultZoomLevel;
 @property(retain) PUSessionInfo * sessionInfo;
 @property(readonly) PUCollectionViewIntermediateDataSource * sharedIntermediateDataSource;
 @property(readonly) Class superclass;
@@ -28,25 +28,25 @@
 - (void)_defaultsDidChange:(id)arg1;
 - (void)_updateSummarizeSectionsOnZoomLevelInfos;
 - (void)dealloc;
-- (id)existingViewControllerForZoomLevel:(unsigned long long)arg1 inNavigationController:(id)arg2;
-- (unsigned long long)highestZoomLevel;
+- (id)existingViewControllerForZoomLevel:(unsigned int)arg1 inNavigationController:(id)arg2;
+- (unsigned int)highestZoomLevel;
 - (id)initWithSpec:(id)arg1;
-- (id)jumpToZoomLevel:(unsigned long long)arg1 inNavigationController:(id)arg2;
-- (unsigned long long)lowestZoomLevel;
-- (void)markZoomInfosInvalidWithWidth:(double)arg1;
+- (id)jumpToZoomLevel:(unsigned int)arg1 inNavigationController:(id)arg2;
+- (unsigned int)lowestZoomLevel;
+- (void)markZoomInfosInvalidWithWidth:(float)arg1;
 - (id)momentsDataSource;
-- (id)newViewControllerForZoomLevel:(unsigned long long)arg1;
+- (id)newViewControllerForZoomLevel:(unsigned int)arg1;
 - (void)photosDataSource:(id)arg1 didReceivePhotoLibraryChange:(id)arg2;
-- (unsigned long long)preferredDefaultZoomLevel;
+- (unsigned int)preferredDefaultZoomLevel;
 - (id)sessionInfo;
 - (void)setSessionInfo:(id)arg1;
 - (id)sharedIntermediateDataSource;
 - (void)updateZoomableGridSpecForTraitCollection:(id)arg1;
-- (bool)zoomLevel:(unsigned long long)arg1 isHigherThanZoomLevel:(unsigned long long)arg2;
-- (unsigned long long)zoomLevelAboveZoomLevel:(unsigned long long)arg1;
-- (unsigned long long)zoomLevelBelowZoomLevel:(unsigned long long)arg1;
+- (BOOL)zoomLevel:(unsigned int)arg1 isHigherThanZoomLevel:(unsigned int)arg2;
+- (unsigned int)zoomLevelAboveZoomLevel:(unsigned int)arg1;
+- (unsigned int)zoomLevelBelowZoomLevel:(unsigned int)arg1;
 - (void)zoomLevelInfo:(id)arg1 didInvalidateLayoutWithContext:(id)arg2;
-- (id)zoomLevelInfoForZoomLevel:(unsigned long long)arg1;
+- (id)zoomLevelInfoForZoomLevel:(unsigned int)arg1;
 - (id)zoomableGridSpec;
 
 @end

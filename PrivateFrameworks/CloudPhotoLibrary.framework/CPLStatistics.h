@@ -6,7 +6,7 @@
 
 @interface CPLStatistics : NSObject <CPLEngineComponent> {
     struct { 
-        long long period; 
+        int period; 
         struct { 
             long long batches; 
             long long errors; 
@@ -31,19 +31,19 @@
             long long pullErrors; 
             long long managementErrors; 
         } syncerrors; 
+    BOOL _closed;
     } _currentSnapshot;
-    long long _lastServedAggregationWindow;
+    long _lastServedAggregationWindow;
     NSURL *_logfileURL;
     NSObject<OS_dispatch_queue> *_persistanceQueue;
+    BOOL _statisticsEnabled;
     NSObject<OS_dispatch_queue> *_workQueue;
-    bool_closed;
-    bool_statisticsEnabled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool statisticsEnabled;
+@property(readonly) unsigned int hash;
+@property BOOL statisticsEnabled;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -51,22 +51,22 @@
 - (id)attachToDownloadProgressHandler:(id)arg1 forResource:(id)arg2;
 - (id)attachToDownloadStartHandler:(id)arg1 forResource:(id)arg2;
 - (id)attachToUploadRecordSaveHandler:(id)arg1;
-- (void)closeAndDeactivate:(bool)arg1 completionHandler:(id)arg2;
+- (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id)arg2;
 - (id)componentName;
 - (id)initWithEngineLibrary:(id)arg1;
-- (void)markAggregationWindowAsDirtyNow:(bool)arg1;
+- (void)markAggregationWindowAsDirtyNow:(BOOL)arg1;
 - (void)openWithCompletionHandler:(id)arg1;
 - (void)recordDownloadedBatchWithError:(id)arg1;
 - (void)recordDownloadedResource:(id)arg1 withPotentialError:(id)arg2;
 - (void)recordDownloadingResource:(id)arg1 progress:(float)arg2;
 - (void)recordDownloadingResource:(id)arg1;
-- (void)recordSyncErrorForState:(unsigned long long)arg1;
+- (void)recordSyncErrorForState:(unsigned int)arg1;
 - (void)recordUploadedBatchWithError:(id)arg1;
 - (void)recordUploadedResource:(id)arg1 withPotentialError:(id)arg2;
 - (void)recordUploadingResource:(id)arg1 progress:(float)arg2;
 - (void)recordUploadingResource:(id)arg1;
-- (void)setStatisticsEnabled:(bool)arg1;
-- (bool)statisticsEnabled;
+- (void)setStatisticsEnabled:(BOOL)arg1;
+- (BOOL)statisticsEnabled;
 - (id)statisticsSnapshotSinceDate:(id)arg1;
 
 @end

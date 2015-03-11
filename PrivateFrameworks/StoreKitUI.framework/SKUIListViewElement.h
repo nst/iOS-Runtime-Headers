@@ -5,6 +5,6 @@
 @interface SKUIListViewElement : SKUIViewElement {
 }
 
-- (long long)pageComponentType;
+- (int)pageComponentType;
 
 @end

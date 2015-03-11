@@ -5,40 +5,40 @@
 @class NSArray, TSCH3DSceneRenderPipeline;
 
 @interface TSCH3DTileImageSceneRenderPipeline : TSCH3DTileSceneRenderPipeline {
-    boolmFlipImages;
-    boolmSingleOutputImage;
+    BOOL mFlipImages;
     NSArray *mImages;
+    BOOL mSingleOutputImage;
     TSCH3DSceneRenderPipeline *mTargetPipeline;
-    unsigned long long mTileOverlap;
-    unsigned long long mTileSamples;
-    unsigned long long mTileSize;
+    unsigned int mTileOverlap;
+    unsigned int mTileSamples;
+    unsigned int mTileSize;
 }
 
-@property bool flipImages;
+@property BOOL flipImages;
 @property(readonly) NSArray * images;
-@property bool singleOutputImage;
+@property BOOL singleOutputImage;
 @property(retain) TSCH3DSceneRenderPipeline * targetPipeline;
-@property unsigned long long tileOverlap;
-@property unsigned long long tileSamples;
-@property unsigned long long tileSize;
+@property unsigned int tileOverlap;
+@property unsigned int tileSamples;
+@property unsigned int tileSize;
 
 - (id)cloneTargetPipeline:(id)arg1;
 - (void)dealloc;
-- (bool)flipImages;
+- (BOOL)flipImages;
 - (id)images;
 - (id)init;
-- (bool)processTile:(id)arg1 generator:(id)arg2;
-- (bool)run;
-- (void)setFlipImages:(bool)arg1;
-- (void)setSingleOutputImage:(bool)arg1;
+- (BOOL)processTile:(id)arg1 generator:(id)arg2;
+- (BOOL)run;
+- (void)setFlipImages:(BOOL)arg1;
+- (void)setSingleOutputImage:(BOOL)arg1;
 - (void)setTargetPipeline:(id)arg1;
-- (void)setTileOverlap:(unsigned long long)arg1;
-- (void)setTileSamples:(unsigned long long)arg1;
-- (void)setTileSize:(unsigned long long)arg1;
-- (bool)singleOutputImage;
+- (void)setTileOverlap:(unsigned int)arg1;
+- (void)setTileSamples:(unsigned int)arg1;
+- (void)setTileSize:(unsigned int)arg1;
+- (BOOL)singleOutputImage;
 - (id)targetPipeline;
-- (unsigned long long)tileOverlap;
-- (unsigned long long)tileSamples;
-- (unsigned long long)tileSize;
+- (unsigned int)tileOverlap;
+- (unsigned int)tileSamples;
+- (unsigned int)tileSize;
 
 @end

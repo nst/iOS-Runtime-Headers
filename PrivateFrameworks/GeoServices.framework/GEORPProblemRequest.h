@@ -13,10 +13,10 @@
 
 @property(retain) GEOPDAnalyticMetadata * analyticMetadata;
 @property(retain) GEOPDClientMetadata * clientMetadata;
-@property(readonly) bool hasAnalyticMetadata;
-@property(readonly) bool hasClientMetadata;
-@property(readonly) bool hasProblem;
-@property(readonly) bool hasUserCredentials;
+@property(readonly) BOOL hasAnalyticMetadata;
+@property(readonly) BOOL hasClientMetadata;
+@property(readonly) BOOL hasProblem;
+@property(readonly) BOOL hasUserCredentials;
 @property(retain) GEORPProblem * problem;
 @property(retain) GEORPUserCredentials * userCredentials;
 
@@ -27,16 +27,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasAnalyticMetadata;
-- (bool)hasClientMetadata;
-- (bool)hasProblem;
-- (bool)hasUserCredentials;
-- (unsigned long long)hash;
+- (BOOL)hasAnalyticMetadata;
+- (BOOL)hasClientMetadata;
+- (BOOL)hasProblem;
+- (BOOL)hasUserCredentials;
+- (unsigned int)hash;
 - (id)initWithProblem:(id)arg1 traits:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)problem;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setAnalyticMetadata:(id)arg1;

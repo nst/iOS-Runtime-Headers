@@ -14,9 +14,9 @@
 }
 
 @property unsigned long long currentWindowNanos;
-@property bool hasCurrentWindowNanos;
-@property bool hasMaxExcessRadiansPerSecond;
-@property bool hasReferenceWindowNanos;
+@property BOOL hasCurrentWindowNanos;
+@property BOOL hasMaxExcessRadiansPerSecond;
+@property BOOL hasReferenceWindowNanos;
 @property float maxExcessRadiansPerSecond;
 @property unsigned long long referenceWindowNanos;
 
@@ -25,19 +25,19 @@
 - (unsigned long long)currentWindowNanos;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCurrentWindowNanos;
-- (bool)hasMaxExcessRadiansPerSecond;
-- (bool)hasReferenceWindowNanos;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCurrentWindowNanos;
+- (BOOL)hasMaxExcessRadiansPerSecond;
+- (BOOL)hasReferenceWindowNanos;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (float)maxExcessRadiansPerSecond;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned long long)referenceWindowNanos;
 - (void)setCurrentWindowNanos:(unsigned long long)arg1;
-- (void)setHasCurrentWindowNanos:(bool)arg1;
-- (void)setHasMaxExcessRadiansPerSecond:(bool)arg1;
-- (void)setHasReferenceWindowNanos:(bool)arg1;
+- (void)setHasCurrentWindowNanos:(BOOL)arg1;
+- (void)setHasMaxExcessRadiansPerSecond:(BOOL)arg1;
+- (void)setHasReferenceWindowNanos:(BOOL)arg1;
 - (void)setMaxExcessRadiansPerSecond:(float)arg1;
 - (void)setReferenceWindowNanos:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;

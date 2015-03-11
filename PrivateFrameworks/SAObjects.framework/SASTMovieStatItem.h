@@ -10,7 +10,7 @@
 @property(copy) NSString * contentRating;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SASTTemplatePercentageRating * reviewerRating;
 @property(readonly) Class superclass;
 

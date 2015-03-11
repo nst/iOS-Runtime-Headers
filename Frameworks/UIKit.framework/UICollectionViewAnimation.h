@@ -17,39 +17,39 @@
     id _animationBlock;
     } _collectionViewAnimationFlags;
     NSMutableArray *_completionHandlers;
-    double _endFraction;
+    float _endFraction;
     UICollectionViewLayoutAttributes *_finalLayoutAttributes;
-    double _startFraction;
+    float _startFraction;
     NSMutableArray *_startupHandlers;
     UICollectionReusableView *_view;
     int _viewType;
 }
 
-@property(readonly) bool animateFromCurrentPosition;
-@property(readonly) bool deleteAfterAnimation;
-@property(readonly) double endFraction;
+@property(readonly) BOOL animateFromCurrentPosition;
+@property(readonly) BOOL deleteAfterAnimation;
+@property(readonly) float endFraction;
 @property(readonly) UICollectionViewLayoutAttributes * finalLayoutAttributes;
-@property bool rasterizeAfterAnimation;
-@property bool resetRasterizationAfterAnimation;
-@property(readonly) double startFraction;
+@property BOOL rasterizeAfterAnimation;
+@property BOOL resetRasterizationAfterAnimation;
+@property(readonly) float startFraction;
 @property(readonly) UICollectionReusableView * view;
 @property(readonly) int viewType;
 
 - (void)addCompletionHandler:(id)arg1;
 - (void)addStartupHandler:(id)arg1;
-- (bool)animateFromCurrentPosition;
+- (BOOL)animateFromCurrentPosition;
 - (void)dealloc;
-- (bool)deleteAfterAnimation;
+- (BOOL)deleteAfterAnimation;
 - (id)description;
-- (double)endFraction;
+- (float)endFraction;
 - (id)finalLayoutAttributes;
-- (id)initWithView:(id)arg1 viewType:(int)arg2 finalLayoutAttributes:(id)arg3 startFraction:(double)arg4 endFraction:(double)arg5 animateFromCurrentPostion:(bool)arg6 deleteAfterAnimation:(bool)arg7 customAnimations:(id)arg8;
-- (bool)rasterizeAfterAnimation;
-- (bool)resetRasterizationAfterAnimation;
-- (void)setRasterizeAfterAnimation:(bool)arg1;
-- (void)setResetRasterizationAfterAnimation:(bool)arg1;
+- (id)initWithView:(id)arg1 viewType:(int)arg2 finalLayoutAttributes:(id)arg3 startFraction:(float)arg4 endFraction:(float)arg5 animateFromCurrentPostion:(BOOL)arg6 deleteAfterAnimation:(BOOL)arg7 customAnimations:(id)arg8;
+- (BOOL)rasterizeAfterAnimation;
+- (BOOL)resetRasterizationAfterAnimation;
+- (void)setRasterizeAfterAnimation:(BOOL)arg1;
+- (void)setResetRasterizationAfterAnimation:(BOOL)arg1;
 - (void)start;
-- (double)startFraction;
+- (float)startFraction;
 - (id)view;
 - (int)viewType;
 

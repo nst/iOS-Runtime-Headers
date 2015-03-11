@@ -16,10 +16,10 @@
 
 - (void).cxx_destruct;
 - (id)URL;
-- (bool)_openFileIfNeededWithError:(id*)arg1;
-- (id)dataWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (BOOL)_openFileIfNeededWithError:(id*)arg1;
+- (id)dataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)dealloc;
-- (unsigned long long)length;
+- (unsigned int)length;
 - (id)readHandle;
 - (void)setReadHandle:(id)arg1;
 - (void)setURL:(id)arg1;

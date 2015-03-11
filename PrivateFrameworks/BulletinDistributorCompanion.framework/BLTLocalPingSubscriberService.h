@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <BLTPingSubscribing> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) BLTBulletinDistributorSubscriber * subscriber;
 @property(readonly) Class superclass;
 
@@ -24,7 +24,7 @@
 - (void)sendBulletinSummary:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSubscriber:(id)arg1;
-- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(bool)arg2;
+- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(BOOL)arg2;
 - (void)subscribeToSectionID:(id)arg1;
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (id)subscriber;

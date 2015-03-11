@@ -11,7 +11,7 @@
 @property(retain) CNContactStyle * contactStyle;
 
 - (id)cardCellBackgroundColor;
-- (id)cardCellDividerColorVertical:(bool)arg1;
+- (id)cardCellDividerColorVertical:(BOOL)arg1;
 - (id)cardLabelSelectedBackgroundColor;
 - (id)cardSectionBackgroundColor;
 - (id)cardValueTextColor;
@@ -21,7 +21,7 @@
 - (id)groupCellTextColor;
 - (id)groupHeaderBackgroudColor;
 - (id)groupsTableBackgroundColor;
-- (long long)headerViewBorderStyle;
+- (int)headerViewBorderStyle;
 - (id)initWithContactStyle:(id)arg1;
 - (id)memberHeaderBackgroundView;
 - (id)memberNameTextColor;
@@ -30,10 +30,10 @@
 - (id)membersHeaderBackgroundColor;
 - (id)membersHeaderContentViewBackgroundColor;
 - (id)membersSearchBackgroundColor;
-- (long long)peoplePickerBarStyle;
-- (bool)peoplePickerBarStyleIsTranslucent;
+- (int)peoplePickerBarStyle;
+- (BOOL)peoplePickerBarStyleIsTranslucent;
 - (id)separatorColorForCellStyle:(int)arg1;
 - (void)setContactStyle:(id)arg1;
-- (bool)shouldUsePeoplePickerBarStyle;
+- (BOOL)shouldUsePeoplePickerBarStyle;
 
 @end

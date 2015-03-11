@@ -17,7 +17,7 @@
 @property(copy) NSString * summary;
 
 - (id)chatGUID;
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)initWithMessage:(id)arg1 chatGUID:(id)arg2;
 - (id)messageDate;

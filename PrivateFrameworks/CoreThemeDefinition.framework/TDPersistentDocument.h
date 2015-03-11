@@ -21,7 +21,7 @@
 
 - (id)_persistentStoreCoordinator;
 - (void)close;
-- (bool)configurePersistentStoreCoordinatorForURL:(id)arg1 ofType:(id)arg2 modelConfiguration:(id)arg3 storeOptions:(id)arg4 error:(id*)arg5;
+- (BOOL)configurePersistentStoreCoordinatorForURL:(id)arg1 ofType:(id)arg2 modelConfiguration:(id)arg3 storeOptions:(id)arg4 error:(id*)arg5;
 - (void)dealloc;
 - (id)displayName;
 - (id)fileType;
@@ -31,7 +31,7 @@
 - (id)managedObjectContext;
 - (id)managedObjectModel;
 - (id)persistentStoreTypeForFileType:(id)arg1;
-- (bool)readFromURL:(id)arg1 ofType:(id)arg2 error:(id*)arg3;
+- (BOOL)readFromURL:(id)arg1 ofType:(id)arg2 error:(id*)arg3;
 - (void)saveDocument:(id)arg1;
 - (void)setFileType:(id)arg1;
 - (void)setFileURL:(id)arg1;

@@ -8,23 +8,23 @@
     AVMetadataFaceObjectInternal_FigRecorder *_internal;
 }
 
-@property(readonly) long long faceID;
-@property(readonly) bool hasRollAngle;
-@property(readonly) bool hasYawAngle;
-@property(readonly) double rollAngle;
-@property(readonly) double yawAngle;
+@property(readonly) int faceID;
+@property(readonly) BOOL hasRollAngle;
+@property(readonly) BOOL hasYawAngle;
+@property(readonly) float rollAngle;
+@property(readonly) float yawAngle;
 
 + (id)faceObjectWithFigEmbeddedCaptureDeviceFaceDictionary:(id)arg1 input:(id)arg2;
 
 - (void)dealloc;
 - (id)description;
-- (long long)faceID;
-- (bool)hasRollAngle;
-- (bool)hasYawAngle;
-- (id)initDerivedMetadataObjectFromMetadataObject:(id)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 isVideoMirrored:(bool)arg3 rollAdjustment:(double)arg4;
+- (int)faceID;
+- (BOOL)hasRollAngle;
+- (BOOL)hasYawAngle;
+- (id)initDerivedMetadataObjectFromMetadataObject:(id)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 isVideoMirrored:(BOOL)arg3 rollAdjustment:(float)arg4;
 - (id)initWithFigEmbeddedCaptureDeviceFaceDictionary:(id)arg1 input:(id)arg2;
-- (bool)isKindOfClass:(Class)arg1;
-- (double)rollAngle;
-- (double)yawAngle;
+- (BOOL)isKindOfClass:(Class)arg1;
+- (float)rollAngle;
+- (float)yawAngle;
 
 @end

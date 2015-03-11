@@ -7,21 +7,21 @@
 @interface _SKUICounterTimeFieldView : UIView {
     UILabel *_labelLabel;
     UILabel *_valueLabel;
-    unsigned long long _visibilityField;
+    unsigned int _visibilityField;
 }
 
 @property(readonly) UILabel * labelLabel;
 @property(readonly) UILabel * valueLabel;
-@property unsigned long long visibilityField;
+@property unsigned int visibilityField;
 
 - (void).cxx_destruct;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)labelLabel;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setVisibilityField:(unsigned long long)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setVisibilityField:(unsigned int)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)valueLabel;
-- (unsigned long long)visibilityField;
+- (unsigned int)visibilityField;
 
 @end

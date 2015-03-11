@@ -15,9 +15,9 @@
 
 - (void).cxx_destruct;
 - (id)colorScheme;
-- (double)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
-- (id)initWithItem:(id)arg1 clientContext:(id)arg2 askPermission:(bool)arg3;
-- (long long)numberOfRowsInSection;
+- (float)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
+- (id)initWithItem:(id)arg1 clientContext:(id)arg2 askPermission:(BOOL)arg3;
+- (int)numberOfRowsInSection;
 - (id)selectionActionForTableView:(id)arg1 indexPath:(id)arg2;
 - (void)setColorScheme:(id)arg1;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;

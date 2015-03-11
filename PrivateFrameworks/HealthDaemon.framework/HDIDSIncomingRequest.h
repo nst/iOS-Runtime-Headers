@@ -6,22 +6,22 @@
 
 @interface HDIDSIncomingRequest : NSObject {
     NSData *_data;
+    BOOL _expectsResponse;
     NSString *_idsIdentifier;
     HDIDSMessageCenter *_messageCenter;
     unsigned short _messageID;
     id _pbRequest;
-    unsigned long long _priority;
+    unsigned int _priority;
     HDIDSOutgoingResponse *_response;
-    bool_expectsResponse;
 }
 
 @property(retain) NSData * data;
-@property bool expectsResponse;
+@property BOOL expectsResponse;
 @property(copy) NSString * idsIdentifier;
 @property HDIDSMessageCenter * messageCenter;
 @property unsigned short messageID;
 @property(retain) id pbRequest;
-@property unsigned long long priority;
+@property unsigned int priority;
 @property(retain) HDIDSOutgoingResponse * response;
 
 - (void).cxx_destruct;
@@ -29,20 +29,20 @@
 - (id)data;
 - (void)dealloc;
 - (id)description;
-- (bool)expectsResponse;
+- (BOOL)expectsResponse;
 - (id)idsIdentifier;
 - (id)messageCenter;
 - (unsigned short)messageID;
 - (id)pbRequest;
-- (unsigned long long)priority;
+- (unsigned int)priority;
 - (id)response;
 - (void)setData:(id)arg1;
-- (void)setExpectsResponse:(bool)arg1;
+- (void)setExpectsResponse:(BOOL)arg1;
 - (void)setIdsIdentifier:(id)arg1;
 - (void)setMessageCenter:(id)arg1;
 - (void)setMessageID:(unsigned short)arg1;
 - (void)setPbRequest:(id)arg1;
-- (void)setPriority:(unsigned long long)arg1;
+- (void)setPriority:(unsigned int)arg1;
 - (void)setResponse:(id)arg1;
 
 @end

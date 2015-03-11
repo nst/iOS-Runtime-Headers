@@ -5,17 +5,17 @@
 @class NSArray, SKUILabelViewElement;
 
 @interface SKUIDialogTemplateViewElement : SKUIViewElement {
-    long long _dialogType;
+    int _dialogType;
 }
 
 @property(readonly) NSArray * buttons;
-@property(readonly) long long dialogType;
+@property(readonly) int dialogType;
 @property(readonly) SKUILabelViewElement * message;
 @property(readonly) SKUILabelViewElement * title;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)buttons;
-- (long long)dialogType;
+- (int)dialogType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)message;
 - (id)title;

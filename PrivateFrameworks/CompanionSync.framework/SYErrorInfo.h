@@ -12,7 +12,7 @@
 
 @property unsigned int code;
 @property(retain) NSString * domain;
-@property(readonly) bool hasUserInfo;
+@property(readonly) BOOL hasUserInfo;
 @property(retain) NSData * userInfo;
 
 + (void)initialize;
@@ -25,12 +25,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)domain;
-- (bool)hasUserInfo;
-- (unsigned long long)hash;
+- (BOOL)hasUserInfo;
+- (unsigned int)hash;
 - (id)initWithError:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCode:(unsigned int)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setUserInfo:(id)arg1;

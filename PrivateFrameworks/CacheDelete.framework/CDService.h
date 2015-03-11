@@ -7,28 +7,28 @@
 @interface CDService : NSObject {
     NSString *_ID;
     NSSet *_desiredNotifications;
+    BOOL _doesPeriodic;
+    BOOL _doesPurge;
     NSXPCListenerEndpoint *_endpoint;
     NSXPCConnection *_xpcConn;
-    bool_doesPeriodic;
-    bool_doesPurge;
 }
 
 @property(retain) NSString * ID;
 @property(retain) NSSet * desiredNotifications;
-@property bool doesPeriodic;
-@property bool doesPurge;
+@property BOOL doesPeriodic;
+@property BOOL doesPurge;
 @property(retain) NSXPCListenerEndpoint * endpoint;
 @property(retain) NSXPCConnection * xpcConn;
 
 - (void).cxx_destruct;
 - (id)ID;
 - (id)desiredNotifications;
-- (bool)doesPeriodic;
-- (bool)doesPurge;
+- (BOOL)doesPeriodic;
+- (BOOL)doesPurge;
 - (id)endpoint;
 - (void)setDesiredNotifications:(id)arg1;
-- (void)setDoesPeriodic:(bool)arg1;
-- (void)setDoesPurge:(bool)arg1;
+- (void)setDoesPeriodic:(BOOL)arg1;
+- (void)setDoesPurge:(BOOL)arg1;
 - (void)setEndpoint:(id)arg1;
 - (void)setID:(id)arg1;
 - (void)setXpcConn:(id)arg1;

@@ -13,8 +13,8 @@
     id _initialResultsHandler;
     NSDateComponents *_intervalComponents;
     NSNumber *_lastAnchor;
-    unsigned long long _mergeStrategy;
-    unsigned long long _options;
+    unsigned int _mergeStrategy;
+    unsigned int _options;
     HKStatisticsCollection *_statisticsCollection;
     id _statisticsUpdateHandler;
 }
@@ -23,8 +23,8 @@
 @property(copy) id initialResultsHandler;
 @property(copy,readonly) NSDateComponents * intervalComponents;
 @property(retain) NSNumber * lastAnchor;
-@property unsigned long long mergeStrategy;
-@property(readonly) unsigned long long options;
+@property unsigned int mergeStrategy;
+@property(readonly) unsigned int options;
 @property(retain) HKStatisticsCollection * statisticsCollection;
 @property(copy) id statisticsUpdateHandler;
 
@@ -38,21 +38,21 @@
 - (void)_queue_deliverResetStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (void)_queue_deliverStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (id)_queue_errorHandler;
-- (bool)_queue_shouldStayAliveAfterInitialResults;
+- (BOOL)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (id)anchorDate;
 - (void)deliverInitialStatisticsObjects:(id)arg1 anchor:(id)arg2 forQuery:(id)arg3;
 - (void)deliverResetStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (void)deliverUpdatedStatistics:(id)arg1 anchor:(id)arg2 forQuery:(id)arg3;
-- (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned long long)arg3 anchorDate:(id)arg4 intervalComponents:(id)arg5;
+- (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned int)arg3 anchorDate:(id)arg4 intervalComponents:(id)arg5;
 - (id)initialResultsHandler;
 - (id)intervalComponents;
 - (id)lastAnchor;
-- (unsigned long long)mergeStrategy;
-- (unsigned long long)options;
+- (unsigned int)mergeStrategy;
+- (unsigned int)options;
 - (void)setInitialResultsHandler:(id)arg1;
 - (void)setLastAnchor:(id)arg1;
-- (void)setMergeStrategy:(unsigned long long)arg1;
+- (void)setMergeStrategy:(unsigned int)arg1;
 - (void)setStatisticsCollection:(id)arg1;
 - (void)setStatisticsUpdateHandler:(id)arg1;
 - (id)statisticsCollection;

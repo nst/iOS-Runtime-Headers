@@ -6,52 +6,52 @@
 
 @interface UIPinchGestureRecognizer : UIGestureRecognizer {
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     unsigned int _endsOnSingleTouch : 1;
     } _anchorSceneReferencePoint;
-    double _hysteresis;
-    double _initialTouchDistance;
-    double _initialTouchScale;
+    float _hysteresis;
+    float _initialTouchDistance;
+    float _initialTouchScale;
     double _lastTouchTime;
-    double _previousVelocity;
-    double _scaleThreshold;
+    float _previousVelocity;
+    float _scaleThreshold;
     UITouch *_touches[2];
     } _transform;
     id _transformAnalyzer;
-    double _velocity;
+    float _velocity;
 }
 
-@property(readonly) struct CGPoint { double x1; double x2; } anchorPoint;
-@property(getter=_hysteresis,setter=_setHysteresis:) double hysteresis;
-@property double scale;
-@property double scaleThreshold;
-@property(readonly) double velocity;
+@property(readonly) struct CGPoint { float x1; float x2; } anchorPoint;
+@property(getter=_hysteresis,setter=_setHysteresis:) float hysteresis;
+@property float scale;
+@property float scaleThreshold;
+@property(readonly) float velocity;
 
-- (bool)_endsOnSingleTouch;
-- (double)_hysteresis;
+- (BOOL)_endsOnSingleTouch;
+- (float)_hysteresis;
 - (void)_resetGestureRecognizer;
-- (void)_setEndsOnSingleTouch:(bool)arg1;
-- (void)_setHysteresis:(double)arg1;
-- (struct CGPoint { double x1; double x2; })anchorPoint;
+- (void)_setEndsOnSingleTouch:(BOOL)arg1;
+- (void)_setHysteresis:(float)arg1;
+- (struct CGPoint { float x1; float x2; })anchorPoint;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (double)scale;
-- (double)scaleThreshold;
-- (void)setScale:(double)arg1;
-- (void)setScaleThreshold:(double)arg1;
+- (float)scale;
+- (float)scaleThreshold;
+- (void)setScale:(float)arg1;
+- (void)setScaleThreshold:(float)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (double)velocity;
+- (float)velocity;
 
 @end

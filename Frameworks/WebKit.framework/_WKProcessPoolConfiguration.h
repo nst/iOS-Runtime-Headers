@@ -11,12 +11,12 @@
         void *m_ptr; 
     } _cachePartitionedURLSchemes;
     } _injectedBundleURL;
-    unsigned long long _maximumProcessCount;
+    unsigned int _maximumProcessCount;
 }
 
 @property(copy) NSArray * cachePartitionedURLSchemes;
 @property(copy) NSURL * injectedBundleURL;
-@property unsigned long long maximumProcessCount;
+@property unsigned int maximumProcessCount;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -24,9 +24,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)injectedBundleURL;
-- (unsigned long long)maximumProcessCount;
+- (unsigned int)maximumProcessCount;
 - (void)setCachePartitionedURLSchemes:(id)arg1;
 - (void)setInjectedBundleURL:(id)arg1;
-- (void)setMaximumProcessCount:(unsigned long long)arg1;
+- (void)setMaximumProcessCount:(unsigned int)arg1;
 
 @end

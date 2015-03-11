@@ -5,9 +5,9 @@
 @interface MPPlaceholderAVItem : MPAVItem {
 }
 
-- (bool)isValidPlayerSubstituteForItem:(id)arg1;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
-- (bool)mpuReporting_isValidReportingItem;
-- (bool)supportsSkip;
+- (BOOL)mpuReporting_isValidReportingItem;
+- (BOOL)supportsSkip;
 
 @end

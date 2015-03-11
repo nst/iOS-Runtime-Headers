@@ -5,20 +5,20 @@
 @class ML3StatementCacheList, NSMutableDictionary;
 
 @interface ML3DatabaseStatementCache : NSObject {
-    unsigned long long _cacheSize;
+    unsigned int _cacheSize;
     ML3StatementCacheList *_nodeList;
     NSMutableDictionary *_statementsDictionary;
 }
 
-@property(readonly) unsigned long long cacheSize;
+@property(readonly) unsigned int cacheSize;
 
 - (void).cxx_destruct;
 - (id)allStatements;
-- (unsigned long long)cacheSize;
+- (unsigned int)cacheSize;
 - (void)cacheStatement:(id)arg1;
 - (id)cachedStatementForSQL:(id)arg1;
 - (void)clearCache;
 - (void)dealloc;
-- (id)initWithCacheSize:(unsigned long long)arg1;
+- (id)initWithCacheSize:(unsigned int)arg1;
 
 @end

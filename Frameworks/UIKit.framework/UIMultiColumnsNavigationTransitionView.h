@@ -7,45 +7,45 @@
 @interface UIMultiColumnsNavigationTransitionView : UIView <NSCoding> {
     unsigned int _isTransitioning : 1;
     int _columnCount;
-    double _columnWidth;
+    float _columnWidth;
     struct __CFDictionary { } *_containerViews;
     id _delegate;
     NSArray *_displayedViews;
     struct __CFDictionary { } *_dividerViews;
     UIColor *_dividersColor;
-    double _dividersWidth;
+    float _dividersWidth;
     UIView *_firstResponderViewToRestore;
     NSArray *_fromViews;
     NSArray *_toViews;
-    long long _transition;
+    int _transition;
     NSArray *_viewsToAdd;
     NSArray *_viewsToRemove;
 }
 
 @property int columnCount;
-@property double columnWidth;
+@property float columnWidth;
 @property id delegate;
 
-+ (double)defaultDurationForTransition:(long long)arg1;
++ (double)defaultDurationForTransition:(int)arg1;
 
 - (id)_containerViewForView:(id)arg1;
 - (id)_dividerViewForView:(id)arg1;
-- (bool)_isTransitioningFromView:(id)arg1;
+- (BOOL)_isTransitioningFromView:(id)arg1;
 - (void)_navigationTransitionDidStop;
 - (void)_removeContainerViewForView:(id)arg1;
 - (void)_removeDividerViewForView:(id)arg1;
 - (int)columnCount;
-- (double)columnWidth;
+- (float)columnWidth;
 - (void)dealloc;
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isTransitioning;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isTransitioning;
 - (void)setColumnCount:(int)arg1;
-- (void)setColumnWidth:(double)arg1;
+- (void)setColumnWidth:(float)arg1;
 - (void)setDelegate:(id)arg1;
-- (bool)transition:(long long)arg1 fromViews:(id)arg2 toViews:(id)arg3;
-- (bool)transition:(long long)arg1 toViews:(id)arg2;
+- (BOOL)transition:(int)arg1 fromViews:(id)arg2 toViews:(id)arg3;
+- (BOOL)transition:(int)arg1 toViews:(id)arg2;
 
 @end

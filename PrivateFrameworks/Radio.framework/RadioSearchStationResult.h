@@ -15,9 +15,9 @@
 - (void).cxx_destruct;
 - (id)_initWithResponseDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)highlightRanges;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)stationDictionary;
 
 @end

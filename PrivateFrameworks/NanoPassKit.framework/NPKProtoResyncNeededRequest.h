@@ -9,18 +9,18 @@
         unsigned int resyncID : 1; 
         unsigned int fullResyncNeeded : 1; 
     NPKProtoHash *_expectedHash;
+    BOOL _fullResyncNeeded;
     } _has;
     NSMutableArray *_manifestHashes;
     unsigned int _resyncID;
     NSMutableArray *_uniqueIDs;
-    bool_fullResyncNeeded;
 }
 
 @property(retain) NPKProtoHash * expectedHash;
-@property bool fullResyncNeeded;
-@property(readonly) bool hasExpectedHash;
-@property bool hasFullResyncNeeded;
-@property bool hasResyncID;
+@property BOOL fullResyncNeeded;
+@property(readonly) BOOL hasExpectedHash;
+@property BOOL hasFullResyncNeeded;
+@property BOOL hasResyncID;
 @property(retain) NSMutableArray * manifestHashes;
 @property unsigned int resyncID;
 @property(retain) NSMutableArray * uniqueIDs;
@@ -35,28 +35,28 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)expectedHash;
-- (bool)fullResyncNeeded;
-- (bool)hasExpectedHash;
-- (bool)hasFullResyncNeeded;
-- (bool)hasResyncID;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)fullResyncNeeded;
+- (BOOL)hasExpectedHash;
+- (BOOL)hasFullResyncNeeded;
+- (BOOL)hasResyncID;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)manifestHashes;
-- (id)manifestHashesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)manifestHashesCount;
+- (id)manifestHashesAtIndex:(unsigned int)arg1;
+- (unsigned int)manifestHashesCount;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)resyncID;
 - (void)setExpectedHash:(id)arg1;
-- (void)setFullResyncNeeded:(bool)arg1;
-- (void)setHasFullResyncNeeded:(bool)arg1;
-- (void)setHasResyncID:(bool)arg1;
+- (void)setFullResyncNeeded:(BOOL)arg1;
+- (void)setHasFullResyncNeeded:(BOOL)arg1;
+- (void)setHasResyncID:(BOOL)arg1;
 - (void)setManifestHashes:(id)arg1;
 - (void)setResyncID:(unsigned int)arg1;
 - (void)setUniqueIDs:(id)arg1;
 - (id)uniqueIDs;
-- (id)uniqueIDsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)uniqueIDsCount;
+- (id)uniqueIDsAtIndex:(unsigned int)arg1;
+- (unsigned int)uniqueIDsCount;
 - (void)writeTo:(id)arg1;
 
 @end

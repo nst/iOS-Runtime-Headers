@@ -13,7 +13,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)tableStyleElementWithResources:(id)arg1;
@@ -23,10 +23,10 @@
 - (void)dealloc;
 - (id)differentialStyle;
 - (id)initWithResources:(id)arg1;
-- (long long)key;
+- (int)key;
 - (void)setBandSize:(unsigned int)arg1;
 - (void)setDifferentialStyle:(id)arg1;
-- (void)setDifferentialStyleWithIndex:(unsigned long long)arg1;
+- (void)setDifferentialStyleWithIndex:(unsigned int)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
 

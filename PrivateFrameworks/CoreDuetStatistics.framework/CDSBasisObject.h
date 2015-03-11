@@ -11,10 +11,10 @@
     NSString *_basisValueString;
     NSDate *_creationDate;
     double _duration;
+    BOOL _fallingEdge;
     unsigned long long _localTime;
-    long long _type;
-    bool_fallingEdge;
-    bool_risingEdge;
+    BOOL _risingEdge;
+    int _type;
 }
 
 @property unsigned long long attributeId;
@@ -23,10 +23,10 @@
 @property(retain) NSString * basisValueString;
 @property(retain) NSDate * creationDate;
 @property double duration;
-@property bool fallingEdge;
+@property BOOL fallingEdge;
 @property unsigned long long localTime;
-@property bool risingEdge;
-@property long long type;
+@property BOOL risingEdge;
+@property int type;
 
 - (void).cxx_destruct;
 - (unsigned long long)attributeId;
@@ -35,20 +35,20 @@
 - (id)basisValueString;
 - (id)creationDate;
 - (double)duration;
-- (bool)fallingEdge;
-- (id)initWithLocalTime:(unsigned long long)arg1 creationDate:(id)arg2 basisValueString:(id)arg3 basisUint64Value:(unsigned long long)arg4 basisDoubleValue:(double)arg5 risingEdge:(bool)arg6 fallingEdge:(bool)arg7 duration:(double)arg8 attributeId:(unsigned long long)arg9 type:(long long)arg10;
+- (BOOL)fallingEdge;
+- (id)initWithLocalTime:(unsigned long long)arg1 creationDate:(id)arg2 basisValueString:(id)arg3 basisUint64Value:(unsigned long long)arg4 basisDoubleValue:(double)arg5 risingEdge:(BOOL)arg6 fallingEdge:(BOOL)arg7 duration:(double)arg8 attributeId:(unsigned long long)arg9 type:(int)arg10;
 - (unsigned long long)localTime;
-- (bool)risingEdge;
+- (BOOL)risingEdge;
 - (void)setAttributeId:(unsigned long long)arg1;
 - (void)setBasisDoubleValue:(double)arg1;
 - (void)setBasisUint64Value:(unsigned long long)arg1;
 - (void)setBasisValueString:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setFallingEdge:(bool)arg1;
+- (void)setFallingEdge:(BOOL)arg1;
 - (void)setLocalTime:(unsigned long long)arg1;
-- (void)setRisingEdge:(bool)arg1;
-- (void)setType:(long long)arg1;
-- (long long)type;
+- (void)setRisingEdge:(BOOL)arg1;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

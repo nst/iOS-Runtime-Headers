@@ -28,7 +28,7 @@
 - (id)initWithContext:(id)arg1 shortcut:(id)arg2 style:(id)arg3;
 - (id)initWithContext:(id)arg1;
 - (void)loadFromArchive:(const struct ShortcutCommandArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct CommandArchive {} *x3; struct Reference {} *x4; struct Reference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; int x8; unsigned int x9[1]; }*)arg1 unarchiver:(id)arg2;
-- (bool)process;
+- (BOOL)process;
 - (void)redo;
 - (void)saveToArchive:(struct ShortcutCommandArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct CommandArchive {} *x3; struct Reference {} *x4; struct Reference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; int x8; unsigned int x9[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;

@@ -11,7 +11,7 @@
 @property(copy) NSString * category;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSURL * image;
 @property(copy) NSString * imageCaption;
 @property(readonly) Class superclass;

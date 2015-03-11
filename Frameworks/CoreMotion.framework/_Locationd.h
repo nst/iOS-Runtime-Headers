@@ -3,16 +3,16 @@
  */
 
 @interface _Locationd : NSObject <CLIntersiloServiceProtocol> {
-    bool_valid;
+    BOOL _valid;
 }
 
-@property bool valid;
+@property BOOL valid;
 
 + (void)becameFatallyBlocked:(id)arg1;
 + (id)getSilo;
-+ (bool)isSupported;
++ (BOOL)isSupported;
 
-- (void)setValid:(bool)arg1;
-- (bool)valid;
+- (void)setValid:(BOOL)arg1;
+- (BOOL)valid;
 
 @end

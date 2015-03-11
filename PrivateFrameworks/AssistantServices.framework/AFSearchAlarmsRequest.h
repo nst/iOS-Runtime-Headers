@@ -6,21 +6,21 @@
 
 @interface AFSearchAlarmsRequest : AFSiriRequest {
     AFAlarm *_criteria;
-    long long _options;
+    int _options;
 }
 
 @property(retain) AFAlarm * criteria;
-@property long long options;
+@property int options;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)createResponse;
 - (id)criteria;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (long long)options;
+- (int)options;
 - (void)setCriteria:(id)arg1;
-- (void)setOptions:(long long)arg1;
+- (void)setOptions:(int)arg1;
 
 @end

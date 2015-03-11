@@ -5,33 +5,33 @@
 @class APDDataManager, APDNavigationItem, APDURLSession, UIColor, UIImageView, UILabel;
 
 @interface APDNavigationItemCell : UITableViewCell {
+    BOOL _RTL;
     UIImageView *_accessoryImageView;
     UIImageView *_arrowImageView;
+    BOOL _closed;
     APDDataManager *_dataManager;
     APDURLSession *_imageUrlSession;
-    long long _indentLevel;
+    int _indentLevel;
+    BOOL _indentWithSectionImage;
     UILabel *_nameLabel;
     APDNavigationItem *_navigationItem;
     UIImageView *_sectionImageView;
-    bool_RTL;
-    bool_closed;
-    bool_indentWithSectionImage;
-    bool_shouldIndent;
-    bool_showFulLSeparator;
+    BOOL _shouldIndent;
+    BOOL _showFulLSeparator;
 }
 
-@property(getter=isRTL) bool RTL;
+@property(getter=isRTL) BOOL RTL;
 @property(retain) UIImageView * accessoryImageView;
 @property(retain) UIImageView * arrowImageView;
 @property(retain) UIColor * cellHighlightedColor;
-@property bool closed;
+@property BOOL closed;
 @property(retain) APDDataManager * dataManager;
-@property bool indentWithSectionImage;
+@property BOOL indentWithSectionImage;
 @property(retain) UILabel * nameLabel;
 @property(retain) APDNavigationItem * navigationItem;
 @property(retain) UIImageView * sectionImageView;
-@property bool shouldIndent;
-@property bool showFulLSeparator;
+@property BOOL shouldIndent;
+@property BOOL showFulLSeparator;
 
 - (void).cxx_destruct;
 - (id)accessibilityHint;
@@ -40,12 +40,12 @@
 - (id)arrowImageView;
 - (void)cancelSectionImageRequest;
 - (id)cellHighlightedColor;
-- (bool)closed;
+- (BOOL)closed;
 - (id)dataManager;
 - (void)dealloc;
-- (bool)indentWithSectionImage;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-- (bool)isRTL;
+- (BOOL)indentWithSectionImage;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isRTL;
 - (void)layoutSubviews;
 - (id)nameLabel;
 - (id)navigationItem;
@@ -54,20 +54,20 @@
 - (void)setAccessoryImageView:(id)arg1;
 - (void)setArrowImageView:(id)arg1;
 - (void)setCellHighlightedColor:(id)arg1;
-- (void)setClosed:(bool)arg1;
+- (void)setClosed:(BOOL)arg1;
 - (void)setDataManager:(id)arg1;
-- (void)setIndentWithSectionImage:(bool)arg1;
+- (void)setIndentWithSectionImage:(BOOL)arg1;
 - (void)setNameLabel:(id)arg1;
 - (void)setNavigationItem:(id)arg1;
-- (void)setRTL:(bool)arg1;
+- (void)setRTL:(BOOL)arg1;
 - (void)setSectionImageView:(id)arg1;
-- (void)setShouldIdent:(bool)arg1;
-- (void)setShouldIndent:(bool)arg1;
-- (void)setShowFulLSeparator:(bool)arg1;
-- (bool)shouldIndent;
-- (bool)showFulLSeparator;
+- (void)setShouldIdent:(BOOL)arg1;
+- (void)setShouldIndent:(BOOL)arg1;
+- (void)setShowFulLSeparator:(BOOL)arg1;
+- (BOOL)shouldIndent;
+- (BOOL)showFulLSeparator;
 - (void)toggle;
 - (void)updateFonts;
-- (void)updateToggleImageAnimated:(bool)arg1;
+- (void)updateToggleImageAnimated:(BOOL)arg1;
 
 @end

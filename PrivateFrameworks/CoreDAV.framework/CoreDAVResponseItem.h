@@ -32,7 +32,7 @@
 - (id)description;
 - (id)errorItem;
 - (id)firstHref;
-- (bool)hasPropertyError;
+- (BOOL)hasPropertyError;
 - (id)hrefs;
 - (id)init;
 - (id)location;

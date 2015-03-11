@@ -12,11 +12,11 @@
 
 + (id)sharedManager;
 
-- (id)_cacheKeyForFormat:(int)arg1 photoImageSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)_cacheKeyForFormat:(int)arg1 photoImageSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)_placeholderImageForFormat:(int)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)newPlaceholderImageForFormat:(int)arg1 photoImageSize:(struct CGSize { double x1; double x2; })arg2;
-- (id)placeholderDataForFormat:(int)arg1 photoImageSize:(struct CGSize { double x1; double x2; })arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
+- (id)newPlaceholderImageForFormat:(int)arg1 photoImageSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)placeholderDataForFormat:(int)arg1 photoImageSize:(struct CGSize { float x1; float x2; })arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 
 @end

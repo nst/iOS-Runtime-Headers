@@ -8,10 +8,10 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    boolpausesRecordingOnInterruption;
     } maxRecordedDuration;
     long long maxRecordedFileSize;
     long long minFreeDiskSpaceLimit;
+    BOOL pausesRecordingOnInterruption;
 }
 
 - (id)init;

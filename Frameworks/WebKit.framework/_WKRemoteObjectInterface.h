@@ -27,12 +27,12 @@
 - (void).cxx_destruct;
 - (const struct Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow> { struct RetainPtr<NSSet> {} *x1; unsigned int x2; unsigned int x3; }*)_allowedArgumentClassesForSelector:(SEL)arg1;
 - (id)_methodSignatureForSelector:(SEL)arg1;
-- (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned long long)arg2;
+- (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)identifier;
 - (id)initWithProtocol:(id)arg1 identifier:(id)arg2;
 - (id)protocol;
-- (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned long long)arg3;
+- (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3;
 
 @end

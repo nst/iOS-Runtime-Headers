@@ -7,43 +7,43 @@
 @interface HourlyWeatherView : UIView {
     UIView *_centerView;
     NSMutableArray *_colorsAndFonts;
+    BOOL _disableCenterViewOffset;
+    BOOL _drawCurrentTime;
     unsigned int _hour;
-    double _maxOuterViewSize;
+    float _maxOuterViewSize;
     unsigned int _minutes;
     NSMutableArray *_numberLabels;
     NSArray *_outerViews;
-    long long _viewSize;
-    bool_disableCenterViewOffset;
-    bool_drawCurrentTime;
+    int _viewSize;
 }
 
 @property(copy,readonly) UIView * centerView;
-@property bool disableCenterViewOffset;
-@property bool drawCurrentTime;
+@property BOOL disableCenterViewOffset;
+@property BOOL drawCurrentTime;
 @property(readonly) unsigned int hour;
 @property(readonly) unsigned int minutes;
 @property(copy,readonly) NSArray * outerViews;
 
-+ (id)lookupHourlyConditionGlyph:(long long)arg1;
++ (id)lookupHourlyConditionGlyph:(int)arg1;
 
-- (void)_drawArc:(struct CGContext { }*)arg1 radius:(double)arg2 startAngle:(double)arg3 endAngle:(double)arg4 lineThickness:(double)arg5 color:(id)arg6;
-- (void)_drawDot:(struct CGContext { }*)arg1 radius:(double)arg2 angle:(double)arg3 size:(double)arg4 color:(id)arg5;
-- (void)_drawTicks:(struct CGContext { }*)arg1 radius:(double)arg2 totalTicks:(unsigned int)arg3 startTick:(unsigned int)arg4 numTicks:(unsigned int)arg5 tickWidth:(double)arg6 tickHeight:(double)arg7 color:(id)arg8;
+- (void)_drawArc:(struct CGContext { }*)arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4 lineThickness:(float)arg5 color:(id)arg6;
+- (void)_drawDot:(struct CGContext { }*)arg1 radius:(float)arg2 angle:(float)arg3 size:(float)arg4 color:(id)arg5;
+- (void)_drawTicks:(struct CGContext { }*)arg1 radius:(float)arg2 totalTicks:(unsigned int)arg3 startTick:(unsigned int)arg4 numTicks:(unsigned int)arg5 tickWidth:(float)arg6 tickHeight:(float)arg7 color:(id)arg8;
 - (void)_insetOuterView:(id)arg1;
 - (void)_setHour:(unsigned int)arg1 minutes:(unsigned int)arg2 outerViews:(id)arg3 centerView:(id)arg4;
 - (id)centerView;
-- (bool)disableCenterViewOffset;
-- (bool)drawCurrentTime;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)disableCenterViewOffset;
+- (BOOL)drawCurrentTime;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (unsigned int)hour;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 hourLabels:(id)arg2;
-- (id)initWithSize:(long long)arg1 hourLabels:(id)arg2;
-- (id)initwithSize:(long long)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 hourLabels:(id)arg2;
+- (id)initWithSize:(int)arg1 hourLabels:(id)arg2;
+- (id)initwithSize:(int)arg1;
 - (void)layoutSubviews;
 - (unsigned int)minutes;
 - (id)outerViews;
-- (void)setDisableCenterViewOffset:(bool)arg1;
-- (void)setDrawCurrentTime:(bool)arg1;
+- (void)setDisableCenterViewOffset:(BOOL)arg1;
+- (void)setDrawCurrentTime:(BOOL)arg1;
 - (void)setHour:(unsigned int)arg1 minutes:(unsigned int)arg2 outerViews:(id)arg3 centerView:(id)arg4;
 - (void)setHour:(unsigned int)arg1 minutes:(unsigned int)arg2 outerViews:(id)arg3;
 - (void)setHour:(unsigned int)arg1 outerViews:(id)arg2 centerView:(id)arg3;

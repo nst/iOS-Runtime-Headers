@@ -5,12 +5,12 @@
 @interface _UIDocumentPickerContainerContainerItem : _UIDocumentPickerContainerItem {
 }
 
-- (id)_blockingThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
-- (id)_defaultThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
+- (id)_blockingThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
+- (id)_defaultThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)sortDate;
 - (id)subtitle;
 - (id)title;
-- (long long)type;
+- (int)type;
 - (id)url;
 
 @end

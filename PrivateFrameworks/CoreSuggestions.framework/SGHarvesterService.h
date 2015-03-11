@@ -11,7 +11,7 @@
 - (void)harvestDataForAllDataTypesWithCompletion:(id)arg1;
 - (void)harvestDataForDataType:(id)arg1 withCompletion:(id)arg2;
 - (id)messagesToRefresh;
-- (void)updateMessages:(id)arg1 state:(unsigned long long)arg2 withCompletion:(id)arg3;
-- (void)updateMessages:(id)arg1 state:(unsigned long long)arg2;
+- (void)updateMessages:(id)arg1 state:(unsigned int)arg2 withCompletion:(id)arg3;
+- (void)updateMessages:(id)arg1 state:(unsigned int)arg2;
 
 @end

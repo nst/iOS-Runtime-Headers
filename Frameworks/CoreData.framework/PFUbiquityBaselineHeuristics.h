@@ -9,15 +9,15 @@
 @class NSString, PFUbiquityKnowledgeVector, PFUbiquityLocation;
 
 @interface PFUbiquityBaselineHeuristics : NSObject {
-     /* Encoded args for previous method: D16@0:8 */
-     /* Encoded args for previous method: v24@0:8D16 */
+     /* Encoded args for previous method: D8@0:4 */
+     /* Encoded args for previous method: v16@0:4D8 */
     PFUbiquityKnowledgeVector *_currentBaselineKV;
     PFUbiquityKnowledgeVector *_currentKV;
     NSString *_localPeerID;
     long long _logSize;
-    long long _minLogBytes;
+    int _minLogBytes;
     NSString *_modelVersionHash;
-    long long _numRequiredTransactions;
+    int _numRequiredTransactions;
     NSString *_storeName;
     long long _storeSize;
     PFUbiquityLocation *_ubiquityRootLocation;
@@ -29,36 +29,36 @@
 @property(readonly) NSString * localPeerID;
 @property(readonly) long long logSize;
 @property /* Warning: Unrecognized filer type: 'D' using 'void*' */ void* logToStoreSizeRatio;
-@property long long minLogBytes;
+@property int minLogBytes;
 @property(readonly) NSString * modelVersionHash;
-@property long long numRequiredTransactions;
+@property int numRequiredTransactions;
 @property(readonly) NSString * storeName;
 @property(readonly) long long storeSize;
 @property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 
 - (long long)bytesForFileAtPath:(id)arg1;
-- (bool)canRollBaseline:(id*)arg1;
+- (BOOL)canRollBaseline:(id*)arg1;
 - (id)copy;
 - (id)currentBaselineKV;
 - (id)currentKV;
 - (void)dealloc;
 - (id)description;
-- (bool)haveEnoughTransactionsToRoll;
+- (BOOL)haveEnoughTransactionsToRoll;
 - (id)init;
 - (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 modelVersionHash:(id)arg3 andUbiquityRootLocation:(id)arg4;
 - (id)localPeerID;
 - (long long)logSize;
 - (/* Warning: Unrecognized filer type: 'D' using 'void*' */ void*)logToStoreSizeRatio;
-- (bool)logsConsumeEnoughDiskSpace;
-- (long long)minLogBytes;
+- (BOOL)logsConsumeEnoughDiskSpace;
+- (int)minLogBytes;
 - (id)modelVersionHash;
-- (long long)numRequiredTransactions;
+- (int)numRequiredTransactions;
 - (void)setCurrentBaselineKV:(id)arg1;
 - (void)setCurrentKV:(id)arg1;
 - (void)setLogSize:(long long)arg1;
 - (void)setLogToStoreSizeRatio:(/* Warning: Unrecognized filer type: 'D' using 'void*' */ void*)arg1;
-- (void)setMinLogBytes:(long long)arg1;
-- (void)setNumRequiredTransactions:(long long)arg1;
+- (void)setMinLogBytes:(int)arg1;
+- (void)setNumRequiredTransactions:(int)arg1;
 - (void)setStoreSize:(long long)arg1;
 - (id)storeName;
 - (long long)storeSize;

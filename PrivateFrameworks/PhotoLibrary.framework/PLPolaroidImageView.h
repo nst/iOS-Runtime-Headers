@@ -7,18 +7,18 @@
 @interface PLPolaroidImageView : PLImageView {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     UILabel *_nameLabel;
+    BOOL _polaroidBorderVisible;
     UIView *_posterView;
     } _roi;
-    double _thinBorderWidth;
-    bool_polaroidBorderVisible;
+    float _thinBorderWidth;
 }
 
 @property(retain) UIImage * posterImage;
@@ -26,18 +26,18 @@
 + (Class)layerClass;
 
 - (void)_adjustLabel;
-- (double)_tunedProgress;
-- (void)_updatePolaroidFramePath:(bool)arg1;
+- (float)_tunedProgress;
+- (void)_updatePolaroidFramePath:(BOOL)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)posterImage;
 - (void)renderSnapshotInContext:(struct CGContext { }*)arg1;
-- (void)setBorderAndAccessoriesVisible:(bool)arg1;
+- (void)setBorderAndAccessoriesVisible:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setPosterImage:(id)arg1 regionOfInterest:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)setPosterImage:(id)arg1 regionOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setPosterImage:(id)arg1;
-- (void)setTransitionProgress:(double)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 allowRounding:(bool)arg2;
+- (void)setTransitionProgress:(float)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 allowRounding:(BOOL)arg2;
 
 @end

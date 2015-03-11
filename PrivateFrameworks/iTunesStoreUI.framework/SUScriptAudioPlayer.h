@@ -28,13 +28,13 @@
 @property(readonly) NSString * nowPlayingKeyPersistentID;
 @property(readonly) NSString * nowPlayingKeyPlaybackDuration;
 @property(readonly) NSString * nowPlayingKeyTitle;
-@property(readonly) long long playerStateActive;
-@property(readonly) long long playerStateBuffering;
-@property(readonly) long long playerStateFailed;
-@property(readonly) long long playerStateFinished;
-@property(readonly) long long playerStatePaused;
-@property(readonly) long long playerStateUnplayed;
-@property(readonly) long long state;
+@property(readonly) int playerStateActive;
+@property(readonly) int playerStateBuffering;
+@property(readonly) int playerStateFailed;
+@property(readonly) int playerStateFinished;
+@property(readonly) int playerStatePaused;
+@property(readonly) int playerStateUnplayed;
+@property(readonly) int state;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
@@ -64,15 +64,15 @@
 - (id)nowPlayingKeyTitle;
 - (void)pause;
 - (void)play;
-- (long long)playerStateActive;
-- (long long)playerStateBuffering;
-- (long long)playerStateFailed;
-- (long long)playerStateFinished;
-- (long long)playerStatePaused;
-- (long long)playerStateUnplayed;
+- (int)playerStateActive;
+- (int)playerStateBuffering;
+- (int)playerStateFailed;
+- (int)playerStateFinished;
+- (int)playerStatePaused;
+- (int)playerStateUnplayed;
 - (id)scriptAttributeKeys;
 - (void)setValue:(id)arg1 forNowPlayingKey:(id)arg2;
-- (long long)state;
+- (int)state;
 - (void)stop;
 
 @end

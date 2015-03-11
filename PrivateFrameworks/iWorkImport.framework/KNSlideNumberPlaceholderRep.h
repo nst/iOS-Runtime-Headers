@@ -7,10 +7,10 @@
 
 + (id)mixableObjectClasses;
 
-- (bool)canBeginEditingChildRepOnDoubleTap:(id)arg1;
-- (bool)handleSingleTapAtPoint:(struct CGPoint { double x1; double x2; })arg1 withRecognizer:(id)arg2;
-- (bool)isDraggable;
-- (bool)isSelectable;
-- (bool)shouldBeginEditingOnSingleClick;
+- (BOOL)canBeginEditingChildRepOnDoubleTap:(id)arg1;
+- (BOOL)handleSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 withRecognizer:(id)arg2;
+- (BOOL)isDraggable;
+- (BOOL)isSelectable;
+- (BOOL)shouldBeginEditingOnSingleClick;
 
 @end

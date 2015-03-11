@@ -6,18 +6,18 @@
 
 @interface UIStatusBarActivityItemView : UIStatusBarItemView {
     UIActivityIndicatorView *_activityIndicator;
-    bool_newsstandActivity;
-    bool_slowActivity;
-    bool_syncActivity;
+    BOOL _newsstandActivity;
+    BOOL _slowActivity;
+    BOOL _syncActivity;
 }
 
-- (long long)_activityIndicatorStyle;
+- (int)_activityIndicatorStyle;
 - (void)_startAnimating;
 - (void)_stopAnimating;
 - (void)dealloc;
-- (void)setVisible:(bool)arg1;
-- (double)shadowPadding;
-- (double)updateContentsAndWidth;
-- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
+- (void)setVisible:(BOOL)arg1;
+- (float)shadowPadding;
+- (float)updateContentsAndWidth;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

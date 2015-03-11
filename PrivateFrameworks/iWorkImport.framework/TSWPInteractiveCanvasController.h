@@ -3,41 +3,41 @@
  */
 
 @interface TSWPInteractiveCanvasController : TSDInteractiveCanvasController {
-    bool_isEditingText;
-    bool_isTearingDown;
-    bool_layoutBordersVisible;
+    BOOL _isEditingText;
+    BOOL _isTearingDown;
+    BOOL _layoutBordersVisible;
 }
 
-@property(readonly) bool handleHyperlinksWithTextGRs;
-@property(readonly) bool isEditingText;
-@property(readonly) bool isTearingDown;
-@property(readonly) bool layoutBordersVisible;
-@property(readonly) bool shouldRespondToTextHyperlinks;
+@property(readonly) BOOL handleHyperlinksWithTextGRs;
+@property(readonly) BOOL isEditingText;
+@property(readonly) BOOL isTearingDown;
+@property(readonly) BOOL layoutBordersVisible;
+@property(readonly) BOOL shouldRespondToTextHyperlinks;
 
 + (struct CGColor { }*)layoutBorderColor;
 
-- (bool)cellCommentsAllowedForTableInfo:(id)arg1;
+- (BOOL)cellCommentsAllowedForTableInfo:(id)arg1;
 - (void)closeHyperlinkPopover;
-- (id)closestRepToPoint:(struct CGPoint { double x1; double x2; })arg1 forStorage:(id)arg2;
+- (id)closestRepToPoint:(struct CGPoint { float x1; float x2; })arg1 forStorage:(id)arg2;
 - (void)dealloc;
 - (void)didBeginEditingText;
-- (void)getColumnLeftPosition:(double*)arg1 columnRightPosition:(double*)arg2 singleColumnAtSelectionPoint:(bool)arg3;
-- (void)getColumnLeftPosition:(double*)arg1 columnRightPosition:(double*)arg2;
-- (bool)handleHyperlinksWithTextGRs;
+- (void)getColumnLeftPosition:(float*)arg1 columnRightPosition:(float*)arg2 singleColumnAtSelectionPoint:(BOOL)arg3;
+- (void)getColumnLeftPosition:(float*)arg1 columnRightPosition:(float*)arg2;
+- (BOOL)handleHyperlinksWithTextGRs;
 - (void)hideDisplayedAnnotation;
-- (bool)hyperlinkPopoverIsShown;
+- (BOOL)hyperlinkPopoverIsShown;
 - (id)infosToHideForCanvas:(id)arg1;
-- (bool)isEditingText;
-- (bool)isTearingDown;
-- (bool)layoutBordersVisible;
+- (BOOL)isEditingText;
+- (BOOL)isTearingDown;
+- (BOOL)layoutBordersVisible;
 - (void)p_recursivelyAddRep:(id)arg1 forStorage:(id)arg2 toSet:(id)arg3;
 - (id)p_repsForStorage:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })scrollFocusRectForModel:(id)arg1 withSelection:(id)arg2;
-- (void)setShowsComments:(bool)arg1;
-- (bool)shouldRespondToTextHyperlinks;
-- (void)showAnnotation:(id)arg1 model:(id)arg2 selection:(id)arg3 beginEditing:(bool)arg4 pinned:(bool)arg5 shouldSetSelection:(bool)arg6;
-- (void)showHyperlinkInfoForField:(id)arg1 inRep:(id)arg2 openInEditMode:(bool)arg3;
-- (bool)showsComments;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })scrollFocusRectForModel:(id)arg1 withSelection:(id)arg2;
+- (void)setShowsComments:(BOOL)arg1;
+- (BOOL)shouldRespondToTextHyperlinks;
+- (void)showAnnotation:(id)arg1 model:(id)arg2 selection:(id)arg3 beginEditing:(BOOL)arg4 pinned:(BOOL)arg5 shouldSetSelection:(BOOL)arg6;
+- (void)showHyperlinkInfoForField:(id)arg1 inRep:(id)arg2 openInEditMode:(BOOL)arg3;
+- (BOOL)showsComments;
 - (id)storageForAnnotationModel:(id)arg1 selection:(id)arg2;
 - (void)teardown;
 - (void)willEndEditingText;

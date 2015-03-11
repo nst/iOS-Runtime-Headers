@@ -9,10 +9,10 @@
     Class _targetClass;
 }
 
-- (bool)_tryRetain;
+- (BOOL)_tryRetain;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithManager:(id)arg1 targetClass:(Class)arg2;
-- (bool)isKindOfClass:(Class)arg1;
+- (BOOL)isKindOfClass:(Class)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (oneway void)release;
 - (id)retain;

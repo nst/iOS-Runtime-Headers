@@ -8,17 +8,17 @@
     NSString *_bundleIdentifier;
     NSArray *_categories;
     NSString *_name;
+    BOOL _purgeable;
     unsigned long long _totalSize;
-    bool_purgeable;
 }
 
 @property(retain) NSString * bundleIdentifier;
 @property(retain) NSArray * categories;
 @property(retain) NSString * name;
-@property(getter=isPurgeable) bool purgeable;
+@property(getter=isPurgeable) BOOL purgeable;
 @property unsigned long long totalSize;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
@@ -26,12 +26,12 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isPurgeable;
+- (BOOL)isPurgeable;
 - (id)name;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setCategories:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPurgeable:(bool)arg1;
+- (void)setPurgeable:(BOOL)arg1;
 - (void)setTotalSize:(unsigned long long)arg1;
 - (unsigned long long)totalSize;
 

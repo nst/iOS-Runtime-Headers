@@ -5,26 +5,26 @@
 @class NSString, _UIViewServiceFencingControlProxy;
 
 @interface _UIViewServiceUIBehaviorProxy : _UITargetedProxy <_UIViewServiceUIBehaviorInterface> {
+    BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
     _UIViewServiceFencingControlProxy *_fencingControlProxy;
     int _remotePID;
-    bool__automatic_invalidation_invalidated;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)activeFencePort;
 + (id)proxyWrappingExportedObject:(id)arg1 forCommunicationWithPID:(int)arg2 exportedProtocol:(id)arg3;
 
 - (int)__automatic_invalidation_logic;
-- (bool)_isDeallocating;
-- (bool)_tryRetain;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)dealloc;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

@@ -11,8 +11,8 @@
     int _sessionIdentifier;
 }
 
-@property bool hasResponseCode;
-@property bool hasSessionIdentifier;
+@property BOOL hasResponseCode;
+@property BOOL hasSessionIdentifier;
 @property int responseCode;
 @property int sessionIdentifier;
 
@@ -20,16 +20,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasResponseCode;
-- (bool)hasSessionIdentifier;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasResponseCode;
+- (BOOL)hasSessionIdentifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (int)responseCode;
 - (int)sessionIdentifier;
-- (void)setHasResponseCode:(bool)arg1;
-- (void)setHasSessionIdentifier:(bool)arg1;
+- (void)setHasResponseCode:(BOOL)arg1;
+- (void)setHasSessionIdentifier:(BOOL)arg1;
 - (void)setResponseCode:(int)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 - (void)writeTo:(id)arg1;

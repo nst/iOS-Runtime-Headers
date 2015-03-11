@@ -5,10 +5,10 @@
 @interface SUScriptStoreSheetViewController : SUScriptViewController {
 }
 
-@property long long productPageStyle;
-@property(readonly) long long productPageStyleAutomatic;
-@property(readonly) long long productPageStylePad;
-@property(readonly) long long productPageStylePhone;
+@property int productPageStyle;
+@property(readonly) int productPageStyleAutomatic;
+@property(readonly) int productPageStylePad;
+@property(readonly) int productPageStylePhone;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
@@ -19,11 +19,11 @@
 - (void)loadWithProductParameters:(id)arg1;
 - (void)loadWithProductURL:(id)arg1;
 - (id)newNativeViewController;
-- (long long)productPageStyle;
-- (long long)productPageStyleAutomatic;
-- (long long)productPageStylePad;
-- (long long)productPageStylePhone;
+- (int)productPageStyle;
+- (int)productPageStyleAutomatic;
+- (int)productPageStylePad;
+- (int)productPageStylePhone;
 - (id)scriptAttributeKeys;
-- (void)setProductPageStyle:(long long)arg1;
+- (void)setProductPageStyle:(int)arg1;
 
 @end

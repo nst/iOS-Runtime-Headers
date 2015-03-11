@@ -18,7 +18,7 @@
 @property(retain) GKLabel * captionLabel;
 @property(retain) NSString * captionText;
 @property(retain) GKTextStyle * normalValueStyle;
-@property bool oneLineOnly;
+@property BOOL oneLineOnly;
 @property(retain) GKTextStyle * overrideCaptionStyle;
 @property(retain) GKTextStyle * overrideValueStyle;
 @property(retain) GKTextStyle * smallValueStyle;
@@ -36,10 +36,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)normalValueStyle;
-- (bool)oneLineOnly;
+- (BOOL)oneLineOnly;
 - (id)overrideCaptionStyle;
 - (id)overrideValueStyle;
 - (void)setAttributedCaptionText:(id)arg1;
@@ -47,7 +47,7 @@
 - (void)setCaptionLabel:(id)arg1;
 - (void)setCaptionText:(id)arg1;
 - (void)setNormalValueStyle:(id)arg1;
-- (void)setOneLineOnly:(bool)arg1;
+- (void)setOneLineOnly:(BOOL)arg1;
 - (void)setOverrideCaptionStyle:(id)arg1;
 - (void)setOverrideValueStyle:(id)arg1;
 - (void)setSmallValueStyle:(id)arg1;

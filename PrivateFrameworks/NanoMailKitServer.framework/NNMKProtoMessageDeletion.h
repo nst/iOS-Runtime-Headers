@@ -13,8 +13,8 @@
 }
 
 @property unsigned int deletionState;
-@property bool hasDeletionState;
-@property(readonly) bool hasMessageId;
+@property BOOL hasDeletionState;
+@property(readonly) BOOL hasMessageId;
 @property(retain) NSString * messageId;
 
 - (void).cxx_destruct;
@@ -23,15 +23,15 @@
 - (unsigned int)deletionState;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasDeletionState;
-- (bool)hasMessageId;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDeletionState;
+- (BOOL)hasMessageId;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)messageId;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDeletionState:(unsigned int)arg1;
-- (void)setHasDeletionState:(bool)arg1;
+- (void)setHasDeletionState:(BOOL)arg1;
 - (void)setMessageId:(id)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -15,10 +15,10 @@
 }
 
 @property double creationDate;
-@property bool hasCreationDate;
-@property(readonly) bool hasMetadataDictionary;
-@property(readonly) bool hasSourceBundleIdentifier;
-@property(readonly) bool hasUuid;
+@property BOOL hasCreationDate;
+@property(readonly) BOOL hasMetadataDictionary;
+@property(readonly) BOOL hasSourceBundleIdentifier;
+@property(readonly) BOOL hasUuid;
 @property(retain) HDCodableMetadataDictionary * metadataDictionary;
 @property(retain) NSString * sourceBundleIdentifier;
 @property(retain) NSData * uuid;
@@ -32,17 +32,17 @@
 - (id)decodedUUID;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCreationDate;
-- (bool)hasMetadataDictionary;
-- (bool)hasSourceBundleIdentifier;
-- (bool)hasUuid;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCreationDate;
+- (BOOL)hasMetadataDictionary;
+- (BOOL)hasSourceBundleIdentifier;
+- (BOOL)hasUuid;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)metadataDictionary;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCreationDate:(double)arg1;
-- (void)setHasCreationDate:(bool)arg1;
+- (void)setHasCreationDate:(BOOL)arg1;
 - (void)setMetadataDictionary:(id)arg1;
 - (void)setSourceBundleIdentifier:(id)arg1;
 - (void)setUuid:(id)arg1;

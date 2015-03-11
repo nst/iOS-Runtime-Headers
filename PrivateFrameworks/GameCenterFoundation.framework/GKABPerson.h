@@ -12,6 +12,6 @@
 - (id)emails;
 - (void)setSocialProfile:(id)arg1;
 - (id)socialProfile;
-- (bool)updateSocialProfileWithPlayer:(id)arg1;
+- (BOOL)updateSocialProfileWithPlayer:(id)arg1;
 
 @end

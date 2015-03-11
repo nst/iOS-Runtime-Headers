@@ -12,14 +12,14 @@
     double _currentRateTarget;
     double _currentTimeDelegateUpdateRate;
     double _currentTimeTarget;
+    BOOL _isPreparingForPreview;
     NSMutableDictionary *_monitoredDispatchSourcesByURL;
     RCAudioSessionRoutingAssertion *_preparingToPreviewRouteAssertion;
     NSUUID *_preparingToPreviewRouteAssertionSessionUUID;
+    BOOL _resetUseVoiceMemoSettingsValue;
+    BOOL _useVoiceMemoSettings;
+    BOOL _voiceMemoSettingEnabledNeedsReset;
     NSHashTable *_weakObservers;
-    bool_isPreparingForPreview;
-    bool_resetUseVoiceMemoSettingsValue;
-    bool_useVoiceMemoSettings;
-    bool_voiceMemoSettingEnabledNeedsReset;
 }
 
 @property(readonly) RCAVPlayer * AVPlayer;
@@ -29,11 +29,11 @@
 @property double currentTimeDelegateUpdateRate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property struct { double x1; double x2; } playableTimeRange;
 @property(readonly) float rate;
 @property(readonly) Class superclass;
-@property bool useVoiceMemoSettings;
+@property BOOL useVoiceMemoSettings;
 
 - (void).cxx_destruct;
 - (id)AVPlayer;
@@ -48,14 +48,14 @@
 - (void)_endActivePreviewRouteAssertion;
 - (void)_handleDidStopPlaybackWithError:(id)arg1;
 - (void)_handleUnderlyingAssetDisappeared;
-- (bool)_monitorUnderlyingAssetPathInPlayerItem:(id)arg1 assetDisappearedBlock:(id)arg2;
+- (BOOL)_monitorUnderlyingAssetPathInPlayerItem:(id)arg1 assetDisappearedBlock:(id)arg2;
 - (void)_performWithObserversBlock:(id)arg1;
-- (void)_playerCurrentRateDidChangeToRate:(float)arg1 hadPlaybackItem:(bool)arg2;
+- (void)_playerCurrentRateDidChangeToRate:(float)arg1 hadPlaybackItem:(BOOL)arg2;
 - (void)_postDelegateCurrentRateChangeToRate:(float)arg1;
 - (void)_postDelegateCurrentTimeUpdate;
 - (void)_readyToPlay_playPlayer:(id)arg1;
 - (id)_recreateAVPlayer;
-- (void)_setPreparingToPlay:(bool)arg1 notifyObservers:(bool)arg2;
+- (void)_setPreparingToPlay:(BOOL)arg1 notifyObservers:(BOOL)arg2;
 - (void)_stopMonitoringUnderylingAssetPath;
 - (void)addObserver:(id)arg1;
 - (double)currentTime;
@@ -79,8 +79,8 @@
 - (void)setCurrentTimeDelegateUpdateRate:(double)arg1;
 - (void)setPlayableTimeRange:(struct { double x1; double x2; })arg1;
 - (void)setRate:(float)arg1;
-- (void)setUseVoiceMemoSettings:(bool)arg1;
+- (void)setUseVoiceMemoSettings:(BOOL)arg1;
 - (void)stop;
-- (bool)useVoiceMemoSettings;
+- (BOOL)useVoiceMemoSettings;
 
 @end

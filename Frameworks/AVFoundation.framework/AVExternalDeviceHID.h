@@ -9,7 +9,7 @@
 }
 
 @property(readonly) NSString * UUID;
-@property long long inputMode;
+@property int inputMode;
 @property(readonly) NSString * screenID;
 
 - (id)UUID;
@@ -18,8 +18,8 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithExternalDeviceAndHIDDictionary:(id)arg1 hidDictionary:(id)arg2;
-- (long long)inputMode;
+- (int)inputMode;
 - (id)screenID;
-- (void)setInputMode:(long long)arg1;
+- (void)setInputMode:(int)arg1;
 
 @end

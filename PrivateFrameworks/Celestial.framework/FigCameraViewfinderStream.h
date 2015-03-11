@@ -22,7 +22,7 @@
 - (void)_setupStateMachine;
 - (void)close;
 - (void)dealloc;
-- (int)enqueueVideoSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (long)enqueueVideoSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (id)init;
 - (void)openWithDestination:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;

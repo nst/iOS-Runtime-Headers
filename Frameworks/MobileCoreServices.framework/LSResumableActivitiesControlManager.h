@@ -15,7 +15,7 @@
 + (id)resumableActivitiesControlManager;
 
 - (id)advertisedItemUUID;
-- (id)allUUIDsOfType:(unsigned long long)arg1;
+- (id)allUUIDsOfType:(unsigned int)arg1;
 - (void)callDidSaveDelegate:(id)arg1;
 - (void)callWillSaveDelegate:(id)arg1 completionHandler:(id)arg2;
 - (void)callWillSaveDelegate:(id)arg1;
@@ -26,7 +26,7 @@
 - (id)delegate;
 - (id)enabledUUIDs;
 - (id)init;
-- (void)injectBTLEItem:(id)arg1 type:(unsigned long long)arg2 identifier:(id)arg3 title:(id)arg4 activityPayload:(id)arg5 frameworkPayload:(id)arg6 payloadDelay:(double)arg7;
+- (void)injectBTLEItem:(id)arg1 type:(unsigned int)arg2 identifier:(id)arg3 title:(id)arg4 activityPayload:(id)arg5 frameworkPayload:(id)arg6 payloadDelay:(double)arg7;
 - (id)matchingUUIDForString:(id)arg1;
 - (void)restartServer;
 - (void)setConnection:(id)arg1;

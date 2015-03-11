@@ -13,7 +13,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <AFSiriTaskServiceDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property AFSiriTaskService * service;
 @property(readonly) Class superclass;

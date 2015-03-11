@@ -29,8 +29,8 @@
 - (void)setAccountType:(int)arg1;
 - (void)setConstraints:(id)arg1;
 - (void)setPathToConstraintsPlist:(id)arg1;
-- (bool)shouldMarkNotesAsDeleted;
+- (BOOL)shouldMarkNotesAsDeleted;
 - (id)storeForExternalId:(id)arg1;
-- (bool)validateDefaultStore:(id*)arg1 error:(id*)arg2;
+- (BOOL)validateDefaultStore:(id*)arg1 error:(id*)arg2;
 
 @end

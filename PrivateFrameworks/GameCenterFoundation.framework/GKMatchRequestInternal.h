@@ -8,7 +8,7 @@
     unsigned char _defaultNumberOfPlayers;
     NSString *_inviteMessage;
     NSDictionary *_localizableInviteMessage;
-    unsigned long long _matchType;
+    unsigned int _matchType;
     unsigned char _maxPlayers;
     unsigned char _minPlayers;
     unsigned int _playerAttributes;
@@ -23,7 +23,7 @@
 @property unsigned char defaultNumberOfPlayers;
 @property(copy) NSString * inviteMessage;
 @property(retain) NSDictionary * localizableInviteMessage;
-@property unsigned long long matchType;
+@property unsigned int matchType;
 @property unsigned char maxPlayers;
 @property unsigned char minPlayers;
 @property unsigned int playerAttributes;
@@ -38,12 +38,12 @@
 
 - (void)dealloc;
 - (unsigned char)defaultNumberOfPlayers;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)inviteMessage;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)localizableInviteMessage;
-- (unsigned long long)matchType;
+- (unsigned int)matchType;
 - (unsigned char)maxPlayers;
 - (unsigned char)minPlayers;
 - (unsigned int)playerAttributes;
@@ -55,7 +55,7 @@
 - (void)setDefaultNumberOfPlayers:(unsigned char)arg1;
 - (void)setInviteMessage:(id)arg1;
 - (void)setLocalizableInviteMessage:(id)arg1;
-- (void)setMatchType:(unsigned long long)arg1;
+- (void)setMatchType:(unsigned int)arg1;
 - (void)setMaxPlayers:(unsigned char)arg1;
 - (void)setMinPlayers:(unsigned char)arg1;
 - (void)setPlayerAttributes:(unsigned int)arg1;

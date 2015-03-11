@@ -9,44 +9,44 @@
 @class BRCBatch, BRCOperationMultiplexer, NSString;
 
 @interface BRCMultiplexableOperation : BRCOperation <BRCOperationSubclass> {
+    BOOL _autoRetry;
     BRCBatch *_batch;
+    BOOL _hasSentCompletion;
     BRCOperationMultiplexer *_multiplexer;
     double _progress;
     id _progressBlock;
     unsigned long long _size;
-    bool_autoRetry;
-    bool_hasSentCompletion;
 }
 
-@property bool autoRetry;
+@property BOOL autoRetry;
 @property(retain) BRCBatch * batch;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool hasSentCompletion;
-@property(readonly) unsigned long long hash;
+@property BOOL hasSentCompletion;
+@property(readonly) unsigned int hash;
 @property double progress;
 @property(copy) id progressBlock;
 @property unsigned long long size;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)autoRetry;
+- (BOOL)autoRetry;
 - (id)batch;
 - (void)cancel;
 - (id)description;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (bool)hasSentCompletion;
+- (BOOL)hasSentCompletion;
 - (id)initWithName:(id)arg1 multiplexer:(id)arg2;
 - (void)main;
 - (double)progress;
 - (id)progressBlock;
-- (void)setAutoRetry:(bool)arg1;
+- (void)setAutoRetry:(BOOL)arg1;
 - (void)setBatch:(id)arg1;
-- (void)setHasSentCompletion:(bool)arg1;
+- (void)setHasSentCompletion:(BOOL)arg1;
 - (void)setProgress:(double)arg1;
 - (void)setProgressBlock:(id)arg1;
 - (void)setSize:(unsigned long long)arg1;
-- (bool)shouldRetryForError:(id)arg1;
+- (BOOL)shouldRetryForError:(id)arg1;
 - (unsigned long long)size;
 
 @end

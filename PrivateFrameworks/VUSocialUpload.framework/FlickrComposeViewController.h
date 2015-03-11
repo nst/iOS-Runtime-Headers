@@ -10,6 +10,7 @@
     SLComposeSheetConfigurationItem *_audienceConfigurationItem;
     FlickrAudienceController *_audienceController;
     ACAccount *_flickrAccount;
+    BOOL _hasFlickrAccount;
     UIImageView *_logoView;
     FlickrPhotoSetManager *_manager;
     SLComposeSheetConfigurationItem *_photoSetConfigurationItem;
@@ -17,14 +18,13 @@
     long long _photoSetID;
     NSString *_photoSetTitle;
     FlickrUploadSession *_session;
-    bool_hasFlickrAccount;
 }
 
 @property(retain) ACAccountStore * accountStore;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) ACAccount * flickrAccount;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -37,6 +37,6 @@
 - (unsigned int)postVisibility;
 - (void)setAccountStore:(id)arg1;
 - (void)setFlickrAccount:(id)arg1;
-- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

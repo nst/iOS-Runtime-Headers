@@ -22,11 +22,11 @@
 @property(readonly) NSNumber * floorsDescended;
 @property(readonly) NSNumber * numberOfSteps;
 @property(readonly) NSNumber * pace;
-@property(readonly) long long recordId;
+@property(readonly) int recordId;
 @property(readonly) NSUUID * sourceId;
 @property(readonly) NSDate * startDate;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -40,7 +40,7 @@
 - (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorAscended:(int)arg5 floorDescended:(int)arg6 recordID:(int)arg7 pace:(double)arg8 sourceId:(id)arg9;
 - (id)numberOfSteps;
 - (id)pace;
-- (long long)recordId;
+- (int)recordId;
 - (id)sourceId;
 - (id)startDate;
 

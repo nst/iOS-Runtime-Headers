@@ -8,13 +8,13 @@
     struct { 
         unsigned int pending : 1; 
     } _has;
+    BOOL _pending;
     NSData *_provisioningDataBytes;
-    bool_pending;
 }
 
-@property bool hasPending;
-@property(readonly) bool hasProvisioningDataBytes;
-@property bool pending;
+@property BOOL hasPending;
+@property(readonly) BOOL hasProvisioningDataBytes;
+@property BOOL pending;
 @property(retain) NSData * provisioningDataBytes;
 
 - (void).cxx_destruct;
@@ -22,16 +22,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasPending;
-- (bool)hasProvisioningDataBytes;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasPending;
+- (BOOL)hasProvisioningDataBytes;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)pending;
+- (BOOL)pending;
 - (id)provisioningDataBytes;
-- (bool)readFrom:(id)arg1;
-- (void)setHasPending:(bool)arg1;
-- (void)setPending:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasPending:(BOOL)arg1;
+- (void)setPending:(BOOL)arg1;
 - (void)setProvisioningDataBytes:(id)arg1;
 - (void)writeTo:(id)arg1;
 

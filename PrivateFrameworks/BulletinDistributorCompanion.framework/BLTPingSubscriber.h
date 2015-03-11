@@ -13,7 +13,7 @@
 @property(retain) NSMutableDictionary * bulletinHandlers;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSMutableDictionary * pingHandlers;
 @property(retain) <BLTPingService> * service;
 @property(readonly) Class superclass;
@@ -31,7 +31,7 @@
 - (id)sectionIDs;
 - (id)sectionIDsForBulletins;
 - (id)sectionIDsForPings;
-- (void)sendBulletinSummary:(id)arg1 forBulletin:(id)arg2 destinations:(unsigned long long)arg3;
+- (void)sendBulletinSummary:(id)arg1 forBulletin:(id)arg2 destinations:(unsigned int)arg3;
 - (id)service;
 - (void)setBulletinHandlers:(id)arg1;
 - (void)setPingHandlers:(id)arg1;

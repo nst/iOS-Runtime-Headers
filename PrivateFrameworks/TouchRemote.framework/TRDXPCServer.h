@@ -8,13 +8,13 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableArray *_connections;
     NSXPCListener *_listener;
-    unsigned long long _serverStartCount;
+    unsigned int _serverStartCount;
 }
 
 @property(readonly) NSArray * connections;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSArray * remoteClientProxies;
 @property(readonly) Class superclass;
 
@@ -22,11 +22,11 @@
 
 - (void).cxx_destruct;
 - (id)_init;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (id)connections;
 - (void)dealloc;
 - (id)init;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)remoteClientProxies;
 - (void)start;
 - (void)stop;

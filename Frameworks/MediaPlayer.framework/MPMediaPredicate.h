@@ -9,13 +9,13 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
-- (bool)evaluateEntity:(id)arg1;
+- (BOOL)evaluateEntity:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProtobufferDecodableObject:(id)arg1;
 - (id)protobufferEncodableObject;

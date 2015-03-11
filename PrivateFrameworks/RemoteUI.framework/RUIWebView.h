@@ -15,7 +15,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property id delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * html;
 @property(readonly) Class superclass;
 
@@ -30,7 +30,7 @@
 - (id)sourceURL;
 - (id)userStyleSheet;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;
 

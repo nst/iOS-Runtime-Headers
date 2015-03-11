@@ -9,23 +9,23 @@
     UIColor *_color;
     int _customGroupType;
     EKGroupInfo *_group;
+    BOOL _selected;
     NSString *_title;
-    bool_selected;
 }
 
 @property(retain) EKCalendar * calendar;
 @property(retain) UIColor * color;
 @property int customGroupType;
 @property(readonly) int displayOrder;
-@property(readonly) bool excludeFromSelectAll;
+@property(readonly) BOOL excludeFromSelectAll;
 @property EKGroupInfo * group;
 @property(readonly) UIImage * highlightedIcon;
 @property(readonly) UIImage * icon;
-@property(readonly) bool isEditable;
-@property(readonly) bool isPublished;
-@property(readonly) bool isShared;
-@property(readonly) bool isSubscribed;
-@property bool selected;
+@property(readonly) BOOL isEditable;
+@property(readonly) BOOL isPublished;
+@property(readonly) BOOL isShared;
+@property(readonly) BOOL isSubscribed;
+@property BOOL selected;
 @property(copy,readonly) NSString * title;
 
 - (void).cxx_destruct;
@@ -35,21 +35,21 @@
 - (int)customGroupType;
 - (id)description;
 - (int)displayOrder;
-- (bool)excludeFromSelectAll;
+- (BOOL)excludeFromSelectAll;
 - (id)group;
 - (id)highlightedIcon;
 - (id)icon;
 - (id)initWithCalendar:(id)arg1;
-- (bool)isEditable;
-- (bool)isPublished;
-- (bool)isShared;
-- (bool)isSubscribed;
-- (bool)selected;
+- (BOOL)isEditable;
+- (BOOL)isPublished;
+- (BOOL)isShared;
+- (BOOL)isSubscribed;
+- (BOOL)selected;
 - (void)setCalendar:(id)arg1;
 - (void)setColor:(id)arg1;
 - (void)setCustomGroupType:(int)arg1;
 - (void)setGroup:(id)arg1;
-- (void)setSelected:(bool)arg1;
+- (void)setSelected:(BOOL)arg1;
 - (id)title;
 
 @end

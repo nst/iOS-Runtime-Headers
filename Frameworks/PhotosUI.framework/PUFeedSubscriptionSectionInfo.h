@@ -5,7 +5,7 @@
 @interface PUFeedSubscriptionSectionInfo : PUFeedAssetsSectionInfo {
 }
 
-- (long long)sectionType;
+- (int)sectionType;
 - (void)updateFromCloudFeedEntry;
 
 @end

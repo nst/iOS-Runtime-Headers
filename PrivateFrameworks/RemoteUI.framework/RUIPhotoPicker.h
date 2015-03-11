@@ -16,7 +16,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) UIImage * pickedImage;
 @property(copy) id pickerCompletion;
 @property(readonly) Class superclass;

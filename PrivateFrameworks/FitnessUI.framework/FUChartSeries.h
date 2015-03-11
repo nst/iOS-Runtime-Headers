@@ -6,10 +6,10 @@
 
 @interface FUChartSeries : UIView {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     float _animationDuration;
     NSArray *_dataPoints;
     FUChartDataSet *_dataSet;
@@ -26,7 +26,7 @@
 @property(retain) FUChartDataSet * dataSet;
 @property <FUChartSeriesDataSource> * dataSource;
 @property <FUChartSeriesDelegate> * delegate;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property(retain) NSNumber * maxYValue;
 @property(retain) NSNumber * minYValue;
 
@@ -35,10 +35,10 @@
 - (id)_getMaxYValue;
 - (id)_getMinXValue;
 - (id)_getMinYValue;
-- (double)_getXValueForPointFromChartPoint:(id)arg1;
-- (double)_getYValueForPointFromChartPoint:(id)arg1 key:(id)arg2;
-- (double)_getYValueForPointFromChartPoint:(id)arg1;
-- (double)_getYValueForPointFromChartPointValue:(id)arg1;
+- (float)_getXValueForPointFromChartPoint:(id)arg1;
+- (float)_getYValueForPointFromChartPoint:(id)arg1 key:(id)arg2;
+- (float)_getYValueForPointFromChartPoint:(id)arg1;
+- (float)_getYValueForPointFromChartPointValue:(id)arg1;
 - (float)_relativePositionForXPlaneValue:(id)arg1;
 - (float)_relativePositionForYPlaneValue:(id)arg1;
 - (void)_reloadMinMaxValues;
@@ -47,14 +47,14 @@
 - (id)dataSet;
 - (id)dataSource;
 - (id)delegate;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
-- (id)getChartPointFromDataSetAtIndex:(long long)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (id)getChartPointFromDataSetAtIndex:(int)arg1;
 - (id)getLabelsFromSet;
-- (struct CGPoint { double x1; double x2; })getPointFromChartPoint:(id)arg1 forKey:(id)arg2;
-- (struct CGPoint { double x1; double x2; })getPointFromChartPoint:(id)arg1;
+- (struct CGPoint { float x1; float x2; })getPointFromChartPoint:(id)arg1 forKey:(id)arg2;
+- (struct CGPoint { float x1; float x2; })getPointFromChartPoint:(id)arg1;
 - (id)getPointsFromDataSet;
 - (id)init;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })insetBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })insetBounds;
 - (void)layoutSubviews;
 - (id)maxYValue;
 - (id)minYValue;
@@ -64,7 +64,7 @@
 - (void)setDataSet:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMaxYValue:(id)arg1;
 - (void)setMinYValue:(id)arg1;
 - (void)tapDragGestureRecognizerUpdated:(id)arg1;

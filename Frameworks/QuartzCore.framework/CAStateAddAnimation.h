@@ -23,7 +23,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)key;
 - (id)keyPath;
-- (bool)matches:(id)arg1;
+- (BOOL)matches:(id)arg1;
 - (void)setAnimation:(id)arg1;
 - (void)setKey:(id)arg1;
 

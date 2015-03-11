@@ -3,7 +3,7 @@
  */
 
 @interface NSURLKeyValuePair : NSObject {
-    unsigned long long hash;
+    unsigned int hash;
     id key;
     id value;
 }
@@ -13,9 +13,9 @@
 
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithKey:(id)arg1 value:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (void)setKey:(id)arg1;
 - (void)setValue:(id)arg1;

@@ -6,8 +6,8 @@
 }
 
 - (id)accountTypeIdentifier;
-- (long long)authenticationStyle;
-- (bool)isFirstClassService;
+- (int)authenticationStyle;
+- (BOOL)isFirstClassService;
 - (id)serviceType;
 
 @end

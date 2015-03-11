@@ -3,10 +3,10 @@
  */
 
 @interface CMDiagramPointContinuousArrowMapper : CMDiagramPointMapper {
-    boolmIsArrow;
+    BOOL mIsArrow;
 }
 
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (void)setIsArrow:(bool)arg1;
+- (void)setIsArrow:(BOOL)arg1;
 
 @end

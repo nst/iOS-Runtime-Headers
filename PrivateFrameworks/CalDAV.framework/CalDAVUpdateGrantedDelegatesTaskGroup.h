@@ -17,7 +17,7 @@
 @property(retain) NSSet * addWriteURLs;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSSet * removeURLs;
 @property int state;
 @property(readonly) Class superclass;
@@ -26,8 +26,8 @@
 
 - (void)_fetchExistingGrantedDelegates;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
-- (void)_populateUpdatesFromFetched:(id)arg1 allowWrite:(bool)arg2;
-- (void)_updateDelegatesWithAllowWrite:(bool)arg1;
+- (void)_populateUpdatesFromFetched:(id)arg1 allowWrite:(BOOL)arg2;
+- (void)_updateDelegatesWithAllowWrite:(BOOL)arg1;
 - (id)addReadURLs;
 - (id)addWriteURLs;
 - (void)dealloc;

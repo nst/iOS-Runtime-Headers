@@ -7,44 +7,44 @@
 @interface TPArchivedViewState : TSPObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     NSMutableDictionary *_chartUIState;
+    BOOL _inspectorHidden;
+    BOOL _layoutBordersVisible;
+    BOOL _masterDrawablesSelectable;
+    BOOL _rulerVisible;
     NSString *_selectedInspectorSwitchSegmentIdentifier;
     TSKSelection *_selection;
     TSPObject<TSKModel> *_selectionModel;
-    double _viewScale;
+    BOOL _showUserDefinedGuides;
+    BOOL _showsActivitySidebar;
+    BOOL _showsComments;
+    BOOL _showsPageNavigator;
+    float _viewScale;
     int _viewScaleMode;
     } _visibleRect;
     } _windowFrame;
     } _wordCountHUDPosition;
     int _wordCountHUDType;
-    bool_inspectorHidden;
-    bool_layoutBordersVisible;
-    bool_masterDrawablesSelectable;
-    bool_rulerVisible;
-    bool_showUserDefinedGuides;
-    bool_showsActivitySidebar;
-    bool_showsComments;
-    bool_showsPageNavigator;
-    bool_wordCountHUDVisible;
+    BOOL _wordCountHUDVisible;
 }
 
 - (id).cxx_construct;
@@ -53,6 +53,6 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (void)readViewStateWithConsumer:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (bool)showsComments;
+- (BOOL)showsComments;
 
 @end

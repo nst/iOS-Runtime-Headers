@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (bool)isURLManaged:(id)arg1;
+- (BOOL)isURLManaged:(id)arg1;
 - (id)memberQueue;
 - (id)memberQueueCache;
 - (void)memberQueueRereadCache;

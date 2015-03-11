@@ -14,7 +14,7 @@
 - (id)pathnameForDatabase;
 - (id)sqliteVersion;
 - (Class)statementClass;
-- (bool)supportsCorrelatedSubqueries;
+- (BOOL)supportsCorrelatedSubqueries;
 - (id)type;
 - (id)typeStringForColumn:(id)arg1;
 - (id)typeStringForSQLType:(unsigned int)arg1;

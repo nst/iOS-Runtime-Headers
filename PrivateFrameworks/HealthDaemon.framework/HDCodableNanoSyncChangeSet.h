@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface HDCodableNanoSyncChangeSet : PBCodable <NSCopying, HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying> {
+@interface HDCodableNanoSyncChangeSet : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, NSCopying> {
     NSMutableArray *_changes;
 }
 
@@ -13,8 +13,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly) Class superclass;
 
@@ -26,19 +26,19 @@
 - (void)addChanges:(id)arg1;
 - (void)addToPersistentUserInfo:(id)arg1;
 - (id)changes;
-- (id)changesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)changesCount;
+- (id)changesAtIndex:(unsigned int)arg1;
+- (unsigned int)changesCount;
 - (void)clearChanges;
 - (id)copyForPersistentUserInfo;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nanoSyncDescription;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setChanges:(id)arg1;
 - (void)writeTo:(id)arg1;
 

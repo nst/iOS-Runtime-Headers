@@ -23,7 +23,7 @@
 - (id)initWithReferenceButton:(id)arg1;
 - (void)layoutSubviews;
 - (id)referenceButton;
-- (void)setHidden:(bool)arg1 animated:(bool)arg2 completion:(id)arg3;
+- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)setHintButton:(id)arg1;
 - (void)setHintImageView:(id)arg1;
 - (void)setHintLabel:(id)arg1;

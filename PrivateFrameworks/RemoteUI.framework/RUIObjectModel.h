@@ -24,7 +24,7 @@
     NSString *_inlineScript;
     NSString *_name;
     NSMutableDictionary *_namedPages;
-    long long _nextButtonStyle;
+    int _nextButtonStyle;
     int _refreshDelay;
     NSTimer *_refreshTimer;
     NSString *_refreshURL;
@@ -45,11 +45,11 @@
 @property <RUIObjectModelDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSArray * displayedPages;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * inlineScript;
 @property(retain) NSString * name;
 @property(readonly) NSDictionary * namedPages;
-@property long long nextButtonStyle;
+@property int nextButtonStyle;
 @property(readonly) NSArray * pages;
 @property int refreshDelay;
 @property(retain) NSString * refreshURL;
@@ -66,7 +66,7 @@
 
 - (void).cxx_destruct;
 - (void)RUIPage:(id)arg1 pressedNavBarButton:(id)arg2;
-- (void)RUIPage:(id)arg1 toggledEditing:(bool)arg2;
+- (void)RUIPage:(id)arg1 toggledEditing:(BOOL)arg2;
 - (void)_cleanupConfirmation;
 - (void)_displaySupplementalPage:(id)arg1;
 - (id)_firstPageForPresentation;
@@ -77,7 +77,7 @@
 - (void)_nextPage;
 - (id)_pageContainingTableView:(id)arg1;
 - (id)_parentViewController;
-- (void)_populatePageNavItem:(id)arg1 withNextButton:(bool)arg2;
+- (void)_populatePageNavItem:(id)arg1 withNextButton:(BOOL)arg2;
 - (void)_presentConfirmationWithAttributes:(id)arg1;
 - (void)_presentSecondConfirmationWithAttributes:(id)arg1;
 - (void)_startNavigationBarSpinnerIfNeededForAttributes:(id)arg1;
@@ -104,17 +104,17 @@
 - (id)description;
 - (id)displayedPages;
 - (id)elementsWithName:(id)arg1;
-- (bool)goBack;
-- (bool)hasAttributeOrAttributeFunctionNamed:(id)arg1 withAttributes:(id)arg2;
-- (bool)hasConfirmationAttributes:(id)arg1;
-- (bool)hasSecondConfirmationAttributes:(id)arg1;
+- (BOOL)goBack;
+- (BOOL)hasAttributeOrAttributeFunctionNamed:(id)arg1 withAttributes:(id)arg2;
+- (BOOL)hasConfirmationAttributes:(id)arg1;
+- (BOOL)hasSecondConfirmationAttributes:(id)arg1;
 - (id)init;
 - (id)inlineScript;
 - (id)invokeScriptFunction:(id)arg1 withArguments:(id)arg2;
 - (id)name;
 - (id)namedPages;
 - (id)newNavigationControllerForPresentation;
-- (long long)nextButtonStyle;
+- (int)nextButtonStyle;
 - (id)objectForJSValue:(struct OpaqueJSValue { }*)arg1;
 - (void)pageDidDisappear:(id)arg1;
 - (id)pages;
@@ -122,8 +122,8 @@
 - (void)populatePostbackDictionary:(id)arg1;
 - (id)postbackData;
 - (id)postbackDictionary;
-- (bool)prepareScriptContext;
-- (void)presentInParentViewController:(id)arg1 animated:(bool)arg2;
+- (BOOL)prepareScriptContext;
+- (void)presentInParentViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)presentWithBlock:(id)arg1;
 - (int)refreshDelay;
 - (void)refreshTimeout;
@@ -141,7 +141,7 @@
 - (void)setInlineScript:(id)arg1;
 - (void)setJSGlobalContext:(struct OpaqueJSContext { }*)arg1;
 - (void)setName:(id)arg1;
-- (void)setNextButtonStyle:(long long)arg1;
+- (void)setNextButtonStyle:(int)arg1;
 - (void)setPages:(id)arg1;
 - (void)setRefreshDelay:(int)arg1;
 - (void)setRefreshURL:(id)arg1;
@@ -154,19 +154,19 @@
 - (id)sourceURL;
 - (id)stringForAttributeName:(id)arg1 withAttributes:(id)arg2;
 - (id)style;
-- (unsigned long long)supportedInterfaceOrientationsForRUIPage:(id)arg1;
+- (unsigned int)supportedInterfaceOrientationsForRUIPage:(id)arg1;
 - (id)tableFooterViewForAttributes:(id)arg1;
 - (id)tableHeaderViewForAttributes:(id)arg1;
-- (bool)tableViewOM:(id)arg1 deleteRowAtIndexPath:(id)arg2;
+- (BOOL)tableViewOM:(id)arg1 deleteRowAtIndexPath:(id)arg2;
 - (void)tableViewOM:(id)arg1 elementDidChange:(id)arg2;
 - (void)tableViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3 completion:(id)arg4;
 - (void)tableViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
 - (void)tableViewOMDidChange:(id)arg1;
 - (void)tableViewOMSubmitForm:(id)arg1;
 - (id)updateInfo;
-- (bool)validateWithFunction:(id)arg1;
+- (BOOL)validateWithFunction:(id)arg1;
 - (id)validationFunction;
 - (id)visiblePage;
-- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 
 @end

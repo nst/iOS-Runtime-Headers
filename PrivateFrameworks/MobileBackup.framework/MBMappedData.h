@@ -9,33 +9,33 @@
     NSData *_mappedData;
     void *_mappedFile;
     NSString *_path;
-    bool_personallyMappedFile;
-    bool_removeFileOnClose;
+    BOOL _personallyMappedFile;
+    BOOL _removeFileOnClose;
 }
 
-@property bool removeFileOnClose;
+@property BOOL removeFileOnClose;
 
-- (id)base64EncodedDataWithOptions:(unsigned long long)arg1;
-- (id)base64EncodedStringWithOptions:(unsigned long long)arg1;
+- (id)base64EncodedDataWithOptions:(unsigned int)arg1;
+- (id)base64EncodedStringWithOptions:(unsigned int)arg1;
 - (id)base64Encoding;
 - (const void*)bytes;
 - (void)close;
 - (void)dealloc;
 - (void)enumerateByteRangesUsingBlock:(id)arg1;
-- (void)getBytes:(void*)arg1 length:(unsigned long long)arg2;
-- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
+- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getBytes:(void*)arg1;
-- (id)initWithContentsOfFile:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
-- (bool)isEqualToData:(id)arg1;
-- (unsigned long long)length;
-- (bool)mapFile:(id)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfData:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
-- (bool)removeFileOnClose;
-- (void)setRemoveFileOnClose:(bool)arg1;
-- (id)subdataWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (bool)writeToFile:(id)arg1 atomically:(bool)arg2;
-- (bool)writeToFile:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
-- (bool)writeToURL:(id)arg1 atomically:(bool)arg2;
-- (bool)writeToURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (id)initWithContentsOfFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (BOOL)isEqualToData:(id)arg1;
+- (unsigned int)length;
+- (BOOL)mapFile:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfData:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)removeFileOnClose;
+- (void)setRemoveFileOnClose:(BOOL)arg1;
+- (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
+- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
+- (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 
 @end

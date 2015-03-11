@@ -7,15 +7,15 @@
 @interface PCDispatchTimer : NSObject {
     NSDate *_fireDate;
     unsigned long long _fireTime;
+    BOOL _isValid;
     NSObject<OS_dispatch_queue> *_queue;
     SEL _selector;
     CUTWeakReference *_target;
     NSObject<OS_dispatch_source> *_timerSource;
-    bool_isValid;
 }
 
 @property(retain) NSDate * fireDate;
-@property(readonly) bool isValid;
+@property(readonly) BOOL isValid;
 
 - (void)_callTarget;
 - (void)_cleanupTimer;
@@ -23,7 +23,7 @@
 - (id)fireDate;
 - (id)initWithQueue:(id)arg1 target:(id)arg2 selector:(SEL)arg3 fireTime:(unsigned long long)arg4;
 - (void)invalidate;
-- (bool)isValid;
+- (BOOL)isValid;
 - (void)setFireDate:(id)arg1;
 - (void)start;
 

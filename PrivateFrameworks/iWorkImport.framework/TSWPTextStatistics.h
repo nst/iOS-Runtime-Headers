@@ -3,34 +3,34 @@
  */
 
 @interface TSWPTextStatistics : NSObject <NSCopying> {
-    unsigned long long _charactersNoWhiteSpace;
-    unsigned long long _charactersWithWhiteSpace;
-    unsigned long long _paragraphCount;
-    unsigned long long _wordCount;
-    bool_isAccurate;
+    unsigned int _charactersNoWhiteSpace;
+    unsigned int _charactersWithWhiteSpace;
+    BOOL _isAccurate;
+    unsigned int _paragraphCount;
+    unsigned int _wordCount;
 }
 
-@property unsigned long long charactersNoWhiteSpace;
-@property unsigned long long charactersWithWhiteSpace;
-@property bool isAccurate;
-@property unsigned long long paragraphCount;
-@property unsigned long long wordCount;
+@property unsigned int charactersNoWhiteSpace;
+@property unsigned int charactersWithWhiteSpace;
+@property BOOL isAccurate;
+@property unsigned int paragraphCount;
+@property unsigned int wordCount;
 
 - (void)addTextStatistics:(id)arg1;
-- (unsigned long long)charactersNoWhiteSpace;
-- (unsigned long long)charactersWithWhiteSpace;
+- (unsigned int)charactersNoWhiteSpace;
+- (unsigned int)charactersWithWhiteSpace;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)isAccurate;
-- (bool)isEqual:(id)arg1;
-- (unsigned long long)paragraphCount;
+- (BOOL)isAccurate;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)paragraphCount;
 - (void)removeTextStatistics:(id)arg1;
 - (void)resetStatistics;
-- (void)setCharactersNoWhiteSpace:(unsigned long long)arg1;
-- (void)setCharactersWithWhiteSpace:(unsigned long long)arg1;
-- (void)setIsAccurate:(bool)arg1;
-- (void)setParagraphCount:(unsigned long long)arg1;
+- (void)setCharactersNoWhiteSpace:(unsigned int)arg1;
+- (void)setCharactersWithWhiteSpace:(unsigned int)arg1;
+- (void)setIsAccurate:(BOOL)arg1;
+- (void)setParagraphCount:(unsigned int)arg1;
 - (void)setTextStatistics:(id)arg1;
-- (void)setWordCount:(unsigned long long)arg1;
-- (unsigned long long)wordCount;
+- (void)setWordCount:(unsigned int)arg1;
+- (unsigned int)wordCount;
 
 @end

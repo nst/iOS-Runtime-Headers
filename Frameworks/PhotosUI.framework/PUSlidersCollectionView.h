@@ -5,20 +5,20 @@
 @class PUSlidersCollectionViewLayout;
 
 @interface PUSlidersCollectionView : UICollectionView {
-    double _rowHeight;
-    long long _scrollDirection;
+    float _rowHeight;
+    int _scrollDirection;
     PUSlidersCollectionViewLayout *_tableLikeLayout;
 }
 
-@property double rowHeight;
-@property long long scrollDirection;
+@property float rowHeight;
+@property int scrollDirection;
 
 - (void).cxx_destruct;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (double)rowHeight;
-- (long long)scrollDirection;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setRowHeight:(double)arg1;
-- (void)setScrollDirection:(long long)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)rowHeight;
+- (int)scrollDirection;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRowHeight:(float)arg1;
+- (void)setScrollDirection:(int)arg1;
 
 @end

@@ -5,7 +5,7 @@
 @class <NPKPaymentWebServiceHelperDelegate>, IDSService, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface NPKPaymentWebServiceHelper : NSObject <IDSServiceDelegate, PKPaymentProvisioningServiceDelegate> {
-    unsigned long long _context;
+    unsigned int _context;
     <NPKPaymentWebServiceHelperDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSMutableDictionary *_outstandingRequests;
@@ -13,11 +13,11 @@
     NSObject<OS_dispatch_queue> *_responseQueue;
 }
 
-@property unsigned long long context;
+@property unsigned int context;
 @property(copy,readonly) NSString * debugDescription;
 @property <NPKPaymentWebServiceHelperDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSObject<OS_dispatch_queue> * internalQueue;
 @property(retain) NSMutableDictionary * outstandingRequests;
 @property(retain) IDSService * provisioningService;
@@ -27,12 +27,12 @@
 + (id)bridgedClientInfoHTTPHeader;
 
 - (void).cxx_destruct;
-- (id)_sendProtobuf:(id)arg1 responseExpected:(bool)arg2 extraOptions:(id)arg3;
-- (id)_sendProtobuf:(id)arg1 responseExpected:(bool)arg2;
+- (id)_sendProtobuf:(id)arg1 responseExpected:(BOOL)arg2 extraOptions:(id)arg3;
+- (id)_sendProtobuf:(id)arg1 responseExpected:(BOOL)arg2;
 - (void)_setOrResetCleanupTimerForRequest:(id)arg1;
 - (void)configurationDataResponse:(id)arg1;
 - (void)configurationDataWithCompletionHandler:(id)arg1;
-- (unsigned long long)context;
+- (unsigned int)context;
 - (id)delegate;
 - (void)deleteCardWithAID:(id)arg1;
 - (void)didRegisterResponse:(id)arg1;
@@ -41,7 +41,7 @@
 - (id)filterVerificationChannels:(id)arg1;
 - (void)handlePendingRemovalOfPassWithUniqueID:(id)arg1 completion:(id)arg2;
 - (id)init;
-- (id)initWithContext:(unsigned long long)arg1 responseQueue:(id)arg2;
+- (id)initWithContext:(unsigned int)arg1 responseQueue:(id)arg2;
 - (id)internalQueue;
 - (id)outstandingRequests;
 - (int)paymentSupportedInCurrentRegion;
@@ -60,11 +60,11 @@
 - (void)secureElementCardsWithCompletion:(id)arg1;
 - (void)secureElementGetCardsResponse:(id)arg1;
 - (void)secureElementRemoveCardsResponse:(id)arg1;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
-- (void)setContext:(unsigned long long)arg1;
+- (void)setContext:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInternalQueue:(id)arg1;
 - (void)setNewAuthRandomIfNecessary:(id)arg1;

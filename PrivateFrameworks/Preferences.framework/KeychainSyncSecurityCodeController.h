@@ -9,18 +9,18 @@
     UIButton *_footerButton;
     UILabel *_footerLabel;
     NSString *_generatedCode;
-    double _keyboardHeight;
+    float _keyboardHeight;
     int _mode;
     int _securityCodeType;
-    bool_showsAdvancedSettings;
+    BOOL _showsAdvancedSettings;
 }
 
 @property(retain) NSString * firstPasscodeEntry;
 @property int mode;
 @property int securityCodeType;
-@property bool showsAdvancedSettings;
+@property BOOL showsAdvancedSettings;
 
-- (void)animatePasscodeFieldLeft:(bool)arg1;
+- (void)animatePasscodeFieldLeft:(BOOL)arg1;
 - (void)dealloc;
 - (void)didFinishEnteringText:(id)arg1;
 - (void)dismissAlerts;
@@ -35,9 +35,9 @@
 - (void)setFirstPasscodeEntry:(id)arg1;
 - (void)setMode:(int)arg1;
 - (void)setSecurityCodeType:(int)arg1;
-- (void)setShowsAdvancedSettings:(bool)arg1;
+- (void)setShowsAdvancedSettings:(BOOL)arg1;
 - (void)showAdvancedOptions;
-- (bool)showsAdvancedSettings;
+- (BOOL)showsAdvancedSettings;
 - (id)specifiers;
 - (id)textEntryCell;
 - (Class)textEntryCellClass;
@@ -45,6 +45,6 @@
 - (void)updateNextButton;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

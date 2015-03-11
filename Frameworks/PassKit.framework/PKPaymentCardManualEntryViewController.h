@@ -13,16 +13,16 @@
     UITableViewCell *_expirationDateCell;
     UITextField *_expirationDateField;
     UIDatePicker *_expirationDatePicker;
+    BOOL _hasScrolledToShowFields;
     UITextField *_nameField;
     UIButton *_photoButton;
     UITableViewCell *_securityCodeCell;
     void *_unifiedMeCard;
-    bool_hasScrolledToShowFields;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_addFromCamera:(id)arg1;
@@ -45,17 +45,17 @@
 - (void)dealloc;
 - (void)handleNext:(id)arg1;
 - (id)headerView;
-- (id)initWithWebService:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3;
-- (bool)isComplete;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)initWithWebService:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3;
+- (BOOL)isComplete;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (void)textFieldDidEndEditing:(id)arg1;
-- (bool)textFieldShouldBeginEditing:(id)arg1;
-- (bool)textFieldShouldClear:(id)arg1;
-- (bool)textFieldShouldReturn:(id)arg1;
-- (void)viewDidDisappear:(bool)arg1;
+- (BOOL)textFieldShouldBeginEditing:(id)arg1;
+- (BOOL)textFieldShouldClear:(id)arg1;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 
 @end

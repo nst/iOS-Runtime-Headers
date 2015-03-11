@@ -6,20 +6,20 @@
 
 @interface STWeatherHourlyForecast : AFSiriModelObject {
     NSNumber *_chanceOfPrecipitation;
-    long long _conditionCode;
+    int _conditionCode;
     NSNumber *_temperature;
-    long long _timeIndex;
+    int _timeIndex;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithConditionCodeIndex:(long long)arg1 timeIndex:(long long)arg2 temperature:(id)arg3 chanceOfPrecipitation:(id)arg4;
+- (id)_initWithConditionCodeIndex:(int)arg1 timeIndex:(int)arg2 temperature:(id)arg3 chanceOfPrecipitation:(id)arg4;
 - (id)chanceOfPrecipitation;
-- (long long)conditionCode;
+- (int)conditionCode;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)temperature;
-- (long long)timeIndex;
+- (int)timeIndex;
 
 @end

@@ -9,13 +9,13 @@
         unsigned int muted : 1; 
     NSString *_category;
     } _has;
-    bool_muted;
+    BOOL _muted;
 }
 
 @property(retain) NSString * category;
-@property(readonly) bool hasCategory;
-@property bool hasMuted;
-@property bool muted;
+@property(readonly) BOOL hasCategory;
+@property BOOL hasMuted;
+@property BOOL muted;
 
 - (void).cxx_destruct;
 - (id)category;
@@ -23,16 +23,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCategory;
-- (bool)hasMuted;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCategory;
+- (BOOL)hasMuted;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)muted;
-- (bool)readFrom:(id)arg1;
+- (BOOL)muted;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCategory:(id)arg1;
-- (void)setHasMuted:(bool)arg1;
-- (void)setMuted:(bool)arg1;
+- (void)setHasMuted:(BOOL)arg1;
+- (void)setMuted:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

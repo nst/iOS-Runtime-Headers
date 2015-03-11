@@ -3,24 +3,24 @@
  */
 
 @interface HKSessionAchievement : HKAchievement {
-    unsigned long long _activityType;
+    unsigned int _activityType;
 }
 
-@property(readonly) unsigned long long activityType;
+@property(readonly) unsigned int activityType;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)_decodeExtraDataWithCoder:(id)arg1;
 - (void)_encodeExtraDataWithCoder:(id)arg1;
-- (bool)_hasExtraData;
-- (bool)_requiresValue;
-- (bool)_validateConfiguration;
-- (unsigned long long)activityType;
+- (BOOL)_hasExtraData;
+- (BOOL)_requiresValue;
+- (BOOL)_validateConfiguration;
+- (unsigned int)activityType;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
-- (id)initWithAchievementType:(unsigned long long)arg1 completedDate:(id)arg2 value:(id)arg3 activityType:(unsigned long long)arg4;
+- (unsigned int)hash;
+- (id)initWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3 activityType:(unsigned int)arg4;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

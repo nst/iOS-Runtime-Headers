@@ -10,7 +10,7 @@
 
 @property(copy,readonly) SUMediaPlayerItem * mediaPlayerItem;
 
-- (bool)_runHEADRequest:(id*)arg1;
+- (BOOL)_runHEADRequest:(id*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithMediaPlayerItem:(id)arg1;

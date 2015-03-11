@@ -5,6 +5,6 @@
 @interface PUImagePickerSessionInfo : PUSessionInfo {
 }
 
-- (bool)isSelectingAssets;
+- (BOOL)isSelectingAssets;
 
 @end

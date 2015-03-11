@@ -5,35 +5,35 @@
 @class <HKSwitchTableViewCellDelegate>, UIImageView, UILabel, UISwitch;
 
 @interface HKSwitchTableViewCell : UITableViewCell {
+    BOOL _centersIcon;
     <HKSwitchTableViewCellDelegate> *_delegate;
     UILabel *_displayLabel;
+    BOOL _enabled;
     UIImageView *_iconImageView;
     UISwitch *_switch;
-    bool_centersIcon;
-    bool_enabled;
 }
 
-@property bool centersIcon;
+@property BOOL centersIcon;
 @property <HKSwitchTableViewCellDelegate> * delegate;
-@property(getter=isEnabled) bool enabled;
-@property(readonly) struct CGSize { double x1; double x2; } iconSize;
-@property(getter=isOn) bool on;
+@property(getter=isEnabled) BOOL enabled;
+@property(readonly) struct CGSize { float x1; float x2; } iconSize;
+@property(getter=isOn) BOOL on;
 
 - (void).cxx_destruct;
 - (void)_setupUI;
-- (bool)centersIcon;
+- (BOOL)centersIcon;
 - (id)delegate;
-- (struct CGSize { double x1; double x2; })iconSize;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-- (bool)isEnabled;
-- (bool)isOn;
+- (struct CGSize { float x1; float x2; })iconSize;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isEnabled;
+- (BOOL)isOn;
 - (void)layoutSubviews;
-- (void)setCentersIcon:(bool)arg1;
+- (void)setCentersIcon:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayText:(id)arg1;
-- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setIconImage:(id)arg1;
-- (void)setOn:(bool)arg1;
+- (void)setOn:(BOOL)arg1;
 - (void)switchValueChanged:(id)arg1;
 
 @end

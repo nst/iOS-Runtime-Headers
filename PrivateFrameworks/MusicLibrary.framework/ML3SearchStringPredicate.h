@@ -20,11 +20,11 @@
 - (id)databaseStatementParameters;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithConcatenatedProperties:(id)arg1 searchString:(id)arg2;
-- (bool)isDynamicForEntityClass:(Class)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isDynamicForEntityClass:(Class)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)properties;
 - (id)searchString;
 - (void)setProperties:(id)arg1;

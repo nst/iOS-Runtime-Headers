@@ -9,13 +9,13 @@
 }
 
 - (Class)actionCellClass;
-- (double)cardTableViewSectionFooterHeightWhenEditing:(bool)arg1;
-- (double)cardTableViewSectionHeaderHeightWhenEditing:(bool)arg1;
+- (float)cardTableViewSectionFooterHeightWhenEditing:(BOOL)arg1;
+- (float)cardTableViewSectionHeaderHeightWhenEditing:(BOOL)arg1;
 - (Class)customCardActionCellClass;
 - (Class)customCardCellClass;
-- (void)customSetEmphasized:(bool)arg1 onCell:(id)arg2;
+- (void)customSetEmphasized:(BOOL)arg1 onCell:(id)arg2;
 - (void)dealloc;
-- (double)distanceBetweenSections;
+- (float)distanceBetweenSections;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
@@ -24,11 +24,11 @@
 - (id)newCustomCardTableScrollingBackgroundView;
 - (id)newScrollingBackgroundView;
 - (Class)propertyCellClass;
-- (void)setHighlighted:(bool)arg1 onPropertyCell:(id)arg2;
-- (void)setIndicatesFaceTimeHistory:(bool)arg1 onActionButton:(id)arg2;
-- (bool)shouldPropagateStylesThroughUnknownPersonActions;
-- (bool)shouldPropagateStylesToPickers;
-- (bool)shouldUseCardContentProviderWhenAvailable;
-- (long long)unknownModalPresentationStyle;
+- (void)setHighlighted:(BOOL)arg1 onPropertyCell:(id)arg2;
+- (void)setIndicatesFaceTimeHistory:(BOOL)arg1 onActionButton:(id)arg2;
+- (BOOL)shouldPropagateStylesThroughUnknownPersonActions;
+- (BOOL)shouldPropagateStylesToPickers;
+- (BOOL)shouldUseCardContentProviderWhenAvailable;
+- (int)unknownModalPresentationStyle;
 
 @end

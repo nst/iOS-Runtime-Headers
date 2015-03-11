@@ -7,25 +7,25 @@
 @interface FUDatePicker : UIView <FUScrollWheelDataSource, FUScrollWheelDelegate> {
     NSDate *_date;
     NSDateFormatter *_dateFormatter;
-    unsigned long long _dateOffset;
+    unsigned int _dateOffset;
     FUScrollWheel *_dateWheel;
     UILabel *_dayLabel;
-    long long _dayOrder;
+    int _dayOrder;
     <FUDatePickerDelegate> *_delegate;
+    BOOL _displayEra;
+    BOOL _firstResponderShouldChange;
     UILabel *_monthLabel;
     NSArray *_monthNames;
-    unsigned long long _monthOffset;
-    long long _monthOrder;
+    unsigned int _monthOffset;
+    int _monthOrder;
     FUScrollWheel *_monthWheel;
-    unsigned long long _numRowsDate;
-    unsigned long long _numRowsMonth;
-    unsigned long long _numRowsYear;
+    unsigned int _numRowsDate;
+    unsigned int _numRowsMonth;
+    unsigned int _numRowsYear;
     UILabel *_yearLabel;
-    long long _yearOrder;
+    int _yearOrder;
     FUScrollWheel *_yearWheel;
     NSMutableArray *_yearsWithNames;
-    bool_displayEra;
-    bool_firstResponderShouldChange;
 }
 
 @property(retain) NSDate * date;
@@ -33,24 +33,24 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <FUDatePickerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) FUScrollWheel * monthWheel;
 @property(readonly) Class superclass;
 @property(retain) FUScrollWheel * yearWheel;
 
 - (void).cxx_destruct;
-- (void)_updateDateRange:(bool)arg1;
+- (void)_updateDateRange:(BOOL)arg1;
 - (void)_updateSpinners;
 - (id)date;
 - (id)dateWheel;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)monthWheel;
-- (unsigned long long)numberOfRowsInScrollWheel:(id)arg1;
-- (void)scrollWheel:(id)arg1 didChangeCurrentIndexTo:(unsigned long long)arg2;
-- (id)scrollWheel:(id)arg1 titleForItemAtIndex:(unsigned long long)arg2;
-- (bool)scrollWheelShouldBecomeFirstResponder:(id)arg1;
+- (unsigned int)numberOfRowsInScrollWheel:(id)arg1;
+- (void)scrollWheel:(id)arg1 didChangeCurrentIndexTo:(unsigned int)arg2;
+- (id)scrollWheel:(id)arg1 titleForItemAtIndex:(unsigned int)arg2;
+- (BOOL)scrollWheelShouldBecomeFirstResponder:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDateWheel:(id)arg1;
 - (void)setDelegate:(id)arg1;

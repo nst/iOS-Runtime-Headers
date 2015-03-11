@@ -10,12 +10,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)closeTorchDevice;
 - (id)initWithVideoCaptureHandle:(struct tagHANDLE { int x1; }*)arg1;
-- (bool)openTorchDevice;
+- (BOOL)openTorchDevice;
 - (void)turnTorchOff;
 - (void)turnTorchOn;
 

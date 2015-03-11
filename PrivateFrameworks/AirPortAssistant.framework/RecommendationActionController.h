@@ -17,8 +17,8 @@
 + (id)recommendationActionControllerWithTableManager:(id)arg1 andAssistantUIViewController:(id)arg2;
 
 - (id)actionKey;
-- (id)getSectionInfoWithLongStrings:(bool)arg1;
-- (bool)isPrimaryRecommendation;
+- (id)getSectionInfoWithLongStrings:(BOOL)arg1;
+- (BOOL)isPrimaryRecommendation;
 - (id)sectionIdentifier;
 - (void)selectPrimaryRecommendation;
 - (void)setActionKey:(id)arg1;

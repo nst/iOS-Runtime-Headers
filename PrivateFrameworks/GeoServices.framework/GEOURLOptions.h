@@ -4,7 +4,7 @@
 
 @class GEOURLCamera, GEOURLCenterSpan, GEOURLRouteHandle, NSString;
 
-@interface GEOURLOptions : PBCodable <NSCopying, GEOURLSerializable> {
+@interface GEOURLOptions : PBCodable <GEOURLSerializable, NSCopying> {
     struct { 
         unsigned int mapType : 1; 
         unsigned int transportType : 1; 
@@ -12,29 +12,29 @@
         unsigned int enableTraffic : 1; 
     GEOURLCamera *_camera;
     GEOURLCenterSpan *_centerSpan;
+    BOOL _enableTraffic;
     } _has;
     int _mapType;
     NSString *_referralIdentifier;
     GEOURLRouteHandle *_routeHandle;
     int _transportType;
     int _userTrackingMode;
-    bool_enableTraffic;
 }
 
 @property(retain) GEOURLCamera * camera;
 @property(retain) GEOURLCenterSpan * centerSpan;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool enableTraffic;
-@property(readonly) bool hasCamera;
-@property(readonly) bool hasCenterSpan;
-@property bool hasEnableTraffic;
-@property bool hasMapType;
-@property(readonly) bool hasReferralIdentifier;
-@property(readonly) bool hasRouteHandle;
-@property bool hasTransportType;
-@property bool hasUserTrackingMode;
-@property(readonly) unsigned long long hash;
+@property BOOL enableTraffic;
+@property(readonly) BOOL hasCamera;
+@property(readonly) BOOL hasCenterSpan;
+@property BOOL hasEnableTraffic;
+@property BOOL hasMapType;
+@property(readonly) BOOL hasReferralIdentifier;
+@property(readonly) BOOL hasRouteHandle;
+@property BOOL hasTransportType;
+@property BOOL hasUserTrackingMode;
+@property(readonly) unsigned int hash;
 @property int mapType;
 @property(retain) NSString * referralIdentifier;
 @property(retain) GEOURLRouteHandle * routeHandle;
@@ -49,32 +49,32 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)enableTraffic;
-- (bool)hasCamera;
-- (bool)hasCenterSpan;
-- (bool)hasEnableTraffic;
-- (bool)hasMapType;
-- (bool)hasReferralIdentifier;
-- (bool)hasRouteHandle;
-- (bool)hasTransportType;
-- (bool)hasUserTrackingMode;
-- (unsigned long long)hash;
+- (BOOL)enableTraffic;
+- (BOOL)hasCamera;
+- (BOOL)hasCenterSpan;
+- (BOOL)hasEnableTraffic;
+- (BOOL)hasMapType;
+- (BOOL)hasReferralIdentifier;
+- (BOOL)hasRouteHandle;
+- (BOOL)hasTransportType;
+- (BOOL)hasUserTrackingMode;
+- (unsigned int)hash;
 - (id)initWithLaunchOptions:(id)arg1;
 - (id)initWithUrlRepresentation:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)launchOptions;
 - (int)mapType;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)referralIdentifier;
 - (id)routeHandle;
 - (void)setCamera:(id)arg1;
 - (void)setCenterSpan:(id)arg1;
-- (void)setEnableTraffic:(bool)arg1;
-- (void)setHasEnableTraffic:(bool)arg1;
-- (void)setHasMapType:(bool)arg1;
-- (void)setHasTransportType:(bool)arg1;
-- (void)setHasUserTrackingMode:(bool)arg1;
+- (void)setEnableTraffic:(BOOL)arg1;
+- (void)setHasEnableTraffic:(BOOL)arg1;
+- (void)setHasMapType:(BOOL)arg1;
+- (void)setHasTransportType:(BOOL)arg1;
+- (void)setHasUserTrackingMode:(BOOL)arg1;
 - (void)setMapType:(int)arg1;
 - (void)setReferralIdentifier:(id)arg1;
 - (void)setRouteHandle:(id)arg1;

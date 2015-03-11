@@ -9,18 +9,18 @@
 @class NSString;
 
 @interface SUScriptDocumentInteractionControllerNativeObject : SUScriptNativeObject <UIDocumentInteractionControllerDelegate> {
+    BOOL _didPickApplication;
+    BOOL _isVisible;
     id _presentationBlock;
-    bool_didPickApplication;
-    bool_isVisible;
-    bool_redisplayAfterRotation;
+    BOOL _redisplayAfterRotation;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-- (bool)_isAffectedByWindowNotification:(id)arg1;
+- (BOOL)_isAffectedByWindowNotification:(id)arg1;
 - (void)_windowDidRotateNotification:(id)arg1;
 - (void)_windowWillRotateNotification:(id)arg1;
 - (void)dealloc;

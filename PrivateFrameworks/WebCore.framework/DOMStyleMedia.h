@@ -11,7 +11,7 @@
 
 - (void)dealloc;
 - (void)finalize;
-- (bool)matchMedium:(id)arg1;
+- (BOOL)matchMedium:(id)arg1;
 - (id)type;
 
 @end

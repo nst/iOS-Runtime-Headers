@@ -12,19 +12,19 @@
     id _callback;
     NSObject<OS_dispatch_semaphore> *_done;
     NSError *_error;
-    bool_ignoreEmpty;
+    BOOL _ignoreEmpty;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSError * error;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)error;
-- (id)initWithCallback:(id)arg1 ignoreEmpty:(bool)arg2;
-- (bool)search:(id)arg1 didFindResults:(id)arg2;
+- (id)initWithCallback:(id)arg1 ignoreEmpty:(BOOL)arg2;
+- (BOOL)search:(id)arg1 didFindResults:(id)arg2;
 - (void)search:(id)arg1 didFinishWithError:(id)arg2;
 - (void)wait;
 

@@ -14,7 +14,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)resolverForConnection:(id)arg1;
@@ -25,7 +25,7 @@
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1;
 - (void)invalidate;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)ping:(id)arg1;
 - (void)setDataProviderConnection:(id)arg1;
 

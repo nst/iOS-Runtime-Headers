@@ -3,14 +3,14 @@
  */
 
 @interface OADTileTechnique : OADImageFillTechnique {
-    boolmIsAlignmentOverridden;
-    boolmIsFlipModeOverridden;
-    boolmIsOffsetXOverridden;
-    boolmIsOffsetYOverridden;
-    boolmIsScaleXOverridden;
-    boolmIsScaleYOverridden;
     int mAlignment;
     int mFlipMode;
+    BOOL mIsAlignmentOverridden;
+    BOOL mIsFlipModeOverridden;
+    BOOL mIsOffsetXOverridden;
+    BOOL mIsOffsetYOverridden;
+    BOOL mIsScaleXOverridden;
+    BOOL mIsScaleYOverridden;
     float mOffsetX;
     float mOffsetY;
     float mScaleX;
@@ -22,15 +22,15 @@
 - (int)alignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)flipMode;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithDefaults;
-- (bool)isAlignmentOverridden;
-- (bool)isEqual:(id)arg1;
-- (bool)isFlipModeOverridden;
-- (bool)isOffsetXOverridden;
-- (bool)isOffsetYOverridden;
-- (bool)isScaleXOverridden;
-- (bool)isScaleYOverridden;
+- (BOOL)isAlignmentOverridden;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isFlipModeOverridden;
+- (BOOL)isOffsetXOverridden;
+- (BOOL)isOffsetYOverridden;
+- (BOOL)isScaleXOverridden;
+- (BOOL)isScaleYOverridden;
 - (float)offsetX;
 - (float)offsetY;
 - (float)scaleX;

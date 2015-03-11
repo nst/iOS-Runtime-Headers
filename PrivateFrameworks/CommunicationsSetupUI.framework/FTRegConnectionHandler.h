@@ -12,7 +12,7 @@
     NSString *_listenerID;
     NSString *_logName;
     NSString *_name;
-    long long _serviceType;
+    int _serviceType;
 }
 
 @property(setter=_setListenerID:,copy) NSString * _listenerID;
@@ -20,12 +20,12 @@
 @property(retain,readonly) NSString * _serviceName;
 @property unsigned int caps;
 @property(copy) NSString * name;
-@property long long serviceType;
+@property int serviceType;
 
 - (void)_disconnectFromDaemon;
 - (void)_handleDaemonConnected:(id)arg1;
 - (void)_handleDaemonDisconnected:(id)arg1;
-- (bool)_isServiceSupported;
+- (BOOL)_isServiceSupported;
 - (id)_listenerID;
 - (id)_logName;
 - (id)_serviceName;
@@ -33,17 +33,17 @@
 - (void)_startListeningForNotifications;
 - (void)_stopListeningForNotifications;
 - (unsigned int)caps;
-- (bool)connectToDaemon:(bool)arg1;
-- (bool)connectToDaemon;
+- (BOOL)connectToDaemon:(BOOL)arg1;
+- (BOOL)connectToDaemon;
 - (void)dealloc;
-- (id)initWithServiceType:(long long)arg1 name:(id)arg2 capabilities:(unsigned int)arg3;
-- (id)initWithServiceType:(long long)arg1 name:(id)arg2;
-- (bool)isConnectedToDaemon;
+- (id)initWithServiceType:(int)arg1 name:(id)arg2 capabilities:(unsigned int)arg3;
+- (id)initWithServiceType:(int)arg1 name:(id)arg2;
+- (BOOL)isConnectedToDaemon;
 - (id)name;
-- (long long)serviceType;
+- (int)serviceType;
 - (void)setCaps:(unsigned int)arg1;
 - (void)setName:(id)arg1;
-- (void)setServiceType:(long long)arg1;
+- (void)setServiceType:(int)arg1;
 - (void)set_logName:(id)arg1;
 
 @end

@@ -5,18 +5,18 @@
 @class MFMessageLibrary, NSString;
 
 @interface MFMessageDetails : NSObject {
-    boolisInvalid;
     long long conversationHash;
     unsigned int dateReceived;
     unsigned int dateSent;
-    unsigned int encoding;
+    unsigned long encoding;
     NSString *externalID;
+    BOOL isInvalid;
     MFMessageLibrary *library;
     unsigned int libraryID;
     unsigned int mailboxID;
     unsigned long long messageFlags;
     long long messageIDHash;
-    unsigned int uid;
+    unsigned long uid;
 }
 
 - (id)copyMessageInfo;
@@ -25,9 +25,9 @@
 - (void)dealloc;
 - (id)description;
 - (id)externalID;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int)libraryID;
 - (id)mailbox;
 - (unsigned int)mailboxID;
@@ -35,6 +35,6 @@
 - (id)messageID;
 - (long long)messageIDHash;
 - (id)remoteID;
-- (unsigned int)uid;
+- (unsigned long)uid;
 
 @end

@@ -9,18 +9,18 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property unsigned long long height;
-@property bool scaleToFit;
+@property(readonly) unsigned int hash;
+@property unsigned int height;
+@property BOOL scaleToFit;
 @property(readonly) Class superclass;
-@property unsigned long long width;
+@property unsigned int width;
 
-- (unsigned long long)height;
+- (unsigned int)height;
 - (id)p_renderingExporterDelegate;
-- (bool)scaleToFit;
-- (void)setHeight:(unsigned long long)arg1;
-- (void)setScaleToFit:(bool)arg1;
-- (void)setWidth:(unsigned long long)arg1;
-- (unsigned long long)width;
+- (BOOL)scaleToFit;
+- (void)setHeight:(unsigned int)arg1;
+- (void)setScaleToFit:(BOOL)arg1;
+- (void)setWidth:(unsigned int)arg1;
+- (unsigned int)width;
 
 @end

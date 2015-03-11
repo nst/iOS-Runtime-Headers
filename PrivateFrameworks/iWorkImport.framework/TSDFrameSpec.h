@@ -6,35 +6,35 @@
 
 @interface TSDFrameSpec : NSObject <NSCopying> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGSize { 
-        double width; 
-        double height; 
-    boolmDisplayInPicker;
-    boolmHasAdornment;
-    boolmHasImages;
-    boolmHasMask;
-    boolmLoadedImageMetrics;
+        float width; 
+        float height; 
     } mAdornmentPosition;
     } mAdornmentSize;
-    double mBottomHeight;
-    double mBottomInset;
+    float mBottomHeight;
+    float mBottomInset;
     NSBundle *mBundle;
+    BOOL mDisplayInPicker;
     NSString *mFrameName;
+    BOOL mHasAdornment;
+    BOOL mHasImages;
+    BOOL mHasMask;
     int mInterest;
-    double mLeftInset;
-    double mLeftWidth;
-    double mMinimumAssetScale;
+    float mLeftInset;
+    float mLeftWidth;
+    BOOL mLoadedImageMetrics;
+    float mMinimumAssetScale;
     NSMutableDictionary *mProvidersByKey;
-    double mRightInset;
-    double mRightWidth;
+    float mRightInset;
+    float mRightWidth;
     int mTilingMode;
-    double mTopHeight;
-    double mTopInset;
+    float mTopHeight;
+    float mTopInset;
 }
 
-@property(readonly) bool displayInPicker;
+@property(readonly) BOOL displayInPicker;
 @property(copy,readonly) NSString * frameName;
 
 + (id)frameSpecWithName:(id)arg1;
@@ -43,26 +43,26 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (bool)displayInPicker;
+- (BOOL)displayInPicker;
 - (id)frameName;
 - (void)i_addInterestInProviders;
-- (struct CGPoint { double x1; double x2; })i_adornmentPosition;
-- (struct CGSize { double x1; double x2; })i_adornmentSize;
-- (double)i_bottomHeight;
-- (double)i_bottomInset;
-- (bool)i_hasAdornment;
-- (bool)i_hasImages;
-- (bool)i_hasMask;
-- (double)i_leftInset;
-- (double)i_leftWidth;
-- (double)i_minimumAssetScale;
-- (id)i_providerForIndex:(int)arg1 mask:(bool)arg2;
+- (struct CGPoint { float x1; float x2; })i_adornmentPosition;
+- (struct CGSize { float x1; float x2; })i_adornmentSize;
+- (float)i_bottomHeight;
+- (float)i_bottomInset;
+- (BOOL)i_hasAdornment;
+- (BOOL)i_hasImages;
+- (BOOL)i_hasMask;
+- (float)i_leftInset;
+- (float)i_leftWidth;
+- (float)i_minimumAssetScale;
+- (id)i_providerForIndex:(int)arg1 mask:(BOOL)arg2;
 - (void)i_removeInterestInProviders;
-- (double)i_rightInset;
-- (double)i_rightWidth;
+- (float)i_rightInset;
+- (float)i_rightWidth;
 - (int)i_tilingMode;
-- (double)i_topHeight;
-- (double)i_topInset;
+- (float)i_topHeight;
+- (float)i_topInset;
 - (id)initWithBundle:(id)arg1;
 - (id)p_imageDataForKey:(id)arg1;
 - (id)p_infoDictionary;

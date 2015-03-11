@@ -5,8 +5,8 @@
 @interface TSKAddedToDocumentContext_Unarchiving : TSKAddedToDocumentContext {
 }
 
-- (bool)autoUpdateSmartFields;
+- (BOOL)autoUpdateSmartFields;
 - (id)description;
-- (bool)wasUnarchived;
+- (BOOL)wasUnarchived;
 
 @end

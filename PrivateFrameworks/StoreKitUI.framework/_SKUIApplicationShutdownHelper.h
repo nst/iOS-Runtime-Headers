@@ -6,7 +6,7 @@
 
 @interface _SKUIApplicationShutdownHelper : NSObject {
     SKUIApplicationController *_applicationController;
-    unsigned long long _taskID;
+    unsigned int _taskID;
 }
 
 - (void).cxx_destruct;

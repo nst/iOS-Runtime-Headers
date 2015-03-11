@@ -12,11 +12,11 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithDelegate:(id)arg1;
-- (void)remoteConnection:(id)arg1 handleMessageType:(unsigned long long)arg2 completion:(id)arg3;
+- (void)remoteConnection:(id)arg1 handleMessageType:(unsigned int)arg2 completion:(id)arg3;
 
 @end

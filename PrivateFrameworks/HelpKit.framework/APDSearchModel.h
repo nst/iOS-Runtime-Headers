@@ -23,7 +23,7 @@
 - (id)copyrightTopicId;
 - (id)currentSearchResults;
 - (id)indexTermsForSearchTermRoot:(id)arg1;
-- (bool)processLocalDataFromLocalResource;
+- (BOOL)processLocalDataFromLocalResource;
 - (void)processRequestData:(id)arg1;
 - (void)processSearchJSONData:(id)arg1;
 - (id)searchIndex;
@@ -34,6 +34,6 @@
 - (void)setSearchIndex:(id)arg1;
 - (void)setSearchTerms:(id)arg1;
 - (void)setSearchText:(id)arg1;
-- (void)updateResultsForSearch:(id)arg1 forLocale:(struct __CFLocale { }*)arg2 withRoots:(bool)arg3;
+- (void)updateResultsForSearch:(id)arg1 forLocale:(struct __CFLocale { }*)arg2 withRoots:(BOOL)arg3;
 
 @end

@@ -8,17 +8,17 @@
     AVPlayer *_avPlayer;
     AVPlayerItem *_avPlayerItem;
     AVPlayerLayer *_avPlayerLayer;
+    BOOL _reachedEnd;
+    BOOL _redisplayStatusBar;
     <CKVideoPreviewViewControllerDelegate> *_videoPreviewDelegate;
-    bool_reachedEnd;
-    bool_redisplayStatusBar;
 }
 
 @property(retain) AVPlayer * avPlayer;
 @property(retain) AVPlayerItem * avPlayerItem;
 @property(retain) AVPlayerLayer * avPlayerLayer;
-@property(getter=isPlaying,readonly) bool playing;
-@property bool reachedEnd;
-@property bool redisplayStatusBar;
+@property(getter=isPlaying,readonly) BOOL playing;
+@property BOOL reachedEnd;
+@property BOOL redisplayStatusBar;
 @property <CKVideoPreviewViewControllerDelegate> * videoPreviewDelegate;
 
 - (id)avPlayer;
@@ -26,22 +26,22 @@
 - (id)avPlayerLayer;
 - (void)dealloc;
 - (id)init;
-- (bool)isPlaying;
+- (BOOL)isPlaying;
 - (void)loadView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause;
 - (void)play;
-- (bool)prefersStatusBarHidden;
-- (bool)reachedEnd;
-- (bool)redisplayStatusBar;
+- (BOOL)prefersStatusBarHidden;
+- (BOOL)reachedEnd;
+- (BOOL)redisplayStatusBar;
 - (void)setAvPlayer:(id)arg1;
 - (void)setAvPlayerItem:(id)arg1;
 - (void)setAvPlayerLayer:(id)arg1;
-- (void)setReachedEnd:(bool)arg1;
-- (void)setRedisplayStatusBar:(bool)arg1;
+- (void)setReachedEnd:(BOOL)arg1;
+- (void)setRedisplayStatusBar:(BOOL)arg1;
 - (void)setVideoFileURL:(id)arg1;
 - (void)setVideoPreviewDelegate:(id)arg1;
-- (bool)togglePlayPause;
+- (BOOL)togglePlayPause;
 - (void)videoDidReachEnd:(id)arg1;
 - (id)videoPreviewDelegate;
 

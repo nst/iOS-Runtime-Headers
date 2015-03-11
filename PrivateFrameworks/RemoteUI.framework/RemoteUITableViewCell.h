@@ -12,35 +12,35 @@
     UIColor *_accessoryColor;
     UIButton *_detailLinkButton;
     id _detailLinkHandler;
+    BOOL _forceFullSizeDetailLabel;
     UIImageView *_invalidRowView;
-    long long _remoteUIAccessoryType;
+    BOOL _leftAlignDetailLabel;
+    int _remoteUIAccessoryType;
     UIView *_remoteUIAccessoryView;
-    bool_forceFullSizeDetailLabel;
-    bool_leftAlignDetailLabel;
 }
 
-@property bool forceFullSizeDetailLabel;
-@property bool leftAlignDetailLabel;
-@property long long remoteUIAccessoryType;
+@property BOOL forceFullSizeDetailLabel;
+@property BOOL leftAlignDetailLabel;
+@property int remoteUIAccessoryType;
 @property(retain) UIView * remoteUIAccessoryView;
 
 - (void).cxx_destruct;
 - (void)_accessoriesChanged;
-- (id)_checkmarkImage:(bool)arg1;
+- (id)_checkmarkImage:(BOOL)arg1;
 - (void)_detailLinkPressed;
-- (id)_disclosureChevronImage:(bool)arg1;
-- (void)_setRemoteUIAccessoryType:(long long)arg1 withColor:(id)arg2;
-- (bool)forceFullSizeDetailLabel;
+- (id)_disclosureChevronImage:(BOOL)arg1;
+- (void)_setRemoteUIAccessoryType:(int)arg1 withColor:(id)arg2;
+- (BOOL)forceFullSizeDetailLabel;
 - (void)layoutSubviews;
-- (bool)leftAlignDetailLabel;
+- (BOOL)leftAlignDetailLabel;
 - (void)prepareForReuse;
-- (long long)remoteUIAccessoryType;
+- (int)remoteUIAccessoryType;
 - (id)remoteUIAccessoryView;
 - (void)setDetailLinkText:(id)arg1 handler:(id)arg2;
-- (void)setForceFullSizeDetailLabel:(bool)arg1;
-- (void)setLeftAlignDetailLabel:(bool)arg1;
-- (void)setRemoteUIAccessoryType:(long long)arg1;
+- (void)setForceFullSizeDetailLabel:(BOOL)arg1;
+- (void)setLeftAlignDetailLabel:(BOOL)arg1;
+- (void)setRemoteUIAccessoryType:(int)arg1;
 - (void)setRemoteUIAccessoryView:(id)arg1;
-- (void)setRowInvalid:(bool)arg1;
+- (void)setRowInvalid:(BOOL)arg1;
 
 @end

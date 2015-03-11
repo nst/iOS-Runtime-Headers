@@ -103,13 +103,13 @@
             float m[16]; 
         } _floatMatrix4Value; 
     NSString *_name;
-    unsigned long long _seed;
+    unsigned int _seed;
     SKTexture *_textureValue;
-    long long _type;
+    int _type;
     } _value;
 }
 
-@property unsigned long long _seed;
+@property unsigned int _seed;
 @property union _GLKMatrix2 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; float x2[2][2]; float x3[4]; } floatMatrix2Value;
 @property union _GLKMatrix3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; } floatMatrix3Value;
 @property union _GLKMatrix4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; } floatMatrix4Value;
@@ -119,7 +119,7 @@
 @property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } floatVector4Value;
 @property(readonly) NSString * name;
 @property(retain) SKTexture * textureValue;
-@property(readonly) long long uniformType;
+@property(readonly) int uniformType;
 
 + (id)uniformWithName:(id)arg1 float:(float)arg2;
 + (id)uniformWithName:(id)arg1 floatMatrix2:(union _GLKMatrix2 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; float x2[2][2]; float x3[4]; })arg2;
@@ -133,7 +133,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned long long)_seed;
+- (unsigned int)_seed;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -163,8 +163,8 @@
 - (void)setFloatVector3Value:(union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })arg1;
 - (void)setFloatVector4Value:(union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })arg1;
 - (void)setTextureValue:(id)arg1;
-- (void)set_seed:(unsigned long long)arg1;
+- (void)set_seed:(unsigned int)arg1;
 - (id)textureValue;
-- (long long)uniformType;
+- (int)uniformType;
 
 @end

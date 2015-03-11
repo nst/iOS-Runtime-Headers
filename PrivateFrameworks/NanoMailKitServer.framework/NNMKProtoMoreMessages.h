@@ -18,15 +18,15 @@
 @property(retain) NSData * dateForRequestingMoreMessages;
 @property(retain) NSData * dateSynced;
 @property unsigned int fullSyncVersion;
-@property(readonly) bool hasDateForRequestingMoreMessages;
-@property(readonly) bool hasDateSynced;
-@property bool hasFullSyncVersion;
+@property(readonly) BOOL hasDateForRequestingMoreMessages;
+@property(readonly) BOOL hasDateSynced;
+@property BOOL hasFullSyncVersion;
 
 - (void).cxx_destruct;
 - (void)addAddedMessage:(id)arg1;
-- (id)addedMessageAtIndex:(unsigned long long)arg1;
+- (id)addedMessageAtIndex:(unsigned int)arg1;
 - (id)addedMessages;
-- (unsigned long long)addedMessagesCount;
+- (unsigned int)addedMessagesCount;
 - (void)clearAddedMessages;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -35,18 +35,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)fullSyncVersion;
-- (bool)hasDateForRequestingMoreMessages;
-- (bool)hasDateSynced;
-- (bool)hasFullSyncVersion;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDateForRequestingMoreMessages;
+- (BOOL)hasDateSynced;
+- (BOOL)hasFullSyncVersion;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAddedMessages:(id)arg1;
 - (void)setDateForRequestingMoreMessages:(id)arg1;
 - (void)setDateSynced:(id)arg1;
 - (void)setFullSyncVersion:(unsigned int)arg1;
-- (void)setHasFullSyncVersion:(bool)arg1;
+- (void)setHasFullSyncVersion:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

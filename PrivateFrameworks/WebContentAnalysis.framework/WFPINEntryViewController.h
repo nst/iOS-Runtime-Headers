@@ -24,20 +24,20 @@
 + (Class)remoteViewControllerClass;
 + (id)serviceViewControllerClassName;
 
-- (unsigned long long)_supportedInterfaceOrientationsForRootViewController;
+- (unsigned int)_supportedInterfaceOrientationsForRootViewController;
 - (void)dealloc;
 - (id)delegate;
 - (id)dismissCompletionHandler;
-- (bool)hasUIWebViewSubView:(id)arg1;
+- (BOOL)hasUIWebViewSubView:(id)arg1;
 - (id)initWithURL:(id)arg1 pageTitle:(id)arg2 completion:(id)arg3;
 - (void)insertRemoteViewController:(id)arg1;
-- (void)presentViewControllerAnimated:(bool)arg1 completion:(id)arg2;
+- (void)presentViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
 - (void)setDismissCompletionHandler:(id)arg1;
-- (bool)shouldAutorotate;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotate;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)userDidCancel;
 - (void)userEnteredCorrectPIN;
-- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 
 @end

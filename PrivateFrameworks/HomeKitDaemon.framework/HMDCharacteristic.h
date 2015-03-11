@@ -9,11 +9,11 @@
     NSData *_authorizationData;
     NSNumber *_characteristicInstanceID;
     HMDCharacteristicMetadata *_characteristicMetadata;
-    long long _characteristicProperties;
+    int _characteristicProperties;
     NSString *_characteristicType;
     HAPCharacteristic *_hapCharacteristic;
+    BOOL _notificationEnabled;
     HMDService *_service;
-    bool_notificationEnabled;
 }
 
 @property(readonly) HMDAccessory * accessory;
@@ -21,18 +21,18 @@
 @property(readonly) HAPCharacteristic * characteristic;
 @property(retain) NSNumber * characteristicInstanceID;
 @property(retain) HMDCharacteristicMetadata * characteristicMetadata;
-@property long long characteristicProperties;
+@property int characteristicProperties;
 @property(retain) NSString * characteristicType;
 @property(retain) HAPCharacteristic * hapCharacteristic;
 @property(copy,readonly) NSNumber * instanceID;
 @property(readonly) HMDCharacteristicMetadata * metadata;
-@property bool notificationEnabled;
-@property(readonly) long long properties;
+@property BOOL notificationEnabled;
+@property(readonly) int properties;
 @property(readonly) HMDService * service;
 @property(copy,readonly) NSString * type;
 @property(copy,readonly) id value;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessory;
@@ -40,7 +40,7 @@
 - (id)characteristic;
 - (id)characteristicInstanceID;
 - (id)characteristicMetadata;
-- (long long)characteristicProperties;
+- (int)characteristicProperties;
 - (id)characteristicType;
 - (void)configureWithCharacteristic:(id)arg1 service:(id)arg2 accessory:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
@@ -49,16 +49,16 @@
 - (id)initWithCoder:(id)arg1;
 - (id)instanceID;
 - (id)metadata;
-- (bool)notificationEnabled;
-- (long long)properties;
+- (BOOL)notificationEnabled;
+- (int)properties;
 - (id)service;
 - (void)setAuthorizationData:(id)arg1;
 - (void)setCharacteristicInstanceID:(id)arg1;
 - (void)setCharacteristicMetadata:(id)arg1;
-- (void)setCharacteristicProperties:(long long)arg1;
+- (void)setCharacteristicProperties:(int)arg1;
 - (void)setCharacteristicType:(id)arg1;
 - (void)setHapCharacteristic:(id)arg1;
-- (void)setNotificationEnabled:(bool)arg1;
+- (void)setNotificationEnabled:(BOOL)arg1;
 - (id)type;
 - (void)unconfigure;
 - (id)validateValue:(id)arg1 outValue:(id*)arg2;

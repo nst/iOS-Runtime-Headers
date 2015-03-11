@@ -9,15 +9,15 @@
 @class NSError, NSMutableData;
 
 @interface ATMessageParser : NSObject {
-    unsigned long long _curObjectLength;
+    unsigned int _curObjectLength;
     Class _messageClass;
     void *_objectDataBuffer;
-    unsigned long long _objectDataLen;
+    unsigned int _objectDataLen;
     id _objectParsedBlock;
     NSMutableData *_parserData;
     NSError *_parserError;
     BOOL _varIntBuf[10];
-    unsigned long long _varIntDataLen;
+    unsigned int _varIntDataLen;
 }
 
 @property(readonly) Class messageClass;
@@ -25,14 +25,14 @@
 @property(readonly) NSError * parserError;
 
 - (void).cxx_destruct;
-- (bool)_parseObjectFromData:(id)arg1;
-- (bool)_parseObjectLength:(const char *)arg1 length:(unsigned long long)arg2 bytesConsumed:(unsigned long long*)arg3;
+- (BOOL)_parseObjectFromData:(id)arg1;
+- (BOOL)_parseObjectLength:(const char *)arg1 length:(unsigned int)arg2 bytesConsumed:(unsigned int*)arg3;
 - (void)dealloc;
 - (id)initWithMessageClass:(Class)arg1;
 - (Class)messageClass;
 - (id)objectParsedBlock;
 - (id)parserError;
-- (bool)processData:(const char *)arg1 length:(long long)arg2;
+- (BOOL)processData:(const char *)arg1 length:(long)arg2;
 - (void)setObjectParsedBlock:(id)arg1;
 
 @end

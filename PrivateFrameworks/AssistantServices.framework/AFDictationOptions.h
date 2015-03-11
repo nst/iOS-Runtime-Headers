@@ -11,13 +11,13 @@
     NSString *_fieldIdentifier;
     NSString *_fieldLabel;
     NSString *_interactionIdentifier;
-    long long _keyboardType;
+    int _keyboardType;
     NSString *_languageCodeOverride;
     NSString *_postfixText;
     NSString *_prefixText;
-    long long _returnKeyType;
+    int _returnKeyType;
     NSString *_selectedText;
-    long long _transcriptionMode;
+    int _transcriptionMode;
 }
 
 @property(copy) NSString * applicationName;
@@ -26,15 +26,15 @@
 @property(copy) NSString * fieldIdentifier;
 @property(copy) NSString * fieldLabel;
 @property(copy) NSString * interactionIdentifier;
-@property long long keyboardType;
+@property int keyboardType;
 @property(copy) NSString * languageCodeOverride;
 @property(copy) NSString * postfixText;
 @property(copy) NSString * prefixText;
-@property long long returnKeyType;
+@property int returnKeyType;
 @property(copy) NSString * selectedText;
-@property long long transcriptionMode;
+@property int transcriptionMode;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)applicationName;
@@ -47,11 +47,11 @@
 - (id)fieldLabel;
 - (id)initWithCoder:(id)arg1;
 - (id)interactionIdentifier;
-- (long long)keyboardType;
+- (int)keyboardType;
 - (id)languageCodeOverride;
 - (id)postfixText;
 - (id)prefixText;
-- (long long)returnKeyType;
+- (int)returnKeyType;
 - (id)selectedText;
 - (void)setApplicationName:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
@@ -59,13 +59,13 @@
 - (void)setFieldIdentifier:(id)arg1;
 - (void)setFieldLabel:(id)arg1;
 - (void)setInteractionIdentifier:(id)arg1;
-- (void)setKeyboardType:(long long)arg1;
+- (void)setKeyboardType:(int)arg1;
 - (void)setLanguageCodeOverride:(id)arg1;
 - (void)setPostfixText:(id)arg1;
 - (void)setPrefixText:(id)arg1;
-- (void)setReturnKeyType:(long long)arg1;
+- (void)setReturnKeyType:(int)arg1;
 - (void)setSelectedText:(id)arg1;
-- (void)setTranscriptionMode:(long long)arg1;
-- (long long)transcriptionMode;
+- (void)setTranscriptionMode:(int)arg1;
+- (int)transcriptionMode;
 
 @end

@@ -6,30 +6,30 @@
 
 @interface RMTable : NSObject <NSFastEnumeration> {
     NSMutableArray *_columnFirstElements;
-    unsigned long long _elementCount;
+    unsigned int _elementCount;
     struct CGPDFLayout { } *_layout;
     NSMutableArray *_matrix;
     NSMutableArray *_rowFirstElements;
+    BOOL _rowOrder;
     struct CGPDFNode { } *_tableRoot;
-    bool_rowOrder;
 }
 
 @property(readonly) struct CGPDFPage { }* page;
-@property bool rowOrder;
+@property BOOL rowOrder;
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
-- (id)columnAtIndex:(unsigned long long)arg1;
-- (unsigned long long)columns;
-- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (id)columnAtIndex:(unsigned int)arg1;
+- (unsigned int)columns;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)dump;
 - (id)initWithRoot:(struct CGPDFNode { }*)arg1 layout:(struct CGPDFLayout { }*)arg2;
 - (struct CGPDFLayout { }*)layout;
 - (void)matrixDealloc;
 - (struct CGPDFPage { }*)page;
-- (id)rowAtIndex:(unsigned long long)arg1;
-- (bool)rowOrder;
-- (unsigned long long)rows;
-- (void)setRowOrder:(bool)arg1;
+- (id)rowAtIndex:(unsigned int)arg1;
+- (BOOL)rowOrder;
+- (unsigned int)rows;
+- (void)setRowOrder:(BOOL)arg1;
 
 @end

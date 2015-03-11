@@ -6,12 +6,12 @@
 
 @interface VKStylesheetResultCacheKey : NSObject <NSCopying> {
     struct { 
-        long long vectorType; 
+        int vectorType; 
         int timePeriod; 
         int mapOverlayType; 
-        booliconTappable; 
+        BOOL iconTappable; 
         NSString *localeString; 
-        boolisSelected; 
+        BOOL isSelected; 
         unsigned int applicationState; 
     } _clientAttributes;
     GEOFeatureStyleAttributes *_featureAttributes;
@@ -20,8 +20,8 @@
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned long long)hash;
-- (id)initWithFeatureAttributes:(id)arg1 clientAttributes:(const struct { long long x1; int x2; int x3; boolx4; id x5; boolx6; unsigned int x7; }*)arg2;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)initWithFeatureAttributes:(id)arg1 clientAttributes:(const struct { int x1; int x2; int x3; BOOL x4; id x5; BOOL x6; unsigned int x7; }*)arg2;
+- (BOOL)isEqual:(id)arg1;
 
 @end

@@ -5,6 +5,6 @@
 @interface PUWallpaperNavigationController : UINavigationController {
 }
 
-- (unsigned long long)supportedInterfaceOrientations;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

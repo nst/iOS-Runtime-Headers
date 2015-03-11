@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
-- (void)animationEnded:(bool)arg1;
+- (void)animationEnded:(BOOL)arg1;
 - (id)gridTransitionInfo;
 - (double)transitionDuration:(id)arg1;
 

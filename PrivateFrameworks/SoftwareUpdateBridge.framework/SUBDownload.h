@@ -13,7 +13,7 @@
 @property(retain) SUBProgress * progress;
 
 + (id)downloadWithDescriptor:(id)arg1 andProgress:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

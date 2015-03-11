@@ -18,6 +18,6 @@
 - (void)_setSerialLoggingQueue:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)logMessage:(id)arg1 fileName:(const char *)arg2 functionName:(const char *)arg3 lineNumber:(unsigned long long)arg4;
+- (void)logMessage:(id)arg1 fileName:(const char *)arg2 functionName:(const char *)arg3 lineNumber:(unsigned long)arg4;
 
 @end

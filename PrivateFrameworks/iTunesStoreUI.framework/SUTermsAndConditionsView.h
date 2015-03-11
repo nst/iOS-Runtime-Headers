@@ -8,40 +8,40 @@
     UIAlertView *_accountButtonAlert;
     SUSubtitledButton *_button;
     SUClientInterface *_clientInterface;
-    double _rightMargin;
-    long long _style;
+    BOOL _hideAccountButton;
+    float _rightMargin;
+    int _style;
     SULinkControl *_termsAndConditionsControl;
-    bool_hideAccountButton;
     SUClientInterface *clientInterface;
 }
 
 @property(retain) SUClientInterface * clientInterface;
-@property bool hideAccountButton;
-@property double rightMargin;
-@property long long style;
+@property BOOL hideAccountButton;
+@property float rightMargin;
+@property int style;
 
 - (void)_accountsChangedNotification:(id)arg1;
 - (id)_button;
 - (void)_buttonAction:(id)arg1;
-- (double)_buttonHeightForStyle:(long long)arg1;
+- (float)_buttonHeightForStyle:(int)arg1;
 - (void)_clearButtonSelection:(id)arg1;
 - (void)_destroyButton;
-- (long long)_linkStyleForStyle:(long long)arg1;
+- (int)_linkStyleForStyle:(int)arg1;
 - (void)_termsAndConditionsAction:(id)arg1;
 - (id)_termsAndConditionsControl;
 - (void)_updateButton;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)clientInterface;
 - (void)dealloc;
-- (bool)hideAccountButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)hideAccountButton;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (double)rightMargin;
+- (float)rightMargin;
 - (void)setClientInterface:(id)arg1;
-- (void)setHideAccountButton:(bool)arg1;
-- (void)setRightMargin:(double)arg1;
-- (void)setStyle:(long long)arg1;
+- (void)setHideAccountButton:(BOOL)arg1;
+- (void)setRightMargin:(float)arg1;
+- (void)setStyle:(int)arg1;
 - (void)sizeToFit;
-- (long long)style;
+- (int)style;
 
 @end

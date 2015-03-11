@@ -3,16 +3,16 @@
  */
 
 @interface PUThresholdCrossingCountValueFilter : PUValueFilter {
-    long long _crossingCount;
-    long long _maximumCrossingCount;
+    int _crossingCount;
+    int _maximumCrossingCount;
     double _thresholdValue;
 }
 
-@property long long maximumCrossingCount;
+@property int maximumCrossingCount;
 @property double thresholdValue;
 
-- (long long)maximumCrossingCount;
-- (void)setMaximumCrossingCount:(long long)arg1;
+- (int)maximumCrossingCount;
+- (void)setMaximumCrossingCount:(int)arg1;
 - (void)setThresholdValue:(double)arg1;
 - (double)thresholdValue;
 - (double)updatedValue:(double)arg1 withTargetValue:(double)arg2;

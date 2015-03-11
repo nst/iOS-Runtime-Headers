@@ -3,21 +3,21 @@
  */
 
 @interface AFSetting : AFSiriModelObject {
-    long long _type;
+    int _type;
     id _value;
 }
 
-@property long long type;
+@property int type;
 @property(retain) id value;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setType:(long long)arg1;
+- (void)setType:(int)arg1;
 - (void)setValue:(id)arg1;
-- (long long)type;
+- (int)type;
 - (id)value;
 
 @end

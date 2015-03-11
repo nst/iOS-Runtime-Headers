@@ -9,22 +9,22 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(getter=isLocked) bool locked;
+@property(readonly) unsigned int hash;
+@property(getter=isLocked) BOOL locked;
 @property(readonly) CPLPlatformObject * platformObject;
 @property(readonly) Class superclass;
 
 - (id)allChangeBatches;
-- (bool)appendChangeBatch:(id)arg1 error:(id*)arg2;
-- (bool)compactChangeBatchesWithError:(id*)arg1;
-- (unsigned long long)countOfQueuedBatches;
-- (bool)deleteAllChangeBatchesWithError:(id*)arg1;
+- (BOOL)appendChangeBatch:(id)arg1 error:(id*)arg2;
+- (BOOL)compactChangeBatchesWithError:(id*)arg1;
+- (unsigned int)countOfQueuedBatches;
+- (BOOL)deleteAllChangeBatchesWithError:(id*)arg1;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
-- (bool)isLocked;
+- (BOOL)isLocked;
 - (id)nextBatch;
 - (id)popAllChangeBatchesWithError:(id*)arg1;
-- (bool)popChangeBatch:(id*)arg1 error:(id*)arg2;
-- (bool)popNextBatchWithError:(id*)arg1;
-- (void)setLocked:(bool)arg1;
+- (BOOL)popChangeBatch:(id*)arg1 error:(id*)arg2;
+- (BOOL)popNextBatchWithError:(id*)arg1;
+- (void)setLocked:(BOOL)arg1;
 
 @end

@@ -9,16 +9,16 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) CKObjCClass * objcClass;
 @property(readonly) NSSet * propertyNamesNotToEncode;
 @property(readonly) Class superclass;
 
 - (id)description;
 - (id)dictionaryPropertyEncoding;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithPropertyDictionary:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)objcClass;
 - (id)propertyNamesNotToEncode;
 

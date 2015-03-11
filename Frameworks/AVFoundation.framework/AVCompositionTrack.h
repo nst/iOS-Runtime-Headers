@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSArray * segments;
 
-- (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long long)arg3;
+- (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
 - (void)dealloc;
 - (id)description;

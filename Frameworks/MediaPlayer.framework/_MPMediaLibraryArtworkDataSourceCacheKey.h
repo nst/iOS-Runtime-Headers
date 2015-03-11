@@ -6,22 +6,22 @@
 
 @interface _MPMediaLibraryArtworkDataSourceCacheKey : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     MPArtworkCatalog *_catalog;
     } _representationSize;
 }
 
 @property(retain) MPArtworkCatalog * catalog;
-@property struct CGSize { double x1; double x2; } representationSize;
+@property struct CGSize { float x1; float x2; } representationSize;
 
 - (void).cxx_destruct;
 - (id)catalog;
-- (unsigned long long)hash;
-- (id)initWithArtworkCatalog:(id)arg1 representativeSize:(struct CGSize { double x1; double x2; })arg2;
-- (bool)isEqual:(id)arg1;
-- (struct CGSize { double x1; double x2; })representationSize;
+- (unsigned int)hash;
+- (id)initWithArtworkCatalog:(id)arg1 representativeSize:(struct CGSize { float x1; float x2; })arg2;
+- (BOOL)isEqual:(id)arg1;
+- (struct CGSize { float x1; float x2; })representationSize;
 - (void)setCatalog:(id)arg1;
-- (void)setRepresentationSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setRepresentationSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

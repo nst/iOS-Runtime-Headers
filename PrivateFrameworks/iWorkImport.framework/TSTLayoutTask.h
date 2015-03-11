@@ -9,7 +9,7 @@
     TSTMasterLayout *mMasterLayout;
 }
 
-@property(readonly) unsigned long long numberOfCellStates;
+@property(readonly) unsigned int numberOfCellStates;
 
 - (void)addCellState:(id)arg1;
 - (void)clear;
@@ -18,7 +18,7 @@
 - (void)enumerateCellStatesUsingBlock:(id)arg1;
 - (id)initWithLayoutTask:(id)arg1;
 - (id)initWithMasterLayout:(id)arg1;
-- (unsigned long long)numberOfCellStates;
+- (unsigned int)numberOfCellStates;
 - (void)writeToMasterLayoutCaches;
 
 @end

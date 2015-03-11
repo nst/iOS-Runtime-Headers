@@ -8,7 +8,7 @@
     NSString *_messageId;
 }
 
-@property(readonly) bool hasMessageId;
+@property(readonly) BOOL hasMessageId;
 @property(retain) NSString * messageId;
 
 - (void).cxx_destruct;
@@ -16,12 +16,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasMessageId;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasMessageId;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)messageId;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setMessageId:(id)arg1;
 - (void)writeTo:(id)arg1;
 

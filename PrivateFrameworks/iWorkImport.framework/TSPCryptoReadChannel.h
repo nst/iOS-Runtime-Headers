@@ -9,16 +9,16 @@
     struct _CCCryptor { } *_cryptor;
     SFUCryptoKey *_decryptionKey;
     NSObject<OS_dispatch_data> *_holdData;
-    unsigned long long _initialBytesIgnored;
+    unsigned long _initialBytesIgnored;
     char *_iv;
-    unsigned long long _ivRead;
+    unsigned long _ivRead;
     <TSUStreamReadChannel> *_readChannel;
     NSObject<OS_dispatch_queue> *_readChannelQueue;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;

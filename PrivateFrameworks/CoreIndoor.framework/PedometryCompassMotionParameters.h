@@ -13,9 +13,9 @@
     float _walkMore;
 }
 
-@property bool hasNotWalkingVariancePerAxisPerSecond;
-@property bool hasTimeheadingAverageChangeDirectionRate;
-@property bool hasWalkMore;
+@property BOOL hasNotWalkingVariancePerAxisPerSecond;
+@property BOOL hasTimeheadingAverageChangeDirectionRate;
+@property BOOL hasWalkMore;
 @property float notWalkingVariancePerAxisPerSecond;
 @property float timeheadingAverageChangeDirectionRate;
 @property float walkMore;
@@ -24,17 +24,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasNotWalkingVariancePerAxisPerSecond;
-- (bool)hasTimeheadingAverageChangeDirectionRate;
-- (bool)hasWalkMore;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasNotWalkingVariancePerAxisPerSecond;
+- (BOOL)hasTimeheadingAverageChangeDirectionRate;
+- (BOOL)hasWalkMore;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (float)notWalkingVariancePerAxisPerSecond;
-- (bool)readFrom:(id)arg1;
-- (void)setHasNotWalkingVariancePerAxisPerSecond:(bool)arg1;
-- (void)setHasTimeheadingAverageChangeDirectionRate:(bool)arg1;
-- (void)setHasWalkMore:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasNotWalkingVariancePerAxisPerSecond:(BOOL)arg1;
+- (void)setHasTimeheadingAverageChangeDirectionRate:(BOOL)arg1;
+- (void)setHasWalkMore:(BOOL)arg1;
 - (void)setNotWalkingVariancePerAxisPerSecond:(float)arg1;
 - (void)setTimeheadingAverageChangeDirectionRate:(float)arg1;
 - (void)setWalkMore:(float)arg1;

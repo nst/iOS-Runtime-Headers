@@ -8,6 +8,6 @@
 + (Class)safeCategoryTargetClass;
 + (id)safeCategoryTargetClassName;
 
-- (void)setFlashlightOn:(bool)arg1;
+- (void)setFlashlightOn:(BOOL)arg1;
 
 @end

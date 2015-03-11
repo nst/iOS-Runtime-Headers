@@ -8,8 +8,8 @@
     UIDatePicker *_datePicker;
     NSString *_formatString;
     DOMHTMLInputElement *_inputElement;
-    bool_isTimeInput;
-    bool_shouldRemoveTimeZoneInformation;
+    BOOL _isTimeInput;
+    BOOL _shouldRemoveTimeZoneInformation;
 }
 
 @property(retain) UIDatePicker * _datePicker;
@@ -22,12 +22,12 @@
 - (id)_datePicker;
 - (id)_inputElement;
 - (id)_sanitizeInputValueForFormatter:(id)arg1;
-- (long long)_timeZoneOffsetFromGMT:(id)arg1;
+- (int)_timeZoneOffsetFromGMT:(id)arg1;
 - (void)controlBeginEditing;
 - (void)controlEndEditing;
 - (id)controlView;
 - (void)dealloc;
-- (id)initWithDOMHTMLInputElement:(id)arg1 datePickerMode:(long long)arg2;
+- (id)initWithDOMHTMLInputElement:(id)arg1 datePickerMode:(int)arg2;
 - (void)set_datePicker:(id)arg1;
 - (void)set_inputElement:(id)arg1;
 

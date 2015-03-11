@@ -25,7 +25,7 @@
 - (void)_handleUIAppCheckIn:(id)arg1 forClient:(id)arg2;
 - (id)_stringFromMessage:(id)arg1 key:(char *)arg2;
 - (void)dealloc;
-- (bool)ping;
+- (BOOL)ping;
 - (Class)queue_classForNewClientConnection:(id)arg1;
 - (void)queue_clientAdded:(id)arg1;
 - (void)queue_clientRemoved:(id)arg1;

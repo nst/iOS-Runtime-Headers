@@ -22,7 +22,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSXPCListenerEndpoint * endpoint;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) id notify;
 @property(retain) NSMutableArray * pendingReplies;
 @property(copy) id periodic;
@@ -33,7 +33,7 @@
 - (void).cxx_destruct;
 - (id)cancel;
 - (id)endpoint;
-- (id)initWithName:(id)arg1 anonymous:(bool)arg2;
+- (id)initWithName:(id)arg1 anonymous:(BOOL)arg2;
 - (id)notify;
 - (id)pendingReplies;
 - (id)periodic;

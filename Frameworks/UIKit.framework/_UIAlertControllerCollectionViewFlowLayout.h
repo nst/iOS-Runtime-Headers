@@ -3,28 +3,28 @@
  */
 
 @interface _UIAlertControllerCollectionViewFlowLayout : UICollectionViewFlowLayout {
-    double _alignedDescriptiveLabelTextWidth;
-    bool_hideSeparators;
-    bool_shouldRoundFirstCell;
+    float _alignedDescriptiveLabelTextWidth;
+    BOOL _hideSeparators;
+    BOOL _shouldRoundFirstCell;
 }
 
-@property double alignedDescriptiveLabelTextWidth;
-@property bool hideSeparators;
-@property bool shouldRoundFirstCell;
+@property float alignedDescriptiveLabelTextWidth;
+@property BOOL hideSeparators;
+@property BOOL shouldRoundFirstCell;
 
 + (Class)layoutAttributesClass;
 
-- (bool)_collectionViewIsLayingOutHorizontallyWithCellHeight:(double)arg1;
-- (double)_decorationDimension;
+- (BOOL)_collectionViewIsLayingOutHorizontallyWithCellHeight:(float)arg1;
+- (float)_decorationDimension;
 - (id)_topDecorationViewLayoutAttributesAtIndexPath:(id)arg1;
-- (double)alignedDescriptiveLabelTextWidth;
-- (bool)hideSeparators;
+- (float)alignedDescriptiveLabelTextWidth;
+- (BOOL)hideSeparators;
 - (id)init;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setAlignedDescriptiveLabelTextWidth:(double)arg1;
-- (void)setHideSeparators:(bool)arg1;
-- (void)setShouldRoundFirstCell:(bool)arg1;
-- (bool)shouldRoundFirstCell;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAlignedDescriptiveLabelTextWidth:(float)arg1;
+- (void)setHideSeparators:(BOOL)arg1;
+- (void)setShouldRoundFirstCell:(BOOL)arg1;
+- (BOOL)shouldRoundFirstCell;
 
 @end

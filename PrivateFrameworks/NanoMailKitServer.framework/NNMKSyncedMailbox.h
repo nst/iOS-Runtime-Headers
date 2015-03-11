@@ -7,13 +7,13 @@
 @interface NNMKSyncedMailbox : NSObject {
     NSString *_accountId;
     NSString *_customName;
-    unsigned long long _type;
+    unsigned int _type;
     NSURL *_url;
 }
 
 @property(retain) NSString * accountId;
 @property(retain) NSString * customName;
-@property unsigned long long type;
+@property unsigned int type;
 @property(retain) NSURL * url;
 
 - (void).cxx_destruct;
@@ -22,9 +22,9 @@
 - (id)init;
 - (void)setAccountId:(id)arg1;
 - (void)setCustomName:(id)arg1;
-- (void)setType:(unsigned long long)arg1;
+- (void)setType:(unsigned int)arg1;
 - (void)setUrl:(id)arg1;
-- (unsigned long long)type;
+- (unsigned int)type;
 - (id)url;
 
 @end

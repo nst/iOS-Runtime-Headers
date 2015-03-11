@@ -8,7 +8,7 @@
     AFLocation *_searchResults;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithLocation:(id)arg1;

@@ -8,7 +8,7 @@
     int _absoluteOrder;
     NSURL *_priorOrderedURL;
     NSSet *_propertiesToSet;
-    bool_sendOrder;
+    BOOL _sendOrder;
 }
 
 @property int absoluteOrder;

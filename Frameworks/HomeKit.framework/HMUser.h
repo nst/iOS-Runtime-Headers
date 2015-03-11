@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * name;
 @property(retain) NSUUID * uuid;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)configure:(id)arg1;

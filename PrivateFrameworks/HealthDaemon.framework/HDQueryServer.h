@@ -8,13 +8,13 @@
     <NSXPCProxyCreating> *_clientProxy;
     <HDHealthDaemon> *_daemon;
     <HDQueryServerDelegate> *_delegate;
+    BOOL _didEndActivationTransaction;
     _HKFilter *_filter;
     NSObject<OS_dispatch_queue> *_queryQueue;
-    long long _queryState;
+    int _queryState;
     NSUUID *_queryUUID;
     HKSampleType *_sampleType;
     int _shouldDeactivate;
-    bool_didEndActivationTransaction;
 }
 
 @property(readonly) <NSXPCProxyCreating> * clientProxy;
@@ -23,36 +23,36 @@
 @property(readonly) <HDQueryServerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) _HKFilter * filter;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSObject<OS_dispatch_queue> * queryQueue;
-@property long long queryState;
+@property int queryState;
 @property(readonly) NSUUID * queryUUID;
 @property(readonly) HKSampleType * sampleType;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_activationTransactionString;
-- (bool)_isAuthorizedToReadType:(id)arg1 withRestrictedSourceIdentifier:(id*)arg2;
-- (void)_pauseServerValidate:(bool)arg1 withCompletion:(id)arg2;
+- (BOOL)_isAuthorizedToReadType:(id)arg1 withRestrictedSourceIdentifier:(id*)arg2;
+- (void)_pauseServerValidate:(BOOL)arg1 withCompletion:(id)arg2;
 - (id)_predicateString;
 - (id)_queryStateString;
 - (void)_queue_closeActivationTransactionIfNecessary;
 - (void)_queue_start;
 - (void)_queue_startQueryIfNecessary;
 - (void)_queue_stop;
-- (void)_queue_transitionToDisabledState:(long long)arg1;
+- (void)_queue_transitionToDisabledState:(int)arg1;
 - (void)_queue_transitionToPaused;
 - (void)_queue_transitionToStarted;
 - (void)_queue_transitionToStopped;
-- (bool)_queue_validateConfiguration:(id*)arg1;
+- (BOOL)_queue_validateConfiguration:(id*)arg1;
 - (void)_scheduleStartQuery;
-- (bool)_shouldExecuteWhenProtectedDataIsUnavailable;
-- (bool)_shouldListenForUpdates;
-- (bool)_shouldStopProcessingQuery;
+- (BOOL)_shouldExecuteWhenProtectedDataIsUnavailable;
+- (BOOL)_shouldListenForUpdates;
+- (BOOL)_shouldStopProcessingQuery;
 - (void)activateServerWithCompletion:(id)arg1;
 - (id)clientProxy;
 - (id)daemon;
-- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(bool)arg2;
+- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(BOOL)arg2;
 - (void)deactivateServer;
 - (void)deactivateServerWithCompletion:(id)arg1;
 - (id)delegate;
@@ -63,7 +63,7 @@
 - (void)pauseServer;
 - (void)pauseServerValidateWithCompletion:(id)arg1;
 - (id)queryQueue;
-- (long long)queryState;
+- (int)queryState;
 - (id)queryUUID;
 - (void)resumeServer;
 - (id)sampleAuthorizationFilter;
@@ -72,6 +72,6 @@
 - (void)samplesOfTypeWereRemoved:(id)arg1;
 - (void)scheduleDatabaseAccessOnQueueWithBlock:(id)arg1;
 - (void)setQueryQueue:(id)arg1;
-- (void)setQueryState:(long long)arg1;
+- (void)setQueryState:(int)arg1;
 
 @end

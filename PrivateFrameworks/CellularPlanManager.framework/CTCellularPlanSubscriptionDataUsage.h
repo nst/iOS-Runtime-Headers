@@ -14,7 +14,7 @@
 @property(readonly) NSString * dataCategory;
 @property(readonly) double dataUsed;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)dataCapacity;

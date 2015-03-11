@@ -15,19 +15,19 @@
     _GCControllerButtonInput *_button3;
     GCController *_controller;
     _GCControllerDirectionPad *_dpad;
+    BOOL _dpadFlippedY;
     _GCControllerButtonInput *_leftShoulder;
     _GCControllerButtonInput *_rightShoulder;
     id _valueChangedHandler;
-    bool_dpadFlippedY;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSString * name;
 @property(readonly) Class superclass;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)buttonA;
@@ -39,13 +39,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithController:(id)arg1 dpadFlippedY:(bool)arg2;
+- (id)initWithController:(id)arg1 dpadFlippedY:(BOOL)arg2;
 - (id)initWithController:(id)arg1;
 - (id)leftShoulder;
 - (id)name;
 - (id)rightShoulder;
 - (void)setController:(id)arg1;
-- (void)setPlayerIndex:(long long)arg1;
+- (void)setPlayerIndex:(int)arg1;
 - (void)setValueChangedHandler:(id)arg1;
 - (id)valueChangedHandler;
 

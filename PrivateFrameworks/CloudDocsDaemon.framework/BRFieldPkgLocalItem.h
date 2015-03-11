@@ -17,8 +17,8 @@
 
 @property long long fileID;
 @property unsigned int generationID;
-@property bool hasGenerationID;
-@property bool hasSize;
+@property BOOL hasGenerationID;
+@property BOOL hasSize;
 @property(retain) BRFieldPkgItem * item;
 @property long long size;
 
@@ -30,16 +30,16 @@
 - (id)dictionaryRepresentation;
 - (long long)fileID;
 - (unsigned int)generationID;
-- (bool)hasGenerationID;
-- (bool)hasSize;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasGenerationID;
+- (BOOL)hasSize;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)item;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setFileID:(long long)arg1;
 - (void)setGenerationID:(unsigned int)arg1;
-- (void)setHasGenerationID:(bool)arg1;
-- (void)setHasSize:(bool)arg1;
+- (void)setHasGenerationID:(BOOL)arg1;
+- (void)setHasSize:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setSize:(long long)arg1;
 - (long long)size;

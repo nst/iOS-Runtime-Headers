@@ -6,14 +6,14 @@
 
 @interface STMapItem : AFSiriModelObject {
     NSNumber *_businessID;
+    BOOL _isCurrentLocation;
     NSNumber *_localSearchProviderID;
     CLLocation *_location;
     NSData *_placeData;
     NSString *_title;
-    bool_isCurrentLocation;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (Class)_aceCollectionClass;

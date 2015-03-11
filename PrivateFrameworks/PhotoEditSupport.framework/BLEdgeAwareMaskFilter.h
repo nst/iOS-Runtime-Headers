@@ -25,11 +25,11 @@
 
 - (void).cxx_destruct;
 - (id)cubeData;
-- (unsigned long long)dataLength;
+- (unsigned long)dataLength;
 - (void)dealloc;
 - (id)init;
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; })inputColor;
-- (bool)isDataUpToDate;
+- (BOOL)isDataUpToDate;
 - (void)labFromRed:(float)arg1 green:(float)arg2 blue:(float)arg3 lunminance:(float*)arg4 a:(float*)arg5 b:(float*)arg6;
 - (id)outputImage;
 - (void)setInputColor:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; })arg1;

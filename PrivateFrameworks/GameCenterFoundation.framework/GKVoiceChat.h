@@ -16,7 +16,7 @@
     NSArray *_players;
 }
 
-@property(getter=isActive) bool active;
+@property(getter=isActive) BOOL active;
 @property(retain) GKSession * gkSession;
 @property(retain) GKVoiceChatSession * gkVoiceChatSession;
 @property(copy,readonly) NSString * name;
@@ -25,24 +25,24 @@
 @property(retain) NSArray * players;
 @property float volume;
 
-+ (bool)isVoIPAllowed;
++ (BOOL)isVoIPAllowed;
 
 - (void)dealloc;
 - (id)gkSession;
-- (void)gkVoiceChatSession:(id)arg1 stateUpdate:(unsigned long long)arg2 forPeer:(id)arg3;
+- (void)gkVoiceChatSession:(id)arg1 stateUpdate:(unsigned int)arg2 forPeer:(id)arg3;
 - (id)gkVoiceChatSession;
 - (id)initChat:(id)arg1 withSession:(id)arg2 players:(id)arg3;
-- (bool)isActive;
+- (BOOL)isActive;
 - (id)name;
 - (id)playerIDs;
 - (id)playerStateUpdateHandler;
 - (id)playerVoiceChatStateDidChangeHandler;
 - (id)players;
-- (void)setActive:(bool)arg1;
+- (void)setActive:(BOOL)arg1;
 - (void)setGkSession:(id)arg1;
 - (void)setGkVoiceChatSession:(id)arg1;
-- (void)setLegacyMute:(bool)arg1 forPlayer:(id)arg2;
-- (void)setPlayer:(id)arg1 muted:(bool)arg2;
+- (void)setLegacyMute:(BOOL)arg1 forPlayer:(id)arg2;
+- (void)setPlayer:(id)arg1 muted:(BOOL)arg2;
 - (void)setPlayerStateUpdateHandler:(id)arg1;
 - (void)setPlayerVoiceChatStateDidChangeHandler:(id)arg1;
 - (void)setPlayers:(id)arg1;

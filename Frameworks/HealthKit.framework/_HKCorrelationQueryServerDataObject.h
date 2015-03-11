@@ -6,20 +6,20 @@
 
 @interface _HKCorrelationQueryServerDataObject : _HKQueryServerDataObject {
     NSDictionary *_filterDictionary;
-    long long _version;
+    int _version;
 }
 
 @property(retain) NSDictionary * filterDictionary;
-@property long long version;
+@property int version;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)filterDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)setFilterDictionary:(id)arg1;
-- (void)setVersion:(long long)arg1;
-- (long long)version;
+- (void)setVersion:(int)arg1;
+- (int)version;
 
 @end

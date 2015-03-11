@@ -8,13 +8,13 @@
     PHAdjustmentData *_adjustmentData;
     NSData *_baseImageData;
     NSData *_imageData;
-    long long _workImageVersion;
+    int _workImageVersion;
 }
 
 @property(retain) PHAdjustmentData * adjustmentData;
 @property(retain) NSData * baseImageData;
 @property(retain) NSData * imageData;
-@property long long workImageVersion;
+@property int workImageVersion;
 
 - (void).cxx_destruct;
 - (id)_copyData:(id)arg1;
@@ -24,7 +24,7 @@
 - (void)setAdjustmentData:(id)arg1;
 - (void)setBaseImageData:(id)arg1;
 - (void)setImageData:(id)arg1;
-- (void)setWorkImageVersion:(long long)arg1;
-- (long long)workImageVersion;
+- (void)setWorkImageVersion:(int)arg1;
+- (int)workImageVersion;
 
 @end

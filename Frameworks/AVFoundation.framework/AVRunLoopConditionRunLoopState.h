@@ -5,12 +5,12 @@
 @interface AVRunLoopConditionRunLoopState : NSObject {
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_signalSource;
-    bool_signaled;
+    BOOL _signaled;
 }
 
 @property(readonly) struct __CFRunLoop { }* runLoop;
 @property struct __CFRunLoopSource { }* signalSource;
-@property bool signaled;
+@property BOOL signaled;
 
 + (id)runLoopStateWithRunLoop:(struct __CFRunLoop { }*)arg1;
 
@@ -18,8 +18,8 @@
 - (id)initWithRunLoop:(struct __CFRunLoop { }*)arg1;
 - (struct __CFRunLoop { }*)runLoop;
 - (void)setSignalSource:(struct __CFRunLoopSource { }*)arg1;
-- (void)setSignaled:(bool)arg1;
+- (void)setSignaled:(BOOL)arg1;
 - (struct __CFRunLoopSource { }*)signalSource;
-- (bool)signaled;
+- (BOOL)signaled;
 
 @end

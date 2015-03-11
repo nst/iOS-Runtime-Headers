@@ -9,16 +9,16 @@
     NSMutableDictionary *_bookmarksMap;
     NSMutableArray *_history;
     NSMutableDictionary *_historyMap;
+    BOOL _inUpdate;
     NSMutableArray *_pins;
     NSMutableDictionary *_pinsMap;
     NSObject<OS_dispatch_queue> *_saveQueue;
     SYStore *_store;
-    bool_inUpdate;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -61,7 +61,7 @@
 - (void)syncStoreDidCompleteFullSync:(id)arg1;
 - (void)syncStoreDidUpdate:(id)arg1;
 - (void)syncStoreEnqueuedAllFullSyncMessages:(id)arg1 context:(id)arg2;
-- (void)syncStoreWillUpdate:(id)arg1 objectCount:(unsigned long long)arg2;
+- (void)syncStoreWillUpdate:(id)arg1 objectCount:(unsigned int)arg2;
 - (void)syncStoreWillUpdate:(id)arg1;
 - (void)transaction:(id)arg1;
 - (void)updateBookmark:(id)arg1 transaction:(id)arg2;

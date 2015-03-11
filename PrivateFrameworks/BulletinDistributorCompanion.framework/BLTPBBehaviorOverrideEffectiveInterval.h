@@ -16,10 +16,10 @@
 
 @property(retain) NSString * calendarIdentifier;
 @property(retain) BLTPBDateComponents * endComponents;
-@property(readonly) bool hasCalendarIdentifier;
-@property(readonly) bool hasEndComponents;
-@property bool hasRepeatInterval;
-@property(readonly) bool hasStartComponents;
+@property(readonly) BOOL hasCalendarIdentifier;
+@property(readonly) BOOL hasEndComponents;
+@property BOOL hasRepeatInterval;
+@property(readonly) BOOL hasStartComponents;
 @property int repeatInterval;
 @property(retain) BLTPBDateComponents * startComponents;
 
@@ -30,18 +30,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)endComponents;
-- (bool)hasCalendarIdentifier;
-- (bool)hasEndComponents;
-- (bool)hasRepeatInterval;
-- (bool)hasStartComponents;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCalendarIdentifier;
+- (BOOL)hasEndComponents;
+- (BOOL)hasRepeatInterval;
+- (BOOL)hasStartComponents;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (int)repeatInterval;
 - (void)setCalendarIdentifier:(id)arg1;
 - (void)setEndComponents:(id)arg1;
-- (void)setHasRepeatInterval:(bool)arg1;
+- (void)setHasRepeatInterval:(BOOL)arg1;
 - (void)setRepeatInterval:(int)arg1;
 - (void)setStartComponents:(id)arg1;
 - (id)startComponents;

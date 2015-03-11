@@ -17,7 +17,7 @@
 
 + (id)customAttributes;
 
-- (bool)_checkInputs;
+- (BOOL)_checkInputs;
 - (id)_kernel;
 - (id)cubeImage;
 - (void)dealloc;

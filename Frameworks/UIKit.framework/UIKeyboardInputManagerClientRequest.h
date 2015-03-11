@@ -5,19 +5,19 @@
 @class NSInvocation;
 
 @interface UIKeyboardInputManagerClientRequest : NSObject {
-    unsigned long long _errorCount;
+    unsigned int _errorCount;
     NSInvocation *_invocation;
 }
 
-@property unsigned long long errorCount;
+@property unsigned int errorCount;
 @property(readonly) NSInvocation * invocation;
 
-+ (id)untargetedInvocationWithInvocation:(id)arg1 withCompletion:(bool)arg2;
++ (id)untargetedInvocationWithInvocation:(id)arg1 withCompletion:(BOOL)arg2;
 
 - (void)dealloc;
-- (unsigned long long)errorCount;
+- (unsigned int)errorCount;
 - (id)initWithInvocation:(id)arg1;
 - (id)invocation;
-- (void)setErrorCount:(unsigned long long)arg1;
+- (void)setErrorCount:(unsigned int)arg1;
 
 @end

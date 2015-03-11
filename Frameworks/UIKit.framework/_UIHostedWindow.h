@@ -5,32 +5,32 @@
 @class _UIHostedWindowHostingHandle;
 
 @interface _UIHostedWindow : UIWindow {
-    long long _hostTintAdjustmentMode;
+    int _hostTintAdjustmentMode;
 }
 
-@property(setter=_setHostTintAdjustmentMode:) long long _hostTintAdjustmentMode;
+@property(setter=_setHostTintAdjustmentMode:) int _hostTintAdjustmentMode;
 @property(readonly) _UIHostedWindowHostingHandle * hostingHandle;
 
-- (bool)_canPromoteFromKeyWindowStack;
+- (BOOL)_canPromoteFromKeyWindowStack;
 - (void)_configureContextOptions:(id)arg1;
-- (long long)_defaultTintAdjustmentMode;
-- (long long)_hostTintAdjustmentMode;
-- (bool)_isClippedByScreenJail;
-- (bool)_isConstrainedByScreenJail;
-- (bool)_isOffsetByScreenJail;
-- (bool)_isRotatedByScreenJail;
-- (bool)_isScaledByScreenJail;
-- (bool)_isWindowServerHostingManaged;
-- (bool)_needsShakesWhenInactive;
-- (bool)_presentActionSheet:(id)arg1 inView:(id)arg2 fromYCoordinate:(double)arg3;
+- (int)_defaultTintAdjustmentMode;
+- (int)_hostTintAdjustmentMode;
+- (BOOL)_isClippedByScreenJail;
+- (BOOL)_isConstrainedByScreenJail;
+- (BOOL)_isOffsetByScreenJail;
+- (BOOL)_isRotatedByScreenJail;
+- (BOOL)_isScaledByScreenJail;
+- (BOOL)_isWindowServerHostingManaged;
+- (BOOL)_needsShakesWhenInactive;
+- (BOOL)_presentActionSheet:(id)arg1 inView:(id)arg2 fromYCoordinate:(float)arg3;
 - (void)_registerScrollToTopView:(id)arg1;
-- (void)_setHostTintAdjustmentMode:(long long)arg1;
+- (void)_setHostTintAdjustmentMode:(int)arg1;
 - (void)_unregisterScrollToTopView:(id)arg1;
 - (void)_updateAppTintView;
 - (void)_updateTransformLayerForClassicPresentation;
-- (bool)_usesWindowServerHitTesting;
+- (BOOL)_usesWindowServerHitTesting;
 - (unsigned int)contextID;
 - (id)hostingHandle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

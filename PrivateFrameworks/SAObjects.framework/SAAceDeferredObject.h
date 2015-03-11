@@ -12,7 +12,7 @@
 @property(copy) NSArray * callbacks;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * key;
 @property(copy) NSString * refId;
 @property(readonly) Class superclass;
@@ -26,7 +26,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)key;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setAppId:(id)arg1;
 - (void)setCallbacks:(id)arg1;
 - (void)setKey:(id)arg1;

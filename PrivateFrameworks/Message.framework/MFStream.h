@@ -10,26 +10,26 @@
 
 @interface MFStream : NSObject <NSStreamDelegate> {
     char *_buffer;
-    unsigned long long _bytesRead;
-    unsigned long long _bytesWritten;
+    unsigned int _bytesRead;
+    unsigned int _bytesWritten;
     id _callback;
-    unsigned long long _capacity;
+    unsigned long _capacity;
+    BOOL _dispatchedBytesAvailable;
+    BOOL _enableThroughputMonitoring;
     NSError *_error;
-    unsigned long long _length;
+    unsigned long _length;
     NSObject<OS_dispatch_queue> *_location;
     NSMutableDictionary *_properties;
     NSInputStream *_rStream;
+    BOOL _streamCanRead;
+    BOOL _streamCanWrite;
     NSOutputStream *_wStream;
-    bool_dispatchedBytesAvailable;
-    bool_enableThroughputMonitoring;
-    bool_streamCanRead;
-    bool_streamCanWrite;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool isOpen;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL isOpen;
 @property(readonly) NSError * streamError;
 @property(readonly) Class superclass;
 
@@ -42,16 +42,16 @@
 - (void)_readBytesFromStream;
 - (void)close;
 - (void)dealloc;
-- (void)enableThroughputMonitoring:(bool)arg1;
+- (void)enableThroughputMonitoring:(BOOL)arg1;
 - (id)init;
 - (id)initCallBack:(id)arg1 onDispatchQueue:(id)arg2;
-- (bool)isOpen;
-- (void)openToHostName:(id)arg1 port:(long long)arg2;
+- (BOOL)isOpen;
+- (void)openToHostName:(id)arg1 port:(int)arg2;
 - (id)propertyForKey:(id)arg1;
-- (long long)read:(char *)arg1 maxLength:(unsigned long long)arg2;
-- (bool)setProperty:(id)arg1 forKey:(id)arg2;
-- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (id)streamError;
-- (long long)write:(const char *)arg1 maxLength:(unsigned long long)arg2;
+- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 
 @end

@@ -12,11 +12,11 @@
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMessage:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToMessageDigest:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToMessageDigest:(id)arg1;
 - (id)messageDigest;
 - (void)setMessageDigest:(id)arg1;
 

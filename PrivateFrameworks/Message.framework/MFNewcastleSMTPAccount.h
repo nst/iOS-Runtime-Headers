@@ -17,6 +17,6 @@
 - (id)displayHostname;
 - (id)mailAccountIfAvailable;
 - (void)setCastleAccount:(id)arg1;
-- (bool)shouldUseAuthentication;
+- (BOOL)shouldUseAuthentication;
 
 @end

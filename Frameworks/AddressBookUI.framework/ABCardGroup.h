@@ -7,32 +7,32 @@
 @interface ABCardGroup : NSObject <NSCopying> {
     NSArray *_actionItems;
     NSMutableArray *_actions;
+    BOOL _addSpacerFromPreviousGroup;
     CNContact *_contact;
     NSMutableArray *_items;
     NSString *_title;
-    bool_addSpacerFromPreviousGroup;
-    bool_useSplitActions;
+    BOOL _useSplitActions;
 }
 
 @property(readonly) NSArray * actionItems;
 @property(readonly) NSArray * actions;
-@property bool addSpacerFromPreviousGroup;
+@property BOOL addSpacerFromPreviousGroup;
 @property(retain) CNContact * contact;
 @property(readonly) NSArray * displayItems;
 @property(readonly) NSArray * editingItems;
 @property(readonly) NSString * title;
-@property bool useSplitActions;
+@property BOOL useSplitActions;
 
 + (id)groupForContact:(id)arg1;
 
 - (id)_loadActionItems;
 - (id)actionItems;
 - (id)actions;
-- (void)addAction:(id)arg1 withTitle:(id)arg2 color:(id)arg3 transportType:(long long)arg4;
+- (void)addAction:(id)arg1 withTitle:(id)arg2 color:(id)arg3 transportType:(int)arg4;
 - (void)addAction:(id)arg1 withTitle:(id)arg2;
-- (id)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 destructive:(bool)arg4;
+- (id)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 destructive:(BOOL)arg4;
 - (id)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
-- (bool)addSpacerFromPreviousGroup;
+- (BOOL)addSpacerFromPreviousGroup;
 - (id)contact;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -42,10 +42,10 @@
 - (id)initWithContact:(id)arg1;
 - (void)removeActionWithTarget:(id)arg1 selector:(SEL)arg2;
 - (void)removeActionWithTitle:(id)arg1;
-- (void)setAddSpacerFromPreviousGroup:(bool)arg1;
+- (void)setAddSpacerFromPreviousGroup:(BOOL)arg1;
 - (void)setContact:(id)arg1;
-- (void)setUseSplitActions:(bool)arg1;
+- (void)setUseSplitActions:(BOOL)arg1;
 - (id)title;
-- (bool)useSplitActions;
+- (BOOL)useSplitActions;
 
 @end

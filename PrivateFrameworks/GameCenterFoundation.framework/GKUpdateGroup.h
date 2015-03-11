@@ -19,7 +19,7 @@
 @property(retain) NSString * name;
 @property(retain) NSMutableArray * notifiers;
 @property NSObject<OS_dispatch_queue> * targetQueue;
-@property(readonly) long long updateCount;
+@property(readonly) int updateCount;
 
 + (id)updateGroup;
 + (id)updateGroupForTargetQueue:(id)arg1;
@@ -45,7 +45,7 @@
 - (void)setNotifiers:(id)arg1;
 - (void)setTargetQueue:(id)arg1;
 - (id)targetQueue;
-- (long long)updateCount;
+- (int)updateCount;
 - (void)wait;
 
 @end

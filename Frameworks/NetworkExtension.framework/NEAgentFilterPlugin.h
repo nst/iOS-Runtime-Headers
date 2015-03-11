@@ -24,6 +24,7 @@
     id _browserDataHandler;
     struct __CFDictionary { } *_browserFlows;
     id _browserNewFlowHandler;
+    BOOL _builtInPlugin;
     void *_clientInfo;
     NSObject<OS_xpc_object> *_clientListener;
     NSObject<OS_dispatch_queue> *_clientQueue;
@@ -35,21 +36,20 @@
     struct __CFBundle { } *_pluginBundle;
     } _pluginCallbacks;
     void *_pluginInfo;
+    BOOL _pluginInitialized;
     NEPluginPreferences *_pluginPrefs;
     NSString *_pluginType;
     NSObject<OS_dispatch_queue> *_queue;
     NEAgentServer *_server;
     struct NESocketContentFilter_s { } *_socketContentFilter;
-    bool_builtInPlugin;
-    bool_pluginInitialized;
 }
 
-@property(readonly) bool builtInPlugin;
+@property(readonly) BOOL builtInPlugin;
 @property(retain) NSObject<OS_xpc_object> * clientListener;
 @property(retain) NSUUID * configID;
 @property int outstandingSetDataOps;
 @property int outstandingSetGlobalDataOps;
-@property bool pluginInitialized;
+@property BOOL pluginInitialized;
 @property(retain) NEPluginPreferences * pluginPrefs;
 @property(readonly) NSString * pluginType;
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
@@ -57,12 +57,12 @@
 
 - (void).cxx_destruct;
 - (void)acceptNewClientConnection:(id)arg1;
-- (bool)builtInPlugin;
+- (BOOL)builtInPlugin;
 - (void)cleanup;
 - (id)clientListener;
 - (void)closeBrowserFilterFlow:(struct NEContentFilterFlow_s { }*)arg1 forUUID:(struct __CFUUID { }*)arg2;
 - (id)configID;
-- (struct __CFDictionary { }*)copyPersistentDataOfType:(long long)arg1;
+- (struct __CFDictionary { }*)copyPersistentDataOfType:(long)arg1;
 - (struct NESocketContentFilter_s { }*)copySocketContentFilter;
 - (void)handleAddClientMessage:(id)arg1;
 - (void)handleAddDataMessage:(id)arg1 forConnection:(id)arg2;
@@ -70,7 +70,7 @@
 - (void)handleDataCompleteMessage:(id)arg1 forConnection:(id)arg2;
 - (void)handleDisposeWithCompletionHandler:(id)arg1;
 - (void)handleEnvironmentEvent:(id)arg1;
-- (bool)handleInit;
+- (BOOL)handleInit;
 - (void)handleInitMessage:(id)arg1;
 - (void)handleMessage:(id)arg1 withOuterMessage:(id)arg2;
 - (void)handleNewFlowMessage:(id)arg1 forConnection:(id)arg2;
@@ -79,22 +79,22 @@
 - (id)initWithServer:(id)arg1 pluginType:(id)arg2 primaryPluginType:(id)arg3 pluginBundle:(struct __CFBundle { }*)arg4;
 - (int)outstandingSetDataOps;
 - (int)outstandingSetGlobalDataOps;
-- (bool)pluginInitialized;
+- (BOOL)pluginInitialized;
 - (id)pluginPrefs;
 - (id)pluginType;
 - (id)queue;
 - (void)sendBrowserContentFilterServerRequest;
-- (void)sendEnvironmentEventComplete:(long long)arg1;
-- (bool)sendSetPersistentData:(struct __CFDictionary { }*)arg1 ofType:(long long)arg2;
-- (bool)sendSocketContentFilterRequestWithCompletionHandler:(id)arg1;
-- (void)sendStatus:(long long)arg1 withError:(long long)arg2;
+- (void)sendEnvironmentEventComplete:(long)arg1;
+- (BOOL)sendSetPersistentData:(struct __CFDictionary { }*)arg1 ofType:(long)arg2;
+- (BOOL)sendSocketContentFilterRequestWithCompletionHandler:(id)arg1;
+- (void)sendStatus:(long)arg1 withError:(long)arg2;
 - (id)server;
 - (void)setBrowserNewFlowHandler:(id)arg1 dataHandler:(id)arg2 dataCompleteHandler:(id)arg3 clientQueue:(id)arg4 andClientInfo:(void*)arg5;
 - (void)setClientListener:(id)arg1;
 - (void)setConfigID:(id)arg1;
 - (void)setOutstandingSetDataOps:(int)arg1;
 - (void)setOutstandingSetGlobalDataOps:(int)arg1;
-- (void)setPluginInitialized:(bool)arg1;
+- (void)setPluginInitialized:(BOOL)arg1;
 - (void)setPluginPrefs:(id)arg1;
 
 @end

@@ -5,13 +5,13 @@
 @class CKConversation, NSMutableArray;
 
 @interface CKConversationList : NSObject {
+    BOOL _loadedConversations;
+    BOOL _loadingConversations;
     CKConversation *_pendingConversation;
     NSMutableArray *_trackedConversations;
-    bool_loadedConversations;
-    bool_loadingConversations;
 }
 
-@property(readonly) bool loadingConversations;
+@property(readonly) BOOL loadingConversations;
 @property(retain) CKConversation * pendingConversation;
 
 + (void)_handleRegistryDidLoadNotification:(id)arg1;
@@ -29,23 +29,23 @@
 - (void)_handleRegistryDidRegisterChatNotification:(id)arg1;
 - (void)_handleRegistryWillUnregisterChatNotification:(id)arg1;
 - (void)_postConversationListChangedNotification;
-- (bool)_shouldFilterForParticipants:(id)arg1;
+- (BOOL)_shouldFilterForParticipants:(id)arg1;
 - (id)activeConversations;
 - (void)beginTrackingConversation:(id)arg1 forChat:(id)arg2;
 - (id)conversationForExistingChat:(id)arg1;
 - (id)conversationForExistingChatWithGUID:(id)arg1;
 - (id)conversationForExistingChatWithGroupID:(id)arg1;
-- (id)conversationForHandles:(id)arg1 create:(bool)arg2;
-- (id)conversationForHandles:(id)arg1 displayName:(id)arg2 joinedChatsOnly:(bool)arg3 create:(bool)arg4;
+- (id)conversationForHandles:(id)arg1 create:(BOOL)arg2;
+- (id)conversationForHandles:(id)arg1 displayName:(id)arg2 joinedChatsOnly:(BOOL)arg3 create:(BOOL)arg4;
 - (id)conversations;
 - (void)dealloc;
 - (void)deleteConversation:(id)arg1;
 - (void)deleteConversationsAtIndexes:(id)arg1;
 - (id)description;
 - (id)firstUnreadFilteredConversationIgnoringMessages:(id)arg1;
-- (bool)hasActiveConversations;
+- (BOOL)hasActiveConversations;
 - (id)init;
-- (bool)loadingConversations;
+- (BOOL)loadingConversations;
 - (id)pendingConversation;
 - (id)pendingConversationCreatingIfNecessary;
 - (void)resetCaches;
@@ -55,8 +55,8 @@
 - (void)setPendingConversation:(id)arg1;
 - (void)stopTrackingConversation:(id)arg1;
 - (void)unpendConversation;
-- (long long)unreadCount;
-- (long long)unreadFilteredConversationCountIgnoringMessages:(id)arg1;
+- (int)unreadCount;
+- (int)unreadFilteredConversationCountIgnoringMessages:(id)arg1;
 - (id)unreadLastMessages;
 
 @end

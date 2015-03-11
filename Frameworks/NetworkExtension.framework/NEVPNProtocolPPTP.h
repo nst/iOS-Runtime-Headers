@@ -3,22 +3,22 @@
  */
 
 @interface NEVPNProtocolPPTP : NEVPNProtocolPPP {
-    long long _encryptionLevel;
+    int _encryptionLevel;
 }
 
-@property long long encryptionLevel;
+@property int encryptionLevel;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct __SCNetworkInterface { }*)createInterface;
 - (id)descriptionWithIndent:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)encryptionLevel;
+- (int)encryptionLevel;
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setEncryptionLevel:(long long)arg1;
+- (void)setEncryptionLevel:(int)arg1;
 
 @end

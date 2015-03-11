@@ -11,7 +11,7 @@
 @property UIResponder<UITextInput> * textView;
 
 - (void)invalidate;
-- (bool)isCloseToCaret;
+- (BOOL)isCloseToCaret;
 - (void)setTextView:(id)arg1;
 - (void)startTimer;
 - (id)textView;

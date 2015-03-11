@@ -5,21 +5,21 @@
 @interface FBWindowContext : NSObject {
     unsigned int _contextID;
     unsigned int _identifier;
-    double _level;
+    float _level;
 }
 
 @property(readonly) unsigned int identifier;
-@property(readonly) double level;
+@property(readonly) float level;
 
 + (id)contextWithFBSContext:(id)arg1;
-+ (id)contextWithID:(unsigned int)arg1 level:(double)arg2;
++ (id)contextWithID:(unsigned int)arg1 level:(float)arg2;
 
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (unsigned int)identifier;
 - (id)init;
-- (id)initWithContextID:(unsigned int)arg1 level:(double)arg2;
-- (bool)isEqual:(id)arg1;
-- (double)level;
+- (id)initWithContextID:(unsigned int)arg1 level:(float)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (float)level;
 
 @end

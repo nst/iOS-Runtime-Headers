@@ -5,6 +5,6 @@
 @interface TSUPointerKeyDictionary : TSUNoCopyDictionary {
 }
 
-- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 
 @end

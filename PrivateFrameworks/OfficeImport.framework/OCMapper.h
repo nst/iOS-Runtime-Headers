@@ -14,7 +14,7 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (bool)isCancelled;
+- (BOOL)isCancelled;
 - (void)quit;
 - (void)setup;
 - (void)teardown;

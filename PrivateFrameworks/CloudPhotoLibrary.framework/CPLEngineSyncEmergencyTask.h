@@ -11,9 +11,9 @@
 
 @property(retain) <CPLEngineSyncEmergencyTaskDelegate> * delegate;
 @property(retain) CPLEngineLibrary * engineLibrary;
-@property(readonly) unsigned long long priority;
+@property(readonly) unsigned int priority;
 
-+ (bool)shouldCoalesceTasks;
++ (BOOL)shouldCoalesceTasks;
 + (id)taskIdentifier;
 + (id)taskWithEngineLibrary:(id)arg1;
 
@@ -22,10 +22,10 @@
 - (id)engineLibrary;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)priority;
+- (unsigned int)priority;
 - (void)setEngineLibrary:(id)arg1;
-- (bool)shouldDiscardOnError;
-- (bool)shouldStopSyncSession;
+- (BOOL)shouldDiscardOnError;
+- (BOOL)shouldStopSyncSession;
 - (id)taskIdentifier;
 
 @end

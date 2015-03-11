@@ -11,16 +11,16 @@
     int _abRecordID;
     NSSet *_allValues;
     NSNumber *_emailAddressCount;
+    BOOL _hasImage;
+    BOOL _hasUnreadMessages;
     NSString *_initials;
     NSString *_name;
     NSNumber *_phoneNumberCount;
     NSString *_primaryDestination;
     double _unreadMessageIndicatorUpdateTime;
-    bool_hasImage;
-    bool_hasUnreadMessages;
 }
 
-@property(readonly) bool hasUnreadMessages;
+@property(readonly) BOOL hasUnreadMessages;
 
 + (id)_allEmailValuesForRecord:(void*)arg1;
 + (id)_allEmailValuesInSet:(id)arg1;
@@ -35,20 +35,20 @@
 - (float)_allValuesMatchScore:(id)arg1;
 - (void*)_bestRecordMatchFromDictionary:(id)arg1 addressBook:(void*)arg2;
 - (void)_postChangeNotification;
-- (void)_reconcile:(void*)arg1 canPostChangeNotification:(bool)arg2;
-- (id)_recordMatchDictionaryFromCFArray:(struct __CFArray { }*)arg1 followLinks:(bool)arg2 addressBook:(void*)arg3;
+- (void)_reconcile:(void*)arg1 canPostChangeNotification:(BOOL)arg2;
+- (id)_recordMatchDictionaryFromCFArray:(struct __CFArray { }*)arg1 followLinks:(BOOL)arg2 addressBook:(void*)arg3;
 - (id)abDatabaseUID;
 - (id)abRecordGUID;
 - (int)abRecordID;
 - (id)allValues;
 - (id)description;
-- (void)dictionaryRepresentation:(id*)arg1 isDirty:(bool*)arg2;
+- (void)dictionaryRepresentation:(id*)arg1 isDirty:(BOOL*)arg2;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (bool)hasEmailAddress;
-- (bool)hasImage;
-- (bool)hasPhoneNumber;
-- (bool)hasUnreadMessages;
+- (BOOL)hasEmailAddress;
+- (BOOL)hasImage;
+- (BOOL)hasPhoneNumber;
+- (BOOL)hasUnreadMessages;
 - (id)init;
 - (id)initWithABRecordGUID:(id)arg1 addressBook:(void*)arg2;
 - (id)initWithDestinations:(id)arg1 addressBook:(void*)arg2;
@@ -56,13 +56,13 @@
 - (id)initWithFavorite:(id)arg1 addressBook:(void*)arg2;
 - (id)initWithPerson:(void*)arg1;
 - (id)initials;
-- (bool)isEqualToDictionaryRepresentation:(id)arg1;
+- (BOOL)isEqualToDictionaryRepresentation:(id)arg1;
 - (id)key;
 - (void)makeClean;
 - (id)primaryDestination;
 - (void)refreshWithAddressBook:(void*)arg1;
 - (void)resetHasUnreadMessages;
-- (void)setHasUnreadMessages:(bool)arg1 forMessageSendTime:(double)arg2;
+- (void)setHasUnreadMessages:(BOOL)arg1 forMessageSendTime:(double)arg2;
 - (void)updateFromDictionaryRepresentation:(id)arg1;
 
 @end

@@ -13,9 +13,9 @@
     double _timestamp;
 }
 
-@property(readonly) bool hasJpegData;
-@property(readonly) bool hasOriginalDigest;
-@property bool hasTimestamp;
+@property(readonly) BOOL hasJpegData;
+@property(readonly) BOOL hasOriginalDigest;
+@property BOOL hasTimestamp;
 @property(retain) NSData * jpegData;
 @property(retain) NSData * originalDigest;
 @property double timestamp;
@@ -25,16 +25,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasJpegData;
-- (bool)hasOriginalDigest;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasJpegData;
+- (BOOL)hasOriginalDigest;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)jpegData;
 - (void)mergeFrom:(id)arg1;
 - (id)originalDigest;
-- (bool)readFrom:(id)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setJpegData:(id)arg1;
 - (void)setOriginalDigest:(id)arg1;
 - (void)setTimestamp:(double)arg1;

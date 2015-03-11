@@ -12,14 +12,14 @@
 - (void)dealloc;
 - (id)defaultProperties;
 - (id)g_genericToSpecificPropertyMap;
-- (unsigned long long)indexForSelectionPathLabelIndex:(unsigned long long)arg1;
-- (bool)isCategory;
-- (bool)isRangeContinuous;
+- (unsigned int)indexForSelectionPathLabelIndex:(unsigned int)arg1;
+- (BOOL)isCategory;
+- (BOOL)isRangeContinuous;
 - (struct pair<TSCH3DAxisLabelEnumerator *, TSCH3DAxisLabelEnumerator *> { id x1; id x2; })labelEnumeratorPair;
 - (id)p_getGenericToCategoryPropertyMap;
 - (id)p_getGenericToCategoryPropertyMapForMultiData;
 - (id)p_getGenericToCategoryPropertyMapForNonMultiData;
-- (unsigned long long)selectionPathLabelIndexForIndex:(unsigned long long)arg1;
+- (unsigned int)selectionPathLabelIndexForIndex:(unsigned int)arg1;
 - (int)specificPropertyForGeneric:(int)arg1;
 
 @end

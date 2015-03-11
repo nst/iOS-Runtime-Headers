@@ -19,7 +19,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)recognition;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (id)sessionId;
 - (void)setRecognition:(id)arg1;
 - (void)setSessionId:(id)arg1;

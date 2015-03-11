@@ -8,20 +8,20 @@
     id _delegate;
     NSString *_fragmentShader;
     NSString *_name;
+    BOOL _opaque;
     id _reserved;
     NSMutableDictionary *_semanticInfos;
     NSString *_vertexShader;
-    bool_opaque;
 }
 
 @property <SCNProgramDelegate> * delegate;
 @property(copy) NSString * fragmentShader;
-@property(getter=isOpaque) bool opaque;
+@property(getter=isOpaque) BOOL opaque;
 @property(copy) NSString * vertexShader;
 
 + (id)SCNJSExportProtocol;
 + (id)program;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_allSymbolsWithSceneKitSemantic;
 - (void)_customDecodingOfSCNProgram:(id)arg1;
@@ -35,13 +35,13 @@
 - (id)fragmentShader;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isOpaque;
+- (BOOL)isOpaque;
 - (id)name;
 - (id)semanticForSymbol:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFragmentShader:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setOpaque:(bool)arg1;
+- (void)setOpaque:(BOOL)arg1;
 - (void)setSemantic:(id)arg1 forSymbol:(id)arg2 options:(id)arg3;
 - (void)setSemantic:(id)arg1 forSymbol:(id)arg2;
 - (void)setSemanticInfos:(id)arg1;

@@ -9,15 +9,15 @@
     NSString *_accountPersistentUUID;
     NSString *_hostname;
     NSString *_password;
+    BOOL _useSSL;
     NSString *_username;
-    bool_useSSL;
 }
 
 @property(retain,readonly) NSString * accountDescription;
 @property(copy) NSString * accountPersistentUUID;
 @property(retain,readonly) NSString * hostname;
 @property(retain,readonly) NSString * password;
-@property(readonly) bool useSSL;
+@property(readonly) BOOL useSSL;
 @property(retain,readonly) NSString * username;
 
 + (id)localizedPluralForm;
@@ -39,7 +39,7 @@
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)title;
-- (bool)useSSL;
+- (BOOL)useSSL;
 - (id)username;
 
 @end

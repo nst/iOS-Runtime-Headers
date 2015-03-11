@@ -14,7 +14,7 @@
 @property(readonly) NSString * dataClass;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSString * linkIdentifier;
 @property(readonly) ATConcreteMessageLink * messageLink;
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
@@ -28,6 +28,6 @@
 - (id)messageLink;
 - (id)queue;
 - (void)sendRequest:(id)arg1 withCompletion:(id)arg2;
-- (void)updateProgressWithCount:(unsigned long long)arg1 totalItemCount:(unsigned long long)arg2;
+- (void)updateProgressWithCount:(unsigned int)arg1 totalItemCount:(unsigned int)arg2;
 
 @end

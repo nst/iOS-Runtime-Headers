@@ -12,10 +12,10 @@
 + (id)playVoiceMail;
 + (id)playVoiceMailWithDictionary:(id)arg1 context:(id)arg2;
 
-- (bool)_afui_isUsefulUserResultCommand;
+- (BOOL)_afui_isUsefulUserResultCommand;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setVoiceMailId:(id)arg1;
 - (id)voiceMailId;
 

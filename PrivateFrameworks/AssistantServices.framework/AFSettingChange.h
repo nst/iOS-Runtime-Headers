@@ -3,18 +3,18 @@
  */
 
 @interface AFSettingChange : AFSiriModelObject {
-    long long _settingType;
+    int _settingType;
     id _valueAfterUpdate;
     id _valueBeforeUpdate;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSettingType:(long long)arg1 valueBeforeUpdate:(id)arg2 valueAfterUpdate:(id)arg3;
-- (long long)settingType;
+- (id)initWithSettingType:(int)arg1 valueBeforeUpdate:(id)arg2 valueAfterUpdate:(id)arg3;
+- (int)settingType;
 - (id)valueAfterUpdate;
 - (id)valueBeforeUpdate;
 

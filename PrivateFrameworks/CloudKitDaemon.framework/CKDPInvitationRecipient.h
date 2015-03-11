@@ -10,8 +10,8 @@
 }
 
 @property(retain) NSString * emailAddress;
-@property(readonly) bool hasEmailAddress;
-@property(readonly) bool hasUserId;
+@property(readonly) BOOL hasEmailAddress;
+@property(readonly) BOOL hasUserId;
 @property(retain) CKDPIdentifier * userId;
 
 - (void).cxx_destruct;
@@ -20,12 +20,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)emailAddress;
-- (bool)hasEmailAddress;
-- (bool)hasUserId;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasEmailAddress;
+- (BOOL)hasUserId;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setUserId:(id)arg1;
 - (id)userId;

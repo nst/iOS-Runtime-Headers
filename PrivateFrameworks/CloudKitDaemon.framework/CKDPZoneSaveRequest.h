@@ -11,9 +11,9 @@
 }
 
 @property(retain) NSString * etag;
-@property(readonly) bool hasEtag;
-@property(readonly) bool hasRecordZone;
-@property(readonly) bool hasZoneProtectionInfoTag;
+@property(readonly) BOOL hasEtag;
+@property(readonly) BOOL hasRecordZone;
+@property(readonly) BOOL hasZoneProtectionInfoTag;
 @property(retain) CKDPZone * recordZone;
 @property(retain) NSString * zoneProtectionInfoTag;
 
@@ -25,13 +25,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (bool)hasEtag;
-- (bool)hasRecordZone;
-- (bool)hasZoneProtectionInfoTag;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasEtag;
+- (BOOL)hasRecordZone;
+- (BOOL)hasZoneProtectionInfoTag;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)recordZone;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;

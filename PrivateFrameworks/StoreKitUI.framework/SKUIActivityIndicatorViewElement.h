@@ -9,8 +9,8 @@
 
 @property(readonly) SKUILabelViewElement * text;
 
-- (bool)isDisabled;
-- (long long)pageComponentType;
+- (BOOL)isDisabled;
+- (int)pageComponentType;
 - (id)text;
 
 @end

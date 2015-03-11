@@ -3,11 +3,11 @@
  */
 
 @interface MKThreadContext : NSObject {
-    long long _CA_disableActionsCounter;
+    int _CA_disableActionsCounter;
 }
 
 + (id)currentContext;
 
-- (void)_CA_setDisableActions:(bool)arg1;
+- (void)_CA_setDisableActions:(BOOL)arg1;
 
 @end

@@ -4,31 +4,31 @@
 
 @interface TSDPathIntersection : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     } mPoint;
-    long long mSegment;
-    long long mSegmentB;
-    double mT;
-    double mTB;
+    int mSegment;
+    int mSegmentB;
+    float mT;
+    float mTB;
 }
 
-@property struct CGPoint { double x1; double x2; } point;
-@property(readonly) long long segment;
-@property(readonly) long long segmentB;
-@property(readonly) double t;
-@property(readonly) double tB;
+@property struct CGPoint { float x1; float x2; } point;
+@property(readonly) int segment;
+@property(readonly) int segmentB;
+@property(readonly) float t;
+@property(readonly) float tB;
 
-- (long long)compareSegmentAndT:(id)arg1;
-- (long long)compareT:(id)arg1;
+- (int)compareSegmentAndT:(id)arg1;
+- (int)compareT:(id)arg1;
 - (id)description;
-- (id)initWithSegment:(long long)arg1 atT:(double)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3;
-- (id)initWithSegment:(long long)arg1 atT:(double)arg2 onSegmentB:(long long)arg3 atT:(double)arg4 atPoint:(struct CGPoint { double x1; double x2; })arg5;
-- (struct CGPoint { double x1; double x2; })point;
-- (long long)segment;
-- (long long)segmentB;
-- (void)setPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (double)t;
-- (double)tB;
+- (id)initWithSegment:(int)arg1 atT:(float)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (id)initWithSegment:(int)arg1 atT:(float)arg2 onSegmentB:(int)arg3 atT:(float)arg4 atPoint:(struct CGPoint { float x1; float x2; })arg5;
+- (struct CGPoint { float x1; float x2; })point;
+- (int)segment;
+- (int)segmentB;
+- (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (float)t;
+- (float)tB;
 
 @end

@@ -7,7 +7,7 @@
 @interface BKSApplicationDataStore : NSObject {
     NSString *_bundleId;
     BKSApplicationDataStoreRepositoryClient *_client;
-    bool_clientNeedsCheckin;
+    BOOL _clientNeedsCheckin;
 }
 
 + (void)_doWithClassClient:(id)arg1;

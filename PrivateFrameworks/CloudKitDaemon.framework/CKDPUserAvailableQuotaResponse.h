@@ -9,19 +9,19 @@
     unsigned long long _storageAvailableBytes;
 }
 
-@property bool hasStorageAvailableBytes;
+@property BOOL hasStorageAvailableBytes;
 @property unsigned long long storageAvailableBytes;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasStorageAvailableBytes;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasStorageAvailableBytes;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasStorageAvailableBytes:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasStorageAvailableBytes:(BOOL)arg1;
 - (void)setStorageAvailableBytes:(unsigned long long)arg1;
 - (unsigned long long)storageAvailableBytes;
 - (void)writeTo:(id)arg1;

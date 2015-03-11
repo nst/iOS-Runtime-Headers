@@ -12,8 +12,8 @@
 
 + (id)recoveryAttempterUsingHandler:(id)arg1;
 
-- (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void*)arg5;
-- (bool)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2;
+- (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned int)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void*)arg5;
+- (BOOL)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned int)arg2;
 - (void)dealloc;
 
 @end

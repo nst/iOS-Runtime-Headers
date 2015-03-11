@@ -13,19 +13,19 @@
     id _annotationForCountSwap;
     id _destinationAnnotation;
     } _destinationCoordinate;
-    long long _fadeType;
-    long long _reason;
+    int _fadeType;
+    int _reason;
+    BOOL _remove;
     } _sourceCoordinate;
-    bool_remove;
 }
 
 @property(retain,readonly) id annotation;
 @property(retain,readonly) id annotationForCountSwap;
 @property(retain,readonly) id destinationAnnotation;
 @property(readonly) struct { double x1; double x2; } destinationCoordinate;
-@property(readonly) long long fadeType;
-@property(readonly) long long reason;
-@property(readonly) bool remove;
+@property(readonly) int fadeType;
+@property(readonly) int reason;
+@property(readonly) BOOL remove;
 @property(readonly) struct { double x1; double x2; } sourceCoordinate;
 
 - (void).cxx_destruct;
@@ -33,10 +33,10 @@
 - (id)annotationForCountSwap;
 - (id)destinationAnnotation;
 - (struct { double x1; double x2; })destinationCoordinate;
-- (long long)fadeType;
-- (id)initWithAnnotation:(id)arg1 destinationAnnotation:(id)arg2 sourceCoordinate:(struct { double x1; double x2; })arg3 destinationCoordinate:(struct { double x1; double x2; })arg4 fadeType:(long long)arg5 remove:(bool)arg6 annotationForCountSwap:(id)arg7 reason:(long long)arg8;
-- (long long)reason;
-- (bool)remove;
+- (int)fadeType;
+- (id)initWithAnnotation:(id)arg1 destinationAnnotation:(id)arg2 sourceCoordinate:(struct { double x1; double x2; })arg3 destinationCoordinate:(struct { double x1; double x2; })arg4 fadeType:(int)arg5 remove:(BOOL)arg6 annotationForCountSwap:(id)arg7 reason:(int)arg8;
+- (int)reason;
+- (BOOL)remove;
 - (struct { double x1; double x2; })sourceCoordinate;
 
 @end

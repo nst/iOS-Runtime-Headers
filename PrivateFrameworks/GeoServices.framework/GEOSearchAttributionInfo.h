@@ -20,7 +20,7 @@
 @property unsigned int requirementsMask;
 @property unsigned int version;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)addLogoPath:(id)arg1;
 - (id)attributionApps;
@@ -29,20 +29,20 @@
 - (id)dictionaryRepresentation;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)hasAttributionRequirement:(int)arg1;
+- (BOOL)hasAttributionRequirement:(int)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithSource:(id)arg1 localizedAttribution:(id)arg2 logoPaths:(id)arg3 snippetLogoPaths:(id)arg4;
-- (id)logoPathForScale:(double)arg1;
+- (id)logoPathForScale:(float)arg1;
 - (unsigned int)requirementsMask;
 - (void)setAttributionApps:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setRequirementsMask:(unsigned int)arg1;
 - (void)setVersion:(unsigned int)arg1;
-- (id)snippetLogoPathForScale:(double)arg1;
-- (bool)supportsActionURLs;
+- (id)snippetLogoPathForScale:(float)arg1;
+- (BOOL)supportsActionURLs;
 - (unsigned int)version;
 
 @end

@@ -5,34 +5,34 @@
 @class NSString;
 
 @interface AFAlarm : AFSiriModelObject <NSCopying> {
-    long long _daysOfWeek;
-    long long _hourOfDay;
+    int _daysOfWeek;
+    BOOL _enabled;
+    int _hourOfDay;
     NSString *_label;
-    long long _minuteOfHour;
-    bool_enabled;
+    int _minuteOfHour;
 }
 
-@property long long daysOfWeek;
-@property(getter=isEnabled) bool enabled;
-@property long long hourOfDay;
+@property int daysOfWeek;
+@property(getter=isEnabled) BOOL enabled;
+@property int hourOfDay;
 @property(copy) NSString * label;
-@property long long minuteOfHour;
+@property int minuteOfHour;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)daysOfWeek;
+- (int)daysOfWeek;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)hourOfDay;
+- (int)hourOfDay;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEnabled;
+- (BOOL)isEnabled;
 - (id)label;
-- (long long)minuteOfHour;
-- (void)setDaysOfWeek:(long long)arg1;
-- (void)setEnabled:(bool)arg1;
-- (void)setHourOfDay:(long long)arg1;
+- (int)minuteOfHour;
+- (void)setDaysOfWeek:(int)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setHourOfDay:(int)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setMinuteOfHour:(long long)arg1;
+- (void)setMinuteOfHour:(int)arg1;
 
 @end

@@ -14,45 +14,45 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)accountTypeIdentifier;
 + (id)authSchemesForAccountClass;
 + (id)deliveryAccountHostname;
 + (unsigned int)deliveryAccountPortNumber;
-+ (bool)deliveryAccountUsesSSL;
++ (BOOL)deliveryAccountUsesSSL;
 + (id)displayedAccountTypeString;
 + (id)emailAddressHostPart;
 + (id)hostname;
 + (id)imapNotEnabledPrefix;
-+ (bool)isPredefinedAccountType;
-+ (bool)usernameIsEmailAddress;
++ (BOOL)isPredefinedAccountType;
++ (BOOL)usernameIsEmailAddress;
 
 - (id)_URLFromUncleanString:(id)arg1;
 - (id)_childOfMailbox:(id)arg1 withComponentName:(id)arg2;
 - (id)_consumeExistingPreAuthToken;
 - (void)_deleteHook;
-- (id)_deliveryAccountCreateIfNeeded:(bool)arg1;
-- (bool)_isOurConnection:(id)arg1;
+- (id)_deliveryAccountCreateIfNeeded:(BOOL)arg1;
+- (BOOL)_isOurConnection:(id)arg1;
 - (void)_removeCredential:(id)arg1;
-- (id)_specialMailboxUidWithType:(int)arg1 create:(bool)arg2;
+- (id)_specialMailboxUidWithType:(int)arg1 create:(BOOL)arg2;
 - (id)_webLoginErrorWithURL:(id)arg1;
 - (id)accountStore;
 - (id)allMailMailboxUid;
 - (int)archiveDestinationForMailbox:(id)arg1;
-- (bool)archiveSentMessages;
+- (BOOL)archiveSentMessages;
 - (id)clientToken;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
-- (bool)derivesDeliveryAccountInfoFromMailAccount;
+- (BOOL)derivesDeliveryAccountInfoFromMailAccount;
 - (id)displayNameUsingSpecialNamesForMailboxUid:(id)arg1;
 - (id)emailAddresses;
 - (int)emptyFrequencyForMailboxType:(int)arg1;
-- (bool)enableAccount;
+- (BOOL)enableAccount;
 - (id)errorForResponse:(id)arg1;
 - (id)hostname;
 - (id)iconString;
@@ -61,10 +61,10 @@
 - (void)persistentAccountDidChange:(id)arg1 previousAccount:(id)arg2;
 - (id)preferredAuthScheme;
 - (void)setPassword:(id)arg1;
-- (bool)shouldArchiveByDefault;
-- (bool)shouldEnableAfterError:(id)arg1;
+- (BOOL)shouldArchiveByDefault;
+- (BOOL)shouldEnableAfterError:(id)arg1;
 - (id)statisticsKind;
-- (bool)supportsArchiving;
-- (bool)xListSupportedOnConnection:(id)arg1;
+- (BOOL)supportsArchiving;
+- (BOOL)xListSupportedOnConnection:(id)arg1;
 
 @end

@@ -8,15 +8,15 @@
     <CKInlineAudioReplyButtonDelegate> *_delegate;
     double _holdThreshold;
     UIButton *_startButton;
+    BOOL _started;
     UIButton *_stopButton;
     double _touchDownTime;
-    bool_started;
 }
 
 @property <CKInlineAudioReplyButtonDelegate> * delegate;
 @property double holdThreshold;
 @property(retain) UIButton * startButton;
-@property(getter=isStarted) bool started;
+@property(getter=isStarted) BOOL started;
 @property(retain) UIButton * stopButton;
 @property double touchDownTime;
 
@@ -24,11 +24,11 @@
 - (id)delegate;
 - (double)holdThreshold;
 - (id)initWithStartButton:(id)arg1 stopButton:(id)arg2;
-- (bool)isStarted;
+- (BOOL)isStarted;
 - (void)setDelegate:(id)arg1;
 - (void)setHoldThreshold:(double)arg1;
 - (void)setStartButton:(id)arg1;
-- (void)setStarted:(bool)arg1;
+- (void)setStarted:(BOOL)arg1;
 - (void)setStopButton:(id)arg1;
 - (void)setTouchDownTime:(double)arg1;
 - (id)startButton;

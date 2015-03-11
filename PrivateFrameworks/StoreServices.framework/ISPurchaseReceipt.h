@@ -5,8 +5,7 @@
 @class NSData, NSDate, NSNumber, NSString;
 
 @interface ISPurchaseReceipt : NSObject {
-    bool_createdFromCoder;
-    boolmHashIsValid;
+    BOOL _createdFromCoder;
     NSString *mAdamID;
     NSString *mBundleID;
     NSString *mBundleVersion;
@@ -19,6 +18,7 @@
     NSString *mExpirationDateString;
     NSNumber *mFRToolVersion;
     NSString *mHWType;
+    BOOL mHashIsValid;
     NSString *mInstallerVersionID;
     NSString *mOraganizationDisplayName;
     NSString *mParentalControls;
@@ -44,9 +44,9 @@
 @property(readonly) NSNumber * frToolVersion;
 @property(readonly) NSString * hwtype;
 @property(readonly) NSString * installerVersionID;
-@property(readonly) bool isProductionReceipt;
-@property(readonly) bool isRevoked;
-@property(readonly) bool isVPPLicensed;
+@property(readonly) BOOL isProductionReceipt;
+@property(readonly) BOOL isRevoked;
+@property(readonly) BOOL isVPPLicensed;
 @property(readonly) NSString * organizationDisplayName;
 @property(readonly) NSString * parentalControls;
 @property(readonly) NSDate * purchaseDate;
@@ -63,17 +63,17 @@
 + (id)receiptPathForBundleAtPath:(id)arg1;
 + (id)receiptWithContentsOfFile:(id)arg1;
 
-- (bool)_checkWWDRIssuerForTrust:(struct __SecTrust { }*)arg1;
+- (BOOL)_checkWWDRIssuerForTrust:(struct __SecTrust { }*)arg1;
 - (struct __CFArray { }*)_copySignedDataCertificates;
-- (bool)_load;
-- (long long)_verifySignatureCheckRevocation:(bool)arg1 checkExpiration:(bool)arg2 useCurrentDate:(bool)arg3;
+- (BOOL)_load;
+- (int)_verifySignatureCheckRevocation:(BOOL)arg1 checkExpiration:(BOOL)arg2 useCurrentDate:(BOOL)arg3;
 - (id)adamID;
 - (id)bundleIdentifier;
 - (id)bundleVersion;
 - (id)cancellationReason;
-- (long long)checkSignature;
-- (long long)checkSignatureAgainstCurrentDate;
-- (long long)checkSignatureSkipRevocation;
+- (int)checkSignature;
+- (int)checkSignatureAgainstCurrentDate;
+- (int)checkSignatureSkipRevocation;
 - (void)dealloc;
 - (id)developerID;
 - (id)downloadID;
@@ -83,10 +83,10 @@
 - (id)hwtype;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)installerVersionID;
-- (bool)isProductionReceipt;
-- (bool)isRevoked;
-- (bool)isVPPLicensed;
-- (bool)isValid;
+- (BOOL)isProductionReceipt;
+- (BOOL)isRevoked;
+- (BOOL)isVPPLicensed;
+- (BOOL)isValid;
 - (id)organizationDisplayName;
 - (id)parentalControls;
 - (id)purchaseDate;
@@ -97,7 +97,7 @@
 - (id)receiptType;
 - (id)renewalDate;
 - (id)renewalDateString;
-- (bool)validateAndCheckGUIDSeparately:(bool*)arg1;
-- (bool)validateAndCheckGUIDSepately:(bool*)arg1;
+- (BOOL)validateAndCheckGUIDSeparately:(BOOL*)arg1;
+- (BOOL)validateAndCheckGUIDSepately:(BOOL*)arg1;
 
 @end

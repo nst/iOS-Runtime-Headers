@@ -3,15 +3,15 @@
  */
 
 @interface UIBlurEffect : UIVisualEffect {
-    long long _style;
+    int _style;
 }
 
-@property(readonly) long long _style;
+@property(readonly) int _style;
 
-+ (id)effectWithStyle:(long long)arg1;
-+ (bool)supportsSecureCoding;
++ (id)effectWithStyle:(int)arg1;
++ (BOOL)supportsSecureCoding;
 
-- (long long)_style;
+- (int)_style;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectSettings;
 - (void)encodeWithCoder:(id)arg1;

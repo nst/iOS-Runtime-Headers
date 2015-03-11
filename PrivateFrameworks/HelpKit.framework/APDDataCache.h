@@ -5,42 +5,42 @@
 @class NSDate, NSString;
 
 @interface APDDataCache : NSObject <NSCopying, NSCoding> {
-    unsigned long long _cacheType;
-    unsigned long long _fileSize;
+    unsigned int _cacheType;
+    unsigned int _fileSize;
     NSString *_identifier;
     NSString *_lastModified;
     NSString *_locale;
-    long long _maxAge;
+    int _maxAge;
     NSDate *_updatedDate;
 }
 
-@property unsigned long long cacheType;
-@property(readonly) bool expired;
-@property unsigned long long fileSize;
+@property unsigned int cacheType;
+@property(readonly) BOOL expired;
+@property unsigned int fileSize;
 @property(retain) NSString * identifier;
 @property(retain) NSString * lastModified;
 @property(retain) NSString * locale;
-@property long long maxAge;
+@property int maxAge;
 @property(retain) NSDate * updatedDate;
 
 - (void).cxx_destruct;
-- (unsigned long long)cacheType;
+- (unsigned int)cacheType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)expired;
-- (unsigned long long)fileSize;
+- (BOOL)expired;
+- (unsigned int)fileSize;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)lastModified;
 - (id)locale;
-- (long long)maxAge;
-- (void)setCacheType:(unsigned long long)arg1;
-- (void)setFileSize:(unsigned long long)arg1;
+- (int)maxAge;
+- (void)setCacheType:(unsigned int)arg1;
+- (void)setFileSize:(unsigned int)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLastModified:(id)arg1;
 - (void)setLocale:(id)arg1;
-- (void)setMaxAge:(long long)arg1;
+- (void)setMaxAge:(int)arg1;
 - (void)setUpdatedDate:(id)arg1;
 - (id)updatedDate;
 

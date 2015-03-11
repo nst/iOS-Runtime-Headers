@@ -6,25 +6,25 @@
 
 @interface BLImage : NSObject <NSCopying> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGImage { } *_CGImage;
     CIImage *_CIImage;
     UIImage *_UIImage;
     int _askedImageType;
+    BOOL _isPlaceholder;
     int _obtainedImageType;
     } _size;
     int _storageType;
-    bool_isPlaceholder;
 }
 
 @property int askedImageType;
-@property(readonly) long long imageOrientation;
-@property bool isPlaceholder;
-@property(readonly) unsigned long long memoryUsage;
+@property(readonly) int imageOrientation;
+@property BOOL isPlaceholder;
+@property(readonly) unsigned int memoryUsage;
 @property int obtainedImageType;
-@property(readonly) double scale;
-@property(readonly) struct CGSize { double x1; double x2; } size;
+@property(readonly) float scale;
+@property(readonly) struct CGSize { float x1; float x2; } size;
 @property(readonly) int storageType;
 
 + (id)abbreviatedDescriptionWithImageType:(int)arg1;
@@ -38,17 +38,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (long long)imageOrientation;
+- (int)imageOrientation;
 - (id)init;
 - (id)initWithFileAtURL:(id)arg1;
-- (bool)isPlaceholder;
-- (unsigned long long)memoryUsage;
+- (BOOL)isPlaceholder;
+- (unsigned int)memoryUsage;
 - (int)obtainedImageType;
-- (double)scale;
+- (float)scale;
 - (void)setAskedImageType:(int)arg1;
-- (void)setIsPlaceholder:(bool)arg1;
+- (void)setIsPlaceholder:(BOOL)arg1;
 - (void)setObtainedImageType:(int)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (int)storageType;
 
 @end

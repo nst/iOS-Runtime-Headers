@@ -6,29 +6,29 @@
 
 @interface CPLContainerRelation : NSObject <NSSecureCoding, NSCopying> {
     NSString *_containerIdentifier;
-    long long _position;
-    bool_keyAsset;
+    BOOL _keyAsset;
+    int _position;
 }
 
 @property(copy) NSString * containerIdentifier;
-@property(getter=isKeyAsset) bool keyAsset;
-@property long long position;
+@property(getter=isKeyAsset) BOOL keyAsset;
+@property int position;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)containerIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isKeyAsset;
-- (long long)position;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isKeyAsset;
+- (int)position;
 - (id)proposedIdentifierForItemIdentifier:(id)arg1;
 - (void)setContainerIdentifier:(id)arg1;
-- (void)setKeyAsset:(bool)arg1;
-- (void)setPosition:(long long)arg1;
+- (void)setKeyAsset:(BOOL)arg1;
+- (void)setPosition:(int)arg1;
 
 @end

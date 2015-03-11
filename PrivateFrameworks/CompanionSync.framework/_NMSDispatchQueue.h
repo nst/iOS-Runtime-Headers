@@ -9,14 +9,14 @@
     int _r;
 }
 
-@property(getter=isSuspended,readonly) bool suspended;
+@property(getter=isSuspended,readonly) BOOL suspended;
 
 - (void).cxx_destruct;
 - (void)async:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithName:(id)arg1 attributes:(id)arg2;
-- (bool)isSuspended;
+- (BOOL)isSuspended;
 - (void)resume;
 - (void)setTarget:(id)arg1;
 - (void)suspend;

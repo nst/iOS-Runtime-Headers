@@ -6,28 +6,28 @@
 
 @interface ML3AlbumGroupingIdentifier : NSObject <NSCopying> {
     long long _albumArtistPersistentID;
+    BOOL _compilation;
     NSString *_feedURL;
     NSData *_groupingKey;
-    long long _seasonNumber;
-    bool_compilation;
+    int _seasonNumber;
 }
 
 @property(readonly) long long albumArtistPersistentID;
-@property(readonly) bool compilation;
+@property(readonly) BOOL compilation;
 @property(readonly) NSString * feedURL;
 @property(readonly) NSData * groupingKey;
-@property(readonly) long long seasonNumber;
+@property(readonly) int seasonNumber;
 
 - (void).cxx_destruct;
 - (long long)albumArtistPersistentID;
-- (bool)compilation;
+- (BOOL)compilation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)feedURL;
 - (id)groupingKey;
-- (unsigned long long)hash;
-- (id)initWithAlbumArtistPersistentID:(long long)arg1 groupingKey:(id)arg2 feedURL:(id)arg3 seasonNumber:(long long)arg4 compilation:(bool)arg5;
-- (bool)isEqual:(id)arg1;
-- (long long)seasonNumber;
+- (unsigned int)hash;
+- (id)initWithAlbumArtistPersistentID:(long long)arg1 groupingKey:(id)arg2 feedURL:(id)arg3 seasonNumber:(int)arg4 compilation:(BOOL)arg5;
+- (BOOL)isEqual:(id)arg1;
+- (int)seasonNumber;
 
 @end

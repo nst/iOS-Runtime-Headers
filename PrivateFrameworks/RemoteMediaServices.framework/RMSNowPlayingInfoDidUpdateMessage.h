@@ -12,8 +12,8 @@
     int _sessionIdentifier;
 }
 
-@property(readonly) bool hasNowPlayingInfo;
-@property bool hasSessionIdentifier;
+@property(readonly) BOOL hasNowPlayingInfo;
+@property BOOL hasSessionIdentifier;
 @property(retain) RMSNowPlayingInfoMessage * nowPlayingInfo;
 @property int sessionIdentifier;
 
@@ -22,15 +22,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasNowPlayingInfo;
-- (bool)hasSessionIdentifier;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasNowPlayingInfo;
+- (BOOL)hasSessionIdentifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nowPlayingInfo;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (int)sessionIdentifier;
-- (void)setHasSessionIdentifier:(bool)arg1;
+- (void)setHasSessionIdentifier:(BOOL)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 - (void)writeTo:(id)arg1;

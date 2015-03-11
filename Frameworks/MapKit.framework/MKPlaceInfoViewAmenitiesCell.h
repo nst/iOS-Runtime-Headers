@@ -16,7 +16,7 @@
 @property(retain) NSArray * keyValues;
 @property(retain) NSMutableArray * labelConstraints;
 
-+ (double)intrinsicContentHeight;
++ (float)intrinsicContentHeight;
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
@@ -27,7 +27,7 @@
 - (void)contentSizeDidChange;
 - (void)dealloc;
 - (id)dummyContentView;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)keyValues;
 - (id)labelConstraints;
 - (void)refreshContent;

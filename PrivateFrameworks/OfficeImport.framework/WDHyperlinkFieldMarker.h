@@ -11,16 +11,16 @@
 }
 
 @property(retain) NSString * fragment;
-@property bool internalLink;
+@property BOOL internalLink;
 @property(retain) NSString * link;
 
 - (void)dealloc;
 - (id)fragment;
-- (bool)internalLink;
+- (BOOL)internalLink;
 - (id)link;
 - (int)runType;
 - (void)setFragment:(id)arg1;
-- (void)setInternalLink:(bool)arg1;
+- (void)setInternalLink:(BOOL)arg1;
 - (void)setLink:(id)arg1;
 
 @end

@@ -4,16 +4,16 @@
 
 @interface PKPassImageSet : PKImageSet {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     } _displayProfileRectSize;
 }
 
-+ (bool)archivedObject:(id)arg1 matchesDisplayProfile:(id)arg2;
-+ (Class)classForImageSetType:(long long)arg1;
++ (BOOL)archivedObject:(id)arg1 matchesDisplayProfile:(id)arg2;
++ (Class)classForImageSetType:(int)arg1;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(double)arg3 suffix:(id)arg4;
+- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
 
 @end

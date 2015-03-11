@@ -19,18 +19,18 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)alignmentInfo;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (int)horizontalAlignment;
 - (int)indent;
 - (id)init;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToAlignmentInfo:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToAlignmentInfo:(id)arg1;
 - (bool)isHorizontalAlignOverridden;
 - (bool)isIndentOverridden;
 - (bool)isTextWrapped;

@@ -29,7 +29,7 @@
 - (id)freshContext;
 - (id)init;
 - (id)localAccountDisplayName;
-- (bool)localNotesExist;
+- (BOOL)localNotesExist;
 - (void)setAccountStore:(id)arg1;
 - (void)setBackgroundDispatchGroup:(id)arg1;
 - (void)setUpdateAccountInfosLock:(id)arg1;

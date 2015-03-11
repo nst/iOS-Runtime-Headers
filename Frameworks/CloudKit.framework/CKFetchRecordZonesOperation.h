@@ -11,18 +11,18 @@
 @interface CKFetchRecordZonesOperation : CKDatabaseOperation {
     NSError *_fetchAllRecordZonesError;
     id _fetchRecordZonesCompletionBlock;
+    BOOL _ignorePCSFailures;
+    BOOL _isFetchAllRecordZonesOperation;
     NSMutableDictionary *_recordZoneErrors;
     NSArray *_recordZoneIDs;
     NSArray *_recordZones;
     NSMutableDictionary *_recordZonesByZoneID;
-    bool_ignorePCSFailures;
-    bool_isFetchAllRecordZonesOperation;
 }
 
 @property(retain) NSError * fetchAllRecordZonesError;
 @property(copy) id fetchRecordZonesCompletionBlock;
-@property bool ignorePCSFailures;
-@property bool isFetchAllRecordZonesOperation;
+@property BOOL ignorePCSFailures;
+@property BOOL isFetchAllRecordZonesOperation;
 @property(retain) NSMutableDictionary * recordZoneErrors;
 @property(copy) NSArray * recordZoneIDs;
 @property(retain) NSArray * recordZones;
@@ -31,16 +31,16 @@
 + (id)fetchAllRecordZonesOperation;
 
 - (void).cxx_destruct;
-- (bool)CKOperationShouldRun:(id*)arg1;
+- (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)fetchAllRecordZonesError;
 - (id)fetchRecordZonesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
-- (bool)ignorePCSFailures;
+- (BOOL)ignorePCSFailures;
 - (id)init;
 - (id)initWithRecordZoneIDs:(id)arg1;
-- (bool)isFetchAllRecordZonesOperation;
+- (BOOL)isFetchAllRecordZonesOperation;
 - (void)performCKOperation;
 - (id)recordZoneErrors;
 - (id)recordZoneIDs;
@@ -48,8 +48,8 @@
 - (id)recordZonesByZoneID;
 - (void)setFetchAllRecordZonesError:(id)arg1;
 - (void)setFetchRecordZonesCompletionBlock:(id)arg1;
-- (void)setIgnorePCSFailures:(bool)arg1;
-- (void)setIsFetchAllRecordZonesOperation:(bool)arg1;
+- (void)setIgnorePCSFailures:(BOOL)arg1;
+- (void)setIsFetchAllRecordZonesOperation:(BOOL)arg1;
 - (void)setRecordZoneErrors:(id)arg1;
 - (void)setRecordZoneIDs:(id)arg1;
 - (void)setRecordZones:(id)arg1;

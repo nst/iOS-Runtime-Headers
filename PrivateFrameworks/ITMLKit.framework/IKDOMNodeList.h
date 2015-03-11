@@ -18,8 +18,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) id evaluationBlock;
-@property(readonly) unsigned long long hash;
-@property(readonly) long long length;
+@property(readonly) unsigned int hash;
+@property(readonly) int length;
 @property(copy) NSArray * nodes;
 @property(readonly) Class superclass;
 
@@ -31,8 +31,8 @@
 - (void)domDidUpdateForContextNode:(id)arg1;
 - (id)evaluationBlock;
 - (id)initWithAppContext:(id)arg1 contextNode:(id)arg2 evaluationBlock:(id)arg3;
-- (id)item:(long long)arg1;
-- (long long)length;
+- (id)item:(int)arg1;
+- (int)length;
 - (id)nodes;
 - (void)setContextNode:(id)arg1;
 - (void)setNodes:(id)arg1;

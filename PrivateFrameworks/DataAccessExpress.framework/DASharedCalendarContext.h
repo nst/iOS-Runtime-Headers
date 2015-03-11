@@ -13,14 +13,14 @@
     NSString *_calendarID;
     id _completionBlock;
     NSObject<OS_dispatch_queue> *_queue;
-    bool_shouldSyncCalendar;
+    BOOL _shouldSyncCalendar;
 }
 
 @property(readonly) NSString * accountID;
 @property(readonly) NSString * calendarID;
 @property(copy,readonly) id completionBlock;
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property bool shouldSyncCalendar;
+@property BOOL shouldSyncCalendar;
 
 - (void).cxx_destruct;
 - (id)accountID;
@@ -29,7 +29,7 @@
 - (void)finishedWithError:(id)arg1;
 - (id)initWithCalendarID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 completionBlock:(id)arg4;
 - (id)queue;
-- (void)setShouldSyncCalendar:(bool)arg1;
-- (bool)shouldSyncCalendar;
+- (void)setShouldSyncCalendar:(BOOL)arg1;
+- (BOOL)shouldSyncCalendar;
 
 @end

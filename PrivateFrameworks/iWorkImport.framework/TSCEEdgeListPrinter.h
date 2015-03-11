@@ -10,7 +10,7 @@
 
 - (void)addEdge:(id)arg1 forOwner:(id)arg2;
 - (void)dealloc;
-- (id)stringForEdgesWithLimit:(unsigned long long)arg1;
-- (id)stringForOwnerID:(id)arg1 withLimit:(unsigned long long)arg2;
+- (id)stringForEdgesWithLimit:(unsigned int)arg1;
+- (id)stringForOwnerID:(id)arg1 withLimit:(unsigned int)arg2;
 
 @end

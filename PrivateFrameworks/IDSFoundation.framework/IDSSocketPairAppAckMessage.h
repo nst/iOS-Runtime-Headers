@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface IDSSocketPairAppAckMessage : IDSSocketPairMessage {
-    unsigned long long _offset;
+    unsigned int _offset;
     NSString *_peerResponseIdentifier;
     unsigned int _sequenceNumber;
     unsigned short _streamID;

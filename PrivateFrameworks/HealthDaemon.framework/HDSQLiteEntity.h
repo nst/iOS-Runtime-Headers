@@ -10,14 +10,14 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) long long persistentID;
 @property(readonly) Class superclass;
 
 + (id)_copyDeleteSQLWithTableName:(id)arg1 columnName:(id)arg2;
 + (id)_generateDisambiguatedDatabaseTableName;
-+ (bool)_insertValues:(id)arg1 intoTable:(id)arg2 withPidOrNil:(id)arg3 replaceExisting:(bool)arg4 resultCode:(int*)arg5 database:(id)arg6;
-+ (bool)_insertValues:(id)arg1 intoTable:(id)arg2 withPidOrNil:(id)arg3 resultCode:(int*)arg4 database:(id)arg5;
++ (BOOL)_insertValues:(id)arg1 intoTable:(id)arg2 withPidOrNil:(id)arg3 replaceExisting:(BOOL)arg4 resultCode:(int*)arg5 database:(id)arg6;
++ (BOOL)_insertValues:(id)arg1 intoTable:(id)arg2 withPidOrNil:(id)arg3 resultCode:(int*)arg4 database:(id)arg5;
 + (id)aggregateSingleValueForProperty:(id)arg1 function:(id)arg2 predicate:(id)arg3 database:(id)arg4;
 + (id)aggregateSingleValueForProperty:(id)arg1 function:(id)arg2 queryDescriptor:(id)arg3 database:(id)arg4;
 + (id)aggregateValuesForProperty:(id)arg1 functions:(id)arg2 predicate:(id)arg3 groupBy:(id)arg4 database:(id)arg5;
@@ -33,7 +33,7 @@
 + (id)databasePropertyToSetClientProperty:(id)arg1;
 + (id)databaseTable;
 + (id)databaseValueForProperty:(id)arg1 clientValue:(id)arg2;
-+ (bool)deleteEntitiesInDatabase:(id)arg1 predicate:(id)arg2;
++ (BOOL)deleteEntitiesInDatabase:(id)arg1 predicate:(id)arg2;
 + (id)deleteStatementWithProperty:(id)arg1 database:(id)arg2;
 + (id)disambiguatedDatabaseTable;
 + (id)disambiguatedSQLForProperty:(id)arg1;
@@ -52,26 +52,26 @@
 + (id)propertyValueForAnyInDatabase:(id)arg1 property:(id)arg2 predicate:(id)arg3;
 + (id)propertyValuesForAnyInDatabase:(id)arg1 properties:(id)arg2 predicate:(id)arg3;
 + (id)queryStatementWithPredicate:(id)arg1 properties:(id)arg2 database:(id)arg3;
-+ (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 orderingProperties:(id)arg4 orderingDirections:(id)arg5;
++ (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 limit:(unsigned int)arg3 orderingProperties:(id)arg4 orderingDirections:(id)arg5;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3 orderingDirections:(id)arg4;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2;
 + (id)sumValueForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3;
 
 - (id)_copyTableClusteredValuesWithValues:(id)arg1;
-- (bool)_deleteRowFromTable:(id)arg1 usingColumn:(id)arg2 database:(id)arg3;
-- (bool)deleteFromDatabase:(id)arg1 error:(id*)arg2;
-- (bool)deleteFromDatabase:(id)arg1;
-- (bool)existsInDatabase:(id)arg1;
-- (bool)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned long long)arg3 database:(id)arg4;
-- (bool)getValuesForProperties:(id)arg1 withDatabase:(id)arg2 applier:(id)arg3;
+- (BOOL)_deleteRowFromTable:(id)arg1 usingColumn:(id)arg2 database:(id)arg3;
+- (BOOL)deleteFromDatabase:(id)arg1 error:(id*)arg2;
+- (BOOL)deleteFromDatabase:(id)arg1;
+- (BOOL)existsInDatabase:(id)arg1;
+- (BOOL)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned int)arg3 database:(id)arg4;
+- (BOOL)getValuesForProperties:(id)arg1 withDatabase:(id)arg2 applier:(id)arg3;
 - (id)initWithPersistentID:(long long)arg1;
-- (id)initWithPropertyValues:(id)arg1 inDatabase:(id)arg2 replaceExisting:(bool)arg3 error:(id*)arg4;
-- (id)initWithPropertyValues:(id)arg1 inDatabase:(id)arg2 replaceExisting:(bool)arg3;
+- (id)initWithPropertyValues:(id)arg1 inDatabase:(id)arg2 replaceExisting:(BOOL)arg3 error:(id*)arg4;
+- (id)initWithPropertyValues:(id)arg1 inDatabase:(id)arg2 replaceExisting:(BOOL)arg3;
 - (long long)persistentID;
 - (void)setExternalValuesWithDictionary:(id)arg1;
-- (bool)setValue:(id)arg1 forProperty:(id)arg2 database:(id)arg3;
-- (bool)setValuesWithDictionary:(id)arg1 database:(id)arg2;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2 database:(id)arg3;
+- (BOOL)setValuesWithDictionary:(id)arg1 database:(id)arg2;
 - (id)valueForExternalProperty:(id)arg1;
 - (id)valueForProperty:(id)arg1 database:(id)arg2;
 

@@ -7,25 +7,25 @@
 @interface _UICache : NSObject {
     NSMutableDictionary *_cache;
     NSObject<OS_dispatch_queue> *_cacheQueue;
+    BOOL _clearsCacheOnApplicationBackground;
+    BOOL _clearsCacheOnLowMemoryWarnings;
     NSObject<OS_dispatch_source> *_memoryWarningsSource;
     id _noteObserver;
-    bool_clearsCacheOnApplicationBackground;
-    bool_clearsCacheOnLowMemoryWarnings;
 }
 
-@property bool clearsCacheOnApplicationBackground;
-@property bool clearsCacheOnLowMemoryWarnings;
+@property BOOL clearsCacheOnApplicationBackground;
+@property BOOL clearsCacheOnLowMemoryWarnings;
 
 - (id)cacheKeys;
-- (bool)clearsCacheOnApplicationBackground;
-- (bool)clearsCacheOnLowMemoryWarnings;
+- (BOOL)clearsCacheOnApplicationBackground;
+- (BOOL)clearsCacheOnLowMemoryWarnings;
 - (void)dealloc;
 - (id)init;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
-- (void)setClearsCacheOnApplicationBackground:(bool)arg1;
-- (void)setClearsCacheOnLowMemoryWarnings:(bool)arg1;
+- (void)setClearsCacheOnApplicationBackground:(BOOL)arg1;
+- (void)setClearsCacheOnLowMemoryWarnings:(BOOL)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

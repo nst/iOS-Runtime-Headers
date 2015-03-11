@@ -12,11 +12,11 @@
 @property(retain) UIImage * inlineMap;
 @property(retain) UIImageView * inlineMapView;
 
-+ (bool)requiresConstraintBasedLayout;
++ (BOOL)requiresConstraintBasedLayout;
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)inlineMap;
 - (id)inlineMapView;
 - (void)setInlineMap:(id)arg1;

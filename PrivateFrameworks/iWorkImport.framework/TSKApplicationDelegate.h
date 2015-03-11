@@ -8,21 +8,21 @@
     <TSKCompatibilityDelegate> *_compatibilityDelegate;
 }
 
-@property(getter=isActivating,readonly) bool activating;
+@property(getter=isActivating,readonly) BOOL activating;
 @property(readonly) NSString * applicationName;
-@property(readonly) bool centerOnInitialSelection;
+@property(readonly) BOOL centerOnInitialSelection;
 @property(retain) <TSKCompatibilityDelegate> * compatibilityDelegate;
-@property(readonly) bool designModeEnabled;
+@property(readonly) BOOL designModeEnabled;
 @property(readonly) NSString * documentTypeDisplayName;
-@property(getter=isInBackground,readonly) bool inBackground;
-@property(readonly) bool isCanvasFullScreen;
-@property(readonly) bool performanceModeEnabled;
-@property(readonly) bool tableCellInspectorShowsNaturalAlignment;
-@property(readonly) bool tableHeaderInspectorShowsFreezeHeaderColumnsSwitch;
-@property(readonly) bool tableHeaderInspectorShowsFreezeHeaderRowsSwitch;
-@property(readonly) bool tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
+@property(getter=isInBackground,readonly) BOOL inBackground;
+@property(readonly) BOOL isCanvasFullScreen;
+@property(readonly) BOOL performanceModeEnabled;
+@property(readonly) BOOL tableCellInspectorShowsNaturalAlignment;
+@property(readonly) BOOL tableHeaderInspectorShowsFreezeHeaderColumnsSwitch;
+@property(readonly) BOOL tableHeaderInspectorShowsFreezeHeaderRowsSwitch;
+@property(readonly) BOOL tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
 @property(readonly) NSString * templateTypeDisplayName;
-@property(readonly) bool textInspectorShowsMoreSubpane;
+@property(readonly) BOOL textInspectorShowsMoreSubpane;
 
 + (id)documentDirectoryPath;
 + (id)platform_sharedDelegate;
@@ -31,33 +31,33 @@
 
 - (id)appChartPropertyOverrides;
 - (id)applicationName;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })applicationToolbarFrame;
-- (bool)centerOnInitialSelection;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationToolbarFrame;
+- (BOOL)centerOnInitialSelection;
 - (id)compatibilityDelegate;
 - (id)createCompatibilityDelegate;
 - (id)defaultHyperlinkURL;
-- (bool)designModeEnabled;
+- (BOOL)designModeEnabled;
 - (id)documentTypeDisplayName;
 - (id)init;
 - (id)invalidURLSchemes;
-- (bool)isActivating;
-- (bool)isCanvasFullScreen;
-- (bool)isInBackground;
-- (bool)openURL:(id)arg1;
-- (bool)performanceModeEnabled;
+- (BOOL)isActivating;
+- (BOOL)isCanvasFullScreen;
+- (BOOL)isInBackground;
+- (BOOL)openURL:(id)arg1;
+- (BOOL)performanceModeEnabled;
 - (id)previewImageForType:(id)arg1;
 - (void)setCompatibilityDelegate:(id)arg1;
-- (bool)shouldGenerateGuidesForOffscreenLayouts;
-- (bool)shouldRenderContactShadow;
-- (bool)shouldRenderCurvedShadow;
-- (bool)shouldValidateMasterLayoutWhileInsertingRows;
-- (bool)supportsRTL;
-- (bool)supportsScrollingInPhoneCommentUI;
-- (bool)tableCellInspectorShowsNaturalAlignment;
-- (bool)tableHeaderInspectorShowsFreezeHeaderColumnsSwitch;
-- (bool)tableHeaderInspectorShowsFreezeHeaderRowsSwitch;
-- (bool)tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
+- (BOOL)shouldGenerateGuidesForOffscreenLayouts;
+- (BOOL)shouldRenderContactShadow;
+- (BOOL)shouldRenderCurvedShadow;
+- (BOOL)shouldValidateMasterLayoutWhileInsertingRows;
+- (BOOL)supportsRTL;
+- (BOOL)supportsScrollingInPhoneCommentUI;
+- (BOOL)tableCellInspectorShowsNaturalAlignment;
+- (BOOL)tableHeaderInspectorShowsFreezeHeaderColumnsSwitch;
+- (BOOL)tableHeaderInspectorShowsFreezeHeaderRowsSwitch;
+- (BOOL)tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
 - (id)templateTypeDisplayName;
-- (bool)textInspectorShowsMoreSubpane;
+- (BOOL)textInspectorShowsMoreSubpane;
 
 @end

@@ -5,9 +5,9 @@
 @interface SKUITestDataURLProtocol : NSURLProtocol {
 }
 
-+ (bool)canInitWithRequest:(id)arg1;
++ (BOOL)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;
-+ (bool)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
++ (BOOL)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
 
 - (void)startLoading;
 - (void)stopLoading;

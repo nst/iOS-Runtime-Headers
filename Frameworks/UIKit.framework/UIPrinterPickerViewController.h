@@ -5,50 +5,50 @@
 @class NSString, PKPrinter, UINavigationController, UIPopoverController, UIPrinterBrowserViewController, UIPrinterPickerController, UIViewController, UIWindow;
 
 @interface UIPrinterPickerViewController : UIViewController <UIPrinterBrowserOwner, UINavigationControllerDelegate> {
+    BOOL _animated;
+    BOOL _dismissed;
     UINavigationController *_navigationController;
+    BOOL _observingRotation;
     UIViewController *_originalViewControllerInNav;
     UIViewController *_parentController;
+    BOOL _parentHasNoPopover;
     UIPopoverController *_poverController;
     PKPrinter *_printer;
     UIPrinterBrowserViewController *_printerBrowserViewController;
     UIPrinterPickerController *_printerPickerController;
+    BOOL _userSelectedPrinter;
     UIWindow *_window;
-    bool_animated;
-    bool_dismissed;
-    bool_observingRotation;
-    bool_parentHasNoPopover;
-    bool_userSelectedPrinter;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) PKPrinter * printer;
 @property(readonly) Class superclass;
-@property bool userSelectedPrinter;
+@property BOOL userSelectedPrinter;
 
 - (void)_keyWindowWillRotate:(id)arg1;
-- (void)_presentInParentAnimated:(bool)arg1;
+- (void)_presentInParentAnimated:(BOOL)arg1;
 - (void)_presentWindow;
 - (void)cancelPrinting;
 - (void)controllerDidDisappear;
 - (void)dealloc;
-- (void)dismissAnimated:(bool)arg1;
-- (void)dismissPrinterPickerAnimated:(bool)arg1;
-- (bool)filtersPrinters;
+- (void)dismissAnimated:(BOOL)arg1;
+- (void)dismissPrinterPickerAnimated:(BOOL)arg1;
+- (BOOL)filtersPrinters;
 - (id)initWithPrinterPickerController:(id)arg1 inParentController:(id)arg2;
-- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(bool)arg3;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
+- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)presentPrinterPickerPanelAnimated:(bool)arg1;
-- (void)presentPrinterPickerPanelFromBarButtonItem:(id)arg1 animated:(bool)arg2;
-- (void)presentPrinterPickerPanelFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(bool)arg3;
+- (void)presentPrinterPickerPanelAnimated:(BOOL)arg1;
+- (void)presentPrinterPickerPanelFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
+- (void)presentPrinterPickerPanelFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (id)printer;
 - (void)setPrinter:(id)arg1;
-- (void)setUserSelectedPrinter:(bool)arg1;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (bool)shouldShowPrinter:(id)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
-- (bool)userSelectedPrinter;
+- (void)setUserSelectedPrinter:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldShowPrinter:(id)arg1;
+- (unsigned int)supportedInterfaceOrientations;
+- (BOOL)userSelectedPrinter;
 
 @end

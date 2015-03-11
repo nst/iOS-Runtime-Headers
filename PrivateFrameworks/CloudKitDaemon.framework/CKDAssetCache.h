@@ -12,11 +12,11 @@
     NSObject<OS_dispatch_source> *_expiryTimer;
     NSString *_fileDownloadPath;
     int _fileDownloadPathFd;
+    BOOL _isEvictionScheduled;
+    BOOL _isUnitTestingAccount;
     NSString *_packageDownloadPath;
     NSString *_packageUploadPath;
     NSObject<OS_dispatch_queue> *_queue;
-    bool_isEvictionScheduled;
-    bool_isUnitTestingAccount;
 }
 
 @property CKDMMCS * MMCS;
@@ -26,8 +26,8 @@
 @property(retain) NSObject<OS_dispatch_source> * expiryTimer;
 @property(retain) NSString * fileDownloadPath;
 @property int fileDownloadPathFd;
-@property bool isEvictionScheduled;
-@property bool isUnitTestingAccount;
+@property BOOL isEvictionScheduled;
+@property BOOL isUnitTestingAccount;
 @property(retain) NSString * packageDownloadPath;
 @property(retain) NSString * packageUploadPath;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
@@ -40,10 +40,10 @@
 - (void).cxx_destruct;
 - (id)MMCS;
 - (id)_addAssetHandleForFileURL:(id)arg1 signature:(id)arg2 itemID:(id)arg3 error:(id*)arg4;
-- (void)_evictDownloadedFilesForced:(bool)arg1;
-- (void)_evictDownloadedFilesWithDatabase:(id)arg1 forced:(bool)arg2;
-- (void)_evictFilesForced:(bool)arg1;
-- (void)_evictPackagesForced:(bool)arg1;
+- (void)_evictDownloadedFilesForced:(BOOL)arg1;
+- (void)_evictDownloadedFilesWithDatabase:(id)arg1 forced:(BOOL)arg2;
+- (void)_evictFilesForced:(BOOL)arg1;
+- (void)_evictPackagesForced:(BOOL)arg1;
 - (void)_expireAssetHandles;
 - (void)_scheduleEvictionForDownloadedFiles;
 - (void)_scheduleExpirationForAssetHandles;
@@ -52,18 +52,18 @@
 - (id)addAssetHandleForDownloadedFileURL:(id)arg1 itemID:(unsigned long long)arg2 signature:(id)arg3 error:(id*)arg4;
 - (id)applicationBundleID;
 - (void)cancelExpiryTimer;
-- (void)clearForced:(bool)arg1;
+- (void)clearForced:(BOOL)arg1;
 - (id)dbPath;
 - (id)dbPool;
 - (void)dealloc;
-- (void)evictAllFilesForced:(bool)arg1;
+- (void)evictAllFilesForced:(BOOL)arg1;
 - (void)expireAssetHandlesIfNecessary;
 - (id)expiryTimer;
 - (id)fileDownloadPath;
 - (int)fileDownloadPathFd;
 - (id)initWithApplicationBundleID:(id)arg1 dbPath:(id)arg2 fileDownloadPath:(id)arg3 packageDownloadPath:(id)arg4 packageUploadPath:(id)arg5;
-- (bool)isEvictionScheduled;
-- (bool)isUnitTestingAccount;
+- (BOOL)isEvictionScheduled;
+- (BOOL)isUnitTestingAccount;
 - (int)openFileDescriptorForItemID:(unsigned long long)arg1 itemType:(id*)arg2 error:(id*)arg3;
 - (id)packageDownloadPath;
 - (id)packageUploadPath;
@@ -73,13 +73,13 @@
 - (void)setExpiryTimer:(id)arg1;
 - (void)setFileDownloadPath:(id)arg1;
 - (void)setFileDownloadPathFd:(int)arg1;
-- (void)setIsEvictionScheduled:(bool)arg1;
-- (void)setIsUnitTestingAccount:(bool)arg1;
+- (void)setIsEvictionScheduled:(BOOL)arg1;
+- (void)setIsUnitTestingAccount:(BOOL)arg1;
 - (void)setMMCS:(id)arg1;
 - (void)setPackageDownloadPath:(id)arg1;
 - (void)setPackageUploadPath:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (bool)startTrackingAssetHandles:(id)arg1 error:(id*)arg2;
+- (BOOL)startTrackingAssetHandles:(id)arg1 error:(id*)arg2;
 - (void)stopTrackingAssetHandlesByItemIDs:(id)arg1;
 
 @end

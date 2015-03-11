@@ -14,7 +14,7 @@
 
 + (void)initialize;
 
-- (bool)_attachToPlayerItem:(id)arg1;
+- (BOOL)_attachToPlayerItem:(id)arg1;
 - (void)_collectUncollectables;
 - (void)_detachFromPlayerItem;
 - (void)_pushTimedMetadataGroups:(id)arg1 fromPlayerItemTrack:(id)arg2;

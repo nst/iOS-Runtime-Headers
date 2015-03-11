@@ -9,15 +9,15 @@
     int _accelRate;
     CMMotionManager *_motionManager;
     NSOperationQueue *_opQueue;
+    BOOL _pedometerIsOn;
     StepHandler *_stepHandler;
-    bool_pedometerIsOn;
 }
 
 @property(retain) ActivityCounts * aCounts;
 @property int accelRate;
 @property(retain) CMMotionManager * motionManager;
 @property(retain) NSOperationQueue * opQueue;
-@property bool pedometerIsOn;
+@property BOOL pedometerIsOn;
 @property(retain) StepHandler * stepHandler;
 
 + (int)activityCountThresholdForActivityLevel:(int)arg1 epochDuration:(int)arg2;
@@ -29,12 +29,12 @@
 - (id)initActivityTracking:(id)arg1;
 - (id)motionManager;
 - (id)opQueue;
-- (bool)pedometerIsOn;
+- (BOOL)pedometerIsOn;
 - (void)setACounts:(id)arg1;
 - (void)setAccelRate:(int)arg1;
 - (void)setMotionManager:(id)arg1;
 - (void)setOpQueue:(id)arg1;
-- (void)setPedometerIsOn:(bool)arg1;
+- (void)setPedometerIsOn:(BOOL)arg1;
 - (void)setStepHandler:(id)arg1;
 - (void)startActivityUpdates;
 - (void)startPedometerUpdates:(id)arg1;

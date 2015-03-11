@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSData * jpegArtwork;
 @property(readonly) NSData * originalDigest;
 @property(readonly) NSDate * serializationDate;

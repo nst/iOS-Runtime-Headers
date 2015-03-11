@@ -5,13 +5,13 @@
 @interface PUAdjustmentsToolControllerSpec : PUPhotoEditToolControllerSpec {
 }
 
-@property(readonly) long long visualSliderThumbnailCount;
-@property(readonly) double visualSliderThumbnailLongSide;
-@property(readonly) double visualSliderThumbnailShortSide;
+@property(readonly) int visualSliderThumbnailCount;
+@property(readonly) float visualSliderThumbnailLongSide;
+@property(readonly) float visualSliderThumbnailShortSide;
 
 - (id)newModeBarView;
-- (long long)visualSliderThumbnailCount;
-- (double)visualSliderThumbnailLongSide;
-- (double)visualSliderThumbnailShortSide;
+- (int)visualSliderThumbnailCount;
+- (float)visualSliderThumbnailLongSide;
+- (float)visualSliderThumbnailShortSide;
 
 @end

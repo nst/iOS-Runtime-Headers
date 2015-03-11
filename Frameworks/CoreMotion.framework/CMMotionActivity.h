@@ -19,30 +19,30 @@
     } fState;
 }
 
-@property(readonly) bool automotive;
-@property(readonly) long long confidence;
-@property(readonly) bool cycling;
-@property(readonly) bool running;
+@property(readonly) BOOL automotive;
+@property(readonly) int confidence;
+@property(readonly) BOOL cycling;
+@property(readonly) BOOL running;
 @property(readonly) NSDate * startDate;
-@property(readonly) bool stationary;
-@property(readonly) bool unknown;
-@property(readonly) bool walking;
+@property(readonly) BOOL stationary;
+@property(readonly) BOOL unknown;
+@property(readonly) BOOL walking;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id).cxx_construct;
-- (bool)automotive;
-- (long long)confidence;
+- (BOOL)automotive;
+- (int)confidence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)cycling;
+- (BOOL)cycling;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; boolx5; float x6; double x7; int x8; double x9; double x10; })arg1;
-- (bool)running;
+- (BOOL)running;
 - (id)startDate;
-- (bool)stationary;
-- (bool)unknown;
-- (bool)walking;
+- (BOOL)stationary;
+- (BOOL)unknown;
+- (BOOL)walking;
 
 @end

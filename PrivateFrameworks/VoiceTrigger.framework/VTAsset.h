@@ -8,7 +8,7 @@
     ASAsset *_asset;
 }
 
-@property(getter=isInstalled,readonly) bool installed;
+@property(getter=isInstalled,readonly) BOOL installed;
 @property(readonly) NSArray * languages;
 @property(readonly) NSString * path;
 @property(readonly) NSNumber * version;
@@ -16,7 +16,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithASAsset:(id)arg1;
-- (bool)isInstalled;
+- (BOOL)isInstalled;
 - (id)languages;
 - (id)path;
 - (id)version;

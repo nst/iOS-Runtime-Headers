@@ -10,7 +10,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) GKGame * game;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)exportedInterface;
@@ -19,7 +19,7 @@
 - (id)_managingHostedAuthenticateViewController;
 - (void)populateInitialStateForRemoteView:(id)arg1;
 - (void)remoteViewControllerIsCanceling;
-- (bool)serviceNeedsLocalPlayer;
+- (BOOL)serviceNeedsLocalPlayer;
 - (void)unlockRotation;
 
 @end

@@ -18,9 +18,9 @@
 @property(copy) NSString * filter;
 @property(copy) NSString * runtimeOverride;
 
-+ (bool)debugLoggingEnabled;
++ (BOOL)debugLoggingEnabled;
 + (id)sharedLogger;
-+ (bool)verboseLoggingEnabled;
++ (BOOL)verboseLoggingEnabled;
 
 - (void).cxx_destruct;
 - (void)_updateSettingsFromPreferences:(id)arg1;
@@ -38,6 +38,6 @@
 - (void)setAuxPath:(id)arg1;
 - (void)setFilter:(id)arg1;
 - (void)setRuntimeOverride:(id)arg1;
-- (bool)shouldOverrideCondition:(id)arg1 file:(id)arg2;
+- (BOOL)shouldOverrideCondition:(id)arg1 file:(id)arg2;
 
 @end

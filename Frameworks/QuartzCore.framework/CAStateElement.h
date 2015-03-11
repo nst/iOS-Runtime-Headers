@@ -25,7 +25,7 @@
 - (void)foreachLayer:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyPath;
-- (bool)matches:(id)arg1;
+- (BOOL)matches:(id)arg1;
 - (id)save;
 - (void)setSource:(id)arg1;
 - (void)setTarget:(id)arg1;

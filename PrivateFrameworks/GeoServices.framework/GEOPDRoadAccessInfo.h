@@ -19,13 +19,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (id)roadAccessPointAtIndex:(unsigned long long)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (id)roadAccessPointAtIndex:(unsigned int)arg1;
 - (id)roadAccessPoints;
-- (unsigned long long)roadAccessPointsCount;
+- (unsigned int)roadAccessPointsCount;
 - (void)setRoadAccessPoints:(id)arg1;
 - (void)writeTo:(id)arg1;
 

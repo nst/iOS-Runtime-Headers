@@ -10,11 +10,11 @@
     NSString *_dbPath;
     id _delegate;
     unsigned int _nextCancellationToken;
-    unsigned int _options;
+    unsigned long _options;
+    BOOL _registeredForStartNote;
     <CADInterface> *_remoteOperationProxy;
     NSObject<OS_dispatch_queue> *_replyHandlerLock;
     NSXPCConnection *_xpcConnection;
-    bool_registeredForStartNote;
 }
 
 @property(retain,readonly) <CADInterface> * CADOperationProxy;
@@ -23,9 +23,9 @@
 
 + (void)waitOnSemaphoreWithBlock:(id)arg1;
 
-- (void)CADClientReceiveOccurrenceCacheSearchResults:(id)arg1 forSearchToken:(unsigned int)arg2 finished:(bool)arg3;
+- (void)CADClientReceiveOccurrenceCacheSearchResults:(id)arg1 forSearchToken:(unsigned int)arg2 finished:(BOOL)arg3;
 - (id)CADOperationProxy;
-- (bool)_connectToServer;
+- (BOOL)_connectToServer;
 - (void)_daemonRestarted;
 - (void)_finishAllRepliesOnServerDeath;
 - (unsigned int)addCancellableRemoteOperation:(id)arg1;
@@ -33,7 +33,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)disconnect;
-- (id)initWithOptions:(unsigned int)arg1 path:(id)arg2;
+- (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
 - (void)removeCancellableRemoteOperation:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)xpcConnection;

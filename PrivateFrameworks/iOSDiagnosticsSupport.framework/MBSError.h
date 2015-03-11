@@ -5,6 +5,6 @@
 @interface MBSError : NSObject {
 }
 
-+ (bool)setError:(id*)arg1 withCode:(int)arg2 format:(id)arg3;
++ (BOOL)setError:(id*)arg1 withCode:(int)arg2 format:(id)arg3;
 
 @end

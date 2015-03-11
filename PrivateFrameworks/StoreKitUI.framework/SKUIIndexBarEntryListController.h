@@ -6,17 +6,17 @@
 
 @interface SKUIIndexBarEntryListController : NSObject {
     <SKUIIndexBarEntryListControllerDelegate> *_delegate;
-    long long _numberOfEntryDescriptors;
+    BOOL _hidesIndexBar;
+    BOOL _needsRootTargetViewElement;
+    int _numberOfEntryDescriptors;
     NSString *_rootTargetIndexBarEntryID;
     SKUIViewElement *_rootTargetViewElement;
-    bool_hidesIndexBar;
-    bool_needsRootTargetViewElement;
 }
 
 @property <SKUIIndexBarEntryListControllerDelegate> * delegate;
-@property(readonly) bool hidesIndexBar;
-@property(readonly) bool needsRootTargetViewElement;
-@property(readonly) long long numberOfEntryDescriptors;
+@property(readonly) BOOL hidesIndexBar;
+@property(readonly) BOOL needsRootTargetViewElement;
+@property(readonly) int numberOfEntryDescriptors;
 @property(readonly) NSString * rootTargetIndexBarEntryID;
 @property(retain) SKUIViewElement * rootTargetViewElement;
 
@@ -26,15 +26,15 @@
 - (void).cxx_destruct;
 - (void)_didInvalidate;
 - (id)delegate;
-- (id)entryDescriptorAtIndex:(long long)arg1;
-- (bool)hidesIndexBar;
-- (bool)needsRootTargetViewElement;
-- (long long)numberOfEntryDescriptors;
+- (id)entryDescriptorAtIndex:(int)arg1;
+- (BOOL)hidesIndexBar;
+- (BOOL)needsRootTargetViewElement;
+- (int)numberOfEntryDescriptors;
 - (void)reloadViewElementData;
 - (id)rootTargetIndexBarEntryID;
 - (id)rootTargetViewElement;
 - (void)setDelegate:(id)arg1;
 - (void)setRootTargetViewElement:(id)arg1;
-- (id)targetIndexBarEntryIDForEntryDescriptorAtIndex:(long long)arg1 returningRelativeSectionIndex:(out long long*)arg2;
+- (id)targetIndexBarEntryIDForEntryDescriptorAtIndex:(int)arg1 returningRelativeSectionIndex:(out int*)arg2;
 
 @end

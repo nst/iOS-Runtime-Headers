@@ -12,7 +12,7 @@
 }
 
 @property(retain) NSData * data;
-@property(readonly) bool hasData;
+@property(readonly) BOOL hasData;
 @property(retain) NSString * objectId;
 @property int type;
 @property unsigned long long version;
@@ -25,13 +25,13 @@
 - (id)data;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasData;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasData;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)objectForStore:(id)arg1;
 - (id)objectId;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setObjectId:(id)arg1;
 - (void)setType:(int)arg1;

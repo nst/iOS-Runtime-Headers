@@ -6,19 +6,19 @@
 
 @interface SKUIGiftConfiguration : NSObject {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     NSArray *_charities;
     NSMutableDictionary *_charityImages;
     SKUIClientContext *_clientContext;
     NSString *_currencySymbol;
-    long long _currencySymbolPosition;
+    int _currencySymbolPosition;
     NSArray *_fixedGiftAmountLabels;
     NSArray *_fixedGiftAmountValues;
     } _giftAmountRange;
     NSURL *_giftPurchaseURL;
     NSURL *_giftValidationURL;
-    long long _maximumMessageLength;
+    int _maximumMessageLength;
     NSHashTable *_observers;
     NSOperationQueue *_operationQueue;
     NSString *_senderEmailAddress;
@@ -29,13 +29,13 @@
 
 @property(readonly) SKUIClientContext * clientContext;
 @property(readonly) NSString * currencySymbol;
-@property(readonly) long long currencySymbolPosition;
+@property(readonly) int currencySymbolPosition;
 @property(readonly) NSArray * fixedGiftAmountLabels;
 @property(readonly) NSArray * fixedGiftAmountValues;
-@property(readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } giftAmountRange;
+@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } giftAmountRange;
 @property(readonly) NSURL * giftPurchaseURL;
 @property(readonly) NSURL * giftValidationURL;
-@property(readonly) long long maximumMessageLength;
+@property(readonly) int maximumMessageLength;
 @property(readonly) NSString * senderEmailAddress;
 @property(readonly) NSString * senderName;
 @property(readonly) NSString * storeFrontName;
@@ -51,18 +51,18 @@
 - (id)charityForIdentifier:(id)arg1;
 - (id)clientContext;
 - (id)currencySymbol;
-- (long long)currencySymbolPosition;
+- (int)currencySymbolPosition;
 - (id)fixedGiftAmountLabels;
 - (id)fixedGiftAmountValues;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })giftAmountRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })giftAmountRange;
 - (id)giftPurchaseURL;
 - (id)giftValidationURL;
 - (id)initWithOperationQueue:(id)arg1 clientContext:(id)arg2;
-- (bool)loadCachedConfiguration;
+- (BOOL)loadCachedConfiguration;
 - (void)loadConfigurationWithCompletionBlock:(id)arg1;
 - (void)loadLogoForCharity:(id)arg1;
 - (id)logoImageForCharity:(id)arg1;
-- (long long)maximumMessageLength;
+- (int)maximumMessageLength;
 - (void)removeObserver:(id)arg1;
 - (id)senderEmailAddress;
 - (id)senderName;

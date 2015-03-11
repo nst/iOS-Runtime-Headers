@@ -11,17 +11,17 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) SSVPlayActivityEvent * playActivityEvent;
 @property(copy) NSString * playbackSessionID;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)description;
-- (bool)isValidReportingEvent;
+- (BOOL)isValidReportingEvent;
 - (id)playActivityEvent;
 - (id)playbackSessionID;
-- (unsigned long long)reportingEventType;
+- (unsigned int)reportingEventType;
 - (void)setPlayActivityEvent:(id)arg1;
 - (void)setPlaybackSessionID:(id)arg1;
 

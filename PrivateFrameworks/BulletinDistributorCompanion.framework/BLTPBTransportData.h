@@ -7,30 +7,30 @@
         unsigned int sequenceNumber : 1; 
         unsigned int isInitialSequenceNumber : 1; 
     } _has;
+    BOOL _isInitialSequenceNumber;
     unsigned long long _sequenceNumber;
-    bool_isInitialSequenceNumber;
 }
 
-@property bool hasIsInitialSequenceNumber;
-@property bool hasSequenceNumber;
-@property bool isInitialSequenceNumber;
+@property BOOL hasIsInitialSequenceNumber;
+@property BOOL hasSequenceNumber;
+@property BOOL isInitialSequenceNumber;
 @property unsigned long long sequenceNumber;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasIsInitialSequenceNumber;
-- (bool)hasSequenceNumber;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (bool)isInitialSequenceNumber;
+- (BOOL)hasIsInitialSequenceNumber;
+- (BOOL)hasSequenceNumber;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isInitialSequenceNumber;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned long long)sequenceNumber;
-- (void)setHasIsInitialSequenceNumber:(bool)arg1;
-- (void)setHasSequenceNumber:(bool)arg1;
-- (void)setIsInitialSequenceNumber:(bool)arg1;
+- (void)setHasIsInitialSequenceNumber:(BOOL)arg1;
+- (void)setHasSequenceNumber:(BOOL)arg1;
+- (void)setIsInitialSequenceNumber:(BOOL)arg1;
 - (void)setSequenceNumber:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 

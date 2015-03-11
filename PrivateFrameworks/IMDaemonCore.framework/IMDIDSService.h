@@ -6,15 +6,15 @@
 
 @interface IMDIDSService : IMDService <IDSAccountControllerDelegate, IDSAccountRegistrationDelegate> {
     IDSAccountController *_accountController;
-    bool_activatingAccount;
-    bool_deactivatingAccount;
+    BOOL _activatingAccount;
+    BOOL _deactivatingAccount;
 }
 
 @property(retain,readonly) NSArray * accountsLoadedFromIdentityServices;
 @property(readonly) NSArray * activeAccountsFromIdentityServices;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain,readonly) IDSAccountController * idsAccountController;
 @property(readonly) Class superclass;
 

@@ -7,10 +7,10 @@
 @interface PLCloudSharingJob : PLDaemonJob {
     NSString *_archiveFilename;
     PLPhotoLibrary *_photoLibrary;
-    bool_shouldPrioritize;
+    BOOL _shouldPrioritize;
 }
 
-@property bool shouldPrioritize;
+@property BOOL shouldPrioritize;
 @property(retain,readonly) PLPhotoLibrary * transientPhotoLibrary;
 
 + (id)archiveDirectory;
@@ -24,9 +24,9 @@
 - (void)runAndWaitForMessageToBeSent;
 - (void)runDaemonSide;
 - (id)serialOperationQueue;
-- (void)setShouldPrioritize:(bool)arg1;
-- (bool)shouldArchiveXPCToDisk;
-- (bool)shouldPrioritize;
+- (void)setShouldPrioritize:(BOOL)arg1;
+- (BOOL)shouldArchiveXPCToDisk;
+- (BOOL)shouldPrioritize;
 - (id)transientPhotoLibrary;
 
 @end

@@ -5,7 +5,7 @@
 @class NSURL;
 
 @interface IDSAutoFileDeletion : NSObject {
-    long long _accessedCount;
+    int _accessedCount;
     NSURL *_fileURL;
 }
 

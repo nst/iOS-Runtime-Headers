@@ -5,12 +5,12 @@
 @class NSObject<OS_xpc_object>;
 
 @interface PLXPCRelay : NSObject {
+    BOOL _relayActive;
     NSObject<OS_xpc_object> *_relayConnection;
     NSObject<OS_xpc_object> *_xpcConnection;
-    bool_relayActive;
 }
 
-@property bool relayActive;
+@property BOOL relayActive;
 @property(retain) NSObject<OS_xpc_object> * relayConnection;
 @property(retain) NSObject<OS_xpc_object> * xpcConnection;
 
@@ -19,11 +19,11 @@
 - (void).cxx_destruct;
 - (void)handlePeer:(id)arg1 forEvent:(id)arg2;
 - (id)init;
-- (bool)isDebugEnabled;
-- (bool)relayActive;
+- (BOOL)isDebugEnabled;
+- (BOOL)relayActive;
 - (id)relayConnection;
 - (void)resetRelayConnection;
-- (void)setRelayActive:(bool)arg1;
+- (void)setRelayActive:(BOOL)arg1;
 - (void)setRelayConnection:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (void)startRelay;

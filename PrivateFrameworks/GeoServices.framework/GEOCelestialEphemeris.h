@@ -8,7 +8,7 @@
     struct { 
         double latitude; 
         double longitude; 
-    long long _body;
+    int _body;
     } _coordinate;
     NSDate *_date;
     GEOSolarEclipticCelestialBodyData *_eclipticCoord;
@@ -35,15 +35,15 @@
 @property(readonly) NSDate * transit;
 
 - (id).cxx_construct;
-- (void)_getRightAscension:(double*)arg1 declination:(double*)arg2 forJulianDay:(double)arg3 forBody:(long long)arg4;
-- (struct CAARiseTransitSetDetails { boolx1; double x2; boolx3; double x4; boolx5; double x6; })_riseTransitSetForBody:(long long)arg1;
+- (void)_getRightAscension:(double*)arg1 declination:(double*)arg2 forJulianDay:(double)arg3 forBody:(int)arg4;
+- (struct CAARiseTransitSetDetails { boolx1; double x2; boolx3; double x4; boolx5; double x6; })_riseTransitSetForBody:(int)arg1;
 - (void)dealloc;
 - (id)eclipticCoord;
 - (double)elongation;
 - (id)equatorialCoord;
 - (id)horizontalCoord;
 - (double)illuminatedFraction;
-- (id)initWithLocation:(struct { double x1; double x2; })arg1 date:(id)arg2 body:(long long)arg3;
+- (id)initWithLocation:(struct { double x1; double x2; })arg1 date:(id)arg2 body:(int)arg3;
 - (double)parallacticAngle;
 - (double)phaseAngle;
 - (id)rise;

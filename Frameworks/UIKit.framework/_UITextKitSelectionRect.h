@@ -5,35 +5,35 @@
 @interface _UITextKitSelectionRect : UITextSelectionRect {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
+    BOOL _containsEnd;
+    BOOL _containsStart;
     } _rect;
-    bool_containsEnd;
-    bool_containsStart;
-    bool_vertical;
+    BOOL _vertical;
 }
 
-@property bool containsEnd;
-@property bool containsStart;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rect;
-@property(getter=isVertical) bool vertical;
+@property BOOL containsEnd;
+@property BOOL containsStart;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
+@property(getter=isVertical) BOOL vertical;
 
-+ (id)selectionRectWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)selectionRectWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
-- (bool)containsEnd;
-- (bool)containsStart;
+- (BOOL)containsEnd;
+- (BOOL)containsStart;
 - (id)description;
-- (bool)isVertical;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rect;
-- (void)setContainsEnd:(bool)arg1;
-- (void)setContainsStart:(bool)arg1;
-- (void)setRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setVertical:(bool)arg1;
-- (long long)writingDirection;
+- (BOOL)isVertical;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rect;
+- (void)setContainsEnd:(BOOL)arg1;
+- (void)setContainsStart:(BOOL)arg1;
+- (void)setRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setVertical:(BOOL)arg1;
+- (int)writingDirection;
 
 @end

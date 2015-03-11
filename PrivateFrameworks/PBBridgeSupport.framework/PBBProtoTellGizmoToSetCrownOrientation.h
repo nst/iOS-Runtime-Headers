@@ -5,25 +5,25 @@
 @interface PBBProtoTellGizmoToSetCrownOrientation : PBCodable <NSCopying> {
     struct { 
         unsigned int crownOrientationRight : 1; 
+    BOOL _crownOrientationRight;
     } _has;
-    bool_crownOrientationRight;
 }
 
-@property bool crownOrientationRight;
-@property bool hasCrownOrientationRight;
+@property BOOL crownOrientationRight;
+@property BOOL hasCrownOrientationRight;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)crownOrientationRight;
+- (BOOL)crownOrientationRight;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCrownOrientationRight;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCrownOrientationRight;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setCrownOrientationRight:(bool)arg1;
-- (void)setHasCrownOrientationRight:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setCrownOrientationRight:(BOOL)arg1;
+- (void)setHasCrownOrientationRight:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

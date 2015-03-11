@@ -8,18 +8,18 @@
     struct { 
         unsigned int subtypeID : 1; 
         unsigned int defaultSubtype : 1; 
+    BOOL _defaultSubtype;
     } _has;
     BLTPBSectionIcon *_icon;
     NSString *_sectionID;
     unsigned long long _subtypeID;
-    bool_defaultSubtype;
 }
 
-@property bool defaultSubtype;
-@property bool hasDefaultSubtype;
-@property(readonly) bool hasIcon;
-@property(readonly) bool hasSectionID;
-@property bool hasSubtypeID;
+@property BOOL defaultSubtype;
+@property BOOL hasDefaultSubtype;
+@property(readonly) BOOL hasIcon;
+@property(readonly) BOOL hasSectionID;
+@property BOOL hasSubtypeID;
 @property(retain) BLTPBSectionIcon * icon;
 @property(retain) NSString * sectionID;
 @property unsigned long long subtypeID;
@@ -27,22 +27,22 @@
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)defaultSubtype;
+- (BOOL)defaultSubtype;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasDefaultSubtype;
-- (bool)hasIcon;
-- (bool)hasSectionID;
-- (bool)hasSubtypeID;
-- (unsigned long long)hash;
+- (BOOL)hasDefaultSubtype;
+- (BOOL)hasIcon;
+- (BOOL)hasSectionID;
+- (BOOL)hasSubtypeID;
+- (unsigned int)hash;
 - (id)icon;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)sectionID;
-- (void)setDefaultSubtype:(bool)arg1;
-- (void)setHasDefaultSubtype:(bool)arg1;
-- (void)setHasSubtypeID:(bool)arg1;
+- (void)setDefaultSubtype:(BOOL)arg1;
+- (void)setHasDefaultSubtype:(BOOL)arg1;
+- (void)setHasSubtypeID:(BOOL)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setSectionID:(id)arg1;
 - (void)setSubtypeID:(unsigned long long)arg1;

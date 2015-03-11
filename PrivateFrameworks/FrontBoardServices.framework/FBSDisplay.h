@@ -7,54 +7,54 @@
 @interface FBSDisplay : NSObject <BSXPCCoding, NSCopying, NSSecureCoding> {
     CADisplay *_caDisplay;
     unsigned int _seed;
-    long long _tags;
-    unsigned long long _type;
+    int _tags;
+    unsigned int _type;
 }
 
 @property(retain,readonly) CADisplay * caDisplay;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) double orientation;
-@property(readonly) double scale;
+@property(readonly) unsigned int hash;
+@property(readonly) float orientation;
+@property(readonly) float scale;
 @property unsigned int seed;
 @property(readonly) Class superclass;
-@property(readonly) long long tags;
-@property(readonly) unsigned long long type;
+@property(readonly) int tags;
+@property(readonly) unsigned int type;
 
 + (id)_CADisplayForId:(unsigned int)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_nameForDisplayType;
 - (id)_screen;
-- (unsigned long long)_typeFromTags:(unsigned long long)arg1;
+- (unsigned int)_typeFromTags:(unsigned int)arg1;
 - (id)caDisplay;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned long long)hash;
-- (id)initWithCADisplay:(id)arg1 isMainDisplay:(bool)arg2 seed:(unsigned int)arg3 tags:(long long)arg4;
-- (id)initWithCADisplay:(id)arg1 isMainDisplay:(bool)arg2;
+- (unsigned int)hash;
+- (id)initWithCADisplay:(id)arg1 isMainDisplay:(BOOL)arg2 seed:(unsigned int)arg3 tags:(int)arg4;
+- (id)initWithCADisplay:(id)arg1 isMainDisplay:(BOOL)arg2;
 - (id)initWithCADisplay:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (bool)isAirPlayDisplay;
-- (bool)isCarDisplay;
-- (bool)isConnected;
-- (bool)isEqual:(id)arg1;
-- (bool)isExternal;
-- (bool)isHiddenDisplay;
-- (bool)isMainDisplay;
-- (bool)isMusicOnlyDisplay;
-- (bool)isWatchOnlyDisplay;
-- (bool)isiPodOnlyDisplay;
-- (double)orientation;
-- (double)scale;
+- (BOOL)isAirPlayDisplay;
+- (BOOL)isCarDisplay;
+- (BOOL)isConnected;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isExternal;
+- (BOOL)isHiddenDisplay;
+- (BOOL)isMainDisplay;
+- (BOOL)isMusicOnlyDisplay;
+- (BOOL)isWatchOnlyDisplay;
+- (BOOL)isiPodOnlyDisplay;
+- (float)orientation;
+- (float)scale;
 - (unsigned int)seed;
-- (void)setConnected:(bool)arg1;
+- (void)setConnected:(BOOL)arg1;
 - (void)setSeed:(unsigned int)arg1;
-- (long long)tags;
-- (unsigned long long)type;
+- (int)tags;
+- (unsigned int)type;
 
 @end

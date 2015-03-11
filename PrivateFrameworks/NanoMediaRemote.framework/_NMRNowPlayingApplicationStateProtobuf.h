@@ -14,9 +14,9 @@
 }
 
 @property(retain) NSString * bundleIdentifier;
-@property(readonly) bool hasBundleIdentifier;
-@property(readonly) bool hasLocalizedDisplayName;
-@property bool hasPlaybackState;
+@property(readonly) BOOL hasBundleIdentifier;
+@property(readonly) BOOL hasLocalizedDisplayName;
+@property BOOL hasPlaybackState;
 @property(retain) NSString * localizedDisplayName;
 @property unsigned int playbackState;
 
@@ -26,17 +26,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasBundleIdentifier;
-- (bool)hasLocalizedDisplayName;
-- (bool)hasPlaybackState;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasBundleIdentifier;
+- (BOOL)hasLocalizedDisplayName;
+- (BOOL)hasPlaybackState;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)localizedDisplayName;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)playbackState;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
-- (void)setHasPlaybackState:(bool)arg1;
+- (void)setHasPlaybackState:(BOOL)arg1;
 - (void)setLocalizedDisplayName:(id)arg1;
 - (void)setPlaybackState:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;

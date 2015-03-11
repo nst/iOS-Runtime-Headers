@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property EAWiFiUnconfiguredAccessoryBrowserManager * parent;
 @property(readonly) Class superclass;
 
@@ -22,10 +22,10 @@
 - (void)backendDidStartSearchWithError:(id)arg1;
 - (void)backendDidStopSearchWithError:(id)arg1;
 - (void)backendFoundNewWACDevices:(id)arg1 andRemovedWACDevices:(id)arg2;
-- (void)dismissWithStatus:(int)arg1;
+- (void)dismissWithStatus:(long)arg1;
 - (id)parent;
 - (void)setParent:(id)arg1;
-- (void)updateState:(long long)arg1;
+- (void)updateState:(int)arg1;
 - (void)wifiDidShutdown;
 
 @end

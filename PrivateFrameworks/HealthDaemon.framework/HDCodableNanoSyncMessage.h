@@ -4,7 +4,7 @@
 
 @class HDCodableNanoSyncActivationRestore, HDCodableNanoSyncChangeSet, HDCodableNanoSyncStatus, NSData, NSString;
 
-@interface HDCodableNanoSyncMessage : PBCodable <NSCopying, HDNanoSyncDescription> {
+@interface HDCodableNanoSyncMessage : PBCodable <HDNanoSyncDescription, NSCopying> {
     struct { 
         unsigned int version : 1; 
     HDCodableNanoSyncActivationRestore *_activationRestore;
@@ -20,13 +20,13 @@
 @property(retain) HDCodableNanoSyncChangeSet * changeSet;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) bool hasActivationRestore;
-@property(readonly) bool hasChangeSet;
-@property(readonly) bool hasHealthPairingUUID;
-@property(readonly) bool hasPersistentPairingUUID;
-@property(readonly) bool hasStatus;
-@property bool hasVersion;
-@property(readonly) unsigned long long hash;
+@property(readonly) BOOL hasActivationRestore;
+@property(readonly) BOOL hasChangeSet;
+@property(readonly) BOOL hasHealthPairingUUID;
+@property(readonly) BOOL hasPersistentPairingUUID;
+@property(readonly) BOOL hasStatus;
+@property BOOL hasVersion;
+@property(readonly) unsigned int hash;
 @property(retain) NSData * healthPairingUUID;
 @property(retain) NSData * persistentPairingUUID;
 @property(retain) HDCodableNanoSyncStatus * status;
@@ -46,23 +46,23 @@
 - (id)decodedPersistentPairingUUID;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasActivationRestore;
-- (bool)hasChangeSet;
-- (bool)hasHealthPairingUUID;
-- (bool)hasMinimumVersion;
-- (bool)hasPersistentPairingUUID;
-- (bool)hasStatus;
-- (bool)hasVersion;
-- (unsigned long long)hash;
+- (BOOL)hasActivationRestore;
+- (BOOL)hasChangeSet;
+- (BOOL)hasHealthPairingUUID;
+- (BOOL)hasMinimumVersion;
+- (BOOL)hasPersistentPairingUUID;
+- (BOOL)hasStatus;
+- (BOOL)hasVersion;
+- (unsigned int)hash;
 - (id)healthPairingUUID;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nanoSyncDescription;
 - (id)persistentPairingUUID;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setActivationRestore:(id)arg1;
 - (void)setChangeSet:(id)arg1;
-- (void)setHasVersion:(bool)arg1;
+- (void)setHasVersion:(BOOL)arg1;
 - (void)setHealthPairingUUID:(id)arg1;
 - (void)setPersistentPairingUUID:(id)arg1;
 - (void)setStatus:(id)arg1;

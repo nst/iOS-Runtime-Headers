@@ -6,19 +6,19 @@
 
 @interface DADAMContainerIDCacheKey : NSObject <NSCopying> {
     NSString *_accountID;
-    long long _dataclass;
+    int _dataclass;
 }
 
 @property(readonly) NSString * accountID;
-@property(readonly) long long dataclass;
+@property(readonly) int dataclass;
 
 - (void).cxx_destruct;
 - (id)accountID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)dataclass;
+- (int)dataclass;
 - (id)description;
-- (unsigned long long)hash;
-- (id)initWithAccountID:(id)arg1 andDataclass:(long long)arg2;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)initWithAccountID:(id)arg1 andDataclass:(int)arg2;
+- (BOOL)isEqual:(id)arg1;
 
 @end

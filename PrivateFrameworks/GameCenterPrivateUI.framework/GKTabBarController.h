@@ -6,34 +6,34 @@
 
 @interface GKTabBarController : UITabBarController {
     GKBubbleFlowRootViewController *_bubbleFlowRootViewController;
-    unsigned long long _deferedRotationCount;
+    unsigned int _deferedRotationCount;
 }
 
 @property(retain) GKBubbleFlowRootViewController * bubbleFlowRootViewController;
-@property unsigned long long deferedRotationCount;
+@property unsigned int deferedRotationCount;
 @property(readonly) NSArray * modalChildViewControllers;
-@property(readonly) bool tabBarCovered;
+@property(readonly) BOOL tabBarCovered;
 
 - (void)_ensureWeHaveAPresentedBubbleFlowRootViewController;
-- (bool)_hasBubbleFlowRootViewController;
-- (bool)_isBeingCoveredByBubbleFlowRootViewController;
-- (bool)_useBubbleFlowRootViewControllerToPresent:(id)arg1;
+- (BOOL)_hasBubbleFlowRootViewController;
+- (BOOL)_isBeingCoveredByBubbleFlowRootViewController;
+- (BOOL)_useBubbleFlowRootViewControllerToPresent:(id)arg1;
 - (id)bubbleFlowRootViewController;
-- (void)clearInterstitialViewAnimated:(bool)arg1;
+- (void)clearInterstitialViewAnimated:(BOOL)arg1;
 - (void)dealloc;
 - (id)deferRotation;
-- (unsigned long long)deferedRotationCount;
-- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id)arg2;
+- (unsigned int)deferedRotationCount;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
 - (id)init;
 - (id)modalChildViewControllers;
-- (void)popAllModalViewControllersAnimated:(bool)arg1 completion:(id)arg2;
-- (void)presentViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
+- (void)popAllModalViewControllersAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)setBubbleFlowRootViewController:(id)arg1;
-- (void)setDeferedRotationCount:(unsigned long long)arg1;
-- (bool)shouldAutorotate;
-- (void)showInterstitialViewAnimated:(bool)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
-- (bool)tabBarCovered;
+- (void)setDeferedRotationCount:(unsigned int)arg1;
+- (BOOL)shouldAutorotate;
+- (void)showInterstitialViewAnimated:(BOOL)arg1;
+- (unsigned int)supportedInterfaceOrientations;
+- (BOOL)tabBarCovered;
 - (id)viewControllers;
 
 @end

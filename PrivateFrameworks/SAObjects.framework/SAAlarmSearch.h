@@ -25,7 +25,7 @@
 - (id)identifier;
 - (id)label;
 - (id)minute;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setEnabled:(id)arg1;
 - (void)setFrequency:(id)arg1;
 - (void)setHour:(id)arg1;

@@ -10,15 +10,15 @@
     NSString *_accountId;
     NSString *_displayName;
     } _has;
-    bool_shouldArchive;
+    BOOL _shouldArchive;
 }
 
 @property(retain) NSString * accountId;
 @property(retain) NSString * displayName;
-@property(readonly) bool hasAccountId;
-@property(readonly) bool hasDisplayName;
-@property bool hasShouldArchive;
-@property bool shouldArchive;
+@property(readonly) BOOL hasAccountId;
+@property(readonly) BOOL hasDisplayName;
+@property BOOL hasShouldArchive;
+@property BOOL shouldArchive;
 
 - (void).cxx_destruct;
 - (id)accountId;
@@ -27,18 +27,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (bool)hasAccountId;
-- (bool)hasDisplayName;
-- (bool)hasShouldArchive;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasAccountId;
+- (BOOL)hasDisplayName;
+- (BOOL)hasShouldArchive;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAccountId:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setHasShouldArchive:(bool)arg1;
-- (void)setShouldArchive:(bool)arg1;
-- (bool)shouldArchive;
+- (void)setHasShouldArchive:(BOOL)arg1;
+- (void)setShouldArchive:(BOOL)arg1;
+- (BOOL)shouldArchive;
 - (void)writeTo:(id)arg1;
 
 @end

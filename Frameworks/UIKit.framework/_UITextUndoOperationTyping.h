@@ -6,16 +6,16 @@
 
 @interface _UITextUndoOperationTyping : NSUndoTextOperation {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     NSMutableAttributedString *_attributedString;
     } _replacementRange;
 }
 
-- (bool)coalesceAffectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 textStorage:(id)arg4;
+- (BOOL)coalesceAffectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 textStorage:(id)arg4;
 - (void)dealloc;
-- (id)initWithAffectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inputController:(id)arg2 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
-- (bool)supportsCoalescing;
+- (id)initWithAffectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inputController:(id)arg2 replacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)supportsCoalescing;
 - (void)undoRedo;
 
 @end

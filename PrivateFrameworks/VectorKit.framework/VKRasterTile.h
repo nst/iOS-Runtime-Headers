@@ -23,11 +23,11 @@
         float _lineWidth; 
         struct Mesh {} *_mesh; 
         struct Range { 
-            unsigned long long _start; 
-            unsigned long long _count; 
+            unsigned int _start; 
+            unsigned int _count; 
         } _range; 
         struct Range {} *_ranges; 
-        unsigned long long _rangeCount; 
+        unsigned int _rangeCount; 
     struct unique_ptr<ggl::Texture::Shader::Setup, std::__1::default_delete<ggl::Texture::Shader::Setup> > { 
         struct __compressed_pair<ggl::Texture::Shader::Setup *, std::__1::default_delete<ggl::Texture::Shader::Setup> > { 
             struct Setup {} *__first_; 
@@ -43,28 +43,28 @@
     NSData *_data;
     int _genericTileType;
     } _gglTexture;
+    BOOL _hasGenericTileType;
     } _renderItem;
     } _shaderReverseAlphaSetup;
     } _shaderSetup;
     } _shaderSetupCLUT;
     VKStyleManager *_styleManager;
-    bool_hasGenericTileType;
 }
 
 @property(readonly) int genericTileType;
 @property struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; } gglTexture;
-@property(readonly) bool hasGenericTileType;
-@property(readonly) struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; }* renderItem;
+@property(readonly) BOOL hasGenericTileType;
+@property(readonly) struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; }* renderItem;
 
-- (struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; }*)renderItem;
-- (struct TextureData2D { int (**x1)(); unsigned int x2; int x3; unsigned int x4; unsigned int x5; char *x6; char **x7; unsigned long long x8; }*)buildTextureDataFromCGImage:(struct CGImage { }*)arg1;
+- (struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; }*)renderItem;
+- (struct TextureData2D { int (**x1)(); unsigned int x2; int x3; unsigned int x4; unsigned int x5; char *x6; char **x7; unsigned int x8; }*)buildTextureDataFromCGImage:(struct CGImage { }*)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (int)genericTileType;
 - (void)gglBuildTexture:(struct Device { int (**x1)(); int x2; }*)arg1;
 - (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })gglTexture;
-- (bool)hasGenericTileType;
+- (BOOL)hasGenericTileType;
 - (void)immediateLoad:(struct Device { int (**x1)(); int x2; }*)arg1;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 imageData:(id)arg2 styleManager:(id)arg3 genericTileType:(int)arg4;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 imageData:(id)arg2 styleManager:(id)arg3;

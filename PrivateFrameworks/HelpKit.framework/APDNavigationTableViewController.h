@@ -5,44 +5,44 @@
 @class <APDNavigationTableViewControllerDelegate>, APDDataManager, NSMutableArray, NSString, UITableView, UIView;
 
 @interface APDNavigationTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    BOOL _RTL;
     APDDataManager *_dataManager;
     <APDNavigationTableViewControllerDelegate> *_delegate;
     UIView *_tableFooterView;
     UITableView *_tableView;
     NSMutableArray *_tableViewDataArray;
-    bool_RTL;
 }
 
-@property bool RTL;
+@property BOOL RTL;
 @property(retain) APDDataManager * dataManager;
 @property(copy,readonly) NSString * debugDescription;
 @property <APDNavigationTableViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(retain) UIView * tableFooterView;
 @property UITableView * tableView;
 
 - (void).cxx_destruct;
-- (bool)RTL;
+- (BOOL)RTL;
 - (id)dataManager;
 - (id)delegate;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setDataManager:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setRTL:(bool)arg1;
+- (void)setRTL:(BOOL)arg1;
 - (void)setTableFooterView:(id)arg1;
 - (void)setTableView:(id)arg1;
 - (id)tableFooterView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 willDeselectRowAtIndexPath:(id)arg2;
 - (id)tableView;
-- (bool)updateCellSelectionWithScollPosition:(long long)arg1 topic:(id)arg2 animated:(bool)arg3;
+- (BOOL)updateCellSelectionWithScollPosition:(int)arg1 topic:(id)arg2 animated:(BOOL)arg3;
 - (void)updateFooterView;
 - (void)updateLocalizedStrings;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

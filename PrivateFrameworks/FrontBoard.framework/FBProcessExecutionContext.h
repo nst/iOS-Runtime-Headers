@@ -6,52 +6,52 @@
 
 @interface FBProcessExecutionContext : NSObject {
     NSArray *_arguments;
+    BOOL _checkForLeaks;
+    BOOL _disableASLR;
     NSDictionary *_environment;
     unsigned int _launchAssertionFlags;
-    long long _launchIntent;
+    int _launchIntent;
     NSURL *_standardErrorURL;
     NSURL *_standardOutputURL;
+    BOOL _waitForDebugger;
     double _watchdogExtension;
-    bool_checkForLeaks;
-    bool_disableASLR;
-    bool_waitForDebugger;
 }
 
 @property(retain) NSArray * arguments;
-@property bool checkForLeaks;
-@property bool disableASLR;
+@property BOOL checkForLeaks;
+@property BOOL disableASLR;
 @property(retain) NSDictionary * environment;
 @property unsigned int launchAssertionFlags;
-@property long long launchIntent;
+@property int launchIntent;
 @property(retain) NSURL * standardErrorURL;
 @property(retain) NSURL * standardOutputURL;
-@property bool waitForDebugger;
+@property BOOL waitForDebugger;
 @property double watchdogExtension;
 
-+ (double)watchdogIntervalForLaunchIntent:(long long)arg1;
++ (double)watchdogIntervalForLaunchIntent:(int)arg1;
 
 - (unsigned int)_launchAssertionFlags;
 - (double)_launchWatchdogInterval;
 - (id)arguments;
-- (bool)checkForLeaks;
+- (BOOL)checkForLeaks;
 - (void)dealloc;
-- (bool)disableASLR;
+- (BOOL)disableASLR;
 - (id)environment;
 - (unsigned int)launchAssertionFlags;
-- (long long)launchIntent;
+- (int)launchIntent;
 - (void)setArguments:(id)arg1;
-- (void)setCheckForLeaks:(bool)arg1;
-- (void)setDisableASLR:(bool)arg1;
+- (void)setCheckForLeaks:(BOOL)arg1;
+- (void)setDisableASLR:(BOOL)arg1;
 - (void)setEnvironment:(id)arg1;
 - (void)setLaunchAssertionFlags:(unsigned int)arg1;
-- (void)setLaunchIntent:(long long)arg1;
+- (void)setLaunchIntent:(int)arg1;
 - (void)setStandardErrorURL:(id)arg1;
 - (void)setStandardOutputURL:(id)arg1;
-- (void)setWaitForDebugger:(bool)arg1;
+- (void)setWaitForDebugger:(BOOL)arg1;
 - (void)setWatchdogExtension:(double)arg1;
 - (id)standardErrorURL;
 - (id)standardOutputURL;
-- (bool)waitForDebugger;
+- (BOOL)waitForDebugger;
 - (double)watchdogExtension;
 
 @end

@@ -14,6 +14,6 @@
 - (void)animateLock;
 - (void)animateScaleDownWithCompletion:(id)arg1;
 - (double)fadeInDuration;
-- (void)startAnimatingContents:(bool)arg1 bounds:(bool)arg2 fadeIn:(bool)arg3;
+- (void)startAnimatingContents:(BOOL)arg1 bounds:(BOOL)arg2 fadeIn:(BOOL)arg3;
 
 @end

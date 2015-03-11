@@ -9,7 +9,7 @@
 + (void)_playNewMailSoundForAccount:(id)arg1;
 + (void)_playNewMailSoundForSubscribedConversation;
 + (void)_playNewMailSoundForVIP;
-+ (void)playNewMailSoundStyle:(unsigned long long)arg1 forAccount:(id)arg2;
++ (void)playNewMailSoundStyle:(unsigned int)arg1 forAccount:(id)arg2;
 + (void)playSentMailSound;
 
 @end

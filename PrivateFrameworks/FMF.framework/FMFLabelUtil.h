@@ -6,6 +6,6 @@
 }
 
 + (id)defaultLabelKeys;
-+ (bool)isDefaultLabel:(id)arg1;
++ (BOOL)isDefaultLabel:(id)arg1;
 
 @end

@@ -5,30 +5,30 @@
 @class NSString, NSURL;
 
 @interface IKAssetElement : IKViewElement {
-    bool_infiniteDuration;
+    BOOL _infiniteDuration;
 }
 
 @property(retain,readonly) NSString * actionParams;
 @property(retain,readonly) NSString * adamID;
 @property(retain,readonly) NSString * bookmarkID;
 @property(retain,readonly) NSString * contentID;
-@property(getter=isInfiniteDuration,readonly) bool infiniteDuration;
-@property(readonly) long long keyDelivery;
+@property(getter=isInfiniteDuration,readonly) BOOL infiniteDuration;
+@property(readonly) int keyDelivery;
 @property(retain,readonly) NSString * serviceID;
-@property(readonly) long long type;
+@property(readonly) int type;
 @property(retain,readonly) NSURL * url;
 
-+ (bool)shouldParseChildDOMElements;
++ (BOOL)shouldParseChildDOMElements;
 
 - (id)actionParams;
 - (id)adamID;
 - (id)bookmarkID;
 - (id)contentID;
-- (bool)infiniteDuration;
-- (bool)isInfiniteDuration;
-- (long long)keyDelivery;
+- (BOOL)infiniteDuration;
+- (BOOL)isInfiniteDuration;
+- (int)keyDelivery;
 - (id)serviceID;
-- (long long)type;
+- (int)type;
 - (id)url;
 
 @end

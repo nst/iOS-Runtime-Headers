@@ -6,23 +6,23 @@
 
 @interface MFPartialNetworkDataConsumer : NSObject <MFDataConsumer> {
     unsigned int _seenNetworkLineEndings : 1;
-    unsigned long long _length;
+    unsigned int _length;
     <MFGuaranteedCollectingDataConsumer> *_rawDataConsumer;
     NSData *_strippedData;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-- (long long)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (id)copyDataWithUnixLineEndings;
 - (id)data;
 - (void)dealloc;
 - (void)done;
 - (id)init;
-- (unsigned long long)length;
+- (unsigned int)length;
 - (void)purge;
 
 @end

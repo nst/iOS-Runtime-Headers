@@ -8,30 +8,30 @@
     struct { 
         int width; 
         int height; 
+    BOOL _offline;
     } _offlineOutputDimensions;
     NSDictionary *_optionsDict;
-    unsigned long long _outputHeight;
-    unsigned long long _outputWidth;
+    unsigned long _outputHeight;
+    unsigned long _outputWidth;
     struct OpaqueFigSampleBufferProcessor { } *_sampleBufferProcessor;
-    bool_offline;
 }
 
 + (void)initialize;
 
-- (int)_setupSampleBufferProcessor;
+- (long)_setupSampleBufferProcessor;
 - (void)_updateOutputRequirements;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
-- (id)initWithSensorIDDict:(id)arg1 moduleInfo:(id)arg2 stabilizationMethod:(int)arg3 requiredFormat:(id)arg4 activeMaxFrameRate:(float)arg5 motionAttachmentsSource:(int)arg6 offline:(bool)arg7;
+- (id)initWithSensorIDDict:(id)arg1 moduleInfo:(id)arg2 stabilizationMethod:(int)arg3 requiredFormat:(id)arg4 activeMaxFrameRate:(float)arg5 motionAttachmentsSource:(int)arg6 offline:(BOOL)arg7;
 - (id)nodeSubType;
 - (id)nodeType;
-- (unsigned long long)outputHeight;
-- (unsigned long long)outputWidth;
+- (unsigned long)outputHeight;
+- (unsigned long)outputWidth;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
-- (void)setOutputHeight:(unsigned long long)arg1;
-- (void)setOutputWidth:(unsigned long long)arg1;
+- (void)setOutputHeight:(unsigned long)arg1;
+- (void)setOutputWidth:(unsigned long)arg1;
 
 @end

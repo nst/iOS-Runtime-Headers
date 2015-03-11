@@ -14,7 +14,7 @@
     NSMutableArray *_subTrees;
 }
 
-@property bool hasStyleReference;
+@property BOOL hasStyleReference;
 @property unsigned int key;
 @property unsigned int score;
 @property unsigned int styleReference;
@@ -27,22 +27,22 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasStyleReference;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasStyleReference;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int)key;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)score;
-- (void)setHasStyleReference:(bool)arg1;
+- (void)setHasStyleReference:(BOOL)arg1;
 - (void)setKey:(unsigned int)arg1;
 - (void)setScore:(unsigned int)arg1;
 - (void)setStyleReference:(unsigned int)arg1;
 - (void)setSubTrees:(id)arg1;
 - (unsigned int)styleReference;
-- (id)subTreeAtIndex:(unsigned long long)arg1;
+- (id)subTreeAtIndex:(unsigned int)arg1;
 - (id)subTrees;
-- (unsigned long long)subTreesCount;
+- (unsigned int)subTreesCount;
 - (void)writeTo:(id)arg1;
 
 @end

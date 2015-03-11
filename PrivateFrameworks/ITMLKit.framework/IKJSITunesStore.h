@@ -29,7 +29,7 @@
 - (id)DSID;
 - (void)_accountStoreChanged;
 - (void)_bagDidLoadNotification:(id)arg1;
-- (void)_updateBag:(bool)arg1;
+- (void)_updateBag:(BOOL)arg1;
 - (void)_updateWithBag:(id)arg1;
 - (id)accountInfo;
 - (void)authenticate:(id)arg1 :(id)arg2;

@@ -6,6 +6,6 @@
 }
 
 - (void)cancel;
-- (bool)isCancelled;
+- (BOOL)isCancelled;
 
 @end

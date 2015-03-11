@@ -24,7 +24,7 @@
 
 + (id)serviceFromAuthorData:(id)arg1;
 + (id)serviceFromDictionary:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -32,13 +32,13 @@
 - (id)deviceID;
 - (id)deviceName;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
 - (id)ipAddress;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToService:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToService:(id)arg1;
 - (id)managerID;
 - (id)messageData;
 - (id)nsxpcVersion;

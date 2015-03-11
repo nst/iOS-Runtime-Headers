@@ -7,6 +7,7 @@
 @interface BLTRemoteObject : NSObject <IDSServiceDelegate> {
     NSObject<OS_dispatch_queue> *_clientQueue;
     IDSDevice *_defaultPairedDevice;
+    BOOL _full;
     NSObject<OS_dispatch_queue> *_idsQueue;
     NSMutableDictionary *_idsRequestMessageTypeToSelector;
     NSMutableDictionary *_idsSendIDToCompletionHandler;
@@ -14,14 +15,13 @@
     BLTPBProtobufSequenceNumberManager *_sequenceNumberManager;
     NSLock *_sequenceNumberSendLock;
     IDSService *_service;
-    bool_full;
 }
 
 @property(retain) NSObject<OS_dispatch_queue> * clientQueue;
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) IDSDevice * defaultPairedDevice;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) BLTPBProtobufSequenceNumberManager * sequenceNumberManager;
 @property(readonly) IDSService * service;
 @property(readonly) Class superclass;
@@ -29,9 +29,9 @@
 - (void).cxx_destruct;
 - (void)_queueSendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id)arg7 andResponse:(id)arg8;
 - (void)_sendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id)arg7 andResponse:(id)arg8;
-- (void)_storeProtobufAction:(SEL)arg1 messageType:(unsigned short)arg2 messageSendType:(long long)arg3;
+- (void)_storeProtobufAction:(SEL)arg1 messageType:(unsigned short)arg2 messageSendType:(int)arg3;
 - (id)clientQueue;
-- (unsigned long long)connectionStatus;
+- (unsigned int)connectionStatus;
 - (void)dealloc;
 - (id)defaultPairedDevice;
 - (void)handleAckInitialSequenceNumberRequest:(id)arg1;
@@ -48,7 +48,7 @@
 - (void)sendRequest:(id)arg1 type:(unsigned short)arg2;
 - (void)sendResponse:(id)arg1 type:(unsigned short)arg2 withRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id)arg7;
 - (id)sequenceNumberManager;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (id)service;
 - (void)setClientQueue:(id)arg1;

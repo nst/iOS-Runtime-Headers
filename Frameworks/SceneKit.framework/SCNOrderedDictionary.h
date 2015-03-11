@@ -19,7 +19,7 @@
 - (id)allValues;
 - (void)applyFunction:(int (*)())arg1 withContext:(void*)arg2;
 - (id)copy;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)dictionary;
 - (id)keys;

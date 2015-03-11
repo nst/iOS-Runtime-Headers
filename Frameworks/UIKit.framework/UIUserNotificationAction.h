@@ -5,41 +5,41 @@
 @class NSString;
 
 @interface UIUserNotificationAction : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    unsigned long long _activationMode;
+    unsigned int _activationMode;
     NSString *_activationModeString;
+    BOOL _authenticationRequired;
+    BOOL _destructive;
     NSString *_identifier;
     NSString *_title;
-    bool_authenticationRequired;
-    bool_destructive;
 }
 
-@property unsigned long long activationMode;
+@property unsigned int activationMode;
 @property(readonly) NSString * activationModeString;
-@property(getter=isAuthenticationRequired) bool authenticationRequired;
-@property(getter=isDestructive) bool destructive;
+@property(getter=isAuthenticationRequired) BOOL authenticationRequired;
+@property(getter=isDestructive) BOOL destructive;
 @property(copy) NSString * identifier;
 @property(copy) NSString * title;
 
-+ (id)actionWithIdentifier:(id)arg1 title:(id)arg2 activationMode:(unsigned long long)arg3 isAuthenticationRequired:(bool)arg4;
-+ (bool)supportsSecureCoding;
++ (id)actionWithIdentifier:(id)arg1 title:(id)arg2 activationMode:(unsigned int)arg3 isAuthenticationRequired:(BOOL)arg4;
++ (BOOL)supportsSecureCoding;
 
-- (unsigned long long)activationMode;
+- (unsigned int)activationMode;
 - (id)activationModeString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 title:(id)arg2 activationMode:(unsigned long long)arg3 isAuthenticationRequired:(bool)arg4 isDestructive:(bool)arg5;
-- (bool)isAuthenticationRequired;
-- (bool)isDestructive;
-- (bool)isEqual:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 title:(id)arg2 activationMode:(unsigned int)arg3 isAuthenticationRequired:(BOOL)arg4 isDestructive:(BOOL)arg5;
+- (BOOL)isAuthenticationRequired;
+- (BOOL)isDestructive;
+- (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)setActivationMode:(unsigned long long)arg1;
-- (void)setAuthenticationRequired:(bool)arg1;
-- (void)setDestructive:(bool)arg1;
+- (void)setActivationMode:(unsigned int)arg1;
+- (void)setAuthenticationRequired:(BOOL)arg1;
+- (void)setDestructive:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

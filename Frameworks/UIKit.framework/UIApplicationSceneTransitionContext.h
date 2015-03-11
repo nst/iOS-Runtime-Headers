@@ -7,36 +7,36 @@
 @interface UIApplicationSceneTransitionContext : FBSSceneTransitionContext {
 }
 
-@property bool allowCPUThrottling;
+@property BOOL allowCPUThrottling;
 @property double execTime;
-@property bool forTesting;
-@property(getter=_lifecycleActionType,setter=_setLifecycleActionType:) unsigned long long lifecycleActionType;
+@property BOOL forTesting;
+@property(getter=_lifecycleActionType,setter=_setLifecycleActionType:) unsigned int lifecycleActionType;
 @property(retain) NSDictionary * payload;
-@property bool runWatchdogIndependently;
-@property bool safeMode;
+@property BOOL runWatchdogIndependently;
+@property BOOL safeMode;
 @property double userLaunchEventTime;
 @property double watchdogExtension;
 
-- (unsigned long long)_lifecycleActionType;
-- (void)_setLifecycleActionType:(unsigned long long)arg1;
-- (bool)allowCPUThrottling;
+- (unsigned int)_lifecycleActionType;
+- (void)_setLifecycleActionType:(unsigned int)arg1;
+- (BOOL)allowCPUThrottling;
 - (double)execTime;
-- (bool)forTesting;
-- (bool)isUISubclass;
-- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (BOOL)forTesting;
+- (BOOL)isUISubclass;
+- (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)payload;
-- (bool)runWatchdogIndependently;
-- (bool)safeMode;
-- (void)setAllowCPUThrottling:(bool)arg1;
+- (BOOL)runWatchdogIndependently;
+- (BOOL)safeMode;
+- (void)setAllowCPUThrottling:(BOOL)arg1;
 - (void)setExecTime:(double)arg1;
-- (void)setForTesting:(bool)arg1;
+- (void)setForTesting:(BOOL)arg1;
 - (void)setPayload:(id)arg1;
-- (void)setRunWatchdogIndependently:(bool)arg1;
-- (void)setSafeMode:(bool)arg1;
+- (void)setRunWatchdogIndependently:(BOOL)arg1;
+- (void)setSafeMode:(BOOL)arg1;
 - (void)setUserLaunchEventTime:(double)arg1;
 - (void)setWatchdogExtension:(double)arg1;
 - (double)userLaunchEventTime;
-- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (double)watchdogExtension;
 
 @end

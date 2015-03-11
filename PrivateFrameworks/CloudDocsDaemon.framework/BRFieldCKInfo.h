@@ -4,26 +4,26 @@
 
 @class NSString;
 
-@interface BRFieldCKInfo : PBCodable <NSCopying, PQLBindable, PQLResultSetInitializer> {
+@interface BRFieldCKInfo : PBCodable <PQLBindable, PQLResultSetInitializer, NSCopying> {
     struct { 
         unsigned int knownToServer : 1; 
         unsigned int wasCached : 1; 
     NSString *_etag;
     } _has;
-    bool_knownToServer;
-    bool_wasCached;
+    BOOL _knownToServer;
+    BOOL _wasCached;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSString * etag;
-@property(readonly) bool hasEtag;
-@property bool hasKnownToServer;
-@property bool hasWasCached;
-@property(readonly) unsigned long long hash;
-@property bool knownToServer;
+@property(readonly) BOOL hasEtag;
+@property BOOL hasKnownToServer;
+@property BOOL hasWasCached;
+@property(readonly) unsigned int hash;
+@property BOOL knownToServer;
 @property(readonly) Class superclass;
-@property bool wasCached;
+@property BOOL wasCached;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -32,24 +32,24 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (bool)hasEtag;
-- (bool)hasKnownToServer;
-- (bool)hasWasCached;
-- (unsigned long long)hash;
+- (BOOL)hasEtag;
+- (BOOL)hasKnownToServer;
+- (BOOL)hasWasCached;
+- (unsigned int)hash;
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initWithRecord:(id)arg1;
 - (id)initWithSqlite3Value:(struct Mem { }*)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)knownToServer;
-- (bool)readFrom:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)knownToServer;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCKInfoFieldsInRecord:(id)arg1;
 - (void)setEtag:(id)arg1;
-- (void)setHasKnownToServer:(bool)arg1;
-- (void)setHasWasCached:(bool)arg1;
-- (void)setKnownToServer:(bool)arg1;
-- (void)setWasCached:(bool)arg1;
+- (void)setHasKnownToServer:(BOOL)arg1;
+- (void)setHasWasCached:(BOOL)arg1;
+- (void)setKnownToServer:(BOOL)arg1;
+- (void)setWasCached:(BOOL)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-- (bool)wasCached;
+- (BOOL)wasCached;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -8,7 +8,7 @@
 
 - (void)dealloc;
 - (id)initWithTableID:(struct __CFUUID { }*)arg1;
-- (bool)mightAffectDependencyTracker;
+- (BOOL)mightAffectDependencyTracker;
 - (struct __CFUUID { }*)tableID;
 
 @end

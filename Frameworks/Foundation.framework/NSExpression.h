@@ -9,15 +9,14 @@
         unsigned int _evaluationBlocked : 1; 
         unsigned int _reservedExpressionFlags : 31; 
     } _expressionFlags;
-    unsigned long long _expressionType;
-    unsigned int reserved;
+    unsigned int _expressionType;
 }
 
 @property(copy,readonly) NSArray * arguments;
 @property(retain,readonly) id collection;
 @property(retain,readonly) id constantValue;
 @property(copy,readonly) id expressionBlock;
-@property(readonly) unsigned long long expressionType;
+@property(readonly) unsigned int expressionType;
 @property(copy,readonly) NSString * function;
 @property(copy,readonly) NSString * keyPath;
 @property(copy,readonly) NSExpression * leftExpression;
@@ -45,15 +44,15 @@
 + (id)expressionForVariableNameAssignment:(id)arg1 expression:(id)arg2;
 + (id)expressionWithCKDPRecordFieldValue:(id)arg1 translator:(id)arg2;
 + (id)expressionWithFormat:(id)arg1 argumentArray:(id)arg2;
-+ (id)expressionWithFormat:(id)arg1 arguments:(char *)arg2;
++ (id)expressionWithFormat:(id)arg1 arguments:(void*)arg2;
 + (id)expressionWithFormat:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)CKExpressionValue;
-- (bool)_allowsEvaluation;
+- (BOOL)_allowsEvaluation;
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (bool)_shouldUseParensWithDescription;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned long long)arg2;
+- (BOOL)_shouldUseParensWithDescription;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (void)allowEvaluation;
 - (id)arguments;
 - (id)collection;
@@ -62,12 +61,12 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expressionBlock;
-- (unsigned long long)expressionType;
+- (unsigned int)expressionType;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 - (id)falseExpression;
 - (id)function;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithExpressionType:(unsigned long long)arg1;
+- (id)initWithExpressionType:(unsigned int)arg1;
 - (id)keyPath;
 - (id)leftExpression;
 - (id)minimalFormInContext:(id)arg1;

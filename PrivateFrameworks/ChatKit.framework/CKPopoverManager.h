@@ -18,7 +18,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) id handler;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) UIPopoverController * popoverController;
 @property(copy) id presenter;
 @property(readonly) Class superclass;
@@ -28,10 +28,10 @@
 - (id)currentContentController;
 - (void)dealloc;
 - (void)didFinishRotating;
-- (void)dismissCurrentPopoverAnimated:(bool)arg1 withCompletionBlock:(id)arg2;
-- (void)dismissCurrentPopoverAnimated:(bool)arg1;
+- (void)dismissCurrentPopoverAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
+- (void)dismissCurrentPopoverAnimated:(BOOL)arg1;
 - (id)handler;
-- (bool)isShowingPopover;
+- (BOOL)isShowingPopover;
 - (id)popoverController;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)presenter;

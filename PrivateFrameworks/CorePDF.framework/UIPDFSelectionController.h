@@ -6,85 +6,85 @@
 
 @interface UIPDFSelectionController : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     } _adjustedPoint;
-    long long _firstIndex;
-    long long _lastIndex;
+    BOOL _cancelled;
+    long _firstIndex;
+    BOOL _hiding;
+    BOOL _instantHighlightMode;
+    BOOL _instantModeIsSuspended;
+    BOOL _isTracking;
+    long _lastIndex;
+    BOOL _needsLayout;
     UIPDFPageView *_pageView;
+    BOOL _preceeds;
+    BOOL _rangeMode;
+    BOOL _resizingWidget;
     } _selectionBounds;
     } _selectionFixedPoint;
     <UIPDFSelectionWidget><NSObject> *_selectionWidget;
     } _startPoint;
-    bool_cancelled;
-    bool_hiding;
-    bool_instantHighlightMode;
-    bool_instantModeIsSuspended;
-    bool_isTracking;
-    bool_needsLayout;
-    bool_preceeds;
-    bool_rangeMode;
-    bool_resizingWidget;
 }
 
-@property(readonly) struct CGPoint { double x1; double x2; } adjustedPoint;
-@property(readonly) struct CGPoint { double x1; double x2; } currentSelectionPoint;
-@property(readonly) struct CGPoint { double x1; double x2; } initialSelectionPoint;
-@property bool instantHighlightMode;
-@property(readonly) bool isTracking;
+@property(readonly) struct CGPoint { float x1; float x2; } adjustedPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } currentSelectionPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } initialSelectionPoint;
+@property BOOL instantHighlightMode;
+@property(readonly) BOOL isTracking;
 @property UIPDFPageView * pageView;
-@property(readonly) bool rangeMode;
+@property(readonly) BOOL rangeMode;
 @property(readonly) <UIPDFSelectionWidget> * selectionWidget;
 
 - (void)addSelectionWidget:(id)arg1;
-- (void)adjustSelection:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })adjustedPoint;
+- (void)adjustSelection:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })adjustedPoint;
 - (void)clearSelection;
-- (struct CGPoint { double x1; double x2; })currentSelectionPoint;
+- (struct CGPoint { float x1; float x2; })currentSelectionPoint;
 - (void)dealloc;
 - (id)description;
-- (void)endTracking:(struct CGPoint { double x1; double x2; })arg1;
+- (void)endTracking:(struct CGPoint { float x1; float x2; })arg1;
 - (void)extendSelectionToParagraph;
 - (void)hideWidget;
 - (id)init;
-- (struct CGPoint { double x1; double x2; })initialSelectionPoint;
-- (bool)instantHighlightMode;
-- (bool)isTracking;
+- (struct CGPoint { float x1; float x2; })initialSelectionPoint;
+- (BOOL)instantHighlightMode;
+- (BOOL)isTracking;
 - (void)layoutSelections;
 - (id)pageView;
-- (bool)rangeMode;
-- (struct CGPoint { double x1; double x2; })selectedPointOffset;
+- (BOOL)rangeMode;
+- (struct CGPoint { float x1; float x2; })selectedPointOffset;
 - (void)selectionHide:(id)arg1;
 - (void)selectionHideFromAncestor:(id)arg1;
 - (void)selectionShow:(id)arg1;
 - (void)selectionShowDelayed:(id)arg1;
 - (void)selectionShowToAncestor:(id)arg1;
 - (id)selectionWidget;
-- (void)setInstantHighlightMode:(bool)arg1;
+- (void)setInstantHighlightMode:(BOOL)arg1;
 - (void)setPageView:(id)arg1;
-- (void)setSelectionFor:(struct CGPoint { double x1; double x2; })arg1;
-- (bool)shouldTrackAt:(struct CGPoint { double x1; double x2; })arg1;
-- (void)startSelectingAt:(struct CGPoint { double x1; double x2; })arg1;
-- (void)startTracking:(struct CGPoint { double x1; double x2; })arg1 andPoint:(struct CGPoint { double x1; double x2; })arg2;
-- (void)startTracking:(struct CGPoint { double x1; double x2; })arg1 showMagnifier:(bool*)arg2;
+- (void)setSelectionFor:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)shouldTrackAt:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startSelectingAt:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startTracking:(struct CGPoint { float x1; float x2; })arg1 andPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)startTracking:(struct CGPoint { float x1; float x2; })arg1 showMagnifier:(BOOL*)arg2;
 - (void)suspendInstantHighlightMode;
-- (void)tracking:(struct CGPoint { double x1; double x2; })arg1 andPoint:(struct CGPoint { double x1; double x2; })arg2;
-- (void)tracking:(struct CGPoint { double x1; double x2; })arg1 showMagnifier:(bool*)arg2;
-- (bool)useParagraphMode;
+- (void)tracking:(struct CGPoint { float x1; float x2; })arg1 andPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)tracking:(struct CGPoint { float x1; float x2; })arg1 showMagnifier:(BOOL*)arg2;
+- (BOOL)useParagraphMode;
 
 @end

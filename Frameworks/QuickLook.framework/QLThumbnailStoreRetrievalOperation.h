@@ -8,31 +8,31 @@
     QLThumbnailAddition *_addition;
     NSURL *_documentURL;
     NSError *_error;
-    bool_executing;
-    bool_finished;
+    BOOL _executing;
+    BOOL _finished;
 }
 
 @property(retain) NSError * error;
-@property(getter=isExecuting) bool executing;
-@property(getter=isFinished) bool finished;
+@property(getter=isExecuting) BOOL executing;
+@property(getter=isFinished) BOOL finished;
 @property(readonly) NSData * serializedQuickLookMetadataDictionary;
 @property(readonly) NSDictionary * thumbnailImagesDictionary;
 
-- (bool)_finishIfCancelled;
+- (BOOL)_finishIfCancelled;
 - (void)_finishWithError:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
 - (id)error;
 - (id)initWithDocumentAtURL:(id)arg1;
-- (bool)isConcurrent;
-- (bool)isExecuting;
-- (bool)isFinished;
+- (BOOL)isConcurrent;
+- (BOOL)isExecuting;
+- (BOOL)isFinished;
 - (void)main;
 - (id)serializedQuickLookMetadataDictionary;
 - (void)setError:(id)arg1;
-- (void)setExecuting:(bool)arg1;
-- (void)setFinished:(bool)arg1;
+- (void)setExecuting:(BOOL)arg1;
+- (void)setFinished:(BOOL)arg1;
 - (void)start;
 - (id)thumbnailImagesDictionary;
 

@@ -9,28 +9,28 @@
     UIImage *_miniBackgroundImage;
     UIImage *_miniTopBackgroundImage;
     UIImage *_topBackgroundImage;
-    boolhidesShadow;
+    BOOL hidesShadow;
     UIImage *shadowImage;
     UIImage *topShadowImage;
 }
 
 @property(retain) UIImage * backgroundImage;
-@property bool hidesShadow;
+@property BOOL hidesShadow;
 @property(retain) UIImage * miniBackgroundImage;
 @property(retain) UIImage * miniTopBackgroundImage;
 @property(retain) UIImage * shadowImage;
 @property(retain) UIImage * topBackgroundImage;
 @property(retain) UIImage * topShadowImage;
 
-+ (long long)typicalBarPosition;
++ (int)typicalBarPosition;
 
 - (id)backgroundImage;
 - (void)dealloc;
-- (bool)hidesShadow;
+- (BOOL)hidesShadow;
 - (id)miniBackgroundImage;
 - (id)miniTopBackgroundImage;
 - (void)setBackgroundImage:(id)arg1;
-- (void)setHidesShadow:(bool)arg1;
+- (void)setHidesShadow:(BOOL)arg1;
 - (void)setMiniBackgroundImage:(id)arg1;
 - (void)setMiniTopBackgroundImage:(id)arg1;
 - (void)setShadowImage:(id)arg1;

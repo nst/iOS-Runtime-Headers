@@ -8,7 +8,7 @@
 }
 
 @property(readonly) short event;
-@property(readonly) bool isBasebandWake;
+@property(readonly) BOOL isBasebandWake;
 @property(readonly) NSArray * reason;
 @property(readonly) short state;
 
@@ -16,9 +16,9 @@
 + (void)load;
 
 - (short)event;
-- (id)initEntryWithIOMessage:(unsigned int)arg1;
+- (id)initEntryWithIOMessage:(unsigned long)arg1;
 - (id)initEntryWithState:(short)arg1 withEvent:(short)arg2 withReason:(id)arg3 withDate:(id)arg4;
-- (bool)isBasebandWake;
+- (BOOL)isBasebandWake;
 - (id)reason;
 - (short)state;
 

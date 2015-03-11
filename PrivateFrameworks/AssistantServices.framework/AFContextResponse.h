@@ -8,7 +8,7 @@
     AFSiriContext *_context;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_context;

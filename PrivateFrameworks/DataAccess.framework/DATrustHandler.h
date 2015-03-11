@@ -17,11 +17,11 @@
 - (id)_serverSuffixesToAlwaysFail;
 - (id)delegate;
 - (void)handleTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2 withCompletionBlock:(id)arg3;
-- (bool)handleTrustChallenge:(id)arg1;
-- (bool)haveWarnedAboutCert:(id)arg1 forHost:(id)arg2;
+- (BOOL)handleTrustChallenge:(id)arg1;
+- (BOOL)haveWarnedAboutCert:(id)arg1 forHost:(id)arg2;
 - (id)haveWarnedAboutCertDict;
 - (id)initWithDelegate:(id)arg1;
-- (bool)resetCertWarnings;
+- (BOOL)resetCertWarnings;
 - (void)setDelegate:(id)arg1;
 - (void)setHaveWarnedAboutCert:(id)arg1 forHost:(id)arg2;
 - (void)setHaveWarnedAboutCertDict:(id)arg1;

@@ -10,19 +10,19 @@
 + (void)initialize;
 + (id)mutablePlaceholder;
 
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
-- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned long long)arg3;
+- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
 - (oneway void)release;
 - (void)removeObjectForKey:(id)arg1;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

@@ -5,7 +5,7 @@
 @interface PLPropertyListFromDataTransformer : NSValueTransformer {
 }
 
-+ (bool)allowsReverseTransformation;
++ (BOOL)allowsReverseTransformation;
 + (Class)transformedValueClass;
 
 - (id)reverseTransformedValue:(id)arg1;

@@ -10,14 +10,14 @@
     UIViewController *_inputController;
     UIView *_inputControllerSnapshot;
     UIKeyboardInputMode *_inputMode;
-    bool_shouldRegenerateSizingConstraints;
+    BOOL _shouldRegenerateSizingConstraints;
 }
 
 @property(retain) UIViewController * inputController;
 @property(retain) UIView * inputControllerSnapshot;
 
-+ (bool)_requiresProxyInterface;
-+ (bool)_shouldForwardViewWillTransitionToSize;
++ (BOOL)_requiresProxyInterface;
++ (BOOL)_shouldForwardViewWillTransitionToSize;
 + (id)deferredInputModeControllerWithKeyboard:(id)arg1;
 + (id)inputViewControllerWithView:(id)arg1;
 
@@ -29,9 +29,9 @@
 - (void)dealloc;
 - (void)didFinishTranslation;
 - (void)didMoveToParentViewController:(id)arg1;
-- (void)didRotateFromInterfaceOrientation:(long long)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)didSuspend:(id)arg1;
-- (void)finishSplitTransition:(bool)arg1;
+- (void)finishSplitTransition:(BOOL)arg1;
 - (void)generateCompatibleSizeConstraintsIfNecessary;
 - (id)inputController;
 - (id)inputControllerSnapshot;
@@ -41,14 +41,14 @@
 - (void)setInputController:(id)arg1;
 - (void)setInputControllerSnapshot:(id)arg1;
 - (void)setInputMode:(id)arg1;
-- (bool)shouldAutomaticallyForwardAppearanceMethods;
-- (bool)shouldAutomaticallyForwardRotationMethods;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (void)snapshotCurrentDisplay;
 - (void)tearDownInputController;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(bool)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willBeginTranslation;
-- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

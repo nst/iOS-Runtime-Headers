@@ -9,27 +9,27 @@
     NSString *_filename;
     NSString *_guid;
     NSDictionary *_transcoderUserInfo;
-    long long _transferState;
+    int _transferState;
 }
 
 @property(retain) IMMessage * IMMessage;
 @property(readonly) unsigned long long currentBytes;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(getter=isDownloadable,readonly) bool downloadable;
-@property(getter=isDownloading,readonly) bool downloading;
+@property(getter=isDownloadable,readonly) BOOL downloadable;
+@property(getter=isDownloading,readonly) BOOL downloading;
 @property(copy,readonly) NSError * error;
-@property(getter=isFileDataReady,readonly) bool fileDataReady;
+@property(getter=isFileDataReady,readonly) BOOL fileDataReady;
 @property(copy,readonly) NSURL * fileURL;
-@property(getter=isFileURLFinalized,readonly) bool fileURLFinalized;
+@property(getter=isFileURLFinalized,readonly) BOOL fileURLFinalized;
 @property(copy) NSString * filename;
 @property(copy,readonly) NSString * guid;
-@property(readonly) unsigned long long hash;
-@property(getter=isRestoring,readonly) bool restoring;
+@property(readonly) unsigned int hash;
+@property(getter=isRestoring,readonly) BOOL restoring;
 @property(readonly) Class superclass;
 @property(readonly) unsigned long long totalBytes;
 @property(copy,readonly) NSDictionary * transcoderUserInfo;
-@property long long transferState;
+@property int transferState;
 
 - (unsigned long long)currentBytes;
 - (void)dealloc;
@@ -40,17 +40,17 @@
 - (id)guid;
 - (id)initWithFileURL:(id)arg1 transcoderUserInfo:(id)arg2;
 - (id)initWithTransferGUID:(id)arg1 imMessage:(id)arg2;
-- (bool)isDownloadable;
-- (bool)isDownloading;
-- (bool)isFileDataReady;
-- (bool)isFileURLFinalized;
-- (bool)isRestoring;
+- (BOOL)isDownloadable;
+- (BOOL)isDownloading;
+- (BOOL)isFileDataReady;
+- (BOOL)isFileURLFinalized;
+- (BOOL)isRestoring;
 - (void)mediaObjectAdded;
 - (void)mediaObjectRemoved;
 - (void)setFilename:(id)arg1;
-- (void)setTransferState:(long long)arg1;
+- (void)setTransferState:(int)arg1;
 - (unsigned long long)totalBytes;
 - (id)transcoderUserInfo;
-- (long long)transferState;
+- (int)transferState;
 
 @end

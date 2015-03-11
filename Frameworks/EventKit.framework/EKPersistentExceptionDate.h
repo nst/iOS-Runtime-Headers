@@ -17,7 +17,7 @@
 - (id)date;
 - (id)description;
 - (int)entityType;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithExceptionDate:(id)arg1;
 - (id)owner;
 - (void)setOwner:(id)arg1;

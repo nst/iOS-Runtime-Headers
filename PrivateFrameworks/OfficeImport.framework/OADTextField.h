@@ -10,11 +10,11 @@
     NSString *mText;
 }
 
-- (unsigned long long)characterCount;
+- (unsigned int)characterCount;
 - (void)dealloc;
 - (id)id;
 - (id)init;
-- (bool)isEmpty;
+- (BOOL)isEmpty;
 - (id)paragraphProperties;
 - (void)removeUnnecessaryOverrides;
 - (void)setId:(id)arg1;

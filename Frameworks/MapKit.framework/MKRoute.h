@@ -17,18 +17,18 @@
 @property(readonly) NSString * name;
 @property(readonly) MKPolyline * polyline;
 @property(readonly) NSArray * steps;
-@property(readonly) unsigned long long transportType;
+@property(readonly) unsigned int transportType;
 
 - (void).cxx_destruct;
 - (id)_geoRoute;
 - (id)_initWithGEORoute:(id)arg1;
-- (id)_maneuverImageForStep:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3;
+- (id)_maneuverImageForStep:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
 - (id)advisoryNotices;
 - (double)distance;
 - (double)expectedTravelTime;
 - (id)name;
 - (id)polyline;
 - (id)steps;
-- (unsigned long long)transportType;
+- (unsigned int)transportType;
 
 @end

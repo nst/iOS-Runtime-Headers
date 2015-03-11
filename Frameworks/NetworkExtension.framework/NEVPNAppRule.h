@@ -16,10 +16,10 @@
 @property(copy) NSArray * matchDomains;
 @property(copy) NSArray * matchExecutables;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)checkValidityAndCollectErrors:(id)arg1;
+- (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithIndent:(int)arg1;
@@ -31,7 +31,7 @@
 - (id)matchAccountIdentifiers;
 - (id)matchDomains;
 - (id)matchExecutables;
-- (bool)overlapsWithRule:(id)arg1;
+- (BOOL)overlapsWithRule:(id)arg1;
 - (void)setMatchAccountIdentifiers:(id)arg1;
 - (void)setMatchDomains:(id)arg1;
 - (void)setMatchExecutables:(id)arg1;

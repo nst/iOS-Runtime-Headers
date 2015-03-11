@@ -23,9 +23,9 @@
 - (void)_runAssetQuery:(id)arg1 completion:(id)arg2;
 - (void)_startDownloadingVoiceTriggerAsset:(id)arg1 progress:(id)arg2 completion:(id)arg3;
 - (void)_updateAssetForLanguage:(id)arg1 withTimeout:(double)arg2;
-- (bool)_updateCachesIfNecessary:(id)arg1;
-- (id)_voiceAssetQueryForLanguage:(id)arg1 contentVersion:(id)arg2 localOnly:(bool)arg3;
-- (id)assetForLanguage:(id)arg1 forceCacheUpdate:(bool)arg2;
+- (BOOL)_updateCachesIfNecessary:(id)arg1;
+- (id)_voiceAssetQueryForLanguage:(id)arg1 contentVersion:(id)arg2 localOnly:(BOOL)arg3;
+- (id)assetForLanguage:(id)arg1 forceCacheUpdate:(BOOL)arg2;
 - (id)init;
 - (void)invalidateAsset:(id)arg1;
 

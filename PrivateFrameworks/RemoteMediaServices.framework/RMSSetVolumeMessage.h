@@ -11,8 +11,8 @@
     float _volume;
 }
 
-@property bool hasSessionIdentifier;
-@property bool hasVolume;
+@property BOOL hasSessionIdentifier;
+@property BOOL hasVolume;
 @property int sessionIdentifier;
 @property float volume;
 
@@ -20,15 +20,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasSessionIdentifier;
-- (bool)hasVolume;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasSessionIdentifier;
+- (BOOL)hasVolume;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (int)sessionIdentifier;
-- (void)setHasSessionIdentifier:(bool)arg1;
-- (void)setHasVolume:(bool)arg1;
+- (void)setHasSessionIdentifier:(BOOL)arg1;
+- (void)setHasVolume:(BOOL)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 - (void)setVolume:(float)arg1;
 - (float)volume;

@@ -6,29 +6,29 @@
 
 @interface RUIElement : NSObject {
     NSDictionary *_attributes;
-    bool_enabled;
+    BOOL _enabled;
 }
 
 @property(retain) NSDictionary * attributes;
-@property bool enabled;
+@property BOOL enabled;
 @property(readonly) NSString * name;
 
 - (void).cxx_destruct;
-- (id)URLAttributeForImageName:(id)arg1 getScale:(double*)arg2;
+- (id)URLAttributeForImageName:(id)arg1 getScale:(float*)arg2;
 - (int)_horizontalAlignmentForString:(id)arg1;
 - (id)attributes;
 - (void)dealloc;
-- (bool)enabled;
+- (BOOL)enabled;
 - (void)imageLoaded:(id)arg1;
 - (id)init;
-- (bool)loadImage;
+- (BOOL)loadImage;
 - (id)name;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)setAttributes:(id)arg1;
-- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)sourceURL;
 - (id)subElementsWithName:(id)arg1;
 

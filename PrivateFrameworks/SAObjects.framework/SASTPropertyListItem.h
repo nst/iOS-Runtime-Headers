@@ -11,7 +11,7 @@
 @property(retain) SAUIDecoratedText * decoratedTitle;
 @property(copy) NSArray * decoratedValues;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(copy) NSString * title;
 @property(copy) NSArray * values;

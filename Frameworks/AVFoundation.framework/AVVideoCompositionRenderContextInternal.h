@@ -6,23 +6,23 @@
 
 @interface AVVideoCompositionRenderContextInternal : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     struct { 
-        long long horizontalSpacing; 
-        long long verticalSpacing; 
+        int horizontalSpacing; 
+        int verticalSpacing; 
     struct { 
-        double left; 
-        double top; 
-        double right; 
-        double bottom; 
+        float left; 
+        float top; 
+        float right; 
+        float bottom; 
     struct { 
         int width; 
         int height; 
@@ -35,6 +35,7 @@
     NSString *_destinationDesiredPixelBufferYCbCrMatrix;
     } _destinationPixelBufferDimensions;
     } _edgeWidths;
+    BOOL _highQualityRendering;
     } _pixelAspectRatio;
     struct __CFDictionary { } *_pixelAspectRatioDict;
     struct __CVPixelBufferPool { } *_pixelBufferPool;
@@ -43,7 +44,6 @@
     } _renderTransform;
     } _size;
     AVVideoComposition *_videoComposition;
-    bool_highQualityRendering;
     int pixelFormatFamily;
 }
 

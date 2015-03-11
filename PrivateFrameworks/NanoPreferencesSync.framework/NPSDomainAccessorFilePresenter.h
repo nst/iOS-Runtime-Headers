@@ -14,7 +14,7 @@
 @property(readonly) <NPSDomainAccessorFilePresenterDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) NSURL * domainURL;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(copy,readonly) NSURL * presentedItemURL;
 @property(retain) NSOperationQueue * presenterOperationQueue;
@@ -26,13 +26,13 @@
 - (id)delegate;
 - (id)domainURL;
 - (id)initWithDelegate:(id)arg1 domainURL:(id)arg2;
-- (bool)presentedItemNeedsWatching;
+- (BOOL)presentedItemNeedsWatching;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
 - (id)presenterOperationQueue;
 - (void)relinquishPresentedItemToWriter:(id)arg1;
 - (void)setDomainURL:(id)arg1;
 - (void)setPresenterOperationQueue:(id)arg1;
-- (id)synchronizeForReadingOnly:(bool)arg1 handler:(id)arg2;
+- (id)synchronizeForReadingOnly:(BOOL)arg1 handler:(id)arg2;
 
 @end

@@ -12,6 +12,6 @@
 - (id)anyEntityWithPredicate:(id)arg1;
 - (void)dealloc;
 - (void)enumerateEntitiesWithPredicate:(id)arg1 usingBlock:(id)arg2;
-- (id)initWithDescriptor:(id)arg1 properties:(id)arg2 database:(id)arg3 cache:(bool)arg4;
+- (id)initWithDescriptor:(id)arg1 properties:(id)arg2 database:(id)arg3 cache:(BOOL)arg4;
 
 @end

@@ -8,7 +8,7 @@
     int _lock;
 }
 
-+ (bool)isAuthorizedToUseAddressBook;
++ (BOOL)isAuthorizedToUseAddressBook;
 + (id)sharedManager;
 
 - (void)_applicationResumed:(id)arg1;

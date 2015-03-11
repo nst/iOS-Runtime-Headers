@@ -6,29 +6,29 @@
 
 @interface TSKReplaceAllCommand : TSKCommand {
     NSMutableArray *_commands;
-    unsigned long long _countOfItemsReplaced;
+    unsigned int _countOfItemsReplaced;
     NSString *_findString;
-    unsigned long long _options;
+    unsigned int _options;
     NSString *_replaceString;
 }
 
-@property unsigned long long countOfItemsReplaced;
+@property unsigned int countOfItemsReplaced;
 @property(retain,readonly) NSString * findString;
-@property(readonly) unsigned long long options;
+@property(readonly) unsigned int options;
 @property(retain,readonly) NSString * replaceString;
 
 - (void)commit;
-- (unsigned long long)countOfItemsReplaced;
+- (unsigned int)countOfItemsReplaced;
 - (void)dealloc;
 - (id)findString;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithDocumentRoot:(id)arg1 findString:(id)arg2 replaceString:(id)arg3 options:(unsigned long long)arg4;
-- (unsigned long long)options;
-- (bool)process;
+- (id)initWithDocumentRoot:(id)arg1 findString:(id)arg2 replaceString:(id)arg3 options:(unsigned int)arg4;
+- (unsigned int)options;
+- (BOOL)process;
 - (void)redo;
 - (id)replaceString;
 - (void)saveToArchiver:(id)arg1;
-- (void)setCountOfItemsReplaced:(unsigned long long)arg1;
+- (void)setCountOfItemsReplaced:(unsigned int)arg1;
 - (void)undo;
 
 @end

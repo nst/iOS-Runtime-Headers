@@ -12,22 +12,22 @@
 }
 
 @property float bandwidth;
-@property bool bypass;
-@property long long filterType;
+@property BOOL bypass;
+@property int filterType;
 @property float frequency;
 @property float gain;
 
 - (float)bandwidth;
-- (bool)bypass;
+- (BOOL)bypass;
 - (void)dealloc;
-- (long long)filterType;
+- (int)filterType;
 - (float)frequency;
 - (float)gain;
 - (id)init;
 - (id)initWithImpl:(struct AVAudioUnitEQFilterParametersImpl { int (**x1)(); }*)arg1;
 - (void)setBandwidth:(float)arg1;
-- (void)setBypass:(bool)arg1;
-- (void)setFilterType:(long long)arg1;
+- (void)setBypass:(BOOL)arg1;
+- (void)setFilterType:(int)arg1;
 - (void)setFrequency:(float)arg1;
 - (void)setGain:(float)arg1;
 

@@ -6,23 +6,23 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (unsigned long long)_cfTypeID;
-- (bool)allowsWeakReference;
+- (unsigned long)_cfTypeID;
+- (BOOL)allowsWeakReference;
 - (void)finalize;
 - (void)fire;
 - (id)fireDate;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (id)initWithFireDate:(id)arg1 interval:(double)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 repeats:(bool)arg6;
+- (id)initWithFireDate:(id)arg1 interval:(double)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 repeats:(BOOL)arg6;
 - (void)invalidate;
-- (bool)isEqual:(id)arg1;
-- (bool)isValid;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isValid;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
-- (bool)retainWeakReference;
+- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 - (void)setFireDate:(id)arg1;
 - (void)setTolerance:(double)arg1;
 - (double)timeInterval;

@@ -7,16 +7,16 @@
 @interface CKSharedItemID : NSObject <NSSecureCoding, NSCopying> {
     CKContainerID *_containerID;
     NSObject<NSSecureCoding><NSCopying> *_itemIdentifier;
-    long long _itemType;
-    long long _scope;
+    int _itemType;
+    int _scope;
 }
 
 @property(copy) CKContainerID * containerID;
 @property(copy) NSObject<NSSecureCoding><NSCopying> * itemIdentifier;
-@property long long itemType;
-@property long long scope;
+@property int itemType;
+@property int scope;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)CKAssignToContainerWithID:(id)arg1;
@@ -29,20 +29,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItemType:(long long)arg1 itemIdentifier:(id)arg2 containerID:(id)arg3;
-- (id)initWithItemType:(long long)arg1 itemIdentifier:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (id)initWithItemType:(int)arg1 itemIdentifier:(id)arg2 containerID:(id)arg3;
+- (id)initWithItemType:(int)arg1 itemIdentifier:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (id)itemIdentifier;
-- (long long)itemType;
+- (int)itemType;
 - (id)recordID;
-- (long long)scope;
+- (int)scope;
 - (void)setContainerID:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
-- (void)setItemType:(long long)arg1;
-- (void)setScope:(long long)arg1;
+- (void)setItemType:(int)arg1;
+- (void)setScope:(int)arg1;
 - (id)shareID;
 - (id)zoneID;
 

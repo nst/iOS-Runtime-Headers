@@ -12,32 +12,32 @@
     id _activationCompletion;
     unsigned short _activationState;
     NSTimer *_activationTimeout;
+    BOOL _canBeginActivation;
     UIAlertView *_confirmationAlert;
     <PBBridgeConnectionDelegate> *_delegate;
     id _enableSiriCompletion;
     NSString *_internalLastSendMessageID;
     NSString *_languageIdentifer;
+    BOOL _readyToCreatePasscode;
     NSString *_regionIdentifer;
     id _siriStateCompletion;
     id _updateLanguageCompletion;
     id _updateRegionCompletion;
-    bool_canBeginActivation;
-    bool_readyToCreatePasscode;
 }
 
 @property(copy) id activationCompletion;
 @property unsigned short activationState;
 @property(retain) NSTimer * activationTimeout;
-@property(readonly) bool canBeginActivation;
+@property(readonly) BOOL canBeginActivation;
 @property(retain) UIAlertView * confirmationAlert;
 @property(copy,readonly) NSString * debugDescription;
 @property <PBBridgeConnectionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(copy) id enableSiriCompletion;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * internalLastSendMessageID;
 @property(readonly) NSString * languageIdentifer;
-@property(readonly) bool readyToCreatePasscode;
+@property(readonly) BOOL readyToCreatePasscode;
 @property(readonly) NSString * regionIdentifer;
 @property(copy) id siriStateCompletion;
 @property(readonly) Class superclass;
@@ -49,14 +49,14 @@
 + (id)warrantyFilePathForLanguageCode:(id)arg1 countryCode:(id)arg2;
 
 - (void).cxx_destruct;
-- (bool)_sendRemoteCommandWithMessageID:(unsigned short)arg1 withArguments:(id)arg2;
-- (bool)_sendResponseToMessage:(id)arg1 withResponseMessageID:(unsigned short)arg2 withArguments:(id)arg3;
+- (BOOL)_sendRemoteCommandWithMessageID:(unsigned short)arg1 withArguments:(id)arg2;
+- (BOOL)_sendResponseToMessage:(id)arg1 withResponseMessageID:(unsigned short)arg2 withArguments:(id)arg3;
 - (id)activationCompletion;
 - (unsigned short)activationState;
 - (void)activationTimeout:(id)arg1;
 - (id)activationTimeout;
 - (void)beganAwaitingAbilityToActivate;
-- (bool)canBeginActivation;
+- (BOOL)canBeginActivation;
 - (void)companionBecameAvailableWantsConfirmation:(id)arg1;
 - (id)confirmationAlert;
 - (id)customDescriptionOfMessageType:(unsigned short)arg1;
@@ -66,7 +66,7 @@
 - (void)enableSiriForGizmoWithCompletion:(id)arg1;
 - (void)enabledSiri:(id)arg1;
 - (void)endSetupTransaction;
-- (bool)getActivationDataForRequest:(id)arg1 withCompletion:(id)arg2;
+- (BOOL)getActivationDataForRequest:(id)arg1 withCompletion:(id)arg2;
 - (void)getSiriStateWithCompletion:(id)arg1;
 - (void)gotSiriState:(id)arg1;
 - (void)handleActivationData:(id)arg1;
@@ -78,11 +78,11 @@
 - (id)languageIdentifer;
 - (void)popToControllerType:(id)arg1;
 - (void)pushControllerType:(id)arg1;
-- (bool)readyToCreatePasscode;
+- (BOOL)readyToCreatePasscode;
 - (void)refreshTimeoutTimer;
 - (id)regionIdentifer;
 - (void)retryActivation:(id)arg1;
-- (bool)sendCompanionPerformanceResults;
+- (BOOL)sendCompanionPerformanceResults;
 - (id)serviceIdentifier;
 - (void)setActivationCompletion:(id)arg1;
 - (void)setActivationState:(unsigned short)arg1;
@@ -104,19 +104,19 @@
 - (void)setupServiceMessageSelectorMappings;
 - (void)showLockedOnAnimation:(id)arg1;
 - (id)siriStateCompletion;
-- (bool)tellCompanionGizmoBeganActivating;
-- (bool)tellCompanionGizmoFailedActivating:(id)arg1;
-- (bool)tellCompanionGizmoFinishedActivating;
+- (BOOL)tellCompanionGizmoBeganActivating;
+- (BOOL)tellCompanionGizmoFailedActivating:(id)arg1;
+- (BOOL)tellCompanionGizmoFinishedActivating;
 - (void)tellCompanionThatGizmoFailedToCreatePasscode:(int)arg1;
-- (void)tellCompanionThatGizmoFinishedSettingPasscode:(bool)arg1 isLong:(bool)arg2;
-- (void)tellCompanionThatGizmoFinishedUnlockPairing:(bool)arg1;
+- (void)tellCompanionThatGizmoFinishedSettingPasscode:(BOOL)arg1 isLong:(BOOL)arg2;
+- (void)tellCompanionThatGizmoFinishedUnlockPairing:(BOOL)arg1;
 - (void)tellCompanionThatGizmoStartedUnlockPairing;
 - (void)transportBecameReachable;
 - (void)transportBecameUnreachable;
 - (id)updateLanguageCompletion;
-- (bool)updateLanguageIdentifierWithCompletion:(id)arg1;
+- (BOOL)updateLanguageIdentifierWithCompletion:(id)arg1;
 - (id)updateRegionCompletion;
-- (bool)updateRegionIdentifierWithCompletion:(id)arg1;
+- (BOOL)updateRegionIdentifierWithCompletion:(id)arg1;
 - (void)updateSynchProgress:(id)arg1;
 
 @end

@@ -6,33 +6,33 @@
 
 @interface NNMKMessageContent : NSObject <NSSecureCoding> {
     NSArray *_attachments;
+    BOOL _mainAlternativeValid;
     NSString *_messageId;
+    BOOL _partiallyLoaded;
     NSData *_textData;
-    bool_mainAlternativeValid;
-    bool_partiallyLoaded;
 }
 
 @property(retain) NSArray * attachments;
-@property bool mainAlternativeValid;
+@property BOOL mainAlternativeValid;
 @property(retain) NSString * messageId;
-@property bool partiallyLoaded;
+@property BOOL partiallyLoaded;
 @property(retain) NSData * textData;
 
 + (id)classesForUnarchivingTextData;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)attachments;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)mainAlternativeValid;
+- (BOOL)mainAlternativeValid;
 - (id)messageId;
-- (bool)partiallyLoaded;
+- (BOOL)partiallyLoaded;
 - (void)setAttachments:(id)arg1;
-- (void)setMainAlternativeValid:(bool)arg1;
+- (void)setMainAlternativeValid:(BOOL)arg1;
 - (void)setMessageId:(id)arg1;
-- (void)setPartiallyLoaded:(bool)arg1;
+- (void)setPartiallyLoaded:(BOOL)arg1;
 - (void)setTextData:(id)arg1;
 - (id)textData;
 

@@ -5,6 +5,7 @@
 @class <PKPaymentVerificationEntryDelegate>, <PKPaymentVerificationPresentationDelegate>, NSNumber, NSString, PKPassView, PKPaymentPass, PKPaymentWebService, PKVerificationRequestRecord;
 
 @interface PKPaymentVerificationPresentationController : NSObject <SKStoreProductViewControllerDelegate> {
+    BOOL _bankAppNotFound;
     <PKPaymentVerificationPresentationDelegate> *_delegate;
     <PKPaymentVerificationEntryDelegate> *_entryDelegate;
     NSNumber *_inStoreBankAppStoreID;
@@ -14,9 +15,8 @@
     PKPaymentPass *_pass;
     PKPassView *_passView;
     PKVerificationRequestRecord *_requestRecord;
-    long long _setupContext;
+    int _setupContext;
     PKPaymentWebService *_webService;
-    bool_bankAppNotFound;
 }
 
 @property(readonly) NSString * alternateMethodButtonTitle;
@@ -25,19 +25,19 @@
 @property <PKPaymentVerificationPresentationDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property <PKPaymentVerificationEntryDelegate> * entryDelegate;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly) NSString * verificationBodyString;
 @property(readonly) NSString * verificationTitleString;
 
 - (id)_bankAppName;
 - (id)_bankAppStoreIDs;
-- (unsigned long long)_channelType;
+- (unsigned int)_channelType;
 - (void)_completeVerificationUsingBankApp;
 - (void)_completeVerificationUsingCodeEntry;
 - (void)_completeVerificationUsingOutboundCall;
 - (void)_didChangePresentation;
-- (bool)_isBankAppInstalled;
+- (BOOL)_isBankAppInstalled;
 - (void)_launchBankApp;
 - (id)_outboundCallPhoneNumber;
 - (void)_performStoreLookupForBankApp;
@@ -50,7 +50,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)entryDelegate;
-- (id)initWithPaymentPass:(id)arg1 passView:(id)arg2 webService:(id)arg3 context:(long long)arg4 delegate:(id)arg5;
+- (id)initWithPaymentPass:(id)arg1 passView:(id)arg2 webService:(id)arg3 context:(int)arg4 delegate:(id)arg5;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (void)selectOtherVerificationMethod:(id)arg1;
 - (void)setDelegate:(id)arg1;

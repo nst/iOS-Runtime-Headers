@@ -15,7 +15,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)handoffPayload;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setHandoffPayload:(id)arg1;
 
 @end

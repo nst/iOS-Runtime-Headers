@@ -9,14 +9,14 @@
 }
 
 @property(retain) NSArray * affectedStores;
-@property(readonly) unsigned long long requestType;
+@property(readonly) unsigned int requestType;
 
 + (void)initialize;
 
 - (id)affectedStores;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned long long)requestType;
+- (unsigned int)requestType;
 - (void)setAffectedStores:(id)arg1;
 
 @end

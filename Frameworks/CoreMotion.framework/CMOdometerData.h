@@ -18,7 +18,7 @@
 @property(readonly) NSDate * endDate;
 @property(readonly) NSDate * startDate;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)averageSpeed;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

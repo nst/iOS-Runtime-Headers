@@ -5,6 +5,6 @@
 @interface CAMSecureWindow : UIWindow {
 }
 
-+ (bool)_isSecure;
++ (BOOL)_isSecure;
 
 @end

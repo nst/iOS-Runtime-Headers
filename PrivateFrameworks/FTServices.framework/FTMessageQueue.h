@@ -12,7 +12,7 @@
 
 @property(retain) NSMutableArray * _addDates;
 @property(retain) NSMutableArray * _queue;
-@property(readonly) long long count;
+@property(readonly) int count;
 @property <FTMessageQueueDelegate> * delegate;
 @property(readonly) NSArray * messages;
 @property(readonly) IDSBaseMessage * topMessage;
@@ -22,15 +22,15 @@
 - (id)_queue;
 - (void)_setTimeout;
 - (void)_timeoutHit;
-- (bool)addMessage:(id)arg1;
-- (long long)count;
+- (BOOL)addMessage:(id)arg1;
+- (int)count;
 - (void)dealloc;
 - (id)delegate;
 - (id)dequeueTopMessage;
 - (id)init;
 - (id)messages;
 - (void)removeAllMessages;
-- (bool)removeMessage:(id)arg1;
+- (BOOL)removeMessage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)set_addDates:(id)arg1;
 - (void)set_queue:(id)arg1;

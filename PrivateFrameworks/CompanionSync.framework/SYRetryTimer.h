@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (bool)incrementBackoff;
+- (BOOL)incrementBackoff;
 - (id)initWithInterval:(double)arg1 backoffFactor:(double)arg2 maxRetries:(int)arg3 queue:(id)arg4 callout:(id)arg5;
 
 @end

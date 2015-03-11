@@ -6,22 +6,22 @@
 
 @interface _HDDataBatchInsertionJournalEntry : HDJournalEntry {
     HDCodableObjectCollection *_collection;
-    long long _provenance;
+    int _provenance;
 }
 
 @property(readonly) HDCodableObjectCollection * collection;
-@property(readonly) long long provenance;
+@property(readonly) int provenance;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (long long)behavior;
-+ (bool)supportsSecureCoding;
++ (int)behavior;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)collection;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCodableObjectCollection:(id)arg1 provenance:(long long)arg2;
+- (id)initWithCodableObjectCollection:(id)arg1 provenance:(int)arg2;
 - (id)initWithCoder:(id)arg1;
-- (long long)provenance;
+- (int)provenance;
 
 @end

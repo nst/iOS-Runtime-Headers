@@ -6,27 +6,27 @@
 
 @interface CNContactPickerLegacyViewController : CNContactPickerContentViewController <ABPeoplePickerNavigationControllerDelegate> {
     void *_addressBook;
+    BOOL _clientHasContactsAccess;
     ABPeoplePickerNavigationController *_legacyPicker;
-    bool_clientHasContactsAccess;
 }
 
-@property bool clientHasContactsAccess;
+@property BOOL clientHasContactsAccess;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) ABPeoplePickerNavigationController * legacyPicker;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)clientHasContactsAccess;
+- (BOOL)clientHasContactsAccess;
 - (void)dealloc;
 - (id)init;
 - (id)legacyPicker;
-- (bool)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
-- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void)setClientHasContactsAccess:(bool)arg1;
+- (void)setClientHasContactsAccess:(BOOL)arg1;
 - (void)setLegacyPicker:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (void)setupWithOptions:(id)arg1 readyBlock:(id)arg2;

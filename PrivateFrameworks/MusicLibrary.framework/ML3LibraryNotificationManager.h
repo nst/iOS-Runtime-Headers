@@ -15,7 +15,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) ML3MusicLibrary * library;
 @property(readonly) Class superclass;
 
@@ -30,7 +30,7 @@
 - (void)enqueueLocalNotificationNamed:(id)arg1;
 - (id)initWithLibrary:(id)arg1 distributedAndLocalNames:(id)arg2;
 - (id)library;
-- (bool)observerShouldForwardDistributedNotification:(id)arg1;
+- (BOOL)observerShouldForwardDistributedNotification:(id)arg1;
 - (void)removeObserverWithDistributedName:(id)arg1;
 - (void)removeObserverWithLocalName:(id)arg1;
 

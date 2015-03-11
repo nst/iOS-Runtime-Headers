@@ -18,10 +18,10 @@
 
 - (double)carrierFrequency;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithProtocolID:(unsigned char)arg1 options:(unsigned char)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned char)options;
 - (unsigned char)protocolID;
 - (double)repeatInterval;

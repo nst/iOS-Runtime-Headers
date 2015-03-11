@@ -11,14 +11,14 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithQueue:(id)arg1 progressObserver:(id)arg2;
 - (oneway void)noteClientNotEntitled:(id)arg1;
 - (oneway void)scheduledActivitiesDidComplete;
-- (oneway void)scheduledActivitiesProgressStateChanged:(long long)arg1;
+- (oneway void)scheduledActivitiesProgressStateChanged:(int)arg1;
 - (oneway void)scheduledActivityChanged:(id)arg1 fromActivity:(id)arg2 error:(id)arg3;
 - (oneway void)scheduledActivityProgressChanged:(float)arg1 totalProgress:(float)arg2;
 

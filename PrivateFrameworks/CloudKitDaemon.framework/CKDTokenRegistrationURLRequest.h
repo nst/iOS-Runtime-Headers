@@ -23,7 +23,7 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (bool)requiresTokenRegistration;
+- (BOOL)requiresTokenRegistration;
 - (void)setApsEnvironmentString:(id)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setToken:(id)arg1;

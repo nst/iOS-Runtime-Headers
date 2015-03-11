@@ -17,10 +17,10 @@
 @property(readonly) struct { double x1; double x2; double x3; } rotationRate;
 @property(readonly) struct { double x1; double x2; double x3; } userAcceleration;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)attitude;
-- (bool)calibrationRequired;
+- (BOOL)calibrationRequired;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

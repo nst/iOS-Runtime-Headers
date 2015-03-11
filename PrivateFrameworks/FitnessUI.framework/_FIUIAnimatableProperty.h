@@ -26,7 +26,7 @@
 - (id)currentValue;
 - (id)endValue;
 - (id)initWithGetter:(id)arg1 setter:(id)arg2;
-- (bool)isFinishedAnimating;
+- (BOOL)isFinishedAnimating;
 - (void)removeAllPropertyAnimations;
 - (void)setCurrentValue:(id)arg1;
 - (void)setEndValue:(id)arg1;

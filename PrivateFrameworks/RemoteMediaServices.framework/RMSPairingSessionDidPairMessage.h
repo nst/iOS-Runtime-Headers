@@ -13,9 +13,9 @@
     int _sessionIdentifier;
 }
 
-@property(readonly) bool hasPairingGUID;
-@property(readonly) bool hasServiceNetworkName;
-@property bool hasSessionIdentifier;
+@property(readonly) BOOL hasPairingGUID;
+@property(readonly) BOOL hasServiceNetworkName;
+@property BOOL hasSessionIdentifier;
 @property(retain) NSString * pairingGUID;
 @property(retain) NSString * serviceNetworkName;
 @property int sessionIdentifier;
@@ -25,17 +25,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasPairingGUID;
-- (bool)hasServiceNetworkName;
-- (bool)hasSessionIdentifier;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasPairingGUID;
+- (BOOL)hasServiceNetworkName;
+- (BOOL)hasSessionIdentifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)pairingGUID;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)serviceNetworkName;
 - (int)sessionIdentifier;
-- (void)setHasSessionIdentifier:(bool)arg1;
+- (void)setHasSessionIdentifier:(BOOL)arg1;
 - (void)setPairingGUID:(id)arg1;
 - (void)setServiceNetworkName:(id)arg1;
 - (void)setSessionIdentifier:(int)arg1;

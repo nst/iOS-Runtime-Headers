@@ -8,26 +8,26 @@
     void *_priv;
 }
 
-@property(readonly) long long condition;
+@property(readonly) int condition;
 @property(copy) NSString * name;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (long long)condition;
+- (int)condition;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
 - (id)init;
-- (id)initWithCondition:(long long)arg1;
+- (id)initWithCondition:(int)arg1;
 - (void)lock;
-- (bool)lockBeforeDate:(id)arg1;
-- (bool)lockWhenCondition:(long long)arg1 beforeDate:(id)arg2;
-- (void)lockWhenCondition:(long long)arg1;
+- (BOOL)lockBeforeDate:(id)arg1;
+- (BOOL)lockWhenCondition:(int)arg1 beforeDate:(id)arg2;
+- (void)lockWhenCondition:(int)arg1;
 - (id)name;
 - (void)setName:(id)arg1;
-- (bool)tryLock;
-- (bool)tryLockWhenCondition:(long long)arg1;
+- (BOOL)tryLock;
+- (BOOL)tryLockWhenCondition:(int)arg1;
 - (void)unlock;
-- (void)unlockWithCondition:(long long)arg1;
+- (void)unlockWithCondition:(int)arg1;
 
 @end

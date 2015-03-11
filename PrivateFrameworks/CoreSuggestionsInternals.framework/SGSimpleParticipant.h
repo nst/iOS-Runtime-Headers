@@ -16,11 +16,11 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)identityKey;
 - (id)initWithKey:(id)arg1 roleType:(unsigned int)arg2;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToSimpleParticipant:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToSimpleParticipant:(id)arg1;
 - (unsigned int)role;
 - (void)setIdentityKey:(id)arg1;
 - (void)setRole:(unsigned int)arg1;

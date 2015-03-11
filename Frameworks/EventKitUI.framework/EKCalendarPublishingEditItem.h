@@ -7,37 +7,37 @@
 @interface EKCalendarPublishingEditItem : EKCalendarEditItem <CalendarPublishingActivityDelegate> {
     UILabel *_descriptionLabel;
     UIView *_footerView;
+    BOOL _published;
     UILabel *_publishingLabel;
     UIActivityIndicatorView *_spinner;
-    bool_published;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) UIView * footerView;
-@property(readonly) unsigned long long hash;
-@property bool published;
+@property(readonly) unsigned int hash;
+@property BOOL published;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyStyleToUILabel:(id)arg1;
 - (void)_publishChanged:(id)arg1;
-- (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
+- (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
 - (id)calendarTitle;
-- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
-- (bool)configureWithCalendar:(id)arg1;
-- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
-- (double)footerHeightForSection;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (BOOL)configureWithCalendar:(id)arg1;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
+- (float)footerHeightForSection;
 - (id)footerView;
 - (id)footerViewForSection;
-- (void)layoutForWidth:(double)arg1;
+- (void)layoutForWidth:(float)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(int)arg2;
-- (unsigned long long)numberOfSubitems;
+- (unsigned int)numberOfSubitems;
 - (id)pubishURL;
-- (bool)published;
+- (BOOL)published;
 - (void)reset;
-- (void)setPublished:(bool)arg1;
-- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (void)setPublished:(BOOL)arg1;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 
 @end

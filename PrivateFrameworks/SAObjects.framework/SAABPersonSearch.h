@@ -32,7 +32,7 @@
 - (id)name;
 - (id)phone;
 - (id)relationship;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (id)scope;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAddress:(id)arg1;

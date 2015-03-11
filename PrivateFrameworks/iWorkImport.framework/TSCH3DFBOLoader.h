@@ -18,12 +18,12 @@
         } ; 
     struct FramebufferAttributes { 
         int type; 
-        long long samples; 
+        int samples; 
         int colorDataType; 
         int colorFormat; 
         int depthDataType; 
-        boollinearFilter; 
-        booldiscardHint; 
+        BOOL linearFilter; 
+        BOOL discardHint; 
     <TSCH3DRenderBufferAllocator> *mColorAllocator;
     <TSCH3DRenderBufferAllocator> *mDepthAllocator;
     } mFramebufferAttributes;
@@ -32,11 +32,11 @@
 
 @property(readonly) <TSCH3DRenderBufferAllocator> * colorAllocator;
 @property(readonly) <TSCH3DRenderBufferAllocator> * depthAllocator;
-@property(readonly) struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; boolx6; boolx7; } framebufferAttributes;
+@property(readonly) struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; } framebufferAttributes;
 @property(readonly) struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } size;
 
-+ (unsigned long long)estimatedMemoryInBytesForSize:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })arg1 samples:(unsigned long long)arg2 hasColorbuffer:(bool)arg3 hasDepthbuffer:(bool)arg4;
-+ (id)loaderWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; boolx6; boolx7; }*)arg1 size:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 colorAllocator:(id)arg3 depthAllocator:(id)arg4;
++ (unsigned int)estimatedMemoryInBytesForSize:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })arg1 samples:(unsigned int)arg2 hasColorbuffer:(BOOL)arg3 hasDepthbuffer:(BOOL)arg4;
++ (id)loaderWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg1 size:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 colorAllocator:(id)arg3 depthAllocator:(id)arg4;
 
 - (id).cxx_construct;
 - (void)bindHandle:(id)arg1 config:(void*)arg2;
@@ -45,13 +45,13 @@
 - (void)dealloc;
 - (id)depthAllocator;
 - (id)description;
-- (struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; boolx6; boolx7; })framebufferAttributes;
+- (struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; })framebufferAttributes;
 - (id)generateHandleWithConfig:(void*)arg1;
-- (unsigned long long)hash;
-- (id)initWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; boolx6; boolx7; }*)arg1 size:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 colorAllocator:(id)arg3 depthAllocator:(id)arg4;
-- (bool)isEqual:(id)arg1;
-- (struct SessionLoadResourceResult { boolx1; boolx2; boolx3; id x4; id x5; })loadResource:(id)arg1 insideSession:(id)arg2;
+- (unsigned int)hash;
+- (id)initWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg1 size:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 colorAllocator:(id)arg3 depthAllocator:(id)arg4;
+- (BOOL)isEqual:(id)arg1;
+- (struct SessionLoadResourceResult { BOOL x1; BOOL x2; BOOL x3; id x4; id x5; })loadResource:(id)arg1 insideSession:(id)arg2;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })size;
-- (unsigned long long)uploadDataBuffer:(id)arg1 handle:(id)arg2 insideSession:(id)arg3 config:(void*)arg4;
+- (unsigned int)uploadDataBuffer:(id)arg1 handle:(id)arg2 insideSession:(id)arg3 config:(void*)arg4;
 
 @end

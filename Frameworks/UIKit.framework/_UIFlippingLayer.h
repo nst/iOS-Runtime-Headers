@@ -5,6 +5,6 @@
 @interface _UIFlippingLayer : CATransformLayer {
 }
 
-- (void)setOpaque:(bool)arg1;
+- (void)setOpaque:(BOOL)arg1;
 
 @end

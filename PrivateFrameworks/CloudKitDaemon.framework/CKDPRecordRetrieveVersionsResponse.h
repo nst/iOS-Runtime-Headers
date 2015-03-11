@@ -8,12 +8,12 @@
     struct { 
         unsigned int isDeleted : 1; 
     } _has;
+    BOOL _isDeleted;
     NSMutableArray *_recordVersions;
-    bool_isDeleted;
 }
 
-@property bool hasIsDeleted;
-@property bool isDeleted;
+@property BOOL hasIsDeleted;
+@property BOOL isDeleted;
 @property(retain) NSMutableArray * recordVersions;
 
 - (void).cxx_destruct;
@@ -23,17 +23,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasIsDeleted;
-- (unsigned long long)hash;
-- (bool)isDeleted;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasIsDeleted;
+- (unsigned int)hash;
+- (BOOL)isDeleted;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)recordVersions;
-- (id)recordVersionsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)recordVersionsCount;
-- (void)setHasIsDeleted:(bool)arg1;
-- (void)setIsDeleted:(bool)arg1;
+- (id)recordVersionsAtIndex:(unsigned int)arg1;
+- (unsigned int)recordVersionsCount;
+- (void)setHasIsDeleted:(BOOL)arg1;
+- (void)setIsDeleted:(BOOL)arg1;
 - (void)setRecordVersions:(id)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -9,17 +9,17 @@
     double _currentTime;
     IMManualUpdater *_displayUpdater;
     double _duration;
+    BOOL _played;
+    BOOL _playing;
     UIImage *_waveform;
-    bool_played;
-    bool_playing;
 }
 
 @property BOOL color;
 @property double currentTime;
 @property(retain) IMManualUpdater * displayUpdater;
 @property double duration;
-@property(getter=isPlayed) bool played;
-@property(getter=isPlaying) bool playing;
+@property(getter=isPlayed) BOOL played;
+@property(getter=isPlaying) BOOL playing;
 @property(retain) UIImage * waveform;
 
 - (BOOL)color;
@@ -27,9 +27,9 @@
 - (void)dealloc;
 - (id)displayUpdater;
 - (double)duration;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isPlayed;
-- (bool)isPlaying;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isPlayed;
+- (BOOL)isPlaying;
 - (void)prepareForDisplay;
 - (void)prepareForDisplayIfNeeded;
 - (void)setColor:(BOOL)arg1;
@@ -37,8 +37,8 @@
 - (void)setDisplayUpdater:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setNeedsPrepareForDisplay;
-- (void)setPlayed:(bool)arg1;
-- (void)setPlaying:(bool)arg1;
+- (void)setPlayed:(BOOL)arg1;
+- (void)setPlaying:(BOOL)arg1;
 - (void)setWaveform:(id)arg1;
 - (id)waveform;
 

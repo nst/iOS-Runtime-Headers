@@ -5,9 +5,9 @@
 @interface HDUserCharacteristicSyncEntity : HDKeyValueSyncEntity {
 }
 
-+ (long long)category;
++ (int)category;
 + (void)didReceiveKeysAndValuesWithHealthDaemon:(id)arg1;
 + (int)nanoSyncObjectType;
-+ (long long)syncEntityType;
++ (int)syncEntityType;
 
 @end

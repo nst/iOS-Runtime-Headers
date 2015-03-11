@@ -22,7 +22,7 @@
 @property unsigned long long staticSize;
 @property unsigned long long totalSize;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;

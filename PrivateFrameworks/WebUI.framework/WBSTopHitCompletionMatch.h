@@ -5,7 +5,7 @@
 @interface WBSTopHitCompletionMatch : WBSBookmarkAndHistoryCompletionMatch {
 }
 
-- (bool)isTopHit;
+- (BOOL)isTopHit;
 - (id)parsecDomainIdentifier;
 
 @end

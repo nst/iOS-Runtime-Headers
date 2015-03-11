@@ -17,19 +17,19 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_createMetadataForRadioStreamTrack;
 - (void)_getCurrentTimedMetadata:(id*)arg1 pings:(id*)arg2 adamIDBlob:(id*)arg3;
-- (float)_maximumBitRateForNetworkType:(long long)arg1;
+- (float)_maximumBitRateForNetworkType:(int)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
-- (void)_reloadMetadataAndPostNotificationsIfNeeded:(bool)arg1;
-- (void)_updateEffectiveMetadataAndPostNotifications:(bool)arg1;
+- (void)_reloadMetadataAndPostNotificationsIfNeeded:(BOOL)arg1;
+- (void)_updateEffectiveMetadataAndPostNotifications:(BOOL)arg1;
 - (id)album;
 - (id)albumBuyButtonText;
-- (long long)albumBuyButtonType;
+- (int)albumBuyButtonType;
 - (long long)albumStoreID;
 - (id)artist;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
@@ -37,16 +37,16 @@
 - (void)dealloc;
 - (id)effectiveArtworkCollection;
 - (id)initWithStreamTrack:(id)arg1;
-- (bool)isAlwaysLive;
-- (bool)isExplicitTrack;
+- (BOOL)isAlwaysLive;
+- (BOOL)isExplicitTrack;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
 - (id)mpuReporting_storeItemID;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
+- (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (void)setPlayerItem:(id)arg1;
 - (long long)storeID;
 - (id)streamTrack;
-- (bool)supportsRadioTrackActions;
+- (BOOL)supportsRadioTrackActions;
 
 @end

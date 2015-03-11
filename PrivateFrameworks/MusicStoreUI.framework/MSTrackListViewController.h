@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_delayedReloadForWebViews;
@@ -29,6 +29,6 @@
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (id)purchasableItemsForHeaderView:(id)arg1;
 - (void)reloadData;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -8,7 +8,7 @@
     NSHTTPCookieStorageInternal *_internal;
 }
 
-@property unsigned long long cookieAcceptPolicy;
+@property unsigned int cookieAcceptPolicy;
 @property(copy,readonly) NSArray * cookies;
 
 + (id)aa_icloudCookies;
@@ -20,8 +20,8 @@
 - (id)_initWithCFHTTPCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (id)_initWithIdentifier:(id)arg1 private:(bool)arg2;
 - (void)_saveCookies;
-- (void)_setPrivateBrowsingEnabled:(bool)arg1;
-- (unsigned long long)cookieAcceptPolicy;
+- (void)_setPrivateBrowsingEnabled:(BOOL)arg1;
+- (unsigned int)cookieAcceptPolicy;
 - (id)cookieRequestHeaderFieldsForURL:(id)arg1;
 - (id)cookies;
 - (id)cookiesForURL:(id)arg1;
@@ -32,7 +32,7 @@
 - (id)init;
 - (void)removeCookiesSinceDate:(id)arg1;
 - (void)setCookie:(id)arg1;
-- (void)setCookieAcceptPolicy:(unsigned long long)arg1;
+- (void)setCookieAcceptPolicy:(unsigned int)arg1;
 - (void)setCookies:(id)arg1 forURL:(id)arg2 mainDocumentURL:(id)arg3;
 - (void)setCookiesFromResponseHeader:(id)arg1 forURL:(id)arg2 policyBaseURL:(id)arg3;
 - (id)sortedCookiesUsingDescriptors:(id)arg1;

@@ -81,7 +81,7 @@
 - (void)logEventBackwardIOReportWithDelta:(id)arg1 forChannelGroup:(id)arg2;
 - (double)mJtomWinTime:(double)arg1 withmJ:(double)arg2;
 - (void)modelAPSoCPower:(id)arg1;
-- (bool)processNotificationForChannelGroup:(id)arg1;
+- (BOOL)processNotificationForChannelGroup:(id)arg1;
 - (void)pruneAllChannelsWithChannels:(struct __CFDictionary { }*)arg1;
 - (void)pruneChannelsWithChannels:(struct __CFDictionary { }*)arg1 withTargetSet:(id)arg2;
 - (id)sampleChannelsDaily;

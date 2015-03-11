@@ -3,21 +3,21 @@
  */
 
 @interface NRPBPairingModeResponse : PBCodable <NSCopying> {
-    bool_success;
+    BOOL _success;
 }
 
-@property bool success;
+@property BOOL success;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setSuccess:(bool)arg1;
-- (bool)success;
+- (BOOL)readFrom:(id)arg1;
+- (void)setSuccess:(BOOL)arg1;
+- (BOOL)success;
 - (void)writeTo:(id)arg1;
 
 @end

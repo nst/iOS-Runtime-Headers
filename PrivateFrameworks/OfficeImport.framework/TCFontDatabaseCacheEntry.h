@@ -5,27 +5,27 @@
 @class NSString;
 
 @interface TCFontDatabaseCacheEntry : NSObject {
+    BOOL _bold;
     int _fontClass;
+    BOOL _italic;
     NSString *_name;
-    bool_bold;
-    bool_italic;
 }
 
-@property(readonly) bool bold;
+@property(readonly) BOOL bold;
 @property(readonly) int fontClass;
-@property(readonly) bool italic;
+@property(readonly) BOOL italic;
 @property(readonly) NSString * name;
 
-+ (id)newFontDatabaseCacheEntryWithName:(id)arg1 fontClass:(int)arg2 bold:(bool)arg3 italic:(bool)arg4;
++ (id)newFontDatabaseCacheEntryWithName:(id)arg1 fontClass:(int)arg2 bold:(BOOL)arg3 italic:(BOOL)arg4;
 
-- (bool)bold;
+- (BOOL)bold;
 - (void)dealloc;
 - (id)description;
 - (int)fontClass;
-- (unsigned long long)hash;
-- (id)initWithName:(id)arg1 fontClass:(int)arg2 bold:(bool)arg3 italic:(bool)arg4;
-- (bool)isEqual:(id)arg1;
-- (bool)italic;
+- (unsigned int)hash;
+- (id)initWithName:(id)arg1 fontClass:(int)arg2 bold:(BOOL)arg3 italic:(BOOL)arg4;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)italic;
 - (id)name;
 
 @end

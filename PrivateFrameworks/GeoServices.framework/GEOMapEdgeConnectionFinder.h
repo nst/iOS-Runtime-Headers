@@ -17,7 +17,7 @@
 }
 
 - (id).cxx_construct;
-- (void)_findConnections:(id)arg1 incoming:(bool)arg2;
+- (void)_findConnections:(id)arg1 incoming:(BOOL)arg2;
 - (void)cancel;
 - (void)dealloc;
 - (void)findConnectionsIn:(id)arg1;

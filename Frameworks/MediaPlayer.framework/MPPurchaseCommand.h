@@ -3,13 +3,13 @@
  */
 
 @interface MPPurchaseCommand : MPRemoteCommand {
-    long long _state;
+    int _state;
 }
 
-@property long long state;
+@property int state;
 
 - (id)_mediaRemoteCommandInfoOptions;
-- (void)setState:(long long)arg1;
-- (long long)state;
+- (void)setState:(int)arg1;
+- (int)state;
 
 @end

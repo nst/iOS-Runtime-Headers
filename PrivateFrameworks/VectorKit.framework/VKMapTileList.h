@@ -16,7 +16,7 @@
 }
 
 @property(readonly) float maximumStyleZ;
-@property(readonly) unsigned long long numTiles;
+@property(readonly) unsigned int numTiles;
 @property(readonly) id* tileList;
 
 - (id).cxx_construct;
@@ -26,7 +26,7 @@
 - (void)consolidateList;
 - (id)init;
 - (float)maximumStyleZ;
-- (unsigned long long)numTiles;
+- (unsigned int)numTiles;
 - (id*)tileList;
 
 @end

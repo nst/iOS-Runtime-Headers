@@ -10,21 +10,21 @@
 }
 
 + (id)activeInstance;
-+ (double)landscapeHeight;
-+ (double)portraitHeight;
++ (float)landscapeHeight;
++ (float)portraitHeight;
 
 - (int)_clipCornersOfView:(id)arg1;
 - (id)currentKeyplane;
-- (struct CGSize { double x1; double x2; })dragGestureSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })dragGestureSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setRenderConfig:(id)arg1;
 - (void)setupBackgroundViewForNewSplitTraits:(id)arg1;
-- (bool)shouldFadeFromLayout;
-- (bool)shouldFadeToLayout;
+- (BOOL)shouldFadeFromLayout;
+- (BOOL)shouldFadeToLayout;
 - (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;
-- (struct CGSize { double x1; double x2; })splitLeftSize;
-- (bool)usesAutoShift;
-- (bool)visible;
+- (struct CGSize { float x1; float x2; })splitLeftSize;
+- (BOOL)usesAutoShift;
+- (BOOL)visible;
 
 @end

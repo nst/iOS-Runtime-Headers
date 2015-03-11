@@ -29,7 +29,7 @@
 @property(retain) NSDate * lastSubmittedDate;
 @property(retain) NSString * leaderboardSetIdentifier;
 @property(retain) NSString * localizedTitle;
-@property(readonly) unsigned long long maxRange;
+@property(readonly) unsigned int maxRange;
 @property unsigned int maxRank;
 @property unsigned int overallRank;
 @property unsigned int overallRankCount;
@@ -44,14 +44,14 @@
 - (unsigned short)friendRank;
 - (unsigned short)friendRankCount;
 - (id)groupIdentifier;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)icons;
 - (id)identifier;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)lastSubmittedDate;
 - (id)leaderboardSetIdentifier;
 - (id)localizedTitle;
-- (unsigned long long)maxRange;
+- (unsigned int)maxRange;
 - (unsigned int)maxRank;
 - (unsigned int)overallRank;
 - (unsigned int)overallRankCount;

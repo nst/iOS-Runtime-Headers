@@ -7,16 +7,16 @@
 @interface BRCBookmark : NSObject {
     NSData *_bookmarkData;
     BRCLocalContainer *_container;
+    BOOL _containsItemID;
+    BOOL _dataResolved;
     BRCAccountSession *_session;
     BRCLocalItem *_target;
     BRCLocalContainer *_targetContainer;
     BRCRelativePath *_targetRelpath;
-    bool_containsItemID;
-    bool_dataResolved;
-    bool_targetResolved;
+    BOOL _targetResolved;
 }
 
-@property(readonly) bool containsItemID;
+@property(readonly) BOOL containsItemID;
 @property(readonly) BRCLocalItem * target;
 @property(readonly) BRCLocalContainer * targetContainer;
 
@@ -24,13 +24,13 @@
 
 - (void).cxx_destruct;
 - (void)_computeSignature:(unsigned char[32])arg1;
-- (bool)_resolveDataWithError:(id*)arg1;
-- (bool)_resolveTargetWithError:(id*)arg1;
+- (BOOL)_resolveDataWithError:(id*)arg1;
+- (BOOL)_resolveTargetWithError:(id*)arg1;
 - (int)_validateSignatureWithFd:(int)arg1;
-- (bool)containsItemID;
+- (BOOL)containsItemID;
 - (id)initWithRelpath:(id)arg1 session:(id)arg2;
 - (id)initWithTarget:(id)arg1 owningContainer:(id)arg2 path:(id)arg3 session:(id)arg4;
-- (bool)resolveWithError:(id*)arg1;
+- (BOOL)resolveWithError:(id*)arg1;
 - (id)target;
 - (id)targetContainer;
 - (id)writeUnderParent:(id)arg1 name:(id)arg2 error:(id*)arg3;

@@ -9,13 +9,13 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (Class)validatedClass;
 + (id)validatorWithObject:(id)arg1;
 
 - (id)initWithShippingMethod:(id)arg1;
-- (bool)isValidWithError:(id*)arg1;
+- (BOOL)isValidWithError:(id*)arg1;
 
 @end

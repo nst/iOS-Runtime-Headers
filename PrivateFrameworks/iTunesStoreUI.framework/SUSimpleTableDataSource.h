@@ -14,11 +14,11 @@
 
 - (Class)cellConfigurationClass;
 - (id)cellForIndexPath:(id)arg1;
-- (double)cellHeightForIndexPath:(id)arg1;
+- (float)cellHeightForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)dealloc;
-- (long long)numberOfRowsInSection:(long long)arg1;
-- (long long)numberOfSections;
+- (int)numberOfRowsInSection:(int)arg1;
+- (int)numberOfSections;
 - (id)objectForIndexPath:(id)arg1;
 - (id)objects;
 - (void)reloadCellContexts;

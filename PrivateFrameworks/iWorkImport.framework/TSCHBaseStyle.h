@@ -4,12 +4,12 @@
 
 @class NSString;
 
-@interface TSCHBaseStyle : TSSStyle <TSCHStyleActAlike, TSCHCustomFormatPasteSupport> {
+@interface TSCHBaseStyle : TSSStyle <TSCHCustomFormatPasteSupport, TSCHStyleActAlike> {
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)defaultPropertyMap;
@@ -22,8 +22,8 @@
 - (id)g_specificToGenericPropertyMap;
 - (void)g_splitProperty:(int)arg1 outStyleOwner:(id*)arg2 outSpecifier:(id*)arg3 outKeyName:(id*)arg4;
 - (id)initFromPreUFFArchiveWithUnarchiver:(id)arg1;
-- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
-- (long long)mixingTypeWithObject:(id)arg1;
+- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
+- (int)mixingTypeWithObject:(id)arg1;
 - (id)properties;
 - (id)shortDescription;
 - (void)updateAfterPasteForDocumentRoot:(id)arg1 pasteboardCustomFormatList:(id)arg2;

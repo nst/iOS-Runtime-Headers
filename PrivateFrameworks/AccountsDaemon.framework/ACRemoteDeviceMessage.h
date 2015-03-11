@@ -7,9 +7,9 @@
 @interface ACRemoteDeviceMessage : NSObject {
     NSData *_data;
     NSString *_identifier;
+    BOOL _isReply;
+    BOOL _needsReply;
     NSMutableDictionary *_payload;
-    bool_isReply;
-    bool_needsReply;
 }
 
 @property(readonly) ACAccount * account;
@@ -17,16 +17,16 @@
 @property(readonly) NSData * data;
 @property(readonly) NSError * error;
 @property(readonly) NSString * identifier;
-@property bool isReply;
-@property bool needsReply;
+@property BOOL isReply;
+@property BOOL needsReply;
 @property(readonly) NSDictionary * options;
 @property(readonly) NSObject<NSCoding> * result;
 @property(readonly) NSString * sentMessageIdentifier;
-@property(readonly) bool success;
+@property(readonly) BOOL success;
 
 + (id)actionMessageWithCommand:(id)arg1 account:(id)arg2 options:(id)arg3;
-+ (id)replyForMessage:(id)arg1 withSuccess:(bool)arg2 error:(id)arg3;
-+ (id)replyForMessage:(id)arg1 withSuccess:(bool)arg2 result:(id)arg3 error:(id)arg4;
++ (id)replyForMessage:(id)arg1 withSuccess:(BOOL)arg2 error:(id)arg3;
++ (id)replyForMessage:(id)arg1 withSuccess:(BOOL)arg2 result:(id)arg3 error:(id)arg4;
 
 - (void).cxx_destruct;
 - (void)_invalidateCachedData;
@@ -40,13 +40,13 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithData:(id)arg1;
-- (bool)isReply;
-- (bool)needsReply;
+- (BOOL)isReply;
+- (BOOL)needsReply;
 - (id)options;
 - (id)result;
 - (id)sentMessageIdentifier;
-- (void)setIsReply:(bool)arg1;
-- (void)setNeedsReply:(bool)arg1;
-- (bool)success;
+- (void)setIsReply:(BOOL)arg1;
+- (void)setNeedsReply:(BOOL)arg1;
+- (BOOL)success;
 
 @end

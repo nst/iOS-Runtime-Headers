@@ -4,7 +4,7 @@
 
 @class CKRecord, CKRecordID, NSData, NSDate, NSNumber, NSString, NSURL;
 
-@interface CKAsset : NSObject <NSSecureCoding, CKRecordValue> {
+@interface CKAsset : NSObject <CKRecordValue, NSSecureCoding> {
     NSString *_assetHandleUUID;
     NSData *_assetKey;
     NSData *_authRequest;
@@ -17,6 +17,7 @@
     NSNumber *_fileID;
     NSURL *_fileURL;
     NSNumber *_generationCountToSave;
+    BOOL _hasSize;
     NSData *_inlineData;
     NSString *_owner;
     CKRecord *_record;
@@ -28,10 +29,9 @@
     NSData *_signature;
     unsigned long long _size;
     NSString *_uploadReceipt;
+    BOOL _uploaded;
+    BOOL _wasCached;
     NSData *_wrappedAssetKey;
-    bool_hasSize;
-    bool_uploaded;
-    bool_wasCached;
 }
 
 @property(retain) NSString * assetHandleUUID;
@@ -48,8 +48,8 @@
 @property(readonly) NSNumber * fileID;
 @property(copy) NSURL * fileURL;
 @property(retain) NSNumber * generationCountToSave;
-@property bool hasSize;
-@property(readonly) unsigned long long hash;
+@property BOOL hasSize;
+@property(readonly) unsigned int hash;
 @property(copy) NSData * inlineData;
 @property(retain) NSString * owner;
 @property CKRecord * record;
@@ -62,12 +62,12 @@
 @property unsigned long long size;
 @property(readonly) Class superclass;
 @property(copy) NSString * uploadReceipt;
-@property(getter=isUploaded) bool uploaded;
-@property bool wasCached;
+@property(getter=isUploaded) BOOL uploaded;
+@property BOOL wasCached;
 @property(retain) NSData * wrappedAssetKey;
 
 + (id)assetWithFileURL:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -86,14 +86,14 @@
 - (id)fileID;
 - (id)fileURL;
 - (id)generationCountToSave;
-- (bool)hasSize;
+- (BOOL)hasSize;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDeviceID:(id)arg1 fileID:(id)arg2 generationID:(id)arg3;
 - (id)initWithFileURL:(id)arg1 signature:(id)arg2 assetHandleUUID:(id)arg3;
 - (id)initWithFileURL:(id)arg1;
 - (id)inlineData;
-- (bool)isUploaded;
+- (BOOL)isUploaded;
 - (id)owner;
 - (id)record;
 - (id)recordID;
@@ -111,7 +111,7 @@
 - (void)setDownloadURLExpiration:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)setGenerationCountToSave:(id)arg1;
-- (void)setHasSize:(bool)arg1;
+- (void)setHasSize:(BOOL)arg1;
 - (void)setInlineData:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setRecord:(id)arg1;
@@ -123,13 +123,13 @@
 - (void)setSignature:(id)arg1;
 - (void)setSize:(unsigned long long)arg1;
 - (void)setUploadReceipt:(id)arg1;
-- (void)setUploaded:(bool)arg1;
-- (void)setWasCached:(bool)arg1;
+- (void)setUploaded:(BOOL)arg1;
+- (void)setWasCached:(BOOL)arg1;
 - (void)setWrappedAssetKey:(id)arg1;
 - (id)signature;
 - (unsigned long long)size;
 - (id)uploadReceipt;
-- (bool)wasCached;
+- (BOOL)wasCached;
 - (id)wrappedAssetKey;
 
 @end

@@ -13,7 +13,7 @@
 @property <PKSecureElementConsistencyCheckerDelegate> * delegate;
 @property(retain) PKPaymentWebService * paymentWebService;
 
-- (bool)_downloadPasses;
+- (BOOL)_downloadPasses;
 - (void)_rescheduleWithBackoff;
 - (void)dealloc;
 - (id)delegate;

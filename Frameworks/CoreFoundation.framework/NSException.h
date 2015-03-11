@@ -20,13 +20,13 @@
 + (void)errnoRaise:(id)arg1 format:(id)arg2;
 + (void)errnoRaise:(id)arg1 format:(id)arg2;
 + (id)exceptionWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
-+ (void)raise:(id)arg1 format:(id)arg2 arguments:(char *)arg3;
++ (void)raise:(id)arg1 format:(id)arg2 arguments:(void*)arg3;
 + (void)raise:(id)arg1 format:(id)arg2;
 + (void)raiseWithError:(id)arg1;
 + (void)raiseWithError:(id)arg1;
 
 - (id)_crashReporterString;
-- (bool)_installStackTraceKeyIfNeeded;
+- (BOOL)_installStackTraceKeyIfNeeded;
 - (id)callStackReturnAddresses;
 - (id)callStackSymbols;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -36,12 +36,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
 - (id)error;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (int)localErrno;
 - (int)localErrno;
 - (id)name;

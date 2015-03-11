@@ -11,7 +11,7 @@
 }
 
 @property(copy,readonly) NSArray * allPreparedAdSlotRadioTracks;
-@property(readonly) bool shouldIncrementSkipCount;
+@property(readonly) BOOL shouldIncrementSkipCount;
 @property(readonly) NSDate * skipDate;
 @property(readonly) RadioStation * station;
 @property(copy,readonly) NSArray * tracks;
@@ -21,7 +21,7 @@
 - (id)allPreparedAdSlotRadioTracks;
 - (id)initWithGetTracksResponse:(id)arg1 station:(id)arg2;
 - (id)preparedAdSlotForRadioTrack:(id)arg1;
-- (bool)shouldIncrementSkipCount;
+- (BOOL)shouldIncrementSkipCount;
 - (id)skipDate;
 - (id)station;
 - (id)tracks;

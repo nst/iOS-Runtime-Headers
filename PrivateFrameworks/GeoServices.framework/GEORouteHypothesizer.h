@@ -14,7 +14,7 @@
     <GEORouteHypothesizerDelegate> *_delegate;
     NSDate *_departureDate;
     GEOComposedWaypoint *_destination;
-    unsigned long long _etaUpdateFrequency;
+    unsigned int _etaUpdateFrequency;
     double _etaUpdateInterval;
     GEOETAUpdater *_etaUpdater;
     GEORoute *_existingRoute;
@@ -38,15 +38,15 @@
 @property(readonly) NSDate * departureDate;
 @property(copy,readonly) NSString * description;
 @property(readonly) GEOComposedWaypoint * destination;
-@property unsigned long long etaUpdateFrequency;
+@property unsigned int etaUpdateFrequency;
 @property(retain) GEODirectionsRequestFeedback * feedback;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) GEOComposedRoute * route;
 @property(readonly) GEOComposedWaypoint * source;
 @property(readonly) NSDate * suggestedNextUpdateDate;
 @property(readonly) Class superclass;
-@property(readonly) bool supportsDirections;
-@property(readonly) bool supportsLiveTraffic;
+@property(readonly) BOOL supportsDirections;
+@property(readonly) BOOL supportsLiveTraffic;
 
 - (void)_commonInit;
 - (void)_createUpdaterWithStartingLocation:(id)arg1;
@@ -59,7 +59,7 @@
 - (id)delegate;
 - (id)departureDate;
 - (id)destination;
-- (unsigned long long)etaUpdateFrequency;
+- (unsigned int)etaUpdateFrequency;
 - (void)etaUpdater:(id)arg1 receivedETATrafficUpdateResponse:(id)arg2;
 - (void)etaUpdater:(id)arg1 receivedError:(id)arg2;
 - (void)etaUpdater:(id)arg1 willSendETATrafficUpdateRequest:(id)arg2;
@@ -74,12 +74,12 @@
 - (void)routeHypothesizerUpdater:(id)arg1 receivedNewRoute:(id)arg2 request:(id)arg3 response:(id)arg4;
 - (void)routeHypothesizerUpdater:(id)arg1 willRequestNewRoute:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setEtaUpdateFrequency:(unsigned long long)arg1;
+- (void)setEtaUpdateFrequency:(unsigned int)arg1;
 - (void)setFeedback:(id)arg1;
 - (id)source;
 - (id)suggestedNextUpdateDate;
-- (bool)supportsDirections;
-- (bool)supportsLiveTraffic;
+- (BOOL)supportsDirections;
+- (BOOL)supportsLiveTraffic;
 - (void)updateLocation:(id)arg1 hypothesisHandler:(id)arg2;
 
 @end

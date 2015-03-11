@@ -6,41 +6,41 @@
 
 @interface UIMorphingLabelGlyphSet : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     NSAttributedString *_attributedString;
-    unsigned long long _glyphCount;
-    struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } *_glyphFrames;
-    struct CGPoint { double x1; double x2; } *_glyphPositions;
+    unsigned int _glyphCount;
+    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } *_glyphFrames;
+    struct CGPoint { float x1; float x2; } *_glyphPositions;
     NSMutableArray *_glyphViews;
     unsigned short *_glyphs;
     UIMorphingLabel *_label;
     struct __CTLine { } *_line;
     } _lineOrigin;
-    double _lineWidth;
+    float _lineWidth;
 }
 
 @property(readonly) NSAttributedString * attributedString;
-@property(readonly) unsigned long long glyphCount;
-@property(readonly) const struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }* glyphFrames;
-@property(readonly) const struct CGPoint { double x1; double x2; }* glyphPositions;
+@property(readonly) unsigned int glyphCount;
+@property(readonly) const struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }* glyphFrames;
+@property(readonly) const struct CGPoint { float x1; float x2; }* glyphPositions;
 @property(readonly) NSArray * glyphViews;
 @property(readonly) const unsigned short* glyphs;
-@property(readonly) struct CGPoint { double x1; double x2; } lineOrigin;
-@property(readonly) double lineWidth;
+@property(readonly) struct CGPoint { float x1; float x2; } lineOrigin;
+@property(readonly) float lineWidth;
 
 - (id)attributedString;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectForGlyphsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForGlyphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)buildGlyphViews;
 - (void)dealloc;
-- (unsigned long long)glyphCount;
-- (const struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)glyphFrames;
-- (const struct CGPoint { double x1; double x2; }*)glyphPositions;
+- (unsigned int)glyphCount;
+- (const struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)glyphFrames;
+- (const struct CGPoint { float x1; float x2; }*)glyphPositions;
 - (id)glyphViews;
 - (const unsigned short*)glyphs;
 - (id)initWithLabel:(id)arg1 attributedString:(id)arg2;
-- (struct CGPoint { double x1; double x2; })lineOrigin;
-- (double)lineWidth;
+- (struct CGPoint { float x1; float x2; })lineOrigin;
+- (float)lineWidth;
 - (void)placeGlyphs;
 - (void)removeGlyphs;
 

@@ -14,7 +14,7 @@
 }
 
 @property <CertInfoTrustSummaryControllerDelegate> * delegate;
-@property bool showsDoneButton;
+@property BOOL showsDoneButton;
 
 - (void).cxx_destruct;
 - (void)_actionButtonPressed:(id)arg1;
@@ -24,15 +24,15 @@
 - (id)_headerCell;
 - (id)delegate;
 - (id)initWithTrustDescription:(id)arg1;
-- (void)setActionButtonTitle:(id)arg1 destructive:(bool)arg2 animated:(bool)arg3;
+- (void)setActionButtonTitle:(id)arg1 destructive:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)setDelegate:(id)arg1;
-- (void)setShowsDoneButton:(bool)arg1;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (bool)showsDoneButton;
+- (void)setShowsDoneButton:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)showsDoneButton;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (void)viewDidAppear:(bool)arg1;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

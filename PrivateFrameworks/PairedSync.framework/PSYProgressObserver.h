@@ -12,7 +12,7 @@
     <PSYProgressObserverDelegate> *_delegate;
     NSMutableDictionary *_failedActivities;
     PSProgressClient *_progressClient;
-    long long _progressObserverState;
+    int _progressObserverState;
     NSObject<OS_dispatch_queue> *_queue;
     double _totalProgress;
 }
@@ -23,7 +23,7 @@
 @property(retain) NSXPCConnection * connection;
 @property <PSYProgressObserverDelegate> * delegate;
 @property(retain) PSProgressClient * progressClient;
-@property(readonly) long long progressObserverState;
+@property(readonly) int progressObserverState;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property double totalProgress;
 
@@ -42,14 +42,14 @@
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (id)progressClient;
-- (long long)progressObserverState;
+- (int)progressObserverState;
 - (id)queue;
 - (void)setActivityLabel:(id)arg1;
 - (void)setActivityProgress:(double)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setProgressClient:(id)arg1;
-- (void)setProgressObserverState:(long long)arg1;
+- (void)setProgressObserverState:(int)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setTotalProgress:(double)arg1;
 - (double)totalProgress;

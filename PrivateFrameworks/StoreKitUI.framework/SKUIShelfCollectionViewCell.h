@@ -6,37 +6,37 @@
 
 @interface SKUIShelfCollectionViewCell : SKUICollectionViewCell <SKUIPerspectiveView> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     UICollectionView *_collectionView;
     } _contentInset;
-    bool_rendersWithPerspective;
+    BOOL _rendersWithPerspective;
 }
 
 @property(retain) UICollectionView * collectionView;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool rendersWithPerspective;
+@property(readonly) unsigned int hash;
+@property BOOL rendersWithPerspective;
 @property(readonly) Class superclass;
 
-+ (double)maximumPerspectiveHeightForSize:(struct CGSize { double x1; double x2; })arg1;
++ (float)maximumPerspectiveHeightForSize:(struct CGSize { float x1; float x2; })arg1;
 
 - (void).cxx_destruct;
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)collectionView;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (void)layoutSubviews;
-- (bool)rendersWithPerspective;
+- (BOOL)rendersWithPerspective;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCollectionView:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPerspectiveTargetView:(id)arg1;
-- (void)setRendersWithPerspective:(bool)arg1;
-- (void)setVanishingPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRendersWithPerspective:(BOOL)arg1;
+- (void)setVanishingPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateForChangedDistanceFromVanishingPoint;
 
 @end

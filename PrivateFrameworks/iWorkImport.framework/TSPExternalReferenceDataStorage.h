@@ -20,7 +20,7 @@
 - (id)bookmarkDataForArchiver:(id)arg1;
 - (id)initWithBookmarkData:(id)arg1 context:(id)arg2;
 - (id)initWithURL:(id)arg1;
-- (bool)isReadable;
+- (BOOL)isReadable;
 - (void)performReadWithAccessor:(id)arg1;
 - (id)storageForDataCopyFromOtherContext;
 

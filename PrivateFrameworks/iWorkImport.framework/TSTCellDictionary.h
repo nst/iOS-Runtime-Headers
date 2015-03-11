@@ -6,8 +6,8 @@
 
 @interface TSTCellDictionary : NSObject {
     struct _opaque_pthread_rwlock_t { 
-        long long __sig; 
-        BOOL __opaque[192]; 
+        long __sig; 
+        BOOL __opaque[124]; 
     TSUIntegerKeyDictionary *mDict;
     } mDictRWLock;
 }

@@ -5,19 +5,19 @@
 @class TSWPPadding;
 
 @interface TSTTextEngineDelegate : NSObject <TSWPTextDelegate> {
-    double mMaxWidthForChildren;
+    float mMaxWidthForChildren;
     TSWPPadding *mPadding;
     int mVerticalAlignment;
 }
 
-@property double maxWidthForChildren;
+@property float maxWidthForChildren;
 
 - (void)dealloc;
-- (bool)forceWesternLineBreaking;
-- (id)initWithPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 verticalAlignment:(int)arg2;
-- (double)maxWidthForChildren;
+- (BOOL)forceWesternLineBreaking;
+- (id)initWithPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 verticalAlignment:(int)arg2;
+- (float)maxWidthForChildren;
 - (id)padding;
-- (void)setMaxWidthForChildren:(double)arg1;
+- (void)setMaxWidthForChildren:(float)arg1;
 - (int)verticalAlignment;
 
 @end

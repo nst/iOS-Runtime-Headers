@@ -14,8 +14,8 @@
 - (void)assertQueueIsNotCurrent;
 - (void)dealloc;
 - (id)init;
-- (bool)isQueueCurrent;
-- (void)performBlock:(id)arg1 waitUntilDone:(bool)arg2;
+- (BOOL)isQueueCurrent;
+- (void)performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
 - (void)performBlock:(id)arg1;
 - (id)queue;
 

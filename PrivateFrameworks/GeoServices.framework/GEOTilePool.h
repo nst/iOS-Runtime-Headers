@@ -8,8 +8,8 @@
     struct _GEOGenericContainer<_GEOTileKey, id, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, geo::GEOGenericContainerWeakReferenceTag, 0, 0, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> { 
         struct mutex { 
             struct _opaque_pthread_mutex_t { 
-                long long __sig; 
-                BOOL __opaque[56]; 
+                long __sig; 
+                BOOL __opaque[40]; 
             } __m_; 
         } _lock; 
         struct list<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, std::__1::allocator<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr> > > { 
@@ -18,7 +18,7 @@
                 struct __list_node<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> {} *__next_; 
             } __end_; 
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> > > { 
-                unsigned long long __first_; 
+                unsigned long __first_; 
             } __size_alloc_; 
         } _list; 
         struct unordered_map<_GEOTileKey, std::__1::__list_iterator<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *>, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<std::__1::pair<const _GEOTileKey, std::__1::__list_iterator<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> > > > { 
@@ -28,7 +28,7 @@
                         struct __hash_node<std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> >, void *> {} **__first_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> >, void *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> >, void *> *> > { 
-                                unsigned long long __first_; 
+                                unsigned long __first_; 
                             } __data_; 
                         } __second_; 
                     } __ptr_; 
@@ -39,48 +39,48 @@
                     } __first_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> >, std::__1::hash<GEOTileKey>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> >, std::__1::equal_to<GEOTileKey>, true> > { 
                     float __first_; 
                 } __p3_; 
             } __table_; 
         } _map; 
-        unsigned long long _maxCapacity; 
-        unsigned long long _maxCost; 
-        unsigned long long _currentCost; 
-        unsigned long long _currentCount; 
+        unsigned int _maxCapacity; 
+        unsigned int _maxCost; 
+        unsigned int _currentCost; 
+        unsigned int _currentCount; 
     GEOTileCache *_cache;
     NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
     } _pool;
 }
 
-@property(readonly) unsigned long long currentCost;
-@property(readonly) unsigned long long currentCount;
-@property unsigned long long maxCapacity;
-@property unsigned long long maxCost;
+@property(readonly) unsigned int currentCost;
+@property(readonly) unsigned int currentCount;
+@property unsigned int maxCapacity;
+@property unsigned int maxCost;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_enteredBackground:(id)arg1;
 - (void)_receivedMemoryNotification;
-- (bool)containsKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 cost:(unsigned long long*)arg2;
-- (unsigned long long)currentCost;
-- (unsigned long long)currentCount;
+- (BOOL)containsKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 cost:(unsigned int*)arg2;
+- (unsigned int)currentCost;
+- (unsigned int)currentCount;
 - (void)dealloc;
 - (void)enumerate:(id)arg1;
 - (id)init;
-- (id)initWithSideCacheEnabled:(bool)arg1;
-- (unsigned long long)maxCapacity;
-- (unsigned long long)maxCost;
+- (id)initWithSideCacheEnabled:(BOOL)arg1;
+- (unsigned int)maxCapacity;
+- (unsigned int)maxCost;
 - (void)removeAllObjects;
 - (void)removeTileForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)removeTilesMatchingPredicate:(id)arg1;
 - (void)removeTilesWithKeys:(id)arg1;
-- (void)setMaxCapacity:(unsigned long long)arg1;
-- (void)setMaxCost:(unsigned long long)arg1;
+- (void)setMaxCapacity:(unsigned int)arg1;
+- (void)setMaxCost:(unsigned int)arg1;
 - (void)setNullForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
-- (void)setTile:(id)arg1 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 cost:(unsigned long long)arg3;
+- (void)setTile:(id)arg1 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 cost:(unsigned int)arg3;
 - (id)tileForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 
 @end

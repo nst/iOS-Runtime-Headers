@@ -14,7 +14,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSMutableArray * elements;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) CAStateControllerUndo * next;
 @property(retain) CAState * state;
 @property(readonly) Class superclass;

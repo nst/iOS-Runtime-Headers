@@ -10,7 +10,7 @@
     STWeatherUnits *_units;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithCurrentConditions:(id)arg1 city:(id)arg2 units:(id)arg3;

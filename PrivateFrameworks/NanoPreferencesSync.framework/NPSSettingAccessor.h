@@ -8,17 +8,17 @@
     NSString *_container;
     NSString *_containerPath;
     NSString *_domain;
+    BOOL _hasChangesToWrite;
     NPSDomainAccessor *_nanoDomainAccessor;
-    long long _type;
-    bool_hasChangesToWrite;
+    int _type;
 }
 
 @property(retain) NSString * container;
 @property(retain) NSString * containerPath;
 @property(retain) NSString * domain;
-@property bool hasChangesToWrite;
+@property BOOL hasChangesToWrite;
 @property(retain) NPSDomainAccessor * nanoDomainAccessor;
-@property long long type;
+@property int type;
 
 + (id)serializeObject:(id)arg1 error:(id*)arg2;
 + (id)unserializeObject:(id)arg1 error:(id*)arg2;
@@ -28,7 +28,7 @@
 - (id)containerPath;
 - (id)copyKeyList;
 - (id)domain;
-- (bool)hasChangesToWrite;
+- (BOOL)hasChangesToWrite;
 - (id)initWithNanoDomain:(id)arg1;
 - (id)initWithUserDefaultsDomain:(id)arg1 container:(id)arg2;
 - (id)initWithUserDefaultsDomain:(id)arg1 containerPath:(id)arg2;
@@ -38,13 +38,13 @@
 - (void)setContainer:(id)arg1;
 - (void)setContainerPath:(id)arg1;
 - (void)setDomain:(id)arg1;
-- (void)setHasChangesToWrite:(bool)arg1;
+- (void)setHasChangesToWrite:(BOOL)arg1;
 - (void)setNanoDomainAccessor:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (void)setType:(long long)arg1;
-- (bool)synchronize;
-- (bool)synchronizeForReading;
-- (bool)synchronizeForWriting;
-- (long long)type;
+- (void)setType:(int)arg1;
+- (BOOL)synchronize;
+- (BOOL)synchronizeForReading;
+- (BOOL)synchronizeForWriting;
+- (int)type;
 
 @end

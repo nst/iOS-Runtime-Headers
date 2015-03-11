@@ -6,29 +6,29 @@
 
 @interface SKUICarouselPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     UICollectionView *_carouselCollectionView;
-    long long _cellCount;
+    int _cellCount;
     SKUIViewElementLayoutContext *_cellLayoutContext;
     NSObject<OS_dispatch_source> *_cycleTimer;
     } _itemSize;
-    double _itemSpacing;
+    float _itemSpacing;
     SKUIMissingItemLoader *_missingItemLoader;
     NSArray *_modelObjects;
+    BOOL _needsReload;
     NSIndexPath *_reloadIndexPath;
-    bool_needsReload;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) SKUICarouselPageComponent * pageComponent;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (double)_actualContentWidth;
-- (void)_addImpressionForIndex:(long long)arg1 toSession:(id)arg2;
+- (float)_actualContentWidth;
+- (void)_addImpressionForIndex:(int)arg1 toSession:(id)arg2;
 - (void)_cancelCycleTimer;
 - (id)_carouselCollectionView;
 - (Class)_cellClassForLockup:(id)arg1;
@@ -36,39 +36,39 @@
 - (id)_dequeueCellForLockup:(id)arg1 collectionView:(id)arg2 indexPath:(id)arg3;
 - (id)_dequeueCellForViewElement:(id)arg1 collectionView:(id)arg2 indexPath:(id)arg3;
 - (void)_fireCycleTimer;
-- (bool)_isItemEnabledAtIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })_legacyItemSize;
-- (double)_legacyItemSpacing;
-- (void)_loadMissingItemsFromIndex:(long long)arg1 withReason:(long long)arg2;
+- (BOOL)_isItemEnabledAtIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })_legacyItemSize;
+- (float)_legacyItemSpacing;
+- (void)_loadMissingItemsFromIndex:(int)arg1 withReason:(int)arg2;
 - (id)_missingItemLoader;
 - (void)_reloadLegacySizing;
 - (void)_reloadViewElementProperties;
 - (void)_startCycleTimerIfNecessary;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
-- (long long)applyUpdateType:(long long)arg1;
+- (int)applyUpdateType:(int)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
 - (void)collectionView:(id)arg1 carouselLayout:(id)arg2 willApplyLayoutAttributes:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
-- (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (void)dealloc;
-- (long long)defaultItemPinningStyle;
+- (int)defaultItemPinningStyle;
 - (id)initWithPageComponent:(id)arg1;
 - (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2 invalidItemIdentifiers:(id)arg3;
-- (long long)numberOfCells;
-- (void)prefetchResourcesWithReason:(long long)arg1;
+- (int)numberOfCells;
+- (void)prefetchResourcesWithReason:(int)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
-- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

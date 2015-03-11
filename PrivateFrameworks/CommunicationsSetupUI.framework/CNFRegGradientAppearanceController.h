@@ -5,11 +5,11 @@
 @interface CNFRegGradientAppearanceController : CNFRegAppearanceController {
 }
 
-- (bool)actionSheetsUsePopoverStyle;
-- (long long)modalPresentationStyle;
-- (long long)navigationBarActivityIndicatorStyle;
+- (BOOL)actionSheetsUsePopoverStyle;
+- (int)modalPresentationStyle;
+- (int)navigationBarActivityIndicatorStyle;
 - (id)webViewBackgroundColor;
-- (bool)webViewDrawsShadows;
-- (bool)webViewIsOpaque;
+- (BOOL)webViewDrawsShadows;
+- (BOOL)webViewIsOpaque;
 
 @end

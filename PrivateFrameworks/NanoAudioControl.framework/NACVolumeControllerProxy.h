@@ -10,18 +10,18 @@
     <NACVolumeControllerDelegate> *_delegate;
     float _hapticIntensity;
     NACEventThrottler *_hapticThrottler;
+    BOOL _isObserving;
     float _lastReceivedVolumeValue;
     float _lastRecievedHapticIntensity;
+    BOOL _muted;
     NSObject<OS_dispatch_source> *_setHapticTimer;
     NSObject<OS_dispatch_source> *_setVolumeTimer;
+    BOOL _systemMuted;
+    BOOL _volumeControlAvailable;
     NACEventThrottler *_volumeThrottler;
     float _volumeValue;
+    BOOL _volumeWarningEnabled;
     NACXPCClient *_xpcClient;
-    bool_isObserving;
-    bool_muted;
-    bool_systemMuted;
-    bool_volumeControlAvailable;
-    bool_volumeWarningEnabled;
 }
 
 @property(readonly) float EUVolumeLimit;
@@ -29,13 +29,13 @@
 @property <NACVolumeControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property float hapticIntensity;
-@property(readonly) unsigned long long hash;
-@property(getter=isMuted,readonly) bool muted;
+@property(readonly) unsigned int hash;
+@property(getter=isMuted,readonly) BOOL muted;
 @property(readonly) Class superclass;
-@property(getter=isSystemMuted) bool systemMuted;
-@property(getter=isVolumeControlAvailable,readonly) bool volumeControlAvailable;
+@property(getter=isSystemMuted) BOOL systemMuted;
+@property(getter=isVolumeControlAvailable,readonly) BOOL volumeControlAvailable;
 @property(readonly) float volumeValue;
-@property(getter=isVolumeWarningEnabled,readonly) bool volumeWarningEnabled;
+@property(getter=isVolumeWarningEnabled,readonly) BOOL volumeWarningEnabled;
 
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;
@@ -65,15 +65,15 @@
 - (float)hapticIntensity;
 - (id)init;
 - (id)initWithAudioCategory:(id)arg1;
-- (bool)isMuted;
-- (bool)isSystemMuted;
-- (bool)isVolumeControlAvailable;
-- (bool)isVolumeWarningEnabled;
+- (BOOL)isMuted;
+- (BOOL)isSystemMuted;
+- (BOOL)isVolumeControlAvailable;
+- (BOOL)isVolumeWarningEnabled;
 - (void)setDelegate:(id)arg1;
 - (void)setHapticIntensity:(float)arg1;
-- (void)setMuted:(bool)arg1;
-- (void)setSystemMuted:(bool)arg1;
-- (void)setVolumeValue:(float)arg1 muted:(bool)arg2 overrideEULimit:(bool)arg3;
+- (void)setMuted:(BOOL)arg1;
+- (void)setSystemMuted:(BOOL)arg1;
+- (void)setVolumeValue:(float)arg1 muted:(BOOL)arg2 overrideEULimit:(BOOL)arg3;
 - (void)setVolumeValue:(float)arg1;
 - (float)volumeValue;
 

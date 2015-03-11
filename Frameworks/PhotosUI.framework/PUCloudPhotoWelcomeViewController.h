@@ -7,24 +7,24 @@
 @interface PUCloudPhotoWelcomeViewController : UIViewController <PUCloudPhotoWelcomeViewDelegate, PSCloudStorageOffersManagerDelegate> {
     ACAccountStore *_accountStore;
     UIBarButtonItem *_betaGoButtonItem;
+    BOOL _enableOnAppear;
     PSCloudStorageOffersManager *_offersManager;
+    BOOL _requireStorageUpgrade;
     UIBarButtonItem *_skipBarButtonItem;
     PUCloudPhotoWelcomeView *_welcomeView;
-    bool_enableOnAppear;
-    bool_requireStorageUpgrade;
 }
 
 @property(retain) ACAccountStore * accountStore;
 @property(readonly) UIBarButtonItem * betaGoButtonItem;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) UIBarButtonItem * skipBarButtonItem;
 @property(readonly) Class superclass;
 @property(retain) PUCloudPhotoWelcomeView * welcomeView;
 
 + (void)_disablePhotoStream;
-+ (bool)_isPhotoStreamEnabled;
++ (BOOL)_isPhotoStreamEnabled;
 + (void)showIfNecessaryWithPresentingViewController:(id)arg1;
 + (void)showWithPresentingViewController:(id)arg1;
 
@@ -47,15 +47,15 @@
 - (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;
 - (void)manager:(id)arg1 willPresentViewController:(id)arg2;
 - (void)managerDidCancel:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
-- (long long)preferredInterfaceOrientationForPresentation;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (int)preferredInterfaceOrientationForPresentation;
 - (void)setAccountStore:(id)arg1;
 - (void)setWelcomeView:(id)arg1;
-- (bool)shouldAutorotate;
+- (BOOL)shouldAutorotate;
 - (id)skipBarButtonItem;
-- (unsigned long long)supportedInterfaceOrientations;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (id)welcomeView;
 
 @end

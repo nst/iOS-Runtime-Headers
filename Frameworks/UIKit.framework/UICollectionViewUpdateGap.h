@@ -7,21 +7,21 @@
 @interface UICollectionViewUpdateGap : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     } _beginningRect;
     NSMutableArray *_deleteItems;
@@ -31,34 +31,34 @@
     UICollectionViewUpdateItem *_lastUpdateItem;
 }
 
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } beginningRect;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginningRect;
 @property(readonly) NSArray * deleteItems;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } endingRect;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endingRect;
 @property(retain) UICollectionViewUpdateItem * firstUpdateItem;
-@property(readonly) bool hasInserts;
+@property(readonly) BOOL hasInserts;
 @property(readonly) NSArray * insertItems;
-@property(readonly) bool isDeleteBasedGap;
-@property(readonly) bool isSectionBasedGap;
+@property(readonly) BOOL isDeleteBasedGap;
+@property(readonly) BOOL isSectionBasedGap;
 @property(retain) UICollectionViewUpdateItem * lastUpdateItem;
 @property(readonly) NSArray * updateItems;
 
 + (id)gapWithUpdateItem:(id)arg1;
 
 - (void)addUpdateItem:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })beginningRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginningRect;
 - (void)dealloc;
 - (id)deleteItems;
 - (id)description;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })endingRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endingRect;
 - (id)firstUpdateItem;
-- (bool)hasInserts;
+- (BOOL)hasInserts;
 - (id)init;
 - (id)insertItems;
-- (bool)isDeleteBasedGap;
-- (bool)isSectionBasedGap;
+- (BOOL)isDeleteBasedGap;
+- (BOOL)isSectionBasedGap;
 - (id)lastUpdateItem;
-- (void)setBeginningRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setEndingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBeginningRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setEndingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFirstUpdateItem:(id)arg1;
 - (void)setLastUpdateItem:(id)arg1;
 - (id)updateItems;

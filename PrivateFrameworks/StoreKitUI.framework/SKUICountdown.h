@@ -7,42 +7,42 @@
 @interface SKUICountdown : NSObject {
     NSURL *_URL;
     SKUIArtworkList *_artworkList;
-    unsigned long long _dateFormat;
+    unsigned int _dateFormat;
     SKUIArtworkList *_endArtworkList;
     NSDate *_endDate;
     long long _finalValue;
     UIColor *_flapBottomColor;
     UIColor *_flapTopColor;
+    BOOL _flapped;
     UIColor *_fontColor;
     long long _initialValue;
+    BOOL _isLoaded;
     NSString *_numberFormat;
-    long long _rate;
+    int _rate;
     NSDate *_startDate;
-    long long _type;
-    bool_flapped;
-    bool_isLoaded;
+    int _type;
 }
 
 @property(copy) NSURL * URL;
 @property(retain) SKUIArtworkList * artworkList;
-@property unsigned long long dateFormat;
+@property unsigned int dateFormat;
 @property(retain) SKUIArtworkList * endArtworkList;
 @property(copy) NSDate * endDate;
 @property long long finalValue;
 @property(copy) UIColor * flapBottomColor;
 @property(copy) UIColor * flapTopColor;
-@property(getter=isFlapped) bool flapped;
+@property(getter=isFlapped) BOOL flapped;
 @property(copy) UIColor * fontColor;
 @property long long initialValue;
 @property(copy) NSString * numberFormat;
-@property long long rate;
+@property int rate;
 @property(copy) NSDate * startDate;
-@property long long type;
+@property int type;
 
 - (void).cxx_destruct;
 - (id)URL;
 - (id)artworkList;
-- (unsigned long long)dateFormat;
+- (unsigned int)dateFormat;
 - (id)endArtworkList;
 - (id)endDate;
 - (long long)finalValue;
@@ -51,27 +51,27 @@
 - (id)fontColor;
 - (id)initWithCountdownDictionary:(id)arg1;
 - (long long)initialValue;
-- (bool)isFlapped;
-- (bool)isLoaded;
+- (BOOL)isFlapped;
+- (BOOL)isLoaded;
 - (id)numberFormat;
-- (long long)rate;
+- (int)rate;
 - (void)setArtworkList:(id)arg1;
-- (void)setDateFormat:(unsigned long long)arg1;
+- (void)setDateFormat:(unsigned int)arg1;
 - (void)setEndArtworkList:(id)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setFinalValue:(long long)arg1;
 - (void)setFlapBottomColor:(id)arg1;
 - (void)setFlapTopColor:(id)arg1;
-- (void)setFlapped:(bool)arg1;
+- (void)setFlapped:(BOOL)arg1;
 - (void)setFontColor:(id)arg1;
 - (void)setInitialValue:(long long)arg1;
 - (void)setNumberFormat:(id)arg1;
-- (void)setRate:(long long)arg1;
+- (void)setRate:(int)arg1;
 - (void)setStartDate:(id)arg1;
-- (void)setType:(long long)arg1;
+- (void)setType:(int)arg1;
 - (void)setURL:(id)arg1;
 - (id)startDate;
-- (long long)type;
+- (int)type;
 - (void)updateWithDictionary:(id)arg1;
 
 @end

@@ -6,11 +6,11 @@
 }
 
 - (id)description;
-- (bool)excludeFromSelectAll;
+- (BOOL)excludeFromSelectAll;
 - (id)icon;
 - (id)init;
-- (bool)isEditable;
-- (void)setSelected:(bool)arg1;
+- (BOOL)isEditable;
+- (void)setSelected:(BOOL)arg1;
 - (id)title;
 
 @end

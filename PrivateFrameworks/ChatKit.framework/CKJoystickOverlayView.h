@@ -12,21 +12,21 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) CKDismissView * dismissView;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) CKJoystickView * joystickView;
 @property(copy) NSArray * passthroughViews;
 @property(readonly) Class superclass;
 
 + (id)sharedInstance;
 
-- (void)dismissJoystickViewAnimated:(bool)arg1;
+- (void)dismissJoystickViewAnimated:(BOOL)arg1;
 - (id)dismissView;
 - (void)dismissViewWasTapped:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)joystickGestureRecognized:(id)arg1;
 - (id)joystickView;
 - (id)passthroughViews;
-- (void)presentJoystickView:(id)arg1 fromPoint:(struct CGPoint { double x1; double x2; })arg2 inView:(id)arg3 animated:(bool)arg4;
+- (void)presentJoystickView:(id)arg1 fromPoint:(struct CGPoint { float x1; float x2; })arg2 inView:(id)arg3 animated:(BOOL)arg4;
 - (void)setDismissView:(id)arg1;
 - (void)setJoystickView:(id)arg1;
 - (void)setPassthroughViews:(id)arg1;

@@ -6,8 +6,8 @@
 
 @interface HDSQLiteStatement : NSObject {
     HDSQLiteDatabase *_database;
+    BOOL _didCache;
     struct sqlite3_stmt { } *_stmt;
-    bool_didCache;
 }
 
 @property(readonly) HDSQLiteDatabase * database;
@@ -15,7 +15,7 @@
 - (id)database;
 - (void)dealloc;
 - (void)finish;
-- (id)initWithSQL:(id)arg1 database:(id)arg2 cache:(bool)arg3;
-- (bool)performStatementWithError:(id*)arg1 bindingHandler:(id)arg2;
+- (id)initWithSQL:(id)arg1 database:(id)arg2 cache:(BOOL)arg3;
+- (BOOL)performStatementWithError:(id*)arg1 bindingHandler:(id)arg2;
 
 @end

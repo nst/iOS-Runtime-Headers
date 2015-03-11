@@ -7,29 +7,29 @@
 @interface ML3AggregateQuery : ML3Query {
     Class _aggregateEntityClass;
     NSString *_foreignPersistentIDProperty;
-    bool_isFastCountable;
+    BOOL _isFastCountable;
 }
 
 @property(readonly) Class aggregateEntityClass;
 @property(readonly) NSString * foreignPersistentIDProperty;
-@property bool isFastCountable;
+@property BOOL isFastCountable;
 
 - (void).cxx_destruct;
 - (Class)aggregateEntityClass;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)countOfEntities;
+- (unsigned int)countOfEntities;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (Class)entityClass;
 - (id)foreignPersistentIDProperty;
-- (bool)hasEntities;
+- (BOOL)hasEntities;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUnitQuery:(id)arg1 aggregateEntityClass:(Class)arg2 foreignPersistentIDProperty:(id)arg3;
-- (bool)isFastCountable;
+- (BOOL)isFastCountable;
 - (id)persistentIDProperty;
-- (bool)sectionsPersistentIDColumnIsDistinct;
-- (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(bool)arg2;
-- (id)selectPersistentIDsSQLAndPropertiesForResultSet:(id)arg1 ordered:(bool)arg2;
-- (void)setIsFastCountable:(bool)arg1;
+- (BOOL)sectionsPersistentIDColumnIsDistinct;
+- (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
+- (id)selectPersistentIDsSQLAndPropertiesForResultSet:(id)arg1 ordered:(BOOL)arg2;
+- (void)setIsFastCountable:(BOOL)arg1;
 
 @end

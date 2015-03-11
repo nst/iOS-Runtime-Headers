@@ -5,33 +5,33 @@
 @class _UIViewControllerKeyboardAnimationStyleInfo, _UIViewControllerTransitionContext;
 
 @interface _UIViewControllerKeyboardAnimationStyle : UIInputViewAnimationStyleDirectional {
+    BOOL _allowCustomTransition;
     _UIViewControllerTransitionContext *_context;
+    BOOL _disableAlongsideView;
     _UIViewControllerKeyboardAnimationStyleInfo *_info;
-    bool_allowCustomTransition;
-    bool_disableAlongsideView;
 }
 
-@property bool allowCustomTransition;
+@property BOOL allowCustomTransition;
 @property(readonly) _UIViewControllerTransitionContext * context;
-@property bool disableAlongsideView;
+@property BOOL disableAlongsideView;
 @property(readonly) _UIViewControllerKeyboardAnimationStyleInfo * info;
 
-+ (id)animationStyleWithContext:(id)arg1 useCustomTransition:(bool)arg2;
++ (id)animationStyleWithContext:(id)arg1 useCustomTransition:(BOOL)arg2;
 + (id)animationStyleWithContext:(id)arg1;
 
-- (bool)allowCustomTransition;
-- (bool)canDismissWithScrollView;
+- (BOOL)allowCustomTransition;
+- (BOOL)canDismissWithScrollView;
 - (id)context;
 - (id)controllerForStartPlacement:(id)arg1 endPlacement:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (bool)disableAlongsideView;
+- (BOOL)disableAlongsideView;
 - (id)info;
 - (id)initWithContext:(id)arg1;
-- (bool)isAnimationCompleted;
-- (bool)isEqual:(id)arg1;
-- (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(bool)arg5;
-- (void)setAllowCustomTransition:(bool)arg1;
-- (void)setDisableAlongsideView:(bool)arg1;
+- (BOOL)isAnimationCompleted;
+- (BOOL)isEqual:(id)arg1;
+- (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
+- (void)setAllowCustomTransition:(BOOL)arg1;
+- (void)setDisableAlongsideView:(BOOL)arg1;
 
 @end

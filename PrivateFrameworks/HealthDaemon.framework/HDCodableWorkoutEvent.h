@@ -12,8 +12,8 @@
 }
 
 @property double date;
-@property bool hasDate;
-@property bool hasType;
+@property BOOL hasDate;
+@property BOOL hasType;
 @property long long type;
 
 - (void)copyTo:(id)arg1;
@@ -22,15 +22,15 @@
 - (id)decodedDate;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasDate;
-- (bool)hasType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDate;
+- (BOOL)hasType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDate:(double)arg1;
-- (void)setHasDate:(bool)arg1;
-- (void)setHasType:(bool)arg1;
+- (void)setHasDate:(BOOL)arg1;
+- (void)setHasType:(BOOL)arg1;
 - (void)setType:(long long)arg1;
 - (long long)type;
 - (void)writeTo:(id)arg1;

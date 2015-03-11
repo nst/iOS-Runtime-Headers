@@ -6,36 +6,36 @@
 
 @interface PINView : UIView <PINEntryView> {
     <PSPINEntryViewDelegate> *_delegate;
+    BOOL _error;
     UILabel *_errorTitleLabel;
     FailureBarView *_failureView;
     UILabel *_pinPolicyLabel;
     UILabel *_titleLabel;
-    bool_error;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)appendString:(id)arg1;
-- (bool)becomeFirstResponder;
+- (BOOL)becomeFirstResponder;
 - (void)dealloc;
 - (void)deleteLastCharacter;
 - (void)hideError;
 - (void)hideFailedAttempts;
-- (void)hidePasscodeField:(bool)arg1;
+- (void)hidePasscodeField:(BOOL)arg1;
 - (void)notifyDelegatePINChanged;
 - (void)notifyDelegatePINEntered;
-- (void)setBlocked:(bool)arg1;
+- (void)setBlocked:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPINPolicyString:(id)arg1 visible:(bool)arg2;
+- (void)setPINPolicyString:(id)arg1 visible:(BOOL)arg2;
 - (void)setStringValue:(id)arg1;
-- (void)setTextFieldKeyboardAppearance:(long long)arg1;
-- (void)setTextFieldKeyboardType:(long long)arg1;
+- (void)setTextFieldKeyboardAppearance:(int)arg1;
+- (void)setTextFieldKeyboardType:(int)arg1;
 - (void)setTitle:(id)arg1 font:(id)arg2;
-- (void)showError:(id)arg1 animate:(bool)arg2;
-- (void)showFailedAttempts:(long long)arg1;
+- (void)showError:(id)arg1 animate:(BOOL)arg2;
+- (void)showFailedAttempts:(long)arg1;
 - (id)stringValue;
 
 @end

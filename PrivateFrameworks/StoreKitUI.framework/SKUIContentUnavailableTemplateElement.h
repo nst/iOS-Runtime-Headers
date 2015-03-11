@@ -15,7 +15,7 @@
 - (id)button;
 - (id)image;
 - (id)messageLabel;
-- (long long)pageComponentType;
+- (int)pageComponentType;
 - (id)titleLabel;
 
 @end

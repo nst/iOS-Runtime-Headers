@@ -17,10 +17,10 @@
 
 @property double date;
 @property unsigned int feed;
-@property bool hasDate;
-@property bool hasFeed;
-@property(readonly) bool hasPublisherMatchID;
-@property(readonly) bool hasUniversalSectionID;
+@property BOOL hasDate;
+@property BOOL hasFeed;
+@property(readonly) BOOL hasPublisherMatchID;
+@property(readonly) BOOL hasUniversalSectionID;
 @property(retain) NSString * publisherMatchID;
 @property(retain) NSString * universalSectionID;
 
@@ -31,19 +31,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)feed;
-- (bool)hasDate;
-- (bool)hasFeed;
-- (bool)hasPublisherMatchID;
-- (bool)hasUniversalSectionID;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDate;
+- (BOOL)hasFeed;
+- (BOOL)hasPublisherMatchID;
+- (BOOL)hasUniversalSectionID;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)publisherMatchID;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDate:(double)arg1;
 - (void)setFeed:(unsigned int)arg1;
-- (void)setHasDate:(bool)arg1;
-- (void)setHasFeed:(bool)arg1;
+- (void)setHasDate:(BOOL)arg1;
+- (void)setHasFeed:(BOOL)arg1;
 - (void)setPublisherMatchID:(id)arg1;
 - (void)setUniversalSectionID:(id)arg1;
 - (id)universalSectionID;

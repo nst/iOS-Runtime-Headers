@@ -6,17 +6,17 @@
 
 @interface SKUIChart : NSObject {
     NSArray *_items;
+    BOOL _newsstand;
     NSURL *_seeAllURL;
+    BOOL _showsIndexNumbers;
     NSString *_title;
     NSSet *_unavailableItemIdentifiers;
-    bool_newsstand;
-    bool_showsIndexNumbers;
 }
 
 @property(readonly) NSArray * items;
-@property(getter=isNewsstand,readonly) bool newsstand;
+@property(getter=isNewsstand,readonly) BOOL newsstand;
 @property(readonly) NSURL * seeAllURL;
-@property(readonly) bool showsIndexNumbers;
+@property(readonly) BOOL showsIndexNumbers;
 @property(readonly) NSString * title;
 @property(copy) NSSet * unavailableItemIdentifiers;
 
@@ -24,11 +24,11 @@
 - (id)description;
 - (id)initWithChartPageContext:(id)arg1;
 - (id)initWithCustomPageContext:(id)arg1;
-- (bool)isNewsstand;
+- (BOOL)isNewsstand;
 - (id)items;
 - (id)seeAllURL;
 - (void)setUnavailableItemIdentifiers:(id)arg1;
-- (bool)showsIndexNumbers;
+- (BOOL)showsIndexNumbers;
 - (id)title;
 - (id)unavailableItemIdentifiers;
 

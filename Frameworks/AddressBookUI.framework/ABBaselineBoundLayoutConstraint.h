@@ -3,16 +3,16 @@
  */
 
 @interface ABBaselineBoundLayoutConstraint : ABBoundLayoutConstraint {
-    double _baselineConstant;
-    bool_ignoreAccessibilitySizes;
+    float _baselineConstant;
+    BOOL _ignoreAccessibilitySizes;
 }
 
-@property bool ignoreAccessibilitySizes;
+@property BOOL ignoreAccessibilitySizes;
 
-+ (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 textAttributesObject:(id)arg6 keyPath:(id)arg7 baselineConstant:(double)arg8;
++ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 textAttributesObject:(id)arg6 keyPath:(id)arg7 baselineConstant:(float)arg8;
 
 - (void)_boundValueDidChange;
-- (bool)ignoreAccessibilitySizes;
-- (void)setIgnoreAccessibilitySizes:(bool)arg1;
+- (BOOL)ignoreAccessibilitySizes;
+- (void)setIgnoreAccessibilitySizes:(BOOL)arg1;
 
 @end

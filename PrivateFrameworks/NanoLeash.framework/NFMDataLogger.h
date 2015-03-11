@@ -7,12 +7,12 @@
 @interface NFMDataLogger : NSObject {
     NSOperationQueue *_accelerationQueue;
     NSOperationQueue *_activityQueue;
-    bool_recordingTelemetry;
+    BOOL _recordingTelemetry;
 }
 
 @property(retain) NSOperationQueue * accelerationQueue;
 @property(retain) NSOperationQueue * activityQueue;
-@property bool recordingTelemetry;
+@property BOOL recordingTelemetry;
 
 + (id)sharedLogger;
 
@@ -25,10 +25,10 @@
 - (void)recordLeashed;
 - (void)recordRSSIStrength:(float)arg1;
 - (void)recordRequestedUserResponse;
-- (void)recordUserResponse:(long long)arg1;
-- (bool)recordingTelemetry;
+- (void)recordUserResponse:(int)arg1;
+- (BOOL)recordingTelemetry;
 - (void)setAccelerationQueue:(id)arg1;
 - (void)setActivityQueue:(id)arg1;
-- (void)setRecordingTelemetry:(bool)arg1;
+- (void)setRecordingTelemetry:(BOOL)arg1;
 
 @end

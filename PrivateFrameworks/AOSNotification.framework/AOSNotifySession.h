@@ -19,7 +19,7 @@
 @property(copy,readonly) NSString * description;
 @property(copy) id fmfAppPushMsgHandler;
 @property(copy) id fmfAppPushTokenHandler;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(retain) NSXPCConnection * xpcConnection;
 @property(retain) NSObject<OS_dispatch_queue> * xpcConnectionCreationQueue;
@@ -47,7 +47,7 @@
 - (id)initWithDelegate:(id)arg1;
 - (void)locationAuthorizationForShareMyLocationWithCompletion:(id)arg1;
 - (id)newErrorForCode:(int)arg1 message:(id)arg2;
-- (bool)performMigration;
+- (BOOL)performMigration;
 - (id)removeFMFAccountWithUsername:(id)arg1;
 - (void)removeLegacyFMFAccountUsingCallback:(id)arg1;
 - (void)renewFMFAccountCredentialsUsingCallback:(id)arg1;

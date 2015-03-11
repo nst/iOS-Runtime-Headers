@@ -7,16 +7,16 @@
 @interface IKDOMDocumentFragment : IKDOMNode <IKJSDOMParentNode> {
 }
 
-@property(readonly) unsigned long long childElementCount;
+@property(readonly) unsigned long childElementCount;
 @property(readonly) IKDOMHTMLCollection * children;
 @property(readonly) IKDOMElement * firstElementChild;
 @property(readonly) IKDOMElement * lastElementChild;
 
-- (unsigned long long)childElementCount;
+- (unsigned long)childElementCount;
 - (id)children;
 - (id)firstElementChild;
 - (id)lastElementChild;
 - (id)nodeName;
-- (long long)nodeType;
+- (int)nodeType;
 
 @end

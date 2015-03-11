@@ -6,11 +6,12 @@
 
 @interface ABContactView : UITableView {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     NSDictionary *_actionTextAttributes;
+    BOOL _cellsLayoutCachingEnabled;
     CNContact *_contact;
     } _contentMargins;
     UIView *_customHeaderView;
@@ -18,14 +19,13 @@
     UIColor *_sectionBackgroundColor;
     UIColor *_selectedCellBackgroundColor;
     NSDictionary *_valueTextAttributes;
-    bool_cellsLayoutCachingEnabled;
 }
 
 @property(copy) NSDictionary * actionTextAttributes;
 @property(retain) UIColor * backgroundColor;
-@property(getter=isCellsLayoutCachingEnabled) bool cellsLayoutCachingEnabled;
+@property(getter=isCellsLayoutCachingEnabled) BOOL cellsLayoutCachingEnabled;
 @property(retain) CNContact * contact;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentMargins;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentMargins;
 @property(retain) UIView * customHeaderView;
 @property <ABContactViewDataSource> * dataSource;
 @property(readonly) ABContactHeaderView * defaultHeaderView;
@@ -49,8 +49,8 @@
 + (id)cellIdentifierForSplitActions;
 + (Class)classForCellIdentifier:(id)arg1;
 + (id)defaultCardProperties;
-+ (bool)isFixedValueProperty:(id)arg1;
-+ (bool)isMultiValueProperty:(id)arg1;
++ (BOOL)isFixedValueProperty:(id)arg1;
++ (BOOL)isMultiValueProperty:(id)arg1;
 + (id)nameProperties;
 + (id)namePropertiesForContact:(id)arg1;
 + (id)optionalCardProperties;
@@ -60,13 +60,13 @@
 - (void)applyCellAppearance:(id)arg1;
 - (id)backgroundColor;
 - (id)contact;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentMargins;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargins;
 - (id)customHeaderView;
 - (void)dealloc;
 - (id)defaultHeaderView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 contact:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2 contact:(id)arg3;
-- (bool)isCellsLayoutCachingEnabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contact:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 contact:(id)arg3;
+- (BOOL)isCellsLayoutCachingEnabled;
 - (id)labelTextAttributes;
 - (void)layoutMarginsDidChange;
 - (void)registerContactCellClass:(Class)arg1;
@@ -75,9 +75,9 @@
 - (void)setActionTextAttributes:(id)arg1;
 - (void)setAttributesFromContactView:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setCellsLayoutCachingEnabled:(bool)arg1;
+- (void)setCellsLayoutCachingEnabled:(BOOL)arg1;
 - (void)setContact:(id)arg1;
-- (void)setContentMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setCustomHeaderView:(id)arg1;
 - (void)setLabelTextAttributes:(id)arg1;
 - (void)setSectionBackgroundColor:(id)arg1;

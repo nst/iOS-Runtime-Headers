@@ -13,15 +13,15 @@
     UILabel *_locationLabel;
     NSString *_locationString;
     UIButton *_mailButton;
-    double _margin;
+    float _margin;
     UILabel *_nameLabel;
     UIButton *_phoneButton;
+    BOOL _showFaceTimeVideoButton;
+    BOOL _showInfoButton;
+    BOOL _showMailButton;
+    BOOL _showPhoneButton;
+    BOOL _showsLocation;
     NSMutableArray *_visibleButtons;
-    bool_showFaceTimeVideoButton;
-    bool_showInfoButton;
-    bool_showMailButton;
-    bool_showPhoneButton;
-    bool_showsLocation;
 }
 
 @property(retain) UIImage * contactImage;
@@ -32,19 +32,19 @@
 @property(retain) UILabel * locationLabel;
 @property(copy) NSString * locationString;
 @property(retain) UIButton * mailButton;
-@property double margin;
+@property float margin;
 @property(retain) UILabel * nameLabel;
 @property(retain) UIButton * phoneButton;
-@property bool showFaceTimeVideoButton;
-@property bool showInfoButton;
-@property bool showMailButton;
-@property bool showPhoneButton;
-@property bool showsLocation;
+@property BOOL showFaceTimeVideoButton;
+@property BOOL showInfoButton;
+@property BOOL showMailButton;
+@property BOOL showPhoneButton;
+@property BOOL showsLocation;
 @property(retain) NSMutableArray * visibleButtons;
 
 + (id)identifier;
-+ (double)marginWidth;
-+ (double)preferredHeight;
++ (float)marginWidth;
++ (float)preferredHeight;
 
 - (void)_updateVisibleButtons;
 - (id)contactImage;
@@ -53,12 +53,12 @@
 - (id)entityName;
 - (id)facetimeVideoButton;
 - (id)infoButton;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)locationLabel;
 - (id)locationString;
 - (id)mailButton;
-- (double)margin;
+- (float)margin;
 - (id)nameLabel;
 - (id)phoneButton;
 - (void)setContactImage:(id)arg1;
@@ -69,21 +69,21 @@
 - (void)setLocationLabel:(id)arg1;
 - (void)setLocationString:(id)arg1;
 - (void)setMailButton:(id)arg1;
-- (void)setMargin:(double)arg1;
+- (void)setMargin:(float)arg1;
 - (void)setNameLabel:(id)arg1;
 - (void)setPhoneButton:(id)arg1;
-- (void)setShowFaceTimeVideoButton:(bool)arg1;
-- (void)setShowInfoButton:(bool)arg1;
-- (void)setShowMailButton:(bool)arg1;
-- (void)setShowPhoneButton:(bool)arg1;
-- (void)setShowsLocation:(bool)arg1;
+- (void)setShowFaceTimeVideoButton:(BOOL)arg1;
+- (void)setShowInfoButton:(BOOL)arg1;
+- (void)setShowMailButton:(BOOL)arg1;
+- (void)setShowPhoneButton:(BOOL)arg1;
+- (void)setShowsLocation:(BOOL)arg1;
 - (void)setVisibleButtons:(id)arg1;
-- (bool)showFaceTimeVideoButton;
-- (bool)showInfoButton;
-- (bool)showMailButton;
-- (bool)showPhoneButton;
-- (bool)showsLocation;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (BOOL)showFaceTimeVideoButton;
+- (BOOL)showInfoButton;
+- (BOOL)showMailButton;
+- (BOOL)showPhoneButton;
+- (BOOL)showsLocation;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)visibleButtons;
 
 @end

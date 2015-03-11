@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (id)_chatItemsForItem:(id)arg1 previousItem:(id)arg2;
@@ -18,10 +18,10 @@
 - (id)_initWithChat:(id)arg1;
 - (void)_invalidate;
 - (id)_itemWithChatItemsDeleted:(id)arg1 fromItem:(id)arg2;
-- (bool)_shouldRegenerateChatItemsForItem:(id)arg1 previousItem:(id)arg2 oldPreviousItem:(id)arg3;
-- (bool)_shouldReloadChatItem:(id)arg1 oldChatItem:(id)arg2;
+- (BOOL)_shouldRegenerateChatItemsForItem:(id)arg1 previousItem:(id)arg2 oldPreviousItem:(id)arg3;
+- (BOOL)_shouldReloadChatItem:(id)arg1 oldChatItem:(id)arg2;
 - (id)chatItemForIMChatItem:(id)arg1;
-- (bool)shouldShowRaiseMessageStatus;
+- (BOOL)shouldShowRaiseMessageStatus;
 - (id)testChatItems;
 
 @end

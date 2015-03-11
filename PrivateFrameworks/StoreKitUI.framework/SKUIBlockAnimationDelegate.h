@@ -11,7 +11,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)initWithCompletionHandler:(id)arg1;
 
 @end

@@ -19,7 +19,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <RMSPairingSessionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * passcode;
 @property(readonly) Class superclass;
 

@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSArray * movies;
-@property bool shouldShowRottenTomatoesRating;
+@property BOOL shouldShowRottenTomatoesRating;
 
 + (id)movieListSnippet;
 + (id)movieListSnippetWithDictionary:(id)arg1 context:(id)arg2;
@@ -17,7 +17,7 @@
 - (id)groupIdentifier;
 - (id)movies;
 - (void)setMovies:(id)arg1;
-- (void)setShouldShowRottenTomatoesRating:(bool)arg1;
-- (bool)shouldShowRottenTomatoesRating;
+- (void)setShouldShowRottenTomatoesRating:(BOOL)arg1;
+- (BOOL)shouldShowRottenTomatoesRating;
 
 @end

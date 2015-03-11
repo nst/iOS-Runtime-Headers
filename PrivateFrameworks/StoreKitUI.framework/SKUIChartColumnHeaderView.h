@@ -6,10 +6,10 @@
 
 @interface SKUIChartColumnHeaderView : UIControl {
     NSArray *_buttons;
-    long long _selectedTitleIndex;
+    int _selectedTitleIndex;
 }
 
-@property long long selectedTitleIndex;
+@property int selectedTitleIndex;
 @property(copy) NSArray * titles;
 
 - (void).cxx_destruct;
@@ -17,9 +17,9 @@
 - (void)_reloadSelectedButton;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (long long)selectedTitleIndex;
+- (int)selectedTitleIndex;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setSelectedTitleIndex:(long long)arg1;
+- (void)setSelectedTitleIndex:(int)arg1;
 - (void)setTitles:(id)arg1;
 - (void)sizeToFit;
 - (id)titles;

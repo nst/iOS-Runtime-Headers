@@ -3,36 +3,36 @@
  */
 
 @interface TSDCapabilities : NSObject {
-    long long _device;
-    long long _deviceType;
-    long long _platform;
-    long long _renderer;
+    int _device;
+    int _deviceType;
+    int _platform;
+    int _renderer;
 }
 
-@property(readonly) long long device;
-@property(readonly) long long deviceType;
-@property(readonly) bool hasLightningPort;
-@property(readonly) bool isRendererH3OrBelow;
-@property(readonly) bool isRendererH4OrBelow;
-@property(readonly) bool isRendererH5OrBelow;
-@property(readonly) struct CGSize { double x1; double x2; } maximumHardcodedTextureSize;
-@property(readonly) long long platform;
-@property(readonly) long long renderer;
+@property(readonly) int device;
+@property(readonly) int deviceType;
+@property(readonly) BOOL hasLightningPort;
+@property(readonly) BOOL isRendererH3OrBelow;
+@property(readonly) BOOL isRendererH4OrBelow;
+@property(readonly) BOOL isRendererH5OrBelow;
+@property(readonly) struct CGSize { float x1; float x2; } maximumHardcodedTextureSize;
+@property(readonly) int platform;
+@property(readonly) int renderer;
 
 + (id)currentCapabilities;
 
-- (long long)device;
-- (long long)deviceType;
-- (bool)hasLightningPort;
+- (int)device;
+- (int)deviceType;
+- (BOOL)hasLightningPort;
 - (id)init;
-- (bool)isRendererH3OrBelow;
-- (bool)isRendererH4OrBelow;
-- (bool)isRendererH5OrBelow;
-- (struct CGSize { double x1; double x2; })maximumHardcodedTextureSize;
-- (struct CGSize { double x1; double x2; })maximumTextureSizeWithGLContext:(id)arg1;
+- (BOOL)isRendererH3OrBelow;
+- (BOOL)isRendererH4OrBelow;
+- (BOOL)isRendererH5OrBelow;
+- (struct CGSize { float x1; float x2; })maximumHardcodedTextureSize;
+- (struct CGSize { float x1; float x2; })maximumTextureSizeWithGLContext:(id)arg1;
 - (void)p_setupDevice;
 - (void)p_setupPlatform;
-- (long long)platform;
-- (long long)renderer;
+- (int)platform;
+- (int)renderer;
 
 @end

@@ -12,6 +12,6 @@
 - (double)displayInterval;
 - (void)enumerateChildrenUsingBlock:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (long long)pageComponentType;
+- (int)pageComponentType;
 
 @end

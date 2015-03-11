@@ -4,7 +4,7 @@
 
 @class NSString, NSURL;
 
-@interface SLPlace : NSObject <NSSecureCoding, MKAnnotation> {
+@interface SLPlace : NSObject <MKAnnotation, NSSecureCoding> {
     NSString *_category;
     double _distance;
     NSString *_identifier;
@@ -19,7 +19,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property double distance;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * identifier;
 @property double latitude;
 @property double longitude;
@@ -29,7 +29,7 @@
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * title;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)category;

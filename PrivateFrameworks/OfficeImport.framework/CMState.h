@@ -5,13 +5,13 @@
 @class NSMutableDictionary, NSString, OADColorMap, OADColorScheme;
 
 @interface CMState : NSObject {
-    long long _textLevel;
-    boolmIsOnPhone;
-    boolmIsThumbnail;
+    int _textLevel;
     NSMutableDictionary *components;
     NSMutableDictionary *htmlResource;
     OADColorMap *mColorMap;
     OADColorScheme *mColorScheme;
+    BOOL mIsOnPhone;
+    BOOL mIsThumbnail;
     NSString *mResourceUrlPrefix;
     id mResources;
     int mSrcFormat;
@@ -24,9 +24,9 @@
 - (void)dealloc;
 - (id)getHtmlResource;
 - (id)init;
-- (bool)isOffice12;
-- (bool)isOnPhone;
-- (bool)isThumbnail;
+- (BOOL)isOffice12;
+- (BOOL)isOnPhone;
+- (BOOL)isThumbnail;
 - (void)popTextLevel;
 - (void)pushTextLevel;
 - (id)resourceUrlPrefix;
@@ -35,12 +35,12 @@
 - (void)setColorScheme:(id)arg1;
 - (void)setComponentWithName:(id)arg1 value:(id)arg2;
 - (void)setHtmlResource:(id)arg1;
-- (void)setIsOnPhone:(bool)arg1;
-- (void)setIsThumbnail:(bool)arg1;
+- (void)setIsOnPhone:(BOOL)arg1;
+- (void)setIsThumbnail:(BOOL)arg1;
 - (void)setResourceUrlPrefix:(id)arg1;
 - (void)setResources:(id)arg1;
 - (void)setSrcFormat:(int)arg1;
 - (int)sourceFormat;
-- (long long)textLevel;
+- (int)textLevel;
 
 @end

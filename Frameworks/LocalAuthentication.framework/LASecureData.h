@@ -6,20 +6,20 @@
 
 @interface LASecureData : NSObject {
     NSMutableData *_data;
-    boolreseted;
+    BOOL reseted;
 }
 
-+ (void)resetBytes:(void*)arg1 length:(unsigned long long)arg2;
-+ (id)secureDataWithBytes:(const void*)arg1 length:(unsigned long long)arg2;
++ (void)resetBytes:(void*)arg1 length:(unsigned int)arg2;
++ (id)secureDataWithBytes:(const void*)arg1 length:(unsigned int)arg2;
 + (id)secureDataWithString:(id)arg1;
 
 - (void).cxx_destruct;
 - (const void*)bytes;
 - (void)dealloc;
 - (id)init;
-- (id)initWithBytes:(const void*)arg1 length:(unsigned long long)arg2;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (id)initWithString:(id)arg1;
-- (unsigned long long)length;
+- (unsigned int)length;
 - (void)reset;
 
 @end

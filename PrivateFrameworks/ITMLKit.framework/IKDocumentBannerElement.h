@@ -5,13 +5,13 @@
 @class IKBackgroundElement, IKLockupElement, IKTextElement, NSArray, UIColor;
 
 @interface IKDocumentBannerElement : IKViewElement {
-    bool_fixed;
+    BOOL _fixed;
 }
 
 @property(retain,readonly) IKBackgroundElement * background;
 @property(readonly) UIColor * backgroundColor;
 @property(retain,readonly) NSArray * buttons;
-@property(getter=isFixed,readonly) bool fixed;
+@property(getter=isFixed,readonly) BOOL fixed;
 @property(retain,readonly) IKLockupElement * lockup;
 @property(retain,readonly) IKTextElement * subtitle;
 @property(retain,readonly) IKTextElement * title;
@@ -19,8 +19,8 @@
 - (id)background;
 - (id)backgroundColor;
 - (id)buttons;
-- (bool)fixed;
-- (bool)isFixed;
+- (BOOL)fixed;
+- (BOOL)isFixed;
 - (id)lockup;
 - (id)subtitle;
 - (id)title;

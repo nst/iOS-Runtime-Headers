@@ -5,17 +5,17 @@
 @class NSArray, NSMutableArray, NSString, NSXPCConnection;
 
 @interface NRDeviceDiscoveryController : NSObject <NRDeviceDiscoveryControllerXPCFrameworkDelegate, NSXPCConnectionDelegate> {
-    unsigned long long _counter;
+    unsigned int _counter;
     NSArray *_devices;
     NSMutableArray *_mutableDevices;
     NSXPCConnection *_xpcConnection;
 }
 
-@property unsigned long long counter;
+@property unsigned int counter;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSArray * devices;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSMutableArray * mutableDevices;
 @property(readonly) Class superclass;
 @property(retain) NSXPCConnection * xpcConnection;
@@ -23,15 +23,15 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (bool)_xpcConnectToService;
+- (BOOL)_xpcConnectToService;
 - (void)begin;
-- (unsigned long long)counter;
+- (unsigned int)counter;
 - (void)dealloc;
 - (id)devices;
 - (void)end;
 - (id)init;
 - (id)mutableDevices;
-- (void)setCounter:(unsigned long long)arg1;
+- (void)setCounter:(unsigned int)arg1;
 - (void)setMutableDevices:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (void)xpcAssertInClient:(id)arg1;

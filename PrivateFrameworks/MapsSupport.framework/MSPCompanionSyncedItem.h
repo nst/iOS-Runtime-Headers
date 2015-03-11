@@ -4,7 +4,7 @@
 
 @class MSPBookmarkStorage, MSPPinStorage, MSPSearchRequestStorage, NSString, PBUnknownFields;
 
-@interface MSPCompanionSyncedItem : PBCodable <NSCopying, SYObject> {
+@interface MSPCompanionSyncedItem : PBCodable <SYObject, NSCopying> {
     MSPBookmarkStorage *_bookmark;
     MSPPinStorage *_pin;
     MSPSearchRequestStorage *_searchRequest;
@@ -15,11 +15,11 @@
 @property(retain) MSPBookmarkStorage * bookmark;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) bool hasBookmark;
-@property(readonly) bool hasPin;
-@property(readonly) bool hasSearchRequest;
-@property(readonly) bool hasSyncId;
-@property(readonly) unsigned long long hash;
+@property(readonly) BOOL hasBookmark;
+@property(readonly) BOOL hasPin;
+@property(readonly) BOOL hasSearchRequest;
+@property(readonly) BOOL hasSyncId;
+@property(readonly) unsigned int hash;
 @property(retain) MSPPinStorage * pin;
 @property(retain) MSPSearchRequestStorage * searchRequest;
 @property(readonly) Class superclass;
@@ -32,14 +32,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasBookmark;
-- (bool)hasPin;
-- (bool)hasSearchRequest;
-- (bool)hasSyncId;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasBookmark;
+- (BOOL)hasPin;
+- (BOOL)hasSearchRequest;
+- (BOOL)hasSyncId;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)pin;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)searchRequest;
 - (void)setBookmark:(id)arg1;
 - (void)setPin:(id)arg1;

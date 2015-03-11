@@ -15,7 +15,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)locales;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setLocales:(id)arg1;
 
 @end

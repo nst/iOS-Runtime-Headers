@@ -3,29 +3,29 @@
  */
 
 @interface _UIDatePickerMode_TimeInterval : _UIDatePickerMode {
-    double _componentWidth;
+    float _componentWidth;
 }
 
-+ (long long)datePickerMode;
-+ (unsigned long long)extractableCalendarUnits;
++ (int)datePickerMode;
++ (unsigned int)extractableCalendarUnits;
 
-- (bool)_shouldEnableValueForRow:(long long)arg1 inComponent:(long long)arg2 calendarUnit:(unsigned long long)arg3;
-- (bool)areValidDateComponents:(id)arg1 comparingUnits:(long long)arg2;
-- (id)dateComponentsByRestrictingSelectedComponents:(id)arg1 withLastManipulatedColumn:(long long)arg2;
+- (BOOL)_shouldEnableValueForRow:(int)arg1 inComponent:(int)arg2 calendarUnit:(unsigned int)arg3;
+- (BOOL)areValidDateComponents:(id)arg1 comparingUnits:(int)arg2;
+- (id)dateComponentsByRestrictingSelectedComponents:(id)arg1 withLastManipulatedColumn:(int)arg2;
 - (id)font;
-- (long long)hourForRow:(long long)arg1;
-- (bool)isTimeIntervalMode;
+- (int)hourForRow:(int)arg1;
+- (BOOL)isTimeIntervalMode;
 - (id)localizedFormatString;
-- (unsigned long long)nextUnitLargerThanUnit:(unsigned long long)arg1;
-- (unsigned long long)nextUnitSmallerThanUnit:(unsigned long long)arg1;
-- (long long)numberOfRowsForCalendarUnit:(unsigned long long)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeForCalendarUnit:(unsigned long long)arg1;
+- (unsigned int)nextUnitLargerThanUnit:(unsigned int)arg1;
+- (unsigned int)nextUnitSmallerThanUnit:(unsigned int)arg1;
+- (int)numberOfRowsForCalendarUnit:(unsigned int)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeForCalendarUnit:(unsigned int)arg1;
 - (void)resetComponentWidths;
-- (double)rowHeight;
+- (float)rowHeight;
 - (void)takeExtremesFromMinimumDate:(id)arg1 maximumDate:(id)arg2;
-- (long long)titleAlignmentForCalendarUnit:(unsigned long long)arg1;
-- (id)titleForRow:(long long)arg1 inComponent:(long long)arg2;
-- (long long)valueForDate:(id)arg1 dateComponents:(id)arg2 calendarUnit:(unsigned long long)arg3;
-- (double)widthForCalendarUnit:(unsigned long long)arg1 font:(id)arg2 maxWidth:(double)arg3;
+- (int)titleAlignmentForCalendarUnit:(unsigned int)arg1;
+- (id)titleForRow:(int)arg1 inComponent:(int)arg2;
+- (int)valueForDate:(id)arg1 dateComponents:(id)arg2 calendarUnit:(unsigned int)arg3;
+- (float)widthForCalendarUnit:(unsigned int)arg1 font:(id)arg2 maxWidth:(float)arg3;
 
 @end

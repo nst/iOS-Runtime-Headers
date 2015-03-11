@@ -21,11 +21,11 @@
 - (id)init;
 - (id)initWithLogFile:(id)arg1;
 - (id)invalidKeys;
-- (bool)isValidKey:(id)arg1;
+- (BOOL)isValidKey:(id)arg1;
 - (id)nsValueFromString:(id)arg1;
 - (id)readAll;
-- (id)readSinceDate:(id)arg1 limit:(unsigned long long)arg2;
-- (id)readTail:(unsigned long long)arg1;
+- (id)readSinceDate:(id)arg1 limit:(unsigned int)arg2;
+- (id)readTail:(unsigned int)arg1;
 - (void)setAblemsg:(struct __asl_object_s { }*)arg1;
 - (void)setAslclient:(struct __asl_object_s { }*)arg1;
 - (void)setInvalidKeys:(id)arg1;

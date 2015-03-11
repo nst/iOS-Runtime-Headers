@@ -13,18 +13,18 @@
     unsigned int _fullSyncVersion;
     } _has;
     NSMutableArray *_messageAdditions;
-    bool_messagesAreNew;
+    BOOL _messagesAreNew;
 }
 
 @property(retain) NSData * dateForRequestingMoreMessages;
 @property(retain) NSData * dateSynced;
 @property unsigned int fullSyncVersion;
-@property(readonly) bool hasDateForRequestingMoreMessages;
-@property(readonly) bool hasDateSynced;
-@property bool hasFullSyncVersion;
-@property bool hasMessagesAreNew;
+@property(readonly) BOOL hasDateForRequestingMoreMessages;
+@property(readonly) BOOL hasDateSynced;
+@property BOOL hasFullSyncVersion;
+@property BOOL hasMessagesAreNew;
 @property(retain) NSMutableArray * messageAdditions;
-@property bool messagesAreNew;
+@property BOOL messagesAreNew;
 
 - (void).cxx_destruct;
 - (void)addMessageAddition:(id)arg1;
@@ -36,25 +36,25 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)fullSyncVersion;
-- (bool)hasDateForRequestingMoreMessages;
-- (bool)hasDateSynced;
-- (bool)hasFullSyncVersion;
-- (bool)hasMessagesAreNew;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDateForRequestingMoreMessages;
+- (BOOL)hasDateSynced;
+- (BOOL)hasFullSyncVersion;
+- (BOOL)hasMessagesAreNew;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)messageAdditionAtIndex:(unsigned long long)arg1;
+- (id)messageAdditionAtIndex:(unsigned int)arg1;
 - (id)messageAdditions;
-- (unsigned long long)messageAdditionsCount;
-- (bool)messagesAreNew;
-- (bool)readFrom:(id)arg1;
+- (unsigned int)messageAdditionsCount;
+- (BOOL)messagesAreNew;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDateForRequestingMoreMessages:(id)arg1;
 - (void)setDateSynced:(id)arg1;
 - (void)setFullSyncVersion:(unsigned int)arg1;
-- (void)setHasFullSyncVersion:(bool)arg1;
-- (void)setHasMessagesAreNew:(bool)arg1;
+- (void)setHasFullSyncVersion:(BOOL)arg1;
+- (void)setHasMessagesAreNew:(BOOL)arg1;
 - (void)setMessageAdditions:(id)arg1;
-- (void)setMessagesAreNew:(bool)arg1;
+- (void)setMessagesAreNew:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

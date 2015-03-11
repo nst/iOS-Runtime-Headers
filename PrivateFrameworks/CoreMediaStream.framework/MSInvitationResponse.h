@@ -5,20 +5,20 @@
 @class MSShare;
 
 @interface MSInvitationResponse : NSObject {
+    BOOL _accept;
     MSShare *_invitation;
-    bool_accept;
 }
 
-@property bool accept;
+@property BOOL accept;
 @property(retain) MSShare * invitation;
 
-+ (id)responseWithInvitation:(id)arg1 accept:(bool)arg2;
++ (id)responseWithInvitation:(id)arg1 accept:(BOOL)arg2;
 
 - (void).cxx_destruct;
-- (bool)accept;
-- (id)initWithInvitation:(id)arg1 accept:(bool)arg2;
+- (BOOL)accept;
+- (id)initWithInvitation:(id)arg1 accept:(BOOL)arg2;
 - (id)invitation;
-- (void)setAccept:(bool)arg1;
+- (void)setAccept:(BOOL)arg1;
 - (void)setInvitation:(id)arg1;
 
 @end

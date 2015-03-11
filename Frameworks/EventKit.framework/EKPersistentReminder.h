@@ -8,11 +8,11 @@
     EKObjectID *_parentID;
 }
 
-@property(getter=isCompleted) bool completed;
+@property(getter=isCompleted) BOOL completed;
 @property(copy) NSDate * completionDate;
-@property unsigned long long displayOrder;
+@property unsigned int displayOrder;
 @property(copy) NSDate * dueDate;
-@property bool dueDateAllDay;
+@property BOOL dueDateAllDay;
 @property(copy) NSTimeZone * dueDateTimeZone;
 @property(copy) EKObjectID * parentID;
 
@@ -23,21 +23,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)displayOrder;
+- (unsigned int)displayOrder;
 - (id)dueDate;
-- (bool)dueDateAllDay;
+- (BOOL)dueDateAllDay;
 - (id)dueDateTimeZone;
 - (int)entityType;
 - (id)externalURI;
-- (bool)isCompleted;
+- (BOOL)isCompleted;
 - (id)parentID;
-- (void)setCompleted:(bool)arg1;
+- (void)setCompleted:(BOOL)arg1;
 - (void)setCompletionDate:(id)arg1;
-- (void)setDisplayOrder:(unsigned long long)arg1;
+- (void)setDisplayOrder:(unsigned int)arg1;
 - (void)setDueDate:(id)arg1;
-- (void)setDueDateAllDay:(bool)arg1;
+- (void)setDueDateAllDay:(BOOL)arg1;
 - (void)setDueDateTimeZone:(id)arg1;
 - (void)setParentID:(id)arg1;
-- (bool)validate:(id*)arg1;
+- (BOOL)validate:(id*)arg1;
 
 @end

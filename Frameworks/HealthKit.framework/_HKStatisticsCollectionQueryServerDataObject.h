@@ -7,27 +7,27 @@
 @interface _HKStatisticsCollectionQueryServerDataObject : _HKQueryServerDataObject {
     NSDate *_anchorDate;
     NSDateComponents *_intervalComponents;
-    unsigned long long _mergeStrategy;
-    unsigned long long _options;
+    unsigned int _mergeStrategy;
+    unsigned int _options;
 }
 
 @property(retain) NSDate * anchorDate;
 @property(retain) NSDateComponents * intervalComponents;
-@property unsigned long long mergeStrategy;
-@property unsigned long long options;
+@property unsigned int mergeStrategy;
+@property unsigned int options;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)anchorDate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)intervalComponents;
-- (unsigned long long)mergeStrategy;
-- (unsigned long long)options;
+- (unsigned int)mergeStrategy;
+- (unsigned int)options;
 - (void)setAnchorDate:(id)arg1;
 - (void)setIntervalComponents:(id)arg1;
-- (void)setMergeStrategy:(unsigned long long)arg1;
-- (void)setOptions:(unsigned long long)arg1;
+- (void)setMergeStrategy:(unsigned int)arg1;
+- (void)setOptions:(unsigned int)arg1;
 
 @end

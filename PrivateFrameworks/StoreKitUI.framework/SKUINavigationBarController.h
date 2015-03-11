@@ -20,7 +20,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSArray * existingSearchBarControllers;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SKUINavigationBarViewElement * navigationBarViewElement;
 @property(readonly) UIView * navigationPaletteView;
 @property UIViewController * parentViewController;
@@ -28,7 +28,7 @@
 
 - (void).cxx_destruct;
 - (id)_addSearchBarControllerWithViewElement:(id)arg1;
-- (double)_availableWidth;
+- (float)_availableWidth;
 - (id)_barButtonItemWithButtonViewElement:(id)arg1;
 - (id)_barButtonItemWithSearchBarViewElement:(id)arg1;
 - (id)_barButtonItemWithViewElement:(id)arg1;

@@ -8,7 +8,7 @@
 
 @property int desiredLogLevel;
 
-+ (bool)canLogMessageAtLevel:(int)arg1;
++ (BOOL)canLogMessageAtLevel:(int)arg1;
 + (void)initialize;
 + (void)setLoggingLevel:(int)arg1;
 

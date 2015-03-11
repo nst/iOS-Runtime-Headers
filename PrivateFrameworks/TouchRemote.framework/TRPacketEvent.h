@@ -17,10 +17,10 @@
 
 + (Class)_packetClassForPacketEventType:(unsigned int)arg1;
 + (unsigned int)_packetEventType;
-+ (unsigned long long)networkRepresentationHeaderLength;
++ (unsigned long)networkRepresentationHeaderLength;
 + (id)packetWithNetworkRepresentation:(id)arg1;
-+ (unsigned long long)payloadSizeWithNetworkRepresentationHeader:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (unsigned long)payloadSizeWithNetworkRepresentationHeader:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithVersion:(unsigned int)arg1 payloadDictionary:(id)arg2;

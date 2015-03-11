@@ -10,9 +10,9 @@
     id _target;
 }
 
-- (void)_receivedMemoryNotification:(bool)arg1;
+- (void)_receivedMemoryNotification:(BOOL)arg1;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
-- (void)triggerMemoryNotification:(bool)arg1;
+- (void)triggerMemoryNotification:(BOOL)arg1;
 
 @end

@@ -22,7 +22,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyPath;
-- (bool)matches:(id)arg1;
+- (BOOL)matches:(id)arg1;
 - (id)object;
 - (void)setKeyPath:(id)arg1;
 - (void)setObject:(id)arg1;

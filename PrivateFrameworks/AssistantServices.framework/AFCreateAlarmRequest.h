@@ -10,7 +10,7 @@
 
 @property(retain) AFAlarm * alarm;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)alarm;

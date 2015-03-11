@@ -10,7 +10,7 @@
     SSVRedeemCodeMetadata *_codeMetadata;
     NSError *_error;
     SKUIRedeemConfiguration *_redeemConfiguration;
-    long long _resultType;
+    int _resultType;
 }
 
 @property(retain) SSAccount * account;
@@ -18,7 +18,7 @@
 @property(retain) SSVRedeemCodeMetadata * codeMetadata;
 @property(copy) NSError * error;
 @property(retain) SKUIRedeemConfiguration * redeemConfiguration;
-@property long long resultType;
+@property int resultType;
 
 - (void).cxx_destruct;
 - (id)account;
@@ -26,12 +26,12 @@
 - (id)codeMetadata;
 - (id)error;
 - (id)redeemConfiguration;
-- (long long)resultType;
+- (int)resultType;
 - (void)setAccount:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setCodeMetadata:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setRedeemConfiguration:(id)arg1;
-- (void)setResultType:(long long)arg1;
+- (void)setResultType:(int)arg1;
 
 @end

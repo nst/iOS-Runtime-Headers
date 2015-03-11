@@ -6,18 +6,18 @@
 
 @interface BBDismissalItem : NSObject {
     NSDate *_expiration;
-    unsigned long long _feeds;
+    unsigned int _feeds;
 }
 
 @property(retain,readonly) NSDate * expiration;
-@property(readonly) unsigned long long feeds;
+@property(readonly) unsigned int feeds;
 
-- (void)addFeeds:(unsigned long long)arg1;
+- (void)addFeeds:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)expiration;
-- (unsigned long long)feeds;
-- (bool)hasExpired;
-- (id)initWithFeeds:(unsigned long long)arg1;
+- (unsigned int)feeds;
+- (BOOL)hasExpired;
+- (id)initWithFeeds:(unsigned int)arg1;
 
 @end

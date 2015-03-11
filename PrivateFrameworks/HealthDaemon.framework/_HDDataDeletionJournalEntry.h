@@ -6,21 +6,21 @@
 
 @interface _HDDataDeletionJournalEntry : HDJournalEntry {
     HKObject *_dataObject;
-    bool_restrictSource;
+    BOOL _restrictSource;
 }
 
 @property(readonly) HKObject * dataObject;
-@property(readonly) bool restrictSource;
+@property(readonly) BOOL restrictSource;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (long long)behavior;
-+ (bool)supportsSecureCoding;
++ (int)behavior;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)dataObject;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDataObject:(id)arg1 restrictSource:(bool)arg2;
-- (bool)restrictSource;
+- (id)initWithDataObject:(id)arg1 restrictSource:(BOOL)arg2;
+- (BOOL)restrictSource;
 
 @end

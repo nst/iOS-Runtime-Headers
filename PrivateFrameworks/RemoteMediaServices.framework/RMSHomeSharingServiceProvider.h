@@ -7,6 +7,6 @@
 
 - (id)searchScope;
 - (id)searchType;
-- (long long)serviceDiscoverySource;
+- (int)serviceDiscoverySource;
 
 @end

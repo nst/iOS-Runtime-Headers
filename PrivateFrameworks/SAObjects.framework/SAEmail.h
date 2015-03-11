@@ -12,7 +12,7 @@
 @property(copy) NSString * emailAddress;
 @property(copy) NSNumber * favoriteFacetime;
 @property(copy) NSNumber * favoriteFacetimeAudio;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * label;
 @property(copy) NSNumber * pseudo;
 @property(readonly) Class superclass;

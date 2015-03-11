@@ -14,7 +14,7 @@
     } _flags;
     NSMutableArray *_friendList;
     NPSManager *_npsManager;
-    unsigned long long _postCount;
+    unsigned int _postCount;
     NSObject<OS_dispatch_queue> *_saveQueue;
 }
 
@@ -27,37 +27,37 @@
 - (void)_addressBookChanged:(id)arg1;
 - (id)_createEmptyFriendList;
 - (id)_curatedFriendList;
-- (long long)_firstEmptyPosition;
+- (int)_firstEmptyPosition;
 - (void)_listChangedExternally;
-- (void)_loadListAndRefresh:(bool)arg1;
+- (void)_loadListAndRefresh:(BOOL)arg1;
 - (id)_migrate:(id)arg1;
-- (unsigned long long)_numberOfFriendsInList:(id)arg1;
+- (unsigned int)_numberOfFriendsInList:(id)arg1;
 - (void)_personValuesChanged:(id)arg1;
 - (void)_postChangeNotification;
-- (void)_updateFriends:(id)arg1 andRefresh:(bool)arg2;
-- (bool)_verifyFriendListIntegrity;
-- (void)_writeToUserDefaults:(id)arg1 synchronize:(bool)arg2;
-- (bool)addFriend:(id)arg1;
+- (void)_updateFriends:(id)arg1 andRefresh:(BOOL)arg2;
+- (BOOL)_verifyFriendListIntegrity;
+- (void)_writeToUserDefaults:(id)arg1 synchronize:(BOOL)arg2;
+- (BOOL)addFriend:(id)arg1;
 - (id)colorForFriend:(id)arg1;
-- (bool)containsFriend:(id)arg1;
-- (bool)containsFriendWithABRecordID:(int)arg1;
+- (BOOL)containsFriend:(id)arg1;
+- (BOOL)containsFriendWithABRecordID:(int)arg1;
 - (void)dealloc;
 - (id)ephemeralPerson;
-- (id)friendAtPosition:(unsigned long long)arg1;
-- (unsigned long long)friendCount;
+- (id)friendAtPosition:(unsigned int)arg1;
+- (unsigned int)friendCount;
 - (id)friendList;
 - (id)init;
-- (id)initAndRefresh:(bool)arg1;
+- (id)initAndRefresh:(BOOL)arg1;
 - (void)invalidate;
-- (bool)isFull;
-- (void)moveFriendAtPosition:(unsigned long long)arg1 toPosition:(unsigned long long)arg2;
-- (unsigned long long)positionOfFriend:(id)arg1;
+- (BOOL)isFull;
+- (void)moveFriendAtPosition:(unsigned int)arg1 toPosition:(unsigned int)arg2;
+- (unsigned int)positionOfFriend:(id)arg1;
 - (void)refreshAgainstAddressBook;
-- (void)removeFriendAtPosition:(unsigned long long)arg1;
+- (void)removeFriendAtPosition:(unsigned int)arg1;
 - (void)save;
 - (void)setEphemeralPerson:(id)arg1;
-- (bool)setFriend:(id)arg1 atPosition:(unsigned long long)arg2;
+- (BOOL)setFriend:(id)arg1 atPosition:(unsigned int)arg2;
 - (void)setFriendList:(id)arg1;
-- (unsigned long long)slots;
+- (unsigned int)slots;
 
 @end

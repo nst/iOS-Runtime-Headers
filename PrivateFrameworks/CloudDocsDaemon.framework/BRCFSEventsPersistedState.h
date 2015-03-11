@@ -16,7 +16,7 @@
 @property(retain) NSUUID * streamUUID;
 
 + (id)loadFromClientStateInDBManager:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

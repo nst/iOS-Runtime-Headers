@@ -18,10 +18,10 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)encodedValue;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)key;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setEncodedValue:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)writeTo:(id)arg1;

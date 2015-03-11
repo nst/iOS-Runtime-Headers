@@ -7,7 +7,7 @@
 @interface TSCH3DFramebufferCombinePipeline : TSCH3DFramebufferCopyPipeline {
     TSCH3DGLFramebuffer *mInput1;
     <TSCH3DPipelineLinkable> *mSource1;
-    unsigned long long mTextureUnit1;
+    unsigned int mTextureUnit1;
 }
 
 @property(retain) <TSCH3DPipelineLinkable> * source0;
@@ -15,7 +15,7 @@
 
 - (void)dealloc;
 - (void)loadSource;
-- (bool)run;
+- (BOOL)run;
 - (void)setSource0:(id)arg1;
 - (void)setSource1:(id)arg1;
 - (id)source0;

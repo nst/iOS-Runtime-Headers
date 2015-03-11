@@ -7,19 +7,19 @@
 @interface RMSDiscoverySession : NSObject <RMSServiceProviderDelegate, RMSDiscoverySession> {
     NSMutableSet *_availableServices;
     <RMSDiscoverySessionDelegate> *_delegate;
-    long long _discoveryTypes;
+    int _discoveryTypes;
+    BOOL _networkAvailable;
     NSArray *_providers;
     Reachability *_reachability;
-    bool_networkAvailable;
 }
 
 @property(readonly) NSArray * availableServices;
 @property(copy,readonly) NSString * debugDescription;
 @property <RMSDiscoverySessionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property long long discoveryTypes;
-@property(readonly) unsigned long long hash;
-@property(getter=isNetworkAvailable,readonly) bool networkAvailable;
+@property int discoveryTypes;
+@property(readonly) unsigned int hash;
+@property(getter=isNetworkAvailable,readonly) BOOL networkAvailable;
 @property(readonly) Class superclass;
 
 + (id)localDiscoverySession;
@@ -29,19 +29,19 @@
 - (void)_enableProviders;
 - (void)_handleHSGroupIDDidChangeNotification:(id)arg1;
 - (void)_handleReachabilityChangedNotification:(id)arg1;
-- (id)_providerForDiscoveryType:(long long)arg1;
+- (id)_providerForDiscoveryType:(int)arg1;
 - (void)_updateWifiAvailability;
 - (id)availableServices;
 - (void)beginDiscovery;
 - (void)dealloc;
 - (id)delegate;
-- (long long)discoveryTypes;
+- (int)discoveryTypes;
 - (void)endDiscovery;
 - (id)init;
-- (bool)isNetworkAvailable;
+- (BOOL)isNetworkAvailable;
 - (void)serviceProvider:(id)arg1 serviceDidBecomeAvailable:(id)arg2;
 - (void)serviceProvider:(id)arg1 serviceDidBecomeUnavailable:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setDiscoveryTypes:(long long)arg1;
+- (void)setDiscoveryTypes:(int)arg1;
 
 @end

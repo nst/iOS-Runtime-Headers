@@ -3,15 +3,15 @@
  */
 
 @interface PUAirPlayActivity : PUActivity {
-    bool_areRoutesAvailable;
+    BOOL _areRoutesAvailable;
 }
 
-- (void)_setRoutesAvailable:(bool)arg1;
+- (void)_setRoutesAvailable:(BOOL)arg1;
 - (void)_updateItemSourceController;
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (bool)canPerformWithActivityItems:(id)arg1;
+- (BOOL)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)performActivity;

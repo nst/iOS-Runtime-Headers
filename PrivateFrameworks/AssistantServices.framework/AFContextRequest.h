@@ -5,7 +5,7 @@
 @interface AFContextRequest : AFSiriRequest {
 }
 
-- (bool)_makeAppFrontmost;
+- (BOOL)_makeAppFrontmost;
 - (id)createResponseWithContext:(id)arg1;
 
 @end

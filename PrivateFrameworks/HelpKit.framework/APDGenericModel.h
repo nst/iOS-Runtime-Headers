@@ -8,17 +8,17 @@
     APDKVOManager *_KVOManager;
     APDAsyncURLConnection *_URLConnection;
     APDDataManager *_dataManager;
+    BOOL _hasLoaded;
+    BOOL _loading;
     NSOperationQueue *_localResourceOperationQueue;
     NSURL *_localResourceURL;
     NSURL *_requestURL;
-    bool_hasLoaded;
-    bool_loading;
 }
 
 @property(retain) APDKVOManager * KVOManager;
 @property APDDataManager * dataManager;
-@property bool hasLoaded;
-@property bool loading;
+@property BOOL hasLoaded;
+@property BOOL loading;
 @property(retain) NSOperationQueue * localResourceOperationQueue;
 @property(copy) NSURL * localResourceURL;
 @property(copy) NSURL * requestURL;
@@ -29,19 +29,19 @@
 - (void)commonInit;
 - (id)dataManager;
 - (void)dealloc;
-- (bool)hasLoaded;
+- (BOOL)hasLoaded;
 - (id)init;
-- (bool)loading;
+- (BOOL)loading;
 - (id)localResourceOperationQueue;
 - (id)localResourceURL;
 - (void)onConnectionChanged:(id)arg1;
-- (bool)processLocalDataFromLocalResource;
+- (BOOL)processLocalDataFromLocalResource;
 - (void)processRequestData:(id)arg1;
 - (id)requestURL;
 - (void)setDataManager:(id)arg1;
-- (void)setHasLoaded:(bool)arg1;
+- (void)setHasLoaded:(BOOL)arg1;
 - (void)setKVOManager:(id)arg1;
-- (void)setLoading:(bool)arg1;
+- (void)setLoading:(BOOL)arg1;
 - (void)setLocalResourceOperationQueue:(id)arg1;
 - (void)setLocalResourceURL:(id)arg1;
 - (void)setRequestURL:(id)arg1;

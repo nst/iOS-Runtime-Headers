@@ -16,11 +16,11 @@
 }
 
 @property(retain) NSData * continuationMarker;
-@property(readonly) bool hasContinuationMarker;
-@property bool hasLimit;
-@property(readonly) bool hasQuery;
-@property(readonly) bool hasRequestedFields;
-@property(readonly) bool hasZoneIdentifier;
+@property(readonly) BOOL hasContinuationMarker;
+@property BOOL hasLimit;
+@property(readonly) BOOL hasQuery;
+@property(readonly) BOOL hasRequestedFields;
+@property(readonly) BOOL hasZoneIdentifier;
 @property unsigned int limit;
 @property(retain) CKDPQuery * query;
 @property(retain) CKDPRequestedFields * requestedFields;
@@ -34,22 +34,22 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasContinuationMarker;
-- (bool)hasLimit;
-- (bool)hasQuery;
-- (bool)hasRequestedFields;
-- (bool)hasZoneIdentifier;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasContinuationMarker;
+- (BOOL)hasLimit;
+- (BOOL)hasQuery;
+- (BOOL)hasRequestedFields;
+- (BOOL)hasZoneIdentifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int)limit;
 - (void)mergeFrom:(id)arg1;
 - (id)query;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (id)requestedFields;
 - (Class)responseClass;
 - (void)setContinuationMarker:(id)arg1;
-- (void)setHasLimit:(bool)arg1;
+- (void)setHasLimit:(BOOL)arg1;
 - (void)setLimit:(unsigned int)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setRequestedFields:(id)arg1;

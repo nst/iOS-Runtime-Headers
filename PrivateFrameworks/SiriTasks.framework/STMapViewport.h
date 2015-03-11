@@ -22,7 +22,7 @@
 @property(copy) NSArray * viewportVertices;
 @property double westLongitude;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aceContextObjectValue;

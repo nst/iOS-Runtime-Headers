@@ -5,17 +5,17 @@
 @class WDCharacterRun, WDText;
 
 @interface WDNote : WDRun {
-    boolmAutomaticNumbering;
+    BOOL mAutomaticNumbering;
     WDCharacterRun *mReference;
     WDText *mText;
 }
 
-- (bool)automaticNumbering;
+- (BOOL)automaticNumbering;
 - (void)dealloc;
-- (id)initWithParagraph:(id)arg1 footnote:(bool)arg2;
+- (id)initWithParagraph:(id)arg1 footnote:(BOOL)arg2;
 - (id)reference;
 - (int)runType;
-- (void)setAutomaticNumbering:(bool)arg1;
+- (void)setAutomaticNumbering:(BOOL)arg1;
 - (id)text;
 
 @end

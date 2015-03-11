@@ -21,6 +21,6 @@
 - (void)controlEndEditing;
 - (id)controlView;
 - (void)dealloc;
-- (id)initWithView:(id)arg1 hasGroups:(bool)arg2;
+- (id)initWithView:(id)arg1 hasGroups:(BOOL)arg2;
 
 @end

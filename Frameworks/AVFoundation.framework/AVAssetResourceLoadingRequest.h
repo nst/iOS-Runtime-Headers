@@ -8,13 +8,13 @@
     AVAssetResourceLoadingRequestInternal *_loadingRequest;
 }
 
-@property(getter=isCancelled,readonly) bool cancelled;
+@property(getter=isCancelled,readonly) BOOL cancelled;
 @property(readonly) AVAssetResourceLoadingContentInformationRequest * contentInformationRequest;
 @property(readonly) AVAssetResourceLoadingDataRequest * dataRequest;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(getter=isFinished,readonly) bool finished;
-@property(readonly) unsigned long long hash;
+@property(getter=isFinished,readonly) BOOL finished;
+@property(readonly) unsigned int hash;
 @property(copy) NSURLRequest * redirect;
 @property(readonly) NSURLRequest * request;
 @property(copy) NSURLResponse * response;
@@ -35,8 +35,8 @@
 - (void)_sendDictionaryForURLRequest:(id)arg1 context:(id)arg2;
 - (void)_setContentInformationRequest:(id)arg1;
 - (void)_setDataRequest:(id)arg1;
-- (bool)_shouldInformDelegateOfFigCancellation;
-- (bool)_tryToMarkAsCancelled;
+- (BOOL)_shouldInformDelegateOfFigCancellation;
+- (BOOL)_tryToMarkAsCancelled;
 - (id)_weakReference;
 - (id)contentInformationRequest;
 - (id)dataRequest;
@@ -46,12 +46,12 @@
 - (void)finishLoading;
 - (void)finishLoadingWithError:(id)arg1;
 - (void)finishLoadingWithResponse:(id)arg1 data:(id)arg2 redirect:(id)arg3;
-- (bool)finished;
+- (BOOL)finished;
 - (void)generateStreamingContentKeyRequestDataAsynchronouslyForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 completionHandler:(id)arg4;
 - (id)init;
 - (id)initWithResourceLoader:(id)arg1 requestDictionary:(id)arg2;
-- (bool)isCancelled;
-- (bool)isFinished;
+- (BOOL)isCancelled;
+- (BOOL)isFinished;
 - (id)redirect;
 - (id)request;
 - (id)response;

@@ -6,7 +6,7 @@
 
 @interface CKRecordZone : NSObject <NSSecureCoding, NSCopying> {
     long long _assetQuotaUsage;
-    unsigned long long _capabilities;
+    unsigned int _capabilities;
     NSData *_clientChangeToken;
     CKContainerID *_containerID;
     NSData *_currentServerContinuationToken;
@@ -19,7 +19,7 @@
 }
 
 @property long long assetQuotaUsage;
-@property unsigned long long capabilities;
+@property unsigned int capabilities;
 @property(retain) NSData * clientChangeToken;
 @property(copy) CKContainerID * containerID;
 @property(retain) NSData * currentServerContinuationToken;
@@ -31,14 +31,14 @@
 @property(retain) CKRecordZoneID * zoneID;
 
 + (id)defaultRecordZone;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)CKAssignToContainerWithID:(id)arg1;
 - (id)CKPropertiesDescription;
-- (id)_initZoneWithIdentifier:(id)arg1 capabilities:(unsigned long long)arg2;
+- (id)_initZoneWithIdentifier:(id)arg1 capabilities:(unsigned int)arg2;
 - (long long)assetQuotaUsage;
-- (unsigned long long)capabilities;
+- (unsigned int)capabilities;
 - (id)clientChangeToken;
 - (id)containerID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -54,7 +54,7 @@
 - (id)protectionData;
 - (id)protectionEtag;
 - (void)setAssetQuotaUsage:(long long)arg1;
-- (void)setCapabilities:(unsigned long long)arg1;
+- (void)setCapabilities:(unsigned int)arg1;
 - (void)setClientChangeToken:(id)arg1;
 - (void)setContainerID:(id)arg1;
 - (void)setCurrentServerContinuationToken:(id)arg1;

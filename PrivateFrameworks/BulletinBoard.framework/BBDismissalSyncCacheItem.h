@@ -12,7 +12,7 @@
 @property(retain,readonly) NSMutableArray * dismissalDictionariesAndFeeds;
 @property(retain,readonly) NSMutableDictionary * dismissalIDToFeeds;
 
-- (void)cacheDismissalDictionaries:(id)arg1 dismissalIDs:(id)arg2 forFeeds:(unsigned long long)arg3;
+- (void)cacheDismissalDictionaries:(id)arg1 dismissalIDs:(id)arg2 forFeeds:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)dismissalDictionariesAndFeeds;

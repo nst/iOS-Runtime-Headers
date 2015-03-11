@@ -7,21 +7,21 @@
 @interface TSDCenterAlignmentGuide : TSDAlignmentGuide {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     } mLeftGeneratingObjectRect;
     TSDSpacingGuideUILayer *mLeftSpacingUILayer;
@@ -30,12 +30,12 @@
     TSDSwappableAxesGeometry *mVerticalGeom;
 }
 
-- (bool)canBeSnappedToByEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (long long)compare:(id)arg1;
+- (BOOL)canBeSnappedToByEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (double)exactOffset;
-- (id)initBetweenRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 andRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withGuideType:(int)arg3;
+- (float)exactOffset;
+- (id)initBetweenRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 andRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withGuideType:(int)arg3;
 - (int)integerOffset;
 - (id)layerWithICC:(id)arg1;
 

@@ -17,10 +17,10 @@
 }
 
 @property(retain) NPKProtoCatalog * catalog;
-@property(readonly) bool hasCatalog;
-@property bool hasLastKnownResyncID;
-@property(readonly) bool hasLibraryHash;
-@property bool hasResyncID;
+@property(readonly) BOOL hasCatalog;
+@property BOOL hasLastKnownResyncID;
+@property(readonly) BOOL hasLibraryHash;
+@property BOOL hasResyncID;
 @property unsigned int lastKnownResyncID;
 @property(retain) NPKProtoHash * libraryHash;
 @property(retain) NPKProtoPass * pass;
@@ -32,21 +32,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCatalog;
-- (bool)hasLastKnownResyncID;
-- (bool)hasLibraryHash;
-- (bool)hasResyncID;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCatalog;
+- (BOOL)hasLastKnownResyncID;
+- (BOOL)hasLibraryHash;
+- (BOOL)hasResyncID;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int)lastKnownResyncID;
 - (id)libraryHash;
 - (void)mergeFrom:(id)arg1;
 - (id)pass;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)resyncID;
 - (void)setCatalog:(id)arg1;
-- (void)setHasLastKnownResyncID:(bool)arg1;
-- (void)setHasResyncID:(bool)arg1;
+- (void)setHasLastKnownResyncID:(BOOL)arg1;
+- (void)setHasResyncID:(BOOL)arg1;
 - (void)setLastKnownResyncID:(unsigned int)arg1;
 - (void)setLibraryHash:(id)arg1;
 - (void)setPass:(id)arg1;

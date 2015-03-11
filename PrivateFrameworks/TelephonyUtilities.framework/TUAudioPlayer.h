@@ -9,13 +9,13 @@
 }
 
 @property <TUAudioPlayerDelegateProtocol> * delegate;
-@property(readonly) bool playingSound;
+@property(readonly) BOOL playingSound;
 
 - (void)dealloc;
 - (id)delegate;
 - (void)playSelectedSound;
-- (void)playSound:(int)arg1 numOfLoops:(int)arg2 pauseDuration:(double)arg3;
-- (bool)playingSound;
+- (void)playSound:(int)arg1 numOfLoops:(int)arg2 pauseDuration:(float)arg3;
+- (BOOL)playingSound;
 - (void)setDelegate:(id)arg1;
 - (void)stop;
 

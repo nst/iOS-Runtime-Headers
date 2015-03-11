@@ -9,19 +9,19 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property long long endSecondsSinceMidnight;
-@property(readonly) unsigned long long hash;
-@property long long startSecondsSinceMidnight;
+@property int endSecondsSinceMidnight;
+@property(readonly) unsigned int hash;
+@property int startSecondsSinceMidnight;
 @property(readonly) Class superclass;
 
 + (id)rangePeriod;
 + (id)rangePeriodWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
-- (long long)endSecondsSinceMidnight;
+- (int)endSecondsSinceMidnight;
 - (id)groupIdentifier;
-- (void)setEndSecondsSinceMidnight:(long long)arg1;
-- (void)setStartSecondsSinceMidnight:(long long)arg1;
-- (long long)startSecondsSinceMidnight;
+- (void)setEndSecondsSinceMidnight:(int)arg1;
+- (void)setStartSecondsSinceMidnight:(int)arg1;
+- (int)startSecondsSinceMidnight;
 
 @end

@@ -6,7 +6,7 @@
 
 @interface PLUIPrivacyViewController : UIViewController {
     _UIAccessDeniedView *_accessDeniedView;
-    bool_showingAccessDeniedView;
+    BOOL _showingAccessDeniedView;
 }
 
 - (void)_cancelButtonClicked:(id)arg1;
@@ -15,6 +15,6 @@
 - (void)_updateAccessDeniedView;
 - (void)dealloc;
 - (void)loadView;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

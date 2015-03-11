@@ -10,21 +10,21 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_onQueue_invalidate;
-- (bool)canCancel;
+- (BOOL)canCancel;
 - (void)cancelDownload;
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 downloadDidProgress:(id)arg2;
 - (double)downloadProgress;
 - (id)initWithStoreDownload:(id)arg1;
-- (bool)isCurrentlyPlayable;
-- (bool)isPaused;
-- (bool)isPurchasing;
-- (bool)isRestoreDownload;
+- (BOOL)isCurrentlyPlayable;
+- (BOOL)isPaused;
+- (BOOL)isPurchasing;
+- (BOOL)isRestoreDownload;
 - (void)pauseDownload;
 - (double)rawDownloadProgress;
 - (double)rawDownloadTotal;

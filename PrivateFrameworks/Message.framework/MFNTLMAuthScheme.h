@@ -6,9 +6,9 @@
 }
 
 - (Class)authenticatorClass;
-- (bool)hasEncryption;
+- (BOOL)hasEncryption;
 - (id)humanReadableName;
 - (id)name;
-- (bool)sendsPlainTextPasswords;
+- (BOOL)sendsPlainTextPasswords;
 
 @end

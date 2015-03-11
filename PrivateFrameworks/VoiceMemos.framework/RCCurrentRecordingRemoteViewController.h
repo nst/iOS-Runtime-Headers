@@ -11,12 +11,12 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <RCCurrentRecordingViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-+ (bool)shouldPropagateAppearanceCustomizations;
++ (BOOL)shouldPropagateAppearanceCustomizations;
 
 - (void).cxx_destruct;
 - (void)currentRecordingAVStateDidChange:(id)arg1;

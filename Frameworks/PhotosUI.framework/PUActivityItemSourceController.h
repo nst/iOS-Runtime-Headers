@@ -35,10 +35,10 @@
 - (id)assetItemSources;
 - (id)assets;
 - (void)cancel;
-- (long long)countOfAssetType:(long long)arg1;
+- (int)countOfAssetType:(int)arg1;
 - (id)progressHandler;
 - (void)removeAsset:(id)arg1;
-- (void)runExplicitly:(bool)arg1 withActivityType:(id)arg2 completionHandler:(id)arg3;
+- (void)runExplicitly:(BOOL)arg1 withActivityType:(id)arg2 completionHandler:(id)arg3;
 - (void)setActivityViewController:(id)arg1;
 - (void)setAssets:(id)arg1;
 - (void)setProgressHandler:(id)arg1;

@@ -17,11 +17,11 @@
 - (void)finalize;
 - (id)init;
 - (void)lock;
-- (bool)lockBeforeDate:(id)arg1;
+- (BOOL)lockBeforeDate:(id)arg1;
 - (void)mf_waitForLock;
 - (id)name;
 - (void)setName:(id)arg1;
-- (bool)tryLock;
+- (BOOL)tryLock;
 - (void)unlock;
 
 @end

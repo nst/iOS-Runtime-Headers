@@ -10,7 +10,7 @@
 + (void)initialize;
 + (id)logFolder;
 + (id)setupLogging:(id)arg1;
-+ (bool)shouldDisplaySyncErrorMessage;
-+ (bool)shouldLogBubblesToAggD;
++ (BOOL)shouldDisplaySyncErrorMessage;
++ (BOOL)shouldLogBubblesToAggD;
 
 @end

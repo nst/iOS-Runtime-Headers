@@ -6,15 +6,15 @@
 
 @interface SKUIStackedPushTransition : NSObject <UIViewControllerAnimatedTransitioning> {
     SKUIStackedBar *_fromBar;
-    double _split;
+    float _split;
     SKUIStackedBar *_toBar;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) SKUIStackedBar * fromBar;
-@property(readonly) unsigned long long hash;
-@property double split;
+@property(readonly) unsigned int hash;
+@property float split;
 @property(readonly) Class superclass;
 @property(retain) SKUIStackedBar * toBar;
 
@@ -22,9 +22,9 @@
 - (void)animateTransition:(id)arg1;
 - (id)fromBar;
 - (void)setFromBar:(id)arg1;
-- (void)setSplit:(double)arg1;
+- (void)setSplit:(float)arg1;
 - (void)setToBar:(id)arg1;
-- (double)split;
+- (float)split;
 - (id)toBar;
 - (double)transitionDuration:(id)arg1;
 

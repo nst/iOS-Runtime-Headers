@@ -6,33 +6,33 @@
 
 @interface MPMoviePlayerViewController : UIViewController {
     id _internal;
-    bool_statusBarWasHidden;
+    BOOL _statusBarWasHidden;
 }
 
 @property(readonly) MPMoviePlayerController * moviePlayer;
 
 - (void).cxx_destruct;
-- (bool)_canReloadView;
+- (BOOL)_canReloadView;
 - (void)_moviePlayerViewController_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_moviePlayerViewController_playbackDidFinishNotification:(id)arg1;
-- (bool)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
-- (bool)canBecomeFirstResponder;
+- (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
+- (BOOL)canBecomeFirstResponder;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(long long)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)init;
 - (id)initWithAsset:(id)arg1;
 - (id)initWithContentURL:(id)arg1;
 - (void)loadView;
 - (id)moviePlayer;
-- (bool)prefersStatusBarHidden;
+- (BOOL)prefersStatusBarHidden;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
-- (bool)shouldAutorotate;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (BOOL)shouldAutorotate;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -33,7 +33,7 @@
 + (double)maximumDurationForTrimMode:(int)arg1;
 
 - (void)_didEndRemakingWithTemporaryPath:(id)arg1;
-- (void)_exportCompletedWithSuccess:(bool)arg1;
+- (void)_exportCompletedWithSuccess:(BOOL)arg1;
 - (id)_fileFormatForURL:(id)arg1;
 - (void)_removeProgressTimer;
 - (void)_resetProgressTimer;
@@ -44,7 +44,7 @@
 - (id)delegate;
 - (double)duration;
 - (id)initWithAVAsset:(id)arg1;
-- (id)initWithManagedAsset:(id)arg1 applyVideoAdjustments:(bool)arg2;
+- (id)initWithManagedAsset:(id)arg1 applyVideoAdjustments:(BOOL)arg2;
 - (id)messageForRemakingProgress;
 - (int)mode;
 - (id)progressHandler;

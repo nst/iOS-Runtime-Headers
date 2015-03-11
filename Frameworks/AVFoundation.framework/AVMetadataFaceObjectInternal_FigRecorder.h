@@ -3,28 +3,28 @@
  */
 
 @interface AVMetadataFaceObjectInternal_FigRecorder : NSObject {
-    boolhasRollAngle;
-    boolhasYawAngle;
-    long long faceID;
-    double rollAngle;
-    double yawAngle;
+    int faceID;
+    BOOL hasRollAngle;
+    BOOL hasYawAngle;
+    float rollAngle;
+    float yawAngle;
 }
 
-@property long long faceID;
-@property bool hasRollAngle;
-@property bool hasYawAngle;
-@property double rollAngle;
-@property double yawAngle;
+@property int faceID;
+@property BOOL hasRollAngle;
+@property BOOL hasYawAngle;
+@property float rollAngle;
+@property float yawAngle;
 
-- (long long)faceID;
-- (bool)hasRollAngle;
-- (bool)hasYawAngle;
-- (double)rollAngle;
-- (void)setFaceID:(long long)arg1;
-- (void)setHasRollAngle:(bool)arg1;
-- (void)setHasYawAngle:(bool)arg1;
-- (void)setRollAngle:(double)arg1;
-- (void)setYawAngle:(double)arg1;
-- (double)yawAngle;
+- (int)faceID;
+- (BOOL)hasRollAngle;
+- (BOOL)hasYawAngle;
+- (float)rollAngle;
+- (void)setFaceID:(int)arg1;
+- (void)setHasRollAngle:(BOOL)arg1;
+- (void)setHasYawAngle:(BOOL)arg1;
+- (void)setRollAngle:(float)arg1;
+- (void)setYawAngle:(float)arg1;
+- (float)yawAngle;
 
 @end

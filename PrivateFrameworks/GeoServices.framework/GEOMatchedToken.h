@@ -7,8 +7,8 @@
 @interface GEOMatchedToken : PBCodable <NSCopying> {
     struct { 
         unsigned long long *list; 
-        unsigned long long count; 
-        unsigned long long size; 
+        unsigned int count; 
+        unsigned int size; 
     struct { 
         unsigned int geoType : 1; 
     } _geoIds;
@@ -18,9 +18,9 @@
 }
 
 @property(readonly) unsigned long long* geoIds;
-@property(readonly) unsigned long long geoIdsCount;
+@property(readonly) unsigned int geoIdsCount;
 @property int geoType;
-@property bool hasGeoType;
+@property BOOL hasGeoType;
 @property(retain) NSString * matchedToken;
 
 - (void)addGeoId:(unsigned long long)arg1;
@@ -30,19 +30,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)geoIdAtIndex:(unsigned long long)arg1;
+- (unsigned long long)geoIdAtIndex:(unsigned int)arg1;
 - (unsigned long long*)geoIds;
-- (unsigned long long)geoIdsCount;
+- (unsigned int)geoIdsCount;
 - (int)geoType;
-- (bool)hasGeoType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasGeoType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)matchedToken;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setGeoIds:(unsigned long long*)arg1 count:(unsigned long long)arg2;
+- (BOOL)readFrom:(id)arg1;
+- (void)setGeoIds:(unsigned long long*)arg1 count:(unsigned int)arg2;
 - (void)setGeoType:(int)arg1;
-- (void)setHasGeoType:(bool)arg1;
+- (void)setHasGeoType:(BOOL)arg1;
 - (void)setMatchedToken:(id)arg1;
 - (void)writeTo:(id)arg1;
 

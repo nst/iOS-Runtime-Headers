@@ -8,12 +8,12 @@
     TSWPChangeSession *_currentSession;
 }
 
-@property(readonly) bool isTrackingChanges;
+@property(readonly) BOOL isTrackingChanges;
 
 - (id)changeSessionAuthorCreatedWithCommand:(id*)arg1;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1;
-- (bool)isTrackingChanges;
+- (BOOL)isTrackingChanges;
 - (void)startNewChangeSessionIfNecessaryGettingInsertAuthorCommand:(id*)arg1;
 
 @end

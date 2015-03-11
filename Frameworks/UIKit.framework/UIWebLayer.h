@@ -3,10 +3,10 @@
  */
 
 @interface UIWebLayer : CALayer {
-    bool_layoutsSuspended;
+    BOOL _layoutsSuspended;
 }
 
-- (void)setLayoutsSuspended:(bool)arg1;
+- (void)setLayoutsSuspended:(BOOL)arg1;
 - (void)setNeedsLayout;
 
 @end

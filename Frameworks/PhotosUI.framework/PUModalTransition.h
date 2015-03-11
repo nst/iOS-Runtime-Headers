@@ -5,27 +5,27 @@
 @class NSString;
 
 @interface PUModalTransition : PUViewControllerTransition <UIViewControllerTransitioningDelegate> {
-    long long __operation;
+    int __operation;
 }
 
-@property(setter=_setOperation:) long long _operation;
+@property(setter=_setOperation:) int _operation;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-- (long long)_operation;
-- (void)_setOperation:(long long)arg1;
+- (int)_operation;
+- (void)_setOperation:(int)arg1;
 - (void)animateTransition:(id)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)cancelInteractiveTransition;
-- (void)completeInteractiveDismissTransitionFinished:(bool)arg1;
-- (void)completeInteractivePresentTransitionFinished:(bool)arg1;
+- (void)completeInteractiveDismissTransitionFinished:(BOOL)arg1;
+- (void)completeInteractivePresentTransitionFinished:(BOOL)arg1;
 - (void)finishInteractiveTransition;
 - (id)interactionControllerForDismissal:(id)arg1;
 - (id)interactionControllerForPresentation:(id)arg1;
-- (void)transitionWillDismissInteractively:(bool)arg1;
-- (void)transitionWillPresentInteractively:(bool)arg1;
+- (void)transitionWillDismissInteractively:(BOOL)arg1;
+- (void)transitionWillPresentInteractively:(BOOL)arg1;
 
 @end

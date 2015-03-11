@@ -10,7 +10,7 @@
     NSString *_type;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_initWithType:(id)arg1 qualifier:(id)arg2 criteria:(id)arg3;
 - (id)criteria;
@@ -19,7 +19,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCriteria:(id)arg1 allRequired:(bool)arg2;
+- (id)initWithCriteria:(id)arg1 allRequired:(BOOL)arg2;
 - (id)initWithType:(id)arg1 qualifier:(id)arg2 expression:(id)arg3;
 - (id)qualifier;
 - (id)type;

@@ -5,51 +5,51 @@
 @class <MPMediaPickerControllerDelegate>, MPRemoteMediaPickerController, NSString, _UIAsyncInvocation;
 
 @interface MPMediaPickerController : UIViewController {
+    BOOL _allowsPickingMultipleItems;
     _UIAsyncInvocation *_cancelRequest;
     <MPMediaPickerControllerDelegate> *_delegate;
-    unsigned long long _mediaTypes;
+    unsigned int _mediaTypes;
     id _modalContext;
     NSString *_prompt;
     MPRemoteMediaPickerController *_remoteViewController;
-    bool_allowsPickingMultipleItems;
-    bool_showsCloudItems;
+    BOOL _showsCloudItems;
 }
 
-@property bool allowsPickingMultipleItems;
+@property BOOL allowsPickingMultipleItems;
 @property <MPMediaPickerControllerDelegate> * delegate;
-@property(readonly) unsigned long long mediaTypes;
+@property(readonly) unsigned int mediaTypes;
 @property(copy) NSString * prompt;
-@property bool showsCloudItems;
+@property BOOL showsCloudItems;
 
 + (void)preheatMediaPicker;
 
 - (void).cxx_destruct;
 - (void)_addRemoteView;
 - (void)_forceDismissal;
-- (bool)_hasAddedRemoteView;
+- (BOOL)_hasAddedRemoteView;
 - (void)_pickerDidCancel;
 - (void)_pickerDidPickItems:(id)arg1;
 - (void)_requestRemoteViewController;
 - (void)_resetRemoteViewController;
 - (void)_sendSettingsToService;
 - (id)_serviceViewControllerProxy;
-- (bool)allowsPickingMultipleItems;
+- (BOOL)allowsPickingMultipleItems;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)initWithMediaTypes:(unsigned long long)arg1;
+- (id)initWithMediaTypes:(unsigned int)arg1;
 - (void)loadView;
-- (unsigned long long)mediaTypes;
+- (unsigned int)mediaTypes;
 - (id)prompt;
 - (void)remoteMediaPickerDidCancel;
 - (void)remoteMediaPickerDidPickMediaItems:(id)arg1;
-- (void)setAllowsPickingMultipleItems:(bool)arg1;
+- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPrompt:(id)arg1;
-- (void)setShowsCloudItems:(bool)arg1;
-- (bool)showsCloudItems;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (void)setShowsCloudItems:(BOOL)arg1;
+- (BOOL)showsCloudItems;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 
 @end

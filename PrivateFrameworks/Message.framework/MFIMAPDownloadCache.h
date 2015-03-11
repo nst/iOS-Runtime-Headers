@@ -9,14 +9,14 @@
 }
 
 - (void)addCommandsForDownload:(id)arg1 toPipeline:(id)arg2;
-- (void)cleanUpDownloadsForUid:(unsigned int)arg1;
+- (void)cleanUpDownloadsForUid:(unsigned long)arg1;
 - (void)dealloc;
 - (id)downloadForMessage:(id)arg1;
-- (id)downloadForUid:(unsigned int)arg1 section:(id)arg2 expectedLength:(unsigned long long)arg3 consumer:(id)arg4;
-- (id)downloadForUid:(unsigned int)arg1 section:(id)arg2 length:(unsigned long long)arg3 consumer:(id)arg4;
-- (id)downloadForUid:(unsigned int)arg1 section:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 consumer:(id)arg4;
-- (void)handleFetchResponse:(id)arg1 forUid:(unsigned int)arg2;
+- (id)downloadForUid:(unsigned long)arg1 section:(id)arg2 expectedLength:(unsigned int)arg3 consumer:(id)arg4;
+- (id)downloadForUid:(unsigned long)arg1 section:(id)arg2 length:(unsigned int)arg3 consumer:(id)arg4;
+- (id)downloadForUid:(unsigned long)arg1 section:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 consumer:(id)arg4;
+- (void)handleFetchResponse:(id)arg1 forUid:(unsigned long)arg2;
 - (void)handleFetchResponses:(id)arg1;
-- (void)processResultsForUid:(unsigned int)arg1;
+- (void)processResultsForUid:(unsigned long)arg1;
 
 @end

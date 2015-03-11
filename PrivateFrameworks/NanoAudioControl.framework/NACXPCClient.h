@@ -5,15 +5,15 @@
 @class NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
 @interface NACXPCClient : NSObject <NACXPCInterface> {
+    BOOL _isObservingVolume;
     NSMutableSet *_routeObservingCategories;
     NSXPCConnection *_xpcConnection;
     NSObject<OS_dispatch_queue> *_xpcConnectionQueue;
-    bool_isObservingVolume;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)sharedClient;
@@ -35,8 +35,8 @@
 - (void)pickAudioRouteWithIdentifier:(id)arg1 category:(id)arg2;
 - (void)playAudioAndHapticPreview;
 - (void)setHapticIntensity:(float)arg1;
-- (void)setMuted:(bool)arg1 category:(id)arg2;
-- (void)setSystemMuted:(bool)arg1;
+- (void)setMuted:(BOOL)arg1 category:(id)arg2;
+- (void)setSystemMuted:(BOOL)arg1;
 - (void)setVolumeValue:(float)arg1 category:(id)arg2;
 - (void)systemMutedState:(id)arg1;
 - (void)volumeControlAvailabilityForCategory:(id)arg1 result:(id)arg2;

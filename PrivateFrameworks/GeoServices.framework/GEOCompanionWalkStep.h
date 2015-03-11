@@ -4,14 +4,14 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOCompanionWalkStep : PBCodable <NSCopying, GEOCompanionManeuverStep> {
+@interface GEOCompanionWalkStep : PBCodable <GEOCompanionManeuverStep, NSCopying> {
     struct { 
         unsigned int junctionType : 1; 
         unsigned int maneuverType : 1; 
     } _has;
     struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_junctionElements;
-    unsigned long long _junctionElementsCount;
-    unsigned long long _junctionElementsSpace;
+    unsigned int _junctionElementsCount;
+    unsigned int _junctionElementsSpace;
     int _junctionType;
     NSMutableArray *_maneuverNames;
     int _maneuverType;
@@ -20,15 +20,15 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool hasJunctionType;
-@property bool hasJunctionType;
-@property bool hasManeuverType;
-@property bool hasManeuverType;
-@property(readonly) unsigned long long hash;
+@property BOOL hasJunctionType;
+@property BOOL hasJunctionType;
+@property BOOL hasManeuverType;
+@property BOOL hasManeuverType;
+@property(readonly) unsigned int hash;
 @property(readonly) struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }* junctionElements;
 @property(readonly) struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }* junctionElements;
-@property(readonly) unsigned long long junctionElementsCount;
-@property(readonly) unsigned long long junctionElementsCount;
+@property(readonly) unsigned int junctionElementsCount;
+@property(readonly) unsigned int junctionElementsCount;
 @property int junctionType;
 @property int junctionType;
 @property(retain) NSMutableArray * maneuverNames;
@@ -51,30 +51,30 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasJunctionType;
-- (bool)hasManeuverType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })junctionElementAtIndex:(unsigned long long)arg1;
+- (BOOL)hasJunctionType;
+- (BOOL)hasManeuverType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })junctionElementAtIndex:(unsigned int)arg1;
 - (struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)junctionElements;
-- (unsigned long long)junctionElementsCount;
+- (unsigned int)junctionElementsCount;
 - (int)junctionType;
-- (id)maneuverNameAtIndex:(unsigned long long)arg1;
+- (id)maneuverNameAtIndex:(unsigned int)arg1;
 - (id)maneuverNames;
-- (unsigned long long)maneuverNamesCount;
+- (unsigned int)maneuverNamesCount;
 - (int)maneuverType;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasJunctionType:(bool)arg1;
-- (void)setHasManeuverType:(bool)arg1;
-- (void)setJunctionElements:(struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned long long)arg2;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasJunctionType:(BOOL)arg1;
+- (void)setHasManeuverType:(BOOL)arg1;
+- (void)setJunctionElements:(struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned int)arg2;
 - (void)setJunctionType:(int)arg1;
 - (void)setManeuverNames:(id)arg1;
 - (void)setManeuverType:(int)arg1;
 - (void)setSignposts:(id)arg1;
-- (id)signpostAtIndex:(unsigned long long)arg1;
+- (id)signpostAtIndex:(unsigned int)arg1;
 - (id)signposts;
-- (unsigned long long)signpostsCount;
+- (unsigned int)signpostsCount;
 - (int)transportType;
 - (void)writeTo:(id)arg1;
 

@@ -12,7 +12,7 @@
 + (id)currentLanguageCode;
 + (void)initialize;
 + (id)speechVoices;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 + (id)voiceWithLanguage:(id)arg1;
 
 - (void)dealloc;

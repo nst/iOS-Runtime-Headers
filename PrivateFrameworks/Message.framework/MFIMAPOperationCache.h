@@ -11,10 +11,10 @@
     unsigned int _lastUid;
     unsigned int _lastUidValidity;
     NSMutableArray *_ops;
-    bool_opsPending;
+    BOOL _opsPending;
 }
 
-+ (void)setShouldFlattenCacheOperations:(bool)arg1;
++ (void)setShouldFlattenCacheOperations:(BOOL)arg1;
 
 - (void)_performAppendOperation:(id)arg1 withContext:(struct { id x1; id x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFDictionary {} *x5; unsigned int x6; unsigned int x7; int x8; id x9; }*)arg2;
 - (void)_performCopyOperation:(id)arg1 withContext:(struct { id x1; id x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFDictionary {} *x5; unsigned int x6; unsigned int x7; int x8; id x9; }*)arg2;
@@ -23,15 +23,15 @@
 - (void)_performStoreOperation:(id)arg1 withContext:(struct { id x1; id x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFDictionary {} *x5; unsigned int x6; unsigned int x7; int x8; id x9; }*)arg2;
 - (void)_queueDeferredOperation:(id)arg1;
 - (id)account;
-- (bool)connection:(id)arg1 shouldHandleUntaggedResponse:(id)arg2 forCommand:(struct { int x1; id x2; id x3; unsigned long long x4; id x5; }*)arg3;
+- (BOOL)connection:(id)arg1 shouldHandleUntaggedResponse:(id)arg2 forCommand:(struct { int x1; id x2; id x3; unsigned int x4; id x5; }*)arg3;
 - (void)createMailbox:(id)arg1;
 - (void)dealloc;
 - (id)deferredOperations;
 - (void)deleteMailbox:(id)arg1;
 - (void)expungeTemporaryUid:(unsigned int)arg1;
 - (unsigned int)firstUidForCopyingMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3;
-- (bool)hasOperationsForMailbox:(id)arg1;
-- (bool)hasPendingOfflineOperations;
+- (BOOL)hasOperationsForMailbox:(id)arg1;
+- (BOOL)hasPendingOfflineOperations;
 - (id)initWithIMAPAccount:(id)arg1;
 - (void)performDeferredOperationsWithConnection:(id)arg1;
 - (void)saveChanges;

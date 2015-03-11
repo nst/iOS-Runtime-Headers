@@ -12,12 +12,12 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) UISwipeGestureRecognizer * growGesture;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) UISwipeGestureRecognizer * shrinkGesture;
 @property(readonly) Class superclass;
 
 - (void)dealloc;
-- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)growGesture;
 - (void)handleGrowGesture:(id)arg1;
 - (void)handleShrinkGesture:(id)arg1;

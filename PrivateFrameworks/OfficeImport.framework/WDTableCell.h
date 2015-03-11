@@ -5,26 +5,26 @@
 @class NSString, WDTableCellProperties, WDTableRow, WDText;
 
 @interface WDTableCell : NSObject {
-    boolmUseTrackedProperties;
     NSString *mIdentifier;
-    unsigned long long mIndex;
+    unsigned int mIndex;
     WDTableCellProperties *mProperties;
     WDTableRow *mRow;
     WDText *mText;
+    BOOL mUseTrackedProperties;
 }
 
 - (double)cellWidth;
 - (void)clearProperties;
-- (long long)compareIndex:(id)arg1;
+- (int)compareIndex:(id)arg1;
 - (void)dealloc;
 - (id)identifier;
-- (unsigned long long)index;
-- (id)initWithRow:(id)arg1 at:(unsigned long long)arg2;
+- (unsigned int)index;
+- (id)initWithRow:(id)arg1 at:(unsigned int)arg2;
 - (id)properties;
 - (id)row;
 - (void)setIdentifier:(id)arg1;
-- (void)setUseTrackedProperties:(bool)arg1;
+- (void)setUseTrackedProperties:(BOOL)arg1;
 - (id)text;
-- (bool)useTrackedProperties;
+- (BOOL)useTrackedProperties;
 
 @end

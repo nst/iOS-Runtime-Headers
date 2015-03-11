@@ -3,21 +3,21 @@
  */
 
 @interface SUMediaItemCellContext : SUItemCellContext {
-    double _artworkWidth;
-    long long _hiddenMediaIconTypes;
-    bool_itemsHaveArtwork;
+    float _artworkWidth;
+    int _hiddenMediaIconTypes;
+    BOOL _itemsHaveArtwork;
 }
 
-@property double artworkWidth;
-@property long long hiddenMediaIconTypes;
-@property bool itemsHaveArtwork;
+@property float artworkWidth;
+@property int hiddenMediaIconTypes;
+@property BOOL itemsHaveArtwork;
 
-- (double)artworkWidth;
-- (long long)hiddenMediaIconTypes;
+- (float)artworkWidth;
+- (int)hiddenMediaIconTypes;
 - (id)init;
-- (bool)itemsHaveArtwork;
-- (void)setArtworkWidth:(double)arg1;
-- (void)setHiddenMediaIconTypes:(long long)arg1;
-- (void)setItemsHaveArtwork:(bool)arg1;
+- (BOOL)itemsHaveArtwork;
+- (void)setArtworkWidth:(float)arg1;
+- (void)setHiddenMediaIconTypes:(int)arg1;
+- (void)setItemsHaveArtwork:(BOOL)arg1;
 
 @end

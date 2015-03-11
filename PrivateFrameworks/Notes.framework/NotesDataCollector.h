@@ -7,14 +7,14 @@
 @interface NotesDataCollector : NSObject {
     ACAccountStore *_accountStore;
     NSDictionary *_accountTypesPerIdentifierCache;
+    BOOL _automaticCollectionOn;
     NSObject<OS_dispatch_group> *_logDispatchGroup;
     NotesDataCollectorLogger *_logger;
-    bool_automaticCollectionOn;
 }
 
 @property(retain) ACAccountStore * accountStore;
 @property(copy) NSDictionary * accountTypesPerIdentifierCache;
-@property(getter=isAutomaticCollectionOn) bool automaticCollectionOn;
+@property(getter=isAutomaticCollectionOn) BOOL automaticCollectionOn;
 @property(retain) NSObject<OS_dispatch_group> * logDispatchGroup;
 @property(retain) NotesDataCollectorLogger * logger;
 
@@ -31,26 +31,26 @@
 - (id)existingStoreForNote:(id)arg1;
 - (id)freshContext;
 - (id)init;
-- (bool)isAppleAccountIdentifier:(id)arg1;
-- (bool)isAutomaticCollectionOn;
+- (BOOL)isAppleAccountIdentifier:(id)arg1;
+- (BOOL)isAutomaticCollectionOn;
 - (void)logChanges:(id)arg1;
 - (void)logDeltaCountForChangedNotesInContext:(id)arg1;
 - (void)logDeltaCountForChangedStoresInContext:(id)arg1;
 - (id)logDispatchGroup;
 - (void)logNoteActivityType:(id)arg1;
 - (void)logNoteCountPerStore;
-- (void)logNoteCreationDeltaCountWithAppIdentifier:(long long)arg1;
-- (void)logNoteDeltaCount:(long long)arg1 forStoreType:(id)arg2;
-- (void)logNoteDeltaCount:(long long)arg1;
+- (void)logNoteCreationDeltaCountWithAppIdentifier:(int)arg1;
+- (void)logNoteDeltaCount:(int)arg1 forStoreType:(id)arg2;
+- (void)logNoteDeltaCount:(int)arg1;
 - (void)logStoreCount;
-- (void)logStoreDeltaCount:(long long)arg1 forType:(id)arg2;
+- (void)logStoreDeltaCount:(int)arg1 forType:(id)arg2;
 - (void)logTotalNoteCount;
 - (id)logger;
 - (void)noteContextWillSaveNotification:(id)arg1;
 - (void)performInitialCollectionIfNeeded;
 - (void)setAccountStore:(id)arg1;
 - (void)setAccountTypesPerIdentifierCache:(id)arg1;
-- (void)setAutomaticCollectionOn:(bool)arg1;
+- (void)setAutomaticCollectionOn:(BOOL)arg1;
 - (void)setLogDispatchGroup:(id)arg1;
 - (void)setLogger:(id)arg1;
 - (void)startAutomaticCollection;

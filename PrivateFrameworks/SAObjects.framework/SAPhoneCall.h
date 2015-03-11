@@ -9,8 +9,8 @@
 
 @property(retain) SAPersonAttribute * callRecipient;
 @property(copy) NSNumber * emergencyCall;
-@property bool faceTime;
-@property bool faceTimeAudio;
+@property BOOL faceTime;
+@property BOOL faceTimeAudio;
 
 + (id)call;
 + (id)callWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,13 +18,13 @@
 - (id)callRecipient;
 - (id)emergencyCall;
 - (id)encodedClassName;
-- (bool)faceTime;
-- (bool)faceTimeAudio;
+- (BOOL)faceTime;
+- (BOOL)faceTimeAudio;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setCallRecipient:(id)arg1;
 - (void)setEmergencyCall:(id)arg1;
-- (void)setFaceTime:(bool)arg1;
-- (void)setFaceTimeAudio:(bool)arg1;
+- (void)setFaceTime:(BOOL)arg1;
+- (void)setFaceTimeAudio:(BOOL)arg1;
 
 @end

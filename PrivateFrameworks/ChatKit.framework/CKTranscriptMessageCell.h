@@ -7,29 +7,29 @@
 @interface CKTranscriptMessageCell : CKTranscriptCell {
     CKBalloonImageView *_contactImageView;
     UIButton *_failureButton;
-    bool_wantsContactImageLayout;
+    BOOL _wantsContactImageLayout;
 }
 
 @property(retain) UIImage * contactImage;
 @property(retain) CKBalloonImageView * contactImageView;
-@property bool failed;
+@property BOOL failed;
 @property(retain) UIButton * failureButton;
-@property bool wantsContactImageLayout;
+@property BOOL wantsContactImageLayout;
 
-+ (double)failureButtonWidthPlusSpacing;
++ (float)failureButtonWidthPlusSpacing;
 
 - (id)contactImage;
 - (id)contactImageView;
 - (void)dealloc;
 - (id)description;
-- (bool)failed;
+- (BOOL)failed;
 - (id)failureButton;
 - (void)layoutSubviewsForContents;
 - (void)setContactImage:(id)arg1;
 - (void)setContactImageView:(id)arg1;
-- (void)setFailed:(bool)arg1;
+- (void)setFailed:(BOOL)arg1;
 - (void)setFailureButton:(id)arg1;
-- (void)setWantsContactImageLayout:(bool)arg1;
-- (bool)wantsContactImageLayout;
+- (void)setWantsContactImageLayout:(BOOL)arg1;
+- (BOOL)wantsContactImageLayout;
 
 @end

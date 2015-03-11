@@ -14,8 +14,8 @@
 }
 
 @property(retain,readonly) FBProcess * process;
-@property(readonly) bool processExited;
-@property(readonly) bool processLaunchFailed;
+@property(readonly) BOOL processExited;
+@property(readonly) BOOL processLaunchFailed;
 @property(retain,readonly) NSArray * updateSceneTransactions;
 @property(retain,readonly) FBWorkspace * workspace;
 
@@ -26,8 +26,8 @@
 - (void)dealloc;
 - (id)initWithWorkspace:(id)arg1;
 - (id)process;
-- (bool)processExited;
-- (bool)processLaunchFailed;
+- (BOOL)processExited;
+- (BOOL)processLaunchFailed;
 - (id)updateSceneTransactions;
 - (id)workspace;
 

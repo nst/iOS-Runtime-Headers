@@ -10,7 +10,7 @@
 
 @interface MusicAlbumsDetailTableHeaderView : UITableViewHeaderFooterView {
     MPUSlantedTextPlaceholderArtworkView *_artworkView;
-    double _cloudRightInset;
+    float _cloudRightInset;
     UILabel *_copyrightLabel;
     UILabel *_detailTextLabel;
     id _downloadActionBlock;
@@ -18,7 +18,7 @@
     MPUItemOfferButton *_itemOfferButton;
     id _shuffleActionBlock;
     UIButton *_shuffleButton;
-    long long _songCount;
+    int _songCount;
     UILabel *_titleLabel;
     UIView *_topCellSeparatorView;
     double _totalDuration;
@@ -26,21 +26,21 @@
 }
 
 @property(retain) UIImage * artworkImage;
-@property double cloudRightInset;
+@property float cloudRightInset;
 @property(copy) NSString * copyrightText;
 @property(copy) id downloadActionBlock;
-@property(getter=isDownloadable) bool downloadable;
+@property(getter=isDownloadable) BOOL downloadable;
 @property(copy) NSString * placeholderSubtitleText;
 @property(copy) NSString * placeholderTitleText;
-@property(getter=isShufflable) bool shufflable;
+@property(getter=isShufflable) BOOL shufflable;
 @property(copy) id shuffleActionBlock;
-@property(readonly) long long songCount;
+@property(readonly) int songCount;
 @property(copy) NSString * title;
 @property(readonly) double totalDuration;
 @property(copy) NSString * yearText;
 
-+ (struct CGSize { double x1; double x2; })artworkSize;
-+ (double)defaultHeight;
++ (struct CGSize { float x1; float x2; })artworkSize;
++ (float)defaultHeight;
 + (id)newAlbumsDetailTableHeaderViewForSizing;
 
 - (void).cxx_destruct;
@@ -48,34 +48,34 @@
 - (void)_itemOfferButtonAction:(id)arg1;
 - (void)_shuffleButtonAction:(id)arg1;
 - (id)artworkImage;
-- (double)backgroundTransitionProgress;
-- (double)cloudRightInset;
+- (float)backgroundTransitionProgress;
+- (float)cloudRightInset;
 - (id)copyrightText;
 - (void)dealloc;
 - (id)downloadActionBlock;
 - (id)initWithReuseIdentifier:(id)arg1;
-- (bool)isDownloadable;
-- (bool)isShufflable;
+- (BOOL)isDownloadable;
+- (BOOL)isShufflable;
 - (void)layoutSubviews;
 - (id)placeholderSubtitleText;
 - (id)placeholderTitleText;
 - (void)setArtworkImage:(id)arg1;
-- (void)setBackgroundTransitionProgress:(double)arg1;
-- (void)setCloudRightInset:(double)arg1;
+- (void)setBackgroundTransitionProgress:(float)arg1;
+- (void)setCloudRightInset:(float)arg1;
 - (void)setCopyrightText:(id)arg1;
 - (void)setDownloadActionBlock:(id)arg1;
-- (void)setDownloadable:(bool)arg1;
+- (void)setDownloadable:(BOOL)arg1;
 - (void)setPlaceholderSubtitleText:(id)arg1;
 - (void)setPlaceholderTitleText:(id)arg1;
-- (void)setShufflable:(bool)arg1;
+- (void)setShufflable:(BOOL)arg1;
 - (void)setShuffleActionBlock:(id)arg1;
-- (void)setSongCount:(long long)arg1 totalDuration:(double)arg2;
-- (void)setTableViewStyle:(long long)arg1;
+- (void)setSongCount:(int)arg1 totalDuration:(double)arg2;
+- (void)setTableViewStyle:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setYearText:(id)arg1;
 - (id)shuffleActionBlock;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (long long)songCount;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (int)songCount;
 - (id)title;
 - (double)totalDuration;
 - (id)yearText;

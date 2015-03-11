@@ -6,12 +6,15 @@
 
 @interface VMUProcessDescription : NSObject <VMULibraryLoadDelegate> {
     NSDictionary *_binaryImageHints;
+    BOOL _binaryImagePostProcessingComplete;
     NSMutableArray *_binaryImages;
     NSDictionary *_buildVersionDictionary;
     int _cpuType;
     NSDate *_date;
     unsigned long long _executableLoadAddress;
     NSString *_executablePath;
+    BOOL _executablePathNeedsCorrection;
+    BOOL _is64Bit;
     _VMULibraryLoadObserver *_loadUnloadObserver;
     NSDictionary *_lsApplicationInformation;
     struct mapped_memory_t { } *_mappedMemory;
@@ -21,18 +24,15 @@
     int _pid;
     int _ppid;
     NSString *_processName;
+    BOOL _processNameNeedsCorrection;
     NSArray *_sortedBinaryImages;
     unsigned int _task;
     NSArray *_unreadableBinaryImagePaths;
-    bool_binaryImagePostProcessingComplete;
-    bool_executablePathNeedsCorrection;
-    bool_is64Bit;
-    bool_processNameNeedsCorrection;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)parseBinaryImagesDescription:(id)arg1;
@@ -42,7 +42,7 @@
 - (id)_buildVersionDictionary;
 - (id)_bundleLock;
 - (id)_cpuTypeDescription;
-- (void)_libraryLoaded:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)_libraryLoaded:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
 - (id)_osVersionDictionary;
 - (id)_rangesOfBinaryImages:(id)arg1 forBacktraces:(id)arg2;
 - (id)_sanitizeVersion:(id)arg1;
@@ -60,9 +60,9 @@
 - (id)description;
 - (id)displayName;
 - (id)executablePath;
-- (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2 getBinariesList:(bool)arg3;
+- (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2 getBinariesList:(BOOL)arg3;
 - (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2;
-- (bool)isAppleApplication;
+- (BOOL)isAppleApplication;
 - (id)parentProcessName;
 - (int)pid;
 - (id)processDescriptionHeader;

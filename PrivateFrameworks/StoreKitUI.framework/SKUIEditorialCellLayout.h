@@ -6,21 +6,21 @@
 
 @interface SKUIEditorialCellLayout : SKUICellLayout <SKUIEditorialLinkViewDelegate> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInset;
-    double _linkSpacing;
+    float _linkSpacing;
     SKUIEditorialLinkView *_linkView;
     SKUITextBoxView *_textBoxView;
-    double _totalHeight;
+    float _totalHeight;
 }
 
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly) SKUITextBoxView * textBoxView;
 
@@ -28,8 +28,8 @@
 - (void)_initSKUIEditorialCellLayout;
 - (id)_linkView;
 - (id)_textBoxView;
-- (void)applyEditorialLayout:(id)arg1 withOrientation:(long long)arg2 expanded:(bool)arg3;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (void)applyEditorialLayout:(id)arg1 withOrientation:(int)arg2 expanded:(BOOL)arg3;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (void)dealloc;
 - (void)editorialLinkView:(id)arg1 didSelectLink:(id)arg2;
 - (id)initWithCollectionViewCell:(id)arg1;
@@ -37,7 +37,7 @@
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)textBoxView;
 
 @end

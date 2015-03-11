@@ -9,18 +9,18 @@
 @class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, _UIAsyncInvocation, _UIViewServiceDeputyManager;
 
 @interface _UIViewServiceSession : NSObject <NSXPCConnectionDelegate, _UIViewServiceDeputyManagerDelegate, _UIViewServiceViewControllerOperatorDelegate> {
+    BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
     NSXPCConnection *_connection;
     _UIViewServiceDeputyManager *_deputyManager;
     _UIAsyncInvocation *_invalidationInvocation;
     NSObject<OS_dispatch_queue> *_queue;
     id _terminationHandler;
-    bool__automatic_invalidation_invalidated;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(copy) id terminationHandler;
 
@@ -28,16 +28,16 @@
 
 - (int)__automatic_invalidation_logic;
 - (void)_invalidateUnconditionallyThen:(id)arg1;
-- (bool)_isDeallocating;
-- (bool)_tryRetain;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (void)dealloc;
 - (void)deputy:(id)arg1 didFailWithError:(id)arg2;
 - (void)deputyManager:(id)arg1 didUpdateExportedInterface:(id)arg2;
 - (void)registerDeputyClass:(Class)arg1 withConnectionHandler:(id)arg2;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 - (void)setTerminationHandler:(id)arg1;
 - (id)terminationHandler;
 - (void)unregisterDeputyClass:(Class)arg1;

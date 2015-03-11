@@ -3,15 +3,15 @@
  */
 
 @interface GKSegmentedSectionHeaderView : GKSegmentedSelectorView {
-    unsigned long long _sectionIndex;
+    unsigned int _sectionIndex;
 }
 
-@property unsigned long long sectionIndex;
+@property unsigned int sectionIndex;
 
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)prepareForReuse;
-- (unsigned long long)sectionIndex;
-- (void)setSectionIndex:(unsigned long long)arg1;
+- (unsigned int)sectionIndex;
+- (void)setSectionIndex:(unsigned int)arg1;
 - (void)setTitles:(id)arg1;
 
 @end

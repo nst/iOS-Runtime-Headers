@@ -6,23 +6,23 @@
 
 @interface EAWiFiUnconfiguredAccessoryBrowserManager : NSObject {
     NSMutableSet *__accessories;
+    BOOL __debugLog;
     EAWiFiUnconfiguredAccessory *_accessoryBeingConfigured;
-    long long _currentBrowserState;
+    int _currentBrowserState;
     <NSCopying> *_currentRequestIdentifier;
     NSExtension *_extension;
+    BOOL _isConfiguring;
     WACUIRemoteViewController *_remoteViewController;
     UIViewController *_targetViewController;
     NSSet *_unconfiguredAccessories;
-    bool__debugLog;
-    bool_isConfiguring;
 }
 
 @property(retain) NSMutableSet * _accessories;
 @property(retain) EAWiFiUnconfiguredAccessory * accessoryBeingConfigured;
-@property long long currentBrowserState;
+@property int currentBrowserState;
 @property(retain) <NSCopying> * currentRequestIdentifier;
 @property(retain) NSExtension * extension;
-@property bool isConfiguring;
+@property BOOL isConfiguring;
 @property(retain) WACUIRemoteViewController * remoteViewController;
 @property UIViewController * targetViewController;
 @property(copy,readonly) NSSet * unconfiguredAccessories;
@@ -35,20 +35,20 @@
 - (id)accessoryBeingConfigured;
 - (void)cancelActiveConfiguration;
 - (void)configureAccessory:(id)arg1 withConfigurationUIOnViewController:(id)arg2;
-- (long long)currentBrowserState;
+- (int)currentBrowserState;
 - (id)currentRequestIdentifier;
 - (void)didFindNewUnconfiguredAccessories:(id)arg1 andRemovedUnconfiguredAccessories:(id)arg2;
-- (void)dismissWithStatus:(int)arg1;
+- (void)dismissWithStatus:(long)arg1;
 - (id)extension;
 - (id)init;
-- (bool)isConfiguring;
+- (BOOL)isConfiguring;
 - (void)purgeAccessoriesSet;
 - (id)remoteViewController;
 - (void)setAccessoryBeingConfigured:(id)arg1;
-- (void)setCurrentBrowserState:(long long)arg1;
+- (void)setCurrentBrowserState:(int)arg1;
 - (void)setCurrentRequestIdentifier:(id)arg1;
 - (void)setExtension:(id)arg1;
-- (void)setIsConfiguring:(bool)arg1;
+- (void)setIsConfiguring:(BOOL)arg1;
 - (void)setRemoteViewController:(id)arg1;
 - (void)setTargetViewController:(id)arg1;
 - (void)set_accessories:(id)arg1;
@@ -57,7 +57,7 @@
 - (void)stopSearchingForUnconfiguredAccessories;
 - (id)targetViewController;
 - (id)unconfiguredAccessories;
-- (void)updateState:(long long)arg1;
+- (void)updateState:(int)arg1;
 - (void)wifiDidShutdown;
 
 @end

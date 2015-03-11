@@ -15,8 +15,8 @@
     PSSpecifier *_currentActionSpecifier;
     PSSpecifier *_emailSpecifier;
     NSString *_pendingAlias;
+    BOOL _validating;
     NSTimer *_validationTimeoutTimer;
-    bool_validating;
 }
 
 @property(copy) id alertHandler;
@@ -30,28 +30,28 @@
 - (void)_failValidationWithError:(id)arg1;
 - (void)_finishValidation;
 - (void)_handleValidationModeCancelled;
-- (bool)_phoneNumberInAliases:(id)arg1;
+- (BOOL)_phoneNumberInAliases:(id)arg1;
 - (void)_refreshEnabledStateOfAliasSpecifiers;
 - (void)_returnKeyPressed;
 - (id)_rightButtonItem;
-- (void)_setFieldsEnabled:(bool)arg1 animated:(bool)arg2;
+- (void)_setFieldsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setupEventHandlers;
-- (void)_showCheckMailButton:(bool)arg1 animated:(bool)arg2;
-- (void)_stopValidationModeAnimated:(bool)arg1;
+- (void)_showCheckMailButton:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_stopValidationModeAnimated:(BOOL)arg1;
 - (void)_updateControllerState;
 - (void)_updateUI;
 - (id)alertHandler;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)aliasSpecifiers;
 - (id)bundle;
 - (void)checkMailTapped:(id)arg1;
 - (void)dealloc;
 - (void)emailFieldEmptyStateChanged:(id)arg1 forSpecifier:(id)arg2;
-- (bool)emailFieldIsEmpty;
+- (BOOL)emailFieldIsEmpty;
 - (id)emailTextField;
 - (id)logName;
 - (void)nextTapped;
-- (bool)onlyLocalPhoneNumberSentinelAliasIsSelected;
+- (BOOL)onlyLocalPhoneNumberSentinelAliasIsSelected;
 - (id)pendingAlias;
 - (id)pendingAliasForSpecifier:(id)arg1;
 - (id)selectedAliases;
@@ -59,8 +59,8 @@
 - (void)setAliasSelected:(id)arg1;
 - (void)setPendingAlias:(id)arg1 forSpecifier:(id)arg2;
 - (void)setPendingAlias:(id)arg1;
-- (bool)shouldShowAllVettedAliases;
-- (bool)showActionSpecifier:(id)arg1 animated:(bool)arg2;
+- (BOOL)shouldShowAllVettedAliases;
+- (BOOL)showActionSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (id)specifierList;
 - (void)startValidationTimeoutTimer;
 - (void)stopValidationTimeoutTimer;
@@ -70,10 +70,10 @@
 - (double)timeoutDuration;
 - (id)titleString;
 - (void)validationTimeout:(id)arg1;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

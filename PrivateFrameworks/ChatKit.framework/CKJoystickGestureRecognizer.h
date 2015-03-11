@@ -6,8 +6,8 @@
 
 @interface CKJoystickGestureRecognizer : UILongPressGestureRecognizer {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     } _lastScreenLocation;
     double _lastTouchTime;
     CKJoystickGestureVelocitySample *_previousVelocitySample;
@@ -16,14 +16,14 @@
 
 + (id)joystickGestureRecognizer;
 
-- (struct CGPoint { double x1; double x2; })_convertVelocitySample:(id)arg1 fromScreenCoordinatesToView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })_convertVelocitySample:(id)arg1 fromScreenCoordinatesToView:(id)arg2;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)reset;
-- (void)setAllowableMovement:(double)arg1;
-- (void)setNumberOfTouchesRequired:(unsigned long long)arg1;
+- (void)setAllowableMovement:(float)arg1;
+- (void)setNumberOfTouchesRequired:(unsigned int)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (struct CGPoint { double x1; double x2; })velocityInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })velocityInView:(id)arg1;
 
 @end

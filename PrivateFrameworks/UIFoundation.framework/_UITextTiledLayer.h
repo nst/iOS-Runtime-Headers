@@ -7,32 +7,32 @@
 @interface _UITextTiledLayer : CALayer {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct { 
         unsigned int disableTiling : 1; 
         unsigned int ditchAllTiles : 1; 
         unsigned int suspendLayout : 4; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     } _gridBounds;
     NSMutableArray *_reusableTiles;
     } _tcTiledLayerFlags;
     } _tileSize;
 }
 
-@property struct CGSize { double x1; double x2; } tileSize;
-@property bool usesTiledLayers;
+@property struct CGSize { float x1; float x2; } tileSize;
+@property BOOL usesTiledLayers;
 
-- (void)_buildTilesForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_cullAndAddLayers:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_hideAndShowTiles:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 visibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)_buildTilesForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_cullAndAddLayers:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_hideAndShowTiles:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 visibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_validateTiles;
 - (void)dealloc;
 - (void)drawDirtyLayer:(id)arg1 intoContext:(struct CGContext { }*)arg2;
@@ -40,12 +40,12 @@
 - (void)layoutSublayers;
 - (void)renderInContext:(struct CGContext { }*)arg1;
 - (void)resumeTiling;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setTileSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setUsesTiledLayers:(bool)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTileSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setUsesTiledLayers:(BOOL)arg1;
 - (void)suspendTiling;
-- (struct CGSize { double x1; double x2; })tileSize;
-- (bool)usesTiledLayers;
+- (struct CGSize { float x1; float x2; })tileSize;
+- (BOOL)usesTiledLayers;
 
 @end

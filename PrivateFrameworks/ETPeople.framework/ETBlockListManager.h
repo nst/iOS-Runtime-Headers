@@ -6,10 +6,10 @@
 
 @interface ETBlockListManager : NSObject {
     NSMutableArray *_blocklist;
+    BOOL _needsReload;
     NSObject<OS_dispatch_queue> *_notificationQueue;
     int _notifyToken;
-    unsigned long long _postCount;
-    bool_needsReload;
+    unsigned int _postCount;
 }
 
 - (void).cxx_destruct;
@@ -17,13 +17,13 @@
 - (void)_load;
 - (void)_postChangeNotification;
 - (void)_save;
-- (bool)_writeToUserDefaults:(id)arg1;
+- (BOOL)_writeToUserDefaults:(id)arg1;
 - (void)addEntry:(id)arg1;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)entries;
 - (id)init;
-- (bool)isBlocked:(id)arg1;
+- (BOOL)isBlocked:(id)arg1;
 - (void)removeEntry:(id)arg1;
 
 @end

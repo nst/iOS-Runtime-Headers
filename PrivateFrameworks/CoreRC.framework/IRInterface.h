@@ -10,19 +10,19 @@
 
 @property(readonly) NSArray * buttons;
 @property <IRInterfaceDelegate> * delegate;
-@property(readonly) unsigned long long maxStoredCommands;
+@property(readonly) unsigned int maxStoredCommands;
 
 - (id)buttons;
-- (bool)clearAllStoredCommands:(id*)arg1;
+- (BOOL)clearAllStoredCommands:(id*)arg1;
 - (id)delegate;
-- (unsigned long long)maxStoredCommands;
+- (unsigned int)maxStoredCommands;
 - (void)receivedCommand:(id)arg1;
 - (void)receivedFrame:(id)arg1;
 - (void)receivedHIDEvent:(id)arg1;
-- (bool)resetAllButtons:(id*)arg1;
-- (bool)setCommand:(id)arg1 forButtonCombination:(id)arg2 delay:(double)arg3 error:(id*)arg4;
+- (BOOL)resetAllButtons:(id*)arg1;
+- (BOOL)setCommand:(id)arg1 forButtonCombination:(id)arg2 delay:(double)arg3 error:(id*)arg4;
 - (void)setDelegate:(id)arg1;
-- (bool)transmitCommand:(id)arg1 pressDuration:(double)arg2 error:(id*)arg3;
-- (bool)transmitFrame:(id)arg1 error:(id*)arg2;
+- (BOOL)transmitCommand:(id)arg1 pressDuration:(double)arg2 error:(id*)arg3;
+- (BOOL)transmitFrame:(id)arg1 error:(id*)arg2;
 
 @end

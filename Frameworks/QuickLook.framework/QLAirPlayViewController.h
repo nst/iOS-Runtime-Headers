@@ -5,7 +5,7 @@
 @interface QLAirPlayViewController : UIViewController {
 }
 
-- (bool)shouldAutorotate;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

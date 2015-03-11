@@ -15,7 +15,7 @@
 - (id)clientBoundCommands;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setClientBoundCommands:(id)arg1;
 
 @end

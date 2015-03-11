@@ -3,12 +3,12 @@
  */
 
 @interface _SFPersonImageView : UIImageView {
-    bool_overlay;
+    BOOL _overlay;
 }
 
-@property(getter=isOverlay) bool overlay;
+@property(getter=isOverlay) BOOL overlay;
 
-- (bool)isOverlay;
-- (void)setOverlay:(bool)arg1;
+- (BOOL)isOverlay;
+- (void)setOverlay:(BOOL)arg1;
 
 @end

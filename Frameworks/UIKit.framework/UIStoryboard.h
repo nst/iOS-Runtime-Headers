@@ -22,7 +22,7 @@
 + (id)storyboardWithName:(id)arg1 bundle:(id)arg2;
 
 - (id)bundle;
-- (bool)containsNibNamed:(id)arg1;
+- (BOOL)containsNibNamed:(id)arg1;
 - (void)dealloc;
 - (id)designatedEntryPointIdentifier;
 - (id)identifierForStringsFile;

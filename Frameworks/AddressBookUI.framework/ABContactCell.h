@@ -5,43 +5,43 @@
 @class ABCardGroupItem, CNContactStyle, NSArray;
 
 @interface ABContactCell : UITableViewCell {
+    BOOL _addedConstantsConstraints;
     ABCardGroupItem *_cardGroupItem;
     CNContactStyle *_contactStyle;
-    double _leftContentMargin;
-    double _rightContentMargin;
+    BOOL _hasBeenDisplayed;
+    float _leftContentMargin;
+    float _rightContentMargin;
     NSArray *_variableConstraints;
-    bool_addedConstantsConstraints;
-    bool_hasBeenDisplayed;
 }
 
 @property(retain) ABCardGroupItem * cardGroupItem;
 @property(retain) CNContactStyle * contactStyle;
-@property bool hasBeenDisplayed;
-@property double leftContentMargin;
-@property double rightContentMargin;
-@property bool showSeparator;
+@property BOOL hasBeenDisplayed;
+@property float leftContentMargin;
+@property float rightContentMargin;
+@property BOOL showSeparator;
 
 - (id)cardGroupItem;
 - (id)constantConstraints;
 - (id)contactStyle;
 - (void)dealloc;
-- (bool)hasBeenDisplayed;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-- (double)leftContentMargin;
-- (double)minCellHeight;
+- (BOOL)hasBeenDisplayed;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (float)leftContentMargin;
+- (float)minCellHeight;
 - (void)performAccessoryAction;
 - (void)performDefaultAction;
 - (void)prepareForReuse;
-- (double)rightContentMargin;
+- (float)rightContentMargin;
 - (void)setCardGroupItem:(id)arg1;
 - (void)setContactStyle:(id)arg1;
-- (void)setHasBeenDisplayed:(bool)arg1;
-- (void)setLeftContentMargin:(double)arg1;
-- (void)setRightContentMargin:(double)arg1;
-- (void)setShowSeparator:(bool)arg1;
-- (bool)shouldPerformAccessoryAction;
-- (bool)shouldPerformDefaultAction;
-- (bool)showSeparator;
+- (void)setHasBeenDisplayed:(BOOL)arg1;
+- (void)setLeftContentMargin:(float)arg1;
+- (void)setRightContentMargin:(float)arg1;
+- (void)setShowSeparator:(BOOL)arg1;
+- (BOOL)shouldPerformAccessoryAction;
+- (BOOL)shouldPerformDefaultAction;
+- (BOOL)showSeparator;
 - (void)updateConstraints;
 - (id)variableConstraints;
 

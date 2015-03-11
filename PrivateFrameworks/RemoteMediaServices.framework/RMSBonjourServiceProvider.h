@@ -14,11 +14,11 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <RMSServiceProviderDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSString * searchDomain;
 @property(readonly) NSString * searchScope;
 @property(readonly) NSString * searchType;
-@property(readonly) long long serviceDiscoverySource;
+@property(readonly) int serviceDiscoverySource;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,15 +33,15 @@
 - (id)init;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netService:(id)arg1 didUpdateTXTRecordData:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(bool)arg3;
-- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(bool)arg3;
+- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
+- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceDidResolveAddress:(id)arg1;
 - (id)searchDomain;
 - (id)searchScope;
 - (id)searchType;
-- (long long)serviceDiscoverySource;
-- (long long)serviceLegacyFlagsFromTXTDictionary:(id)arg1;
-- (long long)serviceTypeFromTXTDictionary:(id)arg1;
+- (int)serviceDiscoverySource;
+- (int)serviceLegacyFlagsFromTXTDictionary:(id)arg1;
+- (int)serviceTypeFromTXTDictionary:(id)arg1;
 - (void)setDelegate:(id)arg1;
 
 @end

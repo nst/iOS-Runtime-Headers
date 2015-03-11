@@ -15,11 +15,11 @@
 @property(readonly) unsigned int visibleItems;
 
 - (void).cxx_destruct;
-- (id)initWithEvent:(id)arg1 editable:(bool)arg2 platformStyle:(int)arg3;
-- (void)layoutForWidth:(double)arg1 position:(int)arg2;
+- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(int)arg3;
+- (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (id)titleView;
 - (int)twoValueCellStyle;
-- (bool)update;
+- (BOOL)update;
 - (id)value2View;
 - (id)valueView;
 - (unsigned int)visibleItems;

@@ -6,25 +6,25 @@
 
 @interface BBDataProviderProxy : NSObject <BBRemoteDataProviderClientProxy> {
     NSObject<OS_dispatch_queue> *_clientCalloutQueue;
+    BOOL _connected;
     <BBRemoteDataProvider> *_dataProvider;
+    BOOL _dataProviderDidLoad;
     BBDataProviderIdentity *_identity;
     NSObject<OS_dispatch_queue> *_proxyQueue;
     NSObject<OS_dispatch_queue> *_queue;
     <BBRemoteDataProviderServerProxy> *_serverProxy;
-    bool_connected;
-    bool_dataProviderDidLoad;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) BBDataProviderIdentity * identity;
 @property(readonly) Class superclass;
 
 - (void)_makeClientRequest:(id)arg1;
 - (void)_makeServerRequest:(id)arg1;
-- (void)addBulletin:(id)arg1 forDestinations:(unsigned long long)arg2;
-- (void)addBulletin:(id)arg1 interrupt:(bool)arg2;
+- (void)addBulletin:(id)arg1 forDestinations:(unsigned int)arg2;
+- (void)addBulletin:(id)arg1 interrupt:(BOOL)arg2;
 - (void)attachmentAspectRatioForRecordID:(id)arg1 completion:(id)arg2;
 - (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id)arg3;
 - (void)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2 completion:(id)arg3;
@@ -47,7 +47,7 @@
 - (void)setServerProxy:(id)arg1;
 - (void)updateClearedInfoWithHandler:(id)arg1;
 - (void)updateIdentity:(id)arg1;
-- (void)updateSectionInfoInCategory:(long long)arg1 withHandler:(id)arg2 completion:(id)arg3;
+- (void)updateSectionInfoInCategory:(int)arg1 withHandler:(id)arg2 completion:(id)arg3;
 - (void)updateSectionInfoWithHandler:(id)arg1 completion:(id)arg2;
 - (void)updateSectionInfoWithHandler:(id)arg1;
 - (void)withdrawBulletinWithPublisherBulletinID:(id)arg1;

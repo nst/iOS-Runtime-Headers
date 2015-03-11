@@ -6,35 +6,35 @@
 
 @interface SUSplitView : UIView {
     UIView *_firstView;
-    long long _layoutType;
-    double _minimumPaneSize;
+    int _layoutType;
+    float _minimumPaneSize;
     UIView *_secondView;
-    double _splitPosition;
-    bool_vertical;
+    float _splitPosition;
+    BOOL _vertical;
 }
 
 @property(retain) UIView * firstView;
-@property long long layoutType;
-@property double minimumPaneSize;
+@property int layoutType;
+@property float minimumPaneSize;
 @property(retain) UIView * secondView;
-@property double splitPosition;
-@property(getter=isVertical) bool vertical;
+@property float splitPosition;
+@property(getter=isVertical) BOOL vertical;
 
-- (double)_minimumPaneSizeForLayout;
+- (float)_minimumPaneSizeForLayout;
 - (void)dealloc;
 - (id)firstView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isVertical;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isVertical;
 - (void)layoutSubviews;
-- (long long)layoutType;
-- (double)minimumPaneSize;
+- (int)layoutType;
+- (float)minimumPaneSize;
 - (id)secondView;
 - (void)setFirstView:(id)arg1;
-- (void)setLayoutType:(long long)arg1;
-- (void)setMinimumPaneSize:(double)arg1;
+- (void)setLayoutType:(int)arg1;
+- (void)setMinimumPaneSize:(float)arg1;
 - (void)setSecondView:(id)arg1;
-- (void)setSplitPosition:(double)arg1;
-- (void)setVertical:(bool)arg1;
-- (double)splitPosition;
+- (void)setSplitPosition:(float)arg1;
+- (void)setVertical:(BOOL)arg1;
+- (float)splitPosition;
 
 @end

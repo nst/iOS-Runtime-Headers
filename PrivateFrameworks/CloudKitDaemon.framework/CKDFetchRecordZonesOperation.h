@@ -9,28 +9,28 @@
 @class NSArray;
 
 @interface CKDFetchRecordZonesOperation : CKDDatabaseOperation {
+    BOOL _ignorePCSFailures;
+    BOOL _isFetchAllRecordZonesOperation;
     id _recordZoneFetchedProgressBlock;
     NSArray *_recordZoneIDs;
-    bool_ignorePCSFailures;
-    bool_isFetchAllRecordZonesOperation;
 }
 
-@property bool ignorePCSFailures;
-@property bool isFetchAllRecordZonesOperation;
+@property BOOL ignorePCSFailures;
+@property BOOL isFetchAllRecordZonesOperation;
 @property(copy) id recordZoneFetchedProgressBlock;
 @property(retain) NSArray * recordZoneIDs;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordZoneFetch:(id)arg1 zoneID:(id)arg2 responseCode:(id)arg3;
-- (bool)ignorePCSFailures;
+- (BOOL)ignorePCSFailures;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
-- (bool)isFetchAllRecordZonesOperation;
+- (BOOL)isFetchAllRecordZonesOperation;
 - (void)main;
 - (id)recordZoneFetchedProgressBlock;
 - (id)recordZoneIDs;
-- (void)setIgnorePCSFailures:(bool)arg1;
-- (void)setIsFetchAllRecordZonesOperation:(bool)arg1;
+- (void)setIgnorePCSFailures:(BOOL)arg1;
+- (void)setIsFetchAllRecordZonesOperation:(BOOL)arg1;
 - (void)setRecordZoneFetchedProgressBlock:(id)arg1;
 - (void)setRecordZoneIDs:(id)arg1;
 

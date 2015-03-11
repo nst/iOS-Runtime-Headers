@@ -10,17 +10,17 @@
 
 @interface CKModifyRecordZonesOperation : CKDatabaseOperation {
     NSMutableArray *_deletedRecordZoneIDs;
+    BOOL _markZonesAsUserPurged;
     id _modifyRecordZonesCompletionBlock;
     NSMutableDictionary *_recordZoneErrors;
     NSArray *_recordZoneIDsToDelete;
     NSMutableDictionary *_recordZonesByZoneIDs;
     NSArray *_recordZonesToSave;
     NSMutableArray *_savedRecordZones;
-    bool_markZonesAsUserPurged;
 }
 
 @property(retain) NSMutableArray * deletedRecordZoneIDs;
-@property bool markZonesAsUserPurged;
+@property BOOL markZonesAsUserPurged;
 @property(copy) id modifyRecordZonesCompletionBlock;
 @property(retain) NSMutableDictionary * recordZoneErrors;
 @property(copy) NSArray * recordZoneIDsToDelete;
@@ -29,14 +29,14 @@
 @property(retain) NSMutableArray * savedRecordZones;
 
 - (void).cxx_destruct;
-- (bool)CKOperationShouldRun:(id*)arg1;
+- (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)deletedRecordZoneIDs;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;
 - (id)initWithRecordZonesToSave:(id)arg1 recordZoneIDsToDelete:(id)arg2;
-- (bool)markZonesAsUserPurged;
+- (BOOL)markZonesAsUserPurged;
 - (id)modifyRecordZonesCompletionBlock;
 - (void)performCKOperation;
 - (id)recordZoneErrors;
@@ -45,7 +45,7 @@
 - (id)recordZonesToSave;
 - (id)savedRecordZones;
 - (void)setDeletedRecordZoneIDs:(id)arg1;
-- (void)setMarkZonesAsUserPurged:(bool)arg1;
+- (void)setMarkZonesAsUserPurged:(BOOL)arg1;
 - (void)setModifyRecordZonesCompletionBlock:(id)arg1;
 - (void)setRecordZoneErrors:(id)arg1;
 - (void)setRecordZoneIDsToDelete:(id)arg1;

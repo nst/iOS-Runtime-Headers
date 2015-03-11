@@ -7,15 +7,15 @@
 @interface SFActivityScanner : NSObject <SFContinuityScanManagerObserver> {
     <SFActivityScannerDelegate> *_delegate;
     NSUUID *_identifier;
-    bool_receiving;
+    BOOL _receiving;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <SFActivityScannerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSUUID * identifier;
-@property bool receiving;
+@property BOOL receiving;
 @property(readonly) Class superclass;
 
 - (void)activityPayloadFromDeviceIdentifier:(id)arg1 forAdvertisementPayload:(id)arg2 withCompletionHandler:(id)arg3;
@@ -23,13 +23,13 @@
 - (id)delegate;
 - (id)identifier;
 - (id)init;
-- (bool)receiving;
+- (BOOL)receiving;
 - (void)scanManager:(id)arg1 foundDeviceWithDeviceIdentifier:(id)arg2;
 - (void)scanManager:(id)arg1 lostDeviceWithDeviceIdentifier:(id)arg2;
 - (void)scanManager:(id)arg1 receivedAdvertisement:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setReceiving:(bool)arg1;
+- (void)setReceiving:(BOOL)arg1;
 - (void)start;
 - (void)stop;
 

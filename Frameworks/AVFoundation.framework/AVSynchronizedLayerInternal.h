@@ -5,7 +5,7 @@
 @class AVPlayerItem, NSObject<OS_dispatch_queue>;
 
 @interface AVSynchronizedLayerInternal : NSObject {
-    boolisVisible;
+    BOOL isVisible;
     AVPlayerItem *playerItem;
     NSObject<OS_dispatch_queue> *serialQueue;
 }

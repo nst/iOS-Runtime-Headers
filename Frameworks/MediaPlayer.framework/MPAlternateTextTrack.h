@@ -7,27 +7,27 @@
 @interface MPAlternateTextTrack : MPAlternateTrack {
     NSLocale *_locale;
     NSString *_name;
-    long long _tag;
-    long long _type;
+    int _tag;
+    int _type;
 }
 
-@property(readonly) bool isInBand;
+@property(readonly) BOOL isInBand;
 @property(readonly) NSLocale * locale;
-@property long long tag;
-@property(readonly) long long type;
+@property int tag;
+@property(readonly) int type;
 
 + (id)autoTrack;
 + (id)offTrack;
 
 - (void).cxx_destruct;
 - (id)_displayNameForName:(id)arg1;
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)displayName;
-- (id)initWithType:(long long)arg1 name:(id)arg2 locale:(id)arg3;
-- (bool)isInBand;
+- (id)initWithType:(int)arg1 name:(id)arg2 locale:(id)arg3;
+- (BOOL)isInBand;
 - (id)locale;
-- (void)setTag:(long long)arg1;
-- (long long)tag;
-- (long long)type;
+- (void)setTag:(int)arg1;
+- (int)tag;
+- (int)type;
 
 @end

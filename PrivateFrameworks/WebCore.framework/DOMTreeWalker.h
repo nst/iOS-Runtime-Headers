@@ -8,14 +8,14 @@
 }
 
 @property(retain) DOMNode * currentNode;
-@property(readonly) bool expandEntityReferences;
+@property(readonly) BOOL expandEntityReferences;
 @property(readonly) <DOMNodeFilter> * filter;
 @property(readonly) DOMNode * root;
 @property(readonly) unsigned int whatToShow;
 
 - (id)currentNode;
 - (void)dealloc;
-- (bool)expandEntityReferences;
+- (BOOL)expandEntityReferences;
 - (id)filter;
 - (void)finalize;
 - (id)firstChild;

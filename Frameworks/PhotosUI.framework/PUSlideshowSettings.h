@@ -11,7 +11,7 @@
 }
 
 @property(retain) PUAirplayRoute * airplayRoute;
-@property(readonly) bool isOrigamiTransition;
+@property(readonly) BOOL isOrigamiTransition;
 @property(retain) MPMediaItemCollection * musicCollection;
 @property(copy) NSString * transition;
 
@@ -24,7 +24,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1 airplayRoute:(id)arg2;
-- (bool)isOrigamiTransition;
+- (BOOL)isOrigamiTransition;
 - (id)musicCollection;
 - (void)saveToPreferences;
 - (void)setAirplayRoute:(id)arg1;

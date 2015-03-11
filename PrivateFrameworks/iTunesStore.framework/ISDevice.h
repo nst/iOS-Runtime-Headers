@@ -5,7 +5,7 @@
 @class NSObject<OS_dispatch_queue>, NSString;
 
 @interface ISDevice : NSObject <ISSingleton> {
-    unsigned long long _daemonLaunchCount;
+    unsigned int _daemonLaunchCount;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_guid;
     double _lastFreeSpaceRequest;
@@ -16,7 +16,7 @@
 @property(readonly) NSString * deviceName;
 @property(readonly) NSString * guid;
 @property(readonly) NSString * hardwareName;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSString * serialNumber;
 @property(readonly) Class superclass;
 @property(readonly) NSString * systemName;
@@ -25,19 +25,19 @@
 + (id)sharedInstance;
 
 - (int)_deviceClass;
-- (bool)checkCapabilities:(id)arg1 withMismatches:(id*)arg2;
+- (BOOL)checkCapabilities:(id)arg1 withMismatches:(id*)arg2;
 - (id)copyProtocolConditionalContext;
 - (void)dealloc;
 - (id)deviceName;
 - (id)guid;
 - (id)hardwareName;
 - (id)init;
-- (bool)releasePowerAssertion:(id)arg1;
+- (BOOL)releasePowerAssertion:(id)arg1;
 - (void)requestFreeSpace:(unsigned long long)arg1 atPath:(id)arg2 withOptions:(id)arg3 completionBlock:(id)arg4;
 - (void)resetLocationAndPrivacy;
 - (id)serialNumber;
 - (id)supportedOfferDeviceForDevices:(id)arg1;
 - (id)systemName;
-- (bool)takePowerAssertion:(id)arg1;
+- (BOOL)takePowerAssertion:(id)arg1;
 
 @end

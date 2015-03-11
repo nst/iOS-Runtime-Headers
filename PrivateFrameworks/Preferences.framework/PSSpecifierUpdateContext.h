@@ -5,26 +5,26 @@
 @class NSDictionary;
 
 @interface PSSpecifierUpdateContext : NSObject <NSCopying> {
+    BOOL _animated;
+    BOOL _updateModelOnly;
     NSDictionary *_userInfo;
-    bool_animated;
-    bool_updateModelOnly;
 }
 
-@property bool animated;
-@property bool updateModelOnly;
+@property BOOL animated;
+@property BOOL updateModelOnly;
 @property(copy) NSDictionary * userInfo;
 
 + (id)context;
 + (id)contextWithUserInfo:(id)arg1;
 
-- (bool)animated;
+- (BOOL)animated;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)setAnimated:(bool)arg1;
-- (void)setUpdateModelOnly:(bool)arg1;
+- (void)setAnimated:(BOOL)arg1;
+- (void)setUpdateModelOnly:(BOOL)arg1;
 - (void)setUserInfo:(id)arg1;
-- (bool)updateModelOnly;
+- (BOOL)updateModelOnly;
 - (id)userInfo;
 
 @end

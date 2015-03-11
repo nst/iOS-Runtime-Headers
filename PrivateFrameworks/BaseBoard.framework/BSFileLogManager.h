@@ -11,7 +11,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)sharedInstance;
@@ -19,7 +19,7 @@
 - (void)_queue_addFileLoggersFromPlistAtURL:(id)arg1;
 - (void)_queue_addLogger:(id)arg1;
 - (void)_queue_enableOrDisableLoggerIfNecessary:(id)arg1;
-- (bool)_queue_isClass:(Class)arg1 aKindOfClass:(Class)arg2;
+- (BOOL)_queue_isClass:(Class)arg1 aKindOfClass:(Class)arg2;
 - (void)_queue_registerLogger:(id)arg1;
 - (void)dealloc;
 - (void)flush;

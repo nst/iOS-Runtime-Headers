@@ -3,26 +3,26 @@
  */
 
 @interface CUIKUserActivity : NSObject {
-    unsigned long long _type;
-    unsigned long long _version;
+    unsigned int _type;
+    unsigned int _version;
 }
 
-@property unsigned long long type;
-@property unsigned long long version;
+@property unsigned int type;
+@property unsigned int version;
 
-+ (double)_doubleFromDictionary:(id)arg1 key:(id)arg2 error:(bool*)arg3;
-+ (long long)_integerFromDictionary:(id)arg1 key:(id)arg2 error:(bool*)arg3;
-+ (id)_stringFromDictionary:(id)arg1 key:(id)arg2 error:(bool*)arg3;
-+ (unsigned long long)_typeFromDictionary:(id)arg1;
-+ (unsigned long long)_unsignedIntegerFromDictionary:(id)arg1 key:(id)arg2 error:(bool*)arg3;
++ (double)_doubleFromDictionary:(id)arg1 key:(id)arg2 error:(BOOL*)arg3;
++ (int)_integerFromDictionary:(id)arg1 key:(id)arg2 error:(BOOL*)arg3;
++ (id)_stringFromDictionary:(id)arg1 key:(id)arg2 error:(BOOL*)arg3;
++ (unsigned int)_typeFromDictionary:(id)arg1;
++ (unsigned int)_unsignedIntegerFromDictionary:(id)arg1 key:(id)arg2 error:(BOOL*)arg3;
 + (id)activityForDictionary:(id)arg1;
 
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithType:(unsigned long long)arg1;
-- (void)setType:(unsigned long long)arg1;
-- (void)setVersion:(unsigned long long)arg1;
-- (unsigned long long)type;
-- (unsigned long long)version;
+- (id)initWithType:(unsigned int)arg1;
+- (void)setType:(unsigned int)arg1;
+- (void)setVersion:(unsigned int)arg1;
+- (unsigned int)type;
+- (unsigned int)version;
 
 @end

@@ -15,6 +15,7 @@
     int _creator;
     NSString *_filenameOrAliasTarget;
     NSData *_finderTags;
+    BOOL _hiddenExt;
     BRiWorkSharingInfo *_iWorkSharingInfo;
     NSData *_lazyXattr;
     BOOL _mode;
@@ -22,7 +23,6 @@
     BOOL _state;
     BOOL _type;
     NSData *_xattrSignature;
-    bool_hiddenExt;
 }
 
 @property(readonly) NSString * aliasTargetContainerID;
@@ -34,7 +34,7 @@
 @property(readonly) NSString * displayName;
 @property(retain) NSString * filename;
 @property(retain) NSData * finderTags;
-@property(getter=isHiddenExt) bool hiddenExt;
+@property(getter=isHiddenExt) BOOL hiddenExt;
 @property(retain) BRiWorkSharingInfo * iWorkSharingInfo;
 @property(retain) NSData * lazyXattr;
 @property BOOL mode;
@@ -43,15 +43,15 @@
 @property BOOL type;
 @property(retain) NSData * xattrSignature;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)aliasTargetContainerID;
 - (id)aliasTargetItemID;
 - (id)aliasTargetZoneName;
 - (long long)birthtime;
-- (bool)check:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
-- (bool)checkStateWithItemID:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
+- (BOOL)check:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
+- (BOOL)checkStateWithItemID:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
 - (id)ckInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)creator;
@@ -66,10 +66,10 @@
 - (id)initFromResultSet:(id)arg1 pos:(int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStatInfo:(id)arg1;
-- (bool)isExecutable;
-- (bool)isHiddenExt;
-- (bool)isWritable;
-- (bool)isiWorkShareable;
+- (BOOL)isExecutable;
+- (BOOL)isHiddenExt;
+- (BOOL)isWritable;
+- (BOOL)isiWorkShareable;
 - (id)lazyXattr;
 - (BOOL)mode;
 - (id)parentID;
@@ -78,7 +78,7 @@
 - (void)setCreator:(int)arg1;
 - (void)setFilename:(id)arg1;
 - (void)setFinderTags:(id)arg1;
-- (void)setHiddenExt:(bool)arg1;
+- (void)setHiddenExt:(BOOL)arg1;
 - (void)setIWorkSharingInfo:(id)arg1;
 - (void)setLazyXattr:(id)arg1;
 - (void)setMode:(BOOL)arg1;

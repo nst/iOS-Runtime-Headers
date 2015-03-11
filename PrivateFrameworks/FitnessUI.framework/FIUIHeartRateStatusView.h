@@ -6,12 +6,12 @@
 
 @interface FIUIHeartRateStatusView : UIView {
     UIImageView *_animatingImageView;
+    BOOL _delayedStartMeasuringAnimation;
     UIImageView *_fullHeartImageView;
     double _heartRate;
     UIImageView *_reloadArrowView;
     UIImageView *_reloadOutlineView;
-    unsigned long long _state;
-    bool_delayedStartMeasuringAnimation;
+    unsigned int _state;
 }
 
 @property(retain) UIImageView * animatingImageView;
@@ -27,7 +27,7 @@
 - (void)appDidBecomeActive:(id)arg1;
 - (void)dealloc;
 - (id)fullHeartImageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 heartImageNameFormat:(id)arg2 frameRateDivider:(int)arg3 resourceBundle:(id)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 heartImageNameFormat:(id)arg2 frameRateDivider:(int)arg3 resourceBundle:(id)arg4;
 - (void)layoutSubviews;
 - (id)reloadArrowView;
 - (id)reloadOutlineView;
@@ -38,7 +38,7 @@
 - (void)setReloadArrowView:(id)arg1;
 - (void)setReloadHeartOutlineImage:(id)arg1;
 - (void)setReloadOutlineView:(id)arg1;
-- (void)setState:(unsigned long long)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setState:(unsigned int)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

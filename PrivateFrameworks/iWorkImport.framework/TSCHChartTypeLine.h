@@ -5,10 +5,10 @@
 @interface TSCHChartTypeLine : TSCH2DChartType {
 }
 
-- (id)defaultSeriesType:(unsigned long long)arg1;
+- (id)defaultSeriesType:(unsigned int)arg1;
 - (id)init;
-- (bool)supportsCategoryAxisPlotToEdgesOption;
-- (bool)supportsSeriesFill;
+- (BOOL)supportsCategoryAxisPlotToEdgesOption;
+- (BOOL)supportsSeriesFill;
 - (id)userInterfaceName;
 
 @end

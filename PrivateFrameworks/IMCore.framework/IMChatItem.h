@@ -8,14 +8,14 @@
     IMItem *_item;
 }
 
-@property(readonly) bool canDelete;
+@property(readonly) BOOL canDelete;
 
 - (id)_initWithItem:(id)arg1;
 - (id)_item;
 - (void)_setTimeAdded:(id)arg1;
 - (id)_timeAdded;
 - (id)_timeStale;
-- (bool)canDelete;
+- (BOOL)canDelete;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

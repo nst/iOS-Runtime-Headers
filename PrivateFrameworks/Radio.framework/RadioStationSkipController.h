@@ -8,15 +8,15 @@
     unsigned int _skipsEnabled : 2;
     NSObject<OS_dispatch_queue> *_accessSerialQueue;
     NSObject<OS_dispatch_source> *_availableSkipsInvalidationTimer;
-    unsigned long long _monitoringCount;
-    long long _numberOfAvailableSkips;
+    BOOL _hasValidSkipInvalidationDate;
+    unsigned int _monitoringCount;
+    int _numberOfAvailableSkips;
     NSDate *_skipInvalidationDate;
     RadioStation *_station;
-    bool_hasValidSkipInvalidationDate;
 }
 
-@property(readonly) long long numberOfAvailableSkips;
-@property(getter=hasSkipsEnabled,readonly) bool skipsEnabled;
+@property(readonly) int numberOfAvailableSkips;
+@property(getter=hasSkipsEnabled,readonly) BOOL skipsEnabled;
 @property(readonly) RadioStation * station;
 
 - (void).cxx_destruct;
@@ -28,10 +28,10 @@
 - (void)beginMonitoring;
 - (void)dealloc;
 - (void)endMonitoring;
-- (bool)hasSkipsEnabled;
+- (BOOL)hasSkipsEnabled;
 - (id)initWithStation:(id)arg1;
-- (bool)isMonitoring;
-- (long long)numberOfAvailableSkips;
+- (BOOL)isMonitoring;
+- (int)numberOfAvailableSkips;
 - (id)station;
 
 @end

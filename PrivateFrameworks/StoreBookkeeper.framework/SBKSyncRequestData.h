@@ -9,7 +9,7 @@
 
 @property(readonly) SBKSyncTransaction * transaction;
 
-- (bool)_needsConflictDetection;
+- (BOOL)_needsConflictDetection;
 - (id)_serializableConflictDetectionOrdinalForKey:(id)arg1;
 - (id)_serializableConflictDetectionValue;
 - (id)_serializableDeleteItemPayloadDictionaryForKey:(id)arg1;

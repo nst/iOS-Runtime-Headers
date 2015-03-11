@@ -6,38 +6,38 @@
 
 @interface TSPTemporaryObjectContextDelegate : NSObject <TSPFileCoordinatorDelegate, TSPObjectContextDelegate> {
     NSError *_error;
+    BOOL _ignoreDocumentSupport;
     NSURL *_packageURL;
     NSMutableSet *_persistenceWarnings;
-    bool_ignoreDocumentSupport;
 }
 
-@property(readonly) bool areNewExternalReferencesToDataAllowed;
+@property(readonly) BOOL areNewExternalReferencesToDataAllowed;
 @property(readonly) NSUUID * baseUUIDForObjectUUID;
-@property(readonly) bool canUpgradeDocumentSupport;
+@property(readonly) BOOL canUpgradeDocumentSupport;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSError * error;
 @property(readonly) <NSFilePresenter> * filePresenter;
-@property(readonly) unsigned long long hash;
-@property bool ignoreDocumentSupport;
-@property(readonly) bool isDocumentSupportTemporary;
+@property(readonly) unsigned int hash;
+@property BOOL ignoreDocumentSupport;
+@property(readonly) BOOL isDocumentSupportTemporary;
 @property(copy) NSURL * packageURL;
 @property(readonly) NSSet * persistenceWarnings;
-@property(readonly) bool preserveDocumentRevisionIdentifierForSequenceZero;
+@property(readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addPersistenceWarnings:(id)arg1;
 - (id)error;
-- (bool)ignoreDocumentSupport;
+- (BOOL)ignoreDocumentSupport;
 - (id)init;
 - (id)initWithPackageURL:(id)arg1;
 - (id)packageURL;
 - (void)performReadUsingAccessor:(id)arg1;
 - (id)persistenceWarnings;
-- (id)persistenceWarningsForData:(id)arg1 isReadable:(bool)arg2 isExternal:(bool)arg3;
+- (id)persistenceWarningsForData:(id)arg1 isReadable:(BOOL)arg2 isExternal:(BOOL)arg3;
 - (void)presentPersistenceError:(id)arg1;
-- (void)setIgnoreDocumentSupport:(bool)arg1;
+- (void)setIgnoreDocumentSupport:(BOOL)arg1;
 - (void)setPackageURL:(id)arg1;
 
 @end

@@ -6,23 +6,23 @@
 
 @interface TNHintCacheEntry : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
-    boolmIsValid;
+        float x; 
+        float y; 
     <TSDHint> *mHint;
+    BOOL mIsValid;
     } mOrigin;
 }
 
 @property(retain) <TSDHint> * hint;
-@property struct CGPoint { double x1; double x2; } origin;
-@property(getter=isValid) bool valid;
+@property struct CGPoint { float x1; float x2; } origin;
+@property(getter=isValid) BOOL valid;
 
 - (id)hint;
-- (id)initWithHint:(id)arg1 origin:(struct CGPoint { double x1; double x2; })arg2;
-- (bool)isValid;
-- (struct CGPoint { double x1; double x2; })origin;
+- (id)initWithHint:(id)arg1 origin:(struct CGPoint { float x1; float x2; })arg2;
+- (BOOL)isValid;
+- (struct CGPoint { float x1; float x2; })origin;
 - (void)setHint:(id)arg1;
-- (void)setOrigin:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setValid:(bool)arg1;
+- (void)setOrigin:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setValid:(BOOL)arg1;
 
 @end

@@ -6,7 +6,7 @@
 }
 
 - (id)nodeName;
-- (long long)nodeType;
+- (int)nodeType;
 - (id)nodeValue;
 - (void)setTextContent:(id)arg1;
 - (id)textContent;

@@ -6,18 +6,18 @@
 
 @interface _MPUMiniPlayerActionTableViewCell : UITableViewCell {
     UIImageView *_actionImageView;
-    bool_showsSeparator;
+    BOOL _showsSeparator;
 }
 
 @property(retain) UIImage * actionImage;
-@property bool showsSeparator;
+@property BOOL showsSeparator;
 
 - (void).cxx_destruct;
 - (id)actionImage;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setActionImage:(id)arg1;
-- (void)setShowsSeparator:(bool)arg1;
-- (bool)showsSeparator;
+- (void)setShowsSeparator:(BOOL)arg1;
+- (BOOL)showsSeparator;
 
 @end

@@ -21,7 +21,7 @@
 @property <GKDaemonProxyDataUpdateDelegate> * dataUpdateDelegate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property <GKDaemonProxyNetworkActivityIndicatorDelegate> * networkActivityIndicatorDelegate;
 @property(readonly) Class superclass;
 
@@ -67,7 +67,7 @@
 - (oneway void)challengeReceived:(id)arg1;
 - (oneway void)completedChallengeSelected:(id)arg1;
 - (oneway void)completedOptimisticAuthenticationWithResponse:(id)arg1 error:(id)arg2;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (id)connection;
 - (id)dataUpdateDelegate;
 - (void)dealloc;
@@ -77,7 +77,7 @@
 - (oneway void)getAccountNameWithHandler:(id)arg1;
 - (void)getAccountURLsWithHandler:(id)arg1;
 - (oneway void)getAuthenticatedPlayerIDWithHandler:(id)arg1;
-- (bool)hasAuthenticatedAccount;
+- (BOOL)hasAuthenticatedAccount;
 - (id)init;
 - (id)methodSignatureForProtocol:(id)arg1 selector:(SEL)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;
@@ -89,12 +89,12 @@
 - (void)resetServiceLookup;
 - (oneway void)respondedToNearbyInvite:(id)arg1;
 - (oneway void)scoreSelected:(id)arg1;
-- (oneway void)setBadgeCount:(unsigned long long)arg1 forType:(unsigned long long)arg2;
+- (oneway void)setBadgeCount:(unsigned int)arg1 forType:(unsigned int)arg2;
 - (void)setConnection:(id)arg1;
-- (oneway void)setCurrentGame:(id)arg1 serverEnvironment:(long long)arg2 reply:(id)arg3;
+- (oneway void)setCurrentGame:(id)arg1 serverEnvironment:(int)arg2 reply:(id)arg3;
 - (void)setDataUpdateDelegate:(id)arg1;
 - (void)setHostPID:(int)arg1;
-- (oneway void)setLocalPlayer:(id)arg1 authenticated:(bool)arg2 reply:(id)arg3;
+- (oneway void)setLocalPlayer:(id)arg1 authenticated:(BOOL)arg2 reply:(id)arg3;
 - (oneway void)setLogBits:(int)arg1;
 - (void)setNetworkActivityIndicatorDelegate:(id)arg1;
 - (oneway void)setPreferencesValues:(id)arg1;

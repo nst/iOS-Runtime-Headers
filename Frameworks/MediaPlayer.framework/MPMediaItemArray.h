@@ -11,7 +11,7 @@
 
 @property(retain,readonly) NSArray * items;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

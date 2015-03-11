@@ -12,8 +12,8 @@
 }
 
 @property long long anchor;
-@property bool hasAnchor;
-@property bool hasObjectType;
+@property BOOL hasAnchor;
+@property BOOL hasObjectType;
 @property int objectType;
 
 - (long long)anchor;
@@ -21,17 +21,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasAnchor;
-- (bool)hasObjectType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasAnchor;
+- (BOOL)hasObjectType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nanoSyncDescription;
 - (int)objectType;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAnchor:(long long)arg1;
-- (void)setHasAnchor:(bool)arg1;
-- (void)setHasObjectType:(bool)arg1;
+- (void)setHasAnchor:(BOOL)arg1;
+- (void)setHasObjectType:(BOOL)arg1;
 - (void)setObjectType:(int)arg1;
 - (void)writeTo:(id)arg1;
 

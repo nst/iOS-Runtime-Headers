@@ -14,8 +14,8 @@
 @property(readonly) ACAccount * affectedAccount;
 @property(copy) NSArray * affectedDataclasses;
 @property(readonly) ACDataclassAction * firstDestructiveAction;
-@property(readonly) bool hasDestructiveActions;
-@property(readonly) long long priorityIndex;
+@property(readonly) BOOL hasDestructiveActions;
+@property(readonly) int priorityIndex;
 
 - (void).cxx_destruct;
 - (id)actions;
@@ -24,11 +24,11 @@
 - (id)affectedDataclasses;
 - (id)descriptionForDataclassAction:(id)arg1;
 - (id)firstDestructiveAction;
-- (bool)hasActionOfType:(long long)arg1;
-- (bool)hasDestructiveActions;
+- (BOOL)hasActionOfType:(int)arg1;
+- (BOOL)hasDestructiveActions;
 - (id)initWithActions:(id)arg1 affectingAccount:(id)arg2;
 - (id)message;
-- (long long)priorityIndex;
+- (int)priorityIndex;
 - (void)setAffectedDataclasses:(id)arg1;
 - (id)showInViewController:(id)arg1;
 - (id)title;

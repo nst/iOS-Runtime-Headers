@@ -6,16 +6,16 @@
 
 @interface _PHFetchRequestWrapper : NSObject {
     NSFetchRequest *_fetchRequest;
-    unsigned long long _hash;
+    unsigned int _hash;
 }
 
 @property(readonly) NSFetchRequest * fetchRequest;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 
 - (void).cxx_destruct;
 - (id)fetchRequest;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithFetchRequest:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

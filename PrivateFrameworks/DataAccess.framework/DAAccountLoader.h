@@ -20,7 +20,7 @@
 
 - (void).cxx_destruct;
 - (void)_addAccountInfo:(id)arg1 forFrameworkNamed:(id)arg2;
-- (bool)_loadFrameworkAtSubpath:(id)arg1;
+- (BOOL)_loadFrameworkAtSubpath:(id)arg1;
 - (id)acAccountTypeToAccountDaemonBundleSubpath;
 - (id)acAccountTypeToAccountFrameworkSubpath;
 - (id)acAccountTypeToClassNames;

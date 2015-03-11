@@ -5,7 +5,7 @@
 @interface DevicePINKeypad : UIKeyboard {
 }
 
-- (bool)isMinimized;
-- (void)setMinimized:(bool)arg1;
+- (BOOL)isMinimized;
+- (void)setMinimized:(BOOL)arg1;
 
 @end

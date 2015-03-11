@@ -28,13 +28,13 @@
 @property(readonly) NSURL * url;
 
 + (id)notificationWithAliasItem:(id)arg1 targetItemNotification:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_setupFileIDsWithLocalItem:(id)arg1;
 - (void)_setupWithNonAliasItem:(id)arg1 diffs:(unsigned long long)arg2;
 - (id)aliasContainerID;
-- (bool)canMerge:(id)arg1;
+- (BOOL)canMerge:(id)arg1;
 - (Class)classForCoder;
 - (id)container;
 - (id)containerIDsWithReverseAliases;

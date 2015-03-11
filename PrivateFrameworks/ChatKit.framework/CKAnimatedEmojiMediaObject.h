@@ -6,14 +6,14 @@
 }
 
 + (id)UTITypes;
-+ (id)attachmentSummary:(unsigned long long)arg1;
-+ (bool)shouldScaleUpPreview;
-+ (bool)shouldShadePreview;
++ (id)attachmentSummary:(unsigned int)arg1;
++ (BOOL)shouldScaleUpPreview;
++ (BOOL)shouldShadePreview;
 
 - (id)backgroundColorOverride;
 - (id)pasteboardItem;
 - (Class)previewBalloonViewClass;
-- (id)previewForWidth:(double)arg1 orientation:(BOOL)arg2;
+- (id)previewForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)previewItemTitle;
 
 @end

@@ -24,7 +24,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <RemoteUIControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) id loadCompletion;
 @property(retain) RUILoader * loader;
 @property UINavigationController * navigationController;
@@ -34,10 +34,10 @@
 - (void).cxx_destruct;
 - (void)_didRemoveObjectModel:(id)arg1;
 - (void)_setHandlerWithKey:(id)arg1 forElementsMatching:(id)arg2 handler:(id)arg3;
-- (void)_willPresentObjectModel:(id)arg1 modally:(bool)arg2;
+- (void)_willPresentObjectModel:(id)arg1 modally:(BOOL)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (id)dismissObjectModelsAnimated:(bool)arg1 completion:(id)arg2;
+- (id)dismissObjectModelsAnimated:(BOOL)arg1 completion:(id)arg2;
 - (id)init;
 - (id)loadCompletion;
 - (void)loadData:(id)arg1 baseURL:(id)arg2;
@@ -51,13 +51,13 @@
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
 - (id)loader;
 - (id)navigationController;
-- (void)objectModel:(id)arg1 didNavigateBackFromController:(id)arg2 withGesture:(bool)arg3;
+- (void)objectModel:(id)arg1 didNavigateBackFromController:(id)arg2 withGesture:(BOOL)arg3;
 - (void)objectModel:(id)arg1 elementDidChange:(id)arg2;
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3 completion:(id)arg4;
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (id)parser:(id)arg1 createPageWithName:(id)arg2 attributes:(id)arg3;
-- (id)popObjectModelAnimated:(bool)arg1;
-- (void)pushObjectModel:(id)arg1 animated:(bool)arg2;
+- (id)popObjectModelAnimated:(BOOL)arg1;
+- (void)pushObjectModel:(id)arg1 animated:(BOOL)arg2;
 - (void)removeHandlerForKey:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHandlerForButtonName:(id)arg1 handler:(id)arg2;
@@ -68,7 +68,7 @@
 - (void)setLoader:(id)arg1;
 - (void)setNavigationController:(id)arg1;
 - (void)setUserAgentString:(id)arg1;
-- (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
+- (unsigned int)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 - (id)userAgentString;
 - (id)viewControllerForAlertPresentation;
 

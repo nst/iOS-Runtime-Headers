@@ -6,31 +6,31 @@
 
 @interface NEVPNProtocolIPSec : NEVPNProtocol {
     NEDNSSettings *_DNSSettings;
-    long long _authenticationMethod;
+    int _authenticationMethod;
     NSArray *_legacyExchangeMode;
     NSArray *_legacyProposals;
     NSString *_localIdentifier;
     NSString *_remoteIdentifier;
     NEKeychainItem *_sharedSecretKeychainItem;
-    bool_useExtendedAuthentication;
+    BOOL _useExtendedAuthentication;
 }
 
 @property(copy) NEDNSSettings * DNSSettings;
-@property long long authenticationMethod;
+@property int authenticationMethod;
 @property(copy) NSArray * legacyExchangeMode;
 @property(copy) NSArray * legacyProposals;
 @property(copy) NSString * localIdentifier;
 @property(copy) NSString * remoteIdentifier;
 @property(copy) NEKeychainItem * sharedSecretKeychainItem;
 @property(copy) NSData * sharedSecretReference;
-@property bool useExtendedAuthentication;
+@property BOOL useExtendedAuthentication;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)DNSSettings;
-- (long long)authenticationMethod;
-- (bool)checkValidityAndCollectErrors:(id)arg1;
+- (int)authenticationMethod;
+- (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct __SCNetworkInterface { }*)createInterface;
@@ -39,27 +39,27 @@
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(long long)arg1;
+- (id)initWithType:(int)arg1;
 - (id)legacyExchangeMode;
 - (id)legacyProposals;
 - (id)localIdentifier;
 - (void)migratePasswordsFromPreferences:(struct __SCPreferences { }*)arg1;
 - (id)remoteIdentifier;
-- (void)removeKeychainItemsInDomain:(long long)arg1;
-- (void)setAuthenticationMethod:(long long)arg1;
+- (void)removeKeychainItemsInDomain:(int)arg1;
+- (void)setAuthenticationMethod:(int)arg1;
 - (void)setDNSSettings:(id)arg1;
 - (void)setLegacyExchangeMode:(id)arg1;
 - (void)setLegacyProposals:(id)arg1;
 - (void)setLocalIdentifier:(id)arg1;
 - (void)setRemoteIdentifier:(id)arg1;
-- (bool)setServiceProtocolsInService:(struct __SCNetworkService { }*)arg1;
+- (BOOL)setServiceProtocolsInService:(struct __SCNetworkService { }*)arg1;
 - (void)setSharedSecretKeychainItem:(id)arg1;
 - (void)setSharedSecretReference:(id)arg1;
-- (void)setUseExtendedAuthentication:(bool)arg1;
+- (void)setUseExtendedAuthentication:(BOOL)arg1;
 - (id)sharedSecretKeychainItem;
 - (id)sharedSecretReference;
-- (void)syncWithKeychainInDomain:(long long)arg1 configuration:(id)arg2 suffix:(id)arg3;
-- (bool)updateWithServiceProtocolsFromService:(struct __SCNetworkService { }*)arg1;
-- (bool)useExtendedAuthentication;
+- (void)syncWithKeychainInDomain:(int)arg1 configuration:(id)arg2 suffix:(id)arg3;
+- (BOOL)updateWithServiceProtocolsFromService:(struct __SCNetworkService { }*)arg1;
+- (BOOL)useExtendedAuthentication;
 
 @end

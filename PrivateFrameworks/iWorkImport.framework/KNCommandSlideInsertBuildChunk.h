@@ -6,21 +6,21 @@
 
 @interface KNCommandSlideInsertBuildChunk : TSKCommand {
     KNBuildChunk *mBuildChunk;
-    unsigned long long mIndex;
+    unsigned int mIndex;
     KNAbstractSlide *mSlide;
 }
 
 @property(readonly) KNBuildChunk * buildChunk;
-@property(readonly) unsigned long long index;
+@property(readonly) unsigned int index;
 @property(readonly) KNAbstractSlide * slide;
 
 - (id)buildChunk;
 - (void)commit;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)index;
-- (id)initWithSlide:(id)arg1 buildChunk:(id)arg2 atIndex:(unsigned long long)arg3;
-- (bool)process;
+- (unsigned int)index;
+- (id)initWithSlide:(id)arg1 buildChunk:(id)arg2 atIndex:(unsigned int)arg3;
+- (BOOL)process;
 - (void)redo;
 - (id)slide;
 - (void)undo;

@@ -5,23 +5,23 @@
 @class <WPContinuityDelegate>, NSString, XPCClient;
 
 @interface WPContinuity : NSObject <XPCClientDelegate> {
-    long long _btBandwidthState;
+    int _btBandwidthState;
     XPCClient *_connection;
     <WPContinuityDelegate> *_delegate;
-    long long _state;
+    int _state;
 }
 
-@property long long btBandwidthState;
+@property int btBandwidthState;
 @property(retain) XPCClient * connection;
 @property(copy,readonly) NSString * debugDescription;
 @property <WPContinuityDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property long long state;
+@property(readonly) unsigned int hash;
+@property int state;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (long long)btBandwidthState;
+- (int)btBandwidthState;
 - (void)connectToPeer:(id)arg1;
 - (id)connection;
 - (void)connectionDied;
@@ -32,19 +32,19 @@
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)messageArrived:(id)arg1;
 - (void)sendData:(id)arg1 toPeer:(id)arg2;
-- (void)setBtBandwidthState:(long long)arg1;
+- (void)setBtBandwidthState:(int)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setState:(long long)arg1;
-- (void)startAdvertisingOfType:(long long)arg1 withData:(id)arg2;
-- (void)startScanningForType:(long long)arg1 withData:(id)arg2 peers:(id)arg3;
-- (void)startScanningForType:(long long)arg1 withData:(id)arg2;
+- (void)setState:(int)arg1;
+- (void)startAdvertisingOfType:(int)arg1 withData:(id)arg2;
+- (void)startScanningForType:(int)arg1 withData:(id)arg2 peers:(id)arg3;
+- (void)startScanningForType:(int)arg1 withData:(id)arg2;
 - (void)startTrackingPeer:(id)arg1;
-- (long long)state;
-- (void)stopAdvertisingOfType:(long long)arg1;
-- (void)stopScanningForType:(long long)arg1;
+- (int)state;
+- (void)stopAdvertisingOfType:(int)arg1;
+- (void)stopScanningForType:(int)arg1;
 - (void)stopTrackingPeer:(id)arg1;
-- (void)updateBluetoothBandwidthState:(long long)arg1;
-- (void)updateState:(long long)arg1;
+- (void)updateBluetoothBandwidthState:(int)arg1;
+- (void)updateState:(int)arg1;
 
 @end

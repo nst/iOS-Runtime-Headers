@@ -10,11 +10,11 @@
 @property(retain,readonly) NSArray * buttons;
 @property(retain,readonly) IKTextElement * descriptionText;
 @property(retain,readonly) IKTextElement * title;
-@property(readonly) unsigned long long type;
+@property(readonly) unsigned int type;
 
 - (id)buttons;
 - (id)descriptionText;
 - (id)title;
-- (unsigned long long)type;
+- (unsigned int)type;
 
 @end

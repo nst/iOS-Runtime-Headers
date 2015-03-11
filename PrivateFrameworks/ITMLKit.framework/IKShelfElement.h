@@ -7,12 +7,12 @@
 @interface IKShelfElement : IKCollectionElement {
 }
 
-@property(readonly) unsigned long long columnCount;
-@property(readonly) bool isCentered;
+@property(readonly) unsigned int columnCount;
+@property(readonly) BOOL isCentered;
 @property(readonly) NSString * rowHeight;
 
-- (unsigned long long)columnCount;
-- (bool)isCentered;
+- (unsigned int)columnCount;
+- (BOOL)isCentered;
 - (id)rowHeight;
 
 @end

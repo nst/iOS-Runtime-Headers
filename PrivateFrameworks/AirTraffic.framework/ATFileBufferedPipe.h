@@ -12,9 +12,9 @@
     NSPipe *_outputPipe;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_readSource;
+    BOOL _readyForData;
+    BOOL _readyToClose;
     NSObject<OS_dispatch_source> *_writeSource;
-    bool_readyForData;
-    bool_readyToClose;
 }
 
 @property(retain,readonly) NSFileHandle * fileHandleForReading;
@@ -24,8 +24,8 @@
 
 - (void).cxx_destruct;
 - (id)_bufferedWrite:(id)arg1;
-- (void)_inputReadyForReading:(unsigned long long)arg1;
-- (void)_outputReadyForWriting:(unsigned long long)arg1;
+- (void)_inputReadyForReading:(unsigned int)arg1;
+- (void)_outputReadyForWriting:(unsigned int)arg1;
 - (id)fileHandleForReading;
 - (id)fileHandleForWriting;
 - (id)init;

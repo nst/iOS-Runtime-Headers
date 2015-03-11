@@ -7,31 +7,31 @@
 @interface CKDPRecordRetrieveResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int clientVersionETagMatch : 1; 
+    BOOL _clientVersionETagMatch;
     } _has;
     CKDPRecord *_record;
-    bool_clientVersionETagMatch;
 }
 
-@property bool clientVersionETagMatch;
-@property bool hasClientVersionETagMatch;
-@property(readonly) bool hasRecord;
+@property BOOL clientVersionETagMatch;
+@property BOOL hasClientVersionETagMatch;
+@property(readonly) BOOL hasRecord;
 @property(retain) CKDPRecord * record;
 
 - (void).cxx_destruct;
-- (bool)clientVersionETagMatch;
+- (BOOL)clientVersionETagMatch;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasClientVersionETagMatch;
-- (bool)hasRecord;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasClientVersionETagMatch;
+- (BOOL)hasRecord;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)record;
-- (void)setClientVersionETagMatch:(bool)arg1;
-- (void)setHasClientVersionETagMatch:(bool)arg1;
+- (void)setClientVersionETagMatch:(BOOL)arg1;
+- (void)setHasClientVersionETagMatch:(BOOL)arg1;
 - (void)setRecord:(id)arg1;
 - (void)writeTo:(id)arg1;
 

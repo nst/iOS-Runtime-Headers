@@ -3,23 +3,23 @@
  */
 
 @interface SKUIBarRatingView : UIView {
-    long long _barRatingStyle;
-    long long _numberOfBars;
+    int _barRatingStyle;
+    int _numberOfBars;
     float _ratingValue;
 }
 
-@property long long barRatingStyle;
-@property long long numberOfBars;
+@property int barRatingStyle;
+@property int numberOfBars;
 @property float ratingValue;
 
-- (long long)barRatingStyle;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (long long)numberOfBars;
+- (int)barRatingStyle;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)numberOfBars;
 - (float)ratingValue;
-- (void)setBarRatingStyle:(long long)arg1;
-- (void)setNumberOfBars:(long long)arg1;
+- (void)setBarRatingStyle:(int)arg1;
+- (void)setNumberOfBars:(int)arg1;
 - (void)setRatingValue:(float)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

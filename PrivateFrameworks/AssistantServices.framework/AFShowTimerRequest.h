@@ -5,7 +5,7 @@
 @interface AFShowTimerRequest : AFSiriRequest {
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)createResponse;
 

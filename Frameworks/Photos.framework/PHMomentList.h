@@ -21,18 +21,18 @@
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1;
 + (id)identifierCode;
 + (id)managedEntityName;
-+ (bool)managedObjectSupportsTrashedState;
-+ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
++ (BOOL)managedObjectSupportsTrashedState;
++ (id)propertiesToFetchWithHint:(unsigned int)arg1;
 
 - (void).cxx_destruct;
 - (Class)changeRequestClass;
-- (bool)collectionHasFixedOrder;
-- (long long)collectionListType;
+- (BOOL)collectionHasFixedOrder;
+- (int)collectionListType;
 - (id)description;
 - (short)generationType;
 - (short)granularityLevel;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
-- (bool)isMeaningful;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
+- (BOOL)isMeaningful;
 - (id)representativeDate;
 - (int)sortIndex;
 

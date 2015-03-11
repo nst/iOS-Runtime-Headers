@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
-- (bool)start;
+- (BOOL)start;
 - (void)stop;
 
 @end

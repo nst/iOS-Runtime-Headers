@@ -8,6 +8,7 @@
     PKColor *_backgroundColor;
     PKImage *_backgroundImage;
     NSData *_backgroundImageEncoded;
+    BOOL _deletePending;
     PKColor *_foregroundColor;
     NSNumber *_groupID;
     NSDate *_ingestionDate;
@@ -19,15 +20,14 @@
     NSString *_passTypeIdentifier;
     PKPaymentApplication *_paymentApplication;
     NSDate *_relevantDate;
-    long long _style;
+    int _style;
     NSString *_uniqueID;
-    bool_deletePending;
 }
 
 @property(retain) PKColor * backgroundColor;
 @property(retain) PKImage * backgroundImage;
 @property(retain) NSData * backgroundImageEncoded;
-@property bool deletePending;
+@property BOOL deletePending;
 @property(retain) PKColor * foregroundColor;
 @property(retain) NSNumber * groupID;
 @property(retain) NSDate * ingestionDate;
@@ -39,30 +39,30 @@
 @property(retain) NSString * passTypeIdentifier;
 @property(retain) PKPaymentApplication * paymentApplication;
 @property(retain) NSDate * relevantDate;
-@property long long style;
+@property int style;
 @property(retain) NSString * uniqueID;
 
-+ (bool)isCachingEnabled;
-+ (void)setCachingEnabled:(bool)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)isCachingEnabled;
++ (void)setCachingEnabled:(BOOL)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)backgroundColor;
 - (id)backgroundImage;
 - (id)backgroundImageEncoded;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)deletePending;
+- (BOOL)deletePending;
 - (id)description;
 - (id)encodeAsData:(id)arg1;
 - (void)encodeObject:(id)arg1 asDataInCoder:(id)arg2 withKey:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)foregroundColor;
 - (id)groupID;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)ingestionDate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPass:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)labelColor;
 - (id)logoImage;
 - (id)logoImageEncoded;
@@ -75,7 +75,7 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBackgroundImageEncoded:(id)arg1;
-- (void)setDeletePending:(bool)arg1;
+- (void)setDeletePending:(BOOL)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setGroupID:(id)arg1;
 - (void)setIngestionDate:(id)arg1;
@@ -87,9 +87,9 @@
 - (void)setPassTypeIdentifier:(id)arg1;
 - (void)setPaymentApplication:(id)arg1;
 - (void)setRelevantDate:(id)arg1;
-- (void)setStyle:(long long)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setUniqueID:(id)arg1;
-- (long long)style;
+- (int)style;
 - (id)uniqueID;
 
 @end

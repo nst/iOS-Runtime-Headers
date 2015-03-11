@@ -5,21 +5,21 @@
 @class NSString;
 
 @interface HDSQLitePropertyComparisonPredicate : HDSQLitePredicate <NSCopying> {
-    long long _comparisonType;
+    int _comparisonType;
     NSString *_lhObjectPropertyName;
     NSString *_rhObjectPropertyName;
 }
 
-@property(readonly) long long comparisonType;
+@property(readonly) int comparisonType;
 @property(readonly) NSString * lhObjectPropertyName;
 @property(readonly) NSString * rhObjectPropertyName;
 
-+ (id)predicateWithLeftHandObjectPropertyName:(id)arg1 rightHandObjectPropertyName:(id)arg2 comparisonType:(long long)arg3;
++ (id)predicateWithLeftHandObjectPropertyName:(id)arg1 rightHandObjectPropertyName:(id)arg2 comparisonType:(int)arg3;
 
 - (void).cxx_destruct;
 - (id)SQLForEntityClass:(Class)arg1;
 - (id)_comparisonOperator;
-- (long long)comparisonType;
+- (int)comparisonType;
 - (id)description;
 - (id)lhObjectPropertyName;
 - (id)rhObjectPropertyName;

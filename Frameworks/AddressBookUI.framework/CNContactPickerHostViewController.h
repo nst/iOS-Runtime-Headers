@@ -17,12 +17,12 @@
 @property <CNContactPickerContentDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) NSExtension * extension;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)contactPickerExtension;
 + (id)contextForIdentifier:(id)arg1;
-+ (bool)getViewController:(id)arg1;
++ (BOOL)getViewController:(id)arg1;
 
 - (void).cxx_destruct;
 - (void*)addressBook;

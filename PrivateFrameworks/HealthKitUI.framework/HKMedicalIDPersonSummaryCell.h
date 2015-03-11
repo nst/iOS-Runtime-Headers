@@ -14,7 +14,7 @@
     UIFont *_nameLabelFont;
     UIImage *_picture;
     UIImageView *_pictureView;
-    bool_resetFormatters;
+    BOOL _resetFormatters;
 }
 
 @property(retain) NSDate * birthdate;
@@ -24,11 +24,11 @@
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_createConstraints;
-- (double)_scaledValueForSmallWidth:(double)arg1 bigWidth:(double)arg2;
+- (float)_scaledValueForSmallWidth:(float)arg1 bigWidth:(float)arg2;
 - (id)birthdate;
-- (double)calculatedHeight;
+- (float)calculatedHeight;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)localeDidChange:(id)arg1;
 - (id)name;
 - (id)picture;

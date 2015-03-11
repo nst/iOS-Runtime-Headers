@@ -5,7 +5,7 @@
 @interface TSCH3DRGBA8ResolvePipeline : TSCH3DRGBA8FramebufferAccumulationSubPipeline <TSCH3DFramebufferResolver> {
 }
 
-- (bool)prepareFramebuffer;
+- (BOOL)prepareFramebuffer;
 - (void)setupShaderEffects;
 - (void)updateShaderEffectsStates;
 

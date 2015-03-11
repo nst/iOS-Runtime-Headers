@@ -7,25 +7,25 @@
 @interface IMToSuperParserContext : IMXMLParserContext {
     NSString *_backgroundColor;
     NSMutableArray *_backgroundColorStack;
-    long long _baseWritingDirection;
+    int _baseWritingDirection;
     NSMutableAttributedString *_body;
-    unsigned long long _boldCount;
+    unsigned int _boldCount;
     NSMutableDictionary *_currentAttributes;
+    BOOL _didAddBodyAttributes;
     NSMutableArray *_fileTransferGUIDs;
     NSMutableArray *_fontFamilyStack;
     NSMutableArray *_fontSizeStack;
     NSString *_foregroundColor;
     NSMutableArray *_foregroundColorStack;
-    unsigned long long _italicCount;
+    unsigned int _italicCount;
     NSMutableArray *_linkStack;
-    unsigned long long _messagePartNumber;
-    unsigned long long _strikethroughCount;
-    unsigned long long _underlineCount;
-    bool_didAddBodyAttributes;
+    unsigned int _messagePartNumber;
+    unsigned int _strikethroughCount;
+    unsigned int _underlineCount;
 }
 
 @property(retain) NSString * backgroundColor;
-@property long long baseWritingDirection;
+@property int baseWritingDirection;
 @property(readonly) NSAttributedString * body;
 @property(retain) NSArray * fileTransferGUIDs;
 @property(retain) NSString * foregroundColor;
@@ -38,10 +38,10 @@
 - (void)_updateFontFamily;
 - (void)_updateFontSize;
 - (void)appendFileTransferWithGUID:(id)arg1;
-- (void)appendInlineImageWithGUID:(id)arg1 filename:(id)arg2 width:(long long)arg3 height:(long long)arg4 emoji:(long long)arg5;
+- (void)appendInlineImageWithGUID:(id)arg1 filename:(id)arg2 width:(int)arg3 height:(int)arg4 emoji:(int)arg5;
 - (void)appendString:(id)arg1;
 - (id)backgroundColor;
-- (long long)baseWritingDirection;
+- (int)baseWritingDirection;
 - (id)body;
 - (void)dealloc;
 - (void)decrementBoldCount;
@@ -68,7 +68,7 @@
 - (void)reset;
 - (id)resultsForLogging;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBaseWritingDirection:(long long)arg1;
+- (void)setBaseWritingDirection:(int)arg1;
 - (void)setFileTransferGUIDs:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 

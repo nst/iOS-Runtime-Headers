@@ -20,16 +20,16 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_enqueueAndSendEffectiveSectionInfo:(id)arg1;
 - (id)_overriddenSectionInfoForSectionID:(id)arg1;
-- (void)_sendEffectiveSectionInfo:(id)arg1 waitForAcknowledgement:(bool)arg2 withQueue:(id)arg3 andCompletion:(id)arg4;
+- (void)_sendEffectiveSectionInfo:(id)arg1 waitForAcknowledgement:(BOOL)arg2 withQueue:(id)arg3 andCompletion:(id)arg4;
 - (void)_sendEffectiveSectionInfo:(id)arg1;
-- (void)_sendSectionIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(long long)arg3 waitForAcknowledgement:(bool)arg4 withQueue:(id)arg5 andCompletion:(id)arg6;
-- (void)_sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(bool)arg3 withQueue:(id)arg4 andCompletion:(id)arg5;
+- (void)_sendSectionIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3 waitForAcknowledgement:(BOOL)arg4 withQueue:(id)arg5 andCompletion:(id)arg6;
+- (void)_sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(BOOL)arg3 withQueue:(id)arg4 andCompletion:(id)arg5;
 - (void)_updateAllBBSectionsWithCompletion:(id)arg1 withProgress:(id)arg2;
 - (void)dealloc;
 - (id)init;

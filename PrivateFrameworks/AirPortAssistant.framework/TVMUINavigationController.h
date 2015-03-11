@@ -5,6 +5,6 @@
 @interface TVMUINavigationController : UINavigationController {
 }
 
-- (bool)disablesAutomaticKeyboardDismissal;
+- (BOOL)disablesAutomaticKeyboardDismissal;
 
 @end

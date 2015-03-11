@@ -5,13 +5,13 @@
 @class NSCache, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface CMArchiveManager : NSObject <TCCancelDelegate> {
-    boolmAutoCommit;
-    boolmIsOnPhone;
-    boolmIsThumbnail;
-    double mCommitInterval;
+    BOOL mAutoCommit;
+    float mCommitInterval;
     NSMutableDictionary *mDrawableCache;
     int mHeight;
-    unsigned long long mPageCount;
+    BOOL mIsOnPhone;
+    BOOL mIsThumbnail;
+    unsigned int mPageCount;
     NSString *mPassphrase;
     NSMutableSet *mPausedPaths;
     NSString *mResourcePathPrefix;
@@ -21,7 +21,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * passphrase;
 @property(readonly) Class superclass;
 
@@ -45,27 +45,27 @@
 - (id)cssStylesheetString;
 - (void)dealloc;
 - (id)init;
-- (bool)isCancelled;
-- (bool)isOnPhone;
-- (bool)isProgressive;
-- (bool)isThumbnail;
-- (unsigned long long)pageCount;
+- (BOOL)isCancelled;
+- (BOOL)isOnPhone;
+- (BOOL)isProgressive;
+- (BOOL)isThumbnail;
+- (unsigned int)pageCount;
 - (id)passphrase;
 - (void)pauseProgressiveMappingOnPath:(id)arg1;
-- (bool)progressiveMappingIsPausedOnPath:(id)arg1;
+- (BOOL)progressiveMappingIsPausedOnPath:(id)arg1;
 - (void)pushCssToPath:(id)arg1;
 - (void)pushData:(id)arg1 toPath:(id)arg2;
 - (void)pushText:(id)arg1 toPath:(id)arg2;
-- (unsigned long long)resourceCount;
+- (unsigned int)resourceCount;
 - (id)resourcePathPrefix;
 - (void)restartProgressiveMappingOnPath:(id)arg1;
-- (void)setAutoCommit:(bool)arg1;
-- (void)setCommitInterval:(double)arg1;
+- (void)setAutoCommit:(BOOL)arg1;
+- (void)setCommitInterval:(float)arg1;
 - (void)setHTMLHeight:(int)arg1;
 - (void)setHTMLWidth:(int)arg1;
-- (void)setIsOnPhone:(bool)arg1;
-- (void)setIsThumbnail:(bool)arg1;
-- (void)setPageCount:(unsigned long long)arg1;
+- (void)setIsOnPhone:(BOOL)arg1;
+- (void)setIsThumbnail:(BOOL)arg1;
+- (void)setPageCount:(unsigned int)arg1;
 - (void)setPassphrase:(id)arg1;
 - (void)setResourcePathPrefix:(id)arg1;
 

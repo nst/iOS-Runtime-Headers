@@ -7,37 +7,37 @@
 @interface TSDAbstractGuide : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
-    boolmLocationInvalidated;
     struct CGColor { } *mGuideColor;
-    double mOffset;
+    BOOL mLocationInvalidated;
+    float mOffset;
     } mSnappingObjectFrame;
     TSDLayout *mSnappingObjectLayout;
 }
 
 @property struct CGColor { }* guideColor;
-@property double offset;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } snappingObjectFrame;
+@property float offset;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snappingObjectFrame;
 @property(retain) TSDLayout * snappingObjectLayout;
 
-- (bool)canBeSnappedToByEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (BOOL)canBeSnappedToByEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)dealloc;
 - (id)description;
 - (struct CGColor { }*)guideColor;
 - (id)init;
 - (id)layerWithICC:(id)arg1;
-- (double)offset;
+- (float)offset;
 - (void)setGuideColor:(struct CGColor { }*)arg1;
-- (void)setOffset:(double)arg1;
-- (void)setSnappingObjectFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setOffset:(float)arg1;
+- (void)setSnappingObjectFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSnappingObjectLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })snappingObjectFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snappingObjectFrame;
 - (id)snappingObjectLayout;
 
 @end

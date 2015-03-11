@@ -12,7 +12,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setValue:(float)arg1;
 - (float)value;
 

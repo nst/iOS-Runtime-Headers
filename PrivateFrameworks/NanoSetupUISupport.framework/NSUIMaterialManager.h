@@ -3,14 +3,14 @@
  */
 
 @interface NSUIMaterialManager : NSObject {
-    unsigned long long _material;
+    unsigned int _material;
 }
 
-@property unsigned long long material;
+@property unsigned int material;
 
 + (id)sharedManager;
 
-- (unsigned long long)material;
-- (void)setMaterial:(unsigned long long)arg1;
+- (unsigned int)material;
+- (void)setMaterial:(unsigned int)arg1;
 
 @end

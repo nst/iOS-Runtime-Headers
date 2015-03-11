@@ -3,12 +3,12 @@
  */
 
 @interface _MFGmailClientTokenAuthenticator : MFSASLAuthenticator {
-    bool_sentResponse;
+    BOOL _sentResponse;
 }
 
-- (bool)justSentPlainTextPassword;
+- (BOOL)justSentPlainTextPassword;
 - (id)responseForServerData:(id)arg1;
 - (id)saslName;
-- (bool)supportsInitialClientResponse;
+- (BOOL)supportsInitialClientResponse;
 
 @end

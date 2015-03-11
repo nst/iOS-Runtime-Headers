@@ -13,9 +13,9 @@
 @property(copy) NSString * targetAssetUuid;
 
 - (void)dealloc;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithResource:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)resource;
 - (void)setResource:(id)arg1;
 - (void)setTargetAssetUuid:(id)arg1;

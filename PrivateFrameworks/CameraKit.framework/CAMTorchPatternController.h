@@ -7,15 +7,15 @@
 @interface CAMTorchPatternController : NSObject {
     CAMTorchPattern *__currentPattern;
     CADisplayLink *__displayLink;
+    BOOL __performing;
     double __startTime;
     AVCaptureDevice *_captureDevice;
     double _stepInterval;
-    bool__performing;
 }
 
 @property(readonly) CAMTorchPattern * _currentPattern;
 @property(readonly) CADisplayLink * _displayLink;
-@property(setter=_setPerforming:) bool _performing;
+@property(setter=_setPerforming:) BOOL _performing;
 @property(readonly) double _startTime;
 @property(retain) AVCaptureDevice * captureDevice;
 @property double stepInterval;
@@ -24,9 +24,9 @@
 - (void)_applyTorchLevel:(float)arg1;
 - (id)_currentPattern;
 - (id)_displayLink;
-- (bool)_performing;
+- (BOOL)_performing;
 - (void)_resetTorchLevel;
-- (void)_setPerforming:(bool)arg1;
+- (void)_setPerforming:(BOOL)arg1;
 - (double)_startTime;
 - (void)blink;
 - (id)captureDevice;

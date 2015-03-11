@@ -7,9 +7,9 @@
 @interface SASStartSpeechRequest : SASStartSpeech {
 }
 
-@property bool eyesFree;
-@property bool handsFree;
-@property bool talkOnly;
+@property BOOL eyesFree;
+@property BOOL handsFree;
+@property BOOL talkOnly;
 @property(copy) NSDictionary * voiceTriggerEventInfo;
 @property(copy) NSArray * voiceTriggerPhrases;
 
@@ -17,15 +17,15 @@
 + (id)startSpeechRequestWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
-- (bool)eyesFree;
+- (BOOL)eyesFree;
 - (id)groupIdentifier;
-- (bool)handsFree;
-- (void)setEyesFree:(bool)arg1;
-- (void)setHandsFree:(bool)arg1;
-- (void)setTalkOnly:(bool)arg1;
+- (BOOL)handsFree;
+- (void)setEyesFree:(BOOL)arg1;
+- (void)setHandsFree:(BOOL)arg1;
+- (void)setTalkOnly:(BOOL)arg1;
 - (void)setVoiceTriggerEventInfo:(id)arg1;
 - (void)setVoiceTriggerPhrases:(id)arg1;
-- (bool)talkOnly;
+- (BOOL)talkOnly;
 - (id)voiceTriggerEventInfo;
 - (id)voiceTriggerPhrases;
 

@@ -11,7 +11,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) <TRXPCDaemonExportedInterface> * remoteDaemonProxy;
 @property(readonly) Class superclass;
 
@@ -19,7 +19,7 @@
 
 - (void).cxx_destruct;
 - (id)_init;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (void)dealloc;
 - (id)init;
 - (id)remoteDaemonProxy;

@@ -14,7 +14,7 @@
     NSString *_messageId;
     NSString *_messageIdHeader;
     NSString *_preview;
-    unsigned long long _status;
+    unsigned int _status;
     NSString *_subject;
     NSArray *_to;
 }
@@ -27,22 +27,22 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSString * from;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * messageId;
 @property(retain) NSString * messageIdHeader;
 @property(retain) NSString * preview;
-@property unsigned long long status;
+@property unsigned int status;
 @property(retain) NSString * subject;
 @property(readonly) Class superclass;
 @property(retain) NSArray * to;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountId;
-- (void)addState:(unsigned long long)arg1;
+- (void)addState:(unsigned int)arg1;
 - (id)cc;
-- (bool)checkState:(unsigned long long)arg1;
+- (BOOL)checkState:(unsigned int)arg1;
 - (id)conversationId;
 - (id)dateReceived;
 - (id)dateSent;
@@ -53,7 +53,7 @@
 - (id)messageId;
 - (id)messageIdHeader;
 - (id)preview;
-- (void)removeState:(unsigned long long)arg1;
+- (void)removeState:(unsigned int)arg1;
 - (void)setAccountId:(id)arg1;
 - (void)setCc:(id)arg1;
 - (void)setConversationId:(id)arg1;
@@ -63,10 +63,10 @@
 - (void)setMessageId:(id)arg1;
 - (void)setMessageIdHeader:(id)arg1;
 - (void)setPreview:(id)arg1;
-- (void)setStatus:(unsigned long long)arg1;
+- (void)setStatus:(unsigned int)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setTo:(id)arg1;
-- (unsigned long long)status;
+- (unsigned int)status;
 - (id)subject;
 - (id)to;
 

@@ -6,19 +6,19 @@
 
 @interface SKUILockupViewElement : SKUIViewElement {
     BOOL _enabled;
-    long long _lockupViewType;
+    int _lockupViewType;
 }
 
-@property(readonly) bool containsElementGroups;
+@property(readonly) BOOL containsElementGroups;
 @property(readonly) SKUIFullscreenImageViewElement * fullscreenImage;
-@property(readonly) long long lockupViewType;
+@property(readonly) int lockupViewType;
 
 - (id)applyUpdatesWithElement:(id)arg1;
-- (bool)containsElementGroups;
+- (BOOL)containsElementGroups;
 - (id)fullscreenImage;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (bool)isEnabled;
-- (long long)lockupViewType;
-- (long long)pageComponentType;
+- (BOOL)isEnabled;
+- (int)lockupViewType;
+- (int)pageComponentType;
 
 @end

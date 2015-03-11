@@ -20,6 +20,6 @@
 - (void)dealloc;
 - (void)dismiss;
 - (void)setContext:(id)arg1;
-- (void)setSticky:(bool)arg1;
+- (void)setSticky:(BOOL)arg1;
 
 @end

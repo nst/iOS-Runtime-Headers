@@ -8,18 +8,18 @@
     NCInteractiveNotificationHostViewController *_audioPlaybackViewController;
     BBBulletin *_bulletin;
     CKIMDBMessage *_message;
+    BOOL _playedSound;
     NCInteractiveNotificationHostViewController *_replyViewController;
-    bool_playedSound;
-    bool_showingImage;
+    BOOL _showingImage;
 }
 
 @property(retain) NCInteractiveNotificationHostViewController * audioPlaybackViewController;
 @property(retain) BBBulletin * bulletin;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NCInteractiveNotificationHostViewController * replyViewController;
-@property bool showingImage;
+@property BOOL showingImage;
 @property(readonly) Class superclass;
 
 + (int)lastMessageSenderID;
@@ -32,20 +32,20 @@
 - (id)address;
 - (id)alertImage;
 - (Class)alertSheetClass;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (bool)allowMenuButtonDismissal;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (BOOL)allowMenuButtonDismissal;
 - (id)audioPlaybackViewController;
 - (id)bulletin;
-- (void)configure:(bool)arg1 requirePasscodeForActions:(bool)arg2;
+- (void)configure:(BOOL)arg1 requirePasscodeForActions:(BOOL)arg2;
 - (void)dealloc;
 - (void)didDeactivateForReason:(int)arg1;
-- (bool)dismissOnLock;
+- (BOOL)dismissOnLock;
 - (void)hostViewController:(id)arg1 didDismissPresentedViewController:(id)arg2;
-- (void)hostViewController:(id)arg1 didEnable:(bool)arg2 actionAtIndex:(unsigned long long)arg3;
+- (void)hostViewController:(id)arg1 didEnable:(BOOL)arg2 actionAtIndex:(unsigned int)arg3;
 - (void)hostViewController:(id)arg1 didRequestDismissalWithContext:(id)arg2;
 - (void)hostViewControllerDidChangePreferredContentSize:(id)arg1;
-- (bool)isAudioPlaybackAlert;
-- (bool)isReplyAlert;
+- (BOOL)isAudioPlaybackAlert;
+- (BOOL)isReplyAlert;
 - (id)messageText;
 - (id)name;
 - (void)performUnlockAction;
@@ -55,10 +55,10 @@
 - (void)setBulletin:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setReplyViewController:(id)arg1;
-- (void)setShowingImage:(bool)arg1;
-- (bool)shouldHideSMSPreview;
-- (bool)showingImage;
+- (void)setShowingImage:(BOOL)arg1;
+- (BOOL)shouldHideSMSPreview;
+- (BOOL)showingImage;
 - (void)willPresentAlertView:(id)arg1;
-- (void)willRelockForButtonPress:(bool)arg1;
+- (void)willRelockForButtonPress:(BOOL)arg1;
 
 @end

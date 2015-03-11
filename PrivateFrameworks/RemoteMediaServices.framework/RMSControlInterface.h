@@ -3,22 +3,22 @@
  */
 
 @interface RMSControlInterface : NSObject {
-    bool_supportsDirectionalControl;
-    bool_supportsSpeakerSelection;
-    bool_supportsVolumeControl;
+    BOOL _supportsDirectionalControl;
+    BOOL _supportsSpeakerSelection;
+    BOOL _supportsVolumeControl;
 }
 
-@property bool supportsDirectionalControl;
-@property bool supportsSpeakerSelection;
-@property bool supportsVolumeControl;
+@property BOOL supportsDirectionalControl;
+@property BOOL supportsSpeakerSelection;
+@property BOOL supportsVolumeControl;
 
 - (id)initWithProtobuf:(id)arg1;
 - (id)protobuf;
-- (void)setSupportsDirectionalControl:(bool)arg1;
-- (void)setSupportsSpeakerSelection:(bool)arg1;
-- (void)setSupportsVolumeControl:(bool)arg1;
-- (bool)supportsDirectionalControl;
-- (bool)supportsSpeakerSelection;
-- (bool)supportsVolumeControl;
+- (void)setSupportsDirectionalControl:(BOOL)arg1;
+- (void)setSupportsSpeakerSelection:(BOOL)arg1;
+- (void)setSupportsVolumeControl:(BOOL)arg1;
+- (BOOL)supportsDirectionalControl;
+- (BOOL)supportsSpeakerSelection;
+- (BOOL)supportsVolumeControl;
 
 @end

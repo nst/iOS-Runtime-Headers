@@ -10,7 +10,7 @@
 @property unsigned int frameLength;
 @property(readonly) short** int16ChannelData;
 @property(readonly) int** int32ChannelData;
-@property(readonly) unsigned long long stride;
+@property(readonly) unsigned int stride;
 
 - (void)_initChannelPtrs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,6 +22,6 @@
 - (int**)int32ChannelData;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setFrameLength:(unsigned int)arg1;
-- (unsigned long long)stride;
+- (unsigned int)stride;
 
 @end

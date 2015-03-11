@@ -10,7 +10,7 @@
 @property(readonly) double catherine;
 @property(readonly) double confidence;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (double)catherine;
 - (double)confidence;

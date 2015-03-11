@@ -13,7 +13,7 @@
 + (id)assetWriterInputMetadataAdaptorWithAssetWriterInput:(id)arg1;
 + (void)initialize;
 
-- (bool)appendTimedMetadataGroup:(id)arg1;
+- (BOOL)appendTimedMetadataGroup:(id)arg1;
 - (id)assetWriterInput;
 - (void)dealloc;
 - (id)description;

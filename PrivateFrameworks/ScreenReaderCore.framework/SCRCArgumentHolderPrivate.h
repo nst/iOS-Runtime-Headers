@@ -8,7 +8,7 @@
     SEL action;
     NSString *argument;
     NSString *argumentDescription;
-    boolisRequired;
+    BOOL isRequired;
     NSNumber *option;
     id target;
 }

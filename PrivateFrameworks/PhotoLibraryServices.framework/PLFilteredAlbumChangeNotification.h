@@ -4,7 +4,7 @@
 
 @class NSIndexSet, NSString, PLAssetContainerChangeNotification, PLFilteredAlbum, PLIndexMapper;
 
-@interface PLFilteredAlbumChangeNotification : PLAssetContainerChangeNotification <PLDerivedNotification, PLIndexMapperDataSource> {
+@interface PLFilteredAlbumChangeNotification : PLAssetContainerChangeNotification <PLIndexMapperDataSource, PLDerivedNotification> {
     PLFilteredAlbum *_album;
     PLAssetContainerChangeNotification *_backingNotification;
     NSIndexSet *_filteredIndexes;
@@ -17,8 +17,8 @@
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(copy) NSIndexSet * filteredIndexes;
-@property(readonly) unsigned long long hash;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
+@property(readonly) unsigned int hash;
 @property(retain,readonly) PLIndexMapper * indexMapper;
 @property(readonly) Class superclass;
 @property(readonly) Class superclass;
@@ -28,21 +28,21 @@
 
 - (id)_changedObjects;
 - (id)_diffDescription;
-- (bool)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (id)album;
-- (bool)countDidChange;
+- (BOOL)countDidChange;
 - (void)dealloc;
 - (id)description;
 - (id)filteredIndexes;
 - (id)indexMapper;
 - (id)init;
 - (id)initWithFilteredAlbum:(id)arg1 priorChangeState:(id)arg2 albumChangeNotification:(id)arg3;
-- (bool)keyAssetDidChange;
+- (BOOL)keyAssetDidChange;
 - (id)object;
 - (void)setFilteredIndexes:(id)arg1;
-- (bool)shouldIncludeObjectAtIndex:(unsigned long long)arg1;
-- (bool)shouldReload;
-- (bool)titleDidChange;
+- (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
+- (BOOL)shouldReload;
+- (BOOL)titleDidChange;
 - (id)updatedFilteredIndexes;
 
 @end

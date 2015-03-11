@@ -22,6 +22,6 @@
 - (id)view;
 - (void)viewDidDraw;
 - (void)viewWillDraw;
-- (bool)wantsRedraw;
+- (BOOL)wantsRedraw;
 
 @end

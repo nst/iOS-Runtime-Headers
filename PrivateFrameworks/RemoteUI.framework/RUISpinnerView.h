@@ -22,7 +22,7 @@
 - (id)spinnerColor;
 - (id)spinnerView;
 - (void)viewDidLayout;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

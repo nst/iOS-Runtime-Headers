@@ -11,15 +11,15 @@
     NSString *_conversationId;
     unsigned int _fullSyncVersion;
     } _has;
-    bool_manuallyTriggered;
+    BOOL _manuallyTriggered;
 }
 
 @property(retain) NSString * conversationId;
 @property unsigned int fullSyncVersion;
-@property(readonly) bool hasConversationId;
-@property bool hasFullSyncVersion;
-@property bool hasManuallyTriggered;
-@property bool manuallyTriggered;
+@property(readonly) BOOL hasConversationId;
+@property BOOL hasFullSyncVersion;
+@property BOOL hasManuallyTriggered;
+@property BOOL manuallyTriggered;
 
 - (void).cxx_destruct;
 - (id)conversationId;
@@ -28,19 +28,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)fullSyncVersion;
-- (bool)hasConversationId;
-- (bool)hasFullSyncVersion;
-- (bool)hasManuallyTriggered;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (bool)manuallyTriggered;
+- (BOOL)hasConversationId;
+- (BOOL)hasFullSyncVersion;
+- (BOOL)hasManuallyTriggered;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)manuallyTriggered;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setConversationId:(id)arg1;
 - (void)setFullSyncVersion:(unsigned int)arg1;
-- (void)setHasFullSyncVersion:(bool)arg1;
-- (void)setHasManuallyTriggered:(bool)arg1;
-- (void)setManuallyTriggered:(bool)arg1;
+- (void)setHasFullSyncVersion:(BOOL)arg1;
+- (void)setHasManuallyTriggered:(BOOL)arg1;
+- (void)setManuallyTriggered:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

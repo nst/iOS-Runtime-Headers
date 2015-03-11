@@ -6,7 +6,7 @@
 
 @interface EKUIInviteesViewInvisibleInviteeStatusCell : UITableViewCell {
     UILabel *_commentLabel;
-    double _leftInset;
+    float _leftInset;
     NSLayoutConstraint *_minimumHeightConstraint;
     NSLayoutConstraint *_nameBaselineToTopConstraint;
     UILabel *_nameLabel;
@@ -15,7 +15,7 @@
 }
 
 @property(retain) UILabel * commentLabel;
-@property double leftInset;
+@property float leftInset;
 @property(retain) NSLayoutConstraint * minimumHeightConstraint;
 @property(retain) NSLayoutConstraint * nameBaselineToTopConstraint;
 @property(retain) UILabel * nameLabel;
@@ -27,15 +27,15 @@
 
 - (void).cxx_destruct;
 - (id)commentLabel;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-- (double)leftInset;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (float)leftInset;
 - (id)minimumHeightConstraint;
 - (id)nameBaselineToTopConstraint;
 - (id)nameLabel;
 - (id)persistentConstraints;
 - (id)removableConstraints;
 - (void)setCommentLabel:(id)arg1;
-- (void)setLeftInset:(double)arg1;
+- (void)setLeftInset:(float)arg1;
 - (void)setMinimumHeightConstraint:(id)arg1;
 - (void)setNameBaselineToTopConstraint:(id)arg1;
 - (void)setNameLabel:(id)arg1;

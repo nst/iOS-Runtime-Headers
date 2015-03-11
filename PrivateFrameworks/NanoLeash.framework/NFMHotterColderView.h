@@ -6,50 +6,50 @@
 
 @interface NFMHotterColderView : UIView {
     UIView *_babyBar;
-    long long _bufferIndex;
+    int _bufferIndex;
+    BOOL _freshBuffer;
     GraphView *_graph;
     UIView *_graphClippingView;
     NFMLeashManager *_leashManager;
     UIView *_mamaBar;
-    long long _miniBufferIndex;
+    int _miniBufferIndex;
     UIView *_papaBar;
     UILabel *_rssiStats;
-    bool_freshBuffer;
 }
 
 @property(retain) UIView * babyBar;
-@property long long bufferIndex;
-@property bool freshBuffer;
+@property int bufferIndex;
+@property BOOL freshBuffer;
 @property(retain) GraphView * graph;
 @property(retain) UIView * graphClippingView;
 @property(retain) NFMLeashManager * leashManager;
 @property(retain) UIView * mamaBar;
-@property long long miniBufferIndex;
+@property int miniBufferIndex;
 @property(retain) UIView * papaBar;
 @property(retain) UILabel * rssiStats;
 
 - (void).cxx_destruct;
 - (id)babyBar;
-- (long long)bufferIndex;
+- (int)bufferIndex;
 - (void)dealloc;
-- (bool)freshBuffer;
+- (BOOL)freshBuffer;
 - (id)graph;
 - (id)graphClippingView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)leashManager;
 - (id)mamaBar;
-- (long long)miniBufferIndex;
+- (int)miniBufferIndex;
 - (id)overrideService;
 - (id)papaBar;
 - (id)rssiStats;
 - (void)setBabyBar:(id)arg1;
-- (void)setBufferIndex:(long long)arg1;
-- (void)setFreshBuffer:(bool)arg1;
+- (void)setBufferIndex:(int)arg1;
+- (void)setFreshBuffer:(BOOL)arg1;
 - (void)setGraph:(id)arg1;
 - (void)setGraphClippingView:(id)arg1;
 - (void)setLeashManager:(id)arg1;
 - (void)setMamaBar:(id)arg1;
-- (void)setMiniBufferIndex:(long long)arg1;
+- (void)setMiniBufferIndex:(int)arg1;
 - (void)setPapaBar:(id)arg1;
 - (void)setRssiStats:(id)arg1;
 

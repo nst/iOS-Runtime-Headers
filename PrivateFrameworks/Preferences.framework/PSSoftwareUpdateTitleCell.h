@@ -6,37 +6,37 @@
 
 @interface PSSoftwareUpdateTitleCell : PSTableCell <UIWebViewDelegate> {
     PSSoftwareUpdateAnimatedIcon *_animatedGearView;
+    BOOL _animatingGearView;
     UIProgressView *_progressBar;
     int _progressStyle;
     PSWebContainerView *_releaseNotesSummaryView;
     UILabel *_updateStatusLabel;
-    bool_animatingGearView;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) UIImage * gearBackgroundImage;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) UIProgressView * progressBar;
 @property int progressDisplayStyle;
 @property(retain) PSWebContainerView * releaseNotesSummaryView;
 @property(readonly) Class superclass;
 @property(retain) UILabel * updateStatusLabel;
 
-+ (long long)cellStyle;
++ (int)cellStyle;
 
-- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;
 - (void)didMoveToSuperview;
 - (id)gearBackgroundImage;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)layoutSubviews;
-- (id)newSoftwareUpdateAnimatedIconWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (double)preferredHeightWithTable:(id)arg1;
+- (id)newSoftwareUpdateAnimatedIconWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)preferredHeightWithTable:(id)arg1;
 - (id)progressBar;
 - (int)progressDisplayStyle;
 - (id)releaseNotesSummaryView;
-- (void)setAnimatingGearView:(bool)arg1;
+- (void)setAnimatingGearView:(BOOL)arg1;
 - (void)setProgress:(float)arg1;
 - (void)setProgressBar:(id)arg1;
 - (void)setProgressDisplayStyle:(int)arg1;
@@ -46,6 +46,6 @@
 - (void)setUpdateStatusLabel:(id)arg1;
 - (void)sizeToFitWithTable:(id)arg1;
 - (id)updateStatusLabel;
-- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 
 @end

@@ -18,10 +18,10 @@
 
 @property(retain) NSString * artworkIdentifier;
 @property float compressionQuality;
-@property(readonly) bool hasArtworkIdentifier;
-@property bool hasCompressionQuality;
-@property bool hasHeight;
-@property bool hasWidth;
+@property(readonly) BOOL hasArtworkIdentifier;
+@property BOOL hasCompressionQuality;
+@property BOOL hasHeight;
+@property BOOL hasWidth;
 @property unsigned int height;
 @property unsigned int width;
 
@@ -32,20 +32,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasArtworkIdentifier;
-- (bool)hasCompressionQuality;
-- (bool)hasHeight;
-- (bool)hasWidth;
-- (unsigned long long)hash;
+- (BOOL)hasArtworkIdentifier;
+- (BOOL)hasCompressionQuality;
+- (BOOL)hasHeight;
+- (BOOL)hasWidth;
+- (unsigned int)hash;
 - (unsigned int)height;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setArtworkIdentifier:(id)arg1;
 - (void)setCompressionQuality:(float)arg1;
-- (void)setHasCompressionQuality:(bool)arg1;
-- (void)setHasHeight:(bool)arg1;
-- (void)setHasWidth:(bool)arg1;
+- (void)setHasCompressionQuality:(BOOL)arg1;
+- (void)setHasHeight:(BOOL)arg1;
+- (void)setHasWidth:(BOOL)arg1;
 - (void)setHeight:(unsigned int)arg1;
 - (void)setWidth:(unsigned int)arg1;
 - (unsigned int)width;

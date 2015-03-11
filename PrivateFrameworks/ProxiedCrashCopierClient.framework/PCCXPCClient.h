@@ -6,6 +6,6 @@
 }
 
 - (id)connection;
-- (void)requestLogTransferFor:(long long)arg1 onCompletion:(id)arg2;
+- (void)requestLogTransferFor:(int)arg1 onCompletion:(id)arg2;
 
 @end

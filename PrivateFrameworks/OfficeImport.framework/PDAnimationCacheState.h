@@ -10,7 +10,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (bool)isValid:(id)arg1;
+- (BOOL)isValid:(id)arg1;
 - (id)mediaNodeMap;
 
 @end

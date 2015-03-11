@@ -11,9 +11,9 @@
 - (void).cxx_destruct;
 - (id)_hashAttachment:(id)arg1 forSectionID:(id)arg2 matchID:(id)arg3;
 - (void)cacheAttachment:(id)arg1 forSectionID:(id)arg2 matchID:(id)arg3;
-- (bool)hasAttachmentForSectionID:(id)arg1 matchID:(id)arg2;
+- (BOOL)hasAttachmentForSectionID:(id)arg1 matchID:(id)arg2;
 - (id)init;
-- (bool)isAttachmentCached:(id)arg1 forSectionID:(id)arg2 matchID:(id)arg3;
+- (BOOL)isAttachmentCached:(id)arg1 forSectionID:(id)arg2 matchID:(id)arg3;
 - (void)removeAttachmentForSectionID:(id)arg1 matchID:(id)arg2;
 
 @end

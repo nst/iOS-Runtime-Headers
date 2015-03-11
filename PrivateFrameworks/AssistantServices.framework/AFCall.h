@@ -7,10 +7,10 @@
 @interface AFCall : AFSiriModelObject {
     AFContactAddress *_initiatorAddress;
     AFContactAddress *_recipientAddress;
-    long long _service;
+    int _service;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aceContextObjectValue;
@@ -19,9 +19,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initiatorAddress;
 - (id)recipientAddress;
-- (long long)service;
+- (int)service;
 - (void)setInitiatorAddress:(id)arg1;
 - (void)setRecipientAddress:(id)arg1;
-- (void)setService:(long long)arg1;
+- (void)setService:(int)arg1;
 
 @end

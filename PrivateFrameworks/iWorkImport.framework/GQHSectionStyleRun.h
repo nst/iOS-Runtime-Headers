@@ -6,8 +6,8 @@
 
 @interface GQHSectionStyleRun : NSObject {
     struct { 
-        long long location; 
-        long long length; 
+        int location; 
+        int length; 
     } mPageRange;
     GQDSStyle *mStyle;
 }

@@ -6,30 +6,30 @@
 
 @interface NMSIncomingRequest : NSObject <NMSObfuscatableDescriptionProviding> {
     NSData *_data;
+    BOOL _expectsResponse;
     NSString *_idsIdentifier;
     NMSMessageCenter *_messageCenter;
     unsigned short _messageID;
     id _pbRequest;
-    unsigned long long _priority;
+    unsigned int _priority;
     NMSOutgoingResponse *_response;
-    bool_expectsResponse;
 }
 
 @property(retain) NSData * data;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool expectsResponse;
-@property(readonly) unsigned long long hash;
+@property BOOL expectsResponse;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * idsIdentifier;
 @property NMSMessageCenter * messageCenter;
 @property unsigned short messageID;
 @property(retain) id pbRequest;
-@property unsigned long long priority;
+@property unsigned int priority;
 @property(retain) NMSOutgoingResponse * response;
 @property(readonly) Class superclass;
 
-+ (bool)allowsUnrepliedRequestsForUnitTesting;
-+ (void)setAllowsUnrepliedRequestsForUnitTesting:(bool)arg1;
++ (BOOL)allowsUnrepliedRequestsForUnitTesting;
++ (void)setAllowsUnrepliedRequestsForUnitTesting:(BOOL)arg1;
 
 - (void).cxx_destruct;
 - (id)CPObfuscatedDescriptionObject;
@@ -37,20 +37,20 @@
 - (id)data;
 - (void)dealloc;
 - (id)description;
-- (bool)expectsResponse;
+- (BOOL)expectsResponse;
 - (id)idsIdentifier;
 - (id)messageCenter;
 - (unsigned short)messageID;
 - (id)pbRequest;
-- (unsigned long long)priority;
+- (unsigned int)priority;
 - (id)response;
 - (void)setData:(id)arg1;
-- (void)setExpectsResponse:(bool)arg1;
+- (void)setExpectsResponse:(BOOL)arg1;
 - (void)setIdsIdentifier:(id)arg1;
 - (void)setMessageCenter:(id)arg1;
 - (void)setMessageID:(unsigned short)arg1;
 - (void)setPbRequest:(id)arg1;
-- (void)setPriority:(unsigned long long)arg1;
+- (void)setPriority:(unsigned int)arg1;
 - (void)setResponse:(id)arg1;
 
 @end

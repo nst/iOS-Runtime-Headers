@@ -9,15 +9,15 @@
     int _handlerType;
     unsigned int _identifier;
     struct __CFRunLoopSource { } *_invalidationSource;
+    BOOL _isConnectionStarted;
     unsigned int _pingPort;
     struct __CFRunLoopSource { } *_pingSource;
-    bool_isConnectionStarted;
 }
 
 + (void)_addConnectionToRunLoop:(id)arg1;
 + (void)_configServer;
 + (void)_createConnectionRunLoop;
-+ (void)_unconfigServerAndRetry:(bool)arg1;
++ (void)_unconfigServerAndRetry:(BOOL)arg1;
 + (void)initialize;
 
 - (void)_ping;

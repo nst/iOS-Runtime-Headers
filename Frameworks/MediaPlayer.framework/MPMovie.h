@@ -6,26 +6,26 @@
 
 @interface MPMovie : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     double _endPlaybackTime;
+    BOOL _explicitlySetMovieSourceType;
     MPAVItem *_item;
     double _lastKnownDuration;
     } _lastKnownNaturalSize;
-    unsigned long long _lastKnownType;
-    long long _movieSourceType;
+    unsigned int _lastKnownType;
+    BOOL _movieIsUnplayable;
+    int _movieSourceType;
     double _startPlaybackTime;
     NSURL *_url;
-    bool_explicitlySetMovieSourceType;
-    bool_movieIsUnplayable;
 }
 
 @property(readonly) AVAsset * asset;
 @property(readonly) double duration;
 @property double endPlaybackTime;
-@property(readonly) unsigned long long movieMediaTypes;
-@property long long movieSourceType;
-@property(readonly) struct CGSize { double x1; double x2; } naturalSize;
+@property(readonly) unsigned int movieMediaTypes;
+@property int movieSourceType;
+@property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property(readonly) double playableDuration;
 @property(readonly) AVPlayerItem * playerItem;
 @property double startPlaybackTime;
@@ -49,13 +49,13 @@
 - (void)dealloc;
 - (double)duration;
 - (double)endPlaybackTime;
-- (unsigned long long)movieMediaTypes;
-- (long long)movieSourceType;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (unsigned int)movieMediaTypes;
+- (int)movieSourceType;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (double)playableDuration;
 - (id)playerItem;
 - (void)setEndPlaybackTime:(double)arg1;
-- (void)setMovieSourceType:(long long)arg1;
+- (void)setMovieSourceType:(int)arg1;
 - (void)setStartPlaybackTime:(double)arg1;
 - (double)startPlaybackTime;
 - (id)url;

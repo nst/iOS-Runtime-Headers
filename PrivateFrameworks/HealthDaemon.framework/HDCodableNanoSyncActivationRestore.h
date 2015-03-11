@@ -4,7 +4,7 @@
 
 @class NSData, NSMutableArray, NSString;
 
-@interface HDCodableNanoSyncActivationRestore : PBCodable <NSCopying, HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying> {
+@interface HDCodableNanoSyncActivationRestore : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, NSCopying> {
     struct { 
         unsigned int sequenceNumber : 1; 
         unsigned int statusCode : 1; 
@@ -21,12 +21,12 @@
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(retain) NSString * deviceSourceIdentifier;
-@property(readonly) bool hasDeviceSourceIdentifier;
-@property(readonly) bool hasRestoreIdentifier;
-@property bool hasSequenceNumber;
-@property bool hasStatusCode;
-@property(readonly) unsigned long long hash;
-@property(readonly) unsigned long long hash;
+@property(readonly) BOOL hasDeviceSourceIdentifier;
+@property(readonly) BOOL hasRestoreIdentifier;
+@property BOOL hasSequenceNumber;
+@property BOOL hasStatusCode;
+@property(readonly) unsigned int hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSData * restoreIdentifier;
 @property(retain) NSMutableArray * restores;
 @property long long sequenceNumber;
@@ -49,24 +49,24 @@
 - (id)description;
 - (id)deviceSourceIdentifier;
 - (id)dictionaryRepresentation;
-- (bool)hasDeviceSourceIdentifier;
-- (bool)hasRequiredFields;
-- (bool)hasRestoreIdentifier;
-- (bool)hasSequenceNumber;
-- (bool)hasStatusCode;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDeviceSourceIdentifier;
+- (BOOL)hasRequiredFields;
+- (BOOL)hasRestoreIdentifier;
+- (BOOL)hasSequenceNumber;
+- (BOOL)hasStatusCode;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nanoSyncDescription;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)restoreIdentifier;
 - (id)restores;
-- (id)restoresAtIndex:(unsigned long long)arg1;
-- (unsigned long long)restoresCount;
+- (id)restoresAtIndex:(unsigned int)arg1;
+- (unsigned int)restoresCount;
 - (long long)sequenceNumber;
 - (void)setDeviceSourceIdentifier:(id)arg1;
-- (void)setHasSequenceNumber:(bool)arg1;
-- (void)setHasStatusCode:(bool)arg1;
+- (void)setHasSequenceNumber:(BOOL)arg1;
+- (void)setHasStatusCode:(BOOL)arg1;
 - (void)setRestoreIdentifier:(id)arg1;
 - (void)setRestores:(id)arg1;
 - (void)setSequenceNumber:(long long)arg1;

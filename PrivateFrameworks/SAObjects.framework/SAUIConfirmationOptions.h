@@ -15,7 +15,7 @@
 @property(copy) NSArray * denyCommands;
 @property(copy) NSString * denyText;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)confirmationOptions;

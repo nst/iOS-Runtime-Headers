@@ -10,14 +10,14 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSMutableDictionary *_ignoredEventIDsToAddressBasedCaches;
     NSObject<OS_dispatch_queue> *_processingQueue;
-    bool_sourceIsInvalid;
-    bool_sourceSupportsAvailabilityRequests;
+    BOOL _sourceIsInvalid;
+    BOOL _sourceSupportsAvailabilityRequests;
 }
 
-+ (long long)_convertType:(long long)arg1;
++ (int)_convertType:(int)arg1;
 + (id)_generateEventKitSpansFromDataAccessExpressSpans:(id)arg1;
-+ (bool)_isValidStartDate:(id)arg1 endDate:(id)arg2;
-+ (void)_logRequestElapsedTime:(double)arg1 forNumberOfAddresses:(unsigned long long)arg2;
++ (BOOL)_isValidStartDate:(id)arg1 endDate:(id)arg2;
++ (void)_logRequestElapsedTime:(double)arg1 forNumberOfAddresses:(unsigned int)arg2;
 
 - (id)_dictionaryForIgnoredEventID:(id)arg1;
 - (void)_handleResults:(id)arg1 resultsBlock:(id)arg2 ignoredEventID:(id)arg3;

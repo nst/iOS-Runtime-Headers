@@ -11,17 +11,17 @@
     NSString *_name;
 }
 
-@property(readonly) unsigned long long dataType;
+@property(readonly) unsigned int dataType;
 @property(readonly) NSString * name;
-@property(readonly) unsigned long long offset;
+@property(readonly) unsigned int offset;
 
 - (id)arrayType;
-- (unsigned long long)dataType;
+- (unsigned int)dataType;
 - (void)dealloc;
 - (id)describe;
-- (id)initWithName:(id)arg1 offset:(unsigned long long)arg2 dataType:(unsigned long long)arg3 details:(id)arg4;
+- (id)initWithName:(id)arg1 offset:(unsigned int)arg2 dataType:(unsigned int)arg3 details:(id)arg4;
 - (id)name;
-- (unsigned long long)offset;
+- (unsigned int)offset;
 - (id)structType;
 
 @end

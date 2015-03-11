@@ -7,12 +7,12 @@
 @interface MCKeyValue : NSObject {
     NSString *_key;
     id _value;
-    unsigned long long _valueType;
+    unsigned int _valueType;
 }
 
 @property(readonly) NSString * key;
 @property(readonly) id value;
-@property(readonly) unsigned long long valueType;
+@property(readonly) unsigned int valueType;
 
 - (void).cxx_destruct;
 - (id)initWithData:(id)arg1 localizedKey:(id)arg2;
@@ -27,6 +27,6 @@
 - (void)setLocalizedString:(id)arg1 localizedKey:(id)arg2;
 - (void)setValue:(id)arg1 localizedKey:(id)arg2;
 - (id)value;
-- (unsigned long long)valueType;
+- (unsigned int)valueType;
 
 @end

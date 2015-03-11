@@ -7,19 +7,19 @@
 @interface SBCPlaybackPositionDomain : NSObject <NSCopying, NSSecureCoding> {
     NSString *_domainIdentifier;
     NSString *_foreignDatabasePath;
+    BOOL _supportsSyncProtocol;
     NSString *_ubiquitousDatabasePath;
-    bool_supportsSyncProtocol;
 }
 
 @property(readonly) NSString * domainIdentifier;
 @property(readonly) NSString * foreignDatabasePath;
-@property bool supportsSyncProtocol;
+@property BOOL supportsSyncProtocol;
 @property(retain) NSString * ubiquitousDatabasePath;
 
 + (id)allSyncingDomains;
 + (id)domainForExtrasValues;
 + (id)domainForSyncingMusicLibraryWithLibraryPath:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -29,9 +29,9 @@
 - (id)foreignDatabasePath;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDomainIdentifier:(id)arg1 foreignDatabasePath:(id)arg2;
-- (void)setSupportsSyncProtocol:(bool)arg1;
+- (void)setSupportsSyncProtocol:(BOOL)arg1;
 - (void)setUbiquitousDatabasePath:(id)arg1;
-- (bool)supportsSyncProtocol;
+- (BOOL)supportsSyncProtocol;
 - (id)ubiquitousDatabasePath;
 
 @end

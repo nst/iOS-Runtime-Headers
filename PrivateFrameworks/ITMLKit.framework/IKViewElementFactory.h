@@ -16,23 +16,23 @@
 }
 
 @property IKAppContext * appContext;
-@property(getter=isSparse) bool sparse;
+@property(getter=isSparse) BOOL sparse;
 @property(retain) IKViewElementStyleFactory * styleFactory;
 @property(retain) IKTemplateStyleSheet * styleSheet;
 
 + (id)_elementStylesFromDOMElement:(id)arg1;
 + (Class)elementClassByTagName:(id)arg1;
-+ (unsigned long long)elementTypeByTagName:(id)arg1;
-+ (id)elementsForDocumentElement:(id)arg1 sparse:(bool)arg2 appContext:(id)arg3;
++ (unsigned int)elementTypeByTagName:(id)arg1;
++ (id)elementsForDocumentElement:(id)arg1 sparse:(BOOL)arg2 appContext:(id)arg3;
 + (void)initialize;
-+ (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned long long)arg3;
++ (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned int)arg3;
 
 - (void).cxx_destruct;
 - (id)appContext;
 - (id)elementForDOMElement:(id)arg1 parent:(id)arg2;
-- (bool)isSparse;
+- (BOOL)isSparse;
 - (void)setAppContext:(id)arg1;
-- (void)setSparse:(bool)arg1;
+- (void)setSparse:(BOOL)arg1;
 - (void)setStyleFactory:(id)arg1;
 - (void)setStyleSheet:(id)arg1;
 - (id)styleFactory;

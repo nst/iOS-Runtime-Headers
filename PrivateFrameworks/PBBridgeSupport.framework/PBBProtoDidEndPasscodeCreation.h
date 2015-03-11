@@ -6,28 +6,28 @@
     struct { 
         unsigned int isLong : 1; 
     } _has;
-    bool_isLong;
-    bool_success;
+    BOOL _isLong;
+    BOOL _success;
 }
 
-@property bool hasIsLong;
-@property bool isLong;
-@property bool success;
+@property BOOL hasIsLong;
+@property BOOL isLong;
+@property BOOL success;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasIsLong;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (bool)isLong;
+- (BOOL)hasIsLong;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isLong;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasIsLong:(bool)arg1;
-- (void)setIsLong:(bool)arg1;
-- (void)setSuccess:(bool)arg1;
-- (bool)success;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasIsLong:(BOOL)arg1;
+- (void)setIsLong:(BOOL)arg1;
+- (void)setSuccess:(BOOL)arg1;
+- (BOOL)success;
 - (void)writeTo:(id)arg1;
 
 @end

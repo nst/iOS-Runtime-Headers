@@ -9,13 +9,13 @@
 
 @property(retain,readonly) NSArray * events;
 @property(readonly) double refreshInterval;
-@property(readonly) unsigned long long timelineType;
+@property(readonly) unsigned int timelineType;
 @property(retain,readonly) IKTextElement * title;
 @property(retain,readonly) NSURL * url;
 
 - (id)events;
 - (double)refreshInterval;
-- (unsigned long long)timelineType;
+- (unsigned int)timelineType;
 - (id)title;
 - (id)url;
 

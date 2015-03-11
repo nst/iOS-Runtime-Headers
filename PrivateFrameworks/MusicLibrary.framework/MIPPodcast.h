@@ -14,10 +14,10 @@
 @property(retain) MIPArtist * artist;
 @property(retain) NSString * externalGuid;
 @property(retain) NSString * feedUrl;
-@property(readonly) bool hasArtist;
-@property(readonly) bool hasExternalGuid;
-@property(readonly) bool hasFeedUrl;
-@property(readonly) bool hasSeries;
+@property(readonly) BOOL hasArtist;
+@property(readonly) BOOL hasExternalGuid;
+@property(readonly) BOOL hasFeedUrl;
+@property(readonly) BOOL hasSeries;
 @property(retain) MIPSeries * series;
 
 - (void).cxx_destruct;
@@ -28,14 +28,14 @@
 - (id)dictionaryRepresentation;
 - (id)externalGuid;
 - (id)feedUrl;
-- (bool)hasArtist;
-- (bool)hasExternalGuid;
-- (bool)hasFeedUrl;
-- (bool)hasSeries;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasArtist;
+- (BOOL)hasExternalGuid;
+- (BOOL)hasFeedUrl;
+- (BOOL)hasSeries;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)series;
 - (void)setArtist:(id)arg1;
 - (void)setExternalGuid:(id)arg1;

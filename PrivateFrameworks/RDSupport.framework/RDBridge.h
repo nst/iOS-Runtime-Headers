@@ -6,29 +6,29 @@
 
 @interface RDBridge : NSObject <IDSServiceDelegate> {
     NSObject<OS_dispatch_source> *_connectionHealthCheckTimer;
-    long long _connectionState;
+    int _connectionState;
     <RDBridgeDelegate> *_delegate;
     RDMulticastService *_multicastService;
     IDSService *_remoteService;
     NSObject<OS_dispatch_source> *_sleepFailSafeTimer;
 }
 
-@property long long connectionState;
+@property int connectionState;
 @property(copy,readonly) NSString * debugDescription;
 @property <RDBridgeDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) RDMulticastService * multicastService;
 @property(retain) IDSService * remoteService;
 @property(readonly) Class superclass;
 
-+ (id)descriptionForConnectionState:(long long)arg1;
-+ (id)statusStringForConnectionState:(long long)arg1;
++ (id)descriptionForConnectionState:(int)arg1;
++ (id)statusStringForConnectionState:(int)arg1;
 
 - (void).cxx_destruct;
 - (void)changeGizmoLanguage:(id)arg1 locale:(id)arg2;
-- (long long)connectionState;
-- (long long)currentConnectionState;
+- (int)connectionState;
+- (int)currentConnectionState;
 - (id)currentConnectionStateDescription;
 - (id)currentConnectionStateString;
 - (id)delegate;
@@ -48,12 +48,12 @@
 - (void)requestGizmoToEnableSleep;
 - (void)requestGizmoToStartPlayingDemoMovie;
 - (void)requestGizmoToStopPlayingDemoMovie;
-- (void)requestRebootCompanion:(bool)arg1 andGizmo:(bool)arg2;
+- (void)requestRebootCompanion:(BOOL)arg1 andGizmo:(BOOL)arg2;
 - (void)sendIDSPayload:(id)arg1;
 - (void)sendPayload:(id)arg1;
 - (void)sendRequestWithID:(id)arg1 context:(id)arg2;
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
-- (void)setConnectionState:(long long)arg1;
+- (void)setConnectionState:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMulticastService:(id)arg1;
 - (void)setRemoteService:(id)arg1;

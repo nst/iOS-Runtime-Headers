@@ -6,8 +6,8 @@
 
 @interface _VMULibraryLoadObserver : NSObject {
     struct _CSTypeRef { 
-        unsigned long long _opaque_1; 
-        unsigned long long _opaque_2; 
+        unsigned int _opaque_1; 
+        unsigned int _opaque_2; 
     <VMULibraryLoadDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_serialNotificationsQueue;
     } _symbolicator;

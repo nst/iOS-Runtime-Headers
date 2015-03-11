@@ -6,23 +6,23 @@
 
 @interface HMAccessoryBrowser : NSObject <HMMessageReceiver> {
     NSMutableArray *_accessories;
+    BOOL _browsing;
     <HMAccessoryBrowserDelegate> *_delegate;
-    unsigned long long _generationCounter;
+    unsigned int _generationCounter;
     HMMessageDispatcher *_msgDispatcher;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
     HMXpcClient *_xpcClient;
-    bool_browsing;
 }
 
 @property(retain) NSMutableArray * accessories;
-@property(getter=isBrowsing) bool browsing;
+@property(getter=isBrowsing) BOOL browsing;
 @property(copy,readonly) NSString * debugDescription;
 @property <HMAccessoryBrowserDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSArray * discoveredAccessories;
-@property unsigned long long generationCounter;
-@property(readonly) unsigned long long hash;
+@property unsigned int generationCounter;
+@property(readonly) unsigned int hash;
 @property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
 @property(readonly) NSUUID * messageTargetUUID;
 @property(retain) HMMessageDispatcher * msgDispatcher;
@@ -42,16 +42,16 @@
 - (id)accessories;
 - (id)delegate;
 - (id)discoveredAccessories;
-- (unsigned long long)generationCounter;
+- (unsigned int)generationCounter;
 - (id)init;
-- (bool)isBrowsing;
+- (BOOL)isBrowsing;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
 - (void)setAccessories:(id)arg1;
-- (void)setBrowsing:(bool)arg1;
+- (void)setBrowsing:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setGenerationCounter:(unsigned long long)arg1;
+- (void)setGenerationCounter:(unsigned int)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;

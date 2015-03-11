@@ -6,8 +6,8 @@
 }
 
 - (id)initWithRootViewController:(id)arg1;
-- (long long)preferredInterfaceOrientationForPresentation;
-- (bool)shouldAutorotate;
-- (unsigned long long)supportedInterfaceOrientations;
+- (int)preferredInterfaceOrientationForPresentation;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

@@ -10,7 +10,7 @@
 @property(copy) NSArray * commands;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SASTItemGroup * itemGroupView;
 @property(readonly) Class superclass;
 @property(copy) NSString * viewTitle;

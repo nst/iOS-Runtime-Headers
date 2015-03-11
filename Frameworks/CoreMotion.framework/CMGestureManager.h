@@ -8,9 +8,9 @@
 
 @property(copy) id gestureHandler;
 
-+ (bool)isGestureServiceAvailable;
-+ (bool)isGestureServiceEnabled;
-+ (void)setGestureServiceEnabled:(bool)arg1;
++ (BOOL)isGestureServiceAvailable;
++ (BOOL)isGestureServiceEnabled;
++ (void)setGestureServiceEnabled:(BOOL)arg1;
 
 - (void)dealloc;
 - (id)gestureHandler;

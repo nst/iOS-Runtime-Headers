@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(getter=mailAccountIfAvailable,retain) GmailAccount * mailAccount;
 @property(readonly) Class superclass;
 
@@ -27,9 +27,9 @@
 - (unsigned int)portNumber;
 - (id)preferredAuthScheme;
 - (void)setMailAccount:(id)arg1;
-- (bool)shouldFetchACEDBInfoForError:(id)arg1;
-- (bool)shouldUseAuthentication;
+- (BOOL)shouldFetchACEDBInfoForError:(id)arg1;
+- (BOOL)shouldUseAuthentication;
 - (id)username;
-- (bool)usesSSL;
+- (BOOL)usesSSL;
 
 @end

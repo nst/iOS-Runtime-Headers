@@ -11,7 +11,7 @@
 @property(retain) AAUIFamilyCreditCard * creditCard;
 
 - (void).cxx_destruct;
-- (id)_parsedDateForServerMonth:(long long)arg1 year:(long long)arg2;
+- (id)_parsedDateForServerMonth:(int)arg1 year:(int)arg2;
 - (id)creditCard;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (void)setCreditCard:(id)arg1;

@@ -4,33 +4,33 @@
 
 @interface NEVPNIKEv1ProposalParameters : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
     int _diffieHellmanGroup;
-    long long _encryptionAlgorithm;
-    long long _integrityAlgorithm;
+    int _encryptionAlgorithm;
+    int _integrityAlgorithm;
     int _lifetimeSeconds;
 }
 
 @property int diffieHellmanGroup;
-@property long long encryptionAlgorithm;
-@property long long integrityAlgorithm;
+@property int encryptionAlgorithm;
+@property int integrityAlgorithm;
 @property int lifetimeSeconds;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (bool)checkValidityAndCollectErrors:(id)arg1;
+- (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithIndent:(int)arg1;
 - (int)diffieHellmanGroup;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)encryptionAlgorithm;
+- (int)encryptionAlgorithm;
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (long long)integrityAlgorithm;
+- (int)integrityAlgorithm;
 - (int)lifetimeSeconds;
 - (void)setDiffieHellmanGroup:(int)arg1;
-- (void)setEncryptionAlgorithm:(long long)arg1;
-- (void)setIntegrityAlgorithm:(long long)arg1;
+- (void)setEncryptionAlgorithm:(int)arg1;
+- (void)setIntegrityAlgorithm:(int)arg1;
 - (void)setLifetimeSeconds:(int)arg1;
 
 @end

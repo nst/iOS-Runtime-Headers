@@ -5,19 +5,19 @@
 @class EKEventStore, NSObject<OS_dispatch_queue>;
 
 @interface CKNanoEventManager : NSObject {
+    BOOL _accessToEventsGranted;
     EKEventStore *_eventStore;
     NSObject<OS_dispatch_queue> *_queue;
-    bool_accessToEventsGranted;
 }
 
-@property bool accessToEventsGranted;
+@property BOOL accessToEventsGranted;
 @property(retain) EKEventStore * eventStore;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 
 + (id)sharedInstance;
 
 - (id)accessError;
-- (bool)accessToEventsGranted;
+- (BOOL)accessToEventsGranted;
 - (void)dealloc;
 - (id)eventStore;
 - (id)eventsBetweenStartDate:(id)arg1 andEndDate:(id)arg2;
@@ -26,7 +26,7 @@
 - (id)init;
 - (id)queue;
 - (void)requestAccessToEventStore:(id)arg1;
-- (void)setAccessToEventsGranted:(bool)arg1;
+- (void)setAccessToEventsGranted:(BOOL)arg1;
 - (void)setEventStore:(id)arg1;
 - (void)setQueue:(id)arg1;
 

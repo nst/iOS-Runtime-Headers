@@ -11,7 +11,7 @@
 }
 
 @property unsigned int actionID;
-@property bool hasPasscodeType;
+@property BOOL hasPasscodeType;
 @property unsigned int passcodeType;
 
 - (unsigned int)actionID;
@@ -19,14 +19,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasPasscodeType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasPasscodeType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)passcodeType;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setActionID:(unsigned int)arg1;
-- (void)setHasPasscodeType:(bool)arg1;
+- (void)setHasPasscodeType:(BOOL)arg1;
 - (void)setPasscodeType:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 

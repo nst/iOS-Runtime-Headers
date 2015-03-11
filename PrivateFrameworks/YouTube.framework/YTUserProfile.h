@@ -5,18 +5,18 @@
 @class NSString;
 
 @interface YTUserProfile : NSObject {
-    long long _age;
-    long long _maxUploadDuration;
+    int _age;
+    int _maxUploadDuration;
     NSString *_username;
 }
 
-@property(readonly) long long age;
-@property(readonly) long long maxUploadDuration;
+@property(readonly) int age;
+@property(readonly) int maxUploadDuration;
 @property(readonly) NSString * username;
 
-- (long long)age;
-- (id)initWithUsername:(id)arg1 age:(long long)arg2 maxUploadDuration:(long long)arg3;
-- (long long)maxUploadDuration;
+- (int)age;
+- (id)initWithUsername:(id)arg1 age:(int)arg2 maxUploadDuration:(int)arg3;
+- (int)maxUploadDuration;
 - (id)username;
 
 @end

@@ -7,21 +7,21 @@
 @interface MPFloatingAirPlayDebugViewController : UINavigationController <AirPlayDiagnosticsFullscreenControllerDelegate> {
     AirPlayDiagnosticsFullscreenController *_airPlayDiagsController;
     UIWindow *_floatingWindow;
-    bool_presentedAnimated;
+    BOOL _presentedAnimated;
 }
 
 @property(readonly) AirPlayDiagnosticsFullscreenController * airPlayDiagsController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_destroyFloatingWindow;
-- (void)airPlayDiagnosticsContentViewController:(id)arg1 didComplete:(bool)arg2;
+- (void)airPlayDiagnosticsContentViewController:(id)arg1 didComplete:(BOOL)arg2;
 - (id)airPlayDiagsController;
-- (void)presentFromFloatingWindowAnimated:(bool)arg1 completion:(id)arg2;
-- (bool)shouldAutorotate;
-- (unsigned long long)supportedInterfaceOrientations;
+- (void)presentFromFloatingWindowAnimated:(BOOL)arg1 completion:(id)arg2;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

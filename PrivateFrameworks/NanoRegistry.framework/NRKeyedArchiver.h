@@ -3,12 +3,12 @@
  */
 
 @interface NRKeyedArchiver : NSKeyedArchiver {
-    bool_archiveSecureItems;
+    BOOL _archiveSecureItems;
 }
 
-@property bool archiveSecureItems;
+@property BOOL archiveSecureItems;
 
-- (bool)archiveSecureItems;
-- (void)setArchiveSecureItems:(bool)arg1;
+- (BOOL)archiveSecureItems;
+- (void)setArchiveSecureItems:(BOOL)arg1;
 
 @end

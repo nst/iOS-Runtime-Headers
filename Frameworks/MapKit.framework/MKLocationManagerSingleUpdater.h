@@ -9,17 +9,17 @@
 @class MKLocationManager, MKLocationManagerSingleUpdater, NSString;
 
 @interface MKLocationManagerSingleUpdater : NSObject <MKLocationManagerObserver, MKLocationManagerOperation> {
+    BOOL _active;
     double _desiredAccuracy;
     id _handler;
     MKLocationManager *_locationManager;
     MKLocationManagerSingleUpdater *_selfReference;
-    bool_active;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) id handler;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -34,7 +34,7 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)setHandler:(id)arg1;
 - (void)start;

@@ -9,9 +9,9 @@
 
 @property(readonly) CNContact * shippingAddress;
 
-+ (long long)dataType;
++ (int)dataType;
 
-- (bool)isValidWithError:(id*)arg1;
+- (BOOL)isValidWithError:(id*)arg1;
 - (id)shippingAddress;
 
 @end

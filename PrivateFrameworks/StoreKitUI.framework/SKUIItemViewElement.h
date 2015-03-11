@@ -6,16 +6,16 @@
 
 @interface SKUIItemViewElement : SKUIViewElement {
     SKUIViewElementText *_itemText;
-    bool_selected;
+    BOOL _selected;
 }
 
 @property(readonly) SKUIViewElementText * itemText;
-@property(getter=isSelected,readonly) bool selected;
+@property(getter=isSelected,readonly) BOOL selected;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (bool)isSelected;
+- (BOOL)isSelected;
 - (id)itemText;
 
 @end

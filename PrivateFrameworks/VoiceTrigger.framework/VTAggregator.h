@@ -7,7 +7,7 @@
 @interface VTAggregator : NSObject {
     double _cumulativeDowntime;
     double _cumulativeUptime;
-    unsigned long long _currentState;
+    unsigned int _currentState;
     double _lastAggTime;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_timer;
@@ -17,9 +17,9 @@
 
 - (void).cxx_destruct;
 - (void)_logUptime;
-- (void)cumulativeUptime:(id*)arg1 cumulativeDowntime:(id*)arg2 reset:(bool)arg3;
+- (void)cumulativeUptime:(id*)arg1 cumulativeDowntime:(id*)arg2 reset:(BOOL)arg3;
 - (id)init;
 - (void)logActivation;
-- (void)logTimeVoiceTriggerTransitionsToState:(unsigned long long)arg1;
+- (void)logTimeVoiceTriggerTransitionsToState:(unsigned int)arg1;
 
 @end

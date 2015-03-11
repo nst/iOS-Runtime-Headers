@@ -18,15 +18,15 @@
 @property(copy,readonly) CLIntersiloInterface * delegateInterface;
 @property(readonly) CLSilo * delegateSilo;
 @property(copy,readonly) CLIntersiloInterface * proxiedInterface;
-@property bool valid;
+@property BOOL valid;
 
 + (void)becameFatallyBlocked:(id)arg1;
 + (id)getSilo;
-+ (bool)isSupported;
++ (BOOL)isSupported;
 + (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 withInboundInterface:(id)arg3 andOutboundInterface:(id)arg4;
 
 - (void).cxx_destruct;
-- (bool)conformsToProtocol:(id)arg1;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (id)delegate;
 - (id)delegateInterface;
 - (id)delegateSilo;

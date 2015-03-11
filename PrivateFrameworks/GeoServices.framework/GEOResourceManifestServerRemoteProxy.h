@@ -13,16 +13,16 @@
     NSObject<OS_xpc_object> *_conn;
     NSLock *_connLock;
     <GEOResourceManifestServerProxyDelegate> *_delegate;
-    unsigned long long _retryCount;
+    BOOL _isLoadingResources;
+    BOOL _isUpdatingManifest;
+    unsigned int _retryCount;
     NSObject<OS_dispatch_queue> *_serverQueue;
-    bool_isLoadingResources;
-    bool_isUpdatingManifest;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <GEOResourceManifestServerProxyDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_handleMessage:(id)arg1 xpcMessage:(id)arg2;

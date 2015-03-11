@@ -11,17 +11,17 @@
         unsigned int isApproximate : 1; 
     int _drivingDirection;
     } _has;
+    BOOL _isApproximate;
     GEOLatLng *_location;
     int _walkingDirection;
-    bool_isApproximate;
 }
 
 @property int drivingDirection;
-@property bool hasDrivingDirection;
-@property bool hasIsApproximate;
-@property(readonly) bool hasLocation;
-@property bool hasWalkingDirection;
-@property bool isApproximate;
+@property BOOL hasDrivingDirection;
+@property BOOL hasIsApproximate;
+@property(readonly) BOOL hasLocation;
+@property BOOL hasWalkingDirection;
+@property BOOL isApproximate;
 @property(retain) GEOLatLng * location;
 @property int walkingDirection;
 
@@ -31,21 +31,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)drivingDirection;
-- (bool)hasDrivingDirection;
-- (bool)hasIsApproximate;
-- (bool)hasLocation;
-- (bool)hasWalkingDirection;
-- (unsigned long long)hash;
-- (bool)isApproximate;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDrivingDirection;
+- (BOOL)hasIsApproximate;
+- (BOOL)hasLocation;
+- (BOOL)hasWalkingDirection;
+- (unsigned int)hash;
+- (BOOL)isApproximate;
+- (BOOL)isEqual:(id)arg1;
 - (id)location;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDrivingDirection:(int)arg1;
-- (void)setHasDrivingDirection:(bool)arg1;
-- (void)setHasIsApproximate:(bool)arg1;
-- (void)setHasWalkingDirection:(bool)arg1;
-- (void)setIsApproximate:(bool)arg1;
+- (void)setHasDrivingDirection:(BOOL)arg1;
+- (void)setHasIsApproximate:(BOOL)arg1;
+- (void)setHasWalkingDirection:(BOOL)arg1;
+- (void)setIsApproximate:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setWalkingDirection:(int)arg1;
 - (int)walkingDirection;

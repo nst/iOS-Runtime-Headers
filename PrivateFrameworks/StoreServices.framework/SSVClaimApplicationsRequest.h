@@ -5,18 +5,18 @@
 @class NSString;
 
 @interface SSVClaimApplicationsRequest : SSRequest <SSXPCCoding> {
-    long long _claimStyle;
+    int _claimStyle;
 }
 
-@property(readonly) long long claimStyle;
+@property(readonly) int claimStyle;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-- (long long)claimStyle;
+- (int)claimStyle;
 - (id)copyXPCEncoding;
-- (id)initWithClaimStyle:(long long)arg1;
+- (id)initWithClaimStyle:(int)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (void)startWithResponseBlock:(id)arg1;
 

@@ -10,6 +10,6 @@
 @property(copy,readonly) NSString * data;
 
 - (id)data;
-- (void)initTextEvent:(id)arg1 canBubbleArg:(bool)arg2 cancelableArg:(bool)arg3 viewArg:(id)arg4 dataArg:(id)arg5;
+- (void)initTextEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 viewArg:(id)arg4 dataArg:(id)arg5;
 
 @end

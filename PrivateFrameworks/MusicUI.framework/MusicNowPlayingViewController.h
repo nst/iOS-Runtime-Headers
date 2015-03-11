@@ -6,34 +6,34 @@
 
 @interface MusicNowPlayingViewController : RUNowPlayingViewController <UIActionSheetDelegate> {
     UIActionSheet *_repeatActionSheet;
-    bool_supportsCoverFlow;
+    BOOL _supportsCoverFlow;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)MPH_supportsCoverFlow;
+- (BOOL)MPH_supportsCoverFlow;
 - (SEL)_actionForHandlingDoubleTapOnArtworkImageView;
 - (id)_albumTextForItem:(id)arg1;
-- (bool)_displayingActionSheet;
+- (BOOL)_displayingActionSheet;
 - (void)_flipsideAction:(id)arg1;
 - (Class)_playbackControlsViewClass;
 - (void)_startGeniusPlaylistFromCurrentItem;
-- (bool)_updateItemRelatedStateForChangeToItem:(id)arg1 animated:(bool)arg2;
-- (bool)_updateNavigationItemAnimated:(bool)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (unsigned long long)controlsOverlay:(id)arg1 playbackSpeedForItem:(id)arg2;
+- (BOOL)_updateItemRelatedStateForChangeToItem:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)_updateNavigationItemAnimated:(BOOL)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (unsigned int)controlsOverlay:(id)arg1 playbackSpeedForItem:(id)arg2;
 - (void)controlsOverlayDidClickPlaybackSpeedButton:(id)arg1;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (bool)music_appendCurrentUserActivityContainerItems:(id)arg1 previousViewController:(id)arg2 nextViewController:(id)arg3;
-- (bool)playbackControls:(id)arg1 changedRepeatType:(unsigned long long)arg2;
-- (bool)playbackControls:(id)arg1 changedShuffleType:(unsigned long long)arg2;
-- (void)playbackControls:(id)arg1 didSelectCreateAction:(long long)arg2;
-- (unsigned long long)repeatTypeForPlaybackControls:(id)arg1;
-- (unsigned long long)shuffleTypeForPlaybackControls:(id)arg1;
+- (BOOL)music_appendCurrentUserActivityContainerItems:(id)arg1 previousViewController:(id)arg2 nextViewController:(id)arg3;
+- (BOOL)playbackControls:(id)arg1 changedRepeatType:(unsigned int)arg2;
+- (BOOL)playbackControls:(id)arg1 changedShuffleType:(unsigned int)arg2;
+- (void)playbackControls:(id)arg1 didSelectCreateAction:(int)arg2;
+- (unsigned int)repeatTypeForPlaybackControls:(id)arg1;
+- (unsigned int)shuffleTypeForPlaybackControls:(id)arg1;
 
 @end

@@ -6,18 +6,18 @@
 
 @interface FigCaptureConnectionConfiguration : NSObject <FigXPCCoding, NSCopying> {
     NSString *_connectionID;
-    unsigned int _mediaType;
+    BOOL _enabled;
+    unsigned long _mediaType;
     FigCaptureSinkConfiguration *_sinkConfiguration;
     FigCaptureSourceConfiguration *_sourceConfiguration;
-    bool_enabled;
 }
 
 @property(copy) NSString * connectionID;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool enabled;
-@property(readonly) unsigned long long hash;
-@property unsigned int mediaType;
+@property BOOL enabled;
+@property(readonly) unsigned int hash;
+@property unsigned long mediaType;
 @property(retain) FigCaptureSinkConfiguration * sinkConfiguration;
 @property(retain) FigCaptureSourceConfiguration * sourceConfiguration;
 @property(readonly) Class superclass;
@@ -28,14 +28,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
-- (bool)enabled;
+- (BOOL)enabled;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (unsigned int)mediaType;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long)mediaType;
 - (void)setConnectionID:(id)arg1;
-- (void)setEnabled:(bool)arg1;
-- (void)setMediaType:(unsigned int)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setMediaType:(unsigned long)arg1;
 - (void)setSinkConfiguration:(id)arg1;
 - (void)setSourceConfiguration:(id)arg1;
 - (id)sinkConfiguration;

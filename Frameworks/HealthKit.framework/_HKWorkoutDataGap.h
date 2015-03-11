@@ -12,7 +12,7 @@
 @property(retain) NSUUID * end;
 @property(retain) NSUUID * start;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

@@ -6,7 +6,7 @@
 }
 
 + (id)databaseTable;
-+ (bool)insertionChangesLibraryContents;
++ (BOOL)insertionChangesLibraryContents;
 + (id)newWithDictionary:(id)arg1 inLibrary:(id)arg2;
 
 - (void)enumerateOrphanedAssetsUsingBlock:(id)arg1;

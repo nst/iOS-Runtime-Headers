@@ -10,14 +10,14 @@
     unsigned int _format;
     } _has;
     NSData *_imageData;
-    bool_precomposed;
+    BOOL _precomposed;
 }
 
 @property unsigned int format;
-@property(readonly) bool hasImageData;
-@property bool hasPrecomposed;
+@property(readonly) BOOL hasImageData;
+@property BOOL hasPrecomposed;
 @property(retain) NSData * imageData;
-@property bool precomposed;
+@property BOOL precomposed;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -25,18 +25,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)format;
-- (bool)hasImageData;
-- (bool)hasPrecomposed;
-- (unsigned long long)hash;
+- (BOOL)hasImageData;
+- (BOOL)hasPrecomposed;
+- (unsigned int)hash;
 - (id)imageData;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)precomposed;
-- (bool)readFrom:(id)arg1;
+- (BOOL)precomposed;
+- (BOOL)readFrom:(id)arg1;
 - (void)setFormat:(unsigned int)arg1;
-- (void)setHasPrecomposed:(bool)arg1;
+- (void)setHasPrecomposed:(BOOL)arg1;
 - (void)setImageData:(id)arg1;
-- (void)setPrecomposed:(bool)arg1;
+- (void)setPrecomposed:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

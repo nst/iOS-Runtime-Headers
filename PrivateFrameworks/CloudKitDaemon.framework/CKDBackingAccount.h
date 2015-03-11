@@ -7,14 +7,14 @@
 @interface CKDBackingAccount : NSObject {
 }
 
-@property(readonly) bool allowsCellularAccess;
+@property(readonly) BOOL allowsCellularAccess;
 @property(readonly) NSString * cloudKitAuthToken;
-@property(readonly) bool cloudKitIsEnabled;
-@property(readonly) bool cloudPhotosIsEnabled;
+@property(readonly) BOOL cloudKitIsEnabled;
+@property(readonly) BOOL cloudPhotosIsEnabled;
 @property(readonly) NSString * dsid;
 @property(readonly) NSString * iCloudAuthToken;
 @property(readonly) NSString * identifier;
-@property(readonly) bool isFakeAccount;
+@property(readonly) BOOL isFakeAccount;
 @property(readonly) NSString * primaryEmail;
 @property(readonly) NSURL * privateCloudDBURL;
 @property(readonly) NSURL * privateDeviceServiceURL;
@@ -23,22 +23,22 @@
 
 + (Class)_platformBackingAccountClass;
 + (id)accountWithIdentifier:(id)arg1 inStore:(id)arg2;
-+ (bool)ensureCloudKitChildAccountOnParentAccount:(id)arg1 inStore:(id)arg2;
++ (BOOL)ensureCloudKitChildAccountOnParentAccount:(id)arg1 inStore:(id)arg2;
 + (id)fakeAccountWithEmail:(id)arg1 password:(id)arg2;
 + (id)primaryAccountInStore:(id)arg1;
 
 - (id)_init;
 - (id)accountPropertiesForDataclass:(id)arg1;
-- (bool)allowsCellularAccess;
+- (BOOL)allowsCellularAccess;
 - (id)ckAccount;
 - (id)cloudKitAuthToken;
-- (bool)cloudKitIsEnabled;
-- (bool)cloudPhotosIsEnabled;
+- (BOOL)cloudKitIsEnabled;
+- (BOOL)cloudPhotosIsEnabled;
 - (id)dsid;
 - (id)iCloudAuthToken;
 - (id)identifier;
 - (id)init;
-- (bool)isFakeAccount;
+- (BOOL)isFakeAccount;
 - (id)primaryEmail;
 - (id)privateCloudDBURL;
 - (id)privateDeviceServiceURL;

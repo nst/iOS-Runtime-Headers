@@ -14,7 +14,7 @@
 @property(retain) CNContact * chosenContact;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property NSObject<ABContactAddLinkedCardActionDelegate> * linkedCardActionDelegate;
 @property(retain) ABPeoplePickerNavigationController * peoplePicker;
 @property(retain) CNContact * selectedContact;
@@ -25,12 +25,12 @@
 - (id)linkedCardActionDelegate;
 - (id)peoplePicker;
 - (void)peoplePickerLinkButtonTapped;
-- (bool)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
-- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)performActionWithSender:(id)arg1;
-- (bool)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (id)selectedContact;
 - (void)setChosenContact:(id)arg1;
 - (void)setLinkedCardActionDelegate:(id)arg1;

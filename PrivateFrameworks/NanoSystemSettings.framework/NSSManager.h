@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (id)connection;
 - (void)dealloc;
-- (void)enableAirplaneMode:(bool)arg1 completionHandler:(id)arg2;
+- (void)enableAirplaneMode:(BOOL)arg1 completionHandler:(id)arg2;
 - (id)externalQueue;
 - (void)getAboutInfo:(id)arg1;
 - (void)getLegalDocuments:(id)arg1;

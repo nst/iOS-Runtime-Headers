@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSArray * alerts;
-@property bool allDay;
+@property BOOL allDay;
 @property(copy) NSArray * attendees;
 @property(copy) NSURL * calendarId;
 @property(copy) NSURL * calendarPunchoutURI;
@@ -26,7 +26,7 @@
 + (id)eventWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)alerts;
-- (bool)allDay;
+- (BOOL)allDay;
 - (id)attendees;
 - (id)calendarId;
 - (id)calendarPunchoutURI;
@@ -39,7 +39,7 @@
 - (id)readOnly;
 - (id)recurrences;
 - (void)setAlerts:(id)arg1;
-- (void)setAllDay:(bool)arg1;
+- (void)setAllDay:(BOOL)arg1;
 - (void)setAttendees:(id)arg1;
 - (void)setCalendarId:(id)arg1;
 - (void)setCalendarPunchoutURI:(id)arg1;

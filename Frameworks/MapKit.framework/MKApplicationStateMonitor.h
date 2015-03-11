@@ -5,16 +5,16 @@
 @class BKSApplicationStateMonitor;
 
 @interface MKApplicationStateMonitor : NSObject {
+    BOOL _active;
     BKSApplicationStateMonitor *_appStateMonitor;
-    unsigned long long _observerCount;
-    bool_active;
-    bool_forceBackboardServicesMonitoring;
-    bool_inBackground;
+    BOOL _forceBackboardServicesMonitoring;
+    BOOL _inBackground;
+    unsigned int _observerCount;
 }
 
-@property(getter=isActive,readonly) bool active;
-@property bool forceBackboardServicesMonitoring;
-@property(getter=isInBackground,readonly) bool inBackground;
+@property(getter=isActive,readonly) BOOL active;
+@property BOOL forceBackboardServicesMonitoring;
+@property(getter=isInBackground,readonly) BOOL inBackground;
 
 + (id)sharedInstance;
 
@@ -24,10 +24,10 @@
 - (void)_exitBackground;
 - (void)_resignActive;
 - (void)dealloc;
-- (bool)forceBackboardServicesMonitoring;
-- (bool)isActive;
-- (bool)isInBackground;
-- (void)setForceBackboardServicesMonitoring:(bool)arg1;
+- (BOOL)forceBackboardServicesMonitoring;
+- (BOOL)isActive;
+- (BOOL)isInBackground;
+- (void)setForceBackboardServicesMonitoring:(BOOL)arg1;
 - (void)startObserving;
 - (void)stopObserving;
 

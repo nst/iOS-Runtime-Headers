@@ -9,19 +9,19 @@
     int _statusCode;
 }
 
-@property bool hasStatusCode;
+@property BOOL hasStatusCode;
 @property int statusCode;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasStatusCode;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasStatusCode;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasStatusCode:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasStatusCode:(BOOL)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;
 - (void)writeTo:(id)arg1;

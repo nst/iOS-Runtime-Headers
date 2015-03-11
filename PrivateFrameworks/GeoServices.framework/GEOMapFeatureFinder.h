@@ -13,14 +13,14 @@
         double latitude; 
         double longitude; 
     } _coordinate;
+    BOOL _ignoreUnnamedFeatures;
     id _pointHandler;
     id _polygonHandler;
     id _roadHandler;
     GEOMapTileFinder *_tileFinder;
-    bool_ignoreUnnamedFeatures;
 }
 
-@property bool ignoreUnnamedFeatures;
+@property BOOL ignoreUnnamedFeatures;
 @property(readonly) GEOMapAccess * map;
 @property(copy) id pointHandler;
 @property(copy) id polygonHandler;
@@ -31,13 +31,13 @@
 - (void)cancel;
 - (void)dealloc;
 - (void)findFeatures:(id)arg1 pointHandler:(id)arg2 polygonHandler:(id)arg3 completionHandler:(id)arg4;
-- (bool)ignoreUnnamedFeatures;
+- (BOOL)ignoreUnnamedFeatures;
 - (id)initWithMap:(id)arg1 center:(struct { double x1; double x2; })arg2;
 - (id)map;
 - (id)pointHandler;
 - (id)polygonHandler;
 - (id)roadHandler;
-- (void)setIgnoreUnnamedFeatures:(bool)arg1;
+- (void)setIgnoreUnnamedFeatures:(BOOL)arg1;
 - (void)setPointHandler:(id)arg1;
 - (void)setPolygonHandler:(id)arg1;
 - (void)setRoadHandler:(id)arg1;

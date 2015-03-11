@@ -5,13 +5,13 @@
 @interface CKUIBehaviorNanoNotifications : CKUIBehaviorNano {
 }
 
-- (double)bottomTranscriptSpace;
-- (double)leftBalloonMaxWidthForTranscriptWidth:(double)arg1 marginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
-- (bool)modifiesFirstBalloonLayout;
-- (bool)modifiesSingleLineBalloonLayout;
-- (double)nanoNoteSenderContentSpace;
-- (bool)shouldUseRotisserieScrolling;
-- (bool)showsBalloonChevron;
-- (double)topTranscriptSpace;
+- (float)bottomTranscriptSpace;
+- (float)leftBalloonMaxWidthForTranscriptWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (BOOL)modifiesFirstBalloonLayout;
+- (BOOL)modifiesSingleLineBalloonLayout;
+- (float)nanoNoteSenderContentSpace;
+- (BOOL)shouldUseRotisserieScrolling;
+- (BOOL)showsBalloonChevron;
+- (float)topTranscriptSpace;
 
 @end

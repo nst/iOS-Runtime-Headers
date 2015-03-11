@@ -6,15 +6,15 @@
 
 @interface WeatherNoContentView : UIView {
     struct { 
-        double centerLabelHorizontalOffset; 
-        double viewSize; 
+        float centerLabelHorizontalOffset; 
+        float viewSize; 
     UIView *_centerView;
     } _layout;
 }
 
-+ (id)imageWithOptions:(id)arg1 opaque:(bool)arg2 scale:(double)arg3;
++ (id)imageWithOptions:(id)arg1 opaque:(BOOL)arg2 scale:(float)arg3;
 
-- (id)initwithSize:(long long)arg1 centerView:(id)arg2;
+- (id)initwithSize:(int)arg1 centerView:(id)arg2;
 - (void)layoutSubviews;
 
 @end

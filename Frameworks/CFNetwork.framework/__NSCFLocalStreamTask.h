@@ -16,11 +16,11 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) id streamCompletion;
 @property(readonly) Class superclass;
 
-+ (id)rawRequestForHost:(id)arg1 port:(long long)arg2 tls:(bool)arg3;
++ (id)rawRequestForHost:(id)arg1 port:(int)arg2 tls:(bool)arg3;
 
 - (void)_onqueue_adjustPoolPriority;
 - (void)_onqueue_adjustPriorityHint:(float)arg1;

@@ -6,11 +6,11 @@
 }
 
 @property(readonly) struct opaqueCMFormatDescription { }* formatDescription;
-@property(readonly) unsigned int mediaType;
+@property(readonly) unsigned long mediaType;
 
 + (id)formatByResolvingRequirements:(id)arg1;
 
 - (struct opaqueCMFormatDescription { }*)formatDescription;
-- (unsigned int)mediaType;
+- (unsigned long)mediaType;
 
 @end

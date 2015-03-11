@@ -4,15 +4,15 @@
 
 @interface GEOThrottleState : NSObject {
     double _lastResetTime;
-    unsigned long long _requestCount;
+    unsigned int _requestCount;
 }
 
 @property double lastResetTime;
-@property unsigned long long requestCount;
+@property unsigned int requestCount;
 
 - (double)lastResetTime;
-- (unsigned long long)requestCount;
+- (unsigned int)requestCount;
 - (void)setLastResetTime:(double)arg1;
-- (void)setRequestCount:(unsigned long long)arg1;
+- (void)setRequestCount:(unsigned int)arg1;
 
 @end

@@ -6,42 +6,42 @@
 
 @interface PSYOptions : NSObject <NSSecureCoding> {
     NSURL *_activityInfoDirectory;
+    BOOL _dryRun;
     NSArray *_jobs;
-    unsigned long long _terminationJobCount;
+    BOOL _resetDeviceSyncState;
+    BOOL _resumePendingJobs;
+    unsigned int _terminationJobCount;
     NSArray *_testInputs;
-    bool_dryRun;
-    bool_resetDeviceSyncState;
-    bool_resumePendingJobs;
 }
 
 @property(copy) NSURL * activityInfoDirectory;
-@property bool dryRun;
+@property BOOL dryRun;
 @property(copy) NSArray * jobs;
-@property(getter=shouldResetDeviceSyncState) bool resetDeviceSyncState;
-@property(getter=shouldResumePendingJobs) bool resumePendingJobs;
-@property unsigned long long terminationJobCount;
+@property(getter=shouldResetDeviceSyncState) BOOL resetDeviceSyncState;
+@property(getter=shouldResumePendingJobs) BOOL resumePendingJobs;
+@property unsigned int terminationJobCount;
 @property(copy) NSArray * testInputs;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)activityInfoDirectory;
 - (id)description;
-- (bool)dryRun;
+- (BOOL)dryRun;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)jobs;
 - (void)setActivityInfoDirectory:(id)arg1;
-- (void)setDryRun:(bool)arg1;
+- (void)setDryRun:(BOOL)arg1;
 - (void)setJobs:(id)arg1;
-- (void)setResetDeviceSyncState:(bool)arg1;
-- (void)setResumePendingJobs:(bool)arg1;
-- (void)setTerminationJobCount:(unsigned long long)arg1;
+- (void)setResetDeviceSyncState:(BOOL)arg1;
+- (void)setResumePendingJobs:(BOOL)arg1;
+- (void)setTerminationJobCount:(unsigned int)arg1;
 - (void)setTestInputs:(id)arg1;
-- (bool)shouldResetDeviceSyncState;
-- (bool)shouldResumePendingJobs;
-- (unsigned long long)terminationJobCount;
+- (BOOL)shouldResetDeviceSyncState;
+- (BOOL)shouldResumePendingJobs;
+- (unsigned int)terminationJobCount;
 - (id)testInputs;
 
 @end

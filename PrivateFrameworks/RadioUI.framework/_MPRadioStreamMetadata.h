@@ -7,7 +7,7 @@
 @interface _MPRadioStreamMetadata : NSObject {
     NSString *_album;
     NSString *_albumBuyButtonText;
-    long long _albumBuyButtonType;
+    int _albumBuyButtonType;
     NSString *_artist;
     RadioArtworkCollection *_artworkCollection;
     NSNumber *_explicit;
@@ -16,7 +16,7 @@
 
 @property(copy) NSString * album;
 @property(copy) NSString * albumBuyButtonText;
-@property long long albumBuyButtonType;
+@property int albumBuyButtonType;
 @property(copy) NSString * artist;
 @property(retain) RadioArtworkCollection * artworkCollection;
 @property(getter=isExplicit,retain) NSNumber * explicit;
@@ -25,16 +25,16 @@
 - (void).cxx_destruct;
 - (id)album;
 - (id)albumBuyButtonText;
-- (long long)albumBuyButtonType;
+- (int)albumBuyButtonType;
 - (id)artist;
 - (id)artworkCollection;
 - (id)description;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)isExplicit;
 - (void)setAlbum:(id)arg1;
 - (void)setAlbumBuyButtonText:(id)arg1;
-- (void)setAlbumBuyButtonType:(long long)arg1;
+- (void)setAlbumBuyButtonType:(int)arg1;
 - (void)setArtist:(id)arg1;
 - (void)setArtworkCollection:(id)arg1;
 - (void)setExplicit:(id)arg1;

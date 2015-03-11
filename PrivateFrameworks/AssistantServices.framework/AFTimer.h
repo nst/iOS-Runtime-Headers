@@ -5,21 +5,21 @@
 @class NSNumber;
 
 @interface AFTimer : AFSiriModelObject {
-    long long _state;
+    int _state;
     NSNumber *_value;
 }
 
-@property long long state;
+@property int state;
 @property(copy) NSNumber * value;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setState:(long long)arg1;
+- (void)setState:(int)arg1;
 - (void)setValue:(id)arg1;
-- (long long)state;
+- (int)state;
 - (id)value;
 
 @end

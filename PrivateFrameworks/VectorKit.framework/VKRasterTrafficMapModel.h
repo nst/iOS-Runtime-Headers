@@ -17,15 +17,15 @@
         struct __compressed_pair<vk::TrafficManager *, std::__1::default_delete<vk::TrafficManager> > { 
             struct TrafficManager {} *__first_; 
         } __ptr_; 
+    BOOL _needsTileStencil;
     int _sourceTileZtoStencilOffset;
     } _trafficDrawStyle;
     } _trafficManager;
-    bool_needsTileStencil;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;

@@ -5,26 +5,26 @@
 @class NSString;
 
 @interface MCProfileWarning : NSObject <NSSecureCoding> {
+    BOOL _isLongForm;
     NSString *_localizedBody;
     NSString *_localizedTitle;
-    bool_isLongForm;
 }
 
-@property bool isLongForm;
+@property BOOL isLongForm;
 @property(retain) NSString * localizedBody;
 @property(retain) NSString * localizedTitle;
 
-+ (bool)supportsSecureCoding;
-+ (id)warningWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(bool)arg3;
++ (BOOL)supportsSecureCoding;
++ (id)warningWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(BOOL)arg3;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(bool)arg3;
-- (bool)isLongForm;
+- (id)initWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(BOOL)arg3;
+- (BOOL)isLongForm;
 - (id)localizedBody;
 - (id)localizedTitle;
-- (void)setIsLongForm:(bool)arg1;
+- (void)setIsLongForm:(BOOL)arg1;
 - (void)setLocalizedBody:(id)arg1;
 - (void)setLocalizedTitle:(id)arg1;
 

@@ -26,7 +26,7 @@
 - (id)ITunesPassSerialNumber;
 - (id)_className;
 - (void)_commitChanges;
-- (void)_setServiceType:(long long)arg1 enabled:(id)arg2;
+- (void)_setServiceType:(int)arg1 enabled:(id)arg2;
 - (id)account;
 - (id)attributeKeys;
 - (id)credits;
@@ -34,9 +34,9 @@
 - (id)dsID;
 - (id)identifier;
 - (id)init;
-- (bool)isPrimaryAccount;
+- (BOOL)isPrimaryAccount;
 - (id)isPrimaryLockerAccount;
-- (bool)isSecureTokenValid;
+- (BOOL)isSecureTokenValid;
 - (id)kind;
 - (id)lockerEnabled;
 - (id)purchaseHistoryEnabled;

@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface MFProtectedSQLiteConnection : MFSQLiteConnection {
+    BOOL _attached;
     NSString *_protectedName;
     NSString *_vfsName;
-    long long _vfsOnce;
-    bool_attached;
+    long _vfsOnce;
 }
 
-@property(readonly) bool isProtectedDatabaseAttached;
+@property(readonly) BOOL isProtectedDatabaseAttached;
 
 - (const char *)_vfsModuleName;
 - (int)attachProtectedDatabase;
@@ -19,6 +19,6 @@
 - (void)dealloc;
 - (int)detachProtectedDatabase;
 - (id)initWithPath:(id)arg1 databaseName:(id)arg2 protectedName:(id)arg3;
-- (bool)isProtectedDatabaseAttached;
+- (BOOL)isProtectedDatabaseAttached;
 
 @end

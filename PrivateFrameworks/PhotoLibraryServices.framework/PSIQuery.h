@@ -5,22 +5,22 @@
 @class NSObject<OS_dispatch_queue>, NSString, PSIDatabase;
 
 @interface PSIQuery : NSObject {
+    BOOL _didStart;
     PSIDatabase *_idx;
+    BOOL _isCanceled;
     int _queryId;
     NSString *_searchText;
     NSObject<OS_dispatch_queue> *_syncQueue;
-    bool_didStart;
-    bool_isCanceled;
 }
 
-@property(getter=isCanceled,readonly) bool canceled;
+@property(getter=isCanceled,readonly) BOOL canceled;
 @property(readonly) int queryId;
 @property(copy,readonly) NSString * searchText;
 
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithQueryId:(int)arg1 index:(id)arg2 searchText:(id)arg3;
-- (bool)isCanceled;
+- (BOOL)isCanceled;
 - (int)queryId;
 - (void)runWithResultsHandler:(id)arg1;
 - (id)searchText;

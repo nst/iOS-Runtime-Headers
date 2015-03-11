@@ -10,9 +10,9 @@
 + (unsigned long long)currentDiskSpaceAvailable;
 + (id)currentDiskUsage;
 + (id)currentOSBuild;
-+ (bool)isAppleInternalInstall;
-+ (bool)isDeviceSupported;
-+ (bool)isNano;
++ (BOOL)isAppleInternalInstall;
++ (BOOL)isDeviceSupported;
++ (BOOL)isNano;
 + (unsigned long long)totalDiskCapacity;
 
 @end

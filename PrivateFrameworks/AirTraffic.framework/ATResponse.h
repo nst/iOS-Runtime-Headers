@@ -6,13 +6,13 @@
 
 @interface ATResponse : ATMessage <NSSecureCoding> {
     NSError *_error;
-    bool_partial;
+    BOOL _partial;
 }
 
 @property(retain) NSError * error;
-@property(getter=isPartial) bool partial;
+@property(getter=isPartial) BOOL partial;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ATPMessage;
@@ -22,8 +22,8 @@
 - (id)error;
 - (id)initWithATPMessage:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isPartial;
+- (BOOL)isPartial;
 - (void)setError:(id)arg1;
-- (void)setPartial:(bool)arg1;
+- (void)setPartial:(BOOL)arg1;
 
 @end

@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)postFullSyncDuration:(double)arg1 onMaster:(bool)arg2 forService:(id)arg3;
+- (void)postFullSyncDuration:(double)arg1 onMaster:(BOOL)arg2 forService:(id)arg3;
 - (void)postReceiptOfMessage:(id)arg1 forService:(id)arg2;
 - (void)postSequenceErrorOfType:(int)arg1 sequenceNumber:(unsigned long long)arg2 forService:(id)arg3;
 

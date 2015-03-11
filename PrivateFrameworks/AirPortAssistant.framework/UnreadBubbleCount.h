@@ -4,29 +4,29 @@
 
 @interface UnreadBubbleCount : UIView {
     struct CGSize { 
-        double width; 
-        double height; 
-    long long _count;
+        float width; 
+        float height; 
+    int _count;
+    BOOL _isSelected;
     } _textSize;
-    bool_isSelected;
 }
 
-@property long long count;
-@property bool isSelected;
+@property int count;
+@property BOOL isSelected;
 
 + (void)deallocImageCache;
-+ (int)initImageCache;
++ (long)initImageCache;
 
 - (void)calculateTextMetrics;
-- (long long)count;
+- (int)count;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isHighlighted;
-- (bool)isSelected;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isHighlighted;
+- (BOOL)isSelected;
 - (void)layoutSubviews;
-- (void)setCount:(long long)arg1;
-- (void)setHighlighted:(bool)arg1;
-- (void)setIsSelected:(bool)arg1;
+- (void)setCount:(int)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setIsSelected:(BOOL)arg1;
 
 @end

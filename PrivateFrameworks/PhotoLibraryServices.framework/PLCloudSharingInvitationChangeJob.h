@@ -47,6 +47,6 @@
 - (void)setMstreamdInfoDictionary:(id)arg1;
 - (void)setRelationshipChangeType:(long long)arg1;
 - (void)setResendInvitationGUID:(id)arg1;
-- (bool)shouldArchiveXPCToDisk;
+- (BOOL)shouldArchiveXPCToDisk;
 
 @end

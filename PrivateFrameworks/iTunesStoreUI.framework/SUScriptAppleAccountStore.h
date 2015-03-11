@@ -17,9 +17,9 @@
 @property(readonly) NSString * accountTypeIdentifierTwitter;
 @property(readonly) NSString * effectiveBundleID;
 @property(readonly) SUScriptAppleAccount * primaryAppleAccount;
-@property(readonly) long long renewResultFailed;
-@property(readonly) long long renewResultRejected;
-@property(readonly) long long renewResultRenewed;
+@property(readonly) int renewResultFailed;
+@property(readonly) int renewResultRejected;
+@property(readonly) int renewResultRenewed;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
@@ -43,9 +43,9 @@
 - (id)makeClientAccessInfoWithAccountType:(id)arg1;
 - (id)primaryAppleAccount;
 - (void)renewCredentialsForAccount:(id)arg1 completionHandler:(id)arg2;
-- (long long)renewResultFailed;
-- (long long)renewResultRejected;
-- (long long)renewResultRenewed;
+- (int)renewResultFailed;
+- (int)renewResultRejected;
+- (int)renewResultRenewed;
 - (void)requestAccessWithInfo:(id)arg1 completionHandler:(id)arg2;
 - (id)scriptAttributeKeys;
 - (void)setEffectiveBundleID:(id)arg1;

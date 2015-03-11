@@ -7,7 +7,7 @@
 }
 
 - (id)contentsImage;
-- (double)extraLeftPadding;
-- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
+- (float)extraLeftPadding;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

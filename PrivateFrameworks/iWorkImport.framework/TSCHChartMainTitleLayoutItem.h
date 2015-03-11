@@ -5,8 +5,8 @@
 @interface TSCHChartMainTitleLayoutItem : TSCHChartTitleLayoutItem {
 }
 
-- (bool)isTitleOn;
-- (unsigned long long)titleParagraphStyleIndex;
+- (BOOL)isTitleOn;
+- (unsigned int)titleParagraphStyleIndex;
 - (id)titleSelectionPath;
 - (id)titleTextForModel:(id)arg1;
 

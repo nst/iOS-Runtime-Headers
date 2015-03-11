@@ -13,7 +13,7 @@
 @property(retain) UIControl * reorderControl;
 @property(retain) UIView * separatorView;
 
-- (bool)dataRequired;
+- (BOOL)dataRequired;
 - (void)dealloc;
 - (id)reorderControl;
 - (id)separatorView;

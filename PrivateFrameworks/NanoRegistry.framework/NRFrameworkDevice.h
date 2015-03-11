@@ -11,7 +11,7 @@
 @property(retain) NSUUID * deviceID;
 
 - (void).cxx_destruct;
-- (bool)_setValue:(id)arg1 forProperty:(id)arg2;
+- (BOOL)_setValue:(id)arg1 forProperty:(id)arg2;
 - (id)deviceID;
 - (id)initWithDevice:(id)arg1 deviceID:(id)arg2 queue:(id)arg3;
 - (void)setDeviceID:(id)arg1;

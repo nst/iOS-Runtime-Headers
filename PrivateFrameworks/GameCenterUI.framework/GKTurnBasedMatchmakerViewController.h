@@ -9,18 +9,18 @@
     GKHostedTurnBasedViewController *_hostedViewController;
     GKMatchRequest *_matchRequest;
     GKRemoteTurnBasedViewController *_remoteViewController;
+    BOOL _showExistingMatches;
     <GKTurnBasedMatchmakerViewControllerDelegate> *_turnBasedMatchmakerDelegateWeak;
-    bool_showExistingMatches;
 }
 
 @property(retain) UIAlertController * alertController;
 @property(retain) GKHostedTurnBasedViewController * hostedViewController;
 @property(retain) GKMatchRequest * matchRequest;
 @property(retain) GKRemoteTurnBasedViewController * remoteViewController;
-@property bool showExistingMatches;
+@property BOOL showExistingMatches;
 @property <GKTurnBasedMatchmakerViewControllerDelegate> * turnBasedMatchmakerDelegate;
 
-+ (bool)_preventsAppearanceProxyCustomization;
++ (BOOL)_preventsAppearanceProxyCustomization;
 
 - (void)_setupChildViewController;
 - (id)alertController;
@@ -40,13 +40,13 @@
 - (void)setHostedViewController:(id)arg1;
 - (void)setMatchRequest:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
-- (void)setShowExistingMatches:(bool)arg1;
+- (void)setShowExistingMatches:(BOOL)arg1;
 - (void)setTurnBasedMatchmakerDelegate:(id)arg1;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (bool)showExistingMatches;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)showExistingMatches;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)turnBasedMatchmakerDelegate;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

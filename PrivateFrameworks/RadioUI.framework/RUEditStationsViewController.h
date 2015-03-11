@@ -6,32 +6,32 @@
 
 @interface RUEditStationsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     _UIBackdropView *_backdropView;
     RUParallelScrollView *_containerScrollView;
     } _containerScrollViewContentInsetAdditions;
     RUCreateStationViewController *_createStationViewController;
     <RUCreateStationViewControllerDelegate><RUEditStationsViewControllerDelegate> *_delegate;
     UIAlertView *_deletionAlertView;
-    unsigned long long _ignoreReloadDataCount;
+    unsigned int _ignoreReloadDataCount;
     NSIndexPath *_indexPathToDelete;
+    BOOL _isEditing;
+    BOOL _needsReloadAfterEndIgnoring;
     MPUBorderDrawingCache *_stackItemBorderDrawingCache;
     NSArray *_stations;
     RUProxyTableView *_tableView;
-    bool_isEditing;
-    bool_needsReloadAfterEndIgnoring;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <RUCreateStationViewControllerDelegate><RUEditStationsViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (bool)_shouldForwardViewWillTransitionToSize;
++ (BOOL)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
 - (void)_beginIgnoringReloadData;
@@ -42,11 +42,11 @@
 - (void)_editAction:(id)arg1;
 - (void)_endIgnoringReloadData;
 - (void)_radioModelDidChangeNotification:(id)arg1;
-- (void)_updateBarButtonItemsAnimated:(bool)arg1;
+- (void)_updateBarButtonItemsAnimated:(BOOL)arg1;
 - (void)_updateTableViewRowHeight;
 - (void)_updateViewForHorizontalSizeClassChange;
 - (void)_updateViewForTraitCollectionChange;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
@@ -55,19 +55,19 @@
 - (void)reloadData;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
-- (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
-- (bool)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
+- (unsigned int)supportedInterfaceOrientations;
+- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (BOOL)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

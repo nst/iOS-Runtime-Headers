@@ -6,40 +6,40 @@
 
 @interface PBBridgeWatchAttributeController : NSObject {
     NRDevice *_device;
-    unsigned long long _edition;
+    unsigned int _edition;
     int _material;
-    unsigned long long _size;
+    unsigned int _size;
     NSCache *_stringCache;
 }
 
 @property(retain) NRDevice * device;
-@property(readonly) unsigned long long edition;
+@property(readonly) unsigned int edition;
 @property(readonly) int material;
-@property(readonly) unsigned long long size;
+@property(readonly) unsigned int size;
 @property(retain) NSCache * stringCache;
 
-+ (id)editionDescription:(unsigned long long)arg1;
++ (id)editionDescription:(unsigned int)arg1;
 + (id)materialDescription:(int)arg1;
 + (id)materialKeyColorForMaterial:(int)arg1;
-+ (id)resourceString:(id)arg1 material:(int)arg2 size:(unsigned long long)arg3 forAttributes:(unsigned long long)arg4;
++ (id)resourceString:(id)arg1 material:(int)arg2 size:(unsigned int)arg3 forAttributes:(unsigned int)arg4;
 + (id)sharedDeviceController;
-+ (id)sizeDescription:(unsigned long long)arg1;
++ (id)sizeDescription:(unsigned int)arg1;
 
 - (void).cxx_destruct;
 - (void)_populateMaterialDetailsWithDMinProperities:(id)arg1;
 - (id)attributesDescription;
 - (id)device;
-- (unsigned long long)edition;
+- (unsigned int)edition;
 - (id)getGestaltDmin;
 - (id)init;
 - (int)material;
 - (id)materialKeyColor;
-- (id)resourceString:(id)arg1 forAttributes:(unsigned long long)arg2;
+- (id)resourceString:(id)arg1 forAttributes:(unsigned int)arg2;
 - (void)setDevice:(id)arg1;
 - (void)setMaterial:(int)arg1;
-- (void)setSize:(unsigned long long)arg1;
+- (void)setSize:(unsigned int)arg1;
 - (void)setStringCache:(id)arg1;
-- (unsigned long long)size;
+- (unsigned int)size;
 - (id)stringCache;
 
 @end

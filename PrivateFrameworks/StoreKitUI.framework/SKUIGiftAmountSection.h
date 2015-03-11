@@ -9,14 +9,14 @@
 }
 
 @property(readonly) UIControl * amountControl;
-@property(readonly) long long selectedAmount;
+@property(readonly) int selectedAmount;
 @property(readonly) NSString * selectedAmountString;
 
 - (void).cxx_destruct;
 - (id)amountControl;
-- (double)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
-- (long long)numberOfRowsInSection;
-- (long long)selectedAmount;
+- (float)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
+- (int)numberOfRowsInSection;
+- (int)selectedAmount;
 - (id)selectedAmountString;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forIndexPath:(id)arg3;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;

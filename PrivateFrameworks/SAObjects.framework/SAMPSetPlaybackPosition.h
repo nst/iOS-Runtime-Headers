@@ -13,7 +13,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (int)position;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setPosition:(int)arg1;
 
 @end

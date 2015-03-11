@@ -19,7 +19,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <WKConnectionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (struct WebConnection { int (**x1)(); id x2; int (**x3)(); int (**x4)(); struct WebConnectionClient { struct WKConnectionClientV0 { struct WKConnectionClientBase { int x_1_3_1; void *x_1_3_2; } x_1_2_1; int (*x_1_2_2)(); int (*x_1_2_3)(); } x_5_1_1; } x5; }*)_connection;

@@ -5,23 +5,23 @@
 @class NSString;
 
 @interface WBSURLCompletionMatch : NSObject <WBSCompletionListItem> {
-    long long _matchLocation;
+    int _matchLocation;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) long long matchLocation;
+@property(readonly) unsigned int hash;
+@property(readonly) int matchLocation;
 @property(readonly) NSString * parsecDomainIdentifier;
 @property(readonly) Class superclass;
-@property(getter=isTopHit,readonly) bool topHit;
+@property(getter=isTopHit,readonly) BOOL topHit;
 
-+ (long long)matchLocationForString:(id)arg1 inTitle:(id)arg2;
-+ (long long)matchLocationForString:(id)arg1 inURLString:(id)arg2;
++ (int)matchLocationForString:(id)arg1 inTitle:(id)arg2;
++ (int)matchLocationForString:(id)arg1 inURLString:(id)arg2;
 
-- (id)initWithMatchLocation:(long long)arg1;
-- (bool)isTopHit;
-- (long long)matchLocation;
+- (id)initWithMatchLocation:(int)arg1;
+- (BOOL)isTopHit;
+- (int)matchLocation;
 - (id)matchingStringWithUserTypedPrefix:(id)arg1;
 - (id)originalURLString;
 - (id)parsecDomainIdentifier;

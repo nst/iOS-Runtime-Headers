@@ -5,25 +5,25 @@
 @class <BWGraphStatusDelegate>, NSMutableArray, NSObject<OS_dispatch_group>;
 
 @interface BWGraph : NSObject {
+    BOOL _beingConfigured;
+    BOOL _classicRetainedBufferCount;
     NSObject<OS_dispatch_group> *_commitGroup;
     NSMutableArray *_connections;
-    int _errorStatus;
+    long _errorStatus;
     long long _inflightConfigurationID;
     NSMutableArray *_nodes;
     NSMutableArray *_outputsWithSharedPools;
+    BOOL _running;
     NSMutableArray *_sinkNodes;
     NSMutableArray *_sourceNodes;
     NSObject<OS_dispatch_group> *_startGroup;
     <BWGraphStatusDelegate> *_statusDelegate;
-    bool_beingConfigured;
-    bool_classicRetainedBufferCount;
-    bool_running;
-    bool_supportsLiveReconfiguration;
+    BOOL _supportsLiveReconfiguration;
 }
 
-@property int errorStatus;
+@property long errorStatus;
 @property <BWGraphStatusDelegate> * statusDelegate;
-@property(readonly) bool supportsLiveReconfiguration;
+@property(readonly) BOOL supportsLiveReconfiguration;
 
 + (void)initialize;
 
@@ -32,27 +32,27 @@
 - (void)_makeParentConfigurationChangesLive;
 - (id)_newDispatchGroupForSinksToBecomeLiveWithConfigurationID:(long long)arg1;
 - (id)_newDispatchGroupForSinksToTransitionToState:(int)arg1;
-- (bool)_prepareNodesWithConfigurationChanges:(id*)arg1;
-- (bool)_resolveFormats:(id*)arg1;
-- (bool)_resolveRetainedBufferCounts:(id*)arg1;
+- (BOOL)_prepareNodesWithConfigurationChanges:(id*)arg1;
+- (BOOL)_resolveFormats:(id*)arg1;
+- (BOOL)_resolveRetainedBufferCounts:(id*)arg1;
 - (id)_reverseBreadthFirstEnumerator;
 - (id)_sinkNodes;
 - (id)_sourceNodes;
 - (void)_waitForOutstandingStartOrCommitOperationToComplete;
-- (bool)addNode:(id)arg1 error:(id*)arg2;
+- (BOOL)addNode:(id)arg1 error:(id*)arg2;
 - (void)beginConfiguration;
-- (bool)commitConfigurationWithID:(long long)arg1 error:(id*)arg2;
-- (bool)connectOutput:(id)arg1 toInput:(id)arg2 pipelineStage:(id)arg3;
+- (BOOL)commitConfigurationWithID:(long long)arg1 error:(id*)arg2;
+- (BOOL)connectOutput:(id)arg1 toInput:(id)arg2 pipelineStage:(id)arg3;
 - (void)dealloc;
 - (id)dotString;
-- (int)errorStatus;
+- (long)errorStatus;
 - (id)init;
-- (void)setErrorStatus:(int)arg1;
+- (void)setErrorStatus:(long)arg1;
 - (void)setStatusDelegate:(id)arg1;
-- (bool)start:(id*)arg1;
+- (BOOL)start:(id*)arg1;
 - (id)statusDelegate;
-- (bool)stop:(id*)arg1;
-- (bool)supportsLiveReconfiguration;
+- (BOOL)stop:(id*)arg1;
+- (BOOL)supportsLiveReconfiguration;
 - (void)waitForOutstandingStartOrCommitOperationToComplete;
 
 @end

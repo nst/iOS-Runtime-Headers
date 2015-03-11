@@ -3,14 +3,14 @@
  */
 
 @interface STWeatherUnits : AFSiriModelObject {
-    long long _temperatureUnits;
+    int _temperatureUnits;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (id)_initWithTemperatureUnits:(long long)arg1;
+- (id)_initWithTemperatureUnits:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (long long)temperatureUnits;
+- (int)temperatureUnits;
 
 @end

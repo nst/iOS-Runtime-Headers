@@ -5,6 +5,6 @@
 @interface SLTwitterSearchBar : UISearchBar {
 }
 
-- (bool)textFieldShouldClear:(id)arg1;
+- (BOOL)textFieldShouldClear:(id)arg1;
 
 @end

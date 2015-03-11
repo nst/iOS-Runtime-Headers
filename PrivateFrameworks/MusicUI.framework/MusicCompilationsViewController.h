@@ -5,6 +5,6 @@
 @interface MusicCompilationsViewController : MusicAlbumsViewController {
 }
 
-+ (long long)containerItemType;
++ (int)containerItemType;
 
 @end

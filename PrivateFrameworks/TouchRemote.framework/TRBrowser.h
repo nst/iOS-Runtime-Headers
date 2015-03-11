@@ -6,7 +6,7 @@
 
 @interface TRBrowser : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
-    unsigned long long _browsingCount;
+    unsigned int _browsingCount;
     NSMutableArray *_services;
 }
 

@@ -5,42 +5,42 @@
 @class <VKLRUCacheDelegate>;
 
 @interface VKLRUCache : NSObject <NSFastEnumeration> {
-    unsigned long long _count;
+    unsigned int _count;
     <VKLRUCacheDelegate> *_delegate;
     id _head;
-    unsigned long long _maximumCapacity;
-    unsigned long long _reservedCapacity;
+    unsigned int _maximumCapacity;
+    unsigned int _reservedCapacity;
     void *_table;
     id _tail;
 }
 
-@property(readonly) unsigned long long count;
+@property(readonly) unsigned int count;
 @property <VKLRUCacheDelegate> * delegate;
-@property(readonly) unsigned long long maximumCapacity;
-@property(readonly) unsigned long long reservedCapacity;
+@property(readonly) unsigned int maximumCapacity;
+@property(readonly) unsigned int reservedCapacity;
 
 - (void)consistencyCheck;
 - (id)contentsDescription;
-- (unsigned long long)count;
-- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (void)dropTail;
 - (void)evictIfNecessary;
 - (id)init;
-- (id)initWithReservedCapacity:(unsigned long long)arg1 maximumCapacity:(unsigned long long)arg2;
+- (id)initWithReservedCapacity:(unsigned int)arg1 maximumCapacity:(unsigned int)arg2;
 - (void)insertNodeAtHead:(id)arg1;
-- (unsigned long long)maximumCapacity;
+- (unsigned int)maximumCapacity;
 - (id)objectForKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
 - (id)objectWithoutPromotingForKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
 - (void)purge;
 - (void)removeAllObjects;
 - (void)removeNode:(id)arg1;
 - (void)removeObjectsMatchingPredicate:(id)arg1;
-- (unsigned long long)reservedCapacity;
+- (unsigned int)reservedCapacity;
 - (void)setDelegate:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg2;
-- (void)setReservedCapacity:(unsigned long long)arg1 maximumCapacity:(unsigned long long)arg2;
+- (void)setReservedCapacity:(unsigned int)arg1 maximumCapacity:(unsigned int)arg2;
 
 @end

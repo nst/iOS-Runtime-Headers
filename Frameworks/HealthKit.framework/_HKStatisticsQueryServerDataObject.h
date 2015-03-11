@@ -3,20 +3,20 @@
  */
 
 @interface _HKStatisticsQueryServerDataObject : _HKQueryServerDataObject {
-    unsigned long long _mergeStrategy;
-    unsigned long long _options;
+    unsigned int _mergeStrategy;
+    unsigned int _options;
 }
 
-@property unsigned long long mergeStrategy;
-@property unsigned long long options;
+@property unsigned int mergeStrategy;
+@property unsigned int options;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)mergeStrategy;
-- (unsigned long long)options;
-- (void)setMergeStrategy:(unsigned long long)arg1;
-- (void)setOptions:(unsigned long long)arg1;
+- (unsigned int)mergeStrategy;
+- (unsigned int)options;
+- (void)setMergeStrategy:(unsigned int)arg1;
+- (void)setOptions:(unsigned int)arg1;
 
 @end

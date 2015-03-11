@@ -9,13 +9,13 @@
 @class HKCorrelationType, NSDictionary;
 
 @interface HKCorrelationQuery : HKQuery {
-    long long _behaviorVersion;
+    int _behaviorVersion;
     id _completionHandler;
     NSDictionary *_filterDictionary;
     NSDictionary *_samplePredicates;
 }
 
-@property(getter=_behaviorVersion,setter=_setBehaviorVersion:) long long behaviorVersion;
+@property(getter=_behaviorVersion,setter=_setBehaviorVersion:) int behaviorVersion;
 @property(readonly) id completionHandler;
 @property(copy,readonly) HKCorrelationType * correlationType;
 @property(readonly) NSDictionary * filterDictionary;
@@ -24,13 +24,13 @@
 + (Class)_queryServerDataObjectClass;
 
 - (void).cxx_destruct;
-- (long long)_behaviorVersion;
+- (int)_behaviorVersion;
 - (id)_predicateFilterClasses;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
 - (id)_queue_errorHandler;
 - (void)_queue_validate;
-- (void)_setBehaviorVersion:(long long)arg1;
+- (void)_setBehaviorVersion:(int)arg1;
 - (id)completionHandler;
 - (id)correlationType;
 - (void)deliverCorrelations:(id)arg1 forQuery:(id)arg2;

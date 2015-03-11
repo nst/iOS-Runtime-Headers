@@ -16,14 +16,14 @@
 @property(retain) NSString * phase;
 @property double timeRemaining;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isDone;
+- (BOOL)isDone;
 - (float)normalizedPercentComplete;
 - (float)percentComplete;
 - (id)phase;

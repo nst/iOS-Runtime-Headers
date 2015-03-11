@@ -13,9 +13,9 @@
     NSError *error;
     struct OpaqueFigPlaybackItem { } *playbackItem;
     struct OpaqueFigPlayer { } *player;
-    long long priority;
+    int priority;
     NSObject<OS_dispatch_queue> *readWriteQueue;
-    long long status;
+    int status;
     AVWeakReference *weakReference;
 }
 

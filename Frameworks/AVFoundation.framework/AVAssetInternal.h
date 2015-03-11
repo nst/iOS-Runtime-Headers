@@ -8,7 +8,7 @@
     NSString *anchorChapterType;
     NSArray *availableChapterLocales;
     NSArray *chapterGroupInfo;
-    long long loadChapterInfoOnce;
+    long loadChapterInfoOnce;
     AVWeakReference *weakReference;
 }
 

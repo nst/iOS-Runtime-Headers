@@ -11,7 +11,7 @@
 @property(retain) AVPlayerController * playerController;
 
 - (void).cxx_destruct;
-- (long long)_handleRemoteCommandEvent:(id)arg1;
+- (int)_handleRemoteCommandEvent:(id)arg1;
 - (void)_updateRegisteredRemoteCommandEnabledStates;
 - (void)dealloc;
 - (id)init;

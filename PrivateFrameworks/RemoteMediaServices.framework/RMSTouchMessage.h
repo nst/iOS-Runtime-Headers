@@ -14,9 +14,9 @@
 }
 
 @property int direction;
-@property bool hasDirection;
-@property bool hasRepeatCount;
-@property bool hasSessionIdentifier;
+@property BOOL hasDirection;
+@property BOOL hasRepeatCount;
+@property BOOL hasSessionIdentifier;
 @property unsigned int repeatCount;
 @property int sessionIdentifier;
 
@@ -25,19 +25,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)direction;
-- (bool)hasDirection;
-- (bool)hasRepeatCount;
-- (bool)hasSessionIdentifier;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDirection;
+- (BOOL)hasRepeatCount;
+- (BOOL)hasSessionIdentifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)repeatCount;
 - (int)sessionIdentifier;
 - (void)setDirection:(int)arg1;
-- (void)setHasDirection:(bool)arg1;
-- (void)setHasRepeatCount:(bool)arg1;
-- (void)setHasSessionIdentifier:(bool)arg1;
+- (void)setHasDirection:(BOOL)arg1;
+- (void)setHasRepeatCount:(BOOL)arg1;
+- (void)setHasSessionIdentifier:(BOOL)arg1;
 - (void)setRepeatCount:(unsigned int)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 - (void)writeTo:(id)arg1;

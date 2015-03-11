@@ -26,7 +26,7 @@
 - (id)URL;
 - (void)_ignoreWhenUnarchiving;
 - (id)_initWithCoreResource:(struct PassRefPtr<WebCore::ArchiveResource> { struct ArchiveResource {} *x1; })arg1;
-- (id)_initWithData:(id)arg1 URL:(id)arg2 MIMEType:(id)arg3 textEncodingName:(id)arg4 frameName:(id)arg5 response:(id)arg6 copyData:(bool)arg7;
+- (id)_initWithData:(id)arg1 URL:(id)arg2 MIMEType:(id)arg3 textEncodingName:(id)arg4 frameName:(id)arg5 response:(id)arg6 copyData:(BOOL)arg7;
 - (id)_initWithData:(id)arg1 URL:(id)arg2 response:(id)arg3;
 - (id)_response;
 - (id)_stringValue;

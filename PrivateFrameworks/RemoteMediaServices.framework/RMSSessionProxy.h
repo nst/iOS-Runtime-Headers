@@ -6,10 +6,10 @@
 
 @interface RMSSessionProxy : NSObject {
     NSTimer *_heartbeatTimer;
+    BOOL _isPaused;
     double _lastHeartbeatTime;
     int _sessionIdentifier;
     double _sessionTimeout;
-    bool_isPaused;
 }
 
 @property int sessionIdentifier;
@@ -25,7 +25,7 @@
 - (int)heartbeatTime;
 - (id)initWithTimeout:(double)arg1;
 - (int)sessionIdentifier;
-- (bool)sessionMatchesNotification:(id)arg1;
+- (BOOL)sessionMatchesNotification:(id)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 
 @end

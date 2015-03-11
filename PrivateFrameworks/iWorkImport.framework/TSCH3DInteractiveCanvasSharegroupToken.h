@@ -10,13 +10,13 @@
 + (id)token;
 
 - (id)autorelease;
-- (bool)canBeCreatedFromOtherThread;
+- (BOOL)canBeCreatedFromOtherThread;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)hasInterestForDiscreteGraphics;
+- (BOOL)hasInterestForDiscreteGraphics;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
-- (bool)shouldClearCurrentContextOnOwnerChange;
-- (bool)shouldGarbageCollect;
+- (unsigned int)retainCount;
+- (BOOL)shouldClearCurrentContextOnOwnerChange;
+- (BOOL)shouldGarbageCollect;
 
 @end

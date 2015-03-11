@@ -5,9 +5,9 @@
 @class NSArray;
 
 @interface TPAppDelegate : TSABaseApplicationDelegate {
-    bool_appDoneLaunching;
-    bool_cachedBidiIsSupported;
-    bool_newDocumentOnLaunch;
+    BOOL _appDoneLaunching;
+    BOOL _cachedBidiIsSupported;
+    BOOL _newDocumentOnLaunch;
 }
 
 @property(readonly) NSArray * wordDocumentTypes;
@@ -30,14 +30,14 @@
 - (id)previewImageNameForDocumentType:(id)arg1;
 - (id)previewImageNameForEncryptedNativeDocument;
 - (id)previewImageNameForNativeDocument;
-- (bool)supportsRTL;
-- (bool)supportsScrollingInPhoneCommentUI;
-- (bool)tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
+- (BOOL)supportsRTL;
+- (BOOL)supportsScrollingInPhoneCommentUI;
+- (BOOL)tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;
 - (id)templateTypeDisplayName;
-- (bool)textInspectorShowsMoreSubpane;
+- (BOOL)textInspectorShowsMoreSubpane;
 - (id)wordDocumentTypes;
 
 @end

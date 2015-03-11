@@ -7,7 +7,7 @@
 
 - (void)addExternalDocumentReferenceTo:(id)arg1 forPid:(int)arg2 inContainer:(id)arg3 underParent:(id)arg4 reply:(id)arg5;
 - (oneway void)bundleDidAccessExternalDocument:(id)arg1;
-- (oneway void)checkinAskClientIfUsingUbiquity:(bool)arg1;
+- (oneway void)checkinAskClientIfUsingUbiquity:(BOOL)arg1;
 - (void)computePurgableSpaceWithUrgency:(int)arg1 reply:(id)arg2;
 - (void)currentAccountCreateWithID:(id)arg1 reply:(id)arg2;
 - (void)currentAccountLogoutWithReply:(id)arg1;
@@ -34,7 +34,7 @@
 - (void)getMigrationStatusForPrimaryiCloudAccount:(id)arg1;
 - (void)getNonLocalVersionSenderWithReceiver:(id)arg1 documentURL:(id)arg2 reply:(id)arg3;
 - (void)getNotificationInfoAtURL:(id)arg1 reply:(id)arg2;
-- (void)getPublishedURLForItemAtURL:(id)arg1 forStreaming:(bool)arg2 requestedTTL:(unsigned long long)arg3 reply:(id)arg4;
+- (void)getPublishedURLForItemAtURL:(id)arg1 forStreaming:(BOOL)arg2 requestedTTL:(unsigned int)arg3 reply:(id)arg4;
 - (void)getTotalApplicationDocumentUsageWithReply:(id)arg1;
 - (void)getiWorkPublishingBadgingStatusAtURL:(id)arg1 reply:(id)arg2;
 - (void)getiWorkPublishingInfoAtURL:(id)arg1 reply:(id)arg2;
@@ -48,10 +48,10 @@
 - (void)resetBudgets:(id)arg1 reply:(id)arg2;
 - (void)resolveBookmarkDataToURL:(id)arg1 reply:(id)arg2;
 - (void)resolveConflictWithName:(id)arg1 atURL:(id)arg2 reply:(id)arg3;
-- (void)setMigrationStatus:(BOOL)arg1 forDSID:(id)arg2 shouldNotify:(bool)arg3 reply:(id)arg4;
-- (void)setiWorkPublishingInfoAtURL:(id)arg1 publish:(bool)arg2 readonly:(bool)arg3 reply:(id)arg4;
+- (void)setMigrationStatus:(BOOL)arg1 forDSID:(id)arg2 shouldNotify:(BOOL)arg3 reply:(id)arg4;
+- (void)setiWorkPublishingInfoAtURL:(id)arg1 publish:(BOOL)arg2 readonly:(BOOL)arg3 reply:(id)arg4;
 - (void)setupInstanceWithDict:(id)arg1 reply:(id)arg2;
-- (void)startDownloadItemsAtURLs:(id)arg1 options:(unsigned long long)arg2 reply:(id)arg3;
+- (void)startDownloadItemsAtURLs:(id)arg1 options:(unsigned int)arg2 reply:(id)arg3;
 - (void)thumbnailChangedForItemAtURL:(id)arg1 reply:(id)arg2;
 - (oneway void)updateContainerMetadataForID:(id)arg1 bundleID:(id)arg2;
 - (void)waitForFileSystemChangeProcessingWithReply:(id)arg1;

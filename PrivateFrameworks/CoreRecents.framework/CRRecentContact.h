@@ -9,7 +9,7 @@
     long long _contactID;
     NSNumber *_decayedWeight;
     NSString *_displayName;
-    unsigned long long _groupKind;
+    unsigned int _groupKind;
     NSString *_groupName;
     NSString *_kind;
     NSString *_lastSendingAddress;
@@ -25,11 +25,11 @@
 
 @property(copy) NSString * address;
 @property long long contactID;
-@property(readonly) unsigned long long countOfRecents;
+@property(readonly) unsigned int countOfRecents;
 @property(retain) NSNumber * decayedWeight;
 @property(copy) NSString * displayName;
-@property(getter=isGroup,readonly) bool group;
-@property unsigned long long groupKind;
+@property(getter=isGroup,readonly) BOOL group;
+@property unsigned int groupKind;
 @property(copy) NSString * groupName;
 @property(copy) NSString * kind;
 @property(copy) NSString * lastSendingAddress;
@@ -44,7 +44,7 @@
 @property(copy) NSString * recentsDomain;
 @property(retain) NSNumber * weight;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_addressBookContext;
 - (void)_setAddressBookContext:(id)arg1;
@@ -57,7 +57,7 @@
 - (id)archivableRecentID;
 - (id)contactForPropertyID:(int)arg1;
 - (long long)contactID;
-- (unsigned long long)countOfRecents;
+- (unsigned int)countOfRecents;
 - (void)dealloc;
 - (id)decayedWeight;
 - (id)description;
@@ -65,18 +65,18 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateArchivablePropertiesWithBlock:(id)arg1;
 - (void*)existingPerson;
-- (unsigned long long)groupKind;
+- (unsigned int)groupKind;
 - (id)groupName;
-- (bool)hasFullTextMatch:(id)arg1;
-- (unsigned long long)hash;
+- (BOOL)hasFullTextMatch:(id)arg1;
+- (unsigned int)hash;
 - (id)initWithAddress:(id)arg1 displayName:(id)arg2 kind:(id)arg3 recentDate:(id)arg4 recentsDomain:(id)arg5;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContactID:(long long)arg1;
 - (id)initWithMembers:(id)arg1 displayName:(id)arg2 recentDate:(id)arg3 recentsDomain:(id)arg4;
-- (void)insertDate:(id)arg1 atIndex:(unsigned long long)arg2 required:(bool)arg3;
-- (unsigned long long)insertionIndexForDate:(id)arg1 wouldBeUnique:(bool*)arg2;
-- (bool)isEqual:(id)arg1;
-- (bool)isGroup;
+- (void)insertDate:(id)arg1 atIndex:(unsigned int)arg2 required:(BOOL)arg3;
+- (unsigned int)insertionIndexForDate:(id)arg1 wouldBeUnique:(BOOL*)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isGroup;
 - (id)kind;
 - (id)lastSendingAddress;
 - (void)lazilyCreateRecentDates;
@@ -92,7 +92,7 @@
 - (id)recentDates;
 - (long long)recentID;
 - (id)recentsDomain;
-- (void)recordRecentEventForDate:(id)arg1 userInitiated:(bool)arg2;
+- (void)recordRecentEventForDate:(id)arg1 userInitiated:(BOOL)arg2;
 - (void)setAddress:(id)arg1;
 - (void)setArchivableContactID:(id)arg1;
 - (void)setArchivableGroupKind:(id)arg1;
@@ -102,7 +102,7 @@
 - (void)setContactID:(long long)arg1;
 - (void)setDecayedWeight:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setGroupKind:(unsigned long long)arg1;
+- (void)setGroupKind:(unsigned int)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)setKind:(id)arg1;
 - (void)setLastSendingAddress:(id)arg1;

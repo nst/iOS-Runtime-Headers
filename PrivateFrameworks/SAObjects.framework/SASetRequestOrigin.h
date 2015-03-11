@@ -14,7 +14,7 @@
 @property(copy,readonly) NSString * description;
 @property(copy) NSString * desiredAccuracy;
 @property double direction;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property double horizontalAccuracy;
 @property double latitude;
 @property double longitude;

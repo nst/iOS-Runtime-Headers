@@ -5,7 +5,7 @@
 @interface UIStatusBarNewUIDoubleHeightStyleAttributes : UIStatusBarNewUIStyleAttributes {
 }
 
-- (double)heightForMetrics:(long long)arg1;
-- (bool)isDoubleHeight;
+- (float)heightForMetrics:(int)arg1;
+- (BOOL)isDoubleHeight;
 
 @end

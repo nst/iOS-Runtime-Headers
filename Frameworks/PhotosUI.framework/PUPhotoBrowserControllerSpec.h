@@ -9,36 +9,36 @@
 }
 
 @property(readonly) PUAvalancheReviewControllerSpec * avalancheReviewControllerSpec;
-@property(readonly) bool isInCamera;
+@property(readonly) BOOL isInCamera;
 @property(readonly) int photoThumbnailFormat;
-@property(readonly) bool shouldShowAirplayItem;
-@property(readonly) bool shouldShowBackButtonTitle;
-@property(readonly) bool shouldShowDeleteItem;
-@property(readonly) bool shouldShowEditItem;
-@property(readonly) bool shouldShowPhotoScrubber;
-@property(readonly) bool shouldShowShareItem;
-@property(readonly) bool shouldShowSlideshowItem;
-@property(readonly) bool shouldUsePopovers;
-@property(readonly) unsigned long long supportedInterfaceOrientations;
-@property(readonly) bool wantsCompactCommentsLayout;
-@property(readonly) bool wantsSubtitleForPhotobrowserTitleInLandscape;
+@property(readonly) BOOL shouldShowAirplayItem;
+@property(readonly) BOOL shouldShowBackButtonTitle;
+@property(readonly) BOOL shouldShowDeleteItem;
+@property(readonly) BOOL shouldShowEditItem;
+@property(readonly) BOOL shouldShowPhotoScrubber;
+@property(readonly) BOOL shouldShowShareItem;
+@property(readonly) BOOL shouldShowSlideshowItem;
+@property(readonly) BOOL shouldUsePopovers;
+@property(readonly) unsigned int supportedInterfaceOrientations;
+@property(readonly) BOOL wantsCompactCommentsLayout;
+@property(readonly) BOOL wantsSubtitleForPhotobrowserTitleInLandscape;
 
 - (void).cxx_destruct;
 - (id)avalancheReviewControllerSpec;
-- (bool)isInCamera;
+- (BOOL)isInCamera;
 - (id)newPhotoBrowserControllerForPhotoAtIndexPath:(id)arg1 assetCollections:(id)arg2 dataSource:(id)arg3;
 - (id)newPhotoBrowserZoomTransition;
 - (int)photoThumbnailFormat;
-- (bool)shouldShowAirplayItem;
-- (bool)shouldShowBackButtonTitle;
-- (bool)shouldShowDeleteItem;
-- (bool)shouldShowEditItem;
-- (bool)shouldShowPhotoScrubber;
-- (bool)shouldShowShareItem;
-- (bool)shouldShowSlideshowItem;
-- (bool)shouldUsePopovers;
-- (unsigned long long)supportedInterfaceOrientations;
-- (bool)wantsCompactCommentsLayout;
-- (bool)wantsSubtitleForPhotobrowserTitleInLandscape;
+- (BOOL)shouldShowAirplayItem;
+- (BOOL)shouldShowBackButtonTitle;
+- (BOOL)shouldShowDeleteItem;
+- (BOOL)shouldShowEditItem;
+- (BOOL)shouldShowPhotoScrubber;
+- (BOOL)shouldShowShareItem;
+- (BOOL)shouldShowSlideshowItem;
+- (BOOL)shouldUsePopovers;
+- (unsigned int)supportedInterfaceOrientations;
+- (BOOL)wantsCompactCommentsLayout;
+- (BOOL)wantsSubtitleForPhotobrowserTitleInLandscape;
 
 @end

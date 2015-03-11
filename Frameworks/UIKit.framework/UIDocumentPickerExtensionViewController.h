@@ -5,7 +5,7 @@
 @class NSArray, NSString, NSURL;
 
 @interface UIDocumentPickerExtensionViewController : UIViewController <_UIDocumentPickerExtensionViewController> {
-    unsigned long long _documentPickerMode;
+    unsigned int _documentPickerMode;
     NSURL *_documentStorageURL;
     NSURL *_originalURL;
     NSString *_providerIdentifier;
@@ -14,9 +14,9 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property unsigned long long documentPickerMode;
+@property unsigned int documentPickerMode;
 @property(copy) NSURL * documentStorageURL;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSURL * originalURL;
 @property(copy) NSString * providerIdentifier;
 @property(readonly) Class superclass;
@@ -29,17 +29,17 @@
 - (void)_prepareWithExtensionInfo:(id)arg1 completionHandler:(id)arg2;
 - (void)_setDocumentStorageURL:(id)arg1;
 - (void)_setPickableTypes:(id)arg1;
-- (void)_setPickerMode:(unsigned long long)arg1;
+- (void)_setPickerMode:(unsigned int)arg1;
 - (void)_setProviderIdentifier:(id)arg1;
 - (void)_setUploadURL:(id)arg1;
 - (void)_setUploadURLWrapper:(id)arg1;
 - (void)dealloc;
 - (void)dismissGrantingAccessToURL:(id)arg1;
-- (unsigned long long)documentPickerMode;
+- (unsigned int)documentPickerMode;
 - (id)documentStorageURL;
 - (id)originalURL;
-- (void)prepareForDocumentSelectionInMode:(unsigned long long)arg1;
-- (void)prepareForPresentationInMode:(unsigned long long)arg1;
+- (void)prepareForDocumentSelectionInMode:(unsigned int)arg1;
+- (void)prepareForPresentationInMode:(unsigned int)arg1;
 - (id)providerIdentifier;
 - (id)validTypes;
 

@@ -7,27 +7,27 @@
 @interface TSKHighlightController : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _canvasTransform;
     CALayer *_containingLayer;
     TSUImage *_image;
@@ -35,32 +35,32 @@
     } _layerTransform;
     } _overallRect;
     struct CGPath { } *_path;
-    double _viewScale;
+    float _viewScale;
 }
 
 @property(retain) TSUImage * image;
 @property(readonly) CALayer * layer;
 @property struct CGPath { }* path;
-@property struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
-@property double viewScale;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property float viewScale;
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })buildLayersForPath:(struct CGPath { }*)arg1 withImage:(id)arg2;
-- (void)createLayerWithZOrder:(double)arg1 contentsScaleForLayers:(double)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })buildLayersForPath:(struct CGPath { }*)arg1 withImage:(id)arg2;
+- (void)createLayerWithZOrder:(float)arg1 contentsScaleForLayers:(float)arg2;
 - (void)dealloc;
 - (void)disconnect;
-- (bool)drawRoundedRect;
+- (BOOL)drawRoundedRect;
 - (void)hide;
 - (id)image;
 - (id)layer;
 - (struct CGPath { }*)path;
 - (void)reset;
-- (void)setCanvasTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 layerTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
+- (void)setCanvasTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 layerTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
 - (void)setImage:(id)arg1;
 - (void)setPath:(struct CGPath { }*)arg1;
-- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-- (void)setViewScale:(double)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
-- (double)viewScale;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setViewScale:(float)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (float)viewScale;
 
 @end

@@ -7,9 +7,9 @@
 }
 
 - (id)_init:(id)arg1;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (void)finalize;
-- (id)objectAtIndex:(unsigned long long)arg1;
+- (id)objectAtIndex:(unsigned int)arg1;
 
 @end

@@ -5,29 +5,29 @@
 @class NSUUID, PSYTestInput;
 
 @interface PSYSyncOptions : NSObject <NSSecureCoding> {
+    BOOL _dryRun;
+    BOOL _terminateDuringDryRun;
     PSYTestInput *_testInput;
     NSUUID *_transactionID;
-    bool_dryRun;
-    bool_terminateDuringDryRun;
 }
 
-@property bool dryRun;
-@property bool terminateDuringDryRun;
+@property BOOL dryRun;
+@property BOOL terminateDuringDryRun;
 @property(retain) PSYTestInput * testInput;
 @property(copy) NSUUID * transactionID;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
-- (bool)dryRun;
+- (BOOL)dryRun;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setDryRun:(bool)arg1;
-- (void)setTerminateDuringDryRun:(bool)arg1;
+- (void)setDryRun:(BOOL)arg1;
+- (void)setTerminateDuringDryRun:(BOOL)arg1;
 - (void)setTestInput:(id)arg1;
 - (void)setTransactionID:(id)arg1;
-- (bool)terminateDuringDryRun;
+- (BOOL)terminateDuringDryRun;
 - (id)testInput;
 - (id)transactionID;
 

@@ -17,9 +17,9 @@
     int _deviceChangeToken;
     id _deviceHandler;
     NSSet *_deviceList;
-    bool_enabledCaching;
-    bool_unlocked;
-    bool_verbose;
+    BOOL _enabledCaching;
+    BOOL _unlocked;
+    BOOL _verbose;
 }
 
 @property(retain) NSObject<OS_dispatch_queue> * cacheSerializerQ;
@@ -30,23 +30,23 @@
 @property int deviceChangeToken;
 @property(copy) id deviceHandler;
 @property(retain) NSSet * deviceList;
-@property bool enabledCaching;
-@property bool unlocked;
-@property bool verbose;
+@property BOOL enabledCaching;
+@property BOOL unlocked;
+@property BOOL verbose;
 
 + (id)sharedSessionWithClientId:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)attributeComponentsFromRepresentation:(id)arg1 error:(id*)arg2;
 - (id)attributeExtendedComponentsFromRepresentation:(id)arg1 error:(id*)arg2;
-- (id)attributeForName:(id)arg1 type:(long long)arg2 clientId:(unsigned long long)arg3 error:(id*)arg4;
-- (id)attributeForName:(id)arg1 type:(long long)arg2 error:(id*)arg3;
+- (id)attributeForName:(id)arg1 type:(int)arg2 clientId:(unsigned long long)arg3 error:(id*)arg4;
+- (id)attributeForName:(id)arg1 type:(int)arg2 error:(id*)arg3;
 - (id)attributeFromFullname:(id)arg1 error:(id*)arg2;
 - (id)attributeFromRepresentation:(id)arg1 error:(id*)arg2;
 - (id)attributeNames;
 - (id)attributeNamesWithError:(id*)arg1;
-- (bool)broadcastSystemDataWithError:(id*)arg1;
-- (id)budgetForName:(id)arg1 type:(long long)arg2 error:(id*)arg3;
+- (BOOL)broadcastSystemDataWithError:(id*)arg1;
+- (id)budgetForName:(id)arg1 type:(int)arg2 error:(id*)arg3;
 - (id)budgetNamesWithError:(id*)arg1;
 - (id)cacheSerializerQ;
 - (id)cachedAttributeIDs;
@@ -55,22 +55,22 @@
 - (unsigned long long)clientId;
 - (id)copyDevicesUncached;
 - (void)dealloc;
-- (bool)deleteClientDataWithError:(id*)arg1;
+- (BOOL)deleteClientDataWithError:(id*)arg1;
 - (int)deviceChangeToken;
 - (id)deviceHandler;
 - (id)deviceList;
-- (bool)enabledCaching;
+- (BOOL)enabledCaching;
 - (id)getDeviceFromDescription:(id)arg1 error:(id*)arg2;
 - (id)getDevices;
 - (id)getDevicesInternal;
 - (id)init;
-- (id)initWithClientId:(unsigned long long)arg1 enableCaching:(bool)arg2;
+- (id)initWithClientId:(unsigned long long)arg1 enableCaching:(BOOL)arg2;
 - (id)initWithClientId:(unsigned long long)arg1;
-- (bool)isClassCLocked;
-- (bool)loadDylibs;
-- (id)registerAttributeWithName:(id)arg1 type:(long long)arg2 dataProtectionClass:(id)arg3 error:(id*)arg4;
-- (id)registerBudgetWithName:(id)arg1 value:(long long)arg2 type:(long long)arg3 error:(id*)arg4;
-- (bool)registerForDeviceChanges;
+- (BOOL)isClassCLocked;
+- (BOOL)loadDylibs;
+- (id)registerAttributeWithName:(id)arg1 type:(int)arg2 dataProtectionClass:(id)arg3 error:(id*)arg4;
+- (id)registerBudgetWithName:(id)arg1 value:(long long)arg2 type:(int)arg3 error:(id*)arg4;
+- (BOOL)registerForDeviceChanges;
 - (id)representationStringFromAttribute:(id)arg1 value:(id)arg2 error:(id*)arg3;
 - (id)representationStringFromAttribute:(id)arg1 value:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (void)setCacheSerializerQ:(id)arg1;
@@ -80,12 +80,12 @@
 - (void)setDeviceChangeToken:(int)arg1;
 - (void)setDeviceHandler:(id)arg1;
 - (void)setDeviceList:(id)arg1;
-- (bool)setDevicesChangedHandlerWithError:(id*)arg1 handler:(id)arg2;
-- (void)setEnabledCaching:(bool)arg1;
-- (bool)setNonAppBundlIdWithError:(id)arg1 error:(id*)arg2;
-- (void)setUnlocked:(bool)arg1;
-- (void)setVerbose:(bool)arg1;
-- (bool)unlocked;
-- (bool)verbose;
+- (BOOL)setDevicesChangedHandlerWithError:(id*)arg1 handler:(id)arg2;
+- (void)setEnabledCaching:(BOOL)arg1;
+- (BOOL)setNonAppBundlIdWithError:(id)arg1 error:(id*)arg2;
+- (void)setUnlocked:(BOOL)arg1;
+- (void)setVerbose:(BOOL)arg1;
+- (BOOL)unlocked;
+- (BOOL)verbose;
 
 @end

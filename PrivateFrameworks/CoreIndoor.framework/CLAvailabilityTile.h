@@ -14,8 +14,8 @@
 }
 
 @property double availabilityZScoreConfidenceInterval;
-@property bool hasAvailabilityZScoreConfidenceInterval;
-@property(readonly) bool hasParameterOverrides;
+@property BOOL hasAvailabilityZScoreConfidenceInterval;
+@property(readonly) BOOL hasParameterOverrides;
 @property(retain) LocalizerParameters * parameterOverrides;
 @property(retain) NSMutableArray * venues;
 
@@ -27,20 +27,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasAvailabilityZScoreConfidenceInterval;
-- (bool)hasParameterOverrides;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasAvailabilityZScoreConfidenceInterval;
+- (BOOL)hasParameterOverrides;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)parameterOverrides;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAvailabilityZScoreConfidenceInterval:(double)arg1;
-- (void)setHasAvailabilityZScoreConfidenceInterval:(bool)arg1;
+- (void)setHasAvailabilityZScoreConfidenceInterval:(BOOL)arg1;
 - (void)setParameterOverrides:(id)arg1;
 - (void)setVenues:(id)arg1;
 - (id)venues;
-- (id)venuesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)venuesCount;
+- (id)venuesAtIndex:(unsigned int)arg1;
+- (unsigned int)venuesCount;
 - (void)writeTo:(id)arg1;
 
 @end

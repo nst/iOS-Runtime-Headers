@@ -6,41 +6,41 @@
 
 @interface SGPlainTextContentCursor : NSObject {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     struct { 
         unsigned short buffer[64]; 
         struct __CFString {} *theString; 
         unsigned short *directUniCharBuffer; 
         char *directCStringBuffer; 
         struct { 
-            long long location; 
-            long long length; 
+            int location; 
+            int length; 
         } rangeToBuffer; 
-        long long bufferedRangeStart; 
-        long long bufferedRangeEnd; 
+        int bufferedRangeStart; 
+        int bufferedRangeEnd; 
     } _ib;
-    unsigned long long _len;
-    unsigned long long _pos;
+    unsigned int _len;
+    unsigned int _pos;
     NSIndexSet *_quoted;
     } _sig;
     struct __CFString { } *_str;
 }
 
-@property unsigned long long pos;
+@property unsigned int pos;
 
 - (void).cxx_destruct;
-- (bool)backward;
-- (bool)backwardToString:(id)arg1 consume:(bool)arg2;
+- (BOOL)backward;
+- (BOOL)backwardToString:(id)arg1 consume:(BOOL)arg2;
 - (void)backwardWhile:(id)arg1;
 - (void)dealloc;
-- (bool)forward;
-- (bool)forwardToString:(id)arg1 consume:(bool)arg2;
+- (BOOL)forward;
+- (BOOL)forwardToString:(id)arg1 consume:(BOOL)arg2;
 - (void)forwardWhile:(id)arg1;
 - (id)initWithEntity:(id)arg1;
-- (unsigned long long)pos;
+- (unsigned int)pos;
 - (void)seekToEnd;
 - (void)seekToStart;
-- (void)setPos:(unsigned long long)arg1;
+- (void)setPos:(unsigned int)arg1;
 
 @end

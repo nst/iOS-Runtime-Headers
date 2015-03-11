@@ -3,16 +3,16 @@
  */
 
 @interface EDStylesCollection : EDCollection {
-    unsigned long long mDefaultWorkbookStyleIndex;
+    unsigned int mDefaultWorkbookStyleIndex;
 }
 
-- (unsigned long long)addObject:(id)arg1;
+- (unsigned int)addObject:(id)arg1;
 - (id)defaultWorkbookStyle;
-- (unsigned long long)defaultWorkbookStyleIndex;
+- (unsigned int)defaultWorkbookStyleIndex;
 - (id)init;
 - (void)removeAllObjects;
-- (void)removeObjectAtIndex:(unsigned long long)arg1;
-- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
-- (void)setDefaultWorkbookStyleIndex:(unsigned long long)arg1;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)setDefaultWorkbookStyleIndex:(unsigned int)arg1;
 
 @end

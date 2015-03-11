@@ -10,6 +10,8 @@
     UIView *_headerView;
     NSLayoutConstraint *_heightCompressionResistanceConstraint;
     NSLayoutConstraint *_heightHuggingConstraint;
+    BOOL _isComputingInitialViewControllerPreferredHeight;
+    BOOL _isScrollingProgrammaticallyToViewController;
     UIScrollView *_scrollView;
     UIViewController *_selectedViewController;
     _MKStackingPlaceholderView *_selectorPlaceholderView;
@@ -22,14 +24,12 @@
     NSArray *_viewControllers;
     NSMapTable *_viewControllersToPreferredHeightConstraints;
     NSMutableSet *_viewControllersWithObservedTitles;
-    bool_isComputingInitialViewControllerPreferredHeight;
-    bool_isScrollingProgrammaticallyToViewController;
-    bool_willRelayoutForPreferredContentSizeChange;
+    BOOL _willRelayoutForPreferredContentSizeChange;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) UIView * headerView;
 @property UIViewController * selectedViewController;
 @property(retain) UIView * selectorView;
@@ -42,18 +42,18 @@
 - (void)_addPreferredHeightConstraintForViewControllerIfNeeded:(id)arg1;
 - (void)_addTitleViewToHierarchyIfPossible;
 - (void)_didScroll;
-- (double)_fittingHeightForView:(id)arg1;
-- (double)_headerHeight;
+- (float)_fittingHeightForView:(id)arg1;
+- (float)_headerHeight;
 - (void)_removePreferredHeightConstraintFromViewController:(id)arg1;
 - (void)_repositionNonstackedSubviews;
-- (void)_scrollToViewControllerAtIndex:(unsigned long long)arg1 animated:(bool)arg2;
-- (double)_selectorHeight;
-- (void)_setPreferredHeight:(double)arg1 forViewController:(id)arg2;
-- (void)_setSelectedViewController:(id)arg1 animated:(bool)arg2;
+- (void)_scrollToViewControllerAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
+- (float)_selectorHeight;
+- (void)_setPreferredHeight:(float)arg1 forViewController:(id)arg2;
+- (void)_setSelectedViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_setUpEnteringViewController:(id)arg1;
 - (void)_tearDownExitingViewController:(id)arg1;
-- (double)_titleHeight;
-- (double)_topLayoutGuide;
+- (float)_titleHeight;
+- (float)_topLayoutGuide;
 - (void)_updateSelectedViewControllerAfterPositionChange;
 - (void)_updateSelectorView;
 - (void)_updateStackViewSubviewsAndChildVCsEntering:(id)arg1 exiting:(id)arg2;
@@ -61,16 +61,16 @@
 - (id)headerView;
 - (void)loadView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)performUserSelectionForViewControllerAtIndex:(unsigned long long)arg1;
+- (void)performUserSelectionForViewControllerAtIndex:(unsigned int)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)selectedViewController;
 - (id)selectorView;
 - (void)setHeaderView:(id)arg1;
-- (void)setSelectedViewController:(id)arg1 animated:(bool)arg2;
+- (void)setSelectedViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setSelectedViewController:(id)arg1;
 - (void)setSelectorView:(id)arg1;
 - (void)setSelectorViewNeedsUpdate;
@@ -81,7 +81,7 @@
 - (id)titleView;
 - (void)updateViewConstraints;
 - (id)viewControllers;
-- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 

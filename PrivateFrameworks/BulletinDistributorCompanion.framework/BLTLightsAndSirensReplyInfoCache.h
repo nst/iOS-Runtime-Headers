@@ -21,10 +21,10 @@
 - (void)_checkCache;
 - (id)_firstReplyInfoWithNoDidPlayStateWithSectionID:(id)arg1 bulletinID:(id)arg2;
 - (id)_firstReplyInfoWithNoReplyWithSectionID:(id)arg1 bulletinID:(id)arg2;
-- (bool)_isTimeToCheck;
+- (BOOL)_isTimeToCheck;
 - (id)_keyForSectionID:(id)arg1 bulletinID:(id)arg2;
 - (void)_setNextTimeToCheck;
-- (void)cacheDidPlayLightsAndSirens:(unsigned long long)arg1 withSectionID:(id)arg2 bulletinID:(id)arg3;
+- (void)cacheDidPlayLightsAndSirens:(unsigned int)arg1 withSectionID:(id)arg2 bulletinID:(id)arg3;
 - (void)cacheReply:(id)arg1 withSectionID:(id)arg2 bulletinID:(id)arg3 publicationDate:(id)arg4;
 - (id)init;
 - (id)localReplyInfo;

@@ -11,12 +11,12 @@
     NSData *_iconHash;
     PKColor *_labelColor;
     NSData *_logoHash;
-    long long _passStyle;
+    int _passStyle;
     NSData *_paymentAssetsHash;
     PKColor *_stripColor;
     NSData *_stripHash;
+    BOOL _tallCode;
     NSData *_thumbnailHash;
-    bool_tallCode;
 }
 
 @property(retain) PKColor * backgroundColor;
@@ -24,18 +24,18 @@
 @property(retain) PKColor * foregroundColor;
 @property(retain) NSData * iconHash;
 @property(retain) PKColor * labelColor;
-@property(readonly) long long layoutMode;
+@property(readonly) int layoutMode;
 @property(retain) NSData * logoHash;
-@property long long passStyle;
+@property int passStyle;
 @property(retain) NSData * paymentAssetsHash;
-@property(readonly) bool showsBackgroundImage;
-@property(readonly) bool showsStripImage;
+@property(readonly) BOOL showsBackgroundImage;
+@property(readonly) BOOL showsStripImage;
 @property(retain) PKColor * stripColor;
 @property(retain) NSData * stripHash;
-@property bool tallCode;
+@property BOOL tallCode;
 @property(retain) NSData * thumbnailHash;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)backgroundColor;
 - (id)backgroundHash;
@@ -47,9 +47,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (id)labelColor;
-- (long long)layoutMode;
+- (int)layoutMode;
 - (id)logoHash;
-- (long long)passStyle;
+- (int)passStyle;
 - (id)paymentAssetsHash;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundHash:(id)arg1;
@@ -57,18 +57,18 @@
 - (void)setIconHash:(id)arg1;
 - (void)setLabelColor:(id)arg1;
 - (void)setLogoHash:(id)arg1;
-- (void)setPassStyle:(long long)arg1;
+- (void)setPassStyle:(int)arg1;
 - (void)setPaymentAssetsHash:(id)arg1;
 - (void)setStripColor:(id)arg1;
 - (void)setStripHash:(id)arg1;
-- (void)setTallCode:(bool)arg1;
+- (void)setTallCode:(BOOL)arg1;
 - (void)setThumbnailHash:(id)arg1;
-- (bool)showsBackgroundImage;
-- (bool)showsStripImage;
+- (BOOL)showsBackgroundImage;
+- (BOOL)showsStripImage;
 - (id)stripColor;
 - (id)stripHash;
-- (bool)tallCode;
+- (BOOL)tallCode;
 - (id)thumbnailHash;
-- (long long)type;
+- (int)type;
 
 @end

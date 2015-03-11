@@ -5,35 +5,35 @@
 @class NSUserDefaults;
 
 @interface StocksPreferences : NSObject {
+    BOOL _changeColorSwapped;
     NSUserDefaults *_sharedDefaults;
-    unsigned long long _textDirection;
-    bool_changeColorSwapped;
-    bool_textAttachmentDirectionIsRightToLeft;
+    BOOL _textAttachmentDirectionIsRightToLeft;
+    unsigned int _textDirection;
 }
 
-@property(getter=isChangeColorSwapped,readonly) bool changeColorSwapped;
-@property(readonly) bool textAttachmentDirectionIsRightToLeft;
-@property(readonly) unsigned long long textDirection;
+@property(getter=isChangeColorSwapped,readonly) BOOL changeColorSwapped;
+@property(readonly) BOOL textAttachmentDirectionIsRightToLeft;
+@property(readonly) unsigned int textDirection;
 
 + (void)clearSharedPreferences;
 + (id)sharedPreferences;
 
 - (void).cxx_destruct;
-- (bool)boolForKey:(id)arg1;
+- (BOOL)boolForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (long long)integerForKey:(id)arg1;
-- (bool)isChangeColorSwapped;
+- (int)integerForKey:(id)arg1;
+- (BOOL)isChangeColorSwapped;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;
 - (void)resetLocale;
-- (void)setInteger:(long long)arg1 forKey:(id)arg2;
+- (void)setInteger:(int)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)stringForKey:(id)arg1;
 - (void)synchronize;
-- (bool)textAttachmentDirectionIsRightToLeft;
-- (unsigned long long)textDirection;
+- (BOOL)textAttachmentDirectionIsRightToLeft;
+- (unsigned int)textDirection;
 
 @end

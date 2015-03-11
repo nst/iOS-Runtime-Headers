@@ -11,11 +11,11 @@
 
 @interface VKAnnotationMarkerLayer : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct { 
         double x0; 
         double x1; 
@@ -24,42 +24,42 @@
     } _accumulatedCenterOffset;
     VKAnnotationMarker *_annotationMarker;
     } _centerOffset;
-    double _contentScale;
+    float _contentScale;
+    BOOL _hasMass;
+    BOOL _hasScreenRect;
     VKAnnotationModel *_model;
     } _screenRect;
-    long long _styleType;
+    int _styleType;
     NSMutableArray *_sublayers;
     VKAnnotationMarkerLayer *_superlayer;
-    bool_hasMass;
-    bool_hasScreenRect;
 }
 
-@property struct CGPoint { double x1; double x2; } accumulatedCenterOffset;
+@property struct CGPoint { float x1; float x2; } accumulatedCenterOffset;
 @property VKAnnotationMarker * annotationMarker;
-@property struct CGPoint { double x1; double x2; } centerOffset;
-@property(readonly) double contentScale;
-@property bool hasMass;
-@property(readonly) bool hasScreenRect;
+@property struct CGPoint { float x1; float x2; } centerOffset;
+@property(readonly) float contentScale;
+@property BOOL hasMass;
+@property(readonly) BOOL hasScreenRect;
 @property VKAnnotationModel * model;
 @property struct { double x1; double x2; double x3; double x4; } screenRect;
-@property long long styleType;
+@property int styleType;
 @property(copy,readonly) NSArray * sublayers;
 @property VKAnnotationMarkerLayer * superlayer;
 
 - (id).cxx_construct;
 - (id)_styleAttributes;
 - (void)_updateStyle;
-- (long long)_vectorType;
-- (struct CGPoint { double x1; double x2; })accumulatedCenterOffset;
+- (int)_vectorType;
+- (struct CGPoint { float x1; float x2; })accumulatedCenterOffset;
 - (void)addSublayer:(id)arg1;
 - (id)annotationMarker;
-- (void)appendCommandsToBuffer:(struct CommandBuffer { int (**x1)(); char *x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned long long x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned long long x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg1 inContext:(id)arg2;
-- (struct CGPoint { double x1; double x2; })centerOffset;
-- (double)contentScale;
+- (void)appendCommandsToBuffer:(struct CommandBuffer { int (**x1)(); char *x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned int x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned int x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg1 inContext:(id)arg2;
+- (struct CGPoint { float x1; float x2; })centerOffset;
+- (float)contentScale;
 - (void)dealloc;
-- (double)distanceFromPoint:(struct VKPoint { double x1; double x2; double x3; })arg1 canvasSize:(struct CGSize { double x1; double x2; })arg2;
-- (bool)hasMass;
-- (bool)hasScreenRect;
+- (float)distanceFromPoint:(struct VKPoint { double x1; double x2; double x3; })arg1 canvasSize:(struct CGSize { float x1; float x2; })arg2;
+- (BOOL)hasMass;
+- (BOOL)hasScreenRect;
 - (id)init;
 - (void)insertSublayer:(id)arg1 aboveSublayer:(id)arg2;
 - (void)insertSublayer:(id)arg1 belowSublayer:(id)arg2;
@@ -69,20 +69,20 @@
 - (void)removeSublayer:(id)arg1;
 - (void)runAnimation:(id)arg1;
 - (struct { double x1; double x2; double x3; double x4; })screenRect;
-- (void)setAccumulatedCenterOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setAccumulatedCenterOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setAnnotationMarker:(id)arg1;
-- (void)setCenterOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setHasMass:(bool)arg1;
+- (void)setCenterOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setHasMass:(BOOL)arg1;
 - (void)setModel:(id)arg1;
 - (void)setScreenRect:(struct { double x1; double x2; double x3; double x4; })arg1;
-- (void)setStyleType:(long long)arg1;
+- (void)setStyleType:(int)arg1;
 - (void)setSuperlayer:(id)arg1;
-- (bool)shouldSnapToPixelsWithContext:(id)arg1;
-- (long long)styleType;
+- (BOOL)shouldSnapToPixelsWithContext:(id)arg1;
+- (int)styleType;
 - (void)stylesheetDidChange;
 - (id)sublayers;
 - (id)superlayer;
-- (void)updateWithContentScale:(double)arg1;
+- (void)updateWithContentScale:(float)arg1;
 - (void)updateWithStyleQuery:(const struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)willLayoutWithContext:(id)arg1;
 

@@ -10,36 +10,36 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_fillerViewInsetsForItemAtIndexPath:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_fillerViewInsetsForItemAtIndexPath:(id)arg1;
 - (void)_prepareTransitionImageContentForCell:(id)arg1 atIndexPath:(id)arg2 appearingZoomLevelInfo:(id)arg3;
-- (void)_prepareTransitionSubviewsForCell:(id)arg1 atIndexPath:(id)arg2 isAppearing:(bool)arg3;
+- (void)_prepareTransitionSubviewsForCell:(id)arg1 atIndexPath:(id)arg2 isAppearing:(BOOL)arg3;
 - (struct __CFString { }*)aggregateLevelKey;
-- (id)assetsToDisplayInMapForVisualSection:(long long)arg1;
-- (long long)cellFillMode;
-- (bool)configureGridCell:(id)arg1 forIndexPath:(id)arg2;
-- (void)configureSectionHeaderView:(id)arg1 forVisualSection:(long long)arg2;
-- (id)diagnosticsProviderForVisualSection:(long long)arg1;
+- (id)assetsToDisplayInMapForVisualSection:(int)arg1;
+- (int)cellFillMode;
+- (BOOL)configureGridCell:(id)arg1 forIndexPath:(id)arg2;
+- (void)configureSectionHeaderView:(id)arg1 forVisualSection:(int)arg2;
+- (id)diagnosticsProviderForVisualSection:(int)arg1;
 - (void)didFinishZoomLevelTransition;
 - (id)displayTitle;
-- (bool)hasEnoughContentToDisplay;
+- (BOOL)hasEnoughContentToDisplay;
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
 - (int)imageFormat;
 - (id)newCollectionViewLayout;
-- (void)prepareForTransitionFromZoomLevelInfo:(id)arg1 animated:(bool)arg2 interactive:(bool)arg3;
-- (void)prepareForTransitionToZoomLevelInfo:(id)arg1 animated:(bool)arg2 interactive:(bool)arg3;
+- (void)prepareForTransitionFromZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
+- (void)prepareForTransitionToZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (id)sectionHeaderElementKind;
-- (void)sectionedGridLayout:(id)arg1 didFinalizePrepareTransitionIsAppearing:(bool)arg2;
-- (bool)supportsEditMode;
-- (bool)supportsIncrementalChangeNotifications;
-- (void)updateLayoutMetricsForWidth:(double)arg1;
-- (bool)wantsAssetCountsVisible;
-- (bool)wantsAutomaticContentOffsetAdjustment;
-- (bool)wantsCloudStatusVisible;
-- (bool)wantsMagnifierNavigation;
+- (void)sectionedGridLayout:(id)arg1 didFinalizePrepareTransitionIsAppearing:(BOOL)arg2;
+- (BOOL)supportsEditMode;
+- (BOOL)supportsIncrementalChangeNotifications;
+- (void)updateLayoutMetricsForWidth:(float)arg1;
+- (BOOL)wantsAssetCountsVisible;
+- (BOOL)wantsAutomaticContentOffsetAdjustment;
+- (BOOL)wantsCloudStatusVisible;
+- (BOOL)wantsMagnifierNavigation;
 - (double)zoomInDuration;
 
 @end

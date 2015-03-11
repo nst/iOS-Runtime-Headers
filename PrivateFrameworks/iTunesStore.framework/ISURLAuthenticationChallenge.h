@@ -10,8 +10,8 @@
 
 - (void)cancelAuthentication;
 - (void)dealloc;
-- (long long)failureCount;
-- (bool)hasPassword;
+- (int)failureCount;
+- (BOOL)hasPassword;
 - (id)initWithAuthenticationChallenge:(id)arg1;
 - (id)password;
 - (id)sender;

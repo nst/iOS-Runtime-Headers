@@ -6,44 +6,44 @@
 
 @interface _HKActiveWorkoutServerConfiguration : NSObject <NSSecureCoding> {
     NSUUID *_UUID;
+    BOOL _indoor;
     NSDictionary *_resumeDataByType;
+    BOOL _shouldUseDeviceData;
     NSDate *_startDate;
-    unsigned long long _workoutActivityType;
+    unsigned int _workoutActivityType;
     NSArray *_workoutEvents;
-    long long _workoutState;
-    bool_indoor;
-    bool_shouldUseDeviceData;
+    int _workoutState;
 }
 
 @property(retain) NSUUID * UUID;
-@property(getter=isIndoor) bool indoor;
+@property(getter=isIndoor) BOOL indoor;
 @property(retain) NSDictionary * resumeDataByType;
-@property bool shouldUseDeviceData;
+@property BOOL shouldUseDeviceData;
 @property(retain) NSDate * startDate;
-@property unsigned long long workoutActivityType;
+@property unsigned int workoutActivityType;
 @property(retain) NSArray * workoutEvents;
-@property long long workoutState;
+@property int workoutState;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isIndoor;
+- (BOOL)isIndoor;
 - (id)resumeDataByType;
-- (void)setIndoor:(bool)arg1;
+- (void)setIndoor:(BOOL)arg1;
 - (void)setResumeDataByType:(id)arg1;
-- (void)setShouldUseDeviceData:(bool)arg1;
+- (void)setShouldUseDeviceData:(BOOL)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setUUID:(id)arg1;
-- (void)setWorkoutActivityType:(unsigned long long)arg1;
+- (void)setWorkoutActivityType:(unsigned int)arg1;
 - (void)setWorkoutEvents:(id)arg1;
-- (void)setWorkoutState:(long long)arg1;
-- (bool)shouldUseDeviceData;
+- (void)setWorkoutState:(int)arg1;
+- (BOOL)shouldUseDeviceData;
 - (id)startDate;
-- (unsigned long long)workoutActivityType;
+- (unsigned int)workoutActivityType;
 - (id)workoutEvents;
-- (long long)workoutState;
+- (int)workoutState;
 
 @end

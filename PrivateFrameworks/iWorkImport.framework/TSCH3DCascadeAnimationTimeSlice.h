@@ -16,23 +16,23 @@
             int g; 
             int t; 
         } ; 
-    boolmReverse;
-    unsigned long long mCascadeSlices;
+    unsigned int mCascadeSlices;
     NSIndexSet *mElements;
+    BOOL mReverse;
     } mSize;
 }
 
-@property unsigned long long cascadeSlices;
+@property unsigned int cascadeSlices;
 
-+ (id)timeSliceWithIndexSet:(id)arg1 size:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 reverse:(bool)arg3 cascadeSlices:(unsigned long long)arg4;
-+ (id)timeSliceWithIndexSet:(id)arg1 size:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 reverse:(bool)arg3;
++ (id)timeSliceWithIndexSet:(id)arg1 size:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 reverse:(BOOL)arg3 cascadeSlices:(unsigned int)arg4;
++ (id)timeSliceWithIndexSet:(id)arg1 size:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 reverse:(BOOL)arg3;
 
 - (id).cxx_construct;
-- (unsigned long long)cascadeSlices;
+- (unsigned int)cascadeSlices;
 - (void)dealloc;
-- (id)initWithIndexSet:(id)arg1 size:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 reverse:(bool)arg3 cascadeSlices:(unsigned long long)arg4;
+- (id)initWithIndexSet:(id)arg1 size:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 reverse:(BOOL)arg3 cascadeSlices:(unsigned int)arg4;
 - (struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; })rangeForIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1;
-- (void)setCascadeSlices:(unsigned long long)arg1;
-- (unsigned long long)totalSlices;
+- (void)setCascadeSlices:(unsigned int)arg1;
+- (unsigned int)totalSlices;
 
 @end

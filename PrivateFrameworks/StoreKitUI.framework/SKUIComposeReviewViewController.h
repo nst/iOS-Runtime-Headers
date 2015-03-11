@@ -13,7 +13,7 @@
 @property <SKUIComposeReviewDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) SKUIReviewMetadata * editedReviewMetadata;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -22,7 +22,7 @@
 - (void)_loadReviewWithURL:(id)arg1 completionBlock:(id)arg2;
 - (void)_sendDidCancel;
 - (void)_sendDidSubmit;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)composeReviewFormDidCancel:(id)arg1;
 - (void)composeReviewFormDidSubmit:(id)arg1;
 - (void)dealloc;

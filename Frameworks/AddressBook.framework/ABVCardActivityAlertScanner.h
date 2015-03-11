@@ -5,27 +5,27 @@
 @class NSString;
 
 @interface ABVCardActivityAlertScanner : NSObject {
-    unsigned long long _position;
+    unsigned int _position;
     NSString *_string;
 }
 
-+ (bool)characterIsStringValueCharacter:(unsigned short)arg1;
++ (BOOL)characterIsStringValueCharacter:(unsigned short)arg1;
 + (id)scanAlertValueFromString:(id)arg1;
 + (id)scannerWithString:(id)arg1;
 
-- (bool)atEnd;
+- (BOOL)atEnd;
 - (void)dealloc;
 - (id)initWithString:(id)arg1;
 - (unsigned short)nextCharacter;
 - (unsigned short)nextUnescapedCharacter;
-- (unsigned long long)position;
+- (unsigned int)position;
 - (id)scanAlertValue;
 - (unsigned short)scanCharacter;
-- (unsigned short)scanCharacterWithEscaping:(bool)arg1;
+- (unsigned short)scanCharacterWithEscaping:(BOOL)arg1;
 - (id)scanKeyValuePair;
-- (bool)scanPastCharacter:(unsigned short)arg1;
-- (bool)scanPastItemDelimiter;
-- (bool)scanPastKeyValueSeparator;
+- (BOOL)scanPastCharacter:(unsigned short)arg1;
+- (BOOL)scanPastItemDelimiter;
+- (BOOL)scanPastKeyValueSeparator;
 - (void)scanPastWhitespace;
 - (id)scanQuotedStringValue;
 - (id)scanStringValue;

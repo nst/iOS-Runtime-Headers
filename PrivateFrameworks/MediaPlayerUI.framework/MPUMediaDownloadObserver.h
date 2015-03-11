@@ -9,44 +9,44 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface MPUMediaDownloadObserver : NSObject {
+    BOOL _hasPendingProgressHandlerExecution;
+    BOOL _invalidated;
+    BOOL _paused;
     long long _pid;
     id _progressHandler;
     NSObject<OS_dispatch_queue> *_queue;
-    bool_hasPendingProgressHandlerExecution;
-    bool_invalidated;
-    bool_paused;
 }
 
-@property(readonly) bool canCancel;
-@property(getter=isCurrentlyPlayable,readonly) bool currentlyPlayable;
+@property(readonly) BOOL canCancel;
+@property(getter=isCurrentlyPlayable,readonly) BOOL currentlyPlayable;
 @property(readonly) double downloadProgress;
-@property(getter=isPaused,readonly) bool paused;
+@property(getter=isPaused,readonly) BOOL paused;
 @property(readonly) long long persistentID;
 @property(copy) id progressHandler;
-@property(getter=isPurchasing,readonly) bool purchasing;
+@property(getter=isPurchasing,readonly) BOOL purchasing;
 @property(readonly) double rawDownloadProgress;
 @property(readonly) double rawDownloadTotal;
-@property(getter=isRestoreDownload,readonly) bool restoreDownload;
+@property(getter=isRestoreDownload,readonly) BOOL restoreDownload;
 
 + (id)newObserverForMediaCollection:(id)arg1;
 + (id)newObserverForMediaItem:(id)arg1;
-+ (id)newObserverForMediaItemPersistentID:(unsigned long long)arg1 isPendingSync:(bool)arg2 storeID:(long long)arg3;
++ (id)newObserverForMediaItemPersistentID:(unsigned long long)arg1 isPendingSync:(BOOL)arg2 storeID:(long long)arg3;
 + (id)newObserverForStoreID:(long long)arg1;
 + (id)sharedITunesStoreDownloadManager;
 
 - (void).cxx_destruct;
 - (void)_onQueue_invalidate;
 - (void)_onQueue_setShouldFireProgressHandler;
-- (bool)canCancel;
+- (BOOL)canCancel;
 - (void)cancelDownload;
 - (void)dealloc;
 - (double)downloadProgress;
 - (id)init;
 - (void)invalidate;
-- (bool)isCurrentlyPlayable;
-- (bool)isPaused;
-- (bool)isPurchasing;
-- (bool)isRestoreDownload;
+- (BOOL)isCurrentlyPlayable;
+- (BOOL)isPaused;
+- (BOOL)isPurchasing;
+- (BOOL)isRestoreDownload;
 - (void)pauseDownload;
 - (long long)persistentID;
 - (id)progressHandler;

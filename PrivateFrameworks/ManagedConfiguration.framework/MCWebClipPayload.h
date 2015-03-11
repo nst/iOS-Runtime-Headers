@@ -6,20 +6,20 @@
 
 @interface MCWebClipPayload : MCPayload {
     NSURL *_URL;
+    BOOL _fullScreen;
     NSData *_iconData;
+    BOOL _isRemovable;
     NSString *_label;
+    BOOL _precomposed;
     NSString *_savedIdentifier;
-    bool_fullScreen;
-    bool_isRemovable;
-    bool_precomposed;
 }
 
 @property(retain,readonly) NSURL * URL;
-@property(readonly) bool fullScreen;
+@property(readonly) BOOL fullScreen;
 @property(retain,readonly) NSData * iconData;
-@property(readonly) bool isRemovable;
+@property(readonly) BOOL isRemovable;
 @property(retain,readonly) NSString * label;
-@property(readonly) bool precomposed;
+@property(readonly) BOOL precomposed;
 @property(retain) NSString * savedIdentifier;
 
 + (id)localizedPluralForm;
@@ -29,13 +29,13 @@
 - (void).cxx_destruct;
 - (id)URL;
 - (id)description;
-- (bool)fullScreen;
+- (BOOL)fullScreen;
 - (id)iconData;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (bool)isRemovable;
+- (BOOL)isRemovable;
 - (id)label;
 - (id)payloadDescriptionKeyValueSections;
-- (bool)precomposed;
+- (BOOL)precomposed;
 - (id)savedIdentifier;
 - (void)setSavedIdentifier:(id)arg1;
 - (id)stubDictionary;

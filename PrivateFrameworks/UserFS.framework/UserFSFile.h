@@ -5,7 +5,7 @@
 @interface UserFSFile : UserFSItem {
 }
 
-- (bool)isDirectory;
+- (BOOL)isDirectory;
 - (id)openStreamWithOptions:(unsigned int)arg1 error:(id*)arg2;
 
 @end

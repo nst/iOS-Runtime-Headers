@@ -34,7 +34,7 @@
 - (void)handleHTTPServerInvalidated;
 - (unsigned short)port;
 - (void)setDelegate:(id)arg1;
-- (bool)startServerWithExpectedPasscodeHash:(id)arg1 advertisedDeviceName:(id)arg2 advertisedDeviceModel:(id)arg3;
+- (BOOL)startServerWithExpectedPasscodeHash:(id)arg1 advertisedDeviceName:(id)arg2 advertisedDeviceModel:(id)arg3;
 - (void)stopServer;
 
 @end

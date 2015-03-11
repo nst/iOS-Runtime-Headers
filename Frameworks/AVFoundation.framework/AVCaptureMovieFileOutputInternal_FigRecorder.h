@@ -10,10 +10,10 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    boolsendLastVideoPreviewFrame;
     NSArray *metadata;
     } movieFragmentInterval;
     NSMutableArray *recordingDelegatesArray;
+    BOOL sendLastVideoPreviewFrame;
 }
 
 - (void)dealloc;

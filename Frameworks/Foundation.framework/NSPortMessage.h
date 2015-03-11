@@ -25,7 +25,7 @@
 - (id)initWithSendPort:(id)arg1 receivePort:(id)arg2 components:(id)arg3;
 - (unsigned int)msgid;
 - (id)receivePort;
-- (bool)sendBeforeDate:(id)arg1;
+- (BOOL)sendBeforeDate:(id)arg1;
 - (id)sendPort;
 - (void)setMsgid:(unsigned int)arg1;
 

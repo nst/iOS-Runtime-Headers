@@ -5,37 +5,37 @@
 @class <MPUExtrasSlideshowViewControllerDataSource>, MPUExtrasConstrainedArtworkContainerView, NSString, NSTimer, UIImage;
 
 @interface MPUExtrasSlideshowViewController : UIViewController <MPUExtrasZoomingImageTransitionParticipant> {
+    BOOL _animatingTransition;
     <MPUExtrasSlideshowViewControllerDataSource> *_dataSource;
     MPUExtrasConstrainedArtworkContainerView *_disappearingImageContainerView;
     MPUExtrasConstrainedArtworkContainerView *_imageContainerView;
     UIImage *_nextImage;
     double _transitionInterval;
-    unsigned long long _transitionStyle;
+    unsigned int _transitionStyle;
     NSTimer *_transitionTimer;
-    unsigned long long _visibleImageIndex;
-    bool_animatingTransition;
-    bool_viewVisible;
+    BOOL _viewVisible;
+    unsigned int _visibleImageIndex;
 }
 
-@property(getter=isAnimatingTransition) bool animatingTransition;
+@property(getter=isAnimatingTransition) BOOL animatingTransition;
 @property <MPUExtrasSlideshowViewControllerDataSource> * dataSource;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) MPUExtrasConstrainedArtworkContainerView * disappearingImageContainerView;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) MPUExtrasConstrainedArtworkContainerView * imageContainerView;
 @property(retain) UIImage * nextImage;
 @property(readonly) Class superclass;
 @property double transitionInterval;
-@property unsigned long long transitionStyle;
+@property unsigned int transitionStyle;
 @property(retain) NSTimer * transitionTimer;
-@property(getter=isViewVisible) bool viewVisible;
-@property unsigned long long visibleImageIndex;
+@property(getter=isViewVisible) BOOL viewVisible;
+@property unsigned int visibleImageIndex;
 
 - (void).cxx_destruct;
 - (void)_invalidateTransitionTimer;
 - (void)_loadImageContainerViewIfAppropriateWithImage:(id)arg1;
-- (unsigned long long)_numberOfImages;
+- (unsigned int)_numberOfImages;
 - (void)_performDissolveTransition;
 - (void)_performInstantaneousTransition;
 - (void)_performPushTransition;
@@ -46,35 +46,35 @@
 - (void)_transitionDidComplete;
 - (void)_transitionTimerDidFire:(id)arg1;
 - (void)_transitionToNextImageIfAppropriate;
-- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)dataSource;
 - (void)dealloc;
 - (id)disappearingImageContainerView;
-- (void)finalizeZoomingImageTransitionWithContext:(id)arg1 transitionFinished:(bool)arg2;
+- (void)finalizeZoomingImageTransitionWithContext:(id)arg1 transitionFinished:(BOOL)arg2;
 - (id)imageContainerView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (bool)isAnimatingTransition;
-- (bool)isViewVisible;
+- (BOOL)isAnimatingTransition;
+- (BOOL)isViewVisible;
 - (id)nextImage;
 - (void)performZoomingImageTransitionWithContext:(id)arg1;
-- (long long)preferredStatusBarStyle;
+- (int)preferredStatusBarStyle;
 - (void)prepareZoomingImageTransitionWithContext:(id)arg1;
-- (void)setAnimatingTransition:(bool)arg1;
+- (void)setAnimatingTransition:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDisappearingImageContainerView:(id)arg1;
 - (void)setImageContainerView:(id)arg1;
 - (void)setNextImage:(id)arg1;
 - (void)setTransitionInterval:(double)arg1;
-- (void)setTransitionStyle:(unsigned long long)arg1;
+- (void)setTransitionStyle:(unsigned int)arg1;
 - (void)setTransitionTimer:(id)arg1;
-- (void)setViewVisible:(bool)arg1;
-- (void)setVisibleImageIndex:(unsigned long long)arg1;
+- (void)setViewVisible:(BOOL)arg1;
+- (void)setVisibleImageIndex:(unsigned int)arg1;
 - (double)transitionInterval;
-- (unsigned long long)transitionStyle;
+- (unsigned int)transitionStyle;
 - (id)transitionTimer;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (unsigned long long)visibleImageIndex;
+- (unsigned int)visibleImageIndex;
 
 @end

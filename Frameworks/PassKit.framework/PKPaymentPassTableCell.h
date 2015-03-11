@@ -13,17 +13,17 @@
     UILabel *_passStateLabel;
     PKPaymentApplication *_paymentApplication;
     UILabel *_secondaryLabel;
+    BOOL _showState;
     UIImageView *_snapshotView;
     UIColor *_subTextLabelColor;
-    bool_showState;
 }
 
 @property UIColor * highlightColor;
 @property UIColor * mainLabelColor;
 @property UIColor * subTextLabelColor;
 
-- (id)_stringForPassState:(unsigned long long)arg1;
-- (id)_textColorForPassState:(unsigned long long)arg1;
+- (id)_stringForPassState:(unsigned int)arg1;
+- (id)_textColorForPassState:(unsigned int)arg1;
 - (void)dealloc;
 - (id)highlightColor;
 - (id)initWithPass:(id)arg1 secureElementIdentifier:(id)arg2;
@@ -31,7 +31,7 @@
 - (id)mainLabelColor;
 - (void)setHighlightColor:(id)arg1;
 - (void)setMainLabelColor:(id)arg1;
-- (void)setShowPassState:(bool)arg1;
+- (void)setShowPassState:(BOOL)arg1;
 - (void)setSubTextLabelColor:(id)arg1;
 - (id)subTextLabelColor;
 

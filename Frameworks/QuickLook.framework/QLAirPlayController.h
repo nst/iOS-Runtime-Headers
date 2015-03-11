@@ -19,8 +19,8 @@
 
 - (void)_createAirPlayWindowIfNeeded;
 - (void)_removeAirPlayWindow;
-- (double)_screenAspectRatioForPreviewViewController:(id)arg1;
-- (double)_screenScaleFactorForPreviewViewController:(id)arg1;
+- (float)_screenAspectRatioForPreviewViewController:(id)arg1;
+- (float)_screenScaleFactorForPreviewViewController:(id)arg1;
 - (void)_startUsingPreviewController;
 - (void)_stopUsingPreviewController;
 - (void)_updateWindowSize;

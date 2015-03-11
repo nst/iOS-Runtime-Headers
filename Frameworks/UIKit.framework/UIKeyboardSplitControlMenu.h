@@ -10,8 +10,8 @@
 
 @interface UIKeyboardSplitControlMenu : UIKeyboardMenuView {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     id _finishSplitTransitionBlock;
     NSMutableArray *m_menuOptions;
     } m_preferredSize;
@@ -23,15 +23,15 @@
 + (id)sharedInstance;
 
 - (void)dealloc;
-- (long long)defaultSelectedIndex;
+- (int)defaultSelectedIndex;
 - (void)didFinishSplitTransition;
 - (void)didSelectItemAtIndex:(int)arg1;
 - (id)finishSplitTransitionBlock;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (long long)numberOfItems;
-- (struct CGSize { double x1; double x2; })preferredSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)numberOfItems;
+- (struct CGSize { float x1; float x2; })preferredSize;
 - (void)setFinishSplitTransitionBlock:(id)arg1;
-- (void)setSplitAndUndocked:(bool)arg1;
+- (void)setSplitAndUndocked:(BOOL)arg1;
 - (id)titleForItemAtIndex:(int)arg1;
 
 @end

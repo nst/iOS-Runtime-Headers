@@ -5,21 +5,21 @@
 @class NSString;
 
 @interface RadioTrackAdInfo : NSObject <NSSecureCoding> {
+    BOOL _gatewayAdSlot;
     NSString *_slotIdentifier;
-    bool_gatewayAdSlot;
 }
 
-@property(getter=isGatewayAdSlot,readonly) bool gatewayAdSlot;
+@property(getter=isGatewayAdSlot,readonly) BOOL gatewayAdSlot;
 @property(copy,readonly) NSString * slotIdentifier;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAdInfoDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isGatewayAdSlot;
+- (BOOL)isGatewayAdSlot;
 - (id)slotIdentifier;
 
 @end

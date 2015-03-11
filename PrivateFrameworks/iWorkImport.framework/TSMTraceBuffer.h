@@ -6,51 +6,51 @@
 
 @interface TSMTraceBuffer : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
-    boolmActive;
-    boolmSynchronizedAccess;
-    long long mBufferID;
-    long long mBufferSize;
+        long __sig; 
+        BOOL __opaque[40]; 
+    BOOL mActive;
+    long mBufferID;
+    long mBufferSize;
     TSMTraceController *mController;
-    long long mCurrentIndex;
+    long mCurrentIndex;
     struct __CFData { } *mData;
     NSFileHandle *mFileHandle;
-    unsigned int mFilters[256];
+    unsigned long mFilters[256];
     } mLock;
+    BOOL mSynchronizedAccess;
     NSString *mTag;
 }
 
-@property(readonly) bool active;
-@property(readonly) long long bufferID;
-@property(readonly) long long bufferSize;
+@property(readonly) BOOL active;
+@property(readonly) long bufferID;
+@property(readonly) long bufferSize;
 @property(retain) TSMTraceController * controller;
 @property(retain) NSFileHandle * fileHandle;
 @property(readonly) unsigned int* filters;
-@property bool synchronizedAccess;
+@property BOOL synchronizedAccess;
 @property(readonly) NSString * tag;
 
-+ (id)bufferWithTag:(id)arg1 size:(long long)arg2;
++ (id)bufferWithTag:(id)arg1 size:(long)arg2;
 
-- (bool)active;
-- (long long)bufferID;
-- (long long)bufferSize;
+- (BOOL)active;
+- (long)bufferID;
+- (long)bufferSize;
 - (id)controller;
 - (void)dealloc;
 - (id)fileHandle;
-- (unsigned int)filterForModule:(int)arg1;
+- (unsigned long)filterForModule:(int)arg1;
 - (unsigned int*)filters;
 - (void)flush;
-- (id)initWithTag:(id)arg1 size:(long long)arg2;
-- (void)setBufferID:(long long)arg1;
+- (id)initWithTag:(id)arg1 size:(long)arg2;
+- (void)setBufferID:(long)arg1;
 - (void)setController:(id)arg1;
 - (void)setFileHandle:(id)arg1;
-- (void)setFilter:(unsigned int)arg1 forModule:(int)arg2;
-- (void)setSynchronizedAccess:(bool)arg1;
+- (void)setFilter:(unsigned long)arg1 forModule:(int)arg2;
+- (void)setSynchronizedAccess:(BOOL)arg1;
 - (void)start;
 - (void)stop;
-- (bool)synchronizedAccess;
+- (BOOL)synchronizedAccess;
 - (id)tag;
-- (void)writeTraceRecord:(struct TSMTraceRecord_s { struct TSMTraceRecordHeader_s { unsigned char x_1_1_1; unsigned char x_1_1_2; unsigned short x_1_1_3; struct timeval { long long x_4_2_1; int x_4_2_2; } x_1_1_4; } x1; BOOL x2[0]; }*)arg1 withFilter:(unsigned int)arg2;
+- (void)writeTraceRecord:(struct TSMTraceRecord_s { struct TSMTraceRecordHeader_s { unsigned char x_1_1_1; unsigned char x_1_1_2; unsigned short x_1_1_3; struct timeval { int x_4_2_1; int x_4_2_2; } x_1_1_4; } x1; BOOL x2[0]; }*)arg1 withFilter:(unsigned long)arg2;
 
 @end

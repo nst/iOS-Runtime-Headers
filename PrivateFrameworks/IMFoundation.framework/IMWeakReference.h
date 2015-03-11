@@ -4,16 +4,16 @@
 
 @interface IMWeakReference : NSObject {
     id _object;
-    unsigned long long _objectAddress;
+    unsigned int _objectAddress;
 }
 
 + (id)weakRefWithObject:(id)arg1;
 
 - (id)copyObject;
 - (void)dealloc;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initRefWithObject:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)object;
 
 @end

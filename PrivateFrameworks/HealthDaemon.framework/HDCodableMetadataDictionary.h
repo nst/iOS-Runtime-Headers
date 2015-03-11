@@ -17,13 +17,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)keyValuePairs;
-- (id)keyValuePairsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)keyValuePairsCount;
+- (id)keyValuePairsAtIndex:(unsigned int)arg1;
+- (unsigned int)keyValuePairsCount;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setKeyValuePairs:(id)arg1;
 - (void)writeTo:(id)arg1;
 

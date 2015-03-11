@@ -8,25 +8,25 @@
     UILabel *_bodyExampleLabel;
     NSArray *_contentSizeCategories;
     UILabel *_headlineExampleLabel;
-    long long _selectedCategoryIndex;
+    int _selectedCategoryIndex;
+    BOOL _showsExtendedRangeSwitch;
     PSSpecifier *_sliderGroupSpecifier;
-    bool_showsExtendedRangeSwitch;
-    bool_usesExtendedRange;
+    BOOL _usesExtendedRange;
 }
 
-@property bool showsExtendedRangeSwitch;
+@property BOOL showsExtendedRangeSwitch;
 
 - (void)dealloc;
 - (id)getDynamicTypeValueForSpecifier:(id)arg1;
 - (void)loadView;
 - (void)setDynamicTypeValue:(id)arg1 forSpecifier:(id)arg2;
-- (void)setShowsExtendedRangeSwitch:(bool)arg1;
+- (void)setShowsExtendedRangeSwitch:(BOOL)arg1;
 - (void)setUsesExtendedRange:(id)arg1 forSpecifier:(id)arg2;
-- (bool)showsExtendedRangeSwitch;
+- (BOOL)showsExtendedRangeSwitch;
 - (void)sizeCategoryDidChange:(id)arg1;
 - (id)specifiers;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)usesExtendedRangeForSpecifier:(id)arg1;
 - (void)viewDidLayoutSubviews;
 

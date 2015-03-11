@@ -5,17 +5,17 @@
 @class YahooAccount;
 
 @interface _MFXYMCOOKIEAuthenticator : MFSASLAuthenticator {
+    BOOL _smtp;
     YahooAccount *_yahooAccount;
-    bool_smtp;
 }
 
-@property(getter=isSMTP,readonly) bool smtp;
+@property(getter=isSMTP,readonly) BOOL smtp;
 @property(retain) YahooAccount * yahooAccount;
 
-- (bool)base64EncodeResponseData;
+- (BOOL)base64EncodeResponseData;
 - (void)dealloc;
 - (id)initWithAuthScheme:(id)arg1 account:(id)arg2 connection:(id)arg3;
-- (bool)isSMTP;
+- (BOOL)isSMTP;
 - (id)responseForServerData:(id)arg1;
 - (id)saslName;
 - (void)setAuthenticationState:(int)arg1;

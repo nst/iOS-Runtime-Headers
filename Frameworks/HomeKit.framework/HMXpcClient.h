@@ -10,49 +10,49 @@
 
 @interface HMXpcClient : NSObject <HMMessageTransport> {
     NSObject<OS_dispatch_queue> *_callbackQueue;
+    BOOL _connectionValid;
     HMMessageDispatcher *_messageDispatcher;
     int _notifyRegisterToken;
+    BOOL _notifyRegistered;
     id _reconnectionHandler;
+    BOOL _requiresCheckin;
     NSXPCConnection *_xpcConnection;
-    bool_connectionValid;
-    bool_notifyRegistered;
-    bool_requiresCheckin;
 }
 
 @property(retain) NSObject<OS_dispatch_queue> * callbackQueue;
-@property bool connectionValid;
+@property BOOL connectionValid;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) HMMessageDispatcher * messageDispatcher;
 @property int notifyRegisterToken;
-@property bool notifyRegistered;
+@property BOOL notifyRegistered;
 @property(copy) id reconnectionHandler;
-@property bool requiresCheckin;
+@property BOOL requiresCheckin;
 @property(readonly) Class superclass;
 @property(retain) NSXPCConnection * xpcConnection;
 
 - (void).cxx_destruct;
 - (id)callbackQueue;
 - (id)connection;
-- (bool)connectionValid;
+- (BOOL)connectionValid;
 - (void)dealloc;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id)arg5;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
 - (id)init;
 - (id)messageDispatcher;
 - (int)notifyRegisterToken;
-- (bool)notifyRegistered;
+- (BOOL)notifyRegistered;
 - (void)recheckinIfRequired:(id)arg1;
 - (id)reconnectionHandler;
 - (void)registerReconnectionHandler:(id)arg1;
-- (bool)requiresCheckin;
+- (BOOL)requiresCheckin;
 - (void)setCallbackQueue:(id)arg1;
-- (void)setConnectionValid:(bool)arg1;
+- (void)setConnectionValid:(BOOL)arg1;
 - (void)setNotifyRegisterToken:(int)arg1;
-- (void)setNotifyRegistered:(bool)arg1;
+- (void)setNotifyRegistered:(BOOL)arg1;
 - (void)setReconnectionHandler:(id)arg1;
-- (void)setRequiresCheckin:(bool)arg1;
+- (void)setRequiresCheckin:(BOOL)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (id)xpcConnection;
 

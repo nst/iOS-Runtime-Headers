@@ -10,9 +10,9 @@
 
 - (void)dealloc;
 - (id)drawable;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setDrawable:(id)arg1;
 
 @end

@@ -11,9 +11,9 @@
 - (void)bindToXPCDictionary:(id)arg1;
 - (id)copyImageData;
 - (void)dealloc;
-- (bool)hasArtworkData;
+- (BOOL)hasArtworkData;
 - (id)initWithSurface:(struct __IOSurface { }*)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (struct __IOSurface { }*)surface;
 - (unsigned int)type;
 

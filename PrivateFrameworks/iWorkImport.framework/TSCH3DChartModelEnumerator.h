@@ -6,14 +6,14 @@
 
 @interface TSCH3DChartModelEnumerator : NSObject {
     struct ValueEnumerator { 
-        boolmForward; 
-        unsigned long long mIndex; 
-        unsigned long long mMax; 
+        BOOL mForward; 
+        unsigned int mIndex; 
+        unsigned int mMax; 
         double mValue; 
     struct ValueEnumerator { 
-        boolmForward; 
-        unsigned long long mIndex; 
-        unsigned long long mMax; 
+        BOOL mForward; 
+        unsigned int mIndex; 
+        unsigned int mMax; 
         double mValue; 
     struct vector<double, std::__1::allocator<double> > { 
         double *__begin_; 
@@ -33,7 +33,7 @@
     } mCoordinateValues;
     double mIntercept;
     TSCHChartModel *mModel;
-    unsigned long long mNumberOfValues;
+    unsigned int mNumberOfValues;
     } mSeries;
     NSArray *mSeriesList;
     TSCHChartSeriesType *mSeriesType;
@@ -55,26 +55,26 @@
 - (void).cxx_destruct;
 - (double)axisSpaceValue;
 - (id)chartType;
-- (unsigned long long)countSeries;
+- (unsigned int)countSeries;
 - (void)dealloc;
 - (id)elementEnumerator;
-- (unsigned long long)elementIndex;
+- (unsigned int)elementIndex;
 - (double)groupValue;
-- (unsigned long long)index;
+- (unsigned int)index;
 - (id)info;
 - (id)initWithModel:(id)arg1 chartType:(id)arg2 seriesType:(id)arg3;
 - (double)intercept;
-- (bool)isValid;
-- (bool)isValidNonZero;
+- (BOOL)isValid;
+- (BOOL)isValidNonZero;
 - (id)model;
-- (id)nextElement:(unsigned long long)arg1;
+- (id)nextElement:(unsigned int)arg1;
 - (id)nextElement;
-- (id)nextSeries:(unsigned long long)arg1;
+- (id)nextSeries:(unsigned int)arg1;
 - (id)nextSeries;
-- (unsigned long long)numberOfSeries;
+- (unsigned int)numberOfSeries;
 - (id)p_resetCoordinateEnumeration;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })position;
-- (void)resetForReverseSeriesEnumeration:(bool)arg1;
+- (void)resetForReverseSeriesEnumeration:(BOOL)arg1;
 - (id)reverseSeriesEnumerator;
 - (id)series;
 - (id)seriesEnumerator;
@@ -82,10 +82,10 @@
 - (id)seriesFillOrStrokeColor;
 - (id)seriesName;
 - (id)seriesType;
-- (bool)showSeriesName;
-- (bool)showValueLabels;
+- (BOOL)showSeriesName;
+- (BOOL)showValueLabels;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })size;
-- (bool)skipZeroValues;
+- (BOOL)skipZeroValues;
 - (double)unitSpaceIntercept;
 - (double)unitSpaceValue;
 - (double)unitSpaceValueForAxisValue:(double)arg1;

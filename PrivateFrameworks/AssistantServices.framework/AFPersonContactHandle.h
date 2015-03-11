@@ -7,27 +7,27 @@
 @interface AFPersonContactHandle : NSObject <NSSecureCoding> {
     NSString *_handle;
     NSString *_label;
-    unsigned long long _type;
+    unsigned int _type;
 }
 
 @property(copy) NSString * handle;
 @property(copy) NSString * label;
-@property unsigned long long type;
+@property unsigned int type;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)handle;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToPersonContactHandle:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToPersonContactHandle:(id)arg1;
 - (id)label;
 - (void)setHandle:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setType:(unsigned long long)arg1;
-- (unsigned long long)type;
+- (void)setType:(unsigned int)arg1;
+- (unsigned int)type;
 
 @end

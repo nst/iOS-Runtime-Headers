@@ -12,37 +12,37 @@
 @interface WKBrowsingContextGroup : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebPageGroup> { 
         struct type { 
-            unsigned char __lx[104]; 
+            unsigned char __lx[72]; 
         } data; 
     } _pageGroup;
 }
 
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 @property(readonly) struct OpaqueWKPageGroup { }* _pageGroupRef;
-@property bool allowsJavaScript;
-@property bool allowsPlugIns;
+@property BOOL allowsJavaScript;
+@property BOOL allowsPlugIns;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool privateBrowsingEnabled;
+@property(readonly) unsigned int hash;
+@property BOOL privateBrowsingEnabled;
 @property(readonly) Class superclass;
 
 - (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
 - (struct OpaqueWKPageGroup { }*)_pageGroupRef;
-- (void)addUserScript:(id)arg1 baseURL:(id)arg2 whitelistedURLPatterns:(id)arg3 blacklistedURLPatterns:(id)arg4 injectionTime:(int)arg5 mainFrameOnly:(bool)arg6;
-- (void)addUserStyleSheet:(id)arg1 baseURL:(id)arg2 whitelistedURLPatterns:(id)arg3 blacklistedURLPatterns:(id)arg4 mainFrameOnly:(bool)arg5;
-- (bool)allowsJavaScript;
-- (bool)allowsJavaScriptMarkup;
-- (bool)allowsPlugIns;
+- (void)addUserScript:(id)arg1 baseURL:(id)arg2 whitelistedURLPatterns:(id)arg3 blacklistedURLPatterns:(id)arg4 injectionTime:(int)arg5 mainFrameOnly:(BOOL)arg6;
+- (void)addUserStyleSheet:(id)arg1 baseURL:(id)arg2 whitelistedURLPatterns:(id)arg3 blacklistedURLPatterns:(id)arg4 mainFrameOnly:(BOOL)arg5;
+- (BOOL)allowsJavaScript;
+- (BOOL)allowsJavaScriptMarkup;
+- (BOOL)allowsPlugIns;
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1;
-- (bool)privateBrowsingEnabled;
+- (BOOL)privateBrowsingEnabled;
 - (void)removeAllUserScripts;
 - (void)removeAllUserStyleSheets;
-- (void)setAllowsJavaScript:(bool)arg1;
-- (void)setAllowsJavaScriptMarkup:(bool)arg1;
-- (void)setAllowsPlugIns:(bool)arg1;
-- (void)setPrivateBrowsingEnabled:(bool)arg1;
+- (void)setAllowsJavaScript:(BOOL)arg1;
+- (void)setAllowsJavaScriptMarkup:(BOOL)arg1;
+- (void)setAllowsPlugIns:(BOOL)arg1;
+- (void)setPrivateBrowsingEnabled:(BOOL)arg1;
 
 @end

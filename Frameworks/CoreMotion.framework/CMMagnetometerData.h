@@ -8,7 +8,7 @@
 
 @property(readonly) struct { double x1; double x2; double x3; } magneticField;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

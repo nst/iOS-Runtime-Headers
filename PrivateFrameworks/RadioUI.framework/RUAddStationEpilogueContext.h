@@ -7,14 +7,14 @@
 @interface RUAddStationEpilogueContext : NSObject {
     RadioStation *_addedStation;
     MPAVItem *_prefixItem;
-    bool_shouldBeginPlayback;
-    bool_shouldKeepPlayingCurrentItem;
+    BOOL _shouldBeginPlayback;
+    BOOL _shouldKeepPlayingCurrentItem;
 }
 
 @property(readonly) RadioStation * addedStation;
 @property(retain) MPAVItem * prefixItem;
-@property bool shouldBeginPlayback;
-@property bool shouldKeepPlayingCurrentItem;
+@property BOOL shouldBeginPlayback;
+@property BOOL shouldKeepPlayingCurrentItem;
 
 - (void).cxx_destruct;
 - (id)addedStation;
@@ -22,9 +22,9 @@
 - (id)initWithAddedStation:(id)arg1;
 - (id)prefixItem;
 - (void)setPrefixItem:(id)arg1;
-- (void)setShouldBeginPlayback:(bool)arg1;
-- (void)setShouldKeepPlayingCurrentItem:(bool)arg1;
-- (bool)shouldBeginPlayback;
-- (bool)shouldKeepPlayingCurrentItem;
+- (void)setShouldBeginPlayback:(BOOL)arg1;
+- (void)setShouldKeepPlayingCurrentItem:(BOOL)arg1;
+- (BOOL)shouldBeginPlayback;
+- (BOOL)shouldKeepPlayingCurrentItem;
 
 @end

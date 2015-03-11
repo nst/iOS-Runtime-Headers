@@ -11,7 +11,7 @@
     NSString *_resultDomainVersion;
     <SBKKeyValuePayloadPair> *_resultItemPayloadPair;
     NSString *_resultItemVersionAnchor;
-    bool_success;
+    BOOL _success;
 }
 
 @property(readonly) <SBKKeyValuePayloadPair> * clientItemPayloadPair;
@@ -20,7 +20,7 @@
 @property(readonly) NSString * resultDomainVersion;
 @property(readonly) <SBKKeyValuePayloadPair> * resultItemPayloadPair;
 @property(readonly) NSString * resultItemVersionAnchor;
-@property(readonly) bool success;
+@property(readonly) BOOL success;
 
 - (void).cxx_destruct;
 - (id)clampsKey;
@@ -34,6 +34,6 @@
 - (id)resultDomainVersion;
 - (id)resultItemPayloadPair;
 - (id)resultItemVersionAnchor;
-- (bool)success;
+- (BOOL)success;
 
 @end

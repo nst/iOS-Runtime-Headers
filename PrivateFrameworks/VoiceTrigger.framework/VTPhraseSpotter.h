@@ -11,6 +11,7 @@
 @interface VTPhraseSpotter : NSObject {
     NSObject<OS_dispatch_queue> *_assetChangedQueue;
     NSString *_audioFileDir;
+    BOOL _audioLoggingEnabled;
     NSString *_configData;
     NSString *_configLocale;
     NSString *_configPath;
@@ -20,6 +21,8 @@
     double _hardwareSampleRate;
     int _hasTriggeredNotifyToken;
     int _heartbeatCounter;
+    BOOL _inactivityTimerSet;
+    BOOL _isInactiveUser;
     int _languageCodeChangedNotificationToken;
     NSObject<OS_dispatch_source> *_languageCodeChangedSource;
     unsigned int _lastEventEnd;
@@ -32,7 +35,10 @@
     NSObject<OS_dispatch_queue> *_ndetectQueue;
     NSMutableArray *_nonceTriggerEvents;
     int _nonceTriggerNotificationToken;
+    BOOL _phraseSpotterEnabled;
+    BOOL _pretriggered;
     id _readyCompletion;
+    BOOL _registeredForPhraseSpotterNotification;
     NSString *_resourcePath;
     unsigned int _sampleCountAtFirstChance;
     unsigned int _samplecount;
@@ -41,7 +47,7 @@
     unsigned long long _samplerate;
     int _secondChanceResetTimer;
     int _siriLastUseUpdatedNotificationToken;
-    long long _suggestedThreshold;
+    int _suggestedThreshold;
     int _suggestedThresholdChangedNotificationToken;
     double _threshold;
     double _thresholdInactiveUser;
@@ -51,12 +57,6 @@
     double _thresholdSiriUp;
     NSArray *_triggerPhrases;
     double _triggerThreshold;
-    bool_audioLoggingEnabled;
-    bool_inactivityTimerSet;
-    bool_isInactiveUser;
-    bool_phraseSpotterEnabled;
-    bool_pretriggered;
-    bool_registeredForPhraseSpotterNotification;
 }
 
 @property(readonly) double lastScore;
@@ -68,15 +68,15 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (id)_analyzeEvents:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; boolx5; }*)arg1 shouldFireNonce:(bool)arg2 isTrigger:(bool*)arg3;
-- (id)_analyzeMakeResult:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; boolx5; }*)arg1 isNearMiss:(bool)arg2 isSecondChance:(bool)arg3 effectiveThreshold:(double)arg4 isNonce:(bool)arg5;
+- (id)_analyzeEvents:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; boolx5; }*)arg1 shouldFireNonce:(BOOL)arg2 isTrigger:(BOOL*)arg3;
+- (id)_analyzeMakeResult:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; boolx5; }*)arg1 isNearMiss:(BOOL)arg2 isSecondChance:(BOOL)arg3 effectiveThreshold:(double)arg4 isNonce:(BOOL)arg5;
 - (void)_analyzeReset;
 - (void)_assetsAvailable:(id)arg1;
-- (id)_capturePath:(bool)arg1;
+- (id)_capturePath:(BOOL)arg1;
 - (void)_checkSiriIsActive;
 - (void)_commonInit;
-- (bool)_configureWithConfig:(id)arg1 resourcePath:(id)arg2 triggerThreshold:(double)arg3;
-- (bool)_configureWithDefaults;
+- (BOOL)_configureWithConfig:(id)arg1 resourcePath:(id)arg2 triggerThreshold:(double)arg3;
+- (BOOL)_configureWithDefaults;
 - (void)_handleAssetChange;
 - (void)_initSingleton;
 - (void)_listenForLanguageCodeUpdates;

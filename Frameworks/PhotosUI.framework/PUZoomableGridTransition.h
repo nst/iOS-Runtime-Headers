@@ -6,59 +6,59 @@
 
 @interface PUZoomableGridTransition : NSObject <UIViewControllerInteractiveTransitioning> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     UICollectionViewTransitionLayout *__transitionLayout;
     NSIndexPath *_anchorItemIndexPath;
     UICollectionView *_collectionView;
     } _currentInteractiveCenterOffset;
-    double _currentInteractiveProgress;
-    unsigned long long _originZoomLevel;
-    unsigned long long _targetZoomLevel;
+    float _currentInteractiveProgress;
+    BOOL _interactive;
+    unsigned int _originZoomLevel;
+    unsigned int _targetZoomLevel;
     <UIViewControllerContextTransitioning> *_transitionContext;
-    unsigned long long _transitionState;
+    unsigned int _transitionState;
     PUMomentsZoomLevelManager *_zoomLevelManager;
-    bool_interactive;
 }
 
 @property(setter=_setTransitionLayout:,retain) UICollectionViewTransitionLayout * _transitionLayout;
 @property(retain) NSIndexPath * anchorItemIndexPath;
-@property struct CGSize { double x1; double x2; } currentInteractiveCenterOffset;
-@property double currentInteractiveProgress;
+@property struct CGSize { float x1; float x2; } currentInteractiveCenterOffset;
+@property float currentInteractiveProgress;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(getter=isInteractive,readonly) bool interactive;
-@property unsigned long long originZoomLevel;
+@property(readonly) unsigned int hash;
+@property(getter=isInteractive,readonly) BOOL interactive;
+@property unsigned int originZoomLevel;
 @property(readonly) Class superclass;
-@property unsigned long long targetZoomLevel;
+@property unsigned int targetZoomLevel;
 @property(retain) <UIViewControllerContextTransitioning> * transitionContext;
-@property unsigned long long transitionState;
+@property unsigned int transitionState;
 @property(readonly) PUMomentsZoomLevelManager * zoomLevelManager;
 
 - (void).cxx_destruct;
-- (void)_setCurrentInteractiveCenterOffset:(struct CGSize { double x1; double x2; })arg1;
-- (void)_setCurrentInteractiveProgress:(double)arg1;
-- (void)_setOriginZoomLevel:(unsigned long long)arg1;
-- (void)_setTargetZoomLevel:(unsigned long long)arg1;
+- (void)_setCurrentInteractiveCenterOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setCurrentInteractiveProgress:(float)arg1;
+- (void)_setOriginZoomLevel:(unsigned int)arg1;
+- (void)_setTargetZoomLevel:(unsigned int)arg1;
 - (void)_setTransitionLayout:(id)arg1;
-- (void)_setTransitionState:(unsigned long long)arg1;
+- (void)_setTransitionState:(unsigned int)arg1;
 - (id)_transitionLayout;
 - (id)anchorItemIndexPath;
 - (void)cancelInteractiveTransitionAnimated;
-- (struct CGSize { double x1; double x2; })currentInteractiveCenterOffset;
-- (double)currentInteractiveProgress;
+- (struct CGSize { float x1; float x2; })currentInteractiveCenterOffset;
+- (float)currentInteractiveProgress;
 - (void)finishInteractiveTransitionAnimated;
-- (id)initWithOriginLevel:(unsigned long long)arg1 targetLevel:(unsigned long long)arg2 zoomLevelManager:(id)arg3 interactive:(bool)arg4;
-- (bool)isInteractive;
-- (unsigned long long)originZoomLevel;
+- (id)initWithOriginLevel:(unsigned int)arg1 targetLevel:(unsigned int)arg2 zoomLevelManager:(id)arg3 interactive:(BOOL)arg4;
+- (BOOL)isInteractive;
+- (unsigned int)originZoomLevel;
 - (void)setAnchorItemIndexPath:(id)arg1;
 - (void)setTransitionContext:(id)arg1;
 - (void)startInteractiveTransition:(id)arg1;
-- (unsigned long long)targetZoomLevel;
+- (unsigned int)targetZoomLevel;
 - (id)transitionContext;
-- (unsigned long long)transitionState;
-- (void)updateInteractiveTransitionForProgress:(double)arg1 centerOffset:(struct CGSize { double x1; double x2; })arg2;
+- (unsigned int)transitionState;
+- (void)updateInteractiveTransitionForProgress:(float)arg1 centerOffset:(struct CGSize { float x1; float x2; })arg2;
 - (id)zoomLevelManager;
 
 @end

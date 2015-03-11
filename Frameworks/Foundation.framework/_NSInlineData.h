@@ -6,10 +6,10 @@
     unsigned short _length;
 }
 
-- (bool)_isCompact;
+- (BOOL)_isCompact;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithBytes:(const void*)arg1 length:(unsigned long long)arg2;
-- (unsigned long long)length;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (unsigned int)length;
 
 @end

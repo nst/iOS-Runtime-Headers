@@ -6,55 +6,55 @@
 
 @interface SKUIViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     Class _cellClass;
     } _cellContentInset;
     SKUIViewElementLayoutContext *_cellLayoutContext;
-    double _firstSectionTopInset;
+    float _firstSectionTopInset;
     SKUICollectionViewCell<SKUIViewElementView> *_lastCell;
+    BOOL _rendersWithPerspective;
     NSString *_reuseIdentifier;
-    double _sectionBottomInset;
-    bool_rendersWithPerspective;
+    float _sectionBottomInset;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_reloadViewElementProperties;
 - (void)_requestCellLayout;
-- (bool)_showsImageReflection;
-- (bool)_stretchesToFitCollectionViewBounds;
+- (BOOL)_showsImageReflection;
+- (BOOL)_stretchesToFitCollectionViewBounds;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
-- (long long)applyUpdateType:(long long)arg1;
+- (int)applyUpdateType:(int)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
-- (bool)collectionViewShouldHighlightItemAtIndexPath:(id)arg1;
-- (bool)collectionViewShouldSelectItemAtIndexPath:(id)arg1;
+- (BOOL)collectionViewShouldHighlightItemAtIndexPath:(id)arg1;
+- (BOOL)collectionViewShouldSelectItemAtIndexPath:(id)arg1;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
-- (double)contentInsetAdjustmentForCollectionView:(id)arg1;
-- (long long)defaultItemPinningStyle;
+- (float)contentInsetAdjustmentForCollectionView:(id)arg1;
+- (int)defaultItemPinningStyle;
 - (void)expandEditorialForLabelElement:(id)arg1 indexPath:(id)arg2;
 - (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
 - (id)initWithPageComponent:(id)arg1;
-- (long long)numberOfCells;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })pinningContentInsetForItemAtIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
-- (void)prefetchResourcesWithReason:(long long)arg1;
-- (void)reloadCellWithIndexPath:(id)arg1 reason:(long long)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
-- (bool)updateCellWithIndexPath:(id)arg1 itemState:(id)arg2 animated:(bool)arg3;
+- (int)numberOfCells;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })pinningContentInsetForItemAtIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (void)prefetchResourcesWithReason:(int)arg1;
+- (void)reloadCellWithIndexPath:(id)arg1 reason:(int)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
+- (BOOL)updateCellWithIndexPath:(id)arg1 itemState:(id)arg2 animated:(BOOL)arg3;
 - (void)willAppearInContext:(id)arg1;
-- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

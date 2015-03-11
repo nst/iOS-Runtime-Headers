@@ -16,19 +16,19 @@
 @property(retain) NSPointerArray * promiscuousObservers;
 @property(retain) NSMutableDictionary * properties;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_firePropertyObserversForProperty:(id)arg1 fromValue:(id)arg2;
 - (void)_queueFirePropertyObserversForProperty:(id)arg1 fromValue:(id)arg2;
-- (bool)_queueSetValue:(id)arg1 forProperty:(id)arg2;
-- (bool)_setValue:(id)arg1 forProperty:(id)arg2;
+- (BOOL)_queueSetValue:(id)arg1 forProperty:(id)arg2;
+- (BOOL)_setValue:(id)arg1 forProperty:(id)arg2;
 - (void)addPropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDevice:(id)arg1 queue:(id)arg2 withSecureProperties:(bool)arg3;
+- (id)initWithDevice:(id)arg1 queue:(id)arg2 withSecureProperties:(BOOL)arg3;
 - (id)initWithQueue:(id)arg1;
 - (void)mergeWithDevice:(id)arg1;
 - (id)nrQueue;
@@ -45,7 +45,7 @@
 - (void)setObservers:(id)arg1;
 - (void)setPromiscuousObservers:(id)arg1;
 - (void)setProperties:(id)arg1;
-- (bool)setValue:(id)arg1 forProperty:(id)arg2;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 
 @end

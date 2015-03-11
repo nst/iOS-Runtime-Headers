@@ -7,15 +7,15 @@
 @interface MPUExtrasVideoTimelineEvent : NSObject {
     double _duration;
     UIImage *_image;
+    BOOL _isFirstEvent;
     IKLockupElement *_lockup;
     MPUExtrasVideoTimelineEvent *_next;
     double _offset;
     MPUExtrasVideoTimelineEvent *_previous;
-    bool_isFirstEvent;
 }
 
 @property(readonly) double duration;
-@property bool isFirstEvent;
+@property BOOL isFirstEvent;
 @property MPUExtrasVideoTimelineEvent * next;
 @property(readonly) double offset;
 @property(readonly) MPUExtrasVideoTimelineEvent * previous;
@@ -26,12 +26,12 @@
 - (id)description;
 - (double)duration;
 - (id)initWithElement:(id)arg1 prev:(id)arg2;
-- (bool)isFirstEvent;
+- (BOOL)isFirstEvent;
 - (void)loadImage:(id)arg1;
 - (id)next;
 - (double)offset;
 - (id)previous;
-- (void)setIsFirstEvent:(bool)arg1;
+- (void)setIsFirstEvent:(BOOL)arg1;
 - (void)setNext:(id)arg1;
 - (id)subHeader;
 - (id)title;

@@ -8,13 +8,13 @@
 
 @interface HKStatisticsQuery : HKQuery {
     id _completionHandler;
-    unsigned long long _mergeStrategy;
-    unsigned long long _options;
+    unsigned int _mergeStrategy;
+    unsigned int _options;
 }
 
 @property(readonly) id completionHandler;
-@property unsigned long long mergeStrategy;
-@property(readonly) unsigned long long options;
+@property unsigned int mergeStrategy;
+@property(readonly) unsigned int options;
 
 + (Class)_queryServerDataObjectClass;
 
@@ -25,9 +25,9 @@
 - (void)_queue_validate;
 - (id)completionHandler;
 - (void)deliverStatistics:(id)arg1 forQuery:(id)arg2;
-- (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned long long)arg3 completionHandler:(id)arg4;
-- (unsigned long long)mergeStrategy;
-- (unsigned long long)options;
-- (void)setMergeStrategy:(unsigned long long)arg1;
+- (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned int)arg3 completionHandler:(id)arg4;
+- (unsigned int)mergeStrategy;
+- (unsigned int)options;
+- (void)setMergeStrategy:(unsigned int)arg1;
 
 @end

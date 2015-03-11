@@ -8,7 +8,7 @@
 
 @property(readonly) struct { double x1; double x2; } ambientPressure;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (struct { double x1; double x2; })ambientPressure;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

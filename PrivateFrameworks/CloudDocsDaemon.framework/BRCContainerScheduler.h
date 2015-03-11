@@ -10,9 +10,10 @@
 
 @interface BRCContainerScheduler : NSObject <APSConnectionDelegate, BRCLocalContainerDelegate, BRCLowDiskDelegate> {
     struct _opaque_pthread_rwlock_t { 
-        long long __sig; 
-        BOOL __opaque[192]; 
+        long __sig; 
+        BOOL __opaque[124]; 
     BRCThrottledScheduler *_applyChangesScheduler;
+    BOOL _applyCountReachedMax;
     unsigned long long _availableQuota;
     CKContainer *_ckContainerForContainersMetadataSync;
     PQLConnection *_clientDB;
@@ -26,6 +27,7 @@
     NSObject<OS_dispatch_group> *_downloadGroup;
     NSString *_environmentName;
     NSObject<OS_dispatch_group> *_initialSyncDownGroup;
+    BOOL _isInLowDisk;
     NSMutableDictionary *_localContainersByID;
     NSMutableDictionary *_localContainersByMangledID;
     } _lock;
@@ -38,6 +40,7 @@
     APSConnection *_pushConnection;
     NSObject<OS_dispatch_queue> *_pushQueue;
     NSObject<OS_dispatch_source> *_pushSource;
+    BOOL _readerCountReachedMax;
     BRCThrottledScheduler *_readerScheduler;
     BRCRelativePath *_root;
     NSMutableDictionary *_serverContainersByID;
@@ -52,9 +55,6 @@
     BRCSyncBudgetThrottle *_syncUpBudget;
     NSObject<OS_dispatch_group> *_uploadGroup;
     NSObject<OS_dispatch_group> *_writerGroup;
-    bool_applyCountReachedMax;
-    bool_isInLowDisk;
-    bool_readerCountReachedMax;
     /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_downloadSuspendCount;
     /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_uploadSuspendCount;
 }
@@ -65,7 +65,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSObject<OS_dispatch_group> * downloadGroup;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSObject<OS_dispatch_group> * initialSyncDownGroup;
 @property(readonly) NSObject<OS_dispatch_group> * lostScanGroup;
 @property(readonly) BRCThrottledScheduler * readerScheduler;
@@ -83,7 +83,7 @@
 - (id)_containerMetadataRecordsToSave;
 - (id)_containersMetadataSyncDatabase;
 - (void)_lostScanSchedule;
-- (unsigned long long)_readCoordinationCount;
+- (unsigned int)_readCoordinationCount;
 - (long long)_readerScheduleContainer:(id)arg1;
 - (void)_removeContainerFromLostScanList:(id)arg1;
 - (void)_removeContainerFromSyncList:(id)arg1;
@@ -93,9 +93,9 @@
 - (void)_syncScheduleForContainersMetadata;
 - (void)_unscheduleContainer:(id)arg1;
 - (void)_updatePushTopicsRegistration;
-- (unsigned long long)_writeCoordinationCount;
+- (unsigned int)_writeCoordinationCount;
 - (id)accountSession;
-- (void)activateLocalContainer:(id)arg1 withServerContainer:(id)arg2 creation:(bool)arg3;
+- (void)activateLocalContainer:(id)arg1 withServerContainer:(id)arg2 creation:(BOOL)arg3;
 - (id)applyChangesScheduler;
 - (unsigned long long)availableQuota;
 - (id)ckContainerForContainersMetadataSync;
@@ -107,8 +107,8 @@
 - (id)containerByMangledID:(id)arg1;
 - (void)containerDidBecomeBackground:(id)arg1;
 - (void)containerDidBecomeForeground:(id)arg1;
-- (id)createContainerIfNeeded:(id)arg1 isInReset:(bool)arg2;
-- (bool)createContainerOnDisk:(id)arg1 createdRoot:(bool*)arg2 createdDocuments:(bool*)arg3;
+- (id)createContainerIfNeeded:(id)arg1 isInReset:(BOOL)arg2;
+- (BOOL)createContainerOnDisk:(id)arg1 createdRoot:(BOOL*)arg2 createdDocuments:(BOOL*)arg3;
 - (void)deactivate;
 - (void)didChangeApplyChangesStatusForContainer:(id)arg1;
 - (void)didChangeLostScanStatusForContainer:(id)arg1;
@@ -131,18 +131,18 @@
 - (void)lostScanResume;
 - (void)lostScanSetupTargetQueue:(id)arg1 handler:(id)arg2;
 - (void)lostScanSuspend;
-- (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(bool)arg2;
+- (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(BOOL)arg2;
 - (id)readerScheduler;
 - (void)refreshPushRegistrationAfterAppsListChanged;
 - (id)removeAndReturnLocalContainers;
-- (void)resetContainer:(id)arg1 resetType:(unsigned long long)arg2;
+- (void)resetContainer:(id)arg1 resetType:(unsigned int)arg2;
 - (void)resetContainerAsync:(id)arg1;
-- (void)scheduleReset:(unsigned long long)arg1 forContainer:(id)arg2;
+- (void)scheduleReset:(unsigned int)arg1 forContainer:(id)arg2;
 - (void)scheduleSyncDownContainerMetadata;
 - (void)setAvailableQuota:(unsigned long long)arg1;
 - (void)setupWithRoot:(id)arg1;
-- (bool)startReadCoordinationInContainer:(id)arg1;
-- (bool)startWriteCoordinationInContainer:(id)arg1;
+- (BOOL)startReadCoordinationInContainer:(id)arg1;
+- (BOOL)startWriteCoordinationInContainer:(id)arg1;
 - (id)syncGroup;
 - (void)syncResume;
 - (void)syncSuspend;

@@ -10,7 +10,7 @@
 
 @property(retain) GKChallenge * challenge;
 
-- (bool)canSelectPlayerInfo:(id)arg1;
+- (BOOL)canSelectPlayerInfo:(id)arg1;
 - (id)challenge;
 - (void)configureDataSource;
 - (void)dealloc;

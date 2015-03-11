@@ -21,18 +21,18 @@
 }
 
 - (void)addCommandsToPipeline:(id)arg1 withCache:(id)arg2;
-- (bool)allowsPartialDownloads;
+- (BOOL)allowsPartialDownloads;
 - (id)data;
 - (void)dealloc;
-- (bool)fetchBodyData;
+- (BOOL)fetchBodyData;
 - (void)handleFetchResult:(id)arg1;
 - (id)initWithMessage:(id)arg1;
-- (bool)isComplete;
+- (BOOL)isComplete;
 - (id)message;
-- (bool)partial;
+- (BOOL)partial;
 - (void)processResults;
-- (void)setAllowsPartialDownloads:(bool)arg1;
-- (void)setFetchBodyData:(bool)arg1;
+- (void)setAllowsPartialDownloads:(BOOL)arg1;
+- (void)setFetchBodyData:(BOOL)arg1;
 - (void)setTopLevelPart:(id)arg1;
 - (id)topLevelPart;
 

@@ -5,23 +5,23 @@
 @class NSObject<OS_dispatch_semaphore>, NSString, PUActivityItemSource;
 
 @interface _PUActivityItemSourceOperation : NSOperation {
+    BOOL __pu_cancelled;
     NSString *_activityType;
     PUActivityItemSource *_itemSource;
     NSObject<OS_dispatch_semaphore> *_semaphore;
-    bool__pu_cancelled;
 }
 
-@property(getter=_pu_isCancelled,setter=_pu_setCancelled:) bool _pu_cancelled;
-@property(getter=pu_isCancelled,readonly) bool pu_cancelled;
+@property(getter=_pu_isCancelled,setter=_pu_setCancelled:) BOOL _pu_cancelled;
+@property(getter=pu_isCancelled,readonly) BOOL pu_cancelled;
 @property(readonly) NSObject<OS_dispatch_semaphore> * semaphore;
 
 - (void).cxx_destruct;
-- (bool)_pu_isCancelled;
-- (void)_pu_setCancelled:(bool)arg1;
+- (BOOL)_pu_isCancelled;
+- (void)_pu_setCancelled:(BOOL)arg1;
 - (id)initWithActivityItemSource:(id)arg1 activityType:(id)arg2;
 - (void)main;
 - (void)pu_cancel;
-- (bool)pu_isCancelled;
+- (BOOL)pu_isCancelled;
 - (id)semaphore;
 
 @end

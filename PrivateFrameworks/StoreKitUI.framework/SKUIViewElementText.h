@@ -21,7 +21,7 @@
 - (id)_stringFromDateElement:(id)arg1;
 - (id)_stringFromDurationElement:(id)arg1;
 - (id)_stringFromNumberElement:(id)arg1;
-- (id)attributedStringWithDefaultFont:(id)arg1 foregroundColor:(id)arg2 textAlignment:(long long)arg3;
+- (id)attributedStringWithDefaultFont:(id)arg1 foregroundColor:(id)arg2 textAlignment:(int)arg3;
 - (id)attributedStringWithDefaultFont:(id)arg1 foregroundColor:(id)arg2;
 - (id)badges;
 - (id)initWithString:(id)arg1;

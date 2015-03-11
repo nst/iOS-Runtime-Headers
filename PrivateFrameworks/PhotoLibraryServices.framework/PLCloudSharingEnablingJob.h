@@ -3,22 +3,22 @@
  */
 
 @interface PLCloudSharingEnablingJob : PLCloudSharingJob {
-    bool_enableSharing;
+    BOOL _enableSharing;
 }
 
-@property bool enableSharing;
+@property BOOL enableSharing;
 
-+ (void)deleteAllLocalSharedAlbumsInLibrary:(id)arg1 keepPendingAlbums:(bool)arg2;
-+ (void)enableCloudSharing:(bool)arg1;
++ (void)deleteAllLocalSharedAlbumsInLibrary:(id)arg1 keepPendingAlbums:(BOOL)arg2;
++ (void)enableCloudSharing:(BOOL)arg1;
 
 - (long long)daemonOperation;
 - (id)description;
-- (bool)enableSharing;
+- (BOOL)enableSharing;
 - (void)encodeToXPCObject:(id)arg1;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (void)run;
 - (void)runDaemonSide;
-- (void)setEnableSharing:(bool)arg1;
-- (bool)shouldArchiveXPCToDisk;
+- (void)setEnableSharing:(BOOL)arg1;
+- (BOOL)shouldArchiveXPCToDisk;
 
 @end

@@ -6,21 +6,21 @@
 
 @interface RadioStationTreeNode : NSObject <NSCopying, NSMutableCopying> {
     RadioArtworkCollection *_artworkCollection;
-    long long _childNodeLoadingStyle;
+    int _childNodeLoadingStyle;
     NSArray *_childNodes;
-    long long _displayStyle;
+    int _displayStyle;
+    BOOL _hasAdditionalChildNodes;
     NSString *_name;
     long long _nodeID;
     NSDictionary *_stationDictionary;
     NSDictionary *_stationTreeNodeDictionary;
-    bool_hasAdditionalChildNodes;
 }
 
 @property(copy,readonly) RadioArtworkCollection * artworkCollection;
-@property(readonly) long long childNodeLoadingStyle;
+@property(readonly) int childNodeLoadingStyle;
 @property(copy,readonly) NSArray * childNodes;
-@property(readonly) long long displayStyle;
-@property(readonly) bool hasAdditionalChildNodes;
+@property(readonly) int displayStyle;
+@property(readonly) BOOL hasAdditionalChildNodes;
 @property(copy,readonly) NSString * name;
 @property(readonly) long long nodeID;
 @property(copy,readonly) NSDictionary * stationDictionary;
@@ -28,15 +28,15 @@
 
 - (void).cxx_destruct;
 - (id)artworkCollection;
-- (long long)childNodeLoadingStyle;
+- (int)childNodeLoadingStyle;
 - (id)childNodes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (long long)displayStyle;
-- (bool)hasAdditionalChildNodes;
-- (unsigned long long)hash;
+- (int)displayStyle;
+- (BOOL)hasAdditionalChildNodes;
+- (unsigned int)hash;
 - (id)initWithStationTreeNodeDictionary:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
 - (long long)nodeID;

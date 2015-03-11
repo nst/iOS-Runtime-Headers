@@ -32,11 +32,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (unsigned long long)height;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setBitmapData:(id)arg1;
 - (void)setBitmapInfo:(unsigned int)arg1;
 - (void)setBitsPerComponent:(unsigned long long)arg1;

@@ -14,50 +14,50 @@
 }
 
 @property(copy) NSString * alignmentMode;
-@property bool allowsFontSubpixelQuantization;
+@property BOOL allowsFontSubpixelQuantization;
 @property void* font;
-@property double fontSize;
+@property float fontSize;
 @property struct CGColor { }* foregroundColor;
 @property(copy) id string;
 @property(copy) NSString * truncationMode;
 @property(copy) id truncationString;
-@property(getter=isWrapped) bool wrapped;
+@property(getter=isWrapped) BOOL wrapped;
 
-+ (bool)CA_automaticallyNotifiesObservers:(Class)arg1;
++ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;
-+ (bool)needsDisplayForKey:(id)arg1;
++ (BOOL)needsDisplayForKey:(id)arg1;
 
 - (void)_applyLinesToFunction:(int (*)())arg1 info:(void*)arg2;
 - (id)_createStringDict;
 - (struct __CTLine { }*)_createTruncationToken;
-- (void)_drawLine:(struct __CTLine { }*)arg1 inContext:(struct CGContext { }*)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3;
-- (struct CGSize { double x1; double x2; })_preferredSize;
+- (void)_drawLine:(struct __CTLine { }*)arg1 inContext:(struct CGContext { }*)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (struct CGSize { float x1; float x2; })_preferredSize;
 - (void)_prepareContext:(struct CGContext { }*)arg1;
 - (struct __CTTypesetter { }*)_retainTypesetter;
 - (id)alignmentMode;
-- (bool)allowsFontSubpixelQuantization;
+- (BOOL)allowsFontSubpixelQuantization;
 - (void)dealloc;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void*)font;
-- (double)fontSize;
+- (float)fontSize;
 - (struct CGColor { }*)foregroundColor;
 - (id)implicitAnimationForKeyPath:(id)arg1;
 - (id)init;
 - (id)initWithLayer:(id)arg1;
-- (bool)isWrapped;
+- (BOOL)isWrapped;
 - (void)setAlignmentMode:(id)arg1;
-- (void)setAllowsFontSubpixelQuantization:(bool)arg1;
+- (void)setAllowsFontSubpixelQuantization:(BOOL)arg1;
 - (void)setFont:(void*)arg1;
-- (void)setFontSize:(double)arg1;
+- (void)setFontSize:(float)arg1;
 - (void)setForegroundColor:(struct CGColor { }*)arg1;
 - (void)setString:(id)arg1;
 - (void)setTruncationMode:(id)arg1;
 - (void)setTruncationString:(id)arg1;
-- (void)setWrapped:(bool)arg1;
+- (void)setWrapped:(BOOL)arg1;
 - (id)string;
 - (id)truncationMode;
 - (id)truncationString;
-- (bool)wrapped;
+- (BOOL)wrapped;
 
 @end

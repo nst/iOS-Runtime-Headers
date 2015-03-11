@@ -13,7 +13,7 @@
 @property(readonly) NSString * localizedName;
 @property(readonly) long long uniqueIdentifier;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_station;
@@ -21,7 +21,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStation:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)localizedDescription;
 - (id)localizedName;
 - (long long)uniqueIdentifier;

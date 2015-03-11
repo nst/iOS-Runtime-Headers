@@ -7,12 +7,12 @@
 @interface IKButtonElement : IKViewElement {
 }
 
-@property(readonly) long long buttonType;
+@property(readonly) int buttonType;
 @property(copy,readonly) NSString * confirmationText;
 @property(retain,readonly) IKImageElement * image;
 @property(retain,readonly) IKTextElement * text;
 
-- (long long)buttonType;
+- (int)buttonType;
 - (id)confirmationText;
 - (id)image;
 - (id)text;

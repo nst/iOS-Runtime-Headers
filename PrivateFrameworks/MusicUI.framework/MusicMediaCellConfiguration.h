@@ -6,11 +6,11 @@
 }
 
 + (void)configureCellForSizing:(id)arg1;
-+ (bool)mediaCellConfigurationUsesSubtitle;
++ (BOOL)mediaCellConfigurationUsesSubtitle;
 + (id)tableViewBackgroundColor;
 + (id)tableViewCellBackgroundColor;
 + (Class)tableViewCellClass;
-+ (double)tableViewCellHeight;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tableViewSeparatorInset;
++ (float)tableViewCellHeight;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tableViewSeparatorInset;
 
 @end

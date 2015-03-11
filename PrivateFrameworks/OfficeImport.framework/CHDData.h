@@ -5,31 +5,31 @@
 @class CHDDataValuesCollection, CHDFormula, EDResources;
 
 @interface CHDData : NSObject {
-    unsigned long long mContentFormatId;
-    unsigned long long mDataValueIndexCount;
+    unsigned int mContentFormatId;
+    unsigned int mDataValueIndexCount;
     CHDDataValuesCollection *mDataValues;
     CHDFormula *mFormula;
     EDResources *mResources;
 }
 
-+ (id)dataWithDataPointCount:(unsigned long long)arg1 resources:(id)arg2;
++ (id)dataWithDataPointCount:(unsigned int)arg1 resources:(id)arg2;
 + (id)dataWithResources:(id)arg1;
 
-- (unsigned long long)averageDataPointDecimalCount;
+- (unsigned int)averageDataPointDecimalCount;
 - (id)contentFormat;
-- (unsigned long long)contentFormatId;
-- (unsigned long long)countOfCellsBeingReferenced;
-- (unsigned long long)dataValueIndexCount;
+- (unsigned int)contentFormatId;
+- (unsigned int)countOfCellsBeingReferenced;
+- (unsigned int)dataValueIndexCount;
 - (id)dataValues;
 - (void)dealloc;
 - (id)firstValueContentFormatWithWorkbook:(id)arg1;
 - (id)formula;
-- (id)initWithDataPointCount:(unsigned long long)arg1 resources:(id)arg2;
+- (id)initWithDataPointCount:(unsigned int)arg1 resources:(id)arg2;
 - (id)initWithResources:(id)arg1;
 - (bool)isEmpty;
 - (void)setContentFormat:(id)arg1;
-- (void)setContentFormatId:(unsigned long long)arg1;
-- (void)setDataValueIndexCount:(unsigned long long)arg1;
+- (void)setContentFormatId:(unsigned int)arg1;
+- (void)setDataValueIndexCount:(unsigned int)arg1;
 - (void)setFormula:(id)arg1 chart:(id)arg2;
 
 @end

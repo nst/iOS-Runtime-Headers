@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface HDCodableNanoSyncChange : PBCodable <NSCopying, HDSyncChange, HDNanoSyncDescription> {
+@interface HDCodableNanoSyncChange : PBCodable <HDSyncChange, HDNanoSyncDescription, NSCopying> {
     struct { 
         unsigned int endAnchor : 1; 
         unsigned int startAnchor : 1; 
@@ -19,10 +19,10 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property long long endAnchor;
-@property bool hasEndAnchor;
-@property bool hasObjectType;
-@property bool hasStartAnchor;
-@property(readonly) unsigned long long hash;
+@property BOOL hasEndAnchor;
+@property BOOL hasObjectType;
+@property BOOL hasStartAnchor;
+@property(readonly) unsigned int hash;
 @property(retain) NSMutableArray * objectDatas;
 @property int objectType;
 @property long long startAnchor;
@@ -39,22 +39,22 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (long long)endAnchor;
-- (bool)hasEndAnchor;
-- (bool)hasObjectType;
-- (bool)hasStartAnchor;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasEndAnchor;
+- (BOOL)hasObjectType;
+- (BOOL)hasStartAnchor;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nanoSyncDescription;
-- (id)objectDataAtIndex:(unsigned long long)arg1;
+- (id)objectDataAtIndex:(unsigned int)arg1;
 - (id)objectDatas;
-- (unsigned long long)objectDatasCount;
+- (unsigned int)objectDatasCount;
 - (int)objectType;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setEndAnchor:(long long)arg1;
-- (void)setHasEndAnchor:(bool)arg1;
-- (void)setHasObjectType:(bool)arg1;
-- (void)setHasStartAnchor:(bool)arg1;
+- (void)setHasEndAnchor:(BOOL)arg1;
+- (void)setHasObjectType:(BOOL)arg1;
+- (void)setHasStartAnchor:(BOOL)arg1;
 - (void)setObjectDatas:(id)arg1;
 - (void)setObjectType:(int)arg1;
 - (void)setObjects:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2;

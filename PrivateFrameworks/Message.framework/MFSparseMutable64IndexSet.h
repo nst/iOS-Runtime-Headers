@@ -12,14 +12,14 @@
 + (id)indexSet;
 
 - (void)_garbageCollectStorageIfNecessary;
-- (void)_incrementStorageIfNecessaryForCount:(unsigned long long)arg1;
-- (unsigned long long)_insertionPositionOfIndex:(unsigned long long)arg1;
-- (unsigned long long)_positionOfIndex:(unsigned long long)arg1;
+- (void)_incrementStorageIfNecessaryForCount:(unsigned int)arg1;
+- (unsigned long)_insertionPositionOfIndex:(unsigned long long)arg1;
+- (unsigned long)_positionOfIndex:(unsigned long long)arg1;
 - (void)addIndex:(unsigned long long)arg1;
 - (void)addIndexes:(id)arg1;
-- (bool)containsIndex:(unsigned long long)arg1;
+- (BOOL)containsIndex:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (unsigned long long)firstIndex;

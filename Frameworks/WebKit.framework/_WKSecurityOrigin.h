@@ -11,7 +11,7 @@
 @interface _WKSecurityOrigin : NSObject {
     struct RefPtr<WebCore::SecurityOrigin> { 
         struct SecurityOrigin {} *m_ptr; 
-     /* Encoded args for previous method: @24@0:8r^{SecurityOrigin={atomic<int>=Ai}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}SBBBBiBB}16 */
+     /* Encoded args for previous method: @12@0:4r^{SecurityOrigin={atomic<int>=Ai}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}SBBBBiBB}8 */
     } _origin;
 }
 

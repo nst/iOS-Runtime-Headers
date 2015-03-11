@@ -3,10 +3,10 @@
  */
 
 @interface GQDWPPageStart : NSObject {
-    long long mIndex;
+    long mIndex;
 }
 
-- (long long)index;
+- (long)index;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 
 @end

@@ -6,31 +6,31 @@
 
 @interface WebHTMLViewPrivate : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     NSTimer *autoscrollTimer;
     WebEvent *autoscrollTriggerEvent;
-    boolclosed;
-    booldrawingIntoLayer;
-    boolexposeInputContext;
-    boolhandlingMouseDownEvent;
-    boolignoringMouseDraggedEvents;
-    boolinScrollPositionChanged;
-    boolpaginateScreenContent;
-    boolprinting;
-    booltransparentBackground;
+    BOOL closed;
     WebDataSource *dataSource;
+    BOOL drawingIntoLayer;
+    BOOL exposeInputContext;
+    BOOL handlingMouseDownEvent;
+    BOOL ignoringMouseDraggedEvents;
+    BOOL inScrollPositionChanged;
     struct WebHTMLViewInterpretKeyEventsParameters { struct KeyboardEvent {} *x1; boolx2; boolx3; boolx4; boolx5; } *interpretKeyEventsParameters;
     WebEvent *keyDownEvent;
     } lastScrollPosition;
     WAKView *layerHostingView;
     WebEvent *mouseDownEvent;
     NSArray *pageRects;
+    BOOL paginateScreenContent;
     WebPluginController *pluginController;
+    BOOL printing;
     SEL selectorForDoCommandBySelector;
     NSString *toolTip;
     id trackingRectOwner;
     void *trackingRectUserData;
+    BOOL transparentBackground;
 }
 
 + (void)initialize;

@@ -5,18 +5,18 @@
 @class NSArray;
 
 @interface PKInAppPaymentEntitlement : NSObject {
+    BOOL _ignoreMerchantIdentifiers;
     NSArray *_merchantIdentifiers;
-    bool_ignoreMerchantIdentifiers;
 }
 
-@property(readonly) bool hasMerchantIdentifiers;
-@property(readonly) bool ignoreMerchantIdentifiers;
+@property(readonly) BOOL hasMerchantIdentifiers;
+@property(readonly) BOOL ignoreMerchantIdentifiers;
 
 - (void)_probeEntitlementsWithToken:(struct { unsigned int x1[8]; })arg1;
 - (void)dealloc;
-- (bool)hasMerchantIdentifier:(id)arg1;
-- (bool)hasMerchantIdentifiers;
-- (bool)ignoreMerchantIdentifiers;
+- (BOOL)hasMerchantIdentifier:(id)arg1;
+- (BOOL)hasMerchantIdentifiers;
+- (BOOL)ignoreMerchantIdentifiers;
 - (id)initWithToken:(struct { unsigned int x1[8]; })arg1;
 
 @end

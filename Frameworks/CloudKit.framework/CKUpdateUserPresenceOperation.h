@@ -14,7 +14,7 @@
     NSString *_nextETag;
     NSError *_savedError;
     CKShareID *_shareID;
-    long long _status;
+    int _status;
     double _ttl;
     id _updateUserPresenceCompletionBlock;
     NSArray *_userPresence;
@@ -25,7 +25,7 @@
 @property(retain) NSString * nextETag;
 @property(retain) NSError * savedError;
 @property(copy) CKShareID * shareID;
-@property long long status;
+@property int status;
 @property double ttl;
 @property(copy) id updateUserPresenceCompletionBlock;
 @property(retain) NSArray * userPresence;
@@ -35,7 +35,7 @@
 - (void)_handleProgressCallback:(id)arg1;
 - (unsigned long long)customStatusFlags;
 - (void)fillOutOperationInfo:(id)arg1;
-- (id)initWithStatus:(long long)arg1 inShareWithID:(id)arg2;
+- (id)initWithStatus:(int)arg1 inShareWithID:(id)arg2;
 - (id)lastETag;
 - (id)nextETag;
 - (void)performCKOperation;
@@ -45,12 +45,12 @@
 - (void)setNextETag:(id)arg1;
 - (void)setSavedError:(id)arg1;
 - (void)setShareID:(id)arg1;
-- (void)setStatus:(long long)arg1;
+- (void)setStatus:(int)arg1;
 - (void)setTtl:(double)arg1;
 - (void)setUpdateUserPresenceCompletionBlock:(id)arg1;
 - (void)setUserPresence:(id)arg1;
 - (id)shareID;
-- (long long)status;
+- (int)status;
 - (double)ttl;
 - (id)updateUserPresenceCompletionBlock;
 - (id)userPresence;

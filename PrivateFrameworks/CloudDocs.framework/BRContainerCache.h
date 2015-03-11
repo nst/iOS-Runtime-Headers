@@ -7,7 +7,7 @@
 @interface BRContainerCache : NSObject {
     <NSObject> *_containerStatusObserver;
     NSMutableDictionary *_containersByID;
-    bool_didFetchAllContainers;
+    BOOL _didFetchAllContainers;
 }
 
 + (id)containerCache;

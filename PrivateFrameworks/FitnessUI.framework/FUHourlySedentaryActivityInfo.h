@@ -5,21 +5,21 @@
 @class NSDate;
 
 @interface FUHourlySedentaryActivityInfo : NSObject <NSSecureCoding> {
-    long long _sedentaryState;
+    int _sedentaryState;
     NSDate *_startDate;
 }
 
-@property long long sedentaryState;
+@property int sedentaryState;
 @property(retain) NSDate * startDate;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (long long)sedentaryState;
-- (void)setSedentaryState:(long long)arg1;
+- (int)sedentaryState;
+- (void)setSedentaryState:(int)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)startDate;
 

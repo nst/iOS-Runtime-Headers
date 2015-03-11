@@ -10,16 +10,16 @@
     NSMutableArray *_lockups;
     SKUISlideshowViewController *_padViewController;
     SKUIIPhoneSlideshowViewController *_phoneViewController;
-    long long _selectedIndex;
+    int _selectedIndex;
     NSString *_title;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUIViewElementSlideshowDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SKUIViewElementLayoutContext * layoutContext;
-@property(readonly) long long numberOfSlideshowItems;
+@property(readonly) int numberOfSlideshowItems;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,13 +27,13 @@
 - (id)delegate;
 - (id)initWithShelf:(id)arg1 selectedLockup:(id)arg2;
 - (id)layoutContext;
-- (long long)numberOfItemsInSlideshowViewController:(id)arg1;
-- (long long)numberOfSlideshowItems;
+- (int)numberOfItemsInSlideshowViewController:(id)arg1;
+- (int)numberOfSlideshowItems;
 - (void)presentFromParentViewController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLayoutContext:(id)arg1;
-- (id)slideshowViewController:(id)arg1 imageAtIndex:(long long)arg2;
-- (id)slideshowViewController:(id)arg1 imageURLAtIndex:(long long)arg2 size:(struct CGSize { double x1; double x2; }*)arg3;
+- (id)slideshowViewController:(id)arg1 imageAtIndex:(int)arg2;
+- (id)slideshowViewController:(id)arg1 imageURLAtIndex:(int)arg2 size:(struct CGSize { float x1; float x2; }*)arg3;
 - (void)slideshowViewControllerDidFinish:(id)arg1;
 
 @end

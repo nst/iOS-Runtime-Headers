@@ -17,9 +17,9 @@
     NSData *_resultClientChangeToken;
     NSData *_resultClientChangeTokenData;
     CKServerChangeToken *_resultServerChangeToken;
-    unsigned long long _resultsLimit;
-    long long _status;
-    bool_shouldFetchAssetContents;
+    unsigned int _resultsLimit;
+    BOOL _shouldFetchAssetContents;
+    int _status;
 }
 
 @property(retain) CKServerChangeToken * clientChangeToken;
@@ -30,9 +30,9 @@
 @property(readonly) NSData * resultClientChangeToken;
 @property(retain) NSData * resultClientChangeTokenData;
 @property(retain) CKServerChangeToken * resultServerChangeToken;
-@property unsigned long long resultsLimit;
-@property bool shouldFetchAssetContents;
-@property long long status;
+@property unsigned int resultsLimit;
+@property BOOL shouldFetchAssetContents;
+@property int status;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -49,7 +49,7 @@
 - (id)resultClientChangeToken;
 - (id)resultClientChangeTokenData;
 - (id)resultServerChangeToken;
-- (unsigned long long)resultsLimit;
+- (unsigned int)resultsLimit;
 - (void)setClientChangeToken:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
@@ -57,10 +57,10 @@
 - (void)setRecordZoneID:(id)arg1;
 - (void)setResultClientChangeTokenData:(id)arg1;
 - (void)setResultServerChangeToken:(id)arg1;
-- (void)setResultsLimit:(unsigned long long)arg1;
-- (void)setShouldFetchAssetContents:(bool)arg1;
-- (void)setStatus:(long long)arg1;
-- (bool)shouldFetchAssetContents;
-- (long long)status;
+- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setShouldFetchAssetContents:(BOOL)arg1;
+- (void)setStatus:(int)arg1;
+- (BOOL)shouldFetchAssetContents;
+- (int)status;
 
 @end

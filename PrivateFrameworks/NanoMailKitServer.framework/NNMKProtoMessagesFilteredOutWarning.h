@@ -13,7 +13,7 @@
 }
 
 @property unsigned int fullSyncVersion;
-@property bool hasFullSyncVersion;
+@property BOOL hasFullSyncVersion;
 @property(retain) NSMutableArray * removedMessageIds;
 
 - (void).cxx_destruct;
@@ -24,16 +24,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)fullSyncVersion;
-- (bool)hasFullSyncVersion;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasFullSyncVersion;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (id)removedMessageIdAtIndex:(unsigned long long)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (id)removedMessageIdAtIndex:(unsigned int)arg1;
 - (id)removedMessageIds;
-- (unsigned long long)removedMessageIdsCount;
+- (unsigned int)removedMessageIdsCount;
 - (void)setFullSyncVersion:(unsigned int)arg1;
-- (void)setHasFullSyncVersion:(bool)arg1;
+- (void)setHasFullSyncVersion:(BOOL)arg1;
 - (void)setRemovedMessageIds:(id)arg1;
 - (void)writeTo:(id)arg1;
 

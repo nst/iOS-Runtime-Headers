@@ -8,7 +8,7 @@
     AVAssetResourceLoadingContentInformationRequestInternal *_contentInformationRequest;
 }
 
-@property(getter=isByteRangeAccessSupported) bool byteRangeAccessSupported;
+@property(getter=isByteRangeAccessSupported) BOOL byteRangeAccessSupported;
 @property long long contentLength;
 @property(copy) NSString * contentType;
 @property(copy) NSDate * renewalDate;
@@ -20,14 +20,14 @@
 - (void)finalize;
 - (id)init;
 - (id)initWithLoadingRequest:(id)arg1;
-- (bool)isByteRangeAccessSupported;
-- (bool)isDiskCachingPermitted;
+- (BOOL)isByteRangeAccessSupported;
+- (BOOL)isDiskCachingPermitted;
 - (id)propertyList;
 - (id)renewalDate;
-- (void)setByteRangeAccessSupported:(bool)arg1;
+- (void)setByteRangeAccessSupported:(BOOL)arg1;
 - (void)setContentLength:(long long)arg1;
 - (void)setContentType:(id)arg1;
-- (void)setDiskCachingPermitted:(bool)arg1;
+- (void)setDiskCachingPermitted:(BOOL)arg1;
 - (void)setRenewalDate:(id)arg1;
 
 @end

@@ -6,15 +6,15 @@
 
 @interface BKSEventFocusManager : NSObject {
     NSMutableSet *_currentState;
+    BOOL _needsFlush;
     NSMutableSet *_pendingState;
-    bool_needsFlush;
-    bool_systemAppControlsFocusOnMainDisplay;
+    BOOL _systemAppControlsFocusOnMainDisplay;
 }
 
 @property(readonly) NSMutableSet * currentState;
-@property bool needsFlush;
+@property BOOL needsFlush;
 @property(readonly) NSMutableSet * pendingState;
-@property bool systemAppControlsFocusOnMainDisplay;
+@property BOOL systemAppControlsFocusOnMainDisplay;
 
 + (id)sharedInstance;
 
@@ -25,11 +25,11 @@
 - (id)description;
 - (void)flush;
 - (id)init;
-- (bool)needsFlush;
+- (BOOL)needsFlush;
 - (id)pendingState;
 - (void)setForegroundApplicationOnMainDisplay:(id)arg1 pid:(int)arg2;
-- (void)setNeedsFlush:(bool)arg1;
-- (void)setSystemAppControlsFocusOnMainDisplay:(bool)arg1;
-- (bool)systemAppControlsFocusOnMainDisplay;
+- (void)setNeedsFlush:(BOOL)arg1;
+- (void)setSystemAppControlsFocusOnMainDisplay:(BOOL)arg1;
+- (BOOL)systemAppControlsFocusOnMainDisplay;
 
 @end

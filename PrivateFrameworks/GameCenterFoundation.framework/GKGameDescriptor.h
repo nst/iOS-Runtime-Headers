@@ -20,7 +20,7 @@
 + (id)gameDescriptorWithBundleID:(id)arg1 bundleVersion:(id)arg2 adamID:(id)arg3;
 + (id)gameDescriptorWithBundleID:(id)arg1;
 + (id)secureCodedPropertyKeys;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)adamID;
 - (id)bundleIdentifier;

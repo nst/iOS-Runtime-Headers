@@ -14,13 +14,13 @@
     id _context;
     <CoreDAVTaskGroupDelegate> *_delegate;
     NSError *_error;
+    BOOL _isCancelling;
+    BOOL _isFinished;
+    BOOL _isTearingDown;
     NSMutableSet *_outstandingTasks;
     id _progressBlock;
     <CoreDAVTaskManager> *_taskManager;
     double _timeoutInterval;
-    bool_isCancelling;
-    bool_isFinished;
-    bool_isTearingDown;
 }
 
 @property <CoreDAVAccountInfoProvider> * accountInfoProvider;
@@ -30,7 +30,7 @@
 @property <CoreDAVTaskGroupDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) NSError * error;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSMutableSet * outstandingTasks;
 @property(copy) id progressBlock;
 @property(readonly) Class superclass;

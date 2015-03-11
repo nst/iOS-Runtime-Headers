@@ -7,31 +7,31 @@
 @interface CKDContainerSpecificInfoURLRequest : CKDURLRequest {
     NSString *_containerIdentifier;
     CKDContainerInfo *_containerInfo;
-    bool_needUserID;
+    BOOL _needUserID;
 }
 
 @property NSString * containerIdentifier;
 @property(copy) CKDContainerInfo * containerInfo;
-@property bool needUserID;
+@property BOOL needUserID;
 
 - (void).cxx_destruct;
 - (id)additionalHeaderValues;
-- (bool)allowsAnonymousAccount;
-- (bool)allowsAuthedAccount;
+- (BOOL)allowsAnonymousAccount;
+- (BOOL)allowsAuthedAccount;
 - (id)containerIdentifier;
 - (id)containerInfo;
-- (bool)hasRequestBody;
+- (BOOL)hasRequestBody;
 - (id)initWithContainerIdentifier:(id)arg1;
-- (bool)needUserID;
-- (long long)partitionType;
+- (BOOL)needUserID;
+- (int)partitionType;
 - (void)requestDidParseJSONObject:(id)arg1;
-- (bool)requiresConfiguration;
-- (bool)requiresDeviceID;
-- (bool)requiresSignature;
-- (long long)serverType;
+- (BOOL)requiresConfiguration;
+- (BOOL)requiresDeviceID;
+- (BOOL)requiresSignature;
+- (int)serverType;
 - (void)setContainerIdentifier:(id)arg1;
 - (void)setContainerInfo:(id)arg1;
-- (void)setNeedUserID:(bool)arg1;
+- (void)setNeedUserID:(BOOL)arg1;
 - (id)url;
 
 @end

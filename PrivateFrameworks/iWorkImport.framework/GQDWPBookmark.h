@@ -3,14 +3,14 @@
  */
 
 @interface GQDWPBookmark : GQDWPInlineList {
-    boolmHidden;
-    boolmRanged;
+    BOOL mHidden;
     struct __CFString { } *mName;
+    BOOL mRanged;
 }
 
 - (void)dealloc;
-- (bool)isHidden;
-- (bool)isRanged;
+- (BOOL)isHidden;
+- (BOOL)isRanged;
 - (struct __CFString { }*)name;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 

@@ -16,7 +16,7 @@
 @property(copy) NSString * route;
 @property(retain) CalLocation * start;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

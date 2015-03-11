@@ -14,7 +14,7 @@
 - (id)localeForLocaleString:(id)arg1;
 - (id)localeList;
 - (id)localizations;
-- (bool)processLocalDataFromLocalResource;
+- (BOOL)processLocalDataFromLocalResource;
 - (void)processLocalizationJSONArray:(id)arg1;
 - (void)processRequestData:(id)arg1;
 - (void)setLocalizations:(id)arg1;

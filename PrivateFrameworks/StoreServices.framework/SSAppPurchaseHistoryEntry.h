@@ -10,6 +10,6 @@
 + (id)predicateForAccountIdentifier:(id)arg1;
 + (id)predicateForNotFirstParty;
 + (id)predicateForNotHidden;
-+ (id)supportsPlatformPredicate:(bool)arg1;
++ (id)supportsPlatformPredicate:(BOOL)arg1;
 
 @end

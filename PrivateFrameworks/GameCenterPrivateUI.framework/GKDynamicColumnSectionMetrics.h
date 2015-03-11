@@ -3,22 +3,22 @@
  */
 
 @interface GKDynamicColumnSectionMetrics : GKSectionMetrics {
-    unsigned long long _columnsInLandscape;
-    unsigned long long _columnsInPortrait;
+    unsigned int _columnsInLandscape;
+    unsigned int _columnsInPortrait;
 }
 
-@property unsigned long long columnsInLandscape;
-@property unsigned long long columnsInPortrait;
+@property unsigned int columnsInLandscape;
+@property unsigned int columnsInPortrait;
 
-+ (id)dynamicColumnSectionMetricsWithColumnsInPortrait:(unsigned long long)arg1 columnsInLandscape:(unsigned long long)arg2 forIdiom:(long long)arg3;
-+ (id)dynamicColumnSectionMetricsWithColumnsInPortrait:(unsigned long long)arg1 columnsInLandscape:(unsigned long long)arg2;
++ (id)dynamicColumnSectionMetricsWithColumnsInPortrait:(unsigned int)arg1 columnsInLandscape:(unsigned int)arg2 forIdiom:(int)arg3;
++ (id)dynamicColumnSectionMetricsWithColumnsInPortrait:(unsigned int)arg1 columnsInLandscape:(unsigned int)arg2;
 
-- (unsigned long long)columnsInLandscape;
-- (unsigned long long)columnsInPortrait;
+- (unsigned int)columnsInLandscape;
+- (unsigned int)columnsInPortrait;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithIdiom:(long long)arg1;
-- (struct CGSize { double x1; double x2; })itemSizeForCollectionView:(id)arg1;
-- (void)setColumnsInLandscape:(unsigned long long)arg1;
-- (void)setColumnsInPortrait:(unsigned long long)arg1;
+- (id)initWithIdiom:(int)arg1;
+- (struct CGSize { float x1; float x2; })itemSizeForCollectionView:(id)arg1;
+- (void)setColumnsInLandscape:(unsigned int)arg1;
+- (void)setColumnsInPortrait:(unsigned int)arg1;
 
 @end

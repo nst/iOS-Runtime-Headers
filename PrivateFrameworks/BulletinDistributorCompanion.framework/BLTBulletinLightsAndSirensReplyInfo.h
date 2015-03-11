@@ -7,21 +7,21 @@
  */
 
 @interface BLTBulletinLightsAndSirensReplyInfo : NSObject {
+    BOOL _didPlayLightsAndSirens;
+    BOOL _handledLightsAndSirens;
     id _reply;
-    bool_didPlayLightsAndSirens;
-    bool_handledLightsAndSirens;
 }
 
-@property bool didPlayLightsAndSirens;
-@property bool handledLightsAndSirens;
+@property BOOL didPlayLightsAndSirens;
+@property BOOL handledLightsAndSirens;
 @property(copy) id reply;
 
 - (void).cxx_destruct;
-- (bool)didPlayLightsAndSirens;
-- (bool)handledLightsAndSirens;
+- (BOOL)didPlayLightsAndSirens;
+- (BOOL)handledLightsAndSirens;
 - (id)reply;
-- (void)setDidPlayLightsAndSirens:(bool)arg1;
-- (void)setHandledLightsAndSirens:(bool)arg1;
+- (void)setDidPlayLightsAndSirens:(BOOL)arg1;
+- (void)setHandledLightsAndSirens:(BOOL)arg1;
 - (void)setReply:(id)arg1;
 
 @end

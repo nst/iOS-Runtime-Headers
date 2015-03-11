@@ -5,32 +5,32 @@
 @class <TSKPulseAnimationControllerProtocol>;
 
 @interface TSKPulseAnimationController : TSKHighlightController {
+    BOOL _autohide;
     <TSKPulseAnimationControllerProtocol> *_delegate;
     double _duration;
-    double _pulseOffset;
-    bool_autohide;
-    bool_pulsating;
+    BOOL _pulsating;
+    float _pulseOffset;
 }
 
-@property bool autohide;
+@property BOOL autohide;
 @property double duration;
-@property bool pulsating;
-@property double pulseOffset;
+@property BOOL pulsating;
+@property float pulseOffset;
 
-- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
-- (bool)autohide;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (BOOL)autohide;
 - (void)dealloc;
 - (void)disconnect;
-- (bool)drawRoundedRect;
+- (BOOL)drawRoundedRect;
 - (double)duration;
 - (id)initWithDelegate:(id)arg1;
-- (bool)pulsating;
-- (double)pulseOffset;
+- (BOOL)pulsating;
+- (float)pulseOffset;
 - (void)reset;
-- (void)setAutohide:(bool)arg1;
+- (void)setAutohide:(BOOL)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setPulsating:(bool)arg1;
-- (void)setPulseOffset:(double)arg1;
+- (void)setPulsating:(BOOL)arg1;
+- (void)setPulseOffset:(float)arg1;
 - (void)startAnimating;
 - (void)stop;
 

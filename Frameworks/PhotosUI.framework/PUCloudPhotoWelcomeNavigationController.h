@@ -5,8 +5,8 @@
 @interface PUCloudPhotoWelcomeNavigationController : UINavigationController {
 }
 
-- (long long)preferredInterfaceOrientationForPresentation;
-- (bool)shouldAutorotate;
-- (unsigned long long)supportedInterfaceOrientations;
+- (int)preferredInterfaceOrientationForPresentation;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

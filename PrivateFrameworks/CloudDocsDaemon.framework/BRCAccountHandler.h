@@ -8,9 +8,9 @@
     BRCAccountSession *_accountSession;
     NSString *_currentAccountID;
     <BRCAccountHandlerDelegate> *_delegate;
+    BOOL _hasSetMigrationComplete;
     NSObject<OS_dispatch_queue> *_migrationStatusSetterQueue;
     NSObject<OS_dispatch_queue> *_queue;
-    bool_hasSetMigrationComplete;
 }
 
 @property(readonly) BRCAccountSession * accountSession;
@@ -18,23 +18,23 @@
 
 + (void)_migrateAccountIfNecessaryForAccountID:(id)arg1;
 + (id)inSystemStoreAccountIDForUbiquityDataclass;
-+ (id)inSystemStoreAccountIDWithServiceValidation:(bool)arg1 isServiceEnabled:(bool*)arg2 didCompleteFirstSyncDown:(bool*)arg3;
-+ (id)inSystemStoreAccountIDWithServiceValidation:(bool)arg1;
-+ (bool)isAccountStillUsingUbiquity;
++ (id)inSystemStoreAccountIDWithServiceValidation:(BOOL)arg1 isServiceEnabled:(BOOL*)arg2 didCompleteFirstSyncDown:(BOOL*)arg3;
++ (id)inSystemStoreAccountIDWithServiceValidation:(BOOL)arg1;
++ (BOOL)isAccountStillUsingUbiquity;
 
 - (void).cxx_destruct;
 - (void)_cleanupPushAndActivitiesStatesWhenNoSessionExists;
-- (bool)_createCurrentAccountSessionWithID:(id)arg1 error:(id*)arg2;
+- (BOOL)_createCurrentAccountSessionWithID:(id)arg1 error:(id*)arg2;
 - (void)_destroyCurrentSessionSynchronously;
 - (void)_handleAccountDidChange;
 - (void)_handleAccountWillChange;
-- (bool)_loadCurrentOnDiskAccountSessionWithError:(id*)arg1;
+- (BOOL)_loadCurrentOnDiskAccountSessionWithError:(id*)arg1;
 - (void)_updateAccount;
 - (void)_updateAccountToAccountID:(id)arg1;
 - (void)_watchAccountChanges;
 - (id)accountIDPath;
 - (id)accountSession;
-- (bool)createCurrentAccountSessionWithID:(id)arg1 error:(id*)arg2;
+- (BOOL)createCurrentAccountSessionWithID:(id)arg1 error:(id*)arg2;
 - (id)delegate;
 - (void)destroyCurrentSessionSynchronously;
 - (id)init;
@@ -42,8 +42,8 @@
 - (void)markMigrationCompletedForDSID:(id)arg1;
 - (id)onDiskAccountID;
 - (void)setDelegate:(id)arg1;
-- (void)setMigrationStatus:(BOOL)arg1 forDSID:(id)arg2 shouldNotify:(bool)arg3;
-- (bool)setOnDiskAccountID:(id)arg1;
+- (void)setMigrationStatus:(BOOL)arg1 forDSID:(id)arg2 shouldNotify:(BOOL)arg3;
+- (BOOL)setOnDiskAccountID:(id)arg1;
 - (void)startAndLoadCurrentAccountSynchronously;
 
 @end

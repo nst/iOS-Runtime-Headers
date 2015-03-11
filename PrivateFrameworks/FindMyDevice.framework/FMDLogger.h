@@ -3,26 +3,26 @@
  */
 
 @interface FMDLogger : NSObject {
-    bool_isInternalBuild;
-    bool_logLevelsMaxedOut;
-    bool_logLocationIndicatorSent;
+    BOOL _isInternalBuild;
+    BOOL _logLevelsMaxedOut;
+    BOOL _logLocationIndicatorSent;
 }
 
-@property bool isInternalBuild;
-@property bool logLevelsMaxedOut;
-@property bool logLocationIndicatorSent;
+@property BOOL isInternalBuild;
+@property BOOL logLevelsMaxedOut;
+@property BOOL logLocationIndicatorSent;
 
 + (id)sharedInstance;
 
 - (id)init;
-- (bool)isInternalBuild;
-- (void)logAtLevel:(long long)arg1 facility:(id)arg2 filename:(const char *)arg3 lineNumber:(long long)arg4 function:(const char *)arg5 message:(id)arg6;
-- (bool)logLevelsMaxedOut;
-- (bool)logLocationIndicatorSent;
+- (BOOL)isInternalBuild;
+- (void)logAtLevel:(int)arg1 facility:(id)arg2 filename:(const char *)arg3 lineNumber:(int)arg4 function:(const char *)arg5 message:(id)arg6;
+- (BOOL)logLevelsMaxedOut;
+- (BOOL)logLocationIndicatorSent;
 - (void)logSettingsDidChange;
 - (void)maxOutLogging;
-- (void)setIsInternalBuild:(bool)arg1;
-- (void)setLogLevelsMaxedOut:(bool)arg1;
-- (void)setLogLocationIndicatorSent:(bool)arg1;
+- (void)setIsInternalBuild:(BOOL)arg1;
+- (void)setLogLevelsMaxedOut:(BOOL)arg1;
+- (void)setLogLocationIndicatorSent:(BOOL)arg1;
 
 @end

@@ -9,7 +9,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)imageNameForScale:(double)arg1;
-- (id)initWithAttributions:(id)arg1 type:(long long)arg2;
+- (id)imageNameForScale:(float)arg1;
+- (id)initWithAttributions:(id)arg1 type:(int)arg2;
 
 @end

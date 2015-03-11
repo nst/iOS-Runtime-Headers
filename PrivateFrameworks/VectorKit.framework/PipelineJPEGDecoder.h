@@ -5,47 +5,47 @@
 @interface PipelineJPEGDecoder : NSObject {
     struct { 
         void *opaque1; 
-        long long opaque2; 
+        long opaque2; 
     struct { 
         void *opaque1; 
-        long long opaque2; 
+        long opaque2; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     int current420SurfaceCount;
     } imageSize;
-    unsigned long long maxJPEGSize;
+    unsigned int maxJPEGSize;
     } pool420;
     } poolJPEG;
-    unsigned long long requestedImageCount;
+    unsigned int requestedImageCount;
 }
 
-@property unsigned long long maxJPEGSize;
+@property unsigned int maxJPEGSize;
 
 + (struct __IOSurfaceAccelerator { }*)_createAccelerator;
 + (struct __IOSurfaceAccelerator { }*)_getPooledSurfaceAccelerator;
 + (id)_hardwareSemaphore;
 + (id)_hardwareSemaphoreWaitQueue;
 + (void)_poolSurfaceAccelerator:(struct __IOSurfaceAccelerator { }*)arg1;
-+ (struct { void *x1; long long x2; }*)_transferSessionPool;
++ (struct { void *x1; long x2; }*)_transferSessionPool;
 
 - (struct __IOSurface { }*)_create420Surface;
 - (struct __IOSurface { }*)_createJPEGSurface;
 - (void)_decodeJPEG:(id)arg1 withInputSurface:(struct __IOSurface { }*)arg2 toIOSurface:(struct __IOSurface { }*)arg3;
 - (struct __IOSurface { }*)_getPooled420Surface;
-- (struct __IOSurface { }*)_getPooledJPEGSurfaceOfSize:(unsigned long long)arg1;
+- (struct __IOSurface { }*)_getPooledJPEGSurfaceOfSize:(unsigned int)arg1;
 - (void)_pool420Surface:(struct __IOSurface { }*)arg1;
 - (void)_poolJPEGSurface:(struct __IOSurface { }*)arg1;
 - (void)_receivedMemoryWarning:(id)arg1;
-- (bool)_remove420Surface;
-- (bool)_removeJPEGSurface;
+- (BOOL)_remove420Surface;
+- (BOOL)_removeJPEGSurface;
 - (void)dealloc;
 - (void)decodeSurfaceFromJPEGData:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)decodeSurfaceFromJPEGPath:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 cachedCount:(long long)arg2;
-- (unsigned long long)maxJPEGSize;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 cachedCount:(int)arg2;
+- (unsigned int)maxJPEGSize;
 - (struct __IOSurface { }*)newSurfaceFromJPEGData:(id)arg1;
 - (void)returnToPool:(struct __IOSurface { }*)arg1;
-- (void)setMaxJPEGSize:(unsigned long long)arg1;
+- (void)setMaxJPEGSize:(unsigned int)arg1;
 
 @end

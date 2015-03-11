@@ -11,7 +11,7 @@
     struct sqlite3 { } *_db;
     NSString *_path;
     struct __CFDictionary { } *_statementCache;
-    unsigned long long _transactionCount;
+    unsigned int _transactionCount;
     int _transactionType;
 }
 
@@ -26,7 +26,7 @@
 - (void)dealloc;
 - (void)flush;
 - (id)initWithPath:(id)arg1 databaseName:(id)arg2;
-- (bool)isOpen;
+- (BOOL)isOpen;
 - (int)open;
 - (struct sqlite3_stmt { }*)preparedStatementForPattern:(id)arg1;
 - (int)rollbackTransaction;

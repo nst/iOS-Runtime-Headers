@@ -9,20 +9,20 @@
     double _intendedFireDate;
 }
 
-@property bool hasIntendedFireDate;
+@property BOOL hasIntendedFireDate;
 @property double intendedFireDate;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasIntendedFireDate;
-- (unsigned long long)hash;
+- (BOOL)hasIntendedFireDate;
+- (unsigned int)hash;
 - (double)intendedFireDate;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasIntendedFireDate:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasIntendedFireDate:(BOOL)arg1;
 - (void)setIntendedFireDate:(double)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -21,7 +21,7 @@
 @property(copy) NSNumber * timeoutSeconds;
 
 + (id)activityWithPlist:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)backboardPrelaunchBundleIdentifier;

@@ -43,7 +43,7 @@
 @property(copy) id valueChangedHandler;
 
 - (void).cxx_destruct;
-- (bool)_isUpdatingDeviceMotion;
+- (BOOL)_isUpdatingDeviceMotion;
 - (void)_setAttitude:(struct GCQuaternion { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setGravity:(struct { double x1; double x2; double x3; })arg1;
 - (void)_setRotationRate:(struct { double x1; double x2; double x3; })arg1;

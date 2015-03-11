@@ -5,27 +5,27 @@
 @class NSString;
 
 @interface NACAudioRoute : NSObject {
+    BOOL _picked;
     NSString *_routeName;
-    long long _routeSubtype;
-    long long _routeType;
+    int _routeSubtype;
+    int _routeType;
+    BOOL _supportsVolumeControl;
     NSString *_uniqueIdentifier;
-    bool_picked;
-    bool_supportsVolumeControl;
 }
 
-@property(getter=isPicked,readonly) bool picked;
+@property(getter=isPicked,readonly) BOOL picked;
 @property(readonly) NSString * routeName;
-@property(readonly) long long routeSubtype;
-@property(readonly) long long routeType;
-@property(readonly) bool supportsVolumeControl;
+@property(readonly) int routeSubtype;
+@property(readonly) int routeType;
+@property(readonly) BOOL supportsVolumeControl;
 @property(readonly) NSString * uniqueIdentifier;
 
-+ (int)_routeBufferSubtypeFromMPAVRouteSubtype:(long long)arg1;
-+ (int)_routeBufferTypeFromMPAVRouteType:(long long)arg1;
-+ (int)_routeBufferTypeFromRouteType:(long long)arg1;
-+ (long long)_routeSubtypeFromRouteBufferSubtype:(int)arg1;
-+ (long long)_routeTypeFromMPAVRouteType:(long long)arg1;
-+ (long long)_routeTypeFromRouteBufferType:(int)arg1;
++ (int)_routeBufferSubtypeFromMPAVRouteSubtype:(int)arg1;
++ (int)_routeBufferTypeFromMPAVRouteType:(int)arg1;
++ (int)_routeBufferTypeFromRouteType:(int)arg1;
++ (int)_routeSubtypeFromRouteBufferSubtype:(int)arg1;
++ (int)_routeTypeFromMPAVRouteType:(int)arg1;
++ (int)_routeTypeFromRouteBufferType:(int)arg1;
 + (id)audioRouteFromBuffer:(id)arg1;
 + (id)audioRouteWithMPAVRoute:(id)arg1;
 + (id)audioRoutesFromBuffers:(id)arg1;
@@ -35,14 +35,14 @@
 - (id)buffer;
 - (id)description;
 - (id)initWithMPAVRoute:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToAudioRoute:(id)arg1;
-- (bool)isPicked;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToAudioRoute:(id)arg1;
+- (BOOL)isPicked;
 - (id)routeName;
-- (long long)routeSubtype;
-- (long long)routeType;
-- (void)setSupportsVolumeControl:(bool)arg1;
-- (bool)supportsVolumeControl;
+- (int)routeSubtype;
+- (int)routeType;
+- (void)setSupportsVolumeControl:(BOOL)arg1;
+- (BOOL)supportsVolumeControl;
 - (id)uniqueIdentifier;
 
 @end

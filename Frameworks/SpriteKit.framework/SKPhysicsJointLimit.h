@@ -3,15 +3,15 @@
  */
 
 @interface SKPhysicsJointLimit : SKPhysicsJoint {
-    double _maxLength;
+    float _maxLength;
 }
 
-@property double maxLength;
+@property float maxLength;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchorA:(struct CGPoint { double x1; double x2; })arg3 anchorB:(struct CGPoint { double x1; double x2; })arg4;
++ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchorA:(struct CGPoint { float x1; float x2; })arg3 anchorB:(struct CGPoint { float x1; float x2; })arg4;
 
-- (double)maxLength;
-- (void)setMaxLength:(double)arg1;
+- (float)maxLength;
+- (void)setMaxLength:(float)arg1;
 
 @end

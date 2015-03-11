@@ -7,8 +7,8 @@
     unsigned short _builtInType;
 }
 
-- (unsigned long long)builtInDataType;
-- (unsigned long long)builtInType;
-- (id)initWithName:(id)arg1 type:(unsigned long long)arg2 access:(unsigned long long)arg3 active:(bool)arg4 index:(unsigned long long)arg5 dataType:(unsigned long long)arg6 builtInType:(unsigned long long)arg7;
+- (unsigned int)builtInDataType;
+- (unsigned int)builtInType;
+- (id)initWithName:(id)arg1 type:(unsigned int)arg2 access:(unsigned int)arg3 active:(BOOL)arg4 index:(unsigned int)arg5 dataType:(unsigned int)arg6 builtInType:(unsigned int)arg7;
 
 @end

@@ -9,15 +9,15 @@
 @class GEORequester, NSString;
 
 @interface GEOVoltaireMapMatchProvider : NSObject <PBRequesterDelegate> {
+    BOOL _cancelled;
     id _errorHandler;
     id _finishedHandler;
     GEORequester *_requester;
-    bool_cancelled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) GEORequester * requester;
 @property(readonly) Class superclass;
 

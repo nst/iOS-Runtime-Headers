@@ -18,7 +18,7 @@
 - (id)inviteeCompositeName;
 - (id)inviteeEmail;
 - (id)inviteeShortName;
-- (bool)isUserInitiated;
+- (BOOL)isUserInitiated;
 - (void)setInviteeCompositeName:(id)arg1;
 - (void)setInviteeEmail:(id)arg1;
 - (void)setInviteeShortName:(id)arg1;

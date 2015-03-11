@@ -13,8 +13,8 @@
 - (void)dealloc;
 - (id)initWithString:(id)arg1 scheme:(id)arg2;
 - (id)initWithString:(id)arg1;
-- (bool)matchesURL:(id)arg1 parameters:(id*)arg2;
-- (bool)matchesURL:(id)arg1;
+- (BOOL)matchesURL:(id)arg1 parameters:(id*)arg2;
+- (BOOL)matchesURL:(id)arg1;
 - (id)nonParameterCharacterSet;
 
 @end

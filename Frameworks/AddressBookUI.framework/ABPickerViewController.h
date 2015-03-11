@@ -22,9 +22,9 @@
 @property SEL selectionAction;
 @property(retain) <ABStyleProvider> * styleProvider;
 
-- (bool)_allowsAutorotation;
-- (bool)_isSupportedInterfaceOrientation:(long long)arg1;
-- (double)ab_heightToFitForViewInPopoverView;
+- (BOOL)_allowsAutorotation;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (float)ab_heightToFitForViewInPopoverView;
 - (void)attemptDismissAfterSelectingItem:(id)arg1;
 - (id)cancelBarButtonItem;
 - (void)cancelButtonClicked:(id)arg1;

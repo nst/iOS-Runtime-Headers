@@ -5,19 +5,19 @@
 @class NSManagedObjectID, NSString, PHPhotoLibrary;
 
 @interface PHObject : NSObject <NSCopying> {
+    BOOL _deleted;
     NSManagedObjectID *_objectID;
     PHPhotoLibrary *_photoLibrary;
-    unsigned long long _propertyHint;
+    unsigned int _propertyHint;
     NSString *_uuid;
-    bool_deleted;
 }
 
-@property(getter=isDeleted,readonly) bool deleted;
+@property(getter=isDeleted,readonly) BOOL deleted;
 @property(copy,readonly) NSString * localIdentifier;
 @property(readonly) NSManagedObjectID * objectID;
 @property(readonly) PHPhotoLibrary * photoLibrary;
-@property unsigned long long propertyHint;
-@property(getter=isTransient,readonly) bool transient;
+@property unsigned int propertyHint;
+@property(getter=isTransient,readonly) BOOL transient;
 @property(readonly) NSString * uuid;
 
 + (id)authorizationAwareFetchResultWithOptions:(id)arg1 fetchBlock:(id)arg2;
@@ -26,15 +26,15 @@
 + (id)identifierCode;
 + (id)localIdentifierWithUUID:(id)arg1;
 + (id)managedEntityName;
-+ (bool)managedObjectSupportsBursts;
-+ (bool)managedObjectSupportsCloudSharedType;
-+ (bool)managedObjectSupportsHiddenState;
-+ (bool)managedObjectSupportsPhotoStreamType;
-+ (bool)managedObjectSupportsTrashedState;
-+ (bool)managedObjectSupportsVisibilityState;
-+ (bool)managedObjectSupportsWallpaperType;
-+ (bool)managedObjectSupportsiTunesSyncType;
-+ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
++ (BOOL)managedObjectSupportsBursts;
++ (BOOL)managedObjectSupportsCloudSharedType;
++ (BOOL)managedObjectSupportsHiddenState;
++ (BOOL)managedObjectSupportsPhotoStreamType;
++ (BOOL)managedObjectSupportsTrashedState;
++ (BOOL)managedObjectSupportsVisibilityState;
++ (BOOL)managedObjectSupportsWallpaperType;
++ (BOOL)managedObjectSupportsiTunesSyncType;
++ (id)propertiesToFetchWithHint:(unsigned int)arg1;
 + (id)uuidFromLocalIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
@@ -43,16 +43,16 @@
 - (Class)changeRequestClass;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned long long)hash;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
-- (bool)isDeleted;
-- (bool)isEqual:(id)arg1;
-- (bool)isTransient;
+- (unsigned int)hash;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
+- (BOOL)isDeleted;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isTransient;
 - (id)localIdentifier;
 - (id)objectID;
 - (id)photoLibrary;
-- (unsigned long long)propertyHint;
-- (void)setPropertyHint:(unsigned long long)arg1;
+- (unsigned int)propertyHint;
+- (void)setPropertyHint:(unsigned int)arg1;
 - (id)uuid;
 
 @end

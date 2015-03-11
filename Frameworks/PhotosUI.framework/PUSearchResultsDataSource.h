@@ -8,44 +8,44 @@
     NSSet *_albumUUIDs;
     PLSearchIndexDateFormatter *_dateFormatter;
     <PUSearchResultsDelegate> *_delegate;
-    unsigned long long _maxGroupedResultsCount;
+    BOOL _ignorePastResults;
+    unsigned int _maxGroupedResultsCount;
     PLPhotoLibrary *_photoLibrary;
     PSIQuery *_query;
-    unsigned long long _queryTag;
+    unsigned int _queryTag;
     NSObject<OS_dispatch_queue> *_queue;
     NSArray *_results;
     PSIDatabase *_searchIndex;
-    unsigned long long _uncommittedMaxGroupedResultsCount;
+    unsigned int _uncommittedMaxGroupedResultsCount;
     NSArray *_uncommittedResults;
-    unsigned long long _unprocessedSearchResultsCount;
-    bool_ignorePastResults;
+    unsigned int _unprocessedSearchResultsCount;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <PUSearchResultsDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) PSIDatabase * searchIndex;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_fetchAlbumsWithUUIDs:(id)arg1;
 - (id)_fetchAssetsWithUUIDs:(id)arg1;
-- (void)_inqBackgroundProcessSearchResults:(id)arg1 withTag:(unsigned long long)arg2 searchString:(id)arg3;
+- (void)_inqBackgroundProcessSearchResults:(id)arg1 withTag:(unsigned int)arg2 searchString:(id)arg3;
 - (void)_inqCancel;
-- (bool)_shouldCancel:(unsigned long long)arg1;
+- (BOOL)_shouldCancel:(unsigned int)arg1;
 - (void)cancel;
 - (id)dateFormatter;
 - (id)delegate;
-- (bool)hasPendingChanges;
+- (BOOL)hasPendingChanges;
 - (id)initWithSearchIndex:(id)arg1;
 - (void)mergePendingChanges;
-- (unsigned long long)numberOfSearchResults;
+- (unsigned int)numberOfSearchResults;
 - (id)searchIndex;
-- (bool)searchIsFinished:(id)arg1;
+- (BOOL)searchIsFinished:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSearchIndex:(id)arg1;
 - (void)setSearchString:(id)arg1;
-- (id)valueAtIndex:(unsigned long long)arg1;
+- (id)valueAtIndex:(unsigned int)arg1;
 
 @end

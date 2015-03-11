@@ -13,7 +13,7 @@
 @property(copy,readonly) NSArray * orderedLastVisitedDays;
 
 + (void)_removeAllVisitedLinks;
-+ (void)_setVisitedLinkTrackingEnabled:(bool)arg1;
++ (void)_setVisitedLinkTrackingEnabled:(BOOL)arg1;
 + (id)optionalSharedHistory;
 + (void)setOptionalSharedHistory:(id)arg1;
 
@@ -21,22 +21,22 @@
 - (id)_data;
 - (id)_itemForURLString:(id)arg1;
 - (void)_sendNotification:(id)arg1 entries:(id)arg2;
-- (void)_visitedURL:(id)arg1 withTitle:(id)arg2 method:(id)arg3 wasFailure:(bool)arg4;
+- (void)_visitedURL:(id)arg1 withTitle:(id)arg2 method:(id)arg3 wasFailure:(BOOL)arg4;
 - (void)addItems:(id)arg1;
 - (id)allItems;
-- (bool)containsURL:(id)arg1;
+- (BOOL)containsURL:(id)arg1;
 - (void)dealloc;
 - (void)finalize;
 - (int)historyAgeInDaysLimit;
 - (int)historyItemLimit;
 - (id)init;
 - (id)itemForURL:(id)arg1;
-- (bool)loadFromURL:(id)arg1 error:(id*)arg2;
+- (BOOL)loadFromURL:(id)arg1 error:(id*)arg2;
 - (id)orderedItemsLastVisitedOnDay:(id)arg1;
 - (id)orderedLastVisitedDays;
 - (void)removeAllItems;
 - (void)removeItems:(id)arg1;
-- (bool)saveToURL:(id)arg1 error:(id*)arg2;
+- (BOOL)saveToURL:(id)arg1 error:(id*)arg2;
 - (void)setHistoryAgeInDaysLimit:(int)arg1;
 - (void)setHistoryItemLimit:(int)arg1;
 - (void)timeZoneChanged:(id)arg1;

@@ -16,7 +16,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (void)setTargetPluginId:(id)arg1;
 - (void)setTimeout:(id)arg1;

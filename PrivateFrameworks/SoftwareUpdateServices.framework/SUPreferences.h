@@ -3,34 +3,34 @@
  */
 
 @interface SUPreferences : NSObject {
+    BOOL _allowSameBuildUpdates;
+    BOOL _disableAutoDownload;
+    BOOL _disableAvailabilityAlerts;
+    BOOL _disableBuildNumberComparison;
+    BOOL _disableUserWiFiOnlyPeriod;
     int _logLevel;
-    bool_allowSameBuildUpdates;
-    bool_disableAutoDownload;
-    bool_disableAvailabilityAlerts;
-    bool_disableBuildNumberComparison;
-    bool_disableUserWiFiOnlyPeriod;
 }
 
-@property(readonly) bool allowSameBuildUpdates;
-@property(getter=isAutoDownloadDisabled,readonly) bool disableAutoDownload;
-@property(readonly) bool disableAvailabilityAlerts;
-@property(readonly) bool disableBuildNumberComparison;
-@property(readonly) bool disableUserWiFiOnlyPeriod;
+@property(readonly) BOOL allowSameBuildUpdates;
+@property(getter=isAutoDownloadDisabled,readonly) BOOL disableAutoDownload;
+@property(readonly) BOOL disableAvailabilityAlerts;
+@property(readonly) BOOL disableBuildNumberComparison;
+@property(readonly) BOOL disableUserWiFiOnlyPeriod;
 @property(readonly) int logLevel;
 
 + (id)sharedInstance;
 
-- (void*)_copyPreferenceForKey:(struct __CFString { }*)arg1 ofType:(unsigned long long)arg2;
+- (void*)_copyPreferenceForKey:(struct __CFString { }*)arg1 ofType:(unsigned long)arg2;
 - (int)_defaultLogLevel;
-- (bool)_getBooleanPreferenceForKey:(id)arg1 withDefaultValue:(bool)arg2;
+- (BOOL)_getBooleanPreferenceForKey:(id)arg1 withDefaultValue:(BOOL)arg2;
 - (void)_loadPreferences;
-- (bool)allowSameBuildUpdates;
+- (BOOL)allowSameBuildUpdates;
 - (void)dealloc;
-- (bool)disableAvailabilityAlerts;
-- (bool)disableBuildNumberComparison;
-- (bool)disableUserWiFiOnlyPeriod;
+- (BOOL)disableAvailabilityAlerts;
+- (BOOL)disableBuildNumberComparison;
+- (BOOL)disableUserWiFiOnlyPeriod;
 - (id)init;
-- (bool)isAutoDownloadDisabled;
+- (BOOL)isAutoDownloadDisabled;
 - (int)logLevel;
 - (void)reload;
 

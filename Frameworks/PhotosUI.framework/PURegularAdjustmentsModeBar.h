@@ -22,7 +22,7 @@
 @property(readonly) PUAdjustmentsMode * _expandedSupermode;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -32,21 +32,21 @@
 - (void)_handleModeButton:(id)arg1;
 - (id)_layoutConstraintsForCollapsedModeDetailView:(id)arg1 mode:(id)arg2;
 - (id)_layoutConstraintsForExpandedModeDetailView:(id)arg1 mode:(id)arg2;
-- (double)_slidersViewLongSideLength;
+- (float)_slidersViewLongSideLength;
 - (void)_updateSupermodeButtons;
-- (void)_updateViewsForExpandedSupermode:(id)arg1 fromOldSupermode:(id)arg2 animated:(bool)arg3;
+- (void)_updateViewsForExpandedSupermode:(id)arg1 fromOldSupermode:(id)arg2 animated:(BOOL)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)configureSliderCell:(id)arg1 forMode:(id)arg2;
 - (id)currentSlidersCollectionView;
 - (id)newConstraintsForModePickerList:(id)arg1;
-- (long long)numberOfSectionsInCollectionView:(id)arg1;
-- (void)setSelectedMode:(id)arg1 animated:(bool)arg2;
-- (void)setSlidersLongContentLength:(double)arg1;
+- (int)numberOfSectionsInCollectionView:(id)arg1;
+- (void)setSelectedMode:(id)arg1 animated:(BOOL)arg2;
+- (void)setSlidersLongContentLength:(float)arg1;
 - (void)updateConstraints;
 - (void)updateEnabledForCurrentMode;
 - (id)visibleSliderAdjustmentModes;
-- (bool)wantsToHandleEventAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)wantsToHandleEventAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

@@ -16,7 +16,7 @@
 
 + (id)realtimeContactForFields:(id)arg1 addedToCuratedContact:(int)arg2;
 + (id)realtimeContactForNewContact:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (int)abPersonId;
@@ -24,11 +24,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithState:(int)arg1 contact:(id)arg2 abPersonId:(int)arg3;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToRealtimeContact:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToRealtimeContact:(id)arg1;
 - (int)state;
 
 @end

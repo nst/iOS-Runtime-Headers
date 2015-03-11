@@ -10,24 +10,24 @@
 @property(copy) NSString * aceId;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property long long errorCode;
-@property(readonly) unsigned long long hash;
+@property int errorCode;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * reason;
 @property(copy) NSString * refId;
 @property(readonly) Class superclass;
 
 + (id)geniusSummonFailed;
 + (id)geniusSummonFailedWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)geniusSummonFailedWithErrorCode:(long long)arg1;
++ (id)geniusSummonFailedWithErrorCode:(int)arg1;
 + (id)geniusSummonFailedWithReason:(id)arg1;
 
 - (id)encodedClassName;
-- (long long)errorCode;
+- (int)errorCode;
 - (id)groupIdentifier;
-- (id)initWithErrorCode:(long long)arg1;
+- (id)initWithErrorCode:(int)arg1;
 - (id)initWithReason:(id)arg1;
 - (id)reason;
-- (void)setErrorCode:(long long)arg1;
+- (void)setErrorCode:(int)arg1;
 - (void)setReason:(id)arg1;
 
 @end

@@ -14,13 +14,13 @@
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
 - (void).cxx_destruct;
-- (bool)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
+- (BOOL)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
 - (id)initWithName:(id)arg1;
 - (id)name;
 - (id)queue;
 - (void)resetConfiguration;
 - (void)setWorkQueue:(id)arg1;
-- (bool)shouldCloudSyncData;
+- (BOOL)shouldCloudSyncData;
 - (id)workQueue;
 
 @end

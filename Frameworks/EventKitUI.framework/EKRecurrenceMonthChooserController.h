@@ -6,24 +6,24 @@
 
 @interface EKRecurrenceMonthChooserController : EKRecurrenceGridChooserController {
     NSMutableSet *_monthsOfTheYearSet;
-    bool_prohibitsMultipleMonthsInYearlyRecurrence;
+    BOOL _prohibitsMultipleMonthsInYearlyRecurrence;
 }
 
 @property(retain) NSArray * monthsOfTheYear;
-@property bool prohibitsMultipleMonthsInYearlyRecurrence;
+@property BOOL prohibitsMultipleMonthsInYearlyRecurrence;
 
 - (void).cxx_destruct;
 - (id)cellLabels;
 - (int)frequency;
-- (long long)gridViewType;
+- (int)gridViewType;
 - (id)initWithDate:(id)arg1;
 - (id)monthsOfTheYear;
 - (void)prepareForDisplay;
-- (bool)prohibitsMultipleMonthsInYearlyRecurrence;
+- (BOOL)prohibitsMultipleMonthsInYearlyRecurrence;
 - (void)refreshCells;
-- (void)selectCell:(id)arg1 atIndex:(long long)arg2;
+- (void)selectCell:(id)arg1 atIndex:(int)arg2;
 - (void)setMonthsOfTheYear:(id)arg1;
-- (void)setProhibitsMultipleMonthsInYearlyRecurrence:(bool)arg1;
+- (void)setProhibitsMultipleMonthsInYearlyRecurrence:(BOOL)arg1;
 - (id)tableViewCell;
 - (void)updateFromRecurrenceRule:(id)arg1;
 - (void)updateRecurrenceRuleBuilder:(id)arg1;

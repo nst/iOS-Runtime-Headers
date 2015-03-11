@@ -5,7 +5,7 @@
 @class NSDictionary, NSString;
 
 @interface NEVPNProtocolPlugin : NEVPNProtocol {
-    long long _authenticationMethod;
+    int _authenticationMethod;
     NSString *_authenticationPluginType;
     NSString *_pluginType;
     int _reassertTimeout;
@@ -13,21 +13,21 @@
     NSDictionary *_vendorInfo;
 }
 
-@property long long authenticationMethod;
+@property int authenticationMethod;
 @property(copy) NSString * authenticationPluginType;
 @property(readonly) NSString * pluginType;
 @property int reassertTimeout;
 @property(copy) NSDictionary * vendorConfiguration;
 @property(copy) NSDictionary * vendorInfo;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (long long)authenticationMethod;
+- (int)authenticationMethod;
 - (id)authenticationPluginType;
-- (bool)checkValidityAndCollectErrors:(id)arg1;
+- (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
-- (void)copyPasswordsFromKeychainInDomain:(long long)arg1;
+- (void)copyPasswordsFromKeychainInDomain:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct __SCNetworkInterface { }*)createInterface;
 - (id)descriptionWithIndent:(int)arg1;
@@ -39,14 +39,14 @@
 - (id)initWithPluginType:(id)arg1;
 - (id)pluginType;
 - (int)reassertTimeout;
-- (void)setAuthenticationMethod:(long long)arg1;
+- (void)setAuthenticationMethod:(int)arg1;
 - (void)setAuthenticationPluginType:(id)arg1;
 - (void)setPluginType:(id)arg1;
 - (void)setReassertTimeout:(int)arg1;
-- (bool)setServiceProtocolsInService:(struct __SCNetworkService { }*)arg1;
+- (BOOL)setServiceProtocolsInService:(struct __SCNetworkService { }*)arg1;
 - (void)setVendorConfiguration:(id)arg1;
 - (void)setVendorInfo:(id)arg1;
-- (bool)updateWithServiceProtocolsFromService:(struct __SCNetworkService { }*)arg1;
+- (BOOL)updateWithServiceProtocolsFromService:(struct __SCNetworkService { }*)arg1;
 - (id)vendorConfiguration;
 - (id)vendorInfo;
 

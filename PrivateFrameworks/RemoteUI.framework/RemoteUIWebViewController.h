@@ -11,17 +11,17 @@
 @interface RemoteUIWebViewController : UIViewController <UIWebViewDelegate> {
     <RemoteUIWebViewControllerDelegate> *_delegate;
     id _loadCompletion;
+    BOOL _scalesPageToFit;
     _UIBackdropView *_statusBarBackdrop;
     UIToolbar *_toolbar;
     UIWebView *_webView;
-    bool_scalesPageToFit;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <RemoteUIWebViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool scalesPageToFit;
+@property(readonly) unsigned int hash;
+@property BOOL scalesPageToFit;
 @property(readonly) Class superclass;
 @property(readonly) UIToolbar * toolbar;
 @property(readonly) UIWebView * webView;
@@ -32,9 +32,9 @@
 - (void)donePressed:(id)arg1;
 - (void)loadURL:(id)arg1 completion:(id)arg2;
 - (void)loadURL:(id)arg1;
-- (bool)scalesPageToFit;
+- (BOOL)scalesPageToFit;
 - (void)setDelegate:(id)arg1;
-- (void)setScalesPageToFit:(bool)arg1;
+- (void)setScalesPageToFit:(BOOL)arg1;
 - (id)toolbar;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

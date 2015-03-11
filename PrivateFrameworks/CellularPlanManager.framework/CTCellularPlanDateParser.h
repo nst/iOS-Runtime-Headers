@@ -9,10 +9,10 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (bool)validate:(id)arg1 parseTo:(double*)arg2;
-+ (bool)validate:(id)arg1;
++ (BOOL)validate:(id)arg1 parseTo:(double*)arg2;
++ (BOOL)validate:(id)arg1;
 
 @end

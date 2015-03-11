@@ -4,8 +4,8 @@
 
 @interface GQDBGPresentation : GQDRoot {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     } mSlideSize;
     struct __CFArray { } *mThemes;
 }
@@ -23,7 +23,7 @@
 - (id)init;
 - (void)initializeAppBundleResourcesUrl:(struct __CFURL { }*)arg1;
 - (void)loadAppBundleResourceToColorMap;
-- (struct CGSize { double x1; double x2; })slideSize;
+- (struct CGSize { float x1; float x2; })slideSize;
 - (struct __CFArray { }*)themes;
 
 @end

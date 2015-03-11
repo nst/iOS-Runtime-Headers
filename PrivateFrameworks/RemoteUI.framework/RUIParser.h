@@ -14,27 +14,27 @@
     NSMutableArray *_pages;
     NSXMLParser *_parser;
     int _parserState;
+    BOOL _succeeded;
     RUIObjectModel *_uiObjectModel;
     NSData *_xmlData;
-    bool_succeeded;
 }
 
 @property(retain) NSURL * baseURL;
 @property(copy,readonly) NSString * debugDescription;
 @property <RUIParserDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool succeeded;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL succeeded;
 @property(readonly) Class superclass;
 @property(retain) NSData * xmlData;
 
-+ (long long)textAlignmentForString:(id)arg1;
++ (int)textAlignmentForString:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_addNavigationBarWithAttributes:(id)arg1;
 - (void)_addSectionDetailHeaderText:(id)arg1 withAttributes:(id)arg2;
-- (void)_addSectionFooterText:(id)arg1 withAttributes:(id)arg2 isHTML:(bool)arg3;
-- (void)_addSectionHeaderText:(id)arg1 withAttributes:(id)arg2 isHTML:(bool)arg3;
+- (void)_addSectionFooterText:(id)arg1 withAttributes:(id)arg2 isHTML:(BOOL)arg3;
+- (void)_addSectionHeaderText:(id)arg1 withAttributes:(id)arg2 isHTML:(BOOL)arg3;
 - (void)_addSectionSubHeaderText:(id)arg1 withAttributes:(id)arg2;
 - (void)_addSectionWithAttributes:(id)arg1;
 - (void)_addTableFooterViewWithAttributes:(id)arg1;
@@ -60,7 +60,7 @@
 - (void)setBaseURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setXmlData:(id)arg1;
-- (bool)succeeded;
+- (BOOL)succeeded;
 - (id)uiObjectModel;
 - (id)xmlData;
 

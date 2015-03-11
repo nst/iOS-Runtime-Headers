@@ -15,8 +15,8 @@
 - (id)_sinfsByRemovingEmptyPinfsFromSinfs:(id)arg1;
 - (id)assetFlavor;
 - (void)loadAssetAndPlayerItem;
-- (void)setIsBanned:(bool)arg1;
-- (void)setIsLiked:(bool)arg1;
-- (bool)supportsRadioTrackActions;
+- (void)setIsBanned:(BOOL)arg1;
+- (void)setIsLiked:(BOOL)arg1;
+- (BOOL)supportsRadioTrackActions;
 
 @end

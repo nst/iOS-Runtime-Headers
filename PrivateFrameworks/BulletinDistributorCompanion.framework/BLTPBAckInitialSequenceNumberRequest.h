@@ -5,25 +5,25 @@
 @interface BLTPBAckInitialSequenceNumberRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int assert : 1; 
+    BOOL _assert;
     } _has;
-    bool_assert;
 }
 
-@property bool assert;
-@property bool hasAssert;
+@property BOOL assert;
+@property BOOL hasAssert;
 
-- (bool)assert;
+- (BOOL)assert;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasAssert;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasAssert;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setAssert:(bool)arg1;
-- (void)setHasAssert:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setAssert:(BOOL)arg1;
+- (void)setHasAssert:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -5,27 +5,27 @@
 @class NSArray, NSDictionary;
 
 @interface BWVideoFormatRequirements : BWFormatRequirements {
-    unsigned long long _bytesPerRowAlignment;
-    unsigned long long _height;
-    unsigned long long _heightAlignment;
-    unsigned long long _planeAlignment;
+    unsigned long _bytesPerRowAlignment;
+    unsigned long _height;
+    unsigned long _heightAlignment;
+    unsigned long _planeAlignment;
+    BOOL _prewireBuffers;
     NSArray *_supportedCacheModes;
     NSArray *_supportedPixelFormats;
-    unsigned long long _width;
-    unsigned long long _widthAlignment;
-    bool_prewireBuffers;
+    unsigned long _width;
+    unsigned long _widthAlignment;
 }
 
-@property unsigned long long bytesPerRowAlignment;
-@property unsigned long long height;
-@property unsigned long long heightAlignment;
+@property unsigned long bytesPerRowAlignment;
+@property unsigned long height;
+@property unsigned long heightAlignment;
 @property(readonly) NSDictionary * pixelBufferAttributes;
-@property unsigned long long planeAlignment;
-@property bool prewireBuffers;
+@property unsigned long planeAlignment;
+@property BOOL prewireBuffers;
 @property(copy) NSArray * supportedCacheModes;
 @property(copy) NSArray * supportedPixelFormats;
-@property unsigned long long width;
-@property unsigned long long widthAlignment;
+@property unsigned long width;
+@property unsigned long widthAlignment;
 
 + (id)cacheModesForCacheProfile:(int)arg1;
 + (id)cacheModesForOptimizedCPUAccess;
@@ -33,31 +33,31 @@
 + (id)displayPipeRequirements;
 + (void)initialize;
 
-- (unsigned long long)bytesPerRowAlignment;
+- (unsigned long)bytesPerRowAlignment;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (Class)formatClass;
-- (unsigned long long)height;
-- (unsigned long long)heightAlignment;
+- (unsigned long)height;
+- (unsigned long)heightAlignment;
 - (id)init;
 - (id)initWithPixelBufferAttributes:(id)arg1;
-- (unsigned int)mediaType;
+- (unsigned long)mediaType;
 - (id)pixelBufferAttributes;
-- (unsigned long long)planeAlignment;
-- (bool)prewireBuffers;
-- (void)setBytesPerRowAlignment:(unsigned long long)arg1;
-- (void)setHeight:(unsigned long long)arg1;
-- (void)setHeightAlignment:(unsigned long long)arg1;
-- (void)setPlaneAlignment:(unsigned long long)arg1;
-- (void)setPrewireBuffers:(bool)arg1;
+- (unsigned long)planeAlignment;
+- (BOOL)prewireBuffers;
+- (void)setBytesPerRowAlignment:(unsigned long)arg1;
+- (void)setHeight:(unsigned long)arg1;
+- (void)setHeightAlignment:(unsigned long)arg1;
+- (void)setPlaneAlignment:(unsigned long)arg1;
+- (void)setPrewireBuffers:(BOOL)arg1;
 - (void)setSupportedCacheModes:(id)arg1;
 - (void)setSupportedPixelFormats:(id)arg1;
-- (void)setWidth:(unsigned long long)arg1;
-- (void)setWidthAlignment:(unsigned long long)arg1;
+- (void)setWidth:(unsigned long)arg1;
+- (void)setWidthAlignment:(unsigned long)arg1;
 - (id)supportedCacheModes;
 - (id)supportedPixelFormats;
-- (unsigned long long)width;
-- (unsigned long long)widthAlignment;
+- (unsigned long)width;
+- (unsigned long)widthAlignment;
 
 @end

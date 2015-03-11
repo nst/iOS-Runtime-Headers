@@ -10,7 +10,7 @@
 
 @property(copy) NSArray * alarmIdentifiers;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)alarmIdentifiers;

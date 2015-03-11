@@ -6,66 +6,66 @@
 
 @interface UIKBTextStyle : NSObject <NSCopying> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     NSString *_etchColor;
     } _etchOffset;
     NSString *_fontName;
-    double _fontSize;
-    double _kerning;
-    double _minFontSize;
-    double _pathWeight;
-    long long _selector;
+    float _fontSize;
+    float _kerning;
+    float _minFontSize;
+    float _pathWeight;
+    int _selector;
     NSString *_textColor;
     } _textOffset;
-    double _textOpacity;
+    float _textOpacity;
 }
 
 @property(retain) NSString * etchColor;
-@property struct CGPoint { double x1; double x2; } etchOffset;
+@property struct CGPoint { float x1; float x2; } etchOffset;
 @property(retain) NSString * fontName;
-@property double fontSize;
-@property double kerning;
-@property double minFontSize;
-@property double pathWeight;
-@property long long selector;
+@property float fontSize;
+@property float kerning;
+@property float minFontSize;
+@property float pathWeight;
+@property int selector;
 @property(retain) NSString * textColor;
-@property struct CGPoint { double x1; double x2; } textOffset;
-@property double textOpacity;
+@property struct CGPoint { float x1; float x2; } textOffset;
+@property float textOpacity;
 
-+ (id)styleWithFontName:(id)arg1 withFontSize:(double)arg2;
++ (id)styleWithFontName:(id)arg1 withFontSize:(float)arg2;
 + (id)styleWithTextColor:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)etchColor;
-- (struct CGPoint { double x1; double x2; })etchOffset;
+- (struct CGPoint { float x1; float x2; })etchOffset;
 - (id)fontName;
-- (double)fontSize;
+- (float)fontSize;
 - (id)init;
-- (bool)isEqual:(id)arg1;
-- (double)kerning;
-- (double)minFontSize;
+- (BOOL)isEqual:(id)arg1;
+- (float)kerning;
+- (float)minFontSize;
 - (void)overlayWithStyle:(id)arg1;
-- (double)pathWeight;
-- (long long)selector;
+- (float)pathWeight;
+- (int)selector;
 - (void)setEtchColor:(id)arg1;
-- (void)setEtchOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setEtchOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setFontName:(id)arg1;
-- (void)setFontSize:(double)arg1;
-- (void)setKerning:(double)arg1;
-- (void)setMinFontSize:(double)arg1;
-- (void)setPathWeight:(double)arg1;
-- (void)setSelector:(long long)arg1;
+- (void)setFontSize:(float)arg1;
+- (void)setKerning:(float)arg1;
+- (void)setMinFontSize:(float)arg1;
+- (void)setPathWeight:(float)arg1;
+- (void)setSelector:(int)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTextOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setTextOpacity:(double)arg1;
+- (void)setTextOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setTextOpacity:(float)arg1;
 - (id)textColor;
-- (struct CGPoint { double x1; double x2; })textOffset;
-- (double)textOpacity;
+- (struct CGPoint { float x1; float x2; })textOffset;
+- (float)textOpacity;
 
 @end

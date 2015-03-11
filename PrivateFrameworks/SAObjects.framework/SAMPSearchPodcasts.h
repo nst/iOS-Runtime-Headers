@@ -7,7 +7,7 @@
 @interface SAMPSearchPodcasts : SADomainCommand {
 }
 
-@property long long maxResults;
+@property int maxResults;
 @property(copy) NSString * podcastName;
 
 + (id)searchPodcasts;
@@ -15,10 +15,10 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (long long)maxResults;
+- (int)maxResults;
 - (id)podcastName;
-- (bool)requiresResponse;
-- (void)setMaxResults:(long long)arg1;
+- (BOOL)requiresResponse;
+- (void)setMaxResults:(int)arg1;
 - (void)setPodcastName:(id)arg1;
 
 @end

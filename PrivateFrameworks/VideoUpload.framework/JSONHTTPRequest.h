@@ -7,32 +7,32 @@
 @interface JSONHTTPRequest : NSObject <NSURLConnectionDelegate> {
     int _HTTPMethod;
     NSString *_HTTPRequestBoundary;
+    BOOL _allowsCellularAccess;
     NSURLConnection *_connection;
     <JSONHTTPRequestDelegate> *_delegate;
     NSDictionary *_getParams;
     NSData *_overridePostBody;
     NSDictionary *_postParams;
     NSMutableData *_rawData;
+    BOOL _receivedValidResponse;
     NSMutableURLRequest *_request;
     NSHTTPURLResponse *_response;
     int _responseType;
     OAURLRequestSigner *_signer;
+    BOOL _signsMultipartPOSTData;
     NSDictionary *_unsignedPostParams;
-    bool_allowsCellularAccess;
-    bool_receivedValidResponse;
-    bool_signsMultipartPOSTData;
 }
 
 @property int HTTPMethod;
-@property bool allowsCellularAccess;
+@property BOOL allowsCellularAccess;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSDictionary * getParams;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSDictionary * postParams;
 @property(readonly) NSHTTPURLResponse * response;
 @property int responseType;
-@property bool signsMultipartPOSTData;
+@property BOOL signsMultipartPOSTData;
 @property(readonly) Class superclass;
 @property(retain) NSDictionary * unsignedPostParams;
 
@@ -42,12 +42,12 @@
 - (int)HTTPMethod;
 - (id)HTTPRequestBoundary;
 - (id)_multipartParamData:(id)arg1;
-- (bool)allowsCellularAccess;
+- (BOOL)allowsCellularAccess;
 - (void)cancel;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connection:(id)arg1 didSendBodyData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4;
+- (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (id)getParams;
@@ -56,16 +56,16 @@
 - (id)postParams;
 - (id)response;
 - (int)responseType;
-- (void)setAllowsCellularAccess:(bool)arg1;
+- (void)setAllowsCellularAccess:(BOOL)arg1;
 - (void)setGetParams:(id)arg1;
 - (void)setHTTPHeader:(id)arg1 value:(id)arg2;
 - (void)setHTTPMethod:(int)arg1;
 - (void)setOverridePostBody:(id)arg1;
 - (void)setPostParams:(id)arg1;
 - (void)setResponseType:(int)arg1;
-- (void)setSignsMultipartPOSTData:(bool)arg1;
+- (void)setSignsMultipartPOSTData:(BOOL)arg1;
 - (void)setUnsignedPostParams:(id)arg1;
-- (bool)signsMultipartPOSTData;
+- (BOOL)signsMultipartPOSTData;
 - (void)start;
 - (id)unsignedPostParams;
 

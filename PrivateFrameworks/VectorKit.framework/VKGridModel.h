@@ -53,33 +53,33 @@
     } _fillColor;
     } _gridMesh;
     double _gridMix;
-    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; } *_gridRenderItem;
+    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; } *_gridRenderItem;
     } _gridRenderState;
     } _lineColor;
     VKMapModel *_mapModel;
+    BOOL _needsUpdatedColor;
     unsigned char _renderPass;
     } _shaderSetup;
-    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; } *_simpleGridRenderItem;
+    BOOL _simpleGridEnabled;
+    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; } *_simpleGridRenderItem;
     } _simpleGridRenderState;
     } _simpleShaderSetup;
     } _simpleUniformData;
     } _uniformData;
     } _viewUniformData;
-    bool_needsUpdatedColor;
-    bool_simpleGridEnabled;
 }
 
 @property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property VKMapModel * mapModel;
 @property unsigned char renderPass;
-@property bool simpleGridEnabled;
+@property BOOL simpleGridEnabled;
 @property(readonly) VKStyleManager * styleManager;
 @property(readonly) Class superclass;
 
-+ (bool)reloadOnStylesheetChange;
++ (BOOL)reloadOnStylesheetChange;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -93,9 +93,9 @@
 - (void)setMapModel:(id)arg1;
 - (void)setNeedsUpdatedGridColor;
 - (void)setRenderPass:(unsigned char)arg1;
-- (void)setSimpleGridEnabled:(bool)arg1;
-- (bool)shouldLayoutWithoutStyleManager;
-- (bool)simpleGridEnabled;
+- (void)setSimpleGridEnabled:(BOOL)arg1;
+- (BOOL)shouldLayoutWithoutStyleManager;
+- (BOOL)simpleGridEnabled;
 - (id)styleManager;
 - (void)stylesheetDidChange;
 - (void)stylesheetDoneChanging;

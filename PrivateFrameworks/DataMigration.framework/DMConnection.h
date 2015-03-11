@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSString * lastPlugin;
 @property(readonly) Class superclass;
 
@@ -19,6 +19,6 @@
 - (id)lastPlugin;
 - (void)migrateWithCompletion:(id)arg1;
 - (void)orderedPluginIdentifiersWithCompletion:(id)arg1;
-- (void)testMigrationUIWithProgress:(bool)arg1 forceInvert:(bool)arg2 completion:(id)arg3;
+- (void)testMigrationUIWithProgress:(BOOL)arg1 forceInvert:(BOOL)arg2 completion:(id)arg3;
 
 @end

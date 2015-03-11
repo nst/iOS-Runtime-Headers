@@ -7,20 +7,20 @@
 @interface MPPlaybackTitlesView : UIControl {
     UIView *_contentView;
     NSArray *_labels;
-    unsigned long long _marqueeScrollableIndex;
+    unsigned int _marqueeScrollableIndex;
+    BOOL _marqueeScrollingActive;
+    BOOL _showingLoadingUI;
     NSArray *_titles;
-    bool_marqueeScrollingActive;
-    bool_showingLoadingUI;
 }
 
 @property(readonly) UIView * contentView;
-@property unsigned long long marqueeScrollableIndex;
-@property bool marqueeScrollingActive;
-@property bool showingLoadingUI;
+@property unsigned int marqueeScrollableIndex;
+@property BOOL marqueeScrollingActive;
+@property BOOL showingLoadingUI;
 @property(retain) NSArray * titles;
 
 - (void).cxx_destruct;
-- (id)_addLabel:(unsigned long long)arg1;
+- (id)_addLabel:(unsigned int)arg1;
 - (id)_addLoadingLabel;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
@@ -31,15 +31,15 @@
 - (id)contentView;
 - (void)dealloc;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (unsigned long long)marqueeScrollableIndex;
-- (bool)marqueeScrollingActive;
-- (void)setMarqueeScrollableIndex:(unsigned long long)arg1;
-- (void)setMarqueeScrollingActive:(bool)arg1;
-- (void)setShowingLoadingUI:(bool)arg1;
+- (unsigned int)marqueeScrollableIndex;
+- (BOOL)marqueeScrollingActive;
+- (void)setMarqueeScrollableIndex:(unsigned int)arg1;
+- (void)setMarqueeScrollingActive:(BOOL)arg1;
+- (void)setShowingLoadingUI:(BOOL)arg1;
 - (void)setTitles:(id)arg1;
-- (bool)showingLoadingUI;
+- (BOOL)showingLoadingUI;
 - (id)titles;
 
 @end

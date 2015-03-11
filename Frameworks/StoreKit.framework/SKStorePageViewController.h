@@ -18,12 +18,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_addRemoteView;
 - (void)_didFinishWithResult:(id)arg1 error:(id)arg2;
-- (void)_didLoadWithResult:(bool)arg1 error:(id)arg2;
+- (void)_didLoadWithResult:(BOOL)arg1 error:(id)arg2;
 - (void)_dismissProductPageViewController;
 - (void)_prepareToLoadWithCompletionBlock:(id)arg1;
 - (void)_requestRemoteViewController;
@@ -34,6 +34,6 @@
 - (void)loadPageWithURLBagKey:(id)arg1 completionBlock:(id)arg2;
 - (void)loadView;
 - (void)productViewControllerDidFinish:(id)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

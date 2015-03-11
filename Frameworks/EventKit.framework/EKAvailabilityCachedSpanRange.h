@@ -11,7 +11,7 @@
 + (id)_clampDateRangeForSpans:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 + (id)_generateCachedSpansFromSpans:(id)arg1;
 
-- (bool)_rangeCompletelyCoversPeriodBetweenStartDate:(id)arg1 endDate:(id)arg2;
+- (BOOL)_rangeCompletelyCoversPeriodBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (void)_validateCachedSpansIfDebugLoggingIsEnabled;
 - (void)dealloc;
 - (id)description;

@@ -6,7 +6,7 @@
 }
 
 - (void)loadItemProviderWithSupportedAdjustmentData:(id)arg1 loadHandler:(id)arg2;
-- (long long)mediaType;
+- (int)mediaType;
 - (id)videoDataSource;
 
 @end

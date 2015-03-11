@@ -5,39 +5,39 @@
 @class MPUCoverZoomViewController, MusicTabBarController, NSString;
 
 @interface MPHRootViewController : UIViewController <MPUCoverZoomViewControllerDelegate> {
+    BOOL _canShowCoverZoom;
     MPUCoverZoomViewController *_coverZoomViewController;
-    long long _statusBarOrientation;
+    BOOL _isCoverZoomVisible;
+    BOOL _mediaLibrarySupportsCoverZoom;
+    int _statusBarOrientation;
     MusicTabBarController *_tabBarController;
-    bool_canShowCoverZoom;
-    bool_isCoverZoomVisible;
-    bool_mediaLibrarySupportsCoverZoom;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applicationWillChangeStatusBarOrientationNotification:(id)arg1;
-- (bool)_canShowCoverZoom;
+- (BOOL)_canShowCoverZoom;
 - (id)_coverZoomViewController;
 - (void)_layoutCoverZoomView;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
-- (bool)_shouldShowCoverZoomWithTraitCollection:(id)arg1;
-- (bool)_updateCanShowCoverZoom;
+- (BOOL)_shouldShowCoverZoomWithTraitCollection:(id)arg1;
+- (BOOL)_updateCanShowCoverZoom;
 - (void)_updateCoverFlow;
-- (void)_updateCoverFlowWithTraitCollection:(id)arg1 animated:(bool)arg2;
+- (void)_updateCoverFlowWithTraitCollection:(id)arg1 animated:(BOOL)arg2;
 - (void)_updateInProgressDidChangeNotification:(id)arg1;
-- (bool)_updateMediaLibrarySupportsCoverZoom;
+- (BOOL)_updateMediaLibrarySupportsCoverZoom;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
 - (void)dealloc;
 - (id)detailViewControllerForEntity:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithTabBarController:(id)arg1;
-- (bool)shouldAutomaticallyForwardAppearanceMethods;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;

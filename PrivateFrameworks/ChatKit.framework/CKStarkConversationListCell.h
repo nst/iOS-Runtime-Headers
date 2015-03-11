@@ -13,7 +13,7 @@
 
 @property(retain) NSDate * date;
 @property(retain) UIDateLabel * dateLabel;
-@property bool hasUnreadMessages;
+@property BOOL hasUnreadMessages;
 @property UIImage * monogramImage;
 @property(retain) NSString * recipientNames;
 @property(retain) UILabel * recipientsLabel;
@@ -21,13 +21,13 @@
 
 - (id)dateLabel;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)monogramImage;
 - (id)recipientsLabel;
 - (void)setDate:(id)arg1;
 - (void)setDateLabel:(id)arg1;
-- (void)setHasUnreadMessages:(bool)arg1;
+- (void)setHasUnreadMessages:(BOOL)arg1;
 - (void)setMonogramImage:(id)arg1;
 - (void)setRecipientNames:(id)arg1;
 - (void)setRecipientsLabel:(id)arg1;

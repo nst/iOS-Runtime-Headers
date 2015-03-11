@@ -10,7 +10,7 @@
 
 - (id)_paginationInfo;
 - (void)dealloc;
-- (long long)numberOfPages;
-- (id)pdfDataForPageAtIndex:(long long)arg1 printingDone:(bool*)arg2;
+- (int)numberOfPages;
+- (id)pdfDataForPageAtIndex:(int)arg1 printingDone:(BOOL*)arg2;
 
 @end

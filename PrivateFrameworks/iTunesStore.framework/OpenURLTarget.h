@@ -11,10 +11,10 @@
         NSString *secureScheme; 
     unsigned int _applicationState;
     } _targetData;
-    long long _targetIndex;
+    int _targetIndex;
 }
 
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)copyURLForURL:(id)arg1;
 - (id)description;
 - (id)init;

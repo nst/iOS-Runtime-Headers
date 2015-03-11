@@ -23,25 +23,25 @@
 - (id)album;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)initWithAdTrack:(id)arg1;
-- (bool)isStreamable;
-- (bool)isValidPlayerSubstituteForItem:(id)arg1;
+- (BOOL)isStreamable;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
 - (id)mpuReporting_containerID;
-- (unsigned long long)mpuReporting_containerType;
+- (unsigned int)mpuReporting_containerType;
 - (id)mpuReporting_externalID;
-- (unsigned long long)mpuReporting_itemType;
+- (unsigned int)mpuReporting_itemType;
 - (id)mpuReporting_personalizedContainerID;
-- (bool)mpuReporting_shouldReportPlayEventsToStore;
+- (BOOL)mpuReporting_shouldReportPlayEventsToStore;
 - (void)reevaluateType;
 - (void)setStation:(id)arg1;
 - (id)station;
 - (id)stationHash;
 - (long long)stationID;
 - (id)stationName;
-- (bool)supportsSkip;
+- (BOOL)supportsSkip;
 - (id)title;
 - (id)titlesForTime:(double)arg1;
-- (unsigned long long)type;
+- (unsigned int)type;
 
 @end

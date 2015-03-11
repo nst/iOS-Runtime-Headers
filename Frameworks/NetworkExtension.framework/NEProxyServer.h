@@ -6,26 +6,26 @@
 
 @interface NEProxyServer : NSObject <NEConfigurationValidating, NEPrettyDescription, NSSecureCoding, NSCopying> {
     NSString *_address;
+    BOOL _authenticationRequired;
     NSString *_password;
     int _port;
-    long long _type;
+    int _type;
     NSString *_username;
-    bool_authenticationRequired;
 }
 
 @property(readonly) NSString * address;
-@property bool authenticationRequired;
+@property BOOL authenticationRequired;
 @property(copy) NSString * password;
 @property(readonly) int port;
-@property(readonly) long long type;
+@property(readonly) int type;
 @property(copy) NSString * username;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)address;
-- (bool)authenticationRequired;
-- (bool)checkValidityAndCollectErrors:(id)arg1;
+- (BOOL)authenticationRequired;
+- (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyPassword;
 - (id)copyProtectionSpace;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -33,14 +33,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAddress:(id)arg1 andPort:(int)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(long long)arg1 address:(id)arg2 port:(int)arg3;
+- (id)initWithType:(int)arg1 address:(id)arg2 port:(int)arg3;
 - (id)password;
 - (int)port;
-- (void)setAuthenticationRequired:(bool)arg1;
+- (void)setAuthenticationRequired:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (void)syncWithKeychain;
-- (long long)type;
+- (int)type;
 - (id)username;
 
 @end

@@ -5,29 +5,29 @@
 @class <UITableViewDataSource>, NSString;
 
 @interface _UIFilteredDataSource : NSObject <UITableViewDataSource> {
-    long long _filterType;
-    long long _maxVisibleSection;
-    long long _numberOfVisibleItemsInLastSection;
+    int _filterType;
+    BOOL _limitingWithSections;
+    int _maxVisibleSection;
+    int _numberOfVisibleItemsInLastSection;
     <UITableViewDataSource> *_tableDataSource;
-    bool_limitingWithSections;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property long long filterType;
-@property(readonly) unsigned long long hash;
+@property int filterType;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property <UITableViewDataSource> * tableDataSource;
 
-- (long long)_filteredNumberOfItemsGivenSection:(long long)arg1 numberOfItems:(long long)arg2;
-- (long long)filterType;
+- (int)_filteredNumberOfItemsGivenSection:(int)arg1 numberOfItems:(int)arg2;
+- (int)filterType;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (bool)respondsToSelector:(SEL)arg1;
-- (void)setFilterType:(long long)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (void)setFilterType:(int)arg1;
 - (void)setTableDataSource:(id)arg1;
 - (id)tableDataSource;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

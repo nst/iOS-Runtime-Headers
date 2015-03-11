@@ -8,7 +8,7 @@
     id _completionHandler;
     NSMutableData *_data;
     NSURLSessionDataTask *_dataTask;
-    long long _dataType;
+    int _dataType;
     NSString *_lastModified;
     NSURLRequest *_request;
 }
@@ -17,7 +17,7 @@
 @property(retain) NSURLSessionDataTask * dataTask;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * lastModified;
 @property(retain) NSURLRequest * request;
 @property(readonly) NSURLSessionTask * sessionTask;
@@ -25,7 +25,7 @@
 
 + (id)defaultOperationQueue;
 + (id)defaultURLSessionConfiguration;
-+ (id)urlSessionWithRequest:(id)arg1 dataType:(long long)arg2 completionHandler:(id)arg3;
++ (id)urlSessionWithRequest:(id)arg1 dataType:(int)arg2 completionHandler:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
@@ -36,9 +36,9 @@
 - (id)completionHandler;
 - (id)dataTask;
 - (void)dealloc;
-- (id)initWithRequest:(id)arg1 dataType:(long long)arg2 completionHandler:(id)arg3;
+- (id)initWithRequest:(id)arg1 dataType:(int)arg2 completionHandler:(id)arg3;
 - (id)lastModified;
-- (void)notifyWithFormattedData:(id)arg1 response:(id)arg2 error:(id)arg3 cacheData:(bool)arg4;
+- (void)notifyWithFormattedData:(id)arg1 response:(id)arg2 error:(id)arg3 cacheData:(BOOL)arg4;
 - (id)request;
 - (void)resume;
 - (id)sessionTask;

@@ -3,27 +3,27 @@
  */
 
 @interface PUFeedCommentsSectionInfo : PUFeedSectionInfo {
-    bool__hasLikes;
+    BOOL __hasLikes;
 }
 
-@property(setter=_setHasLikes:) bool _hasLikes;
+@property(setter=_setHasLikes:) BOOL _hasLikes;
 
-- (bool)_hasLikes;
-- (void)_setHasLikes:(bool)arg1;
-- (id)assetForItemAtIndex:(long long)arg1;
+- (BOOL)_hasLikes;
+- (void)_setHasLikes:(BOOL)arg1;
+- (id)assetForItemAtIndex:(int)arg1;
 - (id)assets;
-- (unsigned long long)assetsCount;
-- (id)assetsForItemAtIndex:(long long)arg1 maximumCount:(long long)arg2;
+- (unsigned int)assetsCount;
+- (id)assetsForItemAtIndex:(int)arg1 maximumCount:(int)arg2;
 - (id)cloudFeedCommentsEntry;
-- (id)commentForItemAtIndex:(long long)arg1;
-- (bool)containsAsset:(id)arg1;
-- (void)getCommentCount:(out unsigned long long*)arg1 likeCount:(out unsigned long long*)arg2;
-- (bool)hasMultipleAssetsForItemAtIndex:(long long)arg1;
-- (long long)indexOfItemWithAsset:(id)arg1;
-- (long long)indexOfItemWithComment:(id)arg1;
-- (id)likesForItemAtIndex:(long long)arg1;
-- (long long)sectionType;
-- (long long)typeForItemAtIndex:(long long)arg1;
+- (id)commentForItemAtIndex:(int)arg1;
+- (BOOL)containsAsset:(id)arg1;
+- (void)getCommentCount:(out unsigned int*)arg1 likeCount:(out unsigned int*)arg2;
+- (BOOL)hasMultipleAssetsForItemAtIndex:(int)arg1;
+- (int)indexOfItemWithAsset:(id)arg1;
+- (int)indexOfItemWithComment:(id)arg1;
+- (id)likesForItemAtIndex:(int)arg1;
+- (int)sectionType;
+- (int)typeForItemAtIndex:(int)arg1;
 - (void)updateFromCloudFeedEntry;
 
 @end

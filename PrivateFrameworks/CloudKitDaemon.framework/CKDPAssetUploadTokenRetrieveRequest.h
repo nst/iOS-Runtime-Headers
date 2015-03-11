@@ -13,8 +13,8 @@
 
 @property(retain) NSMutableArray * assets;
 @property(retain) CKDPRecordFieldIdentifier * field;
-@property(readonly) bool hasField;
-@property(readonly) bool hasType;
+@property(readonly) BOOL hasField;
+@property(readonly) BOOL hasType;
 @property(retain) CKDPRecordType * type;
 @property(retain) NSMutableArray * uploads;
 
@@ -24,8 +24,8 @@
 - (void)addAssets:(id)arg1;
 - (void)addUploads:(id)arg1;
 - (id)assets;
-- (id)assetsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)assetsCount;
+- (id)assetsAtIndex:(unsigned int)arg1;
+- (unsigned int)assetsCount;
 - (void)clearAssets;
 - (void)clearUploads;
 - (void)copyTo:(id)arg1;
@@ -33,12 +33,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)field;
-- (bool)hasField;
-- (bool)hasType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasField;
+- (BOOL)hasType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setAssets:(id)arg1;
@@ -47,8 +47,8 @@
 - (void)setUploads:(id)arg1;
 - (id)type;
 - (id)uploads;
-- (id)uploadsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)uploadsCount;
+- (id)uploadsAtIndex:(unsigned int)arg1;
+- (unsigned int)uploadsCount;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -9,46 +9,46 @@
 @class NSString;
 
 @interface RCContentSizeLayoutConstraint : NSLayoutConstraint {
-    double _additionalConstant;
+    float _additionalConstant;
+    BOOL _autoUpdatingConstantShrinks;
     id _autoitem;
     id _constantLoadingBlock;
-    double _defaultConstant;
+    float _defaultConstant;
+    BOOL _isConstantUpdatingConstraint;
     id _preferredContentSizeDidChangeObserver;
     NSString *_textStyle;
-    double _textStyleDefaultBodyLeading;
-    bool_autoUpdatingConstantShrinks;
-    bool_isConstantUpdatingConstraint;
+    float _textStyleDefaultBodyLeading;
 }
 
-@property double additionalConstant;
-@property bool autoUpdatingConstantShrinks;
+@property float additionalConstant;
+@property BOOL autoUpdatingConstantShrinks;
 @property(copy) id constantLoadingBlock;
-@property double defaultConstant;
+@property float defaultConstant;
 @property(copy) NSString * textStyle;
 
-+ (id)_constraintForAutoitem:(id)arg1 constrainedItem:(id)arg2 attribute:(long long)arg3 relatedBy:(long long)arg4 toItem:(id)arg5 attribute:(long long)arg6 multiplier:(double)arg7 defaultConstant:(double)arg8 additionalConstant:(double)arg9 initialize:(bool)arg10;
-+ (double)_maximumWidthOfStrings:(id)arg1 withFont:(id)arg2;
-+ (id)baselineConstraintForAutoitem:(id)arg1 relation:(long long)arg2 toView:(id)arg3 attribute:(long long)arg4 defaultConstant:(double)arg5;
-+ (id)baselineConstraintForView:(id)arg1 attribute:(long long)arg2 relation:(long long)arg3 toAutoitem:(id)arg4 defaultConstant:(double)arg5;
-+ (id)constraintForAutoitem:(id)arg1 additionalConstant:(double)arg2 constantLoadingBlock:(id)arg3;
-+ (id)constraintForAutoitem:(id)arg1 additionalConstant:(double)arg2 constantWidthSizingStringsLoadingBlock:(id)arg3;
-+ (id)constraintForAutoitem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6 defaultConstant:(double)arg7;
-+ (id)constraintForAutoitem:(id)arg1 constrainedItem:(id)arg2 attribute:(long long)arg3 relatedBy:(long long)arg4 toItem:(id)arg5 attribute:(long long)arg6 multiplier:(double)arg7 defaultConstant:(double)arg8;
++ (id)_constraintForAutoitem:(id)arg1 constrainedItem:(id)arg2 attribute:(int)arg3 relatedBy:(int)arg4 toItem:(id)arg5 attribute:(int)arg6 multiplier:(float)arg7 defaultConstant:(float)arg8 additionalConstant:(float)arg9 initialize:(BOOL)arg10;
++ (float)_maximumWidthOfStrings:(id)arg1 withFont:(id)arg2;
++ (id)baselineConstraintForAutoitem:(id)arg1 relation:(int)arg2 toView:(id)arg3 attribute:(int)arg4 defaultConstant:(float)arg5;
++ (id)baselineConstraintForView:(id)arg1 attribute:(int)arg2 relation:(int)arg3 toAutoitem:(id)arg4 defaultConstant:(float)arg5;
++ (id)constraintForAutoitem:(id)arg1 additionalConstant:(float)arg2 constantLoadingBlock:(id)arg3;
++ (id)constraintForAutoitem:(id)arg1 additionalConstant:(float)arg2 constantWidthSizingStringsLoadingBlock:(id)arg3;
++ (id)constraintForAutoitem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 defaultConstant:(float)arg7;
++ (id)constraintForAutoitem:(id)arg1 constrainedItem:(id)arg2 attribute:(int)arg3 relatedBy:(int)arg4 toItem:(id)arg5 attribute:(int)arg6 multiplier:(float)arg7 defaultConstant:(float)arg8;
 
 - (void).cxx_destruct;
-- (double)_defaultConstantByFixingUpDefaultConstant:(double)arg1;
+- (float)_defaultConstantByFixingUpDefaultConstant:(float)arg1;
 - (void)_forceUpdatePreferredContentSize;
-- (void)_reloadPreferredContentSize:(bool)arg1;
+- (void)_reloadPreferredContentSize:(BOOL)arg1;
 - (void)_updatePreferredContentSize;
-- (double)additionalConstant;
-- (bool)autoUpdatingConstantShrinks;
+- (float)additionalConstant;
+- (BOOL)autoUpdatingConstantShrinks;
 - (id)constantLoadingBlock;
 - (void)dealloc;
-- (double)defaultConstant;
-- (void)setAdditionalConstant:(double)arg1;
-- (void)setAutoUpdatingConstantShrinks:(bool)arg1;
+- (float)defaultConstant;
+- (void)setAdditionalConstant:(float)arg1;
+- (void)setAutoUpdatingConstantShrinks:(BOOL)arg1;
 - (void)setConstantLoadingBlock:(id)arg1;
-- (void)setDefaultConstant:(double)arg1;
+- (void)setDefaultConstant:(float)arg1;
 - (void)setTextStyle:(id)arg1;
 - (id)textStyle;
 

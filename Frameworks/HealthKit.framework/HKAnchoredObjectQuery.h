@@ -11,12 +11,12 @@
 @interface HKAnchoredObjectQuery : HKQuery {
     NSNumber *_anchor;
     id _completionHandler;
-    unsigned long long _limit;
+    unsigned int _limit;
 }
 
 @property(retain) NSNumber * anchor;
 @property(readonly) id completionHandler;
-@property unsigned long long limit;
+@property unsigned int limit;
 
 + (Class)_queryServerDataObjectClass;
 
@@ -28,9 +28,9 @@
 - (id)anchor;
 - (id)completionHandler;
 - (void)deliverDataObjects:(id)arg1 withAnchor:(id)arg2 queryUUID:(id)arg3;
-- (id)initWithType:(id)arg1 predicate:(id)arg2 anchor:(unsigned long long)arg3 limit:(unsigned long long)arg4 completionHandler:(id)arg5;
-- (unsigned long long)limit;
+- (id)initWithType:(id)arg1 predicate:(id)arg2 anchor:(unsigned int)arg3 limit:(unsigned int)arg4 completionHandler:(id)arg5;
+- (unsigned int)limit;
 - (void)setAnchor:(id)arg1;
-- (void)setLimit:(unsigned long long)arg1;
+- (void)setLimit:(unsigned int)arg1;
 
 @end

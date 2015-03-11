@@ -10,7 +10,7 @@
 
 @property(copy) NSArray * settings;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)createResponse;

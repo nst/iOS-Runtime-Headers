@@ -5,50 +5,50 @@
 @class NSArray, NSDictionary, NSMutableDictionary;
 
 @interface HKDataUnitGroupChartingRules : NSObject {
-    long long _defaultChartStyle;
-    long long _defaultStyle;
+    int _defaultChartStyle;
+    int _defaultStyle;
     NSArray *_defaultYAxisChartBoundsRules;
     NSDictionary *_defaultYAxisChartBoundsRulesByUnit;
     NSMutableDictionary *_rulesByTimeScope;
-    bool_shouldHideAverageLine;
-    bool_shouldOverrideMinYValue;
-    bool_shouldStartDayAtNoon;
-    bool_shouldUseFullYAxisRange;
+    BOOL _shouldHideAverageLine;
+    BOOL _shouldOverrideMinYValue;
+    BOOL _shouldStartDayAtNoon;
+    BOOL _shouldUseFullYAxisRange;
 }
 
-@property(readonly) long long defaultChartStyle;
+@property(readonly) int defaultChartStyle;
 @property(retain) NSArray * defaultYAxisChartBoundsRules;
 @property(retain) NSDictionary * defaultYAxisChartBoundsRulesByUnit;
-@property bool shouldHideAverageLine;
-@property bool shouldOverrideMinYValue;
-@property bool shouldStartDayAtNoon;
-@property bool shouldUseFullYAxisRange;
+@property BOOL shouldHideAverageLine;
+@property BOOL shouldOverrideMinYValue;
+@property BOOL shouldStartDayAtNoon;
+@property BOOL shouldUseFullYAxisRange;
 
 - (void).cxx_destruct;
-- (id)_ruleForKey:(id)arg1 timeScope:(long long)arg2;
-- (void)_setRule:(id)arg1 forKey:(id)arg2 timeScope:(long long)arg3;
-- (double)chartPointLineWidthForTimeScope:(long long)arg1;
-- (double)chartPointRadiusForTimeScope:(long long)arg1;
-- (long long)chartStyleForTimeScope:(long long)arg1;
-- (long long)defaultChartStyle;
+- (id)_ruleForKey:(id)arg1 timeScope:(int)arg2;
+- (void)_setRule:(id)arg1 forKey:(id)arg2 timeScope:(int)arg3;
+- (float)chartPointLineWidthForTimeScope:(int)arg1;
+- (float)chartPointRadiusForTimeScope:(int)arg1;
+- (int)chartStyleForTimeScope:(int)arg1;
+- (int)defaultChartStyle;
 - (id)defaultYAxisChartBoundsRules;
 - (id)defaultYAxisChartBoundsRulesByUnit;
 - (id)defaultYAxisChartBoundsRulesForUnit:(id)arg1;
-- (id)initWithDefaultChartStyle:(long long)arg1;
-- (id)intervalComponentsForTimeScope:(long long)arg1;
-- (void)setChartPointLineWidth:(double)arg1 forTimeScope:(long long)arg2;
-- (void)setChartPointRadius:(double)arg1 forTimeScope:(long long)arg2;
-- (void)setChartStyle:(long long)arg1 forTimeScope:(long long)arg2;
+- (id)initWithDefaultChartStyle:(int)arg1;
+- (id)intervalComponentsForTimeScope:(int)arg1;
+- (void)setChartPointLineWidth:(float)arg1 forTimeScope:(int)arg2;
+- (void)setChartPointRadius:(float)arg1 forTimeScope:(int)arg2;
+- (void)setChartStyle:(int)arg1 forTimeScope:(int)arg2;
 - (void)setDefaultYAxisChartBoundsRules:(id)arg1;
 - (void)setDefaultYAxisChartBoundsRulesByUnit:(id)arg1;
-- (void)setIntervalComponents:(id)arg1 forTimeScope:(long long)arg2;
-- (void)setShouldHideAverageLine:(bool)arg1;
-- (void)setShouldOverrideMinYValue:(bool)arg1;
-- (void)setShouldStartDayAtNoon:(bool)arg1;
-- (void)setShouldUseFullYAxisRange:(bool)arg1;
-- (bool)shouldHideAverageLine;
-- (bool)shouldOverrideMinYValue;
-- (bool)shouldStartDayAtNoon;
-- (bool)shouldUseFullYAxisRange;
+- (void)setIntervalComponents:(id)arg1 forTimeScope:(int)arg2;
+- (void)setShouldHideAverageLine:(BOOL)arg1;
+- (void)setShouldOverrideMinYValue:(BOOL)arg1;
+- (void)setShouldStartDayAtNoon:(BOOL)arg1;
+- (void)setShouldUseFullYAxisRange:(BOOL)arg1;
+- (BOOL)shouldHideAverageLine;
+- (BOOL)shouldOverrideMinYValue;
+- (BOOL)shouldStartDayAtNoon;
+- (BOOL)shouldUseFullYAxisRange;
 
 @end

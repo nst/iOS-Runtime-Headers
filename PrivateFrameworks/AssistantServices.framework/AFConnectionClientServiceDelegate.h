@@ -10,13 +10,13 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_connectionDelegate;
 - (oneway void)aceConnectionWillRetryOnError:(id)arg1;
-- (oneway void)acousticIDRequestDidFinishWithSuccess:(bool)arg1;
+- (oneway void)acousticIDRequestDidFinishWithSuccess:(BOOL)arg1;
 - (oneway void)acousticIDRequestWillStart;
 - (oneway void)getBulletinContext:(id)arg1;
 - (id)initWithConnection:(id)arg1;
@@ -29,7 +29,7 @@
 - (oneway void)requestRequestedOpenApplicationWithBundleID:(id)arg1 URL:(id)arg2 reply:(id)arg3;
 - (oneway void)requestRequestedOpenURL:(id)arg1 reply:(id)arg2;
 - (oneway void)setUserActivityInfo:(id)arg1 webpageURL:(id)arg2;
-- (oneway void)shouldSpeakChanged:(bool)arg1;
+- (oneway void)shouldSpeakChanged:(BOOL)arg1;
 - (oneway void)speechRecognitionDidFail:(id)arg1;
 - (oneway void)speechRecognized:(id)arg1;
 - (oneway void)speechRecognizedPartialResult:(id)arg1;

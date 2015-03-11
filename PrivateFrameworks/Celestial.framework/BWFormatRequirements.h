@@ -5,10 +5,10 @@
 @interface BWFormatRequirements : NSObject {
 }
 
-@property(readonly) unsigned int mediaType;
+@property(readonly) unsigned long mediaType;
 
 - (Class)formatClass;
 - (id)init;
-- (unsigned int)mediaType;
+- (unsigned long)mediaType;
 
 @end

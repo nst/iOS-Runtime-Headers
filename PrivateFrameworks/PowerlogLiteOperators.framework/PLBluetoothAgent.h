@@ -7,7 +7,7 @@
 @interface PLBluetoothAgent : PLAgent {
     PLEntryNotificationOperatorComposition *_batteryLevelChanged;
     NSString *_btHardwareChipset;
-    boolkeepSessionAlive;
+    BOOL keepSessionAlive;
     struct BTLocalDeviceImpl { } *localBluetoothDevice;
     struct BTSessionImpl { } *session;
 }
@@ -30,16 +30,16 @@
 - (void)attachSession;
 - (id)batteryLevelChanged;
 - (void)bluetoothDeviceEvent:(int)arg1 onDevice:(struct BTLocalDeviceImpl { }*)arg2 withResult:(int)arg3;
-- (bool)bluetoothPresent;
+- (BOOL)bluetoothPresent;
 - (void)bluetoothSessionEvent:(int)arg1 onSession:(struct BTSessionImpl { }*)arg2 withResult:(int)arg3;
 - (id)btHardwareChipset;
 - (id)btHardwareChipsetQuery;
 - (void)dealloc;
 - (id)init;
 - (void)initOperatorDependancies;
-- (bool)isConnectable;
-- (bool)isConnected;
-- (bool)isDiscoverable;
+- (BOOL)isConnectable;
+- (BOOL)isConnected;
+- (BOOL)isDiscoverable;
 - (struct BTLocalDeviceImpl { }*)localBluetoothDevice;
 - (void)log;
 - (void)logEventBackwardPowerProfileStats;
@@ -49,8 +49,8 @@
 - (void)logwithBTOnCheck;
 - (void)modelBluetoothOffPower;
 - (void)modelBluetoothPower:(id)arg1;
-- (bool)modulePowered;
-- (bool)nikePowered;
+- (BOOL)modulePowered;
+- (BOOL)nikePowered;
 - (void)sessionAttached:(struct BTSessionImpl { }*)arg1 withResult:(int)arg2;
 - (void)sessionTerminated:(struct BTSessionImpl { }*)arg1 withResult:(int)arg2;
 - (void)setBatteryLevelChanged:(id)arg1;

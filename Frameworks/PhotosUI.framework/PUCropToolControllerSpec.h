@@ -5,26 +5,26 @@
 @interface PUCropToolControllerSpec : PUPhotoEditToolControllerSpec {
 }
 
-@property(readonly) struct CGSize { double x1; double x2; } cropActionButtonSize;
-@property(readonly) double cropHandleViewLineMargin;
-@property(readonly) double cropHandleViewLineThickness;
-@property(readonly) double cropRectMargin;
-@property(readonly) struct CGSize { double x1; double x2; } minimumCropHandleViewSize;
-@property(readonly) double minimumCropInset;
-@property(readonly) struct CGSize { double x1; double x2; } minimumCropSize;
-@property(readonly) double standardBottomBarWidth;
-@property(readonly) double standardSideBarHeight;
+@property(readonly) struct CGSize { float x1; float x2; } cropActionButtonSize;
+@property(readonly) float cropHandleViewLineMargin;
+@property(readonly) float cropHandleViewLineThickness;
+@property(readonly) float cropRectMargin;
+@property(readonly) struct CGSize { float x1; float x2; } minimumCropHandleViewSize;
+@property(readonly) float minimumCropInset;
+@property(readonly) struct CGSize { float x1; float x2; } minimumCropSize;
+@property(readonly) float standardBottomBarWidth;
+@property(readonly) float standardSideBarHeight;
 
-- (struct CGSize { double x1; double x2; })cropActionButtonSize;
-- (double)cropHandleViewLineMargin;
-- (double)cropHandleViewLineThickness;
-- (double)cropRectMargin;
-- (struct CGSize { double x1; double x2; })minimumCropHandleViewSize;
-- (double)minimumCropInset;
-- (struct CGSize { double x1; double x2; })minimumCropSize;
-- (double)standardBottomBarHeight;
-- (double)standardBottomBarWidth;
-- (double)standardSideBarHeight;
-- (double)standardSideBarWidth;
+- (struct CGSize { float x1; float x2; })cropActionButtonSize;
+- (float)cropHandleViewLineMargin;
+- (float)cropHandleViewLineThickness;
+- (float)cropRectMargin;
+- (struct CGSize { float x1; float x2; })minimumCropHandleViewSize;
+- (float)minimumCropInset;
+- (struct CGSize { float x1; float x2; })minimumCropSize;
+- (float)standardBottomBarHeight;
+- (float)standardBottomBarWidth;
+- (float)standardSideBarHeight;
+- (float)standardSideBarWidth;
 
 @end

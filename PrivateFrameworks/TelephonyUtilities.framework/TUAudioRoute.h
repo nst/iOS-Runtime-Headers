@@ -8,24 +8,24 @@
     NSDictionary *_route;
 }
 
-@property(getter=isAirTunes,readonly) bool airTunes;
-@property(getter=isBluetooth,readonly) bool bluetooth;
-@property(readonly) long long bluetoothEndpointType;
-@property(getter=isCarAudio,readonly) bool carAudio;
-@property(getter=isReceiver,readonly) bool receiver;
+@property(getter=isAirTunes,readonly) BOOL airTunes;
+@property(getter=isBluetooth,readonly) BOOL bluetooth;
+@property(readonly) int bluetoothEndpointType;
+@property(getter=isCarAudio,readonly) BOOL carAudio;
+@property(getter=isReceiver,readonly) BOOL receiver;
 @property(retain) NSDictionary * route;
-@property(getter=isSpeaker,readonly) bool speaker;
-@property(getter=isWirelessHeadset,readonly) bool wirelessHeadset;
+@property(getter=isSpeaker,readonly) BOOL speaker;
+@property(getter=isWirelessHeadset,readonly) BOOL wirelessHeadset;
 
-- (bool)_routeNameEqualTo:(id)arg1;
-- (long long)bluetoothEndpointType;
+- (BOOL)_routeNameEqualTo:(id)arg1;
+- (int)bluetoothEndpointType;
 - (id)initWithDictionary:(id)arg1;
-- (bool)isAirTunes;
-- (bool)isBluetooth;
-- (bool)isCarAudio;
-- (bool)isReceiver;
-- (bool)isSpeaker;
-- (bool)isWirelessHeadset;
+- (BOOL)isAirTunes;
+- (BOOL)isBluetooth;
+- (BOOL)isCarAudio;
+- (BOOL)isReceiver;
+- (BOOL)isSpeaker;
+- (BOOL)isWirelessHeadset;
 - (id)route;
 - (void)setRoute:(id)arg1;
 

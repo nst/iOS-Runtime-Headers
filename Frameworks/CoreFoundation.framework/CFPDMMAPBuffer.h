@@ -4,14 +4,14 @@
 
 @interface CFPDMMAPBuffer : CFPDDataBuffer {
     void *bytes;
-    unsigned long long length;
+    unsigned long length;
 }
 
 - (void*)bytes;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithFileDescriptor:(int)arg1 size:(unsigned long long)arg2 allowMappingIfSafe:(bool)arg3;
-- (id)initWithSize:(unsigned long long)arg1 bufferPtr:(void**)arg2;
-- (unsigned long long)length;
+- (id)initWithFileDescriptor:(int)arg1 size:(unsigned long)arg2 allowMappingIfSafe:(BOOL)arg3;
+- (id)initWithSize:(unsigned long)arg1 bufferPtr:(void**)arg2;
+- (unsigned long)length;
 
 @end

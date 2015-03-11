@@ -6,13 +6,13 @@
 
 @interface FBOcclusionsStackEntry : NSObject {
     NSString *_key;
-    double _level;
+    float _level;
     NSSet *_occlusions;
     NSOrderedSet *_orderedOcclusions;
 }
 
 @property(copy,readonly) NSString * key;
-@property double level;
+@property float level;
 @property(copy) NSSet * occlusions;
 @property(copy,readonly) NSOrderedSet * orderedOcclusions;
 
@@ -20,10 +20,10 @@
 - (id)description;
 - (id)initWithKey:(id)arg1;
 - (id)key;
-- (double)level;
+- (float)level;
 - (id)occlusions;
 - (id)orderedOcclusions;
-- (void)setLevel:(double)arg1;
+- (void)setLevel:(float)arg1;
 - (void)setOcclusions:(id)arg1;
 
 @end

@@ -4,11 +4,11 @@
 
 @interface CKJoystickGestureVelocitySample : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     double dt;
     } end;
     } start;

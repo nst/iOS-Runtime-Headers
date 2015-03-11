@@ -7,36 +7,36 @@
 @interface UIKeyboardCandidateView_Floating : UIKeyboardCandidateView <UIKeyboardCandidateViewInline> {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     } _collapsedRect;
     } presentationSize;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property struct CGSize { double x1; double x2; } presentationSize;
+@property(readonly) unsigned int hash;
+@property struct CGSize { float x1; float x2; } presentationSize;
 @property(readonly) Class superclass;
 
-+ (double)defaultExtendedControlHeight;
++ (float)defaultExtendedControlHeight;
 
 - (id)_inheritedRenderConfig;
-- (unsigned long long)_numberOfColumns:(bool)arg1;
+- (unsigned int)_numberOfColumns:(BOOL)arg1;
 - (id)activeCandidateList;
 - (void)candidatesDidChange;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (struct CGSize { double x1; double x2; })presentationSize;
-- (void)setCandidateViewExtended:(bool)arg1;
-- (void)setPresentationSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })presentationSize;
+- (void)setCandidateViewExtended:(BOOL)arg1;
+- (void)setPresentationSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

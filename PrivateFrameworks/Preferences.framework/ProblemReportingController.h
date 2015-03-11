@@ -16,7 +16,7 @@
 @property(readonly) PSSpecifier * filesystemMetadataSnapshotSpecifier;
 @property(readonly) PSSpecifier * spinnerSpecifier;
 
-+ (bool)isProblemReportingEnabled;
++ (BOOL)isProblemReportingEnabled;
 
 - (id)appActivitySpecifiers;
 - (void)checkDiagnosticsSessionAvailability;
@@ -24,9 +24,9 @@
 - (void)dismissAboutSheet:(id)arg1;
 - (id)filesystemMetadataSnapshotSpecifier;
 - (void)launchDiagnosticsSession:(id)arg1;
-- (void)setProblemReportingEnabled:(bool)arg1;
+- (void)setProblemReportingEnabled:(BOOL)arg1;
 - (void)setShouldShareAppActivityWithAppDevelopers:(id)arg1 specifier:(id)arg2;
-- (bool)shouldEnableProblemReportingForCheckedSpecifier;
+- (BOOL)shouldEnableProblemReportingForCheckedSpecifier;
 - (id)shouldShareAppActivityWithAppDevelopers;
 - (void)showAboutAppAnalyticsSheet;
 - (void)showAboutDiagnosticsSheet;

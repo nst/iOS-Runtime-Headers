@@ -5,7 +5,7 @@
 @class UILabel;
 
 @interface PSUsageSizeHeader : UIView <PSHeaderFooterView> {
-    double _height;
+    float _height;
     UILabel *_sizeLabel;
     UILabel *_titleLabel;
 }
@@ -13,8 +13,8 @@
 - (void)dealloc;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
-- (double)preferredHeightForWidth:(double)arg1;
+- (float)preferredHeightForWidth:(float)arg1;
 - (void)setSize:(id)arg1;
-- (void)setSizeLabelHidden:(bool)arg1;
+- (void)setSizeLabelHidden:(BOOL)arg1;
 
 @end

@@ -7,22 +7,22 @@
 @interface BLTCircularBitBuffer : NSObject {
     unsigned long long _beginIndex;
     NSMutableData *_bitVector;
-    unsigned long long _capacity;
+    unsigned int _capacity;
 }
 
 @property(readonly) unsigned long long beginIndex;
-@property(readonly) unsigned long long capacity;
+@property(readonly) unsigned int capacity;
 
-+ (unsigned long long)actualCapacity:(unsigned long long)arg1;
++ (unsigned int)actualCapacity:(unsigned int)arg1;
 
 - (void).cxx_destruct;
-- (void)_setBit:(bool)arg1 atIndex:(unsigned long long)arg2;
+- (void)_setBit:(bool)arg1 atIndex:(unsigned int)arg2;
 - (unsigned long long)beginIndex;
 - (unsigned char)bitAtIndex:(unsigned long long)arg1;
 - (id)bitVector;
-- (unsigned long long)capacity;
+- (unsigned int)capacity;
 - (void)clear;
-- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithData:(id)arg1 andIndex:(unsigned long long)arg2;
 - (void)setBit:(bool)arg1 atIndex:(unsigned long long)arg2;
 

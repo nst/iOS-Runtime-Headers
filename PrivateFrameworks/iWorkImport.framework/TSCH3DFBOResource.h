@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)get;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)name;
 - (void)setName:(id)arg1;
 

@@ -5,45 +5,45 @@
 @class NSSet;
 
 @interface CalDAVCalendarUserSearchTask : CoreDAVPropertyFindBaseTask {
-    unsigned long long _resultLimit;
+    BOOL _findAttendees;
+    BOOL _findGroups;
+    BOOL _findLocations;
+    BOOL _findResources;
+    BOOL _findUsers;
+    unsigned int _resultLimit;
     NSSet *_searchStrings;
-    bool_findAttendees;
-    bool_findGroups;
-    bool_findLocations;
-    bool_findResources;
-    bool_findUsers;
 }
 
-@property bool findAttendees;
-@property bool findGroups;
-@property bool findLocations;
-@property bool findResources;
-@property bool findUsers;
-@property unsigned long long resultLimit;
+@property BOOL findAttendees;
+@property BOOL findGroups;
+@property BOOL findLocations;
+@property BOOL findResources;
+@property BOOL findUsers;
+@property unsigned int resultLimit;
 @property(retain) NSSet * searchStrings;
 
-+ (bool)tokensAreLegal:(id)arg1;
++ (BOOL)tokensAreLegal:(id)arg1;
 
 - (void)dealloc;
 - (id)extraAttributes;
-- (bool)findAttendees;
-- (bool)findGroups;
-- (bool)findLocations;
-- (bool)findResources;
-- (bool)findUsers;
+- (BOOL)findAttendees;
+- (BOOL)findGroups;
+- (BOOL)findLocations;
+- (BOOL)findResources;
+- (BOOL)findUsers;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
 - (id)initWithSearchStrings:(id)arg1 atURL:(id)arg2;
 - (id)requestBody;
-- (unsigned long long)resultLimit;
+- (unsigned int)resultLimit;
 - (id)searchItems;
 - (id)searchStrings;
-- (void)setFindAttendees:(bool)arg1;
-- (void)setFindGroups:(bool)arg1;
-- (void)setFindLocations:(bool)arg1;
-- (void)setFindResources:(bool)arg1;
-- (void)setFindUsers:(bool)arg1;
-- (void)setResultLimit:(unsigned long long)arg1;
+- (void)setFindAttendees:(BOOL)arg1;
+- (void)setFindGroups:(BOOL)arg1;
+- (void)setFindLocations:(BOOL)arg1;
+- (void)setFindResources:(BOOL)arg1;
+- (void)setFindUsers:(BOOL)arg1;
+- (void)setResultLimit:(unsigned int)arg1;
 - (void)setSearchStrings:(id)arg1;
 
 @end

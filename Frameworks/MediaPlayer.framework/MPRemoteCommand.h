@@ -6,32 +6,32 @@
 
 @interface MPRemoteCommand : NSObject {
     <MPRemoteCommandDelegate> *_delegate;
+    BOOL _enabled;
     unsigned int _mediaRemoteCommandType;
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSMutableArray *_targetInvocations;
-    bool_enabled;
 }
 
-@property(getter=isEnabled) bool enabled;
+@property(getter=isEnabled) BOOL enabled;
 
 - (void).cxx_destruct;
-- (void)_addTarget:(id)arg1 action:(SEL)arg2 retainTarget:(bool)arg3;
+- (void)_addTarget:(id)arg1 action:(SEL)arg2 retainTarget:(BOOL)arg3;
 - (id)_mediaRemoteCommandInfoOptions;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (id)addTargetWithHandler:(id)arg1;
 - (struct _MRMediaRemoteCommandInfo { }*)createCommandInfoRepresentation;
 - (id)delegate;
-- (bool)hasTargets;
+- (BOOL)hasTargets;
 - (id)init;
 - (id)initWithMediaRemoteCommandType:(unsigned int)arg1;
 - (void)invokeCommandWithEvent:(id)arg1 completion:(id)arg2;
-- (bool)isEnabled;
-- (bool)isSupported;
+- (BOOL)isEnabled;
+- (BOOL)isSupported;
 - (unsigned int)mediaRemoteCommandType;
 - (void)notifyPropagatablePropertyChanged;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)removeTarget:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(BOOL)arg1;
 
 @end

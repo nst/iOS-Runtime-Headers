@@ -24,7 +24,7 @@
 - (void)resetConfiguration;
 - (void)setMessageFilters:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (bool)shouldCloudSyncData;
+- (BOOL)shouldCloudSyncData;
 - (id)workQueue;
 
 @end

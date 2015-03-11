@@ -16,7 +16,7 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (bool)requiresTokenRegistration;
+- (BOOL)requiresTokenRegistration;
 - (void)setContainerPrivacySettings:(id)arg1;
 
 @end

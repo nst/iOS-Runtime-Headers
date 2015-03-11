@@ -6,12 +6,15 @@
 
 @interface PKPaymentAuthorizationServiceViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, PKAuthenticatorDelegate, PKPaymentOptionsViewControllerDelegate, PKPaymentAuthorizationServiceProtocol> {
     PKAuthenticator *_authenticator;
+    BOOL _awaitingClientCallbackReply;
     NSMutableArray *_clientCallbackBlocks;
     UIView *_contentView;
     NSLayoutConstraint *_contentViewTopConstraint;
     <PKPaymentAuthorizationHostProtocol> *_delegate;
     UITableView *_detailTableView;
     PKPaymentAuthorizationFooterView *_footerView;
+    BOOL _hostApplicationEnteredBackground;
+    BOOL _hostApplicationResignedActive;
     PKPaymentAuthorizationLayout *_layout;
     PKPaymentAuthorizationDataModel *_model;
     PKPaymentAuthorizationNavigationBar *_navBar;
@@ -21,23 +24,20 @@
     PKPaymentOptionsViewController *_shippingAddressOptionsController;
     PKPaymentOptionsViewController *_shippingContactOptionsController;
     PKPaymentOptionsViewController *_shippingMethodOptionsController;
-    unsigned long long _state;
+    unsigned int _state;
     PKPaymentAuthorizationTotalView *_totalView;
-    bool_awaitingClientCallbackReply;
-    bool_hostApplicationEnteredBackground;
-    bool_hostApplicationResignedActive;
-    bool_treatingHostAsBackgrounded;
+    BOOL _treatingHostAsBackgrounded;
 }
 
 @property(retain) PKAuthenticator * authenticator;
 @property(copy,readonly) NSString * debugDescription;
 @property <PKPaymentAuthorizationHostProtocol> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) PKPaymentAuthorizationDataModel * model;
 @property(retain) PKPaymentService * paymentService;
 @property(retain) PKPaymentWebService * paymentWebService;
-@property unsigned long long state;
+@property unsigned int state;
 @property(readonly) Class superclass;
 
 - (void)_authorizeTransactionWithCredential:(id)arg1;
@@ -68,26 +68,26 @@
 - (Class)_tableViewClassForDataItem:(id)arg1;
 - (void)_trackClientCallbackProgress;
 - (id)_transactionWithPaymentToken:(id)arg1;
-- (void)_updateBackgroundedState:(bool)arg1;
+- (void)_updateBackgroundedState:(BOOL)arg1;
 - (void)_updatePreferredContentSize;
 - (Class)_viewPresenterClassForDataItem:(id)arg1;
 - (id)authenticator;
 - (void)authenticatorDidEncounterFingerOff:(id)arg1;
 - (void)authenticatorDidEncounterFingerOn:(id)arg1;
 - (void)authenticatorDidEncounterMatchMiss:(id)arg1;
-- (void)authorizationDidAuthorizePaymentCompleteWithStatus:(long long)arg1;
-- (void)authorizationDidSelectShippingAddressCompleteWithStatus:(long long)arg1 shippingMethods:(id)arg2 paymentSummaryItems:(id)arg3;
-- (void)authorizationDidSelectShippingMethodCompleteWithStatus:(long long)arg1 paymentSummaryItems:(id)arg2;
+- (void)authorizationDidAuthorizePaymentCompleteWithStatus:(int)arg1;
+- (void)authorizationDidSelectShippingAddressCompleteWithStatus:(int)arg1 shippingMethods:(id)arg2 paymentSummaryItems:(id)arg3;
+- (void)authorizationDidSelectShippingMethodCompleteWithStatus:(int)arg1 paymentSummaryItems:(id)arg2;
 - (void)cancelPressed:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)handleHostApplicationDidBecomeActive;
 - (void)handleHostApplicationDidCancel;
-- (void)handleHostApplicationWillResignActive:(bool)arg1;
+- (void)handleHostApplicationWillResignActive:(BOOL)arg1;
 - (id)handlePaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)model;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)paymentOptionsViewControllerDidFinish:(id)arg1;
 - (id)paymentService;
 - (id)paymentWebService;
@@ -97,18 +97,18 @@
 - (void)setModel:(id)arg1;
 - (void)setPaymentService:(id)arg1;
 - (void)setPaymentWebService:(id)arg1;
-- (void)setState:(unsigned long long)arg1 param:(id)arg2;
-- (void)setState:(unsigned long long)arg1;
-- (unsigned long long)state;
+- (void)setState:(unsigned int)arg1 param:(id)arg2;
+- (void)setState:(unsigned int)arg1;
+- (unsigned int)state;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

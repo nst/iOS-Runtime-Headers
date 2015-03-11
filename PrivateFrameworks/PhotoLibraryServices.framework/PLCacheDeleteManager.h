@@ -20,10 +20,10 @@
 - (long long)_attemptToDeleteAtLeast:(long long)arg1 fromTrashWithUrgencyLevel:(int)arg2;
 - (long long)_attemptToDeleteAtLeast:(long long)arg1 withUrgencyLevel:(int)arg2;
 - (id)assetsAsResourceBundles;
-- (id)assetsAsResourceBundlesWithManualVerification:(bool)arg1;
+- (id)assetsAsResourceBundlesWithManualVerification:(BOOL)arg1;
 - (id)assetsSubsetForUrgencyLevel:(int)arg1 fromBundle:(id)arg2 keepOriginals:(bool)arg3;
 - (long long)attemptToDeleteAtLeast:(long long)arg1 fromResourcesArray:(id)arg2 withUrgencyLevel:(int)arg3;
-- (id)cachedAssetsForUrgencyLevel:(int)arg1 includeOriginals:(bool)arg2;
+- (id)cachedAssetsForUrgencyLevel:(int)arg1 includeOriginals:(BOOL)arg2;
 - (long long)combinedAssetsSize:(id)arg1;
 - (id)debugEstimateForUrgency:(int)arg1;
 - (id)debugFriendlyDictionary:(id)arg1;
@@ -31,9 +31,9 @@
 - (long long)deleteBatchInCPLAndReportDeletedBytes:(id)arg1;
 - (void)deleteExpiredTrashBinObjects;
 - (id)deleteResourcesBatchAndReturnSuccessfullyDeletedAssets:(id)arg1;
-- (bool)enabled;
+- (BOOL)enabled;
 - (id)init;
-- (bool)keepOriginalsEnabled;
+- (BOOL)keepOriginalsEnabled;
 - (id)localResourcesWithCloudMasters;
 - (id)pruningFilters;
 - (id)pruningOrder;

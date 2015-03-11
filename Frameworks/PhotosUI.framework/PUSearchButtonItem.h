@@ -7,41 +7,41 @@
 @interface PUSearchButtonItem : UIBarButtonItem {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     PUSearchButtonItemCustomView *_customView;
     UINavigationItem *_navigationItem;
+    BOOL _nudgesSearchIcon;
     UISearchBar *_searchBar;
     UIView *_searchIcon;
     } _searchIconDefaultBounds;
-    bool_nudgesSearchIcon;
-    bool_showingSearchBar;
-    bool_wantsShowingSearchBar;
+    BOOL _showingSearchBar;
+    BOOL _wantsShowingSearchBar;
 }
 
-@property double maxSearchBarWidth;
+@property float maxSearchBarWidth;
 @property(readonly) UINavigationItem * navigationItem;
-@property bool nudgesSearchIcon;
+@property BOOL nudgesSearchIcon;
 @property(readonly) UISearchBar * searchBar;
-@property(readonly) bool showingSearchBar;
+@property(readonly) BOOL showingSearchBar;
 
 - (void).cxx_destruct;
 - (id)_allNavigationButtonItems;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_targetBoundsForSearchBarInNavigationBar:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_targetBoundsForSearchBarInNavigationBar:(id)arg1;
 - (id)initWithNavigationItem:(id)arg1 target:(id)arg2 action:(SEL)arg3;
-- (double)maxSearchBarWidth;
+- (float)maxSearchBarWidth;
 - (void)navigationBarDidUpdate;
 - (id)navigationItem;
-- (bool)nudgesSearchIcon;
+- (BOOL)nudgesSearchIcon;
 - (id)searchBar;
-- (void)setMaxSearchBarWidth:(double)arg1;
-- (void)setNudgesSearchIcon:(bool)arg1;
-- (void)setShowingSearchBar:(bool)arg1 animated:(bool)arg2;
-- (bool)showingSearchBar;
+- (void)setMaxSearchBarWidth:(float)arg1;
+- (void)setNudgesSearchIcon:(BOOL)arg1;
+- (void)setShowingSearchBar:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)showingSearchBar;
 
 @end

@@ -5,25 +5,25 @@
 @class <SWSyncControllerDelegate>, NSMutableArray, NSString, SWSyncHost, SWSyncServiceConnection;
 
 @interface SWSyncController : NSObject <SWSyncServiceConnectionDelegate, SWGeneratePINConnectionDelegate, SWSyncWorkoutConnectionDelegate, SWPINStatusConnectionDelegate, SWGenerateTokenConnectionDelegate, SWSyncCompleteConnectionDelegate> {
-    long long _attemptedUploadCount;
+    int _attemptedUploadCount;
     NSString *_baseDirectoryPath;
     SWSyncServiceConnection *_currentSyncConnection;
     NSString *_currentlySyncingWorkoutFilePath;
     NSMutableArray *_empedDirectoriesToSync;
+    BOOL _shouldMoveFilesToSynchedDirectoryWhenDone;
     <SWSyncControllerDelegate> *_syncDelegate;
     SWSyncHost *_syncHost;
     NSString *_syncPin;
-    long long _uploadCount;
+    int _uploadCount;
     NSMutableArray *_workoutFilesToSync;
-    bool_shouldMoveFilesToSynchedDirectoryWhenDone;
 }
 
-@property bool shouldMoveFilesToSynchedDirectoryWhenDone;
+@property BOOL shouldMoveFilesToSynchedDirectoryWhenDone;
 @property <SWSyncControllerDelegate> * syncDelegate;
-@property long long uploadCount;
+@property int uploadCount;
 
 + (void)releaseSyncInProgressFileLock;
-+ (bool)takeSyncInProgressFileLock:(bool)arg1;
++ (BOOL)takeSyncInProgressFileLock:(BOOL)arg1;
 
 - (id)_syncHost;
 - (void)_syncNextWorkout;
@@ -39,14 +39,14 @@
 - (void)connectionDidSyncWorkout:(id)arg1;
 - (void)dealloc;
 - (id)initWithBaseDirectoryPath:(id)arg1;
-- (void)setShouldMoveFilesToSynchedDirectoryWhenDone:(bool)arg1;
+- (void)setShouldMoveFilesToSynchedDirectoryWhenDone:(BOOL)arg1;
 - (void)setSyncDelegate:(id)arg1;
-- (void)setUploadCount:(long long)arg1;
-- (bool)shouldMoveFilesToSynchedDirectoryWhenDone;
+- (void)setUploadCount:(int)arg1;
+- (BOOL)shouldMoveFilesToSynchedDirectoryWhenDone;
 - (void)syncAllWorkouts;
 - (id)syncDelegate;
-- (unsigned long long)unsyncedWorkoutsCount;
-- (long long)uploadCount;
+- (unsigned int)unsyncedWorkoutsCount;
+- (int)uploadCount;
 - (void)visitNikeWebSite;
 
 @end

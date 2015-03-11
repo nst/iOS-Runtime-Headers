@@ -7,13 +7,13 @@
 @interface TUHardPauseController : NSObject {
     unsigned short _cachedAppropriateState;
     NSString *_cachedDisplayString;
+    BOOL _cachedValuesAreValid;
     unsigned short _state;
-    bool_cachedValuesAreValid;
 }
 
 @property unsigned short cachedAppropriateState;
 @property(retain) NSString * cachedDisplayString;
-@property bool cachedValuesAreValid;
+@property BOOL cachedValuesAreValid;
 @property(readonly) NSString * displayString;
 @property unsigned short state;
 
@@ -22,8 +22,8 @@
 - (unsigned short)appropriateState;
 - (unsigned short)cachedAppropriateState;
 - (id)cachedDisplayString;
-- (bool)cachedValuesAreValid;
-- (bool)canQueryHardPauseDigits;
+- (BOOL)cachedValuesAreValid;
+- (BOOL)canQueryHardPauseDigits;
 - (void)dealloc;
 - (id)displayString;
 - (id)init;
@@ -34,7 +34,7 @@
 - (void)sendHardPauseDigitsRelayed;
 - (void)setCachedAppropriateState:(unsigned short)arg1;
 - (void)setCachedDisplayString:(id)arg1;
-- (void)setCachedValuesAreValid:(bool)arg1;
+- (void)setCachedValuesAreValid:(BOOL)arg1;
 - (void)setState:(unsigned short)arg1;
 - (void)startListeningToHardPauseEvents;
 - (unsigned short)state;

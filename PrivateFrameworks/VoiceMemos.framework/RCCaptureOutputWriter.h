@@ -11,13 +11,17 @@
         unsigned int flags; 
         long long epoch; 
     AVCaptureSession *_AVCaptureSession;
-    long long _AVCaptureSessionStartupState;
+    int _AVCaptureSessionStartupState;
     NSURL *_activeOutputFileURL;
     AVAssetWriter *_assetWriter;
     <RCCaptureOutputWriterDelegate> *_captureOutputDelegate;
     NSMutableArray *_delegateBlocks;
     double _finalizedAssetDuration;
+    BOOL _finalizedAssetEncounteredError;
     NSURL *_finalizedAssetURL;
+    BOOL _handledAVCaptureSessionFailedToStart;
+    BOOL _handledAVCaptureSessionTerminatedAbnormally;
+    BOOL _isProcessingSamples;
     double _maxRecordedDuration;
     unsigned long long _maxRecordedFileSize;
     NSObject<OS_dispatch_queue> *_queue;
@@ -25,14 +29,10 @@
     NSUUID *_recordingSessionID;
     AVCaptureAudioDataOutput *_sampleBufferDataOutput;
     NSObject<OS_dispatch_queue> *_sampleBufferQueue;
-    unsigned long long _sampleBuffersWritten;
+    unsigned int _sampleBuffersWritten;
     } _sampleBuffersWrittenDuration;
-    long long _writerState;
-    bool_finalizedAssetEncounteredError;
-    bool_handledAVCaptureSessionFailedToStart;
-    bool_handledAVCaptureSessionTerminatedAbnormally;
-    bool_isProcessingSamples;
-    bool_waitingForAVCaptureSessionDidStart;
+    BOOL _waitingForAVCaptureSessionDidStart;
+    int _writerState;
 }
 
 @property(readonly) AVCaptureSession * AVCaptureSession;
@@ -43,9 +43,9 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) double finalizedAssetDuration;
-@property(readonly) bool finalizedAssetEncounteredError;
+@property(readonly) BOOL finalizedAssetEncounteredError;
 @property(readonly) NSURL * finalizedAssetURL;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property double maxRecordedDuration;
 @property unsigned long long maxRecordedFileSize;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
@@ -54,15 +54,15 @@
 @property(retain) AVCaptureAudioDataOutput * sampleBufferDataOutput;
 @property(retain) NSObject<OS_dispatch_queue> * sampleBufferQueue;
 @property(readonly) Class superclass;
-@property long long writerState;
+@property int writerState;
 
 - (void).cxx_destruct;
 - (id)AVCaptureSession;
 - (void)_checkIfRecordingSessionEverStarted:(id)arg1;
 - (void)_clearSampleDataOutput;
 - (void)_finalizeAssetWriting;
-- (bool)_handleEncounteredFatalAssetWriterError;
-- (bool)_handleNotificationAsSessionStartFailure;
+- (BOOL)_handleEncounteredFatalAssetWriterError;
+- (BOOL)_handleNotificationAsSessionStartFailure;
 - (void)_interruptionDidBegin:(id)arg1;
 - (void)_prepareCaptureSessionOutputsIfNecessary;
 - (void)_registerForCatpureSessionNotifications;
@@ -70,10 +70,10 @@
 - (void)_sessionDidStartRunning:(id)arg1;
 - (void)_sessionDidStopRunning:(id)arg1;
 - (void)_sessionErrored:(id)arg1;
-- (void)_setWriterState:(long long)arg1;
-- (bool)_setupAssetWriter:(id*)arg1 sampleBufferRef:(struct opaqueCMSampleBuffer { }*)arg2;
+- (void)_setWriterState:(int)arg1;
+- (BOOL)_setupAssetWriter:(id*)arg1 sampleBufferRef:(struct opaqueCMSampleBuffer { }*)arg2;
 - (void)_unregisterForCatpureSessionNotifications;
-- (long long)_writerState;
+- (int)_writerState;
 - (id)activeOutputFileURL;
 - (id)assetWriter;
 - (double)assetWritingCheckpointInterval;
@@ -82,7 +82,7 @@
 - (void)dealloc;
 - (void)endWriting;
 - (double)finalizedAssetDuration;
-- (bool)finalizedAssetEncounteredError;
+- (BOOL)finalizedAssetEncounteredError;
 - (id)finalizedAssetURL;
 - (id)initWithAVCaptureSession:(id)arg1;
 - (double)maxRecordedDuration;
@@ -104,10 +104,10 @@
 - (void)setRecordingSessionID:(id)arg1;
 - (void)setSampleBufferDataOutput:(id)arg1;
 - (void)setSampleBufferQueue:(id)arg1;
-- (void)setWriterState:(long long)arg1;
-- (bool)startCaptureSession;
-- (bool)startWritingToOutputFileURL:(id)arg1 creationDate:(id)arg2 beginPaused:(bool)arg3 captureOutputDelegate:(id)arg4;
+- (void)setWriterState:(int)arg1;
+- (BOOL)startCaptureSession;
+- (BOOL)startWritingToOutputFileURL:(id)arg1 creationDate:(id)arg2 beginPaused:(BOOL)arg3 captureOutputDelegate:(id)arg4;
 - (void)stopCaptureSession;
-- (long long)writerState;
+- (int)writerState;
 
 @end

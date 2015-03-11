@@ -3,18 +3,18 @@
  */
 
 @interface GKWiggleRotateAnimator : GKBubblePathAnimator {
-    bool_aggroBubbles;
+    BOOL _aggroBubbles;
 }
 
-@property bool aggroBubbles;
+@property BOOL aggroBubbles;
 
-- (bool)aggroBubbles;
+- (BOOL)aggroBubbles;
 - (void)animateTransition:(id)arg1;
 - (void)animateWithBounce:(id)arg1;
 - (void)animateWithoutBounce:(id)arg1;
-- (long long)animatorType;
-- (bool)rotatingRightWithTransitionContext:(id)arg1;
-- (void)setAggroBubbles:(bool)arg1;
-- (bool)updateInFlightAnimations:(id)arg1;
+- (int)animatorType;
+- (BOOL)rotatingRightWithTransitionContext:(id)arg1;
+- (void)setAggroBubbles:(BOOL)arg1;
+- (BOOL)updateInFlightAnimations:(id)arg1;
 
 @end

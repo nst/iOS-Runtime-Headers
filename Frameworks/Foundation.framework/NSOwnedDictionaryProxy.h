@@ -6,7 +6,7 @@
     id _owner;
 }
 
-- (unsigned long long)count;
+- (unsigned int)count;
 - (id)initWithOwner:(id)arg1;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;

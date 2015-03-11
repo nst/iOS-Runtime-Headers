@@ -5,8 +5,8 @@
 @interface MusicAddAllTableViewCell : MusicActionTableViewCell {
 }
 
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-- (void)setDisplayAsDisabled:(bool)arg1;
-- (void)setSectionLocation:(int)arg1 animated:(bool)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)setDisplayAsDisabled:(BOOL)arg1;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 
 @end

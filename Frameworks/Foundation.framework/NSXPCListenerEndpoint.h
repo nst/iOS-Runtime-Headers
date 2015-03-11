@@ -6,7 +6,7 @@
     void *_internal;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_endpoint;
 - (id)_initWithConnection:(id)arg1;

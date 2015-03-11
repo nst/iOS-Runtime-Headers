@@ -10,31 +10,31 @@
     UILabel *_dateLabel;
     } _datePickerWeekMonthDayViewFlags;
     NSString *_formattedDateString;
+    BOOL _isModern;
     UILabel *_weekdayLabel;
-    double _weekdayWidth;
-    bool_isModern;
+    float _weekdayWidth;
 }
 
 @property(readonly) UILabel * dateLabel;
 @property(copy) NSString * formattedDateString;
-@property bool isModern;
+@property BOOL isModern;
 @property(readonly) UILabel * weekdayLabel;
-@property bool weekdayLast;
-@property double weekdayWidth;
+@property BOOL weekdayLast;
+@property float weekdayWidth;
 
-- (bool)_canBeReusedInPickerView;
+- (BOOL)_canBeReusedInPickerView;
 - (id)dateLabel;
 - (void)dealloc;
 - (id)formattedDateString;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isModern;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isModern;
 - (void)layoutSubviews;
 - (void)setFormattedDateString:(id)arg1;
-- (void)setIsModern:(bool)arg1;
-- (void)setWeekdayLast:(bool)arg1;
-- (void)setWeekdayWidth:(double)arg1;
+- (void)setIsModern:(BOOL)arg1;
+- (void)setWeekdayLast:(BOOL)arg1;
+- (void)setWeekdayWidth:(float)arg1;
 - (id)weekdayLabel;
-- (bool)weekdayLast;
-- (double)weekdayWidth;
+- (BOOL)weekdayLast;
+- (float)weekdayWidth;
 
 @end

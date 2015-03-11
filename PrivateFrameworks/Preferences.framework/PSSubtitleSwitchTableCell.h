@@ -5,9 +5,9 @@
 @interface PSSubtitleSwitchTableCell : PSSwitchTableCell {
 }
 
-+ (long long)cellStyle;
++ (int)cellStyle;
 
-- (bool)canReload;
+- (BOOL)canReload;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 
 @end

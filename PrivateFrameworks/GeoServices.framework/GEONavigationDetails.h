@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOComposedRoute, GEOLocation, GEONavigationGuidanceState, GEONavigationRouteSummary, GEORouteMatch, NSString;
+@class GEOCompanionRouteDetails, GEOCompanionRouteStatus, GEOComposedRoute, GEOLocation, GEONavigationGuidanceState, GEONavigationRouteSummary, GEORouteMatch, NSString;
 
 @interface GEONavigationDetails : NSObject {
     unsigned long long _annoucementStage;
+    GEOCompanionRouteDetails *_companionRoute;
+    GEOCompanionRouteStatus *_companionStatus;
     NSString *_destinationName;
     double _distanceRemainingOnRoute;
     double _distanceToManeuverEnd;
@@ -13,14 +15,18 @@
     double _distanceToRoute;
     GEONavigationGuidanceState *_guidanceState;
     GEOLocation *_location;
+    unsigned long long _nextAnnoucementStage;
     double _remainingTime;
     GEOComposedRoute *_route;
     GEORouteMatch *_routeMatch;
     GEONavigationRouteSummary *_routeSummary;
+    double _timeUntilNextAnnouncement;
     bool_locationUnreliable;
 }
 
 @property unsigned long long announcementStage;
+@property(readonly) GEOCompanionRouteDetails * companionRoute;
+@property(readonly) GEOCompanionRouteStatus * companionStatus;
 @property(readonly) NSString * destinationName;
 @property double distanceRemainingOnRoute;
 @property double distanceToManeuverEnd;
@@ -29,12 +35,17 @@
 @property(readonly) GEONavigationGuidanceState * guidanceState;
 @property(retain) GEOLocation * location;
 @property bool locationUnreliable;
+@property int navigationState;
+@property(readonly) unsigned long long nextAnnouncementStage;
 @property double remainingTime;
 @property(retain) GEOComposedRoute * route;
 @property(retain) GEORouteMatch * routeMatch;
 @property(readonly) GEONavigationRouteSummary * routeSummary;
+@property(readonly) double timeUntilNextAnnouncement;
 
 - (unsigned long long)announcementStage;
+- (id)companionRoute;
+- (id)companionStatus;
 - (void)dealloc;
 - (id)destinationName;
 - (double)distanceRemainingOnRoute;
@@ -45,6 +56,8 @@
 - (id)initWithRoute:(id)arg1 destinationName:(id)arg2;
 - (id)location;
 - (bool)locationUnreliable;
+- (int)navigationState;
+- (unsigned long long)nextAnnouncementStage;
 - (double)remainingTime;
 - (id)route;
 - (id)routeMatch;
@@ -56,8 +69,11 @@
 - (void)setDistanceToRoute:(double)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLocationUnreliable:(bool)arg1;
+- (void)setNavigationState:(int)arg1;
+- (void)setNextAnnouncementStage:(unsigned long long)arg1 andTime:(double)arg2;
 - (void)setRemainingTime:(double)arg1;
 - (void)setRoute:(id)arg1;
 - (void)setRouteMatch:(id)arg1;
+- (double)timeUntilNextAnnouncement;
 
 @end

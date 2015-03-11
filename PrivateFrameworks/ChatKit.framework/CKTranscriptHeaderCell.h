@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIActivityIndicatorView;
+@class UIView;
 
 @interface CKTranscriptHeaderCell : CKTranscriptCell {
-    UIActivityIndicatorView *_loadingIndicator;
+    UIView *_loadingIndicator;
 }
 
-@property(retain) UIActivityIndicatorView * loadingIndicator;
+@property(retain) UIView * loadingIndicator;
 
 + (double)defaultCellHeight;
 

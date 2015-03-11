@@ -8,7 +8,7 @@
 
 @class <CKTranscriptCollectionViewControllerDelegate>, CKAudioController, CKConversation, CKTranscriptCollectionView, IMChat, NSArray, NSIndexSet, NSObject<OS_dispatch_group>, NSString, UITapGestureRecognizer, UIView<CKGradientReferenceView>;
 
-@interface CKTranscriptCollectionViewController : CKViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIAlertViewDelegate, CKTranscriptCollectionViewDelegate, CKMovieBalloonViewDelegate, CKLocationShareBalloonViewDelegate, CKAudioControllerDelegate> {
+@interface CKTranscriptCollectionViewController : CKViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIAlertViewDelegate, CKTranscriptCollectionViewDelegate, CKMovieBalloonViewDelegate, CKLocationShareBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKAudioControllerDelegate> {
     struct CGPoint { 
         double x; 
         double y; 
@@ -18,6 +18,7 @@
     CKTranscriptCollectionView *_collectionView;
     CKConversation *_conversation;
     <CKTranscriptCollectionViewControllerDelegate> *_delegate;
+    double _firstBalloonAlignmentTopInset;
     UIView<CKGradientReferenceView> *_gradientReferenceView;
     NSIndexSet *_hiddenItems;
     double _leftBalloonMaxWidth;
@@ -26,6 +27,7 @@
     double _rightBalloonMaxWidth;
     id _transcriptUpdateCompletion;
     NSObject<OS_dispatch_group> *_updateAnimationGroup;
+    bool_filterAllButFirstMessage;
     bool_hasHiddenItems;
     bool_initialLoad;
     bool_isLoadingEarlierMessages;
@@ -42,6 +44,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <CKTranscriptCollectionViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
+@property bool filterAllButFirstMessage;
+@property double firstBalloonAlignmentTopInset;
 @property(retain) UIView<CKGradientReferenceView> * gradientReferenceView;
 @property bool hasHiddenItems;
 @property(readonly) unsigned long long hash;
@@ -89,6 +93,7 @@
 - (void)balloonView:(id)arg1 sendAsTextMessage:(id)arg2;
 - (void)balloonViewDidFinishDataDetectorAction:(id)arg1;
 - (void)balloonViewTapped:(id)arg1;
+- (void)balloonViewTitleTapped:(id)arg1;
 - (void)balloonViewWillResignFirstResponder:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calloutTargetRectForBalloonView:(id)arg1;
 - (bool)canRaiseToListen;
@@ -108,6 +113,7 @@
 - (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView;
 - (void)collectionViewDidInset:(id)arg1;
+- (void)collectionViewLayout:(id)arg1 sizeDidChange:(struct CGSize { double x1; double x2; })arg2;
 - (id)collectionViewLayout;
 - (void)collectionViewLayoutRestingDidChange:(id)arg1;
 - (void)collectionViewWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
@@ -119,6 +125,8 @@
 - (id)delegate;
 - (void)deleteSelectedItems:(id)arg1;
 - (void)didMoveToParentViewController:(id)arg1;
+- (bool)filterAllButFirstMessage;
+- (double)firstBalloonAlignmentTopInset;
 - (id)gradientReferenceView;
 - (bool)hasHiddenItems;
 - (id)hiddenItems;
@@ -145,6 +153,7 @@
 - (void)raiseGestureRecognized:(id)arg1;
 - (void)reloadData;
 - (double)rightBalloonMaxWidth;
+- (void)scrollToTopOfLastBubbleCellAnimated:(bool)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
@@ -160,6 +169,8 @@
 - (void)setConversation:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
+- (void)setFilterAllButFirstMessage:(bool)arg1;
+- (void)setFirstBalloonAlignmentTopInset:(double)arg1;
 - (void)setGradientReferenceView:(id)arg1;
 - (void)setHasHiddenItems:(bool)arg1;
 - (void)setHiddenItems:(id)arg1;

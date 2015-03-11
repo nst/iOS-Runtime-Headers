@@ -41,6 +41,7 @@
 - (bool)isExplicitTrack;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
+- (id)mpuReporting_storeItemID;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (void)setPlayerItem:(id)arg1;

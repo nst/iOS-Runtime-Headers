@@ -2,21 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
 @interface ATLockdownSocket : ATSocket {
     struct _lockdown_connection { } *_connection;
     void *_lockdownInfo;
-    NSObject<OS_dispatch_queue> *_recvQueue;
+    BOOL _readBuffer[65536];
     NSObject<OS_dispatch_source> *_recvSource;
-    NSObject<OS_dispatch_semaphore> *_recvSourceSemaphore;
-    NSObject<OS_dispatch_queue> *_sendQueue;
     NSObject<OS_dispatch_queue> *_socketRWQueue;
 }
 
 @property(readonly) bool isWifi;
 
 - (void).cxx_destruct;
+- (void)_readLength:(unsigned long long)arg1;
 - (void)close;
 - (void)dealloc;
 - (id)initWithLockdownInfo:(void*)arg1;

@@ -20,6 +20,7 @@
     unsigned long long _maximumBufferSize;
     NSObject<OS_dispatch_queue> *_queue;
     NSInputStream *_stream;
+    double _timestamp;
     struct z_stream_s { char *x1; unsigned int x2; unsigned long long x3; char *x4; unsigned int x5; unsigned long long x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned long long x13; unsigned long long x14; } *_zstreamp;
     bool_closeOnStop;
     bool_compress;
@@ -36,6 +37,7 @@
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property(retain) NSInputStream * stream;
 @property(readonly) Class superclass;
+@property(readonly) double timestamp;
 
 - (void).cxx_destruct;
 - (id)_compressedDataForData:(id)arg1;
@@ -46,6 +48,7 @@
 - (id)initWithInputStream:(id)arg1 queue:(id)arg2;
 - (unsigned long long)maximumBufferSize;
 - (id)queue;
+- (void)readAllDataIntoFileHandle:(id)arg1 withCompletion:(id)arg2;
 - (void)readAllDataWithCompletion:(id)arg1;
 - (id)readAllDataWithError:(id*)arg1;
 - (void)setCompress:(bool)arg1;
@@ -60,5 +63,6 @@
 - (void)stop;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (id)stream;
+- (double)timestamp;
 
 @end

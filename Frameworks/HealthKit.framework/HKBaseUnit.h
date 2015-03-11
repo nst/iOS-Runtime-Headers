@@ -33,6 +33,7 @@
 - (id)_initWithUnitString:(id)arg1 proportionalSize:(double)arg2 scaleOffset:(double)arg3;
 - (id)_unitByPrefixing:(id)arg1 withConversionConstant:(id)arg2;
 - (id)awakeAfterUsingCoder:(id)arg1;
+- (id)dimension;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;

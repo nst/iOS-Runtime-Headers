@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class ATIDSConnectionState, IDSService, MSVXPCTransaction, NSObject<OS_dispatch_queue>, NSString;
+@class ATIDSConnectionInfo, IDSService, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface ATIDSService : ATMessageLinkListener <IDSServiceDelegate, ATSocketDelegate> {
-    ATIDSConnectionState *_connectionState;
+    ATIDSConnectionInfo *_connectionInfo;
+    NSMutableArray *_listeners;
     NSObject<OS_dispatch_queue> *_queue;
     IDSService *_service;
-    MSVXPCTransaction *_xpcTransaction;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -20,20 +20,25 @@
 
 - (void).cxx_destruct;
 - (void)_cancelPendingConnectionRequests;
-- (void)_connectToDevice:(id)arg1 withPriority:(long long)arg2;
-- (id)_connectionStateForDevice:(id)arg1;
+- (void)_connect;
 - (id)_messageTypeToString:(int)arg1;
-- (void)_scheduleReconnectToDevice:(id)arg1;
-- (void)_sendWakeupToDevice:(id)arg1;
+- (void)_scheduleConnectWithPriority:(long long)arg1;
+- (void)_scheduleReconnect;
+- (void)_sendWakeup;
+- (void)addListener:(id)arg1;
 - (id)deviceForId:(id)arg1;
 - (bool)hasPairedDevice;
 - (id)initWithServiceName:(id)arg1;
 - (id)pairedDevice;
+- (void)removeListener:(id)arg1;
 - (void)requestConnectionToPairedDeviceWithPriority:(long long)arg1;
-- (void)sendMessage:(int)arg1 withData:(id)arg2 toDevice:(id)arg3 withCompletion:(id)arg4;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 hasBeenDeliveredWithContext:(id)arg4;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
-- (void)socket:(id)arg1 hasDataAvailable:(id)arg2;
+- (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;
+- (void)setPreferWifi:(bool)arg1;
+- (void)socket:(id)arg1 hasDataAvailable:(const char *)arg2 length:(long long)arg3;
 - (void)socketDidClose:(id)arg1;
 - (bool)start;
 - (void)stop;

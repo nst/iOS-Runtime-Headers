@@ -68,6 +68,8 @@
 - (bool)can_delegate_task_didReceiveChallenge;
 - (bool)can_delegate_task_didSendBodyData;
 - (bool)can_delegate_task_isWaitingForConnection;
+- (bool)can_delegate_task_isWaitingForConnectionWithError;
+- (bool)can_delegate_task_isWaitingForConnectionWithReason;
 - (bool)can_delegate_task_needNewBodyStream;
 - (bool)can_delegate_task_willPerformHTTPRedirection;
 - (bool)can_delegate_task_willSendRequestForEstablishedConnection;
@@ -104,6 +106,8 @@
 - (void)delegate_task:(id)arg1 didCompleteWithError:(id)arg2;
 - (void)delegate_task:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id)arg3;
 - (void)delegate_task:(id)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
+- (void)delegate_task:(id)arg1 isWaitingForConnectionWithError:(id)arg2;
+- (void)delegate_task:(id)arg1 isWaitingForConnectionWithReason:(long long)arg2;
 - (void)delegate_task:(id)arg1 needNewBodyStream:(id)arg2;
 - (void)delegate_task:(id)arg1 willPerformHTTPRedirection:(id)arg2 newRequest:(id)arg3 completionHandler:(id)arg4;
 - (void)delegate_task_isWaitingForConnection:(id)arg1;

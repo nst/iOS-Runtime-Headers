@@ -29,7 +29,7 @@
 
 + (void)synchronousWithSourceCache:(id)arg1;
 + (void)withSourceCache:(id)arg1;
-+ (void)withSourceForDomain:(struct __CFString { }*)arg1 inContainer:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 byHost:(bool)arg4 managed:(bool)arg5 perform:(id)arg6;
++ (void)withSourceForDomain:(struct __CFString { }*)arg1 inContainer:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 byHost:(bool)arg4 managed:(bool)arg5 synchronously:(bool)arg6 perform:(id)arg7;
 
 - (unsigned char)_backingPlistChangedSinceLastSync:(unsigned long long*)arg1;
 - (bool)acceptLocalMessage:(id)arg1 withReply:(struct __CFDictionary { }*)arg2 inode:(unsigned long long*)arg3;

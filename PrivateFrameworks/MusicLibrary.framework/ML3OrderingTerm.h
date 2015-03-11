@@ -16,6 +16,7 @@
 
 + (id)orderingTermWithProperty:(id)arg1 direction:(int)arg2;
 + (id)orderingTermWithProperty:(id)arg1;
++ (id)reversedTerms:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;

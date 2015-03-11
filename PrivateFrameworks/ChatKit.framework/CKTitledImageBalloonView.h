@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString, UIImageView, UILabel;
+@class <CKTitledImageBalloonViewDelegate>, NSString, UIImageView, UILabel;
 
 @interface CKTitledImageBalloonView : CKImageBalloonView {
     UIImageView *_chevron;
@@ -10,6 +10,7 @@
 }
 
 @property(retain) UIImageView * chevron;
+@property <CKTitledImageBalloonViewDelegate> * delegate;
 @property(copy) NSString * title;
 @property(retain) UILabel * titleLabel;
 
@@ -25,6 +26,7 @@
 - (void)setOrientation:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
+- (void)tapGestureRecognized:(id)arg1;
 - (id)title;
 - (id)titleLabel;
 

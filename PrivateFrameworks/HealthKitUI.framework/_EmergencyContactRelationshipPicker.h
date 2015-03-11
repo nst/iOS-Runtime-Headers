@@ -7,6 +7,7 @@
 @interface _EmergencyContactRelationshipPicker : UITableViewController {
     <_EmergencyContactRelationshipPickerDelegate> *_delegate;
     NSArray *_labels;
+    NSArray *_tokens;
 }
 
 @property <_EmergencyContactRelationshipPickerDelegate> * delegate;

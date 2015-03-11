@@ -48,7 +48,6 @@
 - (void)accountDisabled:(id)arg1 onService:(id)arg2;
 - (void)accountEnabled:(id)arg1 onService:(id)arg2;
 - (void)accountRemoved:(id)arg1;
-- (void)activeDevicesUpdatedForAccount:(id)arg1;
 - (void)addHandler:(id)arg1;
 - (void)continuityDidConnectToPeer:(id)arg1 withError:(id)arg2;
 - (void)continuityDidDisconnectFromPeer:(id)arg1 withError:(id)arg2;

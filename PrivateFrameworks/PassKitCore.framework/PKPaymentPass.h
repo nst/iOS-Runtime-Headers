@@ -51,6 +51,10 @@
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (id)messagePushTopic;
 - (id)messageServiceURL;
+- (bool)npkPassIsAvailableForPaymentForSEID:(id)arg1;
+- (bool)npkPassNeedsUserActionForPaymentForSEID:(id)arg1;
+- (bool)npkPassNeedsUserVerificationForSEID:(id)arg1;
+- (long long)npkPaymentApplicationStateForSEID:(id)arg1;
 - (id)paymentApplicationForAID:(id)arg1;
 - (id)paymentApplicationForSecureElementID:(id)arg1;
 - (id)paymentApplications;

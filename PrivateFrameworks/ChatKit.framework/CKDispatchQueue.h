@@ -40,6 +40,7 @@
 - (bool)isSuspended;
 - (id)lockQueue;
 - (long long)queuePriorityOfOutstandingBlockForKey:(id)arg1;
+- (void)removeAllOutstandingBlocks;
 - (void)removeOutstandingBlockForKey:(id)arg1;
 - (void)setCancelled:(bool)arg1;
 - (void)setDispatchQueue:(id)arg1;

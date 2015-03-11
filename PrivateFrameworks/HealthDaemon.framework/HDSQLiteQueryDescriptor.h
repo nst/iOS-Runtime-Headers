@@ -23,6 +23,7 @@
 @property bool returnsDistinctEntities;
 
 - (id)_newSelectSQLWithProperties:(id)arg1 columns:(id)arg2;
+- (id)_newSelectSQLWithProperties:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (Class)entityClass;

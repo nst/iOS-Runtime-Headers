@@ -51,6 +51,7 @@
 @property float blendingFactor;
 @property bool canSelectIcons;
 @property(readonly) VKGenericShieldDrawStyle * defaultGenericShieldStyle;
+@property(getter=isFinishedDecoding,readonly) bool finishedDecoding;
 @property(readonly) bool isDevResource;
 @property unsigned long long mapDisplayStyle;
 @property unsigned long long mapDisplayStyleVariant;
@@ -65,6 +66,7 @@
 - (void).cxx_destruct;
 - (float)_nightShieldBrightnessForVectorType:(long long)arg1;
 - (unsigned long long)activeMapDisplayStyle;
+- (void)addFinishedDecodingCallback:(id)arg1;
 - (float)blendingFactor;
 - (float*)blendingFactorPointer;
 - (bool)canSelectIcons;
@@ -74,6 +76,7 @@
 - (id)init;
 - (id)initWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3 targetDisplay:(long long)arg4 sharedResources:(id)arg5;
 - (bool)isDevResource;
+- (bool)isFinishedDecoding;
 - (unsigned long long)mapDisplayStyle;
 - (unsigned long long)mapDisplayStyleVariant;
 - (long long)mapMode;

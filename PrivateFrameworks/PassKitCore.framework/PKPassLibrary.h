@@ -46,6 +46,8 @@
 - (id)delegate;
 - (id)diffForPassBulletinWithRecordID:(id)arg1;
 - (void)fetchContentForUniqueID:(id)arg1 withCompletion:(id)arg2;
+- (void)fetchCurrentRelevantPassInfo:(id)arg1;
+- (void)fetchHasCandidatePasses:(id)arg1;
 - (void)fetchImageSetForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 withCompletion:(id)arg4;
 - (void)getContainmentStatusAndSettingsForPass:(id)arg1 withHandler:(id)arg2;
 - (void)getPassesAndCatalog:(bool)arg1 withHandler:(id)arg2;

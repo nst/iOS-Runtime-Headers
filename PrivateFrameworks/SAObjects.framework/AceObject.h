@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSData, NSMutableDictionary, NSString;
+@class NSData, NSMutableDictionary, NSNumber, NSString;
 
 @interface AceObject : NSObject <AceObject> {
     NSString *_aceId;
+    NSNumber *_deserializationDuration;
     NSMutableDictionary *_dict;
     NSData *_plistData;
     NSString *_refId;
@@ -21,6 +22,7 @@
 @property(readonly) Class superclass;
 
 + (id)_aceObjectWithMutableDictionary:(id)arg1 context:(id)arg2;
++ (id)_filteredDictionaryForKeySet:(struct __CFSet { }*)arg1 plistData:(id)arg2;
 + (id)_newAceObjectWithMutableDictionary:(id)arg1;
 + (id)aceObjectArrayWithDictionaryArray:(id)arg1 baseClass:(Class)arg2 context:(id)arg3;
 + (id)aceObjectArrayWithDictionaryArray:(id)arg1 baseProtocol:(id)arg2 context:(id)arg3;
@@ -46,6 +48,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)deserializationDuration;
 - (id)dict;
 - (id)dictionary;
 - (void)encodeWithCoder:(id)arg1;
@@ -63,11 +66,13 @@
 - (id)plistData;
 - (id)properties;
 - (id)propertyForKey:(id)arg1;
+- (id)propertyForKeyWithoutDeserializing:(id)arg1;
 - (id)refId;
 - (void)setAceId:(id)arg1;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
 - (void)setRefId:(id)arg1;
 - (void)setTopLevelProperty:(id)arg1 forKey:(id)arg2;
 - (id)topLevelPropertyForKey:(id)arg1;
+- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

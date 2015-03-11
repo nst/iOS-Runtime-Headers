@@ -24,6 +24,7 @@
     boolcurrentAudioRecordingMode;
     boolcurrentReceiverStatus;
     boolenableSpeakerPhone;
+    boolinferredUseSpeakerMode;
     boolisGKVoiceChat;
     boolisInMediaserverd;
     boolisMicrophoneMuted;

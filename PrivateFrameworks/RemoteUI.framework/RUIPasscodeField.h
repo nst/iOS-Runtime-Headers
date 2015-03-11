@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class <RUIPasscodeFieldDelegate>, NSMutableArray, NSMutableString, NSString;
+@class <RUIPasscodeFieldDelegate>, NSMutableArray, NSMutableString, NSString, UIColor;
 
 @interface RUIPasscodeField : UIView <UIKeyInput> {
     NSMutableArray *_dashViews;
     <RUIPasscodeFieldDelegate> *_delegate;
     NSMutableArray *_digitViews;
     NSMutableArray *_dotViews;
+    UIColor *_foregroundColor;
+    long long _keyboardAppearance;
     unsigned long long _numberOfEntryFields;
     NSMutableString *_stringValue;
     bool_securePasscodeEntry;
@@ -20,6 +22,7 @@
 @property <RUIPasscodeFieldDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property bool enablesReturnKeyAutomatically;
+@property(retain) UIColor * foregroundColor;
 @property(readonly) unsigned long long hash;
 @property long long keyboardAppearance;
 @property long long keyboardType;
@@ -35,15 +38,19 @@
 - (bool)canBecomeFirstResponder;
 - (id)delegate;
 - (void)deleteBackward;
+- (id)foregroundColor;
 - (bool)hasText;
 - (id)initWithNumberOfEntryFields:(unsigned long long)arg1;
 - (void)insertText:(id)arg1;
 - (bool)isSecureTextEntry;
+- (long long)keyboardAppearance;
 - (long long)keyboardType;
 - (void)layoutSubviews;
 - (unsigned long long)numberOfEntryFields;
 - (bool)securePasscodeEntry;
 - (void)setDelegate:(id)arg1;
+- (void)setForegroundColor:(id)arg1;
+- (void)setKeyboardAppearance:(long long)arg1;
 - (void)setSecurePasscodeEntry:(bool)arg1;
 - (void)setSecureTextEntry:(bool)arg1;
 - (void)setStringValue:(id)arg1;

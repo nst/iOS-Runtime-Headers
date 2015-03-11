@@ -45,6 +45,8 @@
 - (bool)createEncoderWithInternalFormat:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1;
 - (void)createSupportedBitrates;
 - (void)createSupportedBitratesForAACELD;
+- (void)createSupportedBitratesForAMR16k;
+- (void)createSupportedBitratesForAMR8k;
 - (void)createSupportedBitratesForOpus;
 - (void)dealloc;
 - (int)encodeAudio:(void*)arg1 numInputBytes:(int)arg2 outputBytes:(void*)arg3 numOutputBytes:(int)arg4;

@@ -23,6 +23,7 @@
 @property(readonly) Class superclass;
 
 + (id)_sharedInstanceWithDaemonDelegate:(id)arg1;
++ (id)defaultCallState;
 + (bool)emergencyCallBackModeIsActive;
 + (bool)isIMAVChatHostProcess;
 + (bool)isInCallServiceProcess;
@@ -36,7 +37,6 @@
 - (id)_callGroupsFromCalls:(id)arg1;
 - (void)_callStatusChangedInternal:(id)arg1;
 - (id)_callStatusUserInfoForUserInfo:(id)arg1;
-- (id)_callerUnavailableUserInfoForCall:(id)arg1 reason:(unsigned int)arg2 error:(int)arg3;
 - (id)_currentCalls:(bool)arg1;
 - (id)_dialFaceTimeCall:(id)arg1 isVideo:(bool)arg2 callID:(int)arg3 sourceIdentifier:(id)arg4;
 - (id)_dialTelephonyCall:(id)arg1 callID:(int)arg2 sourceIdentifier:(id)arg3 callType:(struct __CFString { }*)arg4 isRelayCall:(bool)arg5;
@@ -54,7 +54,6 @@
 - (id)_videoCallUserInfoForUserInfo:(id)arg1;
 - (id)activeVideoCall;
 - (bool)allCallsAreOfService:(int)arg1;
-- (id)allNonFinalVideoCalls;
 - (int)ambiguityState;
 - (void)answerCall:(id)arg1 withSourceIdentifier:(id)arg2 wantsHoldMusic:(bool)arg3;
 - (void)answerCall:(id)arg1 withSourceIdentifier:(id)arg2;
@@ -73,10 +72,11 @@
 - (id)callsHostedOrAnEndpointElsewhere;
 - (id)callsOnDefaultPairedDevice;
 - (id)callsWithAnEndpointElsewhere;
+- (id)callsWithStatus:(int)arg1;
 - (bool)canInitiateCallForService:(int)arg1;
 - (bool)canInitiateCalls;
+- (bool)canInitiateVoicemailCall;
 - (bool)canMergeCalls;
-- (bool)canTakeCallsPrivate;
 - (id)conferenceCall;
 - (id)conferenceParticipantCalls;
 - (void)createdOutgoingIMAVChat:(id)arg1;
@@ -93,8 +93,10 @@
 - (id)dial:(id)arg1 callID:(int)arg2 service:(int)arg3 sourceIdentifier:(id)arg4;
 - (id)dial:(id)arg1 callID:(int)arg2 service:(int)arg3;
 - (id)dial:(id)arg1 service:(int)arg2;
+- (id)dialEmergency:(id)arg1 sourceIdentifier:(id)arg2;
 - (id)dialEmergency:(id)arg1;
 - (id)dialVoicemail;
+- (id)dialVoicemailWithSourceIdentifier:(id)arg1;
 - (void)disconnectAllCalls;
 - (void)disconnectCall:(id)arg1 withReason:(int)arg2;
 - (void)disconnectCall:(id)arg1;
@@ -118,15 +120,16 @@
 - (void)handleCallConnected:(id)arg1;
 - (void)handleCallFailed:(id)arg1;
 - (void)handleCallModelStateChanged:(id)arg1;
+- (void)handleCallStartedConnecting:(id)arg1;
 - (void)handleCallStatusChanged:(id)arg1 userInfo:(id)arg2;
 - (void)handleCallStatusChanged:(id)arg1;
 - (void)handleCallStatusOnDefaultPairedDeviceChanged:(id)arg1;
 - (void)handleCallSubTypeChanged:(id)arg1;
 - (void)handleCallerIDChanged:(id)arg1;
-- (void)handleCallerUnavailableForCall:(id)arg1 reason:(unsigned int)arg2 error:(int)arg3;
 - (void)handleChatConferenceMetadataUpdated:(id)arg1;
 - (void)handleChatFirstPreviewFrameArrived:(id)arg1;
 - (void)handleChatFirstRemoteFrameArrived:(id)arg1;
+- (void)handleChatHasAudioInterruptionChanged:(id)arg1;
 - (void)handleChatInvitationSent:(id)arg1;
 - (void)handleChatRemotePauseDidChange:(id)arg1;
 - (void)handleChatRemoteScreenDidChange:(id)arg1;
@@ -157,7 +160,9 @@
 - (bool)isTakingCallsPrivateAllowed;
 - (bool)justAnIncomingCallExists;
 - (id)proxyCallWithDestinationID:(id)arg1 service:(int)arg2 status:(int)arg3 sourceIdentifier:(id)arg4 outgoing:(bool)arg5 conferenceIdentifier:(id)arg6 voicemail:(bool)arg7 callerNameFromNetwork:(id)arg8;
+- (id)proxyCallWithUniqueProxyIdentifier:(id)arg1;
 - (void)requestHandoffForAllCalls;
+- (bool)requestHandoffWithInfo:(id)arg1;
 - (void)resumeCall:(id)arg1;
 - (void)resumeCallChangeNotifications;
 - (void)sendFieldModeDigits:(id)arg1;
@@ -165,7 +170,6 @@
 - (void)setCallsCache:(id)arg1;
 - (void)setConferenceParticipantCalls:(id)arg1;
 - (void)setDisplayedCalls:(id)arg1;
-- (id)sourceAccount:(bool)arg1;
 - (void)suspendCallChangeNotifications;
 - (void)swapCalls;
 - (id)videoCallWithStatus:(int)arg1;

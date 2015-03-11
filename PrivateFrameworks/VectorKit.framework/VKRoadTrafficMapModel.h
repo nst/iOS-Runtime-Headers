@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKRoadMapModel, VKTrafficDrawStyle;
+@class VKRoadMapModel;
 
 @interface VKRoadTrafficMapModel : VKVectorMapModel {
     struct unique_ptr<vk::TrafficManager, std::__1::default_delete<vk::TrafficManager> > { 
@@ -15,7 +15,6 @@
             struct TrafficManager {} *__first_; 
         } __ptr_; 
     VKRoadMapModel *_roadModel;
-    VKTrafficDrawStyle *_trafficDrawStyle;
     } _trafficManager;
     bool_enabled;
 }
@@ -26,7 +25,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)didReceiveMemoryWarning;
+- (void)didReceiveMemoryWarning:(bool)arg1;
 - (bool)enabled;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (id)init;
@@ -35,5 +34,6 @@
 - (void)setEnabled:(bool)arg1;
 - (void)setRoadModel:(id)arg1;
 - (void)stylesheetDidChange;
+- (void)stylesheetDidReload;
 
 @end

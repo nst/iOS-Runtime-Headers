@@ -36,6 +36,7 @@
 - (id)_options;
 - (void)_removeFrameworkPayloadValueForKey:(id)arg1;
 - (void)_removeUserInfoValueForKey:(id)arg1;
+- (void)_resignCurrent;
 - (void)_setFrameworkDelegate:(id)arg1;
 - (void)_setFrameworkPayload:(id)arg1;
 - (void)_setLastActivityDate:(id)arg1;

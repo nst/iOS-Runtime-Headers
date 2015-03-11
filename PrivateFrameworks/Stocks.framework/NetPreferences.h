@@ -25,6 +25,7 @@
 - (id)_urlStringWithHost:(id)arg1;
 - (void)addStocksHeadersToPostRequest:(id)arg1;
 - (id)backsideLogoURL;
+- (id)defaultBacksideLogoURL;
 - (id)financeRequestAttributes;
 - (id)fullQuoteURLOverrideForStock:(id)arg1;
 - (id)init;

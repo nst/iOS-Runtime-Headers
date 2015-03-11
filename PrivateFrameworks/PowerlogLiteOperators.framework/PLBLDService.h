@@ -30,6 +30,7 @@
 - (id)UIQueryResponse:(id)arg1;
 - (id)UIQueryResponseForModels:(id)arg1;
 - (void)addToDaemonTransformation:(id)arg1 withPluginEntry:(id)arg2;
+- (void)addToDaemonTransformationForGizmo:(id)arg1;
 - (id)aggregateResult:(id)arg1 withBucketLength:(double)arg2 inTimeIntervalRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg3 queryType:(int)arg4 withValidBundle:(id)arg5 withDeletedApps:(id)arg6 withWebApps:(id)arg7 withDaemonTransformation:(id)arg8;
 - (id)aggregateStatsResultWithBucketLength:(double)arg1 inTimeIntervalRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2;
 - (double)appBreakdownThresholdPercent;

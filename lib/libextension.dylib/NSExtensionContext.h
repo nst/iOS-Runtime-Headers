@@ -17,11 +17,13 @@
     id __principalObject;
     id __requestCleanUpBlock;
     NSArray *_inputItems;
+    bool__dummyExtension;
 }
 
 @property(copy) NSUUID * _UUID;
 @property(setter=_setAuxiliaryConnection:,retain) NSXPCConnection * _auxiliaryConnection;
 @property(setter=_setAuxiliaryListener:,retain) NSXPCListener * _auxiliaryListener;
+@property(getter=_isDummyExtension,setter=_setDummyExtension:) bool _dummyExtension;
 @property(setter=_setExtensionHostProxy:,retain) <_NSExtensionContextHosting> * _extensionHostProxy;
 @property(setter=_setExtensionVendorProxy:,retain) <_NSExtensionContextVending> * _extensionVendorProxy;
 @property(setter=_setPrincipalObject:) id _principalObject;
@@ -49,6 +51,7 @@
 - (id)_derivedExtensionAuxiliaryHostProtocol;
 - (id)_extensionHostProxy;
 - (id)_extensionVendorProxy;
+- (bool)_isDummyExtension;
 - (bool)_isHost;
 - (void)_loadItemForPayload:(id)arg1 completionHandler:(id)arg2;
 - (void)_loadPreviewImageForPayload:(id)arg1 completionHandler:(id)arg2;
@@ -57,6 +60,7 @@
 - (id)_requestCleanUpBlock;
 - (void)_setAuxiliaryConnection:(id)arg1;
 - (void)_setAuxiliaryListener:(id)arg1;
+- (void)_setDummyExtension:(bool)arg1;
 - (void)_setExtensionHostProxy:(id)arg1;
 - (void)_setExtensionVendorProxy:(id)arg1;
 - (void)_setInputItems:(id)arg1;

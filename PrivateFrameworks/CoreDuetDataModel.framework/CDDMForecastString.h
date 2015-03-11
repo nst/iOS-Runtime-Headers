@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDataModel.framework/CoreDuetDataModel
  */
 
-@class NSNumber, NSString;
+@class NSDate, NSNumber, NSString;
 
 @interface CDDMForecastString : NSManagedObject {
 }
@@ -103,6 +103,8 @@
 @property(retain) NSString * basis94;
 @property(retain) NSString * basis95;
 @property(retain) NSString * basis9;
+@property(retain) NSDate * creationDate;
 @property(retain) NSNumber * forecastGroupId;
+@property(retain) NSNumber * indexID;
 
 @end

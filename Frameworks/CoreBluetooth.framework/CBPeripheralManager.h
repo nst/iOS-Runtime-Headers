@@ -25,7 +25,6 @@
     NSMutableArray *_services;
     long long _state;
     NSLock *_updateLock;
-    bool_connectionIsFinalized;
     bool_isAdvertising;
     bool_readyForUpdates;
     bool_waitingForReady;
@@ -43,7 +42,7 @@
 + (long long)authorizationStatus;
 
 - (void)addService:(id)arg1;
-- (id)centralWithIdentifier:(id)arg1 dict:(id)arg2;
+- (id)centralWithInfo:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)forEachCentral:(id)arg1;
@@ -66,7 +65,7 @@
 - (bool)isAdvertising;
 - (bool)isMsgAllowedAlways:(int)arg1;
 - (bool)isMsgAllowedWhenOff:(int)arg1;
-- (id)peerWithIdentifier:(id)arg1 dict:(id)arg2;
+- (id)peerWithInfo:(id)arg1;
 - (oneway void)release;
 - (void)removeAllServices;
 - (void)removeService:(id)arg1;

@@ -12,8 +12,7 @@
 
 @property Protocol * protocol;
 
-+ (id)af_siriResponseHandlingInterface;
-+ (id)af_siriTaskHandlingInterface;
++ (id)af_siriTaskDeliveringInterface;
 + (id)interfaceWithProtocol:(id)arg1;
 + (id)mf_mailComposeRemoteHostInterface;
 + (id)mf_mailComposeRemoteServiceInterface;

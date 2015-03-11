@@ -84,12 +84,18 @@
 + (id)colorWithC3DColor4:(const struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; }*)arg1;
 + (id)colorWithCGColor:(struct CGColor { }*)arg1;
 + (id)colorWithCIColor:(id)arg1;
++ (id)colorWithCSSString:(id)arg1;
 + (id)colorWithComponentRGBA:(struct { float x1; float x2; float x3; float x4; })arg1;
 + (id)colorWithHue:(double)arg1 saturation:(double)arg2 brightness:(double)arg3 alpha:(double)arg4;
 + (id)colorWithPKColor:(id)arg1;
 + (id)colorWithPatternImage:(id)arg1;
++ (id)colorWithR:(long long)arg1 G:(long long)arg2 B:(long long)arg3 alpha:(float)arg4;
 + (id)colorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)colorWithStyleString:(id)arg1;
++ (id)colorWithWebColor:(id)arg1;
++ (id)colorWithWebColorName:(id)arg1;
++ (id)colorWithWebHexTriplet:(id)arg1;
++ (id)colorWithWebRgb:(id)arg1;
 + (id)colorWithWhite:(double)arg1 alpha:(double)arg2;
 + (id)cyanColor;
 + (id)darkGrayColor;
@@ -105,8 +111,6 @@
 + (id)faceTimeBabyBlueColor;
 + (id)faceTimeBabyBlueColor;
 + (id)faceTimeBabyBlueColor;
-+ (id)faceTimeBabyBlueColor;
-+ (id)faceTimeDarkSeparatorColor;
 + (id)faceTimeDarkSeparatorColor;
 + (id)faceTimeDarkSeparatorColor;
 + (id)faceTimeDarkSeparatorColor;
@@ -123,8 +127,6 @@
 + (id)faceTimeLightBabyBlueColor;
 + (id)faceTimeLightBabyBlueColor;
 + (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightSeparatorColor;
 + (id)faceTimeLightSeparatorColor;
 + (id)faceTimeLightSeparatorColor;
 + (id)faceTimeLightSeparatorColor;
@@ -141,7 +143,6 @@
 + (id)faceTimeSectionOutlineColor;
 + (id)faceTimeSectionOutlineColor;
 + (id)faceTimeSectionOutlineColor;
-+ (id)faceTimeSectionOutlineColor;
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
@@ -150,8 +151,6 @@
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
-+ (id)faceTimeSeparatorColorWithBlurUnsupported;
-+ (id)faceTimeShadowedGroupBackgroundColor;
 + (id)faceTimeShadowedGroupBackgroundColor;
 + (id)faceTimeShadowedGroupBackgroundColor;
 + (id)faceTimeShadowedGroupBackgroundColor;
@@ -298,6 +297,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHue:(double)arg1 saturation:(double)arg2 brightness:(double)arg3 alpha:(double)arg4;
 - (id)initWithPatternImage:(id)arg1;
+- (id)initWithR:(long long)arg1 G:(long long)arg2 B:(long long)arg3 alpha:(float)arg4;
 - (id)initWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 - (id)initWithStyleString:(id)arg1;
 - (id)initWithWhite:(double)arg1 alpha:(double)arg2;

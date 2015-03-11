@@ -82,6 +82,7 @@
 @property <AXHARemoteUpdateProtocol> * updateDelegate;
 
 - (void)_delayWriteProperties;
+- (id)_valueForProperty:(long long)arg1;
 - (int)availableEars;
 - (void)connect;
 - (bool)containsPeripheralWithUUID:(id)arg1;

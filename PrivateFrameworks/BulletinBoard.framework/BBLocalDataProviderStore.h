@@ -29,6 +29,7 @@
 - (void)_queue_addDataProvider:(id)arg1;
 - (void)_queue_removeDataProvider:(id)arg1;
 - (void)addDataProvider:(id)arg1;
+- (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3 unversalSectionID:(id)arg4;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3;
 - (id)dataProviderForSectionID:(id)arg1;
 - (id)dataProviderForUniversalSectionID:(id)arg1;

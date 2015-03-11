@@ -78,6 +78,7 @@
 @property(retain) NSDictionary * gaxInternalSettingsUserAppProfile;
 @property(retain) NSArray * gaxInternalSettingsUserConfiguredAppIDs;
 @property(retain) NSDictionary * gaxInternalSettingsUserGlobalProfile;
+@property bool gizmoApplicationAccessibilityEnabled;
 @property bool guidedAccessAXFeaturesEnabled;
 @property bool guidedAccessAllowsUnlockWithTouchID;
 @property(readonly) NSString * guidedAccessDefaultToneIdentifierForTimeRestrictionEvents;
@@ -242,6 +243,7 @@
 - (id)gaxInternalSettingsUserAppProfile;
 - (id)gaxInternalSettingsUserConfiguredAppIDs;
 - (id)gaxInternalSettingsUserGlobalProfile;
+- (bool)gizmoApplicationAccessibilityEnabled;
 - (bool)guidedAccessAXFeaturesEnabled;
 - (bool)guidedAccessAllowsUnlockWithTouchID;
 - (id)guidedAccessDefaultToneIdentifierForTimeRestrictionEvents;
@@ -337,6 +339,7 @@
 - (void)setGaxInternalSettingsUserAppProfile:(id)arg1;
 - (void)setGaxInternalSettingsUserConfiguredAppIDs:(id)arg1;
 - (void)setGaxInternalSettingsUserGlobalProfile:(id)arg1;
+- (void)setGizmoApplicationAccessibilityEnabled:(bool)arg1;
 - (void)setGuidedAccessAXFeaturesEnabled:(bool)arg1;
 - (void)setGuidedAccessAllowsUnlockWithTouchID:(bool)arg1;
 - (void)setGuidedAccessDisallowDirectInactiveToActiveTransition:(bool)arg1;

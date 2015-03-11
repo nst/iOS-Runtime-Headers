@@ -151,6 +151,7 @@
 - (id)_newResizeHandleView;
 - (void)_removeTravelTimeSubviews;
 - (void)_resetContentViewPosition;
+- (bool)_shouldShowTimeString;
 - (id)_timedEventBackgroundColor;
 - (void)_updateColors;
 - (void)_updateResizeHandleLocations;

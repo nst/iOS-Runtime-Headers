@@ -19,6 +19,7 @@
 - (id)labelView;
 - (void)performDefaultAction;
 - (void)setAllowsEditing:(bool)arg1;
+- (void)setContactStyle:(id)arg1;
 - (void)setLabelTextAttributes:(id)arg1;
 - (void)setTextView:(id)arg1;
 - (void)setValueTextAttributes:(id)arg1;

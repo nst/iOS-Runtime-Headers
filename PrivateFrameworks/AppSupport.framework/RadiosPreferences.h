@@ -23,6 +23,8 @@
 @property <RadiosPreferencesDelegate> * delegate;
 @property bool notifyForExternalChangeOnly;
 
++ (bool)shouldMirrorAirplaneMode;
+
 - (bool)airplaneMode;
 - (void)dealloc;
 - (id)delegate;
@@ -35,6 +37,7 @@
 - (void)refresh;
 - (oneway void)release;
 - (void)setAirplaneMode:(bool)arg1;
+- (void)setAirplaneModeWithoutMirroring:(bool)arg1;
 - (void)setCallback:(int (*)())arg1 withContext:(struct { long long x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setNotifyForExternalChangeOnly:(bool)arg1;

@@ -8,8 +8,6 @@
 - (id)audioCategory;
 - (id)audioMode;
 - (int)callStatus;
-- (int)endedError;
-- (unsigned int)endedReason;
 - (bool)hasReceivedFirstFrame;
 - (bool)isSendingVideo;
 - (bool)isVideo;

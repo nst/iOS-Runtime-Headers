@@ -18,7 +18,7 @@
     bool_programIsDirty;
 }
 
-@property struct xglProgram { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; struct shared_ptr<char> { char *x_5_1_1; struct __shared_weak_count {} *x_5_1_2; } x5; struct shared_ptr<char> { char *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; /* Warning: unhandled struct encoding: '{map<std::__1::basic_string<char>' */ struct x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; unsigned int x34/* : ? */; void*x35; oneway void*x36; BOOL x37; void*x38; out const void*x39; void*x40; float x41[4]; }* _xglProgram; /* unknown property attribute:  true> >=Q}}}} */
+@property struct xglProgram { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; struct shared_ptr<char> { char *x_5_1_1; struct __shared_weak_count {} *x_5_1_2; } x5; struct shared_ptr<char> { char *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; /* Warning: unhandled struct encoding: '{map<std::__1::basic_string<char>' */ struct x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; unsigned int x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; unsigned char x36; void*x37; unsigned short x38; void*x39; const int x40; in void*x41; }* _xglProgram; /* unknown property attribute:  true> >=Q}}}} */
 @property(readonly) NSArray * _textureUniforms;
 @property(copy) NSString * source;
 @property(copy) NSArray * uniforms;

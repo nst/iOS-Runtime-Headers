@@ -5,6 +5,7 @@
 @class <ATAssetLinkDelegate>, <ATMessageLink>, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface ATConcreteAssetLink : NSObject <ATAssetLink, ATMessageLinkObserver> {
+    NSObject<OS_dispatch_queue> *_callbackQueue;
     <ATAssetLinkDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_fileIOQueue;
     <ATMessageLink> *_messageLink;

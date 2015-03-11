@@ -19,6 +19,7 @@
 @property(retain) NSString * editorBundleID;
 @property(retain) NSString * exifTimestampString;
 @property(retain) NSNumber * externalUsageIntent;
+@property(retain) NSData * faceRegions;
 @property(retain) id importSessionID;
 @property(retain) NSSet * keywords;
 @property(retain) NSNumber * locationHash;

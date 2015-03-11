@@ -277,7 +277,6 @@
 - (id)imHandleRegistrarGUID;
 - (id)imHandleWithoutResource;
 - (id)init;
-- (id)initWithAccount:(id)arg1 ID:(id)arg2 alreadyCanonical:(bool)arg3 knownIDStatus:(int)arg4;
 - (id)initWithAccount:(id)arg1 ID:(id)arg2 alreadyCanonical:(bool)arg3;
 - (id)initWithAccount:(id)arg1 ID:(id)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -317,7 +316,6 @@
 - (id)publicAPIPropertiesDictionary;
 - (oneway void)release;
 - (void)releaseNotificationQueue;
-- (void)requestIDStatus;
 - (void)requestValueOfProperty:(id)arg1;
 - (bool)resetABPerson;
 - (void)resetABProperties;

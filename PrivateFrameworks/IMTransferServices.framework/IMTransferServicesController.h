@@ -7,9 +7,9 @@
 
 + (id)sharedInstance;
 
-- (void)_receiveFileTransfer:(id)arg1 path:(id)arg2 requestURLString:(id)arg3 ownerID:(id)arg4 signature:(id)arg5 decryptionKey:(id)arg6 retries:(int)arg7 fileSize:(unsigned long long)arg8 progressBlock:(id)arg9 completionBlock:(id)arg10;
-- (void)_sendFilePath:(id)arg1 transferID:(id)arg2 encryptFile:(bool)arg3 retries:(int)arg4 progressBlock:(id)arg5 completionBlock:(id)arg6;
-- (void)receiveFileTransfer:(id)arg1 path:(id)arg2 requestURLString:(id)arg3 ownerID:(id)arg4 signature:(id)arg5 decryptionKey:(id)arg6 fileSize:(unsigned long long)arg7 progressBlock:(id)arg8 completionBlock:(id)arg9;
-- (void)sendFilePath:(id)arg1 transferID:(id)arg2 encryptFile:(bool)arg3 progressBlock:(id)arg4 completionBlock:(id)arg5;
+- (void)_receiveFileTransfer:(id)arg1 topic:(id)arg2 path:(id)arg3 requestURLString:(id)arg4 ownerID:(id)arg5 signature:(id)arg6 decryptionKey:(id)arg7 retries:(int)arg8 fileSize:(unsigned long long)arg9 progressBlock:(id)arg10 completionBlock:(id)arg11;
+- (void)_sendFilePath:(id)arg1 topic:(id)arg2 transferID:(id)arg3 encryptFile:(bool)arg4 retries:(int)arg5 progressBlock:(id)arg6 completionBlock:(id)arg7;
+- (void)receiveFileTransfer:(id)arg1 topic:(id)arg2 path:(id)arg3 requestURLString:(id)arg4 ownerID:(id)arg5 signature:(id)arg6 decryptionKey:(id)arg7 fileSize:(unsigned long long)arg8 progressBlock:(id)arg9 completionBlock:(id)arg10;
+- (void)sendFilePath:(id)arg1 topic:(id)arg2 transferID:(id)arg3 encryptFile:(bool)arg4 progressBlock:(id)arg5 completionBlock:(id)arg6;
 
 @end

@@ -4,17 +4,21 @@
 
 @class NSArray, NSNumber, NSString, NSURL;
 
-@interface SAAlarmUpdate : SADomainCommand {
+@interface SAAlarmUpdate : SADomainCommand <SAAlarmAlarmAction> {
 }
 
 @property(copy) NSArray * addedFrequency;
 @property(copy) NSURL * alarmId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSNumber * enabled;
+@property(readonly) unsigned long long hash;
 @property(copy) NSNumber * hour;
 @property(copy) NSString * label;
 @property(copy) NSNumber * minute;
 @property(copy) NSArray * modifications;
 @property(copy) NSArray * removedFrequency;
+@property(readonly) Class superclass;
 
 + (id)update;
 + (id)updateWithDictionary:(id)arg1 context:(id)arg2;

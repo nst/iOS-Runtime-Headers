@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@class CDDClientConnection, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class CDDClientConnection, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet;
 
 @interface CDSession : NSObject {
     NSObject<OS_dispatch_queue> *_cacheSerializerQ;
@@ -10,6 +14,9 @@
     NSMutableDictionary *_cachedBudgets;
     CDDClientConnection *_cddClientConnection;
     unsigned long long _clientId;
+    int _deviceChangeToken;
+    id _deviceHandler;
+    NSSet *_deviceList;
     bool_enabledCaching;
     bool_unlocked;
     bool_verbose;
@@ -20,9 +27,14 @@
 @property(retain) NSMutableDictionary * cachedBudgets;
 @property(readonly) CDDClientConnection * cddClientConnection;
 @property unsigned long long clientId;
+@property int deviceChangeToken;
+@property(copy) id deviceHandler;
+@property(retain) NSSet * deviceList;
 @property bool enabledCaching;
 @property bool unlocked;
 @property bool verbose;
+
++ (id)sharedSessionWithClientId:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)attributeComponentsFromRepresentation:(id)arg1 error:(id*)arg2;
@@ -41,10 +53,16 @@
 - (id)cachedBudgets;
 - (id)cddClientConnection;
 - (unsigned long long)clientId;
+- (id)copyDevicesUncached;
+- (void)dealloc;
 - (bool)deleteClientDataWithError:(id*)arg1;
+- (int)deviceChangeToken;
+- (id)deviceHandler;
+- (id)deviceList;
 - (bool)enabledCaching;
 - (id)getDeviceFromDescription:(id)arg1 error:(id*)arg2;
 - (id)getDevices;
+- (id)getDevicesInternal;
 - (id)init;
 - (id)initWithClientId:(unsigned long long)arg1 enableCaching:(bool)arg2;
 - (id)initWithClientId:(unsigned long long)arg1;
@@ -52,11 +70,16 @@
 - (bool)loadDylibs;
 - (id)registerAttributeWithName:(id)arg1 type:(long long)arg2 dataProtectionClass:(id)arg3 error:(id*)arg4;
 - (id)registerBudgetWithName:(id)arg1 value:(long long)arg2 type:(long long)arg3 error:(id*)arg4;
+- (bool)registerForDeviceChanges;
 - (id)representationStringFromAttribute:(id)arg1 value:(id)arg2 error:(id*)arg3;
+- (id)representationStringFromAttribute:(id)arg1 value:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (void)setCacheSerializerQ:(id)arg1;
 - (void)setCachedAttributeIDs:(id)arg1;
 - (void)setCachedBudgets:(id)arg1;
 - (void)setClientId:(unsigned long long)arg1;
+- (void)setDeviceChangeToken:(int)arg1;
+- (void)setDeviceHandler:(id)arg1;
+- (void)setDeviceList:(id)arg1;
 - (bool)setDevicesChangedHandlerWithError:(id*)arg1 handler:(id)arg2;
 - (void)setEnabledCaching:(bool)arg1;
 - (bool)setNonAppBundlIdWithError:(id)arg1 error:(id*)arg2;

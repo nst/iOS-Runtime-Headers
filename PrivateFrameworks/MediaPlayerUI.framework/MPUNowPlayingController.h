@@ -20,6 +20,7 @@
     bool_isUpdatingNowPlayingApp;
     bool_isUpdatingNowPlayingInfo;
     bool_isUpdatingPlaybackState;
+    bool_shouldUpdateNowPlayingArtwork;
 }
 
 @property(readonly) double currentDuration;
@@ -29,6 +30,7 @@
 @property <MPUNowPlayingDelegate> * delegate;
 @property(readonly) bool isPlaying;
 @property(readonly) NSString * nowPlayingAppDisplayID;
+@property bool shouldUpdateNowPlayingArtwork;
 @property double timeInformationUpdateInterval;
 
 - (void).cxx_destruct;
@@ -50,7 +52,9 @@
 - (bool)isPlaying;
 - (id)nowPlayingAppDisplayID;
 - (void)setDelegate:(id)arg1;
+- (void)setShouldUpdateNowPlayingArtwork:(bool)arg1;
 - (void)setTimeInformationUpdateInterval:(double)arg1;
+- (bool)shouldUpdateNowPlayingArtwork;
 - (void)startUpdating;
 - (void)stopUpdating;
 - (double)timeInformationUpdateInterval;

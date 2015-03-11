@@ -19,6 +19,7 @@
 + (bool)propertyIsCountProperty:(id)arg1;
 + (id)protocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
 + (long long)revisionTrackingCode;
++ (id)subCollectionCountProperty;
 + (id)trackForeignPersistentID;
 
 - (id)multiverseIdentifier;

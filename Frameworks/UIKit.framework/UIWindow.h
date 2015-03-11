@@ -139,6 +139,7 @@
 + (void)_prepareWindowsPassingTestForAppResume:(id)arg1;
 + (void)_pushKeyWindow:(id)arg1;
 + (void)_removeWindowFromStack:(id)arg1;
++ (void)_setAllWindowsKeepContextInBackground:(bool)arg1;
 + (void)_setKeyWindowStackEnabled:(bool)arg1;
 + (void)_setTransformLayerRotationsAreEnabled:(bool)arg1;
 + (id)_statusBarControllingWindow;
@@ -163,7 +164,6 @@
 + (void)initialize;
 + (id)keyWindow;
 + (Class)layerClass;
-+ (void)setAllWindowsKeepContextInBackground:(bool)arg1;
 
 - (struct CGSize { double x1; double x2; })MPU_rootViewSize;
 - (id)__clientsForRotationCallbacks;

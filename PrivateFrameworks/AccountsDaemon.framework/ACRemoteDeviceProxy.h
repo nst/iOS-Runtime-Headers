@@ -5,8 +5,9 @@
 @class ACRemoteCommandHandler, IDSService, NSLock, NSMutableDictionary, NSString;
 
 @interface ACRemoteDeviceProxy : NSObject <IDSServiceDelegate> {
-    NSMutableDictionary *_completionHandlersByMessageID;
+    NSMutableDictionary *_completionHandlersByInternalMessageID;
     NSLock *_completionHandlersLock;
+    NSMutableDictionary *_internalMessageIDsByTransportID;
     IDSService *_messageSendingService;
     ACRemoteCommandHandler *_remoteCommandHandler;
 }
@@ -17,14 +18,16 @@
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_dequeueCompletionHandlersForMessageID:(id)arg1 withSuccess:(bool)arg2 error:(id)arg3;
-- (void)_enqueueCompletionHandler:(id)arg1 forMessageID:(id)arg2;
+- (void)_dequeueCompletionHandlersForMessageWithInternalID:(id)arg1 success:(bool)arg2 result:(id)arg3 error:(id)arg4;
+- (void)_dequeueCompletionHandlersForMessageWithTransportID:(id)arg1 success:(bool)arg2 result:(id)arg3 error:(id)arg4;
+- (void)_enqueueCompletionHandler:(id)arg1 forMessageWithInternalID:(id)arg2 transportID:(id)arg3;
 - (bool)_isValidCommandForOutgoingMessage:(id)arg1;
+- (long long)_priorityForMessageCarryingCommand:(id)arg1;
+- (void)_sendReplyForMessage:(id)arg1 withSuccess:(bool)arg2 result:(id)arg3 error:(id)arg4;
 - (id)init;
 - (void)sendCommand:(id)arg1 withAccount:(id)arg2 completion:(id)arg3;
-- (void)sendCommand:(id)arg1 withAccount:(id)arg2;
+- (void)sendCommand:(id)arg1 withAccount:(id)arg2 options:(id)arg3 completion:(id)arg4;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 hasBeenDeliveredWithContext:(id)arg4;
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 
 @end

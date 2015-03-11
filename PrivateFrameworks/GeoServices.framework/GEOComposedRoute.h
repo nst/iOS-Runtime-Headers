@@ -48,7 +48,9 @@
 @property unsigned int firstVisiblePoint;
 @property(readonly) GEORoute * geoRoute;
 @property(readonly) bool hasExpectedTime;
+@property(readonly) bool hasHistoricTravelTime;
 @property(readonly) unsigned long long hash;
+@property unsigned int historicTravelTime;
 @property(readonly) NSArray * legs;
 @property(readonly) unsigned int maneuverDisplayCount;
 @property bool maneuverDisplayEnabled;
@@ -111,6 +113,9 @@
 - (id)getSnappedPathsForLocation:(struct { double x1; double x2; })arg1 observer:(id)arg2;
 - (id)getSnappedPathsForVisibleRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 rectsToSnap:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 rectsToSnapCount:(unsigned long long)arg3 observer:(id)arg4;
 - (bool)hasExpectedTime;
+- (bool)hasHistoricTravelTime;
+- (unsigned int)historicTravelTime;
+- (id)initWithCompanionRoute:(id)arg1;
 - (id)initWithRoute:(id)arg1;
 - (id)instructionsForStep:(id)arg1;
 - (bool)isLocationCoordinate:(struct { double x1; double x2; })arg1 withinDistance:(double)arg2 alongRoute:(double)arg3 withTransportType:(int)arg4;
@@ -150,6 +155,7 @@
 - (void)setDestination:(id)arg1;
 - (void)setExpectedTime:(unsigned int)arg1;
 - (void)setFirstVisiblePoint:(unsigned int)arg1;
+- (void)setHistoricTravelTime:(unsigned int)arg1;
 - (void)setManeuverDisplayEnabled:(bool)arg1;
 - (void)setManeuverDisplaySteps:(id)arg1;
 - (void)setOrigin:(id)arg1;

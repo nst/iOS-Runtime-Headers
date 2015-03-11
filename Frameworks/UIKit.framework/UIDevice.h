@@ -36,6 +36,8 @@
 @property(retain,readonly) NSString * systemVersion;
 @property(readonly) long long userInterfaceIdiom;
 
++ (bool)_isWatch;
++ (bool)_isWatchCompanion;
 + (id)currentDevice;
 + (long long)currentDeviceOrientationAllowingAmbiguous:(bool)arg1;
 + (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;

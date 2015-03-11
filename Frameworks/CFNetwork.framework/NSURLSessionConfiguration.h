@@ -55,6 +55,7 @@
     bool__phskip_credStorageSet;
     bool__phskip_hstsStorageSet;
     bool__phskip_urlCacheSet;
+    bool__prefersInfraWiFi;
     bool__preventsIdleSleep;
     bool__preventsIdleSleepOnceConnected;
     bool__proxySession;
@@ -107,6 +108,7 @@
 @property bool _phskip_hstsStorageSet;
 @property(retain) NSURLCache * _phskip_urlCache;
 @property bool _phskip_urlCacheSet;
+@property bool _prefersInfraWiFi;
 @property bool _preventsIdleSleep;
 @property bool _preventsIdleSleepOnceConnected;
 @property(getter=_isProxySession) bool _proxySession;
@@ -189,6 +191,7 @@
 - (bool)_phskip_hstsStorageSet;
 - (id)_phskip_urlCache;
 - (bool)_phskip_urlCacheSet;
+- (bool)_prefersInfraWiFi;
 - (bool)_preventsIdleSleep;
 - (bool)_preventsIdleSleepOnceConnected;
 - (bool)_requiresClientToOpenFiles;
@@ -282,6 +285,7 @@
 - (void)set_phskip_hstsStorageSet:(bool)arg1;
 - (void)set_phskip_urlCache:(id)arg1;
 - (void)set_phskip_urlCacheSet:(bool)arg1;
+- (void)set_prefersInfraWiFi:(bool)arg1;
 - (void)set_preventsIdleSleep:(bool)arg1;
 - (void)set_preventsIdleSleepOnceConnected:(bool)arg1;
 - (void)set_proxySession:(bool)arg1;

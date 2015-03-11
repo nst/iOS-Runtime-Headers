@@ -6,8 +6,10 @@
 
 @interface HKMedicalIDViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, HKMedicalIDViewControllerDelegate, HKEmergencyCardEnabledDelegate, HKEmergencyCardDeletionDelegate, HKEmergencyCardRowHeightChangeDelegate> {
     <HKMedicalIDViewControllerDelegate> *_delegate;
+    NSArray *_footers;
     HKEmergencyCardGroupTableItem *_groupItem;
     HKHealthStore *_healthStore;
+    NSArray *_localeItems;
     _HKMedicalIDData *_medicalID;
     NSArray *_presentableTableItems;
     NSArray *_tableItems;
@@ -34,16 +36,20 @@
 - (void)_buildPresentableTableItems;
 - (void)_buildTableItems;
 - (void)_cancelEditingTapped:(id)arg1;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_doneEditingTapped:(id)arg1;
 - (void)_doneTapped:(id)arg1;
 - (void)_editTapped:(id)arg1;
 - (id)_fetchMedicalIDDataSynchronously:(bool*)arg1;
+- (id)_newViewForFooterInSection:(long long)arg1;
 - (bool)allowsEditing;
+- (void)dealloc;
 - (id)delegate;
 - (void)deletionTableItemDidTapDelete:(id)arg1;
 - (void)enabledTableItem:(id)arg1 stateDidChange:(bool)arg2;
 - (id)healthStore;
 - (id)initInEditMode:(bool)arg1;
+- (void)localeDidChange:(id)arg1;
 - (id)medicalID;
 - (void)medicalIDViewControllerDidCancel:(id)arg1;
 - (void)medicalIDViewControllerDidDelete:(id)arg1;
@@ -64,12 +70,13 @@
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 

@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class <MLMediaLibraryServiceProtocol>, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
+@class <MLMediaLibraryServiceProtocol>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
-@interface MLMediaLibraryService : NSObject <MLMediaLibraryServiceClientProtocol, MLMediaLibraryServiceProtocol> {
+@interface MLMediaLibraryService : NSObject <MLMediaLibraryServiceClientProtocol> {
+    NSMutableDictionary *_progressBlocksByUUID;
     NSObject<OS_dispatch_queue> *_replyQueue;
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSXPCConnection *_serviceConnection;
@@ -29,10 +30,12 @@
 - (oneway void)executeUpdate:(id)arg1 withParameters:(id)arg2 onTransaction:(id)arg3 withCompletionHandler:(id)arg4;
 - (oneway void)getDeviceSharedLibraryPath:(id)arg1;
 - (oneway void)getLanguageResourcesWithCompletion:(id)arg1;
+- (oneway void)importOperationWithIdentifier:(id)arg1 didUpdateWithProgress:(float)arg2;
 - (id)init;
 - (oneway void)lockDatabaseForReason:(id)arg1 withCompletion:(id)arg2;
 - (oneway void)performDatabaseOperation:(unsigned long long)arg1 withAttributes:(id)arg2 options:(id)arg3 completionHandler:(id)arg4;
-- (oneway void)performImportFromSource:(unsigned long long)arg1 intoDatabaseAtPath:(id)arg2 withTrackData:(id)arg3 withPlaylistData:(id)arg4 options:(id)arg5 completionHandler:(id)arg6;
+- (void)performImportFromSource:(unsigned long long)arg1 intoDatabaseAtPath:(id)arg2 withTrackData:(id)arg3 withPlaylistData:(id)arg4 options:(id)arg5 completionHandler:(id)arg6;
+- (oneway void)performImportFromSource:(unsigned long long)arg1 intoDatabaseAtPath:(id)arg2 withTrackData:(id)arg3 withPlaylistData:(id)arg4 withFileHandle:(id)arg5 options:(id)arg6 progressBlock:(id)arg7 completionHandler:(id)arg8;
 - (oneway void)pollCurrentImportStatus:(id)arg1;
 - (oneway void)recreateDatabaseAtPath:(id)arg1 withCompletionHandler:(id)arg2;
 - (oneway void)serviceTerminatedTransactionWithIdentifier:(id)arg1 error:(id)arg2;

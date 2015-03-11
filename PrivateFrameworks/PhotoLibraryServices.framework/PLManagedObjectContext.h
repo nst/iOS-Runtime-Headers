@@ -33,6 +33,7 @@
     bool_isBackingALAssetsLibrary;
     bool_isConnectedToChangeHub;
     bool_isInitializingSingletons;
+    bool_isObservingChangesForPTPNotificationDelegate;
     bool_mergingChanges;
     bool_regenerateVideoThumbnails;
     bool_savingDuringMerge;

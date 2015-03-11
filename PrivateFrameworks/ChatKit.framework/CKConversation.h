@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSString, UIImage;
+@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSString;
 
 @interface CKConversation : NSObject {
     struct { 
@@ -14,16 +14,18 @@
     NSString *_name;
     NSArray *_pendingHandles;
     NSArray *_recipients;
-    UIImage *_thumbnailImage;
+    NSArray *_thumbnailOrderABRecordIDs;
     bool_needsReload;
 }
 
 @property(readonly) BOOL buttonColor;
 @property(readonly) bool canLeave;
 @property(retain) IMChat * chat;
+@property(retain,readonly) NSString * deviceIndependentID;
 @property(readonly) unsigned long long disclosureAtomStyle;
 @property NSString * displayName;
 @property bool forceMMS;
+@property(retain,readonly) NSArray * frequentReplies;
 @property(getter=isGroupConversation,readonly) bool groupConversation;
 @property(retain,readonly) NSString * groupID;
 @property(retain,readonly) NSAttributedString * groupName;
@@ -47,12 +49,11 @@
 @property(readonly) unsigned long long recipientCount;
 @property(copy,readonly) NSArray * recipientStrings;
 @property(retain) NSArray * recipients;
-@property(retain) NSString * rememberedKeyboard;
 @property(retain,readonly) IMService * sendingService;
 @property(retain,readonly) NSString * serviceDisplayName;
 @property(readonly) bool shouldShowCharacterCount;
 @property(readonly) bool supportsMutatingGroupMembers;
-@property(retain) UIImage * thumbnailImage;
+@property(retain) NSArray * thumbnailOrderABRecordIDs;
 @property(readonly) unsigned long long unreadCount;
 @property(retain) CKComposition * unsentComposition;
 
@@ -79,7 +80,6 @@
 - (id)__generateThumbnailOfDiameter:(double)arg1 withRecordIDs:(id)arg2 recipientCount:(unsigned long long)arg3;
 - (bool)_accountIsOperational:(id)arg1 forService:(id)arg2;
 - (bool)_chatHasValidAccount:(id)arg1 forService:(id)arg2;
-- (void)_chatItemsDidChange:(id)arg1;
 - (bool)_chatSupportsTypingIndicators;
 - (void)_clearTypingIndicatorsIfNecessary;
 - (void)_deleteAllMessagesAndRemoveGroup:(bool)arg1;
@@ -92,6 +92,7 @@
 - (bool)_iMessage_canSendToRecipients:(id)arg1 alertIfUnable:(bool)arg2;
 - (bool)_iMessage_supportsCharacterCountForAddresses:(id)arg1;
 - (id)_messageOrderedABRecordIDsForChatItems:(id)arg1;
+- (void)_messageReceived:(id)arg1;
 - (id)_nameForHandle:(id)arg1;
 - (void)_postThumbnailChanged;
 - (void)_recordRecentContact;
@@ -114,11 +115,13 @@
 - (void)deleteAllMessages;
 - (void)deleteAllMessagesAndRemoveGroup;
 - (id)description;
+- (id)deviceIndependentID;
 - (unsigned long long)disclosureAtomStyle;
 - (id)displayName;
 - (id)displayNameForMediaObjects:(id)arg1 subject:(id)arg2;
 - (void)enumerateMessagesWithOptions:(unsigned long long)arg1 usingBlock:(id)arg2;
 - (bool)forceMMS;
+- (id)frequentReplies;
 - (id)groupID;
 - (id)groupName;
 - (id)handles;
@@ -136,6 +139,7 @@
 - (bool)isToEmailAddress;
 - (unsigned int)limitToLoad;
 - (void)loadAllMessages;
+- (void)loadFrequentReplies;
 - (void)loadMoreMessages;
 - (bool)localUserIsRecording;
 - (bool)localUserIsTyping;
@@ -157,10 +161,10 @@
 - (void)refreshServiceForSending;
 - (void)regenerateThumbnail;
 - (void)reloadIfNeeded;
-- (id)rememberedKeyboard;
 - (void)removeRecipientHandles:(id)arg1;
 - (void)resetCaches;
 - (void)resetNameCaches;
+- (void)resetThumbnailCaches;
 - (BOOL)sendButtonColor;
 - (void)sendMessage:(id)arg1 newComposition:(bool)arg2;
 - (void)sendMessage:(id)arg1 onService:(id)arg2 newComposition:(bool)arg3;
@@ -179,18 +183,18 @@
 - (void)setPendingComposeRecipients:(id)arg1;
 - (void)setPendingHandles:(id)arg1;
 - (void)setRecipients:(id)arg1;
-- (void)setRememberedKeyboard:(id)arg1;
-- (void)setThumbnailImage:(id)arg1;
+- (void)setThumbnailOrderABRecordIDs:(id)arg1;
 - (void)setUnsentComposition:(id)arg1;
 - (id)shortDescription;
 - (bool)shouldShowCharacterCount;
 - (bool)supportsMutatingGroupMembers;
 - (id)thumbnail;
-- (id)thumbnailImage;
+- (id)thumbnailOrderABRecordIDs;
 - (id)uniqueIdentifier;
 - (void)unmute;
 - (unsigned long long)unreadCount;
 - (id)unsentComposition;
+- (void)updateGroupThumbnailIfNeeded;
 - (void)updateUserActivityWithComposition:(id)arg1;
 
 @end

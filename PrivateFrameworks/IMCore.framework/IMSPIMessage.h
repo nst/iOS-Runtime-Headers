@@ -6,6 +6,8 @@
 
 @interface IMSPIMessage : NSObject {
     NSAttributedString *_attributedText;
+    NSArray *_chatGUIDs;
+    NSArray *_chatGuids;
     NSDate *_date;
     NSString *_guid;
     long long _messageID;
@@ -19,6 +21,8 @@
 }
 
 @property(retain) NSAttributedString * attributedText;
+@property(retain) NSArray * chatGUIDs;
+@property(retain,readonly) NSArray * chatGuids;
 @property(retain) NSDate * date;
 @property(retain) NSString * guid;
 @property bool isOutgoing;
@@ -31,6 +35,8 @@
 @property(retain) NSURL * url;
 
 - (id)attributedText;
+- (id)chatGUIDs;
+- (id)chatGuids;
 - (id)date;
 - (void)dealloc;
 - (id)description;
@@ -41,6 +47,7 @@
 - (id)recipients;
 - (id)sender;
 - (void)setAttributedText:(id)arg1;
+- (void)setChatGUIDs:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setIsOutgoing:(bool)arg1;

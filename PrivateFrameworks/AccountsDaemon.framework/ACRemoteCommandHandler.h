@@ -9,12 +9,15 @@
 }
 
 - (void).cxx_destruct;
-- (void)_addAccount:(id)arg1;
-- (void)_authenticateAccount:(id)arg1;
-- (void)_deleteAccount:(id)arg1;
-- (void)_promptUserForAccountCredential:(id)arg1;
-- (void)_updateAccount:(id)arg1;
-- (void)handleCommand:(id)arg1 forAccount:(id)arg2;
+- (void)_addAccount:(id)arg1 withOptions:(id)arg2 completion:(id)arg3;
+- (void)_authenticateAccount:(id)arg1 withCompletion:(id)arg2;
+- (void)_deleteAccount:(id)arg1 withCompletion:(id)arg2;
+- (id)_localAccountMatchingRemoteAccount:(id)arg1;
+- (void)_promptUserForAccountCredential:(id)arg1 withCompletion:(id)arg2;
+- (void)_removeAllAccountsWithCompletion:(id)arg1;
+- (void)_saveAccount:(id)arg1 completion:(id)arg2;
+- (void)_updateAccount:(id)arg1 withCompletion:(id)arg2;
+- (void)handleCommand:(id)arg1 forAccount:(id)arg2 options:(id)arg3 completion:(id)arg4;
 - (id)init;
 
 @end

@@ -15,6 +15,7 @@
     double _dismissAfterTimeInterval;
     NSString *_message;
     id _notification;
+    NSString *_otherButtonText;
     NSString *_title;
     bool_displayInAppWhitelistModes;
     bool_displayOnLockScreen;
@@ -28,6 +29,7 @@
 @property bool displayOnLockScreen;
 @property(retain) NSString * message;
 @property(retain) id notification;
+@property(retain) NSString * otherButtonText;
 @property(retain) NSString * title;
 
 - (void).cxx_destruct;
@@ -39,6 +41,7 @@
 - (bool)displayOnLockScreen;
 - (id)message;
 - (id)notification;
+- (id)otherButtonText;
 - (void)setAlternateButtonText:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setDefaultButtonText:(id)arg1;
@@ -47,6 +50,7 @@
 - (void)setDisplayOnLockScreen:(bool)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNotification:(id)arg1;
+- (void)setOtherButtonText:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

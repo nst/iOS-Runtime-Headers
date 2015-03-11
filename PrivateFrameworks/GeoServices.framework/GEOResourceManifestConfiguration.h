@@ -8,6 +8,7 @@
     NSString *_applicationIdentifier;
     NSString *_applicationVersion;
     NSString *_countryCode;
+    NSString *_dataDirectory;
     NSString *_environment;
     NSString *_hardwareIdentifier;
     NSString *_os;
@@ -19,6 +20,8 @@
 @property(copy) NSString * applicationIdentifier;
 @property(copy) NSString * applicationVersion;
 @property(copy) NSString * countryCode;
+@property(copy) NSString * dataDirectory;
+@property(readonly) NSString * directorySuffix;
 @property(copy) NSString * environment;
 @property(copy) NSString * hardwareIdentifier;
 @property(copy) NSString * os;
@@ -30,6 +33,7 @@
 - (id)applicationVersion;
 - (id)conciseDictionaryRepresentation;
 - (id)countryCode;
+- (id)dataDirectory;
 - (void)dealloc;
 - (id)directorySuffix;
 - (id)environment;
@@ -45,6 +49,7 @@
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
 - (void)setCountryCode:(id)arg1;
+- (void)setDataDirectory:(id)arg1;
 - (void)setEnvironment:(id)arg1;
 - (void)setHardwareIdentifier:(id)arg1;
 - (void)setOs:(id)arg1;

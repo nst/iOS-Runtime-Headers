@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABContactViewControllerDelegate>, <ABPresenterDelegate>, ABCardFaceTimeGroup, ABCardGroup, ABCardLinkedCardsGroup, ABContactAction, ABContactAddFavoriteAction, ABContactAddLinkedCardAction, ABContactAddNewFieldAction, ABContactAddToExistingContactAction, ABContactCreateNewContactAction, ABContactHeaderDisplayView, ABContactHeaderEditView, ABContactHeaderView, ABContactToggleBlockCallerAction, ABContactView, ABMedicalIDAction, ABPropertyAction, ABPropertyFaceTimeAction, ABPropertyIDSRequest, ABPropertyLinkedCardsAction, ABSiriContactContextProvider, CNContact, HKHealthStore, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, UIView;
+@class <ABContactViewControllerDelegate>, <ABPresenterDelegate>, ABCardFaceTimeGroup, ABCardGroup, ABCardLinkedCardsGroup, ABContactAction, ABContactAddFavoriteAction, ABContactAddLinkedCardAction, ABContactAddNewFieldAction, ABContactAddToExistingContactAction, ABContactCreateNewContactAction, ABContactHeaderDisplayView, ABContactHeaderEditView, ABContactHeaderView, ABContactToggleBlockCallerAction, ABContactView, ABMedicalIDAction, ABPropertyAction, ABPropertyFaceTimeAction, ABPropertyIDSRequest, ABPropertyLinkedCardsAction, ABSiriContactContextProvider, CNContact, CNContactStyle, HKHealthStore, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, UIView;
 
 @interface ABContactViewController : UITableViewController <ABPropertyActionDelegate, ABPropertyCellDelegate, ABContactGroupPickerDelegate, ABPresenterDelegate, UIPopoverControllerDelegate, ABContactAddLinkedCardActionDelegate, ABContactHeaderViewDelegate, ABContactViewControllerDelegate, UIAdaptivePresentationControllerDelegate, ABContactViewDataSource, ABContactViewDelegate, UIViewControllerRestoration> {
     ABContactAddFavoriteAction *_addFavoriteAction;
@@ -26,6 +26,7 @@
     ABCardGroup *_cardTopGroup;
     CNContact *_contact;
     <ABContactViewControllerDelegate> *_contactDelegate;
+    CNContactStyle *_contactStyle;
     ABContactCreateNewContactAction *_createNewContactAction;
     ABContactAction *_deleteContactAction;
     ABContactView *_displayContactView;
@@ -111,6 +112,7 @@
 @property(readonly) CNContact * contact;
 @property <ABContactViewControllerDelegate> * contactDelegate;
 @property(readonly) ABContactHeaderView * contactHeaderView;
+@property(retain) CNContactStyle * contactStyle;
 @property(readonly) ABContactView * contactView;
 @property(retain) ABContactCreateNewContactAction * createNewContactAction;
 @property(copy,readonly) NSString * debugDescription;
@@ -263,6 +265,7 @@
 - (void)contactGroupPickerDidCancel:(id)arg1;
 - (void)contactGroupPickerDidFinish:(id)arg1 withGroup:(id)arg2;
 - (id)contactHeaderView;
+- (id)contactStyle;
 - (id)contactView:(id)arg1 cellForItemAtIndex:(long long)arg2 inGroup:(id)arg3;
 - (void)contactView:(id)arg1 didSelectItemAtIndex:(long long)arg2 inGroup:(id)arg3;
 - (double)contactView:(id)arg1 heightForItemAtIndex:(long long)arg2 inGroup:(id)arg3;
@@ -368,6 +371,7 @@
 - (void)setCardPrimaryPropertyActionsGroup:(id)arg1;
 - (void)setCardTopGroup:(id)arg1;
 - (void)setContactDelegate:(id)arg1;
+- (void)setContactStyle:(id)arg1;
 - (void)setCreateNewContactAction:(id)arg1;
 - (void)setDeleteContactAction:(id)arg1;
 - (void)setDisplayContactView:(id)arg1;

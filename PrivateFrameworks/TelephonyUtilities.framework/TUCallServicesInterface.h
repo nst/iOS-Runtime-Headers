@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class <TUCallServicesDaemonDelegate>, NSArray, NSData, NSObject<OS_dispatch_semaphore>, NSString, NSXPCConnection, TUCallCenterCallsCache, TUProxyCallModel;
+@class <TUCallServicesDaemonDelegate>, NSArray, NSData, NSString, NSXPCConnection, TUCallCenterCallsCache, TUProxyCallModel;
 
 @interface TUCallServicesInterface : NSObject <TUCallServicesDaemonObserver, TUCallServicesProxyCallActions> {
     TUCallCenterCallsCache *_callsCache;
@@ -12,7 +12,6 @@
     TUProxyCallModel *_proxyCallModel;
     NSData *_remoteFrequency;
     NSXPCConnection *_xpcConnection;
-    NSObject<OS_dispatch_semaphore> *_xpcConnectionCreationSemaphore;
     bool_muted;
 }
 
@@ -28,7 +27,6 @@
 @property(retain) NSData * remoteFrequency;
 @property(readonly) Class superclass;
 @property(retain) NSXPCConnection * xpcConnection;
-@property(retain) NSObject<OS_dispatch_semaphore> * xpcConnectionCreationSemaphore;
 
 + (bool)launchesCallServicesDaemonOnDemand;
 + (id)sharedInstance;
@@ -62,6 +60,7 @@
 - (void)handleMutedChangedTo:(bool)arg1;
 - (void)handleRelayCallingCapabilitiesChanged:(id)arg1;
 - (void)handleRemoteFrequencyChangedTo:(id)arg1;
+- (void)handleShouldSuppressRingtoneChangedTo:(bool)arg1 forCallWithUUID:(id)arg2;
 - (void)handleWantsHoldMusicChangedTo:(bool)arg1 forCallWithUUID:(id)arg2;
 - (void)holdCall:(id)arg1;
 - (id)init;
@@ -81,19 +80,19 @@
 - (void)setDaemonDelegate:(id)arg1;
 - (void)setDisconnectedReason:(int)arg1 forCall:(id)arg2;
 - (void)setEndpointOnCurrentDevice:(bool)arg1 forCall:(id)arg2;
+- (void)setIsSendingAudio:(bool)arg1 forCall:(id)arg2;
 - (void)setLocalFrequency:(id)arg1;
 - (void)setMuted:(bool)arg1;
 - (void)setProxyCallModel:(id)arg1;
 - (void)setRelayCallingEnabled:(bool)arg1;
 - (void)setRemoteFrequency:(id)arg1;
+- (void)setShouldSuppressRingtone:(bool)arg1 forCall:(id)arg2;
 - (void)setWantsHoldMusic:(bool)arg1 forCall:(id)arg2;
 - (void)setXpcConnection:(id)arg1;
-- (void)setXpcConnectionCreationSemaphore:(id)arg1;
 - (void)swapCalls;
 - (void)unconferenceCall:(id)arg1;
 - (void)unholdCall:(id)arg1;
 - (void)unmuteCall:(id)arg1;
 - (id)xpcConnection;
-- (id)xpcConnectionCreationSemaphore;
 
 @end

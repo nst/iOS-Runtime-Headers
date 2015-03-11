@@ -16,9 +16,12 @@
     NSMutableDictionary *costCache;
     int focalAppToken;
     NSDate *lastUpdate;
+    int localFocalInfoToken;
     int resourceCallToken;
     NSMutableArray *resourceCallbackList;
     NSObject<OS_dispatch_queue> *resourceCallbackQueue;
+    NSMutableArray *revocationCallbackList;
+    int revocationToken;
     int systemConditionChangeToken;
 }
 
@@ -42,12 +45,13 @@
 - (bool)admissionCheckOfValue:(id)arg1 type:(long long)arg2 options:(id)arg3 error:(id*)arg4 handler:(id)arg5;
 - (bool)admissionCheckOfValue:(id)arg1 withReason:(id*)arg2 error:(id*)arg3 handler:(id)arg4;
 - (bool)admissionCheckOfValue:(id)arg1 withReason:(id*)arg2 error:(id*)arg3;
+- (void)admissionCheckOfValueAsync:(id)arg1 type:(long long)arg2 options:(id)arg3 handleQueue:(id)arg4 handler:(id)arg5;
 - (bool)associateToAttribute:(id)arg1 error:(id*)arg2;
 - (bool)associateToBudget:(id)arg1 error:(id*)arg2;
 - (bool)attributeIsClientWriteable;
 - (id)budgetStatisticsForHistoryWindow:(id)arg1 error:(id*)arg2;
 - (long long)budgetStatusWithError:(id*)arg1;
-- (void)callListOfCallbacks:(id)arg1 oneshotCall:(bool)arg2;
+- (void)callListOfCallbacks:(id)arg1 oneshotCall:(bool)arg2 callList:(id)arg3;
 - (double)correlationOfValue:(id)arg1 toAttribute:(id)arg2 withValue:(id)arg3 temporalLeeway:(double)arg4 error:(id*)arg5;
 - (void)dealloc;
 - (id)deferredRequestsQ;
@@ -83,9 +87,11 @@
 - (id)session;
 - (bool)setAdmissionBitMask:(unsigned long long)arg1 error:(id*)arg2;
 - (bool)setAdmissionManualType:(bool)arg1 error:(id*)arg2;
+- (bool)setAdmissionRevocationBlockWithError:(id*)arg1 handler:(id)arg2;
 - (bool)setCategory:(long long)arg1 error:(id*)arg2;
 - (bool)setResourceAvailabilityBlockWithError:(id*)arg1 handler:(id)arg2;
 - (bool)setResourceDispatch:(id*)arg1;
+- (bool)setRevocationDispatch;
 - (bool)setTrendBlockForValue:(id)arg1 withConfig:(id)arg2 error:(id*)arg3 handler:(id)arg4;
 - (id)statistic:(long long)arg1 forHistoryWindow:(id)arg2 device:(id)arg3 error:(id*)arg4;
 - (id)statistic:(long long)arg1 forHistoryWindow:(id)arg2 deviceDescription:(id)arg3 error:(id*)arg4;

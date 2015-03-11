@@ -6,14 +6,16 @@
    See Warning(s) below.
  */
 
-@class CNFRegController, NSDictionary, NSString;
+@class CNFRegController, IDSAccountController, NSDictionary, NSString;
 
 @interface FTRegAccountServiceDelegate : NSObject <AASetupAssistantDelegateService, AAAppleIDLoginPlugin> {
+    IDSAccountController *_accountController;
     id _completionHandler;
     CNFRegController *_regController;
     NSDictionary *_responseDictionary;
 }
 
+@property(retain) IDSAccountController * accountController;
 @property(copy) id completionHandler;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
@@ -33,6 +35,7 @@
 - (bool)_hasOperationalAccount;
 - (id)_logName;
 - (bool)_shouldSkipAccountSetup:(id)arg1;
+- (id)accountController;
 - (id)accountSetupRequestParameters;
 - (void)completeSetupWithResponseParameters:(id)arg1 handler:(id)arg2;
 - (id)completionHandler;
@@ -50,6 +53,7 @@
 - (id)serviceIdentifier;
 - (bool)serviceIsAvailable;
 - (long long)serviceType;
+- (void)setAccountController:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setRegController:(id)arg1;
 - (void)setResponseDictionary:(id)arg1;

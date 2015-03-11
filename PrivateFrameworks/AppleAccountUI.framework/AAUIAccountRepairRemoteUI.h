@@ -6,13 +6,14 @@
    See Warning(s) below.
  */
 
-@class <AAUIAccountRepairRemoteUIDelegate>, ACAccount, ACAccountStore, NSMutableArray, NSString, RUILoader, UIAlertView, UINavigationController, UIViewController;
+@class <AAUIAccountRepairRemoteUIDelegate>, ACAccount, ACAccountStore, NSDictionary, NSMutableArray, NSString, RUILoader, UIAlertView, UINavigationController, UIViewController;
 
 @interface AAUIAccountRepairRemoteUI : NSObject <RUIObjectModelDelegate> {
     ACAccount *_account;
     UINavigationController *_accountRepairUIViewController;
     ACAccountStore *_accountStore;
     NSString *_agreeURL;
+    NSDictionary *_cookieHeadersForRepairRequest;
     <AAUIAccountRepairRemoteUIDelegate> *_delegate;
     id _linkLoadCompletion;
     RUILoader *_loader;
@@ -48,5 +49,6 @@
 - (void)presentFromViewController:(id)arg1 modal:(bool)arg2;
 - (void)setDelegate:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
+- (void)useCookieHeadersForInitialRequest:(id)arg1;
 
 @end

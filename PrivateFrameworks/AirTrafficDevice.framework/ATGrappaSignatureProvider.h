@@ -10,8 +10,8 @@
 }
 
 - (void).cxx_destruct;
-- (id)createSignatureForData:(id)arg1 returnedSignature:(id*)arg2;
+- (id)createSignature:(id*)arg1 forData:(id)arg2;
 - (id)initWithGrappaSession:(id)arg1;
-- (id)verifySignatureForData:(id)arg1 signature:(id)arg2;
+- (id)verifySignature:(id)arg1 forData:(id)arg2;
 
 @end

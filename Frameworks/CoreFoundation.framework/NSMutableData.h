@@ -20,6 +20,7 @@
 - (void)appendLEShort:(short)arg1;
 - (void)appendString:(id)arg1 encoding:(unsigned long long)arg2;
 - (Class)classForCoder;
+- (void)hk_appendBytesWithUUID:(id)arg1;
 - (void)increaseLengthBy:(unsigned long long)arg1;
 - (id)initWithCapacity:(unsigned long long)arg1;
 - (id)initWithLength:(unsigned long long)arg1;

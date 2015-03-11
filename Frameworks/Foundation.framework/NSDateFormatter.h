@@ -47,6 +47,10 @@
 @property(copy) NSArray * weekdaySymbols;
 
 + (id)CalSharedDateFormatter;
++ (id)FU_stringWithLongestStyleDate:(id)arg1 font:(id)arg2 maxWidth:(double)arg3;
++ (id)FU_timeStringWithSpaceRemoved:(id)arg1 date:(id)arg2;
++ (bool)_dateStringFits:(id)arg1 font:(id)arg2 maxWidth:(double)arg3;
++ (void)_localeDidChange:(id)arg1;
 + (id)dateFormatFromTemplate:(id)arg1 options:(unsigned long long)arg2 locale:(id)arg3;
 + (unsigned long long)defaultFormatterBehavior;
 + (void)initialize;

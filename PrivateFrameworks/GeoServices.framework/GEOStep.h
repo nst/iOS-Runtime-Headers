@@ -171,6 +171,7 @@
 - (int)overrideDrivingSide;
 - (int)overrideTransportType;
 - (bool)readFrom:(id)arg1;
+- (id)roadName;
 - (void)setDistance:(unsigned int)arg1;
 - (void)setEndsOnFwy:(bool)arg1;
 - (void)setExitNumber:(id)arg1;

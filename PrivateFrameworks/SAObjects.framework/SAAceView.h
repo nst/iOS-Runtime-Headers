@@ -9,7 +9,7 @@
 
 @property(retain) <SAAceSerializable> * context;
 @property(copy,readonly) NSString * debugDescription;
-@property bool deferredRendering;
+@property(copy) NSNumber * deferredRendering;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned long long hash;
 @property(copy) NSNumber * listenAfterSpeaking;
@@ -21,12 +21,12 @@
 + (id)aceViewWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)context;
-- (bool)deferredRendering;
+- (id)deferredRendering;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)listenAfterSpeaking;
 - (void)setContext:(id)arg1;
-- (void)setDeferredRendering:(bool)arg1;
+- (void)setDeferredRendering:(id)arg1;
 - (void)setListenAfterSpeaking:(id)arg1;
 - (void)setSpeakableText:(id)arg1;
 - (void)setViewId:(id)arg1;

@@ -33,7 +33,6 @@
 
 + (id)sharedInstance;
 
-- (void)_activationFailed;
 - (void)_calculateInstallType;
 - (bool)_hasShownMismatchedSIM;
 - (bool)_hasShownWaitingAlertThisSession;

@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPAVRoutingTableViewCellDelegate>, MPAVRoute, UILabel, UISwitch, UIView;
+@class <MPAVRoutingTableViewCellDelegate>, MPAVRoute, UIColor, UILabel, UISwitch, UIView;
 
 @interface MPAVRoutingTableViewCell : UITableViewCell {
+    UIColor *_contentTintColor;
     <MPAVRoutingTableViewCellDelegate> *_delegate;
     UILabel *_mirroringLabel;
     UIView *_mirroringSeparatorView;
@@ -33,5 +34,6 @@
 - (void)setMirroringSwitchVisible:(bool)arg1 animated:(bool)arg2;
 - (void)setMirroringSwitchVisible:(bool)arg1;
 - (void)setRoute:(id)arg1;
+- (void)setTintColor:(id)arg1;
 
 @end

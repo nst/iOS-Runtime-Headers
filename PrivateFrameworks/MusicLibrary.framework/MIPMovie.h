@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MIPArtist, NSString;
+@class MIPArtist, NSData, NSString;
 
 @interface MIPMovie : PBCodable <NSCopying> {
     struct { 
@@ -25,6 +25,7 @@
     int _audioTrackId;
     int _audioTrackIndex;
     NSString *_extendedContentName;
+    NSData *_flattenedChapterData;
     } _has;
     NSString *_movieInfo;
     long long _rentalDuration;
@@ -45,6 +46,7 @@
 @property int audioTrackId;
 @property int audioTrackIndex;
 @property(retain) NSString * extendedContentName;
+@property(retain) NSData * flattenedChapterData;
 @property bool hasAlternateAudio;
 @property(readonly) bool hasArtist;
 @property bool hasAudioLanguage;
@@ -52,6 +54,7 @@
 @property bool hasAudioTrackIndex;
 @property bool hasChapterData;
 @property(readonly) bool hasExtendedContentName;
+@property(readonly) bool hasFlattenedChapterData;
 @property bool hasHasAlternateAudio;
 @property bool hasHasChapterData;
 @property bool hasHasSubtitles;
@@ -85,6 +88,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)extendedContentName;
+- (id)flattenedChapterData;
 - (bool)hasAlternateAudio;
 - (bool)hasArtist;
 - (bool)hasAudioLanguage;
@@ -92,6 +96,7 @@
 - (bool)hasAudioTrackIndex;
 - (bool)hasChapterData;
 - (bool)hasExtendedContentName;
+- (bool)hasFlattenedChapterData;
 - (bool)hasHasAlternateAudio;
 - (bool)hasHasChapterData;
 - (bool)hasHasSubtitles;
@@ -107,6 +112,7 @@
 - (bool)hasVideoQuality;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)movieInfo;
 - (bool)readFrom:(id)arg1;
 - (bool)rental;
@@ -119,6 +125,7 @@
 - (void)setAudioTrackId:(int)arg1;
 - (void)setAudioTrackIndex:(int)arg1;
 - (void)setExtendedContentName:(id)arg1;
+- (void)setFlattenedChapterData:(id)arg1;
 - (void)setHasAlternateAudio:(bool)arg1;
 - (void)setHasAudioLanguage:(bool)arg1;
 - (void)setHasAudioTrackId:(bool)arg1;

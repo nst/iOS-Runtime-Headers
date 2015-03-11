@@ -13,6 +13,7 @@
         unsigned int dynamic : 1; 
         unsigned int enabledItemsOnly : 1; 
         unsigned int filtered : 1; 
+        unsigned int genius : 1; 
         unsigned int limited : 1; 
         unsigned int reverseLimitOrder : 1; 
     unsigned int _evaluationOrder;
@@ -24,6 +25,7 @@
     bool_dynamic;
     bool_enabledItemsOnly;
     bool_filtered;
+    bool_genius;
     bool_limited;
     bool_reverseLimitOrder;
 }
@@ -32,10 +34,12 @@
 @property bool enabledItemsOnly;
 @property unsigned int evaluationOrder;
 @property bool filtered;
+@property bool genius;
 @property bool hasDynamic;
 @property bool hasEnabledItemsOnly;
 @property bool hasEvaluationOrder;
 @property bool hasFiltered;
+@property bool hasGenius;
 @property bool hasLimitKind;
 @property bool hasLimitOrder;
 @property bool hasLimitValue;
@@ -58,10 +62,12 @@
 - (bool)enabledItemsOnly;
 - (unsigned int)evaluationOrder;
 - (bool)filtered;
+- (bool)genius;
 - (bool)hasDynamic;
 - (bool)hasEnabledItemsOnly;
 - (bool)hasEvaluationOrder;
 - (bool)hasFiltered;
+- (bool)hasGenius;
 - (bool)hasLimitKind;
 - (bool)hasLimitOrder;
 - (bool)hasLimitValue;
@@ -74,16 +80,19 @@
 - (unsigned int)limitOrder;
 - (unsigned int)limitValue;
 - (bool)limited;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (bool)reverseLimitOrder;
 - (void)setDynamic:(bool)arg1;
 - (void)setEnabledItemsOnly:(bool)arg1;
 - (void)setEvaluationOrder:(unsigned int)arg1;
 - (void)setFiltered:(bool)arg1;
+- (void)setGenius:(bool)arg1;
 - (void)setHasDynamic:(bool)arg1;
 - (void)setHasEnabledItemsOnly:(bool)arg1;
 - (void)setHasEvaluationOrder:(bool)arg1;
 - (void)setHasFiltered:(bool)arg1;
+- (void)setHasGenius:(bool)arg1;
 - (void)setHasLimitKind:(bool)arg1;
 - (void)setHasLimitOrder:(bool)arg1;
 - (void)setHasLimitValue:(bool)arg1;

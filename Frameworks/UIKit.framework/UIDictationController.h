@@ -2,6 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class AFDictationConnection, AFDictationOptions, AFPreferences, CADisplayLink, NSArray, NSMutableArray, NSString, NSTimer, UIAlertView, UIDictationStreamingOperations, UIKeyboardInputMode, UIWindow, _UIDictationPrivacySheetController;
 
 @interface UIDictationController : NSObject <_UITouchPhaseChangeDelegate> {
@@ -17,6 +21,7 @@
     _UIDictationPrivacySheetController *_dictationPrivacySheetController;
     void *_facetimeCallFrameworkFileHandle;
     id _facetimeCallManager;
+    id _finalResultsOperation;
     UIKeyboardInputMode *_inputModeThatInvokedDictation;
     } _insertionRange;
     NSString *_language;
@@ -30,13 +35,14 @@
     CADisplayLink *_streamingAnimationDisplayLink;
     UIDictationStreamingOperations *_streamingOperations;
     NSString *_targetHypothesis;
+    long long _updatingDocument;
     bool_connectionWasAlreadyAliveForStatisticsLogging;
+    bool_deferredCancellationRequested;
     bool_discardNextHypothesis;
     bool_hasPreheated;
     bool_performingStreamingEditingOperation;
     bool_recievingResults;
     bool_streamingAnimationActive;
-    bool_updatingDocument;
     bool_wasDisabledDueToTelephonyActivity;
     boolcancelledByWaitingForLocalResults;
     booldictationStartedFromGesture;
@@ -117,12 +123,14 @@
 - (id)_connection;
 - (void)_displayLinkFired:(id)arg1;
 - (void)_endEnableDictationPromptAnimated:(bool)arg1;
-- (void)_finalizeDictationText;
+- (id)_getBestHypothesisRangeGivenHintRange:(id)arg1 inputDelegate:(id)arg2 hypothesisRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3 documentTextInRange:(id*)arg4;
 - (id)_hypothesisRangeFromSelectionRange:(id)arg1 inputDelegate:(id)arg2;
 - (void)_presentOptInAlert;
 - (void)_presentPrivacySheet;
-- (id)_rangeByExtendingRange:(id)arg1 by:(long long)arg2 inputDelegate:(id)arg3;
+- (id)_rangeByExtendingRange:(id)arg1 backward:(long long)arg2 forward:(long long)arg3 inputDelegate:(id)arg4;
 - (void)_restartDictation;
+- (void)_runFinalizeOperation;
+- (void)_setFinalResultHandler:(id)arg1;
 - (bool)_shouldDeleteBackwardInInputDelegate:(id)arg1;
 - (bool)_shouldInsertText:(id)arg1 inInputDelegate:(id)arg2;
 - (void)_startStreamingAnimations;
@@ -132,6 +140,7 @@
 - (id)assistantCompatibleLanguageCodeForInputMode:(id)arg1;
 - (float)audioLevel;
 - (void)cancelDictation;
+- (void)cancelDictationForTextStoreChanges;
 - (void)cancelRecordingLimitTimer;
 - (void)completeStartConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)completeStartConnectionForReason:(long long)arg1;
@@ -168,6 +177,7 @@
 - (id)inputModeThatInvokedDictation;
 - (void)insertSerializedDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })insertionRange;
+- (bool)isIgnoringDocumentChanges;
 - (bool)isRecievingResults;
 - (id)language;
 - (id)languageCodeForAssistantLanguageCode:(id)arg1;

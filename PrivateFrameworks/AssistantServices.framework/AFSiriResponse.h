@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)_initWithRequest:(id)arg1;
 - (id)_initWithRequestIdentifier:(id)arg1;
-- (id)_requestIdentifier;
+- (bool)_isForRequest:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -75,6 +75,8 @@
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (bool)locationManagerShouldDisplayHeadingCalibration:(id)arg1;
 - (bool)matchInfoEnabled;
+- (void)requestWhenInUseAuthorization;
+- (void)requestWhenInUseAuthorizationWithPrompt;
 - (void)setActivityType:(long long)arg1;
 - (void)setAuthorizationRequestBlock:(id)arg1;
 - (void)setDelegate:(id)arg1;

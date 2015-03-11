@@ -19,6 +19,7 @@
 + (id)personAttribute;
 + (id)personAttributeWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)af_contactAddressValue;
 - (id)data;
 - (id)displayText;
 - (id)encodedClassName;

@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSDate, NSString, UIImage, UIImageView, UILabel;
+@class NSDate, NSLayoutConstraint, NSString, UIFont, UIImage, UIImageView, UILabel;
 
 @interface HKMedicalIDPersonSummaryCell : UITableViewCell {
     NSDate *_birthdate;
     UILabel *_birthdateLabel;
+    NSLayoutConstraint *_imageGapConstraint;
+    NSLayoutConstraint *_imageWidthConstraint;
     NSString *_name;
     UILabel *_nameLabel;
+    UIFont *_nameLabelFont;
     UIImage *_picture;
     UIImageView *_pictureView;
+    bool_resetFormatters;
 }
 
 @property(retain) NSDate * birthdate;
@@ -18,12 +22,14 @@
 @property(retain) UIImage * picture;
 
 - (void).cxx_destruct;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
+- (void)_createConstraints;
 - (double)_scaledValueForSmallWidth:(double)arg1 bigWidth:(double)arg2;
-- (bool)_viewIsGinormous;
 - (id)birthdate;
 - (double)calculatedHeight;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
+- (void)localeDidChange:(id)arg1;
 - (id)name;
 - (id)picture;
 - (void)setBirthdate:(id)arg1;

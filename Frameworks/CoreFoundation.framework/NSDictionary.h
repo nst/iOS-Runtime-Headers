@@ -27,6 +27,8 @@
 @property unsigned long long lastClientRevision;
 @property unsigned long long lastServerRevision;
 @property unsigned long long newRevision;
+@property(readonly) NSString * npkRelevancyRelevantText;
+@property(readonly) NSString * npkRelevancyUniqueID;
 @property(readonly) NSString * priceFormatted;
 @property(readonly) unsigned long long ratingCount;
 @property(readonly) NSNumber * storeID;
@@ -55,6 +57,7 @@
 + (id)dictionaryWithContentsOfURL:(id)arg1;
 + (id)dictionaryWithDictionary:(id)arg1 copyItems:(bool)arg2;
 + (id)dictionaryWithDictionary:(id)arg1;
++ (id)dictionaryWithGlance:(id)arg1;
 + (id)dictionaryWithKeyArray:(id)arg1 defaultValue:(id)arg2;
 + (id)dictionaryWithObject:(id)arg1 forKey:(id)arg2;
 + (id)dictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned long long)arg3;
@@ -66,9 +69,11 @@
 + (id)hk_acceptedMetadataValueClasses;
 + (bool)hk_acceptsMetadataKey:(id)arg1;
 + (bool)hk_acceptsMetadataValue:(id)arg1;
++ (id)hk_dictionaryWithCodableMetadata:(id)arg1;
 + (id)hk_secureCodingClasses;
 + (id)newDictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned long long)arg3;
 + (id)newWithContentsOf:(id)arg1 immutable:(bool)arg2;
++ (id)npkRelevancyTupleWithUniqueID:(id)arg1 relevantText:(id)arg2;
 + (id)sharedKeySetForKeys:(id)arg1;
 + (bool)supportsSecureCoding;
 + (bool)supportsSecureCoding;
@@ -94,7 +99,7 @@
 - (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(long long)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(long long)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
 - (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(long long)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(long long)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
 - (id)ML3StringForKey:(id)arg1;
-- (bool)MR_isEqualToDictionary:(id)arg1;
+- (bool)MR_isEqualToNowPlayingInfo:(id)arg1;
 - (id)MSASAlbumResetSyncAlbumGUID;
 - (id)MSASEventIsDueToAlbumDeletionAlbumGUID;
 - (id)MSASEventIsDueToAssetCollectionDeletionAssetCollectionGUID;
@@ -266,6 +271,7 @@
 - (id)dictionaryForKey:(id)arg1;
 - (id)dictionaryFromChanges:(id)arg1;
 - (id)displayName;
+- (id)enabledDataClasses;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -308,6 +314,7 @@
 - (id)gksDeepMutableCopy;
 - (id)grappaInfo;
 - (unsigned long long)hash;
+- (id)hk_codableMetadata;
 - (bool)hk_validateMetadataKeysAndValuesWithError:(id*)arg1;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -356,6 +363,8 @@
 - (id)mutableDictionaryForKey:(id)arg1;
 - (id)mutableDictionaryForKey:(id)arg1;
 - (unsigned long long)newRevision;
+- (id)npkRelevancyRelevantText;
+- (id)npkRelevancyUniqueID;
 - (id)nullForKey:(id)arg1;
 - (id)nullForKey:(id)arg1;
 - (id)nullForKey:(id)arg1;
@@ -408,6 +417,7 @@
 - (id)scriptEntry;
 - (id)scriptPath;
 - (void)setDisplayName:(id)arg1;
+- (void)setEnabledDataClasses:(id)arg1;
 - (void)setGrappaInfo:(id)arg1;
 - (void)setLastClientRevision:(unsigned long long)arg1;
 - (void)setLastServerRevision:(unsigned long long)arg1;

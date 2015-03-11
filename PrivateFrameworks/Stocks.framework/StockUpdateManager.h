@@ -42,6 +42,7 @@
 - (void)updateAllStocksBasic;
 - (void)updateAllStocksBasicWithCompletion:(id)arg1;
 - (void)updateStaleStocksBasicWithCompletion:(id)arg1;
+- (void)updateStockBasicWithCompletion:(id)arg1 withCompletion:(id)arg2;
 - (void)updateStockComprehensive:(id)arg1 forced:(bool)arg2 withCompletion:(id)arg3;
 - (void)updateStockComprehensive:(id)arg1 withCompletion:(id)arg2;
 - (void)updateStockComprehensive:(id)arg1;

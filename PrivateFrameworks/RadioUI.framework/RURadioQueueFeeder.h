@@ -83,6 +83,7 @@
 - (bool)canSkipToPreviousItem;
 - (id)copyRawItemAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
+- (void)getContainerType:(unsigned long long*)arg1 mediaLibraryContainerPersistentID:(long long*)arg2 storeContainerID:(id*)arg3 storePersonalizedContainerID:(id*)arg4;
 - (bool)hasValidItemAtIndex:(unsigned long long)arg1;
 - (id)init;
 - (unsigned long long)initialPlaybackQueueDepthForStartingIndex:(unsigned long long)arg1;
@@ -105,5 +106,6 @@
 - (id)station;
 - (id)tracks;
 - (id)tracksForNextPlaybackGroup;
+- (bool)userCanChangeShuffleAndRepeatType;
 
 @end

@@ -2,30 +2,39 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBBulletin, BBObserverGatewayHolder, NSString;
+@class BBBulletin, NSArray, NSMutableSet;
 
 @interface BBObserverGatewayEnumerator : NSObject {
     BBBulletin *_bulletin;
-    NSString *_bulletinID;
-    BBObserverGatewayHolder *_currentGateway;
     unsigned long long _feeds;
-    boolinvalidated;
+    double _gatewayTimeout;
+    NSArray *_gateways;
+    NSMutableSet *_gatewaysPlayedLightsAndSirens;
+    bool_cancelled;
 }
 
 @property(retain) BBBulletin * bulletin;
-@property(copy) NSString * bulletinID;
-@property(readonly) BBObserverGatewayHolder * currentGateway;
 @property unsigned long long feeds;
+@property double gatewayTimeout;
+@property(copy) NSArray * gateways;
+@property(copy) NSMutableSet * gatewaysPlayedLightsAndSirens;
 
+- (void)attemptNextGatewayInEnumerator:(id)arg1 playLightsAndSirens:(bool)arg2 completion:(id)arg3;
 - (id)bulletin;
-- (id)bulletinID;
-- (id)currentGateway;
+- (void)cancel;
 - (void)dealloc;
-- (void)enumerate:(id)arg1 numberOfUniqueGateways:(unsigned long long)arg2 bulletin:(id)arg3 bulletinID:(id)arg4 feeds:(unsigned long long)arg5 didPlayLightsAndSirensHandler:(id)arg6 completion:(id)arg7;
+- (id)defaultGateway;
+- (void)enumerateWithCompletion:(id)arg1;
 - (unsigned long long)feeds;
-- (void)invalidateAndSendTo:(id)arg1;
+- (double)gatewayTimeout;
+- (id)gateways;
+- (id)gatewaysPlayedLightsAndSirens;
+- (id)init;
+- (void)sendToDefaultGatewayToPlayLightsAndSirens:(bool)arg1;
 - (void)setBulletin:(id)arg1;
-- (void)setBulletinID:(id)arg1;
 - (void)setFeeds:(unsigned long long)arg1;
+- (void)setGatewayTimeout:(double)arg1;
+- (void)setGateways:(id)arg1;
+- (void)setGatewaysPlayedLightsAndSirens:(id)arg1;
 
 @end

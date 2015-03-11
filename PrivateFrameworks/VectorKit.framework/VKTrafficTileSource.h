@@ -30,7 +30,7 @@
 - (void)failedToDecodeSourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)fetchTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)fetchedTile:(id)arg1 forKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
-- (id)initWithSkeletonTileSet:(id)arg1 dynamicTileSet:(id)arg2 tileGroupIdentifier:(unsigned int)arg3 locale:(id)arg4;
+- (id)initWithSkeletonTileSet:(id)arg1 dynamicTileSet:(id)arg2 resourceManifestConfiguration:(id)arg3 locale:(id)arg4;
 - (void)invalidateTilesFromTileSource:(id)arg1;
 - (long long)maximumZoomLevel;
 - (void)populateVisibleTileSets:(id)arg1 withTiles:(id)arg2;

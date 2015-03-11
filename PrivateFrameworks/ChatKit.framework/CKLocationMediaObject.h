@@ -37,6 +37,7 @@
 - (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)initWithTransfer:(id)arg1;
 - (bool)isDroppedPin;
+- (id)mapItem;
 - (int)mediaType;
 - (id)pin;
 - (Class)previewBalloonViewClass;

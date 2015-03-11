@@ -16,6 +16,9 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned long long hash;
 @property(copy) NSString * language;
+@property(copy) NSString * linkedAssistantId;
+@property(copy) NSData * linkedSessionValidationData;
+@property(copy) NSString * linkedSpeechId;
 @property(copy) NSString * refId;
 @property(copy) NSData * sessionValidationData;
 @property(copy) NSString * speechId;
@@ -31,12 +34,18 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)language;
+- (id)linkedAssistantId;
+- (id)linkedSessionValidationData;
+- (id)linkedSpeechId;
 - (id)sessionValidationData;
 - (void)setActivationToken:(id)arg1;
 - (void)setAssistantId:(id)arg1;
 - (void)setConnectionMode:(id)arg1;
 - (void)setConnectionType:(id)arg1;
 - (void)setLanguage:(id)arg1;
+- (void)setLinkedAssistantId:(id)arg1;
+- (void)setLinkedSessionValidationData:(id)arg1;
+- (void)setLinkedSpeechId:(id)arg1;
 - (void)setSessionValidationData:(id)arg1;
 - (void)setSpeechId:(id)arg1;
 - (id)speechId;

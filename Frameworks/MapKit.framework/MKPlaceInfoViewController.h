@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceInfoViewControllerDelegate>, ABCardGroup, MKMapItem, MKYelpDeal, NSArray, NSAttributedString, NSString, UIImage, _MKPlaceViewController;
+@class <MKPlaceInfoViewControllerDelegate>, ABCardGroup, MKMapItem, MKYelpDeal, NSArray, NSAttributedString, NSString, UIImage, _MKPlaceInfoViewControllerRouter, _MKPlaceViewController;
 
 @interface MKPlaceInfoViewController : ABContactViewController <ABContactViewControllerDelegate, MKStackingViewControllerPreferredSizeUse, MKPlaceAttributionCellProvider> {
+    _MKPlaceInfoViewControllerRouter *_actionsProxy;
     ABCardGroup *_businessInfoGroup;
     NSArray *_businessInfoOrder;
     MKYelpDeal *_deal;
@@ -17,6 +18,7 @@
     bool_showAttribution;
 }
 
+@property(retain) _MKPlaceInfoViewControllerRouter * actionsProxy;
 @property(retain) NSArray * businessInfoOrder;
 @property(retain) MKYelpDeal * deal;
 @property(copy,readonly) NSString * debugDescription;
@@ -42,6 +44,7 @@
 - (void)_setupBusinessInfo;
 - (void)_showDeal;
 - (void)_updatePreferredContentSize;
+- (id)actionsProxy;
 - (id)businessInfoOrder;
 - (id)contactHeaderView;
 - (id)contactView:(id)arg1 cellForItemAtIndex:(long long)arg2 inGroup:(id)arg3;
@@ -56,6 +59,7 @@
 - (id)mapItem;
 - (id)owner;
 - (bool)requiresPreferredContentSizeInStackingView;
+- (void)setActionsProxy:(id)arg1;
 - (void)setBusinessInfoOrder:(id)arg1;
 - (void)setDeal:(id)arg1;
 - (void)setInfoDelegate:(id)arg1;

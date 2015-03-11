@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@class NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface VTPhraseSpotter : NSObject {
     NSObject<OS_dispatch_queue> *_assetChangedQueue;
@@ -11,26 +15,31 @@
     NSString *_configLocale;
     NSString *_configPath;
     NSString *_configVersion;
-    unsigned long long _earlyDetectResetAtSampleCount;
+    int _earlyDetectResetTimer;
     double _earlyDetectTime;
     double _hardwareSampleRate;
+    int _hasTriggeredNotifyToken;
     int _heartbeatCounter;
     int _languageCodeChangedNotificationToken;
     NSObject<OS_dispatch_source> *_languageCodeChangedSource;
-    unsigned long long _lastEventEnd;
+    unsigned int _lastEventEnd;
     double _lastScore;
     NSString *_locale;
-    unsigned long long _loggingPreDelay;
+    int _loggingPreDelayTimer;
     NSObject<OS_dispatch_queue> *_loggingQueue;
-    unsigned long long _loggingResetTimeout;
+    int _loggingResetTimer;
     void *_ndetect;
     NSObject<OS_dispatch_queue> *_ndetectQueue;
-    unsigned long long _sampleCountAtFirstChance;
-    unsigned long long _samplecount;
-    unsigned long long _samplecountAtLastTriggerEnd;
-    unsigned long long _samplecountAtLastTriggerStart;
+    NSMutableArray *_nonceTriggerEvents;
+    int _nonceTriggerNotificationToken;
+    id _readyCompletion;
+    NSString *_resourcePath;
+    unsigned int _sampleCountAtFirstChance;
+    unsigned int _samplecount;
+    unsigned int _samplecountAtLastTriggerEnd;
+    unsigned int _samplecountAtLastTriggerStart;
     unsigned long long _samplerate;
-    unsigned long long _secondChanceResetAtSampleCount;
+    int _secondChanceResetTimer;
     int _siriLastUseUpdatedNotificationToken;
     long long _suggestedThreshold;
     int _suggestedThresholdChangedNotificationToken;
@@ -41,10 +50,13 @@
     double _thresholdSecondChance;
     double _thresholdSiriUp;
     NSArray *_triggerPhrases;
+    double _triggerThreshold;
     bool_audioLoggingEnabled;
     bool_inactivityTimerSet;
     bool_isInactiveUser;
+    bool_phraseSpotterEnabled;
     bool_pretriggered;
+    bool_registeredForPhraseSpotterNotification;
 }
 
 @property(readonly) double lastScore;
@@ -56,8 +68,8 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (id)_analyzeEvents:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; boolx5; }*)arg1;
-- (id)_analyzeMakeResult:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; boolx5; }*)arg1 isNearMiss:(bool)arg2 isSecondChance:(bool)arg3 effectiveThreshold:(double)arg4;
+- (id)_analyzeEvents:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; boolx5; }*)arg1 shouldFireNonce:(bool)arg2 isTrigger:(bool*)arg3;
+- (id)_analyzeMakeResult:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; boolx5; }*)arg1 isNearMiss:(bool)arg2 isSecondChance:(bool)arg3 effectiveThreshold:(double)arg4 isNonce:(bool)arg5;
 - (void)_analyzeReset;
 - (void)_assetsAvailable:(id)arg1;
 - (id)_capturePath:(bool)arg1;
@@ -65,12 +77,20 @@
 - (void)_commonInit;
 - (bool)_configureWithConfig:(id)arg1 resourcePath:(id)arg2 triggerThreshold:(double)arg3;
 - (bool)_configureWithDefaults;
-- (void)_handleAssetChange:(double)arg1 onlyIfLocaleChanged:(bool)arg2;
+- (void)_handleAssetChange;
+- (void)_initSingleton;
 - (void)_listenForLanguageCodeUpdates;
+- (void)_listenForNonceTrigger;
 - (void)_listenForSuggestedThreshold;
 - (void)_logMetaData:(id)arg1;
+- (void)_performReadyCompletion;
+- (void)_phraseSpotterEnabledDidChange;
+- (void)_resetCounters;
+- (void)_safeConfigureWithNdetect:(void*)arg1 path:(id)arg2 data:(id)arg3 resourcePath:(id)arg4 threshold:(double)arg5;
+- (void)_safeReconfig;
 - (double)_thresholdFromNdetect:(void*)arg1 withName:(const char *)arg2 defaultTo:(double)arg3;
 - (void)_unlistenForLanguageCodeUpdates;
+- (void)_unlistenForNonceTrigger;
 - (void)_unlistenForSuggestedThreshold;
 - (void)_updateLocale;
 - (void)_updateSuggestedThreshold;
@@ -78,6 +98,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithConfig:(id)arg1 resourcePath:(id)arg2 triggerThreshold:(double)arg3;
+- (id)initWithHardwareSampleRate:(double)arg1 readyCompletion:(id)arg2;
 - (id)initWithHardwareSampleRate:(double)arg1;
 - (double)lastScore;
 - (unsigned long long)sampleCount;

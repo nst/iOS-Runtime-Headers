@@ -68,7 +68,7 @@
 - (void)_onqueue_cancel_with_error:(id)arg1;
 - (void)_onqueue_completeInitialization;
 - (void)_onqueue_conditionalRequirementsChanged:(bool)arg1;
-- (void)_onqueue_connectionWaiting;
+- (void)_onqueue_connectionWaitingWithReason:(long long)arg1;
 - (void)_onqueue_didFinishWithError:(id)arg1;
 - (void)_onqueue_didReceiveChallenge:(id)arg1 request:(id)arg2 withCompletion:(id)arg3;
 - (void)_onqueue_didReceiveDispatchData:(id)arg1 completion:(id)arg2;
@@ -99,9 +99,9 @@
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2 completion:(id)arg3;
 - (void)connection:(id)arg1 request:(id)arg2 needsNewBodyStreamCallback:(id)arg3;
 - (void)connection:(id)arg1 sentBodyBytes:(id)arg2 totalBytes:(id)arg3 expectedBytes:(id)arg4;
+- (void)connection:(id)arg1 waitingWithReason:(long long)arg2;
 - (void)connection:(id)arg1 wasRedirected:(id)arg2 newRequest:(id)arg3 responseCallback:(id)arg4;
 - (void)connection:(id)arg1 willCacheResponse:(id)arg2 responseCallback:(id)arg3;
-- (void)connectionWaiting:(id)arg1;
 - (void)connectionWillFinishLoading:(id)arg1;
 - (id)dataTaskCompletion;
 - (id)dataTaskData;

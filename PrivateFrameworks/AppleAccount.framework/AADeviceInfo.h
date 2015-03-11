@@ -34,6 +34,7 @@
 - (bool)hasCellularCapability;
 - (id)internationalMobileEquipmentIdentity;
 - (id)mobileEquipmentIdentifier;
+- (id)modelNumber;
 - (id)osName;
 - (id)osVersion;
 - (id)productType;

@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSString;
+@class NSDate, NSString;
 
 @interface Exchange : NSObject {
     double _lastUpdateTime;
     NSString *_name;
+    NSDate *_nextOpenDate;
     long long _status;
     double _streamInterval;
 }
 
 @property(readonly) double lastUpdateTime;
 @property(copy) NSString * name;
+@property(retain) NSDate * nextOpenDate;
 @property long long status;
 @property double streamInterval;
 
@@ -30,7 +32,9 @@
 - (bool)marketIsAfterHours;
 - (bool)marketIsOpen;
 - (id)name;
+- (id)nextOpenDate;
 - (void)setName:(id)arg1;
+- (void)setNextOpenDate:(id)arg1;
 - (void)setStatus:(long long)arg1;
 - (void)setStreamInterval:(double)arg1;
 - (long long)status;

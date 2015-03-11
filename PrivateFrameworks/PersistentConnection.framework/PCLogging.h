@@ -10,6 +10,7 @@
 + (id)_facilityForIdentifier:(id)arg1;
 + (id)_fileNameForIdentifier:(id)arg1;
 + (id)_formatBlock;
++ (void)_printLoggingConfig;
 + (void)enableConsoleLoggingForLevel:(int)arg1;
 + (void)enableFileLogging:(bool)arg1;
 + (void)enableLoggingForCustomHandler:(id)arg1;

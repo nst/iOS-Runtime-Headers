@@ -5,7 +5,7 @@
 @interface VKAttributesTileSource : VKVectorTileSource {
 }
 
-- (id)initWithTileSet:(id)arg1 tileGroupIdentifier:(unsigned int)arg2 locale:(id)arg3;
+- (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3;
 - (unsigned int)maximumDownloadZoomLevel;
 - (bool)maximumZoomLevelBoundsCamera;
 - (unsigned int)minimumDownloadZoomLevel;

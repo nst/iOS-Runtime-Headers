@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKMediaObject, UIImageView, UILabel;
+@class CKMediaObject, NSString, UIImageView, UILabel;
 
-@interface CKContactBalloonView : CKColoredBalloonView {
+@interface CKContactBalloonView : CKColoredBalloonView <CKContactBalloonViewProtocol> {
     UIImageView *_chevron;
     UIImageView *_contactImageView;
     CKMediaObject *_mediaObject;
@@ -14,9 +14,13 @@
 
 @property(retain) UIImageView * chevron;
 @property(retain) UIImageView * contactImageView;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) CKMediaObject * mediaObject;
 @property(retain) UILabel * nameLabel;
 @property(retain) UILabel * organizationLabel;
+@property(readonly) Class superclass;
 
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (id)chevron;

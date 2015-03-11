@@ -737,7 +737,7 @@
 - (void)_stillDuringVideoPressed:(id)arg1;
 - (id)_stillImageCaptureRequestWithCurrentSettings;
 - (void)_stopCapturingPanorama;
-- (void)_stopDelayedCapture;
+- (void)_stopDelayedCapture:(bool)arg1;
 - (void)_stopTimelapse;
 - (bool)_stopVideoCaptureWhenRecordingStarts;
 - (bool)_supportsPreviewingAfterCapture;
@@ -835,6 +835,7 @@
 - (void)cameraController:(id)arg1 didFinishTransitionToShowEffectsGrid:(bool)arg2;
 - (void)cameraController:(id)arg1 didStartTransitionToShowEffectsGrid:(bool)arg2 animated:(bool)arg3;
 - (void)cameraController:(id)arg1 faceMetadataDidChange:(id)arg2;
+- (void)cameraController:(id)arg1 remoteFocusTapped:(struct CGPoint { double x1; double x2; })arg2;
 - (void)cameraController:(id)arg1 videoZoomFactorDidChange:(double)arg2;
 - (void)cameraController:(id)arg1 willChangeToMode:(long long)arg2 device:(long long)arg3;
 - (void)cameraController:(id)arg1 willResetFocus:(bool)arg2 exposure:(bool)arg3;
@@ -852,6 +853,11 @@
 - (void)cameraControllerFocusDidStart:(id)arg1;
 - (void)cameraControllerModeDidChange:(id)arg1;
 - (void)cameraControllerPreviewDidStart:(id)arg1;
+- (void)cameraControllerRemoteShutterCanceled:(id)arg1;
+- (void)cameraControllerRemoteShutterNeedsReadiness:(id)arg1;
+- (void)cameraControllerRemoteShutterPressed:(id)arg1 countdown:(unsigned long long)arg2;
+- (void)cameraControllerRemoteShutterStartVideoCapture:(id)arg1;
+- (void)cameraControllerRemoteShutterStopVideoCapture:(id)arg1;
 - (void)cameraControllerServerError:(id)arg1;
 - (void)cameraControllerSessionDidStart:(id)arg1;
 - (void)cameraControllerSessionDidStop:(id)arg1;

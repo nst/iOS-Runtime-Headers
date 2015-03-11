@@ -24,14 +24,21 @@
 - (bool)dontSynchronizePreferences;
 - (id)init;
 - (bool)isInternalInstall;
+- (bool)isKeyLockedDown:(int)arg1;
+- (void)managedKeyboardSettingDidChange:(id)arg1;
 - (struct { id x1; id x2; int x3; id x4; id x5; int x6; }*)preferences;
 - (void)preferencesChangedCallback:(id)arg1;
 - (void)releaseDontSynchronizePreferences;
+- (void)setAutocorrectionEnabled:(bool)arg1;
+- (void)setCheckSpellingEnabled:(bool)arg1;
 - (void)setDontSynchronizePreferences:(bool)arg1;
 - (void)setIsInternalInstall:(bool)arg1;
+- (void)setPredictionEnabled:(bool)arg1;
 - (void)setValue:(id)arg1 forKey:(int)arg2;
+- (void)setValue:(id)arg1 forManagedKey:(int)arg2;
 - (void)synchronizePreferences;
 - (void)touchSynchronizePreferencesTimer;
 - (id)valueForKey:(int)arg1;
+- (id)valueForManagedKey:(int)arg1;
 
 @end

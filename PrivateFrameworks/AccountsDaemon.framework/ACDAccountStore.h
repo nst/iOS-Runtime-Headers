@@ -127,12 +127,13 @@
 - (id)remoteDeviceProxy;
 - (void)removeAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id)arg3;
 - (void)removeAccountType:(id)arg1 withHandler:(id)arg2;
+- (void)removeAccountsFromPairedDeviceWithCompletion:(id)arg1;
 - (void)renewCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id)arg3;
 - (void)requestAccessForAccountTypeWithIdentifier:(id)arg1 options:(id)arg2 withHandler:(id)arg3;
 - (void)saveAccount:(id)arg1 pid:(id)arg2 verify:(bool)arg3 dataclassActions:(id)arg4 completion:(id)arg5;
+- (void)saveAccount:(id)arg1 toPairedDeviceWithOptions:(id)arg2 completion:(id)arg3;
 - (void)saveAccount:(id)arg1 verify:(bool)arg2 dataclassActions:(id)arg3 completion:(id)arg4;
 - (void)saveAccount:(id)arg1 withHandler:(id)arg2;
-- (void)sendRenewCredentialsForAccount:(id)arg1;
 - (void)setAccessPluginManager:(id)arg1;
 - (void)setAuthenticationDialogManager:(id)arg1;
 - (void)setAuthenticationPluginManager:(id)arg1;
@@ -151,7 +152,7 @@
 - (void)typeIdentifierForDomain:(id)arg1 withHandler:(id)arg2;
 - (void)updateAccountNoSave:(id)arg1 error:(id*)arg2;
 - (void)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1 withHandler:(id)arg2;
-- (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(bool)arg2 withHandler:(id)arg3;
+- (void)verifyCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id)arg3;
 - (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
 
 @end

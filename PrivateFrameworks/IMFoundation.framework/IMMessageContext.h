@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class IMLocalObject, NSObject<OS_xpc_object>;
+@class IMLocalObject, NSObject<OS_voucher>, NSObject<OS_xpc_object>;
 
 @interface IMMessageContext : NSObject {
     id _context;
     IMLocalObject *_localObject;
+    NSObject<OS_voucher> *_voucher;
     NSObject<OS_xpc_object> *_xpcMessage;
     bool_boost;
 }

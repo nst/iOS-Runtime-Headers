@@ -26,6 +26,7 @@
 
 - (void)_invalidate;
 - (id)addDataProvider:(id)arg1;
+- (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3 unversalSectionID:(id)arg4;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3;
 - (id)bundleID;
 - (void)dealloc;

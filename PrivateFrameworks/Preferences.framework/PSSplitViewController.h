@@ -12,6 +12,7 @@
 @property(retain) PSRootController * containerNavigationController;
 @property <PSSplitViewControllerNavigationDelegate> * navigationDelegate;
 
+- (id)childViewControllerForStatusBarStyle;
 - (id)containerNavigationController;
 - (void)dealloc;
 - (id)navigationDelegate;

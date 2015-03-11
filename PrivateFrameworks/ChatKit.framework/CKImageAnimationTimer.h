@@ -25,5 +25,6 @@
 - (void)removeAnimationTimerObserver:(id)arg1;
 - (void)setDisplayLink:(id)arg1;
 - (void)setObservers:(id)arg1;
+- (void)updateDisplayLink;
 
 @end

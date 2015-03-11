@@ -28,6 +28,7 @@
     id _triggerUpdater;
     unsigned long long _unlockAttemptCount;
     id _unlockCompletion;
+    bool_backdropViewVisible;
     bool_carDisplaySnippetVisible;
     bool_disabled;
     bool_statusViewHidden;

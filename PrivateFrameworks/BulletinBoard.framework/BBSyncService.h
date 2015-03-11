@@ -29,10 +29,13 @@
 - (void)_deferredTimerFired:(id)arg1;
 - (void)_deviceLocked;
 - (id)_dismissalDictionaryForBulletin:(id)arg1;
+- (bool)_hasDestination;
 - (void)_reallyEnqueueBulletin:(id)arg1 feeds:(unsigned long long)arg2;
 - (void)_sendDeferredDismissals;
 - (void)_sendSyncMessage:(id)arg1;
 - (id)_syncAccount;
+- (bool)_syncHasDefaultPairedDevice;
+- (id)_syncLocalDevices;
 - (void)dealloc;
 - (id)delegate;
 - (id)dismissalSectionIdentifierForIncomingMessage:(id)arg1;

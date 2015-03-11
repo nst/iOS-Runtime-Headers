@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingOpenSettingsApp : SASettingOpenSettings {
+@class NSString;
+
+@interface SASettingOpenSettingsApp : SASettingOpenSettings <SASettingSettingsAction> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)openSettingsApp;
 + (id)openSettingsAppWithDictionary:(id)arg1 context:(id)arg2;

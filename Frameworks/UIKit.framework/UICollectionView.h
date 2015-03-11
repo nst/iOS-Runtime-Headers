@@ -160,7 +160,10 @@
 - (long long)MPU_globalRowForRowAtIndexPath:(id)arg1;
 - (struct CGSize { double x1; double x2; })__ck_contentSize;
 - (id)__ck_indexPathForLastItem;
+- (bool)__ck_isScrolledToBottomHidingIndexPath:(id)arg1;
 - (void)__ck_reloadDataKeepingSelection;
+- (struct CGPoint { double x1; double x2; })__ck_scrollToBottomContentOffsetHidingIndexPath:(id)arg1;
+- (void)__ck_scrollToTopOfCellAtIndexPath:(id)arg1 hidingCellAtIndexPath:(id)arg2 animated:(bool)arg3;
 - (void)_addControlledSubview:(id)arg1 atZIndex:(long long)arg2;
 - (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2 andSet:(id)arg3;
 - (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2;

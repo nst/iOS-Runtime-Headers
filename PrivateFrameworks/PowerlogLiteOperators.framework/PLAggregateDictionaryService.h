@@ -5,11 +5,17 @@
 @class NSMutableArray, PLNSTimerOperatorComposition;
 
 @interface PLAggregateDictionaryService : PLService {
+    struct AggState { 
+        int state; 
+        double level; 
+        double timestamp; 
     PLNSTimerOperatorComposition *_dailyTaskTimer;
+    } _last_state;
     NSMutableArray *_registeredNotifications;
 }
 
 @property(retain) PLNSTimerOperatorComposition * dailyTaskTimer;
+@property struct AggState { int x1; double x2; double x3; } last_state;
 @property(retain) NSMutableArray * registeredNotifications;
 
 + (void)load;
@@ -21,6 +27,7 @@
 - (void)dailyTasks;
 - (id)init;
 - (void)initOperatorDependancies;
+- (struct AggState { int x1; double x2; double x3; })last_state;
 - (void)logAggregateUIKitActivityKey:(id)arg1 withInfo:(id)arg2 AggDKey:(id)arg3;
 - (void)logAggregateUIKitKeyboardActivityKey:(id)arg1 withInfo:(id)arg2 AggDKey:(id)arg3;
 - (void)logDuration:(double)arg1 asDistribution:(id)arg2;
@@ -42,6 +49,8 @@
 - (void)registerForVideoNotifications;
 - (id)registeredNotifications;
 - (void)setDailyTaskTimer:(id)arg1;
+- (void)setLast_state:(struct AggState { int x1; double x2; double x3; })arg1;
 - (void)setRegisteredNotifications:(id)arg1;
+- (void)updateAggregateStateWithEntry:(id)arg1;
 
 @end

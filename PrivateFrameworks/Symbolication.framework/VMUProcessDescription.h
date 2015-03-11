@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSArray, NSDate, NSDictionary, NSMutableArray, NSString;
+@class NSArray, NSDate, NSDictionary, NSMutableArray, NSString, _VMULibraryLoadObserver;
 
-@interface VMUProcessDescription : NSObject {
-    struct _CSTypeRef { 
-        unsigned long long _opaque_1; 
-        unsigned long long _opaque_2; 
+@interface VMUProcessDescription : NSObject <VMULibraryLoadDelegate> {
     NSDictionary *_binaryImageHints;
     NSMutableArray *_binaryImages;
     NSDictionary *_buildVersionDictionary;
@@ -15,7 +12,9 @@
     NSDate *_date;
     unsigned long long _executableLoadAddress;
     NSString *_executablePath;
+    _VMULibraryLoadObserver *_loadUnloadObserver;
     NSDictionary *_lsApplicationInformation;
+    struct mapped_memory_t { } *_mappedMemory;
     NSDictionary *_osVersionDictionary;
     NSString *_parentExecutablePath;
     NSString *_parentProcessName;
@@ -23,7 +22,6 @@
     int _ppid;
     NSString *_processName;
     NSArray *_sortedBinaryImages;
-    } _symbolicator;
     unsigned int _task;
     NSArray *_unreadableBinaryImagePaths;
     bool_binaryImagePostProcessingComplete;
@@ -32,6 +30,11 @@
     bool_processNameNeedsCorrection;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (id)parseBinaryImagesDescription:(id)arg1;
 
 - (id)_binaryImagesDescriptionForRanges:(id)arg1;
@@ -39,12 +42,9 @@
 - (id)_buildVersionDictionary;
 - (id)_bundleLock;
 - (id)_cpuTypeDescription;
-- (void)_extractBinaryImageInfoFromSymbolOwner:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1;
-- (double)_extractDyldInfoFromSymbolOwner:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1 withMemory:(struct mapped_memory_t { }*)arg2;
-- (id)_extractInfoPlistFromSymbolOwner:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1 withMemory:(struct mapped_memory_t { }*)arg2;
+- (void)_libraryLoaded:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)_osVersionDictionary;
 - (id)_rangesOfBinaryImages:(id)arg1 forBacktraces:(id)arg2;
-- (id)_readDataFromMemory:(struct mapped_memory_t { }*)arg1 atAddress:(unsigned long long)arg2 size:(unsigned long long)arg3;
 - (id)_sanitizeVersion:(id)arg1;
 - (id)_systemVersionDescription;
 - (id)binaryImageDictionaryForAddress:(unsigned long long)arg1;
@@ -60,6 +60,7 @@
 - (id)description;
 - (id)displayName;
 - (id)executablePath;
+- (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2 getBinariesList:(bool)arg3;
 - (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2;
 - (bool)isAppleApplication;
 - (id)parentProcessName;

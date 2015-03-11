@@ -14,6 +14,7 @@
 @property(copy) NSNumber * favoriteFacetimeAudio;
 @property(readonly) unsigned long long hash;
 @property(copy) NSString * label;
+@property(copy) NSNumber * pseudo;
 @property(readonly) Class superclass;
 
 + (id)email;
@@ -25,9 +26,11 @@
 - (id)favoriteFacetimeAudio;
 - (id)groupIdentifier;
 - (id)label;
+- (id)pseudo;
 - (void)setEmailAddress:(id)arg1;
 - (void)setFavoriteFacetime:(id)arg1;
 - (void)setFavoriteFacetimeAudio:(id)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setPseudo:(id)arg1;
 
 @end

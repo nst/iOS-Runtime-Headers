@@ -6,31 +6,51 @@
    See Warning(s) below.
  */
 
-@class CacheDeleteListener, NSString, NSXPCListenerEndpoint;
+@class NSMutableArray, NSString, NSXPCListenerEndpoint;
 
-@interface CacheDeleteServiceListener : NSObject <NSXPCListenerDelegate, CacheDeleteServiceProtocol> {
+@interface CacheDeleteServiceListener : CacheDeleteListener <NSXPCListenerDelegate, CacheDeleteServiceProtocol> {
     id _cancel;
     NSXPCListenerEndpoint *_endpoint;
-    CacheDeleteListener *_listener;
-    NSString *_name;
+    id _notify;
+    NSMutableArray *_pendingReplies;
     id _periodic;
     id _purge;
     id _purgeable;
 }
 
+@property(copy) id cancel;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSXPCListenerEndpoint * endpoint;
 @property(readonly) unsigned long long hash;
+@property(copy) id notify;
+@property(retain) NSMutableArray * pendingReplies;
+@property(copy) id periodic;
+@property(copy) id purge;
+@property(copy) id purgeable;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)cancel;
 - (id)endpoint;
-- (id)initWithName:(id)arg1 info:(id)arg2 purgeableBlock:(id)arg3 purgeBlock:(id)arg4 purgeCancelBlock:(id)arg5 periodicBlock:(id)arg6;
-- (void)serviceCancelPurge;
+- (id)initWithName:(id)arg1 anonymous:(bool)arg2;
+- (id)notify;
+- (id)pendingReplies;
+- (id)periodic;
+- (id)purge;
+- (id)purgeable;
+- (void)serviceCancelPurge:(id)arg1;
+- (void)serviceNotify:(id)arg1 replyBlock:(id)arg2;
 - (void)servicePeriodic:(int)arg1 info:(id)arg2 replyBlock:(id)arg3;
 - (void)servicePing:(id)arg1;
 - (void)servicePurge:(int)arg1 info:(id)arg2 replyBlock:(id)arg3;
 - (void)servicePurgeable:(int)arg1 info:(id)arg2 replyBlock:(id)arg3;
+- (void)setCancel:(id)arg1;
+- (void)setNotify:(id)arg1;
+- (void)setNotifyCallback:(id)arg1;
+- (void)setPendingReplies:(id)arg1;
+- (void)setPeriodic:(id)arg1;
+- (void)setPurge:(id)arg1;
+- (void)setPurgeable:(id)arg1;
 
 @end

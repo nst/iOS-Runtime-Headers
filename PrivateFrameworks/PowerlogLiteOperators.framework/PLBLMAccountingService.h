@@ -16,6 +16,7 @@
     double _lastSafeTimeForSnapping;
     PLNSTimerOperatorComposition *_lteSleepStatsQueryTimer;
     NSMutableDictionary *_postAccoutingQueries;
+    NSMutableDictionary *_postpostAccoutingQueries;
     PLEntryNotificationOperatorComposition *_processmonitorCallback;
     PLEntryNotificationOperatorComposition *_processnetworkCallback;
     NSMutableDictionary *_queries;
@@ -37,6 +38,7 @@
 @property double lastSafeTimeForSnapping;
 @property(retain) PLNSTimerOperatorComposition * lteSleepStatsQueryTimer;
 @property(retain) NSMutableDictionary * postAccoutingQueries;
+@property(retain) NSMutableDictionary * postpostAccoutingQueries;
 @property(retain) PLEntryNotificationOperatorComposition * processmonitorCallback;
 @property(retain) PLEntryNotificationOperatorComposition * processnetworkCallback;
 @property(retain) NSMutableDictionary * queries;
@@ -52,12 +54,17 @@
 + (id)GPSRailsForCurrentDevice;
 + (id)aggregateNameAppEnergyBreakdown;
 + (id)aggregatedData;
++ (id)appNameForNetworkingExtension:(id)arg1;
 + (id)daemonsAccounted;
 + (id)defaults;
 + (id)entryAggregateDefinitions;
 + (id)entryEventNoneDefinitionLogging;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventNoneQueryTime;
++ (id)gizmoDaemonTransformation;
++ (id)gizmoExtensions;
++ (id)gizmoIDSTopicTransformation;
++ (bool)isWatchExtensionForNetworking:(id)arg1;
 + (void)load;
 + (id)railDefinitions;
 
@@ -84,6 +91,7 @@
 - (double)lastSafeTimeForSnapping;
 - (id)lteSleepStatsQueryTimer;
 - (id)postAccoutingQueries;
+- (id)postpostAccoutingQueries;
 - (id)processmonitorCallback;
 - (id)processnetworkCallback;
 - (id)queries;
@@ -95,6 +103,7 @@
 - (void)registerForTelephonyActivityNotifications;
 - (id)registeredNotifications;
 - (void)runPostAccountingQueriesForQuery:(id)arg1 withAccountedBuckets:(id)arg2;
+- (void)runPostPostAccountingQueriesForQueryID:(id)arg1 withAccountedBuckets:(id)arg2;
 - (void)runQueries:(id)arg1;
 - (id)runQueryTimer;
 - (void)setAPSOCBasePower:(id)arg1;
@@ -107,6 +116,7 @@
 - (void)setLastSafeTimeForSnapping:(double)arg1;
 - (void)setLteSleepStatsQueryTimer:(id)arg1;
 - (void)setPostAccoutingQueries:(id)arg1;
+- (void)setPostpostAccoutingQueries:(id)arg1;
 - (void)setProcessmonitorCallback:(id)arg1;
 - (void)setProcessnetworkCallback:(id)arg1;
 - (void)setQueries:(id)arg1;

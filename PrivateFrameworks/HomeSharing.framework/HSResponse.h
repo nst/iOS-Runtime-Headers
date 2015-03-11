@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSData, NSDictionary, NSError, NSString;
+@class NSData, NSDictionary, NSError, NSString, NSURL;
 
 @interface HSResponse : NSObject {
     NSString *_MIMEType;
     NSError *_error;
     unsigned long long _responseCode;
     NSData *_responseData;
+    NSURL *_responseDataFileURL;
     NSDictionary *_responseHeaderFields;
 }
 
@@ -16,6 +17,7 @@
 @property(readonly) NSError * error;
 @property(readonly) unsigned long long responseCode;
 @property(readonly) NSData * responseData;
+@property(copy) NSURL * responseDataFileURL;
 @property(readonly) NSDictionary * responseHeaderFields;
 
 + (id)responseWithCode:(unsigned long long)arg1 headerFields:(id)arg2 data:(id)arg3 MIMEType:(id)arg4 error:(id)arg5;
@@ -28,6 +30,8 @@
 - (id)initWithCode:(unsigned long long)arg1 headerFields:(id)arg2 data:(id)arg3 MIMEType:(id)arg4 error:(id)arg5;
 - (unsigned long long)responseCode;
 - (id)responseData;
+- (id)responseDataFileURL;
 - (id)responseHeaderFields;
+- (void)setResponseDataFileURL:(id)arg1;
 
 @end

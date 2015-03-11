@@ -9,6 +9,7 @@
 + (void)_accessibilityInitializeRuntimeOverrides;
 + (void)_accessibilityLoadSubbundles:(id)arg1;
 + (void)_accessibilityReenabled;
++ (bool)_accessibilityServerStarted;
 + (void)_accessibilityStartServer;
 + (void)_accessibilityStopServer;
 + (id)_axBundleForBundle:(id)arg1;

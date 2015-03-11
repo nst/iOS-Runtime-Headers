@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class CLLocation, NSData, NSDate, NSString, NSURL;
+@class CLLocation, NSArray, NSData, NSDate, NSString, NSURL;
 
 @interface PHAsset : PHObject <_PLImageLoadingAsset> {
     long long _assetSource;
@@ -14,6 +14,7 @@
     NSString *_directory;
     double _duration;
     int _exifOrientation;
+    NSArray *_faceRegions;
     NSString *_filename;
     NSData *_locationData;
     unsigned long long _mediaSubtypes;
@@ -47,6 +48,7 @@
 @property(readonly) NSString * directory;
 @property(readonly) double duration;
 @property(readonly) int exifOrientation;
+@property(readonly) NSArray * faceRegions;
 @property(getter=isFavorite,readonly) bool favorite;
 @property(readonly) NSString * filename;
 @property(readonly) bool hasAdjustments;
@@ -131,6 +133,7 @@
 - (unsigned long long)effectiveThumbnailIndex;
 - (id)embeddedThumbnailProperties;
 - (int)exifOrientation;
+- (id)faceRegions;
 - (void)fetchKeywordsWithCompletionHandler:(id)arg1;
 - (void)fetchPropertySetsIfNeeded;
 - (id)fileURLForAdjustmentsDirectory;

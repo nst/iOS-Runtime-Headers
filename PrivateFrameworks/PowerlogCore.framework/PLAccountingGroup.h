@@ -12,11 +12,13 @@
     short _accountingGroupType;
     NSArray *_eventCacheResults;
     } _eventCacheTimeRange;
+    bool_closeAllAccountingEventsAtBoot;
     bool_eventCacheOn;
 }
 
 @property(retain,readonly) NSString * accountingGroupName;
 @property(readonly) short accountingGroupType;
+@property bool closeAllAccountingEventsAtBoot;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property bool eventCacheOn;
@@ -38,6 +40,7 @@
 - (void)batchAddAccountingEvents:(id)arg1;
 - (void)cacheEventsForTimeInterval:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 - (void)clearEventCache;
+- (bool)closeAllAccountingEventsAtBoot;
 - (void)closeAllOpenEventAtTime:(id)arg1 withForceClose:(bool)arg2;
 - (void)closeLastOpenEventAtTime:(id)arg1;
 - (bool)eventCacheOn;
@@ -48,9 +51,10 @@
 - (id)getLastOpenSnapshotForIdentifier:(id)arg1 forEntryKey:(id)arg2;
 - (id)getLastSnapshot;
 - (void)initOperatorDependancies;
-- (id)initWithName:(id)arg1 withAccountingGroupType:(short)arg2;
+- (id)initWithName:(id)arg1 withAccountingGroupType:(short)arg2 withCloseAllAccountingEventsAtBoot:(bool)arg3;
 - (void)logEventCacheStats:(id)arg1;
 - (double)safeTimeForAccounting;
+- (void)setCloseAllAccountingEventsAtBoot:(bool)arg1;
 - (void)setEventCacheOn:(bool)arg1;
 - (void)setEventCacheResults:(id)arg1;
 - (void)setEventCacheTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;

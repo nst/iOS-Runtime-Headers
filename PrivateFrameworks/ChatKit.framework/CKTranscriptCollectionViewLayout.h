@@ -28,6 +28,7 @@
     } _targetContentOffset;
     } _visibleBounds;
     bool_easingUp;
+    bool_hasLoadMore;
     bool_holdingBoundsInvalidation;
     bool_isResting;
     bool_shouldDisplayLinkInvalidateLayout;
@@ -38,6 +39,7 @@
 @property struct CGSize { double x1; double x2; } contentSize;
 @property(retain) CADisplayLink * displayLink;
 @property bool easingUp;
+@property bool hasLoadMore;
 @property(getter=isHoldingBoundsInvalidation) bool holdingBoundsInvalidation;
 @property bool isResting;
 @property(copy) NSArray * layoutAttributes;
@@ -58,6 +60,7 @@
 - (void)displayLinkFired:(id)arg1;
 - (bool)easingUp;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
+- (bool)hasLoadMore;
 - (id)init;
 - (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
 - (void)invalidateDisplayLink;
@@ -70,12 +73,14 @@
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (void)prepareLayout;
+- (void)prepareLayoutForRotisserieScrolling;
 - (double)prevTimestamp;
 - (void)reloadData;
 - (void)setAnchorYPosition:(double)arg1;
 - (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setDisplayLink:(id)arg1;
 - (void)setEasingUp:(bool)arg1;
+- (void)setHasLoadMore:(bool)arg1;
 - (void)setHoldingBoundsInvalidation:(bool)arg1;
 - (void)setIsResting:(bool)arg1;
 - (void)setLayoutAttributes:(id)arg1;

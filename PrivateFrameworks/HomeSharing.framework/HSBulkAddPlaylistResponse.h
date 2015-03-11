@@ -3,7 +3,7 @@
  */
 
 @interface HSBulkAddPlaylistResponse : HSResponse {
-    unsigned int containerID;
+    unsigned int _containerID;
 }
 
 @property unsigned int containerID;

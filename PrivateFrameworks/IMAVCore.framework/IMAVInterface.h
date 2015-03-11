@@ -100,5 +100,6 @@
 - (bool)systemSupportsFrontFacingCamera;
 - (void)unsetDelegate:(id)arg1;
 - (void)updateAVChat:(id)arg1 withCallMetadata:(id)arg2;
+- (void)updateInterruptionForChat:(id)arg1;
 
 @end

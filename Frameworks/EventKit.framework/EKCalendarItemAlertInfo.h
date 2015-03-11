@@ -5,6 +5,9 @@
 @class <EKTravelAdvice>, NSDate, NSString, NSTimeZone, NSURL;
 
 @interface EKCalendarItemAlertInfo : NSObject <NSCopying> {
+    struct { 
+        double latitude; 
+        double longitude; 
     NSURL *_action;
     NSString *_alarmID;
     NSString *_dismissalID;
@@ -14,14 +17,19 @@
     NSTimeZone *_eventTimeZone;
     NSString *_externalID;
     NSDate *_firstDateAlertedForTravelAdvice;
+    } _geoLocationCoordinates;
     NSDate *_lastFireTimeOfAlertOffsetFromTravelTime;
     <EKTravelAdvice> *_latestTravelAdvice;
     NSString *_location;
+    NSString *_organizerEmailAddress;
     long long _proximity;
     NSString *_publisherBulletinID;
+    NSString *_startLocationRouting;
     NSString *_title;
     bool_acknowledged;
     bool_allDay;
+    bool_hasGeoLocationCoordinates;
+    bool_hasOrganizerThatIsNotCurrentUser;
     bool_isOffsetFromTravelTimeStart;
     bool_tentative;
 }
@@ -37,13 +45,18 @@
 @property(readonly) NSTimeZone * eventTimeZone;
 @property(readonly) NSString * externalID;
 @property(retain) NSDate * firstDateAlertedForTravelAdvice;
+@property struct { double x1; double x2; } geoLocationCoordinates;
+@property bool hasGeoLocationCoordinates;
+@property bool hasOrganizerThatIsNotCurrentUser;
 @property(readonly) bool isOffsetFromTravelTimeStart;
 @property(retain) NSDate * lastFireTimeOfAlertOffsetFromTravelTime;
 @property(retain) <EKTravelAdvice> * latestTravelAdvice;
 @property(readonly) NSString * location;
+@property(retain) NSString * organizerEmailAddress;
 @property(readonly) long long proximity;
 @property(readonly) NSString * publisherBulletinID;
 @property(readonly) NSString * recordID;
+@property(retain) NSString * startLocationRouting;
 @property(readonly) bool tentative;
 @property(readonly) NSString * title;
 
@@ -61,6 +74,9 @@
 - (id)eventTimeZone;
 - (id)externalID;
 - (id)firstDateAlertedForTravelAdvice;
+- (struct { double x1; double x2; })geoLocationCoordinates;
+- (bool)hasGeoLocationCoordinates;
+- (bool)hasOrganizerThatIsNotCurrentUser;
 - (unsigned long long)hash;
 - (id)initWithTitle:(id)arg1 location:(id)arg2 date:(id)arg3 endDate:(id)arg4 timeZone:(id)arg5 allDay:(bool)arg6 tentative:(bool)arg7 publisherBulletinID:(id)arg8 entityID:(id)arg9 action:(id)arg10 proximity:(long long)arg11 externalID:(id)arg12 acknowledged:(bool)arg13 dismissalID:(id)arg14 alarmID:(id)arg15 isOffsetFromTravelTimeStart:(bool)arg16;
 - (bool)isEqual:(id)arg1;
@@ -68,12 +84,19 @@
 - (id)lastFireTimeOfAlertOffsetFromTravelTime;
 - (id)latestTravelAdvice;
 - (id)location;
+- (id)organizerEmailAddress;
 - (long long)proximity;
 - (id)publisherBulletinID;
 - (id)recordID;
 - (void)setFirstDateAlertedForTravelAdvice:(id)arg1;
+- (void)setGeoLocationCoordinates:(struct { double x1; double x2; })arg1;
+- (void)setHasGeoLocationCoordinates:(bool)arg1;
+- (void)setHasOrganizerThatIsNotCurrentUser:(bool)arg1;
 - (void)setLastFireTimeOfAlertOffsetFromTravelTime:(id)arg1;
 - (void)setLatestTravelAdvice:(id)arg1;
+- (void)setOrganizerEmailAddress:(id)arg1;
+- (void)setStartLocationRouting:(id)arg1;
+- (id)startLocationRouting;
 - (bool)tentative;
 - (id)title;
 

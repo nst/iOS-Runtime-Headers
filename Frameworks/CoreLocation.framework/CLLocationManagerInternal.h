@@ -40,6 +40,7 @@
     boolfPaused;
     boolfPersistentMonitoringEnabled;
     boolfPreviousAuthorizationStatusValid;
+    boolfRequestingLocation;
     boolfUpdatingHeading;
     boolfUpdatingLocation;
     boolfUpdatingVehicleHeading;
@@ -54,6 +55,9 @@
     int fHeadingOrientation;
     } fLocation;
     NSString *fLocationEventType;
+    double fLocationRequestAccuracy;
+    double fLocationRequestTimeout;
+    struct __CFRunLoopTimer { } *fLocationRequestTimer;
     int fPausesLocationUpdatesAutomatically;
     int fPreviousAuthorizationStatus;
     NSMutableSet *fRangedRegions;
@@ -62,6 +66,7 @@
 @property(readonly) NSMutableSet * rangedRegions;
 
 - (int)PausesLocationUpdatesAutomatically;
+- (void)cancelLocationRequest;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3;
 - (void)performCourtesyPromptIfNeeded;

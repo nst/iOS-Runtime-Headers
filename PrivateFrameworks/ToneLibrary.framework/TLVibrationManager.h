@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
  */
 
-@class NSDictionary, TLAccessQueue;
+@class NPSDomainAccessor, NSDictionary, TLAccessQueue;
 
 @interface TLVibrationManager : NSObject {
     TLAccessQueue *_accessQueue;
     NSDictionary *_cachedSystemVibrationPatterns;
     NSDictionary *_cachedUserGeneratedVibrationPatterns;
     unsigned long long _specialBehaviors;
+    NPSDomainAccessor *_transientNanoPreferencesDomainAccessor;
     bool_allowsAutoRefresh;
     bool_needsRefresh;
 }
@@ -19,6 +20,7 @@
 @property(setter=_setCachedUserGeneratedVibrationPatterns:,retain) NSDictionary * _cachedUserGeneratedVibrationPatterns;
 @property(setter=_setSpecialBehaviors:) unsigned long long _specialBehaviors;
 @property(readonly) NSDictionary * _systemVibrationPatterns;
+@property(setter=_setTransientNanoPreferencesDomainAccessor:,retain) NPSDomainAccessor * _transientNanoPreferencesDomainAccessor;
 @property(getter=_isUnitTestingModeEnabled,readonly) bool _unitTestingModeEnabled;
 @property(readonly) NSDictionary * _userGeneratedVibrationPatterns;
 @property bool allowsAutoRefresh;
@@ -28,7 +30,7 @@
 @property(readonly) bool shouldVibrateOnSilent;
 
 + (void)_handleVibrateOnRingOrSilentDidChangeNotification;
-+ (void)_handleVibrationPreferencesDidChangeNotification;
++ (void)_handleVibrationPreferencesDidChangeNotificationForPreferencesKinds:(unsigned long long)arg1 atInitiativeOfVibrationManager:(id)arg2;
 + (id)sharedVibrationManager;
 
 - (id)_accessQueue;
@@ -36,9 +38,13 @@
 - (bool)_booleanPreferenceForKey:(struct __CFString { }*)arg1 defaultValue:(bool)arg2;
 - (id)_cachedSystemVibrationPatterns;
 - (id)_cachedUserGeneratedVibrationPatterns;
-- (id)_copySystemWideVibrationPatternPreferenceKeyForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (id)_currentVibrationIdentifierForAlertType:(int)arg1 accountIdentifier:(id)arg2;
+- (int)_currentVibrationWatchAlertPolicyForAlertType:(int)arg1 accountIdentifier:(id)arg2 didFindPersistedWatchAlertPolicy:(bool*)arg3;
+- (int)_currentVibrationWatchAlertPolicyForAlertType:(int)arg1 accountIdentifier:(id)arg2;
+- (int)_currentVibrationWatchAlertPolicyForAlertType:(int)arg1;
+- (id)_currentVibrationWatchAlertPolicyPreferenceKeyForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (void)_didChangeUserGeneratedVibrationPatterns;
+- (void)_didSetVibrationPreferenceSuccessfullyWithKey:(id)arg1 inDomain:(id)arg2 usingPreferencesOfKind:(unsigned long long)arg3;
 - (void)_handleUserGeneratedVibrationsDidChangeNotification;
 - (id)_initWithSpecialBehaviors:(unsigned long long)arg1;
 - (bool)_isUnitTestingModeEnabled;
@@ -58,12 +64,17 @@
 - (void)_setAllowsAutoRefresh:(bool)arg1;
 - (void)_setCachedSystemVibrationPatterns:(id)arg1;
 - (void)_setCachedUserGeneratedVibrationPatterns:(id)arg1;
+- (void)_setCurrentVibrationWatchAlertPolicy:(int)arg1 forAlertType:(int)arg2 accountIdentifier:(id)arg3;
+- (void)_setCurrentVibrationWatchAlertPolicy:(int)arg1 forAlertType:(int)arg2;
 - (void)_setNeedsRefresh:(bool)arg1;
 - (void)_setSpecialBehaviors:(unsigned long long)arg1;
+- (void)_setTransientNanoPreferencesDomainAccessor:(id)arg1;
 - (bool)_setUserGeneratedVibrationPatternsUsingService:(id)arg1 error:(id*)arg2;
 - (unsigned long long)_specialBehaviors;
 - (unsigned long long)_storedSystemVibrationDataMigrationVersion;
 - (id)_systemVibrationPatterns;
+- (id)_systemWideVibrationPatternPreferenceKeyForAlertType:(int)arg1;
+- (id)_transientNanoPreferencesDomainAccessor;
 - (id)_userGeneratedVibrationPatterns;
 - (bool)_vibrationIsSettableForAlertType:(int)arg1;
 - (id)addUserGeneratedVibrationPattern:(id)arg1 name:(id)arg2 error:(id*)arg3;

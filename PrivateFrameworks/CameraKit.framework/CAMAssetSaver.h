@@ -39,6 +39,7 @@
 - (void)_setIsTakingPhoto:(bool)arg1;
 - (id)_transientStillImageResponses;
 - (void)batchSavePendingAssetJobs;
+- (void)batchSavePendingAssetJobsWithCompletion:(id)arg1;
 - (void)dropAllTransientResponses;
 - (id)enqueueTransientResponse:(id)arg1 requestEnqueuedBlock:(id)arg2 completionBlock:(id)arg3;
 - (id)init;

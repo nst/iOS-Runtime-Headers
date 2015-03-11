@@ -28,8 +28,12 @@
 @property(retain) UITraitCollection * preferredTraitCollection;
 @property(readonly) CUIMutableCatalog * runtimeCatalog;
 
++ (id)_assetManagerCache;
 + (void)_convertTraitCollection:(id)arg1 toCUIScale:(double*)arg2 CUIIdiom:(long long*)arg3 UIKitIdiom:(long long*)arg4 subtype:(long long*)arg5;
++ (void)_dropResourceReferencesForURL:(id)arg1;
++ (void)_saveAssetManager:(id)arg1 forBundle:(id)arg2 lock:(bool)arg3;
 + (long long)_userInterfaceIdiomForDeviceClass:(unsigned long long)arg1;
++ (double)_watchScreenScale;
 + (id)assetManagerForBundle:(id)arg1;
 + (id)createAssetNamed:(id)arg1 fromBundle:(id)arg2;
 + (id)sharedRuntimeAssetMap;
@@ -38,6 +42,9 @@
 - (id)_assetFromMapForName:(id)arg1;
 - (id)_catalog;
 - (void)_clearCachedResources:(id)arg1;
+- (void)_clearCachedResources;
+- (void)_disconnectImageAssets;
+- (id)_initWithName:(id)arg1 inBundle:(id)arg2 idiom:(long long)arg3 lock:(bool)arg4;
 - (void)_insertAssetIntoMap:(id)arg1 forName:(id)arg2;
 - (bool)_managingUIKitAssets;
 - (void)_removeAssetFromMap:(id)arg1;

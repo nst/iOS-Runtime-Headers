@@ -26,6 +26,7 @@
 
 - (void)_clearCompletionBlock;
 - (double)autoPlaybackPosition;
+- (id)backgroundColorOverride;
 - (void)dealloc;
 - (id)description;
 - (id)initWithContentController:(id)arg1 index:(long long)arg2;

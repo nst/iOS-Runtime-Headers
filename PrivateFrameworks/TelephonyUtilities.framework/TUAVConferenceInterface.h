@@ -2,29 +2,27 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class <TUAVConferenceInterfaceDelegate>, AVConference, NSMutableArray;
+@class AVConference, NSMutableArray;
 
 @interface TUAVConferenceInterface : NSObject <AVConferenceDelegate> {
     NSMutableArray *_activeConferenceConnections;
     long long _callID;
     AVConference *_conference;
-    <TUAVConferenceInterfaceDelegate> *_delegate;
     bool_hasActiveConference;
 }
 
 @property(retain) NSMutableArray * activeConferenceConnections;
 @property long long callID;
 @property(retain) AVConference * conference;
-@property <TUAVConferenceInterfaceDelegate> * delegate;
 @property bool hasActiveConference;
-@property(getter=isMuted) bool muted;
 
 + (id)sharedInstance;
 
 - (void)_cleanUpAllConferenceConnectionsWithError:(id)arg1;
 - (void)_cleanUpConference;
 - (void)_cleanUpConferenceConnection:(id)arg1 error:(id)arg2;
-- (id)_conferenceConnectionForCall:(id)arg1;
+- (id)_conferenceConnectionForIdentifier:(id)arg1;
+- (void)_endConference:(bool)arg1;
 - (void)_setUpDidStartTimeoutForConference:(id)arg1 conferenceConnection:(id)arg2;
 - (bool)_shouldIgnoreAVConferenceError:(id)arg1;
 - (void)_startAudioSession;
@@ -52,19 +50,18 @@
 - (void)conference:(id)arg1 withCallID:(long long)arg2 remoteMediaStalled:(bool)arg3;
 - (id)conference;
 - (void)dealloc;
-- (id)delegate;
 - (bool)hasActiveConference;
 - (id)init;
-- (bool)isMuted;
+- (bool)isMutedForIdentifier:(id)arg1;
+- (bool)isSendingAudioForIdentifier:(id)arg1;
 - (void)serverDiedForConference:(id)arg1;
 - (void)setActiveConferenceConnections:(id)arg1;
 - (void)setCallID:(long long)arg1;
 - (void)setConference:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setHasActiveConference:(bool)arg1;
-- (void)setMuted:(bool)arg1;
-- (void)startConferenceForCall:(id)arg1 withSocket:(int)arg2 didStartHandler:(id)arg3 didStopHandler:(id)arg4;
-- (void)stopConferenceForAllCalls;
-- (void)stopConferenceForCall:(id)arg1;
+- (void)setMuted:(bool)arg1 forIdentifier:(id)arg2;
+- (void)setSendingAudio:(bool)arg1 forIdentifier:(id)arg2;
+- (void)startConferenceForIdentifier:(id)arg1 withSocket:(int)arg2 asHost:(bool)arg3 didStartHandler:(id)arg4 didStopHandler:(id)arg5;
+- (void)stopConferenceForIdentifier:(id)arg1;
 
 @end

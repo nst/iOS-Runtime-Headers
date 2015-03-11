@@ -6,6 +6,7 @@
 
 @interface _IDSSession : NSObject <IDSDaemonListenerProtocol, IDSBaseSocketPairConnectionDelegate> {
     NSString *_accountID;
+    id _boostContext;
     CUTWeakReference *_delegate;
     id _delegateContext;
     NSSet *_destinations;
@@ -19,8 +20,10 @@
     IDSBaseSocketPairConnection *_unreliableSocketPairConnection;
     bool_isAudioEnabled;
     bool_isLegacy;
+    bool_isMuted;
 }
 
+@property(retain) id boostContext;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned long long hash;
@@ -38,6 +41,7 @@
 - (void)_setupUnreliableSocketPairConnection;
 - (void)acceptInvitation;
 - (void)acceptInvitationWithData:(id)arg1;
+- (id)boostContext;
 - (void)cancelInvitation;
 - (void)cancelInvitationWithData:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -48,6 +52,7 @@
 - (void)endSession;
 - (void)endSessionWithData:(id)arg1;
 - (bool)getAudioEnabled;
+- (bool)getMuted;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3 delegateContext:(id)arg4;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3 uniqueID:(id)arg4 delegateContext:(id)arg5;
 - (long long)inviteTimeout;
@@ -56,6 +61,7 @@
 - (void)sendInvitationWithOptions:(id)arg1;
 - (void)sendSessionMessage:(id)arg1;
 - (void)session:(id)arg1 audioEnabled:(bool)arg2;
+- (void)session:(id)arg1 muted:(bool)arg2;
 - (void)sessionAcceptReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
 - (void)sessionCancelReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
 - (void)sessionDeclineReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
@@ -65,8 +71,10 @@
 - (void)sessionMessageReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
 - (void)sessionStarted:(id)arg1;
 - (void)setAudioEnabled:(bool)arg1;
+- (void)setBoostContext:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setInviteTimeout:(long long)arg1;
+- (void)setMuted:(bool)arg1;
 - (int)socket;
 - (unsigned int)state;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;

@@ -7,6 +7,7 @@
 @interface FBApplicationProcess : FBProcess <BKSProcessDelegate, BSWatchdogDelegate> {
     NSMutableSet *_allowedLockedFilePaths;
     FBApplicationInfo *_applicationInfo;
+    int _beingDebugged;
     BKSProcess *_bksProcess;
     BKSProcessAssertion *_continuousProcessAssertion;
     FBProcessCPUStatistics *_cpuStatistics;
@@ -24,12 +25,10 @@
     BSMachSendRight *_taskPort;
     long long _terminationReason;
     FBApplicationWatchdog *_watchdog;
-    bool_beingDebugged;
     bool_bootstrapFailed;
     bool_bootstrapped;
     bool_connectedToExternalAccessory;
     bool_hasFinishedLaunching;
-    bool_isBeingDebugged;
     bool_nowPlayingWithAudio;
     bool_recordingAudio;
     bool_supportsBackgroundTaskAssertions;
@@ -92,8 +91,6 @@
 - (bool)_queue_hasFinishedLaunching;
 - (id)_queue_internalDebugEnvironmentVariables;
 - (void)_queue_invalidateBKSProcess;
-- (bool)_queue_isBeingDebugged;
-- (bool)_queue_isBeingPtraced;
 - (bool)_queue_isSystemApplication;
 - (void)_queue_killForReason:(long long)arg1 andReport:(bool)arg2 withDescription:(id)arg3 completion:(id)arg4;
 - (void)_queue_killWithSignal:(int)arg1;
@@ -107,7 +104,6 @@
 - (void)_queue_sceneLifecycleStateChanged:(id)arg1;
 - (void)_queue_sceneNeedsGracefulExit:(id)arg1 withExitCompletion:(id)arg2;
 - (void)_queue_setAllowedLockedFilePaths:(id)arg1;
-- (void)_queue_setBeingDebugged:(bool)arg1;
 - (void)_queue_setSupportsBackgroundTaskAssertions:(bool)arg1;
 - (void)_queue_setSupportsSuspendOnLock:(bool)arg1;
 - (void)_queue_setTaskPort:(id)arg1;
@@ -150,6 +146,7 @@
 - (void)process:(id)arg1 isBeingDebugged:(bool)arg2;
 - (void)process:(id)arg1 taskStateDidChange:(int)arg2;
 - (void)processWillExpire:(id)arg1;
+- (void)setBeingDebugged:(bool)arg1;
 - (void)setConnectedToExternalAccessory:(bool)arg1;
 - (void)setExecutionContext:(id)arg1;
 - (void)setNowPlayingWithAudio:(bool)arg1;

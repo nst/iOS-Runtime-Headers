@@ -26,6 +26,7 @@
 - (id)destinationID;
 - (void)disconnect;
 - (void)emergencyCallStatusChangedNotification:(id)arg1;
+- (int)faceTimeIDStatus;
 - (bool)hasSupport:(int)arg1;
 - (void)hold;
 - (id)initWithCall:(struct __CTCall { }*)arg1;
@@ -50,5 +51,6 @@
 - (double)startTime;
 - (int)supportedModelType;
 - (void)unhold;
+- (void)updateForDisconnection;
 
 @end

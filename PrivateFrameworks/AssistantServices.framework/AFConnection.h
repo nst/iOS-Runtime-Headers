@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class <AFAssistantUIService>, <AFSpeechDelegate>, NSArray, NSMutableDictionary, NSString, NSXPCConnection;
+@class <AFAssistantUIService>, <AFSpeechDelegate>, NSArray, NSError, NSMutableDictionary, NSObject<OS_dispatch_source>, NSString, NSXPCConnection;
 
 @interface AFConnection : NSObject {
     unsigned int _stateInSync : 1;
@@ -12,13 +12,15 @@
     unsigned int _clientStateIsInSync : 1;
     unsigned int _voiceOverIsActive : 1;
     unsigned int _audioSessionID;
-    float _averagePower;
     NSArray *_cachedBulletins;
     NSXPCConnection *_connection;
     <AFAssistantUIService> *_delegate;
+    NSError *_lastRetryError;
+    void *_levelsSharedMem;
+    NSObject<OS_dispatch_source> *_levelsTimer;
     NSString *_outstandingRequestClass;
-    float _peakPower;
     NSMutableDictionary *_replyHandlerForAceId;
+    unsigned long long _sharedMemSize;
     <AFSpeechDelegate> *_speechDelegate;
     bool_hasActiveRequest;
     bool_hasActiveTimeout;
@@ -43,6 +45,7 @@
 + (bool)userDataSyncNeeded;
 
 - (void).cxx_destruct;
+- (void)_aceConnectionWillRetryOnError:(id)arg1;
 - (void)_barrier;
 - (id)_cachedBulletins;
 - (void)_cancelRequestTimeout;
@@ -62,14 +65,17 @@
 - (void)_requestWillBeginWithRequestClass:(id)arg1 isSpeechRequest:(bool)arg2;
 - (void)_scheduleRequestTimeout;
 - (void)_setAudioSessionID:(unsigned int)arg1;
+- (void)_setLevelsWithSharedMem:(id)arg1;
 - (void)_setShouldSpeak:(bool)arg1;
-- (void)_speechRecordingDidUpdateAveragePower:(float)arg1 peakPower:(float)arg2;
+- (void)_stopLevelUpdates;
 - (void)_tellDelegateAudioSessionIDChanged:(unsigned int)arg1;
 - (void)_tellDelegateDidDetectMusic;
 - (void)_tellDelegateDidFinishAcousticIDRequestWithSuccess:(bool)arg1;
+- (void)_tellDelegateInvalidateCurrentUserActivity;
 - (void)_tellDelegateRequestFailed:(id)arg1 requestClass:(id)arg2;
 - (void)_tellDelegateRequestFinished;
 - (void)_tellDelegateRequestWillStart;
+- (void)_tellDelegateSetUserActivityInfo:(id)arg1 webpageURL:(id)arg2;
 - (void)_tellDelegateShouldSpeakChanged:(bool)arg1;
 - (void)_tellDelegateWillStartAcousticIDRequest;
 - (void)_tellSpeechDelegateRecognitionDidFail:(id)arg1;
@@ -109,6 +115,7 @@
 - (void)sendGenericAceCommand:(id)arg1;
 - (void)sendReplyCommand:(id)arg1;
 - (void)setAlertContextWithBulletins:(id)arg1;
+- (void)setApplicationContext:(id)arg1;
 - (void)setApplicationContextForApplicationInfos:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsStark:(bool)arg1;
@@ -121,6 +128,7 @@
 - (void)startAcousticIDRequestWithOptions:(id)arg1;
 - (void)startContinuationRequestWithUserInfo:(id)arg1;
 - (void)startDirectActionRequestWithString:(id)arg1;
+- (void)startRecordingForPendingSpeechRequestWithOptions:(id)arg1 completion:(id)arg2;
 - (void)startRequestWithCorrectedText:(id)arg1 forSpeechIdentifier:(id)arg2;
 - (void)startRequestWithText:(id)arg1;
 - (void)startSpeechPronunciationRequestWithOptions:(id)arg1 pronunciationContext:(id)arg2;

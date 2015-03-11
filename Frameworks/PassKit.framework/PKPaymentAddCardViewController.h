@@ -15,6 +15,8 @@
 @property(retain) NSArray * eligibleCards;
 @property(retain) PKPaymentWebService * webService;
 
+- (id)_contextSpecificStringForAggdKey:(id)arg1;
+- (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
 - (void)_pushCardDetailsViewControllerForCredential:(id)arg1;
 - (void)_pushCardList:(id)arg1;
 - (void)_pushManualCardDetailsViewController;

@@ -27,6 +27,12 @@
 - (bool)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
+- (id)mpuReporting_containerID;
+- (unsigned long long)mpuReporting_containerType;
+- (id)mpuReporting_externalID;
+- (unsigned long long)mpuReporting_itemType;
+- (id)mpuReporting_personalizedContainerID;
+- (bool)mpuReporting_shouldReportPlayEventsToStore;
 - (void)reevaluateType;
 - (void)setStation:(id)arg1;
 - (id)station;

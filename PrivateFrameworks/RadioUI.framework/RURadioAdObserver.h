@@ -2,37 +2,35 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class ISDialogOperation, MPAVController, MPURTCReportingController, MPUReportingController, NSDate, NSObject<OS_dispatch_queue>, NSString, RUJingleTiltReportingController;
+@class ISDialogOperation, MPAVController, MPUReportingPlaybackObserver, NSDate, NSObject<OS_dispatch_queue>, NSString, RUJingleTiltReportingController, RURTCReportingController;
 
 @interface RURadioAdObserver : NSObject <ADBannerViewDelegate, ISDialogOperationDelegate> {
-    MPURTCReportingController *_RTCReportingController;
+    RURTCReportingController *_RTCReportingController;
     NSObject<OS_dispatch_queue> *_accessQueue;
-    MPUReportingController *_globalReportingController;
     RUJingleTiltReportingController *_jingleTiltReportingController;
     long long _lastApplicationState;
     double _minDurationToCountAsPlayed;
     unsigned long long _numberOfSkippedTracks;
-    NSString *_playbackSessionID;
     MPAVController *_player;
     long long _policyEngineEnabledCount;
+    MPUReportingPlaybackObserver *_reportingPlaybackObserver;
     NSDate *_sapSessionLoadBeginDate;
     double _skipThreshold;
     ISDialogOperation *_slotAcquisitionDialogOperation;
-    double _startTimeForCurrentItem;
     long long _visualEngagementCount;
     bool_hasDirtyVisualEngagement;
     bool_isSlotAcquisitionInProgress;
     bool_visuallyEngaged;
 }
 
-@property(retain) MPURTCReportingController * RTCReportingController;
+@property(retain) RURTCReportingController * RTCReportingController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(retain) MPUReportingController * globalReportingController;
 @property(readonly) unsigned long long hash;
 @property(retain) RUJingleTiltReportingController * jingleTiltReportingController;
 @property(readonly) unsigned long long numberOfSkippedTracks;
 @property(retain) MPAVController * player;
+@property(retain) MPUReportingPlaybackObserver * reportingPlaybackObserver;
 @property(readonly) Class superclass;
 @property(getter=isVisuallyEngaged,readonly) bool visuallyEngaged;
 
@@ -55,20 +53,14 @@
 - (void)_itemAssetLoadedDidChangeNotification:(id)arg1;
 - (void)_itemChangedNotification:(id)arg1;
 - (void)_itemDidFinishLoadingNotification:(id)arg1;
-- (void)_itemNewAccessLogEntryNotification:(id)arg1;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)_loadMinDurationToCountAsPlayedFromURLBag;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_radioFairPlayControllerSAPSessionDidFinishLoadingNotification:(id)arg1;
 - (void)_radioFairPlayControllerSAPSessionWillBeginLoadingNotification:(id)arg1;
 - (void)_radioStreamTrackAVItemDidReceiveTimedMetadataPingsNotification:(id)arg1;
-- (void)_recordReportingEvents:(id)arg1;
 - (void)_registerForPlayerNotifications;
 - (void)_reportPlaybackEndedForAdTrack:(id)arg1 withItem:(id)arg2;
-- (void)_reportPlaybackEndedForTimeoutWithItem:(id)arg1;
-- (id)_reportingPlaybackEndEventForItem:(id)arg1;
-- (id)_reportingRadioStationMetadataForItem:(id)arg1;
-- (id)_reportingTrackMetadataForItem:(id)arg1;
 - (void)_scheduleUpdateVisualEngagement;
 - (void)_storeBagDidLoadNotification:(id)arg1;
 - (void)_unregisterForPlayerNotifications;
@@ -78,12 +70,11 @@
 - (void)beginEnablingPolicyEngine;
 - (void)beginVisualEngagement;
 - (void)dealloc;
-- (void)didHitPlaybackTimeoutEndingPlayback:(bool)arg1 withCurrentItem:(id)arg2;
+- (void)didTransitionItemForBan:(id)arg1;
 - (void)endEnablingPolicyEngine;
 - (void)endVisualEngagement;
 - (void)getHistoryWithRequest:(id)arg1 completionHandler:(id)arg2;
 - (void)getTracksWithRequest:(id)arg1 completionHandler:(id)arg2;
-- (id)globalReportingController;
 - (id)heartbeatTokenReturningError:(id*)arg1;
 - (void)historyDidBeginPlayingAdTrack:(id)arg1 withItem:(id)arg2;
 - (void)historyDidEndPlayingAdTrack:(id)arg1 withItem:(id)arg2;
@@ -95,11 +86,12 @@
 - (void)operation:(id)arg1 selectedButton:(id)arg2;
 - (void)optimalTransmissionWindowDidOpen;
 - (id)player;
+- (id)reportingPlaybackObserver;
 - (void)requestAdsForSlot:(id)arg1 completionHandler:(id)arg2;
-- (void)setGlobalReportingController:(id)arg1;
 - (void)setJingleTiltReportingController:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setRTCReportingController:(id)arg1;
-- (void)willHitPlaybackTimeoutEndingPlayback:(bool)arg1 withCurrentItem:(id)arg2;
+- (void)setReportingPlaybackObserver:(id)arg1;
+- (void)willTransitionItemForBan:(id)arg1;
 
 @end

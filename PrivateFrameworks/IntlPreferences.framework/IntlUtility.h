@@ -18,6 +18,7 @@
 + (id)capitalizeFirstWordOfName:(id)arg1 accordingToLanguage:(id)arg2;
 + (id)defaultCalendarForLocaleID:(id)arg1;
 + (void)enumeratePreferredCalendarsForLocaleID:(id)arg1 usingBlock:(id)arg2;
++ (id)filterLanguageList:(id)arg1 forRegion:(id)arg2 fromLanguages:(id)arg3;
 + (id)importAppleLanguages;
 + (id)importAppleLanguagesLegacy;
 + (id)importUsedLanguages;
@@ -33,6 +34,7 @@
 + (id)parentLocaleIdentifierForIdentifier:(id)arg1;
 + (bool)performMigration;
 + (id)preferredLanguagesForRegion:(id)arg1;
++ (id)preferredLanguagesForRegionWithoutFiltering:(id)arg1;
 + (id)preferredLunarCalendarForLocaleID:(id)arg1;
 + (id)restrictedCountryCodes;
 + (void)setYearlessYear:(id)arg1 forCalendar:(id)arg2;

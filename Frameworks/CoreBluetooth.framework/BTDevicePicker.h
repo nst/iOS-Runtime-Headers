@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class <BTDevicePickerDelegate>, NSMutableArray, NSPredicate, NSString, PSSpecifierStub, UIAlertView, UITableView;
+@class <BTDevicePickerDelegate>, BluetoothManager, NSMutableArray, NSPredicate, NSString, PSSpecifierStub, UIAlertView, UITableView;
 
-@interface BTDevicePicker : NSObject {
+@interface BTDevicePicker : NSObject <UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource> {
     UIAlertView *_alertView;
     id _btAlert;
     Class _btAlertClass;
+    BluetoothManager *_btManager;
     id _btSSPAlert;
     Class _btSSPRequestClass;
     PSSpecifierStub *_connectingSpec;
@@ -21,7 +22,11 @@
     bool_showingAlert;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <BTDevicePickerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_btSSPConfirmationHandler:(id)arg1;
 - (void)_btSSPNumericComparisonHandler:(id)arg1;

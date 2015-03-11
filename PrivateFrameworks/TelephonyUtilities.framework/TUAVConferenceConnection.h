@@ -6,34 +6,35 @@
    See Warning(s) below.
  */
 
-@class TUCall;
+@class NSString;
 
 @interface TUAVConferenceConnection : NSObject {
-    TUCall *_call;
     id _didStartHandler;
     id _didStopHandler;
+    NSString *_identifier;
+    bool_host;
     bool_receivedDidStart;
 }
 
-@property(retain) TUCall * call;
 @property(copy) id didStartHandler;
 @property(copy) id didStopHandler;
-@property(getter=isMuted) bool muted;
+@property(getter=isHost) bool host;
+@property(copy) NSString * identifier;
 @property bool receivedDidStart;
 
-+ (id)conferenceConnectionWithCall:(id)arg1;
++ (id)conferenceConnectionWithIdentifier:(id)arg1 host:(bool)arg2;
 
-- (id)call;
 - (void)dealloc;
 - (id)description;
 - (id)didStartHandler;
 - (id)didStopHandler;
-- (bool)isMuted;
+- (id)identifier;
+- (bool)isHost;
 - (bool)receivedDidStart;
-- (void)setCall:(id)arg1;
 - (void)setDidStartHandler:(id)arg1;
 - (void)setDidStopHandler:(id)arg1;
-- (void)setMuted:(bool)arg1;
+- (void)setHost:(bool)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setReceivedDidStart:(bool)arg1;
 
 @end

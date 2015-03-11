@@ -40,6 +40,7 @@
 @property(copy,readonly) NSString * description;
 @property(getter=_disambiguationName,readonly) NSString * disambiguationName;
 @property(readonly) GEOMapRegion * displayMapRegion;
+@property(readonly) GEOMapRegion * displayMapRegionOrNil;
 @property(getter=isDisputed,readonly) bool disputed;
 @property(readonly) NSData * encodedData;
 @property(readonly) NSDate * eventDate;
@@ -72,7 +73,7 @@
 @property(readonly) NSString * name;
 @property(getter=_needsAttribution,readonly) bool needsAttribution;
 @property(getter=_normalizedUserRatingScore,readonly) float normalizedUserRatingScore;
-@property(getter=_openState,readonly) unsigned int openState;
+@property(getter=_openingHoursOptions,readonly) unsigned long long openingHoursOptions;
 @property(getter=_operatingHours,readonly) NSArray * operatingHours;
 @property(getter=_photosAttribution,readonly) GEOMapItemPhotosAttribution * photosAttribution;
 @property(getter=_place,readonly) GEOPlace * place;
@@ -133,6 +134,7 @@
 - (bool)_hasSessionGUID;
 - (bool)_hasTakesReservationsAmenity;
 - (bool)_hasTelephone;
+- (bool)_hasTravelTimeForTransportType:(int)arg1;
 - (bool)_hasUserRatingScore;
 - (id)_infoAttributionURLs:(id*)arg1;
 - (id)_infoDisplayName;
@@ -142,7 +144,7 @@
 - (unsigned long long)_muid;
 - (bool)_needsAttribution;
 - (float)_normalizedUserRatingScore;
-- (unsigned int)_openState;
+- (unsigned long long)_openingHoursOptions;
 - (id)_operatingHours;
 - (id)_photoAttributionURLs:(id*)arg1;
 - (id)_photoDisplayName;
@@ -196,6 +198,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)displayMapRegion;
+- (id)displayMapRegionOrNil;
 - (id)encodedData;
 - (id)eventDate;
 - (id)eventName;

@@ -20,8 +20,10 @@
 + (double)defaultKilogramValue;
 
 - (void).cxx_destruct;
+- (void)_commonInit;
 - (id)_formattedValueForKilograms:(id)arg1;
 - (void)_hidePicker;
+- (void)_localeDidChange:(id)arg1;
 - (void)_showPicker;
 - (void)beginEditing;
 - (void)commitEditing;

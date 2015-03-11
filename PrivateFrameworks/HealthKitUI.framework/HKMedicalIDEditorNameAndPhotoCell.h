@@ -18,6 +18,7 @@
 + (bool)showsLabelAndValue;
 
 - (void).cxx_destruct;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)editPhotoButton;
 - (id)editPhotoLabelButton;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

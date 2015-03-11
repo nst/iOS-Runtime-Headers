@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
+@class MRAVRoutingClientController, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface MRMediaRemoteServiceClient : NSObject {
     NSArray *_externalScreenTypeNotificationObservers;
@@ -10,6 +10,7 @@
     NSArray *_originNotificationObservers;
     unsigned long long _registeredNowPlayingObservers;
     NSMutableArray *_registeredOrigins;
+    MRAVRoutingClientController *_routingClientController;
     NSArray *_routingNotificationObservers;
     NSObject<OS_dispatch_queue> *_serialQueue;
     struct MRMediaRemoteService { } *_service;
@@ -32,11 +33,13 @@
 @property(readonly) NSArray * registeredOrigins;
 @property(retain) NSArray * routingNotificationObservers;
 @property(readonly) struct MRMediaRemoteService { }* service;
+@property(readonly) NSObject<OS_dispatch_queue> * serviceQueue;
 
 + (id)sharedServiceClient;
 
 - (void)dealloc;
 - (id)externalScreenTypeNotificationObservers;
+- (void)fetchPickableRoutesWithCategory:(id)arg1 completion:(id)arg2;
 - (id)init;
 - (bool)isRegisteredForNowPlayingNotifications;
 - (id)nowPlayingNotificationObservers;
@@ -51,6 +54,7 @@
 - (id)registeredOrigins;
 - (id)routingNotificationObservers;
 - (struct MRMediaRemoteService { }*)service;
+- (id)serviceQueue;
 - (void)setExternalScreenTypeNotificationObservers:(id)arg1;
 - (void)setNowPlayingNotificationObservers:(id)arg1;
 - (void)setOriginNotificationObservers:(id)arg1;

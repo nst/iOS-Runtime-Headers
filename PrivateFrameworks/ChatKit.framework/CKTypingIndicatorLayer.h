@@ -5,35 +5,18 @@
 @class CALayer, CAReplicatorLayer;
 
 @interface CKTypingIndicatorLayer : CALayer {
-    struct CGPoint { 
-        double x; 
-        double y; 
-    struct CGPoint { 
-        double x; 
-        double y; 
-    struct CGPoint { 
-        double x; 
-        double y; 
     CALayer *_largeBubble;
-    } _largeBubbleOffset;
     CALayer *_mediumBubble;
-    } _mediumBubbleOffset;
     CALayer *_smallBubble;
-    } _smallBubbleOffset;
     CALayer *_thinkingDot;
     CAReplicatorLayer *_thinkingDots;
 }
 
 @property(retain) CALayer * largeBubble;
-@property struct CGPoint { double x1; double x2; } largeBubbleOffset;
 @property(retain) CALayer * mediumBubble;
-@property struct CGPoint { double x1; double x2; } mediumBubbleOffset;
 @property(retain) CALayer * smallBubble;
-@property struct CGPoint { double x1; double x2; } smallBubbleOffset;
 @property(retain) CALayer * thinkingDot;
 @property(retain) CAReplicatorLayer * thinkingDots;
-
-+ (struct CGSize { double x1; double x2; })defaultSize;
 
 - (void)_buildThinkingDots;
 - (id)_largeBubbleGrowAnimationsWithSpeed:(double)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
@@ -46,19 +29,13 @@
 - (void)dealloc;
 - (id)init;
 - (id)largeBubble;
-- (struct CGPoint { double x1; double x2; })largeBubbleOffset;
 - (id)mediumBubble;
-- (struct CGPoint { double x1; double x2; })mediumBubbleOffset;
 - (void)setLargeBubble:(id)arg1;
-- (void)setLargeBubbleOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setMediumBubble:(id)arg1;
-- (void)setMediumBubbleOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setSmallBubble:(id)arg1;
-- (void)setSmallBubbleOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setThinkingDot:(id)arg1;
 - (void)setThinkingDots:(id)arg1;
 - (id)smallBubble;
-- (struct CGPoint { double x1; double x2; })smallBubbleOffset;
 - (void)startGrowAnimation;
 - (void)startPulseAnimation;
 - (void)startShrinkAnimation;

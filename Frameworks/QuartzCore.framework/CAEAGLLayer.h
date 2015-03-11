@@ -10,7 +10,7 @@
 @class NSDictionary;
 
 @interface CAEAGLLayer : CALayer <EAGLDrawable> {
-    struct _CAEAGLNativeWindow { struct _EAGLNativeWindowObject { int x_1_1_1; unsigned int x_1_1_2; int (*x_1_1_3)(); int (*x_1_1_4)(); int (*x_1_1_5)(); int (*x_1_1_6)(); int (*x_1_1_7)(); int (*x_1_1_8)(); } x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); struct x_list_struct {} *x6; unsigned long long x7; struct Atomic { struct { int x_1_2_1; } x_8_1_1; } x8; struct Atomic { struct { int x_1_2_1; } x_9_1_1; } x9; struct SpinLock { struct { int x_1_2_1; } x_10_1_1; } x10; struct _CAImageQueue {} *x11; id x12; struct x_list_struct {} *x13; unsigned int x14; struct CAEAGLBuffer {} *x15; struct CAEAGLBuffer {} *x16; unsigned int x17; unsigned int x18; unsigned int x19; struct CAEAGLBuffer {} *x20; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; } *_win;
+    struct _CAEAGLNativeWindow { struct _EAGLNativeWindowObject { int x_1_1_1; unsigned int x_1_1_2; int (*x_1_1_3)(); int (*x_1_1_4)(); int (*x_1_1_5)(); int (*x_1_1_6)(); int (*x_1_1_7)(); int (*x_1_1_8)(); } x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); struct x_list_struct {} *x6; unsigned int x7; unsigned long long x8; struct Atomic { struct { int x_1_2_1; } x_9_1_1; } x9; struct Atomic { struct { int x_1_2_1; } x_10_1_1; } x10; struct SpinLock { struct { int x_1_2_1; } x_11_1_1; } x11; struct _CAImageQueue {} *x12; id x13; struct x_list_struct {} *x14; unsigned int x15; struct CAEAGLBuffer {} *x16; struct CAEAGLBuffer {} *x17; unsigned int x18; unsigned int x19; unsigned int x20; struct CAEAGLBuffer {} *x21; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; } *_win;
 }
 
 @property(getter=isAsynchronous) bool asynchronous;

@@ -37,8 +37,8 @@
 - (void).cxx_destruct;
 - (void)_initializeUpdateInProgressState;
 - (void)acceptJaliscGeniusTermsAndConditionsVersion:(long long)arg1 withCompletionHandler:(id)arg2;
-- (void)addGeniusPlaylistWithName:(id)arg1 seedItemSagaIDs:(id)arg2 itemSagaIDs:(id)arg3 completionHandler:(id)arg4;
-- (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
+- (void)addGeniusPlaylistWithPersistentID:(unsigned long long)arg1 name:(id)arg2 seedItemSagaIDs:(id)arg3 itemSagaIDs:(id)arg4 completionHandler:(id)arg5;
+- (void)addPlaylistWithPersistentID:(unsigned long long)arg1 name:(id)arg2 completionHandler:(id)arg3;
 - (void)becomeActive;
 - (void)becomeActiveAndWaitUntilDone:(bool)arg1;
 - (bool)canDefaultMediaLibraryShowCloudContent;
@@ -67,10 +67,10 @@
 - (void)loadUpdateProgressWithCompletionHandler:(id)arg1;
 - (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)resignActive;
+- (void)savePlaylist:(id)arg1 completionHandler:(id)arg2;
 - (void)setItemProperties:(id)arg1 forPurchaseHistoryID:(unsigned long long)arg2;
 - (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (bool)shouldProhibitActionsForCurrentNetworkConditions;
-- (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 completionHandler:(id)arg3;
 - (void)uploadItemProperties;
 
 @end

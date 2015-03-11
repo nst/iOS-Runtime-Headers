@@ -59,6 +59,7 @@
 - (id)camera;
 - (void)cancelLoad;
 - (void)dealloc;
+- (void)didReceiveMemoryWarning:(bool)arg1;
 - (id)dispatch;
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 useMultisampling:(bool)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4 homeQueue:(id)arg5;
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 useMultisampling:(bool)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4;

@@ -39,6 +39,7 @@
 @property(retain) NSURL * imageURLForInsertion;
 @property(retain) CLLocation * location;
 @property(readonly) NSString * managedEntityName;
+@property(retain) NSDate * modificationDate;
 @property(getter=isMutated,readonly) bool mutated;
 @property(getter=isNew,readonly) bool new;
 @property(readonly) NSManagedObjectID * objectID;
@@ -91,6 +92,7 @@
 - (bool)isRevertingContentToOriginal;
 - (id)location;
 - (id)managedEntityName;
+- (id)modificationDate;
 - (id)mutations;
 - (id)objectID;
 - (id)placeholderForCreatedAsset;
@@ -105,6 +107,7 @@
 - (void)setImageTypeForInsertion:(id)arg1;
 - (void)setImageURLForInsertion:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setModificationDate:(id)arg1;
 - (void)setSupportedEditOperations:(id)arg1;
 - (void)setVideoURLForInsertion:(id)arg1;
 - (id)supportedEditOperations;

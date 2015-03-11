@@ -10,6 +10,7 @@
 
 @property long long invitationTimeOut;
 @property bool isAudioEnabled;
+@property bool isMuted;
 @property(readonly) unsigned int sessionEndedReason;
 @property(readonly) int socket;
 
@@ -27,6 +28,7 @@
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3;
 - (long long)invitationTimeOut;
 - (bool)isAudioEnabled;
+- (bool)isMuted;
 - (bool)sendData:(id)arg1 error:(id*)arg2;
 - (void)sendInvitation;
 - (void)sendInvitationWithData:(id)arg1 declineOnError:(bool)arg2;
@@ -37,6 +39,7 @@
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setInvitationTimeOut:(long long)arg1;
 - (void)setIsAudioEnabled:(bool)arg1;
+- (void)setIsMuted:(bool)arg1;
 - (int)socket;
 - (unsigned int)state;
 

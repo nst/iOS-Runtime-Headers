@@ -37,6 +37,7 @@
 - (id)copyRawItemAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)focusedItem;
+- (void)getContainerType:(unsigned long long*)arg1 mediaLibraryContainerPersistentID:(long long*)arg2 storeContainerID:(id*)arg3 storePersonalizedContainerID:(id*)arg4;
 - (bool)hasValidItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexOfMediaItem:(id)arg1;
 - (id)init;

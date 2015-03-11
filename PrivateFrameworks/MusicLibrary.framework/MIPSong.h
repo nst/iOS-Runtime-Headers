@@ -86,6 +86,7 @@
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (id)lyrics;
+- (void)mergeFrom:(id)arg1;
 - (id)playbackInfo;
 - (bool)readFrom:(id)arg1;
 - (void)setAlbum:(id)arg1;

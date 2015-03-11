@@ -102,6 +102,7 @@
 - (void)setGyroDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setGyroUpdateInterval:(double)arg1;
 - (void)setGyroUpdateIntervalPrivate:(double)arg1;
+- (void)setMagnetometerDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setMagnetometerUpdateInterval:(double)arg1;
 - (void)setMagnetometerUpdateIntervalPrivate:(double)arg1;
 - (void)setMaxAccelerationVarianceForStability:(float)arg1;

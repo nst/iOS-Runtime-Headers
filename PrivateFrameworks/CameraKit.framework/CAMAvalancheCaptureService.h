@@ -36,6 +36,7 @@
 - (bool)canContinueAvalancheCapture;
 - (void)cancelAvalancheCapture;
 - (void)finishAvalancheCapture;
+- (void)finishAvalancheCaptureWithCompletion:(id)arg1;
 - (id)init;
 - (long long)numberOfPhotos;
 - (id)recentFaceMetadata;

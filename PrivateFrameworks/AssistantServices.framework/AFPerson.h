@@ -4,7 +4,7 @@
 
 @class NSSet, NSString;
 
-@interface AFPerson : NSObject <AFTranscriptionType> {
+@interface AFPerson : AFSiriModelObject <AFTranscriptionType> {
     NSSet *_contactHandles;
     NSString *_fullName;
 }

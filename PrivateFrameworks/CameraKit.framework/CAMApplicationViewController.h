@@ -119,6 +119,7 @@
 - (id)delegate;
 - (void)dismissCameraRoll:(id)arg1;
 - (void)dismissCameraRollAnimated:(bool)arg1 forSuspension:(bool)arg2;
+- (void)dismissCameraRollForCameraView:(id)arg1;
 - (void)dismissCameraRollForSuspension;
 - (id)init;
 - (id)initWithSessionID:(id)arg1 startPreviewImmediately:(bool)arg2;

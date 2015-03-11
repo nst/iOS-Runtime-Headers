@@ -8,6 +8,8 @@
 
 @property(readonly) struct { double x1; double x2; } ambientPressure;
 
++ (bool)supportsSecureCoding;
+
 - (struct { double x1; double x2; })ambientPressure;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

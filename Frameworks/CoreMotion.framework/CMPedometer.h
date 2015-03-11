@@ -12,12 +12,14 @@
 
 + (bool)isDistanceAvailable;
 + (bool)isFloorCountingAvailable;
++ (bool)isPaceEstimationAvailable;
 + (bool)isStepCountingAvailable;
 
 - (void)dealloc;
 - (id)init;
 - (id)pedometerProxy;
 - (void)queryPedometerDataFromDate:(id)arg1 toDate:(id)arg2 withHandler:(id)arg3;
+- (void)queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(id)arg2;
 - (void)queryPedometerDataSinceRecord:(long long)arg1 withHandler:(id)arg2;
 - (void)startPedometerUpdatesFromDate:(id)arg1 withHandler:(id)arg2;
 - (void)stopPedometerUpdates;

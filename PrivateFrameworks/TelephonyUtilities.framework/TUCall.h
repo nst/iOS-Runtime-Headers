@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class IMAVChatParticipant, NSData, NSString;
+@class IMAVChatParticipant, NSData, NSDictionary, NSString;
 
 @interface TUCall : NSObject <NSSecureCoding> {
     struct { 
@@ -16,11 +16,14 @@
         unsigned int leavingConference : 1; 
     NSString *_abLabel;
     int _abUid;
+    double _clientMessageReceiveTime;
     NSString *_companyName;
     int _disconnectedReason;
     NSString *_displayName;
     long long _displayNameBreakPoint;
     int _faceTimeIDStatus;
+    double _hostCreationTime;
+    double _hostMessageSendTime;
     NSString *_isoCountryCode;
     NSString *_overrideName;
     } _phoneCallFlags;
@@ -31,22 +34,29 @@
     NSString *_uniqueProxyIdentifier;
     bool_allowsTTYSettingChanges;
     bool_connected;
+    bool_connecting;
     bool_connectingToRelay;
     bool_endpointOnCurrentDevice;
     bool_hasUpdatedAudio;
     bool_requestingHandoff;
     bool_requiresAudioReinterruption;
+    bool_ringtoneSuppressedRemotely;
+    bool_shouldSuppressRingtone;
     bool_wantsHoldMusic;
 }
 
 @property bool allowsTTYSettingChanges;
+@property(copy,readonly) NSString * audioCategory;
+@property(copy,readonly) NSString * audioMode;
 @property(getter=isBlocked,readonly) bool blocked;
 @property(copy,readonly) NSString * callHistoryIdentifier;
 @property(readonly) int callIdentifier;
 @property(copy,readonly) NSString * callUUID;
 @property(copy,readonly) NSString * callerNameFromNetwork;
+@property double clientMessageReceiveTime;
 @property(retain,readonly) NSString * conferenceIdentifier;
 @property(getter=isConnected) bool connected;
+@property(getter=isConnecting) bool connecting;
 @property(getter=isConnectingToRelay) bool connectingToRelay;
 @property(copy,readonly) NSString * destinationID;
 @property int disconnectedReason;
@@ -59,23 +69,32 @@
 @property int faceTimeIDStatus;
 @property(readonly) bool hasReceivedFirstFrame;
 @property bool hasUpdatedAudio;
+@property double hostCreationTime;
+@property double hostMessageSendTime;
 @property(getter=isHostedOnCurrentDevice,readonly) bool hostedOnCurrentDevice;
 @property(readonly) bool isActive;
 @property bool isOnHold;
+@property bool isSendingAudio;
 @property bool isSendingVideo;
 @property(readonly) bool isVideo;
 @property(copy) NSString * isoCountryCode;
 @property(retain,readonly) NSData * localFrequency;
 @property(readonly) float localVolume;
+@property(readonly) bool managesAudioInterruptions;
+@property(readonly) bool needsManualInCallSounds;
 @property(getter=isOutgoing,readonly) bool outgoing;
 @property(readonly) bool playsConnectedSound;
 @property long long provisionalHoldStatus;
 @property(retain,readonly) NSData * remoteFrequency;
 @property(retain,readonly) IMAVChatParticipant * remoteParticipant;
+@property(copy,readonly) NSDictionary * remoteUnavailableUserInfo;
 @property(getter=isRequestingHandoff) bool requestingHandoff;
 @property bool requiresAudioReinterruption;
+@property bool ringtoneSuppressedRemotely;
 @property(readonly) int service;
 @property(readonly) bool shouldIgnoreStatusChange;
+@property(readonly) bool shouldPlayHoldMusic;
+@property bool shouldSuppressRingtone;
 @property(copy) NSString * sourceIdentifier;
 @property(readonly) double startTime;
 @property(readonly) int status;
@@ -100,6 +119,7 @@
 - (void)_loadCallDetails;
 - (void)_setPrimitiveDisconnectedReason:(int)arg1;
 - (void)_setPrimitiveEndpointOnCurrentDevice:(bool)arg1;
+- (void)_setPrimitiveShouldSuppressRingtone:(bool)arg1;
 - (void)_setPrimitiveWantsHoldMusic:(bool)arg1;
 - (int)abUID;
 - (bool)allowsTTYSettingChanges;
@@ -115,6 +135,7 @@
 - (id)callUUID;
 - (id)callerNameFromNetwork;
 - (int)causeCode;
+- (double)clientMessageReceiveTime;
 - (id)companyName;
 - (id)conferenceIdentifier;
 - (id)contactImageDataWithFormat:(int)arg1;
@@ -133,10 +154,13 @@
 - (id)errorAlertMessage;
 - (id)errorAlertTitle;
 - (int)faceTimeIDStatus;
+- (id)handoffInfo;
 - (bool)hasReceivedFirstFrame;
 - (bool)hasSupport:(int)arg1;
 - (bool)hasUpdatedAudio;
 - (void)hold;
+- (double)hostCreationTime;
+- (double)hostMessageSendTime;
 - (id)image;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -146,6 +170,7 @@
 - (bool)isBlocked;
 - (bool)isConferenced;
 - (bool)isConnected;
+- (bool)isConnecting;
 - (bool)isConnectingToRelay;
 - (bool)isDownlinkMuted;
 - (bool)isEmergencyCall;
@@ -156,6 +181,7 @@
 - (bool)isOnHold;
 - (bool)isOutgoing;
 - (bool)isRequestingHandoff;
+- (bool)isSendingAudio;
 - (bool)isSendingVideo;
 - (bool)isStatusFinal;
 - (bool)isTTY;
@@ -176,13 +202,17 @@
 - (long long)provisionalHoldStatus;
 - (id)remoteFrequency;
 - (id)remoteParticipant;
+- (id)remoteUnavailableUserInfo;
 - (bool)requiresAudioReinterruption;
 - (void)resetProvisionalHoldStatus;
 - (void)resetProvisionalStatuses;
 - (void)resetWantsHoldMusic;
+- (bool)ringtoneSuppressedRemotely;
 - (int)service;
 - (void)setAllowsTTYSettingChanges:(bool)arg1;
+- (void)setClientMessageReceiveTime:(double)arg1;
 - (void)setConnected:(bool)arg1;
+- (void)setConnecting:(bool)arg1;
 - (void)setConnectingToRelay:(bool)arg1;
 - (void)setDisconnectedReason:(int)arg1;
 - (void)setDisplayName:(id)arg1;
@@ -190,7 +220,10 @@
 - (void)setEndpointOnCurrentDevice:(bool)arg1;
 - (void)setFaceTimeIDStatus:(int)arg1;
 - (void)setHasUpdatedAudio:(bool)arg1;
+- (void)setHostCreationTime:(double)arg1;
+- (void)setHostMessageSendTime:(double)arg1;
 - (void)setIsOnHold:(bool)arg1;
+- (void)setIsSendingAudio:(bool)arg1;
 - (void)setIsSendingVideo:(bool)arg1;
 - (void)setIsoCountryCode:(id)arg1;
 - (bool)setMuted:(bool)arg1;
@@ -198,6 +231,8 @@
 - (void)setProvisionalHoldStatus:(long long)arg1;
 - (void)setRequestingHandoff:(bool)arg1;
 - (void)setRequiresAudioReinterruption:(bool)arg1;
+- (void)setRingtoneSuppressedRemotely:(bool)arg1;
+- (void)setShouldSuppressRingtone:(bool)arg1;
 - (void)setSourceIdentifier:(id)arg1;
 - (void)setSuggestedDisplayName:(id)arg1;
 - (void)setTransitionStatus:(int)arg1;
@@ -208,6 +243,8 @@
 - (void)setWasDialedFromEmergencyUI:(bool)arg1;
 - (bool)shouldIgnoreStatusChange;
 - (bool)shouldPlayDTMFTone;
+- (bool)shouldPlayHoldMusic;
+- (bool)shouldSuppressRingtone;
 - (id)smallImage;
 - (id)sourceIdentifier;
 - (double)startTime;
@@ -215,10 +252,12 @@
 - (bool)statusIsProvisional;
 - (id)suggestedDisplayName;
 - (int)supportedModelType;
+- (void)suppressRingtone;
 - (id)totalDataUsed;
 - (int)transitionStatus;
 - (void)unhold;
 - (id)uniqueProxyIdentifier;
+- (void)updateForDisconnection;
 - (void)updateWithCall:(id)arg1;
 - (bool)wantsHoldMusic;
 - (bool)wasDeclined;

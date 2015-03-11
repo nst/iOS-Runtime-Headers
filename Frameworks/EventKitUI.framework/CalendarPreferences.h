@@ -11,6 +11,7 @@
 
 @property(retain) NSArray * calendarUUIDsExcludedFromNotifications;
 @property(retain) NSNumber * dayViewHourScale;
+@property(retain) NSArray * deselectedCalendarSyncHashes;
 @property bool disableContinuity;
 @property bool drawDebugViewColors;
 @property bool immediateAlarmCreation;
@@ -41,6 +42,7 @@
 - (id)calendarUUIDsExcludedFromNotifications;
 - (id)dayViewHourScale;
 - (id)deselectedCalendarIDsFromCalendars:(id)arg1;
+- (id)deselectedCalendarSyncHashes;
 - (bool)disableContinuity;
 - (bool)drawDebugViewColors;
 - (bool)immediateAlarmCreation;
@@ -56,6 +58,7 @@
 - (void)setCalendarUUIDsExcludedFromNotifications:(id)arg1;
 - (void)setDayViewHourScale:(id)arg1;
 - (void)setDeselectedCalendarIDs:(id)arg1;
+- (void)setDeselectedCalendarSyncHashes:(id)arg1;
 - (void)setDisableContinuity:(bool)arg1;
 - (void)setDrawDebugViewColors:(bool)arg1;
 - (void)setImmediateAlarmCreation:(bool)arg1;

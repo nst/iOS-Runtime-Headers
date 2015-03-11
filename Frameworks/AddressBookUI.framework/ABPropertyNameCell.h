@@ -23,6 +23,7 @@
 - (id)propertyItem;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCardGroupItem:(id)arg1;
+- (void)setContactStyle:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPropertyItem:(id)arg1;
 - (id)textField;

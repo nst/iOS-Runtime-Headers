@@ -17,7 +17,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addDestinationWithSize:(struct CGSize { double x1; double x2; })arg1 url:(id)arg2;
+- (void)addDestinationWithSize:(struct CGSize { double x1; double x2; })arg1 compressionQuality:(double)arg2 url:(id)arg3;
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

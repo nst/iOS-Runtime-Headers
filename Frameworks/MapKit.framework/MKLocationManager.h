@@ -192,6 +192,8 @@
 - (id)networkActivity;
 - (void)pushLocation:(id)arg1;
 - (void)reportCoalescedUpdated;
+- (void)requestWhenInUseAuthorization;
+- (void)requestWhenInUseAuthorizationWithPrompt;
 - (void)reset;
 - (void)resetAfterResumeIfNecessary;
 - (void)setActivityType:(long long)arg1;

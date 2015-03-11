@@ -2,14 +2,20 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVAsset, AVPlayerItem, AVPlayerItemAccessLog, MPAVController, MPAlternateTextTrack, MPAlternateTracks, MPMediaItem, MPQueueFeeder, NSArray, NSObject<OS_dispatch_queue>, NSString, NSURL, RURadioAdTrack, RadioArtworkCollection, RadioAudioClip, RadioStreamTrack, RadioTrack;
+@class AVAsset, AVPlayerItem, AVPlayerItemAccessLog, MPAVController, MPAlternateTextTrack, MPAlternateTracks, MPMediaItem, MPQueueFeeder, NSArray, NSData, NSObject<OS_dispatch_queue>, NSString, NSURL, RURadioAdTrack, RadioArtworkCollection, RadioAudioClip, RadioStreamTrack, RadioTrack;
 
 @interface MPAVItem : NSObject {
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     unsigned int _advancedDuringPlayback : 1;
     unsigned int _handledFinishTime : 1;
     unsigned int _hasPlayedThisSession : 1;
     unsigned int _wasCountedAsSkipped : 1;
     unsigned int _watchingAttributes : 1;
+    unsigned int _userChangedItemsDuringPlayback : 1;
     unsigned int _lyricsAvailable : 1;
     unsigned int _timeMarkersNeedLoading : 1;
     unsigned int _isStreamable : 2;
@@ -32,6 +38,7 @@
     float _loudnessInfoVolumeNormalization;
     MPMediaItem *_mediaItem;
     MPAVController *_player;
+    } _playerItemDuration;
     double _seekableTimeRangesCacheTime;
     float _soundCheckVolumeNormalization;
     long long _storeID;
@@ -39,6 +46,7 @@
     NSArray *_urlTimeMarkers;
     bool_didAttemptToLoadAsset;
     bool_hasPostedNaturalSizeChange;
+    bool_hasValidPlayerItemDuration;
     bool_isAssetLoaded;
     bool_limitReadAhead;
 }
@@ -97,6 +105,13 @@
 @property(readonly) NSString * lyrics;
 @property(readonly) NSString * mainTitle;
 @property(retain,readonly) MPMediaItem * mediaItem;
+@property(copy,readonly) NSString * mpuReporting_externalID;
+@property(copy,readonly) NSString * mpuReporting_featureName;
+@property(readonly) bool mpuReporting_isValidReportingItem;
+@property(readonly) unsigned long long mpuReporting_itemType;
+@property(readonly) bool mpuReporting_shouldReportPlayEventsToStore;
+@property(copy,readonly) NSString * mpuReporting_storeItemID;
+@property(copy,readonly) NSData * mpuReporting_trackInfo;
 @property(readonly) struct CGSize { double x1; double x2; } naturalSize;
 @property(readonly) unsigned long long persistentID;
 @property(readonly) double playableDuration;
@@ -124,12 +139,14 @@
 @property(retain) NSArray * urlTimeMarkers;
 @property(readonly) bool useEmbeddedChapterData;
 @property bool userAdvancedDuringPlayback;
+@property bool userChangedItemsDuringPlayback;
 @property(readonly) float userRating;
 @property(copy) NSString * videoID;
 
 + (id)URLFromPath:(id)arg1;
 + (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
 + (unsigned long long)defaultScaleMode;
++ (id)mpuReporting_allMediaItemProperties;
 + (void)setDefaultScaleMode:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
@@ -147,6 +164,7 @@
 - (void)_loadTimeMarkersAsync;
 - (void)_loadTimeMarkersBlocking;
 - (double)_playableDurationForLoadedTimeRanges:(id)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_playerItemDurationIfAvailable;
 - (void)_playerItemNewAccessLogEntryNotification:(id)arg1;
 - (id)_plistKeyForMPMediaItemProperty:(id)arg1;
 - (void)_realoadEmbeddedTimeMarkers;
@@ -221,7 +239,6 @@
 - (bool)isAssetURLValid;
 - (bool)isCloudItem;
 - (bool)isExplicitTrack;
-- (bool)isPlaceholderForItem:(id)arg1;
 - (bool)isRadioItem;
 - (bool)isStreamable;
 - (bool)isStreamingQuality;
@@ -236,6 +253,13 @@
 - (id)lyrics;
 - (id)mainTitle;
 - (id)mediaItem;
+- (id)mpuReporting_externalID;
+- (id)mpuReporting_featureName;
+- (bool)mpuReporting_isValidReportingItem;
+- (unsigned long long)mpuReporting_itemType;
+- (bool)mpuReporting_shouldReportPlayEventsToStore;
+- (id)mpuReporting_storeItemID;
+- (id)mpuReporting_trackInfo;
 - (struct CGSize { double x1; double x2; })naturalSize;
 - (void)notePlaybackFinishedByHittingEnd;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -280,6 +304,7 @@
 - (void)setSubtitleTrackID:(int)arg1;
 - (void)setUrlTimeMarkers:(id)arg1;
 - (void)setUserAdvancedDuringPlayback:(bool)arg1;
+- (void)setUserChangedItemsDuringPlayback:(bool)arg1;
 - (void)setUserSkippedPlayback:(bool)arg1;
 - (void)setVideoID:(id)arg1;
 - (void)setupEQPresetWithDefaultPreset:(long long)arg1;
@@ -303,6 +328,7 @@
 - (id)urlTimeMarkers;
 - (bool)useEmbeddedChapterData;
 - (bool)userAdvancedDuringPlayback;
+- (bool)userChangedItemsDuringPlayback;
 - (float)userRating;
 - (bool)userSkippedPlayback;
 - (id)videoID;

@@ -46,13 +46,20 @@
 @property(readonly) long long topCapHeight;
 @property(copy) UITraitCollection * traitCollection;
 
++ (id)APDImageNamed:(id)arg1;
++ (id)APDStretchyImageNamed:(id)arg1 hStretch:(bool)arg2 vStretch:(bool)arg3;
++ (id)APDStretchyVersionH:(bool)arg1 V:(bool)arg2 forImage:(id)arg3;
++ (id)_animatedImageNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3 duration:(double)arg4;
++ (id)_animatedResizableImageNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3 capInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4 resizingMode:(long long)arg5 duration:(double)arg6;
 + (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2 scale:(double)arg3;
 + (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2;
 + (id)_backgroundGradientWithStartColor:(id)arg1 andEndColor:(id)arg2;
 + (id)_cachedImageForKey:(id)arg1 fromBlock:(id)arg2;
++ (void)_clearAssetCaches;
 + (id)_defaultBackgroundGradient;
 + (id)_deviceSpecificImageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)_deviceSpecificImageNamed:(id)arg1;
++ (void)_dropResourceReferencesForURL:(id)arg1;
 + (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForStylePresetNames:(id)arg1 scale:(double)arg2;
 + (void)_flushCache:(id)arg1;
 + (void)_flushSharedImageCache;
@@ -139,6 +146,7 @@
 + (id)nikeRunLandscapeBackgroundImage;
 + (id)pu_PhotosUIImageNamed:(id)arg1;
 + (id)reversedNikeRunLandscapeBackgroundImage;
++ (void)saveToStretchyCache:(id)arg1 forKey:(id)arg2;
 + (id)siriui_semiTransparentChevronImage;
 + (id)socialFrameworkImageNamed:(id)arg1;
 + (bool)supportsSecureCoding;
@@ -152,6 +160,9 @@
 + (bool)wantFXCenterWidthDisplayForGroup:(int)arg1 value:(float)arg2;
 + (bool)wantFXSingleTouchCenterAndSizeInteractionForGroup:(int)arg1 value:(float)arg2;
 
+- (id)APDStretchyHVersion;
+- (id)APDStretchyVVersion;
+- (id)APDStretchyVersion;
 - (id)ASCIIDescription;
 - (id)ASCIIDescriptionWithWidth:(long long)arg1 height:(long long)arg2;
 - (struct CGImage { }*)CGImage;
@@ -162,7 +173,7 @@
 - (id)WAImageLoaderPreCacheImage;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })__ck_contentsCenter;
 - (id)__ck_imageWithOrientation:(long long)arg1;
-- (id)__ck_resizableBalloonWithOrientation:(BOOL)arg1 skinny:(bool)arg2 framed:(bool)arg3;
+- (id)__ck_resizableBalloonWithOrientation:(BOOL)arg1 tail:(bool)arg2 skinny:(bool)arg3 framed:(bool)arg4;
 - (id)_applicationIconImageForFormat:(int)arg1 precomposed:(bool)arg2 scale:(double)arg3;
 - (id)_applicationIconImageForFormat:(int)arg1 precomposed:(bool)arg2;
 - (id)_applyBackdropViewSettings:(id)arg1 allowImageResizing:(bool)arg2;
@@ -341,6 +352,7 @@
 - (id)resizableImageWithCapInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 resizingMode:(long long)arg2;
 - (id)resizableImageWithCapInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (long long)resizingMode;
+- (id)rms_jpegDataScaledToSize:(struct CGSize { double x1; double x2; })arg1 compressionQuality:(float)arg2;
 - (id)sbf_cropImageWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 outputSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)sbf_imageMaskedByColor:(id)arg1 withShadow:(id)arg2;
 - (id)sbf_imageMaskedByColor:(id)arg1;
@@ -359,6 +371,7 @@
 - (struct CGSize { double x1; double x2; })size;
 - (id)stretchableImageWithLeftCapWidth:(long long)arg1 rightCapWidth:(long long)arg2;
 - (id)stretchableImageWithLeftCapWidth:(long long)arg1 topCapHeight:(long long)arg2;
+- (id)stretchyVersionH:(bool)arg1 V:(bool)arg2;
 - (id)tintedImageWithColor:(id)arg1;
 - (long long)topCapHeight;
 - (id)traitCollection;

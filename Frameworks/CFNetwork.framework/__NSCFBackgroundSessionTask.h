@@ -22,7 +22,8 @@
 - (void)_onqueue_adjustPoolPriority;
 - (void)_onqueue_adjustPriorityHint:(float)arg1;
 - (void)_onqueue_cancel;
-- (void)_onqueue_connectionWaiting;
+- (void)_onqueue_connectionWaitingWithError:(id)arg1;
+- (void)_onqueue_connectionWaitingWithReason:(long long)arg1;
 - (void)_onqueue_didFinishWithError:(id)arg1;
 - (void)_onqueue_didReceiveChallenge:(id)arg1 request:(id)arg2 withCompletion:(id)arg3;
 - (void)_onqueue_didReceiveResponse:(id)arg1;

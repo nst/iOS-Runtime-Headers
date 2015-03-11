@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPresenterDelegate>, CNPostalAddress, NSArray, NSDictionary, NSMutableDictionary, NSString, UIColor, UITableView;
+@class <ABPresenterDelegate>, CNContactStyle, CNPostalAddress, NSArray, NSDictionary, NSMutableDictionary, NSString, UIColor, UITableView;
 
 @interface ABPostalAddressEditorView : UIControl <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, ABCountryPickerControllerDelegate, ABText> {
     CNPostalAddress *_address;
     NSDictionary *_addressFormats;
     NSArray *_cellsLayout;
+    CNContactStyle *_contactStyle;
     <ABPresenterDelegate> *_delegate;
     UITableView *_tableView;
     NSMutableDictionary *_textFields;
@@ -19,6 +20,7 @@
 @property(copy) CNPostalAddress * address;
 @property(copy) NSDictionary * addressFormats;
 @property(copy) NSArray * cellsLayout;
+@property(retain) CNContactStyle * contactStyle;
 @property(copy,readonly) NSString * debugDescription;
 @property <ABPresenterDelegate> * delegate;
 @property(copy,readonly) NSString * description;
@@ -45,6 +47,7 @@
 - (bool)becomeFirstResponder;
 - (bool)canBecomeFirstResponder;
 - (id)cellsLayout;
+- (id)contactStyle;
 - (void)countryPicker:(id)arg1 didPickCountryCode:(id)arg2;
 - (void)countryPickerDidCancel:(id)arg1;
 - (void)dealloc;
@@ -60,6 +63,7 @@
 - (void)setAddressFormats:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCellsLayout:(id)arg1;
+- (void)setContactStyle:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)setSeparatorColor:(id)arg1;

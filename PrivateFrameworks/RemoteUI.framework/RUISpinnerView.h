@@ -2,20 +2,24 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class RUIObjectModel, UIActivityIndicatorView, UILabel, UIView;
+@class RUIObjectModel, UIActivityIndicatorView, UIColor, UILabel, UIView;
 
 @interface RUISpinnerView : RUIElement {
     UILabel *_label;
     RUIObjectModel *_objectModel;
     UIActivityIndicatorView *_spinner;
+    UIColor *_spinnerColor;
     UIView *_view;
 }
 
 @property RUIObjectModel * objectModel;
+@property(retain) UIColor * spinnerColor;
 
 - (void).cxx_destruct;
 - (id)objectModel;
 - (void)setObjectModel:(id)arg1;
+- (void)setSpinnerColor:(id)arg1;
+- (id)spinnerColor;
 - (id)spinnerView;
 - (void)viewDidLayout;
 - (void)viewWillAppear:(bool)arg1;

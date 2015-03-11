@@ -15,6 +15,7 @@
     City *_weatherCity;
 }
 
+@property(readonly) NSString * abbreviation;
 @property(readonly) ALCity * alCity;
 @property(readonly) NSNumber * alCityId;
 @property(readonly) NSString * countryCode;
@@ -29,6 +30,9 @@
 
 + (bool)isWorldClockCityProperties:(id)arg1;
 
+- (id)_bundleWithAbbreviations;
+- (id)_filePathForAbbreviationsResource;
+- (id)abbreviation;
 - (id)alCity;
 - (id)alCityId;
 - (id)countryCode;

@@ -16,19 +16,23 @@
     } _riseTransitSet;
     NSDate *_sunrise;
     NSDate *_sunset;
+    NSDate *_transit;
 }
 
 @property(readonly) double julianDay;
 @property(readonly) struct CAARiseTransitSetDetails { boolx1; double x2; boolx3; double x4; boolx5; double x6; } riseTransitSet;
 @property(readonly) NSDate * sunrise;
 @property(readonly) NSDate * sunset;
+@property(readonly) NSDate * transit;
 
 - (id).cxx_construct;
+- (id)_dateFromOffset:(double)arg1 ofJulianDay:(double)arg2;
 - (void)dealloc;
 - (id)initWithJulianDay:(double)arg1 riseTransitSet:(struct CAARiseTransitSetDetails { boolx1; double x2; boolx3; double x4; boolx5; double x6; })arg2;
 - (double)julianDay;
 - (struct CAARiseTransitSetDetails { boolx1; double x2; boolx3; double x4; boolx5; double x6; })riseTransitSet;
 - (id)sunrise;
 - (id)sunset;
+- (id)transit;
 
 @end

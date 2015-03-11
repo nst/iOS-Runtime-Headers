@@ -40,6 +40,16 @@
 @property(copy,readonly) NSString * sharedSupportPath;
 @property(copy,readonly) NSURL * sharedSupportURL;
 
++ (id)APDBundleVersion;
++ (id)APDCoachingTipsAPDIDForKey:(id)arg1 valueIfMissing:(id)arg2;
++ (id)APDCoachingTipsAPDIDForKey:(id)arg1;
++ (id)APDCoachingTipsGestureGraphicValueForKey:(id)arg1 valueIfMissing:(id)arg2;
++ (id)APDCoachingTipsLocalizedFont;
++ (id)APDCoachingTipsLocalizedString:(id)arg1;
++ (id)APDLocalizedString:(id)arg1 valueIfMissing:(id)arg2 table:(id)arg3 bundle:(id)arg4;
++ (id)APDLocalizedString:(id)arg1 valueIfMissing:(id)arg2 table:(id)arg3;
++ (id)APDResourcesBundle;
++ (id)APDResourcesBundleURL;
 + (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3 inBundleWithURL:(id)arg4;
 + (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2 inBundleWithURL:(id)arg3;
 + (id)__geoBundle;
@@ -114,6 +124,7 @@
 + (void)setSystemLanguages:(id)arg1;
 + (id)tableIdentifiersForLanguageIdentifier:(id)arg1;
 + (id)tableIdentifiersForLanguageIdentifier:(id)arg1;
++ (void)updateCoachingTipsStringsBundlesWithBundlePaths:(id)arg1;
 
 - (id)PKSanitizedBundleIdentifier;
 - (id)URLForAuxiliaryExecutable:(id)arg1;
@@ -203,6 +214,9 @@
 - (id)siriUILocalizedStringForKey:(id)arg1 table:(id)arg2;
 - (id)siriUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)siriUILocalizedStringForKey:(id)arg1;
+- (id)suic_localizedStringForKey:(id)arg1 table:(id)arg2;
+- (id)suic_localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
+- (id)suic_localizedStringForKey:(id)arg1;
 - (id)tableIdentifierForBundleSpecificTableIdentifier:(id)arg1;
 - (id)tableIdentifierForBundleSpecificTableIdentifier:(id)arg1;
 - (bool)unload;

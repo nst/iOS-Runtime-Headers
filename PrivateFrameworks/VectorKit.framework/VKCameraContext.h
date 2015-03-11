@@ -51,6 +51,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_setPointOfReference:(struct { double x1; double x2; })arg1 heading:(double)arg2 routeMatch:(id)arg3 onRoute:(bool)arg4;
+- (void)_updateForLocation:(id)arg1 routeMatch:(id)arg2 isRouteMatch:(bool)arg3 speedMultiplier:(double)arg4 onRoute:(bool)arg5 animated:(bool)arg6 defaultCourse:(double)arg7;
 - (void)addPointOfInterest:(struct { double x1; double x2; })arg1;
 - (bool)allowVerticalPanning;
 - (bool)animated;

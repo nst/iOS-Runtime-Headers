@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface HourlyForecast : NSObject {
+@interface HourlyForecast : NSObject <NSCopying> {
     long long _conditionCode;
     NSString *_detail;
     unsigned long long _eventType;
@@ -20,7 +20,10 @@
 @property float percentPrecipitation;
 @property(copy) NSString * time;
 
++ (long long)TimeValueFromString:(id)arg1;
+
 - (long long)conditionCode;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)detail;

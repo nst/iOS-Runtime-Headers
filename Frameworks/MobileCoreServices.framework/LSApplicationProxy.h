@@ -11,6 +11,7 @@
     NSString *_applicationDSID;
     NSArray *_audioComponents;
     NSArray *_deviceFamily;
+    NSUUID *_deviceIdentifierForVendor;
     NSArray *_directionsModes;
     NSNumber *_dynamicDiskUsage;
     NSArray *_externalAccessoryProtocols;
@@ -30,6 +31,7 @@
     NSArray *_requiredDeviceCapabilities;
     NSString *_sdkVersion;
     NSString *_shortVersionString;
+    NSString *_sourceAppIdentifier;
     NSNumber *_staticDiskUsage;
     NSString *_storeCohortMetadata;
     NSNumber *_storeFront;
@@ -66,6 +68,7 @@
 @property(readonly) bool isPlaceholder;
 @property(readonly) bool isPurchasedReDownload;
 @property(readonly) bool isRestricted;
+@property(readonly) bool isWatchKitApp;
 @property(readonly) NSNumber * itemID;
 @property(readonly) NSString * itemName;
 @property(readonly) NSString * minimumSystemVersion;
@@ -76,6 +79,7 @@
 @property(readonly) NSString * roleIdentifier;
 @property(readonly) NSString * sdkVersion;
 @property(readonly) NSString * shortVersionString;
+@property(readonly) NSString * sourceAppIdentifier;
 @property(readonly) NSNumber * staticDiskUsage;
 @property(readonly) NSString * storeCohortMetadata;
 @property(readonly) NSNumber * storeFront;
@@ -133,6 +137,7 @@
 - (bool)isPlaceholder;
 - (bool)isPurchasedReDownload;
 - (bool)isRestricted;
+- (bool)isWatchKitApp;
 - (id)itemID;
 - (id)itemName;
 - (id)localizedName;
@@ -141,6 +146,7 @@
 - (id)minimumSystemVersion;
 - (unsigned long long)originalInstallType;
 - (id)plugInKitPlugins;
+- (void)populateNotificationData;
 - (bool)privateDocumentIconAllowOverride;
 - (id)privateDocumentIconNames;
 - (id)privateDocumentTypeOwner;
@@ -153,6 +159,7 @@
 - (void)setPrivateDocumentIconNames:(id)arg1;
 - (void)setPrivateDocumentTypeOwner:(id)arg1;
 - (id)shortVersionString;
+- (id)sourceAppIdentifier;
 - (id)staticDiskUsage;
 - (id)storeCohortMetadata;
 - (id)storeFront;

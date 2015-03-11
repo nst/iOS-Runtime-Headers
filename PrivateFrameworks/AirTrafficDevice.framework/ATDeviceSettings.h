@@ -2,19 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class NSObject<OS_dispatch_queue>, NSSet, NSString, NSUserDefaults;
+@class NSArray, NSObject<OS_dispatch_queue>, NSString, NSUserDefaults;
 
 @interface ATDeviceSettings : NSObject {
     NSObject<OS_dispatch_queue> *_queue;
     NSUserDefaults *_userDefaults;
 }
 
-@property(copy,readonly) NSSet * dataClassesNeedingSync;
+@property(copy,readonly) NSArray * dataClassesNeedingSync;
 @property(readonly) bool fairPlayEnabled;
 @property(readonly) bool grappaEnabled;
 @property(copy,readonly) NSString * interfaceName;
 @property(readonly) bool isDeviceLinkClient;
 @property(copy,readonly) NSString * libraryIdentifier;
+@property(readonly) double pairingSyncCompletionTime;
 @property(copy,readonly) NSString * serviceDomain;
 @property(copy,readonly) NSString * serviceName;
 @property(copy,readonly) NSString * serviceType;
@@ -34,8 +35,10 @@
 - (id)init;
 - (id)interfaceName;
 - (bool)isDeviceLinkClient;
+- (bool)isSyncPendingForDataClass:(id)arg1;
 - (id)lastSyncTimeForLibrary:(id)arg1 dataClass:(id)arg2;
 - (id)libraryIdentifier;
+- (double)pairingSyncCompletionTime;
 - (void)removeEndpointInfoForLibrary:(id)arg1;
 - (id)serviceDomain;
 - (id)serviceName;
@@ -43,7 +46,8 @@
 - (void)setEndpointInfo:(id)arg1;
 - (void)setHasCompletedDataMigration:(bool)arg1;
 - (void)setHostInfo:(id)arg1 forLibrary:(id)arg2;
-- (void)setSyncRequested:(bool)arg1 forDataClass:(id)arg2;
+- (void)setPairingSyncCompletionTime:(double)arg1;
+- (void)setSyncPending:(bool)arg1 forDataClass:(id)arg2;
 - (void)setSyncState:(id)arg1 forLibrary:(id)arg2 dataClass:(id)arg3;
 - (id)syncStateForLibrary:(id)arg1 dataClass:(id)arg2;
 - (void)synchronize;

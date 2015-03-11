@@ -2,24 +2,32 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetAdmissionControlLog.framework/CoreDuetAdmissionControlLog
  */
 
+@class NSMutableDictionary;
+
 @interface CDAdmissionControlLogReader : NSObject {
     struct __asl_object_s { } *_ablemsg;
     struct __asl_object_s { } *_aslclient;
+    NSMutableDictionary *_invalidKeys;
 }
 
 @property struct __asl_object_s { }* ablemsg;
 @property struct __asl_object_s { }* aslclient;
+@property(retain) NSMutableDictionary * invalidKeys;
 
+- (void).cxx_destruct;
 - (struct __asl_object_s { }*)ablemsg;
 - (struct __asl_object_s { }*)aslclient;
 - (void)dealloc;
 - (id)init;
 - (id)initWithLogFile:(id)arg1;
+- (id)invalidKeys;
+- (bool)isValidKey:(id)arg1;
 - (id)nsValueFromString:(id)arg1;
 - (id)readAll;
 - (id)readSinceDate:(id)arg1 limit:(unsigned long long)arg2;
 - (id)readTail:(unsigned long long)arg1;
 - (void)setAblemsg:(struct __asl_object_s { }*)arg1;
 - (void)setAslclient:(struct __asl_object_s { }*)arg1;
+- (void)setInvalidKeys:(id)arg1;
 
 @end

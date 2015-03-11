@@ -30,7 +30,6 @@
     unsigned int _preparingForResume : 1;
     unsigned int _settingConversation : 1;
     unsigned int _needsTransitionToFullTranscript : 1;
-    unsigned int _storedStatusBarIsHidden : 1;
     UIToolbar *_actionsToolbar;
     id _alertViewHandler;
     CKAudioTrimViewController *_audioTrimController;
@@ -69,7 +68,6 @@
     unsigned long long _sendProgressTotalCount;
     NSString *_serviceAvailabilityKey;
     int _setupState;
-    long long _storedStatusBarStyle;
     CKMessageEncodingInfo *_textMessageEncodingInfo;
     UIView *_throwAnimationEnforcementView;
     UIView *_throwAnimationSnapshotView;
@@ -151,6 +149,7 @@
 - (void)_actuallyClearCurrentMessageThread;
 - (id)_alertView:(id)arg1 externalButtonTitleForMainScreenButtonTitle:(id)arg2 atIndex:(long long)arg3;
 - (void)_applicationBecameActive:(id)arg1;
+- (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_askToTurnOnReadReceiptsIfNeeded;
 - (void)_askToTurnOnSMSRelayIfNeeded;
 - (void)_beginTransitioningToTranscript;
@@ -165,6 +164,7 @@
 - (void)_deleteSelectedMessages:(id)arg1;
 - (void)_detailsButtonPressed:(id)arg1;
 - (void)_displayABPersonViewController:(id)arg1;
+- (bool)_displayMediaObjectFullscreen:(id)arg1;
 - (bool)_displayPreviewItemForMediaObject:(id)arg1;
 - (void)_editCancelButtonPressed:(id)arg1;
 - (void)_endTransitioningToTranscript;
@@ -224,6 +224,7 @@
 - (void)_showVCardViewerForMediaObject:(id)arg1;
 - (void)_startCreatingNewMessageForSending:(id)arg1;
 - (id)_supportedMediaTypesForPhotoPicker;
+- (void)_textInputModeDidChange:(id)arg1;
 - (struct CGPoint { double x1; double x2; })_transcriptScrollToBottomOffsetWithHeightDelta:(double)arg1;
 - (void)_transferFinished:(id)arg1;
 - (void)_transferRestored:(id)arg1;
@@ -339,8 +340,6 @@
 - (bool)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (bool)personViewController:(id)arg1 shouldPresentMessageCompositionWithVCard:(id)arg2 filename:(id)arg3;
 - (bool)photoButtonEnabled;
-- (long long)preferredStatusBarStyle;
-- (bool)prefersStatusBarHidden;
 - (void)prepareForResume;
 - (void)prepareForSuspend;
 - (void)presentPhotoPickerViewController:(id)arg1 completion:(id)arg2;
@@ -432,6 +431,7 @@
 - (bool)shouldAutorotate;
 - (bool)shouldDismissAfterSend;
 - (void)showAddToExistingContactViewForEntity:(id)arg1;
+- (void)showAlternateViewerForMediaObject:(id)arg1;
 - (void)showKeyboardForReply;
 - (void)showMediaPicker:(id)arg1 animated:(bool)arg2;
 - (void)showPopoverWithContentViewController:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
@@ -450,6 +450,8 @@
 - (bool)topInsetIncludesPalette;
 - (double)topInsetPadding;
 - (void)transcriptCollectionViewController:(id)arg1 balloonViewTappedForItemWithIndexPath:(id)arg2;
+- (void)transcriptCollectionViewController:(id)arg1 balloonViewTitleTappedForItemWithIndexPath:(id)arg2;
+- (void)transcriptCollectionViewController:(id)arg1 collectionViewContentSizeDidChange:(struct CGSize { double x1; double x2; })arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 moreButtonTappedForRowAtIndexPath:(id)arg2;
@@ -458,6 +460,7 @@
 - (void)transcriptCollectionViewControllerPlayingAudioDidChange:(id)arg1;
 - (bool)transcriptCollectionViewControllerShouldPlayAudio:(id)arg1;
 - (void)transcriptCollectionViewControllerWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (void)transcriptCollectionViewControllerWillScrollToBottom:(id)arg1;
 - (void)transitionFromNewMessageToConversation;
 - (void)trimController:(id)arg1 didFinishTrimmingMediaObject:(id)arg2 withReplacementMediaObject:(id)arg3;
 - (void)trimControllerDidCancel:(id)arg1;

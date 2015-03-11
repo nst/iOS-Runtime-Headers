@@ -24,7 +24,11 @@
 - (void)_clearPort:(bool)arg1;
 - (id)_currentMessageContext;
 - (void)_enqueueInvocation:(id)arg1 xpcMessage:(id)arg2;
+- (void)_enqueueInvocation:(id)arg1;
+- (void)_enqueueInvocationWithPriority:(id)arg1 priority:(int)arg2;
+- (void)_enqueueInvocationWithPriority:(id)arg1 xpcMessage:(id)arg2 priority:(int)arg3;
 - (bool)_handleInvocation:(id)arg1;
+- (void)_handleInvocationForSendMessage:(id)arg1;
 - (void)_handleNewInvocations;
 - (void)_noteNewInvocation;
 - (id)_peekInvocation;

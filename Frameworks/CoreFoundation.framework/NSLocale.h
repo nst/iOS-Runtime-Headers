@@ -43,6 +43,7 @@
 + (void)registerPreferredLanguage:(id)arg1 usage:(unsigned long long)arg2 confidence:(float)arg3;
 + (void)setPreferredLanguages:(id)arg1;
 + (id)string:(id)arg1 withCapitalizedDisplayNamesForFirstLanguageIdentifier:(id)arg2 secondLanguageIdentifier:(id)arg3 thirdLanguageIdentifier:(id)arg4;
++ (id)supportedCJLanguageIdentifiers;
 + (bool)supportsSecureCoding;
 + (id)systemLanguages;
 + (id)systemLocale;

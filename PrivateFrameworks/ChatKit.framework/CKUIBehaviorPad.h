@@ -30,7 +30,7 @@
 - (bool)shouldSuppressRotationInNewCompose;
 - (bool)showMMSSetup;
 - (bool)showPendingInConversationList;
-- (bool)showsChevronImage;
+- (bool)showsConversationListCellChevronImage;
 - (unsigned long long)supportedInterfaceOrientations;
 - (double)transcriptContactImageDiameter;
 - (double)transcriptHeaderViewMaxRows;

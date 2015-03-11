@@ -6,9 +6,10 @@
    See Warning(s) below.
  */
 
-@class UIButton, UIImageView, UIView;
+@class UIButton, UIColor, UIImageView, UIView;
 
 @interface RemoteUITableViewCell : UITableViewCell {
+    UIColor *_accessoryColor;
     UIButton *_detailLinkButton;
     id _detailLinkHandler;
     UIImageView *_invalidRowView;
@@ -25,7 +26,10 @@
 
 - (void).cxx_destruct;
 - (void)_accessoriesChanged;
+- (id)_checkmarkImage:(bool)arg1;
 - (void)_detailLinkPressed;
+- (id)_disclosureChevronImage:(bool)arg1;
+- (void)_setRemoteUIAccessoryType:(long long)arg1 withColor:(id)arg2;
 - (bool)forceFullSizeDetailLabel;
 - (void)layoutSubviews;
 - (bool)leftAlignDetailLabel;

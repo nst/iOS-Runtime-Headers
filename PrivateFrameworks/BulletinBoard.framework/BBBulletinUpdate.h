@@ -4,24 +4,27 @@
 
 @class BBBulletin;
 
-@interface BBBulletinUpdate : NSObject <NSSecureCoding> {
+@interface BBBulletinUpdate : NSObject {
     BBBulletin *_bulletin;
-    unsigned long long _transactionID;
-    long long _updateType;
+    unsigned long long _feeds;
+    long long _type;
+    bool_shouldSync;
 }
 
 @property(retain,readonly) BBBulletin * bulletin;
-@property(readonly) unsigned long long transactionID;
-@property(readonly) long long updateType;
+@property(readonly) unsigned long long feeds;
+@property(readonly) bool shouldSync;
+@property(readonly) long long type;
 
-+ (bool)supportsSecureCoding;
++ (id)modifyForBulletin:(id)arg1 feeds:(unsigned long long)arg2;
++ (id)removeForBulletin:(id)arg1 feeds:(unsigned long long)arg2 shouldSync:(bool)arg3;
 
 - (id)bulletin;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithBulletin:(id)arg1 updateType:(long long)arg2 transactionID:(unsigned long long)arg3;
-- (id)initWithCoder:(id)arg1;
-- (unsigned long long)transactionID;
-- (long long)updateType;
+- (unsigned long long)feeds;
+- (id)initWithBulletin:(id)arg1 feeds:(unsigned long long)arg2 type:(long long)arg3 shouldSync:(bool)arg4;
+- (bool)shouldSync;
+- (long long)type;
+- (id)typeDescription;
 
 @end

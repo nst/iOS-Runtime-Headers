@@ -6,18 +6,28 @@
    See Warning(s) below.
  */
 
+@class NSDate, NSString;
+
 @interface BBObserverGatewayAddBulletinRequest : NSObject {
-    id _handler;
-    unsigned long long _timeout;
+    NSString *_bulletinID;
+    NSString *_sectionID;
+    NSDate *_timeout;
+    id _timeoutHandler;
 }
 
-@property(copy) id handler;
-@property unsigned long long timeout;
+@property(retain) NSString * bulletinID;
+@property(retain) NSString * sectionID;
+@property(retain) NSDate * timeout;
+@property(copy) id timeoutHandler;
 
+- (id)bulletinID;
 - (void)dealloc;
-- (id)handler;
-- (void)setHandler:(id)arg1;
-- (void)setTimeout:(unsigned long long)arg1;
-- (unsigned long long)timeout;
+- (id)sectionID;
+- (void)setBulletinID:(id)arg1;
+- (void)setSectionID:(id)arg1;
+- (void)setTimeout:(id)arg1;
+- (void)setTimeoutHandler:(id)arg1;
+- (id)timeout;
+- (id)timeoutHandler;
 
 @end

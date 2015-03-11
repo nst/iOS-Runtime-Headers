@@ -6,18 +6,7 @@
 }
 
 + (id)TVShowEpisodesDefaultOrderingTerms;
-+ (id)_albumArtistProtocolItemWithTrackProperties:(id)arg1 inLibrary:(id)arg2;
-+ (id)_albumProtocolItemWithTrackProperties:(id)arg1 inLibrary:(id)arg2;
-+ (id)_artistProtocolItemWithTrackProperties:(id)arg1 inLibrary:(id)arg2;
-+ (id)_composerProtocolItemWithTrackProperties:(id)arg1 inLibrary:(id)arg2;
-+ (id)_genreProtocolItemWithTrackProperties:(id)arg1 inLibrary:(id)arg2;
-+ (id)_movieProtocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
 + (id)_normalizedImportChapters:(id)arg1 trackPersistentID:(long long)arg2;
-+ (id)_playbackInfoProtocolItemWithTrackProperties:(id)arg1 inLibrary:(id)arg2;
-+ (id)_podcastProtocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
-+ (id)_seriesProtocolItemWithTrackProperties:(id)arg1 inLibrary:(id)arg2;
-+ (id)_songProtocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
-+ (id)_tvShowProtocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
 + (id)albumAllArtistsDefaultOrderingTerms;
 + (id)albumAndArtistDefaultOrderingTerms;
 + (id)albumsDefaultOrderingTerms;
@@ -57,7 +46,6 @@
 + (id)predicateByOptimizingComparisonPredicate:(id)arg1;
 + (id)predisambiguatedProperties;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
-+ (id)protocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
 + (bool)registerBookmarkMetadataIdentifierFunctionOnConnection:(id)arg1;
 + (long long)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
@@ -82,6 +70,7 @@
 - (void)createVideoSnapshotAtTime:(double)arg1;
 - (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3 usingConnection:(id)arg4;
 - (id)multiverseIdentifier;
+- (id)multiverseIdentifierLibraryOnly:(bool)arg1;
 - (bool)needsVideoSnapshot;
 - (bool)populateArtworkCacheWithArtworkData:(id)arg1;
 - (void)populateChapterDataWithImportChapters:(id)arg1;

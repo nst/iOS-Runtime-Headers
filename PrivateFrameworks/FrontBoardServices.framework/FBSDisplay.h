@@ -47,6 +47,7 @@
 - (bool)isHiddenDisplay;
 - (bool)isMainDisplay;
 - (bool)isMusicOnlyDisplay;
+- (bool)isWatchOnlyDisplay;
 - (bool)isiPodOnlyDisplay;
 - (double)orientation;
 - (double)scale;

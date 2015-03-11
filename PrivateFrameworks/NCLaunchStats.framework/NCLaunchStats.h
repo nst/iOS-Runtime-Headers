@@ -21,6 +21,8 @@
     CDBudget *energyBudget;
     NSMutableArray *fireDates;
     NSDate *fireWakeupDate;
+    NSArray *forecastList;
+    NSDate *forecastStartDate;
     unsigned int kTimeGuardBand;
     NSDate *lastTriggerTime;
     NSObject<OS_dispatch_queue> *ncLaunchStatsQueue;
@@ -41,6 +43,7 @@
 - (void)endEvent:(id)arg1;
 - (id)init;
 - (void)initAfterClassCUnlocked;
+- (bool)isForecasted:(id)arg1;
 - (void)ncTriggerObserver:(id)arg1;
 - (void)preWarmHasEnded:(id)arg1 withResult:(unsigned long long)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
 - (void)preWarmHasStarted:(id)arg1 withResult:(unsigned long long)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;

@@ -12,6 +12,7 @@
     NSDictionary *_accountPreferences;
     NSMutableDictionary *_accountPreferencesChanges;
     long long _accountType;
+    NSArray *_aliases;
     IMPeople *_buddyList;
     NSArray *_cachedAllowList;
     NSArray *_cachedBlockList;
@@ -173,7 +174,8 @@
 - (void)_ensureGroupsExists:(id)arg1;
 - (void)_handleDeliveredCommand:(id)arg1 withProperties:(id)arg2 fromBuddyInfo:(id)arg3;
 - (void)_handleIncomingCommand:(id)arg1 withProperties:(id)arg2 fromBuddyInfo:(id)arg3;
-- (id)_imHandleWithID:(id)arg1 alreadyCanonical:(bool)arg2 knownIDStatus:(int)arg3 originalID:(id)arg4 countryCode:(id)arg5;
+- (id)_imHandleWithID:(id)arg1 alreadyCanonical:(bool)arg2 originalID:(id)arg3 countryCode:(id)arg4;
+- (void)_invalidateCachedAliases;
 - (bool)_isUsableForSending;
 - (void)_loadFromDictionary:(id)arg1 force:(bool)arg2;
 - (void)_loginWithAutoLogin:(bool)arg1;

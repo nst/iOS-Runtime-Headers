@@ -24,6 +24,7 @@
 
 + (id)UUID;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)hk_UUIDWithData:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (id)UUIDString;
@@ -33,6 +34,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)getUUIDBytes:(unsigned char[16])arg1;
 - (unsigned long long)hash;
+- (id)hk_dataForUUIDBytes;
 - (id)init;
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initWithCPLArchiver:(id)arg1;

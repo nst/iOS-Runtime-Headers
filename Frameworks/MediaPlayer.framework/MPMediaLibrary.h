@@ -143,6 +143,7 @@
 - (bool)collectionExistsWithName:(id)arg1 groupingType:(long long)arg2 existentPID:(unsigned long long*)arg3;
 - (bool)collectionExistsWithPersistentID:(unsigned long long)arg1 groupingType:(long long)arg2;
 - (bool)collectionExistsWithStoreID:(long long)arg1 groupingType:(long long)arg2 existentPID:(unsigned long long*)arg3;
+- (bool)companionDeviceActiveStoreAccountIsDynamiteEligible;
 - (id)completeMyCollectionArtworkDataSource;
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id)arg2;
 - (void)connectWithCompletionHandler:(id)arg1;

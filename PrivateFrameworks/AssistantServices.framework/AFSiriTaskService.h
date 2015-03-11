@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class <AFSiriTaskServiceDelegate>, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
+@class AFSiriTaskDeliveryHandler, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
 
-@interface AFSiriTaskService : NSObject <AFSiriTaskHandling, NSXPCListenerDelegate> {
-    <AFSiriTaskServiceDelegate> *_delegate;
+@interface AFSiriTaskService : NSObject <NSXPCListenerDelegate> {
+    AFSiriTaskDeliveryHandler *_deliveryHandler;
     NSXPCListener *_listener;
     NSObject<OS_dispatch_queue> *_queue;
 }
@@ -19,7 +19,7 @@
 + (id)appTaskService;
 
 - (void).cxx_destruct;
-- (void)handleSiriTask:(id)arg1;
+- (void)dealloc;
 - (id)initWithMachServiceName:(id)arg1;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)resume;

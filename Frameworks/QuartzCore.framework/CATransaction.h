@@ -26,6 +26,7 @@
 + (void)setAnimatesFromModelValues:(bool)arg1;
 + (void)setAnimationDuration:(double)arg1;
 + (void)setAnimationTimingFunction:(id)arg1;
++ (void)setCommitHandler:(id)arg1;
 + (void)setCommitTime:(double)arg1;
 + (void)setCompletionBlock:(id)arg1;
 + (void)setDisableActions:(bool)arg1;

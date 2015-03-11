@@ -26,6 +26,7 @@
 - (id)init;
 - (id)initInEditMode:(bool)arg1;
 - (bool)isInEditMode;
+- (void)localeDidChange:(id)arg1;
 - (long long)numberOfRows;
 - (id)owningViewController;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;

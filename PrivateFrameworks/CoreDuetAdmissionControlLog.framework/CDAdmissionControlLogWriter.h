@@ -2,33 +2,50 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetAdmissionControlLog.framework/CoreDuetAdmissionControlLog
  */
 
-@class WeakPowerLogInterface;
+@class NSString, WeakPowerLogInterface;
 
 @interface CDAdmissionControlLogWriter : NSObject {
     struct __asl_object_s { } *_ablemsg;
     struct __asl_object_s { } *_aslclient;
+    const char *_facility;
+    NSString *_logfile;
     WeakPowerLogInterface *_powerLog;
 }
 
 @property struct __asl_object_s { }* ablemsg;
 @property struct __asl_object_s { }* aslclient;
+@property const char * facility;
+@property(retain) NSString * logfile;
 @property(retain) WeakPowerLogInterface * powerLog;
 
 - (void).cxx_destruct;
 - (struct __asl_object_s { }*)ablemsg;
 - (struct __asl_object_s { }*)aslclient;
+- (const char *)facility;
 - (id)init;
+- (id)initWithFacility:(id)arg1;
+- (id)initWithLogFile:(id)arg1 forFacility:(id)arg2;
 - (id)initWithLogFile:(id)arg1;
 - (void)logCoreDuetAdmissionCheckForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 value:(id)arg4 sequenceNumber:(unsigned long long)arg5 probability:(double)arg6 threshold:(double)arg7 BON:(unsigned long long)arg8 reason:(id)arg9 admitted:(bool)arg10 ableID:(unsigned long long)arg11;
 - (void)logCoreDuetAdmissionCheckForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 value:(id)arg4 sequenceNumber:(unsigned long long)arg5 probability:(double)arg6 threshold:(double)arg7 BON:(unsigned long long)arg8 role:(unsigned long long)arg9 reason:(id)arg10 admitted:(bool)arg11 ableID:(unsigned long long)arg12;
+- (void)logCoreDuetAdmissionCheckForDevice:(unsigned int)arg1 remoteDevice:(unsigned int)arg2 Client:(unsigned long long)arg3 attributeID:(unsigned long long)arg4 attribute:(id)arg5 value:(id)arg6 sequenceNumber:(unsigned long long)arg7 probability:(double)arg8 threshold:(double)arg9 BON:(unsigned long long)arg10 role:(unsigned long long)arg11 reason:(id)arg12 admitted:(bool)arg13 ableID:(unsigned long long)arg14;
 - (void)logCoreDuetEventForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned long long)arg4 sequenceNumber:(unsigned long long)arg5 event:(unsigned long long)arg6 value:(id)arg7 cellIn:(unsigned long long)arg8 cellOut:(unsigned long long)arg9 wifiIn:(unsigned long long)arg10 wifiOut:(unsigned long long)arg11;
+- (void)logCoreDuetEventForDevice:(unsigned int)arg1 remoteDevice:(unsigned int)arg2 Client:(unsigned long long)arg3 attributeID:(unsigned long long)arg4 attribute:(id)arg5 updateType:(unsigned long long)arg6 sequenceNumber:(unsigned long long)arg7 event:(unsigned long long)arg8 value:(id)arg9 cellIn:(unsigned long long)arg10 cellOut:(unsigned long long)arg11 wifiIn:(unsigned long long)arg12 wifiOut:(unsigned long long)arg13;
 - (void)logCoreDuetEventStartForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned long long)arg4 sequenceNumber:(unsigned long long)arg5 value:(id)arg6;
+- (void)logCoreDuetEventStartForDevice:(unsigned int)arg1 remoteDevice:(unsigned int)arg2 Client:(unsigned long long)arg3 attributeID:(unsigned long long)arg4 attribute:(id)arg5 updateType:(unsigned long long)arg6 sequenceNumber:(unsigned long long)arg7 value:(id)arg8;
 - (void)logCoreDuetEventStopForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned long long)arg4 sequenceNumber:(unsigned long long)arg5 value:(id)arg6 cellIn:(unsigned long long)arg7 cellOut:(unsigned long long)arg8 wifiIn:(unsigned long long)arg9 wifiOut:(unsigned long long)arg10;
+- (void)logCoreDuetEventStopForDevice:(unsigned int)arg1 remoteDevice:(unsigned int)arg2 Client:(unsigned long long)arg3 attributeID:(unsigned long long)arg4 attribute:(id)arg5 updateType:(unsigned long long)arg6 sequenceNumber:(unsigned long long)arg7 value:(id)arg8 cellIn:(unsigned long long)arg9 cellOut:(unsigned long long)arg10 wifiIn:(unsigned long long)arg11 wifiOut:(unsigned long long)arg12;
+- (void)logDictionary:(id)arg1 withMsg:(struct __asl_object_s { }*)arg2;
 - (void)logDictionary:(id)arg1;
 - (void)logString:(id)arg1;
+- (id)logfile;
 - (id)powerLog;
+- (id)serialiseDictionary:(id)arg1;
 - (void)setAblemsg:(struct __asl_object_s { }*)arg1;
 - (void)setAslclient:(struct __asl_object_s { }*)arg1;
+- (void)setFacility:(const char *)arg1;
+- (void)setLogfile:(id)arg1;
 - (void)setPowerLog:(id)arg1;
+- (id)truncate;
 
 @end

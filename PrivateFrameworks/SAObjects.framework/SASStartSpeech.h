@@ -22,12 +22,16 @@
 @property(copy) NSString * headsetAddress;
 @property(copy) NSString * headsetId;
 @property(copy) NSString * headsetName;
+@property(copy) NSNumber * isCarryDevice;
 @property(copy) NSString * motionActivity;
 @property(copy) NSNumber * motionConfidence;
 @property(copy) NSNumber * noiseReductionLevel;
 @property(copy) NSString * origin;
 @property(copy) NSString * refId;
 @property(readonly) Class superclass;
+
++ (id)startSpeech;
++ (id)startSpeechWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)audioSource;
 - (bool)clearContext;
@@ -42,7 +46,7 @@
 - (id)headsetAddress;
 - (id)headsetId;
 - (id)headsetName;
-- (id)init;
+- (id)isCarryDevice;
 - (id)motionActivity;
 - (id)motionConfidence;
 - (id)noiseReductionLevel;
@@ -58,6 +62,7 @@
 - (void)setHeadsetAddress:(id)arg1;
 - (void)setHeadsetId:(id)arg1;
 - (void)setHeadsetName:(id)arg1;
+- (void)setIsCarryDevice:(id)arg1;
 - (void)setMotionActivity:(id)arg1;
 - (void)setMotionConfidence:(id)arg1;
 - (void)setNoiseReductionLevel:(id)arg1;

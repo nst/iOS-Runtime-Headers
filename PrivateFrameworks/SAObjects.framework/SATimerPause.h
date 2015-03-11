@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SATimerPause : SADomainCommand {
+@class NSString;
+
+@interface SATimerPause : SADomainCommand <SATimerTimerAction> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)pause;
 + (id)pauseWithDictionary:(id)arg1 context:(id)arg2;

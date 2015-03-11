@@ -42,5 +42,6 @@
 - (void)routingViewControllerDidUpdateContents:(id)arg1;
 - (void)setAVItemType:(unsigned long long)arg1;
 - (void)showInView:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)tintColorDidChange;
 
 @end

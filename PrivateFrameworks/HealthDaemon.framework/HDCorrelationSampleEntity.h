@@ -9,12 +9,12 @@
 + (id)_objectsWithIDs:(id)arg1 healthDaemon:(id)arg2;
 + (id)_tableValuesFromDataObject:(id)arg1;
 + (bool)acceptsObject:(id)arg1;
-+ (void)applyRelatedPropertiesToObject:(id)arg1 entity:(id)arg2 properties:(id)arg3 values:(id*)arg4 authorizationFilter:(id)arg5 healthDaemon:(id)arg6;
++ (id)codableObjectsFromObjectCollection:(id)arg1;
 + (id)createTableSQL;
++ (id)deleteStatementsForRelatedEntitiesInDatabase:(id)arg1;
 + (bool)isBackedByTable;
-+ (void)load;
++ (Class)propertyApplierClass;
 
-- (bool)deleteAssociatedEntitiesInDatabase:(id)arg1 error:(id*)arg2;
-- (bool)deleteFromDatabase:(id)arg1;
+- (bool)deleteFromDatabase:(id)arg1 error:(id*)arg2;
 
 @end

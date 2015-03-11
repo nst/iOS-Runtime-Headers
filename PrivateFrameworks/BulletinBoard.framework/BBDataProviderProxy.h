@@ -40,6 +40,7 @@
 - (void)invalidateBulletins;
 - (void)modifyBulletin:(id)arg1;
 - (void)noteSectionInfoDidChange:(id)arg1;
+- (void)primaryAttachmentDataForRecordID:(id)arg1 completion:(id)arg2;
 - (void)reloadDefaultSectionInfo;
 - (void)reloadSectionParameters;
 - (void)setIdentity:(id)arg1;

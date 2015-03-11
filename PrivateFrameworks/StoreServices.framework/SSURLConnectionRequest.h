@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSURLConnectionRequestDelegate>, NSString, NSURLRequest, SSAuthenticationContext, SSURLRequestProperties, SSVURLDataConsumer;
+@class <SSURLConnectionRequestDelegate>, NSString, NSURL, NSURLRequest, SSAuthenticationContext, SSURLRequestProperties, SSVURLDataConsumer;
 
 @interface SSURLConnectionRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext *_authenticationContext;
     SSVURLDataConsumer *_dataConsumer;
+    NSURL *_destinationFileURL;
     SSURLRequestProperties *_requestProperties;
     bool_runsInProcess;
     bool_sendsResponseForHTTPFailures;
@@ -19,6 +20,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <SSURLConnectionRequestDelegate> * delegate;
 @property(copy,readonly) NSString * description;
+@property(copy) NSURL * destinationFileURL;
 @property(readonly) unsigned long long hash;
 @property(readonly) SSURLRequestProperties * requestProperties;
 @property bool runsInProcess;
@@ -34,6 +36,7 @@
 - (id)copyXPCEncoding;
 - (id)dataConsumer;
 - (void)dealloc;
+- (id)destinationFileURL;
 - (id)init;
 - (id)initWithRequestProperties:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
@@ -43,6 +46,7 @@
 - (bool)sendsResponseForHTTPFailures;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setDataConsumer:(id)arg1;
+- (void)setDestinationFileURL:(id)arg1;
 - (void)setRunsInProcess:(bool)arg1;
 - (void)setSendsResponseForHTTPFailures:(bool)arg1;
 - (void)setShouldMescalSign:(bool)arg1;

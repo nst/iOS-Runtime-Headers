@@ -575,6 +575,7 @@
 - (double)iceTimeoutInSeconds:(bool)arg1;
 - (id)imageAttributeRules;
 - (id)init;
+- (id)initWithDeviceRole:(int)arg1;
 - (void)initWithRelevantStorebagEntries;
 - (bool)initialSecondaryRelaySetupDone;
 - (bool)initializeVideoReceiver:(id*)arg1 reportingAgent:(struct opaqueRTCReporting { }*)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray, NSDate, NSDictionary, NSSet, NSString, NSURL, PKBarcode, PKImage, PKPassDisplayProfile, PKPaymentPass, UIImage;
+@class NSArray, NSData, NSDate, NSDictionary, NSSet, NSString, NSURL, PKBarcode, PKImage, PKPassDisplayProfile, PKPaymentPass, UIImage;
 
 @interface PKPass : PKObject <NSCopying, NSSecureCoding> {
     NSSet *_embeddedBeacons;
@@ -43,6 +43,7 @@
 @property(readonly) PKImage * frontFaceImage;
 @property(readonly) NSArray * frontFieldBuckets;
 @property(copy) NSString * groupingID;
+@property(readonly) bool hasLogoImageSet;
 @property(setter=setiAdReportingIdentifier:,copy) NSString * iAdReportingIdentifier;
 @property(copy,readonly) UIImage * icon;
 @property(readonly) PKImage * iconImage;
@@ -54,6 +55,9 @@
 @property(readonly) NSString * logoText;
 @property(readonly) NSString * lowercaseLocalizedName;
 @property(retain) NSDate * modifiedDate;
+@property(readonly) NSData * npkCompleteHash;
+@property(readonly) bool npkExpired;
+@property(readonly) bool npkHasBarcode;
 @property(copy) NSString * organizationName;
 @property(readonly) PKImage * partialFrontFaceImage;
 @property(readonly) PKImage * partialFrontFaceImagePlaceholder;
@@ -104,6 +108,7 @@
 - (id)frontFieldBuckets;
 - (id)groupingID;
 - (bool)hasLocationRelevancyInfo;
+- (bool)hasLogoImageSet;
 - (bool)hasTimeOrLocationRelevancyInfo;
 - (id)iAdReportingIdentifier;
 - (id)icon;
@@ -128,6 +133,9 @@
 - (id)lowercaseLocalizedName;
 - (id)mailAttachmentIcon;
 - (id)modifiedDate;
+- (id)npkCompleteHash;
+- (bool)npkExpired;
+- (bool)npkHasBarcode;
 - (id)organizationName;
 - (id)partialFrontFaceImage;
 - (id)partialFrontFaceImagePlaceholder;

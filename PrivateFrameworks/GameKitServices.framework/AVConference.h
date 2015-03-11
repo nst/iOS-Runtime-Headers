@@ -48,9 +48,11 @@
 + (unsigned int)doBlockingConnectionCheck:(bool)arg1;
 + (unsigned int)doBlockingConnectionCheck;
 + (id)externalAddressForSelfConnectionBlob:(id)arg1;
++ (bool)hasActiveAudioSession;
 + (void)refreshLoggingParameters;
 + (void)setAudioSessionProperties:(id)arg1;
 + (void)startAudioSession;
++ (void)startAudioSessionWithCompletionHandler:(id)arg1;
 + (void)stopAudioSession;
 
 - (void)addGKSCallEvent:(id)arg1 sessionID:(id)arg2;

@@ -5,23 +5,31 @@
 @class NSString;
 
 @interface ML3AlbumData : NSObject {
-    long long _albumPid;
+    long long _albumPID;
     int _albumYear;
+    long long _order;
+    unsigned char _section;
     NSString *_sortAlbum;
     int _userRating;
 }
 
-@property long long albumPid;
+@property long long albumPID;
 @property int albumYear;
+@property long long order;
+@property unsigned char section;
 @property(retain) NSString * sortAlbum;
 @property int userRating;
 
 - (void).cxx_destruct;
-- (long long)albumPid;
+- (long long)albumPID;
 - (int)albumYear;
-- (id)initWithState:(long long)arg1 sortAlbum:(id)arg2 userRating:(int)arg3 albumYear:(int)arg4;
-- (void)setAlbumPid:(long long)arg1;
+- (id)initWithAlbumPID:(long long)arg1 sortAlbum:(id)arg2 userRating:(int)arg3 albumYear:(int)arg4 order:(long long)arg5 section:(unsigned char)arg6;
+- (long long)order;
+- (unsigned char)section;
+- (void)setAlbumPID:(long long)arg1;
 - (void)setAlbumYear:(int)arg1;
+- (void)setOrder:(long long)arg1;
+- (void)setSection:(unsigned char)arg1;
 - (void)setSortAlbum:(id)arg1;
 - (void)setUserRating:(int)arg1;
 - (id)sortAlbum;

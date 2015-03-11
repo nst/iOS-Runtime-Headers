@@ -54,9 +54,9 @@
 
 + (void)initialize;
 
-- (bool)_attachmentImagesFetchedForBulletinID:(id)arg1;
+- (bool)_attachmentImagesFetchedForBulletin:(id)arg1;
 - (id)_attachmentInfoForBulletinID:(id)arg1 create:(bool)arg2;
-- (bool)_attachmentSizesFetchedForBulletinID:(id)arg1;
+- (bool)_attachmentSizesFetchedForBulletin:(id)arg1;
 - (void)_commonInit:(id)arg1;
 - (void)_dequeueBulletinUpdateIfPossibleForSection:(id)arg1;
 - (void)_fetchAndProcessImageForBulletinID:(id)arg1 withKey:(id)arg2 constraints:(id)arg3 attachmentType:(long long)arg4 completion:(id)arg5;
@@ -68,8 +68,8 @@
 - (void)_getParametersIfNecessaryForSectionIDs:(id)arg1 withCompletion:(id)arg2;
 - (void)_invalidate;
 - (id)_lifeAssertionForBulletinID:(id)arg1;
-- (void)_noteAttachmentImagesFetchedForBulletinID:(id)arg1;
-- (void)_noteAttachmentSizesFetchedForBulletinID:(id)arg1;
+- (void)_noteAttachmentImagesFetchedForBulletin:(id)arg1;
+- (void)_noteAttachmentSizesFetchedForBulletin:(id)arg1;
 - (void)_noteCompletedBulletinFetch;
 - (void)_noteCompletedBulletinUpdateForSection:(id)arg1;
 - (void)_performBulletinFetch:(id)arg1;
@@ -92,8 +92,9 @@
 - (unsigned long long)gatewayPriority;
 - (void)getAlertBehaviorOverridesWithCompletion:(id)arg1;
 - (void)getAttachmentImageForBulletin:(id)arg1 withCompletion:(id)arg2;
-- (void)getBulletinsForPublisherBulletinIDs:(id)arg1 sectionID:(id)arg2 withCompletion:(id)arg3;
+- (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withCompletion:(id)arg3;
 - (void)getParametersForSectionID:(id)arg1 withCompletion:(id)arg2;
+- (void)getPrimaryAttachmentDataForBulletin:(id)arg1 withCompletion:(id)arg2;
 - (void)getPrivilegedAddressBookGroupRecordIDAndNameWithCompletion:(id)arg1;
 - (void)getPrivilegedSenderTypesWithCompletion:(id)arg1;
 - (void)getSectionInfoForCategory:(long long)arg1 withCompletion:(id)arg2;

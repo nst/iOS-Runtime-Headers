@@ -46,6 +46,7 @@
 - (bool)forecastAttributeId:(unsigned long long)arg1 value:(id)arg2 format:(long long)arg3 historyWindow:(id)arg4 limitCount:(unsigned long long)arg5 error:(id*)arg6 replyHandler:(id)arg7;
 - (bool)getDeviceFromDescription:(id)arg1 error:(id*)arg2 replyHandler:(id)arg3;
 - (bool)getDevicesWithError:(id*)arg1 replyHandler:(id)arg2;
+- (bool)getLocalAppBundleId:(id*)arg1 replyHandler:(id)arg2;
 - (bool)idForAttribute:(id)arg1 clientId:(long long)arg2 error:(id*)arg3 replyHandler:(id)arg4;
 - (bool)idForAttribute:(id)arg1 error:(id*)arg2 replyHandler:(id)arg3;
 - (bool)idForPool:(id)arg1 error:(id*)arg2 replyHandler:(id)arg3;
@@ -65,6 +66,7 @@
 - (bool)registerPool:(id)arg1 withInitialValue:(long long)arg2 poolType:(long long)arg3 error:(id*)arg4 replyHandler:(id)arg5;
 - (bool)registerTrendableApp:(id)arg1 error:(id*)arg2 replyHandler:(id)arg3;
 - (bool)remoteFocalAppWithId:(unsigned long long)arg1 error:(id*)arg2 replyHandler:(id)arg3;
+- (bool)requestAdmissionLogFromDevice:(unsigned int)arg1 error:(id*)arg2 replyHandler:(id)arg3;
 - (bool)requestForecastFromDevice:(unsigned int)arg1 attributeId:(unsigned long long)arg2 value:(id)arg3 historyWindow:(id)arg4 format:(long long)arg5 error:(id*)arg6 replyHandler:(id)arg7;
 - (bool)requestStatisticFromDevice:(unsigned int)arg1 attributeId:(unsigned long long)arg2 statistic:(int)arg3 historyWindow:(id)arg4 error:(id*)arg5 replyHandler:(id)arg6;
 - (bool)requestSystemDataFromDevice:(unsigned int)arg1 error:(id*)arg2 replyHandler:(id)arg3;

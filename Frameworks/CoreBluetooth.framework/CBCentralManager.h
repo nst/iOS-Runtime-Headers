@@ -22,7 +22,6 @@
     CBPairingAgent *_pairingAgent;
     NSMapTable *_peripherals;
     long long _state;
-    bool_connectionIsFinalized;
     bool_isScanning;
 }
 
@@ -30,6 +29,7 @@
 @property <CBCentralManagerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned long long hash;
+@property bool isScanning;
 @property(readonly) CBPairingAgent * sharedPairingAgent;
 @property long long state;
 @property(readonly) Class superclass;
@@ -56,9 +56,11 @@
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (bool)isMsgAllowedAlways:(int)arg1;
 - (bool)isMsgAllowedWhenOff:(int)arg1;
+- (bool)isScanning;
 - (void)orphanPeripherals;
-- (id)peerWithIdentifier:(id)arg1 dict:(id)arg2;
-- (id)peripheralWithIdentifier:(id)arg1 dict:(id)arg2;
+- (id)peerWithInfo:(id)arg1;
+- (id)peripheralWithIdentifier:(id)arg1;
+- (id)peripheralWithInfo:(id)arg1;
 - (oneway void)release;
 - (void)retrieveConnectedPeripherals;
 - (id)retrieveConnectedPeripheralsWithServices:(id)arg1 allowAll:(bool)arg2;
@@ -70,6 +72,7 @@
 - (id)sendSyncMsg:(int)arg1 args:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredConnectionLatency:(long long)arg1 forPeripheral:(id)arg2;
+- (void)setIsScanning:(bool)arg1;
 - (void)setState:(long long)arg1;
 - (id)sharedPairingAgent;
 - (long long)state;

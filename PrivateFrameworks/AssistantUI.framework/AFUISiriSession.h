@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUISiriSessionDelegate>, <AFUISiriSessionLocalDataSource>, <AFUISiriSessionLocalDelegate>, AFConnection, AFUISpeechSynthesis, AFUIStateMachine, NSObject<OS_dispatch_queue>, NSString;
+@class <AFUISiriSessionDelegate>, <AFUISiriSessionLocalDataSource>, <AFUISiriSessionLocalDelegate>, AFConnection, AFUISpeechSynthesis, AFUIStateMachine, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AFUISiriSession : NSObject <AFAssistantUIService, AFSpeechDelegate, AFUIStateMachineDelegate, AFUISpeechSynthesisLocalDelegate, AFUISiriSession> {
     AFConnection *_connection;
+    NSObject<OS_dispatch_group> *_currentSpeechRequestGroup;
     <AFUISiriSessionDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     <AFUISiriSessionLocalDataSource> *_localDataSource;
     <AFUISiriSessionLocalDelegate> *_localDelegate;
+    NSMutableSet *_speechRequestGroupGraveyard;
     AFUISpeechSynthesis *_speechSynthesis;
     AFUIStateMachine *_stateMachine;
     bool_currentRequestDidPresent;
@@ -17,6 +19,7 @@
 }
 
 @property(getter=_connection,readonly) AFConnection * connection;
+@property(getter=_currentSpeechRequestGroup,setter=_setCurrentSpeechRequestGroup:,retain) NSObject<OS_dispatch_group> * currentSpeechRequestGroup;
 @property(copy,readonly) NSString * debugDescription;
 @property(retain) <AFUISiriSessionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
@@ -32,6 +35,7 @@
 
 - (void).cxx_destruct;
 - (id)_connection;
+- (id)_currentSpeechRequestGroup;
 - (void)_didChangeDialogPhase:(id)arg1;
 - (void)_handleRequestUpdateViewsCommand:(id)arg1;
 - (void)_handleUnlockDeviceCommand:(id)arg1;
@@ -44,6 +48,7 @@
 - (void)_requestContextWithCompletion:(id)arg1;
 - (void)_requestDidFinishWithError:(id)arg1;
 - (void)_requestWillStart;
+- (void)_setCurrentSpeechRequestGroup:(id)arg1;
 - (void)_siriNetworkAvailabilityDidChange:(id)arg1;
 - (void)_startContinuityRequestWithInfo:(id)arg1;
 - (void)_startDirectActionRequestWithString:(id)arg1 appID:(id)arg2 withMessagesContext:(id)arg3;

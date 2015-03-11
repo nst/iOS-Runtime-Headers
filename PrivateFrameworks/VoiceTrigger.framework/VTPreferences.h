@@ -20,6 +20,7 @@
 - (id)localizedTriggerPhraseForLanguageCode:(id)arg1;
 - (id)loggingThresholdOffset;
 - (bool)onetimeRemoteAssetQueryRanSuccessfully;
+- (bool)phraseSpotterEnabled;
 - (void)setConsoleLoggingLevel:(id)arg1;
 - (void)setEarlyDetectThresholdOffset:(id)arg1;
 - (void)setFacedownGestureEnabled:(bool)arg1;
@@ -29,6 +30,7 @@
 - (void)setLanguageCodeWithoutUpdate:(id)arg1;
 - (void)setLoggingThresholdOffset:(id)arg1;
 - (void)setOnetimeRemoteAssetQueryRanSuccessfully:(bool)arg1;
+- (void)setPhraseSpotterEnabled:(bool)arg1;
 - (void)setSpeakerAdaptationEnabled:(bool)arg1;
 - (void)setThresholdOffset:(id)arg1;
 - (void)setThresholdOverride:(id)arg1;

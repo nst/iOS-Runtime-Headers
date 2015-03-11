@@ -6,8 +6,8 @@
 }
 
 + (long long)containerItemType;
-+ (id)itemPersistentIDProperty;
-+ (id)persistentIDProperty;
++ (id)itemPersistentIDPropertyForGroupingType:(long long)arg1;
++ (id)persistentIDPropertyForGroupingType:(long long)arg1;
 
 - (void)defaultsDidChange;
 

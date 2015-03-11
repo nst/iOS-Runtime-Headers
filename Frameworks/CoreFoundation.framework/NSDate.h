@@ -37,7 +37,6 @@
 + (id)CalDateForEndOfTomorrow;
 + (id)CalDateForNow;
 + (id)_geo_calendar;
-+ (id)_geo_dateWithJulianDay:(double)arg1;
 + (id)_gkDateFromScalarServerTimestamp:(unsigned long long)arg1;
 + (id)_gkDateFromServerTimestamp:(id)arg1;
 + (id)_gkServerTimestamp;
@@ -45,6 +44,7 @@
 + (id)_todayComponents;
 + (id)_tomorrowComponents;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)bod;
 + (id)date;
 + (id)dateForDaysSince1970:(int)arg1;
 + (id)dateForDaysSince1970:(int)arg1;
@@ -72,9 +72,9 @@
 + (id)defaultDateFormatter;
 + (id)distantFuture;
 + (id)distantPast;
++ (id)eod;
 + (id)filenameDateStringWithStartDate:(id)arg1 endDate:(id)arg2;
-+ (id)hk_ISO8601DateFromString:(id)arg1;
-+ (id)hk_formatterISO8601;
++ (id)geo_dateWithJulianDay:(double)arg1;
 + (id)mf_copyDateInCommonFormatsWithString:(id)arg1;
 + (id)mf_copyLenientDateInCommonFormatsWithString:(id)arg1;
 + (id)modificationDateForNoteBeingEdited;
@@ -94,9 +94,6 @@
 - (id)__coreroutine_roundedUpDate;
 - (bool)_afui_isSameDayAsDate:(id)arg1;
 - (unsigned long long)_cfTypeID;
-- (double)_geo_hoursAndMinutes;
-- (double)_geo_julianDay;
-- (void)_geo_sunInformationForLocation:(struct { double x1; double x2; })arg1 previousRiseTransitSet:(out id*)arg2 currentRiseTransitSet:(out id*)arg3 nextRiseTransitSet:(out id*)arg4 altitude:(double)arg5;
 - (id)_gkFormatedWhenStringWithOptions:(unsigned long long)arg1;
 - (id)_gkFormattedDateForStyle:(unsigned long long)arg1 relative:(bool)arg2;
 - (id)_gkServerTimestamp;
@@ -151,8 +148,10 @@
 - (id)earlierDate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (double)geo_hoursAndMinutes;
+- (double)geo_julianDay;
+- (double)geo_julianEphemerisDay;
 - (unsigned long long)hash;
-- (id)hk_ISO8601String;
 - (long long)hour;
 - (long long)hourInCalendar:(id)arg1;
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;

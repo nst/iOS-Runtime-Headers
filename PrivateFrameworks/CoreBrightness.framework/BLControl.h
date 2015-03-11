@@ -26,7 +26,9 @@
     boolaabExist;
     boolignoreALSEvents;
     boolignoreBrightnessKey;
+    boolmonitorALSOnly;
     booloverrideIgnoreBrightness;
+    booluseRootQueue;
     unsigned int displayCount;
     struct __Display {} *display[2];
     unsigned int driverNode[3];
@@ -35,6 +37,7 @@
     unsigned int otherClientsCount;
     struct __IOHIDServiceClient {} *otherClients[3];
     NSObject<OS_dispatch_queue> *queue;
+    NSObject<OS_dispatch_queue> *rootQueue;
 }
 
 - (void)callBlockWithProperty:(struct __CFString { }*)arg1 value:(void*)arg2;
@@ -46,6 +49,7 @@
 - (bool)findHIDClients;
 - (id)init;
 - (void)registerNotificationBlock:(id)arg1;
+- (int)rootQueuePthreadAttrInit:(struct _opaque_pthread_attr_t { long long x1; BOOL x2[56]; }*)arg1;
 - (bool)setBLControlPropertyWithKey:(struct __CFString { }*)arg1 property:(void*)arg2;
 - (bool)setPropertyWithKey:(struct __CFString { }*)arg1 property:(void*)arg2;
 - (bool)start;

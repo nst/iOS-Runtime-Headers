@@ -42,6 +42,8 @@
 + (id)pl_safeUnarchiveObjectWithFile:(id)arg1;
 + (id)secureUnarchiveData:(id)arg1 withExpectedClass:(Class)arg2 otherAllowedClasses:(id)arg3;
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
++ (id)unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
++ (id)unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1;
 + (id)unarchiveObjectWithFile:(id)arg1;

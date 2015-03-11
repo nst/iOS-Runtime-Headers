@@ -24,7 +24,7 @@
         unsigned int launchEventReceived : 1; 
         unsigned int activateEventReceived : 1; 
         unsigned int systemIsAnimatingApplicationLifecycleEvent : 1; 
-        unsigned int isResuming : 1; 
+        unsigned int isActivating : 1; 
         unsigned int isSuspendedUnderLock : 1; 
         unsigned int shouldExitAfterSendSuspend : 1; 
         unsigned int terminating : 1; 
@@ -53,6 +53,7 @@
         unsigned int delegateSupportsStateRestoration : 1; 
         unsigned int delegateSupportedInterfaceOrientations : 1; 
         unsigned int delegateHandleSiriTask : 1; 
+        unsigned int delegateSupportsWatchKitRequests : 1; 
         unsigned int userDefaultsSyncDisabled : 1; 
         unsigned int headsetButtonClickCount : 4; 
         unsigned int isHeadsetButtonDown : 1; 
@@ -201,6 +202,7 @@
 + (void)_startStatusBarServerIfNecessary;
 + (void)_startWindowServerIfNecessary;
 + (Class)_statusBarClass;
++ (Class)_statusBarWindowClass;
 + (long long)interfaceOrientationForString:(id)arg1;
 + (bool)isRunningEventPump;
 + (bool)isRunningInStoreDemoMode;
@@ -212,6 +214,7 @@
 + (bool)registerAsSystemApp;
 + (void)registerObjectForStateRestoration:(id)arg1 restorationIdentifier:(id)arg2;
 + (bool)rendersLocally;
++ (long long)runningInStoreDemoModeFProgramNumber;
 + (id)sharedApplication;
 + (bool)shouldBackgroundMainThreadOnSuspendedLaunch;
 + (bool)shouldMakeUIForDefaultPNG;
@@ -244,6 +247,7 @@
 - (bool)_alertWindowShouldRotate;
 - (bool)_alwaysHitTestsForMainScreen;
 - (void)_applicationHandleSiriTask:(id)arg1;
+- (void)_applicationHandleWatchKitRequest:(id)arg1;
 - (bool)_applicationLaunchesIntoPortrait;
 - (void)_applicationOpenURL:(id)arg1 payload:(id)arg2;
 - (id)_applicationProxyForURLScheme:(id)arg1 publicURLsOnly:(bool)arg2;
@@ -345,6 +349,7 @@
 - (void)_installAutoreleasePoolsIfNecessaryForMode:(struct __CFString { }*)arg1;
 - (void)_installEventRunLoopSource;
 - (bool)_isActivated;
+- (bool)_isActivating;
 - (bool)_isAutorotationDisabledForAppWindows;
 - (bool)_isClassic;
 - (bool)_isHandlingMemoryWarning;
@@ -355,7 +360,6 @@
 - (bool)_isNormalRestorationInProgress;
 - (bool)_isOrientationVerticallyCompact:(long long)arg1;
 - (bool)_isRestorationExtended;
-- (bool)_isResuming;
 - (bool)_isSendingEventForProgrammaticTouchCancellation;
 - (bool)_isSensitiveUIEnabled;
 - (bool)_isSpringBoard;
@@ -518,6 +522,7 @@
 - (id)_snapshotContextWithName:(id)arg1 screen:(id)arg2;
 - (void)_startHangTracer;
 - (void)_startPlaybackTimer;
+- (id)_statusBarControllingWindow;
 - (bool)_statusBarOrientationFollowsWindow:(id)arg1;
 - (long long)_statusBarOrientationForWindow:(id)arg1;
 - (void)_stopDeactivatingForReason:(int)arg1;
@@ -527,6 +532,7 @@
 - (bool)_supportedInterfaceOrientationsIsEnabled;
 - (bool)_supportsCompactStatusBarHiding;
 - (bool)_supportsShakesWhenNotActive;
+- (void)_syncWithBackgroundTaskQueue;
 - (id)_targetInChainForAction:(SEL)arg1 sender:(id)arg2;
 - (bool)_taskSuspendingUnsupported;
 - (void)_terminateWithStatus:(int)arg1;
@@ -635,6 +641,8 @@
 - (void)endRemoteSheet:(id)arg1 returnCode:(long long)arg2;
 - (void)endRemoteSheet:(id)arg1;
 - (void)extendStateRestoration;
+- (void)failedTest:(id)arg1 withFailure:(id)arg2 withResults:(id)arg3;
+- (void)failedTest:(id)arg1 withFailure:(id)arg2;
 - (void)failedTest:(id)arg1 withResults:(id)arg2;
 - (void)failedTest:(id)arg1;
 - (void)finishedIPTest:(id)arg1 extraResults:(id)arg2;

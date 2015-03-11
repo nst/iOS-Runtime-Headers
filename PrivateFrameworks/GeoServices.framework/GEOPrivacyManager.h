@@ -2,13 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class CHManager;
-
 @interface GEOPrivacyManager : NSObject {
-    CHManager *_callHistoryManager;
 }
 
-- (void)_callHistoryManagerRecentsChangedNotificationObserver:(id)arg1;
 - (void)_fireRecentsClearedNotification;
 - (void)_fireResetLocationAndPrivacyNotification;
 - (void)dealloc;

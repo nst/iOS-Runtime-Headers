@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CacheDelete.framework/CacheDelete
  */
 
-@class NSString, NSXPCConnection, NSXPCListenerEndpoint;
+@class NSSet, NSString, NSXPCConnection, NSXPCListenerEndpoint;
 
 @interface CDService : NSObject {
     NSString *_ID;
+    NSSet *_desiredNotifications;
     NSXPCListenerEndpoint *_endpoint;
     NSXPCConnection *_xpcConn;
     bool_doesPeriodic;
@@ -13,6 +14,7 @@
 }
 
 @property(retain) NSString * ID;
+@property(retain) NSSet * desiredNotifications;
 @property bool doesPeriodic;
 @property bool doesPurge;
 @property(retain) NSXPCListenerEndpoint * endpoint;
@@ -20,9 +22,11 @@
 
 - (void).cxx_destruct;
 - (id)ID;
+- (id)desiredNotifications;
 - (bool)doesPeriodic;
 - (bool)doesPurge;
 - (id)endpoint;
+- (void)setDesiredNotifications:(id)arg1;
 - (void)setDoesPeriodic:(bool)arg1;
 - (void)setDoesPurge:(bool)arg1;
 - (void)setEndpoint:(id)arg1;

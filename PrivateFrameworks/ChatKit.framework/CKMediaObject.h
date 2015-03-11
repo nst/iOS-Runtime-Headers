@@ -30,6 +30,8 @@
 + (id)fallbackFilenamePrefix;
 + (id)iconCache;
 + (bool)isPreviewable;
++ (bool)shouldScaleUpPreview;
++ (bool)shouldShadePreview;
 
 - (id)JPEGDataFromImage:(id)arg1;
 - (id)UTIType;
@@ -37,7 +39,6 @@
 - (Class)balloonViewClassForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)bbPreviewFillToSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })bbSize;
-- (bool)canBeAttachmentContiguous;
 - (bool)canExport;
 - (Class)coloredBalloonViewClass;
 - (id)composeImages;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIActionSliderDelegate>, NSString, UIBezierPath, UIFont, UIImage, UIImageView, UIPanGestureRecognizer, UIView, _UIBackdropView, _UIGlintyStringView;
+@class <_UIActionSliderDelegate>, NSString, UIBezierPath, UIColor, UIFont, UIImage, UIImageView, UILabel, UIPanGestureRecognizer, UIView, UIView<_UIActionSliderLabel>, _UIActionSliderKnob, _UIBackdropView, _UIVibrantSettings;
 
 @interface _UIActionSlider : UIControl <UIGestureRecognizerDelegate> {
     struct CGPoint { 
@@ -26,19 +26,23 @@
     UIImageView *_knobImageView;
     } _knobInsets;
     double _knobPosition;
-    UIView *_knobView;
+    _UIActionSliderKnob *_knobView;
     double _knobWidth;
     } _slideGestureInitialPoint;
     UIPanGestureRecognizer *_slideGestureRecognizer;
     long long _style;
+    long long _textStyle;
     UIView *_trackBackgroundView;
     _UIBackdropView *_trackBlurView;
     UIView *_trackDodgeView;
-    _UIGlintyStringView *_trackLabel;
+    UIFont *_trackFont;
+    UIView<_UIActionSliderLabel> *_trackLabel;
     } _trackSize;
     UIView *_trackSolidView;
+    NSString *_trackText;
     double _trackTextBaselineFromBottom;
     double _trackWidthProportion;
+    _UIVibrantSettings *_vibrantSettings;
     bool_animating;
     bool_showingTrackLabel;
 }
@@ -49,6 +53,7 @@
 @property <_UIActionSliderDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned long long hash;
+@property(retain) UIColor * knobColor;
 @property(retain) UIImage * knobImage;
 @property struct CGSize { double x1; double x2; } knobImageOffset;
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } knobInsets;
@@ -58,14 +63,18 @@
 @property(getter=_knobView,readonly) UIView * knobView;
 @property double knobWidth;
 @property(getter=isShowingTrackLabel) bool showingTrackLabel;
+@property(readonly) UIPanGestureRecognizer * slideGestureRecognizer;
 @property long long style;
 @property(readonly) Class superclass;
+@property long long textStyle;
 @property(retain) UIFont * trackFont;
+@property(retain,readonly) UILabel * trackLabel;
 @property struct CGSize { double x1; double x2; } trackSize;
 @property(copy) NSString * trackText;
 @property double trackTextBaselineFromBottom;
 @property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } trackTextRect;
 @property double trackWidthProportion;
+@property(retain) _UIVibrantSettings * vibrantSettings;
 
 - (void)_hideTrackLabel:(bool)arg1;
 - (double)_knobAvailableX;
@@ -78,6 +87,7 @@
 - (double)_knobVerticalInset;
 - (id)_knobView;
 - (double)_knobWidth;
+- (void)_makeTrackLabel;
 - (void)_showTrackLabel;
 - (void)_slideCompleted:(bool)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_trackFrame;
@@ -89,8 +99,10 @@
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 vibrantSettings:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isAnimating;
 - (bool)isShowingTrackLabel;
+- (id)knobColor;
 - (id)knobImage;
 - (struct CGSize { double x1; double x2; })knobImageOffset;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })knobInsets;
@@ -104,6 +116,7 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCachedTrackMaskWidth:(double)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setKnobColor:(id)arg1;
 - (void)setKnobImage:(id)arg1;
 - (void)setKnobImageOffset:(struct CGSize { double x1; double x2; })arg1;
 - (void)setKnobInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
@@ -113,14 +126,19 @@
 - (void)setMaskPath:(struct CGPath { }*)arg1 onView:(id)arg2;
 - (void)setShowingTrackLabel:(bool)arg1;
 - (void)setStyle:(long long)arg1;
+- (void)setTextStyle:(long long)arg1;
 - (void)setTrackFont:(id)arg1;
 - (void)setTrackSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTrackText:(id)arg1;
 - (void)setTrackTextBaselineFromBottom:(double)arg1;
 - (void)setTrackWidthProportion:(double)arg1;
+- (void)setVibrantSettings:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)slideGestureRecognizer;
 - (long long)style;
+- (long long)textStyle;
 - (id)trackFont;
+- (id)trackLabel;
 - (id)trackMaskImage;
 - (id)trackMaskPath;
 - (struct CGSize { double x1; double x2; })trackSize;
@@ -129,5 +147,6 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackTextRect;
 - (double)trackWidthProportion;
 - (void)updateAllTrackMasks;
+- (id)vibrantSettings;
 
 @end

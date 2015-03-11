@@ -19,7 +19,5 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setAceId:(id)arg1;
-- (void)setRefId:(id)arg1;
 
 @end

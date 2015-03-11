@@ -14,6 +14,7 @@
 - (void).cxx_destruct;
 - (void)_clearConnection;
 - (id)_connection;
+- (void)_fetchPeerData:(id)arg1;
 - (id)_filterVoices:(id)arg1 forLanguage:(id)arg2;
 - (void)_setVoices:(id)arg1;
 - (id)_settingsService;

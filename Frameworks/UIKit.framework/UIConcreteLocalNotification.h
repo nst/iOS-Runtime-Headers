@@ -8,6 +8,7 @@
     NSString *alertAction;
     NSString *alertBody;
     NSString *alertLaunchImage;
+    NSString *alertTitle;
     long long applicationIconBadgeNumber;
     boolallowSnooze;
     boolfireNotificationsWhenAppRunning;
@@ -38,6 +39,7 @@
 - (id)alertAction;
 - (id)alertBody;
 - (id)alertLaunchImage;
+- (id)alertTitle;
 - (bool)allowSnooze;
 - (long long)applicationIconBadgeNumber;
 - (id)category;
@@ -72,6 +74,7 @@
 - (void)setAlertAction:(id)arg1;
 - (void)setAlertBody:(id)arg1;
 - (void)setAlertLaunchImage:(id)arg1;
+- (void)setAlertTitle:(id)arg1;
 - (void)setAllowSnooze:(bool)arg1;
 - (void)setApplicationIconBadgeNumber:(long long)arg1;
 - (void)setCategory:(id)arg1;

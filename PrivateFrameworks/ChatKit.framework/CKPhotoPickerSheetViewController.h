@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKCameraSheetViewControllerDelegate>, ALAssetsLibrary, CKDispatchQueue, CKTranscriptController, NSArray, NSMutableArray, NSObject<OS_dispatch_group>, NSString, UICollectionView, UITableView, UITapGestureRecognizer, UIView, UIWindow;
+@class <CKCameraSheetViewControllerDelegate>, ALAssetsLibrary, CKDispatchQueue, CKTranscriptController, NSArray, NSCache, NSMutableArray, NSObject<OS_dispatch_group>, NSString, UICollectionView, UITableView, UITapGestureRecognizer, UIView, UIWindow;
 
 @interface CKPhotoPickerSheetViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate> {
     NSArray *_assets;
@@ -10,7 +10,7 @@
     UITableView *_buttonsTableView;
     <CKCameraSheetViewControllerDelegate> *_delegate;
     CKDispatchQueue *_largePhotoQueue;
-    NSMutableArray *_largePhotos;
+    NSCache *_largePhotos;
     ALAssetsLibrary *_library;
     NSObject<OS_dispatch_group> *_loadingGroup;
     CKTranscriptController *_owner;

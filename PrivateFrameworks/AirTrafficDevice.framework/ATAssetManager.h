@@ -35,7 +35,6 @@
 - (void)_finishAsset:(id)arg1 forDataClass:(id)arg2;
 - (void)_finishDataClassIfDone:(id)arg1;
 - (void)_loadAssetClients;
-- (void)_processAssetRequest:(id)arg1 onMessageLink:(id)arg2;
 - (void)_updateAsset:(id)arg1 withProgress:(float)arg2;
 - (void)addObserver:(id)arg1;
 - (id)allDataclasses;
@@ -55,7 +54,6 @@
 - (unsigned long long)currentAssetForDataclass:(id)arg1;
 - (bool)dataclassIsEmpty:(id)arg1;
 - (void)dealloc;
-- (void)enqueueAssetsForDataClass:(id)arg1;
 - (void)enqueueLegacyAssetsForDataClass:(id)arg1;
 - (id)init;
 - (bool)isEmpty;

@@ -18,7 +18,6 @@
 - (bool)beginGeneratingGeniusClusterItemsWithSeedItems:(id)arg1 error:(id*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)count;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endGeneratingGeniusClusterItems;
 - (bool)existsInLibrary;

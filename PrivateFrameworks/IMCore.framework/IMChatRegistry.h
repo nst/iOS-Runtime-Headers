@@ -65,6 +65,7 @@
 - (void)_chat_loadAttachments:(id)arg1 queryID:(id)arg2;
 - (void)_chat_loadFrequentReplies:(id)arg1 limit:(unsigned long long)arg2 queryID:(id)arg3;
 - (void)_chat_loadHistory:(id)arg1 limit:(unsigned long long)arg2 beforeGUID:(id)arg3 afterGUID:(id)arg4 queryID:(id)arg5;
+- (void)_chat_loadUnreadMessages:(id)arg1 limit:(unsigned long long)arg2 fallbackGUID:(id)arg3 queryId:(id)arg4;
 - (void)_chat_remove:(id)arg1;
 - (void)_chat_sendReadReceiptForAllMessages:(id)arg1;
 - (void)_chat_storeItem:(id)arg1 inChat:(id)arg2;

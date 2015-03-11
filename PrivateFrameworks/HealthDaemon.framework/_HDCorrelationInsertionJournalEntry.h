@@ -2,25 +2,29 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSArray, NSUUID;
+@class NSData, NSUUID;
 
 @interface _HDCorrelationInsertionJournalEntry : HDJournalEntry {
     NSUUID *_correlationUUID;
-    NSArray *_objectUUIDs;
+    NSData *_objectUUIDsData;
+    long long _provenance;
 }
 
 @property(readonly) NSUUID * correlationUUID;
-@property(readonly) NSArray * objectUUIDs;
+@property(readonly) NSData * objectUUIDsData;
+@property(readonly) long long provenance;
 
++ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
++ (long long)behavior;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)applyWithDaemon:(id)arg1;
 - (id)correlationUUID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCorrelationUUID:(id)arg1 objectUUIDs:(id)arg2;
-- (id)objectUUIDs;
+- (id)initWithCorrelationUUID:(id)arg1 objectUUIDsData:(id)arg2 provenance:(long long)arg3;
+- (id)objectUUIDsData;
+- (long long)provenance;
 
 @end

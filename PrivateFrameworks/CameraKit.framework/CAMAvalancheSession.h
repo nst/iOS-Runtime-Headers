@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class <CAMAvalancheSessionDelegate>, CAMInflightAsset, CIBurstImageSet, NSDate, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface CAMAvalancheSession : NSObject {
@@ -10,6 +14,7 @@
     NSDate *__expirationDate;
     NSObject<OS_dispatch_queue> *__expirationQueue;
     NSObject<OS_dispatch_source> *__expirationTimer;
+    id _completionHandler;
     <CAMAvalancheSessionDelegate> *_delegate;
     unsigned long long _numberOfPhotos;
     CAMInflightAsset *_possibleAvalancheAsset;
@@ -23,6 +28,7 @@
 @property(setter=_setExpirationDate:,retain) NSDate * _expirationDate;
 @property(readonly) NSObject<OS_dispatch_queue> * _expirationQueue;
 @property(readonly) NSObject<OS_dispatch_source> * _expirationTimer;
+@property(copy) id completionHandler;
 @property <CAMAvalancheSessionDelegate> * delegate;
 @property(readonly) unsigned long long numberOfPhotos;
 @property(retain) CAMInflightAsset * possibleAvalancheAsset;
@@ -50,6 +56,7 @@
 - (id)assetWithUUID:(id)arg1;
 - (id)assetsWithUUIDs:(id)arg1;
 - (id)bestAssetIndentifiers;
+- (id)completionHandler;
 - (void)dealloc;
 - (id)delegate;
 - (bool)extend;
@@ -58,6 +65,7 @@
 - (id)initWithType:(long long)arg1;
 - (unsigned long long)numberOfPhotos;
 - (id)possibleAvalancheAsset;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)stackAssetIdentifier;
 - (long long)state;

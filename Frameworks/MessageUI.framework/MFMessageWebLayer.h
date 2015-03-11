@@ -29,6 +29,7 @@
     bool_hasUnloadedRemoteImages;
     bool_isReformatting;
     bool_prePrintDataDetectionPending;
+    bool_shouldAttemptToReformatMessage;
     bool_showRemoteImages;
     bool_stoppedLoading;
 }
@@ -39,6 +40,7 @@
 @property(copy) NSString * originalHTMLString;
 @property bool prePrintDataDetectionPending;
 @property(retain) MFMessageReformattingContext * reformattingContext;
+@property bool shouldAttemptToReformatMessage;
 @property bool showRemoteImages;
 
 + (void)beginBlockingRemoteImagesExceptForMessageWebLayer:(id)arg1;
@@ -119,7 +121,9 @@
 - (void)setPostDisplayOperationBlock:(id)arg1 cancellationBlock:(id)arg2;
 - (void)setPrePrintDataDetectionPending:(bool)arg1;
 - (void)setReformattingContext:(id)arg1;
+- (void)setShouldAttemptToReformatMessage:(bool)arg1;
 - (void)setShowRemoteImages:(bool)arg1;
+- (bool)shouldAttemptToReformatMessage;
 - (bool)showRemoteImages;
 - (void)stopLoading:(id)arg1;
 - (void)stopLoadingAndClear;

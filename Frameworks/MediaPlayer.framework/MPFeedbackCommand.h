@@ -11,6 +11,7 @@
 }
 
 @property(getter=isActive) bool active;
+@property(copy) NSString * localizedShortTitle;
 @property(copy) NSString * localizedTitle;
 
 - (void).cxx_destruct;

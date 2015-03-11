@@ -32,6 +32,7 @@
     bool_automaticCheckpointingEnabled;
     bool_isOpen;
     bool_isReadOnly;
+    bool_logQueryPlans;
     bool_nestedTransactionWantsToRollback;
 }
 
@@ -45,6 +46,7 @@
 @property(readonly) bool isOpen;
 @property(setter=setReadOnly:) bool isReadOnly;
 @property unsigned long long journalingMode;
+@property bool logQueryPlans;
 @property int profilingLevel;
 @property unsigned long long protectionLevel;
 @property(readonly) bool transactionMarkedForRollBack;
@@ -69,6 +71,7 @@
 - (bool)_internalEndTransactionAndCommit:(bool)arg1;
 - (id)_internalExecuteQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
 - (bool)_internalExecuteUpdate:(id)arg1 withParameters:(id)arg2 error:(id*)arg3;
+- (void)_internalLogQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
 - (bool)_isSharedMediaLibraryDatabase;
 - (void)_logCurrentError;
 - (void)_logCurrentErrorWhilePerformingStatementOperation:(id)arg1 statement:(id)arg2;
@@ -112,6 +115,7 @@
 - (bool)isReadOnly;
 - (unsigned long long)journalingMode;
 - (long long)lastInsertionRowID;
+- (bool)logQueryPlans;
 - (bool)open;
 - (id)openBlobInTable:(id)arg1 column:(id)arg2 row:(long long)arg3 readOnly:(bool)arg4;
 - (bool)performTransactionWithBlock:(id)arg1 usingBehaviorType:(unsigned long long)arg2;
@@ -133,6 +137,7 @@
 - (void)setCurrentTransactionID:(id)arg1;
 - (void)setITunesExtensions:(const void*)arg1;
 - (void)setJournalingMode:(unsigned long long)arg1;
+- (void)setLogQueryPlans:(bool)arg1;
 - (void)setProfilingLevel:(int)arg1;
 - (void)setProtectionLevel:(unsigned long long)arg1;
 - (void)setReadOnly:(bool)arg1;

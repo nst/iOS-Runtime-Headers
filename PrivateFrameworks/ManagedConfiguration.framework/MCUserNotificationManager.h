@@ -11,7 +11,7 @@
 
 - (void)cancelAllNotificationsCompletionBlock:(id)arg1;
 - (void)dealloc;
-- (void)displayUserNotificationWithTitle:(id)arg1 message:(id)arg2 defaultButtonText:(id)arg3 alternateButtonText:(id)arg4 displayOnLockScreen:(bool)arg5 displayInAppWhitelistModes:(bool)arg6 dismissAfterTimeInterval:(double)arg7 assertion:(id)arg8 completionBlock:(id)arg9;
+- (void)displayUserNotificationWithTitle:(id)arg1 message:(id)arg2 defaultButtonText:(id)arg3 alternateButtonText:(id)arg4 otherButtonText:(id)arg5 displayOnLockScreen:(bool)arg6 displayInAppWhitelistModes:(bool)arg7 dismissAfterTimeInterval:(double)arg8 assertion:(id)arg9 completionBlock:(id)arg10;
 - (bool)hasOutstandingNotifications;
 - (id)init;
 - (void)inviteUserToVPPWithTitle:(id)arg1 message:(id)arg2 assertion:(id)arg3 completionBlock:(id)arg4;

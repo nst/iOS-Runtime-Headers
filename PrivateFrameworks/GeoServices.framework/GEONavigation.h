@@ -2,16 +2,21 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOComposedRoute, GEOLocation, GEONavigationDetails, GEORouteMatch, NSObject<OS_xpc_object>, NSString;
+@class <GEONavigationDelegate>, GEOComposedRoute, GEOLocation, GEONavigationDetails, GEORouteMatch, NSData, NSObject<OS_xpc_object>, NSString, NSXPCConnection;
 
 @interface GEONavigation : NSObject {
-    NSObject<OS_xpc_object> *_connection;
+    <GEONavigationDelegate> *_delegate;
     GEONavigationDetails *_details;
+    NSObject<OS_xpc_object> *_geodConnection;
+    NSData *_lastSentRouteContext;
+    NSXPCConnection *_nanomapscdConnection;
     int _navigationStartedToken;
     bool_hasNavigationStartedToken;
+    bool_shouldSendRouteWithStatus;
 }
 
 @property unsigned long long announcementStage;
+@property <GEONavigationDelegate> * delegate;
 @property(readonly) NSString * destinationName;
 @property(readonly) double distanceRemainingOnRoute;
 @property(readonly) double distanceToManeuverEnd;
@@ -22,18 +27,27 @@
 @property(readonly) bool locationUnreliable;
 @property int navigationState;
 @property int navigationTransportType;
+@property(readonly) unsigned long long nextAnnouncementStage;
 @property(readonly) double remainingTime;
 @property(readonly) GEOComposedRoute * route;
 @property(readonly) GEORouteMatch * routeMatch;
+@property(readonly) double timeUntilNextAnnouncement;
 
 + (id)sharedInstance;
 
-- (void)_closeConnection;
-- (void)_createConnection;
+- (void)_closeGeodConnection;
+- (void)_closeNanomapscdConnection;
+- (void)_createGeodConnection;
+- (void)_createNanomapscdConnection;
+- (void)_invalidateNavigationSessionWithRouteContext:(id)arg1;
 - (void)_sendMessage:(id)arg1 data:(id)arg2;
+- (void)_setNeedsNavigationStatusUpdate;
+- (void)_updateNavigationRouteDetails:(id)arg1 routeStatus:(id)arg2 routeContext:(id)arg3;
+- (void)_updateNavigationRouteStatus;
 - (unsigned long long)announcementStage;
 - (void)clearRoute;
 - (void)dealloc;
+- (id)delegate;
 - (id)destinationName;
 - (double)distanceRemainingOnRoute;
 - (double)distanceToManeuverEnd;
@@ -45,15 +59,19 @@
 - (bool)locationUnreliable;
 - (int)navigationState;
 - (int)navigationTransportType;
+- (unsigned long long)nextAnnouncementStage;
 - (void)recalculatedToRoute:(id)arg1 location:(id)arg2 routeMatch:(id)arg3;
 - (double)remainingTime;
 - (id)route;
 - (id)routeMatch;
 - (void)setAnnouncementStage:(unsigned long long)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setNavigationState:(int)arg1;
 - (void)setNavigationTransportType:(int)arg1;
+- (void)setNextAnnouncementStage:(unsigned long long)arg1 andTime:(double)arg2;
 - (void)setRoute:(id)arg1 toDestinationName:(id)arg2;
 - (void)startNavigationForTransportType:(int)arg1 state:(int)arg2;
+- (double)timeUntilNextAnnouncement;
 - (void)updateLocation:(id)arg1 routeMatch:(id)arg2 etaRoute:(id)arg3 locationUnreliable:(bool)arg4;
 - (void)updatedETA:(id)arg1;
 

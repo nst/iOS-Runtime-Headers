@@ -16,6 +16,7 @@
     bool_isEyesFree;
     bool_isInitialBringUp;
     bool_useAutomaticEndpointing;
+    bool_useBorealisBuffer;
     bool_useStreamingDictation;
 }
 
@@ -30,6 +31,7 @@
 @property bool isInitialBringUp;
 @property(copy) NSString * serverCommandId;
 @property bool useAutomaticEndpointing;
+@property bool useBorealisBuffer;
 @property bool useStreamingDictation;
 
 + (bool)supportsSecureCoding;
@@ -59,8 +61,10 @@
 - (void)setIsInitialBringUp:(bool)arg1;
 - (void)setServerCommandId:(id)arg1;
 - (void)setUseAutomaticEndpointing:(bool)arg1;
+- (void)setUseBorealisBuffer:(bool)arg1;
 - (void)setUseStreamingDictation:(bool)arg1;
 - (bool)useAutomaticEndpointing;
+- (bool)useBorealisBuffer;
 - (bool)useStreamingDictation;
 
 @end

@@ -20,12 +20,13 @@
 }
 
 + (int)lastInitError;
++ (void)setSharedInstanceQueue:(id)arg1;
 + (id)sharedInstance;
 
 - (struct BTAccessoryManagerImpl { }*)_accessoryManager;
 - (void)_advertisingChanged;
 - (bool)_attach:(id)arg1;
-- (void)_cleanup:(bool)arg1;
+- (void)_cleanup;
 - (void)_connectabilityChanged;
 - (void)_connectedStatusChanged;
 - (void)_discoveryStateChanged;

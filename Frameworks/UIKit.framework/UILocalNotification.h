@@ -10,6 +10,7 @@
 @property(copy) NSString * alertAction;
 @property(copy) NSString * alertBody;
 @property(copy) NSString * alertLaunchImage;
+@property(copy) NSString * alertTitle;
 @property bool allowSnooze;
 @property long long applicationIconBadgeNumber;
 @property(copy) NSString * category;

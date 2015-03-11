@@ -13,6 +13,7 @@
     MPAVRoutingController *_routingController;
     unsigned long long _style;
     UIColor *_tableCellsBackgroundColor;
+    UIColor *_tableCellsContentColor;
     UITableView *_tableView;
     MPWeakTimer *_updateTimer;
     bool_airPlayPasswordAlertDidAppearTokenIsValid;
@@ -42,11 +43,13 @@
 - (void)_serviceWillPresentAuthenticationPromptNotification:(id)arg1;
 - (void)_setNeedsDisplayedRoutesUpdate;
 - (void)_setTableCellsBackgroundColor:(id)arg1;
+- (void)_setTableCellsContentColor:(id)arg1;
 - (void)_setupUpdateTimerIfNecessary;
 - (bool)_shouldShowAirPlayDebugButton;
 - (bool)_shouldShowMirroringCellForRoute:(id)arg1;
 - (void)_showAirPlayDebug;
 - (id)_tableCellsBackgroundColor;
+- (id)_tableCellsContentColor;
 - (id)_tableView;
 - (double)_tableViewHeightAccordingToDataSource;
 - (unsigned long long)_tableViewIndexForRouteIndex:(unsigned long long)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABContactHeaderViewDelegate>, <ABPresenterDelegate>, ABContactPhotoView, CNContact, NSDictionary, NSMutableArray;
+@class <ABContactHeaderViewDelegate>, <ABPresenterDelegate>, ABContactPhotoView, CNContact, CNContactStyle, NSDictionary, NSMutableArray;
 
 @interface ABContactHeaderView : UIView {
     struct UIEdgeInsets { 
@@ -11,6 +11,7 @@
         double bottom; 
         double right; 
     CNContact *_contact;
+    CNContactStyle *_contactStyle;
     } _contentMargins;
     <ABPresenterDelegate> *_delegate;
     NSMutableArray *_headerConstraints;
@@ -21,6 +22,7 @@
 }
 
 @property(readonly) CNContact * contact;
+@property(retain) CNContactStyle * contactStyle;
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentMargins;
 @property <ABPresenterDelegate> * delegate;
 @property(retain) NSMutableArray * headerConstraints;
@@ -29,6 +31,7 @@
 @property(readonly) ABContactPhotoView * photoView;
 
 - (id)contact;
+- (id)contactStyle;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentMargins;
 - (void)dealloc;
 - (id)delegate;
@@ -40,6 +43,7 @@
 - (void)reloadDataIfNeeded;
 - (void)reloadDataPreservingChanges:(bool)arg1;
 - (void)saveContactPhoto;
+- (void)setContactStyle:(id)arg1;
 - (void)setContentMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHeaderConstraints:(id)arg1;

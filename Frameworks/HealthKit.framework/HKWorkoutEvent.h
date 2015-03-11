@@ -2,24 +2,34 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSDate;
+@class NSDate, NSString;
 
-@interface HKWorkoutEvent : NSObject <NSSecureCoding> {
+@interface HKWorkoutEvent : NSObject <NSSecureCoding, HDCoding> {
     NSDate *_date;
     long long _type;
 }
 
 @property(copy,readonly) NSDate * date;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(readonly) long long type;
 
-+ (bool)_validType:(long long)arg1;
++ (id)_newWorkoutEventWithType:(long long)arg1 date:(id)arg2;
++ (id)_workoutEventWithType:(long long)arg1 date:(id)arg2;
++ (id)createWithCodable:(id)arg1;
 + (bool)supportsSecureCoding;
 + (id)workoutEventWithType:(long long)arg1 date:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_assertPropertiesValid;
 - (id)_init;
+- (void)_setDate:(id)arg1;
+- (void)_setType:(long long)arg1;
+- (id)_validateConfiguration;
 - (id)awakeAfterUsingCoder:(id)arg1;
+- (id)codableRepresentationForSync;
 - (id)date;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

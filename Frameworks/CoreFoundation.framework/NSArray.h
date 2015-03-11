@@ -290,6 +290,7 @@
 - (id)firstObjectPassingTest:(id)arg1;
 - (id)firstObjectPassingTest:(id)arg1;
 - (id)firstObjectPassingTest:(id)arg1;
+- (id)firstObjectPassingTest:(id)arg1;
 - (id)firstPath;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)getObjects:(id*)arg1;
@@ -360,8 +361,10 @@
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
 - (id)map:(id)arg1;
+- (id)map:(id)arg1;
 - (id)mapAtIndices:(id)arg1 withBlock:(id)arg2;
 - (id)mapDouble:(id)arg1;
+- (id)max:(id)arg1;
 - (id)messageForChatItemAtIndex:(unsigned long long)arg1;
 - (id)messages;
 - (bool)mf_all:(id)arg1;
@@ -388,6 +391,8 @@
 - (id)mf_uniquifyWithComparator:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (bool)nonePassPredicate:(id)arg1;
+- (id)npkFindFirstObjectMatchingCondition:(id)arg1;
+- (id)npkSafeObjectAtIndex:(unsigned long long)arg1;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)objectAtIndexes:(id)arg1 options:(unsigned long long)arg2 passingTest:(id)arg3;
@@ -398,6 +403,7 @@
 - (id)objectsAtIndexes:(id)arg1 options:(unsigned long long)arg2 passingTest:(id)arg3;
 - (id)objectsAtIndexes:(id)arg1;
 - (id)objectsInRangeFromIndex:(unsigned long long)arg1 withLength:(unsigned long long)arg2;
+- (id)objectsPassingTest:(id)arg1;
 - (id)objectsPassingTest:(id)arg1;
 - (id)objectsPassingTest:(id)arg1;
 - (id)objectsPassingTest:(id)arg1;

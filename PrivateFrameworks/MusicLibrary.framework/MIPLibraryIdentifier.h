@@ -28,6 +28,7 @@
 - (bool)isEqual:(id)arg1;
 - (long long)libraryId;
 - (id)libraryName;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setHasLibraryId:(bool)arg1;
 - (void)setLibraryId:(long long)arg1;

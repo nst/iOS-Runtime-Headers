@@ -5,6 +5,8 @@
 @class NSString;
 
 @interface CNPhoneNumber : NSObject <NSCopying> {
+    NSString *_cachedFormattedNormalizedStringValue;
+    NSString *_cachedNormalizedStringValue;
     NSString *_stringValue;
 }
 

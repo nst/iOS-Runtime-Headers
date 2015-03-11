@@ -33,6 +33,7 @@
 - (void)_configureCellsAfterScroll;
 - (id)_createTableView;
 - (void)_loadCellConfiguration;
+- (void)_recreateTableView;
 - (void)_reloadActionRowsAnimated:(bool)arg1 skipTableViewUpdates:(bool)arg2;
 - (void)_setCellConfigurationClass:(Class)arg1;
 - (void)_updateVisibleCellsForDownloads:(id)arg1 updateAllCells:(bool)arg2;

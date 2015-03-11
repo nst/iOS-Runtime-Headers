@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class IDSDaemonListener, IMLocalObject, IMRemoteObject<IDSDaemonProtocol>, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSProtocolChecker, NSSet, NSString;
+@class IDSDaemonListener, IMLocalObject, IMRemoteObject<IDSDaemonProtocol>, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSProtocolChecker, NSSet, NSString;
 
 @interface IDSDaemonController : NSObject <IDSDaemonProtocol> {
     unsigned int _cachedCapabilities;
     NSSet *_cachedCommands;
     NSSet *_cachedServices;
     NSSet *_commands;
+    unsigned long long _connectionID;
+    int _curXPCMessagePriority;
     NSObject<OS_dispatch_group> *_daemonConnectedGroup;
     IDSDaemonListener *_daemonListener;
     id _delegate;
@@ -19,6 +21,7 @@
     NSString *_listenerID;
     NSMutableDictionary *_listenerServices;
     IMLocalObject *_localObject;
+    NSMutableSet *_notificationServices;
     NSProtocolChecker *_protocol;
     NSObject<OS_dispatch_queue> *_remoteMessageQueue;
     IMRemoteObject<IDSDaemonProtocol> *_remoteObject;
@@ -32,6 +35,7 @@
 
 @property(setter=_setAutoReconnect:) bool _autoReconnect;
 @property(readonly) NSObject<OS_dispatch_queue> * _remoteMessageQueue;
+@property int curXPCMessagePriority;
 @property(copy,readonly) NSString * debugDescription;
 @property id delegate;
 @property(copy,readonly) NSString * description;
@@ -68,6 +72,7 @@
 - (bool)_setServices:(id)arg1;
 - (bool)addListenerID:(id)arg1 services:(id)arg2 commands:(id)arg3;
 - (bool)addListenerID:(id)arg1 services:(id)arg2;
+- (void)addedDelegateForService:(id)arg1;
 - (void)blockUntilConnected;
 - (unsigned int)capabilities;
 - (unsigned int)capabilitiesForListenerID:(id)arg1;
@@ -76,6 +81,7 @@
 - (bool)connectToDaemon;
 - (bool)connectToDaemonWithLaunch:(bool)arg1 services:(id)arg2 commands:(id)arg3 capabilities:(unsigned int)arg4;
 - (bool)connectToDaemonWithLaunch:(bool)arg1;
+- (int)curXPCMessagePriority;
 - (void)dealloc;
 - (id)delegate;
 - (void)disconnectFromDaemon;
@@ -98,6 +104,7 @@
 - (id)servicesForListenerID:(id)arg1;
 - (bool)setCapabilities:(unsigned int)arg1 forListenerID:(id)arg2;
 - (bool)setCommands:(id)arg1 forListenerID:(id)arg2;
+- (void)setCurXPCMessagePriority:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (bool)setServices:(id)arg1 forListenerID:(id)arg2;
 - (void)systemApplicationDidEnterBackground;

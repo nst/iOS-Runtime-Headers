@@ -6,28 +6,24 @@
    See Warning(s) below.
  */
 
-@class NSString;
-
-@interface HKSourceQuery : HKQuery <HKSourceQueryClient> {
+@interface HKSourceQuery : HKQuery {
     id _completionHandler;
+    id _updateHandler;
 }
 
 @property(readonly) id completionHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
-
-+ (id)_clientInterfaceProtocol;
-+ (void)_configureClientInterface:(id)arg1;
+@property(copy) id updateHandler;
 
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
 - (id)_queue_errorHandler;
-- (void)_queue_requestServerProxyWithUUID:(id)arg1 connection:(id)arg2 handler:(id)arg3;
+- (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (id)completionHandler;
-- (void)deliverSources:(id)arg1 queryUUID:(id)arg2;
+- (void)deliverSources:(id)arg1 forQuery:(id)arg2;
+- (void)deliverUpdatedSources:(id)arg1 added:(id)arg2 forQuery:(id)arg3;
 - (id)initWithSampleType:(id)arg1 samplePredicate:(id)arg2 completionHandler:(id)arg3;
+- (void)setUpdateHandler:(id)arg1;
+- (id)updateHandler;
 
 @end

@@ -18,6 +18,7 @@
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithDictionary:(id)arg1 chat:(id)arg2;
+- (bool)isLocalParticipant;
 - (id)name;
 
 @end

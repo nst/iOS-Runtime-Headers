@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVAudioSessionMediaPlayerOnly, AVPlayerLayer, CALayer, MPAVControllerToAggregateDCommunicator, MPAVErrorResolver, MPAVItem, MPAVPlaylistManager, MPAVRoute, MPAVRoutingController, MPMediaItem, MPMediaQuery, MPQueueFeeder, MPQueuePlayer, MPVideoView, NSArray, NSDate, NSMutableArray, NSMutableSet, NSNotification, NSObject<OS_dispatch_source>, NSString;
+@class AVAudioSessionMediaPlayerOnly, AVPlayerLayer, CALayer, MPAVControllerToAggregateDCommunicator, MPAVErrorResolver, MPAVItem, MPAVPlaylistManager, MPAVRoute, MPAVRoutingController, MPMediaItem, MPMediaQuery, MPQueueFeeder, MPQueuePlayer, MPVideoView, NSArray, NSDate, NSMapTable, NSMutableArray, NSMutableSet, NSNotification, NSObject<OS_dispatch_source>, NSString;
 
 @interface MPAVController : NSObject <AVAudioSessionDelegateMediaPlayerOnly, MPAVRoutingControllerDelegate, MPAVErrorResolverDelegate, MPAVControllerProtocol> {
     unsigned int _hasDelayedCurrentTimeToSet : 1;
@@ -58,6 +58,8 @@
     double _maxSeekableFwd;
     double _maxSeekableRev;
     double _nextFadeOutDuration;
+    NSMapTable *_observerInfoToCoreMediaObserver;
+    NSMutableArray *_observerInfos;
     MPAVRoute *_pickedRoute;
     int _playbackMode;
     NSMutableArray *_queueFeederStateStack;
@@ -94,6 +96,7 @@
     bool_managesAirPlayBehaviors;
     bool_managesSystemDownloads;
     bool_shouldEnforceHDCP;
+    bool_shouldPreventStateChangesForRateChange;
     bool_shouldSkipToNextTrackOnResumeFromInterruption;
     bool_useAirPlayMusicMode;
     bool_usesAudioOnlyModeForExternalPlayback;
@@ -101,6 +104,7 @@
 }
 
 @property long long EQPreset;
+@property(readonly) unsigned long long _displayPlaybackState;
 @property(readonly) AVAudioSessionMediaPlayerOnly * _playerAVAudioSession;
 @property(readonly) unsigned long long activeRepeatType;
 @property(readonly) unsigned long long activeShuffleType;
@@ -173,6 +177,7 @@
 - (void).cxx_destruct;
 - (long long)EQPreset;
 - (unsigned int)RTCReportingFlags;
+- (void)_addObserverInfo:(id)arg1 forCoreMediaObserver:(id)arg2 forInitialCreation:(bool)arg3;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationSuspended:(id)arg1;
@@ -250,6 +255,7 @@
 - (void)_setActionAtEndAttributeForState:(unsigned long long)arg1;
 - (void)_setBufferingState:(unsigned long long)arg1;
 - (void)_setItemErrorResolver:(id)arg1;
+- (void)_setLastSetTime:(double)arg1;
 - (bool)_setRate:(float)arg1 forScanning:(bool)arg2;
 - (void)_setState:(unsigned long long)arg1;
 - (void)_setValid:(bool)arg1;
@@ -279,6 +285,8 @@
 - (void)_volumeDidChangeNotification:(id)arg1;
 - (unsigned long long)activeRepeatType;
 - (unsigned long long)activeShuffleType;
+- (id)addBoundaryTimeObserverForTimes:(id)arg1 usingBlock:(id)arg2;
+- (id)addPeriodicTimeObserverForInterval:(double)arg1 usingBlock:(id)arg2;
 - (void)airPlayVideoEnded;
 - (bool)allowsExternalPlayback;
 - (bool)alwaysPlayWheneverPossible;
@@ -377,6 +385,7 @@
 - (float)rate;
 - (void)reloadFeederWithStartQueueIndex:(unsigned long long)arg1;
 - (void)reloadWithPlaybackContext:(id)arg1;
+- (void)removeTimeObserver:(id)arg1;
 - (unsigned long long)repeatType;
 - (void)restorePreviousFeederState;
 - (id)routeNameForVolumeControl;

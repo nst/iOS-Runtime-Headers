@@ -16,6 +16,7 @@
 @property(readonly) _HKDimension * dimension;
 
 + (void)_insertCode:(long long)arg1 forIdentifier:(id)arg2;
++ (id)_quantityTypeWithCode:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)_initWithDefinition:(struct { long long x1; char *x2; char *x3; long long x4; char *x5; char *x6; }*)arg1;

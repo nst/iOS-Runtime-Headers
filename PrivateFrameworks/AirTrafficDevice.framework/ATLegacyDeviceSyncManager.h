@@ -19,6 +19,7 @@
     double _currentOverallProgress;
     unsigned int _currentStage;
     NSString *_currentStatus;
+    double _currentSyncProgress;
     NSMutableDictionary *_dataclassTimers;
     NSMutableArray *_dataclasses;
     ATUserDefaults *_defaults;

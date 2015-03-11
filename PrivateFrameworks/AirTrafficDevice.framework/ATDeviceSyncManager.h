@@ -2,30 +2,45 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class ATDeviceSettings, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface ATDeviceSyncManager : NSObject <ATMessageLinkObserver> {
+@interface ATDeviceSyncManager : NSObject <ATMessageLinkObserver, ATSessionObserver, ATMessageLinkRequestHandler> {
+    NSMutableDictionary *_activeSessionsForLinkIDAndDataClass;
     NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_syncClientHandlers;
-    bool_syncPending;
+    ATDeviceSettings *_settings;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property bool syncPending;
 
 + (id)deviceSyncManager;
 
 - (void).cxx_destruct;
+- (id)_activeSessionsOnMessageLink:(id)arg1;
+- (void)_cancelSyncForDataClass:(id)arg1 onMessageLink:(id)arg2;
+- (void)_handleBeginSyncSessionRequest:(id)arg1 onMessageLink:(id)arg2;
+- (void)_handleEndSyncSessionRequest:(id)arg1 onMessageLink:(id)arg2;
+- (void)_handleRequest:(id)arg1 onMessageLink:(id)arg2;
+- (id)_initiateSyncForDataClass:(id)arg1 onMessageLink:(id)arg2;
+- (void)_removeSessionForMessageLink:(id)arg1 dataClass:(id)arg2;
+- (id)_sessionForMessageLink:(id)arg1 dataClass:(id)arg2;
+- (id)_sessionTaskForRequest:(id)arg1 onMessageLink:(id)arg2;
+- (void)_setSession:(id)arg1 forMessageLink:(id)arg2 dataClass:(id)arg3;
+- (id)_startSyncSessionForDataClass:(id)arg1 messageLink:(id)arg2 identifier:(id)arg3;
+- (void)cancelSyncForDataClass:(id)arg1 onMessageLink:(id)arg2;
 - (void)cancelSyncOnMessageLink:(id)arg1;
 - (id)init;
-- (void)initiateSyncForLibrary:(id)arg1 onMessageLink:(id)arg2;
+- (id)initiateSyncForDataClass:(id)arg1 onMessageLink:(id)arg2;
+- (void)initiateSyncOnMessageLink:(id)arg1;
+- (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)messageLinkWasClosed:(id)arg1;
 - (void)messageLinkWasInitialized:(id)arg1;
 - (void)messageLinkWasOpened:(id)arg1;
-- (void)setSyncPending:(bool)arg1;
-- (bool)syncPending;
+- (void)session:(id)arg1 didFinishSessionTask:(id)arg2;
+- (void)session:(id)arg1 willBeginSessionTask:(id)arg2;
+- (void)sessionDidFinish:(id)arg1;
+- (void)sessionWillBegin:(id)arg1;
 
 @end

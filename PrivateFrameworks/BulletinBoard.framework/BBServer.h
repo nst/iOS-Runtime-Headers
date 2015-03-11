@@ -2,15 +2,18 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class ABFavoritesListManager, BBApplicationLauncher, BBDataProviderManager, BBSyncService, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_source>, NSSet, NSString, NSXPCListener;
+@class ABFavoritesListManager, BBApplicationLauncher, BBDataProviderManager, BBDismissalSyncCache, BBSyncService, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_source>, NSSet, NSString, NSXPCListener;
 
 @interface BBServer : NSObject <BBDataProviderManagerDelegate, BBNotificationBehaviorUtilitiesServerProtocol, BBServerConduitServerInterface, BBSettingsGatewayServerInterface, NSXPCListenerDelegate, BBSyncServiceDelegate, ABPredicateDelegate> {
     NSMutableArray *_activeBehaviorOverrideTypesChangeClients;
     NSMutableArray *_activeBehaviorOverrideTypesChangeSettingsGateways;
     unsigned long long _activeBehaviorOverrides;
+    unsigned long long _activeObserverBehaviorOverrideTypes;
     NSMutableDictionary *_activeSectionIDsByCategory;
+    unsigned long long _activeSettingsGatewayBehaviorOverrideTypes;
     void *_addressBook;
     BBApplicationLauncher *_applicationLauncher;
+    unsigned long long _behaviorOverrideState;
     long long _behaviorOverrideStatus;
     NSMutableArray *_behaviorOverrideStatusChangeClients;
     NSDate *_behaviorOverrideStatusEffectiveTime;
@@ -28,20 +31,23 @@
     NSMutableDictionary *_dataProviderFactoriesBySection;
     BBDataProviderManager *_dataProviderManager;
     int _demo_lockscreen_token;
+    BBDismissalSyncCache *_dismissalSyncCache;
     NSMutableArray *_eventBasedExpiringBulletinIDs;
     NSObject<OS_dispatch_source> *_expirationTimer;
     NSMutableArray *_expiringBulletinIDs;
     ABFavoritesListManager *_favoritesListManager;
     NSMutableDictionary *_futureBulletinIDsBySectionID;
+    unsigned long long _globalCounter;
     NSMutableDictionary *_lastContactTimeForSender;
     NSDate *_nextScheduledExpirationTimerFireDate;
     NSMutableDictionary *_noticeBulletinIDsBySectionID;
-    NSMutableArray *_observerGatewayEnumerators;
+    NSMutableDictionary *_observerGatewayEnumerators;
     NSMutableArray *_observerGateways;
     NSMutableDictionary *_observerGatewaysByName;
     NSXPCListener *_observerListener;
     NSMutableSet *_observers;
     NSMutableSet *_observersByFeed[9];
+    NSMutableDictionary *_pendingUpdatesByBulletinID;
     NSString *_privilegedAddressBookGroupName;
     int _privilegedAddressBookGroupRecordID;
     NSMutableArray *_privilegedSenderChangeSettingsGateways;
@@ -126,6 +132,7 @@
 - (bool)_doesPrivilegedAddressBookGroupContainDestinationID:(id)arg1;
 - (id)_effectiveSectionInfoForSectionInfo:(id)arg1;
 - (id)_enabledSectionIDsForDataProvider:(id)arg1;
+- (void)_enqueueBulletinUpdate:(id)arg1;
 - (void)_ensureDataDirectoryExists;
 - (void)_expireBulletins;
 - (void)_expireBulletinsAndRescheduleTimerIfNecessary;
@@ -153,8 +160,10 @@
 - (void)_modifyBulletin:(id)arg1;
 - (id)_nextExpireBulletinsDate;
 - (void)_noteSystemStateChanged;
+- (id)_observerGatewaysForFeeds:(unsigned long long)arg1;
 - (id)_observersForCategory:(long long)arg1;
 - (id)_observersForFeeds:(unsigned long long)arg1;
+- (void)_performPendingBulletinUpdatesForBulletinID:(id)arg1;
 - (void)_privilegedSenderAddressBookGroupRecordIDChangedFromSource:(unsigned long long)arg1;
 - (void)_privilegedSenderTypesChangedFromSource:(unsigned long long)arg1;
 - (void)_publishBulletinRequest:(id)arg1 forSectionID:(id)arg2 forDestinations:(unsigned long long)arg3 alwaysToLockScreen:(bool)arg4;
@@ -185,15 +194,18 @@
 - (id)_sectionInfoPath;
 - (id)_sectionOrderPath;
 - (void)_sendAddBulletin:(id)arg1 toFeeds:(unsigned long long)arg2;
+- (void)_sendBulletinUpdate:(id)arg1;
 - (void)_sendModifyBulletin:(id)arg1 toFeeds:(unsigned long long)arg2;
+- (void)_sendObseversActiveOverrideTypes:(unsigned long long)arg1 state:(unsigned long long)arg2;
 - (void)_sendPrivilegedSenderAddressBookGroupRecordIDChangedFromSource:(unsigned long long)arg1;
 - (void)_sendPrivilegedSenderTypesChangedFromSource:(unsigned long long)arg1;
 - (void)_sendRemoveBulletin:(id)arg1 toFeeds:(unsigned long long)arg2 shouldSync:(bool)arg3;
 - (void)_sendRemoveBulletins:(id)arg1 toFeeds:(unsigned long long)arg2 shouldSync:(bool)arg3;
-- (void)_sendUpdateBehaviorOverrideTypesFromSource:(unsigned long long)arg1;
+- (void)_sendSettingsGatewaysActiveOverrideTypes:(unsigned long long)arg1 fromSource:(unsigned long long)arg2;
 - (void)_sendUpdateSectionInfo:(id)arg1 inCategory:(long long)arg2;
 - (void)_sendUpdateSectionOrderForCategory:(long long)arg1;
 - (void)_sendUpdateSectionOrderRule;
+- (void)_sendUtilitiesActiveOverrideTypes:(unsigned long long)arg1 fromSource:(unsigned long long)arg2;
 - (void)_setBehaviorOverridesTimer;
 - (void)_setClearedInfo:(id)arg1 forSectionID:(id)arg2;
 - (void)_setPrivilegedSenderTypes:(unsigned long long)arg1 source:(unsigned long long)arg2;
@@ -224,7 +236,7 @@
 - (id)activeSectionIDsForDefaultCategory;
 - (id)allBulletinIDsForSectionID:(id)arg1;
 - (id)bulletinIDsForSectionID:(id)arg1 inFeed:(unsigned long long)arg2;
-- (id)bulletinsForPublisherBulletinIDs:(id)arg1 sectionID:(id)arg2;
+- (id)bulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2;
 - (id)bulletinsRequestsForBulletinIDs:(id)arg1;
 - (id)carBulletinIDsForSectionID:(id)arg1;
 - (void)clearBulletinIDIfPossible:(id)arg1 rescheduleExpirationTimer:(bool)arg2;
@@ -245,7 +257,8 @@
 - (void)getBehaviorOverridesEffectiveWhileUnlockedWithHandler:(id)arg1;
 - (void)getBehaviorOverridesEnabledWithHandler:(id)arg1;
 - (void)getBehaviorOverridesWithHandler:(id)arg1;
-- (void)getBulletinsForPublisherBulletinIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id)arg3;
+- (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id)arg3;
+- (void)getPrimaryAttachmentDataForBulletinID:(id)arg1 withHandler:(id)arg2;
 - (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithHandler:(id)arg1;
 - (void)getPrivilegedSenderTypesWithHandler:(id)arg1;
 - (void)getSectionInfoForCategory:(long long)arg1 withHandler:(id)arg2;

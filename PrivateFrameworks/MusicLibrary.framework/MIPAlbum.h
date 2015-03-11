@@ -6,6 +6,7 @@
 
 @interface MIPAlbum : PBCodable <NSCopying> {
     struct { 
+        unsigned int persistentId : 1; 
         unsigned int storeId : 1; 
         unsigned int numDiscs : 1; 
         unsigned int numTracks : 1; 
@@ -17,6 +18,7 @@
     NSString *_name;
     int _numDiscs;
     int _numTracks;
+    long long _persistentId;
     NSString *_sortName;
     long long _storeId;
     int _userRating;
@@ -32,12 +34,14 @@
 @property(readonly) bool hasName;
 @property bool hasNumDiscs;
 @property bool hasNumTracks;
+@property bool hasPersistentId;
 @property(readonly) bool hasSortName;
 @property bool hasStoreId;
 @property bool hasUserRating;
 @property(retain) NSString * name;
 @property int numDiscs;
 @property int numTracks;
+@property long long persistentId;
 @property(retain) NSString * sortName;
 @property long long storeId;
 @property int userRating;
@@ -56,14 +60,17 @@
 - (bool)hasName;
 - (bool)hasNumDiscs;
 - (bool)hasNumTracks;
+- (bool)hasPersistentId;
 - (bool)hasSortName;
 - (bool)hasStoreId;
 - (bool)hasUserRating;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)name;
 - (int)numDiscs;
 - (int)numTracks;
+- (long long)persistentId;
 - (bool)readFrom:(id)arg1;
 - (void)setArtist:(id)arg1;
 - (void)setArtworkId:(id)arg1;
@@ -71,11 +78,13 @@
 - (void)setHasCompilation:(bool)arg1;
 - (void)setHasNumDiscs:(bool)arg1;
 - (void)setHasNumTracks:(bool)arg1;
+- (void)setHasPersistentId:(bool)arg1;
 - (void)setHasStoreId:(bool)arg1;
 - (void)setHasUserRating:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setNumDiscs:(int)arg1;
 - (void)setNumTracks:(int)arg1;
+- (void)setPersistentId:(long long)arg1;
 - (void)setSortName:(id)arg1;
 - (void)setStoreId:(long long)arg1;
 - (void)setUserRating:(int)arg1;

@@ -6,5 +6,6 @@
 }
 
 - (void)dealloc;
+- (id)init;
 
 @end

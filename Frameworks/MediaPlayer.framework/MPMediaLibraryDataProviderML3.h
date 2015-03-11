@@ -17,6 +17,7 @@
 }
 
 @property(readonly) <MPArtworkDataSource> * artworkDataSource;
+@property(readonly) bool companionDeviceActiveStoreAccountIsDynamiteEligible;
 @property(readonly) <MPArtworkDataSource> * completeMyCollectionArtworkDataSource;
 @property(readonly) NSString * databasePath;
 @property(copy,readonly) NSString * debugDescription;
@@ -84,6 +85,7 @@
 - (bool)collectionExistsWithPersistentID:(unsigned long long)arg1 groupingType:(long long)arg2;
 - (bool)collectionExistsWithStoreID:(long long)arg1 groupingType:(long long)arg2 existentPID:(unsigned long long*)arg3;
 - (id)collectionResultSetForQueryCriteria:(id)arg1;
+- (bool)companionDeviceActiveStoreAccountIsDynamiteEligible;
 - (unsigned long long)currentEntityRevision;
 - (id)databasePath;
 - (void)dealloc;

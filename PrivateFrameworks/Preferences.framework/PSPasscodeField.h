@@ -39,6 +39,7 @@
 - (id)initWithNumberOfEntryFields:(unsigned long long)arg1;
 - (void)insertText:(id)arg1;
 - (bool)isSecureTextEntry;
+- (long long)keyboardAppearance;
 - (long long)keyboardType;
 - (void)layoutSubviews;
 - (unsigned long long)numberOfEntryFields;

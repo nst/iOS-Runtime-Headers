@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSNumber, NSString;
+@class NSNumber, NSString;
 
 @interface SASetRequestOrigin : SABaseCommand <SAServerBoundCommand> {
 }
 
 @property(copy) NSString * aceId;
-@property(retain) NSNumber * age;
+@property(copy) NSNumber * age;
 @property double altitude;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
@@ -22,7 +22,6 @@
 @property double speed;
 @property(copy) NSString * status;
 @property(readonly) Class superclass;
-@property(copy) NSDate * timestamp;
 @property double verticalAccuracy;
 
 + (id)setRequestOrigin;
@@ -46,11 +45,9 @@
 - (void)setLongitude:(double)arg1;
 - (void)setSpeed:(double)arg1;
 - (void)setStatus:(id)arg1;
-- (void)setTimestamp:(id)arg1;
 - (void)setVerticalAccuracy:(double)arg1;
 - (double)speed;
 - (id)status;
-- (id)timestamp;
 - (double)verticalAccuracy;
 
 @end

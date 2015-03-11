@@ -108,6 +108,7 @@
 - (void)requestAccessWithHandler:(id)arg1;
 - (void)requestAdjustmentDataForAsset:(id)arg1 withDataBlob:(bool)arg2 networkAccessAllowed:(bool)arg3 trackCPLDownload:(bool)arg4 handler:(id)arg5;
 - (void)requestImageDataForAsset:(id)arg1 format:(int)arg2 allowPlaceholder:(bool)arg3 wantURLOnly:(bool)arg4 networkAccessAllowed:(bool)arg5 trackCPLDownload:(bool)arg6 handler:(id)arg7;
+- (void)requestMasterThumbnailForAssetUUID:(id)arg1 handler:(id)arg2;
 - (void)requestVideoURLForAsset:(id)arg1 format:(int)arg2 networkAccessAllowed:(bool)arg3 streamingAllowed:(bool)arg4 trackCPLDownload:(bool)arg5 handler:(id)arg6;
 - (void)resetDupesAnalysis;
 - (void)revertToOriginalForAsset:(id)arg1;

@@ -8,6 +8,7 @@
 + (id)MSASDictionaryWithCopyOfDictionary:(id)arg1;
 + (id)_dictionaryWithContentsOfDictionaries:(id)arg1;
 + (bool)_processArgumentWithMutableDictionary:(id)arg1 object:(id)arg2 key:(id)arg3;
++ (bool)_processArgumentWithMutableDictionary:(id)arg1 object:(id)arg2 key:(id)arg3;
 + (id)dictionaryByInvertingDictionary:(id)arg1;
 + (id)dictionaryByInvertingDictionary:(id)arg1;
 + (id)dictionaryByInvertingDictionaryIfPossible:(id)arg1;
@@ -16,6 +17,7 @@
 + (id)dictionaryWithSharedKeySet:(id)arg1;
 + (id)nonRetainingDictionary;
 + (id)nonRetainingKeyAndValueDictionary;
++ (id)npkDictionaryWithObjectsAndKeys:(id)arg1;
 + (id)retainingKeyDictionary;
 + (id)vmDictionaryWithObjectsAndKeys:(id)arg1;
 
@@ -104,6 +106,7 @@
 - (void)mf_setBool:(bool)arg1 forKey:(id)arg2;
 - (void)mf_setInteger:(int)arg1 forKey:(id)arg2;
 - (id)mutableCopyDeep;
+- (void)npkSetObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1 withDefaultOfClass:(Class)arg2;
 - (id)objectForKey:(id)arg1 withDefaultOfClass:(Class)arg2;
 - (id)objectForKey:(id)arg1 withDefaultUsingBlock:(id)arg2;

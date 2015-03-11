@@ -11,6 +11,7 @@
 }
 
 + (void)_setManifestPath:(id)arg1;
++ (id)installedProfileDataWithIdentifier:(id)arg1;
 + (id)installedProfileWithIdentifier:(id)arg1;
 + (id)sharedManifest;
 
@@ -22,6 +23,7 @@
 - (void)dealloc;
 - (id)identifiersOfProfilesWithFilterFlags:(int)arg1;
 - (id)init;
+- (id)installedProfileDataWithIdentifier:(id)arg1;
 - (id)installedProfileWithIdentifier:(id)arg1;
 - (void)invalidateCache;
 - (id)manifest;

@@ -12,6 +12,8 @@
 + (id)options;
 + (bool)supportsSecureCoding;
 
+- (bool)_isRedactable:(id)arg1;
+- (id)_redact:(id)arg1;
 - (id)data;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
@@ -19,7 +21,9 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1;
+- (id)nmr_valueForPotentiallyUndefinedKey:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (id)redact;
 - (void)writeTo:(id)arg1;
 
 @end

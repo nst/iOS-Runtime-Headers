@@ -2,19 +2,23 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPickerControllerDelegate>, TKVibrationPickerViewController;
+@class <ABPickerControllerDelegate>, CNContactStyle, TKVibrationPickerViewController;
 
 @interface ABVibrationPickerController : UINavigationController {
+    CNContactStyle *_contactStyle;
     TKVibrationPickerViewController *_vibrationPicker;
 }
 
+@property(retain) CNContactStyle * contactStyle;
 @property <ABPickerControllerDelegate> * delegate;
 @property(readonly) TKVibrationPickerViewController * vibrationPicker;
 
 - (void)cancelButton:(id)arg1;
+- (id)contactStyle;
 - (void)dealloc;
 - (void)doneButton:(id)arg1;
 - (id)initWithAlertType:(int)arg1 selectedVibrationIdentifier:(id)arg2;
+- (void)setContactStyle:(id)arg1;
 - (id)vibrationPicker;
 
 @end

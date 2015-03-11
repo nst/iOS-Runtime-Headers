@@ -43,6 +43,7 @@
 + (id)autoupdatingCurrentCalendar;
 + (id)calendarWithIdentifier:(id)arg1;
 + (id)currentCalendar;
++ (id)hk_gregorianCalendarWithUTCTimeZone;
 + (void)initialize;
 + (id)overlayCalendarForCalendarIdentifier:(id)arg1 timezone:(id)arg2;
 + (id)sharedAutoupdatingCurrentCalendar;
@@ -112,6 +113,9 @@
 - (void)getHour:(out long long*)arg1 minute:(out long long*)arg2 second:(out long long*)arg3 nanosecond:(out long long*)arg4 fromDate:(id)arg5;
 - (id)gregorianStartDate;
 - (unsigned long long)hash;
+- (id)hk_startOfDateByAddingDays:(long long)arg1 toDate:(id)arg2;
+- (id)hk_startOfDateBySubtractingDays:(long long)arg1 fromDate:(id)arg2;
+- (id)hk_startOfFitnessWeekBeforeDate:(id)arg1;
 - (long long)hoursInDay;
 - (id)init;
 - (id)initWithCalendarIdentifier:(id)arg1;

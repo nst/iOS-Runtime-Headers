@@ -12,8 +12,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy) NSString * unit;
-@property(copy) NSString * units;
-@property(retain) NSNumber * value;
+@property(copy) NSNumber * value;
 
 + (id)distance;
 + (id)distanceWithDictionary:(id)arg1 context:(id)arg2;
@@ -24,10 +23,8 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (void)setUnit:(id)arg1;
-- (void)setUnits:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)unit;
-- (id)units;
 - (id)value;
 
 @end

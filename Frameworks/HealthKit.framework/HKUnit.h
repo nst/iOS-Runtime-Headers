@@ -4,7 +4,7 @@
 
 @class NSString, _HKDimension, _HKFactorization;
 
-@interface HKUnit : NSObject <NSSecureCoding> {
+@interface HKUnit : NSObject <NSSecureCoding, NSCopying> {
     _HKFactorization *_baseUnitReduction;
     _HKFactorization *_dimensionReduction;
     long long _reduceToken;
@@ -88,9 +88,11 @@
 - (void)_reduceIfNecessaryWithCycleSet:(id)arg1;
 - (double)_reducedProportionalSize;
 - (double)_valueByConvertingValue:(double)arg1 toUnit:(id)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dimension;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;

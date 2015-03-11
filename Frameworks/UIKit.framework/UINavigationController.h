@@ -59,6 +59,7 @@
         unsigned int isNested : 1; 
         unsigned int searchHidNavigationBar : 1; 
         unsigned int suppressMixedOrientationPop : 1; 
+        unsigned int isLayingOutBars : 1; 
     NSString *__backdropGroupName;
     _UIAnimationCoordinator *__barInteractiveAnimationCoordinator;
     _UIBarPanGestureRecognizer *__barSwipeHideGesture;
@@ -254,6 +255,7 @@
 - (bool)_isCrossfadingInTabBar;
 - (bool)_isCrossfadingOutTabBar;
 - (bool)_isInteractiveCustomNavigationTransition;
+- (bool)_isLayingOutBarsDuringStatusBarUpdate;
 - (bool)_isNavigationBarEffectivelyVisible;
 - (bool)_isNavigationBarVisible;
 - (bool)_isNestedNavigationController;
@@ -344,6 +346,7 @@
 - (void)_setNavigationBarHidden:(bool)arg1 edge:(unsigned long long)arg2 duration:(double)arg3;
 - (void)_setNavigationBarHidden:(bool)arg1 edgeIfNotNavigating:(unsigned long long)arg2 duration:(double)arg3;
 - (void)_setNavigationBarHidesCompletelyOffscreen:(bool)arg1;
+- (void)_setNeedsStatusBarAppearanceUpdateWithoutBarLayout;
 - (void)_setPreferredContentSizeFromChildContentContainer:(id)arg1;
 - (void)_setSearchHidNavigationBar:(bool)arg1;
 - (void)_setStoreBarStyle:(long long)arg1 clientInterface:(id)arg2;

@@ -11,6 +11,7 @@
     NSMutableDictionary *_peopleByOrganization;
 }
 
++ (bool)isAutoLinkingEnabled;
 + (bool)isLinkDataValidForAddressBook:(void*)arg1;
 + (void)startAutoLinkingNewPeopleInAddressBook:(void*)arg1 inProcess:(bool)arg2;
 

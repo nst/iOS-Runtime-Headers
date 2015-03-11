@@ -31,6 +31,7 @@
 + (bool)showsLabelAndValue;
 
 - (void).cxx_destruct;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_labelTapped:(id)arg1;
 - (void)commitEditing;
 - (void)dealloc;

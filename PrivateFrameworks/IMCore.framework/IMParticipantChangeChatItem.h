@@ -5,13 +5,11 @@
 @class IMHandle;
 
 @interface IMParticipantChangeChatItem : IMTranscriptChatItem {
-    IMHandle *_handle;
     IMHandle *_otherHandle;
     IMHandle *_sender;
 }
 
 @property(readonly) long long changeType;
-@property(retain,readonly) IMHandle * handle;
 @property(retain,readonly) IMHandle * otherHandle;
 @property(retain,readonly) IMHandle * sender;
 
@@ -20,7 +18,6 @@
 - (long long)changeType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)handle;
 - (id)otherHandle;
 - (id)sender;
 

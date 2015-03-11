@@ -16,6 +16,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
++ (void)preFrontBoardInitializationHook;
 + (bool)registerAsSystemApp;
 + (bool)rendersLocally;
 + (bool)shouldCheckInWithBackboard;

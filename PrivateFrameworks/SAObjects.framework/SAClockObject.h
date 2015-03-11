@@ -11,6 +11,8 @@
 @property(copy) NSString * cityName;
 @property(copy) NSString * countryCode;
 @property(copy) NSString * countryName;
+@property(copy) NSNumber * latitude;
+@property(copy) NSNumber * longitude;
 @property(copy) NSString * timezoneId;
 @property(copy) NSString * unlocalizedCityName;
 @property(copy) NSString * unlocalizedCountryName;
@@ -24,10 +26,14 @@
 - (id)countryName;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)latitude;
+- (id)longitude;
 - (void)setAlCityId:(id)arg1;
 - (void)setCityName:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setCountryName:(id)arg1;
+- (void)setLatitude:(id)arg1;
+- (void)setLongitude:(id)arg1;
 - (void)setTimezoneId:(id)arg1;
 - (void)setUnlocalizedCityName:(id)arg1;
 - (void)setUnlocalizedCountryName:(id)arg1;

@@ -83,7 +83,7 @@
 - (id)backgroundDelegate;
 - (void)backgroundDownloadDevicePassesSinceLastUpdatedTag:(bool)arg1;
 - (void)backgroundDownloadPassAtURL:(id)arg1;
-- (void)backgroundDownloadRemotePassAssets:(id)arg1 screenScale:(double)arg2 suffix:(id)arg3;
+- (void)backgroundDownloadRemotePassAssets:(id)arg1 forSuffixesAndScreenScales:(id)arg2;
 - (void)backgroundDownloadRemotePassAssets:(id)arg1;
 - (void)backgroundDownloadWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2;
 - (id)brokerURL;
@@ -121,6 +121,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setMaxCards:(unsigned long long)arg1;
 - (void)setSharedService:(bool)arg1;
+- (void)sharedPaymentServiceChanged:(id)arg1;
 - (bool)sharedService;
 - (void)sharedServiceDidRegister;
 - (void)startBackgroundURLSessionWithIdentifier:(id)arg1 context:(id)arg2 backgroundDelegate:(id)arg3;

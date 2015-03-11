@@ -11,7 +11,6 @@
 @property(retain) CKMediaObject * mediaObject;
 @property(copy,readonly) NSString * transferGUID;
 
-- (unsigned char)attachmentContiguousType;
 - (unsigned long long)balloonCorners;
 - (Class)balloonViewClass;
 - (bool)canCopy;

@@ -60,7 +60,7 @@
 @property(copy) NSString * name;
 @property(getter=_needsAttribution,readonly) bool needsAttribution;
 @property(getter=_normalizedUserRatingScore,readonly) float normalizedUserRatingScore;
-@property(getter=_openState,readonly) unsigned int openState;
+@property(getter=_openingHoursOptions,readonly) unsigned long long openingHoursOptions;
 @property(copy) NSString * phoneNumber;
 @property(getter=_photosAttribution,readonly) _MKMapItemPhotosAttribution * photosAttribution;
 @property(readonly) GEOPlace * place;
@@ -141,7 +141,7 @@
 - (unsigned long long)_muid;
 - (bool)_needsAttribution;
 - (float)_normalizedUserRatingScore;
-- (unsigned int)_openState;
+- (unsigned long long)_openingHoursOptions;
 - (id)_photoAttributionWithSourceStringFormat:(id)arg1 moreSourceStringFormat:(id)arg2;
 - (id)_photosAttribution;
 - (id)_placeAsData;

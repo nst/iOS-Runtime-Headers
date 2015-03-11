@@ -15,6 +15,7 @@
 - (bool)entryFieldShouldUseBackdropView;
 - (id)entryFieldTextColor;
 - (id)green_sendButtonColor;
+- (bool)joystickUsesWindow;
 - (long long)keyboardAppearance;
 - (bool)shouldNotShowSendButton;
 - (id)siri_sendButtonColor;

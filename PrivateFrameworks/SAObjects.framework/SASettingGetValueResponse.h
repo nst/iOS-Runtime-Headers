@@ -18,5 +18,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (void)setSetting:(id)arg1;
+- (id)setting;
 
 @end

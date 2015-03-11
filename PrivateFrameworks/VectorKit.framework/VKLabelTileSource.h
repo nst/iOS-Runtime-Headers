@@ -19,7 +19,7 @@
 - (unsigned char)_labelTileType;
 - (void)dealloc;
 - (long long)defaultMaximumZoomLevel;
-- (id)initWithTileSet:(id)arg1 tileGroupIdentifier:(unsigned int)arg2 locale:(id)arg3 labelManager:(const struct shared_ptr<vk::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; }*)arg4;
+- (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3 labelManager:(const struct shared_ptr<vk::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; }*)arg4;
 - (long long)labelScaleFactor;
 - (bool)localizeLabels;
 - (bool)maximumZoomLevelBoundsCamera;

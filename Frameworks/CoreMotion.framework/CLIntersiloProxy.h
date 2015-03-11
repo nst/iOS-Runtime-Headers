@@ -20,7 +20,9 @@
 @property(copy,readonly) CLIntersiloInterface * proxiedInterface;
 @property bool valid;
 
++ (void)becameFatallyBlocked:(id)arg1;
 + (id)getSilo;
++ (bool)isSupported;
 + (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 withInboundInterface:(id)arg3 andOutboundInterface:(id)arg4;
 
 - (void).cxx_destruct;
@@ -29,7 +31,6 @@
 - (id)delegateInterface;
 - (id)delegateSilo;
 - (void)forwardInvocation:(id)arg1;
-- (void)heartAttack;
 - (id)initWithDelegateInterface:(id)arg1 proxiedInterface:(id)arg2 andUninitializedPeer:(id)arg3;
 - (id)initWithDelegateInterface:(id)arg1 proxiedInterface:(id)arg2 delegateObject:(id)arg3 delegateSilo:(id)arg4 andUninitializedPeer:(id)arg5;
 - (id)methodSignatureForSelector:(SEL)arg1;

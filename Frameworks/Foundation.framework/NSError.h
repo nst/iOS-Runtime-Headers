@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, NSDictionary, NSString, NSURL;
+@class NSArray, NSDate, NSDictionary, NSString, NSURL;
 
 @interface NSError : NSObject <NSCopying, NSSecureCoding> {
     long long _code;
@@ -23,11 +23,21 @@
 @property(retain,readonly) NSURL * _mapkit_locationErrorSettingsURL;
 @property(readonly) long long code;
 @property(copy,readonly) NSString * domain;
+@property(getter=isFromRequest,readonly) bool fromRequest;
+@property(getter=hd_isFromRequest,readonly) bool hd_fromRequest;
+@property(readonly) unsigned short hd_messageID;
+@property(readonly) NSString * hd_messageIDSIdentifier;
+@property(readonly) NSDate * hd_messageSent;
+@property(readonly) NSDictionary * hd_persistentUserInfo;
 @property(copy,readonly) NSString * helpAnchor;
+@property(readonly) NSString * idsIdentifier;
 @property(copy,readonly) NSString * localizedDescription;
 @property(copy,readonly) NSString * localizedFailureReason;
 @property(copy,readonly) NSArray * localizedRecoveryOptions;
 @property(copy,readonly) NSString * localizedRecoverySuggestion;
+@property(readonly) unsigned short messageID;
+@property(readonly) NSDate * messageSent;
+@property(readonly) NSDictionary * persistentUserInfo;
 @property(retain,readonly) id recoveryAttempter;
 @property(copy,readonly) NSDictionary * userInfo;
 
@@ -92,6 +102,7 @@
 + (id)errorForDB:(struct sqlite3 { }*)arg1;
 + (id)errorFromErrno;
 + (id)errorFromErrno;
++ (id)errorFromSYErrorInfo:(id)arg1;
 + (id)errorFromTencentWeiboAPIResponseErrorWithType:(long long)arg1 code:(long long)arg2;
 + (id)errorWithBTResult:(id)arg1;
 + (id)errorWithCADResult:(int)arg1 action:(id)arg2;
@@ -111,15 +122,19 @@
 + (id)errorWithPOSIXCode:(int)arg1 description:(id)arg2;
 + (id)errorWithPOSIXCode:(int)arg1;
 + (id)errorWithPOSIXCode:(int)arg1;
++ (id)errorWithSYError:(long long)arg1 userInfo:(id)arg2;
 + (id)errorWithSqliteCode:(int)arg1 andMessage:(id)arg2;
 + (id)errorWithStreamDomain:(long long)arg1 code:(int)arg2 localizedDescription:(id)arg3;
 + (id)errorWithTSKWarning:(id)arg1;
 + (id)genericErrorWithFile:(const char *)arg1 function:(const char *)arg2 lineNumber:(long long)arg3;
++ (id)hk_error:(long long)arg1 description:(id)arg2 underlyingError:(id)arg3;
 + (id)hk_error:(long long)arg1 description:(id)arg2;
 + (id)hk_error:(long long)arg1 format:(id)arg2;
 + (id)hs_cloudErrorWithCode:(long long)arg1 userInfo:(id)arg2;
 + (id)hs_homeSharingErrorWithCode:(long long)arg1 userInfo:(id)arg2;
 + (id)mf_timeoutError;
++ (id)ml_errorWithCode:(unsigned long long)arg1 description:(id)arg2;
++ (id)ml_errorWithCode:(unsigned long long)arg1;
 + (id)ph_errorWithDomain:(id)arg1 code:(long long)arg2 userInfo:(id)arg3;
 + (id)serverErrorForCode:(long long)arg1 withReason:(id)arg2;
 + (id)serverErrorForCode:(long long)arg1 withUserInfo:(id)arg2;
@@ -245,15 +260,27 @@
 - (id)failingURL;
 - (void)finalize;
 - (unsigned long long)hash;
+- (bool)hd_isFromRequest;
+- (unsigned short)hd_messageID;
+- (id)hd_messageIDSIdentifier;
+- (id)hd_messageSent;
+- (id)hd_persistentMessage;
+- (id)hd_persistentUserInfo;
 - (id)helpAnchor;
 - (bool)hk_isAuthorizationDeniedError;
 - (bool)hk_isAuthorizationNotDeterminedError;
 - (bool)hk_isDatabaseAccessibilityError;
+- (bool)hk_isDeviceNotFoundError;
+- (bool)hk_isHealthKitError;
 - (bool)hk_isInternalFailureError;
 - (bool)hk_isInvalidArgumentError;
+- (void)hk_logWithDatabaseAccessibilityAtLogLevel:(int)arg1 format:(id)arg2;
+- (void)hk_logWithoutDatabaseAccessibiityErrors:(id)arg1;
+- (id)idsIdentifier;
 - (id)initWithATPError:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDomain:(id)arg1 code:(long long)arg2 userInfo:(id)arg3;
+- (id)initWithSYError:(long long)arg1 userInfo:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;
 - (bool)isCECAcknowledgementError;
 - (bool)isCPLError;
@@ -268,6 +295,7 @@
 - (bool)isEqualToError:(id)arg1;
 - (bool)isExpiredPasswordError;
 - (bool)isFatalError;
+- (bool)isFromRequest;
 - (bool)isInvalidSubscriberError;
 - (bool)isNewPasswordError;
 - (bool)isOutOfSpaceError;
@@ -288,6 +316,8 @@
 - (id)localizedFailureReason;
 - (id)localizedRecoveryOptions;
 - (id)localizedRecoverySuggestion;
+- (unsigned short)messageID;
+- (id)messageSent;
 - (bool)mf_isCancelledError;
 - (bool)mf_isInaccessibleAccountCredentialError;
 - (bool)mf_isMissingAccountCredentialError;
@@ -296,6 +326,7 @@
 - (id)mf_moreInfo;
 - (id)mf_shortDescription;
 - (bool)mf_shouldBeReportedToUser;
+- (id)persistentUserInfo;
 - (id)recoveryAttempter;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (bool)safari_errorOrAnyPartialErrorHasCloudKitErrorCode:(long long)arg1;

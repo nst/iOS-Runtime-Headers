@@ -31,6 +31,7 @@
 - (void).cxx_destruct;
 - (void)_addCancelAndDoneButtons;
 - (void)_addHeaderView;
+- (void)_addMessageLabelWithMessage:(id)arg1 size:(double)arg2;
 - (long long)_authorizationSectionForSection:(long long)arg1;
 - (id)_authorizationSettingCellForRowAtIndexPath:(id)arg1;
 - (void)_configurationFailedWithError:(id)arg1;

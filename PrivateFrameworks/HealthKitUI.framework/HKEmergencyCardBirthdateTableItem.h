@@ -18,6 +18,7 @@
 - (void)medicalIDEditorCellDidChangeValue:(id)arg1;
 - (bool)shouldHighlightRowAtIndex:(long long)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndex:(long long)arg2;
 - (id)title;
 
 @end

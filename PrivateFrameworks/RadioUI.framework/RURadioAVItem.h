@@ -62,6 +62,12 @@
 - (id)localizedPositionInPlaylistString;
 - (id)mainTitle;
 - (id)mediaItem;
+- (id)mpuReporting_containerID;
+- (unsigned long long)mpuReporting_containerType;
+- (unsigned long long)mpuReporting_itemType;
+- (id)mpuReporting_personalizedContainerID;
+- (bool)mpuReporting_shouldReportPlayEventsToStore;
+- (id)mpuReporting_trackInfo;
 - (unsigned long long)persistentID;
 - (id)radioTrack;
 - (void)reevaluateType;

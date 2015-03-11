@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class NSNumber, NSString;
+@class NSNumber, NSString, NSTimer;
 
 @interface IMDMessageStore : NSObject {
     NSNumber *_cachedLastFailedMessageID;
     NSNumber *_cachedUnreadMessageCount;
     NSString *_modificationStamp;
+    NSTimer *_suppressedUpdatesTimer;
     bool_pendingDBUpdatePost;
     bool_suppressedUpdates;
 }
@@ -26,6 +27,9 @@
 - (void)_performBlock:(id)arg1 afterDelay:(double)arg2;
 - (void)_postDBUpdate;
 - (void)_storeAttachmentsForMessage:(id)arg1;
+- (void)_suppressDBUpdateTimerFired;
+- (id)_unreadMessagesWithHandles:(id)arg1 onServices:(id)arg2 limit:(unsigned long long)arg3 fallbackGUID:(id)arg4;
+- (id)_unreadMessagesWithRoomNames:(id)arg1 onServices:(id)arg2 limit:(unsigned long long)arg3 fallbackGUID:(id)arg4;
 - (void)_updateModificationDate;
 - (id)attachmentsWithHandles:(id)arg1 onServices:(id)arg2;
 - (id)attachmentsWithRoomNames:(id)arg1 onServices:(id)arg2;
@@ -46,6 +50,7 @@
 - (id)frequentRepliesForForChatIdentifiers:(id)arg1 onServices:(id)arg2 limit:(unsigned long long)arg3;
 - (bool)hasStoredMessageWithGUID:(id)arg1;
 - (id)init;
+- (bool)isSuppressDatabaseUpdates;
 - (id)itemWithGUID:(id)arg1;
 - (long long)lastFailedMessageID;
 - (id)lastMessageWithHandles:(id)arg1 onServices:(id)arg2;
@@ -75,6 +80,8 @@
 - (id)storeItem:(id)arg1 forceReplace:(bool)arg2;
 - (id)storeMessage:(id)arg1 forceReplace:(bool)arg2 modifyError:(bool)arg3 modifyFlags:(bool)arg4 flagMask:(unsigned long long)arg5;
 - (long long)unreadMessagesCount;
+- (id)unreadMessagesWithHandles:(id)arg1 onServices:(id)arg2 limit:(unsigned long long)arg3 fallbackGUID:(id)arg4;
+- (id)unreadMessagesWithRoomNames:(id)arg1 onServices:(id)arg2 limit:(unsigned long long)arg3 fallbackGUID:(id)arg4;
 - (void)updateFileTransfer:(id)arg1;
 - (void)updateStamp;
 - (void)updateUnformattedID:(id)arg1 forBuddyID:(id)arg2 onService:(id)arg3;

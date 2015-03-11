@@ -134,6 +134,7 @@
 - (void)onClientEventVehicleHeading:(id)arg1;
 - (void)onClientEventVehicleSpeed:(id)arg1;
 - (void)onDidBecomeActive:(id)arg1;
+- (void)onLocationRequestTimeout;
 - (void)pauseLocationUpdates:(bool)arg1;
 - (bool)pausesLocationUpdatesAutomatically;
 - (bool)privateMode;
@@ -141,8 +142,10 @@
 - (id)rangedRegions;
 - (void)registerAsLocationClient;
 - (void)requestAlwaysAuthorization;
+- (void)requestLocation;
 - (void)requestStateForRegion:(id)arg1;
 - (void)requestWhenInUseAuthorization;
+- (void)requestWhenInUseAuthorizationWithPrompt;
 - (void)resetApps;
 - (void)resumeLocationUpdates;
 - (void)setActivityType:(long long)arg1;
@@ -152,6 +155,7 @@
 - (void)setDynamicAccuracyReductionEnabled:(bool)arg1;
 - (void)setHeadingFilter:(double)arg1;
 - (void)setHeadingOrientation:(int)arg1;
+- (void)setIsActuallyAWatchKitExtension:(bool)arg1;
 - (void)setLocationServicesPreferencesDialogEnabled:(bool)arg1;
 - (void)setMatchInfoEnabled:(bool)arg1;
 - (void)setPausesLocationUpdatesAutomatically:(bool)arg1;

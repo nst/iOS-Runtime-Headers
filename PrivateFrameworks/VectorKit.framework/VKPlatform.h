@@ -20,11 +20,13 @@
 @property(readonly) unsigned long long memorySize;
 @property(readonly) bool proceduralRoadAlpha;
 @property(readonly) bool roadsWithSimpleLineMeshesAvailable;
+@property(readonly) double routeLineSimplificationEpsilon;
 @property(readonly) bool shouldDrawWhenReady;
 @property(readonly) bool shouldPregenerateLabelGlyphs;
 @property(readonly) bool shouldStyleLabelsInParallel;
 @property(readonly) bool shouldUseTrafficAlphaHack;
 @property(readonly) bool supports3DBuildingStrokes;
+@property(readonly) bool supports3DBuildings;
 @property(readonly) bool supportsBuildingShadows;
 @property(readonly) bool supportsBuildingStrokes;
 @property(readonly) bool supportsHiResBuildings;
@@ -48,11 +50,13 @@
 - (unsigned long long)memorySize;
 - (bool)proceduralRoadAlpha;
 - (bool)roadsWithSimpleLineMeshesAvailable;
+- (double)routeLineSimplificationEpsilon;
 - (bool)shouldDrawWhenReady;
 - (bool)shouldPregenerateLabelGlyphs;
 - (bool)shouldStyleLabelsInParallel;
 - (bool)shouldUseTrafficAlphaHack;
 - (bool)supports3DBuildingStrokes;
+- (bool)supports3DBuildings;
 - (bool)supportsBuildingShadows;
 - (bool)supportsBuildingStrokes;
 - (bool)supportsHiResBuildings;

@@ -30,6 +30,7 @@
 - (bool)hasStoreId;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)name;
 - (bool)readFrom:(id)arg1;
 - (void)setHasStoreId:(bool)arg1;

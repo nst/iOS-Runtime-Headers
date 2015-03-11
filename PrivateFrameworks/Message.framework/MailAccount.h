@@ -317,6 +317,7 @@
 - (id)storeForMailboxUid:(id)arg1;
 - (bool)supportsAppend;
 - (bool)supportsArchiving;
+- (bool)supportsContinuationType:(id)arg1;
 - (bool)supportsMailboxEditing;
 - (bool)supportsMessageFlagging;
 - (bool)supportsRemoteAppend;
@@ -331,6 +332,7 @@
 - (id)unactionableInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
 - (id)uniqueIdForPersistentConnection;
 - (void)unregisterStore:(id)arg1 forUid:(id)arg2;
+- (id)unsupportedContinuationTypes;
 - (bool)updateEmailAliases;
 - (id)valueInAccountLookAsidePropertiesForKey:(id)arg1;
 - (bool)willPerformActionForChokePoint:(id)arg1 coalescePoint:(id)arg2 result:(id*)arg3;

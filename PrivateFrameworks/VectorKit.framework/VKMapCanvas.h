@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <GEORoutePreloadSession>, <VKInteractiveMapDelegate>, <VKRouteMatchedAnnotationPresentation>, <VKTrackableAnnotation>, GEOMapRegion, NSArray, NSString, VKAnchorWrapper, VKCamera, VKMapCameraController, VKMapModel, VKPolylineOverlayPainter, VKStyleManager;
+@class <GEORoutePreloadSession>, <VKInteractiveMapDelegate>, <VKRouteMatchedAnnotationPresentation>, <VKTrackableAnnotation>, GEOMapRegion, GEOResourceManifestConfiguration, NSArray, NSString, VKAnchorWrapper, VKCamera, VKMapCameraController, VKMapModel, VKPolylineOverlayPainter, VKStyleManager;
 
 @interface VKMapCanvas : VKScreenCanvas <VKMapModelDelegate, VKOverlayContainerRouteDelegate, VKInteractiveMap> {
     struct CGSize { 
@@ -17,6 +17,7 @@
     bool_hasLastValidCanvasSizeZoomLevel;
 }
 
+@property(retain) GEOResourceManifestConfiguration * additionalManifestConfiguration;
 @property bool allowDatelineWraparound;
 @property(readonly) double altitude;
 @property(getter=isAnimatingToTrackAnnotation,readonly) bool animatingToTrackAnnotation;
@@ -86,6 +87,7 @@
 - (void)addOverlay:(id)arg1;
 - (void)addPersistentOverlay:(id)arg1;
 - (void)addRasterOverlay:(id)arg1;
+- (id)additionalManifestConfiguration;
 - (bool)allowDatelineWraparound;
 - (double)altitude;
 - (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id)arg5;
@@ -105,6 +107,7 @@
 - (id)cameraController:(id)arg1 presentationForAnnotation:(id)arg2;
 - (void)cameraController:(id)arg1 willChangeRegionAnimated:(bool)arg2;
 - (void)cameraControllerDidChangeCameraState:(id)arg1;
+- (void)cameraControllerDidFinishInitialTrackingAnimation:(id)arg1;
 - (bool)canEnter3DMode;
 - (bool)canZoomInForTileSize:(long long)arg1;
 - (bool)canZoomOutForTileSize:(long long)arg1;
@@ -214,6 +217,7 @@
 - (void)selectLabelMarker:(id)arg1;
 - (id)selectedAnnotationMarker;
 - (id)selectedLabelMarker;
+- (void)setAdditionalManifestConfiguration:(id)arg1;
 - (void)setAllowDatelineWraparound:(bool)arg1;
 - (void)setAnnotationMarkerDeselectionCallback:(id)arg1;
 - (void)setAnnotationTrackingZoomStyle:(long long)arg1;

@@ -37,6 +37,7 @@
 - (id)aa_recommendedAppleIDForAccountSignInWithTypeIdentifier:(id)arg1;
 - (void)aa_registerAppleAccount:(id)arg1 withCompletion:(id)arg2;
 - (void)aa_registerAppleAccountWithHSA:(id)arg1 completion:(id)arg2;
+- (void)aa_registerAppleAccountWithHSA:(id)arg1 usingCookieHeaders:(id)arg2 completion:(id)arg3;
 - (void)aa_updatePropertiesForAppleAccount:(id)arg1 completion:(id)arg2;
 - (id)aaui_accountDescriptionFromEmailAddress:(id)arg1;
 - (id)accessKeysForAccountType:(id)arg1;
@@ -115,6 +116,7 @@
 - (void)removeAccount:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)removeAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id)arg3;
 - (void)removeAccountType:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)removeAccountsFromPairedDeviceWithCompletion:(id)arg1;
 - (void)renewCredentialsForAccount:(id)arg1 completion:(id)arg2;
 - (void)renewCredentialsForAccount:(id)arg1 force:(bool)arg2 reason:(id)arg3 completion:(id)arg4;
 - (void)renewCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id)arg3;
@@ -122,6 +124,7 @@
 - (void)renewCredentialsForAccount:(id)arg1 services:(id)arg2 completion:(id)arg3;
 - (void)requestAccessToAccountsWithType:(id)arg1 options:(id)arg2 completion:(id)arg3;
 - (void)requestAccessToAccountsWithType:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)saveAccount:(id)arg1 toPairedDeviceWithOptions:(id)arg2 completion:(id)arg3;
 - (void)saveAccount:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id)arg3;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 doVerify:(bool)arg3 completion:(id)arg4;
@@ -134,6 +137,7 @@
 - (id)tetheredSyncSourceTypeForDataclass:(id)arg1;
 - (id)typeIdentifierForDomain:(id)arg1;
 - (int)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1;
+- (void)verifyCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id)arg3;
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(bool)arg2 withHandler:(id)arg3;
 - (void)verifyCredentialsForAccount:(id)arg1 withHandler:(id)arg2;
 - (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;

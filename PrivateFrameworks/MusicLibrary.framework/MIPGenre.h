@@ -6,15 +6,19 @@
 
 @interface MIPGenre : PBCodable <NSCopying> {
     struct { 
+        unsigned int persistentId : 1; 
         unsigned int storeId : 1; 
     } _has;
     NSString *_name;
+    long long _persistentId;
     long long _storeId;
 }
 
 @property(readonly) bool hasName;
+@property bool hasPersistentId;
 @property bool hasStoreId;
 @property(retain) NSString * name;
+@property long long persistentId;
 @property long long storeId;
 
 - (void).cxx_destruct;
@@ -23,13 +27,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasName;
+- (bool)hasPersistentId;
 - (bool)hasStoreId;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)name;
+- (long long)persistentId;
 - (bool)readFrom:(id)arg1;
+- (void)setHasPersistentId:(bool)arg1;
 - (void)setHasStoreId:(bool)arg1;
 - (void)setName:(id)arg1;
+- (void)setPersistentId:(long long)arg1;
 - (void)setStoreId:(long long)arg1;
 - (long long)storeId;
 - (void)writeTo:(id)arg1;

@@ -40,6 +40,7 @@
 - (bool)migrateSectionInfo:(id)arg1 oldSectionInfo:(id)arg2;
 - (void)noteSectionInfoDidChange:(id)arg1;
 - (id)parentSectionIdentifier;
+- (void)primaryAttachmentDataForRecordID:(id)arg1 completion:(id)arg2;
 - (void)reloadIdentityWithCompletion:(id)arg1;
 - (id)sectionDisplayName;
 - (id)sectionIcon;

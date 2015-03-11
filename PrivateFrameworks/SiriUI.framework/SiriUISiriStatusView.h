@@ -52,6 +52,7 @@
 - (id)_transitionToListeningAnimation;
 - (id)_transitionToThinkingAnimation;
 - (id)_transitionToThinkingCompleteAnimation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_waveyViewFrame;
 - (void)_zoomInMicGlyphForAnimationDuration:(double)arg1;
 - (void)_zoomOutMicGlyph;
 - (id)animationDelegate;

@@ -139,6 +139,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (float)floatValue;
 - (unsigned long long)hash;
+- (bool)hk_hasFloatingPointValue;
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithBool:(bool)arg1;

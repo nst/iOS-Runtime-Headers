@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class <CBScalablePipeManagerDelegate>, CBXpcConnection, NSHashTable, NSMutableSet, NSSet;
+@class <CBScalablePipeManagerDelegate>, CBXpcConnection, NSHashTable, NSMutableSet, NSSet, NSString;
 
 @interface CBScalablePipeManager : NSObject <CBXpcConnectionDelegate> {
     CBXpcConnection *_connection;
@@ -10,11 +10,14 @@
     NSMutableSet *_identifiers;
     NSHashTable *_pipes;
     long long _state;
-    bool_connectionIsFinalized;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSSet * identifiers;
 @property(readonly) long long state;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
 - (void)handleDataAvailable:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKConversationList, CKConversationSearcher, CKMessagesController, CKScheduledUpdater, NSIndexPath, NSString, UIBarButtonItem, UITableView, UIToolbar;
+@class CKConversationList, CKConversationSearcher, CKMessagesController, CKScheduledUpdater, NSArray, NSIndexPath, NSString, UIBarButtonItem, UITableView, UIToolbar, UIView;
 
 @interface CKConversationListController : UIViewController <UITableViewDataSource, UITableViewDelegate, CKConversationSearcherDelegate, UIActionSheetDelegate> {
     unsigned int _isVisible : 1;
@@ -10,7 +10,9 @@
     UIToolbar *_buttonBar;
     CKConversationList *_conversationList;
     UIBarButtonItem *_currentEditButtonItem;
+    NSArray *_frozenConversations;
     CKMessagesController *_messagesController;
+    UIView *_noMessagesDialogView;
     NSIndexPath *_previouslySelectedIndexPath;
     CKConversationSearcher *_searcher;
     UITableView *_table;
@@ -24,9 +26,11 @@
 @property(retain) UIBarButtonItem * currentEditButtonItem;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property(copy) NSArray * frozenConversations;
 @property(readonly) unsigned long long hash;
 @property bool isShowingSwipeDeleteConfirmation;
 @property CKMessagesController * messagesController;
+@property(retain) UIView * noMessagesDialogView;
 @property(retain) NSIndexPath * previouslySelectedIndexPath;
 @property(readonly) bool shouldShowPendingCell;
 @property(readonly) Class superclass;
@@ -50,17 +54,20 @@
 - (bool)_shouldKeepSelection;
 - (void)_updateToolbarItems;
 - (void)accessibilityLargeTextDidChange;
+- (id)activeConversations;
 - (void)applicationWillSuspend;
 - (void)batchDeleteButtonTapped:(id)arg1;
 - (void)beginHoldingConversationListUpdatesForKey:(id)arg1;
 - (void)composeButtonClicked:(id)arg1;
 - (id)conversationList;
+- (Class)conversationListCellClass;
 - (void)conversationWillBeMarkedRead:(id)arg1;
 - (id)currentEditButtonItem;
 - (void)dealloc;
 - (void)deleteButtonTappedForIndexPath:(id)arg1;
 - (void)editButtonTapped:(id)arg1;
 - (void)endHoldingConversationListUpdatesForKey:(id)arg1;
+- (id)frozenConversations;
 - (double)heightForHeaderInTableView:(id)arg1;
 - (void)hideSearchUI;
 - (id)init;
@@ -70,6 +77,7 @@
 - (void)markAsReadButtonTapped:(id)arg1;
 - (void)markAsReadButtonTappedForIndexPath:(id)arg1;
 - (id)messagesController;
+- (id)noMessagesDialogView;
 - (void)noteUnreadCountsChanged;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)parentControllerDidResume:(bool)arg1 animating:(bool)arg2;
@@ -90,8 +98,10 @@
 - (void)setConversationList:(id)arg1;
 - (void)setCurrentEditButtonItem:(id)arg1;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
+- (void)setFrozenConversations:(id)arg1;
 - (void)setIsShowingSwipeDeleteConfirmation:(bool)arg1;
 - (void)setMessagesController:(id)arg1;
+- (void)setNoMessagesDialogView:(id)arg1;
 - (void)setPreviouslySelectedIndexPath:(id)arg1;
 - (void)setUpdater:(id)arg1;
 - (bool)shouldShowPendingCell;
@@ -111,6 +121,7 @@
 - (void)updateConversationSelection;
 - (void)updateCurrentEditButton;
 - (void)updateNavigationItems;
+- (void)updateNoMessagesDialog;
 - (void)updateTitle;
 - (id)updater;
 - (void)viewDidAppear:(bool)arg1;

@@ -61,6 +61,7 @@
     bool_connectionStarted;
     bool_didRemoteMute;
     bool_didRemotePause;
+    bool_hasAudioInterruption;
     bool_hasGatheredInfo;
     bool_hasPendingAccept;
     bool_hasPendingInit;
@@ -128,6 +129,7 @@
 @property(readonly) bool didRemotePause;
 @property(readonly) int endedError;
 @property(readonly) unsigned int endedReason;
+@property bool hasAudioInterruption;
 @property(readonly) bool hasReceivedFirstFrame;
 @property(retain,readonly) IMHandle * initiatorIMHandle;
 @property(retain,readonly) IMAVChatParticipant * initiatorParticipant;
@@ -289,6 +291,7 @@
 - (void)_setFirstFrameTimeoutTimer;
 - (void)_setFrontCameraCaptureTime:(id)arg1;
 - (void)_setGUID:(id)arg1;
+- (void)_setHasAudioInterruption:(bool)arg1;
 - (void)_setInterruptionBegan:(id)arg1;
 - (void)_setInvitationTimeoutTimer;
 - (void)_setIsAudioInterrupted:(bool)arg1;
@@ -355,6 +358,7 @@
 - (int)endedError;
 - (unsigned int)endedReason;
 - (void)handleGenericAVMessageFromParticipant:(id)arg1 type:(unsigned int)arg2 userInfo:(id)arg3;
+- (bool)hasAudioInterruption;
 - (bool)hasReceivedFirstFrame;
 - (id)initIncomingFrom:(id)arg1 isVideo:(bool)arg2 callerProperties:(id)arg3;
 - (id)initOutgoingTo:(id)arg1 isVideo:(bool)arg2;

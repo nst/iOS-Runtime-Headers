@@ -10,6 +10,8 @@
 @property(readonly) long long confidence;
 @property(readonly) long long result;
 
++ (bool)supportsSecureCoding;
+
 - (long long)confidence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

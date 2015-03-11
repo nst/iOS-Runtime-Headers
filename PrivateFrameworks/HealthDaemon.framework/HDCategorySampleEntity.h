@@ -10,6 +10,6 @@
 + (id)_databaseTable;
 + (id)_propertySettersForDataObject;
 + (id)_tableValuesFromDataObject:(id)arg1;
-+ (void)load;
++ (id)codableObjectsFromObjectCollection:(id)arg1;
 
 @end

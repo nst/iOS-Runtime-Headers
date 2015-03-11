@@ -16,6 +16,7 @@
     PCPersistentTimer *_timer;
     NSDate *_tomorrow;
     bool_fencesNeedAdjusted;
+    bool_needsAlarmTablePopulation;
     bool_pendingChanges;
     bool_populating;
     bool_shouldUpdateWithForceForAlarmTable;

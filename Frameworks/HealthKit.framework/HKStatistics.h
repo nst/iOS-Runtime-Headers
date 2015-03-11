@@ -8,6 +8,7 @@
     HKQuantity *_averageQuantity;
     NSDictionary *_averageQuantityBySource;
     unsigned long long _dataCount;
+    NSDictionary *_dataCountBySource;
     NSDate *_endDate;
     HKQuantity *_maximumQuantity;
     NSDictionary *_maximumQuantityBySource;
@@ -23,6 +24,7 @@
 @property(retain) HKQuantity * averageQuantity;
 @property(retain) NSDictionary * averageQuantityBySource;
 @property unsigned long long dataCount;
+@property(retain) NSDictionary * dataCountBySource;
 @property(readonly) NSDate * endDate;
 @property(retain) HKQuantity * maximumQuantity;
 @property(retain) NSDictionary * maximumQuantityBySource;
@@ -48,6 +50,7 @@
 - (id)averageQuantityForSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)dataCount;
+- (id)dataCountBySource;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)init;
@@ -62,6 +65,7 @@
 - (void)setAverageQuantity:(id)arg1;
 - (void)setAverageQuantityBySource:(id)arg1;
 - (void)setDataCount:(unsigned long long)arg1;
+- (void)setDataCountBySource:(id)arg1;
 - (void)setMaximumQuantity:(id)arg1;
 - (void)setMaximumQuantityBySource:(id)arg1;
 - (void)setMinimumQuantity:(id)arg1;

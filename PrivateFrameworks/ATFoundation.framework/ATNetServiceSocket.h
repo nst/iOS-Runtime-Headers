@@ -8,6 +8,7 @@
     NSObject<OS_tcp_connection> *_connection;
     NSString *_interfaceName;
     NSObject<OS_dispatch_queue> *_queue;
+    BOOL _readBuffer[65536];
     NSObject<OS_dispatch_semaphore> *_sema;
     NSString *_serviceDomain;
     NSString *_serviceName;

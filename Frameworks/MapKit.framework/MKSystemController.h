@@ -14,6 +14,7 @@
 - (bool)openURL:(id)arg1 bundleIdentifier:(id)arg2;
 - (bool)openURL:(id)arg1;
 - (bool)overrideBlurStyle;
+- (bool)requiresRTT;
 - (double)screenScale;
 - (struct CGSize { double x1; double x2; })screenSize;
 - (bool)shouldRateLimitSearchCompletions;

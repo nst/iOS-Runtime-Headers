@@ -7,13 +7,16 @@
 @interface MIPPodcast : PBCodable <NSCopying> {
     MIPArtist *_artist;
     NSString *_externalGuid;
+    NSString *_feedUrl;
     MIPSeries *_series;
 }
 
 @property(retain) MIPArtist * artist;
 @property(retain) NSString * externalGuid;
+@property(retain) NSString * feedUrl;
 @property(readonly) bool hasArtist;
 @property(readonly) bool hasExternalGuid;
+@property(readonly) bool hasFeedUrl;
 @property(readonly) bool hasSeries;
 @property(retain) MIPSeries * series;
 
@@ -24,15 +27,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)externalGuid;
+- (id)feedUrl;
 - (bool)hasArtist;
 - (bool)hasExternalGuid;
+- (bool)hasFeedUrl;
 - (bool)hasSeries;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (id)series;
 - (void)setArtist:(id)arg1;
 - (void)setExternalGuid:(id)arg1;
+- (void)setFeedUrl:(id)arg1;
 - (void)setSeries:(id)arg1;
 - (void)writeTo:(id)arg1;
 

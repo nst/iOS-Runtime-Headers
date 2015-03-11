@@ -162,6 +162,7 @@
 - (id)unactionableInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
 - (id)uniqueId;
 - (id)uniqueIdForPersistentConnection;
+- (id)unsupportedContinuationTypes;
 - (id)username;
 
 @end

@@ -15,6 +15,7 @@
     NSString *_portName;
     NSProtocolChecker *_protocolChecker;
     NSObject<OS_dispatch_queue> *_queue;
+    struct __CFRunLoopSource { } *_runloopSource;
     id _target;
     bool_busyForwarding;
     bool_offMainThread;

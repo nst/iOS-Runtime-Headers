@@ -6,40 +6,38 @@
    See Warning(s) below.
  */
 
-@class HKStatisticsCollection, NSDate, NSDateComponents, NSNumber, NSString;
+@class HKStatisticsCollection, NSDate, NSDateComponents, NSNumber;
 
-@interface HKStatisticsCollectionQuery : HKQuery <HKStatisticsCollectionQueryClient> {
+@interface HKStatisticsCollectionQuery : HKQuery {
     NSDate *_anchorDate;
     id _initialResultsHandler;
     NSDateComponents *_intervalComponents;
     NSNumber *_lastAnchor;
+    unsigned long long _mergeStrategy;
     unsigned long long _options;
     HKStatisticsCollection *_statisticsCollection;
     id _statisticsUpdateHandler;
 }
 
 @property(readonly) NSDate * anchorDate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
 @property(copy) id initialResultsHandler;
 @property(copy,readonly) NSDateComponents * intervalComponents;
 @property(retain) NSNumber * lastAnchor;
+@property unsigned long long mergeStrategy;
 @property(readonly) unsigned long long options;
 @property(retain) HKStatisticsCollection * statisticsCollection;
 @property(copy) id statisticsUpdateHandler;
-@property(readonly) Class superclass;
 
-+ (id)_clientInterfaceProtocol;
-+ (void)_configureClientInterface:(id)arg1;
++ (Class)_queryServerDataObjectClass;
 
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
+- (void)_queue_configureQueryServerDataObject:(id)arg1;
 - (void)_queue_deliverError:(id)arg1;
 - (void)_queue_deliverInitialStatisticsObjects:(id)arg1 anchor:(id)arg2 queryUUID:(id)arg3;
+- (void)_queue_deliverResetStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (void)_queue_deliverStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (id)_queue_errorHandler;
-- (void)_queue_requestServerProxyWithUUID:(id)arg1 connection:(id)arg2 handler:(id)arg3;
 - (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (id)anchorDate;
@@ -50,9 +48,11 @@
 - (id)initialResultsHandler;
 - (id)intervalComponents;
 - (id)lastAnchor;
+- (unsigned long long)mergeStrategy;
 - (unsigned long long)options;
 - (void)setInitialResultsHandler:(id)arg1;
 - (void)setLastAnchor:(id)arg1;
+- (void)setMergeStrategy:(unsigned long long)arg1;
 - (void)setStatisticsCollection:(id)arg1;
 - (void)setStatisticsUpdateHandler:(id)arg1;
 - (id)statisticsCollection;

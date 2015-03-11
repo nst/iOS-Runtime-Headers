@@ -14,6 +14,6 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithDatabase:(id)arg1;
-- (void)performTransctionWithBlock:(id)arg1;
+- (void)performTransactionWithBlock:(id)arg1;
 
 @end

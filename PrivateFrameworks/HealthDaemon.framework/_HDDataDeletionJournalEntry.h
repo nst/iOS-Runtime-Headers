@@ -12,10 +12,11 @@
 @property(readonly) HKObject * dataObject;
 @property(readonly) bool restrictSource;
 
++ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
++ (long long)behavior;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)applyWithDaemon:(id)arg1;
 - (id)dataObject;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

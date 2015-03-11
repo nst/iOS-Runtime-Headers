@@ -6,6 +6,7 @@
 
 @interface MIPPlaybackInfo : PBCodable <NSCopying> {
     struct { 
+        unsigned int durationInSamples : 1; 
         unsigned int gaplessEncodingDrainCode : 1; 
         unsigned int gaplessFrameResyncCode : 1; 
         unsigned int gaplessHeuristicCode : 1; 
@@ -18,6 +19,7 @@
         unsigned int codecSubType : 1; 
         unsigned int codecType : 1; 
         unsigned int dataKind : 1; 
+        unsigned int progressionDirection : 1; 
         unsigned int relativeVolume : 1; 
         unsigned int sampleRate : 1; 
     int _beatsPerMinute;
@@ -26,6 +28,7 @@
     int _codecType;
     int _dataKind;
     NSString *_dataUrl;
+    long long _durationInSamples;
     NSString *_eqPreset;
     long long _gaplessEncodingDrainCode;
     long long _gaplessFrameResyncCode;
@@ -33,6 +36,7 @@
     long long _gaplessHeuristicDelayCode;
     } _has;
     NSString *_playbackFormat;
+    int _progressionDirection;
     int _relativeVolume;
     int _sampleRate;
     long long _startTime;
@@ -46,6 +50,7 @@
 @property int codecType;
 @property int dataKind;
 @property(retain) NSString * dataUrl;
+@property long long durationInSamples;
 @property(retain) NSString * eqPreset;
 @property long long gaplessEncodingDrainCode;
 @property long long gaplessFrameResyncCode;
@@ -57,18 +62,21 @@
 @property bool hasCodecType;
 @property bool hasDataKind;
 @property(readonly) bool hasDataUrl;
+@property bool hasDurationInSamples;
 @property(readonly) bool hasEqPreset;
 @property bool hasGaplessEncodingDrainCode;
 @property bool hasGaplessFrameResyncCode;
 @property bool hasGaplessHeuristicCode;
 @property bool hasGaplessHeuristicDelayCode;
 @property(readonly) bool hasPlaybackFormat;
+@property bool hasProgressionDirection;
 @property bool hasRelativeVolume;
 @property bool hasSampleRate;
 @property bool hasStartTime;
 @property bool hasStopTime;
 @property bool hasVolumeNormalizationEnergy;
 @property(retain) NSString * playbackFormat;
+@property int progressionDirection;
 @property int relativeVolume;
 @property int sampleRate;
 @property long long startTime;
@@ -86,6 +94,7 @@
 - (id)dataUrl;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (long long)durationInSamples;
 - (id)eqPreset;
 - (long long)gaplessEncodingDrainCode;
 - (long long)gaplessFrameResyncCode;
@@ -97,12 +106,14 @@
 - (bool)hasCodecType;
 - (bool)hasDataKind;
 - (bool)hasDataUrl;
+- (bool)hasDurationInSamples;
 - (bool)hasEqPreset;
 - (bool)hasGaplessEncodingDrainCode;
 - (bool)hasGaplessFrameResyncCode;
 - (bool)hasGaplessHeuristicCode;
 - (bool)hasGaplessHeuristicDelayCode;
 - (bool)hasPlaybackFormat;
+- (bool)hasProgressionDirection;
 - (bool)hasRelativeVolume;
 - (bool)hasSampleRate;
 - (bool)hasStartTime;
@@ -110,7 +121,9 @@
 - (bool)hasVolumeNormalizationEnergy;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)playbackFormat;
+- (int)progressionDirection;
 - (bool)readFrom:(id)arg1;
 - (int)relativeVolume;
 - (int)sampleRate;
@@ -120,6 +133,7 @@
 - (void)setCodecType:(int)arg1;
 - (void)setDataKind:(int)arg1;
 - (void)setDataUrl:(id)arg1;
+- (void)setDurationInSamples:(long long)arg1;
 - (void)setEqPreset:(id)arg1;
 - (void)setGaplessEncodingDrainCode:(long long)arg1;
 - (void)setGaplessFrameResyncCode:(long long)arg1;
@@ -130,16 +144,19 @@
 - (void)setHasCodecSubType:(bool)arg1;
 - (void)setHasCodecType:(bool)arg1;
 - (void)setHasDataKind:(bool)arg1;
+- (void)setHasDurationInSamples:(bool)arg1;
 - (void)setHasGaplessEncodingDrainCode:(bool)arg1;
 - (void)setHasGaplessFrameResyncCode:(bool)arg1;
 - (void)setHasGaplessHeuristicCode:(bool)arg1;
 - (void)setHasGaplessHeuristicDelayCode:(bool)arg1;
+- (void)setHasProgressionDirection:(bool)arg1;
 - (void)setHasRelativeVolume:(bool)arg1;
 - (void)setHasSampleRate:(bool)arg1;
 - (void)setHasStartTime:(bool)arg1;
 - (void)setHasStopTime:(bool)arg1;
 - (void)setHasVolumeNormalizationEnergy:(bool)arg1;
 - (void)setPlaybackFormat:(id)arg1;
+- (void)setProgressionDirection:(int)arg1;
 - (void)setRelativeVolume:(int)arg1;
 - (void)setSampleRate:(int)arg1;
 - (void)setStartTime:(long long)arg1;

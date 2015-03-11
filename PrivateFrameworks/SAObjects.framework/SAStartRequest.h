@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@class NSNumber, NSString, SASStartSpeech;
 
 @interface SAStartRequest : SABaseCommand <SAServerBoundCommand> {
 }
@@ -13,11 +13,14 @@
 @property(copy,readonly) NSString * description;
 @property bool eyesFree;
 @property bool handsFree;
+@property(copy) NSString * hardwareBuild;
 @property(readonly) unsigned long long hash;
+@property(copy) NSNumber * isCarryDevice;
 @property(copy) NSString * motionActivity;
 @property(copy) NSNumber * motionConfidence;
 @property(copy) NSString * origin;
 @property(copy) NSString * refId;
+@property(retain) SASStartSpeech * sourceSpeechRequest;
 @property(readonly) Class superclass;
 @property bool talkOnly;
 @property(copy) NSString * utterance;
@@ -30,17 +33,23 @@
 - (bool)eyesFree;
 - (id)groupIdentifier;
 - (bool)handsFree;
+- (id)hardwareBuild;
+- (id)isCarryDevice;
 - (id)motionActivity;
 - (id)motionConfidence;
 - (id)origin;
 - (void)setClearContext:(bool)arg1;
 - (void)setEyesFree:(bool)arg1;
 - (void)setHandsFree:(bool)arg1;
+- (void)setHardwareBuild:(id)arg1;
+- (void)setIsCarryDevice:(id)arg1;
 - (void)setMotionActivity:(id)arg1;
 - (void)setMotionConfidence:(id)arg1;
 - (void)setOrigin:(id)arg1;
+- (void)setSourceSpeechRequest:(id)arg1;
 - (void)setTalkOnly:(bool)arg1;
 - (void)setUtterance:(id)arg1;
+- (id)sourceSpeechRequest;
 - (bool)talkOnly;
 - (id)utterance;
 

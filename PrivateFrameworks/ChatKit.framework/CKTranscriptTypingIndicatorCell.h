@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKTypingIndicatorLayer;
+@class CKTypingView;
 
 @interface CKTranscriptTypingIndicatorCell : CKTranscriptMessageCell {
-    CKTypingIndicatorLayer *_typingIndicatorLayer;
+    CKTypingView *_typingIndicatorLayer;
+    CKTypingView *_typingView;
 }
 
-@property(retain) CKTypingIndicatorLayer * typingIndicatorLayer;
+@property(retain) CKTypingView * typingIndicatorLayer;
+@property(retain) CKTypingView * typingView;
 
 + (struct CGSize { double x1; double x2; })indicatorSize;
 
@@ -24,10 +26,12 @@
 - (void)prepareForReuse;
 - (void)setOrientation:(BOOL)arg1;
 - (void)setTypingIndicatorLayer:(id)arg1;
+- (void)setTypingView:(id)arg1;
 - (void)startGrowAnimation;
 - (void)startPulseAnimation;
 - (void)startShrinkAnimation;
 - (void)stopPulseAnimation;
 - (id)typingIndicatorLayer;
+- (id)typingView;
 
 @end

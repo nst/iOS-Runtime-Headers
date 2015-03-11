@@ -26,6 +26,8 @@
 + (bool)showsLabelAndValue;
 
 - (void).cxx_destruct;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
+- (void)_localeDidChange:(id)arg1;
 - (void)beginEditing;
 - (void)commitEditing;
 - (void)dealloc;

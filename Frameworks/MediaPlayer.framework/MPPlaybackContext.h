@@ -6,10 +6,12 @@
     unsigned long long _repeatType;
     unsigned long long _shuffleType;
     bool_keepPlayingCurrentItemIfPossible;
+    bool_shouldStartPlayback;
 }
 
 @property bool keepPlayingCurrentItemIfPossible;
 @property unsigned long long repeatType;
+@property bool shouldStartPlayback;
 @property unsigned long long shuffleType;
 
 + (Class)queueFeederClass;
@@ -19,7 +21,9 @@
 - (unsigned long long)repeatType;
 - (void)setKeepPlayingCurrentItemIfPossible:(bool)arg1;
 - (void)setRepeatType:(unsigned long long)arg1;
+- (void)setShouldStartPlayback:(bool)arg1;
 - (void)setShuffleType:(unsigned long long)arg1;
+- (bool)shouldStartPlayback;
 - (unsigned long long)shuffleType;
 
 @end

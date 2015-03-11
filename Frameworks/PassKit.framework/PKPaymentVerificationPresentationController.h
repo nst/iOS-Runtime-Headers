@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPaymentVerificationPresentationDelegate>, NSNumber, NSString, PKPassView, PKPaymentPass, PKVerificationRequestRecord;
+@class <PKPaymentVerificationEntryDelegate>, <PKPaymentVerificationPresentationDelegate>, NSNumber, NSString, PKPassView, PKPaymentPass, PKPaymentWebService, PKVerificationRequestRecord;
 
 @interface PKPaymentVerificationPresentationController : NSObject <SKStoreProductViewControllerDelegate> {
     <PKPaymentVerificationPresentationDelegate> *_delegate;
+    <PKPaymentVerificationEntryDelegate> *_entryDelegate;
     NSNumber *_inStoreBankAppStoreID;
     NSString *_inStoreBankAppTitle;
     NSString *_installedBankAppBundleID;
@@ -13,6 +14,8 @@
     PKPaymentPass *_pass;
     PKPassView *_passView;
     PKVerificationRequestRecord *_requestRecord;
+    long long _setupContext;
+    PKPaymentWebService *_webService;
     bool_bankAppNotFound;
 }
 
@@ -21,6 +24,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <PKPaymentVerificationPresentationDelegate> * delegate;
 @property(copy,readonly) NSString * description;
+@property <PKPaymentVerificationEntryDelegate> * entryDelegate;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(readonly) NSString * verificationBodyString;
@@ -45,10 +49,12 @@
 - (id)completeVerificationButtonTitle;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithPaymentPass:(id)arg1 passView:(id)arg2 delegate:(id)arg3;
+- (id)entryDelegate;
+- (id)initWithPaymentPass:(id)arg1 passView:(id)arg2 webService:(id)arg3 context:(long long)arg4 delegate:(id)arg5;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (void)selectOtherVerificationMethod:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setEntryDelegate:(id)arg1;
 - (void)setRequestRecord:(id)arg1;
 - (void)sharedPaymentServiceChanged:(id)arg1;
 - (id)verificationBodyString;

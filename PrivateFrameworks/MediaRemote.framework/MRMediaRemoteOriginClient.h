@@ -6,14 +6,14 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSData, NSDictionary, NSMutableDictionary;
+@class MRNowPlayingArtwork, NSArray, NSDictionary, NSMutableDictionary;
 
 @interface MRMediaRemoteOriginClient : NSObject {
     id _commandHandlerBlock;
     NSMutableDictionary *_commandHandlerBlocks;
     int _notifyDidLaunchToken;
     int _notifyRestoreClientStateForLaunch;
-    NSData *_nowPlayingArtworkData;
+    MRNowPlayingArtwork *_nowPlayingArtwork;
     NSDictionary *_nowPlayingInfo;
     struct _MROrigin { } *_origin;
     id _playbackStateRequestHandler;
@@ -27,7 +27,7 @@
 @property(copy,readonly) NSArray * commandHandlerBlocks;
 @property bool isOverrideApp;
 @property bool keepAlive;
-@property(retain) NSData * nowPlayingArtworkData;
+@property(retain) MRNowPlayingArtwork * nowPlayingArtwork;
 @property(retain) NSDictionary * nowPlayingInfo;
 @property(readonly) struct _MROrigin { }* origin;
 @property(copy) id playbackStateRequestHandler;
@@ -41,7 +41,7 @@
 - (id)initWithOrigin:(struct _MROrigin { }*)arg1;
 - (bool)isOverrideApp;
 - (bool)keepAlive;
-- (id)nowPlayingArtworkData;
+- (id)nowPlayingArtwork;
 - (id)nowPlayingInfo;
 - (struct _MROrigin { }*)origin;
 - (id)playbackStateRequestHandler;
@@ -50,7 +50,7 @@
 - (void)setCanBeNowPlayingApp:(bool)arg1;
 - (void)setIsOverrideApp:(bool)arg1;
 - (void)setKeepAlive:(bool)arg1;
-- (void)setNowPlayingArtworkData:(id)arg1;
+- (void)setNowPlayingArtwork:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaybackStateRequestHandler:(id)arg1;
 - (void)setRouteDiscoveryMode:(unsigned int)arg1;

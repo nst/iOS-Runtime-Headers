@@ -100,6 +100,7 @@
 - (bool)isMetadataStale;
 - (bool)isQuoteStale;
 - (id)listName;
+- (id)listNameWithMaxIndexNameLength:(unsigned long long)arg1;
 - (id)low;
 - (bool)marketIsOpen;
 - (id)marketcap;

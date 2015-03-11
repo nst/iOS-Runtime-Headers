@@ -59,6 +59,7 @@
 - (void)cameraController:(id)arg1 requestsDisplayRate:(long long)arg2;
 - (void)cameraController:(id)arg1 willChangeRegionAnimated:(bool)arg2;
 - (void)cameraControllerDidChangeCameraState:(id)arg1;
+- (void)cameraControllerDidFinishInitialTrackingAnimation:(id)arg1;
 - (void)dealloc;
 - (struct VKEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (bool)isAnimating;

@@ -5,6 +5,7 @@
 @class <SKUIApplicationDelegate>, IKAppContext, IKAppDataStorage, NSArray, NSDictionary, NSMutableArray, NSOperationQueue, NSString, NSURL, SKUIAppDeviceConfig, SKUIClientContext, SKUIMetricsController, SKUIModalDocumentController, SKUINavigationDocumentController, SKUIPreviewDocumentController, SKUIPreviewOverlayViewController, SKUISimpleContainerViewController, SKUITabBarController, SKUIURL, SKUIURLResolver, UITabBarController, UIViewController, _SKUIApplicationShutdownHelper;
 
 @interface SKUIApplicationController : NSObject <IKAppContextDelegate, IKApplication, SKUIModalDocumentDelegate, SKUIModalSourceViewProvider, SKUINavigationDocumentDelegate, SKUIURLResolverDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate> {
+    SKUIURL *_activationURL;
     NSURL *_applicationScriptURL;
     SKUIClientContext *_clientContext;
     Class _clientContextClass;
@@ -22,6 +23,7 @@
     NSOperationQueue *_operationQueue;
     SKUIPreviewDocumentController *_previewDocumentController;
     SKUIPreviewOverlayViewController *_previewOverlayViewController;
+    unsigned long long _resignActiveTaskID;
     UIViewController *_rootViewController;
     IKAppContext *_scriptContext;
     long long _scriptLoadState;
@@ -34,6 +36,7 @@
     NSMutableArray *_whenLoadedBlocks;
     bool_didDisplayFirstPage;
     bool_hidesTabBar;
+    bool_ignoreDidBecomeActive;
 }
 
 @property(readonly) long long _applicationMode;
@@ -64,6 +67,7 @@
 - (void)_dispatchTabBarOnSelect;
 - (id)_documentControllerForNavigationController:(id)arg1;
 - (void)_failWithError:(id)arg1;
+- (void)_finishWillResignActiveWithDialogState:(bool)arg1;
 - (void)_fireBlocksAfterLoad;
 - (void)_handleScriptUnavailable;
 - (bool)_hidesTabBar;
@@ -86,6 +90,7 @@
 - (void)_reloadApplication;
 - (void)_reloadApplicationOnForegroundNotification:(id)arg1;
 - (void)_reloadRootViewControllers;
+- (void)_reloadTabBarWithClientContext:(id)arg1;
 - (void)_removeObserversForReloadNotifications;
 - (void)_resetDocumentControllers;
 - (void)_resetUserInteraceForAccountViewDisappear:(id)arg1;
@@ -124,6 +129,9 @@
 - (id)appJSURL;
 - (bool)appJSURLTrusted;
 - (id)appLaunchParams;
+- (void)application:(id)arg1 didReceiveURL:(id)arg2;
+- (void)applicationDidBecomeActive:(id)arg1;
+- (void)applicationWillResignActive:(id)arg1;
 - (id)clientContext;
 - (void)dealloc;
 - (id)delegate;
@@ -155,6 +163,7 @@
 - (void)showTransientViewController:(id)arg1;
 - (void)suspendApplicationWithOptions:(id)arg1;
 - (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(bool)arg3;
+- (void)tabBarController:(id)arg1 didReselectViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 - (bool)tabBarController:(id)arg1 shouldSelectViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 willTransitionToSize:(struct CGSize { double x1; double x2; })arg2 withTransitionCoordinator:(id)arg3;

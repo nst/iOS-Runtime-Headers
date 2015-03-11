@@ -12,6 +12,7 @@
     NSURLConnection *_connection;
     <GEOResourceManifestServerProxyDelegate> *_delegate;
     NSError *_lastResourceManifestLoadError;
+    NSString *_loadingTileGroupUniqueIdentifier;
     unsigned long long _manifestRetryCount;
     NSMutableArray *_manifestUpdateCompletionHandlers;
     NSTimer *_manifestUpdateTimer;
@@ -35,7 +36,7 @@
 
 - (void)_activeTileGroupOverridesChanged:(id)arg1;
 - (void)_cancelConnection;
-- (bool)_changeActiveTileGroup:(id)arg1 flushTileCache:(bool)arg2;
+- (bool)_changeActiveTileGroup:(id)arg1 flushTileCache:(bool)arg2 error:(id*)arg3;
 - (void)_cleanupConnection;
 - (void)_considerChangingActiveTileGroup;
 - (void)_countryProvidersDidChange:(id)arg1;

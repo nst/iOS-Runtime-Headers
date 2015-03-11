@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSString;
+@class NSObject<OS_dispatch_queue>;
 
-@interface SFUnlockManager : NSObject <SFCompanionXPCManagerObserver> {
+@interface SFUnlockManager : NSObject {
+    NSObject<OS_dispatch_queue> *_delegateQueue;
 }
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 + (id)sharedUnlockManager;
 
+- (void)dealloc;
 - (void)disableUnlockWithDevice:(id)arg1;
 - (void)enableUnlockWithDevice:(id)arg1 fromKey:(bool)arg2 withPasscode:(id)arg3 completionHandler:(id)arg4;
 - (void)establishStashBagWithCompletionHandler:(id)arg1;
+- (id)init;
 - (void)unlockEnabledWithDevice:(id)arg1 completionHandler:(id)arg2;
-- (void)xpcManagerConnectionInterrupted;
+- (void)unlockStateForDevice:(id)arg1 completionHandler:(id)arg2;
 
 @end

@@ -18,6 +18,7 @@
     NSString *_service;
     NSString *_serviceToken;
     int _socket;
+    NSString *_streamName;
     bool_hasTimedOut;
     bool_isDefaultPairedDevice;
 }
@@ -41,6 +42,7 @@
 - (id)outputStream;
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (int)socket;
+- (bool)updateConnectionWithOptions:(id)arg1 error:(id*)arg2;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;
 
 @end

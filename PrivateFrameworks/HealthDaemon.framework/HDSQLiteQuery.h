@@ -13,7 +13,6 @@
 @property(readonly) HDSQLiteDatabase * database;
 @property(readonly) HDSQLiteQueryDescriptor * queryDescriptor;
 
-- (id)_newSelectSQLWithProperties:(id)arg1;
 - (void)bindToSelectStatement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
 - (id)copyEntityIdentifiers;
 - (id)copySelectSQLWithProperties:(id)arg1;
@@ -23,7 +22,9 @@
 - (void)dealloc;
 - (bool)deleteAllEntities;
 - (void)enumerateEntitiesUsingBlock:(id)arg1;
+- (bool)enumeratePersistentIDsAndProperties:(id)arg1 error:(id*)arg2 usingBlock:(id)arg3;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 usingBlock:(id)arg2;
+- (void)enumeratePersistentIDsAndPropertiesAsDoubles:(id)arg1 usingBlock:(id)arg2;
 - (void)enumeratePersistentIDsUsingBlock:(id)arg1;
 - (id)initWithDatabase:(id)arg1 descriptor:(id)arg2;
 - (id)queryDescriptor;

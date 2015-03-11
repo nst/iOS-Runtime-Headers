@@ -7,6 +7,7 @@
 @interface CDDMBookkeeping : NSManagedObject {
 }
 
+@property(retain) NSNumber * budgetVersion;
 @property(retain) NSNumber * databaseVersion;
 @property(retain) NSString * deviceDescription;
 @property(retain) NSNumber * maxAttributeIntegerId;

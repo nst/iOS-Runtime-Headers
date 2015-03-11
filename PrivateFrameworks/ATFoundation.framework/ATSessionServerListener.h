@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)_dumpDebugInformation;
 - (void)addSession:(id)arg1;
+- (void)cancelSessionWithIdentifier:(id)arg1 completion:(id)arg2;
 - (void)fetchSessionsWithTypeIdentifier:(id)arg1 completion:(id)arg2;
 - (id)init;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

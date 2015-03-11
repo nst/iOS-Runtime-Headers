@@ -11,6 +11,8 @@
 @property(readonly) NSNumber * pressure;
 @property(readonly) NSNumber * relativeAltitude;
 
++ (bool)supportsSecureCoding;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

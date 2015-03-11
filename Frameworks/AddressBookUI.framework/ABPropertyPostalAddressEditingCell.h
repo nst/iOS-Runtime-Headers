@@ -21,6 +21,7 @@
 - (double)rightContentMargin;
 - (void)setAddressEditor:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setContactStyle:(id)arg1;
 - (void)setEditorSeparatorColor:(id)arg1;
 - (void)setPresentingDelegate:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;

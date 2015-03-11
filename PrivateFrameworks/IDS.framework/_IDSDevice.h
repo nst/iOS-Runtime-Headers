@@ -6,12 +6,13 @@
    See Warning(s) below.
  */
 
-@class CUTWeakReference, NSArray, NSData, NSDictionary, NSInputStream, NSObject<OS_dispatch_queue>, NSOutputStream, NSString, NSUUID;
+@class CUTWeakReference, NSArray, NSData, NSDate, NSDictionary, NSInputStream, NSObject<OS_dispatch_queue>, NSOutputStream, NSString, NSUUID;
 
 @interface _IDSDevice : NSObject <IDSDaemonListenerProtocol> {
     CUTWeakReference *_account;
     NSDictionary *_info;
     NSInputStream *_inputStreamForSocket;
+    int _lastActivityToken;
     int _nearbyToken;
     id _openSocketCompletionHandler;
     NSString *_openSocketCompletionHandlerID;
@@ -19,9 +20,11 @@
     NSOutputStream *_outputStreamForSocket;
     NSString *_serviceToken;
     int _socket;
+    bool_connected;
     bool_nearby;
 }
 
+@property(getter=isConnected,readonly) bool connected;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) NSString * deviceColor;
@@ -30,12 +33,14 @@
 @property(retain,readonly) NSArray * identities;
 @property(readonly) bool isDefaultLocalDevice;
 @property(readonly) bool isDefaultPairedDevice;
+@property(retain,readonly) NSDate * lastActivityDate;
 @property(retain,readonly) NSArray * linkedUserURIs;
 @property(readonly) bool locallyPresent;
 @property(retain,readonly) NSString * modelIdentifier;
 @property(retain,readonly) NSString * name;
 @property(getter=isNearby,readonly) bool nearby;
 @property(setter=setNSUUID:,retain) NSUUID * nsuuid;
+@property(readonly) unsigned long long pairingProtocolVersion;
 @property(readonly) NSString * productBuildVersion;
 @property(readonly) NSString * productName;
 @property(readonly) NSString * productVersion;
@@ -64,15 +69,18 @@
 - (id)enclosureColor;
 - (id)identities;
 - (id)initWithDictionary:(id)arg1;
+- (bool)isConnected;
 - (bool)isDefaultLocalDevice;
 - (bool)isDefaultPairedDevice;
 - (bool)isNearby;
+- (id)lastActivityDate;
 - (id)linkedUserURIs;
 - (bool)locallyPresent;
 - (id)modelIdentifier;
 - (id)name;
 - (id)nsuuid;
 - (void)openSocketWithOptions:(id)arg1 completionHandler:(id)arg2 onQueue:(id)arg3;
+- (unsigned long long)pairingProtocolVersion;
 - (id)productBuildVersion;
 - (id)productName;
 - (id)productVersion;

@@ -31,7 +31,7 @@
 - (void)finalize;
 - (void)freeze;
 - (long long)generationCount;
-- (long long)generationCountFromListOfSources:(id*)arg1 count:(long long)arg2 allowFetching:(bool)arg3;
+- (long long)generationCountFromListOfSources:(id*)arg1 count:(long long)arg2;
 - (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 error:(bool*)arg4;
 - (id)initWithIdentifier:(struct __CFString { }*)arg1;
 - (void)lock;

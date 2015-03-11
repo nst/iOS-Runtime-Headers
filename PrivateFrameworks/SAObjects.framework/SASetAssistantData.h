@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString, SAVoice;
+@class NSArray, NSNumber, NSString, SAVoice, SAWatchData;
 
 @interface SASetAssistantData : SABaseCommand <SAServerBoundCommand> {
 }
@@ -24,6 +24,7 @@
 @property bool handsFree;
 @property(readonly) unsigned long long hash;
 @property(copy) NSNumber * holdToTalkThresholdInMilliseconds;
+@property bool inRetailStoreDemoMode;
 @property(copy) NSString * lastName;
 @property(copy) NSArray * meCards;
 @property(copy) NSString * osVersion;
@@ -40,6 +41,7 @@
 @property(copy) NSString * userInterfaceIdiom;
 @property bool voiceOver;
 @property(copy) NSNumber * voiceTriggerEnabled;
+@property(retain) SAWatchData * watchData;
 
 + (id)setAssistantData;
 + (id)setAssistantDataWithDictionary:(id)arg1 context:(id)arg2;
@@ -59,6 +61,7 @@
 - (id)groupIdentifier;
 - (bool)handsFree;
 - (id)holdToTalkThresholdInMilliseconds;
+- (bool)inRetailStoreDemoMode;
 - (id)lastName;
 - (id)meCards;
 - (id)osVersion;
@@ -77,6 +80,7 @@
 - (void)setFirstName:(id)arg1;
 - (void)setHandsFree:(bool)arg1;
 - (void)setHoldToTalkThresholdInMilliseconds:(id)arg1;
+- (void)setInRetailStoreDemoMode:(bool)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setMeCards:(id)arg1;
 - (void)setOsVersion:(id)arg1;
@@ -91,6 +95,7 @@
 - (void)setUserInterfaceIdiom:(id)arg1;
 - (void)setVoiceOver:(bool)arg1;
 - (void)setVoiceTriggerEnabled:(id)arg1;
+- (void)setWatchData:(id)arg1;
 - (id)storefront;
 - (id)temperatureUnit;
 - (id)timeZoneId;
@@ -100,5 +105,6 @@
 - (id)userInterfaceIdiom;
 - (bool)voiceOver;
 - (id)voiceTriggerEnabled;
+- (id)watchData;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSArray, NSDictionary, NSString, NSURL, PKLinkedAppUserRatingView, SKStoreProductViewController, SSSoftwareLibraryItem, UIActivityIndicatorView, UIButton, UIImageView, UILabel;
+@class NSArray, NSDictionary, NSString, NSURL, PKLinkedAppUserRatingView, SKStoreProductViewController, SSSoftwareLibraryItem, UIActivityIndicatorView, UIButton, UIColor, UIImageView, UILabel;
 
 @interface PKLinkedAppView : UITableViewCell <SKStoreProductViewControllerDelegate> {
     UIActivityIndicatorView *_activityIndicator;
@@ -13,9 +13,11 @@
     NSDictionary *_foundStoreItem;
     UIImageView *_iconView;
     UILabel *_loadingLabel;
+    UIColor *_mainLabelColor;
     UILabel *_price;
     SKStoreProductViewController *_productViewController;
     NSArray *_storeIDs;
+    UIColor *_subTextLabelColor;
     UILabel *_tapToOpen;
     PKLinkedAppUserRatingView *_userRatingView;
     UIButton *_viewButton;
@@ -38,9 +40,11 @@
 @property(retain) UIImageView * iconView;
 @property(retain) UILabel * loadingLabel;
 @property bool lookupInitiated;
+@property UIColor * mainLabelColor;
 @property(retain) UILabel * price;
 @property(retain) SKStoreProductViewController * productViewController;
 @property(retain) NSArray * storeIDs;
+@property UIColor * subTextLabelColor;
 @property(readonly) Class superclass;
 @property(retain) UILabel * tapToOpen;
 @property(retain) PKLinkedAppUserRatingView * userRatingView;
@@ -79,6 +83,7 @@
 - (void)layoutSubviews;
 - (id)loadingLabel;
 - (bool)lookupInitiated;
+- (id)mainLabelColor;
 - (void)performStoreLookup;
 - (id)price;
 - (id)productViewController;
@@ -96,13 +101,16 @@
 - (void)setIconView:(id)arg1;
 - (void)setLoadingLabel:(id)arg1;
 - (void)setLookupInitiated:(bool)arg1;
+- (void)setMainLabelColor:(id)arg1;
 - (void)setPrice:(id)arg1;
 - (void)setProductViewController:(id)arg1;
 - (void)setStoreIDs:(id)arg1;
+- (void)setSubTextLabelColor:(id)arg1;
 - (void)setTapToOpen:(id)arg1;
 - (void)setUserRatingView:(id)arg1;
 - (void)setViewButton:(id)arg1;
 - (id)storeIDs;
+- (id)subTextLabelColor;
 - (id)tapToOpen;
 - (id)userRatingView;
 - (id)viewButton;

@@ -14,9 +14,14 @@
 @property(readonly) long long persistentID;
 @property(readonly) Class superclass;
 
-+ (bool)_insertValues:(id)arg1 intoTable:(id)arg2 withPidOrNil:(id)arg3 database:(id)arg4;
++ (id)_copyDeleteSQLWithTableName:(id)arg1 columnName:(id)arg2;
++ (id)_generateDisambiguatedDatabaseTableName;
++ (bool)_insertValues:(id)arg1 intoTable:(id)arg2 withPidOrNil:(id)arg3 replaceExisting:(bool)arg4 resultCode:(int*)arg5 database:(id)arg6;
++ (bool)_insertValues:(id)arg1 intoTable:(id)arg2 withPidOrNil:(id)arg3 resultCode:(int*)arg4 database:(id)arg5;
 + (id)aggregateSingleValueForProperty:(id)arg1 function:(id)arg2 predicate:(id)arg3 database:(id)arg4;
++ (id)aggregateSingleValueForProperty:(id)arg1 function:(id)arg2 queryDescriptor:(id)arg3 database:(id)arg4;
 + (id)aggregateValuesForProperty:(id)arg1 functions:(id)arg2 predicate:(id)arg3 groupBy:(id)arg4 database:(id)arg5;
++ (id)aggregateValuesForProperty:(id)arg1 functions:(id)arg2 queryDescriptor:(id)arg3 database:(id)arg4;
 + (id)anyInDatabase:(id)arg1 predicate:(id)arg2;
 + (void)applyPropertySetters:(id)arg1 toObject:(id)arg2 withProperties:(id)arg3 values:(id*)arg4;
 + (id)associationPropertyForEntityClass:(Class)arg1;
@@ -29,9 +34,10 @@
 + (id)databaseTable;
 + (id)databaseValueForProperty:(id)arg1 clientValue:(id)arg2;
 + (bool)deleteEntitiesInDatabase:(id)arg1 predicate:(id)arg2;
++ (id)deleteStatementWithProperty:(id)arg1 database:(id)arg2;
 + (id)disambiguatedDatabaseTable;
 + (id)disambiguatedSQLForProperty:(id)arg1;
-+ (id)distinctProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3;
++ (id)distinctProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3 error:(id*)arg4;
 + (id)entityWithPersistentID:(id)arg1;
 + (void)enumerateEntitiesInDatabase:(id)arg1 predicate:(id)arg2 usingBlock:(id)arg3;
 + (void)enumerateQueryResultsFromColumns:(id)arg1 properties:(id)arg2 predicate:(id)arg3 database:(id)arg4 usingBlock:(id)arg5;
@@ -40,9 +46,13 @@
 + (id)foreignDatabaseTablesToDelete;
 + (id)foreignKeyColumnForTable:(id)arg1;
 + (id)joinClauseForProperty:(id)arg1;
++ (id)maxPersistentIDWithPredicate:(id)arg1 database:(id)arg2;
 + (id)maxValueForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3;
++ (id)propertyValueForAnyInDatabase:(id)arg1 property:(id)arg2 predicate:(id)arg3 orderingProperties:(id)arg4 orderingDirections:(id)arg5;
 + (id)propertyValueForAnyInDatabase:(id)arg1 property:(id)arg2 predicate:(id)arg3;
 + (id)propertyValuesForAnyInDatabase:(id)arg1 properties:(id)arg2 predicate:(id)arg3;
++ (id)queryStatementWithPredicate:(id)arg1 properties:(id)arg2 database:(id)arg3;
++ (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 orderingProperties:(id)arg4 orderingDirections:(id)arg5;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3 orderingDirections:(id)arg4;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2;
@@ -50,12 +60,14 @@
 
 - (id)_copyTableClusteredValuesWithValues:(id)arg1;
 - (bool)_deleteRowFromTable:(id)arg1 usingColumn:(id)arg2 database:(id)arg3;
+- (bool)deleteFromDatabase:(id)arg1 error:(id*)arg2;
 - (bool)deleteFromDatabase:(id)arg1;
 - (bool)existsInDatabase:(id)arg1;
-- (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned long long)arg3 database:(id)arg4;
-- (void)getValuesForProperties:(id)arg1 withDatabase:(id)arg2 applier:(id)arg3;
+- (bool)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned long long)arg3 database:(id)arg4;
+- (bool)getValuesForProperties:(id)arg1 withDatabase:(id)arg2 applier:(id)arg3;
 - (id)initWithPersistentID:(long long)arg1;
-- (id)initWithPropertyValues:(id)arg1 inDatabase:(id)arg2;
+- (id)initWithPropertyValues:(id)arg1 inDatabase:(id)arg2 replaceExisting:(bool)arg3 error:(id*)arg4;
+- (id)initWithPropertyValues:(id)arg1 inDatabase:(id)arg2 replaceExisting:(bool)arg3;
 - (long long)persistentID;
 - (void)setExternalValuesWithDictionary:(id)arg1;
 - (bool)setValue:(id)arg1 forProperty:(id)arg2 database:(id)arg3;

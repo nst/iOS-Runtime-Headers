@@ -45,6 +45,7 @@
 + (id)valueWithEdgeInsets:(struct NSEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 + (id)valueWithMKCoordinate:(struct { double x1; double x2; })arg1;
 + (id)valueWithMKCoordinateSpan:(struct { double x1; double x2; })arg1;
++ (id)valueWithML3CollectionInfo:(struct { long long x1; long long x2; unsigned char x3; })arg1;
 + (id)valueWithML3NameOrder:(struct { long long x1; long long x2; })arg1;
 + (id)valueWithNonretainedObject:(id)arg1;
 + (id)valueWithPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -83,6 +84,7 @@
 - (struct { double x1; double x2; })MKCoordinateSpanValue;
 - (struct { double x1; double x2; })MKCoordinateValue;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })MKMapRectValue;
+- (struct { long long x1; long long x2; unsigned char x3; })ML3CollectionInfoValue;
 - (struct { long long x1; long long x2; })ML3NameOrderValue;
 - (struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })SCNMatrix4Value;
 - (struct SCNVector3 { float x1; float x2; float x3; })SCNVector3Value;

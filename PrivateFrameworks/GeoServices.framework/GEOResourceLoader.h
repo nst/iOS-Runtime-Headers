@@ -9,6 +9,7 @@
 @class NSArray, NSMutableArray, NSString;
 
 @interface GEOResourceLoader : NSObject {
+    NSString *_additionalDirectoryToConsider;
     NSString *_baseURLString;
     id _completionHandler;
     NSString *_directory;
@@ -17,29 +18,24 @@
     long long _numberOfCopiesInProgress;
     long long _numberOfDownloadsInProgress;
     id _progressHandler;
+    long long _queuePriority;
     NSArray *_resourceInfos;
     NSMutableArray *_resourcesToLoad;
-    unsigned int _tileGroupIdentifier;
-    NSString *_uniqueTileGroupIdentifier;
     bool_canceled;
-    bool_firstLoadEver;
-    bool_ignoreCachedResources;
 }
 
 @property(readonly) NSArray * loadedResources;
-@property(readonly) unsigned int tileGroupIdentifier;
-@property(readonly) NSString * uniqueTileGroupIdentifier;
 
 - (void)_cleanup;
+- (bool)_establishHardLinkIfPossibleForResource:(id)arg1 toResource:(id)arg2 error:(id*)arg3;
 - (void)_loadNextResource;
+- (void)_loadResourceFromNetwork:(id)arg1 completionHandler:(id)arg2;
 - (id)_urlForResource:(id)arg1;
-- (void)_writeResourceToDisk:(id)arg1 withData:(id)arg2 orExistingPathOnDisk:(id)arg3 completionHandler:(id)arg4;
+- (void)_writeResourceToDisk:(id)arg1 withData:(id)arg2 orExistingPathOnDisk:(id)arg3 allowCreatingHardLink:(bool)arg4 checksum:(id)arg5 completionHandler:(id)arg6;
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithTileGroupIdentifier:(unsigned int)arg1 uniqueIdentifier:(id)arg2 targetDirectory:(id)arg3 baseURLString:(id)arg4 resources:(id)arg5 isFirstLoad:(bool)arg6 ignoreCachedResources:(bool)arg7;
+- (id)initWithTargetDirectory:(id)arg1 baseURLString:(id)arg2 resources:(id)arg3 maximumConcurrentLoads:(unsigned long long)arg4 additionalDirectoryToConsider:(id)arg5;
 - (id)loadedResources;
-- (void)startWithProgressHandler:(id)arg1 completionHandler:(id)arg2 firstLoadEver:(bool)arg3;
-- (unsigned int)tileGroupIdentifier;
-- (id)uniqueTileGroupIdentifier;
+- (void)startWithProgressHandler:(id)arg1 completionHandler:(id)arg2 priority:(long long)arg3;
 
 @end

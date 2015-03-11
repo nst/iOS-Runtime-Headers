@@ -61,6 +61,7 @@
 - (unsigned long long)libraryIdentifiersCount;
 - (int)mediaObjectType;
 - (int)mediaType;
+- (void)mergeFrom:(id)arg1;
 - (id)name;
 - (long long)purchaseHistoryId;
 - (bool)readFrom:(id)arg1;

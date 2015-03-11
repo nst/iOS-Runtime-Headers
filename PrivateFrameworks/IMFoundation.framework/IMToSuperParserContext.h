@@ -38,7 +38,7 @@
 - (void)_updateFontFamily;
 - (void)_updateFontSize;
 - (void)appendFileTransferWithGUID:(id)arg1;
-- (void)appendInlineImageWithGUID:(id)arg1 filename:(id)arg2 width:(long long)arg3 height:(long long)arg4;
+- (void)appendInlineImageWithGUID:(id)arg1 filename:(id)arg2 width:(long long)arg3 height:(long long)arg4 emoji:(long long)arg5;
 - (void)appendString:(id)arg1;
 - (id)backgroundColor;
 - (long long)baseWritingDirection;

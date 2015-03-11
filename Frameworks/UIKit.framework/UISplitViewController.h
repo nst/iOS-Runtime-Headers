@@ -183,6 +183,7 @@
 - (bool)_hasMasterViewController;
 - (void)_invalidateHidesMasterViewInOrientation:(long long)arg1;
 - (void)_invokeDidChangeBoundsBlock;
+- (bool)_isBasicallyHorizontallyCompact;
 - (bool)_isCollapsed;
 - (bool)_isHidesMasterInLandscapeValid;
 - (bool)_isHidesMasterInPortraitValid;

@@ -32,7 +32,7 @@
     } _feFlags;
     UITextInputController *_inputController;
     _UIFieldEditorLayoutManager *_layoutManager;
-    NSTimer *_obscureLastCharacterTimer;
+    NSTimer *_obscureAllTextTimer;
     } _padding;
     _UIFieldEditorContentView *_passcodeStyleCutoutView;
     UITextField *_proxiedView;
@@ -75,14 +75,14 @@
 + (void)releaseSharedInstance;
 + (id)sharedFieldEditor;
 
-- (void)_cancelObscureLastCharacterTimer;
+- (void)_cancelObscureAllTextTimer;
 - (bool)_clearOnEditIfNeeded;
 - (void)_deleteBackwardAndNotify:(bool)arg1;
 - (bool)_hasDictationPlaceholder;
 - (id)_inputController;
 - (bool)_isPasscodeStyle;
 - (id)_layoutManager;
-- (void)_obscureLastCharacter;
+- (void)_obscureAllText;
 - (void)_performWhileSuppressingDelegateNotifications:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_responderExternalTouchRectForWindow:(id)arg1;
 - (id)_responderForBecomeFirstResponder;

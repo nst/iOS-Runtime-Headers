@@ -27,8 +27,10 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) unsigned long long hash;
 @property(readonly) unsigned long long hash;
+@property(readonly) bool isAllCaps;
 @property(readonly) unsigned long long length;
 @property(readonly) NSString * mobileMeDomain;
+@property(readonly) bool npkHasContent;
 @property(copy,readonly) NSString * stringByRemovingPercentEncoding;
 @property(readonly) NSString * stripMobileMSuffixIfPresent;
 @property(readonly) Class superclass;
@@ -340,6 +342,8 @@
 - (id)__stringByStrippingControlCharacters;
 - (id)_accessibilityAttributedLocalizedString;
 - (id)_adjustedFontFromFont:(id)arg1 withinFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 minimumSize:(double)arg3 textSize:(struct CGSize { double x1; double x2; }*)arg4;
+- (id)_af_stringByRemovingPrefixWithLength:(unsigned long long)arg1;
+- (id)_af_stringByRemovingSuffix:(id)arg1;
 - (bool)_allowsDirectEncoding;
 - (bool)_appearsToBeDSID;
 - (bool)_appearsToBeEmail;
@@ -472,6 +476,7 @@
 - (bool)_shouldBePaddedWithSpaces;
 - (struct CGSize { double x1; double x2; })_sizeWithSize:(struct CGSize { double x1; double x2; })arg1 attributes:(id)arg2;
 - (unsigned int)_smallestEncodingInCFStringEncoding;
+- (id)_sp_stringByEncodingIllegalFilenameCharacters;
 - (id)_stocksTrimmedString;
 - (id)_stringByApplyingTransform:(id)arg1;
 - (id)_stringByConvertingFromFullWidthToHalfWidth;
@@ -497,9 +502,11 @@
 - (id)_stringRepresentation;
 - (id)_stripFZIDPrefix;
 - (id)_stripPotentialTokenURIWithToken:(id*)arg1;
+- (id)_ui_secureString;
 - (id)_uikit_stringByTrimmingWhitespaceAndNewlines;
 - (id)_uikit_stringWithWritingDirection:(long long)arg1 asOverride:(bool)arg2;
 - (id)_uikit_unescapedQueryValue;
+- (bool)_validHexChar:(BOOL)arg1;
 - (id)_vk_internedString;
 - (bool)_webBookmarks_hasCaseInsensitivePrefix:(id)arg1;
 - (id)_web_HTTPStyleLanguageCode;
@@ -625,6 +632,7 @@
 - (id)ckShortDescription;
 - (Class)classForCoder;
 - (double)colorInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)colorizeWithKeywords:(id)arg1 classes:(id)arg2;
 - (id)commonNonWordBreakingPrefixWithString:(id)arg1 options:(unsigned long long)arg2;
 - (id)commonPrefixWithString:(id)arg1 options:(unsigned long long)arg2;
 - (long long)compare:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 locale:(id)arg4;
@@ -742,6 +750,12 @@
 - (id)escapeXML;
 - (id)escapeXML;
 - (id)escapedYouTubeSearchString;
+- (id)etMessageCanonicalRawAddress;
+- (long long)etMessageDestinationType;
+- (id)etMessageIDSIdentifier;
+- (bool)etMessageIsIDSIdentifier;
+- (bool)etMessageIsRawAddress;
+- (id)etMessageRawAddress;
 - (unsigned long long)fastestEncoding;
 - (bool)fbs_hasBeenOverridenAlready;
 - (void)fbs_setHasBeenOverriddenAlready:(bool)arg1;
@@ -760,6 +774,7 @@
 - (int)fractionAccuracyFromCustomNumberFormatFractionToken;
 - (int)fractionAccuracyFromCustomNumberFormatFractionToken;
 - (int)fractionAccuracyFromCustomNumberFormatFractionToken;
+- (id)fromHex;
 - (bool)getBytes:(char *)arg1 maxLength:(unsigned long long)arg2 filledLength:(unsigned long long*)arg3 encoding:(unsigned long long)arg4 allowLossyConversion:(bool)arg5 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg6 remainingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg7;
 - (bool)getBytes:(void*)arg1 maxLength:(unsigned long long)arg2 usedLength:(unsigned long long*)arg3 encoding:(unsigned long long)arg4 options:(unsigned long long)arg5 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg6 remainingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg7;
 - (bool)getCString:(char *)arg1 maxLength:(unsigned long long)arg2 encoding:(unsigned long long)arg3;
@@ -787,6 +802,7 @@
 - (bool)hasSuffixCaseInsensitive:(id)arg1;
 - (bool)hasSuffixInsensitive:(id)arg1;
 - (unsigned long long)hash;
+- (id)hex;
 - (unsigned int)hexValue;
 - (id)hk_attributedStringPrefixedWithImage:(id)arg1 baselineAdjusted:(double)arg2 spacing:(double)arg3;
 - (id)hk_attributedStringPrefixedWithImage:(id)arg1 baselineAdjusted:(double)arg2 withAttributes:(id)arg3;
@@ -847,6 +863,7 @@
 - (long long)integerValue;
 - (bool)isAbsolutePath;
 - (bool)isAddressBookURL;
+- (bool)isAllCaps;
 - (bool)isAllWhitespaceInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (bool)isChildOfPath:(id)arg1;
 - (bool)isChildOfPath:(id)arg1;
@@ -1015,6 +1032,7 @@
 - (id)newStringBySubstitutingCharactersCFNumberFormatterDoesntUnderstand;
 - (id)newStringBySubstitutingCharactersCFNumberFormatterDoesntUnderstand;
 - (id)newYouTubeVideoDescription;
+- (bool)npkHasContent;
 - (unsigned long long)numberOfDigitsInCustomNumberFormatDecimalToken;
 - (unsigned int)numberOfDigitsInCustomNumberFormatDecimalToken;
 - (unsigned long long)numberOfDigitsInCustomNumberFormatDecimalToken;
@@ -1332,6 +1350,7 @@
 - (id)trimWhiteSpace;
 - (id)trimWhiteSpace;
 - (id)trimmedString;
+- (void)tryToColorizeWithTokens:(char **)arg1 nbTokens:(unsigned long long)arg2 ptr:(char *)arg3 text:(const char *)arg4 firstCharSet:(id)arg5 secondCharSet:(id)arg6 color:(id)arg7 font:(id)arg8 attributedString:(id)arg9;
 - (id)tsp_stringByAppendingExtensionFieldComponent:(unsigned int)arg1;
 - (bool)tst_hasFormulaEqualsPrefix;
 - (bool)tst_hasLeadingCharacterInSet:(id)arg1;

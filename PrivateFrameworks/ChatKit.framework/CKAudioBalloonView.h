@@ -2,31 +2,33 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKAudioProgressView, CKBalloonImageView, NSString, UIImage, UILabel;
+@class CKAudioProgressView, CKWaveformProgressView, NSString, UILabel;
 
-@interface CKAudioBalloonView : CKColoredBalloonView {
+@interface CKAudioBalloonView : CKColoredBalloonView <CKAudioBalloonView> {
     double _duration;
     CKAudioProgressView *_progressView;
     double _time;
     NSString *_timeFormat;
     UILabel *_timeLabel;
-    UIImage *_waveform;
-    CKBalloonImageView *_waveformImageView;
+    CKWaveformProgressView *_waveformProgressView;
     bool_played;
     bool_playing;
 }
 
 @property(getter=isControlHidden) bool controlHidden;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property double duration;
+@property(readonly) unsigned long long hash;
 @property(getter=isPlayed) bool played;
 @property(getter=isPlaying) bool playing;
 @property(retain) CKAudioProgressView * progressView;
+@property(readonly) Class superclass;
 @property double time;
 @property(copy) NSString * timeFormat;
 @property(retain) UILabel * timeLabel;
-@property(retain) UIImage * waveform;
 @property long long waveformContentMode;
-@property(retain) CKBalloonImageView * waveformImageView;
+@property(retain) CKWaveformProgressView * waveformProgressView;
 
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (void)configureForMediaObject:(id)arg1 previewWidth:(double)arg2 orientation:(BOOL)arg3;
@@ -51,15 +53,14 @@
 - (void)setTimeLabel:(id)arg1;
 - (void)setWaveform:(id)arg1;
 - (void)setWaveformContentMode:(long long)arg1;
-- (void)setWaveformImageView:(id)arg1;
+- (void)setWaveformProgressView:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (double)time;
 - (id)timeFormat;
 - (id)timeLabel;
 - (void)updateProgress;
 - (void)updateTimeString;
-- (id)waveform;
 - (long long)waveformContentMode;
-- (id)waveformImageView;
+- (id)waveformProgressView;
 
 @end

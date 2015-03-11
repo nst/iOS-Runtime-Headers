@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <MDMapControllerDelegate>, <MDRenderTarget>, NSArray, NSMutableArray, NSString, VKCamera, VKDispatch, VKLayoutContext, VKMemoryObserver, VKScene, VKWorld;
+@class <MDMapControllerDelegate>, <MDRenderTarget>, NSArray, NSMutableArray, NSString, VKCamera, VKDispatch, VKLayoutContext, VKScene, VKWorld;
 
 @interface VKScreenCanvas : NSObject <VKWorldDelegate, VKAnimationRunner, VKCameraControllerDelegate, VKCameraDelegate> {
     struct VKEdgeInsets { 
@@ -49,7 +49,6 @@
     struct MapCamera { struct View {} *x1; struct Viewport {} *x2; void *x3; } *_mapCamera;
     <MDMapControllerDelegate> *_mapDelegate;
     struct RenderTree { int (**x1)(); id x2; } *_mapScene;
-    VKMemoryObserver *_memoryObserver;
     unsigned int _needsRepaint;
     } _renderQueue;
     VKScene *_scene;
@@ -103,6 +102,7 @@
 - (void)cameraController:(id)arg1 requestsDisplayRate:(long long)arg2;
 - (void)cameraController:(id)arg1 willChangeRegionAnimated:(bool)arg2;
 - (void)cameraControllerDidChangeCameraState:(id)arg1;
+- (void)cameraControllerDidFinishInitialTrackingAnimation:(id)arg1;
 - (id)cameraControllers;
 - (void)cameraDidChange:(id)arg1;
 - (bool)canRender;
@@ -112,6 +112,7 @@
 - (float)debugFramesPerSecond;
 - (void)didEnterBackground;
 - (void)didPresent;
+- (void)didReceiveMemoryWarning:(bool)arg1 beAggressive:(bool)arg2;
 - (struct VKEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (void)edgeInsetsDidEndAnimating;
 - (void)edgeInsetsWillBeginAnimating;

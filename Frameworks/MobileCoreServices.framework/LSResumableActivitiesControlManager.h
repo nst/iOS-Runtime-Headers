@@ -20,7 +20,9 @@
 - (void)callWillSaveDelegate:(id)arg1 completionHandler:(id)arg2;
 - (void)callWillSaveDelegate:(id)arg1;
 - (id)connection;
+- (id)currentAdvertisedItemUUID;
 - (void)dealloc;
+- (id)debuggingInfo;
 - (id)delegate;
 - (id)enabledUUIDs;
 - (id)init;

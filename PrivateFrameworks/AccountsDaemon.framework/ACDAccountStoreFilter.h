@@ -67,8 +67,10 @@
 - (void)provisionedDataclassesForAccountWithIdentifier:(id)arg1 handler:(id)arg2;
 - (void)removeAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id)arg3;
 - (void)removeAccountType:(id)arg1 withHandler:(id)arg2;
+- (void)removeAccountsFromPairedDeviceWithCompletion:(id)arg1;
 - (void)renewCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id)arg3;
 - (void)requestAccessForAccountTypeWithIdentifier:(id)arg1 options:(id)arg2 withHandler:(id)arg3;
+- (void)saveAccount:(id)arg1 toPairedDeviceWithOptions:(id)arg2 completion:(id)arg3;
 - (void)saveAccount:(id)arg1 verify:(bool)arg2 dataclassActions:(id)arg3 completion:(id)arg4;
 - (void)saveAccount:(id)arg1 withHandler:(id)arg2;
 - (void)setBackingAccountStore:(id)arg1;
@@ -80,7 +82,7 @@
 - (void)tetheredSyncSourceTypeForDataclass:(id)arg1 completion:(id)arg2;
 - (void)typeIdentifierForDomain:(id)arg1 withHandler:(id)arg2;
 - (void)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1 withHandler:(id)arg2;
-- (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(bool)arg2 withHandler:(id)arg3;
+- (void)verifyCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id)arg3;
 - (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
 
 @end

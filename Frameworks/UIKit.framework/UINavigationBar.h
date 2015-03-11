@@ -191,6 +191,7 @@
 - (void)_hideButtonsAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (bool)_hidesShadow;
 - (void)_incrementAnimationCountIfNecessary;
+- (bool)_isAlwaysHidden;
 - (bool)_isCondensed;
 - (bool)_isIncomingButtonSameAsOutgoingButtonOnLeft:(bool)arg1;
 - (id)_itemStack;

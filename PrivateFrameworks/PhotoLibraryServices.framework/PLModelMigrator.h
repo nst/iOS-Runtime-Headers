@@ -60,6 +60,8 @@
 + (bool)_moveMyPhotoStreamToAlbumsListInStore:(id)arg1;
 + (id)_newSyncedPropertiesByAssetUUIDs:(bool)arg1;
 + (bool)_populateDurationAndHDRTypeFromAdditionalAssetAttributesInStore:(id)arg1;
++ (void)_populateFaceRegionsForAsset:(id)arg1;
++ (bool)_populateFaceRegionsInStore:(id)arg1;
 + (bool)_populateHasAdjustmentsForAssetsInStore:(id)arg1;
 + (bool)_populateLightweightReimportDirectoryWithPhotoCloudSharingAssetsInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (bool)_populateUnmanagedAdjustmentsFromFileSystemInManagedObjectContext:(id)arg1;
@@ -91,6 +93,7 @@
 + (id)descriptionForForceMigrationType:(int)arg1;
 + (bool)didCreateSqliteErrorFileForLightweightMigration;
 + (bool)didImportFileSystemAssets;
++ (bool)didImportFileSystemAssetsWithMOC:(id)arg1;
 + (void)dontImportFileSystemDataIntoDatabase;
 + (id)eventNameFromDate:(id)arg1;
 + (void)fixAddedDateForAsset:(id)arg1;

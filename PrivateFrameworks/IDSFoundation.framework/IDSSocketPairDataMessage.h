@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class NSData, NSString;
+@class NSData, NSDate, NSString;
 
 @interface IDSSocketPairDataMessage : IDSSocketPairMessage {
     NSData *_data;
+    NSDate *_expiryDate;
     NSString *_messageUUID;
-    unsigned long long _offset;
+    unsigned long long _payloadLength;
+    unsigned long long _payloadOffset;
     NSString *_peerResponseIdentifier;
     unsigned int _sequenceNumber;
     unsigned short _streamID;
@@ -19,6 +21,7 @@
 @property bool compressed;
 @property(retain,readonly) NSData * data;
 @property(readonly) bool expectsPeerResponse;
+@property NSDate * expiryDate;
 @property(retain,readonly) NSString * messageUUID;
 @property(retain,readonly) NSString * peerResponseIdentifier;
 @property unsigned int sequenceNumber;
@@ -31,12 +34,14 @@
 - (id)data;
 - (void)dealloc;
 - (bool)expectsPeerResponse;
+- (id)expiryDate;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
-- (id)initWithSequenceNumber:(unsigned int)arg1 streamID:(unsigned short)arg2 expectsPeerResponse:(bool)arg3 wantsAppAck:(bool)arg4 compressed:(bool)arg5 peerResponseIdentifier:(id)arg6 messageUUID:(id)arg7 data:(id)arg8;
+- (id)initWithSequenceNumber:(unsigned int)arg1 streamID:(unsigned short)arg2 expectsPeerResponse:(bool)arg3 wantsAppAck:(bool)arg4 compressed:(bool)arg5 peerResponseIdentifier:(id)arg6 messageUUID:(id)arg7 data:(id)arg8 expiryDate:(id)arg9;
 - (id)messageUUID;
 - (id)peerResponseIdentifier;
 - (unsigned int)sequenceNumber;
 - (void)setCompressed:(bool)arg1;
+- (void)setExpiryDate:(id)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (unsigned short)streamID;
 - (bool)wantsAppAck;

@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)_backdropGroupName;
 - (void)_layoutFloatingOverlayView;
+- (void)_setSelectedViewController:(id)arg1;
 - (void)cancelTransientViewController:(id)arg1;
 - (id)floatingOverlayViewController;
 - (id)init;

@@ -19,6 +19,7 @@
 @property(readonly) MPMediaItemCollection * collectionByJoiningCollections;
 @property(readonly) NSArray * collectionPersistentIdentifiers;
 @property(copy) NSSet * collectionPropertiesToFetch;
+@property(readonly) NSArray * collectionPropertiesToFetchArray;
 @property(readonly) MPMediaQuerySectionInfo * collectionSectionInfo;
 @property(readonly) NSArray * collectionSections;
 @property(readonly) NSArray * collections;
@@ -32,6 +33,7 @@
 @property bool ignoreSystemFilterPredicates;
 @property(readonly) NSArray * itemPersistentIdentifiers;
 @property(copy) NSSet * itemPropertiesToFetch;
+@property(readonly) NSArray * itemPropertiesToFetchArray;
 @property(readonly) MPMediaQuerySectionInfo * itemSectionInfo;
 @property(readonly) NSArray * itemSections;
 @property(readonly) NSArray * items;
@@ -106,6 +108,7 @@
 - (id)collectionByJoiningCollections;
 - (id)collectionPersistentIdentifiers;
 - (id)collectionPropertiesToFetch;
+- (id)collectionPropertiesToFetchArray;
 - (id)collectionSectionInfo;
 - (id)collectionSections;
 - (id)collections;
@@ -131,6 +134,7 @@
 - (bool)isEqual:(id)arg1;
 - (id)itemPersistentIdentifiers;
 - (id)itemPropertiesToFetch;
+- (id)itemPropertiesToFetchArray;
 - (id)itemSectionInfo;
 - (id)itemSections;
 - (id)items;

@@ -6,7 +6,7 @@
 
 @interface MPUDataSourceViewController : UIViewController <UIStateRestoring, UIViewControllerRestoration> {
     MPUDataSource *_dataSource;
-    long long _reloadDataOnceToken;
+    bool_hasEverReloadedData;
     bool_shouldReloadWhenVisible;
     bool_visible;
 }

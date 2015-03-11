@@ -56,7 +56,7 @@
 @property(readonly) MKAnnotationView * userLocationView;
 
 - (void).cxx_destruct;
-- (id)_annotationViewForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1 avoidCurrent:(bool)arg2;
+- (id)_annotationViewForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1 avoidCurrent:(bool)arg2 maxDistance:(double)arg3;
 - (void)_dropDraggingAnnotationViewAnimated:(bool)arg1;
 - (void)_dropPinsIfNeeded:(bool)arg1;
 - (void)_findNextView:(id*)arg1 orientation:(int*)arg2 context:(id)arg3;

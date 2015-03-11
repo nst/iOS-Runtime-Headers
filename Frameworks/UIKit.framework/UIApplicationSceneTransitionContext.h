@@ -7,27 +7,36 @@
 @interface UIApplicationSceneTransitionContext : FBSSceneTransitionContext {
 }
 
+@property bool allowCPUThrottling;
 @property double execTime;
 @property bool forTesting;
 @property(getter=_lifecycleActionType,setter=_setLifecycleActionType:) unsigned long long lifecycleActionType;
 @property(retain) NSDictionary * payload;
+@property bool runWatchdogIndependently;
 @property bool safeMode;
 @property double userLaunchEventTime;
+@property double watchdogExtension;
 
 - (unsigned long long)_lifecycleActionType;
 - (void)_setLifecycleActionType:(unsigned long long)arg1;
+- (bool)allowCPUThrottling;
 - (double)execTime;
 - (bool)forTesting;
 - (bool)isUISubclass;
 - (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)payload;
+- (bool)runWatchdogIndependently;
 - (bool)safeMode;
+- (void)setAllowCPUThrottling:(bool)arg1;
 - (void)setExecTime:(double)arg1;
 - (void)setForTesting:(bool)arg1;
 - (void)setPayload:(id)arg1;
+- (void)setRunWatchdogIndependently:(bool)arg1;
 - (void)setSafeMode:(bool)arg1;
 - (void)setUserLaunchEventTime:(double)arg1;
+- (void)setWatchdogExtension:(double)arg1;
 - (double)userLaunchEventTime;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+- (double)watchdogExtension;
 
 @end

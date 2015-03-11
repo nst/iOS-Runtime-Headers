@@ -22,6 +22,7 @@
 - (void)_willClearServer;
 - (void)adjustSystemZoom:(int)arg1;
 - (id)backboardServiceInstance;
+- (unsigned int)contextIdForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forContextId:(unsigned int)arg2;
 - (void)dealloc;
 - (unsigned long long)guidedAccessAvailability;

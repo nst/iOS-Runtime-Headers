@@ -44,7 +44,7 @@
 
 - (void)_cleanup;
 - (void)_conditionalRequirementsChanged:(bool)arg1;
-- (void)_connectionIsWaiting;
+- (void)_connectionIsWaitingWithReason:(long long)arg1;
 - (void)_didFinishWithError:(id)arg1;
 - (void)_didReceiveChallenge:(id)arg1;
 - (void)_didReceiveConnectionCacheKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned long long x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned long long x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*)arg1;

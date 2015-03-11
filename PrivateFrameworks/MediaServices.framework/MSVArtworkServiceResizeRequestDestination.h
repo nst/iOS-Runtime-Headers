@@ -8,22 +8,25 @@
     struct CGSize { 
         double width; 
         double height; 
+    double _destinationCompressionQuality;
     } _destinationSize;
     NSURL *_destinationURL;
 }
 
+@property(readonly) double destinationCompressionQuality;
 @property(readonly) struct CGSize { double x1; double x2; } destinationSize;
 @property(readonly) NSURL * destinationURL;
 
-+ (id)destinationWithSize:(struct CGSize { double x1; double x2; })arg1 url:(id)arg2;
++ (id)destinationWithSize:(struct CGSize { double x1; double x2; })arg1 compressionQuality:(double)arg2 url:(id)arg3;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
+- (double)destinationCompressionQuality;
 - (struct CGSize { double x1; double x2; })destinationSize;
 - (id)destinationURL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDestinationSize:(struct CGSize { double x1; double x2; })arg1 destinationURL:(id)arg2;
+- (id)initWithDestinationSize:(struct CGSize { double x1; double x2; })arg1 destinationCompressionQuality:(double)arg2 destinationURL:(id)arg3;
 
 @end

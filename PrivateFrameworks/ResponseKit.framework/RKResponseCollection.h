@@ -7,12 +7,14 @@
 @interface RKResponseCollection : NSObject {
     NSString *_context;
     NSMutableDictionary *_phraseMap;
-    NSMutableDictionary *_responseCatalog;
+    NSMutableDictionary *_responseCatalogEditable;
+    NSMutableDictionary *_responseCatalogNonEditable;
 }
 
 @property(retain) NSString * context;
 @property(retain) NSMutableDictionary * phraseMap;
-@property(retain) NSMutableDictionary * responseCatalog;
+@property(retain) NSMutableDictionary * responseCatalogEditable;
+@property(retain) NSMutableDictionary * responseCatalogNonEditable;
 
 + (id)responseCollectionWithContext:(id)arg1;
 
@@ -24,11 +26,13 @@
 - (id)phraseMap;
 - (void)resetPhraseMap;
 - (void)resetResponseCatalog;
-- (id)responseCatalog;
+- (id)responseCatalogEditable;
+- (id)responseCatalogNonEditable;
 - (id)responsesForCategory:(unsigned long long)arg1 gender:(unsigned long long)arg2 maximumResponses:(unsigned long long)arg3 withLanguage:(id)arg4 options:(unsigned long long)arg5;
 - (id)responsesForFixedPhrase:(id)arg1 withLanguage:(id)arg2;
 - (void)setContext:(id)arg1;
 - (void)setPhraseMap:(id)arg1;
-- (void)setResponseCatalog:(id)arg1;
+- (void)setResponseCatalogEditable:(id)arg1;
+- (void)setResponseCatalogNonEditable:(id)arg1;
 
 @end

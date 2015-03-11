@@ -13,6 +13,7 @@
     bool_networkReachable;
 }
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedNetworkObserver;
 
 - (void)_networkObserversInitialize;

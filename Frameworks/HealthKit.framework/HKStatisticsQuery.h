@@ -6,32 +6,28 @@
    See Warning(s) below.
  */
 
-@class NSString;
-
-@interface HKStatisticsQuery : HKQuery <HKStatisticsQueryClient> {
+@interface HKStatisticsQuery : HKQuery {
     id _completionHandler;
+    unsigned long long _mergeStrategy;
     unsigned long long _options;
 }
 
 @property(readonly) id completionHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property unsigned long long options;
-@property(readonly) Class superclass;
+@property unsigned long long mergeStrategy;
+@property(readonly) unsigned long long options;
 
-+ (id)_clientInterfaceProtocol;
-+ (void)_configureClientInterface:(id)arg1;
++ (Class)_queryServerDataObjectClass;
 
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
+- (void)_queue_configureQueryServerDataObject:(id)arg1;
 - (id)_queue_errorHandler;
-- (void)_queue_requestServerProxyWithUUID:(id)arg1 connection:(id)arg2 handler:(id)arg3;
 - (void)_queue_validate;
 - (id)completionHandler;
 - (void)deliverStatistics:(id)arg1 forQuery:(id)arg2;
 - (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned long long)arg3 completionHandler:(id)arg4;
+- (unsigned long long)mergeStrategy;
 - (unsigned long long)options;
-- (void)setOptions:(unsigned long long)arg1;
+- (void)setMergeStrategy:(unsigned long long)arg1;
 
 @end

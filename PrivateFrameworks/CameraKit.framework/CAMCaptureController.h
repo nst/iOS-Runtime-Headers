@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <PLCameraControllerDelegate>, AVCaptureDevice, AVCaptureDeviceFormat, AVCaptureDeviceInput, AVCaptureMetadataOutput, AVCaptureMovieFileOutput, AVCaptureOutput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, BKSAccelerometer, CAMAvalancheCaptureService, CAMDebugCaptureService, CAMEffectsRenderer, CIFilter, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSTimer;
+@class <PLCameraControllerDelegate>, AVCaptureDevice, AVCaptureDeviceFormat, AVCaptureDeviceInput, AVCaptureMetadataOutput, AVCaptureMovieFileOutput, AVCaptureOutput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, BKSAccelerometer, CAMAvalancheCaptureService, CAMDebugCaptureService, CAMEffectsRenderer, CCCameraConnection, CIFilter, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSTimer;
 
 @interface CAMCaptureController : NSObject <AVCaptureMetadataOutputObjectsDelegate, PLCameraEffectsRendererDelegate, BKSAccelerometerDelegate, AVCaptureFileOutputRecordingDelegate, AVCaptureVideoDataOutputSampleBufferDelegate> {
     struct CGSize { 
@@ -107,6 +107,11 @@
         unsigned int delegateTorchActiveChanged : 1; 
         unsigned int delegateTorchAvailabilityChanged : 1; 
         unsigned int delegateHDRSuggestionChanged : 1; 
+        unsigned int delegateRemoteShutterPressed : 1; 
+        unsigned int delegateRemoteShutterCanceled : 1; 
+        unsigned int delegateRemoteFocusTapped : 1; 
+        unsigned int delegateRemoteShutterStartVideoCapture : 1; 
+        unsigned int delegateRemoteShutterStopVideoCapture : 1; 
         unsigned int delegateDidStartVideoRequest : 1; 
         unsigned int delegateDidStopVideoRequest : 1; 
         unsigned int delegateDidFinishVideoRequest : 1; 
@@ -181,6 +186,7 @@
     } _panoramaPreviewSize;
     struct OpaqueFigSampleBufferProcessor { } *_panoramaProcessor;
     AVCaptureVideoPreviewLayer *_previewLayer;
+    CCCameraConnection *_remoteShutterConnection;
     NSArray *_supportedCameraModes;
     NSString *_videoCapturePath;
     int _videoCaptureQuality;
@@ -294,6 +300,7 @@
 @property(copy) id postSessionSetupBlock;
 @property(readonly) AVCaptureVideoPreviewLayer * previewLayer;
 @property int previewOrientation;
+@property(readonly) CCCameraConnection * remoteShutterConnection;
 @property bool resetExposureWhenSubjectAreaChanged;
 @property bool resetFocusWhenSubjectAreaChanged;
 @property(readonly) Class superclass;
@@ -564,6 +571,14 @@
 - (id)activeFilter;
 - (bool)allowsAlternateSlomoFront;
 - (bool)allowsAlternateSlomoRear;
+- (void)cameraConnection:(id)arg1 setFocusPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (unsigned long long)cameraConnection:(id)arg1 setMode:(unsigned long long)arg2 interruptCapture:(bool)arg3;
+- (void)cameraConnection:(id)arg1 takePhotoWithCountdown:(unsigned long long)arg2;
+- (void)cameraConnectionBeginVideo:(id)arg1;
+- (void)cameraConnectionCancelCountdown:(id)arg1;
+- (void)cameraConnectionEndVideo:(id)arg1;
+- (bool)cameraConnectionIsMirrored:(id)arg1;
+- (long long)cameraConnectionOrientation:(id)arg1;
 - (long long)cameraDevice;
 - (void)cameraEffectsRenderer:(id)arg1 didFinishTransitionToShowGrid:(bool)arg2;
 - (void)cameraEffectsRenderer:(id)arg1 didStartTransitionToShowGrid:(bool)arg2 animated:(bool)arg3;
@@ -598,6 +613,7 @@
 - (double)currentMaxFrameDuration;
 - (double)currentMinFrameDuration;
 - (id)currentOutput;
+- (unsigned long long)currentRemoteShutterCameraMode;
 - (id)currentSession;
 - (bool)currentlyAllowedToExposeAtPointOfInterestWithMode:(int)arg1;
 - (bool)currentlyAllowedToFocusAtPointOfInterestWithMode:(int)arg1;
@@ -676,12 +692,14 @@
 - (void)rampToVideoZoomFactor:(double)arg1 withRate:(float)arg2;
 - (id)recentFaceMetadata;
 - (void)releaseIOSurface;
+- (id)remoteShutterConnection;
 - (bool)resetExposureWhenSubjectAreaChanged;
 - (void)resetFocusAndExposureIfNotExplicitlyLocked;
 - (bool)resetFocusWhenSubjectAreaChanged;
 - (void)restartContinuousAEAFAtCenter;
 - (void)resumePreview;
 - (void)resumeSubjectAreaChangesAfterDelay:(double)arg1;
+- (void)sendModeToRemoteShutterConnection;
 - (void)setCameraDevice:(long long)arg1;
 - (void)setCameraMode:(long long)arg1 device:(long long)arg2;
 - (void)setCameraMode:(long long)arg1;

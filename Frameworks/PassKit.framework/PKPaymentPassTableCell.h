@@ -2,21 +2,37 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPaymentApplication, PKPaymentPass, UIActivityIndicatorView, UIImageView, UILabel;
+@class PKPaymentApplication, PKPaymentPass, UIActivityIndicatorView, UIColor, UIImageView, UILabel;
 
 @interface PKPaymentPassTableCell : UITableViewCell {
     UIActivityIndicatorView *_activityIndicator;
+    UIColor *_highlightColor;
     UILabel *_mainLabel;
+    UIColor *_mainLabelColor;
     PKPaymentPass *_pass;
     UILabel *_passStateLabel;
     PKPaymentApplication *_paymentApplication;
     UILabel *_secondaryLabel;
     UIImageView *_snapshotView;
+    UIColor *_subTextLabelColor;
+    bool_showState;
 }
 
-- (id)_passStateStringForPass:(id)arg1;
+@property UIColor * highlightColor;
+@property UIColor * mainLabelColor;
+@property UIColor * subTextLabelColor;
+
+- (id)_stringForPassState:(unsigned long long)arg1;
+- (id)_textColorForPassState:(unsigned long long)arg1;
 - (void)dealloc;
+- (id)highlightColor;
 - (id)initWithPass:(id)arg1 secureElementIdentifier:(id)arg2;
 - (void)layoutSubviews;
+- (id)mainLabelColor;
+- (void)setHighlightColor:(id)arg1;
+- (void)setMainLabelColor:(id)arg1;
+- (void)setShowPassState:(bool)arg1;
+- (void)setSubTextLabelColor:(id)arg1;
+- (id)subTextLabelColor;
 
 @end

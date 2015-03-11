@@ -44,8 +44,10 @@
 + (id)stringFromCellType:(long long)arg1;
 
 - (id)_automationID;
+- (id)_checkmarkImage:(bool)arg1;
 - (id)_contentString;
 - (id)_copyableText;
+- (id)_disclosureChevronImage:(bool)arg1;
 - (void)_invalidateHighlightContext;
 - (void)_updateAccessoryTypeForSpecifier:(id)arg1;
 - (SEL)action;
@@ -71,6 +73,7 @@
 - (bool)isChecked;
 - (bool)isCopyable;
 - (void)layoutSubviews;
+- (id)lazyIconQueue:(id)arg1;
 - (void)longPressed:(id)arg1;
 - (id)longTapRecognizer;
 - (void)prepareForReuse;

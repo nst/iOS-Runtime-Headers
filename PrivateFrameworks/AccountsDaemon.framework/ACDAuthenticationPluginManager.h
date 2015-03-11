@@ -24,6 +24,6 @@
 - (id)init;
 - (bool)isPushSupportedForAccount:(id)arg1;
 - (void)renewCredentialsForAccount:(id)arg1 accountStore:(id)arg2 options:(id)arg3 completion:(id)arg4;
-- (void)verifyCredentialsForAccount:(id)arg1 accountStore:(id)arg2 saveWhenAuthorized:(bool)arg3 handler:(id)arg4;
+- (void)verifyCredentialsForAccount:(id)arg1 accountStore:(id)arg2 options:(id)arg3 handler:(id)arg4;
 
 @end

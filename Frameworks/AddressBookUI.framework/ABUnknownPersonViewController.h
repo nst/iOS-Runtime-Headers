@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, <ABUnknownPersonViewControllerDelegate>, ABPersonTableViewActionsDelegate, ABPersonTableViewDataSource, ABPersonTableViewSharingDelegate, ABPersonViewControllerHelper, ABUIPerson, NSArray, NSString, UIFont, UIImage, UIView;
+@class <ABStyleProvider>, <ABUnknownPersonViewControllerDelegate>, ABContactViewController, ABPersonTableViewActionsDelegate, ABPersonTableViewDataSource, ABPersonTableViewSharingDelegate, ABPersonViewControllerHelper, ABUIPerson, NSArray, NSString, UIFont, UIImage, UIView;
 
 @interface ABUnknownPersonViewController : UIViewController <UIActionSheetDelegate> {
     ABPersonTableViewActionsDelegate *_actionsDelegate;
+    ABContactViewController *_contactViewController;
     ABPersonTableViewDataSource *_dataSource;
     id _helper;
     id _reserved;
@@ -29,6 +30,7 @@
 @property(copy) NSString * attribution;
 @property bool badgeEmailPropertiesForMailVIP;
 @property(readonly) bool canShareContact;
+@property(retain) ABContactViewController * contactViewController;
 @property(retain) UIView * customFooterView;
 @property(retain) UIView * customHeaderView;
 @property(retain) UIView * customMessageView;
@@ -103,6 +105,7 @@
 - (id)attribution;
 - (bool)badgeEmailPropertiesForMailVIP;
 - (bool)canShareContact;
+- (id)contactViewController;
 - (id)customFooterView;
 - (id)customHeaderView;
 - (id)customMessageView;
@@ -153,6 +156,7 @@
 - (void)setAttribution:(id)arg1;
 - (void)setBadgeEmailPropertiesForMailVIP:(bool)arg1;
 - (void)setCardContentProvider:(id)arg1;
+- (void)setContactViewController:(id)arg1;
 - (void)setCustomAppearanceProvider:(id)arg1;
 - (void)setCustomFooterView:(id)arg1;
 - (void)setCustomHeaderView:(id)arg1;

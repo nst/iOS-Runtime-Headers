@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABCountryPickerControllerDelegate>, NSArray, NSString, UILocalizedIndexedCollation, UITableViewController;
+@class <ABCountryPickerControllerDelegate>, CNContactStyle, NSArray, NSString, UILocalizedIndexedCollation, UITableViewController;
 
 @interface ABCountryPickerController : UINavigationController <UITableViewDataSource, UITableViewDelegate> {
     UILocalizedIndexedCollation *_collation;
+    CNContactStyle *_contactStyle;
     NSArray *_countries;
     NSArray *_sections;
     NSString *_selectedCountryCode;
@@ -13,6 +14,7 @@
 }
 
 @property(retain) UILocalizedIndexedCollation * collation;
+@property(retain) CNContactStyle * contactStyle;
 @property(copy) NSArray * countries;
 @property(copy,readonly) NSString * debugDescription;
 @property <ABCountryPickerControllerDelegate> * delegate;
@@ -27,6 +29,7 @@
 - (void)_loadCountryCodes;
 - (void)cancelPicker:(id)arg1;
 - (id)collation;
+- (id)contactStyle;
 - (id)countries;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -35,6 +38,7 @@
 - (id)sections;
 - (id)selectedCountryCode;
 - (void)setCollation:(id)arg1;
+- (void)setContactStyle:(id)arg1;
 - (void)setCountries:(id)arg1;
 - (void)setSections:(id)arg1;
 - (void)setSelectedCountryCode:(id)arg1;

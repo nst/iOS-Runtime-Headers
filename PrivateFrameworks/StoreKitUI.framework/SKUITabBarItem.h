@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, NSURL, UIColor, UITabBarItem;
+@class NSString, NSURL, UIColor, UITabBarItem, UIViewController;
 
 @interface SKUITabBarItem : NSObject <NSCopying> {
     long long _barTintStyle;
+    UIViewController *_customRootViewController;
     NSString *_metricsIdentifier;
     NSURL *_rootURL;
     Class _rootViewControllerClass;
@@ -17,6 +18,7 @@
 
 @property bool alwaysCreatesRootViewController;
 @property long long barTintStyle;
+@property(retain) UIViewController * customRootViewController;
 @property(copy) NSString * metricsIdentifier;
 @property(copy) NSURL * rootURL;
 @property(retain) Class rootViewControllerClass;
@@ -28,6 +30,7 @@
 - (bool)alwaysCreatesRootViewController;
 - (long long)barTintStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)customRootViewController;
 - (id)description;
 - (unsigned long long)hash;
 - (id)initWithTabIdentifier:(id)arg1;
@@ -37,6 +40,7 @@
 - (Class)rootViewControllerClass;
 - (void)setAlwaysCreatesRootViewController:(bool)arg1;
 - (void)setBarTintStyle:(long long)arg1;
+- (void)setCustomRootViewController:(id)arg1;
 - (void)setMetricsIdentifier:(id)arg1;
 - (void)setRootURL:(id)arg1;
 - (void)setRootViewControllerClass:(Class)arg1;

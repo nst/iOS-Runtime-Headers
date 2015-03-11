@@ -56,12 +56,12 @@
 - (void)handleCharacteristicValueNotifying:(id)arg1;
 - (void)handleCharacteristicValueUpdated:(id)arg1;
 - (void)handleCharacteristicValueWritten:(id)arg1;
-- (void)handleConnection:(bool)arg1;
 - (void)handleConnectionStateUpdated:(bool)arg1;
 - (void)handleDescriptorEvent:(id)arg1 descriptorSelector:(SEL)arg2 delegateSelector:(SEL)arg3 delegateFlag:(bool)arg4;
 - (void)handleDescriptorValueUpdated:(id)arg1;
 - (void)handleDescriptorValueWritten:(id)arg1;
 - (void)handleDisconnection;
+- (void)handleFailedConnection;
 - (void)handleMsg:(int)arg1 args:(id)arg2;
 - (void)handleNameUpdated:(id)arg1;
 - (void)handleRSSIUpdated:(id)arg1;
@@ -70,10 +70,11 @@
 - (void)handleServiceIncludedServicesDiscovered:(id)arg1;
 - (void)handleServicesChanged:(id)arg1;
 - (void)handleServicesDiscovered:(id)arg1;
+- (void)handleSuccessfulConnection:(id)arg1;
 - (void)handleTimeSyncResponse:(id)arg1;
 - (void)handleWritesExecuted:(id)arg1;
 - (bool)hasTag:(id)arg1;
-- (id)initWithCentralManager:(id)arg1 dictionary:(id)arg2;
+- (id)initWithCentralManager:(id)arg1 info:(id)arg2;
 - (void)invalidateAllAttributes;
 - (bool)isConnected;
 - (bool)isConnectedToSystem;

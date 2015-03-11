@@ -5,6 +5,7 @@
 @interface _VTVoiceTriggerEnabledPolicy : _VTStatePolicy {
     int _notificationToken;
     bool_enabled;
+    bool_primedPhraseSpotter;
 }
 
 - (void)_listenForReload;

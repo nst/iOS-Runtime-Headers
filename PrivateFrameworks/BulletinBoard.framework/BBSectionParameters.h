@@ -40,6 +40,7 @@
 + (bool)supportsSecureCoding;
 
 - (id)allSubtypeParameters;
+- (id)allSubtypes;
 - (void)dealloc;
 - (id)defaultSubtypeParameters;
 - (id)displayName;

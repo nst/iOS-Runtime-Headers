@@ -90,6 +90,8 @@
 - (id)MCHexString;
 - (id)MCInitWithBase64String:(id)arg1;
 - (id)MCSHA1Hash;
+- (void)MD5:(unsigned char[16])arg1;
+- (void)MD5:(unsigned char[16])arg1;
 - (id)MSBase64Encoding;
 - (id)MSHexString;
 - (id)MSInitWithBase64Encoding:(id)arg1;
@@ -166,11 +168,13 @@
 - (bool)brc_signatureIsValid;
 - (const void*)bytes;
 - (Class)classForCoder;
+- (id)compressedData;
 - (id)copyDeflatedData;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cplSyncAnchorDescription;
 - (id)cplSyncAnchorSimpleDescription;
 - (id)cr_md5DigestHexString;
+- (id)decompressedData;
 - (id)decompressedGzipData;
 - (id)decompressedGzipDataUsingTemporaryFile;
 - (id)description;
@@ -187,6 +191,8 @@
 - (id)hexString;
 - (id)hexString;
 - (id)hexStringValue;
+- (unsigned long long)hk_countOfUUIDs;
+- (void)hk_enumerateUUIDsUsingBlock:(id)arg1;
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initWithBase64EncodedData:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithBase64EncodedString:(id)arg1 options:(unsigned long long)arg2;
@@ -262,6 +268,7 @@
 - (struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)sockAddr;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (id)subdataWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)subdataWithRangeNoCopy:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)tsp_dispatchData;
 - (id)tsp_dispatchDataWithApplier:(id)arg1;
 - (void)tsp_splitDataWithMaxSize:(unsigned long long)arg1 subdataHandlerBlock:(id)arg2;

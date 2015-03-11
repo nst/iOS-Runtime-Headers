@@ -11,6 +11,7 @@
 @property(retain) NSNumber * basisCount;
 @property(retain) NSNumber * basisFilled;
 @property(retain) NSNumber * clientId;
+@property(retain) NSDate * creationDate;
 @property(retain) NSNumber * forecastFormat;
 @property(retain) NSDate * forecastGeneratedOn;
 @property(retain) NSNumber * forecastGranularity;
@@ -22,6 +23,7 @@
 @property(retain) NSDate * historyWindowStart;
 @property(retain) NSNumber * integerId;
 @property(retain) NSNumber * limitCount;
+@property(retain) NSDate * oldestEntryDate;
 @property(retain) NSNumber * userId;
 
 @end

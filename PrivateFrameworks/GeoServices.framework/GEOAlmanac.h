@@ -13,11 +13,15 @@
 @property(readonly) bool isDayLight;
 @property(readonly) NSDate * nextSunrise;
 @property(readonly) NSDate * nextSunset;
+@property(readonly) NSDate * nextTransit;
 @property(readonly) NSDate * previousSunrise;
 @property(readonly) NSDate * previousSunset;
+@property(readonly) NSDate * previousTransit;
 @property(readonly) NSDate * sunrise;
 @property(readonly) NSDate * sunset;
+@property(readonly) NSDate * transit;
 
+- (id)_newRiseTransitSetForLocation:(struct { double x1; double x2; })arg1 julianDay:(double)arg2 altitude:(double)arg3;
 - (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1 altitudeInDegrees:(double)arg2;
 - (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1 date:(id)arg2 altitudeInDegrees:(double)arg3;
 - (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1 time:(double)arg2 altitudeInDegrees:(double)arg3;
@@ -30,10 +34,13 @@
 - (bool)isDayLightForTime:(double)arg1;
 - (id)nextSunrise;
 - (id)nextSunset;
+- (id)nextTransit;
 - (id)previousSunrise;
 - (id)previousSunset;
+- (id)previousTransit;
 - (id)sortedTimesForDate:(id)arg1;
 - (id)sunrise;
 - (id)sunset;
+- (id)transit;
 
 @end

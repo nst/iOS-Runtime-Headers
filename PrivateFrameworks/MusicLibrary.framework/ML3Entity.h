@@ -56,7 +56,7 @@
 + (id)persistentIDColumnForTable:(id)arg1;
 + (id)predicateByOptimizingComparisonPredicate:(id)arg1;
 + (id)predicateByOptimizingPredicate:(id)arg1;
-+ (id)predicateIncludingSystemwidePredicatesWithPredicate:(id)arg1 library:(id)arg2;
++ (id)predicateIncludingSystemwidePredicatesWithPredicate:(id)arg1 library:(id)arg2 ignoreRestrictions:(bool)arg3;
 + (void)predisambiguateProperties:(id)arg1 toDictionary:(id)arg2;
 + (id)predisambiguatedProperties;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
@@ -73,6 +73,7 @@
 + (long long)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (id)spotlightPropertyForMPMediaEntityProperty:(id)arg1;
++ (id)subCollectionCountProperty;
 + (id)subselectPropertyForProperty:(id)arg1;
 + (id)subselectStatementForProperty:(id)arg1;
 + (id)unsettableProperties;
@@ -100,6 +101,7 @@
 - (bool)setValue:(id)arg1 forProperty:(id)arg2;
 - (bool)setValues:(const id*)arg1 forProperties:(const id*)arg2 count:(unsigned long long)arg3;
 - (void)setValues:(id)arg1 forProperties:(id)arg2 async:(bool)arg3 withCompletionBlock:(id)arg4;
+- (bool)setValues:(id)arg1 forProperties:(id)arg2 usingConnection:(id)arg3;
 - (bool)setValues:(id)arg1 forProperties:(id)arg2;
 - (bool)setValuesForPropertiesWithDictionary:(id)arg1;
 - (id)valueForProperty:(id)arg1;

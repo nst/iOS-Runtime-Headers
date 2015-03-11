@@ -51,7 +51,7 @@
 + (unsigned long long)CloudPhotoLibrarySize;
 + (void)_assetsLibrary_disableSharedPhotoStreamsSupport;
 + (bool)_assetsLibrary_isSharedPhotoStreamsSupportEnabled;
-+ (void)_doFilesystemImportIfNeeded;
++ (void)_doFilesystemImportIfNeededWithMOC:(id)arg1;
 + (bool)areOpportunisticTasksDisabled;
 + (id)assetsDataDirectory;
 + (bool)canSaveVideoToCameraRoll:(id)arg1;

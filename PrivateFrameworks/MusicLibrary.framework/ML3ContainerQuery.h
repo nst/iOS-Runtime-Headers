@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)container;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)countOfDistinctRowsForColumn:(id)arg1;
 - (unsigned long long)countOfEntities;
 - (void)encodeWithCoder:(id)arg1;
@@ -26,6 +27,7 @@
 - (id)limitedPersistentIDs;
 - (bool)requiresSmartLimiting;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(bool)arg2;
+- (id)selectPersistentIDsSQLAndPropertiesForResultSet:(id)arg1 ordered:(bool)arg2;
 - (id)valueForAggregateFunction:(id)arg1 onEntitiesForProperty:(id)arg2;
 
 @end

@@ -21,10 +21,10 @@
             unsigned int s_addr; 
         } sin_addr; 
         BOOL sin_zero[8]; 
+    NSObject<LoopbackSocketTunnelDelegate> *_delegate;
+    unsigned short _port;
     boolfoundVTPIP;
-    NSObject<LoopbackSocketTunnelDelegate> *delegate;
     NSObject *optionalArg;
-    unsigned short port;
     } sa;
     int sockFD;
     } vtpSA;
@@ -34,10 +34,10 @@
 
 - (void)getIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 - (void)getVTPIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
-- (id)initWithPort:(unsigned short)arg1 delegate:(id)arg2;
+- (id)initWithPort:(unsigned short)arg1 delegate:(id)arg2 error:(id*)arg3;
 - (id)optionalArg;
 - (int)sendPacketToVTP:(id)arg1;
-- (int)serverLoopProc:(id)arg1;
+- (int)serverLoopProc;
 - (void)setOptionalArg:(id)arg1;
 - (void)setVTPIP:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 - (void)shutdownSocket;

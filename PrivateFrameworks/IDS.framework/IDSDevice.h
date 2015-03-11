@@ -2,22 +2,25 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSArray, NSData, NSString, NSUUID, _IDSDevice;
+@class NSArray, NSData, NSDate, NSString, NSUUID, _IDSDevice;
 
 @interface IDSDevice : NSObject {
     _IDSDevice *_internal;
 }
 
+@property(getter=isConnected,readonly) bool connected;
 @property(retain,readonly) NSString * deviceColor;
 @property(retain,readonly) NSString * enclosureColor;
 @property(retain,readonly) NSArray * identities;
 @property(readonly) bool isDefaultPairedDevice;
+@property(retain,readonly) NSDate * lastActivityDate;
 @property(retain,readonly) NSArray * linkedUserURIs;
 @property(readonly) bool locallyPresent;
 @property(retain,readonly) NSString * modelIdentifier;
 @property(retain,readonly) NSString * name;
 @property(getter=isNearby,readonly) bool nearby;
 @property(setter=setNSUUID:,retain) NSUUID * nsuuid;
+@property(readonly) unsigned long long pairingProtocolVersion;
 @property(readonly) NSString * productBuildVersion;
 @property(readonly) NSString * productName;
 @property(readonly) NSString * productVersion;
@@ -46,9 +49,12 @@
 - (void)establishStreamPairWithOptions:(id)arg1 completionHandler:(id)arg2 onQueue:(id)arg3;
 - (id)identities;
 - (id)initWithDictionary:(id)arg1;
+- (bool)isConnected;
 - (bool)isDefaultLocalDevice;
 - (bool)isDefaultPairedDevice;
 - (bool)isNearby;
+- (bool)isWatch;
+- (id)lastActivityDate;
 - (id)linkedUserURIs;
 - (bool)locallyPresent;
 - (id)modelIdentifier;
@@ -57,6 +63,7 @@
 - (int)openSocketForDomain:(id)arg1 transportType:(long long)arg2;
 - (int)openSocketForDomain:(id)arg1;
 - (void)openSocketWithOptions:(id)arg1 completionHandler:(id)arg2 onQueue:(id)arg3;
+- (unsigned long long)pairingProtocolVersion;
 - (id)productBuildVersion;
 - (id)productName;
 - (id)productVersion;

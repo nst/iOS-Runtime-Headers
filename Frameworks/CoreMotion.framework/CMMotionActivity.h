@@ -10,6 +10,7 @@
         int confidence; 
         int mountedState; 
         int mountedConfidence; 
+        boolisStanding; 
         float tilt; 
         double timestamp; 
         int exitState; 
@@ -27,6 +28,8 @@
 @property(readonly) bool unknown;
 @property(readonly) bool walking;
 
++ (bool)supportsSecureCoding;
+
 - (id).cxx_construct;
 - (bool)automotive;
 - (long long)confidence;
@@ -35,7 +38,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; double x6; int x7; double x8; double x9; })arg1;
+- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; boolx5; float x6; double x7; int x8; double x9; double x10; })arg1;
 - (bool)running;
 - (id)startDate;
 - (bool)stationary;

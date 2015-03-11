@@ -25,6 +25,7 @@
 @property(readonly) Class superclass;
 @property(getter=isUsingNetwork,readonly) bool usingNetwork;
 
++ (void)setBundleExtendedInfoGenerationHandler:(id)arg1;
 + (id)sharedInstance;
 
 - (void)_dispatchToObservers:(id)arg1 synchronously:(bool)arg2 preBlock:(id)arg3 block:(id)arg4;
@@ -41,6 +42,7 @@
 - (id)_workQueue_applicationsForProxies:(id)arg1 createIfNecessary:(bool)arg2 createdPlaceholders:(const id*)arg3 existingApplications:(const id*)arg4 unmappedProxies:(const id*)arg5;
 - (void)_workQueue_decrementSynchronizationActionCount;
 - (void)_workQueue_executeInstallSynchronizationBlock:(id)arg1;
+- (void)_workQueue_generateExtendedInfoForBundleInfo:(id)arg1;
 - (void)_workQueue_incrementSynchronizationActionCount;
 - (void)_workQueue_notePlaceholdersModifiedSignificantly:(id)arg1;
 - (id)_workQueue_placeholderForProxy:(id)arg1 updateExistingIfNecessary:(bool)arg2 createIfNecessary:(bool)arg3 wasCreated:(bool*)arg4;

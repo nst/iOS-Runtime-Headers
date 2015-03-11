@@ -29,7 +29,7 @@
 - (void)handleMsg:(int)arg1 args:(id)arg2;
 - (long long)hostState;
 - (id)identifier;
-- (id)initWithIdentifier:(id)arg1;
+- (id)initWithInfo:(id)arg1;
 - (bool)isLinkEncrypted;
 - (unsigned long long)mtuLength;
 - (long long)pairingState;

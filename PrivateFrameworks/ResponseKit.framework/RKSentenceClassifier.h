@@ -39,11 +39,10 @@
 + (id)appreciationKeywordsForLanguage:(id)arg1;
 + (bool)canClassifyLanguageIdentifier:(id)arg1;
 + (unsigned long long)categoryForPreferenceKey:(id)arg1;
++ (id)categoryKeywordMapForLanguage:(id)arg1;
 + (id)keyToCategoryMap;
-+ (id)keywordMap;
 + (id)languageIdentifierFromClassName;
 + (id)lexicalEntitiesFromString:(id)arg1;
-+ (id)polarTagKeywordsForLanguage:(id)arg1;
 + (id)polarTagRegularExpressionForLanguage:(id)arg1;
 + (id)preProcessTextMessageForLinguisticTagger:(id)arg1 withLocale:(id)arg2;
 + (id)preferenceKeyForCategory:(unsigned long long)arg1;
@@ -63,6 +62,7 @@
 - (id)classifySentence;
 - (id)interrogatives;
 - (id)inversions;
+- (bool)isLexicalClassAvailable;
 - (id)languageIdentifier;
 - (id)sentenceClassification:(id)arg1 options:(unsigned long long)arg2;
 - (id)sentenceEntities;

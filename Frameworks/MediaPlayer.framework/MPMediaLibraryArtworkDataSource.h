@@ -7,9 +7,11 @@
 @interface MPMediaLibraryArtworkDataSource : NSObject <MPArtworkDataSource> {
     MPArtworkResizeUtility *_artworkResizeUtility;
     NSCache *_fallbackCache;
+    bool_canUseSurfaceBackedImages;
 }
 
 @property(retain) MPArtworkResizeUtility * artworkResizeUtility;
+@property bool canUseSurfaceBackedImages;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSCache * fallbackCache;
@@ -27,6 +29,7 @@
 - (bool)areRepresentationsAvailableForCatalog:(id)arg1;
 - (bool)areRepresentationsForCatalog:(id)arg1 visuallyIdenticalToRepresentationsForCatalog:(id)arg2;
 - (id)artworkResizeUtility;
+- (bool)canUseSurfaceBackedImages;
 - (void)cancelLoadingRepresentationForArtworkCatalog:(id)arg1;
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
 - (id)fallbackCache;
@@ -34,6 +37,7 @@
 - (bool)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id)arg2;
 - (void)setArtworkResizeUtility:(id)arg1;
+- (void)setCanUseSurfaceBackedImages:(bool)arg1;
 - (void)setFallbackCache:(id)arg1;
 
 @end

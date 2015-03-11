@@ -40,7 +40,6 @@
 - (id)initWithXPCDictionary:(id)arg1;
 - (bool)isEmpty;
 - (bool)isEqual:(id)arg1;
-- (bool)isUIApplicationClientSettings;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectForSetting:(unsigned long long)arg1;
 - (void)setDescriptionProvider:(id)arg1;

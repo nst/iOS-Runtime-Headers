@@ -7,6 +7,7 @@
 
 + (id)UTITypes;
 
+- (id)animatedImageForWidth:(double)arg1;
 - (id)generateAnimatedPreviewFromThumbnails:(id)arg1 width:(double)arg2 orientation:(BOOL)arg3;
 - (id)generateThumbnailsForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)notificationCenter;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKTileSourceClient>, NSError, NSLocale, NSString, VKSharedResources, VKStyleManager, VKTileKeyList, VKTileKeyMap, VKTilePool;
+@class <VKTileSourceClient>, GEOResourceManifestConfiguration, NSError, NSLocale, NSString, VKSharedResources, VKStyleManager, VKTileKeyList, VKTileKeyMap, VKTilePool;
 
 @interface VKTileSource : NSObject {
     <VKTileSourceClient> *_client;
@@ -10,13 +10,15 @@
     VKTileKeyList *_decoding;
     VKTileKeyList *_failedTiles;
     NSLocale *_locale;
+    GEOResourceManifestConfiguration *_manifestConfiguration;
     VKTileKeyMap *_pendingLoads;
     NSError *_recentError;
     VKSharedResources *_sharedResources;
     VKStyleManager *_styleManager;
-    unsigned int _tileGroupIdentifier;
     NSString *_tileLoaderClientIdentifier;
     VKTilePool *_tilePool;
+    bool_preloadOnly;
+    bool_requireWiFi;
     int loadingTiles;
 }
 
@@ -29,6 +31,8 @@
 @property(readonly) unsigned int minimumDownloadZoomLevel;
 @property(readonly) long long minimumZoomLevel;
 @property(readonly) bool minimumZoomLevelBoundsCamera;
+@property bool preloadOnly;
+@property bool requireWiFi;
 @property(retain) VKSharedResources * sharedResources;
 @property(retain) VKStyleManager * styleManager;
 @property(readonly) long long tileSize;
@@ -63,7 +67,7 @@
 - (void)forceDownload;
 - (void)foreachTileInPool:(id)arg1;
 - (id)init;
-- (id)initWithTileGroupIdentifier:(unsigned int)arg1 locale:(id)arg2;
+- (id)initWithResourceManifestConfiguration:(id)arg1 locale:(id)arg2;
 - (unsigned int)maximumDownloadZoomLevel;
 - (long long)maximumZoomLevel;
 - (bool)maximumZoomLevelBoundsCamera;
@@ -74,8 +78,12 @@
 - (struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })nativeKeyForRenderKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)performDownload:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)populateVisibleTileSets:(id)arg1 withTiles:(id)arg2;
+- (bool)preloadOnly;
+- (bool)requireWiFi;
 - (void)setClient:(id)arg1;
 - (void)setContentScale:(double)arg1;
+- (void)setPreloadOnly:(bool)arg1;
+- (void)setRequireWiFi:(bool)arg1;
 - (void)setSharedResources:(id)arg1;
 - (void)setStyleManager:(id)arg1;
 - (id)sharedResources;

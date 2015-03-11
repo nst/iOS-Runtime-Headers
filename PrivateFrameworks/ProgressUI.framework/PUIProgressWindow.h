@@ -42,7 +42,10 @@
 - (void)_createLayer;
 - (void)_drawPluginNameLayerInContext:(struct CGContext { }*)arg1;
 - (void)_drawProgressLayerInContext:(struct CGContext { }*)arg1;
+- (bool)_isNano;
 - (void)_layoutScreen;
+- (unsigned long long)_nanoDeviceType;
+- (int)_nanoMaterial;
 - (const char *)_productSuffix;
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;

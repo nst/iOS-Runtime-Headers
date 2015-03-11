@@ -33,6 +33,7 @@
 - (id)URLs;
 - (id)__ck_composition;
 - (id)__ck_dataForPasteboardType:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)__ck_filenameForType:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)__ck_mediaObjectAtIndex:(unsigned long long)arg1;
 - (id)__ck_mediaObjectManager;
 - (id)__ck_pasteboardTypeListRTF;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <GEORoutePreloadSession>, <VKMapViewDelegate>, CADisplay, GEOMapRegion, GGLDisplayLink, MDDisplayLayer, NSArray, NSMutableArray, NSString, VKAnimation, VKClassicGlobeCanvas, VKLabelMarker, VKMapCanvas, VKMemoryObserver, VKPolylineOverlayPainter, VKStyleManager;
+@class <GEORoutePreloadSession>, <VKMapViewDelegate>, CADisplay, GEOMapRegion, GEOResourceManifestConfiguration, GGLDisplayLink, MDDisplayLayer, NSArray, NSMutableArray, NSString, VKAnimation, VKClassicGlobeCanvas, VKLabelMarker, VKMapCanvas, VKMemoryObserver, VKPolylineOverlayPainter, VKStyleManager;
 
 @interface VKMapView : CALayer <VKInteractiveMapDelegate, MDMapControllerDelegate, GGLLayerDisruptor, GGLRenderQueueSource> {
     struct VKEdgeInsets { 
@@ -13,6 +13,7 @@
     struct shared_ptr<ggl::RenderQueue> { 
         struct RenderQueue {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
+    GEOResourceManifestConfiguration *_additionalManifestConfiguration;
     } _animatingToEdgeInsets;
     NSMutableArray *_annotationMarkersToAddToNewCanvas;
     unsigned int _applicationState;
@@ -33,12 +34,14 @@
     VKLabelMarker *_selectedLabelMarker;
     NSString *_tileLoaderClientID;
     double _verticalYaw;
+    bool_additionalManifestConfigurationLoaderOpen;
     bool_containsOverlay;
     bool_isChangingMapType;
     bool_isInBackground;
     bool_loaderOpen;
 }
 
+@property(retain) GEOResourceManifestConfiguration * additionalManifestConfiguration;
 @property bool allowDatelineWraparound;
 @property(readonly) double altitude;
 @property(getter=isAnimatingToTrackAnnotation,readonly) bool animatingToTrackAnnotation;
@@ -115,10 +118,12 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_clearAnalytics;
-- (void)_createDisplayLayer;
+- (void)_closeAdditionalManifestConfigurationLoaderConnection;
+- (bool)_createDisplayLayer;
 - (void)_createGlobe;
 - (void)_mapkit_configureFromDefaults:(bool)arg1;
 - (void)_notifyDelegateFlyoverTourLabelChanged:(id)arg1;
+- (void)_openAdditionalManifestConfigurationLoaderConnection;
 - (void)_resetMaximumZoomLevel;
 - (void)_runFlyoverTourStateChange:(int)arg1 completion:(id)arg2;
 - (void)_setMaximumZoomLevel:(double)arg1;
@@ -133,6 +138,7 @@
 - (void)addOverlay:(id)arg1;
 - (void)addPersistentOverlay:(id)arg1;
 - (void)addRasterOverlay:(id)arg1;
+- (id)additionalManifestConfiguration;
 - (bool)allowDatelineWraparound;
 - (double)altitude;
 - (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id)arg5;
@@ -177,7 +183,8 @@
 - (id)detailedDescription;
 - (void)didDrawWithTimestamp:(double)arg1;
 - (void)didEnterBackground;
-- (void)didReceiveMemoryWarning;
+- (void)didFinishSnapshotting;
+- (void)didReceiveMemoryWarning:(id)arg1;
 - (void)didStartPanningDeceleration;
 - (void)disableFlyoverStatistics;
 - (long long)displayRate;
@@ -192,6 +199,7 @@
 - (void)flushTileLoads;
 - (id)flyoverStatistics;
 - (id)focusedLabelsPolylinePainter;
+- (void)forceFrame;
 - (void)forceLayout;
 - (void)forceSceneLoad;
 - (struct VKEdgeInsets { double x1; double x2; double x3; double x4; })fullyOccludedEdgeInsets;
@@ -242,6 +250,7 @@
 - (void)mapDidChangeVisibleRegion:(id)arg1;
 - (void)mapDidFailLoadingTiles:(id)arg1 withError:(id)arg2;
 - (void)mapDidFinishChangingMapDisplayStyle:(unsigned long long)arg1;
+- (void)mapDidFinishInitialTrackingAnimation:(id)arg1;
 - (void)mapDidFinishLoadingTiles:(id)arg1;
 - (void)mapDidStartLoadingTiles:(id)arg1;
 - (unsigned long long)mapDisplayStyle;
@@ -290,6 +299,7 @@
 - (void)selectAnnotationMarker:(id)arg1;
 - (void)selectLabelMarker:(id)arg1;
 - (id)selectedLabelMarker;
+- (void)setAdditionalManifestConfiguration:(id)arg1;
 - (void)setAllowDatelineWraparound:(bool)arg1;
 - (void)setAnnotationMarkerDeselectionCallback:(id)arg1;
 - (void)setAnnotationTrackingZoomStyle:(long long)arg1;

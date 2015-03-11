@@ -6,18 +6,22 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSMutableDictionary, NSString;
+@class IDSAccountController, NSArray, NSMutableDictionary, NSString;
 
 @interface FTRegAppleIDSetupManager : NSObject {
     NSArray *_candidateAliases;
+    IDSAccountController *_faceTimeAccountController;
     id _handler;
+    IDSAccountController *_iMessageAccountController;
     NSArray *_selectedAliases;
     NSString *_selectionSummaryText;
     NSMutableDictionary *_setupOperations;
 }
 
 @property(copy) NSArray * candidateAliases;
+@property(retain) IDSAccountController * faceTimeAccountController;
 @property(copy) id handler;
+@property(retain) IDSAccountController * iMessageAccountController;
 @property(copy) NSArray * selectedAliases;
 @property(copy) NSString * selectionSummaryText;
 @property(retain) NSMutableDictionary * setupOperations;
@@ -34,18 +38,23 @@
 - (bool)_shouldShowAliasSelectionUI;
 - (void)_updateCandidateAliases;
 - (void)_updateSelectionSummaryText;
+- (id)accountControllerForService:(id)arg1;
 - (void)addSetupDictionary:(id)arg1 forService:(long long)arg2;
 - (bool)aliasIsEnabled:(id)arg1;
 - (bool)beginSetupWithCompletionHandler:(id)arg1;
 - (id)candidateAliases;
 - (void)dealloc;
+- (id)faceTimeAccountController;
 - (id)handler;
+- (id)iMessageAccountController;
 - (id)init;
 - (id)phoneNumberDisplayString;
 - (id)selectedAliases;
 - (id)selectionSummaryText;
 - (void)setCandidateAliases:(id)arg1;
+- (void)setFaceTimeAccountController:(id)arg1;
 - (void)setHandler:(id)arg1;
+- (void)setIMessageAccountController:(id)arg1;
 - (void)setSelectedAliases:(id)arg1;
 - (void)setSelectionSummaryText:(id)arg1;
 - (void)setSetupOperations:(id)arg1;

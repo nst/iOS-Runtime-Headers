@@ -16,7 +16,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-+ (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
++ (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 prefetchedProperties:(id)arg2 library:(id)arg3;
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1;
 + (bool)supportsSecureCoding;
 

@@ -9,11 +9,13 @@
 }
 
 + (void)applyVolumeNormalizationWithSoundCheckEnabled:(bool)arg1 forQueuedItems:(id)arg2 currentQuery:(id)arg3;
++ (id)mpuReporting_allMediaItemProperties;
 
 - (void).cxx_destruct;
 - (void)_applyLoudnessInfo;
 - (id)_chapterTitleForTime:(double)arg1;
 - (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(bool)arg2;
+- (long long)_mpuReporting_storeItemInt64ID;
 - (id)_newTimeMarkersForChapterType:(long long)arg1;
 - (void)_updateBookmarkTimeIfNecessary:(double)arg1 isCheckpoint:(bool)arg2;
 - (id)album;
@@ -40,11 +42,13 @@
 - (bool)isAssetURLValid;
 - (bool)isCloudItem;
 - (bool)isExplicitTrack;
-- (bool)isPlaceholderForItem:(id)arg1;
 - (bool)isStreamable;
 - (bool)isSupportedDefaultPlaybackSpeed:(unsigned long long)arg1;
 - (bool)isValidPlayerSubstituteForItem:(id)arg1;
 - (id)mainTitle;
+- (bool)mpuReporting_isValidReportingItem;
+- (unsigned long long)mpuReporting_itemType;
+- (id)mpuReporting_storeItemID;
 - (void)notePlaybackFinishedByHittingEnd;
 - (unsigned long long)persistentID;
 - (double)playbackCheckpointCurrentTime;

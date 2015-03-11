@@ -160,6 +160,7 @@
 + (id)_screenWithIntegerDisplayID:(unsigned int)arg1;
 + (bool)_shouldDisableJail;
 + (void)_videoOutSettingsChanged;
++ (id)_watchScreen;
 + (id)_workspaceCapableScreens;
 + (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromView:(id)arg2;
 + (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 toView:(id)arg2;

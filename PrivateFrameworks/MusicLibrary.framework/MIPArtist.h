@@ -6,10 +6,12 @@
 
 @interface MIPArtist : PBCodable <NSCopying> {
     struct { 
+        unsigned int persistentId : 1; 
         unsigned int storeId : 1; 
     NSString *_artworkId;
     } _has;
     NSString *_name;
+    long long _persistentId;
     NSString *_sortName;
     long long _storeId;
 }
@@ -17,9 +19,11 @@
 @property(retain) NSString * artworkId;
 @property(readonly) bool hasArtworkId;
 @property(readonly) bool hasName;
+@property bool hasPersistentId;
 @property(readonly) bool hasSortName;
 @property bool hasStoreId;
 @property(retain) NSString * name;
+@property long long persistentId;
 @property(retain) NSString * sortName;
 @property long long storeId;
 
@@ -31,15 +35,20 @@
 - (id)dictionaryRepresentation;
 - (bool)hasArtworkId;
 - (bool)hasName;
+- (bool)hasPersistentId;
 - (bool)hasSortName;
 - (bool)hasStoreId;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)name;
+- (long long)persistentId;
 - (bool)readFrom:(id)arg1;
 - (void)setArtworkId:(id)arg1;
+- (void)setHasPersistentId:(bool)arg1;
 - (void)setHasStoreId:(bool)arg1;
 - (void)setName:(id)arg1;
+- (void)setPersistentId:(long long)arg1;
 - (void)setSortName:(id)arg1;
 - (void)setStoreId:(long long)arg1;
 - (id)sortName;

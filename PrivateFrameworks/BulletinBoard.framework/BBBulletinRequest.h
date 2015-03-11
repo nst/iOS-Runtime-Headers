@@ -16,6 +16,7 @@
 @property(copy) NSString * bulletinID;
 @property(copy) NSArray * buttons;
 @property bool clearable;
+@property unsigned long long counter;
 @property(retain) NSDate * date;
 @property long long dateFormatStyle;
 @property bool dateIsAllDay;
@@ -28,6 +29,7 @@
 @property(copy) BBAction * expireAction;
 @property bool expiresOnPublisherDeath;
 @property bool hasEventDate;
+@property(getter=isLoading) bool loading;
 @property(copy) NSString * message;
 @property(retain) BBContent * modalAlertContent;
 @property long long primaryAttachmentType;
@@ -62,7 +64,6 @@
 - (bool)hasContentModificationsRelativeTo:(id)arg1;
 - (void)publish:(bool)arg1;
 - (void)publish;
-- (id)publisherMatchID;
 - (unsigned long long)realertCount;
 - (void)setContextValue:(id)arg1 forKey:(id)arg2;
 - (void)setExpirationEvents:(unsigned long long)arg1;

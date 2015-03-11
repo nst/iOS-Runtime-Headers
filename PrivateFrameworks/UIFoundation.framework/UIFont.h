@@ -23,6 +23,8 @@
 + (id)__ck_shortEmphasizedPreferredFontForTextStyle:(id)arg1;
 + (id)__ck_shortPreferredFontForTextStyle:(id)arg1;
 + (void)_evictAllItemsFromFontAndFontDescriptorCaches;
++ (id)_fu_sausageFontOfSize:(double)arg1 fontWeight:(double)arg2 centeredColons:(bool)arg3;
++ (id)_fu_sausageFontOfSize:(double)arg1 fontWeight:(double)arg2;
 + (double)_interpolatedAdditionalFontSizeForMainScreen;
 + (id)_lightSystemFontOfSize:(double)arg1;
 + (id)_opticalBoldSystemFontOfSize:(double)arg1;
@@ -64,6 +66,18 @@
 + (id)fontWithMarkupDescription:(id)arg1;
 + (id)fontWithName:(id)arg1 size:(double)arg2 traits:(int)arg3;
 + (id)fontWithName:(id)arg1 size:(double)arg2;
++ (id)fu_alternateColonsFeatureSetting;
++ (id)fu_bodyEmphasizeFont;
++ (id)fu_bodyShortFont;
++ (id)fu_boldSausageFontOfSize:(double)arg1;
++ (id)fu_fontByApplyingFeatureSettings:(id)arg1 toFont:(id)arg2;
++ (id)fu_lightSausageFontOfSize:(double)arg1;
++ (id)fu_mediumFontOfSize:(double)arg1 centeredColons:(bool)arg2;
++ (id)fu_mediumFontOfSize:(double)arg1;
++ (id)fu_mediumSausageFontOfSize:(double)arg1;
++ (id)fu_sausageFontOfSize:(double)arg1 centeredColons:(bool)arg2;
++ (id)fu_sausageFontOfSize:(double)arg1;
++ (id)fu_systemFontOfSize:(double)arg1 centeredColons:(bool)arg2;
 + (id)ib_preferredFontForTextStyle:(id)arg1;
 + (void)initialize;
 + (id)italicSystemFontOfSize:(double)arg1;

@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class ATSession, NSArray, NSError, NSString;
+@class ATSession, NSArray, NSDictionary, NSError, NSString;
 
 @interface ATSessionTask : NSObject <NSSecureCoding, NSCopying> {
     unsigned long long _completedItemCount;
     NSArray *_currentItemDescriptions;
+    NSArray *_currentItems;
     NSError *_error;
     NSString *_localizedDescription;
     double _progress;
+    NSDictionary *_properties;
     ATSession *_session;
     NSString *_sessionGroupingKey;
     NSString *_sessionTaskIdentifier;
@@ -22,10 +24,12 @@
 @property(getter=isCancelled) bool cancelled;
 @property unsigned long long completedItemCount;
 @property(copy) NSArray * currentItemDescriptions;
+@property(copy) NSArray * currentItems;
 @property(copy) NSError * error;
 @property(getter=isFinished) bool finished;
 @property(copy) NSString * localizedDescription;
 @property double progress;
+@property(copy) NSDictionary * properties;
 @property(getter=isRunning) bool running;
 @property ATSession * session;
 @property(copy) NSString * sessionGroupingKey;
@@ -41,6 +45,7 @@
 - (unsigned long long)completedItemCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentItemDescriptions;
+- (id)currentItems;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
@@ -51,16 +56,19 @@
 - (bool)isRunning;
 - (id)localizedDescription;
 - (double)progress;
+- (id)properties;
 - (id)session;
 - (id)sessionGroupingKey;
 - (id)sessionTaskIdentifier;
 - (void)setCancelled:(bool)arg1;
 - (void)setCompletedItemCount:(unsigned long long)arg1;
 - (void)setCurrentItemDescriptions:(id)arg1;
+- (void)setCurrentItems:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setFinished:(bool)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setProgress:(double)arg1;
+- (void)setProperties:(id)arg1;
 - (void)setRunning:(bool)arg1;
 - (void)setSession:(id)arg1;
 - (void)setSessionGroupingKey:(id)arg1;

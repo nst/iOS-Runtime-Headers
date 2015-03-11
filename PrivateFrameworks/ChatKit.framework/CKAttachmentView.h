@@ -2,22 +2,24 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString, UIImage, UIImageView, UILabel;
+@class CKMediaObject, NSString, UIImageView, UILabel;
 
-@interface CKAttachmentView : UIView {
+@interface CKAttachmentView : UIView <CKAttachmentView> {
     UILabel *_actionLabel;
     UIImageView *_iconImageView;
+    CKMediaObject *_mediaObject;
     UILabel *_subtitleLabel;
     UILabel *_titleLabel;
 }
 
-@property(copy) NSString * action;
 @property(retain) UILabel * actionLabel;
-@property(copy) UIImage * icon;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) UIImageView * iconImageView;
-@property(copy) NSString * subtitle;
+@property(retain) CKMediaObject * mediaObject;
 @property(retain) UILabel * subtitleLabel;
-@property(copy) NSString * title;
+@property(readonly) Class superclass;
 @property(retain) UILabel * titleLabel;
 
 - (id)action;
@@ -27,10 +29,14 @@
 - (id)iconImageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (id)mediaObject;
+- (void)prepareForDisplay;
+- (void)prepareForReuse;
 - (void)setAction:(id)arg1;
 - (void)setActionLabel:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setIconImageView:(id)arg1;
+- (void)setMediaObject:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setTitle:(id)arg1;

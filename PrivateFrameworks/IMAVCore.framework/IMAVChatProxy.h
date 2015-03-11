@@ -18,6 +18,8 @@
 @property(retain,readonly) NSDate * dateEnded;
 @property(readonly) int endedError;
 @property(readonly) unsigned int endedReason;
+@property(readonly) bool hasAudioInterruption;
+@property(readonly) bool hasReceivedFirstFrame;
 @property(retain,readonly) IMHandle * initiatorIMHandle;
 @property double invitationTimeoutTime;
 @property(readonly) bool isActive;
@@ -34,6 +36,7 @@
 - (id)GUID;
 - (bool)_isProxy;
 - (void)acceptInvitation;
+- (void)acceptInvitationWithHoldMusic;
 - (id)account;
 - (long long)callID;
 - (void)cancelInvitation;
@@ -51,6 +54,8 @@
 - (unsigned int)endedReason;
 - (void)finalUpdate;
 - (void)forwardInvocation:(id)arg1;
+- (bool)hasAudioInterruption;
+- (bool)hasReceivedFirstFrame;
 - (id)initiatorIMHandle;
 - (double)invitationTimeoutTime;
 - (void)invite:(id)arg1 additionalPeers:(id)arg2;

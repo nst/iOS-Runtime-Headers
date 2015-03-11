@@ -12,6 +12,7 @@
     NSData *_minSortKey;
     NSMutableDictionary *_nameOrders;
     long long _smallestNameDelta;
+    bool_preloadNames;
 }
 
 - (void).cxx_destruct;
@@ -23,8 +24,10 @@
 - (long long)_sortKeyDistance:(id)arg1 sortKey2:(id)arg2 offset:(unsigned long long)arg3;
 - (id)_sortKeyString:(id)arg1;
 - (id)_sortedNameEntriesToInsertForNames:(id)arg1;
+- (bool)attemptInsertStringsIntoSortMap:(id)arg1;
+- (bool)commitFailedInsertedStrings:(id)arg1;
 - (bool)commitUpdates;
-- (id)initWithConnection:(id)arg1 library:(id)arg2;
+- (id)initWithConnection:(id)arg1 library:(id)arg2 preloadNames:(bool)arg3;
 - (bool)insertStringsIntoSortMap:(id)arg1 didReSortMap:(bool*)arg2;
 - (bool)loadExistingSortedEntries;
 - (id)nameOrders;

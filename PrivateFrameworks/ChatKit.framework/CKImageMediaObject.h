@@ -19,7 +19,6 @@
 + (bool)isPreviewable;
 
 - (struct CGSize { double x1; double x2; })bbSize;
-- (bool)canBeAttachmentContiguous;
 - (bool)canExport;
 - (void)dealloc;
 - (void)export:(id)arg1;

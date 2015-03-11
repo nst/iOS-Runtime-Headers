@@ -8,6 +8,7 @@
     SFCompanionAdvertiser *_advertiser;
     NSError *_decodeUserInfoError;
     <LSUserActivityDelegate> *_delegate;
+    double _encodedContainsUnsynchronizedCloudDocumentBackoffInterval;
     NSMutableDictionary *_frameworkPayload;
     NSDate *_lastActivityDate;
     double _lastSaveTime;
@@ -24,6 +25,8 @@
     bool_canCreateStreams;
     bool_createsNewUUIDIfSaved;
     bool_dirty;
+    bool_encodedContainsUnsynchronizedCloudDocument;
+    bool_encodedFileProviderURL;
     bool_forceImmediateSendToServer;
     bool_inWillSaveCallback;
     bool_needsSave;
@@ -42,6 +45,9 @@
 @property <LSUserActivityDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property bool dirty;
+@property bool encodedContainsUnsynchronizedCloudDocument;
+@property double encodedContainsUnsynchronizedCloudDocumentBackoffInterval;
+@property bool encodedFileProviderURL;
 @property bool forceImmediateSendToServer;
 @property(copy) NSDictionary * frameworkPayload;
 @property(getter=frameworkPayload,setter=setFrameworkPayload:,copy) NSDictionary * frameworkPayloadDictionary;
@@ -73,6 +79,7 @@
 + (bool)userActivityContinuationSupported;
 + (id)userActivityFromUUID:(id)arg1 withError:(id*)arg2;
 
+- (void)_resignCurrent;
 - (id)activityPayload;
 - (id)addResourceURL:(id)arg1;
 - (void)addUserInfoEntriesFromDictionary:(id)arg1;
@@ -92,6 +99,9 @@
 - (void)didSynchronizeUserActivity;
 - (bool)dirty;
 - (id)encodeUserInfo:(id)arg1;
+- (bool)encodedContainsUnsynchronizedCloudDocument;
+- (double)encodedContainsUnsynchronizedCloudDocumentBackoffInterval;
+- (bool)encodedFileProviderURL;
 - (bool)forceImmediateSendToServer;
 - (id)frameworkPayload;
 - (void)getContinuationStreamsWithCompletionHandler:(id)arg1;
@@ -117,6 +127,7 @@
 - (void)removeFrameworkPayloadValueForKey:(id)arg1;
 - (void)removeResourceURL:(id)arg1;
 - (void)removeUserInfoValueForKey:(id)arg1;
+- (void)resignCurrent;
 - (id)resourceURLForKey:(id)arg1;
 - (id)resourceURLs;
 - (void)save;
@@ -130,6 +141,9 @@
 - (void)setDecodeUserInfoError:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDirty:(bool)arg1;
+- (void)setEncodedContainsUnsynchronizedCloudDocument:(bool)arg1;
+- (void)setEncodedContainsUnsynchronizedCloudDocumentBackoffInterval:(double)arg1;
+- (void)setEncodedFileProviderURL:(bool)arg1;
 - (void)setForceImmediateSendToServer:(bool)arg1;
 - (void)setFrameworkPayload:(id)arg1;
 - (void)setLastActivityDate:(id)arg1;

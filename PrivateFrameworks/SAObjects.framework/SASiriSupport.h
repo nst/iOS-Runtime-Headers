@@ -7,6 +7,7 @@
 @interface SASiriSupport : AceObject <SAAceSerializable> {
 }
 
+@property(copy) NSString * authToken;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) NSArray * endpoints;
@@ -16,9 +17,11 @@
 + (id)siriSupport;
 + (id)siriSupportWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)authToken;
 - (id)encodedClassName;
 - (id)endpoints;
 - (id)groupIdentifier;
+- (void)setAuthToken:(id)arg1;
 - (void)setEndpoints:(id)arg1;
 
 @end

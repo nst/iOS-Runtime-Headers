@@ -2,25 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GEORegionalResourceTileData, GEOResourceManifestConfiguration, NSMutableArray;
+@class GEORegionalResourceTileData, GEOResourceLoader, GEOResourceManifestConfiguration;
 
 @interface _GEORegionalResourcesTileLoader : NSObject {
-    id _errorHandler;
-    id _finishedHandler;
     GEOResourceManifestConfiguration *_manifestConfiguration;
-    NSMutableArray *_pendingDownloads;
+    GEOResourceLoader *_resourceLoader;
     GEORegionalResourceTileData *_tile;
-    bool_canceled;
 }
 
-- (void)_addDownloadForName:(id)arg1 ofType:(long long)arg2 baseURLString:(id)arg3 expectedChecksum:(id)arg4;
-- (id)_destinationPathForResource:(id)arg1;
-- (void)_loadNextResource;
-- (bool)_loadRegionalResourceFromFilesystemIfPossible:(id)arg1 resourceChecksum:(id)arg2;
 - (void)cancel;
 - (void)dealloc;
 - (void)loadResourcesForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 manifestConfiguration:(id)arg2 finished:(id)arg3 error:(id)arg4;

@@ -2,11 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SATimerObject;
+@class NSString, SATimerObject;
 
-@interface SATimerSet : SADomainCommand {
+@interface SATimerSet : SADomainCommand <SATimerTimerAction> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(retain) SATimerObject * timer;
 
 + (id)set;

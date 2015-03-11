@@ -89,6 +89,7 @@
 @property int embeddedThumbnailOffset;
 @property short embeddedThumbnailWidth;
 @property long long externalUsageIntent;
+@property(retain) NSData * faceRegions;
 @property(retain) NSSet * faces;
 @property bool favorite;
 @property(copy,readonly) NSString * fileExtension;
@@ -195,6 +196,7 @@
 + (id)_fakeGeo;
 + (id)_insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource {}**)arg5 imageData:(id*)arg6 isPlaceholder:(bool)arg7;
 + (id)_pathsByAssetUUIDFromFetchResults:(id)arg1 absolute:(bool)arg2;
++ (id)_ptpCalendar;
 + (id)_ptpEventInfoIsolationQueue;
 + (id)_supportedAssetTypesForUpload;
 + (id)abbreviatedMetadataDirectoryForDirectory:(id)arg1;
@@ -209,6 +211,7 @@
 + (id)assetWithObjectID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)assetWithUUID:(id)arg1 inLibrary:(id)arg2;
 + (id)assetWithUUID:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)assetsByCloudAssetUUID:(id)arg1 inLibrary:(id)arg2;
 + (id)assetsLibraryURLWithUUID:(id)arg1 extension:(id)arg2;
 + (id)assetsToResetInLibrary:(id)arg1;
 + (id)assetsToUploadInitiallyInLibrary:(id)arg1 limit:(unsigned long long)arg2;
@@ -405,6 +408,7 @@
 - (id)dateCreatedData;
 - (void)dealloc;
 - (id)debugFilename;
+- (id)decodedFaceRegions;
 - (void)delete;
 - (void)deleteComment:(id)arg1;
 - (void)deleteFromDatabaseOnly;
@@ -423,6 +427,7 @@
 - (short)embeddedThumbnailWidth;
 - (id)existingCloudMaster;
 - (long long)externalUsageIntent;
+- (id)faceRegions;
 - (id)faceWithIdentifier:(short)arg1;
 - (id)fileExtension;
 - (id)filePathsWithoutThumbs;
@@ -517,7 +522,6 @@
 - (id)newFullSizeImage;
 - (id)newLowResolutionFullScreenImage;
 - (id)nonAdjustedPathForCPLResourceType:(unsigned long long)arg1;
-- (long long)orderInAlbumCloudUuid:(id)arg1 fromRelations:(id)arg2;
 - (id)originalAsset;
 - (id)originalAssetsUUID;
 - (id)originalFilename;
@@ -611,6 +615,8 @@
 - (void)setEmbeddedThumbnailOffset:(int)arg1;
 - (void)setEmbeddedThumbnailWidth:(short)arg1;
 - (void)setExternalUsageIntent:(long long)arg1;
+- (void)setFaceRegions:(id)arg1;
+- (void)setFaceRegionsFromImageMetadata:(struct CGImageMetadata { }*)arg1;
 - (void)setGpsCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setHDRFlagFromImageProperties:(id)arg1;
 - (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
@@ -664,7 +670,6 @@
 - (void)unregisterForChanges;
 - (void)updateAdjustmentsWithAdjustmentMetadata:(id)arg1;
 - (void)updateAdjustmentsWithFiltersAndIdentifiers:(id)arg1;
-- (void)updateAssetAlbumRelation:(id)arg1 inLibrary:(id)arg2;
 - (void)updateAssetKindFromUniformTypeIdentifier;
 - (void)updatePanoramosity;
 - (short)uploadAttempts;

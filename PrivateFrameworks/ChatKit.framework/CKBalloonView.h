@@ -38,6 +38,7 @@
 @property bool hasTail;
 @property(readonly) unsigned long long hash;
 @property(retain) UILongPressGestureRecognizer * longPressGestureRecognizer;
+@property(readonly) bool needsGroupOpacity;
 @property BOOL orientation;
 @property(retain) CKBalloonImageView * overlay;
 @property(readonly) UIColor * overlayColor;
@@ -72,6 +73,7 @@
 - (void)longPressGestureRecognized:(id)arg1;
 - (id)longPressGestureRecognizer;
 - (void)more:(id)arg1;
+- (bool)needsGroupOpacity;
 - (BOOL)orientation;
 - (id)overlay;
 - (id)overlayColor;

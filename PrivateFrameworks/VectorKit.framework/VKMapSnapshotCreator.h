@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSLocale, NSString, VKImageCanvas, VKMapCameraController, VKMapModel;
+@class NSLocale, NSString, VKImageCanvas, VKMapCameraController, VKMapModel, VKMemoryObserver;
 
 @interface VKMapSnapshotCreator : NSObject <VKMapModelDelegate> {
     VKMapCameraController *_cameraController;
@@ -21,6 +21,7 @@
     NSLocale *_locale;
     VKMapModel *_mapModel;
     long long _mapType;
+    VKMemoryObserver *_memoryObserver;
     unsigned int _tileGroupID;
     bool_didBecomeFullyDrawn;
     bool_hasFailedTiles;
@@ -45,6 +46,7 @@
 - (void)cancel;
 - (void)cancelFlushingTileDecodes:(bool)arg1;
 - (void)dealloc;
+- (void)didReceiveMemoryWarning:(id)arg1;
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 homeQueue:(id)arg3 softwareRendering:(bool)arg4 tileGroupIdentifier:(unsigned int)arg5 locale:(id)arg6;
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 homeQueue:(id)arg3;
 - (bool)isRoadClassDisabled:(int)arg1;

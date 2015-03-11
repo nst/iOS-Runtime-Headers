@@ -15,6 +15,7 @@
 - (void)dealloc;
 - (long long)handBias;
 - (id)init;
+- (bool)isKeyLockedDown:(int)arg1;
 - (void)preferencesControllerChanged:(id)arg1;
 - (void)releaseDontSynchronizePreferences;
 - (double)rivenSizeFactor:(double)arg1;

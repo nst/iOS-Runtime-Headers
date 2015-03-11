@@ -21,6 +21,7 @@
 + (id)mangedObjectWithURI:(id)arg1 inContext:(id)arg2;
 + (bool)migrateDataStoreAtLocation:(id)arg1 withDstModelAtLocation:(id)arg2;
 + (id)migrationOptions;
++ (bool)replacePersistentStore:(id)arg1 withURL:(id)arg2;
 + (void)setPropertyValue:(id)arg1 forKey:(id)arg2 forContext:(id)arg3;
 
 - (void).cxx_destruct;

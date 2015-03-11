@@ -25,12 +25,12 @@
 - (id)activityPayload;
 - (id)advertisementPayload;
 - (void)dealloc;
-- (id)debugDescription;
+- (id)description;
 - (id)deviceIdentifier;
 - (id)deviceModelIdentifier;
 - (id)deviceName;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithAdvertisementPayload:(id)arg1 options:(id)arg2 deviceName:(id)arg3 fromDeviceID:(id)arg4;
+- (id)initWithAdvertisementPayload:(id)arg1 options:(id)arg2 deviceName:(id)arg3 deviceModelIdentifier:(id)arg4 fromDeviceID:(id)arg5;
 - (id)initWithCoder:(id)arg1;
 - (id)options;
 - (void)setActivityPayload:(id)arg1;

@@ -15,8 +15,10 @@
     NSString *_cachedURLString;
     NSData *_certData;
     IMConnectionMonitor *_connectionMonitor;
+    unsigned long long _hasPairedDeviceState;
     NSDate *_loadDate;
     IDSRemoteURLConnection *_remoteURLConnection;
+    int _token;
     int _trustStatus;
     NSMutableURLRequest *_urlRequest;
     bool_allowSelfSignedCertificates;
@@ -39,10 +41,12 @@
 @property bool allowUnsignedBags;
 @property(retain) NSString * apsEnvironmentName;
 @property(retain) NSURL * bagURL;
+@property unsigned long long hasPairedDeviceState;
 @property(readonly) bool isInDebilitatedMode;
 @property(readonly) bool isLoaded;
 @property(readonly) bool isLoading;
 @property(readonly) bool isServerAvailable;
+@property int token;
 
 + (id)_bagCreationLock;
 + (id)_sharedInstance;
@@ -90,6 +94,7 @@
 - (void)connectionMonitorDidUpdate:(id)arg1;
 - (void)dealloc;
 - (void)forceBagLoad;
+- (unsigned long long)hasPairedDeviceState;
 - (bool)isInDebilitatedMode;
 - (bool)isLoaded;
 - (bool)isLoading;
@@ -99,6 +104,8 @@
 - (void)setAllowUnsignedBags:(bool)arg1;
 - (void)setApsEnvironmentName:(id)arg1;
 - (void)setBagURL:(id)arg1;
+- (void)setHasPairedDeviceState:(unsigned long long)arg1;
+- (void)setToken:(int)arg1;
 - (void)set_bagQueue:(id)arg1;
 - (void)set_cacheTime:(id)arg1;
 - (void)set_certData:(id)arg1;
@@ -107,6 +114,7 @@
 - (void)set_remoteURLConnection:(id)arg1;
 - (void)set_urlRequest:(id)arg1;
 - (void)startBagLoad;
+- (int)token;
 - (id)urlWithKey:(id)arg1;
 
 @end

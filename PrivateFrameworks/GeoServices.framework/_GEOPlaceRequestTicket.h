@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, GEOMapServiceTraits, GEOPDPlaceRequest, GEOPDPlaceResponse, NSString;
+@class <GEOMapItem>, GEOMapRegion, GEOMapServiceTraits, GEOPDPlaceRequest, GEOPDPlaceResponse, NSString;
 
 @interface _GEOPlaceRequestTicket : NSObject <GEOMapServiceTicket> {
+    <GEOMapItem> *_mapItemToRefine;
     GEOPDPlaceRequest *_request;
     GEOPDPlaceResponse *_response;
     GEOMapRegion *_resultBoundingRegion;
@@ -25,6 +26,7 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
+- (id)initWithRequest:(id)arg1 traits:(id)arg2 mapItemToRefine:(id)arg3;
 - (id)initWithRequest:(id)arg1 traits:(id)arg2;
 - (bool)isCanceled;
 - (id)resultBoundingRegion;

@@ -13,6 +13,7 @@
 @property(copy) NSString * appVersion;
 @property(copy) NSString * displayAppName;
 @property(copy) NSDictionary * displayAppNameMap;
+@property(copy) NSNumber * isNanoApp;
 @property(copy) NSNumber * nowPlayingAppWithBrowsableContent;
 @property(copy) NSString * providerName;
 @property(retain) SASiriSupport * siriSupport;
@@ -33,6 +34,7 @@
 - (id)displayAppNameMap;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)isNanoApp;
 - (id)nowPlayingAppWithBrowsableContent;
 - (id)providerName;
 - (void)setAppId:(id)arg1;
@@ -41,6 +43,7 @@
 - (void)setAppVersion:(id)arg1;
 - (void)setDisplayAppName:(id)arg1;
 - (void)setDisplayAppNameMap:(id)arg1;
+- (void)setIsNanoApp:(id)arg1;
 - (void)setNowPlayingAppWithBrowsableContent:(id)arg1;
 - (void)setProviderName:(id)arg1;
 - (void)setSiriSupport:(id)arg1;

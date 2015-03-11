@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABContactActionDelegate>, CNContact, NSString, UIColor;
+@class <ABContactActionDelegate>, CNContact, CNContactStyle, NSString, UIColor;
 
 @interface ABContactAction : NSObject {
     UIColor *_color;
     CNContact *_contact;
+    CNContactStyle *_contactStyle;
     <ABContactActionDelegate> *_delegate;
     SEL _selector;
     id _target;
@@ -17,6 +18,7 @@
 
 @property(retain) UIColor * color;
 @property(retain) CNContact * contact;
+@property(retain) CNContactStyle * contactStyle;
 @property <ABContactActionDelegate> * delegate;
 @property(getter=isDestructive) bool destructive;
 @property(readonly) SEL selector;
@@ -29,6 +31,7 @@
 
 - (id)color;
 - (id)contact;
+- (id)contactStyle;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -39,6 +42,7 @@
 - (SEL)selector;
 - (void)setColor:(id)arg1;
 - (void)setContact:(id)arg1;
+- (void)setContactStyle:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDestructive:(bool)arg1;
 - (void)setTransportType:(long long)arg1;

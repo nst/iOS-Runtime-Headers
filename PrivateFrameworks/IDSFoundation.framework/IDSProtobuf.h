@@ -22,12 +22,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)dictionaryRepresentationWithUncompressedData;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithProtobufData:(id)arg1 type:(unsigned short)arg2 isResponse:(bool)arg3;
 - (bool)isResponse;
+- (id)nfmDescription;
+- (id)npkDescription;
+- (id)pbDescription;
 - (void)setContext:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setIsResponse:(bool)arg1;

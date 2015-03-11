@@ -43,6 +43,8 @@
 - (void)invalidate;
 - (bool)migrateSectionInfo:(id)arg1 oldSectionInfo:(id)arg2;
 - (void)noteSectionInfoDidChange:(id)arg1;
+- (void)primaryAttachmentDataForRecordID:(id)arg1 completion:(id)arg2;
+- (id)primaryAttachmentDataForRecordID:(id)arg1;
 - (void)reloadIdentityWithCompletion:(id)arg1;
 - (void)setDataProvider:(id)arg1;
 - (void)startWatchdog;

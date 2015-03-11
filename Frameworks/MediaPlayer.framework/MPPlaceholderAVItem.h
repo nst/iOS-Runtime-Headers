@@ -7,6 +7,7 @@
 
 - (bool)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
+- (bool)mpuReporting_isValidReportingItem;
 - (bool)supportsSkip;
 
 @end

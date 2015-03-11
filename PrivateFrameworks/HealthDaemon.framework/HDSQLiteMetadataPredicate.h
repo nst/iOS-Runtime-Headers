@@ -7,6 +7,7 @@
 @interface HDSQLiteMetadataPredicate : HDSQLitePredicate <NSCopying> {
     HDSQLitePredicate *_keyPredicate;
     HDSQLitePredicate *_valuePredicate;
+    bool_includeNullPredicate;
 }
 
 + (id)predicateWithMetadataKey:(id)arg1 allowedValues:(id)arg2;

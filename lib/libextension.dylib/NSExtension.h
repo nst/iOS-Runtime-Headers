@@ -27,6 +27,7 @@
     id _requestCompletionBlock;
     id _requestInterruptionBlock;
     NSString *_version;
+    bool_observingHostAppStateChanges;
 }
 
 @property(setter=_setAssertionRefCount:) long long _assertionRefCount;
@@ -49,6 +50,7 @@
 @property(copy) NSArray * icons;
 @property(copy) NSString * identifier;
 @property(copy) NSDictionary * infoDictionary;
+@property(getter=_isObservingHostAppStateChanges,setter=_setObservingHostAppStateChanges:) bool observingHostAppStateChanges;
 @property(readonly) bool optedIn;
 @property(copy) id requestCancellationBlock;
 @property(copy) id requestCompletionBlock;
@@ -56,10 +58,12 @@
 @property(readonly) Class superclass;
 @property(copy) NSString * version;
 
++ (bool)_shouldLogExtensionDiscovery;
 + (id)beginMatchingExtensionsWithAttributes:(id)arg1 completion:(id)arg2;
 + (void)endMatchingExtensions:(id)arg1;
 + (bool)evaluateActivationRule:(id)arg1 withExtensionItemsRepresentation:(id)arg2;
 + (id)extensionWithIdentifier:(id)arg1 error:(id*)arg2;
++ (void)extensionsWithMatchingAttributes:(id)arg1 completion:(id)arg2;
 + (id)extensionsWithMatchingAttributes:(id)arg1 error:(id*)arg2;
 + (void)initialize;
 + (void)initializeFiltering;
@@ -67,8 +71,10 @@
 
 - (id)__UIKit_upcall_icons;
 - (long long)_assertionRefCount;
+- (id)_bareExtensionServiceConnection;
 - (void)_cancelRequestWithError:(id)arg1 forExtensionContextWithUUID:(id)arg2 completion:(id)arg3;
 - (void)_completeRequestReturningItems:(id)arg1 forExtensionContextWithUUID:(id)arg2 completion:(id)arg3;
+- (void)_didCreateExtensionContext:(id)arg1;
 - (void)_didShowExtensionManagementInterface;
 - (void)_didShowNewExtensionIndicator;
 - (id)_extensionBundle;
@@ -78,8 +84,13 @@
 - (id)_extensionProcessAssertion;
 - (id)_extensionServiceConnections;
 - (id)_extensionState;
+- (void)_hostDidBecomeActiveNote:(id)arg1;
+- (void)_hostDidEnterBackgroundNote:(id)arg1;
+- (void)_hostWillEnterForegroundNote:(id)arg1;
+- (void)_hostWillResignActiveNote:(id)arg1;
 - (id)_initWithPKPlugin:(id)arg1;
 - (bool)_isMarkedNew;
+- (bool)_isObservingHostAppStateChanges;
 - (bool)_isPhotoServiceAccessGranted;
 - (bool)_isSystemExtension;
 - (id)_itemProviderForPayload:(id)arg1 extensionContext:(id)arg2;
@@ -103,6 +114,7 @@
 - (void)_setExtensionProcessAssertion:(id)arg1;
 - (void)_setExtensionServiceConnections:(id)arg1;
 - (void)_setExtensionState:(id)arg1;
+- (void)_setObservingHostAppStateChanges:(bool)arg1;
 - (void)_setPlugIn:(id)arg1;
 - (bool)attemptOptIn:(id*)arg1;
 - (bool)attemptOptOut:(id*)arg1;

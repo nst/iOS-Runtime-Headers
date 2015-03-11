@@ -32,6 +32,10 @@
 - (id)_extensionContexts;
 - (id)_extensionPrincipalObjects;
 - (id)_extensionServiceConnections;
+- (void)_hostDidBecomeActiveForContextUUID:(id)arg1 completion:(id)arg2;
+- (void)_hostDidEnterBackgroundForContextUUID:(id)arg1 completion:(id)arg2;
+- (void)_hostWillEnterForegroundForContextUUID:(id)arg1 completion:(id)arg2;
+- (void)_hostWillResignActiveForContextUUID:(id)arg1 completion:(id)arg2;
 - (void)_setExtensionContexts:(id)arg1;
 - (void)_setExtensionPrincipalObjects:(id)arg1;
 - (void)_setExtensionServiceConnections:(id)arg1;

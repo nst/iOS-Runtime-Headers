@@ -16,15 +16,20 @@
 
 + (id)sharedInstance;
 
+- (void)_queue_addFileLoggersFromPlistAtURL:(id)arg1;
 - (void)_queue_addLogger:(id)arg1;
 - (void)_queue_enableOrDisableLoggerIfNecessary:(id)arg1;
 - (bool)_queue_isClass:(Class)arg1 aKindOfClass:(Class)arg2;
-- (void)_queue_loadFileLoggers;
+- (void)_queue_registerLogger:(id)arg1;
 - (void)dealloc;
 - (void)flush;
 - (id)init;
 - (void)loggerEnabledStateChanged:(id)arg1;
 - (id)loggerForName:(id)arg1;
+- (void)registerLogger:(id)arg1;
+- (void)registerLoggers;
+- (void)registerLoggersFromBundle:(id)arg1;
+- (void)registerLoggersFromURL:(id)arg1;
 - (void)reloadFromDefaults;
 
 @end

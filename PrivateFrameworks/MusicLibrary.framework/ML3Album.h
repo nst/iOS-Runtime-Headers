@@ -16,6 +16,7 @@
 + (id)joinClausesForProperty:(id)arg1;
 + (id)predisambiguatedProperties;
 + (id)propertiesForGroupingKey;
++ (id)propertiesForGroupingUniqueCollections;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
 + (bool)propertyIsCountProperty:(id)arg1;
 + (id)protocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;

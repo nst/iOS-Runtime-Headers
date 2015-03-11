@@ -58,6 +58,7 @@
 - (id)resizableImageByStretchingWithCapInsets:(struct PKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)resizableImageByTilingCenterPixel;
 - (id)resizableImageByTilingWithCapInsets:(struct PKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (id)resizedImageToCover:(struct CGSize { double x1; double x2; })arg1;
 - (id)resizedImageWithConstraints:(id)arg1;
 - (double)scale;
 - (struct CGSize { double x1; double x2; })size;

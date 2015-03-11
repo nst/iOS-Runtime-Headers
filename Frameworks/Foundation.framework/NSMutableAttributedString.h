@@ -61,6 +61,7 @@
 - (void)setAttributedString:(id)arg1;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setBaseWritingDirection:(long long)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)setTextColor:(id)arg1 font:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (void)subscriptRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)superscriptRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)trimWhitespace;

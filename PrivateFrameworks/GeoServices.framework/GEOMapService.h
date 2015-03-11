@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
+@class NSArray, NSLock;
+
 @interface GEOMapService : NSObject {
+    NSArray *_preferredLanguages;
+    NSLock *_preferredLanguagesLock;
 }
 
 + (id)sharedService;
@@ -14,6 +18,8 @@
 - (id)_geoMapItemForData:(id)arg1;
 - (void)_geoMapItemsForResponseData:(id)arg1 handler:(id)arg2;
 - (id)_geoMapItemsForUpdatedPlacesInResolution:(id)arg1;
+- (void)_localeChanged:(id)arg1;
+- (id)_preferredLanguages;
 - (id)_searchable_ticketForReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeEntryPoints:(bool)arg2 shiftLocationsIfNeeded:(bool)arg3 includeETA:(bool)arg4 traits:(id)arg5;
 - (id)_ticketForAutoCompleteFragment:(id)arg1 entriesType:(int)arg2 listType:(int)arg3 traits:(id)arg4;
 - (id)_ticketForBatchReverseGeocodeLocations:(id)arg1 shiftLocationsIfNeeded:(bool)arg2 additionalPlaceTypes:(int*)arg3 additionalPlaceTypesCount:(unsigned int)arg4 traits:(id)arg5;
@@ -24,9 +30,11 @@
 - (id)_ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 maxResults:(unsigned int)arg3 suppressResultsRequiringAttribution:(bool)arg4 traits:(id)arg5;
 - (id)_ticketForSearchQuery:(id)arg1 hint:(id)arg2 maxResults:(unsigned int)arg3 suppressResultsRequiringAttribution:(bool)arg4 traits:(id)arg5;
 - (void)applyRAPUpdatedMapItems:(id)arg1;
+- (void)dealloc;
 - (int)defaultLocalSearchProviderID;
 - (id)defaultTraits;
 - (id)directionsURL;
+- (id)init;
 - (int)localSearchProviderID;
 - (id)searchURL;
 - (void)submitUsageForTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;

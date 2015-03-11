@@ -294,6 +294,7 @@
 - (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned long long)arg2;
 - (id)loadMessagesUpToGUID:(id)arg1 date:(id)arg2 limit:(unsigned long long)arg3 loadImmediately:(bool)arg4;
 - (id)loadMessagesUpToGUID:(id)arg1 limit:(unsigned long long)arg2;
+- (id)loadUnreadMessagesWithLimit:(unsigned long long)arg1 fallbackToMessagesUpToGUID:(id)arg2;
 - (id)localTypingMessageGUID;
 - (bool)localUserIsRecording;
 - (bool)localUserIsTyping;

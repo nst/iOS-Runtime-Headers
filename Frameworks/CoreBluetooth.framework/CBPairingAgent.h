@@ -13,7 +13,6 @@
 @property <CBPairingAgentDelegate> * delegate;
 @property bool useOOBMode;
 
-- (void)checkIn;
 - (id)delegate;
 - (void)handlePairingCompleted:(id)arg1;
 - (void)handlePairingMessage:(unsigned short)arg1 args:(id)arg2;
@@ -31,6 +30,7 @@
 - (void)setOrphan;
 - (void)setUseOOBMode:(bool)arg1;
 - (void)unpairPeer:(id)arg1;
+- (void)updateRegistration;
 - (bool)useOOBMode;
 
 @end

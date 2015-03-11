@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class NSDate, NSNumber;
+@class NSDate, NSNumber, NSUUID;
 
 @interface CMPedometerData : NSObject <NSSecureCoding, NSCopying> {
     NSNumber *fDistance;
@@ -10,7 +10,9 @@
     NSNumber *fFloorAscended;
     NSNumber *fFloorDescended;
     NSNumber *fNumberOfSteps;
+    NSNumber *fPace;
     NSNumber *fRecordId;
+    NSUUID *fSourceId;
     NSDate *fStartDate;
 }
 
@@ -19,7 +21,9 @@
 @property(readonly) NSNumber * floorsAscended;
 @property(readonly) NSNumber * floorsDescended;
 @property(readonly) NSNumber * numberOfSteps;
+@property(readonly) NSNumber * pace;
 @property(readonly) long long recordId;
+@property(readonly) NSUUID * sourceId;
 @property(readonly) NSDate * startDate;
 
 + (bool)supportsSecureCoding;
@@ -33,9 +37,11 @@
 - (id)floorsAscended;
 - (id)floorsDescended;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorAscended:(int)arg5 floorDescended:(int)arg6 recordID:(int)arg7;
+- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorAscended:(int)arg5 floorDescended:(int)arg6 recordID:(int)arg7 pace:(double)arg8 sourceId:(id)arg9;
 - (id)numberOfSteps;
+- (id)pace;
 - (long long)recordId;
+- (id)sourceId;
 - (id)startDate;
 
 @end

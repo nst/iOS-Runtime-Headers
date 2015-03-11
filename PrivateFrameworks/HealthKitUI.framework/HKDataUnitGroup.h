@@ -2,62 +2,66 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class HKCorrelationType, NSArray, NSMutableDictionary, NSString, UIColor, UIImage;
+@class HKCorrelationType, HKDataUnitGroupChartingRules, NSArray, NSAttributedString, NSMutableDictionary, NSString, UIImage;
 
 @interface HKDataUnitGroup : NSObject {
-    unsigned long long _categoryID;
-    long long _chartStyle;
+    NSAttributedString *_attributedSummaryAttribution;
+    long long _categoryID;
+    NSString *_cautionaryText;
+    HKDataUnitGroupChartingRules *_chartingRules;
     HKCorrelationType *_correlationType;
-    unsigned long long _dataUnitGroupID;
+    long long _dataUnitGroupID;
     NSArray *_dataUnits;
     NSMutableDictionary *_dataUnitsByType;
     NSArray *_dataUnitsOrderedForDataEntry;
     UIImage *_detailImage;
     NSString *_displayName;
     NSString *_embeddedDisplayName;
-    UIColor *_gradientEndColor;
-    UIColor *_gradientStartColor;
     NSString *_joinString;
     NSString *_keywords;
     NSArray *_reversedDataUnits;
     NSString *_summary;
+    NSString *_summaryAttribution;
+    NSString *_unitChangeCautionaryText;
     bool_isCharacteristic;
-    bool_isNikeFuel;
-    bool_isSleep;
 }
 
-@property(readonly) unsigned long long categoryID;
-@property(readonly) long long chartStyle;
+@property(readonly) NSAttributedString * attributedSummaryAttribution;
+@property(readonly) long long categoryID;
+@property(readonly) NSString * cautionaryText;
+@property(readonly) HKDataUnitGroupChartingRules * chartingRules;
 @property(readonly) HKCorrelationType * correlationType;
-@property(readonly) unsigned long long dataUnitGroupID;
+@property(readonly) long long dataUnitGroupID;
 @property(readonly) NSArray * dataUnits;
 @property(readonly) NSArray * dataUnitsOrderedForDataEntry;
 @property(readonly) UIImage * detailImage;
 @property(readonly) NSString * displayName;
 @property(readonly) NSString * embeddedDisplayName;
-@property(readonly) UIColor * gradientEndColor;
-@property(readonly) UIColor * gradientStartColor;
 @property(readonly) UIImage * groupIcon;
 @property(readonly) NSString * joinString;
 @property(readonly) NSString * keywords;
 @property(readonly) UIImage * shareIcon;
 @property(readonly) NSString * summary;
+@property(readonly) NSString * summaryAttribution;
+@property(readonly) NSString * unitChangeCautionaryText;
 @property(readonly) UIImage * unitIcon;
+@property(readonly) bool unitPreferencesRequireChangeConfirmation;
 
 - (void).cxx_destruct;
-- (long long)_chartStyleFromDictionary:(id)arg1;
-- (unsigned long long)categoryID;
-- (long long)chartStyle;
+- (void)_applyChartingProperties:(id)arg1;
+- (id)anyDataUnit;
+- (id)attributedSummaryAttribution;
+- (long long)categoryID;
+- (id)cautionaryText;
+- (id)chartingRules;
 - (id)correlationType;
 - (id)dataUnitForType:(id)arg1;
-- (unsigned long long)dataUnitGroupID;
+- (long long)dataUnitGroupID;
 - (id)dataUnits;
 - (id)dataUnitsOrderedForDataEntry;
 - (id)detailImage;
 - (id)displayName;
 - (id)embeddedDisplayName;
-- (id)gradientEndColor;
-- (id)gradientStartColor;
 - (id)groupIcon;
 - (unsigned long long)hash;
 - (id)init;
@@ -65,11 +69,14 @@
 - (bool)isCharacteristic;
 - (bool)isEqual:(id)arg1;
 - (bool)isNikeFuel;
-- (bool)isSleep;
 - (id)joinString;
 - (id)keywords;
 - (id)shareIcon;
+- (bool)shouldStartDayAtNoon;
 - (id)summary;
+- (id)summaryAttribution;
+- (id)unitChangeCautionaryText;
 - (id)unitIcon;
+- (bool)unitPreferencesRequireChangeConfirmation;
 
 @end

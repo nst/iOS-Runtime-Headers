@@ -11,10 +11,10 @@
 }
 
 - (void).cxx_destruct;
-- (id)_deviceProvisioningInfo;
 - (void)addProvisioningInfoToAARequest:(id)arg1 withFallback:(bool)arg2;
 - (void)addProvisioningInfoToAARequest:(id)arg1;
 - (void)addProvisioningInfoToURLRequest:(id)arg1;
+- (id)deviceProvisioningInfo;
 - (int)eraseProvisioning;
 - (id)init;
 - (id)initWithAccount:(id)arg1;

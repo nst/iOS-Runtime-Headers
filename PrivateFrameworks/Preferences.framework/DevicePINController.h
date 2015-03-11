@@ -15,6 +15,7 @@
     NSString *_oldPassword;
     id _pinDelegate;
     int _substate;
+    bool_hasBeenDismissed;
     bool_hidesNavigationButtons;
     bool_success;
 }

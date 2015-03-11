@@ -68,6 +68,7 @@
 - (void)_updateDependentDevicesWithDevicesInfo:(id)arg1;
 - (void)account:(id)arg1 aliasesChanged:(id)arg2;
 - (void)account:(id)arg1 dependentDevicesUpdated:(id)arg2;
+- (void)account:(id)arg1 dependentDevicesUpdatedUponReconnect:(id)arg2;
 - (void)account:(id)arg1 displayNameChanged:(id)arg2;
 - (void)account:(id)arg1 localDeviceAdded:(id)arg2;
 - (void)account:(id)arg1 localDeviceRemoved:(id)arg2;
@@ -77,7 +78,6 @@
 - (void)account:(id)arg1 vettedAliasesChanged:(id)arg2;
 - (id)accountInfo;
 - (int)accountType;
-- (void)activeDevicesUpdatedForAccount:(id)arg1;
 - (void)addAliases:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)addRegistrationDelegate:(id)arg1 queue:(id)arg2;

@@ -8,7 +8,7 @@
     UIColor *_bottomColor;
     NSMutableDictionary *_cachedGradients;
     NSMutableDictionary *_cachedRoundedCornerGradients;
-    unsigned long long _categoryID;
+    long long _categoryID;
     UIImage *_dashboardIcon;
     NSMutableArray *_dataUnitGroups;
     NSString *_displayName;
@@ -16,10 +16,9 @@
     NSString *_listIconName;
     UIImage *_shareIcon;
     UIColor *_topColor;
-    bool_isMeCategory;
 }
 
-@property(readonly) unsigned long long categoryID;
+@property(readonly) long long categoryID;
 @property(readonly) UIImage * dashboardIcon;
 @property(readonly) NSArray * dataUnitGroups;
 @property(readonly) NSString * displayName;
@@ -32,7 +31,7 @@
 - (id)_generateGradientOfHeight:(double)arg1;
 - (id)_generateRoundedCornerGradientWithHeight:(double)arg1;
 - (void)addDataUnitGroup:(id)arg1;
-- (unsigned long long)categoryID;
+- (long long)categoryID;
 - (id)dashboardIcon;
 - (id)dataUnitGroups;
 - (id)displayName;

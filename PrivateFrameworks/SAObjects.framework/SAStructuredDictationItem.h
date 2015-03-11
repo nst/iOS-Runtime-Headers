@@ -16,8 +16,6 @@
 + (id)structuredDictationItem;
 + (id)structuredDictationItemWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)af_locationTranscriptionResults;
-- (id)af_personTranscriptionResults;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)resultOptions;

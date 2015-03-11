@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary, NSError, NSObject<OS_dispatch_queue>, NSString, SSDownload, SSPurchase, SSPurchaseResponse;
+@class NSDictionary, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, SSDownload, SSPurchase, SSPurchaseResponse;
 
 @interface MPStoreDownload : NSObject {
     SSDownload *_SSDownload;
@@ -10,6 +10,7 @@
     SSPurchaseResponse *_SSPurchaseResponse;
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSDictionary *_attributes;
+    NSMutableArray *_overridePhaseIdentifiers;
     long long _type;
     bool_canceled;
 }
@@ -43,7 +44,10 @@
 - (id)_SSDownload;
 - (id)_SSPurchase;
 - (id)_SSPurchaseResponse;
+- (void)_addOverridePhaseIdentifier:(id)arg1;
+- (id)_currentOverridePhaseIdentifier;
 - (bool)_isCanceled;
+- (void)_removeOverridePhaseIdentifier:(id)arg1;
 - (void)_setCanceled:(bool)arg1;
 - (void)_setSSDownload:(id)arg1;
 - (void)_setSSPurchase:(id)arg1 SSPurchaseResponse:(id)arg2;

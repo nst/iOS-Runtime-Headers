@@ -20,7 +20,7 @@
     id _referenceLogger;
     VMUVMRegionIdentifier *_regionIdentifier;
     struct _VMURegionMap { void *x1; struct _VMURegionNode {} *x2; unsigned int x3; unsigned long long x4; unsigned long long x5; unsigned int x6[0]; } *_regionMap;
-    struct _VMURegionNode { unsigned long long x1; unsigned long long x2; unsigned int x3; unsigned int x4; void *x5; unsigned long long x6; struct _VMURegionNode {} *x7; boolx8; boolx9; boolx10; struct { /* ? */ } *x11; unsigned int x12; unsigned long long x13; unsigned long long x14; int x15; int x16; unsigned int x17; unsigned char x18; unsigned char x19; } *_regions;
+    struct _VMURegionNode { unsigned long long x1; unsigned long long x2; unsigned int x3; unsigned int x4; void *x5; unsigned long long x6; struct _VMURegionNode {} *x7; boolx8; boolx9; struct { /* ? */ } *x10; unsigned int x11; unsigned long long x12; unsigned long long x13; int x14; int x15; unsigned int x16; unsigned char x17; unsigned char x18; } *_regions;
     unsigned int _regionsCount;
     unsigned int _regionsSize;
     int _scanningMask;

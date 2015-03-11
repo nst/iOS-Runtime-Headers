@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKAttachmentView, CKMediaObject;
+@class UIView<CKAttachmentView>;
 
 @interface CKAttachmentBalloonView : CKColoredBalloonView {
-    CKAttachmentView *_attachmentView;
-    CKMediaObject *_mediaObject;
+    UIView<CKAttachmentView> *_attachmentView;
 }
 
-@property(retain) CKAttachmentView * attachmentView;
-@property(retain) CKMediaObject * mediaObject;
+@property(retain) UIView<CKAttachmentView> * attachmentView;
 
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (id)attachmentView;
@@ -20,13 +18,11 @@
 - (id)description;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (id)mediaObject;
 - (void)prepareForDisplay;
 - (void)prepareForReuse;
 - (void)setAttachmentView:(id)arg1;
 - (void)setMediaObject:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (void)transferUpdated:(id)arg1;
-- (void)updateViews;
 
 @end

@@ -6,6 +6,7 @@
 
 @interface PURootSettings : PUSettings {
     PUFeedSettings *_feedSettings;
+    long long _imagePickerTestSourceType;
     PUMomentsSettings *_momentsSettings;
     PUPhotoEditProtoSettings *_photoEditingSettings;
     PUPhotosGridSettings *_photosGridSettings;
@@ -13,12 +14,13 @@
 }
 
 @property(retain) PUFeedSettings * feedSettings;
+@property long long imagePickerTestSourceType;
 @property(retain) PUMomentsSettings * momentsSettings;
 @property(retain) PUPhotoEditProtoSettings * photoEditingSettings;
 @property(retain) PUPhotosGridSettings * photosGridSettings;
 @property unsigned long long settingsVersion;
 
-+ (void)_addPhoto;
++ (void)_addRandomPhoto;
 + (id)_currentViewControllerStack;
 + (id)_debugRowsForViewControllerStack:(id)arg1;
 + (void)_deleteAllDiagnosticFiles;
@@ -30,11 +32,13 @@
 - (void).cxx_destruct;
 - (void)_save;
 - (id)feedSettings;
+- (long long)imagePickerTestSourceType;
 - (id)momentsSettings;
 - (id)photoEditingSettings;
 - (id)photosGridSettings;
 - (void)setDefaultValues;
 - (void)setFeedSettings:(id)arg1;
+- (void)setImagePickerTestSourceType:(long long)arg1;
 - (void)setMomentsSettings:(id)arg1;
 - (void)setPhotoEditingSettings:(id)arg1;
 - (void)setPhotosGridSettings:(id)arg1;

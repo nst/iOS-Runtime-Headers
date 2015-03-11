@@ -27,8 +27,9 @@
 - (void)getActiveAlertBehaviorOverridesWithHandler:(id)arg1;
 - (void)getAttachmentAspectRatioForBulletinID:(id)arg1 withHandler:(id)arg2;
 - (void)getAttachmentPNGDataForBulletinID:(id)arg1 sizeConstraints:(id)arg2 withHandler:(id)arg3;
-- (void)getBulletinsForPublisherBulletinIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id)arg3;
+- (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id)arg3;
 - (void)getObserverDebugInfo:(id)arg1;
+- (void)getPrimaryAttachmentDataForBulletinID:(id)arg1 withHandler:(id)arg2;
 - (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithHandler:(id)arg1;
 - (void)getPrivilegedSenderTypesWithHandler:(id)arg1;
 - (void)getSectionInfoForCategory:(long long)arg1 withHandler:(id)arg2;

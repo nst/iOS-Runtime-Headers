@@ -14,6 +14,7 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    NSObject<OS_dispatch_queue> *_accessQueue;
     AVPlayerItem *_currentItem;
     } _currentTime;
     long long _defaultItemEQPresetType;
@@ -22,7 +23,6 @@
     long long _playbackQueueTransactionCount;
     AVQueuePlayer *_player;
     NSMutableArray *_queuedOperations;
-    NSObject<OS_dispatch_queue> *_queuedOperationsAccessQueue;
     float _rate;
     float _rateBeforePlaybackQueueTransaction;
     MPAVRoutingController *_routingController;
@@ -76,6 +76,7 @@
 - (float)_userVolume;
 - (long long)actionAtItemEnd;
 - (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(id)arg3;
+- (id)addPeriodicTimeObserverForInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 queue:(id)arg2 usingBlock:(id)arg3;
 - (void)advanceToNextItem;
 - (bool)allowsExternalPlayback;
 - (void)beginPlaybackQueueTransactionAndPause:(bool)arg1;

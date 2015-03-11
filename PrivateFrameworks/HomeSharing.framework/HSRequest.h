@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSData, NSDictionary, NSMutableArray, NSString;
+@class NSData, NSDictionary, NSMutableArray, NSString, NSURL;
 
 @interface HSRequest : NSObject {
     NSString *_action;
@@ -10,6 +10,7 @@
     NSData *_bodyData;
     NSMutableArray *_cachedBodyDataBlocks;
     long long _method;
+    NSURL *_responseDataDestinationFileURL;
     bool_concurrent;
     bool_excludeSessionIDFromURL;
 }
@@ -19,13 +20,13 @@
 @property(getter=isConcurrent,readonly) bool concurrent;
 @property bool excludeSessionIDFromURL;
 @property long long method;
+@property(copy) NSURL * responseDataDestinationFileURL;
 @property(readonly) double timeoutInterval;
 
 + (id)request;
 
 - (void).cxx_destruct;
 - (id)URLRequestForBaseURL:(id)arg1 sessionID:(unsigned int)arg2;
-- (id)_methodStringForMethod:(long long)arg1;
 - (bool)acceptsGzipEncoding;
 - (id)action;
 - (void)appendCachedBodyDataBlocksIntoData:(id)arg1 clearCache:(bool)arg2;
@@ -39,9 +40,11 @@
 - (bool)isConcurrent;
 - (long long)method;
 - (id)requestURLForBaseURL:(id)arg1 sessionID:(unsigned int)arg2;
+- (id)responseDataDestinationFileURL;
 - (void)setBodyData:(id)arg1;
 - (void)setExcludeSessionIDFromURL:(bool)arg1;
 - (void)setMethod:(long long)arg1;
+- (void)setResponseDataDestinationFileURL:(id)arg1;
 - (void)setValue:(id)arg1 forArgument:(id)arg2;
 - (double)timeoutInterval;
 

@@ -7,6 +7,7 @@
 @interface AXHearingAidDeviceController : NSObject <CBCentralManagerDelegate, AXHADeviceControllerProtocol> {
     AXHATimer *_advertisingTimeoutTimer;
     NSMutableDictionary *_advertisingTimestamps;
+    AXHATimer *_availableDeviceTimer;
     NSMutableArray *_availablePeripherals;
     NSMutableArray *_availableSearchBlocks;
     NSObject<OS_dispatch_queue> *_bluetoothCentralQueue;

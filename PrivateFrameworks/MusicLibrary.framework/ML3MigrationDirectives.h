@@ -5,6 +5,7 @@
 @interface ML3MigrationDirectives : NSObject {
     int _currentUserVersion;
     int _originalUserVersion;
+    bool_forceUpdateOriginals;
     bool_needsAnalyze;
     bool_needsToAutogenerateArtworkVariants;
     bool_needsToRecreateIndexes;
@@ -12,9 +13,11 @@
     bool_needsToReloadContainerMediaTypes;
     bool_needsToReloadStoreBookmarkMetadataIdentifiers;
     bool_needsToRemoveLocationsForItemsMissingAssets;
+    bool_needsToUpdateSortMap;
 }
 
 @property int currentUserVersion;
+@property bool forceUpdateOriginals;
 @property bool needsAnalyze;
 @property bool needsToAutogenerateArtworkVariants;
 @property bool needsToRecreateIndexes;
@@ -22,9 +25,11 @@
 @property bool needsToReloadContainerMediaTypes;
 @property bool needsToReloadStoreBookmarkMetadataIdentifiers;
 @property bool needsToRemoveLocationsForItemsMissingAssets;
+@property bool needsToUpdateSortMap;
 @property(readonly) int originalUserVersion;
 
 - (int)currentUserVersion;
+- (bool)forceUpdateOriginals;
 - (id)initWithOriginalUserVersion:(int)arg1;
 - (bool)needsAnalyze;
 - (bool)needsToAutogenerateArtworkVariants;
@@ -33,8 +38,10 @@
 - (bool)needsToReloadContainerMediaTypes;
 - (bool)needsToReloadStoreBookmarkMetadataIdentifiers;
 - (bool)needsToRemoveLocationsForItemsMissingAssets;
+- (bool)needsToUpdateSortMap;
 - (int)originalUserVersion;
 - (void)setCurrentUserVersion:(int)arg1;
+- (void)setForceUpdateOriginals:(bool)arg1;
 - (void)setNeedsAnalyze:(bool)arg1;
 - (void)setNeedsToAutogenerateArtworkVariants:(bool)arg1;
 - (void)setNeedsToRecreateIndexes:(bool)arg1;
@@ -42,5 +49,6 @@
 - (void)setNeedsToReloadContainerMediaTypes:(bool)arg1;
 - (void)setNeedsToReloadStoreBookmarkMetadataIdentifiers:(bool)arg1;
 - (void)setNeedsToRemoveLocationsForItemsMissingAssets:(bool)arg1;
+- (void)setNeedsToUpdateSortMap:(bool)arg1;
 
 @end

@@ -11,6 +11,8 @@
 }
 
 + (id)arrayWithCapacity:(unsigned long long)arg1;
++ (id)cd_arrayWithDoubleValue:(double)arg1 repeated:(unsigned long long)arg2;
++ (id)cd_arrayWithDoubleValuesStarting:(double)arg1 ending:(double)arg2 count:(unsigned long long)arg3;
 + (id)copyNonRetainingArray;
 + (id)instanceWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<double> { double *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
 + (id)nonRetainingArray;
@@ -71,6 +73,12 @@
 - (bool)bw_empty;
 - (id)bw_pop;
 - (void)bw_push:(id)arg1;
+- (void)cd_divideElementsByDouble:(double)arg1;
+- (void)cd_elementwiseAddArray:(id)arg1 weightedBy:(double)arg2;
+- (void)cd_elementwiseAddArray:(id)arg1;
+- (void)cd_elementwiseAddSquaredArray:(id)arg1;
+- (void)cd_elementwiseMultiplyArray:(id)arg1;
+- (void)cd_inplaceCummulativeSum;
 - (Class)classForCoder;
 - (void)cr_addNonNilObject:(id)arg1;
 - (void)cr_addObject:(id)arg1 orPlaceholder:(id)arg2;

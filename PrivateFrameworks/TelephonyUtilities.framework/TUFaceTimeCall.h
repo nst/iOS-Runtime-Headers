@@ -10,6 +10,8 @@
 
 @property(retain) IMAVChat * chat;
 
++ (id)sourceAccount:(bool)arg1;
+
 - (void)answerWithSourceIdentifier:(id)arg1;
 - (double)callDuration;
 - (id)callHistoryIdentifier;
@@ -22,7 +24,8 @@
 - (void)dealloc;
 - (id)destinationID;
 - (void)disconnect;
-- (int)disconnectedReason;
+- (int)endedError;
+- (unsigned int)endedReason;
 - (int)faceTimeIDStatus;
 - (id)initWithChat:(id)arg1;
 - (void)inviteWithCallIdentifier:(int)arg1;
@@ -32,6 +35,7 @@
 - (bool)isDownlinkMuted;
 - (bool)isEqual:(id)arg1;
 - (bool)isOutgoing;
+- (bool)isSendingAudio;
 - (bool)isStatusFinal;
 - (bool)isTTY;
 - (bool)isUplinkMuted;
@@ -45,11 +49,16 @@
 - (bool)playsConnectedSound;
 - (id)remoteFrequency;
 - (id)remoteParticipant;
+- (id)remoteUnavailableUserInfo;
+- (void)resetWantsHoldMusic;
 - (void)setChat:(id)arg1;
 - (bool)setDownlinkMuted:(bool)arg1;
+- (void)setIsSendingAudio:(bool)arg1;
 - (bool)setUplinkMuted:(bool)arg1;
 - (bool)shouldPlayDTMFTone;
+- (bool)shouldPlayHoldMusic;
 - (double)startTime;
 - (id)totalDataUsed;
+- (void)updateForDisconnection;
 
 @end

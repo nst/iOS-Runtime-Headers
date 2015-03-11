@@ -35,7 +35,6 @@
 - (void)_updateSwitch;
 - (void)_updateSwitchDelayed;
 - (void)_updateUIWithError:(id)arg1;
-- (id)areReadReceiptsEnabled:(id)arg1;
 - (id)audioMessageSettingsSpecifierIdentifiers;
 - (id)blacklistSettingsSpecifierIdentifiers;
 - (id)bundle;
@@ -71,7 +70,6 @@
 - (void)setMMSEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setMadridEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setRaiseToListenEnabled:(id)arg1 specifier:(id)arg2;
-- (void)setReadReceiptsEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setSpecifierLoading:(id)arg1 loading:(bool)arg2 animated:(bool)arg3;
 - (void)setVideoMessageAutoKeep:(id)arg1 specifier:(id)arg2;
 - (void)setWillSendGroupMMS:(id)arg1 specifier:(id)arg2;

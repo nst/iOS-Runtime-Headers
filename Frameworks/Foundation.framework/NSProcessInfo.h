@@ -59,6 +59,7 @@
 - (id)operatingSystemVersionString;
 - (void)performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 block:(id)arg3;
 - (void)performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(id)arg3;
+- (void)performExpiringActivityWithReason:(id)arg1 usingBlock:(id)arg2;
 - (unsigned long long)physicalMemory;
 - (int)processIdentifier;
 - (id)processName;

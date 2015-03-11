@@ -18,6 +18,7 @@
 - (void)dealloc;
 - (id)firstResponderItem;
 - (void)prepareForReuse;
+- (void)setContactStyle:(id)arg1;
 - (id)textField;
 - (void)textFieldChanged:(id)arg1;
 - (void)updateValueWithPropertyItem:(id)arg1;

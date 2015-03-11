@@ -23,6 +23,7 @@
 - (void)_callHistoryRecentsClearedObserver:(id)arg1;
 - (long long)_invalidationStateForPlace:(id)arg1;
 - (void)_privacyAndLocationSettingsResetObserver:(id)arg1;
+- (void)_requestMUIDsFromNetwork:(id)arg1 resultProviderID:(int)arg2 includeETA:(bool)arg3 traits:(id)arg4 finished:(id)arg5 error:(id)arg6;
 - (void)_resetPhoneNumberMapper;
 - (void)_trackPlaceData:(id)arg1 forGeocodingParameters:(id)arg2;
 - (void)applyRAPUpdatedMapItems:(id)arg1;

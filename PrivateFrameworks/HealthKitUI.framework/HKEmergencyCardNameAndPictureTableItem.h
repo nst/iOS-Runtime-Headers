@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (id)_cell;
 - (void)_editPhotoTapped:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)commitEditing;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;

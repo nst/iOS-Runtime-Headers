@@ -8,6 +8,8 @@
 
 @property(readonly) struct { double x1; double x2; double x3; } acceleration;
 
++ (bool)supportsSecureCoding;
+
 - (struct { double x1; double x2; double x3; })acceleration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

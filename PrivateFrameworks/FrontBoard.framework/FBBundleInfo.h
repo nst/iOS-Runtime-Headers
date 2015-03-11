@@ -2,36 +2,45 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class LSApplicationProxy, NSString, NSURL;
+@class BSCFBundle, LSApplicationProxy, NSDictionary, NSString, NSURL;
 
 @interface FBBundleInfo : NSObject {
+    BSCFBundle *_bundle;
     NSString *_bundleIdentifier;
     NSString *_bundleType;
     NSURL *_bundleURL;
     NSString *_bundleVersion;
     NSString *_displayName;
+    NSDictionary *_extendedInfo;
     LSApplicationProxy *_proxy;
 }
 
+@property(getter=_bundle,retain,readonly) BSCFBundle * bundle;
 @property(copy) NSString * bundleIdentifier;
 @property(copy) NSString * bundleType;
 @property(retain) NSURL * bundleURL;
 @property(copy) NSString * bundleVersion;
 @property(copy) NSString * displayName;
+@property(copy) NSDictionary * extendedInfo;
 @property(getter=_proxy,retain,readonly) LSApplicationProxy * proxy;
 
+- (id)_bundle;
 - (id)_proxy;
+- (void)_purgeBundle;
 - (id)bundleIdentifier;
 - (id)bundleType;
 - (id)bundleURL;
 - (id)bundleVersion;
 - (void)dealloc;
 - (id)displayName;
+- (id)extendedInfo;
+- (id)extendedInfoValueForKey:(id)arg1;
 - (id)initWithApplicationProxy:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleType:(id)arg1;
 - (void)setBundleURL:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setExtendedInfo:(id)arg1;
 
 @end

@@ -26,6 +26,7 @@
 
 + (id)activeInstance;
 + (double)diameterForLineHeight:(double)arg1;
++ (long long)fallbackPlaceholderLength;
 + (id)sharedInstance;
 + (double)widthForLineHeight:(double)arg1;
 

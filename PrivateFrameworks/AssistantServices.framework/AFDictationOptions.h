@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString;
+@class AFSiriContext, NSString;
 
 @interface AFDictationOptions : NSObject <NSSecureCoding, NSCopying> {
     NSString *_applicationName;
     NSString *_applicationVersion;
+    AFSiriContext *_context;
     NSString *_fieldIdentifier;
     NSString *_fieldLabel;
     NSString *_interactionIdentifier;
@@ -21,6 +22,7 @@
 
 @property(copy) NSString * applicationName;
 @property(copy) NSString * applicationVersion;
+@property(retain) AFSiriContext * context;
 @property(copy) NSString * fieldIdentifier;
 @property(copy) NSString * fieldLabel;
 @property(copy) NSString * interactionIdentifier;
@@ -37,6 +39,7 @@
 - (void).cxx_destruct;
 - (id)applicationName;
 - (id)applicationVersion;
+- (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictationOptionsWithoutTextContext;
 - (void)encodeWithCoder:(id)arg1;
@@ -52,6 +55,7 @@
 - (id)selectedText;
 - (void)setApplicationName:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setFieldIdentifier:(id)arg1;
 - (void)setFieldLabel:(id)arg1;
 - (void)setInteractionIdentifier:(id)arg1;

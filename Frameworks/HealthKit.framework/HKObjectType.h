@@ -19,11 +19,15 @@
 + (bool)_allowAuthorizationForSharing:(bool)arg1 types:(id)arg2 entitlements:(id)arg3 disallowedTypes:(id)arg4;
 + (bool)_allowAuthorizationForSharingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
 + (void)_insertCode:(long long)arg1 forIdentifier:(id)arg2;
++ (id)activityCacheType;
++ (id)briskMinuteDataType;
++ (id)calorieGoal;
 + (id)categoryTypeForIdentifier:(id)arg1;
 + (id)characteristicTypeForIdentifier:(id)arg1;
 + (id)correlationTypeForIdentifier:(id)arg1;
 + (id)dataTypeWithCode:(long long)arg1;
 + (id)quantityTypeForIdentifier:(id)arg1;
++ (id)sedentaryMissedHourDataType;
 + (bool)supportsSecureCoding;
 + (id)workoutType;
 
@@ -32,7 +36,7 @@
 - (bool)_allowAuthorizationForSharingWithEntitlements:(id)arg1;
 - (id)_initWithDefinition:(struct { long long x1; char *x2; char *x3; long long x4; char *x5; char *x6; }*)arg1;
 - (bool)_requiresAuthorization;
-- (id)awakeAfterUsingCoder:(id)arg1;
+- (id)_safeDescription;
 - (long long)code;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (Class)dataObjectClass;

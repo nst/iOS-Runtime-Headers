@@ -13,8 +13,9 @@
 + (id)createTableSQL;
 + (id)databaseTable;
 + (bool)deleteDevice:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
++ (bool)healthUpdatesEnabledForDevice:(id)arg1 inDatabase:(id)arg2 error:(id*)arg3;
 + (id)insertOrUpdateDevice:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
-+ (void)load;
 + (long long)protectionClass;
++ (bool)setHealthUpdatesEnabled:(bool)arg1 forDevice:(id)arg2 inDatabase:(id)arg3 error:(id*)arg4;
 
 @end

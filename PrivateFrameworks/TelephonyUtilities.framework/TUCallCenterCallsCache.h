@@ -22,7 +22,7 @@
 @property(retain) NSMapTable * uniqueProxyIdentifierToProxyCall;
 @property(retain) NSObject<OS_dispatch_semaphore> * uniqueProxyIdentifierToProxyCallSemaphore;
 
-- (void)_updateCallWithPersistentValues:(id)arg1;
+- (void)_updateCallWithCallState:(id)arg1 loadPersistentState:(bool)arg2;
 - (id)callForCTCall:(struct __CTCall { }*)arg1 shouldSkipLoadingCallState:(bool)arg2;
 - (id)callForCTCall:(struct __CTCall { }*)arg1;
 - (id)callForChat:(id)arg1 shouldSkipLoadingCallState:(bool)arg2;

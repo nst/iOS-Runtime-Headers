@@ -12,6 +12,8 @@
     int _type;
     NSObject<OS_xpc_object> *_xpcConnection;
     NSObject<OS_dispatch_semaphore> *_xpcSendBarrier;
+    bool_appIsBackgrounded;
+    bool_isFinalizing;
 }
 
 @property(getter=isSetupOnUIThread,readonly) bool setupOnUIThread;
@@ -20,6 +22,8 @@
 - (id)allocXpcDictionaryWithNSDictionary:(id)arg1;
 - (id)allocXpcMsg:(unsigned short)arg1 args:(id)arg2;
 - (id)allocXpcObjectWithNSObject:(id)arg1;
+- (void)applicationDidEnterBackgroundNotification;
+- (void)applicationWillEnterForegroundNotification;
 - (void)checkIn;
 - (void)checkOut;
 - (void)dealloc;
@@ -35,6 +39,7 @@
 - (id)nsDictionaryFromXpcDictionary:(id)arg1 extraCapacity:(unsigned long long)arg2;
 - (id)nsObjectWithXpcObject:(id)arg1;
 - (void)sendAsyncMsg:(unsigned short)arg1 args:(id)arg2;
+- (void)sendBarrier;
 - (void)sendMsg:(unsigned short)arg1 args:(id)arg2;
 - (id)sendSyncMsg:(unsigned short)arg1 args:(id)arg2;
 

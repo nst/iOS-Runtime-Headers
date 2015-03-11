@@ -62,12 +62,14 @@
 - (id)_copyTemporaryAssetToFinalPhotoLocationWithResourceIdentity:(id)arg1 withExtension:(id)arg2 withName:(id)arg3;
 - (void)_deactivateCPLLibrary;
 - (id)_debugNameForMode:(unsigned long long)arg1;
+- (id)_debugPrintAlbumOrderForAssets:(id)arg1;
 - (void)_doResetSync:(bool)arg1;
 - (void)_handleAlbumRecords:(id)arg1 inLibrary:(id)arg2;
 - (void)_handleAssetRecords:(id)arg1 andMasterRecords:(id)arg2 inLibrary:(id)arg3;
 - (void)_handleDeleteRecords:(id)arg1 inLibrary:(id)arg2;
 - (void)_handleExpungedRecords:(id)arg1 inLibrary:(id)arg2;
-- (void)_handleRelationRecords:(id)arg1 inLibrary:(id)arg2;
+- (void)_handleRelationsForAlbumRecords:(id)arg1 inLibrary:(id)arg2;
+- (void)_handleRelationsForAssetRecords:(id)arg1 inLibrary:(id)arg2;
 - (void)_incrementUploadAttemptsAndPushStateForAssets:(id)arg1;
 - (void)_linkFileFrom:(id)arg1 to:(id)arg2;
 - (short)_placeHolderKindFromCPLResourceType:(unsigned long long)arg1;

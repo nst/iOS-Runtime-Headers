@@ -60,6 +60,7 @@
 @property(readonly) long long hardwareTypeWildcatK48;
 @property(readonly) NSNumber * mainScreenScale;
 @property(readonly) NSNumber * metricsPostFrequencyOverride;
+@property(readonly) id needsToneRegrantOption;
 @property(readonly) long long networkType2G;
 @property(readonly) long long networkType3G;
 @property(readonly) long long networkType4G;
@@ -166,6 +167,7 @@
 - (id)init;
 - (id)mainScreenScale;
 - (id)metricsPostFrequencyOverride;
+- (id)needsToneRegrantOption;
 - (long long)networkType2G;
 - (long long)networkType3G;
 - (long long)networkType4G;

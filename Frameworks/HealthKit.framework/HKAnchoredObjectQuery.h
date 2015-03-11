@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class NSNumber, NSString;
+@class NSNumber;
 
-@interface HKAnchoredObjectQuery : HKQuery <HKAnchoredObjectQueryClient> {
+@interface HKAnchoredObjectQuery : HKQuery {
     NSNumber *_anchor;
     id _completionHandler;
     unsigned long long _limit;
@@ -16,19 +16,14 @@
 
 @property(retain) NSNumber * anchor;
 @property(readonly) id completionHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
 @property unsigned long long limit;
-@property(readonly) Class superclass;
 
-+ (id)_clientInterfaceProtocol;
-+ (void)_configureClientInterface:(id)arg1;
++ (Class)_queryServerDataObjectClass;
 
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
+- (void)_queue_configureQueryServerDataObject:(id)arg1;
 - (id)_queue_errorHandler;
-- (void)_queue_requestServerProxyWithUUID:(id)arg1 connection:(id)arg2 handler:(id)arg3;
 - (void)_queue_validate;
 - (id)anchor;
 - (id)completionHandler;

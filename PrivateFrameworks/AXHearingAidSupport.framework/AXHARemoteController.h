@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class <AXHARemoteControllerDelegate>, AXHARemoteMessage, AXHATimer, NSInputStream, NSMutableArray, NSMutableData, NSNetService, NSOutputStream, NSString;
+@class <AXHARemoteControllerDelegate>, AXHAPacket, AXHARemoteMessage, AXHATimer, NSInputStream, NSMutableArray, NSMutableData, NSNetService, NSOutputStream, NSString;
 
 @interface AXHARemoteController : NSObject <NSNetServiceDelegate, NSStreamDelegate> {
-    NSMutableArray *_ackQueue;
-    AXHATimer *_ackTimer;
     AXHATimer *_communicationTimer;
     AXHARemoteMessage *_currentMessageInFlight;
-    AXHATimer *_dataTimer;
+    AXHAPacket *_currentPacket;
     <AXHARemoteControllerDelegate> *_delegate;
     NSMutableData *_inputBuffer;
     NSInputStream *_inputStream;
@@ -20,11 +18,8 @@
     bool_didValidateHIID;
 }
 
-@property(retain) NSMutableArray * ackQueue;
-@property(retain) AXHATimer * ackTimer;
 @property(retain) AXHATimer * communicationTimer;
 @property(retain) AXHARemoteMessage * currentMessageInFlight;
-@property(retain) AXHATimer * dataTimer;
 @property(copy,readonly) NSString * debugDescription;
 @property <AXHARemoteControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
@@ -39,13 +34,10 @@
 @property(readonly) Class superclass;
 
 - (void)acceptConnection:(int)arg1;
-- (id)ackQueue;
-- (id)ackTimer;
 - (void)clearMessageQueue;
 - (void)closeConnectionWithError:(id)arg1;
 - (id)communicationTimer;
 - (id)currentMessageInFlight;
-- (id)dataTimer;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -79,14 +71,11 @@
 - (void)receivedData:(id)arg1;
 - (void)resetConnection;
 - (void)sendDataChunk;
-- (bool)sendObject:(id)arg1 withSendCompletion:(id)arg2 andAckCompletion:(id)arg3;
+- (bool)sendObject:(id)arg1 withSendCompletion:(id)arg2;
 - (bool)sendObject:(id)arg1;
 - (id)service;
-- (void)setAckQueue:(id)arg1;
-- (void)setAckTimer:(id)arg1;
 - (void)setCommunicationTimer:(id)arg1;
 - (void)setCurrentMessageInFlight:(id)arg1;
-- (void)setDataTimer:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDidValidateHIID:(bool)arg1;
 - (void)setInputBuffer:(id)arg1;

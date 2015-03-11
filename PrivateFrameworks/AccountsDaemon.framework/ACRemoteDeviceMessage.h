@@ -2,24 +2,51 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACAccount, NSData, NSString;
+@class ACAccount, NSData, NSDictionary, NSError, NSMutableDictionary, NSObject<NSCoding>, NSString;
 
 @interface ACRemoteDeviceMessage : NSObject {
-    ACAccount *_account;
-    NSString *_command;
     NSData *_data;
+    NSString *_identifier;
+    NSMutableDictionary *_payload;
+    bool_isReply;
+    bool_needsReply;
 }
 
 @property(readonly) ACAccount * account;
 @property(readonly) NSString * command;
 @property(readonly) NSData * data;
+@property(readonly) NSError * error;
+@property(readonly) NSString * identifier;
+@property bool isReply;
+@property bool needsReply;
+@property(readonly) NSDictionary * options;
+@property(readonly) NSObject<NSCoding> * result;
+@property(readonly) NSString * sentMessageIdentifier;
+@property(readonly) bool success;
+
++ (id)actionMessageWithCommand:(id)arg1 account:(id)arg2 options:(id)arg3;
++ (id)replyForMessage:(id)arg1 withSuccess:(bool)arg2 error:(id)arg3;
++ (id)replyForMessage:(id)arg1 withSuccess:(bool)arg2 result:(id)arg3 error:(id)arg4;
 
 - (void).cxx_destruct;
+- (void)_invalidateCachedData;
+- (id)_payloadObjectForKey:(id)arg1;
+- (void)_setPayloadObject:(id)arg1 forKey:(id)arg2;
 - (id)account;
 - (id)command;
 - (id)data;
+- (id)description;
+- (id)error;
+- (id)identifier;
 - (id)init;
-- (id)initWithCommand:(id)arg1 account:(id)arg2;
 - (id)initWithData:(id)arg1;
+- (bool)isReply;
+- (bool)needsReply;
+- (id)options;
+- (id)result;
+- (id)sentMessageIdentifier;
+- (void)setIsReply:(bool)arg1;
+- (void)setNeedsReply:(bool)arg1;
+- (bool)success;
 
 @end

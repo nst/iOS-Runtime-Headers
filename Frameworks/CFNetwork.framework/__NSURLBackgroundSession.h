@@ -42,6 +42,7 @@
 - (void)_onqueue_invalidateSession:(bool)arg1 withQueue:(id)arg2 completion:(id)arg3;
 - (void)_onqueue_invokeInvalidateCallback;
 - (void)_onqueue_resetStorageWithCompletionHandler:(id)arg1;
+- (void)_onqueue_retryDataTaskWithIdentifier:(unsigned long long)arg1;
 - (id)_onqueue_uploadTaskForRequest:(id)arg1 uploadFile:(id)arg2 bodyData:(id)arg3 completion:(id)arg4;
 - (id)_streamTaskForHost:(id)arg1 port:(long long)arg2 tls:(bool)arg3 completionHandler:(id)arg4;
 - (id)appWakeUUID;
@@ -62,6 +63,8 @@
 - (void)backgroundTask:(unsigned long long)arg1 didReceiveResponse:(id)arg2 timingData:(id)arg3 reply:(id)arg4;
 - (void)backgroundTask:(unsigned long long)arg1 didReceiveResponse:(id)arg2 timingData:(id)arg3;
 - (void)backgroundTask:(unsigned long long)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
+- (void)backgroundTask:(unsigned long long)arg1 hasConnectionWaitingWithError:(id)arg2;
+- (void)backgroundTask:(unsigned long long)arg1 hasConnectionWaitingWithReason:(long long)arg2;
 - (void)backgroundTask:(unsigned long long)arg1 needNewBodyStream:(bool)arg2 withReply:(id)arg3;
 - (void)backgroundTask:(unsigned long long)arg1 willPerformHTTPRedirection:(id)arg2 withNewRequest:(id)arg3 reply:(id)arg4;
 - (void)backgroundTaskDidResume:(unsigned long long)arg1;
@@ -71,6 +74,7 @@
 - (void)cameIntoForeground:(id)arg1;
 - (void)cleanupConfig;
 - (id)clientResumeDataFromBackgroundResumeData:(id)arg1;
+- (id)connectionLostErrorWithURL:(id)arg1;
 - (id)copyTasks;
 - (void)credStorage_allCredentialsWithReply:(id)arg1;
 - (void)credStorage_credentialsForProtectionSpace:(id)arg1 reply:(id)arg2;

@@ -14,12 +14,12 @@
 - (void).cxx_destruct;
 - (void)_addPendingReportingEvents:(id)arg1;
 - (void)_cancelPlaybackFlushTimer;
+- (void)_flushEvents;
 - (void)_recordReportingEvents:(id)arg1;
 - (void)_schedulePlaybackFlushTimer;
 - (void)_storeBagDidLoadNotification:(id)arg1;
 - (void)_updateForLoadedStoreBag:(id)arg1;
 - (void)dealloc;
-- (void)flushImmediately;
 - (id)init;
 - (id)popPendingReportingEvents;
 

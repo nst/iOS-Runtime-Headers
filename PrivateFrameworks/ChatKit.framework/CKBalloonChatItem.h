@@ -5,6 +5,7 @@
 @class IMHandle, NSDate;
 
 @interface CKBalloonChatItem : CKChatItem {
+    bool_isFirstChatItem;
 }
 
 @property(readonly) unsigned long long balloonCorners;
@@ -12,6 +13,7 @@
 @property(readonly) Class balloonViewClass;
 @property(readonly) bool failed;
 @property(getter=isFromMe,readonly) bool fromMe;
+@property bool isFirstChatItem;
 @property(retain,readonly) IMHandle * sender;
 @property(retain,readonly) NSDate * time;
 
@@ -27,10 +29,14 @@
 - (bool)displayDuringSend;
 - (bool)failed;
 - (bool)isEditable;
+- (bool)isFirstChatItem;
 - (bool)isFromMe;
 - (struct CGSize { double x1; double x2; })loadSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (id)loadTranscriptDrawerText;
+- (bool)needsAdjustedTextAlignmentInsets;
+- (bool)needsPreservedAspectRatio;
 - (id)sender;
+- (void)setIsFirstChatItem:(bool)arg1;
 - (id)time;
 - (BOOL)transcriptOrientation;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })transcriptTextAlignmentInsets;

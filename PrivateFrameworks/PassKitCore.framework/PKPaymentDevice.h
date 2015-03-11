@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class CLLocationManager, NFCardManager, NSMutableArray, NSObject<OS_dispatch_source>, NSString, NSTimer, PKPaymentDeviceProvisioningData;
+@class CLLocationManager, NFCardManager, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSTimer, PKPaymentDeviceProvisioningData;
 
 @interface PKPaymentDevice : NSObject <CLLocationManagerDelegate> {
+    NSObject<OS_dispatch_queue> *_callbackQueue;
     NFCardManager *_cardManager;
+    NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_source> *_locationFixTimeout;
     CLLocationManager *_locationManager;
     NSMutableArray *_provisioningCompletions;
@@ -28,6 +30,7 @@
 - (void)dealloc;
 - (void)deleteApplicationWithAID:(id)arg1;
 - (id)init;
+- (id)initWithCallbackQueue:(id)arg1;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)provisioningDataWithCompletionHandler:(id)arg1;

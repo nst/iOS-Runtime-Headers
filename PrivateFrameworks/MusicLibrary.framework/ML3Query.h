@@ -4,14 +4,16 @@
 
 @class ML3AggregateQuery, ML3MusicLibrary, ML3Predicate, NSArray, NSString;
 
-@interface ML3Query : NSObject <NSCoding> {
+@interface ML3Query : NSObject <NSCoding, NSCopying> {
     Class _entityClass;
     ML3MusicLibrary *_library;
     ML3AggregateQuery *_nonDirectAggregateQuery;
     NSArray *_orderingTerms;
     ML3Predicate *_predicate;
+    NSArray *_propertiesToPrefetch;
     NSString *_propertyToCount;
     bool_filtersOnDynamicProperties;
+    bool_ignoreRestrictionsPredicates;
     bool_ignoreSystemFilterPredicates;
     bool_usingSections;
 }
@@ -21,13 +23,16 @@
 @property(readonly) Class entityClass;
 @property(readonly) bool filtersOnDynamicProperties;
 @property(readonly) bool hasEntities;
+@property bool ignoreRestrictionsPredicates;
 @property bool ignoreSystemFilterPredicates;
 @property(readonly) ML3MusicLibrary * library;
+@property(readonly) NSString * nameOrderPropertyForSectionProperty;
 @property(readonly) ML3AggregateQuery * nonDirectAggregateQuery;
 @property(readonly) NSArray * orderingTerms;
 @property(readonly) NSString * persistentIDProperty;
-@property(readonly) ML3Predicate * predicate;
+@property(retain) ML3Predicate * predicate;
 @property(readonly) ML3Predicate * predicateIncludingSystemwidePredicates;
+@property(copy) NSArray * propertiesToPrefetch;
 @property(readonly) NSString * propertyToCount;
 @property(readonly) NSString * sectionProperty;
 @property(readonly) NSString * selectCountSQL;
@@ -36,6 +41,7 @@
 
 - (void).cxx_destruct;
 - (long long)anyEntityPersistentID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)countOfDistinctRowsForColumn:(id)arg1;
 - (unsigned long long)countOfEntities;
 - (id)countStatementParameters;
@@ -47,6 +53,7 @@
 - (Class)entityClass;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(bool)arg2 cancelBlock:(id)arg3 usingBlock:(id)arg4;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(bool)arg2 sectionProperty:(id)arg3 cancelBlock:(id)arg4 usingBlock:(id)arg5;
+- (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(bool)arg2 sectionProperty:(id)arg3 subCollectionProperty:(id)arg4 cancelBlock:(id)arg5 usingBlock:(id)arg6;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(bool)arg2 usingBlock:(id)arg3;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 usingBlock:(id)arg2;
 - (void)enumeratePersistentIDsAndSectionsWithProperty:(id)arg1 usingBlock:(id)arg2;
@@ -56,6 +63,7 @@
 - (bool)filtersOnDynamicProperties;
 - (bool)hasEntities;
 - (bool)hasRowForColumn:(id)arg1;
+- (bool)ignoreRestrictionsPredicates;
 - (bool)ignoreSystemFilterPredicates;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLibrary:(id)arg1 entityClass:(Class)arg2 predicate:(id)arg3 orderingTerms:(id)arg4 usingSections:(bool)arg5 nonDirectAggregateQuery:(id)arg6 propertyToCount:(id)arg7;
@@ -64,13 +72,16 @@
 - (void)loadNamesFromLibrary:(id)arg1 onConnection:(id)arg2 forPredicate:(id)arg3 loadAllNames:(bool)arg4 cancelHandler:(id)arg5;
 - (id)lowerBoundParametersForOrderingTerms:(id)arg1 lowerBoundPersistentID:(long long)arg2;
 - (id)nameOrderPropertyForProperty:(id)arg1;
+- (id)nameOrderPropertyForSectionProperty;
 - (id)nonDirectAggregateQuery;
 - (id)orderingTerms;
 - (id)persistentIDParameters;
 - (id)persistentIDProperty;
 - (id)predicate;
 - (id)predicateIncludingSystemwidePredicates;
+- (id)propertiesToPrefetch;
 - (id)propertyToCount;
+- (id)reverseQuery;
 - (id)sectionProperty;
 - (id)sections;
 - (id)sectionsParameters;
@@ -79,6 +90,7 @@
 - (id)selectPersistentIDsSQL;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(bool)arg2 distinct:(bool)arg3;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(bool)arg2;
+- (id)selectPersistentIDsSQLAndPropertiesForResultSet:(id)arg1 ordered:(bool)arg2;
 - (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 distinct:(bool)arg3;
 - (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 orderingTerms:(id)arg3 directionality:(id)arg4 usingLowerBound:(bool)arg5 distinct:(bool)arg6 limit:(unsigned long long)arg7;
 - (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 orderingTerms:(id)arg3 directionality:(id)arg4 usingLowerBound:(bool)arg5;
@@ -90,7 +102,10 @@
 - (id)selectSQLWithColumns:(id)arg1 orderingTerms:(id)arg2;
 - (id)selectSectionsSQL;
 - (id)selectUnorderedPersistentIDsSQL;
+- (void)setIgnoreRestrictionsPredicates:(bool)arg1;
 - (void)setIgnoreSystemFilterPredicates:(bool)arg1;
+- (void)setPredicate:(id)arg1;
+- (void)setPropertiesToPrefetch:(id)arg1;
 - (bool)usingSections;
 - (id)valueForAggregateFunction:(id)arg1 onEntitiesForProperty:(id)arg2;
 

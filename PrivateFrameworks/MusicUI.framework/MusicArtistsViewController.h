@@ -11,8 +11,8 @@
 + (id)actionCellConfigurationClasses;
 + (long long)containerItemType;
 + (long long)groupingType;
-+ (id)itemPersistentIDProperty;
-+ (id)persistentIDProperty;
++ (id)itemPersistentIDPropertyForGroupingType:(long long)arg1;
++ (id)persistentIDPropertyForGroupingType:(long long)arg1;
 
 - (void)_appDefaultsDidChangeNotification:(id)arg1;
 - (id)_viewControllerForSelectedMediaEntity:(id)arg1;

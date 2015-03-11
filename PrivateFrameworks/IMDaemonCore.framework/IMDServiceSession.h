@@ -24,6 +24,7 @@
     IMTimer *_messageRoutingTimer;
     NSMutableSet *_messagesReceivedDuringStorage;
     NSString *_password;
+    unsigned long long _pendingReadReceiptFromStorageCount;
     NSString *_proxyAccount;
     NSString *_proxyHost;
     NSString *_proxyPassword;
@@ -101,6 +102,7 @@
 - (void)_handleExpireStateDictionary:(id)arg1;
 - (void)_handleFirewallUserNotificationDidFinish:(id)arg1;
 - (void)_handleRoutingWithDictionary:(id)arg1;
+- (bool)_hasSuppressedMessageID:(id)arg1 chatGUID:(id)arg2;
 - (void)_login_checkUsernameAndPassword;
 - (void)_login_serverSettingsReady;
 - (void)_login_usernameAndPasswordReady;
@@ -174,6 +176,7 @@
 - (void)dealloc;
 - (void)declineInvitationToChat:(id)arg1 style:(unsigned char)arg2;
 - (void)declineInvitationToChatID:(id)arg1 identifier:(id)arg2 style:(unsigned char)arg3;
+- (void)decrementPendingReadReceiptFromStorageCount;
 - (id)defaultChatSuffix;
 - (void)didChangeMemberStatus:(int)arg1 forHandle:(id)arg2 forChat:(id)arg3 style:(unsigned char)arg4;
 - (void)didChangeMemberStatus:(int)arg1 forHandle:(id)arg2 fromHandle:(id)arg3 unformattedNumber:(id)arg4 countryCode:(id)arg5 forChat:(id)arg6 style:(unsigned char)arg7;
@@ -214,6 +217,7 @@
 - (id)groups;
 - (bool)hasCapability:(unsigned long long)arg1;
 - (void)holdBuddyUpdates;
+- (void)incrementPendingReadReceiptFromStorageCount;
 - (id)initWithAccount:(id)arg1 service:(id)arg2;
 - (void)invitePerson:(id)arg1 withMessage:(id)arg2 toChat:(id)arg3 style:(unsigned char)arg4;
 - (void)invitePersonInfo:(id)arg1 withMessage:(id)arg2 toChat:(id)arg3 style:(unsigned char)arg4;
@@ -247,6 +251,7 @@
 - (bool)overrideNetworkAvailability;
 - (id)password;
 - (void)passwordUpdated;
+- (unsigned long long)pendingReadReceiptFromStorageCount;
 - (id)pictureKeyForBuddy:(id)arg1;
 - (id)pictureOfBuddy:(id)arg1;
 - (void)processMessageForSending:(id)arg1 toChat:(id)arg2 style:(unsigned char)arg3 completionBlock:(id)arg4;
@@ -309,6 +314,7 @@
 - (void)setIdleTime:(unsigned int)arg1;
 - (void)setLoginStatus:(unsigned int)arg1 message:(id)arg2 reason:(int)arg3 properties:(id)arg4;
 - (void)setLoginStatus:(unsigned int)arg1 message:(id)arg2;
+- (void)setPendingReadReceiptFromStorageCount:(unsigned long long)arg1;
 - (void)setProperties:(id)arg1 ofParticipant:(id)arg2 inChat:(id)arg3 style:(unsigned char)arg4;
 - (void)setProperties:(id)arg1 ofParticipant:(id)arg2 inChatID:(id)arg3 identifier:(id)arg4 style:(unsigned char)arg5;
 - (void)setRegistrationStatus:(int)arg1 error:(int)arg2 alertInfo:(id)arg3;

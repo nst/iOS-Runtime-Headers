@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKMapLayer>, <VKTileProviderClient>, GEOTileKeyList, NSArray, NSLocale, NSMutableSet, NSSet, NSString, VKMapRasterizer, VKStyleManager, VKTileCache, VKTileKeyList, VKTileSelection, VKTileSource, VKTimer, _VKTileProviderTimerTarget;
+@class <VKMapLayer>, <VKTileProviderClient>, GEOResourceManifestConfiguration, GEOTileKeyList, NSArray, NSLocale, NSMutableSet, NSSet, NSString, VKMapRasterizer, VKStyleManager, VKTileCache, VKTileKeyList, VKTileSelection, VKTileSource, VKTimer, _VKTileProviderTimerTarget;
 
 @interface VKTileProvider : NSObject <VKLRUCacheDelegate, VKTileSourceClient> {
     struct VKCameraState { 
@@ -35,6 +35,7 @@
     _VKTileProviderTimerTarget *_evaluationTarget;
     VKTimer *_evaluationTimer;
     } _exclusionAreas;
+    NSMutableSet *_fallbackTiles;
     NSArray *_holes;
     VKTileKeyList *_keysInView;
     } _lastCameraState;
@@ -43,6 +44,7 @@
     float _loadingProgress;
     NSLocale *_locale;
     NSMutableSet *_lostTiles;
+    GEOResourceManifestConfiguration *_manifestConfiguration;
     int _mode;
     VKTileKeyList *_neighborKeys;
     unsigned long long _neighborMode;
@@ -55,7 +57,6 @@
     VKMapRasterizer *_rasterizer;
     } _sortPoint;
     VKStyleManager *_styleManager;
-    unsigned int _tileGroupIdentifier;
     unsigned long long _tileMaximumLimit;
     VKTileCache *_tilePool;
     unsigned long long _tileReserveLimit;
@@ -122,13 +123,13 @@
 - (void)dirtyTilesFromTileSource:(id)arg1;
 - (bool)evaluateNeighborTileForRendering:(id)arg1;
 - (bool)evaluateSelectedTileForRendering:(id)arg1;
-- (void)flushCaches;
+- (void)flushCaches:(bool)arg1;
 - (void)foreachActiveLayer:(id)arg1;
 - (void)foreachOptionalLayer:(id)arg1;
 - (bool)hasFailedTile;
 - (bool)hasRequiredTileData:(id)arg1;
 - (bool)inFailedState:(id)arg1;
-- (id)initWithClient:(id)arg1 tileGroupIdentifier:(unsigned int)arg2 locale:(id)arg3;
+- (id)initWithClient:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3;
 - (void)invalidateTilesFromTileSource:(id)arg1;
 - (bool)isFallbackEnabled;
 - (bool)isFinishedLoading;

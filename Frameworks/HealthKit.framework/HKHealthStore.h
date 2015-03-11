@@ -8,7 +8,7 @@
 
 @class <_HKAuthorizationPresentationController>, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, NSXPCConnection, _HKHealthStoreProxy;
 
-@interface HKHealthStore : NSObject <HKClientInterface, HKQueryDelegate> {
+@interface HKHealthStore : NSObject <HKClientInterface, HKQueryDelegate, _HKActiveWorkoutLifecycleDelegate> {
     id _authorizationDelegateTransactionErrorHandler;
     <_HKAuthorizationPresentationController> *_authorizationPresentationController;
     id _bluetoothStatusHandler;
@@ -18,9 +18,10 @@
     NSMutableDictionary *_discoveries;
     NSMutableSet *_discoveriesEnded;
     NSMutableSet *_queries;
-    NSObject<OS_dispatch_queue> *_queryQueue;
+    NSObject<OS_dispatch_queue> *_resourceQueue;
     NSMutableDictionary *_sessions;
     NSMutableSet *_sessionsEnded;
+    NSMutableSet *_workouts;
 }
 
 @property(copy) id bluetoothStatusHandler;
@@ -33,28 +34,46 @@
 + (bool)isHealthDataAvailable;
 
 - (void).cxx_destruct;
+- (id)_actionCompletionOnClientQueue:(id)arg1;
 - (void)_addEndedDiscovery:(id)arg1;
 - (void)_addEndedSession:(id)arg1;
+- (void)_beginWorkoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 goalType:(unsigned long long)arg3 goal:(id)arg4 metadata:(id)arg5 shouldUseDeviceData:(bool)arg6 completion:(id)arg7;
+- (id)_bodyMassCharacteristicQuantityWithError:(id*)arg1;
+- (void)_calculateBMRForDate:(id)arg1 useEndOfDay:(bool)arg2 completion:(id)arg3;
+- (id)_characteristicForDataType:(id)arg1 error:(id*)arg2;
 - (void)_clientQueue_invokeAuthorizationDelegateTransactionErrorHandlerWithError:(id)arg1;
 - (void)_closeTransactionWithType:(id)arg1 anchor:(id)arg2 ackTime:(id)arg3;
+- (void)_currentValueForQuantityTypeCode:(long long)arg1 characteristicTypeCode:(long long)arg2 beforeDate:(id)arg3 completion:(id)arg4;
 - (void)_deleteObjects:(id)arg1 completion:(id)arg2;
-- (void)_fetchCharacteristicForDataTypeSynchronous:(id)arg1 withCompletion:(id)arg2;
-- (id)_filteredSources:(id)arg1;
 - (void)_handleInterruption;
+- (id)_heightCharacteristicQuantityWithError:(id*)arg1;
+- (id)_leanBodyMassCharacteristicQuantityWithError:(id*)arg1;
+- (void)_mostRecentQuantityOfType:(id)arg1 beforeDate:(id)arg2 completion:(id)arg3;
+- (id)_objectCompletionOnClientQueue:(id)arg1;
+- (void)_pauseAllActiveWorkoutsWithCompletion:(id)arg1;
 - (id)_queries;
+- (void)_reattachWorkout:(id)arg1 completion:(id)arg2;
 - (id)_remoteObjectProxyWithActionCompletion:(id)arg1;
+- (id)_remoteObjectProxyWithObjectCompletion:(id)arg1;
+- (void)_saveActiveWorkout:(id)arg1 withCompletion:(id)arg2;
 - (id)_serverProxyForSelector:(SEL)arg1 sanitizedErrorHandler:(id)arg2;
 - (void)_setBackgroundDeliveryFrequencyDataType:(id)arg1 frequency:(long long)arg2 withCompletion:(id)arg3;
 - (bool)_setBiologicalSex:(long long)arg1 error:(id*)arg2;
 - (bool)_setBloodType:(long long)arg1 error:(id*)arg2;
+- (bool)_setBodyMassCharacteristicQuantity:(id)arg1 error:(id*)arg2;
 - (bool)_setCharacteristic:(id)arg1 forDataType:(id)arg2 error:(id*)arg3;
 - (bool)_setDateOfBirth:(id)arg1 error:(id*)arg2;
+- (bool)_setHeightCharacteristicQuantity:(id)arg1 error:(id*)arg2;
+- (bool)_setLeanBodyMassCharacteristicQuantity:(id)arg1 error:(id*)arg2;
+- (void)_setPreferredUnit:(id)arg1 forType:(id)arg2 completion:(id)arg3;
+- (id)_sortedSources:(id)arg1;
 - (void)_startHealthServiceExtendedDiscovery:(id)arg1 withHandler:(id)arg2;
 - (void)_throwIfAuthorizationDisallowedForSharing:(bool)arg1 types:(id)arg2;
 - (id)activeHealthServiceDiscoveries;
 - (id)activeHealthServiceSessions;
 - (void)addHealthServicePairing:(id)arg1 withCompletion:(id)arg2;
 - (void)addSamples:(id)arg1 toWorkout:(id)arg2 completion:(id)arg3;
+- (void)addSourceWithBundleIdentifier:(id)arg1 name:(id)arg2 completion:(id)arg3;
 - (void)allAuthorizationRecordsForBundleIdentifier:(id)arg1 completion:(id)arg2;
 - (void)allAuthorizationRecordsForType:(id)arg1 completion:(id)arg2;
 - (void)allSourcesWithCompletion:(id)arg1;
@@ -63,7 +82,10 @@
 - (id)biologicalSexWithError:(id*)arg1;
 - (id)bloodTypeWithError:(id*)arg1;
 - (id)bluetoothStatusHandler;
+- (void)closeTransactionForType:(id)arg1 anchor:(id)arg2 ackTime:(id)arg3 query:(id)arg4;
+- (void)createBluetoothSourceWithBundleIdentifier:(id)arg1 name:(id)arg2 completion:(id)arg3;
 - (id)createMedicalIDData;
+- (void)currentlyPairedWatchIdentifierWithCompletion:(id)arg1;
 - (id)dateOfBirthWithError:(id*)arg1;
 - (void)dealloc;
 - (void)deleteAllSamplesWithTypes:(id)arg1 sourceBundleIdentifier:(id)arg2 completion:(id)arg3;
@@ -89,18 +111,27 @@
 - (void)fetchMedicalIDDataWithCompletion:(id)arg1;
 - (void)getDatabaseUsageInBytesWithCompletion:(id)arg1;
 - (void)getDefaultValueForKey:(id)arg1 withHandler:(id)arg2;
+- (void)getEnabledStatusForPeripheral:(id)arg1 withCompletion:(id)arg2;
 - (void)getHealthServiceProperty:(id)arg1 forSession:(id)arg2 withHandler:(id)arg3;
 - (void)hasSourceWithBundleIdentifier:(id)arg1 completion:(id)arg2;
 - (void)healthServicePairingsWithHandler:(id)arg1;
-- (id)hk_sourcesForAuthorization;
+- (void)hkTypesForSource:(id)arg1 completion:(id)arg2;
+- (id)hk_allSources;
+- (id)hk_sourcesForAuthorizationWithSources:(id)arg1;
+- (id)hk_sourcesForDevicesWithSources:(id)arg1;
 - (id)init;
+- (id)initWithIdentifier:(id)arg1;
+- (id)initWithListenerEndpoint:(id)arg1 identifier:(id)arg2;
 - (id)initWithListenerEndpoint:(id)arg1;
+- (void)invalidateActivityAlertSuppressionForBundleIdentifier:(id)arg1 completion:(id)arg2;
 - (void)orderedSourcesForObjectType:(id)arg1 completion:(id)arg2;
 - (void)performHealthServiceOperation:(id)arg1 onSession:(id)arg2 withParameters:(id)arg3 completion:(id)arg4;
 - (void)performMigrationWithCompletion:(id)arg1;
+- (void)preferredUnitsForQuantityTypes:(id)arg1 completion:(id)arg2;
 - (void)presentAuthorizationWithSessionIdentifier:(id)arg1 completion:(id)arg2;
 - (void)previousHealthServicePairingsWithHandler:(id)arg1;
 - (void)queryDidFinishExecuting:(id)arg1;
+- (void)registerKeepAliveWithIdentifier:(id)arg1 completion:(id)arg2;
 - (void)registerPeripheralIdentifier:(id)arg1 name:(id)arg2 services:(id)arg3 withCompletion:(id)arg4;
 - (void)removeDefaultForKey:(id)arg1 withCompletion:(id)arg2;
 - (void)removeHealthServicePairing:(id)arg1 withCompletion:(id)arg2;
@@ -108,11 +139,12 @@
 - (void)requestAuthorizationToShareTypes:(id)arg1 readTypes:(id)arg2 shouldPrompt:(bool)arg3 completion:(id)arg4;
 - (void)resetAuthorizationStatusForBundleIdentifier:(id)arg1 completion:(id)arg2;
 - (void)saveObject:(id)arg1 withCompletion:(id)arg2;
+- (void)saveObjects:(id)arg1 usingSource:(id)arg2 withCompletion:(id)arg3;
 - (void)saveObjects:(id)arg1 withCompletion:(id)arg2;
 - (void)setAuthorizationStatuses:(id)arg1 forBundleIdentifier:(id)arg2 completion:(id)arg3;
 - (void)setBluetoothStatusHandler:(id)arg1;
-- (void)setDataCollectionOptionForType:(id)arg1 key:(id)arg2 value:(id)arg3 completion:(id)arg4;
 - (void)setDefaultValue:(id)arg1 forKey:(id)arg2 completion:(id)arg3;
+- (void)setEnabledStatus:(bool)arg1 forPeripheral:(id)arg2 withCompletion:(id)arg3;
 - (void)setOrderedSources:(id)arg1 forObjectType:(id)arg2 completion:(id)arg3;
 - (void)setRequestedAuthorizationForBundleIdentifier:(id)arg1 shareTypes:(id)arg2 readTypes:(id)arg3 completion:(id)arg4;
 - (void)startAllHealthServicesDiscoveryWithHandler:(id)arg1;
@@ -126,8 +158,12 @@
 - (void)stopQuery:(id)arg1;
 - (void)stopRecordingDataWithCompletion:(id)arg1;
 - (void)stopReplayingDataWithCompletion:(id)arg1;
+- (void)suppressActivityAlertsForBundleIdentifier:(id)arg1 reason:(long long)arg2 completion:(id)arg3;
+- (void)unitPreferencesDidUpdate;
+- (void)unregisterKeepAliveWithIdentifier:(id)arg1 completion:(id)arg2;
 - (void)unregisterPeripheralIdentifier:(id)arg1 withCompletion:(id)arg2;
 - (void)updateMedicalIDData:(id)arg1 completion:(id)arg2;
 - (void)updateMedicalIDData:(id)arg1;
+- (void)workoutDidComplete:(id)arg1;
 
 @end

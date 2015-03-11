@@ -23,5 +23,6 @@
 - (id)outputStream;
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (int)socket;
+- (bool)updateConnectionWithOptions:(id)arg1 error:(id*)arg2;
 
 @end

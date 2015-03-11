@@ -4,7 +4,7 @@
 
 @class CLLocation, CLLocationManager, NSDate, NSError, NSMutableArray, NSString, NSTimer;
 
-@interface IMLocationManager : IMChat <CLLocationManagerDelegate, IMLocationManager> {
+@interface IMLocationManager : NSObject <CLLocationManagerDelegate, IMLocationManager> {
     NSError *_error;
     NSMutableArray *_handlers;
     NSDate *_locateStartTime;

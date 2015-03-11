@@ -33,6 +33,7 @@
 
 + (bool)_isSystemWindow;
 + (id)_sharedTextEffectsWindowforScreen:(id)arg1 aboveStatusBar:(bool)arg2 allowHosted:(bool)arg3 matchesStatusBarOrientationOnAccess:(bool)arg4;
++ (id)activeTextEffectsWindowForScreen:(id)arg1;
 + (void)lowerTextEffectsWindowsForHideNotificationCenter;
 + (void)raiseTextEffectsWindowsForShowNotificationCenter;
 + (void)releaseSharedInstances;

@@ -11,6 +11,7 @@
 @property unsigned long long cookieAcceptPolicy;
 @property(copy,readonly) NSArray * cookies;
 
++ (id)aa_icloudCookies;
 + (id)sharedHTTPCookieStorage;
 
 - (struct OpaqueCFHTTPCookieStorage { }*)_CFHTTPCookieStorage;

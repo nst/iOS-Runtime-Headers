@@ -18,6 +18,7 @@
 
 + (void)becameFatallyBlocked:(id)arg1;
 + (id)getSilo;
++ (bool)isSupported;
 
 - (void).cxx_destruct;
 - (id)debugDescription;

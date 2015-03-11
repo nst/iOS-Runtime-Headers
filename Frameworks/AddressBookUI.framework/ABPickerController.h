@@ -6,10 +6,11 @@
    See Warning(s) below.
  */
 
-@class <ABPickerControllerDelegate>, NSArray, NSIndexPath, NSString, UITableViewController;
+@class <ABPickerControllerDelegate>, CNContactStyle, NSArray, NSIndexPath, NSString, UITableViewController;
 
 @interface ABPickerController : UINavigationController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     NSArray *_builtinItems;
+    CNContactStyle *_contactStyle;
     NSArray *_customItems;
     id _itemLocalizationBlock;
     NSString *_itemLocalizationKey;
@@ -21,6 +22,7 @@
 
 @property bool allowsCustomItems;
 @property(copy) NSArray * builtinItems;
+@property(retain) CNContactStyle * contactStyle;
 @property(copy) NSArray * customItems;
 @property(copy,readonly) NSString * debugDescription;
 @property <ABPickerControllerDelegate> * delegate;
@@ -38,6 +40,7 @@
 - (bool)allowsCustomItems;
 - (id)builtinItems;
 - (void)cancelPicker:(id)arg1;
+- (id)contactStyle;
 - (id)customItems;
 - (void)customLabelUpdated:(id)arg1;
 - (void)dealloc;
@@ -52,6 +55,7 @@
 - (id)selectedItem;
 - (void)setAllowsCustomItems:(bool)arg1;
 - (void)setBuiltinItems:(id)arg1;
+- (void)setContactStyle:(id)arg1;
 - (void)setCustomItems:(id)arg1;
 - (void)setItemLocalizationBlock:(id)arg1;
 - (void)setItemLocalizationKey:(id)arg1;

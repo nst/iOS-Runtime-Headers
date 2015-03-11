@@ -4,7 +4,7 @@
 
 @class NSDate, NSString;
 
-@interface MCProfileInfo : NSObject {
+@interface MCProfileInfo : NSObject <NSSecureCoding> {
     NSString *_UUID;
     NSDate *_expiryDate;
     NSString *_friendlyName;
@@ -13,20 +13,30 @@
     NSString *_profileDescription;
 }
 
-@property(readonly) NSString * UUID;
-@property(readonly) NSDate * expiryDate;
-@property(readonly) NSString * friendlyName;
-@property(readonly) NSString * identifier;
-@property(readonly) NSString * organization;
-@property(readonly) NSString * profileDescription;
+@property(retain) NSString * UUID;
+@property(retain) NSDate * expiryDate;
+@property(retain) NSString * friendlyName;
+@property(retain) NSString * identifier;
+@property(retain) NSString * organization;
+@property(retain) NSString * profileDescription;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;
+- (void)encodeWithCoder:(id)arg1;
 - (id)expiryDate;
 - (id)friendlyName;
 - (id)identifier;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithProfile:(id)arg1;
 - (id)organization;
 - (id)profileDescription;
+- (void)setExpiryDate:(id)arg1;
+- (void)setFriendlyName:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setOrganization:(id)arg1;
+- (void)setProfileDescription:(id)arg1;
+- (void)setUUID:(id)arg1;
 
 @end

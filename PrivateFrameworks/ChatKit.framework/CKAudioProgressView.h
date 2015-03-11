@@ -20,12 +20,10 @@
 @property float progress;
 @property int style;
 
-+ (id)pauseImageWithColor:(BOOL)arg1;
-+ (id)pauseTemplateImage;
-+ (id)playImageWithColor:(BOOL)arg1;
-+ (id)playTemplateImage;
++ (id)imageWithType:(unsigned char)arg1 color:(BOOL)arg2;
 + (float)progressForTime:(double)arg1 duration:(double)arg2;
 + (id)templateImageWithControlImage:(id)arg1;
++ (id)templateImageWithType:(unsigned char)arg1;
 
 - (BOOL)color;
 - (void)dealloc;

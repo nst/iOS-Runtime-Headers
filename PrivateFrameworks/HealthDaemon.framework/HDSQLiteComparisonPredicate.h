@@ -24,7 +24,9 @@
 - (void)bindToStatement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
 - (long long)comparisonType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (unsigned long long)hash;
+- (bool)isCompatibleWithPredicate:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)value;
 

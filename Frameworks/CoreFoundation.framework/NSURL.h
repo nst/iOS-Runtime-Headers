@@ -21,6 +21,7 @@
 @property(copy,readonly) NSURL * baseURL;
 @property(readonly) NSString * br_lastEditorDeviceName;
 @property(readonly) int callService;
+@property(readonly) bool ckShouldShowComposeUI;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * debugDescription;
@@ -118,6 +119,7 @@
 + (id)_URLWithData:(id)arg1 relativeToURL:(id)arg2;
 + (id)_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
 + (id)__unurl;
++ (id)_af_URLWithMessageIdentifier:(id)arg1;
 + (id)_applyFaceTimeScheme:(id)arg1 toFaceTimeURL:(id)arg2;
 + (id)_faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 audioOnly:(bool)arg3;
 + (bool)_isBetaSwitchEnabledForKey:(struct __CFString { }*)arg1;
@@ -153,6 +155,7 @@
 + (id)escapedStringForString:(id)arg1;
 + (id)faceTimeAcceptURLWithURL:(id)arg1 conferenceID:(id)arg2;
 + (id)faceTimeAcceptURLWithURL:(id)arg1;
++ (id)faceTimeLaunchForIncomingCallURL;
 + (id)faceTimePromptURLWithURL:(id)arg1;
 + (id)faceTimeTelephonyURLWithPhoneNumber:(id)arg1 showPrompt:(bool)arg2;
 + (id)faceTimeTelephonyURLWithPhoneNumber:(id)arg1;
@@ -244,6 +247,7 @@
 - (id)WF_normalizedRelativePath;
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (id)_URLByEscapingSpacesAndControlChars;
+- (id)_af_messageIdentifierValue;
 - (unsigned long long)_cfTypeID;
 - (struct __CFURL { }*)_cfurl;
 - (struct __CFDictionary { }*)_clientsCreatingIfNecessary:(bool)arg1;
@@ -347,6 +351,8 @@
 - (bool)checkPromisedItemIsReachableAndReturnError:(id*)arg1;
 - (bool)checkResourceIsReachableAndReturnError:(id*)arg1;
 - (void)chmod:(unsigned short)arg1;
+- (bool)ckShouldShowComposeUI;
+- (id)ckWillNotLaunchComposeUIURL;
 - (bool)compareToLocalString:(id)arg1;
 - (bool)compareToLocalURL:(id)arg1;
 - (bool)conformsToOverridePatternWithKey:(id)arg1;
@@ -433,6 +439,7 @@
 - (bool)isInternalUIKitURL;
 - (bool)isJavaScriptURL;
 - (bool)isKindOfClass:(Class)arg1;
+- (bool)isLaunchForIncomingCallURL;
 - (bool)isMailToURL;
 - (bool)isMemberOfClass:(Class)arg1;
 - (bool)isMusicStoreURL;

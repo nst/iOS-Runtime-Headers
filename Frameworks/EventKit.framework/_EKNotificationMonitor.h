@@ -23,6 +23,7 @@
     NSTimer *_syncTimer;
     PCPersistentTimer *_timer;
     NSObject<OS_dispatch_queue> *_timerQueue;
+    bool_handlesOnlyEvents;
     bool_initialCheck;
     bool_loadRecentlyRepliedNotifications;
     bool_pendingChanges;
@@ -53,12 +54,13 @@
 - (void)_timerFired;
 - (void)adjust;
 - (void)attemptReload;
+- (void)attemptReloadSynchronously:(bool)arg1;
 - (void)dealloc;
 - (unsigned long long)eventNotificationCount;
 - (id)eventNotificationReferences;
 - (id)init;
-- (id)initForBulletinBoardWithEventStoreGetter:(id)arg1;
-- (id)initWithEventStore:(id)arg1;
+- (id)initByHandlingOnlyEvents:(bool)arg1 bulletinBoardWithEventStoreGetter:(id)arg2;
+- (id)initByHandlingOnlyEvents:(bool)arg1 eventStore:(id)arg2;
 - (void)killTimer;
 - (unsigned long long)notificationCount;
 - (id)notificationReferences;

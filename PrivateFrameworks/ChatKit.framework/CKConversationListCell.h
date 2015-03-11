@@ -41,6 +41,7 @@
 - (void)setSearchSummaryText:(id)arg1;
 - (bool)showingEditControl;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)superLayoutSubviews;
 - (void)updateContentsForConversation:(id)arg1;
 - (void)updateWithSearchResult:(id)arg1;
 

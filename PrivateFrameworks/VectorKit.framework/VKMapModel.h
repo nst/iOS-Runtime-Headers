@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <GEORoutePreloadSession>, <VKMapModeObserver>, <VKMapModelDelegate>, <VKOverlayContainerRouteDelegate>, <VKRouteMatchedAnnotationPresentation>, GEOFeatureStyleAttributes, NSArray, NSLocale, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, VKAnimation, VKAnnotationMarker, VKAnnotationModel, VKBuildingFootprintMapModel, VKDebugModel, VKGridModel, VKHybridRasterMapModel, VKLabelMarker, VKLabelModel, VKMapRasterizer, VKMercatorTerrainHeightCache, VKOverlayContainerModel, VKOverlayTileSource, VKPolygonMapModel, VKPolylineOverlay, VKPolylineOverlayPainter, VKRasterMapModel, VKRasterOverlayMapModel, VKRasterOverlayTileSource, VKRasterTrafficMapModel, VKRealisticMapModel, VKRiverMapModel, VKRoadMapModel, VKRoadTrafficMapModel, VKSharedResources, VKSkyModel, VKStyleManager, VKTileProvider, VKTrafficTileSource;
+@class <GEORoutePreloadSession>, <VKMapModeObserver>, <VKMapModelDelegate>, <VKOverlayContainerRouteDelegate>, <VKRouteMatchedAnnotationPresentation>, GEOFeatureStyleAttributes, GEOResourceManifestConfiguration, NSArray, NSLocale, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, VKAnimation, VKAnnotationMarker, VKAnnotationModel, VKBuildingFootprintMapModel, VKDebugModel, VKGridModel, VKHybridRasterMapModel, VKLabelMarker, VKLabelModel, VKMapRasterizer, VKMercatorTerrainHeightCache, VKOverlayContainerModel, VKPolygonMapModel, VKPolylineOverlay, VKPolylineOverlayPainter, VKRasterMapModel, VKRasterOverlayMapModel, VKRasterOverlayTileSource, VKRasterTrafficMapModel, VKRealisticMapModel, VKRiverMapModel, VKRoadMapModel, VKRoadTrafficMapModel, VKSharedResources, VKSkyModel, VKStyleManager, VKTileProvider, VKTrafficTileSource;
 
 @interface VKMapModel : VKModelObject <VKOverlayContainerDelegate, VKLabelModelDelegate, GEOResourceManifestTileGroupObserver, VKTileProviderClient, VKPolylineGroupOverlayObserver> {
     struct Matrix<float, 4, 1> { 
@@ -38,6 +38,7 @@
         struct StyleQuery {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     VKStyleManager *_activeStyleManager;
+    GEOResourceManifestConfiguration *_additionalManifestConfiguration;
     int _annotationMarkerStyle;
     VKAnnotationModel *_annotationModel;
     NSMutableSet *_blockingStylesheetObservers;
@@ -57,10 +58,11 @@
     VKRoadMapModel *_hybridRoadModel;
     VKStyleManager *_hybridStyleManager;
     VKLabelModel *_labelModel;
-    NSMapTable *_layerToSourceMaps[3];
+    NSMapTable *_layerToSourceMaps[4];
     long long _loadingCount;
     NSLocale *_locale;
     double _lodBias;
+    GEOResourceManifestConfiguration *_manifestConfiguration;
     GEOFeatureStyleAttributes *_mapFeatureStyleAttributes;
     NSMutableArray *_mapLayerSubmodels;
     long long _mapMode;
@@ -72,7 +74,6 @@
     VKAnimation *_modeTransitionAnimation;
     float _navigationPuckSize;
     VKOverlayContainerModel *_overlayContainerModel;
-    VKOverlayTileSource *_overlayTileSource;
     VKPolygonMapModel *_polygonModel;
     NSMutableSet *_polylineOverlays;
     VKRasterMapModel *_rasterModel;
@@ -83,7 +84,6 @@
     VKRasterMapModel *_rasterViewer;
     VKMapRasterizer *_rasterizer;
     VKRealisticMapModel *_realisticModel;
-    VKOverlayTileSource *_realisticOverlayTileSource;
     VKRiverMapModel *_riverLineModel;
     VKRoadMapModel *_roadModel;
     VKRoadTrafficMapModel *_roadTrafficModel;
@@ -96,13 +96,12 @@
     } _styleQuery;
     double _styleTransitionProgress;
     long long _targetDisplay;
-    unsigned int _tileGroupIdentifier;
-    VKTileProvider *_tileProviders[3];
+    VKTileProvider *_tileProviders[4];
     long long _tileSize;
     NSMapTable *_tileSources;
     VKTrafficTileSource *_trafficSource;
     double _zoomLevel;
-    bool_activeMapLayers[3][34];
+    bool_activeMapLayers[4][34];
     bool_buildingsAreVisible;
     bool_debugDynamicMapModesEnabled;
     bool_disableBuildingFootprints;
@@ -125,6 +124,7 @@
 }
 
 @property /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  clearColor; /* unknown property attribute:  1>=[4f]} */
+@property(retain) GEOResourceManifestConfiguration * additionalManifestConfiguration;
 @property(readonly) VKBuildingFootprintMapModel * buildingFootprintModel;
 @property(readonly) bool buildingsAreVisible;
 @property double contentScale;
@@ -205,6 +205,7 @@
 - (void)addPersistentOverlay:(id)arg1;
 - (void)addRasterOverlay:(id)arg1;
 - (void)addSubmodel:(id)arg1;
+- (id)additionalManifestConfiguration;
 - (id)annotationCoordinateTest;
 - (id)annotationMarkerDeselectionCallback;
 - (id)annotationMarkerForSelectionAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1 avoidCurrent:(bool)arg2 canvasSize:(struct CGSize { double x1; double x2; })arg3;
@@ -231,7 +232,7 @@
 - (id)detailedDescription;
 - (void)didBeginTransitionToNavigation;
 - (void)didEndNavigation;
-- (void)didReceiveMemoryWarning;
+- (void)didReceiveMemoryWarning:(bool)arg1;
 - (void)didStopLoadingTilesWithError:(id)arg1;
 - (void)didTapZoom;
 - (bool)disableBuildingFootprints;
@@ -246,7 +247,7 @@
 - (bool)dynamicMapModesEnabled;
 - (id)externalAnchors;
 - (id)externalTrafficIncidents;
-- (void)flushCaches;
+- (void)flushCaches:(bool)arg1;
 - (id)focusedLabelsPolylinePainter;
 - (void)forceMapType:(long long)arg1;
 - (void)foreachActiveLayer:(id)arg1;
@@ -289,6 +290,7 @@
 - (void)performStylesheetDoneChanging;
 - (void)performStylesheetTransitionDidProgress;
 - (void)performStylesheetWillTransitionToDisplayStyle:(unsigned long long)arg1;
+- (void)performstylesheetDidReload;
 - (id)persistentOverlays;
 - (void)polylineGroup:(id)arg1 didAddPolyline:(id)arg2;
 - (void)polylineGroup:(id)arg1 didRemovePolyline:(id)arg2;
@@ -311,6 +313,7 @@
 - (void)selectLabelMarker:(id)arg1;
 - (id)selectedAnnotationMarker;
 - (id)selectedLabelMarker;
+- (void)setAdditionalManifestConfiguration:(id)arg1;
 - (void)setAnnotationMarkerDeselectionCallback:(id)arg1;
 - (void)setApplicationState:(unsigned int)arg1;
 - (void)setClearColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;

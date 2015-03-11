@@ -12,6 +12,7 @@
 + (void)initialize;
 + (bool)libraryContentsChangeForProperty:(id)arg1;
 + (id)propertiesForGroupingKey;
++ (id)propertiesForGroupingUniqueCollections;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
 + (id)trackForeignPersistentID;
 + (bool)updateRepresentativeItemPersistentIDsInLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned long long)arg3 usingConnection:(id)arg4;

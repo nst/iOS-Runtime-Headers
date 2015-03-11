@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABCardPropertyGroup, CNMutableContact, NSMutableArray, NSString;
+@class ABCardPropertyGroup, CNContactStyle, CNMutableContact, NSMutableArray, NSString;
 
 @interface ABPostalAddressEditorViewController : UITableViewController <ABPresenterDelegate, ABPropertyCellDelegate> {
     CNMutableContact *_contact;
+    CNContactStyle *_contactStyle;
     int _property;
     ABCardPropertyGroup *_propertyGroup;
     NSMutableArray *_propertyItems;
@@ -23,6 +24,7 @@
 - (void)_rebuildPropertyGroupItems:(bool)arg1;
 - (void)_startEditingFirstCell;
 - (void)cancel:(id)arg1;
+- (id)contactStyle;
 - (void)dealloc;
 - (id)defaultValueForPropertyCell:(id)arg1;
 - (void)done:(id)arg1;

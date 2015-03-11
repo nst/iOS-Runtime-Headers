@@ -82,6 +82,7 @@
 - (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (id)pickerView;
 - (void)populatePostbackDictionary:(id)arg1;
+- (id)radioGroupSelectedColor;
 - (float)rowHeightWithMax:(float)arg1 peggedHeight:(float)arg2 tableView:(id)arg3 indexPath:(id)arg4;
 - (bool)rowInvalid;
 - (id)selectOptions;

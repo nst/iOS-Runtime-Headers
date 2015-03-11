@@ -6,6 +6,7 @@
 
 @interface AFUISiriViewController : UIViewController <AFUISiriRemoteViewControllerDataSource, AFUISiriRemoteViewControllerDelegate, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate> {
     AFUIRequestOptions *_currentRequestOptions;
+    long long _currentRequestSource;
     <AFUISiriViewControllerDataSource> *_dataSource;
     <AFUISiriViewControllerDelegate> *_delegate;
     NSTimer *_manualEndpointTimer;
@@ -103,6 +104,7 @@
 - (id)bulletinsForSiriSession:(id)arg1;
 - (id)contextAppInfosForSiriSession:(id)arg1;
 - (id)currentRequestOptions;
+- (long long)currentSource;
 - (id)dataSource;
 - (void)dealloc;
 - (void)defrost;

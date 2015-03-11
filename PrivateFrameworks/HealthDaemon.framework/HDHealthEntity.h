@@ -5,21 +5,39 @@
 @interface HDHealthEntity : HDSQLiteEntity {
 }
 
-+ (bool)_performWriteTransaction:(bool)arg1 withHealthDatabase:(id)arg2 usingBlock:(id)arg3 errorHandler:(id)arg4;
++ (bool)_performWriteTransaction:(bool)arg1 withHealthDatabase:(id)arg2 error:(id*)arg3 usingBlock:(id)arg4 inaccessibilityHandler:(id)arg5;
++ (id)_syncQueryDescriptorWithPredicate:(id)arg1 orderingProperties:(id)arg2 orderingDirections:(id)arg3 limit:(unsigned long long)arg4 anchorProperty:(id)arg5;
++ (id)_syncQueryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3 orderingDirections:(id)arg4 limit:(unsigned long long)arg5 anchorProperty:(id)arg6;
 + (id)anyWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
++ (long long)countOfObjectsWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
++ (id)createNonUniqueIndicesForColumns;
 + (id)createTableSQL;
 + (id)databaseName;
 + (bool)deleteEntitiesWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
++ (id)entityWithPropertyValues:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
++ (bool)enumerateEntitiesForSyncWithPredicate:(id)arg1 excludedSyncStore:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 limit:(unsigned long long)arg4 lastSyncAnchor:(long long*)arg5 healthDatabase:(id)arg6 error:(id*)arg7 block:(id)arg8;
++ (bool)enumerateEntitiesForSyncWithProperties:(id)arg1 predicate:(id)arg2 excludedSyncStore:(id)arg3 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg4 limit:(unsigned long long)arg5 lastSyncAnchor:(long long*)arg6 healthDatabase:(id)arg7 error:(id*)arg8 block:(id)arg9;
++ (bool)enumerateEntitiesForSyncWithProperties:(id)arg1 predicate:(id)arg2 excludedSyncStore:(id)arg3 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg4 orderingProperties:(id)arg5 orderingDirections:(id)arg6 limit:(unsigned long long)arg7 lastSyncAnchor:(long long*)arg8 healthDatabase:(id)arg9 error:(id*)arg10 block:(id)arg11;
 + (bool)enumerateProperties:(id)arg1 withPredicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4 usingBlock:(id)arg5;
 + (id)maxRowIDForPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
-+ (void)performReadTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2 errorHandler:(id)arg3;
-+ (void)performReadTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2;
-+ (bool)performWriteTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2 errorHandler:(id)arg3;
-+ (bool)performWriteTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2;
++ (long long)nextSyncAnchorWithStartAnchor:(long long)arg1 predicate:(id)arg2 excludedSyncStore:(id)arg3 healthDatabase:(id)arg4 error:(id*)arg5;
++ (long long)nextSyncAnchorWithStartAnchor:(long long)arg1 predicate:(id)arg2 excludedSyncStore:(id)arg3 orderingProperties:(id)arg4 orderingDirections:(id)arg5 limit:(unsigned long long)arg6 healthDatabase:(id)arg7 error:(id*)arg8;
++ (bool)performReadTransactionWithHealthDatabase:(id)arg1 error:(id*)arg2 usingBlock:(id)arg3 inaccessibilityHandler:(id)arg4;
++ (bool)performReadTransactionWithHealthDatabase:(id)arg1 error:(id*)arg2 usingBlock:(id)arg3;
++ (bool)performReadTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2;
++ (bool)performWriteTransactionWithHealthDatabase:(id)arg1 error:(id*)arg2 usingBlock:(id)arg3 inaccessibilityHandler:(id)arg4;
++ (bool)performWriteTransactionWithHealthDatabase:(id)arg1 error:(id*)arg2 usingBlock:(id)arg3;
++ (id)predicateForSyncWithPredicate:(id)arg1 excludedSyncStore:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3;
++ (id)propertyForSyncAnchor;
++ (id)propertyForSyncProvenance;
 + (id)propertyValueForAnyWithProperty:(id)arg1 predicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
++ (id)propertyValueForAnyWithProperty:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3 orderingDirections:(id)arg4 healthDatabase:(id)arg5 error:(id*)arg6;
 + (id)propertyValuesForAnyWithProperties:(id)arg1 predicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
 + (id)protectedDatabaseName;
 + (long long)protectionClass;
 + (bool)setValuesWithDictionary:(id)arg1 predicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
+
+- (bool)setValue:(id)arg1 forProperty:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
+- (id)valueForProperty:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 
 @end

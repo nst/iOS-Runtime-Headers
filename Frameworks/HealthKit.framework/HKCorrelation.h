@@ -2,29 +2,40 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class HKCorrelationType, NSMutableDictionary, NSSet, NSUUID;
+@class HKCorrelationType, NSMutableDictionary, NSSet, NSString, NSUUID;
 
-@interface HKCorrelation : HKSample <NSSecureCoding> {
+@interface HKCorrelation : HKSample <NSSecureCoding, HDCoding> {
     NSMutableDictionary *_objects;
 }
 
 @property(getter=_UUID,readonly) NSUUID * UUID;
 @property(readonly) HKCorrelationType * correlationType;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy,readonly) NSSet * objects;
+@property(readonly) Class superclass;
 
++ (bool)_allowEmptyCorrelations;
++ (bool)_isConcreteObjectClass;
 + (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4 metadata:(id)arg5;
 + (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4;
++ (id)createWithCodable:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_UUID;
 - (void)_addCorrelatedObject:(id)arg1;
 - (void)_addCorrelatedObjects:(id)arg1;
 - (id)_allTypes;
 - (bool)_containsObjects;
+- (bool)_correlatedObjectsMatchFilterDictionary:(id)arg1;
 - (void)_filterCorrelatedObjectsWithFilterDictionary:(id)arg1;
 - (id)_init;
 - (void)_removeAllCorrelatedObjects;
 - (id)_validateConfiguration;
+- (bool)addCodableRepresentationToCollection:(id)arg1;
+- (id)codableRepresentationForSync;
 - (id)correlationType;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -4,14 +4,18 @@
 
 @class CNContact, NSString;
 
-@interface PKPaymentOptionsDefaults : NSObject {
+@interface PKPaymentOptionsDefaults : NSObject <PKPassbookSettingsOptionsDelegate> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) CNContact * defaultBillingAddress;
 @property(retain) CNContact * defaultContactEmail;
 @property(retain) CNContact * defaultContactPhone;
 @property(retain) NSString * defaultPaymentPassIdentifier;
 @property(retain) CNContact * defaultShippingAddress;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)defaults;
 
@@ -24,6 +28,7 @@
 - (id)defaultContactPhone;
 - (id)defaultPaymentPassIdentifier;
 - (id)defaultShippingAddress;
+- (id)init;
 - (void)setDefaultBillingAddress:(id)arg1;
 - (void)setDefaultContactEmail:(id)arg1;
 - (void)setDefaultContactPhone:(id)arg1;

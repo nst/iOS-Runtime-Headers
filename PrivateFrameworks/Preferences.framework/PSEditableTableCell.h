@@ -26,6 +26,7 @@
 + (long long)cellStyle;
 
 - (bool)_cellIsEditing;
+- (id)_defaultTextColor;
 - (void)_saveForExit;
 - (void)_setValueChanged;
 - (bool)becomeFirstResponder;

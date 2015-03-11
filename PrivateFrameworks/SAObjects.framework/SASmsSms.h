@@ -8,6 +8,7 @@
 }
 
 @property(copy) NSURL * attachment;
+@property(copy) NSString * chatIdentifier;
 @property(copy) NSDate * dateSent;
 @property(copy) NSString * message;
 @property(copy) NSArray * msgRecipients;
@@ -21,7 +22,9 @@
 + (id)sms;
 + (id)smsWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)af_messageValue;
 - (id)attachment;
+- (id)chatIdentifier;
 - (id)dateSent;
 - (id)encodedClassName;
 - (id)groupIdentifier;
@@ -32,6 +35,7 @@
 - (id)recipients;
 - (id)sender;
 - (void)setAttachment:(id)arg1;
+- (void)setChatIdentifier:(id)arg1;
 - (void)setDateSent:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMsgRecipients:(id)arg1;

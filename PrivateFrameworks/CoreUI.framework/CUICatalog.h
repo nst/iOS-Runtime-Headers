@@ -3,6 +3,7 @@
  */
 
 @interface CUICatalog : NSObject {
+    unsigned int _purgeWhenFinished : 1;
     unsigned long long _storageRef;
 }
 
@@ -24,6 +25,7 @@
 - (void)clearCachedImageResources;
 - (id)dataWithName:(id)arg1 deviceIdiom:(long long)arg2 deviceSubtype:(unsigned long long)arg3 memoryClass:(unsigned long long)arg4 graphicsClass:(unsigned long long)arg5;
 - (id)dataWithName:(id)arg1;
+- (void)dealloc;
 - (id)debugDescription;
 - (bool)drawGlyphs:(const unsigned short*)arg1 atPositions:(const struct CGPoint { double x1; double x2; }*)arg2 inContext:(struct CGContext { }*)arg3 withFont:(struct __CTFont { }*)arg4 count:(unsigned long long)arg5 stylePresetName:(id)arg6 styleConfiguration:(id)arg7 foregroundColor:(struct CGColor { }*)arg8;
 - (struct CGColor { }*)equivalentForegroundColorForStylePresetWithName:(id)arg1 styleConfiguration:(id)arg2;

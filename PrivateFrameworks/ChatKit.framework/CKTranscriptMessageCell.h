@@ -16,6 +16,8 @@
 @property(retain) UIButton * failureButton;
 @property bool wantsContactImageLayout;
 
++ (double)failureButtonWidthPlusSpacing;
+
 - (id)contactImage;
 - (id)contactImageView;
 - (void)dealloc;

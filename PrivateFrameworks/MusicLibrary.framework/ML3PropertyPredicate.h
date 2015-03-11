@@ -10,8 +10,12 @@
 
 @property(copy) NSString * property;
 
++ (id)predicateWithProperty:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)SQLJoinClausesForClass:(Class)arg1;
+- (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;

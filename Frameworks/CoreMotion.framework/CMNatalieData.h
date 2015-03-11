@@ -2,28 +2,42 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class NSDate, NSNumber;
+@class NSDate, NSNumber, NSUUID;
 
 @interface CMNatalieData : CMLogItem {
+    double fBasalNatalies;
+    double fMets;
     double fNatalies;
     long long fRecordId;
     long long fSession;
+    NSUUID *fSourceId;
     double fStartDate;
 }
 
+@property(readonly) NSNumber * basalNatalies;
+@property(readonly) NSNumber * mets;
 @property(readonly) NSNumber * natalies;
 @property(readonly) long long recordId;
 @property(readonly) long long session;
+@property(readonly) NSUUID * sourceId;
 @property(readonly) NSDate * startDate;
 
++ (id)maxNatalieEntries;
++ (id)sessionName:(long long)arg1;
++ (bool)supportsSecureCoding;
+
+- (id)basalNatalies;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartDate:(double)arg1 natalies:(double)arg2 session:(long long)arg3 recordId:(long long)arg4 timestamp:(double)arg5;
+- (id)initWithStartDate:(double)arg1 recordId:(long long)arg2 session:(long long)arg3 mets:(double)arg4 natalies:(double)arg5 basalNatalies:(double)arg6 timestamp:(double)arg7 sourceId:(id)arg8;
+- (id)mets;
 - (id)natalies;
 - (long long)recordId;
 - (long long)session;
+- (id)sourceId;
 - (id)startDate;
 
 @end

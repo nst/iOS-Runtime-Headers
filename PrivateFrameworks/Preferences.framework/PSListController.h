@@ -2,19 +2,32 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSSpecifierDataSource>, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIActionSheet, UIAlertView, UIKeyboard, UIPopoverController, UITableView, UIView;
+@class <PSSpecifierDataSource>, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIActionSheet, UIAlertView, UIColor, UIKeyboard, UIPopoverController, UITableView, UIView;
 
-@interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PSSpecifierObserver, PSViewControllerOffsetProtocol> {
+@interface PSListController : PSViewController <UIAppearance, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PSSpecifierObserver, PSViewControllerOffsetProtocol> {
     struct CGPoint { 
         double x; 
         double y; 
     UIActionSheet *_actionSheet;
     UIAlertView *_alertView;
+    UIColor *_altTextColor;
+    UIColor *_backgroundColor;
     NSMutableArray *_bundleControllers;
+    UIColor *_buttonTextColor;
+    UIColor *_cellAccessoryColor;
+    UIColor *_cellAccessoryHighlightColor;
+    UIColor *_cellHighlightColor;
     NSMutableDictionary *_cells;
     UIView *_containerView;
     } _contentOffsetWithKeyboard;
     <PSSpecifierDataSource> *_dataSource;
+    UIColor *_editableInsertionPointColor;
+    UIColor *_editablePlaceholderTextColor;
+    UIColor *_editableSelectionBarColor;
+    UIColor *_editableSelectionHighlightColor;
+    UIColor *_editableTextColor;
+    UIColor *_footerHyperlinkColor;
+    UIColor *_foregroundColor;
     NSMutableArray *_groups;
     NSString *_highlightItemName;
     UIKeyboard *_keyboard;
@@ -23,11 +36,13 @@
     UIPopoverController *_popupStylePopoverController;
     NSMutableArray *_prequeuedReusablePSTableCells;
     NSIndexPath *_savedSelectedIndexPath;
+    UIColor *_separatorColor;
     NSString *_specifierID;
     NSString *_specifierIDPendingPush;
     NSArray *_specifiers;
     NSMutableDictionary *_specifiersByID;
     UITableView *_table;
+    UIColor *_textColor;
     float _verticalContentOffset;
     bool_bundlesLoaded;
     bool_cachesCells;
@@ -43,18 +58,38 @@
     bool_reusesCells;
     bool_showingSetupController;
     bool_swapAlertButtons;
+    bool_usesDarkTheme;
 }
 
+@property(retain) UIColor * altTextColor;
+@property(retain) UIColor * backgroundColor;
+@property(retain) UIColor * buttonTextColor;
+@property(retain) UIColor * cellAccessoryColor;
+@property(retain) UIColor * cellAccessoryHighlightColor;
+@property(retain) UIColor * cellHighlightColor;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property bool edgeToEdgeCells;
+@property(retain) UIColor * editableInsertionPointColor;
+@property(retain) UIColor * editablePlaceholderTextColor;
+@property(retain) UIColor * editableSelectionBarColor;
+@property(retain) UIColor * editableSelectionHighlightColor;
+@property(retain) UIColor * editableTextColor;
+@property bool extendedLayoutIncludesOpaqueBars;
+@property(retain) UIColor * footerHyperlinkColor;
 @property bool forceSynchronousIconLoadForCreatedCells;
+@property(retain) UIColor * foregroundColor;
 @property(readonly) unsigned long long hash;
 @property(readonly) long long observerType;
 @property(retain) NSDictionary * pendingURLResourceDictionary;
+@property(retain) UIColor * separatorColor;
 @property(copy) NSString * specifierIDPendingPush;
 @property(readonly) Class superclass;
+@property(retain) UIColor * textColor;
+@property bool usesDarkTheme;
 
++ (id)appearance;
++ (id)appearanceWhenContainedIn:(Class)arg1;
 + (bool)displaysButtonBar;
 
 - (void)_addIdentifierForSpecifier:(id)arg1;
@@ -89,10 +124,16 @@
 - (void)addSpecifiersFromArray:(id)arg1 animated:(bool)arg2;
 - (void)addSpecifiersFromArray:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (id)altTextColor;
+- (id)backgroundColor;
 - (void)beginUpdates;
 - (id)bundle;
+- (id)buttonTextColor;
 - (id)cachedCellForSpecifier:(id)arg1;
 - (id)cachedCellForSpecifierID:(id)arg1;
+- (id)cellAccessoryColor;
+- (id)cellAccessoryHighlightColor;
+- (id)cellHighlightColor;
 - (void)clearCache;
 - (void)confirmationViewAcceptedForSpecifier:(id)arg1;
 - (void)confirmationViewCancelledForSpecifier:(id)arg1;
@@ -111,9 +152,16 @@
 - (void)dismissPopover;
 - (void)dismissPopoverAnimated:(bool)arg1;
 - (bool)edgeToEdgeCells;
+- (id)editableInsertionPointColor;
+- (id)editablePlaceholderTextColor;
+- (id)editableSelectionBarColor;
+- (id)editableSelectionHighlightColor;
+- (id)editableTextColor;
 - (void)endUpdates;
 - (id)findFirstVisibleResponder;
+- (id)footerHyperlinkColor;
 - (bool)forceSynchronousIconLoadForCreatedCells;
+- (id)foregroundColor;
 - (void)formSheetViewWillDisappear;
 - (bool)getGroup:(long long*)arg1 row:(long long*)arg2 ofSpecifier:(id)arg3;
 - (bool)getGroup:(long long*)arg1 row:(long long*)arg2 ofSpecifierAtIndex:(long long)arg3;
@@ -193,18 +241,35 @@
 - (void)returnPressedAtEnd;
 - (long long)rowsForGroup:(long long)arg1;
 - (void)selectRowForSpecifier:(id)arg1;
+- (id)separatorColor;
+- (void)setAltTextColor:(id)arg1;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setButtonTextColor:(id)arg1;
 - (void)setCachesCells:(bool)arg1;
+- (void)setCellAccessoryColor:(id)arg1;
+- (void)setCellAccessoryHighlightColor:(id)arg1;
+- (void)setCellHighlightColor:(id)arg1;
 - (void)setDesiredVerticalContentOffset:(float)arg1;
 - (void)setDesiredVerticalContentOffsetItemNamed:(id)arg1;
 - (void)setEdgeToEdgeCells:(bool)arg1;
+- (void)setEditableInsertionPointColor:(id)arg1;
+- (void)setEditablePlaceholderTextColor:(id)arg1;
+- (void)setEditableSelectionBarColor:(id)arg1;
+- (void)setEditableSelectionHighlightColor:(id)arg1;
+- (void)setEditableTextColor:(id)arg1;
+- (void)setFooterHyperlinkColor:(id)arg1;
 - (void)setForceSynchronousIconLoadForCreatedCells:(bool)arg1;
+- (void)setForegroundColor:(id)arg1;
 - (void)setPendingURLResourceDictionary:(id)arg1;
 - (void)setReusesCells:(bool)arg1;
+- (void)setSeparatorColor:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)setSpecifierID:(id)arg1;
 - (void)setSpecifierIDPendingPush:(id)arg1;
 - (void)setSpecifiers:(id)arg1;
+- (void)setTextColor:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setUsesDarkTheme:(bool)arg1;
 - (bool)shouldDeferPushForSpecifierID:(id)arg1;
 - (bool)shouldReloadSpecifiersOnResume;
 - (bool)shouldSelectResponderOnAppearance;
@@ -241,9 +306,11 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (Class)tableViewClass;
+- (id)textColor;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateSpecifiers:(id)arg1 withSpecifiers:(id)arg2;
 - (void)updateSpecifiersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withSpecifiers:(id)arg2;
+- (bool)usesDarkTheme;
 - (float)verticalContentOffset;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;

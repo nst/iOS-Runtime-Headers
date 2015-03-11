@@ -14,6 +14,7 @@
 @property(retain) SAWeatherUnits * units;
 @property(copy) NSString * view;
 @property(retain) SAWeatherLocation * weatherLocation;
+@property(copy) NSString * weatherRequest;
 
 + (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
@@ -31,9 +32,11 @@
 - (void)setUnits:(id)arg1;
 - (void)setView:(id)arg1;
 - (void)setWeatherLocation:(id)arg1;
+- (void)setWeatherRequest:(id)arg1;
 - (id)units;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)view;
 - (id)weatherLocation;
+- (id)weatherRequest;
 
 @end

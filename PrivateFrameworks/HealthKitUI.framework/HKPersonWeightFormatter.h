@@ -11,6 +11,7 @@
 + (id)sharedFormatter;
 
 - (void).cxx_destruct;
+- (void)_commonInit;
 - (void)_localeChanged:(id)arg1;
 - (void)_updateRoundingIncrement;
 - (void)dealloc;

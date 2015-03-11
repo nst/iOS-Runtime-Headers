@@ -2,54 +2,47 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class HKSampleType, HKUnit, NSString;
+@class HKObjectType, NSDictionary, NSPredicate, NSString;
 
 @interface HKDataUnit : NSObject <NSCopying> {
-    HKSampleType *_dataType;
-    NSString *_displayName;
+    NSPredicate *_chartingPredicate;
+    HKObjectType *_dataType;
     long long _keyboardType;
+    NSString *_labelDisplayName;
     double _scalarValue;
-    NSString *_singularDisplayName;
-    HKUnit *_unit;
-    bool_isCharacteristic;
-    bool_listeningForLocaleChanges;
+    NSDictionary *_singularUnitNameOverrides;
+    NSDictionary *_unitNameOverrides;
 }
 
-@property(readonly) HKSampleType * dataType;
-@property(readonly) NSString * displayName;
+@property(readonly) NSPredicate * chartingPredicate;
+@property(readonly) HKObjectType * dataType;
 @property long long keyboardType;
+@property(readonly) NSString * labelDisplayName;
 @property(readonly) double scalarValue;
-@property(readonly) NSString * singularDisplayName;
-@property(readonly) HKUnit * unit;
 
 - (void).cxx_destruct;
-- (id)_dataTypeForIdentifier:(id)arg1 aggregationType:(id)arg2;
-- (id)_displayNameForUnit:(id)arg1 localizablePrefix:(id)arg2;
+- (void)_applyChartingProperties:(id)arg1;
+- (void)_applyUnitNameOverrides:(id)arg1;
+- (id)_dataTypeForIdentifier:(id)arg1;
 - (id)_initAsCopyOf:(id)arg1;
-- (id)_lengthUnitForCurrentLocaleWithLongLength:(bool)arg1;
-- (id)_massUnitForCurrentLocale;
-- (id)_temperatureUnitForCurrentLocale;
-- (id)_unitForCurrentLocale;
-- (id)_unitForString:(id)arg1;
 - (id)adjustedValueForClientValue:(id)arg1;
 - (id)adjustedValueForDaemonValue:(id)arg1;
+- (id)chartingPredicate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataType;
-- (void)dealloc;
 - (id)description;
-- (id)displayName;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initFromDictionary:(id)arg1;
 - (bool)isCharacteristic;
 - (bool)isEqual:(id)arg1;
 - (bool)isNikeFuel;
-- (bool)isSleep;
 - (long long)keyboardType;
-- (void)localeDidChange:(id)arg1;
+- (id)labelDisplayName;
+- (id)sampleType;
 - (double)scalarValue;
 - (void)setKeyboardType:(long long)arg1;
-- (id)singularDisplayName;
-- (id)unit;
+- (id)singularUnitDisplayNameOverrideForUnit:(id)arg1;
+- (id)unitDisplayNameOverrideForUnit:(id)arg1;
 
 @end

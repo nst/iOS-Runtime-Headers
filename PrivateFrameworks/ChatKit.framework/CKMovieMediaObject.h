@@ -27,7 +27,6 @@
 
 - (id)asset;
 - (struct CGSize { double x1; double x2; })bbSize;
-- (bool)canBeAttachmentContiguous;
 - (bool)canExport;
 - (bool)checkedVideoInfo;
 - (void)dealloc;

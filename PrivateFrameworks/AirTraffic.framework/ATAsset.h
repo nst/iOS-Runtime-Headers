@@ -10,6 +10,7 @@
 
 @interface ATAsset : NSObject <NSSecureCoding> {
     NSString *_assetType;
+    unsigned long long _bytesRemaining;
     unsigned long long _completedAssetParts;
     id _completionBlock;
     NSString *_dataclass;
@@ -26,6 +27,7 @@
     ATStoreInfo *_storeInfo;
     long long _storePID;
     NSString *_storePlist;
+    unsigned long long _totalBytes;
     NSDictionary *_variantOptions;
     bool_bypassStore;
     bool_installOnly;
@@ -39,6 +41,7 @@
 
 @property(retain) NSString * assetType;
 @property bool bypassStore;
+@property unsigned long long bytesRemaining;
 @property unsigned long long completedAssetParts;
 @property(copy) id completionBlock;
 @property(retain) NSString * dataclass;
@@ -62,6 +65,7 @@
 @property(retain) ATStoreInfo * storeInfo;
 @property long long storePID;
 @property(retain) NSString * storePlist;
+@property unsigned long long totalBytes;
 @property(retain) NSDictionary * variantOptions;
 
 + (id)assetWithSerializedAsset:(id)arg1;
@@ -75,6 +79,7 @@
 - (unsigned long long)assetParts;
 - (id)assetType;
 - (bool)bypassStore;
+- (unsigned long long)bytesRemaining;
 - (unsigned long long)completedAssetParts;
 - (id)completionBlock;
 - (id)dataclass;
@@ -105,6 +110,7 @@
 - (id)serializedAsset;
 - (void)setAssetType:(id)arg1;
 - (void)setBypassStore:(bool)arg1;
+- (void)setBytesRemaining:(unsigned long long)arg1;
 - (void)setCompletedAssetParts:(unsigned long long)arg1;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setDataclass:(id)arg1;
@@ -128,11 +134,13 @@
 - (void)setStoreInfo:(id)arg1;
 - (void)setStorePID:(long long)arg1;
 - (void)setStorePlist:(id)arg1;
+- (void)setTotalBytes:(unsigned long long)arg1;
 - (void)setVariantOptions:(id)arg1;
 - (id)shortDescription;
 - (id)storeInfo;
 - (long long)storePID;
 - (id)storePlist;
+- (unsigned long long)totalBytes;
 - (id)variantOptions;
 
 @end

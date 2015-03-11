@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSString, NSURL, NSUUID;
+@class NSString, NSURL, NSUUID, UIColor;
 
 @interface QLPreviewItemProxy : NSObject <NSSecureCoding, QLPreviewItem> {
     double _autoPlaybackPosition;
+    UIColor *_backgroundColorOverride;
     NSString *_contentType;
     long long _fileExtensionHandle;
     NSString *_fileExtensionToken;
@@ -19,6 +20,7 @@
 }
 
 @property double autoPlaybackPosition;
+@property(retain) UIColor * backgroundColorOverride;
 @property(retain) NSString * contentType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
@@ -39,6 +41,7 @@
 + (bool)supportsSecureCoding;
 
 - (double)autoPlaybackPosition;
+- (id)backgroundColorOverride;
 - (void)consumeFileExtension;
 - (id)contentType;
 - (void)dealloc;
@@ -56,6 +59,7 @@
 - (id)previewItemURL;
 - (id)previewItemURLForDisplay;
 - (void)setAutoPlaybackPosition:(double)arg1;
+- (void)setBackgroundColorOverride:(id)arg1;
 - (void)setContentType:(id)arg1;
 - (void)setIndex:(long long)arg1;
 - (void)setIsPromisedItem:(bool)arg1;

@@ -18,7 +18,9 @@
 
 - (void).cxx_destruct;
 - (id)SQLForEntityClass:(Class)arg1;
+- (id)_comparisonOperator;
 - (long long)comparisonType;
+- (id)description;
 - (id)lhObjectPropertyName;
 - (id)rhObjectPropertyName;
 

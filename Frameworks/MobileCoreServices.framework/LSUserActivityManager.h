@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID, NSXPCConnection;
+@class NSMapTable, NSObject<OS_dispatch_queue>, NSString, NSUUID, NSXPCConnection;
 
 @interface LSUserActivityManager : NSObject <LSUserActivityClientResponseProtocol> {
     NSUUID *_activeUserActivityUUID;
     NSXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_serverQ;
-    NSMutableDictionary *_userActivitiesByUUID;
+    NSMapTable *_userActivitiesByUUID;
     bool_activityContinuationIsEnabled;
     bool_connectionInitializationSucceeded;
     bool_needToSendInitialMessage;
@@ -24,7 +24,7 @@
 @property(readonly) NSObject<OS_dispatch_queue> * serverQ;
 @property(readonly) Class superclass;
 @property(readonly) bool supportsActivityContinuation;
-@property(retain) NSMutableDictionary * userActivitiesByUUID;
+@property(retain) NSMapTable * userActivitiesByUUID;
 
 + (id)defaultManager;
 + (bool)shouldSupportActivityContinuation;
@@ -45,6 +45,7 @@
 - (id)init;
 - (id)initWithConnection:(id)arg1;
 - (void)makeActive:(id)arg1;
+- (void)makeInactive:(id)arg1;
 - (void)markUserActivityAsDirty:(id)arg1 forceImmediate:(bool)arg2;
 - (void)removeUserActivity:(id)arg1;
 - (void)sendInitialMessage;

@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABCardGroupItem, NSArray;
+@class ABCardGroupItem, CNContactStyle, NSArray;
 
 @interface ABContactCell : UITableViewCell {
     ABCardGroupItem *_cardGroupItem;
+    CNContactStyle *_contactStyle;
     double _leftContentMargin;
     double _rightContentMargin;
     NSArray *_variableConstraints;
@@ -14,6 +15,7 @@
 }
 
 @property(retain) ABCardGroupItem * cardGroupItem;
+@property(retain) CNContactStyle * contactStyle;
 @property bool hasBeenDisplayed;
 @property double leftContentMargin;
 @property double rightContentMargin;
@@ -21,6 +23,7 @@
 
 - (id)cardGroupItem;
 - (id)constantConstraints;
+- (id)contactStyle;
 - (void)dealloc;
 - (bool)hasBeenDisplayed;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
@@ -31,6 +34,7 @@
 - (void)prepareForReuse;
 - (double)rightContentMargin;
 - (void)setCardGroupItem:(id)arg1;
+- (void)setContactStyle:(id)arg1;
 - (void)setHasBeenDisplayed:(bool)arg1;
 - (void)setLeftContentMargin:(double)arg1;
 - (void)setRightContentMargin:(double)arg1;

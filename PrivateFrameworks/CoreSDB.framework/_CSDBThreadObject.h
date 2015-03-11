@@ -7,6 +7,7 @@
 @interface _CSDBThreadObject : NSObject {
     NSString *_identifier;
     NSObject<OS_dispatch_queue> *_queue;
+    NSString *_queueContext;
     NSRunLoop *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
     NSThread *_thread;

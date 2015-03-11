@@ -11,15 +11,8 @@
 @interface VKMapTileList : NSObject {
     /* Warning: unhandled struct encoding: '{vector<VKMapTile *, std::__1::allocator<VKMapTile *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKMapTile **, std::__1::allocator<VKMapTile *> >="__first_"^@}}' */ struct vector<VKMapTile *, std::__1::allocator<VKMapTile *> > { 
         __end_ **__begin_; 
-    struct vector<VGLRect, std::__1::allocator<VGLRect> > { 
-        struct { /* ? */ } *__begin_; 
-        struct { /* ? */ } *__end_; 
-        struct __compressed_pair<VGLRect *, std::__1::allocator<VGLRect> > { 
-            struct { /* ? */ } *__first_; 
-        } __end_cap_; 
     } _list;
     float _maximumStyleZ;
-    } _rectList[34];
 }
 
 @property(readonly) float maximumStyleZ;
@@ -33,10 +26,7 @@
 - (void)consolidateList;
 - (id)init;
 - (float)maximumStyleZ;
-- (unsigned long long)numRectForLayer:(unsigned long long)arg1;
 - (unsigned long long)numTiles;
-- (const struct { float x1; float x2; float x3; float x4; }*)rectListForLayer:(unsigned long long)arg1;
-- (const struct vector<VGLRect, std::__1::allocator<VGLRect> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<VGLRect *, std::__1::allocator<VGLRect> > { struct { /* ? */ } *x_3_1_1; } x3; }*)rectListVectorForLayer:(unsigned long long)arg1;
 - (id*)tileList;
 
 @end

@@ -20,12 +20,12 @@
 + (double)defaultCentimeterValue;
 
 - (void).cxx_destruct;
-- (double)_centimetersFromFeet:(double)arg1 inches:(double)arg2;
+- (void)_commonInit;
 - (id)_formattedValueForCentimeters:(double)arg1;
 - (id)_formattedValueForFeet:(double)arg1;
 - (id)_formattedValueForInches:(double)arg1;
-- (void)_getFeet:(double*)arg1 inches:(double*)arg2 fromCentimeters:(double)arg3;
 - (void)_hidePicker;
+- (void)_localeDidChange:(id)arg1;
 - (void)_showPicker;
 - (void)beginEditing;
 - (id)centimeterValue;

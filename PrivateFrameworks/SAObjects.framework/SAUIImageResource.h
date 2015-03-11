@@ -11,6 +11,8 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned long long hash;
 @property(copy) NSData * imageData;
+@property double pixelHeight;
+@property double pixelWidth;
 @property double pointHeight;
 @property double pointWidth;
 @property(copy) NSURL * resourceUrl;
@@ -23,11 +25,15 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)imageData;
+- (double)pixelHeight;
+- (double)pixelWidth;
 - (double)pointHeight;
 - (double)pointWidth;
 - (id)resourceUrl;
 - (double)scaleFactor;
 - (void)setImageData:(id)arg1;
+- (void)setPixelHeight:(double)arg1;
+- (void)setPixelWidth:(double)arg1;
 - (void)setPointHeight:(double)arg1;
 - (void)setPointWidth:(double)arg1;
 - (void)setResourceUrl:(id)arg1;

@@ -2,22 +2,27 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface GEOResourceInfo : NSObject {
     NSString *_checksum;
+    NSArray *_equivalentResources;
     NSString *_name;
     long long _type;
 }
 
 @property(readonly) NSString * checksum;
+@property(copy) NSArray * equivalentResources;
 @property(readonly) NSString * name;
 @property(readonly) long long type;
 
 - (id)checksum;
 - (void)dealloc;
+- (id)description;
+- (id)equivalentResources;
 - (id)initWithName:(id)arg1 type:(long long)arg2 checksum:(id)arg3;
 - (id)name;
+- (void)setEquivalentResources:(id)arg1;
 - (long long)type;
 
 @end

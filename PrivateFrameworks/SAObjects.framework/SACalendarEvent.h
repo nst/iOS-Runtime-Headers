@@ -11,6 +11,7 @@
 @property bool allDay;
 @property(copy) NSArray * attendees;
 @property(copy) NSURL * calendarId;
+@property(copy) NSURL * calendarPunchoutURI;
 @property(copy) NSDate * endDate;
 @property(copy) NSNumber * includeRecurrences;
 @property(copy) NSString * location;
@@ -28,6 +29,7 @@
 - (bool)allDay;
 - (id)attendees;
 - (id)calendarId;
+- (id)calendarPunchoutURI;
 - (id)encodedClassName;
 - (id)endDate;
 - (id)groupIdentifier;
@@ -40,6 +42,7 @@
 - (void)setAllDay:(bool)arg1;
 - (void)setAttendees:(id)arg1;
 - (void)setCalendarId:(id)arg1;
+- (void)setCalendarPunchoutURI:(id)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setIncludeRecurrences:(id)arg1;
 - (void)setLocation:(id)arg1;

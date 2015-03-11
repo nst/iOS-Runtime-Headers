@@ -2,21 +2,44 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSObject<OS_dispatch_queue>, countData;
+
 @interface ML3QueryResultSet_BackingStore : NSObject {
-    struct vector<long long, std::__1::allocator<long long> > { 
-        long long *__begin_; 
-        long long *__end_; 
-        struct __compressed_pair<long long *, std::__1::allocator<long long> > { 
-            long long *__first_; 
+    struct vector<ML3QueryResult, std::__1::allocator<ML3QueryResult> > { 
+        struct { /* ? */ } *__begin_; 
+        struct { /* ? */ } *__end_; 
+        struct __compressed_pair<ML3QueryResult *, std::__1::allocator<ML3QueryResult> > { 
+            struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    struct vector<unsigned char, std::__1::allocator<unsigned char> > { 
-        char *__begin_; 
-        char *__end_; 
-        struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { 
-            char *__first_; 
-        } __end_cap_; 
-    } _persistentIDs;
-    } _sections;
+    struct { 
+        long long persistentID; 
+        unsigned char section; 
+        /* Warning: unhandled union encoding: '(ResultData="propertyData"^@"countData"{CountData="trackCount"I"subCollectionCount"I})"callback"@?}' */ union ResultData { 
+            countData **propertyData; 
+        } data; 
+        id callback; 
+    struct { 
+        long long persistentID; 
+        unsigned char section; 
+        /* Warning: unhandled union encoding: '(ResultData="propertyData"^@"countData"{CountData="trackCount"I"subCollectionCount"I})"callback"@?}' */ union ResultData { 
+            countData **propertyData; 
+        } data; 
+        id callback; 
+    NSObject<OS_dispatch_queue> *_backingStoreQueue;
+    long long _backwardCursorIdx;
+    } _backwardResult;
+    long long _forwardCursorIdx;
+    } _forwardResult;
+    } _results;
+    long long _sectionEndIdx;
+    long long _sectionStartIdx;
+    unsigned long long _size;
+    bool_cancelled;
+    bool_finishedLoading;
 }
 
 @property(readonly) unsigned long long count;
@@ -24,12 +47,15 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)backingStoreByRemovingPersistentIDs:(const struct unordered_set<long long, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<long long> > { struct __hash_table<long long, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<long long> > { struct unique_ptr<std::__1::__hash_node<long long, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<long long, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<long long, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<long long, void *> *> > > { struct __hash_node<long long, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<long long, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<long long, void *> *> > { unsigned long long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<long long, void *> *>, std::__1::allocator<std::__1::__hash_node<long long, void *> > > { struct __hash_node_base<std::__1::__hash_node<long long, void *> *> { struct __hash_node<long long, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::hash<long long> > { unsigned long long x_3_2_1; } x_1_1_3; struct __compressed_pair<float, std::__1::equal_to<long long> > { float x_4_2_1; } x_1_1_4; } x1; }*)arg1;
+- (void)cancel;
 - (bool)containsPersistentIDs:(const struct unordered_set<long long, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<long long> > { struct __hash_table<long long, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<long long> > { struct unique_ptr<std::__1::__hash_node<long long, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<long long, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<long long, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<long long, void *> *> > > { struct __hash_node<long long, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<long long, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<long long, void *> *> > { unsigned long long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<long long, void *> *>, std::__1::allocator<std::__1::__hash_node<long long, void *> > > { struct __hash_node_base<std::__1::__hash_node<long long, void *> *> { struct __hash_node<long long, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::hash<long long> > { unsigned long long x_3_2_1; } x_1_1_3; struct __compressed_pair<float, std::__1::equal_to<long long> > { float x_4_2_1; } x_1_1_4; } x1; }*)arg1;
 - (unsigned long long)count;
-- (void)enumeratePersistentIDsUsingBlock:(id)arg1;
+- (void)dealloc;
+- (void)enumerateResultsUsingBlock:(id)arg1;
 - (void)enumerateSectionsUsingBlock:(id)arg1;
-- (long long)persistentIDAtIndex:(unsigned long long)arg1;
-- (void)reverseEnumeratePersistentIDsUsingBlock:(id)arg1;
+- (id)initWithSize:(unsigned long long)arg1;
+- (id)resultAtIndex:(unsigned long long)arg1;
+- (void)reverseEnumerateResultsUsingBlock:(id)arg1;
 - (void)reverseEnumerateSectionsUsingBlock:(id)arg1;
 
 @end

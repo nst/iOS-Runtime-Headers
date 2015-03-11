@@ -20,6 +20,7 @@
 
 @property MPAVController * AVController;
 @property unsigned long long activeShuffleType;
+@property(readonly) bool allowsUserVisibleUpcomingItems;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property bool fullScreenPlaybackQueue;
@@ -50,6 +51,7 @@
 - (void)_fixNextStartTimesByRemovingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (unsigned long long)activeShuffleType;
 - (void)addReferenceToItem:(id)arg1;
+- (bool)allowsUserVisibleUpcomingItems;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
 - (void)assumeOwnershipOfItems:(id)arg1;
 - (void)beginSourceChange;
@@ -66,6 +68,7 @@
 - (void)dealloc;
 - (id)errorResolverForItem:(id)arg1;
 - (bool)fullScreenPlaybackQueue;
+- (void)getContainerType:(unsigned long long*)arg1 mediaLibraryContainerPersistentID:(long long*)arg2 storeContainerID:(id*)arg3 storePersonalizedContainerID:(id*)arg4;
 - (bool)hasItemForIndex:(unsigned long long)arg1;
 - (bool)hasValidItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)initialPlaybackQueueDepthForStartingIndex:(unsigned long long)arg1;

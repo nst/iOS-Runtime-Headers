@@ -16,6 +16,7 @@
 
 + (id)sharedManager;
 
+- (void)_notifyNano;
 - (unsigned long long)addCity:(id)arg1;
 - (bool)canAddCity;
 - (bool)checkIfCitiesModified;

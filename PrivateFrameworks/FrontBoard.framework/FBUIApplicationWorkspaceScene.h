@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class BKSProcessAssertion, NSMutableArray;
+@class BKSProcessAssertion, NSMutableArray, NSMutableSet;
 
 @interface FBUIApplicationWorkspaceScene : FBWorkspaceScene {
+    NSMutableSet *_allWatchdogs;
     BKSProcessAssertion *_deliverMessageProcessAssertion;
     unsigned long long _deliverMessageProcessAssertionCount;
     BKSProcessAssertion *_launchBoostahAssertion;
@@ -24,7 +25,6 @@
 - (void)_workspaceQueue_activateResponseReceived:(id)arg1;
 - (void)_workspaceQueue_cancelAllWatchdogTimers;
 - (void)_workspaceQueue_cancelWatchdogTimer:(id)arg1;
-- (id)_workspaceQueue_clientSettingsFromTransitionContext:(id)arg1;
 - (id)_workspaceQueue_createWatchdogForSceneAction:(unsigned long long)arg1 transitionContext:(id)arg2;
 - (void)_workspaceQueue_deactivateForSEO:(bool)arg1 withSettings:(id)arg2 transitionContext:(id)arg3 eventBlock:(id)arg4;
 - (void)_workspaceQueue_deactivateResponseReceived:(id)arg1;

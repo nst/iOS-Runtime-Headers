@@ -4,7 +4,7 @@
 
 @class ATDevicePairedSyncManager, ATDeviceSettings, ATDeviceSyncManager, ATEnvironmentMonitor, ATIDSService, ATLegacyDeviceSyncManager, ATLockdownListener, ATNetServiceListener, ATServiceProxyListener, ATStatusObserverListener, ATWorkspaceObserver, ATXPCListener, MSVXPCTransaction, NSMapTable, NSObject<OS_dispatch_queue>, NSString;
 
-@interface ATDeviceService : ATConcreteService <ATMessageLinkListenerDelegate, ATEnvironmentMonitorObserver, ATWorkspaceObserverDelegate, ATXPCInterfaceProtocol, ATSyncClientDelegate> {
+@interface ATDeviceService : ATConcreteService <ATMessageLinkListenerDelegate, ATEnvironmentMonitorObserver, ATWorkspaceObserverDelegate, ATXPCInterfaceProtocol, ATSyncClientDelegate, ATIDSServiceListener> {
     int _atcRunningToken;
     ATDeviceSyncManager *_deviceSyncManager;
     ATEnvironmentMonitor *_environmentMonitor;
@@ -53,6 +53,7 @@
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (void)environmentMonitorDidChangePower:(id)arg1;
 - (void)getSyncStateWithCompletion:(id)arg1;
+- (void)idsServiceDevicesDidChange:(id)arg1;
 - (id)init;
 - (void)keepATCAlive:(bool)arg1 withCompletion:(id)arg2;
 - (void)listener:(id)arg1 didReceiveMessageLinkRequest:(id)arg2;

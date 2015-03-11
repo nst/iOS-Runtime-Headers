@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPAVRoute, MPAVRoutingController, MPUReportingController, MPUserNotification, NSDate, NSObject<OS_dispatch_source>, NSString, RUPlaybackTimeoutInfoController, RURadioAVPlayer, RadioStation;
+@class MPAVRoute, MPAVRoutingController, MPUReportingPlaybackObserver, MPUserNotification, NSDate, NSObject<OS_dispatch_source>, NSString, RUPlaybackTimeoutInfoController, RURadioAVPlayer, RadioStation;
 
 @interface RURadioPlaybackCoordinator : NSObject <MPAVRoutingControllerDelegate> {
     RadioStation *_currentStation;
@@ -18,7 +18,7 @@
     NSObject<OS_dispatch_source> *_playbackTimeoutNotificationExpirationTimerSource;
     RURadioAVPlayer *_player;
     NSObject<OS_dispatch_source> *_presentPlaybackTimeoutTimerSource;
-    MPUReportingController *_reportingController;
+    MPUReportingPlaybackObserver *_reportingPlaybackObserver;
     MPAVRoutingController *_routingController;
     bool_deviceIsDocked;
     bool_deviceIsLocked;
@@ -34,7 +34,7 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned long long hash;
 @property(readonly) RURadioAVPlayer * player;
-@property(retain) MPUReportingController * reportingController;
+@property(retain) MPUReportingPlaybackObserver * reportingPlaybackObserver;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -67,10 +67,10 @@
 - (id)init;
 - (id)initWithPlayer:(id)arg1;
 - (id)player;
-- (id)reportingController;
+- (id)reportingPlaybackObserver;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setCurrentStation:(id)arg1;
-- (void)setReportingController:(id)arg1;
+- (void)setReportingPlaybackObserver:(id)arg1;
 - (void)setupPlaybackQueueWithPlaybackContext:(id)arg1 completionHandler:(id)arg2;
 
 @end

@@ -48,6 +48,8 @@
 - (id)port;
 - (id)query;
 - (id)queryItems;
+- (id)rms_componentsByAddingQueryParameters:(id)arg1;
+- (id)rms_componentsByAddingQueryParameters:(id)arg1;
 - (id)scheme;
 - (void)setFragment:(id)arg1;
 - (void)setHost:(id)arg1;

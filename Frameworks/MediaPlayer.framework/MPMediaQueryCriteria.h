@@ -5,11 +5,11 @@
 @class NSArray, NSDictionary, NSMutableSet, NSSet;
 
 @interface MPMediaQueryCriteria : NSObject <NSCopying> {
-    NSSet *_collectionPropertiesToFetch;
+    NSArray *_collectionPropertiesToFetchArray;
     unsigned long long _entityOrder;
     NSMutableSet *_filterPredicates;
     long long _groupingType;
-    NSSet *_itemPropertiesToFetch;
+    NSArray *_itemPropertiesToFetchArray;
     NSDictionary *_orderingDirectionMappings;
     NSArray *_orderingProperties;
     bool_ignoreSystemFilterPredicates;
@@ -17,12 +17,14 @@
 }
 
 @property(copy) NSSet * collectionPropertiesToFetch;
+@property(readonly) NSArray * collectionPropertiesToFetchArray;
 @property unsigned long long entityOrder;
 @property(readonly) bool excludesEntitiesWithBlankNames;
 @property(copy) NSSet * filterPredicates;
 @property long long groupingType;
 @property bool ignoreSystemFilterPredicates;
 @property(copy) NSSet * itemPropertiesToFetch;
+@property(readonly) NSArray * itemPropertiesToFetchArray;
 @property(copy) NSDictionary * orderingDirectionMappings;
 @property(copy) NSArray * orderingProperties;
 @property(readonly) bool specifiesPlaylistItems;
@@ -32,11 +34,12 @@
 - (id)ML3ItemsQueryInLibrary:(id)arg1 orderingTerms:(id)arg2 nameBlankProperty:(id)arg3;
 - (id)ML3ItemsQueryInLibrary:(id)arg1;
 - (id)ML3OrderingTermForMPOrderingProperty:(id)arg1;
-- (id)ML3OrderingTermsForGroupingType:(long long)arg1;
+- (id)ML3OrderingTermsForGroupingType:(long long)arg1 isFastCountable:(bool*)arg2;
 - (id)ML3OrderingTermsForMPOrderingProperties:(id)arg1;
 - (void)addFilterPredicate:(id)arg1;
 - (void)addFilterPredicates:(id)arg1;
 - (id)collectionPropertiesToFetch;
+- (id)collectionPropertiesToFetchArray;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned long long)entityOrder;
@@ -48,6 +51,7 @@
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (id)itemPropertiesToFetch;
+- (id)itemPropertiesToFetchArray;
 - (id)orderingDirectionMappings;
 - (id)orderingProperties;
 - (id)predicateForProperty:(id)arg1;

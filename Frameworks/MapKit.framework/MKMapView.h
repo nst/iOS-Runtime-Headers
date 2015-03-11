@@ -128,6 +128,7 @@
     UITextView *_vectorKitDebugView;
     UIPanGestureRecognizer *_vectorKitStyleDebugGestureRecognizer;
     double _verticalYawOverride;
+    bool_automaticallySnapsToNorth;
     bool_compassEnabled;
     bool_compassVisible;
     bool_hasSetLayoutMargins;
@@ -185,11 +186,13 @@
 - (void)_addSetRegionBlockWhenSized:(id)arg1;
 - (void)_addVectorOverlay:(id)arg1;
 - (void)_addViewsForAnnotations:(id)arg1;
+- (id)_additionalManifestConfiguration;
 - (bool)_allowsPopoverWhenNotInWindow;
 - (void)_annotationViewDragStateChanged:(id)arg1;
 - (id)_annotationViews;
 - (bool)_annotationViewsAreAddedImmediately;
 - (int)_applicationState;
+- (bool)_automaticallySnapsToNorth;
 - (double)_boundedZoomLevel:(double)arg1 coordinate:(struct { double x1; double x2; })arg2;
 - (double)_boundedZoomLevel:(double)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_calloutContentRect;
@@ -231,12 +234,15 @@
 - (void)_didEndUserInteraction;
 - (void)_didEndZoom;
 - (void)_displayWorld;
+- (id)_doubleTapGestureRecognizer;
 - (void)_dropDraggingAnnotationView:(bool)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsets;
+- (void)_endZoomForExternalGesture;
 - (void)_enter3DMode;
 - (void)_exit3DMode;
 - (id)_findLayoutGuideVC;
 - (void)_fixUserLocationFromPresentationValue;
+- (void)_forceFrame;
 - (double)_goToCenterCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(double)arg2 animated:(bool)arg3;
 - (void)_goToMapRegion:(id)arg1 duration:(double)arg2 animated:(bool)arg3 completionHandler:(id)arg4;
 - (void)_goToMapRegion:(id)arg1 duration:(double)arg2 animated:(bool)arg3;
@@ -302,8 +308,10 @@
 - (void)_selectUserLocationTypeWithDeltaZoomLevel:(double)arg1;
 - (id)_selectedLabelMarker;
 - (id)_selectingTapGestureRecognizer;
+- (void)_setAdditionalManifestConfiguration:(id)arg1;
 - (void)_setAllowsPopoverWhenNotInWindow:(bool)arg1;
 - (void)_setApplicationState:(int)arg1;
+- (void)_setAutomaticallySnapsToNorth:(bool)arg1;
 - (void)_setCamera:(id)arg1 animated:(bool)arg2;
 - (void)_setCamera:(id)arg1 duration:(double)arg2 timing:(id)arg3;
 - (void)_setCamera:(id)arg1 duration:(double)arg2 timingCurve:(long long)arg3;
@@ -359,6 +367,7 @@
 - (void)_startFlyoverTourAnimation:(unsigned long long)arg1 completion:(id)arg2;
 - (void)_startPanningAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_startTrackingHeading;
+- (void)_startZoomForExternalGesture;
 - (void)_stopFlyoverAnimation;
 - (void)_stopPanningAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_stopTrackingHeading;
@@ -556,6 +565,7 @@
 - (void)mapLayerDidChangeVisibleRegion:(id)arg1;
 - (void)mapLayerDidDraw:(id)arg1;
 - (void)mapLayerDidFailLoadingTiles:(id)arg1 withError:(id)arg2;
+- (void)mapLayerDidFinishInitialTrackingAnimation:(id)arg1;
 - (void)mapLayerDidFinishLoadingTiles:(id)arg1;
 - (void)mapLayerDidStartLoadingTiles:(id)arg1;
 - (void)mapLayerWillStartFlyoverTour:(id)arg1;

@@ -188,6 +188,7 @@
 
 - (int (*)())methodForSelector:(SEL)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (void)APDHandleWillMoveToWindow:(id)arg1 takeSelector:(SEL)arg2;
 - (id)CAMLType;
 - (id)CAMLTypeForKey:(id)arg1;
 - (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
@@ -548,6 +549,7 @@
 - (void)_accessibilitySetIsScannerGroup:(bool)arg1;
 - (void)_accessibilitySetIsSpeakThisElement:(bool)arg1;
 - (void)_accessibilitySetIsTourGuideRunning:(bool)arg1;
+- (void)_accessibilitySetOpaqueElementScrollsContentIntoView:(bool)arg1;
 - (void)_accessibilitySetOverridesInvisibility:(bool)arg1;
 - (void)_accessibilitySetRetainedValue:(id)arg1 forKey:(id)arg2;
 - (void)_accessibilitySetScannerActivateBehavior:(int)arg1;
@@ -807,6 +809,7 @@
 - (id)accessibilitySecondaryLabel;
 - (void)accessibilitySetIdentification:(id)arg1;
 - (void)accessibilitySetIdentification:(id)arg1;
+- (void)accessibilitySetUserDefinedOpaqueElementScrollsContentIntoView:(id)arg1;
 - (void)accessibilitySetValue:(id)arg1 forAttribute:(int)arg2;
 - (bool)accessibilityShouldEnumerateContainerElementsArrayDirectly;
 - (id)accessibilitySpeechHint;
@@ -817,6 +820,7 @@
 - (id)accessibilityURL;
 - (id)accessibilityUserDefinedIsMainWindow;
 - (id)accessibilityUserDefinedNotFirstElement;
+- (id)accessibilityUserDefinedOpaqueElementScrollsContentIntoView;
 - (id)accessibilityUserDefinedServesAsFirstElement;
 - (id)accessibilityUserDefinedSize;
 - (id)accessibilityUserDefinedWindowVisible;
@@ -944,6 +948,7 @@
 - (id)mutableOrderedSetValueForKeyPath:(id)arg1;
 - (id)mutableSetValueForKey:(id)arg1;
 - (id)mutableSetValueForKeyPath:(id)arg1;
+- (void)npkFakeArcRetain;
 - (void*)observationInfo;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (bool)okToNotifyFromThisThread;

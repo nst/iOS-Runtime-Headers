@@ -11,7 +11,6 @@
         double bottom; 
         double right; 
     NSDictionary *_actionTextAttributes;
-    UIColor *_backgroundColor;
     CNContact *_contact;
     } _contentMargins;
     UIView *_customHeaderView;

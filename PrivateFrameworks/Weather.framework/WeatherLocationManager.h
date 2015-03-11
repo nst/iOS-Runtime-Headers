@@ -49,6 +49,8 @@
 - (void)_setUpLocationTimerWithInterval:(float)arg1;
 - (void)_updateLocation:(id)arg1;
 - (bool)activelyTrackingLocation;
+- (void)adjustDefaultSelectionForWeatherLocationUpdate:(bool)arg1;
+- (void)askForLocationManagerAuthorization;
 - (int)authorizationStatus;
 - (void)clearLocalWeatherUpdateState;
 - (void)dealloc;
@@ -59,13 +61,14 @@
 - (float)lastLocationAccuracy;
 - (struct { double x1; double x2; })lastLocationCoord;
 - (id)lastLocationTimeStamp;
-- (bool)loadAndPrepareLocationTrackingState;
+- (bool)loadAndPrepareLocationTrackingState:(bool)arg1;
 - (bool)localWeatherAuthorized;
 - (id)location;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)locationManager;
 - (bool)locationTrackingIsReady;
+- (void)rescheduleTimerWithFastInterval:(bool)arg1;
 - (void)setActivelyTrackingLocation:(bool)arg1;
 - (void)setAuthorizationStatus:(int)arg1;
 - (void)setDelegate:(id)arg1;
@@ -75,7 +78,7 @@
 - (void)setLocationManager:(id)arg1;
 - (void)setLocationTrackingActive:(bool)arg1;
 - (void)setLocationTrackingIsReady:(bool)arg1;
-- (void)setLocationTrackingReady:(bool)arg1 activelyTracking:(bool)arg2;
+- (void)setLocationTrackingReady:(bool)arg1 activelyTracking:(bool)arg2 watchKitExtension:(bool)arg3;
 - (void)updateLocation:(id)arg1;
 
 @end

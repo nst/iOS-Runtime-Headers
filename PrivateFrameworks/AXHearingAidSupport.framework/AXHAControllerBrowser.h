@@ -50,8 +50,9 @@
 - (id)remoteControllerForHostname:(id)arg1;
 - (id)remoteControllers;
 - (void)resolveMasterWithCompletion:(id)arg1;
+- (void)sendObject:(id)arg1 toAllControllersExcept:(id)arg2 withCompletion:(id)arg3;
 - (void)sendObject:(id)arg1 toController:(id)arg2 withCompletion:(id)arg3;
-- (void)sendObject:(id)arg1 toController:(id)arg2 withSendCompletion:(id)arg3 andAckCompletion:(id)arg4;
+- (void)sendObject:(id)arg1 toController:(id)arg2 withSendCompletion:(id)arg3;
 - (void)setBrowser:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRemoteControllers:(id)arg1;

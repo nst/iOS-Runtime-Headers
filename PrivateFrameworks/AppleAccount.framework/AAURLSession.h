@@ -7,6 +7,7 @@
 @interface AAURLSession : NSObject <NSURLSessionDelegate, NSURLSessionDataDelegate> {
     NSMutableDictionary *_pendingCompletionsByTask;
     NSMutableDictionary *_receivedDataByTask;
+    NSMutableDictionary *_retryCountByRequest;
     NSObject<OS_dispatch_queue> *_sessionQueue;
     NSURLSession *_urlSession;
 }
@@ -23,6 +24,8 @@
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (id)_URLSession;
+- (bool)_isRecoverableError:(id)arg1;
+- (bool)_unsafe_retryTaskIfPossible:(id)arg1;
 - (void)beginDataTaskWithRequest:(id)arg1 completionHandler:(id)arg2;
 - (void)beginDataTaskWithURL:(id)arg1 completionHandler:(id)arg2;
 - (id)init;

@@ -7,16 +7,15 @@
 @interface MPNowPlayingObserver : NSObject <MPStoreDownloadManagerObserver> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     MPStoreDownload *_activeDownload;
+    NSData *_currentArtworkData;
     UIImage *_currentArtworkImage;
-    NSData *_currentArtworkImageData;
     MPImageCache *_imageCache;
     NSMutableDictionary *_mediaItemCoalescedUpdateDateAccessedTimers;
     MPAVController *_player;
-    NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_statusBarQueue;
     bool_enabled;
     bool_hasSeenAnyItem;
-    bool_needsNowPlayingInfoUpdate;
+    bool_scheduledNowPlayingInfoUpdate;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -29,8 +28,6 @@
 
 - (void).cxx_destruct;
 - (long long)_MPNowPlayingDownloadStateForDownload:(id)arg1;
-- (long long)_MPNowPlayingRepeatModeForMPRepeatType:(unsigned long long)arg1;
-- (long long)_MPNowPlayingShuffleModeForMPShuffleType:(unsigned long long)arg1;
 - (id)_activeDownloadForItemWithStoreID:(long long)arg1;
 - (void)_avItemArtworkDidChangeNotification:(id)arg1;
 - (void)_avItemDurationDidChangeNotification:(id)arg1;

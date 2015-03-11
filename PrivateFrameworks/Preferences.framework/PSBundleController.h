@@ -8,6 +8,7 @@
     PSListController *_parent;
 }
 
+- (id)initWithParentListController:(id)arg1 properties:(id)arg2;
 - (id)initWithParentListController:(id)arg1;
 - (void)load;
 - (id)specifiersWithSpecifier:(id)arg1;

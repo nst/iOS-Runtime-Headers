@@ -14,6 +14,7 @@
     float _peakPower;
     bool_hasActiveRequest;
     bool_isCapturingSpeech;
+    bool_isWaitingForAudioFile;
 }
 
 @property(readonly) bool currentlyUsingLocalDication;
@@ -27,7 +28,7 @@
 - (void)_availabilityChanged:(id)arg1;
 - (void)_cancelRequestTimeout;
 - (void)_checkAndSetIsCapturingSpeech:(bool)arg1;
-- (void)_clearConnections;
+- (void)_clearConnection;
 - (id)_connection;
 - (void)_connectionInterrupted;
 - (id)_dictationService;
@@ -53,7 +54,7 @@
 - (void)_willCancelDictation;
 - (void)_willCompleteDictation;
 - (void)_willFailDictationWithError:(id)arg1;
-- (void)_willStartDictation;
+- (void)_willStartDictationWithOptions:(id)arg1;
 - (unsigned int)audioSessionID;
 - (float)averagePower;
 - (void)beginAvailabilityMonitoring;

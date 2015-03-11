@@ -6,27 +6,28 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, TCPBufferPool;
-
 @interface LoopbackIDSTunnel : NSObject <VideoConferenceRealTimeChannel> {
-    TCPBufferPool *_bufferPool;
     id _dataHandler;
-    NSObject<OS_dispatch_queue> *_networkQueue;
-    NSObject<OS_dispatch_source> *_readSource;
+    struct OpaqueFigThread { } *_idsReceiveTID;
+    int _packetSendFailureCount;
     int _socket;
     id _terminationHandler;
+    bool_stopIDSReceiveThread;
 }
 
 @property(copy) id receiveHandler;
+@property(readonly) bool stopIDSReceiveThread;
 @property(copy) id terminationHandler;
 
+- (void)callTerminationHandlerWithError:(id)arg1;
 - (void)cleanup;
 - (void)dealloc;
 - (id)initWithSocket:(int)arg1 error:(id*)arg2;
-- (void)processSocketRead;
+- (bool)processSocketRead;
 - (id)receiveHandler;
 - (void)setReceiveHandler:(id)arg1;
 - (void)setTerminationHandler:(id)arg1;
+- (bool)stopIDSReceiveThread;
 - (id)terminationHandler;
 - (void)vcArg:(id)arg1 sendRealTimeData:(id)arg2 toParticipantID:(id)arg3;
 

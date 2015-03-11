@@ -45,6 +45,7 @@
 - (bool)migrateSectionInfo:(id)arg1 oldSectionInfo:(id)arg2;
 - (void)modifyBulletin:(id)arg1;
 - (void)noteSectionInfoDidChange:(id)arg1;
+- (void)primaryAttachmentDataForRecordID:(id)arg1 completion:(id)arg2;
 - (void)reloadDefaultSectionInfo:(id)arg1;
 - (void)reloadIdentityWithCompletion:(id)arg1;
 - (void)reloadSectionParameters:(id)arg1;

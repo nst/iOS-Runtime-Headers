@@ -143,6 +143,7 @@
 - (bool)installProvisioningProfileData:(id)arg1 managingProfileIdentifier:(id)arg2 outError:(id*)arg3;
 - (id)installedConfigurationProfileInfoWithOutMDMProfileInfo:(id*)arg1;
 - (id)installedMDMProfileIdentifier;
+- (id)installedProfileDataWithIdentifier:(id)arg1;
 - (id)installedProfileIdentifiers;
 - (id)installedProfileIdentifiersWithFilterFlags:(int)arg1;
 - (id)installedProfileWithIdentifier:(id)arg1;
@@ -159,6 +160,7 @@
 - (bool)isAppRatingLimitInEffect;
 - (bool)isAppRemovalAllowed;
 - (bool)isAssistantUserGeneratedContentAllowed;
+- (bool)isAutoCorrectionAllowed;
 - (bool)isAutomaticAppUpdatesAllowed;
 - (bool)isAutomaticAppUpdatesModificationAllowed;
 - (bool)isBoolSettingLockedDownByRestrictions:(id)arg1;
@@ -193,8 +195,10 @@
 - (bool)isPasscodeRequiredToAccessWhitelistedApps;
 - (bool)isPasscodeSet;
 - (bool)isPodcastsAllowed;
+- (bool)isPredictiveKeyboardAllowed;
 - (void)isProfileInstalledWithIdentifier:(id)arg1 completion:(id)arg2;
 - (bool)isSettingLockedDownByRestrictions:(id)arg1;
+- (bool)isSpellCheckAllowed;
 - (bool)isSpotlightInternetResultsAllowed;
 - (bool)isSupervised;
 - (bool)isTeslaCloudConfigurationAvailable;
@@ -278,6 +282,7 @@
 - (void)retrieveAndStoreCloudConfigurationDetailsCompletionBlock:(id)arg1;
 - (void)retrieveCloudConfigurationDetailsCompletionBlock:(id)arg1;
 - (void)retrieveCloudConfigurationFromURL:(id)arg1 username:(id)arg2 password:(id)arg3 anchorCertificates:(id)arg4 completionBlock:(id)arg5;
+- (void)setAutoCorrectionAllowed:(bool)arg1;
 - (void)setAutomaticAppUpdatesAllowed:(bool)arg1;
 - (void)setBoolValue:(bool)arg1 forSetting:(id)arg2 passcode:(id)arg3;
 - (void)setBoolValue:(bool)arg1 forSetting:(id)arg2;
@@ -292,6 +297,8 @@
 - (void)setParametersForSettingsByType:(id)arg1;
 - (void)setParentalControlsWhitelistedAppBundleIDs:(id)arg1;
 - (void)setPasscodeWasSetInBackup:(bool)arg1;
+- (void)setPredictiveKeyboardAllowed:(bool)arg1;
+- (void)setSpellCheckAllowed:(bool)arg1;
 - (void)setUserBookmarks:(id)arg1;
 - (void)setUserInfo:(id)arg1 forClientUUID:(id)arg2;
 - (void)setValue:(id)arg1 forSetting:(id)arg2 passcode:(id)arg3;

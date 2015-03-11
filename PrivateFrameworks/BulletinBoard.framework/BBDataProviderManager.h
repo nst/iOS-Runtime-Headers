@@ -34,8 +34,10 @@
 - (void)loadAllDataProviders;
 - (id)localSectionIdentifierFromDismissalSectionIdentifer:(id)arg1;
 - (void)noteSettingsChanged:(id)arg1 forSectionID:(id)arg2;
+- (id)parentSectionDataProviderFactoryForSectionID:(id)arg1;
 - (void)performBlockOnDataProviders:(id)arg1;
 - (id)rebuildSectionInfo:(id)arg1 forSectionID:(id)arg2;
 - (void)reloadIdentityForSectionID:(id)arg1 withCompletion:(id)arg2;
+- (id)universalSectionIDForSectionID:(id)arg1;
 
 @end

@@ -102,6 +102,7 @@
 - (double)gapBetweenPages;
 - (void)goBack;
 - (void)goForward;
+- (long long)highlightAllOccurencesOfString:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isElementAccessibilityExposedToInterfaceBuilder;
@@ -118,6 +119,7 @@
 - (long long)paginationBreakingMode;
 - (long long)paginationMode;
 - (void)reload;
+- (void)removeAllHighlights;
 - (id)request;
 - (void)restoreStateFromHistoryItem:(id)arg1 forWebView:(id)arg2;
 - (void)saveStateToHistoryItem:(id)arg1 forWebView:(id)arg2;

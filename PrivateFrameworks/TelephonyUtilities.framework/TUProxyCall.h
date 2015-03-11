@@ -53,6 +53,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isHostedOnCurrentDevice;
 - (bool)isOutgoing;
+- (bool)isSendingAudio;
 - (bool)isUplinkMuted;
 - (bool)isVoicemail;
 - (void)joinConference;
@@ -68,6 +69,7 @@
 - (void)setConferenced:(bool)arg1;
 - (void)setDestinationID:(id)arg1;
 - (bool)setDownlinkMuted:(bool)arg1;
+- (void)setIsSendingAudio:(bool)arg1;
 - (void)setOutgoing:(bool)arg1;
 - (void)setService:(int)arg1;
 - (void)setStartTime:(double)arg1;

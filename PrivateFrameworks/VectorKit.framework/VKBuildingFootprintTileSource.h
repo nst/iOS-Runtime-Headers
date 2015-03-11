@@ -5,11 +5,12 @@
 @interface VKBuildingFootprintTileSource : VKVectorTileSource {
     long long _minimumZoomLevel;
     bool_makeFacades;
+    bool_prepareExtrusion;
 }
 
 @property bool makeFacades;
 
-- (id)initWithTileSet:(id)arg1 tileGroupIdentifier:(unsigned int)arg2 locale:(id)arg3;
+- (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3;
 - (bool)makeFacades;
 - (unsigned long long)mapLayerForZoomLevelRange;
 - (bool)maximumZoomLevelBoundsCamera;

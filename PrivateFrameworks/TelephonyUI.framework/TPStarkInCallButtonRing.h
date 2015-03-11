@@ -6,21 +6,25 @@
 
 @interface TPStarkInCallButtonRing : UIView {
     UIColor *_fillColor;
+    bool_dimmed;
     bool_highlighted;
     bool_selected;
     bool_toggledOn;
 }
 
+@property bool dimmed;
 @property(retain) UIColor * fillColor;
 @property bool highlighted;
 @property bool selected;
 @property bool toggledOn;
 
+- (bool)dimmed;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)fillColor;
 - (bool)highlighted;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)selected;
+- (void)setDimmed:(bool)arg1;
 - (void)setFillColor:(id)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setSelected:(bool)arg1;

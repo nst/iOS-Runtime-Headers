@@ -20,28 +20,14 @@ You can compare versions based on their tags, see the [tags page](https://github
 
 You can use the headers this way:
 
-    NSBundle *b = [NSBundle bundleWithPath:@"/System/Library/PrivateFrameworks/GAIA.framework"];
+    NSBundle *b = [NSBundle bundleWithPath:@"/System/Library/PrivateFrameworks/FTServices.framework"];
     BOOL success = [b load];
     
-    Class SKTelephonyController = NSClassFromString(@"SKTelephonyController");
-    id tc = [SKTelephonyController sharedInstance];
+    Class FTDeviceSupport = NSClassFromString(@"FTDeviceSupport");
+    id si = [FTDeviceSupport sharedInstance];
     
-    NSLog(@"-- myPhoneNumber: %@", [tc myPhoneNumber]);
-    NSLog(@"-- imei: %@", [tc imei]);
+    NSLog(@"-- %@", [si valueForKey:@"deviceColor"]);
     
-Note that many other unique identifiers can be retrieved:
-
-    Class AADeviceInfo = NSClassFromString(@"AADeviceInfo");
-    NSLog(@"-- serialNumber: %@", [AADeviceInfo serialNumber]);
-    NSLog(@"-- udid: %@", [AADeviceInfo udid]);
-    NSLog(@"-- appleIDClientIdentifier: %@", [AADeviceInfo appleIDClientIdentifier]);
-
-    id deviceInfo = [[[AADeviceInfo alloc] init] autorelease];
-    NSLog(@"-- wifiMacAddress: %@", [deviceInfo wifiMacAddress]);
-
-    Class OSDBattery = NSClassFromString(@"OSDBattery");
-    NSLog(@"-- battery serial number: %@", [OSDBattery _getBatterySerialNumber]);
-
 #### Timeline
 
 - Green == public

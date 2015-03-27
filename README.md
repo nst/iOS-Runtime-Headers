@@ -24,7 +24,7 @@ You can use the headers this way:
     BOOL success = [b load];
     
     Class FTDeviceSupport = NSClassFromString(@"FTDeviceSupport");
-    id si = [FTDeviceSupport sharedInstance];
+    id si = [FTDeviceSupport valueForKey:@"sharedInstance"];
     
     NSLog(@"-- %@", [si valueForKey:@"deviceColor"]);
     

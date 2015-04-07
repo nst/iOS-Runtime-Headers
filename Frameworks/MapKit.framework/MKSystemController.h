@@ -11,8 +11,8 @@
 - (BOOL)isHiDPI;
 - (BOOL)isInternalInstall;
 - (BOOL)isWifiEnabled;
-- (BOOL)openURL:(id)arg1 bundleIdentifier:(id)arg2;
 - (BOOL)openURL:(id)arg1;
+- (BOOL)openURL:(id)arg1 bundleIdentifier:(id)arg2;
 - (BOOL)overrideBlurStyle;
 - (BOOL)requiresRTT;
 - (float)screenScale;

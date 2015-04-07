@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface NNMKProtoFetchRequest : PBRequest <NSCopying> {
+    NSString *_conversationId;
+    unsigned int _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
         unsigned int manuallyTriggered : 1; 
-    NSString *_conversationId;
-    unsigned int _fullSyncVersion;
     } _has;
     BOOL _manuallyTriggered;
 }

@@ -10,14 +10,14 @@
         float left; 
         float bottom; 
         float right; 
+    } _artworkEdgeInsets;
+    UIImage *_artworkImage;
+    UIImageView *_artworkImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _artworkEdgeInsets;
-    UIImage *_artworkImage;
-    UIImageView *_artworkImageView;
     } _artworkOverlayEdgeInsets;
     UIImage *_artworkOverlayImage;
     UIImageView *_artworkOverlayImageView;
@@ -62,12 +62,12 @@
 - (id)delegate;
 - (void)flipFromPreviewProgressAnimated:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (void)flipToPreviewProgressAnimated:(BOOL)arg1 withCompletionHandler:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)layoutSubviews;
+- (id)previewSession;
 - (void)previewSession:(id)arg1 didChangeFromItem:(id)arg2 toItem:(id)arg3;
 - (void)previewSession:(id)arg1 didStopWithOptions:(int)arg2 withFinalItem:(id)arg3 didFinalItemPlayToCompletion:(BOOL)arg4;
-- (id)previewSession;
 - (void)setArtworkEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setArtworkImage:(id)arg1;
 - (void)setArtworkOverlayEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

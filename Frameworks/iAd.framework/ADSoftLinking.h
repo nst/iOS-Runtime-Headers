@@ -104,22 +104,6 @@
 
 + (id)sharedManager;
 
-- (int (*)())AudioFileGetProperty;
-- (int (*)())AudioFileOpenWithCallbacks;
-- (int (*)())CVPixelBufferCreateWithIOSurface;
-- (int (*)())CVPixelBufferRelease;
-- (int (*)())IOSurfaceCreate;
-- (int (*)())IOSurfaceGetAllocSize;
-- (int (*)())IOSurfaceGetBaseAddress;
-- (int (*)())IOSurfaceGetBytesPerRow;
-- (int (*)())IOSurfaceGetHeight;
-- (int (*)())IOSurfaceGetWidth;
-- (int (*)())IOSurfaceLock;
-- (int (*)())IOSurfaceUnlock;
-- (int (*)())VTImageRotationSessionCreate;
-- (int (*)())VTImageRotationSessionInvalidate;
-- (int (*)())VTImageRotationSessionRelease;
-- (int (*)())VTImageRotationSessionTransferImage;
 - (Class)ABNewPersonViewController;
 - (Class)ABPeoplePickerNavigationController;
 - (id)AVLayerVideoGravityResizeAspect;
@@ -132,8 +116,20 @@
 - (id)AVPlayerItemPlaybackStalledNotification;
 - (Class)AVPlayerLayer;
 - (Class)AVURLAsset;
+- (int (*)())AudioFileGetProperty;
+- (int (*)())AudioFileOpenWithCallbacks;
+- (int (*)())CVPixelBufferCreateWithIOSurface;
+- (int (*)())CVPixelBufferRelease;
 - (Class)EKEventEditViewController;
 - (Class)EKReminderViewController;
+- (int (*)())IOSurfaceCreate;
+- (int (*)())IOSurfaceGetAllocSize;
+- (int (*)())IOSurfaceGetBaseAddress;
+- (int (*)())IOSurfaceGetBytesPerRow;
+- (int (*)())IOSurfaceGetHeight;
+- (int (*)())IOSurfaceGetWidth;
+- (int (*)())IOSurfaceLock;
+- (int (*)())IOSurfaceUnlock;
 - (Class)MFMailComposeViewController;
 - (Class)MFMessageComposeViewController;
 - (Class)MPMoviePlayerController;
@@ -167,6 +163,10 @@
 - (Class)TLToneManager;
 - (id)UIMoviePlayerControllerDidEnterFullscreenNotification;
 - (id)UIMoviePlayerControllerDidExitFullscreenNotification;
+- (int (*)())VTImageRotationSessionCreate;
+- (int (*)())VTImageRotationSessionInvalidate;
+- (int (*)())VTImageRotationSessionRelease;
+- (int (*)())VTImageRotationSessionTransferImage;
 - (Class)WBUFormDataControllerWK1;
 - (Class)_classWithName:(id)arg1 inFrameworkAtPath:(id)arg2;
 - (void)_loadFrameworkIfNeeded:(id)arg1;

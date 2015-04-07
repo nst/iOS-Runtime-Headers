@@ -5,20 +5,6 @@
 @class TSDBezierPath, TSDImageAdjustments, TSDInfoGeometry, TSDLayoutGeometry, TSDMaskLayout, TSDPathSource<TSDSmartPathSource>;
 
 @interface TSDImageLayout : TSDMediaLayout <TSDShapeControlLayout> {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
     TSDLayoutGeometry *mBaseImageLayoutGeometry;
     TSDInfoGeometry *mBaseInfoGeometry;
     TSDImageAdjustments *mDynamicImageAdjustments;
@@ -27,7 +13,21 @@
     TSDLayoutGeometry *mImageGeometry;
     BOOL mInInstantAlphaMode;
     BOOL mIsUpdatingImageAdjustments;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } mLayoutToImageTransform;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } mLayoutToMaskTransform;
     int mMaskEditMode;
     BOOL mMaskIntersectsImage;

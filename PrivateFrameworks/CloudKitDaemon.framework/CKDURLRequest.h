@@ -8,15 +8,7 @@
 
 @class <CKDAccountInfoProvider>, <CKDResponseBodyParser>, CKDClientContext, CKDProtobufStreamWriter, CKDProtocolTranslator, NSArray, NSData, NSDate, NSDictionary, NSError, NSFileHandle, NSHTTPURLResponse, NSInputStream, NSMutableArray, NSMutableData, NSMutableDictionary, NSOperationQueue, NSString, NSURL, NSURLRequest, NSURLSessionConfiguration, NSURLSessionDataTask;
 
-@interface CKDURLRequest : NSObject <CKDURLSessionTaskDelegate, CKDProtobufMessageSigningDelegate, CKDFlowControllable> {
-    struct CC_SHA256state_st { 
-        unsigned int count[2]; 
-        unsigned int hash[8]; 
-        unsigned int wbuf[16]; 
-    struct CC_SHA256state_st { 
-        unsigned int count[2]; 
-        unsigned int hash[8]; 
-        unsigned int wbuf[16]; 
+@interface CKDURLRequest : NSObject <CKDFlowControllable, CKDProtobufMessageSigningDelegate, CKDURLSessionTaskDelegate> {
     <CKDAccountInfoProvider> *_accountInfoProvider;
     BOOL _allowAutomaticRedirects;
     BOOL _allowsCellularAccess;
@@ -27,7 +19,11 @@
     int _cachedPartitionType;
     int _cachedServerType;
     BOOL _cancelled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     CKDClientContext *_context;
     int _databaseScope;
     NSDate *_dateRequestWentOut;
@@ -45,7 +41,15 @@
     BOOL _haveCachedPartitionType;
     BOOL _haveCachedServerType;
     BOOL _haveParsedFakeResponseData;
+    struct CC_SHA256state_st { 
+        unsigned int count[2]; 
+        unsigned int hash[8]; 
+        unsigned int wbuf[16]; 
     } _mescalRxSignature;
+    struct CC_SHA256state_st { 
+        unsigned int count[2]; 
+        unsigned int hash[8]; 
+        unsigned int wbuf[16]; 
     } _mescalTxSignature;
     unsigned int _numDownloadedElements;
     NSMutableDictionary *_overriddenHeaders;
@@ -55,14 +59,22 @@
     NSFileHandle *_requestFileHandle;
     NSString *_requestLogFilePath;
     NSArray *_requestOperations;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _requestProgressBlock;
+
     NSDictionary *_requestProperties;
     NSString *_requestUUID;
     NSHTTPURLResponse *_response;
     <CKDResponseBodyParser> *_responseBodyParser;
     NSFileHandle *_responseFileHandle;
     NSString *_responseLogFilePath;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _responseProgressBlock;
+
     int _responseStatusCode;
     NSURLSessionConfiguration *_sessionConfiguration;
     NSString *_sourceApplicationBundleIdentifier;

@@ -4,7 +4,7 @@
 
 @class <RMSDiscoverySessionDelegate>, NSArray, NSMutableSet, NSString, Reachability;
 
-@interface RMSDiscoverySession : NSObject <RMSServiceProviderDelegate, RMSDiscoverySession> {
+@interface RMSDiscoverySession : NSObject <RMSDiscoverySession, RMSServiceProviderDelegate> {
     NSMutableSet *_availableServices;
     <RMSDiscoverySessionDelegate> *_delegate;
     int _discoveryTypes;

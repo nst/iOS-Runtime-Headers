@@ -4,7 +4,7 @@
 
 @class <SiriUISiriStatusViewAnimationDelegate>, <SiriUISiriStatusViewDelegate>, NSString, SiriUIMicButton, UIImageView, UILongPressGestureRecognizer, UIView, _UISiriWaveyView;
 
-@interface SiriUISiriStatusView : UIView <_UISiriWaveyViewDelegate, UIGestureRecognizerDelegate, SiriUISiriStatusViewProtocol> {
+@interface SiriUISiriStatusView : UIView <SiriUISiriStatusViewProtocol, UIGestureRecognizerDelegate, _UISiriWaveyViewDelegate> {
     <SiriUISiriStatusViewAnimationDelegate> *_animationDelegate;
     SiriUIMicButton *_button;
     <SiriUISiriStatusViewDelegate> *_delegate;

@@ -4,7 +4,11 @@
 
 @class NSMutableDictionary, NSNumber, NSString, NSURL;
 
-@interface BRQueryItem : NSObject <NSSecureCoding, NSCopying> {
+@interface BRQueryItem : NSObject <NSCopying, NSSecureCoding> {
+    NSMutableDictionary *_attrs;
+    NSString *_containerID;
+    unsigned short _diffs;
+    NSNumber *_fileObjectID;
     union { 
         struct { 
             unsigned int downloadStatus : 2; 
@@ -19,10 +23,6 @@
             unsigned int isAlias : 1; 
         } ; 
         unsigned short value; 
-    NSMutableDictionary *_attrs;
-    NSString *_containerID;
-    unsigned short _diffs;
-    NSNumber *_fileObjectID;
     } _flags;
     BOOL _isNetworkOffline;
     NSURL *_localRepresentationURL;

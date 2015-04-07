@@ -5,19 +5,19 @@
 @class CIFilter;
 
 @interface BLEdgeAwareMaskFilter : CIFilter {
-    struct { 
-        unsigned char blue; 
-        unsigned char green; 
-        unsigned char red; 
-        unsigned char alpha; 
-    struct { 
-        unsigned char blue; 
-        unsigned char green; 
-        unsigned char red; 
-        unsigned char alpha; 
     CIFilter *_ciColorCubeFilter;
     float *_cubeData;
+    struct { 
+        unsigned char blue; 
+        unsigned char green; 
+        unsigned char red; 
+        unsigned char alpha; 
     } _currentInputColor;
+    struct { 
+        unsigned char blue; 
+        unsigned char green; 
+        unsigned char red; 
+        unsigned char alpha; 
     } _inputColor;
 }
 

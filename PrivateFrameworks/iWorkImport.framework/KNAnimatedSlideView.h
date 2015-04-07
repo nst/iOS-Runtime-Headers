@@ -102,9 +102,9 @@
 - (void)movieHasFinishedPlayback:(id)arg1;
 - (id)movieRenderers;
 - (void)p_addMovieRenderer:(id)arg1;
+- (void)p_animateBuild:(id)arg1;
 - (void)p_animateBuild:(id)arg1 afterDelay:(double)arg2;
 - (void)p_animateBuild:(id)arg1 isMoviePlayback:(BOOL)arg2;
-- (void)p_animateBuild:(id)arg1;
 - (void)p_animateCurrentEventIgnoringDelays:(BOOL)arg1;
 - (void)p_animateTransition:(id)arg1;
 - (void)p_clearMovieRenderers;
@@ -124,8 +124,8 @@
 - (void)pauseAnimations;
 - (BOOL)playAutomaticEvents;
 - (BOOL)playsAutomaticTransitions;
-- (void)preloadTexturesForEvent:(unsigned int)arg1 ignoreBuildVisibility:(BOOL)arg2 priority:(long)arg3 completionHandler:(id)arg4;
 - (void)preloadTexturesForEvent:(unsigned int)arg1 ignoreBuildVisibility:(BOOL)arg2;
+- (void)preloadTexturesForEvent:(unsigned int)arg1 ignoreBuildVisibility:(BOOL)arg2 priority:(long)arg3 completionHandler:(id)arg4;
 - (void)registerForEventAnimationActiveCallback:(SEL)arg1 target:(id)arg2;
 - (void)registerForEventEndCallback:(SEL)arg1 target:(id)arg2;
 - (void)registerForEventImmediateEndCallback:(SEL)arg1 target:(id)arg2;
@@ -136,8 +136,8 @@
 - (void)renderCurrentEvent;
 - (void)renderCurrentEventPreparingNextEvent:(BOOL)arg1;
 - (void)renderEvent:(unsigned int)arg1 intoContext:(struct CGContext { }*)arg2 ignoreBuildVisibility:(BOOL)arg3;
-- (void)renderEvent:(unsigned int)arg1 onBaseLayer:(id)arg2 shouldPrepareBuildAnimation:(BOOL)arg3 isIncomingSlideInTransition:(BOOL)arg4;
 - (void)renderEvent:(unsigned int)arg1 onBaseLayer:(id)arg2 shouldPrepareBuildAnimation:(BOOL)arg3;
+- (void)renderEvent:(unsigned int)arg1 onBaseLayer:(id)arg2 shouldPrepareBuildAnimation:(BOOL)arg3 isIncomingSlideInTransition:(BOOL)arg4;
 - (void)renderEvent:(unsigned int)arg1 shouldPrepareBuildAnimation:(BOOL)arg2 shouldPrepareTransition:(BOOL)arg3;
 - (id)repsCurrentlyVisible;
 - (void)reset;

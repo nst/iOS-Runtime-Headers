@@ -5,14 +5,14 @@
 @class NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface PSYDeviceSyncStateProvider : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     unsigned long long _notifyState;
     int _notifyToken;
     NSMutableArray *_observers;
     NSObject<OS_dispatch_queue> *_queue;
     unsigned int _syncState;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _syncStateLock;
 }
 

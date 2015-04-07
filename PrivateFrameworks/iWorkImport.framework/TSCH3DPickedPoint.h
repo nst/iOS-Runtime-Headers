@@ -5,6 +5,18 @@
 @class TSCH3DSceneObject;
 
 @interface TSCH3DPickedPoint : NSObject <NSCopying> {
+    struct tvec2<float> { 
+        union { 
+            float x; 
+            float r; 
+            float s; 
+        } ; 
+        union { 
+            float y; 
+            float g; 
+            float t; 
+        } ; 
+    } mCenterProjectionPoint;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,6 +28,7 @@
             int g; 
             int t; 
         } ; 
+    } mElement;
     struct tvec3<float> { 
         union { 
             float x; 
@@ -32,68 +45,55 @@
             float b; 
             float p; 
         } ; 
-    struct tvec2<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-    struct tmat4x4<float> { 
-        struct tvec4<float> { 
-            union { 
-                float x; 
-                float r; 
-                float s; 
-            } ; 
-            union { 
-                float y; 
-                float g; 
-                float t; 
-            } ; 
-            union { 
-                float z; 
-                float b; 
-                float p; 
-            } ; 
-            union { 
-                float w; 
-                float a; 
-                float q; 
-            } ; 
-        } value[4]; 
-    struct tmat4x4<float> { 
-        struct tvec4<float> { 
-            union { 
-                float x; 
-                float r; 
-                float s; 
-            } ; 
-            union { 
-                float y; 
-                float g; 
-                float t; 
-            } ; 
-            union { 
-                float z; 
-                float b; 
-                float p; 
-            } ; 
-            union { 
-                float w; 
-                float a; 
-                float q; 
-            } ; 
-        } value[4]; 
-    } mCenterProjectionPoint;
-    } mElement;
     } mObjectSpacePoint;
+    struct tmat4x4<float> { 
+        struct tvec4<float> { 
+            union { 
+                float x; 
+                float r; 
+                float s; 
+            } ; 
+            union { 
+                float y; 
+                float g; 
+                float t; 
+            } ; 
+            union { 
+                float z; 
+                float b; 
+                float p; 
+            } ; 
+            union { 
+                float w; 
+                float a; 
+                float q; 
+            } ; 
+        } value[4]; 
     } mProjection;
     TSCH3DSceneObject *mSceneObject;
+    struct tmat4x4<float> { 
+        struct tvec4<float> { 
+            union { 
+                float x; 
+                float r; 
+                float s; 
+            } ; 
+            union { 
+                float y; 
+                float g; 
+                float t; 
+            } ; 
+            union { 
+                float z; 
+                float b; 
+                float p; 
+            } ; 
+            union { 
+                float w; 
+                float a; 
+                float q; 
+            } ; 
+        } value[4]; 
     } mTransform;
 }
 

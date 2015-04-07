@@ -5,12 +5,6 @@
 @class NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>, NSString;
 
 @interface _MTLCommandQueue : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     int _backgroundTrackingPID;
     NSObject<OS_dispatch_semaphore> *_commandBufferSemaphore;
     NSObject<OS_dispatch_queue> *_commandQueueDispatch;
@@ -18,11 +12,17 @@
     BOOL _executionEnabled;
     NSString *_label;
     NSMutableArray *_pendingQueue;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _pendingQueueLock;
     BOOL _profilingEnabled;
     BOOL _skipRender;
     NSObject<OS_dispatch_group> *_submittedGroup;
     NSMutableArray *_submittedQueue;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _submittedQueueLock;
 }
 
@@ -42,8 +42,8 @@
 - (void)enqueueCommandBuffer:(id)arg1;
 - (BOOL)executionEnabled;
 - (void)finish;
-- (id)initWithDevice:(id)arg1 maxCommandBufferCount:(unsigned long)arg2;
 - (id)initWithDevice:(id)arg1;
+- (id)initWithDevice:(id)arg1 maxCommandBufferCount:(unsigned long)arg2;
 - (void)insertDebugCaptureBoundary;
 - (BOOL)isProfilingEnabled;
 - (id)label;

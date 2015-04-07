@@ -5,12 +5,12 @@
 @class NSData;
 
 @interface AWDNFCTSMConnectEvent : PBCodable <NSCopying> {
+    BOOL _connected;
     struct { 
         unsigned int timeDeltaFromReference : 1; 
         unsigned int timestamp : 1; 
         unsigned int httpStatus : 1; 
         unsigned int connected : 1; 
-    BOOL _connected;
     } _has;
     unsigned int _httpStatus;
     unsigned long long _timeDeltaFromReference;

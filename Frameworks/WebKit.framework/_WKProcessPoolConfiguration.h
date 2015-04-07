@@ -5,11 +5,11 @@
 @class NSArray, NSURL;
 
 @interface _WKProcessPoolConfiguration : NSObject <NSCopying> {
-    struct RetainPtr<NSURL> { 
-        void *m_ptr; 
     struct RetainPtr<NSArray> { 
         void *m_ptr; 
     } _cachePartitionedURLSchemes;
+    struct RetainPtr<NSURL> { 
+        void *m_ptr; 
     } _injectedBundleURL;
     unsigned int _maximumProcessCount;
 }

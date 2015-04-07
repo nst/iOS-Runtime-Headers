@@ -14,16 +14,16 @@
             float width; 
             float height; 
         } size; 
+    } _gridBounds;
+    NSMutableArray *_reusableTiles;
     struct { 
         unsigned int disableTiling : 1; 
         unsigned int ditchAllTiles : 1; 
         unsigned int suspendLayout : 4; 
+    } _tcTiledLayerFlags;
     struct CGSize { 
         float width; 
         float height; 
-    } _gridBounds;
-    NSMutableArray *_reusableTiles;
-    } _tcTiledLayerFlags;
     } _tileSize;
 }
 

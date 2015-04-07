@@ -5,6 +5,10 @@
 @class NSString;
 
 @interface AWDPushConnectionDisconnected : PBCodable <NSCopying> {
+    unsigned int _connectionType;
+    unsigned int _error;
+    int _genericError;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
@@ -12,10 +16,6 @@
         unsigned int genericError : 1; 
         unsigned int linkQuality : 1; 
         unsigned int sslError : 1; 
-    unsigned int _connectionType;
-    unsigned int _error;
-    int _genericError;
-    NSString *_guid;
     } _has;
     int _linkQuality;
     unsigned int _sslError;

@@ -9,7 +9,11 @@
 @class NSArray, NSString;
 
 @interface PUKeyValueTableViewController : UITableViewController {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     NSArray *_keyValues;
     NSString *_markedKey;
 }

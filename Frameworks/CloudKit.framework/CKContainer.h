@@ -57,8 +57,8 @@
 - (id)_checkSelfContainerIdentifier;
 - (void)_cleanupSandboxExtensionHandles:(id)arg1;
 - (void)_consumeSandboxExtensions:(id)arg1;
-- (id)_initWithContainerIdentifier:(id)arg1 environment:(int)arg2;
 - (id)_initWithContainerIdentifier:(id)arg1;
+- (id)_initWithContainerIdentifier:(id)arg1 environment:(int)arg2;
 - (void)_setupWithContainerID:(id)arg1 accountInfoOverride:(id)arg2;
 - (int)_untrustedDatabaseEnvironment;
 - (id)_untrustedEntitlementForKey:(id)arg1;
@@ -98,8 +98,8 @@
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2;
 - (BOOL)hasCachedSetupInfo;
 - (BOOL)hasValidConnection;
-- (id)initWithContainerID:(id)arg1 accountInfoOverride:(id)arg2;
 - (id)initWithContainerID:(id)arg1;
+- (id)initWithContainerID:(id)arg1 accountInfoOverride:(id)arg2;
 - (int)killSwitchToken;
 - (BOOL)needsSandboxExtensions;
 - (id)privateCloudDatabase;

@@ -5,42 +5,42 @@
 @class GKBubbleSet, NSDictionary, UIView;
 
 @interface _GKBubbleFlowPathTransitionInfo : NSObject {
-    union _GLKVector3 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-        } ; 
-        float v[3]; 
-    union _GLKVector3 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-        } ; 
-        float v[3]; 
     NSDictionary *_auxiliaryInfo;
+    union _GLKVector3 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+        } ; 
+        float v[3]; 
     } _bubbleEndPositionsByType[12];
+    union _GLKVector3 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+        } ; 
+        float v[3]; 
     } _bubbleStartPositionsByType[12];
     GKBubbleSet *_bubbles;
     BOOL _couldUseFallbackAnimator;

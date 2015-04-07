@@ -8,7 +8,7 @@
     AppLaunchStatsComputation *aplsComputation;
     AppLaunchStatsState *aplsState;
     AppLaunchStatsStateHandlerQueue *aplsStateHandlerQueue;
-    boolcoreDuet;
+    bool coreDuet;
     NSObject<OS_dispatch_queue> *rEventQueue;
 }
 

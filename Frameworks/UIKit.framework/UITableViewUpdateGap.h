@@ -5,10 +5,10 @@
 @class NSArray, NSMutableArray, UIUpdateItem;
 
 @interface UITableViewUpdateGap : NSObject {
-    struct { 
-        unsigned int hasAutomaticAnimationItems : 1; 
     NSMutableArray *_deleteItems;
     UIUpdateItem *_firstUpdateItem;
+    struct { 
+        unsigned int hasAutomaticAnimationItems : 1; 
     } _gapFlags;
     NSMutableArray *_insertItems;
     UIUpdateItem *_lastUpdateItem;

@@ -9,19 +9,23 @@
 @class NSMutableData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, UIColor;
 
 @interface SiriUIURLSessionImageDownload : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     UIColor *_backgroundFillColor;
     id _client;
     NSMutableData *_downloadedData;
     BOOL _finished;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _fitToSize;
     BOOL _hasSentFinished;
     struct CGImageSource { } *_imageSource;
     unsigned int _lastUpdatedLength;
     BOOL _newDataAvailableToRender;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_renderTimer;
 }

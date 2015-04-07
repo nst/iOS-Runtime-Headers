@@ -12,8 +12,10 @@
  */
 
 @interface SCNAction : NSObject <NSCopying, NSSecureCoding> {
-     /* Encoded args for previous method: ^{SCNCAction=^^?f@?@BddffdBB@?^{__CFString}iffff}8@0:4 */
-    struct SCNCAction { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; boolx6; double x7; double x8; float x9; float x10; double x11; boolx12; boolx13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; } *_caction;
+
+  /* Error parsing encoded ivar type info: ^{SCNCAction=^^?f@?@BddffdBB@?^{__CFString}iffff} */
+    struct SCNCAction { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; bool x6; double x7; double x8; float x9; float x10; double x11; bool x12; bool x13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; } *_caction;
+
     id _reserved;
 }
 
@@ -40,19 +42,21 @@
 + (id)rotateByAngle:(float)arg1 aroundAxis:(struct SCNVector3 { float x1; float x2; float x3; })arg2 duration:(double)arg3;
 + (id)rotateByX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
 + (id)rotateToAxisAngle:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1 duration:(double)arg2;
-+ (id)rotateToX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4 shortestUnitArc:(BOOL)arg5;
 + (id)rotateToX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
++ (id)rotateToX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4 shortestUnitArc:(BOOL)arg5;
 + (id)runAction:(id)arg1 onChildNodeWithName:(id)arg2;
-+ (id)runBlock:(id)arg1 queue:(id)arg2;
 + (id)runBlock:(id)arg1;
++ (id)runBlock:(id)arg1 queue:(id)arg2;
 + (id)scaleBy:(float)arg1 duration:(double)arg2;
 + (id)scaleTo:(float)arg1 duration:(double)arg2;
 + (id)sequence:(id)arg1;
 + (BOOL)supportsSecureCoding;
-+ (id)waitForDuration:(double)arg1 withRange:(double)arg2;
 + (id)waitForDuration:(double)arg1;
++ (id)waitForDuration:(double)arg1 withRange:(double)arg2;
 
-- (struct SCNCAction { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; boolx6; double x7; double x8; float x9; float x10; double x11; boolx12; boolx13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; }*)caction;
+- (struct SCNCAction { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; bool x6; double x7; double x8; float x9; float x10; double x11; bool x12; bool x13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; }*)caction;
+     /* Encoded args for previous method: ^{SCNCAction=^^?f@?@BddffdBB@?^{__CFString}iffff}8@0:4 */
+
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

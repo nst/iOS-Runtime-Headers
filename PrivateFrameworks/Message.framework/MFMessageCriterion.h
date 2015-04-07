@@ -11,13 +11,13 @@
 
 @interface MFMessageCriterion : NSObject {
     unsigned int _allCriteriaMustBeSatisfied : 1;
-    unsigned int _dateIsRelative : 1;
-    unsigned int _includeRelatedMessages : 1;
     NSArray *_criteria;
     NSString *_criterionIdentifier;
+    unsigned int _dateIsRelative : 1;
     int _dateUnitType;
     NSString *_expression;
     BOOL _expressionIsSanitized;
+    unsigned int _includeRelatedMessages : 1;
     NSIndexSet *_libraryIdentifiers;
     NSString *_name;
     int _qualifier;
@@ -36,8 +36,8 @@
 + (id)VIPSenderMessageCriterion;
 + (void)_updateAddressComments:(id)arg1;
 + (id)andCompoundCriterionWithCriteria:(id)arg1;
-+ (id)criteriaFromDefaultsArray:(id)arg1 removingRecognizedKeys:(BOOL)arg2;
 + (id)criteriaFromDefaultsArray:(id)arg1;
++ (id)criteriaFromDefaultsArray:(id)arg1 removingRecognizedKeys:(BOOL)arg2;
 + (id)criterionForMailboxURL:(id)arg1;
 + (int)criterionTypeForString:(id)arg1;
 + (id)defaultsArrayFromCriteria:(id)arg1;
@@ -104,8 +104,8 @@
 - (BOOL)includesCriterionSatisfyingPredicate:(int (*)())arg1 restrictive:(BOOL)arg2;
 - (id)init;
 - (id)initWithCriterion:(id)arg1 expression:(id)arg2;
-- (id)initWithDictionary:(id)arg1 andRemoveRecognizedKeysIfMutable:(BOOL)arg2;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 andRemoveRecognizedKeysIfMutable:(BOOL)arg2;
 - (id)initWithType:(int)arg1 qualifier:(int)arg2 expression:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFullTextSearchableCriterion;

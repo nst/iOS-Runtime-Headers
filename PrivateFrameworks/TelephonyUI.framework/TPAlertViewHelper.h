@@ -10,7 +10,11 @@
 
 @interface TPAlertViewHelper : NSObject <UIAlertViewDelegate> {
     UIAlertView *_alertView;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

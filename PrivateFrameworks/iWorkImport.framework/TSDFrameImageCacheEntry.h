@@ -5,12 +5,12 @@
 @class TSDFrameSpec;
 
 @interface TSDFrameImageCacheEntry : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     float mAssetScale;
     TSDFrameSpec *mFrameSpec;
     struct CGImage {} *mImages[4];
+    struct CGSize { 
+        float width; 
+        float height; 
     } mSize;
     float mViewScale;
 }

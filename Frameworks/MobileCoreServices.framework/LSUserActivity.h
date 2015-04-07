@@ -109,9 +109,9 @@
 - (id)init;
 - (id)initWithManager:(id)arg1 userActivityInfo:(id)arg2;
 - (id)initWithSuggestedActionType:(unsigned int)arg1 options:(id)arg2;
+- (id)initWithTypeIdentifier:(id)arg1;
 - (id)initWithTypeIdentifier:(id)arg1 options:(id)arg2;
 - (id)initWithTypeIdentifier:(id)arg1 suggestedActionType:(unsigned int)arg2 options:(id)arg3;
-- (id)initWithTypeIdentifier:(id)arg1;
 - (id)initWithUUID:(id)arg1;
 - (void)invalidate;
 - (BOOL)isActive;

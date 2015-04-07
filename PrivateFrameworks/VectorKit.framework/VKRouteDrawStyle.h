@@ -5,29 +5,6 @@
 @class NSString;
 
 @interface VKRouteDrawStyle : VKRenderStyle {
-    struct VKProfileSparseRamp<float> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                float value; 
-                unsigned char hi; 
-            } v[2]; 
-            float *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<_VGLColor> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                struct _VGLColor { 
-                    float r; 
-                    float g; 
-                    float b; 
-                    float a; 
-                } value; 
-                unsigned char hi; 
-            } v[2]; 
-            struct _VGLColor {} *extra; 
-        } u; 
-        unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
         union _u { 
             struct VKProfileSparseRampValue { 
@@ -43,7 +20,30 @@
         } u; 
         unsigned char count; 
     } _fillColor;
+    struct VKProfileSparseRamp<_VGLColor> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                struct _VGLColor { 
+                    float r; 
+                    float g; 
+                    float b; 
+                    float a; 
+                } value; 
+                unsigned char hi; 
+            } v[2]; 
+            struct _VGLColor {} *extra; 
+        } u; 
+        unsigned char count; 
     } _travelledColor;
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
     } _width;
 }
 

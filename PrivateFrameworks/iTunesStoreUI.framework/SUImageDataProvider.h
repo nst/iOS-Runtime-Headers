@@ -5,10 +5,10 @@
 @class SUImageModifier, UIColor;
 
 @interface SUImageDataProvider : ISDataProvider <NSCopying> {
+    UIColor *_fillColor;
     struct CGSize { 
         float width; 
         float height; 
-    UIColor *_fillColor;
     } _finalSize;
     float _inputImageScale;
     SUImageModifier *_modifier;

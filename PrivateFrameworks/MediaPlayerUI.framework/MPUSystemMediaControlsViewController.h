@@ -4,7 +4,7 @@
 
 @class <MPUSystemMediaControlsDelegate>, MPAVRoutingController, MPUNowPlayingController, MPUSystemMediaControlsView, NSArray, NSDictionary, NSString, NSTimer, RUTrackActionsModalItem, RUTrackActionsViewController, UIImageView, UIPopoverController, UIView;
 
-@interface MPUSystemMediaControlsViewController : UIViewController <MPUNowPlayingDelegate, MPUTransportControlsViewDelegate, MPURemoteViewControllerPresentation, MPUChronologicalProgressViewDelegate, MPUMediaControlsTitlesViewDelegate, MPUSystemMediaControlsViewDelegate, MPAVRoutingControllerDelegate, RUTrackActionsDelegate, UIModalItemDelegate, UIPopoverControllerDelegate> {
+@interface MPUSystemMediaControlsViewController : UIViewController <MPAVRoutingControllerDelegate, MPUChronologicalProgressViewDelegate, MPUMediaControlsTitlesViewDelegate, MPUNowPlayingDelegate, MPURemoteViewControllerPresentation, MPUSystemMediaControlsViewDelegate, MPUTransportControlsViewDelegate, RUTrackActionsDelegate, UIModalItemDelegate, UIPopoverControllerDelegate> {
     UIImageView *_artworkImageView;
     NSString *_audioCategoryForDisabledHUD;
     NSArray *_currentlySupportedCommands;

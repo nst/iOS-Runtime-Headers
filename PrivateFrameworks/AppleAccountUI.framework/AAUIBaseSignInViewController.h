@@ -8,7 +8,7 @@
 
 @class AAUIAccountCreationRemoteUI, AAUIAccountRepairRemoteUI, AAUICredentialRecoveryController, AAUIGenericTermsRemoteUI, ABMonogrammer, ACAccount, ACAccountType, NSMutableArray, NSString, PSSpecifier, RUILoader, UIImageView, UINavigationController;
 
-@interface AAUIBaseSignInViewController : ACUIViewController <AAUIAccountCreationDelegate, AAUICredentialRecoveryPresentationDelegate, AAUIGenericTermsRemoteUIDelegate, AAUIAccountRepairRemoteUIDelegate> {
+@interface AAUIBaseSignInViewController : ACUIViewController <AAUIAccountCreationDelegate, AAUIAccountRepairRemoteUIDelegate, AAUICredentialRecoveryPresentationDelegate, AAUIGenericTermsRemoteUIDelegate> {
     ACAccount *_account;
     AAUIAccountRepairRemoteUI *_accountRepairRemoteUI;
     ACAccount *_appleAccount;
@@ -16,7 +16,11 @@
     PSSpecifier *_createNewAccountButtonSpecifier;
     AAUICredentialRecoveryController *_credentialRecoveryUIController;
     AAUIGenericTermsRemoteUI *_genericTermsRemoteUI;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _identityConsolidationCompletion;
+
     NSString *_initialTitle;
     BOOL _isPasswordDirty;
     BOOL _isPresentedModally;

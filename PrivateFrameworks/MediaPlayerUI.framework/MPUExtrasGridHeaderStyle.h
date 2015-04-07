@@ -5,12 +5,12 @@
 @class NSDictionary, NSString, UIColor;
 
 @interface MPUExtrasGridHeaderStyle : NSObject {
+    float _bottomLabelDescender;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    float _bottomLabelDescender;
     } _insets;
     BOOL _showsImage;
     UIColor *_subtitleColor;

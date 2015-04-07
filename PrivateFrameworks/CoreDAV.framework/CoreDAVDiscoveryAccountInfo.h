@@ -55,12 +55,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)error;
-- (BOOL)handleAuthenticateAgainstProtectionSpace:(id)arg1 withConnection:(id)arg2;
 - (BOOL)handleAuthenticateAgainstProtectionSpace:(id)arg1;
+- (BOOL)handleAuthenticateAgainstProtectionSpace:(id)arg1 withConnection:(id)arg2;
 - (BOOL)handleCertificateError:(id)arg1;
 - (BOOL)handleShouldUseCredentialStorage;
-- (BOOL)handleTrustChallenge:(id)arg1 withConnection:(id)arg2;
 - (BOOL)handleTrustChallenge:(id)arg1;
+- (BOOL)handleTrustChallenge:(id)arg1 withConnection:(id)arg2;
 - (id)host;
 - (id)identityPersist;
 - (id)initWithAccountInfoProvider:(id)arg1;

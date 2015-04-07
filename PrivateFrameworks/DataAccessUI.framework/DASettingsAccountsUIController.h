@@ -41,8 +41,8 @@
 - (void)_dismissAndUpdateParent;
 - (void)_finishSaveAccountDismissWhenDone:(BOOL)arg1;
 - (void)_saveAccountDismissWhenDone:(BOOL)arg1;
-- (void)account:(id)arg1 isValid:(BOOL)arg2 validationError:(id)arg3;
 - (id)account;
+- (void)account:(id)arg1 isValid:(BOOL)arg2 validationError:(id)arg3;
 - (id)accountBooleanPropertyWithSpecifier:(id)arg1;
 - (id)accountFromSpecifier;
 - (BOOL)accountNeedsAdd;

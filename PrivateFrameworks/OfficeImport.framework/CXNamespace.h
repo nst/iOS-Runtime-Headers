@@ -26,8 +26,8 @@
 - (const char *)fallbackUri;
 - (id)init;
 - (id)initUnsupportedNsWithUri:(const char *)arg1;
-- (id)initWithUri:(const char *)arg1 fallbackNamespace:(id)arg2;
 - (id)initWithUri:(const char *)arg1;
+- (id)initWithUri:(const char *)arg1 fallbackNamespace:(id)arg2;
 - (void)setFallbackNamespace:(id)arg1;
 - (const char *)uri;
 

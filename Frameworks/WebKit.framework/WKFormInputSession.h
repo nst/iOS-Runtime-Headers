@@ -5,9 +5,9 @@
 @class NSObject<NSSecureCoding>, NSString, WKContentView;
 
 @interface WKFormInputSession : NSObject <_WKFormInputSession> {
+    WKContentView *_contentView;
     struct RetainPtr<NSObject<NSSecureCoding> > { 
         void *m_ptr; 
-    WKContentView *_contentView;
     } _userObject;
 }
 

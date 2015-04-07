@@ -4,7 +4,7 @@
 
 @class <RUTrackActionsDelegate>, NSString, UIImage, UITableView, _RUTrackActionsHeaderView;
 
-@interface RUTrackActionsView : UIView <UITableViewDataSource, UITableViewDelegate, RUTrackActioning> {
+@interface RUTrackActionsView : UIView <RUTrackActioning, UITableViewDataSource, UITableViewDelegate> {
     int _enabledActions;
     _RUTrackActionsHeaderView *_headerView;
     int _onActions;

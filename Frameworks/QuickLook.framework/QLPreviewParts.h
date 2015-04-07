@@ -10,12 +10,6 @@
 @class NSData, NSError, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSThread, NSURL, NSURLConnection, NSURLRequest, NSURLResponse;
 
 @interface QLPreviewParts : NSObject {
-    struct { 
-        int version; 
-        int (*retain)(); 
-        int (*release)(); 
-        int (*copyDescription)(); 
-        int (*equal)(); 
     NSURLConnection *_connection;
     void *_convertFunction;
     NSData *_data;
@@ -39,6 +33,12 @@
     NSURL *previewURL;
     NSMutableSet *registeredURLs;
     const void *representedObject;
+    struct { 
+        int version; 
+        int (*retain)(); 
+        int (*release)(); 
+        int (*copyDescription)(); 
+        int (*equal)(); 
     } representedObjectCallbacks;
     long representedObjectProtection;
 }

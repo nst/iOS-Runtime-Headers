@@ -89,8 +89,8 @@
 - (id)processingStamp;
 - (void)removeLiveConflictLoserEtag:(id)arg1;
 - (id)resolvedConflictLoserEtags;
-- (void)setFilename:(id)arg1 forceRename:(BOOL)arg2;
 - (void)setFilename:(id)arg1;
+- (void)setFilename:(id)arg1 forceRename:(BOOL)arg2;
 - (id)stagedFileID;
 - (unsigned int)stagedGenerationID;
 - (void)updateFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;

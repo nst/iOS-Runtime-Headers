@@ -194,10 +194,10 @@
 - (struct NSObject { Class x1; }*)allPhotosAlbum;
 - (struct NSObject { Class x1; }*)allPhotosAlbumIfExists;
 - (id)assetURLForManagedPhoto:(id)arg1;
-- (id)assetURLForPhoto:(id)arg1 extension:(id)arg2;
 - (id)assetURLForPhoto:(id)arg1;
-- (id)assetWithUUID:(id)arg1 inContainer:(id)arg2;
+- (id)assetURLForPhoto:(id)arg1 extension:(id)arg2;
 - (id)assetWithUUID:(id)arg1;
+- (id)assetWithUUID:(id)arg1 inContainer:(id)arg2;
 - (void)cleanupFilesAfteriTunesSyncBeforeDate:(id)arg1;
 - (void)cleanupForStoreDemoMode;
 - (void)cleanupModelAfterRestoreFromiTunesBackup;
@@ -265,17 +265,17 @@
 - (void)modifyDCIMEntryForPhoto:(id)arg1;
 - (id)name;
 - (BOOL)needsMigration;
-- (id)newImageForPhoto:(id)arg1 format:(int)arg2 allowPlaceholder:(BOOL)arg3 outImageProperties:(const struct __CFDictionary {}**)arg4 outDeliveredPlaceholder:(BOOL*)arg5;
 - (id)newImageForPhoto:(id)arg1 format:(int)arg2;
+- (id)newImageForPhoto:(id)arg1 format:(int)arg2 allowPlaceholder:(BOOL)arg3 outImageProperties:(const struct __CFDictionary {}**)arg4 outDeliveredPlaceholder:(BOOL*)arg5;
 - (id)objectWithObjectID:(id)arg1;
 - (struct NSObject { Class x1; }*)otaRestoreProgressAlbum;
-- (void)performBlock:(id)arg1 completionHandler:(id)arg2;
 - (void)performBlock:(id)arg1;
+- (void)performBlock:(id)arg1 completionHandler:(id)arg2;
 - (void)performBlockAndWait:(id)arg1 completionHandler:(id)arg2;
-- (void)performTransaction:(id)arg1 completionHandler:(id)arg2;
 - (void)performTransaction:(id)arg1;
-- (void)performTransactionAndWait:(id)arg1 completionHandler:(id)arg2;
+- (void)performTransaction:(id)arg1 completionHandler:(id)arg2;
 - (void)performTransactionAndWait:(id)arg1;
+- (void)performTransactionAndWait:(id)arg1 completionHandler:(id)arg2;
 - (id)photoFromAssetURL:(id)arg1;
 - (void)photoLibraryCorruptNotification;
 - (id)photoStreamAlbums;
@@ -307,7 +307,7 @@
 - (void)userUntrashAssets:(id)arg1;
 - (id)wallpaperAlbums;
 - (void)withDispatchGroup:(id)arg1 performBlock:(id)arg2;
-- (void)withDispatchGroup:(id)arg1 performTransaction:(id)arg2 completionHandler:(id)arg3;
 - (void)withDispatchGroup:(id)arg1 performTransaction:(id)arg2;
+- (void)withDispatchGroup:(id)arg1 performTransaction:(id)arg2 completionHandler:(id)arg3;
 
 @end

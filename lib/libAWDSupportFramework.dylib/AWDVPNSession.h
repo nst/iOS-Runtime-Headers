@@ -5,6 +5,10 @@
 @class NSString;
 
 @interface AWDVPNSession : PBCodable <NSCopying> {
+    BOOL _appVpnUsed;
+    BOOL _connectFailed;
+    unsigned int _disconnectReason;
+    unsigned int _duration;
     struct { 
         unsigned int inBytes : 1; 
         unsigned int outBytes : 1; 
@@ -21,10 +25,6 @@
         unsigned int appVpnUsed : 1; 
         unsigned int connectFailed : 1; 
         unsigned int proxyInstalled : 1; 
-    BOOL _appVpnUsed;
-    BOOL _connectFailed;
-    unsigned int _disconnectReason;
-    unsigned int _duration;
     } _has;
     unsigned long long _inBytes;
     unsigned int _ipv4Installed;

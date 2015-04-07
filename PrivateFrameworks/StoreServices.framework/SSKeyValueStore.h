@@ -28,12 +28,12 @@
 - (void)modifyUsingTransactionBlock:(id)arg1;
 - (void)readUsingSessionBlock:(id)arg1;
 - (void)removeAccountFromDomain:(id)arg1;
-- (void)removeAllValuesForDomain:(id)arg1 completionBlock:(id)arg2;
 - (void)removeAllValuesForDomain:(id)arg1;
+- (void)removeAllValuesForDomain:(id)arg1 completionBlock:(id)arg2;
 - (void)removeAllValuesWithCompletionBlock:(id)arg1;
-- (void)setValue:(id)arg1 forDomain:(id)arg2 key:(id)arg3 completionBlock:(id)arg4;
 - (void)setValue:(id)arg1 forDomain:(id)arg2 key:(id)arg3;
-- (void)setValuesWithDictionary:(id)arg1 forDomain:(id)arg2 completionBlock:(id)arg3;
+- (void)setValue:(id)arg1 forDomain:(id)arg2 key:(id)arg3 completionBlock:(id)arg4;
 - (void)setValuesWithDictionary:(id)arg1 forDomain:(id)arg2;
+- (void)setValuesWithDictionary:(id)arg1 forDomain:(id)arg2 completionBlock:(id)arg3;
 
 @end

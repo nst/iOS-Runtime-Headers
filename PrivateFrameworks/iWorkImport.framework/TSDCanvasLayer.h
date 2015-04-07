@@ -5,15 +5,12 @@
 @class TSDCanvasView, TSDInteractiveCanvasController;
 
 @interface TSDCanvasLayer : TSDNoDefaultImplicitActionLayer {
-    struct CGSize { 
-        float width; 
-        float height; 
+    BOOL mAllowsPinchZoom;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    BOOL mAllowsPinchZoom;
     } mContentInset;
     TSDInteractiveCanvasController *mController;
     BOOL mDisableLayout;
@@ -22,6 +19,9 @@
     float mMaximumPinchViewScale;
     float mMinimumPinchViewScale;
     BOOL mShowsScaleFeedback;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mUnscaledSize;
     BOOL mVerticallyCenteredInScrollView;
     float mViewScale;
@@ -69,8 +69,8 @@
 - (void)p_reenableDrawingAfterResumingFromBackground;
 - (void)p_scrollViewScrollerStyleDidChange:(id)arg1;
 - (void)p_setEnclosingScrollViewZoomParameters;
-- (void)p_setViewScale:(float)arg1 preservingScrollOffset:(BOOL)arg2;
 - (void)p_setViewScale:(float)arg1;
+- (void)p_setViewScale:(float)arg1 preservingScrollOffset:(BOOL)arg2;
 - (void)setAllowsPinchZoom:(BOOL)arg1;
 - (void)setCenteredInScrollView:(BOOL)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -82,13 +82,13 @@
 - (void)setMinimumPinchViewScale:(float)arg1;
 - (void)setNeedsDisplayForDirtyTiles:(id)arg1;
 - (void)setNeedsLayout;
-- (void)setScrollViewFrameMaintainingApparentScrollPosition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)setScrollViewFrameMaintainingApparentScrollPosition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setScrollViewFrameMaintainingApparentScrollPosition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)setShowsScaleFeedback:(BOOL)arg1;
 - (void)setUnscaledSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setVerticallyCenteredInScrollView:(BOOL)arg1;
-- (void)setViewScale:(float)arg1 andScrollViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 maintainPosition:(BOOL)arg3 animated:(BOOL)arg4;
 - (void)setViewScale:(float)arg1;
+- (void)setViewScale:(float)arg1 andScrollViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 maintainPosition:(BOOL)arg3 animated:(BOOL)arg4;
 - (BOOL)showsScaleFeedback;
 - (void)teardown;
 - (struct CGPoint { float x1; float x2; })unscaledContentCenter;

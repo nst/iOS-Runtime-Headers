@@ -6,8 +6,8 @@
 
 @interface KNPlaybackAudioController : NSObject <TSKMediaPlayerControllerDelegate> {
     unsigned int mAudioPlaybackIsQueued : 1;
-    unsigned int mIsObservingPlayerItemStatus : 1;
     AVQueuePlayer *mAudioPlayer;
+    unsigned int mIsObservingPlayerItemStatus : 1;
     BOOL mIsPaused;
     BOOL mIsPlaying;
     TSKAVQueuePlayerController *mPlayerController;

@@ -5,6 +5,8 @@
 @class NSArray, NSMutableArray, TSCH3DDataBuffer, TSCH3DRayPickPipelineDelegate;
 
 @interface TSCH3DRayPickRenderProcessor : TSCH3DRetargetRenderProcessor {
+    TSCH3DDataBuffer *mBuffer;
+    NSMutableArray *mPickedPoints;
     struct tvec2<float> { 
         union { 
             float x; 
@@ -16,8 +18,6 @@
             float g; 
             float t; 
         } ; 
-    TSCH3DDataBuffer *mBuffer;
-    NSMutableArray *mPickedPoints;
     } mPosition;
     TSCH3DRayPickPipelineDelegate *mSceneObjectDelegate;
     float mSlack;

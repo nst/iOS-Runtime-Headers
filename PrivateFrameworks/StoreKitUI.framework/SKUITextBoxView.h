@@ -5,17 +5,12 @@
 @class NSString, SKUIColorScheme, UIImageView, UILabel;
 
 @interface SKUITextBoxView : UIControl {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     SKUIColorScheme *_colorScheme;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInsets;
     UILabel *_moreButtonLabel;
     int _numberOfVisibleLines;
@@ -24,6 +19,11 @@
     UILabel *_ratingLabel;
     UILabel *_subtitleLabel;
     struct __CTFrame { } *_textFrame;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _titleInsets;
     UILabel *_titleLabel;
     struct __CTFrame { } *_titleTextFrame;

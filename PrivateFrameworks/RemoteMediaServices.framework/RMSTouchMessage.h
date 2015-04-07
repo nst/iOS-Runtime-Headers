@@ -3,11 +3,11 @@
  */
 
 @interface RMSTouchMessage : PBCodable <NSCopying> {
+    int _direction;
     struct { 
         unsigned int direction : 1; 
         unsigned int repeatCount : 1; 
         unsigned int sessionIdentifier : 1; 
-    int _direction;
     } _has;
     unsigned int _repeatCount;
     int _sessionIdentifier;

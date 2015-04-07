@@ -9,7 +9,11 @@
 @class NSOperationQueue, NSString;
 
 @interface MPUKeyValueObserver : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _observationHandler;
+
     NSString *_observedKeyPath;
     id _observedObject;
     NSOperationQueue *_queue;

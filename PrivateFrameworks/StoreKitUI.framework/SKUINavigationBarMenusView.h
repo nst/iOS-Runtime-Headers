@@ -5,13 +5,13 @@
 @class NSArray;
 
 @interface SKUINavigationBarMenusView : SKUIViewReuseView {
+    SEL _buttonAction;
+    id _buttonTarget;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    SEL _buttonAction;
-    id _buttonTarget;
     } _contentInset;
     NSArray *_menuViewElements;
 }

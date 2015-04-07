@@ -5,12 +5,12 @@
 @class <CECInterfaceDelegate>, NSDictionary;
 
 @interface CECInterface : CoreRCInterface {
+    unsigned short _addressMask;
+    <CECInterfaceDelegate> *_delegate;
     struct CECFrame { 
         unsigned char blocks[16]; 
         unsigned int length : 5; 
         unsigned int reserved : 3; 
-    unsigned short _addressMask;
-    <CECInterfaceDelegate> *_delegate;
     } _lastReceivedFrame;
     BOOL _promiscMode;
 }

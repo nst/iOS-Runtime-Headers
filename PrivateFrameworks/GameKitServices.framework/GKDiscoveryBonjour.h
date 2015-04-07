@@ -10,16 +10,28 @@
 
 @interface GKDiscoveryBonjour : NSObject {
     struct _DNSServiceRef_t { } *_advertiseRef;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _browseCallback;
+
     struct _DNSServiceRef_t { } *_browseRef;
     BOOL _checkedInWithLaunchd;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _connectionCallback;
+
     NSMutableArray *_launchdSources;
     int _listeningPort;
     NSMutableDictionary *_resolveContainers;
     NSObject<OS_dispatch_queue> *_resolveContainersSyncQueue;
     NSString *_serviceDomain;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _serviceNameCollisionCallback;
+
     NSString *_serviceType;
 }
 

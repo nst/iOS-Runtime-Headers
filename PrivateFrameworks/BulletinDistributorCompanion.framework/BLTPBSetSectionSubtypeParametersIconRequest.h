@@ -5,10 +5,10 @@
 @class BLTPBSectionIcon, NSString;
 
 @interface BLTPBSetSectionSubtypeParametersIconRequest : PBRequest <NSCopying> {
+    BOOL _defaultSubtype;
     struct { 
         unsigned int subtypeID : 1; 
         unsigned int defaultSubtype : 1; 
-    BOOL _defaultSubtype;
     } _has;
     BLTPBSectionIcon *_icon;
     NSString *_sectionID;

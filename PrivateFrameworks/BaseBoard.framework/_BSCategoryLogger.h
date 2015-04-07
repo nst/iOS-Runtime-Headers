@@ -19,8 +19,8 @@
 - (id)category;
 - (void)dealloc;
 - (id)initWithLoggerName:(id)arg1 category:(id)arg2;
-- (void)logWithFormat:(id)arg1 arguments:(void*)arg2;
 - (void)logWithFormat:(id)arg1;
+- (void)logWithFormat:(id)arg1 arguments:(void*)arg2;
 - (id)name;
 - (void)setCategory:(id)arg1;
 - (void)setName:(id)arg1;

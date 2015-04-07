@@ -24,8 +24,8 @@
 - (id)dataClass;
 - (id)initWithDataClass:(id)arg1 onMessageLink:(id)arg2;
 - (id)linkIdentifier;
-- (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2;
 - (id)messageLink;
+- (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2;
 - (id)queue;
 - (void)sendRequest:(id)arg1 withCompletion:(id)arg2;
 - (void)updateProgressWithCount:(unsigned int)arg1 totalItemCount:(unsigned int)arg2;

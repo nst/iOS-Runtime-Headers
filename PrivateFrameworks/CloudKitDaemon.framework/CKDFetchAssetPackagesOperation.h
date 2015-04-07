@@ -13,7 +13,11 @@
     NSArray *_indexSets;
     NSArray *_packages;
     NSMutableArray *_packagesToFetch;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
     NSMutableArray *_remainingIndexSets;
 }
 

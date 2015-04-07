@@ -5,11 +5,11 @@
 @class UIDimmingView, UIDropShadowView;
 
 @interface _UIFormSheetPresentationController : UIPresentationController {
+    UIDimmingView *_dimmingView;
+    UIDropShadowView *_dropShadowView;
     struct CGSize { 
         float width; 
         float height; 
-    UIDimmingView *_dimmingView;
-    UIDropShadowView *_dropShadowView;
     } _formSheetSize;
     BOOL _layoutStateShouldAvoidKeyboard;
 }

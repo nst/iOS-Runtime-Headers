@@ -14,8 +14,8 @@
 - (void)play;
 - (unsigned int)playableContentType;
 - (unsigned int)playbackState;
-- (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2;
 - (void)setCurrentTime:(double)arg1;
+- (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2;
 - (void)setRepeatMode:(unsigned int)arg1;
 - (void)stop;
 

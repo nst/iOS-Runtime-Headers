@@ -5,6 +5,8 @@
 @class TSUColor;
 
 @interface TSTTableBadge : NSObject {
+    int _badgeType;
+    TSUColor *_color;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    int _badgeType;
-    TSUColor *_color;
     } _frame;
     float _viewScale;
 }

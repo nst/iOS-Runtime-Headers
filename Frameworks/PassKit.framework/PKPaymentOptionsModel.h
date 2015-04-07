@@ -9,7 +9,11 @@
 @class NSArray, NSMutableArray, NSMutableDictionary, PKPaymentOptionsRecents;
 
 @interface PKPaymentOptionsModel : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _modelChangedHandler;
+
     NSMutableDictionary *_optionGroupMap;
     NSMutableArray *_optionGroups;
     PKPaymentOptionsRecents *_recents;

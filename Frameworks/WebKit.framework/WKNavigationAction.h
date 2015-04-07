@@ -5,19 +5,19 @@
 @class NSURL, NSURLRequest, WKFrameInfo;
 
 @interface WKNavigationAction : NSObject {
-    struct RetainPtr<WKFrameInfo> { 
-        void *m_ptr; 
-    struct RetainPtr<WKFrameInfo> { 
-        void *m_ptr; 
-    struct RetainPtr<NSURLRequest> { 
-        void *m_ptr; 
-    struct RetainPtr<NSURL> { 
-        void *m_ptr; 
     BOOL _canHandleRequest;
     int _navigationType;
+    struct RetainPtr<NSURL> { 
+        void *m_ptr; 
     } _originalURL;
+    struct RetainPtr<NSURLRequest> { 
+        void *m_ptr; 
     } _request;
+    struct RetainPtr<WKFrameInfo> { 
+        void *m_ptr; 
     } _sourceFrame;
+    struct RetainPtr<WKFrameInfo> { 
+        void *m_ptr; 
     } _targetFrame;
     BOOL _userInitiated;
 }
@@ -34,7 +34,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_canHandleRequest;
-- (id)_initWithNavigationActionData:(const struct NavigationActionData { int x1; int x2; int x3; boolx4; boolx5; }*)arg1;
+- (id)_initWithNavigationActionData:(const struct NavigationActionData { int x1; int x2; int x3; bool x4; bool x5; }*)arg1;
 - (BOOL)_isUserInitiated;
 - (id)_originalURL;
 - (void)_setOriginalURL:(id)arg1;

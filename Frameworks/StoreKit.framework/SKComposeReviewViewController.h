@@ -12,7 +12,11 @@
     _UIAsyncInvocation *_cancelRequest;
     NSURL *_compositionURL;
     <SKComposeReviewDelegate> *_delegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _prepareBlock;
+
     SKRemoteComposeReviewViewController *_remoteViewController;
     SKInvocationQueueProxy<SKUIServiceComposeReviewViewController> *_serviceProxy;
 }

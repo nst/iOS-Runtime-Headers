@@ -5,11 +5,11 @@
 @class NSIndexSet;
 
 @interface TSCHChartPieElementsRenderer : TSCHRenderer {
+    BOOL mDidMoveDuringTouchIfNotThenRotateChartForDemo;
+    float mHitExplosion;
     struct CGPoint { 
         float x; 
         float y; 
-    BOOL mDidMoveDuringTouchIfNotThenRotateChartForDemo;
-    float mHitExplosion;
     } mHitPoint;
     float mHitRadius;
     unsigned int mHitSeries;

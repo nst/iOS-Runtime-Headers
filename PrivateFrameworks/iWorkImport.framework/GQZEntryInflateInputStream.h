@@ -10,6 +10,13 @@
 @class <GQZArchiveInputStream>, NSString;
 
 @interface GQZEntryInflateInputStream : NSObject <GQZEntryInputStream> {
+    unsigned long mCalculatedCrc;
+    unsigned long mCheckCrc;
+    long long mEnd;
+    <GQZArchiveInputStream> *mInput;
+    long long mOffset;
+    char *mOutBuffer;
+    unsigned long mOutBufferSize;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -25,13 +32,6 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    unsigned long mCalculatedCrc;
-    unsigned long mCheckCrc;
-    long long mEnd;
-    <GQZArchiveInputStream> *mInput;
-    long long mOffset;
-    char *mOutBuffer;
-    unsigned long mOutBufferSize;
     } mStream;
 }
 

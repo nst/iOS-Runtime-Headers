@@ -5,59 +5,59 @@
 @class NSDictionary, NSMapTable, NSMutableArray, NSMutableSet, NSNotificationCenter, NSNumber, PLManagedObjectContext;
 
 @interface PLChangeNotificationCenter : NSObject {
-    struct changeList_s { 
-        NSMutableSet *inserted; 
-        NSMutableSet *updated; 
-        NSMutableSet *deleted; 
     struct contentChanges_s { 
         NSMutableArray *container; 
         NSMutableArray *updatedContent; 
-    struct changeList_s { 
-        NSMutableSet *inserted; 
-        NSMutableSet *updated; 
-        NSMutableSet *deleted; 
-    struct contentChanges_s { 
-        NSMutableArray *container; 
-        NSMutableArray *updatedContent; 
-    struct changeList_s { 
-        NSMutableSet *inserted; 
-        NSMutableSet *updated; 
-        NSMutableSet *deleted; 
-    struct contentChanges_s { 
-        NSMutableArray *container; 
-        NSMutableArray *updatedContent; 
-    struct changeList_s { 
-        NSMutableSet *inserted; 
-        NSMutableSet *updated; 
-        NSMutableSet *deleted; 
-    struct contentChanges_s { 
-        NSMutableArray *container; 
-        NSMutableArray *updatedContent; 
-    struct changeList_s { 
-        NSMutableSet *inserted; 
-        NSMutableSet *updated; 
-        NSMutableSet *deleted; 
-    struct changeList_s { 
-        NSMutableSet *inserted; 
-        NSMutableSet *updated; 
-        NSMutableSet *deleted; 
     } _albumListsContent;
+    struct contentChanges_s { 
+        NSMutableArray *container; 
+        NSMutableArray *updatedContent; 
     } _albumsContent;
     NSMutableSet *_assetsWithCloudCommentChanges;
     int _cameraPreviewChangeListenerCount;
     NSNumber *_cameraPreviewChangedToken;
+    struct changeList_s { 
+        NSMutableSet *inserted; 
+        NSMutableSet *updated; 
+        NSMutableSet *deleted; 
     } _changedAlbumLists;
+    struct changeList_s { 
+        NSMutableSet *inserted; 
+        NSMutableSet *updated; 
+        NSMutableSet *deleted; 
     } _changedAlbums;
+    struct changeList_s { 
+        NSMutableSet *inserted; 
+        NSMutableSet *updated; 
+        NSMutableSet *deleted; 
     } _changedAssets;
+    struct changeList_s { 
+        NSMutableSet *inserted; 
+        NSMutableSet *updated; 
+        NSMutableSet *deleted; 
     } _changedCloudFeedEntries;
     NSMapTable *_changedInflightAssetsAlbumsToSnapshots;
+    struct changeList_s { 
+        NSMutableSet *inserted; 
+        NSMutableSet *updated; 
+        NSMutableSet *deleted; 
     } _changedMomentLists;
+    struct changeList_s { 
+        NSMutableSet *inserted; 
+        NSMutableSet *updated; 
+        NSMutableSet *deleted; 
     } _changedMoments;
     NSMutableArray *_enqueuedNotifications;
     BOOL _isOverloaded;
     BOOL _isProcessingRemoteDidSave;
     PLManagedObjectContext *_moc;
+    struct contentChanges_s { 
+        NSMutableArray *container; 
+        NSMutableArray *updatedContent; 
     } _momentListsContent;
+    struct contentChanges_s { 
+        NSMutableArray *container; 
+        NSMutableArray *updatedContent; 
     } _momentsContent;
     NSMutableSet *_overloadedObjects;
     NSDictionary *_remoteNotificationData;
@@ -101,8 +101,8 @@
 - (id)_snapshotForObject:(id)arg1;
 - (void)_splitContextDidChangeNotification:(id)arg1;
 - (id)_takeSnapshotFromCommittedValuesOfObject:(id)arg1;
-- (id)_takeSnapshotOfObject:(id)arg1 useCommitedValues:(BOOL)arg2;
 - (id)_takeSnapshotOfObject:(id)arg1;
+- (id)_takeSnapshotOfObject:(id)arg1 useCommitedValues:(BOOL)arg2;
 - (void)_takeSnapshotsFromContext:(id)arg1 forRemoteContextSaveNotification:(id)arg2 usingObjectIDs:(BOOL)arg3;
 - (id)_toOneRelationshipsOfInterestForObject:(id)arg1;
 - (void)_unregisterForCameraPreviewWellChanges;
@@ -138,8 +138,8 @@
 - (void)removeCloudCommentsChangeObserver:(id)arg1 asset:(id)arg2;
 - (void)removeCloudFeedEntriesObserver:(id)arg1;
 - (void)removeInvitationRecordsObserver:(id)arg1;
-- (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
 - (void)removeObserver:(id)arg1;
+- (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
 - (void)removeShouldReloadObserver:(id)arg1;
 
 @end

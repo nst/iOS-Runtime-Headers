@@ -5,9 +5,9 @@
 @class GEOMapRegion, NSMutableArray;
 
 @interface GEORPResolution : PBCodable <NSCopying> {
+    GEOMapRegion *_displayRegion;
     struct { 
         unsigned int resolutionDate : 1; 
-    GEOMapRegion *_displayRegion;
     } _has;
     NSMutableArray *_localizedChangeLists;
     double _resolutionDate;

@@ -5,16 +5,16 @@
 @class <SKUIChartsViewControllerDelegate>, NSArray, NSOperationQueue, NSString, SKUIChartColumnsView, SKUIClientContext, SKUIResourceLoader;
 
 @interface SKUIIPadChartsViewController : UIViewController <SKUIItemListTableDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     SKUIResourceLoader *_artworkLoader;
     NSArray *_chartViewControllers;
     NSArray *_charts;
     SKUIChartColumnsView *_chartsView;
     SKUIClientContext *_clientContext;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInset;
     <SKUIChartsViewControllerDelegate> *_delegate;
     BOOL _delegateWantsWillDisplay;

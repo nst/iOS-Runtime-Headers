@@ -4,33 +4,21 @@
 
 @class <TSDRepDragTrackerDelegate>, CAShapeLayer, NSMutableSet, NSString, NSTimer, TSDAutoscroll, TSDHUDViewController, TSDRep, TSUPointerKeyDictionary;
 
-@interface TSDRepDragTracker : NSObject <TSDLayoutManipulatingTracker, TSDDecorator, TSDRepTracker, TSDRepDragTracker> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface TSDRepDragTracker : NSObject <TSDDecorator, TSDLayoutManipulatingTracker, TSDRepDragTracker, TSDRepTracker> {
     struct CGPoint { 
         float x; 
         float y; 
     } mActualDragPoint;
     BOOL mAlreadyInCommandGroup;
     TSDAutoscroll *mAutoscroll;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mAutoscrollPoint;
     NSMutableSet *mConnectedLineLayouts;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mConstrainingPoint;
     float mConstraintAngle;
     BOOL mConstraintGuidesShowing;
@@ -42,12 +30,21 @@
     BOOL mHaveShownSecondHUD;
     BOOL mInDidEndDynamicOperation;
     BOOL mInWillBeginDynamicOperation;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mInitialDragPoint;
     BOOL mIsArrowkeyDrivenTracking;
     BOOL mIsDragInsertDrivenTracking;
     BOOL mIsInspectorDrivenTracking;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mLogicalDragPoint;
     TSUPointerKeyDictionary *mMapRepsToSnapOffsets;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mPreviousActualDragPoint;
     TSDRep *mRep;
     BOOL mRoundDragDelta;
@@ -60,6 +57,9 @@
     BOOL mShowDragHUD;
     float mSnapLevel;
     BOOL mTrackerDidBeginDragging;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mUnscaledDragDelta;
 }
 

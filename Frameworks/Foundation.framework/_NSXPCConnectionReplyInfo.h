@@ -9,8 +9,16 @@
 @class NSBlock, NSDictionary, NSXPCInterface;
 
 @interface _NSXPCConnectionReplyInfo : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cleanupBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _errorBlock;
+
     NSXPCInterface *_interface;
     unsigned long long _proxyNumber;
     NSBlock *_replyBlock;

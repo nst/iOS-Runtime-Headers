@@ -22,9 +22,9 @@
 - (id)deviceForFromID:(id)arg1;
 - (id)devices;
 - (id)iCloudAccount;
+- (id)initWithService:(id)arg1;
 - (id)initWithService:(id)arg1 commands:(id)arg2;
 - (id)initWithService:(id)arg1 serviceDomain:(id)arg2;
-- (id)initWithService:(id)arg1;
 - (BOOL)isPretendingToBeFull;
 - (SEL)protobufActionForIncomingRequestsOfType:(unsigned short)arg1;
 - (SEL)protobufActionForIncomingResponsesOfType:(unsigned short)arg1;

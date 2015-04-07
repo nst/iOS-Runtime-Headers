@@ -32,8 +32,8 @@
 - (id)initWithLabel:(id)arg1 value:(id)arg2;
 - (id)initWithMultiValueIdentifier:(int)arg1 label:(id)arg2 value:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToLabelledValue:(id)arg1 includeIdentifiers:(BOOL)arg2;
 - (BOOL)isEqualToLabelledValue:(id)arg1;
+- (BOOL)isEqualToLabelledValue:(id)arg1 includeIdentifiers:(BOOL)arg2;
 - (id)label;
 - (id)labeledValueBySettingLabel:(id)arg1 value:(id)arg2;
 - (id)labeledValueBySettingValue:(id)arg1;

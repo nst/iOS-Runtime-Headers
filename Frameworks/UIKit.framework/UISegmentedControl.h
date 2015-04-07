@@ -4,7 +4,14 @@
 
 @class NSMutableArray, NSString, UIColor, UIView;
 
-@interface UISegmentedControl : UIControl <_UIBasicAnimationFactory, NSCoding> {
+@interface UISegmentedControl : UIControl <NSCoding, _UIBasicAnimationFactory> {
+    BOOL __hasTranslucentOptionsBackground;
+    id _appearanceStorage;
+    UIView *_backgroundBarView;
+    int _barStyle;
+    float _enabledAlpha;
+    int _highlightedSegment;
+    UIView *_removedSegment;
     struct { 
         unsigned int style : 3; 
         unsigned int size : 2; 
@@ -18,13 +25,6 @@
         unsigned int useProportionalWidthSegments : 1; 
         unsigned int translucentBackground : 1; 
         unsigned int appearanceNeedsUpdate : 1; 
-    BOOL __hasTranslucentOptionsBackground;
-    id _appearanceStorage;
-    UIView *_backgroundBarView;
-    int _barStyle;
-    float _enabledAlpha;
-    int _highlightedSegment;
-    UIView *_removedSegment;
     } _segmentedControlFlags;
     NSMutableArray *_segments;
     int _selectedSegment;
@@ -46,8 +46,8 @@
 + (id)_modernDividerImage;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (float)defaultHeight;
-+ (float)defaultHeightForStyle:(int)arg1 size:(int)arg2;
 + (float)defaultHeightForStyle:(int)arg1;
++ (float)defaultHeightForStyle:(int)arg1 size:(int)arg2;
 
 - (void)_animateContentChangeWithAnimations:(id)arg1 completion:(id)arg2;
 - (id)_attributedTitleForSegmentAtIndex:(unsigned int)arg1;
@@ -89,8 +89,8 @@
 - (void)_setOptionsShadowHidden:(BOOL)arg1;
 - (void)_setSegmentedControlAppearance:(struct { id x1; float x2; float x3; struct { id x_4_1_1; id x_4_1_2; id x_4_1_3; id x_4_1_4; id x_4_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_4_1_6; } x4; struct { id x_5_1_1; id x_5_1_2; id x_5_1_3; id x_5_1_4; id x_5_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_5_1_6; } x5; struct { id x_6_1_1; id x_6_1_2; id x_6_1_3; id x_6_1_4; id x_6_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_6_1_6; } x6; struct { id x_7_1_1; id x_7_1_2; id x_7_1_3; id x_7_1_4; id x_7_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_7_1_6; } x7; BOOL x8; }*)arg1;
 - (void)_setSelected:(BOOL)arg1 forSegmentAtIndex:(int)arg2 forceInfoDisplay:(BOOL)arg3;
-- (void)_setSelectedSegmentIndex:(int)arg1 notify:(BOOL)arg2 animate:(BOOL)arg3;
 - (void)_setSelectedSegmentIndex:(int)arg1 notify:(BOOL)arg2;
+- (void)_setSelectedSegmentIndex:(int)arg1 notify:(BOOL)arg2 animate:(BOOL)arg3;
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)_setTranslucentOptionsBackground:(BOOL)arg1;
 - (void)_setUsesNewAnimations:(BOOL)arg1;
@@ -120,8 +120,8 @@
 - (id)imageForSegmentAtIndex:(unsigned int)arg1;
 - (id)infoViewForSegment:(int)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withStyle:(int)arg2 withItems:(id)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withStyle:(int)arg2 withItems:(id)arg3;
 - (id)initWithItems:(id)arg1;
 - (void)insertSegment:(unsigned int)arg1 withImage:(id)arg2 animated:(BOOL)arg3;
 - (void)insertSegment:(unsigned int)arg1 withTitle:(id)arg2 animated:(BOOL)arg3;
@@ -155,9 +155,9 @@
 - (void)setControlSize:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3 barMetrics:(int)arg4;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1 forSegment:(unsigned int)arg2;
 - (void)setEnabled:(BOOL)arg1 forSegmentAtIndex:(unsigned int)arg2;
-- (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1 forSegment:(unsigned int)arg2;
 - (void)setImage:(id)arg1 forSegmentAtIndex:(unsigned int)arg2;

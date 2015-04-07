@@ -10,7 +10,11 @@
 
 @interface IKDOMNodeList : IKJSObject <IKDOMObserver, IKJSDOMNodeList> {
     IKDOMNode *_contextNode;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _evaluationBlock;
+
     NSArray *_nodes;
 }
 

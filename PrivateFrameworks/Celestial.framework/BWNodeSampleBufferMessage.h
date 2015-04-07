@@ -14,9 +14,9 @@
 @property(readonly) struct opaqueCMSampleBuffer { }* sampleBuffer;
 @property(readonly) FigCaptureStillImageSettings * stillImageSettings;
 
++ (id)newMessageWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 + (id)newMessageWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 recordingSettings:(id)arg2;
 + (id)newMessageWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2;
-+ (id)newMessageWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 
 - (id)_initWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 recordingSettings:(id)arg3;
 - (void)dealloc;

@@ -27,8 +27,8 @@
 + (id)defaultDataStore;
 + (id)nonPersistentDataStore;
 
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
+- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (void)dealloc;
 - (BOOL)isNonPersistent;
 

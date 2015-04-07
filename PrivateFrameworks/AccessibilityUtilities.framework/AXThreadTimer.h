@@ -10,7 +10,11 @@
 
 @interface AXThreadTimer : NSObject <AXTimer> {
     BOOL _automaticallyCancelPendingBlockUponSchedulingNewBlock;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cancelBlock;
+
     AXThreadTimerTask *_task;
     NSThread *_thread;
 }
@@ -26,8 +30,8 @@
 @property(retain) AXThreadTimerTask * task;
 
 - (void)_runAfterDelay:(id)arg1;
-- (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
 - (void)afterDelay:(double)arg1 processBlock:(id)arg2;
+- (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
 - (BOOL)automaticallyCancelPendingBlockUponSchedulingNewBlock;
 - (void)cancel;
 - (void)dealloc;

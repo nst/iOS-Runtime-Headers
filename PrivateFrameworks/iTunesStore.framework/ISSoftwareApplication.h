@@ -68,8 +68,8 @@
 - (id)description;
 - (id)deviceIdentifierForVendor;
 - (id)familyAccountIdentifier;
-- (id)initWithLaunchServicesApplication:(id)arg1 containerPath:(id)arg2;
 - (id)initWithLaunchServicesApplication:(id)arg1;
+- (id)initWithLaunchServicesApplication:(id)arg1 containerPath:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isBeta;
 - (BOOL)isPlaceholder;

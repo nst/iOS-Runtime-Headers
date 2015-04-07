@@ -5,15 +5,15 @@
 @class NSString, OADHyperlink, OADOrientedBounds;
 
 @interface OADDrawableProperties : OADProperties {
-    unsigned int mHasAspectRatioLocked : 1;
     unsigned int mAspectRatioLocked : 1;
-    unsigned int mHasWrdInline : 1;
-    unsigned int mWrdInline : 1;
     OADHyperlink *mClickHyperlink;
     NSString *mDescription;
+    unsigned int mHasAspectRatioLocked : 1;
+    unsigned int mHasWrdInline : 1;
     OADHyperlink *mHoverHyperlink;
     OADOrientedBounds *mOrientedBounds;
     NSString *mTitle;
+    unsigned int mWrdInline : 1;
 }
 
 - (id)altDescription;

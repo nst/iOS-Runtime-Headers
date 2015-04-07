@@ -5,11 +5,11 @@
 @class NSMutableArray;
 
 @interface CKDPQuery : PBCodable <NSCopying> {
+    BOOL _distinct;
+    NSMutableArray *_filters;
     struct { 
         unsigned int queryOperator : 1; 
         unsigned int distinct : 1; 
-    BOOL _distinct;
-    NSMutableArray *_filters;
     } _has;
     int _queryOperator;
     NSMutableArray *_sorts;

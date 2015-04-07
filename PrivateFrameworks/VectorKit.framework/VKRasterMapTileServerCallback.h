@@ -9,7 +9,11 @@
 @class VKRasterMapTileRequest;
 
 @interface VKRasterMapTileServerCallback : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id handler;
+
     VKRasterMapTileRequest *request;
     double startTimestamp;
 }

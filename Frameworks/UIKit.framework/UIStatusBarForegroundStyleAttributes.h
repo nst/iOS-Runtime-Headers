@@ -30,8 +30,8 @@
 - (float)edgePadding;
 - (id)expandedNameForImageName:(id)arg1;
 - (float)height;
-- (id)imageNamed:(id)arg1 withLegibilityStyle:(int)arg2 legibilityStrength:(float)arg3;
 - (id)imageNamed:(id)arg1;
+- (id)imageNamed:(id)arg1 withLegibilityStyle:(int)arg2 legibilityStrength:(float)arg3;
 - (id)imageWithText:(id)arg1 ofItemType:(int)arg2 forWidth:(float)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5 textAlignment:(int)arg6 style:(int)arg7 withLegibilityStyle:(int)arg8 legibilityStrength:(float)arg9;
 - (id)initWithHeight:(float)arg1 legibilityStyle:(int)arg2;
 - (int)legacyStyle;
@@ -40,8 +40,8 @@
 - (struct CGPoint { float x1; float x2; })positionForMoonMaskInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)scale;
 - (void)setThermalColorShadow;
-- (id)shadowImageForImage:(id)arg1 withIdentifier:(id)arg2 forStyle:(int)arg3 withStrength:(float)arg4 inTempGroup:(id)arg5;
 - (id)shadowImageForImage:(id)arg1 withIdentifier:(id)arg2 forStyle:(int)arg3 withStrength:(float)arg4;
+- (id)shadowImageForImage:(id)arg1 withIdentifier:(id)arg2 forStyle:(int)arg3 withStrength:(float)arg4 inTempGroup:(id)arg5;
 - (float)shadowPadding;
 - (float)sizeForMoonMaskVisible:(BOOL)arg1;
 - (float)standardPadding;

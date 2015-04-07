@@ -5,12 +5,12 @@
 @class NSString, UIActivityIndicatorView;
 
 @interface SKUIActivityIndicatorView : SKUIViewReuseView <SKUIViewElementView> {
+    unsigned int _alignment;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    unsigned int _alignment;
     } _contentInset;
     UIActivityIndicatorView *_indicatorView;
 }

@@ -11,7 +11,11 @@
 @interface MKDistanceDetailProvider : NSObject <MKLocationManagerObserver> {
     NSString *_distanceToPlace;
     GEOPlace *_place;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateHandler;
+
     BOOL _useMetric;
     BOOL _useYardsForShortDistances;
 }

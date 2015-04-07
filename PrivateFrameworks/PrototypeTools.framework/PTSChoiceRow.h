@@ -16,11 +16,11 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)possibleShortTitles:(id)arg1;
 - (id)possibleShortTitles;
+- (id)possibleShortTitles:(id)arg1;
 - (id)possibleTitles;
-- (id)possibleValues:(id)arg1 titles:(id)arg2;
 - (id)possibleValues;
+- (id)possibleValues:(id)arg1 titles:(id)arg2;
 - (Class)rowTableViewCellClass;
 - (void)setPossibleShortTitles:(id)arg1;
 - (void)setPossibleTitles:(id)arg1;

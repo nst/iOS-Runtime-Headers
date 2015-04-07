@@ -10,11 +10,23 @@
 
 @interface CKFetchRecordChangesOperation : CKDatabaseOperation {
     NSArray *_desiredKeys;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchRecordChangesCompletionBlock;
+
     CKServerChangeToken *_previousServerChangeToken;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordChangedBlock;
+
     NSMutableDictionary *_recordErrors;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordWithIDWasDeletedBlock;
+
     CKRecordZoneID *_recordZoneID;
     NSData *_resultClientChangeTokenData;
     CKServerChangeToken *_resultServerChangeToken;

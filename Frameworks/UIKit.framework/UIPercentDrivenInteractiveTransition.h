@@ -33,8 +33,8 @@
 - (void)_setOriginalFillMode:(id)arg1;
 - (void)_setTransitionInterrupted:(BOOL)arg1;
 - (void)_setUuid:(id)arg1;
-- (void)_stopInteractiveTransition:(id)arg1;
 - (void)_stopInteractiveTransition;
+- (void)_stopInteractiveTransition:(id)arg1;
 - (void)_updateInteractiveTransition:(id)arg1 percent:(float)arg2 isFinished:(BOOL)arg3 didComplete:(BOOL)arg4;
 - (id)_uuid;
 - (void)cancelInteractiveTransition;
@@ -47,8 +47,8 @@
 - (float)percentComplete;
 - (void)setCompletionCurve:(int)arg1;
 - (void)setCompletionSpeed:(float)arg1;
-- (void)startInteractiveTransition:(id)arg1 containerViews:(id)arg2 animation:(id)arg3;
 - (void)startInteractiveTransition:(id)arg1;
+- (void)startInteractiveTransition:(id)arg1 containerViews:(id)arg2 animation:(id)arg3;
 - (void)updateInteractiveTransition:(float)arg1;
 
 @end

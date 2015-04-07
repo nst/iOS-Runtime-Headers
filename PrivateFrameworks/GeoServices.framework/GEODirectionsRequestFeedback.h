@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface GEODirectionsRequestFeedback : PBCodable <NSCopying> {
+    NSString *_appIdentifier;
     struct { 
         unsigned int purpose : 1; 
         unsigned int source : 1; 
-    NSString *_appIdentifier;
     } _has;
     int _purpose;
     int _source;
@@ -31,9 +31,9 @@
 - (BOOL)hasPurpose;
 - (BOOL)hasSource;
 - (unsigned int)hash;
-- (id)initWithPurpose:(int)arg1 andSource:(int)arg2 andIdentifier:(id)arg3;
-- (id)initWithPurpose:(int)arg1 andSource:(int)arg2;
 - (id)initWithPurpose:(int)arg1;
+- (id)initWithPurpose:(int)arg1 andSource:(int)arg2;
+- (id)initWithPurpose:(int)arg1 andSource:(int)arg2 andIdentifier:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)purpose;

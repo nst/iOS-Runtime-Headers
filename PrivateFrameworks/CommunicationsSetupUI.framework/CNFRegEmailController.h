@@ -10,7 +10,11 @@
 
 @interface CNFRegEmailController : CNFRegFirstRunController {
     PSSpecifier *_actionGroupSpecifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _alertHandler;
+
     NSArray *_checkMailSpecifiers;
     PSSpecifier *_currentActionSpecifier;
     PSSpecifier *_emailSpecifier;
@@ -57,8 +61,8 @@
 - (id)selectedAliases;
 - (void)setAlertHandler:(id)arg1;
 - (void)setAliasSelected:(id)arg1;
-- (void)setPendingAlias:(id)arg1 forSpecifier:(id)arg2;
 - (void)setPendingAlias:(id)arg1;
+- (void)setPendingAlias:(id)arg1 forSpecifier:(id)arg2;
 - (BOOL)shouldShowAllVettedAliases;
 - (BOOL)showActionSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (id)specifierList;

@@ -4,7 +4,7 @@
 
 @class <BSSettingDescriptionProvider>, BSMutableSettings, NSHashTable, NSString;
 
-@interface BSSettingsDiff : NSObject <NSCopying, BSXPCCoding> {
+@interface BSSettingsDiff : NSObject <BSXPCCoding, NSCopying> {
     BSMutableSettings *_changes;
     <BSSettingDescriptionProvider> *_descriptionProvider;
     NSHashTable *_flagRemovals;

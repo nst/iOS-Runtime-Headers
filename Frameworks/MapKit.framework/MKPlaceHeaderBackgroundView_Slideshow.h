@@ -5,13 +5,13 @@
 @class NSArray, NSMutableArray, NSTimer;
 
 @interface MKPlaceHeaderBackgroundView_Slideshow : MKPlaceHeaderBackgroundView {
+    NSMutableArray *_images;
+    unsigned int _iteration;
+    int _nextImageIndex;
     struct { 
         unsigned int hasMultiplePhotos; 
         unsigned int isFirstImageRequested; 
         unsigned int isFirstImagePreloaded; 
-    NSMutableArray *_images;
-    unsigned int _iteration;
-    int _nextImageIndex;
     } _slideShowFlags;
     NSArray *_slides;
     NSTimer *_timer;

@@ -5,9 +5,6 @@
 @class NSString, UIFont;
 
 @interface _UIInlineCandidateCell : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
     SEL _action;
     NSString *_candidate;
     BOOL _dontDrawRightEdge;
@@ -15,6 +12,9 @@
     BOOL _highlighted;
     unsigned int _index;
     BOOL _lastItem;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _stringImageSize;
     id _target;
 }

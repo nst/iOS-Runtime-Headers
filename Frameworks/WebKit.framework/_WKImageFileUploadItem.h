@@ -5,9 +5,9 @@
 @interface _WKImageFileUploadItem : _WKFileUploadItem {
     struct RetainPtr<NSString> { 
         void *m_ptr; 
+    } _filePath;
     struct RetainPtr<UIImage> { 
         void *m_ptr; 
-    } _filePath;
     } _originalImage;
 }
 

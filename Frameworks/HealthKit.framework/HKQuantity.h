@@ -4,7 +4,7 @@
 
 @class HKUnit;
 
-@interface HKQuantity : NSObject <NSSecureCoding, NSCopying> {
+@interface HKQuantity : NSObject <NSCopying, NSSecureCoding> {
     HKUnit *_unit;
     double _value;
 }

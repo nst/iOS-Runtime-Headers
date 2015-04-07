@@ -5,25 +5,6 @@
 @class <EKDayViewContentDelegate>, EKCalendarDate, EKDayGridView, EKDayViewContentGeometryDelegate, EKEvent, NSCalendar, NSMutableArray, NSString, NSTimeZone, UIColor, UIView;
 
 @interface EKDayViewContent : UIView <CUIKSingleDayTimelineLayoutScreenUtils, UIGestureRecognizerDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     BOOL _allowsOccurrenceSelection;
     NSCalendar *_calendar;
     BOOL _darkensWeekends;
@@ -41,11 +22,30 @@
     BOOL _hasCustomOccurrencePadding;
     NSMutableArray *_itemsByDay;
     NSMutableArray *_itemsByDayByEndDate;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _latestVisibleRect;
     BOOL _loadingOccurrences;
     int _occurrenceBackgroundStyle;
     UIColor *_occurrenceLocationColor;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _occurrenceMargin;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _occurrencePadding;
     UIColor *_occurrenceTextBackgroundColor;
     UIColor *_occurrenceTimeColor;
@@ -121,8 +121,8 @@
 - (float)fixedDayWidth;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)grid;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2 backgroundColor:(id)arg3 opaque:(BOOL)arg4 numberOfDaysToDisplay:(unsigned int)arg5;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2 backgroundColor:(id)arg3 opaque:(BOOL)arg4 numberOfDaysToDisplay:(unsigned int)arg5;
 - (id)lastDisplayedSecond;
 - (void)layoutSubviews;
 - (int)occurrenceBackgroundStyle;
@@ -132,8 +132,8 @@
 - (id)occurrenceTextBackgroundColor;
 - (id)occurrenceTimeColor;
 - (id)occurrenceTitleColor;
-- (id)occurrenceViewForEvent:(id)arg1 onDate:(double)arg2;
 - (id)occurrenceViewForEvent:(id)arg1;
+- (id)occurrenceViewForEvent:(id)arg1 onDate:(double)arg2;
 - (id)occurrenceViews;
 - (struct CGPoint { float x1; float x2; })pointForDate:(double)arg1;
 - (void)rectBecameVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

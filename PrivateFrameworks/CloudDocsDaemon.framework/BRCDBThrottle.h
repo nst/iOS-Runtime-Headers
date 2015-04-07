@@ -39,8 +39,8 @@
 - (void)needsScheduleAt:(long long)arg1;
 - (long long)nextRetryTimestamp;
 - (void)reschedule;
-- (void)retriedThrottleID:(long long)arg1 insertIfMissing:(BOOL)arg2;
 - (void)retriedThrottleID:(long long)arg1;
+- (void)retriedThrottleID:(long long)arg1 insertIfMissing:(BOOL)arg2;
 - (id)scheduler;
 - (void)setLastRetryTimestamp:(long long)arg1;
 - (void)setNextRetryTimestamp:(long long)arg1;

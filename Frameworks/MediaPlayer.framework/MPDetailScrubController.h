@@ -5,16 +5,10 @@
 @class <MPDetailScrubControllerDelegate>, UIControl<MPDetailedScrubbing>;
 
 @interface MPDetailScrubController : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     float _accumulatedDelta;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _beginLocationInView;
     int _currentScrubSpeed;
     float _currentValue;
@@ -23,8 +17,14 @@
     BOOL _didBeginTracking;
     double _duration;
     BOOL _isTracking;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _lastCommittedLocationInView;
     BOOL _needsCommit;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _previousLocationInView;
     UIControl<MPDetailedScrubbing> *_scrubbingControl;
     float _scrubbingVerticalRange;

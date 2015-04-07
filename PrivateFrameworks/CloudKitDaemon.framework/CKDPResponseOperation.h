@@ -5,14 +5,14 @@
 @class CKDPAssetUploadTokenRetrieveResponse, CKDPDeleteCommentResponse, CKDPDeleteContainerResponse, CKDPGetCommentResponse, CKDPGetCommentsResponse, CKDPGetLikesResponse, CKDPInvitationAcceptResponse, CKDPInvitationDeclineResponse, CKDPInvitationQueryResponse, CKDPLikeResponse, CKDPMescalCertificateResponse, CKDPMescalSessionInfoResponse, CKDPMescalSignatureResponse, CKDPNotificationMarkReadResponse, CKDPNotificationSyncResponse, CKDPOperation, CKDPPkiRegisterResponse, CKDPPkiRetrieveResponse, CKDPPostCommentResponse, CKDPPromoteContainerSchemaResponse, CKDPPulseResponse, CKDPQueryRetrieveResponse, CKDPRecordDeleteResponse, CKDPRecordRetrieveChangesResponse, CKDPRecordRetrieveResponse, CKDPRecordRetrieveVersionsResponse, CKDPRecordSaveResponse, CKDPResetContainerResponse, CKDPResponseOperationResult, CKDPSetBadgeCountResponse, CKDPShareCreateResponse, CKDPShareDeleteResponse, CKDPShareParticipantCreateResponse, CKDPShareParticipantDeleteResponse, CKDPShareParticipantUpdateResponse, CKDPShareRetrieveResponse, CKDPSubscriptionCreateResponse, CKDPSubscriptionDeleteResponse, CKDPSubscriptionRetrieveResponse, CKDPTokenRegistrationResponse, CKDPTokenUnregistrationResponse, CKDPUnlikeResponse, CKDPUserAvailableQuotaResponse, CKDPUserPrivacySettingsBatchLookupResponse, CKDPUserPrivacySettingsResetResponse, CKDPUserPrivacySettingsRetrieveResponse, CKDPUserPrivacySettingsUpdateResponse, CKDPUserQueryResponse, CKDPUserRetrieveResponse, CKDPZoneDeleteResponse, CKDPZoneRetrieveResponse, CKDPZoneSaveResponse;
 
 @interface CKDPResponseOperation : PBCodable <NSCopying> {
-    struct { 
-        unsigned int operationCost : 1; 
     CKDPAssetUploadTokenRetrieveResponse *_assetUploadTokenRetrieveResponse;
     CKDPDeleteCommentResponse *_deleteCommentResponse;
     CKDPDeleteContainerResponse *_deleteContainerResponse;
     CKDPGetCommentResponse *_getCommentResponse;
     CKDPGetCommentsResponse *_getCommentsResponse;
     CKDPGetLikesResponse *_getLikesResponse;
+    struct { 
+        unsigned int operationCost : 1; 
     } _has;
     CKDPInvitationAcceptResponse *_invitationAcceptResponse;
     CKDPInvitationDeclineResponse *_invitationDeclineResponse;

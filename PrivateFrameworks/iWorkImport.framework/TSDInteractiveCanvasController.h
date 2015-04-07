@@ -8,40 +8,7 @@
 
 @class <TSDAnnotationHosting>, <TSDAnnotationPopoverController>, <TSDCanvasLayerHosting>, <TSDEditor>, <TSDInteractiveCanvasControllerDelegate>, <TSKDocumentRootProvider>, CALayer, NSArray, NSFormatter, NSMutableArray, NSMutableSet, NSObject<TSDImageHUDController>, NSObject<TSDRulerController>, NSString, TSDBackgroundLayoutAndRenderState, TSDCanvas, TSDCanvasAnimation, TSDCanvasLayer, TSDCanvasView, TSDContainerRep, TSDDynamicOperationController, TSDEditorController, TSDGuideController, TSDLayoutController, TSDTileStorage, TSDTrackerManipulatorCoordinator, TSDUserDefinedGuideController, TSKAccessController, TSKChangeNotifier, TSKCommandController, TSKDocumentRoot, TSPObjectContext;
 
-@interface TSDInteractiveCanvasController : NSObject <TSDCanvasDelegate, TSDErrorPresenter, TSKChangeSourceObserver, NSCoding, TSKScrollViewDelegate, TSDBackgroundLayoutAndRenderStateDelegate, TSDRepTrackerDelegateCreation> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface TSDInteractiveCanvasController : NSObject <NSCoding, TSDBackgroundLayoutAndRenderStateDelegate, TSDCanvasDelegate, TSDErrorPresenter, TSDRepTrackerDelegateCreation, TSKChangeSourceObserver, TSKScrollViewDelegate> {
     BOOL mAnimatingScroll;
     BOOL mAnimatingViewScale;
     <TSDAnnotationPopoverController> *mAnnotationPopoverController;
@@ -75,7 +42,14 @@
     BOOL mInVersionBrowsingMode;
     NSMutableArray *mInspectorGestureRecognizersToReenable;
     BOOL mInspectorModeEnabled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mInspectorSingleTapBlock;
+
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mLastTapPoint;
     <TSDCanvasLayerHosting> *mLayerHost;
     BOOL mLayerHostHasBeenTornDown;
@@ -114,11 +88,41 @@
     BOOL mTextGesturesInFlight;
     TSDTileStorage *mTileStorage;
     NSFormatter *mUnitFormatter;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mUnobscuredScrollViewFrame;
     TSDUserDefinedGuideController *mUserDefinedGuideController;
     BOOL mUsesAlternateDrawableSelectionHighlight;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mVisibleBoundsRectForTiling;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mVisibleUnscaledRect;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mZoomCenterInBounds;
 }
 
@@ -227,8 +231,8 @@
 - (void)backgroundLayoutAndRenderStateDidPerformBackgroundWork:(id)arg1;
 - (void)beginAnimations:(id)arg1 context:(void*)arg2;
 - (void)beginDynamicOperation;
-- (id)beginEditingRep:(id)arg1 clearingSelection:(BOOL)arg2 withEditorProvider:(id)arg3;
 - (id)beginEditingRep:(id)arg1;
+- (id)beginEditingRep:(id)arg1 clearingSelection:(BOOL)arg2 withEditorProvider:(id)arg3;
 - (id)beginEditingRepForInfo:(id)arg1;
 - (void)beginPossiblyParallelInspectorDynamicOperation;
 - (void)beginScrollingOperation;
@@ -236,8 +240,8 @@
 - (BOOL)canDrawTilingLayerInBackground:(id)arg1;
 - (BOOL)canPerformInteractiveAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canZoomToCurrentSelection;
-- (void)canvas:(id)arg1 createdRep:(id)arg2;
 - (id)canvas;
+- (void)canvas:(id)arg1 createdRep:(id)arg2;
 - (void)canvasDidLayout:(id)arg1;
 - (void)canvasDidUpdateRepsFromLayouts:(id)arg1;
 - (void)canvasDidUpdateVisibleBounds:(id)arg1;
@@ -306,8 +310,8 @@
 - (void)hideDisplayedAnnotation;
 - (void)hideRuler;
 - (id)hitKnobAtPoint:(struct CGPoint { float x1; float x2; })arg1 returningRep:(id*)arg2;
-- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
 - (id)hitRep:(struct CGPoint { float x1; float x2; })arg1;
+- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
 - (id)hitRepChromeAtUnscaledPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)hitRepIgnoringClickThrough:(struct CGPoint { float x1; float x2; })arg1;
 - (id)hitRepsAtPoint:(struct CGPoint { float x1; float x2; })arg1 withSlop:(struct CGSize { float x1; float x2; })arg2;
@@ -324,8 +328,8 @@
 - (void)i_layoutUnregistered:(id)arg1;
 - (float)i_nextCanvasViewScaleDetentForProposedViewScale:(float)arg1 greater:(BOOL)arg2;
 - (void)i_recordUserViewScale;
-- (void)i_repNeedsDisplay:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)i_repNeedsDisplay:(id)arg1;
+- (void)i_repNeedsDisplay:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)i_temporarilyDisabledLayoutAndRenderOnThreadDuringScroll;
 - (id)i_tileStorage;
 - (void)i_viewDidZoomToViewScale:(float)arg1;
@@ -361,13 +365,13 @@
 - (BOOL)layoutAndRenderOnThreadDuringScroll;
 - (id)layoutController;
 - (id)layoutForInfo:(id)arg1;
-- (id)layoutForInfoNearestVisibleRect:(id)arg1 intersectingSelection:(id)arg2;
 - (id)layoutForInfoNearestVisibleRect:(id)arg1;
+- (id)layoutForInfoNearestVisibleRect:(id)arg1 intersectingSelection:(id)arg2;
 - (id)layoutForModel:(id)arg1 withSelection:(id)arg2;
 - (void)layoutIfNeeded;
 - (void)layoutInvalidated;
-- (id)layoutsForInfo:(id)arg1 intersectingSelection:(id)arg2;
 - (id)layoutsForInfo:(id)arg1;
+- (id)layoutsForInfo:(id)arg1 intersectingSelection:(id)arg2;
 - (id)layoutsForModel:(id)arg1 withSelection:(id)arg2;
 - (id)localizedPercentStringForAlignmentGuide:(id)arg1;
 - (void)makeEditorPerformAction:(SEL)arg1 withSender:(id)arg2;
@@ -387,8 +391,8 @@
 - (void)p_addOrShowComment:(id)arg1 selector:(SEL)arg2;
 - (void)p_annotationAuthorNameDidChange:(id)arg1;
 - (BOOL)p_annotationShouldShowUI:(id)arg1;
-- (void)p_autoscrollToSelection:(id)arg1 withInfo:(id)arg2 isInitialSelection:(BOOL)arg3 focusRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 scrollImmediately:(BOOL)arg5 skipZoom:(BOOL)arg6;
 - (void)p_autoscrollToSelection:(id)arg1 withInfo:(id)arg2 isInitialSelection:(BOOL)arg3 focusRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (void)p_autoscrollToSelection:(id)arg1 withInfo:(id)arg2 isInitialSelection:(BOOL)arg3 focusRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 scrollImmediately:(BOOL)arg5 skipZoom:(BOOL)arg6;
 - (id)p_backgroundLayoutAndRenderState;
 - (void)p_beginZoomingOperation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_calculateVisibleBoundsRectForTiling;
@@ -403,8 +407,8 @@
 - (void)p_editorControllerSelectionDidChange:(id)arg1;
 - (void)p_editorControllerSelectionDidChangeAndWantsKeyboard:(id)arg1;
 - (void)p_editorDidChangeSelection:(id)arg1 withSelectionFlags:(unsigned int)arg2;
-- (void)p_editorDoneChangingSelection:(id)arg1 withFlags:(unsigned int)arg2;
 - (void)p_editorDoneChangingSelection:(id)arg1;
+- (void)p_editorDoneChangingSelection:(id)arg1 withFlags:(unsigned int)arg2;
 - (BOOL)p_endEditingToBeginEditingRep:(id)arg1;
 - (void)p_endZoomingOperation;
 - (void)p_guideColorChanged:(id)arg1;
@@ -449,8 +453,8 @@
 - (void)removeCommonObservers;
 - (void)removeDecorator:(id)arg1;
 - (id)repContainerLayer;
-- (id)repForInfo:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)repForInfo:(id)arg1;
+- (id)repForInfo:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)repForLayout:(id)arg1;
 - (id)replaceImageController;
 - (id)repsForInfo:(id)arg1;
@@ -466,8 +470,8 @@
 - (void)scrollSearchReferenceToVisible:(id)arg1;
 - (void)scrollToPrimarySelection;
 - (void)scrollToPrimarySelectionForEditor:(id)arg1;
-- (void)scrollToSelection:(id)arg1 onModel:(id)arg2 scrollImmediately:(BOOL)arg3;
 - (void)scrollToSelection:(id)arg1 onModel:(id)arg2;
+- (void)scrollToSelection:(id)arg1 onModel:(id)arg2 scrollImmediately:(BOOL)arg3;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -517,10 +521,10 @@
 - (void)setTextGesturesInFlight:(BOOL)arg1;
 - (void)setUnobscuredScrollViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setUsesAlternateDrawableSelectionHighlight:(BOOL)arg1;
+- (void)setViewScale:(float)arg1;
 - (void)setViewScale:(float)arg1 andScrollViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 animated:(BOOL)arg3;
 - (void)setViewScale:(float)arg1 andScrollViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 maintainPosition:(BOOL)arg3 animated:(BOOL)arg4;
 - (void)setViewScale:(float)arg1 contentOffset:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3;
-- (void)setViewScale:(float)arg1;
 - (BOOL)shouldAutoscrollToSelectionAfterLayout;
 - (BOOL)shouldBeginDrawingTilingLayerInBackground:(id)arg1 returningToken:(id*)arg2 andQueue:(id*)arg3;
 - (BOOL)shouldClipThemeContentToCanvas;
@@ -537,8 +541,8 @@
 - (BOOL)shouldShowUserDefinedGuides;
 - (BOOL)shouldSuppressRendering;
 - (BOOL)shouldZoomOnSelectionChange;
-- (void)showAnnotation:(id)arg1 model:(id)arg2 selection:(id)arg3 beginEditing:(BOOL)arg4 pinned:(BOOL)arg5 shouldSetSelection:(BOOL)arg6 viaKnob:(BOOL)arg7;
 - (void)showAnnotation:(id)arg1 model:(id)arg2 selection:(id)arg3 beginEditing:(BOOL)arg4 pinned:(BOOL)arg5 shouldSetSelection:(BOOL)arg6;
+- (void)showAnnotation:(id)arg1 model:(id)arg2 selection:(id)arg3 beginEditing:(BOOL)arg4 pinned:(BOOL)arg5 shouldSetSelection:(BOOL)arg6 viaKnob:(BOOL)arg7;
 - (BOOL)showGrayOverlay;
 - (BOOL)showInvisibleObjects;
 - (void)showOrHideComments:(id)arg1;
@@ -566,8 +570,8 @@
 - (void)translateGuide:(id)arg1 toContainerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)translateGuides:(id)arg1 toContainerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)unitFormatter;
-- (id)unitStringForAngle:(float)arg1 andLength:(float)arg2;
 - (id)unitStringForAngle:(float)arg1;
+- (id)unitStringForAngle:(float)arg1 andLength:(float)arg2;
 - (id)unitStringForNumber:(float)arg1;
 - (id)unitStringForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)unitStringForSize:(struct CGSize { float x1; float x2; })arg1;

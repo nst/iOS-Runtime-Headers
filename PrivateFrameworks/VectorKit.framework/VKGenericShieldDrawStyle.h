@@ -12,13 +12,13 @@
 
 @property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  backgroundColor; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) struct  borderColor; /* unknown property attribute:  1>=[4f]} */
-@property(readonly) struct  textColor; /* unknown property attribute:  1>=[4f]} */
-@property(readonly) struct  haloColor; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) struct  dropShadowColor; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) struct CGSize { float x1; float x2; } dropShadowOffset;
 @property(readonly) float dropShadowSize;
+@property(readonly) struct  haloColor; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) float haloSize;
 @property(readonly) int style;
+@property(readonly) struct  textColor; /* unknown property attribute:  1>=[4f]} */
 
 + (int)renderStyleID;
 

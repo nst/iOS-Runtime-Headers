@@ -22,10 +22,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOriginalText:(id)arg1 alternatives:(id)arg2 identifier:(id)arg3;
 - (id)initWithOriginalText:(id)arg1 alternatives:(id)arg2;
-- (id)initWithPrimaryString:(id)arg1 alternativeStrings:(id)arg2 identifier:(id)arg3;
+- (id)initWithOriginalText:(id)arg1 alternatives:(id)arg2 identifier:(id)arg3;
 - (id)initWithPrimaryString:(id)arg1 alternativeStrings:(id)arg2;
+- (id)initWithPrimaryString:(id)arg1 alternativeStrings:(id)arg2 identifier:(id)arg3;
 - (void)noteSelectedAlternativeString:(id)arg1;
 - (unsigned int)numberOfAlternatives;
 - (id)originalText;

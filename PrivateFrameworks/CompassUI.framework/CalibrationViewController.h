@@ -5,22 +5,22 @@
 @class CAShapeLayer, CalibrationBallView, CompassBackgroundView, NSMutableArray, UILabel;
 
 @interface CalibrationViewController : UIViewController {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct Matrix<double, 3, 1> { 
-        double _e[3]; 
     double _angleOfAwesome;
     double _angleToRim;
     CalibrationBallView *_ballView;
     NSMutableArray *_calibrationConstraints;
     CompassBackgroundView *_compassBackgroundView;
     CAShapeLayer *_compassBackgroundViewMask;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _compassOriginPoint;
     float _compassRadius;
     BOOL _ignoreMotionUpdates;
     UILabel *_instructionLabel;
     unsigned int _numCompleteTics;
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
     } _previousGravity;
     double _previousHorizontalAngle;
     double _previousTimestamp;

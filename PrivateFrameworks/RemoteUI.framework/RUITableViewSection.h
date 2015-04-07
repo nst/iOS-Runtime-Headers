@@ -4,7 +4,7 @@
 
 @class <RUITableViewSectionDelegate>, NSArray, NSDictionary, NSMutableArray, NSNumber, NSString, RUITableViewRow, UIView<RemoteUITableFooter>, UIView<RemoteUITableHeader>;
 
-@interface RUITableViewSection : RUIElement <RUITableHeaderDelegate, RUITableFooterDelegate> {
+@interface RUITableViewSection : RUIElement <RUITableFooterDelegate, RUITableHeaderDelegate> {
     NSString *_HTMLFooterContent;
     NSString *_HTMLHeaderContent;
     BOOL _configured;
@@ -59,16 +59,16 @@
 - (id)footerAttributes;
 - (float)footerHeight;
 - (id)footerText;
-- (void)footerView:(id)arg1 activatedLinkWithURL:(id)arg2;
 - (id)footerView;
+- (void)footerView:(id)arg1 activatedLinkWithURL:(id)arg2;
 - (BOOL)hasCustomFooter;
 - (BOOL)hasCustomHeader;
 - (BOOL)hasValueForDrawsTopSeparator;
 - (id)headerAttributes;
 - (float)headerHeight;
 - (id)headerText;
-- (void)headerView:(id)arg1 activatedLinkWithURL:(id)arg2;
 - (id)headerView;
+- (void)headerView:(id)arg1 activatedLinkWithURL:(id)arg2;
 - (id)init;
 - (void)insertRow:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)populatePostbackDictionary:(id)arg1;

@@ -72,8 +72,8 @@
 - (void)newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
 - (id)newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (id)newSamplerStateWithDescriptor:(id)arg1;
-- (id)newTextureWithDescriptor:(id)arg1 iosurface:(struct __IOSurface { }*)arg2 plane:(unsigned int)arg3;
 - (id)newTextureWithDescriptor:(id)arg1;
+- (id)newTextureWithDescriptor:(id)arg1 iosurface:(struct __IOSurface { }*)arg2 plane:(unsigned int)arg3;
 - (id)pipelineStates;
 - (id)samplers;
 - (void)setMetalAssertionsEnabled:(BOOL)arg1;

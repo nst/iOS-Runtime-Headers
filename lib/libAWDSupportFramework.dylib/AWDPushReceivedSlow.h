@@ -5,6 +5,9 @@
 @class NSString;
 
 @interface AWDPushReceivedSlow : PBCodable <NSCopying> {
+    unsigned int _connectionType;
+    unsigned int _dualChannelState;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
@@ -13,9 +16,6 @@
         unsigned int linkQuality : 1; 
         unsigned int payloadSize : 1; 
         unsigned int receiveOffset : 1; 
-    unsigned int _connectionType;
-    unsigned int _dualChannelState;
-    NSString *_guid;
     } _has;
     unsigned int _isFromStorage;
     int _linkQuality;

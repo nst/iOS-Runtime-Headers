@@ -36,9 +36,9 @@
 - (void)completeAndSave;
 - (void)dealloc;
 - (id)editViewDelegate;
+- (id)editor;
 - (void)editor:(id)arg1 didCompleteWithAction:(int)arg2;
 - (void)editor:(id)arg1 prepareCalendarItemForEdit:(id)arg2;
-- (id)editor;
 - (id)editorBackgroundColor;
 - (float)editorNavBarLeftContentInset;
 - (float)editorNavBarRightContentInset;

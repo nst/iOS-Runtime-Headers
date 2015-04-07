@@ -4,7 +4,7 @@
 
 @class <IKAppDataStoring>, IKAppContext, MPUExtrasArtworkDataSource, MPUExtrasContext, MPUExtrasFeatureContainerViewController, MPUExtrasMainTemplateViewController, MPUExtrasNavigationController, NSObject<OS_dispatch_queue>, NSString, UINavigationController, UIView;
 
-@interface MPUExtrasRootViewController : UIViewController <IKApplication, IKAppContextDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, IKAppDeviceConfig, MPVideoOverlayDelegate> {
+@interface MPUExtrasRootViewController : UIViewController <IKAppContextDelegate, IKAppDeviceConfig, IKApplication, MPVideoOverlayDelegate, UICollectionViewDelegate, UINavigationControllerDelegate> {
     IKAppContext *_applicationContext;
     MPUExtrasArtworkDataSource *_artworkDataSource;
     MPUExtrasContext *_context;
@@ -62,9 +62,9 @@
 - (id)localStorage;
 - (id)mainMenuBar;
 - (id)mainTemplateViewController;
+- (id)navigationController;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
-- (id)navigationController;
 - (id)navigationControllerForContext:(id)arg1;
 - (void)overlayTappedBackButton:(id)arg1;
 - (void)popToFeatureOrMain;

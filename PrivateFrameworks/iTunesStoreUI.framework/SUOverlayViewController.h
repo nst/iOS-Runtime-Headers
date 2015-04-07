@@ -5,15 +5,15 @@
 @class NSMutableArray, SUMaskProvider, SUMaskedView, SUOverlayTransition, SUScriptFunction, SUScriptWindowContext, SUTouchCaptureView, UIViewController;
 
 @interface SUOverlayViewController : SUViewController {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSMutableArray *_actionQueue;
     UIViewController *_activeViewController;
     UIViewController *_backViewController;
     BOOL _canSwipeToDismiss;
     UIViewController *_frontViewController;
     SUOverlayTransition *_lastFlipTransition;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _overlaySize;
     SUOverlayTransition *_presentationTransition;
     SUScriptWindowContext *_scriptWindowContext;

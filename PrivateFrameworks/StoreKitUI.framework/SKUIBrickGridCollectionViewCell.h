@@ -5,13 +5,13 @@
 @class NSString, SKUIEditorialCellLayout, UIImage, UIImageView, UIView;
 
 @interface SKUIBrickGridCollectionViewCell : UICollectionViewCell {
+    NSString *_accessibilityLabel;
+    UIImageView *_brickImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSString *_accessibilityLabel;
-    UIImageView *_brickImageView;
     } _contentInsets;
     SKUIEditorialCellLayout *_editorialCellLayout;
     UIView *_editorialContainerView;

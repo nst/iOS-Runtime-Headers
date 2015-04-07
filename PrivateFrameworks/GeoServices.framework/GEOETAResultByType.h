@@ -3,13 +3,13 @@
  */
 
 @interface GEOETAResultByType : PBCodable <NSCopying> {
+    unsigned int _distance;
     struct { 
         unsigned int distance : 1; 
         unsigned int historicTravelTime : 1; 
         unsigned int status : 1; 
         unsigned int transportType : 1; 
         unsigned int travelTimeBestEstimate : 1; 
-    unsigned int _distance;
     } _has;
     unsigned int _historicTravelTime;
     int _status;

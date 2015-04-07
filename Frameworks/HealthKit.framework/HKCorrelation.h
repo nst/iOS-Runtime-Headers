@@ -4,7 +4,7 @@
 
 @class HKCorrelationType, NSMutableDictionary, NSSet, NSString, NSUUID;
 
-@interface HKCorrelation : HKSample <NSSecureCoding, HDCoding> {
+@interface HKCorrelation : HKSample <HDCoding, NSSecureCoding> {
     NSMutableDictionary *_objects;
 }
 
@@ -18,8 +18,8 @@
 
 + (BOOL)_allowEmptyCorrelations;
 + (BOOL)_isConcreteObjectClass;
-+ (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4 metadata:(id)arg5;
 + (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4;
++ (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4 metadata:(id)arg5;
 + (id)createWithCodable:(id)arg1;
 + (BOOL)supportsSecureCoding;
 

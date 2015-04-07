@@ -18,8 +18,8 @@
 - (id)_tableViewController;
 - (void)dealloc;
 - (id)initWithContentViewController:(id)arg1;
-- (id)initWithType:(unsigned int)arg1 includeMirroring:(BOOL)arg2;
 - (id)initWithType:(unsigned int)arg1;
+- (id)initWithType:(unsigned int)arg1 includeMirroring:(BOOL)arg2;
 - (id)routingController;
 - (void)routingViewController:(id)arg1 didPickRoute:(id)arg2;
 

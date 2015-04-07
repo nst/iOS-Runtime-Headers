@@ -4,7 +4,7 @@
 
 @class NSArray, NSAttributedString, NSData, NSDate, NSString;
 
-@interface IMMessageItem : IMItem <NSCoding, NSCopying, IMRemoteObjectCoding> {
+@interface IMMessageItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
     NSAttributedString *_body;
     NSData *_bodyData;
     unsigned int _error;
@@ -75,8 +75,8 @@
 - (unsigned long long)flags;
 - (BOOL)hasDataDetectorResults;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1 hint:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 hint:(id)arg2;
 - (id)initWithSender:(id)arg1 time:(id)arg2 body:(id)arg3 attributes:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(unsigned long long)arg6 error:(id)arg7 guid:(id)arg8;
 - (id)initWithSender:(id)arg1 time:(id)arg2 guid:(id)arg3 type:(long long)arg4;
 - (id)initWithSenderInfo:(id)arg1 time:(id)arg2 guid:(id)arg3 messageID:(long long)arg4 account:(id)arg5 accountID:(id)arg6 service:(id)arg7 handle:(id)arg8 roomName:(id)arg9 unformattedID:(id)arg10 countryCode:(id)arg11;

@@ -15,7 +15,11 @@
     BOOL _isFinished;
     BOOL _numberOfMatchesExceededLimit;
     EKDirectorySearchQuery *_query;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resultsBlock;
+
     id _searchID;
 }
 

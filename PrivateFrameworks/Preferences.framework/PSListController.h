@@ -4,10 +4,7 @@
 
 @class <PSSpecifierDataSource>, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIActionSheet, UIAlertView, UIColor, UIKeyboard, UIPopoverController, UITableView, UIView;
 
-@interface PSListController : PSViewController <UIAppearance, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PSSpecifierObserver, PSViewControllerOffsetProtocol> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface PSListController : PSViewController <PSSpecifierObserver, PSViewControllerOffsetProtocol, UIActionSheetDelegate, UIAlertViewDelegate, UIAppearance, UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIActionSheet *_actionSheet;
     UIAlertView *_alertView;
     UIColor *_altTextColor;
@@ -21,6 +18,9 @@
     UIColor *_cellHighlightColor;
     NSMutableDictionary *_cells;
     UIView *_containerView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _contentOffsetWithKeyboard;
     <PSSpecifierDataSource> *_dataSource;
     BOOL _edgeToEdgeCells;
@@ -106,8 +106,8 @@
 - (void)_loadBundleControllers;
 - (void)_moveSpecifierAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 animated:(BOOL)arg3;
 - (int)_nextGroupInSpecifiersAfterIndex:(int)arg1 inArray:(id)arg2;
-- (void)_performHighlightForSpecifierWithID:(id)arg1 tryAgainIfFailed:(BOOL)arg2;
 - (void)_performHighlightForSpecifierWithID:(id)arg1;
+- (void)_performHighlightForSpecifierWithID:(id)arg1 tryAgainIfFailed:(BOOL)arg2;
 - (void)_removeContiguousSpecifiers:(id)arg1 animated:(BOOL)arg2;
 - (void)_removeIdentifierForSpecifier:(id)arg1;
 - (void)_returnKeyPressed:(id)arg1;
@@ -119,10 +119,10 @@
 - (void)_unloadBundleControllers;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)addSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (void)addSpecifier:(id)arg1;
-- (void)addSpecifiersFromArray:(id)arg1 animated:(BOOL)arg2;
+- (void)addSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (void)addSpecifiersFromArray:(id)arg1;
+- (void)addSpecifiersFromArray:(id)arg1 animated:(BOOL)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)altTextColor;
 - (id)backgroundColor;
@@ -178,26 +178,26 @@
 - (id)indexPathForSpecifier:(id)arg1;
 - (id)init;
 - (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)insertContiguousSpecifiers:(id)arg1 afterSpecifier:(id)arg2 animated:(BOOL)arg3;
 - (void)insertContiguousSpecifiers:(id)arg1 afterSpecifier:(id)arg2;
-- (void)insertContiguousSpecifiers:(id)arg1 afterSpecifierID:(id)arg2 animated:(BOOL)arg3;
+- (void)insertContiguousSpecifiers:(id)arg1 afterSpecifier:(id)arg2 animated:(BOOL)arg3;
 - (void)insertContiguousSpecifiers:(id)arg1 afterSpecifierID:(id)arg2;
-- (void)insertContiguousSpecifiers:(id)arg1 atEndOfGroup:(int)arg2 animated:(BOOL)arg3;
+- (void)insertContiguousSpecifiers:(id)arg1 afterSpecifierID:(id)arg2 animated:(BOOL)arg3;
 - (void)insertContiguousSpecifiers:(id)arg1 atEndOfGroup:(int)arg2;
-- (void)insertContiguousSpecifiers:(id)arg1 atIndex:(int)arg2 animated:(BOOL)arg3;
+- (void)insertContiguousSpecifiers:(id)arg1 atEndOfGroup:(int)arg2 animated:(BOOL)arg3;
 - (void)insertContiguousSpecifiers:(id)arg1 atIndex:(int)arg2;
-- (void)insertSpecifier:(id)arg1 afterSpecifier:(id)arg2 animated:(BOOL)arg3;
+- (void)insertContiguousSpecifiers:(id)arg1 atIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)insertSpecifier:(id)arg1 afterSpecifier:(id)arg2;
-- (void)insertSpecifier:(id)arg1 afterSpecifierID:(id)arg2 animated:(BOOL)arg3;
+- (void)insertSpecifier:(id)arg1 afterSpecifier:(id)arg2 animated:(BOOL)arg3;
 - (void)insertSpecifier:(id)arg1 afterSpecifierID:(id)arg2;
-- (void)insertSpecifier:(id)arg1 atEndOfGroup:(int)arg2 animated:(BOOL)arg3;
+- (void)insertSpecifier:(id)arg1 afterSpecifierID:(id)arg2 animated:(BOOL)arg3;
 - (void)insertSpecifier:(id)arg1 atEndOfGroup:(int)arg2;
-- (void)insertSpecifier:(id)arg1 atIndex:(int)arg2 animated:(BOOL)arg3;
+- (void)insertSpecifier:(id)arg1 atEndOfGroup:(int)arg2 animated:(BOOL)arg3;
 - (void)insertSpecifier:(id)arg1 atIndex:(int)arg2;
+- (void)insertSpecifier:(id)arg1 atIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)invalidateSpecifiersForDataSource:(id)arg1;
 - (void)lazyLoadBundle:(id)arg1;
-- (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2 bundle:(id)arg3;
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2;
+- (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2 bundle:(id)arg3;
 - (void)loadView;
 - (void)loseFocus;
 - (void)migrateSpecifierMetadataFrom:(id)arg1 to:(id)arg2;
@@ -219,25 +219,25 @@
 - (void)prepareSpecifiersMetadata;
 - (void)reload;
 - (void)reloadIconForSpecifierForBundle:(id)arg1;
-- (void)reloadSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (void)reloadSpecifier:(id)arg1;
-- (void)reloadSpecifierAtIndex:(int)arg1 animated:(BOOL)arg2;
+- (void)reloadSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (void)reloadSpecifierAtIndex:(int)arg1;
-- (void)reloadSpecifierID:(id)arg1 animated:(BOOL)arg2;
+- (void)reloadSpecifierAtIndex:(int)arg1 animated:(BOOL)arg2;
 - (void)reloadSpecifierID:(id)arg1;
+- (void)reloadSpecifierID:(id)arg1 animated:(BOOL)arg2;
 - (void)reloadSpecifiers;
-- (void)removeContiguousSpecifiers:(id)arg1 animated:(BOOL)arg2;
 - (void)removeContiguousSpecifiers:(id)arg1;
+- (void)removeContiguousSpecifiers:(id)arg1 animated:(BOOL)arg2;
 - (void)removeLastSpecifier;
 - (void)removeLastSpecifierAnimated:(BOOL)arg1;
-- (void)removeSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (void)removeSpecifier:(id)arg1;
-- (void)removeSpecifierAtIndex:(int)arg1 animated:(BOOL)arg2;
+- (void)removeSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (void)removeSpecifierAtIndex:(int)arg1;
-- (void)removeSpecifierID:(id)arg1 animated:(BOOL)arg2;
+- (void)removeSpecifierAtIndex:(int)arg1 animated:(BOOL)arg2;
 - (void)removeSpecifierID:(id)arg1;
-- (void)replaceContiguousSpecifiers:(id)arg1 withSpecifiers:(id)arg2 animated:(BOOL)arg3;
+- (void)removeSpecifierID:(id)arg1 animated:(BOOL)arg2;
 - (void)replaceContiguousSpecifiers:(id)arg1 withSpecifiers:(id)arg2;
+- (void)replaceContiguousSpecifiers:(id)arg1 withSpecifiers:(id)arg2 animated:(BOOL)arg3;
 - (void)returnPressedAtEnd;
 - (int)rowsForGroup:(int)arg1;
 - (void)selectRowForSpecifier:(id)arg1;
@@ -273,11 +273,11 @@
 - (BOOL)shouldDeferPushForSpecifierID:(id)arg1;
 - (BOOL)shouldReloadSpecifiersOnResume;
 - (BOOL)shouldSelectResponderOnAppearance;
-- (void)showConfirmationViewForSpecifier:(id)arg1 useAlert:(BOOL)arg2 swapAlertButtons:(BOOL)arg3;
-- (void)showConfirmationViewForSpecifier:(id)arg1 useAlert:(BOOL)arg2;
 - (void)showConfirmationViewForSpecifier:(id)arg1;
-- (void)showController:(id)arg1 animate:(BOOL)arg2;
+- (void)showConfirmationViewForSpecifier:(id)arg1 useAlert:(BOOL)arg2;
+- (void)showConfirmationViewForSpecifier:(id)arg1 useAlert:(BOOL)arg2 swapAlertButtons:(BOOL)arg3;
 - (void)showController:(id)arg1;
+- (void)showController:(id)arg1 animate:(BOOL)arg2;
 - (void)showPINSheet:(id)arg1;
 - (id)specifier;
 - (id)specifierAtIndex:(int)arg1;

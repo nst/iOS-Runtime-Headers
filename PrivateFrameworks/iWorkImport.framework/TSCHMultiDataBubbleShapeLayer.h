@@ -28,8 +28,8 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_renderingSymbolElementTransform;
 - (void)setContentsScale:(float)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFill:(id)arg1 stroke:(id)arg2 withViewScale:(float)arg3;
 - (void)setFill:(id)arg1;
+- (void)setFill:(id)arg1 stroke:(id)arg2 withViewScale:(float)arg3;
 - (void)setViewScale:(float)arg1;
 - (void)updateElementFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSeries:(id)arg2 addingAnimationsToAnimationInfo:(id)arg3;
 - (void)updateElementFrameToNullForSeries:(id)arg1 addingAnimationsToAnimationInfo:(id)arg2;

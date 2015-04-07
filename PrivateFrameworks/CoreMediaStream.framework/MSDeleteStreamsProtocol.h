@@ -10,6 +10,7 @@
 @class <MSDeleteStreamsProtocolDelegate>, NSMutableArray;
 
 @interface MSDeleteStreamsProtocol : MSStreamsProtocol {
+    NSMutableArray *_collectionsInFlight;
     struct _MSDSPCContext { 
         struct __MSSPCContext { 
             void *owner; 
@@ -33,7 +34,6 @@
         int (*authFailedCallback)(); 
         int (*didReceiveServerSideConfigurationVersionCallback)(); 
         int (*didReceiveRetryAfterCallback)(); 
-    NSMutableArray *_collectionsInFlight;
     } _context;
 }
 

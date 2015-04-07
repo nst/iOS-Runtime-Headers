@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray, NSString;
 
-@interface SSDownloadPolicy : NSObject <NSCoding, SSXPCCoding, NSCopying> {
+@interface SSDownloadPolicy : NSObject <NSCoding, NSCopying, SSXPCCoding> {
     int _bagType;
     NSString *_downloadKind;
     NSMutableArray *_policyRules;

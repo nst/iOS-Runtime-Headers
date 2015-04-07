@@ -5,6 +5,22 @@
 @class <CLLocationManagerDelegate>, NSMutableSet, NSString;
 
 @interface CLLocationManagerInternal : NSObject {
+    int fActivityType;
+    BOOL fAllowsLocationPrompts;
+    BOOL fAllowsMapCorrection;
+    BOOL fBatchingLocation;
+    struct { 
+        double bestAccuracy; 
+    } fCapabilities;
+    BOOL fCapabilitiesValid;
+    struct __CLClient { } *fClient;
+    BOOL fCourtesyPromptNeeded;
+    <CLLocationManagerDelegate> *fDelegate;
+    double fDesiredAccuracy;
+    double fDistanceFilter;
+    BOOL fDynamicAccuracyReductionEnabled;
+    double fHeadingFilter;
+    int fHeadingOrientation;
     struct { 
         int suitability; 
         struct { 
@@ -28,22 +44,6 @@
         } rawCoordinate; 
         double rawCourse; 
         int floor; 
-    struct { 
-        double bestAccuracy; 
-    int fActivityType;
-    BOOL fAllowsLocationPrompts;
-    BOOL fAllowsMapCorrection;
-    BOOL fBatchingLocation;
-    } fCapabilities;
-    BOOL fCapabilitiesValid;
-    struct __CLClient { } *fClient;
-    BOOL fCourtesyPromptNeeded;
-    <CLLocationManagerDelegate> *fDelegate;
-    double fDesiredAccuracy;
-    double fDistanceFilter;
-    BOOL fDynamicAccuracyReductionEnabled;
-    double fHeadingFilter;
-    int fHeadingOrientation;
     } fLocation;
     NSString *fLocationEventType;
     double fLocationRequestAccuracy;

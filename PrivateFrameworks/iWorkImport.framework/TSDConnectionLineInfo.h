@@ -10,13 +10,13 @@
 @class NSString, TSDDrawableInfo;
 
 @interface TSDConnectionLineInfo : TSDShapeInfo {
-    struct { 
-        unsigned int connectedFrom : 1; 
-        unsigned int connectedTo : 1; 
     TSDDrawableInfo *mConnectedFrom;
     NSString *mConnectedFromUUIDString;
     TSDDrawableInfo *mConnectedTo;
     NSString *mConnectedToUUIDString;
+    struct { 
+        unsigned int connectedFrom : 1; 
+        unsigned int connectedTo : 1; 
     } mInvalidFlags;
 }
 
@@ -30,8 +30,8 @@
 - (void)acceptVisitor:(id)arg1;
 - (BOOL)canAnchor;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })computeLayoutFullTransform;
-- (void)computeLayoutInfoGeometry:(id*)arg1 andPathSource:(id*)arg2;
 - (id)computeLayoutInfoGeometry;
+- (void)computeLayoutInfoGeometry:(id*)arg1 andPathSource:(id*)arg2;
 - (id)connectedFrom;
 - (id)connectedFromUUIDString;
 - (id)connectedTo;

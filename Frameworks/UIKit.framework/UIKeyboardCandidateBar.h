@@ -8,10 +8,7 @@
 
 @class <UIKeyboardCandidateBarDelegate>, <UIKeyboardCandidateListDelegate>, NSArray, NSIndexPath, NSString, TIKeyboardCandidateResultSet, UIImageView, UIKBCandidateCollectionView, UIKBThemedView;
 
-@interface UIKeyboardCandidateBar : UIView <UIKeyboardCandidateList, UIKeyboardCandidateListDelegate, UIKeyboardCandidateBarLayoutDelegate, UICollectionViewDataSource> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface UIKeyboardCandidateBar : UIView <UICollectionViewDataSource, UIKeyboardCandidateBarLayoutDelegate, UIKeyboardCandidateList, UIKeyboardCandidateListDelegate> {
     BOOL _canExtend;
     <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
     UIImageView *_candidateMaskView;
@@ -21,6 +18,9 @@
     <UIKeyboardCandidateBarDelegate> *_delegate;
     BOOL _didSkipLayout;
     NSIndexPath *_dragStartNextPageIndexPath;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _dragStartOffset;
     NSIndexPath *_dragStartPreviousPageIndexPath;
     NSArray *_filteredCandidates;
@@ -28,7 +28,11 @@
     NSString *_inlineText;
     UIKBThemedView *_secondaryCandidatesViewEdgeGradient;
     BOOL _shouldSkipLayoutUntilScrollViewAnimationEnds;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _skippedSetCandidatesBlock;
+
     float _upArrowWidth;
 }
 
@@ -63,8 +67,8 @@
 + (float)height;
 + (float)heightForInterfaceOrientation:(int)arg1;
 + (float)heightForLastRow;
-+ (float)heightForRowAtIndex:(unsigned int)arg1 interfaceOrientation:(int)arg2;
 + (float)heightForRowAtIndex:(unsigned int)arg1;
++ (float)heightForRowAtIndex:(unsigned int)arg1 interfaceOrientation:(int)arg2;
 + (unsigned int)numberOfRows;
 + (unsigned int)numberOfRowsForInterfaceOrientation:(int)arg1;
 + (void)setScreenTraits:(id)arg1;
@@ -90,8 +94,8 @@
 - (void)_showCandidateAtIndex:(unsigned int)arg1 inSection:(int)arg2 scrollCellToVisible:(BOOL)arg3 animated:(BOOL)arg4;
 - (void)_showPageAtIndexPath:(id)arg1;
 - (BOOL)_showingInitiallyHiddenCandidates;
-- (void)_stepSelectedCandidateInDirection:(BOOL)arg1 candidateView:(id)arg2 section:(int)arg3;
 - (void)_stepSelectedCandidateInDirection:(BOOL)arg1;
+- (void)_stepSelectedCandidateInDirection:(BOOL)arg1 candidateView:(id)arg2 section:(int)arg3;
 - (void)_updateCanExtendState;
 - (void)_updateCandidateViews;
 - (float)_widthOfItemAtIndex:(unsigned int)arg1 inSection:(int)arg2;

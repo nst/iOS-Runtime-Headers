@@ -8,6 +8,7 @@
  */
 
 @interface TSCH3DBaseImageTextureTiling : TSCH3DTextureTiling {
+    float mRotation;
     struct tvec2<float> { 
         union { 
             float x; 
@@ -19,7 +20,6 @@
             float g; 
             float t; 
         } ; 
-    float mRotation;
     } mScale;
 }
 

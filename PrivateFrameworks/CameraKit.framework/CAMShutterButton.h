@@ -5,11 +5,6 @@
 @class CAMTimelapseShutterRingView, UIActivityIndicatorView, UIImageView, UIView;
 
 @interface CAMShutterButton : UIButton {
-    struct CAMShutterButtonSpec { 
-        float outerRingDiameter; 
-        float outerRingStrokeWidth; 
-        float stopSquareSideLength; 
-        float stopSquareCornerRadius; 
     UIView *__innerView;
     UIImageView *__outerImageView;
     UIView *__outerView;
@@ -17,6 +12,11 @@
     CAMTimelapseShutterRingView *__timelapseOuterView;
     int _mode;
     BOOL _pulsing;
+    struct CAMShutterButtonSpec { 
+        float outerRingDiameter; 
+        float outerRingStrokeWidth; 
+        float stopSquareSideLength; 
+        float stopSquareCornerRadius; 
     } _spec;
     BOOL _spinning;
 }
@@ -65,8 +65,8 @@
 - (void)layoutSubviews;
 - (int)mode;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setMode:(int)arg1;
+- (void)setMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setPulsing:(BOOL)arg1;
 - (void)setSpinning:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

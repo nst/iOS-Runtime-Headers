@@ -4,7 +4,7 @@
 
 @class <PKPassGroupViewDelegate>, NSMutableDictionary, NSString, PKGroup, PKPassView, PKReusablePassViewQueue, UIInterpolatingMotionEffect, UILongPressGestureRecognizer, UIPageControl, UIPanGestureRecognizer, UIScrollView, UIView;
 
-@interface PKPassGroupView : UIView <WLCardViewDelegate, PKGroupDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate> {
+@interface PKPassGroupView : UIView <PKGroupDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, WLCardViewDelegate> {
     BOOL _canPan;
     <PKPassGroupViewDelegate> *_delegate;
     float _dimmerValue;
@@ -75,11 +75,11 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (id)group;
 - (void)group:(id)arg1 didInsertPass:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)group:(id)arg1 didMovePassFromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (void)group:(id)arg1 didRemovePass:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)group:(id)arg1 didUpdatePass:(id)arg2 atIndex:(unsigned int)arg3;
-- (id)group;
 - (id)groupID;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (float)horizontalMotionRelativeValue;
@@ -109,9 +109,9 @@
 - (void)setHorizontalMotionEnabled:(BOOL)arg1;
 - (void)setHorizontalMotionRelativeValue:(float)arg1;
 - (void)setPassViewQueue:(id)arg1;
-- (void)setPresentationState:(int)arg1 animated:(BOOL)arg2 resizePasses:(BOOL)arg3;
-- (void)setPresentationState:(int)arg1 animated:(BOOL)arg2;
 - (void)setPresentationState:(int)arg1;
+- (void)setPresentationState:(int)arg1 animated:(BOOL)arg2;
+- (void)setPresentationState:(int)arg1 animated:(BOOL)arg2 resizePasses:(BOOL)arg3;
 - (void)setShowPageControlWithAnimation:(BOOL)arg1 duration:(double)arg2 delay:(double)arg3;
 - (void)setVerticalMotionEnabled:(BOOL)arg1;
 - (void)setVerticalMotionRelativeValue:(float)arg1;

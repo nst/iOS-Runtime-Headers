@@ -4,7 +4,19 @@
 
 @class <UIPickerViewDataSource>, <UIPickerViewDelegate>, CALayer, NSMutableArray, NSString, UIColor, UIImageView, UIView, _UIPickerViewTestParameters;
 
-@interface UIPickerView : UIView <UIPickerTableViewContainerDelegate, UITableViewDelegate, UIPickerViewScrollTesting, NSCoding, UITableViewDataSource> {
+@interface UIPickerView : UIView <NSCoding, UIPickerTableViewContainerDelegate, UIPickerViewScrollTesting, UITableViewDataSource, UITableViewDelegate> {
+    UIView *_backgroundView;
+    UIImageView *_bottomGradient;
+    UIView *_bottomLineView;
+    _UIPickerViewTestParameters *_currentTestParameters;
+    <UIPickerViewDataSource> *_dataSource;
+    <UIPickerViewDelegate> *_delegate;
+    NSMutableArray *_dividers;
+    UIView *_foregroundView;
+    BOOL _isInLayoutSubviews;
+    BOOL _magnifierEnabled;
+    CALayer *_maskGradientLayer;
+    int _numberOfComponents;
     struct { 
         unsigned int needsLayout : 1; 
         unsigned int delegateRespondsToNumberOfComponentsInPickerView : 1; 
@@ -21,18 +33,6 @@
         unsigned int soundsDisabled : 1; 
         unsigned int usesCheckedSelection : 1; 
         unsigned int skipsBackground : 1; 
-    UIView *_backgroundView;
-    UIImageView *_bottomGradient;
-    UIView *_bottomLineView;
-    _UIPickerViewTestParameters *_currentTestParameters;
-    <UIPickerViewDataSource> *_dataSource;
-    <UIPickerViewDelegate> *_delegate;
-    NSMutableArray *_dividers;
-    UIView *_foregroundView;
-    BOOL _isInLayoutSubviews;
-    BOOL _magnifierEnabled;
-    CALayer *_maskGradientLayer;
-    int _numberOfComponents;
     } _pickerViewFlags;
     NSMutableArray *_selectionBars;
     NSMutableArray *_tables;

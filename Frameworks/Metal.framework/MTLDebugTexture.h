@@ -25,8 +25,8 @@
 - (id)description;
 - (id)descriptor;
 - (id)initWithBaseTexture:(id)arg1 buffer:(id)arg2 descriptor:(id)arg3 offset:(unsigned int)arg4 bytesPerRow:(unsigned int)arg5;
-- (id)initWithBaseTexture:(id)arg1 device:(id)arg2 descriptor:(id)arg3 plane:(unsigned int)arg4;
 - (id)initWithBaseTexture:(id)arg1 device:(id)arg2 descriptor:(id)arg3;
+- (id)initWithBaseTexture:(id)arg1 device:(id)arg2 descriptor:(id)arg3 plane:(unsigned int)arg4;
 - (id)initWithBaseTexture:(id)arg1 texture:(id)arg2 descriptor:(id)arg3;
 - (id)initWithBaseTexture:(id)arg1 texture:(id)arg2 pixelFormat:(unsigned int)arg3;
 - (id)newTextureViewWithPixelFormat:(unsigned int)arg1;

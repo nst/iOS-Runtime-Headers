@@ -5,11 +5,11 @@
 @class AXDialectMap, NSMutableOrderedSet, NSString;
 
 @interface AXLanguageTag : NSObject <NSCopying> {
+    NSMutableOrderedSet *_ambiguousDialects;
+    NSString *_content;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    NSMutableOrderedSet *_ambiguousDialects;
-    NSString *_content;
     } _range;
     NSMutableOrderedSet *_unambiguousDialects;
     BOOL _wasPredicted;

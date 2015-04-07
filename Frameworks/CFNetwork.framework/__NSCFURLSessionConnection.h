@@ -9,7 +9,7 @@
 
 @class <SessionConnectionDelegate>, NSError, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_queue>, NSString, NSURLResponse, NSURLSessionTask;
 
-@interface __NSCFURLSessionConnection : NSObject <NSURLAuthenticationChallengeSender, NSCopying> {
+@interface __NSCFURLSessionConnection : NSObject <NSCopying, NSURLAuthenticationChallengeSender> {
     NSObject<OS_dispatch_data> *_cacheData;
     unsigned long _cacheDataMax;
     NSURLResponse *_cacheResponse;

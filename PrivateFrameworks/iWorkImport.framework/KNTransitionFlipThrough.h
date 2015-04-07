@@ -4,7 +4,7 @@
 
 @class KNAnimParameterGroup, KNMotionBlurAnimationPluginWrapper, NSString;
 
-@interface KNTransitionFlipThrough : KNAnimationEffect <KNTransitionAnimator, KNFrameAnimator, KNAnimationPluginArchiving> {
+@interface KNTransitionFlipThrough : KNAnimationEffect <KNAnimationPluginArchiving, KNFrameAnimator, KNTransitionAnimator> {
     KNMotionBlurAnimationPluginWrapper *_motionBlurWrapper;
     KNAnimParameterGroup *_parameterGroup;
 }

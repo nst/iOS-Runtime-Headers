@@ -10,7 +10,11 @@
 
 @interface AAUIRemoteUIRepairFlow : NSObject <AAUIAccountRepairRemoteUIDelegate> {
     ACAccount *_account;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     <AAUIRemoteUIRepairFlowDelegate> *_delegate;
     AAUIAccountRepairRemoteUI *_remoteUI;
 }

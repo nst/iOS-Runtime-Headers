@@ -3,10 +3,10 @@
  */
 
 @interface AWDIDSMagnetCorruption : PBCodable <NSCopying> {
+    long long _corrupted;
     struct { 
         unsigned int corrupted : 1; 
         unsigned int timestamp : 1; 
-    long long _corrupted;
     } _has;
     unsigned long long _timestamp;
 }

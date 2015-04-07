@@ -5,16 +5,16 @@
 @class UIResponder, UIView, UIWindow;
 
 @interface UINavigationTransitionView : UIView <NSCoding> {
-    unsigned int _isTransitioning : 1;
-    unsigned int _popoverWillCleanUpNavigationTransition : 1;
-    unsigned int _usesRoundedCorners : 1;
     id _delegate;
     UIResponder *_firstResponderToRestore;
     UIView *_fromView;
     float _fromViewAlpha;
+    unsigned int _isTransitioning : 1;
     UIWindow *_originalWindow;
+    unsigned int _popoverWillCleanUpNavigationTransition : 1;
     UIView *_toView;
     int _transition;
+    unsigned int _usesRoundedCorners : 1;
 }
 
 @property id delegate;

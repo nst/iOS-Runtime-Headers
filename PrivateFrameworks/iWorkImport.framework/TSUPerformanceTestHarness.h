@@ -5,12 +5,12 @@
 @class NSMutableArray;
 
 @interface TSUPerformanceTestHarness : NSObject {
-    struct timeval { 
-        int tv_sec; 
-        int tv_usec; 
     BOOL mPassed;
     int mPassingTests;
     BOOL mQuiet;
+    struct timeval { 
+        int tv_sec; 
+        int tv_usec; 
     } mSetupTime;
     NSMutableArray *mTestCases;
     int mTotalTests;
@@ -34,8 +34,8 @@
 - (int)passingTestCount;
 - (BOOL)quiet;
 - (void)report;
-- (void)runTestWithName:(id)arg1 selector:(SEL)arg2 goalTime:(double)arg3 precision:(double)arg4;
 - (void)runTestWithName:(id)arg1 selector:(SEL)arg2 goalTime:(double)arg3;
+- (void)runTestWithName:(id)arg1 selector:(SEL)arg2 goalTime:(double)arg3 precision:(double)arg4;
 - (BOOL)runTests;
 - (void)setQuiet:(BOOL)arg1;
 - (void)setup;

@@ -4,7 +4,7 @@
 
 @class NSArray, NSLock, NSObject<SLPlaceDataSource>, NSString, NSTimer, UISearchDisplayController;
 
-@interface SLSheetPlaceSearchController : NSObject <UITableViewDataSource, SLPlaceDataSourceDelegate> {
+@interface SLSheetPlaceSearchController : NSObject <SLPlaceDataSourceDelegate, UITableViewDataSource> {
     NSTimer *_delayTimer;
     BOOL _isSearching;
     NSObject<SLPlaceDataSource> *_placeDataSource;

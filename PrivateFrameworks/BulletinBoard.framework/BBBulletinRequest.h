@@ -62,16 +62,16 @@
 - (void)generateBulletinID;
 - (void)generateNewBulletinID;
 - (BOOL)hasContentModificationsRelativeTo:(id)arg1;
-- (void)publish:(BOOL)arg1;
 - (void)publish;
+- (void)publish:(BOOL)arg1;
 - (unsigned int)realertCount;
 - (void)setContextValue:(id)arg1 forKey:(id)arg2;
 - (void)setExpirationEvents:(unsigned int)arg1;
 - (void)setPrimaryAttachmentType:(int)arg1;
 - (void)setRealertCount:(unsigned int)arg1;
 - (void)setShowsUnreadIndicator:(BOOL)arg1;
-- (void)setSupplementaryActions:(id)arg1 forLayout:(int)arg2;
 - (void)setSupplementaryActions:(id)arg1;
+- (void)setSupplementaryActions:(id)arg1 forLayout:(int)arg2;
 - (void)setTentative:(BOOL)arg1;
 - (void)setUnlockActionLabel:(id)arg1;
 - (BOOL)showsUnreadIndicator;

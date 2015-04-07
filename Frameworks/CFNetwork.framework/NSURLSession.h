@@ -9,7 +9,11 @@
 @class <NSURLSessionDelegate>, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSURLSessionConfiguration;
 
 @interface NSURLSession : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __connBlock;
+
     BOOL __isSharedSession;
     NSURLSessionConfiguration *__local_immutable_configuration;
     <NSURLSessionDelegate> *_delegate;
@@ -35,8 +39,8 @@
 + (void)_obliterateAllBackgroundSessionsWithCompletionHandler:(id)arg1;
 + (void)_releaseProcessAssertionForSessionIdentifier:(id)arg1;
 + (void)_sendPendingCallbacksForSessionIdentifier:(id)arg1;
-+ (id)sessionWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 + (id)sessionWithConfiguration:(id)arg1;
++ (id)sessionWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 + (id)sharedSession;
 
 - (id)_AVAssetDownloadTaskWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
@@ -76,12 +80,12 @@
 - (BOOL)can_delegate_willRetryBackgroundDataTask;
 - (id)configuration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)dataTaskWithHTTPGetRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)dataTaskWithHTTPGetRequest:(id)arg1;
-- (id)dataTaskWithRequest:(id)arg1 completionHandler:(id)arg2;
+- (id)dataTaskWithHTTPGetRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)dataTaskWithRequest:(id)arg1;
-- (id)dataTaskWithURL:(id)arg1 completionHandler:(id)arg2;
+- (id)dataTaskWithRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)dataTaskWithURL:(id)arg1;
+- (id)dataTaskWithURL:(id)arg1 completionHandler:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
@@ -112,12 +116,12 @@
 - (void)delegate_task:(id)arg1 willPerformHTTPRedirection:(id)arg2 newRequest:(id)arg3 completionHandler:(id)arg4;
 - (void)delegate_task_isWaitingForConnection:(id)arg1;
 - (void)delegate_willRetryBackgroundDataTask:(id)arg1 withError:(id)arg2;
-- (id)downloadTaskWithRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)downloadTaskWithRequest:(id)arg1;
-- (id)downloadTaskWithResumeData:(id)arg1 completionHandler:(id)arg2;
+- (id)downloadTaskWithRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)downloadTaskWithResumeData:(id)arg1;
-- (id)downloadTaskWithURL:(id)arg1 completionHandler:(id)arg2;
+- (id)downloadTaskWithResumeData:(id)arg1 completionHandler:(id)arg2;
 - (id)downloadTaskWithURL:(id)arg1;
+- (id)downloadTaskWithURL:(id)arg1 completionHandler:(id)arg2;
 - (void)finalizeDelegateWithError:(id)arg1;
 - (void)finishTasksAndInvalidate;
 - (void)flushWithCompletionHandler:(id)arg1;
@@ -138,12 +142,12 @@
 - (void)set_connBlock:(id)arg1;
 - (void)set_isSharedSession:(BOOL)arg1;
 - (void)set_local_immutable_configuration:(id)arg1;
-- (id)streamTaskForHost:(id)arg1 port:(int)arg2 tls:(bool)arg3 completionHandler:(id)arg4;
 - (id)streamTaskForHost:(id)arg1 port:(int)arg2 tls:(bool)arg3;
-- (id)uploadTaskWithRequest:(id)arg1 fromData:(id)arg2 completionHandler:(id)arg3;
+- (id)streamTaskForHost:(id)arg1 port:(int)arg2 tls:(bool)arg3 completionHandler:(id)arg4;
 - (id)uploadTaskWithRequest:(id)arg1 fromData:(id)arg2;
-- (id)uploadTaskWithRequest:(id)arg1 fromFile:(id)arg2 completionHandler:(id)arg3;
+- (id)uploadTaskWithRequest:(id)arg1 fromData:(id)arg2 completionHandler:(id)arg3;
 - (id)uploadTaskWithRequest:(id)arg1 fromFile:(id)arg2;
+- (id)uploadTaskWithRequest:(id)arg1 fromFile:(id)arg2 completionHandler:(id)arg3;
 - (id)uploadTaskWithStreamedRequest:(id)arg1;
 - (id)workQueue;
 

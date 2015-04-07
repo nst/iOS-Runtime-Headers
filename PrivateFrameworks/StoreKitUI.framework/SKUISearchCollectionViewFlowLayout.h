@@ -5,11 +5,11 @@
 @class UICollectionView;
 
 @interface SKUISearchCollectionViewFlowLayout : SKUIItemGridCollectionViewLayout {
+    BOOL _backfills;
+    UICollectionView *_collectionView;
     struct CGSize { 
         float width; 
         float height; 
-    BOOL _backfills;
-    UICollectionView *_collectionView;
     } _headerSize;
     float _horizontalPadding;
     int _numberOfColumns;

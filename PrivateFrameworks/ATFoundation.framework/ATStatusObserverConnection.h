@@ -4,7 +4,7 @@
 
 @class NSString, NSXPCConnection;
 
-@interface ATStatusObserverConnection : NSObject <ATStatusObserverConnectionProtocol, ATStatusMonitorObserver> {
+@interface ATStatusObserverConnection : NSObject <ATStatusMonitorObserver, ATStatusObserverConnectionProtocol> {
     NSXPCConnection *_connection;
 }
 

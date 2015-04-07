@@ -15,7 +15,11 @@
     BOOL _isShowing;
     struct __CFRunLoopSource { } *_runLoopSource;
     NSMutableArray *_showingCompletionHandlers;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _willShowNotificationHandler;
+
     id strongSelf;
 }
 

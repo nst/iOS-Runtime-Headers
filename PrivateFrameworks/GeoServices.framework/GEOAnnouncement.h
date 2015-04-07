@@ -5,10 +5,6 @@
 @class GEOMapRegion, GEOPDFlyover, NSString;
 
 @interface GEOAnnouncement : PBCodable <NSCopying> {
-    struct { 
-        unsigned int announcementID : 1; 
-        unsigned int displayDestinations : 1; 
-        unsigned int releasePhase : 1; 
     unsigned int _announcementID;
     NSString *_buttonOneAppURI;
     NSString *_buttonOneMessage;
@@ -16,6 +12,10 @@
     NSString *_buttonTwoMessage;
     unsigned int _displayDestinations;
     GEOPDFlyover *_flyoverInfo;
+    struct { 
+        unsigned int announcementID : 1; 
+        unsigned int displayDestinations : 1; 
+        unsigned int releasePhase : 1; 
     } _has;
     GEOMapRegion *_mapRegion;
     int _releasePhase;

@@ -5,11 +5,11 @@
 @class GEOLatLng;
 
 @interface GEORoadAccessPoint : PBCodable <NSCopying> {
+    int _drivingDirection;
     struct { 
         unsigned int drivingDirection : 1; 
         unsigned int walkingDirection : 1; 
         unsigned int isApproximate : 1; 
-    int _drivingDirection;
     } _has;
     BOOL _isApproximate;
     GEOLatLng *_location;

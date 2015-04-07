@@ -4,7 +4,7 @@
 
 @class NSString, UITableView, UIView;
 
-@interface UIKeyboardEmojiSplit : UIKBKeyView <UITableViewDelegate, UITableViewDataSource, UIKeyboardEmojiPressIndicationDelegate> {
+@interface UIKeyboardEmojiSplit : UIKBKeyView <UIKeyboardEmojiPressIndicationDelegate, UITableViewDataSource, UITableViewDelegate> {
     UITableView *_picker;
     UIView *_pressIndicator;
 }

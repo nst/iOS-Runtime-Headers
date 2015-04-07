@@ -35,8 +35,8 @@
 - (id)_copyRemoteCatalog;
 - (unsigned int)_destinationIndexForGroupID:(id)arg1 catalogGroups:(id)arg2 skippingNewGroupsAfterIndex:(unsigned int)arg3;
 - (void)_fixIndex:(unsigned int)arg1;
-- (void)_fixIndicesFrom:(unsigned int)arg1 through:(unsigned int)arg2;
 - (void)_fixIndicesFrom:(unsigned int)arg1;
+- (void)_fixIndicesFrom:(unsigned int)arg1 through:(unsigned int)arg2;
 - (void)_getPassesAndCatalogWithHandler:(id)arg1;
 - (BOOL)_groupIDIsNew:(id)arg1;
 - (unsigned int)_indexOfGroupID:(id)arg1;

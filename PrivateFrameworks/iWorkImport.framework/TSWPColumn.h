@@ -5,6 +5,11 @@
 @class <TSWPStyleProvider>, NSString, TSWPStorage;
 
 @interface TSWPColumn : NSObject <TSWPOffscreenColumn> {
+    unsigned int _anchoredCharCount;
+    unsigned int _characterCount;
+    unsigned int _columnIndex;
+    float _contentBottom;
+    float _erasableContentBottom;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,25 +19,13 @@
             float width; 
             float height; 
         } size; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+    } _frameBounds;
+    int _layoutResultFlags;
     struct shared_ptr<TSWPLineFragmentArray> { 
         struct TSWPLineFragmentArray {} *px; 
         struct shared_count { 
             struct sp_counted_base {} *pi_; 
         } pn; 
-    unsigned int _anchoredCharCount;
-    unsigned int _characterCount;
-    unsigned int _columnIndex;
-    float _contentBottom;
-    float _erasableContentBottom;
-    } _frameBounds;
-    int _layoutResultFlags;
     } _lineFragmentArray;
     unsigned int _nextWidowPullsDownFromCharIndex;
     unsigned int _pageNumber;
@@ -43,6 +36,13 @@
     TSWPStorage *_storage;
     <TSWPStyleProvider> *_styleProvider;
     BOOL _textIsVertical;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _transform;
 }
 
@@ -84,8 +84,8 @@
 + (id)footnoteMarkAttachmentInColumnArray:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 + (id)footnoteReferenceAttachmentInColumnArray:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 + (id)pathForHighlightWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 columnArray:(id)arg2 pathStyle:(int)arg3;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection:(id)arg1 withColumns:(id)arg2 useParagraphModeRects:(BOOL)arg3;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection:(id)arg1 withColumns:(id)arg2;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection:(id)arg1 withColumns:(id)arg2 useParagraphModeRects:(BOOL)arg3;
 + (id)smartFieldWithAttributeKind:(int)arg1 inColumnArray:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
 
 - (id).cxx_construct;
@@ -148,12 +148,12 @@
 - (id)partitionedLayoutForInfo:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfLineFragmentAtIndex:(unsigned int)arg1;
-- (id)rectsForSelection:(id)arg1 ranges:(id*)arg2;
 - (id)rectsForSelection:(id)arg1;
-- (id)rectsForSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 selectionType:(int)arg2 forParagraphMode:(BOOL)arg3 includeRuby:(BOOL)arg4;
-- (id)rectsForSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 selectionType:(int)arg2 forParagraphMode:(BOOL)arg3;
-- (id)rectsForSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 selectionType:(int)arg2;
+- (id)rectsForSelection:(id)arg1 ranges:(id*)arg2;
 - (id)rectsForSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)rectsForSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 selectionType:(int)arg2;
+- (id)rectsForSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 selectionType:(int)arg2 forParagraphMode:(BOOL)arg3;
+- (id)rectsForSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 selectionType:(int)arg2 forParagraphMode:(BOOL)arg3 includeRuby:(BOOL)arg4;
 - (id)rectsForSelectionRanges:(id)arg1 selectionType:(int)arg2;
 - (void)renderWithRenderer:(id)arg1 currentSelection:(id)arg2 limitSelection:(id)arg3 listRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 rubyGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 isCanvasInteractive:(BOOL)arg6 suppressedMisspellingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg7 blackAndWhite:(BOOL)arg8 dictationInterpretations:(const struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg9 autocorrections:(const struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg10 markedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg11 markedText:(id)arg12 renderMode:(int)arg13 pageCount:(unsigned int)arg14 suppressInvisibles:(BOOL)arg15 currentCanvasSelection:(id)arg16;
 - (void)renderWithRenderer:(id)arg1 pageCount:(unsigned int)arg2;

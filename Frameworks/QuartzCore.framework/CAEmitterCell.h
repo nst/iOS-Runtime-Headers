@@ -9,7 +9,7 @@
 
 @class NSArray, NSDictionary, NSString;
 
-@interface CAEmitterCell : NSObject <NSCopying, CAPropertyInfo, NSCoding, CAMediaTiming> {
+@interface CAEmitterCell : NSObject <CAMediaTiming, CAPropertyInfo, NSCoding, NSCopying> {
     void *_attr[2];
     unsigned int _flags;
     void *_state;
@@ -79,9 +79,9 @@
 + (id)emitterCell;
 + (id)properties;
 
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)CA_prepareRenderValue;
 - (float)alphaRange;
 - (float)alphaSpeed;

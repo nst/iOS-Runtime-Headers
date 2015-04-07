@@ -8,9 +8,6 @@
     struct { 
         unsigned int chartLayoutState : 1; 
         unsigned int chartLayoutStructure : 1; 
-    struct CGSize { 
-        float width; 
-        float height; 
     } mChartInvalidFlags;
     TSCHChartLayout *mChartLayout;
     BOOL mInResize;
@@ -19,6 +16,9 @@
     TSDLayoutGeometry *mLayoutGeometryWhileCallingSuperComputeLayoutGeometry;
     TSDLayoutGeometry *mLegendGeometryForResize;
     TSCHChartDrawableLayoutLegendResizer *mLegendResizer;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mMinSizeCache;
     BOOL mSuppressChartLayoutInvalidation;
 }
@@ -79,8 +79,8 @@
 - (float)p_approximateMultiDataControlUnscaledMinimumWidth;
 - (float)p_approximatedAdditionalHeightForMultiDataControlWithMinimumAccommodatingScale:(float)arg1;
 - (struct CGSize { float x1; float x2; })p_calcMinSize;
-- (id)p_chartLayout2D;
 - (id)p_chartLayout;
+- (id)p_chartLayout2D;
 - (id)p_chartLayoutNoCreate;
 - (void)p_clearChartLayout;
 - (id)p_constrainAndResizePureGeometry:(id)arg1 withValidChartLayout:(id)arg2 toChartAreaGeometry:(id*)arg3 toShadowGeometry:(id*)arg4 toInfoGeometry:(id*)arg5;

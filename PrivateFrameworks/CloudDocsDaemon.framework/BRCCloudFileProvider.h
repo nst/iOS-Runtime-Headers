@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface BRCCloudFileProvider : BRCFileProvider <BRItemNotificationReceiving, BRCReachabilityDelegate> {
+@interface BRCCloudFileProvider : BRCFileProvider <BRCReachabilityDelegate, BRItemNotificationReceiving> {
     NSMutableDictionary *_downloadTrackersByDocID;
     NSMutableDictionary *_pipeByURL;
     NSMutableDictionary *_readersURLAndIDToDocID;

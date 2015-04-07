@@ -10,7 +10,11 @@
 
 @interface CKDDecryptRecordsOperation : CKDDatabaseOperation {
     NSObject<OS_dispatch_group> *_recordDecryptGroup;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordDecryptedBlock;
+
     NSArray *_recordsToDecrypt;
     NSDictionary *_webSharingIdentityDataByRecordID;
 }
@@ -21,8 +25,8 @@
 @property(retain) NSDictionary * webSharingIdentityDataByRecordID;
 
 - (void).cxx_destruct;
-- (void)_decryptRecord:(id)arg1 usingWebSharingIdentityData:(id)arg2;
 - (void)_decryptRecord:(id)arg1;
+- (void)_decryptRecord:(id)arg1 usingWebSharingIdentityData:(id)arg2;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProtectionDataForRecord:(id)arg1;
 - (void)_recordWasDecrypted:(id)arg1 withError:(id)arg2;

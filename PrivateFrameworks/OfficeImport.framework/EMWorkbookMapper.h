@@ -5,8 +5,6 @@
 @class CMArchiveManager, EDWorkbook, NSMutableArray, NSString, OIXMLDocument, OIXMLElement;
 
 @interface EMWorkbookMapper : CMMapper <CMMapperRoot> {
-    boolmIsFirstMappedSheet;
-    boolmIsFrameset;
     EDWorkbook *edWorkbook;
     CMArchiveManager *mArchiver;
     OIXMLElement *mBodyElement;
@@ -14,6 +12,8 @@
     BOOL mHasPushedFirstSheet;
     BOOL mHasPushedHeader;
     int mHeight;
+    bool mIsFirstMappedSheet;
+    bool mIsFrameset;
     BOOL mLoadingMessageVisible;
     unsigned int mNumberOfMappedSheets;
     unsigned int mRealSheetCount;

@@ -44,8 +44,8 @@
 - (BOOL)audioConnected;
 - (BOOL)available;
 - (void)cancelPairing;
-- (void)connectDevice:(id)arg1 withServices:(unsigned int)arg2;
 - (void)connectDevice:(id)arg1;
+- (void)connectDevice:(id)arg1 withServices:(unsigned int)arg2;
 - (BOOL)connectable;
 - (BOOL)connected;
 - (id)connectedDevices;
@@ -66,8 +66,8 @@
 - (int)localDeviceSupportsService:(unsigned int)arg1;
 - (id)pairedDevices;
 - (void)postNotification:(id)arg1;
-- (void)postNotificationName:(id)arg1 object:(id)arg2 error:(id)arg3;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
+- (void)postNotificationName:(id)arg1 object:(id)arg2 error:(id)arg3;
 - (int)powerState;
 - (BOOL)powered;
 - (void)resetDeviceScanning;

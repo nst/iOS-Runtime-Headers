@@ -5,20 +5,20 @@
 @class <AVOutputSettingsAssistantBaseSettingsProvider>, <AVOutputSettingsAssistantVideoSettingsAdjuster>;
 
 @interface AVOutputSettingsAssistantInternal : NSObject {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     <AVOutputSettingsAssistantBaseSettingsProvider> *baseSettingsProvider;
     struct opaqueCMFormatDescription { } *sourceAudioFormat;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } sourceVideoAverageFrameDuration;
     struct opaqueCMFormatDescription { } *sourceVideoFormat;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } sourceVideoMinFrameDuration;
     <AVOutputSettingsAssistantVideoSettingsAdjuster> *videoSettingsAdjuster;
 }

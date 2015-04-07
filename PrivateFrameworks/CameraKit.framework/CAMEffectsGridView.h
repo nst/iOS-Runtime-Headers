@@ -5,13 +5,13 @@
 @class NSDictionary;
 
 @interface CAMEffectsGridView : CAMGLView {
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL __atomicBlackAndWhite;
     BOOL __fetchingGridFilters;
     NSDictionary *__gridFilters;
     struct __CVPixelBufferPool { } *_pixelBufferPool;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _pixelBufferPoolSize;
     struct OpaqueVTPixelTransferSession { } *_pixelTransferSession;
     BOOL _square;

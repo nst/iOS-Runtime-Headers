@@ -3,17 +3,17 @@
  */
 
 @interface TNPrintProperties : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
+    float _footerInset;
+    float _headerInset;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    float _footerInset;
-    float _headerInset;
     } _printMargins;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _unscaledPageSize;
 }
 
@@ -35,8 +35,8 @@
 - (float)footerInset;
 - (float)headerInset;
 - (id)initWithPageSize:(struct CGSize { float x1; float x2; })arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)initWithPageSize:(struct CGSize { float x1; float x2; })arg1 printMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 headerInset:(float)arg3 footerInset:(float)arg4;
 - (id)initWithPageSize:(struct CGSize { float x1; float x2; })arg1 printMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (id)initWithPageSize:(struct CGSize { float x1; float x2; })arg1 printMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 headerInset:(float)arg3 footerInset:(float)arg4;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_transformForContentScale:(float)arg1 portraitOrientation:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_unscaledContentRectForOrientation:(BOOL)arg1 headerHeight:(float)arg2 footerHeight:(float)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pageHeaderFooterRectForContentScale:(float)arg1 portraitOrientation:(BOOL)arg2 footer:(BOOL)arg3 textHeight:(float)arg4;

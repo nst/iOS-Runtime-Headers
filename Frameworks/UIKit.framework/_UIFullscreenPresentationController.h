@@ -5,6 +5,7 @@
 @class UIView;
 
 @interface _UIFullscreenPresentationController : _UICurrentContextPresentationController {
+    float _counterRotatedAngle;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    float _counterRotatedAngle;
     } _counterRotatedOriginalBounds;
     UIView *_counterRotatedView;
 }

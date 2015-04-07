@@ -3,17 +3,17 @@
  */
 
 @interface TSTStrokeWidthCache : NSObject {
+    unsigned int mCount;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
+    } mLock;
     struct vector<float, std::__1::allocator<float> > { 
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
             float *__first_; 
         } __end_cap_; 
-    unsigned int mCount;
-    } mLock;
     } mStrokeWidth;
 }
 

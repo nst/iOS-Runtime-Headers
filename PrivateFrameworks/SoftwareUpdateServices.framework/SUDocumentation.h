@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSString, NSURL;
 
-@interface SUDocumentation : NSObject <NSSecureCoding, NSCopying> {
+@interface SUDocumentation : NSObject <NSCopying, NSSecureCoding> {
     NSURL *_baseDocumentationURL;
     NSMutableDictionary *_cachedData;
     NSString *_humanReadableUpdateName;

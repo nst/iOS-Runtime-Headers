@@ -4,10 +4,7 @@
 
 @class <MFComposeRecipientTextViewDelegate>, <MFDraggableItem>, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSTimer, UIButton, UIColor, UIFont, UITextView, UIView, _MFAtomTextAttachment, _MFAtomTextView;
 
-@interface MFComposeRecipientTextView : MFComposeHeaderView <UITextViewDelegate, NSLayoutManagerDelegate, MFMultiDragSource, MFMultiDragDestination, MFComposeRecipientAtomDelegate> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+@interface MFComposeRecipientTextView : MFComposeHeaderView <MFComposeRecipientAtomDelegate, MFMultiDragDestination, MFMultiDragSource, NSLayoutManagerDelegate, UITextViewDelegate> {
     UIButton *_addButton;
     BOOL _allowsDragAndDrop;
     UIView *_atomContainerView;
@@ -19,6 +16,9 @@
     NSTimer *_collapsableUpdateTimer;
     BOOL _collapsedStateInitialized;
     BOOL _didIgnoreFirstResponderResign;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _dragSourceRange;
     BOOL _editable;
     BOOL _focused;
@@ -111,8 +111,8 @@
 - (id)_valueForAtomLayoutOption:(id)arg1 withRecipient:(id)arg2;
 - (void)addAddress:(id)arg1;
 - (id)addButton;
-- (void)addRecipient:(id)arg1 index:(unsigned int)arg2 animate:(BOOL)arg3;
 - (void)addRecipient:(id)arg1;
+- (void)addRecipient:(id)arg1 index:(unsigned int)arg2 animate:(BOOL)arg3;
 - (void)addRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (id)addresses;
 - (BOOL)allowsDrag;
@@ -175,8 +175,8 @@
 - (void)setBaseFont:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEditable:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditable:(BOOL)arg1;
+- (void)setEditable:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFocused:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHideLastAtomComma:(int)arg1;
@@ -195,8 +195,8 @@
 - (id)supportedDropTypes:(id)arg1;
 - (id)text;
 - (float)textFieldOffsetForNumberOfRowsToScroll:(unsigned int)arg1 numberOfRowsAboveField:(int)arg2;
-- (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (id)textView;
+- (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidChangeSelection:(id)arg1;
 - (id)uncommentedAddresses;

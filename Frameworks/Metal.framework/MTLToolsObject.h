@@ -23,15 +23,15 @@
 + (id)dispatchQueue;
 + (void)visitObjects:(id)arg1 withVisitor:(id)arg2;
 
-- (struct ILayerLockingPolicy { int (**x1)(); }*)lockingPolicy;
 - (void).cxx_destruct;
 - (void)acceptVisitor:(id)arg1;
 - (id)baseObject;
 - (id)baseObjectWithClass:(Class)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)initWithBaseObject:(id)arg1 parent:(id)arg2 lockingPolicy:(struct ILayerLockingPolicy { int (**x1)(); }*)arg3;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
+- (id)initWithBaseObject:(id)arg1 parent:(id)arg2 lockingPolicy:(struct ILayerLockingPolicy { int (**x1)(); }*)arg3;
+- (struct ILayerLockingPolicy { int (**x1)(); }*)lockingPolicy;
 - (id)originalObject;
 - (id)parent;
 - (void)setBaseObject:(id)arg1;

@@ -5,6 +5,8 @@
 @class NSString;
 
 @interface SUDeferredUISearchField : UISearchField <SUDeferredUIView> {
+    int _deferredClearButtonMode;
+    id _deferredFont;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    int _deferredClearButtonMode;
-    id _deferredFont;
     } _deferredFrame;
     float _deferredPaddingLeft;
     float _deferredPaddingTop;

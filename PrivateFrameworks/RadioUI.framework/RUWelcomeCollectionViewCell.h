@@ -5,10 +5,10 @@
 @class MPUBorderConfiguration, MPUBorderDrawingCache, MPUStackView, NSString, UIImage, UIView;
 
 @interface RUWelcomeCollectionViewCell : UICollectionViewCell <MPUStackViewDataSource> {
+    UIImage *_artworkImage;
     struct CGSize { 
         float width; 
         float height; 
-    UIImage *_artworkImage;
     } _artworkSize;
     MPUBorderConfiguration *_stackItemBorderConfiguration;
     MPUBorderDrawingCache *_stackItemBorderDrawingCache;

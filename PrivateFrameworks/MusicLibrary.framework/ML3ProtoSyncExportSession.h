@@ -5,14 +5,14 @@
 @class MSVStreamWriter, NSString;
 
 @interface ML3ProtoSyncExportSession : ML3ExportSession {
+    NSString *_libraryUUID;
+    double _sessionStartTime;
     struct { 
         int trackAdds; 
         int trackDeletes; 
         int playlistAdds; 
         int playlistDeletes; 
         unsigned int totalSize; 
-    NSString *_libraryUUID;
-    double _sessionStartTime;
     } _stats;
     MSVStreamWriter *_streamWriter;
     int _syncType;

@@ -12,8 +12,8 @@
 + (id)URLWithBagContext:(id)arg1;
 + (id)sharedCache;
 
-- (id)URLBagForContext:(id)arg1 withOptions:(int)arg2;
 - (id)URLBagForContext:(id)arg1;
+- (id)URLBagForContext:(id)arg1 withOptions:(int)arg2;
 - (id)_URLBagForContext:(id)arg1 withOptions:(int)arg2;
 - (id)_cachedResponseForRequest:(id)arg1;
 - (id)_fallbackContextWithContext:(id)arg1;

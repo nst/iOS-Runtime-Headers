@@ -9,7 +9,11 @@
 @class NSMutableSet, NSObject<OS_dispatch_queue>;
 
 @interface _VTStatePolicy : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callback;
+
     NSMutableSet *_dependentOnMe;
     NSMutableSet *_dependentUpon;
     NSObject<OS_dispatch_queue> *_queue;

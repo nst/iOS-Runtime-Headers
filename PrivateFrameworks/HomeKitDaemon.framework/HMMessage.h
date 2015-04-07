@@ -13,7 +13,11 @@
     NSDictionary *_messagePayload;
     NSString *_name;
     BOOL _remoteSource;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _responseHandler;
+
     id _transport;
 }
 
@@ -24,21 +28,21 @@
 @property(readonly) id responseHandler;
 @property(readonly) id transport;
 
-+ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 remoteSource:(BOOL)arg4 responseHandler:(id)arg5;
-+ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 remoteSource:(BOOL)arg4;
-+ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 responseHandler:(id)arg4;
-+ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 transport:(id)arg4 responseHandler:(id)arg5;
-+ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 transport:(id)arg4;
 + (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3;
-+ (id)messageWithName:(id)arg1 messagePayload:(id)arg2 responseHandler:(id)arg3;
-+ (id)messageWithName:(id)arg1 messagePayload:(id)arg2 transport:(id)arg3 responseHandler:(id)arg4;
-+ (id)messageWithName:(id)arg1 messagePayload:(id)arg2 transport:(id)arg3;
++ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 remoteSource:(BOOL)arg4;
++ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 remoteSource:(BOOL)arg4 responseHandler:(id)arg5;
++ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 responseHandler:(id)arg4;
++ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 transport:(id)arg4;
++ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 transport:(id)arg4 responseHandler:(id)arg5;
 + (id)messageWithName:(id)arg1 messagePayload:(id)arg2;
++ (id)messageWithName:(id)arg1 messagePayload:(id)arg2 responseHandler:(id)arg3;
++ (id)messageWithName:(id)arg1 messagePayload:(id)arg2 transport:(id)arg3;
++ (id)messageWithName:(id)arg1 messagePayload:(id)arg2 transport:(id)arg3 responseHandler:(id)arg4;
 
 - (void).cxx_destruct;
 - (id)arrayForKey:(id)arg1;
-- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
 - (BOOL)boolForKey:(id)arg1;
+- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
 - (id)calendarForKey:(id)arg1;
 - (id)dataForKey:(id)arg1;
 - (id)dateComponentsForKey:(id)arg1;

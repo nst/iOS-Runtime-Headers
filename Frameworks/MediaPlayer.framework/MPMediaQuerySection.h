@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface MPMediaQuerySection : NSObject <NSSecureCoding, NSCopying> {
+@interface MPMediaQuerySection : NSObject <NSCopying, NSSecureCoding> {
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 

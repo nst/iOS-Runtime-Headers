@@ -3,13 +3,13 @@
  */
 
 @interface UITextMagnifierTimeWeightedPoint : NSObject {
+    int m_index;
     struct { 
         struct CGPoint { 
             float x; 
             float y; 
         } point; 
         double time; 
-    int m_index;
     } m_points[16];
 }
 
@@ -17,10 +17,10 @@
 
 - (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clearHistory;
-- (struct CGSize { float x1; float x2; })displacementInInterval:(double)arg1 priorTo:(double)arg2;
 - (struct CGSize { float x1; float x2; })displacementInInterval:(double)arg1;
-- (float)distanceCoveredInInterval:(double)arg1 priorTo:(double)arg2;
+- (struct CGSize { float x1; float x2; })displacementInInterval:(double)arg1 priorTo:(double)arg2;
 - (float)distanceCoveredInInterval:(double)arg1;
+- (float)distanceCoveredInInterval:(double)arg1 priorTo:(double)arg2;
 - (BOOL)historyCovers:(double)arg1;
 - (struct CGPoint { float x1; float x2; })weightedPoint;
 

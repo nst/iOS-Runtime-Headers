@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface NSPhoneNumberCheckingResult : NSTextCheckingResult {
+    NSString *_phoneNumber;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    NSString *_phoneNumber;
     } _range;
     id _underlyingResult;
 }
@@ -20,8 +20,8 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 phoneNumber:(id)arg2 underlyingResult:(void*)arg3;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 phoneNumber:(id)arg2;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 phoneNumber:(id)arg2 underlyingResult:(void*)arg3;
 - (id)phoneNumber;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;

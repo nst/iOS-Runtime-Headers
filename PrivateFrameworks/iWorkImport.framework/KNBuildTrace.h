@@ -14,6 +14,8 @@
             float width; 
             float height; 
         } size; 
+    } _animationRect;
+    TSDGLShader *_circleShader;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,8 +25,6 @@
             float width; 
             float height; 
         } size; 
-    } _animationRect;
-    TSDGLShader *_circleShader;
     } _drawableFrame;
     TSDGLShader *_lineShader;
     TSDGLShader *_objectShader;

@@ -4,7 +4,7 @@
 
 @class <PKPassDeleteHandler>, <PKPassLibraryDataProvider>, <PKPaymentVerificationEntryDelegate>, NSMutableArray, NSNumberFormatter, NSObject<OS_dispatch_source>, NSString, NSURL, PKPassView, PKPaymentApplication, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentService, PKPaymentVerificationPresentationController, PKPaymentWebService, PKVerificationRequestRecord, UIColor;
 
-@interface PKPaymentPassDetailViewController : UITableViewController <PKPaymentServiceDelegate, PKPaymentVerificationPresentationDelegate, MFMailComposeViewControllerDelegate> {
+@interface PKPaymentPassDetailViewController : UITableViewController <MFMailComposeViewControllerDelegate, PKPaymentServiceDelegate, PKPaymentVerificationPresentationDelegate> {
     PKPaymentPassDetailActivationFooterView *_activationFooter;
     NSString *_appLaunchToken;
     int _cardInfoNameIndex;
@@ -74,8 +74,8 @@
 - (float)_footerViewHeightForPassStateSectionWithTableView:(id)arg1;
 - (id)_headerTitleForPassStateSection;
 - (float)_heightForPassStateSectionWithTableView:(id)arg1;
-- (id)_infoCell:(id)arg1 withDetailText:(id)arg2;
 - (id)_infoCell:(id)arg1;
+- (id)_infoCell:(id)arg1 withDetailText:(id)arg2;
 - (id)_linkCellWithText:(id)arg1;
 - (id)_linkedAppCell;
 - (id)_moreTransactionsCell;

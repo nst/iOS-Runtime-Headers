@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface PBBProtoPerformanceResult : PBCodable <NSCopying> {
+    NSString *_activityType;
     struct { 
         unsigned int timeDelta : 1; 
         unsigned int timeEnded : 1; 
         unsigned int timeStarted : 1; 
-    NSString *_activityType;
     } _has;
     NSString *_identifier;
     double _timeDelta;

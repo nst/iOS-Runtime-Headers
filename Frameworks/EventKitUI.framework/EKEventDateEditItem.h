@@ -4,7 +4,7 @@
 
 @class NSDateComponents, NSString, NSTimeZone, PreferencesTwoPartValueCell, UIDatePicker, UITableViewCell;
 
-@interface EKEventDateEditItem : EKEventEditItem <EKTimeZoneViewControllerDelegate, EKCellShortener> {
+@interface EKEventDateEditItem : EKEventEditItem <EKCellShortener, EKTimeZoneViewControllerDelegate> {
     BOOL _allDay;
     UITableViewCell *_allDayCell;
     BOOL _changingDate;

@@ -6,9 +6,6 @@
 
 @interface UIMorphingLabel : UIView {
     struct { 
-        unsigned int len; 
-        unsigned int dir; 
-    struct { 
         struct _NSRange { 
             unsigned int location; 
             unsigned int length; 
@@ -18,24 +15,18 @@
             unsigned int length; 
         } dst; 
         BOOL isEqual; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    } _alignment[100];
     float _alignmentDelays[100];
     unsigned int _alignmentSize;
-    } _alignment[100];
     UIView *_colorView;
     UIMorphingLabelGlyphSet *_dstGlyphSet;
     UIFont *_font;
     NSMutableArray *_hiddenGlyphViews;
     BOOL _isDoingFastAnimation;
     float _lastUpdateTime;
+    struct { 
+        unsigned int len; 
+        unsigned int dir; 
     } _memo[51][51];
     float _rippleFactor;
     float _scaleFactor;
@@ -49,6 +40,15 @@
     _UIViewAnimationAttributes *_textColorAnimationAttributes;
     BOOL _textColorDidChange;
     BOOL _textDidChange;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _visibleRect;
 }
 

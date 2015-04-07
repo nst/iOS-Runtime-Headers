@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface RMSNowPlayingArtworkAvailableMessage : PBCodable <NSCopying> {
+    NSString *_artworkIdentifier;
     struct { 
         unsigned int sessionIdentifier : 1; 
-    NSString *_artworkIdentifier;
     } _has;
     int _sessionIdentifier;
 }

@@ -10,7 +10,11 @@
 
 @interface NSFileSubarbitrationClaim : NSFileAccessClaim {
     NSMutableSet *_forwardedClaimIDs;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _messageSender;
+
     NSMutableDictionary *_readRelinquishmentsByPresenterID;
     NSArray *_readingLocations;
     unsigned int _readingOptions;

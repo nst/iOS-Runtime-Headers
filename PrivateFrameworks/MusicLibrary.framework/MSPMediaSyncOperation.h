@@ -5,11 +5,11 @@
 @class MIPAlbum, MIPArtist, MIPGenre, MIPMediaItem, MIPMultiverseIdentifier, MIPPlaylist, MIPSeries;
 
 @interface MSPMediaSyncOperation : PBCodable <NSCopying> {
-    struct { 
-        unsigned int operationType : 1; 
     MIPAlbum *_album;
     MIPArtist *_artist;
     MIPGenre *_genre;
+    struct { 
+        unsigned int operationType : 1; 
     } _has;
     MIPMediaItem *_mediaItem;
     MIPMultiverseIdentifier *_multiverseId;

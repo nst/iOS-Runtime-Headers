@@ -5,11 +5,11 @@
 @class GEOLocation, NSString;
 
 @interface GEOAddressCorrectionInitResponse : PBCodable <NSCopying> {
+    NSString *_addressID;
+    GEOLocation *_addressLocation;
     struct { 
         unsigned int numberOfVisitsBucketSize : 1; 
         unsigned int statusCode : 1; 
-    NSString *_addressID;
-    GEOLocation *_addressLocation;
     } _has;
     unsigned int _numberOfVisitsBucketSize;
     int _statusCode;

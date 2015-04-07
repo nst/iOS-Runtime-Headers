@@ -21,10 +21,10 @@
 + (id)quotedRegionPipeline;
 
 - (void).cxx_destruct;
+- (void)dissect:(id)arg1;
 - (void)dissect:(id)arg1 andStore:(id)arg2;
 - (void)dissect:(id)arg1 andThen:(id)arg2;
-- (void)dissect:(id)arg1;
-- (void)dissectEntity:(id)arg1 andStore:(id)arg2 andThen:(id)arg3;
 - (void)dissectEntity:(id)arg1 andStore:(id)arg2;
+- (void)dissectEntity:(id)arg1 andStore:(id)arg2 andThen:(id)arg3;
 
 @end

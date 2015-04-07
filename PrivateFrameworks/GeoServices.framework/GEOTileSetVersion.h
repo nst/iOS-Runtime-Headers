@@ -3,15 +3,15 @@
  */
 
 @interface GEOTileSetVersion : PBCodable <NSCopying> {
-    struct { 
-        unsigned int supportedLanguagesVersion : 1; 
-        unsigned int timeToLiveSeconds : 1; 
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_availableTiles;
     unsigned int _availableTilesCount;
     unsigned int _availableTilesSpace;
     struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_genericTiles;
     unsigned int _genericTilesCount;
     unsigned int _genericTilesSpace;
+    struct { 
+        unsigned int supportedLanguagesVersion : 1; 
+        unsigned int timeToLiveSeconds : 1; 
     } _has;
     unsigned int _identifier;
     unsigned int _supportedLanguagesVersion;

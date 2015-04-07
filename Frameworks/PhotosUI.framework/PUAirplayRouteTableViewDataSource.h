@@ -12,7 +12,11 @@
     NSArray *_routes;
     PUAirplayRoute *_selectedRoute;
     BOOL _shouldCondenseDisplay;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateHandler;
+
 }
 
 @property(copy,readonly) NSString * displayNameForRoutes;
@@ -29,8 +33,8 @@
 - (id)init;
 - (id)routes;
 - (id)selectedRoute;
-- (void)setSelectedRoute:(id)arg1 updatingCellsFromHelper:(id)arg2;
 - (void)setSelectedRoute:(id)arg1;
+- (void)setSelectedRoute:(id)arg1 updatingCellsFromHelper:(id)arg2;
 - (void)setUpdateHandler:(id)arg1;
 - (BOOL)shouldCondenseDisplay;
 - (id)tableView:(id)arg1 cellForRouteIndex:(int)arg2;

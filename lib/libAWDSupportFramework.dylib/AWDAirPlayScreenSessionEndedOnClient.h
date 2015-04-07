@@ -5,6 +5,15 @@
 @class NSString;
 
 @interface AWDAirPlayScreenSessionEndedOnClient : PBCodable <NSCopying> {
+    unsigned int _avgBitrate;
+    unsigned int _avgEstimatedBandwidth;
+    unsigned int _avgUsedBandwidth;
+    unsigned int _clearScreens;
+    unsigned int _configChanges;
+    unsigned int _cpuAvg;
+    unsigned int _duration;
+    unsigned int _forcedRefreshes;
+    unsigned int _framesSent;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int avgBitrate : 1; 
@@ -24,15 +33,6 @@
         unsigned int unclearScreens : 1; 
         unsigned int wifiChannel : 1; 
         unsigned int wifiRSSI : 1; 
-    unsigned int _avgBitrate;
-    unsigned int _avgEstimatedBandwidth;
-    unsigned int _avgUsedBandwidth;
-    unsigned int _clearScreens;
-    unsigned int _configChanges;
-    unsigned int _cpuAvg;
-    unsigned int _duration;
-    unsigned int _forcedRefreshes;
-    unsigned int _framesSent;
     } _has;
     int _reason;
     unsigned int _resumes;

@@ -9,6 +9,17 @@
 @class <CNFRegWizardControllerDelegate>, CNFRegController, NSString, _UIBackdropView;
 
 @interface CNFRegWizardController : PSSetupController <CNFRegFirstRunDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _alertHandler;
+
+    _UIBackdropView *_backdropView;
+    <CNFRegWizardControllerDelegate> *_firstRunDelegate;
+    CNFRegController *_regController;
+    id _resignListener;
+    id _resumeListener;
+    int _serviceType;
     struct { 
         unsigned int automaticKeyboardWasDisabled : 1; 
         unsigned int shouldListenForSuspension : 1; 
@@ -21,13 +32,6 @@
         unsigned int allowCancel : 1; 
         unsigned int allowSMS : 1; 
         unsigned int shouldTerminateInBackground : 1; 
-    id _alertHandler;
-    _UIBackdropView *_backdropView;
-    <CNFRegWizardControllerDelegate> *_firstRunDelegate;
-    CNFRegController *_regController;
-    id _resignListener;
-    id _resumeListener;
-    int _serviceType;
     } _wizardFlags;
 }
 
@@ -75,8 +79,8 @@
 - (BOOL)canShowSplashScreen;
 - (BOOL)canStartNested;
 - (id)controllerClassesToShow:(BOOL)arg1;
-- (id)controllersToShow:(BOOL)arg1;
 - (id)controllersToShow;
+- (id)controllersToShow:(BOOL)arg1;
 - (void)dealloc;
 - (void)dismissFinished:(BOOL)arg1;
 - (void)dismissWithState:(unsigned int)arg1;

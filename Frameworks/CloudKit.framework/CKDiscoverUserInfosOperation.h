@@ -9,7 +9,11 @@
 @class NSArray, NSMutableDictionary;
 
 @interface CKDiscoverUserInfosOperation : CKOperation {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _discoverUserInfosCompletionBlock;
+
     NSArray *_emailAddresses;
     NSMutableDictionary *_emailsToUserInfos;
     NSArray *_userRecordIDs;

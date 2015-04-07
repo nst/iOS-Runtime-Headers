@@ -5,18 +5,18 @@
 @class NSIndexPath, UIImage, UIImageView;
 
 @interface PUGridMagnifiedView : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
+    UIImageView *_imageView;
+    UIImage *_itemImage;
+    NSIndexPath *_itemIndexPath;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIImageView *_imageView;
-    UIImage *_itemImage;
-    NSIndexPath *_itemIndexPath;
     } _magnifiedDragEdgeInsets;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _magnifiedImageSize;
 }
 

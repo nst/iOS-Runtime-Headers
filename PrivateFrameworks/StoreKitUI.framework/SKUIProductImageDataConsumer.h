@@ -5,11 +5,11 @@
 @class SKUIColorScheme, UIColor;
 
 @interface SKUIProductImageDataConsumer : SKUIImageDataConsumer <NSCopying> {
+    UIColor *_backgroundColor;
+    SKUIColorScheme *_colorScheme;
     struct CGSize { 
         float width; 
         float height; 
-    UIColor *_backgroundColor;
-    SKUIColorScheme *_colorScheme;
     } _iconSize;
 }
 
@@ -42,8 +42,8 @@
 - (id)colorScheme;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct CGSize { float x1; float x2; })iconSize;
-- (id)imageForColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)imageForColor:(id)arg1;
+- (id)imageForColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)imageForImage:(id)arg1;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (void)setBackgroundColor:(id)arg1;

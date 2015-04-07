@@ -13,7 +13,11 @@
     BOOL _covered;
     <GKMasterDetailViewControllerDelegate> *_masterDetailDelegate;
     GKMasterDetailNavigationController *_masterNavigationController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _presentationDelayHandler;
+
     UIView *_separatorBarMaskView;
     UIView *_separatorBarView;
     UIColor *_separatorLineColor;
@@ -75,8 +79,8 @@
 - (void)setCovered:(BOOL)arg1;
 - (void)setMasterDetailDelegate:(id)arg1;
 - (void)setMasterNavigationController:(id)arg1;
-- (void)setNavigationBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setNavigationBarHidden:(BOOL)arg1;
+- (void)setNavigationBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setPresentationDelayHandler:(id)arg1;
 - (void)setSeparatorBarMaskView:(id)arg1;
 - (void)setSeparatorBarView:(id)arg1;

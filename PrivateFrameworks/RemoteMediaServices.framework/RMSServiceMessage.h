@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface RMSServiceMessage : PBCodable <NSCopying> {
+    NSString *_displayName;
     struct { 
         unsigned int port : 1; 
         unsigned int serviceDiscoverySource : 1; 
         unsigned int serviceLegacyFlags : 1; 
         unsigned int serviceType : 1; 
-    NSString *_displayName;
     } _has;
     NSString *_homeSharingGroupKey;
     NSString *_hostName;

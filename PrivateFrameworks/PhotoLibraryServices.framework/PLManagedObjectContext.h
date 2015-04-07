@@ -81,8 +81,8 @@
 + (void)delayedDupeAnalysisDataFromChangeHubEvent:(id)arg1 normalInserts:(id*)arg2 cloudInserts:(id*)arg3;
 + (void)delayedMomentDataFromChangeHubEvent:(id)arg1 insertsAndUpdates:(id*)arg2 deletes:(id*)arg3;
 + (void)delayedSearchIndexUpdatesFromChangeHubEvent:(id)arg1 updates:(id*)arg2;
-+ (void)getStoreURL:(id*)arg1 options:(id*)arg2 forFileURL:(id)arg3;
 + (void)getStoreURL:(id*)arg1 options:(id*)arg2;
++ (void)getStoreURL:(id*)arg1 options:(id*)arg2 forFileURL:(id)arg3;
 + (void)handleUnknownMergeEvent;
 + (BOOL)hasAtLeastOneAsset;
 + (BOOL)hasConfiguredPhotoLibrary;
@@ -150,8 +150,8 @@
 - (BOOL)mergingChanges;
 - (BOOL)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
 - (id)photoLibrary;
-- (id)pl_fetchObjectsWithIDs:(id)arg1 rootEntity:(id)arg2;
 - (id)pl_fetchObjectsWithIDs:(id)arg1;
+- (id)pl_fetchObjectsWithIDs:(id)arg1 rootEntity:(id)arg2;
 - (id)ptpNotificationDelegate;
 - (void)recordAdditionalAssetAttributesForSearchIndexUpdate:(id)arg1;
 - (void)recordAlbumCountUpdate:(id)arg1;

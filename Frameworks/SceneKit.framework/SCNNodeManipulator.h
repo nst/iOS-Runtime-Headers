@@ -7,18 +7,9 @@
  */
 
 @interface SCNNodeManipulator : SCNManipulator {
-    union C3DMatrix4x4 { 
-        float components[16]; 
-        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
-    union C3DMatrix4x4 { 
-        float components[16]; 
-        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
-    union C3DMatrix4x4 { 
-        float components[16]; 
-        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
-    union C3DMatrix4x4 { 
-        float components[16]; 
-        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
+    unsigned short _action;
+
+  /* Error parsing encoded ivar type info: (?="axisMove"{?="selectedAxis"S"originalPosition""axisDirection""mouseDeltaVector"}"planeMove"{?="selectedPlane"S"originalPosition""planeNormal""pointInPlane""mouseDeltaVector"}"axisRotate"{?="selectedAxis"S"originalMouseLocation"{CGPoint="x"f"y"f}"rotationSign"f"originalRotation"{__C3DQuaternion="x"f"y"f"z"f"s"f}}) */
     union { 
         struct { 
             unsigned short selectedAxis; 
@@ -42,13 +33,37 @@
                 float s; 
             } originalRotation; 
         } axisRotate; 
-    unsigned short _action;
     } _actionData;
+
     BOOL _isMouseDown;
+
+  /* Error parsing encoded ivar type info: (C3DMatrix4x4="components"[16f]"m"[4]) */
+    union C3DMatrix4x4 { 
+        float components[16]; 
+        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
     } _xAxisToZAxisTransform;
+
+
+  /* Error parsing encoded ivar type info: (C3DMatrix4x4="components"[16f]"m"[4]) */
+    union C3DMatrix4x4 { 
+        float components[16]; 
+        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
     } _xyPlaneToXZPlaneTransform;
+
+
+  /* Error parsing encoded ivar type info: (C3DMatrix4x4="components"[16f]"m"[4]) */
+    union C3DMatrix4x4 { 
+        float components[16]; 
+        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
     } _xyPlaneToYZPlaneTransform;
+
+
+  /* Error parsing encoded ivar type info: (C3DMatrix4x4="components"[16f]"m"[4]) */
+    union C3DMatrix4x4 { 
+        float components[16]; 
+        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
     } _yAxisToZAxisTransform;
+
 }
 
 - (id)copy;

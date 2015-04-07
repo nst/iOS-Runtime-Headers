@@ -33,8 +33,8 @@
 + (id)messageFromData:(id)arg1;
 + (id)messageFromDictionary:(id)arg1;
 + (id)messageFromHeader:(id)arg1 withParams:(id)arg2 andPayload:(id)arg3;
-+ (id)messageWithName:(id)arg1 parameters:(id)arg2 session:(unsigned int)arg3;
 + (id)messageWithName:(id)arg1 parameters:(id)arg2;
++ (id)messageWithName:(id)arg1 parameters:(id)arg2 session:(unsigned int)arg3;
 + (unsigned int)nextSessionNumber;
 + (void)setSessionNumber:(unsigned int)arg1;
 + (id)signedMessageWithName:(id)arg1 parameters:(id)arg2 sesssion:(unsigned long)arg3;

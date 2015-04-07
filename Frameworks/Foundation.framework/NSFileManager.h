@@ -47,8 +47,8 @@
 - (void)_performRemoveFileAtPath:(id)arg1;
 - (BOOL)_processHasUbiquityContainerEntitlement;
 - (id)_randomTemporaryPathWithFileName:(id)arg1;
-- (id)_randomTemporaryPathWithSuffix:(id)arg1 fileName:(id)arg2;
 - (id)_randomTemporaryPathWithSuffix:(id)arg1;
+- (id)_randomTemporaryPathWithSuffix:(id)arg1 fileName:(id)arg2;
 - (void)_registerForUbiquityAccountChangeNotifications;
 - (id)_safari_containerDirectory;
 - (id)_safari_safariLibraryDirectory;
@@ -117,9 +117,9 @@
 - (id)delegate;
 - (id)destinationOfSymbolicLinkAtPath:(id)arg1 error:(id*)arg2;
 - (BOOL)directoryCanBeCreatedAtPath:(id)arg1;
-- (id)directoryContentsAtPath:(id)arg1 matchingExtension:(id)arg2 options:(int)arg3 keepExtension:(BOOL)arg4 error:(id*)arg5;
-- (id)directoryContentsAtPath:(id)arg1 matchingExtension:(id)arg2 options:(int)arg3 keepExtension:(BOOL)arg4;
 - (id)directoryContentsAtPath:(id)arg1;
+- (id)directoryContentsAtPath:(id)arg1 matchingExtension:(id)arg2 options:(int)arg3 keepExtension:(BOOL)arg4;
+- (id)directoryContentsAtPath:(id)arg1 matchingExtension:(id)arg2 options:(int)arg3 keepExtension:(BOOL)arg4 error:(id*)arg5;
 - (BOOL)directoryExistsAtPath:(id)arg1;
 - (unsigned long long)directoryUsage:(id)arg1;
 - (unsigned long long)directoryUsage:(id)arg1;
@@ -131,8 +131,8 @@
 - (id)extendedAttributeForKey:(id)arg1 atPath:(id)arg2 error:(id*)arg3;
 - (id)extendedAttributesAtPath:(id)arg1 error:(id*)arg2;
 - (id)fileAttributesAtPath:(id)arg1 traverseLink:(BOOL)arg2;
-- (BOOL)fileExistsAtPath:(id)arg1 isDirectory:(BOOL*)arg2;
 - (BOOL)fileExistsAtPath:(id)arg1;
+- (BOOL)fileExistsAtPath:(id)arg1 isDirectory:(BOOL*)arg2;
 - (id)fileSystemAttributesAtPath:(id)arg1;
 - (const char *)fileSystemRepresentationWithPath:(id)arg1;
 - (BOOL)filesystemItemCopyOperation:(id)arg1 shouldCopyItemAtPath:(id)arg2 toPath:(id)arg3;

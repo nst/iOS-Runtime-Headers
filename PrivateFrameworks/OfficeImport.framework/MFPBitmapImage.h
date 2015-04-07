@@ -5,15 +5,15 @@
 @class NSData, OITSUImage;
 
 @interface MFPBitmapImage : MFPImage {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     NSData *mBitmapData;
     OITSUImage *mPhoneBitmapImage;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mPixelSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mPointSize;
 }
 

@@ -5,12 +5,12 @@
 @class NSIndexPath, NSString;
 
 @interface UICollectionViewLayoutAttributes : NSObject <NSCopying, UIDynamicItem> {
+    float _alpha;
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    } _center;
+    NSString *_elementKind;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,6 +20,20 @@
             float width; 
             float height; 
         } size; 
+    } _frame;
+    NSIndexPath *_indexPath;
+    NSString *_isCloneString;
+    struct { 
+        unsigned int isCellKind : 1; 
+        unsigned int isDecorationView : 1; 
+        unsigned int isHidden : 1; 
+        unsigned int isClone : 1; 
+    } _layoutFlags;
+    NSString *_reuseIdentifier;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _size;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -37,20 +51,6 @@
         float m42; 
         float m43; 
         float m44; 
-    struct { 
-        unsigned int isCellKind : 1; 
-        unsigned int isDecorationView : 1; 
-        unsigned int isHidden : 1; 
-        unsigned int isClone : 1; 
-    float _alpha;
-    } _center;
-    NSString *_elementKind;
-    } _frame;
-    NSIndexPath *_indexPath;
-    NSString *_isCloneString;
-    } _layoutFlags;
-    NSString *_reuseIdentifier;
-    } _size;
     } _transform;
     int _zIndex;
 }
@@ -68,8 +68,8 @@
 @property(readonly) NSString * representedElementKind;
 @property struct CGSize { float x1; float x2; } size;
 @property(readonly) Class superclass;
-@property struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } transform3D;
 @property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } transform3D;
 @property int zIndex;
 
 + (id)layoutAttributesForCellWithIndexPath:(id)arg1;
@@ -113,8 +113,8 @@
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setZIndex:(int)arg1;
 - (struct CGSize { float x1; float x2; })size;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform3D;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform3D;
 - (int)zIndex;
 
 @end

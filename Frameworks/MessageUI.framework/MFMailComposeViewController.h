@@ -12,7 +12,11 @@
     BOOL _didChangeStatusBarStyle;
     id _internal;
     int _savedStatusBarStyle;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _setupAnimationBlock;
+
 }
 
 @property <MFMailComposeViewControllerDelegate> * mailComposeDelegate;

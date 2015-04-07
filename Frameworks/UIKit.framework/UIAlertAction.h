@@ -15,10 +15,22 @@
     <_UIAlertActionRepresenting> *__representer;
     BOOL _checked;
     BOOL _enabled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     UIImage *_image;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shouldDismissHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _simpleHandler;
+
     int _style;
     NSString *_title;
 }

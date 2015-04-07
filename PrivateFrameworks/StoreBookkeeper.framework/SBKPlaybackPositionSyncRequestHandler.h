@@ -4,7 +4,7 @@
 
 @class <SBKUniversalPlaybackPositionDataSource>, <SBKUniversalPlaybackPositionTransactionContext>, NSDictionary, NSError, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SBKSyncTransaction, SBKTransactionController;
 
-@interface SBKPlaybackPositionSyncRequestHandler : SBKSyncRequestHandler <SBKTransactionControllerDelegate, SBKSyncTransactionProcessing> {
+@interface SBKPlaybackPositionSyncRequestHandler : SBKSyncRequestHandler <SBKSyncTransactionProcessing, SBKTransactionControllerDelegate> {
     BOOL _canceled;
     SBKSyncTransaction *_currentKVSTransaction;
     <SBKUniversalPlaybackPositionDataSource> *_dataSource;
@@ -45,8 +45,8 @@
 - (int)_mergeConflictedItemFromSyncResponse:(id)arg1;
 - (void)_mergeMetadataItemsFromSyncResponse;
 - (BOOL)_shouldStop;
-- (void)_signalKVSTransactionCompletion:(id)arg1 withError:(id)arg2;
 - (void)_signalKVSTransactionCompletion:(id)arg1;
+- (void)_signalKVSTransactionCompletion:(id)arg1 withError:(id)arg2;
 - (BOOL)_synchronize:(id*)arg1;
 - (id)_synchronouslyRunKVSTransaction:(id)arg1;
 - (void)cancel;

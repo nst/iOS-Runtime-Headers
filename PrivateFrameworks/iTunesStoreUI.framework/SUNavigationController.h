@@ -33,8 +33,8 @@
 - (id)description;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRootViewController:(id)arg1;
-- (id)initWithSection:(id)arg1 rootViewController:(id)arg2;
 - (id)initWithSection:(id)arg1;
+- (id)initWithSection:(id)arg1 rootViewController:(id)arg2;
 - (BOOL)isLoading;
 - (void)loadView;
 - (id)moreListImage;
@@ -46,8 +46,8 @@
 - (void)setLoading:(BOOL)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSection:(id)arg1;
-- (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setToolbarHidden:(BOOL)arg1;
+- (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setViewControllers:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidDisappear:(BOOL)arg1;

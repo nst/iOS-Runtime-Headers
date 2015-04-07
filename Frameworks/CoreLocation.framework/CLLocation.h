@@ -4,7 +4,7 @@
 
 @class CLFloor, CLLocationMatchInfo, NSDate, NSString;
 
-@interface CLLocation : NSObject <NSCopying, NSSecureCoding, CKRecordValue> {
+@interface CLLocation : NSObject <CKRecordValue, NSCopying, NSSecureCoding> {
     id _internal;
 }
 
@@ -15,7 +15,6 @@
 @property(readonly) double course;
 @property(readonly) double courseAccuracy;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) CLFloor * floor;
 @property(readonly) BOOL hasMatch;
@@ -59,8 +58,8 @@
 - (double)horizontalAccuracy;
 - (id)init;
 - (id)initWithCPLArchiver:(id)arg1;
-- (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; })arg1 matchInfo:(id)arg2;
 - (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; })arg1;
+- (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; })arg1 matchInfo:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 timestamp:(id)arg5;

@@ -5,6 +5,14 @@
 @class NSString;
 
 @interface AWDAirPlayAudioSessionEndedOnServer : PBCodable <NSCopying> {
+    unsigned int _bigLosses;
+    unsigned int _compressionPercent;
+    unsigned int _dacpNext;
+    unsigned int _dacpPauses;
+    unsigned int _dacpPrevious;
+    unsigned int _duration;
+    unsigned int _futileRetransmits;
+    unsigned int _glitches;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int bigLosses : 1; 
@@ -38,14 +46,6 @@
         unsigned int rtpMaxSkew : 1; 
         unsigned int rtpSkewResets : 1; 
         unsigned int unrecoveredPackets : 1; 
-    unsigned int _bigLosses;
-    unsigned int _compressionPercent;
-    unsigned int _dacpNext;
-    unsigned int _dacpPauses;
-    unsigned int _dacpPrevious;
-    unsigned int _duration;
-    unsigned int _futileRetransmits;
-    unsigned int _glitches;
     } _has;
     unsigned int _lastPackets;
     unsigned int _lostPackets;

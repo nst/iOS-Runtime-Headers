@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, PSLocaleSelector, PSRegion, UISearchBar, UITableView, UIView;
 
-@interface PSLocaleController : PSViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> {
+@interface PSLocaleController : PSViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIView *_contentView;
     PSRegion *_currentRegion;
     NSArray *_filteredListContent;

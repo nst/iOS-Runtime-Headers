@@ -87,8 +87,8 @@
 - (unsigned int)capabilities;
 - (unsigned int)capabilitiesForListenerID:(id)arg1;
 - (BOOL)connectToDaemon;
-- (BOOL)connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned int)arg2 blockUntilConnected:(BOOL)arg3;
 - (BOOL)connectToDaemonWithLaunch:(BOOL)arg1;
+- (BOOL)connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned int)arg2 blockUntilConnected:(BOOL)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (void)disconnectFromDaemon;
@@ -98,10 +98,10 @@
 - (id)init;
 - (BOOL)isConnected;
 - (BOOL)isConnecting;
+- (id)listener;
 - (void)listener:(id)arg1 setListenerCapabilities:(unsigned int)arg2;
 - (void)listener:(id)arg1 setValue:(id)arg2 ofPersistentProperty:(id)arg3;
 - (void)listener:(id)arg1 setValue:(id)arg2 ofProperty:(id)arg3;
-- (id)listener;
 - (void)localObjectDiedNotification:(id)arg1;
 - (BOOL)localObjectExists;
 - (id)methodSignatureForSelector:(SEL)arg1;
@@ -115,8 +115,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setMyPicture:(id)arg1 smallPictureData:(id)arg2;
 - (void)setMyProfile:(id)arg1;
-- (void)setMyStatus:(unsigned int)arg1 message:(id)arg2 forAccount:(id)arg3;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
+- (void)setMyStatus:(unsigned int)arg1 message:(id)arg2 forAccount:(id)arg3;
 - (void)systemApplicationDidEnterBackground;
 - (void)systemApplicationDidResume;
 - (void)systemApplicationDidSuspend;

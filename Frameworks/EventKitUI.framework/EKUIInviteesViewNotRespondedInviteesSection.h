@@ -9,7 +9,11 @@
 @class EKEvent, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
 
 @interface EKUIInviteesViewNotRespondedInviteesSection : NSObject <EKUIInviteesViewSection> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _addInviteesTapped;
+
     NSOperationQueue *_availabilityRequestsQueue;
     NSString *_cachedAddInviteeCellReuseIdentifier;
     NSString *_cachedInviteeCellReuseIdentifier;
@@ -19,11 +23,23 @@
     NSMutableSet *_participantAddressesForInFlightAvailabilityOperations;
     NSMutableDictionary *_participantAddressesToAvailabilityType;
     NSMutableDictionary *_participantAddressesToParticipantIndex;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _participantRemoved;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _participantTapped;
+
     NSMutableArray *_participants;
     unsigned int _reuseIdentifierVersion;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _tableViewCellHook;
+
 }
 
 @property(copy) id addInviteesTapped;

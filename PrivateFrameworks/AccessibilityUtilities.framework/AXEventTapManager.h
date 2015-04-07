@@ -12,9 +12,21 @@
     NSMutableArray *_addedEventTapPairs;
     NSRecursiveLock *_eventTapLock;
     NSMutableArray *_eventTaps;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _installationEventRepPost;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _installationGSCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _installationHIDCallback;
+
     struct __IOHIDEventSystemClient { } *_ioSystemPostBackClient;
     BOOL _isEnumeratingEventTaps;
     NSMutableSet *_removedEventTapIdentifiers;

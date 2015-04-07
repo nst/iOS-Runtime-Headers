@@ -50,8 +50,8 @@
 @property int transactionStatus;
 @property int transactionType;
 
-+ (id)paymentTransactionFromSource:(unsigned int)arg1 withDictionary:(id)arg2;
 + (id)paymentTransactionFromSource:(unsigned int)arg1;
++ (id)paymentTransactionFromSource:(unsigned int)arg1 withDictionary:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (id)administrativeArea;

@@ -8,13 +8,7 @@
 
 @class <TSWPFootnoteHeightMeasurer>, <TSWPFootnoteMarkProvider>, <TSWPOffscreenColumn>, NSMutableArray, NSObject<TSWPTextDelegate>, NSString, TSDCanvas, TSDLayout, TSPObject<TSDHint>, TSUColor, TSWPColumnStyle, TSWPListStyle, TSWPPadding, TSWPParagraphStyle, TSWPStorage, TSWPTextParentInfo, TSWPTextParentLayout;
 
-@interface TSWPText : NSObject <TSWPLayoutTarget, TSWPLayoutOwner, TSWPColumnMetrics> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface TSWPText : NSObject <TSWPColumnMetrics, TSWPLayoutOwner, TSWPLayoutTarget> {
     struct CGPoint { 
         float x; 
         float y; 
@@ -24,7 +18,13 @@
     NSObject<TSWPTextDelegate> *_delegate;
     int _flags;
     TSWPListStyle *_listStyle;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _maxSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _minSize;
     int _naturalAlignment;
     int _naturalDirection;
@@ -37,8 +37,6 @@
     TSUColor *_textColorOverride;
 }
 
-@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
-@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) BOOL alwaysStartsNewTarget;
 @property(readonly) struct CGPoint { float x1; float x2; } anchorPoint;
 @property(retain) NSMutableArray * anchoredDrawablesForRelayout;
@@ -65,12 +63,14 @@
 @property(readonly) int naturalDirection;
 @property(readonly) TSPObject<TSDHint> * nextTargetFirstChildHint;
 @property(retain,readonly) <TSWPOffscreenColumn> * nextTargetFirstColumn;
+@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) unsigned int pageCount;
 @property(readonly) unsigned int pageNumber;
 @property(readonly) TSWPParagraphStyle * paragraphStyle;
 @property(readonly) TSDLayout * parentLayoutForInlineAttachments;
 @property(readonly) struct CGPoint { float x1; float x2; } position;
 @property(retain,readonly) <TSWPOffscreenColumn> * previousTargetLastColumn;
+@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) BOOL shouldHyphenate;
 @property(readonly) BOOL shrinkTextToFit;
 @property(readonly) Class superclass;
@@ -103,12 +103,12 @@
 - (id)footnoteMarkProvider;
 - (BOOL)forceWesternLineBreaking;
 - (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
-- (id)initWithParagraphStyle:(id)arg1 columnStyle:(id)arg2 alignmentForNaturalAlignment:(int)arg3 naturalDirection:(int)arg4;
-- (id)initWithParagraphStyle:(id)arg1 columnStyle:(id)arg2;
-- (id)initWithParagraphStyle:(id)arg1 listStyle:(id)arg2 columnStyle:(id)arg3 alignmentForNaturalAlignment:(int)arg4 naturalDirection:(int)arg5;
-- (id)initWithParagraphStyle:(id)arg1 listStyle:(id)arg2 columnStyle:(id)arg3;
-- (id)initWithParagraphStyle:(id)arg1 listStyle:(id)arg2;
 - (id)initWithParagraphStyle:(id)arg1;
+- (id)initWithParagraphStyle:(id)arg1 columnStyle:(id)arg2;
+- (id)initWithParagraphStyle:(id)arg1 columnStyle:(id)arg2 alignmentForNaturalAlignment:(int)arg3 naturalDirection:(int)arg4;
+- (id)initWithParagraphStyle:(id)arg1 listStyle:(id)arg2;
+- (id)initWithParagraphStyle:(id)arg1 listStyle:(id)arg2 columnStyle:(id)arg3;
+- (id)initWithParagraphStyle:(id)arg1 listStyle:(id)arg2 columnStyle:(id)arg3 alignmentForNaturalAlignment:(int)arg4 naturalDirection:(int)arg5;
 - (BOOL)isLastTarget;
 - (BOOL)isLayoutOffscreen;
 - (BOOL)layoutIsValid;

@@ -12,7 +12,11 @@
     NSURL *_accountURL;
     _UIAsyncInvocation *_cancelRequest;
     <SKAccountPageViewControllerDelegate> *_delegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _prepareBlock;
+
     SKRemoteAccountPageViewController *_remoteViewController;
     SKInvocationQueueProxy<SKUIServiceAccountPageViewController> *_serviceProxy;
 }

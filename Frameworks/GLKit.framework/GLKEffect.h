@@ -5,53 +5,27 @@
 @class GLKShaderBlockNode, NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface GLKEffect : NSObject {
-    union _GLKVector4 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-            float q; 
-        } ; 
-        float v[4]; 
-    union _GLKVector4 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-            float q; 
-        } ; 
-        float v[4]; 
-    struct GLKBigInt_s { 
-        unsigned long long n0; 
-        unsigned long long n1; 
-    struct GLKBigInt_s { 
-        unsigned long long n0; 
-        unsigned long long n1; 
     int _aColorLoc;
+    union _GLKVector4 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+            float q; 
+        } ; 
+        float v[4]; 
     } _baseLightingColor;
     int _baseLightingColorLoc;
     unsigned char _colorMaterialEnabled;
@@ -62,6 +36,26 @@
     GLKShaderBlockNode *_fshRootNode;
     char **_fshStrings;
     NSString *_label;
+    union _GLKVector4 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+            float q; 
+        } ; 
+        float v[4]; 
     } _lightModelAmbientColor;
     int _lightModelAmbientColorLoc;
     unsigned char _lightModelTwoSided;
@@ -75,18 +69,24 @@
     unsigned int _numVshStrings;
     unsigned char _perPixelLightingEnabled;
     unsigned char _perVertexLightingEnabled;
+    struct GLKBigInt_s { 
+        unsigned long long n0; 
+        unsigned long long n1; 
     } _prevFshMask;
+    struct GLKBigInt_s { 
+        unsigned long long n0; 
+        unsigned long long n1; 
     } _prevVshMask;
     NSMutableDictionary *_programHash;
     unsigned int _programName;
     NSMutableArray *_properties;
     NSArray *_textureOrder;
+    bool _textureOrderStale;
     unsigned char _texturingEnabled;
     struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } *_vshMask;
     unsigned int _vshName;
     GLKShaderBlockNode *_vshRootNode;
     char **_vshStrings;
-    bool_textureOrderStale;
 }
 
 @property int aColorLoc;

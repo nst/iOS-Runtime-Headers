@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CPLAlbumChange : CPLContainerChange <NSSecureCoding, NSCopying> {
+@interface CPLAlbumChange : CPLContainerChange <NSCopying, NSSecureCoding> {
     BOOL _albumSortAscending;
     unsigned int _albumSortType;
     unsigned int _albumType;

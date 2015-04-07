@@ -10,8 +10,8 @@
 @property int affinity;
 @property int offset;
 
-+ (id)positionWithOffset:(int)arg1 affinity:(int)arg2;
 + (id)positionWithOffset:(int)arg1;
++ (id)positionWithOffset:(int)arg1 affinity:(int)arg2;
 
 - (int)affinity;
 - (id)description;

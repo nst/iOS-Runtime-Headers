@@ -46,8 +46,8 @@
 - (id)label;
 - (id)parallelRenderCommandEncoderWithDescriptor:(id)arg1;
 - (id)parallelRenderCommandEncoders;
-- (void)presentDrawable:(id)arg1 atTime:(double)arg2;
 - (void)presentDrawable:(id)arg1;
+- (void)presentDrawable:(id)arg1 atTime:(double)arg2;
 - (id)profilingResults;
 - (id)renderCommandEncoderWithDescriptor:(id)arg1;
 - (id)renderCommandEncoders;

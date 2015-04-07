@@ -8,20 +8,20 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     } _additionalSyllableRange;
     unsigned char _letters[5];
     double _modificationScore;
     unsigned int _modificationType;
     BOOL _producesPartialSyllable;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
     NSString *_replacementString;
     unsigned int _syllableCountScore;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _syllableRange;
 }
 

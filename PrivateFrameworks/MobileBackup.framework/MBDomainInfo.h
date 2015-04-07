@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface MBDomainInfo : NSObject <NSCopying, NSCoding> {
+@interface MBDomainInfo : NSObject <NSCoding, NSCopying> {
     NSString *_domainName;
     BOOL _enabled;
     unsigned long long _localSize;

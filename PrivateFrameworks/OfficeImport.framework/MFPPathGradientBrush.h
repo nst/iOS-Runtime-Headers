@@ -5,10 +5,10 @@
 @class NSArray, OITSDBezierPath, OITSUColor;
 
 @interface MFPPathGradientBrush : MFPGradientBrush {
+    OITSUColor *mCenterColor;
     struct CGPoint { 
         float x; 
         float y; 
-    OITSUColor *mCenterColor;
     } mCenterPoint;
     OITSDBezierPath *mPath;
     NSArray *mSurroundColors;

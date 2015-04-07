@@ -5,11 +5,11 @@
 @class <BLTSectionInfoListProviderDelegate>, NSDate, NSString;
 
 @interface BLTSectionInfoListBridgeProvider : NSObject <LSApplicationWorkspaceObserverProtocol> {
+    <BLTSectionInfoListProviderDelegate> *_delegate;
+    NSDate *_lastKnownBridgeSettingsChangeDate;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    <BLTSectionInfoListProviderDelegate> *_delegate;
-    NSDate *_lastKnownBridgeSettingsChangeDate;
     } _lock;
 }
 

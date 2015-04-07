@@ -5,14 +5,14 @@
 @class CALayer, NSString;
 
 @interface UIKBThemedView : UIView <UIKBCacheableView> {
+    BOOL _active;
+    CALayer *_background;
+    CALayer *_borders;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    BOOL _active;
-    CALayer *_background;
-    CALayer *_borders;
     } _cacheInsets;
     BOOL _lightKeyboard;
     int _style;

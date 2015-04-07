@@ -3,19 +3,19 @@
  */
 
 @interface PUMapAnnotationAnimationInfo : NSObject {
-    struct { 
-        double latitude; 
-        double longitude; 
-    struct { 
-        double latitude; 
-        double longitude; 
     id _annotation;
     id _annotationForCountSwap;
     id _destinationAnnotation;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _destinationCoordinate;
     int _fadeType;
     int _reason;
     BOOL _remove;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _sourceCoordinate;
 }
 

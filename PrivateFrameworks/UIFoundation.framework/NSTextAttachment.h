@@ -4,7 +4,7 @@
 
 @class NSData, NSFileWrapper, NSString, UIImage, UITextAttachmentView, UIView;
 
-@interface NSTextAttachment : NSObject <NSTextAttachmentContainer, NSCoding> {
+@interface NSTextAttachment : NSObject <NSCoding, NSTextAttachmentContainer> {
     struct CGRect { 
         struct CGPoint { 
             float x; 

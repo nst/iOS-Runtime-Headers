@@ -4,7 +4,10 @@
 
 @class NSArray;
 
-@interface NSParagraphStyle : NSObject <NSCopying, NSMutableCopying, NSCoding> {
+@interface NSParagraphStyle : NSObject <NSCoding, NSCopying, NSMutableCopying> {
+    float _defaultTabInterval;
+    id _extraData;
+    float _firstLineHeadIndent;
     struct { 
         unsigned int alignment : 4; 
         unsigned int lineBreakMode : 4; 
@@ -13,9 +16,6 @@
         unsigned int rightToLeftDirection : 1; 
         unsigned int fixedMultiple : 2; 
         unsigned int refCount : 19; 
-    float _defaultTabInterval;
-    id _extraData;
-    float _firstLineHeadIndent;
     } _flags;
     float _headIndent;
     float _lineSpacing;

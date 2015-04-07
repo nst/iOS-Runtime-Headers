@@ -5,6 +5,14 @@
 @class NSData, NSString;
 
 @interface SSVPBPlayActivityEvent : PBCodable <NSCopying> {
+    NSString *_containerID;
+    int _containerType;
+    NSString *_deviceName;
+    int _endReasonType;
+    double _eventDateTimestamp;
+    double _eventSecondsFromGMT;
+    NSString *_externalID;
+    NSString *_featureName;
     struct { 
         unsigned int eventDateTimestamp : 1; 
         unsigned int eventSecondsFromGMT : 1; 
@@ -20,14 +28,6 @@
         unsigned int sourceType : 1; 
         unsigned int offline : 1; 
         unsigned int sBEnabled : 1; 
-    NSString *_containerID;
-    int _containerType;
-    NSString *_deviceName;
-    int _endReasonType;
-    double _eventDateTimestamp;
-    double _eventSecondsFromGMT;
-    NSString *_externalID;
-    NSString *_featureName;
     } _has;
     double _itemDuration;
     double _itemEndTime;

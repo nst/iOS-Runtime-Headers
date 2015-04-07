@@ -43,8 +43,8 @@
 - (id)description;
 - (id)dictionary;
 - (id)displayName;
-- (id)displayNameWithLocale:(id)arg1 fallingBackToMatchingUndeterminedAndMultilingual:(BOOL)arg2;
 - (id)displayNameWithLocale:(id)arg1;
+- (id)displayNameWithLocale:(id)arg1 fallingBackToMatchingUndeterminedAndMultilingual:(BOOL)arg2;
 - (BOOL)displaysNonForcedSubtitles;
 - (id)extendedLanguageTag;
 - (id)group;

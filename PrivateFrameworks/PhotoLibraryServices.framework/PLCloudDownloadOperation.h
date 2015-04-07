@@ -3,7 +3,7 @@
  */
 
 @interface PLCloudDownloadOperation : PLCloudOperation {
-    bool_cancelled;
+    bool _cancelled;
 }
 
 - (unsigned int)cost;

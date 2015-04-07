@@ -25,8 +25,8 @@
 @property(readonly) Class superclass;
 
 - (void)_reallyCancel;
-- (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
 - (void)afterDelay:(double)arg1 processBlock:(id)arg2;
+- (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
 - (BOOL)automaticallyCancelPendingBlockUponSchedulingNewBlock;
 - (void)cancel;
 - (void)dealloc;

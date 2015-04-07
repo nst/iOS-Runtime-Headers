@@ -80,8 +80,8 @@
 - (BOOL)_shouldSynchronizeOnNextRead;
 - (BOOL)allowUnsignedBag;
 - (void)applicationWillEnterBackground:(id)arg1;
-- (BOOL)booleanValueForKey:(struct __CFString { }*)arg1 defaultValue:(BOOL)arg2;
 - (BOOL)booleanValueForKey:(struct __CFString { }*)arg1;
+- (BOOL)booleanValueForKey:(struct __CFString { }*)arg1 defaultValue:(BOOL)arg2;
 - (double)cacheTTLOverride;
 - (void)dealloc;
 - (double)debugRequestTimeout;

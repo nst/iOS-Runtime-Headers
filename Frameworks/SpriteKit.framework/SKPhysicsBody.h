@@ -4,10 +4,7 @@
 
 @class NSArray, SKNode;
 
-@interface SKPhysicsBody : NSObject <NSCopying, NSCoding> {
-    struct CGVector { 
-        float dx; 
-        float dy; 
+@interface SKPhysicsBody : NSObject <NSCoding, NSCopying> {
     BOOL _affectedByGravity;
     BOOL _allowsRotation;
     float _angularDamping;
@@ -29,6 +26,9 @@
     BOOL _resting;
     float _restitution;
     BOOL _usesPreciseCollisionDetection;
+    struct CGVector { 
+        float dx; 
+        float dy; 
     } _velocity;
 }
 
@@ -57,15 +57,15 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)bodyWithBodies:(id)arg1;
-+ (id)bodyWithCircleOfRadius:(float)arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithCircleOfRadius:(float)arg1;
++ (id)bodyWithCircleOfRadius:(float)arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithEdgeChainFromPath:(struct CGPath { }*)arg1;
 + (id)bodyWithEdgeFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithEdgeLoopFromPath:(struct CGPath { }*)arg1;
 + (id)bodyWithEdgeLoopFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)bodyWithPolygonFromPath:(struct CGPath { }*)arg1;
-+ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithTexture:(id)arg1 alphaThreshold:(float)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 + (id)bodyWithTexture:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -78,10 +78,10 @@
 - (float)angularDamping;
 - (float)angularVelocity;
 - (void)applyAngularImpulse:(float)arg1;
-- (void)applyForce:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)applyForce:(struct CGVector { float x1; float x2; })arg1;
-- (void)applyImpulse:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)applyForce:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)applyImpulse:(struct CGVector { float x1; float x2; })arg1;
+- (void)applyImpulse:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)applyTorque:(float)arg1;
 - (float)area;
 - (unsigned int)categoryBitMask;

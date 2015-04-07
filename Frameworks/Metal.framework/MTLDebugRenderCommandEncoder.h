@@ -5,18 +5,6 @@
 @class <MTLDepthStencilState>, <MTLDevice>, <MTLRenderPipelineState>, MTLDebugFunctionArgument, MTLDepthStencilDescriptor, MTLRenderPassDescriptor;
 
 @interface MTLDebugRenderCommandEncoder : MTLToolsRenderCommandEncoder {
-    struct { 
-        unsigned int x; 
-        unsigned int y; 
-        unsigned int width; 
-        unsigned int height; 
-    struct { 
-        double originX; 
-        double originY; 
-        double width; 
-        double height; 
-        double znear; 
-        double zfar; 
     float _blendColorAlpha;
     float _blendColorBlue;
     float _blendColorGreen;
@@ -37,12 +25,24 @@
     unsigned int _height;
     float _lineWidth;
     <MTLRenderPipelineState> *_renderPipelineState;
+    struct { 
+        unsigned int x; 
+        unsigned int y; 
+        unsigned int width; 
+        unsigned int height; 
     } _scissorRect;
     unsigned int _stencilRef;
     unsigned int _triangleFillMode;
     MTLDebugFunctionArgument *_vertexBuffers[31];
     MTLDebugFunctionArgument *_vertexSamplers[16];
     MTLDebugFunctionArgument *_vertexTextures[31];
+    struct { 
+        double originX; 
+        double originY; 
+        double width; 
+        double height; 
+        double znear; 
+        double zfar; 
     } _viewport;
     unsigned int _visibilityResultMode;
     unsigned int _visibilityResultOffset;
@@ -91,10 +91,10 @@
 - (id)depthStencilState;
 - (id)description;
 - (id)descriptor;
-- (void)drawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned int)arg5 instanceCount:(unsigned int)arg6;
 - (void)drawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned int)arg5;
-- (void)drawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3 instanceCount:(unsigned int)arg4;
+- (void)drawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned int)arg5 instanceCount:(unsigned int)arg6;
 - (void)drawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3;
+- (void)drawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3 instanceCount:(unsigned int)arg4;
 - (void)endEncoding;
 - (void)enumerateFragmentBuffersUsingBlock:(id)arg1;
 - (void)enumerateFragmentSamplersUsingBlock:(id)arg1;

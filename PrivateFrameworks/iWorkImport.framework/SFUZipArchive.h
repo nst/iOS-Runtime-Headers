@@ -20,12 +20,12 @@
 - (void)dealloc;
 - (BOOL)decompressAtPath:(id)arg1;
 - (id)encryptedDocumentUuid;
-- (id)entryWithName:(id)arg1 dataLength:(long long)arg2;
 - (id)entryWithName:(id)arg1;
-- (id)initWithData:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2 ignoreCase:(BOOL)arg3;
+- (id)entryWithName:(id)arg1 dataLength:(long long)arg2;
 - (id)initWithData:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
-- (id)initWithPath:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2 ignoreCase:(BOOL)arg3;
+- (id)initWithData:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2 ignoreCase:(BOOL)arg3;
 - (id)initWithPath:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
+- (id)initWithPath:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2 ignoreCase:(BOOL)arg3;
 - (BOOL)isEncrypted;
 - (id)passphraseHint;
 - (id)passphraseVerifier;

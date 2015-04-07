@@ -5,15 +5,15 @@
 @class <PUHorizontalTiledCollectionViewLayoutDelegate>, PUCollectionViewData, UICollectionViewLayoutAttributes;
 
 @interface PUHorizontalTiledCollectionViewLayout : UICollectionViewLayout {
+    PUCollectionViewData *_data;
+    <PUHorizontalTiledCollectionViewLayoutDelegate> *_delegate;
+    UICollectionViewLayoutAttributes *_dummyAttrs;
+    float _interitemSpacing;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    PUCollectionViewData *_data;
-    <PUHorizontalTiledCollectionViewLayoutDelegate> *_delegate;
-    UICollectionViewLayoutAttributes *_dummyAttrs;
-    float _interitemSpacing;
     } _itemsContentInset;
 }
 

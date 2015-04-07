@@ -5,9 +5,6 @@
 @class NSString;
 
 @interface VMUVMRegion : NSObject {
-    struct _VMURange { 
-        unsigned long long location; 
-        unsigned long long length; 
     unsigned char external_pager;
     BOOL is_submap;
     unsigned int mallocBlockCount;
@@ -25,6 +22,9 @@
     NSString *path;
     unsigned int prot;
     int purgeable;
+    struct _VMURange { 
+        unsigned long long location; 
+        unsigned long long length; 
     } range;
     BOOL recalculate_pages_resident;
     unsigned int ref_count;

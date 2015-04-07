@@ -5,77 +5,77 @@
 @class CALayer, NSMutableArray;
 
 @interface BubbleTextLayer : CALayer {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     NSMutableArray *_annotationPoints;
     float _ascent;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _boundsSizeConstraint;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _bubbleFrame;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _bubbleSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _contentSize;
     struct __CTFont { } *_curCTFont;
     float _descent;
     void *_font;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _fontBounds;
     struct CGColor { } *_generalShadowColor;
     float _leading;
     CALayer *_leftImageLayer;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _leftImageLayerSize;
     id _owningView;
     CALayer *_rightAccessoryLayer;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _rightAccessoryLayerSize;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _textFrame;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _textSize;
     struct __CTLine { } *_theLine;
     struct CGColor { } *_whiteShadowColor;
 }
 
 @property struct CGSize { float x1; float x2; } boundsSizeConstraint;
-@property(retain) struct CGColor { }* fillColor2;
 @property(retain) struct CGColor { }* fillColor;
+@property(retain) struct CGColor { }* fillColor2;
 @property float fontSize;
 @property(retain) struct CGColor { }* foregroundColor;
 @property(retain) struct CGColor { }* frameColor;

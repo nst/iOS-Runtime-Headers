@@ -5,6 +5,7 @@
 @class EDAnchor, EDComment, EDSheet, EDTextBox, NSMutableDictionary, NSString;
 
 @interface EDOfficeArtClient : NSObject <OADClient, OADTextClient> {
+    EDAnchor *mAnchor;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,11 +15,10 @@
             float width; 
             float height; 
         } size; 
-    boolmIsBoundsSet;
-    EDAnchor *mAnchor;
     } mBounds;
     id mClientState;
     EDComment *mComment;
+    bool mIsBoundsSet;
     EDSheet *mSheet;
     NSMutableDictionary *mTableModels;
     EDTextBox *mTextBox;

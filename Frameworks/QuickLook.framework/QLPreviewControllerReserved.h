@@ -9,9 +9,6 @@
 @class <QLPreviewItem>, MPVolumeView, NSMutableDictionary, NSNumberFormatter, NSString, NSURL, QLArchiveViewer, QLPreviewItemsSource, UIBarButtonItem, UIDocumentInteractionController, UILabel, UINavigationController, UIView, UIViewController<QLPreviewContentControllerProtocol>, _UIAsyncInvocation;
 
 @interface QLPreviewControllerReserved : NSObject {
-    unsigned int statusBarWasHidden : 1;
-    unsigned int toolbarWasHidden : 1;
-    unsigned int isInUIDICPopover : 1;
     UIBarButtonItem *actionItem;
     UIBarButtonItem *archiveItem;
     QLArchiveViewer *archiveViewer;
@@ -25,6 +22,7 @@
     UIDocumentInteractionController *interactionController;
     BOOL internalViewsLoaded;
     BOOL isDelayingPresentation;
+    unsigned int isInUIDICPopover : 1;
     QLPreviewItemsSource *itemsSource;
     NSURL *lastPreviewedCurrentItemURL;
     NSURL *lastPreviewedRealItemURL;
@@ -42,12 +40,18 @@
     int previousStatusBarStyle;
     int previousToolbarStyle;
     BOOL previousToolbarWasTranslucent;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id readyBlock;
+
     UIBarButtonItem *routeButton;
     BOOL scrubbing;
     BOOL showActionAsDefaultButton;
     BOOL sourceIsManaged;
+    unsigned int statusBarWasHidden : 1;
     UIBarButtonItem *titleItem;
+    unsigned int toolbarWasHidden : 1;
     BOOL useCustomActionButton;
     MPVolumeView *volumeView;
     MPVolumeView *volumeViewHidden;

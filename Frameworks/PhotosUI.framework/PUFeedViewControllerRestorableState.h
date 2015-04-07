@@ -5,9 +5,9 @@
 @class NSArray, NSDate, NSURL;
 
 @interface PUFeedViewControllerRestorableState : NSObject <NSCoding> {
-    struct CGSize { 
-        float width; 
-        float height; 
+    NSArray *_centerAssetFrames;
+    NSArray *_centerAssetUUIDs;
+    NSURL *_centerSectionEntryURIRepresentation;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,10 +17,10 @@
             float width; 
             float height; 
         } size; 
-    NSArray *_centerAssetFrames;
-    NSArray *_centerAssetUUIDs;
-    NSURL *_centerSectionEntryURIRepresentation;
     } _centerSectionFrame;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _collectionViewSize;
     NSDate *_date;
     BOOL _scrolledToNewest;

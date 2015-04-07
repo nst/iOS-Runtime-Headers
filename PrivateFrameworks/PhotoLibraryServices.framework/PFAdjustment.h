@@ -35,8 +35,8 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithArchiveDictionary:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 settings:(id)arg2 autoIdentifier:(id)arg3 autoSettings:(id)arg4 enabled:(BOOL)arg5 maskUUID:(id)arg6;
 - (id)initWithIdentifier:(id)arg1 settings:(id)arg2 autoIdentifier:(id)arg3 autoSettings:(id)arg4 enabled:(BOOL)arg5;
+- (id)initWithIdentifier:(id)arg1 settings:(id)arg2 autoIdentifier:(id)arg3 autoSettings:(id)arg4 enabled:(BOOL)arg5 maskUUID:(id)arg6;
 - (id)initWithIdentifier:(id)arg1 settings:(id)arg2 enabled:(BOOL)arg3;
 - (id)maskUUID;
 - (id)settings;

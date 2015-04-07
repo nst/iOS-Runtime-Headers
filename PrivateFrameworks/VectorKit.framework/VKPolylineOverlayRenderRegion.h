@@ -5,26 +5,26 @@
 @class NSSet;
 
 @interface VKPolylineOverlayRenderRegion : NSObject {
-    struct { 
-        double x0; 
-        double x1; 
-        double y0; 
-        double y1; 
     struct vector<VKRect, std::__1::allocator<VKRect> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<VKRect *, std::__1::allocator<VKRect> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
+    } _rectsForSnapping;
     struct vector<VKTileKey, std::__1::allocator<VKTileKey> > { 
         struct VKTileKey {} *__begin_; 
         struct VKTileKey {} *__end_; 
         struct __compressed_pair<VKTileKey *, std::__1::allocator<VKTileKey> > { 
             struct VKTileKey {} *__first_; 
         } __end_cap_; 
-    } _rectsForSnapping;
     } _snappedTileKeys;
     NSSet *_tiles;
+    struct { 
+        double x0; 
+        double x1; 
+        double y0; 
+        double y1; 
     } _visibleRect;
 }
 

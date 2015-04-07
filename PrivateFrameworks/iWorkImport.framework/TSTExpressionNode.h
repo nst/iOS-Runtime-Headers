@@ -50,9 +50,9 @@
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;
 - (id)initFromArchive:(const struct ExpressionNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned long long x4; unsigned long long x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
+- (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
 - (id)initWithContext:(id)arg1 firstIndex:(unsigned int)arg2 lastIndex:(unsigned int)arg3;
-- (id)initWithContext:(id)arg1;
 - (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2;
 - (unsigned int)lastIndex;
 - (id)popover;

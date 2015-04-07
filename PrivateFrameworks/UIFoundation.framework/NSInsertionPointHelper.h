@@ -3,10 +3,10 @@
  */
 
 @interface NSInsertionPointHelper : NSObject {
+    unsigned int _altCount;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    unsigned int _altCount;
     } _charRange;
     unsigned int _count;
     unsigned int *_displayAltCharIndexes;

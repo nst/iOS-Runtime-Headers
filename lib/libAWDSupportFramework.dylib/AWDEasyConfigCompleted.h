@@ -5,6 +5,18 @@
 @class NSMutableArray, NSString;
 
 @interface AWDEasyConfigCompleted : PBCodable <NSCopying> {
+    BOOL _adminPasswordSet;
+    unsigned int _channelOfDestinationAP;
+    unsigned int _channelOfSWAP;
+    BOOL _destinationNetworkPSKInKeychain;
+    BOOL _destinationNetworkRecommendationUsed;
+    NSString *_eaBundleSeedID;
+    NSString *_eaFirmwareRevision;
+    NSString *_eaHardwareRevision;
+    NSString *_eaManufacturerName;
+    NSString *_eaModelName;
+    NSMutableArray *_eaProtocolStrings;
+    int _easyConfigStoppedReasonError;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int channelOfDestinationAP : 1; 
@@ -32,18 +44,6 @@
         unsigned int pauseAfterApply : 1; 
         unsigned int playPasswordSet : 1; 
         unsigned int userChangedFriendlyName : 1; 
-    BOOL _adminPasswordSet;
-    unsigned int _channelOfDestinationAP;
-    unsigned int _channelOfSWAP;
-    BOOL _destinationNetworkPSKInKeychain;
-    BOOL _destinationNetworkRecommendationUsed;
-    NSString *_eaBundleSeedID;
-    NSString *_eaFirmwareRevision;
-    NSString *_eaHardwareRevision;
-    NSString *_eaManufacturerName;
-    NSString *_eaModelName;
-    NSMutableArray *_eaProtocolStrings;
-    int _easyConfigStoppedReasonError;
     } _has;
     BOOL _hitJoiningDestinationAPTimeout;
     BOOL _hitJoiningTargetSWAPTimeout;

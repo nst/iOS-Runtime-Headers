@@ -4,7 +4,7 @@
 
 @class KeychainSyncCountryInfo, KeychainSyncDevicePINController, KeychainSyncPhoneSettingsFragment, NSArray, NSString, PSKeychainSyncManager, PSSetupController, PSSpecifier, UIAlertView;
 
-@interface PSAccountSecurityController : PSListController <KeychainSyncViewControllerDelegate, KeychainSyncPhoneSettingsFragmentDelegate, UIAlertViewDelegate> {
+@interface PSAccountSecurityController : PSListController <KeychainSyncPhoneSettingsFragmentDelegate, KeychainSyncViewControllerDelegate, UIAlertViewDelegate> {
     NSString *_SMSTarget;
     KeychainSyncCountryInfo *_SMSTargetCountryInfo;
     UIAlertView *_changeDevicePasscodeAlert;

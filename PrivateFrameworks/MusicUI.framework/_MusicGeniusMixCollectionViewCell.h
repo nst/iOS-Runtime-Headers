@@ -40,8 +40,8 @@
 - (void)setArtistsText:(id)arg1;
 - (void)setArtworkImage:(id)arg1 atIndex:(int)arg2;
 - (void)setOffline:(BOOL)arg1;
-- (void)setPlaying:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setPlaying:(BOOL)arg1;
+- (void)setPlaying:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)updateConstraints;

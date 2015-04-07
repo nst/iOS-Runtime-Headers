@@ -10,9 +10,17 @@
 
 @interface GKHostedChallengeIssueController : GKHostedViewController {
     GKChallenge *_challenge;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     NSString *_defaultMessage;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _dismissCompletionHandler;
+
     BOOL _forcePicker;
     NSArray *_players;
 }

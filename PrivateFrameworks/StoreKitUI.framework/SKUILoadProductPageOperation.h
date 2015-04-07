@@ -13,7 +13,11 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     long long _itemID;
     SSMetricsPageEvent *_metricsPageEvent;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _outputBlock;
+
     NSURLRequest *_urlRequest;
 }
 

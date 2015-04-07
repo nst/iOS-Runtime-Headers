@@ -9,8 +9,8 @@
 
 - (BOOL)colorSamplingEnabled;
 - (id)initWithPhoto:(id)arg1;
-- (id)initWithUIImage:(id)arg1 name:(id)arg2;
 - (id)initWithUIImage:(id)arg1;
+- (id)initWithUIImage:(id)arg1 name:(id)arg2;
 - (void)photoTileViewControllerDidEndGesture:(id)arg1;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
 - (void)setColorSamplingEnabled:(BOOL)arg1;

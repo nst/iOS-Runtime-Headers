@@ -9,9 +9,17 @@
 @class NSString, UIPopoverController, UIViewController;
 
 @interface CKPopoverManager : NSObject <UIPopoverControllerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     UIPopoverController *_popoverController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _presenter;
+
 }
 
 @property(retain,readonly) UIViewController * currentContentController;
@@ -28,8 +36,8 @@
 - (id)currentContentController;
 - (void)dealloc;
 - (void)didFinishRotating;
-- (void)dismissCurrentPopoverAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
 - (void)dismissCurrentPopoverAnimated:(BOOL)arg1;
+- (void)dismissCurrentPopoverAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
 - (id)handler;
 - (BOOL)isShowingPopover;
 - (id)popoverController;

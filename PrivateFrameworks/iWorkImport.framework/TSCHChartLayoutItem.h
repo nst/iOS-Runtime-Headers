@@ -5,41 +5,41 @@
 @class NSArray, TSCHChartInfo, TSCHChartLayoutItem, TSCHChartModel, TSCHChartRootLayoutItem;
 
 @interface TSCHChartLayoutItem : NSObject <TSCHUnretainedParent> {
+    NSArray *mChildren;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } mDrawingRectCache;
+    BOOL mDrawingRectCacheValid;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } mLayoutSize;
+    BOOL mLayoutSizeSet;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } mMinSizeCache;
+    BOOL mMinSizeCacheValid;
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    NSArray *mChildren;
-    } mDrawingRectCache;
-    BOOL mDrawingRectCacheValid;
-    } mLayoutSize;
-    BOOL mLayoutSizeSet;
-    } mMinSizeCache;
-    BOOL mMinSizeCacheValid;
     } mOffset;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mOverhangRectCache;
     BOOL mOverhangRectCacheValid;
     TSCHChartLayoutItem *mParent;

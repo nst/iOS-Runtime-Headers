@@ -64,10 +64,10 @@
 + (id)supportedPreviewImageExtensions;
 + (void)writePreviewImage:(id)arg1 group:(id)arg2 queue:(id)arg3 dataConsumerProvider:(id)arg4 completion:(id)arg5;
 + (void)writePreviewImage:(id)arg1 toPath:(id)arg2 withIntermediateDirectories:(BOOL)arg3 name:(id)arg4 group:(id)arg5 queue:(id)arg6 completion:(id)arg7;
-+ (BOOL)writePreviewImagesToPackageDataWriter:(id)arg1 scalableImage:(id)arg2 group:(id)arg3 queue:(id)arg4;
 + (BOOL)writePreviewImagesToPackageDataWriter:(id)arg1 scalableImage:(id)arg2;
-+ (BOOL)writePreviewImagesToPath:(id)arg1 scalableImage:(id)arg2 group:(id)arg3 queue:(id)arg4;
++ (BOOL)writePreviewImagesToPackageDataWriter:(id)arg1 scalableImage:(id)arg2 group:(id)arg3 queue:(id)arg4;
 + (BOOL)writePreviewImagesToPath:(id)arg1 scalableImage:(id)arg2;
++ (BOOL)writePreviewImagesToPath:(id)arg1 scalableImage:(id)arg2 group:(id)arg3 queue:(id)arg4;
 
 - (void)addWarning:(id)arg1;
 - (id)additionalDocumentPropertiesForWrite;
@@ -110,7 +110,7 @@
 - (void)invalidateViewState;
 - (BOOL)isDocumentEditedSinceLastSave;
 - (BOOL)isMultiPageForQuickLook;
-- (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct Reference {} *x11; struct Reference {} *x12; boolx13; int x14; unsigned int x15[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct Reference {} *x11; struct Reference {} *x12; bool x13; int x14; unsigned int x15[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)missingFontWarningMessages;
 - (id)name;
 - (id)namedTextStyles;
@@ -143,7 +143,7 @@
 - (void)removeWarning:(id)arg1;
 - (void)resumeBackgroundActivities;
 - (void)resumeThumbnailing;
-- (void)saveToArchive:(struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct Reference {} *x11; struct Reference {} *x12; boolx13; int x14; unsigned int x15[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct Reference {} *x11; struct Reference {} *x12; bool x13; int x14; unsigned int x15[1]; }*)arg1 archiver:(id)arg2;
 - (void)setAnnotationCache:(id)arg1;
 - (void)setBuildVersionHistory:(id)arg1;
 - (void)setCalculationEngine:(id)arg1;
@@ -157,7 +157,7 @@
 - (void)setTemplateIdentifier:(id)arg1;
 - (id)shortcutController;
 - (BOOL)shouldAllowDrawableInGroups:(id)arg1 forImport:(BOOL)arg2;
-- (void)stashUpgradeState:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct Reference {} *x11; struct Reference {} *x12; boolx13; int x14; unsigned int x15[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)stashUpgradeState:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct Reference {} *x11; struct Reference {} *x12; bool x13; int x14; unsigned int x15[1]; }*)arg1 unarchiver:(id)arg2;
 - (void)suspendBackgroundActivities;
 - (void)suspendThumbnailing;
 - (id)templateIdentifier;

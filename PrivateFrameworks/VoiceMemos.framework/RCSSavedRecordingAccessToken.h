@@ -4,7 +4,7 @@
 
 @class NSString, NSURL, NSUUID;
 
-@interface RCSSavedRecordingAccessToken : NSObject <NSSecureCoding, NSCoding, NSCopying> {
+@interface RCSSavedRecordingAccessToken : NSObject <NSCoding, NSCopying, NSSecureCoding> {
     NSString *_accessName;
     unsigned int _accessType;
     NSURL *_compositionAVURL;

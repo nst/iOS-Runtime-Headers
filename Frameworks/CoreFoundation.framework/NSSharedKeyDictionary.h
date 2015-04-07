@@ -10,8 +10,8 @@
 @class NSMutableDictionary, NSSharedKeySet;
 
 @interface NSSharedKeyDictionary : NSMutableDictionary {
-    int (*_ifkIMP)();
     unsigned int _count;
+    int (*_ifkIMP)();
     NSSharedKeySet *_keyMap;
     unsigned long _mutations;
     NSMutableDictionary *_sideDic;

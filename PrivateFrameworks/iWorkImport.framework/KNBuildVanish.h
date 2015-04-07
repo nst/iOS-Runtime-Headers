@@ -4,50 +4,7 @@
 
 @class KNAnimParameterGroup, KNBuildVanishParticleSystem, NSMapTable, NSString, TSDGLShader, TSDGLTextureInfo;
 
-@interface KNBuildVanish : KNAnimationEffect <KNFrameBuildAnimator, KNAnimationPluginArchiving> {
-    struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
-    struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+@interface KNBuildVanish : KNAnimationEffect <KNAnimationPluginArchiving, KNFrameBuildAnimator> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -58,12 +15,55 @@
             float height; 
         } size; 
     } _animationRect;
+    struct CATransform3D { 
+        float m11; 
+        float m12; 
+        float m13; 
+        float m14; 
+        float m21; 
+        float m22; 
+        float m23; 
+        float m24; 
+        float m31; 
+        float m32; 
+        float m33; 
+        float m34; 
+        float m41; 
+        float m42; 
+        float m43; 
+        float m44; 
     } _baseMatrix;
     NSMapTable *_blurTextures;
     NSMapTable *_dataBuffers;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _drawableFrame;
     KNAnimParameterGroup *_parameterGroup;
     TSDGLTextureInfo *_particleTextureInfo;
+    struct CATransform3D { 
+        float m11; 
+        float m12; 
+        float m13; 
+        float m14; 
+        float m21; 
+        float m22; 
+        float m23; 
+        float m24; 
+        float m31; 
+        float m32; 
+        float m33; 
+        float m34; 
+        float m41; 
+        float m42; 
+        float m43; 
+        float m44; 
     } _projectionMatrix;
     TSDGLShader *_shader;
     TSDGLShader *_vanishParticleShader;

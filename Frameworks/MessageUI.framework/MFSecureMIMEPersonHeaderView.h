@@ -5,9 +5,9 @@
 @class NSArray, NSString, UILabel, UIView;
 
 @interface MFSecureMIMEPersonHeaderView : UIView {
-    unsigned int _editing : 1;
     UIView *_backgroundView;
     NSArray *_buttons;
+    unsigned int _editing : 1;
     UILabel *_label;
     UIView *_secureLabel;
     UIView *_signedLabel;

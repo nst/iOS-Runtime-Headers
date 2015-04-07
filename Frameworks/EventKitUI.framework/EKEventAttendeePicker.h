@@ -4,7 +4,13 @@
 
 @class <EKEventAttendeePickerDelegate>, EKEvent, MFComposeRecipientTextView, MFContactsSearchManager, MFContactsSearchResultsModel, MFSearchShadowView, NSArray, NSDate, NSMutableDictionary, NSNumber, NSOperationQueue, NSString, UIKeyboard, UIScrollView, UITableView;
 
-@interface EKEventAttendeePicker : UIViewController <UITableViewDataSource, UITableViewDelegate, MFContactsSearchConsumer, MFComposeRecipientTextViewDelegate, ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate> {
+@interface EKEventAttendeePicker : UIViewController <ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate, MFComposeRecipientTextViewDelegate, MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate> {
+    BOOL _ABAccessDenied;
+    NSMutableDictionary *_atomPresentationOptionsByRecipient;
+    NSOperationQueue *_availabilityQueue;
+    MFComposeRecipientTextView *_composeRecipientView;
+    <EKEventAttendeePickerDelegate> *_emailValidationDelegate;
+    EKEvent *_event;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,12 +20,6 @@
             float width; 
             float height; 
         } size; 
-    BOOL _ABAccessDenied;
-    NSMutableDictionary *_atomPresentationOptionsByRecipient;
-    NSOperationQueue *_availabilityQueue;
-    MFComposeRecipientTextView *_composeRecipientView;
-    <EKEventAttendeePickerDelegate> *_emailValidationDelegate;
-    EKEvent *_event;
     } _initialFrame;
     UIKeyboard *_keyboard;
     NSNumber *_lastSearchId;
@@ -86,8 +86,8 @@
 - (void)finishedTaskWithID:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 event:(id)arg2 overriddenEventStartDate:(id)arg3 overriddenEventEndDate:(id)arg4;
 - (void)loadView;
-- (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2;
+- (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (id)peoplePickerPrompt;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;

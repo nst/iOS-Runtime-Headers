@@ -13,7 +13,11 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CLLocation *_location;
     NSMutableDictionary *_parameters;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _responseBlock;
+
     NSString *_storeFrontSuffix;
     NSString *_userAgent;
 }

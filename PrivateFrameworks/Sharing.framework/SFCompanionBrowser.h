@@ -4,7 +4,7 @@
 
 @class <SFCompanionBrowserDelegate>, <SFCompanionBrowserProtocol>, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface SFCompanionBrowser : NSObject <SFCompanionXPCManagerObserver, SFCompanionBrowserClient> {
+@interface SFCompanionBrowser : NSObject <SFCompanionBrowserClient, SFCompanionXPCManagerObserver> {
     struct __SFBrowser { } *_browser;
     <SFCompanionBrowserProtocol> *_connectionProxy;
     <SFCompanionBrowserDelegate> *_delegate;

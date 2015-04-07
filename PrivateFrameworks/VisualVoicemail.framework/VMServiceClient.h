@@ -25,8 +25,8 @@
 - (void)dealloc;
 - (id)init;
 - (id)proxyObjectFromProxyDictionary:(id)arg1;
-- (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
 - (void)removeObserver:(id)arg1;
+- (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
 - (void)setBehaviorFlags:(long long)arg1;
 - (id)sharedAccount;
 - (BOOL)sharedServiceIsSubscribed;

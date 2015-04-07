@@ -15,10 +15,10 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
+    } _pageCoordinateDictionary;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } _pageCoordinateDictionary;
     } _rwlock;
 }
 

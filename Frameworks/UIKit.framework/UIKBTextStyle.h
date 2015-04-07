@@ -5,13 +5,10 @@
 @class NSString;
 
 @interface UIKBTextStyle : NSObject <NSCopying> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     NSString *_etchColor;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _etchOffset;
     NSString *_fontName;
     float _fontSize;
@@ -20,6 +17,9 @@
     float _pathWeight;
     int _selector;
     NSString *_textColor;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _textOffset;
     float _textOpacity;
 }

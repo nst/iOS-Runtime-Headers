@@ -10,6 +10,8 @@
 @class NSArray, NSObject<OS_dispatch_data>, TSPLazyReferenceArray;
 
 @interface TSPUnknownMessage : NSObject {
+    NSArray *_datas;
+    NSObject<OS_dispatch_data> *_messageData;
     struct MessageInfo { 
         int (**_vptr$MessageLite)(); 
         struct UnknownFieldSet { 
@@ -43,8 +45,6 @@
         int _data_references_cached_byte_size_; 
         int _cached_size_; 
         unsigned int _has_bits_[1]; 
-    NSArray *_datas;
-    NSObject<OS_dispatch_data> *_messageData;
     } _messageInfo;
     TSPLazyReferenceArray *_objects;
 }
@@ -53,13 +53,13 @@
 @property(readonly) NSObject<OS_dispatch_data> * messageData;
 @property(retain) TSPLazyReferenceArray * objects;
 
-- (const struct MessageInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5; unsigned int x6; struct RepeatedPtrField<TSP::FieldInfo> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; int x12; unsigned int x13[1]; }*)messageInfo;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)datas;
 - (id)init;
 - (id)initWithMessageInfo:(const struct MessageInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5; unsigned int x6; struct RepeatedPtrField<TSP::FieldInfo> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; int x12; unsigned int x13[1]; }*)arg1 data:(id)arg2;
 - (id)messageData;
+- (const struct MessageInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5; unsigned int x6; struct RepeatedPtrField<TSP::FieldInfo> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; int x12; unsigned int x13[1]; }*)messageInfo;
 - (id)objects;
 - (void)setDatas:(id)arg1;
 - (void)setObjects:(id)arg1;

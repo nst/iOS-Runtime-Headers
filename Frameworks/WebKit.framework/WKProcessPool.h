@@ -12,17 +12,17 @@
 @interface WKProcessPool : NSObject <WKObject> {
     struct RetainPtr<_WKProcessPoolConfiguration> { 
         void *m_ptr; 
+    } _configuration;
     struct ObjectStorage<WebKit::WebContext> { 
         struct type { 
             unsigned char __lx[528]; 
         } data; 
+    } _context;
     struct WeakObjCPtr<id<_WKDownloadDelegate> > { 
         id m_weakReference; 
+    } _downloadDelegate;
     struct RetainPtr<WKGeolocationProviderIOS> { 
         void *m_ptr; 
-    } _configuration;
-    } _context;
-    } _downloadDelegate;
     } _geolocationProvider;
 }
 
@@ -35,12 +35,12 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (id)_websiteDataURLForContainerWithURL:(id)arg1 bundleIdentifierIfNotInContainer:(id)arg2;
 + (id)_websiteDataURLForContainerWithURL:(id)arg1;
++ (id)_websiteDataURLForContainerWithURL:(id)arg1 bundleIdentifierIfNotInContainer:(id)arg2;
 
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id)_configuration;
 - (id)_downloadDelegate;
 - (id)_geolocationProvider;

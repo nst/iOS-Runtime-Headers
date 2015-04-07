@@ -124,8 +124,8 @@
 - (void)setBlursBackground:(BOOL)arg1;
 - (void)setBottomMargin:(float)arg1;
 - (void)setButtonLayoutConstraints:(id)arg1;
-- (void)setCurrentState:(int)arg1 animated:(BOOL)arg2 animationCompletionBlock:(id)arg3;
 - (void)setCurrentState:(int)arg1;
+- (void)setCurrentState:(int)arg1 animated:(BOOL)arg2 animationCompletionBlock:(id)arg3;
 - (void)setDeclineAndMessageIsAvailable:(BOOL)arg1;
 - (void)setDeclineAndRemindIsAvailable:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
@@ -152,8 +152,8 @@
 - (void)shrinkButtonFontSizesIfNecessary;
 - (id)sideButtonLeft;
 - (id)sideButtonRight;
-- (void)slidingButton:(id)arg1 didSlideToProportion:(float)arg2;
 - (id)slidingButton;
+- (void)slidingButton:(id)arg1 didSlideToProportion:(float)arg2;
 - (void)slidingButtonDidFinishSlide;
 - (void)slidingButtonWillFinishSlide;
 - (id)stateStack;

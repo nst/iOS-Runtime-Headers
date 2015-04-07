@@ -4,24 +4,20 @@
 
 @class NSMutableArray, NSString;
 
-@interface HDCodableNanoSyncStatus : PBCodable <HDSyncAnchorMap, HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, NSCopying> {
+@interface HDCodableNanoSyncStatus : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, HDSyncAnchorMap, NSCopying> {
+    NSMutableArray *_anchors;
     struct { 
         unsigned int statusCode : 1; 
-    NSMutableArray *_anchors;
     } _has;
     int _statusCode;
 }
 
 @property(retain) NSMutableArray * anchors;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property BOOL hasStatusCode;
 @property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
 @property int statusCode;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 
 + (id)persistentUserInfoKey;

@@ -5,20 +5,10 @@
 @class LTEAudioDevice, NSDictionary, NSMutableArray, NSNumber, NSObject<OS_dispatch_queue>, NSString;
 
 @interface LTEAudioManager : NSObject {
-    struct AudioStreamBasicDescription { 
-        double mSampleRate; 
-        unsigned int mFormatID; 
-        unsigned int mFormatFlags; 
-        unsigned int mBytesPerPacket; 
-        unsigned int mFramesPerPacket; 
-        unsigned int mBytesPerFrame; 
-        unsigned int mChannelsPerFrame; 
-        unsigned int mBitsPerChannel; 
-        unsigned int mReserved; 
+    BOOL _microphoneMuted;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    BOOL _microphoneMuted;
     } audioLock;
     int audioRefCount;
     int clientPID;
@@ -51,6 +41,16 @@
     NSMutableArray *spkrConfList;
     LTEAudioDevice *targetInputDevice;
     BOOL usingFloat;
+    struct AudioStreamBasicDescription { 
+        double mSampleRate; 
+        unsigned int mFormatID; 
+        unsigned int mFormatFlags; 
+        unsigned int mBytesPerPacket; 
+        unsigned int mFramesPerPacket; 
+        unsigned int mBytesPerFrame; 
+        unsigned int mChannelsPerFrame; 
+        unsigned int mBitsPerChannel; 
+        unsigned int mReserved; 
     } vpioFormat;
 }
 

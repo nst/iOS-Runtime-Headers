@@ -5,15 +5,15 @@
 @class NSDictionary, NSString, TCFontFamily;
 
 @interface TCFont : NSObject {
+    TCFontFamily *_family;
+    NSDictionary *_namesByLanguage;
+    NSString *_psName;
     struct TCFontStyling { 
         int fontClass; 
         unsigned int stringEncoding; 
         BOOL weight; 
         BOOL italic; 
         int width; 
-    TCFontFamily *_family;
-    NSDictionary *_namesByLanguage;
-    NSString *_psName;
     } _styling;
 }
 

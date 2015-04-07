@@ -9,7 +9,11 @@
 @class NSArray, NSExtension, NSLayoutConstraint, NSString, UIView, UIViewController;
 
 @interface SLComposeViewController : UIViewController <SLRemoteComposeViewControllerDelegateProtocol> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     BOOL _didCompleteSheet;
     BOOL _didFailLoadingRemoteViewController;
     NSExtension *_extension;
@@ -63,8 +67,8 @@
 - (BOOL)addImage:(id)arg1;
 - (BOOL)addImageAsset:(id)arg1;
 - (BOOL)addItemProvider:(id)arg1;
-- (BOOL)addURL:(id)arg1 withPreviewImage:(id)arg2;
 - (BOOL)addURL:(id)arg1;
+- (BOOL)addURL:(id)arg1 withPreviewImage:(id)arg2;
 - (BOOL)canAddContent;
 - (BOOL)canSendTweet;
 - (void)completeWithResult:(int)arg1;
@@ -75,8 +79,8 @@
 - (id)initWithExtensionIdentifier:(id)arg1;
 - (id)initWithServiceType:(id)arg1;
 - (void)remoteController:(id)arg1 didLoadWithError:(id)arg2;
-- (void)remoteViewController:(id)arg1 didTerminateWithError:(id)arg2;
 - (id)remoteViewController;
+- (void)remoteViewController:(id)arg1 didTerminateWithError:(id)arg2;
 - (void)remoteViewControllerLoadDidTimeout;
 - (BOOL)removeAllImages;
 - (BOOL)removeAllURLs;

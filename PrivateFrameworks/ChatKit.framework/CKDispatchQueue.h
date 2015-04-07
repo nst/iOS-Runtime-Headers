@@ -25,9 +25,9 @@
 + (id)serialQueueWithDispatchPriority:(long)arg1;
 
 - (id)_initWithDispatchAttr:(id)arg1 dispatchPriority:(long)arg2;
-- (void)addBlock:(id)arg1 withQueuePriority:(int)arg2 forKey:(id)arg3;
-- (void)addBlock:(id)arg1 withQueuePriority:(int)arg2;
 - (void)addBlock:(id)arg1;
+- (void)addBlock:(id)arg1 withQueuePriority:(int)arg2;
+- (void)addBlock:(id)arg1 withQueuePriority:(int)arg2 forKey:(id)arg3;
 - (id)allKeysOfOutstandingBlocks;
 - (void)cancelOustandingBlocks;
 - (BOOL)containsOutstandingBlockForKey:(id)arg1;

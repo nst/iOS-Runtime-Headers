@@ -4,21 +4,7 @@
 
 @class <MFMailComposeViewControllerDelegate>, <NSCoding>, ABPeoplePickerNavigationController, ABPersonViewController, ABUnknownPersonViewController, MFAddressPickerReformatter, MFComposeActivityContinuationOperation, MFComposeBodyField, MFComposeImageSizeView, MFComposeRecipient, MFComposeSubjectView, MFComposeTextContentView, MFLANContinuationAgent, MFLock, MFMailAccountProxyGenerator, MFMailComposeRecipientView, MFMailPopoverManager, MFMailSignatureController, MFMailboxUid, MFMessageContentProgressLayer, MFModernComposeRecipientAtom, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFRecentComposeRecipient, MFSecureMIMECompositionManager, NSArray, NSDate, NSDictionary, NSObject<OS_dispatch_group>, NSString, NSTimer, UIAlertController, UIBarButtonItem, UIImagePickerController, UIKeyCommand, UIProgressView, UITapGestureRecognizer, UIView, _MFMailCompositionContext;
 
-@interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate, MFMailComposeToFieldDelegate, NSUserActivityDelegate, MFComposeActivityContinuationOperationDelegate, ABPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABUnknownPersonViewControllerDelegate, MFMailPopoverManagerDelegate, MFMailComposeViewDelegate, MFComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFComposeRecipientTextViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate, MFGroupDetailViewControllerDelegate> {
-    unsigned int _isDirty : 1;
-    unsigned int _bodyTextChanged : 1;
-    unsigned int _shouldAutosaveWithSuspendInfo : 1;
-    unsigned int _isSuspended : 1;
-    unsigned int _viewWasUnloaded : 1;
-    unsigned int _fromAddressPickerWasVisible : 1;
-    unsigned int _stillLoading : 1;
-    unsigned int _hosted : 1;
-    unsigned int _hasViewAppeared : 1;
-    unsigned int _rotationSnapshotTaken : 1;
-    unsigned int _isPopoverVisible : 1;
-    unsigned int _useSuspended : 1;
-    unsigned int _didShowNotifyConfirmation : 1;
-    unsigned int _showingNotifyConfirmation : 1;
+@interface MFMailComposeController : UIViewController <ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate, MFComposeActivityContinuationOperationDelegate, MFComposeHeaderViewDelegate, MFComposeImageSizeViewDelegate, MFComposeRecipientTextViewDelegate, MFComposeSubjectViewDelegate, MFComposeTypeFactoryDelegate, MFGroupDetailViewControllerDelegate, MFMailComposeToFieldDelegate, MFMailComposeViewDelegate, MFMailPopoverManagerDelegate, MFSecureMIMECompositionManagerDelegate, NSUserActivityDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate> {
     MFLANContinuationAgent *_LANContinuationAgent;
     MFMailAccountProxyGenerator *_accountProxyGenerator;
     NSString *_addressForMissingIdentity;
@@ -34,6 +20,7 @@
     NSDate *_autosavedDate;
     NSArray *_bccAddresses;
     MFComposeBodyField *_bodyField;
+    unsigned int _bodyTextChanged : 1;
     MFComposeTextContentView *_bodyTextView;
     NSArray *_ccAddresses;
     MFMailComposeRecipientView *_ccField;
@@ -46,16 +33,23 @@
     UIProgressView *_continuationProgressView;
     <MFMailComposeViewControllerDelegate> *_delegate;
     MFOutgoingMessageDelivery *_delivery;
+    unsigned int _didShowNotifyConfirmation : 1;
     int _encryptionIdentityStatus;
     BOOL _encryptionOverrideSetting;
     BOOL _encryptionStatusIsKnown;
     NSDictionary *_errorsByRecipient;
     UIKeyCommand *_escapeKeyCommand;
+    unsigned int _fromAddressPickerWasVisible : 1;
+    unsigned int _hasViewAppeared : 1;
+    unsigned int _hosted : 1;
     NSObject<OS_dispatch_group> *_imageScalingGroup;
     MFComposeImageSizeView *_imageSizeField;
     unsigned int _initialAttachmentCount;
     NSString *_initialTitle;
+    unsigned int _isDirty : 1;
     BOOL _isModal;
+    unsigned int _isPopoverVisible : 1;
+    unsigned int _isSuspended : 1;
     NSDate *_lastActiveDate;
     MFMailboxUid *_lastDraftMailboxUid;
     NSString *_lastDraftMessageID;
@@ -79,20 +73,26 @@
     id _remoteViewControllerProxy;
     UITapGestureRecognizer *_requestModalTapGestureRecognizer;
     int _resolution;
+    unsigned int _rotationSnapshotTaken : 1;
     MFMutableMessageHeaders *_savedHeaders;
     MFSecureMIMECompositionManager *_secureCompositionManager;
     UIBarButtonItem *_sendButtonItem;
     UIKeyCommand *_sendKeyCommand;
     NSString *_sendingEmailAddress;
     int _sendingEmailAddressIndex;
+    unsigned int _shouldAutosaveWithSuspendInfo : 1;
+    unsigned int _showingNotifyConfirmation : 1;
     MFMailSignatureController *_signatureController;
     int _signingIdentityStatus;
     int _sourceAccountManagement;
+    unsigned int _stillLoading : 1;
     NSString *_subject;
     MFComposeSubjectView *_subjectField;
     NSArray *_toAddresses;
     MFMailComposeRecipientView *_toField;
     ABUnknownPersonViewController *_unknownPersonViewController;
+    unsigned int _useSuspended : 1;
+    unsigned int _viewWasUnloaded : 1;
 }
 
 @property(copy) NSString * addressForMissingIdentity;
@@ -121,8 +121,8 @@
 @property(getter=isVerticallyCompact,readonly) BOOL verticallyCompact;
 
 + (void)initialize;
-+ (BOOL)isSetupForDeliveryAllowingRestrictedAccounts:(BOOL)arg1 originatingBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
 + (BOOL)isSetupForDeliveryAllowingRestrictedAccounts:(BOOL)arg1;
++ (BOOL)isSetupForDeliveryAllowingRestrictedAccounts:(BOOL)arg1 originatingBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
 + (id)preferenceForKey:(id)arg1;
 
 - (void)_accountsChanged:(id)arg1;
@@ -340,11 +340,11 @@
 - (int)numberOfComponentsInPickerView:(id)arg1;
 - (id)originatingBundleID;
 - (id)peoplePicker;
-- (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2;
+- (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (id)personViewController;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)pickInitialFirstResponder;
 - (id)pickerView:(id)arg1 attributedTitleForRow:(int)arg2 forComponent:(int)arg3;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
@@ -407,8 +407,8 @@
 - (void)setRecipientsKeyboardType:(int)arg1;
 - (void)setRemoteViewControllerProxy:(id)arg1;
 - (void)setSavedHeaders:(id)arg1;
-- (void)setSendingEmailAddress:(id)arg1 addIfNotPresent:(BOOL)arg2;
 - (void)setSendingEmailAddress:(id)arg1;
+- (void)setSendingEmailAddress:(id)arg1 addIfNotPresent:(BOOL)arg2;
 - (void)setSourceAccountManagement:(int)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
@@ -421,9 +421,9 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tappedSMIMEButton;
 - (id)toRecipients;
+- (id)unknownPersonViewController;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 - (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (id)unknownPersonViewController;
 - (void)updateSignature;
 - (void)updateUserActivityState:(id)arg1;
 - (void)userActivity:(id)arg1 didReceiveInputStream:(id)arg2 outputStream:(id)arg3;

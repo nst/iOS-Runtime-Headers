@@ -9,10 +9,18 @@
 @interface FigCaptureClientSessionMonitor : NSObject {
     int _applicationState;
     id _applicationStateChangeNotificationToken;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _applicationStateHandler;
+
     int _clientType;
     BOOL _haveExternalCMSession;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _interruptionHandler;
+
     int _interruptionState;
     id _interruptionStateChangeNotificationToken;
     BOOL _invalid;

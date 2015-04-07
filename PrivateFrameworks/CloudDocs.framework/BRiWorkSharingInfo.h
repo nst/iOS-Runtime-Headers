@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@interface BRiWorkSharingInfo : NSObject <NSSecureCoding, NSCopying> {
+@interface BRiWorkSharingInfo : NSObject <NSCopying, NSSecureCoding> {
     BOOL _options;
 }
 

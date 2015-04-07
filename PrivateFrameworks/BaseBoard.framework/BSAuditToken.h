@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface BSAuditToken : NSObject <NSCopying, BSXPCCoding> {
+@interface BSAuditToken : NSObject <BSXPCCoding, NSCopying> {
     struct { 
         unsigned int val[8]; 
     } _auditToken;

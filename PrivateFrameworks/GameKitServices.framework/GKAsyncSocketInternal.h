@@ -9,11 +9,19 @@
 @class NSMutableData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface GKAsyncSocketInternal : GKAsyncSocket {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _connectedHandler;
+
     int _connectionSocket;
     NSMutableData *_dataToSend;
     BOOL _invalidated;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _receiveDataHandler;
+
     NSObject<OS_dispatch_source> *_receiveSource;
     NSObject<OS_dispatch_source> *_sendSource;
     BOOL _sendSourceSuspended;
@@ -29,8 +37,8 @@
 - (void)invalidate;
 - (void)receiveData;
 - (id)receiveDataHandler;
-- (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)sendData;
+- (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setConnectedHandler:(id)arg1;
 - (void)setReceiveDataHandler:(id)arg1;
 - (void)setSocketName:(id)arg1;

@@ -5,9 +5,6 @@
 @class NSCalendar, NSDate, NSNumberFormatter, NSString;
 
 @interface NSDateComponentsFormatter : NSFormatter {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     unsigned int _allowedUnits;
     BOOL _allowsFractionalUnits;
     NSCalendar *_calendar;
@@ -17,6 +14,9 @@
     int _formattingContext;
     BOOL _includesApproximationPhrase;
     BOOL _includesTimeRemainingPhrase;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _lock;
     int _maximumUnitCount;
     NSDate *_referenceDate;

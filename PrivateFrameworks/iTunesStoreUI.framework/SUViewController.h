@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray, NSString, SUClientInterface, SUNavigationItem, SURotationController, SUViewControllerContext, SUViewControllerScriptProperties, UIBarButtonItem, UIViewController;
 
-@interface SUViewController : UIViewController <SUScriptNativeObject, ISOperationDelegate> {
+@interface SUViewController : UIViewController <ISOperationDelegate, SUScriptNativeObject> {
     SUViewControllerScriptProperties *_cachedScriptProperties;
     BOOL _canBeWeakScriptReference;
     NSMutableArray *_cancelOnDeallocOperations;
@@ -95,8 +95,8 @@
 - (void)dismissFooterViewControllerAnimated:(BOOL)arg1;
 - (void)enqueueOperation:(id)arg1 cancelOnDealloc:(BOOL)arg2;
 - (id)footerViewController;
-- (void)handleApplicationURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (void)handleApplicationURL:(id)arg1;
+- (void)handleApplicationURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (id)init;
 - (id)initWithSection:(id)arg1;
 - (id)inputAccessoryView;
@@ -132,8 +132,8 @@
 - (void)setShouldExcludeFromNavigationHistory:(BOOL)arg1;
 - (void)setShouldInvalidateForMemoryPurge:(BOOL)arg1;
 - (void)setShowsLibraryButton:(BOOL)arg1;
-- (void)setTitle:(id)arg1 changeTabBarItem:(BOOL)arg2;
 - (void)setTitle:(id)arg1;
+- (void)setTitle:(id)arg1 changeTabBarItem:(BOOL)arg2;
 - (BOOL)shouldAdjustContentOffsets;
 - (BOOL)shouldExcludeFromNavigationHistory;
 - (BOOL)shouldInvalidateForMemoryPurge;

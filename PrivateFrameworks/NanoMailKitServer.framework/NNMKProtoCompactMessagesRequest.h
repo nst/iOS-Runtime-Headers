@@ -5,10 +5,10 @@
 @class NSData;
 
 @interface NNMKProtoCompactMessagesRequest : PBRequest <NSCopying> {
-    struct { 
-        unsigned int fullSyncVersion : 1; 
     NSData *_beforeDateReceived;
     unsigned int _fullSyncVersion;
+    struct { 
+        unsigned int fullSyncVersion : 1; 
     } _has;
 }
 

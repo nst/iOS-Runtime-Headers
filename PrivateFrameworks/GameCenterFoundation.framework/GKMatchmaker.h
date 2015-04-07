@@ -9,8 +9,16 @@
 @class GKDiscovery, GKMatch, NSDate, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet;
 
 @interface GKMatchmaker : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _inviteHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _inviteeResponseHandler;
+
     NSSet *_invitees;
     NSDictionary *_inviteesByUserID;
     NSObject<OS_dispatch_queue> *_lookForInviteQueue;
@@ -21,12 +29,24 @@
     NSSet *_nearbyCompatibileHashes;
     GKDiscovery *_nearbyDiscovery;
     NSMutableDictionary *_nearbyInvites;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _nearbyPlayerHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _nearbyPlayerIDHandler;
+
     NSMutableDictionary *_nearbyPlayers;
     double _nearbyQueryAllowance;
     NSDate *_nearbyQueryLastCheckDate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recipientResponseHandler;
+
     BOOL _wasNearbyBrowsing;
 }
 
@@ -164,8 +184,8 @@
 - (void)setNearbyPlayerAccepted:(id)arg1 deviceID:(id)arg2 connectionData:(id)arg3;
 - (void)setNearbyPlayerDeclined:(id)arg1 deviceID:(id)arg2 reason:(int)arg3;
 - (void)setNearbyPlayerDeclined:(id)arg1 reason:(int)arg2;
-- (void)setNearbyPlayerFailed:(id)arg1 deviceID:(id)arg2;
 - (void)setNearbyPlayerFailed:(id)arg1;
+- (void)setNearbyPlayerFailed:(id)arg1 deviceID:(id)arg2;
 - (void)setNearbyPlayerHandler:(id)arg1;
 - (void)setNearbyPlayerIDHandler:(id)arg1;
 - (void)setNearbyPlayers:(id)arg1;

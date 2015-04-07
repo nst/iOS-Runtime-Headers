@@ -14,29 +14,30 @@
 @class SCNNode, SCNPhysicsWorld;
 
 @interface SCNPhysicsField : NSObject <NSCopying, NSSecureCoding> {
-    struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-    struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-    struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}8@0:4 */
-     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}8@0:4 */
     BOOL _active;
     unsigned int _categoryBitMask;
+    struct SCNVector3 { 
+        float x; 
+        float y; 
+        float z; 
     } _direction;
     BOOL _exclusive;
     float _falloffExponent;
-    struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; boolx7; boolx8; boolx9; boolx10; float x11; } *_field;
+
+  /* Error parsing encoded ivar type info: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf} */
+    struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; } *_field;
+
+    struct SCNVector3 { 
+        float x; 
+        float y; 
+        float z; 
     } _halfExtent;
     float _minimumDistance;
     SCNNode *_node;
+    struct SCNVector3 { 
+        float x; 
+        float y; 
+        float z; 
     } _offset;
     void *_reserved;
     int _scope;
@@ -71,10 +72,14 @@
 + (id)turbulenceFieldWithSmoothness:(float)arg1 animationSpeed:(float)arg2;
 + (id)vortexField;
 
-- (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; boolx7; boolx8; boolx9; boolx10; float x11; }*)_createField;
-- (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; boolx7; boolx8; boolx9; boolx10; float x11; }*)_handle;
 - (id).cxx_construct;
 - (void)_commonInit;
+- (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; }*)_createField;
+     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}8@0:4 */
+
+- (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; }*)_handle;
+     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}8@0:4 */
+
 - (id)_owner;
 - (void)_removeOwner;
 - (void)_setOwner:(id)arg1;

@@ -5,18 +5,6 @@
 @class GQDSStyle, GQDWPContainerHint, GQHStyle, GQWrapPointSet, NSString;
 
 @interface GQHPagesState : GQHState <GQWrapPointGenerator> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
     long mAttachmentIdCounter;
     struct __CFArray { } *mAttachmentPositions;
     GQDSStyle *mCurrentBaseParagraphStyle;
@@ -42,10 +30,22 @@
     int mHeaderFooterPageNumber;
     struct __CFDictionary { } *mHeaders;
     BOOL mIsMappingHeadersFooters;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mLastFrame;
     GQDWPContainerHint *mLastInsertedContainerHint;
     BOOL mMappingFloatingDrawables;
     int mMode;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mPageSize;
     struct __CFDictionary { } *mPageWrapPointsMap;
     int mProgressiveIndex;

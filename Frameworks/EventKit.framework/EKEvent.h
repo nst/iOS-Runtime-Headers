@@ -139,8 +139,8 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithEventStore:(id)arg1;
-- (id)initWithPersistentObject:(id)arg1 occurrenceDate:(id)arg2;
 - (id)initWithPersistentObject:(id)arg1;
+- (id)initWithPersistentObject:(id)arg1 occurrenceDate:(id)arg2;
 - (id)initialEndDate;
 - (id)initialStartDate;
 - (unsigned int)invitationStatus;

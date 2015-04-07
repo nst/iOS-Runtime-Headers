@@ -4,7 +4,7 @@
 
 @class KNAnimParameterGroup, KNMotionBlurAnimationPluginWrapper, NSString;
 
-@interface KNContentAwareCube : KNAnimationEffect <KNContentAwareTransitionAnimator, KNContentAwareFrameAnimator, KNAnimationPluginArchiving> {
+@interface KNContentAwareCube : KNAnimationEffect <KNAnimationPluginArchiving, KNContentAwareFrameAnimator, KNContentAwareTransitionAnimator> {
     KNMotionBlurAnimationPluginWrapper *_motionBlurWrapper;
     KNAnimParameterGroup *_parameterGroup;
 }

@@ -8,6 +8,7 @@
  */
 
 @interface MSSubscribeStreamsProtocol : MSStreamsProtocol {
+    int _chunkIndex;
     struct __MSSSPCContext { 
         struct __MSSPCContext { 
             void *owner; 
@@ -37,7 +38,6 @@
         struct __CFData {} *__chunkLengthData; 
         struct __CFData {} *__currentChunkData; 
         int __chunkBytesRemaining; 
-    int _chunkIndex;
     } _context;
     struct __MSSSPCChunkParsingContext { void *x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); struct __CFString {} *x8; struct __CFURL {} *x9; struct __CFString {} *x10; struct __CFString {} *x11; int x12; } *_parseContext;
 }
@@ -53,8 +53,8 @@
 - (void)_coreProtocolDidFailAuthentication:(id)arg1;
 - (void)_coreProtocolDidFinishError:(id)arg1;
 - (void)_coreProtocolDidGetDataChunk:(id)arg1;
-- (id)_invalidFieldErrorWithFieldName:(id)arg1 suggestion:(id)arg2;
 - (id)_invalidFieldErrorWithFieldName:(id)arg1;
+- (id)_invalidFieldErrorWithFieldName:(id)arg1 suggestion:(id)arg2;
 - (void)_parseChunks;
 - (void)_parseNextChunk;
 - (id)_pathToChunkIndex:(int)arg1;

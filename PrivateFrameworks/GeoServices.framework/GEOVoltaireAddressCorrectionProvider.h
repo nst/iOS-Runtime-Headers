@@ -9,10 +9,22 @@
 @class GEORequester, NSString;
 
 @interface GEOVoltaireAddressCorrectionProvider : NSObject <PBRequesterDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _errorHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _initFinishedHandler;
+
     GEORequester *_requester;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateFinishedHandler;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -26,8 +38,8 @@
 
 - (void)cancelRequest;
 - (void)dealloc;
-- (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (id)requester;
+- (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
 - (void)setRequester:(id)arg1;

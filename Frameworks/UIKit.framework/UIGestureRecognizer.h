@@ -5,6 +5,14 @@
 @class <UIGestureRecognizerDelegate>, NSMutableArray, NSMutableSet, UIPhysicalButtonsEvent, UITouchesEvent, UIView;
 
 @interface UIGestureRecognizer : NSObject {
+    NSMutableArray *_delayedTouches;
+    <UIGestureRecognizerDelegate> *_delegate;
+    NSMutableSet *_dynamicFailureDependents;
+    NSMutableSet *_dynamicFailureRequirements;
+    NSMutableSet *_failureDependents;
+    id _failureMap;
+    NSMutableSet *_failureRequirements;
+    NSMutableSet *_friends;
     struct { 
         unsigned int delegateShouldBegin : 1; 
         unsigned int delegateCanPrevent : 1; 
@@ -40,14 +48,6 @@
         unsigned int willBeginAfterSatisfyingFailureRequirements : 1; 
         unsigned int requiresSystemGesturesToFail : 1; 
         unsigned int acceptsFailureRequirements : 1; 
-    NSMutableArray *_delayedTouches;
-    <UIGestureRecognizerDelegate> *_delegate;
-    NSMutableSet *_dynamicFailureDependents;
-    NSMutableSet *_dynamicFailureRequirements;
-    NSMutableSet *_failureDependents;
-    id _failureMap;
-    NSMutableSet *_failureRequirements;
-    NSMutableSet *_friends;
     } _gestureFlags;
     int _state;
     NSMutableArray *_targets;

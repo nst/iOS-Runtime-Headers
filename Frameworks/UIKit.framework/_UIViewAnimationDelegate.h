@@ -7,7 +7,11 @@
  */
 
 @interface _UIViewAnimationDelegate : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
 }
 
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

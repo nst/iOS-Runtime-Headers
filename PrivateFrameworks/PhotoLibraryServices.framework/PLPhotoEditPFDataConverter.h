@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface PLPhotoEditPFDataConverter : NSObject <PLPhotoEditDataImporter, PLPhotoEditDataExporter> {
+@interface PLPhotoEditPFDataConverter : NSObject <PLPhotoEditDataExporter, PLPhotoEditDataImporter> {
 }
 
 @property(copy,readonly) NSString * debugDescription;

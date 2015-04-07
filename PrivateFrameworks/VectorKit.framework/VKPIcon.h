@@ -5,6 +5,9 @@
 @class NSString;
 
 @interface VKPIcon : PBCodable <NSCopying> {
+    unsigned int _anchorPointX;
+    unsigned int _anchorPointY;
+    unsigned int _atlasIndex;
     struct { 
         unsigned int matchingStyleAttributeLongValue : 1; 
         unsigned int anchorPointX : 1; 
@@ -16,9 +19,6 @@
         unsigned int matchingStyleAttributeKey : 1; 
         unsigned int matchingStyleAttributeValue : 1; 
         unsigned int size : 1; 
-    unsigned int _anchorPointX;
-    unsigned int _anchorPointY;
-    unsigned int _atlasIndex;
     } _has;
     unsigned int _iconRectHeight;
     unsigned int _iconRectWidth;

@@ -5,10 +5,10 @@
 @class NSArray, NSDictionary, NSExpression, NSString;
 
 @interface NSPropertyMapping : NSObject {
+    NSString *_name;
     struct __propertyMappingFlags { 
         unsigned int _isInUse : 1; 
         unsigned int _reservedPropertyMapping : 31; 
-    NSString *_name;
     } _propertyMappingFlags;
     NSArray *_propertyTransforms;
     void *_reserved;

@@ -4,7 +4,7 @@
 
 @class <ABPresenterDelegate>, CNContactStyle, CNPostalAddress, NSArray, NSDictionary, NSMutableDictionary, NSString, UIColor, UITableView;
 
-@interface ABPostalAddressEditorView : UIControl <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, ABCountryPickerControllerDelegate, ABText> {
+@interface ABPostalAddressEditorView : UIControl <ABCountryPickerControllerDelegate, ABText, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     CNPostalAddress *_address;
     NSDictionary *_addressFormats;
     NSArray *_cellsLayout;
@@ -69,10 +69,10 @@
 - (void)setSeparatorColor:(id)arg1;
 - (void)setTableView:(id)arg1;
 - (void)setTextFields:(id)arg1;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)tableView;
 - (void)textFieldChanged:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (id)textFields;

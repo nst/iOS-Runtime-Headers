@@ -4,7 +4,7 @@
 
 @class <ABStarkContactsListViewControllerDelegate>, ABMembersDataSource, ABModel, ABStarkNoContentBannerView, AVExternalDevice, NSString;
 
-@interface ABStarkContactsListViewController : UITableViewController <ABMembersDataSourceDelegate, ABContactViewControllerDelegate> {
+@interface ABStarkContactsListViewController : UITableViewController <ABContactViewControllerDelegate, ABMembersDataSourceDelegate> {
     ABMembersDataSource *_dataSource;
     AVExternalDevice *_externalDevice;
     BOOL _limitedUI;

@@ -5,9 +5,13 @@
 @class NSMutableArray, _UIFlowLayoutSection;
 
 @interface _UIFlowLayoutRow : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
+    float _availableSpace;
+    BOOL _complete;
+    BOOL _fixedItemSize;
+    int _horizontalAlignement;
+    int _index;
+    BOOL _isValid;
+    NSMutableArray *_items;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,14 +21,10 @@
             float width; 
             float height; 
         } size; 
-    float _availableSpace;
-    BOOL _complete;
-    BOOL _fixedItemSize;
-    int _horizontalAlignement;
-    int _index;
-    BOOL _isValid;
-    NSMutableArray *_items;
     } _rowFrame;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _rowSize;
     _UIFlowLayoutSection *_section;
     int _verticalAlignement;

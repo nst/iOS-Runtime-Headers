@@ -32,8 +32,8 @@
 - (void)dealloc;
 - (BOOL)forceMatchStyle;
 - (id)initWithTargetStylesheet:(id)arg1 newStyleDOLCContext:(id)arg2;
-- (id)mappedStyleForStyle:(id)arg1 inThemeStylesheet:(BOOL)arg2;
 - (id)mappedStyleForStyle:(id)arg1;
+- (id)mappedStyleForStyle:(id)arg1 inThemeStylesheet:(BOOL)arg2;
 - (void)popMappingContext:(id)arg1;
 - (void)pushMappingContext:(id)arg1;
 - (void)setClientsMustRemap:(BOOL)arg1;

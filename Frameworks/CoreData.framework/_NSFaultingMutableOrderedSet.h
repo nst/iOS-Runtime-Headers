@@ -5,6 +5,7 @@
 @class NSManagedObject, NSPropertyDescription;
 
 @interface _NSFaultingMutableOrderedSet : NSMutableOrderedSet {
+    int _cd_rc;
     struct _NSFaultingMutableOrderedSetFlags { 
         unsigned int _isFault : 1; 
         unsigned int _mustPropagateDelete : 1; 
@@ -13,7 +14,6 @@
         unsigned int _isImmutableCopy : 1; 
         unsigned int _reserved : 11; 
         unsigned int _relationship : 16; 
-    int _cd_rc;
     } _flags;
     id _grottyHack;
     unsigned int *_orderKeys;
@@ -55,8 +55,8 @@
 - (id)descriptionWithLocale:(id)arg1;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getObjects:(id*)arg1;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfObject:(id)arg1;
 - (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
@@ -66,8 +66,8 @@
 - (id)initWithSource:(id)arg1 destinations:(id)arg2 forRelationship:(id)arg3 inContext:(id)arg4;
 - (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)insertObjects:(const id*)arg1 count:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
+- (void)insertObjects:(const id*)arg1 count:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToOrderedSet:(id)arg1;
 - (BOOL)isFault;

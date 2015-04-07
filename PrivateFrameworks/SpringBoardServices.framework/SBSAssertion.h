@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface SBSAssertion : NSObject {
+    NSString *_assertionName;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    NSString *_assertionName;
     } _lock;
     unsigned int _port;
     NSString *_reason;

@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface SSDownloadManifestResponse : NSObject <SSXPCCoding, NSCoding> {
+@interface SSDownloadManifestResponse : NSObject <NSCoding, SSXPCCoding> {
     NSArray *_validDownloads;
 }
 

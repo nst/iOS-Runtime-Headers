@@ -5,12 +5,12 @@
 @class BSMachSendRight;
 
 @interface FBProcessCPUStatistics : NSObject {
+    BSMachSendRight *_taskNamePort;
     struct FBProcessTimes { 
         double beginUserCPUElapsedTime; 
         double beginSystemCPUElapsedTime; 
         double beginIdleCPUElapsedTime; 
         double beginApplicationCPUElapsedTime; 
-    BSMachSendRight *_taskNamePort;
     } _times;
 }
 

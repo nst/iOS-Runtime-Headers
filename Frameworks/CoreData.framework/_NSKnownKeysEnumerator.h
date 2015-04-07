@@ -3,12 +3,12 @@
  */
 
 @interface _NSKnownKeysEnumerator : NSEnumerator {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     unsigned long _flags;
     unsigned long _index;
     const id *_list;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
     const id *_referenceItems;
     id _target;

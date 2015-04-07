@@ -244,11 +244,11 @@
 - (id)grayscaleTintView;
 - (id)groupName;
 - (id)init;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 autosizesToFitSuperview:(BOOL)arg2 settings:(id)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 privateStyle:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 settings:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithPrivateStyle:(int)arg1;
 - (id)initWithSettings:(id)arg1;
 - (id)initWithStyle:(int)arg1;
@@ -283,8 +283,8 @@
 - (void)setBackdropEffectView:(id)arg1;
 - (void)setBackdropVisibilitySetOnce:(BOOL)arg1;
 - (void)setBackdropVisible:(BOOL)arg1;
-- (void)setBlurFilterWithRadius:(float)arg1 blurQuality:(id)arg2 blurHardEdges:(int)arg3;
 - (void)setBlurFilterWithRadius:(float)arg1 blurQuality:(id)arg2;
+- (void)setBlurFilterWithRadius:(float)arg1 blurQuality:(id)arg2 blurHardEdges:(int)arg3;
 - (void)setBlurHardEdges:(int)arg1;
 - (void)setBlurQuality:(id)arg1;
 - (void)setBlurRadius:(float)arg1;

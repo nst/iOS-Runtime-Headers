@@ -31,8 +31,8 @@
 - (void)dealloc;
 - (void)displayDidRefresh:(id)arg1;
 - (unsigned int)hash;
-- (id)initWithTarget:(id)arg1 actionSelector:(SEL)arg2 frameInterval:(unsigned int)arg3;
 - (id)initWithTarget:(id)arg1 actionSelector:(SEL)arg2;
+- (id)initWithTarget:(id)arg1 actionSelector:(SEL)arg2 frameInterval:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
 
 @end

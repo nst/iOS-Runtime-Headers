@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary;
 
-@interface CPLChangeBatch : NSObject <NSSecureCoding, NSFastEnumeration> {
+@interface CPLChangeBatch : NSObject <NSFastEnumeration, NSSecureCoding> {
     NSMutableDictionary *_localResources;
     NSMutableArray *_records;
 }

@@ -10,27 +10,27 @@
 @class NSMutableArray, NSString;
 
 @interface VKRasterMapModel : VKMapTileModel <VKMapLayer> {
-    struct shared_ptr<md::StyleQuery> { 
-        struct StyleQuery {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::Texture2D> { 
-        struct Texture2D {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
             struct RenderState {} *__first_; 
         } __ptr_; 
     } _clutRenderState;
+    struct shared_ptr<ggl::Texture2D> { 
+        struct Texture2D {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _gglClutTexture;
     unsigned long long _mapLayer;
     BOOL _rasterViewer;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _renderState;
     BOOL _showingNoDataPlaceholders;
     NSMutableArray *_sortedTiles;
+    struct shared_ptr<md::StyleQuery> { 
+        struct StyleQuery {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _styleQuery;
     struct Pos2DUVMesh { int (**x1)(); char *x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; struct shared_ptr<ggl::Texture::Pos2DUVVertexData> { struct Pos2DUVVertexData {} *x_8_1_1; struct __shared_weak_count {} *x_8_1_2; } x8; } *_unitMesh;
 }
@@ -48,8 +48,8 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3 roadAlpha:(float)arg4;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3 roadAlpha:(float)arg4;
 - (void)gglSetupClutTextureForLevelOfDetail:(unsigned int)arg1 scale:(float)arg2;
 - (id)init;
 - (BOOL)isShowingNoDataPlaceholders;

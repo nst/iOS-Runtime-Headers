@@ -4,7 +4,7 @@
 
 @class NSData, NSError, NSString;
 
-@interface SSPlayInfoResponse : NSObject <SSXPCCoding, NSCopying> {
+@interface SSPlayInfoResponse : NSObject <NSCopying, SSXPCCoding> {
     NSError *_error;
     NSData *_playInfoData;
 }

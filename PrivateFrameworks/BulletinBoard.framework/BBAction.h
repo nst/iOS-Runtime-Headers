@@ -17,7 +17,11 @@
     BOOL _authenticationRequired;
     BOOL _deliverResponse;
     NSString *_identifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _internalBlock;
+
     NSString *_launchBundleID;
     BOOL _launchCanBypassPinLock;
     NSURL *_launchURL;
@@ -46,12 +50,12 @@
 + (id)actionWithActivatePluginName:(id)arg1 activationContext:(id)arg2;
 + (id)actionWithAppearance:(id)arg1;
 + (id)actionWithCallblock:(id)arg1;
-+ (id)actionWithIdentifier:(id)arg1 title:(id)arg2;
 + (id)actionWithIdentifier:(id)arg1;
-+ (id)actionWithLaunchBundleID:(id)arg1 callblock:(id)arg2;
++ (id)actionWithIdentifier:(id)arg1 title:(id)arg2;
 + (id)actionWithLaunchBundleID:(id)arg1;
-+ (id)actionWithLaunchURL:(id)arg1 callblock:(id)arg2;
++ (id)actionWithLaunchBundleID:(id)arg1 callblock:(id)arg2;
 + (id)actionWithLaunchURL:(id)arg1;
++ (id)actionWithLaunchURL:(id)arg1 callblock:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (id)_nameForActionType:(int)arg1;

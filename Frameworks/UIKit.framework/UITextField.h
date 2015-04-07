@@ -4,24 +4,64 @@
 
 @class <UITextFieldDelegate>, <UITextInputDelegate>, <UITextInputTokenizer>, MPUTextContainerContentSizeUpdater, NSAttributedString, NSDictionary, NSLayoutConstraint, NSString, UIButton, UIColor, UIFont, UIImage, UIImageView, UILabel, UITextFieldAtomBackgroundView, UITextFieldBackgroundView, UITextFieldBorderView, UITextFieldLabel, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UIBaselineLayoutStrut, _UICascadingTextStorage;
 
-@interface UITextField : UIControl <UIKeyboardInput, _UILayoutBaselineUpdating, UITextInputTraits_Private, UIPopoverControllerDelegate, UITextInput, NSCoding, ABText, MPUAutoupdatingTextContainer> {
+@interface UITextField : UIControl <ABText, MPUAutoupdatingTextContainer, NSCoding, UIKeyboardInput, UIPopoverControllerDelegate, UITextInput, UITextInputTraits_Private, _UILayoutBaselineUpdating> {
+    UITextFieldAtomBackgroundView *_atomBackgroundView;
+    BOOL _avoidBecomeFirstResponder;
+    UIImage *_background;
+    UITextFieldBorderView *_backgroundView;
+    NSLayoutConstraint *_baselineLayoutConstraint;
+    _UIBaselineLayoutStrut *_baselineLayoutLabel;
+    int _borderStyle;
+    UIButton *_clearButton;
+    int _clearButtonMode;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _clearButtonOffset;
+    BOOL _deferringBecomeFirstResponder;
+    id _delegate;
+    UIImage *_disabledBackground;
+    UITextFieldBorderView *_disabledBackgroundView;
+    UITextFieldLabel *_displayLabel;
+    float _fullFontSize;
+    UIImageView *_iconView;
+    UIView *_inputAccessoryView;
+    UIView *_inputView;
+    UITextInteractionAssistant *_interactionAssistant;
+    UILabel *_label;
+    float _labelOffset;
+    UIView *_leftView;
+    int _leftViewMode;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _leftViewOffset;
+    float _minimumFontSize;
+    UITextInputTraits *_nonAtomTraits;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
+    } _padding;
+    UITextFieldLabel *_placeholderLabel;
+    UITextFieldLabel *_prefixLabel;
+    float _progress;
+    UIView *_rightView;
+    int _rightViewMode;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _rightViewOffset;
+    int _scrollXOffset;
+    int _scrollYOffset;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    } _selectionRangeWhenNotEditing;
+    BOOL _setSelectionRangeAfterFieldEditorIsAttached;
+    UITextFieldLabel *_suffixLabel;
+    UITextFieldBackgroundView *_systemBackgroundView;
     struct { 
         unsigned int verticallyCenterText : 1; 
         unsigned int isAnimating : 4; 
@@ -42,46 +82,6 @@
         unsigned int usesAttributedText : 1; 
         unsigned int backgroundViewState : 2; 
         unsigned int clearingBehavior : 2; 
-    UITextFieldAtomBackgroundView *_atomBackgroundView;
-    BOOL _avoidBecomeFirstResponder;
-    UIImage *_background;
-    UITextFieldBorderView *_backgroundView;
-    NSLayoutConstraint *_baselineLayoutConstraint;
-    _UIBaselineLayoutStrut *_baselineLayoutLabel;
-    int _borderStyle;
-    UIButton *_clearButton;
-    int _clearButtonMode;
-    } _clearButtonOffset;
-    BOOL _deferringBecomeFirstResponder;
-    id _delegate;
-    UIImage *_disabledBackground;
-    UITextFieldBorderView *_disabledBackgroundView;
-    UITextFieldLabel *_displayLabel;
-    float _fullFontSize;
-    UIImageView *_iconView;
-    UIView *_inputAccessoryView;
-    UIView *_inputView;
-    UITextInteractionAssistant *_interactionAssistant;
-    UILabel *_label;
-    float _labelOffset;
-    UIView *_leftView;
-    int _leftViewMode;
-    } _leftViewOffset;
-    float _minimumFontSize;
-    UITextInputTraits *_nonAtomTraits;
-    } _padding;
-    UITextFieldLabel *_placeholderLabel;
-    UITextFieldLabel *_prefixLabel;
-    float _progress;
-    UIView *_rightView;
-    int _rightViewMode;
-    } _rightViewOffset;
-    int _scrollXOffset;
-    int _scrollYOffset;
-    } _selectionRangeWhenNotEditing;
-    BOOL _setSelectionRangeAfterFieldEditorIsAttached;
-    UITextFieldLabel *_suffixLabel;
-    UITextFieldBackgroundView *_systemBackgroundView;
     } _textFieldFlags;
     _UICascadingTextStorage *_textStorage;
     UITextInputTraits *_traits;
@@ -100,7 +100,6 @@
 @property BOOL allowsEditingTextAttributes;
 @property(copy) NSAttributedString * attributedPlaceholder;
 @property(copy) NSAttributedString * attributedText;
-@property(copy) NSAttributedString * attributedText;
 @property int autocapitalizationType;
 @property(copy) NSString * autocorrectionContext;
 @property int autocorrectionType;
@@ -112,13 +111,9 @@
 @property BOOL clearsOnInsertion;
 @property BOOL contentsIsSingleValue;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSDictionary * defaultTextAttributes;
 @property BOOL deferBecomingResponder;
 @property <UITextFieldDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property BOOL disablePrediction;
 @property(retain) UIImage * disabledBackground;
@@ -129,10 +124,7 @@
 @property BOOL enablesReturnKeyOnNonWhiteSpaceContent;
 @property(readonly) UITextPosition * endOfDocument;
 @property(retain) UIFont * font;
-@property(retain) UIFont * font;
 @property BOOL forceEnableDictation;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property(retain) UIView * inputAccessoryView;
 @property <UITextInputDelegate> * inputDelegate;
@@ -162,8 +154,6 @@
 @property(retain) UIColor * selectionHighlightColor;
 @property int shortcutConversionType;
 @property int spellCheckingType;
-@property(readonly) Class superclass;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property BOOL suppressReturnKeyStyling;
 @property(copy) NSString * text;
@@ -354,8 +344,8 @@
 - (BOOL)clearsOnInsertion;
 - (BOOL)clearsPlaceholderOnBeginEditing;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })closestCaretRectInMarkedTextRangeForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1 withinRange:(id)arg2;
 - (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1 withinRange:(id)arg2;
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (void)configureFromScriptTextField:(id)arg1;
 - (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -462,8 +452,8 @@
 - (void)scrollTextFieldToVisible;
 - (id)searchText;
 - (void)select:(id)arg1;
-- (void)selectAll:(id)arg1;
 - (void)selectAll;
+- (void)selectAll:(id)arg1;
 - (void)selectAllFromFieldEditor:(id)arg1;
 - (id)selectedAttributedText;
 - (id)selectedText;
@@ -501,8 +491,8 @@
 - (void)setDisabledBackground:(id)arg1;
 - (void)setDrawsAsAtom:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setFont:(id)arg1 fullFontSize:(float)arg2;
 - (void)setFont:(id)arg1;
+- (void)setFont:(id)arg1 fullFontSize:(float)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIcon:(id)arg1;
 - (void)setInactiveHasDimAppearance:(BOOL)arg1;
@@ -520,8 +510,8 @@
 - (void)setPaddingBottom:(float)arg1;
 - (void)setPaddingLeft:(float)arg1;
 - (void)setPaddingRight:(float)arg1;
-- (void)setPaddingTop:(float)arg1 paddingLeft:(float)arg2;
 - (void)setPaddingTop:(float)arg1;
+- (void)setPaddingTop:(float)arg1 paddingLeft:(float)arg2;
 - (void)setPlaceholder:(id)arg1;
 - (void)setProgress:(float)arg1;
 - (void)setRightView:(id)arg1;

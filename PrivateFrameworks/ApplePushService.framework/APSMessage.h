@@ -20,8 +20,8 @@
 - (id)guid;
 - (unsigned int)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1 xpcMessage:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 xpcMessage:(id)arg2;
 - (id)initWithTopic:(id)arg1 userInfo:(id)arg2;
 - (id)objectForKey:(id)arg1;
 - (void)setGuid:(id)arg1;

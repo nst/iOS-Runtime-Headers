@@ -5,18 +5,7 @@
 @class NSArray, NSString;
 
 @interface SKBitmapFont : NSObject <NSCoding> {
-    struct map<unsigned short, SKSpriteNode *, std::__1::less<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, SKSpriteNode *> > > { 
-        struct __tree<std::__1::__value_type<unsigned short, SKSpriteNode *>, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, SKSpriteNode *>, std::__1::less<unsigned short>, true>, std::__1::allocator<std::__1::__value_type<unsigned short, SKSpriteNode *> > > { 
-            struct __tree_node<std::__1::__value_type<unsigned short, SKSpriteNode *>, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned short, SKSpriteNode *>, void *> > > { 
-                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
-                    struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
-            } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, SKSpriteNode *>, std::__1::less<unsigned short>, true> > { 
-                unsigned long __first_; 
-            } __pair3_; 
-        } __tree_; 
+    float _baseLine;
     struct map<unsigned short, float, std::__1::less<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, float> > > { 
         struct __tree<std::__1::__value_type<unsigned short, float>, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, float>, std::__1::less<unsigned short>, true>, std::__1::allocator<std::__1::__value_type<unsigned short, float> > > { 
             struct __tree_node<std::__1::__value_type<unsigned short, float>, void *> {} *__begin_node_; 
@@ -29,6 +18,7 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
+    } _characterAdvanceByChar;
     struct map<unsigned int, float, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, float> > > { 
         struct __tree<std::__1::__value_type<unsigned int, float>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, float>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, float> > > { 
             struct __tree_node<std::__1::__value_type<unsigned int, float>, void *> {} *__begin_node_; 
@@ -41,9 +31,19 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    float _baseLine;
-    } _characterAdvanceByChar;
     } _characterKerningByCharPair;
+    struct map<unsigned short, SKSpriteNode *, std::__1::less<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, SKSpriteNode *> > > { 
+        struct __tree<std::__1::__value_type<unsigned short, SKSpriteNode *>, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, SKSpriteNode *>, std::__1::less<unsigned short>, true>, std::__1::allocator<std::__1::__value_type<unsigned short, SKSpriteNode *> > > { 
+            struct __tree_node<std::__1::__value_type<unsigned short, SKSpriteNode *>, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned short, SKSpriteNode *>, void *> > > { 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
+                    struct __tree_node_base<void *> {} *__left_; 
+                } __first_; 
+            } __pair1_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, SKSpriteNode *>, std::__1::less<unsigned short>, true> > { 
+                unsigned long __first_; 
+            } __pair3_; 
+        } __tree_; 
     } _characterSpriteByChar;
     NSArray *_characterSprites;
     NSString *_fileName;

@@ -5,9 +5,9 @@
 @class NSString, SYMessageHeader;
 
 @interface SYBatchSyncStart : PBCodable <NSCopying> {
+    unsigned int _estimatedChangeCount;
     struct { 
         unsigned int estimatedChangeCount : 1; 
-    unsigned int _estimatedChangeCount;
     } _has;
     SYMessageHeader *_header;
     NSString *_syncID;

@@ -20,6 +20,7 @@
         float m42; 
         float m43; 
         float m44; 
+    } _proposedTransform3D;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -37,7 +38,6 @@
         float m42; 
         float m43; 
         float m44; 
-    } _proposedTransform3D;
     } _transform3D;
 }
 

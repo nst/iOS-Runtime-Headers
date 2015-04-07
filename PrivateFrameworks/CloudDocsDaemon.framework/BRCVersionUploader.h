@@ -4,7 +4,7 @@
 
 @class BRCLocalContainer, BRCTransferQueue, BRCUploadOperationMultiplexer, NSObject<OS_dispatch_queue>, NSString;
 
-@interface BRCVersionUploader : NSObject <BRCTransferQueueDelegate, BRCLifeCycle> {
+@interface BRCVersionUploader : NSObject <BRCLifeCycle, BRCTransferQueueDelegate> {
     BRCLocalContainer *_container;
     NSObject<OS_dispatch_queue> *_queue;
     BRCTransferQueue *_transferQueue;

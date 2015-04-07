@@ -4,7 +4,7 @@
 
 @class CKContainerID, CKRecordID, NSArray, NSData, NSDate, NSDictionary, NSMutableDictionary, NSMutableSet, NSSet, NSString;
 
-@interface CKRecord : NSObject <NSSecureCoding, NSCopying, PQLBindable> {
+@interface CKRecord : NSObject <NSCopying, NSSecureCoding, PQLBindable> {
     NSMutableSet *_changedKeysSet;
     NSArray *_conflictLoserEtags;
     CKContainerID *_containerID;
@@ -120,9 +120,9 @@
 - (BOOL)hasPropertiesRequiringEncryption;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithRecordType:(id)arg1;
 - (id)initWithRecordType:(id)arg1 recordID:(id)arg2;
 - (id)initWithRecordType:(id)arg1 zoneID:(id)arg2;
-- (id)initWithRecordType:(id)arg1;
 - (BOOL)isKnownToServer;
 - (id)lastModifiedUserRecordID;
 - (id)modificationDate;

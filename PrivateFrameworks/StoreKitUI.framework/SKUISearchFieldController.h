@@ -4,7 +4,7 @@
 
 @class <SKUISearchFieldDelegate>, NSOperationQueue, NSString, SKUIClientContext, SKUICompletionList, SKUISearchBar, SKUISearchDisplayController, SSVLoadURLOperation, UISearchBar, UIViewController;
 
-@interface SKUISearchFieldController : NSObject <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, SKUITrendingSearchPageViewDelegate> {
+@interface SKUISearchFieldController : NSObject <SKUITrendingSearchPageViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSString *_baseHintsURLString;
     SKUIClientContext *_clientContext;
     SKUICompletionList *_completionList;
@@ -49,8 +49,8 @@
 - (id)initWithContentsController:(id)arg1;
 - (int)numberOfSearchResults;
 - (void)resignActive:(BOOL)arg1;
-- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
+- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBarAccessoryText;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (BOOL)searchBarShouldBeginTouches:(id)arg1;

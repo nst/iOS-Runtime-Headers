@@ -4,7 +4,7 @@
 
 @class <MKPlaceInfoViewControllerDelegate>, ABCardGroup, MKMapItem, MKYelpDeal, NSArray, NSAttributedString, NSString, UIImage, _MKPlaceInfoViewControllerRouter, _MKPlaceViewController;
 
-@interface MKPlaceInfoViewController : ABContactViewController <ABContactViewControllerDelegate, MKStackingViewControllerPreferredSizeUse, MKPlaceAttributionCellProvider> {
+@interface MKPlaceInfoViewController : ABContactViewController <ABContactViewControllerDelegate, MKPlaceAttributionCellProvider, MKStackingViewControllerPreferredSizeUse> {
     _MKPlaceInfoViewControllerRouter *_actionsProxy;
     ABCardGroup *_businessInfoGroup;
     NSArray *_businessInfoOrder;

@@ -9,7 +9,11 @@
 @class NSEnumerator, SBKSyncResponseData, SBKSyncTransaction;
 
 @interface SBKSyncResponseDataKeyEnumerator : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     NSEnumerator *_conflictedKeysEnumerator;
     NSEnumerator *_deletedKeysEnumerator;
     BOOL _resolvedConflictsNeedSyncToServer;

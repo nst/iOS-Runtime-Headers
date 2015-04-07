@@ -37,8 +37,8 @@
 - (id)initWithAsset:(id)arg1;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
-- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (id)stateQueue;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 

@@ -10,13 +10,13 @@
 @class ASTrafficLogger, NSData;
 
 @interface DAConvertCRtoCRLFStream : NSInputStream {
+    int (*_clientCallback)();
     struct { 
         int version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
         int (*copyDescription)(); 
-    int (*_clientCallback)();
     } _clientContext;
     id _delegate;
     BOOL _intendToStream;

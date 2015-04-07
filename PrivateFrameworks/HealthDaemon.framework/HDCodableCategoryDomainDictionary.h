@@ -5,10 +5,10 @@
 @class NSMutableArray, NSString;
 
 @interface HDCodableCategoryDomainDictionary : PBCodable <HDSyncCodable, NSCopying> {
-    struct { 
-        unsigned int category : 1; 
     long long _category;
     NSString *_domain;
+    struct { 
+        unsigned int category : 1; 
     } _has;
     NSMutableArray *_keyValuePairs;
 }

@@ -21,11 +21,11 @@
 + (id)_squareImageFromAlbumImage:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)albumManager;
 - (void)albumManager:(id)arg1 didFailAlbumRefreshWithError:(id)arg2;
 - (void)albumManager:(id)arg1 didFailLoadingCoverImageForAlbum:(id)arg2 withError:(id)arg3;
 - (void)albumManager:(id)arg1 didLoadCoverImage:(id)arg2 forAlbum:(id)arg3;
 - (void)albumManager:(id)arg1 didRefreshAlbums:(id)arg2;
-- (id)albumManager;
 - (id)albums;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;

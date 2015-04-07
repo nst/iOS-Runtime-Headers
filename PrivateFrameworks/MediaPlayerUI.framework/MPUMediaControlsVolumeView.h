@@ -47,10 +47,10 @@
 - (id)slider;
 - (int)style;
 - (void)updateSystemVolumeLevel;
+- (id)volumeController;
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
 - (void)volumeController:(id)arg1 EUVolumeLimitEnforcedDidChange:(BOOL)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 - (void)volumeController:(id)arg1 volumeWarningStateDidChange:(int)arg2;
-- (id)volumeController;
 
 @end

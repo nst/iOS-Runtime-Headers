@@ -5,15 +5,15 @@
 @class NSLocale;
 
 @interface VKRasterMapTileRequest : NSObject <NSCopying> {
+    NSLocale *_locale;
+    int _mapType;
+    unsigned int _scale;
+    unsigned int _tileGroupID;
     struct VKRasterTileKey { 
         unsigned int x; 
         unsigned int y; 
         unsigned int z; 
         unsigned int pointSize; 
-    NSLocale *_locale;
-    int _mapType;
-    unsigned int _scale;
-    unsigned int _tileGroupID;
     } _tileKey;
 }
 

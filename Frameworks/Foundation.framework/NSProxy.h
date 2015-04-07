@@ -18,8 +18,6 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (int (*)())instanceMethodForSelector:(SEL)arg1;
-+ (int (*)())methodForSelector:(SEL)arg1;
 + (id)_copyDescription;
 + (BOOL)_isDeallocating;
 + (BOOL)_tryRetain;
@@ -41,6 +39,7 @@
 + (unsigned int)hash;
 + (id)init;
 + (void)initialize;
++ (int (*)())instanceMethodForSelector:(SEL)arg1;
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (BOOL)isAncestorOfObject:(id)arg1;
@@ -50,12 +49,13 @@
 + (BOOL)isMemberOfClass:(Class)arg1;
 + (BOOL)isProxy;
 + (BOOL)isSubclassOfClass:(Class)arg1;
++ (int (*)())methodForSelector:(SEL)arg1;
 + (id)methodSignatureForSelector:(SEL)arg1;
 + (id)mutableCopy;
 + (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-+ (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
-+ (id)performSelector:(SEL)arg1 withObject:(id)arg2;
 + (id)performSelector:(SEL)arg1;
++ (id)performSelector:(SEL)arg1 withObject:(id)arg2;
++ (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 + (oneway void)release;
 + (BOOL)respondsToSelector:(SEL)arg1;
 + (id)retain;
@@ -87,9 +87,9 @@
 - (BOOL)isMemberOfClass:(Class)arg1;
 - (BOOL)isProxy;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
-- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)performSelector:(SEL)arg1;
+- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
+- (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (oneway void)release;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)retain;

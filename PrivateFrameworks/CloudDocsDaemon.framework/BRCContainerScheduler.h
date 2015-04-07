@@ -9,9 +9,6 @@
 @class APSConnection, BRCAccountSession, BRCContainerMetadataSyncPersistedState, BRCCountedSet, BRCMinHeap, BRCOperation, BRCRelativePath, BRCSyncBudgetThrottle, BRCThrottle, BRCThrottledScheduler, CKContainer, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSOperationQueue, NSString, PQLConnection;
 
 @interface BRCContainerScheduler : NSObject <APSConnectionDelegate, BRCLocalContainerDelegate, BRCLowDiskDelegate> {
-    struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
     BRCThrottledScheduler *_applyChangesScheduler;
     BOOL _applyCountReachedMax;
     unsigned long long _availableQuota;
@@ -25,16 +22,28 @@
     BRCCountedSet *_coordinatedReaders;
     BRCCountedSet *_coordinatedWriters;
     NSObject<OS_dispatch_group> *_downloadGroup;
+
+  /* Unexpected information at end of encoded ivar type: i */
+  /* Error parsing encoded ivar type info: Ai */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_downloadSuspendCount;
+
     NSString *_environmentName;
     NSObject<OS_dispatch_group> *_initialSyncDownGroup;
     BOOL _isInLowDisk;
     NSMutableDictionary *_localContainersByID;
     NSMutableDictionary *_localContainersByMangledID;
+    struct _opaque_pthread_rwlock_t { 
+        long __sig; 
+        BOOL __opaque[124]; 
     } _lock;
     BRCMinHeap *_lostHeap;
     NSObject<OS_dispatch_source> *_lostScanDelay;
     NSObject<OS_dispatch_group> *_lostScanGroup;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _lostScanHandler;
+
     NSObject<OS_dispatch_queue> *_lostScanQueue;
     NSObject<OS_dispatch_source> *_lostScanSource;
     APSConnection *_pushConnection;
@@ -54,9 +63,12 @@
     NSObject<OS_dispatch_source> *_syncSource;
     BRCSyncBudgetThrottle *_syncUpBudget;
     NSObject<OS_dispatch_group> *_uploadGroup;
-    NSObject<OS_dispatch_group> *_writerGroup;
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_downloadSuspendCount;
+
+  /* Unexpected information at end of encoded ivar type: i */
+  /* Error parsing encoded ivar type info: Ai */
     /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_uploadSuspendCount;
+
+    NSObject<OS_dispatch_group> *_writerGroup;
 }
 
 @property(readonly) BRCAccountSession * accountSession;

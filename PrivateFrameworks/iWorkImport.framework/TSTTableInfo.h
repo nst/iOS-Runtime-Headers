@@ -9,11 +9,7 @@
 
 @class NSObject<TSDContainerInfo>, NSString, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSTEditingState, TSTMasterLayout, TSTTableModel, TSTTablePartitioner;
 
-@interface TSTTableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCEFormulaOwning, TSCEReferenceResolving, TSCETableModeling, TSKCustomFormatContainingInfo, TSKModel, TSKSearchable, TSSThemedObject, TSSPresetSource, TSSStyleClient, TSDContainerInfo, TSDMixing, TSWPStorageParent, TSCETableModeling> {
-    struct { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
+@interface TSTTableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCEFormulaOwning, TSCEReferenceResolving, TSCETableModeling, TSCETableModeling, TSDContainerInfo, TSDMixing, TSKCustomFormatContainingInfo, TSKModel, TSKSearchable, TSSPresetSource, TSSStyleClient, TSSThemedObject, TSWPStorageParent> {
     struct { 
         unsigned short row; 
         unsigned char column; 
@@ -24,6 +20,10 @@
     BOOL mIsFormulaEditing;
     TSTMasterLayout *mMasterLayout;
     TSTTablePartitioner *mPartitioner;
+    struct { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
     } mPreviousEditingCellID;
     TSTTableModel *mTableModel;
 }
@@ -32,8 +32,6 @@
 @property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
 @property int contentWritingDirection;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property struct { unsigned short x1; unsigned char x2; unsigned char x3; } editingCellID;
 @property(readonly) struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } editingCellRange;
@@ -41,7 +39,6 @@
 @property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
 @property(copy) TSDInfoGeometry * geometry;
 @property BOOL hasReference;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property(getter=isInlineWithText,readonly) BOOL inlineWithText;
 @property(readonly) TSTMasterLayout * masterLayout;
@@ -52,11 +49,10 @@
 @property(readonly) TSTTablePartitioner * partitioner;
 @property(readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } previousEditingCellID;
 @property(readonly) Class superclass;
-@property(readonly) Class superclass;
 @property(readonly) TSTTableModel * tableModel;
 
-+ (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3 reservedCount:(unsigned int)arg4;
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
++ (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3 reservedCount:(unsigned int)arg4;
 + (BOOL)canPartition;
 + (id)geometryForPrototypeIndex:(int)arg1 withCanvasPoint:(struct CGPoint { float x1; float x2; })arg2;
 + (BOOL)needsObjectUUID;
@@ -104,9 +100,9 @@
 - (id)initWithContext:(id)arg1 fromSourceInfo:(id)arg2 carrySelection:(BOOL)arg3 waitForCalcEngine:(BOOL)arg4;
 - (id)initWithContext:(id)arg1 fromSourceInfo:(id)arg2 cellRegion:(id)arg3 carrySelection:(BOOL)arg4 waitForCalcEngine:(BOOL)arg5;
 - (id)initWithContext:(id)arg1 fromSourceInfo:(id)arg2 cellRegion:(id)arg3 tableModel:(id)arg4 carrySelection:(BOOL)arg5 waitForCalcEngine:(BOOL)arg6;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 rows:(unsigned short)arg3 columns:(unsigned short)arg4 styles:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 styles:(id)arg3;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (id)initWithContext:(id)arg1 otherTableInfo:(id)arg2;
 - (void)invalidateForCalculationEngine:(id)arg1;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
@@ -151,10 +147,10 @@
 - (BOOL)serializeCalculations;
 - (void)setContentWritingDirection:(int)arg1;
 - (void)setEditingCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (void)setGeometry:(id)arg1 resizeInternal:(BOOL)arg2 scaleFactor:(struct CGSize { float x1; float x2; })arg3 shouldClearObjectPlaceholderFlag:(BOOL)arg4;
-- (void)setGeometry:(id)arg1 resizeInternal:(BOOL)arg2 scaleFactor:(struct CGSize { float x1; float x2; })arg3;
-- (void)setGeometry:(id)arg1 resizeInternal:(BOOL)arg2;
 - (void)setGeometry:(id)arg1;
+- (void)setGeometry:(id)arg1 resizeInternal:(BOOL)arg2;
+- (void)setGeometry:(id)arg1 resizeInternal:(BOOL)arg2 scaleFactor:(struct CGSize { float x1; float x2; })arg3;
+- (void)setGeometry:(id)arg1 resizeInternal:(BOOL)arg2 scaleFactor:(struct CGSize { float x1; float x2; })arg3 shouldClearObjectPlaceholderFlag:(BOOL)arg4;
 - (void)setHasReference:(BOOL)arg1;
 - (void)setupTableModelForPrototypeIndex:(int)arg1;
 - (void)shiftGeometryToExcludeTableNameHeight;

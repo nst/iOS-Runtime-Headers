@@ -5,17 +5,17 @@
 @class NSMutableString, NSString;
 
 @interface PSIGroup : PSIReusableObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     struct __CFArray { } *_assetIds;
     short _category;
     unsigned long long _compressedRanges[2];
     NSMutableString *_contentString;
     unsigned long long _groupId;
     unsigned long long _owningGroupId;
-    unsigned int _tokenRangesCount;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _tokenRanges[8];
+    unsigned int _tokenRangesCount;
 }
 
 @property(retain) struct __CFArray { }* assetIds;

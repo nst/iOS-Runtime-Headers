@@ -10,7 +10,11 @@
 
 @interface UIPrinterPickerController : NSObject {
     unsigned int _backgroundTaskIdentifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     <UIPrinterPickerControllerDelegate> *_delegate;
     UIPrinter *_selectedPrinter;
     id _state;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface KNBuildTypewriter : KNAnimationEffect <KNChunkableBuildAnimator, KNAnimationPluginArchiving, KNAnimationPluginObsoleteNames> {
+@interface KNBuildTypewriter : KNAnimationEffect <KNAnimationPluginArchiving, KNAnimationPluginObsoleteNames, KNChunkableBuildAnimator> {
 }
 
 @property(copy,readonly) NSString * debugDescription;

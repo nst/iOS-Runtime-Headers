@@ -7,7 +7,11 @@
  */
 
 @interface GKImageBrush : GKThemeBrush {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _inputTransform;
+
 }
 
 @property(copy) id inputTransform;

@@ -5,6 +5,7 @@
 @class EKDayViewContent, NSString;
 
 @interface EKDayViewContentGeometryDelegate : NSObject <CUIKSingleDayTimelineGeometryDelegate> {
+    EKDayViewContent *_dayViewContent;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    EKDayViewContent *_dayViewContent;
     } _frame;
 }
 

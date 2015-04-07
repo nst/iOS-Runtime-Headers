@@ -4,7 +4,7 @@
 
 @class IKDOMDocument, IKDOMNode, IKDOMNodeData, IKDOMNodeList, JSManagedValue, NSHashTable, NSMutableDictionary, NSString;
 
-@interface IKDOMNode : IKJSObject <IKJSDOMNode, IKJSDOMEventTarget> {
+@interface IKDOMNode : IKJSObject <IKJSDOMEventTarget, IKJSDOMNode> {
     NSHashTable *_domObservers;
     NSMutableDictionary *_eventListenersMap;
     JSManagedValue *_managedChildNodeList;

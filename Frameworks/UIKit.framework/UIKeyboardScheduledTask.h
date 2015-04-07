@@ -10,8 +10,16 @@
 
 @interface UIKeyboardScheduledTask : NSObject {
     _UIActionWhenIdle *_deferredAction;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _enqueuedTask;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _task;
+
     UIKeyboardTaskQueue *_taskQueue;
     double _timeInterval;
     NSTimer *_timer;

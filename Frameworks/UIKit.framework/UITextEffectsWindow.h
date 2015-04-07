@@ -5,13 +5,13 @@
 @class NSDictionary, NSString, UIScreen;
 
 @interface UITextEffectsWindow : UIAutoRotatingWindow <_UIScreenBasedObject> {
-    struct CGPoint { 
-        float x; 
-        float y; 
     unsigned int _activeEffectsCount;
     unsigned int _activeRemoteViewCount;
     float _defaultWindowLevel;
     unsigned int _hostedUseCount;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _hostedWindowOffset;
     BOOL _inDealloc;
     NSDictionary *_perScreenOptions;
@@ -95,8 +95,8 @@
 - (void)setHostedWindowOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setUseHostedInstance:(BOOL)arg1;
 - (void)sortSubviews;
-- (void)updateForOrientation:(int)arg1 forceResetTransform:(BOOL)arg2;
 - (void)updateForOrientation:(int)arg1;
+- (void)updateForOrientation:(int)arg1 forceResetTransform:(BOOL)arg2;
 - (void)updateSubviewOrdering;
 - (BOOL)useHostedInstance;
 

@@ -4,7 +4,7 @@
 
 @class IDSService, NSMutableArray, NSString, UIAlertView;
 
-@interface UITriggerTableViewController : UITableViewController <IDSServiceDelegate, CSLUIUITriggerIDSProtocolResponse, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate> {
+@interface UITriggerTableViewController : UITableViewController <CSLUIUITriggerIDSProtocolResponse, IDSServiceDelegate, UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSMutableArray *_UIProviders;
     UIAlertView *_alertView;
     IDSService *_idsService;
@@ -20,8 +20,8 @@
 
 - (void).cxx_destruct;
 - (id)UIProviders;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)alertView;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (void)idsRequestUITriggerResponse:(id)arg1;

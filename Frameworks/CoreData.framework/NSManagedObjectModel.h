@@ -5,16 +5,16 @@
 @class NSArray, NSDictionary, NSMutableDictionary, NSSet;
 
 @interface NSManagedObjectModel : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
-    struct __managedObjectModelFlags { 
-        unsigned int _isInUse : 1; 
-        unsigned int _isImmutable : 1; 
-        unsigned int _isOptimizedForEncoding : 1; 
-        unsigned int _reservedEntityDescription : 29; 
     NSMutableDictionary *_configurations;
     id _dataForOptimization;
     NSMutableDictionary *_entities;
     NSMutableDictionary *_fetchRequestTemplates;
     id _localizationPolicy;
+    struct __managedObjectModelFlags { 
+        unsigned int _isInUse : 1; 
+        unsigned int _isImmutable : 1; 
+        unsigned int _isOptimizedForEncoding : 1; 
+        unsigned int _reservedEntityDescription : 29; 
     } _managedObjectModelFlags;
     id *_optimizationHints;
     NSSet *_versionIdentifiers;
@@ -32,10 +32,10 @@
 + (id)_modelPathsFromBundles:(id)arg1;
 + (id)_newModelFromOptimizedEncoding:(id)arg1 error:(id*)arg2;
 + (void)initialize;
-+ (id)mergedModelFromBundles:(id)arg1 forStoreMetadata:(id)arg2;
 + (id)mergedModelFromBundles:(id)arg1;
-+ (id)modelByMergingModels:(id)arg1 forStoreMetadata:(id)arg2;
++ (id)mergedModelFromBundles:(id)arg1 forStoreMetadata:(id)arg2;
 + (id)modelByMergingModels:(id)arg1;
++ (id)modelByMergingModels:(id)arg1 forStoreMetadata:(id)arg2;
 
 - (void)_addEntities:(id)arg1 toConfiguration:(id)arg2;
 - (void)_addEntity:(id)arg1;
@@ -58,8 +58,8 @@
 - (void)_removeEntity:(id)arg1;
 - (void)_removeEntityNamed:(id)arg1;
 - (void)_restoreValidation;
-- (void)_setIsEditable:(BOOL)arg1 optimizationStyle:(unsigned int)arg2;
 - (void)_setIsEditable:(BOOL)arg1;
+- (void)_setIsEditable:(BOOL)arg1 optimizationStyle:(unsigned int)arg2;
 - (void)_setLocalizationPolicy:(id)arg1;
 - (id)_sortedEntitiesForConfiguration:(id)arg1;
 - (void)_stripForMigration;
@@ -82,15 +82,15 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfOptimizedURL:(id)arg1;
-- (id)initWithContentsOfURL:(id)arg1 forStoreMetadata:(id)arg2;
 - (id)initWithContentsOfURL:(id)arg1;
+- (id)initWithContentsOfURL:(id)arg1 forStoreMetadata:(id)arg2;
 - (BOOL)isConfiguration:(id)arg1 compatibleWithStoreMetadata:(id)arg2;
 - (BOOL)isEditable;
 - (BOOL)isEqual:(id)arg1;
 - (id)localizationDictionary;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)setEntities:(id)arg1 forConfiguration:(id)arg2;
 - (void)setEntities:(id)arg1;
+- (void)setEntities:(id)arg1 forConfiguration:(id)arg2;
 - (void)setFetchRequestTemplate:(id)arg1 forName:(id)arg2;
 - (void)setLocalizationDictionary:(id)arg1;
 - (void)setVersionIdentifiers:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class NSString, TSDGLLayer;
 
-@interface KNChart3DBuild : KNAnimationEffect <KNCustomFrameBuildAnimator, KNAnimationPluginArchiving, TSCH3DChartAnimationPlugin> {
+@interface KNChart3DBuild : KNAnimationEffect <KNAnimationPluginArchiving, KNCustomFrameBuildAnimator, TSCH3DChartAnimationPlugin> {
     struct CGRect { 
         struct CGPoint { 
             float x; 

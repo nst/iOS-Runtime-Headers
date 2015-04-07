@@ -5,12 +5,12 @@
 @class UIImage, UIImageView, UIView;
 
 @interface PUCroppingImageView : UIView {
+    UIView *_accessoryView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIView *_accessoryView;
     } _accessoryViewInsets;
     UIImage *_image;
     unsigned int _imageFillMode;

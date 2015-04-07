@@ -14,6 +14,7 @@
             float width; 
             float height; 
         } size; 
+    } _expandedTouchRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,7 +24,6 @@
             float width; 
             float height; 
         } size; 
-    } _expandedTouchRect;
     } _frame;
     UIImage *_image;
 }

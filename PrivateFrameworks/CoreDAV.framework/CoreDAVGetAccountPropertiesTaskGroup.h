@@ -4,7 +4,7 @@
 
 @class <CoreDAVGetAccountPropertiesTaskGroupDelegate>, NSMutableSet, NSSet, NSString, NSURL;
 
-@interface CoreDAVGetAccountPropertiesTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate, CoreDAVOptionsTaskDelegate, CoreDAVPrincipalSearchPropertySetTaskDelegate, CoreDAVTaskDelegate> {
+@interface CoreDAVGetAccountPropertiesTaskGroup : CoreDAVTaskGroup <CoreDAVOptionsTaskDelegate, CoreDAVPrincipalSearchPropertySetTaskDelegate, CoreDAVPropFindTaskDelegate, CoreDAVTaskDelegate> {
     NSSet *_collections;
     NSString *_displayName;
     NSSet *_emailAddresses;

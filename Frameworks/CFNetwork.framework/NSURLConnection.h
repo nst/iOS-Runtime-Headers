@@ -51,8 +51,8 @@
 - (BOOL)defersCallbacks;
 - (id)description;
 - (void)download;
-- (id)initWithRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2;
+- (id)initWithRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 - (id)newsstandAssetDownload;
 - (id)originalRequest;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;

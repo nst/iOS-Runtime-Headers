@@ -4,7 +4,7 @@
 
 @class ICSDateValue, NSArray, NSMutableDictionary, NSNumber;
 
-@interface ICSRecurrenceRule : NSObject <NSCoding, ICSWriting> {
+@interface ICSRecurrenceRule : NSObject <ICSWriting, NSCoding> {
     int _freq;
     NSMutableDictionary *_parameters;
 }
@@ -27,8 +27,8 @@
 + (id)recurrenceRuleFromICSCString:(const char *)arg1 withTokenizer:(id)arg2;
 + (id)recurrenceRuleFromICSString:(id)arg1;
 
-- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
+- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)byday;
 - (id)byhour;

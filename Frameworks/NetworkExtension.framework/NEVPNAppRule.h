@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface NEVPNAppRule : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
+@interface NEVPNAppRule : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     NSString *_identifier;
     NSArray *_matchAccountIdentifiers;
     NSArray *_matchDomains;

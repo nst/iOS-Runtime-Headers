@@ -5,9 +5,7 @@
 @class NSData;
 
 @interface OADSubBlip : OCDDelayedMedia {
-    struct CGSize { 
-        float width; 
-        float height; 
+    NSData *mData;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,9 +15,11 @@
             float width; 
             float height; 
         } size; 
-    NSData *mData;
     } mFrame;
     long mSizeInBytes;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mSizeInPoints;
     int mType;
 }

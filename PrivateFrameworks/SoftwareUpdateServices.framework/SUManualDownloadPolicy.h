@@ -4,8 +4,8 @@
 
 @interface SUManualDownloadPolicy : SUDefaultDownloadPolicy {
     BOOL _autoDownloadAllowableForCellular;
-    BOOL _downloadAllowableForCellular2G;
     BOOL _downloadAllowableForCellular;
+    BOOL _downloadAllowableForCellular2G;
     BOOL _downloadAllowableForCellularRoaming;
     BOOL _downloadAllowableForWiFi;
     BOOL _downloadFreeForCellular;
@@ -15,8 +15,8 @@
     BOOL _powerRequired;
 }
 
-@property(getter=isDownloadAllowableForCellular2G) BOOL downloadAllowableForCellular2G;
 @property(getter=isDownloadAllowableForCellular) BOOL downloadAllowableForCellular;
+@property(getter=isDownloadAllowableForCellular2G) BOOL downloadAllowableForCellular2G;
 @property(getter=isDownloadAllowableForCellularRoaming) BOOL downloadAllowableForCellularRoaming;
 @property(getter=isDownloadAllowableForWiFi) BOOL downloadAllowableForWiFi;
 @property(getter=isDownloadFreeForCellular) BOOL downloadFreeForCellular;
@@ -29,8 +29,8 @@
 - (Class)fakeClass;
 - (BOOL)hasEnoughDiskSpace;
 - (id)init;
-- (BOOL)isDownloadAllowableForCellular2G;
 - (BOOL)isDownloadAllowableForCellular;
+- (BOOL)isDownloadAllowableForCellular2G;
 - (BOOL)isDownloadAllowableForCellularRoaming;
 - (BOOL)isDownloadAllowableForWiFi;
 - (BOOL)isDownloadFreeForCellular;

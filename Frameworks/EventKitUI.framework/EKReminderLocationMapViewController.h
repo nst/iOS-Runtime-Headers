@@ -5,6 +5,7 @@
 @class EKStructuredLocation;
 
 @interface EKReminderLocationMapViewController : UIViewController {
+    EKStructuredLocation *_location;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    EKStructuredLocation *_location;
     } _mapViewFrame;
 }
 

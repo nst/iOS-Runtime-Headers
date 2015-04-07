@@ -23,8 +23,8 @@
 - (id)emailAddresses;
 - (id)endTime;
 - (unsigned int)hash;
-- (id)initWithEmailAddresses:(id)arg1 retrieveCertificates:(BOOL)arg2 retrieveAvailability:(BOOL)arg3 withStartTime:(id)arg4 endTime:(id)arg5;
 - (id)initWithEmailAddresses:(id)arg1;
+- (id)initWithEmailAddresses:(id)arg1 retrieveCertificates:(BOOL)arg2 retrieveAvailability:(BOOL)arg3 withStartTime:(id)arg4 endTime:(id)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)retrieveAvailablilty;
 - (BOOL)retrieveCertificates;

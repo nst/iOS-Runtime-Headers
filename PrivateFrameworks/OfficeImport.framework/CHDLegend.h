@@ -5,9 +5,9 @@
 @class EDCollection, EDResources, OADGraphicProperties;
 
 @interface CHDLegend : NSObject {
-    boolmIsVertical;
     unsigned int mFontIndex;
     OADGraphicProperties *mGraphicProperties;
+    bool mIsVertical;
     EDCollection *mLegendEntries;
     int mLegendPosition;
     EDResources *mResources;

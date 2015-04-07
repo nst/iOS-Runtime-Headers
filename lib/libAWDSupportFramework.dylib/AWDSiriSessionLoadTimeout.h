@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface AWDSiriSessionLoadTimeout : PBCodable <NSCopying> {
+    unsigned long long _connectionTechnology;
+    NSString *_connectionURL;
     struct { 
         unsigned int connectionTechnology : 1; 
         unsigned int interfaceIndex : 1; 
         unsigned int sendBufferSize : 1; 
         unsigned int timestamp : 1; 
         unsigned int wwanPreferred : 1; 
-    unsigned long long _connectionTechnology;
-    NSString *_connectionURL;
     } _has;
     unsigned long long _interfaceIndex;
     unsigned long long _sendBufferSize;

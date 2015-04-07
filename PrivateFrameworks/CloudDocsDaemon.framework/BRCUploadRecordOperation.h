@@ -10,7 +10,11 @@
 
 @interface BRCUploadRecordOperation : BRCMultiplexableOperation {
     CKRecord *_record;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _uploadCompletionBlock;
+
 }
 
 @property(retain) CKRecord * record;

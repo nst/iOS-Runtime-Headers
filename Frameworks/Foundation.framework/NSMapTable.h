@@ -4,7 +4,7 @@
 
 @class NSPointerFunctions;
 
-@interface NSMapTable : NSObject <NSCopying, NSCoding, NSFastEnumeration> {
+@interface NSMapTable : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
 }
 
 @property(readonly) unsigned int count;

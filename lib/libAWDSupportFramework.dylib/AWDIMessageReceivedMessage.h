@@ -5,6 +5,8 @@
 @class NSString;
 
 @interface AWDIMessageReceivedMessage : PBCodable <NSCopying> {
+    int _fzError;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int fzError : 1; 
@@ -14,8 +16,6 @@
         unsigned int isGroupMessage : 1; 
         unsigned int isTypingIndicator : 1; 
         unsigned int messageError : 1; 
-    int _fzError;
-    NSString *_guid;
     } _has;
     unsigned int _hasAttachments;
     unsigned int _isFromEmail;

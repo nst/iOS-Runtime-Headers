@@ -5,23 +5,13 @@
 @class NSArray, NSObject<OS_dispatch_queue>;
 
 @interface BWAudioSourceNode : BWSourceNode {
-    struct { 
-        unsigned int val[8]; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     struct opaqueCMSession { } *_CMSession;
     struct opaqueCMSimpleQueue { } *_activeBuffersQueue;
     unsigned long _auSubType;
     int _audioLevelUnits;
     struct OpaqueAudioComponentInstance { } *_audioUnit;
+    struct { 
+        unsigned int val[8]; 
     } _clientAuditToken;
     BOOL _clientAuditTokenIsValid;
     int _clientPID;
@@ -32,8 +22,18 @@
     NSObject<OS_dispatch_queue> *_generateSamplesDispatchQueue;
     struct opaqueCMSimpleQueue { } *_inactiveBuffersQueue;
     BOOL _isAppAudioSession;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _latencyOffset;
     BOOL _levelMeteringEnabled;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _nextExpectedSampleTime;
     unsigned int _pullDuration;
     struct opaqueCMSimpleQueue { } *_renderProcErrorQueue;

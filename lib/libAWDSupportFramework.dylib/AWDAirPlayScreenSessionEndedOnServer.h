@@ -5,6 +5,19 @@
 @class NSString;
 
 @interface AWDAirPlayScreenSessionEndedOnServer : PBCodable <NSCopying> {
+    unsigned int _audioLate;
+    unsigned int _audioLost;
+    unsigned int _audioUnrecovered;
+    int _avgAhead;
+    unsigned int _avgRTT;
+    int _avgReceiveMs;
+    unsigned int _caDrops;
+    unsigned int _caFrames;
+    unsigned int _clearScreens;
+    unsigned int _configChanges;
+    unsigned int _duration;
+    unsigned int _forcedRefreshes;
+    unsigned int _framesReceived;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int audioLate : 1; 
@@ -25,19 +38,6 @@
         unsigned int resumes : 1; 
         unsigned int suspends : 1; 
         unsigned int unclearScreens : 1; 
-    unsigned int _audioLate;
-    unsigned int _audioLost;
-    unsigned int _audioUnrecovered;
-    int _avgAhead;
-    unsigned int _avgRTT;
-    int _avgReceiveMs;
-    unsigned int _caDrops;
-    unsigned int _caFrames;
-    unsigned int _clearScreens;
-    unsigned int _configChanges;
-    unsigned int _duration;
-    unsigned int _forcedRefreshes;
-    unsigned int _framesReceived;
     } _has;
     unsigned int _negativeAheadFrames;
     int _reason;

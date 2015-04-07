@@ -30,8 +30,8 @@
 @property(retain) NSString * title;
 @property(readonly) NSString * uuid;
 
-+ (id)changeRequestForCollectionList:(id)arg1 childCollections:(id)arg2;
 + (id)changeRequestForCollectionList:(id)arg1;
++ (id)changeRequestForCollectionList:(id)arg1 childCollections:(id)arg2;
 + (id)creationRequestForCollectionListWithTitle:(id)arg1;
 + (void)deleteCollectionLists:(id)arg1;
 

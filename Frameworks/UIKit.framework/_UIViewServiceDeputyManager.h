@@ -9,7 +9,6 @@
 @class NSLock, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, _UIAsyncInvocation;
 
 @interface _UIViewServiceDeputyManager : NSObject <_UIViewServiceViewControllerOperatorDelegate> {
-     /* Encoded args for previous method: v20@0:4#8R@12@?16 */
     BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
     NSMutableDictionary *_connectionHandlers;
@@ -18,7 +17,11 @@
     NSMutableSet *_deputies;
     _UIAsyncInvocation *_invalidationInvocation;
     NSObject<OS_dispatch_queue> *_queue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _terminationHandler;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -32,6 +35,8 @@
 - (int)__automatic_invalidation_logic;
 - (void)__prototype_requestConnectionToDeputyFromHostObject:(id)arg1 replyHandler:(id)arg2;
 - (void)__requestConnectionToDeputyOfClass:(Class)arg1 fromHostObject:(/* Warning: Unrecognized filer type: 'R' using 'void*' */ void*)arg2 replyHandler:(id)arg3;
+     /* Encoded args for previous method: v20@0:4#8R@12@?16 */
+
 - (Class)_deputyClassForConnectionSelector:(SEL)arg1;
 - (void)_invalidateUnconditionallyThen:(id)arg1;
 - (BOOL)_isDeallocating;

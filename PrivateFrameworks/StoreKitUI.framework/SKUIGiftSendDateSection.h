@@ -5,13 +5,13 @@
 @class NSDate, NSString, SKUIGiftTableSectionHeaderView, SKUIItem;
 
 @interface SKUIGiftSendDateSection : SKUIGiftTableViewSection {
+    NSString *_dateString;
+    SKUIItem *_giftItem;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSString *_dateString;
-    SKUIItem *_giftItem;
     } _headerInsets;
     SKUIGiftTableSectionHeaderView *_headerView;
     NSDate *_sendDate;

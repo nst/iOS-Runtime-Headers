@@ -4,7 +4,7 @@
 
 @class NSData, NSDate, NSNumber, NSString, PKColor, PKImage, PKPaymentApplication;
 
-@interface NPKPassDescription : NSObject <NSSecureCoding, NSCopying> {
+@interface NPKPassDescription : NSObject <NSCopying, NSSecureCoding> {
     PKColor *_backgroundColor;
     PKImage *_backgroundImage;
     NSData *_backgroundImageEncoded;

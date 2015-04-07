@@ -4,7 +4,7 @@
 
 @class MPConcreteMediaEntityPropertiesCache, MPMediaItem, MPMediaQuery;
 
-@interface MPConcreteMediaItemCollection : MPMediaItemCollection <NSCoding, NSCopying, MPCacheableConcreteMediaEntity> {
+@interface MPConcreteMediaItemCollection : MPMediaItemCollection <MPCacheableConcreteMediaEntity, NSCoding, NSCopying> {
     int _grouping;
     long long _identifier;
     MPMediaQuery *_itemsQuery;
@@ -35,8 +35,8 @@
 - (id)mediaLibrary;
 - (unsigned long long)persistentID;
 - (id)representativeItem;
-- (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id)arg3;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
+- (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id)arg3;
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;
 

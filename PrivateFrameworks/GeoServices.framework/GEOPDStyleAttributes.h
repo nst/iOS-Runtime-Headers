@@ -5,10 +5,10 @@
 @class NSMutableArray;
 
 @interface GEOPDStyleAttributes : PBCodable <NSCopying> {
-    struct { 
-        unsigned int customIconId : 1; 
     NSMutableArray *_attributes;
     unsigned long long _customIconId;
+    struct { 
+        unsigned int customIconId : 1; 
     } _has;
 }
 

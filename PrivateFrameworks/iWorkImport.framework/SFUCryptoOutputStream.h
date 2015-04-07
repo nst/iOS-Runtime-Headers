@@ -25,8 +25,8 @@
 - (id)closeLocalStream;
 - (unsigned int)crc32;
 - (void)dealloc;
-- (id)initForEncryptionWithOutputStream:(id)arg1 key:(id)arg2 computeCrc32:(BOOL)arg3;
 - (id)initForEncryptionWithOutputStream:(id)arg1 key:(id)arg2;
+- (id)initForEncryptionWithOutputStream:(id)arg1 key:(id)arg2 computeCrc32:(BOOL)arg3;
 - (id)inputStream;
 - (long long)offset;
 - (void)seekToOffset:(long long)arg1 whence:(int)arg2;

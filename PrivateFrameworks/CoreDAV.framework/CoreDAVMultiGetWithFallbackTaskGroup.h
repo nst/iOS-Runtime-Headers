@@ -9,7 +9,11 @@
 @class <CoreDAVAccountInfoProvider>, <CoreDAVTaskManager>, CoreDAVContainerMultiGetTask, NSError, NSMutableSet, NSSet, NSString;
 
 @interface CoreDAVMultiGetWithFallbackTaskGroup : CoreDAVTaskGroup <CoreDAVContainerMultiGetSubmittable> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _getBlock;
+
     CoreDAVContainerMultiGetTask *_multiGetTask;
     NSMutableSet *_parsedContents;
     BOOL _shouldIgnoreResponseErrors;

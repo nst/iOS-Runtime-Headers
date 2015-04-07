@@ -4,7 +4,7 @@
 
 @class NSString, SSOperationProgress;
 
-@interface SSDownloadPhase : NSObject <SSXPCCoding, NSCopying> {
+@interface SSDownloadPhase : NSObject <NSCopying, SSXPCCoding> {
     SSOperationProgress *_operationProgress;
 }
 

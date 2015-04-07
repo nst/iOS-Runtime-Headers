@@ -5,21 +5,21 @@
 @class NSArray, NSLock, NSMutableArray;
 
 @interface SUGradient : NSObject <NSCoding, NSCopying> {
-    struct SUGradientPoint { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } point; 
-        float radius; 
-    struct SUGradientPoint { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } point; 
-        float radius; 
     NSMutableArray *_colorStops;
     NSLock *_lock;
+    struct SUGradientPoint { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } point; 
+        float radius; 
     } _p0;
+    struct SUGradientPoint { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } point; 
+        float radius; 
     } _p1;
     BOOL _sorted;
     int _type;

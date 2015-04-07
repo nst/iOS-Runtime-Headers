@@ -5,19 +5,19 @@
 @class NSAttributedString, SKUIArtwork, UIImage;
 
 @interface SKUIIndexBarEntryDescriptor : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
+    SKUIArtwork *_artwork;
+    NSAttributedString *_attributedString;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    SKUIArtwork *_artwork;
-    NSAttributedString *_attributedString;
     } _contentEdgeInsets;
     int _entryDescriptorType;
     UIImage *_image;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     int _visibilityPriority;
 }

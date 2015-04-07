@@ -4,7 +4,7 @@
 
 @class NSData, PKColor;
 
-@interface PKPassDisplayProfile : PKDisplayProfile <NSSecureCoding, NSCopying> {
+@interface PKPassDisplayProfile : PKDisplayProfile <NSCopying, NSSecureCoding> {
     PKColor *_backgroundColor;
     NSData *_backgroundHash;
     PKColor *_foregroundColor;

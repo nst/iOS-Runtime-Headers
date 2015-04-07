@@ -5,9 +5,9 @@
 @class NSMutableArray;
 
 @interface NNMKProtoMessagesFilteredOutWarning : PBCodable <NSCopying> {
+    unsigned int _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
-    unsigned int _fullSyncVersion;
     } _has;
     NSMutableArray *_removedMessageIds;
 }

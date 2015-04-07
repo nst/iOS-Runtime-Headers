@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface AWDIMessageDowngrade : PBCodable <NSCopying> {
+    unsigned int _durationBeforeDowngrade;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int durationBeforeDowngrade : 1; 
         unsigned int isManualDowngrade : 1; 
-    unsigned int _durationBeforeDowngrade;
-    NSString *_guid;
     } _has;
     unsigned int _isManualDowngrade;
     unsigned long long _timestamp;

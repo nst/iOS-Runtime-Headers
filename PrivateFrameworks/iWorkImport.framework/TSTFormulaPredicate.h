@@ -10,207 +10,230 @@
 @class NSDate, NSNumber, NSString;
 
 @interface TSTFormulaPredicate : NSObject <NSCopying> {
+    int mArgIndex0;
+    int mArgIndex1;
+    int mArgIndex2;
+    struct { 
+        unsigned int column : 15; 
+        unsigned int columnIsAbsolute : 1; 
+        struct { 
+            unsigned char byte0; 
+            unsigned char byte1; 
+            unsigned char byte2; 
+            unsigned char byte3; 
+            unsigned char byte4; 
+            unsigned char byte5; 
+            unsigned char byte6; 
+            unsigned char byte7; 
+            unsigned char byte8; 
+            unsigned char byte9; 
+            unsigned char byte10; 
+            unsigned char byte11; 
+            unsigned char byte12; 
+            unsigned char byte13; 
+            unsigned char byte14; 
+            unsigned char byte15; 
+        } tableID; 
+    } mCrossTableColumnRefParam0;
+    struct { 
+        unsigned int column : 15; 
+        unsigned int columnIsAbsolute : 1; 
+        struct { 
+            unsigned char byte0; 
+            unsigned char byte1; 
+            unsigned char byte2; 
+            unsigned char byte3; 
+            unsigned char byte4; 
+            unsigned char byte5; 
+            unsigned char byte6; 
+            unsigned char byte7; 
+            unsigned char byte8; 
+            unsigned char byte9; 
+            unsigned char byte10; 
+            unsigned char byte11; 
+            unsigned char byte12; 
+            unsigned char byte13; 
+            unsigned char byte14; 
+            unsigned char byte15; 
+        } tableID; 
+    } mCrossTableColumnRefParam1;
+    struct { 
+        unsigned int column : 15; 
+        unsigned int columnIsAbsolute : 1; 
+        struct { 
+            unsigned char byte0; 
+            unsigned char byte1; 
+            unsigned char byte2; 
+            unsigned char byte3; 
+            unsigned char byte4; 
+            unsigned char byte5; 
+            unsigned char byte6; 
+            unsigned char byte7; 
+            unsigned char byte8; 
+            unsigned char byte9; 
+            unsigned char byte10; 
+            unsigned char byte11; 
+            unsigned char byte12; 
+            unsigned char byte13; 
+            unsigned char byte14; 
+            unsigned char byte15; 
+        } tableID; 
+    } mCrossTableColumnRefParam2;
+    struct { 
+        unsigned int row : 21; 
+        unsigned int column : 15; 
+        unsigned int rowIsAbsolute : 1; 
+        unsigned int columnIsAbsolute : 1; 
+        struct { 
+            unsigned char byte0; 
+            unsigned char byte1; 
+            unsigned char byte2; 
+            unsigned char byte3; 
+            unsigned char byte4; 
+            unsigned char byte5; 
+            unsigned char byte6; 
+            unsigned char byte7; 
+            unsigned char byte8; 
+            unsigned char byte9; 
+            unsigned char byte10; 
+            unsigned char byte11; 
+            unsigned char byte12; 
+            unsigned char byte13; 
+            unsigned char byte14; 
+            unsigned char byte15; 
+        } tableID; 
+    } mCrossTableRefParam0;
+    struct { 
+        unsigned int row : 21; 
+        unsigned int column : 15; 
+        unsigned int rowIsAbsolute : 1; 
+        unsigned int columnIsAbsolute : 1; 
+        struct { 
+            unsigned char byte0; 
+            unsigned char byte1; 
+            unsigned char byte2; 
+            unsigned char byte3; 
+            unsigned char byte4; 
+            unsigned char byte5; 
+            unsigned char byte6; 
+            unsigned char byte7; 
+            unsigned char byte8; 
+            unsigned char byte9; 
+            unsigned char byte10; 
+            unsigned char byte11; 
+            unsigned char byte12; 
+            unsigned char byte13; 
+            unsigned char byte14; 
+            unsigned char byte15; 
+        } tableID; 
+    } mCrossTableRefParam1;
+    struct { 
+        unsigned int row : 21; 
+        unsigned int column : 15; 
+        unsigned int rowIsAbsolute : 1; 
+        unsigned int columnIsAbsolute : 1; 
+        struct { 
+            unsigned char byte0; 
+            unsigned char byte1; 
+            unsigned char byte2; 
+            unsigned char byte3; 
+            unsigned char byte4; 
+            unsigned char byte5; 
+            unsigned char byte6; 
+            unsigned char byte7; 
+            unsigned char byte8; 
+            unsigned char byte9; 
+            unsigned char byte10; 
+            unsigned char byte11; 
+            unsigned char byte12; 
+            unsigned char byte13; 
+            unsigned char byte14; 
+            unsigned char byte15; 
+        } tableID; 
+    } mCrossTableRefParam2;
+    struct { 
+        unsigned int row : 21; 
+        unsigned int rowIsAbsolute : 1; 
+        struct { 
+            unsigned char byte0; 
+            unsigned char byte1; 
+            unsigned char byte2; 
+            unsigned char byte3; 
+            unsigned char byte4; 
+            unsigned char byte5; 
+            unsigned char byte6; 
+            unsigned char byte7; 
+            unsigned char byte8; 
+            unsigned char byte9; 
+            unsigned char byte10; 
+            unsigned char byte11; 
+            unsigned char byte12; 
+            unsigned char byte13; 
+            unsigned char byte14; 
+            unsigned char byte15; 
+        } tableID; 
+    } mCrossTableRowRefParam0;
+    struct { 
+        unsigned int row : 21; 
+        unsigned int rowIsAbsolute : 1; 
+        struct { 
+            unsigned char byte0; 
+            unsigned char byte1; 
+            unsigned char byte2; 
+            unsigned char byte3; 
+            unsigned char byte4; 
+            unsigned char byte5; 
+            unsigned char byte6; 
+            unsigned char byte7; 
+            unsigned char byte8; 
+            unsigned char byte9; 
+            unsigned char byte10; 
+            unsigned char byte11; 
+            unsigned char byte12; 
+            unsigned char byte13; 
+            unsigned char byte14; 
+            unsigned char byte15; 
+        } tableID; 
+    } mCrossTableRowRefParam1;
+    struct { 
+        unsigned int row : 21; 
+        unsigned int rowIsAbsolute : 1; 
+        struct { 
+            unsigned char byte0; 
+            unsigned char byte1; 
+            unsigned char byte2; 
+            unsigned char byte3; 
+            unsigned char byte4; 
+            unsigned char byte5; 
+            unsigned char byte6; 
+            unsigned char byte7; 
+            unsigned char byte8; 
+            unsigned char byte9; 
+            unsigned char byte10; 
+            unsigned char byte11; 
+            unsigned char byte12; 
+            unsigned char byte13; 
+            unsigned char byte14; 
+            unsigned char byte15; 
+        } tableID; 
+    } mCrossTableRowRefParam2;
+    NSDate *mDateTimeParam1;
+    NSDate *mDateTimeParam2;
+    struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSUFormat { int (**x_4_1_1)(); int x_4_1_2; bool x_4_1_3; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_4_1_4; struct TSUCustomFormat {} *x_4_1_5; } x4; BOOL x5; } *mDurationParam1;
+    struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSUFormat { int (**x_4_1_1)(); int x_4_1_2; bool x_4_1_3; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_4_1_4; struct TSUCustomFormat {} *x_4_1_5; } x4; BOOL x5; } *mDurationParam2;
     struct TSCEFormula { 
         struct TSCEASTNodeArray {} *mASTNodeArray; 
         struct TSCEFormulaTranslationFlags { 
             unsigned int mExcelImportTranslation : 1; 
             unsigned int mNumberToDateCoercionRemovalTranslation : 1; 
         } mTranslationFlags; 
-    struct { 
-        unsigned int row : 21; 
-        unsigned int column : 15; 
-        unsigned int rowIsAbsolute : 1; 
-        unsigned int columnIsAbsolute : 1; 
-        struct { 
-            unsigned char byte0; 
-            unsigned char byte1; 
-            unsigned char byte2; 
-            unsigned char byte3; 
-            unsigned char byte4; 
-            unsigned char byte5; 
-            unsigned char byte6; 
-            unsigned char byte7; 
-            unsigned char byte8; 
-            unsigned char byte9; 
-            unsigned char byte10; 
-            unsigned char byte11; 
-            unsigned char byte12; 
-            unsigned char byte13; 
-            unsigned char byte14; 
-            unsigned char byte15; 
-        } tableID; 
-    struct { 
-        unsigned int row : 21; 
-        unsigned int column : 15; 
-        unsigned int rowIsAbsolute : 1; 
-        unsigned int columnIsAbsolute : 1; 
-        struct { 
-            unsigned char byte0; 
-            unsigned char byte1; 
-            unsigned char byte2; 
-            unsigned char byte3; 
-            unsigned char byte4; 
-            unsigned char byte5; 
-            unsigned char byte6; 
-            unsigned char byte7; 
-            unsigned char byte8; 
-            unsigned char byte9; 
-            unsigned char byte10; 
-            unsigned char byte11; 
-            unsigned char byte12; 
-            unsigned char byte13; 
-            unsigned char byte14; 
-            unsigned char byte15; 
-        } tableID; 
-    struct { 
-        unsigned int row : 21; 
-        unsigned int column : 15; 
-        unsigned int rowIsAbsolute : 1; 
-        unsigned int columnIsAbsolute : 1; 
-        struct { 
-            unsigned char byte0; 
-            unsigned char byte1; 
-            unsigned char byte2; 
-            unsigned char byte3; 
-            unsigned char byte4; 
-            unsigned char byte5; 
-            unsigned char byte6; 
-            unsigned char byte7; 
-            unsigned char byte8; 
-            unsigned char byte9; 
-            unsigned char byte10; 
-            unsigned char byte11; 
-            unsigned char byte12; 
-            unsigned char byte13; 
-            unsigned char byte14; 
-            unsigned char byte15; 
-        } tableID; 
-    struct { 
-        unsigned int row : 21; 
-        unsigned int rowIsAbsolute : 1; 
-        struct { 
-            unsigned char byte0; 
-            unsigned char byte1; 
-            unsigned char byte2; 
-            unsigned char byte3; 
-            unsigned char byte4; 
-            unsigned char byte5; 
-            unsigned char byte6; 
-            unsigned char byte7; 
-            unsigned char byte8; 
-            unsigned char byte9; 
-            unsigned char byte10; 
-            unsigned char byte11; 
-            unsigned char byte12; 
-            unsigned char byte13; 
-            unsigned char byte14; 
-            unsigned char byte15; 
-        } tableID; 
-    struct { 
-        unsigned int row : 21; 
-        unsigned int rowIsAbsolute : 1; 
-        struct { 
-            unsigned char byte0; 
-            unsigned char byte1; 
-            unsigned char byte2; 
-            unsigned char byte3; 
-            unsigned char byte4; 
-            unsigned char byte5; 
-            unsigned char byte6; 
-            unsigned char byte7; 
-            unsigned char byte8; 
-            unsigned char byte9; 
-            unsigned char byte10; 
-            unsigned char byte11; 
-            unsigned char byte12; 
-            unsigned char byte13; 
-            unsigned char byte14; 
-            unsigned char byte15; 
-        } tableID; 
-    struct { 
-        unsigned int row : 21; 
-        unsigned int rowIsAbsolute : 1; 
-        struct { 
-            unsigned char byte0; 
-            unsigned char byte1; 
-            unsigned char byte2; 
-            unsigned char byte3; 
-            unsigned char byte4; 
-            unsigned char byte5; 
-            unsigned char byte6; 
-            unsigned char byte7; 
-            unsigned char byte8; 
-            unsigned char byte9; 
-            unsigned char byte10; 
-            unsigned char byte11; 
-            unsigned char byte12; 
-            unsigned char byte13; 
-            unsigned char byte14; 
-            unsigned char byte15; 
-        } tableID; 
-    struct { 
-        unsigned int column : 15; 
-        unsigned int columnIsAbsolute : 1; 
-        struct { 
-            unsigned char byte0; 
-            unsigned char byte1; 
-            unsigned char byte2; 
-            unsigned char byte3; 
-            unsigned char byte4; 
-            unsigned char byte5; 
-            unsigned char byte6; 
-            unsigned char byte7; 
-            unsigned char byte8; 
-            unsigned char byte9; 
-            unsigned char byte10; 
-            unsigned char byte11; 
-            unsigned char byte12; 
-            unsigned char byte13; 
-            unsigned char byte14; 
-            unsigned char byte15; 
-        } tableID; 
-    struct { 
-        unsigned int column : 15; 
-        unsigned int columnIsAbsolute : 1; 
-        struct { 
-            unsigned char byte0; 
-            unsigned char byte1; 
-            unsigned char byte2; 
-            unsigned char byte3; 
-            unsigned char byte4; 
-            unsigned char byte5; 
-            unsigned char byte6; 
-            unsigned char byte7; 
-            unsigned char byte8; 
-            unsigned char byte9; 
-            unsigned char byte10; 
-            unsigned char byte11; 
-            unsigned char byte12; 
-            unsigned char byte13; 
-            unsigned char byte14; 
-            unsigned char byte15; 
-        } tableID; 
-    struct { 
-        unsigned int column : 15; 
-        unsigned int columnIsAbsolute : 1; 
-        struct { 
-            unsigned char byte0; 
-            unsigned char byte1; 
-            unsigned char byte2; 
-            unsigned char byte3; 
-            unsigned char byte4; 
-            unsigned char byte5; 
-            unsigned char byte6; 
-            unsigned char byte7; 
-            unsigned char byte8; 
-            unsigned char byte9; 
-            unsigned char byte10; 
-            unsigned char byte11; 
-            unsigned char byte12; 
-            unsigned char byte13; 
-            unsigned char byte14; 
-            unsigned char byte15; 
-        } tableID; 
+    } mFormula;
+    int mNodeTag0;
+    int mNodeTag1;
+    int mNodeTag2;
+    double mNumberParam1;
+    double mNumberParam2;
+    BOOL mParamsAreDone;
     struct { 
         int type; 
         union { 
@@ -229,29 +252,6 @@
                 int units; 
             } duration; 
         } ; 
-    int mArgIndex0;
-    int mArgIndex1;
-    int mArgIndex2;
-    } mCrossTableColumnRefParam0;
-    } mCrossTableColumnRefParam1;
-    } mCrossTableColumnRefParam2;
-    } mCrossTableRefParam0;
-    } mCrossTableRefParam1;
-    } mCrossTableRefParam2;
-    } mCrossTableRowRefParam0;
-    } mCrossTableRowRefParam1;
-    } mCrossTableRowRefParam2;
-    NSDate *mDateTimeParam1;
-    NSDate *mDateTimeParam2;
-    struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSUFormat { int (**x_4_1_1)(); int x_4_1_2; boolx_4_1_3; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_4_1_4; struct TSUCustomFormat {} *x_4_1_5; } x4; BOOL x5; } *mDurationParam1;
-    struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSUFormat { int (**x_4_1_1)(); int x_4_1_2; boolx_4_1_3; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_4_1_4; struct TSUCustomFormat {} *x_4_1_5; } x4; BOOL x5; } *mDurationParam2;
-    } mFormula;
-    int mNodeTag0;
-    int mNodeTag1;
-    int mNodeTag2;
-    double mNumberParam1;
-    double mNumberParam2;
-    BOOL mParamsAreDone;
     } mPredicateArgs[2];
     int mPredicateType;
     int mQualifier1;
@@ -261,8 +261,6 @@
 
 + (BOOL)isThresholdNeededForType:(int)arg1;
 
-- (struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSUFormat { int (**x_4_1_1)(); int x_4_1_2; boolx_4_1_3; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_4_1_4; struct TSUCustomFormat {} *x_4_1_5; } x4; BOOL x5; }*)durationParam1;
-- (struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSUFormat { int (**x_4_1_1)(); int x_4_1_2; boolx_4_1_3; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_4_1_4; struct TSUCustomFormat {} *x_4_1_5; } x4; BOOL x5; }*)durationParam2;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)copyByOffsettingRelativeReferencesWithColumnOffset:(short)arg1 rowOffset:(int)arg2;
@@ -282,6 +280,8 @@
 - (id)dateTimeParam2;
 - (void)dealloc;
 - (id)description;
+- (struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSUFormat { int (**x_4_1_1)(); int x_4_1_2; bool x_4_1_3; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_4_1_4; struct TSUCustomFormat {} *x_4_1_5; } x4; BOOL x5; }*)durationParam1;
+- (struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSUFormat { int (**x_4_1_1)(); int x_4_1_2; bool x_4_1_3; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_4_1_4; struct TSUCustomFormat {} *x_4_1_5; } x4; BOOL x5; }*)durationParam2;
 - (void)encodeToArchive:(struct FormulaPredicateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FormulaArchive {} *x3; int x4; int x5; int x6; int x7; int x8; int x9; int x10; unsigned int x11[1]; }*)arg1 archiver:(id)arg2;
 - (BOOL)evaluateAtCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 inFormulaOwner:(struct __CFUUID { }*)arg2 calculationEngine:(id)arg3;
 - (struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; }*)formula;

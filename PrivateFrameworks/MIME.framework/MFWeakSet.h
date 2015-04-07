@@ -14,8 +14,8 @@
 + (id)setWithArray:(id)arg1;
 + (id)setWithCapacity:(unsigned int)arg1;
 + (id)setWithObject:(id)arg1;
-+ (id)setWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 + (id)setWithObjects:(id)arg1;
++ (id)setWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 + (id)setWithSet:(id)arg1;
 
 - (id)_copyAllItems;
@@ -37,16 +37,16 @@
 - (id)initWithArray:(id)arg1;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (id)initWithObjects:(id)arg1;
-- (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (id)initWithSet:(id)arg1;
+- (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
 - (void)intersectSet:(id)arg1;
 - (BOOL)intersectsSet:(id)arg1;
 - (BOOL)isEqualToSet:(id)arg1;
 - (BOOL)isSubsetOfSet:(id)arg1;
-- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
+- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)member:(id)arg1;
 - (void)minusSet:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

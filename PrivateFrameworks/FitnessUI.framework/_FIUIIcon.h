@@ -5,23 +5,23 @@
 @class UIColor;
 
 @interface _FIUIIcon : FIUIAnimatableObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
     float _alpha;
     UIColor *_color;
     float _coloration;
     int _currentFrameIndex;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _firstFrameOrigin;
     int _frameColumns;
     int _frameCount;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _frameSize;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _position;
     float _size;
 }

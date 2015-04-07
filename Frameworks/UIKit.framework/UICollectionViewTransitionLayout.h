@@ -5,37 +5,37 @@
 @class NSMutableArray, NSMutableDictionary, UICollectionViewLayout;
 
 @interface UICollectionViewTransitionLayout : UICollectionViewLayout {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    float _accuracy;
+    NSMutableArray *_appearingLayoutAttributes;
     struct CGSize { 
         float width; 
         float height; 
-    float _accuracy;
-    NSMutableArray *_appearingLayoutAttributes;
     } _contentSize;
     NSMutableDictionary *_currentLayoutInfos;
     NSMutableArray *_disappearingLayoutAttributes;
     UICollectionViewLayout *_fromLayout;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _fromVisibleBounds;
     BOOL _haveValidInfos;
     BOOL _layoutIsValid;
     UICollectionViewLayout *_toLayout;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _toVisibleBounds;
     NSMutableDictionary *_transitionInformationsDict;
     float _transitionProgress;

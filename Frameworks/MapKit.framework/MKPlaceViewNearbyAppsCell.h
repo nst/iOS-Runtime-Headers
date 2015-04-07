@@ -5,15 +5,15 @@
 @class <MKPlaceViewNearbyAppsCellDelegate>, NSArray, NSLayoutConstraint, NSString, UICollectionView, UILabel, _MKNearbyAppsFlowLayout;
 
 @interface MKPlaceViewNearbyAppsCell : ABContactCell <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSLayoutConstraint *_collectionHeightConstraint;
     UICollectionView *_collectionView;
     <MKPlaceViewNearbyAppsCellDelegate> *_delegate;
     _MKNearbyAppsFlowLayout *_flowLayout;
     NSLayoutConstraint *_headerBaselineConstraint;
     UILabel *_headerLabel;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _iconSize;
     NSArray *_storeItems;
 }

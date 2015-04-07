@@ -21,8 +21,8 @@
 - (BOOL)hasSubitemForIndexPathRow:(unsigned int)arg1;
 - (id)headerTitle;
 - (id)initWithTag:(int)arg1 headerTitle:(id)arg2;
-- (id)itemAtIndex:(unsigned int)arg1 subitemIndex:(unsigned int*)arg2;
 - (id)itemAtIndex:(unsigned int)arg1;
+- (id)itemAtIndex:(unsigned int)arg1 subitemIndex:(unsigned int*)arg2;
 - (id)items;
 - (unsigned int)numberOfRows;
 - (void)setHeaderTitle:(id)arg1;

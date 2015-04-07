@@ -40,8 +40,8 @@
 - (float)fLeft;
 - (float)fRight;
 - (id)ignoreCallouts:(unsigned int)arg1;
-- (int)inOrder:(BOOL)arg1;
 - (int)inOrder;
+- (int)inOrder:(BOOL)arg1;
 - (id)initWithParagraph:(id)arg1;
 - (BOOL)intervalOverlapLeft:(float)arg1 right:(float)arg2 paragraphs:(id)arg3;
 - (BOOL)intervalOverlapLeft:(float)arg1 right:(float)arg2 rects:(id)arg3;

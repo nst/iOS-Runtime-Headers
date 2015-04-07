@@ -36,8 +36,8 @@
 - (BOOL)hasColumnStyleForParagraphBreakAtCharIndex:(unsigned int)arg1;
 - (BOOL)hasSmartFieldsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (long)hyphenationLocationBeforeIndex:(long)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 locale:(struct __CFLocale { }*)arg3 hyphenChar:(unsigned int*)arg4;
-- (id)initWithStorage:(id)arg1 subRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 removeRanges:(id)arg3;
 - (id)initWithStorage:(id)arg1 subRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)initWithStorage:(id)arg1 subRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 removeRanges:(id)arg3;
 - (BOOL)isWritingDirectionRightToLeftForParagraphAtCharIndex:(unsigned int)arg1;
 - (unsigned int)length;
 - (unsigned int)nextCharacterIndex:(unsigned int)arg1;

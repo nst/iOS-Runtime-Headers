@@ -5,16 +5,6 @@
 @class BRCAccountSession, BRCItemID, BRCLocalItem, BRCRelativePath, BRCServerItem, NSString, NSURL;
 
 @interface BRCURLToItemLookup : NSObject <NSSecureCoding> {
-    union { 
-        struct { 
-            unsigned int parentItemID : 1; 
-            unsigned int relpath : 1; 
-            unsigned int pathMatch : 1; 
-            unsigned int faultedMatch : 1; 
-            unsigned int byIDMatch : 1; 
-            unsigned int reservedMatch : 1; 
-        } ; 
-        unsigned int value; 
     BRCRelativePath *__relpath;
     unsigned long long _byIDDiffs;
     BRCLocalItem *_byIDLocalItem;
@@ -27,6 +17,16 @@
     BRCRelativePath *_faultedRelpath;
     BRCServerItem *_faultedServerItem;
     NSString *_filename;
+    union { 
+        struct { 
+            unsigned int parentItemID : 1; 
+            unsigned int relpath : 1; 
+            unsigned int pathMatch : 1; 
+            unsigned int faultedMatch : 1; 
+            unsigned int byIDMatch : 1; 
+            unsigned int reservedMatch : 1; 
+        } ; 
+        unsigned int value; 
     } _hasFetched;
     BRCItemID *_parentItemID;
     BRCRelativePath *_parentRelpath;

@@ -48,8 +48,8 @@
 - (void)updateClearedInfoWithHandler:(id)arg1;
 - (void)updateIdentity:(id)arg1;
 - (void)updateSectionInfoInCategory:(int)arg1 withHandler:(id)arg2 completion:(id)arg3;
-- (void)updateSectionInfoWithHandler:(id)arg1 completion:(id)arg2;
 - (void)updateSectionInfoWithHandler:(id)arg1;
+- (void)updateSectionInfoWithHandler:(id)arg1 completion:(id)arg2;
 - (void)withdrawBulletinWithPublisherBulletinID:(id)arg1;
 - (void)withdrawBulletinsWithRecordID:(id)arg1;
 

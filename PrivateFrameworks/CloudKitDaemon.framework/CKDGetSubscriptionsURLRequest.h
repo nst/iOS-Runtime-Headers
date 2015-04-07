@@ -9,7 +9,11 @@
 @class NSArray, NSMutableArray, NSMutableDictionary;
 
 @interface CKDGetSubscriptionsURLRequest : CKDURLRequest {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _subscriptionFetchedBlock;
+
     NSMutableDictionary *_subscriptionIDByRequestID;
     NSArray *_subscriptionIDs;
     NSMutableArray *_subscriptions;

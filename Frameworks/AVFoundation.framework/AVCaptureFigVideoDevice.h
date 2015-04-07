@@ -5,53 +5,20 @@
 @class AVCaptureDeviceControlRequestQueue, AVCaptureDeviceFormat, AVWeakReference, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVCaptureFigVideoDevice : AVCaptureDevice <MCProfileConnectionObserver> {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        float redGain; 
-        float greenGain; 
-        float blueGain; 
-    struct { 
-        float redGain; 
-        float greenGain; 
-        float blueGain; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     float _ISOKVO;
     AVCaptureDeviceFormat *_activeFormat;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _activeMaxFrameDuration;
     BOOL _activeMaxFrameDurationSetByClient;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _activeMinFrameDuration;
     BOOL _activeMinFrameDurationSetByClient;
     BOOL _adjustingExposure;
@@ -67,15 +34,36 @@
     NSMutableArray *_captureSourceSupportedMetadata;
     float _contrast;
     NSObject<OS_dispatch_queue> *_devicePropsQueue;
+    struct { 
+        float redGain; 
+        float greenGain; 
+        float blueGain; 
     } _deviceWhiteBalanceGainsKVO;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _exposureDurationKVO;
     int _exposureMode;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _exposurePointOfInterest;
     float _exposureTargetBias;
     float _exposureTargetOffsetKVO;
     BOOL _eyeClosedDetectionEnabled;
     BOOL _eyeDetectionEnabled;
     BOOL _faceDetectionDrivenImageProcessingEnabled;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _faceRectangle;
     int _faceRectangleAngle;
     struct OpaqueFigCaptureSource { } *_fcs;
@@ -86,13 +74,25 @@
     BOOL _flashAvailable;
     int _flashMode;
     int _focusMode;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _focusPointOfInterest;
     NSArray *_formats;
+    struct { 
+        float redGain; 
+        float greenGain; 
+        float blueGain; 
     } _grayWorldDeviceWhiteBalanceGainsKVO;
     NSDictionary *_h264EncoderLimitations;
     BOOL _highDynamicRangeSceneDetectionEnabled;
     int _imageControlMode;
     BOOL _isConnected;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _lastCustomExposureDuration;
     float _lastCustomExposureISO;
     float _lensPositionKVO;
@@ -289,8 +289,8 @@
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (BOOL)providesStortorgetMetadata;
 - (void)rampToVideoZoomFactor:(float)arg1 withRate:(float)arg2;
-- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (float)saturation;
 - (void)setActiveFormat:(id)arg1;
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

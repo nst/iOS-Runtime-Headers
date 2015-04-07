@@ -5,26 +5,16 @@
 @class <PUPhotosSectionHeaderViewDelegate>, NSArray, NSDate, NSString, PUPhotosSectionHeaderContentView, UIButton, UIImageView, UILabel, UIView, _UIBackdropView;
 
 @interface PUPhotosSectionHeaderView : UICollectionReusableView {
+    UIButton *_actionButton;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _actionButtonInitialContentInsets;
     struct CGSize { 
         float width; 
         float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    UIButton *_actionButton;
-    } _actionButtonInitialContentInsets;
     } _actionButtonInitialSize;
     float _actionButtonLabelInitialMaxY;
     NSString *_actionButtonTitle;
@@ -32,11 +22,21 @@
     _UIBackdropView *_backdropView;
     NSString *_backdropViewGroupName;
     unsigned int _backgroundStyle;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInsets;
     PUPhotosSectionHeaderContentView *_contentView;
     UILabel *_dateLabel;
     <PUPhotosSectionHeaderViewDelegate> *_delegate;
     BOOL _generateDefaultTitleFromDates;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _highlightInsets;
     UIView *_highlightView;
     BOOL _highlightViewVisible;

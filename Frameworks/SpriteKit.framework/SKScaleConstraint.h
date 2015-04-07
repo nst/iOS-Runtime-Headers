@@ -13,8 +13,8 @@
 @property(copy) SKRange * yRange;
 
 + (id)constraintWithScaleRange:(id)arg1;
-+ (id)constraintWithXRange:(id)arg1 YRange:(id)arg2;
 + (id)constraintWithXRange:(id)arg1;
++ (id)constraintWithXRange:(id)arg1 YRange:(id)arg2;
 + (id)constraintWithYRange:(id)arg1;
 
 - (void).cxx_destruct;

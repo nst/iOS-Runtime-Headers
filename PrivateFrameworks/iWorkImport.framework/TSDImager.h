@@ -18,59 +18,14 @@
             float width; 
             float height; 
         } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    } mActualScaledClipRect;
+    struct CGColor { } *mBackgroundColor;
+    TSDCanvas *mCanvas;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    } mActualScaledClipRect;
-    struct CGColor { } *mBackgroundColor;
-    TSDCanvas *mCanvas;
     } mContentInset;
     BOOL mDistortedToMatch;
     TSKDocumentRoot *mDocumentRoot;
@@ -78,17 +33,66 @@
     BOOL mImageMustHaveEvenDimensions;
     NSArray *mInfos;
     BOOL mIsPrinting;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mMaximumScaledImageSize;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mPostRenderAction;
+
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mReusableActualScaledClipRect;
     struct CGContext { } *mReusableBitmapContext;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mReusableBounds;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mReusableIntegralBounds;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mReusableScaledImageSize;
     BOOL mReusableShouldUseSRGBColorSpace;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mScaledImageSize;
     BOOL mShouldReuseBitmapContext;
     BOOL mShouldUseSRGBColorSpace;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mUnscaledClipRect;
     BOOL mUseScaledImageSize;
     float mViewScale;

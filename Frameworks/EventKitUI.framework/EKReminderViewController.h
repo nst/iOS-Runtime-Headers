@@ -4,7 +4,7 @@
 
 @class <EKReminderViewControllerDelegate>, <EKStyleProvider>, EKEventStore, EKReminder, EKReminderEditor, NSString;
 
-@interface EKReminderViewController : UIViewController <EKCalendarItemEditorDelegate, EKReminderEditorDelegate, EKPickerTableViewDelegate> {
+@interface EKReminderViewController : UIViewController <EKCalendarItemEditorDelegate, EKPickerTableViewDelegate, EKReminderEditorDelegate> {
     SEL _datePickerAction;
     id _datePickerTarget;
     <EKReminderViewControllerDelegate> *_delegate;
@@ -30,9 +30,9 @@
 - (id)delegate;
 - (void)didEndDatePickingWithTarget:(id)arg1 animated:(BOOL)arg2;
 - (void)editItemChanged;
+- (id)editor;
 - (void)editor:(id)arg1 didChangeHeightAnimated:(BOOL)arg2;
 - (void)editor:(id)arg1 didCompleteWithAction:(int)arg2;
-- (id)editor;
 - (id)eventStore;
 - (id)getCurrentContext;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

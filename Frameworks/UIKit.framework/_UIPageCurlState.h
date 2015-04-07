@@ -9,23 +9,27 @@
 @class UIView, _UIPageCurl;
 
 @interface _UIPageCurlState : _UITransitionState {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     UIView *_backPageView;
     UIView *_backView;
     int _completionCount;
     int _curlState;
     int _curlType;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _finally;
+
     BOOL _finished;
     UIView *_frontPageView;
     UIView *_frontView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _initialLocation;
     _UIPageCurl *_pageCurl;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _referenceLocation;
     BOOL _willComplete;
 }

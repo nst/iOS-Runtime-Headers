@@ -11,7 +11,11 @@
 @interface PUPickerBannerView : UIView {
     int __alignment;
     BOOL __animatingStackView;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __animationCompletionHandler;
+
     UILabel *__label;
     PUStackView *__stackView;
     NSArray *_images;
@@ -54,10 +58,10 @@
 - (id)leftView;
 - (id)rightView;
 - (void)setImages:(id)arg1;
-- (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftView:(id)arg1;
-- (void)setRightView:(id)arg1 animated:(BOOL)arg2;
+- (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightView:(id)arg1;
+- (void)setRightView:(id)arg1 animated:(BOOL)arg2;
 - (void)setStyle:(unsigned int)arg1;
 - (void)setTitle:(id)arg1;
 - (unsigned int)style;

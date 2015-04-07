@@ -4,7 +4,7 @@
 
 @interface __NSCFBackgroundDownloadTask : __NSCFBackgroundSessionTask {
     BOOL _finished;
-    bool_suppressProgress;
+    bool _suppressProgress;
 }
 
 @property BOOL finished;

@@ -3,16 +3,16 @@
  */
 
 @interface AirPlayImage : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     struct CGImage { } *_image;
     int _imageOrientation;
     void *_ioSurface;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _scale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _unadjustedSize;
 }
 
@@ -31,10 +31,10 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })contentsTransformForLayer:(id)arg1;
 - (void)dealloc;
 - (int)imageOrientation;
-- (id)initWithContentsOfFile:(id)arg1 decode:(BOOL)arg2;
 - (id)initWithContentsOfFile:(id)arg1;
-- (id)initWithData:(id)arg1 decode:(BOOL)arg2;
+- (id)initWithContentsOfFile:(id)arg1 decode:(BOOL)arg2;
 - (id)initWithData:(id)arg1;
+- (id)initWithData:(id)arg1 decode:(BOOL)arg2;
 - (void*)ioSurface;
 - (id)layerContents;
 - (struct CGSize { float x1; float x2; })scale;

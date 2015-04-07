@@ -5,14 +5,14 @@
 @class IKLockupElement, MPUContentSizeLayoutConstraint, MPUExtrasConstrainedArtworkContainerView, NSLayoutConstraint, NSString, UILabel, UIView;
 
 @interface MPUExtrasLockupElementViewController : MPUExtrasViewElementViewController {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSLayoutConstraint *_artworkContainerHeightConstraint;
     NSLayoutConstraint *_artworkContainerTopConstraint;
     MPUExtrasConstrainedArtworkContainerView *_artworkContainerView;
     NSLayoutConstraint *_artworkContainerWidthConstraint;
     NSLayoutConstraint *_artworkContainerXConstraint;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _artworkSize;
     MPUContentSizeLayoutConstraint *_descriptionBaselineConstraint;
     UILabel *_descriptionLabel;

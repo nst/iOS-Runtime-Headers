@@ -5,6 +5,8 @@
 @class AVWeakReferencingDelegateStorage, NSArray;
 
 @interface AVCaptureMetadataOutputInternal_FigRecorder : NSObject {
+    AVWeakReferencingDelegateStorage *delegateStorage;
+    NSArray *metadataObjectTypes;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    AVWeakReferencingDelegateStorage *delegateStorage;
-    NSArray *metadataObjectTypes;
     } rectOfInterest;
 }
 

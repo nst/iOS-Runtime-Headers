@@ -42,8 +42,8 @@
 - (void)setFragmentShader:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setOpaque:(BOOL)arg1;
-- (void)setSemantic:(id)arg1 forSymbol:(id)arg2 options:(id)arg3;
 - (void)setSemantic:(id)arg1 forSymbol:(id)arg2;
+- (void)setSemantic:(id)arg1 forSymbol:(id)arg2 options:(id)arg3;
 - (void)setSemanticInfos:(id)arg1;
 - (void)setVertexShader:(id)arg1;
 - (id)vertexShader;

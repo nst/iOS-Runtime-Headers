@@ -3,12 +3,12 @@
  */
 
 @interface AWDCallHistoryDatabaseInfo : PBCodable <NSCopying> {
+    unsigned int _fetchLimit;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int fetchLimit : 1; 
         unsigned int schema : 1; 
         unsigned int size : 1; 
-    unsigned int _fetchLimit;
     } _has;
     unsigned int _schema;
     unsigned int _size;

@@ -13,8 +13,16 @@
     NSMutableArray *_completions;
     NSString *_debugDescription;
     NSError *_error;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _expirationHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _finishedHandler;
+
     NSObject<OS_dispatch_queue> *_handlerQueue;
     NSObject<OS_dispatch_queue> *_queue;
     id _result;

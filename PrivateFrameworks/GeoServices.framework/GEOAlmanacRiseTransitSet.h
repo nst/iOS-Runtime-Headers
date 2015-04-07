@@ -5,14 +5,14 @@
 @class NSDate;
 
 @interface GEOAlmanacRiseTransitSet : NSObject {
-    struct CAARiseTransitSetDetails { 
-        boolbRiseValid; 
-        double Rise; 
-        boolbTransitAboveHorizon; 
-        double Transit; 
-        boolbSetValid; 
-        double Set; 
     double _julianDay;
+    struct CAARiseTransitSetDetails { 
+        bool bRiseValid; 
+        double Rise; 
+        bool bTransitAboveHorizon; 
+        double Transit; 
+        bool bSetValid; 
+        double Set; 
     } _riseTransitSet;
     NSDate *_sunrise;
     NSDate *_sunset;
@@ -20,7 +20,7 @@
 }
 
 @property(readonly) double julianDay;
-@property(readonly) struct CAARiseTransitSetDetails { boolx1; double x2; boolx3; double x4; boolx5; double x6; } riseTransitSet;
+@property(readonly) struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; } riseTransitSet;
 @property(readonly) NSDate * sunrise;
 @property(readonly) NSDate * sunset;
 @property(readonly) NSDate * transit;
@@ -28,9 +28,9 @@
 - (id).cxx_construct;
 - (id)_dateFromOffset:(double)arg1 ofJulianDay:(double)arg2;
 - (void)dealloc;
-- (id)initWithJulianDay:(double)arg1 riseTransitSet:(struct CAARiseTransitSetDetails { boolx1; double x2; boolx3; double x4; boolx5; double x6; })arg2;
+- (id)initWithJulianDay:(double)arg1 riseTransitSet:(struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; })arg2;
 - (double)julianDay;
-- (struct CAARiseTransitSetDetails { boolx1; double x2; boolx3; double x4; boolx5; double x6; })riseTransitSet;
+- (struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; })riseTransitSet;
 - (id)sunrise;
 - (id)sunset;
 - (id)transit;

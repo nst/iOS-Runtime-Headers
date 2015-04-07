@@ -4,13 +4,13 @@
 
 @interface GEOPhotoOptions : PBCodable <NSCopying> {
     struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
         unsigned int photoType : 1; 
     } _has;
     int _maxPhotos;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _photoSizes;
     int _photoType;
 }

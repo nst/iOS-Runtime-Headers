@@ -5,11 +5,11 @@
 @class NSString, UIColor, UILabel, _UILegibilityView;
 
 @interface CAMButtonLabel : UIView {
+    UILabel *__label;
+    _UILegibilityView *__legibilityView;
     struct CGSize { 
         float width; 
         float height; 
-    UILabel *__label;
-    _UILegibilityView *__legibilityView;
     } _contentSize;
     BOOL _useLegibilityView;
 }

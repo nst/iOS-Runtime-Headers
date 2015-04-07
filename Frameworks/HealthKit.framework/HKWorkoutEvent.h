@@ -4,7 +4,7 @@
 
 @class NSDate, NSString;
 
-@interface HKWorkoutEvent : NSObject <NSSecureCoding, HDCoding> {
+@interface HKWorkoutEvent : NSObject <HDCoding, NSSecureCoding> {
     NSDate *_date;
     int _type;
 }

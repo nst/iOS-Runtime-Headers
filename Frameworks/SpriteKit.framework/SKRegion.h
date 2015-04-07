@@ -4,7 +4,7 @@
 
 @class PKRegion;
 
-@interface SKRegion : NSObject <NSCopying, NSCoding> {
+@interface SKRegion : NSObject <NSCoding, NSCopying> {
     PKRegion *_region;
 }
 

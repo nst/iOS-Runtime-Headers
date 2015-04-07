@@ -23,13 +23,12 @@
 @property(readonly) <MTLDevice> * device;
 @property(readonly) struct IOAccelResourceList { unsigned short x1[256]; struct IOAccelSegmentResourceDescriptorGroup {} *x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; int (*x12)(); void *x13; }* ioAccelResourceList;
 
-- (struct IOAccelResourceList { unsigned short x1[256]; struct IOAccelSegmentResourceDescriptorGroup {} *x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; int (*x12)(); void *x13; }*)ioAccelResourceList;
-- (struct MTLIOAccelCommandBufferStorage { id x1; struct MTLIOAccelCommandBufferStoragePool {} *x2; struct { struct MTLIOAccelCommandBufferStorage {} *x_3_1_1; struct MTLIOAccelCommandBufferStorage {} **x_3_1_2; } x3; id x4; char *x5; char *x6; char *x7; id x8; char *x9; char *x10; struct IOAccelSegmentListHeader {} *x11; struct IOAccelSegmentResourceListHeader {} *x12; struct IOAccelSegmentResourceDescriptorGroup {} *x13; struct IOAccelResourceList { unsigned short x_14_1_1[256]; struct IOAccelSegmentResourceDescriptorGroup {} *x_14_1_2; unsigned long long x_14_1_3; unsigned long long x_14_1_4; unsigned int x_14_1_5; unsigned int x_14_1_6; unsigned int x_14_1_7; unsigned int x_14_1_8; unsigned int x_14_1_9; unsigned int x_14_1_10; unsigned int x_14_1_11; int (*x_14_1_12)(); void *x_14_1_13; } x14; id x15; id x16; unsigned int x17; unsigned int x18; id *x19; struct MTLIOAccelCommandBufferResourceInfo {} *x20; }*)commandBufferStorage;
 - (id)akPrivateResourceList;
 - (id)akResourceList;
 - (void)allocCommandBufferResourceAtIndex:(unsigned int)arg1;
 - (void)beginSegment:(void*)arg1;
 - (struct MTLIOAccelCommandBufferResourceInfo { unsigned long long x1; unsigned int *x2; unsigned int *x3; unsigned int *x4; id x5; }*)commandBufferResourceInfo;
+- (struct MTLIOAccelCommandBufferStorage { id x1; struct MTLIOAccelCommandBufferStoragePool {} *x2; struct { struct MTLIOAccelCommandBufferStorage {} *x_3_1_1; struct MTLIOAccelCommandBufferStorage {} **x_3_1_2; } x3; id x4; char *x5; char *x6; char *x7; id x8; char *x9; char *x10; struct IOAccelSegmentListHeader {} *x11; struct IOAccelSegmentResourceListHeader {} *x12; struct IOAccelSegmentResourceDescriptorGroup {} *x13; struct IOAccelResourceList { unsigned short x_14_1_1[256]; struct IOAccelSegmentResourceDescriptorGroup {} *x_14_1_2; unsigned long long x_14_1_3; unsigned long long x_14_1_4; unsigned int x_14_1_5; unsigned int x_14_1_6; unsigned int x_14_1_7; unsigned int x_14_1_8; unsigned int x_14_1_9; unsigned int x_14_1_10; unsigned int x_14_1_11; int (*x_14_1_12)(); void *x_14_1_13; } x14; id x15; id x16; unsigned int x17; unsigned int x18; id *x19; struct MTLIOAccelCommandBufferResourceInfo {} *x20; }*)commandBufferStorage;
 - (void)commit;
 - (void)commitAndReset;
 - (void)dealloc;
@@ -42,8 +41,9 @@
 - (void)getSegmentListPointerStart:(void**)arg1 current:(void**)arg2 end:(void**)arg3;
 - (void)growKernelCommandBuffer:(unsigned long)arg1;
 - (void)growSegmentList;
-- (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2 synchronousDebugMode:(BOOL)arg3;
 - (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2;
+- (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2 synchronousDebugMode:(BOOL)arg3;
+- (struct IOAccelResourceList { unsigned short x1[256]; struct IOAccelSegmentResourceDescriptorGroup {} *x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; int (*x12)(); void *x13; }*)ioAccelResourceList;
 - (void)kernelCommandCollectTimeStamp;
 - (void)setCurrentKernelCommandBufferPointer:(void*)arg1;
 - (void)setCurrentSegmentListPointer:(void*)arg1;

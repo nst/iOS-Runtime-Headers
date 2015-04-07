@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface AWDCpuLoad : PBCodable <NSCopying> {
+    unsigned int _duration;
     struct { 
         unsigned int duration : 1; 
-    unsigned int _duration;
     } _has;
     NSString *_procName;
 }

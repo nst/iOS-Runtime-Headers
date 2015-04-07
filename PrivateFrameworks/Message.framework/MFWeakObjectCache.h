@@ -9,15 +9,19 @@
 @class NSLock, NSMutableDictionary;
 
 @interface MFWeakObjectCache : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
     NSMutableDictionary *_dictionary;
     NSLock *_lock;
 }
 
 - (void)dealloc;
 - (id)initWithBlock:(id)arg1;
-- (id)objectForKey:(id)arg1 wasCached:(BOOL*)arg2;
 - (id)objectForKey:(id)arg1;
+- (id)objectForKey:(id)arg1 wasCached:(BOOL*)arg2;
 - (void)removeObjectForKey:(id)arg1;
 
 @end

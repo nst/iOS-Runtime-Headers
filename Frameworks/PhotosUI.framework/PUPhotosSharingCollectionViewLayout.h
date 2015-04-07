@@ -5,10 +5,10 @@
 @class <PUPhotosSharingCollectionViewLayoutDelegate>, NSIndexPath, NSMutableDictionary;
 
 @interface PUPhotosSharingCollectionViewLayout : PUHorizontalTiledCollectionViewLayout {
+    NSMutableDictionary *_cachedHeaderAttributes;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    NSMutableDictionary *_cachedHeaderAttributes;
     } _sharingBadgeOffset;
     NSIndexPath *_zoomingCellIndexPath;
 }

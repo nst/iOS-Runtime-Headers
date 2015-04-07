@@ -9,14 +9,18 @@
 @class NSNumberFormatter, UIButton, UILabel, UIProgressView, UIView, _UIBackdropView;
 
 @interface PLProgressView : UIView {
-    unsigned int _didLayout : 1;
-    unsigned int _didSetPermanantTextOnLabelView : 1;
     _UIBackdropView *_backgroundBlurredView;
     UIView *_backgroundTintedView;
     int _backgroundType;
     UIView *_backgroundView;
     UIButton *_cancelButton;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cancelationHandler;
+
+    unsigned int _didLayout : 1;
+    unsigned int _didSetPermanantTextOnLabelView : 1;
     UILabel *_labelView;
     NSNumberFormatter *_progressFormatter;
     UIProgressView *_progressView;

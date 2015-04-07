@@ -9,15 +9,19 @@
 @class NSData, NSError, NSMutableData, NSObject<OS_dispatch_queue>, NSString;
 
 @interface CKDProtobufResponseBodyParser : NSObject <CKDResponseBodyParser> {
+    unsigned int _curObjectLength;
+    BOOL _isParsing;
     struct CC_SHA256state_st { 
         unsigned int count[2]; 
         unsigned int hash[8]; 
         unsigned int wbuf[16]; 
-    unsigned int _curObjectLength;
-    BOOL _isParsing;
     } _mescalSignature;
     Class _messageClass;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _objectParsedBlock;
+
     NSObject<OS_dispatch_queue> *_parseQueue;
     NSData *_parserData;
     NSError *_parserError;

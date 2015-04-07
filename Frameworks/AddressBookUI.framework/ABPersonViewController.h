@@ -13,8 +13,8 @@
     ABPersonTableViewDataSource *_dataSource;
     NSTimer *_editAnimationTimer;
     id _helper;
-    BOOL _internal2;
     id _internal;
+    BOOL _internal2;
     <ABPersonViewControllerDelegate> *_personViewDelegate;
     ABPersonTableViewSharingDelegate *_sharingDelegate;
 }
@@ -126,14 +126,14 @@
 - (void)forceUseLinkedInfos:(id)arg1 currentIndexInLinkedInfos:(int)arg2;
 - (id)getCurrentContext;
 - (BOOL)handleExternalChange;
-- (void)helper:(id)arg1 didToggleEditingWhileInViewMode:(BOOL)arg2;
 - (id)helper;
+- (void)helper:(id)arg1 didToggleEditingWhileInViewMode:(BOOL)arg2;
 - (void)helperDidReloadAfterChangingDisplayedPeople:(id)arg1;
 - (id)init;
 - (id)initWithAddressBook:(void*)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2 addressBook:(void*)arg3 style:(int)arg4;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2 addressBook:(void*)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 addressBook:(void*)arg3;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 addressBook:(void*)arg3 style:(int)arg4;
 - (id)initWithStyle:(int)arg1;
 - (BOOL)isDelayingChangeNotifications;
 - (BOOL)isReadonly;
@@ -168,8 +168,8 @@
 - (void)setAllowsSounds:(BOOL)arg1;
 - (void)setAllowsVibrations:(BOOL)arg1;
 - (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
-- (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setAttribution:(id)arg1;
+- (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setBadgeEmailPropertiesForMailVIP:(BOOL)arg1;
 - (void)setCardContentProvider:(id)arg1;
 - (void)setContactViewController:(id)arg1;
@@ -183,10 +183,10 @@
 - (void)setEditDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1 saveChanges:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 important:(BOOL)arg3;
-- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3 important:(BOOL)arg4;
-- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 important:(BOOL)arg3;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3 important:(BOOL)arg4;
 - (void)setMessage:(id)arg1;
 - (void)setMessageDetail:(id)arg1;
 - (void)setMessageDetailFont:(id)arg1;

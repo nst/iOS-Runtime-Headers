@@ -4,7 +4,7 @@
 
 @class <BSSettingDescriptionProvider>, NSMapTable, NSString;
 
-@interface BSSettings : NSObject <NSCopying, NSMutableCopying, BSXPCCoding> {
+@interface BSSettings : NSObject <BSXPCCoding, NSCopying, NSMutableCopying> {
     <BSSettingDescriptionProvider> *_descriptionProvider;
     NSMapTable *_settingToFlagMap;
     NSMapTable *_settingToObjectMap;

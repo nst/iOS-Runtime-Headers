@@ -11,7 +11,11 @@
 @interface CKDModifySubscriptionsURLRequest : CKDURLRequest {
     NSMutableDictionary *_subscriptionIDByRequestID;
     NSArray *_subscriptionIDsToDelete;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _subscriptionModifiedBlock;
+
     NSArray *_subscriptionsToSave;
     CKRecordZoneID *_zoneID;
 }

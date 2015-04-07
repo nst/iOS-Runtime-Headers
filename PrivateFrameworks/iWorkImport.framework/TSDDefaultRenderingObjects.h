@@ -7,8 +7,8 @@
 
 + (float)defaultAssetScaleForFrame:(id)arg1;
 + (id)defaultBasicStrokes;
-+ (id)defaultColorAndGrayscaleFillsForTheme:(id)arg1 withNoFillButton:(BOOL)arg2;
 + (id)defaultColorAndGrayscaleFillsForTheme:(id)arg1;
++ (id)defaultColorAndGrayscaleFillsForTheme:(id)arg1 withNoFillButton:(BOOL)arg2;
 + (id)defaultColorFillsForTheme:(id)arg1;
 + (id)defaultEndpoints;
 + (id)defaultFrames;

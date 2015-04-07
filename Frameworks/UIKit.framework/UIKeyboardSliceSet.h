@@ -5,31 +5,31 @@
 @class NSMutableDictionary, NSMutableSet, NSString;
 
 @interface UIKeyboardSliceSet : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     NSMutableDictionary *_controlKeys;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _endRect;
     float _leftWidth;
     float _mergePoint;
     float _rightWidth;
     NSMutableSet *_slices;
     NSString *_ssid;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _startRect;
 }
 

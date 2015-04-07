@@ -10,7 +10,11 @@
 
 @interface UIDocumentAlertPresenter : NSObject <UIAlertViewDelegate> {
     UIAlertView *_alert;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     NSError *_error;
 }
 

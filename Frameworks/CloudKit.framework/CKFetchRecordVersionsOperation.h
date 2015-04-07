@@ -10,8 +10,16 @@
 
 @interface CKFetchRecordVersionsOperation : CKDatabaseOperation {
     NSArray *_desiredKeys;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchRecordVersionsCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchRecordVersionsProgressBlock;
+
     BOOL _isDeleted;
     NSString *_minimumVersionETag;
     NSMutableDictionary *_recordErrors;

@@ -5,7 +5,6 @@
 @class NSMutableArray;
 
 @interface DDResultTracker : NSObject {
-    boolsortByProximity;
     unsigned int countRemainingByCategory[6];
     struct __DDResult { } *existingAddressResult;
     unsigned int maximumDistance;
@@ -14,6 +13,7 @@
     unsigned int referenceResultLocation;
     NSMutableArray *resultsAfter;
     NSMutableArray *resultsBefore;
+    bool sortByProximity;
     unsigned int totalCountRemaining;
 }
 

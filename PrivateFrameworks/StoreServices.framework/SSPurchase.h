@@ -4,7 +4,7 @@
 
 @class NSArray, NSData, NSDictionary, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSString, SSDownloadPolicy, SSItem, SSItemOffer, SSNetworkConstraints, SSURLRequestProperties;
 
-@interface SSPurchase : NSObject <SSXPCCoding, NSCoding, NSCopying> {
+@interface SSPurchase : NSObject <NSCoding, NSCopying, SSXPCCoding> {
     NSNumber *_accountIdentifier;
     NSString *_affiliateIdentifier;
     BOOL _backgroundPurchase;
@@ -85,8 +85,8 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDatabaseEncoding:(id)arg1;
-- (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)initWithItem:(id)arg1;
+- (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isBackgroundPurchase;
 - (BOOL)isEqual:(id)arg1;

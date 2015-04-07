@@ -5,11 +5,6 @@
 @class NSDictionary;
 
 @interface GKSectionMetrics : GKGridLayoutMetrics {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     unsigned int _alignment;
     float _desiredItemHeight;
     float _desiredItemWidth;
@@ -23,6 +18,11 @@
     float _lineSpacing;
     float _marginBetweenItems;
     unsigned int _maximumVisibleItemCount;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _padding;
     BOOL _shouldAlwaysIncludeShowMore;
     BOOL _shouldShowSectionHeadersWhenNoItems;

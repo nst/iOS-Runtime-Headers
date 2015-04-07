@@ -68,8 +68,8 @@
 - (BOOL)readTemperatureUnits;
 - (void)registerTemperatureUnits;
 - (void)resetLocale;
-- (void)saveToDiskWithCities:(id)arg1 activeCity:(unsigned int)arg2;
 - (void)saveToDiskWithCities:(id)arg1;
+- (void)saveToDiskWithCities:(id)arg1 activeCity:(unsigned int)arg2;
 - (void)saveToDiskWithCity:(id)arg1 forActiveIndex:(unsigned int)arg2;
 - (void)saveToDiskWithLocalWeatherCity:(id)arg1;
 - (void)saveToUbiquitousStore;

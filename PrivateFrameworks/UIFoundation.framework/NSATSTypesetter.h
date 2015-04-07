@@ -10,25 +10,25 @@
 @class NSArray, NSAttributedString, NSLayoutManager, NSParagraphStyle, NSTextContainer;
 
 @interface NSATSTypesetter : NSTypesetter {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct CGSize { 
-        float width; 
-        float height; 
     void *_atsReserved[8];
     id _private;
     NSAttributedString *attributedString;
     NSParagraphStyle *currentParagraphStyle;
     NSTextContainer *currentTextContainer;
     unsigned int currentTextContainerIndex;
+    struct CGSize { 
+        float width; 
+        float height; 
     } currentTextContainerSize;
     NSLayoutManager *layoutManager;
     float lineFragmentPadding;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } paragraphGlyphRange;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } paragraphSeparatorGlyphRange;
     NSArray *textContainers;
 }

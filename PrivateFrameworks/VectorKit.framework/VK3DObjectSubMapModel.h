@@ -10,36 +10,36 @@
 @class VKBuildingFootprintMapModel;
 
 @interface VK3DObjectSubMapModel : NSObject {
-    struct unique_ptr<ggl::FragmentedPool<ggl::Building::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::Building::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::Building::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::Building::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::Building::Shader::Setup> {} *__first_; 
-        } __ptr_; 
+    VKBuildingFootprintMapModel *_buildingMapModel;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
             struct RenderState {} *__first_; 
         } __ptr_; 
+    } _object2DRenderState;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
             struct RenderState {} *__first_; 
         } __ptr_; 
+    } _object2DRenderStateWithBlending;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
             struct RenderState {} *__first_; 
         } __ptr_; 
+    } _object3DRenderState;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
             struct RenderState {} *__first_; 
         } __ptr_; 
+    } _object3DRenderStateWithBlending;
     struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
         struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
             struct FragmentedPool<ggl::RenderItem> {} *__first_; 
         } __ptr_; 
-    VKBuildingFootprintMapModel *_buildingMapModel;
-    } _object2DRenderState;
-    } _object2DRenderStateWithBlending;
-    } _object3DRenderState;
-    } _object3DRenderStateWithBlending;
     } _objectRenderItemPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::Building::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::Building::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::Building::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::Building::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::Building::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _objectShaderSetupPool;
 }
 

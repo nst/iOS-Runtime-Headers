@@ -4,7 +4,7 @@
 
 @class <SKUIDownloadsChildViewControllerDelegate>, NSArray, NSString, SKUIClientContext, UICollectionView, _UIContentUnavailableView;
 
-@interface SKUIIPadDownloadsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource> {
+@interface SKUIIPadDownloadsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIClientContext *_clientContext;
     UICollectionView *_collectionView;
     <SKUIDownloadsChildViewControllerDelegate> *_delegate;

@@ -30,8 +30,8 @@
 @property(getter=isLoaded,readonly) BOOL loaded;
 @property unsigned int numberOfFriends;
 @property(retain) NSString * playerID;
-@property(retain) NSString * reason2;
 @property(retain) NSString * reason;
+@property(retain) NSString * reason2;
 @property(readonly) NSString * referenceKey;
 @property unsigned int rid;
 @property int source;

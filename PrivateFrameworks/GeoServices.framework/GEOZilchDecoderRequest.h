@@ -9,20 +9,28 @@
 @class GEOZilchDecoder, NSError, NSObject<OS_dispatch_semaphore>;
 
 @interface GEOZilchDecoderRequest : GEOMapRequest {
+    GEOZilchDecoder *_decoder;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _errorHandler;
+
+    NSObject<OS_dispatch_semaphore> *_finishedSemaphore;
+    NSError *_firstTileLoadingError;
     struct unique_ptr<geo::ZilchMapModel, std::__1::default_delete<geo::ZilchMapModel> > { 
         struct __compressed_pair<geo::ZilchMapModel *, std::__1::default_delete<geo::ZilchMapModel> > { 
             struct ZilchMapModel {} *__first_; 
         } __ptr_; 
+    } _mapModel;
     struct shared_ptr<zilch::Message> { 
         struct Message {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    GEOZilchDecoder *_decoder;
-    id _errorHandler;
-    NSObject<OS_dispatch_semaphore> *_finishedSemaphore;
-    NSError *_firstTileLoadingError;
-    } _mapModel;
     } _message;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pathHandler;
+
 }
 
 @property(copy) id errorHandler;

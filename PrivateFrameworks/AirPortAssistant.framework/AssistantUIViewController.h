@@ -4,7 +4,7 @@
 
 @class <AssistantViewControllerDelegate>, AUPasswordUIAlert, AUUIAlert, AssistantCallbackController, AssistantSubUIViewController, AssistantUIController, NSArray, NSDictionary, NSString, NetTopoMiniStaticLayout, UIActivityIndicatorView, UIBarButtonItem, UILabel, UITableView, UITextField, UIView;
 
-@interface AssistantUIViewController : AUUITableViewController <AssistantUIDelegate, AssistantCallbackUIDelegate, UINavigationControllerDelegate, TableViewManagerDelegate, AUUIAlertDelegate> {
+@interface AssistantUIViewController : AUUITableViewController <AUUIAlertDelegate, AssistantCallbackUIDelegate, AssistantUIDelegate, TableViewManagerDelegate, UINavigationControllerDelegate> {
     id _assistantDelegate;
     AssistantUIController *_assistantUIController;
     NSDictionary *_callerParamDict;

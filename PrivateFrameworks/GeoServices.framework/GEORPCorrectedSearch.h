@@ -5,10 +5,10 @@
 @class GEOPDPlaceRequest, GEOPDPlaceResponse, GEOPlaceSearchRequest, GEOPlaceSearchResponse, NSString;
 
 @interface GEORPCorrectedSearch : PBCodable <NSCopying> {
+    unsigned int _correctedSearchResultIndex;
     struct { 
         unsigned int correctedSearchResultIndex : 1; 
         unsigned int originalSearchResultIndex : 1; 
-    unsigned int _correctedSearchResultIndex;
     } _has;
     unsigned int _originalSearchResultIndex;
     GEOPDPlaceRequest *_placeRequest;

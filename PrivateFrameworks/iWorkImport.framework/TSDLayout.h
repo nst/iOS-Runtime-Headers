@@ -8,9 +8,21 @@
     struct CGPoint { 
         float x; 
         float y; 
+    } mBaseAlignmentFrameOriginForFixingInterimPosition;
     struct CGPoint { 
         float x; 
         float y; 
+    } mBaseCapturedAlignmentFrameOriginForInline;
+    TSDLayoutGeometry *mBaseGeometry;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } mCapturedAlignmentFrameOriginForInline;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } mCapturedInfoGeometryPositionForInline;
+    NSMutableSet *mConnectedLayouts;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,34 +32,22 @@
             float width; 
             float height; 
         } size; 
+    } mDirtyRect;
+    NSObject<TSDInfo> *mInfo;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } mInitialBoundsForStandardKnobs;
     struct { 
         unsigned int position : 1; 
         unsigned int size : 1; 
         unsigned int inlineSize : 1; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } mBaseAlignmentFrameOriginForFixingInterimPosition;
-    } mBaseCapturedAlignmentFrameOriginForInline;
-    TSDLayoutGeometry *mBaseGeometry;
-    } mCapturedAlignmentFrameOriginForInline;
-    } mCapturedInfoGeometryPositionForInline;
-    NSMutableSet *mConnectedLayouts;
-    } mDirtyRect;
-    NSObject<TSDInfo> *mInfo;
-    } mInitialBoundsForStandardKnobs;
     } mInvalidFlags;
     int mLayoutState;
 }

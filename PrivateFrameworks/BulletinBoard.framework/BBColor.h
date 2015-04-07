@@ -4,7 +4,7 @@
 
 @class NSString, UIColor;
 
-@interface BBColor : NSObject <BBUniquableObject, NSSecureCoding, NSCopying> {
+@interface BBColor : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
     float _alpha;
     float _blue;
     float _green;

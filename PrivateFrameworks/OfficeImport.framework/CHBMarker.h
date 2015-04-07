@@ -11,7 +11,7 @@
 }
 
 + (int)chdMarkerStyleFromXlMarkerType:(int)arg1;
-+ (id)readFrom:(const struct XlChartSeriesFormat { int (**x1)(); struct XlChartLineStyle {} *x2; struct XlChartFillStyle {} *x3; struct XlChartMarkerStyle {} *x4; struct XlChartPicF {} *x5; int x6; unsigned short x7; unsigned short x8; unsigned short x9; int x10; boolx11; boolx12; boolx13; boolx14; boolx15; boolx16; boolx17; boolx18; boolx19; boolx20; }*)arg1 state:(id)arg2;
++ (id)readFrom:(const struct XlChartSeriesFormat { int (**x1)(); struct XlChartLineStyle {} *x2; struct XlChartFillStyle {} *x3; struct XlChartMarkerStyle {} *x4; struct XlChartPicF {} *x5; int x6; unsigned short x7; unsigned short x8; unsigned short x9; int x10; bool x11; bool x12; bool x13; bool x14; bool x15; bool x16; bool x17; bool x18; bool x19; bool x20; }*)arg1 state:(id)arg2;
 + (int)xlMarkerStyleFromCHDMarkerType:(int)arg1;
 
 @end

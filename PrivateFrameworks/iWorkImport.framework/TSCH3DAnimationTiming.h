@@ -5,6 +5,7 @@
 @class TSCH3DAnimationInterpolation;
 
 @interface TSCH3DAnimationTiming : NSObject {
+    TSCH3DAnimationInterpolation *mInterpolation;
     struct box<glm::detail::tvec1<float> > { 
         struct tvec1<float> { 
             union { 
@@ -20,7 +21,6 @@
                 float s; 
             } ; 
         } mMax; 
-    TSCH3DAnimationInterpolation *mInterpolation;
     } mRange;
 }
 

@@ -10,7 +10,11 @@
 
 @interface _MSXPCRemoteProxy : NSObject {
     MSXPCConnection *_connection;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _errorHandler;
+
     struct __CFDictionary { } *_knownSelectors;
     NSXPCInterface *_remoteInterface;
     int _selectorLock;

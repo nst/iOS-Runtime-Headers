@@ -5,44 +5,44 @@
 @class TSCH3DCamera, TSCH3DSceneRenderSetup;
 
 @interface TSCH3DTileSceneRenderSetup : TSCH3DSceneRenderSetup {
-    struct tvec2<int> { 
-        union { 
-            int x; 
-            int r; 
-            int s; 
-        } ; 
-        union { 
-            int y; 
-            int g; 
-            int t; 
-        } ; 
-    struct tvec2<int> { 
-        union { 
-            int x; 
-            int r; 
-            int s; 
-        } ; 
-        union { 
-            int y; 
-            int g; 
-            int t; 
-        } ; 
-    struct tvec2<int> { 
-        union { 
-            int x; 
-            int r; 
-            int s; 
-        } ; 
-        union { 
-            int y; 
-            int g; 
-            int t; 
-        } ; 
     TSCH3DCamera *mFullCamera;
     TSCH3DSceneRenderSetup *mFullSetup;
+    struct tvec2<int> { 
+        union { 
+            int x; 
+            int r; 
+            int s; 
+        } ; 
+        union { 
+            int y; 
+            int g; 
+            int t; 
+        } ; 
     } mOverlap;
+    struct tvec2<int> { 
+        union { 
+            int x; 
+            int r; 
+            int s; 
+        } ; 
+        union { 
+            int y; 
+            int g; 
+            int t; 
+        } ; 
     } mTileIndex;
     int mTileSamples;
+    struct tvec2<int> { 
+        union { 
+            int x; 
+            int r; 
+            int s; 
+        } ; 
+        union { 
+            int y; 
+            int g; 
+            int t; 
+        } ; 
     } mTileSize;
     int mTileSuperSamples;
 }

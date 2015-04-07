@@ -34,8 +34,8 @@
 - (void)setEvictsObjectsWhenApplicationEntersBackground:(BOOL)arg1;
 - (void)setEvictsObjectsWithDiscardedContent:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;
 - (void)setTotalCostLimit:(unsigned int)arg1;
 - (unsigned int)totalCostLimit;
 - (void)tsp_cacheComponent:(id)arg1;

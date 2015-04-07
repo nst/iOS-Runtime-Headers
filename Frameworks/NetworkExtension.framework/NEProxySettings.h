@@ -4,7 +4,7 @@
 
 @class NEProxyServer, NSArray, NSString, NSURL;
 
-@interface NEProxySettings : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
+@interface NEProxySettings : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _FTPEnabled;
     NEProxyServer *_FTPServer;
     BOOL _HTTPEnabled;

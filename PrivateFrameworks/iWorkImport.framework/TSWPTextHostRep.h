@@ -4,7 +4,7 @@
 
 @class NSArray, NSObject<TSDContainerInfo>, NSObject<TSKSearchReference>, NSString, TSKHighlightArrayController, TSWPShapeRep;
 
-@interface TSWPTextHostRep : TSDRep <TSDContainerRep, TSWPTextEditingHostRep, TSKHighlightArrayControllerProtocol> {
+@interface TSWPTextHostRep : TSDRep <TSDContainerRep, TSKHighlightArrayControllerProtocol, TSWPTextEditingHostRep> {
     NSObject<TSKSearchReference> *_activeSearchReference;
     TSWPShapeRep *_editingRep;
     TSKHighlightArrayController *_highlightArrayController;
@@ -44,10 +44,10 @@
 - (void)p_setSearchReferencesToHighlight:(id)arg1;
 - (void)pulseAnimationDidStop:(id)arg1;
 - (id)pulseArrayController;
-- (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)recursivelyPerformSelector:(SEL)arg1;
-- (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2;
+- (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1;
+- (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2;
 - (id)searchReferences;
 - (void)selectChildRep:(id)arg1;
 - (void)setActiveSearchReference:(id)arg1;

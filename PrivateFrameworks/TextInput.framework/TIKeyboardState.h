@@ -8,6 +8,20 @@
     union { 
         int integerValue; 
         struct { 
+            unsigned int displayed : 1; 
+            unsigned int autoDisplayMode : 1; 
+        } fields; 
+    } _autocorrectionListUIState;
+    NSString *_clientIdentifier;
+    TIKeyboardCandidate *_currentCandidate;
+    TIDocumentState *_documentState;
+    NSString *_inputForMarkedText;
+    NSString *_inputMode;
+    TIKeyboardLayout *_keyLayout;
+    TIKeyboardLayoutState *_layoutState;
+    union { 
+        int integerValue; 
+        struct { 
             unsigned int userSelectedCurrentCandidate : 1; 
             unsigned int shouldSkipCandidateSelection : 1; 
             unsigned int suppressingCandidateSelection : 1; 
@@ -21,20 +35,6 @@
             unsigned int typologyLoggingEnabled : 1; 
             unsigned int autocapitalizationEnabled : 1; 
         } fields; 
-    union { 
-        int integerValue; 
-        struct { 
-            unsigned int displayed : 1; 
-            unsigned int autoDisplayMode : 1; 
-        } fields; 
-    } _autocorrectionListUIState;
-    NSString *_clientIdentifier;
-    TIKeyboardCandidate *_currentCandidate;
-    TIDocumentState *_documentState;
-    NSString *_inputForMarkedText;
-    NSString *_inputMode;
-    TIKeyboardLayout *_keyLayout;
-    TIKeyboardLayoutState *_layoutState;
     } _mask;
     NSString *_recipientIdentifier;
     NSString *_responseContext;

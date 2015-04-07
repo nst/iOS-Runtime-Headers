@@ -8,10 +8,14 @@
 
 @class <_NSItemProviderLoading>, NSArray, NSDictionary, NSMutableDictionary;
 
-@interface NSItemProvider : NSObject <NSSecureCoding, NSCopying> {
+@interface NSItemProvider : NSObject <NSCopying, NSSecureCoding> {
     NSMutableDictionary *__loadHandlers;
     <_NSItemProviderLoading> *__loadOperator;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __previewImageHandler;
+
     NSDictionary *_userInfo;
 }
 

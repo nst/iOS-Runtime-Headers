@@ -9,10 +9,7 @@
 
 @class NSMutableString, NSObject<TSDContainerInfo>, NSString, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSSStylesheet, TSWPDocumentRoot, TSWPStorageBroadcaster;
 
-@interface TSWPStorage : TSPObject <TSDContainerInfo, TSKSearchable, TSSThemedObject, TSWPStorageParent, TSSStyleClient, TSWPTextSource> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+@interface TSWPStorage : TSPObject <TSDContainerInfo, TSKSearchable, TSSStyleClient, TSSThemedObject, TSWPStorageParent, TSWPTextSource> {
     int _WPKind;
     struct TSWPAttributeArray {} *_attributesTable[19];
     TSWPStorageBroadcaster *_broadcaster;
@@ -26,6 +23,9 @@
     BOOL _isInInit;
     TSPObject<TSDOwningAttachment> *_owningAttachment;
     NSObject<TSDContainerInfo> *_parentInfo;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _rangeToBroadcast;
     NSMutableString *_string;
     TSSStylesheet *_stylesheet;
@@ -37,7 +37,7 @@
 @property(readonly) unsigned int changeCount;
 @property(readonly) int contentWritingDirection;
 @property(copy,readonly) NSString * debugDescription;
-@property(readonly) struct TSWPChangeAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; boolx8; id x9; int x10; }* deletionChangesTable;
+@property(readonly) struct TSWPChangeAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; bool x8; id x9; int x10; }* deletionChangesTable;
 @property(copy,readonly) NSString * description;
 @property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
 @property(copy) TSDInfoGeometry * geometry;
@@ -46,7 +46,7 @@
 @property struct { unsigned short x1; unsigned char x2; unsigned char x3; } hyperlinkCellID;
 @property BOOL ignoreContentsChangedNotifications;
 @property(getter=isInlineWithText,readonly) BOOL inlineWithText;
-@property(readonly) struct TSWPChangeAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; boolx8; id x9; int x10; }* insertionChangesTable;
+@property(readonly) struct TSWPChangeAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; bool x8; id x9; int x10; }* insertionChangesTable;
 @property(readonly) BOOL isInInit;
 @property BOOL matchesObjectPlaceholderGeometry;
 @property TSPObject<TSDOwningAttachment> * owningAttachment;
@@ -54,13 +54,13 @@
 @property NSObject<TSDContainerInfo> * parentInfo;
 @property(readonly) Class superclass;
 
-+ (struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)createAttributeArrayForKind:(int)arg1 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg2;
-+ (struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)createEmptyAttributeArrayForKind:(int)arg1;
 + (BOOL)allowsElementKind:(int)arg1 forStorageKind:(int)arg2;
 + (BOOL)allowsSmartFieldKind:(int)arg1 forStorageKind:(int)arg2;
++ (struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)createAttributeArrayForKind:(int)arg1 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg2;
++ (struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)createEmptyAttributeArrayForKind:(int)arg1;
 + (id)filterMarkAttributes:(id)arg1;
-+ (id)filterText:(id)arg1 removingAttachments:(BOOL)arg2;
 + (id)filterText:(id)arg1;
++ (id)filterText:(id)arg1 removingAttachments:(BOOL)arg2;
 + (void)initialize;
 + (BOOL)needsObjectUUID;
 + (id)newObjectForUnarchiver:(id)arg1;
@@ -71,12 +71,6 @@
 + (void)setDisallowedElementKinds:(unsigned int)arg1 forStorageKind:(int)arg2;
 + (void)setDisallowedSmartFieldKinds:(unsigned int)arg1 forStorageKind:(int)arg2;
 
-- (struct TSWPChangeAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; boolx8; id x9; int x10; }*)deletionChangesTable;
-- (struct TSWPChangeAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; boolx8; id x9; int x10; }*)insertionChangesTable;
-- (struct TSWPParagraphAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; boolx8; unsigned int x9; unsigned int x10; }*)paragraphAttributeArrayForKind:(int)arg1 withCreate:(BOOL)arg2;
-- (struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)attributeArrayForKind:(int)arg1 withCreate:(BOOL)arg2 fromUndo:(BOOL)arg3 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg4;
-- (struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)attributeArrayForKind:(int)arg1 withCreate:(BOOL)arg2 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg3;
-- (struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)attributeArrayForKind:(int)arg1;
 - (id).cxx_construct;
 - (void)acceptVisitor:(id)arg1;
 - (void)addAllDictationAndAutocorrectionKeyRangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toRanges:(struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg2;
@@ -109,8 +103,11 @@
 - (unsigned int)attachmentIndexForInsertionAtCharIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })attachmentIndexRangeForTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)attachmentOrFootnoteAtCharIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })attachmentRangeForCharIndex:(unsigned int)arg1 forwards:(BOOL)arg2 attributeKind:(int)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })attachmentRangeForCharIndex:(unsigned int)arg1 forwards:(BOOL)arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })attachmentRangeForCharIndex:(unsigned int)arg1 forwards:(BOOL)arg2 attributeKind:(int)arg3;
+- (struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)attributeArrayForKind:(int)arg1;
+- (struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)attributeArrayForKind:(int)arg1 withCreate:(BOOL)arg2 fromUndo:(BOOL)arg3 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg4;
+- (struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)attributeArrayForKind:(int)arg1 withCreate:(BOOL)arg2 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg3;
 - (void)attributesAtCharIndex:(unsigned int)arg1 attributesOfInterest:(BOOL[19])arg2 attributesTable:(id[19])arg3 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;
 - (BOOL)autoListRecognition;
 - (BOOL)autoListTermination;
@@ -167,6 +164,7 @@
 - (void)deleteRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg2;
 - (struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; })deletedRangeVectorInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)deletedRangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct TSWPChangeAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; bool x8; id x9; int x10; }*)deletionChangesTable;
 - (id)description;
 - (id)dictationAndAutocorrectionKeyAtCharIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (unsigned int)disallowedElementKinds;
@@ -191,8 +189,8 @@
 - (unsigned int)findCharacterIndexForContainedInfo:(id)arg1;
 - (void)findCommentsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 onHit:(id)arg2;
 - (unsigned int)findNextParagraphStyleChange:(unsigned int)arg1 maxCharIndex:(unsigned int)arg2;
-- (id)firstHighlightForSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 outRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 requireComment:(BOOL)arg3;
 - (id)firstHighlightForSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 outRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+- (id)firstHighlightForSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 outRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 requireComment:(BOOL)arg3;
 - (id)firstPageCountAttachment;
 - (id)firstPageNumberAttachment;
 - (void)fixGlyphVariantFontsForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -215,8 +213,8 @@
 - (BOOL)hasColumnStyleForParagraphBreakAtCharIndex:(unsigned int)arg1;
 - (BOOL)hasDeletedTextAtCharIndex:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (BOOL)hasDeletionInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)hasHiddenTextAtCharIndex:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (BOOL)hasHiddenTextAtCharIndex:(unsigned int)arg1;
+- (BOOL)hasHiddenTextAtCharIndex:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (BOOL)hasPartitionedAttachmentAtStartOfTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)hasSectionForParagraphBreakAtCharIndex:(unsigned int)arg1;
 - (BOOL)hasSmartFields;
@@ -229,18 +227,18 @@
 - (BOOL)highlightsAllowed;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })hyperlinkCellID;
 - (long)hyphenationLocationBeforeIndex:(long)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 locale:(struct __CFLocale { }*)arg3 hyphenChar:(unsigned int*)arg4;
-- (id)i_copyIntoContext:(id)arg1 stylesheet:(id)arg2 paragraphStyle:(id)arg3 listStyle:(id)arg4 bakeModes:(BOOL)arg5 resettingHostTableToMatch:(id)arg6 referenceColorHelper:(id)arg7;
 - (id)i_copyIntoContext:(id)arg1 stylesheet:(id)arg2;
+- (id)i_copyIntoContext:(id)arg1 stylesheet:(id)arg2 paragraphStyle:(id)arg3 listStyle:(id)arg4 bakeModes:(BOOL)arg5 resettingHostTableToMatch:(id)arg6 referenceColorHelper:(id)arg7;
 - (BOOL)ignoreContentsChangedNotifications;
 - (unsigned int)indexAfterLastVisibleCharInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)indexOfFirstNonDeletedCharInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)indexOfFirstVisibleCharInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 string:(id)arg2 kind:(int)arg3 stylesheet:(id)arg4 paragraphStyle:(id)arg5 listStyle:(id)arg6 section:(id)arg7 columnStyle:(id)arg8 paragraphDirection:(int)arg9;
 - (id)initWithContext:(id)arg1 string:(id)arg2 kind:(int)arg3 stylesheet:(id)arg4 paragraphStyle:(id)arg5 listStyle:(id)arg6 section:(id)arg7 columnStyle:(id)arg8;
+- (id)initWithContext:(id)arg1 string:(id)arg2 kind:(int)arg3 stylesheet:(id)arg4 paragraphStyle:(id)arg5 listStyle:(id)arg6 section:(id)arg7 columnStyle:(id)arg8 paragraphDirection:(int)arg9;
 - (id)initWithContext:(id)arg1 string:(id)arg2 stylesheet:(id)arg3 kind:(int)arg4;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })insertAttachmentOrFootnote:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 dolcContext:(id)arg3 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg4 changeSession:(id)arg5;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })insertAttachmentOrFootnote:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })insertAttachmentOrFootnote:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 dolcContext:(id)arg3 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg4 changeSession:(id)arg5;
 - (void)insertObject:(id)arg1 charIndex:(unsigned int)arg2 attributeArray:(struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)arg3 attributeIndex:(unsigned int)arg4 dolcContext:(id)arg5 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg6;
 - (void)insertParagraphData:(struct { union { struct { unsigned int x_1_2_1; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_1_1_2; struct { unsigned short x_3_2_1; unsigned short x_3_2_2; } x_1_1_3; struct { int x_4_2_1; } x_1_1_4; struct { unsigned int x_5_2_1; } x_1_1_5; struct { unsigned short x_6_2_1; unsigned short x_6_2_2; } x_1_1_6; } x1; })arg1 charIndex:(unsigned int)arg2 attributeArray:(struct TSWPAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; }*)arg3 attributeIndex:(unsigned int)arg4 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg5;
 - (void)insertPlaceholderText:(id)arg1 atCharIndex:(unsigned int)arg2 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg3;
@@ -249,6 +247,7 @@
 - (void)insertStorage:(id)arg1 atCharIndex:(unsigned int)arg2 dolcContext:(id)arg3 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg4;
 - (void)insertString:(id)arg1 atCharIndex:(unsigned int)arg2 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg3;
 - (void)insertUIGraphicalAttachment:(id)arg1;
+- (struct TSWPChangeAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; bool x8; id x9; int x10; }*)insertionChangesTable;
 - (void)invalidateCharIndexForAttachment:(id)arg1;
 - (void)invalidateFootnoteAttachmentCharIndexes;
 - (void)invalidateForStyle:(id)arg1;
@@ -275,7 +274,7 @@
 - (Class)layoutClass;
 - (unsigned int)length;
 - (unsigned int)listEndAtCharIndex:(unsigned int)arg1;
-- (unsigned int)listNumberForParagraphEnumerator:(const struct TSWPParagraphEnumerator { id x1; id x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; boolx7; }*)arg1 numberingData:(struct { int x1; unsigned int x2; BOOL x3; }*)arg2;
+- (unsigned int)listNumberForParagraphEnumerator:(const struct TSWPParagraphEnumerator { id x1; id x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; bool x7; }*)arg1 numberingData:(struct { int x1; unsigned int x2; BOOL x3; }*)arg2;
 - (unsigned int)listNumberForParagraphIndex:(unsigned int)arg1 numberingData:(struct { int x1; unsigned int x2; BOOL x3; }*)arg2;
 - (unsigned int)listStartAtCharIndex:(unsigned int)arg1;
 - (id)listStyleAtCharIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
@@ -285,10 +284,10 @@
 - (void)lowercaseWithUndoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg1 locale:(id)arg2;
 - (unsigned int)moveByLineRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 up:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })moveCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toLocation:(unsigned int)arg2 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg3;
-- (id)newSubstorageWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 context:(id)arg2 flags:(unsigned int)arg3 kind:(int)arg4;
 - (id)newSubstorageWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 context:(id)arg2 flags:(unsigned int)arg3;
-- (id)newSubstorageWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 storageContext:(id)arg2 objectsContext:(id)arg3 flags:(unsigned int)arg4 kind:(int)arg5;
+- (id)newSubstorageWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 context:(id)arg2 flags:(unsigned int)arg3 kind:(int)arg4;
 - (id)newSubstorageWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 storageContext:(id)arg2 objectsContext:(id)arg3 flags:(unsigned int)arg4;
+- (id)newSubstorageWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 storageContext:(id)arg2 objectsContext:(id)arg3 flags:(unsigned int)arg4 kind:(int)arg5;
 - (id)nextChangeFromCharIndex:(unsigned int)arg1 afterChange:(id)arg2 changeRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
 - (unsigned int)nextCharacterIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })nextWordFromIndex:(unsigned int)arg1 forward:(BOOL)arg2;
@@ -308,8 +307,8 @@
 - (void)p_attributesAtCharIndex:(unsigned int)arg1 attributesOfInterest:(BOOL[19])arg2 attributesTable:(id[19])arg3 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;
 - (void)p_didChangeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 delta:(int)arg2 broadcastKind:(int)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })p_extendRangeToIncludeSmartFields:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)p_fillMarkers:(struct vector<std::__1::pair<unsigned int, unsigned short>, std::__1::allocator<std::__1::pair<unsigned int, unsigned short> > > { struct pair<unsigned int, unsigned short> {} *x1; struct pair<unsigned int, unsigned short> {} *x2; struct __compressed_pair<std::__1::pair<unsigned int, unsigned short> *, std::__1::allocator<std::__1::pair<unsigned int, unsigned short> > > { struct pair<unsigned int, unsigned short> {} *x_3_1_1; } x3; }*)arg1 string:(id)arg2 length:(unsigned int)arg3 hasAttachments:(BOOL*)arg4 hasFootnotes:(BOOL*)arg5 hasBreaks:(BOOL*)arg6;
 - (void)p_fillMarkers:(struct vector<unsigned int, std::__1::allocator<unsigned int> > { unsigned int *x1; unsigned int *x2; struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { unsigned int *x_3_1_1; } x3; }*)arg1 startingAtCharIndex:(unsigned int)arg2 forCount:(unsigned int)arg3;
+- (void)p_fillMarkers:(struct vector<std::__1::pair<unsigned int, unsigned short>, std::__1::allocator<std::__1::pair<unsigned int, unsigned short> > > { struct pair<unsigned int, unsigned short> {} *x1; struct pair<unsigned int, unsigned short> {} *x2; struct __compressed_pair<std::__1::pair<unsigned int, unsigned short> *, std::__1::allocator<std::__1::pair<unsigned int, unsigned short> > > { struct pair<unsigned int, unsigned short> {} *x_3_1_1; } x3; }*)arg1 string:(id)arg2 length:(unsigned int)arg3 hasAttachments:(BOOL*)arg4 hasFootnotes:(BOOL*)arg5 hasBreaks:(BOOL*)arg6;
 - (void)p_findChangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 onHit:(id)arg2 withAttributeKind:(int)arg3;
 - (void)p_handleChangeSplittingForInsertedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 changeSession:(id)arg2 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg3;
 - (BOOL)p_hasDeletedTextAtCharIndex:(unsigned int)arg1 requireHidden:(BOOL)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
@@ -327,12 +326,13 @@
 - (BOOL)p_shouldInsertionSplitChange:(id)arg1 changeSession:(id)arg2;
 - (id)p_stringWithFormulaAsTextFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 returningTokenValues:(BOOL)arg2;
 - (id)p_undeletedCharIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct TSWPParagraphAttributeArray { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct TSWPAttributeRecord {} *x5; id x6; unsigned int x7; bool x8; unsigned int x9; unsigned int x10; }*)paragraphAttributeArrayForKind:(int)arg1 withCreate:(BOOL)arg2;
 - (unsigned int)paragraphCount;
 - (unsigned int)paragraphEndAtCharIndex:(unsigned int)arg1;
-- (struct TSWPParagraphEnumerator { id x1; id x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; boolx7; })paragraphEnumeratorAtCharIndex:(unsigned int)arg1 styleProvider:(id)arg2;
-- (struct TSWPParagraphEnumerator { id x1; id x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; boolx7; })paragraphEnumeratorAtParIndex:(unsigned int)arg1 styleProvider:(id)arg2;
-- (struct TSWPParagraphEnumerator { id x1; id x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; boolx7; })paragraphEnumeratorForCharRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 styleProvider:(id)arg2 requireHidden:(BOOL)arg3;
-- (struct TSWPParagraphEnumerator { id x1; id x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; boolx7; })paragraphEnumeratorForCharRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 styleProvider:(id)arg2;
+- (struct TSWPParagraphEnumerator { id x1; id x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; bool x7; })paragraphEnumeratorAtCharIndex:(unsigned int)arg1 styleProvider:(id)arg2;
+- (struct TSWPParagraphEnumerator { id x1; id x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; bool x7; })paragraphEnumeratorAtParIndex:(unsigned int)arg1 styleProvider:(id)arg2;
+- (struct TSWPParagraphEnumerator { id x1; id x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; bool x7; })paragraphEnumeratorForCharRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 styleProvider:(id)arg2;
+- (struct TSWPParagraphEnumerator { id x1; id x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; bool x7; })paragraphEnumeratorForCharRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 styleProvider:(id)arg2 requireHidden:(BOOL)arg3;
 - (void)paragraphFlags:(unsigned short*)arg1 andLevel:(unsigned int*)arg2 atCharIndex:(unsigned int)arg3;
 - (unsigned short)paragraphFlagsAtCharIndex:(unsigned int)arg1;
 - (BOOL)paragraphHasListLabelAtCharIndex:(unsigned int)arg1;
@@ -349,13 +349,13 @@
 - (id)placeholderSmartFieldsIntersectingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)plainTextStringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 convertTextualAttachments:(BOOL)arg2 includeChildTextStorages:(BOOL)arg3 forExport:(BOOL)arg4 withLayoutParent:(id)arg5;
 - (id)previousChangeFromCharIndex:(unsigned int)arg1 beforeChange:(id)arg2 changeRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (unsigned int)previousCharacterIndex:(unsigned int)arg1 forDelete:(BOOL)arg2;
 - (unsigned int)previousCharacterIndex:(unsigned int)arg1;
+- (unsigned int)previousCharacterIndex:(unsigned int)arg1 forDelete:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeByExpandingToIncludePartialWords:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeByExtendingRangeToLineBreak:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeByExtendingRangeToWhitespace:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 skipVisibleDeleted:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeByExtendingRangeToWhitespace:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeByExtendingRangeToWhitespace:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 skipVisibleDeleted:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeByTrimmingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBlock:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 includingBreak:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeForChange:(id)arg1;
@@ -432,8 +432,8 @@
 - (void)setWPKind:(int)arg1 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg2;
 - (id)smartFieldAtCharIndex:(unsigned int)arg1 attributeKind:(int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
 - (void)smartFieldDidChange:(id)arg1;
-- (id)smartFieldsWithAttributeKind:(int)arg1 intersectingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 passingTest:(id)arg3;
 - (id)smartFieldsWithAttributeKind:(int)arg1 intersectingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)smartFieldsWithAttributeKind:(int)arg1 intersectingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 passingTest:(id)arg3;
 - (id)snapshotRubyStateInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)splitSmartFieldAtCharIndex:(unsigned int)arg1 lengthToInsert:(unsigned int)arg2 attributeKind:(int)arg3 dolcContext:(id)arg4 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg5;
 - (void)splitSmartFieldAtCharIndex:(unsigned int)arg1 lengthToInsert:(unsigned int)arg2 dolcContext:(id)arg3 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg4;
@@ -441,8 +441,8 @@
 - (id)storageByApplyingCustomFormat:(struct { unsigned int x1; struct { /* ? */ } *x2; })arg1;
 - (unsigned int)storageLength;
 - (id)string;
-- (id)stringEquivalentFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withLayoutParent:(id)arg2;
 - (id)stringEquivalentFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)stringEquivalentFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withLayoutParent:(id)arg2;
 - (id)stringForStatisticsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)stringValue;
 - (id)stringWithFormulaDetokenizedText;
@@ -458,8 +458,8 @@
 - (BOOL)supportsListStyles;
 - (BOOL)supportsSectionCopying;
 - (BOOL)supportsSections;
-- (void)takeText:(id)arg1 andSetLanguage:(id)arg2;
 - (void)takeText:(id)arg1;
+- (void)takeText:(id)arg1 andSetLanguage:(id)arg2;
 - (BOOL)textIsVertical;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })textRangeForListAtCharIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })textRangeForListsInCharRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -485,14 +485,14 @@
 - (void)unstashBroadcaster;
 - (void)uppercaseWithUndoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg1 locale:(id)arg2;
 - (id)uuidPathPrefixComponentsProvider;
-- (id)valueForBIUProperties:(id)arg1 selection:(id)arg2 insertionStyle:(id)arg3;
 - (id)valueForBIUProperties:(id)arg1;
+- (id)valueForBIUProperties:(id)arg1 selection:(id)arg2 insertionStyle:(id)arg3;
 - (id)valueForProperty:(int)arg1 atCharIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
 - (id)visibleRangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })whiteSpaceRangeAtCharIndex:(unsigned int)arg1 includingBreaks:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })whiteSpaceRangeAtCharIndex:(unsigned int)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })whiteSpaceRangeAtCharIndex:(unsigned int)arg1 includingBreaks:(BOOL)arg2;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })wordAtCharIndex:(unsigned int)arg1 includePreviousWord:(BOOL)arg2;

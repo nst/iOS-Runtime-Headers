@@ -5,13 +5,13 @@
 @class NSError, NSString;
 
 @interface BRCDesiredVersion : BRCVersion <PQLBindable> {
+    NSError *_downloadError;
     union { 
         unsigned int value; 
         struct { 
             unsigned int isFault : 1; 
             unsigned int startDownload : 1; 
         } ; 
-    NSError *_downloadError;
     } _flags;
     NSString *_serverName;
 }

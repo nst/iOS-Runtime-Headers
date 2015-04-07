@@ -5,6 +5,9 @@
 @class BodyFixedDetectorParameters, InjectionParameters, MotionTruthParameters, MultiphoneDbmParameters, PdrParameters, PedometryCompassMotionParameters, WifiParameters;
 
 @interface LocalizerParameters : PBCodable <NSCopying> {
+    int _bilinearWifi;
+    BodyFixedDetectorParameters *_bodyFixed;
+    float _confidenceFactor;
     struct { 
         unsigned int notifyIntervalNanos : 1; 
         unsigned int bilinearWifi : 1; 
@@ -14,9 +17,6 @@
         unsigned int motionPdrUnmodelledHeadingVariancePerSecond : 1; 
         unsigned int numParticles : 1; 
         unsigned int time2dMotionVariancePerSecond : 1; 
-    int _bilinearWifi;
-    BodyFixedDetectorParameters *_bodyFixed;
-    float _confidenceFactor;
     } _has;
     InjectionParameters *_injection;
     int _localizerType;

@@ -13,7 +13,11 @@
     BOOL _bypassStore;
     unsigned long long _bytesRemaining;
     unsigned int _completedAssetParts;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     NSString *_dataclass;
     float _downloadProgress;
     NSError *_error;
@@ -30,7 +34,11 @@
     NSString *_localPath;
     NSString *_prettyName;
     unsigned int _priority;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
     BOOL _readyForStore;
     ATStoreInfo *_storeInfo;
     long long _storePID;

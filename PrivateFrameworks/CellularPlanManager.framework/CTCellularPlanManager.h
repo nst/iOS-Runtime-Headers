@@ -37,8 +37,8 @@
 - (void)openInternalUrlId:(int)arg1;
 - (void)plansForRenewalWithCompletion:(id)arg1;
 - (void)plansForRenewalWithProgress:(id)arg1 andCompletion:(id)arg2;
-- (void)plansWithCompletion:(id)arg1 latitude:(id)arg2 longitude:(id)arg3;
 - (void)plansWithCompletion:(id)arg1;
+- (void)plansWithCompletion:(id)arg1 latitude:(id)arg2 longitude:(id)arg3;
 - (void)plansWithProgress:(id)arg1 andCompletion:(id)arg2;
 - (void)setActivePlan:(id)arg1 completion:(id)arg2;
 - (void)setIMEIPrefix:(id)arg1;

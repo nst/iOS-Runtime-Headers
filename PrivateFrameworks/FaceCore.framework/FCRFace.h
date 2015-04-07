@@ -5,76 +5,76 @@
 @class NSData, NSDictionary;
 
 @interface FCRFace : NSObject {
-    struct { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } center; 
-        struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } bounds; 
-    struct { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } center; 
-        struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } bounds; 
-    struct { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } center; 
-        struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } bounds; 
-    struct { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } center; 
-        struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } bounds; 
     NSDictionary *additionalInfo;
     NSDictionary *expressionFeatures;
+    struct { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } center; 
+        struct CGRect { 
+            struct CGPoint { 
+                float x; 
+                float y; 
+            } origin; 
+            struct CGSize { 
+                float width; 
+                float height; 
+            } size; 
+        } bounds; 
     } face;
     float faceAngle;
     NSDictionary *faceLandmarkPoints;
     float faceSize;
     int faceType;
     NSData *faceprint;
+    struct { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } center; 
+        struct CGRect { 
+            struct CGPoint { 
+                float x; 
+                float y; 
+            } origin; 
+            struct CGSize { 
+                float width; 
+                float height; 
+            } size; 
+        } bounds; 
     } leftEye;
+    struct { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } center; 
+        struct CGRect { 
+            struct CGPoint { 
+                float x; 
+                float y; 
+            } origin; 
+            struct CGSize { 
+                float width; 
+                float height; 
+            } size; 
+        } bounds; 
     } mouth;
+    struct { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } center; 
+        struct CGRect { 
+            struct CGPoint { 
+                float x; 
+                float y; 
+            } origin; 
+            struct CGSize { 
+                float width; 
+                float height; 
+            } size; 
+        } bounds; 
     } rightEye;
     unsigned int trackDuration;
     int trackID;

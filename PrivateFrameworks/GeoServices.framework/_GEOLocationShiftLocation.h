@@ -9,14 +9,26 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface _GEOLocationShiftLocation : NSObject {
+    double _accuracy;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _completionHandler;
+
     struct { 
         double latitude; 
         double longitude; 
-    double _accuracy;
-    id _completionHandler;
     } _coordinate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _errorHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _mustGoToNetworkCallback;
+
     NSObject<OS_dispatch_queue> *_queue;
     struct __CFRunLoop { } *_runLoop;
 }

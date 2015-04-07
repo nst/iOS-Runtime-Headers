@@ -5,13 +5,13 @@
 @class UIColor, UIImageView, UINavigationBar, UIView, _UIBackdropView, _UINavigationControllerPalette;
 
 @interface _UINavigationPaletteBackground : UIView <_UIBackdropViewGraphicsQualityChangeDelegate> {
+    _UIBackdropView *_adaptiveBackdrop;
+    UINavigationBar *_bar;
+    UIColor *_barTintColor;
     struct { 
         unsigned int barTranslucence : 3; 
         unsigned int barStyle : 3; 
         unsigned int paletteWantsAdaptiveBackdrop : 1; 
-    _UIBackdropView *_adaptiveBackdrop;
-    UINavigationBar *_bar;
-    UIColor *_barTintColor;
     } _navbarFlags;
     _UINavigationControllerPalette *_palette;
     UIImageView *_shadowView;

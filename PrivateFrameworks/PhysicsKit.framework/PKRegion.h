@@ -6,25 +6,31 @@
    See Warning(s) below.
  */
 
-@interface PKRegion : NSObject <NSCopying, NSCoding> {
+@interface PKRegion : NSObject <NSCoding, NSCopying> {
+
+  /* Error parsing encoded ivar type info: {vec4="v"} */
     struct vec4 { 
         /* Warning: Unrecognized filer type: '}' using 'void*' */ void*v; 
-    struct shared_ptr<PKCPathHolder> { 
-        struct PKCPathHolder {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct vec4 { 
-        /* Warning: Unrecognized filer type: '}' using 'void*' */ void*v; 
-    struct shared_ptr<PKCPathHolder> { 
-        struct PKCPathHolder {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    } _halfExtent2;
     } _halfExtent;
-    } _path2;
+
+
+  /* Error parsing encoded ivar type info: {vec4="v"} */
+    struct vec4 { 
+        /* Warning: Unrecognized filer type: '}' using 'void*' */ void*v; 
+    } _halfExtent2;
+
+    bool _isExclusive;
+    struct shared_ptr<PKCPathHolder> { 
+        struct PKCPathHolder {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _path;
+    struct shared_ptr<PKCPathHolder> { 
+        struct PKCPathHolder {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _path2;
     int _regionOp;
-    int _shape2;
     int _shape;
-    bool_isExclusive;
+    int _shape2;
 }
 
 @property(readonly) struct CGPath { }* path;

@@ -43,8 +43,8 @@
 - (void)encodeInt:(int)arg1 forKey:(id)arg2;
 - (void)encodeInteger:(int)arg1 forKey:(id)arg2;
 - (void)encodeInvocation:(id)arg1;
-- (void)encodeObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1;
+- (void)encodeObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
 - (void)encodeXPCObject:(id)arg1 forKey:(id)arg2;
 - (void)finalize;

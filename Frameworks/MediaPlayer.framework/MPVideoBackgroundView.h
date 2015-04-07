@@ -18,7 +18,11 @@
     UIImageView *_iconView;
     UIView *_imageView;
     int _interfaceOrientation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _layoutSubviewsPostflightHandler;
+
     BOOL _showDestinationPlaceholder;
 }
 

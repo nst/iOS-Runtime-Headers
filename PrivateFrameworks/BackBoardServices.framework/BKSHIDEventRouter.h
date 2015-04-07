@@ -28,8 +28,8 @@
 - (unsigned int)hash;
 - (id)hidEventDescriptors;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDestination:(int)arg1 hidEventDescriptors:(id)arg2;
 - (id)initWithDestination:(int)arg1;
+- (id)initWithDestination:(int)arg1 hidEventDescriptors:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (void)removeHIDEventDescriptors:(id)arg1;
 - (BOOL)specifiesDescriptor:(id)arg1;

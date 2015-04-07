@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface UITableViewDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, NSCoding> {
+@interface UITableViewDataSource : NSObject <NSCoding, UITableViewDataSource, UITableViewDelegate> {
     NSArray *_sections;
 }
 

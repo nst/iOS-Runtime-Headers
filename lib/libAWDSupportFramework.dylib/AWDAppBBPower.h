@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface AWDAppBBPower : PBCodable <NSCopying> {
+    NSString *_bundleName;
     struct { 
         unsigned int powerMicroWatt : 1; 
         unsigned int rAT : 1; 
-    NSString *_bundleName;
     } _has;
     unsigned int _powerMicroWatt;
     int _rAT;

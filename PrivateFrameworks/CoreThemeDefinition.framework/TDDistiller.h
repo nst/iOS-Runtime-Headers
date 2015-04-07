@@ -15,12 +15,20 @@
     NSThread *_callbackThread;
     BOOL _cancelled;
     NSArray *_changedProductions;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     BOOL _finished;
     BOOL _incremental;
     TDLogger *_logger;
     NSArray *_mainThreadPerformRunLoopModes;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _oldCompletionHandler;
+
     BOOL _successful;
     CUIMutableCommonAssetStorage *assetStore;
     CoreThemeDocument *document;
@@ -85,10 +93,10 @@
 - (BOOL)distillZeroCodeArtworkInfoOfType:(int)arg1;
 - (id)documentPath;
 - (void)finishDistillationWithSuccess:(BOOL)arg1;
-- (id)initWithDocument:(id)arg1 outputPath:(id)arg2 attemptIncremental:(BOOL)arg3 versionString:(id)arg4;
-- (id)initWithDocument:(id)arg1 outputPath:(id)arg2 attemptIncremental:(BOOL)arg3;
-- (id)initWithDocument:(id)arg1 outputPath:(id)arg2 versionString:(id)arg3;
 - (id)initWithDocument:(id)arg1 outputPath:(id)arg2;
+- (id)initWithDocument:(id)arg1 outputPath:(id)arg2 attemptIncremental:(BOOL)arg3;
+- (id)initWithDocument:(id)arg1 outputPath:(id)arg2 attemptIncremental:(BOOL)arg3 versionString:(id)arg4;
+- (id)initWithDocument:(id)arg1 outputPath:(id)arg2 versionString:(id)arg3;
 - (BOOL)isCancelled;
 - (BOOL)isFinished;
 - (BOOL)isIncremental;

@@ -5,9 +5,9 @@
 @class GEOPlaceSearchResponse, NSMutableArray;
 
 @interface GEOETAResponse : PBCodable <NSCopying> {
+    NSMutableArray *_etaResults;
     struct { 
         unsigned int status : 1; 
-    NSMutableArray *_etaResults;
     } _has;
     GEOPlaceSearchResponse *_originPlaceSearchResponse;
     struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_problemDetails;

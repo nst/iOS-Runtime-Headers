@@ -4,7 +4,7 @@
 
 @class <SFActivityAdvertiserDelegate>, <SFActivityAdvertiserProtocol>, NSString, SFInternalAdvertisement;
 
-@interface SFActivityAdvertiser : NSObject <SFCompanionXPCManagerObserver, SFActivityAdvertiserClient> {
+@interface SFActivityAdvertiser : NSObject <SFActivityAdvertiserClient, SFCompanionXPCManagerObserver> {
     <SFActivityAdvertiserProtocol> *_connectionProxy;
     SFInternalAdvertisement *_currentAdvertisement;
     <SFActivityAdvertiserDelegate> *_delegate;

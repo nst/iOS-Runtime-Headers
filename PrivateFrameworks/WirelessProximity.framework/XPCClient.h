@@ -31,9 +31,9 @@
 - (id)delegate;
 - (id)delegateLock;
 - (void)handleEvent:(id)arg1;
-- (id)initWithDelegate:(id)arg1 type:(id)arg2 queue:(id)arg3 machName:(id)arg4 options:(id)arg5;
-- (id)initWithDelegate:(id)arg1 type:(id)arg2 queue:(id)arg3 machName:(id)arg4;
 - (id)initWithDelegate:(id)arg1 type:(id)arg2 queue:(id)arg3;
+- (id)initWithDelegate:(id)arg1 type:(id)arg2 queue:(id)arg3 machName:(id)arg4;
+- (id)initWithDelegate:(id)arg1 type:(id)arg2 queue:(id)arg3 machName:(id)arg4 options:(id)arg5;
 - (id)machName;
 - (id)options;
 - (void)postEvent:(id)arg1;

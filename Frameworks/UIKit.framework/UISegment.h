@@ -5,9 +5,19 @@
 @class NSArray, NSString, UIView, _UIBadgeView, _UISegmentedControlAppearanceStorage;
 
 @interface UISegment : UIImageView {
+    _UISegmentedControlAppearanceStorage *_appearanceStorage;
+    NSString *_badgeValue;
+    _UIBadgeView *_badgeView;
+    int _barStyle;
     struct CGSize { 
         float width; 
         float height; 
+    } _contentOffset;
+    UIView *_info;
+    NSArray *_infoConstraints;
+    id _objectValue;
+    float _requestedScaleFactor;
+    unsigned int _rightSegmentState;
     struct { 
         unsigned int style : 3; 
         unsigned int size : 2; 
@@ -20,16 +30,6 @@
         unsigned int isMomentary : 1; 
         unsigned int wasSelected : 1; 
         unsigned int needsBackgroundAndContentViewUpdate : 1; 
-    _UISegmentedControlAppearanceStorage *_appearanceStorage;
-    NSString *_badgeValue;
-    _UIBadgeView *_badgeView;
-    int _barStyle;
-    } _contentOffset;
-    UIView *_info;
-    NSArray *_infoConstraints;
-    id _objectValue;
-    float _requestedScaleFactor;
-    unsigned int _rightSegmentState;
     } _segmentFlags;
     float _width;
 }

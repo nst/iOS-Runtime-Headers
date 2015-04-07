@@ -5,6 +5,8 @@
 @class <TSCH3DGLBindable>;
 
 @interface TSCH3DFBOHandle : TSCH3DGLHandle {
+    <TSCH3DGLBindable> *mColorbuffer;
+    <TSCH3DGLBindable> *mDepthbuffer;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,8 +18,6 @@
             int g; 
             int t; 
         } ; 
-    <TSCH3DGLBindable> *mColorbuffer;
-    <TSCH3DGLBindable> *mDepthbuffer;
     } mSize;
 }
 

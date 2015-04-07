@@ -4,7 +4,7 @@
 
 @class <NNMKSyncProviderDelegate>, BLTPingSubscriber, NNMKAccountsSyncServiceServer, NNMKDeviceSyncRegistry, NNMKFetchesSyncServiceServer, NNMKMessageContentSyncServiceServer, NNMKMessagesSyncServiceServer, NNMKPairedDeviceInfo, NSDate, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSURL, PSYSyncCoordinator;
 
-@interface NNMKSyncProvider : NNMKSyncEndpoint <NNMKMessagesSyncServiceServerDelegate, NNMKMessageContentSyncServiceServerDelegate, NNMKAccountsSyncServiceServerDelegate, NNMKFetchesSyncServiceServerDelegate, PSYSyncCoordinatorDelegate> {
+@interface NNMKSyncProvider : NNMKSyncEndpoint <NNMKAccountsSyncServiceServerDelegate, NNMKFetchesSyncServiceServerDelegate, NNMKMessageContentSyncServiceServerDelegate, NNMKMessagesSyncServiceServerDelegate, PSYSyncCoordinatorDelegate> {
     NNMKAccountsSyncServiceServer *_accountsSyncService;
     NNMKMessageContentSyncServiceServer *_contentSyncService;
     <NNMKSyncProviderDelegate> *_delegate;

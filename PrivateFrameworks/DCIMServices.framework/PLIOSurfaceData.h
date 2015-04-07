@@ -13,8 +13,8 @@
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithIOSurface:(void*)arg1 length:(unsigned int)arg2;
 - (id)initWithIOSurface:(void*)arg1;
+- (id)initWithIOSurface:(void*)arg1 length:(unsigned int)arg2;
 - (unsigned int)length;
 
 @end

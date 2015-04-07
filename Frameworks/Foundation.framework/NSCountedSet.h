@@ -24,8 +24,8 @@
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
-- (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithSet:(id)arg1;
+- (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
 - (id)member:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;

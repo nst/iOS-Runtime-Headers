@@ -5,6 +5,20 @@
 @class NSArray, TSDGLShader, TSDGLTextureInfo;
 
 @interface TSDGLEdgeDistanceFieldTraceEffect : NSObject {
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _bufferSize;
+    BOOL _canDraw;
+    BOOL _didTeardown;
+    TSDGLTextureInfo *_edgeDistanceFieldTextureInfo;
+    BOOL _isValid;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _randomStrokePoint;
+    TSDGLShader *_shader;
+    NSArray *_strokeLineSegment;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -12,20 +26,6 @@
         float d; 
         float tx; 
         float ty; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _bufferSize;
-    BOOL _canDraw;
-    BOOL _didTeardown;
-    TSDGLTextureInfo *_edgeDistanceFieldTextureInfo;
-    BOOL _isValid;
-    } _randomStrokePoint;
-    TSDGLShader *_shader;
-    NSArray *_strokeLineSegment;
     } _textureEdgeInsetsAdjustmentMatrix;
     TSDGLTextureInfo *_traceTextureInfo;
     int _traceTextureMaxValue;

@@ -5,14 +5,14 @@
 @class <ABPersonTabsLayoutManager>, NSString, UIView;
 
 @interface ABPersonOverlayingContainerView : UIScrollView <ABPersonTabsScrollView> {
+    UIView *_abContentView;
+    UIView *_backgroundView;
+    float _minimumBottomInset;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIView *_abContentView;
-    UIView *_backgroundView;
-    float _minimumBottomInset;
     } _savedContentInset;
     <ABPersonTabsLayoutManager> *_tabsLayoutManager;
 }

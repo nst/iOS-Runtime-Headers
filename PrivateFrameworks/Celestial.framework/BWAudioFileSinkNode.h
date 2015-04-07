@@ -5,13 +5,13 @@
 @class FigCaptureAudioFileRecordingSettings, FigStateMachine, NSObject<OS_dispatch_queue>;
 
 @interface BWAudioFileSinkNode : BWFileSinkNode {
+    unsigned long long _adjustedMinFreeDiskSpace;
+    struct OpaqueCMByteStream { } *_byteStream;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    unsigned long long _adjustedMinFreeDiskSpace;
-    struct OpaqueCMByteStream { } *_byteStream;
     } _curFileDuration;
     unsigned long long _curFileSize;
     BOOL _didBeginFileWriterSession;

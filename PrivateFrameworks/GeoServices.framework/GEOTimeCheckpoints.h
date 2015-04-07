@@ -7,11 +7,11 @@
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _distToNextCheckpoints;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _distToNextCheckpoints;
     } _timeToNextCheckpoints;
 }
 

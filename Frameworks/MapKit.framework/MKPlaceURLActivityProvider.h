@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface MKPlaceURLActivityProvider : MKPlaceActivityProvider <MKActivityItemSource, MKActivityItemSocialSource> {
+@interface MKPlaceURLActivityProvider : MKPlaceActivityProvider <MKActivityItemSocialSource, MKActivityItemSource> {
 }
 
 @property(copy,readonly) NSString * debugDescription;

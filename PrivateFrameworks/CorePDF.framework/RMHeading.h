@@ -3,11 +3,11 @@
  */
 
 @interface RMHeading : NSObject {
+    struct CGPDFNode { } *_node;
+    struct CGPDFPage { } *_page;
     struct { 
         int location; 
         int length; 
-    struct CGPDFNode { } *_node;
-    struct CGPDFPage { } *_page;
     } _textRange;
 }
 

@@ -16,8 +16,8 @@
 @property(readonly) NSString * traceDirectory;
 
 + (void)addBuffer:(id)arg1;
-+ (long)addBufferWithTag:(id)arg1 size:(long)arg2 synchronized:(BOOL)arg3;
 + (long)addBufferWithTag:(id)arg1 size:(long)arg2;
++ (long)addBufferWithTag:(id)arg1 size:(long)arg2 synchronized:(BOOL)arg3;
 + (id)bufferByID:(long)arg1;
 + (void)closeBufferWithID:(long)arg1;
 + (void)flushAllBuffers;

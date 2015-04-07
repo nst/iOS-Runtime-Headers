@@ -3,9 +3,9 @@
  */
 
 @interface PUProtoStartPasscodeAction : PBCodable <NSCopying> {
+    unsigned int _actionID;
     struct { 
         unsigned int passcodeType : 1; 
-    unsigned int _actionID;
     } _has;
     unsigned int _passcodeType;
 }

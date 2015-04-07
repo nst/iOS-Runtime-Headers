@@ -5,15 +5,15 @@
 @class <BLAlertViewControllerDelegate>, NSString, UIActivityIndicatorView, UIButton, UILabel, UIProgressView;
 
 @interface BLAlertViewController : UIViewController {
-    struct CGSize { 
-        float width; 
-        float height; 
     UIActivityIndicatorView *_activityIndicator;
     UIButton *_cancelButton;
     NSString *_cancelButtonTitle;
     <BLAlertViewControllerDelegate> *_delegate;
     UIButton *_firstOtherButton;
     NSString *_firstOtherButtonTitle;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _formSize;
     BOOL _hasActivity;
     NSString *_message;

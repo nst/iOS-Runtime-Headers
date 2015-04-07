@@ -4,15 +4,15 @@
 
 @class TNPageContentLayout, TNPageController, TNSheet, TSWPPadding;
 
-@interface TNPageLayout : TSWPPageLayout <TSWPLayoutParent, TSWPColumnMetrics, TSWPStorageObserver> {
-    struct { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
+@interface TNPageLayout : TSWPPageLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver> {
     TNPageContentLayout *mContentLayout;
     BOOL mIsChildLayoutsValid;
     BOOL mIsPlaceholder;
     TNPageController *mPageController;
+    struct { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
     } mPageCoordinate;
     TNSheet *mSheet;
 }

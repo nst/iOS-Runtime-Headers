@@ -9,13 +9,13 @@
 @class MPUEmphasizedText, MPUItemOfferButton, MPUSlantedTextPlaceholderArtworkView, MusicMediaOfferButtonState, MusicNowPlayingIndicatorView, NSString, UIImage, UIImageView, UILabel;
 
 @interface MusicMediaTableViewCellContentView : MusicTableViewCellContentView <SKUIItemOfferButtonDelegate> {
+    UIImage *_artworkImage;
+    MPUSlantedTextPlaceholderArtworkView *_artworkView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIImage *_artworkImage;
-    MPUSlantedTextPlaceholderArtworkView *_artworkView;
     } _contentBoundsEdgeInsets;
     MPUEmphasizedText *_detailEmphasizedText;
     UILabel *_detailLabel;
@@ -26,7 +26,11 @@
     MPUItemOfferButton *_itemOfferButton;
     BOOL _needsContentReload;
     MusicNowPlayingIndicatorView *_nowPlayingIndicatorView;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _offerButtonActionHandler;
+
     MusicMediaOfferButtonState *_offerButtonState;
     NSString *_placeholderSubtitleText;
     NSString *_placeholderTitleText;
@@ -111,32 +115,32 @@
 - (id)rightAccessoryHighlightedImage;
 - (id)rightAccessoryImage;
 - (id)rightAccessoryImageView;
-- (void)setArtworkImage:(id)arg1 animated:(BOOL)arg2;
 - (void)setArtworkImage:(id)arg1;
+- (void)setArtworkImage:(id)arg1 animated:(BOOL)arg2;
 - (void)setArtworkView:(id)arg1;
 - (void)setContentBoundsEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDetailEmphasizedText:(id)arg1;
 - (void)setDetailLabel:(id)arg1;
 - (void)setDisplayAsDisabled:(BOOL)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setExplicitTrack:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setItemOfferButton:(id)arg1;
 - (void)setNeedsContentReload;
 - (void)setNowPlayingIndicatorView:(id)arg1;
 - (void)setOfferButtonActionHandler:(id)arg1;
-- (void)setOfferButtonState:(id)arg1 animated:(BOOL)arg2;
 - (void)setOfferButtonState:(id)arg1;
+- (void)setOfferButtonState:(id)arg1 animated:(BOOL)arg2;
 - (void)setPlaceholderSubtitleText:(id)arg1;
 - (void)setPlaceholderTitleText:(id)arg1;
 - (void)setPlaybackState:(int)arg1;
 - (void)setRightAccessoryHighlightedImage:(id)arg1;
 - (void)setRightAccessoryImage:(id)arg1;
 - (void)setRightAccessoryImageView:(id)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsArtworkImage:(BOOL)arg1;
 - (void)setSubtitleEmphasizedText:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;

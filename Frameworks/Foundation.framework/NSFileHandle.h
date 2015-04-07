@@ -35,10 +35,10 @@
 - (BOOL)hk_readValue:(void*)arg1 ofSize:(unsigned long)arg2;
 - (BOOL)hk_writeValue:(const void*)arg1 size:(unsigned long)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
 - (id)initWithFileDescriptor:(int)arg1;
-- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
+- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
+- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithURL:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (void)ml_lock;
 - (void)ml_unlock;

@@ -4,7 +4,7 @@
 
 @class NSDate, NSDateFormatter, NSString, UIButton, UIDatePicker, UITableViewCell, UITextField;
 
-@interface PKPaymentCardManualEntryViewController : PKPaymentCardDetailsViewController <UITextFieldDelegate, CRCameraReaderDelegate> {
+@interface PKPaymentCardManualEntryViewController : PKPaymentCardDetailsViewController <CRCameraReaderDelegate, UITextFieldDelegate> {
     UITableViewCell *_cardHolderNameCell;
     UITableViewCell *_cardNumberCell;
     UITextField *_cardNumberField;

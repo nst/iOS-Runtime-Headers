@@ -16,8 +16,8 @@
 @property(readonly) BOOL sourceIsManaged;
 @property(readonly) NSString * typeIdentifier;
 
-+ (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceIsManaged:(BOOL)arg4;
 + (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3;
++ (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceIsManaged:(BOOL)arg4;
 
 - (id)MIMEType;
 - (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;

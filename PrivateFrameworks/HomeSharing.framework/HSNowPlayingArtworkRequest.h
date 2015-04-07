@@ -3,10 +3,10 @@
  */
 
 @interface HSNowPlayingArtworkRequest : HSRequest {
+    unsigned int _interfaceID;
     struct CGSize { 
         float width; 
         float height; 
-    unsigned int _interfaceID;
     } _maximumSize;
     unsigned int _playQueueIndex;
 }

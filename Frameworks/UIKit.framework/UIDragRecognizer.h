@@ -5,9 +5,6 @@
 @class UIDelayedAction, UITouch;
 
 @interface UIDragRecognizer : UIGestureRecognizer {
-    struct CGPoint { 
-        float x; 
-        float y; 
     double _angle;
     BOOL _canBeginDrag;
     SEL _checkCanBeginDrag;
@@ -16,6 +13,9 @@
     double _quietPeriod;
     BOOL _restrictsToAngle;
     double _startAngle;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _startPosition;
     UIDelayedAction *_tooSlow;
     UITouch *_touch;

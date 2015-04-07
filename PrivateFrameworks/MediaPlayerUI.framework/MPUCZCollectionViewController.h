@@ -5,13 +5,13 @@
 @class <MPUCZCollectionViewControllerDelegate>, MPUCZCollectionView, MPUDataSource, NSString, UICollectionView;
 
 @interface MPUCZCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
     MPUCZCollectionView *_collectionView;
     int _coverCountPerColumn;
     MPUDataSource *_dataSource;
     <MPUCZCollectionViewControllerDelegate> *_delegate;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _itemSize;
 }
 
@@ -29,11 +29,11 @@
 - (void)_beginPreloadingAlbums;
 - (id)_collectionViewLayoutForColumnCount:(unsigned int)arg1;
 - (void)_dataSourceDidInvalidateNotification:(id)arg1;
+- (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (id)collectionView;
 - (int)coverCountPerColumn;
 - (id)dataSource;
 - (void)dealloc;

@@ -20,7 +20,7 @@
 - (int)authenticateConnection:(id)arg1 withResult:(id)arg2;
 - (id)init;
 - (id)initWithCredentials:(unsigned int)arg1;
-- (id)initWithEntitlement:(id)arg1 additionalCredentials:(unsigned int)arg2;
 - (id)initWithEntitlement:(id)arg1;
+- (id)initWithEntitlement:(id)arg1 additionalCredentials:(unsigned int)arg2;
 
 @end

@@ -4,7 +4,7 @@
 
 @class ATMessageParser, ATSignatureProvider, ATSocket, NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
-@interface ATConcreteMessageLink : NSObject <ATSocketDelegate, ATMessageLink> {
+@interface ATConcreteMessageLink : NSObject <ATMessageLink, ATSocketDelegate> {
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSMutableDictionary *_completionHandlersByRequestID;
     NSMutableDictionary *_completionHandlersByResponseID;
@@ -92,8 +92,8 @@
 - (void)setObservers:(id)arg1;
 - (void)setSignatureProvider:(id)arg1;
 - (id)signatureProvider;
-- (void)socket:(id)arg1 hasDataAvailable:(const char *)arg2 length:(long)arg3;
 - (id)socket;
+- (void)socket:(id)arg1 hasDataAvailable:(const char *)arg2 length:(long)arg3;
 - (void)socketDidClose:(id)arg1;
 
 @end

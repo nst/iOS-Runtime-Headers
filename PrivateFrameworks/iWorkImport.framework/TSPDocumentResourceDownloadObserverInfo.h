@@ -9,7 +9,11 @@
 @class TSPData;
 
 @interface TSPDocumentResourceDownloadObserverInfo : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     TSPData *_data;
     id _downloadObserver;
     BOOL _isInternalObserver;

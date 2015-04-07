@@ -9,7 +9,11 @@
 @class NSObject<OS_xpc_object>;
 
 @interface XPCRequest : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSObject<OS_xpc_object> *_message;
     NSObject<OS_xpc_object> *_reply;
     unsigned long _sequence;

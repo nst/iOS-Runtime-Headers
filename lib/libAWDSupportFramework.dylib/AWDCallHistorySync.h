@@ -3,11 +3,11 @@
  */
 
 @interface AWDCallHistorySync : PBCodable <NSCopying> {
+    unsigned int _downloadRecordCount;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int downloadRecordCount : 1; 
         unsigned int uploadRecordCount : 1; 
-    unsigned int _downloadRecordCount;
     } _has;
     unsigned long long _timestamp;
     unsigned int _uploadRecordCount;

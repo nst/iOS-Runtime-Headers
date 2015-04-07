@@ -4,7 +4,7 @@
 
 @class <RMSServiceProviderDelegate>, NSMutableDictionary, NSNetServiceBrowser, NSString;
 
-@interface RMSBonjourServiceProvider : NSObject <RMSServiceProvider, NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
+@interface RMSBonjourServiceProvider : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate, RMSServiceProvider> {
     NSMutableDictionary *_cache;
     <RMSServiceProviderDelegate> *_delegate;
     NSNetServiceBrowser *_netServiceBrowser;

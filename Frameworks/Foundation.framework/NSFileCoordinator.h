@@ -26,8 +26,8 @@
 + (void)__itemAtURL:(id)arg1 didReconnectWithPurposeID:(id)arg2;
 + (void)__itemAtURL:(id)arg1 didResolveConflictVersionWithClientID:(id)arg2 name:(id)arg3 purposeID:(id)arg4;
 + (void)_accessProcessIdentifiersUsingBlock:(id)arg1;
-+ (void)_addFileProvider:(id)arg1 completionHandler:(id)arg2;
 + (void)_addFileProvider:(id)arg1;
++ (void)_addFileProvider:(id)arg1 completionHandler:(id)arg2;
 + (void)_addProcessIdentifier:(int)arg1 forID:(id)arg2;
 + (id)_canonicalURLForURL:(id)arg1;
 + (id)_currentFileCoordinator;

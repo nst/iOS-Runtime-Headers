@@ -3,12 +3,12 @@
  */
 
 @interface GQDImageBinary : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     struct __CFURL { } *mAbsoluteUrl;
     struct __CFString { } *mPath;
     int mResourceType;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mSize;
 }
 

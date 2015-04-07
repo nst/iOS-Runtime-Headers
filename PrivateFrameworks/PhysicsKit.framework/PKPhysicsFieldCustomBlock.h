@@ -7,8 +7,16 @@
  */
 
 @interface PKPhysicsFieldCustomBlock : PKPhysicsField {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _batchBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
 }
 
 + (id)fieldWithCustomBatchBlock:(id)arg1;

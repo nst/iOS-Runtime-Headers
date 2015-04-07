@@ -5,57 +5,6 @@
 @class <UIPopoverPresentationControllerDelegate>, NSArray, NSString, UIBarButtonItem, UIColor, UIDimmingView, UIPanGestureRecognizer, UIView, UIViewController, _UIPopoverLayoutInfo, _UIPopoverView;
 
 @interface UIPopoverPresentationController : UIPresentationController <UIDimmingViewDelegate, UIGestureRecognizerDelegatePrivate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct { 
-        unsigned int isPresentingModalViewController : 1; 
-        unsigned int isPresentingActionSheet : 1; 
-        unsigned int wasIgnoringDimmingViewTouchesBeforeScrolling : 1; 
-        unsigned int isInTextEffectsWindow : 1; 
-        unsigned int isEmbeddingInView : 1; 
-        unsigned int embeddedPresentationBounces : 1; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     BOOL __centersPopoverIfSourceViewNotSet;
     float __dimmingViewTopEdgeInset;
     BOOL __shouldHideArrow;
@@ -69,6 +18,15 @@
     UIDimmingView *_dimmingView;
     UIPanGestureRecognizer *_dimmingViewGestureRecognizer;
     BOOL _dismissesOnRotation;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _embeddedTargetRect;
     BOOL _ignoresKeyboardNotifications;
     BOOL _isDismissingBecauseDimmingViewTapped;
@@ -80,9 +38,24 @@
     unsigned int _popoverArrowDirection;
     int _popoverBackgroundStyle;
     Class _popoverBackgroundViewClass;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _popoverContentSize;
+    struct { 
+        unsigned int isPresentingModalViewController : 1; 
+        unsigned int isPresentingActionSheet : 1; 
+        unsigned int wasIgnoringDimmingViewTouchesBeforeScrolling : 1; 
+        unsigned int isInTextEffectsWindow : 1; 
+        unsigned int isEmbeddingInView : 1; 
+        unsigned int embeddedPresentationBounces : 1; 
     } _popoverControllerFlags;
     int _popoverControllerStyle;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _popoverLayoutMargins;
     _UIPopoverView *_popoverView;
     _UIPopoverLayoutInfo *_preferredLayoutInfo;
@@ -96,12 +69,39 @@
     BOOL _showsTargetRect;
     unsigned int _slideTransitionCount;
     UIViewController *_slidingViewController;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _sourceRect;
     UIView *_sourceView;
     UIViewController *_splitParentController;
     id _target;
     UIBarButtonItem *_targetBarButtonItem;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _targetRectInContainerView;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _targetRectInEmbeddingView;
     unsigned int _toViewAutoResizingMask;
     BOOL _useSourceViewBoundsAsSourceRect;
@@ -270,8 +270,8 @@
 - (void)setPermittedArrowDirections:(unsigned int)arg1;
 - (void)setPopoverArrowDirection:(unsigned int)arg1;
 - (void)setPopoverBackgroundViewClass:(Class)arg1;
-- (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)setPopoverFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)setPopoverLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPreferredLayoutInfo:(id)arg1;

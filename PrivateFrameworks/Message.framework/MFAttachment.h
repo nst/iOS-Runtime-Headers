@@ -13,8 +13,16 @@
     <MFDataConsumer> *_customConsumer;
     NSString *_disposition;
     unsigned int _encodedFileSize;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchProgressBlock;
+
     BOOL _isDataAvailableLocally;
     BOOL _isUserFacing;
     unsigned int _lastProgressBytes;
@@ -82,10 +90,10 @@
 - (id)eventID;
 - (id)fetchCompletionBlock;
 - (void)fetchData;
-- (id)fetchDataSynchronously:(id*)arg1 stripPrivateMetadata:(BOOL)arg2;
 - (id)fetchDataSynchronously:(id*)arg1;
-- (id)fetchLocalData:(id*)arg1 stripPrivateMetadata:(BOOL)arg2;
+- (id)fetchDataSynchronously:(id*)arg1 stripPrivateMetadata:(BOOL)arg2;
 - (id)fetchLocalData;
+- (id)fetchLocalData:(id*)arg1 stripPrivateMetadata:(BOOL)arg2;
 - (id)fetchProgressBlock;
 - (id)fileAttributes;
 - (id)fileName;

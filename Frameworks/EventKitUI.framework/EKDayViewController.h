@@ -5,14 +5,6 @@
 @class <EKDayViewControllerDataSource>, <EKDayViewControllerDelegate>, CalendarOccurrencesCollection, EKDayView, EKDayViewWithGutters, EKEventEditViewController, EKEventGestureController, NSCalendar, NSDateComponents, NSString, ScrollSpringFactory, UIScrollView, UIView;
 
 @interface EKDayViewController : UIViewController <BlockableScrollViewDelegate, EKDayViewDataSource, EKDayViewDelegate, EKEventGestureControllerDelegate, UIScrollViewDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    unsigned int _scrollViewAnimating : 1;
-    unsigned int _hasPendingNextDate : 1;
-    unsigned int _hasPendingPreviousDate : 1;
-    unsigned int _decelerating : 1;
-    unsigned int _settingDateFromScrolling : 1;
     BOOL _adjustingForDeceleration;
     BOOL _allowsDaySwitching;
     BOOL _allowsSelection;
@@ -27,6 +19,7 @@
     <EKDayViewControllerDataSource> *_dataSource;
     double _dayEnd;
     double _dayStart;
+    unsigned int _decelerating : 1;
     ScrollSpringFactory *_decelerationSpringFactory;
     <EKDayViewControllerDelegate> *_delegate;
     BOOL _disableGestureDayChange;
@@ -36,6 +29,8 @@
     BOOL _fingerDown;
     UIView *_gestureOccurrenceSuperview;
     float _gutterWidth;
+    unsigned int _hasPendingNextDate : 1;
+    unsigned int _hasPendingPreviousDate : 1;
     UIScrollView *_horizontalScrollingView;
     BOOL _initialLoad;
     BOOL _instigatedDateChange;
@@ -44,6 +39,9 @@
     EKDayView *_nextDay;
     CalendarOccurrencesCollection *_nextDayOccurrences;
     EKDayViewWithGutters *_nextDayWithGutter;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _normalizedContentOffset;
     BOOL _notifyWhenTapOtherEventDuringDragging;
     CalendarOccurrencesCollection *_occurrences;
@@ -55,6 +53,8 @@
     CalendarOccurrencesCollection *_previousDayOccurrences;
     EKDayViewWithGutters *_previousDayWithGutter;
     BOOL _resizing;
+    unsigned int _scrollViewAnimating : 1;
+    unsigned int _settingDateFromScrolling : 1;
     BOOL _shouldAutoscrollAfterAppearance;
     BOOL _shouldAutoscrollOnNextActivation;
     BOOL _showsBanner;
@@ -113,8 +113,8 @@
 - (void)_scrollDayViewAfterAppearenceIfNeeded;
 - (void)_scrollViewDidEndDecelerating:(id)arg1 notifyParallxState:(BOOL)arg2;
 - (void)_setDayView:(id)arg1 toDate:(id)arg2;
-- (void)_setDisplayDate:(id)arg1 forRepeat:(BOOL)arg2 animate:(BOOL)arg3;
 - (void)_setDisplayDate:(id)arg1 forRepeat:(BOOL)arg2;
+- (void)_setDisplayDate:(id)arg1 forRepeat:(BOOL)arg2 animate:(BOOL)arg3;
 - (void)_setDisplayDateInternal:(id)arg1;
 - (void)_setHorizontalContentOffsetUsingSpringAnimation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setNextAndPreviousFirstVisibleSecondToCurrent;
@@ -185,8 +185,8 @@
 - (void)loadView;
 - (struct CGPoint { float x1; float x2; })normalizedContentOffset;
 - (BOOL)notifyWhenTapOtherEventDuringDragging;
-- (id)occurrenceViewForEvent:(id)arg1 includeNextAndPreviousDays:(BOOL)arg2;
 - (id)occurrenceViewForEvent:(id)arg1;
+- (id)occurrenceViewForEvent:(id)arg1 includeNextAndPreviousDays:(BOOL)arg2;
 - (id)occurrenceViewSuperviewForEventGestureController:(id)arg1;
 - (id)pendingNextDate;
 - (id)pendingPreviousDate;

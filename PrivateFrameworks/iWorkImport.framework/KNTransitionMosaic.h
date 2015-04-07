@@ -4,7 +4,7 @@
 
 @class KNMotionBlurAnimationPluginWrapper, NSMutableArray, NSString;
 
-@interface KNTransitionMosaic : KNAnimationEffect <KNTransitionAnimator, KNAnimationPluginArchiving> {
+@interface KNTransitionMosaic : KNAnimationEffect <KNAnimationPluginArchiving, KNTransitionAnimator> {
     NSMutableArray *_addedLayers;
     KNMotionBlurAnimationPluginWrapper *_motionBlurWrapper;
 }

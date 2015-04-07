@@ -5,8 +5,8 @@
 @class NSArray, NSString;
 
 @interface NSMetadataQueryResultGroup : NSObject {
-    unsigned int _private2[1];
     id _private[9];
+    unsigned int _private2[1];
     void *_reserved;
 }
 

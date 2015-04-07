@@ -20,8 +20,8 @@
 + (id)sharedContext;
 
 - (id)brushBoundsForId:(id)arg1;
-- (void)brushPath:(id)arg1 withScaling:(struct { float x1; float x2; })arg2 inElementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 into:(void*)arg4 sectionIndex:(unsigned int*)arg5 viewScale:(float)arg6;
 - (void)brushPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
+- (void)brushPath:(id)arg1 withScaling:(struct { float x1; float x2; })arg2 inElementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 into:(void*)arg4 sectionIndex:(unsigned int*)arg5 viewScale:(float)arg6;
 - (id)brushPathsForId:(id)arg1;
 - (void)brushSection:(id)arg1 sectionIndex:(unsigned int)arg2 ontoPath:(id)arg3 withScaling:(struct { float x1; float x2; })arg4 inElementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 into:(void*)arg6 viewScale:(float)arg7;
 - (id)brushTextureForId:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class NSString, PKPrinter, UINavigationController, UIPopoverController, UIPrinterBrowserViewController, UIPrinterPickerController, UIViewController, UIWindow;
 
-@interface UIPrinterPickerViewController : UIViewController <UIPrinterBrowserOwner, UINavigationControllerDelegate> {
+@interface UIPrinterPickerViewController : UIViewController <UINavigationControllerDelegate, UIPrinterBrowserOwner> {
     BOOL _animated;
     BOOL _dismissed;
     UINavigationController *_navigationController;

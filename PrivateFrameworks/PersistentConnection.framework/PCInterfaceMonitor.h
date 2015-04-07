@@ -4,7 +4,7 @@
 
 @class <PCInterfaceUsabilityMonitorProtocol>, NSMapTable, NSString;
 
-@interface PCInterfaceMonitor : NSObject <PCInterfaceUsabilityMonitorDelegate, PCInterfaceMonitorProtocol> {
+@interface PCInterfaceMonitor : NSObject <PCInterfaceMonitorProtocol, PCInterfaceUsabilityMonitorDelegate> {
     NSMapTable *_delegateMap;
     <PCInterfaceUsabilityMonitorProtocol> *_internal;
 }

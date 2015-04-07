@@ -9,7 +9,11 @@
 @class NSArray, NSMutableDictionary;
 
 @interface CKFetchSubscriptionsOperation : CKDatabaseOperation {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchSubscriptionCompletionBlock;
+
     BOOL _isFetchAllSubscriptionsOperation;
     NSMutableDictionary *_subscriptionErrors;
     NSArray *_subscriptionIDs;

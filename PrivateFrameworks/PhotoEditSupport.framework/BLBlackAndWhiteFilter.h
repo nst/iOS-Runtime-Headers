@@ -5,15 +5,6 @@
 @class BLPixelImageBuffer, CIFilter, CIImage, CIVector, NSData, NSNumber;
 
 @interface BLBlackAndWhiteFilter : CIFilter {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     CIFilter *_colorCubeFilterBW;
     CIFilter *_colorCubeFilterGrain;
     BLPixelImageBuffer *_grainImage;
@@ -31,6 +22,15 @@
     float _lastAmount;
     BOOL _lastApplyGrain;
     BOOL _lastAppySepia;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _lastDestinationRect;
     CIVector *_lastHueStrengthArray;
     float _lastNeutralGamma;

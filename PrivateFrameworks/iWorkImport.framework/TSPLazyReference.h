@@ -38,8 +38,8 @@
 - (id)init;
 - (id)initWeakReferenceWithObject:(id)arg1;
 - (id)initWithDelegate:(id)arg1 identifier:(long long)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4;
-- (id)initWithObject:(id)arg1 isWeak:(BOOL)arg2;
 - (id)initWithObject:(id)arg1;
+- (id)initWithObject:(id)arg1 isWeak:(BOOL)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLazyReference:(id)arg1;
 - (BOOL)isWeak;

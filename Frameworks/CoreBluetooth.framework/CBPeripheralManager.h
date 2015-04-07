@@ -5,6 +5,10 @@
 @class <CBPeripheralManagerDelegate>, CBPairingAgent, CBXpcConnection, NSLock, NSMapTable, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface CBPeripheralManager : NSObject <CBPairingAgentParentDelegate, CBXpcConnectionDelegate> {
+    NSMapTable *_centrals;
+    NSMutableDictionary *_characteristicIDs;
+    CBXpcConnection *_connection;
+    <CBPeripheralManagerDelegate> *_delegate;
     struct { 
         unsigned int willRestoreState : 1; 
         unsigned int didAddService : 1; 
@@ -16,10 +20,6 @@
         unsigned int isReadyToUpdate : 1; 
         unsigned int centralDidConnect : 1; 
         unsigned int centralDidUpdateConnectionParameters : 1; 
-    NSMapTable *_centrals;
-    NSMutableDictionary *_characteristicIDs;
-    CBXpcConnection *_connection;
-    <CBPeripheralManagerDelegate> *_delegate;
     } _delegateFlags;
     BOOL _isAdvertising;
     CBPairingAgent *_pairingAgent;
@@ -60,8 +60,8 @@
 - (void)handleSetAttributeValues:(id)arg1;
 - (void)handleSolicitedServicesFound:(id)arg1;
 - (void)handleStateUpdated:(id)arg1;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3;
 - (BOOL)isAdvertising;
 - (BOOL)isMsgAllowedAlways:(int)arg1;
 - (BOOL)isMsgAllowedWhenOff:(int)arg1;

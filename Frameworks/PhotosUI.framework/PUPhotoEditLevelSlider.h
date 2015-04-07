@@ -5,9 +5,6 @@
 @class NSArray, NSLayoutConstraint, NSString, PUAdjustmentsMode, UIView;
 
 @interface PUPhotoEditLevelSlider : UIView <PUPhotoEditLayoutStaticAdaptable> {
-    struct CGSize { 
-        float width; 
-        float height; 
     UIView *__sliderContentView;
     PUAdjustmentsMode *_adjustmentsMode;
     float _baseValue;
@@ -15,6 +12,9 @@
     UIView *_baseValueIndicatorView;
     NSArray *_baseValueIndicatorViewConstraints;
     NSLayoutConstraint *_baseValueIndicatorViewPositionConstraint;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _contentSize;
     NSArray *_contentViewConstraints;
     NSLayoutConstraint *_contentViewOffsetConstraint;
@@ -79,8 +79,8 @@
 - (id)preferredSliderContentView;
 - (void)setAdjustmentsMode:(id)arg1;
 - (void)setBaseValue:(float)arg1;
-- (void)setBaseValueIndicatorHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setBaseValueIndicatorHidden:(BOOL)arg1;
+- (void)setBaseValueIndicatorHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setCurrentValue:(float)arg1;

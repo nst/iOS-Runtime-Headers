@@ -5,6 +5,8 @@
 @class NSArray, UIView, UIView<CKGradientReferenceView>;
 
 @interface CKGradientView : UIView {
+    NSArray *_colors;
+    UIView *_effectView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    NSArray *_colors;
-    UIView *_effectView;
     } _gradientFrame;
     UIView<CKGradientReferenceView> *_referenceView;
 }

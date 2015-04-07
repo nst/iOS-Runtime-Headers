@@ -3,9 +3,9 @@
  */
 
 @interface NNMKProtoFullSyncRequest : PBRequest <NSCopying> {
+    unsigned int _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
-    unsigned int _fullSyncVersion;
     } _has;
 }
 

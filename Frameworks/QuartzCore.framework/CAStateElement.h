@@ -4,7 +4,7 @@
 
 @class CALayer, CAStateElement, NSString;
 
-@interface CAStateElement : NSObject <NSCopying, NSCoding> {
+@interface CAStateElement : NSObject <NSCoding, NSCopying> {
     CAStateElement *_source;
     CALayer *_target;
 }

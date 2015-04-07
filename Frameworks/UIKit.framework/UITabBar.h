@@ -5,17 +5,6 @@
 @class <UITabBarDelegate>, NSArray, NSMutableArray, NSString, UIColor, UIImage, UITabBarItem, UIView, _UIBackdropView, _UITabBarAppearanceStorage, _UITabBarBackgroundView;
 
 @interface UITabBar : UIView <_UIBackdropViewGraphicsQualityChangeDelegate, _UIShadowedView> {
-    struct { 
-        unsigned int alertShown : 1; 
-        unsigned int wasEnabled : 1; 
-        unsigned int customized : 1; 
-        unsigned int downButtonSentAction : 1; 
-        unsigned int isLocked : 1; 
-        unsigned int backgroundIsPattern : 1; 
-        unsigned int hasCustomBackgroundView : 1; 
-        unsigned int barStyle : 3; 
-        unsigned int barTranslucence : 3; 
-        unsigned int backgroundNeedsUpdate : 1; 
     UIView *_accessoryView;
     _UIBackdropView *_adaptiveBackdrop;
     _UITabBarAppearanceStorage *_appearanceStorage;
@@ -41,6 +30,17 @@
     UITabBarItem *_selectedItem;
     UIView *_shadowView;
     BOOL _showsHighlightedState;
+    struct { 
+        unsigned int alertShown : 1; 
+        unsigned int wasEnabled : 1; 
+        unsigned int customized : 1; 
+        unsigned int downButtonSentAction : 1; 
+        unsigned int isLocked : 1; 
+        unsigned int backgroundIsPattern : 1; 
+        unsigned int hasCustomBackgroundView : 1; 
+        unsigned int barStyle : 3; 
+        unsigned int barTranslucence : 3; 
+        unsigned int backgroundNeedsUpdate : 1; 
     } _tabBarFlags;
     int _tabBarSizing;
 }
@@ -223,8 +223,8 @@
 - (void)setItemPositioning:(int)arg1;
 - (void)setItemSpacing:(float)arg1;
 - (void)setItemWidth:(float)arg1;
-- (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setItems:(id)arg1;
+- (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setLocked:(BOOL)arg1;
 - (void)setSelectedImageTintColor:(id)arg1;
 - (void)setSelectedItem:(id)arg1;

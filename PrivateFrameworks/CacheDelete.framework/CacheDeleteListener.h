@@ -25,8 +25,8 @@
 - (void).cxx_destruct;
 - (void)addRequiredEntitlement:(id)arg1;
 - (id)initWithName:(id)arg1 listener:(id)arg2 protocol:(id)arg3 exportedObj:(id)arg4;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)listener;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)protocol;
 - (id)requiredEntitlements;
 - (void)resume;

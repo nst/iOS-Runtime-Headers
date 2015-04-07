@@ -19,8 +19,8 @@
 
 - (void)_invalidateConnection;
 - (id)_remoteInterface;
-- (id)_remoteInterfaceWithErrorHandler:(id)arg1 connectIfNecessary:(BOOL)arg2;
 - (id)_remoteInterfaceWithErrorHandler:(id)arg1;
+- (id)_remoteInterfaceWithErrorHandler:(id)arg1 connectIfNecessary:(BOOL)arg2;
 - (void)_setClientType;
 - (void)checkForSoftwareBehaviorBundleUpdate:(id)arg1;
 - (int)clientType;
@@ -29,8 +29,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)initWithDelegate:(id)arg1 clientType:(int)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 clientType:(int)arg2;
 - (void)invalidate;
 - (void)isSoftwareBehaviorBundleSupported:(id)arg1;
 - (void)noteConnectionDropped;

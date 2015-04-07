@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface NEUserNotification : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callback;
+
     NSObject<OS_dispatch_queue> *_callbackQueue;
     BOOL _isBanner;
     struct __CFUserNotification { } *_notification;

@@ -5,11 +5,6 @@
 @class <FUAchievementsViewDelegate>, NSArray, NSMutableArray, NSString, UILabel, UIPageControl, UIScrollView;
 
 @interface FUAchievementsView : UIView <UIScrollViewDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     UILabel *_achievementDetailLabel;
     UILabel *_achievementTitleLabel;
     NSMutableArray *_achievementViews;
@@ -19,6 +14,11 @@
     UIPageControl *_pageControl;
     BOOL _pagingEnabled;
     UIScrollView *_scrollView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _scrollViewContentInset;
     BOOL _showsAchievementTitles;
     int _sizeClass;

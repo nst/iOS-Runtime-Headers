@@ -9,7 +9,11 @@
 @class NSString, UIDocumentInteractionController;
 
 @interface SUDocumentInteractionSession : NSObject <UIDocumentInteractionControllerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     UIDocumentInteractionController *_documentInteractionController;
 }
 

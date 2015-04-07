@@ -9,7 +9,11 @@
 @class <ADAdSlotDelegate>, NSArray, NSData, NSMutableArray, NSString;
 
 @interface ADAdSlot : NSObject <ADBannerViewInternalDelegate, NSSecureCoding> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     <ADAdSlotDelegate> *_delegate;
     BOOL _didBeginPlayback;
     BOOL _didReportFinish;

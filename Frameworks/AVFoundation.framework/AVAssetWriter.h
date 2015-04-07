@@ -27,8 +27,8 @@
 + (id)keyPathsForValuesAffectingStatus;
 
 - (id)_helper;
-- (BOOL)_setHelper:(id)arg1 ifCurrentHelper:(id)arg2 withBlock:(id)arg3;
 - (BOOL)_setHelper:(id)arg1 ifCurrentHelper:(id)arg2;
+- (BOOL)_setHelper:(id)arg1 ifCurrentHelper:(id)arg2 withBlock:(id)arg3;
 - (BOOL)_supportsSampleReferencesReturningError:(id*)arg1;
 - (void)_transitionToFailedStatusWithError:(id)arg1;
 - (void)addInput:(id)arg1;

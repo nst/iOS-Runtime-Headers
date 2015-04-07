@@ -4,7 +4,7 @@
 
 @class <PLCameraImporterDelegate>, ICCameraDevice, NSMutableArray, NSMutableDictionary, NSString, PLCameraImportQueue, PLImportFileManager, PLMutableCameraImportQueue;
 
-@interface PLCameraImporter : NSObject <ICDeviceDelegate, ICCameraDeviceDelegate> {
+@interface PLCameraImporter : NSObject <ICCameraDeviceDelegate, ICDeviceDelegate> {
     BOOL _autosplitEvents;
     ICCameraDevice *_camera;
     NSMutableArray *_coalescedDeletedItems;

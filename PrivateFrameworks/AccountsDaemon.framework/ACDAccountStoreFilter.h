@@ -59,8 +59,8 @@
 - (void)isPushSupportedForAccount:(id)arg1 completion:(id)arg2;
 - (void)isTetheredSyncingEnabledForDataclass:(id)arg1 completion:(id)arg2;
 - (void)kerberosAccountsForDomainFromURL:(id)arg1 completion:(id)arg2;
-- (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2 completion:(id)arg3;
 - (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2;
+- (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2 completion:(id)arg3;
 - (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(BOOL)arg3 completion:(id)arg4;
 - (void)parentAccountForAccountWithIdentifier:(id)arg1 handler:(id)arg2;
 - (void)permissionForAccountType:(id)arg1 withHandler:(id)arg2;

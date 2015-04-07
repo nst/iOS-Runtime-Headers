@@ -4,7 +4,7 @@
 
 @class ABPropertyGroup, ABStyleProvider, NSIndexPath, NSMutableArray, NSString, UITableView;
 
-@interface ABItemLabelPicker : UIView <UITableViewDataSource, UITableViewDelegate, ABSimpleTextInputViewControllerDelegate> {
+@interface ABItemLabelPicker : UIView <ABSimpleTextInputViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     BOOL _addLabelDisabled;
     NSMutableArray *_additionalLabels;
     void *_addressBook;
@@ -46,8 +46,8 @@
 
 - (void)_didEndPickingAndConfirmed:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)_matchSelectedPathWithSelectedLabel;
-- (void)_setSelectedLabel:(id)arg1 atPath:(id)arg2;
 - (void)_setSelectedLabel:(id)arg1;
+- (void)_setSelectedLabel:(id)arg1 atPath:(id)arg2;
 - (void)_setSelectedPath:(id)arg1;
 - (void*)addressBook;
 - (BOOL)allowsCustomLabels;
@@ -81,6 +81,7 @@
 - (void)simpleTextInputViewController:(id)arg1 didCompleteWithValue:(id)arg2;
 - (BOOL)simpleTextInputViewControllerShouldDismissKeyboard:(id)arg1;
 - (id)styleProvider;
+- (id)tableView;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
@@ -89,7 +90,6 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (id)tableView;
 - (void)toggleEditing;
 
 @end

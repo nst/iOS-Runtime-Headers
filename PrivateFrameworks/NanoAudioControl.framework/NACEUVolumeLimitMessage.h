@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface NACEUVolumeLimitMessage : PBCodable <NSCopying> {
-    struct { 
-        unsigned int eUVolumeLimit : 1; 
     NSString *_category;
     float _eUVolumeLimit;
+    struct { 
+        unsigned int eUVolumeLimit : 1; 
     } _has;
 }
 

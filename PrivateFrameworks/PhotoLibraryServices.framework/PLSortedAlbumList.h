@@ -11,7 +11,11 @@
 @interface PLSortedAlbumList : NSObject <PLAlbumContainer, PLIndexMappingCache> {
     struct NSObject { Class x1; } *_backingAlbumList;
     struct __CFArray { } *_fromBackingMap;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sortComparator;
+
     struct __CFArray { } *_toBackingMap;
     NSMutableOrderedSet *_weak_albums;
 }

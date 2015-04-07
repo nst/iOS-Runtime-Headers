@@ -4,7 +4,7 @@
 
 @class NSXPCConnection, NSXPCInterface;
 
-@interface _NSXPCDistantObject : NSObject <NSXPCProxyCreating, NSSecureCoding> {
+@interface _NSXPCDistantObject : NSObject <NSSecureCoding, NSXPCProxyCreating> {
     NSXPCConnection *_connection;
     BOOL _exported;
     struct __CFDictionary { } *_knownSelectors;

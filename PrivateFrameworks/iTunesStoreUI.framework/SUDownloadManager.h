@@ -23,8 +23,8 @@
 - (id)downloadForDownloadIdentifier:(long long)arg1;
 - (id)downloadManager;
 - (id)downloads;
-- (id)initWithDownloadManager:(id)arg1 clientInterface:(id)arg2;
 - (id)initWithDownloadManager:(id)arg1;
+- (id)initWithDownloadManager:(id)arg1 clientInterface:(id)arg2;
 - (void)preflightWithCompletionBlock:(id)arg1;
 - (void)reloadDownloadManager;
 

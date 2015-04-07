@@ -4,7 +4,7 @@
 
 @class ACDAccessPluginManager, ACDAuthenticationDialogManager, ACDAuthenticationPluginManager, ACDDataclassOwnersManager, ACRemoteDeviceProxy, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSXPCListener;
 
-@interface ACDServer : NSObject <NSXPCListenerDelegate, ACDAccountStoreDelegate> {
+@interface ACDServer : NSObject <ACDAccountStoreDelegate, NSXPCListenerDelegate> {
     ACDAccessPluginManager *_accessPluginManager;
     NSMutableArray *_accountStoreClients;
     NSXPCListener *_accountStoreListener;

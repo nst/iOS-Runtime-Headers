@@ -10,7 +10,11 @@
 
 @interface SUScriptActivityItemProvider : SUScriptObject <SUActivityItemProviderDelegate> {
     id _item;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _itemBlock;
+
     SUScriptFunction *_itemFunction;
     int _loadState;
     NSString *_mimeType;

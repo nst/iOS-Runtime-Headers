@@ -4,7 +4,7 @@
 
 @class GKCancelSwipeToEditGestureRecognizer, GKCollectionViewCell, GKCollectionViewDataSource, NSIndexPath, NSString, UICollectionView, UIPanGestureRecognizer, _UIDynamicAnimation;
 
-@interface GKSwipeToEditStateMachine : GKStateMachine <UIGestureRecognizerDelegate, GKSegmentedSectionDataSourceEventHandler> {
+@interface GKSwipeToEditStateMachine : GKStateMachine <GKSegmentedSectionDataSourceEventHandler, UIGestureRecognizerDelegate> {
     UICollectionView *_collectionView;
     int _debounce;
     GKCancelSwipeToEditGestureRecognizer *_editModeCancelRecognizer;

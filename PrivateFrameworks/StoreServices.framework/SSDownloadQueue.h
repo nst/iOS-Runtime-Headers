@@ -46,9 +46,9 @@
 - (void)dealloc;
 - (id)downloadForItemIdentifier:(unsigned long long)arg1;
 - (id)downloadKinds;
+- (id)downloadManager;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
-- (id)downloadManager;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)downloads;

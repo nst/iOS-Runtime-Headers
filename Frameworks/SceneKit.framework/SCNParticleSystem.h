@@ -9,16 +9,6 @@
         float x; 
         float y; 
         float z; 
-    struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-    struct SCNVector4 { 
-        float x; 
-        float y; 
-        float z; 
-        float w; 
-    unsigned int _isPresentationInstance : 1;
     } _acceleration;
     BOOL _affectedByGravity;
     BOOL _affectedByPhysicsFields;
@@ -34,6 +24,10 @@
     float _emissionDuration;
     float _emissionDurationVariation;
     SCNGeometry *_emitterShape;
+    struct SCNVector3 { 
+        float x; 
+        float y; 
+        float z; 
     } _emittingDirection;
     float _fixedTimeStep;
     float _fresnelExponent;
@@ -47,6 +41,7 @@
     float _imageSequenceInitialFrameVariation;
     unsigned int _imageSequenceRowCount;
     BOOL _isLocal;
+    unsigned int _isPresentationInstance : 1;
     BOOL _lightingEnabled;
     BOOL _loops;
     NSString *_name;
@@ -60,6 +55,11 @@
     float _particleCharge;
     float _particleChargeVariation;
     UIColor *_particleColor;
+    struct SCNVector4 { 
+        float x; 
+        float y; 
+        float z; 
+        float w; 
     } _particleColorVariation;
     BOOL _particleDiesOnCollision;
     float _particleFriction;
@@ -171,14 +171,14 @@
 - (void)_syncObjCAnimations;
 - (void)_syncObjCModel;
 - (struct SCNVector3 { float x1; float x2; float x3; })acceleration;
-- (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (void)addAnimation:(id)arg1;
+- (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (void)addModifierForProperties:(id)arg1 atStage:(int)arg2 withBlock:(id)arg3;
 - (BOOL)affectedByGravity;
 - (BOOL)affectedByPhysicsFields;
 - (id)animationForKey:(id)arg1;
 - (id)animationKeys;
-- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; boolx7; boolx8; boolx9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; struct _opaque_pthread_mutex_t { long x_16_1_1; BOOL x_16_1_2[40]; } x16; int x17; int x18; int x19; int x20; }*)animationManager;
+- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool x7; bool x8; bool x9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; struct _opaque_pthread_mutex_t { long x_16_1_1; BOOL x_16_1_2[40]; } x16; int x17; int x18; int x19; int x20; }*)animationManager;
 - (BOOL)areSoftParticlesEnabled;
 - (int)birthDirection;
 - (int)birthLocation;
@@ -252,8 +252,8 @@
 - (id)propertyControllers;
 - (void)removeAllAnimations;
 - (void)removeAllModifiers;
-- (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(float)arg2;
 - (void)removeAnimationForKey:(id)arg1;
+- (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(float)arg2;
 - (void)removeModifiersOfStage:(int)arg1;
 - (int)renderingMode;
 - (void)reset;

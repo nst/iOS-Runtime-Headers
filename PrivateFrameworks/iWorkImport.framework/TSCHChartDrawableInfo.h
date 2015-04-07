@@ -4,7 +4,7 @@
 
 @class NSString, TSCHChartInfo, TSCHChunkManager, TSPObject<TSCHMediatorProvider>;
 
-@interface TSCHChartDrawableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSDReducableInfo, TSKCustomFormatContainingInfo, TSPCopying, TSKSearchable, TSKModel, TSSPresetSource, TSSThemedObject, TSCHStyleSwapSupporting, TSDMixing, TSSStyleClient> {
+@interface TSCHChartDrawableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCHStyleSwapSupporting, TSDMixing, TSDReducableInfo, TSKCustomFormatContainingInfo, TSKModel, TSKSearchable, TSPCopying, TSSPresetSource, TSSStyleClient, TSSThemedObject> {
     TSCHChartInfo *mChart;
     TSCHChunkManager *mChunkManager;
     TSPObject<TSCHMediatorProvider> *mMediatorPersistentObject;
@@ -13,12 +13,8 @@
 @property(readonly) TSCHChartInfo * chart;
 @property(readonly) TSCHChunkManager * chunkManager;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
@@ -88,8 +84,8 @@
 - (void)saveToArchiver:(id)arg1;
 - (id)searchForSpellingErrors:(id)arg1 stop:(BOOL*)arg2;
 - (id)searchForString:(id)arg1 options:(unsigned int)arg2 onHit:(id)arg3;
-- (void)setGeometry:(id)arg1 omitLegendResize:(BOOL)arg2;
 - (void)setGeometry:(id)arg1;
+- (void)setGeometry:(id)arg1 omitLegendResize:(BOOL)arg2;
 - (void)setInsertionCenterPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPersistentMediator:(id)arg1;
 - (BOOL)shouldAddMultiDataBuildWhenAddingToDocument;

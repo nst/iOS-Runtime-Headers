@@ -41,7 +41,7 @@
 - (void)setTag:(int)arg1;
 - (int)tag;
 - (id)xValueForPointAtIndex:(unsigned int)arg1;
-- (id)yValueForPointAtIndex:(unsigned int)arg1 key:(id)arg2;
 - (id)yValueForPointAtIndex:(unsigned int)arg1;
+- (id)yValueForPointAtIndex:(unsigned int)arg1 key:(id)arg2;
 
 @end

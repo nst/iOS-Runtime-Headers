@@ -29,8 +29,8 @@
 - (void)_enqueueScaleAttachment:(id)arg1 withFlags:(unsigned int)arg2 originalSize:(unsigned int)arg3;
 - (void)_inrementPendingImageScalingOperations;
 - (void)_notifyAttachmentCachedSizesChanged;
-- (BOOL)addAttachment:(id)arg1 allowingOverride:(id)arg2;
 - (BOOL)addAttachment:(id)arg1;
+- (BOOL)addAttachment:(id)arg1 allowingOverride:(id)arg2;
 - (id)attachments;
 - (void)cancelImageScalingOperations;
 - (void)dealloc;

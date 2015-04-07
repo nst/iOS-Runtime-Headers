@@ -5,9 +5,9 @@
 @class GEOLocation, GEOMapRegion, GEOPlaceSearchRequest, NSString;
 
 @interface GEOMapQuery : PBCodable <NSCopying> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
+    int _clientImgFmt;
+    int _clientImgMaxHeight;
+    int _clientImgMaxWidth;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int clientImgFmt : 1; 
@@ -21,9 +21,6 @@
         unsigned int tilesizeX : 1; 
         unsigned int tilesizeY : 1; 
         unsigned int zoomlevel : 1; 
-    int _clientImgFmt;
-    int _clientImgMaxHeight;
-    int _clientImgMaxWidth;
     } _has;
     int _mapCenterX;
     int _mapCenterY;
@@ -33,6 +30,9 @@
     GEOPlaceSearchRequest *_placeSearchRequest;
     NSString *_query;
     int _requestType;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionID;
     int _tilesizeX;
     int _tilesizeY;

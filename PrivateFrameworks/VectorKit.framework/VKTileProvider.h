@@ -5,6 +5,26 @@
 @class <VKMapLayer>, <VKTileProviderClient>, GEOResourceManifestConfiguration, GEOTileKeyList, NSArray, NSLocale, NSMutableSet, NSSet, NSString, VKMapRasterizer, VKStyleManager, VKTileCache, VKTileKeyList, VKTileSelection, VKTileSource, VKTimer, _VKTileProviderTimerTarget;
 
 @interface VKTileProvider : NSObject <VKLRUCacheDelegate, VKTileSourceClient> {
+    <VKTileProviderClient> *_client;
+    float _contentScale;
+    <VKMapLayer> *_debugLayer;
+    GEOTileKeyList *_debugLayerKeys;
+    _VKTileProviderTimerTarget *_evaluationTarget;
+    VKTimer *_evaluationTimer;
+    BOOL _exclusionAreaVisible;
+    struct vector<vk::TileExclusionArea, std::__1::allocator<vk::TileExclusionArea> > { 
+        struct TileExclusionArea {} *__begin_; 
+        struct TileExclusionArea {} *__end_; 
+        struct __compressed_pair<vk::TileExclusionArea *, std::__1::allocator<vk::TileExclusionArea> > { 
+            struct TileExclusionArea {} *__first_; 
+        } __end_cap_; 
+    } _exclusionAreas;
+    BOOL _fallbackEnabled;
+    NSMutableSet *_fallbackTiles;
+    BOOL _finishedLoading;
+    BOOL _hasFailedTile;
+    NSArray *_holes;
+    VKTileKeyList *_keysInView;
     struct VKCameraState { 
         struct VKPoint { 
             double x; 
@@ -16,33 +36,10 @@
         } orientation; 
         float aspectRatio; 
         float verticalFieldOfView; 
+    } _lastCameraState;
     struct CGSize { 
         float width; 
         float height; 
-    struct { 
-        double x; 
-        double y; 
-    struct vector<vk::TileExclusionArea, std::__1::allocator<vk::TileExclusionArea> > { 
-        struct TileExclusionArea {} *__begin_; 
-        struct TileExclusionArea {} *__end_; 
-        struct __compressed_pair<vk::TileExclusionArea *, std::__1::allocator<vk::TileExclusionArea> > { 
-            struct TileExclusionArea {} *__first_; 
-        } __end_cap_; 
-    <VKTileProviderClient> *_client;
-    float _contentScale;
-    <VKMapLayer> *_debugLayer;
-    GEOTileKeyList *_debugLayerKeys;
-    _VKTileProviderTimerTarget *_evaluationTarget;
-    VKTimer *_evaluationTimer;
-    BOOL _exclusionAreaVisible;
-    } _exclusionAreas;
-    BOOL _fallbackEnabled;
-    NSMutableSet *_fallbackTiles;
-    BOOL _finishedLoading;
-    BOOL _hasFailedTile;
-    NSArray *_holes;
-    VKTileKeyList *_keysInView;
-    } _lastCameraState;
     } _lastCanvasSize;
     float _lastMidDisplayZoomLevel;
     float _loadingProgress;
@@ -60,6 +57,9 @@
     _VKTileProviderTimerTarget *_prefetchTarget;
     VKTimer *_prefetchTimer;
     VKMapRasterizer *_rasterizer;
+    struct { 
+        double x; 
+        double y; 
     } _sortPoint;
     VKStyleManager *_styleManager;
     unsigned int _tileMaximumLimit;

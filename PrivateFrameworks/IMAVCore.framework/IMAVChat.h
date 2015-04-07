@@ -5,12 +5,6 @@
 @class IMAVChatParticipant, IMAccount, IMHandle, IMPair, IMTimingCollection, NSArray, NSData, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSTimer;
 
 @interface IMAVChat : NSObject <IMSystemMonitorListener> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     NSString *_GUID;
     BOOL _airplaneModeEnabled;
     NSNumber *_backCameraCaptureTime;
@@ -57,6 +51,9 @@
     BOOL _isTerminating;
     BOOL _isVideo;
     BOOL _isVideoInterrupted;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _landscapeAspectRatios;
     unsigned int _lastPostedState;
     unsigned int _localNetworkConnectionType;
@@ -71,6 +68,9 @@
     IMPair *_pendingPreemptiveRelayInitate;
     int _pingTestResult;
     NSDictionary *_pingTestResults;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _portraitAspectRatios;
     NSData *_relayRemotePrimaryIdentifier;
     unsigned int _remoteNetworkConnectionType;
@@ -353,8 +353,8 @@
 - (BOOL)didRemotePause;
 - (void)endChat;
 - (void)endChatWithError:(int)arg1;
-- (void)endChatWithReason:(unsigned int)arg1 error:(int)arg2;
 - (void)endChatWithReason:(unsigned int)arg1;
+- (void)endChatWithReason:(unsigned int)arg1 error:(int)arg2;
 - (int)endedError;
 - (unsigned int)endedReason;
 - (void)handleGenericAVMessageFromParticipant:(id)arg1 type:(unsigned int)arg2 userInfo:(id)arg3;
@@ -365,8 +365,8 @@
 - (id)initiatorIMHandle;
 - (id)initiatorParticipant;
 - (double)invitationTimeoutTime;
-- (void)invite:(id)arg1 additionalPeers:(id)arg2;
 - (void)invite:(id)arg1;
+- (void)invite:(id)arg1 additionalPeers:(id)arg2;
 - (void)inviteAll;
 - (id)inviteesInfo;
 - (BOOL)isActive;

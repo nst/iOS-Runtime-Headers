@@ -5,11 +5,11 @@
 @class NSString, UILabel;
 
 @interface EKExpandingTextView : UITextView <UITextViewDelegate> {
+    BOOL _allowEnclosingViewScroll;
+    UILabel *_placeholderLabel;
     struct CGSize { 
         float width; 
         float height; 
-    BOOL _allowEnclosingViewScroll;
-    UILabel *_placeholderLabel;
     } _previousIntrinsicContentSize;
 }
 

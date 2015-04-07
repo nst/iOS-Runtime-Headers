@@ -6,9 +6,9 @@
 
 @interface MFComposeSubjectView : MFComposeHeaderView <UITextFieldDelegate> {
     unsigned int _delegateRespondsToTextChange : 1;
+    UIButton *_notifyButton;
     unsigned int _notifyButtonSelected : 1;
     unsigned int _showNotifyButton : 1;
-    UIButton *_notifyButton;
     UITextField *_textField;
 }
 

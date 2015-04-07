@@ -33,8 +33,8 @@
 - (BOOL)_comparePredicatesAndWarnings:(id)arg1;
 - (BOOL)_comparePredicatesAndWarningsWithUnoptimizedAttributeDescription:(id)arg1;
 - (void)_createCachesAndOptimizeState;
-- (id)_initWithName:(id)arg1 type:(unsigned int)arg2 withClassName:(id)arg3;
 - (id)_initWithName:(id)arg1 type:(unsigned int)arg2;
+- (id)_initWithName:(id)arg1 type:(unsigned int)arg2 withClassName:(id)arg3;
 - (id)_initWithType:(unsigned int)arg1;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (unsigned int)_propertyType;

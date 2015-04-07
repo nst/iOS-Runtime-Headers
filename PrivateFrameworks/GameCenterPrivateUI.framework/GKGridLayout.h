@@ -5,15 +5,6 @@
 @class GKCollectionViewDataSource, GKCollectionViewLayoutAttributes, GKDataSourceMetrics, GKSectionMetrics, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSMutableSet, NSPointerArray, NSSet;
 
 @interface GKGridLayout : UICollectionViewLayout {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     GKCollectionViewLayoutAttributes *_clipViewAttributes;
     NSArray *_currentUpdateItems;
     GKCollectionViewDataSource *_dataSourceForUpdate;
@@ -33,17 +24,26 @@
     NSMutableDictionary *_keyToMetricData;
     NSMutableSet *_knownSupplementaryKinds;
     NSMutableArray *_laidOutAttributes;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _laidOutContentSize;
     NSMutableOrderedSet *_laidOutPinnableAttributes;
     unsigned int _landscapeInterleavedSectionsCount;
     float _leftLayoutGuideOffset;
     int _metricsInvalidationCount;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _minimumLaidOutContentSize;
     BOOL _movedItemsInUpdateCarrySections;
     BOOL _noMoreShowMore;
     NSMutableDictionary *_oldIndexPathToDecoration;
     NSMutableDictionary *_oldIndexPathToItem;
     NSMutableDictionary *_oldIndexPathToSupplementary;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _oldLaidOutContentSize;
     NSMutableDictionary *_oldSectionToMetricKeys;
     unsigned int _portraitInterleavedSectionsCount;
@@ -197,8 +197,8 @@
 - (void)prepareLayout;
 - (id)presentationDataForSection:(int)arg1;
 - (void)refreshMetrics;
-- (id)revealMoreForSectionIndex:(int)arg1 revealCount:(unsigned int)arg2 andDeleteItemCount:(unsigned int)arg3;
 - (id)revealMoreForSectionIndex:(int)arg1;
+- (id)revealMoreForSectionIndex:(int)arg1 revealCount:(unsigned int)arg2 andDeleteItemCount:(unsigned int)arg3;
 - (id)revealedIndexPaths;
 - (float)rightLayoutGuideOffset;
 - (float)scale;
@@ -258,8 +258,8 @@
 - (BOOL)shouldSlideOutSupplementaryElementOfKind:(id)arg1 forUpdateItem:(id)arg2 atIndexPath:(id)arg3;
 - (BOOL)shouldUpdateVisibleCellLayoutAttributes;
 - (BOOL)showPlaceholder;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
 - (void)updatePinnableAreas;
 - (void)updatePlaceholderVisibility;
 - (void)updatePresentationDataForLastInterleavedSections;

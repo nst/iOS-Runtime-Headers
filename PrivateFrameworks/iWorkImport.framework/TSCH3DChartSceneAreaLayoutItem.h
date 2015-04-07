@@ -5,15 +5,6 @@
 @class TSCH3DChartResizerHelper, TSCH3DScene, TSCH3DVector;
 
 @interface TSCH3DChartSceneAreaLayoutItem : TSCHChartAbstractAreaLayoutItem {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     struct tvec2<float> { 
         union { 
             float x; 
@@ -25,6 +16,17 @@
             float g; 
             float t; 
         } ; 
+    } mChartBodyLayoutOffsetInChartAreaLayoutSpace;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } mChartBodyLayoutRect;
     struct tvec4<float> { 
         union { 
             float x; 
@@ -46,8 +48,6 @@
             float a; 
             float q; 
         } ; 
-    } mChartBodyLayoutOffsetInChartAreaLayoutSpace;
-    } mChartBodyLayoutRect;
     } mInitialInfoChartScale;
     BOOL mIsInvalidated;
     BOOL mIsInvariant;
@@ -65,8 +65,8 @@
 + (id)worldBoundsDescriptionForScene:(id)arg1;
 
 - (id).cxx_construct;
-- (id)boundsLayout:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scene:(id)arg2 forcesAccurateBounds:(BOOL)arg3 allowsEmptyBodyLayoutBounds:(BOOL)arg4;
 - (id)boundsLayout;
+- (id)boundsLayout:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scene:(id)arg2 forcesAccurateBounds:(BOOL)arg3 allowsEmptyBodyLayoutBounds:(BOOL)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcDrawingRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })chartBodyLayoutRect;
 - (void)clearAll;
@@ -104,7 +104,7 @@
 - (void)setChartBodyLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setIsInvariant:(BOOL)arg1;
 - (void)setLayoutOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setStabilizedChartBodyLayoutRectUsingConverter:(const struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; boolx3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; }*)arg1;
+- (void)setStabilizedChartBodyLayoutRectUsingConverter:(const struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; bool x3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleFrame;
 
 @end

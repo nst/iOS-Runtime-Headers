@@ -4,7 +4,7 @@
 
 @class NSObject<TSDInfo>, NSString, TSDCanvas, TSDLayout, TSUPointerKeyDictionary;
 
-@interface TSDDefaultPartitioner : NSObject <TSDPartitioner, TSDCanvasDelegate> {
+@interface TSDDefaultPartitioner : NSObject <TSDCanvasDelegate, TSDPartitioner> {
     TSUPointerKeyDictionary *mCachedImagesByCanvas;
     TSDCanvas *mCanvas;
     NSObject<TSDInfo> *mInfo;

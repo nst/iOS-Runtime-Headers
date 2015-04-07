@@ -40,10 +40,10 @@
 - (id)locateStartTime;
 - (id)location;
 - (BOOL)locationAuthorizationDenied;
+- (id)locationManager;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (id)locationManager;
 - (id)locationUpdateTimer;
 - (void)setError:(id)arg1;
 - (void)setHandlers:(id)arg1;

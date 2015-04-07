@@ -13,15 +13,24 @@
 
 @class <GEORoutePreloadSession>, <VKMapModeObserver>, <VKMapModelDelegate>, <VKOverlayContainerRouteDelegate>, <VKRouteMatchedAnnotationPresentation>, GEOFeatureStyleAttributes, GEOResourceManifestConfiguration, NSArray, NSLocale, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, VKAnimation, VKAnnotationMarker, VKAnnotationModel, VKBuildingFootprintMapModel, VKDebugModel, VKGridModel, VKHybridRasterMapModel, VKLabelMarker, VKLabelModel, VKMapRasterizer, VKMercatorTerrainHeightCache, VKOverlayContainerModel, VKPolygonMapModel, VKPolylineOverlay, VKPolylineOverlayPainter, VKRasterMapModel, VKRasterOverlayMapModel, VKRasterOverlayTileSource, VKRasterTrafficMapModel, VKRealisticMapModel, VKRiverMapModel, VKRoadMapModel, VKRoadTrafficMapModel, VKSharedResources, VKSkyModel, VKStyleManager, VKTileProvider, VKTrafficTileSource;
 
-@interface VKMapModel : VKModelObject <VKOverlayContainerDelegate, VKLabelModelDelegate, GEOResourceManifestTileGroupObserver, VKTileProviderClient, VKPolylineGroupOverlayObserver> {
+@interface VKMapModel : VKModelObject <GEOResourceManifestTileGroupObserver, VKLabelModelDelegate, VKOverlayContainerDelegate, VKPolylineGroupOverlayObserver, VKTileProviderClient> {
+    BOOL _activeMapLayers[4][34];
+    VKStyleManager *_activeStyleManager;
+    GEOResourceManifestConfiguration *_additionalManifestConfiguration;
+    int _annotationMarkerStyle;
+    VKAnnotationModel *_annotationModel;
+    NSMutableSet *_blockingStylesheetObservers;
+    VKBuildingFootprintMapModel *_buildingFootprintModel;
+    BOOL _buildingsAreVisible;
     struct Matrix<float, 4, 1> { 
         float _e[4]; 
+    } _clearColor;
     struct ClearItem { 
         unsigned char colorMask; 
         struct Matrix<float, 4, 1> { 
             float _e[4]; 
         } color; 
-        boolclearDepthBuffer; 
+        bool clearDepthBuffer; 
         float depth; 
         unsigned char clearStencilBuffer; 
         int stencil; 
@@ -34,18 +43,6 @@
                 unsigned int _e[2]; 
             } _maximum; 
         } scissorRect; 
-    struct shared_ptr<md::StyleQuery> { 
-        struct StyleQuery {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    BOOL _activeMapLayers[4][34];
-    VKStyleManager *_activeStyleManager;
-    GEOResourceManifestConfiguration *_additionalManifestConfiguration;
-    int _annotationMarkerStyle;
-    VKAnnotationModel *_annotationModel;
-    NSMutableSet *_blockingStylesheetObservers;
-    VKBuildingFootprintMapModel *_buildingFootprintModel;
-    BOOL _buildingsAreVisible;
-    } _clearColor;
     } _clearItem;
     float _contentScale;
     BOOL _debugDynamicMapModesEnabled;
@@ -111,6 +108,9 @@
     BOOL _showsBuildings;
     VKSkyModel *_skyModel;
     VKRasterMapModel *_standardRasterModel;
+    struct shared_ptr<md::StyleQuery> { 
+        struct StyleQuery {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _styleQuery;
     float _styleTransitionProgress;
     int _targetDisplay;
@@ -123,10 +123,10 @@
     double _zoomLevel;
 }
 
-@property /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  clearColor; /* unknown property attribute:  1>=[4f]} */
 @property(retain) GEOResourceManifestConfiguration * additionalManifestConfiguration;
 @property(readonly) VKBuildingFootprintMapModel * buildingFootprintModel;
 @property(readonly) BOOL buildingsAreVisible;
+@property /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  clearColor; /* unknown property attribute:  1>=[4f]} */
 @property float contentScale;
 @property(readonly) int currentMapMode;
 @property(copy,readonly) NSString * debugDescription;

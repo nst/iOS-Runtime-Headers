@@ -10,7 +10,11 @@
 
 @interface UIDynamicBehavior : NSObject {
     BOOL __isPrimitiveBehavior;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _action;
+
     NSMutableArray *_addedBehaviors;
     NSMutableArray *_behaviors;
     UIDynamicAnimator *_context;
@@ -29,8 +33,8 @@
 - (id)_context;
 - (void)_dissociate;
 - (id)_init:(BOOL)arg1;
-- (void)_isPrimitiveBehavior:(BOOL)arg1;
 - (BOOL)_isPrimitiveBehavior;
+- (void)_isPrimitiveBehavior:(BOOL)arg1;
 - (id)_items;
 - (id)_itemsDescription;
 - (void)_reevaluate:(unsigned int)arg1;

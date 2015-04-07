@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface NEAOVPNException : NSObject <NSSecureCoding, NSCopying> {
+@interface NEAOVPNException : NSObject <NSCopying, NSSecureCoding> {
     int _action;
     NSString *_bundleIdentifier;
     NSString *_serviceName;

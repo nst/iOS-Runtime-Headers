@@ -11,10 +11,18 @@
 @interface PUResourceDownloadRequest : NSObject {
     BOOL __downloadCanceled;
     PHAsset *_asset;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _downloadCompletionHandler;
+
     double _progress;
     NSMutableDictionary *_progressByRequestIdentifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressChangeHandler;
+
     int _requestType;
 }
 

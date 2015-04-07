@@ -9,7 +9,6 @@
 }
 
 @property(retain) NSXPCConnection * xpcConnection;
-@property(retain) NSXPCConnection * xpcConnection;
 
 + (id)defaultManager;
 

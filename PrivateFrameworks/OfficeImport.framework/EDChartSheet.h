@@ -14,8 +14,8 @@
             float width; 
             float height; 
         } size; 
-    boolmIsBoundsSet;
     } mBounds;
+    bool mIsBoundsSet;
     CHDChart *mMainChart;
 }
 

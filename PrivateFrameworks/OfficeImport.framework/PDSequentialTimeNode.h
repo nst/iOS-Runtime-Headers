@@ -18,8 +18,8 @@
 
 + (unsigned int)buildPartsFromTarget:(id)arg1;
 + (id)newSequentialTimeNodeGroupForAnimationInfo;
-+ (id)newSequentialTimeNodeGroupForAnimationInfoWithClass:(Class)arg1 target:(id)arg2;
 + (id)newSequentialTimeNodeGroupForAnimationInfoWithClass:(Class)arg1;
++ (id)newSequentialTimeNodeGroupForAnimationInfoWithClass:(Class)arg1 target:(id)arg2;
 + (id)timeNodeUnion:(id)arg1 initWithClass:(Class)arg2;
 
 - (double)delay;

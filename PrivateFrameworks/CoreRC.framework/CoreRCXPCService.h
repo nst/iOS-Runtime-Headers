@@ -4,7 +4,7 @@
 
 @class CoreRCManagerProvider, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, NSXPCListener;
 
-@interface CoreRCXPCService : NSObject <CoreRCXPCServiceCECPrivate, CoreRCXPCServiceIR, CoreRCXPCServicePrivate, CoreRCXPCServiceCEC, CoreCECBusDelegate, CoreCECDeviceDelegate, NSXPCListenerDelegate, CoreRCXPCService, CoreRCManagerDelegate, CoreRCBusDelegate, CoreRCDeviceDelegate> {
+@interface CoreRCXPCService : NSObject <CoreCECBusDelegate, CoreCECDeviceDelegate, CoreRCBusDelegate, CoreRCDeviceDelegate, CoreRCManagerDelegate, CoreRCXPCService, CoreRCXPCServiceCEC, CoreRCXPCServiceCECPrivate, CoreRCXPCServiceIR, CoreRCXPCServicePrivate, NSXPCListenerDelegate> {
     NSMutableSet *_connections;
     NSXPCListener *_listener;
     CoreRCManagerProvider *_manager;
@@ -13,13 +13,9 @@
 
 @property(readonly) NSSet * connections;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property(readonly) CoreRCManagerProvider * manager;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 
 - (void)addExternalDeviceOnBusAsync:(id)arg1 reply:(id)arg2;
@@ -47,10 +43,10 @@
 - (id)init;
 - (void)invalidate;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (id)manager;
 - (void)manager:(id)arg1 hasAdded:(id)arg2;
 - (void)manager:(id)arg1 hasRemoved:(id)arg2;
 - (void)manager:(id)arg1 hasUpdated:(id)arg2;
-- (id)manager;
 - (void)performActiveSourceAsync:(id)arg1 withMenus:(BOOL)arg2 reply:(id)arg3;
 - (void)performDeckControlCommandAsync:(id)arg1 controlMode:(unsigned int)arg2 targetDevice:(id)arg3 reply:(id)arg4;
 - (void)performDeckControlPlayAsync:(id)arg1 playMode:(unsigned int)arg2 targetDevice:(id)arg3 reply:(id)arg4;

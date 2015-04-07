@@ -5,16 +5,16 @@
 @class PKPassGroupView, UIPanGestureRecognizer, _UIDynamicValueAnimation;
 
 @interface PKPassGroupViewVerticalPanAnimator : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     UIPanGestureRecognizer *_gestureRecognizer;
     _UIDynamicValueAnimation *_panningAnimation;
     PKPassGroupView *_panningGroupView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _panningViewStartPosition;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _panningViewTargetPosition;
     float _panningViewTargetScale;
 }

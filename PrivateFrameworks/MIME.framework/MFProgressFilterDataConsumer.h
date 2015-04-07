@@ -9,7 +9,11 @@
 @interface MFProgressFilterDataConsumer : MFBaseFilterDataConsumer {
     unsigned int _currentBytes;
     unsigned int _expectedSize;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
 }
 
 @property(readonly) unsigned int expectedSize;

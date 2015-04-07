@@ -5,11 +5,6 @@
 @class <SCROBrailleDriverProtocol>, NSData, NSMutableAttributedString;
 
 @interface SCROBrailleLine : NSObject {
-    struct { 
-        NSData *data; 
-        int alignment; 
-        int length; 
-        char *cells; 
     BOOL _anyUnread;
     id _appToken;
     BOOL _blink;
@@ -41,6 +36,11 @@
     NSData *_statusData;
     char *_statusFilter;
     int _statusSize;
+    struct { 
+        NSData *data; 
+        int alignment; 
+        int length; 
+        char *cells; 
     } _virtualStatus;
 }
 

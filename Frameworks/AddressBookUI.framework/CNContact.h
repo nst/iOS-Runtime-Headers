@@ -4,7 +4,7 @@
 
 @class CNContact, CNContactIdentifier, NSArray, NSData, NSDateComponents, NSString;
 
-@interface CNContact : NSObject <NSSecureCoding, NSCopying, NSMutableCopying> {
+@interface CNContact : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     void *_addressBook;
     BOOL _checkedForOriginalRecord;
     CNContactIdentifier *_identifier;
@@ -74,8 +74,8 @@
 
 + (id)contact;
 + (id)contactWithPkDictionary:(id)arg1;
-+ (id)contactWithRecord:(void*)arg1 unify:(BOOL)arg2;
 + (id)contactWithRecord:(void*)arg1;
++ (id)contactWithRecord:(void*)arg1 unify:(BOOL)arg2;
 + (id)contactWithRecordID:(int)arg1 addressBook:(void*)arg2;
 + (id)contactWithStateRestorationCoder:(id)arg1 addressBook:(void*)arg2;
 + (id)contactWithUserActivityUserInfo:(id)arg1 addressBook:(void*)arg2;
@@ -119,13 +119,13 @@
 - (unsigned int)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRecord:(void*)arg1 unify:(BOOL)arg2 originalRecord:(void*)arg3;
-- (id)initWithRecord:(void*)arg1 unify:(BOOL)arg2;
 - (id)initWithRecord:(void*)arg1;
+- (id)initWithRecord:(void*)arg1 unify:(BOOL)arg2;
+- (id)initWithRecord:(void*)arg1 unify:(BOOL)arg2 originalRecord:(void*)arg3;
 - (id)instantMessageAddresses;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToContact:(id)arg1 includeIdentifiers:(BOOL)arg2;
 - (BOOL)isEqualToContact:(id)arg1;
+- (BOOL)isEqualToContact:(id)arg1 includeIdentifiers:(BOOL)arg2;
 - (BOOL)isFacebook;
 - (BOOL)isMeContact;
 - (BOOL)isPreferredForName;

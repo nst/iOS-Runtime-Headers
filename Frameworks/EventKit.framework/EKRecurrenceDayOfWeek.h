@@ -10,8 +10,8 @@
 @property(readonly) int dayOfTheWeek;
 @property(readonly) int weekNumber;
 
-+ (id)dayOfWeek:(int)arg1 weekNumber:(int)arg2;
 + (id)dayOfWeek:(int)arg1;
++ (id)dayOfWeek:(int)arg1 weekNumber:(int)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)dayOfTheWeek;

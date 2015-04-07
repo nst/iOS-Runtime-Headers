@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface ML3OrderingTerm : NSObject <NSCopying, NSCoding> {
+@interface ML3OrderingTerm : NSObject <NSCoding, NSCopying> {
     NSString *_collation;
     int _direction;
     NSString *_property;
@@ -14,8 +14,8 @@
 @property(readonly) int direction;
 @property(readonly) NSString * property;
 
-+ (id)orderingTermWithProperty:(id)arg1 direction:(int)arg2;
 + (id)orderingTermWithProperty:(id)arg1;
++ (id)orderingTermWithProperty:(id)arg1 direction:(int)arg2;
 + (id)reversedTerms:(id)arg1;
 
 - (void).cxx_destruct;
@@ -27,9 +27,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithProperty:(id)arg1 direction:(int)arg2 collation:(id)arg3;
-- (id)initWithProperty:(id)arg1 direction:(int)arg2;
 - (id)initWithProperty:(id)arg1;
+- (id)initWithProperty:(id)arg1 direction:(int)arg2;
+- (id)initWithProperty:(id)arg1 direction:(int)arg2 collation:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)property;
 

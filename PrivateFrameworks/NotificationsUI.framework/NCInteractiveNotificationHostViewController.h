@@ -4,7 +4,7 @@
 
 @class <NCInteractiveNotificationHostDelegate>, NCViewServiceDescriptor, NSString;
 
-@interface NCInteractiveNotificationHostViewController : _UIRemoteViewController <NCInteractiveNotificationHostInterface, NCInteractiveNotificationHostDelegate> {
+@interface NCInteractiveNotificationHostViewController : _UIRemoteViewController <NCInteractiveNotificationHostDelegate, NCInteractiveNotificationHostInterface> {
     NCViewServiceDescriptor *_accessoryViewService;
     float _bottomOverhangHeight;
     <NCInteractiveNotificationHostDelegate> *_delegate;

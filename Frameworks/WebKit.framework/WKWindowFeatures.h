@@ -7,27 +7,27 @@
 @interface WKWindowFeatures : NSObject {
     struct RetainPtr<NSNumber> { 
         void *m_ptr; 
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
     } _allowsResizing;
+    struct RetainPtr<NSNumber> { 
+        void *m_ptr; 
     } _height;
+    struct RetainPtr<NSNumber> { 
+        void *m_ptr; 
     } _menuBarVisibility;
+    struct RetainPtr<NSNumber> { 
+        void *m_ptr; 
     } _statusBarVisibility;
+    struct RetainPtr<NSNumber> { 
+        void *m_ptr; 
     } _toolbarsVisibility;
+    struct RetainPtr<NSNumber> { 
+        void *m_ptr; 
     } _width;
+    struct RetainPtr<NSNumber> { 
+        void *m_ptr; 
     } _x;
+    struct RetainPtr<NSNumber> { 
+        void *m_ptr; 
     } _y;
 }
 
@@ -42,7 +42,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_initWithWindowFeatures:(const struct WindowFeatures { float x1; boolx2; float x3; boolx4; float x5; boolx6; float x7; boolx8; boolx9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; boolx16; struct Vector<WTF::String, 0, WTF::CrashOnOverflow> { struct String {} *x_17_1_1; unsigned int x_17_1_2; unsigned int x_17_1_3; } x17; }*)arg1;
+- (id)_initWithWindowFeatures:(const struct WindowFeatures { float x1; bool x2; float x3; bool x4; float x5; bool x6; float x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; bool x15; bool x16; struct Vector<WTF::String, 0, WTF::CrashOnOverflow> { struct String {} *x_17_1_1; unsigned int x_17_1_2; unsigned int x_17_1_3; } x17; }*)arg1;
 - (id)allowsResizing;
 - (id)height;
 - (id)menuBarVisibility;

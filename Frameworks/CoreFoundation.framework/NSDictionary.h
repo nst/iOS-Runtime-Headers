@@ -9,7 +9,7 @@
 
 @class NSArray, NSNumber, NSString;
 
-@interface NSDictionary : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, PQLBindable> {
+@interface NSDictionary : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable> {
 }
 
 @property(readonly) float averageRating;
@@ -51,17 +51,17 @@
 + (id)dictionary;
 + (id)dictionaryByInvertingDictionary:(id)arg1;
 + (id)dictionaryByInvertingDictionary:(id)arg1;
-+ (id)dictionaryWithArchiveData:(id)arg1 allowedClasses:(id)arg2;
 + (id)dictionaryWithArchiveData:(id)arg1;
++ (id)dictionaryWithArchiveData:(id)arg1 allowedClasses:(id)arg2;
 + (id)dictionaryWithContentsOfFile:(id)arg1;
 + (id)dictionaryWithContentsOfURL:(id)arg1;
-+ (id)dictionaryWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 + (id)dictionaryWithDictionary:(id)arg1;
++ (id)dictionaryWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 + (id)dictionaryWithGlance:(id)arg1;
 + (id)dictionaryWithKeyArray:(id)arg1 defaultValue:(id)arg2;
 + (id)dictionaryWithObject:(id)arg1 forKey:(id)arg2;
-+ (id)dictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 + (id)dictionaryWithObjects:(id)arg1 forKeys:(id)arg2;
++ (id)dictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 + (id)dictionaryWithObjectsAndKeys:(id)arg1;
 + (id)dictionaryWithParametersInURLString:(id)arg1;
 + (id)dictionaryWithPlistData:(id)arg1;
@@ -78,8 +78,8 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)supportsSecureCoding;
 
-- (struct KeyValueArray { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct Object {} *x4[1]; }*)CA_copyRenderKeyValueArray;
 - (id)CAMLType;
+- (struct KeyValueArray { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct Object {} *x4[1]; }*)CA_copyRenderKeyValueArray;
 - (id)CDVMergeOverrideDictionary:(id)arg1;
 - (id)CDVObjectForKeyCaseInsensitive:(id)arg1;
 - (id)CDVObjectForKeyWithNameSpace:(id)arg1 andName:(id)arg2;
@@ -148,10 +148,10 @@
 - (id)_geo_newXPCObject;
 - (id)_gkDictionaryByRemovingObjectForKey:(id)arg1;
 - (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
-- (id)_gkImageURLForSize:(int)arg1 scale:(float)arg2 foundSize:(out unsigned int*)arg3;
 - (id)_gkImageURLForSize:(int)arg1 scale:(float)arg2;
-- (id)_gkSubDictionaryWithKeys:(id)arg1 mappedToNewKeys:(id)arg2;
+- (id)_gkImageURLForSize:(int)arg1 scale:(float)arg2 foundSize:(out unsigned int*)arg3;
 - (id)_gkSubDictionaryWithKeys:(id)arg1;
+- (id)_gkSubDictionaryWithKeys:(id)arg1 mappedToNewKeys:(id)arg2;
 - (id)_gkValuesForKeys:(id)arg1;
 - (BOOL)_mapkit_writeBinaryPlist:(id)arg1 atomically:(BOOL)arg2;
 - (id)_numberForKey:(id)arg1;
@@ -192,36 +192,36 @@
 - (float)averageRating;
 - (id)bestImageURLForWidth:(float)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })bl_affineTransformForKey:(id)arg1;
-- (BOOL)bl_boolForKey:(id)arg1 defaultValue:(BOOL)arg2;
 - (BOOL)bl_boolForKey:(id)arg1;
+- (BOOL)bl_boolForKey:(id)arg1 defaultValue:(BOOL)arg2;
 - (id)bl_dictionaryByRemovingValuesForKey:(id)arg1;
 - (id)bl_dictionaryBySwappingValuesWithDictionary:(id)arg1;
-- (double)bl_doubleForKey:(id)arg1 defaultValue:(double)arg2;
 - (double)bl_doubleForKey:(id)arg1;
-- (float)bl_floatForKey:(id)arg1 defaultValue:(float)arg2;
+- (double)bl_doubleForKey:(id)arg1 defaultValue:(double)arg2;
 - (float)bl_floatForKey:(id)arg1;
-- (int)bl_intForKey:(id)arg1 defaultValue:(int)arg2;
+- (float)bl_floatForKey:(id)arg1 defaultValue:(float)arg2;
 - (int)bl_intForKey:(id)arg1;
-- (int)bl_integerForKey:(id)arg1 defaultValue:(int)arg2;
+- (int)bl_intForKey:(id)arg1 defaultValue:(int)arg2;
 - (int)bl_integerForKey:(id)arg1;
+- (int)bl_integerForKey:(id)arg1 defaultValue:(int)arg2;
 - (id)bl_nonRetainedObjectForKey:(id)arg1;
 - (id)bl_objectForIndex:(int)arg1;
 - (id)bl_objectForKey:(id)arg1 defaultValue:(id)arg2;
 - (id)bl_objectOrNullForKey:(id)arg1;
-- (struct CGPoint { float x1; float x2; })bl_pointFromStringForKey:(id)arg1 defaultValue:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGPoint { float x1; float x2; })bl_pointFromStringForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGPoint { float x1; float x2; })bl_pointFromStringForKey:(id)arg1 defaultValue:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)blj_dictionaryByRemovingValuesForKey:(id)arg1;
 - (id)blj_dictionaryBySwappingValuesWithDictionary:(id)arg1;
-- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
-- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
-- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
 - (BOOL)boolForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
+- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
+- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
+- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
 - (BOOL)boolValueForKey:(id)arg1;
 - (BOOL)boolValueForKey:(id)arg1;
 - (void)bs_eachValue:(id)arg1;
@@ -262,8 +262,8 @@
 - (id)description;
 - (id)descriptionInStringsFileFormat;
 - (id)descriptionSingleLine;
-- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (id)descriptionWithLocale:(id)arg1;
+- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (id)dictionaryChanging:(id)arg1 to:(id)arg2;
 - (id)dictionaryForKey:(id)arg1;
 - (id)dictionaryForKey:(id)arg1;
@@ -307,9 +307,9 @@
 - (id)filteredKeysUsingPredicate:(id)arg1;
 - (float)floatForKeyPath:(id)arg1;
 - (void)getKeys:(id*)arg1;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (void)getObjects:(id*)arg1;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
 - (id)gksDeepMutableCopy;
 - (id)grappaInfo;
 - (unsigned int)hash;
@@ -320,11 +320,11 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
-- (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithObject:(id)arg1 forKey:(id)arg2;
-- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (id)initWithObjects:(id)arg1 forKeys:(id)arg2;
+- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (id)initWithObjectsAndKeys:(id)arg1;
 - (id)invertedDictionary;
 - (BOOL)isEqual:(id)arg1;
@@ -371,8 +371,8 @@
 - (id)numberForKeyPath:(id)arg1;
 - (id)objectEnumerator;
 - (id)objectForCFString:(struct __CFString { }*)arg1;
-- (id)objectForKey:(id)arg1 ofClass:(Class)arg2;
 - (id)objectForKey:(id)arg1;
+- (id)objectForKey:(id)arg1 ofClass:(Class)arg2;
 - (id)objectForKeyPath:(id)arg1;
 - (id)objectForKeyPredicate:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;

@@ -44,8 +44,8 @@
 - (id)TVMode;
 - (id)TVSignalType;
 - (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { int x_1_2_1; } x_2_1_1; } x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; struct Display {} *x4; struct __CFString {} *x5; struct ContextItem {} *x6; unsigned int x7; unsigned int x8; struct SpinLock { struct { int x_1_2_1; } x_9_1_1; } x9; struct PendingOperation {} *x10; struct Context {} *x11; struct Shape {} *x12; unsigned int x13; struct Context {} *x14; struct Renderer {} *x15; double x16; double x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; }*)arg1;
-- (void)addClone:(id)arg1 options:(id)arg2;
 - (void)addClone:(id)arg1;
+- (void)addClone:(id)arg1 options:(id)arg2;
 - (BOOL)allowsVirtualModes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (unsigned int)clientPortAtPosition:(struct CGPoint { float x1; float x2; })arg1;

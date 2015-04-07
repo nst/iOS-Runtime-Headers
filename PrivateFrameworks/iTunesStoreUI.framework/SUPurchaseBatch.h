@@ -26,7 +26,6 @@
 @property SUPurchaseManager * purchaseManager;
 @property(retain) NSArray * validPurchases;
 
-- (int (*)())errorEqualCallback;
 - (id)_copyModifiedErrorsFromDictionary:(struct __CFDictionary { }*)arg1;
 - (id)_copyUniqueErrorsFromErrors:(id)arg1;
 - (id)_copyValidPurchasesForItems:(id)arg1;
@@ -35,10 +34,11 @@
 - (id)copyContinuationsForPurchases:(id)arg1;
 - (id)copyFilteredItemsFromItems:(id)arg1;
 - (void)dealloc;
+- (int (*)())errorEqualCallback;
 - (id)errors;
 - (id)everythingFailedErrorForError:(id)arg1;
-- (id)initWithItems:(id)arg1 offers:(id)arg2;
 - (id)initWithItems:(id)arg1;
+- (id)initWithItems:(id)arg1 offers:(id)arg2;
 - (id)items;
 - (id)mergedErrorForError:(id)arg1 withCount:(int)arg2;
 - (id)offers;

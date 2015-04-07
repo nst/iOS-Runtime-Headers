@@ -5,14 +5,14 @@
 @class NSMutableSet, NSSet, UIGestureRecognizer;
 
 @interface MFComposeScrollView : UIScrollView {
-    struct CGPoint { 
-        float x; 
-        float y; 
     NSMutableSet *_disabledSubviews;
     int _scrollBlocked;
     BOOL _shouldScrollToFirstResponder;
     UIGestureRecognizer *_singleTapGestureRecognizer;
     BOOL _subviewsDisabled;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _tapLocation;
 }
 

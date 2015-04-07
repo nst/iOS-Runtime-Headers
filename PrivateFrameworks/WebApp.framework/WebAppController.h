@@ -5,30 +5,21 @@
 @class NSArray, NSDictionary, NSMutableArray, NSString, NSTimer, UIView, UIViewController, UIWebClip, UIWebView, UIWindow, WBUSheetController, WebUIAuthenticationManager, WebUIDownloadManager;
 
 @interface WebAppController : WebUIDelegate <UIApplicationDelegate, UIWebViewDelegate, UIWebViewPrivateDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     NSMutableArray *_alerts;
     WebUIAuthenticationManager *_authenticationManager;
     NSDictionary *_connectionProperties;
     WebUIDownloadManager *_downloadManager;
     float _endScale;
     NSArray *_fallbackURLs;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _inputViewScreenBoundsAfterRotation;
     BOOL _isRotating;
     BOOL _isSuspended;
@@ -37,6 +28,15 @@
     int _orientation;
     int _pendingOrientation;
     unsigned int _rotationEdgePin;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _rotationRect;
     WBUSheetController *_sheetController;
     float _startScale;
@@ -119,13 +119,13 @@
 - (void)uiWebView:(id)arg1 resource:(id)arg2 didReceiveAuthenticationChallenge:(id)arg3 fromDataSource:(id)arg4;
 - (void)updateStatusBarStyleFromWebClip;
 - (id)webClip;
+- (id)webView;
 - (void)webView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 decidePolicyForNewWindowAction:(id)arg2 request:(id)arg3 newFrameName:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webView:(id)arg1 didFailProvisionalLoadWithError:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
-- (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)window:(id)arg1 didRotateFromInterfaceOrientation:(int)arg2;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;

@@ -13,8 +13,8 @@
 - (BOOL)_isMatchForRemindersList:(id)arg1;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithRemindersList:(id)arg1 forceLocal:(BOOL)arg2;
 - (id)initWithRemindersList:(id)arg1;
+- (id)initWithRemindersList:(id)arg1 forceLocal:(BOOL)arg2;
 - (id)remindersListFromStore:(id)arg1;
 
 @end

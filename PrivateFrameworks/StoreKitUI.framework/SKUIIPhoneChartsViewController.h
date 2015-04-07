@@ -5,15 +5,15 @@
 @class <SKUIChartsViewControllerDelegate>, NSArray, NSMutableDictionary, NSOperationQueue, NSString, SKUIClientContext, SKUIResourceLoader, SKUISegmentedTableHeaderView, UISegmentedControl;
 
 @interface SKUIIPhoneChartsViewController : UIViewController <SKUIItemListTableDelegate> {
+    SKUIResourceLoader *_artworkLoader;
+    NSMutableDictionary *_chartViewControllers;
+    NSArray *_charts;
+    SKUIClientContext *_clientContext;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    SKUIResourceLoader *_artworkLoader;
-    NSMutableDictionary *_chartViewControllers;
-    NSArray *_charts;
-    SKUIClientContext *_clientContext;
     } _contentInset;
     <SKUIChartsViewControllerDelegate> *_delegate;
     BOOL _delegateWantsWillDisplay;

@@ -37,9 +37,9 @@
 - (int)error;
 - (BOOL)includePhotosInResults;
 - (BOOL)includeSourceInResults;
-- (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(BOOL)arg4 includePhotosInResults:(BOOL)arg5;
-- (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(BOOL)arg4;
 - (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3;
+- (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(BOOL)arg4;
+- (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(BOOL)arg4 includePhotosInResults:(BOOL)arg5;
 - (void)runPredicate;
 - (void)runPredicateWithDelegate:(id)arg1;
 - (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;

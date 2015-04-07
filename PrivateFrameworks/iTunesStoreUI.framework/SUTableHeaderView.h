@@ -5,12 +5,12 @@
 @class NSString, UIColor, UIFont, UILabel;
 
 @interface SUTableHeaderView : UIView {
+    UIColor *_bottomBorderColor;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIColor *_bottomBorderColor;
     } _edgeInsets;
     int _index;
     int _style;

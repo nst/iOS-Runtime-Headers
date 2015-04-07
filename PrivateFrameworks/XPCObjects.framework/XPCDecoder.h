@@ -15,9 +15,9 @@
 
 @property(copy) NSString * errorDescription;
 
-+ (id)rootObjectForEncoding:(id)arg1 allowedClasses:(id)arg2 errorDescription:(id)arg3;
-+ (id)rootObjectForEncoding:(id)arg1 allowedClasses:(id)arg2;
 + (id)rootObjectForEncoding:(id)arg1;
++ (id)rootObjectForEncoding:(id)arg1 allowedClasses:(id)arg2;
++ (id)rootObjectForEncoding:(id)arg1 allowedClasses:(id)arg2 errorDescription:(id)arg3;
 
 - (BOOL)_classIsAllowed:(Class)arg1;
 - (void)_verifyCurrentObject;

@@ -5,6 +5,11 @@
 @class NSData, NSString;
 
 @interface _NMRNowPlayingInfoProtobuf : PBCodable <NSCopying> {
+    NSString *_album;
+    NSString *_artist;
+    NSData *_artworkDataDigest;
+    double _duration;
+    double _elapsedTime;
     struct { 
         unsigned int duration : 1; 
         unsigned int elapsedTime : 1; 
@@ -17,11 +22,6 @@
         unsigned int isAlwaysLive : 1; 
         unsigned int isExplicitTrack : 1; 
         unsigned int isMusicApp : 1; 
-    NSString *_album;
-    NSString *_artist;
-    NSData *_artworkDataDigest;
-    double _duration;
-    double _elapsedTime;
     } _has;
     BOOL _isAlwaysLive;
     BOOL _isExplicitTrack;

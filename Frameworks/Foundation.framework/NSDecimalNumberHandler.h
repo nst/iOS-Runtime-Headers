@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSDecimalNumberHandler : NSObject <NSDecimalNumberBehaviors, NSCoding> {
-    unsigned int _scale : 16;
+@interface NSDecimalNumberHandler : NSObject <NSCoding, NSDecimalNumberBehaviors> {
+    unsigned int _raiseOnDivideByZero : 1;
     unsigned int _raiseOnExactness : 1;
     unsigned int _raiseOnOverflow : 1;
     unsigned int _raiseOnUnderflow : 1;
-    unsigned int _raiseOnDivideByZero : 1;
-    unsigned int _roundingMode : 3;
-    unsigned int _unused : 9;
-    void *_reserved2;
     void *_reserved;
+    void *_reserved2;
+    unsigned int _roundingMode : 3;
+    unsigned int _scale : 16;
+    unsigned int _unused : 9;
 }
 
 + (id)decimalNumberHandlerWithRoundingMode:(unsigned int)arg1 scale:(short)arg2 raiseOnExactness:(BOOL)arg3 raiseOnOverflow:(BOOL)arg4 raiseOnUnderflow:(BOOL)arg5 raiseOnDivideByZero:(BOOL)arg6;

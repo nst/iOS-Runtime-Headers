@@ -39,8 +39,8 @@
 - (void)activateKeys;
 - (void)addKeyToDelayedDeactivationSet:(id)arg1;
 - (BOOL)cacheDeferable;
-- (id)cacheIdentifierForKey:(id)arg1 withState:(int)arg2;
 - (id)cacheIdentifierForKey:(id)arg1;
+- (id)cacheIdentifierForKey:(id)arg1 withState:(int)arg2;
 - (id)cacheKey;
 - (id)cacheKeysForRenderFlags:(id)arg1;
 - (id)cacheToken;
@@ -79,7 +79,7 @@
 - (int)stateForKey:(id)arg1;
 - (void)updateDecorationViewsIfNeeded;
 - (BOOL)validForKeyplane:(id)arg1 withVisualStyle:(int)arg2;
-- (id)viewForKey:(id)arg1 state:(int)arg2;
 - (id)viewForKey:(id)arg1;
+- (id)viewForKey:(id)arg1 state:(int)arg2;
 
 @end

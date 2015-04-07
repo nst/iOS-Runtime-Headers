@@ -5,9 +5,6 @@
 @class ABContactsFilter, NSArray, NSMutableArray, NSRecursiveLock;
 
 @interface ABModel : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     void *_addressBook;
     BOOL _autoInvalidateOnDatabaseChange;
     void *_backgroundAddressBook;
@@ -19,6 +16,9 @@
     id _delayedNotificationHandler;
     unsigned int _displayOrdering;
     ABContactsFilter *_displayedContactsFilter;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _displayedMemberPreparedRange;
     BOOL _displayedMembersAreSearchResults;
     struct __CFDictionary { } *_headerSortKeyToHeaderString;

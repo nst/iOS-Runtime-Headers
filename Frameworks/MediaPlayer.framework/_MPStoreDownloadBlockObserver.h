@@ -9,8 +9,16 @@
 @class MPStoreDownload, NSString;
 
 @interface _MPStoreDownloadBlockObserver : NSObject <MPStoreDownloadManagerObserver> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _didFinishDownloadHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _didFinishPurchaseHandler;
+
     MPStoreDownload *_download;
 }
 

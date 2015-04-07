@@ -11,7 +11,11 @@
 @interface AXSpringBoardServer : AXServer {
     AXAccessQueue *_accessQueue;
     NSMutableArray *_actionHandlers;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _currentAlertHandler;
+
     NSMutableArray *_gestureOverrides;
     NSMutableDictionary *_reachabilityHandlers;
 }
@@ -118,11 +122,11 @@
 - (void)setShowSpeechPlaybackControls:(BOOL)arg1;
 - (void)setSiriIsTalking:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
-- (void)showAlert:(int)arg1 withHandler:(id)arg2 withData:(id)arg3;
 - (void)showAlert:(int)arg1 withHandler:(id)arg2;
+- (void)showAlert:(int)arg1 withHandler:(id)arg2 withData:(id)arg3;
 - (void)showControlCenter:(BOOL)arg1;
-- (BOOL)showNotificationCenter:(BOOL)arg1;
 - (void)showNotificationCenter;
+- (BOOL)showNotificationCenter:(BOOL)arg1;
 - (void)startHearingAidServer;
 - (id)systemAppInfoWithQuery:(unsigned int)arg1;
 - (void)takeScreenshot;

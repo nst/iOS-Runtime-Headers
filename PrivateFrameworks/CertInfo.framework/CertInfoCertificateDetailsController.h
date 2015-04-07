@@ -5,10 +5,10 @@
 @class <CertInfoCertificateDetailsControllerDelegate>, NSArray, UIBarButtonItem;
 
 @interface CertInfoCertificateDetailsController : UITableViewController {
-    unsigned int _showsDoneButton : 1;
     <CertInfoCertificateDetailsControllerDelegate> *_delegate;
     UIBarButtonItem *_doneButton;
     NSArray *_sectionDictionaries;
+    unsigned int _showsDoneButton : 1;
 }
 
 @property <CertInfoCertificateDetailsControllerDelegate> * delegate;
@@ -17,12 +17,12 @@
 - (void).cxx_destruct;
 - (void)_doneButtonPressed:(id)arg1;
 - (id)_propertiesForIndexPath:(id)arg1;
-- (id)_sectionsForProperties:(id)arg1 currentSectionDictionary:(id)arg2;
 - (id)_sectionsForProperties:(id)arg1;
+- (id)_sectionsForProperties:(id)arg1 currentSectionDictionary:(id)arg2;
 - (id)delegate;
 - (id)initWithCertificateProperties:(id)arg1;
-- (id)initWithTrust:(struct __SecTrust { }*)arg1 certificateIndex:(long)arg2;
 - (id)initWithTrust:(struct __SecTrust { }*)arg1;
+- (id)initWithTrust:(struct __SecTrust { }*)arg1 certificateIndex:(long)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setShowsDoneButton:(BOOL)arg1;

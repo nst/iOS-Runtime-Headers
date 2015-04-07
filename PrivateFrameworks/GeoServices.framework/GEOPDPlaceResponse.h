@@ -5,10 +5,10 @@
 @class GEOPDPlaceGlobalResult, NSMutableArray;
 
 @interface GEOPDPlaceResponse : PBCodable <NSCopying> {
+    GEOPDPlaceGlobalResult *_globalResult;
     struct { 
         unsigned int requestType : 1; 
         unsigned int status : 1; 
-    GEOPDPlaceGlobalResult *_globalResult;
     } _has;
     NSMutableArray *_placeResults;
     int _requestType;

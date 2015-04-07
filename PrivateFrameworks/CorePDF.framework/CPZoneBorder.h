@@ -4,7 +4,7 @@
 
 @class CPPage, NSMutableArray;
 
-@interface CPZoneBorder : NSObject <NSCopying, CPCopying> {
+@interface CPZoneBorder : NSObject <CPCopying, NSCopying> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -35,8 +35,8 @@
 
 - (void)addGraphicObject:(id)arg1;
 - (void)addNeighbor:(id)arg1;
-- (void)addToArray:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)addToArray:(id)arg1;
+- (void)addToArray:(id)arg1 atIndex:(unsigned int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (void)combine:(id)arg1;
 - (int)compareXBounds:(id)arg1;
@@ -55,8 +55,8 @@
 - (BOOL)hasClockwiseVectorAtIndex:(unsigned int)arg1 startingForward:(BOOL)arg2;
 - (BOOL)hasCounterclockwiseVectorAtIndex:(unsigned int)arg1 startingForward:(BOOL)arg2;
 - (BOOL)hasForwardVector;
-- (BOOL)hasNeighborShape:(id)arg1 atSide:(int)arg2;
 - (BOOL)hasNeighborShape:(id)arg1;
+- (BOOL)hasNeighborShape:(id)arg1 atSide:(int)arg2;
 - (BOOL)hasVectorGoingForward:(BOOL)arg1 startingAtIndex:(unsigned int*)arg2;
 - (unsigned int)indexOfIntersectionWith:(id)arg1;
 - (id)init;

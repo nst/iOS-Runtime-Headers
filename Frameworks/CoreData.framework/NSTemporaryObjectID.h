@@ -19,8 +19,8 @@
 + (unsigned int)allocateBatch:(id*)arg1 forEntity:(id)arg2 count:(unsigned int)arg3;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (Class)classForStore:(id)arg1;
-+ (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
 + (id)initWithEntity:(id)arg1;
++ (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
 + (void)initialize;
 + (void)release;
 + (id)retain;
@@ -37,8 +37,8 @@
 - (id)entity;
 - (void)finalize;
 - (unsigned int)hash;
-- (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
 - (id)initWithEntity:(id)arg1;
+- (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isTemporaryID;
 - (id)persistentStore;

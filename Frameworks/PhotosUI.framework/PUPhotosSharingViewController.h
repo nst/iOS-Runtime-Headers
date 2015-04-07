@@ -8,7 +8,20 @@
 
 @class <PUPhotosSharingViewControllerDelegate>, NSIndexPath, NSMutableDictionary, NSMutableSet, NSPredicate, NSString, PHAsset, PHCachingImageManager, PHFetchResult, PUActivityViewController, PUPhotoPinchGestureRecognizer, PUPhotoSelectionManager, PUPhotosSharingCollectionViewLayout, PUPhotosSharingTransitionContext, PUPhotosSharingViewControllerSpec, PUPhotosZoomingSharingGridCell, PUScrollViewSpeedometer, PUTransitionViewAnimator, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer, UIView;
 
-@interface PUPhotosSharingViewController : UIViewController <PLDismissableViewController, UIGestureRecognizerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, PUPhotosSharingCollectionViewLayoutDelegate, UIActivityViewControllerDelegate, PUTransitionViewAnimatorDelegate, PUScrollViewSpeedometerDelegate, PUActivityViewControllerDelegate, PUPhotoLibraryUIChangeObserver, PUPhotosSharingTransitionViewController, PHAssetCollectionDataSource> {
+@interface PUPhotosSharingViewController : UIViewController <PHAssetCollectionDataSource, PLDismissableViewController, PUActivityViewControllerDelegate, PUPhotoLibraryUIChangeObserver, PUPhotosSharingCollectionViewLayoutDelegate, PUPhotosSharingTransitionViewController, PUScrollViewSpeedometerDelegate, PUTransitionViewAnimatorDelegate, UIActivityViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
+    PHCachingImageManager *__cachingImageManager;
+    PUActivityViewController *__embeddedActivityViewController;
+    PHAsset *__lastKnownReferenceAsset;
+    NSIndexPath *__lastKnownReferenceIndexPath;
+    PUTransitionViewAnimator *__photoZoomAnimator;
+    PUPhotosZoomingSharingGridCell *__photoZoomCell;
+    PUPhotoPinchGestureRecognizer *__photoZoomPinchGestureRecognizer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id __pptOnDidEndScrollingBlock;
+
+    NSMutableSet *__preheatedAssets;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,15 +31,6 @@
             float width; 
             float height; 
         } size; 
-    PHCachingImageManager *__cachingImageManager;
-    PUActivityViewController *__embeddedActivityViewController;
-    PHAsset *__lastKnownReferenceAsset;
-    NSIndexPath *__lastKnownReferenceIndexPath;
-    PUTransitionViewAnimator *__photoZoomAnimator;
-    PUPhotosZoomingSharingGridCell *__photoZoomCell;
-    PUPhotoPinchGestureRecognizer *__photoZoomPinchGestureRecognizer;
-    id __pptOnDidEndScrollingBlock;
-    NSMutableSet *__preheatedAssets;
     } __previousPreheatRect;
     UICollectionViewLayout *__transitionLayout;
     PUActivityViewController *__unembeddedActivityViewController;
@@ -132,8 +136,8 @@
 - (id)_selectionViewAtIndexPath:(id)arg1 forCollectionView:(id)arg2;
 - (void)_setEmbeddedActivityView:(id)arg1;
 - (void)_setEmbeddedActivityViewController:(id)arg1;
-- (void)_setLastKnownReferenceAsset:(id)arg1 indexPath:(id)arg2;
 - (void)_setLastKnownReferenceAsset:(id)arg1;
+- (void)_setLastKnownReferenceAsset:(id)arg1 indexPath:(id)arg2;
 - (void)_setLastKnownReferenceIndexPath:(id)arg1;
 - (void)_setMainCollectionView:(id)arg1;
 - (void)_setMainCollectionViewLayout:(id)arg1;

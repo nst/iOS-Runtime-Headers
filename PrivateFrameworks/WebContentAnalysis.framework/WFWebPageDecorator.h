@@ -15,10 +15,10 @@
 + (id)_plainTextWithSelector:(SEL)arg1 object:(id)arg2;
 + (id)plainTextWithWebPageData:(id)arg1;
 + (id)plainTextWithWebPageString:(id)arg1;
-+ (id)webPageWithData:(id)arg1 URLString:(id)arg2;
 + (id)webPageWithData:(id)arg1;
-+ (id)webPageWithString:(id)arg1 URLString:(id)arg2;
++ (id)webPageWithData:(id)arg1 URLString:(id)arg2;
 + (id)webPageWithString:(id)arg1;
++ (id)webPageWithString:(id)arg1 URLString:(id)arg2;
 
 - (id)URLString;
 - (void)_cacheImgProperties;
@@ -42,8 +42,8 @@
 - (id)pageContent;
 - (id)pageTitle;
 - (id)plainText;
-- (id)plainTextAttributeWithSelector:(SEL)arg1 title:(id)arg2 weight:(int)arg3;
 - (id)plainTextAttributeWithSelector:(SEL)arg1 title:(id)arg2;
+- (id)plainTextAttributeWithSelector:(SEL)arg1 title:(id)arg2 weight:(int)arg3;
 - (id)rawPlainText;
 - (id)scriptBlocks;
 - (void)setURLString:(id)arg1;

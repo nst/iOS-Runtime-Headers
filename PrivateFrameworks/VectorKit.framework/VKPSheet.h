@@ -5,11 +5,11 @@
 @class NSMutableArray, VKPGlobalProperties, VKPMatchingTree;
 
 @interface VKPSheet : PBCodable <NSCopying> {
+    VKPGlobalProperties *_globalProperties;
     struct { 
         unsigned int mapTypeSupport : 1; 
         unsigned int matchingTreeVersion : 1; 
         unsigned int version : 1; 
-    VKPGlobalProperties *_globalProperties;
     } _has;
     unsigned int _mapTypeSupport;
     NSMutableArray *_matchingGraphNodes;

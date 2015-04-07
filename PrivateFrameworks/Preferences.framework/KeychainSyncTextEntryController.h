@@ -46,8 +46,8 @@
 - (void)setTextEntryText:(id)arg1;
 - (void)setTextEntryType:(int)arg1;
 - (void)setTextFieldHasRoundBorder:(BOOL)arg1;
-- (void)setTextValue:(id)arg1 forSpecifier:(id)arg2;
 - (void)setTextValue:(id)arg1;
+- (void)setTextValue:(id)arg1 forSpecifier:(id)arg2;
 - (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

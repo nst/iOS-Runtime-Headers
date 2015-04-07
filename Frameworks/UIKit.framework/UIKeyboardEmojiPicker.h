@@ -4,7 +4,7 @@
 
 @class NSString, UIImageView, UITableView;
 
-@interface UIKeyboardEmojiPicker : UIKBKeyView <UITableViewDelegate, UITableViewDataSource> {
+@interface UIKeyboardEmojiPicker : UIKBKeyView <UITableViewDataSource, UITableViewDelegate> {
     UIImageView *_container;
     UIImageView *_innerShadow;
     UITableView *_picker;

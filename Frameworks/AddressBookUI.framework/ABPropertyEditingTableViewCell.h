@@ -23,8 +23,8 @@
 - (BOOL)canResignFirstResponder;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithReuseIdentifier:(id)arg1 property:(int)arg2 delegate:(id)arg3;
 - (id)initWithReuseIdentifier:(id)arg1;
+- (id)initWithReuseIdentifier:(id)arg1 property:(int)arg2 delegate:(id)arg3;
 - (BOOL)isFirstResponder;
 - (void)layoutSubviews;
 - (id)placeholder;

@@ -5,11 +5,11 @@
 @class NSArray, NSMutableDictionary;
 
 @interface UIPushBehavior : UIDynamicBehavior {
+    BOOL _active;
+    float _angle;
     struct CGVector { 
         float dx; 
         float dy; 
-    BOOL _active;
-    float _angle;
     } _forceVector;
     int _i;
     float _magnitude;
@@ -35,22 +35,22 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)initWithItems:(id)arg1 mode:(int)arg2;
 - (id)initWithItems:(id)arg1;
+- (id)initWithItems:(id)arg1 mode:(int)arg2;
 - (id)items;
 - (float)magnitude;
 - (int)mode;
 - (struct CGVector { float x1; float x2; })pushDirection;
 - (void)removeItem:(id)arg1;
 - (void)setActive:(BOOL)arg1;
-- (void)setAngle:(float)arg1 magnitude:(float)arg2;
 - (void)setAngle:(float)arg1;
+- (void)setAngle:(float)arg1 magnitude:(float)arg2;
 - (void)setMagnitude:(float)arg1;
 - (void)setPushDirection:(struct CGVector { float x1; float x2; })arg1;
 - (void)setTargetOffsetFromCenter:(struct UIOffset { float x1; float x2; })arg1 forItem:(id)arg2;
 - (void)setTargetPoint:(struct CGPoint { float x1; float x2; })arg1 forItem:(id)arg2;
-- (void)setXComponent:(float)arg1 yComponent:(float)arg2;
 - (void)setXComponent:(float)arg1;
+- (void)setXComponent:(float)arg1 yComponent:(float)arg2;
 - (void)setYComponent:(float)arg1;
 - (struct UIOffset { float x1; float x2; })targetOffsetFromCenterForItem:(id)arg1;
 - (struct CGPoint { float x1; float x2; })targetPointForItem:(id)arg1;

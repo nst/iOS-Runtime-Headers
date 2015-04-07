@@ -4,12 +4,12 @@
 
 @class NSString, TSWPLayout, TSWPPadding;
 
-@interface KNNoteLayout : TSDLayout <TSKChangeSourceObserver, TSWPLayoutParent, TSWPColumnMetrics> {
+@interface KNNoteLayout : TSDLayout <TSKChangeSourceObserver, TSWPColumnMetrics, TSWPLayoutParent> {
+    TSWPLayout *mContainedLayout;
+    TSWPPadding *mPadding;
     struct CGSize { 
         float width; 
         float height; 
-    TSWPLayout *mContainedLayout;
-    TSWPPadding *mPadding;
     } mSizeOfScrollViewEnclosingCanvas;
 }
 

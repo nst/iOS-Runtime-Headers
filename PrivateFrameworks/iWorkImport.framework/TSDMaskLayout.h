@@ -5,33 +5,33 @@
 @class TSDImageLayout, TSDInfoGeometry, TSDPathSource;
 
 @interface TSDMaskLayout : TSDLayout {
-    struct { 
-        unsigned int path : 1; 
-        unsigned int tightPathBounds : 1; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     struct CGPath { } *mCachedPath;
     struct CGPath { } *mCachedPathNoScale;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mCachedTightPathBounds;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mCachedTightPathBoundsNoScale;
     TSDInfoGeometry *mDynamicInfoGeometry;
     TSDPathSource *mDynamicPathSource;
+    struct { 
+        unsigned int path : 1; 
+        unsigned int tightPathBounds : 1; 
     } mMaskInvalidFlags;
     float mPathScale;
     BOOL mScalingInMaskMode;

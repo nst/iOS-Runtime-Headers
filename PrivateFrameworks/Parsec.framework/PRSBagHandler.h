@@ -4,7 +4,7 @@
 
 @class <PRSSessionController>, CLInUseAssertion, CLLocation, CLLocationManager, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableData, NSObject<OS_dispatch_queue>, NSSet, NSString, NSURL, NSURLSessionConfiguration, NSURLSessionDataTask, PRSFairPlaySAPSession, PRSSharedParsecSession;
 
-@interface PRSBagHandler : NSObject <PRSParsecDataHandler, PRSResourceProvider, PRSSessionController, CLLocationManagerDelegate> {
+@interface PRSBagHandler : NSObject <CLLocationManagerDelegate, PRSParsecDataHandler, PRSResourceProvider, PRSSessionController> {
     PRSFairPlaySAPSession *_SAPSession;
     BOOL _active;
     NSString *_appIdentifierListString;
@@ -163,10 +163,10 @@
 - (void)loadUserID;
 - (id)locale;
 - (id)location;
+- (id)locationManager;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
-- (id)locationManager;
 - (id)locationSourceForLocation:(id)arg1;
 - (int)maximumCachedQueryCount;
 - (int)maximumCachedResultCount;

@@ -359,8 +359,8 @@
 - (void)setQuickSpeakCompactPreference:(id)arg1 prefersCompact:(BOOL)arg2;
 - (void)setQuickSpeakHighlightText:(BOOL)arg1;
 - (void)setQuickSpeakNubbitNormalizedPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setQuickSpeakSpeakingRate:(float)arg1 forLanguage:(id)arg2;
 - (void)setQuickSpeakSpeakingRate:(float)arg1;
+- (void)setQuickSpeakSpeakingRate:(float)arg1 forLanguage:(id)arg2;
 - (void)setQuickSpeakVolume:(float)arg1;
 - (void)setReduceWhitePointLevel:(float)arg1;
 - (void)setRegisteredNotifications:(id)arg1;

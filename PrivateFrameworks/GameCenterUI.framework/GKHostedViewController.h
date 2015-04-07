@@ -14,7 +14,11 @@
     BOOL _isRequestingRemoteViewController;
     BOOL _presentingRemoteViewController;
     GKRemoteViewController *_remoteViewController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _remoteViewReadyHandler;
+
     BOOL _shouldPresentRemoteViewController;
 }
 

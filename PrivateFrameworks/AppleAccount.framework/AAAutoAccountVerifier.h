@@ -12,7 +12,11 @@
     ACAccount *_account;
     int _attempts;
     BOOL _canceled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSOperationQueue *_requesterQueue;
     MSSearch *_search;
 }

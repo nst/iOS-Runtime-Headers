@@ -5,6 +5,9 @@
 @class NSString;
 
 @interface AWDIMessageQueryFinished : PBCodable <NSCopying> {
+    unsigned int _connectionType;
+    int _genericError;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
@@ -16,9 +19,6 @@
         unsigned int resultCode : 1; 
         unsigned int success : 1; 
         unsigned int uRLError : 1; 
-    unsigned int _connectionType;
-    int _genericError;
-    NSString *_guid;
     } _has;
     unsigned int _isEmail;
     unsigned int _isPhoneNumber;

@@ -5,16 +5,16 @@
 @class TIKeyboardCandidate, UIKBThemedView, UILabel;
 
 @interface UIKBHandwritingCandidateViewCell : UICollectionViewCell {
+    TIKeyboardCandidate *_candidate;
+    UILabel *_label;
+    UILabel *_secondaryLabel;
+    UIKBThemedView *_themedView;
     struct { 
         unsigned int idiom : 6; 
         unsigned int landscape : 1; 
         unsigned int split : 1; 
         unsigned int appearance : 8; 
         unsigned int rendering : 16; 
-    TIKeyboardCandidate *_candidate;
-    UILabel *_label;
-    UILabel *_secondaryLabel;
-    UIKBThemedView *_themedView;
     } _visualStyling;
 }
 

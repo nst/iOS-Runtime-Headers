@@ -4,7 +4,7 @@
 
 @class <KeychainSyncPasscodeFieldDelegate>, NSString, PSPasscodeField;
 
-@interface PasscodeFieldCell : PSTableCell <UIKeyInput, PSPasscodeFieldDelegate> {
+@interface PasscodeFieldCell : PSTableCell <PSPasscodeFieldDelegate, UIKeyInput> {
     BOOL _convertsNumeralsToASCII;
     <KeychainSyncPasscodeFieldDelegate> *_delegate;
     BOOL _denyFirstResponder;

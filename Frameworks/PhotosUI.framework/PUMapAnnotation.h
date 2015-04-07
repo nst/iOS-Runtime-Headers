@@ -8,12 +8,12 @@
     struct { 
         double latitude; 
         double longitude; 
-    struct { 
-        double latitude; 
-        double longitude; 
     } _coordinate;
     unsigned int _hash;
     PUMapItem *_mapItem;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _originalCoordinate;
     unsigned int _relativeOrder;
 }

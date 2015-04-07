@@ -3,6 +3,11 @@
  */
 
 @interface AWDLBEndpointsFetchReport : PBCodable <NSCopying> {
+    int _connectionCellularFallbackCount;
+    int _endpointsFetchTaskBadReplyCount;
+    int _endpointsFetchTaskCount;
+    int _endpointsFetchTaskFailureCount;
+    int _endpointsFetchTaskSuccessCount;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionCellularFallbackCount : 1; 
@@ -10,11 +15,6 @@
         unsigned int endpointsFetchTaskCount : 1; 
         unsigned int endpointsFetchTaskFailureCount : 1; 
         unsigned int endpointsFetchTaskSuccessCount : 1; 
-    int _connectionCellularFallbackCount;
-    int _endpointsFetchTaskBadReplyCount;
-    int _endpointsFetchTaskCount;
-    int _endpointsFetchTaskFailureCount;
-    int _endpointsFetchTaskSuccessCount;
     } _has;
     unsigned long long _timestamp;
 }

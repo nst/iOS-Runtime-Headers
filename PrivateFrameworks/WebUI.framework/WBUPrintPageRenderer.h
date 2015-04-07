@@ -5,21 +5,21 @@
 @class NSNumberFormatter, NSString, UIColor, UIFont, UIPrintFormatter, UIWebBrowserView, UIWebPaginationInfo, WebFrame;
 
 @interface WBUPrintPageRenderer : UIPrintPageRenderer <UIPrintInteractionControllerDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     NSString *_URLString;
     float _URLWidth;
     UIWebBrowserView *_browserView;
     UIPrintFormatter *_contentFormatter;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _contentOffset;
     NSString *_dateString;
     float _dateWidth;
     UIColor *_footerColor;
     UIFont *_footerFont;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _footerOffset;
     NSNumberFormatter *_numberFormatter;
     UIWebPaginationInfo *_paginationInfo;

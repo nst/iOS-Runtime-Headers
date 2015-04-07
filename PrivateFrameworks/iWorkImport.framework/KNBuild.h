@@ -9,11 +9,11 @@
 
 @class KNAbstractSlide, KNAnimationInfo, KNAnimationPluginMenu, KNBuildAttributes, KNBuildChunk, NSArray, NSSet, NSString, TSDDrawableInfo, TSDEditableBezierPathSource, TSUColor;
 
-@interface KNBuild : TSPObject <NSCopying, TSKTransformableObject, KNInspectableAnimation> {
+@interface KNBuild : TSPObject <KNInspectableAnimation, NSCopying, TSKTransformableObject> {
+    KNBuildAttributes *mAttributes;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    KNBuildAttributes *mAttributes;
     } mCachedActiveChunkRange;
     BOOL mCachedActiveChunkRangeIsValid;
     NSArray *mCachedChunks;

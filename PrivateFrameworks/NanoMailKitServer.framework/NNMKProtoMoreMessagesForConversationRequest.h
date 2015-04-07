@@ -5,11 +5,11 @@
 @class NSData, NSString;
 
 @interface NNMKProtoMoreMessagesForConversationRequest : PBRequest <NSCopying> {
-    struct { 
-        unsigned int fullSyncVersion : 1; 
     NSData *_beforeDateReceived;
     NSString *_conversationId;
     unsigned int _fullSyncVersion;
+    struct { 
+        unsigned int fullSyncVersion : 1; 
     } _has;
 }
 

@@ -4,7 +4,7 @@
 
 @class GEORouteMatch, MKAnnotationView, NSHashTable, NSString;
 
-@interface MKUserLocationAnnotationViewProxy : NSObject <VKPuckAnimatorTarget, VKTrackableAnnotationPresentation, VKRouteMatchedAnnotationPresentation> {
+@interface MKUserLocationAnnotationViewProxy : NSObject <VKPuckAnimatorTarget, VKRouteMatchedAnnotationPresentation, VKTrackableAnnotationPresentation> {
     MKAnnotationView *_annotationView;
     NSHashTable *_presentationCoordinateObservers;
 }

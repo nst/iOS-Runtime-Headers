@@ -5,11 +5,6 @@
 @class NSDictionary, SUGradient, UIColor;
 
 @interface SUViewControllerScriptProperties : NSObject <NSCoding, NSCopying> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     BOOL _alwaysDispatchesScrollEvents;
     UIColor *_backgroundColor;
     NSDictionary *_contextDictionary;
@@ -21,6 +16,11 @@
     UIColor *_loadingTextColor;
     UIColor *_loadingTextShadowColor;
     SUGradient *_placeholderBackgroundGradient;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _scrollContentInsets;
     BOOL _scrollingDisabled;
     BOOL _shouldLoadProgressively;

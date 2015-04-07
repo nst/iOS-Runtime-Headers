@@ -54,18 +54,18 @@
 + (id)_gkConstraintsForView:(id)arg1 centeredXInView:(id)arg2 enforceMargin:(float)arg3;
 + (id)_gkConstraintsForView:(id)arg1 withinView:(id)arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 + (id)_gkConstraintsForViews:(id)arg1 alignedByAttribute:(int)arg2;
-+ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5 applyOrthogonalConstraints:(BOOL)arg6;
 + (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5;
++ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5 applyOrthogonalConstraints:(BOOL)arg6;
 + (void)_setLegacyDecodingOnly:(BOOL)arg1;
 + (void)activateConstraints:(id)arg1;
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 constant:(float)arg4;
-+ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 constant:(float)arg6;
-+ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 constant:(float)arg7 priority:(float)arg8;
-+ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 constant:(float)arg7;
-+ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 symbolicConstant:(id)arg7 theme:(id)arg8;
-+ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 symbolicConstant:(id)arg7;
-+ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6;
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5;
++ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 constant:(float)arg6;
++ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6;
++ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 constant:(float)arg7;
++ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 constant:(float)arg7 priority:(float)arg8;
++ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 symbolicConstant:(id)arg7;
++ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 symbolicConstant:(id)arg7 theme:(id)arg8;
 + (id)constraintWithItem:(id)arg1 height:(float)arg2;
 + (id)constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
 + (id)constraintsByAttachingView:(id)arg1 toView:(id)arg2 inCorner:(unsigned int)arg3 offset:(struct UIOffset { float x1; float x2; })arg4;
@@ -83,8 +83,8 @@
 + (id)rc_viewsInConstraints:(id)arg1;
 
 - (BOOL)_addLoweredExpression:(id)arg1 toEngine:(id)arg2 integralizationAdjustment:(float)arg3 lastLoweredConstantWasRounded:(BOOL)arg4 mutuallyExclusiveConstraints:(id*)arg5;
-- (BOOL)_addToEngine:(id)arg1 integralizationAdjustment:(float)arg2 mutuallyExclusiveConstraints:(id*)arg3;
 - (void)_addToEngine:(id)arg1;
+- (BOOL)_addToEngine:(id)arg1 integralizationAdjustment:(float)arg2 mutuallyExclusiveConstraints:(id*)arg3;
 - (float)_allowedMagnitudeForIntegralizationAdjustment;
 - (float)_allowedMagnitudeForIntegralizationAdjustmentOfConstraintWithMarkerScaling:(float*)arg1;
 - (void)_clearWeakContainerReference;
@@ -130,8 +130,8 @@
 - (void)_setRelation:(int)arg1;
 - (void)_setSecondAttribute:(int)arg1;
 - (void)_setSecondItem:(id)arg1;
-- (void)_setSymbolicConstant:(id)arg1 constant:(float)arg2;
 - (void)_setSymbolicConstant:(id)arg1;
+- (void)_setSymbolicConstant:(id)arg1 constant:(float)arg2;
 - (id)_symbolicConstant;
 - (BOOL)_tryToChangeContainerGeometryWithUndoHandler:(id)arg1;
 - (id)animations;

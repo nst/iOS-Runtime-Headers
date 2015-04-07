@@ -5,23 +5,11 @@
 @class NSMutableArray, TSDImageRep, TSDInstantAlphaBinaryBitmap, TSDInstantAlphaImage, TSUColor, TSUIntegerKeyDictionary;
 
 @interface TSDInstantAlphaTracker : NSObject <TSDLayoutManipulatingTracker> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL mAllowDisconnectedRegions;
     float mAngleInRadiansForUIFeedback;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mControllingPoint;
     BOOL mCurrentlyInOperation;
     NSMutableArray *mDecoratorLayers;
@@ -32,11 +20,23 @@
     TSDInstantAlphaImage *mMaskingImage;
     BOOL mOperationShouldSubtract;
     BOOL mOperationWasCancelled;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mRawImageSize;
     TSUColor *mStartColor;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mStartPoint;
     int mTolerance;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mUnderlyingImageSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mVisualImageSize;
     TSUIntegerKeyDictionary *mWandBitmapCache;
 }

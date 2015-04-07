@@ -4,7 +4,7 @@
 
 @class KNMotionBlurAnimationPluginWrapper, NSString;
 
-@interface KNTransitionMotionDissolve : KNAnimationEffect <KNTransitionAnimator, KNFrameAnimator> {
+@interface KNTransitionMotionDissolve : KNAnimationEffect <KNFrameAnimator, KNTransitionAnimator> {
     KNMotionBlurAnimationPluginWrapper *_motionBlurWrapper;
 }
 

@@ -10,7 +10,11 @@
 
 @interface PUSlideshowSettingsViewController : UITableViewController <MPMediaPickerControllerDelegate> {
     PUAirplayRouteTableViewDataSource *_airplayDataSource;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     PUAirplayRoute *_markedRoute;
     MPMediaItemCollection *_musicCollection;
     NSString *_selectedTransitionKey;
@@ -60,8 +64,8 @@
 - (void)mediaPickerDidCancel:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
-- (void)setMarkedRoute:(id)arg1 updateToDefaultSettings:(BOOL)arg2;
 - (void)setMarkedRoute:(id)arg1;
+- (void)setMarkedRoute:(id)arg1 updateToDefaultSettings:(BOOL)arg2;
 - (void)setShouldShowCancelButton:(BOOL)arg1;
 - (BOOL)shouldShowCancelButton;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

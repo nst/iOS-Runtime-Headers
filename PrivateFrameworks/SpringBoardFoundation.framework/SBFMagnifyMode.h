@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface SBFMagnifyMode : NSObject <NSCopying> {
+    NSString *_name;
     struct CGSize { 
         float width; 
         float height; 
-    NSString *_name;
     } _size;
     float _zoomFactor;
 }

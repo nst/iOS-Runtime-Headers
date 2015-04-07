@@ -4,7 +4,7 @@
 
 @class ATSession, NSArray, NSDictionary, NSError, NSString;
 
-@interface ATSessionTask : NSObject <NSSecureCoding, NSCopying> {
+@interface ATSessionTask : NSObject <NSCopying, NSSecureCoding> {
     BOOL _cancelled;
     unsigned int _completedItemCount;
     NSArray *_currentItemDescriptions;

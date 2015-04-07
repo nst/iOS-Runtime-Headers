@@ -10,7 +10,11 @@
 
 @interface TSKDocumentModelEnumerator : NSEnumerator {
     NSMutableArray *_enumeratorStack;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _filter;
+
     BOOL _filterBeforeAddingChildren;
     <TSKModel> *_root;
     BOOL _stop;

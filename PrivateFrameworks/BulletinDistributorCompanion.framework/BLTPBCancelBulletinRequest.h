@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface BLTPBCancelBulletinRequest : PBRequest <NSCopying> {
+    double _date;
+    unsigned int _feed;
     struct { 
         unsigned int date : 1; 
         unsigned int feed : 1; 
-    double _date;
-    unsigned int _feed;
     } _has;
     NSString *_publisherMatchID;
     NSString *_universalSectionID;

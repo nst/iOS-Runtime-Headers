@@ -9,8 +9,16 @@
 @class NSArray, NSMutableDictionary;
 
 @interface CKDModifySharesOperation : CKDOperation {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deleteCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _saveCompletionBlock;
+
     NSArray *_shareIDsToDelete;
     NSMutableDictionary *_sharesByShareID;
     NSArray *_sharesToSave;

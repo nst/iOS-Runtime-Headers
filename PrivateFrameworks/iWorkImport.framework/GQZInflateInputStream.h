@@ -10,6 +10,7 @@
 @class <GQZEntryInputStream>, NSString;
 
 @interface GQZInflateInputStream : NSObject <GQZEntryInputStream> {
+    <GQZEntryInputStream> *mInput;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -25,7 +26,6 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    <GQZEntryInputStream> *mInput;
     } mStream;
 }
 

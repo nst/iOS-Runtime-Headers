@@ -5,18 +5,18 @@
 @class <NSTextStorageDelegate>, NSArray, NSMutableArray;
 
 @interface NSTextStorage : NSMutableAttributedString {
+    int _changeInLength;
+    int _editedDelta;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
+    } _editedRange;
     struct { 
         unsigned int editedMask : 8; 
         unsigned int postWillProcess : 1; 
         unsigned int postDidProcess : 1; 
         unsigned int  : 6; 
         unsigned int disabled : 16; 
-    int _changeInLength;
-    int _editedDelta;
-    } _editedRange;
     } _flags;
     NSMutableArray *_layoutManagers;
     id _sideData;

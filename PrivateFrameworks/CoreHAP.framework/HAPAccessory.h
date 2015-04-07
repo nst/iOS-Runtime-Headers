@@ -40,8 +40,8 @@
 - (BOOL)_updateService:(id)arg1;
 - (id)description;
 - (id)dispatchQueue;
-- (id)initWithInstanceID:(id)arg1 parsedServices:(id)arg2;
 - (id)initWithInstanceID:(id)arg1;
+- (id)initWithInstanceID:(id)arg1 parsedServices:(id)arg2;
 - (id)instanceID;
 - (BOOL)isPrimary;
 - (int)linkType;

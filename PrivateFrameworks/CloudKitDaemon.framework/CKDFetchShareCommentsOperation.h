@@ -9,7 +9,11 @@
 @class CKCommentCursor, CKCommentQuery;
 
 @interface CKDFetchShareCommentsOperation : CKDOperation {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _commentFetchedProgressBlock;
+
     CKCommentCursor *_cursor;
     CKCommentCursor *_nextCursor;
     CKCommentQuery *_query;

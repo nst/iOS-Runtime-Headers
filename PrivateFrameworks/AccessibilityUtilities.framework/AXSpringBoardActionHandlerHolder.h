@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface AXSpringBoardActionHandlerHolder : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSString *_identifier;
     int _type;
 }

@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, NSUndoManager, NSUserActivity, UIInputViewController, UIResponder, UIResponder<UITextInput>, UITextInputMode, UIView, UIView<UITextInputPrivate>;
 
-@interface UIResponder : NSObject <UITextInput_Internal, UITextInputAdditions, _UIStateRestorationContinuation> {
+@interface UIResponder : NSObject <UITextInputAdditions, UITextInput_Internal, _UIStateRestorationContinuation> {
 }
 
 @property(getter=_proxyTextInput,readonly) UIResponder<UITextInput> * __content;
@@ -54,8 +54,8 @@
 - (void)_clearBecomeFirstResponderWhenCapable;
 - (void)_clearOverrideNextResponder;
 - (void)_clearRestorableResponderStatus;
-- (void)_completeForwardingTouches:(id)arg1 phase:(int)arg2 event:(id)arg3 index:(unsigned int)arg4;
 - (void)_completeForwardingTouches:(id)arg1 phase:(int)arg2 event:(id)arg3;
+- (void)_completeForwardingTouches:(id)arg1 phase:(int)arg2 event:(id)arg3 index:(unsigned int)arg4;
 - (BOOL)_containedInAbsoluteResponderChain;
 - (BOOL)_containsResponder:(id)arg1;
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;

@@ -5,14 +5,14 @@
 @class NSMutableArray, NSString;
 
 @interface GEOActiveTileSet : PBCodable <NSCopying> {
-    struct { 
-        unsigned int timeToLiveSeconds : 1; 
-        unsigned int updateBehavior : 1; 
-        unsigned int multiTileURLUsesStatusCodes : 1; 
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_availableTiles;
     unsigned int _availableTilesCount;
     unsigned int _availableTilesSpace;
     NSString *_baseURL;
+    struct { 
+        unsigned int timeToLiveSeconds : 1; 
+        unsigned int updateBehavior : 1; 
+        unsigned int multiTileURLUsesStatusCodes : 1; 
     } _has;
     NSString *_localizationURL;
     NSString *_multiTileURL;

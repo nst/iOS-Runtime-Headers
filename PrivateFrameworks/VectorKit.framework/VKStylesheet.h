@@ -5,10 +5,6 @@
 @class NSLock, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, VKPGlobalProperties, VKStylesheetVendor;
 
 @interface VKStylesheet : NSObject {
-    struct unique_ptr<md::StyleMatchingTree, std::__1::default_delete<md::StyleMatchingTree> > { 
-        struct __compressed_pair<md::StyleMatchingTree *, std::__1::default_delete<md::StyleMatchingTree> > { 
-            struct StyleMatchingTree {} *__first_; 
-        } __ptr_; 
     NSObject<OS_dispatch_semaphore> *_everythingLoadingSemaphore;
     NSMutableArray *_finishedDecodingCallbacks;
     NSLock *_finishedDecodingCallbacksLock;
@@ -18,6 +14,10 @@
     int _loadedEverything;
     int _loadedGlobalResources;
     NSObject<OS_dispatch_queue> *_loadingQueue;
+    struct unique_ptr<md::StyleMatchingTree, std::__1::default_delete<md::StyleMatchingTree> > { 
+        struct __compressed_pair<md::StyleMatchingTree *, std::__1::default_delete<md::StyleMatchingTree> > { 
+            struct StyleMatchingTree {} *__first_; 
+        } __ptr_; 
     } _matchingTree;
     float _ppi;
     int _rasterPolygonChangeoverZ;
@@ -57,8 +57,8 @@
 - (int)styleAttributeValueForLocalization:(id)arg1;
 - (id)styleForFeatureAttributes:(id)arg1 clientAttributes:(struct { int x1; int x2; int x3; BOOL x4; id x5; BOOL x6; unsigned int x7; }*)arg2;
 - (id)styleGlobalProperties;
-- (id)styleMatchingAttributes:(id)arg1 vectorType:(int)arg2 locale:(id)arg3 mapDisplayStyle:(unsigned int)arg4 mapDisplayStyleVariant:(unsigned int)arg5 canSelectIcons:(BOOL)arg6 selected:(BOOL)arg7;
 - (id)styleMatchingAttributes:(id)arg1 vectorType:(int)arg2 locale:(id)arg3 mapDisplayStyle:(unsigned int)arg4 mapDisplayStyleVariant:(unsigned int)arg5;
+- (id)styleMatchingAttributes:(id)arg1 vectorType:(int)arg2 locale:(id)arg3 mapDisplayStyle:(unsigned int)arg4 mapDisplayStyleVariant:(unsigned int)arg5 canSelectIcons:(BOOL)arg6 selected:(BOOL)arg7;
 - (BOOL)supportsNightMode;
 
 @end

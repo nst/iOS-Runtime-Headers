@@ -5,6 +5,9 @@
 @class NSString, NSTimer;
 
 @interface SWBasicFakeRunSensorDelegate : NSObject <SWFakeRunSensorDelegate> {
+    BOOL _firstPacketDelivered;
+    NSTimer *_packetTimer;
+    unsigned char _payload[28];
     struct SDARunState { 
         unsigned int sdaContactTime256X; 
         unsigned int sdaContactTimeDelta256X; 
@@ -14,9 +17,6 @@
         unsigned int sdaRunTstcCntDelta; 
         unsigned int sdaRunContactTimeMin256X; 
         unsigned int sdaRunContactTimeMax256X; 
-    BOOL _firstPacketDelivered;
-    NSTimer *_packetTimer;
-    unsigned char _payload[28];
     } _runState;
 }
 

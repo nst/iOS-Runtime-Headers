@@ -5,6 +5,7 @@
 @class NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface CPLStatistics : NSObject <CPLEngineComponent> {
+    BOOL _closed;
     struct { 
         int period; 
         struct { 
@@ -31,7 +32,6 @@
             long long pullErrors; 
             long long managementErrors; 
         } syncerrors; 
-    BOOL _closed;
     } _currentSnapshot;
     long _lastServedAggregationWindow;
     NSURL *_logfileURL;
@@ -58,13 +58,13 @@
 - (void)openWithCompletionHandler:(id)arg1;
 - (void)recordDownloadedBatchWithError:(id)arg1;
 - (void)recordDownloadedResource:(id)arg1 withPotentialError:(id)arg2;
-- (void)recordDownloadingResource:(id)arg1 progress:(float)arg2;
 - (void)recordDownloadingResource:(id)arg1;
+- (void)recordDownloadingResource:(id)arg1 progress:(float)arg2;
 - (void)recordSyncErrorForState:(unsigned int)arg1;
 - (void)recordUploadedBatchWithError:(id)arg1;
 - (void)recordUploadedResource:(id)arg1 withPotentialError:(id)arg2;
-- (void)recordUploadingResource:(id)arg1 progress:(float)arg2;
 - (void)recordUploadingResource:(id)arg1;
+- (void)recordUploadingResource:(id)arg1 progress:(float)arg2;
 - (void)setStatisticsEnabled:(BOOL)arg1;
 - (BOOL)statisticsEnabled;
 - (id)statisticsSnapshotSinceDate:(id)arg1;

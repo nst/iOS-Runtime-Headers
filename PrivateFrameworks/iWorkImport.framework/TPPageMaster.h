@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray, NSString, TPDocumentRoot, TPSection, TSWPStorage;
 
-@interface TPPageMaster : TSPObject <TSWPHeaderFooterProvider, TPMasterDrawableProvider, TSKDocumentObject, TSKModel, TSPCopying> {
+@interface TPPageMaster : TSPObject <TPMasterDrawableProvider, TSKDocumentObject, TSKModel, TSPCopying, TSWPHeaderFooterProvider> {
     TPDocumentRoot *_documentRoot;
     TSWPStorage *_headerFooters[2][3];
     NSMutableArray *_masterDrawables;
@@ -45,8 +45,8 @@
 - (unsigned int)indexOfMasterDrawable:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithSection:(id)arg1;
-- (BOOL)isHeaderFooterEmpty:(int)arg1 fragmentAtIndex:(int)arg2;
 - (BOOL)isHeaderFooterEmpty:(int)arg1;
+- (BOOL)isHeaderFooterEmpty:(int)arg1 fragmentAtIndex:(int)arg2;
 - (id)masterDrawables;
 - (id)masterDrawablesSortedByZOrder:(id)arg1;
 - (BOOL)ownsModelObject:(id)arg1;
@@ -54,11 +54,11 @@
 - (void)p_filterParagraphStylesOnHeaderFooterStorage:(id)arg1 stylesheet:(id)arg2;
 - (id)p_headerAndFooterStorages;
 - (int)p_headerFragmentIndexForTabIndex:(unsigned int)arg1 paragraphStyle:(id)arg2 bodyWidth:(float)arg3;
-- (void)p_makeHeadersFootersPerformSelector:(SEL)arg1 documentRoot:(id)arg2 context:(id)arg3;
 - (void)p_makeHeadersFootersPerformSelector:(SEL)arg1 documentRoot:(id)arg2;
+- (void)p_makeHeadersFootersPerformSelector:(SEL)arg1 documentRoot:(id)arg2 context:(id)arg3;
 - (void)p_makeHeadersFootersPerformSelector:(SEL)arg1 withStylesheet:(id)arg2 withMapper:(id)arg3;
-- (void)p_makeMasterDrawablesPerformSelector:(SEL)arg1 documentRoot:(id)arg2 context:(id)arg3;
 - (void)p_makeMasterDrawablesPerformSelector:(SEL)arg1 documentRoot:(id)arg2;
+- (void)p_makeMasterDrawablesPerformSelector:(SEL)arg1 documentRoot:(id)arg2 context:(id)arg3;
 - (void)p_makeMasterDrawablesPerformSelector:(SEL)arg1 withStylesheet:(id)arg2 withMapper:(id)arg3;
 - (void)p_splitHeaderFooterByTabs:(id)arg1 storages:(id*)arg2 dolcContext:(id)arg3 bodyWidth:(float)arg4;
 - (void)removeMasterDrawable:(id)arg1 suppressDOLC:(BOOL)arg2;

@@ -30,9 +30,9 @@
 - (void)_dispatchSync:(id)arg1;
 - (id)_keyValueStore;
 - (void)_postAccountStoreChangeNotification;
+- (id)accountWithUniqueIdentifier:(id)arg1;
 - (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(BOOL)arg2;
 - (id)accountWithUniqueIdentifier:(id)arg1 scope:(int)arg2;
-- (id)accountWithUniqueIdentifier:(id)arg1;
 - (id)accounts;
 - (id)activeAccount;
 - (id)activeLockerAccount;

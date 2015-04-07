@@ -5,8 +5,8 @@
 @class NSString;
 
 @interface IMAttachmentMessagePartChatItem : IMMessagePartChatItem {
-    unsigned int _wantsAttachmentContiguous : 1;
     NSString *_transferGUID;
+    unsigned int _wantsAttachmentContiguous : 1;
 }
 
 @property(copy,readonly) NSString * transferGUID;

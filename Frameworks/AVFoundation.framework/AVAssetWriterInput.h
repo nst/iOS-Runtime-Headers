@@ -27,8 +27,8 @@
 @property(getter=_trackReferences,readonly) NSDictionary * trackReferences;
 @property(getter=_weakReferenceToAssetWriter,setter=_setWeakReferenceToAssetWriter:,retain) AVWeakReference * weakReferenceToAssetWriter;
 
-+ (id)assetWriterInputWithMediaType:(id)arg1 outputSettings:(id)arg2 sourceFormatHint:(struct opaqueCMFormatDescription { }*)arg3;
 + (id)assetWriterInputWithMediaType:(id)arg1 outputSettings:(id)arg2;
++ (id)assetWriterInputWithMediaType:(id)arg1 outputSettings:(id)arg2 sourceFormatHint:(struct opaqueCMFormatDescription { }*)arg3;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingCanPerformMultiplePasses;
 + (id)keyPathsForValuesAffectingCurrentPassDescription;
@@ -72,8 +72,8 @@
 - (id)extendedLanguageTag;
 - (void)finalize;
 - (id)init;
-- (id)initWithMediaType:(id)arg1 outputSettings:(id)arg2 sourceFormatHint:(struct opaqueCMFormatDescription { }*)arg3;
 - (id)initWithMediaType:(id)arg1 outputSettings:(id)arg2;
+- (id)initWithMediaType:(id)arg1 outputSettings:(id)arg2 sourceFormatHint:(struct opaqueCMFormatDescription { }*)arg3;
 - (BOOL)isReadyForMoreMediaData;
 - (id)languageCode;
 - (int)layer;

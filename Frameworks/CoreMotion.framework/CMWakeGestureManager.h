@@ -10,19 +10,19 @@
 @class <CMWakeGestureDelegate>, NSObject<OS_dispatch_queue>;
 
 @interface CMWakeGestureManager : NSObject {
-    struct unique_ptr<CMWakeGestureVisitor, std::__1::default_delete<CMWakeGestureVisitor> > { 
-        struct __compressed_pair<CMWakeGestureVisitor *, std::__1::default_delete<CMWakeGestureVisitor> > { 
-            struct CMWakeGestureVisitor {} *__first_; 
-        } __ptr_; 
     int _crown;
     <CMWakeGestureDelegate> *_delegate;
     int _wrist;
-    boolfEnableAudioAlert;
     int fCurrentState;
+    bool fEnableAudioAlert;
     double fLastNotificationTime;
     NSObject<OS_dispatch_queue> *fPrivateQueue;
     int fScreenDimmingNotificationToken;
     struct Dispatcher { int (**x1)(); id x2; } *fWakeDispatcher;
+    struct unique_ptr<CMWakeGestureVisitor, std::__1::default_delete<CMWakeGestureVisitor> > { 
+        struct __compressed_pair<CMWakeGestureVisitor *, std::__1::default_delete<CMWakeGestureVisitor> > { 
+            struct CMWakeGestureVisitor {} *__first_; 
+        } __ptr_; 
     } fWakeGestureVisitor;
 }
 

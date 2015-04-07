@@ -8,12 +8,16 @@
 
 @class <RUIObjectModelDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSTimer, NSURL, RUIAlertView, RUIElement, RUIPage, RUIStyle;
 
-@interface RUIObjectModel : NSObject <RemoteUIWebViewControllerDelegate, UIWebViewDelegate, RUITableViewDelegate, RUIPasscodeViewDelegate, RUIPageDelegate, RUIAlertViewDelegate> {
+@interface RUIObjectModel : NSObject <RUIAlertViewDelegate, RUIPageDelegate, RUIPasscodeViewDelegate, RUITableViewDelegate, RemoteUIWebViewControllerDelegate, UIWebViewDelegate> {
     NSDictionary *_alert;
     RUIAlertView *_alertElement;
     NSDictionary *_clientInfo;
     NSDictionary *_confirmationAttributes;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _confirmationCompletion;
+
     RUIElement *_confirmationElement;
     NSString *_confirmationURLString;
     struct OpaqueJSContext { } *_ctx;
@@ -159,8 +163,8 @@
 - (id)tableHeaderViewForAttributes:(id)arg1;
 - (BOOL)tableViewOM:(id)arg1 deleteRowAtIndexPath:(id)arg2;
 - (void)tableViewOM:(id)arg1 elementDidChange:(id)arg2;
-- (void)tableViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3 completion:(id)arg4;
 - (void)tableViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
+- (void)tableViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3 completion:(id)arg4;
 - (void)tableViewOMDidChange:(id)arg1;
 - (void)tableViewOMSubmitForm:(id)arg1;
 - (id)updateInfo;

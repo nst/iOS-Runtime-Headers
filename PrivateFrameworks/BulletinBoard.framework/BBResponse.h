@@ -19,7 +19,11 @@
     NSArray *_lifeAssertions;
     NSString *_originID;
     NSString *_replyText;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sendBlock;
+
     BOOL _sent;
 }
 

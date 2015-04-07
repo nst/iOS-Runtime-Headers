@@ -60,10 +60,10 @@
 - (void)_setBackURL:(id)arg1;
 - (void)_setFallbackURLs:(id)arg1;
 - (void)_setForwardURL:(id)arg1;
-- (void)_setLoading:(BOOL)arg1 withError:(BOOL)arg2 fromDelegate:(BOOL)arg3 fromFragmentLoad:(BOOL)arg4;
-- (void)_setLoading:(BOOL)arg1 withError:(BOOL)arg2 fromDelegate:(BOOL)arg3;
-- (void)_setLoading:(BOOL)arg1 withError:(BOOL)arg2 fromFragmentLoad:(BOOL)arg3;
 - (void)_setLoading:(BOOL)arg1 withError:(BOOL)arg2;
+- (void)_setLoading:(BOOL)arg1 withError:(BOOL)arg2 fromDelegate:(BOOL)arg3;
+- (void)_setLoading:(BOOL)arg1 withError:(BOOL)arg2 fromDelegate:(BOOL)arg3 fromFragmentLoad:(BOOL)arg4;
+- (void)_setLoading:(BOOL)arg1 withError:(BOOL)arg2 fromFragmentLoad:(BOOL)arg3;
 - (void)_setLoadingFromDelegate:(BOOL)arg1 withError:(id)arg2 dataSource:(id)arg3;
 - (void)_setSecurePageHasInsecureContent:(BOOL)arg1;
 - (void)_setUserTypedAddress:(id)arg1;

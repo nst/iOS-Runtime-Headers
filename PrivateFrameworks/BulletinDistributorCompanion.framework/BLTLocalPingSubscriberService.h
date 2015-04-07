@@ -24,8 +24,8 @@
 - (void)sendBulletinSummary:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSubscriber:(id)arg1;
-- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(BOOL)arg2;
 - (void)subscribeToSectionID:(id)arg1;
+- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(BOOL)arg2;
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (id)subscriber;
 - (void)unsubscribeFromSectionID:(id)arg1;

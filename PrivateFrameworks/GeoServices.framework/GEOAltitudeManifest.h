@@ -4,7 +4,7 @@
 
 @class GEOAltitudeManifestReserved, NSString;
 
-@interface GEOAltitudeManifest : NSObject <NSXMLParserDelegate, GEOResourceManifestTileGroupObserver> {
+@interface GEOAltitudeManifest : NSObject <GEOResourceManifestTileGroupObserver, NSXMLParserDelegate> {
     GEOAltitudeManifestReserved *_reserved;
 }
 

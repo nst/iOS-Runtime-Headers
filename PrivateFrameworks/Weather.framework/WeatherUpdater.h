@@ -12,7 +12,11 @@
     <WeatherUpdaterDelegate> *_delegate;
     NSMutableArray *_pendingCities;
     NSMutableArray *_updatingCities;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _weatherCompletionUpdaterHandler;
+
 }
 
 @property(copy) id weatherCompletionUpdaterHandler;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface SADomainObjectDeleteCompleted : SABaseCommand <SAServerBoundCommand, SADomainObjectCommand> {
+@interface SADomainObjectDeleteCompleted : SABaseCommand <SADomainObjectCommand, SAServerBoundCommand> {
 }
 
 @property(copy) NSString * aceId;

@@ -5,6 +5,11 @@
 @class TNPageController, TNPageCoordinateDictionary, TSDDrawableInfo;
 
 @interface TNHintCache : NSObject {
+    TNPageCoordinateDictionary *mHintCacheEntryDictionary;
+    TSDDrawableInfo *mInfo;
+    BOOL mIsMaxColumnValid;
+    BOOL mIsMaxRowValid;
+    TNPageController *mPageController;
     struct { 
         struct { 
             unsigned short row; 
@@ -16,11 +21,6 @@
             unsigned char column; 
             unsigned char reserved; 
         } bottomRight; 
-    TNPageCoordinateDictionary *mHintCacheEntryDictionary;
-    TSDDrawableInfo *mInfo;
-    BOOL mIsMaxColumnValid;
-    BOOL mIsMaxRowValid;
-    TNPageController *mPageController;
     } mPageRange;
 }
 

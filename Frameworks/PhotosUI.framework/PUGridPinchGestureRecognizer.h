@@ -3,14 +3,14 @@
  */
 
 @interface PUGridPinchGestureRecognizer : UIPinchGestureRecognizer {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     float _lastTransitionProgress;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _touch0InitialLocation;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _touch1InitialLocation;
     unsigned int _transitionDirection;
 }

@@ -5,18 +5,18 @@
 @class MKMapSnapshotCreator, NSString, UIImage, VKMapSnapshotCreator;
 
 @interface MKMapSnapshotRequest : NSObject {
+    NSString *_attributionString;
+    id _context;
     struct { 
         double latitude; 
         double longitude; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    NSString *_attributionString;
-    id _context;
     } _coordinate;
     MKMapSnapshotCreator *_delegate;
     UIImage *_image;
     id _requester;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     VKMapSnapshotCreator *_snapshotCreator;
     unsigned int _zoomLevel;

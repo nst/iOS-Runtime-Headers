@@ -4,7 +4,7 @@
 
 @class <NACVolumeControllerDelegate>, MPAVRoutingController, MPVolumeController, NACEventThrottler, NSCountedSet, NSString;
 
-@interface NACVolumeControllerLocal : NSObject <MPVolumeControllerDelegate, MPAVRoutingControllerDelegate, NACVolumeController> {
+@interface NACVolumeControllerLocal : NSObject <MPAVRoutingControllerDelegate, MPVolumeControllerDelegate, NACVolumeController> {
     NSString *_audioCategory;
     <NACVolumeControllerDelegate> *_delegate;
     NACEventThrottler *_hapticThrottler;
@@ -51,8 +51,8 @@
 - (void)setHapticIntensity:(float)arg1;
 - (void)setMuted:(BOOL)arg1;
 - (void)setSystemMuted:(BOOL)arg1;
-- (void)setVolumeValue:(float)arg1 muted:(BOOL)arg2 overrideEULimit:(BOOL)arg3;
 - (void)setVolumeValue:(float)arg1;
+- (void)setVolumeValue:(float)arg1 muted:(BOOL)arg2 overrideEULimit:(BOOL)arg3;
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
 - (void)volumeController:(id)arg1 mutedStateDidChange:(BOOL)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;

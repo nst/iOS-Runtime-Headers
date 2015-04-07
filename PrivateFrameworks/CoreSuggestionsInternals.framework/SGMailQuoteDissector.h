@@ -19,7 +19,7 @@
 - (id)_xWrote:(id)arg1 utf16:(id)arg2 htmlQuotedRegions:(id)arg3;
 - (void)dissect:(id)arg1;
 - (id)initParanoid;
-- (id)quotedRegionsFrom:(id)arg1 htmlQuotedRegions:(id)arg2;
 - (id)quotedRegionsFrom:(id)arg1;
+- (id)quotedRegionsFrom:(id)arg1 htmlQuotedRegions:(id)arg2;
 
 @end

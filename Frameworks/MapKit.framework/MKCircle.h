@@ -6,9 +6,6 @@
 
 @interface MKCircle : MKShape <MKOverlay> {
     struct { 
-        double latitude; 
-        double longitude; 
-    struct { 
         struct { 
             double x; 
             double y; 
@@ -18,6 +15,9 @@
             double height; 
         } size; 
     } _boundingMapRect;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _coordinate;
     double _radius;
 }

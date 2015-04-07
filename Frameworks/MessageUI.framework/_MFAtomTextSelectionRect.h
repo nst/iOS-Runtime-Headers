@@ -3,6 +3,8 @@
  */
 
 @interface _MFAtomTextSelectionRect : UITextSelectionRect {
+    BOOL containsEnd;
+    BOOL containsStart;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,8 +14,6 @@
             float width; 
             float height; 
         } size; 
-    BOOL containsEnd;
-    BOOL containsStart;
     } rect;
 }
 

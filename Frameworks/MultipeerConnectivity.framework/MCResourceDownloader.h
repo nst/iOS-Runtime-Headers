@@ -8,11 +8,15 @@
 
 @class MCPeerID, MCSession, NSString, NSURLSession, NSURLSessionDataTask;
 
-@interface MCResourceDownloader : NSObject <NSURLSessionDelegate, NSURLSessionDataDelegate> {
+@interface MCResourceDownloader : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
     MCPeerID *_peerID;
     NSString *_resourceName;
     MCSession *_session;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _urlResponseHandler;
+
     NSURLSession *_urlSession;
     NSURLSessionDataTask *_urlTask;
 }

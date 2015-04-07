@@ -4,10 +4,7 @@
 
 @class MPUContentSizeLayoutConstraint, MPUExtrasConstrainedArtworkContainerView, MPUExtrasZoomingImageInteractiveTransitionSourceContext, NSLayoutConstraint, NSString, UILabel, UIPinchGestureRecognizer, UIView;
 
-@interface MPUExtrasCarouselCollectionViewCell : UICollectionViewCell <UIGestureRecognizerDelegate, MPUExtrasCarouselCollectionViewCell> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface MPUExtrasCarouselCollectionViewCell : UICollectionViewCell <MPUExtrasCarouselCollectionViewCell, UIGestureRecognizerDelegate> {
     BOOL _allowsPinchingThumbnailImageForInteractiveZoomingImageTransition;
     UILabel *_descriptionLabel;
     MPUContentSizeLayoutConstraint *_descriptionLabelBaselineConstraint;
@@ -20,6 +17,9 @@
     MPUExtrasConstrainedArtworkContainerView *_thumbnailImageContainerView;
     NSLayoutConstraint *_thumbnailImageContainerViewHeightConstraint;
     UILabel *_titleLabel;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _windowSize;
     NSString *_zoomingImageTransitionIdentifier;
 }

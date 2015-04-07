@@ -5,12 +5,12 @@
 @class <AVVideoCompositionInstruction>, AVVideoCompositionRenderContext, AVWeakReference, NSArray, NSDictionary;
 
 @interface AVAsynchronousVideoCompositionRequestInternal : NSObject {
+    struct OpaqueFigVideoCompositorFrame { } *_compositionFrame;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    struct OpaqueFigVideoCompositorFrame { } *_compositionFrame;
     } _compositionTime;
     <AVVideoCompositionInstruction> *_instruction;
     BOOL _isFinished;

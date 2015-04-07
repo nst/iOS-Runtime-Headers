@@ -3,10 +3,10 @@
  */
 
 @interface TSCHPieWedgeRendererLayer : TSCHRendererLayer {
+    float mLayerStartExplosion;
     struct CGPoint { 
         float x; 
         float y; 
-    float mLayerStartExplosion;
     } mLayerStartPoint;
 }
 

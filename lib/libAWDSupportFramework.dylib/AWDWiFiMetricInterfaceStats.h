@@ -3,6 +3,9 @@
  */
 
 @interface AWDWiFiMetricInterfaceStats : PBCodable <NSCopying> {
+    unsigned int _a2dpAssocMinutes;
+    unsigned int _cellularDataRxBytes;
+    unsigned int _cellularDataTxBytes;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int a2dpAssocMinutes : 1; 
@@ -20,9 +23,6 @@
         unsigned int wifiScoRxBytes : 1; 
         unsigned int wifiScoTxBytes : 1; 
         unsigned int wifiTxBytes : 1; 
-    unsigned int _a2dpAssocMinutes;
-    unsigned int _cellularDataRxBytes;
-    unsigned int _cellularDataTxBytes;
     } _has;
     unsigned int _hidAssocMinutes;
     unsigned int _scoAssocMinutes;

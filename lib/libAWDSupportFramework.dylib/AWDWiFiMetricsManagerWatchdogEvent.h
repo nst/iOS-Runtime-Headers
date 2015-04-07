@@ -3,6 +3,9 @@
  */
 
 @interface AWDWiFiMetricsManagerWatchdogEvent : PBCodable <NSCopying> {
+    int _available;
+    unsigned int _deviceIdentifierMap;
+    unsigned int _flags;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int available : 1; 
@@ -11,9 +14,6 @@
         unsigned int reason : 1; 
         unsigned int subreason : 1; 
         unsigned int version : 1; 
-    int _available;
-    unsigned int _deviceIdentifierMap;
-    unsigned int _flags;
     } _has;
     int _reason;
     unsigned int _subreason;

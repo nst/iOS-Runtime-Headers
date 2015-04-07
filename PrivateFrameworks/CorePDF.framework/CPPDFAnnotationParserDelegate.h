@@ -5,9 +5,18 @@
 @class NSMutableString, NSString;
 
 @interface CPPDFAnnotationParserDelegate : NSObject <NSXMLParserDelegate> {
+    struct __CFDictionary { } *_annotationDictionary;
+    NSMutableString *_characters;
+    struct CGColor { } *_color;
+    struct __CFString { } *_content;
+    struct __CFString { } *_id;
+    struct __CFString { } *_otherId;
     struct CGPoint { 
         float x; 
         float y; 
+    } _p[4];
+    BOOL _parseError;
+    struct __CFArray { } *_quadPoints;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,15 +26,6 @@
             float width; 
             float height; 
         } size; 
-    struct __CFDictionary { } *_annotationDictionary;
-    NSMutableString *_characters;
-    struct CGColor { } *_color;
-    struct __CFString { } *_content;
-    struct __CFString { } *_id;
-    struct __CFString { } *_otherId;
-    } _p[4];
-    BOOL _parseError;
-    struct __CFArray { } *_quadPoints;
     } _rect;
 }
 

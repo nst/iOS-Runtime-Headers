@@ -62,8 +62,8 @@
 - (void)didDeactivateForReason:(int)arg1;
 - (void)didFailToActivate;
 - (BOOL)didPlayPresentationSound;
-- (void)dismiss:(int)arg1;
 - (void)dismiss;
+- (void)dismiss:(int)arg1;
 - (BOOL)dismissOnLock;
 - (BOOL)dismissOnModalDisplayActivation;
 - (BOOL)dismissesAutomatically;

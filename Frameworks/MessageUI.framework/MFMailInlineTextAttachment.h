@@ -8,9 +8,9 @@
     struct CGSize { 
         float width; 
         float height; 
-    unsigned int _hasBeenDownloaded : 1;
     } _cachedImageSize;
     BOOL _displayableAsIcon;
+    unsigned int _hasBeenDownloaded : 1;
     NSData *_iconImageData;
     MFMimeTextAttachment *_original;
 }

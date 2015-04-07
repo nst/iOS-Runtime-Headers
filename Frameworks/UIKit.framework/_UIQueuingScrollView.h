@@ -5,6 +5,7 @@
 @class <_UIQueuingScrollViewDataSource>, <_UIQueuingScrollViewDelegate>, NSArray, NSMutableArray, UIView;
 
 @interface _UIQueuingScrollView : UIScrollView {
+    NSMutableArray *_completionStateQueue;
     struct { 
         unsigned int delegateInterestedInPendingScrolls : 1; 
         unsigned int delegateInterestedInCommittedScrolls : 1; 
@@ -15,6 +16,7 @@
         unsigned int dataSourceSuppliesBeforeView : 1; 
         unsigned int dataSourceSuppliesAfterView : 1; 
         unsigned int dataSourceInterestedInFlushedViews : 1; 
+    } _delegateFlags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,8 +26,6 @@
             float width; 
             float height; 
         } size; 
-    NSMutableArray *_completionStateQueue;
-    } _delegateFlags;
     } _disabledScrollingRegion;
     BOOL _manualScrollInProgress;
     int _navigationOrientation;

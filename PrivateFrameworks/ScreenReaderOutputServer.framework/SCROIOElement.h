@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface SCROIOElement : NSObject <SCROIOElementProtocol, NSCopying> {
+@interface SCROIOElement : NSObject <NSCopying, SCROIOElementProtocol> {
     long _identifier;
     unsigned int _ioObject;
 }

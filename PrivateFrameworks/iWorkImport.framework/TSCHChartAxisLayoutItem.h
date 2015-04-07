@@ -5,14 +5,14 @@
 @class TSCHChartAxisID, TSCHChartAxisLineLayoutItem, TSCHChartAxisPaddingLayoutItem, TSCHChartAxisTickMarksLayoutItem, TSCHChartAxisTitleLayoutItem;
 
 @interface TSCHChartAxisLayoutItem : TSCHChartLayoutItem {
-    struct CGSize { 
-        float width; 
-        float height; 
     TSCHChartAxisID *mAxisID;
     TSCHChartAxisLineLayoutItem *mAxisLine;
     TSCHChartAxisPaddingLayoutItem *mAxisPadding;
     int mAxisPosition;
     TSCHChartAxisTitleLayoutItem *mAxisTitle;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mChartBodySize;
     TSCHChartAxisTickMarksLayoutItem *mTickMarks;
 }

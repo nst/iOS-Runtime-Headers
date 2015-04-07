@@ -3,16 +3,16 @@
  */
 
 @interface CFPrefsSource : NSObject {
+    struct __CFDictionary { } *_dict;
+    unsigned int _generationCount : 63;
+    unsigned int _isSearchList : 1;
+    struct _opaque_pthread_mutex_t { long x1; BOOL x2[40]; } *_lock;
     union { 
         struct _CFPrefsShmemEntry { 
             unsigned int generation : 31; 
             unsigned int multiprocess : 1; 
         } entry; 
         int value; 
-    unsigned int _isSearchList : 1;
-    unsigned int _generationCount : 63;
-    struct __CFDictionary { } *_dict;
-    struct _opaque_pthread_mutex_t { long x1; BOOL x2[40]; } *_lock;
     } lastKnownShmemState;
     union { struct _CFPrefsShmemEntry { unsigned int x_1_1_1 : 31; unsigned int x_1_1_2 : 1; } x1; int x2; } *shmemEntry;
 }

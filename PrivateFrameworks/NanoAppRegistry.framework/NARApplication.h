@@ -45,8 +45,8 @@
 - (id)localizedDisplayName;
 - (id)localizedDisplayNames;
 - (id)localizedStrings;
-- (id)objectForInfoDictionaryKey:(id)arg1 localization:(id)arg2;
 - (id)objectForInfoDictionaryKey:(id)arg1;
+- (id)objectForInfoDictionaryKey:(id)arg1 localization:(id)arg2;
 - (unsigned int)sequenceNumber;
 - (void)setITunesPlistStrings:(id)arg1;
 - (void)setInfoPlist:(id)arg1;

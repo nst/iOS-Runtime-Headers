@@ -40,8 +40,8 @@
 - (unsigned int)resultLimit;
 - (id)results;
 - (void)resume;
-- (void)search:(id)arg1 hasPartialResults:(id)arg2;
 - (void)search:(id)arg1;
+- (void)search:(id)arg1 hasPartialResults:(id)arg2;
 - (id)searchDelegate;
 - (void)searchDidBegin:(id)arg1;
 - (void)searchDidFinish:(id)arg1;

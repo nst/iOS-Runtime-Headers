@@ -26,8 +26,8 @@
 @property(copy) NSString * serverId;
 @property(copy) NSNumber * trackingTimestamp;
 
-+ (id)handleWithId:(id)arg1 serverId:(id)arg2;
 + (id)handleWithId:(id)arg1;
++ (id)handleWithId:(id)arg1 serverId:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

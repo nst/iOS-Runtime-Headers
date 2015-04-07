@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary;
 
-@interface SKThreadSafeMutableDictionary : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration> {
+@interface SKThreadSafeMutableDictionary : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding> {
     NSMutableDictionary *_storage;
     int _storageLock;
 }

@@ -4,11 +4,7 @@
 
 @class <WBSHistoryStoreDelegate>, NSArray, NSCountedSet, NSData, NSDate, NSMapTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSTimer, NSURL, WBSBackgroundActivityScheduler, WBSSQLiteDatabase;
 
-@interface WBSHistorySQLiteStore : NSObject <WBSHistoryLoaderDelegate, WBSHistoryLoader> {
-    struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
-        struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
-            struct SuddenTerminationDisabler {} *__first_; 
-        } __ptr_; 
+@interface WBSHistorySQLiteStore : NSObject <WBSHistoryLoader, WBSHistoryLoaderDelegate> {
     double _ageLimit;
     long long _cachedNumberOfDevicesInSyncCircle;
     BOOL _commitGenerationValuesOnNextWrite;
@@ -37,6 +33,10 @@
     NSMutableSet *_pendingVisitDeletes;
     NSData *_pushThrottlerData;
     NSMutableDictionary *_statements;
+    struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
+        struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
+            struct SuddenTerminationDisabler {} *__first_; 
+        } __ptr_; 
     } _suddenTerminationDisabler;
     NSData *_syncCircleSizeRetrievalThrottlerData;
     NSMapTable *_weakVisitsByDatabaseID;

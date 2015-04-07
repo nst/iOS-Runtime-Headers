@@ -4,7 +4,7 @@
 
 @class ACAccountStore, NSString, PSCloudStorageOffersManager, PUCloudPhotoWelcomeView, UIBarButtonItem;
 
-@interface PUCloudPhotoWelcomeViewController : UIViewController <PUCloudPhotoWelcomeViewDelegate, PSCloudStorageOffersManagerDelegate> {
+@interface PUCloudPhotoWelcomeViewController : UIViewController <PSCloudStorageOffersManagerDelegate, PUCloudPhotoWelcomeViewDelegate> {
     ACAccountStore *_accountStore;
     UIBarButtonItem *_betaGoButtonItem;
     BOOL _enableOnAppear;

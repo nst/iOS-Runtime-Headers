@@ -5,10 +5,10 @@
 @class NSData, NSString;
 
 @interface CKDPTokenRegistrationBody : PBCodable <NSCopying> {
-    struct { 
-        unsigned int apnsEnv : 1; 
     int _apnsEnv;
     NSString *_bundleIdentifier;
+    struct { 
+        unsigned int apnsEnv : 1; 
     } _has;
     NSData *_token;
 }

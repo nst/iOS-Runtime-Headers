@@ -22,8 +22,8 @@
 - (id)foreignOrderKey;
 - (id)initForReadOnlyFetchWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)initWithEntity:(id)arg1 inverseToMany:(id)arg2;
-- (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2 virtualForToMany:(id)arg3;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
+- (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2 virtualForToMany:(id)arg3;
 - (BOOL)isOptional;
 - (BOOL)isVirtual;
 - (unsigned int)slot;

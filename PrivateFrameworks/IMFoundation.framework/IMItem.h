@@ -4,7 +4,7 @@
 
 @class NSDate, NSDictionary, NSString;
 
-@interface IMItem : NSObject <NSCoding, NSCopying, IMRemoteObjectCoding> {
+@interface IMItem : NSObject <IMRemoteObjectCoding, NSCoding, NSCopying> {
     NSString *_account;
     NSString *_accountID;
     id _context;

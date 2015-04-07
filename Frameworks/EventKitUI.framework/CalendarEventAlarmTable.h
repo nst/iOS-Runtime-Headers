@@ -4,7 +4,7 @@
 
 @class <CalendarEventAlarmTableDelegate>, <EKStyleProvider>, NSIndexPath, NSString;
 
-@interface CalendarEventAlarmTable : UITableView <UITableViewDelegate, UITableViewDataSource> {
+@interface CalendarEventAlarmTable : UITableView <UITableViewDataSource, UITableViewDelegate> {
     int _alarmIdentifier;
     <CalendarEventAlarmTableDelegate> *_alarmTableDelegate;
     BOOL _customSelected;

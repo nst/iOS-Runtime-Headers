@@ -12,7 +12,11 @@
     NSMutableDictionary *_emailAliasToEmailAddress;
     NSArray *_emailsToDiscover;
     NSMutableDictionary *_hashedEmailByRequestID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
     NSArray *_userRecordIDsToDiscover;
 }
 

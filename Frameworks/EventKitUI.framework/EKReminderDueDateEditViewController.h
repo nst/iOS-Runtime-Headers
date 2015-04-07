@@ -4,7 +4,7 @@
 
 @class EKPickerTableView, NSDate, NSString;
 
-@interface EKReminderDueDateEditViewController : EKEditItemViewController <UITableViewDelegate, UITableViewDataSource, EKPickerTableViewDelegate> {
+@interface EKReminderDueDateEditViewController : EKEditItemViewController <EKPickerTableViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     EKPickerTableView *_container;
     NSDate *_dueDate;
     BOOL _hasDueDate;

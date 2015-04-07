@@ -18,8 +18,8 @@
 - (id)dictionary;
 - (id)eventFromStore:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithEvent:(id)arg1 view:(unsigned int)arg2 forceLocal:(BOOL)arg3;
 - (id)initWithEvent:(id)arg1 view:(unsigned int)arg2;
+- (id)initWithEvent:(id)arg1 view:(unsigned int)arg2 forceLocal:(BOOL)arg3;
 - (id)title;
 - (unsigned int)view;
 

@@ -5,10 +5,10 @@
 @class CKDPResponseOperationResultError;
 
 @interface CKDPResponseOperationResult : PBCodable <NSCopying> {
-    struct { 
-        unsigned int code : 1; 
     int _code;
     CKDPResponseOperationResultError *_error;
+    struct { 
+        unsigned int code : 1; 
     } _has;
 }
 

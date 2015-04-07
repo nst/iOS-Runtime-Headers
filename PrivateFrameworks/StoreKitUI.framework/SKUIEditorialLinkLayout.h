@@ -5,11 +5,11 @@
 @class NSArray, NSString;
 
 @interface SKUIEditorialLinkLayout : NSObject <SKUICachedLayout> {
+    NSArray *_links;
+    struct CGSize { float x1; float x2; } *_sizes;
     struct CGSize { 
         float width; 
         float height; 
-    NSArray *_links;
-    struct CGSize { float x1; float x2; } *_sizes;
     } _totalSize;
 }
 

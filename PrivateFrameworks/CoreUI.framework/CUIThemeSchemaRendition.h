@@ -5,38 +5,38 @@
 @class CUIPSDGradient, NSDictionary;
 
 @interface CUIThemeSchemaRendition : CUIThemeRendition {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    int _columnSlices;
     struct { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    int _columnSlices;
     } _contentInsets;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _elementRect;
     CUIPSDGradient *_gradient;
     struct CGImage {} *_image[9];
+    struct CGSize { 
+        float width; 
+        float height; 
     } _intrinsicSize;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _layoutRects[9];
     unsigned long _nimages;
     int _rowSlices;
@@ -66,8 +66,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })edgeInsets:(BOOL)arg1;
 - (id)gradient;
 - (unsigned short)identifier;
-- (id)initWithCoreUIOptions:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2 artworkStatus:(int)arg3;
 - (id)initWithCoreUIOptions:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2;
+- (id)initWithCoreUIOptions:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2 artworkStatus:(int)arg3;
 - (unsigned short)keyScale;
 - (unsigned short)layer;
 - (unsigned short)look;

@@ -6,18 +6,18 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     } mA;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mB;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mIn;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mOut;
 }
 

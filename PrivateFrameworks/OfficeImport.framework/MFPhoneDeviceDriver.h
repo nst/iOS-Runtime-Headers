@@ -12,6 +12,15 @@
             float width; 
             float height; 
         } size; 
+    } m_canvas;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
+    } m_combinedTransform;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -21,31 +30,22 @@
             float width; 
             float height; 
         } size; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    } m_canvas;
-    } m_combinedTransform;
     } m_viewBox;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } m_viewBoxTransform;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } m_worldToDeviceTransform;
 }
 
@@ -62,17 +62,17 @@
 - (int)chord:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
 - (void)concatTransforms;
 - (id)createBitmap:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(const char *)arg6 :(unsigned int)arg7;
-- (id)createDIBitmap:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(const char *)arg4 :(unsigned int)arg5 :(int)arg6;
 - (id)createDIBitmap:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;
-- (id)createFont:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
+- (id)createDIBitmap:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(const char *)arg4 :(unsigned int)arg5 :(int)arg6;
 - (id)createFont:(int)arg1;
+- (id)createFont:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
 - (id)createFontIndirectW:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
 - (id)createHatchBrush:(id)arg1 :(int)arg2;
 - (id)createNullBrush;
 - (id)createPath;
 - (id)createPatternBrush:(id)arg1 usePaletteForBilevel:(BOOL)arg2;
-- (id)createPen:(int)arg1 :(int)arg2 :(id)arg3 :(double*)arg4;
 - (id)createPen;
+- (id)createPen:(int)arg1 :(int)arg2 :(id)arg3 :(double*)arg4;
 - (id)createRegionWithPath:(id)arg1;
 - (id)createRegionWithRects:(id)arg1 :(id)arg2;
 - (id)createSolidBrush:(id)arg1;

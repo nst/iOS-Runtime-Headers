@@ -41,13 +41,13 @@
 - (void)deregisterFromService:(char *)arg1;
 - (id)init;
 - (id)listener;
-- (void)registerBlockForService:(char *)arg1 block:(id)arg2 queue:(id)arg3;
 - (void)registerBlockForService:(char *)arg1 block:(id)arg2;
+- (void)registerBlockForService:(char *)arg1 block:(id)arg2 queue:(id)arg3;
 - (id)registeredBlocks;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
-- (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 context:(id)arg3;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2;
+- (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 context:(id)arg3;
 
 @end

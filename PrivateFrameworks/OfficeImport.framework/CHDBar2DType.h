@@ -3,7 +3,7 @@
  */
 
 @interface CHDBar2DType : CHDChartTypeWithGrouping {
-    boolmColumn;
+    bool mColumn;
     int mGapWidth;
     int mOverlap;
 }

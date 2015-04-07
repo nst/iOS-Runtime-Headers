@@ -5,9 +5,6 @@
 @class NSString;
 
 @interface PLThumbFileManager : NSObject <PLThumbPersistenceManager> {
-    struct CGSize { 
-        float width; 
-        float height; 
     int _entryLength;
     NSString *_filename;
     int _format;
@@ -15,6 +12,9 @@
     int _imageRowBytes;
     NSString *_path;
     BOOL _readOnly;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _thumbnailSize;
 }
 
@@ -52,8 +52,8 @@
 - (struct CGSize { float x1; float x2; })imageSize;
 - (int)imageWidth;
 - (id)imageWithIdentifier:(id)arg1;
-- (id)initWithPath:(id)arg1 imageFormat:(int)arg2 readOnly:(BOOL)arg3;
 - (id)initWithPath:(id)arg1 imageFormat:(int)arg2;
+- (id)initWithPath:(id)arg1 imageFormat:(int)arg2 readOnly:(BOOL)arg3;
 - (BOOL)isReadOnly;
 - (id)originalPreheatItemForAsset:(id)arg1 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg2 options:(unsigned int)arg3;
 - (id)path;

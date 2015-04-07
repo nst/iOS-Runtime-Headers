@@ -9,7 +9,11 @@
 @class NSInvocation, NSObject<OS_dispatch_source>;
 
 @interface _UIDelayedPresentationContext : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cancellationHandler;
+
     BOOL _enableUserInteraction;
     NSInvocation *_presentInvocation;
     int _reqcnt;

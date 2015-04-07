@@ -5,10 +5,10 @@
 @class CKDPRequestedFields;
 
 @interface CKDPRecordRetrieveRequestRetrieveAssetURL : PBCodable <NSCopying> {
+    CKDPRequestedFields *_assetFields;
     struct { 
         unsigned int requestedTTL : 1; 
         unsigned int type : 1; 
-    CKDPRequestedFields *_assetFields;
     } _has;
     long long _requestedTTL;
     int _type;

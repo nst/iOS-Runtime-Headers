@@ -10,7 +10,11 @@
 
 @interface MIInstallerClient : NSObject <MobileInstallerDelegateProtocol> {
     NSXPCConnection *_connection;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
 }
 
 @property(copy) id progressBlock;

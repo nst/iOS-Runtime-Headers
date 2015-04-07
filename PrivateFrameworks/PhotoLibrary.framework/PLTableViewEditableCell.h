@@ -4,7 +4,7 @@
 
 @class NSString, PLTextView, UILabel, UITextField;
 
-@interface PLTableViewEditableCell : UITableViewCell <UITextViewDelegate, UITextFieldDelegate> {
+@interface PLTableViewEditableCell : UITableViewCell <UITextFieldDelegate, UITextViewDelegate> {
     int _cellStyle;
     id _delegate;
     BOOL _forceFirstResponder;

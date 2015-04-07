@@ -8,8 +8,8 @@
     unsigned char _isOptional[16];
     NSString *_name;
     NSString *_pattern;
-    unsigned int _patternBufferLength;
     unsigned char _patternBuffer[16];
+    unsigned int _patternBufferLength;
     BOOL _postponesApostrophe;
     int _suffixType;
 }

@@ -10,30 +10,8 @@
 @class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, TSPObjectContext, TSUPathSet, TSUTemporaryDirectory;
 
 @interface TSPDataManager : NSObject {
-    struct hash_map<const long long, TSPData *__weak, TSP::ObjectIdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak> > > { 
-        struct __hash_table<std::__1::pair<const long long, TSPData *__weak>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> > > { 
-                    struct __hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> > { 
-                            unsigned long __first_; 
-                        } __data_; 
-                    } __second_; 
-                } __ptr_; 
-            } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> { 
-                    struct __hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> {} *__next_; 
-                } __first_; 
-            } __p1_; 
-            struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true> > { 
-                unsigned long __first_; 
-            } __p2_; 
-            struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true> > { 
-                float __first_; 
-            } __p3_; 
-        } __table_; 
+    TSPObjectContext *_context;
+    NSObject<OS_dispatch_queue> *_datasQueue;
     struct hash_map<const std::__1::array<unsigned char, 20>, TSPData *__weak, TSP::DataDigestHash, TSP::DataDigestEqualTo, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak> > > { 
         struct __hash_table<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestEqualTo, true>, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> > > { 
@@ -58,12 +36,34 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    TSPObjectContext *_context;
-    NSObject<OS_dispatch_queue> *_datasQueue;
     } _digestToDataMap;
     NSObject<OS_dispatch_group> *_externalReferenceRemovalGroup;
     NSObject<OS_dispatch_queue> *_externalReferenceRemovalQueue;
     BOOL _hasExternalReferences;
+    struct hash_map<const long long, TSPData *__weak, TSP::ObjectIdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak> > > { 
+        struct __hash_table<std::__1::pair<const long long, TSPData *__weak>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> > > { 
+                    struct __hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> > { 
+                            unsigned long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> { 
+                    struct __hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true> > { 
+                unsigned long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true> > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
     } _identifierToDataMap;
     long long _nextNewIdentifier;
     TSUTemporaryDirectory *_temporaryDirectory;
@@ -86,21 +86,21 @@
 - (id)context;
 - (void)coordinateReadingNewFileURL:(id)arg1 byAccessor:(id)arg2;
 - (id)copyData:(id)arg1;
-- (void)dataForDigest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)dataForDigest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1;
+- (void)dataForDigest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)dataForDigestImpl:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 accessorBlock:(id)arg2;
 - (id)dataForDigestImpl:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 skipDocumentResourcesLookup:(BOOL)arg2 accessorBlock:(id)arg3;
 - (id)dataForExistingData:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3 temporaryPath:(id)arg4;
 - (id)dataForIdentifier:(long long)arg1;
 - (id)dataForIdentifierImpl:(long long)arg1;
-- (void)dataFromAssetsLibraryURL:(id)arg1 completion:(id)arg2;
 - (id)dataFromAssetsLibraryURL:(id)arg1;
+- (void)dataFromAssetsLibraryURL:(id)arg1 completion:(id)arg2;
 - (id)dataFromExternalReferenceURL:(id)arg1 useFileCoordination:(BOOL)arg2;
 - (id)dataFromFileURL:(id)arg1 useFileCoordination:(BOOL)arg2;
 - (id)dataFromNSData:(id)arg1 filename:(id)arg2;
+- (id)dataFromReadChannel:(id)arg1 filename:(id)arg2;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 linkURLOrNil:(id)arg3;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 temporaryPath:(id)arg3;
-- (id)dataFromReadChannel:(id)arg1 filename:(id)arg2;
 - (id)dataFromURL:(id)arg1 useFileCoordination:(BOOL)arg2;
 - (id)dataOrNilForIdentifier:(long long)arg1;
 - (id)dataWithStorage:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3 skipDocumentResourcesLookup:(BOOL)arg4 accessorBlock:(id)arg5;

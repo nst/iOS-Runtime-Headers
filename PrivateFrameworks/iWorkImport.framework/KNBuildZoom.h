@@ -4,7 +4,7 @@
 
 @class KNAnimParameterGroup, KNMotionBlurAnimationPluginWrapper, NSString;
 
-@interface KNBuildZoom : KNAnimationEffect <KNChunkableBuildAnimator, KNFrameBuildAnimator, KNAnimationPluginArchiving> {
+@interface KNBuildZoom : KNAnimationEffect <KNAnimationPluginArchiving, KNChunkableBuildAnimator, KNFrameBuildAnimator> {
     KNMotionBlurAnimationPluginWrapper *_motionBlurWrapper;
     KNAnimParameterGroup *mParameterGroup;
 }

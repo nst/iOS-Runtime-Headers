@@ -5,17 +5,17 @@
 @class NSArray, NSMutableDictionary, PUAlbumListTransitionContext, UICollectionViewLayoutAttributes;
 
 @interface PUStackedAlbumLayout : UICollectionViewLayout {
-    struct CGPoint { 
-        float x; 
-        float y; 
+    PUAlbumListTransitionContext *_albumListTransitionContext;
     struct CGSize { 
         float width; 
         float height; 
-    PUAlbumListTransitionContext *_albumListTransitionContext;
     } _contentSizeAdjust;
     NSMutableDictionary *_derivedLayoutAttributesByIndexPath;
     UICollectionViewLayoutAttributes *_globalHeaderAttributes;
     BOOL _isInteractive;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _referenceCenter;
     UICollectionViewLayoutAttributes *_referenceItemLayoutAttributes;
     NSMutableDictionary *_visibleLayoutAttributesByIndexPath;

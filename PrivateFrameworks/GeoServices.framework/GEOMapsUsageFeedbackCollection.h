@@ -5,21 +5,21 @@
 @class GEOCarInfo, GEOMapRegion, GEOPlaceActionDetails;
 
 @interface GEOMapsUsageFeedbackCollection : PBCodable <NSCopying> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
+    int _actionType;
+    GEOCarInfo *_carInfo;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int sessionRelativeTimestamp : 1; 
         unsigned int zoomLevel : 1; 
         unsigned int actionType : 1; 
         unsigned int sequenceNumber : 1; 
-    int _actionType;
-    GEOCarInfo *_carInfo;
     } _has;
     GEOMapRegion *_mapRegion;
     GEOPlaceActionDetails *_placeActionDetails;
     int _sequenceNumber;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionID;
     double _sessionRelativeTimestamp;
     double _zoomLevel;

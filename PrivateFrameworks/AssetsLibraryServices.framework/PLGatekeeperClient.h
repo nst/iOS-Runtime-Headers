@@ -9,7 +9,11 @@
 @class NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
 
 @interface PLGatekeeperClient : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _CPLDownloadTransactionsLostHandler;
+
     NSArray *_previewAssetLocalIdentifiers;
     NSArray *_previewRenderedContentURLs;
     NSObject<OS_dispatch_queue> *_serialReplyQueue;
@@ -62,8 +66,8 @@
 - (void)enableCloudPhotos:(BOOL)arg1;
 - (void)enablePhotostreamsWithStreamID:(id)arg1;
 - (long long)estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
-- (int)fileDescriptorForAssetURL:(id)arg1 withAdjustments:(BOOL)arg2 outFileExtension:(id*)arg3;
 - (int)fileDescriptorForAssetURL:(id)arg1;
+- (int)fileDescriptorForAssetURL:(id)arg1 withAdjustments:(BOOL)arg2 outFileExtension:(id*)arg3;
 - (id)fileURLForAssetURL:(id)arg1 withAdjustments:(BOOL)arg2;
 - (id)fileURLForNewAssetWithType:(unsigned int)arg1 extension:(id)arg2;
 - (void)finalizeOTARestoreRecreatingAlbums:(BOOL)arg1;

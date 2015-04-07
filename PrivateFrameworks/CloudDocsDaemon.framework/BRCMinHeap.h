@@ -10,7 +10,11 @@
 
 @interface BRCMinHeap : NSObject <NSFastEnumeration> {
     id *_array;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _comparator;
+
     unsigned int _count;
     unsigned long _mutation;
     NSMapTable *_objects;

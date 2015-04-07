@@ -8,12 +8,24 @@
 
 @class NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
 
-@interface AirPlayControllerServer : NSObject <NSXPCListenerDelegate, AirPlayControllerAsync> {
+@interface AirPlayControllerServer : NSObject <AirPlayControllerAsync, NSXPCListenerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _copyPropertyBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _performCommandBlock;
+
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_serviceName;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _setPropertyBlock;
+
     NSXPCListener *_xpcListener;
 }
 

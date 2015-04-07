@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface PKColor : NSObject <NSSecureCoding, NSCopying> {
+@interface PKColor : NSObject <NSCopying, NSSecureCoding> {
     float _alpha;
     float _blue;
     struct CGColor { } *_colorRef;

@@ -52,8 +52,8 @@
 - (id)sectionIdentifier;
 - (void)setClearedInfo:(id)arg1;
 - (void)setClientProxy:(id)arg1 completion:(id)arg2;
-- (void)setSectionInfo:(id)arg1 inCategory:(int)arg2;
 - (void)setSectionInfo:(id)arg1;
+- (void)setSectionInfo:(id)arg1 inCategory:(int)arg2;
 - (void)setServerIsReady:(BOOL)arg1;
 - (void)startWatchdog;
 - (void)updateClearedInfoWithClearedInfo:(id)arg1 handler:(id)arg2 completion:(id)arg3;

@@ -4,13 +4,7 @@
 
 @class <UIKeyboardCandidateList>, <UIKeyboardCandidateListDelegate>, NSArray, NSString, TIKeyboardCandidateResultSet, UIKBCandidateCollectionView, UIKeyboardCandidateLogButton, UIKeyboardCandidatePocketShadow;
 
-@interface UIKBHandwritingCandidateView : UIKBKeyView <UIKeyboardCandidateList, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
-    struct { 
-        unsigned int idiom : 6; 
-        unsigned int landscape : 1; 
-        unsigned int split : 1; 
-        unsigned int appearance : 8; 
-        unsigned int rendering : 16; 
+@interface UIKBHandwritingCandidateView : UIKBKeyView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIKeyboardCandidateList> {
     TIKeyboardCandidateResultSet *_candidateResultSet;
     UIKBCandidateCollectionView *_candidatesCollectionView;
     <UIKeyboardCandidateListDelegate> *_delegate;
@@ -19,6 +13,12 @@
     UIKeyboardCandidateLogButton *_logButton;
     UIKeyboardCandidatePocketShadow *_pocketShadow;
     BOOL _usesCandidateSelection;
+    struct { 
+        unsigned int idiom : 6; 
+        unsigned int landscape : 1; 
+        unsigned int split : 1; 
+        unsigned int appearance : 8; 
+        unsigned int rendering : 16; 
     } _visualStyling;
 }
 

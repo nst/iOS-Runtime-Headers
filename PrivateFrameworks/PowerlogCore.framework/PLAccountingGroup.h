@@ -5,14 +5,14 @@
 @class NSArray, NSString;
 
 @interface PLAccountingGroup : PLOperator <PLQLAccountingGroupProtocol> {
-    struct _PLTimeIntervalRange { 
-        double location; 
-        double length; 
     NSString *_accountingGroupName;
     short _accountingGroupType;
     BOOL _closeAllAccountingEventsAtBoot;
     BOOL _eventCacheOn;
     NSArray *_eventCacheResults;
+    struct _PLTimeIntervalRange { 
+        double location; 
+        double length; 
     } _eventCacheTimeRange;
 }
 

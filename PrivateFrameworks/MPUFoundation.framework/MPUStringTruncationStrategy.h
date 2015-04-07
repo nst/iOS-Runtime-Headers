@@ -5,11 +5,11 @@
 @class NSDictionary, NSString;
 
 @interface MPUStringTruncationStrategy : NSObject {
+    NSString *_componentsNamePlural;
+    NSString *_componentsNameSingular;
     struct CGSize { 
         float width; 
         float height; 
-    NSString *_componentsNamePlural;
-    NSString *_componentsNameSingular;
     } _drawingSize;
     NSDictionary *_textAttributes;
     NSString *_truncationTokenFormat;

@@ -5,14 +5,14 @@
 @class UITouch;
 
 @interface MKTiltGestureRecognizer : UIPanGestureRecognizer {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     float _initialDistance;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _initialTouch1Point;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _initialTouch2Point;
     UITouch *_touch1;
     UITouch *_touch2;

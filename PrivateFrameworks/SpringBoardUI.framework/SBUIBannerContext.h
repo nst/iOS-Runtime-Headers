@@ -23,8 +23,8 @@
 
 - (void)dealloc;
 - (id)description;
-- (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3 presentingActionIdentifier:(id)arg4 requestModalPresentation:(BOOL)arg5;
 - (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3;
+- (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3 presentingActionIdentifier:(id)arg4 requestModalPresentation:(BOOL)arg5;
 - (id)interactiveAction;
 - (void)invalidate;
 - (BOOL)isValid;

@@ -28,7 +28,11 @@
     unsigned short localPort_;
     void *padding_[10];
     unsigned short port_;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id preblobCallback_;
+
     BOOL preblobIsUpToDate_;
     NSData *preblob_;
     unsigned long long prevHolePunchSID_;

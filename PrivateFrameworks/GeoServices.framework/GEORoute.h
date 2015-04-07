@@ -5,36 +5,11 @@
 @class NSData, NSMutableArray, NSString;
 
 @interface GEORoute : PBCodable <NSCopying> {
+    NSMutableArray *_advisoryNotices;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int arrivalStepID : 1; 
-        unsigned int departureStepID : 1; 
-        unsigned int distance : 1; 
-        unsigned int drivingSide : 1; 
-        unsigned int expectedTime : 1; 
-        unsigned int historicTravelTime : 1; 
-        unsigned int routeType : 1; 
-        unsigned int transportType : 1; 
-    NSMutableArray *_advisoryNotices;
     } _advisorys;
     NSData *_arrivalRouteID;
     unsigned int _arrivalStepID;
@@ -44,9 +19,26 @@
     unsigned int _distance;
     int _drivingSide;
     unsigned int _expectedTime;
+    struct { 
+        unsigned int arrivalStepID : 1; 
+        unsigned int departureStepID : 1; 
+        unsigned int distance : 1; 
+        unsigned int drivingSide : 1; 
+        unsigned int expectedTime : 1; 
+        unsigned int historicTravelTime : 1; 
+        unsigned int routeType : 1; 
+        unsigned int transportType : 1; 
     } _has;
     unsigned int _historicTravelTime;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _incidentEndOffsetsInRoutes;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _incidentIndices;
     NSString *_name;
     NSString *_phoneticName;
@@ -54,7 +46,15 @@
     NSMutableArray *_routeNames;
     int _routeType;
     NSMutableArray *_steps;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _trafficColorOffsets;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _trafficColors;
     int _transportType;
     NSData *_unpackedLatLngVertices;

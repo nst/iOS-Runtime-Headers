@@ -3,10 +3,10 @@
  */
 
 @interface AWDBltPrimaryDeviceSendAttempt : PBCodable <NSCopying> {
+    unsigned int _connectionType;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
-    unsigned int _connectionType;
     } _has;
     unsigned long long _timestamp;
 }

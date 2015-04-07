@@ -41,8 +41,8 @@
 - (id)outlineView;
 - (void)setBackgroundView:(id)arg1;
 - (void)setCountdownProgress:(double)arg1;
-- (void)setDimmed:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setDimmed:(BOOL)arg1;
+- (void)setDimmed:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setDimmedIconImage:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;

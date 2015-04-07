@@ -5,6 +5,11 @@
 @class CALayer, NSMutableDictionary, UIKBCacheToken;
 
 @interface UIKeyboardSliceTransitionView : UIKeyboardSplitTransitionView {
+    NSMutableDictionary *_controlKeys;
+    struct CGImage { } *_defaultKeyplaneImage;
+    UIKBCacheToken *_keyplaneToken;
+    CALayer *_leftKeys;
+    int _orientation;
     struct { 
         unsigned int position : 1; 
         unsigned int slices : 1; 
@@ -14,11 +19,6 @@
         unsigned int shiftKeys : 1; 
         unsigned int returnKeys : 1; 
         unsigned int moreIntlKeys : 1; 
-    NSMutableDictionary *_controlKeys;
-    struct CGImage { } *_defaultKeyplaneImage;
-    UIKBCacheToken *_keyplaneToken;
-    CALayer *_leftKeys;
-    int _orientation;
     } _rebuildFlags;
     CALayer *_rightKeys;
     CALayer *_spaceFill;

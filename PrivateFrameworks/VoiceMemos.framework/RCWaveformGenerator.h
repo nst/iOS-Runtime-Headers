@@ -5,8 +5,32 @@
 @class NSError, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSOperationQueue, RCExtAudioFilePipe;
 
 @interface RCWaveformGenerator : NSObject {
+    RCExtAudioFilePipe *_activeExtAudioFile;
+    BOOL _canceled;
+    NSObject<OS_dispatch_semaphore> *_digestPausedSemaphore;
+    unsigned int _framesConsumedSinceLastFlush;
+    int _framesNeededForNextDB;
+    int _framesNeededForNextFlush;
+    NSMutableArray *_internalFinishedLoadingBlockUUIDs;
+    NSMutableArray *_internalFinishedLoadingBlocks;
+    BOOL _isSampleRateKnown;
+    NSError *_loadingError;
+    NSOperationQueue *_loadingQueue;
+    NSObject<OS_dispatch_queue> *_notificationQueue;
+    int _overviewUnitsPerSecond;
+    unsigned int _pauseCount;
+    struct vector<float, std::__1::allocator<float> > { 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
+        } __end_cap_; 
+    } _powerLevelBuffer;
+    float _powerLevelBufferLastPushedValue;
+    unsigned int _powerLevelsConsumedSinceLastFlush;
+    NSObject<OS_dispatch_queue> *_queue;
     struct PowerMeter { 
-        boolmInstantaneousMode; 
+        bool mInstantaneousMode; 
         double mSampleRate; 
         double mPeakDecay1; 
         double mPeakDecay; 
@@ -25,30 +49,6 @@
         double mAveragePowerF; 
         float m_vAvePower[16]; 
         int mAveragePowerI; 
-    struct vector<float, std::__1::allocator<float> > { 
-        float *__begin_; 
-        float *__end_; 
-        struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
-        } __end_cap_; 
-    RCExtAudioFilePipe *_activeExtAudioFile;
-    BOOL _canceled;
-    NSObject<OS_dispatch_semaphore> *_digestPausedSemaphore;
-    unsigned int _framesConsumedSinceLastFlush;
-    int _framesNeededForNextDB;
-    int _framesNeededForNextFlush;
-    NSMutableArray *_internalFinishedLoadingBlockUUIDs;
-    NSMutableArray *_internalFinishedLoadingBlocks;
-    BOOL _isSampleRateKnown;
-    NSError *_loadingError;
-    NSOperationQueue *_loadingQueue;
-    NSObject<OS_dispatch_queue> *_notificationQueue;
-    int _overviewUnitsPerSecond;
-    unsigned int _pauseCount;
-    } _powerLevelBuffer;
-    float _powerLevelBufferLastPushedValue;
-    unsigned int _powerLevelsConsumedSinceLastFlush;
-    NSObject<OS_dispatch_queue> *_queue;
     } _samplePowerMeter;
     double _segmentFlushInterval;
     int _state;

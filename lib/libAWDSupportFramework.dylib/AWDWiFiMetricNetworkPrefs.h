@@ -5,6 +5,13 @@
 @class NSMutableArray;
 
 @interface AWDWiFiMetricNetworkPrefs : PBCodable <NSCopying> {
+    unsigned int _adhocNetsCount;
+    unsigned int _applePersHotspotNetsCount;
+    unsigned int _atjCanceledCount;
+    BOOL _atjEnabled;
+    unsigned int _atjUsedCount;
+    unsigned int _captiveNetsCount;
+    unsigned int _eapNetsCount;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int adhocNetsCount : 1; 
@@ -21,13 +28,6 @@
         unsigned int wepNetsCount : 1; 
         unsigned int wpaNetsCount : 1; 
         unsigned int atjEnabled : 1; 
-    unsigned int _adhocNetsCount;
-    unsigned int _applePersHotspotNetsCount;
-    unsigned int _atjCanceledCount;
-    BOOL _atjEnabled;
-    unsigned int _atjUsedCount;
-    unsigned int _captiveNetsCount;
-    unsigned int _eapNetsCount;
     } _has;
     unsigned int _hiddenNetsCount;
     unsigned int _mostUsedCount;

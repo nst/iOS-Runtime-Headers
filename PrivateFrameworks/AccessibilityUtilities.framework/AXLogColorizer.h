@@ -3,12 +3,12 @@
  */
 
 @interface AXLogColorizer : NSObject {
+    BOOL _active;
     struct AXLogColorTheme { 
         int errorColor; 
         int warningColor; 
         int infoColor; 
         int debugColor; 
-    BOOL _active;
     } _colorTheme;
     BOOL _managedBySettings;
     BOOL _preferDarkColors;

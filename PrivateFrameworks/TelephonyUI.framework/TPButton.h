@@ -41,8 +41,8 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setIconVerticalOffset:(float)arg1;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)setMinimumTitleFontSize:(float)arg1 maximumTitleFontSize:(float)arg2;
 - (void)setMinimumTitleFontSize:(float)arg1;
+- (void)setMinimumTitleFontSize:(float)arg1 maximumTitleFontSize:(float)arg2;
 - (void)setPlusSeparatedTitle:(id)arg1;
 - (void)setRoundsCorners:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;

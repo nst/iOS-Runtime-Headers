@@ -13,7 +13,11 @@
     int __automatic_invalidation_retainCount;
     NSError *_cancellationError;
     _UIAsyncInvocation *_cancellationInvocation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _connectionHandler;
+
     BOOL _isCancelled;
     NSObject<OS_dispatch_queue> *_queue;
     _UIRemoteViewService *_service;

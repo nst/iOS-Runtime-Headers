@@ -9,7 +9,7 @@
 
 @class NSString, TSCHChartMediator;
 
-@interface TSCHPersistentChartMediator : TSPObject <TSCHNotifyOnModify, TSCHMediatorProvider> {
+@interface TSCHPersistentChartMediator : TSPObject <TSCHMediatorProvider, TSCHNotifyOnModify> {
     TSCHChartMediator *mMediator;
 }
 

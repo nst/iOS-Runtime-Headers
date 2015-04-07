@@ -33,8 +33,8 @@
 - (void)finishedSearchingForType:(unsigned int)arg1;
 - (void)finishedTaskWithID:(id)arg1;
 - (id)init;
-- (void)searchWithString:(id)arg1 enteredRecipients:(id)arg2;
 - (void)searchWithString:(id)arg1;
+- (void)searchWithString:(id)arg1 enteredRecipients:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setTaskID:(id)arg1;
 - (id)taskID;

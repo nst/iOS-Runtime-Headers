@@ -5,12 +5,12 @@
 @class NSData, NSString;
 
 @interface CKDPNotificationSyncResponsePushMessage : PBCodable <NSCopying> {
+    int _badgeCount;
+    NSString *_dialog;
     struct { 
         unsigned int badgeCount : 1; 
         unsigned int source : 1; 
         unsigned int isRead : 1; 
-    int _badgeCount;
-    NSString *_dialog;
     } _has;
     BOOL _isRead;
     NSData *_payload;

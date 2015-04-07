@@ -4,7 +4,7 @@
 
 @class NSString, PSListController, UIColor;
 
-@interface PSEditableTableCell : PSTableCell <UITextViewDelegate, UITextFieldDelegate> {
+@interface PSEditableTableCell : PSTableCell <UITextFieldDelegate, UITextViewDelegate> {
     PSListController *_controllerDelegate;
     BOOL _delaySpecifierRelease;
     id _delegate;

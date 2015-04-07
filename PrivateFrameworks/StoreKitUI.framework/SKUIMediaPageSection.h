@@ -5,11 +5,11 @@
 @class NSString, SKUIArtwork, SKUIEmbeddedMediaView, SKUIMediaComponent;
 
 @interface SKUIMediaPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate> {
+    SKUIArtwork *_artwork;
+    unsigned int _artworkRequestID;
     struct CGSize { 
         float width; 
         float height; 
-    SKUIArtwork *_artwork;
-    unsigned int _artworkRequestID;
     } _imageSize;
     SKUIEmbeddedMediaView *_mediaView;
 }

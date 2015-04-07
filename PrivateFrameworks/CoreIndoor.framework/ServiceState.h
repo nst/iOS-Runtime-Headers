@@ -8,11 +8,11 @@
     NSString *_apiKey;
     IndoorProtocolProxy *_delegateProxy;
     NSString *_password;
+    bool _pausedLocalization;
     NSSet *_selectedVenues;
     NSString *_server;
+    bool _updateLocation;
     NSString *_username;
-    bool_pausedLocalization;
-    bool_updateLocation;
 }
 
 @property(retain) NSString * apiKey;

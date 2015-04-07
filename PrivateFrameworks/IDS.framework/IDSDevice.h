@@ -60,8 +60,8 @@
 - (id)modelIdentifier;
 - (id)name;
 - (id)nsuuid;
-- (int)openSocketForDomain:(id)arg1 transportType:(int)arg2;
 - (int)openSocketForDomain:(id)arg1;
+- (int)openSocketForDomain:(id)arg1 transportType:(int)arg2;
 - (void)openSocketWithOptions:(id)arg1 completionHandler:(id)arg2 onQueue:(id)arg3;
 - (unsigned int)pairingProtocolVersion;
 - (id)productBuildVersion;

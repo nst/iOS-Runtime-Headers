@@ -8,15 +8,6 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
     } _controlPointSize;
     float _enlargementScale;
     struct CGColor { } *_grabberColor;
@@ -27,9 +18,15 @@
     CALayer *_leftGrabber;
     CALayer *_loLayer;
     BOOL _loupe;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _magnifierSize;
     CALayer *_maskLayer;
     unsigned int _pageRotation;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _pointToMagnify;
     float _power;
     CALayer *_rightBar;
@@ -37,6 +34,9 @@
     CAShapeLayer *_selectionLayer;
     UIView *_textEffectsSubView;
     UIWindow *_textEffectsWindow;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _touchPoint;
     BOOL _visible;
     UIPDFPageView *pageView;
@@ -69,8 +69,8 @@
 - (void)setPageView:(id)arg1;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1 viewPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setPower;
-- (void)setSelectionPath:(struct CGPath { }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
 - (void)setSelectionPath;
+- (void)setSelectionPath:(struct CGPath { }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
 - (void)setTextRangeHandlePositions;
 - (void)showLoupe;
 - (void)showMagnifier;

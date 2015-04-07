@@ -5,9 +5,9 @@
 @class MPPMediaPredicateValue, NSString;
 
 @interface MPPPropertyPredicate : PBCodable <NSCopying> {
+    int _comparisonType;
     struct { 
         unsigned int comparisonType : 1; 
-    int _comparisonType;
     } _has;
     NSString *_property;
     MPPMediaPredicateValue *_value;

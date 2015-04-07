@@ -5,12 +5,12 @@
 @class NSString, SiriUIKeyline, SiriUISnippetViewController, UIButton, UIImageView, UILabel;
 
 @interface SiriUIReusableHeaderView : UICollectionReusableView <SiriUIReusableView, SiriUISizableHeaderView> {
+    UIImageView *_chevronView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIImageView *_chevronView;
     } _contentInsets;
     UIButton *_headerAreaButton;
     UILabel *_headerLabel;

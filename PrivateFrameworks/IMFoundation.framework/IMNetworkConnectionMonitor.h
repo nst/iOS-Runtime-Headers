@@ -4,7 +4,7 @@
 
 @class IMReachability;
 
-@interface IMNetworkConnectionMonitor : IMConnectionMonitor <IMSystemMonitorListener, IMReachabilityDelegate> {
+@interface IMNetworkConnectionMonitor : IMConnectionMonitor <IMReachabilityDelegate, IMSystemMonitorListener> {
     unsigned int _hostFlags;
     IMReachability *_hostReachability;
     unsigned int _ipFlags;

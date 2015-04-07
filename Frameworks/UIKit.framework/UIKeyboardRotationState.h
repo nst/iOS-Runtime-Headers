@@ -25,8 +25,8 @@
 - (int)postRotationState;
 - (BOOL)requiresNewState;
 - (void)setAnimationStyle:(id)arg1;
-- (void)setPostRotationState:(int)arg1 animationStyle:(id)arg2;
 - (void)setPostRotationState:(int)arg1;
+- (void)setPostRotationState:(int)arg1 animationStyle:(id)arg2;
 - (void)setRequiresNewState:(BOOL)arg1;
 - (void)setState:(int)arg1;
 - (void)setTargetOrientation:(int)arg1;

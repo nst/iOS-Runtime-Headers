@@ -8,32 +8,32 @@
  */
 
 @interface TNSheetUIState : NSObject <NSCopying> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     int mDeviceIdiom;
     unsigned char mFormFocusedFieldIndex;
     unsigned short mFormFocusedRecordIndex;
     BOOL mHasPreviousVisibleRect;
     BOOL mHasVisibleRect;
     float mPreviousViewScale;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mPreviousVisibleRect;
     float mViewScale;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mVisibleRect;
 }
 
@@ -63,13 +63,13 @@
 - (BOOL)hasPreviousVisibleRect;
 - (BOOL)hasVisibleRect;
 - (id)init;
-- (id)initWithArchive:(const struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Point {} *x3; float x4; float x5; struct Point {} *x6; boolx7; boolx8; boolx9; unsigned int x10; struct Size {} *x11; struct Size {} *x12; unsigned int x13; unsigned int x14; int x15; unsigned int x16[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Point {} *x3; float x4; float x5; struct Point {} *x6; bool x7; bool x8; bool x9; unsigned int x10; struct Size {} *x11; struct Size {} *x12; unsigned int x13; unsigned int x14; int x15; unsigned int x16[1]; }*)arg1 unarchiver:(id)arg2;
 - (BOOL)isDefault;
 - (BOOL)isEqual:(id)arg1;
 - (struct CGPoint { float x1; float x2; })previousScrollPosition;
 - (float)previousViewScale;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previousVisibleRect;
-- (void)saveToArchive:(struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Point {} *x3; float x4; float x5; struct Point {} *x6; boolx7; boolx8; boolx9; unsigned int x10; struct Size {} *x11; struct Size {} *x12; unsigned int x13; unsigned int x14; int x15; unsigned int x16[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Point {} *x3; float x4; float x5; struct Point {} *x6; bool x7; bool x8; bool x9; unsigned int x10; struct Size {} *x11; struct Size {} *x12; unsigned int x13; unsigned int x14; int x15; unsigned int x16[1]; }*)arg1 archiver:(id)arg2;
 - (struct CGPoint { float x1; float x2; })scrollPosition;
 - (void)setArchivedDeviceIdiom:(int)arg1;
 - (void)setFormFocusedFieldIndex:(unsigned char)arg1;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface IMParticipantChangeItem : IMItem <NSCoding, NSCopying, IMRemoteObjectCoding> {
+@interface IMParticipantChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
     long long _changeType;
     NSString *_otherCountryCode;
     NSString *_otherHandle;

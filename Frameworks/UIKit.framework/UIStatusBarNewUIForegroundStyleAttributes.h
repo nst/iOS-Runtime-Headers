@@ -29,8 +29,8 @@
 - (float)edgePadding;
 - (id)expandedNameForImageName:(id)arg1;
 - (id)imageNamed:(id)arg1 withLegibilityStyle:(int)arg2 legibilityStrength:(float)arg3;
-- (id)initWithHeight:(float)arg1 legibilityStyle:(int)arg2 tintColor:(id)arg3 hasBusyBackground:(BOOL)arg4;
 - (id)initWithHeight:(float)arg1 legibilityStyle:(int)arg2;
+- (id)initWithHeight:(float)arg1 legibilityStyle:(int)arg2 tintColor:(id)arg3 hasBusyBackground:(BOOL)arg4;
 - (id)makeTextFontForStyle:(int)arg1;
 - (struct CGPoint { float x1; float x2; })positionForMoonMaskInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)proportionalFontForFont:(id)arg1;

@@ -7,7 +7,11 @@
  */
 
 @interface AXIPCServerMessageHandlerContext : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     SEL _selector;
     id _target;
 }

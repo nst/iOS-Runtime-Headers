@@ -3,13 +3,13 @@
  */
 
 @interface TSUChunkedString : NSMutableString {
+    unsigned int _chunkLength;
     struct vector<boost::shared_ptr<TSUStringChunk>, std::__1::allocator<boost::shared_ptr<TSUStringChunk> > > { 
         struct shared_ptr<TSUStringChunk> {} *__begin_; 
         struct shared_ptr<TSUStringChunk> {} *__end_; 
         struct __compressed_pair<boost::shared_ptr<TSUStringChunk> *, std::__1::allocator<boost::shared_ptr<TSUStringChunk> > > { 
             struct shared_ptr<TSUStringChunk> {} *__first_; 
         } __end_cap_; 
-    unsigned int _chunkLength;
     } _chunks;
     unsigned int _length;
 }

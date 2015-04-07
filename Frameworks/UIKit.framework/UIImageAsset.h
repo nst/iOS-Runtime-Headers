@@ -17,7 +17,11 @@
     _UIAssetManager *_assetManager;
     NSString *_assetName;
     BOOL _cacheContents;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _creationBlock;
+
     UITraitCollection *_defaultTraitCollection;
 }
 

@@ -26,8 +26,8 @@
 - (id)initWithExpansionOrientation:(int)arg1;
 - (int)numberOfMenuItems;
 - (void)setDelegate:(id)arg1;
-- (void)setDuration:(int)arg1 animated:(BOOL)arg2;
 - (void)setDuration:(int)arg1;
+- (void)setDuration:(int)arg1 animated:(BOOL)arg2;
 - (void)setHideOffWhenCollapsed:(BOOL)arg1;
 - (id)titleForMenuItemAtIndex:(int)arg1;
 

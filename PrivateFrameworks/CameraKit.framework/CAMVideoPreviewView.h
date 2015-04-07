@@ -59,11 +59,11 @@
 - (void)setDisableLayoutForEffectsFullsizeView:(BOOL)arg1;
 - (void)setDisableLayoutForEffectsGridViews:(BOOL)arg1;
 - (void)setDisableLayoutForPreviewView:(BOOL)arg1;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setOrientation:(int)arg1;
+- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setPreviewLayer:(id)arg1;
-- (void)setSquare:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSquare:(BOOL)arg1;
+- (void)setSquare:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setVideoGravity:(id)arg1;
 - (void)updateToContentSize:(id)arg1;
 - (id)videoGravity;

@@ -5,8 +5,8 @@
 @interface HSBulkAddPlaylistRequest : HSRequest {
 }
 
-+ (id)requestWithDatabaseID:(unsigned int)arg1 sessionID:(unsigned int)arg2 playlistName:(id)arg3 seedItemIDs:(id)arg4 itemIDs:(id)arg5;
 + (id)requestWithDatabaseID:(unsigned int)arg1 sessionID:(unsigned int)arg2 playlistName:(id)arg3;
++ (id)requestWithDatabaseID:(unsigned int)arg1 sessionID:(unsigned int)arg2 playlistName:(id)arg3 seedItemIDs:(id)arg4 itemIDs:(id)arg5;
 
 - (id)_bodyDataForSessionID:(unsigned int)arg1 playlistName:(id)arg2 seedItemIDs:(id)arg3 itemIDs:(id)arg4;
 - (id)canonicalResponseForResponse:(id)arg1;

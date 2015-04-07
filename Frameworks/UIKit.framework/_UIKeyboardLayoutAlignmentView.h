@@ -5,6 +5,9 @@
 @class NSLayoutConstraint, NSNotification;
 
 @interface _UIKeyboardLayoutAlignmentView : UIView {
+    NSNotification *_keyboardChangeNotificationForUpdateConstraints;
+    NSLayoutConstraint *bottomConstraint;
+    NSLayoutConstraint *heightConstraint;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,9 +17,6 @@
             float width; 
             float height; 
         } size; 
-    NSNotification *_keyboardChangeNotificationForUpdateConstraints;
-    NSLayoutConstraint *bottomConstraint;
-    NSLayoutConstraint *heightConstraint;
     } lastKnownKeyboardRect;
     NSLayoutConstraint *widthConstraint;
 }

@@ -51,8 +51,8 @@
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (id)getParams;
-- (id)initWithURL:(id)arg1 delegate:(id)arg2 signer:(id)arg3;
 - (id)initWithURL:(id)arg1 delegate:(id)arg2;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 signer:(id)arg3;
 - (id)postParams;
 - (id)response;
 - (int)responseType;

@@ -9,6 +9,14 @@
 @class MFAccount, MFActivityMonitor, MFError, MFMonitoredInvocation, NSArray;
 
 @interface MFAccountValidator : NSObject {
+    MFAccount *_account;
+    MFActivityMonitor *_accountValidationActivity;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _completionBlock;
+
+    id _delegate;
     struct { 
         unsigned int useSSL : 1; 
         unsigned int incomingServerSupportsSSL : 1; 
@@ -16,10 +24,6 @@
         unsigned int canceled : 1; 
         unsigned int performsValidationInBackground : 1; 
         unsigned int unused : 27; 
-    MFAccount *_account;
-    MFActivityMonitor *_accountValidationActivity;
-    id _completionBlock;
-    id _delegate;
     } _flags;
     NSArray *_incomingServerAuthSchemes;
     MFError *_incomingServerValidationError;
@@ -40,8 +44,8 @@
 - (BOOL)_incomingServerValid;
 - (id)_ispAccountInfo;
 - (BOOL)_outgoingServerValid;
-- (void)_validateAccount:(id)arg1 withFallbacks:(BOOL)arg2;
 - (void)_validateAccount:(id)arg1;
+- (void)_validateAccount:(id)arg1 withFallbacks:(BOOL)arg2;
 - (void)_validateAccountWithoutFallbacks:(id)arg1;
 - (id)account;
 - (BOOL)accountIsValid;
@@ -56,10 +60,10 @@
 - (BOOL)performsValidationInBackground;
 - (void)setDelegate:(id)arg1;
 - (void)stop;
-- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2 withCompletion:(id)arg3;
 - (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2;
-- (void)validateAccountWithoutFallbacks:(id)arg1 withCompletion:(id)arg2;
+- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2 withCompletion:(id)arg3;
 - (void)validateAccountWithoutFallbacks:(id)arg1;
+- (void)validateAccountWithoutFallbacks:(id)arg1 withCompletion:(id)arg2;
 - (id)validationInvocation;
 
 @end

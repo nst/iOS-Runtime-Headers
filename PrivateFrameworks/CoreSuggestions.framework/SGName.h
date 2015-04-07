@@ -21,9 +21,9 @@
 @property(readonly) NSString * prefix;
 @property(readonly) NSString * suffix;
 
-+ (id)nameWithFirstName:(id)arg1 lastName:(id)arg2 middleName:(id)arg3 fullName:(id)arg4 prefix:(id)arg5 suffix:(id)arg6;
-+ (id)nameWithFirstName:(id)arg1 lastName:(id)arg2;
 + (id)nameWithFirstName:(id)arg1;
++ (id)nameWithFirstName:(id)arg1 lastName:(id)arg2;
++ (id)nameWithFirstName:(id)arg1 lastName:(id)arg2 middleName:(id)arg3 fullName:(id)arg4 prefix:(id)arg5 suffix:(id)arg6;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

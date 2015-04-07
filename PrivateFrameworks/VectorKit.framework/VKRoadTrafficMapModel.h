@@ -10,12 +10,12 @@
 @class VKRoadMapModel;
 
 @interface VKRoadTrafficMapModel : VKVectorMapModel {
+    BOOL _enabled;
+    VKRoadMapModel *_roadModel;
     struct unique_ptr<vk::TrafficManager, std::__1::default_delete<vk::TrafficManager> > { 
         struct __compressed_pair<vk::TrafficManager *, std::__1::default_delete<vk::TrafficManager> > { 
             struct TrafficManager {} *__first_; 
         } __ptr_; 
-    BOOL _enabled;
-    VKRoadMapModel *_roadModel;
     } _trafficManager;
 }
 

@@ -11,7 +11,11 @@
 @interface NSFileReactorProxy : NSObject {
     NSObject<OS_xpc_object> *_client;
     NSFileAccessNode *_itemLocation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _messageSender;
+
     id _reactorID;
 }
 

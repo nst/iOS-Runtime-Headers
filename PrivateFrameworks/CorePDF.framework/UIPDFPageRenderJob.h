@@ -5,9 +5,6 @@
 @class UIImage, UIPDFPage, UIPDFPageRenderOperation;
 
 @interface UIPDFPageRenderJob : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     SEL _callback;
     UIImage *_image;
     int _lock;
@@ -17,6 +14,9 @@
     int _priority;
     BOOL _releaseWhenDone;
     BOOL _sendPending;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     id _target;
     id _userData;

@@ -5,9 +5,6 @@
 @class NSArray, NSString;
 
 @interface VMUProcInfo : NSObject {
-    struct timeval { 
-        int tv_sec; 
-        int tv_usec; 
     NSArray *_arguments;
     NSArray *_envVars;
     NSString *_firstArg;
@@ -18,6 +15,9 @@
     NSString *_procTableName;
     NSString *_realAppName;
     NSString *_requestedAppName;
+    struct timeval { 
+        int tv_sec; 
+        int tv_usec; 
     } _startTime;
     unsigned int _task;
 }

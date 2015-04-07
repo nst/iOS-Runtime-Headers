@@ -29,9 +29,9 @@
 
 + (id)lookUpFrameFromHandle:(id)arg1;
 
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
 - (id)URL;
+- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id)_browserContextController;
 - (id)_certificateChain;
 - (BOOL)_hasCustomContentProvider;

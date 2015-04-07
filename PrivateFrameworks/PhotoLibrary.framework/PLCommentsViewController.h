@@ -4,7 +4,8 @@
 
 @class <PLCommentsViewControllerDelegate>, CAGradientLayer, NSCache, NSString, PLCloudSharedComment, PLManagedAsset, PLPhotoCommentEntryView, UIBarButtonItem, UIImageView, UITableView, UIView, _UIBackdropView;
 
-@interface PLCommentsViewController : UIViewController <PLCloudCommentsChangeObserver, PLPhotoCommentEntryViewDelegate, PLDismissableViewController, UITableViewDelegate, UITableViewDataSource> {
+@interface PLCommentsViewController : UIViewController <PLCloudCommentsChangeObserver, PLDismissableViewController, PLPhotoCommentEntryViewDelegate, UITableViewDataSource, UITableViewDelegate> {
+    PLManagedAsset *_asset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    PLManagedAsset *_asset;
     } _availableBounds;
     _UIBackdropView *_backdropView;
     UIBarButtonItem *_cancelButton;

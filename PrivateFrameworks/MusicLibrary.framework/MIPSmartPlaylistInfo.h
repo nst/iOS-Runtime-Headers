@@ -5,6 +5,11 @@
 @class NSData;
 
 @interface MIPSmartPlaylistInfo : PBCodable <NSCopying> {
+    BOOL _dynamic;
+    BOOL _enabledItemsOnly;
+    unsigned int _evaluationOrder;
+    BOOL _filtered;
+    BOOL _genius;
     struct { 
         unsigned int evaluationOrder : 1; 
         unsigned int limitKind : 1; 
@@ -16,11 +21,6 @@
         unsigned int genius : 1; 
         unsigned int limited : 1; 
         unsigned int reverseLimitOrder : 1; 
-    BOOL _dynamic;
-    BOOL _enabledItemsOnly;
-    unsigned int _evaluationOrder;
-    BOOL _filtered;
-    BOOL _genius;
     } _has;
     int _limitKind;
     unsigned int _limitOrder;

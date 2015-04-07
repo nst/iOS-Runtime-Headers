@@ -5,10 +5,10 @@
 @class NSString, UIColor, _SKUIItemBrowseCellContentView;
 
 @interface SKUIItemBrowseCellLayout : SKUIItemCellLayout {
+    _SKUIItemBrowseCellContentView *_cellContentView;
     struct CGSize { 
         float width; 
         float height; 
-    _SKUIItemBrowseCellContentView *_cellContentView;
     } _imageBoundingSize;
     BOOL _largeSpacing;
     int _numberOfUserRatings;

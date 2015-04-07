@@ -6,13 +6,13 @@
 
 @interface UIMotionEvent : UIInternalEvent {
     double _highLevelTime;
-    unsigned int _highPassStateIndex;
     float _highPassState[2];
+    unsigned int _highPassStateIndex;
     NSTimer *_idleTimer;
     double _lastMovementTime;
     double _lowEndTimeout;
-    unsigned int _lowPassStateIndex;
     float _lowPassState[10];
+    unsigned int _lowPassStateIndex;
     id _motionAccelerometer;
     BOOL _sentMotionBegan;
     double _shakeStartTime;

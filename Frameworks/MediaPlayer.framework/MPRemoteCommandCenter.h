@@ -67,8 +67,8 @@
 - (void)_commandTargetsDidChangeNotification:(id)arg1;
 - (struct __CFArray { }*)_copySupportedCommands;
 - (id)_createRemoteCommandWithConcreteClass:(Class)arg1 mediaRemoteType:(unsigned int)arg2;
-- (void)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2 completion:(id)arg3;
 - (id)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2;
+- (void)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2 completion:(id)arg3;
 - (void)_scheduleSupportedCommandsChangedNotify;
 - (void)_setupMediaRemoteCommandHandler;
 - (void)_setupMediaRemoteControlClient;

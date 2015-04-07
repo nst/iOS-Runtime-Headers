@@ -4,7 +4,7 @@
 
 @class <ABPersonTableViewDataSourceDelegate>, <ABStyleProvider>, ABActionsController, ABLabelViewWithVariablePositioning, ABMultiCellContentView, ABNamePropertyGroup, ABPersonCellLayoutManager, ABPersonImageView, ABPersonPickersDelegate, ABPersonTableFooterView, ABPersonTableHeaderView, ABPersonTableView, ABPersonTableViewActionsDelegate, ABPersonTableViewImageDataDelegate, ABPersonTableViewLinkingDelegate, ABPersonTableViewMultiCellDelegate, ABPersonTableViewSharingDelegate, ABUIPerson, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIFont, UILabel, UIResponder, UITableViewCell, UIView;
 
-@interface ABPersonTableViewDataSource : NSObject <UITableViewDelegate, UITableViewDataSourcePrivate, ABPrimaryValueDelegate, ABPersonCellLayoutManagerDelegate> {
+@interface ABPersonTableViewDataSource : NSObject <ABPersonCellLayoutManagerDelegate, ABPrimaryValueDelegate, UITableViewDataSourcePrivate, UITableViewDelegate> {
     ABActionsController *_actionsController;
     ABPersonTableViewActionsDelegate *_actionsDelegate;
     struct __CFSet { } *_addNewValueProperties;
@@ -263,13 +263,13 @@
 - (id)messageFont;
 - (id)multiCellContentViewDelegate;
 - (id)multiCellContentViewForWillEndEditing;
-- (id)namePropertyGroup:(id)arg1 primaryValueForProperty:(int)arg2;
 - (id)namePropertyGroup;
+- (id)namePropertyGroup:(id)arg1 primaryValueForProperty:(int)arg2;
 - (id)newAccessoryViewWhenEditing:(BOOL)arg1 forDataProvider:(id)arg2 info:(id)arg3;
 - (struct __CFArray { }*)newAdditionalProperties;
 - (id)newHeaderView;
-- (id)newPropertyGroupsForEditing:(BOOL)arg1 withDisplayedProperties:(struct __CFArray { }*)arg2;
 - (id)newPropertyGroupsForEditing:(BOOL)arg1;
+- (id)newPropertyGroupsForEditing:(BOOL)arg1 withDisplayedProperties:(struct __CFArray { }*)arg2;
 - (id)noValueLabel;
 - (void)notifyDataWasReloaded;
 - (void)notifyHeaderViewHeightDidChange;
@@ -291,14 +291,14 @@
 - (void)presentRelatedNamesPicker:(id)arg1;
 - (int)primaryProperty;
 - (void)propertyGroup:(id*)arg1 orActions:(id*)arg2 forSection:(int)arg3 whenEditing:(BOOL)arg4;
-- (id)propertyGroupForProperty:(int)arg1 context:(void*)arg2 createIfEmpty:(BOOL)arg3;
 - (id)propertyGroupForProperty:(int)arg1 context:(void*)arg2;
+- (id)propertyGroupForProperty:(int)arg1 context:(void*)arg2 createIfEmpty:(BOOL)arg3;
 - (id)propertyGroupsForEditing:(BOOL)arg1;
 - (id)realHeaderView;
 - (void)reloadConferencing;
 - (void)reloadData;
-- (void)reloadDataIncludingHeaderView:(BOOL)arg1 invalidatePropertyData:(BOOL)arg2;
 - (void)reloadDataIncludingHeaderView:(BOOL)arg1;
+- (void)reloadDataIncludingHeaderView:(BOOL)arg1 invalidatePropertyData:(BOOL)arg2;
 - (void)reloadDeleteButton;
 - (void)reloadFavoritesData;
 - (void)reloadImageData;
@@ -308,8 +308,8 @@
 - (void)reloadPropertyGroups;
 - (void)resetPropertyGroupStores;
 - (int)rowIndexInPropertyGroup:(id*)arg1 orActions:(id*)arg2 forRow:(int)arg3 inSection:(int)arg4 whenEditing:(BOOL)arg5;
-- (void)scrollToLastActiveEntryFieldAnimated:(BOOL)arg1 becomeFirstResponder:(BOOL)arg2;
 - (void)scrollToLastActiveEntryFieldAnimated:(BOOL)arg1;
+- (void)scrollToLastActiveEntryFieldAnimated:(BOOL)arg1 becomeFirstResponder:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)sectionAnimationsDictionaryForEditing:(BOOL)arg1;
@@ -325,16 +325,16 @@
 - (void)setAdditionalLabels:(id)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
-- (void)setAllowsAddToFavorites:(BOOL)arg1 andReload:(BOOL)arg2;
 - (void)setAllowsAddToFavorites:(BOOL)arg1;
-- (void)setAllowsConferencing:(BOOL)arg1 andReload:(BOOL)arg2;
+- (void)setAllowsAddToFavorites:(BOOL)arg1 andReload:(BOOL)arg2;
 - (void)setAllowsConferencing:(BOOL)arg1;
+- (void)setAllowsConferencing:(BOOL)arg1 andReload:(BOOL)arg2;
 - (void)setAllowsDeletion:(BOOL)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
-- (void)setAllowsSendingTextMessage:(BOOL)arg1 andReload:(BOOL)arg2;
 - (void)setAllowsSendingTextMessage:(BOOL)arg1;
-- (void)setAllowsSharing:(BOOL)arg1 andReload:(BOOL)arg2;
+- (void)setAllowsSendingTextMessage:(BOOL)arg1 andReload:(BOOL)arg2;
 - (void)setAllowsSharing:(BOOL)arg1;
+- (void)setAllowsSharing:(BOOL)arg1 andReload:(BOOL)arg2;
 - (void)setAllowsSounds:(BOOL)arg1;
 - (void)setAllowsVibrations:(BOOL)arg1;
 - (void)setAlternateName:(id)arg1;
@@ -345,10 +345,10 @@
 - (void)setCustomPersonTableFooterView:(id)arg1;
 - (void)setCustomPersonTableHeaderView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisplayedProperties:(struct __CFArray { }*)arg1 andRefreshUI:(BOOL)arg2;
 - (void)setDisplayedProperties:(struct __CFArray { }*)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setDisplayedProperties:(struct __CFArray { }*)arg1 andRefreshUI:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3 important:(BOOL)arg4;
 - (void)setHighlightedValueIdentifier:(int)arg1;
 - (void)setHighlightedValueIsImportant:(BOOL)arg1;
@@ -393,6 +393,7 @@
 - (id)tableFooterView;
 - (id)tableHeaderView;
 - (id)tableHeaderViewContainer;
+- (id)tableView;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (BOOL)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (void)tableView:(id)arg1 cell:(id*)arg2 orTag:(int*)arg3 forRowAtIndexPath:(id)arg4 allowDequeing:(BOOL)arg5;
@@ -413,7 +414,6 @@
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (id)tableView;
 - (void)tableViewAddFieldUpdateAnimationsDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)tableViewCellForActions:(id)arg1 tableView:(id)arg2 row:(int)arg3 editing:(BOOL)arg4 allowDequeing:(BOOL)arg5 tag:(int*)arg6;
 - (int)tableViewRowAnimationForUpdateAction:(unsigned int)arg1 isFirstRow:(BOOL)arg2;
@@ -428,8 +428,8 @@
 - (void)updateRecord;
 - (void)updateSectionHeaderAndFooterHeightsForEditing:(BOOL)arg1;
 - (void)updateTableFooterViewAnimated:(BOOL)arg1;
-- (void)updateTableHeaderViewAnimated:(BOOL)arg1 andSkipTableViewHeaderHeightNotification:(BOOL)arg2;
 - (void)updateTableHeaderViewAnimated:(BOOL)arg1;
+- (void)updateTableHeaderViewAnimated:(BOOL)arg1 andSkipTableViewHeaderHeightNotification:(BOOL)arg2;
 - (BOOL)usesAddNewValueCellForProperty:(int)arg1;
 - (void)valueAtIndex:(int)arg1 selectedForPropertyGroup:(id)arg2 withMemberCell:(id)arg3 forEditing:(BOOL)arg4;
 - (BOOL)viewControllerWillSlideOut;

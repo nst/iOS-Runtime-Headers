@@ -9,7 +9,7 @@
 
 @class NSString, TSTTableStyleNetwork;
 
-@interface TSTTableStylePreset : TSPObject <TSSPreset, TSSStyleClient, TSKModel> {
+@interface TSTTableStylePreset : TSPObject <TSKModel, TSSPreset, TSSStyleClient> {
     unsigned int mPresetID;
     TSTTableStyleNetwork *mStyleNetwork;
 }

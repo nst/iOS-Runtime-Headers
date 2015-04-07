@@ -9,15 +9,15 @@
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _activationStates;
+    NSMutableArray *_cardAIDs;
+    struct { 
+        unsigned int pending : 1; 
+    } _has;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        unsigned int pending : 1; 
-    } _activationStates;
-    NSMutableArray *_cardAIDs;
-    } _has;
     } _lifecycleStates;
     BOOL _pending;
 }

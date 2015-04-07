@@ -5,6 +5,22 @@
 @class <PLAssetContainer>, <PUStackedAlbumTransitionDelegate>, NSSet, NSString, PHCollection, PUPhotoPinchGestureRecognizer, PUStackedAlbumLayout, PUStackedAlbumTransitionLayout, PUTransitionViewAnimator, UIView, UIViewController<PUStackedAlbumControllerTransition>;
 
 @interface PUStackedAlbumTransition : PUNavigationTransition <PUCollectionViewLayoutTransitioningDelegate, PUTransitionViewAnimatorDelegate> {
+    id __disableToken;
+    PUStackedAlbumTransitionLayout *__interactiveTransitionLayout;
+    PUPhotoPinchGestureRecognizer *__photoPinchGestureRecognizer;
+    PUStackedAlbumLayout *__transitionLayout;
+    PUTransitionViewAnimator *__transitionViewAnimator;
+    UIView *_animatorView;
+    <PUStackedAlbumTransitionDelegate> *_delegate;
+    BOOL _forFolder;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _interactionCenter;
+    BOOL _isExpanding;
+    BOOL _isForStandInAlbum;
+    PHCollection *_ph_photoCollection;
+    <PLAssetContainer> *_photoCollection;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,22 +30,6 @@
             float width; 
             float height; 
         } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    id __disableToken;
-    PUStackedAlbumTransitionLayout *__interactiveTransitionLayout;
-    PUPhotoPinchGestureRecognizer *__photoPinchGestureRecognizer;
-    PUStackedAlbumLayout *__transitionLayout;
-    PUTransitionViewAnimator *__transitionViewAnimator;
-    UIView *_animatorView;
-    <PUStackedAlbumTransitionDelegate> *_delegate;
-    BOOL _forFolder;
-    } _interactionCenter;
-    BOOL _isExpanding;
-    BOOL _isForStandInAlbum;
-    PHCollection *_ph_photoCollection;
-    <PLAssetContainer> *_photoCollection;
     } _popTransitionInitialVisibleBounds;
     NSSet *_popTransitionInitialVisibleStackedAssetIndexPaths;
 }

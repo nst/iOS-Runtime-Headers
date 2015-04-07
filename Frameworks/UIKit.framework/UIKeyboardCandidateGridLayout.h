@@ -5,19 +5,13 @@
 @class NSArray, NSMutableArray, NSMutableDictionary, NSSet;
 
 @interface UIKeyboardCandidateGridLayout : UICollectionViewLayout {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct { 
-        unsigned int idiom : 6; 
-        unsigned int landscape : 1; 
-        unsigned int split : 1; 
-        unsigned int appearance : 8; 
-        unsigned int rendering : 16; 
     NSArray *_candidateGroups;
     int _candidatesVisualStyle;
     NSMutableArray *_cellAttributes;
     unsigned int _columnsCount;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _contentSize;
     NSSet *_emphasizedCandidates;
     BOOL _expanded;
@@ -27,6 +21,12 @@
     BOOL _needsPaddingForIndexScrubber;
     NSMutableDictionary *_supplementaryAttributes;
     BOOL _supportsNumberKeySelection;
+    struct { 
+        unsigned int idiom : 6; 
+        unsigned int landscape : 1; 
+        unsigned int split : 1; 
+        unsigned int appearance : 8; 
+        unsigned int rendering : 16; 
     } _visualStyling;
 }
 

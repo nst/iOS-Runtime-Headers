@@ -11,7 +11,11 @@
 @interface TLAlert : NSObject {
     NSString *_accountIdentifier;
     NSTimer *_completionFallbackTimer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     BOOL _shouldOverrideMasterSwitches;
     NSObject<OS_dispatch_queue> *_targetQueue;
     NSString *_toneIdentifier;
@@ -31,9 +35,9 @@
 + (void)_playToneAndVibrationForType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3 shouldOverrideMasterSwitches:(BOOL)arg4;
 + (void)_setWatchPrefersSalientToneAndVibration:(BOOL)arg1;
 + (BOOL)_watchPrefersSalientToneAndVibration;
++ (void)playToneAndVibrationForType:(int)arg1;
 + (void)playToneAndVibrationForType:(int)arg1 accountIdentifier:(id)arg2;
 + (void)playToneAndVibrationForType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
-+ (void)playToneAndVibrationForType:(int)arg1;
 
 - (id)_completionFallbackTimer;
 - (id)_completionHandler;
@@ -50,9 +54,9 @@
 - (id)accountIdentifier;
 - (void)dealloc;
 - (id)description;
+- (id)initWithType:(int)arg1;
 - (id)initWithType:(int)arg1 accountIdentifier:(id)arg2;
 - (id)initWithType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
-- (id)initWithType:(int)arg1;
 - (BOOL)playWithCompletionHandler:(id)arg1 targetQueue:(id)arg2;
 - (void)startPlayingRepeatedly;
 - (void)stop;

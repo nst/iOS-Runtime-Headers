@@ -15,12 +15,24 @@
     BOOL _checked;
     BOOL _conflictFound;
     NSDate *_endDate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _newTimeChosen;
+
     unsigned int _reuseIdentifierVersion;
     NSMutableSet *_rowsShowingAllParticipants;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _showPreviewOfEventAtTime;
+
     NSDate *_startDate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _tableViewCellHook;
+
 }
 
 @property(retain) EKUIInviteeAlternativeTimeSearcher * availabilitySearcher;

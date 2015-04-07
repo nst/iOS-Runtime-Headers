@@ -5,42 +5,42 @@
 @class WDCharacterProperties, WDTableProperties;
 
 @interface WDTableRowProperties : NSObject <NSCopying> {
-    struct { 
-        short widthBefore; 
-        int widthBeforeType; 
-        short widthAfter; 
-        int widthAfterType; 
-        long height; 
-        int heightType; 
-        unsigned int widthBeforeOverridden : 1; 
-        unsigned int widthBeforeTypeOverridden : 1; 
-        unsigned int widthAfterOverridden : 1; 
-        unsigned int widthAfterTypeOverridden : 1; 
-        unsigned int heightOverridden : 1; 
-        unsigned int heightTypeOverridden : 1; 
-        unsigned int header : 1; 
-        unsigned int headerOverridden : 1; 
-    struct { 
-        short widthBefore; 
-        int widthBeforeType; 
-        short widthAfter; 
-        int widthAfterType; 
-        long height; 
-        int heightType; 
-        unsigned int widthBeforeOverridden : 1; 
-        unsigned int widthBeforeTypeOverridden : 1; 
-        unsigned int widthAfterOverridden : 1; 
-        unsigned int widthAfterTypeOverridden : 1; 
-        unsigned int heightOverridden : 1; 
-        unsigned int heightTypeOverridden : 1; 
-        unsigned int header : 1; 
-        unsigned int headerOverridden : 1; 
-    unsigned int mOriginal : 1;
-    unsigned int mTracked : 1;
-    unsigned int mResolved : 1;
     WDCharacterProperties *mCharacterProperties;
+    unsigned int mOriginal : 1;
+    struct { 
+        short widthBefore; 
+        int widthBeforeType; 
+        short widthAfter; 
+        int widthAfterType; 
+        long height; 
+        int heightType; 
+        unsigned int widthBeforeOverridden : 1; 
+        unsigned int widthBeforeTypeOverridden : 1; 
+        unsigned int widthAfterOverridden : 1; 
+        unsigned int widthAfterTypeOverridden : 1; 
+        unsigned int heightOverridden : 1; 
+        unsigned int heightTypeOverridden : 1; 
+        unsigned int header : 1; 
+        unsigned int headerOverridden : 1; 
     } mOriginalProperties;
+    unsigned int mResolved : 1;
     WDTableProperties *mTableProperties;
+    unsigned int mTracked : 1;
+    struct { 
+        short widthBefore; 
+        int widthBeforeType; 
+        short widthAfter; 
+        int widthAfterType; 
+        long height; 
+        int heightType; 
+        unsigned int widthBeforeOverridden : 1; 
+        unsigned int widthBeforeTypeOverridden : 1; 
+        unsigned int widthAfterOverridden : 1; 
+        unsigned int widthAfterTypeOverridden : 1; 
+        unsigned int heightOverridden : 1; 
+        unsigned int heightTypeOverridden : 1; 
+        unsigned int header : 1; 
+        unsigned int headerOverridden : 1; 
     } mTrackedProperties;
 }
 

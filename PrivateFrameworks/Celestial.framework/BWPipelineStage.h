@@ -17,8 +17,8 @@
 + (id)_currentPipelineStage;
 + (void)_setCurrentPipelineStage:(id)arg1;
 + (void)initialize;
-+ (id)pipelineStageWithName:(id)arg1 priority:(unsigned int)arg2 discardsLateSampleData:(BOOL)arg3;
 + (id)pipelineStageWithName:(id)arg1 priority:(unsigned int)arg2;
++ (id)pipelineStageWithName:(id)arg1 priority:(unsigned int)arg2 discardsLateSampleData:(BOOL)arg3;
 
 - (id)_initWithName:(id)arg1 priority:(unsigned int)arg2 discardsLateSampleData:(BOOL)arg3;
 - (BOOL)_isCurrentPipelineStage;

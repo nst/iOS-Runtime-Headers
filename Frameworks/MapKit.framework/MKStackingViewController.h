@@ -70,8 +70,8 @@
 - (id)selectedViewController;
 - (id)selectorView;
 - (void)setHeaderView:(id)arg1;
-- (void)setSelectedViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setSelectedViewController:(id)arg1;
+- (void)setSelectedViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setSelectorView:(id)arg1;
 - (void)setSelectorViewNeedsUpdate;
 - (void)setStackingDelegate:(id)arg1;

@@ -5,9 +5,12 @@
 @class GEOClientCapabilities, GEODirectionsRequestFeedback, GEOLocation, GEOMapRegion, GEOOriginalRoute, GEORouteAttributes, NSData, NSMutableArray;
 
 @interface GEODirectionsRequest : PBRequest <NSCopying> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
+    GEOClientCapabilities *_clientCapabilities;
+    GEOMapRegion *_currentMapRegion;
+    GEOLocation *_currentUserLocation;
+    int _departureTime;
+    GEODirectionsRequestFeedback *_feedback;
+    BOOL _getRouteForZilchPoints;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int maxDecoderVersion : 1; 
@@ -18,12 +21,6 @@
         unsigned int sequenceNumber : 1; 
         unsigned int timeSinceLastRerouteRequest : 1; 
         unsigned int getRouteForZilchPoints : 1; 
-    GEOClientCapabilities *_clientCapabilities;
-    GEOMapRegion *_currentMapRegion;
-    GEOLocation *_currentUserLocation;
-    int _departureTime;
-    GEODirectionsRequestFeedback *_feedback;
-    BOOL _getRouteForZilchPoints;
     } _has;
     unsigned int _mainTransportTypeMaxRouteCount;
     unsigned long long _maxDecoderVersion;
@@ -35,6 +32,9 @@
     GEORouteAttributes *_routeAttributes;
     unsigned int _sequenceNumber;
     NSMutableArray *_serviceTags;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionID;
     unsigned long long _sharedLibraryVersion;
     unsigned int _timeSinceLastRerouteRequest;

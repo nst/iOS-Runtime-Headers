@@ -66,8 +66,8 @@
 - (void)reloadData;
 - (unsigned int)selectedIndex;
 - (void)setDataSource:(id)arg1;
-- (void)setSelectedIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setSelectedIndex:(unsigned int)arg1;
+- (void)setSelectedIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)updateToContentSize:(id)arg1;
 

@@ -9,12 +9,16 @@
 @class NSMutableArray, UICollectionReusableView, UICollectionViewLayoutAttributes;
 
 @interface UICollectionViewAnimation : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _animationBlock;
+
     struct { 
         unsigned int animateFromCurrentPosition : 1; 
         unsigned int deleteAterAnimation : 1; 
         unsigned int rasterizeAfterAnimation : 1; 
         unsigned int resetRasterizationAfterAnimation : 1; 
-    id _animationBlock;
     } _collectionViewAnimationFlags;
     NSMutableArray *_completionHandlers;
     float _endFraction;

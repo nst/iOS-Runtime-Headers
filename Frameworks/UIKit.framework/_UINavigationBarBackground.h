@@ -5,15 +5,15 @@
 @class UIColor, UIImageView, UIView, _UIBackdropView, _UINavigationBarAppearanceStorage;
 
 @interface _UINavigationBarBackground : _UIBarBackgroundImageView <_UIBackdropViewGraphicsQualityChangeDelegate> {
+    _UIBackdropView *_adaptiveBackdrop;
+    _UINavigationBarAppearanceStorage *_appearanceStorage;
+    UIColor *_barTintColor;
     struct { 
         unsigned int barTranslucence : 3; 
         unsigned int barStyle : 3; 
         unsigned int backgroundImageNeedsUpdate : 1; 
         unsigned int isContainedInPopover : 1; 
         unsigned int barWantsAdaptiveBackdrop : 1; 
-    _UIBackdropView *_adaptiveBackdrop;
-    _UINavigationBarAppearanceStorage *_appearanceStorage;
-    UIColor *_barTintColor;
     } _navbarFlags;
     UIImageView *_shadowView;
 }

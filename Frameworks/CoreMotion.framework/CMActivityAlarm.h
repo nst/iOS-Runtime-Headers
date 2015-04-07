@@ -11,7 +11,11 @@
 @interface CMActivityAlarm : NSObject {
     double _duration;
     unsigned int _trigger;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id fHandler;
+
     BOOL fIsValid;
     NSObject<OS_dispatch_queue> *fQueue;
     struct __CFRunLoop { } *fRunLoop;

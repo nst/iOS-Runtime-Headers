@@ -5,12 +5,12 @@
 @class NSString, SKUIColorScheme, UILabel;
 
 @interface SKUIProductPageInAppPurchaseTableCell : SKUITableViewCell {
+    SKUIColorScheme *_colorScheme;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    SKUIColorScheme *_colorScheme;
     } _contentInsets;
     UILabel *_indexLabel;
     UILabel *_nameLabel;

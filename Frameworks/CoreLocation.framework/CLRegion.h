@@ -8,15 +8,15 @@
     struct { 
         BOOL identifier[512]; 
         int type; 
-        boolnotifyOnEntry; 
-        boolnotifyOnExit; 
+        bool notifyOnEntry; 
+        bool notifyOnExit; 
         union { 
             struct { 
                 BOOL proximityUUID[512]; 
                 unsigned short major; 
                 unsigned short minor; 
                 int definitionMask; 
-                boolnotifyEntryStateOnDisplay; 
+                bool notifyEntryStateOnDisplay; 
             } beaconAttributes; 
             struct { 
                 struct { 
@@ -31,7 +31,7 @@
 }
 
 @property(readonly) struct { double x1; double x2; } center;
-@property(readonly) struct { BOOL x1[512]; int x2; boolx3; boolx4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; boolx_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; } clientRegion;
+@property(readonly) struct { BOOL x1[512]; int x2; bool x3; bool x4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; bool x_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; } clientRegion;
 @property(copy,readonly) NSString * identifier;
 @property BOOL notifyOnEntry;
 @property BOOL notifyOnExit;
@@ -42,7 +42,7 @@
 - (void)_encodeWithCoder:(id)arg1;
 - (id)_initWithCoder:(id)arg1;
 - (struct { double x1; double x2; })center;
-- (struct { BOOL x1[512]; int x2; boolx3; boolx4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; boolx_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; })clientRegion;
+- (struct { BOOL x1[512]; int x2; bool x3; bool x4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; bool x_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; })clientRegion;
 - (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -51,7 +51,7 @@
 - (unsigned int)hash;
 - (id)identifier;
 - (id)initCircularRegionWithCenter:(struct { double x1; double x2; })arg1 radius:(double)arg2 identifier:(id)arg3;
-- (id)initWithClientRegion:(struct { BOOL x1[512]; int x2; boolx3; boolx4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; boolx_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; })arg1;
+- (id)initWithClientRegion:(struct { BOOL x1[512]; int x2; bool x3; bool x4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; bool x_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

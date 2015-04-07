@@ -34,8 +34,8 @@
 - (id)pathsOfAllLogFiles;
 - (id)pathsOfPurgableFiles;
 - (void)purgeFileAtPath:(id)arg1;
-- (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2 dismissedSelector:(SEL)arg3;
 - (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2;
+- (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2 dismissedSelector:(SEL)arg3;
 - (BOOL)saveFileAtPath:(id)arg1 toDirectory:(id)arg2 withExtension:(id)arg3 error:(id*)arg4;
 - (void)saveLogsWithNotes:(id)arg1;
 - (void)saveNotesInBackground:(id)arg1;

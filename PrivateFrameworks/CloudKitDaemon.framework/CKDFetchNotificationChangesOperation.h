@@ -10,7 +10,11 @@
 
 @interface CKDFetchNotificationChangesOperation : CKDOperation {
     BOOL _moreComing;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _notificationChangedBlock;
+
     CKServerChangeToken *_previousServerChangeToken;
     CKServerChangeToken *_resultServerChangeToken;
     unsigned int _resultsLimit;

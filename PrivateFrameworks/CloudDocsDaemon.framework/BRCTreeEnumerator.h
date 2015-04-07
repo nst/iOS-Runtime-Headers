@@ -11,13 +11,21 @@
 @interface BRCTreeEnumerator : NSObject {
     BRCLocalContainer *_container;
     NSObject<OS_dispatch_group> *_group;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     BRCItemID *_parentID;
     unsigned int _rowID;
     NSMutableIndexSet *_seen;
     BRCAccountSession *_session;
     NSMutableIndexSet *_toVisit;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _whenDone;
+
 }
 
 @property(copy) id whenDone;

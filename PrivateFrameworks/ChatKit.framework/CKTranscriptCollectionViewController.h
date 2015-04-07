@@ -8,11 +8,12 @@
 
 @class <CKTranscriptCollectionViewControllerDelegate>, CKAudioController, CKConversation, CKTranscriptCollectionView, IMChat, NSArray, NSIndexSet, NSObject<OS_dispatch_group>, NSString, UITapGestureRecognizer, UIView<CKGradientReferenceView>;
 
-@interface CKTranscriptCollectionViewController : CKViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIAlertViewDelegate, CKTranscriptCollectionViewDelegate, CKMovieBalloonViewDelegate, CKLocationShareBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKAudioControllerDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _alertHandler;
+
     CKAudioController *_audioController;
     NSArray *_chatItems;
     CKTranscriptCollectionView *_collectionView;
@@ -27,11 +28,18 @@
     BOOL _isLoadingEarlierMessages;
     float _leftBalloonMaxWidth;
     UITapGestureRecognizer *_loggingTapGestureRecognizer;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _peekSampleTranslation;
     BOOL _peeking;
     float _rightBalloonMaxWidth;
     BOOL _transcriptUpdateAnimated;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _transcriptUpdateCompletion;
+
     NSObject<OS_dispatch_group> *_updateAnimationGroup;
 }
 
@@ -78,9 +86,9 @@
 - (void)addressBookChanged:(id)arg1;
 - (id)alertHandler;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)audioController;
 - (void)audioController:(id)arg1 mediaObjectDidFinishPlaying:(id)arg2;
 - (void)audioController:(id)arg1 mediaObjectProgressDidChange:(id)arg2 currentTime:(double)arg3 duration:(double)arg4;
-- (id)audioController;
 - (void)audioControllerDidPause:(id)arg1;
 - (void)audioControllerDidStop:(id)arg1;
 - (void)audioControllerPlayingDidChange:(id)arg1;
@@ -103,6 +111,7 @@
 - (id)chatItems;
 - (void)chatItemsDidChange:(id)arg1;
 - (void)chatRegistryDidLoad:(id)arg1;
+- (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
@@ -111,10 +120,9 @@
 - (id)collectionView:(id)arg1 layout:(id)arg2 chatItemForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
-- (id)collectionView;
 - (void)collectionViewDidInset:(id)arg1;
-- (void)collectionViewLayout:(id)arg1 sizeDidChange:(struct CGSize { float x1; float x2; })arg2;
 - (id)collectionViewLayout;
+- (void)collectionViewLayout:(id)arg1 sizeDidChange:(struct CGSize { float x1; float x2; })arg2;
 - (void)collectionViewLayoutRestingDidChange:(id)arg1;
 - (void)collectionViewWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (void)collectionViewWillProgrammaticallyScroll:(id)arg1;

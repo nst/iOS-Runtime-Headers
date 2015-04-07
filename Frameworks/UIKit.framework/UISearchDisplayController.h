@@ -5,41 +5,15 @@
 @class <UISearchDisplayDelegate>, <UITableViewDataSource>, <UITableViewDelegate>, NSArray, NSString, UIButton, UIColor, UILabel, UINavigationItem, UIPopoverController, UIScrollView, UISearchBar, UISearchDisplayControllerContainerView, UITableView, UIView, UIViewController, _UINavigationControllerPalette, _UISearchControllerDidScrollDelegate;
 
 @interface UISearchDisplayController : NSObject <_UIScrollNotification> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct { 
-        unsigned int visible : 1; 
-        unsigned int animating : 1; 
-        unsigned int hidIndexBar : 1; 
-        unsigned int hidNavigationBar : 1; 
-        unsigned int noResultsMessageVisible : 1; 
-        unsigned int noResultsMessageAutoDisplay : 1; 
-        unsigned int navigationBarHidingEnabled : 1; 
-        unsigned int dimTableViewOnEmptySearchString : 1; 
-        unsigned int isRotatingWithPopover : 1; 
-        unsigned int cancelButtonManagementDisabled : 1; 
-        unsigned int allowDisablingNavigationBarHiding : 1; 
-        unsigned int showsResultsForEmptyField : 1; 
-        unsigned int searchBarCanBeHoisted : 1; 
-        unsigned int animatingSearchResultsDisappearance : 1; 
-        unsigned int navigationBarShadowWasHidden : 1; 
-        unsigned int hoistingSearchBar : 1; 
     float __activationGapHeight;
     float __additionalNonCollapsingHeightAboveSearchBar;
     UIButton *_animatingAppearanceNavigationButton;
     float _animatingAppearanceNavigationSearchBarWidth;
     _UINavigationControllerPalette *_attachedNavigationPalette;
     UISearchDisplayControllerContainerView *_containerView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _containingScrollViewContentOffset;
     struct __CFArray { } *_containingScrollViews;
     <UISearchDisplayDelegate> *_delegate;
@@ -60,7 +34,33 @@
     unsigned int _savedSearchBarResizingMask;
     NSArray *_savedSelectedCellsWhenViewWillAppear;
     UISearchBar *_searchBar;
+    struct { 
+        unsigned int visible : 1; 
+        unsigned int animating : 1; 
+        unsigned int hidIndexBar : 1; 
+        unsigned int hidNavigationBar : 1; 
+        unsigned int noResultsMessageVisible : 1; 
+        unsigned int noResultsMessageAutoDisplay : 1; 
+        unsigned int navigationBarHidingEnabled : 1; 
+        unsigned int dimTableViewOnEmptySearchString : 1; 
+        unsigned int isRotatingWithPopover : 1; 
+        unsigned int cancelButtonManagementDisabled : 1; 
+        unsigned int allowDisablingNavigationBarHiding : 1; 
+        unsigned int showsResultsForEmptyField : 1; 
+        unsigned int searchBarCanBeHoisted : 1; 
+        unsigned int animatingSearchResultsDisappearance : 1; 
+        unsigned int navigationBarShadowWasHidden : 1; 
+        unsigned int hoistingSearchBar : 1; 
     } _searchDisplayControllerFlags;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _searchFieldInNavigationBarFrame;
     int _searchResultsTableViewStyle;
     UITableView *_tableView;
@@ -165,8 +165,8 @@
 - (BOOL)hidNavigationBar;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSearchBar:(id)arg1 contentsController:(id)arg2 searchResultsTableViewStyle:(int)arg3;
 - (id)initWithSearchBar:(id)arg1 contentsController:(id)arg2;
+- (id)initWithSearchBar:(id)arg1 contentsController:(id)arg2 searchResultsTableViewStyle:(int)arg3;
 - (BOOL)isActive;
 - (BOOL)isNavigationBarHidingEnabled;
 - (unsigned int)navigationBarSearchFieldSizing;
@@ -178,9 +178,9 @@
 - (BOOL)noResultsMessageVisible;
 - (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
+- (id)searchBar;
 - (void)searchBar:(id)arg1 selectedScopeButtonIndexDidChange:(int)arg2;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
-- (id)searchBar;
 - (void)searchBarCancelButtonClicked:(id)arg1;
 - (void)searchBarResultsListButtonClicked:(id)arg1;
 - (void)searchBarSearchButtonClicked:(id)arg1;
@@ -190,8 +190,8 @@
 - (id)searchResultsDelegate;
 - (id)searchResultsTableView;
 - (id)searchResultsTitle;
-- (void)setActive:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setActive:(BOOL)arg1;
+- (void)setActive:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setAutomaticallyShowsNoResultsMessage:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDimTableViewOnEmptySearchString:(BOOL)arg1;

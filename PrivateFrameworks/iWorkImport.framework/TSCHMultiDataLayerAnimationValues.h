@@ -18,9 +18,9 @@
 @property(readonly) BOOL needPresentationLayerValues;
 @property(readonly) NSArray * values;
 
-+ (id)animationValuesWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(BOOL)arg5;
-+ (id)animationValuesWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4;
 + (id)animationValuesWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3;
++ (id)animationValuesWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4;
++ (id)animationValuesWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(BOOL)arg5;
 
 - (void)dealloc;
 - (id)description;

@@ -5,36 +5,15 @@
 @class AVPlayer, AVValueTiming, CALayer<AVPlayerLayer>, NSArray, NSDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AVPlayerControllerInternal : AVPlayerController {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    unsigned int _jKeyDown : 1;
-    unsigned int _kKeyDown : 1;
-    unsigned int _lKeyDown : 1;
-    unsigned int _deviceBatteryMonitoringWasEnabled : 1;
-    unsigned int _deviceBatteryChargingOrFull : 1;
-    unsigned int _playingOnSecondScreen : 1;
-    unsigned int _audioSessionInterrupted : 1;
-    unsigned int _pausedDuringAudioSessionInterruption : 1;
-    unsigned int _shouldPlayWhenLikelyToKeepUp : 1;
     int _actionAtItemEnd;
     NSArray *_audioMediaSelectionOptions;
+    unsigned int _audioSessionInterrupted : 1;
     id _audioSessionInterruptionObserver;
     NSArray *_availableMetadataFormats;
     BOOL _composable;
     NSArray *_contentChapters;
+    unsigned int _deviceBatteryChargingOrFull : 1;
+    unsigned int _deviceBatteryMonitoringWasEnabled : 1;
     id _deviceBatteryStateDidChangeObserver;
     BOOL _disablingAutomaticTermination;
     BOOL _hasProtectedContent;
@@ -43,15 +22,20 @@
     BOOL _isScanningBackward;
     BOOL _isScanningForward;
     BOOL _isSeeking;
+    unsigned int _jKeyDown : 1;
+    unsigned int _kKeyDown : 1;
+    unsigned int _lKeyDown : 1;
     NSArray *_legibleMediaSelectionOptions;
     BOOL _looping;
     NSDictionary *_metadata;
+    unsigned int _pausedDuringAudioSessionInterruption : 1;
     BOOL _pendingSeek;
     BOOL _pendingSetRateWithThrottling;
     AVPlayer *_player;
     id _playerItemDidPlayToEndTimeObserver;
     id _playerItemTimeJumpedObserver;
     CALayer<AVPlayerLayer> *_playerLayer;
+    unsigned int _playingOnSecondScreen : 1;
     double _preScanningRate;
     BOOL _preventingIdleDisplaySleep;
     BOOL _preventingIdleSystemSleep;
@@ -60,12 +44,28 @@
     unsigned int _scanningCount;
     BOOL _scrubbing;
     NSObject<OS_dispatch_queue> *_seekQueue;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _seekToTime;
     NSObject<OS_dispatch_queue> *_setRateWithThrottlingQueue;
     double _setToRate;
+    unsigned int _shouldPlayWhenLikelyToKeepUp : 1;
     id _timeObserverToken;
     AVValueTiming *_timing;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _toleranceAfter;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _toleranceBefore;
 }
 
@@ -139,8 +139,8 @@
 - (BOOL)_isRestrictedFromSavingPlayerItem:(id)arg1;
 - (id)_languageCodesForOptions:(id)arg1;
 - (id)_mainAudioOptionsForMediaSelectionOptions:(id)arg1;
-- (id)_mediaSelectionOptionForLanguageCode:(id)arg1 options:(id)arg2 preferAC3:(BOOL)arg3;
 - (id)_mediaSelectionOptionForLanguageCode:(id)arg1 options:(id)arg2;
+- (id)_mediaSelectionOptionForLanguageCode:(id)arg1 options:(id)arg2 preferAC3:(BOOL)arg3;
 - (id)_playableMediaSelectionOptionsForMediaCharacteristic:(id)arg1;
 - (id)_pushSystemLanguageToTop:(id)arg1;
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;
@@ -157,8 +157,8 @@
 - (id)availableMetadataFormats;
 - (void)beginScanningBackward:(id)arg1;
 - (void)beginScanningForward:(id)arg1;
-- (void)beginScrubbing:(id)arg1;
 - (void)beginScrubbing;
+- (void)beginScrubbing:(id)arg1;
 - (BOOL)canPause;
 - (BOOL)canPlay;
 - (BOOL)canScanBackward;
@@ -183,8 +183,8 @@
 - (void)decreaseVolume:(id)arg1;
 - (void)endScanningBackward:(id)arg1;
 - (void)endScanningForward:(id)arg1;
-- (void)endScrubbing:(id)arg1;
 - (void)endScrubbing;
+- (void)endScrubbing:(id)arg1;
 - (id)error;
 - (id)externalPlaybackAirPlayDeviceLocalizedName;
 - (int)externalPlaybackType;
@@ -234,8 +234,8 @@
 - (void)scanBackward:(id)arg1;
 - (void)scanForward:(id)arg1;
 - (id)scanningDelays;
-- (void)seekByTimeInterval:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (void)seekByTimeInterval:(double)arg1;
+- (void)seekByTimeInterval:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (void)seekChapterBackward:(id)arg1;
 - (void)seekChapterForward:(id)arg1;
 - (void)seekFrameBackward:(id)arg1;
@@ -243,8 +243,8 @@
 - (void)seekToBeginning:(id)arg1;
 - (void)seekToChapter:(id)arg1;
 - (void)seekToEnd:(id)arg1;
-- (void)seekToTime:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (void)seekToTime:(double)arg1;
+- (void)seekToTime:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (id)seekableTimeRanges;
 - (void)setAllowsExternalPlayback:(BOOL)arg1;
 - (void)setAudioMediaSelectionOptions:(id)arg1;

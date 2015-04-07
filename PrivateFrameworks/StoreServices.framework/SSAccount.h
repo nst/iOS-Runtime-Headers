@@ -4,7 +4,7 @@
 
 @class NSData, NSLock, NSNumber, NSString;
 
-@interface SSAccount : NSObject <SSXPCCoding, NSCopying> {
+@interface SSAccount : NSObject <NSCopying, SSXPCCoding> {
     int _accountKind;
     NSString *_accountName;
     int _accountScope;

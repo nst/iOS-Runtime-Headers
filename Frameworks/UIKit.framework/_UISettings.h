@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSHashTable, NSSet, NSString;
 
-@interface _UISettings : NSObject <_UISettingsGroupObserver, _UISettingsKeyPathObserver, NSCopying> {
+@interface _UISettings : NSObject <NSCopying, _UISettingsGroupObserver, _UISettingsKeyPathObserver> {
     NSSet *_internal_childKeys;
     BOOL _internal_isObservingPropertiesAndChildren;
     NSDictionary *_internal_keyClasses;

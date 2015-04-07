@@ -4,7 +4,7 @@
 
 @class ATService, NSString, NSXPCConnection;
 
-@interface ATServiceProxyConnection : NSObject <ATServiceProxyConnection, ATServiceObserver> {
+@interface ATServiceProxyConnection : NSObject <ATServiceObserver, ATServiceProxyConnection> {
     NSXPCConnection *_connection;
     ATService *_service;
 }
@@ -21,8 +21,8 @@
 - (id)connection;
 - (void)fetchMessageLinksWithCompletion:(id)arg1;
 - (id)initWithService:(id)arg1 connection:(id)arg2;
-- (void)service:(id)arg1 willOpenMessageLink:(id)arg2;
 - (id)service;
+- (void)service:(id)arg1 willOpenMessageLink:(id)arg2;
 - (void)setConnection:(id)arg1;
 - (void)setService:(id)arg1;
 

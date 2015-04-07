@@ -8,7 +8,7 @@
 
 @class <GEORouteHypothesizerDelegate>, GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequestFeedback, GEOETARoute, GEOETAUpdater, GEOLocation, GEOLocationShifter, GEORoute, GEORouteAttributes, GEORouteHypothesis, GEORouteHypothesizerUpdater, NSData, NSDate, NSString;
 
-@interface GEORouteHypothesizer : NSObject <GEORouteHypothesizerUpdaterDelegate, GEOETAUpdaterDelegate> {
+@interface GEORouteHypothesizer : NSObject <GEOETAUpdaterDelegate, GEORouteHypothesizerUpdaterDelegate> {
     NSDate *_arrivalDate;
     GEOETARoute *_baselineETARoute;
     <GEORouteHypothesizerDelegate> *_delegate;
@@ -19,7 +19,11 @@
     GEOETAUpdater *_etaUpdater;
     GEORoute *_existingRoute;
     GEODirectionsRequestFeedback *_feedback;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     GEORouteHypothesis *_hypothesis;
     NSDate *_lastETARequestDate;
     GEOLocation *_lastLocation;

@@ -29,12 +29,12 @@
 
 - (void).cxx_destruct;
 - (void)addBarrier:(id)arg1;
-- (void)addData:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (void)addData:(id)arg1;
+- (void)addData:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (void)addDataImpl:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (unsigned long long)archiveLength;
-- (void)beginEntryWithName:(id)arg1 force32BitSize:(BOOL)arg2 size:(unsigned long long)arg3 CRC:(unsigned int)arg4;
 - (void)beginEntryWithName:(id)arg1 force32BitSize:(BOOL)arg2;
+- (void)beginEntryWithName:(id)arg1 force32BitSize:(BOOL)arg2 size:(unsigned long long)arg3 CRC:(unsigned int)arg4;
 - (void)beginEntryWithNameImpl:(id)arg1 force32BitSize:(BOOL)arg2 size:(unsigned long long)arg3 CRC:(unsigned int)arg4;
 - (void)closeWithQueue:(id)arg1 completion:(id)arg2;
 - (unsigned long long)encodedLengthForEntryWithName:(id)arg1;
@@ -49,9 +49,9 @@
 - (void)writeCentralDirectory;
 - (void)writeCentralFileHeaderDataForEntry:(id)arg1;
 - (id)writeChannel;
+- (void)writeData:(id)arg1;
 - (void)writeData:(id)arg1 offset:(long long)arg2;
 - (void)writeData:(id)arg1 queue:(id)arg2 completion:(id)arg3;
-- (void)writeData:(id)arg1;
 - (void)writeEndOfCentralDirectoryDataWithOffset:(long long)arg1 size:(long long)arg2 entryCount:(unsigned int)arg3;
 - (void)writeEntryWithName:(id)arg1 force32BitSize:(BOOL)arg2 fromReadChannel:(id)arg3 completion:(id)arg4;
 - (void)writeEntryWithName:(id)arg1 force32BitSize:(BOOL)arg2 size:(unsigned long long)arg3 CRC:(unsigned int)arg4 fromReadChannel:(id)arg5 completion:(id)arg6;

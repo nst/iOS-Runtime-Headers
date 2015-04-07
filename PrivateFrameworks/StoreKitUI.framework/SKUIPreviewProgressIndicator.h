@@ -25,8 +25,8 @@
 - (float)progress;
 - (void)reloadWithPlayerStatus:(id)arg1 animated:(BOOL)arg2;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setProgress:(float)arg1 animated:(BOOL)arg2;
 - (void)setProgress:(float)arg1;
+- (void)setProgress:(float)arg1 animated:(BOOL)arg2;
 - (void)tintColorDidChange;
 
 @end

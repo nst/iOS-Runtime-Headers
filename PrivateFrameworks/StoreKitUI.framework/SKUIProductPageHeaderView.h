@@ -4,7 +4,7 @@
 
 @class NSString, SKUIBadgeLabel, SKUIClientContext, SKUIColorScheme, SKUIContentRatingArtworkResourceLoader, SKUIItemContentRating, SKUIItemOffer, SKUIItemOfferButton, SKUIItemState, SKUIProductPageHeaderLabel, UIButton, UIControl, UIImage, UIImageView, UILabel;
 
-@interface SKUIProductPageHeaderView : UIView <SKUIItemOfferButtonDelegate, SKUIContentRatingArtworkLoaderObserver> {
+@interface SKUIProductPageHeaderView : UIView <SKUIContentRatingArtworkLoaderObserver, SKUIItemOfferButtonDelegate> {
     UILabel *_ageBandLabel;
     UIButton *_artistButton;
     SKUIClientContext *_clientContext;
@@ -71,8 +71,8 @@
 - (id)artistName;
 - (id)colorScheme;
 - (id)contentRating;
-- (void)contentRatingArtworkLoader:(id)arg1 didLoadImage:(id)arg2 forContentRating:(id)arg3;
 - (id)contentRatingArtworkLoader;
+- (void)contentRatingArtworkLoader:(id)arg1 didLoadImage:(id)arg2 forContentRating:(id)arg3;
 - (id)contentRatingName;
 - (void)dealloc;
 - (id)editorialBadge;
@@ -106,8 +106,8 @@
 - (void)setItemOffer:(id)arg1;
 - (void)setItemOfferExplanationText:(id)arg1;
 - (void)setItemOfferExplanationTitle:(id)arg1;
-- (void)setItemState:(id)arg1 animated:(BOOL)arg2;
 - (void)setItemState:(id)arg1;
+- (void)setItemState:(id)arg1 animated:(BOOL)arg2;
 - (void)setNumberOfUserRatings:(int)arg1;
 - (void)setRestricted:(BOOL)arg1;
 - (void)setSecondaryContentRating:(id)arg1;

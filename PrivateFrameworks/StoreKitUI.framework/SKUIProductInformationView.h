@@ -5,12 +5,12 @@
 @class NSArray, NSMutableArray, NSString, SKUIColorScheme, UILabel, UIView;
 
 @interface SKUIProductInformationView : UIView {
+    SKUIColorScheme *_colorScheme;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    SKUIColorScheme *_colorScheme;
     } _contentInset;
     NSMutableArray *_imageValues;
     NSArray *_informationLines;

@@ -13,7 +13,11 @@
     RCCaptureSession *_captureSession;
     BOOL _captureSessionWasActivated;
     NSMutableArray *_sessionFinishedBlocks;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sessionPreparedBlock;
+
     BOOL _useStartSoundEffect;
 }
 

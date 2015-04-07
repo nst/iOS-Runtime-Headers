@@ -6,13 +6,13 @@
 
 @interface GEOSuggestionsFeedbackCollection : PBCodable <NSCopying> {
     struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    struct { 
         unsigned int sessionID : 1; 
         unsigned int suggestionEntryIndex : 1; 
         unsigned int suggestionsEntryListIndex : 1; 
     } _has;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionID;
     int _suggestionEntryIndex;
     NSData *_suggestionEntryMetadata;

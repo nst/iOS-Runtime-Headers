@@ -65,8 +65,8 @@
 - (id)localDescription;
 - (id)metricsForSection:(int)arg1;
 - (id)metricsForSectionInternal:(int)arg1;
-- (void)notifyBatchUpdate:(id)arg1 complete:(id)arg2;
 - (void)notifyBatchUpdate:(id)arg1;
+- (void)notifyBatchUpdate:(id)arg1 complete:(id)arg2;
 - (void)notifyDidReloadData;
 - (void)notifyItemMovedFromIndexPath:(id)arg1 toIndexPaths:(id)arg2;
 - (void)notifyItemsInsertedAtIndexPaths:(id)arg1;

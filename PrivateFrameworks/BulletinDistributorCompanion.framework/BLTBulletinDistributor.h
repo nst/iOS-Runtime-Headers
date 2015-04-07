@@ -43,8 +43,8 @@
 - (void)_notifyGizmoOfCancelBulletin:(id)arg1 universalSectionID:(id)arg2 feed:(unsigned int)arg3;
 - (void)_pingSubscriberWithBulletin:(id)arg1;
 - (void)_reconnectObserver;
-- (BOOL)_willNanoPresent:(unsigned int)arg1 forBulletin:(id)arg2 feed:(unsigned int)arg3;
 - (BOOL)_willNanoPresent:(unsigned int)arg1;
+- (BOOL)_willNanoPresent:(unsigned int)arg1 forBulletin:(id)arg2 feed:(unsigned int)arg3;
 - (id)attachmentHashCache;
 - (id)bbObserver;
 - (id)bulletins;

@@ -8,16 +8,7 @@
 
 @class <PUPhotoEditViewControllerDelegate>, CIImage, GLKView, NSArray, NSString, NSURL, PHAsset, PLPhotoEditModel, PLPhotoEditMutableModel, PLPhotoEditRenderer, PUAdjustmentsToolController, PUAutoAdjustmentController, PUCropToolController, PUEditPluginSession, PUFiltersToolController, PUPhotoEditOverlayBadge, PUPhotoEditToolController, PUPhotoEditToolbar, PUPhotoEditValuesCalculator, PUPhotoEditViewControllerSpec, PUProgressIndicatorView, PURedeyeToolController, PUResourceDownloadRequest, UIButton, UIImage, UIImageView, UILongPressGestureRecognizer, UIScrollView, _PUPhotoEditSnapshot;
 
-@interface PUPhotoEditViewController : UIViewController <GLKViewDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate, PUPhotoEditToolControllerDelegate, PUImageEditPluginSessionDataSource, PUEditPluginSessionDelegate, PUPhotoLibraryUIChangeObserver, PUPhotoEditLayoutSource> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface PUPhotoEditViewController : UIViewController <GLKViewDelegate, PUEditPluginSessionDelegate, PUImageEditPluginSessionDataSource, PUPhotoEditLayoutSource, PUPhotoEditToolControllerDelegate, PUPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     NSArray *__allTools;
     CIImage *__baseWorkCIImage;
     UIImage *__baseWorkUIImage;
@@ -27,7 +18,11 @@
     BOOL __hasChangedAsset;
     BOOL __hasFinishedSaving;
     PLPhotoEditRenderer *__mainRenderer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __nextRenderCompletionBlock;
+
     CIImage *__originalWorkCIImage;
     UIImage *__originalWorkUIImage;
     BOOL __penultimateAvailable;
@@ -59,7 +54,13 @@
     PUFiltersToolController *_filtersController;
     BOOL _hasPluginButton;
     BOOL _hasRequestedAdjustmentsData;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _lastKnownPreviewViewSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _lastKnownWorkImageSize;
     int _layoutOrientation;
     UIButton *_mainActionButton;
@@ -94,6 +95,9 @@
     NSArray *_secondaryToolbarConstraints;
     _PUPhotoEditSnapshot *_stashedSnapshot;
     BOOL _switchingToolsAnimated;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _togglePreviewPressGestureInitialPoint;
     UILongPressGestureRecognizer *_togglePreviewPressGestureRecognizer;
     NSArray *_toolButtons;
@@ -197,8 +201,8 @@
 - (void)_setDisablingMostControlsCount:(int)arg1;
 - (void)_setHasChangedAsset:(BOOL)arg1;
 - (void)_setHasFinishedSaving:(BOOL)arg1;
-- (void)_setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_setLayoutOrientation:(int)arg1;
+- (void)_setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_setMainRenderer:(id)arg1;
 - (void)_setNextRenderCompletionBlock:(id)arg1;
 - (void)_setOriginalWorkCIImage:(id)arg1;

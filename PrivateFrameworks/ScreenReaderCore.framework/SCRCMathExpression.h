@@ -54,8 +54,8 @@
 - (id)dollarCodeDescription;
 - (id)dollarCodeDescriptionAsBinomialCoefficientWithTreePosition:(id)arg1 numberOfOuterRadicals:(unsigned int)arg2;
 - (id)dollarCodeDescriptionAsMixedNumberFractionWithTreePosition:(id)arg1;
-- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2 openOperator:(id)arg3 openOperatorTreePosition:(id)arg4 closeOperator:(id)arg5 closeOperatorTreePosition:(id)arg6;
 - (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;
+- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2 openOperator:(id)arg3 openOperatorTreePosition:(id)arg4 closeOperator:(id)arg5 closeOperatorTreePosition:(id)arg6;
 - (BOOL)endsWithSpace;
 - (id)fenceDelimiters;
 - (unsigned int)fractionLevel;
@@ -84,8 +84,8 @@
 - (id)latexIdentifierForFenceOperator:(id)arg1 isClosingOperator:(BOOL)arg2;
 - (id)latexIdentifierForIdentifier:(id)arg1;
 - (id)latexMathModeDescription;
-- (id)localizedAttributedStringForKey:(id)arg1 treePosition:(id)arg2;
 - (id)localizedAttributedStringForKey:(id)arg1;
+- (id)localizedAttributedStringForKey:(id)arg1 treePosition:(id)arg2;
 - (id)localizedSegmentOrderingForKey:(id)arg1;
 - (id)localizedStringForKey:(id)arg1;
 - (id)localizedStringForNumber:(id)arg1;
@@ -98,17 +98,17 @@
 - (id)siblings;
 - (id)speakableDescription;
 - (id)speakableDescriptionAsBinomialCoefficientWithSpeakingStyle:(int)arg1;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2 isPartOfWord:(BOOL)arg3;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
 - (id)speakableDescriptionWithSpeakingStyle:(int)arg1;
+- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
+- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2 isPartOfWord:(BOOL)arg3;
 - (id)speakableSegments:(id)arg1 withLocalizablePrefix:(id)arg2 localizableSuffix:(id)arg3;
 - (id)speakableSegments:(id)arg1 withPrefix:(id)arg2 suffix:(id)arg3;
 - (id)speakableSegmentsAsBinomialCoefficientWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2 treePosition:(id)arg3;
 - (id)speakableSegmentsUpToDepth:(unsigned int)arg1;
+- (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2;
+- (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2 treePosition:(id)arg3;
 - (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2 treePosition:(id)arg3 localizablePrefix:(id)arg4 localizableSuffix:(id)arg5;
 - (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2 treePosition:(id)arg3 prefix:(id)arg4 suffix:(id)arg5;
-- (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2 treePosition:(id)arg3;
-- (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2;
 - (id)speakableSummary;
 - (id)subExpressions;
 

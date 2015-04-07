@@ -6,8 +6,8 @@
 
 @interface UIAnimator : NSObject {
     NSMutableArray *_animations;
-    int _heartbeatClientCount[3];
     id _heartbeat[3];
+    int _heartbeatClientCount[3];
     double _lastUpdateTime;
 }
 
@@ -26,8 +26,8 @@
 - (void)addAnimations:(id)arg1 withDuration:(double)arg2 start:(BOOL)arg3;
 - (void)dealloc;
 - (float)fractionForAnimation:(id)arg1;
-- (void)removeAnimationsForTarget:(id)arg1 ofKind:(Class)arg2;
 - (void)removeAnimationsForTarget:(id)arg1;
+- (void)removeAnimationsForTarget:(id)arg1 ofKind:(Class)arg2;
 - (void)startAnimation:(id)arg1;
 - (void)stopAnimation:(id)arg1;
 

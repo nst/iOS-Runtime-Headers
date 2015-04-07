@@ -10,7 +10,11 @@
 
 @interface SBSStatusBarStyleOverridesAssertion : NSObject {
     SBSStatusBarStyleOverridesAssertionData *_assertionData;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _invalidationHandler;
+
     NSRecursiveLock *_invalidationLock;
     NSObject<OS_dispatch_queue> *_invalidationQueue;
 }

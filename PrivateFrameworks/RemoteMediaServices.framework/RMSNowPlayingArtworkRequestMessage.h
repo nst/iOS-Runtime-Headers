@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface RMSNowPlayingArtworkRequestMessage : PBCodable <NSCopying> {
+    NSString *_artworkIdentifier;
+    float _compressionQuality;
     struct { 
         unsigned int compressionQuality : 1; 
         unsigned int height : 1; 
         unsigned int width : 1; 
-    NSString *_artworkIdentifier;
-    float _compressionQuality;
     } _has;
     unsigned int _height;
     unsigned int _width;

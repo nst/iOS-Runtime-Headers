@@ -16,17 +16,37 @@
     BKSProcessAssertion *__extensionProcessAssertion;
     NSMutableDictionary *__extensionServiceConnections;
     <PKPlugIn> *__plugIn;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __requestPostCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __requestPostCompletionBlockWithItems;
+
     NSObject<OS_dispatch_queue> *__safePluginQueue;
     NSDictionary *_attributes;
     NSString *_extensionPointIdentifier;
     NSString *_identifier;
     NSDictionary *_infoDictionary;
     BOOL _observingHostAppStateChanges;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _requestCancellationBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _requestCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _requestInterruptionBlock;
+
     NSString *_version;
 }
 

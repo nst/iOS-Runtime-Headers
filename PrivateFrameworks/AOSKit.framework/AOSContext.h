@@ -14,14 +14,14 @@
 @class NSString, NSThread;
 
 @interface AOSContext : NSObject <NSPortDelegate> {
-    int (*_callback)();
-     /* Encoded args for previous method: @16@0:4^{AOSAccount=}8^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}12 */
-     /* Encoded args for previous method: ^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}8@0:4 */
-     /* Encoded args for previous method: v12@0:4^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}8 */
     struct AOSAccount { } *_account;
+    int (*_callback)();
     NSThread *_callbackThread;
     id _info;
+
+  /* Error parsing encoded ivar type info: ^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?} */
     struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); } *_transaction;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -30,8 +30,9 @@
 @property(readonly) Class superclass;
 
 + (id)contextWithAccount:(struct AOSAccount { }*)arg1 andTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg2;
+     /* Encoded args for previous method: @16@0:4^{AOSAccount=}8^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}12 */
 
-- (struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)transaction;
+
 - (id)_callbackThread;
 - (void)_performCallback;
 - (struct AOSAccount { }*)account;
@@ -43,5 +44,10 @@
 - (void)setAccount:(struct AOSAccount { }*)arg1;
 - (void)setInfo:(id)arg1;
 - (void)setTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg1;
+     /* Encoded args for previous method: v12@0:4^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}8 */
+
+- (struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)transaction;
+     /* Encoded args for previous method: ^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}8@0:4 */
+
 
 @end

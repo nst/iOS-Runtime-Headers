@@ -14,7 +14,11 @@
     NSDate *__expirationDate;
     NSObject<OS_dispatch_queue> *__expirationQueue;
     NSObject<OS_dispatch_source> *__expirationTimer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     <CAMAvalancheSessionDelegate> *_delegate;
     unsigned int _numberOfPhotos;
     CAMInflightAsset *_possibleAvalancheAsset;

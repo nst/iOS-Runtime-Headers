@@ -5,14 +5,14 @@
 @class <RUStationTreeViewControllerDelegate>, NSMutableArray, NSString, RUMetricsController, RUParallelScrollView, RUPreviewSession, RUProxyTableView, RUStationTreeDataSource, RadioStationTreeNode, SKUICircleProgressIndicator, SSMetricsPageEvent, UILabel, UIScrollView, UITableView;
 
 @interface RUStationTreeViewController : UIViewController <RUAudioPreviewViewDelegate, RUPreviewSessionObserver, UITableViewDataSource, UITableViewDelegate> {
+    SKUICircleProgressIndicator *_activityIndicator;
+    RadioStationTreeNode *_addingTreeNode;
+    RUParallelScrollView *_containerScrollView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    SKUICircleProgressIndicator *_activityIndicator;
-    RadioStationTreeNode *_addingTreeNode;
-    RUParallelScrollView *_containerScrollView;
     } _containerScrollViewContentInsetAdditions;
     RUStationTreeDataSource *_dataSource;
     <RUStationTreeViewControllerDelegate> *_delegate;
@@ -70,6 +70,7 @@
 - (id)scrollView;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
@@ -78,7 +79,6 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
-- (id)tableView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

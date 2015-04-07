@@ -4,10 +4,7 @@
 
 @class <UIActivityGroupViewControllerDelegate>, NSArray, NSDictionary, NSIndexPath, NSString, UILongPressGestureRecognizer, _UIActivityUserDefaults, _UIUserDefaultsActivity;
 
-@interface UIActivityGroupViewController : UICollectionViewController <_UIActivityGroupViewDelegateFlowLayout, UIGestureRecognizerDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface UIActivityGroupViewController : UICollectionViewController <UIGestureRecognizerDelegate, _UIActivityGroupViewDelegateFlowLayout> {
     NSArray *_activities;
     int _activityCategory;
     BOOL _activityIndexDidChangeWhileDragging;
@@ -19,6 +16,9 @@
     BOOL _embedded;
     BOOL _hasActivities;
     NSIndexPath *_indexPathForMenuActivity;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _initialDraggingLocation;
     BOOL _picker;
     _UIActivityUserDefaults *_userDefaults;
@@ -84,16 +84,16 @@
 - (void)hideItemAtIndexPath:(id)arg1;
 - (void)ignoreUserDefaultsChangesWhileUsingBlock:(id)arg1;
 - (id)indexPathForMenuActivity;
-- (id)initWithActivityCategory:(int)arg1 userDefaults:(id)arg2 userDefaultsIdentifier:(id)arg3;
 - (id)initWithActivityCategory:(int)arg1 userDefaults:(id)arg2;
+- (id)initWithActivityCategory:(int)arg1 userDefaults:(id)arg2 userDefaultsIdentifier:(id)arg3;
 - (struct CGPoint { float x1; float x2; })initialDraggingLocation;
 - (BOOL)isEmbedded;
 - (BOOL)isPicker;
 - (void)registerForActivityUserDefaultsChanges;
 - (void)reloadItemForActivityOfTypeIfNeeded:(id)arg1;
 - (void)renameActivity:(id)arg1;
-- (void)setActivities:(id)arg1 animated:(BOOL)arg2;
 - (void)setActivities:(id)arg1;
+- (void)setActivities:(id)arg1 animated:(BOOL)arg2;
 - (void)setActivityCategory:(int)arg1;
 - (void)setActivityIndexDidChangeWhileDragging:(BOOL)arg1;
 - (void)setAllowsUserCustomization:(BOOL)arg1;

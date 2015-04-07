@@ -7,24 +7,24 @@
  */
 
 @interface VKCoastlineGroup : NSObject {
-    struct shared_ptr<md::StyleQuery> { 
-        struct StyleQuery {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
     struct unique_ptr<ggl::MeshVendor<ggl::PolygonMesh::MeshMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::PolygonMesh::MeshMesh> > > { 
         struct __compressed_pair<ggl::MeshVendor<ggl::PolygonMesh::MeshMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::PolygonMesh::MeshMesh> > > { 
             struct MeshVendor<ggl::PolygonMesh::MeshMesh> {} *__first_; 
         } __ptr_; 
-    struct unique_ptr<ggl::MeshVendor<ggl::Glow::MeshMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
-        struct __compressed_pair<ggl::MeshVendor<ggl::Glow::MeshMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
-            struct MeshVendor<ggl::Glow::MeshMesh> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::MeshVendor<ggl::Glow::MeshMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
-        struct __compressed_pair<ggl::MeshVendor<ggl::Glow::MeshMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
-            struct MeshVendor<ggl::Glow::MeshMesh> {} *__first_; 
-        } __ptr_; 
     } _coastlineMeshVendor;
+    struct unique_ptr<ggl::MeshVendor<ggl::Glow::MeshMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
+        struct __compressed_pair<ggl::MeshVendor<ggl::Glow::MeshMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
+            struct MeshVendor<ggl::Glow::MeshMesh> {} *__first_; 
+        } __ptr_; 
     } _innerGlowMeshVendor;
+    struct unique_ptr<ggl::MeshVendor<ggl::Glow::MeshMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
+        struct __compressed_pair<ggl::MeshVendor<ggl::Glow::MeshMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
+            struct MeshVendor<ggl::Glow::MeshMesh> {} *__first_; 
+        } __ptr_; 
     } _outerGlowMeshVendor;
+    struct shared_ptr<md::StyleQuery> { 
+        struct StyleQuery {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _styleQuery;
     unsigned int _tilePointSize;
 }

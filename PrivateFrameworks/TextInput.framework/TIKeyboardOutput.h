@@ -28,10 +28,10 @@
 
 - (id)acceptedCandidate;
 - (void)dealloc;
-- (void)deleteBackward:(unsigned int)arg1;
 - (void)deleteBackward;
-- (void)deleteForward:(unsigned int)arg1;
+- (void)deleteBackward:(unsigned int)arg1;
 - (void)deleteForward;
+- (void)deleteForward:(unsigned int)arg1;
 - (unsigned int)deletionCount;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

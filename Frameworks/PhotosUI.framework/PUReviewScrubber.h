@@ -4,7 +4,7 @@
 
 @class <PUReviewScrubberDataSource>, <PUReviewScrubberDelegate>, NSString, PUHorizontalCollectionViewLayout, UICollectionView, UIImageView, UITapGestureRecognizer, _UIBackdropView;
 
-@interface PUReviewScrubber : UIToolbar <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate> {
+@interface PUReviewScrubber : UIToolbar <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
     UIImageView *__arrowImageView;
     _UIBackdropView *__backdropView;
     UICollectionView *__collectionView;
@@ -77,8 +77,8 @@
 - (int)selectedIndex;
 - (void)setDataSource:(id)arg1;
 - (void)setScrubberDelegate:(id)arg1;
-- (void)setSelectedIndex:(int)arg1 animated:(BOOL)arg2;
 - (void)setSelectedIndex:(int)arg1;
+- (void)setSelectedIndex:(int)arg1 animated:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)toggleIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)toggleSelectedIndexAnimated:(BOOL)arg1;

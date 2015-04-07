@@ -10,10 +10,18 @@
 
 @interface ABPropertyIDSRequest : NSObject <IDSIDQueryControllerDelegate> {
     BOOL _cancelled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _idQueryResultHandler;
+
     NSString *_listenerID;
     NSArray *_propertyItems;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _requestResultBlock;
+
     NSString *_service;
 }
 

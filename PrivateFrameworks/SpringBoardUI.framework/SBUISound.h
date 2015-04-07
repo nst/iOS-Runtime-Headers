@@ -12,7 +12,11 @@
     NSString *_accountIdentifier;
     int _alertType;
     AVItem *_avItem;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     NSDictionary *_controllerAttributes;
     double _maxDuration;
     BOOL _repeats;

@@ -5,13 +5,13 @@
 @class NSBundle, NSString, NSURL, SAUIAppPunchOut;
 
 @interface AFUIImageResource : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSString *_localPressedResourceName;
     SAUIAppPunchOut *_localPunchOut;
     NSBundle *_localResourceBundle;
     NSString *_localResourceName;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _logoSize;
     float _remotePressedScale;
     NSURL *_remotePressedURL;

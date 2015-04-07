@@ -17,8 +17,8 @@
 - (id)description;
 - (id)dictionary;
 - (id)initWithName:(id)arg1;
-- (id)objectForKey:(id)arg1 objectProducerBlock:(id)arg2;
 - (id)objectForKey:(id)arg1;
+- (id)objectForKey:(id)arg1 objectProducerBlock:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)readFromDictionary:(id)arg1;
 - (void)removeAllObjects;

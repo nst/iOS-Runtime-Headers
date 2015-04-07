@@ -5,12 +5,12 @@
 @class UIView;
 
 @interface SKUISimpleCollectionViewCell : UICollectionViewCell {
+    UIView *_contentChildView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIView *_contentChildView;
     } _contentInsets;
 }
 

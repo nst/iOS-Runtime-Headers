@@ -32,8 +32,8 @@
 - (void)dealloc;
 - (void)didStartInitialSession;
 - (void)finalize;
-- (id)initWithConfigurationState:(id)arg1 assetWriterTrack:(id)arg2 error:(id*)arg3;
 - (id)initWithConfigurationState:(id)arg1;
+- (id)initWithConfigurationState:(id)arg1 assetWriterTrack:(id)arg2 error:(id*)arg3;
 - (BOOL)isReadyForMoreMediaData;
 - (void)markAsFinished;
 - (void)markAsFinishedAndTransitionCurrentHelper:(id)arg1;

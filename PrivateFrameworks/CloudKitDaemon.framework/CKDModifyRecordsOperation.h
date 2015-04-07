@@ -14,7 +14,11 @@
     BOOL _canSetPreviousProtectionEtag;
     NSData *_clientChangeTokenData;
     NSDictionary *_conflictLosersToResolveByRecordID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deleteCompletionBlock;
+
     BOOL _haveOutstandingMetadatas;
     NSDictionary *_metadatasByRecordID;
     NSMutableDictionary *_modifyMetadatasByZoneID;
@@ -25,9 +29,17 @@
     NSArray *_recordsToSave;
     BOOL _retriedRecords;
     BOOL _retryPCSFailures;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _saveCompletionBlock;
+
     int _savePolicy;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _saveProgressBlock;
+
     BOOL _shouldOnlySaveAssetContent;
     CKDProtocolTranslator *_translator;
 }

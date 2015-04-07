@@ -6,13 +6,13 @@
 
 @interface AWDPowerBBLQMDataTransferMetrics : PBCodable <NSCopying> {
     struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
         unsigned int timestamp : 1; 
     } _has;
     NSMutableArray *_lQMBytes;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _lQMTransitionCntBuckets;
     unsigned long long _timestamp;
 }

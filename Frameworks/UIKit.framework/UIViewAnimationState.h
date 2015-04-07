@@ -9,23 +9,19 @@
 @class <_UIBasicAnimationFactory>, CAMediaTimingFunction, NSMutableArray, NSString, NSUUID, UIView, UIViewAnimationState;
 
 @interface UIViewAnimationState : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    unsigned int _willStartSent : 1;
-    unsigned int _useCurrentLayerState : 1;
-    unsigned int _cacheTransition : 1;
-    unsigned int _autoreverses : 1;
-    unsigned int _roundsToInteger : 1;
-    unsigned int _preventsAdditive : 1;
-    unsigned int _layoutSubviews : 1;
     NSMutableArray *_addedCompletions;
     BOOL _allowUserInteractionToCutOffEndOfAnimation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _alongsideAnimations;
+
     BOOL _animationDidStopSent;
     <_UIBasicAnimationFactory> *_animationFactory;
     BOOL _animationFactoryMakesPerAnimationCustomCurves;
     NSString *_animationID;
+    unsigned int _autoreverses : 1;
+    unsigned int _cacheTransition : 1;
     void *_context;
     int _curve;
     CAMediaTimingFunction *_customCurve;
@@ -38,16 +34,24 @@
     float _filterValue;
     UIView *_filterView;
     double _frameInterval;
+    unsigned int _layoutSubviews : 1;
     UIViewAnimationState *_nextState;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _position;
+    unsigned int _preventsAdditive : 1;
     float _repeatCount;
     BOOL _retainedSelf;
+    unsigned int _roundsToInteger : 1;
     double _start;
     NSMutableArray *_trackedAnimations;
     int _transition;
     UIView *_transitionView;
+    unsigned int _useCurrentLayerState : 1;
     NSUUID *_uuid;
     SEL _willStartSelector;
+    unsigned int _willStartSent : 1;
 }
 
 @property(readonly) BOOL _allowsUserInteraction;
@@ -60,8 +64,8 @@
 - (BOOL)_allowsUserInteraction;
 - (BOOL)_allowsUserInteractionToCutOffEndOfAnimation;
 - (id)_defaultAnimationForKey:(id)arg1;
-- (void)_removeAnimationStateFromTrackingMap:(BOOL)arg1 disableTrackingIfNeeded:(BOOL)arg2;
 - (void)_removeAnimationStateFromTrackingMap:(BOOL)arg1;
+- (void)_removeAnimationStateFromTrackingMap:(BOOL)arg1 disableTrackingIfNeeded:(BOOL)arg2;
 - (void)_runAlongsideAnimations;
 - (void)_setAlongsideAnimations:(id)arg1;
 - (BOOL)_shouldAnimateAdditivelyForKey:(id)arg1 onLayer:(id)arg2;
@@ -77,9 +81,9 @@
 - (id)init;
 - (void)pop;
 - (void)sendDelegateAnimationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)setAnimationAttributes:(id)arg1 correctZeroDuration:(BOOL)arg2 skipDelegateAssignment:(BOOL)arg3 customCurve:(id)arg4;
-- (void)setAnimationAttributes:(id)arg1 correctZeroDuration:(BOOL)arg2 skipDelegateAssignment:(BOOL)arg3;
 - (void)setAnimationAttributes:(id)arg1;
+- (void)setAnimationAttributes:(id)arg1 correctZeroDuration:(BOOL)arg2 skipDelegateAssignment:(BOOL)arg3;
+- (void)setAnimationAttributes:(id)arg1 correctZeroDuration:(BOOL)arg2 skipDelegateAssignment:(BOOL)arg3 customCurve:(id)arg4;
 - (void)setupCustomTimingCurve;
 - (void)setupWithDuration:(double)arg1 delay:(double)arg2 view:(id)arg3 options:(unsigned int)arg4 factory:(id)arg5 parentState:(id)arg6 start:(id)arg7 completion:(id)arg8;
 

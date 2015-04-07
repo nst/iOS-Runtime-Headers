@@ -11,15 +11,19 @@
 @interface _UIViewServiceInterface : NSObject <NSXPCConnectionDelegate> {
     BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
+    bool _isTerminated;
     _UIRemoteViewService *_service;
     NSString *_serviceBundleIdentifier;
     NSXPCConnection *_serviceConnection;
     BKSProcessAssertion *_serviceProcessAssertion;
     _UIAsyncInvocation *_terminateInvocation;
     NSError *_terminationError;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _terminationHandler;
+
     int _terminationStateLock;
-    bool_isTerminated;
 }
 
 @property(copy,readonly) NSString * debugDescription;

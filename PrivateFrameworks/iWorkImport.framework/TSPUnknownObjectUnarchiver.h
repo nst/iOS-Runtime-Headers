@@ -21,12 +21,12 @@
 @property(readonly) NSObject<OS_dispatch_data> * messagesData;
 @property(readonly) NSString * packageLocator;
 
-- (const struct Message { int (**x1)(); }*)message;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct shared_ptr<TSP::ArchiveInfo> { struct ArchiveInfo {} *x1; struct __shared_weak_count {} *x2; })archiveInfo;
 - (BOOL)canValidateReferences;
 - (id)initWithIdentifier:(long long)arg1 archiveInfo:(struct shared_ptr<TSP::ArchiveInfo> { struct ArchiveInfo {} *x1; struct __shared_weak_count {} *x2; })arg2 messagesData:(id)arg3 packageLocator:(id)arg4 objectDelegate:(id)arg5 lazyReferenceDelegate:(id)arg6 delegate:(id)arg7 error:(id*)arg8;
+- (const struct Message { int (**x1)(); }*)message;
 - (id)messagesData;
 - (id)packageLocator;
 

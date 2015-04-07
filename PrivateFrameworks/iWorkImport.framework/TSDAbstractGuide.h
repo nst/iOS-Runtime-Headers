@@ -5,6 +5,9 @@
 @class TSDLayout;
 
 @interface TSDAbstractGuide : NSObject {
+    struct CGColor { } *mGuideColor;
+    BOOL mLocationInvalidated;
+    float mOffset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,9 +17,6 @@
             float width; 
             float height; 
         } size; 
-    struct CGColor { } *mGuideColor;
-    BOOL mLocationInvalidated;
-    float mOffset;
     } mSnappingObjectFrame;
     TSDLayout *mSnappingObjectLayout;
 }

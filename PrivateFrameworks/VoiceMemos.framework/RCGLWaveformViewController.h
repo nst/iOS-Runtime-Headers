@@ -4,19 +4,7 @@
 
 @class <RCGLWaveformViewDelegate>, NSMutableArray, NSString, NSTimer, RCAcousticAnnotationView, RCGLWaveformRenderer, RCLayoutMetrics, RCUIConfiguration, RCWaveformDataSource, RCWaveformScrollView, RCWaveformSelectionOverlay, UIView;
 
-@interface RCGLWaveformViewController : UIViewController <UIScrollViewDelegate, RCGLWaveformRendererDelegate, RCWaveformSelectionOverlayDelegate> {
-    struct { 
-        double beginTime; 
-        double endTime; 
-    struct { 
-        double beginTime; 
-        double endTime; 
-    struct { 
-        double beginTime; 
-        double endTime; 
-    struct { 
-        double beginTime; 
-        double endTime; 
+@interface RCGLWaveformViewController : UIViewController <RCGLWaveformRendererDelegate, RCWaveformSelectionOverlayDelegate, UIScrollViewDelegate> {
     RCUIConfiguration *_UIConfiguration;
     RCAcousticAnnotationView *_acousticAnnotationView;
     UIView *_bottomLineView;
@@ -26,6 +14,9 @@
     <RCGLWaveformViewDelegate> *_delegate;
     BOOL _dragEnding;
     double _duration;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _highlightTimeRange;
     BOOL _isScrollViewAutoScrolling;
     BOOL _isScrollViewAutoScrollingPaused;
@@ -42,6 +33,9 @@
     RCWaveformScrollView *_scrollView;
     BOOL _scrubbing;
     BOOL _scrubbingEnabled;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _selectedTimeRange;
     BOOL _selectedTimeRangeEditingEnabled;
     BOOL _selectedTimeRangeScrubbingEnabled;
@@ -53,7 +47,13 @@
     BOOL _timeMarkerViewsNeedInitialLayout;
     BOOL _timeMarkerViewsUpdatesDisabled;
     UIView *_topLineView;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _visibleTimeRange;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _visibleTimeRangeBeforeSelectionTracking;
 }
 
@@ -144,21 +144,21 @@
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setHighlightTimeRange:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })setHighlightTimeRange;
+- (void)setHighlightTimeRange:(struct { double x1; double x2; })arg1;
 - (void)setLayoutMetrics:(id)arg1;
 - (void)setMaximumSelectionDuration:(double)arg1;
 - (void)setPlaying:(BOOL)arg1;
 - (void)setScreenUpdatesDisabled:(BOOL)arg1;
 - (void)setScrubbingEnabled:(BOOL)arg1;
-- (void)setSelectedTimeRange:(struct { double x1; double x2; })arg1 animationDuration:(double)arg2;
 - (void)setSelectedTimeRange:(struct { double x1; double x2; })arg1;
+- (void)setSelectedTimeRange:(struct { double x1; double x2; })arg1 animationDuration:(double)arg2;
 - (void)setSelectedTimeRangeEditingEnabled:(BOOL)arg1;
 - (void)setSelectedTimeRangeScrubbingEnabled:(BOOL)arg1;
 - (void)setSelectionVisibleMargin:(float)arg1;
 - (void)setUIConfiguration:(id)arg1;
-- (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1 animationDuration:(double)arg2;
 - (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1;
+- (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1 animationDuration:(double)arg2;
 - (struct { double x1; double x2; })timeRangeByInsettingVisibleTimeRange:(struct { double x1; double x2; })arg1 inset:(float)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

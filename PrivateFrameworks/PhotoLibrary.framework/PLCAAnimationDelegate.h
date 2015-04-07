@@ -7,8 +7,16 @@
  */
 
 @interface PLCAAnimationDelegate : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _start;
+
 }
 
 @property(copy) id completion;

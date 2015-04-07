@@ -3,11 +3,11 @@
  */
 
 @interface AWDWifiAwdlStateInfo : PBCodable <NSCopying> {
+    unsigned int _count;
+    unsigned long long _duration;
     struct { 
         unsigned int duration : 1; 
         unsigned int count : 1; 
-    unsigned int _count;
-    unsigned long long _duration;
     } _has;
 }
 

@@ -4,7 +4,7 @@
 
 @class NSString, NSURL;
 
-@interface SADomainObjectUpdateCompleted : SABaseCommand <SAServerBoundCommand, SADomainObjectCommand> {
+@interface SADomainObjectUpdateCompleted : SABaseCommand <SADomainObjectCommand, SAServerBoundCommand> {
 }
 
 @property(copy) NSString * aceId;

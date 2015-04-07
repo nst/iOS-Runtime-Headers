@@ -8,13 +8,17 @@
 
 @class AXHATimer, AXRemoteHearingAidDevice, NSString;
 
-@interface AXHearingSlaveController : AXHARemoteController <NSNetServiceDelegate, AXHARemoteUpdateProtocol> {
+@interface AXHearingSlaveController : AXHARemoteController <AXHARemoteUpdateProtocol, NSNetServiceDelegate> {
     AXRemoteHearingAidDevice *_device;
     struct __CFSocket { } *_ipv4socket;
     struct __CFSocket { } *_ipv6socket;
     BOOL _isVisible;
     AXHATimer *_resolveTimer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _searchCompletion;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

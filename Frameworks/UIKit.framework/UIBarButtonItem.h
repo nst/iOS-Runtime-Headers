@@ -5,16 +5,14 @@
 @class NSDictionary, NSSet, NSString, UIBarButtonItem, UIColor, UIImage, UINavigationItem, UIToolbarButton, UIView;
 
 @interface UIBarButtonItem : UIBarItem <NSCoding> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+    BOOL __hidden;
+    UIBarButtonItem *__itemVariation;
+    BOOL __needsViewUpdateForLetterpressImage;
+    UINavigationItem *__owningNavigationItem;
+    BOOL __showsBackButtonIndicator;
+    BOOL __viewWantsLetterpressImage;
+    SEL _action;
+    id _appearanceStorage;
     struct { 
         unsigned int enabled : 1; 
         unsigned int style : 3; 
@@ -25,19 +23,21 @@
         unsigned int disableAutosizing : 1; 
         unsigned int selected : 1; 
         unsigned int imageHasEffects : 1; 
-    BOOL __hidden;
-    UIBarButtonItem *__itemVariation;
-    BOOL __needsViewUpdateForLetterpressImage;
-    UINavigationItem *__owningNavigationItem;
-    BOOL __showsBackButtonIndicator;
-    BOOL __viewWantsLetterpressImage;
-    SEL _action;
-    id _appearanceStorage;
     } _barButtonItemFlags;
     BOOL _flexible;
     UIImage *_image;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _imageInsets;
     UIImage *_landscapeImagePhone;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _landscapeImagePhoneInsets;
     float _maximumWidth;
     float _minimumWidth;
@@ -56,13 +56,10 @@
 @property(setter=_setHidden:) BOOL _hidden;
 @property(setter=_setImageHasEffects:) BOOL _imageHasEffects;
 @property(setter=_setItemVariation:,retain) UIBarButtonItem * _itemVariation;
-@property(setter=_setItemVariation:,retain) UIBarButtonItem * _itemVariation;
 @property(setter=_setMaximumWidth:) float _maximumWidth;
 @property(setter=_setMinimumWidth:) float _minimumWidth;
 @property(readonly) BOOL _needsViewUpdateForLetterpressImage;
-@property(readonly) BOOL _needsViewUpdateForLetterpressImage;
 @property(setter=_setOwningNavigationItem:) UINavigationItem * _owningNavigationItem;
-@property(setter=_setPossibleItemVariations:,copy) NSSet * _possibleItemVariations;
 @property(setter=_setPossibleItemVariations:,copy) NSSet * _possibleItemVariations;
 @property(setter=_setShowsBackButtonIndicator:) BOOL _showsBackButtonIndicator;
 @property(setter=_setStylesForSizingTitles:,copy) NSDictionary * _stylesForSizingTitles;
@@ -73,16 +70,12 @@
 @property(retain) UIView * customView;
 @property(getter=isEnabled) BOOL enabled;
 @property(readonly) BOOL isSystemItem;
-@property(readonly) BOOL isSystemItem;
 @property(getter=_miniImage,setter=_setMiniImage:,retain) UIImage * miniImage;
 @property(getter=_miniImageInsets,setter=_setMiniImageInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } miniImageInsets;
 @property(getter=_possibleSystemItems,setter=_setPossibleSystemItems:,copy) NSSet * possibleSystemItems;
-@property(getter=_possibleSystemItems,setter=_setPossibleSystemItems:,copy) NSSet * possibleSystemItems;
 @property(copy) NSSet * possibleTitles;
 @property BOOL selected;
-@property BOOL selected;
 @property int style;
-@property(readonly) int systemItem;
 @property(readonly) int systemItem;
 @property id target;
 @property(retain) UIColor * tintColor;

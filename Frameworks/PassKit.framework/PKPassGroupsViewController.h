@@ -4,7 +4,7 @@
 
 @class <PKPassGroupsViewControllerDelegate>, NSMutableArray, NSString, NSTimer, PKGroupsController, PKLegacyWelcomeView, PKPassGroupStackView, PKPassWelcomeView, PKPaymentService, PKPaymentWelcomeView, PKUsageNotificationServer, UIButton, UIImageView, UIScrollView;
 
-@interface PKPassGroupsViewController : UIViewController <PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, UIScrollViewDelegate, PKPaymentServiceDelegate, PKCodeAcquisitionDelegate> {
+@interface PKPassGroupsViewController : UIViewController <PKCodeAcquisitionDelegate, PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, PKPaymentServiceDelegate, UIScrollViewDelegate> {
     UIButton *_addButton;
     NSTimer *_allowDimmingTimer;
     UIButton *_appStoreButton;
@@ -52,8 +52,8 @@
 - (void)_loadWelcomeContainerIfNecessary;
 - (void)_localeDidChangeNotification:(id)arg1;
 - (void)_passViewedNotificationTimerFired;
-- (void)_presentGroupWithIndex:(unsigned int)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)_presentGroupWithIndex:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)_presentGroupWithIndex:(unsigned int)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)_presentWithUpdatedPasses:(id)arg1;
 - (void)_regionConfigurationDidChangeNotification;
 - (void)_setShowingWelcome:(BOOL)arg1;
@@ -72,13 +72,13 @@
 - (id)delegate;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)groupAtIndex:(unsigned int)arg1;
+- (id)groupStackView;
 - (void)groupStackView:(id)arg1 deleteConfirmedForPass:(id)arg2;
 - (void)groupStackView:(id)arg1 didBeginShowingPassView:(id)arg2;
 - (void)groupStackView:(id)arg1 didEndShowingPassView:(id)arg2;
 - (void)groupStackView:(id)arg1 didTransitionToState:(int)arg2 animated:(BOOL)arg3;
 - (void)groupStackView:(id)arg1 groupDidMoveFromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (void)groupStackView:(id)arg1 transitioningToState:(int)arg2 animated:(BOOL)arg3;
-- (id)groupStackView;
 - (void)groupStackViewDidBeginReordering:(id)arg1;
 - (void)groupStackViewDidEndReordering:(id)arg1;
 - (void)groupStackViewDidHideHeader:(id)arg1;
@@ -107,9 +107,9 @@
 - (void)presentOffscreenAnimated:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (void)presentOnscreen:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (void)presentPassWithBulletinRecordID:(id)arg1;
-- (void)presentPassWithUniqueID:(id)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3 fallbackHandler:(id)arg4;
-- (void)presentPassWithUniqueID:(id)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)presentPassWithUniqueID:(id)arg1 animated:(BOOL)arg2;
+- (void)presentPassWithUniqueID:(id)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)presentPassWithUniqueID:(id)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3 fallbackHandler:(id)arg4;
 - (void)reloadPasses;
 - (void)reloadPassesWithCompletion:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

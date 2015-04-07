@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface AITTargetObserverRecord : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     id _observer;
     NSObject<OS_dispatch_queue> *_queue;
 }

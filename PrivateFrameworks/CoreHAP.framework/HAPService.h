@@ -30,8 +30,8 @@
 - (id)characteristics;
 - (id)description;
 - (id)includedServices;
-- (id)initWithType:(id)arg1 instanceID:(id)arg2 parsedCharacteristics:(id)arg3;
 - (id)initWithType:(id)arg1 instanceID:(id)arg2;
+- (id)initWithType:(id)arg1 instanceID:(id)arg2 parsedCharacteristics:(id)arg3;
 - (id)instanceID;
 - (BOOL)isEqualToService:(id)arg1;
 - (void)setAccessory:(id)arg1;

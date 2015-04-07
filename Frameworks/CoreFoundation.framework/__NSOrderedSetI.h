@@ -3,8 +3,8 @@
  */
 
 @interface __NSOrderedSetI : NSOrderedSet {
-    unsigned int _used : 26;
     unsigned int _szidx : 6;
+    unsigned int _used : 26;
 }
 
 + (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;

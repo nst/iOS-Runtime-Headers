@@ -8,15 +8,12 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     } _autoscrollBasePoint;
     float _autoscrollFactor;
     int _autoscrollRamp;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _autoscrollUntransformedExtentPoint;
     BOOL _autoscrolled;
     UIGestureRecognizer *_doubleTapGesture;
@@ -26,6 +23,9 @@
     BOOL _isTryingToHighlightLink;
     NSMutableSet *_linkGestures;
     UILongPressGestureRecognizer *_loupeGesture;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _loupeGestureEndPoint;
     NSMutableArray *_recognizers;
     UITextSelectionView *_selectionView;
@@ -81,8 +81,8 @@
 - (void)canBeginDragCursor:(id)arg1;
 - (void)cancelAutoscroll;
 - (void)cancelInteractionWithLink;
-- (void)clearGestureRecognizers:(BOOL)arg1;
 - (void)clearGestureRecognizers;
+- (void)clearGestureRecognizers:(BOOL)arg1;
 - (void)clearSelection;
 - (void)confirmMarkedText:(id)arg1;
 - (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -95,8 +95,8 @@
 - (BOOL)containerIsTextField;
 - (void)deactivateSelection;
 - (void)dealloc;
-- (void)detach:(BOOL)arg1;
 - (void)detach;
+- (void)detach:(BOOL)arg1;
 - (void)didEndScrollingOverflow;
 - (void)disableClearsOnInsertion;
 - (float)distanceBetweenPoint:(struct CGPoint { float x1; float x2; })arg1 andRange:(id)arg2;
@@ -115,8 +115,8 @@
 - (void)layoutChangedByScrolling:(BOOL)arg1;
 - (id)linkInteractionView;
 - (void)longDelayRecognizer:(id)arg1;
-- (void)loupeGesture:(id)arg1;
 - (id)loupeGesture;
+- (void)loupeGesture:(id)arg1;
 - (struct CGPoint { float x1; float x2; })loupeGestureEndPoint;
 - (id)loupeGestureRecognizer:(BOOL)arg1;
 - (BOOL)noCalloutBarAndTouchInSelection:(struct CGPoint { float x1; float x2; })arg1;

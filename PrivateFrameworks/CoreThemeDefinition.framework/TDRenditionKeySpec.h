@@ -5,9 +5,6 @@
 @class TDThemeDirection, TDThemeDrawingLayer, TDThemeElement, TDThemeIdiom, TDThemePart, TDThemePresentationState, TDThemeSize, TDThemeState, TDThemeUISizeClass, TDThemeValue;
 
 @interface TDRenditionKeySpec : NSManagedObject <TDElementAttributes> {
-    struct _renditionkeytoken { 
-        unsigned short identifier; 
-        unsigned short value; 
     unsigned int _dimension1;
     unsigned int _dimension2;
     unsigned int _graphicsClass;
@@ -15,6 +12,9 @@
     unsigned int _nameIdentifier;
     unsigned int _scaleFactor;
     struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_scratchKey;
+    struct _renditionkeytoken { 
+        unsigned short identifier; 
+        unsigned short value; 
     } _stackScratchKey[16];
     unsigned int _subtype;
 }

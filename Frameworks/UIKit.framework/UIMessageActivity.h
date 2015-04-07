@@ -22,8 +22,8 @@
 - (id)activityViewController;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
-- (void)messageComposeViewController:(id)arg1 didFinishWithResult:(int)arg2;
 - (id)messageComposeViewController;
+- (void)messageComposeViewController:(id)arg1 didFinishWithResult:(int)arg2;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setMessageComposeViewController:(id)arg1;
 - (void)setSourceIsManaged:(BOOL)arg1;

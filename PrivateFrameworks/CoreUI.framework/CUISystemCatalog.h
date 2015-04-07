@@ -5,8 +5,8 @@
 @interface CUISystemCatalog : CUICatalog {
 }
 
-- (BOOL)hasStylePresetWithName:(id)arg1 styleConfiguration:(id)arg2;
 - (BOOL)hasStylePresetWithName:(id)arg1;
+- (BOOL)hasStylePresetWithName:(id)arg1 styleConfiguration:(id)arg2;
 - (id)newShapeEffectPresetForStylePresetName:(id)arg1 styleConfiguration:(id)arg2;
 
 @end

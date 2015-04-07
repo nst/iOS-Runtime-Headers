@@ -3,6 +3,7 @@
  */
 
 @interface _VKPOIIconArtwork : VKIconArtwork {
+    struct CGImage { } *_glyphImage;
     struct { 
         int iconStyle; 
         struct Matrix<float, 4, 1> { 
@@ -37,7 +38,6 @@
         float iconBevelAmount; 
         unsigned int iconSourceStyleAttributeKey; 
         unsigned int iconSourceStyleMultipoiAttributeKey; 
-    struct CGImage { } *_glyphImage;
     } _style;
 }
 

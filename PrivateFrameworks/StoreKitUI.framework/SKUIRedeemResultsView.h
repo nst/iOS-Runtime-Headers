@@ -4,7 +4,7 @@
 
 @class <SKUIRedeemResultsViewDelegate>, NSArray, NSString;
 
-@interface SKUIRedeemResultsView : UITableView <UITableViewDelegate, UITableViewDataSource> {
+@interface SKUIRedeemResultsView : UITableView <UITableViewDataSource, UITableViewDelegate> {
     struct UIEdgeInsets { 
         float top; 
         float left; 

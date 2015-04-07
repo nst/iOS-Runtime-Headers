@@ -5,10 +5,10 @@
 @class NPKProtoCatalog, NPKProtoHash, NPKProtoPass;
 
 @interface NPKProtoAddPassRequest : PBRequest <NSCopying> {
+    NPKProtoCatalog *_catalog;
     struct { 
         unsigned int lastKnownResyncID : 1; 
         unsigned int resyncID : 1; 
-    NPKProtoCatalog *_catalog;
     } _has;
     unsigned int _lastKnownResyncID;
     NPKProtoHash *_libraryHash;

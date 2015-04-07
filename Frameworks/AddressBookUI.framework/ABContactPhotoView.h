@@ -4,7 +4,7 @@
 
 @class <ABContactPhotoViewDelegate>, <ABPresenterDelegate>, CNContact, NSDictionary, NSString, UIGestureRecognizer, UIImage, UIImageView, UILabel;
 
-@interface ABContactPhotoView : UIControl <UINavigationControllerDelegate, UIImagePickerControllerDelegate, QLPreviewControllerDelegate, QLPreviewControllerDataSource> {
+@interface ABContactPhotoView : UIControl <QLPreviewControllerDataSource, QLPreviewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UILabel *_addPhotoLabel;
     UIImageView *_attributionImageView;
     CNContact *_contact;
@@ -101,8 +101,8 @@
 - (void)setPhotoViewDelegate:(id)arg1;
 - (void)setTapGesture:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)tapGesture:(id)arg1;
 - (id)tapGesture;
+- (void)tapGesture:(id)arg1;
 - (void)tintColorDidChange;
 - (void)updateAttributionBadge;
 - (void)updateFontSizes;

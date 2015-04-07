@@ -4,7 +4,7 @@
 
 @class MPUExtrasBannerController, NSMutableDictionary, NSString, UICollectionView, UICollectionViewFlowLayout;
 
-@interface MPUExtrasStackTemplateViewController : MPUExtrasTemplateViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface MPUExtrasStackTemplateViewController : MPUExtrasTemplateViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     MPUExtrasBannerController *_bannerViewController;
     UICollectionView *_collectionView;
     UICollectionViewFlowLayout *_collectionViewLayout;

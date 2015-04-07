@@ -100,9 +100,9 @@
 - (id)attribution;
 - (BOOL)badgeEmailPropertiesForMailVIP;
 - (void)cancelEditing:(BOOL)arg1;
+- (id)contactViewController;
 - (id)contactViewController:(id)arg1 highlightColorForPropertyItem:(id)arg2 contact:(id)arg3;
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
-- (id)contactViewController;
 - (id)customFooterView;
 - (id)customHeaderView;
 - (id)customMessageView;
@@ -119,9 +119,9 @@
 - (int)highlightedProperty;
 - (id)init;
 - (id)initWithAddressBook:(void*)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2 addressBook:(void*)arg3 style:(int)arg4;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2 addressBook:(void*)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 addressBook:(void*)arg3;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 addressBook:(void*)arg3 style:(int)arg4;
 - (id)initWithStyle:(int)arg1;
 - (BOOL)isKindOfClass:(Class)arg1;
 - (void)loadView;
@@ -154,8 +154,8 @@
 - (void)setAllowsSounds:(BOOL)arg1;
 - (void)setAllowsVibrations:(BOOL)arg1;
 - (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
-- (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setAttribution:(id)arg1;
+- (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setBadgeEmailPropertiesForMailVIP:(BOOL)arg1;
 - (void)setCardContentProvider:(id)arg1;
 - (void)setContactViewController:(id)arg1;
@@ -167,10 +167,10 @@
 - (void)setDisplayedUIPerson:(id)arg1;
 - (void)setEditDelegate:(id)arg1;
 - (void)setHighlightedImportant:(BOOL)arg1;
-- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 important:(BOOL)arg3;
-- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3 important:(BOOL)arg4;
-- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 important:(BOOL)arg3;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3 important:(BOOL)arg4;
 - (void)setHighlightedMultiValueIdentifier:(int)arg1;
 - (void)setHighlightedProperty:(int)arg1;
 - (void)setMessage:(id)arg1;

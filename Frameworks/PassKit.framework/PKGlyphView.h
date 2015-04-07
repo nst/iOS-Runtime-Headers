@@ -5,15 +5,15 @@
 @class <PKGlyphViewDelegate>, NSMutableArray, NSString, PKCheckGlyphView, PKFingerprintGlyphView, PKPhoneGlyphView, UIColor, UIImage, UIImageView;
 
 @interface PKGlyphView : UIView {
-    struct { 
-        unsigned int showingPhone : 1; 
-        unsigned int phoneRotated : 1; 
     PKCheckGlyphView *_checkView;
     UIImage *_customImage;
     UIImageView *_customImageView;
     <PKGlyphViewDelegate> *_delegate;
     PKFingerprintGlyphView *_fingerprintView;
     double _lastAnimationWillFinish;
+    struct { 
+        unsigned int showingPhone : 1; 
+        unsigned int phoneRotated : 1; 
     } _layoutFlags;
     float _phoneAspectRatio;
     PKPhoneGlyphView *_phoneView;
@@ -59,12 +59,12 @@
 - (id)secondaryColor;
 - (void)setCustomImage:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPrimaryColor:(id)arg1 animated:(BOOL)arg2;
 - (void)setPrimaryColor:(id)arg1;
-- (void)setSecondaryColor:(id)arg1 animated:(BOOL)arg2;
+- (void)setPrimaryColor:(id)arg1 animated:(BOOL)arg2;
 - (void)setSecondaryColor:(id)arg1;
-- (void)setState:(int)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)setSecondaryColor:(id)arg1 animated:(BOOL)arg2;
 - (void)setState:(int)arg1;
+- (void)setState:(int)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
 - (int)state;
 
 @end

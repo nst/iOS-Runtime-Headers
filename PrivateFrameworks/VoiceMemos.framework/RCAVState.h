@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@interface RCAVState : NSObject <NSSecureCoding, NSCopying> {
+@interface RCAVState : NSObject <NSCopying, NSSecureCoding> {
     int _AVCaptureState;
     int _AVPreviewState;
 }

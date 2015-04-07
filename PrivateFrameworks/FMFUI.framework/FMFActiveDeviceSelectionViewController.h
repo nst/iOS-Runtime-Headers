@@ -4,7 +4,7 @@
 
 @class FMFDevice, FMFSession, NSMutableArray, NSString;
 
-@interface FMFActiveDeviceSelectionViewController : PSListController <FMFSessionDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface FMFActiveDeviceSelectionViewController : PSListController <FMFSessionDelegate, UITableViewDataSource, UITableViewDelegate> {
     FMFDevice *_currentActiveDevice;
     NSMutableArray *_deviceList;
     FMFSession *_fmfSession;

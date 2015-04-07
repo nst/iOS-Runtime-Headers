@@ -5,30 +5,30 @@
 @class CIContext, EAGLContext;
 
 @interface PBCoreImageContext : PBContext {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     CIContext *_ciContext;
     EAGLContext *_glesContext;
     struct __CVBuffer { } *_inputPixelBuffer;
     struct __CVBuffer { } *_inputTexture;
     struct __CVPixelBufferPool { } *_largePool;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _largePoolSize;
     struct _CAImageQueue { } *_outputImageQueue;
     struct __CVBuffer { } *_outputPixelBuffer;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _outputSize;
     struct __CVBuffer { } *_outputTexture;
+    bool _render9Up;
+    bool _renderForSave;
     struct __CVPixelBufferPool { } *_smallPool;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _smallPoolSize;
     struct __CVOpenGLESTextureCache { } *_textureCache;
-    bool_render9Up;
-    bool_renderForSave;
 }
 
 - (void)_createPixelBuffer:(struct __CVBuffer {}**)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
@@ -44,17 +44,17 @@
 - (struct CGSize { float x1; float x2; })outputSize;
 - (unsigned int)outputTexture;
 - (bool)render9Up;
-- (void)renderFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
 - (void)renderFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2;
+- (void)renderFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
 - (bool)renderForSave;
-- (void)renderNineUp:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
 - (void)renderNineUp:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2;
-- (void)setInputPixelBuffer:(struct __CVBuffer { }*)arg1 mapTexture:(BOOL)arg2;
+- (void)renderNineUp:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
 - (void)setInputPixelBuffer:(struct __CVBuffer { }*)arg1;
+- (void)setInputPixelBuffer:(struct __CVBuffer { }*)arg1 mapTexture:(BOOL)arg2;
 - (void)setLargePool:(struct __CVPixelBufferPool { }*)arg1;
 - (void)setOutputImageQueue:(struct _CAImageQueue { }*)arg1;
-- (void)setOutputPixelBuffer:(struct __CVBuffer { }*)arg1 mapTexture:(BOOL)arg2;
 - (void)setOutputPixelBuffer:(struct __CVBuffer { }*)arg1;
+- (void)setOutputPixelBuffer:(struct __CVBuffer { }*)arg1 mapTexture:(BOOL)arg2;
 - (void)setOutputSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRender9Up:(bool)arg1;
 - (void)setRenderForSave:(bool)arg1;

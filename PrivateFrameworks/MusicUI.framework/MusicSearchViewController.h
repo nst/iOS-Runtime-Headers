@@ -66,6 +66,7 @@
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
 - (id)searchTerm;
 - (void)setDelegate:(id)arg1;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
@@ -76,7 +77,6 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
-- (id)tableView;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 

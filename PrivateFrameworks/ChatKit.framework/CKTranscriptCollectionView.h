@@ -14,8 +14,8 @@
 - (void)layoutSubviews;
 - (void)reloadData;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setIgnoresContentOffsetChanges:(BOOL)arg1;
 

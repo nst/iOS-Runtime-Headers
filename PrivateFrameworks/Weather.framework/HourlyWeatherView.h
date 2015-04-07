@@ -44,10 +44,10 @@
 - (id)outerViews;
 - (void)setDisableCenterViewOffset:(BOOL)arg1;
 - (void)setDrawCurrentTime:(BOOL)arg1;
-- (void)setHour:(unsigned int)arg1 minutes:(unsigned int)arg2 outerViews:(id)arg3 centerView:(id)arg4;
 - (void)setHour:(unsigned int)arg1 minutes:(unsigned int)arg2 outerViews:(id)arg3;
-- (void)setHour:(unsigned int)arg1 outerViews:(id)arg2 centerView:(id)arg3;
+- (void)setHour:(unsigned int)arg1 minutes:(unsigned int)arg2 outerViews:(id)arg3 centerView:(id)arg4;
 - (void)setHour:(unsigned int)arg1 outerViews:(id)arg2;
+- (void)setHour:(unsigned int)arg1 outerViews:(id)arg2 centerView:(id)arg3;
 - (void)setupColorsAndFonts;
 
 @end

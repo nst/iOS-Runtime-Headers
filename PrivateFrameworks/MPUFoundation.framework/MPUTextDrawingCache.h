@@ -12,9 +12,6 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     } _allowedSize;
     unsigned int _cacheCostScale;
     unsigned int _cacheSize;
@@ -27,11 +24,18 @@
     unsigned int _maximumNumberOfLines;
     BOOL _opaque;
     NSOperationQueue *_preHeatingOperationQueue;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _referenceSizeForCostComputation;
     NSDictionary *_regularTextAttributes;
     NSStringDrawingContext *_stringDrawingContext;
     NSDictionary *_textAttributes;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _textEmphasizer;
+
     BOOL _wasInvalidatedWithoutNotifyingObservers;
 }
 

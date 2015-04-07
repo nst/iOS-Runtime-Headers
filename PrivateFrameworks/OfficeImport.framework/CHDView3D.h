@@ -3,13 +3,13 @@
  */
 
 @interface CHDView3D : NSObject {
-    boolmAutoscale;
-    boolmCluster;
-    boolmRightAngleAxes;
+    bool mAutoscale;
+    bool mCluster;
     int mDepthPercent;
     int mGapDepthPercent;
     int mHeightPercent;
     int mPerspective;
+    bool mRightAngleAxes;
     int mRotationX;
     int mRotationY;
 }

@@ -4,13 +4,7 @@
 
 @class NSDictionary, NSIndexPath, NSMutableArray, NSMutableSet, NSString, PHCachingImageManager, PLCloudSharedAlbum, PLCloudSharedComment, PLDateRangeFormatter, PLManagedAlbumList, PLManagedAsset, PUAlbumStreamActivity, PUFeedAssetContainerList, PUFeedSectionInfosManager, PUFeedViewControllerRestorableState, PUFeedViewControllerSpec, PUPhotoPinchGestureRecognizer, PUPhotosPickerViewController, PUScrollViewSpeedometer, UIBarButtonItem, UICollectionView, UIPopoverController, UITapGestureRecognizer, UIViewController, _UIContentUnavailableView;
 
-@interface PUFeedViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, PUFeedCollectionViewLayoutDelegate, PUFeedSectionInfosManagerDelegate, PUPhotoBrowserZoomTransitionDelegate, PUFeedImageCellDelegate, PUFeedTextCellDelegate, PUFeedInvitationCellDelegate, UIGestureRecognizerDelegate, PUAlbumStreamActivityDelegate, _UISettingsKeyObserver, PUScrollViewSpeedometerDelegate, PLCloudFeedNavigating, PLNavigableCloudFeedViewController> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface PUFeedViewController : UIViewController <PLCloudFeedNavigating, PLNavigableCloudFeedViewController, PUAlbumStreamActivityDelegate, PUFeedCollectionViewLayoutDelegate, PUFeedImageCellDelegate, PUFeedInvitationCellDelegate, PUFeedSectionInfosManagerDelegate, PUFeedTextCellDelegate, PUPhotoBrowserZoomTransitionDelegate, PUScrollViewSpeedometerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, _UISettingsKeyObserver> {
     PUAlbumStreamActivity *__albumStreamActivity;
     BOOL __appJustEnteredForeground;
     int __barsState;
@@ -34,6 +28,9 @@
     NSDictionary *__justLikedSections;
     NSMutableArray *__lastPreheatIndexPathInfoList;
     NSMutableArray *__lastPreheatIndexPathList;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } __lastPreheatedContentOffset;
     BOOL __libraryUpdatingPreviouslyExpired;
     int __loadedSectionInfosWindowSize;
@@ -51,6 +48,9 @@
     UITapGestureRecognizer *__tapGestureRecognizer;
     UICollectionView *__targetCollectionView;
     int __targetCollectionViewType;
+    struct CGSize { 
+        float width; 
+        float height; 
     } __targetSize;
     NSMutableSet *__updatedAssets;
     BOOL __userDidDismissPlaceholder;

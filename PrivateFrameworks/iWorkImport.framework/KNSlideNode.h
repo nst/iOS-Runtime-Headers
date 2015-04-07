@@ -9,7 +9,7 @@
 
 @class KNAbstractSlide, KNSlideNode, NSArray, NSDictionary, NSMutableDictionary, NSString, TSPLazyReference;
 
-@interface KNSlideNode : TSPObject <TSKDocumentObject, TSKModel, TSKSearchTarget, TSCEResolverContainer> {
+@interface KNSlideNode : TSPObject <TSCEResolverContainer, TSKDocumentObject, TSKModel, TSKSearchTarget> {
     NSArray *mChildren;
     NSString *mClassicUniqueID;
     NSString *mCopiedFromSlideIdentifier;
@@ -65,8 +65,8 @@
 
 + (id)lastSlideUnderSlideNode:(id)arg1;
 + (BOOL)needsObjectUUID;
-+ (id)nodesAndDescendantsForNodes:(id)arg1 includeSkippedSlideNodes:(BOOL)arg2 includingCollapsedSlideNodes:(BOOL)arg3;
 + (id)nodesAndDescendantsForNodes:(id)arg1;
++ (id)nodesAndDescendantsForNodes:(id)arg1 includeSkippedSlideNodes:(BOOL)arg2 includingCollapsedSlideNodes:(BOOL)arg3;
 + (id)p_nextAfterSlideNode:(id)arg1;
 + (id)p_previousToSlideNode:(id)arg1;
 + (id)parentSlideNodeForInfo:(id)arg1;
@@ -98,7 +98,7 @@
 - (BOOL)isCollapsedInOutlineView;
 - (BOOL)isHidden;
 - (BOOL)isSlideNumberVisible;
-- (void)loadFromArchive:(const struct SlideNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; struct RepeatedPtrField<TSP::DataReference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Size> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; boolx7; boolx8; boolx9; boolx10; boolx11; boolx12; boolx13; boolx14; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; boolx17; boolx18; unsigned int x19; struct Reference {} *x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; unsigned int x22; int x23; unsigned int x24[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct SlideNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; struct RepeatedPtrField<TSP::DataReference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Size> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; bool x17; bool x18; unsigned int x19; struct Reference {} *x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; unsigned int x22; int x23; unsigned int x24[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)next;
 - (id)nextSkippingCollapsed;
 - (id)nextSkippingHidden;
@@ -115,7 +115,7 @@
 - (BOOL)resolverNameIsUsed:(id)arg1;
 - (id)resolversMatchingPrefix:(id)arg1;
 - (void)revert;
-- (void)saveToArchive:(struct SlideNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; struct RepeatedPtrField<TSP::DataReference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Size> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; boolx7; boolx8; boolx9; boolx10; boolx11; boolx12; boolx13; boolx14; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; boolx17; boolx18; unsigned int x19; struct Reference {} *x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; unsigned int x22; int x23; unsigned int x24[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct SlideNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; struct RepeatedPtrField<TSP::DataReference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Size> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; bool x17; bool x18; unsigned int x19; struct Reference {} *x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; unsigned int x22; int x23; unsigned int x24[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setChildren:(id)arg1;
 - (void)setClassicUniqueID:(id)arg1;

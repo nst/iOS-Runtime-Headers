@@ -9,32 +9,32 @@
 @class NSString, NSURLRequest;
 
 @interface WBSCompletionQuery : NSObject {
-    struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { 
-        struct duration<long long, std::__1::ratio<1, 1000000000> > { 
-            long long __rep_; 
-        } __d_; 
-    struct duration<long long, std::__1::ratio<1, 1000> > { 
-        long long __rep_; 
-    struct duration<long long, std::__1::ratio<1, 1000> > { 
-        long long __rep_; 
     unsigned int _indexInFeedbackArray;
     NSString *_parsecFeedbackQueryIdentifier;
+    struct duration<long long, std::__1::ratio<1, 1000> > { 
+        long long __rep_; 
     } _parsecLatency;
     NSURLRequest *_parsecSearchRequest;
     NSString *_queryString;
     NSString *_searchSuggestionProviderIdentifier;
+    struct duration<long long, std::__1::ratio<1, 1000> > { 
+        long long __rep_; 
     } _searchSuggestionProviderLatency;
+    struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { 
+        struct duration<long long, std::__1::ratio<1, 1000000000> > { 
+            long long __rep_; 
+        } __d_; 
     } _timestamp;
 }
 
-@property(readonly) /* Warning: unhandled struct encoding: '{time_point<std::__1::chrono::steady_clock' */ struct  timestamp; /* unknown property attribute:  1000000000> >=q}} */
-@property struct  searchSuggestionProviderLatency; /* unknown property attribute:  1000> >=q} */
-@property struct  parsecLatency; /* unknown property attribute:  1000> >=q} */
 @property unsigned int indexInFeedbackArray;
 @property(copy) NSString * parsecFeedbackQueryIdentifier;
+@property struct  parsecLatency; /* unknown property attribute:  1000> >=q} */
 @property(copy) NSURLRequest * parsecSearchRequest;
 @property(readonly) NSString * queryString;
 @property(copy) NSString * searchSuggestionProviderIdentifier;
+@property struct  searchSuggestionProviderLatency; /* unknown property attribute:  1000> >=q} */
+@property(readonly) /* Warning: unhandled struct encoding: '{time_point<std::__1::chrono::steady_clock' */ struct  timestamp; /* unknown property attribute:  1000000000> >=q}} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

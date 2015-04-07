@@ -9,35 +9,8 @@
 @class <VKTrackingCameraControllerDelegate>, VKAnimation, VKCameraContext, VKMapCanvas, VKMapModel;
 
 @interface VKTrackingCameraController : VKCameraController {
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    struct { 
-        struct VKPoint { 
-            double x; 
-            double y; 
-            double z; 
-        } position; 
-        double course; 
-        BOOL onRoute; 
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    struct VKEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+    BOOL _animatingIn;
+    VKAnimation *_animation;
     struct VKNavigationCameraModel { 
         double _halfVerticalFov; 
         double _horizontalFov; 
@@ -50,7 +23,7 @@
             double _kSpring; 
             double _kDamper; 
             double _restingPosition; 
-            bool_directionIsPositive; 
+            bool _directionIsPositive; 
         } _pitchSpring; 
         struct AngularSpringDamper { 
             double _position; 
@@ -59,7 +32,7 @@
             double _kSpring; 
             double _kDamper; 
             double _restingPosition; 
-            bool_directionIsPositive; 
+            bool _directionIsPositive; 
         } _courseSpring; 
         struct SpringDamper { 
             double _position; 
@@ -68,7 +41,7 @@
             double _kSpring; 
             double _kDamper; 
             double _restingPosition; 
-            bool_directionIsPositive; 
+            bool _directionIsPositive; 
         } _referenceScreenOffsetSpring; 
         struct SpringDamper { 
             double _position; 
@@ -77,7 +50,7 @@
             double _kSpring; 
             double _kDamper; 
             double _restingPosition; 
-            bool_directionIsPositive; 
+            bool _directionIsPositive; 
         } _boomLengthSpring; 
         struct State { 
             double _course; 
@@ -86,6 +59,63 @@
             double _boomLength; 
         } _targetState; 
         double _previousUpdateTime; 
+    } _cameraModel;
+    BOOL _canZoomIn;
+    BOOL _canZoomOut;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _completionHandler;
+
+    double _cruiseHeight;
+    double _cruiseHeightOverride;
+    double _cruisePhi;
+    double _cruisePhiOverride;
+    int _desiredMapMode;
+    double _endZoomScale;
+    struct VKPoint { 
+        double x; 
+        double y; 
+        double z; 
+    } _farthestPoi;
+    int _focusStyle;
+    float _halfPuckSize;
+    struct VKEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _insets;
+    BOOL _insetsAnimating;
+    VKCameraContext *_lastCameraContext;
+    struct VKPoint { 
+        double x; 
+        double y; 
+        double z; 
+    } _lastRouteLinePanPuckPosition;
+    VKMapCanvas *_mapCanvas;
+    double _mapModeTransitionZoomScale;
+    VKMapModel *_mapModel;
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
+    } _matchedIndex;
+    struct fast_shared_ptr<vk::RouteLineSection> { 
+        struct _fast_shared_ptr_control {} *_control; 
+    } _matchedSection;
+    double _maxBoomLength;
+    double _maxDistanceScale;
+    VKAnimation *_panAnimation;
+    double _panBoomLength;
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
+    } _panCameraOffset;
+    double _panCourseOffset;
+    int _panDirection;
+    double _panPitch;
+    double _panReturnStartTime;
+    double _panRouteOffset;
+    double _panStartBoomLength;
     struct State { 
         struct State { 
             double _course; 
@@ -98,55 +128,6 @@
             double y; 
             double z; 
         } puckPosition; 
-    struct Matrix<double, 3, 1> { 
-        double _e[3]; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct fast_shared_ptr<vk::RouteLineSection> { 
-        struct _fast_shared_ptr_control {} *_control; 
-    struct PolylineCoordinate { 
-        unsigned int index; 
-        float offset; 
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    BOOL _animatingIn;
-    VKAnimation *_animation;
-    } _cameraModel;
-    BOOL _canZoomIn;
-    BOOL _canZoomOut;
-    id _completionHandler;
-    double _cruiseHeight;
-    double _cruiseHeightOverride;
-    double _cruisePhi;
-    double _cruisePhiOverride;
-    int _desiredMapMode;
-    double _endZoomScale;
-    } _farthestPoi;
-    int _focusStyle;
-    float _halfPuckSize;
-    } _insets;
-    BOOL _insetsAnimating;
-    VKCameraContext *_lastCameraContext;
-    } _lastRouteLinePanPuckPosition;
-    VKMapCanvas *_mapCanvas;
-    double _mapModeTransitionZoomScale;
-    VKMapModel *_mapModel;
-    } _matchedIndex;
-    } _matchedSection;
-    double _maxBoomLength;
-    double _maxDistanceScale;
-    VKAnimation *_panAnimation;
-    double _panBoomLength;
-    } _panCameraOffset;
-    double _panCourseOffset;
-    int _panDirection;
-    double _panPitch;
-    double _panReturnStartTime;
-    double _panRouteOffset;
-    double _panStartBoomLength;
     } _panStartCameraState;
     double _panStartPitch;
     int _panStyle;
@@ -156,21 +137,45 @@
     BOOL _pitching;
     double _previousCourse;
     double _previousOffset;
+    struct VKPoint { 
+        double x; 
+        double y; 
+        double z; 
     } _previousReference;
     double _previousStepTime;
     BOOL _puckAnimatorRunning;
     double _puckOffset;
     double _puckOffsetDelta;
+    struct { 
+        struct VKPoint { 
+            double x; 
+            double y; 
+            double z; 
+        } position; 
+        double course; 
+        BOOL onRoute; 
     } _puckPosition;
+    struct VKPoint { 
+        double x; 
+        double y; 
+        double z; 
     } _puckTargetPosition;
     BOOL _receivedFirstUpdate;
-    struct VKCircularBuffer<double> { struct vector<double, std::__1::allocator<double> > { double *x_1_1_1; double *x_1_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; boolx3; double x4; } *_rotationRateBuffer;
+    struct VKCircularBuffer<double> { struct vector<double, std::__1::allocator<double> > { double *x_1_1_1; double *x_1_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; bool x3; double x4; } *_rotationRateBuffer;
+    bool _shouldAllowMapModeTransition;
     BOOL _shouldLimitTopDownHeight;
     double _startCourse;
     double _startDistance;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _startPanPoint;
     double _startPinchScale;
     double _startPitch;
+    struct VKPoint { 
+        double x; 
+        double y; 
+        double z; 
     } _startPuckScreenPosition;
     double _startTime;
     double _startZoomScale;
@@ -187,7 +192,6 @@
     double _zoomScale;
     VKAnimation *_zoomScaleAnimation;
     BOOL _zooming;
-    bool_shouldAllowMapModeTransition;
 }
 
 @property(readonly) BOOL canZoomIn;

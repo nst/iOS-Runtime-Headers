@@ -12,7 +12,11 @@
     SKUIClientContext *_clientContext;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _loadsRedeemCodeMetadata;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _outputBlock;
+
     NSString *_redeemCode;
     SKUIRedeemConfiguration *_redeemConfiguration;
 }

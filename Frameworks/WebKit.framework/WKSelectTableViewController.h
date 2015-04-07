@@ -31,14 +31,14 @@
 @property(readonly) Class superclass;
 
 - (void)deleteBackward;
-- (struct OptionItem { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; boolx2; boolx3; boolx4; int x5; }*)findItemAt:(id)arg1;
+- (struct OptionItem { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; bool x2; bool x3; bool x4; int x5; }*)findItemAt:(id)arg1;
 - (int)findItemIndexAt:(id)arg1;
 - (BOOL)hasText;
 - (id)initWithView:(id)arg1 hasGroups:(BOOL)arg2;
 - (void)insertText:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)popover;
-- (void)populateCell:(id)arg1 withItem:(const struct OptionItem { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; boolx2; boolx3; boolx4; int x5; }*)arg2;
+- (void)populateCell:(id)arg1 withItem:(const struct OptionItem { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; bool x2; bool x3; bool x4; int x5; }*)arg2;
 - (void)setPopover:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

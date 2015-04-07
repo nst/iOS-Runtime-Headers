@@ -10,6 +10,7 @@
         float d; 
         float tx; 
         float ty; 
+    } _endTransform;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -17,7 +18,6 @@
         float d; 
         float tx; 
         float ty; 
-    } _endTransform;
     } _startTransform;
 }
 

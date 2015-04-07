@@ -12,8 +12,8 @@
 - (void)dealloc;
 - (id)init;
 - (BOOL)isAlsSupported;
-- (void)registerNotificationBlock:(id)arg1 forProperties:(id)arg2;
 - (void)registerNotificationBlock:(id)arg1;
+- (void)registerNotificationBlock:(id)arg1 forProperties:(id)arg2;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 
 @end

@@ -4,7 +4,7 @@
 
 @class CPLLibraryManager, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_xpc_object>, NSString, PLCloudTaskManager, PLPhotoLibrary;
 
-@interface PLCloudPhotoLibraryManager : NSObject <CPLResourceProgressDelegate, CPLLibraryManagerDelegate, PLForegroundObserver> {
+@interface PLCloudPhotoLibraryManager : NSObject <CPLLibraryManagerDelegate, CPLResourceProgressDelegate, PLForegroundObserver> {
     unsigned int _boundForUploadingOtherItems;
     unsigned int _boundForUploadingPhotos;
     unsigned int _boundForUploadingVideos;

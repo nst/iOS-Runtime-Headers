@@ -5,16 +5,16 @@
 @class <FUChartSeriesDataSource>, <FUChartSeriesDelegate>, FUChartDataSet, NSArray, NSDate, NSNumber;
 
 @interface FUChartSeries : UIView {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     float _animationDuration;
     NSArray *_dataPoints;
     FUChartDataSet *_dataSet;
     <FUChartSeriesDataSource> *_dataSource;
     <FUChartSeriesDelegate> *_delegate;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _edgeInsets;
     NSDate *_maxXValue;
     NSNumber *_maxYValue;
@@ -36,8 +36,8 @@
 - (id)_getMinXValue;
 - (id)_getMinYValue;
 - (float)_getXValueForPointFromChartPoint:(id)arg1;
-- (float)_getYValueForPointFromChartPoint:(id)arg1 key:(id)arg2;
 - (float)_getYValueForPointFromChartPoint:(id)arg1;
+- (float)_getYValueForPointFromChartPoint:(id)arg1 key:(id)arg2;
 - (float)_getYValueForPointFromChartPointValue:(id)arg1;
 - (float)_relativePositionForXPlaneValue:(id)arg1;
 - (float)_relativePositionForYPlaneValue:(id)arg1;
@@ -50,8 +50,8 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (id)getChartPointFromDataSetAtIndex:(int)arg1;
 - (id)getLabelsFromSet;
-- (struct CGPoint { float x1; float x2; })getPointFromChartPoint:(id)arg1 forKey:(id)arg2;
 - (struct CGPoint { float x1; float x2; })getPointFromChartPoint:(id)arg1;
+- (struct CGPoint { float x1; float x2; })getPointFromChartPoint:(id)arg1 forKey:(id)arg2;
 - (id)getPointsFromDataSet;
 - (id)init;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })insetBounds;

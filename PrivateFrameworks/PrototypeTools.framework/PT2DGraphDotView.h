@@ -5,10 +5,10 @@
 @class PT2DGraphView;
 
 @interface PT2DGraphDotView : UIView {
+    PT2DGraphView *_graph;
     struct CGPoint { 
         float x; 
         float y; 
-    PT2DGraphView *_graph;
     } _graphPoint;
 }
 

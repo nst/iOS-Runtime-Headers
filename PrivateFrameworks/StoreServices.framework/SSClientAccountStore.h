@@ -17,9 +17,9 @@
 - (void)_invalidateAccounts;
 - (void)_reloadAccountsIfNeeded;
 - (void)_signOutWithAccountIDs:(id)arg1;
+- (id)accountWithUniqueIdentifier:(id)arg1;
 - (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(BOOL)arg2;
 - (id)accountWithUniqueIdentifier:(id)arg1 scope:(int)arg2;
-- (id)accountWithUniqueIdentifier:(id)arg1;
 - (id)accounts;
 - (id)activeAccount;
 - (id)activeLockerAccount;

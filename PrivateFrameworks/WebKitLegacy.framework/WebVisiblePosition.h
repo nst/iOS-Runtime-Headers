@@ -26,8 +26,8 @@
 - (BOOL)isEditable;
 - (BOOL)isEqual:(id)arg1;
 - (id)positionAtStartOrEndOfWord;
-- (id)positionByMovingInDirection:(int)arg1 amount:(unsigned long)arg2 withAffinityDownstream:(BOOL)arg3;
 - (id)positionByMovingInDirection:(int)arg1 amount:(unsigned long)arg2;
+- (id)positionByMovingInDirection:(int)arg1 amount:(unsigned long)arg2 withAffinityDownstream:(BOOL)arg3;
 - (id)positionOfNextBoundaryOfGranularity:(int)arg1 inDirection:(int)arg2;
 - (BOOL)requiresContextForWordBoundary;
 - (void)setAffinity:(int)arg1;

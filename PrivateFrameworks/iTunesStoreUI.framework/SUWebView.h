@@ -5,12 +5,12 @@
 @class <SUWebViewDelegate>, NSString, UIColor, UIView;
 
 @interface SUWebView : UIWebView {
-    unsigned int _scrollingDisabled : 1;
     BOOL _isPinned;
     UIColor *_originalBackgroundColor;
     BOOL _originalShowsBackgroundShadow;
     float _pinnedHeaderInsetAdjustment;
     UIView *_pinnedHeaderView;
+    unsigned int _scrollingDisabled : 1;
     BOOL _showsTopBackgroundShadow;
     int _synchronousLayoutCount;
     UIColor *_topBackgroundColor;

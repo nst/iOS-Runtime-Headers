@@ -77,8 +77,8 @@
 - (void)_beginSearchingForSensorAfterLink;
 - (void)_cancelWorkoutObserverTimer;
 - (void)_linkStateChangedNotification:(id)arg1;
-- (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)_postNotificationName:(id)arg1;
+- (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (id)_powerSongPersistentUIDString;
 - (void)_remoteCommandIssued:(id)arg1;
 - (void)_searchStateChangedNotification:(id)arg1;

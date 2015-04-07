@@ -5,27 +5,6 @@
 @class NSMutableDictionary, NSString, TSKSelection, TSPObject<TSKModel>;
 
 @interface TPArchivedViewState : TSPObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     NSMutableDictionary *_chartUIState;
     BOOL _inspectorHidden;
     BOOL _layoutBordersVisible;
@@ -40,8 +19,29 @@
     BOOL _showsPageNavigator;
     float _viewScale;
     int _viewScaleMode;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _visibleRect;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _windowFrame;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _wordCountHUDPosition;
     int _wordCountHUDType;
     BOOL _wordCountHUDVisible;

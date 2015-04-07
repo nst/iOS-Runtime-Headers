@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface MIDINetworkSession : NSObject {
-    struct _MIDINetworkSessionImpl { struct OpaqueMIDIEntity {} *x1; struct OpaqueMIDIEndpoint {} *x2; struct OpaqueMIDIEndpoint {} *x3; id x4; id x5; struct ContactOrConnectionSet { boolx_6_1_1; id x_6_1_2; } x6; } *_impl;
+    struct _MIDINetworkSessionImpl { struct OpaqueMIDIEntity {} *x1; struct OpaqueMIDIEndpoint {} *x2; struct OpaqueMIDIEndpoint {} *x3; id x4; id x5; struct ContactOrConnectionSet { bool x_6_1_1; id x_6_1_2; } x6; } *_impl;
 }
 
 @property unsigned int connectionPolicy;

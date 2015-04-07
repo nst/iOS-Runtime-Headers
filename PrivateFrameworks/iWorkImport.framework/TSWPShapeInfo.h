@@ -9,7 +9,7 @@
 
 @class NSObject<TSDContainerInfo>, NSString, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSWPColumns, TSWPPadding, TSWPShapeStyle, TSWPStorage;
 
-@interface TSWPShapeInfo : TSDShapeInfo <TSDMixing, TSDContainerInfo, TSWPStorageParent, TSDSelectionStatisticsContributor> {
+@interface TSWPShapeInfo : TSDShapeInfo <TSDContainerInfo, TSDMixing, TSDSelectionStatisticsContributor, TSWPStorageParent> {
     TSWPStorage *_containedStorage;
 }
 
@@ -74,10 +74,10 @@
 - (BOOL)displaysInstructionalText;
 - (void)fixPositionOfImportedAutosizedShape;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4 wpStorage:(id)arg5;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 wpStorage:(id)arg4;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4 wpStorage:(id)arg5;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 wpStorage:(id)arg4;
 - (id)instructionalText;
 - (BOOL)isBulleted;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;

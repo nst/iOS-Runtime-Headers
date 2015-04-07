@@ -4,7 +4,7 @@
 
 @class <PCInterfaceUsabilityMonitorDelegate>, CUTWeakReference, NSObject<OS_dispatch_queue>, NSString, PCInterfaceUsabilityMonitor;
 
-@interface PCWWANUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorProtocol, PCInterfaceUsabilityMonitorDelegate> {
+@interface PCWWANUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorDelegate, PCInterfaceUsabilityMonitorProtocol> {
     NSObject<OS_dispatch_queue> *_ctServerQueue;
     struct __CFString { } *_currentRAT;
     NSObject<OS_dispatch_queue> *_delegateQueue;

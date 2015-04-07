@@ -13,7 +13,11 @@
     NSMutableArray *_fixedZones;
     NSMutableDictionary *_pcsInfoByZoneID;
     NSArray *_zoneIDs;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _zonePCSRepairProgressBlock;
+
 }
 
 @property(retain) NSMutableArray * fetchedZones;

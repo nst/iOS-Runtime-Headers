@@ -4,7 +4,7 @@
 
 @class <TSCHStyleActAlike>, NSArray, NSString, TSCHChartStyleState;
 
-@interface TSCHChartStylePreset : TSPObject <TSPCopying, TSSPreset, TSCHStyleSwapSupporting> {
+@interface TSCHChartStylePreset : TSPObject <TSCHStyleSwapSupporting, TSPCopying, TSSPreset> {
     NSArray *mCategoryAxisStyles;
     <TSCHStyleActAlike> *mChartStyle;
     <TSCHStyleActAlike> *mLegendStyle;
@@ -51,12 +51,12 @@
 - (id)description;
 - (void)drawSwatchInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 uuid:(struct __CFUUID { }*)arg8;
-- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7;
-- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isEquivalentToPreset:(id)arg1 outReasons:(id*)arg2;
+- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6;
+- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7;
+- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 uuid:(struct __CFUUID { }*)arg8;
 - (BOOL)isEquivalentToPreset:(id)arg1;
+- (BOOL)isEquivalentToPreset:(id)arg1 outReasons:(id*)arg2;
 - (BOOL)isThemeEquivalent:(id)arg1;
 - (id)legendStyle;
 - (id)p_initWithContext:(id)arg1;

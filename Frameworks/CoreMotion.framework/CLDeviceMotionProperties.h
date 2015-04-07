@@ -3,8 +3,8 @@
  */
 
 @interface CLDeviceMotionProperties : NSObject {
-    boolfWantsPowerConservativeDeviceMotion;
     int fMode;
+    bool fWantsPowerConservativeDeviceMotion;
 }
 
 @property int mode;

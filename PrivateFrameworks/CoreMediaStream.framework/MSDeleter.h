@@ -4,7 +4,7 @@
 
 @class <MSDeleterDelegate>, MSDeleteStreamsProtocol, MSMediaStreamDaemon, MSObjectQueue, NSMutableArray, NSString;
 
-@interface MSDeleter : MSCupidStateMachine <MSDeleter, MSDeleteStreamsProtocolDelegate> {
+@interface MSDeleter : MSCupidStateMachine <MSDeleteStreamsProtocolDelegate, MSDeleter> {
     int _batchSize;
     MSMediaStreamDaemon *_daemon;
     <MSDeleterDelegate> *_delegate;

@@ -9,10 +9,21 @@
 @class GEOMapAccess, GEOMapTileFinder;
 
 @interface GEOMapEdgeBuilder : GEOMapRequest {
+    BOOL _buildAhead;
+    BOOL _buildBehind;
+    GEOMapTileFinder *_currentTileFinder;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _edgeHandler;
+
     struct Matrix<float, 2, 1> { 
         float _e[2]; 
+    } _firstTilePoint;
     struct Matrix<float, 2, 1> { 
         float _e[2]; 
+    } _lastTilePoint;
+    BOOL _searchDirection;
     struct unordered_set<_GEOTileKey, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<_GEOTileKey> > { 
         struct __hash_table<_GEOTileKey, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<_GEOTileKey> > { 
             struct unique_ptr<std::__1::__hash_node<_GEOTileKey, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<_GEOTileKey, void *> *> > > { 
@@ -37,13 +48,6 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    BOOL _buildAhead;
-    BOOL _buildBehind;
-    GEOMapTileFinder *_currentTileFinder;
-    id _edgeHandler;
-    } _firstTilePoint;
-    } _lastTilePoint;
-    BOOL _searchDirection;
     } _tileKeysSeen;
 }
 

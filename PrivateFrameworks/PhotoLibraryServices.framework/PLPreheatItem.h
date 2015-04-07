@@ -3,13 +3,13 @@
  */
 
 @interface PLPreheatItem : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     int _bestFormat;
     int _format;
     BOOL _heated;
     int _imageType;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _optimalSourcePixelSize;
     int _prefetchCount;
 }

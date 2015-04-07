@@ -3,8 +3,8 @@
  */
 
 @interface __NSDictionaryI : NSDictionary {
-    unsigned int _used : 26;
     unsigned int _szidx : 6;
+    unsigned int _used : 26;
 }
 
 + (id)__new:(const id*)arg1 :(const id*)arg2 :(unsigned int)arg3 :(BOOL)arg4 :(BOOL)arg5;

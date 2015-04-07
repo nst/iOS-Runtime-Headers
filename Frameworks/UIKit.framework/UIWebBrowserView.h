@@ -4,7 +4,10 @@
 
 @class <UIWebAutoFillDelegate>, DOMNode, NSHashTable, NSLock, NSMutableArray, NSMutableSet, NSObject<UIFormPeripheral>, NSString, NSTimer, UIResponder, UIView, UIWebFormAccessory, UIWebFormDelegate, UIWebPDFView, UIWebTouchEventsGestureRecognizer;
 
-@interface UIWebBrowserView : UIWebDocumentView <UIWebTouchEventsGestureRecognizerDelegate, UIWebFormAccessoryDelegate, _UIWebRotationDelegate, WBUFormAutoFillWebView> {
+@interface UIWebBrowserView : UIWebDocumentView <UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, WBUFormAutoFillWebView, _UIWebRotationDelegate> {
+    UIWebFormAccessory *_accessory;
+    unsigned int _accessoryEnabled : 1;
+    NSHashTable *_activeHighlighters;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,6 +17,21 @@
             float width; 
             float height; 
         } size; 
+    } _addressViewBounds;
+    unsigned int _allowDOMFocusRedirects : 1;
+    unsigned int _alwaysDispatchesScrollEvents : 1;
+    DOMNode *_assistedNodeStartingFocusRedirects;
+    unsigned int _audioSessionCategoryOverride;
+    <UIWebAutoFillDelegate> *_autoFillDelegate;
+    DOMNode *_currentAssistedNode;
+    NSMutableArray *_deferredTouchEvents;
+    unsigned int _dispatchedTouchEvents;
+    UIResponder *_editingDelegateForEverythingExceptForms;
+    unsigned int _forceInputView : 1;
+    UIWebFormDelegate *_formDelegate;
+    unsigned int _formIsAutoFilling : 1;
+    unsigned int _hasEditedTextField : 1;
+    NSObject<UIFormPeripheral> *_input;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,6 +41,9 @@
             float width; 
             float height; 
         } size; 
+    } _inputViewBounds;
+    unsigned int _inputViewObeysDOMFocus : 1;
+    float _lastAdjustmentForScroller;
     struct { 
         NSMutableArray *all; 
         NSMutableArray *html; 
@@ -32,34 +53,13 @@
         NSMutableArray *warning; 
         NSMutableArray *tip; 
         NSMutableArray *log; 
-    struct { 
-        UIWebPDFView *view; 
-        NSTimer *timer; 
-    unsigned int _accessoryEnabled : 1;
-    unsigned int _forceInputView : 1;
-    unsigned int _formIsAutoFilling : 1;
-    unsigned int _inputViewObeysDOMFocus : 1;
-    unsigned int _allowDOMFocusRedirects : 1;
-    unsigned int _hasEditedTextField : 1;
-    unsigned int _alwaysDispatchesScrollEvents : 1;
-    UIWebFormAccessory *_accessory;
-    NSHashTable *_activeHighlighters;
-    } _addressViewBounds;
-    DOMNode *_assistedNodeStartingFocusRedirects;
-    unsigned int _audioSessionCategoryOverride;
-    <UIWebAutoFillDelegate> *_autoFillDelegate;
-    DOMNode *_currentAssistedNode;
-    NSMutableArray *_deferredTouchEvents;
-    unsigned int _dispatchedTouchEvents;
-    UIResponder *_editingDelegateForEverythingExceptForms;
-    UIWebFormDelegate *_formDelegate;
-    NSObject<UIFormPeripheral> *_input;
-    } _inputViewBounds;
-    float _lastAdjustmentForScroller;
     } _messages;
     NSMutableSet *_overflowScrollViews;
     NSMutableSet *_overflowScrollViewsPendingDeletion;
     NSMutableSet *_overflowScrollViewsPendingInsertion;
+    struct { 
+        UIWebPDFView *view; 
+        NSTimer *timer; 
     } _pdf;
     BOOL _pendingGeometryChangeAfterOverflowScroll;
     NSLock *_pendingOverflowDataLock;
@@ -100,8 +100,8 @@
 - (void)_assistFormNode:(id)arg1;
 - (void)_autoFillFrame:(id)arg1;
 - (void)_beginAllowingFocusRedirects;
-- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(unsigned int)arg4 toValue:(float)arg5;
 - (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(unsigned int)arg4;
+- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(unsigned int)arg4 toValue:(float)arg5;
 - (void)_clearAllConsoleMessages;
 - (void)_clearFormAutoFillStateForFrame:(id)arg1;
 - (void)_clearSelectionAndUI;
@@ -168,8 +168,8 @@
 - (void)_webTouchEventsRecognized:(id)arg1;
 - (void)_webViewFormEditedStatusHasChanged:(id)arg1;
 - (void)_zoomToNode:(id)arg1 forceScroll:(BOOL)arg2;
-- (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ensuringVisibilityOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withScale:(float)arg3 forceScroll:(BOOL)arg4 formAssistantFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 animationDuration:(double)arg6;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ensuringVisibilityOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withScale:(float)arg3 forceScroll:(BOOL)arg4;
+- (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ensuringVisibilityOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withScale:(float)arg3 forceScroll:(BOOL)arg4 formAssistantFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 animationDuration:(double)arg6;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withScale:(float)arg2;
 - (void)acceptedAutoFillWord:(id)arg1;
 - (void)accessoryAutoFill;

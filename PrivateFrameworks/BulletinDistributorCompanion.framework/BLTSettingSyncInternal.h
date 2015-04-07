@@ -4,7 +4,7 @@
 
 @class BBObserver, BBSettingsGateway, BLTSectionConfiguration, BLTSettingSyncServer, NPSManager, NSString;
 
-@interface BLTSettingSyncInternal : NSObject <MCProfileConnectionObserver, BLTSettingSyncing> {
+@interface BLTSettingSyncInternal : NSObject <BLTSettingSyncing, MCProfileConnectionObserver> {
     BLTSettingSyncServer *_connection;
     BOOL _dndEnabled;
     BOOL _dndStateUpdatedAtLeastOnce;

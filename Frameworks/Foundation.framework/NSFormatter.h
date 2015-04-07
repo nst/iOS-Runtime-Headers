@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSFormatter : NSObject <NSCopying, NSCoding> {
+@interface NSFormatter : NSObject <NSCoding, NSCopying> {
 }
 
 - (void)_gkUpdateLocale;

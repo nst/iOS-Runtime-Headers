@@ -20,8 +20,8 @@
 
 - (void).cxx_destruct;
 - (id)_initWithInterfaceProperty:(id)arg1 viewControllerID:(id)arg2 propertyIndex:(int)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5;
-- (void)_sendValueChanged:(id)arg1 forProperty:(id)arg2;
 - (void)_sendValueChanged:(id)arg1;
+- (void)_sendValueChanged:(id)arg1 forProperty:(id)arg2;
 - (void)_setImage:(id)arg1 forProperty:(id)arg2;
 - (void)_setImageData:(id)arg1 forProperty:(id)arg2;
 - (void)_setImageNamed:(id)arg1 forProperty:(id)arg2;

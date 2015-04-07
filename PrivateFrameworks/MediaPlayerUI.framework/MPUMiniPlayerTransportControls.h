@@ -31,8 +31,8 @@
 - (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setItem:(id)arg1;
-- (void)setProspectivePlaybackInformation:(id)arg1 animated:(BOOL)arg2;
 - (void)setProspectivePlaybackInformation:(id)arg1;
+- (void)setProspectivePlaybackInformation:(id)arg1 animated:(BOOL)arg2;
 - (id)tintColorForPart:(unsigned long long)arg1;
 - (BOOL)usesTintColorForControls;
 

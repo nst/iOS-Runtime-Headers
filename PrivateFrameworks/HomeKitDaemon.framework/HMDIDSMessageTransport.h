@@ -4,7 +4,7 @@
 
 @class HMMessageDispatcher, IDSService, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
-@interface HMDIDSMessageTransport : NSObject <IDSServiceDelegate, HMMessageTransport, HMIDSMessageTransport> {
+@interface HMDIDSMessageTransport : NSObject <HMIDSMessageTransport, HMMessageTransport, IDSServiceDelegate> {
     IDSService *_idsService;
     HMMessageDispatcher *_messageDispatcher;
     NSMutableSet *_peerResidentDeviceAddresses;
@@ -36,10 +36,10 @@
 - (void)_removePendingResponseTimerForTransaction:(id)arg1;
 - (void)_startPendingResponseTimer:(id)arg1 identifier:(id)arg2;
 - (void)configure:(id)arg1;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 destination:(id)arg5 responseHandler:(id)arg6;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 destination:(id)arg5;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id)arg5;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
+- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 destination:(id)arg5;
+- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 destination:(id)arg5 responseHandler:(id)arg6;
+- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id)arg5;
 - (id)idsService;
 - (id)initWithIDSService:(id)arg1;
 - (id)messageDispatcher;

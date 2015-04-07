@@ -5,6 +5,27 @@
 @class MIPMovie, MIPPodcast, MIPSong, MIPTVShow, NSMutableArray, NSString;
 
 @interface MIPMediaItem : PBCodable <NSCopying> {
+    long long _accountId;
+    NSString *_artworkId;
+    long long _bookmarkTimeMilliseconds;
+    NSString *_chapterMetadataUrl;
+    int _cloudStatus;
+    NSString *_comment;
+    int _contentRating;
+    int _contentRatingLevel;
+    NSString *_copyright;
+    long long _creationDateTime;
+    long long _drmKey1IdCode;
+    long long _drmKey2IdCode;
+    long long _drmPlatformIdCode;
+    int _drmVersionsCode;
+    long long _duration;
+    BOOL _explicitContent;
+    NSString *_extrasUrl;
+    long long _familyAccountId;
+    int _fileKind;
+    long long _fileSize;
+    NSString *_grouping;
     struct { 
         unsigned int accountId : 1; 
         unsigned int bookmarkTimeMilliseconds : 1; 
@@ -45,27 +66,6 @@
         unsigned int isPlaylistOnly : 1; 
         unsigned int needsReporting : 1; 
         unsigned int rememberBookmark : 1; 
-    long long _accountId;
-    NSString *_artworkId;
-    long long _bookmarkTimeMilliseconds;
-    NSString *_chapterMetadataUrl;
-    int _cloudStatus;
-    NSString *_comment;
-    int _contentRating;
-    int _contentRatingLevel;
-    NSString *_copyright;
-    long long _creationDateTime;
-    long long _drmKey1IdCode;
-    long long _drmKey2IdCode;
-    long long _drmPlatformIdCode;
-    int _drmVersionsCode;
-    long long _duration;
-    BOOL _explicitContent;
-    NSString *_extrasUrl;
-    long long _familyAccountId;
-    int _fileKind;
-    long long _fileSize;
-    NSString *_grouping;
     } _has;
     BOOL _hasLocalAsset;
     BOOL _hidden;

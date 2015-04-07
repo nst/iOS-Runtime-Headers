@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@interface SCRCIndexMap : NSObject <NSCopying, NSCoding> {
+@interface SCRCIndexMap : NSObject <NSCoding, NSCopying> {
     struct __CFDictionary { } *_map;
 }
 

@@ -4,7 +4,7 @@
 
 @class <MSPublishStorageProtocol>, <MSPublisherDelegate>, MSMediaStreamDaemon, MSObjectQueue, MSPublishStreamsProtocol, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSURL;
 
-@interface MSPublisher : MSCupidStateMachine <MSPublisher, MSPublishStreamsProtocolDelegate, MSPublishStorageProtocolDelegate> {
+@interface MSPublisher : MSCupidStateMachine <MSPublishStorageProtocolDelegate, MSPublishStreamsProtocolDelegate, MSPublisher> {
     MSMediaStreamDaemon *_daemon;
     <MSPublisherDelegate> *_delegate;
     MSObjectQueue *_derivativesQueue;
@@ -101,7 +101,7 @@
 - (void)setStorageProtocolURL:(id)arg1;
 - (void)stop;
 - (id)storageProtocolURL;
-- (void)submitAssetCollectionsForPublication:(id)arg1 skipAssetCollections:(id)arg2;
 - (void)submitAssetCollectionsForPublication:(id)arg1;
+- (void)submitAssetCollectionsForPublication:(id)arg1 skipAssetCollections:(id)arg2;
 
 @end

@@ -5,11 +5,11 @@
 @class NSAttributedString, NSString, NSURL, UIImage;
 
 @interface SKUIBadgeViewElement : SKUIViewElement {
+    UIImage *_fallbackImage;
+    NSString *_resourceName;
     struct CGSize { 
         float width; 
         float height; 
-    UIImage *_fallbackImage;
-    NSString *_resourceName;
     } _size;
     NSString *_text;
     NSURL *_url;

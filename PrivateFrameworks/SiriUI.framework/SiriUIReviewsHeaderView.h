@@ -5,15 +5,15 @@
 @class UIView;
 
 @interface SiriUIReviewsHeaderView : SiriUIReusableSubtitledHeaderView {
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
     UIView *_providerView;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _providerViewOffset;
     UIView *_ratingView;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _ratingViewOffset;
     float _verticalSpaceNeededForRatingsView;
 }

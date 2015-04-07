@@ -12,13 +12,25 @@
     NSObject<OS_xpc_object> *_conn;
     NSMutableSet *_connections;
     NSObject<OS_dispatch_queue> *_connectionsQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _defaultMessageHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _disconnectHandler;
+
     NSObject<OS_dispatch_queue> *_eventQueue;
     NSMutableDictionary *_handlerMap;
     double _idleTimerInterval;
     NSObject<OS_dispatch_source> *_idleTimerSource;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shutdownHandler;
+
     BOOL _timeoutPending;
     BOOL _timerHasFiredSinceLastMessage;
     NSObject<OS_dispatch_queue> *_timerQueue;
@@ -39,8 +51,8 @@
 - (void)dealloc;
 - (id)defaultMessageHandler;
 - (id)disconnectHandler;
-- (id)initListenerWithServiceName:(id)arg1 onQueue:(id)arg2;
 - (id)initListenerWithServiceName:(id)arg1;
+- (id)initListenerWithServiceName:(id)arg1 onQueue:(id)arg2;
 - (void)setDefaultMessageHandler:(id)arg1;
 - (void)setDisconnectHandler:(id)arg1;
 - (void)setHandlerForMessageName:(id)arg1 handler:(id)arg2;

@@ -54,8 +54,8 @@
 - (void)setTemporaryDirectory:(id)arg1;
 - (void)setTheme:(id)arg1;
 - (void)setVisibleRange:(id)arg1;
-- (id)sheetAtIndex:(unsigned int)arg1 loadIfNeeded:(bool)arg2;
 - (id)sheetAtIndex:(unsigned int)arg1;
+- (id)sheetAtIndex:(unsigned int)arg1 loadIfNeeded:(bool)arg2;
 - (unsigned int)sheetCount;
 - (id)temporaryDirectory;
 - (id)theme;

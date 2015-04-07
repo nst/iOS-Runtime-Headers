@@ -4,7 +4,10 @@
 
 @class NSIndexSet, NSString, TSCH3DChartRep, TSCH3DScene;
 
-@interface TSCH3DChartRepAnimationTextureSceneDelegate : NSObject <TSCH3DSceneObjectDelegator, TSCH3DSceneDelegate, TSCH3DChartAllSceneObjectDelegate, TSCHUnretainedParent> {
+@interface TSCH3DChartRepAnimationTextureSceneDelegate : NSObject <TSCH3DChartAllSceneObjectDelegate, TSCH3DSceneDelegate, TSCH3DSceneObjectDelegator, TSCHUnretainedParent> {
+    int mChunkStage;
+    TSCH3DChartRep *mParent;
+    TSCH3DScene *mScene;
     struct ChartRepRenderIndexSet { 
         TSCH3DChartRep *rep; 
         BOOL built; 
@@ -16,9 +19,6 @@
             NSIndexSet *mValue; 
         } values; 
         int currentChunk; 
-    int mChunkStage;
-    TSCH3DChartRep *mParent;
-    TSCH3DScene *mScene;
     } mShouldRender;
 }
 

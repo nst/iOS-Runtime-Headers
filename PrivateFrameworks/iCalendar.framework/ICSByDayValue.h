@@ -19,8 +19,8 @@
 - (int)compare:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithWeekday:(int)arg1 number:(id)arg2;
 - (id)initWithWeekday:(int)arg1;
+- (id)initWithWeekday:(int)arg1 number:(id)arg2;
 - (id)number;
 - (void)setNumber:(id)arg1;
 - (void)setWeekday:(int)arg1;

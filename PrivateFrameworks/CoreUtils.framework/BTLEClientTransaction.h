@@ -12,11 +12,23 @@
     BTLEClient *_client;
     NSString *_readCharacteristic;
     NSData *_readData;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _readHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _replyHandler;
+
     NSString *_writeCharacteristic;
     NSData *_writeData;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _writeHandler;
+
 }
 
 @property(retain) BTLEClient * client;

@@ -9,8 +9,8 @@
     NSArray *_amounts;
     NSString *_description;
     NSString *_identifier;
-    NSString *_legalText2;
     NSString *_legalText;
+    NSString *_legalText2;
     SKUIArtwork *_logoArtwork;
     NSString *_name;
 }
@@ -19,8 +19,8 @@
 @property(readonly) NSString * charityDescription;
 @property(readonly) NSArray * donationAmounts;
 @property(readonly) NSString * identifier;
-@property(readonly) NSString * legalText2;
 @property(readonly) NSString * legalText;
+@property(readonly) NSString * legalText2;
 @property(readonly) SKUIArtwork * logoArtwork;
 @property(readonly) NSString * name;
 
@@ -30,8 +30,8 @@
 - (id)donationAmounts;
 - (id)identifier;
 - (id)initWithCharityDictionary:(id)arg1;
-- (id)legalText2;
 - (id)legalText;
+- (id)legalText2;
 - (id)logoArtwork;
 - (id)name;
 

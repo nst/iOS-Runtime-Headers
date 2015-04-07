@@ -5,8 +5,6 @@
 @class DeliveryAccount, MFDeliveryResult, MFMessage, MFMutableMessageHeaders, MFPlainTextDocument, MailAccount, NSArray, NSDictionary, NSString;
 
 @interface MFMailDelivery : NSObject {
-    unsigned int _threaded : 1;
-    unsigned int _useCellDataOnly : 1;
     DeliveryAccount *_account;
     MailAccount *_archiveAccount;
     NSArray *_charsets;
@@ -22,6 +20,8 @@
     MFPlainTextDocument *_plainTextAlternative;
     MFDeliveryResult *_result;
     BOOL _textPartsAreHTML;
+    unsigned int _threaded : 1;
+    unsigned int _useCellDataOnly : 1;
 }
 
 @property(retain) NSDictionary * compositionSpecification;

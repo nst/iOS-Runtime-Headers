@@ -4,7 +4,7 @@
 
 @class MPAVController, MPAVItem, MPNowPlayingObserver, MPQueueFeeder, MPUApplicationDefaults, MPULyricsView, MPUNowPlayingPlaybackControlsView, MPUNowPlayingTitlesView, MPURatingControl, NSString, NSTimer, UINavigationBar, UINavigationItem, UITapGestureRecognizer, UIView, UIViewController;
 
-@interface MPUNowPlayingViewController : UIViewController <MPURatingControlDelegate, UIGestureRecognizerDelegate, UINavigationBarDelegate, MPTransportControlsTarget, MPUNowPlayingPlaybackControlsViewDelegate> {
+@interface MPUNowPlayingViewController : UIViewController <MPTransportControlsTarget, MPUNowPlayingPlaybackControlsViewDelegate, MPURatingControlDelegate, UIGestureRecognizerDelegate, UINavigationBarDelegate> {
     MPUApplicationDefaults *_applicationDefaults;
     BOOL _canMarqueeText;
     UIView *_contentView;

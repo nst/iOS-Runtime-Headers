@@ -51,8 +51,8 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (int)indexOfFirstDataSourceSection;
 - (id)indexPathForDataSourceIndex:(int)arg1;
-- (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (id)initWithDataSource:(id)arg1;
+- (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (BOOL)isTableViewLoaded;
 - (int)numberOfActionRowsInTableView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
@@ -69,6 +69,7 @@
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldScrollToFirstDataSourceSectionOnInitialAppearance;
 - (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
+- (id)tableView;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
@@ -83,7 +84,6 @@
 - (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)tableView;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

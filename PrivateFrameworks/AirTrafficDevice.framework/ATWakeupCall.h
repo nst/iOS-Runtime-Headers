@@ -10,7 +10,11 @@
 
 @interface ATWakeupCall : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
     NSNetServiceBrowser *_browser;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     NSMutableArray *_hostLibraryIdentifiers;
     unsigned int _hostsToResolve;
     NSMutableArray *_resolvedLibraryIdentifiers;

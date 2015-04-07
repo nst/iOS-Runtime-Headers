@@ -5,15 +5,6 @@
 @class NSMutableArray, NSNumber, NSObject<SLSheetViewHostProtocol>, NSString, SLSheetContentView, SLSheetMasklayer, SLSheetNavigationController, SLSheetPreviewImageSource, SLSheetRootViewController, UIAlertController, UIImage, UITextView, UIView, UIViewController;
 
 @interface SLComposeServiceViewController : UIViewController <UINavigationControllerDelegate, UITextViewDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     UIAlertController *_alertController;
     NSMutableArray *_attachments;
     UIViewController *_autoCompletionViewController;
@@ -36,6 +27,15 @@
     BOOL _preventSheetPositionChanges;
     SLSheetPreviewImageSource *_previewImageSource;
     UIImage *_serviceIconImage;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _sheetFrameStartingRotation;
     SLSheetRootViewController *_sheetRootViewController;
     BOOL _suppressKeyboard;
@@ -126,9 +126,9 @@
 - (id)loadPreviewView;
 - (void)loadView;
 - (unsigned long)maxImageAttachmentSize;
+- (id)navigationController;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (id)navigationController;
 - (void)networkActivityIndicatorNotification:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)placeholder;
@@ -160,8 +160,8 @@
 - (void)setSuppressKeyboard:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (id)sheetActions;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sheetFrameForViewController:(id)arg1 verticalSizeClass:(int)arg2 orientation:(int)arg3 topSpaceProportion:(float)arg4 topSpaceOffset:(float)arg5;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sheetFrameForViewController:(id)arg1 verticalSizeClass:(int)arg2 orientation:(int)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sheetFrameForViewController:(id)arg1 verticalSizeClass:(int)arg2 orientation:(int)arg3 topSpaceProportion:(float)arg4 topSpaceOffset:(float)arg5;
 - (id)sheetRootViewController;
 - (id)sheetView;
 - (BOOL)shouldAutorotate;

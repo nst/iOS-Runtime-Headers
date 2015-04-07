@@ -4,7 +4,7 @@
 
 @class <ABMembersControllerDelegate>, <ABMembersControllerSearchCompletionDelegate>, <ABStyleProvider>, ABMembersDataSource, ABMembersFilteredDataSource, NSIndexPath, NSOperationQueue, NSString, UISearchBar, UISearchController, UISearchDisplayController, UITableView, UITableViewController, UIViewController, _UIContentUnavailableView, _UINavigationControllerPalette;
 
-@interface ABMembersController : ABContentController <UISearchControllerDelegate, UISearchResultsUpdating, ABMembersDataSourceDelegate, UITextFieldDelegate, UISearchDisplayDelegate, ABSearchOperationDelegate, UISearchBarDelegate> {
+@interface ABMembersController : ABContentController <ABMembersDataSourceDelegate, ABSearchOperationDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchDisplayDelegate, UISearchResultsUpdating, UITextFieldDelegate> {
     unsigned int _cellsCreated;
     _UIContentUnavailableView *_contentUnavailableView;
     int _initiallyVisibleRow;

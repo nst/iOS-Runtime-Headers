@@ -4,34 +4,22 @@
 
 @class NSArray, NSString, TSCECalculationEngine, TSCECellCoordinateVector, TSCEOwnerFormulaMap, TSDFill, TSDStroke, TSKDocumentRoot, TSTCell, TSTCellDictionary, TSTCellStyle, TSTConditionalStyleFormulaOwner, TSTHiddenStateFormulaOwner, TSTImportWarningSetByCoordinateMap, TSTSortRuleReferenceTracker, TSTTableDataStore, TSTTableFilterSet, TSTTableSortOrder, TSTTableStyle, TSWPParagraphStyle, TSWPShapeStyle, TSWPStorage;
 
-@interface TSTTableModel : TSPObject <TSTTableStrokeProviding, TSDMixing> {
-    struct { 
-        TSTTableStyle *tableStyle; 
-        TSTCellStyle *bodyCellStyle; 
-        TSTCellStyle *headerRowCellStyle; 
-        TSTCellStyle *headerColumnCellStyle; 
-        TSTCellStyle *footerRowCellStyle; 
-        TSWPParagraphStyle *bodyTextStyle; 
-        TSWPParagraphStyle *headerRowTextStyle; 
-        TSWPParagraphStyle *headerColumnTextStyle; 
-        TSWPParagraphStyle *footerRowTextStyle; 
-        TSWPParagraphStyle *tableNameStyle; 
-        TSWPShapeStyle *tableNameShapeStyle; 
+@interface TSTTableModel : TSPObject <TSDMixing, TSTTableStrokeProviding> {
+    TSCECalculationEngine *mCalcEngine;
+    TSTCellDictionary *mCellsPendingWrite;
+    TSCECellCoordinateVector *mCellsToInvalidateAfterRecalc;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    } mCellsToInvalidateAfterRecalcLock;
+    TSCECellCoordinateVector *mCellsToInvalidateNonoverflowingAfterRecalc;
+    TSTConditionalStyleFormulaOwner *mConditionalStyleFormulaOwner;
+    TSTTableDataStore *mDataStore;
     struct _TSTDefaultCellBlock { 
         TSTCell *defaultBodyCell; 
         TSTCell *defaultHeaderRowCell; 
         TSTCell *defaultHeaderColumnCell; 
         TSTCell *defaultFooterRowCell; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    TSCECalculationEngine *mCalcEngine;
-    TSTCellDictionary *mCellsPendingWrite;
-    TSCECellCoordinateVector *mCellsToInvalidateAfterRecalc;
-    } mCellsToInvalidateAfterRecalcLock;
-    TSCECellCoordinateVector *mCellsToInvalidateNonoverflowingAfterRecalc;
-    TSTConditionalStyleFormulaOwner *mConditionalStyleFormulaOwner;
-    TSTTableDataStore *mDataStore;
     } mDefaultCells;
     float mDefaultColumnWidth;
     float mDefaultRowHeight;
@@ -59,6 +47,18 @@
     TSTTableSortOrder *mSortOrder;
     TSTSortRuleReferenceTracker *mSortRuleReferenceTracker;
     BOOL mStyleApplyClearsAll;
+    struct { 
+        TSTTableStyle *tableStyle; 
+        TSTCellStyle *bodyCellStyle; 
+        TSTCellStyle *headerRowCellStyle; 
+        TSTCellStyle *headerColumnCellStyle; 
+        TSTCellStyle *footerRowCellStyle; 
+        TSWPParagraphStyle *bodyTextStyle; 
+        TSWPParagraphStyle *headerRowTextStyle; 
+        TSWPParagraphStyle *headerColumnTextStyle; 
+        TSWPParagraphStyle *footerRowTextStyle; 
+        TSWPParagraphStyle *tableNameStyle; 
+        TSWPShapeStyle *tableNameShapeStyle; 
     } mStyles;
     struct __CFUUID { } *mTableID;
     NSString *mTableName;
@@ -187,9 +187,9 @@
 - (id)cellsPendingWrite;
 - (id)cellsToInvalidateAfterRecalc;
 - (id)cellsToInvalidateNonoverflowingAfterRecalc;
-- (void)chooseUniqueNameInContainer:(id)arg1 forPaste:(BOOL)arg2 needsNewName:(BOOL)arg3 avoidNames:(id)arg4;
-- (void)chooseUniqueNameInContainer:(id)arg1 forPaste:(BOOL)arg2 needsNewName:(BOOL)arg3;
 - (void)chooseUniqueNameInContainer:(id)arg1 forPaste:(BOOL)arg2;
+- (void)chooseUniqueNameInContainer:(id)arg1 forPaste:(BOOL)arg2 needsNewName:(BOOL)arg3;
+- (void)chooseUniqueNameInContainer:(id)arg1 forPaste:(BOOL)arg2 needsNewName:(BOOL)arg3 avoidNames:(id)arg4;
 - (void)clearFromTableID;
 - (id)columnNameForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 cellRangeContainingName:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; }*)arg2 restrictToBodyRange:(BOOL)arg3;
 - (id)columnWidths;

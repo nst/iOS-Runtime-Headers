@@ -5,10 +5,10 @@
 @class HDCodableNanoSyncActivationRestore, HDCodableNanoSyncChangeSet, HDCodableNanoSyncStatus, NSData, NSString;
 
 @interface HDCodableNanoSyncMessage : PBCodable <HDNanoSyncDescription, NSCopying> {
-    struct { 
-        unsigned int version : 1; 
     HDCodableNanoSyncActivationRestore *_activationRestore;
     HDCodableNanoSyncChangeSet *_changeSet;
+    struct { 
+        unsigned int version : 1; 
     } _has;
     NSData *_healthPairingUUID;
     NSData *_persistentPairingUUID;

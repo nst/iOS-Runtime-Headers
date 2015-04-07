@@ -48,8 +48,8 @@
 - (id)_storedDisplayLink;
 - (id)_updatedTargetActions;
 - (unsigned int)_warmUpModeRequirementsCount;
-- (void)addTarget:(id)arg1 selector:(SEL)arg2 frameInterval:(unsigned int)arg3;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2;
+- (void)addTarget:(id)arg1 selector:(SEL)arg2 frameInterval:(unsigned int)arg3;
 - (void)beginRequiringWarmUpMode;
 - (void)dealloc;
 - (double)duration;

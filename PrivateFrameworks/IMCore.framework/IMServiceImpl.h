@@ -130,10 +130,10 @@
 - (BOOL)equalID:(id)arg1 andID:(id)arg2;
 - (BOOL)handlesChatInvites;
 - (BOOL)ignoresNetworkConnectivity;
+- (id)imABPeopleWithScreenName:(id)arg1;
 - (id)imABPeopleWithScreenName:(id)arg1 countryCode:(id)arg2 identifier:(int*)arg3;
 - (id)imABPeopleWithScreenName:(id)arg1 identifier:(int*)arg2;
 - (id)imABPeopleWithScreenName:(id)arg1 options:(unsigned int)arg2;
-- (id)imABPeopleWithScreenName:(id)arg1;
 - (id)infoForAllScreenNames;
 - (id)infoForPreferredScreenNames;
 - (id)infoForScreenName:(id)arg1;

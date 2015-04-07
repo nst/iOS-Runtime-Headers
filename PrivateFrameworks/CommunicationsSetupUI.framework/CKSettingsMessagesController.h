@@ -26,8 +26,8 @@
 - (id)_madridSettingsController;
 - (void)_setupAccountHandlers;
 - (void)_setupAccountHandlersForDisabling;
-- (void)_showMadridSetupIfNecessary:(BOOL)arg1;
 - (void)_showMadridSetupIfNecessary;
+- (void)_showMadridSetupIfNecessary:(BOOL)arg1;
 - (id)_smsRelayDevicesController;
 - (void)_startListeningForProfileChanges;
 - (void)_stopListeningForProfileChanges;

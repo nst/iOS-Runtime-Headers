@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface CKDPResponseOperationResultErrorExtension : PBCodable <NSCopying> {
+    NSString *_extensionName;
     struct { 
         unsigned int typeCode : 1; 
-    NSString *_extensionName;
     } _has;
     unsigned int _typeCode;
 }

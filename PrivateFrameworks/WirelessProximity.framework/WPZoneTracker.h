@@ -31,8 +31,8 @@
 - (id)delegate;
 - (id)description;
 - (void)getCurrentTrackedZones;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)messageArrived:(id)arg1;
 - (void)registerForZoneChangesMatching:(id)arg1;
 - (void)registerZonesFailed:(id)arg1;

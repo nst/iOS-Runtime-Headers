@@ -4,7 +4,7 @@
 
 @class <RMSDAAPControlSessionDelegate>, NSString, RMSDAAPLoginManager, RMSDAAPNowPlayingManager, RMSDAAPRequestManager, RMSDAAPTouchRemoteManager, RMSService;
 
-@interface RMSDAAPControlSession : NSObject <RMSDAAPNowPlayingManagerDelegate, RMSDAAPRequestManagerDelegate, RMSDAAPTouchRemoteManagerDelegate, RMSDAAPControlSession> {
+@interface RMSDAAPControlSession : NSObject <RMSDAAPControlSession, RMSDAAPNowPlayingManagerDelegate, RMSDAAPRequestManagerDelegate, RMSDAAPTouchRemoteManagerDelegate> {
     <RMSDAAPControlSessionDelegate> *_delegate;
     RMSDAAPLoginManager *_loginManager;
     RMSDAAPNowPlayingManager *_nowPlayingManager;

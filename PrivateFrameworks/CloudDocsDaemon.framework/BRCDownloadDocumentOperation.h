@@ -10,13 +10,33 @@
 
 @interface BRCDownloadDocumentOperation : BRCOperation <BRCDownloadOperation> {
     BRCDownloadContext *_context;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _downloadCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _downloadCurrentVersionCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _downloadLoserVersionCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _downloadThumbnailCompletionBlock;
+
     double _fractionCompleted;
     NSProgress *_progress;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
     BOOL _progressPublished;
 }
 

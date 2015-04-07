@@ -4,7 +4,7 @@
 
 @class <ABCardContentProvider>, <ABPersonEditDelegate>, <ABPersonViewControllerPrivateDelegate>, <ABStyleProvider>, <ABUnknownPersonViewControllerDelegate>, ABDatePickerViewController, ABMultiCellContentView_RelatedName, ABPeoplePickerNavigationController, ABPersonTableView, ABPersonTableViewDataSource, ABPersonTableViewLinkingDelegate, ABUIPerson, NSArray, NSIndexPath, NSString, UIBarButtonItem, UIPopoverController, UITableView, UIView, UIViewController;
 
-@interface ABPersonViewControllerHelper : NSObject <ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABPersonTableViewDataSourceDelegate, ABPickerViewControllerDismissDelegate, UIActionSheetDelegate, UIPopoverControllerDelegate, ABPopoverRepresentDelegate, ABPersonEditDelegate, ABPersonViewControllerDelegate, UIScrollViewDelegate, UIViewControllerRestoration> {
+@interface ABPersonViewControllerHelper : NSObject <ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABPersonEditDelegate, ABPersonTableViewDataSourceDelegate, ABPersonViewControllerDelegate, ABPickerViewControllerDismissDelegate, ABPopoverRepresentDelegate, UIActionSheetDelegate, UIPopoverControllerDelegate, UIScrollViewDelegate, UIViewControllerRestoration> {
     id _actionSheetDelegate;
     id _activeDialog;
     NSString *_addToPersonButtonTitle;
@@ -140,8 +140,8 @@
 - (void)loadUnknownViewWithPerson:(id)arg1 allowActions:(BOOL)arg2;
 - (void)loadViewWithPerson:(id)arg1 allowDeletion:(BOOL)arg2 allowActions:(BOOL)arg3;
 - (BOOL)makeFirstFieldBecomeFirstResponder;
-- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2 informDelegate:(BOOL)arg3;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2 informDelegate:(BOOL)arg3;
 - (id)newPersonViewDelegate;
 - (void)notifyScrollViewDidLoad;
 - (void)openSocialProfile:(id)arg1;
@@ -149,12 +149,12 @@
 - (void)peoplePickerNavigationController:(id)arg1 requestedLinkForPerson:(id)arg2;
 - (void)peoplePickerNavigationController:(id)arg1 setRelatedPerson:(id)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(int*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void)performAction:(int)arg1 forPropertyAtIndex:(int)arg2 inPropertyGroup:(id)arg3 withContext:(void*)arg4;
 - (void)performAction:(int)arg1 forPropertyAtIndex:(int)arg2 inPropertyGroup:(id)arg3;
+- (void)performAction:(int)arg1 forPropertyAtIndex:(int)arg2 inPropertyGroup:(id)arg3 withContext:(void*)arg4;
 - (void)performActionForPropertyAtIndex:(int)arg1 inPropertyGroup:(id)arg2 forCell:(id)arg3;
 - (void)performDefaultActionForPropertyAtIndex:(int)arg1 inPropertyGroup:(id)arg2;
 - (void)performInstantMessageActionForPropertyAtIndex:(int)arg1 inPropertyGroup:(id)arg2 forCell:(id)arg3;
@@ -212,8 +212,8 @@
 - (void)presentNewContactViewControllerForAddToContacts:(id)arg1;
 - (void)presentPeoplePickerNavigationControllerForAddToContacts:(id)arg1;
 - (void)presentPeoplePickerNavigationControllerForRelatedNames:(id)arg1;
-- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)pushViewController:(id)arg1;
+- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)reloadData;
 - (void)reloadNameData;
 - (void)removeDisplayedPeople;

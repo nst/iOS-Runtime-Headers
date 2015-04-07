@@ -38,13 +38,13 @@
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)scriptAttributeKeys;
 - (void)setNavigationBar:(id)arg1;
-- (void)setNavigationBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setNavigationBarHidden:(BOOL)arg1;
-- (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setNavigationBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setToolbarHidden:(id)arg1;
+- (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setTopViewController:(id)arg1;
-- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)setViewControllers:(id)arg1;
+- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (id)toolbarHidden;
 - (id)topViewController;
 - (id)viewControllers;

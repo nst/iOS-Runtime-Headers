@@ -5,12 +5,12 @@
 @class <UIBookViewControllerDelegate>, UIView, UIViewController;
 
 @interface UIBookViewController : UIViewController {
+    int _animatedPageTurns;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    int _animatedPageTurns;
     } _contentInset;
     UIView *_contentView;
     <UIBookViewControllerDelegate> *_delegate;

@@ -10,7 +10,11 @@
 
 @interface MFMessageBodyParser : MFMessageBodyParserObject {
     NSMutableArray *_elementPool;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _foundMessageBodyElementBlock;
+
     struct __CFDictionary { } *_nodesLevelCache;
     struct __CFDictionary { } *_nodesQuoteLevelCache;
     struct __CFArray { } *_nodesStackCache;

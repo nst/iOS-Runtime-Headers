@@ -4,14 +4,14 @@
 
 @class <SBUIControlCenterButtonDelegate>, NSString, UIImage, UIImageView, UIVisualEffect, UIVisualEffectView;
 
-@interface SBUIControlCenterButton : SBFButton <_UISettingsKeyObserver, SBUIControlCenterControl> {
+@interface SBUIControlCenterButton : SBFButton <SBUIControlCenterControl, _UISettingsKeyObserver> {
+    UIVisualEffectView *_backgroundEffectView;
+    UIImageView *_backgroundImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIVisualEffectView *_backgroundEffectView;
-    UIImageView *_backgroundImageView;
     } _bgCapInsets;
     <SBUIControlCenterButtonDelegate> *_delegate;
     UIVisualEffect *_disabledStateEffect;
@@ -63,14 +63,14 @@
 - (void)_updateGlyphForStateChange;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundImage:(id)arg2 glyphImage:(id)arg3 naturalHeight:(float)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundImage:(id)arg2 glyphImage:(id)arg3 naturalHeight:(float)arg4;
 - (BOOL)isCircleButton;
 - (BOOL)isRectButton;
 - (float)naturalHeight;
 - (id)normalBGImage;
-- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setBackgroundImage:(id)arg1;
+- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

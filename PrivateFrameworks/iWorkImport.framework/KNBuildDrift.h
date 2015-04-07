@@ -4,7 +4,7 @@
 
 @class KNAnimParameterGroup, KNMotionBlurAnimationPluginWrapper, NSString;
 
-@interface KNBuildDrift : KNAnimationEffect <KNChunkableBuildAnimator, KNFrameBuildAnimator, KNAnimationPluginDrift, KNAnimationPluginArchiving> {
+@interface KNBuildDrift : KNAnimationEffect <KNAnimationPluginArchiving, KNAnimationPluginDrift, KNChunkableBuildAnimator, KNFrameBuildAnimator> {
     KNMotionBlurAnimationPluginWrapper *_motionBlurWrapper;
     KNAnimParameterGroup *mParameterGroup;
 }

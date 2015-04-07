@@ -5,15 +5,15 @@
 @class <SiriUISnippetViewControllerDelegate>, AceObject, NSArray, NSAttributedString, NSString, SAUIAppPunchOut, SAUIConfirmationOptions, SAUISnippet, UICollectionReusableView<SiriUIReusableView>;
 
 @interface SiriUISnippetViewController : UIViewController <SiriUIViewController> {
+    NSAttributedString *_attributedSubtitle;
+    BOOL _cancelled;
+    BOOL _confirmed;
+    int _defaultKeylineType;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSAttributedString *_attributedSubtitle;
-    BOOL _cancelled;
-    BOOL _confirmed;
-    int _defaultKeylineType;
     } _defaultViewInsets;
     <SiriUISnippetViewControllerDelegate> *_delegate;
     UICollectionReusableView<SiriUIReusableView> *_footerView;

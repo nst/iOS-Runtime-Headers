@@ -31,8 +31,8 @@
 
 - (void).cxx_destruct;
 - (id)ML3CollectionsQueryInLibrary:(id)arg1;
-- (id)ML3ItemsQueryInLibrary:(id)arg1 orderingTerms:(id)arg2 nameBlankProperty:(id)arg3;
 - (id)ML3ItemsQueryInLibrary:(id)arg1;
+- (id)ML3ItemsQueryInLibrary:(id)arg1 orderingTerms:(id)arg2 nameBlankProperty:(id)arg3;
 - (id)ML3OrderingTermForMPOrderingProperty:(id)arg1;
 - (id)ML3OrderingTermsForGroupingType:(int)arg1 isFastCountable:(BOOL*)arg2;
 - (id)ML3OrderingTermsForMPOrderingProperties:(id)arg1;

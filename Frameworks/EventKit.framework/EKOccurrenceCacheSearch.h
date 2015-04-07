@@ -10,7 +10,11 @@
 
 @interface EKOccurrenceCacheSearch : NSObject <EKCancellableRemoteOperation> {
     NSSet *_calendars;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callback;
+
     BOOL _canceled;
     NSNumber *_replyID;
     NSString *_searchTerm;

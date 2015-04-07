@@ -10,7 +10,11 @@
 
 @interface HAPCharacteristicReadCompletionTuple : NSObject {
     NSObject<OS_dispatch_queue> *_completionQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
 }
 
 @property(retain) NSObject<OS_dispatch_queue> * completionQueue;

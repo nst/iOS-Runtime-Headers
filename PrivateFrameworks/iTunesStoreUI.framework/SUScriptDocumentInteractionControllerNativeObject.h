@@ -11,7 +11,11 @@
 @interface SUScriptDocumentInteractionControllerNativeObject : SUScriptNativeObject <UIDocumentInteractionControllerDelegate> {
     BOOL _didPickApplication;
     BOOL _isVisible;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _presentationBlock;
+
     BOOL _redisplayAfterRotation;
 }
 

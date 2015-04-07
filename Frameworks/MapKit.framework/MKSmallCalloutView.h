@@ -5,9 +5,6 @@
 @class MKCalloutBackgroundView, NSMutableArray, NSString, UILabel, UIView, UIView<_MKCalloutAccessoryView>, _MKSmallCalloutPassthroughButton;
 
 @interface MKSmallCalloutView : UIView <CalloutViewControllerProtocol> {
-    struct CGSize { 
-        float width; 
-        float height; 
     MKCalloutBackgroundView *_calloutBackgroundView;
     UIView<_MKCalloutAccessoryView> *_detailView;
     UIView<_MKCalloutAccessoryView> *_externalLeftView;
@@ -21,6 +18,9 @@
     unsigned int _mapDisplayStyle;
     _MKSmallCalloutPassthroughButton *_maskedContainerView;
     float _maxWidth;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _preferredContentSize;
     UIView *_rightSpacerView;
     UIView<_MKCalloutAccessoryView> *_rightView;
@@ -64,17 +64,17 @@
 - (void)reset;
 - (id)rightView;
 - (void)setCalloutBackgroundView:(id)arg1;
-- (void)setCalloutSubtitle:(id)arg1 animated:(BOOL)arg2;
 - (void)setCalloutSubtitle:(id)arg1;
+- (void)setCalloutSubtitle:(id)arg1 animated:(BOOL)arg2;
 - (void)setCalloutTitle:(id)arg1;
-- (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
 - (void)setDetailView:(id)arg1;
-- (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
+- (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftView:(id)arg1;
+- (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
 - (void)setMapDisplayStyle:(unsigned int)arg1;
 - (void)setMaximumWidth:(float)arg1;
-- (void)setRightView:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightView:(id)arg1;
+- (void)setRightView:(id)arg1 animated:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateConstraints;
 

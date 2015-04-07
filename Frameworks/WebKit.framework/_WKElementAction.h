@@ -9,10 +9,18 @@
 @class NSString;
 
 @interface _WKElementAction : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _actionHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _dismissalHandler;
+
     struct RetainPtr<NSString> { 
         void *m_ptr; 
-    id _actionHandler;
-    id _dismissalHandler;
     } _title;
     int _type;
 }
@@ -22,8 +30,8 @@
 @property(readonly) int type;
 
 + (id)elementActionWithTitle:(id)arg1 actionHandler:(id)arg2;
-+ (id)elementActionWithType:(int)arg1 customTitle:(id)arg2;
 + (id)elementActionWithType:(int)arg1;
++ (id)elementActionWithType:(int)arg1 customTitle:(id)arg2;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -5,6 +5,10 @@
 @class NSArray, NSEntityDescription, NSPredicate, NSString;
 
 @interface NSFetchRequest : NSPersistentStoreRequest <NSCoding> {
+    id *_additionalPrivateIvars;
+    unsigned int _batchSize;
+    NSEntityDescription *_entity;
+    unsigned long _fetchLimit;
     struct _fetchRequestFlags { 
         unsigned int distinctValuesOnly : 1; 
         unsigned int includesSubentities : 1; 
@@ -18,10 +22,6 @@
         unsigned int propertiesValidated : 1; 
         unsigned int disableCaching : 1; 
         unsigned int _RESERVED : 19; 
-    id *_additionalPrivateIvars;
-    unsigned int _batchSize;
-    NSEntityDescription *_entity;
-    unsigned long _fetchLimit;
     } _flags;
     NSArray *_groupByProperties;
     NSPredicate *_havingPredicate;

@@ -8,8 +8,12 @@
 
 @class NSMutableArray, NSString, PTSImageLoader, UIImagePickerController, UIPopoverController;
 
-@interface PTSImagePickerViewController : UITableViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, PTSImageLoaderDelegate, UIPopoverControllerDelegate> {
+@interface PTSImagePickerViewController : UITableViewController <PTSImageLoaderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     BOOL _doneLoading;
     NSMutableArray *_filenames;
     PTSImageLoader *_imageLoader;

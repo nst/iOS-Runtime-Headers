@@ -4,7 +4,7 @@
 
 @class NSString, UIDatePicker, UIViewController;
 
-@interface ABPropertyDateEditingCell : ABPropertySimpleEditingCell <UITextFieldDelegate, ABPickerControllerDelegate> {
+@interface ABPropertyDateEditingCell : ABPropertySimpleEditingCell <ABPickerControllerDelegate, UITextFieldDelegate> {
     UIViewController *_contentViewController;
     UIDatePicker *_datePicker;
 }

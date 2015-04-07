@@ -5,10 +5,10 @@
 @class PKDiffView, PKPassColorProfile, PKPassField, PKPassFieldTemplate, UILabel;
 
 @interface PKPassFieldView : UIView {
+    int _background;
     struct CGSize { 
         float width; 
         float height; 
-    int _background;
     } _cachedSize;
     PKPassColorProfile *_colorProfile;
     PKDiffView *_diffView;
@@ -43,8 +43,8 @@
 - (id)labelLabel;
 - (void)layoutSubviews;
 - (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(id)arg3;
-- (void)setColorProfile:(id)arg1 background:(int)arg2;
 - (void)setColorProfile:(id)arg1;
+- (void)setColorProfile:(id)arg1 background:(int)arg2;
 - (void)setDiffView:(id)arg1;
 - (void)setField:(id)arg1;
 - (void)setFieldTemplate:(id)arg1;

@@ -5,13 +5,13 @@
 @class NSString, NSURL, SKUIImageViewElementCacheKey;
 
 @interface SKUIImageViewElement : SKUIViewElement {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSString *_alt;
     BOOL _enabled;
     SKUIImageViewElementCacheKey *_resourceCacheKey;
     NSString *_resourceName;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     SKUIImageViewElementCacheKey *_transientResourceCacheKey;
     NSURL *_url;

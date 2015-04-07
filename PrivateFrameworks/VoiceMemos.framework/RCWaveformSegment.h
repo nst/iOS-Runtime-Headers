@@ -5,10 +5,10 @@
 @class NSData;
 
 @interface RCWaveformSegment : NSObject <NSCoding> {
+    NSData *_averagePowerLevelData;
     struct { 
         double beginTime; 
         double endTime; 
-    NSData *_averagePowerLevelData;
     } _timeRange;
 }
 
@@ -44,8 +44,8 @@
 - (id)initWithTimeRange:(struct { double x1; double x2; })arg1 averagePowerLevelVector:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg2;
 - (BOOL)isWaveformDataEqualToDataInSegment:(id)arg1;
 - (id)segmentByClippingToTimeRange:(struct { double x1; double x2; })arg1;
-- (id)segmentsByJoiningIfSmallSegment:(id)arg1 averagePowerLevelJoinLimit:(unsigned int)arg2;
 - (id)segmentsByJoiningIfSmallSegment:(id)arg1;
+- (id)segmentsByJoiningIfSmallSegment:(id)arg1 averagePowerLevelJoinLimit:(unsigned int)arg2;
 - (id)simpleDescription;
 - (struct { double x1; double x2; })timeRange;
 - (id)verboseDescription;

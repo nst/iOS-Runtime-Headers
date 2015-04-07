@@ -5,6 +5,7 @@
 @class NSMutableArray, NSMutableDictionary;
 
 @interface PUCollectionViewData : NSObject {
+    int _cachedPageCount;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    int _cachedPageCount;
     } _currentContentBounds;
     NSMutableArray *_itemLayoutAttributes;
     NSMutableDictionary *_itemLayoutAttributesByIndexPath;

@@ -160,8 +160,8 @@
 - (double)incrementalRenderingSuppressionTimeoutInSeconds;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 sendChangeNotification:(BOOL)arg2;
 - (id)initWithIdentifier:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 sendChangeNotification:(BOOL)arg2;
 - (BOOL)isAVFoundationEnabled;
 - (BOOL)isDNSPrefetchingEnabled;
 - (BOOL)isDOMPasteAllowed;

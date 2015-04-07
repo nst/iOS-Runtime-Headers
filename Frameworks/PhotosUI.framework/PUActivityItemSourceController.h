@@ -14,7 +14,11 @@
     PUActivityViewController *_activityViewController;
     NSMutableOrderedSet *_assetItemSources;
     NSMutableOrderedSet *_assets;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
     int _taskId;
 }
 

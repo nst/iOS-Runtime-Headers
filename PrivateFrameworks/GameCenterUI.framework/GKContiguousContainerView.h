@@ -5,13 +5,13 @@
 @class NSArray, UIView;
 
 @interface GKContiguousContainerView : UIView {
+    BOOL _applyOrthogonalConstraints;
+    UIView *_baselineView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    BOOL _applyOrthogonalConstraints;
-    UIView *_baselineView;
     } _insets;
     float _overlap;
     NSArray *_replaceableConstraints;
@@ -26,8 +26,8 @@
 @property BOOL vertical;
 
 + (id)containerForViewsFontsLeadings:(id)arg1 options:(int)arg2;
-+ (id)containerViewForViews:(id)arg1 overlap:(float)arg2 vertical:(BOOL)arg3 applyOrthogonalConstraints:(BOOL)arg4;
 + (id)containerViewForViews:(id)arg1 overlap:(float)arg2 vertical:(BOOL)arg3;
++ (id)containerViewForViews:(id)arg1 overlap:(float)arg2 vertical:(BOOL)arg3 applyOrthogonalConstraints:(BOOL)arg4;
 
 - (void)_addContiguousSubviews:(id)arg1;
 - (BOOL)applyOrthogonalConstraints;

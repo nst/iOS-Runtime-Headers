@@ -3,10 +3,10 @@
  */
 
 @interface AWDSiriVoiceSendEnd : PBCodable <NSCopying> {
+    unsigned long long _duration;
     struct { 
         unsigned int duration : 1; 
         unsigned int timestamp : 1; 
-    unsigned long long _duration;
     } _has;
     unsigned long long _timestamp;
 }

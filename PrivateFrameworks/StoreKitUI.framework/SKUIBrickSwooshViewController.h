@@ -5,14 +5,14 @@
 @class NSArray, NSMutableIndexSet, NSString, SKUISwooshView, UICollectionView;
 
 @interface SKUIBrickSwooshViewController : SKUISwooshViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    struct { 
-        float cellHeight; 
-        float cellWidth; 
-        float interItemSpacing; 
     NSArray *_bricks;
     UICollectionView *_collectionView;
     BOOL _delegateWantsWillDisplay;
     NSMutableIndexSet *_hiddenImageIndexSet;
+    struct { 
+        float cellHeight; 
+        float cellWidth; 
+        float interItemSpacing; 
     } _metrics;
     BOOL _showBrickTitles;
     NSString *_swooshTitle;

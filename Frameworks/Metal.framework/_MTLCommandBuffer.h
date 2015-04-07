@@ -9,17 +9,18 @@
 @class <MTLCommandEncoder>, <MTLCommandQueue>, MTLError, NSDictionary, NSError, NSString, _MTLCommandQueue<MTLCommandQueue>;
 
 @interface _MTLCommandBuffer : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
     unsigned long long _commitTime;
+    bool _completedCallbacksDone;
+
+  /* Error parsing encoded ivar type info: ^{MTLDispatch=^{MTLDispatch}@?} */
     struct MTLDispatch { struct MTLDispatch {} *x1; id x2; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x3; } *_completedDispatchList;
+
     unsigned long long _completionHandlerEnqueueTime;
     unsigned long long _completionHandlerExecutionTime;
     unsigned long long _completionInterruptTime;
+    struct _opaque_pthread_cond_t { 
+        long __sig; 
+        BOOL __opaque[24]; 
     } _cond;
     unsigned long long _creationTime;
     <MTLCommandEncoder> *_currentCommandEncoder;
@@ -28,20 +29,25 @@
     unsigned long long _kernelCompleteTime;
     unsigned long long _kernelScheduledTime;
     NSString *_label;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _mutex;
+    bool _profilingEnabled;
     NSDictionary *_profilingResults;
     _MTLCommandQueue<MTLCommandQueue> *_queue;
     BOOL _retainedReferences;
+    bool _scheduledCallbacksDone;
+
+  /* Error parsing encoded ivar type info: ^{MTLDispatch=^{MTLDispatch}@?} */
     struct MTLDispatch { struct MTLDispatch {} *x1; id x2; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x3; } *_scheduledDispatchList;
+
+    bool _skipRender;
     unsigned int _status;
     BOOL _strongObjectReferences;
     unsigned long long _submitToHardwareTime;
     unsigned long long _submitToKernelTime;
     BOOL _synchronousDebugMode;
-    bool_completedCallbacksDone;
-    bool_profilingEnabled;
-    bool_scheduledCallbacksDone;
-    bool_skipRender;
 }
 
 @property(readonly) <MTLCommandQueue> * commandQueue;
@@ -66,14 +72,14 @@
 - (void)didSchedule:(unsigned long long)arg1 error:(unsigned int)arg2;
 - (void)enqueue;
 - (id)error;
-- (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2 synchronousDebugMode:(BOOL)arg3;
 - (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2;
+- (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2 synchronousDebugMode:(BOOL)arg3;
 - (BOOL)isCommitted;
 - (BOOL)isProfilingEnabled;
 - (void)kernelSubmitTime;
 - (id)label;
-- (void)presentDrawable:(id)arg1 atTime:(double)arg2;
 - (void)presentDrawable:(id)arg1;
+- (void)presentDrawable:(id)arg1 atTime:(double)arg2;
 - (id)profilingResults;
 - (BOOL)retainedReferences;
 - (void)setCommitted:(BOOL)arg1;

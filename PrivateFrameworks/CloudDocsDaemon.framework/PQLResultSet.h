@@ -9,9 +9,6 @@
 @class NSError, NSSet, PQLConnection, PQLStatement;
 
 @interface PQLResultSet : NSObject <NSFastEnumeration> {
-     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@cc@@II@}16@0:4#8:12 */
-     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@cc@@II@}12@0:4@?8 */
-     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@cc@@II@}12@0:4#8 */
     unsigned int _columns;
     PQLConnection *_db;
     NSSet *_defaultUnarchivingAllowedClasses;
@@ -20,7 +17,11 @@
     id _lastEnumeratedObject;
     Class _objectsClass;
     SEL _objectsClassInitializer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _objectsConstructor;
+
     BOOL _requiresSecureCoding;
     unsigned int _rowNumber;
     PQLStatement *_stmt;
@@ -54,8 +55,14 @@
 - (id)description;
 - (double)doubleAtIndex:(int)arg1;
 - (struct PQLResultSet { Class x1; id x2; Class x3; SEL x4; id x5; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x6; id x7; BOOL x8; BOOL x9; id x10; id x11; unsigned int x12; unsigned int x13; id x14; }*)enumerateObjects:(id)arg1;
-- (struct PQLResultSet { Class x1; id x2; Class x3; SEL x4; id x5; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x6; id x7; BOOL x8; BOOL x9; id x10; id x11; unsigned int x12; unsigned int x13; id x14; }*)enumerateObjectsOfClass:(Class)arg1 initializer:(SEL)arg2;
+     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@cc@@II@}12@0:4@?8 */
+
 - (struct PQLResultSet { Class x1; id x2; Class x3; SEL x4; id x5; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x6; id x7; BOOL x8; BOOL x9; id x10; id x11; unsigned int x12; unsigned int x13; id x14; }*)enumerateObjectsOfClass:(Class)arg1;
+     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@cc@@II@}12@0:4#8 */
+
+- (struct PQLResultSet { Class x1; id x2; Class x3; SEL x4; id x5; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x6; id x7; BOOL x8; BOOL x9; id x10; id x11; unsigned int x12; unsigned int x13; id x14; }*)enumerateObjectsOfClass:(Class)arg1 initializer:(SEL)arg2;
+     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@cc@@II@}16@0:4#8:12 */
+
 - (id)error;
 - (float)floatAtIndex:(int)arg1;
 - (id)generationIDAtIndex:(int)arg1;
@@ -71,11 +78,11 @@
 - (id)object:(id)arg1;
 - (id)objectAtIndex:(int)arg1;
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;
-- (id)objectOfClass:(Class)arg1 initializer:(SEL)arg2;
 - (id)objectOfClass:(Class)arg1;
+- (id)objectOfClass:(Class)arg1 initializer:(SEL)arg2;
 - (id)onlyObject:(id)arg1;
-- (id)onlyObjectOfClass:(Class)arg1 initializer:(SEL)arg2;
 - (id)onlyObjectOfClass:(Class)arg1;
+- (id)onlyObjectOfClass:(Class)arg1 initializer:(SEL)arg2;
 - (id)plistAtIndex:(int)arg1;
 - (BOOL)requiresSecureCoding;
 - (unsigned int)rowNumber;

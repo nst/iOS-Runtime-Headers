@@ -5,12 +5,6 @@
 @class NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNotificationCenter, NSTimer;
 
 @interface YTImageLoader : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
     NSLock *_cacheLock;
     NSMutableDictionary *_imageCache;
     NSMutableArray *_imageCacheLRU;
@@ -24,7 +18,13 @@
     NSMutableDictionary *_pluginImageCache;
     NSLock *_queueLock;
     NSMutableDictionary *_roundedThumbnailImageCache;
+    struct _opaque_pthread_cond_t { 
+        long __sig; 
+        BOOL __opaque[24]; 
     } _startupCondition;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _startupLock;
 }
 

@@ -13,10 +13,10 @@
 - (void).cxx_destruct;
 - (void)_cancelTicket:(id)arg1;
 - (void)dealloc;
-- (void)geocodeAddressDictionary:(id)arg1 withHandler:(id)arg2;
 - (id)geocodeAddressDictionary:(id)arg1;
-- (void)geocodeLatitude:(double)arg1 longitude:(double)arg2 handler:(id)arg3;
+- (void)geocodeAddressDictionary:(id)arg1 withHandler:(id)arg2;
 - (id)geocodeLatitude:(double)arg1 longitude:(double)arg2;
+- (void)geocodeLatitude:(double)arg1 longitude:(double)arg2 handler:(id)arg3;
 - (void)setTicket:(id)arg1;
 - (id)ticket;
 

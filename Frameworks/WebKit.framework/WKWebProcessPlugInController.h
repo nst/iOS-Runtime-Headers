@@ -14,9 +14,9 @@
         struct type { 
             unsigned char __lx[52]; 
         } data; 
+    } _bundle;
     struct RetainPtr<id<WKWebProcessPlugIn> > { 
         void *m_ptr; 
-    } _bundle;
     } _principalClassInstance;
 }
 
@@ -29,9 +29,9 @@
 @property(readonly) id parameters;
 @property(readonly) Class superclass;
 
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (struct OpaqueWKBundle { }*)_bundleRef;
 - (void)_setPrincipalClassInstance:(id)arg1;
 - (id)connection;

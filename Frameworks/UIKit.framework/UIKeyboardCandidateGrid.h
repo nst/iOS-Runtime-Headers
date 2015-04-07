@@ -4,7 +4,7 @@
 
 @class <UICollectionViewDelegate>, <UIKeyboardCandidateListDelegate>, NSArray, NSMutableDictionary, NSString, TIKeyboardCandidateResultSet, UIImageView, UIKBBackdropView, UIKeyboardCandidateGridCollectionViewController, UIKeyboardCandidateGridHeader, UIKeyboardCandidateRowViewController, UIKeyboardCandidateSortControl, UIView;
 
-@interface UIKeyboardCandidateGrid : UIView <UIKeyboardCandidateList, UIKeyboardCandidateListDelegate, UIKeyboardCandidateGridCollectionViewControllerDelegate, UIKeyboardCandidateRowViewControllerDelegate> {
+@interface UIKeyboardCandidateGrid : UIView <UIKeyboardCandidateGridCollectionViewControllerDelegate, UIKeyboardCandidateList, UIKeyboardCandidateListDelegate, UIKeyboardCandidateRowViewControllerDelegate> {
     UIKBBackdropView *_backdropView;
     UIImageView *_backgroundView;
     UIView *_bottomBarShadow;

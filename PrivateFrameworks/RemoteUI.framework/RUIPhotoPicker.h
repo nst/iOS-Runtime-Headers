@@ -8,10 +8,14 @@
 
 @class NSString, UIImage, UIImagePickerController;
 
-@interface RUIPhotoPicker : NSObject <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
+@interface RUIPhotoPicker : NSObject <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UIImagePickerController *_imagePickerController;
     UIImage *_pickedImage;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pickerCompletion;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

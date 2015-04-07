@@ -10,153 +10,16 @@
 @class <GEORoutePreloadSession>, NSString, VKSkyModel;
 
 @interface VKRealisticMapModel : VKVectorMapModel <VKMapLayer> {
-    struct unique_ptr<ggl::ClearItem, std::__1::default_delete<ggl::ClearItem> > { 
-        struct __compressed_pair<ggl::ClearItem *, std::__1::default_delete<ggl::ClearItem> > { 
-            struct ClearItem {} *__first_; 
-        } __ptr_; 
-    struct shared_ptr<ggl::AnimatableTexture::VariantUniformData> { 
-        struct VariantUniformData {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::RealisticTexture::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::RealisticRoad::Shader::Setup> {} *__first_; 
-        } __ptr_; 
     struct unique_ptr<ggl::FragmentedPool<ggl::RealisticAnimatableRoad::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticAnimatableRoad::Shader::Setup> > > { 
         struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticAnimatableRoad::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticAnimatableRoad::Shader::Setup> > > { 
             struct FragmentedPool<ggl::RealisticAnimatableRoad::Shader::Setup> {} *__first_; 
         } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> {} *__first_; 
+    } _animatableRoadShaderSetupPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> {} *__first_; 
         } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
+    } _animatableTexturedShaderSetupPool;
     struct RenderItemBatcher { 
         struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { 
             struct Range {} *__begin_; 
@@ -207,51 +70,188 @@
                 struct MultiRange {} *__first_; 
             } __end_cap_; 
         } _rangePool; 
-    } _animatableRoadShaderSetupPool;
-    } _animatableTexturedShaderSetupPool;
     } _batcher;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
     } _casingFacadeRenderItemPool;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _casingFacadeRenderStateWithBlending;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _casingFacadeRenderStateWithoutBlending;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _casingFacadeShaderSetupPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
     } _casingShadowRenderItemPool;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _casingShadowRenderState;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _casingShadowShaderSetupPool;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _casingSidewalkShadowRenderState;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _casingSidewalkShadowShaderSetupPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
     } _casingTopRenderItemPool;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _casingTopRenderStateWithBlending;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _casingTopRenderStateWithoutBlending;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _casingTopShaderSetupPool;
+    struct unique_ptr<ggl::ClearItem, std::__1::default_delete<ggl::ClearItem> > { 
+        struct __compressed_pair<ggl::ClearItem *, std::__1::default_delete<ggl::ClearItem> > { 
+            struct ClearItem {} *__first_; 
+        } __ptr_; 
     } _clearItem;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _coastlineRenderState;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
     } _debugRenderItemPool;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _debugRenderState;
+    struct unique_ptr<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _debugShaderSetupPool;
     BOOL _disableRealisticLand;
     BOOL _disableRealisticRoads;
     double _fade;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _landRenderStateWithBlending;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _landRenderStateWithoutBlending;
+    bool _needDebugReset;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
     } _roadRenderItemPool;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _roadRenderStateWithBlending;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _roadRenderStateWithoutBlending;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticRoad::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _roadShaderSetupPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
     } _roadShadowRenderItemPool;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _roadShadowRenderState;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _roadShadowShaderSetupPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
     } _roadStencilRenderItemPool;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _roadStencilRenderState;
+    struct unique_ptr<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _roadStencilShaderSetupPool;
     <GEORoutePreloadSession> *_routePreloadSession;
     float _sceneAlpha;
     VKSkyModel *_skyModel;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
     } _texturedRenderItemPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticTexture::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _texturedShaderSetupPool;
+    struct shared_ptr<ggl::AnimatableTexture::VariantUniformData> { 
+        struct VariantUniformData {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _variantData;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _waterRenderStateWithBlending;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _waterRenderStateWithoutBlending;
-    bool_needDebugReset;
 }
 
 @property(copy,readonly) NSString * debugDescription;

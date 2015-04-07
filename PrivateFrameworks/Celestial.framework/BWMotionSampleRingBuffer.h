@@ -10,12 +10,12 @@
     BWRingBuffer *_ringBuffer;
 }
 
-- (void)addMotionDataToRingBuffer:(struct { boolx1; double x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; }*)arg1 withSampleCount:(int)arg2;
+- (void)addMotionDataToRingBuffer:(struct { bool x1; double x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; }*)arg1 withSampleCount:(int)arg2;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (double)duration;
 - (id)initWithMaxDuration:(double)arg1;
-- (struct { boolx1; double x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; }*)lastSample;
+- (struct { bool x1; double x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; }*)lastSample;
 
 @end

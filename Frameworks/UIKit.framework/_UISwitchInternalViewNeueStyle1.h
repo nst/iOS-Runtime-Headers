@@ -68,11 +68,11 @@
 - (void)_orderSubviews;
 - (void)_prepareForInteraction;
 - (void)_setOn:(BOOL)arg1 animated:(BOOL)arg2 force:(BOOL)arg3;
+- (void)_setPressed:(BOOL)arg1;
 - (void)_setPressed:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3 shouldAnimateLabels:(BOOL)arg4 completion:(id)arg5;
-- (void)_setPressed:(BOOL)arg1;
-- (void)_setProgress:(float)arg1 animated:(BOOL)arg2 withDuration:(float)arg3 force:(BOOL)arg4 sendAction:(BOOL)arg5;
 - (void)_setProgress:(float)arg1;
+- (void)_setProgress:(float)arg1 animated:(BOOL)arg2 withDuration:(float)arg3 force:(BOOL)arg4 sendAction:(BOOL)arg5;
 - (BOOL)_shouldDrawAccessibly;
 - (BOOL)_shouldUseLightTintOverColor:(id)arg1;
 - (id)_switchSpringAnimationWithKeyPath:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3 pressed:(BOOL)arg4;

@@ -5,16 +5,16 @@
 @class <CAMTopBarDelegate>, CAMElapsedTimeView, CAMExpandableMenuButton, CAMFlashButton, CAMFlipButton, CAMHDRButton, CAMTimerButton, NSMutableArray, UIView;
 
 @interface CAMTopBar : UIView <CAMExpandableMenuButtonDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     CAMHDRButton *_HDRButton;
     BOOL __HDRButtonExpanded;
     NSMutableArray *__allowedControls;
     UIView *__backgroundView;
     CAMExpandableMenuButton *__expandedMenuButton;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } __expandedMenuButtonTappableInsets;
     BOOL __flashButtonExpanded;
     UIView *__flipButtonTopLayoutSpacer;
@@ -111,16 +111,16 @@
 - (void)layoutSubviews;
 - (int)orientation;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setBackgroundStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setBackgroundStyle:(int)arg1;
+- (void)setBackgroundStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setElapsedTimeView:(id)arg1;
 - (void)setFlashButton:(id)arg1;
 - (void)setFlipButton:(id)arg1;
 - (void)setHDRButton:(id)arg1;
 - (void)setOrientation:(int)arg1;
-- (void)setStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setStyle:(int)arg1;
+- (void)setStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setTimerButton:(id)arg1;
 - (int)style;
 - (id)timerButton;

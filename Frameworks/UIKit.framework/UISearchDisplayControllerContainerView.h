@@ -36,7 +36,7 @@
 - (id)topViewAttributeTopConstraint;
 - (id)topViewHeightConstraint;
 - (void)updateTopAttributeConstant:(float)arg1;
-- (void)updateTopViewHeight:(float)arg1 animateUpdate:(BOOL)arg2;
 - (void)updateTopViewHeight:(float)arg1;
+- (void)updateTopViewHeight:(float)arg1 animateUpdate:(BOOL)arg2;
 
 @end

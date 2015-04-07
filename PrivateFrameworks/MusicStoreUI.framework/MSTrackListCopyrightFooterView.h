@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface MSTrackListCopyrightFooterView : UIView {
+    NSString *_text;
     struct CGSize { 
         float width; 
         float height; 
-    NSString *_text;
     } _textSize;
 }
 

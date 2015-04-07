@@ -5,6 +5,7 @@
 @class NSMutableArray;
 
 @interface BLRetouchEffectLayer : BLRetouchLayer {
+    float _amount;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,17 +15,16 @@
             float width; 
             float height; 
         } size; 
-    struct { 
-        unsigned char blue; 
-        unsigned char green; 
-        unsigned char red; 
-        unsigned char alpha; 
-    float _amount;
     } _area;
     NSMutableArray *_brushStrokes;
     struct CGContext { } *_edgeDetectContextRef;
     float _edgeDetectSize;
     struct CGContext { } *_layerMask;
+    struct { 
+        unsigned char blue; 
+        unsigned char green; 
+        unsigned char red; 
+        unsigned char alpha; 
     } _samplePixel;
     BOOL _startFilled;
     BOOL _strokeInProgress;

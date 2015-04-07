@@ -4,7 +4,7 @@
 
 @class <PLSlideshowSettingsViewControllerDelegate>, MPMediaItemCollection, MPMediaPickerController, NSArray, NSString, PLSlideshowAirPlayRoutesViewController, PLSlideshowTransitionsViewController, UITableView, UITableViewCell;
 
-@interface PLSlideshowSettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MPMediaPickerControllerDelegate> {
+@interface PLSlideshowSettingsViewController : UIViewController <MPMediaPickerControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     PLSlideshowAirPlayRoutesViewController *_airPlayRoutesController;
     NSArray *_airplayRoutes;
     NSArray *_alternateTransitionLocalizations;

@@ -5,6 +5,10 @@
 @class AVCaptureSession, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVCaptureOutputInternal : NSObject {
+    int changeSeed;
+    NSMutableArray *connections;
+    struct OpaqueFigCaptureSession { } *figCaptureSession;
+    NSObject<OS_dispatch_queue> *figCaptureSessionSyncQueue;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -12,10 +16,6 @@
         float d; 
         float tx; 
         float ty; 
-    int changeSeed;
-    NSMutableArray *connections;
-    struct OpaqueFigCaptureSession { } *figCaptureSession;
-    NSObject<OS_dispatch_queue> *figCaptureSessionSyncQueue;
     } metadataTransform;
     BOOL physicallyMirrorsVideo;
     float rollAdjustment;

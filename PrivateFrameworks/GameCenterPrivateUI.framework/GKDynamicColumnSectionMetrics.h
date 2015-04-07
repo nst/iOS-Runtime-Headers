@@ -10,8 +10,8 @@
 @property unsigned int columnsInLandscape;
 @property unsigned int columnsInPortrait;
 
-+ (id)dynamicColumnSectionMetricsWithColumnsInPortrait:(unsigned int)arg1 columnsInLandscape:(unsigned int)arg2 forIdiom:(int)arg3;
 + (id)dynamicColumnSectionMetricsWithColumnsInPortrait:(unsigned int)arg1 columnsInLandscape:(unsigned int)arg2;
++ (id)dynamicColumnSectionMetricsWithColumnsInPortrait:(unsigned int)arg1 columnsInLandscape:(unsigned int)arg2 forIdiom:(int)arg3;
 
 - (unsigned int)columnsInLandscape;
 - (unsigned int)columnsInPortrait;

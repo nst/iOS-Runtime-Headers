@@ -9,8 +9,16 @@
 @class NSObject<OS_dispatch_semaphore>;
 
 @interface AAUIAlertView : UIAlertView {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _action;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _actionWithText;
+
     NSObject<OS_dispatch_semaphore> *_buttonChosenSemaphore;
     int _chosenButtonIndex;
 }

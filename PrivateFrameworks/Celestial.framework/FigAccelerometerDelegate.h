@@ -5,10 +5,10 @@
 @class NSString, SBSAccelerometer;
 
 @interface FigAccelerometerDelegate : NSObject <SBSAccelerometerDelegate> {
+    int ringIndex;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    int ringIndex;
     } ringMutex;
     double ringTime[64];
     float ringX[64];

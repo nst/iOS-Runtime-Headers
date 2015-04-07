@@ -4,7 +4,7 @@
 
 @class <NSCopying><NSSecureCoding>, NSURL;
 
-@interface GSTemporaryStorage : NSObject <GSAdditionStoringPrivate, GSAdditionStoring> {
+@interface GSTemporaryStorage : NSObject <GSAdditionStoring, GSAdditionStoringPrivate> {
     NSURL *_documentURL;
     NSURL *_libraryURL;
     int _lockFd;

@@ -5,6 +5,7 @@
 @class TSCH3DVector;
 
 @interface TSCH3DChartSceneAreaLayoutItemCache : NSObject {
+    TSCH3DVector *_containingViewportVector;
     struct TSCH3DChartSceneAreaLayoutItemCacheValues { 
         struct tvec4<float> { 
             union { 
@@ -90,7 +91,6 @@
             unsigned int max3DLimitingSeries; 
         } layoutSettings; 
         BOOL forcedValid; 
-    TSCH3DVector *_containingViewportVector;
     } mValues;
 }
 

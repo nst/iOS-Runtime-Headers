@@ -4,7 +4,7 @@
 
 @class <MPUExtrasCarouselViewControllerDataSource>, <MPUExtrasCarouselViewControllerDelegate>, MPUExtrasCarouselCollectionView, NSString, UICollectionViewLayout<MPUExtrasCarouselCollectionViewLayout>;
 
-@interface MPUExtrasCarouselViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, MPUExtrasCarouselCollectionViewDelegate, MPUExtrasZoomingImageTransitionParticipant> {
+@interface MPUExtrasCarouselViewController : UIViewController <MPUExtrasCarouselCollectionViewDelegate, MPUExtrasZoomingImageTransitionParticipant, UICollectionViewDataSource, UICollectionViewDelegate> {
     MPUExtrasCarouselCollectionView *_carouselCollectionView;
     UICollectionViewLayout<MPUExtrasCarouselCollectionViewLayout> *_carouselCollectionViewLayout;
     <MPUExtrasCarouselViewControllerDataSource> *_dataSource;
@@ -51,8 +51,8 @@
 - (void)setCarouselCollectionViewLayout:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIndexOfVisibleItem:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setIndexOfVisibleItem:(unsigned int)arg1;
+- (void)setIndexOfVisibleItem:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setRevealingNavigationBarDuringTransition:(BOOL)arg1;
 - (void)subviewsDidChangeForCarouselCollectionView:(id)arg1;
 - (void)viewDidLoad;

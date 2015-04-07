@@ -9,7 +9,11 @@
 @class PLCloudScenario, PLCloudScenarioExecutionResult;
 
 @interface PLCloudExecutingScenario : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionCallback;
+
     PLCloudScenarioExecutionResult *_executionState;
     PLCloudScenario *_scenario;
 }

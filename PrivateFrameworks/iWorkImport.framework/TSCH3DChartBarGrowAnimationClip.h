@@ -20,6 +20,8 @@
                 float s; 
             } ; 
         } mMax; 
+    } mShaderPerElementBlendRange;
+    TSCH3DAnimationInterpolation *mShaderPerElementInterpolation;
     struct box<glm::detail::tvec1<float> > { 
         struct tvec1<float> { 
             union { 
@@ -35,8 +37,6 @@
                 float s; 
             } ; 
         } mMax; 
-    } mShaderPerElementBlendRange;
-    TSCH3DAnimationInterpolation *mShaderPerElementInterpolation;
     } mShaderPerElementInterpolationRange;
 }
 

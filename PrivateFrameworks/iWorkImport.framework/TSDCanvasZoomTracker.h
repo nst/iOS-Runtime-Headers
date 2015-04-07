@@ -5,6 +5,25 @@
 @class NSObject<TSDCanvasZoomTrackerDelegate>, TSDCanvasLayer;
 
 @interface TSDCanvasZoomTracker : NSObject {
+    BOOL mAlwaysUsesTranslationSprings;
+    BOOL mAnimateTransform;
+    TSDCanvasLayer *mCanvasLayer;
+    NSObject<TSDCanvasZoomTrackerDelegate> *mDelegate;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } mGestureOffset;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } mGestureOrigin;
+    BOOL mHasGestureOrigin;
+    BOOL mIsShowingZoomHUD;
+    BOOL mIsZooming;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } mSavedContentOffset;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -12,30 +31,11 @@
         float d; 
         float tx; 
         float ty; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    BOOL mAlwaysUsesTranslationSprings;
-    BOOL mAnimateTransform;
-    TSDCanvasLayer *mCanvasLayer;
-    NSObject<TSDCanvasZoomTrackerDelegate> *mDelegate;
-    } mGestureOffset;
-    } mGestureOrigin;
-    BOOL mHasGestureOrigin;
-    BOOL mIsShowingZoomHUD;
-    BOOL mIsZooming;
-    } mSavedContentOffset;
     } mSavedTransform;
     BOOL mSnapsViewScale;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mZoomOrigin;
     double mZoomStartTime;
     float mZoomVelocity;

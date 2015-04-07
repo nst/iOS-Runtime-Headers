@@ -5,20 +5,6 @@
 @class NSMutableArray, OADBulletColor, OADBulletFont, OADBulletProperties, OADBulletSize, OADTextSpacing;
 
 @interface OADParagraphProperties : OADCharacterProperties {
-    unsigned int mIsLatinLineBreak : 1;
-    unsigned int mIsHangingPunctuation : 1;
-    unsigned int mHasTabStops : 1;
-    unsigned int mHasLeftMargin : 1;
-    unsigned int mHasRightMargin : 1;
-    unsigned int mHasLevel : 1;
-    unsigned int mHasIndent : 1;
-    unsigned int mHasAlign : 1;
-    unsigned int mHasDefaultTab : 1;
-    unsigned int mHasWrap : 1;
-    unsigned int mHasFontAlign : 1;
-    unsigned int mHasIsLatinLineBreak : 1;
-    unsigned int mHasIsHangingPunctuation : 1;
-    unsigned int mHasBulletCharSet : 1;
     OADTextSpacing *mAfterSpacing;
     unsigned char mAlign;
     OADTextSpacing *mBeforeSpacing;
@@ -29,7 +15,21 @@
     OADBulletSize *mBulletSize;
     double mDefaultTab;
     unsigned char mFontAlign;
+    unsigned int mHasAlign : 1;
+    unsigned int mHasBulletCharSet : 1;
+    unsigned int mHasDefaultTab : 1;
+    unsigned int mHasFontAlign : 1;
+    unsigned int mHasIndent : 1;
+    unsigned int mHasIsHangingPunctuation : 1;
+    unsigned int mHasIsLatinLineBreak : 1;
+    unsigned int mHasLeftMargin : 1;
+    unsigned int mHasLevel : 1;
+    unsigned int mHasRightMargin : 1;
+    unsigned int mHasTabStops : 1;
+    unsigned int mHasWrap : 1;
     double mIndent;
+    unsigned int mIsHangingPunctuation : 1;
+    unsigned int mIsLatinLineBreak : 1;
     double mLeftMargin;
     int mLevel;
     OADTextSpacing *mLineSpacing;

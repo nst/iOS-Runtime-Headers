@@ -8,6 +8,13 @@
  */
 
 @interface TSTImportWarningSetByCoordinateMap : NSObject {
+    struct vector<TSUColumnRowCoordinate, std::__1::allocator<TSUColumnRowCoordinate> > { 
+        struct { /* ? */ } *__begin_; 
+        struct { /* ? */ } *__end_; 
+        struct __compressed_pair<TSUColumnRowCoordinate *, std::__1::allocator<TSUColumnRowCoordinate> > { 
+            struct { /* ? */ } *__first_; 
+        } __end_cap_; 
+    } _coordinates;
     struct unordered_map<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet>, std::__1::hash<TSUColumnRowCoordinate>, std::__1::equal_to<TSUColumnRowCoordinate>, std::__1::allocator<std::__1::pair<const TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> > > > { 
         struct __hash_table<std::__1::__hash_value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, std::__1::__unordered_map_hasher<TSUColumnRowCoordinate, std::__1::__hash_value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, std::__1::hash<TSUColumnRowCoordinate>, true>, std::__1::__unordered_map_equal<TSUColumnRowCoordinate, std::__1::__hash_value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, std::__1::equal_to<TSUColumnRowCoordinate>, true>, std::__1::allocator<std::__1::__hash_value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> > > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> > > { 
@@ -32,13 +39,6 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    struct vector<TSUColumnRowCoordinate, std::__1::allocator<TSUColumnRowCoordinate> > { 
-        struct { /* ? */ } *__begin_; 
-        struct { /* ? */ } *__end_; 
-        struct __compressed_pair<TSUColumnRowCoordinate *, std::__1::allocator<TSUColumnRowCoordinate> > { 
-            struct { /* ? */ } *__first_; 
-        } __end_cap_; 
-    } _coordinates;
     } _warningSetForCoordinate;
 }
 

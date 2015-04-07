@@ -9,7 +9,11 @@
 @class NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL;
 
 @interface PQLConnection : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _autoRollbackHandler;
+
     BOOL _batchStarted;
     int _batchingChangesCount;
     int _batchingChangesLimit;
@@ -21,14 +25,30 @@
     NSMutableArray *_flushNotifications;
     NSString *_label;
     NSError *_lastError;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _lockedHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _postFlushHook;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _preFlushHook;
+
     struct cache_s { } *_preparedStatements;
     int _savePointLevel;
     NSObject<OS_dispatch_queue> *_serialQueue;
     int _skipBatchStop;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sqliteErrorHandler;
+
     NSMutableArray *_stmtCacheCleanupQueue;
     NSObject<OS_dispatch_source> *_stmtCacheSource;
     int _suspendCaching;
@@ -78,17 +98,17 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)destroyDatabaseWithError:(id*)arg1;
-- (BOOL)execute:(id)arg1 args:(void*)arg2;
 - (BOOL)execute:(id)arg1;
+- (BOOL)execute:(id)arg1 args:(void*)arg2;
 - (BOOL)executeRaw:(id)arg1;
-- (id)fetch:(id)arg1 args:(void*)arg2;
 - (id)fetch:(id)arg1;
-- (id)fetchObject:(id)arg1 sql:(id)arg2 args:(void*)arg3;
+- (id)fetch:(id)arg1 args:(void*)arg2;
 - (id)fetchObject:(id)arg1 sql:(id)arg2;
-- (id)fetchObjectOfClass:(Class)arg1 initializer:(SEL)arg2 sql:(id)arg3 args:(void*)arg4;
+- (id)fetchObject:(id)arg1 sql:(id)arg2 args:(void*)arg3;
 - (id)fetchObjectOfClass:(Class)arg1 initializer:(SEL)arg2 sql:(id)arg3;
-- (id)fetchObjectOfClass:(Class)arg1 sql:(id)arg2 args:(void*)arg3;
+- (id)fetchObjectOfClass:(Class)arg1 initializer:(SEL)arg2 sql:(id)arg3 args:(void*)arg4;
 - (id)fetchObjectOfClass:(Class)arg1 sql:(id)arg2;
+- (id)fetchObjectOfClass:(Class)arg1 sql:(id)arg2 args:(void*)arg3;
 - (void)flush;
 - (void)forceBatchStart;
 - (void)groupInBatch:(id)arg1;
@@ -103,8 +123,8 @@
 - (id)lockedHandler;
 - (BOOL)openAtURL:(id)arg1 sharedCache:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)openAtURL:(id)arg1 withFlags:(int)arg2 error:(id*)arg3;
-- (BOOL)performWithFlags:(unsigned int)arg1 action:(id)arg2 whenFlushed:(id)arg3;
 - (BOOL)performWithFlags:(unsigned int)arg1 action:(id)arg2;
+- (BOOL)performWithFlags:(unsigned int)arg1 action:(id)arg2 whenFlushed:(id)arg3;
 - (id)postFlushHook;
 - (id)preFlushHook;
 - (BOOL)registerFunction:(id)arg1 nArgs:(int)arg2 handler:(id)arg3;

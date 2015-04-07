@@ -3,6 +3,8 @@
  */
 
 @interface GEOPlaceActionDetails : PBCodable <NSCopying> {
+    unsigned long long _animationID;
+    unsigned long long _businessID;
     struct { 
         unsigned int animationID : 1; 
         unsigned int businessID : 1; 
@@ -10,8 +12,6 @@
         unsigned int searchResponseRelativeTimestamp : 1; 
         unsigned int localSearchProviderID : 1; 
         unsigned int resultIndex : 1; 
-    unsigned long long _animationID;
-    unsigned long long _businessID;
     } _has;
     int _localSearchProviderID;
     long long _placeID;

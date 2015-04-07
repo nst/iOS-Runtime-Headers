@@ -24,8 +24,8 @@
 - (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
 - (id)initWithContentsOfFile:(id)arg1;
-- (id)initWithContentsOfMappedFile:(id)arg1 withFileAttributes:(id)arg2;
 - (id)initWithContentsOfMappedFile:(id)arg1;
+- (id)initWithContentsOfMappedFile:(id)arg1 withFileAttributes:(id)arg2;
 - (id)initWithData:(id)arg1;
 - (id)initWithDataNoCopy:(id)arg1;
 - (unsigned int)length;

@@ -5,8 +5,8 @@
 @class PSSpecifier, UIViewController;
 
 @interface PSEditingPane : UIView {
-    unsigned int _requiresKeyboard : 1;
     id _delegate;
+    unsigned int _requiresKeyboard : 1;
     PSSpecifier *_specifier;
     UIViewController *_viewController;
 }

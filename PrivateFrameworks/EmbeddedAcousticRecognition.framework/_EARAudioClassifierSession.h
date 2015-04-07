@@ -15,7 +15,7 @@
         int state; 
         unsigned int samplingRate; 
         int maxBufferLen; 
-        boolmaxBufferLenReached; 
+        bool maxBufferLenReached; 
         unsigned int bufferPos; 
         struct Vector<float> { 
             float *data_; 
@@ -43,7 +43,7 @@
         struct thread { 
             struct _opaque_pthread_t {} *__t_; 
         } recogThread; 
-        boolendOfAudio; 
+        bool endOfAudio; 
     } _bufferedSource;
     <_EARAudioClassifierSessionDelegate> *_delegate;
     double _frameDuration;

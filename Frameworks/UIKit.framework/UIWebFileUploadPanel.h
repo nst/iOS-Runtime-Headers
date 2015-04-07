@@ -4,16 +4,16 @@
 
 @class <UIWebFileUploadPanelDelegate>, DOMNode, NSArray, NSObject<WebOpenPanelResultListener>, NSString, UIAlertController, UIImagePickerController, UIPopoverController, UIViewController, UIWebDocumentView;
 
-@interface UIWebFileUploadPanel : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface UIWebFileUploadPanel : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
     BOOL _allowMultipleFiles;
     <UIWebFileUploadPanelDelegate> *_delegate;
     UIWebDocumentView *_documentView;
     BOOL _documentViewPresentedViewController;
     UIImagePickerController *_imagePicker;
     DOMNode *_interactionElement;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _interactionPoint;
     BOOL _isUsingCamera;
     NSArray *_mimeTypes;

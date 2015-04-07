@@ -4,15 +4,15 @@
 
 @class NSString, UIImage, UIImageView;
 
-@interface MPUExtrasZoomableImageView : UIScrollView <UIScrollViewDelegate, MPUExtrasZoomingImageTransitionParticipant> {
+@interface MPUExtrasZoomableImageView : UIScrollView <MPUExtrasZoomingImageTransitionParticipant, UIScrollViewDelegate> {
+    UIImage *_image;
     struct CGSize { 
         float width; 
         float height; 
+    } _imageSize;
     struct CGPoint { 
         float x; 
         float y; 
-    UIImage *_image;
-    } _imageSize;
     } _pointToCenterAfterResize;
     float _scaleToRestoreAfterResize;
     UIImageView *_zoomView;

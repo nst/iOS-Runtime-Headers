@@ -61,8 +61,8 @@
 
 - (id)address;
 - (id)alertImage;
-- (id)attachmentText:(BOOL)arg1;
 - (id)attachmentText;
+- (id)attachmentText:(BOOL)arg1;
 - (id)date;
 - (void)dealloc;
 - (id)description;

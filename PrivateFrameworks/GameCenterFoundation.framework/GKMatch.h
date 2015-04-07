@@ -9,7 +9,11 @@
 @class <GKMatchDelegate>, GKConnection, GKSession, GKThreadsafeDictionary, NSArray, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface GKMatch : NSObject <GKSessionDelegate, GKSessionPrivateDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _chooseHostCompletion;
+
     GKConnection *_connection;
     <GKMatchDelegate> *_delegateWeak;
     unsigned int _expectedPlayerCount;
@@ -131,15 +135,15 @@
 - (void)sendQueuedPacketsForPlayer:(id)arg1;
 - (void)sendStateCallbackForPlayer:(id)arg1 state:(int)arg2;
 - (void)sendStateCallbackToDelegate:(id)arg1 forPlayer:(id)arg2 state:(int)arg3;
-- (void)sendVersionData:(unsigned char)arg1 toPeer:(id)arg2;
 - (void)sendVersionData:(unsigned char)arg1;
+- (void)sendVersionData:(unsigned char)arg1 toPeer:(id)arg2;
+- (id)session;
 - (void)session:(id)arg1 connectionWithPeerFailed:(id)arg2 withError:(id)arg3;
 - (void)session:(id)arg1 didFailWithError:(id)arg2;
 - (void)session:(id)arg1 initiateRelay:(id)arg2 forPeer:(id)arg3;
 - (void)session:(id)arg1 networkStatisticsChanged:(id)arg2;
 - (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
 - (void)session:(id)arg1 updateRelay:(id)arg2 forPeer:(id)arg3;
-- (id)session;
 - (void)setChooseHostCompletion:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;

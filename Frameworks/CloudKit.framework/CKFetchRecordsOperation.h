@@ -11,10 +11,22 @@
 @interface CKFetchRecordsOperation : CKDatabaseOperation {
     NSArray *_desiredKeys;
     NSDictionary *_desiredPackageFileIndices;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchRecordsCompletionBlock;
+
     BOOL _isFetchCurrentUserOperation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _perRecordCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _perRecordProgressBlock;
+
     NSMutableDictionary *_recordErrors;
     NSArray *_recordIDs;
     NSMutableDictionary *_recordIDsToRecords;

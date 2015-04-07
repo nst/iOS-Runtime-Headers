@@ -10,6 +10,10 @@
 @class <VKGlobeLineContainerDelegate>, <VKRouteMatchedAnnotationPresentation>, NSMutableArray, NSMutableSet, NSString, VKPolylineOverlay;
 
 @interface VKGlobeLineContainer : NSObject <VKPolylineGroupOverlayObserver, VKPolylineObserver> {
+    <VKGlobeLineContainerDelegate> *_delegate;
+    struct GlobeView { int (**x1)(); } *_globeView;
+    NSMutableArray *_overlays;
+    NSMutableSet *_persistentOverlays;
     struct map<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData>, std::__1::less<VKPolylineOverlay *>, std::__1::allocator<std::__1::pair<VKPolylineOverlay *const, std::__1::weak_ptr<altitude::RouteLineData> > > > { 
         struct __tree<std::__1::__value_type<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData> >, std::__1::__map_value_compare<VKPolylineOverlay *, std::__1::__value_type<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData> >, std::__1::less<VKPolylineOverlay *>, true>, std::__1::allocator<std::__1::__value_type<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData> > > > { 
             struct __tree_node<std::__1::__value_type<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData> >, void *> {} *__begin_node_; 
@@ -22,10 +26,6 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    <VKGlobeLineContainerDelegate> *_delegate;
-    struct GlobeView { int (**x1)(); } *_globeView;
-    NSMutableArray *_overlays;
-    NSMutableSet *_persistentOverlays;
     } _polylinesToRoutes;
     <VKRouteMatchedAnnotationPresentation> *_routeLineSplitAnnotation;
     struct VKGlobeRouteSplit { int (**x1)(); id x2; } *_routeSplit;

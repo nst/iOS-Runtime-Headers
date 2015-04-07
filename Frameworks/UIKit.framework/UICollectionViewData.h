@@ -5,28 +5,19 @@
 @class NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, UICollectionView, UICollectionViewLayout;
 
 @interface UICollectionViewData : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    NSMutableArray *_clonedCellAttributes;
+    NSMutableArray *_clonedDecorationAttributes;
+    NSMutableArray *_clonedSupplementaryAttributes;
+    UICollectionView *_collectionView;
     struct { 
         unsigned int contentSizeIsValid : 1; 
         unsigned int itemCountsAreValid : 1; 
         unsigned int layoutIsPrepared : 1; 
         unsigned int layoutLocked : 1; 
-    NSMutableArray *_clonedCellAttributes;
-    NSMutableArray *_clonedDecorationAttributes;
-    NSMutableArray *_clonedSupplementaryAttributes;
-    UICollectionView *_collectionView;
     } _collectionViewDataFlags;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _contentSize;
     NSMutableDictionary *_decorationLayoutAttributes;
     NSMutableIndexSet *_globalIndexesOfItemsAwaitingValidation;
@@ -41,6 +32,15 @@
     NSMapTable *_screenPageMap;
     int *_sectionItemCounts;
     NSMutableDictionary *_supplementaryLayoutAttributes;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _validLayoutRect;
 }
 

@@ -68,8 +68,8 @@
 - (void)logEventBackwardCumulativeProperties;
 - (void)logEventBackwardDiffProperties;
 - (void)logEventBackwardUserScanDuration;
-- (void)logEventBackwardWifiProperties:(id)arg1 withNetworkProperties:(id)arg2;
 - (void)logEventBackwardWifiProperties;
+- (void)logEventBackwardWifiProperties:(id)arg1 withNetworkProperties:(id)arg2;
 - (void)logEventForwardAvailability:(id)arg1;
 - (void)logEventForwardModuleInfo;
 - (void)logEventForwardRSSI:(id)arg1;

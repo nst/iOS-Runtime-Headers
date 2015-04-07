@@ -9,7 +9,11 @@
 @class GEOPhotoInfo;
 
 @interface MKMapItemMetadataImageRequest : MKMapItemMetadataRequest {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _imageHandler;
+
     GEOPhotoInfo *_info;
 }
 

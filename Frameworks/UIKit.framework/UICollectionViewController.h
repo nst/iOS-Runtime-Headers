@@ -4,11 +4,11 @@
 
 @class NSString, UICollectionView, UICollectionViewLayout;
 
-@interface UICollectionViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource> {
+@interface UICollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
+    UICollectionView *_collectionView;
     struct { 
         unsigned int clearsSelectionOnViewWillAppear : 1; 
         unsigned int useLayoutToLayoutNavigationTransitions : 1; 
-    UICollectionView *_collectionView;
     } _collectionViewControllerFlags;
     UICollectionViewLayout *_layout;
 }
@@ -31,9 +31,9 @@
 - (id)_uiCollectionView;
 - (id)_wrappingView;
 - (BOOL)clearsSelectionOnViewWillAppear;
+- (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (id)collectionView;
 - (id)collectionViewLayout;
 - (id)contentScrollView;
 - (id)dataSource;

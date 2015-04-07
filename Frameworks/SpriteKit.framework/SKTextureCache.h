@@ -3,16 +3,10 @@
  */
 
 @interface SKTextureCache : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     unsigned int *alphaMap;
+    struct CGSize { 
+        float width; 
+        float height; 
     } alphaMapSize;
     struct CGImage { } *collisionMask;
     int filteringMode;
@@ -21,7 +15,13 @@
     BOOL isPOT;
     int lock;
     char *pixelData;
+    struct CGSize { 
+        float width; 
+        float height; 
     } pixelSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } size;
     int state;
     unsigned int texFormat;

@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface GKImageKey : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSString *_basename;
     NSString *_cacheKey;
     NSString *_filePath;
     NSString *_imageID;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
 }
 

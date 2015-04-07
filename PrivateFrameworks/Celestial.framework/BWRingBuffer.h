@@ -17,8 +17,8 @@
 - (void*)elementAtIndex:(int)arg1;
 - (void*)firstElement;
 - (int)firstElementIndex;
-- (void)incrementRingIndex:(int*)arg1 withCount:(int)arg2;
 - (void)incrementRingIndex:(int*)arg1;
+- (void)incrementRingIndex:(int*)arg1 withCount:(int)arg2;
 - (id)initWithLength:(int)arg1 dataTypeSize:(unsigned long)arg2;
 - (void*)lastElement;
 - (int)lastElementIndex;

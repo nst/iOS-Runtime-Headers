@@ -4,7 +4,7 @@
 
 @class NSCalendar, NSDate, NSLocale, NSTimeZone, UIColor, _UIDatePickerView;
 
-@interface UIDatePicker : UIControl <UIPickerViewScrollTesting, NSCoding> {
+@interface UIDatePicker : UIControl <NSCoding, UIPickerViewScrollTesting> {
     _UIDatePickerView *_pickerView;
     BOOL _useCurrentDateDuringDecoding;
 }
@@ -90,9 +90,9 @@
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setCountDownDuration:(double)arg1;
+- (void)setDate:(id)arg1;
 - (void)setDate:(id)arg1 animate:(BOOL)arg2;
 - (void)setDate:(id)arg1 animated:(BOOL)arg2;
-- (void)setDate:(id)arg1;
 - (void)setDateComponents:(id)arg1;
 - (void)setDatePickerMode:(int)arg1;
 - (void)setDelegate:(id)arg1;

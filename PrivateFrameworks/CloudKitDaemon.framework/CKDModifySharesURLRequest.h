@@ -12,7 +12,11 @@
     NSMutableDictionary *_participantIDByRequestID;
     NSMutableDictionary *_shareIDByRequestID;
     NSArray *_shareIDsToDelete;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shareModifiedBlock;
+
     NSArray *_sharesToSave;
 }
 

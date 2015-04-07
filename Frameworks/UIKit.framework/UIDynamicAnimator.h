@@ -9,20 +9,12 @@
 @class <UIDynamicAnimatorDelegate>, <_UIDynamicReferenceSystem>, CADisplayLink, CALayer, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, PKExtendedPhysicsWorld, UIDynamicAnimatorTicker, UIView;
 
 @interface UIDynamicAnimator : NSObject {
-    struct { 
-        unsigned int delegateImplementsDynamicAnimatorDidPause : 1; 
-        unsigned int delegateImplementsDynamicAnimatorWillResume : 1; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     float _accuracy;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _action;
+
     NSMutableArray *_beginContacts;
     NSMutableSet *_behaviorsToAdd;
     NSMutableSet *_behaviorsToRemove;
@@ -42,12 +34,24 @@
     NSMutableArray *_postSolverActions;
     double _realElapsedTime;
     <_UIDynamicReferenceSystem> *_referenceSystem;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _referenceSystemBounds;
     unsigned int _referenceSystemType;
     NSMutableSet *_registeredBehaviors;
     int _registeredCollisionGroups;
     int _registeredImplicitBounds;
     float _speed;
+    struct { 
+        unsigned int delegateImplementsDynamicAnimatorDidPause : 1; 
+        unsigned int delegateImplementsDynamicAnimatorWillResume : 1; 
     } _stateFlags;
     BOOL _stopping;
     UIDynamicAnimatorTicker *_ticker;
@@ -92,8 +96,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_referenceSystemBounds;
 - (unsigned int)_referenceSystemType;
 - (void)_registerBehavior:(id)arg1;
-- (id)_registerBodyForItem:(id)arg1 shape:(unsigned int)arg2;
 - (id)_registerBodyForItem:(id)arg1;
+- (id)_registerBodyForItem:(id)arg1 shape:(unsigned int)arg2;
 - (int)_registerCollisionGroup;
 - (void)_registerImplicitBounds;
 - (void)_reportBeginContacts;

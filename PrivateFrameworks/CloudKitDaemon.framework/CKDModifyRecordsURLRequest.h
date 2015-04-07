@@ -17,7 +17,11 @@
     NSMutableDictionary *_recordIDByRequestID;
     NSArray *_recordIDsToDelete;
     NSDictionary *_recordIDsToDeleteToEtags;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordPostedBlock;
+
     NSArray *_records;
     BOOL _sendAllFields;
 }

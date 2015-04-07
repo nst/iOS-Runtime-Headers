@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CPRegularExpression : NSObject <NSCopying, NSCoding> {
+@interface CPRegularExpression : NSObject <NSCoding, NSCopying> {
     NSString *_expressionString;
     void *_reserved;
 }
@@ -20,8 +20,8 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithExpressionString:(id)arg1 options:(unsigned int)arg2;
 - (id)initWithExpressionString:(id)arg1;
+- (id)initWithExpressionString:(id)arg1 options:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })matchedRangeForCString:(const char *)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 subexpressionRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 count:(unsigned int)arg4;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })matchedRangeForString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 subexpressionRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 count:(unsigned int)arg4;

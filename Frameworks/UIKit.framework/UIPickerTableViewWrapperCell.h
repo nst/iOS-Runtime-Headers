@@ -5,11 +5,11 @@
 @class UIView;
 
 @interface UIPickerTableViewWrapperCell : UIPickerTableViewCell {
+    UIView *_wrappedView;
+    UIView *_wrappedViewContainer;
     struct CGSize { 
         float width; 
         float height; 
-    UIView *_wrappedView;
-    UIView *_wrappedViewContainer;
     } _wrappedViewSize;
 }
 

@@ -8,11 +8,11 @@
     struct CGPoint { 
         float x; 
         float y; 
+    } _distanceFromCenterFrame;
+    UIScrollView *_scrollView;
     struct CGPoint { 
         float x; 
         float y; 
-    } _distanceFromCenterFrame;
-    UIScrollView *_scrollView;
     } _speed;
     NSTimer *_timer;
 }

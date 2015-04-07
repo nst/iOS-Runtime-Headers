@@ -26,8 +26,8 @@
 - (id)init;
 - (BOOL)isActive;
 - (BOOL)isDirty;
-- (void)setActive:(BOOL)arg1 shouldUseSpeaker:(BOOL)arg2 completion:(id)arg3;
 - (void)setActive:(BOOL)arg1;
+- (void)setActive:(BOOL)arg1 shouldUseSpeaker:(BOOL)arg2 completion:(id)arg3;
 - (void)setDirty:(BOOL)arg1;
 - (void)setShouldUseSpeaker:(BOOL)arg1;
 - (BOOL)shouldUseSpeaker;

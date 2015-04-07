@@ -13,8 +13,8 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (id)initWithIssueType:(int)arg1 description:(id)arg2 data:(id)arg3;
 - (id)initWithIssueType:(int)arg1 description:(id)arg2;
+- (id)initWithIssueType:(int)arg1 description:(id)arg2 data:(id)arg3;
 - (void)startWithCompletionHandler:(id)arg1;
 
 @end

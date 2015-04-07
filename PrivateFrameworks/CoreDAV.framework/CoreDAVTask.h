@@ -11,7 +11,11 @@
 @interface CoreDAVTask : NSObject <CoreDAVSubmittable> {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
     BOOL _allowAutomaticRedirects;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     BOOL _compressedRequestFailed;
     NSURLConnection *_connection;
     id _context;
@@ -40,11 +44,19 @@
     NSMutableArray *_redirectHistory;
     NSURLRequest *_request;
     BOOL _requestIsCompressed;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _requestProgressBlock;
+
     NSDictionary *_requestProperties;
     NSHTTPURLResponse *_response;
     <CoreDAVResponseBodyParser> *_responseBodyParser;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _responseProgressBlock;
+
     int _responseStatusCode;
     BOOL _shouldRetryWithClientToken;
     <CoreDAVTaskManager> *_taskManager;

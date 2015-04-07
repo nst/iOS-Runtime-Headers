@@ -16,6 +16,8 @@
             NSIndexSet *mValue; 
         } values; 
         int currentChunk; 
+    } mActive;
+    BOOL mAllowStateMismatch;
     struct ChartRepRenderIndexSet { 
         TSCH3DChartRep *rep; 
         BOOL built; 
@@ -27,8 +29,6 @@
             NSIndexSet *mValue; 
         } values; 
         int currentChunk; 
-    } mActive;
-    BOOL mAllowStateMismatch;
     } mBuilt;
     TSCH3DAnimationTimeSlice *mDelivery;
     TSCH3DChartRep *mRep;

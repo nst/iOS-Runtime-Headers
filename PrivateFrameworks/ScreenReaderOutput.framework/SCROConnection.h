@@ -25,8 +25,8 @@
 - (void)_stopConnection;
 - (void)dealloc;
 - (id)handlerArrayValueForKey:(int)arg1;
-- (id)handlerValueForKey:(int)arg1 withObject:(id)arg2;
 - (id)handlerValueForKey:(int)arg1;
+- (id)handlerValueForKey:(int)arg1 withObject:(id)arg2;
 - (id)initWithHandlerType:(int)arg1 delegate:(id)arg2;
 - (void)invalidate;
 - (int)performHandlerActionForKey:(int)arg1;

@@ -19,7 +19,11 @@
     BOOL _isWatching;
     NSFileWatcherObservations *_itemObservations;
     unsigned long long _lastObservedEventID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _observer;
+
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_subitemObservationsByEventPath;
     NSURL *_url;

@@ -4,7 +4,7 @@
 
 @class <MKMapGestureControllerDelegate>, MKBasicMapView, MKTiltGestureRecognizer, MKVariableDelayTapRecognizer, NSString, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, _MKUserInteractionGestureRecognizer, _UIDynamicAnimationGroup, _UIDynamicValueAnimation;
 
-@interface MKMapGestureController : NSObject <MKVariableDelayTapRecognizerDelegate, _MKUserInteractionGestureRecognizerTouchObserver, UIGestureRecognizerDelegate> {
+@interface MKMapGestureController : NSObject <MKVariableDelayTapRecognizerDelegate, UIGestureRecognizerDelegate, _MKUserInteractionGestureRecognizerTouchObserver> {
     <MKMapGestureControllerDelegate> *_delegate;
     BOOL _didStartLongPress;
     MKVariableDelayTapRecognizer *_doubleTapGestureRecognizer;
@@ -65,8 +65,8 @@
 - (void)handleTouch:(id)arg1;
 - (void)handleTwoFingerLongPress:(id)arg1;
 - (void)handleTwoFingerTap:(id)arg1;
-- (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2 doubleTapTargetView:(id)arg3;
 - (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2;
+- (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2 doubleTapTargetView:(id)arg3;
 - (BOOL)isRotationEnabled;
 - (BOOL)isScrollEnabled;
 - (BOOL)isTiltEnabled;

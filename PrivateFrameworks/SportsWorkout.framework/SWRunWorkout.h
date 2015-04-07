@@ -42,8 +42,8 @@
 - (void)pauseWorkout;
 - (BOOL)recalibrateWithAdjustedDistanceMiles:(float)arg1;
 - (void)resetCalibration;
-- (void)sensor:(id)arg1 didReceivePacketPayload:(const char *)arg2 timestamp:(unsigned long)arg3;
 - (id)sensor;
+- (void)sensor:(id)arg1 didReceivePacketPayload:(const char *)arg2 timestamp:(unsigned long)arg3;
 - (void)setIsCalibration:(BOOL)arg1;
 - (void)setPaceModelParameters:(id)arg1;
 - (void)setWeightInLbs:(float)arg1;

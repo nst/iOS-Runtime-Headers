@@ -11,7 +11,11 @@
 @interface BKSApplicationStateMonitor : NSObject {
     NSObject<OS_xpc_object> *_connection;
     BOOL _denied;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSArray *_interestedBundleIDs;
     unsigned int _interestedStates;
     BSSignal *_invalidationSignal;
@@ -48,13 +52,13 @@
 - (void)queue_setHandler:(id)arg1;
 - (void)queue_setInterestedBundleIDs:(id)arg1;
 - (void)queue_setInterestedStates:(unsigned int)arg1;
-- (void)queue_updateInterestedStates:(BOOL)arg1;
 - (void)queue_updateInterestedStates;
+- (void)queue_updateInterestedStates:(BOOL)arg1;
 - (void)setHandler:(id)arg1;
 - (void)setInterestedBundleIDs:(id)arg1;
 - (void)setInterestedStates:(unsigned int)arg1;
-- (void)updateInterestedBundleIDs:(id)arg1 states:(unsigned int)arg2;
 - (void)updateInterestedBundleIDs:(id)arg1;
+- (void)updateInterestedBundleIDs:(id)arg1 states:(unsigned int)arg2;
 - (void)updateInterestedStates:(unsigned int)arg1;
 
 @end

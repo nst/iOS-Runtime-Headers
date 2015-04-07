@@ -4,7 +4,7 @@
 
 @class CKRecordID, CKShareID, CKShareParticipant, NSDate, NSString, NSURL;
 
-@interface CKShareInvitation : NSObject <NSSecureCoding, NSCopying> {
+@interface CKShareInvitation : NSObject <NSCopying, NSSecureCoding> {
     NSString *_applicationContainer;
     int _environment;
     NSURL *_imageURL;

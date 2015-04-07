@@ -10,7 +10,11 @@
 
 @interface TSCH3DAbstractLimitingSeriesUpgrader : NSObject {
     TSCHChartInfo *mChartInfo;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mWillModifyBlock;
+
 }
 
 @property(copy) id willModifyBlock;

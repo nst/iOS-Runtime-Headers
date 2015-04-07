@@ -8,6 +8,8 @@
  */
 
 @interface TSPPasteboardMetadata : TSPObject {
+    BOOL _isCrossAppPaste;
+    BOOL _isCrossDocumentPaste;
     struct PasteboardMetadata { 
         int (**_vptr$MessageLite)(); 
         struct UnknownFieldSet { 
@@ -29,8 +31,6 @@
         struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *source_document_uuid_; 
         int _cached_size_; 
         unsigned int _has_bits_[1]; 
-    BOOL _isCrossAppPaste;
-    BOOL _isCrossDocumentPaste;
     } _message;
 }
 
@@ -40,12 +40,12 @@
 + (id)appNameAndVersion;
 + (id)bundleIdentifier;
 
-- (struct PasteboardMetadata { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::DataInfo> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; int x8; unsigned int x9[1]; }*)message;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)initFromUnarchiver:(id)arg1;
 - (BOOL)isCrossAppPaste;
 - (BOOL)isCrossDocumentPaste;
+- (struct PasteboardMetadata { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::DataInfo> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; int x8; unsigned int x9[1]; }*)message;
 - (void)saveToArchiver:(id)arg1;
 - (long long)tsp_identifier;
 

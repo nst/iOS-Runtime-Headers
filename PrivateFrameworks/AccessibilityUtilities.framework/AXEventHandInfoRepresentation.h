@@ -4,15 +4,15 @@
 
 @class NSArray;
 
-@interface AXEventHandInfoRepresentation : NSObject <NSSecureCoding, NSCopying> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface AXEventHandInfoRepresentation : NSObject <NSCopying, NSSecureCoding> {
     unsigned short _currentFingerCount;
     unsigned int _eventType;
     unsigned int _handEventMask;
     unsigned int _handIdentity;
     unsigned int _handIndex;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _handPosition;
     unsigned short _initialFingerCount;
     NSArray *_paths;

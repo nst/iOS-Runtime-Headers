@@ -8,12 +8,20 @@
 
 @class KNMagicMoveWrapper, KNMotionBlurWrapper, NSMutableArray, NSString;
 
-@interface KNContentAwareSwing : KNAnimationEffect <KNMagicMoveTransitionAnimator, KNMagicMoveFrameAnimator> {
+@interface KNContentAwareSwing : KNAnimationEffect <KNMagicMoveFrameAnimator, KNMagicMoveTransitionAnimator> {
     NSMutableArray *_effectTextures;
     KNMagicMoveWrapper *_magicMoveWrapper;
     KNMotionBlurWrapper *_motionBlurWrapper;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _motionBlurWrapperSetupShaderBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _motionBlurWrapperTextureDrawOptionsBlock;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

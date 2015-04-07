@@ -10,7 +10,11 @@
 
 @interface HKSampleQuery : HKQuery {
     unsigned int _limit;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resultHandler;
+
     NSMutableArray *_results;
     NSArray *_sortDescriptors;
 }

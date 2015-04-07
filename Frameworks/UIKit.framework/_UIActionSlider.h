@@ -5,31 +5,28 @@
 @class <_UIActionSliderDelegate>, NSString, UIBezierPath, UIColor, UIFont, UIImage, UIImageView, UILabel, UIPanGestureRecognizer, UIView, UIView<_UIActionSliderLabel>, _UIActionSliderKnob, _UIBackdropView, _UIVibrantSettings;
 
 @interface _UIActionSlider : UIControl <UIGestureRecognizerDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+    BOOL _animating;
+    float _cachedTrackMaskWidth;
+    UIView *_contentView;
+    <_UIActionSliderDelegate> *_delegate;
     struct CGSize { 
         float width; 
         float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    } _knobImageOffset;
+    UIImageView *_knobImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    BOOL _animating;
-    float _cachedTrackMaskWidth;
-    UIView *_contentView;
-    <_UIActionSliderDelegate> *_delegate;
-    } _knobImageOffset;
-    UIImageView *_knobImageView;
     } _knobInsets;
     float _knobPosition;
     _UIActionSliderKnob *_knobView;
     float _knobWidth;
     BOOL _showingTrackLabel;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _slideGestureInitialPoint;
     UIPanGestureRecognizer *_slideGestureRecognizer;
     int _style;
@@ -39,6 +36,9 @@
     UIView *_trackDodgeView;
     UIFont *_trackFont;
     UIView<_UIActionSliderLabel> *_trackLabel;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _trackSize;
     UIView *_trackSolidView;
     NSString *_trackText;
@@ -98,8 +98,8 @@
 - (id)delegate;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 vibrantSettings:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 vibrantSettings:(id)arg2;
 - (BOOL)isAnimating;
 - (BOOL)isShowingTrackLabel;
 - (id)knobColor;

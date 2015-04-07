@@ -11,7 +11,11 @@
 @interface AppLaunchStatsSBSettings : NSObject <DuetLoggerProtocol> {
     NSUserDefaults *aplsSBSettingsDefault;
     NSObject<OS_dispatch_queue> *aplsSettingsQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id callbackBlock;
+
     AppLaunchStatsSaveAndRestore *saveAndRestoreContext;
     NSMutableDictionary *settingsBlacklist;
 }

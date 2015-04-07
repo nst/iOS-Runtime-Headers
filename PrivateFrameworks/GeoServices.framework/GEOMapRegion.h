@@ -5,12 +5,12 @@
 @class NSMutableArray;
 
 @interface GEOMapRegion : PBCodable <NSCopying> {
+    double _eastLng;
     struct { 
         unsigned int eastLng : 1; 
         unsigned int northLat : 1; 
         unsigned int southLat : 1; 
         unsigned int westLng : 1; 
-    double _eastLng;
     } _has;
     double _northLat;
     double _southLat;

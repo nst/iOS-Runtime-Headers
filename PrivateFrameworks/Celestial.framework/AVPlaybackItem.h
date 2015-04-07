@@ -5,17 +5,17 @@
 @class AVItem, NSDictionary;
 
 @interface AVPlaybackItem : NSObject {
+    AVItem *_avItem;
+    double _bookmarkTime;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    } _currentDuration;
     struct CGSize { 
         float width; 
         float height; 
-    AVItem *_avItem;
-    double _bookmarkTime;
-    } _currentDuration;
     } _currentSize;
     BOOL _currentSizeIsValid;
     id _delegate;

@@ -5,10 +5,10 @@
 @class NPKProtoCatalog;
 
 @interface NPKProtoCatalogChangedRequest : PBRequest <NSCopying> {
+    NPKProtoCatalog *_catalog;
     struct { 
         unsigned int lastKnownResyncID : 1; 
         unsigned int resyncID : 1; 
-    NPKProtoCatalog *_catalog;
     } _has;
     unsigned int _lastKnownResyncID;
     unsigned int _resyncID;

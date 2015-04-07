@@ -4,7 +4,7 @@
 
 @class <_UIDocumentPickerViewControllerHost>, NSArray, NSString, NSURL;
 
-@interface _UIDocumentPickerViewServiceViewController : UINavigationController <_UIDocumentPickerRemoteViewControllerContaining, _UIDocumentPickerOverviewDelegate, _UIDocumentPickerViewController> {
+@interface _UIDocumentPickerViewServiceViewController : UINavigationController <_UIDocumentPickerOverviewDelegate, _UIDocumentPickerRemoteViewControllerContaining, _UIDocumentPickerViewController> {
     NSArray *_auxiliaryOptions;
     NSString *_currentPickerIdentifier;
     int _displayMode;

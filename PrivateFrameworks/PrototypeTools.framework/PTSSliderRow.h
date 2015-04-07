@@ -12,8 +12,8 @@
 
 - (id)init;
 - (float)maxValue;
-- (id)minValue:(float)arg1 maxValue:(float)arg2;
 - (float)minValue;
+- (id)minValue:(float)arg1 maxValue:(float)arg2;
 - (Class)rowTableViewCellClass;
 - (void)setMaxValue:(float)arg1;
 - (void)setMinValue:(float)arg1;

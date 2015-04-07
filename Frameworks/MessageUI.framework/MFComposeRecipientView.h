@@ -4,7 +4,7 @@
 
 @class <MFComposeRecipientViewDelegate>, MFComposeRecipient, MFCorecipientsIndicatorAtom, MFModernComposeRecipientAtom, NSArray, NSCountedSet, NSMutableArray, NSMutableDictionary, NSString, NSTimer, UIButton, UIFont, UITapGestureRecognizer, UITextField, UIView, _MFMailRecipientTextField;
 
-@interface MFComposeRecipientView : MFComposeHeaderView <UITextFieldDelegate, UIGestureRecognizerDelegate, MFComposeRecipientAtomDelegate, MFDragSource, MFDragDestination, MFCorecipientsIndicatorAtomDelegate> {
+@interface MFComposeRecipientView : MFComposeHeaderView <MFComposeRecipientAtomDelegate, MFCorecipientsIndicatorAtomDelegate, MFDragDestination, MFDragSource, UIGestureRecognizerDelegate, UITextFieldDelegate> {
     UIButton *_addButton;
     BOOL _allowsDragAndDrop;
     struct __CFDictionary { } *_atomPresentationOptionsByRecipient;
@@ -85,8 +85,8 @@
 - (void)addAddress:(id)arg1;
 - (id)addButton;
 - (void)addButtonClicked:(id)arg1;
-- (void)addRecipient:(id)arg1 index:(unsigned int)arg2 animate:(BOOL)arg3;
 - (void)addRecipient:(id)arg1;
+- (void)addRecipient:(id)arg1 index:(unsigned int)arg2 animate:(BOOL)arg3;
 - (void)addRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (id)addresses;
 - (BOOL)allowsDrag;

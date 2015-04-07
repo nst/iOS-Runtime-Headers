@@ -3,13 +3,13 @@
  */
 
 @interface AWDWiFiMetricsManagerDeviceCount : PBCodable <NSCopying> {
+    unsigned int _deviceCount;
+    unsigned int _deviceIdentifierMap;
     struct { 
         unsigned int timeSinceBoot : 1; 
         unsigned int timestamp : 1; 
         unsigned int deviceCount : 1; 
         unsigned int deviceIdentifierMap : 1; 
-    unsigned int _deviceCount;
-    unsigned int _deviceIdentifierMap;
     } _has;
     double _timeSinceBoot;
     unsigned long long _timestamp;

@@ -29,8 +29,8 @@
 - (void)_getStartedButtonWasTapped:(id)arg1;
 - (float)_heightForText:(id)arg1 constrainedToWidth:(float)arg2;
 - (id)delegate;
-- (id)initWithAccount:(id)arg1 store:(id)arg2 familyEligibilityResponse:(id)arg3;
 - (id)initWithAccount:(id)arg1 store:(id)arg2;
+- (id)initWithAccount:(id)arg1 store:(id)arg2 familyEligibilityResponse:(id)arg3;
 - (void)loadView;
 - (void)setDelegate:(id)arg1;
 - (void)viewWillLayoutSubviews;

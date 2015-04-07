@@ -5,10 +5,10 @@
 @class NSData, NSMutableArray;
 
 @interface NNMKProtoMessageStatusUpdates : PBCodable <NSCopying> {
-    struct { 
-        unsigned int fullSyncVersion : 1; 
     NSData *_dateSynced;
     unsigned int _fullSyncVersion;
+    struct { 
+        unsigned int fullSyncVersion : 1; 
     } _has;
     NSMutableArray *_messageStatusUpdates;
 }

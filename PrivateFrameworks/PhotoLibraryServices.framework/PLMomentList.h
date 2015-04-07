@@ -27,17 +27,17 @@
 @property int sortIndex;
 @property(retain) NSDate * startDate;
 @property(readonly) Class superclass;
+@property(retain) NSString * title;
 @property(retain) NSString * title2;
 @property(retain) NSString * title3;
-@property(retain) NSString * title;
 @property(retain,readonly) NSObject<NSCopying> * uniqueObjectID;
 @property(retain) NSArray * userTitles;
 @property(retain) NSString * uuid;
 
-+ (id)allMomentListsInLibrary:(id)arg1 forLevel:(short)arg2 returnsObjectsAsFaults:(BOOL)arg3;
 + (id)allMomentListsInLibrary:(id)arg1 forLevel:(short)arg2;
-+ (id)allMomentListsInManagedObjectContext:(id)arg1 forLevel:(short)arg2 error:(id*)arg3 returnsObjectsAsFaults:(BOOL)arg4;
++ (id)allMomentListsInLibrary:(id)arg1 forLevel:(short)arg2 returnsObjectsAsFaults:(BOOL)arg3;
 + (id)allMomentListsInManagedObjectContext:(id)arg1 forLevel:(short)arg2 error:(id*)arg3;
++ (id)allMomentListsInManagedObjectContext:(id)arg1 forLevel:(short)arg2 error:(id*)arg3 returnsObjectsAsFaults:(BOOL)arg4;
 + (id)allMomentListsRequiringAnalysisInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (id)allMomentListsRequiringAnalysisInManagedObjectContext:(id)arg1 forLevel:(short)arg2 error:(id*)arg3;
 + (id)descriptionForGranularityLevel:(short)arg1;
@@ -52,8 +52,8 @@
 - (void)addMoment:(id)arg1 forMegaMomentAtIndex:(unsigned int)arg2;
 - (void)addMoment:(id)arg1 forMomentListLevel:(short)arg2;
 - (void)addMomentToFront:(id)arg1;
-- (void)addMoments:(id)arg1 forMomentListLevel:(short)arg2;
 - (void)addMoments:(id)arg1;
+- (void)addMoments:(id)arg1 forMomentListLevel:(short)arg2;
 - (void)addMomentsForMegaMoment:(id)arg1;
 - (void)addMomentsForMegaMomentObject:(id)arg1;
 - (void)addMomentsForYear:(id)arg1;
@@ -80,8 +80,8 @@
 - (id)moments;
 - (id)pl_debugDescription;
 - (void)removeMoment:(id)arg1 forMomentListLevel:(short)arg2;
-- (void)removeMoments:(id)arg1 forMomentListLevel:(short)arg2;
 - (void)removeMoments:(id)arg1;
+- (void)removeMoments:(id)arg1 forMomentListLevel:(short)arg2;
 - (void)removeMomentsForMegaMoment:(id)arg1;
 - (void)removeMomentsForMegaMomentAtIndexes:(id)arg1;
 - (void)removeMomentsForMegaMomentObject:(id)arg1;

@@ -5,10 +5,10 @@
 @class NSString, SYErrorInfo, SYMessageHeader;
 
 @interface SYSyncEndResponse : PBCodable <NSCopying> {
-    struct { 
-        unsigned int errorResolution : 1; 
     SYErrorInfo *_error;
     int _errorResolution;
+    struct { 
+        unsigned int errorResolution : 1; 
     } _has;
     SYMessageHeader *_header;
     NSString *_syncID;

@@ -25,8 +25,8 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithArray:(id)arg1 key:(id)arg2 keySpace:(id)arg3 locale:(id)arg4;
-- (id)initWithMetadataReader:(struct OpaqueFigMetadataReader { }*)arg1 array:(id)arg2 key:(id)arg3 keySpace:(id)arg4 locale:(id)arg5;
 - (id)initWithMetadataReader:(struct OpaqueFigMetadataReader { }*)arg1;
+- (id)initWithMetadataReader:(struct OpaqueFigMetadataReader { }*)arg1 array:(id)arg2 key:(id)arg3 keySpace:(id)arg4 locale:(id)arg5;
 - (id)nextObject;
 
 @end

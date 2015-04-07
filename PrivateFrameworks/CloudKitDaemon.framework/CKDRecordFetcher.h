@@ -14,7 +14,11 @@
     NSObject<OS_dispatch_group> *_fetchGroup;
     NSMutableDictionary *_fetchedRecordInfoByRecordID;
     BOOL _preserveOrdering;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordFetchedBlock;
+
     NSMutableArray *_recordIDsToFetch;
     NSArray *_recordResponsesToFetch;
 }

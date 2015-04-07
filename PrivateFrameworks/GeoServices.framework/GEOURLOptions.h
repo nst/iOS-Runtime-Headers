@@ -5,14 +5,14 @@
 @class GEOURLCamera, GEOURLCenterSpan, GEOURLRouteHandle, NSString;
 
 @interface GEOURLOptions : PBCodable <GEOURLSerializable, NSCopying> {
+    GEOURLCamera *_camera;
+    GEOURLCenterSpan *_centerSpan;
+    BOOL _enableTraffic;
     struct { 
         unsigned int mapType : 1; 
         unsigned int transportType : 1; 
         unsigned int userTrackingMode : 1; 
         unsigned int enableTraffic : 1; 
-    GEOURLCamera *_camera;
-    GEOURLCenterSpan *_centerSpan;
-    BOOL _enableTraffic;
     } _has;
     int _mapType;
     NSString *_referralIdentifier;

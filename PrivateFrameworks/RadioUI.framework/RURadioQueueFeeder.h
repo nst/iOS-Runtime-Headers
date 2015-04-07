@@ -57,8 +57,8 @@
 - (void)_fetchNextTrackAdSlotIfNeeded;
 - (BOOL)_hasReceivedStreamTrack;
 - (unsigned int)_indexOfCurrentItem;
-- (unsigned int)_indexOfItem:(id)arg1 inTracks:(id)arg2;
 - (unsigned int)_indexOfItem:(id)arg1;
+- (unsigned int)_indexOfItem:(id)arg1 inTracks:(id)arg2;
 - (void)_isExplicitTracksEnabledDidChangeNotification:(id)arg1;
 - (void)_itemIsBannedDidChangedNotification:(id)arg1;
 - (void)_itemWillChangeNotification:(id)arg1;

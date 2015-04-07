@@ -43,8 +43,8 @@
 - (BOOL)admissionCheckOfValue:(id)arg1 andStartedWithValue:(id)arg2 cost:(long long)arg3 error:(id*)arg4 handler:(id)arg5;
 - (BOOL)admissionCheckOfValue:(id)arg1 andStartedWithValue:(id)arg2 cost:(long long)arg3 type:(int)arg4 options:(id)arg5 error:(id*)arg6 handler:(id)arg7;
 - (BOOL)admissionCheckOfValue:(id)arg1 type:(int)arg2 options:(id)arg3 error:(id*)arg4 handler:(id)arg5;
-- (BOOL)admissionCheckOfValue:(id)arg1 withReason:(id*)arg2 error:(id*)arg3 handler:(id)arg4;
 - (BOOL)admissionCheckOfValue:(id)arg1 withReason:(id*)arg2 error:(id*)arg3;
+- (BOOL)admissionCheckOfValue:(id)arg1 withReason:(id*)arg2 error:(id*)arg3 handler:(id)arg4;
 - (void)admissionCheckOfValueAsync:(id)arg1 type:(int)arg2 options:(id)arg3 handleQueue:(id)arg4 handler:(id)arg5;
 - (BOOL)associateToAttribute:(id)arg1 error:(id*)arg2;
 - (BOOL)associateToBudget:(id)arg1 error:(id*)arg2;

@@ -61,8 +61,8 @@
 - (void)addEntriesFromDictionary:(id)arg1;
 - (void)addEntriesFromDictionaryWithRecursion:(id)arg1;
 - (void)addObject:(id)arg1 forKey:(id)arg2;
-- (void)addObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)addObjects:(id)arg1 forKeys:(id)arg2;
+- (void)addObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (id)addToCacheAndReturnCssString:(id)arg1;
 - (void)bl_copyObjectFromDictionary:(id)arg1 forKey:(id)arg2;
 - (void)bl_copyObjectFromDictionaryRemoveIfNotPresent:(id)arg1 forKey:(id)arg2;
@@ -121,8 +121,8 @@
 - (void)removeObjectForKey:(id)arg1;
 - (void)removeObjectsForKeys:(id)arg1;
 - (void)replaceObject:(id)arg1 forKey:(id)arg2;
-- (void)replaceObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)replaceObjects:(id)arg1 forKeys:(id)arg2;
+- (void)replaceObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)safelyMapKey:(id)arg1 toObject:(id)arg2;
 - (void)safelyMapKey:(id)arg1 toObject:(id)arg2;
 - (void)safelySetObject:(id)arg1 forKey:(id)arg2;
@@ -133,8 +133,8 @@
 - (void)setEntriesFromDictionary:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
-- (void)setObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)setObjects:(id)arg1 forKeys:(id)arg2;
+- (void)setObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)setSafeObject:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)tsu_setNonNilValueForKey:(id)arg1 fromDictionary:(id)arg2;

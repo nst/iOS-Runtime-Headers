@@ -3,17 +3,17 @@
  */
 
 @interface _UIMotionEffectAcceleratedOutputRange : NSObject <NSCoding, NSCopying> {
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     struct CGPoint { 
         float x; 
         float y; 
     } _acceleration;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _referenceAcceleration;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _referenceOffset;
 }
 

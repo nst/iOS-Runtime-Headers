@@ -5,26 +5,6 @@
 @class AVCaptureDeviceFormat_FigRecorder, NSMutableDictionary, NSString;
 
 @interface AVResolvedCaptureOptions : NSObject {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     NSMutableDictionary *baseCaptureOptions;
     BOOL captureSessionPresetChanging;
     NSString *faceDetectionMode;
@@ -36,13 +16,33 @@
     NSMutableDictionary *resolvedCaptureOptions;
     NSMutableDictionary *resolvedVideoCompressionProperties;
     AVCaptureDeviceFormat_FigRecorder *resolvedVideoDeviceFormat;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } resolvedVideoMaxFrameDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } resolvedVideoMinFrameDuration;
     BOOL resolvesFrameRatesUsingDefaultValues;
     NSString *sessionPreset;
     BOOL usePreviewSizedCaptureBuffers;
     BOOL useStabilizationIfAvailable;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } videoConnectionMaxFrameDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } videoConnectionMinFrameDuration;
 }
 

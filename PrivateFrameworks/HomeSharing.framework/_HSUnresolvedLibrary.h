@@ -10,7 +10,11 @@
 
 @interface _HSUnresolvedLibrary : NSObject {
     int _browserType;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     NSNetService *_netService;
     struct _DNSServiceRef_t { } *_resolvingDNSService;
 }

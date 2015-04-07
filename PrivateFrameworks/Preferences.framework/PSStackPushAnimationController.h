@@ -11,7 +11,11 @@
 @interface PSStackPushAnimationController : NSObject <UIViewControllerAnimatedTransitioning> {
     int _animationPreset;
     NSMutableArray *_animationsToRunAlongsideToVC;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     double _completionStagger;
     BOOL _hasStartedAnimation;
     UINavigationController *_navigationController;

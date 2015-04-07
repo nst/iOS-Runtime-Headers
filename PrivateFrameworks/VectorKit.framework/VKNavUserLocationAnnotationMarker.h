@@ -10,6 +10,41 @@
 @class VKAnimation;
 
 @interface VKNavUserLocationAnnotationMarker : VKAnnotationMarker {
+    float _arrowBrightness;
+    struct Matrix<float, 4, 1> { 
+        float _e[4]; 
+    } _arrowColor;
+    struct Matrix<float, 4, 1> { 
+        float _e[4]; 
+    } _arrowColorStale;
+    struct shared_ptr<ggl::RenderItem> { 
+        struct RenderItem {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _arrowRenderItem;
+    struct shared_ptr<ggl::TextureAlphaMask::Shader::Setup> { 
+        struct Setup {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _arrowShaderSetup;
+    VKAnimation *_billboardAnimation;
+    float _billboardFactor;
+    float _circleBrightness;
+    struct shared_ptr<ggl::RenderItem> { 
+        struct RenderItem {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _circleRenderItem;
+    struct shared_ptr<ggl::TextureWithBrightness::Shader::Setup> { 
+        struct Setup {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _circleShaderSetup;
+    struct shared_ptr<ggl::RenderState> { 
+        struct RenderState {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _gglPuckRenderState;
+    float _greyPuckAlphaScale;
+    BOOL _needsTextureUpdate;
+    double _presentationCourse;
+    BOOL _puckFlipped;
+    double _puckOffset;
     struct { 
         struct { 
             double v[4][4]; 
@@ -20,47 +55,6 @@
         struct Matrix<float, 4, 1> { 
             float _e[4]; 
         } arrowColor; 
-    struct Matrix<float, 4, 1> { 
-        float _e[4]; 
-    struct Matrix<float, 4, 1> { 
-        float _e[4]; 
-    struct shared_ptr<ggl::Texture2D> { 
-        struct Texture2D {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::Texture2D> { 
-        struct Texture2D {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::RenderState> { 
-        struct RenderState {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::TextureWithBrightness::Shader::Setup> { 
-        struct Setup {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::TextureAlphaMask::Shader::Setup> { 
-        struct Setup {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::RenderItem> { 
-        struct RenderItem {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::RenderItem> { 
-        struct RenderItem {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    float _arrowBrightness;
-    } _arrowColor;
-    } _arrowColorStale;
-    } _arrowRenderItem;
-    } _arrowShaderSetup;
-    VKAnimation *_billboardAnimation;
-    float _billboardFactor;
-    float _circleBrightness;
-    } _circleRenderItem;
-    } _circleShaderSetup;
-    } _gglPuckRenderState;
-    float _greyPuckAlphaScale;
-    BOOL _needsTextureUpdate;
-    double _presentationCourse;
-    BOOL _puckFlipped;
-    double _puckOffset;
     } _puckState;
     int _puckStyle;
     VKAnimation *_puckStyleAnimation;
@@ -70,7 +64,13 @@
     double _sizePoints;
     BOOL _stale;
     int _style;
+    struct shared_ptr<ggl::Texture2D> { 
+        struct Texture2D {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _textureArrow;
+    struct shared_ptr<ggl::Texture2D> { 
+        struct Texture2D {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _textureCircle;
 }
 

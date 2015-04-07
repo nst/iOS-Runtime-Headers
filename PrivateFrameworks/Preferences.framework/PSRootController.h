@@ -43,8 +43,8 @@
 - (id)popToRootViewControllerAnimated:(BOOL)arg1;
 - (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)popViewControllerAnimated:(BOOL)arg1;
-- (void)pushController:(id)arg1 animate:(BOOL)arg2;
 - (void)pushController:(id)arg1;
+- (void)pushController:(id)arg1 animate:(BOOL)arg2;
 - (void)pushControllersAsStack:(id)arg1;
 - (id)readPreferenceValue:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
@@ -56,8 +56,8 @@
 - (void)setRootController:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
-- (void)showController:(id)arg1 animate:(BOOL)arg2;
 - (void)showController:(id)arg1;
+- (void)showController:(id)arg1 animate:(BOOL)arg2;
 - (void)showLeftButton:(id)arg1 withStyle:(int)arg2 rightButton:(id)arg3 withStyle:(int)arg4;
 - (id)specifier;
 - (id)specifiers;

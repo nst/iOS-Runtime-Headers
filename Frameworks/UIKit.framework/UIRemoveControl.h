@@ -5,6 +5,10 @@
 @class NSString, UIRemoveControlMinusButton, UIView;
 
 @interface UIRemoveControl : UIView {
+    id _delegate;
+    NSString *_label;
+    UIRemoveControlMinusButton *_minusButton;
+    UIView *_removeConfirmationButton;
     struct { 
         unsigned int removeButtonVisible : 1; 
         unsigned int removeConfirmationVisible : 1; 
@@ -13,10 +17,6 @@
         unsigned int alwaysHideRemoveButton : 1; 
         unsigned int editingStyle : 3; 
         unsigned int reserved : 23; 
-    id _delegate;
-    NSString *_label;
-    UIRemoveControlMinusButton *_minusButton;
-    UIView *_removeConfirmationButton;
     } _removeControlFlags;
     UIView *_target;
 }
@@ -70,8 +70,8 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setRemoveConfirmationLabel:(id)arg1;
-- (void)setRemoveConfirmationVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setRemoveConfirmationVisible:(BOOL)arg1;
+- (void)setRemoveConfirmationVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setRemovedFromTargetWhenHidden:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setTarget:(id)arg1;

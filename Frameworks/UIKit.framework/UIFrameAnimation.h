@@ -12,6 +12,8 @@
             float width; 
             float height; 
         } size; 
+    } _endFrame;
+    int _fieldsToChange;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -21,8 +23,6 @@
             float width; 
             float height; 
         } size; 
-    } _endFrame;
-    int _fieldsToChange;
     } _startFrame;
 }
 

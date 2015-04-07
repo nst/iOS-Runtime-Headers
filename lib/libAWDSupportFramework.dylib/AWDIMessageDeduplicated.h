@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface AWDIMessageDeduplicated : PBCodable <NSCopying> {
+    unsigned int _deduplicationInterval;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int deduplicationInterval : 1; 
-    unsigned int _deduplicationInterval;
-    NSString *_guid;
     } _has;
     unsigned long long _timestamp;
 }

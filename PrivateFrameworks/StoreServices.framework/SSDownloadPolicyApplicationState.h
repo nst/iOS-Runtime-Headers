@@ -4,7 +4,7 @@
 
 @class NSSet, NSString;
 
-@interface SSDownloadPolicyApplicationState : NSObject <NSCoding, SSXPCCoding, NSCopying> {
+@interface SSDownloadPolicyApplicationState : NSObject <NSCoding, NSCopying, SSXPCCoding> {
     NSString *_applicationIdentifier;
     NSSet *_applicationStates;
 }

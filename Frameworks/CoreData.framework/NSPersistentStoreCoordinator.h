@@ -5,11 +5,11 @@
 @class NSArray, NSManagedObjectModel, NSString;
 
 @interface NSPersistentStoreCoordinator : NSObject <NSLocking> {
+    id *_additionalPrivateIvars;
+    void *_dispatchQueue;
     struct _persistentStoreCoordinatorFlags { 
         unsigned int _isRegistered : 1; 
         unsigned int _reservedFlags : 31; 
-    id *_additionalPrivateIvars;
-    void *_dispatchQueue;
     } _flags;
     NSManagedObjectModel *_managedObjectModel;
     long _miniLock;
@@ -43,8 +43,8 @@
 
 - (id)URLForPersistentStore:(id)arg1;
 - (void)_addPersistentStore:(id)arg1 identifier:(id)arg2;
-- (void)_assignObject:(id)arg1 toPersistentStore:(id)arg2 forConfiguration:(id)arg3;
 - (void)_assignObject:(id)arg1 toPersistentStore:(id)arg2;
+- (void)_assignObject:(id)arg1 toPersistentStore:(id)arg2 forConfiguration:(id)arg3;
 - (void)_assignObjects:(id)arg1 toStore:(id)arg2;
 - (BOOL)_canSaveGraphRootedAtObject:(id)arg1 intoStore:(id)arg2 withPreviouslyChecked:(struct __CFSet { }*)arg3 withAcceptableEntities:(struct __CFSet { }*)arg4;
 - (BOOL)_checkForPostLionWriter:(id)arg1;
@@ -81,10 +81,10 @@
 - (void)lock;
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;
-- (id)managedObjectIDForURIRepresentation:(id)arg1 error:(id*)arg2;
 - (id)managedObjectIDForURIRepresentation:(id)arg1;
-- (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2 error:(id*)arg3;
+- (id)managedObjectIDForURIRepresentation:(id)arg1 error:(id*)arg2;
 - (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2;
+- (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2 error:(id*)arg3;
 - (id)managedObjectModel;
 - (id)metadataForPersistentStore:(id)arg1;
 - (id)migratePersistentStore:(id)arg1 toURL:(id)arg2 options:(id)arg3 withType:(id)arg4 error:(id*)arg5;

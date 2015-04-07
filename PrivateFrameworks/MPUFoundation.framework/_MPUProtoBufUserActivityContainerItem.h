@@ -5,9 +5,9 @@
 @class MIPMultiverseIdentifier;
 
 @interface _MPUProtoBufUserActivityContainerItem : PBCodable <NSCopying> {
+    int _containerItemType;
     struct { 
         unsigned int containerItemType : 1; 
-    int _containerItemType;
     } _has;
     MIPMultiverseIdentifier *_selectedMultiverseIdentifier;
     MIPMultiverseIdentifier *_visualReferenceMultiverseIdentifier;

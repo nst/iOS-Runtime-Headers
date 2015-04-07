@@ -5,9 +5,9 @@
 @class GEOURLCamera, PBUnknownFields;
 
 @interface GEOStorageCameraView : PBCodable <NSCopying> {
+    GEOURLCamera *_camera;
     struct { 
         unsigned int mapType : 1; 
-    GEOURLCamera *_camera;
     } _has;
     int _mapType;
     PBUnknownFields *_unknownFields;

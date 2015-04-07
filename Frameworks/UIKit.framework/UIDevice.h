@@ -5,6 +5,7 @@
 @class NSString, NSUUID;
 
 @interface UIDevice : NSObject {
+    float _batteryLevel;
     struct { 
         unsigned int batteryMonitoringEnabled : 1; 
         unsigned int proximityMonitoringEnabled : 1; 
@@ -12,7 +13,6 @@
         unsigned int orientation : 3; 
         unsigned int batteryState : 2; 
         unsigned int proximityState : 1; 
-    float _batteryLevel;
     } _deviceFlags;
     int _numDeviceOrientationObservers;
 }
@@ -88,8 +88,8 @@
 - (int)sbf_bannerGraphicsQuality;
 - (int)sbf_controlCenterGraphicsQuality;
 - (void)setBatteryMonitoringEnabled:(BOOL)arg1;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setOrientation:(int)arg1;
+- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setProximityMonitoringEnabled:(BOOL)arg1;
 - (id)systemName;
 - (id)systemVersion;

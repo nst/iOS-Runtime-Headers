@@ -20,8 +20,8 @@
 + (BOOL)string:(id)arg1 isEqualToXmlCharString:(const char *)arg2;
 
 - (const char *)_prefixForNameSpace:(const char *)arg1;
-- (void)_startElement:(id)arg1 inNamespace:(id)arg2 withAttributeNamesAndValues:(id)arg3 attributes:(void*)arg4;
 - (void)_startElement:(id)arg1 inNamespace:(id)arg2;
+- (void)_startElement:(id)arg1 inNamespace:(id)arg2 withAttributeNamesAndValues:(id)arg3 attributes:(void*)arg4;
 - (void)appendElement:(id)arg1 inNamespace:(id)arg2 withStringContent:(id)arg3 withAttributeNamesAndValues:(id)arg4;
 - (void)appendElement:(id)arg1 inNamespace:(id)arg2 withStringContentAsCDATA:(id)arg3 withAttributeNamesAndValues:(id)arg4;
 - (id)data;

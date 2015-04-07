@@ -4,21 +4,16 @@
 
 @class <UICollectionViewDataSource>, GKColorPalette, GKLoadableContentStateMachine, GKPlaceholderView, GKSearchBar, GKSwipeToEditStateMachine, NSMapTable, NSString, UIActivityIndicatorView, UICollectionViewLayout;
 
-@interface GKCollectionViewController : UICollectionViewController <GKStateMachineDelegate, GKCollectionViewDataSourceDelegate, UISearchBarDelegate, UITextFieldDelegate, GKSegmentedSectionDataSourceEventHandler> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+@interface GKCollectionViewController : UICollectionViewController <GKCollectionViewDataSourceDelegate, GKSegmentedSectionDataSourceEventHandler, GKStateMachineDelegate, UISearchBarDelegate, UITextFieldDelegate> {
     BOOL _active;
     GKSearchBar *_activeSearchBar;
     int _appearCount;
     GKColorPalette *_colorPalette;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInsetsBeforeKeyboard;
     NSString *_currentSearchText;
     <UICollectionViewDataSource> *_dataSource;
@@ -32,6 +27,11 @@
     int _previousOrientation;
     BOOL _readyToDisplayData;
     NSMapTable *_reusableViewsIHaveSeen;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _scrollInsetsBeforeKeyboard;
     BOOL _shouldSlideInContents;
     BOOL _showSupplementaryViewsWhileLoading;
@@ -87,10 +87,10 @@
 - (void)applyShowMoreLayoutAttributesForShowMoreView:(id)arg1 atIndexPath:(id)arg2;
 - (void)clearButtonPressed:(id)arg1;
 - (void)clearSelectionHighlight;
+- (id)collectionView;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;
-- (id)collectionView;
 - (id)colorPalette;
 - (void)completeWhenReadyToDisplayData:(id)arg1;
 - (void)configureDataSource;
@@ -98,6 +98,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsetsBeforeKeyboard;
 - (id)currentSearchTerms;
 - (id)currentSearchText;
+- (id)dataSource;
 - (void)dataSource:(id)arg1 didInsertItemsAtIndexPaths:(id)arg2;
 - (void)dataSource:(id)arg1 didInsertSections:(id)arg2;
 - (void)dataSource:(id)arg1 didMoveItemAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
@@ -108,7 +109,6 @@
 - (void)dataSource:(id)arg1 didRemoveSections:(id)arg2;
 - (void)dataSource:(id)arg1 didUpdatePlaceholderVisibility:(BOOL)arg2;
 - (void)dataSource:(id)arg1 performBatchUpdate:(id)arg2 complete:(id)arg3;
-- (id)dataSource;
 - (void)dataSourceDidMoveSectionsWithItems:(id)arg1;
 - (void)dataSourceDidReloadData:(id)arg1;
 - (void)dealloc;

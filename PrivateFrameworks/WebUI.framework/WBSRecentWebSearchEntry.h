@@ -19,8 +19,8 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithSearchString:(id)arg1 date:(id)arg2;
 - (id)initWithSearchString:(id)arg1;
+- (id)initWithSearchString:(id)arg1 date:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)searchString;
 

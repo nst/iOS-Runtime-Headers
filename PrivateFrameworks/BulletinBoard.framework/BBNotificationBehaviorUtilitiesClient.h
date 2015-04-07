@@ -9,9 +9,17 @@
 @class NSString, NSXPCConnection;
 
 @interface BBNotificationBehaviorUtilitiesClient : NSObject <BBNotificationBehaviorUtilitiesClientProtocol> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _activeBehaviorOverridesChangeHandler;
+
     NSXPCConnection *_connection;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _filteringStateChangeHandler;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

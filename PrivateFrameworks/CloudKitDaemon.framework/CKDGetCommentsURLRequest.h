@@ -9,7 +9,11 @@
 @class CKCommentQuery, NSData;
 
 @interface CKDGetCommentsURLRequest : CKDURLRequest {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _commentFetchedBlock;
+
     NSData *_cursor;
     NSData *_nextCursor;
     CKCommentQuery *_query;

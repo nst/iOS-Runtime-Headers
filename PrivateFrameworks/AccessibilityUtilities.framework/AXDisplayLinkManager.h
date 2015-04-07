@@ -34,8 +34,8 @@
 - (void)_displayDidRefresh:(id)arg1;
 - (id)_prepareUpdatedTargetActionsForModification;
 - (id)activeTargetActions;
-- (void)addTarget:(id)arg1 selector:(SEL)arg2 frameInterval:(unsigned int)arg3;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2;
+- (void)addTarget:(id)arg1 selector:(SEL)arg2 frameInterval:(unsigned int)arg3;
 - (void)beginRequiringWarmUpMode;
 - (void)dealloc;
 - (id)displayLink;

@@ -20,8 +20,8 @@
 - (BOOL)isRotating;
 - (void)setHiding:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
 - (void)toggleRotate:(BOOL)arg1;
 
 @end

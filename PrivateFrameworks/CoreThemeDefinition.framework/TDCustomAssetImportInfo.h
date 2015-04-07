@@ -5,14 +5,6 @@
 @class CUIRenditionKey, NSDate, NSObject<TDCustomAssetSource>, NSString;
 
 @interface TDCustomAssetImportInfo : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -30,8 +22,16 @@
     NSString *_partName;
     CUIRenditionKey *_renditionKey;
     int _renditionType;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _resizableSliceSize;
     int _resizingMode;
+    struct { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _sliceInsets;
     int _templateRenderingMode;
 }

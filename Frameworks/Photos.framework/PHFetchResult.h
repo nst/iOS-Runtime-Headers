@@ -56,10 +56,10 @@
 - (id)fetchedObjects;
 - (id)firstObject;
 - (void)getMediaTypeCounts;
-- (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfObject:(id)arg1;
-- (id)initWithQuery:(id)arg1 oids:(id)arg2 registerIfNeeded:(BOOL)arg3;
+- (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithQuery:(id)arg1;
+- (id)initWithQuery:(id)arg1 oids:(id)arg2 registerIfNeeded:(BOOL)arg3;
 - (BOOL)interestedInChange:(id)arg1;
 - (BOOL)isRegisteredForChangeNotificationDeltas;
 - (id)lastObject;

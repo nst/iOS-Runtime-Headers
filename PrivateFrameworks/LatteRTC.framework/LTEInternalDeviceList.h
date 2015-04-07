@@ -9,11 +9,15 @@
 @class NSMutableArray;
 
 @interface LTEInternalDeviceList : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id changeListener;
+
+    NSMutableArray *deviceList;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    id changeListener;
-    NSMutableArray *deviceList;
     } listLock;
 }
 

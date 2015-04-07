@@ -4,16 +4,16 @@
 
 @class NSCalendar, NSDate, NSDateComponents, NSLocale, NSString, NSTimeZone, UIDatePicker, UIFont, UILabel, _UIDatePickerChineseCalendar, _UIDatePickerMode;
 
-@interface _UIDatePickerView : UIPickerView <UIPickerViewDelegate, UIPickerViewDataSource> {
+@interface _UIDatePickerView : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate> {
+    BOOL _allowsZeroTimeInterval;
+    _UIDatePickerChineseCalendar *_chineseWrapperCalendar;
+    NSLocale *_compositeLocale;
+    UIDatePicker *_datePickerDelegate;
     struct { 
         unsigned int staggerTimeIntervals : 1; 
         unsigned int loadingDateOrTime : 1; 
         unsigned int highlightsToday : 1; 
         unsigned int usesBlackChrome : 1; 
-    BOOL _allowsZeroTimeInterval;
-    _UIDatePickerChineseCalendar *_chineseWrapperCalendar;
-    NSLocale *_compositeLocale;
-    UIDatePicker *_datePickerDelegate;
     } _datePickerFlags;
     id _delegateOfDatePicker;
     int _expectedAMPM;
@@ -134,8 +134,8 @@
 - (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (int)second;
-- (void)setDate:(id)arg1 animated:(BOOL)arg2;
 - (void)setDate:(id)arg1;
+- (void)setDate:(id)arg1 animated:(BOOL)arg2;
 - (void)setDateComponents:(id)arg1;
 - (void)setDatePickerMode:(int)arg1;
 - (void)setDelegate:(id)arg1;

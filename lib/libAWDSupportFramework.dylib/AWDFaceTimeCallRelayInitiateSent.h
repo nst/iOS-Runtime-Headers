@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface AWDFaceTimeCallRelayInitiateSent : PBCodable <NSCopying> {
+    int _errorCode;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int errorCode : 1; 
         unsigned int isVideo : 1; 
         unsigned int onLockScreen : 1; 
         unsigned int sendDuration : 1; 
-    int _errorCode;
-    NSString *_guid;
     } _has;
     unsigned int _isVideo;
     unsigned int _onLockScreen;

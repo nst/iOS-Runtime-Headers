@@ -52,8 +52,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptionWithContext:(id)arg1;
-- (unsigned long long)diffAgainst:(id)arg1 lastEditorChanged:(BOOL*)arg2;
 - (unsigned long long)diffAgainst:(id)arg1;
+- (unsigned long long)diffAgainst:(id)arg1 lastEditorChanged:(BOOL*)arg2;
 - (id)displayNameWithoutExtension:(BOOL)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasThumbnail;

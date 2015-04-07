@@ -10,7 +10,11 @@
 
 @interface _UICalloutBarSystemButtonDescription : NSObject {
     SEL m_action;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id m_configurationBlock;
+
     UIImage *m_image;
     NSString *m_title;
     int m_type;

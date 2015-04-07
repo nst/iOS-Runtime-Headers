@@ -34,9 +34,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (unsigned int)hash;
-- (id)initWithCADisplay:(id)arg1 isMainDisplay:(BOOL)arg2 seed:(unsigned int)arg3 tags:(int)arg4;
-- (id)initWithCADisplay:(id)arg1 isMainDisplay:(BOOL)arg2;
 - (id)initWithCADisplay:(id)arg1;
+- (id)initWithCADisplay:(id)arg1 isMainDisplay:(BOOL)arg2;
+- (id)initWithCADisplay:(id)arg1 isMainDisplay:(BOOL)arg2 seed:(unsigned int)arg3 tags:(int)arg4;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (BOOL)isAirPlayDisplay;

@@ -5,13 +5,13 @@
 @class UIScrollView, UIView;
 
 @interface SUStorePageView : UIView {
+    UIView *_backdropView;
+    UIView *_contentView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIView *_backdropView;
-    UIView *_contentView;
     } _contentViewInsets;
     UIScrollView *_headerScrollView;
     UIView *_headerView;

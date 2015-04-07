@@ -5,6 +5,9 @@
 @class NSString;
 
 @interface AWDIDSStreamingReport : PBCodable <NSCopying> {
+    unsigned long long _bytesReceived;
+    unsigned long long _bytesSent;
+    NSString *_guid;
     struct { 
         unsigned int bytesReceived : 1; 
         unsigned int bytesSent : 1; 
@@ -13,9 +16,6 @@
         unsigned int priority : 1; 
         unsigned int samplingInterval : 1; 
         unsigned int timestamp : 1; 
-    unsigned long long _bytesReceived;
-    unsigned long long _bytesSent;
-    NSString *_guid;
     } _has;
     unsigned long long _packetsReceived;
     unsigned long long _packetsSent;

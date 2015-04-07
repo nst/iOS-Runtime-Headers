@@ -8,7 +8,7 @@
 
 @class <PBBridgeConnectionDelegate>, <RUILoaderDelegate>, NSMutableData, NSMutableURLRequest, NSString, NSTimer, NSURLConnection, RUILoader;
 
-@interface PBBridgeCompanionController : PBBridgeIDSServiceDelegate <IDSServiceDelegate, NSURLConnectionDelegate, RUILoaderDelegate, PBBridgeCompanionProtocol> {
+@interface PBBridgeCompanionController : PBBridgeIDSServiceDelegate <IDSServiceDelegate, NSURLConnectionDelegate, PBBridgeCompanionProtocol, RUILoaderDelegate> {
     NSURLConnection *_activationConnection;
     NSMutableData *_activationData;
     NSMutableURLRequest *_activationRequest;
@@ -19,10 +19,18 @@
     NSString *_contentType;
     <PBBridgeConnectionDelegate> *_delegate;
     unsigned short _granularActivationState;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _initialSyncPrepCompletion;
+
     NSString *_internalLastSendMessageID;
     BOOL _isEstablishingPairing;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _lockedOnAnimationCompletion;
+
     BOOL _nonSilentActivation;
     BOOL _passcodeSet;
     <RUILoaderDelegate> *_ruiDelegate;
@@ -68,8 +76,8 @@
 - (id)activationData;
 - (id)activationRequest;
 - (int)activationState;
-- (void)activationTimeout:(id)arg1;
 - (id)activationTimeout;
+- (void)activationTimeout:(id)arg1;
 - (BOOL)allowAnyHTTPSCertificate;
 - (void)beginSetupTransaction;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;

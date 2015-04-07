@@ -5,9 +5,6 @@
 @class NSDictionary, NSMutableArray;
 
 @interface AVCaptureStillImageOutputInternal_FigRecorder : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL EV0CaptureEnabled;
     int HDRCaptureMode;
     BOOL SISActive;
@@ -19,6 +16,9 @@
     BOOL jpegQualitySpecified;
     BOOL noiseReductionEnabled;
     NSDictionary *outputSettings;
+    struct CGSize { 
+        float width; 
+        float height; 
     } previewImageSize;
     BOOL rawCaptureEnabled;
     unsigned long shutterSoundID;

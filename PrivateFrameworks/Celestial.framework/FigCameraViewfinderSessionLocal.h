@@ -4,7 +4,7 @@
 
 @class FigCameraViewfinderLocal, FigCameraViewfinderStream, FigCaptureSessionProxy, FigStateMachine, NSObject<OS_dispatch_queue>, NSString;
 
-@interface FigCameraViewfinderSessionLocal : FigCameraViewfinderSession <FigCaptureSessionPreviewTapDelegate, FigCameraViewfinderStreamDelegate> {
+@interface FigCameraViewfinderSessionLocal : FigCameraViewfinderSession <FigCameraViewfinderStreamDelegate, FigCaptureSessionPreviewTapDelegate> {
     FigCaptureSessionProxy *_captureSessionProxy;
     BOOL _ended;
     long long _identifier;

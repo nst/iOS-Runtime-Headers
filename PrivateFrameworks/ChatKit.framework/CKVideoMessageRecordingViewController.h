@@ -8,12 +8,16 @@
 
 @class <CKVideoMessageRecordingViewControllerDelegate>, CKJoystickButtonItem, CKJoystickController, CKJoystickShutterButtonItem, CKMediaObject, CKRecordingElapsedTimeView, CKVideoPreviewViewController, NSError, NSString, UIButton, UIImagePickerController, UIView, UIWindow;
 
-@interface CKVideoMessageRecordingViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, CKJoystickControllerDelegate, CKVideoRecorderDelegate, CKVideoPreviewViewControllerDelegate> {
+@interface CKVideoMessageRecordingViewController : UIViewController <CKJoystickControllerDelegate, CKVideoPreviewViewControllerDelegate, CKVideoRecorderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UIImagePickerController *_cameraViewController;
     BOOL _canceled;
     NSError *_captureError;
     unsigned int _enableCancel;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _mediaExportCompletionBlock;
+
     CKMediaObject *_mediaObjectForSending;
     UIWindow *_overlayWindow;
     UIView *_presentationView;

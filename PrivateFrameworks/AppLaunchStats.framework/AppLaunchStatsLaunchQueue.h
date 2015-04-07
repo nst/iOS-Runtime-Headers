@@ -11,20 +11,32 @@
 @interface AppLaunchStatsLaunchQueue : NSObject <DuetLoggerProtocol> {
     NSDate *ageWifiChargerQueue;
     long long allowedAppLaunchCap;
-    boolpushHigh;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id highPriorityBlock;
+
     NSMutableArray *highPriorityPushQueue;
     NSMutableArray *highPriorityRetryList;
     NSDate *lastRetryTrigTime;
     NSObject<OS_dispatch_queue> *launchQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id lowPriorityBlock;
+
     NSMutableArray *lowPriorityPushQueue;
     NSMutableArray *lowPriorityRetryList;
+    bool pushHigh;
     NSMutableArray *reservationStationList;
     unsigned long long scheduleLaunchQueue;
     NSMutableArray *trendingQueue;
     NSMutableArray *whatToLaunchQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id wifiChargerCheck;
+
     long long wifiChargerDuration;
     NSMutableArray *wifiChargerQueue;
 }

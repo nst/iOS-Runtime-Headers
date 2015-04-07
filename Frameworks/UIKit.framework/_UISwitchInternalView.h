@@ -53,10 +53,10 @@
 - (void)_sendActions;
 - (void)_setOn:(BOOL)arg1 animated:(BOOL)arg2 force:(BOOL)arg3;
 - (void)_setOnTintColor:(id)arg1;
-- (void)_setPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3 shouldAnimateLabels:(BOOL)arg4 completion:(id)arg5;
 - (void)_setPressed:(BOOL)arg1;
-- (void)_setProgress:(float)arg1 animated:(BOOL)arg2 withDuration:(float)arg3 force:(BOOL)arg4 sendAction:(BOOL)arg5;
+- (void)_setPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3 shouldAnimateLabels:(BOOL)arg4 completion:(id)arg5;
 - (void)_setProgress:(float)arg1;
+- (void)_setProgress:(float)arg1 animated:(BOOL)arg2 withDuration:(float)arg3 force:(BOOL)arg4 sendAction:(BOOL)arg5;
 - (void)_setupBackgroundLayer;
 - (void)_setupThumbImages;
 - (id)_snapshotImage;

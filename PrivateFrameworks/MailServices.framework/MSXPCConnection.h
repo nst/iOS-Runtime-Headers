@@ -12,8 +12,16 @@
     NSXPCConnection *_connection;
     NSXPCInterface *_exportedInterface;
     id _exportedObject;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _interruptionHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _invalidationHandler;
+
     Protocol *_protocol;
     NSObject<OS_dispatch_queue> *_queue;
     NSXPCInterface *_remoteObjectInterface;

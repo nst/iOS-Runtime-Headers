@@ -5,9 +5,6 @@
 @class <PLPublishingAgentDelegate>, NSData, NSMutableArray, NSString, PLVideoRemaker;
 
 @interface PLPublishingAgent : NSObject <PLDataArrayInputStreamProgressDelegate, UIAlertViewDelegate> {
-    unsigned int _remakingWasCancelled : 1;
-    unsigned int _remaking : 1;
-    unsigned int _publishing : 1;
     BOOL _allowsHDOver3GUpload;
     long long _approximateHDUploadSize;
     long long _approximateSDUploadSize;
@@ -31,9 +28,12 @@
     BOOL _ownerIsCamera;
     float _percentComplete;
     float _progressMultiplier;
+    unsigned int _publishing : 1;
     PLVideoRemaker *_remaker;
     int _remakerMode;
+    unsigned int _remaking : 1;
     float _remakingPercentComplete;
+    unsigned int _remakingWasCancelled : 1;
     int _selectedOption;
     BOOL _shouldCancelPublish;
     NSMutableArray *_snapshotTimes;

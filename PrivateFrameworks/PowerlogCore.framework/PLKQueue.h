@@ -13,7 +13,11 @@
     BOOL _enabled;
     int _fileDescriptor;
     int _kQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _kQueueBlock;
+
     struct __CFFileDescriptor { } *_kqueueDescriptorRef;
     struct __CFRunLoopSource { } *_kqueueDescriptorSource;
     NSString *_path;

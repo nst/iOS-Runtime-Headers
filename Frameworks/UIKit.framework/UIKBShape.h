@@ -14,27 +14,27 @@
             float width; 
             float height; 
         } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     } m_frame;
     UIKBGeometry *m_geometry;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } m_originalFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } m_paddedFrame;
     BOOL m_scaled;
     unsigned int m_uid;
@@ -51,10 +51,10 @@
 + (id)shapeByCombining:(id)arg1 withShape:(id)arg2;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scaleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inYAxis:(BOOL)arg2;
-- (void)addRectFrom:(id)arg1 mergeActionFactors:(id)arg2;
-- (void)addRectFrom:(id)arg1 widthFraction:(float)arg2 heightFraction:(float)arg3 adjustOriginXFactor:(float)arg4 adjustOriginYFactor:(float)arg5 absoluteOriginFactors:(BOOL)arg6;
-- (void)addRectFrom:(id)arg1 widthFraction:(float)arg2 heightFraction:(float)arg3 adjustOriginXFactor:(float)arg4 adjustOriginYFactor:(float)arg5;
 - (void)addRectFrom:(id)arg1;
+- (void)addRectFrom:(id)arg1 mergeActionFactors:(id)arg2;
+- (void)addRectFrom:(id)arg1 widthFraction:(float)arg2 heightFraction:(float)arg3 adjustOriginXFactor:(float)arg4 adjustOriginYFactor:(float)arg5;
+- (void)addRectFrom:(id)arg1 widthFraction:(float)arg2 heightFraction:(float)arg3 adjustOriginXFactor:(float)arg4 adjustOriginYFactor:(float)arg5 absoluteOriginFactors:(BOOL)arg6;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -73,8 +73,8 @@
 - (void)scaleIfNeeded:(float)arg1 onlyYAxis:(BOOL)arg2;
 - (void)scaleWidth:(float)arg1;
 - (BOOL)scaled;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 resetOriginalFrame:(BOOL)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 resetOriginalFrame:(BOOL)arg2;
 - (void)setFrameOnly:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setPaddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

@@ -5,12 +5,12 @@
 @class NSRegularExpression, NSString;
 
 @interface SUOverlayConfiguration : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSRegularExpression *_bagKeyPattern;
     int _cornerRadius;
     BOOL _shouldShowNavigationBar;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     NSString *_transitionName;
     NSRegularExpression *_urlPattern;

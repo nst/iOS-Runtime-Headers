@@ -5,18 +5,14 @@
 @class NSIndexPath, PUGridMagnifiedView;
 
 @interface PUGridMagnifiedImageViewController : UIViewController {
+    BOOL _canShowFullScreen;
+    id _delegate;
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+    } _gestureWindLocation;
+    int _imageFormat;
+    NSIndexPath *_itemIndexPath;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -26,34 +22,38 @@
             float width; 
             float height; 
         } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    } _itemWindFrame;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _lastLocation;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    BOOL _canShowFullScreen;
-    id _delegate;
-    } _gestureWindLocation;
-    int _imageFormat;
-    NSIndexPath *_itemIndexPath;
-    } _itemWindFrame;
-    } _lastLocation;
     } _magnifiedDragEdgeInsets;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _magnifiedSize;
     PUGridMagnifiedView *_magnifiedView;
     float _magnifiedYOffset;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _shadowOffset;
     float _shadowOpacity;
     float _shadowRadius;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _trackingWindFrame;
 }
 

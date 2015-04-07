@@ -5,7 +5,6 @@
 @class NSArray, UIColor, UIView;
 
 @interface UIMultiColumnsNavigationTransitionView : UIView <NSCoding> {
-    unsigned int _isTransitioning : 1;
     int _columnCount;
     float _columnWidth;
     struct __CFDictionary { } *_containerViews;
@@ -16,6 +15,7 @@
     float _dividersWidth;
     UIView *_firstResponderViewToRestore;
     NSArray *_fromViews;
+    unsigned int _isTransitioning : 1;
     NSArray *_toViews;
     int _transition;
     NSArray *_viewsToAdd;

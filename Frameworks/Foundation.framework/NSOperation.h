@@ -5,8 +5,8 @@
 @class NSArray, NSString;
 
 @interface NSOperation : NSObject {
-    int _private1;
     id _private;
+    int _private1;
 }
 
 @property(getter=isAsynchronous,readonly) BOOL asynchronous;

@@ -4,7 +4,7 @@
 
 @class NSData, NSError, NSString;
 
-@interface MBRestoreFailure : NSObject <NSCopying, NSCoding> {
+@interface MBRestoreFailure : NSObject <NSCoding, NSCopying> {
     NSString *_assetType;
     NSString *_dataclass;
     NSString *_displayName;

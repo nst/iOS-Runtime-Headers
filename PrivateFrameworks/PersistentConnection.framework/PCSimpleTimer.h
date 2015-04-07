@@ -59,8 +59,8 @@
 - (BOOL)isValid;
 - (id)loggingIdentifier;
 - (void)scheduleInQueue:(id)arg1;
-- (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1;
+- (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;
 - (void)setDisableSystemWaking:(BOOL)arg1;
 - (void)updateFireTime:(double)arg1 triggerOnGMTChange:(BOOL)arg2;
 - (id)userInfo;

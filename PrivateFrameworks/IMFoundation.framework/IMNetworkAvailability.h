@@ -9,7 +9,11 @@
 @class NSString, NSTimer;
 
 @interface IMNetworkAvailability : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     void *_context;
     unsigned int _flags;
     NSString *_guid;

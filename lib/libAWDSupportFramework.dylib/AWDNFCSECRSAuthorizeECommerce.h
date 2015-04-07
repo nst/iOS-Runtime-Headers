@@ -5,6 +5,9 @@
 @class NSData;
 
 @interface AWDNFCSECRSAuthorizeECommerce : PBCodable <NSCopying> {
+    NSData *_aid;
+    unsigned int _countryCode;
+    unsigned int _currencyCode;
     struct { 
         unsigned int otherAmount : 1; 
         unsigned int timeDeltaFromReference : 1; 
@@ -16,9 +19,6 @@
         unsigned int method : 1; 
         unsigned int status : 1; 
         unsigned int transactionType : 1; 
-    NSData *_aid;
-    unsigned int _countryCode;
-    unsigned int _currencyCode;
     } _has;
     unsigned int _merchantCapabilities;
     NSData *_merchantId;

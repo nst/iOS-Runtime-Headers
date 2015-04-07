@@ -5,9 +5,6 @@
 @class NSArray, NSDate, NSMutableArray, NSString, NSTimer, TIKeyboardCandidate, UIKBBackgroundView, UIKBKeyView, UIKeyboardPredictionBarGrabber, UILabel, UITouch, UIView;
 
 @interface UIKeyboardPredictionView : UIView {
-    struct CGPoint { 
-        float x; 
-        float y; 
     UITouch *_activeTouch;
     NSDate *_lastUpdateDate;
     TIKeyboardCandidate *_scheduledAutocorrection;
@@ -22,6 +19,9 @@
     BOOL m_dragging;
     UIKeyboardPredictionBarGrabber *m_grabber;
     BOOL m_hasLongCandidates;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_initLocation;
     UIView *m_leftDimmingView;
     UIView *m_message;
@@ -78,8 +78,8 @@
 - (void)setActiveTouch:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLastUpdateDate:(id)arg1;
-- (void)setPredictionViewState:(int)arg1 animate:(BOOL)arg2 notify:(BOOL)arg3;
 - (void)setPredictionViewState:(int)arg1 animate:(BOOL)arg2;
+- (void)setPredictionViewState:(int)arg1 animate:(BOOL)arg2 notify:(BOOL)arg3;
 - (void)setPredictions:(id)arg1 autocorrection:(id)arg2;
 - (void)setScheduledAutocorrection:(id)arg1;
 - (void)setScheduledPredictions:(id)arg1;

@@ -5,9 +5,6 @@
 @class NSArray, NSString, UIColor, UIImageView;
 
 @interface UIActivityIndicatorView : UIView <NSCoding> {
-    struct CGSize { 
-        float width; 
-        float height; 
     int _activityIndicatorViewStyle;
     int _actualActivityIndicatorViewStyle;
     BOOL _animating;
@@ -20,6 +17,9 @@
     float _innerRadius;
     UIImageView *_internalView;
     UIColor *_shadowColor;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _shadowOffset;
     BOOL _spinning;
     float _spinningDuration;

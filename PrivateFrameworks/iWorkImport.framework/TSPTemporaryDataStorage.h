@@ -19,8 +19,8 @@
 - (void)dealloc;
 - (id)decryptionKey;
 - (BOOL)gilligan_isRemote;
-- (id)initWithURL:(id)arg1 decryptionKey:(id)arg2;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 decryptionKey:(id)arg2;
 - (BOOL)isMissingData;
 - (BOOL)isMissingOriginalData;
 - (void)performIOChannelReadWithAccessor:(id)arg1;

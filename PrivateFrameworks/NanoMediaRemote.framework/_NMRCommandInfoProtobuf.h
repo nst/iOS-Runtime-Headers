@@ -5,14 +5,9 @@
 @class NSString;
 
 @interface _NMRCommandInfoProtobuf : PBCodable <NSCopying> {
-    struct { 
-        double *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        float *list; 
-        unsigned int count; 
-        unsigned int size; 
+    BOOL _active;
+    int _command;
+    BOOL _enabled;
     struct { 
         unsigned int command : 1; 
         unsigned int maximumRating : 1; 
@@ -21,17 +16,22 @@
         unsigned int shuffleMode : 1; 
         unsigned int active : 1; 
         unsigned int enabled : 1; 
-    BOOL _active;
-    int _command;
-    BOOL _enabled;
     } _has;
     NSString *_localizedShortTitle;
     NSString *_localizedTitle;
     float _maximumRating;
     float _minimumRating;
+    struct { 
+        double *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _preferredIntervals;
     int _repeatMode;
     int _shuffleMode;
+    struct { 
+        float *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _supportedRates;
 }
 

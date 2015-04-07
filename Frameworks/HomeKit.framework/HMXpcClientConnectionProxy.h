@@ -10,7 +10,11 @@
 
 @interface HMXpcClientConnectionProxy : NSObject <HMMessageTransport> {
     HMMessageDispatcher *_recvDispatcher;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _refreshHandler;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -21,8 +25,8 @@
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id)arg5;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
+- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id)arg5;
 - (id)initWithMessageDispatcher:(id)arg1 refreshHandler:(id)arg2;
 - (id)recvDispatcher;
 - (id)refreshHandler;

@@ -5,28 +5,28 @@
 @class <PUGridRenderedStripDataSource>, NSArray, PUSectionedGridLayout, UIView;
 
 @interface PUGridRenderedStrip : UICollectionReusableView {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     BOOL __needsRendering;
     UIView *__sideExtendedContentView;
     int _backgroundColorValue;
     unsigned int _contentExtenderType;
     <PUGridRenderedStripDataSource> *_dataSource;
     BOOL _extendsToTop;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _interItemSpacing;
     float _itemContentScale;
     NSArray *_itemIndexPaths;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _itemSize;
     PUSectionedGridLayout *_layout;
     float _leftContentInset;
     UIView *_topContentView;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _visualItemRange;
     int _visualSectionIndex;
 }

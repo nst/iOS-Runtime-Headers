@@ -5,15 +5,15 @@
 @class NSIndexPath, NSTimer, UIShadowView, UITableViewCell;
 
 @interface _UITableViewReorderingSupport : NSObject {
-    unsigned int _oldShowHorizontalScrollIndicator : 1;
-    unsigned int _oldShowVerticalScrollIndicator : 1;
-    unsigned int _reloadDataCalled : 1;
-    unsigned int _reorderingCancelled : 1;
-    unsigned int _reserved : 28;
     NSTimer *_autoscrollTimer;
     UIShadowView *_bottomShadowView;
     NSIndexPath *_initialIndexPath;
+    unsigned int _oldShowHorizontalScrollIndicator : 1;
+    unsigned int _oldShowVerticalScrollIndicator : 1;
+    unsigned int _reloadDataCalled : 1;
     UITableViewCell *_reorderedCell;
+    unsigned int _reorderingCancelled : 1;
+    unsigned int _reserved : 28;
     NSIndexPath *_targetIndexPath;
     UIShadowView *_topShadowView;
     BOOL _wasScrollingEnabled;

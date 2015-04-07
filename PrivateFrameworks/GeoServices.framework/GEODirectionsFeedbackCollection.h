@@ -5,6 +5,16 @@
 @class GEOLocation, NSMutableArray;
 
 @interface GEODirectionsFeedbackCollection : PBCodable <NSCopying> {
+    BOOL _arrivedAtDestination;
+    NSMutableArray *_directionsFeedbacks;
+    double _endTimeStamp;
+    GEOLocation *_finalLocation;
+    struct { 
+        unsigned int navigationAudioFeedback : 1; 
+        unsigned int endTimeStamp : 1; 
+        unsigned int startTimeStamp : 1; 
+        unsigned int arrivedAtDestination : 1; 
+    } _has;
     struct { 
         int _currentRouteTypeAtEndOfNav; 
         unsigned int _manuallyChangedRouteCount; 
@@ -42,16 +52,6 @@
             unsigned int viewedAudioSheetBTHFP : 1; 
             unsigned int wirelessRoutesAvailable : 1; 
         } _has; 
-    struct { 
-        unsigned int navigationAudioFeedback : 1; 
-        unsigned int endTimeStamp : 1; 
-        unsigned int startTimeStamp : 1; 
-        unsigned int arrivedAtDestination : 1; 
-    BOOL _arrivedAtDestination;
-    NSMutableArray *_directionsFeedbacks;
-    double _endTimeStamp;
-    GEOLocation *_finalLocation;
-    } _has;
     } _navigationAudioFeedback;
     double _startTimeStamp;
 }

@@ -10,7 +10,11 @@
 
 @interface MPStoreCompletionOfferingLookupItem : NSObject {
     MPMediaQuery *_albumItemsQuery;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _responseBlock;
+
     NSNumber *_storeLookupID;
     unsigned int _tokenID;
     BOOL _wantsArtwork;

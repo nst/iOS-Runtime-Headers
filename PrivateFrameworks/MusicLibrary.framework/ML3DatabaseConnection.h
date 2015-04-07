@@ -100,11 +100,11 @@
 - (BOOL)deleteDatabase;
 - (id)description;
 - (void)enqueueBlockForTransactionCommit:(id)arg1;
-- (id)executeQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
-- (id)executeQuery:(id)arg1 withParameters:(id)arg2;
 - (id)executeQuery:(id)arg1;
-- (BOOL)executeUpdate:(id)arg1 withParameters:(id)arg2 error:(id*)arg3;
+- (id)executeQuery:(id)arg1 withParameters:(id)arg2;
+- (id)executeQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
 - (BOOL)executeUpdate:(id)arg1;
+- (BOOL)executeUpdate:(id)arg1 withParameters:(id)arg2 error:(id*)arg3;
 - (void)flush;
 - (const void*)iTunesExtensions;
 - (id)init;
@@ -118,8 +118,8 @@
 - (BOOL)logQueryPlans;
 - (BOOL)open;
 - (id)openBlobInTable:(id)arg1 column:(id)arg2 row:(long long)arg3 readOnly:(BOOL)arg4;
-- (BOOL)performTransactionWithBlock:(id)arg1 usingBehaviorType:(unsigned int)arg2;
 - (BOOL)performTransactionWithBlock:(id)arg1;
+- (BOOL)performTransactionWithBlock:(id)arg1 usingBehaviorType:(unsigned int)arg2;
 - (BOOL)popToRootTransactionAndCommit:(BOOL)arg1;
 - (BOOL)popTransactionAndCommit:(BOOL)arg1;
 - (int)profilingLevel;
@@ -127,8 +127,8 @@
 - (BOOL)pushTransaction;
 - (BOOL)pushTransactionUsingBehaviorType:(unsigned int)arg1;
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 block:(id)arg3;
-- (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)())arg3 userData:(void*)arg4;
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)())arg3;
+- (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)())arg3 userData:(void*)arg4;
 - (BOOL)registerModule:(id)arg1;
 - (BOOL)registerModuleName:(id)arg1 moduleMethods:(struct sqlite3_module { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); }*)arg2;
 - (void)setAutomaticCheckpointingEnabled:(BOOL)arg1;

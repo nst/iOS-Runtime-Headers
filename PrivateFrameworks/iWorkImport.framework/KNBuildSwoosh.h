@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface KNBuildSwoosh : KNAnimationEffect <KNChunkableBuildAnimator, KNAnimationPluginArchiving> {
+@interface KNBuildSwoosh : KNAnimationEffect <KNAnimationPluginArchiving, KNChunkableBuildAnimator> {
 }
 
 @property(copy,readonly) NSString * debugDescription;

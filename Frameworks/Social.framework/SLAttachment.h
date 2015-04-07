@@ -16,10 +16,18 @@
     BOOL _needsAnotherPreviewGeneration;
     id _payload;
     NSURL *_payloadSourceFileURL;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _payloadUpdateObserver;
+
     UIImage *_previewImage;
     int _previewType;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _previewUpdateObserver;
+
     BOOL _startedPayloadLoad;
     int _type;
     NSString *_typeIdentifier;

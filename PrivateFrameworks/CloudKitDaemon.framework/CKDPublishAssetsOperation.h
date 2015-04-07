@@ -10,7 +10,11 @@
 
 @interface CKDPublishAssetsOperation : CKDDatabaseOperation {
     unsigned int _URLOptions;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _assetPublishedBlock;
+
     NSOperation *_fetchRecordsOperation;
     NSMutableDictionary *_fetchedRecordsByID;
     NSDictionary *_fileNamesByAssetFieldNames;

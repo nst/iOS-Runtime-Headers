@@ -5,11 +5,11 @@
 @class <VMULibraryLoadDelegate>, NSObject<OS_dispatch_queue>;
 
 @interface _VMULibraryLoadObserver : NSObject {
+    <VMULibraryLoadDelegate> *_delegate;
+    NSObject<OS_dispatch_queue> *_serialNotificationsQueue;
     struct _CSTypeRef { 
         unsigned int _opaque_1; 
         unsigned int _opaque_2; 
-    <VMULibraryLoadDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_serialNotificationsQueue;
     } _symbolicator;
 }
 

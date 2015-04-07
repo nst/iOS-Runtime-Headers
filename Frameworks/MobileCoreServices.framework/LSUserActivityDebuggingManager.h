@@ -36,9 +36,9 @@
 - (unsigned long long)lastLogRotationTime;
 - (void)log:(int)arg1 common:(BOOL)arg2 format:(id)arg3 args:(void*)arg4 file:(const char *)arg5 line:(long)arg6;
 - (void)log:(int)arg1 file:(const char *)arg2 line:(long)arg3 format:(id)arg4;
-- (void)log:(int)arg1 format:(id)arg2 args:(void*)arg3 file:(const char *)arg4 line:(long)arg5;
-- (void)log:(int)arg1 format:(id)arg2 args:(void*)arg3;
 - (void)log:(int)arg1 format:(id)arg2;
+- (void)log:(int)arg1 format:(id)arg2 args:(void*)arg3;
+- (void)log:(int)arg1 format:(id)arg2 args:(void*)arg3 file:(const char *)arg4 line:(long)arg5;
 - (void)logCommon:(unsigned int)arg1 format:(id)arg2 args:(void*)arg3;
 - (id)logFileDirectoryPath;
 - (BOOL)logFileEnabled;

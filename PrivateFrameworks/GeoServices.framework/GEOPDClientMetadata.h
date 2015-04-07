@@ -5,14 +5,14 @@
 @class GEOLatLng, NSMutableArray, NSString;
 
 @interface GEOPDClientMetadata : PBCodable <NSCopying> {
-    struct { 
-        unsigned int timeSinceMapEnteredForeground : 1; 
     NSString *_deviceCountryCode;
     NSString *_deviceDisplayLocale;
     NSMutableArray *_deviceInstalledKeyboardLocales;
     NSString *_deviceKeyboardLocale;
     GEOLatLng *_deviceLocation;
     NSString *_deviceSpokenLocale;
+    struct { 
+        unsigned int timeSinceMapEnteredForeground : 1; 
     } _has;
     unsigned int _timeSinceMapEnteredForeground;
 }

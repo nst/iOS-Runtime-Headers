@@ -13,9 +13,9 @@
     } m_command;
 }
 
-- (struct WebEditCommandProxy { int (**x1)(); id x2; unsigned long long x3; int x4; struct WebPageProxy {} *x5; }*)command;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (struct WebEditCommandProxy { int (**x1)(); id x2; unsigned long long x3; int x4; struct WebPageProxy {} *x5; }*)command;
 - (id)initWithWebEditCommandProxy:(struct PassRefPtr<WebKit::WebEditCommandProxy> { struct WebEditCommandProxy {} *x1; })arg1;
 
 @end

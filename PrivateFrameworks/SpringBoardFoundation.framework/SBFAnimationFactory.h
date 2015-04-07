@@ -15,25 +15,25 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (void)animateWithFactory:(id)arg1 actions:(id)arg2 completion:(id)arg3;
 + (void)animateWithFactory:(id)arg1 actions:(id)arg2;
-+ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id)arg3 completion:(id)arg4;
++ (void)animateWithFactory:(id)arg1 actions:(id)arg2 completion:(id)arg3;
 + (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id)arg3;
-+ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned int)arg3 actions:(id)arg4 completion:(id)arg5;
++ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id)arg3 completion:(id)arg4;
 + (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned int)arg3 actions:(id)arg4;
-+ (void)animateWithFactory:(id)arg1 options:(unsigned int)arg2 actions:(id)arg3 completion:(id)arg4;
++ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned int)arg3 actions:(id)arg4 completion:(id)arg5;
 + (void)animateWithFactory:(id)arg1 options:(unsigned int)arg2 actions:(id)arg3;
++ (void)animateWithFactory:(id)arg1 options:(unsigned int)arg2 actions:(id)arg3 completion:(id)arg4;
 + (id)factoryWithAnimationAttributes:(id)arg1;
-+ (id)factoryWithDuration:(double)arg1 delay:(double)arg2 timingFunction:(id)arg3;
-+ (id)factoryWithDuration:(double)arg1 delay:(double)arg2;
-+ (id)factoryWithDuration:(double)arg1 timingFunction:(id)arg2;
 + (id)factoryWithDuration:(double)arg1;
-+ (id)factoryWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4 timingFunction:(id)arg5;
-+ (id)factoryWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4;
-+ (id)factoryWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 timingFunction:(id)arg4;
++ (id)factoryWithDuration:(double)arg1 delay:(double)arg2;
++ (id)factoryWithDuration:(double)arg1 delay:(double)arg2 timingFunction:(id)arg3;
++ (id)factoryWithDuration:(double)arg1 timingFunction:(id)arg2;
 + (id)factoryWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3;
-+ (id)factoryWithSettings:(id)arg1 timingFunction:(id)arg2;
++ (id)factoryWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4;
++ (id)factoryWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4 timingFunction:(id)arg5;
++ (id)factoryWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 timingFunction:(id)arg4;
 + (id)factoryWithSettings:(id)arg1;
++ (id)factoryWithSettings:(id)arg1 timingFunction:(id)arg2;
 
 - (void)_animateWithAdditionalDelay:(double)arg1 options:(unsigned int)arg2 actions:(id)arg3 completion:(id)arg4;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;

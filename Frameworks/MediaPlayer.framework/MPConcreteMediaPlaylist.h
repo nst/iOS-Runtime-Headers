@@ -37,8 +37,8 @@
 - (void)removeAllItems;
 - (void)removeItems:(id)arg1 atFilteredIndexes:(id)arg2 completionBlock:(id)arg3;
 - (id)representativeItem;
-- (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id)arg3;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
+- (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id)arg3;
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;
 

@@ -42,8 +42,8 @@
 - (id)debugDescription;
 - (id)description;
 - (BOOL)hasEntitlement:(id)arg1;
-- (id)initWithConnection:(id)arg1 database:(id)arg2;
 - (id)initWithConnection:(id)arg1;
+- (id)initWithConnection:(id)arg1 database:(id)arg2;
 - (id)localizedAppName;
 - (id)longDebugDescription;
 - (id)name;

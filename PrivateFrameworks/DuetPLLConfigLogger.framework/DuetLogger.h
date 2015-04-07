@@ -6,13 +6,13 @@
 
 @interface DuetLogger : NSObject {
     NSString *binaryName;
-    boolcanWriteToFile;
-    boolfirstTime;
+    bool canWriteToFile;
     NSMutableArray *duetLoggerSource;
     int fd;
     NSFileManager *fileMgr;
     NSString *fileName;
     NSString *filePath;
+    bool firstTime;
     NSString *homeDir;
     NSObject<OS_dispatch_queue> *logQueue;
     NSString *logState;
@@ -22,8 +22,8 @@
 
 @property(readonly) bool canWriteToFile;
 
-+ (id)instance:(int)arg1;
 + (id)instance;
++ (id)instance:(int)arg1;
 
 - (void).cxx_destruct;
 - (void)addDataSource:(id)arg1;

@@ -51,8 +51,8 @@
 - (id)editorialLayoutForLabelElement:(id)arg1 width:(float)arg2;
 - (void)expandEditorialForLabelElement:(id)arg1;
 - (id)init;
-- (id)initWithStorePageSectionContext:(id)arg1 previousLayoutContext:(id)arg2;
 - (id)initWithStorePageSectionContext:(id)arg1;
+- (id)initWithStorePageSectionContext:(id)arg1 previousLayoutContext:(id)arg2;
 - (void)invalidateAllEditorialLayouts;
 - (BOOL)isEditorialLayoutExpanded:(id)arg1;
 - (id)labelLayoutCache;

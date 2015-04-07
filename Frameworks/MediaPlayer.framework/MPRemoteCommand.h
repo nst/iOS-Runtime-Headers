@@ -29,8 +29,8 @@
 - (BOOL)isSupported;
 - (unsigned int)mediaRemoteCommandType;
 - (void)notifyPropagatablePropertyChanged;
-- (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)removeTarget:(id)arg1;
+- (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 

@@ -8,8 +8,12 @@
 
 @class <UIActivityViewControllerDelegate>, NSArray, NSOperationQueue, NSString, SFAirDropActivityViewController, UIActivity, UIAlertController, UIViewController, _UIActivityApplicationExtensionDiscovery, _UIActivityGroupListViewController, _UIAlertControllerShimPresenter;
 
-@interface UIActivityViewController : UIViewController <UIViewControllerRestoration, UIAlertControllerContaining, UIActivityGroupViewControllerDelegate, SFAirDropActivityViewControllerDelegate> {
+@interface UIActivityViewController : UIViewController <SFAirDropActivityViewControllerDelegate, UIActivityGroupViewControllerDelegate, UIAlertControllerContaining, UIViewControllerRestoration> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __popoverDismissalAction;
+
     UIActivity *_activity;
     UIAlertController *_activityAlertController;
     _UIAlertControllerShimPresenter *_activityAlertControllerShimPresenter;
@@ -26,8 +30,16 @@
     _UIActivityApplicationExtensionDiscovery *_applicationExtensionDiscovery;
     unsigned int _backgroundTaskIdentifier;
     int _completedProviderCount;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionWithItemsHandler;
+
     int _excludedActivityCategories;
     NSArray *_excludedActivityTypes;
     NSArray *_includedActivityTypes;
@@ -35,7 +47,11 @@
     int _originalPopoverBackgroundStyle;
     Class _originalPopoverBackgroundViewClass;
     BOOL _performActivityForStateRestoration;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _preCompletionHandler;
+
     BOOL _showKeyboardAutomatically;
     NSString *_subject;
     int _totalProviderCount;
@@ -95,11 +111,11 @@
 - (id)_activityItemValues;
 - (void)_addToActiveActivityViewControllers;
 - (id)_availableActivities;
-- (id)_availableActivitiesForItems:(id)arg1 applicationExtensionActivities:(id)arg2;
 - (id)_availableActivitiesForItems:(id)arg1;
+- (id)_availableActivitiesForItems:(id)arg1 applicationExtensionActivities:(id)arg2;
 - (void)_cancel;
-- (void)_cleanupActivityWithSuccess:(BOOL)arg1 items:(id)arg2 error:(id)arg3;
 - (void)_cleanupActivityWithSuccess:(BOOL)arg1;
+- (void)_cleanupActivityWithSuccess:(BOOL)arg1 items:(id)arg2 error:(id)arg3;
 - (id)_containedAlertController;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (float)_displayHeight;
@@ -111,8 +127,8 @@
 - (void)_performActivity:(id)arg1;
 - (void)_performActivityOfType:(id)arg1;
 - (id)_popoverDismissalAction;
-- (void)_prepareActivity:(id)arg1 completion:(id)arg2;
 - (void)_prepareActivity:(id)arg1;
+- (void)_prepareActivity:(id)arg1 completion:(id)arg2;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)_reloadImageForActivity:(id)arg1;
 - (void)_removeFromActiveActivityViewControllers;
@@ -123,8 +139,8 @@
 - (BOOL)_shouldShowSystemActivity:(id)arg1;
 - (id)_titleForActivity:(id)arg1;
 - (void)_updateActivities:(id)arg1 animated:(BOOL)arg2;
-- (void)_updateActivityItems:(id)arg1 animated:(BOOL)arg2;
 - (void)_updateActivityItems:(id)arg1;
+- (void)_updateActivityItems:(id)arg1 animated:(BOOL)arg2;
 - (id)activity;
 - (id)activityAlertController;
 - (id)activityAlertControllerShimPresenter;

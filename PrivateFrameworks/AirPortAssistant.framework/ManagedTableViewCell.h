@@ -5,6 +5,11 @@
 @class NSIndexPath, NSMutableDictionary, TableViewManager;
 
 @interface ManagedTableViewCell : UITableViewCell {
+    NSMutableDictionary *_cellDict;
+    float _cellXEdgeInset;
+    float _computedRightmostEditTextInset;
+    NSIndexPath *_currentIndexPath;
+    float _forcedRightmostEditTextInset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,11 +19,6 @@
             float width; 
             float height; 
         } size; 
-    NSMutableDictionary *_cellDict;
-    float _cellXEdgeInset;
-    float _computedRightmostEditTextInset;
-    NSIndexPath *_currentIndexPath;
-    float _forcedRightmostEditTextInset;
     } _modifiedContentViewFrame;
     float _neededContentHeight;
     TableViewManager *_parentTableManager;

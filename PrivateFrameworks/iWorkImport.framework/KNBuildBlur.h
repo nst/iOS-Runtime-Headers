@@ -4,7 +4,30 @@
 
 @class KNAnimParameterGroup, NSMapTable, NSString, TSDGLShader;
 
-@interface KNBuildBlur : KNAnimationEffect <KNFrameBuildAnimator, KNAnimationPluginArchiving> {
+@interface KNBuildBlur : KNAnimationEffect <KNAnimationPluginArchiving, KNFrameBuildAnimator> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _animationRect;
+    NSMapTable *_blurTextures;
+    NSMapTable *_dataBuffers;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _drawableFrame;
+    KNAnimParameterGroup *_parameterGroup;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -22,29 +45,6 @@
         float m42; 
         float m43; 
         float m44; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _animationRect;
-    NSMapTable *_blurTextures;
-    NSMapTable *_dataBuffers;
-    } _drawableFrame;
-    KNAnimParameterGroup *_parameterGroup;
     } _projectionMatrix;
     TSDGLShader *_shader;
 }

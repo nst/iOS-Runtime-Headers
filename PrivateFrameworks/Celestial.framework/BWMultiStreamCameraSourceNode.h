@@ -5,33 +5,13 @@
 @class BWDeferredMetadataCache, BWFigVideoCaptureDevice, BWNodeOutput, NSArray, NSDictionary, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface BWMultiStreamCameraSourceNode : BWSourceNode <BWFigCameraSourceNode> {
-    struct { 
-        int width; 
-        int height; 
-    struct { 
-        int width; 
-        int height; 
-    struct { 
-        int width; 
-        int height; 
-    struct { 
-        int width; 
-        int height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct BWStreamOutputStorage { 
-        BOOL ready; 
-        BOOL enabled; 
-        BWNodeOutput *nodeOutput; 
-        struct opaqueCMSimpleQueue {} *simpleQueue; 
-        NSObject<OS_dispatch_queue> *bufferServicingQueue; 
-        struct opaqueCMFormatDescription {} *cachedFormatDescription; 
-        int frameCount; 
     float _aeMaxGain;
     BWFigVideoCaptureDevice *_captureDevice;
     BOOL _chromaNoiseReductionEnabled;
     int _clientSpecifiedFormatIndex;
+    struct { 
+        int width; 
+        int height; 
     } _cropAspectRatio;
     BOOL _deferMetadataCreation;
     BWDeferredMetadataCache *_deferredMetadataCache;
@@ -48,14 +28,31 @@
     int _maxIntegrationTimeOverride;
     float _minFrameRate;
     int _motionAttachmentsSource;
+    struct BWStreamOutputStorage { 
+        BOOL ready; 
+        BOOL enabled; 
+        BWNodeOutput *nodeOutput; 
+        struct opaqueCMSimpleQueue {} *simpleQueue; 
+        NSObject<OS_dispatch_queue> *bufferServicingQueue; 
+        struct opaqueCMFormatDescription {} *cachedFormatDescription; 
+        int frameCount; 
     } _outputsStorage[4];
+    struct CGSize { 
+        float width; 
+        float height; 
     } _overscanPercentage;
+    struct { 
+        int width; 
+        int height; 
     } _preferredPreviewDimensions;
     BWNodeOutput *_previewOutput;
     BOOL _previewOutputEnabled;
     NSString *_previewOutputID;
     int _resolvedFormatIndex;
     BOOL _resolvedFormatIndexUpToDate;
+    struct { 
+        int width; 
+        int height; 
     } _sensorCropDimensions;
     BWNodeOutput *_stillImageOutput;
     BOOL _stillImageOutputEnabled;
@@ -65,6 +62,9 @@
     int _streamFormatIndex;
     NSArray *_supportedFormats;
     BOOL _temporalNoiseReductionEnabled;
+    struct { 
+        int width; 
+        int height; 
     } _videoCaptureDimensions;
     BWNodeOutput *_videoCaptureOutput;
     BOOL _videoCaptureOutputEnabled;

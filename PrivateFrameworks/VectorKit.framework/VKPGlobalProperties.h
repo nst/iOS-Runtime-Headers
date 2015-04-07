@@ -3,54 +3,9 @@
  */
 
 @interface VKPGlobalProperties : PBCodable <NSCopying> {
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+    unsigned int _buildingChangeoverZ;
+    float _globalScaleFactor;
+    float _globeLODScale;
     struct { 
         unsigned int buildingChangeoverZ : 1; 
         unsigned int globalScaleFactor : 1; 
@@ -79,23 +34,68 @@
         unsigned int shieldNightBrightness : 1; 
         unsigned int tiltLimitSatelliteScale : 1; 
         unsigned int labelDisableAlternateTextPositions : 1; 
-    unsigned int _buildingChangeoverZ;
-    float _globalScaleFactor;
-    float _globeLODScale;
     } _has;
     BOOL _labelDisableAlternateTextPositions;
     float _labelIconScale;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangeBackgroundRasters;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangeGroundCovers;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangeHybridRasters;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangePOIs;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangeRasterTraffics;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangeSatelliteRasters;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangeStandardRasters;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangeVectorBuildings;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangeVectorPolygons;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangeVectorRealistics;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangeVectorRoadTraffics;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _layerZoomRangeVectorRoads;
     float _lodOffset;
     float _minLineTriangleWidth;

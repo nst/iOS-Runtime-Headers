@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface PRSFeedback : NSObject <NSCopying, NSCoding, NSSecureCoding> {
+@interface PRSFeedback : NSObject <NSCoding, NSCopying, NSSecureCoding> {
     NSString *_input;
     int _timestamp;
 }

@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface HDCodableSource : PBCodable <NSCopying> {
+    NSString *_bundleIdentifier;
     struct { 
         unsigned int options : 1; 
-    NSString *_bundleIdentifier;
     } _has;
     NSString *_name;
     long long _options;

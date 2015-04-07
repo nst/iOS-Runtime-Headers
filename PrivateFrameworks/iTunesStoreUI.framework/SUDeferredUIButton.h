@@ -5,6 +5,7 @@
 @class NSMutableDictionary, NSString;
 
 @interface SUDeferredUIButton : UIButton <SUDeferredUIView> {
+    BOOL _deferredEnabled;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    BOOL _deferredEnabled;
     } _deferredFrame;
     NSMutableDictionary *_deferredImages;
     NSMutableDictionary *_deferredTitles;

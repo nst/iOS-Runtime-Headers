@@ -15,7 +15,11 @@
     CKShareID *_shareID;
     int _status;
     double _ttl;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateCompletionBlock;
+
 }
 
 @property long long customStatusFlags;

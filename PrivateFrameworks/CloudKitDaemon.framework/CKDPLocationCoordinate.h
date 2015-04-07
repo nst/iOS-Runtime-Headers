@@ -5,6 +5,8 @@
 @class CKDPDate;
 
 @interface CKDPLocationCoordinate : PBCodable <NSCopying> {
+    double _altitude;
+    double _course;
     struct { 
         unsigned int altitude : 1; 
         unsigned int course : 1; 
@@ -13,8 +15,6 @@
         unsigned int longitude : 1; 
         unsigned int speed : 1; 
         unsigned int verticalAccuracy : 1; 
-    double _altitude;
-    double _course;
     } _has;
     double _horizontalAccuracy;
     double _latitude;

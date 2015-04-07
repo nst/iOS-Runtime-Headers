@@ -8,10 +8,14 @@
 
 @class <RURadioViewControllerDelegate>, MPUBorderDrawingCache, MPUTextButton, NSArray, NSMapTable, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_source>, NSString, RUMiniPlayerCoordinator, RUPlaceholderView, RURadioCollectionView, RURadioPlaybackCoordinator, RUSearchViewController, RUSignInViewController, RUTermsViewController, RUWelcomeViewController, RadioStation, UIAlertView, UILabel, UIScrollView, UISearchDisplayController, UIView;
 
-@interface RURadioViewController : MPUDataSourceViewController <MPUMiniPlayerParticipant, MPUTextDrawingCacheInvalidationObserver, RUEditStationsViewControllerDelegate, RUCreateStationViewControllerDelegate, RUHistoryViewControllerDelegate, RURadioCollectionViewDelegate, RUSearchViewControllerDelegate, RUSignInViewControllerDelegate, RUStationActionsViewControllerDelegate, RUStationTreeViewControllerDelegate, RUTermsViewControllerDelegate, RUWelcomeViewControllerDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface RURadioViewController : MPUDataSourceViewController <MPUMiniPlayerParticipant, MPUTextDrawingCacheInvalidationObserver, RUCreateStationViewControllerDelegate, RUEditStationsViewControllerDelegate, RUHistoryViewControllerDelegate, RURadioCollectionViewDelegate, RUSearchViewControllerDelegate, RUSignInViewControllerDelegate, RUStationActionsViewControllerDelegate, RUStationTreeViewControllerDelegate, RUTermsViewControllerDelegate, RUWelcomeViewControllerDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     NSMutableArray *_authenticationResponseHandlers;
     NSMapTable *_cachedStationArtworkCollections;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deferredDeselectCompletionHandler;
+
     <RURadioViewControllerDelegate> *_delegate;
     int _deselectDeferralCount;
     NSMapTable *_dispatchSourceImpressionTimersByStation;

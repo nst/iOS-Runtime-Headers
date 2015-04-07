@@ -6,19 +6,19 @@
 
 @interface GEOCarInfo : PBCodable <NSCopying> {
     struct { 
-        double _height; 
-        double _width; 
-        struct { 
-            unsigned int height : 1; 
-            unsigned int width : 1; 
-        } _has; 
-    struct { 
         unsigned int screenResolution : 1; 
         unsigned int interactionModel : 1; 
     } _has;
     int _interactionModel;
     NSString *_manufacturer;
     NSString *_model;
+    struct { 
+        double _height; 
+        double _width; 
+        struct { 
+            unsigned int height : 1; 
+            unsigned int width : 1; 
+        } _has; 
     } _screenResolution;
 }
 

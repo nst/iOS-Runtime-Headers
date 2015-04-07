@@ -18,8 +18,8 @@
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
-- (id)_flowControlForOperation:(id)arg1 createIfNecessary:(BOOL)arg2;
 - (id)_flowControlForOperation:(id)arg1;
+- (id)_flowControlForOperation:(id)arg1 createIfNecessary:(BOOL)arg2;
 - (BOOL)checkFlowControlIsLimited:(id)arg1;
 - (double)currentBudget:(id)arg1;
 - (unsigned int)currentBudgetCap:(id)arg1;

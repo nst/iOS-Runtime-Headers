@@ -5,9 +5,6 @@
 @class NSObject<OS_xpc_object>, NSXPCConnection, NSXPCInterface;
 
 @interface NSXPCDecoder : NSXPCCoder {
-    struct { 
-        unsigned int offset; 
-        int type; 
     int _allowedClassesIndex;
     id _allowedClassesList[128];
     unsigned int _collectionPointer;
@@ -18,6 +15,9 @@
     NSXPCInterface *_interface;
     NSObject<OS_xpc_object> *_oolObjects;
     SEL _replyToSelector;
+    struct { 
+        unsigned int offset; 
+        int type; 
     } _rootObject;
 }
 

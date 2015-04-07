@@ -4,7 +4,7 @@
 
 @class NSDate, NSNumber, NSUUID;
 
-@interface CMPedometerData : NSObject <NSSecureCoding, NSCopying> {
+@interface CMPedometerData : NSObject <NSCopying, NSSecureCoding> {
     NSNumber *fDistance;
     NSDate *fEndDate;
     NSNumber *fFloorAscended;

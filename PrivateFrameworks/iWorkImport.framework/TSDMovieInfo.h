@@ -10,9 +10,6 @@
 @class NSURL, TSDMediaStyle, TSPData;
 
 @interface TSDMovieInfo : TSDMediaInfo <TSDMixing> {
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL mAudioOnly;
     TSPData *mAudioOnlyImageData;
     double mEndTime;
@@ -20,6 +17,9 @@
     unsigned int mLoopOption;
     TSPData *mMovieData;
     NSURL *mMovieRemoteURL;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mNaturalSize;
     TSPData *mPosterImageData;
     BOOL mPosterImageGeneratedWithAlphaSupport;
@@ -59,16 +59,16 @@
 - (id)generateEmptyPosterImageForContext:(id)arg1;
 - (id)importedAuxiliaryMovieData;
 - (id)initFromUnarchiver:(id)arg1;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 movieData:(id)arg4 loadedAsset:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 movieRemoteURL:(id)arg4 loadedAsset:(id)arg5;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (int)intValueForProperty:(int)arg1;
 - (BOOL)isAudioOnly;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (BOOL)isStreaming;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct MovieArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct DataReference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; float x7; float x8; float x9; unsigned int x10; int x11; float x12; boolx13; boolx14; boolx15; boolx16; unsigned int x17; struct DataReference {} *x18; struct DataReference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Reference {} *x23; struct Size {} *x24; struct Size {} *x25; unsigned int x26; int x27; unsigned int x28[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct MovieArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct DataReference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; float x7; float x8; float x9; unsigned int x10; int x11; float x12; bool x13; bool x14; bool x15; bool x16; unsigned int x17; struct DataReference {} *x18; struct DataReference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Reference {} *x23; struct Size {} *x24; struct Size {} *x25; unsigned int x26; int x27; unsigned int x28[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
 - (unsigned int)loopOption;
 - (id)makeAVAsset;
@@ -87,7 +87,7 @@
 - (id)presetKind;
 - (struct CGSize { float x1; float x2; })rawDataSize;
 - (Class)repClass;
-- (void)saveToArchive:(struct MovieArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct DataReference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; float x7; float x8; float x9; unsigned int x10; int x11; float x12; boolx13; boolx14; boolx15; boolx16; unsigned int x17; struct DataReference {} *x18; struct DataReference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Reference {} *x23; struct Size {} *x24; struct Size {} *x25; unsigned int x26; int x27; unsigned int x28[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct MovieArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct DataReference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; float x7; float x8; float x9; unsigned int x10; int x11; float x12; bool x13; bool x14; bool x15; bool x16; unsigned int x17; struct DataReference {} *x18; struct DataReference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Reference {} *x23; struct Size {} *x24; struct Size {} *x25; unsigned int x26; int x27; unsigned int x28[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setAudioOnly:(BOOL)arg1;
 - (void)setAudioOnlyImageData:(id)arg1;

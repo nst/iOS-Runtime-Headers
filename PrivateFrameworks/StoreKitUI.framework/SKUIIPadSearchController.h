@@ -30,8 +30,8 @@
 - (id)newSearchFieldBarItem;
 - (id)parentViewController;
 - (void)reloadSearchField;
-- (void)searchFieldController:(id)arg1 requestSearch:(id)arg2;
 - (id)searchFieldController;
+- (void)searchFieldController:(id)arg1 requestSearch:(id)arg2;
 - (BOOL)searchFieldControllerShouldBeginEditing:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setNumberOfSearchResults:(int)arg1;

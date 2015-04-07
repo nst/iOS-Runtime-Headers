@@ -10,9 +10,9 @@
 @class FigCaptureStillImageSettings, NSArray, NSDictionary, NSString;
 
 @interface BWHDRNode : BWNode <BWBracketSettingsProvider> {
-    int (*_createSampleBufferProcessorFunction)();
     int _bracketCount;
     int _clientPID;
+    int (*_createSampleBufferProcessorFunction)();
     FigCaptureStillImageSettings *_currentCaptureSettings;
     NSArray *_exposureValues;
     struct opaqueCMSampleBuffer {} *_pendingBracketBuffers[3];

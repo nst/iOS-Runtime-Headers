@@ -4,7 +4,7 @@
 
 @class MPAVController, MPAVItem, MPAudioVideoRoutingPopoverController, MPInlineAudioOverlay, MPInlineVideoFullscreenViewController, MPSwipableView, MPTVOutWindow, MPVideoBackgroundView, MPVideoContainerView, MPVideoPlaybackOverlayView, MPVideoView, MPVolumeController, MPWeakTimer, NSSet, NSString, UIActivityIndicatorView, UIAlertView, UIColor, UIImage, UINavigationController, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView, UIView<MPVideoOverlay>, UIWindow, _UIHostedWindow;
 
-@interface MPInlineVideoController : NSObject <MPVolumeControllerDelegate, MPVideoControllerProtocol, MPSwipableViewDelegate, MPVideoOverlayDelegate, MPTransportControlsTarget, UIAlertViewDelegate, UIPopoverControllerDelegate> {
+@interface MPInlineVideoController : NSObject <MPSwipableViewDelegate, MPTransportControlsTarget, MPVideoControllerProtocol, MPVideoOverlayDelegate, MPVolumeControllerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate> {
     BOOL _TVOutEnabled;
     BOOL _TVOutEnabledMaster;
     int _activeOverlayUserEvents;
@@ -163,8 +163,8 @@
 - (void)_postScaleModeDidChange;
 - (void)_postViewControllerRequestsExitWithReason:(int)arg1;
 - (void)_registerForPlayerNotifications;
-- (void)_resetOverlayIdleTimer:(double)arg1;
 - (void)_resetOverlayIdleTimer;
+- (void)_resetOverlayIdleTimer:(double)arg1;
 - (void)_scaleModeDidChange:(id)arg1;
 - (void)_scheduleLoadingIndicatorIfNeeded;
 - (void)_screenDidConnect:(id)arg1;
@@ -172,16 +172,16 @@
 - (void)_setupSubviews;
 - (void)_setupTVOutWindow;
 - (BOOL)_shouldShowDestinationPlaceholder;
-- (void)_showOverlayAnimated:(BOOL)arg1 quickHide:(BOOL)arg2;
 - (void)_showOverlayAnimated:(BOOL)arg1;
+- (void)_showOverlayAnimated:(BOOL)arg1 quickHide:(BOOL)arg2;
 - (void)_showOverlayDidEnd:(BOOL)arg1;
 - (void)_showStillFrameIfNotAlreadyPlaying;
 - (void)_showVideoSnapshotView;
 - (void)_sizeDidChange:(id)arg1;
 - (void)_tearDownTVOutWindow;
 - (void)_timedImageMetadataAvailable:(id)arg1;
-- (void)_transitionFromFullscreenAnimated:(BOOL)arg1 fromDoneButton:(BOOL)arg2;
 - (void)_transitionFromFullscreenAnimated:(BOOL)arg1;
+- (void)_transitionFromFullscreenAnimated:(BOOL)arg1 fromDoneButton:(BOOL)arg2;
 - (void)_transitionFromFullscreenDidEnd;
 - (void)_transitionToFullscreenAnimated:(BOOL)arg1;
 - (void)_transitionToFullscreenDidEnd;
@@ -265,24 +265,24 @@
 - (void)setCanShowControlsOverlay:(BOOL)arg1;
 - (void)setClosedCaptions:(id)arg1;
 - (void)setControlsNeedLayout;
-- (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
-- (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)setControlsOverlayVisible:(BOOL)arg1;
+- (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2;
+- (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
 - (void)setDelegate:(id)arg1;
-- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setDesiredParts:(unsigned long long)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setDisableAutoRotation:(BOOL)arg1;
 - (void)setDisableControlsAutohide:(BOOL)arg1;
 - (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setDisplayPlaybackErrorAlerts:(BOOL)arg1;
-- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1;
+- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setInlinePlaybackUsesTVOut:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setItemTypeOverride:(unsigned int)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1;
-- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 - (void)setOrientation:(int)arg1;
+- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 - (void)setOwnsStatusBar:(BOOL)arg1;
 - (void)setPlaybackErrorDescription:(id)arg1;
 - (void)setPlayer:(id)arg1;
@@ -293,8 +293,8 @@
 - (void)setUseHostedWindowWhenFullscreen:(BOOL)arg1;
 - (void)setVideoOverlayStyle:(int)arg1;
 - (void)setVideoSnapshotEnabled:(BOOL)arg1;
-- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setVisibleParts:(unsigned long long)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)showAlternateTracksController:(id)arg1;
 - (id)subtitlesView;
 - (void)swipableView:(id)arg1 didMoveToSuperview:(id)arg2;

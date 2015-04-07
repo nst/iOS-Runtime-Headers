@@ -5,6 +5,7 @@
 @class <MPUNowPlayingPlaybackControlsViewDelegate><MPTransportControlsTarget>, MPUApplicationDefaults, MPUNowPlayingTransportControls, MPUSkipLimitView, MPVolumeSlider, NSArray, NSString, SKUICircleProgressIndicator, UIActionSheet, UIButton, UIView;
 
 @interface MPUNowPlayingPlaybackControlsView : MPPlaybackControlsView <MPDetailSliderDelegate, MPUNowPlayingTransportControlsDelegate, UIActionSheetDelegate> {
+    MPUApplicationDefaults *_applicationDefaults;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    MPUApplicationDefaults *_applicationDefaults;
     } _artworkFrame;
     UIActionSheet *_createActionSheet;
     SKUICircleProgressIndicator *_createActivityIndicatorView;
@@ -94,8 +94,8 @@
 - (void)setPlayer:(id)arg1;
 - (void)setShowingCreateLoadingIndicator:(BOOL)arg1;
 - (void)setTitlesView:(id)arg1;
-- (void)setUsesMiniProgressControl:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setUsesMiniProgressControl:(BOOL)arg1;
+- (void)setUsesMiniProgressControl:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldOverrideProgressTimeLabelStyle;
 - (id)shuffleButtonImage;
 - (id)skipLimitView;

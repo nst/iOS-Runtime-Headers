@@ -23,8 +23,8 @@
 - (id)description;
 - (id)entity;
 - (id)fakeEntityForFetch;
-- (id)initWithEntity:(id)arg1 sqlString:(id)arg2;
 - (id)initWithEntity:(id)arg1;
+- (id)initWithEntity:(id)arg1 sqlString:(id)arg2;
 - (BOOL)isImpossibleCondition;
 - (BOOL)isReadOnly;
 - (void)removeAllBindIntarrays;

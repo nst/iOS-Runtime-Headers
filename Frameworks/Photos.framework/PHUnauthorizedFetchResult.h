@@ -9,7 +9,11 @@
 @class NSArray, NSOrderedSet, NSString, PHFetchOptions;
 
 @interface PHUnauthorizedFetchResult : PHFetchResult {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchBlock;
+
     NSString *_identifier;
     NSOrderedSet *_objectIDs;
     NSArray *_objects;

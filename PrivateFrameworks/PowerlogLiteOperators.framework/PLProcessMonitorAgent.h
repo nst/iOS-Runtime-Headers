@@ -41,8 +41,8 @@
 - (BOOL)firstBoot;
 - (id)init;
 - (void)initOperatorDependancies;
-- (BOOL)isCachedForProcessID:(int)arg1 andName:(id)arg2;
 - (BOOL)isCachedForProcessID:(int)arg1;
+- (BOOL)isCachedForProcessID:(int)arg1 andName:(id)arg2;
 - (void)log;
 - (void)logEventBackwardProcessMonitor;
 - (void)logEventBackwardProcessMonitorUsingCache;

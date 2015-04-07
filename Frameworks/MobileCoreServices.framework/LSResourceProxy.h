@@ -27,11 +27,11 @@
 
 - (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
 - (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconDefinitionForSize:(struct CGSize { float x1; float x2; })arg1 style:(id)arg2;
-- (id)_iconForStyle:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)_iconForStyle:(id)arg1;
+- (id)_iconForStyle:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
-- (id)_initWithLocalizedName:(id)arg1 boundApplicationIdentifier:(id)arg2 boundContainerURL:(id)arg3 dataContainerURL:(id)arg4 boundResourcesDirectoryURL:(id)arg5 boundIconsDictionary:(id)arg6 boundIconCacheKey:(id)arg7 boundIconFileNames:(id)arg8 typeOwner:(id)arg9 boundIconIsPrerendered:(BOOL)arg10 boundIconIsBadge:(BOOL)arg11;
 - (id)_initWithLocalizedName:(id)arg1;
+- (id)_initWithLocalizedName:(id)arg1 boundApplicationIdentifier:(id)arg2 boundContainerURL:(id)arg3 dataContainerURL:(id)arg4 boundResourcesDirectoryURL:(id)arg5 boundIconsDictionary:(id)arg6 boundIconCacheKey:(id)arg7 boundIconFileNames:(id)arg8 typeOwner:(id)arg9 boundIconIsPrerendered:(BOOL)arg10 boundIconIsBadge:(BOOL)arg11;
 - (struct CGSize { float x1; float x2; })_largestImageSize:(id)arg1;
 - (id)boundApplicationIdentifier;
 - (id)boundContainerURL;

@@ -6,24 +6,25 @@
 
 @interface GEOPlaceSearchRequest : PBRequest <NSCopying> {
     struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _additionalPlaceTypes;
+    GEOAddress *_address;
     struct { 
         unsigned long long *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        int _beginIndex; 
-        int _endIndex; 
-        int _stringType; 
+    } _businessIDs;
+    GEOBusinessOptions *_businessOptions;
+    int _businessSortOrder;
+    GEOClientCapabilities *_clientCapabilities;
+    NSString *_deviceCountryCode;
+    GEOLatLng *_deviceLocation;
+    NSString *_deviceTimeZone;
+    BOOL _excludeAddressInResults;
+    NSMutableArray *_filterByBusinessCategorys;
+    long long _geoId;
     struct { 
         unsigned int sessionGUID : 1; 
         unsigned int searchContextSubstring : 1; 
@@ -63,18 +64,6 @@
         unsigned int isStrictMapRegion : 1; 
         unsigned int structuredSearch : 1; 
         unsigned int suppressResultsRequiringAttribution : 1; 
-    } _additionalPlaceTypes;
-    GEOAddress *_address;
-    } _businessIDs;
-    GEOBusinessOptions *_businessOptions;
-    int _businessSortOrder;
-    GEOClientCapabilities *_clientCapabilities;
-    NSString *_deviceCountryCode;
-    GEOLatLng *_deviceLocation;
-    NSString *_deviceTimeZone;
-    BOOL _excludeAddressInResults;
-    NSMutableArray *_filterByBusinessCategorys;
-    long long _geoId;
     } _has;
     BOOL _includeBusinessCategories;
     BOOL _includeBusinessRating;
@@ -105,12 +94,20 @@
     GEOMapRegion *_mapRegion;
     int _maxBusinessReviews;
     int _maxResults;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _optionalSuppressionReasons;
     NSString *_phoneticLocaleIdentifier;
     int _placeTypeLimit;
     GEOAddress *_preserveFields;
     NSString *_search;
     NSString *_searchContext;
+    struct { 
+        int _beginIndex; 
+        int _endIndex; 
+        int _stringType; 
     } _searchContextSubstring;
     GEOLatLng *_searchLocation;
     int _searchSource;
@@ -119,6 +116,9 @@
     unsigned int _searchSubstringsSpace;
     int _sequenceNumber;
     NSMutableArray *_serviceTags;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionGUID;
     BOOL _structuredSearch;
     GEOSuggestionsOptions *_suggestionsOptions;
@@ -368,9 +368,9 @@
 - (BOOL)includeTravelTime;
 - (BOOL)includeUnmatchedStrings;
 - (id)indexFilter;
+- (id)initWithTraits:(id)arg1;
 - (id)initWithTraits:(id)arg1 includeEntryPoints:(BOOL)arg2;
 - (id)initWithTraits:(id)arg1 maxResults:(int)arg2;
-- (id)initWithTraits:(id)arg1;
 - (id)inputLanguage;
 - (unsigned long long)intersectingGeoId;
 - (BOOL)isEqual:(id)arg1;

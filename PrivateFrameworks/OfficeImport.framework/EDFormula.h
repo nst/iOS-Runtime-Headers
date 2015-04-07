@@ -17,14 +17,14 @@
 
 - (BOOL)addArrayWithCol:(int)arg1 andRow:(int)arg2;
 - (BOOL)addInfixOperator:(int)arg1 atIndex:(unsigned int)arg2 factor:(double)arg3;
+- (char *)addToken:(int)arg1 extendedDataLength:(unsigned int)arg2;
 - (bool)addToken:(int)arg1 extendedDataLength:(unsigned int)arg2 extendedDataCount:(unsigned int)arg3;
 - (char *)addToken:(int)arg1 extendedDataLength:(unsigned int)arg2 numArgs:(int)arg3;
-- (char *)addToken:(int)arg1 extendedDataLength:(unsigned int)arg2;
 - (void)archiveByAppendingToMutableData:(struct __CFData { }*)arg1;
 - (BOOL)convertLastRefsToArea;
 - (BOOL)convertToIntersect:(unsigned int)arg1;
-- (BOOL)convertToList:(unsigned int)arg1 withFinalParen:(BOOL)arg2;
 - (BOOL)convertToList:(unsigned int)arg1;
+- (BOOL)convertToList:(unsigned int)arg1 withFinalParen:(BOOL)arg2;
 - (bool)convertTokensToSharedAtRow:(unsigned int)arg1 column:(unsigned int)arg2;
 - (bool)copyTokenAtIndex:(unsigned int)arg1 fromFormula:(id)arg2;
 - (bool)copyTokenFromXlPtg:(struct XlPtg { char *x1; int x2; unsigned int x3; unsigned short x4; }*)arg1;
@@ -51,8 +51,8 @@
 - (void)populateXlPtg:(struct XlPtg { char *x1; int x2; unsigned int x3; unsigned short x4; }*)arg1 index:(unsigned int)arg2;
 - (void)removeAllTokens;
 - (bool)removeTokenAtIndex:(unsigned int)arg1;
-- (bool)replaceTokenAtIndex:(unsigned int)arg1 withFormula:(id)arg2 formulaTokenIndex:(unsigned int)arg3;
 - (bool)replaceTokenAtIndex:(unsigned int)arg1 withFormula:(id)arg2;
+- (bool)replaceTokenAtIndex:(unsigned int)arg1 withFormula:(id)arg2 formulaTokenIndex:(unsigned int)arg3;
 - (void)replaceTokenTypeAtIndex:(unsigned int)arg1 withType:(int)arg2;
 - (id)saveArgs:(unsigned int)arg1 andDelete:(BOOL)arg2;
 - (void)setCleaned:(bool)arg1;

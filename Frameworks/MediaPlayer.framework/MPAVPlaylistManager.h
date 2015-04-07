@@ -79,8 +79,8 @@
 - (void)setManagesSystemDownloads:(BOOL)arg1;
 - (void)setMaxQueueDepth:(unsigned int)arg1;
 - (void)setMinQueueDepth:(unsigned int)arg1;
-- (BOOL)setPlaylistFeeder:(id)arg1 startIndex:(int)arg2;
 - (void)setPlaylistFeeder:(id)arg1;
+- (BOOL)setPlaylistFeeder:(id)arg1 startIndex:(int)arg2;
 - (void)setRepeatMode:(int)arg1;
 - (void)updateForSoundCheckDefaultsChange;
 

@@ -22,8 +22,8 @@
 - (void)invalidate;
 - (id)messageReplyingTo:(id)arg1;
 - (id)messageWithName:(const char *)arg1;
-- (void)sendMessage:(id)arg1 withReplyHandler:(id)arg2;
 - (void)sendMessage:(id)arg1;
+- (void)sendMessage:(id)arg1 withReplyHandler:(id)arg2;
 - (id)sendMessageWithSynchronousReply:(id)arg1;
 - (void)setHandler:(id)arg1 forMessageNamed:(const char *)arg2;
 - (void)setMessageHandlers:(id)arg1;

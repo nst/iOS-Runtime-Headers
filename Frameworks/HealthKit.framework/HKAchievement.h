@@ -4,7 +4,7 @@
 
 @class NSData, NSDate, NSNumber, NSString, NSUUID;
 
-@interface HKAchievement : NSObject <NSSecureCoding, HDCoding> {
+@interface HKAchievement : NSObject <HDCoding, NSSecureCoding> {
     NSUUID *_UUID;
     unsigned int _achievementType;
     NSDate *_completedDate;
@@ -29,8 +29,8 @@
 + (id)_allAchievementTypeNames;
 + (Class)_classForAchievementType:(unsigned int)arg1;
 + (id)_nextUUID;
-+ (id)achievementWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3 workoutActivityType:(unsigned int)arg4;
 + (id)achievementWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3;
++ (id)achievementWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3 workoutActivityType:(unsigned int)arg4;
 + (id)createWithCodable:(id)arg1;
 + (void)setOverridenUUID:(id)arg1;
 + (BOOL)supportsSecureCoding;

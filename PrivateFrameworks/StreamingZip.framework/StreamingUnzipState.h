@@ -10,21 +10,15 @@
 @class NSArray, NSDictionary, NSMutableData, NSString;
 
 @interface StreamingUnzipState : NSObject {
-    struct z_stream_s { 
-        char *next_in; 
-        unsigned int avail_in; 
-        unsigned int total_in; 
-        char *next_out; 
-        unsigned int avail_out; 
-        unsigned int total_out; 
-        char *msg; 
-        struct internal_state {} *state; 
-        int (*zalloc)(); 
-        int (*zfree)(); 
-        void *opaque; 
-        int data_type; 
-        unsigned int adler; 
-        unsigned int reserved; 
+    unsigned long long _bytesHashedInChunk;
+    unsigned long _currentCRC32;
+    unsigned short _currentLFMode;
+    struct { unsigned char x1[4]; struct { unsigned short x_2_1_1; } x2; struct { unsigned short x_3_1_1; } x3; struct { unsigned short x_4_1_1; } x4; union { struct { struct { unsigned short x_1_3_1; } x_1_2_1; struct { unsigned short x_2_3_1; } x_1_2_2; } x_5_1_1; struct { unsigned int x_2_2_1; } x_5_1_2; } x5; struct { unsigned int x_6_1_1; } x6; struct { unsigned int x_7_1_1; } x7; struct { unsigned int x_8_1_1; } x8; struct { unsigned short x_9_1_1; } x9; struct { unsigned short x_10_1_1; } x10; unsigned char x11[0]; } *_currentLFRecord;
+    unsigned long _currentLFRecordAllocationSize;
+    BOOL _currentLFRequiresDataDescriptor;
+    unsigned long long _currentOffset;
+    int _currentOutputFD;
+    struct { unsigned char x1[4]; union { struct { struct { unsigned int x_1_3_1; } x_1_2_1; struct { unsigned long long x_2_3_1; } x_1_2_2; struct { unsigned long long x_3_3_1; } x_1_2_3; } x_2_1_1; struct { struct { unsigned int x_1_3_1; } x_2_2_1; struct { unsigned int x_2_3_1; } x_2_2_2; struct { unsigned int x_3_3_1; } x_2_2_3; } x_2_1_2; } x2; } *_dataDescriptor;
     struct { 
         int hashType; 
         union { 
@@ -86,15 +80,6 @@
                 unsigned long long wbuf[16]; 
             } sha512; 
         } context; 
-    unsigned long long _bytesHashedInChunk;
-    unsigned long _currentCRC32;
-    unsigned short _currentLFMode;
-    struct { unsigned char x1[4]; struct { unsigned short x_2_1_1; } x2; struct { unsigned short x_3_1_1; } x3; struct { unsigned short x_4_1_1; } x4; union { struct { struct { unsigned short x_1_3_1; } x_1_2_1; struct { unsigned short x_2_3_1; } x_1_2_2; } x_5_1_1; struct { unsigned int x_2_2_1; } x_5_1_2; } x5; struct { unsigned int x_6_1_1; } x6; struct { unsigned int x_7_1_1; } x7; struct { unsigned int x_8_1_1; } x8; struct { unsigned short x_9_1_1; } x9; struct { unsigned short x_10_1_1; } x10; unsigned char x11[0]; } *_currentLFRecord;
-    unsigned long _currentLFRecordAllocationSize;
-    BOOL _currentLFRequiresDataDescriptor;
-    unsigned long long _currentOffset;
-    int _currentOutputFD;
-    struct { unsigned char x1[4]; union { struct { struct { unsigned int x_1_3_1; } x_1_2_1; struct { unsigned long long x_2_3_1; } x_1_2_2; struct { unsigned long long x_3_3_1; } x_1_2_3; } x_2_1_1; struct { struct { unsigned int x_1_3_1; } x_2_2_1; struct { unsigned int x_2_3_1; } x_2_2_2; struct { unsigned int x_3_3_1; } x_2_2_3; } x_2_1_2; } x2; } *_dataDescriptor;
     } _hashContext;
     unsigned long long _hashedChunkSize;
     NSArray *_hashes;
@@ -114,6 +99,21 @@
     NSMutableData *_unfinishedCompressedData;
     NSMutableData *_unsureData;
     NSString *_unzipPath;
+    struct z_stream_s { 
+        char *next_in; 
+        unsigned int avail_in; 
+        unsigned int total_in; 
+        char *next_out; 
+        unsigned int avail_out; 
+        unsigned int total_out; 
+        char *msg; 
+        struct internal_state {} *state; 
+        int (*zalloc)(); 
+        int (*zfree)(); 
+        void *opaque; 
+        int data_type; 
+        unsigned int adler; 
+        unsigned int reserved; 
     } _zlibState;
 }
 
@@ -144,7 +144,6 @@
 
 + (id)unzipStateWithPath:(id)arg1 options:(id)arg2 error:(id*)arg3;
 
-- (struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; }*)zlibState;
 - (void).cxx_destruct;
 - (id)_checkHashForOffset:(unsigned long long)arg1;
 - (void)_internalSetStreamState:(unsigned char)arg1;
@@ -199,7 +198,8 @@
 - (id)unfinishedCompressedData;
 - (id)unsureData;
 - (id)unzipPath;
-- (id)updateHashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long)arg3 onlyFinishCurrentChunk:(BOOL)arg4;
 - (id)updateHashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long)arg3;
+- (id)updateHashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long)arg3 onlyFinishCurrentChunk:(BOOL)arg4;
+- (struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; }*)zlibState;
 
 @end

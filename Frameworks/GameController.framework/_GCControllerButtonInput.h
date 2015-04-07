@@ -7,9 +7,17 @@
  */
 
 @interface _GCControllerButtonInput : GCControllerButtonInput {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pressedChangedHandler;
+
     float _value;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _valueChangedHandler;
+
 }
 
 - (void).cxx_destruct;

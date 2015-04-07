@@ -27,8 +27,8 @@
 - (void)intersectSet:(id)arg1;
 - (BOOL)isEqualToSet:(id)arg1;
 - (BOOL)isSubsetOfSet:(id)arg1;
-- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
+- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)member:(id)arg1;
 - (void)minusSet:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

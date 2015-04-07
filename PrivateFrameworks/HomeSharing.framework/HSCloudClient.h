@@ -18,7 +18,11 @@
     NSMutableSet *_pendingArtworkRequests;
     NSObject<OS_dispatch_queue> *_pendingArtworkRequestsQueue;
     long long _preferredVideoQuality;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateInProgressChangedHandler;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

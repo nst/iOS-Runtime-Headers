@@ -5,12 +5,12 @@
 @class WAKClipView, WAKView;
 
 @interface WAKScrollView : WAKView <WebCoreFrameScrollView> {
-    struct CGPoint { 
-        float x; 
-        float y; 
     WAKClipView *_contentView;
     id _delegate;
     WAKView *_documentView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _scrollOrigin;
 }
 

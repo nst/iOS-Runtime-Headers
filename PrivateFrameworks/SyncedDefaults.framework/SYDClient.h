@@ -20,12 +20,12 @@
 - (id)_sendMessageWithReplySync:(id)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithQueue:(id)arg1 bundleIdentifier:(struct __CFString { }*)arg2 storeIdentifier:(struct __CFString { }*)arg3 additionalSource:(BOOL)arg4;
 - (id)initWithQueue:(id)arg1 bundleIdentifier:(struct __CFString { }*)arg2 storeIdentifier:(struct __CFString { }*)arg3;
-- (void)sendMessageWithName:(id)arg1 replyHandler:(id)arg2;
-- (void)sendMessageWithName:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
-- (id)sendMessageWithName:(id)arg1 userInfo:(id)arg2;
+- (id)initWithQueue:(id)arg1 bundleIdentifier:(struct __CFString { }*)arg2 storeIdentifier:(struct __CFString { }*)arg3 additionalSource:(BOOL)arg4;
 - (void)sendMessageWithName:(id)arg1;
+- (void)sendMessageWithName:(id)arg1 replyHandler:(id)arg2;
+- (id)sendMessageWithName:(id)arg1 userInfo:(id)arg2;
+- (void)sendMessageWithName:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
 - (void)shutdown;
 
 @end

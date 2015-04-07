@@ -4,7 +4,7 @@
 
 @class NSAsyncSSDownloadManager, NSCountedSet, NSMutableArray, NSString, NSTimer, SSDownloadHandler;
 
-@interface NSURLConnectionInternalBackgroundDownload : NSURLConnectionInternal <NSURLConnectionRequired, SSDownloadManagerObserver, SSDownloadHandlerDelegate> {
+@interface NSURLConnectionInternalBackgroundDownload : NSURLConnectionInternal <NSURLConnectionRequired, SSDownloadHandlerDelegate, SSDownloadManagerObserver> {
     long long _ctLast;
     NSTimer *_deferredStartTimer;
     long long _downloadIdent;

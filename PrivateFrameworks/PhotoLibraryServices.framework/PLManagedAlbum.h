@@ -99,8 +99,8 @@
 - (void)getInternalUserEditableAssets:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexInInternalUserEditableAssetsOfObject:(id)arg1;
 - (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
-- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3 commentText:(id)arg4;
 - (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2;
+- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3 commentText:(id)arg4;
 - (id)internalUserEditableAssetsAtIndexes:(id)arg1;
 - (BOOL)isEmpty;
 - (BOOL)isValidKindForPersistence;

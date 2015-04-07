@@ -4,16 +4,7 @@
 
 @class <EKDayViewDataSource>, <EKDayViewDelegate>, EKDayAllDayView, EKDayTimeView, EKDayViewContent, EKDayViewSpringLoadedScrollAnimation, EKEvent, NSArray, NSCalendar, NSDate, NSDateComponents, NSString, NSTimer, UIColor, UIImageView, UIPinchGestureRecognizer, UIScrollView, UITapGestureRecognizer, UIView;
 
-@interface EKDayView : UIView <UIScrollViewDelegate, EKDayAllDayViewDelegate, EKDayViewContentDelegate, EKDayTimeViewDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface EKDayView : UIView <EKDayAllDayViewDelegate, EKDayTimeViewDelegate, EKDayViewContentDelegate, UIScrollViewDelegate> {
     BOOL _alignsMidnightToTop;
     EKDayAllDayView *_allDayView;
     BOOL _allowPinchingHourHeights;
@@ -31,7 +22,13 @@
     NSArray *_existingTimedOcurrences;
     float _hourScale;
     NSDate *_lastInspectedOccurrenceOnDate;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _lastPinchDistance;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _lastPinchPoint1;
     double _nextDSTTransition;
     int _orientation;
@@ -41,6 +38,9 @@
     EKDayViewSpringLoadedScrollAnimation *_scrollAnimation;
     BOOL _scrollToOccurrencesOnNextReload;
     BOOL _scrollbarShowsInside;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _scrolledToFirstVisibleSecondForSize;
     UIScrollView *_scroller;
     BOOL _scrollingToOccurrence;
@@ -124,8 +124,8 @@
 - (void)adjustFrameToSpanToMidnightFromStartDate:(id)arg1;
 - (BOOL)alignsMidnightToTop;
 - (float)allDayRegionHeight;
-- (void)allDayView:(id)arg1 didSelectEvent:(id)arg2;
 - (id)allDayView;
+- (void)allDayView:(id)arg1 didSelectEvent:(id)arg2;
 - (void)allDayViewDidLayoutSubviews:(id)arg1;
 - (BOOL)allowPinchingHourHeights;
 - (BOOL)allowsOccurrenceSelection;
@@ -137,8 +137,8 @@
 - (BOOL)containsOccurrences;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })currentTimeRectInView:(id)arg1;
 - (id)dataSource;
-- (double)dateAtPoint:(struct CGPoint { float x1; float x2; })arg1 isAllDay:(BOOL*)arg2 requireAllDayRegionInsistence:(BOOL)arg3;
 - (double)dateAtPoint:(struct CGPoint { float x1; float x2; })arg1 isAllDay:(BOOL*)arg2;
+- (double)dateAtPoint:(struct CGPoint { float x1; float x2; })arg1 isAllDay:(BOOL*)arg2 requireAllDayRegionInsistence:(BOOL)arg3;
 - (void)dayAllDayView:(id)arg1 occurrenceViewClicked:(id)arg2;
 - (void)dayContentView:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (double)dayEnd;

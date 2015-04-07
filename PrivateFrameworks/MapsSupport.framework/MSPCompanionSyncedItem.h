@@ -4,7 +4,7 @@
 
 @class MSPBookmarkStorage, MSPPinStorage, MSPSearchRequestStorage, NSString, PBUnknownFields;
 
-@interface MSPCompanionSyncedItem : PBCodable <SYObject, NSCopying> {
+@interface MSPCompanionSyncedItem : PBCodable <NSCopying, SYObject> {
     MSPBookmarkStorage *_bookmark;
     MSPPinStorage *_pin;
     MSPSearchRequestStorage *_searchRequest;

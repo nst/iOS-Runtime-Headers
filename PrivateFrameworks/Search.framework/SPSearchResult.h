@@ -4,15 +4,15 @@
 
 @class <PRSApp>, NSArray, NSData, NSMutableArray, NSString, NSURL, PRSImage;
 
-@interface SPSearchResult : PBCodable <PRSBaseResult, PRSSimpleResult, PRSiTunesResult, PRSMapsResult, NSCopying> {
-    struct { 
-        unsigned int identifier : 1; 
-        unsigned int flags : 1; 
-        unsigned int numberOfSummaryLines : 1; 
+@interface SPSearchResult : PBCodable <NSCopying, PRSBaseResult, PRSMapsResult, PRSSimpleResult, PRSiTunesResult> {
     NSMutableArray *_additionalProperties;
     NSString *_auxiliarySubtitle;
     NSString *_auxiliaryTitle;
     int _flags;
+    struct { 
+        unsigned int identifier : 1; 
+        unsigned int flags : 1; 
+        unsigned int numberOfSummaryLines : 1; 
     } _has;
     unsigned long long _identifier;
     unsigned int _numberOfSummaryLines;
@@ -24,41 +24,20 @@
 }
 
 @property long long adam_id;
-@property long long adam_id;
-@property long long adam_id;
-@property long long adam_id;
 @property(retain) NSMutableArray * additionalProperties;
-@property(retain) <PRSApp> * app;
-@property(retain) <PRSApp> * app;
-@property(retain) <PRSApp> * app;
 @property(retain) <PRSApp> * app;
 @property(retain) NSString * auxiliarySubtitle;
 @property(retain) NSString * auxiliaryTitle;
 @property(retain) NSString * bundle_id;
-@property(retain) NSString * bundle_id;
-@property(retain) NSString * bundle_id;
-@property(retain) NSString * bundle_id;
 @property(retain) NSArray * card_sections;
-@property(retain) NSString * card_title;
-@property(retain) NSString * card_title;
 @property(retain) NSString * card_title;
 @property(retain) NSURL * card_url;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property int description_maxlines;
 @property BOOL description_nowrap;
-@property BOOL description_nowrap;
 @property int description_size;
 @property(retain) NSString * fbq;
-@property(retain) NSString * fbr;
-@property(retain) NSString * fbr;
-@property(retain) NSString * fbr;
 @property(retain) NSString * fbr;
 @property int flags;
 @property(retain) NSString * footnote;
@@ -75,23 +54,12 @@
 @property(readonly) BOOL hasTitle;
 @property(readonly) BOOL hasUrl;
 @property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
-@property(retain) PRSImage * icon;
-@property(retain) PRSImage * icon;
 @property(retain) PRSImage * icon;
 @property unsigned long long identifier;
 @property(retain) NSData * maps_data;
 @property(retain) NSString * maps_data_type;
 @property(retain) NSString * maps_result_type;
 @property int max_age;
-@property int max_age;
-@property int max_age;
-@property int max_age;
-@property int media_kind;
-@property int media_kind;
-@property int media_kind;
 @property int media_kind;
 @property(retain) NSString * more;
 @property(retain) NSArray * more_glyphs;
@@ -101,48 +69,23 @@
 @property float rating;
 @property(retain) NSString * rating_text;
 @property(retain) NSString * resultDescription;
-@property(retain) NSString * resultDescription;
-@property(retain) NSString * resultIdentifier;
-@property(retain) NSString * resultIdentifier;
-@property(retain) NSString * resultIdentifier;
 @property(retain) NSString * resultIdentifier;
 @property float resultScore;
-@property float resultScore;
-@property float resultScore;
-@property float resultScore;
-@property(retain) NSURL * resultURL;
-@property(retain) NSURL * resultURL;
-@property(retain) NSURL * resultURL;
 @property(retain) NSURL * resultURL;
 @property(retain) NSMutableArray * rows;
 @property(retain) PRSImage * rt_glyph;
 @property BOOL rt_newline;
 @property(retain) NSString * rt_text;
 @property(retain) NSString * section_header;
-@property(retain) NSString * section_header;
-@property(retain) NSString * section_header;
 @property(retain) NSString * string_format;
 @property(retain) NSString * subtitle;
 @property(retain) NSString * summary;
 @property(readonly) Class superclass;
-@property(readonly) Class superclass;
-@property(readonly) Class superclass;
-@property(readonly) Class superclass;
 @property(retain) NSString * templateName;
-@property(retain) NSString * templateName;
-@property(retain) NSString * templateName;
-@property(retain) NSString * templateName;
-@property(retain) NSString * title;
-@property(retain) NSString * title;
-@property(retain) NSString * title;
-@property(retain) NSString * title;
 @property(retain) NSString * title;
 @property(retain) PRSImage * title_glyph;
 @property int title_maxlines;
 @property int title_size;
-@property(retain) NSString * type;
-@property(retain) NSString * type;
-@property(retain) NSString * type;
 @property(retain) NSString * type;
 @property(retain) NSString * url;
 

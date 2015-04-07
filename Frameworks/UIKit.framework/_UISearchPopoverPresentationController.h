@@ -5,6 +5,7 @@
 @class NSString, UIPresentationController<_UISearchControllerPresenting>, UIView, _UISearchPresentationAssistant;
 
 @interface _UISearchPopoverPresentationController : UIPopoverPresentationController <_UISearchControllerPresenting> {
+    _UISearchPresentationAssistant *_assistant;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    _UISearchPresentationAssistant *_assistant;
     } finalFrameForContainerView;
 }
 

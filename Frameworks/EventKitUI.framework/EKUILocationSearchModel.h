@@ -4,7 +4,7 @@
 
 @class <EKUILocationSearchModelDelegate>, ABSearchOperation, CLGeocoder, CLInUseAssertion, CLLocationManager, EKEventStore, EKOccurrenceCacheLocationSearch, EKStructuredLocation, MKLocalSearch, MKLocalSearchCompleter, NSArray, NSCharacterSet, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSTimer;
 
-@interface EKUILocationSearchModel : NSObject <CLLocationManagerDelegate, MKSearchCompleterDelegate, ABSearchOperationDelegate> {
+@interface EKUILocationSearchModel : NSObject <ABSearchOperationDelegate, CLLocationManagerDelegate, MKSearchCompleterDelegate> {
     ABSearchOperation *_abSearchOperation;
     NSOperationQueue *_abSearchQueue;
     MKLocalSearchCompleter *_completer;

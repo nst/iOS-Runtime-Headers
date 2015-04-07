@@ -4,7 +4,7 @@
 
 @class CLLocationManager, NSArray, NSString, SKUIContentInsetScrollView, SKUIExploreTemplateElement, SKUIStorePageSectionsViewController, UINavigationController, UISplitViewController;
 
-@interface SKUIExploreDocumentViewController : SKUIViewController <CLLocationManagerDelegate, SKUIStackedBarDelegate, UINavigationControllerDelegate, UISplitViewControllerDelegate, SKUIDocumentViewController> {
+@interface SKUIExploreDocumentViewController : SKUIViewController <CLLocationManagerDelegate, SKUIDocumentViewController, SKUIStackedBarDelegate, UINavigationControllerDelegate, UISplitViewControllerDelegate> {
     NSArray *_contentOffsets;
     SKUIContentInsetScrollView *_contentScrollView;
     SKUIExploreTemplateElement *_exploreTemplate;

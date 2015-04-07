@@ -4,7 +4,7 @@
 
 @class <HKMedicalIDViewControllerDelegate>, HKEmergencyCardGroupTableItem, HKHealthStore, NSArray, NSString, _HKMedicalIDData;
 
-@interface HKMedicalIDViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, HKMedicalIDViewControllerDelegate, HKEmergencyCardEnabledDelegate, HKEmergencyCardDeletionDelegate, HKEmergencyCardRowHeightChangeDelegate> {
+@interface HKMedicalIDViewController : UITableViewController <HKEmergencyCardDeletionDelegate, HKEmergencyCardEnabledDelegate, HKEmergencyCardRowHeightChangeDelegate, HKMedicalIDViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     BOOL _allowsEditing;
     <HKMedicalIDViewControllerDelegate> *_delegate;
     NSArray *_footers;

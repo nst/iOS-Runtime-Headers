@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface AWDIDSLocalDeliverySocketOpened : PBCodable <NSCopying> {
+    NSString *_guid;
     struct { 
         unsigned int isToDefaultPairedDevice : 1; 
         unsigned int openError : 1; 
         unsigned int priority : 1; 
         unsigned int socketError : 1; 
         unsigned int timestamp : 1; 
-    NSString *_guid;
     } _has;
     unsigned long long _isToDefaultPairedDevice;
     unsigned long long _openError;

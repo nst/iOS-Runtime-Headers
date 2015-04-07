@@ -97,11 +97,11 @@
 @property(getter=_vendorID,copy,readonly) NSString * vendorID;
 @property(getter=_webURL,copy,readonly) NSURL * webURL;
 
-+ (id)mapItemStorageForGEOMapItem:(id)arg1 clientAttributes:(id)arg2;
 + (id)mapItemStorageForGEOMapItem:(id)arg1;
++ (id)mapItemStorageForGEOMapItem:(id)arg1 clientAttributes:(id)arg2;
 + (id)mapItemStorageForGEOMapItemPrivate:(id)arg1;
-+ (id)mapItemStorageForPlace:(id)arg1 clientAttributes:(id)arg2;
 + (id)mapItemStorageForPlace:(id)arg1;
++ (id)mapItemStorageForPlace:(id)arg1 clientAttributes:(id)arg2;
 + (id)mapItemStorageForPlaceData:(id)arg1;
 + (id)mapItemStorageForPlaceResult:(id)arg1;
 + (id)mapItemStorageForSerializedMapItemStorage:(id)arg1;

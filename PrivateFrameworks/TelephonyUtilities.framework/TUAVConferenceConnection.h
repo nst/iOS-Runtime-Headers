@@ -9,8 +9,16 @@
 @class NSString;
 
 @interface TUAVConferenceConnection : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _didStartHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _didStopHandler;
+
     BOOL _host;
     NSString *_identifier;
     BOOL _receivedDidStart;

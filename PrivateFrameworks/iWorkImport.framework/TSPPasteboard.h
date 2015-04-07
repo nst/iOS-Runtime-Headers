@@ -30,8 +30,8 @@
 - (void).cxx_destruct;
 - (id)URLs;
 - (void)addData:(id)arg1 forPasteboardType:(id)arg2;
-- (void)addItems:(id)arg1 isSmartCopy:(BOOL)arg2;
 - (void)addItems:(id)arg1;
+- (void)addItems:(id)arg1 isSmartCopy:(BOOL)arg2;
 - (int)changeCount;
 - (int)clearContents;
 - (BOOL)containsAnyPasteboardTypeInArray:(id)arg1;
@@ -39,8 +39,8 @@
 - (BOOL)containsImportableTextTypes;
 - (BOOL)containsNativePasteboardTypes;
 - (BOOL)containsPasteboardTypes:(id)arg1;
-- (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (id)dataForPasteboardType:(id)arg1;
+- (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (id)description;
 - (BOOL)fromExcelDataSource;
 - (BOOL)fromIWorkSageDataSource;

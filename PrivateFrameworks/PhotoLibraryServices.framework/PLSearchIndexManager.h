@@ -10,7 +10,11 @@
 
 @interface PLSearchIndexManager : NSObject {
     BOOL __indexing;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __inqAfterIndexingDidIterate;
+
     PLSearchIndexDateFormatter *_dateFormatter;
     PSIDatabase *_db;
     BOOL _hasValidSearchIndex;

@@ -5,22 +5,6 @@
 @class <TCCancelDelegate>, CXNamespace, ECColumnWidthConvertor, EDReference, EDResources, EDSheet, EDWorkbook, EXOAVState, EXOfficeArtState, NSMutableArray, NSMutableDictionary, OCPPackagePart, TCImportTracing;
 
 @interface EXReadState : OAVReadState {
-    struct map<long, unsigned int, std::__1::less<long>, std::__1::allocator<std::__1::pair<const long, unsigned int> > > { 
-        struct __tree<std::__1::__value_type<long, unsigned int>, std::__1::__map_value_compare<long, std::__1::__value_type<long, unsigned int>, std::__1::less<long>, true>, std::__1::allocator<std::__1::__value_type<long, unsigned int> > > { 
-            struct __tree_node<std::__1::__value_type<long, unsigned int>, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long, unsigned int>, void *> > > { 
-                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
-                    struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
-            } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long, std::__1::__value_type<long, unsigned int>, std::__1::less<long>, true> > { 
-                unsigned long __first_; 
-            } __pair3_; 
-        } __tree_; 
-    boolmIsPredefinedDxfsBeingRead;
-    boolmIsPredefinedTableStylesRead;
-    boolmMaxColumnsWarned;
-    boolmMaxRowsWarned;
     NSMutableArray *mArrayedFormulas;
     <TCCancelDelegate> *mCancelDelegate;
     unsigned long mCellStyleXfsOffset;
@@ -35,12 +19,28 @@
     CXNamespace *mEXSpreadsheetDrawingNamespace;
     CXNamespace *mEXSpreadsheetMLNamespace;
     CXNamespace *mEXSpreadsheetRelationsNamespace;
+    bool mIsPredefinedDxfsBeingRead;
+    bool mIsPredefinedTableStylesRead;
     NSMutableArray *mLegacyDrawables;
+    bool mMaxColumnsWarned;
+    bool mMaxRowsWarned;
     EXOAVState *mOAVState;
     EXOfficeArtState *mOfficeArtState;
     NSMutableDictionary *mReferenceForCommentTextBox;
     struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; } *mRelationshipNS;
     EDResources *mResources;
+    struct map<long, unsigned int, std::__1::less<long>, std::__1::allocator<std::__1::pair<const long, unsigned int> > > { 
+        struct __tree<std::__1::__value_type<long, unsigned int>, std::__1::__map_value_compare<long, std::__1::__value_type<long, unsigned int>, std::__1::less<long>, true>, std::__1::allocator<std::__1::__value_type<long, unsigned int> > > { 
+            struct __tree_node<std::__1::__value_type<long, unsigned int>, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long, unsigned int>, void *> > > { 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
+                    struct __tree_node_base<void *> {} *__left_; 
+                } __first_; 
+            } __pair1_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long, std::__1::__value_type<long, unsigned int>, std::__1::less<long>, true> > { 
+                unsigned long __first_; 
+            } __pair3_; 
+        } __tree_; 
     } mSharedFormulasMap;
     EDReference *mSheetDimension;
     TCImportTracing *mTracing;
@@ -79,8 +79,8 @@
 - (id)legacyDrawables;
 - (id)oavState;
 - (id)officeArtState;
-- (void)relationshipNameSpaceForWorkbook:(struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)arg1;
 - (struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)relationshipNameSpaceForWorkbook;
+- (void)relationshipNameSpaceForWorkbook:(struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)arg1;
 - (void)reportWarning:(struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (void)reportWorksheetWarning:(struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (void)resetForNewSheet;

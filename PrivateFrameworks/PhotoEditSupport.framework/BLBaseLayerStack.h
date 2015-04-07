@@ -5,47 +5,47 @@
 @class BLPixelImageBuffer, NSDictionary, NSMutableArray, UIImage;
 
 @interface BLBaseLayerStack : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
     struct CGImage { } *_brushImageRef;
     float _brushSize;
     float _brushSoftness;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _flippedViewToMaskTransform;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _inverseFlippedViewToMaskTransform;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _inverseViewToMaskTransform;
     NSMutableArray *_layers;
     int _maskLongEdgeSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _maskSize;
     BOOL _shouldNotify;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _viewToMaskTransform;
 }
 

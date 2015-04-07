@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface SADomainObjectRetrieveCompleted : SABaseCommand <SAServerBoundCommand, SADomainObjectCommand> {
+@interface SADomainObjectRetrieveCompleted : SABaseCommand <SADomainObjectCommand, SAServerBoundCommand> {
 }
 
 @property(copy) NSString * aceId;

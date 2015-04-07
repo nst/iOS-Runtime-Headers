@@ -9,7 +9,7 @@
 
 @class NSString;
 
-@interface CALight : NSObject <NSCopying, NSCoding> {
+@interface CALight : NSObject <NSCoding, NSCopying> {
     void *_attr;
     void *_priv;
 }
@@ -38,9 +38,9 @@
 + (id)defaultValueForKey:(id)arg1;
 + (id)lightWithType:(id)arg1;
 
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (float)ambientIntensity;
 - (struct CGColor { }*)color;
 - (float)coneAngle;

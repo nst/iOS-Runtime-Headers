@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface BRCServerPersistedState : NSObject <NSSecureCoding, NSCopying, PQLBindable> {
+@interface BRCServerPersistedState : NSObject <NSCopying, NSSecureCoding, PQLBindable> {
     long long _nextRank;
 }
 

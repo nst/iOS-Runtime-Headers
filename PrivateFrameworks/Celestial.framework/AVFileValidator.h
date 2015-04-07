@@ -13,8 +13,8 @@
 
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (BOOL)isCompleted;
 - (BOOL)isStreaming;
 - (id)notificationForFileCheckResult:(id)arg1;

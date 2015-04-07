@@ -17,10 +17,10 @@
 - (void)dealloc;
 - (void)deleteRecentsForPropertyID:(int)arg1;
 - (id)init;
-- (void)meCardEntriesForPropertyID:(int)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)meCardEntriesForPropertyID:(int)arg1;
-- (void)recentsForPropertyID:(int)arg1 queue:(id)arg2 completion:(id)arg3;
+- (void)meCardEntriesForPropertyID:(int)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)recentsForPropertyID:(int)arg1;
+- (void)recentsForPropertyID:(int)arg1 queue:(id)arg2 completion:(id)arg3;
 - (void)saveItemToCoreRecents:(id)arg1 contact:(id)arg2 propertyID:(int)arg3;
 
 @end

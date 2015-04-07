@@ -12,13 +12,21 @@
     NSString *_additionalDirectoryToConsider;
     NSString *_baseURLString;
     BOOL _canceled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     NSString *_directory;
     NSMutableArray *_loadedResources;
     unsigned int _maxConcurrentLoads;
     int _numberOfCopiesInProgress;
     int _numberOfDownloadsInProgress;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
     long _queuePriority;
     NSArray *_resourceInfos;
     NSMutableArray *_resourcesToLoad;

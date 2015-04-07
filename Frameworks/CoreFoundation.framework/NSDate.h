@@ -9,25 +9,13 @@
 
 @class NSString;
 
-@interface NSDate : NSObject <NSCopying, NSSecureCoding, CKRecordValue, PQLBindable, PQLResultSetInitializer, TSCHChartGridValue> {
+@interface NSDate : NSObject <CKRecordValue, NSCopying, NSSecureCoding, PQLBindable, PQLResultSetInitializer, TSCHChartGridValue> {
 }
 
 @property(readonly) int chartGridValueType;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) Class superclass;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(readonly) double timeIntervalSinceReferenceDate;
 
@@ -55,9 +43,9 @@
 + (id)dateWithDatePartFromDate:(id)arg1 timePartFromDate:(id)arg2 inCalendar:(id)arg3;
 + (id)dateWithDaysBeforeNow:(unsigned int)arg1;
 + (id)dateWithDaysFromNow:(unsigned int)arg1;
++ (id)dateWithNaturalLanguageString:(id)arg1;
 + (id)dateWithNaturalLanguageString:(id)arg1 date:(id)arg2 locale:(id)arg3;
 + (id)dateWithNaturalLanguageString:(id)arg1 locale:(id)arg2;
-+ (id)dateWithNaturalLanguageString:(id)arg1;
 + (id)dateWithSerialNumber:(double)arg1 dateMode:(int)arg2;
 + (id)dateWithString:(id)arg1;
 + (id)dateWithTimeInterval:(double)arg1 sinceDate:(id)arg2;
@@ -107,8 +95,8 @@
 - (id)allComponentsInCalendar:(id)arg1;
 - (int)chartGridValueType;
 - (Class)classForCoder;
-- (int)compare:(id)arg1 toUnitGranularity:(unsigned int)arg2;
 - (int)compare:(id)arg1;
+- (int)compare:(id)arg1 toUnitGranularity:(unsigned int)arg2;
 - (int)compareDateIgnoringTimeComponents:(id)arg1 inCalendar:(id)arg2;
 - (id)convertFromBasebandToMonotonic;
 - (id)convertFromMonotonicToBaseband;
@@ -124,10 +112,10 @@
 - (id)dateByAddingTimeInterval:(double)arg1;
 - (id)dateByAddingWeeks:(int)arg1 inCalendar:(id)arg2;
 - (id)dateByAddingYears:(int)arg1 inCalendar:(id)arg2;
-- (id)dateForDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)dateForDayInTimeZone:(id)arg1;
-- (id)dateForEndOfDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
+- (id)dateForDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)dateForEndOfDayInTimeZone:(id)arg1;
+- (id)dateForEndOfDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)dateInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)dateOnlyByTranslatingFrom:(id)arg1 toCalendar:(id)arg2;
 - (id)dateOnlyComponentsInCalendar:(id)arg1;
@@ -174,8 +162,8 @@
 - (BOOL)isBeforeDayForDate:(id)arg1 inCalendar:(id)arg2;
 - (BOOL)isBeforeOrSameDayAsDate:(id)arg1 inCalendar:(id)arg2;
 - (BOOL)isDateEqualToDateIgnoringTime:(id)arg1;
-- (BOOL)isEqual:(id)arg1 toUnitGranularity:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1 toUnitGranularity:(unsigned int)arg2;
 - (BOOL)isEqualToDate:(id)arg1;
 - (BOOL)isEqualToDateIgnoringTimeComponents:(id)arg1 inCalendar:(id)arg2;
 - (BOOL)isInMonotonicFuture;
@@ -186,8 +174,8 @@
 - (BOOL)isInTomorrow;
 - (BOOL)isInYesterday;
 - (BOOL)isNSDate__;
-- (BOOL)isSameDayAsDate:(id)arg1 inCalendar:(id)arg2;
 - (BOOL)isSameDayAsDate:(id)arg1;
+- (BOOL)isSameDayAsDate:(id)arg1 inCalendar:(id)arg2;
 - (BOOL)isSameMonthAsDate:(id)arg1 inCalendar:(id)arg2;
 - (BOOL)isSameYearAsDate:(id)arg1 inCalendar:(id)arg2;
 - (BOOL)isToday;

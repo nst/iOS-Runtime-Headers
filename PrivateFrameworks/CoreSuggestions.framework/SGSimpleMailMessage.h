@@ -4,7 +4,7 @@
 
 @class NSArray, NSDate, NSNumber, NSString, SGSimpleNamedEmailAddress;
 
-@interface SGSimpleMailMessage : NSObject <NSSecureCoding, NSCopying> {
+@interface SGSimpleMailMessage : NSObject <NSCopying, NSSecureCoding> {
     NSArray *_bcc;
     NSString *_body;
     NSArray *_cc;

@@ -17,13 +17,12 @@
 + (int)defaultIntValueForProperty:(int)arg1;
 + (id)defaultValueForProperty:(int)arg1;
 + (id)layoutProperties;
-+ (void)loadShapeStyleLayoutPropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct ShapeStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; boolx4; boolx5; boolx6; boolx7; struct ColumnsArchive {} *x8; struct PaddingArchive {} *x9; unsigned int x10; boolx11; struct Reference {} *x12; int x13; unsigned int x14[1]; }*)arg2 unarchiver:(id)arg3;
++ (void)loadShapeStyleLayoutPropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct ShapeStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; bool x4; bool x5; bool x6; bool x7; struct ColumnsArchive {} *x8; struct PaddingArchive {} *x9; unsigned int x10; bool x11; struct Reference {} *x12; int x13; unsigned int x14[1]; }*)arg2 unarchiver:(id)arg3;
 + (id)presetStyleDescriptor;
 + (id)properties;
 + (id)propertiesAllowingNSNull;
-+ (void)saveShapeStyleLayoutPropertyMap:(id)arg1 toArchive:(struct ShapeStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; boolx4; boolx5; boolx6; boolx7; struct ColumnsArchive {} *x8; struct PaddingArchive {} *x9; unsigned int x10; boolx11; struct Reference {} *x12; int x13; unsigned int x14[1]; }*)arg2 archiver:(id)arg3;
++ (void)saveShapeStyleLayoutPropertyMap:(id)arg1 toArchive:(struct ShapeStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; bool x4; bool x5; bool x6; bool x7; struct ColumnsArchive {} *x8; struct PaddingArchive {} *x9; unsigned int x10; bool x11; struct Reference {} *x12; int x13; unsigned int x14[1]; }*)arg2 archiver:(id)arg3;
 
-- (const struct ShapeStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct ShapeStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)shapeStyleArchiveFromUnarchiver:(id)arg1;
 - (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
 - (id)defaultParagraphStyle;
 - (id)initFromUnarchiver:(id)arg1;
@@ -32,5 +31,6 @@
 - (void)saveToArchive:(struct ShapeStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeStyleArchive {} *x3; struct ShapeStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setDefaultParagraphStyle:(id)arg1;
+- (const struct ShapeStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct ShapeStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)shapeStyleArchiveFromUnarchiver:(id)arg1;
 
 @end

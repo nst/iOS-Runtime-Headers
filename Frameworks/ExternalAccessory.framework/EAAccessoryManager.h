@@ -12,7 +12,11 @@
     NSMutableArray *_connectedAccessories;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     EABluetoothAccessoryPicker *_picker;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pickerCompletion;
+
     NSTimer *_pickerTimer;
     NSString *_selectedBluetoothAddress;
     BOOL _sequesterNewAccessories;

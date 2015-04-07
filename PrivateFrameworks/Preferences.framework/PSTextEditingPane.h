@@ -4,7 +4,7 @@
 
 @class NSString, PSTextEditingCell, UITableView, UITextField;
 
-@interface PSTextEditingPane : PSEditingPane <UITableViewDelegate, UITableViewDataSource> {
+@interface PSTextEditingPane : PSEditingPane <UITableViewDataSource, UITableViewDelegate> {
     PSTextEditingCell *_cell;
     UITableView *_table;
     UITextField *_textField;

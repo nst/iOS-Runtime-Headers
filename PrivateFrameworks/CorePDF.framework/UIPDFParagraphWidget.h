@@ -5,6 +5,7 @@
 @class CALayer, CAShapeLayer, UIPDFPageView;
 
 @interface UIPDFParagraphWidget : NSObject <UIPDFSelectionWidget> {
+    CALayer *_bottomGrabber;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,6 +15,7 @@
             float width; 
             float height; 
         } size; 
+    } _boundsInPDFSpace;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,6 +25,7 @@
             float width; 
             float height; 
         } size; 
+    } _currentTrackingRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -32,13 +35,10 @@
             float width; 
             float height; 
         } size; 
+    } _initialRect;
     struct CGPoint { 
         float x; 
         float y; 
-    CALayer *_bottomGrabber;
-    } _boundsInPDFSpace;
-    } _currentTrackingRect;
-    } _initialRect;
     } _initialSelectionPointOnPage;
     CALayer *_leftGrabber;
     UIPDFPageView *_pageView;

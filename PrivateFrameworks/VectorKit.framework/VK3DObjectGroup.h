@@ -11,10 +11,10 @@
         struct __compressed_pair<ggl::MeshVendor<ggl::Building::BuildingMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::Building::BuildingMesh> > > { 
             struct MeshVendor<ggl::Building::BuildingMesh> {} *__first_; 
         } __ptr_; 
+    } _meshVendor;
     struct shared_ptr<md::StyleQuery> { 
         struct StyleQuery {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _meshVendor;
     } _styleQuery;
 }
 

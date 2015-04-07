@@ -5,14 +5,14 @@
 @class <ABSwellTextViewDelegate>, NSString, UIColor, UIFont, UITextView;
 
 @interface ABSwellTextView : UIView <UITextViewDelegate> {
+    BOOL _allowsEditing;
+    <ABSwellTextViewDelegate> *_delegate;
     struct { 
         unsigned int delegateImplementsShouldBeginEditing : 1; 
         unsigned int delegateImplementsShouldEndEditing : 1; 
         unsigned int delegateImplementsDidBeginEditing : 1; 
         unsigned int delegateImplementsDidEndEditing : 1; 
         unsigned int delegateImplementsDidChange : 1; 
-    BOOL _allowsEditing;
-    <ABSwellTextViewDelegate> *_delegate;
     } _flags;
     float _maxHeight;
     UITextView *_textView;

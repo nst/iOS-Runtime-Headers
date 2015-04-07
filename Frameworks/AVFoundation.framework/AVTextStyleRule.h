@@ -12,8 +12,8 @@
 @property(readonly) NSString * textSelector;
 
 + (id)propertyListForTextStyleRules:(id)arg1;
-+ (id)textStyleRuleWithTextMarkupAttributes:(id)arg1 textSelector:(id)arg2;
 + (id)textStyleRuleWithTextMarkupAttributes:(id)arg1;
++ (id)textStyleRuleWithTextMarkupAttributes:(id)arg1 textSelector:(id)arg2;
 + (id)textStyleRulesFromPropertyList:(id)arg1;
 
 - (id)_dictionaryPlistRepresentation;
@@ -21,8 +21,8 @@
 - (void)dealloc;
 - (void)finalize;
 - (unsigned int)hash;
-- (id)initWithTextMarkupAttributes:(id)arg1 textSelector:(id)arg2;
 - (id)initWithTextMarkupAttributes:(id)arg1;
+- (id)initWithTextMarkupAttributes:(id)arg1 textSelector:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)textMarkupAttributes;
 - (id)textSelector;

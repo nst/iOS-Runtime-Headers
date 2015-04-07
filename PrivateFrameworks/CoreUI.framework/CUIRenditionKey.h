@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@interface CUIRenditionKey : NSObject <NSCopying, NSCoding> {
+@interface CUIRenditionKey : NSObject <NSCoding, NSCopying> {
+    unsigned short _highwaterKeyCount;
+    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_key;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    unsigned short _highwaterKeyCount;
-    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_key;
     } _stackKey[16];
 }
 

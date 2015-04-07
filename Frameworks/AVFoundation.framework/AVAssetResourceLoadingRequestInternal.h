@@ -23,7 +23,11 @@
     NSDictionary *requestDictionary;
     NSURLResponse *response;
     int sentContentInfo;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id streamingKeyRequestCompletionHandler;
+
     AVWeakReference *weakReference;
     AVWeakReference *weakReferenceToResourceLoader;
 }

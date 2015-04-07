@@ -5,6 +5,7 @@
 @class NSArray;
 
 @interface FigMetadataObjectCaptureConnectionConfiguration : FigCaptureConnectionConfiguration {
+    NSArray *_metadataIdentifiers;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    NSArray *_metadataIdentifiers;
     } _metadataRectOfInterest;
 }
 

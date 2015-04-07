@@ -5,10 +5,10 @@
 @class EDCollection, EDReference;
 
 @interface EDPivotArea : NSObject {
-    boolmGrandCol;
-    boolmGrandRow;
-    boolmOutline;
+    bool mGrandCol;
+    bool mGrandRow;
     EDReference *mOffset;
+    bool mOutline;
     EDCollection *mReferences;
     int mType;
 }

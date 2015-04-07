@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface MTLResourceAllocationInfo : NSObject <NSCopying, NSCoding> {
+@interface MTLResourceAllocationInfo : NSObject <NSCoding, NSCopying> {
     unsigned int _dirtySize;
     NSString *_memoryPool;
     BOOL _pageoffRequired;

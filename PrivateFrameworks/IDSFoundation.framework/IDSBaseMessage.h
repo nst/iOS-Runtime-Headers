@@ -11,11 +11,19 @@
 @interface IDSBaseMessage : NSObject <NSCopying> {
     NSDictionary *_cachedBody;
     NSDictionary *_clientInfo;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     id _context;
     NSDate *_creationDate;
     NSString *_dataUsageBundleIdentifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deliveryAcknowledgementBlock;
+
     NSString *_dsAuthID;
     BOOL _forceCellular;
     BOOL _hasReceivedPushAck;

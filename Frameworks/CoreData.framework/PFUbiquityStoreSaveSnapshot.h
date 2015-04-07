@@ -96,8 +96,8 @@
 - (void)setInsertedObjects:(id)arg1;
 - (void)setLocalPeerID:(id)arg1;
 - (void)setStoreKV:(id)arg1;
-- (void)setTransactionNumber:(id)arg1 peerStates:(id)arg2 andPeerIDs:(id)arg3;
 - (void)setTransactionNumber:(id)arg1;
+- (void)setTransactionNumber:(id)arg1 peerStates:(id)arg2 andPeerIDs:(id)arg3;
 - (void)setUpdatedObjects:(id)arg1;
 - (id)storeKV;
 - (id)transactionNumber;

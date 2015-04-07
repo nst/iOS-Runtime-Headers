@@ -5,17 +5,17 @@
 @class <MPUCompletionFooterViewDelegate>, MPStoreCompletionOffering, MPUItemOfferButton, NSString, UILabel, UISegmentedControl, UITapGestureRecognizer, UIView;
 
 @interface MPUCompletionFooterView : UITableViewHeaderFooterView <SKUIItemOfferButtonDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     UIView *_bottomSeparatorView;
     NSString *_completeMyCollectionTitle;
     NSString *_completeSubtitleFormat;
     NSString *_completeTitleFormat;
     MPStoreCompletionOffering *_completionOffering;
     NSString *_completionTotalFormat;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInsets;
     <MPUCompletionFooterViewDelegate> *_delegate;
     MPUItemOfferButton *_itemOfferButton;

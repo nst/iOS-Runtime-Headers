@@ -5,12 +5,12 @@
 @class ATPError, ATPRequest, ATPResponse, NSData;
 
 @interface ATPMessage : PBCodable <NSCopying> {
+    BOOL _additionalPayload;
     struct { 
         unsigned int messageID : 1; 
         unsigned int messageType : 1; 
         unsigned int sessionID : 1; 
         unsigned int additionalPayload : 1; 
-    BOOL _additionalPayload;
     } _has;
     unsigned int _messageID;
     int _messageType;

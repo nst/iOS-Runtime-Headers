@@ -4,7 +4,7 @@
 
 @class NSArray, NSExpression, NSPredicate, NSString;
 
-@interface NSExpression : NSObject <NSSecureCoding, NSCopying> {
+@interface NSExpression : NSObject <NSCopying, NSSecureCoding> {
     struct _expressionFlags { 
         unsigned int _evaluationBlocked : 1; 
         unsigned int _reservedExpressionFlags : 31; 
@@ -43,9 +43,9 @@
 + (id)expressionForVariable:(id)arg1;
 + (id)expressionForVariableNameAssignment:(id)arg1 expression:(id)arg2;
 + (id)expressionWithCKDPRecordFieldValue:(id)arg1 translator:(id)arg2;
++ (id)expressionWithFormat:(id)arg1;
 + (id)expressionWithFormat:(id)arg1 argumentArray:(id)arg2;
 + (id)expressionWithFormat:(id)arg1 arguments:(void*)arg2;
-+ (id)expressionWithFormat:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (id)CKExpressionValue;

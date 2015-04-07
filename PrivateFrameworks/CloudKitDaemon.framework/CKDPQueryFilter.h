@@ -5,11 +5,11 @@
 @class CKDPLocationBound, CKDPRecordFieldIdentifier, CKDPRecordFieldValue;
 
 @interface CKDPQueryFilter : PBCodable <NSCopying> {
-    struct { 
-        unsigned int type : 1; 
     CKDPLocationBound *_bounds;
     CKDPRecordFieldIdentifier *_fieldName;
     CKDPRecordFieldValue *_fieldValue;
+    struct { 
+        unsigned int type : 1; 
     } _has;
     int _type;
 }

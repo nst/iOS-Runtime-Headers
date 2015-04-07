@@ -24,8 +24,8 @@
 - (BOOL)importWithPassphrase:(id)arg1;
 - (id)initWithPath:(id)arg1 documentType:(id)arg2 baseUUIDForObjectUUID:(id)arg3;
 - (void)retrievePassphraseForEncryptedDocumentWithImporter:(id)arg1 completion:(id)arg2;
-- (id)templateInfoWithName:(id)arg1 variantIndex:(unsigned int)arg2;
 - (id)templateInfoWithName:(id)arg1;
+- (id)templateInfoWithName:(id)arg1 variantIndex:(unsigned int)arg2;
 - (void)willSaveImportedDocument;
 
 @end

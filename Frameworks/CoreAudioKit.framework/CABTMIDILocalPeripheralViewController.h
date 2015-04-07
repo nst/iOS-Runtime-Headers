@@ -4,7 +4,7 @@
 
 @class AMSBTLEAdvertisementManager, NSString, NSTimer, UIActivityIndicatorView, UISwitch;
 
-@interface CABTMIDILocalPeripheralViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ServiceNameEditedDelegate> {
+@interface CABTMIDILocalPeripheralViewController : UIViewController <ServiceNameEditedDelegate, UITableViewDataSource, UITableViewDelegate> {
     UISwitch *advertiseSwitch;
     int advertiseTimeout;
     NSTimer *advertiseTimer;

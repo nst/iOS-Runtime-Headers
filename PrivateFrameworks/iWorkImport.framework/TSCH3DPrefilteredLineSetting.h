@@ -5,53 +5,53 @@
 @class TSDStroke;
 
 @interface TSCH3DPrefilteredLineSetting : NSObject {
-    struct tvec4<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-        union { 
-            float z; 
-            float b; 
-            float p; 
-        } ; 
-        union { 
-            float w; 
-            float a; 
-            float q; 
-        } ; 
-    struct tvec4<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-        union { 
-            float z; 
-            float b; 
-            float p; 
-        } ; 
-        union { 
-            float w; 
-            float a; 
-            float q; 
-        } ; 
     BOOL mCullBackfaces;
     BOOL mDisableColorOutput;
+    struct tvec4<float> { 
+        union { 
+            float x; 
+            float r; 
+            float s; 
+        } ; 
+        union { 
+            float y; 
+            float g; 
+            float t; 
+        } ; 
+        union { 
+            float z; 
+            float b; 
+            float p; 
+        } ; 
+        union { 
+            float w; 
+            float a; 
+            float q; 
+        } ; 
     } mFilterRadius;
     float mLineWidth;
     TSDStroke *mStroke;
+    struct tvec4<float> { 
+        union { 
+            float x; 
+            float r; 
+            float s; 
+        } ; 
+        union { 
+            float y; 
+            float g; 
+            float t; 
+        } ; 
+        union { 
+            float z; 
+            float b; 
+            float p; 
+        } ; 
+        union { 
+            float w; 
+            float a; 
+            float q; 
+        } ; 
     } mStrokeColor;
     BOOL mUseNormals;
 }

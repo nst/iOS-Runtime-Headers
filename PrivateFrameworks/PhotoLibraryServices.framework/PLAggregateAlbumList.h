@@ -4,7 +4,7 @@
 
 @class NSMutableOrderedSet, NSString;
 
-@interface PLAggregateAlbumList : NSObject <PLAssetContainerListChangeObserver, PLAlbumContainer> {
+@interface PLAggregateAlbumList : NSObject <PLAlbumContainer, PLAssetContainerListChangeObserver> {
     NSMutableOrderedSet *_allAlbums;
     NSMutableOrderedSet *_childAlbumLists;
     int _filter;

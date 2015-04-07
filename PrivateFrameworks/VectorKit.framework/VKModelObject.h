@@ -10,6 +10,7 @@
 @class NSArray, NSMutableArray, NSObject<OS_dispatch_semaphore>, VKModelObject, VKStyleManager, VKWorld;
 
 @interface VKModelObject : NSObject {
+    BOOL _active;
     struct map<md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> >, std::__1::less<md::CommandBufferId>, std::__1::allocator<std::__1::pair<const md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > > > > { 
         struct __tree<std::__1::__value_type<md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > >, std::__1::__map_value_compare<md::CommandBufferId, std::__1::__value_type<md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > >, std::__1::less<md::CommandBufferId>, true>, std::__1::allocator<std::__1::__value_type<md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > > > > { 
             struct __tree_node<std::__1::__value_type<md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > >, void *> {} *__begin_node_; 
@@ -22,6 +23,12 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
+    } _commandBuffers;
+    NSObject<OS_dispatch_semaphore> *_drawReady;
+    unsigned int _needsDisplay;
+    unsigned int _needsLayout;
+    NSMutableArray *_submodels;
+    VKModelObject *_supermodel;
     struct CommandBufferIdSet { 
         struct vector<md::CommandBufferId, std::__1::allocator<md::CommandBufferId> > { 
             unsigned char *__begin_; 
@@ -30,13 +37,6 @@
                 unsigned char *__first_; 
             } __end_cap_; 
         } _ids; 
-    BOOL _active;
-    } _commandBuffers;
-    NSObject<OS_dispatch_semaphore> *_drawReady;
-    unsigned int _needsDisplay;
-    unsigned int _needsLayout;
-    NSMutableArray *_submodels;
-    VKModelObject *_supermodel;
     } _supportedPassIds;
     VKWorld *_world;
 }

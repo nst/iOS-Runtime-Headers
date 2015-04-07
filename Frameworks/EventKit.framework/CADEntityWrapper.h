@@ -17,8 +17,8 @@
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCalEntity:(void*)arg1 propertiesToLoad:(id)arg2;
 - (id)initWithCalEntity:(void*)arg1;
+- (id)initWithCalEntity:(void*)arg1 propertiesToLoad:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)loadedProperties;
 - (id)objectID;

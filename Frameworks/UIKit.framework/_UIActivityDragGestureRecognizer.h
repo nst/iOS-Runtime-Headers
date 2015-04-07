@@ -5,12 +5,12 @@
 @class NSString, UIAutoscroll, UIScrollView;
 
 @interface _UIActivityDragGestureRecognizer : UILongPressGestureRecognizer <UIAutoscrollDelegate, _UIScrollNotification> {
+    UIAutoscroll *_autoscroll;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIAutoscroll *_autoscroll;
     } _draggingInsets;
     UIScrollView *_targetScrollView;
 }

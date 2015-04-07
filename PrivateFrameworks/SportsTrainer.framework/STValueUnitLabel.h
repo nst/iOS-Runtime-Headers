@@ -5,13 +5,13 @@
 @class UILabel;
 
 @interface STValueUnitLabel : UIView {
-    unsigned int _reversesLabels : 1;
     unsigned int _forceLayout : 1;
-    unsigned int _verticalArrangement : 1;
     float _labelSpacing;
     UILabel *_leftLabel;
+    unsigned int _reversesLabels : 1;
     UILabel *_rightLabel;
     int _textAlignment;
+    unsigned int _verticalArrangement : 1;
 }
 
 @property float labelSpacing;

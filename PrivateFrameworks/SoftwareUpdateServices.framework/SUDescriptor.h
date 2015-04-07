@@ -4,7 +4,7 @@
 
 @class NSString, SUDocumentation;
 
-@interface SUDescriptor : NSObject <NSSecureCoding, NSCopying> {
+@interface SUDescriptor : NSObject <NSCopying, NSSecureCoding> {
     BOOL _autoDownloadAllowableForCellular;
     SUDocumentation *_documentation;
     BOOL _downloadAllowableForCellular;

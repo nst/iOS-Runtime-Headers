@@ -5,15 +5,6 @@
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSSQLEntity, NSSQLiteStatement, NSString;
 
 @interface NSSQLiteConnection : NSSQLConnection {
-    struct __sqliteConnectionFlags { 
-        unsigned int _readyToBind : 1; 
-        unsigned int _fetchInProgress : 1; 
-        unsigned int _fileSystemType : 2; 
-        unsigned int _proxyLocking : 1; 
-        unsigned int _vacuumSetupNeeded : 1; 
-        unsigned int _usingWAL : 1; 
-        unsigned int _disallowReconnect : 1; 
-        unsigned int _reserved : 24; 
     NSSQLiteStatement *_beginStatement;
     struct __CFDictionary { } *_cachedEntityUpdateStatements;
     NSSQLiteStatement *_commitStatement;
@@ -28,6 +19,15 @@
     NSMutableDictionary *_pragmaSettings;
     NSSQLiteStatement *_rollbackStatement;
     int _rowsProcessedCount;
+    struct __sqliteConnectionFlags { 
+        unsigned int _readyToBind : 1; 
+        unsigned int _fetchInProgress : 1; 
+        unsigned int _fileSystemType : 2; 
+        unsigned int _proxyLocking : 1; 
+        unsigned int _vacuumSetupNeeded : 1; 
+        unsigned int _usingWAL : 1; 
+        unsigned int _disallowReconnect : 1; 
+        unsigned int _reserved : 24; 
     } _sqliteConnectionFlags;
     NSMutableArray *_temporaryTables;
     double _timeOutIncrement;

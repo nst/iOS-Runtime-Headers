@@ -4,7 +4,7 @@
 
 @class AFSiriContext, NSString;
 
-@interface AFDictationOptions : NSObject <NSSecureCoding, NSCopying> {
+@interface AFDictationOptions : NSObject <NSCopying, NSSecureCoding> {
     NSString *_applicationName;
     NSString *_applicationVersion;
     AFSiriContext *_context;

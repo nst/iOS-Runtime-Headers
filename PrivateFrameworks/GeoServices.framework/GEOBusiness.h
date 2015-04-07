@@ -5,13 +5,13 @@
 @class GEOLatLng, NSMutableArray, NSString;
 
 @interface GEOBusiness : PBCodable <NSCopying> {
-    struct { 
-        unsigned int uID : 1; 
-        unsigned int isClosed : 1; 
     NSMutableArray *_attributeKeyValues;
     NSMutableArray *_attributions;
     NSMutableArray *_categorys;
     GEOLatLng *_center;
+    struct { 
+        unsigned int uID : 1; 
+        unsigned int isClosed : 1; 
     } _has;
     BOOL _isClosed;
     NSMutableArray *_localizedCategories;

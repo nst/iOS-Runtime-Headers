@@ -5,11 +5,11 @@
 @class NSString, UIPickerView, UIPrintPanelViewController, UITableView;
 
 @interface UIPrintRangeViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
+    UIPickerView *_fromPicker;
+    int _pageCount;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    UIPickerView *_fromPicker;
-    int _pageCount;
     } _pageRange;
     float _pickerWidth;
     UIPrintPanelViewController *_printPanelViewController;

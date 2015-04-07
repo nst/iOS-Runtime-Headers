@@ -30,6 +30,7 @@
 - (void)_stopAudioSession;
 - (id)activeConferenceConnections;
 - (int)callID;
+- (id)conference;
 - (void)conference:(id)arg1 cancelRelayRequest:(int)arg2 requestDict:(id)arg3;
 - (void)conference:(id)arg1 closeConnectionForCallID:(int)arg2;
 - (void)conference:(id)arg1 didStartSession:(BOOL)arg2 withUserInfo:(id)arg3;
@@ -48,7 +49,6 @@
 - (void)conference:(id)arg1 videoQualityNotificationForCallID:(int)arg2 isDegraded:(BOOL)arg3 isRemote:(BOOL)arg4;
 - (void)conference:(id)arg1 withCallID:(int)arg2 networkHint:(BOOL)arg3;
 - (void)conference:(id)arg1 withCallID:(int)arg2 remoteMediaStalled:(BOOL)arg3;
-- (id)conference;
 - (void)dealloc;
 - (BOOL)hasActiveConference;
 - (id)init;

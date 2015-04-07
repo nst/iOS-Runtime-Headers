@@ -9,7 +9,11 @@
 @class MFMailMessage;
 
 @interface _MFMailComposeAttachmentLoader : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     id _content;
     BOOL _isDraft;
     MFMailMessage *_message;

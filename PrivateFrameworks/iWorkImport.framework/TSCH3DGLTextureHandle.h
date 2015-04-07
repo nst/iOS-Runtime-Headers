@@ -19,6 +19,7 @@
             int b; 
             int p; 
         } ; 
+    } mFullSize;
     struct tvec3<int> { 
         union { 
             int x; 
@@ -35,7 +36,6 @@
             int b; 
             int p; 
         } ; 
-    } mFullSize;
     } mLevel0Size;
     unsigned int mTarget;
 }

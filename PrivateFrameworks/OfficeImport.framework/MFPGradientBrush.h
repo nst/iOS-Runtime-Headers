@@ -5,6 +5,11 @@
 @class NSArray;
 
 @interface MFPGradientBrush : MFPBrush {
+    NSArray *mBlend;
+    NSArray *mColorBlend;
+    struct CGShading { } *mShading;
+    struct CGFunction { } *mShadingFunction;
+    NSArray *mStops;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -12,11 +17,6 @@
         float d; 
         float tx; 
         float ty; 
-    NSArray *mBlend;
-    NSArray *mColorBlend;
-    struct CGShading { } *mShading;
-    struct CGFunction { } *mShadingFunction;
-    NSArray *mStops;
     } mTransform;
     int mWrapMode;
 }

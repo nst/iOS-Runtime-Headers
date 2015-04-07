@@ -15,7 +15,11 @@
     NSError *_lastError;
     NSArray *_pendingStocks;
     NSArray *_requestStocks;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateCompletionHandler;
+
 }
 
 @property <StockUpdaterDelegate> * delegate;

@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface _UITableViewCellBadge : UIView {
+    BOOL _isSelected;
+    NSString *_text;
     struct CGSize { 
         float width; 
         float height; 
-    BOOL _isSelected;
-    NSString *_text;
     } _textSize;
 }
 

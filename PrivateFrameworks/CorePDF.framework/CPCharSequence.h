@@ -9,7 +9,7 @@
 
 @class CPMemoryOwner;
 
-@interface CPCharSequence : NSObject <NSCopying, CPCopying, CPDisposable> {
+@interface CPCharSequence : NSObject <CPCopying, CPDisposable, NSCopying> {
     struct CPPDFChar {} **charArray;
     unsigned int length;
     unsigned int previousSize;
@@ -19,8 +19,8 @@
 }
 
 - (void)addChar:(struct CPPDFChar { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned short x2; unsigned short x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; struct CPPDFStyle {} *x6; float x7; int x8; }*)arg1;
-- (void)addChars:(struct CPPDFChar { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned short x2; unsigned short x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; struct CPPDFStyle {} *x6; float x7; int x8; }*)arg1 length:(unsigned int)arg2 ifTrue:(int (*)())arg3 passing:(void*)arg4;
 - (void)addChars:(struct CPPDFChar { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned short x2; unsigned short x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; struct CPPDFStyle {} *x6; float x7; int x8; }*)arg1 length:(unsigned int)arg2;
+- (void)addChars:(struct CPPDFChar { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned short x2; unsigned short x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; struct CPPDFStyle {} *x6; float x7; int x8; }*)arg1 length:(unsigned int)arg2 ifTrue:(int (*)())arg3 passing:(void*)arg4;
 - (void)addCharsFromSequence:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsFrom:(unsigned int)arg1 length:(unsigned int)arg2;

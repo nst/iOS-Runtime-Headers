@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIVector : NSObject <NSCopying, NSCoding> {
+@interface CIVector : NSObject <NSCoding, NSCopying> {
+    unsigned long _count;
     union { 
         float vec[4]; 
         float *ptr; 
-    unsigned long _count;
     } _u;
 }
 
@@ -15,10 +15,10 @@
 + (id)vectorWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)vectorWithString:(id)arg1;
 + (id)vectorWithValues:(const float*)arg1 count:(unsigned long)arg2;
-+ (id)vectorWithX:(float)arg1 Y:(float)arg2 Z:(float)arg3 W:(float)arg4;
-+ (id)vectorWithX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
-+ (id)vectorWithX:(float)arg1 Y:(float)arg2;
 + (id)vectorWithX:(float)arg1;
++ (id)vectorWithX:(float)arg1 Y:(float)arg2;
++ (id)vectorWithX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
++ (id)vectorWithX:(float)arg1 Y:(float)arg2 Z:(float)arg3 W:(float)arg4;
 
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })CGAffineTransformValue;
 - (struct CGPoint { float x1; float x2; })CGPointValue;
@@ -42,10 +42,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1;
 - (id)initWithValues:(const float*)arg1 count:(unsigned long)arg2;
-- (id)initWithX:(float)arg1 Y:(float)arg2 Z:(float)arg3 W:(float)arg4;
-- (id)initWithX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
-- (id)initWithX:(float)arg1 Y:(float)arg2;
 - (id)initWithX:(float)arg1;
+- (id)initWithX:(float)arg1 Y:(float)arg2;
+- (id)initWithX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
+- (id)initWithX:(float)arg1 Y:(float)arg2 Z:(float)arg3 W:(float)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (id)stringRepresentation;
 - (float)valueAtIndex:(unsigned long)arg1;

@@ -5,13 +5,13 @@
 @interface SGHarvesterService : NSObject {
 }
 
-- (void)addMessages:(id)arg1 source:(id)arg2 withCompletion:(id)arg3;
 - (void)addMessages:(id)arg1 source:(id)arg2;
+- (void)addMessages:(id)arg1 source:(id)arg2 withCompletion:(id)arg3;
 - (id)availableDataTypes;
 - (void)harvestDataForAllDataTypesWithCompletion:(id)arg1;
 - (void)harvestDataForDataType:(id)arg1 withCompletion:(id)arg2;
 - (id)messagesToRefresh;
-- (void)updateMessages:(id)arg1 state:(unsigned int)arg2 withCompletion:(id)arg3;
 - (void)updateMessages:(id)arg1 state:(unsigned int)arg2;
+- (void)updateMessages:(id)arg1 state:(unsigned int)arg2 withCompletion:(id)arg3;
 
 @end

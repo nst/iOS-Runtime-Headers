@@ -5,10 +5,10 @@
 @class NSArray, NSMutableArray;
 
 @interface UIKeyboardCandidateBarLayout : UICollectionViewLayout {
+    NSMutableArray *_allAttributes;
     struct CGSize { 
         float width; 
         float height; 
-    NSMutableArray *_allAttributes;
     } _contentSize;
     NSArray *_edgeDummyCellAttributes;
 }

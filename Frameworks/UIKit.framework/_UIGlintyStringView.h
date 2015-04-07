@@ -5,18 +5,6 @@
 @class <_UIGlintyStringViewDelegate>, NSMutableSet, NSString, UIColor, UIFont, UIImage, UILabel, UIView, _UILegibilitySettings, _UIVibrantSettings;
 
 @interface _UIGlintyStringView : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     BOOL _adjustsFontSizeToFitWidth;
     BOOL _allowsLuminanceAdjustments;
     BOOL _animating;
@@ -28,6 +16,15 @@
     UIView *_blurView;
     UIImage *_chevron;
     UIColor *_chevronBackgroundColor;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _chevronFrame;
     int _chevronStyle;
     <_UIGlintyStringViewDelegate> *_delegate;
@@ -39,6 +36,9 @@
     UIView *_highlightView;
     float _horizontalPadding;
     UILabel *_label;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _labelSize;
     _UILegibilitySettings *_legibilitySettings;
     BOOL _needsTextUpdate;

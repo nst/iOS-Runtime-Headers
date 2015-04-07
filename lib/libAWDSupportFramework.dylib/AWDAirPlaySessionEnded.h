@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface AWDAirPlaySessionEnded : PBCodable <NSCopying> {
+    unsigned int _duration;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int duration : 1; 
         unsigned int initiator : 1; 
         unsigned int reason : 1; 
-    unsigned int _duration;
     } _has;
     unsigned int _initiator;
     int _reason;

@@ -10,7 +10,11 @@
 
 @interface PKUsageNotificationClient : NSObject <NSXPCListenerDelegate, PKUsageNotificationClientInterface> {
     NSMutableSet *_connections;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSXPCListener *_listener;
 }
 

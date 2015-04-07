@@ -5,11 +5,11 @@
 @class NSArray, NSSet;
 
 @interface GKBubbleLayout : NSObject {
+    NSArray *_bubbleLocations;
+    NSArray *_bubbleViews;
     struct CGPoint { 
         float x; 
         float y; 
-    NSArray *_bubbleLocations;
-    NSArray *_bubbleViews;
     } _center;
     float _radius;
     NSSet *_visibleBubbleSet;

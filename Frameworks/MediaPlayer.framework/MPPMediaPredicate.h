@@ -5,10 +5,10 @@
 @class MPPCompoundPredicate, MPPConditionalPredicate, MPPPersistentIDsPredicate, MPPPropertyPredicate, MPPSearchStringPredicate;
 
 @interface MPPMediaPredicate : PBCodable <NSCopying> {
-    struct { 
-        unsigned int type : 1; 
     MPPCompoundPredicate *_compoundPredicate;
     MPPConditionalPredicate *_conditionalPredicate;
+    struct { 
+        unsigned int type : 1; 
     } _has;
     MPPPersistentIDsPredicate *_persistentIDsPredicate;
     MPPPropertyPredicate *_propertyPredicate;

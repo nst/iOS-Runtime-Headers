@@ -5,11 +5,11 @@
 @class LTEVTPWrapper, NSArray, NSObject<OS_dispatch_queue>;
 
 @interface LTEConferenceManager : NSObject <LTEConferenceDelegate> {
+    LTEVTPWrapper *_vtpWrapper;
+    NSArray *conferenceArray;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    LTEVTPWrapper *_vtpWrapper;
-    NSArray *conferenceArray;
     } stateLock;
     NSObject<OS_dispatch_queue> *xpcQueue;
 }

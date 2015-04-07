@@ -4,7 +4,7 @@
 
 @class NSHashTable, NSMutableArray, NSString, _UISettings;
 
-@interface PTSModule : NSObject <_UISettingsKeyPathObserver, PTSSectionObserver> {
+@interface PTSModule : NSObject <PTSSectionObserver, _UISettingsKeyPathObserver> {
     NSMutableArray *_allSections;
     NSMutableArray *_enabledSections;
     NSHashTable *_observers;
@@ -23,12 +23,12 @@
 
 + (id)moduleWithSettings:(id)arg1;
 + (id)moduleWithTitle:(id)arg1 contents:(id)arg2;
++ (id)sectionWithRows:(id)arg1;
++ (id)sectionWithRows:(id)arg1 title:(id)arg2;
 + (id)sectionWithRows:(id)arg1 title:(id)arg2 condition:(id)arg3;
 + (id)sectionWithRows:(id)arg1 title:(id)arg2 conditionFormat:(id)arg3;
-+ (id)sectionWithRows:(id)arg1 title:(id)arg2;
-+ (id)sectionWithRows:(id)arg1;
-+ (id)submoduleWithModule:(id)arg1 childSettingsKeyPath:(id)arg2 condition:(id)arg3;
 + (id)submoduleWithModule:(id)arg1 childSettingsKeyPath:(id)arg2;
++ (id)submoduleWithModule:(id)arg1 childSettingsKeyPath:(id)arg2 condition:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_addSection:(id)arg1;
@@ -58,8 +58,8 @@
 - (void)setEnabledSections:(id)arg1;
 - (void)setSettings:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)settings;
+- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)title;
 
 @end

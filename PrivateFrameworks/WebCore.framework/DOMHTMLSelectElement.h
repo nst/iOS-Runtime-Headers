@@ -20,8 +20,8 @@
 @property(copy) NSString * value;
 @property(readonly) BOOL willValidate;
 
-- (void)_activateItemAtIndex:(int)arg1 allowMultipleSelection:(BOOL)arg2;
 - (void)_activateItemAtIndex:(int)arg1;
+- (void)_activateItemAtIndex:(int)arg1 allowMultipleSelection:(BOOL)arg2;
 - (BOOL)_requiresAccessoryView;
 - (BOOL)_requiresInputView;
 - (void)_startAssistingDocumentView:(id)arg1;

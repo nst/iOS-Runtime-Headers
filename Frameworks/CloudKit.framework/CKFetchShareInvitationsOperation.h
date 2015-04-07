@@ -9,7 +9,11 @@
 @class NSMutableArray;
 
 @interface CKFetchShareInvitationsOperation : CKOperation {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchShareInvitationsCompletionBlock;
+
     int _fetchType;
     NSMutableArray *_fetchedInvitations;
     BOOL _queryAllContainers;

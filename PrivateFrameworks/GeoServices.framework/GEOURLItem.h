@@ -5,9 +5,9 @@
 @class GEOMapItemStorage, GEOPlace;
 
 @interface GEOURLItem : PBCodable <NSCopying> {
+    BOOL _currentLocation;
     struct { 
         unsigned int currentLocation : 1; 
-    BOOL _currentLocation;
     } _has;
     GEOMapItemStorage *_mapItemStorage;
     GEOPlace *_place;

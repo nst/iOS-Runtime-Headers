@@ -5,6 +5,9 @@
 @class NSString;
 
 @interface AWDFaceTimeCallDeclineSent : PBCodable <NSCopying> {
+    unsigned int _declineCode;
+    int _errorCode;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int declineCode : 1; 
@@ -12,9 +15,6 @@
         unsigned int isVideo : 1; 
         unsigned int onLockScreen : 1; 
         unsigned int sendDuration : 1; 
-    unsigned int _declineCode;
-    int _errorCode;
-    NSString *_guid;
     } _has;
     unsigned int _isVideo;
     unsigned int _onLockScreen;

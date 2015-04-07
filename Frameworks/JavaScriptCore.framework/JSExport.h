@@ -7,9 +7,10 @@
  */
 
 @interface JSExport <JSExport> {
-     /* Encoded args for previous method:  */
 }
 
 + (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)initialize;
+     /* Encoded args for previous method:  */
+
 
 @end

@@ -9,20 +9,24 @@
 @class AVPlayer, AVPlayerItem, AVQueuePlayer, MPAVRoute, MPAVRoutingController, NSArray, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface MPQueuePlayer : NSObject <MPAVRoutingControllerDelegate> {
+    NSObject<OS_dispatch_queue> *_accessQueue;
+    AVPlayerItem *_currentItem;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    AVPlayerItem *_currentItem;
     } _currentTime;
     int _defaultItemEQPresetType;
     BOOL _isExternalPlaybackActive;
     MPAVRoute *_lastPickedRoute;
     BOOL _outputObscuredDueToInsufficientExternalProtection;
     BOOL _pausedForPlaybackQueueTransaction;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _playbackQueueCommitHandler;
+
     int _playbackQueueTransactionCount;
     AVQueuePlayer *_player;
     NSMutableArray *_queuedOperations;
@@ -106,8 +110,8 @@
 - (void)removeItem:(id)arg1;
 - (void)removeTimeObserver:(id)arg1;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (void)setActionAtItemEnd:(int)arg1;
 - (void)setAllowsExternalPlayback:(BOOL)arg1;
 - (void)setClosedCaptionDisplayEnabled:(BOOL)arg1;

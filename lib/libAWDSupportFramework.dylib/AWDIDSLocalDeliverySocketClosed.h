@@ -5,6 +5,10 @@
 @class NSString;
 
 @interface AWDIDSLocalDeliverySocketClosed : PBCodable <NSCopying> {
+    unsigned long long _bytesReceived;
+    unsigned long long _bytesSent;
+    unsigned long long _closeError;
+    NSString *_guid;
     struct { 
         unsigned int bytesReceived : 1; 
         unsigned int bytesSent : 1; 
@@ -15,10 +19,6 @@
         unsigned int priority : 1; 
         unsigned int socketError : 1; 
         unsigned int timestamp : 1; 
-    unsigned long long _bytesReceived;
-    unsigned long long _bytesSent;
-    unsigned long long _closeError;
-    NSString *_guid;
     } _has;
     unsigned long long _isToDefaultPairedDevice;
     unsigned long long _packetsReceived;

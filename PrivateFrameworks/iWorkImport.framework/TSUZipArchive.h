@@ -28,8 +28,8 @@
 - (void)readCentralDirectoryData:(id)arg1 entryCount:(unsigned int)arg2 queue:(id)arg3 completion:(id)arg4;
 - (void)readCentralDirectoryWithEntryCount:(unsigned int)arg1 offset:(long long)arg2 size:(unsigned long)arg3 channel:(id)arg4 queue:(id)arg5 completion:(id)arg6;
 - (BOOL)readCentralFileHeaderWithBuffer:(const void**)arg1 dataSize:(unsigned int*)arg2 error:(id*)arg3;
-- (id)readChannelForEntry:(id)arg1 validateCRC:(BOOL)arg2;
 - (id)readChannelForEntry:(id)arg1;
+- (id)readChannelForEntry:(id)arg1 validateCRC:(BOOL)arg2;
 - (void)readEndOfCentralDirectoryData:(id)arg1 eocdOffset:(long long)arg2 channel:(id)arg3 queue:(id)arg4 completion:(id)arg5;
 - (BOOL)readExtraFieldsFromBuffer:(const void**)arg1 extraFieldsLength:(unsigned short)arg2 entry:(id)arg3 dataSize:(unsigned int*)arg4 error:(id*)arg5;
 - (BOOL)readFileCommentFromBuffer:(const void**)arg1 fileCommentLength:(unsigned short)arg2 entry:(id)arg3 dataSize:(unsigned int*)arg4 error:(id*)arg5;
@@ -39,8 +39,8 @@
 - (void)readZip64EndOfCentralDirectoryLocatorWithChannel:(id)arg1 eocdOffset:(long long)arg2 queue:(id)arg3 completion:(id)arg4;
 - (void)readZip64EndOfCentralDirectoryWithChannel:(id)arg1 offset:(long long)arg2 queue:(id)arg3 completion:(id)arg4;
 - (BOOL)readZip64ExtraFieldFromBuffer:(const void*)arg1 dataLength:(unsigned short)arg2 entry:(id)arg3 error:(id*)arg4;
-- (id)streamReadChannelForEntry:(id)arg1 validateCRC:(BOOL)arg2;
 - (id)streamReadChannelForEntry:(id)arg1;
+- (id)streamReadChannelForEntry:(id)arg1 validateCRC:(BOOL)arg2;
 - (id)tsp_dataForEntry:(id)arg1;
 
 @end

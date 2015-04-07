@@ -12,6 +12,7 @@
 @interface NSURLSessionTask : NSObject <NSCopying> {
     NSDictionary *__additionalHeaders;
     unsigned long __allowedProtocolTypes;
+    bool __allowsCellular;
     NSDictionary *__backgroundTaskTimingData;
     NSString *__boundInterfaceIdentifier;
     int __cachePolicy;
@@ -24,6 +25,7 @@
     NSArray *__contentDispositionFallbackArray;
     int __cookieAcceptPolicy;
     struct _CFURLRequest { } *__currentCFURLRequest;
+    bool __disallowCellular;
     long long __expectedWorkload;
     NSURL *__ledBellyFallbackURL;
     NSString *__ledBellyServiceIdentifier;
@@ -31,13 +33,18 @@
     int __networkServiceType;
     struct __PerformanceTiming { } *__performanceTiming;
     unsigned int __powerAssertion;
+    bool __preventsIdleSystemSleep;
     float __priorityHint;
     long long __priorityValue;
     BOOL __prohibitAuthUI;
     id __protocolForTask;
     NSDictionary *__proxySettings;
     long __requestPriority;
+    bool __shouldHandleCookies;
+    bool __shouldPipelineHTTP;
+    bool __shouldSkipPipelineProbe;
     BOOL __shouldSkipPreferredClientCertificateLookup;
+    bool __shouldUsePipelineHeuristics;
     NSDictionary *__sslSettings;
     BOOL __strictContentLength;
     long long __suspensionThreshhold;
@@ -58,13 +65,6 @@
     NSString *_taskDescription;
     unsigned int _taskIdentifier;
     NSObject<OS_dispatch_queue> *_workQueue;
-    bool__allowsCellular;
-    bool__disallowCellular;
-    bool__preventsIdleSystemSleep;
-    bool__shouldHandleCookies;
-    bool__shouldPipelineHTTP;
-    bool__shouldSkipPipelineProbe;
-    bool__shouldUsePipelineHeuristics;
 }
 
 @property(retain) NSDictionary * _additionalHeaders;
@@ -131,9 +131,6 @@
 + (BOOL)supportsSecureCoding;
 + (id)taskForWrappedRequest:(id)arg1;
 
-- (const struct XCookieStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCookieStorage;
-- (const struct XCredentialStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCredentialStorage;
-- (const struct XURLCache { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXURLCache;
 - (id)_additionalHeaders;
 - (unsigned long)_allowedProtocolTypes;
 - (bool)_allowsCellular;
@@ -152,8 +149,11 @@
 - (struct _CFHSTSPolicy { }*)_copyHSTSPolicy;
 - (struct __CFHTTPMessage { }*)_copyHTTPMessage;
 - (struct _CFURLRequest { }*)_copyOriginalCFURLRequest;
-- (struct __CFDictionary { }*)_copySocketStreamProperties0;
 - (struct __CFDictionary { }*)_copySocketStreamProperties;
+- (struct __CFDictionary { }*)_copySocketStreamProperties0;
+- (const struct XCookieStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCookieStorage;
+- (const struct XCredentialStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCredentialStorage;
+- (const struct XURLCache { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXURLCache;
 - (struct _CFURLRequest { }*)_currentCFURLRequest;
 - (bool)_disallowCellular;
 - (long long)_expectedWorkload;

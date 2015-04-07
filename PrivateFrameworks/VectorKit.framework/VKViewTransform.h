@@ -15,24 +15,24 @@
     } _viewTransform;
 }
 
-@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  upVector; /* unknown property attribute:  1>=[3d]} */
-@property(readonly) struct  rightVector; /* unknown property attribute:  1>=[3d]} */
-@property(readonly) struct  forwardVector; /* unknown property attribute:  1>=[3d]} */
 @property(readonly) float contentScale;
 @property(readonly) int coordinateSpace;
 @property(readonly) float degreesFromPlumb;
 @property(readonly) double farPlaneDistance;
 @property(readonly) double focusDistance;
 @property(readonly) struct VKPoint { double x1; double x2; double x3; } focusPoint;
+@property(readonly) struct  forwardVector; /* unknown property attribute:  1>=[3d]} */
 @property(readonly) float heading;
 @property(readonly) BOOL isGeocentric;
 @property(readonly) BOOL isMercator;
 @property(readonly) double nearPlaneDistance;
+@property(readonly) struct  rightVector; /* unknown property attribute:  1>=[3d]} */
 @property const struct { double x1[4][4]; }* scaledViewProjectionMatrix;
 @property(readonly) struct CGSize { float x1; float x2; } screenSizeInPixels;
 @property(readonly) struct CGSize { float x1; float x2; } screenSizeInPoints;
 @property(readonly) struct VKPoint { double x1; double x2; double x3; } translation;
 @property(readonly) struct VKPoint { double x1; double x2; double x3; } translationInMercator;
+@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  upVector; /* unknown property attribute:  1>=[3d]} */
 @property(readonly) const struct { double x1[4][4]; }* viewProjectionMatrix;
 @property(readonly) VKViewVolume * viewVolume;
 @property(readonly) double widthOverDepth;

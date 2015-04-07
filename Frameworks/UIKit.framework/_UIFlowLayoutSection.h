@@ -5,75 +5,49 @@
 @class NSArray, NSDictionary, NSMutableArray, NSMutableSet, _UIFlowLayoutInfo;
 
 @interface _UIFlowLayoutSection : NSObject {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct CGSize { 
-        float width; 
-        float height; 
     float _actualGap;
     float _beginMargin;
     float _endMargin;
     BOOL _fixedItemSize;
     float _footerDimension;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _footerFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _frame;
     float _headerDimension;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _headerFrame;
     float _horizontalInterstice;
     int _indexOfIncompleteRow;
     NSMutableSet *_invalidatedIndexPaths;
     BOOL _isValid;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _itemSize;
     NSMutableArray *_items;
     int _itemsByRowCount;
@@ -84,11 +58,37 @@
     BOOL _lastRowIncomplete;
     _UIFlowLayoutInfo *_layoutInfo;
     float _otherMargin;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _rectToKeepValid;
     NSDictionary *_rowAlignmentOptions;
     NSMutableArray *_rows;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _sectionMargins;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _validItemRange;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _validRect;
     float _verticalInterstice;
 }

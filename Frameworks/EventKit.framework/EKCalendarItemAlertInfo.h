@@ -5,9 +5,6 @@
 @class <EKTravelAdvice>, NSDate, NSString, NSTimeZone, NSURL;
 
 @interface EKCalendarItemAlertInfo : NSObject <NSCopying> {
-    struct { 
-        double latitude; 
-        double longitude; 
     BOOL _acknowledged;
     NSURL *_action;
     NSString *_alarmID;
@@ -19,6 +16,9 @@
     NSTimeZone *_eventTimeZone;
     NSString *_externalID;
     NSDate *_firstDateAlertedForTravelAdvice;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _geoLocationCoordinates;
     BOOL _hasGeoLocationCoordinates;
     BOOL _hasOrganizerThatIsNotCurrentUser;

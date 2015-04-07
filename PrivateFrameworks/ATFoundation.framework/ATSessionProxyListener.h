@@ -4,7 +4,7 @@
 
 @class ATSession, NSMutableArray, NSString, NSXPCListener;
 
-@interface ATSessionProxyListener : NSObject <NSXPCListenerDelegate, ATSessionObserver> {
+@interface ATSessionProxyListener : NSObject <ATSessionObserver, NSXPCListenerDelegate> {
     NSMutableArray *_connections;
     NSXPCListener *_listener;
     ATSession *_session;

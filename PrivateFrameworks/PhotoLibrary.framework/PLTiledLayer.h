@@ -5,9 +5,17 @@
 @class <PLTileProcessor>, CALayer, NSData, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, PLCache;
 
 @interface PLTiledLayer : CALayer {
+    unsigned long _currentProcessingID;
+    NSObject<OS_dispatch_queue> *_decodeQueue;
+    int _decoderCount;
+    struct jpegDecoder { struct ajdec {} *x1; id x2; } *_decoders;
+    long _err;
+    NSObject<OS_dispatch_queue> *_filterQueue;
     struct CGSize { 
         float width; 
         float height; 
+    } _fullSize;
+    NSData *_jpegData;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,14 +25,6 @@
             float width; 
             float height; 
         } size; 
-    unsigned long _currentProcessingID;
-    NSObject<OS_dispatch_queue> *_decodeQueue;
-    int _decoderCount;
-    struct jpegDecoder { struct ajdec {} *x1; id x2; } *_decoders;
-    long _err;
-    NSObject<OS_dispatch_queue> *_filterQueue;
-    } _fullSize;
-    NSData *_jpegData;
     } _lastVisibleRect;
     float _lastZoomScale;
     int _lock;
@@ -55,8 +55,8 @@
 - (void)removeAllTiles;
 - (void)setTileProcessingEnabled:(BOOL)arg1 withProcessingID:(unsigned long)arg2 placeholderImage:(struct CGImage { }*)arg3;
 - (void)setTileProcessor:(id)arg1;
-- (void)setVisibleRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 zoomScale:(float)arg2 completionHandler:(id)arg3;
 - (void)setVisibleRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
+- (void)setVisibleRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 zoomScale:(float)arg2 completionHandler:(id)arg3;
 - (id)tileProcessor;
 - (void)updateSubLayers:(id)arg1;
 - (BOOL)visibleTileRegionHasChanged:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 level:(int)arg2;

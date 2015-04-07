@@ -5,18 +5,18 @@
 @class <TSCH3DBarChartAppearance>, TSCH3DBarChartDefaultAppearance, TSCH3DLabelResources;
 
 @interface TSCH3DChartBarElementProperties : TSCH3DChartBasicElementProperties {
-    struct vector<float, std::__1::allocator<float> > { 
-        float *__begin_; 
-        float *__end_; 
-        struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
-        } __end_cap_; 
+    TSCH3DBarChartDefaultAppearance *mAppearance;
+    int mBarShape;
+    float mBarWidth;
+    BOOL mBevelEdges;
     struct vector<TSCH3D::BarElementInfo, std::__1::allocator<TSCH3D::BarElementInfo> > { 
         struct BarElementInfo {} *__begin_; 
         struct BarElementInfo {} *__end_; 
         struct __compressed_pair<TSCH3D::BarElementInfo *, std::__1::allocator<TSCH3D::BarElementInfo> > { 
             struct BarElementInfo {} *__first_; 
         } __end_cap_; 
+    } mElementInfos;
+    float mElementsXOffset;
     struct array<TSCH3D::BarExtrusionDetails, 2> { 
         struct BarExtrusionDetails { 
             struct BarExtrusionCrossSectionDetails { 
@@ -33,20 +33,20 @@
                 float creaseAngle; 
             } spine; 
         } __elems_[2]; 
+    } mExtrusionDetails;
+    struct vector<float, std::__1::allocator<float> > { 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
+        } __end_cap_; 
+    } mMaxValues;
     struct vector<<anonymous>::Range, std::__1::allocator<<anonymous>::Range> > { 
         struct Range {} *__begin_; 
         struct Range {} *__end_; 
         struct __compressed_pair<<anonymous>::Range *, std::__1::allocator<<anonymous>::Range> > { 
             struct Range {} *__first_; 
         } __end_cap_; 
-    TSCH3DBarChartDefaultAppearance *mAppearance;
-    int mBarShape;
-    float mBarWidth;
-    BOOL mBevelEdges;
-    } mElementInfos;
-    float mElementsXOffset;
-    } mExtrusionDetails;
-    } mMaxValues;
     } mRangeCache;
     TSCH3DLabelResources *mSeriesLabels;
     float mSeriesOffset;

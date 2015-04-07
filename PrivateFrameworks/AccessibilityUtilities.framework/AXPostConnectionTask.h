@@ -10,7 +10,11 @@
 
 @interface AXPostConnectionTask : NSObject {
     BOOL _didTimeout;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _postConnectionBlock;
+
     AXTimer *_timeoutTimer;
 }
 

@@ -5,15 +5,6 @@
 @class <GEOCompletionItem>, CLLocation, NSArray, NSString, _MKLocalSearchMerchantParameters;
 
 @interface MKLocalSearchRequest : NSObject <NSCopying> {
-    struct { 
-        struct { 
-            double latitude; 
-            double longitude; 
-        } center; 
-        struct { 
-            double latitudeDelta; 
-            double longitudeDelta; 
-        } span; 
     BOOL _allowPhoneNumberLookupUsingCellular;
     NSString *_canonicalSearchString;
     NSString *_contactsDataString;
@@ -24,6 +15,15 @@
     NSArray *_muids;
     NSString *_naturalLanguageQuery;
     NSArray *_phoneNumbers;
+    struct { 
+        struct { 
+            double latitude; 
+            double longitude; 
+        } center; 
+        struct { 
+            double latitudeDelta; 
+            double longitudeDelta; 
+        } span; 
     } _region;
     int _resultProviderID;
 }

@@ -5,6 +5,8 @@
 @class NSString;
 
 @interface UIStatusBarComposedData : NSObject <NSCopying> {
+    NSString *_doubleHeightStatus;
+    BOOL _itemEnabled[30];
     struct { 
         BOOL itemIsEnabled[25]; 
         BOOL timeString[64]; 
@@ -33,8 +35,6 @@
         unsigned int locationIconType : 1; 
         unsigned int quietModeInactive : 1; 
         unsigned int tetheringConnectionCount; 
-    NSString *_doubleHeightStatus;
-    BOOL _itemEnabled[30];
     } _rawData;
 }
 

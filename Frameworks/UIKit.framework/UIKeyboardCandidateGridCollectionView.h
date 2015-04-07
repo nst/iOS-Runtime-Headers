@@ -42,7 +42,7 @@
 - (void)setPreviousGroupBarStartingY:(float)arg1;
 - (BOOL)shouldShowIndex;
 - (void)showIndex:(BOOL)arg1;
-- (void)updateIndex:(BOOL)arg1;
 - (void)updateIndex;
+- (void)updateIndex:(BOOL)arg1;
 
 @end

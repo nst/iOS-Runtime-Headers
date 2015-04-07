@@ -17,7 +17,11 @@
     NSManagedObjectContext *_managedObjectContext;
     PLPhotoLibrary *_momentGenerationLibrary;
     BOOL _observingReachability;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _reachabilityBlock;
+
 }
 
 @property(readonly) void* _addressBook;

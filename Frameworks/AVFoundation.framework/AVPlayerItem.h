@@ -52,8 +52,8 @@
 + (BOOL)automaticallyNotifiesObserversOfTracks;
 + (BOOL)automaticallyNotifiesObserversOfVariantIndex;
 + (void)initialize;
-+ (id)playerItemWithAsset:(id)arg1 automaticallyLoadedAssetKeys:(id)arg2;
 + (id)playerItemWithAsset:(id)arg1;
++ (id)playerItemWithAsset:(id)arg1 automaticallyLoadedAssetKeys:(id)arg2;
 + (id)playerItemWithURL:(id)arg1;
 
 - (id)MPAVItem;
@@ -270,8 +270,8 @@
 - (BOOL)hasEnabledAudio;
 - (BOOL)hasEnabledVideo;
 - (id)init;
-- (id)initWithAsset:(id)arg1 automaticallyLoadedAssetKeys:(id)arg2;
 - (id)initWithAsset:(id)arg1;
+- (id)initWithAsset:(id)arg1 automaticallyLoadedAssetKeys:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (id)initialDate;
 - (id)initialEstimatedDate;
@@ -305,12 +305,12 @@
 - (unsigned int)restrictions;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })reversePlaybackEndTime;
 - (BOOL)savesDownloadedDataToDiskWhenDone;
-- (BOOL)seekToDate:(id)arg1 completionHandler:(id)arg2;
 - (BOOL)seekToDate:(id)arg1;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id)arg2;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id)arg4;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
+- (BOOL)seekToDate:(id)arg1 completionHandler:(id)arg2;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id)arg2;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id)arg4;
 - (id)seekableTimeRanges;
 - (BOOL)seekingWaitsForVideoCompositionRendering;
 - (void)selectMediaOption:(id)arg1 inMediaSelectionGroup:(id)arg2;

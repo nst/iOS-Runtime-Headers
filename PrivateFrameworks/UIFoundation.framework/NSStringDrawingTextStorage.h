@@ -5,6 +5,11 @@
 @class CUICatalog, CUIStyleEffectConfiguration, NSConcreteNotifyingMutableAttributedString, NSLayoutManager, NSString, NSTextContainer;
 
 @interface NSStringDrawingTextStorage : NSTextStorage <NSLayoutManagerDelegate> {
+    float _baselineDelta;
+    CUICatalog *_catalog;
+    NSConcreteNotifyingMutableAttributedString *_contents;
+    float _defaultTighteningFactor;
+    NSLayoutManager *_layoutManager;
     struct { 
         unsigned int _typesetterBehavior : 4; 
         unsigned int _needToFlushCache : 1; 
@@ -12,11 +17,6 @@
         unsigned int _forceWordWrapping : 1; 
         unsigned int _usesSimpleTextEffects : 1; 
         unsigned int _reserved : 24; 
-    float _baselineDelta;
-    CUICatalog *_catalog;
-    NSConcreteNotifyingMutableAttributedString *_contents;
-    float _defaultTighteningFactor;
-    NSLayoutManager *_layoutManager;
     } _sdflags;
     CUIStyleEffectConfiguration *_styleEffects;
     NSTextContainer *_textContainer;
@@ -72,8 +72,8 @@
 - (void)setDefaultTighteningFactor:(float)arg1;
 - (id)string;
 - (id)textContainer;
-- (id)textContainerForAttributedString:(id)arg1 containerSize:(struct CGSize { float x1; float x2; })arg2 lineFragmentPadding:(float)arg3;
 - (id)textContainerForAttributedString:(id)arg1;
+- (id)textContainerForAttributedString:(id)arg1 containerSize:(struct CGSize { float x1; float x2; })arg2 lineFragmentPadding:(float)arg3;
 - (int)typesetterBehavior;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })usedRectForTextContainer:(id)arg1;
 

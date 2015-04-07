@@ -38,8 +38,8 @@
 - (id)delegate;
 - (id)dimmingColor;
 - (void)dimmingRemovalAnimationDidStop;
-- (void)display:(BOOL)arg1 withAnimationDuration:(float)arg2 afterDelay:(float)arg3;
 - (void)display:(BOOL)arg1;
+- (void)display:(BOOL)arg1 withAnimationDuration:(float)arg2 afterDelay:(float)arg3;
 - (BOOL)displayed;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)handleSingleTap:(id)arg1;

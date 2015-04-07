@@ -23,9 +23,9 @@
 @property BOOL iCloudSyncingEnabled;
 @property(retain) NSUbiquitousKeyValueStore * keyValueStore;
 
-- (int (*)())callback;
 - (void)addToKVStore:(id)arg1;
 - (void)asyncCircleStatusCheck;
+- (int (*)())callback;
 - (void)clearKVS;
 - (id)clientThread;
 - (void*)context;

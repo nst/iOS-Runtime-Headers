@@ -16,8 +16,8 @@
 @property BOOL disableAlongsideView;
 @property(readonly) _UIViewControllerKeyboardAnimationStyleInfo * info;
 
-+ (id)animationStyleWithContext:(id)arg1 useCustomTransition:(BOOL)arg2;
 + (id)animationStyleWithContext:(id)arg1;
++ (id)animationStyleWithContext:(id)arg1 useCustomTransition:(BOOL)arg2;
 
 - (BOOL)allowCustomTransition;
 - (BOOL)canDismissWithScrollView;

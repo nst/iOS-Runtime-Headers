@@ -5,19 +5,6 @@
 @class <MPUCoverZoomViewControllerDelegate>, CADisplayLink, CAMediaTimingFunction, MPUCZCollectionViewController, MPUCoverMaskView, MPUDataSource, NSIndexPath, NSString, UIPinchGestureRecognizer, UIView, UIViewController;
 
 @interface MPUCoverZoomViewController : UIViewController <MPUCZCollectionViewControllerDelegate, UIGestureRecognizerDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
     double _animationDuration;
     float _animationEndProgress;
     float _animationStartProgress;
@@ -38,9 +25,22 @@
     UIView *_transformView;
     MPUCZCollectionViewController *_transitionCollectionViewController;
     int _transitionCoverCountPerColumn;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _transitionEndItemSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _transitionStartItemSize;
     float _transitionStartScale;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _unzoomedAlbumViewTransform;
     BOOL _zoomed;
 }

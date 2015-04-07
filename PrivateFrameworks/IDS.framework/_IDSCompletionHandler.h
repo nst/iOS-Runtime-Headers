@@ -7,7 +7,11 @@
  */
 
 @interface _IDSCompletionHandler : IDSDelegateInfo {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
 }
 
 @property(copy) id handler;

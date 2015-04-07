@@ -23,8 +23,8 @@
 
 - (void)evenlyDistributeStops;
 - (void)insertGradientStop:(id)arg1;
-- (id)insertStopAtFraction:(float)arg1 withColor:(id)arg2;
 - (id)insertStopAtFraction:(float)arg1;
+- (id)insertStopAtFraction:(float)arg1 withColor:(id)arg2;
 - (void)moveStopAtIndex:(unsigned int)arg1 toFraction:(float)arg2;
 - (void)removeStop:(id)arg1;
 - (id)removeStopAtIndex:(unsigned int)arg1;

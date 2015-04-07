@@ -50,8 +50,8 @@
 @property(retain,readonly) NSString * uniqueID;
 @property(retain,readonly) NSArray * vettedAliases;
 
-- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)_callDelegatesWithBlock:(id)arg1;
+- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)_callDevicesChanged;
 - (void)_callNearbyDevicesChanged;
 - (void)_callRegistrationDelegatesWithBlock:(id)arg1;

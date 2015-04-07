@@ -4,7 +4,7 @@
 
 @class MPAVItem, MPInlineVideoController, MPSwipableView, MPVideoPlaybackOverlayView, MPVolumeController, MPWeakTimer, NSString, UIActivityIndicatorView, UIPinchGestureRecognizer, UITapGestureRecognizer;
 
-@interface MPInlineVideoFullscreenViewController : UIViewController <MPSwipableViewDelegate, MPVolumeControllerDelegate, MPVideoOverlayDelegate, MPTransportControlsTarget> {
+@interface MPInlineVideoFullscreenViewController : UIViewController <MPSwipableViewDelegate, MPTransportControlsTarget, MPVideoOverlayDelegate, MPVolumeControllerDelegate> {
     int _activeOverlayUserEvents;
     BOOL _disableTaps;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;

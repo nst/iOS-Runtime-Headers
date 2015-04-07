@@ -5,8 +5,6 @@
 @class CKAccountInfo, CKContainerID, CKDAccount, CKDFlowControlManager, CKDMMCS, CKDMescalSession, CKDPCSManager, CKDServerConfiguration, CKDZoneGatekeeper, NSBundle, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSURL;
 
 @interface CKDClientContext : NSObject <CKLoggingProtocol> {
-    struct { 
-        unsigned int val[8]; 
     CKDMMCS *_MMCS;
     CKDAccount *_account;
     CKAccountInfo *_accountInfoOverride;
@@ -26,6 +24,8 @@
     NSString *_applicationPackageUploadDirectory;
     NSString *_applicationRecordCacheDirectory;
     NSString *_applicationVersion;
+    struct { 
+        unsigned int val[8]; 
     } _auditToken;
     CKDZoneGatekeeper *_backgroundZoneGatekeeper;
     BOOL _canAccessProtectionData;
@@ -112,8 +112,8 @@
 + (id)applicationContainerPathForBundleID:(id)arg1 bundleURL:(id*)arg2 type:(int*)arg3;
 + (id)contextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
 + (id)sharedContextForInternalUseWithAppContainerTuple:(id)arg1;
-+ (id)sharedContextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3 forInternalUse:(BOOL)arg4;
 + (id)sharedContextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
++ (id)sharedContextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3 forInternalUse:(BOOL)arg4;
 + (id)sharedContexts;
 
 - (void).cxx_destruct;

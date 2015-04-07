@@ -5,6 +5,15 @@
 @class NSString;
 
 @interface AWDAirPlayVideoSessionStartedOnServer : PBCodable <NSCopying> {
+    unsigned int _audioOnly;
+    unsigned int _clientAuthMs;
+    unsigned int _clientBonjourMs;
+    unsigned int _clientConnectMs;
+    unsigned int _clientInfoMs;
+    NSString *_clientModel;
+    unsigned int _clientPostAuthMs;
+    unsigned int _clientSecureConnectionMs;
+    NSString *_clientVersion;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int audioOnly : 1; 
@@ -17,15 +26,6 @@
         unsigned int status : 1; 
         unsigned int transportType : 1; 
         unsigned int type : 1; 
-    unsigned int _audioOnly;
-    unsigned int _clientAuthMs;
-    unsigned int _clientBonjourMs;
-    unsigned int _clientConnectMs;
-    unsigned int _clientInfoMs;
-    NSString *_clientModel;
-    unsigned int _clientPostAuthMs;
-    unsigned int _clientSecureConnectionMs;
-    NSString *_clientVersion;
     } _has;
     NSString *_sessionUUID;
     int _status;

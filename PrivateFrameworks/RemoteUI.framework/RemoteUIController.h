@@ -11,7 +11,11 @@
 @interface RemoteUIController : NSObject <RUILoaderDelegate, RUIObjectModelDelegate, RUIParserDelegate> {
     <RemoteUIControllerDelegate> *_delegate;
     NSMutableDictionary *_elementChangeHandlers;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _loadCompletion;
+
     RUILoader *_loader;
     UINavigationController *_modalNavigationController;
     NSMutableArray *_modalObjectModels;
@@ -41,15 +45,15 @@
 - (id)init;
 - (id)loadCompletion;
 - (void)loadData:(id)arg1 baseURL:(id)arg2;
-- (void)loadRequest:(id)arg1 completion:(id)arg2;
 - (void)loadRequest:(id)arg1;
-- (void)loadURL:(id)arg1 postBody:(id)arg2 completion:(id)arg3;
+- (void)loadRequest:(id)arg1 completion:(id)arg2;
 - (void)loadURL:(id)arg1 postBody:(id)arg2;
+- (void)loadURL:(id)arg1 postBody:(id)arg2 completion:(id)arg3;
+- (id)loader;
 - (id)loader:(id)arg1 connection:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
-- (id)loader;
 - (id)navigationController;
 - (void)objectModel:(id)arg1 didNavigateBackFromController:(id)arg2 withGesture:(BOOL)arg3;
 - (void)objectModel:(id)arg1 elementDidChange:(id)arg2;

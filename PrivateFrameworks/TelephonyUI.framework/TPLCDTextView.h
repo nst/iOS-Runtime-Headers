@@ -5,6 +5,19 @@
 @class NSString, TPLCDTextViewScrollingView, UIColor, UIFont, UIFrameAnimation;
 
 @interface TPLCDTextView : UIView {
+    unsigned int _animates : 1;
+    UIFrameAnimation *_animation;
+    unsigned int _centerText : 1;
+    id _delegate;
+    UIFont *_font;
+    float _fontSize;
+    unsigned int _isAnimating : 1;
+    unsigned int _leftTruncates : 1;
+    float _minFontSize;
+    TPLCDTextViewScrollingView *_scrollingView;
+    UIColor *_shadowColor;
+    NSString *_text;
+    UIColor *_textColor;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,21 +27,8 @@
             float width; 
             float height; 
         } size; 
-    unsigned int _textRectIsValid : 1;
-    unsigned int _centerText : 1;
-    unsigned int _animates : 1;
-    unsigned int _isAnimating : 1;
-    unsigned int _leftTruncates : 1;
-    UIFrameAnimation *_animation;
-    id _delegate;
-    UIFont *_font;
-    float _fontSize;
-    float _minFontSize;
-    TPLCDTextViewScrollingView *_scrollingView;
-    UIColor *_shadowColor;
-    NSString *_text;
-    UIColor *_textColor;
     } _textRect;
+    unsigned int _textRectIsValid : 1;
 }
 
 + (float)defaultMinimumFontSize;

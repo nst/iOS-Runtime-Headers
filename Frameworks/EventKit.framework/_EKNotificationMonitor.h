@@ -13,7 +13,11 @@
     NSMutableArray *_culledRecentlyRepliedNotifications;
     NSArray *_eventNotificationReferences;
     EKEventStore *_eventStore;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _eventStoreGetter;
+
     BOOL _handlesOnlyEvents;
     BOOL _initialCheck;
     unsigned int _lastEventCount;

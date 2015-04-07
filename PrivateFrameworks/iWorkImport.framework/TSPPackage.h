@@ -5,14 +5,14 @@
 @class <TSPFileCoordinatorDelegate>, NSError, NSHashTable, NSObject<OS_dispatch_queue>, SFUCryptoKey, TSPDocumentProperties, TSUZipFileArchive;
 
 @interface TSPPackage : NSObject {
-    struct { 
-        unsigned int isLazyLoadingDocumentProperties : 1; 
-        unsigned int isLazyLoadingZip : 1; 
     NSObject<OS_dispatch_queue> *_accessQueue;
     SFUCryptoKey *_decryptionKey;
     TSPDocumentProperties *_documentProperties;
     <TSPFileCoordinatorDelegate> *_fileCoordinatorDelegate;
     unsigned long long _fileFormatVersion;
+    struct { 
+        unsigned int isLazyLoadingDocumentProperties : 1; 
+        unsigned int isLazyLoadingZip : 1; 
     } _flags;
     BOOL _isClosed;
     NSError *_lastReloadError;

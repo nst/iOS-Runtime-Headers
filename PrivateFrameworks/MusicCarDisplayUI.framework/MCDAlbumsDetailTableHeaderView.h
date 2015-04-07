@@ -11,7 +11,11 @@
 @interface MCDAlbumsDetailTableHeaderView : UITableViewHeaderFooterView {
     UIImageView *_artworkImageView;
     UIView *_separatorView;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shuffleActionBlock;
+
     MCDButton *_shuffleButton;
     UILabel *_subtitleLabel;
     UILabel *_titleLabel;

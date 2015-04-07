@@ -9,7 +9,11 @@
 @class NSString, SKUIColorScheme, SKUILockupSwooshArtworkLoader, SKUILockupSwooshViewController, SKUIMissingItemLoader, SKUIResourceLoader, SKUISwooshPageComponent, UIViewController;
 
 @interface SKUIProductPageTableSwooshSection : SKUIProductPageTableSection <SKUIMissingItemDelegate, SKUISwooshViewControllerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _actionBlock;
+
     SKUILockupSwooshArtworkLoader *_artworkLoader;
     SKUIMissingItemLoader *_missingItemLoader;
     SKUIResourceLoader *_resourceLoader;

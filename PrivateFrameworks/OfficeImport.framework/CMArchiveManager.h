@@ -30,8 +30,8 @@
 + (id)resourceTypeToMIME:(int)arg1;
 
 - (id)_validateData:(id)arg1 withType:(int*)arg2;
-- (void)addCssStyle:(id)arg1 withName:(id)arg2;
 - (id)addCssStyle:(id)arg1;
+- (void)addCssStyle:(id)arg1 withName:(id)arg2;
 - (id)addResource:(id)arg1 withName:(id)arg2;
 - (id)addResource:(id)arg1 withType:(int)arg2;
 - (id)addResourceForDrawable:(id)arg1 withType:(int)arg2 drawable:(id)arg3;

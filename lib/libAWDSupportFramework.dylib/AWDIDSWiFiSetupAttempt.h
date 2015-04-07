@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface AWDIDSWiFiSetupAttempt : PBCodable <NSCopying> {
+    NSString *_client;
+    unsigned long long _duration;
     struct { 
         unsigned int duration : 1; 
         unsigned int result : 1; 
         unsigned int timestamp : 1; 
         unsigned int type : 1; 
-    NSString *_client;
-    unsigned long long _duration;
     } _has;
     unsigned long long _result;
     unsigned long long _timestamp;

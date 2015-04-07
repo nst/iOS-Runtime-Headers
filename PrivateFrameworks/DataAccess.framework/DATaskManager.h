@@ -75,8 +75,8 @@
 - (id)activeQueuedTask;
 - (id)allTasks;
 - (void)cancelAllTasks;
-- (void)cancelTask:(id)arg1 withUnderlyingError:(id)arg2;
 - (void)cancelTask:(id)arg1;
+- (void)cancelTask:(id)arg1 withUnderlyingError:(id)arg2;
 - (void)dealloc;
 - (id)deviceType;
 - (BOOL)didLogSyncStart;
@@ -118,8 +118,8 @@
 - (void)shutdown;
 - (int)state;
 - (id)stateString;
-- (void)submitExclusiveTask:(id)arg1 toFrontOfQueue:(BOOL)arg2;
 - (void)submitExclusiveTask:(id)arg1;
+- (void)submitExclusiveTask:(id)arg1 toFrontOfQueue:(BOOL)arg2;
 - (void)submitIndependentTask:(id)arg1;
 - (void)submitQueuedTask:(id)arg1;
 - (void)taskDidFinish:(id)arg1;

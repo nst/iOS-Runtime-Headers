@@ -23,7 +23,6 @@
 @property NSObject<OS_dispatch_queue> * compilerQueue;
 @property(copy,readonly) NSString * pluginPath;
 
-- (struct MTLCompilerConnectionManager { int (**x1)(); }*)compilerConnectionManager;
 - (id).cxx_construct;
 - (struct { unsigned char x1[32]; })cacheUUID;
 - (void)compileFragmentFunction:(id)arg1 serializedPixelFormat:(id)arg2 stateData:(id)arg3 completionHandler:(id)arg4;
@@ -34,6 +33,7 @@
 - (void)compileRequest:(id)arg1 completionHandler:(id)arg2;
 - (void)compileVertexFunction:(id)arg1 serializedVertexDescriptor:(id)arg2 stateData:(id)arg3 completionHandler:(id)arg4;
 - (void)compileVertexFunction:(id)arg1 serializedVertexDescriptor:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id)arg5;
+- (struct MTLCompilerConnectionManager { int (**x1)(); }*)compilerConnectionManager;
 - (id)compilerQueue;
 - (void)dealloc;
 - (id)initWithArch:(unsigned int)arg1 cacheUUID:(struct { unsigned char x1[32]; }*)arg2 pluginPath:(id)arg3;

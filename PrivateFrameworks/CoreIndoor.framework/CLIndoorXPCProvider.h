@@ -5,16 +5,16 @@
 @class NSObject<OS_dispatch_queue>, NSXPCConnection;
 
 @interface CLIndoorXPCProvider : NSObject {
+    NSXPCConnection *_connection;
+    NSObject<OS_dispatch_queue> *_frameworkQueue;
     struct optional<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > > { 
-        boolm_initialized; 
+        bool m_initialized; 
         struct aligned_storage<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > > { 
             union dummy_u { 
                 BOOL data[8]; 
                 struct a4 { } aligner_; 
             } dummy_; 
         } m_storage; 
-    NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_frameworkQueue;
     } _lastCrashTime;
 }
 

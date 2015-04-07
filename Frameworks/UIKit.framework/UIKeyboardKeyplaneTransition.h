@@ -9,7 +9,11 @@
 @class <UIKeyboardKeyplaneTransitionDelegate>, CADisplayLink, UIKBTree, UIView;
 
 @interface UIKeyboardKeyplaneTransition : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     float _currentProgress;
     CADisplayLink *_displayLink;
     UIKBTree *_end;

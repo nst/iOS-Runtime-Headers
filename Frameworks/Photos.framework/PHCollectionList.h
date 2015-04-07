@@ -9,7 +9,11 @@
 @class NSArray, NSDate, NSString, PHQuery;
 
 @interface PHCollectionList : PHCollection {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _childCollectionsSortingComparator;
+
     int _collectionListSubtype;
     int _collectionListType;
     NSArray *_collections;
@@ -49,14 +53,14 @@
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsTrashedState;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
-+ (id)transientCollectionListWithAssetCollections:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientCollectionListWithAssetCollections:(id)arg1 title:(id)arg2;
-+ (id)transientCollectionListWithAssetCollectionsFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
++ (id)transientCollectionListWithAssetCollections:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientCollectionListWithAssetCollectionsFetchResult:(id)arg1 title:(id)arg2;
-+ (id)transientCollectionListWithCollections:(id)arg1 title:(id)arg2 identifier:(id)arg3;
++ (id)transientCollectionListWithAssetCollectionsFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientCollectionListWithCollections:(id)arg1 title:(id)arg2;
-+ (id)transientCollectionListWithCollectionsFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
++ (id)transientCollectionListWithCollections:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientCollectionListWithCollectionsFetchResult:(id)arg1 title:(id)arg2;
++ (id)transientCollectionListWithCollectionsFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 
 - (void).cxx_destruct;
 - (BOOL)canContainCollections;

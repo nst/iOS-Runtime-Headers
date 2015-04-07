@@ -5,20 +5,6 @@
 @class PUAlbumListViewControllerSpec, PUFeedViewControllerSpec, PUPhotoDecoration, PUPhotosGridViewControllerSpec, PUPhotosPanoramaViewControllerSpec, PUPhotosPickerViewControllerSpec, UIImage;
 
 @interface PUAlbumListViewControllerSpec : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     UIImage *_addSharedAlbumPlaceholderImage;
     int _albumDeletionConfirmationStyle;
     BOOL _allowsAlbumCountSubtitle;
@@ -42,10 +28,24 @@
     BOOL _shouldUseShortTitleForStandInAlbumList;
     BOOL _shouldUseTableView;
     BOOL _showsDeleteButtonOnCellContentView;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _stackOffset;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _stackPerspectiveInsets;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _stackPerspectiveOffset;
     PUPhotoDecoration *_stackPhotoDecoration;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _stackSize;
     unsigned int _stackViewStyle;
     BOOL _usesStackTransitionToGrid;

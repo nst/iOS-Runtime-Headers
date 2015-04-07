@@ -5,11 +5,6 @@
 @class <CKBalloonViewDelegate>, CKBalloonImageView, CKManualUpdater, NSString, UIColor, UILongPressGestureRecognizer, UITapGestureRecognizer;
 
 @interface CKBalloonView : CKBalloonImageView <UIGestureRecognizerDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     unsigned int _balloonCorners;
     BOOL _canUseOpaqueMask;
     <CKBalloonViewDelegate> *_delegate;
@@ -22,6 +17,11 @@
     BOOL _orientation;
     CKBalloonImageView *_overlay;
     BOOL _showingMenu;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _textAlignmentInsets;
     BOOL _wantsSkinnyMask;
 }
@@ -88,8 +88,8 @@
 - (void)setDisplayUpdater:(id)arg1;
 - (void)setDoubleTapGestureRecognizer:(id)arg1;
 - (void)setFilled:(BOOL)arg1;
-- (void)setHasOverlay:(BOOL)arg1 autoDismiss:(BOOL)arg2;
 - (void)setHasOverlay:(BOOL)arg1;
+- (void)setHasOverlay:(BOOL)arg1 autoDismiss:(BOOL)arg2;
 - (void)setHasTail:(BOOL)arg1;
 - (void)setLongPressGestureRecognizer:(id)arg1;
 - (void)setNeedsPrepareForDisplay;
@@ -99,8 +99,8 @@
 - (void)setTextAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setWantsSkinnyMask:(BOOL)arg1;
 - (void)showMenu;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (void)tapGestureRecognized:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textAlignmentInsets;
 - (BOOL)wantsSkinnyMask;

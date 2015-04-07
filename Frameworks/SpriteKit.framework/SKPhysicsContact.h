@@ -5,16 +5,16 @@
 @class SKPhysicsBody;
 
 @interface SKPhysicsContact : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGVector { 
-        float dx; 
-        float dy; 
     SKPhysicsBody *_bodyA;
     SKPhysicsBody *_bodyB;
     float _collisionImpulse;
+    struct CGVector { 
+        float dx; 
+        float dy; 
     } _contactNormal;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _contactPoint;
 }
 

@@ -9,8 +9,8 @@
     _MFMailAccountProxySource *_proxySource;
 }
 
-- (id)accountProxyContainingEmailAddress:(id)arg1 includingInactive:(BOOL)arg2 originatingBundleID:(id)arg3 sourceAccountManagement:(int)arg4;
 - (id)accountProxyContainingEmailAddress:(id)arg1 includingInactive:(BOOL)arg2;
+- (id)accountProxyContainingEmailAddress:(id)arg1 includingInactive:(BOOL)arg2 originatingBundleID:(id)arg3 sourceAccountManagement:(int)arg4;
 - (id)activeAccountProxiesOriginatingBundleID:(id)arg1 sourceAccountManagement:(int)arg2;
 - (id)allAccountProxies;
 - (void)dealloc;

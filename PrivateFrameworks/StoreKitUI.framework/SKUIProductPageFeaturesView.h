@@ -32,8 +32,8 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setColorScheme:(id)arg1;
-- (void)setFeatures:(int)arg1 gameCenterFeatures:(unsigned int)arg2;
 - (void)setFeatures:(int)arg1;
+- (void)setFeatures:(int)arg1 gameCenterFeatures:(unsigned int)arg2;
 - (void)setGameCenterFeatures:(unsigned int)arg1;
 - (void)setTitle:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

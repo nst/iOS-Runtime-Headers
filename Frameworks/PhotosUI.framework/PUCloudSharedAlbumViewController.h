@@ -4,7 +4,7 @@
 
 @class NSString, PLCloudSharedAlbum, PUPhotoStreamComposeServiceViewController, PUPhotosPickerViewController, PUVideoTrimQueueController, UIBarButtonItem, UIPopoverController, UISegmentedControl, UIViewController;
 
-@interface PUCloudSharedAlbumViewController : PUPhotosAlbumViewController <PLAlbumStreamingOptionsViewControllerDelegate, UIPopoverControllerDelegate, PUVideoTrimQueueControllerDelegate, PUPhotoStreamComposeServiceDelegate> {
+@interface PUCloudSharedAlbumViewController : PUPhotosAlbumViewController <PLAlbumStreamingOptionsViewControllerDelegate, PUPhotoStreamComposeServiceDelegate, PUVideoTrimQueueControllerDelegate, UIPopoverControllerDelegate> {
     BOOL __canContributeToCloudSharedAlbum;
     UIBarButtonItem *__optionsBarButtonItem;
     UIBarButtonItem *__optionsBarButtonSpacerItem;

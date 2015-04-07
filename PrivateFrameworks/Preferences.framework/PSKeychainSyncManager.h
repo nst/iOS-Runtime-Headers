@@ -13,11 +13,23 @@
     NSString *_appleIDPassword;
     NSString *_appleIDUsername;
     PSRootController *_buddyNavigationController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _changeSecurityCodeCompletion;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _circleJoinCompletion;
+
     int _circleNotificationToken;
     BOOL _circleWasReset;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     KeychainSyncSecurityCodeController *_complexSecurityCodeController;
     NSTimer *_credentialExpirationTimer;
     UIAlertView *_deleteSafariPasswordsAlert;
@@ -34,9 +46,17 @@
     UIAlertView *_incorrectRecoveryCodesAlert;
     BOOL _joiningCircle;
     BOOL _joiningCircleAfterRecovery;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _passwordPromptCompletion;
+
     KeychainSyncPhoneNumberController *_phoneNumberController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resetCompletion;
+
     UIAlertView *_resetConfirmationAlert;
     UIViewController *_resetPromptControllerHost;
     NSString *_securityCodeRecoveryAttempt;

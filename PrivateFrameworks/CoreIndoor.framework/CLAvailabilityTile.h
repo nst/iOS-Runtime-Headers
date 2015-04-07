@@ -5,9 +5,9 @@
 @class LocalizerParameters, NSMutableArray;
 
 @interface CLAvailabilityTile : PBCodable <NSCopying> {
+    double _availabilityZScoreConfidenceInterval;
     struct { 
         unsigned int availabilityZScoreConfidenceInterval : 1; 
-    double _availabilityZScoreConfidenceInterval;
     } _has;
     LocalizerParameters *_parameterOverrides;
     NSMutableArray *_venues;

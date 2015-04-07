@@ -5,15 +5,15 @@
 @class UILabel, UINavigationItem, UIView;
 
 @interface UINavigationItemView : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
     UIView *_bottomCrossView;
     BOOL _customFontSet;
     BOOL _isCrossFading;
     BOOL _isFadingInFromCustomAlpha;
     UINavigationItem *_item;
     UILabel *_label;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _titleSize;
     UIView *_topCrossView;
 }

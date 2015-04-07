@@ -24,10 +24,10 @@
 - (id)displayProfileOfType:(int)arg1;
 - (void)downloadRemoteAssetsWithCompletion:(id)arg1;
 - (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(id)arg3;
-- (void)imageSetForType:(int)arg1 displayProfile:(id)arg2 preheat:(BOOL)arg3 withCompletion:(id)arg4;
 - (id)imageSetForType:(int)arg1 displayProfile:(id)arg2 preheat:(BOOL)arg3;
-- (void)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5 withCompletion:(id)arg6;
+- (void)imageSetForType:(int)arg1 displayProfile:(id)arg2 preheat:(BOOL)arg3 withCompletion:(id)arg4;
 - (id)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5;
+- (void)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5 withCompletion:(id)arg6;
 - (id)manifestHash;
 - (void)noteShared;
 - (id)remoteAssetManager;

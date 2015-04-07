@@ -5,15 +5,15 @@
 @class <PUVideoTrimQueueControllerDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PLManagedAlbum, UIViewController;
 
 @interface PUVideoTrimQueueController : NSObject {
+    PLManagedAlbum *_album;
+    NSString *_albumName;
+    NSString *_commentText;
+    <PUVideoTrimQueueControllerDelegate> *_delegate;
     struct { 
         unsigned int hasWillTrim : 1; 
         unsigned int hasDidTrim : 1; 
         unsigned int hasDidFinish : 1; 
         unsigned int hasDidCancel : 1; 
-    PLManagedAlbum *_album;
-    NSString *_albumName;
-    NSString *_commentText;
-    <PUVideoTrimQueueControllerDelegate> *_delegate;
     } _delegateFlags;
     UIViewController *_displayingViewController;
     double _endTime;

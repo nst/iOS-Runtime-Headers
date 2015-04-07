@@ -5,11 +5,6 @@
 @class CHDAxis, CHDChart, CHDChartType, CHDSeries, CMState, EDResources;
 
 @interface EMChartMapper : CMMapper {
-    struct { 
-        BOOL primaryCategoryHasDates; 
-        BOOL secondaryCategoryHasDates; 
-        BOOL primaryAxisHasDates; 
-        BOOL secondaryAxisHasDates; 
     CHDAxis *mBaseAxis;
     CHDChart *mChart;
     BOOL mHasDateCategory;
@@ -21,6 +16,11 @@
     CHDSeries *mMainSeries;
     CHDChartType *mMainType;
     unsigned int mPieIndex;
+    struct { 
+        BOOL primaryCategoryHasDates; 
+        BOOL secondaryCategoryHasDates; 
+        BOOL primaryAxisHasDates; 
+        BOOL secondaryAxisHasDates; 
     } mPlotInfos;
     CHDAxis *mPrimaryAxis;
     EDResources *mResources;

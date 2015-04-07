@@ -22,8 +22,16 @@
     NSObject<OS_dispatch_group> *_fetchRecordsGroup;
     NSArray *_fullRecordsToFetch;
     NSMutableArray *_packagesToFetch;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordFetchCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordFetchProgressBlock;
+
     NSArray *_recordIDsToFetch;
     NSDictionary *_recordIDsToVersionETags;
     unsigned int _requestedTTL;

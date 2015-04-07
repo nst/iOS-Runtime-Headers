@@ -11,7 +11,11 @@
 @interface PUNavigationController : UINavigationController <UINavigationControllerDelegate> {
     PUAbstractNavigationBanner *__banner;
     _UINavigationControllerPalette *__palette;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _ppt_onDidShowViewControllerBlock;
+
     BOOL _pu_preventsAutorotation;
     unsigned int _pu_supportedInterfaceOrientations;
 }

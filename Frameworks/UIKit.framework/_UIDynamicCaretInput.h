@@ -5,9 +5,12 @@
 @class NSTimer, TIHandwritingStrokes, UIDelayedAction, _UIDynamicCaretDot;
 
 @interface _UIDynamicCaretInput : UIView <UIKBHandwritingStrokeEnabled> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+    TIHandwritingStrokes *_accumulatedStrokes;
+    struct CGContext { } *_bitmapContext;
+    UIDelayedAction *_committedAction;
+    _UIDynamicCaretDot *_dotView;
+    int _fadeCount;
+    NSTimer *_fadeTimer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,13 +20,10 @@
             float width; 
             float height; 
         } size; 
-    TIHandwritingStrokes *_accumulatedStrokes;
-    struct CGContext { } *_bitmapContext;
-    UIDelayedAction *_committedAction;
-    _UIDynamicCaretDot *_dotView;
-    int _fadeCount;
-    NSTimer *_fadeTimer;
     } _inkedAreaOfBitmapContext;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _lastViewLoc;
 }
 

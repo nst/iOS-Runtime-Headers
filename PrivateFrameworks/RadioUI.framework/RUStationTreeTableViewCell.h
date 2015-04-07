@@ -47,10 +47,10 @@
 - (void)layoutSubviews;
 - (id)nowPlayingText;
 - (void)setCellDisplayStyle:(int)arg1;
-- (void)setNowPlayingText:(id)arg1 animated:(BOOL)arg2;
 - (void)setNowPlayingText:(id)arg1;
-- (void)setPlaying:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setNowPlayingText:(id)arg1 animated:(BOOL)arg2;
 - (void)setPlaying:(BOOL)arg1;
+- (void)setPlaying:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsActivityIndicator:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (BOOL)showsActivityIndicator;

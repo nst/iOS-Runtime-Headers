@@ -8,18 +8,16 @@
 
 @class NSArray, NSMutableArray, NSNumber, NSString, PSSpecifier, TUAccountsController;
 
-@interface CNFRegSettingsController : CNFRegListController <CNFRegWizardControllerDelegate, CNFRegViewAccountControllerDelegate, CNFRegFirstRunDelegate> {
-    struct { 
-        unsigned int listeningForFinishedEditingEvents : 1; 
-        unsigned int appeared : 1; 
-        unsigned int ignoringTextFieldChanges : 1; 
-        unsigned int showEnableSwitch : 1; 
-        unsigned int refreshingCallerIdValues : 1; 
+@interface CNFRegSettingsController : CNFRegListController <CNFRegFirstRunDelegate, CNFRegViewAccountControllerDelegate, CNFRegWizardControllerDelegate> {
     NSArray *_accountGroupSpecifiers;
     TUAccountsController *_accountsController;
     PSSpecifier *_addAddressButtonSpecifier;
     NSMutableArray *_addresses;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _alertHandler;
+
     NSArray *_aliasGroupSpecifiers;
     NSArray *_blacklistGroupSpecifiers;
     PSSpecifier *_blankAddressSpecifier;
@@ -30,6 +28,12 @@
     NSString *_pendingAddress;
     NSArray *_receiveRelayCallsGroupSpecifiers;
     NSArray *_replyWithMessageGroupSpecifiers;
+    struct { 
+        unsigned int listeningForFinishedEditingEvents : 1; 
+        unsigned int appeared : 1; 
+        unsigned int ignoringTextFieldChanges : 1; 
+        unsigned int showEnableSwitch : 1; 
+        unsigned int refreshingCallerIdValues : 1; 
     } _settingsFlags;
     BOOL _showReceiveRelayCalls;
 }
@@ -145,10 +149,10 @@
 - (void)setAlertHandler:(id)arg1;
 - (void)setAliasSelected:(id)arg1;
 - (void)setCallerId:(id)arg1;
-- (void)setFaceTimeEnabled:(id)arg1 specifier:(id)arg2 animated:(BOOL)arg3;
 - (void)setFaceTimeEnabled:(id)arg1 specifier:(id)arg2;
-- (void)setPendingAddress:(id)arg1 forSpecifier:(id)arg2;
+- (void)setFaceTimeEnabled:(id)arg1 specifier:(id)arg2 animated:(BOOL)arg3;
 - (void)setPendingAddress:(id)arg1;
+- (void)setPendingAddress:(id)arg1 forSpecifier:(id)arg2;
 - (void)setReceiveRelayedCallsEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setShowEnableSwitch:(BOOL)arg1;
 - (BOOL)shouldReloadSpecifiersOnResume;

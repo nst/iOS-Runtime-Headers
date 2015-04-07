@@ -30,9 +30,9 @@
 - (void)_registerForMessages;
 - (void)_startDiscoveringAccessories;
 - (void)_stopDiscoveringAccessories;
+- (id)accessoryManager;
 - (void)accessoryManager:(id)arg1 didFindNewAccessory:(id)arg2;
 - (void)accessoryManager:(id)arg1 didRemoveNewAccessory:(id)arg2;
-- (id)accessoryManager;
 - (unsigned int)generationCounter;
 - (id)initWithMessageDispatcher:(id)arg1 accessoryManager:(id)arg2;
 - (id)messageDispatcher;

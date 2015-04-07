@@ -13,21 +13,21 @@
     struct CGPoint { 
         float x; 
         float y; 
+    } _accumulatedCenterOffset;
+    VKAnnotationMarker *_annotationMarker;
     struct CGPoint { 
         float x; 
         float y; 
-    struct { 
-        double x0; 
-        double x1; 
-        double y0; 
-        double y1; 
-    } _accumulatedCenterOffset;
-    VKAnnotationMarker *_annotationMarker;
     } _centerOffset;
     float _contentScale;
     BOOL _hasMass;
     BOOL _hasScreenRect;
     VKAnnotationModel *_model;
+    struct { 
+        double x0; 
+        double x1; 
+        double y0; 
+        double y1; 
     } _screenRect;
     int _styleType;
     NSMutableArray *_sublayers;

@@ -4,7 +4,7 @@
 
 @class <TSWPStatisticsControlling>, NSMutableArray, NSString, TSTTableInfo, TSWPTextStatistics;
 
-@interface TSTTextStatisticsTracker : NSObject <TSWPTextStatisticsTracking, TSKChangeSourceObserver, TSWPStorageObserver> {
+@interface TSTTextStatisticsTracker : NSObject <TSKChangeSourceObserver, TSWPStorageObserver, TSWPTextStatisticsTracking> {
     struct { 
         struct { 
             unsigned short row; 

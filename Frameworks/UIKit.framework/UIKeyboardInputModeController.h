@@ -78,8 +78,8 @@
 - (id)delegate;
 - (BOOL)deviceStateIsLocked;
 - (void)didEnterBackground:(id)arg1;
-- (id)enabledInputModeIdentifiers:(BOOL)arg1;
 - (id)enabledInputModeIdentifiers;
+- (id)enabledInputModeIdentifiers:(BOOL)arg1;
 - (id)enabledInputModeLanguages;
 - (id)enabledInputModes;
 - (id)extensionInputModes;
@@ -119,8 +119,8 @@
 - (void)setNormalizedInputModes:(id)arg1;
 - (void)startConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)startDictationConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
-- (id)suggestedInputModesForCurrentLocale:(BOOL)arg1 fallbackToDefaultInputModes:(BOOL)arg2;
 - (id)suggestedInputModesForCurrentLocale;
+- (id)suggestedInputModesForCurrentLocale:(BOOL)arg1 fallbackToDefaultInputModes:(BOOL)arg2;
 - (id)suggestedInputModesForPreferredLanguages;
 - (id)supportedInputModeIdentifiers;
 - (void)switchToCurrentSystemInputMode;

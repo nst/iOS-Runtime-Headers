@@ -9,7 +9,11 @@
 @class NSString, UIWebView;
 
 @interface SLURLPreviewGenerator : NSObject <UIWebViewDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     UIWebView *_webView;
 }
 
@@ -25,9 +29,9 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)loadURL:(id)arg1 completion:(id)arg2;
 - (void)uiWebView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
+- (id)webView;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
-- (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;
 
 @end

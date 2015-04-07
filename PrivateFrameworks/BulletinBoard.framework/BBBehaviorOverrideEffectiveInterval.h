@@ -44,8 +44,8 @@
 - (id)endComponents;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartComponents:(id)arg1 endComponents:(id)arg2 calendarIdentifier:(id)arg3 repeatInterval:(unsigned int)arg4 identifier:(id)arg5;
 - (id)initWithStartComponents:(id)arg1 endComponents:(id)arg2 calendarIdentifier:(id)arg3 repeatInterval:(unsigned int)arg4;
+- (id)initWithStartComponents:(id)arg1 endComponents:(id)arg2 calendarIdentifier:(id)arg3 repeatInterval:(unsigned int)arg4 identifier:(id)arg5;
 - (id)nextTransitionDateAfterDate:(id)arg1;
 - (unsigned int)repeatInterval;
 - (void)setCalendar:(id)arg1;

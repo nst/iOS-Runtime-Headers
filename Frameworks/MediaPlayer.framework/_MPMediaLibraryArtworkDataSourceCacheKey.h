@@ -5,10 +5,10 @@
 @class MPArtworkCatalog;
 
 @interface _MPMediaLibraryArtworkDataSourceCacheKey : NSObject {
+    MPArtworkCatalog *_catalog;
     struct CGSize { 
         float width; 
         float height; 
-    MPArtworkCatalog *_catalog;
     } _representationSize;
 }
 

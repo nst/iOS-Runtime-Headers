@@ -5,16 +5,16 @@
 @class NSObject<OS_dispatch_queue>, NSXPCConnection, ServiceState;
 
 @interface CLIndoorPositionProvider : NSObject {
+    NSObject<OS_dispatch_queue> *_frameworkQueue;
+    NSXPCConnection *_indoorServiceConnection;
     struct optional<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > > { 
-        boolm_initialized; 
+        bool m_initialized; 
         struct aligned_storage<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > > { 
             union dummy_u { 
                 BOOL data[8]; 
                 struct a4 { } aligner_; 
             } dummy_; 
         } m_storage; 
-    NSObject<OS_dispatch_queue> *_frameworkQueue;
-    NSXPCConnection *_indoorServiceConnection;
     } _lastCrashTime;
     ServiceState *_state;
 }
@@ -31,15 +31,15 @@
 - (void)gpsEstimateAvailable:(id)arg1;
 - (void)gpsSignalQualityAvailable:(id)arg1;
 - (id)init;
-- (id)initWithApiKey:(id)arg1 onServer:(id)arg2;
 - (id)initWithApiKey:(id)arg1;
+- (id)initWithApiKey:(id)arg1 onServer:(id)arg2;
 - (id)initWithConnection:(id)arg1;
 - (id)initWithEndpoint:(id)arg1;
 - (void)invalidate;
 - (id)newConnection;
 - (void)playbackDatarun:(id)arg1;
-- (void)setApiKey:(id)arg1 onServer:(id)arg2;
 - (void)setApiKey:(id)arg1;
+- (void)setApiKey:(id)arg1 onServer:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setState:(id)arg1;
 - (void)setVenues:(id)arg1;

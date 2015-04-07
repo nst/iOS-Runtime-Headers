@@ -4,7 +4,7 @@
 
 @class <PSSearchControllerDelegate>, NSMutableArray, NSMutableDictionary, NSString, PSListController, PSSearchResults, UISearchBar, UISearchDisplayController;
 
-@interface PSSearchController : NSObject <PSSearchModelDelegate, PSSearchModelDataSource, UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate, UISearchBarDelegate> {
+@interface PSSearchController : NSObject <PSSearchModelDataSource, PSSearchModelDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     <PSSearchControllerDelegate> *_delegate;
     UISearchDisplayController *_displayController;
     NSMutableDictionary *_iconViewMap;
@@ -55,8 +55,8 @@
 - (Class)rootSearchControllerClassForSearchModel:(id)arg1;
 - (id)rootSpecifiersForSearchModel:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
+- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayController:(id)arg1 willUnloadSearchResultsTableView:(id)arg2;

@@ -5,6 +5,9 @@
 @class MTLIOAccelBuffer, MTLIOAccelDeviceShmemPool, MTLResourceListPool, NSObject<OS_dispatch_queue>;
 
 @interface MTLIOAccelDevice : _MTLDevice {
+    unsigned int _accelID;
+    MTLResourceListPool *_akPrivateResourceListPool;
+    MTLResourceListPool *_akResourceListPool;
     struct MTLIOAccelHeap { 
         MTLIOAccelBuffer *buffers[64]; 
         struct MTLRangeAllocator { 
@@ -15,9 +18,6 @@
             unsigned int defaultAlignmentMask; 
         } allocators[64]; 
         unsigned int count; 
-    unsigned int _accelID;
-    MTLResourceListPool *_akPrivateResourceListPool;
-    MTLResourceListPool *_akResourceListPool;
     } _bufferHeaps[16];
     struct MTLIOAccelCommandBufferStoragePool { struct storageQueue { struct MTLIOAccelCommandBufferStorage {} *x_1_1_1; struct MTLIOAccelCommandBufferStorage {} **x_1_1_2; } x1; int x2; int x3; int x4; id x5; } *_commandBufferStoragePool;
     unsigned int _configBits;

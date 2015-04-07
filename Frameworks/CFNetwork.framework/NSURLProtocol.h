@@ -16,8 +16,8 @@
 + (Class)_protocolClassForRequest:(id)arg1;
 + (BOOL)canInitWithRequest:(id)arg1;
 + (BOOL)canInitWithTask:(id)arg1;
-+ (id)canonicalRequestForRequest:(id)arg1 task:(id)arg2;
 + (id)canonicalRequestForRequest:(id)arg1;
++ (id)canonicalRequestForRequest:(id)arg1 task:(id)arg2;
 + (id)propertyForKey:(id)arg1 inRequest:(id)arg2;
 + (BOOL)registerClass:(Class)arg1;
 + (void)removePropertyForKey:(id)arg1 inRequest:(id)arg2;

@@ -55,8 +55,8 @@
 + (id)changeRequestForAsset:(id)arg1;
 + (id)creationRequestForAssetFromImage:(id)arg1;
 + (id)creationRequestForAssetFromImageAtFileURL:(id)arg1;
-+ (id)creationRequestForAssetFromImageData:(id)arg1 usingUUID:(id)arg2;
 + (id)creationRequestForAssetFromImageData:(id)arg1;
++ (id)creationRequestForAssetFromImageData:(id)arg1 usingUUID:(id)arg2;
 + (id)creationRequestForAssetFromVideoAtFileURL:(id)arg1;
 + (void)deleteAssets:(id)arg1;
 

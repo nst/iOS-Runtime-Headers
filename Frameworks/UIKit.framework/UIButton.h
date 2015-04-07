@@ -4,22 +4,8 @@
 
 @class NSArray, NSAttributedString, NSDictionary, NSString, UIColor, UIFont, UIImage, UIImageView, UILabel, UITapGestureRecognizer, UIView, _UIButtonMaskAnimationView;
 
-@interface UIButton : UIControl <NSCoding, ABText> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+@interface UIButton : UIControl <ABText, NSCoding> {
+    UIImageView *_backgroundView;
     struct { 
         unsigned int reversesTitleShadowWhenHighlighted : 1; 
         unsigned int adjustsImageWhenHighlighted : 1; 
@@ -30,26 +16,40 @@
         unsigned int buttonType : 8; 
         unsigned int shouldHandleScrollerMouseEvent : 1; 
         unsigned int titleFrozen : 1; 
+    } _buttonFlags;
+    NSArray *_contentConstraints;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIImageView *_backgroundView;
-    } _buttonFlags;
-    NSArray *_contentConstraints;
     } _contentEdgeInsets;
     struct __CFDictionary { } *_contentLookup;
     unsigned int _externalFlatEdge;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _imageEdgeInsets;
     UIImageView *_imageView;
     BOOL _initialized;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _internalTitlePaddingInsets;
     unsigned int _lastDrawingControlState;
     UIFont *_lazyTitleViewFont;
     _UIButtonMaskAnimationView *_maskAnimationView;
     UITapGestureRecognizer *_selectGestureRecognizer;
     UIView *_selectionView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _titleEdgeInsets;
     UILabel *_titleView;
 }
@@ -97,8 +97,8 @@
 + (id)_plusImage;
 + (id)_questionMarkImage;
 + (id)_selectedIndicatorImage;
-+ (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3 baseAlpha:(float)arg4;
 + (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3;
++ (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3 baseAlpha:(float)arg4;
 + (id)_xImage;
 + (id)buttonWithType:(int)arg1;
 + (id)mediaControlsBuyButtonWithStyle:(int)arg1;
@@ -297,9 +297,9 @@
 - (void)setShowPressFeedback:(BOOL)arg1;
 - (void)setShowsTouchWhenHighlighted:(BOOL)arg1;
 - (void)setTintColor:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (void)setTitle:(id)arg1 forState:(unsigned int)arg2;
 - (void)setTitle:(id)arg1 forStates:(unsigned int)arg2;
-- (void)setTitle:(id)arg1;
 - (void)setTitleColor:(id)arg1 forState:(unsigned int)arg2;
 - (void)setTitleColor:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setTitleEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

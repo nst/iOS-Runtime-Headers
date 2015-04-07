@@ -10,7 +10,11 @@
 
 @interface SKUILoadTrendingSearchPageOperation : NSOperation {
     SKUIClientContext *_clientContext;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _outputBlock;
+
     NSURL *_url;
 }
 

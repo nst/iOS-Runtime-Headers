@@ -5,26 +5,26 @@
 @class CALayer, NSArray, NSMutableDictionary, NSString, UIImage, UIKBRenderConfig, UIView, _UIInputViewContent;
 
 @interface UIInputView : UIView <UISplittableInputView> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     float _contentRatio;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _defaultSize;
     BOOL _disableSplitSupport;
     float _gapWidth;
     BOOL _isTransitioning;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _leftContentSize;
     _UIInputViewContent *_leftContentView;
     float _leftOffset;
     UIImage *_mergedImage;
     NSMutableDictionary *_mergedSliceMap;
     UIKBRenderConfig *_renderConfig;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _rightContentSize;
     _UIInputViewContent *_rightContentView;
     UIImage *_splitImage;
@@ -83,8 +83,8 @@
 - (float)contentRatio;
 - (void)dealloc;
 - (void)didEndSplitTransition;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputViewStyle:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputViewStyle:(int)arg2;
 - (int)inputViewStyle;
 - (void)layoutMergedSubviews;
 - (void)layoutSplitSubviewsWithLeftContentSize:(struct CGSize { float x1; float x2; })arg1 rightContentSize:(struct CGSize { float x1; float x2; })arg2;

@@ -9,15 +9,11 @@
         float x; 
         float y; 
         float z; 
-    struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-    struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
     } _axle;
+    struct SCNVector3 { 
+        float x; 
+        float y; 
+        float z; 
     } _connectionPosition;
     float _frictionSlip;
     BOOL _isFront;
@@ -26,6 +22,10 @@
     SCNNode *_node;
     float _radius;
     id _reserved;
+    struct SCNVector3 { 
+        float x; 
+        float y; 
+        float z; 
     } _steeringAxis;
     float _suspensionCompression;
     float _suspensionDamping;

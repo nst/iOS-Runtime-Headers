@@ -5,11 +5,11 @@
 @class <TSKModel>, NSDate, NSString, TSDCommentStorage, TSKAnnotationAuthor, TSTTableInfo;
 
 @interface TSTCommentHosting : NSObject <TSDAnnotationHosting, TSDCommentStorageDelegate> {
+    BOOL _forRollover;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    BOOL _forRollover;
     } mCellID;
     TSDCommentStorage *mStorage;
     TSTTableInfo *mTableInfo;

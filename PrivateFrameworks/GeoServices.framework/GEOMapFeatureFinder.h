@@ -14,9 +14,21 @@
         double longitude; 
     } _coordinate;
     BOOL _ignoreUnnamedFeatures;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pointHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _polygonHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _roadHandler;
+
     GEOMapTileFinder *_tileFinder;
 }
 

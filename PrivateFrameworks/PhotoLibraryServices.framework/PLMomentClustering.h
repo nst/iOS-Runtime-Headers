@@ -27,7 +27,11 @@
     NSSet *_deletedClusters;
     BOOL _dirty;
     NSSet *_insertedClusters;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
     BOOL _shouldApplyUserInfluenceBeforeClustering;
     double _sigma;
     double _spatialJoinThreshold;
@@ -98,8 +102,8 @@
 - (id)clustersWithNodes:(id)arg1 sigma:(double)arg2 theta:(double)arg3;
 - (void)dealloc;
 - (id)deletedClusters;
-- (void)generateClustersForAssets:(id)arg1 withCompletionBlock:(id)arg2;
 - (id)generateClustersForAssets:(id)arg1;
+- (void)generateClustersForAssets:(id)arg1 withCompletionBlock:(id)arg2;
 - (BOOL)hasMarkedNodes;
 - (id)init;
 - (id)initWithManagedMoments:(id)arg1;

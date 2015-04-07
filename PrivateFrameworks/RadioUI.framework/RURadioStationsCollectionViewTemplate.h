@@ -8,12 +8,18 @@
     struct CGSize { 
         float width; 
         float height; 
+    } _artworkSize;
+    float _horizontalEdgePadding;
+    float _horizontalSpacingBetweenItems;
     struct CGSize { 
         float width; 
         float height; 
+    } _itemSize;
+    NSMutableArray *_orderedNamesOfTextElements;
     struct CGSize { 
         float width; 
         float height; 
+    } _rootViewSize;
     struct { 
         struct CGSize { 
             float width; 
@@ -30,12 +36,6 @@
             float height; 
         } sizeInsetStep; 
         float vanishingPointY; 
-    } _artworkSize;
-    float _horizontalEdgePadding;
-    float _horizontalSpacingBetweenItems;
-    } _itemSize;
-    NSMutableArray *_orderedNamesOfTextElements;
-    } _rootViewSize;
     } _stackAttributes;
     MPUBorderDrawingCache *_stackItemBorderDrawingCache;
     NSMutableDictionary *_textElementsByName;

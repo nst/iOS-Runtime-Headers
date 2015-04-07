@@ -14,9 +14,9 @@
 - (void)dealloc;
 - (id)defaultSignature;
 - (id)init;
+- (void)setSignature:(id)arg1;
 - (void)setSignature:(id)arg1 forAccount:(id)arg2;
 - (void)setSignature:(id)arg1 forEmailAddress:(id)arg2;
-- (void)setSignature:(id)arg1;
 - (void)setUseAccountSignatures:(BOOL)arg1;
 - (id)signature;
 - (id)signatureForAccount:(id)arg1;

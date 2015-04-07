@@ -5,6 +5,10 @@
 @class CPListItem;
 
 @interface CPList : NSObject <CPDisposable> {
+    struct __CFArray { } *items;
+    unsigned int ordinalPrefixLength;
+    unsigned int ordinalSuffixLength;
+    CPListItem *parentItem;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,10 +18,6 @@
             float width; 
             float height; 
         } size; 
-    struct __CFArray { } *items;
-    unsigned int ordinalPrefixLength;
-    unsigned int ordinalSuffixLength;
-    CPListItem *parentItem;
     } spacer;
     int type;
 }

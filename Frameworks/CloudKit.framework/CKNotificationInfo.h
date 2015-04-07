@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface CKNotificationInfo : NSObject <NSSecureCoding, NSCopying> {
+@interface CKNotificationInfo : NSObject <NSCopying, NSSecureCoding> {
     NSString *_alertActionLocalizationKey;
     NSString *_alertBody;
     NSString *_alertLaunchImage;

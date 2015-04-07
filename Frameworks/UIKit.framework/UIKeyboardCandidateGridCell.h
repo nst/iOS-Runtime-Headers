@@ -5,31 +5,13 @@
 @class NSString, UILabel;
 
 @interface UIKeyboardCandidateGridCell : UICollectionViewCell {
-    struct { 
-        unsigned int idiom : 6; 
-        unsigned int landscape : 1; 
-        unsigned int split : 1; 
-        unsigned int appearance : 8; 
-        unsigned int rendering : 16; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     NSString *_alternativeText;
     UILabel *_alternativeTextLabel;
     unsigned int _candidateNumber;
     UILabel *_candidateNumberLabel;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _candidateNumberSize;
     int _candidatesVisualStyle;
     float _cellPadding;
@@ -41,12 +23,30 @@
     float _rowHeight;
     BOOL _secondaryCandidateAppearance;
     BOOL _shouldShowCandidateNumber;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     NSString *_text;
     int _textAlignment;
     UILabel *_textLabel;
     BOOL _usesGroupHeaderAppearance;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _visibleBounds;
+    struct { 
+        unsigned int idiom : 6; 
+        unsigned int landscape : 1; 
+        unsigned int split : 1; 
+        unsigned int appearance : 8; 
+        unsigned int rendering : 16; 
     } _visualStyling;
 }
 

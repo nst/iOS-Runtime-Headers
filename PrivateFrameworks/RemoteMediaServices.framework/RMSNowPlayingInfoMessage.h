@@ -5,6 +5,12 @@
 @class NSString;
 
 @interface RMSNowPlayingInfoMessage : PBCodable <NSCopying> {
+    NSString *_albumName;
+    NSString *_artistName;
+    BOOL _canSkipNext;
+    BOOL _canSkipPrevious;
+    BOOL _canWishlist;
+    unsigned long long _databaseID;
     struct { 
         unsigned int databaseID : 1; 
         unsigned int itemID : 1; 
@@ -21,12 +27,6 @@
         unsigned int canWishlist : 1; 
         unsigned int hasChapterData : 1; 
         unsigned int likeable : 1; 
-    NSString *_albumName;
-    NSString *_artistName;
-    BOOL _canSkipNext;
-    BOOL _canSkipPrevious;
-    BOOL _canWishlist;
-    unsigned long long _databaseID;
     } _has;
     BOOL _hasChapterData;
     unsigned long long _itemID;

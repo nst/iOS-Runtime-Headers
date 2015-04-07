@@ -3,11 +3,11 @@
  */
 
 @interface FBLayerHostContainer : CALayer {
+    float _rotation;
+    float _scale;
     struct CGPoint { 
         float x; 
         float y; 
-    float _rotation;
-    float _scale;
     } _translation;
 }
 

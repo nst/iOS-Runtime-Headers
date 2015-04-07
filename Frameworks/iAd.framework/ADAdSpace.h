@@ -4,7 +4,7 @@
 
 @class <ADAdRecipient>, <ADSAdSpace_RPC><NSObject>, ADAdImpressionPublicAttributes, ADAdSpaceConfiguration, ADAdSpaceRemoteViewController, NSDictionary, NSSet, NSString, NSURL, _ADRemoteViewController, _UIAsyncInvocation;
 
-@interface ADAdSpace : NSObject <UIViewControllerTransitioningDelegate, ADAdSpace_RPC, ADAdSpaceRemoteViewControllerDelegate> {
+@interface ADAdSpace : NSObject <ADAdSpaceRemoteViewControllerDelegate, ADAdSpace_RPC, UIViewControllerTransitioningDelegate> {
     BOOL _actionViewControllerReadyForPresentation;
     BOOL _actionViewControllerWantsDismissal;
     NSDictionary *_adToLoad;

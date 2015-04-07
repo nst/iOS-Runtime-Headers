@@ -14,17 +14,6 @@
 @class NSArray, NSMutableArray, NSString, VKLabelNavJunction, VKLabelNavRoad, VKLabelNavRoadLabel, VKLabelTile;
 
 @interface VKLabelNavJunction : NSObject <VKLabelNavFeature> {
-    struct Matrix<float, 2, 1> { 
-        float _e[2]; 
-    struct PolylineCoordinate { 
-        unsigned int index; 
-        float offset; 
-    struct Matrix<float, 2, 1> { 
-        float _e[2]; 
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
     BOOL _areLabelsDisabled;
     unsigned int _depthFromRoute;
     float _distanceFromPreviousShieldLabel;
@@ -44,17 +33,26 @@
     VKLabelNavJunction *_overpassJunction;
     int _preferredLabelPlacement;
     NSMutableArray *_roads;
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
     } _routeOffset;
+    struct Matrix<float, 2, 1> { 
+        float _e[2]; 
     } _sharedRouteDirection;
     double _sortValue;
     VKLabelTile *_tile;
+    struct Matrix<float, 2, 1> { 
+        float _e[2]; 
     } _tileCoordinate;
+    struct VKPoint { 
+        double x; 
+        double y; 
+        double z; 
     } _worldCoordinate;
     double _worldUnitsPerMeter;
 }
 
-@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  tileCoordinate; /* unknown property attribute:  1>=[2f]} */
-@property struct  sharedRouteDirection; /* unknown property attribute:  1>=[2f]} */
 @property unsigned int depthFromRoute;
 @property float distanceFromPreviousShieldLabel;
 @property(readonly) const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }* geoJunction;
@@ -86,8 +84,10 @@
 @property(readonly) int requiredLabelPlacement;
 @property(readonly) NSArray * roads;
 @property struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
+@property struct  sharedRouteDirection; /* unknown property attribute:  1>=[2f]} */
 @property(readonly) NSString * shieldDisplayGroup;
 @property(readonly) VKLabelTile * tile;
+@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  tileCoordinate; /* unknown property attribute:  1>=[2f]} */
 @property(readonly) double worldUnitsPerMeter;
 
 - (id).cxx_construct;

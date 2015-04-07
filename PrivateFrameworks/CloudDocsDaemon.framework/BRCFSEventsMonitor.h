@@ -8,7 +8,7 @@
 
 @class <BRCFSEventsDelegate>, BRCAccountSession, BRCFSEventsPersistedState, BRCRelativePath, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>, NSString, PQLConnection;
 
-@interface BRCFSEventsMonitor : NSObject <BRCModule, BRCLowDiskDelegate> {
+@interface BRCFSEventsMonitor : NSObject <BRCLowDiskDelegate, BRCModule> {
     PQLConnection *_db;
     <BRCFSEventsDelegate> *_delegate;
     NSString *_devicePath;
@@ -16,6 +16,11 @@
     NSObject<OS_dispatch_source> *_historicalEventSource;
     BRCFSEventsPersistedState *_persistedState;
     BRCFSEventsPersistedState *_rendezVous;
+
+  /* Unexpected information at end of encoded ivar type: i */
+  /* Error parsing encoded ivar type info: Ai */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_resetCount;
+
     BRCRelativePath *_root;
     NSString *_rootPathRelativeToDevice;
     NSObject<OS_dispatch_source> *_rootVnodeWatcher;
@@ -23,10 +28,13 @@
     BRCAccountSession *_session;
     struct __FSEventStream { } *_stream;
     NSObject<OS_dispatch_queue> *_streamQueue;
+
+  /* Unexpected information at end of encoded ivar type: i */
+  /* Error parsing encoded ivar type info: Ai */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_suspendCount;
+
     BOOL _volumeHasLowDiskSpace;
     BOOL _volumeIsCaseSensitive;
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_resetCount;
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_suspendCount;
 }
 
 @property(setter=setDB:,retain) PQLConnection * db;

@@ -5,16 +5,16 @@
 @class <HKMedicalIDEditorCellHeightChangeDelegate>, NSString, UILabel, UITextView;
 
 @interface HKMedicalIDEditorMultilineStringCell : HKMedicalIDEditorCell <UITextViewDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     <HKMedicalIDEditorCellHeightChangeDelegate> *_heightChangeDelegate;
     UILabel *_labelLabel;
     float _lastSeenTextViewContentHeight;
     UILabel *_placeholderLabel;
     UITextView *_textView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _textViewExtraMargins;
 }
 

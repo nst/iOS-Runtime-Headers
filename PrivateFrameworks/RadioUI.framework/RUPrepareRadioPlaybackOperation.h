@@ -9,10 +9,18 @@
 @class NSLock, RURadioGetTracksOperation, RadioRequestContext, RadioStation;
 
 @interface RUPrepareRadioPlaybackOperation : NSOperation {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _firstTrackBlock;
+
     RURadioGetTracksOperation *_getTracksOperation;
     NSLock *_lock;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _preparedBlock;
+
     RadioRequestContext *_requestContext;
     RadioStation *_station;
 }

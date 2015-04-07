@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSMutableSet, NSString, WAKView, WebDataSource;
 
-@interface WebPluginController : NSObject <WebPluginManualLoader, WebPluginContainerCheckController> {
+@interface WebPluginController : NSObject <WebPluginContainerCheckController, WebPluginManualLoader> {
     NSMutableSet *_checksInProgress;
     WebDataSource *_dataSource;
     WAKView *_documentView;

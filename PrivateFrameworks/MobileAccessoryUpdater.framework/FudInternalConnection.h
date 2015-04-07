@@ -12,7 +12,11 @@
     NSString *clientIdentifier;
     BOOL didStop;
     NSObject<OS_dispatch_queue> *handlerQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id messageHandler;
+
     NSMutableDictionary *pendingRequests;
 }
 
@@ -25,8 +29,8 @@
 - (long long)getNextMessageID;
 - (void)handleInboundNotification:(id)arg1;
 - (id)initWithClientIdentifier:(id)arg1 handlerQueue:(id)arg2 messageHandler:(id)arg3;
-- (void)sendMessageToFud:(id)arg1 reply:(id)arg2;
 - (void)sendMessageToFud:(id)arg1;
+- (void)sendMessageToFud:(id)arg1 reply:(id)arg2;
 - (void)stop;
 
 @end

@@ -4,7 +4,7 @@
 
 @class NSString, PTXMotionWindow, PTXParallaxController, PTXParallaxSettings, UIView;
 
-@interface PTXParallaxView : UIView <_UISettingsKeyObserver, PTXParallaxObserver> {
+@interface PTXParallaxView : UIView <PTXParallaxObserver, _UISettingsKeyObserver> {
     PTXParallaxController *_parallaxController;
     BOOL _resizesView;
     PTXParallaxSettings *_settings;

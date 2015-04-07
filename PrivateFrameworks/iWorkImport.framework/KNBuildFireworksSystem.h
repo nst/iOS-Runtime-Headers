@@ -3,31 +3,31 @@
  */
 
 @interface KNBuildFireworksSystem : TSDGLParticleSystem {
+    float _colorRandomness;
+    BOOL _didDrawCenterBurst;
+    float _fireworkStartingPositionX;
+    struct { 
+        float start; 
+        float duration; 
+    } _lifeSpan;
+    float _lifeSpanMinDuration;
+    float _maxDistance;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _randomParticleSizeMinMax;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _randomParticleSpeedMinMax;
     struct { 
         float x; 
         float y; 
         float z; 
-    struct { 
-        float start; 
-        float duration; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    float _colorRandomness;
-    BOOL _didDrawCenterBurst;
-    float _fireworkStartingPositionX;
-    } _lifeSpan;
-    float _lifeSpanMinDuration;
-    float _maxDistance;
-    } _randomParticleSizeMinMax;
-    } _randomParticleSpeedMinMax;
     } _startingColorRGB;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _startingPoint;
 }
 

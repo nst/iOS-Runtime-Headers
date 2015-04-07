@@ -9,14 +9,14 @@
 
 @class NSArray, NSMutableArray, NSObject<TSDContainerInfo>, NSString, TNDocumentRoot, TSDGuideStorage, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSWPStorage;
 
-@interface TNSheet : TSPObject <TSKDocumentObject, TSKSearchTarget, TSKModel, TSCEResolverContainer, TSDDrawableContainerInfo, TSWPHeaderFooterProvider> {
+@interface TNSheet : TSPObject <TSCEResolverContainer, TSDDrawableContainerInfo, TSKDocumentObject, TSKModel, TSKSearchTarget, TSWPHeaderFooterProvider> {
+    float _pageFooterInset;
+    float _pageHeaderInset;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    float _pageFooterInset;
-    float _pageHeaderInset;
     } _printMargins;
     int _startPageNumber;
     BOOL _usingStartPageNumber;
@@ -99,7 +99,7 @@
 - (void)i_importHeadersFooters:(id)arg1 headerType:(int)arg2 useSingleHeaderFooter:(BOOL)arg3;
 - (id)i_newHeaderFooterStorage;
 - (BOOL)inPortraitPageOrientation;
-- (id)initFromArchive:(const struct SheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; boolx5; boolx6; boolx7; boolx8; float x9; struct EdgeInsetsArchive {} *x10; int x11; int x12; float x13; float x14; struct Reference {} *x15; struct Reference {} *x16; struct Reference {} *x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; boolx20; boolx21; int x22; unsigned int x23[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initFromArchive:(const struct SheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; bool x5; bool x6; bool x7; bool x8; float x9; struct EdgeInsetsArchive {} *x10; int x11; int x12; float x13; float x14; struct Reference {} *x15; struct Reference {} *x16; struct Reference {} *x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; bool x20; bool x21; int x22; unsigned int x23[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (void)insertChildInfo:(id)arg1 above:(id)arg2;
@@ -114,8 +114,8 @@
 - (BOOL)isAutofitOn;
 - (BOOL)isFloatingAboveText;
 - (BOOL)isForm;
-- (BOOL)isHeaderFooterEmpty:(int)arg1 fragmentAtIndex:(int)arg2;
 - (BOOL)isHeaderFooterEmpty:(int)arg1;
+- (BOOL)isHeaderFooterEmpty:(int)arg1 fragmentAtIndex:(int)arg2;
 - (BOOL)isInlineWithText;
 - (BOOL)isThemeContent;
 - (BOOL)isUsingStartPageNumber;
@@ -144,7 +144,7 @@
 - (id)resolverMatchingName:(id)arg1;
 - (BOOL)resolverNameIsUsed:(id)arg1;
 - (id)resolversMatchingPrefix:(id)arg1;
-- (void)saveToArchive:(struct SheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; boolx5; boolx6; boolx7; boolx8; float x9; struct EdgeInsetsArchive {} *x10; int x11; int x12; float x13; float x14; struct Reference {} *x15; struct Reference {} *x16; struct Reference {} *x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; boolx20; boolx21; int x22; unsigned int x23[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct SheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; bool x5; bool x6; bool x7; bool x8; float x9; struct EdgeInsetsArchive {} *x10; int x11; int x12; float x13; float x14; struct Reference {} *x15; struct Reference {} *x16; struct Reference {} *x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; bool x20; bool x21; int x22; unsigned int x23[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setChildInfos:(id)arg1;
 - (void)setContentScale:(float)arg1;

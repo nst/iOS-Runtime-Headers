@@ -4,7 +4,7 @@
 
 @class HMDAccessoryManager, HMDCloudDataSyncManager, HMDCloudDataSyncStateFilter, HMDIDSMessageDispatcher, HMDIdentityRegistry, HMDMessageFilterChain, HMDNameValidator, HMDPersistentStore, HMDPowerManager, HMMessageDispatcher, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSUUID;
 
-@interface HMDHomeManager : NSObject <HMMessageReceiver, IDSServiceDelegate, HMDAccessoryManagerDelegate> {
+@interface HMDHomeManager : NSObject <HMDAccessoryManagerDelegate, HMMessageReceiver, IDSServiceDelegate> {
     NSObject<OS_dispatch_source> *_accessoryFinderTimer;
     HMDAccessoryManager *_accessoryManager;
     BOOL _accountActive;
@@ -170,11 +170,11 @@
 - (void)_uploadHomeConfigToCloud;
 - (void)accessoriesAreLocallyReachableOnTransientDevice:(BOOL)arg1 forHome:(id)arg2;
 - (id)accessoryFinderTimer;
+- (id)accessoryManager;
 - (void)accessoryManager:(id)arg1 didAddPairedAccessories:(id)arg2 toBridgeAccessory:(id)arg3;
 - (void)accessoryManager:(id)arg1 didFindNewAccessory:(id)arg2;
 - (void)accessoryManager:(id)arg1 didRemoveNewAccessory:(id)arg2;
 - (void)accessoryManager:(id)arg1 didRemovePairedAccessories:(id)arg2 fromBridgeAccessory:(id)arg3;
-- (id)accessoryManager;
 - (BOOL)accountActive;
 - (BOOL)accountStatusFailedDueToNetworkFailure;
 - (id)addName:(id)arg1 namespace:(id)arg2;

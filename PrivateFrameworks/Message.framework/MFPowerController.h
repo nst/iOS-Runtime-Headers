@@ -36,7 +36,7 @@
 - (BOOL)isPluggedIn;
 - (void)recordDuetEventForAccount:(id)arg1 event:(id)arg2;
 - (void)releaseAssertionWithIdentifier:(id)arg1;
-- (void)retainAssertionWithIdentifier:(id)arg1 withAccount:(id)arg2;
 - (void)retainAssertionWithIdentifier:(id)arg1;
+- (void)retainAssertionWithIdentifier:(id)arg1 withAccount:(id)arg2;
 
 @end

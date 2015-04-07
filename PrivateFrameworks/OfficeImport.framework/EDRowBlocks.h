@@ -37,8 +37,8 @@
 - (void)removeRowBlockAtIndex:(unsigned int)arg1;
 - (id)rowBlockAtIndex:(unsigned int)arg1;
 - (unsigned int)rowBlockCount;
-- (id)rowBlockForRowNumber:(unsigned int)arg1 currentRowBlock:(id)arg2 createIfNil:(bool)arg3;
 - (id)rowBlockForRowNumber:(unsigned int)arg1 currentRowBlock:(id)arg2;
+- (id)rowBlockForRowNumber:(unsigned int)arg1 currentRowBlock:(id)arg2 createIfNil:(bool)arg3;
 - (void)save;
 - (bool)spaceForRowNumber:(unsigned int)arg1 rowBlock:(id)arg2;
 - (void)unlock;

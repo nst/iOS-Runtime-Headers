@@ -4,7 +4,7 @@
 
 @class BBServer, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
-@interface BBObserverClientProxy : NSObject <BBObserverServerInterface, BBObserverClientInterface> {
+@interface BBObserverClientProxy : NSObject <BBObserverClientInterface, BBObserverServerInterface> {
     NSMutableDictionary *_bulletinIDsToTransaction;
     NSString *_clientBundleIdentifier;
     NSXPCConnection *_connection;
@@ -64,8 +64,8 @@
 - (void)setQueue:(id)arg1;
 - (void)setServerWeak:(id)arg1;
 - (id)transactionBulletinIDs;
-- (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id)arg3;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2;
+- (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id)arg3;
 - (void)updateSectionInfo:(id)arg1 inCategory:(int)arg2;
 - (void)updateSectionOrder:(id)arg1 forCategory:(int)arg2;
 - (void)updateSectionOrderRule:(id)arg1;

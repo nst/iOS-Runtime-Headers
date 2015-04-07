@@ -8,7 +8,7 @@
 
 @class <SUStorePageViewControllerDelegate>, ISURLRequestPerformance, NSString, SSAuthenticationContext, SSMutableURLRequestProperties, SSURLRequestProperties, SUNavigationMenuViewController, SUPageSectionGroup, SUSearchFieldController, SUSegmentedControl, SUStorePageProtocol, SUViewController, UIPopoverController, _UIBackdropView;
 
-@interface SUStorePageViewController : SUViewController <SKUITabBarItemRootViewController, SUMenuViewControllerDelegate, SUPreviewOverlayContainer, UIPopoverControllerDelegate, ISURLOperationDelegate> {
+@interface SUStorePageViewController : SUViewController <ISURLOperationDelegate, SKUITabBarItemRootViewController, SUMenuViewControllerDelegate, SUPreviewOverlayContainer, UIPopoverControllerDelegate> {
     SUViewController *_activeChildViewController;
     int _activeSectionIndex;
     struct __CFSet { } *_allowedInterfaceOrientations;
@@ -20,7 +20,11 @@
     BOOL _externalRequest;
     BOOL _lastLoadDidFail;
     SUStorePageProtocol *_lastValidProtocol;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _loadBlock;
+
     BOOL _loadingForSectionChange;
     BOOL _loadsWhenHidden;
     UIPopoverController *_navigationMenuPopover;

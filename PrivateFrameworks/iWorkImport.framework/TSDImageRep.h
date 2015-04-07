@@ -12,6 +12,10 @@
         float d; 
         float tx; 
         float ty; 
+    } mBaseMaskLayoutTransform;
+    CALayer *mContentsLayer;
+    BOOL mDirectlyManagesLayerContent;
+    BOOL mFrameInUnscaledCanvasIsValid;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -21,27 +25,6 @@
             float width; 
             float height; 
         } size; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    } mBaseMaskLayoutTransform;
-    CALayer *mContentsLayer;
-    BOOL mDirectlyManagesLayerContent;
-    BOOL mFrameInUnscaledCanvasIsValid;
     } mFrameInUnscaledCanvasRelativeToSuper;
     NSCache *mHitTestCache;
     long mHitTestCacheOnce;
@@ -50,8 +33,22 @@
     struct CGImage { } *mInstantAlphaImage;
     TSDInstantAlphaTracker *mInstantAlphaTracker;
     TSDLayoutGeometry *mLastImageGeometryInRoot;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } mLastLayoutToImageTransform;
     TSDLayoutGeometry *mLastMaskGeometryInRoot;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } mLastPictureFrameLayerTransform;
     NSRecursiveLock *mLayerUpdateAndSizingStateLock;
     CAShapeLayer *mMaskPathLayer;
@@ -63,6 +60,9 @@
     BOOL mSizedImageHasMaskBakedIn;
     struct CGPath { } *mSizedImageMaskPath;
     int mSizedImageOrientation;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mSizedImageSize;
     TSDImageRepSizingState *mSizingState;
     BOOL mSizingStateReady;

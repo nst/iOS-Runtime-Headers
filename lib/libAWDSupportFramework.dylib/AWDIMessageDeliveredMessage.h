@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface AWDIMessageDeliveredMessage : PBCodable <NSCopying> {
+    unsigned int _deliveryDuration;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int deliveryDuration : 1; 
-    unsigned int _deliveryDuration;
-    NSString *_guid;
     } _has;
     unsigned long long _timestamp;
 }

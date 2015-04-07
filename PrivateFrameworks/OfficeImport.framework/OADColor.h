@@ -18,8 +18,8 @@
 + (id)tsuColorWithRgbColor:(id)arg1;
 
 - (void)addTransform:(id)arg1;
-- (void)addTransformOfType:(int)arg1 value:(float)arg2;
 - (void)addTransformOfType:(int)arg1;
+- (void)addTransformOfType:(int)arg1 value:(float)arg2;
 - (id)colorForStyleColor:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

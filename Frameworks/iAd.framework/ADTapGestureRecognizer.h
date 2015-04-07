@@ -8,9 +8,21 @@
 
 @interface ADTapGestureRecognizer : UIGestureRecognizer {
     int _finalTrackingID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _touchDownHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _touchMovedHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _touchUpHandler;
+
 }
 
 @property int finalTrackingID;

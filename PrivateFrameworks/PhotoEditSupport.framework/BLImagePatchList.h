@@ -5,11 +5,11 @@
 @class NSMutableArray;
 
 @interface BLImagePatchList : NSObject {
+    struct CGImage { } *_baseImage;
+    NSMutableArray *_patchArray;
     struct CGSize { 
         float width; 
         float height; 
-    struct CGImage { } *_baseImage;
-    NSMutableArray *_patchArray;
     } _size;
 }
 

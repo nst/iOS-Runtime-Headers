@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSMutableDictionary, YTCaptionTrackRequest, YTCaptionsRequest;
 
-@interface YTCaptioningCache : NSObject <YTCaptionsRequestDelegate, YTCaptionTrackRequestDelegate> {
+@interface YTCaptioningCache : NSObject <YTCaptionTrackRequestDelegate, YTCaptionsRequestDelegate> {
     NSMutableDictionary *_cache;
     NSMutableArray *_captionTrackQueue;
     YTCaptionTrackRequest *_captionTrackRequest;

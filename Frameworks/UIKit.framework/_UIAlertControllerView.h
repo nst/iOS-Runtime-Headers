@@ -5,9 +5,6 @@
 @class NSLayoutConstraint, NSMutableArray, NSString, UIAlertController, UIAlertControllerVisualStyle, UICollectionView, UILabel, UIView, UIView<UIAlertControllerBackgroundView>, _UIAlertControllerActionView, _UIAlertControllerCollectionViewFlowLayout, _UIAlertControllerShadowedScrollView, _UIKeyboardLayoutAlignmentView;
 
 @interface _UIAlertControllerView : UIView <UICollectionViewDataSource, UIScrollViewDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
     UICollectionView *_actionCollectionView;
     UIAlertController *_alertController;
     BOOL _alignsToKeyboard;
@@ -55,6 +52,9 @@
     BOOL _inPopover;
     UIView *_keyboardLayoutAlignmentAvailableSpaceView;
     _UIKeyboardLayoutAlignmentView *_keyboardLayoutAlignmentView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _largestActionDimension;
     int _layoutOrientation;
     UILabel *_messageLabel;

@@ -66,8 +66,8 @@
 - (id)promptTextForNewPIN;
 - (id)promptTextForOldPIN;
 - (id)promptTextForSavingPIN;
-- (void)resetWithErrorPrompt:(id)arg1 title:(id)arg2;
 - (void)resetWithErrorPrompt:(id)arg1;
+- (void)resetWithErrorPrompt:(id)arg1 title:(id)arg2;
 - (void)setConfirmPIN:(BOOL)arg1;
 - (void)setCustomBackgroundView:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -5,11 +5,11 @@
 @class NSString, UIView, UIVisualEffect, _UIVisualEffectContentView;
 
 @interface UIVisualEffectView : UIView <NSSecureCoding> {
+    _UIVisualEffectContentView *_contentView;
+    UIVisualEffect *_effect;
     struct { 
         unsigned int hasHadAlphaAnimated : 1; 
         unsigned int suppressReportingEmptyContentView : 1; 
-    _UIVisualEffectContentView *_contentView;
-    UIVisualEffect *_effect;
     } _effectViewFlags;
     NSString *_groupName;
     UIView *_maskView;

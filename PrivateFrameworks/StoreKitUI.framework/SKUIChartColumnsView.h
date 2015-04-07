@@ -5,11 +5,6 @@
 @class NSArray, NSString, SKUIFlexibleSegmentedControl, UIView, _UIBackdropView;
 
 @interface SKUIChartColumnsView : UIView <SKUIFlexibleSegmentedControlDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     NSArray *_allViewControllers;
     int _animatingToNumberOfVisibleColumns;
     _UIBackdropView *_backdropView;
@@ -17,6 +12,11 @@
     UIView *_borderView1;
     int _columnChangeAnimationCount;
     NSArray *_columnViews;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInset;
     UIView *_headerBackgroundBottomBorder;
     UIView *_headerBackgroundView;

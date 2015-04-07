@@ -5,9 +5,9 @@
 @class NSMutableArray, NSString;
 
 @interface GEOPDCategory : PBCodable <NSCopying> {
+    NSString *_categoryId;
     struct { 
         unsigned int level : 1; 
-    NSString *_categoryId;
     } _has;
     int _level;
     NSMutableArray *_localizedNames;

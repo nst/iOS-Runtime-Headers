@@ -5,14 +5,14 @@
 @class NSData;
 
 @interface AWDNFCSECRSAuthorize : PBCodable <NSCopying> {
+    BOOL _activated;
+    NSData *_aid;
     struct { 
         unsigned int timeDeltaFromReference : 1; 
         unsigned int timestamp : 1; 
         unsigned int method : 1; 
         unsigned int status : 1; 
         unsigned int activated : 1; 
-    BOOL _activated;
-    NSData *_aid;
     } _has;
     unsigned int _method;
     unsigned int _status;

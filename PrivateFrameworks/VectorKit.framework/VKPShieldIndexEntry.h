@@ -5,16 +5,16 @@
 @class NSString;
 
 @interface VKPShieldIndexEntry : PBCodable <NSCopying> {
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
     NSString *_artworkIdentifier;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _defaultForFeatureTypes;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _shieldTypes;
 }
 

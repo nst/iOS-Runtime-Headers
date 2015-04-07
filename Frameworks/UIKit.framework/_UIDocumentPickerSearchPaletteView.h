@@ -34,8 +34,8 @@
 - (void)displayModeChanged:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)palette;
-- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
+- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)searchBarTextDidBeginEditing:(id)arg1;
 - (void)searchCanceled:(id)arg1;
 - (id)searchController;

@@ -5,8 +5,8 @@
 @class <OCDDelayedNodeContext>;
 
 @interface OCDDelayedNode : NSObject {
-    boolmLoaded;
     <OCDDelayedNodeContext> *mDelayedContext;
+    bool mLoaded;
 }
 
 - (void)dealloc;

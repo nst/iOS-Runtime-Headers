@@ -53,11 +53,11 @@
 - (void)registerForMessage:(id)arg1 receiver:(id)arg2 messageHandler:(id)arg3;
 - (id)remoteGateways;
 - (id)residentDevices;
-- (void)sendMessage:(id)arg1 target:(id)arg2 andInvokeCompletionHandler:(id)arg3;
-- (void)sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id)arg5;
-- (void)sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3;
-- (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
 - (void)sendMessage:(id)arg1 target:(id)arg2;
+- (void)sendMessage:(id)arg1 target:(id)arg2 andInvokeCompletionHandler:(id)arg3;
+- (void)sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3;
+- (void)sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id)arg5;
+- (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
 - (void)sendSecureMessage:(id)arg1 target:(id)arg2 userID:(id)arg3 destination:(id)arg4 responseQueue:(id)arg5 responseHandler:(id)arg6;
 - (void)setActiveClientSecureSessions:(id)arg1;
 - (void)setActiveServerSecureSessions:(id)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface GEOTimeRange : PBCodable <NSCopying> {
+    BOOL _allDay;
+    unsigned int _from;
     struct { 
         unsigned int from : 1; 
         unsigned int to : 1; 
         unsigned int allDay : 1; 
-    BOOL _allDay;
-    unsigned int _from;
     } _has;
     unsigned int _to;
 }

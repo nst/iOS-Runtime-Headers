@@ -5,23 +5,22 @@
 @class MFBrush, MFFont, MFPalette, MFPath, MFPen, MFTransform, NSObject<MFDeviceDriver>, OITSUColor;
 
 @interface MFDeviceContext : NSObject <NSCopying> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    boolm_textUpdateCP;
     int m_arcDirection;
     OITSUColor *m_bkColour;
     int m_bkMode;
     MFBrush *m_brush;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_brushOrg;
     NSObject<MFDeviceDriver> *m_driver;
     MFFont *m_font;
     double m_miterLimit;
     MFPath *m_path;
     MFPen *m_pen;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_penPos;
     int m_polyFillMode;
     int m_rop2;
@@ -33,6 +32,7 @@
     OITSUColor *m_textColour;
     int m_textDirection;
     int m_textHorizontalAlign;
+    bool m_textUpdateCP;
     int m_textVerticalAlign;
     MFTransform *m_transform;
 }

@@ -61,11 +61,11 @@
 - (id)secondaryColor;
 - (void)setContentViewAlpha:(float)arg1 withDuration:(double)arg2;
 - (void)setPathState:(id)arg1 forLayer:(id)arg2;
-- (void)setPrimaryColor:(id)arg1 animated:(BOOL)arg2;
 - (void)setPrimaryColor:(id)arg1;
+- (void)setPrimaryColor:(id)arg1 animated:(BOOL)arg2;
 - (void)setProgress:(float)arg1 withDuration:(double)arg2;
-- (void)setSecondaryColor:(id)arg1 animated:(BOOL)arg2;
 - (void)setSecondaryColor:(id)arg1;
+- (void)setSecondaryColor:(id)arg1 animated:(BOOL)arg2;
 - (void)setState:(int)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
 - (int)state;
 

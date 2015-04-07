@@ -11,7 +11,11 @@
 @interface _HKCFGReplacementRule : NSObject {
     NSString *_description;
     unsigned int _lengthIncrease;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _nodeEvaluator;
+
     NSArray *_rightHandSide;
 }
 

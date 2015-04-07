@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface NACVolumeValueMessage : PBCodable <NSCopying> {
+    NSString *_category;
     struct { 
         unsigned int volumeValue : 1; 
-    NSString *_category;
     } _has;
     float _volumeValue;
 }

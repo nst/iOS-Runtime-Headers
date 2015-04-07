@@ -37,8 +37,8 @@
 - (void)setInPopover:(BOOL)arg1;
 - (void)setPlayingVideo:(BOOL)arg1;
 - (void)setPreviewBottomBar:(id)arg1;
-- (void)setStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setStyle:(int)arg1;
+- (void)setStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setWallpaperBottomBar:(id)arg1;
 - (int)style;
 - (void)togglePlaybackState;

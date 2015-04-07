@@ -12,8 +12,8 @@
 + (id)terminalMatchingDoubleWithCondition:(id)arg1;
 + (id)terminalMatchingIntegerWithCondition:(id)arg1;
 + (id)terminalMatchingSequenceOfCharactersInSet:(id)arg1;
-+ (id)terminalMatchingString:(id)arg1 caseSensitive:(BOOL)arg2;
 + (id)terminalMatchingString:(id)arg1;
++ (id)terminalMatchingString:(id)arg1 caseSensitive:(BOOL)arg2;
 
 - (id)_label;
 - (unsigned int)_minimumLength;

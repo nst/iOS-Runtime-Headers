@@ -4,7 +4,7 @@
 
 @class <MFDAStreamingContentConsumer>, MFError, NSData, NSString;
 
-@interface _MFDAMessageBodyFetchConsumer : NSObject <MFRequestQueueResponseConsumer, DAMailAccountStreamConsumerFactory> {
+@interface _MFDAMessageBodyFetchConsumer : NSObject <DAMailAccountStreamConsumerFactory, MFRequestQueueResponseConsumer> {
     NSData *_data;
     MFError *_error;
     <MFDAStreamingContentConsumer> *_streamConsumer;

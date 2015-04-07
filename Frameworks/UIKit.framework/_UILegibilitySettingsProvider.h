@@ -34,11 +34,11 @@
 @property float mostRecentSaturation;
 @property double nextChangeBarrier;
 
-+ (int)styleForContentColor:(id)arg1 contrast:(float)arg2;
 + (int)styleForContentColor:(id)arg1;
++ (int)styleForContentColor:(id)arg1 contrast:(float)arg2;
 
-- (BOOL)accumulateChangesToContentColor:(id)arg1 contrast:(float)arg2;
 - (BOOL)accumulateChangesToContentColor:(id)arg1;
+- (BOOL)accumulateChangesToContentColor:(id)arg1 contrast:(float)arg2;
 - (float)accumulatedBrightness;
 - (float)accumulatedContrast;
 - (float)accumulatedLuminance;

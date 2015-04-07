@@ -4,7 +4,7 @@
 
 @class <BTDevicePickerDelegate>, BluetoothManager, NSMutableArray, NSPredicate, NSString, PSSpecifierStub, UIAlertView, UITableView;
 
-@interface BTDevicePicker : NSObject <UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface BTDevicePicker : NSObject <UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIAlertView *_alertView;
     id _btAlert;
     Class _btAlertClass;

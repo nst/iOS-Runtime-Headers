@@ -10,7 +10,11 @@
 
 @interface PUPhotoEditSaveRequest : NSObject {
     double _beginTimestamp;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     PHContentEditingOutput *_contentEditingOutput;
     int _currentState;
     PLPhotoEditModel *_editModel;

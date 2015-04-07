@@ -5,27 +5,36 @@
 @class <VKTrackableAnnotation>, <VKTrackableAnnotationPresentation>, VKAnimation;
 
 @interface VKAnnotationTrackingCameraController : VKCameraController {
+    <VKTrackableAnnotation> *_annotation;
+    <VKTrackableAnnotationPresentation> *_annotationPresentation;
+    VKAnimation *_currentAnimation;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
+    } _currentAnimationEndCameraPosition;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
+    } _currentAnimationEndPoint;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
+    } _currentAnimationStartCameraPosition;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
+    } _currentAnimationStartPoint;
+    VKAnimation *_currentHeadingAnimation;
     struct VKEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
+    } _edgeInsets;
     struct { 
         unsigned int hasPendingChange : 1; 
         unsigned int paused : 1; 
@@ -37,15 +46,6 @@
         unsigned int annotationImplementsHeading : 1; 
         unsigned int annotationImplementsExpectedCoordinateUpdateInterval : 1; 
         unsigned int annotationImplementsExpectedHeadingUpdateInterval : 1; 
-    <VKTrackableAnnotation> *_annotation;
-    <VKTrackableAnnotationPresentation> *_annotationPresentation;
-    VKAnimation *_currentAnimation;
-    } _currentAnimationEndCameraPosition;
-    } _currentAnimationEndPoint;
-    } _currentAnimationStartCameraPosition;
-    } _currentAnimationStartPoint;
-    VKAnimation *_currentHeadingAnimation;
-    } _edgeInsets;
     } _flags;
     float _headingAnimationCompletedAngle;
     double _pendingChangeDuration;

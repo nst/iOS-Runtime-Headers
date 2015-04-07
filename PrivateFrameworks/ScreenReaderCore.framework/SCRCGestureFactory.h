@@ -5,36 +5,23 @@
 @class SCRCGestureFactory, SCRCTargetSelectorTimer;
 
 @interface SCRCGestureFactory : NSObject {
+    unsigned int _absoluteFingerCount;
     struct { 
         float horizontal; 
         float vertical; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    } _axisFlipper;
+    struct { 
+        id track; 
+        id tap; 
+        id gutterUp; 
+        id splitTap; 
+        id canSplitTap; 
+    } _delegate;
+    int _direction;
+    float _directionalSlope;
+    int _directions[7];
+    float _distance;
+    double _echoWaitTime;
     struct SCRCFingerState { 
         unsigned int identifier; 
         int xDirection; 
@@ -85,6 +72,9 @@
             float x; 
             float y; 
         } lastDownPoint; 
+    } _finger[2];
+    unsigned short _fingerCount;
+    float _flickVelocityThreshold;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -94,6 +84,14 @@
             float width; 
             float height; 
         } size; 
+    } _gutterFrame;
+    SCRCTargetSelectorTimer *_gutterUpTimer;
+    BOOL _inTapSpeedRegionForDownEvent;
+    float _lastDegrees;
+    double _lastDownTime;
+    unsigned short _lastFingerCount;
+    double _lastGutterDownTime;
+    double _lastTime;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -103,12 +101,44 @@
             float width; 
             float height; 
         } size; 
+    } _mainFrame;
+    float _maxDimension;
+    int _orientation;
+    int _previousState;
+    double _requireDelayBeforeTracking;
+    BOOL _requireUp;
+    float _scaledTrackingDistance;
+    BOOL _setTrackingTimer;
     struct { 
-        id track; 
-        id tap; 
-        id gutterUp; 
-        id splitTap; 
-        id canSplitTap; 
+        SCRCGestureFactory *factory; 
+        BOOL isSplitting; 
+        BOOL isTapping; 
+        BOOL fastTrack; 
+        BOOL tapDead; 
+        BOOL timedOut; 
+        BOOL active; 
+        unsigned int fingerIdentifier; 
+        double fingerDownTime; 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } startTapLocation; 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } lastTapLocation; 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } primaryFingerLocation; 
+        float tapDistance; 
+        int state; 
+    } _split;
+    float _stallDistance;
+    float _startDegrees;
+    float _startDistance;
+    BOOL _startedInGutter;
+    int _state;
     struct { 
         BOOL down; 
         BOOL dead; 
@@ -137,67 +167,37 @@
         unsigned int digitsPerTap; 
         double thisTime; 
         double lastTime; 
-    struct { 
-        SCRCGestureFactory *factory; 
-        BOOL isSplitting; 
-        BOOL isTapping; 
-        BOOL fastTrack; 
-        BOOL tapDead; 
-        BOOL timedOut; 
-        BOOL active; 
-        unsigned int fingerIdentifier; 
-        double fingerDownTime; 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } startTapLocation; 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } lastTapLocation; 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } primaryFingerLocation; 
-        float tapDistance; 
-        int state; 
-    unsigned int _absoluteFingerCount;
-    } _axisFlipper;
-    } _delegate;
-    int _direction;
-    float _directionalSlope;
-    int _directions[7];
-    float _distance;
-    double _echoWaitTime;
-    unsigned short _fingerCount;
-    } _finger[2];
-    float _flickVelocityThreshold;
-    } _gutterFrame;
-    SCRCTargetSelectorTimer *_gutterUpTimer;
-    BOOL _inTapSpeedRegionForDownEvent;
-    float _lastDegrees;
-    double _lastDownTime;
-    unsigned short _lastFingerCount;
-    double _lastGutterDownTime;
-    double _lastTime;
-    } _mainFrame;
-    float _maxDimension;
-    int _orientation;
-    int _previousState;
-    double _requireDelayBeforeTracking;
-    BOOL _requireUp;
-    float _scaledTrackingDistance;
-    BOOL _setTrackingTimer;
-    } _split;
-    float _stallDistance;
-    float _startDegrees;
-    float _startDistance;
-    BOOL _startedInGutter;
-    int _state;
     } _tap;
     unsigned int _tapCount;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _tapFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _tapMultiFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _tapSpeedRegion;
     SCRCTargetSelectorTimer *_tapTimer;
     double _tapVelocityThreshold;
@@ -234,8 +234,8 @@
 - (int)gestureState;
 - (id)gestureStateString;
 - (void)handleGestureEvent:(id)arg1;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 delegate:(id)arg2 threadKey:(id)arg3;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 delegate:(id)arg2;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 delegate:(id)arg2 threadKey:(id)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mainFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })multiTapFrame;
 - (int)orientation;

@@ -4,7 +4,7 @@
 
 @class <ATAssetLinkDelegate>, <ATRestoreAssetLinkDelegate>, ATAsset, MBManager, NSArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface ATRestoreAssetLink : NSObject <MBManagerDelegate, ATEnvironmentMonitorObserver, ATAssetLink> {
+@interface ATRestoreAssetLink : NSObject <ATAssetLink, ATEnvironmentMonitorObserver, MBManagerDelegate> {
     ATAsset *_activeAsset;
     NSArray *_allowedDataClasses;
     NSObject<OS_dispatch_queue> *_callbackQueue;

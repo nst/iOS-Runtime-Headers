@@ -46,8 +46,8 @@
 - (struct __C3DLibrary { }*)library;
 - (id)performConsistencyCheck;
 - (id)propertyForKey:(id)arg1;
-- (id)sceneAtIndex:(unsigned int)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)sceneAtIndex:(unsigned int)arg1 options:(id)arg2;
+- (id)sceneAtIndex:(unsigned int)arg1 options:(id)arg2 error:(id*)arg3;
 - (int)sceneCount;
 - (id)sceneSourceOptions;
 - (struct __C3DSceneSource { }*)sceneSourceRef;

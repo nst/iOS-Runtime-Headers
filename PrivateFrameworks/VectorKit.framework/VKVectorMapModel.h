@@ -8,28 +8,28 @@
  */
 
 @interface VKVectorMapModel : VKMapTileModel {
+    BOOL _needsTileStencil;
+    int _sourceTileZtoStencilOffset;
     struct vector<std::__1::shared_ptr<ggl::RenderItem>, std::__1::allocator<std::__1::shared_ptr<ggl::RenderItem> > > { 
         struct shared_ptr<ggl::RenderItem> {} *__begin_; 
         struct shared_ptr<ggl::RenderItem> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<ggl::RenderItem> *, std::__1::allocator<std::__1::shared_ptr<ggl::RenderItem> > > { 
             struct shared_ptr<ggl::RenderItem> {} *__first_; 
         } __end_cap_; 
-    struct vector<std::__1::shared_ptr<ggl::RenderState>, std::__1::allocator<std::__1::shared_ptr<ggl::RenderState> > > { 
-        struct shared_ptr<ggl::RenderState> {} *__begin_; 
-        struct shared_ptr<ggl::RenderState> {} *__end_; 
-        struct __compressed_pair<std::__1::shared_ptr<ggl::RenderState> *, std::__1::allocator<std::__1::shared_ptr<ggl::RenderState> > > { 
-            struct shared_ptr<ggl::RenderState> {} *__first_; 
-        } __end_cap_; 
+    } _stencilItems;
     struct vector<std::__1::shared_ptr<ggl::PolygonSolidFill::Shader::Setup>, std::__1::allocator<std::__1::shared_ptr<ggl::PolygonSolidFill::Shader::Setup> > > { 
         struct shared_ptr<ggl::PolygonSolidFill::Shader::Setup> {} *__begin_; 
         struct shared_ptr<ggl::PolygonSolidFill::Shader::Setup> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<ggl::PolygonSolidFill::Shader::Setup> *, std::__1::allocator<std::__1::shared_ptr<ggl::PolygonSolidFill::Shader::Setup> > > { 
             struct shared_ptr<ggl::PolygonSolidFill::Shader::Setup> {} *__first_; 
         } __end_cap_; 
-    BOOL _needsTileStencil;
-    int _sourceTileZtoStencilOffset;
-    } _stencilItems;
     } _stencilShaderSetups;
+    struct vector<std::__1::shared_ptr<ggl::RenderState>, std::__1::allocator<std::__1::shared_ptr<ggl::RenderState> > > { 
+        struct shared_ptr<ggl::RenderState> {} *__begin_; 
+        struct shared_ptr<ggl::RenderState> {} *__end_; 
+        struct __compressed_pair<std::__1::shared_ptr<ggl::RenderState> *, std::__1::allocator<std::__1::shared_ptr<ggl::RenderState> > > { 
+            struct shared_ptr<ggl::RenderState> {} *__first_; 
+        } __end_cap_; 
     } _stencilStates;
 }
 

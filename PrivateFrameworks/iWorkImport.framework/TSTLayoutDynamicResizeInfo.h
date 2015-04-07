@@ -49,9 +49,9 @@
 - (BOOL)hasHeightForRow:(unsigned short)arg1;
 - (BOOL)hasWidthForColumn:(unsigned char)arg1;
 - (id)initWithDynamicResizeInfo:(id)arg1;
+- (id)initWithMasterLayout:(id)arg1;
 - (id)initWithMasterLayout:(id)arg1 columnRegion:(id)arg2;
 - (id)initWithMasterLayout:(id)arg1 rowRegion:(id)arg2;
-- (id)initWithMasterLayout:(id)arg1;
 - (void)invalidate;
 - (void)p_captureRowColumnInformation:(id)arg1 columnRegion:(id)arg2 rowRegion:(id)arg3;
 - (id)rowHeights;

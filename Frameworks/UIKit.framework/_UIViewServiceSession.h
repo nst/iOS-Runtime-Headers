@@ -15,7 +15,11 @@
     _UIViewServiceDeputyManager *_deputyManager;
     _UIAsyncInvocation *_invalidationInvocation;
     NSObject<OS_dispatch_queue> *_queue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _terminationHandler;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

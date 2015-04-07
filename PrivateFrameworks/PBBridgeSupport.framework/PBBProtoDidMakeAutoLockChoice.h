@@ -3,9 +3,9 @@
  */
 
 @interface PBBProtoDidMakeAutoLockChoice : PBCodable <NSCopying> {
+    BOOL _accept;
     struct { 
         unsigned int accept : 1; 
-    BOOL _accept;
     } _has;
 }
 

@@ -4,7 +4,7 @@
 
 @class <TSPProxyObjectManager>, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL, TSPArchiverManager, TSPObjectContext;
 
-@interface TSPPasteboardWriteCoordinator : NSObject <TSPArchiverManagerDelegate, TSPComponentWriterDelegate, TSPDataArchiver, TSPProxyObjectManager, TSPObjectModifyDelegate> {
+@interface TSPPasteboardWriteCoordinator : NSObject <TSPArchiverManagerDelegate, TSPComponentWriterDelegate, TSPDataArchiver, TSPObjectModifyDelegate, TSPProxyObjectManager> {
     TSPArchiverManager *_archiverManager;
     TSPObjectContext *_context;
     NSMutableArray *_dataFinalizeHandlers;

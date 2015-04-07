@@ -4,7 +4,7 @@
 
 @class <ABMembersDataSourceDelegate>, <ABStyleProvider>, NSArray, NSMapTable, NSString;
 
-@interface ABMembersFilteredDataSource : NSObject <UITableViewDelegate, UITableViewDataSource> {
+@interface ABMembersFilteredDataSource : NSObject <UITableViewDataSource, UITableViewDelegate> {
     void *_addressBook;
     <ABMembersDataSourceDelegate> *_delegate;
     BOOL _isInPopover;

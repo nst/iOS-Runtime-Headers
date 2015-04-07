@@ -13,8 +13,8 @@
 @property float perspectiveTransform;
 
 + (struct CGSize { float x1; float x2; })_requiredOverhangSizeForCurrentDevice;
-+ (struct CGSize { float x1; float x2; })bestWallpaperSizeForParallaxFactor:(float)arg1 portrait:(BOOL)arg2;
 + (struct CGSize { float x1; float x2; })bestWallpaperSizeForParallaxFactor:(float)arg1;
++ (struct CGSize { float x1; float x2; })bestWallpaperSizeForParallaxFactor:(float)arg1 portrait:(BOOL)arg2;
 + (struct CGSize { float x1; float x2; })minimumWallpaperSizeForCurrentDevice;
 + (struct CGSize { float x1; float x2; })overhangSizeForCurrentDevice;
 + (id)settingsControllerModule;

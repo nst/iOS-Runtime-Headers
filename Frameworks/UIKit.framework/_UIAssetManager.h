@@ -41,8 +41,8 @@
 
 - (id)_assetFromMapForName:(id)arg1;
 - (id)_catalog;
-- (void)_clearCachedResources:(id)arg1;
 - (void)_clearCachedResources;
+- (void)_clearCachedResources:(id)arg1;
 - (void)_disconnectImageAssets;
 - (id)_initWithName:(id)arg1 inBundle:(id)arg2 idiom:(int)arg3 lock:(BOOL)arg4;
 - (void)_insertAssetIntoMap:(id)arg1 forName:(id)arg2;
@@ -54,12 +54,12 @@
 - (void)dealloc;
 - (id)description;
 - (void)disableCacheFlushing;
-- (id)imageNamed:(id)arg1 idiom:(int)arg2 subtype:(unsigned int)arg3;
-- (id)imageNamed:(id)arg1 idiom:(int)arg2;
-- (id)imageNamed:(id)arg1 scale:(float)arg2 idiom:(int)arg3 subtype:(unsigned int)arg4 cachingOptions:(unsigned int)arg5 sizeClassPair:(struct { int x1; int x2; })arg6 attachCatalogImage:(BOOL)arg7;
-- (id)imageNamed:(id)arg1 scale:(float)arg2 idiom:(int)arg3 subtype:(unsigned int)arg4;
-- (id)imageNamed:(id)arg1 withTrait:(id)arg2;
 - (id)imageNamed:(id)arg1;
+- (id)imageNamed:(id)arg1 idiom:(int)arg2;
+- (id)imageNamed:(id)arg1 idiom:(int)arg2 subtype:(unsigned int)arg3;
+- (id)imageNamed:(id)arg1 scale:(float)arg2 idiom:(int)arg3 subtype:(unsigned int)arg4;
+- (id)imageNamed:(id)arg1 scale:(float)arg2 idiom:(int)arg3 subtype:(unsigned int)arg4 cachingOptions:(unsigned int)arg5 sizeClassPair:(struct { int x1; int x2; })arg6 attachCatalogImage:(BOOL)arg7;
+- (id)imageNamed:(id)arg1 withTrait:(id)arg2;
 - (id)initWithName:(id)arg1 inBundle:(id)arg2 idiom:(int)arg3;
 - (id)nextAssetManager;
 - (float)preferredScale;

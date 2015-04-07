@@ -10,7 +10,11 @@
 
 @interface UIPrintInteractionController : NSObject {
     unsigned int _backgroundTaskIdentifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     <UIPrintInteractionControllerDelegate> *_delegate;
     BOOL _hidesNumberOfCopies;
     <UIPrintInteractionControllerDelegate> *_printActivityDelegate;

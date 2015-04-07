@@ -10,6 +10,14 @@
 @class <SFUBufferedInputStream>, NSString;
 
 @interface SFUZipInflateInputStream : NSObject <SFUInputStream> {
+    unsigned long mCalculatedCrc;
+    unsigned long mCheckCrc;
+    <SFUBufferedInputStream> *mInput;
+    BOOL mIsFromZip;
+    long long mOffset;
+    char *mOutBuffer;
+    unsigned long long mOutBufferSize;
+    BOOL mReachedEnd;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -25,14 +33,6 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    unsigned long mCalculatedCrc;
-    unsigned long mCheckCrc;
-    <SFUBufferedInputStream> *mInput;
-    BOOL mIsFromZip;
-    long long mOffset;
-    char *mOutBuffer;
-    unsigned long long mOutBufferSize;
-    BOOL mReachedEnd;
     } mStream;
 }
 

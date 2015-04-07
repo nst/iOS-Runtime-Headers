@@ -30,13 +30,13 @@
 - (void)dealloc;
 - (id)delegate;
 - (float)heightWithDatePickerAndTableHeight:(float)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tableViewController:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tableViewController:(id)arg2;
 - (id)inputView;
 - (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
-- (void)setShowsDatePicker:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsDatePicker:(BOOL)arg1;
+- (void)setShowsDatePicker:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setUsesBlackDatePicker:(BOOL)arg1;
 - (void)setUsesKeyboard:(BOOL)arg1;
 - (BOOL)showsDatePicker;

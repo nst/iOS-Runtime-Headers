@@ -17,7 +17,11 @@
     BOOL _isUpdatingLocation;
     CLLocationManager *_locationManager;
     NSMutableData *_placeData;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _queuedSearchRequest;
+
     double _timeout;
     NSURLConnection *_urlConnection;
     NSHTTPURLResponse *_urlResponse;

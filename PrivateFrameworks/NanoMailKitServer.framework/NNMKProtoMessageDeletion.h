@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface NNMKProtoMessageDeletion : PBCodable <NSCopying> {
+    unsigned int _deletionState;
     struct { 
         unsigned int deletionState : 1; 
-    unsigned int _deletionState;
     } _has;
     NSString *_messageId;
 }

@@ -5,9 +5,6 @@
 @class <CLLocationManagerDelegate>, CLLocationManager, NSDate, NSString, NSTimer;
 
 @interface WeatherLocationManager : NSObject <CLLocationManagerDelegate> {
-    struct { 
-        double latitude; 
-        double longitude; 
     NSTimer *_accuracyFallbackTimer;
     BOOL _activelyTrackingLocation;
     int _authorizationStatus;
@@ -15,6 +12,9 @@
     NSTimer *_automaticLocationUpdateTimer;
     <CLLocationManagerDelegate> *_delegate;
     float _lastLocationAccuracy;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _lastLocationCoord;
     NSDate *_lastLocationTimeStamp;
     double _lastLocationUpdateTime;
@@ -64,9 +64,9 @@
 - (BOOL)loadAndPrepareLocationTrackingState:(BOOL)arg1;
 - (BOOL)localWeatherAuthorized;
 - (id)location;
+- (id)locationManager;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (id)locationManager;
 - (BOOL)locationTrackingIsReady;
 - (void)rescheduleTimerWithFastInterval:(BOOL)arg1;
 - (void)setActivelyTrackingLocation:(BOOL)arg1;

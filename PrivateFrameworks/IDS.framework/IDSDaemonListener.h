@@ -26,8 +26,8 @@
 
 - (void)_callHandlersAsyncWithBlock:(id)arg1;
 - (void)_callHandlersWithBlock:(id)arg1;
-- (void)_callHandlersWithBlockOnIvarQueue:(id)arg1 cleanup:(id)arg2;
 - (void)_callHandlersWithBlockOnIvarQueue:(id)arg1;
+- (void)_callHandlersWithBlockOnIvarQueue:(id)arg1 cleanup:(id)arg2;
 - (void)_deferredSetupOnIvarQueue:(id)arg1;
 - (BOOL)_hidingDisconnect;
 - (void)_noteDisconnected;

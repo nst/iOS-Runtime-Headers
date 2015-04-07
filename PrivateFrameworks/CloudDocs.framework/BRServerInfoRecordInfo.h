@@ -5,12 +5,12 @@
 @class NSData, NSString;
 
 @interface BRServerInfoRecordInfo : PBCodable <NSCopying> {
-    struct { 
-        unsigned int bounceNo : 1; 
     unsigned long long _bounceNo;
     NSData *_encryptedBasename;
     NSString *_etag;
     NSString *_extension;
+    struct { 
+        unsigned int bounceNo : 1; 
     } _has;
     NSString *_recordID;
     NSData *_recordProtectionInfo;

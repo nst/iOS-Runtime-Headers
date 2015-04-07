@@ -9,7 +9,7 @@
 
 @class BRCAccountHandler, BRCAccountSession, BRCCloudFileProvider, BRCVersionsFileProvider, NSDate, NSError, NSObject<OS_dispatch_source>, NSString, NSXPCListener, NSXPCListenerEndpoint;
 
-@interface BRCDaemon : NSObject <BRCReachabilityDelegate, NSXPCListenerDelegate, BRCAccountHandlerDelegate> {
+@interface BRCDaemon : NSObject <BRCAccountHandlerDelegate, BRCReachabilityDelegate, NSXPCListenerDelegate> {
     BRCAccountHandler *_accountHandler;
     BRCAccountSession *_accountSession;
     NSString *_appSupportDirPath;
@@ -63,9 +63,9 @@
 - (BOOL)_haveRequiredKernelFeatures;
 - (void)_initSignals;
 - (BOOL)_isDeviceUnlocked;
+- (id)accountHandler;
 - (void)accountHandler:(id)arg1 didChangeSessionTo:(id)arg2;
 - (void)accountHandler:(id)arg1 willChangeSessionFrom:(id)arg2;
-- (id)accountHandler;
 - (id)accountSession;
 - (id)appSupportDirPath;
 - (id)cacheDirPath;

@@ -10,28 +10,20 @@
 @class SCNNode, SCNPhysicsShape;
 
 @interface SCNPhysicsBody : NSObject <NSCopying, NSSecureCoding> {
+    BOOL _allowsResting;
+    float _angularDamping;
     struct SCNVector4 { 
         float x; 
         float y; 
         float z; 
         float w; 
-    struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-    struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-    struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-    BOOL _allowsResting;
-    float _angularDamping;
     } _angularVelocity;
+    struct SCNVector3 { 
+        float x; 
+        float y; 
+        float z; 
     } _angularVelocityFactor;
-    struct btRigidBody { int (**x1)(); struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_2_1_1; struct btVector3 { float x_2_2_1[4]; } x_2_1_2; } x2; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_3_1_1; struct btVector3 { float x_2_2_1[4]; } x_3_1_2; } x3; struct btVector3 { float x_4_1_1[4]; } x4; struct btVector3 { float x_5_1_1[4]; } x5; struct btVector3 { float x_6_1_1[4]; } x6; int x7; float x8; struct btBroadphaseProxy {} *x9; struct btCollisionShape {} *x10; void *x11; struct btCollisionShape {} *x12; int x13; int x14; int x15; int x16; float x17; float x18; float x19; float x20; int x21; void *x22; float x23; float x24; float x25; int x26; struct btMatrix3x3 { struct btVector3 { float x_1_2_1[4]; } x_27_1_1[3]; } x27; struct btVector3 { float x_28_1_1[4]; } x28; struct btVector3 { float x_29_1_1[4]; } x29; float x30; struct btVector3 { float x_31_1_1[4]; } x31; struct btVector3 { float x_32_1_1[4]; } x32; struct btVector3 { float x_33_1_1[4]; } x33; struct btVector3 { float x_34_1_1[4]; } x34; struct btVector3 { float x_35_1_1[4]; } x35; struct btVector3 { float x_36_1_1[4]; } x36; float x37; float x38; boolx39; float x40; float x41; float x42; float x43; float x44; float x45; float x46; struct btMotionState {} *x47; struct btAlignedObjectArray<btTypedConstraint *> { struct btAlignedAllocator<btTypedConstraint *, 16> { } x_48_1_1; int x_48_1_2; int x_48_1_3; struct btTypedConstraint {} **x_48_1_4; boolx_48_1_5; } x48; int x49; int x50; struct btVector3 { float x_51_1_1[4]; } x51; struct btVector3 { float x_52_1_1[4]; } x52; struct btVector3 { float x_53_1_1[4]; } x53; struct btVector3 { float x_54_1_1[4]; } x54; struct btVector3 { float x_55_1_1[4]; } x55; struct btVector3 { float x_56_1_1[4]; } x56; int x57; int x58; } *_body;
+    struct btRigidBody { int (**x1)(); struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_2_1_1; struct btVector3 { float x_2_2_1[4]; } x_2_1_2; } x2; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_3_1_1; struct btVector3 { float x_2_2_1[4]; } x_3_1_2; } x3; struct btVector3 { float x_4_1_1[4]; } x4; struct btVector3 { float x_5_1_1[4]; } x5; struct btVector3 { float x_6_1_1[4]; } x6; int x7; float x8; struct btBroadphaseProxy {} *x9; struct btCollisionShape {} *x10; void *x11; struct btCollisionShape {} *x12; int x13; int x14; int x15; int x16; float x17; float x18; float x19; float x20; int x21; void *x22; float x23; float x24; float x25; int x26; struct btMatrix3x3 { struct btVector3 { float x_1_2_1[4]; } x_27_1_1[3]; } x27; struct btVector3 { float x_28_1_1[4]; } x28; struct btVector3 { float x_29_1_1[4]; } x29; float x30; struct btVector3 { float x_31_1_1[4]; } x31; struct btVector3 { float x_32_1_1[4]; } x32; struct btVector3 { float x_33_1_1[4]; } x33; struct btVector3 { float x_34_1_1[4]; } x34; struct btVector3 { float x_35_1_1[4]; } x35; struct btVector3 { float x_36_1_1[4]; } x36; float x37; float x38; bool x39; float x40; float x41; float x42; float x43; float x44; float x45; float x46; struct btMotionState {} *x47; struct btAlignedObjectArray<btTypedConstraint *> { struct btAlignedAllocator<btTypedConstraint *, 16> { } x_48_1_1; int x_48_1_2; int x_48_1_3; struct btTypedConstraint {} **x_48_1_4; bool x_48_1_5; } x48; int x49; int x50; struct btVector3 { float x_51_1_1[4]; } x51; struct btVector3 { float x_52_1_1[4]; } x52; struct btVector3 { float x_53_1_1[4]; } x53; struct btVector3 { float x_54_1_1[4]; } x54; struct btVector3 { float x_55_1_1[4]; } x55; struct btVector3 { float x_56_1_1[4]; } x56; int x57; int x58; } *_body;
     unsigned int _categoryBitMask;
     float _charge;
     unsigned int _collisionBitMask;
@@ -46,7 +38,15 @@
     float _restitution;
     float _rollingFriction;
     int _type;
+    struct SCNVector3 { 
+        float x; 
+        float y; 
+        float z; 
     } _velocity;
+    struct SCNVector3 { 
+        float x; 
+        float y; 
+        float z; 
     } _velocityFactor;
 }
 
@@ -75,11 +75,11 @@
 + (id)staticBody;
 + (BOOL)supportsSecureCoding;
 
-- (struct btRigidBody { int (**x1)(); struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_2_1_1; struct btVector3 { float x_2_2_1[4]; } x_2_1_2; } x2; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_3_1_1; struct btVector3 { float x_2_2_1[4]; } x_3_1_2; } x3; struct btVector3 { float x_4_1_1[4]; } x4; struct btVector3 { float x_5_1_1[4]; } x5; struct btVector3 { float x_6_1_1[4]; } x6; int x7; float x8; struct btBroadphaseProxy {} *x9; struct btCollisionShape {} *x10; void *x11; struct btCollisionShape {} *x12; int x13; int x14; int x15; int x16; float x17; float x18; float x19; float x20; int x21; void *x22; float x23; float x24; float x25; int x26; struct btMatrix3x3 { struct btVector3 { float x_1_2_1[4]; } x_27_1_1[3]; } x27; struct btVector3 { float x_28_1_1[4]; } x28; struct btVector3 { float x_29_1_1[4]; } x29; float x30; struct btVector3 { float x_31_1_1[4]; } x31; struct btVector3 { float x_32_1_1[4]; } x32; struct btVector3 { float x_33_1_1[4]; } x33; struct btVector3 { float x_34_1_1[4]; } x34; struct btVector3 { float x_35_1_1[4]; } x35; struct btVector3 { float x_36_1_1[4]; } x36; float x37; float x38; boolx39; float x40; float x41; float x42; float x43; float x44; float x45; float x46; struct btMotionState {} *x47; struct btAlignedObjectArray<btTypedConstraint *> { struct btAlignedAllocator<btTypedConstraint *, 16> { } x_48_1_1; int x_48_1_2; int x_48_1_3; struct btTypedConstraint {} **x_48_1_4; boolx_48_1_5; } x48; int x49; int x50; struct btVector3 { float x_51_1_1[4]; } x51; struct btVector3 { float x_52_1_1[4]; } x52; struct btVector3 { float x_53_1_1[4]; } x53; struct btVector3 { float x_54_1_1[4]; } x54; struct btVector3 { float x_55_1_1[4]; } x55; struct btVector3 { float x_56_1_1[4]; } x56; int x57; int x58; }*)_createBody;
-- (struct btRigidBody { int (**x1)(); struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_2_1_1; struct btVector3 { float x_2_2_1[4]; } x_2_1_2; } x2; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_3_1_1; struct btVector3 { float x_2_2_1[4]; } x_3_1_2; } x3; struct btVector3 { float x_4_1_1[4]; } x4; struct btVector3 { float x_5_1_1[4]; } x5; struct btVector3 { float x_6_1_1[4]; } x6; int x7; float x8; struct btBroadphaseProxy {} *x9; struct btCollisionShape {} *x10; void *x11; struct btCollisionShape {} *x12; int x13; int x14; int x15; int x16; float x17; float x18; float x19; float x20; int x21; void *x22; float x23; float x24; float x25; int x26; struct btMatrix3x3 { struct btVector3 { float x_1_2_1[4]; } x_27_1_1[3]; } x27; struct btVector3 { float x_28_1_1[4]; } x28; struct btVector3 { float x_29_1_1[4]; } x29; float x30; struct btVector3 { float x_31_1_1[4]; } x31; struct btVector3 { float x_32_1_1[4]; } x32; struct btVector3 { float x_33_1_1[4]; } x33; struct btVector3 { float x_34_1_1[4]; } x34; struct btVector3 { float x_35_1_1[4]; } x35; struct btVector3 { float x_36_1_1[4]; } x36; float x37; float x38; boolx39; float x40; float x41; float x42; float x43; float x44; float x45; float x46; struct btMotionState {} *x47; struct btAlignedObjectArray<btTypedConstraint *> { struct btAlignedAllocator<btTypedConstraint *, 16> { } x_48_1_1; int x_48_1_2; int x_48_1_3; struct btTypedConstraint {} **x_48_1_4; boolx_48_1_5; } x48; int x49; int x50; struct btVector3 { float x_51_1_1[4]; } x51; struct btVector3 { float x_52_1_1[4]; } x52; struct btVector3 { float x_53_1_1[4]; } x53; struct btVector3 { float x_54_1_1[4]; } x54; struct btVector3 { float x_55_1_1[4]; } x55; struct btVector3 { float x_56_1_1[4]; } x56; int x57; int x58; }*)_handle;
 - (id).cxx_construct;
 - (void)_activate;
+- (struct btRigidBody { int (**x1)(); struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_2_1_1; struct btVector3 { float x_2_2_1[4]; } x_2_1_2; } x2; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_3_1_1; struct btVector3 { float x_2_2_1[4]; } x_3_1_2; } x3; struct btVector3 { float x_4_1_1[4]; } x4; struct btVector3 { float x_5_1_1[4]; } x5; struct btVector3 { float x_6_1_1[4]; } x6; int x7; float x8; struct btBroadphaseProxy {} *x9; struct btCollisionShape {} *x10; void *x11; struct btCollisionShape {} *x12; int x13; int x14; int x15; int x16; float x17; float x18; float x19; float x20; int x21; void *x22; float x23; float x24; float x25; int x26; struct btMatrix3x3 { struct btVector3 { float x_1_2_1[4]; } x_27_1_1[3]; } x27; struct btVector3 { float x_28_1_1[4]; } x28; struct btVector3 { float x_29_1_1[4]; } x29; float x30; struct btVector3 { float x_31_1_1[4]; } x31; struct btVector3 { float x_32_1_1[4]; } x32; struct btVector3 { float x_33_1_1[4]; } x33; struct btVector3 { float x_34_1_1[4]; } x34; struct btVector3 { float x_35_1_1[4]; } x35; struct btVector3 { float x_36_1_1[4]; } x36; float x37; float x38; bool x39; float x40; float x41; float x42; float x43; float x44; float x45; float x46; struct btMotionState {} *x47; struct btAlignedObjectArray<btTypedConstraint *> { struct btAlignedAllocator<btTypedConstraint *, 16> { } x_48_1_1; int x_48_1_2; int x_48_1_3; struct btTypedConstraint {} **x_48_1_4; bool x_48_1_5; } x48; int x49; int x50; struct btVector3 { float x_51_1_1[4]; } x51; struct btVector3 { float x_52_1_1[4]; } x52; struct btVector3 { float x_53_1_1[4]; } x53; struct btVector3 { float x_54_1_1[4]; } x54; struct btVector3 { float x_55_1_1[4]; } x55; struct btVector3 { float x_56_1_1[4]; } x56; int x57; int x58; }*)_createBody;
 - (void)_didDecodeSCNPhysicsBody:(id)arg1;
+- (struct btRigidBody { int (**x1)(); struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_2_1_1; struct btVector3 { float x_2_2_1[4]; } x_2_1_2; } x2; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_3_1_1; struct btVector3 { float x_2_2_1[4]; } x_3_1_2; } x3; struct btVector3 { float x_4_1_1[4]; } x4; struct btVector3 { float x_5_1_1[4]; } x5; struct btVector3 { float x_6_1_1[4]; } x6; int x7; float x8; struct btBroadphaseProxy {} *x9; struct btCollisionShape {} *x10; void *x11; struct btCollisionShape {} *x12; int x13; int x14; int x15; int x16; float x17; float x18; float x19; float x20; int x21; void *x22; float x23; float x24; float x25; int x26; struct btMatrix3x3 { struct btVector3 { float x_1_2_1[4]; } x_27_1_1[3]; } x27; struct btVector3 { float x_28_1_1[4]; } x28; struct btVector3 { float x_29_1_1[4]; } x29; float x30; struct btVector3 { float x_31_1_1[4]; } x31; struct btVector3 { float x_32_1_1[4]; } x32; struct btVector3 { float x_33_1_1[4]; } x33; struct btVector3 { float x_34_1_1[4]; } x34; struct btVector3 { float x_35_1_1[4]; } x35; struct btVector3 { float x_36_1_1[4]; } x36; float x37; float x38; bool x39; float x40; float x41; float x42; float x43; float x44; float x45; float x46; struct btMotionState {} *x47; struct btAlignedObjectArray<btTypedConstraint *> { struct btAlignedAllocator<btTypedConstraint *, 16> { } x_48_1_1; int x_48_1_2; int x_48_1_3; struct btTypedConstraint {} **x_48_1_4; bool x_48_1_5; } x48; int x49; int x50; struct btVector3 { float x_51_1_1[4]; } x51; struct btVector3 { float x_52_1_1[4]; } x52; struct btVector3 { float x_53_1_1[4]; } x53; struct btVector3 { float x_54_1_1[4]; } x54; struct btVector3 { float x_55_1_1[4]; } x55; struct btVector3 { float x_56_1_1[4]; } x56; int x57; int x58; }*)_handle;
 - (id)_owner;
 - (void)_removeOwner;
 - (void)_setOwner:(id)arg1;

@@ -3,14 +3,14 @@
  */
 
 @interface AWDPowerCameraMetrics : PBCodable <NSCopying> {
+    unsigned int _cameraBackOnDuration;
+    unsigned int _cameraFrontOnDuration;
+    unsigned int _cameraTorchOnDuration;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int cameraBackOnDuration : 1; 
         unsigned int cameraFrontOnDuration : 1; 
         unsigned int cameraTorchOnDuration : 1; 
-    unsigned int _cameraBackOnDuration;
-    unsigned int _cameraFrontOnDuration;
-    unsigned int _cameraTorchOnDuration;
     } _has;
     unsigned long long _timestamp;
 }

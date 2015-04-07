@@ -9,21 +9,33 @@
 @class NSDictionary, NSObject<OS_dispatch_data>, NSString, __NSCFLocalDownloadFile;
 
 @interface __NSCFLocalDownloadTask : __NSCFLocalSessionTask <NSURLSessionDownloadTaskSubclass, __NSCFLocalDownloadFileOpener> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __afterDidReportProgressOnQueue;
+
     unsigned long __transientWriteProgress;
+    bool _canWrite;
+    bool _didIssueNeedFinish;
     __NSCFLocalDownloadFile *_downloadFile;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fileCompletion;
+
     long long _initialResumeSize;
     unsigned int _ioSuspend;
+    bool _needFinish;
     NSDictionary *_originalResumeInfo;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resumeCallback;
+
     int _seqNo;
+    bool _suppressProgress;
     unsigned long _totalWrote;
     NSObject<OS_dispatch_data> *_writeBuffer;
-    bool_canWrite;
-    bool_didIssueNeedFinish;
-    bool_needFinish;
-    bool_suppressProgress;
 }
 
 @property(copy) id _afterDidReportProgressOnQueue;

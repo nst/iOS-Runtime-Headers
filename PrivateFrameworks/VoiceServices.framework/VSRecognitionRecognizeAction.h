@@ -10,18 +10,18 @@
 @class NSArray, NSString;
 
 @interface VSRecognitionRecognizeAction : VSRecognitionAction {
-    struct { 
-        unsigned int debugDumpEnabled : 1; 
-        unsigned int preferredEngine : 2; 
-        unsigned int resetEngine : 1; 
-        unsigned int bluetoothAllowed : 1; 
-        unsigned int hasStarted : 1; 
     NSString *_audioInputPath;
     NSString *_debugDumpPath;
     NSArray *_keywords;
     double _levelInterval;
     NSString *_modelIdentifier;
     void *_recognition;
+    struct { 
+        unsigned int debugDumpEnabled : 1; 
+        unsigned int preferredEngine : 2; 
+        unsigned int resetEngine : 1; 
+        unsigned int bluetoothAllowed : 1; 
+        unsigned int hasStarted : 1; 
     } _recognizeFlags;
     NSArray *_results;
 }
@@ -48,8 +48,8 @@
 - (void)_reset;
 - (BOOL)_setAudioInputPath:(id)arg1;
 - (BOOL)_setBluetoothInputAllowed:(BOOL)arg1;
-- (BOOL)_setDebugDumpEnabled:(BOOL)arg1 dumpPath:(id)arg2;
 - (BOOL)_setDebugDumpEnabled:(BOOL)arg1;
+- (BOOL)_setDebugDumpEnabled:(BOOL)arg1 dumpPath:(id)arg2;
 - (BOOL)_setDebugDumpPath:(id)arg1;
 - (BOOL)_setEngineResetRequired:(BOOL)arg1;
 - (BOOL)_setInputLevelUpdateInterval:(double)arg1;

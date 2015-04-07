@@ -3,11 +3,11 @@
  */
 
 @interface CPMemoryPoolFile : NSObject {
+    struct __CFAllocator { } *_deallocator;
+    int _fd;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    struct __CFAllocator { } *_deallocator;
-    int _fd;
     } _mutex;
     unsigned long _slotCount;
     unsigned long _slotLength;

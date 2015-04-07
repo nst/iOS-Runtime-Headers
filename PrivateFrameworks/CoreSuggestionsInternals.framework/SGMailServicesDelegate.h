@@ -9,7 +9,11 @@
 @class NSError, NSObject<OS_dispatch_semaphore>, NSString;
 
 @interface SGMailServicesDelegate : NSObject <MSSearchDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callback;
+
     NSObject<OS_dispatch_semaphore> *_done;
     NSError *_error;
     BOOL _ignoreEmpty;

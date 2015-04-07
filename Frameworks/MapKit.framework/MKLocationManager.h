@@ -8,7 +8,7 @@
 
 @class <MKLocationProvider>, <MKLocationRecorder>, CLHeading, CLLocation, GEOLocation, GEOLocationShifter, NSBundle, NSError, NSHashTable, NSMutableArray, NSString, NSTimer, _MKWiFiObserver;
 
-@interface MKLocationManager : NSObject <_MKWiFiObserverDelegate, MKLocationProviderDelegate> {
+@interface MKLocationManager : NSObject <MKLocationProviderDelegate, _MKWiFiObserverDelegate> {
     BOOL _airplaneModeEnabled;
     BOOL _airplaneModeEnabledIsValid;
     struct __SCPreferences { } *_airplaneModePrefs;
@@ -34,7 +34,11 @@
     double _lastVehicleSpeed;
     double _lastVehicleSpeedUpdateTime;
     double _locationAccuracyUpdateTime;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _locationCorrector;
+
     NSError *_locationError;
     NSHashTable *_locationListeners;
     NSHashTable *_locationObservers;
@@ -44,7 +48,11 @@
     BOOL _logStartStopLocationUpdates;
     double _minimumLocationUpdateInterval;
     double _navCourse;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _networkActivity;
+
     NSMutableArray *_recentLocationUpdateIntervals;
     BOOL _suspended;
     CLHeading *_throttledHeading;
@@ -162,8 +170,8 @@
 - (BOOL)isLocationServicesAvailable;
 - (BOOL)isLocationServicesDenied;
 - (BOOL)isLocationServicesEnabled;
-- (BOOL)isLocationServicesPossiblyAvailable:(id*)arg1;
 - (BOOL)isLocationServicesPossiblyAvailable;
+- (BOOL)isLocationServicesPossiblyAvailable:(id*)arg1;
 - (BOOL)isLocationServicesPreferencesDialogEnabled;
 - (BOOL)isLocationServicesRestricted;
 - (BOOL)isWiFiEnabled;
@@ -172,13 +180,13 @@
 - (void)listenForLocationUpdates:(id)arg1;
 - (id)locationCorrector;
 - (id)locationError;
+- (id)locationProvider;
 - (void)locationProvider:(id)arg1 didReceiveError:(id)arg2;
 - (void)locationProvider:(id)arg1 didUpdateHeading:(id)arg2;
-- (void)locationProvider:(id)arg1 didUpdateLocation:(id)arg2 lastKnownNavCourse:(double)arg3;
 - (void)locationProvider:(id)arg1 didUpdateLocation:(id)arg2;
+- (void)locationProvider:(id)arg1 didUpdateLocation:(id)arg2 lastKnownNavCourse:(double)arg3;
 - (void)locationProvider:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationProvider:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
-- (id)locationProvider;
 - (void)locationProviderDidChangeAuthorizationStatus:(id)arg1;
 - (void)locationProviderDidPauseLocationUpdates:(id)arg1;
 - (void)locationProviderDidResumeLocationUpdates:(id)arg1;

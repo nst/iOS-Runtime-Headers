@@ -5,6 +5,8 @@
 @class <SKUIRedeemCameraViewDelegate>, NSString, SKUIRedeemTextField, UIImage, UIView;
 
 @interface SKUIFullscreenRedeemCameraView : UIView <UITextFieldDelegate> {
+    <SKUIRedeemCameraViewDelegate> *_delegate;
+    BOOL _enabled;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    <SKUIRedeemCameraViewDelegate> *_delegate;
-    BOOL _enabled;
     } _keyboardRect;
     UIView *_overlay;
     UIView *_redeemerView;

@@ -5,13 +5,13 @@
 @class UIView<SUCellConfigurationView>;
 
 @interface SUCellConfiguration : NSObject {
+    id _context;
+    unsigned int _isDeleteConfirmationVisible : 1;
     struct CGSize { 
         float width; 
         float height; 
-    unsigned int _isDeleteConfirmationVisible : 1;
-    unsigned int _needsDisplay : 1;
-    id _context;
     } _layoutSize;
+    unsigned int _needsDisplay : 1;
     id _representedObject;
     UIView<SUCellConfigurationView> *_view;
 }

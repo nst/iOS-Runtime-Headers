@@ -3,9 +3,9 @@
  */
 
 @interface KNBuildSkidSmokeSystem : TSDGLParticleSystem {
-    struct CGSize { 
-        float width; 
-        float height; 
+    BOOL _isOutgoing;
+    float _moveDuration;
+    float _smokeLift;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,12 +15,12 @@
             float width; 
             float height; 
         } size; 
-    BOOL _isOutgoing;
-    float _moveDuration;
-    float _smokeLift;
     } _smokeLine;
     float _smokeRotationMax;
     float _smokeScaleMax;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _smokeSpeedMax;
     float _smokeStartLocationPower;
     float _smokeStartTime;

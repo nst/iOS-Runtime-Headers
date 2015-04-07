@@ -4,7 +4,7 @@
 
 @class BBDataProviderConnection, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, NSXPCListener;
 
-@interface BBDataProviderConnectionResolver : NSObject <NSXPCListenerDelegate, BBDataProviderConnectionClientEndpoint> {
+@interface BBDataProviderConnectionResolver : NSObject <BBDataProviderConnectionClientEndpoint, NSXPCListenerDelegate> {
     BBDataProviderConnection *__dataProviderConnection;
     NSXPCConnection *_connectionToServer;
     int _listeningToken;

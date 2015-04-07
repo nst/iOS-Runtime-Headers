@@ -14,39 +14,20 @@
 @class MDTextureCanvas, NSMutableSet, VKCamera, VKLayoutContext, VKMapModel, VKMapRasterizerRoot, VKScene, VKTileProvider;
 
 @interface VKMapRasterizer : VKModelObject {
+    struct Matrix<float, 4, 1> { 
+        float _e[4]; 
+    } _backgroundColor;
+    unsigned int _canvasPointSize;
+    struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer> > { 
+        struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer> > { 
+            struct RenderBuffer {} *__first_; 
+        } __ptr_; 
+    } _depthStencilBuffer;
     struct VKTileKey { 
         unsigned int z; 
         int x; 
         int y; 
         unsigned int pointSize; 
-    struct Matrix<float, 4, 1> { 
-        float _e[4]; 
-    struct unique_ptr<ggl::TextureBuffer, std::__1::default_delete<ggl::TextureBuffer> > { 
-        struct __compressed_pair<ggl::TextureBuffer *, std::__1::default_delete<ggl::TextureBuffer> > { 
-            struct TextureBuffer {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer> > { 
-        struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer> > { 
-            struct RenderBuffer {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderTarget, std::__1::default_delete<ggl::RenderTarget> > { 
-        struct __compressed_pair<ggl::RenderTarget *, std::__1::default_delete<ggl::RenderTarget> > { 
-            struct RenderTarget {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { 
-        struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { 
-            struct RenderQueue {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::TexturePool, std::__1::default_delete<ggl::TexturePool> > { 
-        struct __compressed_pair<ggl::TexturePool *, std::__1::default_delete<ggl::TexturePool> > { 
-            struct TexturePool {} *__first_; 
-        } __ptr_; 
-    struct shared_ptr<ggl::Texture2D> { 
-        struct Texture2D {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    } _backgroundColor;
-    unsigned int _canvasPointSize;
-    } _depthStencilBuffer;
     } _keyToRasterize;
     VKMapModel *_mapModel;
     VKCamera *_rasterizeCamera;
@@ -55,11 +36,30 @@
     VKScene *_rasterizeScene;
     NSMutableSet *_rasterizeTilesToRender;
     unsigned int _rasterizingScaleFactor;
+    struct shared_ptr<ggl::Texture2D> { 
+        struct Texture2D {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _renderTexture;
+    struct unique_ptr<ggl::RenderTarget, std::__1::default_delete<ggl::RenderTarget> > { 
+        struct __compressed_pair<ggl::RenderTarget *, std::__1::default_delete<ggl::RenderTarget> > { 
+            struct RenderTarget {} *__first_; 
+        } __ptr_; 
     } _renderToTextureTarget;
     VKMapRasterizerRoot *_root;
+    struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { 
+        struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { 
+            struct RenderQueue {} *__first_; 
+        } __ptr_; 
     } _rttQueue;
+    struct unique_ptr<ggl::TextureBuffer, std::__1::default_delete<ggl::TextureBuffer> > { 
+        struct __compressed_pair<ggl::TextureBuffer *, std::__1::default_delete<ggl::TextureBuffer> > { 
+            struct TextureBuffer {} *__first_; 
+        } __ptr_; 
     } _textureBuffer;
+    struct unique_ptr<ggl::TexturePool, std::__1::default_delete<ggl::TexturePool> > { 
+        struct __compressed_pair<ggl::TexturePool *, std::__1::default_delete<ggl::TexturePool> > { 
+            struct TexturePool {} *__first_; 
+        } __ptr_; 
     } _texturePool;
     VKTileProvider *_tileProvider;
 }

@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface GEOMapItemAddressBookAttributes : PBCodable <NSCopying> {
+    int _addressType;
     struct { 
         unsigned int addressType : 1; 
         unsigned int isMe : 1; 
-    int _addressType;
     } _has;
     BOOL _isMe;
     NSString *_name;

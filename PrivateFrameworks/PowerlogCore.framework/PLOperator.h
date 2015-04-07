@@ -36,8 +36,8 @@
 + (id)entryEventIntervalDefinitions;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitions;
-+ (id)entryKeyForType:(id)arg1 andName:(id)arg2 isDynamic:(BOOL)arg3;
 + (id)entryKeyForType:(id)arg1 andName:(id)arg2;
++ (id)entryKeyForType:(id)arg1 andName:(id)arg2 isDynamic:(BOOL)arg3;
 + (id)entryKeys;
 + (BOOL)fullMode;
 + (BOOL)isDebugEnabled;
@@ -46,8 +46,8 @@
 + (void)load;
 + (id)operator;
 + (id)railDefinitions;
-+ (void)setDebugEnabled:(BOOL)arg1 forKey:(id)arg2;
 + (void)setDebugEnabled:(BOOL)arg1;
++ (void)setDebugEnabled:(BOOL)arg1 forKey:(id)arg2;
 + (void)setEnabled:(BOOL)arg1;
 
 - (void).cxx_destruct;
@@ -77,13 +77,13 @@
 - (void)logFromCFCallback:(id)arg1;
 - (void)logRequestNotification:(id)arg1;
 - (void)maintainAggregateStorage;
-- (void)postEntries:(id)arg1 withGroupID:(id)arg2;
 - (void)postEntries:(id)arg1;
+- (void)postEntries:(id)arg1 withGroupID:(id)arg2;
 - (BOOL)postFilteredNotificationForEntry:(id)arg1 withFilteredDefition:(id)arg2 withNotificationName:(id)arg3;
 - (id)rails;
 - (void)setBufferedEntries:(id)arg1;
-- (void)setDebugEnabled:(BOOL)arg1 forKey:(id)arg2;
 - (void)setDebugEnabled:(BOOL)arg1;
+- (void)setDebugEnabled:(BOOL)arg1 forKey:(id)arg2;
 - (void)setFilterDefinitions:(id)arg1;
 - (void)setFilterDeltaLastEntryIDs:(id)arg1;
 - (void)setLastLogDateForEntryKey:(id)arg1;

@@ -22,9 +22,9 @@
 - (void)close;
 - (void)dealloc;
 - (void)enumerateByteRangesUsingBlock:(id)arg1;
+- (void)getBytes:(void*)arg1;
 - (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
 - (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)getBytes:(void*)arg1;
 - (id)initWithContentsOfFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)isEqualToData:(id)arg1;
 - (unsigned int)length;

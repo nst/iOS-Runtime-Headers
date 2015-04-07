@@ -5,11 +5,11 @@
 @class NSString, NSURL, UITextView;
 
 @interface PSFooterHyperlinkView : UIView <PSHeaderFooterView, UITextViewDelegate> {
+    NSURL *_URL;
+    SEL _action;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    NSURL *_URL;
-    SEL _action;
     } _linkRange;
     id _target;
     NSString *_text;

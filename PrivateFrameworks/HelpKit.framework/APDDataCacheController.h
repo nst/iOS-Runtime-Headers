@@ -26,16 +26,16 @@
 - (id)cacheFileURLForDataCache:(id)arg1;
 - (BOOL)cacheValidForPath:(id)arg1;
 - (id)dataCacheArray;
-- (id)dataCacheForPath:(id)arg1 completionHandler:(id)arg2;
 - (id)dataCacheForPath:(id)arg1;
+- (id)dataCacheForPath:(id)arg1 completionHandler:(id)arg2;
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1 directoryName:(id)arg2 maxCacheSize:(unsigned int)arg3 URLSessionDataType:(int)arg4;
 - (id)locale;
 - (void)moveCacheToEnd:(id)arg1;
 - (id)newDataCache;
 - (void)removeAllDataCache;
-- (void)removeDataCache:(id)arg1 updateCache:(BOOL)arg2;
 - (void)removeDataCache:(id)arg1;
+- (void)removeDataCache:(id)arg1 updateCache:(BOOL)arg2;
 - (void)setDataCacheArray:(id)arg1;
 - (void)setLocale:(id)arg1;
 - (void)updateCache;

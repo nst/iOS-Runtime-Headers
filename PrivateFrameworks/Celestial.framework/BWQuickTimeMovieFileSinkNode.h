@@ -10,31 +10,24 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    } _adjustedMaxFileDuration;
+    unsigned long long _adjustedMaxFileSize;
+    unsigned long long _adjustedMinFreeDiskSpaceLimit;
+    struct OpaqueCMByteStream { } *_byteStream;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    } _checkDiskSpaceAtThisDuration;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
+    } _currFileDuration;
+    unsigned long long _currFileSize;
+    struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; } *_debugABL;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 
@@ -45,21 +38,13 @@
         unsigned int mChannelsPerFrame; 
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
+    } _debugASBD;
+    BOOL _debugAudio;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _adjustedMaxFileDuration;
-    unsigned long long _adjustedMaxFileSize;
-    unsigned long long _adjustedMinFreeDiskSpaceLimit;
-    struct OpaqueCMByteStream { } *_byteStream;
-    } _checkDiskSpaceAtThisDuration;
-    } _currFileDuration;
-    unsigned long long _currFileSize;
-    struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; } *_debugABL;
-    } _debugASBD;
-    BOOL _debugAudio;
     } _debugDurationForFailOfDiskSpaceTest;
     BOOL _didBeginSession;
     BOOL _didBeginWriting;
@@ -69,12 +54,22 @@
     BOOL *_haveSeenSamplesForTrack;
     unsigned int _masterInputIndex;
     int _masterInputTimeScale;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _maxFileDuration;
     unsigned long long _maxFileSize;
     float _maxVideoFrameRate;
     unsigned long long _minFreeDiskSpaceLimit;
     NSDictionary *_movieLevelMetadata;
     BOOL _needToDeMoof;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _nextTimeToReturnFileSize;
     unsigned int _numAudioTracks;
     unsigned int _numInputs;
@@ -83,6 +78,11 @@
     int _recordingState;
     FigCaptureRecordingSettings *_settings;
     NSArray *_stagingQueues;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _startingPTS;
     NSObject<OS_dispatch_queue> *_thumbnailGenerationDispatchQueue;
     struct __IOSurface { } *_thumbnailSurface;

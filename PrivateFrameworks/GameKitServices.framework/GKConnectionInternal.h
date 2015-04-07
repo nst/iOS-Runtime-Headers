@@ -9,23 +9,14 @@
 @class CDXClient, NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_source>, NSString, TimingCollection;
 
 @interface GKConnectionInternal : GKConnection <CDXClientDelegate, CDXClientSessionDelegate> {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     NSMutableArray *_allowRelayPIDList;
+    struct _opaque_pthread_cond_t { 
+        long __sig; 
+        BOOL __opaque[24]; 
     } _cPreblobFetch;
+    struct _opaque_pthread_cond_t { 
+        long __sig; 
+        BOOL __opaque[24]; 
     } _cPrepareThread;
     CDXClient *_cdxClient;
     NSMutableDictionary *_cdxSessions;
@@ -54,15 +45,28 @@
     NSMutableDictionary *_pidToRelayUpdateInfoMap;
     NSMutableSet *_pidsPreparedForConnection;
     NSData *_preblob;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _preblobCallback;
+
     double _preblobCallbackCancelTime;
     NSMutableDictionary *_preblobToPIDMap;
     struct opaqueRTCReporting { } *_reportingAgent;
     BOOL _toForwardEVents;
     NSMutableDictionary *_updateRelayQueue;
     double _wakeTime;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _xPreblobFetch;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _xPrepareThread;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _xRelay;
 }
 

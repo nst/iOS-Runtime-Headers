@@ -5,11 +5,11 @@
 @class NSMutableArray;
 
 @interface GEOPDFlyover : PBCodable <NSCopying> {
-    struct { 
-        unsigned int useSplines : 1; 
     struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; float x9; float x10; struct { unsigned int x_11_1_1 : 1; unsigned int x_11_1_2 : 1; unsigned int x_11_1_3 : 1; unsigned int x_11_1_4 : 1; unsigned int x_11_1_5 : 1; unsigned int x_11_1_6 : 1; unsigned int x_11_1_7 : 1; unsigned int x_11_1_8 : 1; unsigned int x_11_1_9 : 1; unsigned int x_11_1_10 : 1; } x11; } *_cameraPaths;
     unsigned int _cameraPathsCount;
     unsigned int _cameraPathsSpace;
+    struct { 
+        unsigned int useSplines : 1; 
     } _has;
     struct { float x1; unsigned int x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_labelFrames;
     unsigned int _labelFramesCount;

@@ -5,15 +5,6 @@
 @class NSArray, NSDictionary, NSString;
 
 @interface PLPhotoEditModel : NSObject <NSCopying> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     NSArray *_autoRedEyeCorrections;
     NSString *_autoSmartColorIdentifier;
     float _autoSmartColorLevel;
@@ -40,6 +31,15 @@
     float _highlightsLevelOffset;
     NSArray *_legacyAutoEnhanceFilters;
     BOOL _legacyAutoEnhanceIsOn;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _normalizedCropRect;
     NSArray *_redEyeCorrections;
     unsigned int _rotation;

@@ -5,18 +5,18 @@
 @class IMTranscriptChatItem, NSAttributedString, NSString, UIImage;
 
 @interface CKChatItem : NSObject {
+    IMTranscriptChatItem *_imChatItem;
+    float _maxWidth;
     struct CGSize { 
         float width; 
         float height; 
+    } _size;
+    BOOL _sizeLoaded;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    IMTranscriptChatItem *_imChatItem;
-    float _maxWidth;
-    } _size;
-    BOOL _sizeLoaded;
     } _textAlignmentInsets;
     NSAttributedString *_transcriptDrawerText;
     NSAttributedString *_transcriptText;

@@ -12,7 +12,11 @@
     float _cost;
     CKModifyRecordsOperation *_modifyOperation;
     NSArray *_recordsNeedingSharingInfo;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _syncUpCompletionBlock;
+
 }
 
 @property(readonly) float cost;

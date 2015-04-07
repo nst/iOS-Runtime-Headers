@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface SSSoftwareUpdatesContext : NSObject <SSXPCCoding, NSCopying, NSMutableCopying> {
+@interface SSSoftwareUpdatesContext : NSObject <NSCopying, NSMutableCopying, SSXPCCoding> {
     NSString *_clientIdentifierHeader;
     BOOL _forced;
     NSArray *_softwareTypes;

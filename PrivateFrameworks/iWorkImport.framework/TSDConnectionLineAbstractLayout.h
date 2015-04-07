@@ -8,12 +8,6 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     } mAcumulatedDrag;
     float mCachedFromOutset;
     TSDBezierPath *mCachedFromOutsetWrapPath;
@@ -28,10 +22,16 @@
     TSDLayout *mConnectedTo;
     float mDynamicOutsetFrom;
     float mDynamicOutsetTo;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mLooseEndPosition;
     TSDLayout *mOldConnectedFrom;
     TSDLayout *mOldConnectedTo;
     TSDConnectionLinePathSource *mOriginalPathSource;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mResizeControlPoints[3];
     BOOL mUseDynamicOutsets;
     BOOL mUseResizePoints[3];

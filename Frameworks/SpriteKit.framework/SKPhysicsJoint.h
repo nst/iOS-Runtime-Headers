@@ -5,12 +5,12 @@
 @class SKPhysicsBody;
 
 @interface SKPhysicsJoint : NSObject <NSCoding> {
-    struct CGVector { 
-        float dx; 
-        float dy; 
     BOOL __implicit;
     SKPhysicsBody *bodyA;
     SKPhysicsBody *bodyB;
+    struct CGVector { 
+        float dx; 
+        float dy; 
     } reactionForce;
     float reactionTorque;
 }

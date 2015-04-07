@@ -5,12 +5,12 @@
 @class BLTPBBulletin;
 
 @interface BLTPBAddBulletinRequest : PBRequest <NSCopying> {
+    BLTPBBulletin *_bulletin;
+    double _date;
     struct { 
         unsigned int date : 1; 
         unsigned int updateType : 1; 
         unsigned int shouldPlayLightsAndSirens : 1; 
-    BLTPBBulletin *_bulletin;
-    double _date;
     } _has;
     BOOL _shouldPlayLightsAndSirens;
     unsigned int _updateType;

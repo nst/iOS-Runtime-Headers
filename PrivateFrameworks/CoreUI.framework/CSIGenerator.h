@@ -5,9 +5,6 @@
 @class CUIPSDGradient, CUIShapeEffectPreset, NSData, NSDate, NSMutableArray, NSString;
 
 @interface CSIGenerator : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL _allowsMultiPassEncoding;
     NSMutableArray *_bitmaps;
     int _blendMode;
@@ -26,6 +23,9 @@
     unsigned int _pixelFormat;
     NSData *_rawData;
     unsigned int _scaleFactor;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     NSMutableArray *_slices;
     int _templateRenderingMode;

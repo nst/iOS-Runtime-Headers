@@ -17,7 +17,11 @@
     AXAccessQueue *_connectionQueue;
     int _pid;
     AXAccessQueue *_portDeathAccessQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _portDeathHandler;
+
     NSMutableArray *_postConnectionTasks;
     struct __CFMachPort { } *_serverPort;
     NSLock *_serverPortLock;
@@ -71,9 +75,9 @@
 - (id)portDeathHandler;
 - (id)postConnectionTasks;
 - (id)sendMessage:(id)arg1 withError:(id*)arg2;
+- (void)sendSimpleMessage:(id)arg1;
 - (BOOL)sendSimpleMessage:(id)arg1 synchronizationPort:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)sendSimpleMessage:(id)arg1 withError:(id*)arg2;
-- (void)sendSimpleMessage:(id)arg1;
 - (struct __CFMachPort { }*)serverPort;
 - (unsigned int)serviceMachPort;
 - (id)serviceName;

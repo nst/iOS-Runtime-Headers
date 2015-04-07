@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface NNMKProtoContentRequest : PBRequest <NSCopying> {
+    unsigned int _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
         unsigned int highPriority : 1; 
-    unsigned int _fullSyncVersion;
     } _has;
     BOOL _highPriority;
     NSString *_messageId;

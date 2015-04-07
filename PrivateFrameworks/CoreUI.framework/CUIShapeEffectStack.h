@@ -9,67 +9,7 @@
         float fillGreen; 
         float fillBlue; 
         float fillOpacity; 
-    struct { 
-        float beginRed; 
-        float beginGreen; 
-        float beginBlue; 
-        float endRed; 
-        float endGreen; 
-        float endBlue; 
-        float gradientOpacity; 
-    struct { 
-        unsigned int blendMode; 
-        float glowRed; 
-        float glowGreen; 
-        float glowBlue; 
-        float glowOpacity; 
-        float glowSize; 
-    struct { 
-        unsigned int blendMode; 
-        float shadowRed; 
-        float shadowGreen; 
-        float shadowBlue; 
-        float shadowBlurSize; 
-        float shadowOpacity; 
-        float shadowOffsetAmount; 
-        float shadowOffsetAngle; 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } shadowOffset; 
-    struct { 
-        float glowRed; 
-        float glowGreen; 
-        float glowBlue; 
-        float glowOpacity; 
-        float glowSize; 
-        float glowSpread; 
-    struct { 
-        float engraveRed; 
-        float engraveGreen; 
-        float engraveBlue; 
-        float engraveOpacity; 
-        float engraveBlurSize; 
-        float engraveSpread; 
-        float engraveOffsetAmount; 
-        float engraveOffsetAngle; 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } engraveOffset; 
-    struct { 
-        float engraveRed; 
-        float engraveGreen; 
-        float engraveBlue; 
-        float engraveOpacity; 
-        float engraveBlurSize; 
-        float engraveSpread; 
-        float engraveOffsetAmount; 
-        float engraveOffsetAngle; 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } engraveOffset; 
+    } colorOverlay;
     struct { 
         float embossSize; 
         float embossSoften; 
@@ -83,21 +23,81 @@
         float shadowGreen; 
         float shadowBlue; 
         float shadowOpacity; 
-    boolhasBevelEmboss;
-    boolhasColorOverlay;
-    boolhasEngraveShadow;
-    boolhasExtraShadow;
-    boolhasInnerGlow;
-    boolhasInnerGradient;
-    boolhasInnerShadow;
-    boolhasOuterGlow;
-    } colorOverlay;
     } emboss;
+    struct { 
+        float engraveRed; 
+        float engraveGreen; 
+        float engraveBlue; 
+        float engraveOpacity; 
+        float engraveBlurSize; 
+        float engraveSpread; 
+        float engraveOffsetAmount; 
+        float engraveOffsetAngle; 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } engraveOffset; 
     } engraveShadow;
+    struct { 
+        float engraveRed; 
+        float engraveGreen; 
+        float engraveBlue; 
+        float engraveOpacity; 
+        float engraveBlurSize; 
+        float engraveSpread; 
+        float engraveOffsetAmount; 
+        float engraveOffsetAngle; 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } engraveOffset; 
     } extraShadow;
+    bool hasBevelEmboss;
+    bool hasColorOverlay;
+    bool hasEngraveShadow;
+    bool hasExtraShadow;
+    bool hasInnerGlow;
+    bool hasInnerGradient;
+    bool hasInnerShadow;
+    bool hasOuterGlow;
+    struct { 
+        unsigned int blendMode; 
+        float glowRed; 
+        float glowGreen; 
+        float glowBlue; 
+        float glowOpacity; 
+        float glowSize; 
     } innerGlow;
+    struct { 
+        float beginRed; 
+        float beginGreen; 
+        float beginBlue; 
+        float endRed; 
+        float endGreen; 
+        float endBlue; 
+        float gradientOpacity; 
     } innerGradient;
+    struct { 
+        unsigned int blendMode; 
+        float shadowRed; 
+        float shadowGreen; 
+        float shadowBlue; 
+        float shadowBlurSize; 
+        float shadowOpacity; 
+        float shadowOffsetAmount; 
+        float shadowOffsetAngle; 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } shadowOffset; 
     } insideShadow;
+    struct { 
+        float glowRed; 
+        float glowGreen; 
+        float glowBlue; 
+        float glowOpacity; 
+        float glowSize; 
+        float glowSpread; 
     } outerGlow;
     float outputOpacity;
     int renderStrategy;
@@ -144,8 +144,8 @@
 - (void)_setOutputOpacityFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_setShapeOpacityFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_updateRenderStrategyFromEffect:(unsigned int)arg1;
-- (void)applyCustomForegroundColor:(struct CGColor { }*)arg1 tintEffectColors:(BOOL)arg2;
 - (void)applyCustomForegroundColor:(struct CGColor { }*)arg1;
+- (void)applyCustomForegroundColor:(struct CGColor { }*)arg1 tintEffectColors:(BOOL)arg2;
 - (id)compositeEffectStackWithShapeImage:(id)arg1 withScale:(float)arg2;
 - (struct { float x1; float x2; float x3; float x4; })effectInsetsWithScale:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })effectPaddingWithScale:(float)arg1;
@@ -162,12 +162,12 @@
 - (id)imageWithOuterGlowOfImage:(id)arg1;
 - (id)imageWithSingleBlurShapeEffectOfImage:(id)arg1 withInteriorFill:(id)arg2;
 - (id)initWithEffectPreset:(id)arg1;
-- (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1 withScale:(float)arg2 ciContext:(id)arg3;
-- (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1 withScale:(float)arg2;
 - (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1;
+- (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1 withScale:(float)arg2;
+- (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1 withScale:(float)arg2 ciContext:(id)arg3;
 - (id)optimizedSingleBlurEffectCompositeWithShapeImage:(id)arg1;
-- (id)processedImageFromShapeImage:(id)arg1 withScale:(float)arg2;
 - (id)processedImageFromShapeImage:(id)arg1;
+- (id)processedImageFromShapeImage:(id)arg1 withScale:(float)arg2;
 - (id)processedImageFromShapePath:(struct CGPath { }*)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)scaleEffectParametersBy:(float)arg1;
 - (id)standardEffectCompositeWithShapeImage:(id)arg1;

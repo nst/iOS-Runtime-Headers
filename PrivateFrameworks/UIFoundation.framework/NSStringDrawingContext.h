@@ -5,24 +5,6 @@
 @class NSDictionary;
 
 @interface NSStringDrawingContext : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct { 
-        unsigned int _wantsNumberOfLineFragments : 1; 
-        unsigned int _wrapsForTruncationMode : 1; 
-        unsigned int _wantsBaselineOffset : 1; 
-        unsigned int _wantsScaledBaselineOffset : 1; 
-        unsigned int _wantsScaledLineHeight : 1; 
-        unsigned int _drawsDebugBaselines : 1; 
-        unsigned int _cachesLayout : 1; 
-        unsigned int _usesSimpleTextEffects : 1; 
     float _actualScaleFactor;
     float _actualTrackingAdjustment;
     float _baselineOffset;
@@ -35,7 +17,25 @@
     unsigned int _numberOfLineFragments;
     float _scaledBaselineOffset;
     float _scaledLineHeight;
+    struct { 
+        unsigned int _wantsNumberOfLineFragments : 1; 
+        unsigned int _wrapsForTruncationMode : 1; 
+        unsigned int _wantsBaselineOffset : 1; 
+        unsigned int _wantsScaledBaselineOffset : 1; 
+        unsigned int _wantsScaledLineHeight : 1; 
+        unsigned int _drawsDebugBaselines : 1; 
+        unsigned int _cachesLayout : 1; 
+        unsigned int _usesSimpleTextEffects : 1; 
     } _sdcFlags;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _totalBounds;
 }
 

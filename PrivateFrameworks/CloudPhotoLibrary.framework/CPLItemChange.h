@@ -4,7 +4,7 @@
 
 @class NSArray;
 
-@interface CPLItemChange : CPLRecordChange <NSSecureCoding, NSCopying> {
+@interface CPLItemChange : CPLRecordChange <NSCopying, NSSecureCoding> {
     NSArray *_containerRelations;
 }
 

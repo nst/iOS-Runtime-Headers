@@ -11,8 +11,16 @@
 @interface PUConnection : NSObject <PUUnlockClient> {
     NSXPCConnection *_connection;
     <PUConnectionDelegate> *_delegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _getRemoteDevicePasscodeStateHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _remoteDeviceRemoveLockoutHandler;
+
 }
 
 @property(readonly) NSXPCConnection * connection;

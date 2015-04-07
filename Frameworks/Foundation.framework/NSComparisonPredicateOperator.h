@@ -12,8 +12,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3 options:(unsigned int)arg4;
 - (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3 options:(unsigned int)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (id)minimalFormInContext:(id)arg1 ofPredicate:(id)arg2;
 - (unsigned int)options;

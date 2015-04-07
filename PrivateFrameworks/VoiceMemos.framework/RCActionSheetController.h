@@ -11,7 +11,11 @@
 @interface RCActionSheetController : NSObject <UIActionSheetDelegate> {
     UIViewController *_accessoryViewController;
     NSArray *_actionButtonTitles;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _actionHandlerBlock;
+
     RCActionSheetAlertController *_alertController;
     NSString *_alertMessage;
     NSString *_alertTitle;
@@ -41,8 +45,8 @@
 - (BOOL)autoDismissDisabled;
 - (void)cancel;
 - (void)dealloc;
-- (void)dismissWithActionIndex:(int)arg1 invokeActionHandler:(BOOL)arg2;
 - (void)dismissWithActionIndex:(int)arg1;
+- (void)dismissWithActionIndex:(int)arg1 invokeActionHandler:(BOOL)arg2;
 - (BOOL)enabled;
 - (id)initWithTitle:(id)arg1 cancelTitle:(id)arg2 actionTitles:(id)arg3 accessoryViewController:(id)arg4;
 - (void)setAutoDismissDisabled:(BOOL)arg1;

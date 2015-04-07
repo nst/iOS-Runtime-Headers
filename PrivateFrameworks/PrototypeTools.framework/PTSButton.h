@@ -36,8 +36,8 @@
 - (void)setAlignment:(int)arg1;
 - (void)setSettings:(id)arg1;
 - (void)setValueKeyPath:(id)arg1;
-- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)settings;
+- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)valueKeyPath;
 
 @end

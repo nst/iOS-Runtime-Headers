@@ -11,7 +11,11 @@
 @interface CKDFetchLikesURLRequest : CKDURLRequest {
     NSMutableDictionary *_itemIDsByRequestID;
     NSArray *_itemIDsToFetch;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _likesFetchedBlock;
+
     unsigned int _resultsLimit;
     CKShareID *_shareID;
 }

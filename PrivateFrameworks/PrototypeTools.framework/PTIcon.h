@@ -5,6 +5,9 @@
 @class NSString, PTIconSettings, UIImage, UIImageView, _UILegibilityLabel, _UILegibilityView;
 
 @interface PTIcon : UIView {
+    _UILegibilityView *_iconLegibilityView;
+    PTIconSettings *_iconSettings;
+    UIImage *_image;
     struct { 
         float meanRed; 
         float meanGreen; 
@@ -15,9 +18,6 @@
         float meanAlpha; 
         float standardDeviationBrightness; 
         float standardDeviationSaturation; 
-    _UILegibilityView *_iconLegibilityView;
-    PTIconSettings *_iconSettings;
-    UIImage *_image;
     } _imageStatistics;
     UIImageView *_imageView;
     _UILegibilityLabel *_label;

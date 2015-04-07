@@ -5,11 +5,11 @@
 @class NSMutableArray, NSString;
 
 @interface GEOSearchAttributionSource : PBCodable <NSCopying> {
+    NSMutableArray *_attributionApps;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    NSMutableArray *_attributionApps;
     } _attributionRequirements;
     NSMutableArray *_localizedAttributions;
     NSString *_sourceIdentifier;

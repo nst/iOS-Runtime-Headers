@@ -31,8 +31,8 @@
 - (void)dealloc;
 - (BOOL)extendedTime;
 - (unsigned int)hash;
-- (id)initWithSearchString:(id)arg1 forSearchDomains:(id)arg2;
 - (id)initWithSearchString:(id)arg1;
+- (id)initWithSearchString:(id)arg1 forSearchDomains:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)searchDomains;
 - (id)searchString;

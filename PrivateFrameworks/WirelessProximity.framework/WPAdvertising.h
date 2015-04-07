@@ -26,8 +26,8 @@
 - (id)delegate;
 - (void)deregisterService:(id)arg1;
 - (id)description;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)messageArrived:(id)arg1;
 - (void)registerService:(id)arg1;
 - (void)setConnection:(id)arg1;

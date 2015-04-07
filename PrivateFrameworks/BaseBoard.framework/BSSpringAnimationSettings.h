@@ -15,11 +15,11 @@
 @property(readonly) float mass;
 @property(readonly) float stiffness;
 
++ (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3;
++ (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4;
 + (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4 delay:(double)arg5 timingFunction:(id)arg6;
 + (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4 timingFunction:(id)arg5;
-+ (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4;
 + (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 timingFunction:(id)arg4;
-+ (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (BOOL)_hasCalculatedDuration;

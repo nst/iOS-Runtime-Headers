@@ -18,7 +18,11 @@
     BOOL _dpadFlippedY;
     _GCControllerButtonInput *_leftShoulder;
     _GCControllerButtonInput *_rightShoulder;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _valueChangedHandler;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -39,8 +43,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithController:(id)arg1 dpadFlippedY:(BOOL)arg2;
 - (id)initWithController:(id)arg1;
+- (id)initWithController:(id)arg1 dpadFlippedY:(BOOL)arg2;
 - (id)leftShoulder;
 - (id)name;
 - (id)rightShoulder;

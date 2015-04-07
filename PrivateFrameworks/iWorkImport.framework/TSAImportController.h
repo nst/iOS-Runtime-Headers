@@ -4,7 +4,13 @@
 
 @class <NSFilePresenter>, <TSAImportDelegate>, <TSKImporter>, NSError, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_group>, NSOperationQueue, NSString, NSURL, NSUUID, TSPObjectContext, TSUProgressContext, TSUTemporaryDirectory;
 
-@interface TSAImportController : NSObject <TSADocumentRootDelegate, TSPObjectContextDelegate, NSFilePresenter, TSKImportExportDelegate> {
+@interface TSAImportController : NSObject <NSFilePresenter, TSADocumentRootDelegate, TSKImportExportDelegate, TSPObjectContextDelegate> {
+    NSMutableArray *_deferredWriters;
+    <TSAImportDelegate> *_delegate;
+    TSPObjectContext *_documentContext;
+    NSString *_documentType;
+    NSURL *_documentURL;
+    NSError *_error;
     struct { 
         unsigned int success : 1; 
         unsigned int isPasswordProtected : 1; 
@@ -12,12 +18,6 @@
         unsigned int isImportCancelled : 1; 
         unsigned int preserveDocumentAfterImport : 1; 
         unsigned int shouldNotifyProgress : 1; 
-    NSMutableArray *_deferredWriters;
-    <TSAImportDelegate> *_delegate;
-    TSPObjectContext *_documentContext;
-    NSString *_documentType;
-    NSURL *_documentURL;
-    NSError *_error;
     } _flags;
     NSMutableSet *_importWarnings;
     <TSKImporter> *_importer;
@@ -113,8 +113,8 @@
 - (void)setProgressContext:(id)arg1;
 - (void)showProgressIfNeededForURL:(id)arg1;
 - (id)sourcePath;
-- (id)templateInfoWithName:(id)arg1 variantIndex:(unsigned int)arg2;
 - (id)templateInfoWithName:(id)arg1;
+- (id)templateInfoWithName:(id)arg1 variantIndex:(unsigned int)arg2;
 - (id)temporaryURL;
 - (id)warnings;
 - (void)willSaveImportedDocument;

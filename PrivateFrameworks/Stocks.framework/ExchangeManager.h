@@ -16,8 +16,8 @@
 - (void)addExchange:(id)arg1;
 - (BOOL)containsExchange:(id)arg1;
 - (id)exchangeList;
-- (id)exchangeWithName:(id)arg1 createIfNotFound:(BOOL)arg2;
 - (id)exchangeWithName:(id)arg1;
+- (id)exchangeWithName:(id)arg1 createIfNotFound:(BOOL)arg2;
 - (id)init;
 - (void)reloadExchangesFromDefaults;
 - (void)removeExchange:(id)arg1;

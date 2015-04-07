@@ -15,11 +15,23 @@
 
 @interface ATStreamWriter : NSObject <NSStreamDelegate> {
     unsigned long long _bytesWritten;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _canWriteDataBlock;
+
     BOOL _closeOnStop;
     BOOL _compressed;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _didEncounterErrorBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _didFinishWritingBlock;
+
     NSInputStream *_inputStream;
     unsigned int _maximumBufferSize;
     NSOutputStream *_outputStream;

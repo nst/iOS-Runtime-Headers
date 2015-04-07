@@ -12,7 +12,11 @@
     CKDMMCSItemGroupSetContext *_MMCSContext;
     NSMutableArray *_assetsToFetch;
     NSMutableArray *_assetsToRetry;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
     BOOL _shouldAutomaticallyRetryNetworkErrors;
 }
 

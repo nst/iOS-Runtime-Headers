@@ -5,20 +5,20 @@
 @class NSArray, NSData, NSDictionary, NSExpression, NSMutableArray, NSString;
 
 @interface NSEntityMapping : NSObject {
-    struct __entityMappingFlags { 
-        unsigned int _isInUse : 1; 
-        unsigned int _reservedEntityMapping : 31; 
     NSMutableArray *_attributeMappings;
     NSString *_destinationEntityName;
     NSData *_destinationEntityVersionHash;
+    struct __entityMappingFlags { 
+        unsigned int _isInUse : 1; 
+        unsigned int _reservedEntityMapping : 31; 
     } _entityMappingFlags;
     NSString *_entityMigrationPolicyClassName;
     unsigned int _mappingType;
     NSDictionary *_mappingsByName;
     NSString *_name;
     NSMutableArray *_relationshipMappings;
-    void *_reserved1;
     void *_reserved;
+    void *_reserved1;
     NSString *_sourceEntityName;
     NSData *_sourceEntityVersionHash;
     NSExpression *_sourceExpression;

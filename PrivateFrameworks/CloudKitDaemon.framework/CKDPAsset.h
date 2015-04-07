@@ -5,9 +5,6 @@
 @class CKDPProtectionInfo, CKDPRecordIdentifier, NSData, NSString;
 
 @interface CKDPAsset : PBCodable <NSCopying> {
-    struct { 
-        unsigned int downloadURLExpiration : 1; 
-        unsigned int size : 1; 
     NSString *_contentBaseURL;
     NSData *_data;
     NSString *_derivedContentType;
@@ -15,6 +12,9 @@
     NSData *_downloadRequest;
     NSString *_downloadToken;
     long long _downloadURLExpiration;
+    struct { 
+        unsigned int downloadURLExpiration : 1; 
+        unsigned int size : 1; 
     } _has;
     NSData *_header;
     NSString *_owner;

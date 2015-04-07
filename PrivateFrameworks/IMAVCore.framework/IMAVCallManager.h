@@ -48,10 +48,10 @@
 - (void)_postStateChangeNamed:(id)arg1 fromState:(unsigned int)arg2 toState:(unsigned int)arg3 postType:(BOOL)arg4 type:(unsigned int)arg5;
 - (void)_removeIMAVChatFromChatList:(id)arg1;
 - (void)_sendProxyUpdate;
-- (void)_setACCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
 - (void)_setACCallState:(unsigned int)arg1;
-- (void)_setAVCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
+- (void)_setACCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
 - (void)_setAVCallState:(unsigned int)arg1;
+- (void)_setAVCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
 - (void)_setTelephonyCallState:(unsigned int)arg1;
 - (unsigned int)_telephonyCallState;
 - (void)_updateACCallState;

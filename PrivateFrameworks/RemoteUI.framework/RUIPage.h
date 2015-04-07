@@ -5,11 +5,6 @@
 @class NSArray, NSDictionary, NSMutableArray, NSString, RUIBarButtonItem, RUIElement<RUITopLevelPageElement>, RUIObjectModel, RUIPage, RUIPasscodeView, RUISpinnerView, RUITableView, RUIWebView, UIBarButtonItem, UILabel, UIToolbar, UIView;
 
 @interface RUIPage : UIViewController <UIWebViewDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     NSString *_backButtonTitle;
     NSMutableArray *_childPages;
     UIView *_containerView;
@@ -37,6 +32,11 @@
     BOOL _showsTitlesAsHeaderViews;
     RUISpinnerView *_spinnerViewOM;
     RUITableView *_tableViewOM;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _titleLabelPadding;
     UIToolbar *_toolbar;
     NSString *_validationFunction;
@@ -152,8 +152,8 @@
 - (void)setHasToolbar;
 - (void)setHidesBackButton:(BOOL)arg1;
 - (void)setLeftNavigationBarButton:(id)arg1;
-- (void)setLeftNavigationBarButtonItem:(id)arg1 barButtonItem:(id)arg2;
 - (void)setLeftNavigationBarButtonItem:(id)arg1;
+- (void)setLeftNavigationBarButtonItem:(id)arg1 barButtonItem:(id)arg2;
 - (void)setLeftToolbarButton:(id)arg1;
 - (void)setLeftToolbarButtonItem:(id)arg1;
 - (void)setLeftToolbarItem:(id)arg1;
@@ -168,8 +168,8 @@
 - (void)setPageID:(id)arg1;
 - (void)setPrimaryElement:(id)arg1;
 - (void)setRightNavigationBarButton:(id)arg1;
-- (void)setRightNavigationBarButtonItem:(id)arg1 barButtonItem:(id)arg2;
 - (void)setRightNavigationBarButtonItem:(id)arg1;
+- (void)setRightNavigationBarButtonItem:(id)arg1 barButtonItem:(id)arg2;
 - (void)setRightToolbarButton:(id)arg1;
 - (void)setRightToolbarButtonItem:(id)arg1;
 - (void)setRightToolbarItem:(id)arg1;

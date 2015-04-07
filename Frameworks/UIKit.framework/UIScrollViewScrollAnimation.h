@@ -3,15 +3,15 @@
  */
 
 @interface UIScrollViewScrollAnimation : UIAnimation {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     float _accuracy;
     BOOL _adjustsForContentOffsetDelta;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _originalOffset;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _targetOffset;
 }
 

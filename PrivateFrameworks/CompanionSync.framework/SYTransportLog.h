@@ -20,8 +20,8 @@
 - (id)_setupLog;
 - (id)facility;
 - (id)init;
-- (void)logMessage:(id)arg1 args:(void*)arg2;
 - (void)logMessage:(id)arg1;
+- (void)logMessage:(id)arg1 args:(void*)arg2;
 - (void)setFacility:(id)arg1;
 
 @end

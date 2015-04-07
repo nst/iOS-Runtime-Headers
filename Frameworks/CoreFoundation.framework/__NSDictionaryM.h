@@ -3,12 +3,12 @@
  */
 
 @interface __NSDictionaryM : NSMutableDictionary {
-    unsigned int _kvo : 1;
-    unsigned int _used : 26;
     id *_keys;
+    unsigned int _kvo : 1;
     unsigned long _mutations;
     id *_objs;
     unsigned int _size;
+    unsigned int _used : 26;
 }
 
 + (id)__new:(const id*)arg1 :(const id*)arg2 :(unsigned int)arg3 :(BOOL)arg4 :(BOOL)arg5;

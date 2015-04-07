@@ -4,24 +4,7 @@
 
 @class NSArray, NSDictionary, NSMapTable, NSObject<UIWebPDFViewHandlerDelegate>, UIAlertView, UIColor, UIDocumentPasswordView, UIView, UIWebPDFLabelView, UIWebPDFView, WebPDFNSNumberFormatter, _UIHighlightView, _UIRotatingAlertController;
 
-@interface UIWebPDFViewHandler : NSObject <UIWebPDFViewPrivateDelegate, UIDocumentPasswordViewDelegate, _UIRotatingAlertControllerDelegate, UIWebPDFViewDelegate, _UIWebDoubleTapDelegate, _UIWebRotationDelegate> {
-    struct _PDFHistoryItem { 
-        BOOL restorePending; 
-        BOOL isInitialScale; 
-        float zoomScale; 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } contentOffset; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+@interface UIWebPDFViewHandler : NSObject <UIDocumentPasswordViewDelegate, UIWebPDFViewDelegate, UIWebPDFViewPrivateDelegate, _UIRotatingAlertControllerDelegate, _UIWebDoubleTapDelegate, _UIWebRotationDelegate> {
     UIColor *_backgroundColorForUnRenderedContent;
     BOOL _cachedScrollViewShadowsState;
     UIAlertView *_currentAlert;
@@ -37,7 +20,24 @@
     UIDocumentPasswordView *_passwordEntryView;
     NSObject<UIWebPDFViewHandlerDelegate> *_pdfHandlerDelegate;
     UIWebPDFView *_pdfView;
+    struct _PDFHistoryItem { 
+        BOOL restorePending; 
+        BOOL isInitialScale; 
+        float zoomScale; 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } contentOffset; 
     } _pendingHistoryItemRestore;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _rectOfInterest;
     BOOL _rectOfInterestConsidersHeight;
     BOOL _scalesPageToFit;
@@ -125,8 +125,8 @@
 - (float)minimumVerticalContentOffset;
 - (id)passwordForPDFView:(id)arg1;
 - (id)pdfHandlerDelegate;
-- (void)pdfView:(id)arg1 zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forPoint:(struct CGPoint { float x1; float x2; })arg3 considerHeight:(BOOL)arg4;
 - (id)pdfView;
+- (void)pdfView:(id)arg1 zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forPoint:(struct CGPoint { float x1; float x2; })arg3 considerHeight:(BOOL)arg4;
 - (void)performAction:(id)arg1 fromAlertController:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })presentationRectInHostViewForSheet:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfInterestForPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -153,8 +153,8 @@
 - (void)updatePageNumberLabelWithUserScrolling:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateViewHierarchyForDocumentViewLoadComplete:(id)arg1;
 - (void)updateViewHierarchyForDocumentViewNewLoad:(id)arg1;
-- (void)updateViewHierarchyForDocumentViewTabSwitch:(id)arg1 restoringZoomScale:(float)arg2 andScrollPt:(struct CGPoint { float x1; float x2; })arg3;
 - (void)updateViewHierarchyForDocumentViewTabSwitch:(id)arg1;
+- (void)updateViewHierarchyForDocumentViewTabSwitch:(id)arg1 restoringZoomScale:(float)arg2 andScrollPt:(struct CGPoint { float x1; float x2; })arg3;
 - (void)updateViewHierarchyForFirstNonEmptyLayoutInFrame:(id)arg1;
 - (void)updateViewSettings;
 - (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;

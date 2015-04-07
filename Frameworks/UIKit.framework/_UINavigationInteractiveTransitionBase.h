@@ -85,9 +85,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)finishInteractiveTransition;
+- (id)gestureRecognizer;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (id)gestureRecognizer;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gestureRecognizerView;
 - (void)handleNavigationTransition:(id)arg1;
@@ -118,8 +118,8 @@
 - (BOOL)shouldReverseTranslation;
 - (double)skipTimeStamp;
 - (BOOL)springAnimationIsPending;
-- (void)startInteractiveTransition:(id)arg1;
 - (void)startInteractiveTransition;
+- (void)startInteractiveTransition:(id)arg1;
 - (float)totalDistance;
 
 @end

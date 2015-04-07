@@ -27,8 +27,8 @@
 - (void)_queue_removeClientConnection:(id)arg1;
 - (void)_sendReply:(id)arg1 messagePacker:(id)arg2;
 - (void)dealloc;
-- (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
 - (id)initWithServiceName:(id)arg1;
+- (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
 - (id)queue;
 - (Class)queue_classForNewClientConnection:(id)arg1;
 - (void)queue_clientAdded:(id)arg1;

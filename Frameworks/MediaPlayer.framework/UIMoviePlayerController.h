@@ -5,6 +5,18 @@
 @class <MPVideoControllerProtocol>, MPAVController, MPAVItem, MPMovieAccessLog, MPMovieErrorLog, MPNowPlayingObserver, MPTransitionController, MPVideoView, NSArray, NSDate, NSString, UIImage, UIMovieView, UINavigationController, UIView, UIViewController, _UIHostedWindow;
 
 @interface UIMoviePlayerController : NSObject {
+    <MPVideoControllerProtocol> *_activeVideoController;
+    unsigned int _audioControlsStyle;
+    unsigned int _autoRotationMask;
+    NSArray *_closedCaptionData;
+    id _delegate;
+    unsigned int _desiredParts;
+    unsigned int _displayableParts;
+    struct __CFBag { } *_ignoredChangeTypes;
+    int _interfaceOrientation;
+    int _interfaceOrientationFromDevice;
+    MPAVItem *_item;
+    int _lastSetUIInterfaceOrientation;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,6 +26,8 @@
             float width; 
             float height; 
         } size; 
+    } _layoutRect;
+    NSString *_moviePath;
     struct { 
         unsigned int canShowControlsOverlay : 1; 
         unsigned int wantsControlsOverlayVis : 1; 
@@ -41,20 +55,6 @@
         unsigned int usingDebugTestPath : 1; 
         unsigned int allowsWirelessPlayback : 1; 
         unsigned int useHostedWindowWhenFullscreen : 1; 
-    <MPVideoControllerProtocol> *_activeVideoController;
-    unsigned int _audioControlsStyle;
-    unsigned int _autoRotationMask;
-    NSArray *_closedCaptionData;
-    id _delegate;
-    unsigned int _desiredParts;
-    unsigned int _displayableParts;
-    struct __CFBag { } *_ignoredChangeTypes;
-    int _interfaceOrientation;
-    int _interfaceOrientationFromDevice;
-    MPAVItem *_item;
-    int _lastSetUIInterfaceOrientation;
-    } _layoutRect;
-    NSString *_moviePath;
     } _mpcBitfield;
     MPNowPlayingObserver *_nowPlayingController;
     int _pendingInterfaceOrientation;
@@ -228,17 +228,17 @@
 - (id)fullscreenView;
 - (id)hostedWindow;
 - (unsigned int)hostedWindowContextID;
-- (id)initWithPlayerSize:(struct CGSize { float x1; float x2; })arg1 isFullScreen:(BOOL)arg2 options:(unsigned int)arg3;
-- (id)initWithPlayerSize:(struct CGSize { float x1; float x2; })arg1 isFullScreen:(BOOL)arg2;
-- (id)initWithPlayerSize:(struct CGSize { float x1; float x2; })arg1 options:(unsigned int)arg2;
 - (id)initWithPlayerSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithPlayerSize:(struct CGSize { float x1; float x2; })arg1 isFullScreen:(BOOL)arg2;
+- (id)initWithPlayerSize:(struct CGSize { float x1; float x2; })arg1 isFullScreen:(BOOL)arg2 options:(unsigned int)arg3;
+- (id)initWithPlayerSize:(struct CGSize { float x1; float x2; })arg1 options:(unsigned int)arg2;
 - (int)interfaceOrientation;
 - (BOOL)isFullScreen;
 - (BOOL)isFullscreen;
 - (BOOL)isPreparedForPlayback;
 - (id)item;
-- (void)layoutUIInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fullScreen:(BOOL)arg2;
 - (void)layoutUIInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutUIInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fullScreen:(BOOL)arg2;
 - (BOOL)limitReadAhead;
 - (id)moviePath;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })moviePlaceholderImageRectForMovieWithAspectRatio:(float)arg1;
@@ -284,20 +284,20 @@
 - (void)setClosedCaptioningEnabled:(BOOL)arg1;
 - (void)setClosedCaptions:(id)arg1;
 - (void)setControlsOverlayVisible:(BOOL)arg1 disableAutohide:(BOOL)arg2 animate:(BOOL)arg3;
-- (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2;
 - (void)setCurrentTime:(double)arg1;
+- (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredMovieParts:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setDisableAlternateTextTrackRendering:(BOOL)arg1;
 - (void)setDisallowsVideoOut:(BOOL)arg1;
 - (void)setDisplayable:(BOOL)arg1 movieParts:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)setDisplayableMovieParts:(unsigned int)arg1 animated:(BOOL)arg2;
-- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1;
+- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setInlinePlaybackUsesTVOut:(BOOL)arg1;
 - (BOOL)setInterfaceOrientation:(int)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3;
-- (void)setItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setItem:(id)arg1;
+- (void)setItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setLimitReadAhead:(BOOL)arg1;
 - (void)setManagesStatusBar:(BOOL)arg1;
 - (void)setMoviePath:(id)arg1;

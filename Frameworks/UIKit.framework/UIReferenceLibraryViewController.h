@@ -8,10 +8,14 @@
 
 @class NSArray, NSString, UINavigationController, UITableViewController, UIViewController, UIWindow;
 
-@interface UIReferenceLibraryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate> {
+@interface UIReferenceLibraryViewController : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UINavigationController *_baseNavController;
     NSArray *_definitionValues;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _dismissCompletionHandler;
+
     UIViewController *_longDefViewController;
     UITableViewController *_multiDefViewController;
     int _oldPopoverStyle;

@@ -31,13 +31,13 @@
 
 + (id)nodeHandleWithJSValue:(id)arg1 inContext:(id)arg2;
 
-- (struct InjectedBundleNodeHandle { int (**x1)(); id x2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_1_1; } x3; }*)_nodeHandle;
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
 - (BOOL)HTMLInputElementIsAutoFilled;
 - (BOOL)HTMLInputElementIsUserEdited;
 - (id)HTMLTableCellElementCellAbove;
 - (BOOL)HTMLTextAreaElementIsUserEdited;
+- (struct Object { int (**x1)(); id x2; }*)_apiObject;
+- (struct InjectedBundleNodeHandle { int (**x1)(); id x2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_1_1; } x3; }*)_nodeHandle;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })elementBounds;
 - (id)htmlIFrameElementContentFrame;

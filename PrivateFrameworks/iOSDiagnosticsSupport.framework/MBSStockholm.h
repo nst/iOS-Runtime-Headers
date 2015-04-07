@@ -6,8 +6,8 @@
 
 @interface MBSStockholm : NSObject <NFCardEmulationDelegate, NFCardManagerDelegate> {
     NFCardEmulation *_cardEmulation;
+    bool _cardEmulationSuspended;
     NSObject<OS_dispatch_semaphore> *_semaphore;
-    bool_cardEmulationSuspended;
 }
 
 @property(retain) NFCardEmulation * cardEmulation;
@@ -18,12 +18,12 @@
 @property(retain) NSObject<OS_dispatch_semaphore> * semaphore;
 @property(readonly) Class superclass;
 
+- (id)cardEmulation;
 - (void)cardEmulation:(id)arg1 didChangeRestrictedMode:(BOOL)arg2;
 - (void)cardEmulation:(id)arg1 didDetectField:(BOOL)arg2;
 - (void)cardEmulation:(id)arg1 didSelectCard:(id)arg2;
 - (void)cardEmulation:(id)arg1 didStartTransaction:(id)arg2;
 - (void)cardEmulation:(id)arg1 isSuspended:(BOOL)arg2;
-- (id)cardEmulation;
 - (bool)cardEmulationSuspended;
 - (void)cardEmulationTransactionButtonPressed:(id)arg1;
 - (void)cardEmulationTransactionTimerExpired:(id)arg1;

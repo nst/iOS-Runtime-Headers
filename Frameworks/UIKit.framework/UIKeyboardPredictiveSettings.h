@@ -39,8 +39,8 @@
 - (void)setMinLetters:(int)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)settingsHUDConfiguration;
-- (void)show:(BOOL)arg1;
 - (void)show;
+- (void)show:(BOOL)arg1;
 - (id)valueForKey:(id)arg1;
 
 @end

@@ -5,6 +5,7 @@
 @class TSCH3DChartSceneAreaLayoutItem, TSCH3DSelectionPath;
 
 @interface TSCH3DChartRenderer : TSCHRenderer {
+    TSCH3DSelectionPath *mActive3DTextEditingPath;
     struct ChartProjectedBoundsSpaces { 
         struct box<glm::detail::tvec2<float> > { 
             struct tvec2<float> { 
@@ -214,7 +215,6 @@
                 } ; 
             } mMax; 
         } mContainingViewport; 
-    TSCH3DSelectionPath *mActive3DTextEditingPath;
     } mAnimationBounds;
     BOOL mCanRender;
     BOOL mHasAnimationBounds;
@@ -241,8 +241,8 @@
 - (void)multipassRenderingDidEnd;
 - (BOOL)multipassRenderingIsDone;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_affineTransformForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 rotation:(float)arg2;
-- (struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; boolx3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; })p_boundsConverter;
-- (void)p_debugLogConverter:(const struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; boolx3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; }*)arg1;
+- (struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; bool x3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; })p_boundsConverter;
+- (void)p_debugLogConverter:(const struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; bool x3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_frameForSelectionPath:(id)arg1 sceneObjectClass:(Class)arg2;
 - (void)p_layoutForRenderPipeline:(id)arg1;
 - (BOOL)p_multipassCanRender;

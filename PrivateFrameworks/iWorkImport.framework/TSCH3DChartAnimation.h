@@ -4,7 +4,18 @@
 
 @class NSMutableArray, NSMutableDictionary, TSCH3DAnimationInterpolation, TSCH3DAnimationTimeSlice, TSCH3DAnimationTiming, TSCH3DAnimationTimings, TSCH3DAnimationValueTiming, TSCH3DChartElementAnimationTimeSlice, TSCH3DChartRep, TSCH3DOrderedDictionary, TSCH3DScene;
 
-@interface TSCH3DChartAnimation : NSObject <TSCH3DSceneObjectDelegator, TSCH3DSceneDelegate, TSCHUnretainedParent> {
+@interface TSCH3DChartAnimation : NSObject <TSCH3DSceneDelegate, TSCH3DSceneObjectDelegator, TSCHUnretainedParent> {
+    TSCH3DAnimationTimings *mBackgroundPlaneTimings;
+    TSCH3DAnimationTimings *mElementPlaneTimings;
+    TSCH3DAnimationTimings *mElementTimings;
+    TSCH3DAnimationTimings *mGlobalTimings;
+    TSCH3DScene *mLayoutScene;
+    TSCH3DChartRep *mRep;
+    TSCH3DScene *mScene;
+    NSMutableArray *mSceneAnimationClips;
+    NSMutableArray *mSceneObjectDelegates;
+    TSCH3DOrderedDictionary *mSeparateLayers;
+    TSCH3DAnimationValueTiming *mShaderEffectElementsTiming;
     struct ChartAnimationTimeRanges { 
         struct box<glm::detail::tvec1<float> > { 
             struct tvec1<float> { 
@@ -97,17 +108,6 @@
         struct ObjcSharedPtr<TSCH3DAnimationInterpolation> { 
             TSCH3DAnimationInterpolation *mValue; 
         } valueLabelsInterpolation; 
-    TSCH3DAnimationTimings *mBackgroundPlaneTimings;
-    TSCH3DAnimationTimings *mElementPlaneTimings;
-    TSCH3DAnimationTimings *mElementTimings;
-    TSCH3DAnimationTimings *mGlobalTimings;
-    TSCH3DScene *mLayoutScene;
-    TSCH3DChartRep *mRep;
-    TSCH3DScene *mScene;
-    NSMutableArray *mSceneAnimationClips;
-    NSMutableArray *mSceneObjectDelegates;
-    TSCH3DOrderedDictionary *mSeparateLayers;
-    TSCH3DAnimationValueTiming *mShaderEffectElementsTiming;
     } mTimeRanges;
     TSCH3DChartElementAnimationTimeSlice *mTimeSlice;
     NSMutableDictionary *mTimingContext;
@@ -148,20 +148,20 @@
 - (void)addToElementTimings:(id)arg1;
 - (void)addToGrowAnimClips:(id)arg1 sceneObject:(id)arg2;
 - (void)addToGrowElementBlendTimings:(id)arg1;
+- (void)addToGrowElementTimings:(id)arg1;
 - (void)addToGrowElementTimings:(id)arg1 range:(const struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; }*)arg2;
 - (void)addToGrowElementTimings:(id)arg1 reserveForLabels:(BOOL)arg2;
-- (void)addToGrowElementTimings:(id)arg1;
 - (void)addToRadialElementBlendTimings:(id)arg1;
 - (void)addToRotateAnimClips:(id)arg1 scene:(id)arg2 secondaryAngle:(float)arg3;
 - (void)addToRotateTimings:(id)arg1;
 - (void)addToRotatingGrowElementTimings:(id)arg1;
 - (void)addToRotationBasedElementBlendTimings:(id)arg1;
-- (void)addToShadowBlendAnimClips:(id)arg1 sceneObject:(id)arg2;
 - (void)addToShadowBlendAnimClips:(id)arg1;
+- (void)addToShadowBlendAnimClips:(id)arg1 sceneObject:(id)arg2;
 - (void)addToShadowBlendTimings:(id)arg1;
 - (void)addToValueLabelsAnimClips:(id)arg1 sceneObject:(id)arg2;
-- (void)addToValueLabelsTimings:(id)arg1 range:(const struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; }*)arg2;
 - (void)addToValueLabelsTimings:(id)arg1;
+- (void)addToValueLabelsTimings:(id)arg1 range:(const struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; }*)arg2;
 - (void)addToZAxisElementBlendTimings:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustBodyCanvasBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 againstBodyCanvasDrawableFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)clearParent;

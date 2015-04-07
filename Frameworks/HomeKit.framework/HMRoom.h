@@ -4,7 +4,7 @@
 
 @class HMHome, HMMessageDispatcher, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
-@interface HMRoom : NSObject <NSSecureCoding, HMMessageReceiver> {
+@interface HMRoom : NSObject <HMMessageReceiver, NSSecureCoding> {
     HMHome *_home;
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;

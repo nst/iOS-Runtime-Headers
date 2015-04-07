@@ -4,10 +4,7 @@
 
 @class NSMapTable, NSMutableDictionary, NSMutableIndexSet, NSString, SKUIClientContext, SKUIGridComponent, SKUIMissingItemLoader, SKUIProductPageOverlayController, SKUIVideoImageDataConsumer;
 
-@interface SKUIGridPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIEmbeddedMediaViewDelegate, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface SKUIGridPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate, SKUIItemStateCenterObserver, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
     NSMapTable *_artworkRequests;
     SKUIClientContext *_clientContext;
     BOOL _containsLockups;
@@ -16,6 +13,9 @@
     BOOL _isLandscape;
     BOOL _isPad;
     NSMapTable *_lockupArtworkContexts;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _lockupImageBoundingSize;
     SKUIMissingItemLoader *_missingItemLoader;
     NSString *_moreButtonTitle;

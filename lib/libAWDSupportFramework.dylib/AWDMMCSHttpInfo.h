@@ -5,6 +5,11 @@
 @class NSMutableArray, NSString;
 
 @interface AWDMMCSHttpInfo : PBCodable <NSCopying> {
+    BOOL _cancelled;
+    BOOL _connectionReused;
+    long long _duration;
+    int _errorCode;
+    NSString *_errorDomain;
     struct { 
         unsigned int duration : 1; 
         unsigned int responseReceivedDuration : 1; 
@@ -18,11 +23,6 @@
         unsigned int connectionReused : 1; 
         unsigned int timedOut : 1; 
         unsigned int transactionComplete : 1; 
-    BOOL _cancelled;
-    BOOL _connectionReused;
-    long long _duration;
-    int _errorCode;
-    NSString *_errorDomain;
     } _has;
     NSMutableArray *_httpErrors;
     int _httpStatus;

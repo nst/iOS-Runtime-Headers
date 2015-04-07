@@ -6,11 +6,6 @@
 
 @interface MKTileOverlayTile : NSObject {
     struct { 
-        int x; 
-        int y; 
-        int z; 
-        float contentScaleFactor; 
-    struct { 
         struct { 
             double x; 
             double y; 
@@ -21,6 +16,11 @@
         } size; 
     } _frame;
     NSData *_image;
+    struct { 
+        int x; 
+        int y; 
+        int z; 
+        float contentScaleFactor; 
     } _path;
     float _scale;
 }

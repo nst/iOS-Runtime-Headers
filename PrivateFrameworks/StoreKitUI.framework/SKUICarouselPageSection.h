@@ -5,13 +5,13 @@
 @class NSArray, NSIndexPath, NSObject<OS_dispatch_source>, NSString, SKUICarouselPageComponent, SKUIMissingItemLoader, SKUIViewElementLayoutContext, UICollectionView;
 
 @interface SKUICarouselPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
     UICollectionView *_carouselCollectionView;
     int _cellCount;
     SKUIViewElementLayoutContext *_cellLayoutContext;
     NSObject<OS_dispatch_source> *_cycleTimer;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _itemSize;
     float _itemSpacing;
     SKUIMissingItemLoader *_missingItemLoader;

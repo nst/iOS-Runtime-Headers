@@ -4,7 +4,7 @@
 
 @class CKShareID, CKSharedItemID, NSArray, NSData, NSMapTable, NSMutableArray, NSMutableSet, NSString;
 
-@interface CKShare : NSObject <NSSecureCoding, NSCopying> {
+@interface CKShare : NSObject <NSCopying, NSSecureCoding> {
     NSMapTable *_addedParticipantsToOutgoingInvitationsTable;
     NSMutableArray *_existingParticipants;
     BOOL _isKnownToServer;
@@ -53,10 +53,10 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItem:(id)arg1 error:(id*)arg2;
-- (id)initWithItem:(id)arg1 shareName:(id)arg2 error:(id*)arg3;
-- (id)initWithItem:(id)arg1 shareName:(id)arg2;
 - (id)initWithItem:(id)arg1;
+- (id)initWithItem:(id)arg1 error:(id*)arg2;
+- (id)initWithItem:(id)arg1 shareName:(id)arg2;
+- (id)initWithItem:(id)arg1 shareName:(id)arg2 error:(id*)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKnownToServer;
 - (int)itemPermissionForParticipant:(id)arg1;

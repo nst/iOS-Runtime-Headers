@@ -5,13 +5,13 @@
 @class GEOAddress, GEOPDIndexQueryNode, GEOPDViewportInfo, NSData, NSMutableArray, NSString;
 
 @interface GEOPDSiriSearchParameters : PBCodable <NSCopying> {
+    GEOAddress *_address;
+    NSMutableArray *_businessCategoryFilters;
     struct { 
         unsigned int maxResultCount : 1; 
         unsigned int sortOrder : 1; 
         unsigned int isStrictMapRegion : 1; 
         unsigned int structuredSearch : 1; 
-    GEOAddress *_address;
-    NSMutableArray *_businessCategoryFilters;
     } _has;
     GEOPDIndexQueryNode *_indexFilter;
     BOOL _isStrictMapRegion;

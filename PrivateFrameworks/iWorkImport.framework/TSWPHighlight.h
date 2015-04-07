@@ -9,7 +9,7 @@
 
 @class <TSKModel>, NSDate, NSString, TSDCommentStorage, TSKAnnotationAuthor;
 
-@interface TSWPHighlight : TSPObject <TSDAnnotationHosting, TSPCopying, TSKDocumentObject, TSDCommentStorageDelegate> {
+@interface TSWPHighlight : TSPObject <TSDAnnotationHosting, TSDCommentStorageDelegate, TSKDocumentObject, TSPCopying> {
     TSDCommentStorage *_commentStorage;
     <TSKModel> *hostingModel;
 }

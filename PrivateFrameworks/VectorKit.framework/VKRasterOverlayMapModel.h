@@ -10,22 +10,22 @@
 @class NSMutableArray, NSString;
 
 @interface VKRasterOverlayMapModel : VKMapTileModel <VKMapLayer> {
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::Mesh, std::__1::default_delete<ggl::Mesh> > { 
-        struct __compressed_pair<ggl::Mesh *, std::__1::default_delete<ggl::Mesh> > { 
-            struct Mesh {} *__first_; 
-        } __ptr_; 
     struct unique_ptr<ggl::ClearItem, std::__1::default_delete<ggl::ClearItem> > { 
         struct __compressed_pair<ggl::ClearItem *, std::__1::default_delete<ggl::ClearItem> > { 
             struct ClearItem {} *__first_; 
         } __ptr_; 
     } _clearItem;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _gglRenderState;
     unsigned int _level;
     NSMutableArray *_sortedTiles;
+    struct unique_ptr<ggl::Mesh, std::__1::default_delete<ggl::Mesh> > { 
+        struct __compressed_pair<ggl::Mesh *, std::__1::default_delete<ggl::Mesh> > { 
+            struct Mesh {} *__first_; 
+        } __ptr_; 
     } _unitMesh;
 }
 

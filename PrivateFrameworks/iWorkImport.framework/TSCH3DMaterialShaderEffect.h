@@ -5,6 +5,8 @@
 @class TSCH3DShaderVariable, TSCH3DTexturePool, TSCH3DTexturesMaterial;
 
 @interface TSCH3DMaterialShaderEffect : TSCH3DShaderEffect {
+    TSCH3DTexturesMaterial *mMaterial;
+    TSCH3DTexturePool *mPool;
     struct MaterialShaderVariables { 
         TSCH3DShaderVariable *texture; 
         TSCH3DShaderVariable *intensity; 
@@ -14,8 +16,6 @@
         TSCH3DShaderVariable *modulation; 
         TSCH3DShaderVariable *texcoords; 
         TSCH3DShaderVariable *textureMatrix; 
-    TSCH3DTexturesMaterial *mMaterial;
-    TSCH3DTexturePool *mPool;
     } mVariables;
 }
 

@@ -10,7 +10,11 @@
 
 @interface BRCDownloadVersionOperation : BRCOperation <BRCOperationSubclass> {
     BRCDownloadContext *_context;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _downloadCompletionBlock;
+
     NSString *_etag;
     BOOL _isConflict;
     NSProgress *_progress;

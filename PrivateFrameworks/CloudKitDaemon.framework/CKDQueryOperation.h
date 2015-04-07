@@ -12,7 +12,11 @@
     CKQueryCursor *_cursor;
     NSSet *_desiredKeySet;
     CKQuery *_query;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordFetchedBlock;
+
     CKQueryCursor *_resultsCursor;
     unsigned int _resultsLimit;
     BOOL _shouldFetchAssetContent;

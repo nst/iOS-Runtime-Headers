@@ -22,8 +22,8 @@
 - (void)dealloc;
 - (id)initWithAddress:(id)arg1 wifi:(BOOL)arg2;
 - (double)longTimeInterval;
-- (id)pingStats:(double)arg1;
 - (id)pingStats;
+- (id)pingStats:(double)arg1;
 - (double)secondsToRun;
 - (void)startWithTimeout:(double)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (void)stop;

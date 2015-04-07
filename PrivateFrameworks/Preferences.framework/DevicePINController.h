@@ -69,8 +69,8 @@
 - (void)setLastEntry:(id)arg1;
 - (void)setMode:(int)arg1;
 - (void)setOldPassword:(id)arg1;
-- (void)setPIN:(id)arg1 completion:(id)arg2;
 - (void)setPIN:(id)arg1;
+- (void)setPIN:(id)arg1 completion:(id)arg2;
 - (void)setPane:(id)arg1;
 - (void)setPinDelegate:(id)arg1;
 - (void)setSpecifier:(id)arg1;

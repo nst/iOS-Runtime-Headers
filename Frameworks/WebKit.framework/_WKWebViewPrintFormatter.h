@@ -5,11 +5,11 @@
 @class WKWebView, _WKFrameHandle;
 
 @interface _WKWebViewPrintFormatter : UIViewPrintFormatter {
+    _WKFrameHandle *_frameToPrint;
     struct PrintInfo { 
         float pageSetupScaleFactor; 
         float availablePaperWidth; 
         float availablePaperHeight; 
-    _WKFrameHandle *_frameToPrint;
     } _printInfo;
     double _totalScaleFactor;
 }

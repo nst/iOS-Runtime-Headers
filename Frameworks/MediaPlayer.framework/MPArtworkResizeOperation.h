@@ -5,14 +5,14 @@
 @class NSError, NSObject<OS_dispatch_group>, NSURL, UIImage;
 
 @interface MPArtworkResizeOperation : NSOperation {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSURL *_destinationURL;
     NSError *_error;
     UIImage *_image;
     NSObject<OS_dispatch_group> *_operationGroup;
     UIImage *_resizedImage;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _scaledFittingSize;
     BOOL _usesExactFittingSizeAsDestinationSize;
 }
@@ -30,9 +30,9 @@
 - (id)destinationURL;
 - (id)error;
 - (id)image;
+- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2 destinationURL:(id)arg3;
 - (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2 useExactFittingSizeAsDestinationSize:(BOOL)arg3 destinationURL:(id)arg4;
-- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)main;
 - (id)operationGroup;
 - (id)resizedImage;

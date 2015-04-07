@@ -9,7 +9,11 @@
 @class NSArray, NSMutableArray, NSString, NSThread;
 
 @interface AXEventProcessor : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _HIDEventHandler;
+
     NSThread *_HIDEventReceiveThread;
     NSString *_HIDEventTapIdentifier;
     int _HIDEventTapPriority;
@@ -21,7 +25,11 @@
     BOOL _shouldNotifyUserEventOccurred;
     BOOL _shouldRunHIDReceiveThreadRunloop;
     NSMutableArray *_systemActualEventTapEnabledReasons;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _systemEventHandler;
+
     NSString *_systemEventTapIdentifier;
     int _systemEventTapPriority;
 }

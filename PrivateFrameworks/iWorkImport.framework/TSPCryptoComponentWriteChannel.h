@@ -5,9 +5,9 @@
 @class <TSPComponentWriteChannel>, NSString;
 
 @interface TSPCryptoComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
+    char *_buffer;
     struct { 
         unsigned int ctx[96]; 
-    char *_buffer;
     } _ccHmacContext;
     struct _CCCryptor { } *_cryptor;
     <TSPComponentWriteChannel> *_writeChannel;

@@ -14,7 +14,11 @@
     BOOL _iTunesStoreRequest;
     NSURL *_keyServerURL;
     AVAssetResourceLoadingRequest *_resourceLoadingRequest;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _responseBlock;
+
 }
 
 @property(getter=isITunesStoreRequest) BOOL ITunesStoreRequest;

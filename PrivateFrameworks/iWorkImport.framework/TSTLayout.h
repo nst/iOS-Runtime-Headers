@@ -5,24 +5,7 @@
 @class NSMutableDictionary, NSString, TSTEditingState, TSTLayoutHint, TSTLayoutSpaceBundle, TSTMasterLayout, TSTTableInfo, TSTTableModel, TSWPLayout, TSWPPadding;
 
 @interface TSTLayout : TSWPTextHostLayout <TSKSearchTarget, TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    NSMutableDictionary *mAttachmentCellLayouts;
     struct { 
         float tableNameHeight; 
         struct CGSize { 
@@ -33,20 +16,14 @@
             float width; 
             float height; 
         } scaleToFitEnclosingTextColumn; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    } mCached;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
+    } mCachedPaddingForEditingCell;
+    int mCachedVerticalAlignmentForEditingCell;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -56,66 +33,89 @@
             float width; 
             float height; 
         } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    NSMutableDictionary *mAttachmentCellLayouts;
-    } mCached;
-    } mCachedPaddingForEditingCell;
-    int mCachedVerticalAlignmentForEditingCell;
     } mCanvasVisibleRect;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mCapturedStrokeFrameSizeForInline;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mComputedEditingCellContentFrame;
     TSWPLayout *mContainedTextEditingLayout;
     int mContainedTextEditorParagraphAlignment;
     BOOL mContainedTextEditorSpills;
     BOOL mContainedTextEditorTextWraps;
     int mCoordinatesChangedMaskForChrome;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } mEditingSpillingTextRange;
     BOOL mLayoutDirectionIsLeftToRight;
     TSTLayoutHint *mLayoutHint;
     TSTMasterLayout *mMasterLayout;
     BOOL mNewCanvasRevealedHorizontally;
     BOOL mNewCanvasRevealedVertically;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } mPrevEditingSpillingTextRange;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mPreviousVisibleStrokeFrame;
     BOOL mProcessChangesFiltering;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mRenderingFrameForLayoutGeometryFromInfo;
     BOOL mShouldUpdateAttachmentChildren;
     TSTLayoutSpaceBundle *mSpaceBundle;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mSpillingTextSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mStrokeDelta;
     BOOL mTableNameVisibilityIsValid;
     BOOL mTableNameVisible;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mTableSizeWithoutStrokes;
     BOOL mTabsVisible;
 }
@@ -179,8 +179,8 @@
 - (BOOL)inFindReplaceMode;
 - (BOOL)inPrintPreviewMode;
 - (struct CGPoint { float x1; float x2; })infoGeometryPositionForCurrentAttachedLayoutGeometry;
-- (id)initWithInfo:(id)arg1 layoutHint:(id)arg2;
 - (id)initWithInfo:(id)arg1;
+- (id)initWithInfo:(id)arg1 layoutHint:(id)arg2;
 - (id)initialInfoGeometry;
 - (struct CGSize { float x1; float x2; })initialTextSize;
 - (void)invalidate;

@@ -5,16 +5,6 @@
 @class NSMutableDictionary, NSString;
 
 @interface AVRecorderAudioQueueImpl : NSObject <AVRecorderImpl> {
-    struct AudioStreamBasicDescription { 
-        double mSampleRate; 
-        unsigned int mFormatID; 
-        unsigned int mFormatFlags; 
-        unsigned int mBytesPerPacket; 
-        unsigned int mFramesPerPacket; 
-        unsigned int mBytesPerFrame; 
-        unsigned int mChannelsPerFrame; 
-        unsigned int mBitsPerChannel; 
-        unsigned int mReserved; 
     NSMutableDictionary *_attributes;
     unsigned long _audioCodec;
     struct OpaqueAudioFileID { } *_audioFile;
@@ -30,6 +20,16 @@
     BOOL _isWriting;
     long long _maxPCMFramesToRecord;
     unsigned long _numDeviceChannels;
+    struct AudioStreamBasicDescription { 
+        double mSampleRate; 
+        unsigned int mFormatID; 
+        unsigned int mFormatFlags; 
+        unsigned int mBytesPerPacket; 
+        unsigned int mFramesPerPacket; 
+        unsigned int mBytesPerFrame; 
+        unsigned int mChannelsPerFrame; 
+        unsigned int mBitsPerChannel; 
+        unsigned int mReserved; 
     } _recordingFormat;
     unsigned long _totalBytesRecorded;
     unsigned long _totalFramesRecorded;
@@ -44,8 +44,8 @@
 - (BOOL)activate:(id*)arg1;
 - (id)attributeForKey:(id)arg1;
 - (BOOL)audioCurrentAverageDecibelLevels:(float*)arg1 andPeakDecibelLevels:(float*)arg2;
-- (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2 useDB:(BOOL)arg3;
 - (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
+- (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2 useDB:(BOOL)arg3;
 - (unsigned int)audioNumDeviceChannels;
 - (BOOL)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)copyEncoderCookieToFile;

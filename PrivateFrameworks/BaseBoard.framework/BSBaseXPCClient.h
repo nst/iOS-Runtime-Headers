@@ -22,14 +22,14 @@
 - (id)_errorFromMessageIfAny:(id)arg1;
 - (id)_getStringFromMessage:(id)arg1 key:(char *)arg2;
 - (id)_notifyTokenName;
-- (void)_sendMessage:(id)arg1 withReplyHandler:(id)arg2 waitForReply:(BOOL)arg3 waitDuration:(unsigned long long)arg4;
 - (void)_sendMessage:(id)arg1;
+- (void)_sendMessage:(id)arg1 withReplyHandler:(id)arg2 waitForReply:(BOOL)arg3 waitDuration:(unsigned long long)arg4;
 - (void)_sendReply:(id)arg1 messagePacker:(id)arg2;
 - (void)_setEndpoint:(id)arg1;
 - (void)dealloc;
 - (id)initWithEndpoint:(id)arg1;
-- (id)initWithServiceName:(id)arg1 endpoint:(id)arg2;
 - (id)initWithServiceName:(id)arg1;
+- (id)initWithServiceName:(id)arg1 endpoint:(id)arg2;
 - (void)invalidate;
 - (BOOL)isSuspended;
 - (id)queue_connection;

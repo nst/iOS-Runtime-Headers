@@ -23,8 +23,8 @@
 - (id)error;
 - (id)initWithMediaItem:(id)arg1;
 - (id)mediaItem;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (id)request;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
 - (void)resolveError:(id)arg1;
 - (void)setError:(id)arg1;

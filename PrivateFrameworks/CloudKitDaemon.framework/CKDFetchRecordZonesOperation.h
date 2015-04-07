@@ -11,7 +11,11 @@
 @interface CKDFetchRecordZonesOperation : CKDDatabaseOperation {
     BOOL _ignorePCSFailures;
     BOOL _isFetchAllRecordZonesOperation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordZoneFetchedProgressBlock;
+
     NSArray *_recordZoneIDs;
 }
 

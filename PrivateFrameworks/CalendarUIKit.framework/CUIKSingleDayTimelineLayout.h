@@ -5,6 +5,12 @@
 @class <CUIKSingleDayTimelineGeometryDelegate>, <CUIKSingleDayTimelineLayoutScreenUtils>, <CUIKSingleDayTimelineViewItem>, NSArray, NSCalendar, NSDate, NSMutableArray;
 
 @interface CUIKSingleDayTimelineLayout : NSObject {
+    NSCalendar *_calendar;
+    NSMutableArray *_collidingOccurrences;
+    <CUIKSingleDayTimelineViewItem> *_currentOccurrence;
+    unsigned int _currentOccurrenceIndex;
+    NSDate *_endOfDay;
+    double _endOfDayAbsoluteTime;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,12 +20,6 @@
             float width; 
             float height; 
         } size; 
-    NSCalendar *_calendar;
-    NSMutableArray *_collidingOccurrences;
-    <CUIKSingleDayTimelineViewItem> *_currentOccurrence;
-    unsigned int _currentOccurrenceIndex;
-    NSDate *_endOfDay;
-    double _endOfDayAbsoluteTime;
     } _frame;
     <CUIKSingleDayTimelineGeometryDelegate> *_geometryDelegate;
     NSMutableArray *_occurrenceBuckets;

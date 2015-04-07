@@ -4,7 +4,11 @@
 
 @class NSString, SKTexture;
 
-@interface SKUniform : NSObject <NSCopying, NSCoding> {
+@interface SKUniform : NSObject <NSCoding, NSCopying> {
+    NSString *_name;
+    unsigned int _seed;
+    SKTexture *_textureValue;
+    int _type;
     union { 
         float _floatValue; 
         union _GLKVector2 { 
@@ -102,10 +106,6 @@
             } ; 
             float m[16]; 
         } _floatMatrix4Value; 
-    NSString *_name;
-    unsigned int _seed;
-    SKTexture *_textureValue;
-    int _type;
     } _value;
 }
 
@@ -121,6 +121,7 @@
 @property(retain) SKTexture * textureValue;
 @property(readonly) int uniformType;
 
++ (id)uniformWithName:(id)arg1;
 + (id)uniformWithName:(id)arg1 float:(float)arg2;
 + (id)uniformWithName:(id)arg1 floatMatrix2:(union _GLKMatrix2 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; float x2[2][2]; float x3[4]; })arg2;
 + (id)uniformWithName:(id)arg1 floatMatrix3:(union _GLKMatrix3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })arg2;
@@ -129,7 +130,6 @@
 + (id)uniformWithName:(id)arg1 floatVector3:(union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })arg2;
 + (id)uniformWithName:(id)arg1 floatVector4:(union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })arg2;
 + (id)uniformWithName:(id)arg1 texture:(id)arg2;
-+ (id)uniformWithName:(id)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -145,6 +145,7 @@
 - (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })floatVector3Value;
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })floatVector4Value;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 float:(float)arg2;
 - (id)initWithName:(id)arg1 floatMatrix2:(union _GLKMatrix2 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; float x2[2][2]; float x3[4]; })arg2;
 - (id)initWithName:(id)arg1 floatMatrix3:(union _GLKMatrix3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })arg2;
@@ -153,7 +154,6 @@
 - (id)initWithName:(id)arg1 floatVector3:(union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })arg2;
 - (id)initWithName:(id)arg1 floatVector4:(union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })arg2;
 - (id)initWithName:(id)arg1 texture:(id)arg2;
-- (id)initWithName:(id)arg1;
 - (id)name;
 - (void)setFloatMatrix2Value:(union _GLKMatrix2 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; float x2[2][2]; float x3[4]; })arg1;
 - (void)setFloatMatrix3Value:(union _GLKMatrix3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })arg1;

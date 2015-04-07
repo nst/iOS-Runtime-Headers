@@ -5,16 +5,16 @@
 @class <SKUIStorePageSectionsDelegate>, NSArray, NSIndexPath, NSMapTable, NSMutableArray, NSMutableIndexSet, NSString, NSValue, SKUICollectionView, SKUIColorScheme, SKUIIndexBarControl, SKUILayoutCache, SKUIMetricsController, SKUIMetricsImpressionSession, SKUIProductPageOverlayController, SKUIResourceLoader, SKUIStackedBar, SKUIStorePageSplitsDescription, UICollectionView, UITapGestureRecognizer, UIView;
 
 @interface SKUIStorePageSectionsViewController : SKUIViewController <SKUIItemStateCenterObserver, SKUILayoutCacheDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUIViewControllerTesting, UICollectionViewDataSource, UIGestureRecognizerDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
     SKUIProductPageOverlayController *_activeOverlayController;
     SKUICollectionView *_collectionView;
     UITapGestureRecognizer *_collectionViewTapGestureRecognizer;
     SKUIColorScheme *_colorScheme;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInsetAdjustments;
     id _deferredSplitsDescription;
     <SKUIStorePageSectionsDelegate> *_delegate;
@@ -103,6 +103,7 @@
 - (id)_visibleMetricsImpressionsString;
 - (id)activeMetricsImpressionSession;
 - (void)artworkLoaderDidIdle:(id)arg1;
+- (id)collectionView;
 - (BOOL)collectionView:(id)arg1 canScrollCellAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didConfirmButtonElement:(id)arg2 forItemAtIndexPath:(id)arg3;
@@ -123,7 +124,6 @@
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willBeginEditingItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
-- (id)collectionView;
 - (id)colorScheme;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;

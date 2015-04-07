@@ -8,9 +8,11 @@
 
 @class <NSObject>, NSArray, NSMutableArray, PKPhysicsWorld, SKNode;
 
-@interface PKPhysicsBody : NSObject <NSCopying, NSCoding> {
+@interface PKPhysicsBody : NSObject <NSCoding, NSCopying> {
+    BOOL _allowsRotation;
+    struct b2Body { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; } *_body;
     struct b2BodyDef { 
-        bool_sk_affectedByGravity; 
+        bool _sk_affectedByGravity; 
         unsigned int _sk_fieldCategoryBitMask; 
         unsigned int _sk_categoryBitMask; 
         unsigned int _sk_collisionBitMask; 
@@ -29,38 +31,12 @@
         float charge; 
         float linearDamping; 
         float angularDamping; 
-        boolallowSleep; 
-        boolawake; 
-        boolfixedRotation; 
-        boolbullet; 
-        boolactive; 
+        bool allowSleep; 
+        bool awake; 
+        bool fixedRotation; 
+        bool bullet; 
+        bool active; 
         void *userData; 
-    struct vector<PKPhysicsShape *, std::__1::allocator<PKPhysicsShape *> > { 
-        struct PKPhysicsShape {} **__begin_; 
-        struct PKPhysicsShape {} **__end_; 
-        struct __compressed_pair<PKPhysicsShape **, std::__1::allocator<PKPhysicsShape *> > { 
-            struct PKPhysicsShape {} **__first_; 
-        } __end_cap_; 
-    struct shared_ptr<PKPath> { 
-        struct PKPath {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<QuadTree> { 
-        struct QuadTree {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct shared_ptr<PKPath> { 
-        struct PKPath {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    BOOL _allowsRotation;
-    struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; } *_body;
     } _bodyDef;
     int _dynamicType;
     float _edgeRadius;
@@ -69,23 +45,51 @@
     BOOL _isPinned;
     NSMutableArray *_joints;
     struct CGImage { } *_mask;
+    struct shared_ptr<PKPath> { 
+        struct PKPath {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _outline;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _p0;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _p1;
+    struct shared_ptr<PKPath> { 
+        struct PKPath {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _pathPtr;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _postStepBlock;
+
+    struct shared_ptr<QuadTree> { 
+        struct QuadTree {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _quadTree;
     float _radius;
     <NSObject> *_representedObject;
     int _shapeType;
+    struct vector<PKPhysicsShape *, std::__1::allocator<PKPhysicsShape *> > { 
+        struct PKPhysicsShape {} **__begin_; 
+        struct PKPhysicsShape {} **__end_; 
+        struct __compressed_pair<PKPhysicsShape **, std::__1::allocator<PKPhysicsShape *> > { 
+            struct PKPhysicsShape {} **__first_; 
+        } __end_cap_; 
     } _shapes;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     PKPhysicsWorld *_world;
 }
 
+@property struct b2Body { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; }* _body;
+@property struct b2BodyDef { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; struct b2Vec2 { float x_7_1_1; float x_7_1_2; } x7; float x8; struct b2Vec2 { float x_9_1_1; float x_9_1_2; } x9; float x10; float x11; float x12; float x13; bool x14; bool x15; bool x16; bool x17; bool x18; void *x19; } _bodyDef;
 @property(readonly) struct * _shapes; /* unknown property attribute:  std::__1::allocator<PKPhysicsShape *> >=^^{PKPhysicsShape}}} */
-@property struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; }* _body;
-@property struct b2BodyDef { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; struct b2Vec2 { float x_7_1_1; float x_7_1_2; } x7; float x8; struct b2Vec2 { float x_9_1_1; float x_9_1_2; } x9; float x10; float x11; float x12; float x13; boolx14; boolx15; boolx16; boolx17; boolx18; void *x19; } _bodyDef;
 @property BOOL affectedByGravity;
 @property BOOL allowsRotation;
 @property float angularDamping;
@@ -116,25 +120,25 @@
 @property struct CGVector { float x1; float x2; } velocity;
 
 + (id)bodyWithBodies:(id)arg1;
-+ (id)bodyWithCircleOfRadius:(float)arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithCircleOfRadius:(float)arg1;
++ (id)bodyWithCircleOfRadius:(float)arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithEdgeChainFromPath:(struct CGPath { }*)arg1;
 + (id)bodyWithEdgeFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithEdgeLoopFromPath:(struct CGPath { }*)arg1;
 + (id)bodyWithOutline:(struct shared_ptr<PKPath> { struct PKPath {} *x1; struct __shared_weak_count {} *x2; })arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithPolygonFromPath:(struct CGPath { }*)arg1;
-+ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2 edgeRadius:(float)arg3;
-+ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
-+ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 edgeRadius:(float)arg2;
 + (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
++ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2 edgeRadius:(float)arg3;
++ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 edgeRadius:(float)arg2;
 + (id)initWithMarchingCubes:(struct PKCGrid { int x1; int x2; int x3; struct Range { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; struct vector<unsigned char, std::__1::allocator<unsigned char> > { char *x_5_1_1; char *x_5_1_2; struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { char *x_3_2_1; } x_5_1_3; } x5; struct vector<float __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^ {} x6; }*)arg1 pixelFrame:(void)arg2;
 + (id)initWithQuadTree:(id)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_allowSleep;
-- (struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; }*)_body;
-- (struct b2BodyDef { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; struct b2Vec2 { float x_7_1_1; float x_7_1_2; } x7; float x8; struct b2Vec2 { float x_9_1_1; float x_9_1_2; } x9; float x10; float x11; float x12; float x13; boolx14; boolx15; boolx16; boolx17; boolx18; void *x19; })_bodyDef;
+- (struct b2Body { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; }*)_body;
+- (struct b2BodyDef { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; struct b2Vec2 { float x_7_1_1; float x_7_1_2; } x7; float x8; struct b2Vec2 { float x_9_1_1; float x_9_1_2; } x9; float x10; float x11; float x12; float x13; bool x14; bool x15; bool x16; bool x17; bool x18; void *x19; })_bodyDef;
 - (id)_descriptionClassName;
 - (id)_descriptionClassName;
 - (id)_descriptionFormat;
@@ -150,15 +154,15 @@
 - (float)angularDamping;
 - (float)angularVelocity;
 - (void)applyAngularImpulse:(float)arg1;
-- (void)applyForce:(struct CGPoint { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)applyForce:(struct CGPoint { float x1; float x2; })arg1;
-- (void)applyImpulse:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)applyForce:(struct CGPoint { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)applyImpulse:(struct CGVector { float x1; float x2; })arg1;
+- (void)applyImpulse:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)applyTorque:(float)arg1;
-- (void)applyUnscaledForce:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)applyUnscaledForce:(struct CGVector { float x1; float x2; })arg1;
-- (void)applyUnscaledImpulse:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)applyUnscaledForce:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)applyUnscaledImpulse:(struct CGVector { float x1; float x2; })arg1;
+- (void)applyUnscaledImpulse:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (float)area;
 - (unsigned int)categoryBitMask;
 - (float)charge;
@@ -174,16 +178,16 @@
 - (float)friction;
 - (id)init;
 - (id)initWithBodies:(id)arg1;
-- (id)initWithCircleOfRadius:(float)arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 - (id)initWithCircleOfRadius:(float)arg1;
+- (id)initWithCircleOfRadius:(float)arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEdgeChainFromPath:(struct CGPath { }*)arg1;
 - (id)initWithEdgeFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (id)initWithEdgeLoopFromPath:(struct CGPath { }*)arg1;
 - (id)initWithPolygonFromPath:(struct CGPath { }*)arg1;
-- (id)initWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2 edgeRadius:(float)arg3;
-- (id)initWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 - (id)initWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
+- (id)initWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2 edgeRadius:(float)arg3;
 - (BOOL)isDynamic;
 - (BOOL)isResting;
 - (id)joints;
@@ -226,8 +230,8 @@
 - (void)setUsesPreciseCollisionDetection:(BOOL)arg1;
 - (void)setVelocity:(struct CGVector { float x1; float x2; })arg1;
 - (void)set_allowSleep:(BOOL)arg1;
-- (void)set_body:(struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; }*)arg1;
-- (void)set_bodyDef:(struct b2BodyDef { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; struct b2Vec2 { float x_7_1_1; float x_7_1_2; } x7; float x8; struct b2Vec2 { float x_9_1_1; float x_9_1_2; } x9; float x10; float x11; float x12; float x13; boolx14; boolx15; boolx16; boolx17; boolx18; void *x19; })arg1;
+- (void)set_body:(struct b2Body { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; }*)arg1;
+- (void)set_bodyDef:(struct b2BodyDef { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; struct b2Vec2 { float x_7_1_1; float x_7_1_2; } x7; float x8; struct b2Vec2 { float x_9_1_1; float x_9_1_2; } x9; float x10; float x11; float x12; float x13; bool x14; bool x15; bool x16; bool x17; bool x18; void *x19; })arg1;
 - (void)set_inUse:(BOOL)arg1;
 - (void)set_joints:(id)arg1;
 - (void)set_world:(id)arg1;

@@ -5,22 +5,6 @@
 @class NSAttributedString, PUFeedTextCellContentView, UIButton, UIImage, UIImageView, UILabel;
 
 @interface PUFeedTextCell : PUFeedCell {
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     UIButton *__button;
     UILabel *__detailLabel;
     UIImageView *__iconImageView;
@@ -28,15 +12,31 @@
     NSAttributedString *_attributedDetailText;
     NSAttributedString *_attributedText;
     int _buttonHorizontalAlignment;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _buttonOffset;
     float _buttonPadding;
     int _buttonSize;
     int _buttonType;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInsets;
     PUFeedTextCellContentView *_contentView;
     UIImage *_iconImage;
     int _iconLocation;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _iconOffset;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _iconPadding;
     int _numberOfDetailTextLines;
     int _numberOfTextLines;
@@ -111,8 +111,8 @@
 - (void)setButtonOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setButtonPadding:(float)arg1;
 - (void)setButtonSize:(int)arg1;
-- (void)setButtonType:(int)arg1 animated:(BOOL)arg2;
 - (void)setButtonType:(int)arg1;
+- (void)setButtonType:(int)arg1 animated:(BOOL)arg2;
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setIconLocation:(int)arg1;

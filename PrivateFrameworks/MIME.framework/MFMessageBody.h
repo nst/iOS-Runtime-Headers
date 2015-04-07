@@ -10,8 +10,8 @@
 
 - (id)attachmentURLs;
 - (id)attachments;
-- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3;
+- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
 - (void)dealloc;
 - (id)htmlContent;
 - (id)htmlContentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;

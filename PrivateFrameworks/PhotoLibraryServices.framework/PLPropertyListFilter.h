@@ -8,8 +8,8 @@
 + (id)_filterArray:(id)arg1 block:(id)arg2;
 + (id)_filterDictionary:(id)arg1 block:(id)arg2;
 + (BOOL)canEncodeInPropertyList:(id)arg1;
-+ (id)filterPropertyList:(id)arg1 block:(id)arg2;
 + (id)filterPropertyList:(id)arg1;
++ (id)filterPropertyList:(id)arg1 block:(id)arg2;
 + (id)filterPropertyListNoData:(id)arg1;
 
 @end

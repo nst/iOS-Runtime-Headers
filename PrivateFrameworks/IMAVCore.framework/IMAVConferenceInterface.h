@@ -20,8 +20,8 @@
 + (BOOL)_useMultipleAVConference;
 
 - (void)_avChatDealloc:(id)arg1;
-- (id)_avChatForConference:(id)arg1 callID:(int)arg2 errorString:(id)arg3;
 - (id)_avChatForConference:(id)arg1;
+- (id)_avChatForConference:(id)arg1 callID:(int)arg2 errorString:(id)arg3;
 - (void)_cleanupAVInterface;
 - (void)_conferenceEnded:(id)arg1;
 - (id)_conferenceForAVChat:(id)arg1;
@@ -52,8 +52,8 @@
 - (void)conference:(id)arg1 cancelRelayRequest:(int)arg2 requestDict:(id)arg3;
 - (void)conference:(id)arg1 didChangeLocalVariablesForCallID:(int)arg2;
 - (void)conference:(id)arg1 didStartSession:(BOOL)arg2 withUserInfo:(id)arg3;
-- (void)conference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3 callMetadata:(id)arg4;
 - (void)conference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3;
+- (void)conference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3 callMetadata:(id)arg4;
 - (void)conference:(id)arg1 inititiateRelayRequest:(int)arg2 requestDict:(id)arg3;
 - (void)conference:(id)arg1 localIPChange:(id)arg2 withCallID:(int)arg3;
 - (void)conference:(id)arg1 receivedFirstRemoteFrameForCallID:(int)arg2;

@@ -4,7 +4,7 @@
 
 @class NSString, PUGridZoomLevelInfo;
 
-@interface PUFullMomentsZoomLevelInfo : PUGridZoomLevelInfo <PUSectionedGridLayoutDelegate, PUPhotosSectionHeaderViewDelegate> {
+@interface PUFullMomentsZoomLevelInfo : PUGridZoomLevelInfo <PUPhotosSectionHeaderViewDelegate, PUSectionedGridLayoutDelegate> {
     PUGridZoomLevelInfo *_transitionOtherLevelInfo;
 }
 

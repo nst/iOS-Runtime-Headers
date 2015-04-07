@@ -30,10 +30,10 @@
 - (unsigned int)length;
 - (id)lowercaseString;
 - (void)replaceString:(struct __CFString { }*)arg1;
-- (void)setAttribute:(id)arg1 forKey:(id)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
-- (void)setAttributes:(id)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)setAttribute:(id)arg1 forKey:(id)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)setAttributes:(id)arg1;
+- (void)setAttributes:(id)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)string;
 - (id)substringFromIndex:(unsigned int)arg1;
 - (id)uppercaseString;

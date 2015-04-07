@@ -9,17 +9,15 @@
 @class NSOperation, NSOperationQueue;
 
 @interface __NSOperationInternal : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
     int __RC;
     id __activity;
     unsigned char __cached_isReady;
     id __children;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __completion;
+
     id __dependencies;
     id __down_dependencies;
     void *__implicitObsInfo;
@@ -42,7 +40,13 @@
     int __state;
     double __thread_prio;
     long long __unfinished_deps;
+    struct _opaque_pthread_cond_t { 
+        long __sig; 
+        BOOL __opaque[24]; 
     } __wait_cond;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } __wait_mutex;
 }
 

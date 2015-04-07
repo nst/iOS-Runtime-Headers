@@ -5,10 +5,10 @@
 @class <TSWPStatisticsControlling>, NSMutableArray, NSString, TSWPStorage, TSWPTextStatistics;
 
 @interface TSWPTextStatisticsTracker : NSObject <TSWPStorageObserver, TSWPTextStatisticsTracking> {
+    int _modifiedDelta;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    int _modifiedDelta;
     } _modifiedRange;
     NSMutableArray *_paragraphStatistics;
     <TSWPStatisticsControlling> *_statisticsController;

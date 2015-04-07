@@ -5,11 +5,11 @@
 @class NSMutableArray, PLNSTimerOperatorComposition;
 
 @interface PLAggregateDictionaryService : PLService {
+    PLNSTimerOperatorComposition *_dailyTaskTimer;
     struct AggState { 
         int state; 
         double level; 
         double timestamp; 
-    PLNSTimerOperatorComposition *_dailyTaskTimer;
     } _last_state;
     NSMutableArray *_registeredNotifications;
 }

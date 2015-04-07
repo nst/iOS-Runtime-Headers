@@ -35,8 +35,8 @@
 - (void)medicalIDEditorCellDidChangeValue:(id)arg1;
 - (void)medicalIDEditorCellDidTapLabel:(id)arg1;
 - (int)numberOfRows;
-- (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2;
+- (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)shouldHighlightRowAtIndex:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndex:(int)arg2;

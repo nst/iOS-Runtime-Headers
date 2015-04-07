@@ -14,8 +14,8 @@
 - (void).cxx_destruct;
 - (id)_descriptionWithProperties:(id)arg1;
 - (id)_identifier;
-- (id)_initWithOriginatingAceID:(id)arg1 identifier:(id)arg2;
 - (id)_initWithOriginatingAceID:(id)arg1;
+- (id)_initWithOriginatingAceID:(id)arg1 identifier:(id)arg2;
 - (BOOL)_makeAppFrontmost;
 - (id)_originatingAceID;
 - (id)description;

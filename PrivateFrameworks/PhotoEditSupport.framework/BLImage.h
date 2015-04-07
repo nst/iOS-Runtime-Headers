@@ -5,15 +5,15 @@
 @class CIImage, UIImage;
 
 @interface BLImage : NSObject <NSCopying> {
-    struct CGSize { 
-        float width; 
-        float height; 
     struct CGImage { } *_CGImage;
     CIImage *_CIImage;
     UIImage *_UIImage;
     int _askedImageType;
     BOOL _isPlaceholder;
     int _obtainedImageType;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     int _storageType;
 }

@@ -5,10 +5,10 @@
 @class RadioFairPlaySAPContext;
 
 @interface RadioFairPlaySAPExchanger : NSObject {
+    RadioFairPlaySAPContext *_SAPContext;
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
         unsigned char ID[20]; 
-    RadioFairPlaySAPContext *_SAPContext;
     } _hardwareInfo;
     struct FPSAPContextOpaque_ { } *_session;
 }

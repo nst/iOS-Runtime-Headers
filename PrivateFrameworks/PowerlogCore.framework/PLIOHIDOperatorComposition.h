@@ -11,7 +11,11 @@
 @interface PLIOHIDOperatorComposition : NSObject {
     struct __IOHIDEventSystemClient { } *_eventSystemClient;
     PLOperator *_operator;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _operatorBlock;
+
     NSArray *_serviceClients;
     NSString *_serviceName;
 }
@@ -27,8 +31,8 @@
 - (id)dictionaryForKey:(id)arg1;
 - (double)doubleForKey:(id)arg1;
 - (struct __IOHIDEventSystemClient { }*)eventSystemClient;
-- (id)initWithOperator:(id)arg1 forService:(id)arg2 withBlock:(id)arg3;
 - (id)initWithOperator:(id)arg1 forService:(id)arg2;
+- (id)initWithOperator:(id)arg1 forService:(id)arg2 withBlock:(id)arg3;
 - (id)operator;
 - (id)operatorBlock;
 - (id)serviceClients;

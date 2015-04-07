@@ -5,9 +5,9 @@
 @class CHDFormula, EDResources, OADGraphicProperties;
 
 @interface CHDTrendlineLabel : NSObject {
-    boolmAutomaticLabelDeleted;
-    boolmGeneratedText;
+    bool mAutomaticLabelDeleted;
     unsigned int mContentFormatId;
+    bool mGeneratedText;
     OADGraphicProperties *mGraphicProperties;
     unsigned int mLastCachedNameStringIndex;
     CHDFormula *mName;

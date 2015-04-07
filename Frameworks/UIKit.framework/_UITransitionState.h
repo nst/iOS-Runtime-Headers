@@ -10,7 +10,11 @@
 
 @interface _UITransitionState : NSObject {
     NSDate *_beginDate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     int _transitionDirection;
 }
 

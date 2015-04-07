@@ -11,8 +11,16 @@
 @interface UIKeyboardLayout : UIView <_UIScreenEdgePanRecognizerDelegate> {
     UITouch *_activeTouch;
     int _cursorLocation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deferredTouchDownTask;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deferredTouchMovedTask;
+
     BOOL _disableInteraction;
     UITextInputTraits *_inputTraits;
     BOOL _isExecutingDeferredTouchTasks;
@@ -67,8 +75,8 @@
 - (void)changeToKeyplane:(id)arg1;
 - (void)clearShiftIfNecessaryForEndedTouch:(id)arg1;
 - (void)clearUnusedObjects:(BOOL)arg1;
-- (void)commitTouches:(id)arg1 executionContext:(id)arg2;
 - (void)commitTouches:(id)arg1;
+- (void)commitTouches:(id)arg1 executionContext:(id)arg2;
 - (id)currentKeyplane;
 - (int)cursorLocation;
 - (void)deactivateActiveKeys;
@@ -144,14 +152,14 @@
 - (unsigned int)targetEdgesForScreenGestureRecognition;
 - (id)taskQueue;
 - (unsigned int)textEditingKeyMask;
-- (void)touchCancelled:(id)arg1 executionContext:(id)arg2;
 - (void)touchCancelled:(id)arg1;
-- (void)touchDown:(id)arg1 executionContext:(id)arg2;
+- (void)touchCancelled:(id)arg1 executionContext:(id)arg2;
 - (void)touchDown:(id)arg1;
-- (void)touchDragged:(id)arg1 executionContext:(id)arg2;
+- (void)touchDown:(id)arg1 executionContext:(id)arg2;
 - (void)touchDragged:(id)arg1;
-- (void)touchUp:(id)arg1 executionContext:(id)arg2;
+- (void)touchDragged:(id)arg1 executionContext:(id)arg2;
 - (void)touchUp:(id)arg1;
+- (void)touchUp:(id)arg1 executionContext:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

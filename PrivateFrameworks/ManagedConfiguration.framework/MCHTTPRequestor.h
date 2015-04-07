@@ -10,7 +10,11 @@
 
 @interface MCHTTPRequestor : NSObject <NSURLConnectionDataDelegate> {
     NSArray *_anchorCertificates;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     NSURLConnection *_connection;
     BOOL _didFailDueToMissingCredentials;
     NSString *_password;
@@ -37,12 +41,12 @@
 - (void).cxx_destruct;
 - (id)anchorCertificates;
 - (id)completionBlock;
+- (id)connection;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)connection:(id)arg1 willCacheResponse:(id)arg2;
 - (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
-- (id)connection;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (BOOL)didFailDueToMissingCredentials;
 - (void)didFinishWithError:(id)arg1;

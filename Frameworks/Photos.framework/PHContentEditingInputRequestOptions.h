@@ -7,9 +7,17 @@
  */
 
 @interface PHContentEditingInputRequestOptions : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _canHandleAdjustmentData;
+
     BOOL _networkAccessAllowed;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
 }
 
 @property(copy) id canHandleAdjustmentData;

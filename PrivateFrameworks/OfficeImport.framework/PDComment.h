@@ -5,12 +5,12 @@
 @class NSDate, NSString;
 
 @interface PDComment : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
     unsigned int mAuthorId;
     NSDate *mDate;
     unsigned int mIndex;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mPosition;
     NSString *mText;
 }

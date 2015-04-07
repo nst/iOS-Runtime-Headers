@@ -4,10 +4,7 @@
 
 @class <APDLearnMoreViewControllerDelegate>, APDDataManager, APDGlossaryViewController, APDKVOManager, APDSearchViewController, APDTOCViewController, APDTopicViewController, NSArray, NSString, NSURL, UIBarButtonItem, UIColor, UIImageView, UINavigationController, UITapGestureRecognizer, UIToolbar, UIView;
 
-@interface APDLearnMoreViewController : UIViewController <UIGestureRecognizerDelegate, APDDataManagerDelegate, UIAlertViewDelegate, APDTOCViewControllerDelegate, APDTopicViewControllerDelegate, APDSearchViewControllerDelegate, APDGlossaryViewControllerDelegate, UIToolbarDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface APDLearnMoreViewController : UIViewController <APDDataManagerDelegate, APDGlossaryViewControllerDelegate, APDSearchViewControllerDelegate, APDTOCViewControllerDelegate, APDTopicViewControllerDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate, UIToolbarDelegate> {
     APDKVOManager *_KVOManager;
     BOOL _RTL;
     APDTOCViewController *_TOCViewController;
@@ -23,6 +20,9 @@
     int _mode;
     BOOL _panning;
     BOOL _panningPending;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _popoverSize;
     BOOL _reloadTopicPending;
     UIColor *_searchBarTintColor;
@@ -152,8 +152,8 @@
 - (id)selectedTopicName;
 - (void)setAppName:(id)arg1;
 - (void)setBackToolbarButton:(id)arg1;
-- (void)setBaseURL:(id)arg1 appName:(id)arg2 deviceType:(id)arg3 helpVersion:(id)arg4;
 - (void)setBaseURL:(id)arg1;
+- (void)setBaseURL:(id)arg1 appName:(id)arg2 deviceType:(id)arg3 helpVersion:(id)arg4;
 - (void)setCellHighlightedColor:(id)arg1;
 - (void)setConfigServerAppIdentifier:(id)arg1;
 - (void)setConfigServerTargetedReleaseVersion:(id)arg1;

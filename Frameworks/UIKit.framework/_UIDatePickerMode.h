@@ -5,12 +5,6 @@
 @class NSArray, NSDate, NSDateComponents, NSNumberFormatter, NSString, UIColor, UIFont, _UIDatePickerView;
 
 @interface _UIDatePickerMode : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     UIFont *_amPmFont;
     NSString *_amString;
     NSDate *_baseDate;
@@ -23,7 +17,13 @@
     NSNumberFormatter *_formatter;
     BOOL _isUsingJapaneseCalendar;
     NSString *_localizedFormatString;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _maxDayRange;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _maxMonthRange;
     NSDate *_maximumDate;
     NSDateComponents *_maximumDateComponents;

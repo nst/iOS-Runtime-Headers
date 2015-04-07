@@ -3,6 +3,8 @@
  */
 
 @interface BLImagePatch : NSObject {
+    struct CGImage { } *_imageRef;
+    struct CGImage { } *_maskRef;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,20 +14,18 @@
             float width; 
             float height; 
         } size; 
-    struct CGImage { } *_imageRef;
-    struct CGImage { } *_maskRef;
     } _rect;
 }
 
-+ (id)patchFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inImage:(struct CGImage { }*)arg2 withMask:(struct CGImage { }*)arg3;
 + (id)patchFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inImage:(struct CGImage { }*)arg2;
++ (id)patchFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inImage:(struct CGImage { }*)arg2 withMask:(struct CGImage { }*)arg3;
 
 - (void)dealloc;
 - (id)description;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (struct CGImage { }*)image;
-- (id)initWithImageRef:(struct CGImage { }*)arg1 andRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 andMask:(struct CGImage { }*)arg3;
 - (id)initWithImageRef:(struct CGImage { }*)arg1 andRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)initWithImageRef:(struct CGImage { }*)arg1 andRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 andMask:(struct CGImage { }*)arg3;
 - (struct CGPoint { float x1; float x2; })origin;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rect;
 - (struct CGSize { float x1; float x2; })size;

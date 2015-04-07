@@ -51,8 +51,8 @@
 - (void)_playbackUserStop:(id)arg1;
 - (void)_postProgressEvent:(id)arg1;
 - (void)_pruneAssets;
-- (id)absolutePathForAssetKey:(id)arg1 andSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)absolutePathForAssetKey:(id)arg1;
+- (id)absolutePathForAssetKey:(id)arg1 andSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)absolutePathForStillAssetAtPath:(id)arg1 andSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)dealloc;
 - (id)imageDataForAssetKey:(id)arg1 andSize:(struct CGSize { float x1; float x2; })arg2;

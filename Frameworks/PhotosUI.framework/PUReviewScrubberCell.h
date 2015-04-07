@@ -36,11 +36,11 @@
 - (BOOL)isFavorite;
 - (BOOL)isSuggested;
 - (void)layoutSubviews;
-- (void)setFavorite:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFavorite:(BOOL)arg1;
+- (void)setFavorite:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setImage:(id)arg1;
-- (void)setSuggested:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSuggested:(BOOL)arg1;
+- (void)setSuggested:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setWantsSmallSuggestionIndicators:(BOOL)arg1;
 - (BOOL)wantsSmallSuggestionIndicators;
 

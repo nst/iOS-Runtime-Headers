@@ -14,6 +14,7 @@
             float g; 
             float t; 
         } ; 
+    } mXlimits;
     struct tvec2<float> { 
         union { 
             float x; 
@@ -25,7 +26,6 @@
             float g; 
             float t; 
         } ; 
-    } mXlimits;
     } mYlimits;
 }
 

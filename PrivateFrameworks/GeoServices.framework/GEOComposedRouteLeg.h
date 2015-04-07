@@ -5,14 +5,14 @@
 @class GEOComposedRoute, NSArray;
 
 @interface GEOComposedRouteLeg : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     GEOComposedRoute *_composedRoute;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _pointRange;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _stepRange;
     int _type;
 }

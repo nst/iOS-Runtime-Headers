@@ -4,7 +4,7 @@
 
 @class <NSObject><NSCopying>, NSArray, NSDate, NSDictionary, NSMutableOrderedSet, NSNumber, NSObject<PLAlbumProtocol>, NSOrderedSet, NSString, NSURL, PLManagedAsset, UIImage;
 
-@interface PLShuffledAlbum : NSObject <PLIndexMappingCache, PLAlbumProtocol> {
+@interface PLShuffledAlbum : NSObject <PLAlbumProtocol, PLIndexMappingCache> {
     NSMutableOrderedSet *_assets;
     struct NSObject { Class x1; } *_backingAlbum;
     struct __CFArray { } *_fromBackingMap;
@@ -23,13 +23,10 @@
 @property(readonly) BOOL canShowAvalancheStacks;
 @property(readonly) BOOL canShowComments;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) NSDate * endDate;
 @property(retain,readonly) NSURL * groupURL;
 @property BOOL hasUnseenContentBoolValue;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property(retain) NSString * importSessionID;
 @property(readonly) BOOL isCameraAlbum;
@@ -65,7 +62,6 @@
 @property(copy,readonly) id sortingComparator;
 @property(retain,readonly) NSDate * startDate;
 @property(retain,readonly) PLManagedAsset * startingAsset;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(retain,readonly) NSString * title;

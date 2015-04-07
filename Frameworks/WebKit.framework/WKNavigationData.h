@@ -27,8 +27,8 @@
 @property(readonly) Class superclass;
 @property(readonly) NSString * title;
 
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
+- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (void)dealloc;
 - (id)destinationURL;
 - (id)originalRequest;

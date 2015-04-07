@@ -25,9 +25,9 @@
 - (id)person;
 - (id)policies;
 - (struct __CFArray { }*)properties;
-- (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2 withDefaultValue:(id)arg3;
-- (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2;
 - (id)propertyPicker;
+- (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2;
+- (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2 withDefaultValue:(id)arg3;
 - (void)setAddressBook:(void*)arg1;
 - (void)setPerson:(id)arg1;
 - (void)setPolicies:(id)arg1;

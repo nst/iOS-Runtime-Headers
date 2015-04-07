@@ -10,37 +10,37 @@
 @class NSString;
 
 @interface VKDebugModel : VKModelObject <VKMapLayer> {
-    struct unique_ptr<ggl::FragmentedPool<ggl::Debug::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::Debug::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::Debug::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::Debug::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::Debug::Shader::Setup> {} *__first_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
         } __ptr_; 
+    } _debugLinesRenderState;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    } _debugPointsRenderState;
     struct unique_ptr<ggl::FragmentedPool<ggl::DebugPoints::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::DebugPoints::Shader::Setup> > > { 
         struct __compressed_pair<ggl::FragmentedPool<ggl::DebugPoints::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::DebugPoints::Shader::Setup> > > { 
             struct FragmentedPool<ggl::DebugPoints::Shader::Setup> {} *__first_; 
         } __ptr_; 
+    } _debugPointsShaderSetupPool;
     struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
         struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
             struct FragmentedPool<ggl::RenderItem> {} *__first_; 
         } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct shared_ptr<ggl::Debug::BaseMesh> { 
-        struct BaseMesh {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    } _debugLinesRenderState;
-    } _debugPointsRenderState;
-    } _debugPointsShaderSetupPool;
     } _debugRenderItemPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::Debug::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::Debug::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::Debug::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::Debug::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::Debug::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _debugShaderSetupPool;
     float _fontSize;
     BOOL _geocentric;
     BOOL _needsReset;
+    struct shared_ptr<ggl::Debug::BaseMesh> { 
+        struct BaseMesh {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _unitRectMesh;
 }
 

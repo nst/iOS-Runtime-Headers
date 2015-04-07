@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface BLTPBHandleDidPlayLightsAndSirensReplyRequest : PBRequest <NSCopying> {
+    double _date;
+    BOOL _didPlayLightsAndSirens;
     struct { 
         unsigned int date : 1; 
         unsigned int didPlayLightsAndSirens : 1; 
-    double _date;
-    BOOL _didPlayLightsAndSirens;
     } _has;
     NSString *_phoneSectionID;
     NSString *_publisherMatchID;

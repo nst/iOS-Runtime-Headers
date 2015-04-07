@@ -5,25 +5,25 @@
 @class NSMutableArray, TNPageController, TNPdfHyperlinkController;
 
 @interface TNRenderingExporter : TSARenderingExporter {
-    struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
-        unsigned int *__begin_; 
-        unsigned int *__end_; 
-        struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
-            unsigned int *__first_; 
-        } __end_cap_; 
-    struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
-        unsigned int *__begin_; 
-        unsigned int *__end_; 
-        struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
-            unsigned int *__first_; 
-        } __end_cap_; 
     BOOL _renderingAllSheets;
     NSMutableArray *mCanvasBasedSheets;
     TNPdfHyperlinkController *mHyperlinkController;
     TNPageController *mPageController;
     unsigned int mPageIndex;
     unsigned int mSheetIndex;
+    struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
+        unsigned int *__begin_; 
+        unsigned int *__end_; 
+        struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
+            unsigned int *__first_; 
+        } __end_cap_; 
     } mSheetPageCountArray;
+    struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
+        unsigned int *__begin_; 
+        unsigned int *__end_; 
+        struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
+            unsigned int *__first_; 
+        } __end_cap_; 
     } mSheetPageStartArray;
     unsigned int mTotalPagesCount;
 }

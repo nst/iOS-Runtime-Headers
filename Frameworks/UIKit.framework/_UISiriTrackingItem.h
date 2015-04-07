@@ -9,12 +9,22 @@
 @class UIColor, UIImage, UIImageView;
 
 @interface _UISiriTrackingItem : NSObject {
+    UIImageView *_animatedView;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _animationCompletionHandler;
+
+    UIImage *_capturedGlyphImage;
+    BOOL _deleted;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+    } _glyphRange;
+    BOOL _isABigReplacement;
+    BOOL _isASmallReplacement;
+    BOOL _isAnIntroduction;
+    float _offscreenXLocation;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,17 +34,11 @@
             float width; 
             float height; 
         } size; 
-    UIImageView *_animatedView;
-    id _animationCompletionHandler;
-    UIImage *_capturedGlyphImage;
-    BOOL _deleted;
-    } _glyphRange;
-    BOOL _isABigReplacement;
-    BOOL _isASmallReplacement;
-    BOOL _isAnIntroduction;
-    float _offscreenXLocation;
     } _targetFrame;
     UIColor *_textColor;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _textRange;
 }
 

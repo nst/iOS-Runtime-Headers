@@ -4,7 +4,7 @@
 
 @class <CKConversationSearcherDelegate>, CKSpotlightQuery, NSMutableArray, NSString, UISearchBar, UISearchDisplayController;
 
-@interface CKConversationSearcher : NSObject <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate> {
+@interface CKConversationSearcher : NSObject <UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     BOOL _active;
     CKSpotlightQuery *_currentQuery;
     <CKConversationSearcherDelegate> *_delegate;
@@ -28,8 +28,8 @@
 - (id)initWithDelegate:(id)arg1;
 - (BOOL)isActive;
 - (BOOL)isShowingSearchResults;
-- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
+- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)searchBarCancelButtonClicked:(id)arg1;
 - (BOOL)searchBarShouldBeginEditing:(id)arg1;
 - (id)searchController;

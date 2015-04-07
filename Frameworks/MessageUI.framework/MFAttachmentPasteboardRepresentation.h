@@ -4,7 +4,7 @@
 
 @class NSData, NSString;
 
-@interface MFAttachmentPasteboardRepresentation : NSObject <NSCoding, MFAttachmentPasteboardRepresentation> {
+@interface MFAttachmentPasteboardRepresentation : NSObject <MFAttachmentPasteboardRepresentation, NSCoding> {
     NSData *_data;
     NSString *_mimeType;
     NSString *_name;

@@ -9,19 +9,20 @@
 @class NSString, PFUbiquityKnowledgeVector, PFUbiquityLocation;
 
 @interface PFUbiquityBaselineHeuristics : NSObject {
-     /* Encoded args for previous method: D8@0:4 */
-     /* Encoded args for previous method: v16@0:4D8 */
     PFUbiquityKnowledgeVector *_currentBaselineKV;
     PFUbiquityKnowledgeVector *_currentKV;
     NSString *_localPeerID;
     long long _logSize;
+
+  /* Error parsing encoded ivar type info: D */
+    /* Warning: Unrecognized filer type: 'D' using 'void*' */ void*_logToStoreSizeRatio;
+
     int _minLogBytes;
     NSString *_modelVersionHash;
     int _numRequiredTransactions;
     NSString *_storeName;
     long long _storeSize;
     PFUbiquityLocation *_ubiquityRootLocation;
-    /* Warning: Unrecognized filer type: 'D' using 'void*' */ void*_logToStoreSizeRatio;
 }
 
 @property(retain) PFUbiquityKnowledgeVector * currentBaselineKV;
@@ -49,6 +50,8 @@
 - (id)localPeerID;
 - (long long)logSize;
 - (/* Warning: Unrecognized filer type: 'D' using 'void*' */ void*)logToStoreSizeRatio;
+     /* Encoded args for previous method: D8@0:4 */
+
 - (BOOL)logsConsumeEnoughDiskSpace;
 - (int)minLogBytes;
 - (id)modelVersionHash;
@@ -57,6 +60,8 @@
 - (void)setCurrentKV:(id)arg1;
 - (void)setLogSize:(long long)arg1;
 - (void)setLogToStoreSizeRatio:(/* Warning: Unrecognized filer type: 'D' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: v16@0:4D8 */
+
 - (void)setMinLogBytes:(int)arg1;
 - (void)setNumRequiredTransactions:(int)arg1;
 - (void)setStoreSize:(long long)arg1;

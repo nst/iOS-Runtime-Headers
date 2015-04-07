@@ -5,10 +5,10 @@
 @class NSURL;
 
 @interface SKUIImageViewElementCacheKey : NSObject {
+    int _imageTreatment;
     struct CGSize { 
         float width; 
         float height; 
-    int _imageTreatment;
     } _size;
     NSURL *_url;
 }

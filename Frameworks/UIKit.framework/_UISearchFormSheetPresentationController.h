@@ -5,6 +5,8 @@
 @class NSString, UIPresentationController<_UISearchControllerPresenting>, UIView, _UISearchPresentationAssistant;
 
 @interface _UISearchFormSheetPresentationController : UIPresentationController <_UISearchControllerPresenting> {
+    _UISearchPresentationAssistant *_assistant;
+    UIView *_wrapperView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    _UISearchPresentationAssistant *_assistant;
-    UIView *_wrapperView;
     } finalFrameForContainerView;
 }
 

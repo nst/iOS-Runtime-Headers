@@ -11,7 +11,11 @@
 @interface RemoteUITableViewCell : UITableViewCell {
     UIColor *_accessoryColor;
     UIButton *_detailLinkButton;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _detailLinkHandler;
+
     BOOL _forceFullSizeDetailLabel;
     UIImageView *_invalidRowView;
     BOOL _leftAlignDetailLabel;

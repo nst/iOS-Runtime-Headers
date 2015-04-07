@@ -5,6 +5,10 @@
 @class GEOCompanionDriveStep, GEOCompanionFerryStep, GEOCompanionWalkStep, NSString;
 
 @interface GEOCompanionStep : PBCodable <NSCopying> {
+    unsigned int _distance;
+    GEOCompanionDriveStep *_driveStep;
+    unsigned int _endCoordinateIndex;
+    GEOCompanionFerryStep *_ferryStep;
     struct { 
         unsigned int distance : 1; 
         unsigned int endCoordinateIndex : 1; 
@@ -12,10 +16,6 @@
         unsigned int startCoordinateIndex : 1; 
         unsigned int stepID : 1; 
         unsigned int time : 1; 
-    unsigned int _distance;
-    GEOCompanionDriveStep *_driveStep;
-    unsigned int _endCoordinateIndex;
-    GEOCompanionFerryStep *_ferryStep;
     } _has;
     unsigned int _maneuverStartCoordinateIndex;
     NSString *_roadName;

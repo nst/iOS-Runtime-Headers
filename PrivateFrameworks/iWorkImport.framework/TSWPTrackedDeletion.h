@@ -5,10 +5,10 @@
 @class NSString, TSWPChangeSession;
 
 @interface TSWPTrackedDeletion : NSObject <TSWPReplaceAction> {
+    TSWPChangeSession *_changeSession;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    TSWPChangeSession *_changeSession;
     } _range;
 }
 

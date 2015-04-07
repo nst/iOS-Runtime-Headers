@@ -5,9 +5,6 @@
 @class NSIndexSet;
 
 @interface SGPlainTextContentCursor : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     struct { 
         unsigned short buffer[64]; 
         struct __CFString {} *theString; 
@@ -23,6 +20,9 @@
     unsigned int _len;
     unsigned int _pos;
     NSIndexSet *_quoted;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _sig;
     struct __CFString { } *_str;
 }

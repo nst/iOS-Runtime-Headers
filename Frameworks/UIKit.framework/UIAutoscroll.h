@@ -5,12 +5,12 @@
 @class NSTimer, UIView<UIAutoscrollContainer>;
 
 @interface UIAutoscroll : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
     BOOL m_active;
     unsigned int m_count;
     int m_directions;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_point;
     double m_repeatInterval;
     UIView<UIAutoscrollContainer> *m_scrollContainer;

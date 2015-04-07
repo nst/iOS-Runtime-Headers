@@ -5,17 +5,17 @@
 @class NSLock, NSString;
 
 @interface GEOUserSession : NSObject {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
     NSLock *_lock;
     unsigned int _sequenceNumber;
     double _sessionCreationTime;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionID;
     NSString *_sessionIDString;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _usageCollectionSessionID;
     double _usageSessionIDGenerationTime;
 }

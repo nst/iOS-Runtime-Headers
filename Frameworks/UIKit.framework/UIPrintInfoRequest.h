@@ -9,7 +9,11 @@
 @class PKPrinter;
 
 @interface UIPrintInfoRequest : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     PKPrinter *_printer;
     int _requestState;
 }

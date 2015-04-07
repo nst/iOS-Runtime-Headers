@@ -18,8 +18,8 @@
 - (id)addFile:(id)arg1;
 - (unsigned int)addFileNamed:(id)arg1 fileAttributes:(id)arg2;
 - (id)addLink:(id)arg1;
-- (id)copy:(id)arg1 into:(id)arg2;
 - (id)copy;
+- (id)copy:(id)arg1 into:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (id)createRandomKey:(id)arg1;
@@ -38,13 +38,13 @@
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithDataRepresentation:(id)arg1;
-- (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (id)initWithPasteboardDataRepresentation:(id)arg1;
 - (unsigned int)insertItem:(id)arg1 path:(id)arg2 dirInfo:(id)arg3 zone:(struct _NSZone { }*)arg4 plist:(id)arg5;
-- (unsigned int)internalSaveTo:(id)arg1 removeBackup:(BOOL)arg2 errorHandler:(id)arg3 temp:(id)arg4 backup:(id)arg5;
 - (unsigned int)internalSaveTo:(id)arg1 removeBackup:(BOOL)arg2 errorHandler:(id)arg3;
+- (unsigned int)internalSaveTo:(id)arg1 removeBackup:(BOOL)arg2 errorHandler:(id)arg3 temp:(id)arg4 backup:(id)arg5;
 - (unsigned int)internalWritePath:(id)arg1 errorHandler:(id)arg2 remapContents:(BOOL)arg3 hardLinkPath:(id)arg4;
 - (BOOL)isPackage;
 - (id)keyEnumerator;
@@ -60,8 +60,8 @@
 - (id)serialize:(void**)arg1 length:(unsigned int*)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)setPackage:(BOOL)arg1;
-- (id)tmpNameFromPath:(id)arg1 extension:(id)arg2;
 - (id)tmpNameFromPath:(id)arg1;
+- (id)tmpNameFromPath:(id)arg1 extension:(id)arg2;
 - (id)uniqueKey:(id)arg1;
 - (int)validatePath:(id)arg1 ignore:(id)arg2;
 - (unsigned int)writePath:(id)arg1 docInfo:(id)arg2 errorHandler:(id)arg3 remapContents:(BOOL)arg4 hardLinkPath:(id)arg5;

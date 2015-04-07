@@ -7,13 +7,17 @@
  */
 
 @interface UIAnimation : NSObject {
+    SEL _action;
     struct { 
         unsigned int curve : 4; 
         unsigned int tvOutput : 1; 
         unsigned int useNSTimer : 1; 
-    SEL _action;
     } _animationFlags;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     id _delegate;
     double _duration;
     double _startTime;

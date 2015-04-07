@@ -19,8 +19,8 @@
 @property <ML3DatabaseDistantConnectionDelegate> * distantDelegate;
 
 - (void).cxx_destruct;
-- (BOOL)_internalBeginTransactionWithBehaviorType:(unsigned int)arg1 isRetry:(BOOL)arg2;
 - (BOOL)_internalBeginTransactionWithBehaviorType:(unsigned int)arg1;
+- (BOOL)_internalBeginTransactionWithBehaviorType:(unsigned int)arg1 isRetry:(BOOL)arg2;
 - (BOOL)_internalEndTransactionAndCommit:(BOOL)arg1;
 - (id)_internalExecuteQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
 - (BOOL)_internalExecuteUpdate:(id)arg1 withParameters:(id)arg2 error:(id*)arg3;

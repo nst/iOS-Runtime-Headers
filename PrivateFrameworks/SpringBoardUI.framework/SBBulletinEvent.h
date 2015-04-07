@@ -10,7 +10,11 @@
 
 @interface SBBulletinEvent : NSObject {
     NSString *_bulletinID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
 }
 
 + (id)eventForBulletin:(id)arg1 block:(id)arg2;

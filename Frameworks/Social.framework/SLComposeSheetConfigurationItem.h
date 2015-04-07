@@ -10,7 +10,11 @@
 
 @interface SLComposeSheetConfigurationItem : NSObject {
     <SLComposeSheetConfigurationItemObserving> *_changeObserver;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _tapHandler;
+
     NSString *_title;
     NSString *_value;
     BOOL _valuePending;

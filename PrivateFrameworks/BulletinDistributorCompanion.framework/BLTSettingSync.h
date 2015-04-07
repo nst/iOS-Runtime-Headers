@@ -4,18 +4,18 @@
 
 @class BLTSectionInfoList, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, PSYSyncCoordinator;
 
-@interface BLTSettingSync : BLTSettingSyncInternal <BBObserverDelegate, PSYSyncCoordinatorDelegate, BLTSectionInfoListDelegate> {
+@interface BLTSettingSync : BLTSettingSyncInternal <BBObserverDelegate, BLTSectionInfoListDelegate, PSYSyncCoordinatorDelegate> {
     PSYSyncCoordinator *_pairedSyncCoordinator;
     NSMutableDictionary *_sectionIDsToInfosToSync;
     BLTSectionInfoList *_sectionInfoList;
     NSObject<OS_dispatch_queue> *_sectionInfoProcessingQueue;
     NSObject<OS_dispatch_queue> *_sectionInfoSenderQueue;
     NSObject<OS_dispatch_semaphore> *_sectionInfoSenderReleaseSignal;
+    bool _sendingSectionInfo;
     NSObject<OS_dispatch_queue> *_subsectionParameterIconProcessingQueue;
     NSObject<OS_dispatch_queue> *_subsectionParameterIconSenderQueue;
     NSObject<OS_dispatch_semaphore> *_subsectionParameterIconSenderReleaseSignal;
     int _token;
-    bool_sendingSectionInfo;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -26,8 +26,8 @@
 - (void).cxx_destruct;
 - (void)_enqueueAndSendEffectiveSectionInfo:(id)arg1;
 - (id)_overriddenSectionInfoForSectionID:(id)arg1;
-- (void)_sendEffectiveSectionInfo:(id)arg1 waitForAcknowledgement:(BOOL)arg2 withQueue:(id)arg3 andCompletion:(id)arg4;
 - (void)_sendEffectiveSectionInfo:(id)arg1;
+- (void)_sendEffectiveSectionInfo:(id)arg1 waitForAcknowledgement:(BOOL)arg2 withQueue:(id)arg3 andCompletion:(id)arg4;
 - (void)_sendSectionIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3 waitForAcknowledgement:(BOOL)arg4 withQueue:(id)arg5 andCompletion:(id)arg6;
 - (void)_sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(BOOL)arg3 withQueue:(id)arg4 andCompletion:(id)arg5;
 - (void)_updateAllBBSectionsWithCompletion:(id)arg1 withProgress:(id)arg2;

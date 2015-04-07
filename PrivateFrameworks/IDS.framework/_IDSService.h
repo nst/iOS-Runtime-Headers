@@ -29,8 +29,8 @@
 @property(copy,readonly) NSString * serviceDomain;
 @property(readonly) Class superclass;
 
-- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)_callDelegatesWithBlock:(id)arg1;
+- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)_callIsActiveChanged;
 - (void)_handlePretendingToBeFullWithIdentifier:(id*)arg1;
 - (void)_logConnectionMap;

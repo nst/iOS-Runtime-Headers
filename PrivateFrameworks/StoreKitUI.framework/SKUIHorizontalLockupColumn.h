@@ -5,11 +5,11 @@
 @class NSArray, NSMutableArray;
 
 @interface SKUIHorizontalLockupColumn : NSObject {
+    NSMutableArray *_childViewElements;
+    int _identifier;
     struct CGSize { 
         float width; 
         float height; 
-    NSMutableArray *_childViewElements;
-    int _identifier;
     } _size;
 }
 

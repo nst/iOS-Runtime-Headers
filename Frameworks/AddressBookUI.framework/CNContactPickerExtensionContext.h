@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CNContactPickerExtensionContext : NSExtensionContext <CNContactPickerServiceProtocol, CNContactPickerHostProtocol> {
+@interface CNContactPickerExtensionContext : NSExtensionContext <CNContactPickerHostProtocol, CNContactPickerServiceProtocol> {
 }
 
 @property(copy,readonly) NSString * debugDescription;

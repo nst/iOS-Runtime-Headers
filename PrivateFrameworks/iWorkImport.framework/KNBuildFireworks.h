@@ -4,42 +4,7 @@
 
 @class KNAnimParameterGroup, NSArray, NSString, TSDGLBloomEffect, TSDGLDataBuffer, TSDGLFrameBuffer, TSDGLShader, TSDGLTextureInfo;
 
-@interface KNBuildFireworks : KNAnimationEffect <KNFrameBuildAnimator, KNAnimationPluginArchiving> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
+@interface KNBuildFireworks : KNAnimationEffect <KNAnimationPluginArchiving, KNFrameBuildAnimator> {
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -58,16 +23,51 @@
         float m43; 
         float m44; 
     } _baseOrthoTransform;
+    struct CATransform3D { 
+        float m11; 
+        float m12; 
+        float m13; 
+        float m14; 
+        float m21; 
+        float m22; 
+        float m23; 
+        float m24; 
+        float m31; 
+        float m32; 
+        float m33; 
+        float m34; 
+        float m41; 
+        float m42; 
+        float m43; 
+        float m44; 
     } _baseTransform;
     TSDGLBloomEffect *_bloomEffect;
     TSDGLDataBuffer *_centerBurstDataBuffer;
     TSDGLShader *_centerBurstShader;
     TSDGLTextureInfo *_centerBurstTextureInfo;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _drawableFrame;
     TSDGLDataBuffer *_fboDataBuffer;
     TSDGLShader *_fboShader;
     TSDGLShader *_fireworksShader;
     NSArray *_fireworksSystems;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _frameRect;
     TSDGLFrameBuffer *_framebuffer;
     TSDGLDataBuffer *_objectDataBuffer;

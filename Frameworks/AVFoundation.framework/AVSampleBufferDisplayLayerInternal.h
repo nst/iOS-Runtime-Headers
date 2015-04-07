@@ -5,9 +5,8 @@
 @class AVMediaDataRequester, AVWeakReference, CALayer, NSError, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVSampleBufferDisplayLayerInternal : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
+    BOOL aboveHighWaterLevel;
+    BOOL addedToSynchronizer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    BOOL aboveHighWaterLevel;
-    BOOL addedToSynchronizer;
     } bounds;
     CALayer *contentLayer;
     struct OpaqueCMTimebase { } *controlTimebaseSetByUser;
@@ -27,6 +24,9 @@
     BOOL isRequestingMediaData;
     AVMediaDataRequester *mediaDataRequester;
     BOOL outputObscured;
+    struct CGSize { 
+        float width; 
+        float height; 
     } presentationSize;
     struct OpaqueCMTimebase { } *readOnlyRenderingTimebase;
     struct OpaqueCMTimebase { } *readOnlyVideoQueueTimebase;

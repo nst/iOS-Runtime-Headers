@@ -5,39 +5,19 @@
 @class AVCaptureDeviceFormat_FigRecorder, AVWeakReference, NSArray, NSDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface AVCaptureFigVideoDevice_FigRecorder : AVCaptureDevice_FigRecorder <MCProfileConnectionObserver> {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     AVCaptureDeviceFormat_FigRecorder *_activeFormat;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _activeMaxFrameDuration;
     BOOL _activeMaxFrameDurationSetByClient;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _activeMinFrameDuration;
     BOOL _activeMinFrameDurationSetByClient;
     BOOL _adjustingExposure;
@@ -50,12 +30,29 @@
     float _contrast;
     struct OpaqueCMClock { } *_deviceClock;
     NSDictionary *_deviceProperties;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _exposureDuration;
     float _exposureGain;
     int _exposureMode;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _exposurePointOfInterest;
     BOOL _faceDetectionDrivenImageProcessingEnabled;
     BOOL _faceDetectionMetadataEnabled;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _faceRectangle;
     int _faceRectangleAngle;
     BOOL _flashActive;
@@ -63,6 +60,9 @@
     int _flashMode;
     int _focusInFlightCount;
     int _focusMode;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _focusPointOfInterest;
     float _focusPosition;
     NSArray *_formats;

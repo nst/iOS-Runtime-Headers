@@ -4,7 +4,7 @@
 
 @class ABMembersController, CNContact, NSString, _UIAccessDeniedView;
 
-@interface ABMembersViewController : ABAbstractViewController <ABNewPersonViewControllerDelegate, ABMembersControllerDelegate, ABViewControllerBannerViewProtocol, ABPersonEditDelegate> {
+@interface ABMembersViewController : ABAbstractViewController <ABMembersControllerDelegate, ABNewPersonViewControllerDelegate, ABPersonEditDelegate, ABViewControllerBannerViewProtocol> {
     _UIAccessDeniedView *_accessDeniedView;
     id _insertionLabel;
     int _insertionProperty;
@@ -54,18 +54,18 @@
 - (void)linksUpdatedForPerson:(void*)arg1;
 - (void)loadState;
 - (void)loadView;
-- (BOOL)membersController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (id)membersController;
+- (BOOL)membersController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (void)membersControllerDidEndSearching:(id)arg1;
 - (void)membersControllerDidEndServerSearch:(id)arg1;
 - (void)membersControllerWillEndSearching:(id)arg1;
 - (void)membersControllerWillStartSearching:(id)arg1;
-- (void)model:(id)arg1 localChangeWithInfo:(struct __CFDictionary { }*)arg2;
 - (id)model;
+- (void)model:(id)arg1 localChangeWithInfo:(struct __CFDictionary { }*)arg2;
 - (void)modelDatabaseChange:(id)arg1;
 - (void)nameUpdatedForPerson:(void*)arg1;
-- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2 informDelegate:(BOOL)arg3;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2 informDelegate:(BOOL)arg3;
 - (void)peoplePickerNavigationControllerNavigationBarStoppedAnimating:(id)arg1;
 - (BOOL)personViewController:(id)arg1 shouldContinueAfterEditingConfirmed:(BOOL)arg2 forPerson:(void*)arg3;
 - (void)personWasDeleted;
@@ -83,10 +83,10 @@
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
 - (void)setStyleProvider:(id)arg1;
 - (BOOL)shouldShowGroups;
-- (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2 selectAndScrollToPerson:(BOOL)arg3;
 - (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
-- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3 selectAndScrollToPerson:(BOOL)arg4;
+- (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2 selectAndScrollToPerson:(BOOL)arg3;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
+- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3 selectAndScrollToPerson:(BOOL)arg4;
 - (void)showInsertEditorForPerson:(void*)arg1 animate:(BOOL)arg2;
 - (void)startRefreshingAccount;
 - (id)styleProvider;
@@ -94,8 +94,8 @@
 - (id)unsavedContact;
 - (void)updateLeftNavigationButtonAnimated:(BOOL)arg1;
 - (void)updateNavigationButtonsAnimated:(BOOL)arg1;
-- (void)updateNavigationButtonsInSearchMode:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateNavigationButtonsInSearchMode:(BOOL)arg1;
+- (void)updateNavigationButtonsInSearchMode:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateTitle;
 - (void)updateView;
 - (void)viewDidAppear:(BOOL)arg1;

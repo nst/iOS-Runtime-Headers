@@ -4,7 +4,7 @@
 
 @class <AXHAControllerBrowserDelegateProtocol>, AXHATimer, AXHearingSlaveController, NSMutableArray, NSMutableDictionary, NSNetServiceBrowser, NSString;
 
-@interface AXHAControllerBrowser : NSObject <NSNetServiceBrowserDelegate, AXHARemoteControllerDelegate, AXHADeviceControllerProtocol> {
+@interface AXHAControllerBrowser : NSObject <AXHADeviceControllerProtocol, AXHARemoteControllerDelegate, NSNetServiceBrowserDelegate> {
     NSNetServiceBrowser *_browser;
     <AXHAControllerBrowserDelegateProtocol> *_delegate;
     NSMutableDictionary *_deviceUpdatesDescription;

@@ -12,10 +12,10 @@
             float width; 
             float height; 
         } size; 
+    } mPresentationBounds;
     struct CGPoint { 
         float x; 
         float y; 
-    } mPresentationBounds;
     } mPresentationPosition;
 }
 

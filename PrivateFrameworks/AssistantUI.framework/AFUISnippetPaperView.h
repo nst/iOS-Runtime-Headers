@@ -5,12 +5,12 @@
 @class <AFUISnippetPaperViewDelegate>, UIColor, UIImage, UIImageView;
 
 @interface AFUISnippetPaperView : UIView {
+    <AFUISnippetPaperViewDelegate> *_delegate;
     struct { 
         float r; 
         float g; 
         float b; 
         float a; 
-    <AFUISnippetPaperViewDelegate> *_delegate;
     } _gradientValues[5];
     BOOL _hasBeveledEdge;
     UIImage *_paperImage;

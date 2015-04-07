@@ -4,12 +4,12 @@
 
 @interface MPPPersistentIDsPredicate : PBCodable <NSCopying> {
     struct { 
+        unsigned int shouldContain : 1; 
+    } _has;
+    struct { 
         long long *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        unsigned int shouldContain : 1; 
-    } _has;
     } _persistentIDs;
     BOOL _shouldContain;
 }

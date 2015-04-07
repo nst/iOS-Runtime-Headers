@@ -16,9 +16,6 @@
         unsigned int expires : 1; 
         unsigned int reserved1 : 7; 
         unsigned char reserved2[4]; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     } _downloadTemplate;
     VKTimer *_expirationTimer;
     VKTilePool *_expiredTilePool;
@@ -26,6 +23,9 @@
     unsigned int _minimumDownloadZoomLevel;
     GEOActiveTileSet *_tileSet;
     _VKTileSetBackedTileSourceTimerTarget *_timerTarget;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _zoomLevelRange;
 }
 

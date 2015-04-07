@@ -5,22 +5,6 @@
 @class AVAudioPayload, DTMFEventHandler, LTEAudioSessionConfig, NSMutableArray, NSObject<LTEConferenceDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, VCJitterBuffer, WRMClient;
 
 @interface LTEConference : NSObject <WRMClientDelegate> {
-    struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct AudioStreamBasicDescription { 
-        double mSampleRate; 
-        unsigned int mFormatID; 
-        unsigned int mFormatFlags; 
-        unsigned int mBytesPerPacket; 
-        unsigned int mFramesPerPacket; 
-        unsigned int mBytesPerFrame; 
-        unsigned int mChannelsPerFrame; 
-        unsigned int mBitsPerChannel; 
-        unsigned int mReserved; 
     NSObject<LTEConferenceDelegate> *_delegate;
     double _rtcpTimeoutEnabledTime;
     double _rtpTimeoutEnabledTime;
@@ -45,10 +29,26 @@
     struct tagHANDLE { int x1; } *rtpHandle;
     int sampleRate;
     int samplesPerFrame;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } sessionLock;
     int state;
+    struct _opaque_pthread_rwlock_t { 
+        long __sig; 
+        BOOL __opaque[124]; 
     } stateLock;
     VCJitterBuffer *vcJitterBuffer;
+    struct AudioStreamBasicDescription { 
+        double mSampleRate; 
+        unsigned int mFormatID; 
+        unsigned int mFormatFlags; 
+        unsigned int mBytesPerPacket; 
+        unsigned int mFramesPerPacket; 
+        unsigned int mBytesPerFrame; 
+        unsigned int mChannelsPerFrame; 
+        unsigned int mBitsPerChannel; 
+        unsigned int mReserved; 
     } vpioFormat;
     WRMClient *wrmClient;
 }

@@ -5,10 +5,10 @@
 @class NSString, UIImage, UIImageView, UILabel;
 
 @interface MusicActionTableViewCellContentView : MusicTableViewCellContentView {
+    BOOL _displayAsDisabled;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    BOOL _displayAsDisabled;
     } _imageOffset;
     UIImageView *_imageView;
     UILabel *_titleLabel;

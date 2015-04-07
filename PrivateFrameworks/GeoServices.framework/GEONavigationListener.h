@@ -10,9 +10,17 @@
 
 @interface GEONavigationListener : NSObject {
     NSObject<OS_xpc_object> *_connection;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _guidanceStateUpdatedHandler;
+
     NSObject<OS_dispatch_queue> *_queue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _routeSummaryUpdatedHandler;
+
 }
 
 @property(copy) id guidanceStateUpdatedHandler;

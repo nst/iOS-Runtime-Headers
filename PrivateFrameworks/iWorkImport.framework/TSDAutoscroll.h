@@ -5,17 +5,17 @@
 @class NSObject<TSDAutoscrollDelegate>, NSTimer;
 
 @interface TSDAutoscroll : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     BOOL mActive;
     unsigned int mCount;
     int mDirections;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mLastAutoscrollDelta;
     double mLastFired;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mPoint;
     double mRepeatInterval;
     NSObject<TSDAutoscrollDelegate> *mTarget;

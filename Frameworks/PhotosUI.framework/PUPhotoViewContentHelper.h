@@ -5,16 +5,6 @@
 @class PUAvalancheStackView, PUBackgroundColorView, PUPhotoDecoration, PUTextBannerView, PUVideoBannerView, UIImage, UIImageView, UIView;
 
 @interface PUPhotoViewContentHelper : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
     UIImageView *__crossfadeImageView;
     float _avalancheMaxPixelSize;
     struct CGColor { } *_avalancheStackBackgroundColor;
@@ -25,6 +15,13 @@
     int _fillMode;
     BOOL _flattensVideoBanner;
     BOOL _hasTransform;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _imageTransform;
     BOOL _isTextBannerVisible;
     BOOL _isVideoBannerVisible;
@@ -34,6 +31,9 @@
     PUBackgroundColorView *_photoDecorationOverlayView;
     UIImage *_photoImage;
     UIImageView *_photoImageView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _photoSize;
     PUTextBannerView *_textBannerView;
     PUVideoBannerView *_videoBannerView;

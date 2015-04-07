@@ -6,14 +6,14 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    } _center;
     struct CGPoint { 
         float x; 
         float y; 
-    } _center;
     } _controlPoint;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
 }
 

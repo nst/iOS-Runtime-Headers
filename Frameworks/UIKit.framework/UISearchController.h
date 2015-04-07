@@ -4,14 +4,14 @@
 
 @class <UISearchControllerDelegate>, <UISearchResultsUpdating>, <UIViewControllerAnimatedTransitioning>, NSString, UISearchBar, UIView, UIViewController, _UISearchControllerDidScrollDelegate;
 
-@interface UISearchController : UIViewController <UIViewControllerPresenting, _UIScrollNotification, NSCoding, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning> {
-    struct { 
-        unsigned int searchBarWasTableHeaderView : 1; 
+@interface UISearchController : UIViewController <NSCoding, UIViewControllerAnimatedTransitioning, UIViewControllerPresenting, UIViewControllerTransitioningDelegate, _UIScrollNotification> {
     int __previousSearchBarPosition;
     float __resultsContentScrollViewPresentationOffset;
     BOOL __showResultsForEmptySearch;
     <UIViewControllerAnimatedTransitioning> *_animator;
     int _barPresentationStyle;
+    struct { 
+        unsigned int searchBarWasTableHeaderView : 1; 
     } _controllerFlags;
     <UISearchControllerDelegate> *_delegate;
     _UISearchControllerDidScrollDelegate *_didScrollDelegate;

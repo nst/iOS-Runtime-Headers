@@ -32,8 +32,8 @@
 - (id)playbackErrorDescription;
 - (void)reloadView;
 - (void)setCurrentTime:(double)arg1;
-- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
 - (void)setItem:(id)arg1;
 - (void)setPlaybackErrorDescription:(id)arg1;
 - (void)setPlayer:(id)arg1;

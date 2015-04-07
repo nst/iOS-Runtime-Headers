@@ -57,8 +57,8 @@
 - (void)setDestinationURL:(id)arg1;
 - (void)setMappingModel:(id)arg1;
 - (void)setMigrationManager:(id)arg1;
-- (void)setPersistentStoreCoordinator:(id)arg1 sourceURL:(id)arg2 configuration:(id)arg3 metadata:(id)arg4 options:(id)arg5;
 - (void)setPersistentStoreCoordinator:(id)arg1;
+- (void)setPersistentStoreCoordinator:(id)arg1 sourceURL:(id)arg2 configuration:(id)arg3 metadata:(id)arg4 options:(id)arg5;
 - (void)setResourceBundles:(id)arg1;
 - (void)setSourceConfiguration:(id)arg1;
 - (void)setSourceMetadata:(id)arg1;

@@ -10,7 +10,11 @@
 
 @interface _UITextServiceSession : NSObject <UIPopoverControllerDelegate> {
     BOOL _dismissed;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _dismissedHandler;
+
     BOOL _isTextEffectsWindow;
     UIViewController *_modalViewController;
     UIPopoverController *_popoverController;

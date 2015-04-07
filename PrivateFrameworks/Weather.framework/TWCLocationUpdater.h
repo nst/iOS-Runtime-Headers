@@ -11,7 +11,11 @@
 @interface TWCLocationUpdater : TWCUpdater {
     City *_currentCity;
     CLGeocoder *_geocoder;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _localWeatherHandler;
+
     _MKLocationShifter *_locationShifter;
 }
 
@@ -34,7 +38,7 @@
 - (id)init;
 - (void)parsedResultCity:(id)arg1;
 - (void)setCurrentCity:(id)arg1;
-- (void)updateWeatherForLocation:(id)arg1 city:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)updateWeatherForLocation:(id)arg1 city:(id)arg2;
+- (void)updateWeatherForLocation:(id)arg1 city:(id)arg2 withCompletionHandler:(id)arg3;
 
 @end

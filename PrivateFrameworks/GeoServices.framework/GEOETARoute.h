@@ -6,22 +6,14 @@
 
 @interface GEOETARoute : PBCodable <NSCopying> {
     struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
         unsigned int historicTravelTime : 1; 
         unsigned int routeNoLongerValid : 1; 
     } _has;
     unsigned int _historicTravelTime;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _incidentEndOffsetsInETARoutes;
     NSMutableArray *_incidentsOffReRoutes;
     NSMutableArray *_incidentsOnETARoutes;
@@ -31,7 +23,15 @@
     NSData *_routeID;
     BOOL _routeNoLongerValid;
     NSMutableArray *_steps;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _trafficColorOffsets;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _trafficColors;
     NSData *_zilchPoints;
 }

@@ -4,7 +4,7 @@
 
 @class <AFUISiriSessionDelegate>, <AFUISiriSessionLocalDataSource>, <AFUISiriSessionLocalDelegate>, AFConnection, AFUISpeechSynthesis, AFUIStateMachine, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
-@interface AFUISiriSession : NSObject <AFAssistantUIService, AFSpeechDelegate, AFUIStateMachineDelegate, AFUISpeechSynthesisLocalDelegate, AFUISiriSession> {
+@interface AFUISiriSession : NSObject <AFAssistantUIService, AFSpeechDelegate, AFUISiriSession, AFUISpeechSynthesisLocalDelegate, AFUIStateMachineDelegate> {
     AFConnection *_connection;
     BOOL _currentRequestDidPresent;
     NSObject<OS_dispatch_group> *_currentSpeechRequestGroup;
@@ -92,8 +92,8 @@
 - (BOOL)isPreventingActivationGesture;
 - (id)localDataSource;
 - (id)localDelegate;
-- (void)performAceCommand:(id)arg1 conflictHandler:(id)arg2;
 - (void)performAceCommand:(id)arg1;
+- (void)performAceCommand:(id)arg1 conflictHandler:(id)arg2;
 - (void)preheat;
 - (void)recordMetrics:(id)arg1;
 - (float)recordingPowerLevel;

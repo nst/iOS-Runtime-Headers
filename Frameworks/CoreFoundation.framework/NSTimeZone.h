@@ -25,8 +25,8 @@
 + (id)timeZoneDataVersion;
 + (id)timeZoneForSecondsFromGMT:(int)arg1;
 + (id)timeZoneWithAbbreviation:(id)arg1;
-+ (id)timeZoneWithName:(id)arg1 data:(id)arg2;
 + (id)timeZoneWithName:(id)arg1;
++ (id)timeZoneWithName:(id)arg1 data:(id)arg2;
 
 - (id)ICSComputeTimeZoneChangeListFromDate:(id)arg1 toDate:(id)arg2;
 - (unsigned long)_cfTypeID;
@@ -45,8 +45,8 @@
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 data:(id)arg2;
 - (id)initWithName:(id)arg1;
+- (id)initWithName:(id)arg1 data:(id)arg2;
 - (BOOL)isDaylightSavingTime;
 - (BOOL)isDaylightSavingTimeForDate:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

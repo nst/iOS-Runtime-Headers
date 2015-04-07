@@ -4,7 +4,7 @@
 
 @class <UICollectionViewDelegate>, MPUExtrasMainMenuSectionMetrics, NSLayoutConstraint, NSString, UICollectionView, UICollectionViewFlowLayout, UIView;
 
-@interface MPUExtrasMainTemplateViewController : MPUExtrasTemplateViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, MPUExtrasMainMenuSectionMetricsDataSource> {
+@interface MPUExtrasMainTemplateViewController : MPUExtrasTemplateViewController <MPUExtrasMainMenuSectionMetricsDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     NSLayoutConstraint *_collectionViewHeightConstraint;
     UICollectionViewFlowLayout *_collectionViewLayout;
     <UICollectionViewDelegate> *_didSelectDelegate;

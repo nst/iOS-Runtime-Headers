@@ -23,8 +23,8 @@
 
 - (Class)__ck_chatItemClass;
 - (id)_initWithItem:(id)arg1 expireStatusType:(int)arg2 count:(unsigned int)arg3;
-- (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4 expireStatusType:(int)arg5;
 - (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4;
+- (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4 expireStatusType:(int)arg5;
 - (void)_setTimeAdded:(id)arg1;
 - (id)_timeAdded;
 - (id)_timeStale;

@@ -5,17 +5,17 @@
 @class AVAssetWriterInputFigAssetWriterEndPassOperation, AVMediaFileType, AVWeakReference, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVFigAssetWriterTrack : NSObject {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     BOOL _aboveHighWaterLevel;
     NSObject<OS_dispatch_queue> *_aboveHighWaterLevelQueue;
     AVAssetWriterInputFigAssetWriterEndPassOperation *_endPassOperation;
     struct OpaqueFigAssetWriter { } *_figAssetWriter;
     AVMediaFileType *_mediaFileType;
     NSString *_mediaType;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _sampleBufferCoalescingInterval;
     int _trackID;
     AVWeakReference *_weakReference;

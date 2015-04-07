@@ -4,7 +4,7 @@
 
 @class AppLaunchStatsSaveAndRestore, LSApplicationWorkspace, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface AppLaunchStatsWhiteListManager : NSObject <LSApplicationWorkspaceObserverProtocol, DuetLoggerProtocol> {
+@interface AppLaunchStatsWhiteListManager : NSObject <DuetLoggerProtocol, LSApplicationWorkspaceObserverProtocol> {
     NSObject<OS_dispatch_queue> *aplsWLMQueue;
     NSMutableArray *defaultsWriteWhiteList;
     BOOL enableWhiteListCheck;

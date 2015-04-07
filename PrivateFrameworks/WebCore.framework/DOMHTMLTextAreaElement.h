@@ -67,8 +67,8 @@
 - (void)setMaxLength:(int)arg1;
 - (void)setName:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
-- (void)setRangeText:(id)arg1 start:(unsigned int)arg2 end:(unsigned int)arg3 selectionMode:(id)arg4;
 - (void)setRangeText:(id)arg1;
+- (void)setRangeText:(id)arg1 start:(unsigned int)arg2 end:(unsigned int)arg3 selectionMode:(id)arg4;
 - (void)setReadOnly:(BOOL)arg1;
 - (void)setRequired:(BOOL)arg1;
 - (void)setRows:(int)arg1;

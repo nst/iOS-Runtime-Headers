@@ -8,15 +8,15 @@
     struct __IOSurface { } *_surface;
 }
 
-+ (id)dataWithIOSurface:(struct __IOSurface { }*)arg1 length:(unsigned int)arg2;
 + (id)dataWithIOSurface:(struct __IOSurface { }*)arg1;
++ (id)dataWithIOSurface:(struct __IOSurface { }*)arg1 length:(unsigned int)arg2;
 + (void)initialize;
 
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithIOSurface:(struct __IOSurface { }*)arg1 length:(unsigned int)arg2;
 - (id)initWithIOSurface:(struct __IOSurface { }*)arg1;
+- (id)initWithIOSurface:(struct __IOSurface { }*)arg1 length:(unsigned int)arg2;
 - (unsigned int)length;
 
 @end

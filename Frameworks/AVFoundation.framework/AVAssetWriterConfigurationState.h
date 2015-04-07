@@ -5,11 +5,20 @@
 @class AVMediaFileType, NSArray, NSURL;
 
 @interface AVAssetWriterConfigurationState : NSObject {
+    NSURL *_URL;
+    NSURL *_directoryForTemporaryFiles;
+    NSArray *_inputGroups;
+    NSArray *_inputs;
+    AVMediaFileType *_mediaFileType;
+    NSArray *_metadataItems;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    } _movieFragmentInterval;
+    int _movieTimeScale;
+    float _preferredRate;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -17,15 +26,6 @@
         float d; 
         float tx; 
         float ty; 
-    NSURL *_URL;
-    NSURL *_directoryForTemporaryFiles;
-    NSArray *_inputGroups;
-    NSArray *_inputs;
-    AVMediaFileType *_mediaFileType;
-    NSArray *_metadataItems;
-    } _movieFragmentInterval;
-    int _movieTimeScale;
-    float _preferredRate;
     } _preferredTransform;
     float _preferredVolume;
     BOOL _shouldOptimizeForNetworkUse;

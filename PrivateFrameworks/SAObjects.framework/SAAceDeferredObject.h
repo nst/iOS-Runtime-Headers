@@ -4,7 +4,7 @@
 
 @class <SAAceSerializable>, NSArray, NSString;
 
-@interface SAAceDeferredObject : SABaseCommand <SAAceSerializable, SAAceCommand, SAClientBoundCommand, SAServerBoundCommand> {
+@interface SAAceDeferredObject : SABaseCommand <SAAceCommand, SAAceSerializable, SAClientBoundCommand, SAServerBoundCommand> {
 }
 
 @property(copy) NSString * aceId;

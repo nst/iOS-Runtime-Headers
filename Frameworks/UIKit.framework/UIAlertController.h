@@ -4,7 +4,7 @@
 
 @class NSArray, NSAttributedString, NSMutableArray, NSObject<UIAlertControllerVisualStyleProviding>, NSSet, NSString, UIAlertAction, UIGestureRecognizer, UIPopoverController, UIView, UIViewController, _UIAlertControllerTextFieldViewController;
 
-@interface UIAlertController : UIViewController <UIAlertControllerContaining, _UIAlertControllerTextFieldViewControllerContaining, UIAlertControllerVisualStyleProviding> {
+@interface UIAlertController : UIViewController <UIAlertControllerContaining, UIAlertControllerVisualStyleProviding, _UIAlertControllerTextFieldViewControllerContaining> {
     UIPopoverController *__compatibilityPopoverController;
     UIAlertAction *__defaultAlertAction;
     BOOL __shouldAllowNilParameters;
@@ -65,8 +65,8 @@
 - (void)_actionViewTapped:(id)arg1;
 - (id)_actions;
 - (void)_addActionWithTitle:(id)arg1 image:(id)arg2 style:(int)arg3 handler:(id)arg4;
-- (void)_addActionWithTitle:(id)arg1 style:(int)arg2 handler:(id)arg3 shouldDismissHandler:(id)arg4;
 - (void)_addActionWithTitle:(id)arg1 style:(int)arg2 handler:(id)arg3;
+- (void)_addActionWithTitle:(id)arg1 style:(int)arg2 handler:(id)arg3 shouldDismissHandler:(id)arg4;
 - (id)_alertControllerContainer;
 - (id)_alertControllerView;
 - (void)_attemptAnimatedDismissWithGestureRecognizer:(id)arg1;
@@ -81,8 +81,8 @@
 - (id)_currentDescriptor;
 - (id)_defaultAlertAction;
 - (id)_dimmingView;
-- (void)_dismissAnimated:(BOOL)arg1 triggeringAction:(id)arg2 triggeredByPopoverDimmingView:(BOOL)arg3;
 - (void)_dismissAnimated:(BOOL)arg1 triggeringAction:(id)arg2;
+- (void)_dismissAnimated:(BOOL)arg1 triggeringAction:(id)arg2 triggeredByPopoverDimmingView:(BOOL)arg3;
 - (void)_dismissFromBackButton:(id)arg1;
 - (void)_dismissFromPopoverDimmingView;
 - (id)_dismissGestureRecognizer;

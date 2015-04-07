@@ -5,12 +5,12 @@
 @class UILabel;
 
 @interface RUITableHeaderView : UIView {
+    UILabel *_titleLabel;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UILabel *_titleLabel;
     } _titleLabelPadding;
 }
 

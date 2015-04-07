@@ -3,12 +3,12 @@
  */
 
 @interface AVCaptureManualExposureBracketedStillImageSettings : AVCaptureBracketedStillImageSettings {
+    float _ISO;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    float _ISO;
     } _exposureDuration;
 }
 

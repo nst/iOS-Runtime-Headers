@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface IMGroupActionItem : IMItem <NSCoding, NSCopying, IMRemoteObjectCoding> {
+@interface IMGroupActionItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
     long long _actionType;
     NSString *_otherCountryCode;
     NSString *_otherHandle;

@@ -40,8 +40,8 @@
 - (void)logNoteActivityType:(id)arg1;
 - (void)logNoteCountPerStore;
 - (void)logNoteCreationDeltaCountWithAppIdentifier:(int)arg1;
-- (void)logNoteDeltaCount:(int)arg1 forStoreType:(id)arg2;
 - (void)logNoteDeltaCount:(int)arg1;
+- (void)logNoteDeltaCount:(int)arg1 forStoreType:(id)arg2;
 - (void)logStoreCount;
 - (void)logStoreDeltaCount:(int)arg1 forType:(id)arg2;
 - (void)logTotalNoteCount;

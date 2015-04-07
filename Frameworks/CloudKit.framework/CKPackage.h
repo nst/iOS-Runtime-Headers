@@ -4,7 +4,7 @@
 
 @class CKRecord, CKSQLite, NSArray, NSData, NSString, NSURL;
 
-@interface CKPackage : NSObject <NSSecureCoding, CKRecordValue> {
+@interface CKPackage : NSObject <CKRecordValue, NSSecureCoding> {
     NSString *_UUID;
     NSString *_anchorPath;
     NSString *_applicationBundleID;

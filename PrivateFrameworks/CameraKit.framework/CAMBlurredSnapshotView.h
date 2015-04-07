@@ -5,6 +5,13 @@
 @class UIView;
 
 @interface CAMBlurredSnapshotView : UIView {
+    UIView *__dimmingView;
+    UIView *__lowQualityBlurView;
+    BOOL __supportsBlur;
+    BOOL _blurred;
+    BOOL _dimmed;
+    UIView *_snapshotView;
+    int _style;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,13 +21,6 @@
             float width; 
             float height; 
         } size; 
-    UIView *__dimmingView;
-    UIView *__lowQualityBlurView;
-    BOOL __supportsBlur;
-    BOOL _blurred;
-    BOOL _dimmed;
-    UIView *_snapshotView;
-    int _style;
     } _targetFrame;
 }
 
@@ -51,10 +51,10 @@
 - (BOOL)blurred;
 - (BOOL)dimmed;
 - (id)initWithView:(id)arg1;
-- (void)setBlurred:(BOOL)arg1 animated:(BOOL)arg2 withCompletionBlock:(id)arg3;
 - (void)setBlurred:(BOOL)arg1;
-- (void)setDimmed:(BOOL)arg1 animated:(BOOL)arg2 withCompletionBlock:(id)arg3;
+- (void)setBlurred:(BOOL)arg1 animated:(BOOL)arg2 withCompletionBlock:(id)arg3;
 - (void)setDimmed:(BOOL)arg1;
+- (void)setDimmed:(BOOL)arg1 animated:(BOOL)arg2 withCompletionBlock:(id)arg3;
 - (void)setStyle:(int)arg1;
 - (void)setTargetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)snapshotView;

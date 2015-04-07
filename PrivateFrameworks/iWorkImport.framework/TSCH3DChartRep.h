@@ -5,27 +5,6 @@
 @class CALayer, NSDictionary, NSMutableArray, NSMutableIndexSet, NSNumber, TSCH3DChartAnimationEngine, TSCH3DChartRenderer, TSCH3DChartRendererState, TSCH3DChartRepCachedTexture, TSCH3DChartRepFPSCounter, TSCH3DChartRepRenderQueue, TSCH3DGLContext, TSCH3DScene;
 
 @interface TSCH3DChartRep : TSCHChartRep <TSCH3DChartAnimationRendering, TSCH3DGLLayerProvider> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     BOOL mAllowLowResolutionTextures;
     int mAnimationBuildType;
     Class mAnimationClass;
@@ -34,11 +13,29 @@
     BOOL mAnimationHasEnded;
     TSCH3DScene *mAnimationLayerScene;
     int mAnimationStage;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mBeginScaleChartBodyLayoutRect;
     NSDictionary *mBuildAttributes;
     int mCGContextDrawingMode;
     TSCH3DChartRepCachedTexture *mCachedTexture;
     unsigned int mChunkCount;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mCurrentVisibleBoundsInLayerRelativeSpace;
     NSNumber *mCustomAnimationContentsScale;
     BOOL mDidChangeDepth;
@@ -54,6 +51,9 @@
     BOOL mLayerPositionIsInvalidated;
     BOOL mMaybeBeginDragging;
     BOOL mMaybeBeginScrolling;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mMinimumInteractiveSize;
     unsigned int mNumberOfInteractiveRotations;
     float mOverrideRenderingSamples;
@@ -146,10 +146,10 @@
 - (void)invalidateLayerCache;
 - (void)invalidateLayoutCache;
 - (void)invalidateSubselectionKnobs;
-- (BOOL)isLastAbsoluteChunkStageForFinalElements:(BOOL)arg1 chunkStage:(int)arg2;
 - (BOOL)isLastAbsoluteChunkStageForFinalElements:(BOOL)arg1;
-- (BOOL)isLastChunkStageForFinalElements:(BOOL)arg1 chunkStage:(int)arg2;
+- (BOOL)isLastAbsoluteChunkStageForFinalElements:(BOOL)arg1 chunkStage:(int)arg2;
 - (BOOL)isLastChunkStageForFinalElements:(BOOL)arg1;
+- (BOOL)isLastChunkStageForFinalElements:(BOOL)arg1 chunkStage:(int)arg2;
 - (BOOL)isOpaque;
 - (id)knobForDynamicStyleChangeKey:(id)arg1;
 - (void)knobTrackingDidBegin:(id)arg1;
@@ -184,7 +184,7 @@
 - (BOOL)p_canRender;
 - (void)p_cancelEndInteractiveModeCallback;
 - (id)p_chart3DLayout;
-- (struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; boolx3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; })p_chart3DLayoutBoundsConverterUpdatingLayoutIfNecessary:(BOOL)arg1;
+- (struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; bool x3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; })p_chart3DLayoutBoundsConverterUpdatingLayoutIfNecessary:(BOOL)arg1;
 - (void)p_checkPresenterDisplayForAnimationSession:(id)arg1;
 - (void)p_clearCachedTexture;
 - (void)p_clearInteractiveFlag:(unsigned int)arg1;

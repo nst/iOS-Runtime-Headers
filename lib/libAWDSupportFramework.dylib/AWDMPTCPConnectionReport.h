@@ -5,6 +5,15 @@
 @class NSMutableArray, NSString;
 
 @interface AWDMPTCPConnectionReport : PBCodable <NSCopying> {
+    NSString *_clientId;
+    BOOL _establishmentCellularFallback;
+    int _establishmentFailureError;
+    BOOL _establishmentForcedTcpFallback;
+    NSString *_establishmentInterfaceName;
+    BOOL _establishmentSuccess;
+    int _establishmentSynRetransmits;
+    BOOL _establishmentTcpFallback;
+    double _establishmentTime;
     struct { 
         unsigned int establishmentTime : 1; 
         unsigned int postConnectSessionLifetime : 1; 
@@ -20,15 +29,6 @@
         unsigned int establishmentTcpFallback : 1; 
         unsigned int postConnectMultiHomed : 1; 
         unsigned int postConnectSingleHomed : 1; 
-    NSString *_clientId;
-    BOOL _establishmentCellularFallback;
-    int _establishmentFailureError;
-    BOOL _establishmentForcedTcpFallback;
-    NSString *_establishmentInterfaceName;
-    BOOL _establishmentSuccess;
-    int _establishmentSynRetransmits;
-    BOOL _establishmentTcpFallback;
-    double _establishmentTime;
     } _has;
     NSMutableArray *_interfaceReports;
     BOOL _postConnectMultiHomed;

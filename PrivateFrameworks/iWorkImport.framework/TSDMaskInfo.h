@@ -18,8 +18,8 @@
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2 pathSource:(id)arg3;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2 pathSource:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (Class)layoutClass;

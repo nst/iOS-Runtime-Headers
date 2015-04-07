@@ -41,9 +41,9 @@
 - (id)discoveredAccountInfo;
 - (id)extractPrincipalURLFromPropFindTask:(id)arg1 error:(id*)arg2;
 - (void)getDiscoveryStatus:(id)arg1 priorFailed:(id*)arg2 subsequentFailed:(id*)arg3 priorIncomplete:(id*)arg4 subsequentIncomplete:(id*)arg5 priorSuccess:(id*)arg6 subsequentSuccess:(id*)arg7;
+- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 httpPorts:(id)arg3 httpsPorts:(id)arg4 httpServiceString:(id)arg5 httpsServiceString:(id)arg6 wellKnownPath:(id)arg7 potentialContextPaths:(id)arg8 requiredComplianceClass:(id)arg9;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 httpPorts:(id)arg3 httpsPorts:(id)arg4 httpServiceString:(id)arg5 httpsServiceString:(id)arg6 wellKnownPaths:(id)arg7 requiredComplianceClass:(id)arg8;
-- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (void)noteDefinitiveAuthFailureFromTask:(id)arg1;
 - (void)optionsTask:(id)arg1 error:(id)arg2;
 - (id)potentialContextPaths;

@@ -5,10 +5,10 @@
 @class NSDictionary, NSString, UIColor;
 
 @interface MPUExtrasGridCellStyle : NSObject <NSCopying> {
+    int _defaultTextAlignment;
     struct CGSize { 
         float width; 
         float height; 
-    int _defaultTextAlignment;
     } _imageSize;
     NSDictionary *_subtitleDefaultFontAttributes;
     float _subtitleFirstBaselineHeight;

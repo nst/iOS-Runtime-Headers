@@ -4,7 +4,7 @@
 
 @class <UIDocumentMenuDelegate>, NSMutableArray, NSString, NSURL, UIAlertController, _UIDocumentPickerRemoteViewController;
 
-@interface UIDocumentMenuViewController : UIViewController <_UIDocumentPickerRemoteViewControllerContaining, UIAlertControllerContaining> {
+@interface UIDocumentMenuViewController : UIViewController <UIAlertControllerContaining, _UIDocumentPickerRemoteViewControllerContaining> {
     UIAlertController *_alertController;
     NSMutableArray *_auxiliaryOptions;
     BOOL _dismissDelegateCalled;

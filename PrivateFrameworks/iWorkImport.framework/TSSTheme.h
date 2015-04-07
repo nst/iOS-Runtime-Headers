@@ -9,7 +9,7 @@
 
 @class NSMutableDictionary, NSString, TSSStylesheet;
 
-@interface TSSTheme : TSPObject <TSSPresetSource, TSKModel> {
+@interface TSSTheme : TSPObject <TSKModel, TSSPresetSource> {
     NSMutableDictionary *mPresetsByKind;
     TSSStylesheet *mStylesheet;
     NSString *mThemeIdentifier;

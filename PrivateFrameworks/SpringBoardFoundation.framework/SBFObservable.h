@@ -20,8 +20,8 @@
 - (id)observeOn:(id)arg1;
 - (id)subscribe:(id)arg1;
 - (id)subscribeOn:(id)arg1;
-- (id)subscribeWithResultBlock:(id)arg1 completionBlock:(id)arg2 failureBlock:(id)arg3;
 - (id)subscribeWithResultBlock:(id)arg1;
+- (id)subscribeWithResultBlock:(id)arg1 completionBlock:(id)arg2 failureBlock:(id)arg3;
 - (id)throttle:(double)arg1 onScheduler:(id)arg2;
 - (id)waitForResults:(id*)arg1;
 

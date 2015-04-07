@@ -8,11 +8,15 @@
 
 @class FBApplicationProcess, FBProcessExecutionContext, FBProcessManager, FBWaitForProcessDeathTransaction, NSString;
 
-@interface FBApplicationProcessLaunchTransaction : FBTransaction <FBProcessManagerObserver, FBApplicationProcessObserver> {
+@interface FBApplicationProcessLaunchTransaction : FBTransaction <FBApplicationProcessObserver, FBProcessManagerObserver> {
     NSString *_bundleID;
     FBWaitForProcessDeathTransaction *_deathTransaction;
     FBProcessExecutionContext *_executionContext;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _executionContextProvider;
+
     BOOL _exited;
     BOOL _failedLaunch;
     FBApplicationProcess *_process;

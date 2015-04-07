@@ -3,8 +3,8 @@
  */
 
 @interface EDProtection : NSObject <NSCopying> {
-    boolmHidden;
-    boolmLocked;
+    bool mHidden;
+    bool mLocked;
 }
 
 + (id)protectionWithHidden:(bool)arg1 locked:(bool)arg2;

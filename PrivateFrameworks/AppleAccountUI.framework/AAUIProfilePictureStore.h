@@ -52,11 +52,11 @@
 - (id)profilePictureForAccountOwnerWithoutMonogramFallback;
 - (id)profilePictureForFamilyMember:(id)arg1;
 - (id)profilePictureForFamilyMemberWithFirstName:(id)arg1 lastName:(id)arg2 email:(id)arg3;
-- (id)profilePictureForPicture:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)profilePictureForPicture:(id)arg1;
+- (id)profilePictureForPicture:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setPictureDiameter:(float)arg1;
 - (void)setPictureStyle:(int)arg1;
-- (void)setProfilePictureForAccountOwner:(id)arg1 cropRect:(id)arg2;
 - (void)setProfilePictureForAccountOwner:(id)arg1;
+- (void)setProfilePictureForAccountOwner:(id)arg1 cropRect:(id)arg2;
 
 @end

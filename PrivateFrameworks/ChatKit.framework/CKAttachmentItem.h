@@ -5,12 +5,12 @@
 @class NSString, NSURL;
 
 @interface CKAttachmentItem : NSObject <QLPreviewItem> {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSURL *_fileURL;
     NSString *_guid;
     NSURL *_previewURL;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
 }
 

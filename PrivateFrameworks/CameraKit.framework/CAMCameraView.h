@@ -4,42 +4,7 @@
 
 @class CALayer, CAMAnimationDelegate, CAMAvalancheIndicatorView, CAMBlurredSnapshotView, CAMBottomBar, CAMCameraSpec, CAMCaptureController, CAMElapsedTimeView, CAMExposureBiasTextView, CAMFilterButton, CAMFlashBadge, CAMFlashButton, CAMFlipButton, CAMGridView, CAMHDRBadge, CAMHDRButton, CAMHardwareLockIndicatorView, CAMImageWell, CAMLowDiskSpaceAlertView, CAMModeDial, CAMPanoramaView, CAMPreviewView, CAMShutterButton, CAMSlalomIndicatorView, CAMTimerButton, CAMTimerIndicatorView, CAMTopBar, CAMTorchPatternController, CAMZoomSlider, NSDate, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_source>, NSString, NSTimer, PLCameraIrisAnimationView, PLCameraOverlayTextLabelView, PLPreviewOverlayView, UIAlertView, UIImageView, UILongPressGestureRecognizer, UIPanGestureRecognizer, UISwipeGestureRecognizer, UITapGestureRecognizer, UIView;
 
-@interface CAMCameraView : UIView <CAMModeDialDataSource, CAMTopBarDelegate, CAMBottomBarDelegate, CAMZoomSliderDelegate, CAMTimerButtonDelegate, CAMStillImageCaptureRequestDelegate, PLCameraControllerDelegate, PLCameraPanoramaViewDelegate, UIGestureRecognizerDelegate, UIAccelerometerDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    unsigned int _needToShowDiskSpaceWarning : 1;
-    unsigned int _shouldShowFocus : 1;
-    unsigned int _capturePhotoWhenFocusFinished : 1;
-    unsigned int _capturePhotoWhenExposureFinished : 1;
-    unsigned int _isMidSuspension : 1;
-    unsigned int _capturingPhoto : 1;
-    unsigned int _fastIrisAnimation : 1;
-    unsigned int _currentCaptureIsExtendedDuration : 1;
-    unsigned int _flashModeDidChangeDuringCapture : 1;
-    unsigned int _imageWriterQueueIsFull : 1;
-    unsigned int _isCameraApp : 1;
-    unsigned int _staticIrisIsClosing : 1;
-    unsigned int _irisIsOpening : 1;
-    unsigned int _wasInterrupted : 1;
-    unsigned int _suppressIrisAnimations : 1;
-    unsigned int _shouldAnimateIrisClosed : 1;
-    unsigned int _enableCameraAfterDidMoveToWindow : 1;
-    unsigned int _previewStartedBeforeViewMovedToWindow : 1;
-    unsigned int _didEverMoveToWindow : 1;
+@interface CAMCameraView : UIView <CAMBottomBarDelegate, CAMModeDialDataSource, CAMStillImageCaptureRequestDelegate, CAMTimerButtonDelegate, CAMTopBarDelegate, CAMZoomSliderDelegate, PLCameraControllerDelegate, PLCameraPanoramaViewDelegate, UIAccelerometerDelegate, UIGestureRecognizerDelegate> {
     CAMHDRBadge *__HDRBadge;
     CAMHDRButton *__HDRButton;
     BOOL __HDRSuggested;
@@ -78,6 +43,9 @@
     CAMFlashButton *__flashButton;
     CAMFlipButton *__flipButton;
     BOOL __flipping;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } __focusPanStartPoint;
     CAMHardwareLockIndicatorView *__hardwareLockIndicator;
     BOOL __hasMaximumNumberOfInflightImageRequests;
@@ -90,6 +58,9 @@
     CAMImageWell *__imageWell;
     NSDate *__lastAutoTimerCaptureDate;
     NSDate *__lastDelayedCaptureIndicatorUpdateDate;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } __lastFocusPanPoint;
     CAMModeDial *__modeDial;
     CAMBlurredSnapshotView *__modeSwitchingSnapshotView;
@@ -138,58 +109,87 @@
     UIImageView *_bottomShadowView;
     CAMCaptureController *_cameraController;
     int _captureOrientation;
+    unsigned int _capturePhotoWhenExposureFinished : 1;
+    unsigned int _capturePhotoWhenFocusFinished : 1;
+    unsigned int _capturingPhoto : 1;
     NSMutableArray *_closeIrisDidFinishSelectors;
     BOOL _controlsAreVisible;
+    unsigned int _currentCaptureIsExtendedDuration : 1;
     unsigned int _currentFacesCount;
     BOOL _delayStaticClosedIrisLoading;
     id _delegate;
+    unsigned int _didEverMoveToWindow : 1;
     CAMLowDiskSpaceAlertView *_diskSpaceAlert;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
     BOOL _enableAutorotationAfterRecording;
+    unsigned int _enableCameraAfterDidMoveToWindow : 1;
     UIPanGestureRecognizer *_exposureBiasPanGestureRecognizer;
     NSTimer *_faceFadeOutTimer;
+    unsigned int _fastIrisAnimation : 1;
     int _flashModeBeforeCapture;
+    unsigned int _flashModeDidChangeDuringCapture : 1;
     UIView *_flipView;
     UIPanGestureRecognizer *_focusPanGestureRecognizer;
     BOOL _gridIsOn;
     BOOL _gridVisible;
     CAMGridView *_guideView;
+    unsigned int _imageWriterQueueIsFull : 1;
     float _initialPinchZoomValue;
     BOOL _internalOnlyDisableIrisViews;
     BOOL _irisIsClosed;
+    unsigned int _irisIsOpening : 1;
     PLCameraIrisAnimationView *_irisView;
     BOOL _irisWillOpen;
+    unsigned int _isCameraApp : 1;
+    unsigned int _isMidSuspension : 1;
     int _lastSelectedHDRMode;
     int _lastSelectedPhotoFlashMode;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     BOOL _maskSetBeforeModeChange;
     int _modeToOpenIris;
+    unsigned int _needToShowDiskSpaceWarning : 1;
     NSMutableArray *_openIrisDidFinishSelectors;
     PLPreviewOverlayView *_overlayView;
     CALayer *_panoramaPreviewLayer;
     float _panoramaProgress;
     CAMPanoramaView *_panoramaView;
     UIView *_previewContainerView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _previewContentSize;
     BOOL _previewOriginShouldBeZero;
+    unsigned int _previewStartedBeforeViewMovedToWindow : 1;
     CAMPreviewView *_previewView;
     int _previewViewAspectMode;
     UIView *_previewViewSnapshotView;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _previewViewTransform;
     int _rotationStyle;
     int _selectedModeIndex;
+    unsigned int _shouldAnimateIrisClosed : 1;
     BOOL _shouldEndFocusOnTapUp;
+    unsigned int _shouldShowFocus : 1;
     BOOL _showFaceTracking;
     UITapGestureRecognizer *_singleTapGestureRecognizer;
     CAMCameraSpec *_spec;
     BOOL _squareMaskActive;
+    unsigned int _staticIrisIsClosing : 1;
     UIImageView *_staticIrisView;
+    unsigned int _suppressIrisAnimations : 1;
     UIView *_textOverlayView;
     int _timerDuration;
     UIAlertView *_torchDisabledAlert;
     BOOL _userChangedHDRAfterFlash;
     BOOL _userInteractionLoggingEnabled;
     int _videoFlashMode;
+    unsigned int _wasInterrupted : 1;
 }
 
 @property(readonly) CAMHDRBadge * _HDRBadge;
@@ -576,8 +576,8 @@
 - (int)_photoFlashMode;
 - (void)_pinchZoomWithScale:(float)arg1;
 - (BOOL)_pointIsOnPanoControls:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)_pointIsWithinOverlayView:(struct CGPoint { float x1; float x2; })arg1 hitView:(id*)arg2;
 - (BOOL)_pointIsWithinOverlayView:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_pointIsWithinOverlayView:(struct CGPoint { float x1; float x2; })arg1 hitView:(id*)arg2;
 - (void)_postCaptureCleanup;
 - (void)_pptTestSetAutofocusDisabled:(BOOL)arg1;
 - (void)_presentCameraRoll;
@@ -626,10 +626,10 @@
 - (void)_setHDRMode:(int)arg1;
 - (void)_setHDRSuggested:(BOOL)arg1;
 - (void)_setHasMaximumNumberOfInflightImageRequests:(BOOL)arg1;
-- (void)_setHideFocusForFilterSelection:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setHideFocusForFilterSelection:(BOOL)arg1;
-- (void)_setHideGridViewForFilterSelection:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setHideFocusForFilterSelection:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setHideGridViewForFilterSelection:(BOOL)arg1;
+- (void)_setHideGridViewForFilterSelection:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setHidingBadgesForFilterUI:(BOOL)arg1;
 - (void)_setIgnoringAutomaticBadgeUpdatesDuringCapture:(BOOL)arg1;
 - (void)_setIgnoringAutomaticBadgeUpdatesForAvalancheIndicator:(BOOL)arg1;
@@ -643,8 +643,8 @@
 - (void)_setPreviewViewAspectMode:(int)arg1;
 - (void)_setProcessingHDR:(BOOL)arg1;
 - (void)_setRecoveringFromServerError:(BOOL)arg1;
-- (void)_setReviewingImagePickerCapture:(BOOL)arg1 updateUI:(BOOL)arg2;
 - (void)_setReviewingImagePickerCapture:(BOOL)arg1;
+- (void)_setReviewingImagePickerCapture:(BOOL)arg1 updateUI:(BOOL)arg2;
 - (void)_setShouldShowFocus:(BOOL)arg1;
 - (void)_setSplitFocusAndExposure:(BOOL)arg1;
 - (void)_setStopVideoCaptureWhenRecordingStarts:(BOOL)arg1;
@@ -769,8 +769,8 @@
 - (void)_updateCaptureAggregateDictionariesForResponse:(id)arg1;
 - (void)_updateConstraintsForMode:(int)arg1;
 - (void)_updateDelayedCaptureIndicatorWithFace:(id)arg1;
-- (void)_updateEnabledControlsWithReason:(id)arg1 forceLog:(BOOL)arg2;
 - (void)_updateEnabledControlsWithReason:(id)arg1;
+- (void)_updateEnabledControlsWithReason:(id)arg1 forceLog:(BOOL)arg2;
 - (void)_updateExposureBiasPanGestureRecognizersForOrientation:(int)arg1;
 - (void)_updateExposureBiasViews;
 - (void)_updateExposureBiasViewsWithExposureBias:(float)arg1;
@@ -872,6 +872,7 @@
 - (void)cameraShutterCancelled:(id)arg1;
 - (void)cameraShutterPressed:(id)arg1;
 - (BOOL)cameraShutterReleased:(id)arg1;
+- (id)captureController;
 - (void)captureController:(id)arg1 didCaptureStillImageForRequest:(id)arg2;
 - (void)captureController:(id)arg1 didCompleteResponse:(id)arg2 forStillImageRequest:(id)arg3 error:(id)arg4;
 - (void)captureController:(id)arg1 didFinishPanoramaRequest:(id)arg2 withResponse:(id)arg3;
@@ -884,7 +885,6 @@
 - (void)captureController:(id)arg1 didStopCapturingForPanoramaRequest:(id)arg2;
 - (void)captureController:(id)arg1 didStopRecordingForVideoRequest:(id)arg2;
 - (void)captureController:(id)arg1 willCaptureStillImageForRequest:(id)arg2;
-- (id)captureController;
 - (void)captureControllerPanoramaConfigurationChanged:(id)arg1;
 - (void)clearImageWellForNewSessionAlbum;
 - (BOOL)controlsAreVisible;
@@ -935,8 +935,8 @@
 - (int)selectedModeIndex;
 - (void)setAllowsMultipleModes:(BOOL)arg1;
 - (void)setCameraDevice:(int)arg1;
-- (void)setCameraMode:(int)arg1 device:(int)arg2;
 - (void)setCameraMode:(int)arg1;
+- (void)setCameraMode:(int)arg1 device:(int)arg2;
 - (void)setControlsAreVisible:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFlashMode:(int)arg1;
@@ -955,8 +955,8 @@
 - (void)set_desiredNumberOfAvalancheCaptures:(int)arg1;
 - (void)showZoomSlider;
 - (id)spec;
-- (void)startPreview:(id)arg1;
 - (void)startPreview;
+- (void)startPreview:(id)arg1;
 - (BOOL)startVideoCapture;
 - (void)stopPreview;
 - (void)stopPreviewAnimated:(BOOL)arg1;

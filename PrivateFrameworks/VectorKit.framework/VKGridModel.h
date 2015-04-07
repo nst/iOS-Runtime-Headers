@@ -14,64 +14,64 @@
 @class NSString, VKMapModel, VKStyleManager;
 
 @interface VKGridModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
-    struct Matrix<float, 4, 1> { 
-        float _e[4]; 
-    struct Matrix<float, 4, 1> { 
-        float _e[4]; 
-    struct shared_ptr<ggl::Tile::ViewUniformData> { 
-        struct ViewUniformData {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
     struct shared_ptr<ggl::GridBase::GridBaseUniformData> { 
         struct GridBaseUniformData {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::SimpleGrid::SimpleGridUniformData> { 
-        struct SimpleGridUniformData {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::Grid::GridUniformData> { 
-        struct GridUniformData {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct unique_ptr<ggl::Grid::Shader::Setup, std::__1::default_delete<ggl::Grid::Shader::Setup> > { 
-        struct __compressed_pair<ggl::Grid::Shader::Setup *, std::__1::default_delete<ggl::Grid::Shader::Setup> > { 
-            struct Setup {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::SimpleGrid::Shader::Setup, std::__1::default_delete<ggl::SimpleGrid::Shader::Setup> > { 
-        struct __compressed_pair<ggl::SimpleGrid::Shader::Setup *, std::__1::default_delete<ggl::SimpleGrid::Shader::Setup> > { 
-            struct Setup {} *__first_; 
-        } __ptr_; 
+    } _baseUniformData;
+    struct Matrix<float, 4, 1> { 
+        float _e[4]; 
+    } _fillColor;
     struct shared_ptr<ggl::GridBase::GridMesh> { 
         struct GridMesh {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
-        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
-            struct RenderState {} *__first_; 
-        } __ptr_; 
-    } _baseUniformData;
-    } _fillColor;
     } _gridMesh;
     double _gridMix;
     struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; } *_gridRenderItem;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _gridRenderState;
+    struct Matrix<float, 4, 1> { 
+        float _e[4]; 
     } _lineColor;
     VKMapModel *_mapModel;
     BOOL _needsUpdatedColor;
     unsigned char _renderPass;
+    struct unique_ptr<ggl::Grid::Shader::Setup, std::__1::default_delete<ggl::Grid::Shader::Setup> > { 
+        struct __compressed_pair<ggl::Grid::Shader::Setup *, std::__1::default_delete<ggl::Grid::Shader::Setup> > { 
+            struct Setup {} *__first_; 
+        } __ptr_; 
     } _shaderSetup;
     BOOL _simpleGridEnabled;
     struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; } *_simpleGridRenderItem;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
     } _simpleGridRenderState;
+    struct unique_ptr<ggl::SimpleGrid::Shader::Setup, std::__1::default_delete<ggl::SimpleGrid::Shader::Setup> > { 
+        struct __compressed_pair<ggl::SimpleGrid::Shader::Setup *, std::__1::default_delete<ggl::SimpleGrid::Shader::Setup> > { 
+            struct Setup {} *__first_; 
+        } __ptr_; 
     } _simpleShaderSetup;
+    struct shared_ptr<ggl::SimpleGrid::SimpleGridUniformData> { 
+        struct SimpleGridUniformData {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _simpleUniformData;
+    struct shared_ptr<ggl::Grid::GridUniformData> { 
+        struct GridUniformData {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _uniformData;
+    struct shared_ptr<ggl::Tile::ViewUniformData> { 
+        struct ViewUniformData {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _viewUniformData;
 }
 
-@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) unsigned int hash;
 @property VKMapModel * mapModel;
 @property unsigned char renderPass;

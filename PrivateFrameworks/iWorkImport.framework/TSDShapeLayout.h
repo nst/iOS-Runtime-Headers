@@ -5,6 +5,76 @@
 @class TSDBezierPath, TSDEditableBezierPathSource, TSDFill, TSDInfoGeometry, TSDMutableStroke, TSDPathSource;
 
 @interface TSDShapeLayout : TSDStyledLayout {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } mCachedAlignmentFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } mCachedAlignmentFrameInRoot;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
+    } mCachedAlignmentFrameInRootTransformInRoot;
+    TSDBezierPath *mCachedClippedPath;
+    TSDEditableBezierPathSource *mCachedEditableBezierPathSource;
+    TSDBezierPath *mCachedPath;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } mCachedPathBounds;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } mCachedPathBoundsWithoutStroke;
+    BOOL mCachedPathIsLineSegment;
+    BOOL mCachedPathIsOpen;
+    TSDPathSource *mCachedPathSource;
+    TSDFill *mDynamicFill;
+    TSDMutableStroke *mDynamicStroke;
+    int mHeadCutSegment;
+    float mHeadCutT;
+    float mHeadLineEndAngle;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } mHeadLineEndPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } mHeadPoint;
+    TSDInfoGeometry *mInitialInfoGeometry;
+    TSDInfoGeometry *mResizeInfoGeometry;
+    TSDPathSource *mResizePathSource;
     struct { 
         unsigned int path : 1; 
         unsigned int pathBounds : 1; 
@@ -17,88 +87,18 @@
         unsigned int headLineEnd : 1; 
         unsigned int tailLineEnd : 1; 
         unsigned int clippedPath : 1; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } mCachedAlignmentFrame;
-    } mCachedAlignmentFrameInRoot;
-    } mCachedAlignmentFrameInRootTransformInRoot;
-    TSDBezierPath *mCachedClippedPath;
-    TSDEditableBezierPathSource *mCachedEditableBezierPathSource;
-    TSDBezierPath *mCachedPath;
-    } mCachedPathBounds;
-    } mCachedPathBoundsWithoutStroke;
-    BOOL mCachedPathIsLineSegment;
-    BOOL mCachedPathIsOpen;
-    TSDPathSource *mCachedPathSource;
-    TSDFill *mDynamicFill;
-    TSDMutableStroke *mDynamicStroke;
-    int mHeadCutSegment;
-    float mHeadCutT;
-    float mHeadLineEndAngle;
-    } mHeadLineEndPoint;
-    } mHeadPoint;
-    TSDInfoGeometry *mInitialInfoGeometry;
-    TSDInfoGeometry *mResizeInfoGeometry;
-    TSDPathSource *mResizePathSource;
     } mShapeInvalidFlags;
     TSDPathSource *mShrunkenPathSource;
     int mTailCutSegment;
     float mTailCutT;
     float mTailLineEndAngle;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mTailLineEndPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mTailPoint;
 }
 

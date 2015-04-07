@@ -43,8 +43,8 @@
 - (BOOL)hasPurchasableStoreOfferItemsForVariant:(int)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStoreOfferResponse:(id)arg1 preferredStoreOfferVariant:(int)arg2 offerMediaItems:(id)arg3 localItemsQuery:(id)arg4;
 - (id)initWithStoreOfferResponse:(id)arg1 preferredStoreOfferVariant:(int)arg2;
+- (id)initWithStoreOfferResponse:(id)arg1 preferredStoreOfferVariant:(int)arg2 offerMediaItems:(id)arg3 localItemsQuery:(id)arg4;
 - (BOOL)isCheaperToPurchaseIndividualItems;
 - (BOOL)isCollectionOfferPresentable;
 - (BOOL)isDownloadable;

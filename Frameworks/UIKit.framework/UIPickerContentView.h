@@ -5,10 +5,10 @@
 @class UIImageView, UILabel;
 
 @interface UIPickerContentView : UIView {
+    UIImageView *_checkView;
     struct { 
         unsigned int checked : 1; 
         unsigned int highlighted : 1; 
-    UIImageView *_checkView;
     } _pickerContentViewFlags;
     UILabel *_titleLabel;
 }

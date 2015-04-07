@@ -4,7 +4,7 @@
 
 @class <PCConnectionManagerDelegate>, <PCGrowthAlgorithm>, NSObject<OS_dispatch_queue>, NSRunLoop, NSString, PCPersistentTimer;
 
-@interface PCConnectionManager : NSObject <PCLoggingDelegate, PCInterfaceMonitorDelegate> {
+@interface PCConnectionManager : NSObject <PCInterfaceMonitorDelegate, PCLoggingDelegate> {
     int _connectionClass;
     double _defaultPollingInterval;
     PCPersistentTimer *_delayTimer;
@@ -115,8 +115,8 @@
 - (BOOL)isRunning;
 - (double)keepAliveGracePeriod;
 - (void)log:(id)arg1;
-- (void)logAtLevel:(int)arg1 format:(id)arg2 arguments:(void*)arg3;
 - (void)logAtLevel:(int)arg1 format:(id)arg2;
+- (void)logAtLevel:(int)arg1 format:(id)arg2 arguments:(void*)arg3;
 - (id)loggingIdentifier;
 - (double)maximumKeepAliveInterval;
 - (double)minimumKeepAliveInterval;

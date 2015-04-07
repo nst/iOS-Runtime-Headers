@@ -4,7 +4,7 @@
 
 @class <CLIndoorDelegateProtocol>, NSError, NSString;
 
-@interface IndoorProtocolProxy : NSObject <CLIndoorDelegateProtocolInternal, CLIndoorDelegateProtocol> {
+@interface IndoorProtocolProxy : NSObject <CLIndoorDelegateProtocol, CLIndoorDelegateProtocolInternal> {
     <CLIndoorDelegateProtocol> *_delegate;
     NSError *_shutdownReason;
 }

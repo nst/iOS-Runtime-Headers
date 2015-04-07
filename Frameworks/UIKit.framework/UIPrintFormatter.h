@@ -10,16 +10,16 @@
         float left; 
         float bottom; 
         float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     } _contentInsets;
     float _maximumContentHeight;
     float _maximumContentWidth;
     BOOL _needsRecalc;
     int _pageCount;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _perPageContentInsets;
     UIPrintPageRenderer *_printPageRenderer;
     int _startPage;

@@ -23,7 +23,11 @@
     CBPeripheral *_peripheral;
     CBScalablePipe *_pipe;
     CBScalablePipeManager *_pipeManager;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _proximityChangeHandler;
+
     NSString *_serviceUUID;
     BOOL _testMode;
 }
@@ -50,10 +54,10 @@
 
 - (void).cxx_destruct;
 - (void)beginMonitoringLeash;
+- (id)centralManager;
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
-- (id)centralManager;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (int)centralPhase;
 - (void)connect;

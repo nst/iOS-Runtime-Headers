@@ -4,7 +4,7 @@
 
 @class KNMotionBlurAnimationPluginWrapper, NSString;
 
-@interface KNContentAwareZoom : KNAnimationEffect <KNContentAwareTransitionAnimator, KNContentAwareFrameAnimator, KNAnimationPluginArchiving> {
+@interface KNContentAwareZoom : KNAnimationEffect <KNAnimationPluginArchiving, KNContentAwareFrameAnimator, KNContentAwareTransitionAnimator> {
     KNMotionBlurAnimationPluginWrapper *_motionBlurWrapper;
 }
 

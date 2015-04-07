@@ -84,8 +84,8 @@
 - (BOOL)defaultsToNoQualifiedAds;
 - (id)delegate;
 - (BOOL)digestAuthenticationEnabled;
-- (void)httpServer:(id)arg1 closedConnection:(id)arg2 withError:(id)arg3;
 - (void)httpServer:(id)arg1 closedConnection:(id)arg2;
+- (void)httpServer:(id)arg1 closedConnection:(id)arg2 withError:(id)arg3;
 - (void)httpServer:(id)arg1 connection:(id)arg2 blockedSandboxViolation:(id)arg3;
 - (void)httpServer:(id)arg1 connection:(id)arg2 droppedResponseToRequestBeforeClosing:(id)arg3;
 - (void)httpServer:(id)arg1 connection:(id)arg2 enqueuedResponseToRequest:(id)arg3 statusCode:(int)arg4 length:(unsigned int)arg5;

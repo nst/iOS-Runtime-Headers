@@ -51,8 +51,8 @@
 - (void)_loadInitialManifestLocked;
 - (void)_migrateDatabase:(id)arg1;
 - (void)_notifyDatabaseChangedExternally;
-- (void)_notifyDatabaseChangedWithNoop:(BOOL)arg1 firstUnlock:(BOOL)arg2;
 - (void)_notifyDatabaseChangedWithNoop:(BOOL)arg1;
+- (void)_notifyDatabaseChangedWithNoop:(BOOL)arg1 firstUnlock:(BOOL)arg2;
 - (void)_notifyForFirstUnlock;
 - (BOOL)_passDBIsAvailableLocked;
 - (id)_passForUniqueIDLocked:(id)arg1;

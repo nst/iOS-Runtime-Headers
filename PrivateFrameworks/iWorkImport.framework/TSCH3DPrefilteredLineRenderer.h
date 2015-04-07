@@ -5,6 +5,7 @@
 @class TSCH3DOrderedDictionary, TSCH3DSceneRenderPipeline;
 
 @interface TSCH3DPrefilteredLineRenderer : NSObject {
+    TSCH3DOrderedDictionary *mCacheObjects;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -28,6 +29,7 @@
                 float q; 
             } ; 
         } value[4]; 
+    } mModelMatrix;
     struct tmat3x3<float> { 
         struct tvec3<float> { 
             union { 
@@ -46,6 +48,7 @@
                 float p; 
             } ; 
         } value[3]; 
+    } mNormalMatrix;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -69,6 +72,8 @@
                 float q; 
             } ; 
         } value[4]; 
+    } mNormalizedProjection;
+    TSCH3DSceneRenderPipeline *mPipeline;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -92,6 +97,7 @@
                 float q; 
             } ; 
         } value[4]; 
+    } mProjection;
     struct box<glm::detail::tvec2<int> > { 
         struct tvec2<int> { 
             union { 
@@ -117,12 +123,6 @@
                 int t; 
             } ; 
         } mMax; 
-    TSCH3DOrderedDictionary *mCacheObjects;
-    } mModelMatrix;
-    } mNormalMatrix;
-    } mNormalizedProjection;
-    TSCH3DSceneRenderPipeline *mPipeline;
-    } mProjection;
     } mViewport;
 }
 

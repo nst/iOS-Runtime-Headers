@@ -4,10 +4,7 @@
 
 @class IDSBatchIDQueryController, MFComposeRecipientView, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSMutableSet, NSNumber, NSString, UIPopoverController, UIScrollView, UITableView;
 
-@interface PUPhotoStreamRecipientViewController : UIViewController <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, UIPopoverControllerDelegate, MFComposeRecipientViewDelegate, IDSBatchIDQueryControllerDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface PUPhotoStreamRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, IDSBatchIDQueryControllerDelegate, MFComposeRecipientViewDelegate, MFContactsSearchConsumer, UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     float _bottomTableOffset;
     NSNumber *_currentSearchTaskID;
     id _delegate;
@@ -17,6 +14,9 @@
     NSArray *_properties;
     UIScrollView *_recipientContainerView;
     MFComposeRecipientView *_recipientView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _recipientViewSize;
     MFContactsSearchManager *_searchManager;
     NSArray *_searchResults;
@@ -71,8 +71,8 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)makeRecipientViewFirstResponder;
 - (void)makeRecipientViewResignFirstResponder;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)recipients;

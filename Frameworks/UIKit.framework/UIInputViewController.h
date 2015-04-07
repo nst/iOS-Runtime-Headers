@@ -4,7 +4,7 @@
 
 @class NSObject<UITextDocumentProxy>, NSString, UIInputView, UIKeyboard;
 
-@interface UIInputViewController : UIViewController <_UITextDocumentInterfaceDelegate, UITextInputDelegate> {
+@interface UIInputViewController : UIViewController <UITextInputDelegate, _UITextDocumentInterfaceDelegate> {
     BOOL _alignsToContentViewController;
     NSString *_primaryLanguage;
     NSObject<UITextDocumentProxy> *_textDocumentProxy;

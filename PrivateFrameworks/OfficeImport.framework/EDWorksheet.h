@@ -5,11 +5,11 @@
 @class EDCollection, EDColumnInfoCollection, EDMergedCellCollection, EDPane, EDReference, EDRowBlocks, EDWarnings, OITSUPointerKeyDictionary;
 
 @interface EDWorksheet : EDSheet {
-    boolmFitToPage;
     EDColumnInfoCollection *mColumnInfos;
     EDCollection *mConditionalFormattings;
     double mDefaultColumnWidth;
     unsigned short mDefaultRowHeight;
+    bool mFitToPage;
     EDCollection *mHyperlinks;
     EDReference *mImplicitCellArea;
     EDReference *mMaxCellReferencedInFormulas;

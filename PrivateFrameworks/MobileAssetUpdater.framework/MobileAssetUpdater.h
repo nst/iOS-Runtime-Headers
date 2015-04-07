@@ -12,7 +12,11 @@
     ASAsset *_asset;
     BOOL _assetDownloaded;
     NSString *_assetType;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _logger;
+
     NSString *_overrideFile;
     NSString *_purgeOverrideFile;
     ASAssetQuery *_query;

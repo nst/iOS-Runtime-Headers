@@ -9,7 +9,11 @@
 @class CKShareID, NSError, NSMutableArray;
 
 @interface CKFetchUserPresenceOperation : CKOperation {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchUserPresenceCompletionBlock;
+
     CKShareID *_shareID;
     NSMutableArray *_userPresence;
 }

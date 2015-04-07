@@ -5,15 +5,15 @@
 @class AVWeakReferencingDelegateStorage, NSDictionary;
 
 @interface AVCaptureVideoDataOutputInternal_FigRecorder : NSObject {
+    BOOL alwaysDiscardsLateVideoFrames;
+    BOOL delegateRespondsToDidDropSBufCallback;
+    BOOL delegateRespondsToDidOutputSBufCallback;
+    AVWeakReferencingDelegateStorage *delegateStorage;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    BOOL alwaysDiscardsLateVideoFrames;
-    BOOL delegateRespondsToDidDropSBufCallback;
-    BOOL delegateRespondsToDidOutputSBufCallback;
-    AVWeakReferencingDelegateStorage *delegateStorage;
     } deprecatedMinFrameDuration;
     NSDictionary *videoSettings;
 }

@@ -11,7 +11,11 @@
 @interface CKSpotlightQuery : NSObject <SPDaemonQueryDelegate> {
     BOOL _cancelled;
     NSMutableDictionary *_chatGUIDToLatestSearchResult;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     BOOL _processing;
     SPDaemonQueryToken *_queryToken;
     unsigned int _resultIndex;

@@ -19,6 +19,7 @@
             float b; 
             float p; 
         } ; 
+    } mBegin;
     struct tvec3<float> { 
         union { 
             float x; 
@@ -35,7 +36,6 @@
             float b; 
             float p; 
         } ; 
-    } mBegin;
     } mEnd;
 }
 

@@ -20,9 +20,9 @@
 - (void)dealloc;
 - (id)init;
 - (id)notificationCenter;
-- (void)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
-- (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)postNotificationName:(id)arg1;
+- (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
+- (void)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
 - (void)removeObserver:(id)arg1;
 - (void)setNotificationCenter:(id)arg1;
 

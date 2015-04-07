@@ -5,9 +5,6 @@
 @class NSArray, NSString;
 
 @interface WebEvent : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
     int _characterSet;
     NSString *_characters;
     NSString *_charactersIgnoringModifiers;
@@ -19,6 +16,9 @@
     unsigned short _keyCode;
     BOOL _keyRepeating;
     unsigned int _keyboardFlags;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _locationInWindow;
     unsigned int _modifierFlags;
     BOOL _popupVariant;

@@ -7,8 +7,16 @@
  */
 
 @interface DAECalendarAvailabilityContext : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resultsBlock;
+
 }
 
 - (void).cxx_destruct;

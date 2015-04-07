@@ -5,15 +5,13 @@
 @class NSString, UIColor, UIPickerTableView, UIPickerView, UIView;
 
 @interface UIPickerColumnView : UIView <UIPickerTableViewContainerDelegate, UITableViewDataSource> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    UIColor *__textColor;
+    UIView *_bottomContainerView;
+    UIPickerTableView *_bottomTable;
+    float _leftHitTestExtension;
+    float _middleBarHeight;
+    UIView *_middleContainerView;
+    UIPickerTableView *_middleTable;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -31,17 +29,19 @@
         float m42; 
         float m43; 
         float m44; 
-    UIColor *__textColor;
-    UIView *_bottomContainerView;
-    UIPickerTableView *_bottomTable;
-    float _leftHitTestExtension;
-    float _middleBarHeight;
-    UIView *_middleContainerView;
-    UIPickerTableView *_middleTable;
     } _perspectiveTransform;
     UIPickerView *_pickerView;
     float _rightHitTestExtension;
     float _rowHeight;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _tableFrame;
     UIView *_topContainerView;
     UIPickerTableView *_topTable;

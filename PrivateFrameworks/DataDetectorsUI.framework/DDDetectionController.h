@@ -37,8 +37,8 @@
 - (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct __DDQueryOffset { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; void *x9; }*)_resultForURL:(id)arg1 forContainer:(id)arg2 context:(id*)arg3;
 - (BOOL)_shouldImmediatelyShowActionSheetForCoreResult:(struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct __DDQueryOffset { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; void *x9; }*)arg1;
 - (BOOL)_shouldImmediatelyShowActionSheetForURL:(id)arg1;
-- (void)_startCoalescedURLification:(id)arg1 clearPreviousResults:(BOOL)arg2;
 - (void)_startCoalescedURLification:(id)arg1;
+- (void)_startCoalescedURLification:(id)arg1 clearPreviousResults:(BOOL)arg2;
 - (id)_subResultAtIndex:(unsigned int)arg1 ofResult:(id)arg2;
 - (id)actionsAtIndex:(unsigned int)arg1 ofStorage:(id)arg2 context:(id)arg3;
 - (id)actionsForAnchor:(id)arg1 url:(id)arg2 forFrame:(id)arg3;
@@ -70,9 +70,9 @@
 - (void)setResults:(struct __CFArray { }*)arg1 forFrame:(id)arg2;
 - (BOOL)shouldImmediatelyShowActionSheetForTapAtIndex:(unsigned int)arg1 ofStorage:(id)arg2;
 - (BOOL)shouldImmediatelyShowActionSheetForURL:(id)arg1 forFrame:(id)arg2;
-- (void)startURLificationForContainer:(id)arg1 detectedTypes:(unsigned int)arg2 options:(int)arg3;
 - (void)startURLificationForContainer:(id)arg1 detectedTypes:(unsigned int)arg2;
-- (void)startURLificationForFrame:(id)arg1 detectedTypes:(unsigned int)arg2 options:(int)arg3;
+- (void)startURLificationForContainer:(id)arg1 detectedTypes:(unsigned int)arg2 options:(int)arg3;
 - (void)startURLificationForFrame:(id)arg1 detectedTypes:(unsigned int)arg2;
+- (void)startURLificationForFrame:(id)arg1 detectedTypes:(unsigned int)arg2 options:(int)arg3;
 
 @end

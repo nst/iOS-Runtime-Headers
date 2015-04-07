@@ -9,44 +9,47 @@
 @class UIImage, UIView;
 
 @interface UIScrubberControl : UIOldSliderControl {
+    unsigned int _allowsAnyValue : 1;
+    unsigned int _alwaysShowAllComponentsForDuration : 1;
+    unsigned int _autoSizesToFitDuration : 1;
+    id _delegate;
+    unsigned int _delegateDidChangeScrubValue : 1;
+    unsigned int _delegateDidEnterScrubbingState : 1;
+    unsigned int _delegateShouldBeginScrubbing : 1;
+    unsigned int _didDrag : 1;
+    double _duration;
+    UIView *_elapsedTimeView;
+    unsigned int _endingTracking : 1;
+    unsigned int _largeKnob : 1;
+    float _lastDisplayedWidth;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _lastUpdatedPoint;
+    unsigned int _layoutTimeParts : 2;
+    unsigned int _leftCapIsDownloadCap : 1;
+    float _maxTrackWidth;
+    unsigned int _remainingIsDuration : 1;
+    UIView *_remainingTimeView;
+    unsigned int _requireMomentaryDelay : 1;
+    unsigned int _rightCapIsDownloadCap : 1;
+    unsigned int _sentScrubbingStart : 1;
+    unsigned int _showFullWidthComponents : 1;
+    unsigned int _showKnob : 1;
+    unsigned int _showTimeCentered : 1;
+
+  /* Error parsing encoded ivar type info: (?="image"@"UIImage""view"@"UIView") */
     union { 
         UIImage *image; 
         id view; 
         /* Warning: Unrecognized filer type: ')' using 'void*' */ void*UIView; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    unsigned int _didDrag : 1;
-    unsigned int _sentScrubbingStart : 1;
-    unsigned int _autoSizesToFitDuration : 1;
-    unsigned int _remainingIsDuration : 1;
-    unsigned int _delegateDidEnterScrubbingState : 1;
-    unsigned int _delegateDidChangeScrubValue : 1;
-    unsigned int _delegateShouldBeginScrubbing : 1;
-    unsigned int _endingTracking : 1;
-    unsigned int _showKnob : 1;
-    unsigned int _largeKnob : 1;
-    unsigned int _rightCapIsDownloadCap : 1;
-    unsigned int _requireMomentaryDelay : 1;
-    unsigned int _showFullWidthComponents : 1;
-    unsigned int _alwaysShowAllComponentsForDuration : 1;
-    unsigned int _timeLayoutSkippedLayout : 1;
-    unsigned int _timeLayoutSkippedForcedLayout : 1;
-    unsigned int _showTimeCentered : 1;
-    unsigned int _leftCapIsDownloadCap : 1;
-    unsigned int _allowsAnyValue : 1;
-    unsigned int _layoutTimeParts : 2;
-    unsigned int _unused : 3;
-    unsigned int _timeLayoutDisabledCount : 7;
-    id _delegate;
-    double _duration;
-    UIView *_elapsedTimeView;
-    float _lastDisplayedWidth;
-    } _lastUpdatedPoint;
-    float _maxTrackWidth;
-    UIView *_remainingTimeView;
     } _sliderAvailableFill;
+
+    unsigned int _timeLayoutDisabledCount : 7;
+    unsigned int _timeLayoutSkippedForcedLayout : 1;
+    unsigned int _timeLayoutSkippedLayout : 1;
     double _trackingStartTime;
+    unsigned int _unused : 3;
     float _valueAvailable;
 }
 

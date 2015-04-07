@@ -5,6 +5,19 @@
 @class CHDDefaultTextProperties, CHDLegend, CHDPlotArea, CHDTitle, CHDView3D, EDSheet, EDWorkbook, NSMutableArray, NSString, OADGraphicProperties;
 
 @interface CHDChart : OADGraphic <OADDrawableContainer> {
+    bool mAutoTitleDeleted;
+    OADGraphicProperties *mBackWallGraphicProperties;
+    OADGraphicProperties *mChartAreaGraphicProperties;
+    int mChartDirection;
+    CHDDefaultTextProperties *mDefaultTextProperties;
+    bool mDirectionChanged;
+    int mDisplayBlankCellsAs;
+    NSMutableArray *mDrawables;
+    EDWorkbook *mExternalData;
+    OADGraphicProperties *mFloorGraphicProperties;
+    bool mHasSharedXValues;
+    bool mHasVisibleSeriesNames;
+    CHDLegend *mLegend;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,23 +27,10 @@
             float width; 
             float height; 
         } size; 
-    boolmAutoTitleDeleted;
-    boolmDirectionChanged;
-    boolmHasSharedXValues;
-    boolmHasVisibleSeriesNames;
-    boolmMSGraph;
-    boolmPlotVisibleCellsOnly;
-    OADGraphicProperties *mBackWallGraphicProperties;
-    OADGraphicProperties *mChartAreaGraphicProperties;
-    int mChartDirection;
-    CHDDefaultTextProperties *mDefaultTextProperties;
-    int mDisplayBlankCellsAs;
-    NSMutableArray *mDrawables;
-    EDWorkbook *mExternalData;
-    OADGraphicProperties *mFloorGraphicProperties;
-    CHDLegend *mLegend;
     } mLogicalBounds;
+    bool mMSGraph;
     CHDPlotArea *mPlotArea;
+    bool mPlotVisibleCellsOnly;
     EDSheet *mSheet;
     OADGraphicProperties *mSideWallGraphicProperties;
     int mStyleId;

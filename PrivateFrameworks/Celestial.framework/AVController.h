@@ -91,8 +91,8 @@
 - (void)setAVItemClass:(Class)arg1;
 - (void)setApplyVideoTrackMatrix;
 - (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
-- (void)setCurrentTime:(double)arg1 options:(int)arg2;
 - (void)setCurrentTime:(double)arg1;
+- (void)setCurrentTime:(double)arg1 options:(int)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEQPreset:(int)arg1;
 - (BOOL)setIndexOfCurrentQueueFeederItem:(unsigned int)arg1 error:(id*)arg2;
@@ -101,8 +101,8 @@
 - (void)setOutputQTESFilePath:(id)arg1;
 - (BOOL)setPickedRouteWithPassword:(id)arg1 withPassword:(id)arg2;
 - (void)setQueue:(id)arg1;
-- (void)setQueueFeeder:(id)arg1 withIndex:(int)arg2;
 - (void)setQueueFeeder:(id)arg1;
+- (void)setQueueFeeder:(id)arg1 withIndex:(int)arg2;
 - (BOOL)setRate:(float)arg1 error:(id*)arg2;
 - (BOOL)setRepeatMode:(int)arg1;
 - (void)setShouldDisplayClosedCaptions:(BOOL)arg1;

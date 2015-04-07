@@ -4,7 +4,7 @@
 
 @class <BLTPingSubscribing>, NSString, NSXPCConnection, NSXPCListener;
 
-@interface BLTRemotePingSubscriberService : NSObject <NSXPCListenerDelegate, BLTPingService> {
+@interface BLTRemotePingSubscriberService : NSObject <BLTPingService, NSXPCListenerDelegate> {
     NSXPCConnection *_connectionFromServer;
     NSXPCConnection *_connectionToServer;
     <BLTPingSubscribing> *_delegate;
@@ -33,8 +33,8 @@
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id)arg3;
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)listener;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)machServiceName;
 - (void)pingWithBulletin:(id)arg1;
 - (void)pingWithRecordID:(id)arg1 forSectionID:(id)arg2;
@@ -44,8 +44,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setListener:(id)arg1;
 - (void)setMachServiceName:(id)arg1;
-- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(BOOL)arg2;
 - (void)subscribeToSectionID:(id)arg1;
+- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(BOOL)arg2;
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (void)unsubscribeFromSectionID:(id)arg1;
 

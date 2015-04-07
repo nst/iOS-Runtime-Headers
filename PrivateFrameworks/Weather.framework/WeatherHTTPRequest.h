@@ -20,10 +20,10 @@
 
 - (id)aggregateDictionaryDomain;
 - (void)cancel;
+- (id)connection;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)connection;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (void)failWithError:(id)arg1;

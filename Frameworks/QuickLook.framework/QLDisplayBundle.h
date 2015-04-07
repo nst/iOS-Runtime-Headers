@@ -5,6 +5,15 @@
 @class <QLPreviewItem>, <QLPreviewItemInteractionDelegate>, NSString, NSTimer, UIView;
 
 @interface QLDisplayBundle : UIViewController {
+    <QLPreviewItemInteractionDelegate> *_delegate;
+    int _index;
+    BOOL _loaded;
+    BOOL _loading;
+    BOOL _overlayHidden;
+    NSString *_password;
+    <QLPreviewItem> *_previewItem;
+    int _previewMode;
+    NSTimer *_refreshTimer;
     struct { 
         int pid; 
         struct { 
@@ -20,15 +29,6 @@
                 float height; 
             } size; 
         } contentFrame; 
-    <QLPreviewItemInteractionDelegate> *_delegate;
-    int _index;
-    BOOL _loaded;
-    BOOL _loading;
-    BOOL _overlayHidden;
-    NSString *_password;
-    <QLPreviewItem> *_previewItem;
-    int _previewMode;
-    NSTimer *_refreshTimer;
     } clientContext;
 }
 

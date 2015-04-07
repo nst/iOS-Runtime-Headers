@@ -15,10 +15,10 @@
 
 - (id)allKeys;
 - (void)dealloc;
-- (id)imageForKey:(id)arg1 generateImageWithBlockIfNecessary:(id)arg2;
-- (id)imageForKey:(id)arg1 options:(int)arg2 generateImageWithBlockIfNecessary:(id)arg3;
-- (id)imageForKey:(id)arg1 options:(int)arg2;
 - (id)imageForKey:(id)arg1;
+- (id)imageForKey:(id)arg1 generateImageWithBlockIfNecessary:(id)arg2;
+- (id)imageForKey:(id)arg1 options:(int)arg2;
+- (id)imageForKey:(id)arg1 options:(int)arg2 generateImageWithBlockIfNecessary:(id)arg3;
 - (id)initWithDescription:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeImageForKey:(id)arg1;

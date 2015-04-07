@@ -4,7 +4,7 @@
 
 @class <FBWindowContextHostViewDelegate>, FBLayerHostContainer, FBScene, FBWindowContextHostViewContentLayerDelegate, FBWindowContextManager, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSSet, NSString, UIScreen;
 
-@interface FBWindowContextHostView : UIView <FBWindowContextManagerObserver, FBSceneBoundsDelegate> {
+@interface FBWindowContextHostView : UIView <FBSceneBoundsDelegate, FBWindowContextManagerObserver> {
     FBLayerHostContainer *_contentLayer;
     FBWindowContextHostViewContentLayerDelegate *_contentLayerDelegate;
     FBWindowContextManager *_contextManager;

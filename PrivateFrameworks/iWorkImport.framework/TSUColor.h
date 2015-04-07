@@ -9,7 +9,7 @@
 
 @class NSString;
 
-@interface TSUColor : NSObject <TSSPreset, TSSPresetSource, TSSThemeAsset, NSCopying> {
+@interface TSUColor : NSObject <NSCopying, TSSPreset, TSSPresetSource, TSSThemeAsset> {
     struct CGColor { } *mCGColor;
 }
 

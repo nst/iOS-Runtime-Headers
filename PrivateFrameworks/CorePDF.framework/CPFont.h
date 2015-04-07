@@ -5,6 +5,9 @@
 @class NSString;
 
 @interface CPFont : NSObject <CPDisposable> {
+    struct CGFont { } *cgFont;
+    struct CGPDFFont { } *cgPDFFont;
+    float defaultWidth;
     struct { 
         float fontStretch; 
         float fontWeight; 
@@ -33,9 +36,6 @@
         float spaceWidth; 
         float underlinePosition; 
         float underlineThickness; 
-    struct CGFont { } *cgFont;
-    struct CGPDFFont { } *cgPDFFont;
-    float defaultWidth;
     } descriptor;
     BOOL disposed;
     BOOL exactMatch;

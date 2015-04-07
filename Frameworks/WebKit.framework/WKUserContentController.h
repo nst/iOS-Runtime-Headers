@@ -7,9 +7,9 @@
 @interface WKUserContentController : NSObject {
     struct RefPtr<WebKit::WebUserContentControllerProxy> { 
         struct WebUserContentControllerProxy {} *m_ptr; 
+    } _userContentControllerProxy;
     struct RetainPtr<NSMutableArray> { 
         void *m_ptr; 
-    } _userContentControllerProxy;
     } _userScripts;
 }
 

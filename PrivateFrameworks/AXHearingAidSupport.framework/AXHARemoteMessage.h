@@ -10,7 +10,11 @@
 
 @interface AXHARemoteMessage : AXHAMessage {
     NSString *_UUID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sendCompletion;
+
 }
 
 @property(retain) NSString * UUID;

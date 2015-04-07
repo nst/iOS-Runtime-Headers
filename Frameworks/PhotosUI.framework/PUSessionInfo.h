@@ -9,7 +9,11 @@
 @class NSObject<PLAlbumProtocol>, NSOrderedSet, NSPointerArray, NSString, PUPhotoSelectionManager;
 
 @interface PUSessionInfo : NSObject <PUPhotoSelectionManagerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _bannerGenerator;
+
     NSString *_localizedPrompt;
     NSPointerArray *_observers;
     PUPhotoSelectionManager *_photoSelectionManager;

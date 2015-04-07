@@ -5,11 +5,11 @@
 @class CHDAxesCollection, CHDChartTypesCollection, OADGraphicProperties;
 
 @interface CHDPlotArea : NSObject {
-    boolmCategoryAxesReversed;
-    boolmCategoryAxesReversedOverridden;
-    boolmContainsVolumeStockType;
     CHDAxesCollection *mAxes;
+    bool mCategoryAxesReversed;
+    bool mCategoryAxesReversedOverridden;
     CHDChartTypesCollection *mChartTypes;
+    bool mContainsVolumeStockType;
     OADGraphicProperties *mGraphicProperties;
 }
 

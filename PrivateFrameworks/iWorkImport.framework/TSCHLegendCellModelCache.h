@@ -5,27 +5,6 @@
 @class NSString, TSCHChartSeries, TSDStroke;
 
 @interface TSCHLegendCellModelCache : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -36,11 +15,32 @@
             float height; 
         } size; 
     } mBadgeFillFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mBadgeFrame;
     int mBadgeType;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mCellSize;
     float mEffectiveStrokeWidth;
     float mEffectiveSymbolStrokeWidth;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mLabelFrame;
     NSString *mLabelString;
     int mLegendCellType;

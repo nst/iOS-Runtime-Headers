@@ -9,10 +9,7 @@
 
 @class NSObject<TSDContainerInfo>, NSString, TSDBezierPath, TSDImageAdjustments, TSDInfoGeometry, TSDMaskInfo, TSDMediaStyle, TSPData, TSPObject<TSDOwningAttachment>;
 
-@interface TSDImageInfo : TSDMediaInfo <TSDContainerInfo, TSDMixing, TSSPresetSource, TSSThemedObject, TSKTransformableObject, TSDReducableInfo> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface TSDImageInfo : TSDMediaInfo <TSDContainerInfo, TSDMixing, TSDReducableInfo, TSKTransformableObject, TSSPresetSource, TSSThemedObject> {
     TSPData *mAdjustedImageData;
     TSPData *mEnhancedImageData;
     TSDImageAdjustments *mImageAdjustments;
@@ -20,6 +17,9 @@
     TSDBezierPath *mInstantAlphaPath;
     BOOL mInterpretsUntaggedImageDataAsGeneric;
     TSDMaskInfo *mMaskInfo;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mNaturalSize;
     TSPData *mOriginalImageData;
     TSDMediaStyle *mStyle;
@@ -57,8 +57,8 @@
 @property(readonly) TSDBezierPath * tracedPath;
 
 + (void)adjustIncomingImageGeometry:(id)arg1 maskGeometry:(id)arg2 forImageData:(id)arg3 maskedWithInstantAlphaPath:(id)arg4 withNaturalSize:(struct CGSize { float x1; float x2; })arg5 forTargetImageGeometry:(id)arg6 withTargetMaskGeometry:(id)arg7;
-+ (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3 reservedCount:(unsigned int)arg4;
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
++ (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3 reservedCount:(unsigned int)arg4;
 + (id)bootstrapPropertyMapForPresetIndex:(unsigned int)arg1 inTheme:(id)arg2 alternate:(int)arg3;
 + (id)presetKinds;
 + (id)resampleAndConvertImageDataToSRGB:(id)arg1 resampled:(BOOL*)arg2;
@@ -73,8 +73,8 @@
 - (id)commandToFlipWithOrientation:(int)arg1;
 - (id)commandToReplaceImageData:(id)arg1 withReducedImageData:(id)arg2 associatedHint:(id)arg3;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })computeFullTransform;
-- (id)copyWithContext:(id)arg1 style:(id)arg2;
 - (id)copyWithContext:(id)arg1;
+- (id)copyWithContext:(id)arg1 style:(id)arg2;
 - (void)dealloc;
 - (id)defaultMaskInfo;
 - (id)defaultMaskInfoWithContext:(id)arg1;
@@ -88,16 +88,16 @@
 - (id)imageDatasForReducingFileSizeWithAssociatedHints;
 - (id)imageStyle;
 - (id)initFromUnarchiver:(id)arg1;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 imageData:(id)arg4 originalImageData:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 imageData:(id)arg4 thumbnailImageData:(id)arg5 originalImageData:(id)arg6 imageAdjustments:(id)arg7 adjustedImageData:(id)arg8 thumbnailAdjustedImageData:(id)arg9;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (id)instantAlphaPath;
 - (BOOL)interpretsUntaggedImageDataAsGeneric;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (BOOL)isMasked;
 - (BOOL)isPDF;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct ImageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct Reference {} *x5; struct Size {} *x6; struct Reference {} *x7; struct DataReference {} *x8; struct DataReference {} *x9; struct Size {} *x10; struct Path {} *x11; struct ImageAdjustmentsArchive {} *x12; unsigned int x13; boolx14; struct DataReference {} *x15; struct DataReference {} *x16; struct DataReference {} *x17; struct Reference {} *x18; struct Reference {} *x19; struct Reference {} *x20; int x21; unsigned int x22[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct ImageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct Reference {} *x5; struct Size {} *x6; struct Reference {} *x7; struct DataReference {} *x8; struct DataReference {} *x9; struct Size {} *x10; struct Path {} *x11; struct ImageAdjustmentsArchive {} *x12; unsigned int x13; bool x14; struct DataReference {} *x15; struct DataReference {} *x16; struct DataReference {} *x17; struct Reference {} *x18; struct Reference {} *x19; struct Reference {} *x20; int x21; unsigned int x22[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
 - (BOOL)maskCanBeReset;
 - (id)maskInfo;
@@ -117,7 +117,7 @@
 - (id)presetKind;
 - (struct CGSize { float x1; float x2; })rawDataSize;
 - (Class)repClass;
-- (void)saveToArchive:(struct ImageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct Reference {} *x5; struct Size {} *x6; struct Reference {} *x7; struct DataReference {} *x8; struct DataReference {} *x9; struct Size {} *x10; struct Path {} *x11; struct ImageAdjustmentsArchive {} *x12; unsigned int x13; boolx14; struct DataReference {} *x15; struct DataReference {} *x16; struct DataReference {} *x17; struct Reference {} *x18; struct Reference {} *x19; struct Reference {} *x20; int x21; unsigned int x22[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ImageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct Reference {} *x5; struct Size {} *x6; struct Reference {} *x7; struct DataReference {} *x8; struct DataReference {} *x9; struct Size {} *x10; struct Path {} *x11; struct ImageAdjustmentsArchive {} *x12; unsigned int x13; bool x14; struct DataReference {} *x15; struct DataReference {} *x16; struct DataReference {} *x17; struct Reference {} *x18; struct Reference {} *x19; struct Reference {} *x20; int x21; unsigned int x22[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setAdjustedImageData:(id)arg1;
 - (void)setEnhancedImageData:(id)arg1;

@@ -13,8 +13,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityLabel;
 - (void)dealloc;
-- (id)initWithAccessibilityContainer:(id)arg1 representedElements:(id)arg2;
 - (id)initWithAccessibilityContainer:(id)arg1;
+- (id)initWithAccessibilityContainer:(id)arg1 representedElements:(id)arg2;
 - (id)representedElements;
 - (void)setRepresentedElements:(id)arg1;
 

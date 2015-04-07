@@ -14,8 +14,8 @@
 
 + (const struct InternalProtocolImplementation { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); }*)_cf_internalImpl;
 + (BOOL)canInitWithTask:(id)arg1;
-+ (id)canonicalRequestForRequest:(id)arg1 task:(id)arg2;
 + (id)canonicalRequestForRequest:(id)arg1;
++ (id)canonicalRequestForRequest:(id)arg1 task:(id)arg2;
 + (BOOL)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
 
 - (void)dealloc;

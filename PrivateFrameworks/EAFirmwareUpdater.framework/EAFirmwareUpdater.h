@@ -11,7 +11,11 @@
 @interface EAFirmwareUpdater : MobileAssetUpdater <EAAccessoryDelegate, NSStreamDelegate, iAUPServerDelegate> {
     EAAccessory *_accessory;
     NSString *_appProtocol;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _applyCompletion;
+
     NSString *_bootloaderProtocol;
     NSObject<OS_dispatch_queue> *_eaNotificationDispatchQueue;
     NSString *_firmwareBundleFilename;
@@ -24,7 +28,11 @@
     BOOL _isExpectingReconnect;
     NSMutableData *_outputData;
     unsigned int _productIDCode;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
     NSString *_protocolString;
     NSTimer *_reconnectTimer;
     EASession *_session;

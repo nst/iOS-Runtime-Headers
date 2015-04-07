@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface OITSUProgressObserver : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mHandler;
+
     BOOL mLastHandledIndeterminate;
     double mLastHandledValue;
     NSObject<OS_dispatch_queue> *mQueue;

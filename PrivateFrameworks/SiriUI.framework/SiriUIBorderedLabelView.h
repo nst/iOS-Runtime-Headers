@@ -5,12 +5,12 @@
 @class UIFont, UIImageView, UILabel;
 
 @interface SiriUIBorderedLabelView : UIView {
+    UIImageView *_borderImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIImageView *_borderImageView;
     } _edgeInsets;
     UIFont *_font;
     UILabel *_ratingLabel;

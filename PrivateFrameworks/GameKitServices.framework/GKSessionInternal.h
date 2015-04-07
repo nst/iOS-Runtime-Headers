@@ -5,26 +5,26 @@
 @class <GKSessionDOOBReceiveHandler>, <GKSessionDataReceiveHandler>, <GKSessionDelegate>, <GKSessionPrivateDelegate>, GKAutoPeerIDTable, GKConnection, GKList, GKSession, GKTable, GKVoiceChatSessionListener, NSString;
 
 @interface GKSessionInternal : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     GKConnection *_connection;
     <GKSessionDataReceiveHandler> *_dataReceiveHandler;
     void *_dataReceiveHandlerContext;
     <GKSessionDelegate> *_delegate;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _delegateLock;
     NSString *_displayName;
     struct _DNSServiceRef_t { } *_dnsServiceConnection;
     struct _DNSServiceRef_t { } *_dnsServiceResolveConnection;
-    void *_doobReceiveHandlerContext[2];
     <GKSessionDOOBReceiveHandler> *_doobReceiveHandler[2];
+    void *_doobReceiveHandlerContext[2];
     BOOL _handleEventsRunning;
     BOOL _isBusy;
     BOOL _isPublishing;
     BOOL _isSearching;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _lock;
     int _mode;
     struct _DNSServiceRef_t { } *_oldService;

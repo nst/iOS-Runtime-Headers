@@ -14,6 +14,8 @@
             float width; 
             float height; 
         } size; 
+    } _beginningRect;
+    NSMutableArray *_deleteItems;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,8 +25,6 @@
             float width; 
             float height; 
         } size; 
-    } _beginningRect;
-    NSMutableArray *_deleteItems;
     } _endingRect;
     UICollectionViewUpdateItem *_firstUpdateItem;
     NSMutableArray *_insertItems;

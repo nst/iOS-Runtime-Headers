@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface AWDAirPlaySessionStarted : PBCodable <NSCopying> {
+    unsigned int _audioCompressionType;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int audioCompressionType : 1; 
         unsigned int initiator : 1; 
         unsigned int sessionType : 1; 
         unsigned int transportType : 1; 
-    unsigned int _audioCompressionType;
     } _has;
     unsigned int _initiator;
     unsigned int _sessionType;

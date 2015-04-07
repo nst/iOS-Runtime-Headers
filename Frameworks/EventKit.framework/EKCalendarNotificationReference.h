@@ -5,12 +5,12 @@
 @class EKCalendarNotification, EKEventStore, NSDate;
 
 @interface EKCalendarNotificationReference : NSObject {
-    struct { 
-        int entityType; 
-        int entityID; 
     NSDate *_date;
     EKEventStore *_eventStore;
     EKCalendarNotification *_notification;
+    struct { 
+        int entityType; 
+        int entityID; 
     } _objectID;
     int _type;
 }

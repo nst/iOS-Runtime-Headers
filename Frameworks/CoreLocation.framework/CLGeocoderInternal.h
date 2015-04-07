@@ -9,7 +9,11 @@
 @class <GEOMapServiceTicket>, NSObject<OS_dispatch_queue>;
 
 @interface CLGeocoderInternal : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _geocodeCompletionHandler;
+
     NSObject<OS_dispatch_queue> *_queue;
     <GEOMapServiceTicket> *_ticket;
 }

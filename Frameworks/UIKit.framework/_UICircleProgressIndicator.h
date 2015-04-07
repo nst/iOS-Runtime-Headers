@@ -5,17 +5,17 @@
 @class CADisplayLink, UIColor, UIImage, UIImageView;
 
 @interface _UICircleProgressIndicator : UIView {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     float _animatedValue;
     double _animationEndTime;
     double _animationStartTime;
     float _animationStartValue;
     UIImage *_borderImage;
     UIImage *_centerImage;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _centerImageInsets;
     CADisplayLink *_displayLink;
     UIImage *_fillImage;
@@ -59,8 +59,8 @@
 - (void)setImage:(id)arg1;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setIndeterminate:(BOOL)arg1;
-- (void)setProgress:(float)arg1 animated:(BOOL)arg2;
 - (void)setProgress:(float)arg1;
+- (void)setProgress:(float)arg1 animated:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)tintColorDidChange;
 

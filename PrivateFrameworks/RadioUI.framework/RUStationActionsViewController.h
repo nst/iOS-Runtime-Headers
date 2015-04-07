@@ -4,7 +4,7 @@
 
 @class <RUStationActionsViewControllerDelegate>, MPAVItem, NSArray, NSMutableArray, NSString, RUInnerShadowHeaderFooterView, RUStationTrackInfoView, RUStationTuningView, RadioStation, UILabel, UISwitch, UITableView, UITableViewCell;
 
-@interface RUStationActionsViewController : UIViewController <RUStationTrackInfoViewDelegate, MCProfileConnectionObserver, SKStoreProductViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface RUStationActionsViewController : UIViewController <MCProfileConnectionObserver, RUStationTrackInfoViewDelegate, SKStoreProductViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     BOOL _bagShowsExplicitToggle;
     UILabel *_copyrightLabel;
     int _currentAction;

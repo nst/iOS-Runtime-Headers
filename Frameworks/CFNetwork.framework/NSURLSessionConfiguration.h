@@ -4,7 +4,7 @@
 
 @class NSArray, NSDictionary, NSHTTPCookieStorage, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
 
-@interface NSURLSessionConfiguration : NSObject <NSSecureCoding, NSCopying> {
+@interface NSURLSessionConfiguration : NSObject <NSCopying, NSSecureCoding> {
     NSDictionary *_HTTPAdditionalHeaders;
     unsigned int _HTTPCookieAcceptPolicy;
     int _HTTPMaximumConnectionsPerHost;

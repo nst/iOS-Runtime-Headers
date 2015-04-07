@@ -10,8 +10,8 @@
 
 + (id)defaultInstance;
 
-- (id)createPredicateForFetchFromPredicate:(id)arg1 withContext:(id)arg2;
 - (id)createPredicateForFetchFromPredicate:(id)arg1;
+- (id)createPredicateForFetchFromPredicate:(id)arg1 withContext:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithContext:(id)arg1;

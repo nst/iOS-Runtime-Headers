@@ -9,37 +9,43 @@
 @class NSObject<OS_dispatch_queue>, countData;
 
 @interface ML3QueryResultSet_BackingStore : NSObject {
+    NSObject<OS_dispatch_queue> *_backingStoreQueue;
+    long long _backwardCursorIdx;
+
+  /* Error parsing encoded ivar type info: {?="persistentID"q"section"C"data"(ResultData="propertyData"^@"countData"{CountData="trackCount"I"subCollectionCount"I})"callback"@?} */
+    struct { 
+        long long persistentID; 
+        unsigned char section; 
+        /* Warning: unhandled union encoding: '(ResultData="propertyData"^@"countData"{CountData="trackCount"I"subCollectionCount"I})"callback"@?}' */ union ResultData { 
+            countData **propertyData; 
+        } data; 
+        id callback; 
+    } _backwardResult;
+
+    bool _cancelled;
+    bool _finishedLoading;
+    long long _forwardCursorIdx;
+
+  /* Error parsing encoded ivar type info: {?="persistentID"q"section"C"data"(ResultData="propertyData"^@"countData"{CountData="trackCount"I"subCollectionCount"I})"callback"@?} */
+    struct { 
+        long long persistentID; 
+        unsigned char section; 
+        /* Warning: unhandled union encoding: '(ResultData="propertyData"^@"countData"{CountData="trackCount"I"subCollectionCount"I})"callback"@?}' */ union ResultData { 
+            countData **propertyData; 
+        } data; 
+        id callback; 
+    } _forwardResult;
+
     struct vector<ML3QueryResult, std::__1::allocator<ML3QueryResult> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<ML3QueryResult *, std::__1::allocator<ML3QueryResult> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    struct { 
-        long long persistentID; 
-        unsigned char section; 
-        /* Warning: unhandled union encoding: '(ResultData="propertyData"^@"countData"{CountData="trackCount"I"subCollectionCount"I})"callback"@?}' */ union ResultData { 
-            countData **propertyData; 
-        } data; 
-        id callback; 
-    struct { 
-        long long persistentID; 
-        unsigned char section; 
-        /* Warning: unhandled union encoding: '(ResultData="propertyData"^@"countData"{CountData="trackCount"I"subCollectionCount"I})"callback"@?}' */ union ResultData { 
-            countData **propertyData; 
-        } data; 
-        id callback; 
-    NSObject<OS_dispatch_queue> *_backingStoreQueue;
-    long long _backwardCursorIdx;
-    } _backwardResult;
-    long long _forwardCursorIdx;
-    } _forwardResult;
     } _results;
     long long _sectionEndIdx;
     long long _sectionStartIdx;
     unsigned long _size;
-    bool_cancelled;
-    bool_finishedLoading;
 }
 
 @property(readonly) unsigned long count;

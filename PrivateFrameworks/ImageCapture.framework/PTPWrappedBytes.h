@@ -8,7 +8,6 @@
  */
 
 @interface PTPWrappedBytes : NSObject {
-    int (*_progressNotifier)();
     BOOL _allocatedBytes;
     char *_bytes;
     unsigned long long _capacity;
@@ -17,6 +16,7 @@
     int _lastNotifiedProgress;
     unsigned long long _offset;
     double _progressNotificationTime;
+    int (*_progressNotifier)();
     void *_progressNotifierContext;
     BOOL _useByteBuffer;
 }

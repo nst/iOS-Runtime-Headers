@@ -4,7 +4,7 @@
 
 @class <MKPlaceCardPhotosControllerDelegate>, MKMapItem, NSString, _MKPlacePhotosCollectionView;
 
-@interface MKPlacePhotosViewController : UITableViewController <UICollectionViewDataSource, UICollectionViewDelegate, MKStackingViewControllerPreferredSizeUse, MKPlaceAttributionCellProvider> {
+@interface MKPlacePhotosViewController : UITableViewController <MKPlaceAttributionCellProvider, MKStackingViewControllerPreferredSizeUse, UICollectionViewDataSource, UICollectionViewDelegate> {
     BOOL _hasAttribution;
     MKMapItem *_mapItem;
     _MKPlacePhotosCollectionView *_photoGrid;

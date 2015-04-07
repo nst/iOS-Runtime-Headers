@@ -12,8 +12,6 @@
     TPPageInfo *_pageInfo;
 }
 
-@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
-@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
 @property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
 @property(readonly) TSWPStorage * bodyStorage;
@@ -27,11 +25,13 @@
 @property BOOL matchesObjectPlaceholderGeometry;
 @property(readonly) <TSDHint> * nextTargetFirstChildHint;
 @property(readonly) <TSWPOffscreenColumn> * nextTargetFirstColumn;
+@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property TSPObject<TSDOwningAttachment> * owningAttachment;
 @property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
 @property(readonly) TPPageHint * pageHint;
 @property NSObject<TSDContainerInfo> * parentInfo;
 @property(readonly) <TSWPOffscreenColumn> * previousTargetLastColumn;
+@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) Class superclass;
 
 - (id)bodyStorage;

@@ -10,9 +10,6 @@
 @class KNRecording, KNSlideTree, KNSoundtrack, KNTheme, KNUIState, TSSStylesheet;
 
 @interface KNShow : TSPObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL mAutomaticallyPlaysUponOpen;
     double mAutoplayBuildDelay;
     double mAutoplayTransitionDelay;
@@ -22,6 +19,9 @@
     int mMode;
     BOOL mNeedsToUpdateThumbnails;
     KNRecording *mRecording;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mSize;
     KNSlideTree *mSlideTree;
     KNSoundtrack *mSoundtrack;
@@ -61,12 +61,12 @@
 - (unsigned int)indexOfSlideNode:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 context:(id)arg2;
-- (void)loadFromArchive:(const struct ShowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct Reference {} *x4; struct SlideTreeArchive {} *x5; struct Size {} *x6; struct Reference {} *x7; struct Reference {} *x8; double x9; int x10; boolx11; boolx12; boolx13; boolx14; double x15; double x16; struct Reference {} *x17; int x18; unsigned int x19[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct ShowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct Reference {} *x4; struct SlideTreeArchive {} *x5; struct Size {} *x6; struct Reference {} *x7; struct Reference {} *x8; double x9; int x10; bool x11; bool x12; bool x13; bool x14; double x15; double x16; struct Reference {} *x17; int x18; unsigned int x19[1]; }*)arg1 unarchiver:(id)arg2;
 - (BOOL)loopPresentation;
 - (int)mode;
 - (BOOL)needsToUpdateThumbnails;
 - (id)recording;
-- (void)saveToArchive:(struct ShowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct Reference {} *x4; struct SlideTreeArchive {} *x5; struct Size {} *x6; struct Reference {} *x7; struct Reference {} *x8; double x9; int x10; boolx11; boolx12; boolx13; boolx14; double x15; double x16; struct Reference {} *x17; int x18; unsigned int x19[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ShowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct Reference {} *x4; struct SlideTreeArchive {} *x5; struct Size {} *x6; struct Reference {} *x7; struct Reference {} *x8; double x9; int x10; bool x11; bool x12; bool x13; bool x14; double x15; double x16; struct Reference {} *x17; int x18; unsigned int x19[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setAutomaticallyPlaysUponOpen:(BOOL)arg1;
 - (void)setAutoplayBuildDelay:(double)arg1;

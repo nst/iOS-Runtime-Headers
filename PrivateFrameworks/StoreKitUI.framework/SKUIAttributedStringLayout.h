@@ -5,10 +5,10 @@
 @class NSAttributedString, NSString, NSStringDrawingContext;
 
 @interface SKUIAttributedStringLayout : NSObject <SKUICachedLayout> {
+    NSAttributedString *_attributedString;
     struct CGSize { 
         float width; 
         float height; 
-    NSAttributedString *_attributedString;
     } _boundingSize;
     NSStringDrawingContext *_context;
     float _topInset;

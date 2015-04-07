@@ -22,8 +22,8 @@
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;
 - (void)dealloc;
-- (id)initWithProcess:(id)arg1 timeout:(double)arg2;
 - (id)initWithProcess:(id)arg1;
+- (id)initWithProcess:(id)arg1 timeout:(double)arg2;
 - (id)process;
 - (void)processDidExit:(id)arg1;
 - (double)timeout;

@@ -52,10 +52,10 @@
 - (void)importAllIntoCalendar:(id)arg1;
 - (void)importAllRequested:(id)arg1;
 - (void)importEventFromController:(id)arg1 intoCalendar:(id)arg2;
-- (id)initWithData:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
 - (id)initWithData:(id)arg1 eventStore:(id)arg2;
-- (id)initWithURL:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
+- (id)initWithData:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
 - (id)initWithURL:(id)arg1 eventStore:(id)arg2;
+- (id)initWithURL:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
 - (BOOL)isImporting;
 - (id)popoverContentController;
 - (void)presentCalendarChooserForController:(id)arg1;

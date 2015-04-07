@@ -5,19 +5,14 @@
 @class MPUMarqueeView, NSDictionary, NSString, UIImage, UIImageView, UILabel;
 
 @interface MPUNowPlayingTitlesView : UIView {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     NSString *_albumText;
     NSString *_artistText;
     UILabel *_detailLabel;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _detailMarqueeEdgeInsets;
     MPUMarqueeView *_detailMarqueeView;
     NSDictionary *_detailTextAttributes;
@@ -30,6 +25,11 @@
     float _textMargin;
     UILabel *_titleLabel;
     float _titleLeading;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _titleMarqueeEdgeInsets;
     MPUMarqueeView *_titleMarqueeView;
     NSString *_titleText;
@@ -77,8 +77,8 @@
 - (void)setDetailTextAttributes:(id)arg1;
 - (void)setExplicit:(BOOL)arg1;
 - (void)setExplicitImage:(id)arg1;
-- (void)setMarqueeEnabled:(BOOL)arg1 withOptions:(long long)arg2;
 - (void)setMarqueeEnabled:(BOOL)arg1;
+- (void)setMarqueeEnabled:(BOOL)arg1 withOptions:(long long)arg2;
 - (void)setStationNameText:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setTextMargin:(float)arg1;

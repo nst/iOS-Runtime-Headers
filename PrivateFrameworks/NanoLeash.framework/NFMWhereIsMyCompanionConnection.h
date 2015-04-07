@@ -9,8 +9,16 @@
 @class NSString, NSXPCConnection;
 
 @interface NFMWhereIsMyCompanionConnection : NSObject <NFMWhereIsMyCompanionConnectionProtocol> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _playSoundAndLEDCompletion;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _playSoundCompletion;
+
     NSXPCConnection *_serverConnection;
 }
 

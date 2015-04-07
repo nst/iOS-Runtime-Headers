@@ -5,9 +5,6 @@
 @class NSObject<OS_dispatch_semaphore>;
 
 @interface TSDBitmapImageProvider : TSDImageProvider {
-    struct CGSize { 
-        float width; 
-        float height; 
     long mCheckIfValidToken;
     unsigned int mDPI;
     struct CGImage { } *mHalfSizeImage;
@@ -16,6 +13,9 @@
     struct CGImageSource { } *mImageSource;
     BOOL mIsOpaque;
     BOOL mIsValid;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mNaturalSize;
     int mOrientation;
     struct CGImage { } *mQuarterSizeImage;

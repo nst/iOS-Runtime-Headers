@@ -9,7 +9,11 @@
 @class NSLock, NSString;
 
 @interface SBLaunchAppListener : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
     NSString *_bundleIdentifier;
     BOOL _launched;
     NSLock *_lock;

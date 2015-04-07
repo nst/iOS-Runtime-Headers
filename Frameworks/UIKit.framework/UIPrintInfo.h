@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface UIPrintInfo : NSObject <NSCopying, NSCoding> {
+@interface UIPrintInfo : NSObject <NSCoding, NSCopying> {
     int _copies;
     int _duplex;
     NSString *_jobName;

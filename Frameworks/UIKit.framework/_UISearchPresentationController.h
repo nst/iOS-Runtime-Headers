@@ -5,6 +5,13 @@
 @class NSMapTable, NSString, UIPresentationController<_UISearchControllerPresenting>, UIView, _UISearchPresentationAssistant;
 
 @interface _UISearchPresentationController : UIPresentationController <_UISearchControllerPresenting> {
+    _UISearchPresentationAssistant *_assistant;
+    struct { 
+        unsigned int searchBarWasTableHeaderView : 1; 
+        unsigned int excisedSearchBarDuringPresentation : 1; 
+        unsigned int searchBarWantedAutolayoutBeforeExcision : 1; 
+    } _controllerFlags;
+    NSMapTable *_excisedSearchBarConstraitMap;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,13 +21,6 @@
             float width; 
             float height; 
         } size; 
-    struct { 
-        unsigned int searchBarWasTableHeaderView : 1; 
-        unsigned int excisedSearchBarDuringPresentation : 1; 
-        unsigned int searchBarWantedAutolayoutBeforeExcision : 1; 
-    _UISearchPresentationAssistant *_assistant;
-    } _controllerFlags;
-    NSMapTable *_excisedSearchBarConstraitMap;
     } _finalFrameForContainerView;
     NSMapTable *_placeholderConstraitMap;
     UIView *_placeholderView;

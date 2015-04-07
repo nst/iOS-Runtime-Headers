@@ -4,7 +4,7 @@
 
 @class CKAttachmentViewController, CKConversation, CKTranscriptManagementNameField, CKTranscriptManagementView, FMFMapViewController, NSString;
 
-@interface CKTranscriptManagementController : CKViewController <FMFMapViewControllerDelegate, CKAttachmentViewControllerDelegate, CKTranscriptManagementNameFieldDelegate, UIGestureRecognizerDelegate> {
+@interface CKTranscriptManagementController : CKViewController <CKAttachmentViewControllerDelegate, CKTranscriptManagementNameFieldDelegate, FMFMapViewControllerDelegate, UIGestureRecognizerDelegate> {
     CKAttachmentViewController *_attachmentsController;
     CKConversation *_conversation;
     BOOL _initialLoad;
@@ -41,11 +41,11 @@
 - (void)_updateMapInsets;
 - (void*)annotationABRecordForHandle:(id)arg1;
 - (id)annotationImageForHandle:(id)arg1;
+- (id)attachmentsController;
 - (void)attachmentsController:(id)arg1 collectionViewDidChangeEditState:(id)arg2;
 - (void)attachmentsController:(id)arg1 collectionViewDidEndScrollingAnimation:(id)arg2;
 - (void)attachmentsController:(id)arg1 collectionViewDidScroll:(id)arg2;
 - (void)attachmentsController:(id)arg1 collectionViewWillBeginDragging:(id)arg2;
-- (id)attachmentsController;
 - (id)conversation;
 - (void)dealloc;
 - (void)fmfMapViewController:(id)arg1 didDeselectHandle:(id)arg2;
@@ -60,16 +60,16 @@
 - (id)managementView;
 - (id)mapController;
 - (BOOL)mapHidden;
-- (void)nameField:(id)arg1 didCommitGroupName:(id)arg2;
 - (id)nameField;
+- (void)nameField:(id)arg1 didCommitGroupName:(id)arg2;
 - (BOOL)removeMapViewAfterScrollAnimation;
 - (void)setAttachmentsController:(id)arg1;
 - (void)setConversation:(id)arg1;
 - (void)setInitialLoad:(BOOL)arg1;
 - (void)setManagementView:(id)arg1;
 - (void)setMapController:(id)arg1;
-- (void)setMapHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setMapHidden:(BOOL)arg1;
+- (void)setMapHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setNameField:(id)arg1;
 - (void)setRemoveMapViewAfterScrollAnimation:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

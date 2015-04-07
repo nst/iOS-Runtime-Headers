@@ -5,13 +5,13 @@
 @class CKDPRecord, CKDPRecordSaveRequestConflictLoserUpdate, NSMutableArray, NSString;
 
 @interface CKDPRecordSaveRequest : PBRequest <NSCopying> {
-    struct { 
-        unsigned int saveSemantics : 1; 
-        unsigned int merge : 1; 
     CKDPRecordSaveRequestConflictLoserUpdate *_conflictLoserUpdate;
     NSMutableArray *_conflictLosersToResolves;
     NSString *_etag;
     NSMutableArray *_fieldsToDeleteIfExistOnMerges;
+    struct { 
+        unsigned int saveSemantics : 1; 
+        unsigned int merge : 1; 
     } _has;
     BOOL _merge;
     CKDPRecord *_record;

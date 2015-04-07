@@ -5,11 +5,11 @@
 @class CHDChart, CHDDataLabel, CHDSeriesCollection, EDCollection;
 
 @interface CHDChartType : NSObject {
-    boolmVaryColors;
     EDCollection *mAxisIds;
     CHDChart *mChart;
     CHDDataLabel *mDefaultDataLabel;
     CHDSeriesCollection *mSeries;
+    bool mVaryColors;
 }
 
 + (id)chartTypeWithChart:(id)arg1;

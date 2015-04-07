@@ -3,6 +3,7 @@
  */
 
 @interface OADToPointPathElement : OADPathElement {
+    BOOL mRelative;
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
@@ -12,7 +13,6 @@
             BOOL isFormulaResult; 
             int value; 
         } y; 
-    BOOL mRelative;
     } mToPoint;
 }
 

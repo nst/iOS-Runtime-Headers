@@ -4,7 +4,7 @@
 
 @class <BBRemoteDataProviderStoreDelegate>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface BBRemoteDataProviderConnection : NSObject <BBRemoteDataProviderDelegate, BBDataProviderConnectionServerProxy, BBDataProviderStore> {
+@interface BBRemoteDataProviderConnection : NSObject <BBDataProviderConnectionServerProxy, BBDataProviderStore, BBRemoteDataProviderDelegate> {
     NSString *_bundleID;
     BOOL _clientReady;
     BOOL _connected;

@@ -5,46 +5,6 @@
 @class <PUTransitionViewAnimatorDelegate>, CADisplayLink, PUValueFilter, UIView;
 
 @interface PUTransitionViewAnimator : NSObject {
-    struct { 
-        unsigned int respondsToDidUpdate : 1; 
-        unsigned int respondsToWillEnd : 1; 
-        unsigned int respondsToDidEnd : 1; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     CADisplayLink *__autoUpdateDisplayLink;
     float __currentRotation;
     float __currentScale;
@@ -52,26 +12,66 @@
     float __desiredRotation;
     float __desiredScale;
     float __desiredSizeMixFactor;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } __desiredTranslation;
     BOOL __isAutoUpdating;
     BOOL __isEnding;
     PUValueFilter *__progressFilter;
     PUValueFilter *__rampUpFilter;
     PUValueFilter *__shouldFinishFilter;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } __targetAspectRatioSourceFrame;
     float __targetScale;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _anchorPoint;
     BOOL _appliesScaleViaTransform;
     BOOL _autoUpdates;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _currentTranslation;
     <PUTransitionViewAnimatorDelegate> *_delegate;
+    struct { 
+        unsigned int respondsToDidUpdate : 1; 
+        unsigned int respondsToWillEnd : 1; 
+        unsigned int respondsToDidEnd : 1; 
     } _delegateFlags;
     unsigned int _direction;
     float _progress;
     double _rampUpDuration;
     BOOL _shouldFinish;
     BOOL _shouldUseTargetAspectRatio;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _sourceFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _targetFrame;
     float _unfilteredProgress;
     UIView *_view;

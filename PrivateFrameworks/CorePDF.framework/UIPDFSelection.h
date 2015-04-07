@@ -5,15 +5,15 @@
 @class UIPDFPage;
 
 @interface UIPDFSelection : NSObject {
-    struct { 
-        int location; 
-        int length; 
     int _cachedEndIndex;
     int _cachedStartIndex;
     struct CGPDFSelection { } *_cgSelection;
     BOOL _dirty;
     UIPDFPage *_page;
     struct __CFString { } *_string;
+    struct { 
+        int location; 
+        int length; 
     } stringRange;
 }
 

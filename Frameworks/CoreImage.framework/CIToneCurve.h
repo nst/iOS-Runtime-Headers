@@ -21,8 +21,8 @@
 @property(copy) CIVector * inputPoint3;
 @property(copy) CIVector * inputPoint4;
 
-+ (id)curveImageFromPoints:(const struct CGPoint { float x1; float x2; }*)arg1 linear:(BOOL)arg2;
 + (id)curveImageFromPoints:(const struct CGPoint { float x1; float x2; }*)arg1;
++ (id)curveImageFromPoints:(const struct CGPoint { float x1; float x2; }*)arg1 linear:(BOOL)arg2;
 + (id)customAttributes;
 + (void)splineCurveTable:(float*)arg1 tableSize:(int)arg2 gamma:(float)arg3 from:(const struct CGPoint { float x1; float x2; }*)arg4;
 

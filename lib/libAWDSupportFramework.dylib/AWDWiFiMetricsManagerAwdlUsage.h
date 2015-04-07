@@ -5,6 +5,13 @@
 @class NSMutableArray;
 
 @interface AWDWiFiMetricsManagerAwdlUsage : PBCodable <NSCopying> {
+    unsigned int _appRxBytes;
+    unsigned int _appTxBytes;
+    unsigned int _cachedPeersNotAssociated;
+    unsigned int _cachedPeersOn24G;
+    unsigned int _cachedPeersOn5G;
+    unsigned int _cachedPeersOnDFS;
+    unsigned int _flags;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int appRxBytes : 1; 
@@ -22,13 +29,6 @@
         unsigned int peerInfraChannel : 1; 
         unsigned int periodInMinutes : 1; 
         unsigned int selfInfraChannel : 1; 
-    unsigned int _appRxBytes;
-    unsigned int _appTxBytes;
-    unsigned int _cachedPeersNotAssociated;
-    unsigned int _cachedPeersOn24G;
-    unsigned int _cachedPeersOn5G;
-    unsigned int _cachedPeersOnDFS;
-    unsigned int _flags;
     } _has;
     unsigned int _ifPacketFailures;
     unsigned int _ifRxBytes;

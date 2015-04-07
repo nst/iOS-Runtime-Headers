@@ -5,11 +5,11 @@
 @class GEORouteMatch;
 
 @interface VKPuckAnimatorLocationProjector : NSObject {
+    double _projectedCourse;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    double _projectedCourse;
     } _projectedPosition;
     GEORouteMatch *_projectedRouteMatch;
     GEORouteMatch *_routeMatch;

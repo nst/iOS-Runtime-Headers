@@ -8,17 +8,17 @@
     struct CGPoint { 
         float x; 
         float y; 
+    } _contentOffsetAdjustment;
     struct CGSize { 
         float width; 
         float height; 
-    struct { 
-        unsigned int invalidateDataSource : 1; 
-        unsigned int invalidateEverything : 1; 
-    } _contentOffsetAdjustment;
     } _contentSizeAdjustment;
     NSMutableDictionary *_invalidatedDecorationIndexPaths;
     NSMutableSet *_invalidatedItemIndexPaths;
     NSMutableDictionary *_invalidatedSupplementaryIndexPaths;
+    struct { 
+        unsigned int invalidateDataSource : 1; 
+        unsigned int invalidateEverything : 1; 
     } _invalidationContextFlags;
     NSArray *_updateItems;
 }

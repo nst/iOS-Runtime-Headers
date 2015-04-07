@@ -5,6 +5,8 @@
 @class GEOLatLng, NSData, NSString;
 
 @interface GEORPDirectionsEvent : PBCodable <NSCopying> {
+    long long _errorCode;
+    NSString *_errorDomain;
     struct { 
         unsigned int errorCode : 1; 
         unsigned int occurrenceResponseIndex : 1; 
@@ -12,8 +14,6 @@
         unsigned int switchedToResponseIndex : 1; 
         unsigned int synthesizedStepManeuverType : 1; 
         unsigned int type : 1; 
-    long long _errorCode;
-    NSString *_errorDomain;
     } _has;
     GEOLatLng *_occurrenceLatLng;
     unsigned int _occurrenceResponseIndex;

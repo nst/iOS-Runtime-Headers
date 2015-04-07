@@ -5,14 +5,14 @@
 @class <SKUIItemGridDelegate>, NSArray, NSMutableArray, NSMutableIndexSet, NSOperationQueue, NSString, SKUIClientContext, SKUIItemArtworkContext, SKUIItemCollectionController, SKUIStyledImageDataConsumer, SKUIUber, UICollectionView, UIImage;
 
 @interface SKUIItemGridViewController : UIViewController <SKUIItemCollectionDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
     SKUIItemArtworkContext *_artworkContext;
     SKUIClientContext *_clientContext;
     UICollectionView *_collectionView;
     <SKUIItemGridDelegate> *_delegate;
     NSMutableIndexSet *_hiddenIconIndexSet;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _imageBoundingSize;
     SKUIItemCollectionController *_itemCollectionController;
     NSMutableArray *_items;

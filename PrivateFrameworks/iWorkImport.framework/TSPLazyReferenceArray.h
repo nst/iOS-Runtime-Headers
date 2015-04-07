@@ -31,8 +31,8 @@
 - (void)removeObjectAtIndex:(unsigned int)arg1;
 - (void)removeObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjectsFromArray:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjectsFromArray:(id)arg2;
+- (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjectsFromArray:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

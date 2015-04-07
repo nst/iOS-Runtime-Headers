@@ -8,8 +8,8 @@
 
 + (id)afpFormatter:(unsigned int)arg1;
 + (id)afpSet;
-+ (id)utf8Formatter:(unsigned int)arg1;
 + (id)utf8Formatter;
++ (id)utf8Formatter:(unsigned int)arg1;
 + (id)utf8FormatterWithMaxByteCount:(unsigned int)arg1 maxLength:(unsigned int)arg2;
 
 - (id)initAFPFormatterWithLength:(unsigned int)arg1;

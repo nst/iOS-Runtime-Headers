@@ -4,7 +4,7 @@
 
 @class BRCAccountSession, BRCRelativePath, NSObject<OS_dispatch_queue>, NSString;
 
-@interface BRCFSReader : NSObject <BRCModule, BRCFSEventsDelegate, BRCFileCoordinationReading> {
+@interface BRCFSReader : NSObject <BRCFSEventsDelegate, BRCFileCoordinationReading, BRCModule> {
     BRCRelativePath *_currentScan;
     NSObject<OS_dispatch_queue> *_serialQueue;
     BRCAccountSession *_session;
@@ -21,8 +21,8 @@
 - (void)_continueScan:(id)arg1;
 - (void)_didResolvedDocumentID:(unsigned int)arg1 fileID:(unsigned long long)arg2 container:(id)arg3;
 - (void)_processDeadItem:(id)arg1;
-- (void)_processLostItem:(id)arg1 resolvedToPath:(id)arg2;
 - (void)_processLostItem:(id)arg1;
+- (void)_processLostItem:(id)arg1 resolvedToPath:(id)arg2;
 - (void)_processNextLostItem:(id)arg1 inContainer:(id)arg2;
 - (void)_resolveDocumentID:(unsigned int)arg1 inContainer:(id)arg2;
 - (void)_scanDirectory:(id)arg1 atPath:(id)arg2 lookup:(id)arg3;

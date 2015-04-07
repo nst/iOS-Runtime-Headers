@@ -5,6 +5,18 @@
 @class NSString;
 
 @interface MIPPlaybackInfo : PBCodable <NSCopying> {
+    int _beatsPerMinute;
+    int _bitRate;
+    int _codecSubType;
+    int _codecType;
+    int _dataKind;
+    NSString *_dataUrl;
+    long long _durationInSamples;
+    NSString *_eqPreset;
+    long long _gaplessEncodingDrainCode;
+    long long _gaplessFrameResyncCode;
+    long long _gaplessHeuristicCode;
+    long long _gaplessHeuristicDelayCode;
     struct { 
         unsigned int durationInSamples : 1; 
         unsigned int gaplessEncodingDrainCode : 1; 
@@ -22,18 +34,6 @@
         unsigned int progressionDirection : 1; 
         unsigned int relativeVolume : 1; 
         unsigned int sampleRate : 1; 
-    int _beatsPerMinute;
-    int _bitRate;
-    int _codecSubType;
-    int _codecType;
-    int _dataKind;
-    NSString *_dataUrl;
-    long long _durationInSamples;
-    NSString *_eqPreset;
-    long long _gaplessEncodingDrainCode;
-    long long _gaplessFrameResyncCode;
-    long long _gaplessHeuristicCode;
-    long long _gaplessHeuristicDelayCode;
     } _has;
     NSString *_playbackFormat;
     int _progressionDirection;

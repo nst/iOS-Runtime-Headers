@@ -75,8 +75,8 @@
 - (void)setItemOffer:(id)arg1;
 - (void)setItemOfferButtonAppearance:(id)arg1;
 - (void)setItemOfferNoticeString:(id)arg1;
-- (void)setItemState:(id)arg1 animated:(BOOL)arg2;
 - (void)setItemState:(id)arg1;
+- (void)setItemState:(id)arg1 animated:(BOOL)arg2;
 - (void)setRestricted:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 

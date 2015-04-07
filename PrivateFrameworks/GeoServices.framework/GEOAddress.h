@@ -5,10 +5,10 @@
 @class GEOStructuredAddress, NSMutableArray, NSString;
 
 @interface GEOAddress : PBCodable <GEOURLSerializable, NSCopying> {
-    struct { 
-        unsigned int formattedAddressType : 1; 
     NSMutableArray *_formattedAddressLines;
     int _formattedAddressType;
+    struct { 
+        unsigned int formattedAddressType : 1; 
     } _has;
     GEOStructuredAddress *_structuredAddress;
 }

@@ -5,13 +5,13 @@
 @class UIImageView, UILabel, UIProgressIndicator, UIWindow;
 
 @interface UIProgressHUD : UIView {
+    UIImageView *_doneView;
+    UIWindow *_parentWindow;
     struct { 
         unsigned int isShowing : 1; 
         unsigned int isShowingText : 1; 
         unsigned int fixedFrame : 1; 
         unsigned int reserved : 30; 
-    UIImageView *_doneView;
-    UIWindow *_parentWindow;
     } _progressHUDFlags;
     UIProgressIndicator *_progressIndicator;
     UILabel *_progressMessage;

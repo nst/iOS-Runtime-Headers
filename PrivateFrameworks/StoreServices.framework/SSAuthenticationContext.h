@@ -4,7 +4,7 @@
 
 @class NSArray, NSDictionary, NSNumber, NSString, SSURLBagContext;
 
-@interface SSAuthenticationContext : NSObject <SSXPCCoding, NSCopying, NSMutableCopying> {
+@interface SSAuthenticationContext : NSObject <NSCopying, NSMutableCopying, SSXPCCoding> {
     NSString *_accountName;
     BOOL _accountNameEditable;
     int _accountScope;

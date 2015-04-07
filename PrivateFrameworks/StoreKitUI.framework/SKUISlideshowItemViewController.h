@@ -4,14 +4,14 @@
 
 @class <SKUISlideshowItemViewControllerDelegate>, NSString, SKUIClientContext, SKUISlideshowImageScrollView, UIImage, UIView;
 
-@interface SKUISlideshowItemViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegatePrivate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface SKUISlideshowItemViewController : UIViewController <UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate> {
     SKUIClientContext *_clientContext;
     <SKUISlideshowItemViewControllerDelegate> *_delegate;
     SKUISlideshowImageScrollView *_imageScrollView;
     int _indexInCollection;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _lastContentOffset;
     float _lastZoomScale;
     UIView *_loadingView;

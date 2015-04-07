@@ -31,7 +31,6 @@
 + (struct { unsigned int x1; unsigned int x2; })pipelineCacheStats;
 + (void)unloadShaderCaches;
 
-- (struct MTLLibraryData { int (**x1)(); int x2; id x3; }*)libraryData;
 - (void)dealloc;
 - (id)description;
 - (id)device;
@@ -44,6 +43,7 @@
 - (id)initWithSource:(id)arg1 options:(id)arg2 device:(id)arg3 completionHandler:(id)arg4;
 - (id)initWithSource:(id)arg1 options:(id)arg2 device:(id)arg3 error:(id*)arg4;
 - (id)label;
+- (struct MTLLibraryData { int (**x1)(); int x2; id x3; }*)libraryData;
 - (id)newFunctionWithName:(id)arg1;
 - (void)setFunctionDictionary:(id)arg1;
 - (void)setLabel:(id)arg1;

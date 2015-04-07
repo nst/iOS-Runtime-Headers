@@ -5,6 +5,7 @@
 @class NSString, SCROBrailleDisplayManager;
 
 @interface SCROBrailleHandler : SCROHandler <SCROSBrailleDisplayManagerDelegate> {
+    SCROBrailleDisplayManager *_brailleDisplayManager;
     struct { 
         BOOL didDisplay; 
         BOOL keypress; 
@@ -21,7 +22,6 @@
         BOOL bluetoothDisplayLoadFailed; 
         BOOL tableLoadFailed; 
         BOOL displayModeChanged; 
-    SCROBrailleDisplayManager *_brailleDisplayManager;
     } _callbacks;
     BOOL _wantsDidDisplayCallbacks;
     BOOL _wantsInputCallbacks;

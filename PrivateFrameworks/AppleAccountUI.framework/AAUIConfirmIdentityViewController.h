@@ -4,7 +4,7 @@
 
 @class <AAUIConfirmIdentityViewControllerDelegate>, AAUIProfilePictureStore, ACAccount, NSString, NSValue, UIButton, UIImage, UIImagePickerController, UILabel, UIScrollView, UIView;
 
-@interface AAUIConfirmIdentityViewController : UIViewController <UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate> {
+@interface AAUIConfirmIdentityViewController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     ACAccount *_account;
     UIView *_contentView;
     UIButton *_continueButton;

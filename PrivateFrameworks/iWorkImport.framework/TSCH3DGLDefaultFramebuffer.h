@@ -5,6 +5,8 @@
 @class TSCH3DGLHandle;
 
 @interface TSCH3DGLDefaultFramebuffer : TSCH3DGLFramebuffer {
+    BOOL mDisableDestroyAssertion;
+    TSCH3DGLHandle *mHandle;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,8 +18,6 @@
             int g; 
             int t; 
         } ; 
-    BOOL mDisableDestroyAssertion;
-    TSCH3DGLHandle *mHandle;
     } mSize;
     unsigned int mType;
 }

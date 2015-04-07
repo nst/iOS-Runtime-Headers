@@ -5,11 +5,40 @@
 @class <PLImageAdjustmentViewDelegate>, NSString, NSTimer, PLCropModel, PLCropOverlayLayer, UIImage, UIImageView;
 
 @interface PLImageAdjustmentView : UIView <UIGestureRecognizerDelegate> {
+    double _animationDuration;
+    float _autoCropScale;
+    unsigned int _canRotate : 1;
+    float _cropAngle;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
+    } _cropInsets;
+    PLCropModel *_cropModel;
+    unsigned int _currentCropAction;
+    <PLImageAdjustmentViewDelegate> *_delegate;
+    unsigned int _delegateDidCropImage : 1;
+    unsigned int _delegateDidTouchImage : 1;
+    unsigned int _delegateWillCropImage : 1;
+    UIImage *_editedImage;
+    int _gestureCount;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _imageCropRect;
+    UIImageView *_imageView;
+    unsigned int _isAdjustingCropRect : 1;
+    unsigned int _isAnimating : 1;
+    unsigned int _isCropMode : 1;
+    NSTimer *_manualCropTimer;
+    unsigned int _needsRecenterImage : 1;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -17,48 +46,19 @@
         float d; 
         float tx; 
         float ty; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    unsigned int _isCropMode : 1;
-    unsigned int _isAdjustingCropRect : 1;
-    unsigned int _isAnimating : 1;
-    unsigned int _canRotate : 1;
-    unsigned int _needsRecenterImage : 1;
-    unsigned int _delegateWillCropImage : 1;
-    unsigned int _delegateDidCropImage : 1;
-    unsigned int _delegateDidTouchImage : 1;
-    double _animationDuration;
-    float _autoCropScale;
-    float _cropAngle;
-    } _cropInsets;
-    PLCropModel *_cropModel;
-    unsigned int _currentCropAction;
-    <PLImageAdjustmentViewDelegate> *_delegate;
-    UIImage *_editedImage;
-    int _gestureCount;
-    } _imageCropRect;
-    UIImageView *_imageView;
-    NSTimer *_manualCropTimer;
     } _originalTransform;
     PLCropOverlayLayer *_overlayLayer;
     float _photoViewScale;
     float _previousCropAngle;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _previousImageCropRect;
     float _sourceAspectRatio;
 }

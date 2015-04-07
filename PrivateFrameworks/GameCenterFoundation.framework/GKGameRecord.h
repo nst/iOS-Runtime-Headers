@@ -45,8 +45,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInternalRepresentation:(id)arg1 player:(id)arg2;
 - (id)initWithInternalRepresentation:(id)arg1;
+- (id)initWithInternalRepresentation:(id)arg1 player:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)played;
 - (id)player;

@@ -5,6 +5,10 @@
 @class NSArray, NSMutableArray, TSDLayout<TSWPLayoutTarget>, TSDWrapPolygon, TSUPointerKeyDictionary, TSWPColumn;
 
 @interface TPTextWrapCookie : NSObject {
+    TSWPColumn *_column;
+    NSMutableArray *_floatingWrappables;
+    TSDWrapPolygon *_interiorWrapPolygon;
+    TSDLayout<TSWPLayoutTarget> *_target;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -12,10 +16,6 @@
         float d; 
         float tx; 
         float ty; 
-    TSWPColumn *_column;
-    NSMutableArray *_floatingWrappables;
-    TSDWrapPolygon *_interiorWrapPolygon;
-    TSDLayout<TSWPLayoutTarget> *_target;
     } _targetInverseTransformInRoot;
     TSUPointerKeyDictionary *_wrapPathInverseTransformInRootDictionary;
 }

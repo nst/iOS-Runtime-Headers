@@ -5,17 +5,17 @@
 @class NSMutableArray, NSString, UIImageView, UIView;
 
 @interface CAMImageWell : UIButton {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     UIView *__containerView;
     NSMutableArray *__dimmingViewQueue;
     UIImageView *__maskImageView;
     UIImageView *__thumbnailImageView;
     NSString *__uuid;
     int _cameraOrientation;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _tappableEdgeInsets;
 }
 
@@ -48,8 +48,8 @@
 - (void)layoutSubviews;
 - (void)prepareForThumbnailUpdateFromCapture;
 - (void)recoverFromFailedThumbnailUpdate;
-- (void)setCameraOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setCameraOrientation:(int)arg1;
+- (void)setCameraOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setTappableEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setThumbnailImage:(id)arg1 animated:(BOOL)arg2;
 - (void)setThumbnailImage:(id)arg1 uuid:(id)arg2 animated:(BOOL)arg3;

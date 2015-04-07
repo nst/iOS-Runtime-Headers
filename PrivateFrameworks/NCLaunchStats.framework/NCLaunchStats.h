@@ -11,10 +11,12 @@
 @interface NCLaunchStats : NSObject {
     NSArray *activitySlots;
     CDDHistoryWindow *allTimeWindow;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id asyncRecommendHandler;
-    boolbackgroundAppRefreshSwitchedOn;
-    boolisClassCLocked;
-    boolkEnableSyslog;
+
+    bool backgroundAppRefreshSwitchedOn;
     CDAttribute *bundleAttr;
     int classCLockedToken;
     CDBudget *dataBudget;
@@ -23,11 +25,17 @@
     NSDate *fireWakeupDate;
     NSArray *forecastList;
     NSDate *forecastStartDate;
+    bool isClassCLocked;
+    bool kEnableSyslog;
     unsigned int kTimeGuardBand;
     NSDate *lastTriggerTime;
     NSObject<OS_dispatch_queue> *ncLaunchStatsQueue;
     PCPersistentTimer *pcpTimer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id recommendHandler;
+
     NSMutableDictionary *seqTracker;
     CDSession *sessionDuet;
     NSDate *startDate;

@@ -7,8 +7,16 @@
  */
 
 @interface GEOPlaceDataProvider : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _errorHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _finishedHandler;
+
     BOOL _isLoading;
 }
 

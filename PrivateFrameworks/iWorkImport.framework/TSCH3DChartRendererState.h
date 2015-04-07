@@ -5,9 +5,19 @@
 @class CALayer<TSCH3DGLLayer>, TSCH3DChartRenderCycle, TSCH3DChartRep, TSCH3DGLLayerDelegate, TSCH3DRenderProcessor, TSCH3DScene, TSCH3DSession, TSCH3DSharegroupToken;
 
 @interface TSCH3DChartRendererState : NSObject <TSCHUnretainedParent> {
+    CALayer<TSCH3DGLLayer> *mGLLayer;
+    TSCH3DGLLayerDelegate *mGLLayerDelegate;
+    BOOL mInteractive;
+    BOOL mIsInteractiveMode;
     struct CGSize { 
         float width; 
         float height; 
+    } mMinimumBufferSize;
+    TSCH3DRenderProcessor *mProcessor;
+    TSCH3DChartRenderCycle *mRenderCycle;
+    TSCH3DChartRep *mRep;
+    TSCH3DSession *mSession;
+    TSCH3DSharegroupToken *mSharegroupToken;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,16 +27,6 @@
             float width; 
             float height; 
         } size; 
-    CALayer<TSCH3DGLLayer> *mGLLayer;
-    TSCH3DGLLayerDelegate *mGLLayerDelegate;
-    BOOL mInteractive;
-    BOOL mIsInteractiveMode;
-    } mMinimumBufferSize;
-    TSCH3DRenderProcessor *mProcessor;
-    TSCH3DChartRenderCycle *mRenderCycle;
-    TSCH3DChartRep *mRep;
-    TSCH3DSession *mSession;
-    TSCH3DSharegroupToken *mSharegroupToken;
     } mVisibleBoundsInLayerRelativeSpace;
     BOOL mWantInteractiveMode;
 }

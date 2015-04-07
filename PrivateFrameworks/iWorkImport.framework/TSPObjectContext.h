@@ -4,7 +4,40 @@
 
 @class <TSPObjectContextDelegate>, NSData, NSHashTable, NSMapTable, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSProgress, NSRecursiveLock, NSString, NSURL, NSUUID, SFUCryptoKey, TSPComponentManager, TSPDataManager, TSPDocumentProperties, TSPDocumentResourceDataProvider, TSPDocumentResourceManager, TSPDocumentRevision, TSPDocumentSaveOperationState, TSPObject, TSPObjectContainer, TSPObjectContext, TSPObjectUUIDMap, TSPPackage, TSPPackageWriteCoordinator, TSPSupportManager, TSUTemporaryDirectory;
 
-@interface TSPObjectContext : NSObject <TSPFileCoordinatorDelegate, TSPObjectDelegate, TSPLazyReferenceDelegate, TSPSupportDirectoryDelegate, TSPDocumentResourceDownloader, TSPPassphraseConsumer> {
+@interface TSPObjectContext : NSObject <TSPDocumentResourceDownloader, TSPFileCoordinatorDelegate, TSPLazyReferenceDelegate, TSPObjectDelegate, TSPPassphraseConsumer, TSPSupportDirectoryDelegate> {
+    TSPComponentManager *_componentManager;
+    TSPDataManager *_dataManager;
+    SFUCryptoKey *_decryptionKey;
+    <TSPObjectContextDelegate> *_delegate;
+    TSPObject *_documentObject;
+    TSPObjectContainer *_documentObjectContainer;
+    TSPPackage *_documentPackage;
+    NSString *_documentPasswordHint;
+    TSPDocumentProperties *_documentProperties;
+    TSPDocumentResourceDataProvider *_documentResourceDataProvider;
+    NSObject<OS_dispatch_queue> *_documentResourceDataProviderQueue;
+    TSPDocumentResourceManager *_documentResourceManager;
+    TSPDocumentRevision *_documentRevision;
+    NSObject<OS_dispatch_queue> *_documentStateQueue;
+    NSURL *_documentURL;
+    struct { 
+        unsigned int delegateRespondsToAdditionalDocumentPropertiesForWrite : 1; 
+        unsigned int delegateRespondsToDocumentPasswordHintForWrite : 1; 
+        unsigned int delegateRespondsToPackageDataForWrite : 1; 
+        unsigned int delegateRespondsToAreNewExternalReferencesToDataAllowed : 1; 
+        unsigned int delegateRespondsToAreExternalReferencesToDataAllowedAtURL : 1; 
+        unsigned int delegateRespondsToBaseUUIDForObjectUUID : 1; 
+        unsigned int delegateRespondsToPreserveDocumentRevisionIdentifierForSequenceZero : 1; 
+        unsigned int delegateRespondsToIsEstimatedDocumentDataSizeNotificationEnabled : 1; 
+        unsigned int delegateRespondsToDidChangeEstimatedDocumentDataSize : 1; 
+        unsigned int delegateRespondsToFilePresenter : 1; 
+        unsigned int delegateRespondsToSupportDirectoryURL : 1; 
+        unsigned int delegateRespondsToIgnoreDocumentSupport : 1; 
+        unsigned int delegateRespondsToIsDocumentSupportTemporary : 1; 
+    } _flags;
+    TSPDocumentResourceDataProvider *_gilligan_documentResourceDataProvider;
+    BOOL _isWaitingForEndSave;
+    long long _lastObjectIdentifier;
     struct hash_map<const long long, NSMutableArray *, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, NSMutableArray *> > > { 
         struct __hash_table<std::__1::pair<const long long, NSMutableArray *>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, NSMutableArray *>, TSP::IdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, NSMutableArray *>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, NSMutableArray *> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, NSMutableArray *>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, NSMutableArray *>, void *> *> > > { 
@@ -29,39 +62,6 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    struct { 
-        unsigned int delegateRespondsToAdditionalDocumentPropertiesForWrite : 1; 
-        unsigned int delegateRespondsToDocumentPasswordHintForWrite : 1; 
-        unsigned int delegateRespondsToPackageDataForWrite : 1; 
-        unsigned int delegateRespondsToAreNewExternalReferencesToDataAllowed : 1; 
-        unsigned int delegateRespondsToAreExternalReferencesToDataAllowedAtURL : 1; 
-        unsigned int delegateRespondsToBaseUUIDForObjectUUID : 1; 
-        unsigned int delegateRespondsToPreserveDocumentRevisionIdentifierForSequenceZero : 1; 
-        unsigned int delegateRespondsToIsEstimatedDocumentDataSizeNotificationEnabled : 1; 
-        unsigned int delegateRespondsToDidChangeEstimatedDocumentDataSize : 1; 
-        unsigned int delegateRespondsToFilePresenter : 1; 
-        unsigned int delegateRespondsToSupportDirectoryURL : 1; 
-        unsigned int delegateRespondsToIgnoreDocumentSupport : 1; 
-        unsigned int delegateRespondsToIsDocumentSupportTemporary : 1; 
-    TSPComponentManager *_componentManager;
-    TSPDataManager *_dataManager;
-    SFUCryptoKey *_decryptionKey;
-    <TSPObjectContextDelegate> *_delegate;
-    TSPObject *_documentObject;
-    TSPObjectContainer *_documentObjectContainer;
-    TSPPackage *_documentPackage;
-    NSString *_documentPasswordHint;
-    TSPDocumentProperties *_documentProperties;
-    TSPDocumentResourceDataProvider *_documentResourceDataProvider;
-    NSObject<OS_dispatch_queue> *_documentResourceDataProviderQueue;
-    TSPDocumentResourceManager *_documentResourceManager;
-    TSPDocumentRevision *_documentRevision;
-    NSObject<OS_dispatch_queue> *_documentStateQueue;
-    NSURL *_documentURL;
-    } _flags;
-    TSPDocumentResourceDataProvider *_gilligan_documentResourceDataProvider;
-    BOOL _isWaitingForEndSave;
-    long long _lastObjectIdentifier;
     } _loadObservers;
     NSObject<OS_dispatch_queue> *_loadObserversQueue;
     unsigned int _mode;
@@ -148,8 +148,8 @@
 + (BOOL)isNativeOrTangierEditingFormatURL:(id)arg1;
 + (BOOL)isTangierEditingFormatURL:(id)arg1;
 + (void)removeDefaultSupportDirectory;
-+ (BOOL)requestDownloadingDocumentResourcesForURL:(id)arg1 decryptionKey:(id)arg2 usingDataProvider:(id)arg3;
 + (id)requestDownloadingDocumentResourcesForURL:(id)arg1 decryptionKey:(id)arg2;
++ (BOOL)requestDownloadingDocumentResourcesForURL:(id)arg1 decryptionKey:(id)arg2 usingDataProvider:(id)arg3;
 + (id)supportBundleURLForUUID:(id)arg1 delegate:(id)arg2;
 + (id)supportURLForDocumentURL:(id)arg1 coordinateRead:(BOOL)arg2 delegate:(id)arg3 error:(id*)arg4;
 + (void)waitForPendingEndSaveGroup:(id)arg1;
@@ -166,11 +166,11 @@
 - (id)baseUUIDForObjectUUID;
 - (void)beginAssertOnModify;
 - (void)beginIgnoringCachedObjectEviction;
-- (void)beginSaveToURL:(id)arg1 updateType:(int)arg2 packageType:(int)arg3 documentUUID:(id)arg4;
 - (void)beginSaveToURL:(id)arg1 updateType:(int)arg2 packageType:(int)arg3;
+- (void)beginSaveToURL:(id)arg1 updateType:(int)arg2 packageType:(int)arg3 documentUUID:(id)arg4;
 - (void)beginWriteOperation;
-- (void)beginWriteWithOriginalURL:(id)arg1 relativeURLForExternalData:(id)arg2;
 - (void)beginWriteWithOriginalURL:(id)arg1;
+- (void)beginWriteWithOriginalURL:(id)arg1 relativeURLForExternalData:(id)arg2;
 - (void)cancelDownloads;
 - (void)checkforDataWarningsWithPackageURL:(id)arg1;
 - (void)close;
@@ -222,11 +222,11 @@
 - (id)init;
 - (id)initForQuickLookWithURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3 passphrase:(id)arg4;
 - (id)initForSpotlightWithURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3;
-- (id)initWithDelegate:(id)arg1 documentResourceManager:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 documentResourceManager:(id)arg2;
 - (id)initWithURL:(id)arg1 delegate:(id)arg2 documentResourceManager:(id)arg3 mode:(unsigned int)arg4 error:(id*)arg5 passphrase:(id)arg6;
-- (id)initWithURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3 passphrase:(id)arg4;
 - (id)initWithURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3 passphrase:(id)arg4;
 - (id)initWithURL:(id)arg1 delegate:(id)arg2 mode:(unsigned int)arg3 error:(id*)arg4 passphrase:(id)arg5;
 - (BOOL)isDocumentModified;
 - (BOOL)isDocumentSupportTemporary;

@@ -139,8 +139,8 @@
 - (void)setUsesInsetMargin:(BOOL)arg1;
 - (void)setUsesVibrantSeparatorOverlayDrawing:(BOOL)arg1;
 - (void)updateConstraints;
-- (void)updateWithEvent:(id)arg1 calendar:(id)arg2 placedUnderDayWithStartDate:(id)arg3 showCalendarColors:(BOOL)arg4 extendHeightForTravelTime:(BOOL)arg5;
 - (void)updateWithEvent:(id)arg1 calendar:(id)arg2 placedUnderDayWithStartDate:(id)arg3 showCalendarColors:(BOOL)arg4;
+- (void)updateWithEvent:(id)arg1 calendar:(id)arg2 placedUnderDayWithStartDate:(id)arg3 showCalendarColors:(BOOL)arg4 extendHeightForTravelTime:(BOOL)arg5;
 - (BOOL)usesInsetMargin;
 - (BOOL)usesVibrantSeparatorOverlayDrawing;
 

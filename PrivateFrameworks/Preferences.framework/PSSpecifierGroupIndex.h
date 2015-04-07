@@ -21,8 +21,8 @@
 - (void)_appendDescriptionOfArray:(id)arg1 toString:(id)arg2 withTabLevel:(unsigned int)arg3;
 - (void)_createGroupIndex;
 - (void)_didPerformOperation:(id)arg1 forSpecifierUpdates:(id)arg2;
-- (void)_getSection:(out unsigned int*)arg1 row:(out unsigned int*)arg2 forSpecifierAtIndex:(unsigned int)arg3 forInsertion:(BOOL)arg4 allowGroupSpecifiers:(BOOL)arg5;
 - (void)_getSection:(out unsigned int*)arg1 row:(out unsigned int*)arg2 forSpecifierAtIndex:(unsigned int)arg3 forInsertion:(BOOL)arg4;
+- (void)_getSection:(out unsigned int*)arg1 row:(out unsigned int*)arg2 forSpecifierAtIndex:(unsigned int)arg3 forInsertion:(BOOL)arg4 allowGroupSpecifiers:(BOOL)arg5;
 - (id)_groupSections;
 - (unsigned int)_indexOfSpecifierInSection:(unsigned int)arg1 row:(unsigned int)arg2 forInsertion:(BOOL)arg3;
 - (id)_init;
@@ -44,11 +44,11 @@
 - (unsigned int)indexOfGroup:(id)arg1;
 - (unsigned int)indexOfGroupAtGroupIndex:(unsigned int)arg1;
 - (unsigned int)indexOfGroupWithID:(id)arg1;
-- (unsigned int)indexOfSpecifierAtIndexPath:(id)arg1 forInsertion:(BOOL)arg2;
 - (unsigned int)indexOfSpecifierAtIndexPath:(id)arg1;
+- (unsigned int)indexOfSpecifierAtIndexPath:(id)arg1 forInsertion:(BOOL)arg2;
 - (id)indexPathForSpecifier:(id)arg1;
-- (id)indexPathForSpecifierAtIndex:(unsigned int)arg1 forInsertion:(BOOL)arg2;
 - (id)indexPathForSpecifierAtIndex:(unsigned int)arg1;
+- (id)indexPathForSpecifierAtIndex:(unsigned int)arg1 forInsertion:(BOOL)arg2;
 - (id)indexPathForSpecifierWithID:(id)arg1;
 - (id)init;
 - (id)initWithSpecifiers:(id)arg1;
@@ -56,8 +56,8 @@
 - (unsigned int)numberOfRowsInGroupAtIndex:(unsigned int)arg1;
 - (void)performSpecifierUpdates:(id)arg1;
 - (void)performSpecifierUpdatesUsingBlock:(id)arg1;
-- (void)performUpdateOperation:(id)arg1 forSpecifierUpdates:(id)arg2;
 - (void)performUpdateOperation:(id)arg1;
+- (void)performUpdateOperation:(id)arg1 forSpecifierUpdates:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSpecifiersInGroup:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSpecifiersInGroupAtGroupIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSpecifiersInGroupWithID:(id)arg1;

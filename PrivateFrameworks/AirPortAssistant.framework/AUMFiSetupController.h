@@ -5,6 +5,24 @@
 @class EasyConfigDevice, NSDictionary, NSMutableSet, NSObject<OS_dispatch_semaphore>, NSString, NSTimer;
 
 @interface AUMFiSetupController : AUSetupController {
+    NSDictionary *_accessoryResponseDict;
+    NSObject<OS_dispatch_semaphore> *_askUserForPasswordSemaphore;
+    NSDictionary *_autoGuessRecommendationDict;
+    NSString *_destinationNetworkPassword;
+    BOOL _destinationNetworkPasswordAccepted;
+    NSString *_destinationNetworkSSID;
+    NSDictionary *_destinationNetworkScanRecord;
+    NSObject<OS_dispatch_semaphore> *_easyConfigConfigurationCompleteSemaphore;
+    EasyConfigDevice *_easyConfigDevice;
+    struct { 
+        double secondsToGetLinkUpOnDestination; 
+        int wifiJoinDestinationAPError; 
+        unsigned char destinationNetworkPSKInKeychain; 
+        unsigned char hitJoiningDestinationAPTimeout; 
+        int rssiOfDestinationAP; 
+        unsigned int snrOfDestinationAP; 
+        unsigned int channelOfDestinationAP; 
+    } _easyConfigPostConfigMetrics;
     struct { 
         double startTime; 
         unsigned char userChangedFriendlyName; 
@@ -17,24 +35,6 @@
         int rssiOfSWAP; 
         unsigned int snrOfSWAP; 
         unsigned int channelOfSWAP; 
-    struct { 
-        double secondsToGetLinkUpOnDestination; 
-        int wifiJoinDestinationAPError; 
-        unsigned char destinationNetworkPSKInKeychain; 
-        unsigned char hitJoiningDestinationAPTimeout; 
-        int rssiOfDestinationAP; 
-        unsigned int snrOfDestinationAP; 
-        unsigned int channelOfDestinationAP; 
-    NSDictionary *_accessoryResponseDict;
-    NSObject<OS_dispatch_semaphore> *_askUserForPasswordSemaphore;
-    NSDictionary *_autoGuessRecommendationDict;
-    NSString *_destinationNetworkPassword;
-    BOOL _destinationNetworkPasswordAccepted;
-    NSString *_destinationNetworkSSID;
-    NSDictionary *_destinationNetworkScanRecord;
-    NSObject<OS_dispatch_semaphore> *_easyConfigConfigurationCompleteSemaphore;
-    EasyConfigDevice *_easyConfigDevice;
-    } _easyConfigPostConfigMetrics;
     } _easyConfigPreConfigMetrics;
     int _lastHeardEasyConfigProgressNotification;
     NSTimer *_linkUpOnDestinationNetworkTimer;

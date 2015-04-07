@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface AWDSiriServerConnectionFailed : PBCodable <NSCopying> {
+    int _connectionType;
+    long long _errorCode;
+    NSString *_errorDomain;
     struct { 
         unsigned int errorCode : 1; 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
-    int _connectionType;
-    long long _errorCode;
-    NSString *_errorDomain;
     } _has;
     unsigned long long _timestamp;
 }

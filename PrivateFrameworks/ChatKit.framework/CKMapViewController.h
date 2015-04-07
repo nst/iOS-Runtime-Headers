@@ -24,10 +24,10 @@
 - (id)initWithAnnotation:(id)arg1;
 - (void)loadView;
 - (id)mapItem;
+- (id)mapView;
 - (void)mapView:(id)arg1 annotationView:(id)arg2 calloutAccessoryControlTapped:(id)arg3;
 - (void)mapView:(id)arg1 didAddAnnotationViews:(id)arg2;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
-- (id)mapView;
 - (void)selectPin;
 - (void)setAnnotation:(id)arg1;
 - (void)setMapItem:(id)arg1;

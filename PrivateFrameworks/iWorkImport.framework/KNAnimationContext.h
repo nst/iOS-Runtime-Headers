@@ -5,24 +5,13 @@
 @class CALayer, KNAnimationRegistryWithFallbacks, TSDCapabilities;
 
 @interface KNAnimationContext : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    CALayer *mBaseLayer;
+    BOOL mBaseLayerVisible;
+    TSDCapabilities *mCapabilities;
+    struct CGColorSpace { } *mColorSpace;
+    float mFOVInRadians;
+    float mPixelAspectRatio;
+    KNAnimationRegistryWithFallbacks *mRegistry;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -40,15 +29,26 @@
         float m42; 
         float m43; 
         float m44; 
-    CALayer *mBaseLayer;
-    BOOL mBaseLayerVisible;
-    TSDCapabilities *mCapabilities;
-    struct CGColorSpace { } *mColorSpace;
-    float mFOVInRadians;
-    float mPixelAspectRatio;
-    KNAnimationRegistryWithFallbacks *mRegistry;
     } mSlideProjectionMatrix;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mSlideRect;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mUnscaledSlideRect;
     float mViewScale;
 }

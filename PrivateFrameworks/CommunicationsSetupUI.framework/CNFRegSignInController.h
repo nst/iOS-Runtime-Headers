@@ -10,7 +10,11 @@
 
 @interface CNFRegSignInController : CNFRegFirstRunController <CNFRegCreateAccountControllerDelegate> {
     PSSpecifier *_actionGroupSpecifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _alertHandler;
+
     PSSpecifier *_createAccountButtonSpecifier;
     BOOL _hideLearnMoreButton;
     CNFRegLearnMoreButton *_learnMoreButton;

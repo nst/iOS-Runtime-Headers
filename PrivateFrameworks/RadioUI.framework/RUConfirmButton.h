@@ -5,11 +5,6 @@
 @class <RUConfirmButtonDelegate>, NSMutableDictionary, RUFocusedTouchGestureRecognizer, UIImageView, UILabel;
 
 @interface RUConfirmButton : UIButton {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     BOOL _attemptsToUseMaximumSize;
     UIImageView *_confirmBackgroundImageView;
     UILabel *_confirmLabel;
@@ -20,6 +15,11 @@
     NSMutableDictionary *_fontByControlState;
     NSMutableDictionary *_shadowOffsetByControlState;
     BOOL _showingConfirmation;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _touchAllowance;
 }
 
@@ -58,12 +58,12 @@
 - (void)setDefaultLabelClass:(Class)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFont:(id)arg1 forState:(unsigned int)arg2;
-- (void)setShowingConfirmation:(BOOL)arg1 animationDuration:(double)arg2 animationDelay:(double)arg3 animationOptions:(unsigned int)arg4 animationCompletionHandler:(id)arg5;
 - (void)setShowingConfirmation:(BOOL)arg1;
+- (void)setShowingConfirmation:(BOOL)arg1 animationDuration:(double)arg2 animationDelay:(double)arg3 animationOptions:(unsigned int)arg4 animationCompletionHandler:(id)arg5;
 - (void)setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1 forState:(unsigned int)arg2;
 - (void)setTouchAllowance:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forControlState:(unsigned int)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forControlState:(unsigned int)arg2;
 - (unsigned int)state;
 - (struct CGSize { float x1; float x2; })titleShadowOffsetForState:(unsigned int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })touchAllowance;

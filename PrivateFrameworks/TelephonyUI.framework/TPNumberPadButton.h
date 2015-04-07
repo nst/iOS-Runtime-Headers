@@ -29,9 +29,9 @@
 + (float)highlightCrossfadeNormalBeginTime;
 + (float)highlightCrossfadeNormalFadeDuration;
 + (float)horizontalPadding;
-+ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2 whiteVersion:(BOOL)arg3;
-+ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
 + (id)imageForCharacter:(unsigned int)arg1;
++ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
++ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2 whiteVersion:(BOOL)arg3;
 + (float)outerCircleDiameter;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingOutsideRing;
 + (float)unhighlightCrossfadeHighlightBeginTime;

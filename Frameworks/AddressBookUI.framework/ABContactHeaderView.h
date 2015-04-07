@@ -5,13 +5,13 @@
 @class <ABContactHeaderViewDelegate>, <ABPresenterDelegate>, ABContactPhotoView, CNContact, CNContactStyle, NSDictionary, NSMutableArray;
 
 @interface ABContactHeaderView : UIView {
+    CNContact *_contact;
+    CNContactStyle *_contactStyle;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    CNContact *_contact;
-    CNContactStyle *_contactStyle;
     } _contentMargins;
     <ABPresenterDelegate> *_delegate;
     NSMutableArray *_headerConstraints;

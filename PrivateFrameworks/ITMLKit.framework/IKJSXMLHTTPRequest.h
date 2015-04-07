@@ -4,7 +4,7 @@
 
 @class IKDOMDocument, ISURLOperation, JSManagedValue, NSDictionary, NSError, NSHTTPURLResponse, NSMutableArray, NSMutableData, NSMutableURLRequest, NSString, NSURLConnection;
 
-@interface IKJSXMLHTTPRequest : IKJSObject <ISStoreURLOperationDelegate, IKJSXMLHTTPRequest> {
+@interface IKJSXMLHTTPRequest : IKJSObject <IKJSXMLHTTPRequest, ISStoreURLOperationDelegate> {
     BOOL _async;
     BOOL _inProgress;
     ISURLOperation *_jingleOperation;

@@ -5,12 +5,6 @@
 @class NSMutableArray;
 
 @interface PDPresentation : OCDDocument {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     NSMutableArray *mBulletBlips;
     NSMutableArray *mCommentAuthors;
     BOOL mIsAutoPlay;
@@ -18,8 +12,14 @@
     BOOL mIsKiosk;
     BOOL mIsLooping;
     NSMutableArray *mNotesMasters;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mNotesSize;
     NSMutableArray *mSlideMasters;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mSlideSize;
     NSMutableArray *mSlides;
 }

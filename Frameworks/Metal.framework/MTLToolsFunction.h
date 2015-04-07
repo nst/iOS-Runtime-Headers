@@ -25,8 +25,8 @@
 - (id)device;
 - (id)filePath;
 - (unsigned int)functionType;
-- (id)initWithBaseObject:(id)arg1 parent:(id)arg2 functions:(id)arg3;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
+- (id)initWithBaseObject:(id)arg1 parent:(id)arg2 functions:(id)arg3;
 - (int)lineNumber;
 - (id)name;
 - (id)vertexAttributes;

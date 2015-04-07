@@ -12,7 +12,6 @@
 
 + (id)newObjectForUnarchiver:(id)arg1;
 
-- (const struct TextualAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; int x4; int x5; unsigned int x6[1]; }*)textualAttachmentArchiveFromUnarchiver:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (void)saveToArchive:(struct TextualAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; int x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
@@ -21,5 +20,6 @@
 - (id)stringEquivalent;
 - (id)stringEquivalentWithLayoutParent:(id)arg1;
 - (id)stringWithPageNumber:(unsigned int)arg1 pageCount:(unsigned int)arg2 charIndex:(unsigned int)arg3;
+- (const struct TextualAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; int x4; int x5; unsigned int x6[1]; }*)textualAttachmentArchiveFromUnarchiver:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSMutableDictionary, NSNumber, NSString;
 
-@interface SSURLBagContext : NSObject <SSXPCCoding, NSCopying> {
+@interface SSURLBagContext : NSObject <NSCopying, SSXPCCoding> {
     int _allowedRetryCount;
     BOOL _allowsBootstrapCellularData;
     BOOL _allowsExpiredBags;

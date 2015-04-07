@@ -5,8 +5,8 @@
 @interface TSWPPresetSource : NSObject <TSSPresetSource> {
 }
 
-+ (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3 reservedCount:(unsigned int)arg4;
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
++ (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3 reservedCount:(unsigned int)arg4;
 + (void)p_bootstrapLinePresetsInTheme:(id)arg1 alternate:(int)arg2 reservedCount:(unsigned int)arg3;
 + (void)p_bootstrapListPresetsInTheme:(id)arg1 alternate:(int)arg2;
 + (void)p_bootstrapShapePresetsInTheme:(id)arg1 alternate:(int)arg2 reservedCount:(unsigned int)arg3;

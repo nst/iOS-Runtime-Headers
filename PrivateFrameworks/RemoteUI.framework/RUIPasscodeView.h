@@ -4,7 +4,7 @@
 
 @class RUIObjectModel, RUIPage, RUIPasscodeField, UIColor, UILabel, UIView;
 
-@interface RUIPasscodeView : RUIElement <RUITableFooterDelegate, RUIPasscodeFieldDelegate> {
+@interface RUIPasscodeView : RUIElement <RUIPasscodeFieldDelegate, RUITableFooterDelegate> {
     UIView *_footer;
     UIColor *_foregroundColor;
     int _keyboardAppearance;
@@ -27,8 +27,8 @@
 - (int)keyboardAppearance;
 - (id)objectModel;
 - (id)page;
-- (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
 - (id)passcodeField;
+- (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
 - (id)passcodeView;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)setForegroundColor:(id)arg1;

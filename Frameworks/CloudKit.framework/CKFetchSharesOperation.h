@@ -9,7 +9,11 @@
 @class NSArray, NSMutableDictionary;
 
 @interface CKFetchSharesOperation : CKOperation {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchSharesCompletionBlock;
+
     BOOL _isFetchAllSharesOperation;
     NSMutableDictionary *_shareIDErrors;
     NSArray *_shareIDs;

@@ -55,8 +55,8 @@
 - (void)_notifyInsufficientDiskSpaceForStartingCaptureWithNeededBytes:(long long)arg1 availableBytes:(long long)arg2;
 - (id)_pendingCompletedStates;
 - (void)_prepareForTimelapseCapture;
-- (void)_previewStarted:(id)arg1;
 - (BOOL)_previewStarted;
+- (void)_previewStarted:(id)arg1;
 - (BOOL)_reserveDiskSpaceForTimelapseUUID:(id)arg1;
 - (void)_resetIgnoringTimerCallbacksWaitingForCaptureResponse;
 - (void)_restoreCaptureStateFromDisk;

@@ -13,7 +13,11 @@
     NSSet *_assetFieldNamesToPublishURLs;
     NSSet *_desiredKeys;
     unsigned int _recordCount;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordFetchedBlock;
+
     NSMutableDictionary *_recordIDByRequestID;
     NSArray *_recordIDs;
     NSDictionary *_recordIDsToETags;

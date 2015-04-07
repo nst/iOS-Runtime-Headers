@@ -5,11 +5,11 @@
 @class CKDPDate, CKDPIdentifier;
 
 @interface CKDPPulseData : PBCodable <NSCopying> {
+    long long _customState;
     struct { 
         unsigned int customState : 1; 
         unsigned int stateTTLMillis : 1; 
         unsigned int state : 1; 
-    long long _customState;
     } _has;
     CKDPDate *_lastCustom;
     CKDPDate *_lastEdited;

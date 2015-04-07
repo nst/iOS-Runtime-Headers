@@ -3,11 +3,11 @@
  */
 
 @interface Slice : NSObject {
+    unsigned int _end;
+    unsigned int _start;
     struct { 
         unsigned short category; 
         unsigned short subtype; 
-    unsigned int _end;
-    unsigned int _start;
     } _type;
 }
 

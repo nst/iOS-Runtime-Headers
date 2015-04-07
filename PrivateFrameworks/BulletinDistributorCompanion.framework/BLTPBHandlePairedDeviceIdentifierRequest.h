@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface BLTPBHandlePairedDeviceIdentifierRequest : PBRequest <NSCopying> {
+    BOOL _carry;
     struct { 
         unsigned int carry : 1; 
-    BOOL _carry;
     } _has;
     NSString *_identifier;
 }

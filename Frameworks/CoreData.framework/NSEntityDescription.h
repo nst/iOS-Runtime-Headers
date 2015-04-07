@@ -5,6 +5,8 @@
 @class NSArray, NSData, NSDictionary, NSEntityDescription, NSManagedObjectModel, NSMutableDictionary, NSString;
 
 @interface NSEntityDescription : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
+    int _cd_rc;
+    NSString *_classNameForEntity;
     struct __entityDescriptionFlags { 
         unsigned int _isAbstract : 1; 
         unsigned int _shouldValidateOnSave : 1; 
@@ -17,8 +19,6 @@
         unsigned int _hasAttributesWithExternalDataReferences : 1; 
         unsigned int _hasNonstandardPrimitiveProperties : 2; 
         unsigned int _reservedEntityDescription : 21; 
-    int _cd_rc;
-    NSString *_classNameForEntity;
     } _entityDescriptionFlags;
     void *_extraIvars;
     id _flattenedSubentities;

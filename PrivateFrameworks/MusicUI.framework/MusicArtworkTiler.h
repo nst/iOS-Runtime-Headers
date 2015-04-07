@@ -5,12 +5,12 @@
 @class NSObject<OS_dispatch_queue>, NSString, UIImage;
 
 @interface MusicArtworkTiler : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSString *_cacheIdentifier;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     id _context;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _imageSize;
     UIImage *_placeholderImage;
 }

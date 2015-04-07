@@ -10,13 +10,10 @@
         float left; 
         float bottom; 
         float right; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     } _contentInsets;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _imageBoundingSize;
     int _itemOfferStyle;
     UILabel *_itemOfferTextLabel;
@@ -25,6 +22,9 @@
     SKUILockupMetadataView *_metadataView;
     BOOL _playsInlineVideo;
     int _verticalAlignment;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _videoThumbnailSize;
     SKUIEmbeddedMediaView *_videoThumbnailView;
 }

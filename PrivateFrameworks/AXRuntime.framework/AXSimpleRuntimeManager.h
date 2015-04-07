@@ -7,13 +7,41 @@
  */
 
 @interface AXSimpleRuntimeManager : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _applicationElementCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _attributeCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _clientObserverCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _hitTestCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _parameterizedAttributeCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _performActionCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _setAttributeCallback;
+
     BOOL _systemWideServer;
 }
 
@@ -35,8 +63,8 @@
 - (id)parameterizedAttributeCallback;
 - (id)performActionCallback;
 - (void)setApplicationElementCallback:(id)arg1;
-- (void)setAttributeCallback:(id)arg1;
 - (id)setAttributeCallback;
+- (void)setAttributeCallback:(id)arg1;
 - (void)setClientObserverCallback:(id)arg1;
 - (void)setHitTestCallback:(id)arg1;
 - (void)setParameterizedAttributeCallback:(id)arg1;

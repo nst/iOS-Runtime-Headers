@@ -27,8 +27,8 @@
 @property(readonly) struct opaqueCMFormatDescription { }* sourceFormatHint;
 @property(readonly) NSDictionary * trackReferences;
 
-+ (id)assetWriterInputSelectionOptionWithAssetWriterInput:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
 + (id)assetWriterInputSelectionOptionWithAssetWriterInput:(id)arg1;
++ (id)assetWriterInputSelectionOptionWithAssetWriterInput:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
 
 - (id)_ancillaryDescription;
 - (BOOL)_hasEqualValueForKey:(id)arg1 asObject:(id)arg2;
@@ -45,8 +45,8 @@
 - (void)finalize;
 - (BOOL)hasMediaCharacteristic:(id)arg1;
 - (unsigned int)hash;
-- (id)initWithAssetWriterInput:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
 - (id)initWithAssetWriterInput:(id)arg1;
+- (id)initWithAssetWriterInput:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
 - (id)input;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPlayable;

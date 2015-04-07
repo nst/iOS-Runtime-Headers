@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray;
 
-@interface RCWaveform : NSObject <NSMutableCopying, NSCopying, NSCoding> {
+@interface RCWaveform : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     unsigned int _decodedVersion;
     NSMutableArray *_segments;
 }

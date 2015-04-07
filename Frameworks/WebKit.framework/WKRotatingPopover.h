@@ -5,14 +5,14 @@
 @class <WKRotatingPopoverDelegate>, NSString, UIPopoverController, WKContentView;
 
 @interface WKRotatingPopover : NSObject <UIPopoverControllerDelegate> {
+    <WKRotatingPopoverDelegate> *_dismissionDelegate;
+    BOOL _isRotating;
+    struct RetainPtr<UIPopoverController> { 
+        void *m_ptr; 
+    } _popoverController;
     struct CGPoint { 
         float x; 
         float y; 
-    struct RetainPtr<UIPopoverController> { 
-        void *m_ptr; 
-    <WKRotatingPopoverDelegate> *_dismissionDelegate;
-    BOOL _isRotating;
-    } _popoverController;
     } _presentationPoint;
     WKContentView *_view;
 }

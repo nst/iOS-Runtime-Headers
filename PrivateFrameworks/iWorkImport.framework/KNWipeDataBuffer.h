@@ -5,6 +5,8 @@
 @class TSDGLDataBuffer, TSDGLDataBufferAttribute, TSDGLShader;
 
 @interface KNWipeDataBuffer : NSObject {
+    float mBlurFraction;
+    unsigned int mDirection;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -22,32 +24,30 @@
         float m42; 
         float m43; 
         float m44; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    float mBlurFraction;
-    unsigned int mDirection;
     } mMVPMatrix;
     TSDGLDataBuffer *mSolidDataBuffer;
     TSDGLDataBufferAttribute *mSolidPositionAttribute;
     TSDGLShader *mSolidShader;
     TSDGLDataBufferAttribute *mSolidTexCoordAttribute;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mTextureRect;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mVertexRect;
     TSDGLDataBuffer *mWipeDataBuffer;
     TSDGLDataBufferAttribute *mWipeOpacityAttribute;

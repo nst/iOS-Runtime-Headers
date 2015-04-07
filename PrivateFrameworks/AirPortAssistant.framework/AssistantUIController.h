@@ -4,7 +4,7 @@
 
 @class AUSetupController, AutoGuessController, NSArray, NSDictionary, NSMutableDictionary, NSString, StepByStepController;
 
-@interface AssistantUIController : NSObject <AutoGuessUIDelegate, SetupUIDelegate, StepByStepUIDelegate, AssistantUIDelegateResult, SetupUIConfigDelegate> {
+@interface AssistantUIController : NSObject <AssistantUIDelegateResult, AutoGuessUIDelegate, SetupUIConfigDelegate, SetupUIDelegate, StepByStepUIDelegate> {
     long _assistantResult;
     AutoGuessController *_autoGuessController;
     int _connectionStatusSelectorAwaitingResolution;

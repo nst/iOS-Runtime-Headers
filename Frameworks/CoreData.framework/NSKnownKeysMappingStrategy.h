@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSKnownKeysMappingStrategy : NSObject <NSSecureCoding, NSFastEnumeration> {
+@interface NSKnownKeysMappingStrategy : NSObject <NSFastEnumeration, NSSecureCoding> {
 }
 
 @property(readonly) id* keys;

@@ -5,29 +5,29 @@
 @class NSMutableArray, NSObject<OS_dispatch_queue>, NSString, TSCECalculationEngine, TSTTableFilterSet, TSTTableInfo;
 
 @interface TSTHiddenStateFormulaOwner : TSPObject <TSCEFormulaOwning> {
-    struct vector<std::__1::pair<unsigned short, bool>, std::__1::allocator<std::__1::pair<unsigned short, bool> > > { 
-        struct pair<unsigned short, bool> {} *__begin_; 
-        struct pair<unsigned short, bool> {} *__end_; 
-        struct __compressed_pair<std::__1::pair<unsigned short, bool> *, std::__1::allocator<std::__1::pair<unsigned short, bool> > > { 
-            struct pair<unsigned short, bool> {} *__first_; 
-        } __end_cap_; 
+    TSCECalculationEngine *mCalculationEngine;
     struct vector<TSUColumnRowRect, std::__1::allocator<TSUColumnRowRect> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<TSUColumnRowRect *, std::__1::allocator<TSUColumnRowRect> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
+    } mCellRangesToInvalidate;
     struct vector<unsigned short, std::__1::allocator<unsigned short> > { 
         unsigned short *__begin_; 
         unsigned short *__end_; 
         struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
             unsigned short *__first_; 
         } __end_cap_; 
-    TSCECalculationEngine *mCalculationEngine;
-    } mCellRangesToInvalidate;
     } mHiddenRowIndices;
     BOOL mNeedsToUpdateFilterSetForImport;
     struct __CFUUID { } *mOwnerID;
+    struct vector<std::__1::pair<unsigned short, bool>, std::__1::allocator<std::__1::pair<unsigned short, bool> > > { 
+        struct pair<unsigned short, bool> {} *__begin_; 
+        struct pair<unsigned short, bool> {} *__end_; 
+        struct __compressed_pair<std::__1::pair<unsigned short, bool> *, std::__1::allocator<std::__1::pair<unsigned short, bool> > > { 
+            struct pair<unsigned short, bool> {} *__first_; 
+        } __end_cap_; 
     } mPendingComputedShowRowResults;
     NSObject<OS_dispatch_queue> *mPendingComputedShowRowResultsQueue;
     TSTTableFilterSet *mRewrittenFilterSet;

@@ -4,7 +4,7 @@
 
 @class BSSettings, NSError, NSString;
 
-@interface BSActionResponse : NSObject <NSCopying, BSXPCCoding, BSSettingDescriptionProvider> {
+@interface BSActionResponse : NSObject <BSSettingDescriptionProvider, BSXPCCoding, NSCopying> {
     NSError *_error;
     BSSettings *_info;
 }

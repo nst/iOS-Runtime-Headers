@@ -9,9 +9,17 @@
 @class <_HKAuthorizationPresentationController>, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, NSXPCConnection, _HKHealthStoreProxy;
 
 @interface HKHealthStore : NSObject <HKClientInterface, HKQueryDelegate, _HKActiveWorkoutLifecycleDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _authorizationDelegateTransactionErrorHandler;
+
     <_HKAuthorizationPresentationController> *_authorizationPresentationController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _bluetoothStatusHandler;
+
     NSObject<OS_dispatch_queue> *_clientQueue;
     NSXPCConnection *_connection;
     _HKHealthStoreProxy *_connectionProxy;
@@ -121,8 +129,8 @@
 - (id)hk_sourcesForDevicesWithSources:(id)arg1;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
-- (id)initWithListenerEndpoint:(id)arg1 identifier:(id)arg2;
 - (id)initWithListenerEndpoint:(id)arg1;
+- (id)initWithListenerEndpoint:(id)arg1 identifier:(id)arg2;
 - (void)invalidateActivityAlertSuppressionForBundleIdentifier:(id)arg1 completion:(id)arg2;
 - (void)orderedSourcesForObjectType:(id)arg1 completion:(id)arg2;
 - (void)performHealthServiceOperation:(id)arg1 onSession:(id)arg2 withParameters:(id)arg3 completion:(id)arg4;
@@ -162,8 +170,8 @@
 - (void)unitPreferencesDidUpdate;
 - (void)unregisterKeepAliveWithIdentifier:(id)arg1 completion:(id)arg2;
 - (void)unregisterPeripheralIdentifier:(id)arg1 withCompletion:(id)arg2;
-- (void)updateMedicalIDData:(id)arg1 completion:(id)arg2;
 - (void)updateMedicalIDData:(id)arg1;
+- (void)updateMedicalIDData:(id)arg1 completion:(id)arg2;
 - (void)workoutDidComplete:(id)arg1;
 
 @end

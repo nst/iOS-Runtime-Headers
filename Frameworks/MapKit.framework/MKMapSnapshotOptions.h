@@ -5,6 +5,7 @@
 @class MKMapCamera;
 
 @interface MKMapSnapshotOptions : NSObject <NSCopying> {
+    MKMapCamera *_camera;
     struct { 
         struct { 
             double x; 
@@ -14,6 +15,9 @@
             double width; 
             double height; 
         } size; 
+    } _mapRect;
+    unsigned int _mapType;
+    int _mode;
     struct { 
         struct { 
             double latitude; 
@@ -23,18 +27,14 @@
             double latitudeDelta; 
             double longitudeDelta; 
         } span; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    MKMapCamera *_camera;
-    } _mapRect;
-    unsigned int _mapType;
-    int _mode;
     } _region;
     BOOL _rendersInBackground;
     float _scale;
     BOOL _showsBuildings;
     BOOL _showsPointsOfInterest;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     BOOL _usingRect;
 }

@@ -5,6 +5,17 @@
 @class <_UISiriWaveyViewDelegate>, CADisplayLink, EAGLContext;
 
 @interface _UISiriWaveyView : UIView {
+    int _attribPosition;
+    <_UISiriWaveyViewDelegate> *_delegate;
+    CADisplayLink *_displayLink;
+    EAGLContext *_eaglContext;
+    unsigned int _framebufferHandle;
+    BOOL _isInitialized;
+    BOOL _justStarted;
+    const float *_lineWidth;
+    int _mode;
+    unsigned int _powerPointer;
+    unsigned int _programHandle;
     struct { 
         struct { 
             float m_x; 
@@ -30,19 +41,8 @@
             float m_z; 
             float m_w; 
         } m_trans; 
-    int _attribPosition;
-    <_UISiriWaveyViewDelegate> *_delegate;
-    CADisplayLink *_displayLink;
-    EAGLContext *_eaglContext;
-    unsigned int _framebufferHandle;
-    BOOL _isInitialized;
-    BOOL _justStarted;
-    const float *_lineWidth;
-    int _mode;
-    unsigned int _powerPointer;
-    unsigned int _programHandle;
-    float _projection11;
     } _projection;
+    float _projection11;
     unsigned int _renderbufferHandle;
     float _runningPowerLevels[5];
     double _startTime;

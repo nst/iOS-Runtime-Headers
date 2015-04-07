@@ -14,8 +14,8 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)startAnimatingInNavItem:(id)arg1 forIdentifier:(id)arg2 hideBackButton:(BOOL)arg3;
 - (void)startAnimatingInNavItem:(id)arg1 forIdentifier:(id)arg2;
+- (void)startAnimatingInNavItem:(id)arg1 forIdentifier:(id)arg2 hideBackButton:(BOOL)arg3;
 - (void)stopAnimatingForIdentifier:(id)arg1;
 
 @end

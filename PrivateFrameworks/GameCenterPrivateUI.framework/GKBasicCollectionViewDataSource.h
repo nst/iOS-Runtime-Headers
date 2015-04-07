@@ -5,12 +5,12 @@
 @class NSArray, NSPredicate;
 
 @interface GKBasicCollectionViewDataSource : GKCollectionViewDataSource <NSCopying> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     NSPredicate *_filterPredicate;
     NSArray *_items;
     unsigned int _pageSize;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _preloadedRange;
     SEL _showAllAction;
 }
@@ -46,8 +46,8 @@
 - (void)replaceItemsAtIndexes:(id)arg1 withItems:(id)arg2;
 - (id)sectionTitle;
 - (void)setFilterPredicate:(id)arg1;
-- (void)setItems:(id)arg1 animated:(BOOL)arg2 complete:(id)arg3;
 - (void)setItems:(id)arg1;
+- (void)setItems:(id)arg1 animated:(BOOL)arg2 complete:(id)arg3;
 - (void)setItemsNoNotify:(id)arg1;
 - (void)setPageSize:(unsigned int)arg1;
 - (void)setPreloadedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

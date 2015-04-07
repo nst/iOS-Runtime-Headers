@@ -42,14 +42,14 @@
 - (id)_hyperlinkStyleWasCreated:(BOOL*)arg1;
 - (void)addDefaultPresenterNotesStylesIfAbsent;
 - (id)addDuplicateOfStyle:(id)arg1 withIdentifier:(id)arg2;
-- (void)addStyle:(id)arg1 withIdentifier:(id)arg2;
-- (void)addStyle:(id)arg1 withParent:(id)arg2 identifier:(id)arg3;
-- (void)addStyle:(id)arg1 withParent:(id)arg2;
 - (void)addStyle:(id)arg1;
+- (void)addStyle:(id)arg1 withIdentifier:(id)arg2;
+- (void)addStyle:(id)arg1 withParent:(id)arg2;
+- (void)addStyle:(id)arg1 withParent:(id)arg2 identifier:(id)arg3;
 - (BOOL)canCullStyles;
 - (BOOL)cascadedContainsStyle:(id)arg1;
-- (id)cascadedStyleWithIdentifier:(id)arg1 componentMask:(int)arg2;
 - (id)cascadedStyleWithIdentifier:(id)arg1;
+- (id)cascadedStyleWithIdentifier:(id)arg1 componentMask:(int)arg2;
 - (id)cascadedStylesPassingTest:(id)arg1;
 - (id)child;
 - (id)childrenOfStyle:(id)arg1;
@@ -73,8 +73,8 @@
 - (id)identifiedStyles;
 - (id)identifiedStylesOfClass:(Class)arg1;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 canCullStyles:(BOOL)arg2;
 - (id)initWithContext:(id)arg1;
+- (id)initWithContext:(id)arg1 canCullStyles:(BOOL)arg2;
 - (BOOL)isAncestorOf:(id)arg1;
 - (BOOL)isChildOf:(id)arg1;
 - (BOOL)isDescendentOf:(id)arg1;
@@ -85,7 +85,7 @@
 - (id)pVariationOfStyle:(id)arg1 propertyMap:(id)arg2 matchStyles:(id)arg3 context:(id)arg4;
 - (void)p_addStyle:(id)arg1 withParent:(id)arg2 identifier:(id)arg3;
 - (void)p_addStyleToParentChildren:(id)arg1;
-- (struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree_node<long long, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<long long> > { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)p_allFilteredIdentifiersInArchive:(const struct StylesheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct Reference {} *x5; struct RepeatedPtrField<TSS::StylesheetArchive_StyleChildrenEntry> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; boolx7; boolx8; int x9; unsigned int x10[1]; }*)arg1 unarchiver:(id)arg2;
+- (struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree_node<long long, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<long long> > { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)p_allFilteredIdentifiersInArchive:(const struct StylesheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct Reference {} *x5; struct RepeatedPtrField<TSS::StylesheetArchive_StyleChildrenEntry> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; bool x7; bool x8; int x9; unsigned int x10[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)p_defaultPresenterNotesListStylePropertyMapForListLabelType:(int)arg1;
 - (id)p_defaultPresenterNotesParagraphStylePropertyMap;
 - (id)p_defaultPresenterNotesParagraphStyleWithContext:(id)arg1;
@@ -105,12 +105,12 @@
 - (void)setCanCullStyles:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1 ofStyle:(id)arg2;
 - (void)setIsLocked:(BOOL)arg1;
+- (void)setParent:(id)arg1;
 - (void)setParent:(id)arg1 ofStyle:(id)arg2;
 - (void)setParent:(id)arg1 withParentStyleMap:(struct __CFDictionary { }*)arg2;
-- (void)setParent:(id)arg1;
 - (BOOL)shouldDelayArchiving;
-- (id)styleWithIdentifier:(id)arg1 componentMask:(int)arg2;
 - (id)styleWithIdentifier:(id)arg1;
+- (id)styleWithIdentifier:(id)arg1 componentMask:(int)arg2;
 - (id)styles;
 - (id)stylesOfClass:(Class)arg1;
 - (id)stylesPassingTest:(id)arg1;
@@ -120,9 +120,9 @@
 - (void)upgradeDefaultPresenterNotesStyles;
 - (id)variationOfCharacterStyle:(id)arg1 paragraphStyle:(id)arg2 propertyMap:(id)arg3;
 - (id)variationOfStyle:(id)arg1 exactPropertyMap:(id)arg2;
+- (id)variationOfStyle:(id)arg1 propertyMap:(id)arg2;
 - (id)variationOfStyle:(id)arg1 propertyMap:(id)arg2 context:(id)arg3;
 - (id)variationOfStyle:(id)arg1 propertyMap:(id)arg2 matchStyles:(id)arg3 context:(id)arg4;
-- (id)variationOfStyle:(id)arg1 propertyMap:(id)arg2;
 - (id)variationOfStyleMatchingStyle:(id)arg1 withNewParentStyle:(id)arg2;
 
 @end

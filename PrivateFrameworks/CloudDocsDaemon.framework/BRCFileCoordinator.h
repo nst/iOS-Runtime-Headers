@@ -10,7 +10,11 @@
 
 @interface BRCFileCoordinator : NSFileCoordinator {
     BOOL _cancelled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _doneHandler;
+
     BOOL _isUpdateForReconnecting;
     BRCAccountSession *_session;
     unsigned long long _startStamp;

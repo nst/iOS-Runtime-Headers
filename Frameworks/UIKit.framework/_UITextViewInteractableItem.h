@@ -5,13 +5,13 @@
 @class NSArray, NSDictionary, NSString, UITextView, UIWindow, _UIRotatingAlertController;
 
 @interface _UITextViewInteractableItem : NSObject <_UIRotatingAlertControllerDelegate> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     NSArray *_actions;
     NSDictionary *_defaultAction;
     BOOL _interactionIsFinished;
     _UIRotatingAlertController *_linkInteractionAlertController;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
     UITextView *_textView;
     UIWindow *_windowForActionSheetPresentation;

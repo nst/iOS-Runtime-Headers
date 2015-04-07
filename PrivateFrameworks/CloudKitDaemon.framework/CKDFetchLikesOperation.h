@@ -10,7 +10,11 @@
 
 @interface CKDFetchLikesOperation : CKDOperation {
     NSArray *_likeIDsToFetch;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _likesFetchedProgressBlock;
+
     unsigned int _resultsLimit;
     CKShareID *_shareID;
 }

@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface AWDIDSLocalDeliveryMessageDelivered : PBCodable <NSCopying> {
+    unsigned long long _deliveryError;
     struct { 
         unsigned int deliveryError : 1; 
         unsigned int isToDefaultPairedDevice : 1; 
@@ -13,7 +14,6 @@
         unsigned int priority : 1; 
         unsigned int rTT : 1; 
         unsigned int timestamp : 1; 
-    unsigned long long _deliveryError;
     } _has;
     unsigned long long _isToDefaultPairedDevice;
     unsigned long long _linkType;

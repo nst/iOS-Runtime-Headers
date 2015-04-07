@@ -5,13 +5,13 @@
 @class NSMutableSet, NSUbiquitousKeyValueStore;
 
 @interface SGSuggestHistory : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     NSUbiquitousKeyValueStore *_backingKVStore;
     NSMutableSet *_contactHashes;
     NSMutableSet *_dontUpdate;
     NSMutableSet *_eventHashes;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _lock;
 }
 
@@ -28,8 +28,8 @@
 - (id)description;
 - (id)deviceSalt;
 - (void)handleSyncedDataChanged:(id)arg1;
-- (BOOL)hasContact:(id)arg1 usingStore:(id)arg2;
 - (BOOL)hasContact:(id)arg1;
+- (BOOL)hasContact:(id)arg1 usingStore:(id)arg2;
 - (BOOL)hasContactDetail:(id)arg1 forContact:(id)arg2 usingStore:(id)arg3;
 - (BOOL)hasEvent:(id)arg1;
 - (BOOL)hasEventWithRejectedFields:(id)arg1;

@@ -5,6 +5,9 @@
 @class NSString;
 
 @interface AWDPushKeepAliveSent : PBCodable <NSCopying> {
+    unsigned int _connectionType;
+    unsigned int _dualChannelState;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
@@ -13,9 +16,6 @@
         unsigned int linkQuality : 1; 
         unsigned int nextKeepAliveInterval : 1; 
         unsigned int timeSinceLastKeepAlive : 1; 
-    unsigned int _connectionType;
-    unsigned int _dualChannelState;
-    NSString *_guid;
     } _has;
     unsigned int _keepAliveACKDuration;
     int _linkQuality;

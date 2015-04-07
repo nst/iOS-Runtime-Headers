@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface ChartLabelInfo : NSObject {
+    BOOL _immutable;
+    float _position;
     struct CGSize { 
         float width; 
         float height; 
-    BOOL _immutable;
-    float _position;
     } _size;
     NSString *_string;
 }

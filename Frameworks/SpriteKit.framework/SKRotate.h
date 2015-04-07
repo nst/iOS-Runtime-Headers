@@ -12,15 +12,18 @@
  */
 
 @interface SKRotate : SKAction {
-    struct SKCRotate { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; float x31; BOOL x32; BOOL x33; BOOL x34; BOOL x35; BOOL x36; BOOL x37; } *_mycaction;
+
+  /* Error parsing encoded ivar type info: ^{SKCRotate=^^?If@?@BddffdBB@?iffffffffffffffcccccc} */
+    struct SKCRotate { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; bool x7; double x8; double x9; float x10; float x11; double x12; bool x13; bool x14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; float x31; BOOL x32; BOOL x33; BOOL x34; BOOL x35; BOOL x36; BOOL x37; } *_mycaction;
+
 }
 
 + (id)rotateByAngle:(float)arg1 duration:(double)arg2;
 + (id)rotateByX:(float)arg1 duration:(double)arg2;
 + (id)rotateByX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
 + (id)rotateByY:(float)arg1 duration:(double)arg2;
-+ (id)rotateToAngle:(float)arg1 duration:(double)arg2 shortestUnitArc:(BOOL)arg3;
 + (id)rotateToAngle:(float)arg1 duration:(double)arg2;
++ (id)rotateToAngle:(float)arg1 duration:(double)arg2 shortestUnitArc:(BOOL)arg3;
 + (id)rotateToX:(float)arg1 duration:(double)arg2;
 + (id)rotateToX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
 + (id)rotateToY:(float)arg1 duration:(double)arg2;

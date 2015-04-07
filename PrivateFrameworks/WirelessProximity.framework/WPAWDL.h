@@ -32,9 +32,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2 machName:(id)arg3;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2 machName:(id)arg3;
 - (void)initXPCHandler:(id)arg1;
 - (void)messageArrived:(id)arg1;
 - (id)server;

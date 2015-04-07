@@ -15,8 +15,8 @@
 - (void)appendShaderResourceString:(struct IteratorRange<const char *> { struct pair<const char *, const char *> { char *x_1_1_1; char *x_1_1_2; } x1; })arg1 toDataBuffer:(id)arg2;
 - (void)dealloc;
 - (id)get;
-- (id)initWithCaching:(int)arg1 version:(id)arg2;
 - (id)initWithCaching:(int)arg1;
+- (id)initWithCaching:(int)arg1 version:(id)arg2;
 - (id)program;
 - (struct IteratorRange<const char *> { struct pair<const char *, const char *> { char *x_1_1_1; char *x_1_1_2; } x1; })resourceStringOfString:(id)arg1;
 

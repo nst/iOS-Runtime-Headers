@@ -49,8 +49,8 @@
 - (id)baseURL;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithXML:(id)arg1 baseURL:(id)arg2 delegate:(id)arg3;
 - (id)initWithXML:(id)arg1;
+- (id)initWithXML:(id)arg1 baseURL:(id)arg2 delegate:(id)arg3;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parser:(id)arg1 foundCDATA:(id)arg2;

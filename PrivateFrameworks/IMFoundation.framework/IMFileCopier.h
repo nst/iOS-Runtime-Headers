@@ -10,7 +10,11 @@
 
 @interface IMFileCopier : NSObject {
     void *_BOMCopier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callback;
+
     <IMFileCopierDelegate> *_delegate;
     BOOL _didErrorOccur;
     id _identifier;

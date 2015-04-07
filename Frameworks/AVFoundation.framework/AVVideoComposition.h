@@ -16,8 +16,8 @@
 @property(readonly) struct CGSize { float x1; float x2; } renderSize;
 
 + (void)initialize;
-+ (id)videoCompositionWithPropertiesOfAsset:(id)arg1 videoGravity:(id)arg2;
 + (id)videoCompositionWithPropertiesOfAsset:(id)arg1;
++ (id)videoCompositionWithPropertiesOfAsset:(id)arg1 videoGravity:(id)arg2;
 
 - (int)_auxiliaryTrackID;
 - (id)_auxiliaryTrackLayer;

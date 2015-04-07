@@ -10,7 +10,6 @@
 @class CMMotionManager, NSMutableArray, NSOperationQueue;
 
 @interface SwingEstimator : NSObject {
-    int (*outputCallback)();
     float LA;
     float LOmega;
     float RA;
@@ -23,6 +22,7 @@
     int numberOfValidSamplesAngularVelocity;
     int numberOfValidSamplesLinearAcceleration;
     NSOperationQueue *operationQueue;
+    int (*outputCallback)();
     void *outputRefCon;
     BOOL showDebugData;
     unsigned long long startTime;

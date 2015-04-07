@@ -5,12 +5,12 @@
 @class <MPURatingControlDelegate>, NSMutableArray, UIPanGestureRecognizer, UITapGestureRecognizer;
 
 @interface MPURatingControl : UIControl {
+    <MPURatingControlDelegate> *_delegate;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    <MPURatingControlDelegate> *_delegate;
     } _hitTestEdgeInsets;
     NSMutableArray *_imageViews;
     UIPanGestureRecognizer *_panGestureRecognizer;
@@ -38,7 +38,7 @@
 - (float)ratingValueForLocationInView:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHitTestEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setRating:(float)arg1 animated:(BOOL)arg2;
 - (void)setRating:(float)arg1;
+- (void)setRating:(float)arg1 animated:(BOOL)arg2;
 
 @end

@@ -7,7 +7,11 @@
  */
 
 @interface _NSURLBDOnce : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id fBlock;
+
     BOOL fDone;
 }
 

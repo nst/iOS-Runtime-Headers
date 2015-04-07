@@ -7,92 +7,92 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _armUtilityPDFs;
+    int _armUtilityThresholdPoint;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeBackgroundActivityARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeBackgroundActivityDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeCumulativeARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeCumulativeDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeMarginalCoverageARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeMarginalCoverageDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeOOSARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeOOSDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeRACHFailARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeRACHFailDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeStruckInDCHARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeStruckInDCHDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeTcXONotShuttingARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeTcXONotShuttingDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeUnknownARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _causeCodeUnknownDurations;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int armUtilityThresholdPoint : 1; 
         unsigned int radarPriority : 1; 
-    } _armUtilityPDFs;
-    int _armUtilityThresholdPoint;
-    } _causeCodeBackgroundActivityARMUtilitys;
-    } _causeCodeBackgroundActivityDurations;
-    } _causeCodeCumulativeARMUtilitys;
-    } _causeCodeCumulativeDurations;
-    } _causeCodeMarginalCoverageARMUtilitys;
-    } _causeCodeMarginalCoverageDurations;
-    } _causeCodeOOSARMUtilitys;
-    } _causeCodeOOSDurations;
-    } _causeCodeRACHFailARMUtilitys;
-    } _causeCodeRACHFailDurations;
-    } _causeCodeStruckInDCHARMUtilitys;
-    } _causeCodeStruckInDCHDurations;
-    } _causeCodeTcXONotShuttingARMUtilitys;
-    } _causeCodeTcXONotShuttingDurations;
-    } _causeCodeUnknownARMUtilitys;
-    } _causeCodeUnknownDurations;
     } _has;
     int _radarPriority;
     unsigned long long _timestamp;

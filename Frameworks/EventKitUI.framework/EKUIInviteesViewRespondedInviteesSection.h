@@ -12,11 +12,23 @@
     NSString *_cachedCellReuseIdentifier;
     BOOL _editable;
     EKEvent *_event;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _participantRemoved;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _participantTapped;
+
     NSMutableArray *_participants;
     unsigned int _reuseIdentifierVersion;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _tableViewCellHook;
+
 }
 
 @property(retain) NSString * cachedCellReuseIdentifier;

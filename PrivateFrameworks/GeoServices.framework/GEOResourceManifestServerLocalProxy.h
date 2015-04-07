@@ -4,7 +4,7 @@
 
 @class <GEOResourceManifestServerProxyDelegate>, GEOActiveTileGroup, GEOResourceLoader, GEOResourceManifestConfiguration, GEOResourceManifestDownload, NSError, NSLock, NSMutableArray, NSMutableData, NSMutableDictionary, NSString, NSTimer, NSURLConnection;
 
-@interface GEOResourceManifestServerLocalProxy : NSObject <NSURLConnectionDelegate, GEOResourceManifestServerProxy> {
+@interface GEOResourceManifestServerLocalProxy : NSObject <GEOResourceManifestServerProxy, NSURLConnectionDelegate> {
     GEOActiveTileGroup *_activeTileGroup;
     NSString *_authToken;
     NSLock *_authTokenLock;
@@ -54,8 +54,8 @@
 - (void)_scheduleUpdateTimerWithTimeInterval:(double)arg1;
 - (void)_startServer;
 - (void)_tileGroupTimerFired:(id)arg1;
-- (void)_updateManifest:(id)arg1;
 - (void)_updateManifest;
+- (void)_updateManifest:(id)arg1;
 - (BOOL)_updateManifestIfNecessary:(id)arg1;
 - (void)_updateTimerFired:(id)arg1;
 - (void)_writeActiveTileGroupToDisk:(id)arg1;

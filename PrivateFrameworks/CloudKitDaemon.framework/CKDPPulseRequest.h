@@ -5,12 +5,12 @@
 @class CKDPPulseData, CKDPResource, CKDPShareIdentifier, NSData, NSString;
 
 @interface CKDPPulseRequest : PBRequest <NSCopying> {
+    int _apnsEnv;
+    NSString *_etag;
     struct { 
         unsigned int lookbackWindowMillis : 1; 
         unsigned int apnsEnv : 1; 
         unsigned int reset : 1; 
-    int _apnsEnv;
-    NSString *_etag;
     } _has;
     long long _lookbackWindowMillis;
     CKDPPulseData *_pulseData;

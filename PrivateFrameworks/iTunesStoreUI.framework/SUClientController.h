@@ -4,7 +4,7 @@
 
 @class ISURLOperationPool, MFMailComposeViewController, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SUClientInterface, SUImageCache, SUScriptExecutionContext, UIViewController;
 
-@interface SUClientController : NSObject <SUClientInterfaceDelegate, MFMailComposeViewControllerDelegate, SUPurchaseManagerDelegate> {
+@interface SUClientController : NSObject <MFMailComposeViewControllerDelegate, SUClientInterfaceDelegate, SUPurchaseManagerDelegate> {
     BOOL _active;
     SUClientInterface *_clientInterface;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -53,21 +53,21 @@
 - (void)becomeActive;
 - (void)cancelAllOperations;
 - (id)clientIdentifier;
+- (id)clientInterface;
 - (void)clientInterface:(id)arg1 exitStoreWithReason:(int)arg2;
 - (void)clientInterface:(id)arg1 presentDialog:(id)arg2;
 - (void)clientInterface:(id)arg1 setStatusBarHidden:(BOOL)arg2 withAnimation:(int)arg3;
 - (void)clientInterface:(id)arg1 setStatusBarStyle:(int)arg2 animated:(BOOL)arg3;
-- (id)clientInterface;
 - (void)composeEmailByRestoringAutosavedMessage;
-- (void)composeEmailWithSubject:(id)arg1 body:(id)arg2 animated:(BOOL)arg3;
 - (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
+- (void)composeEmailWithSubject:(id)arg1 body:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)dealloc;
 - (void)dismissMailComposeViewControllerAnimated:(BOOL)arg1;
 - (void)dismissOverlayBackgroundViewController;
 - (BOOL)dismissTopViewControllerAnimated:(BOOL)arg1;
-- (BOOL)displayClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (BOOL)displayClientURL:(id)arg1;
+- (BOOL)displayClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (void)exitStoreWithReason:(int)arg1;
 - (BOOL)ignoresExpectedClientsProtocol;
 - (id)imageCache;
@@ -82,10 +82,10 @@
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (id)newScriptInterface;
 - (struct __CFArray { }*)offeredAssetTypes;
-- (BOOL)openClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (BOOL)openClientURL:(id)arg1;
-- (BOOL)openURL:(id)arg1 inClientWithIdentifier:(id)arg2;
+- (BOOL)openClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (BOOL)openURL:(id)arg1;
+- (BOOL)openURL:(id)arg1 inClientWithIdentifier:(id)arg2;
 - (id)overlayBackgroundViewController;
 - (id)overlayConfigurationForStorePage:(id)arg1;
 - (BOOL)performActionForDialog:(id)arg1 button:(id)arg2;

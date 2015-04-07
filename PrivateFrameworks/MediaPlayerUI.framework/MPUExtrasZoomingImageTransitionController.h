@@ -4,7 +4,7 @@
 
 @class MPUExtrasBorderedImageView, NSString;
 
-@interface MPUExtrasZoomingImageTransitionController : UIPercentDrivenInteractiveTransition <UIViewControllerAnimatedTransitioning, MPUExtrasOptionallyInteractiveAnimationController> {
+@interface MPUExtrasZoomingImageTransitionController : UIPercentDrivenInteractiveTransition <MPUExtrasOptionallyInteractiveAnimationController, UIViewControllerAnimatedTransitioning> {
     struct CGPoint { 
         float x; 
         float y; 

@@ -4,23 +4,11 @@
 
 @class <UIPageViewControllerDataSource>, <UIPageViewControllerDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UIPanGestureRecognizer, UITapGestureRecognizer, _UIPageCurl, _UIPageViewControllerContentView, _UIQueuingScrollView;
 
-@interface UIPageViewController : UIViewController <UIGestureRecognizerDelegate, _UIQueuingScrollViewDelegate, _UIQueuingScrollViewDataSource> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface UIPageViewController : UIViewController <UIGestureRecognizerDelegate, _UIQueuingScrollViewDataSource, _UIQueuingScrollViewDelegate> {
+    NSMutableDictionary *_cachedViewControllersForCurl;
+    NSMutableArray *_cachedViewControllersForScroll;
+    <UIPageViewControllerDataSource> *_dataSource;
+    <UIPageViewControllerDelegate> *_delegate;
     struct { 
         unsigned int delegateWantsTransitionWillBegin : 1; 
         unsigned int delegateWantsTransitionCompleted : 1; 
@@ -32,14 +20,18 @@
         unsigned int dataSourceSuppliesAfterViewController : 1; 
         unsigned int dataSourceSuppliesPageCount : 1; 
         unsigned int dataSourceSuppliesPageNumber : 1; 
-    NSMutableDictionary *_cachedViewControllersForCurl;
-    NSMutableArray *_cachedViewControllersForScroll;
-    <UIPageViewControllerDataSource> *_dataSource;
-    <UIPageViewControllerDelegate> *_delegate;
     } _delegateFlags;
     int _disableAutorotationCount;
     BOOL _doubleSided;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _effectiveTapRegionBreadths;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _effectiveTapRegionInsets;
     NSDictionary *_incomingAndOutgoingViewControllersForManualTransition;
     BOOL _interfaceRotating;
@@ -54,7 +46,15 @@
     int _spineLocationPriorToInterfaceRotation;
     BOOL _stashingViewControllersForRotation;
     UITapGestureRecognizer *_tapGestureRecognizer;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _tapRegionBreadths;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _tapRegionInsets;
     struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } *_tapRegions;
     int _transitionStyle;
@@ -139,9 +139,9 @@
 - (void)_setSpineLocation:(int)arg1;
 - (void)_setTapRegionBreadths:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setTapRegionInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setViewControllers:(id)arg1;
 - (void)_setViewControllers:(id)arg1 withCurlOfType:(int)arg2 fromLocation:(struct CGPoint { float x1; float x2; })arg3 direction:(int)arg4 animated:(BOOL)arg5 notifyDelegate:(BOOL)arg6 completion:(id)arg7;
 - (void)_setViewControllers:(id)arg1 withScrollInDirection:(int)arg2 animated:(BOOL)arg3 completion:(id)arg4;
-- (void)_setViewControllers:(id)arg1;
 - (void)_setViewControllersStashedForRotation:(id)arg1;
 - (BOOL)_shouldBeginNavigationInDirection:(int*)arg1 inResponseToPanGestureRecognizer:(id)arg2;
 - (BOOL)_shouldCompleteManualCurlWithSuggestedVelocity:(float*)arg1;

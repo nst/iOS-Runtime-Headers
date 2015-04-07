@@ -41,8 +41,8 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)initWithDomain:(id)arg1;
-- (void)logWithLevel:(unsigned int)arg1 withFormat:(id)arg2 withArgs:(void*)arg3;
 - (void)logWithLevel:(unsigned int)arg1 withFormat:(id)arg2;
+- (void)logWithLevel:(unsigned int)arg1 withFormat:(id)arg2 withArgs:(void*)arg3;
 - (BOOL)shouldLogForLevel:(unsigned int)arg1;
 
 @end

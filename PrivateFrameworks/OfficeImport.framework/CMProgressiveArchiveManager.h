@@ -21,8 +21,8 @@
     NSMutableDictionary *mStyleCache;
 }
 
-- (void)addCssStyle:(id)arg1 withName:(id)arg2;
 - (id)addCssStyle:(id)arg1;
+- (void)addCssStyle:(id)arg1 withName:(id)arg2;
 - (void)closeResourceAtPath:(id)arg1;
 - (void)commitDataAtPath:(id)arg1;
 - (id)copyResourceWithName:(id)arg1;

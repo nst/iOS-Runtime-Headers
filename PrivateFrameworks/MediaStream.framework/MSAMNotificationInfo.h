@@ -9,7 +9,11 @@
 @class MSAlertManager, NSString;
 
 @interface MSAMNotificationInfo : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     MSAlertManager *_owner;
     NSString *_personID;
     struct __CFRunLoopSource { } *_runLoopSource;

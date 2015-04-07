@@ -7,6 +7,13 @@
  */
 
 @interface TSCH3DVectorN3DDataBuffer : TSCH3DDataBuffer {
+    struct vector<unsigned char, std::__1::allocator<unsigned char> > { 
+        char *__begin_; 
+        char *__end_; 
+        struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { 
+            char *__first_; 
+        } __end_cap_; 
+    } mContainer;
     struct DataBuffer3DDimension { 
         struct tvec3<int> { 
             union { 
@@ -26,13 +33,6 @@
             } ; 
         } mSize; 
         unsigned int mComponents; 
-    struct vector<unsigned char, std::__1::allocator<unsigned char> > { 
-        char *__begin_; 
-        char *__end_; 
-        struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { 
-            char *__first_; 
-        } __end_cap_; 
-    } mContainer;
     } mDimension;
 }
 

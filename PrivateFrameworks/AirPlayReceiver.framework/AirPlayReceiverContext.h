@@ -47,6 +47,11 @@
         unsigned int inputMaxLen; 
         unsigned char inputStarted; 
         NSObject<OS_dispatch_source> *ducker; 
+    } _altAudioCtx;
+    unsigned char _audioSessionActive;
+    NSMutableSet *_hidDevices;
+    unsigned int _hidIterator;
+    struct IONotificationPort { } *_hidNotifier;
     struct { 
         unsigned int type; 
         unsigned long long format; 
@@ -84,11 +89,6 @@
         unsigned int inputMaxLen; 
         unsigned char inputStarted; 
         NSObject<OS_dispatch_source> *ducker; 
-    } _altAudioCtx;
-    unsigned char _audioSessionActive;
-    NSMutableSet *_hidDevices;
-    unsigned int _hidIterator;
-    struct IONotificationPort { } *_hidNotifier;
     } _mainAudioCtx;
     unsigned int _powerAssertion;
     unsigned int _receiverUISessionID;

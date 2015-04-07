@@ -5,6 +5,12 @@
 @class CPZone, NSMutableArray;
 
 @interface CPColumnMaker : NSObject {
+    NSMutableArray *allParagraphs;
+    NSMutableArray *columns;
+    CPZone *currentZone;
+    NSMutableArray *images;
+    float maxParagraphDistance;
+    NSMutableArray *otherShapes;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,12 +20,6 @@
             float width; 
             float height; 
         } size; 
-    NSMutableArray *allParagraphs;
-    NSMutableArray *columns;
-    CPZone *currentZone;
-    NSMutableArray *images;
-    float maxParagraphDistance;
-    NSMutableArray *otherShapes;
     } pageBounds;
     NSMutableArray *paragraphWrappers;
     NSMutableArray *thinHorizontalShapes;

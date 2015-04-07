@@ -11,8 +11,8 @@
     NSString *mName;
 }
 
-+ (id)blipRefWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3 effects:(id)arg4;
 + (id)blipRefWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3;
++ (id)blipRefWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3 effects:(id)arg4;
 + (int)blipTypeForContentType:(id)arg1;
 + (int)blipTypeForExtension:(id)arg1;
 + (int)blipTypeForImageData:(id)arg1;
@@ -29,8 +29,8 @@
 - (unsigned int)hash;
 - (long)index;
 - (id)init;
-- (id)initWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3 effects:(id)arg4;
 - (id)initWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3;
+- (id)initWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3 effects:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNull;
 - (id)name;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CKRecordZoneID : NSObject <NSSecureCoding, NSCopying> {
+@interface CKRecordZoneID : NSObject <NSCopying, NSSecureCoding> {
     NSString *_ownerName;
     NSString *_zoneName;
 }

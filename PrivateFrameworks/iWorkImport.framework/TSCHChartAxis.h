@@ -4,7 +4,7 @@
 
 @class <TSCHStyleActAlike>, NSString, TSCHChartAxis, TSCHChartAxisID, TSCHChartModel, TSUFastReadInvalidatingCache;
 
-@interface TSCHChartAxis : NSObject <TSCHUnretainedParent, TSCHStyleOwning> {
+@interface TSCHChartAxis : NSObject <TSCHStyleOwning, TSCHUnretainedParent> {
     TSUFastReadInvalidatingCache *mAnalysisCache;
     TSCHChartAxisID *mAxisID;
     TSCHChartModel *mChartModel;
@@ -30,8 +30,8 @@
 + (id)defaultNumberFormat;
 + (id)paragraphStyleForLabelsFontForInfo:(id)arg1;
 + (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfLabelsForInfo:(id)arg1 onlyHeight:(BOOL)arg2;
-+ (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfSeriesLabelsForInfo:(id)arg1 onlyHeight:(BOOL)arg2;
 + (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfSeriesLabelsForInfo:(id)arg1;
++ (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfSeriesLabelsForInfo:(id)arg1 onlyHeight:(BOOL)arg2;
 
 - (void)adjustMinMaxForDataRangeInAnalysis:(id)arg1;
 - (int)adjustedNumberFormatType;
@@ -58,8 +58,8 @@
 - (BOOL)editableFormatForValueStrings;
 - (float)floatValueForProperty:(int)arg1 defaultValue:(float)arg2;
 - (id)formattedStringForAxisValue:(id)arg1;
-- (id)formattedStringForSeries:(id)arg1 index:(unsigned int)arg2 multiDataSetIndex:(unsigned int)arg3;
 - (id)formattedStringForSeries:(id)arg1 index:(unsigned int)arg2;
+- (id)formattedStringForSeries:(id)arg1 index:(unsigned int)arg2 multiDataSetIndex:(unsigned int)arg3;
 - (id)g_genericToDefaultPropertyMap;
 - (id)gridValueAxisToModelValue:(double)arg1;
 - (int)gridValueType;
@@ -116,15 +116,15 @@
 - (double)unitSpaceCenterValueHalfOffset;
 - (double*)unitSpaceCenterValuesForSeries:(id)arg1 indexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (double)unitSpaceHalfOffsetForCountSpaceHalfOffset;
-- (double)unitSpaceValueForCountSpaceValue:(double)arg1 min:(double)arg2 count:(double)arg3;
 - (double)unitSpaceValueForCountSpaceValue:(double)arg1;
+- (double)unitSpaceValueForCountSpaceValue:(double)arg1 min:(double)arg2 count:(double)arg3;
+- (double)unitSpaceValueForDataSpaceValue:(double)arg1;
 - (double)unitSpaceValueForDataSpaceValue:(double)arg1 min:(double)arg2 max:(double)arg3;
 - (double)unitSpaceValueForDataSpaceValue:(double)arg1 series:(id)arg2 index:(unsigned int)arg3;
-- (double)unitSpaceValueForDataSpaceValue:(double)arg1;
-- (double)unitSpaceValueForSeries:(id)arg1 index:(unsigned int)arg2 min:(double)arg3 max:(double)arg4;
 - (double)unitSpaceValueForSeries:(id)arg1 index:(unsigned int)arg2;
-- (double*)unitSpaceValuesForSeries:(id)arg1 indexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 min:(double)arg3 max:(double)arg4;
+- (double)unitSpaceValueForSeries:(id)arg1 index:(unsigned int)arg2 min:(double)arg3 max:(double)arg4;
 - (double*)unitSpaceValuesForSeries:(id)arg1 indexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (double*)unitSpaceValuesForSeries:(id)arg1 indexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 min:(double)arg3 max:(double)arg4;
 - (void)updateAxisDateInterceptInAnalysis:(id)arg1;
 - (void)updateGridValueTypeInterceptInAnalysis:(id)arg1;
 - (void)updateMinMaxGridLocationsInAnalysis:(id)arg1;

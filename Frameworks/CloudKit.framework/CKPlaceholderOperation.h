@@ -10,7 +10,11 @@
 
 @interface CKPlaceholderOperation : NSOperation {
     id _context;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _daemonInvokeBlock;
+
     NSObject<OS_dispatch_group> *_group;
     BOOL _isExecuting;
     BOOL _isFinished;

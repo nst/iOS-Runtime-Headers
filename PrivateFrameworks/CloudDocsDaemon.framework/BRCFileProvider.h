@@ -23,8 +23,8 @@
 + (id)prettyNameForFilePresenterID:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_keyForURL:(id)arg1 andID:(id)arg2;
 - (id)_keyForURL:(id)arg1;
+- (id)_keyForURL:(id)arg1 andID:(id)arg2;
 - (void)_provideItemAtURL:(id)arg1 completionHandler:(id)arg2;
 - (void)_providedItemAtURL:(id)arg1 didGainPresenterWithID:(id)arg2;
 - (void)_providedItemAtURL:(id)arg1 didLosePresenterWithID:(id)arg2;

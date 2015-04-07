@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface BWFigCaptureSession : NSObject <BWNodeFileWriterStatusDelegate, BWStillImageCaptureStatusDelegate, BWRemoteQueueSinkNodeDelegate, BWNodeRenderDelegate, BWImageQueueSinkNodePreviewTapDelegate, BWGraphStatusDelegate, BWSourceNodeErrorDelegate> {
+@interface BWFigCaptureSession : NSObject <BWGraphStatusDelegate, BWImageQueueSinkNodePreviewTapDelegate, BWNodeFileWriterStatusDelegate, BWNodeRenderDelegate, BWRemoteQueueSinkNodeDelegate, BWSourceNodeErrorDelegate, BWStillImageCaptureStatusDelegate> {
     struct OpaqueFigCaptureSession { } *_captureSession;
 }
 

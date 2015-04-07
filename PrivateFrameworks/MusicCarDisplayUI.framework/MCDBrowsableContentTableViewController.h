@@ -4,7 +4,7 @@
 
 @class MCDBrowsableContentModel, MCDNowPlayingButton, NSArray, NSIndexPath, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, UIActivityIndicatorView, UITableView, UITapGestureRecognizer, _UIFilteredDataSource;
 
-@interface MCDBrowsableContentTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MCDBrowsableContentModelListener, UIGestureRecognizerDelegate> {
+@interface MCDBrowsableContentTableViewController : UIViewController <MCDBrowsableContentModelListener, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIActivityIndicatorView *_activityIndicator;
     NSIndexPath *_awaitingCallbackForIndexPath;
     UITapGestureRecognizer *_backGestureRecognizer;

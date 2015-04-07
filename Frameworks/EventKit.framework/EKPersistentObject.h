@@ -5,14 +5,14 @@
 @class EKEventStore, NSMutableDictionary, NSMutableSet;
 
 @interface EKPersistentObject : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     NSMutableDictionary *_committedProperties;
     NSMutableSet *_dirtyProperties;
     EKEventStore *_eventStore;
     unsigned int _flags;
     struct __CFDictionary { } *_loadedProperties;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _lock;
     id _objectID;
     NSMutableDictionary *_referencers;

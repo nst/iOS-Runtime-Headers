@@ -5,11 +5,11 @@
 @class UIView<UIWKInteractionViewProtocol>, UIWebSelectionHandle;
 
 @interface UIWKSelectionView : UIWebSelectionView {
+    UIWebSelectionHandle *_handle;
+    UIView<UIWKInteractionViewProtocol> *_interactionView;
     struct CGPoint { 
         float x; 
         float y; 
-    UIWebSelectionHandle *_handle;
-    UIView<UIWKInteractionViewProtocol> *_interactionView;
     } _lastTouchPoint;
     BOOL _selectionIsBlock;
     BOOL _thresholdIsValid;

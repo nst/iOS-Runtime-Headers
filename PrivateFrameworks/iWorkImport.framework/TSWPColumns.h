@@ -26,8 +26,8 @@
 - (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
 - (id)init;
 - (id)initWithArchive:(const struct ColumnsArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ColumnsArchive_EqualColumnsArchive {} *x3; struct ColumnsArchive_NonEqualColumnsArchive {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithColumnCount:(unsigned int)arg1 equalWidth:(BOOL)arg2 widthArray:(float*)arg3 gapArray:(float*)arg4;
 - (id)initWithColumnCount:(unsigned int)arg1;
+- (id)initWithColumnCount:(unsigned int)arg1 equalWidth:(BOOL)arg2 widthArray:(float*)arg3 gapArray:(float*)arg4;
 - (id)initWithEqualColumnCount:(unsigned int)arg1 gapFraction:(float)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (float)p_equalGapForEqualWidth:(float)arg1;

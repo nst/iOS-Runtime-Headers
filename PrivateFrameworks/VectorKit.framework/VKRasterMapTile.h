@@ -6,20 +6,20 @@
     struct shared_ptr<ggl::BitmapDataBase> { 
         struct BitmapDataBase {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    struct VKTileKey { 
-        unsigned int z; 
-        int x; 
-        int y; 
-        unsigned int pointSize; 
-    struct VKTileKey { 
-        unsigned int z; 
-        int x; 
-        int y; 
-        unsigned int pointSize; 
     } _bitmapData;
+    struct VKTileKey { 
+        unsigned int z; 
+        int x; 
+        int y; 
+        unsigned int pointSize; 
     } _finalTileKey;
     struct CGImage { } *_image;
     float _scale;
+    struct VKTileKey { 
+        unsigned int z; 
+        int x; 
+        int y; 
+        unsigned int pointSize; 
     } _superTileKey;
 }
 

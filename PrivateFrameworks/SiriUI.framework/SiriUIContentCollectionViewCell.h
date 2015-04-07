@@ -8,22 +8,22 @@
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     } _accessoryOffset;
     UIView *_accessoryView;
     UIImageView *_chevronView;
     BOOL _hasChevron;
     SiriUIKeyline *_keyline;
     int _keylineType;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _textAndAccessoryInsets;
     UILabel *_textLabel;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _textOffset;
     int _verticalAlignment;
 }

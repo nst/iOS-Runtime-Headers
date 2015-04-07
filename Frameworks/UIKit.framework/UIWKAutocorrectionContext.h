@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface UIWKAutocorrectionContext : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     NSString *_contextAfterSelection;
     NSString *_contextBeforeSelection;
     NSString *_markedText;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _rangeInMarkedText;
     NSString *_selectedText;
 }

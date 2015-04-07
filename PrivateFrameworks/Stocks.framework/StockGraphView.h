@@ -5,11 +5,6 @@
 @class GraphRenderOperation, LineGraphView, NSArray, NSMutableArray, StockChartData, StockChartDisplayMode, UIView<StockGraphViewContainer>, VolumeGraphView;
 
 @interface StockGraphView : UIView <GraphRenderOperationDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     StockChartData *_chartData;
     UIView<StockGraphViewContainer> *_chartViewDelegate;
     unsigned int _dataCount;
@@ -17,6 +12,11 @@
     StockChartDisplayMode *_displayMode;
     NSArray *_dottedLinePositions;
     NSArray *_dottedLinePositionsForStyleOnly;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _graphInsets;
     BOOL _isRendered;
     NSMutableArray *_linePointCounts;

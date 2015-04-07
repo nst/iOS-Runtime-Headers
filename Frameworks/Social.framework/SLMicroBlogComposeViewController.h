@@ -4,7 +4,7 @@
 
 @class NSArray, NSObject<SLMicroBlogSheetDelegate>, NSString, SLComposeSheetConfigurationItem, SLMicroBlogAccountsTableViewController, SLMicroBlogMentionsViewController, SLMicroBlogUserRecord, SLPlace, SLSheetPlaceViewController;
 
-@interface SLMicroBlogComposeViewController : SLComposeServiceViewController <UITextViewDelegate, SLMicroBlogMentionsDelegate, SLMicroBlogAccountsTableViewControllerDelegate, SLSheetPlaceViewControllerDelegate> {
+@interface SLMicroBlogComposeViewController : SLComposeServiceViewController <SLMicroBlogAccountsTableViewControllerDelegate, SLMicroBlogMentionsDelegate, SLSheetPlaceViewControllerDelegate, UITextViewDelegate> {
     SLComposeSheetConfigurationItem *_accountConfigurationItem;
     NSArray *_accountIdentifiers;
     NSArray *_accountUserRecords;

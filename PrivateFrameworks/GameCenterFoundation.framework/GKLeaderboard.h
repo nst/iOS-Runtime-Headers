@@ -5,15 +5,15 @@
 @class <GKLeaderboardDelegate>, GKLeaderboardInternal, GKScore, NSArray, NSString;
 
 @interface GKLeaderboard : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     GKLeaderboardInternal *_internal;
     int _loadingCount;
     GKScore *_localPlayerScore;
     int _lock;
     int _playerScope;
     NSArray *_players;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
     NSArray *_scores;
     int _timeScope;

@@ -22,8 +22,8 @@
 - (void)awakeFromInsert;
 - (id)imageName;
 - (id)imageURL;
-- (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)imageWithFormat:(int)arg1;
+- (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)indexSheetImage;
 - (BOOL)isIncludedInMoments;
 - (id)newFullScreenImage:(const struct __CFDictionary {}**)arg1;

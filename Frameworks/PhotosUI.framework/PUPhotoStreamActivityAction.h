@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface PUPhotoStreamActivityAction : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _action;
+
     NSString *_title;
     NSString *_valueText;
 }

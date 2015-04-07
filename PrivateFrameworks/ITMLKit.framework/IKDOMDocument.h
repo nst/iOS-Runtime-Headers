@@ -38,10 +38,10 @@
 - (id)getElementById:(id)arg1;
 - (id)getElementsByTagName:(id)arg1;
 - (id)implementation;
+- (id)initWithAppContext:(id)arg1;
 - (id)initWithAppContext:(id)arg1 input:(id)arg2 error:(id*)arg3;
 - (id)initWithAppContext:(id)arg1 qualifiedName:(id)arg2;
 - (id)initWithAppContext:(id)arg1 xmlStr:(id)arg2 error:(id*)arg3;
-- (id)initWithAppContext:(id)arg1;
 - (id)inputEncoding;
 - (unsigned int)itmlIDSequence;
 - (BOOL)markUpdated;

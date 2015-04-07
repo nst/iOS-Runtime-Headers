@@ -5,13 +5,13 @@
 @class MPMediaItem, MPMediaLibraryConnectionAssertion, MPMediaQuery, MPMediaQueryShuffledItems, NSArray, NSString;
 
 @interface MPMediaQueryQueueFeeder : MPQueueFeeder <MPAVRoutingControllerDelegate> {
-    unsigned int _itemsChanged : 1;
-    unsigned int _hasPendingLibraryChanges : 1;
     MPMediaItem *_cloudDialogAllowedMediaItem;
     MPMediaLibraryConnectionAssertion *_connectionAssertion;
     MPMediaItem *_focusedItem;
+    unsigned int _hasPendingLibraryChanges : 1;
     int _ignoreShuffleTypeChangesCount;
     MPMediaQueryShuffledItems *_items;
+    unsigned int _itemsChanged : 1;
     NSArray *_prefixMediaItems;
     MPMediaQuery *_query;
 }

@@ -5,13 +5,13 @@
 @class CKDPResponseOperationResultErrorClient, CKDPResponseOperationResultErrorExtension, CKDPResponseOperationResultErrorServer, NSString;
 
 @interface CKDPResponseOperationResultError : PBCodable <NSCopying> {
-    struct { 
-        unsigned int retryAfterSeconds : 1; 
     CKDPResponseOperationResultErrorClient *_clientError;
     NSString *_errorDescription;
     NSString *_errorInternal;
     NSString *_errorKey;
     CKDPResponseOperationResultErrorExtension *_extensionError;
+    struct { 
+        unsigned int retryAfterSeconds : 1; 
     } _has;
     int _retryAfterSeconds;
     CKDPResponseOperationResultErrorServer *_serverError;

@@ -8,15 +8,15 @@
         float left; 
         float bottom; 
         float right; 
+    } _alignmentRectInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    unsigned int _holding : 1;
-    } _alignmentRectInsets;
     } _hitRectInsets;
     double _holdDelayInterval;
+    unsigned int _holding : 1;
 }
 
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;

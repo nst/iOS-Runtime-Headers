@@ -13,8 +13,8 @@
 @property(copy) SKRange * widthRange;
 
 + (id)constraintWithHeightRange:(id)arg1;
-+ (id)constraintWithWidthRange:(id)arg1 heightRange:(id)arg2;
 + (id)constraintWithWidthRange:(id)arg1;
++ (id)constraintWithWidthRange:(id)arg1 heightRange:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

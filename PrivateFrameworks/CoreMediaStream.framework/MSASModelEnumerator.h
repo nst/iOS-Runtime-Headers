@@ -8,7 +8,11 @@
 
 @interface MSASModelEnumerator : NSEnumerator {
     struct sqlite3 { } *_db;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _stepBlock;
+
     struct sqlite3_stmt { } *_stmt;
 }
 

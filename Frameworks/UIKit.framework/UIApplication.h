@@ -4,7 +4,10 @@
 
 @class <UIApplicationDelegate>, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIAlertView, UIApplicationSceneSettingsDiffInspector, UIColor, UIEvent, UIMoveEvent, UIPhysicalButtonsEvent, UIPhysicalKeyboardEvent, UIStatusBar, UIStatusBarWindow, UIWheelEvent, UIWindow;
 
-@interface UIApplication : UIResponder <FBSUIApplicationWorkspaceDelegate, FBSSceneDelegate, FBSUIApplicationSystemServiceDelegate, NSUserActivityDelegate, UIActionSheetDelegate> {
+@interface UIApplication : UIResponder <FBSSceneDelegate, FBSUIApplicationSystemServiceDelegate, FBSUIApplicationWorkspaceDelegate, NSUserActivityDelegate, UIActionSheetDelegate> {
+    int __expectedViewOrientation;
+    NSMutableSet *_actionsPendingInitialization;
+    BOOL _alwaysHitTestsForMainScreen;
     struct { 
         unsigned int deactivatingReasonFlags : 11; 
         unsigned int isSuspended : 1; 
@@ -92,27 +95,15 @@
         unsigned int fakingRequiresHighResolution : 1; 
         unsigned int isStatusBarFading : 1; 
         unsigned int systemWindowsSecure : 1; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    int __expectedViewOrientation;
-    NSMutableSet *_actionsPendingInitialization;
-    BOOL _alwaysHitTestsForMainScreen;
     } _applicationFlags;
     UIWindow *_backgroundHitTestWindow;
     struct __CFDictionary { } *_childEventMap;
     int _classicMode;
     NSString *_currentActivityType;
     NSString *_currentActivityUUID;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _currentLocationWhereFirstTouchCameDown;
     double _currentTimestampWhenFirstTouchCameDown;
     UIColor *_defaultTopNavBarTintColor;
@@ -124,7 +115,13 @@
     NSMutableSet *_exclusiveTouchWindows;
     NSTimer *_hideNetworkActivityIndicatorTimer;
     NSMutableSet *_idleTimerDisabledReasons;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _lastLocationWhereAllTouchesLifted;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _lastLocationWhereFirstTouchCameDown;
     double _lastTimestampWhenAllTouchesLifted;
     double _lastTimestampWhenFirstTouchCameDown;
@@ -155,6 +152,9 @@
     int _undoButtonIndex;
     int _virtualHorizontalSizeClass;
     int _virtualVerticalSizeClass;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _virtualWindowSizeInSceneReferenceSpace;
     UIWheelEvent *_wheelEvent;
 }
@@ -266,8 +266,8 @@
 - (void)_cancelGestureRecognizers:(id)arg1;
 - (void)_cancelGestureRecognizersForView:(id)arg1;
 - (void)_cancelPhysicalButtonsWithType:(int)arg1;
-- (void)_cancelTouches:(id)arg1 withEvent:(id)arg2 includingGestures:(BOOL)arg3 notificationBlock:(id)arg4;
 - (void)_cancelTouches:(id)arg1 withEvent:(id)arg2;
+- (void)_cancelTouches:(id)arg1 withEvent:(id)arg2 includingGestures:(BOOL)arg3 notificationBlock:(id)arg4;
 - (void)_cancelUnfinishedTouchesForEvent:(id)arg1;
 - (void)_cancelViewProcessingOfTouches:(id)arg1 withEvent:(id)arg2 sendingTouchesCancelledToViewsOfTouches:(id)arg3;
 - (void)_checkActivityContinuationAndBecomeCurrentIfNeeded;
@@ -283,8 +283,8 @@
 - (id)_currentTests;
 - (double)_currentTintViewDuration;
 - (id)_currentTintViewWindow;
-- (void)_deactivateForReason:(int)arg1 notify:(BOOL)arg2;
 - (void)_deactivateForReason:(int)arg1;
+- (void)_deactivateForReason:(int)arg1 notify:(BOOL)arg2;
 - (void)_deactivateReachability;
 - (id)_defaultTopNavBarTintColor;
 - (void)_destroyContextsAndNotifySpringBoard;
@@ -411,8 +411,8 @@
 - (void)_playbackTimerCallback:(id)arg1;
 - (void)_popStatusBarTintColorLock;
 - (void)_popTintViewDuration;
-- (void)_postSimpleRemoteNotificationForAction:(int)arg1 andContext:(int)arg2 trackID:(id)arg3;
 - (void)_postSimpleRemoteNotificationForAction:(int)arg1 andContext:(int)arg2;
+- (void)_postSimpleRemoteNotificationForAction:(int)arg1 andContext:(int)arg2 trackID:(id)arg3;
 - (id)_preferredContentSizeCategory:(unsigned int)arg1;
 - (BOOL)_prepareButtonEvent:(id)arg1 type:(int)arg2 phase:(int)arg3 timestamp:(double)arg4;
 - (void)_processScriptEvent:(struct __GSEvent { }*)arg1;
@@ -495,8 +495,8 @@
 - (void)_setShouldZoom:(BOOL)arg1;
 - (void)_setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2 changeApplicationFlag:(BOOL)arg3;
 - (void)_setStatusBarMode:(int)arg1;
-- (void)_setStatusBarOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_setStatusBarOrientation:(int)arg1;
+- (void)_setStatusBarOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_setStatusBarShowsProgress:(BOOL)arg1;
 - (void)_setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;
 - (void)_setSupportedInterfaceOrientationsIsEnabled:(BOOL)arg1;
@@ -568,10 +568,10 @@
 - (id)accessibilityPresentingViewController;
 - (void)accessoryKeyStateChanged:(struct __GSEvent { }*)arg1;
 - (int)activeInterfaceOrientation;
-- (void)addStatusBarImageNamed:(id)arg1 removeOnExit:(BOOL)arg2;
 - (void)addStatusBarImageNamed:(id)arg1;
-- (void)addStatusBarItem:(int)arg1 removeOnExit:(BOOL)arg2;
+- (void)addStatusBarImageNamed:(id)arg1 removeOnExit:(BOOL)arg2;
 - (void)addStatusBarItem:(int)arg1;
+- (void)addStatusBarItem:(int)arg1 removeOnExit:(BOOL)arg2;
 - (void)addStatusBarStyleOverrides:(int)arg1;
 - (void)addWebClipToHomeScreen:(id)arg1;
 - (int)alertInterfaceOrientation;
@@ -607,10 +607,10 @@
 - (void)beginIgnoringInteractionEvents;
 - (void)beginPPTWithName:(id)arg1;
 - (void)beginReceivingRemoteControlEvents;
+- (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4;
+- (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4 requireTopApplication:(BOOL)arg5;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4 requireTopApplication:(BOOL)arg5 opaque:(BOOL)arg6 presentAnimated:(BOOL)arg7;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4 requireTopApplication:(BOOL)arg5 presentAnimated:(BOOL)arg6;
-- (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4 requireTopApplication:(BOOL)arg5;
-- (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4;
 - (void)beginRemoteSheetController:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4 requireTopApplication:(BOOL)arg5 opaque:(BOOL)arg6 presentAnimated:(BOOL)arg7;
 - (void)beginRemoteSheetController:(id)arg1 viewOrNil:(id)arg2 delegate:(id)arg3 didEndSelector:(SEL)arg4 contextInfo:(void*)arg5 requireTopApplication:(BOOL)arg6 opaque:(BOOL)arg7 presentAnimated:(BOOL)arg8;
 - (unsigned int)blockInteractionEventsCount;
@@ -637,27 +637,27 @@
 - (void)endCurrentPPT;
 - (void)endIgnoringInteractionEvents;
 - (void)endReceivingRemoteControlEvents;
-- (void)endRemoteSheet:(id)arg1 returnCode:(int)arg2 dismissAnimated:(BOOL)arg3;
-- (void)endRemoteSheet:(id)arg1 returnCode:(int)arg2;
 - (void)endRemoteSheet:(id)arg1;
+- (void)endRemoteSheet:(id)arg1 returnCode:(int)arg2;
+- (void)endRemoteSheet:(id)arg1 returnCode:(int)arg2 dismissAnimated:(BOOL)arg3;
 - (void)extendStateRestoration;
-- (void)failedTest:(id)arg1 withFailure:(id)arg2 withResults:(id)arg3;
-- (void)failedTest:(id)arg1 withFailure:(id)arg2;
-- (void)failedTest:(id)arg1 withResults:(id)arg2;
 - (void)failedTest:(id)arg1;
-- (void)finishedIPTest:(id)arg1 extraResults:(id)arg2;
+- (void)failedTest:(id)arg1 withFailure:(id)arg2;
+- (void)failedTest:(id)arg1 withFailure:(id)arg2 withResults:(id)arg3;
+- (void)failedTest:(id)arg1 withResults:(id)arg2;
 - (void)finishedIPTest:(id)arg1;
+- (void)finishedIPTest:(id)arg1 extraResults:(id)arg2;
 - (void)finishedSubTest:(id)arg1 forTest:(id)arg2;
-- (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3 withTeardownBlock:(id)arg4;
-- (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3;
-- (void)finishedTest:(id)arg1 extraResults:(id)arg2 withTeardownBlock:(id)arg3;
-- (void)finishedTest:(id)arg1 extraResults:(id)arg2;
-- (void)finishedTest:(id)arg1 waitForCommit:(BOOL)arg2 extraResults:(id)arg3 withTeardownBlock:(id)arg4;
-- (void)finishedTest:(id)arg1 waitForCommit:(BOOL)arg2 extraResults:(id)arg3;
 - (void)finishedTest:(id)arg1;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3 withTeardownBlock:(id)arg4;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 withTeardownBlock:(id)arg3;
+- (void)finishedTest:(id)arg1 waitForCommit:(BOOL)arg2 extraResults:(id)arg3;
+- (void)finishedTest:(id)arg1 waitForCommit:(BOOL)arg2 extraResults:(id)arg3 withTeardownBlock:(id)arg4;
 - (BOOL)handleDoubleHeightStatusBarTap:(int)arg1;
-- (BOOL)handleEvent:(struct __GSEvent { }*)arg1 withNewEvent:(id)arg2;
 - (BOOL)handleEvent:(struct __GSEvent { }*)arg1;
+- (BOOL)handleEvent:(struct __GSEvent { }*)arg1 withNewEvent:(id)arg2;
 - (void)handleKeyEvent:(struct __GSEvent { }*)arg1;
 - (void)handleKeyHIDEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)handleKeyUIEvent:(id)arg1;
@@ -688,8 +688,8 @@
 - (BOOL)isRunningInTaskSwitcher;
 - (BOOL)isRunningQuitTest;
 - (BOOL)isRunningSuspendTest;
-- (BOOL)isRunningTest:(id)arg1;
 - (BOOL)isRunningTest;
+- (BOOL)isRunningTest:(id)arg1;
 - (BOOL)isStatusBarHidden;
 - (BOOL)isSuspended;
 - (BOOL)isSuspendedEventsOnly;
@@ -714,8 +714,8 @@
 - (BOOL)openURL:(id)arg1;
 - (id)pathToDefaultImageNamed:(id)arg1 forScreen:(id)arg2;
 - (void)performDisablingStatusBarStyleValidation:(id)arg1;
-- (void)popRunLoopMode:(id)arg1 requester:(id)arg2;
 - (void)popRunLoopMode:(id)arg1;
+- (void)popRunLoopMode:(id)arg1 requester:(id)arg2;
 - (id)preferredContentSizeCategory;
 - (id)preferredContentSizeCategoryName;
 - (void)prepareForDefaultImageSnapshot;
@@ -724,16 +724,16 @@
 - (void)proximityStateChanged:(BOOL)arg1;
 - (id)pu_beginDisablingIdleTimer;
 - (void)pu_endDisablingIdleTimer:(id)arg1;
-- (void)pushRunLoopMode:(id)arg1 requester:(id)arg2;
 - (void)pushRunLoopMode:(id)arg1;
+- (void)pushRunLoopMode:(id)arg1 requester:(id)arg2;
 - (void)rc_createDefaultPNG;
 - (id)rc_rootViewController;
 - (void)registerForRemoteNotificationTypes:(unsigned int)arg1;
 - (void)registerForRemoteNotifications;
 - (void)registerUserNotificationSettings:(id)arg1;
 - (void)removeApplicationPreservationStateWithSessionIdentifier:(id)arg1;
-- (BOOL)removeDefaultImage:(id)arg1 forScreen:(id)arg2;
 - (BOOL)removeDefaultImage:(id)arg1;
+- (BOOL)removeDefaultImage:(id)arg1 forScreen:(id)arg2;
 - (void)removeStatusBarImageNamed:(id)arg1;
 - (void)removeStatusBarItem:(int)arg1;
 - (void)removeStatusBarStyleOverrides:(int)arg1;
@@ -743,8 +743,8 @@
 - (void)restoreApplicationPreservationStateWithSessionIdentifier:(id)arg1 viewController:(id)arg2 beginHandler:(id)arg3 completionHandler:(id)arg4;
 - (id)resultsForTest:(id)arg1;
 - (void)ringerChanged:(int)arg1;
-- (void)rotateIfNeeded:(int)arg1 completion:(id)arg2;
 - (BOOL)rotateIfNeeded:(int)arg1;
+- (void)rotateIfNeeded:(int)arg1 completion:(id)arg2;
 - (void)runModal:(id)arg1;
 - (void)runTest:(id)arg1 forAnimation:(id)arg2;
 - (BOOL)runTest:(id)arg1 options:(id)arg2;
@@ -766,13 +766,13 @@
 - (void)setBacklightLevel:(float)arg1;
 - (void)setDelaySuspend:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDoubleHeightMode:(int)arg1 glowAnimationEnabled:(BOOL)arg2;
 - (void)setDoubleHeightMode:(int)arg1;
+- (void)setDoubleHeightMode:(int)arg1 glowAnimationEnabled:(BOOL)arg2;
 - (void)setDoubleHeightPrefixText:(id)arg1;
-- (void)setDoubleHeightStatusText:(id)arg1 forStyle:(int)arg2;
 - (void)setDoubleHeightStatusText:(id)arg1;
-- (void)setExpectsFaceContact:(BOOL)arg1 inLandscape:(BOOL)arg2;
+- (void)setDoubleHeightStatusText:(id)arg1 forStyle:(int)arg2;
 - (void)setExpectsFaceContact:(BOOL)arg1;
+- (void)setExpectsFaceContact:(BOOL)arg1 inLandscape:(BOOL)arg2;
 - (void)setGlowAnimationEnabled:(BOOL)arg1 forStyle:(int)arg2;
 - (void)setHardwareKeyboardLayoutName:(id)arg1;
 - (void)setHasMiniAlerts:(BOOL)arg1;
@@ -786,33 +786,33 @@
 - (void)setProximitySensingEnabled:(BOOL)arg1;
 - (void)setReceivesMemoryWarnings:(BOOL)arg1;
 - (void)setScheduledLocalNotifications:(id)arg1;
-- (void)setStatusBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2 changeApplicationFlag:(BOOL)arg3;
-- (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2;
-- (void)setStatusBarHidden:(BOOL)arg1 duration:(double)arg2 changeApplicationFlag:(BOOL)arg3;
-- (void)setStatusBarHidden:(BOOL)arg1 duration:(double)arg2;
-- (void)setStatusBarHidden:(BOOL)arg1 withAnimation:(int)arg2;
 - (void)setStatusBarHidden:(BOOL)arg1;
+- (void)setStatusBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2;
+- (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2 changeApplicationFlag:(BOOL)arg3;
+- (void)setStatusBarHidden:(BOOL)arg1 duration:(double)arg2;
+- (void)setStatusBarHidden:(BOOL)arg1 duration:(double)arg2 changeApplicationFlag:(BOOL)arg3;
+- (void)setStatusBarHidden:(BOOL)arg1 withAnimation:(int)arg2;
 - (void)setStatusBarMode:(int)arg1 duration:(float)arg2;
-- (void)setStatusBarMode:(int)arg1 interfaceOrientation:(int)arg2 duration:(float)arg3 fenceID:(int)arg4 animation:(int)arg5 startTime:(double)arg6;
-- (void)setStatusBarMode:(int)arg1 interfaceOrientation:(int)arg2 duration:(float)arg3 fenceID:(int)arg4 animation:(int)arg5;
-- (void)setStatusBarMode:(int)arg1 interfaceOrientation:(int)arg2 duration:(float)arg3 fenceID:(int)arg4;
 - (void)setStatusBarMode:(int)arg1 interfaceOrientation:(int)arg2 duration:(float)arg3;
+- (void)setStatusBarMode:(int)arg1 interfaceOrientation:(int)arg2 duration:(float)arg3 fenceID:(int)arg4;
+- (void)setStatusBarMode:(int)arg1 interfaceOrientation:(int)arg2 duration:(float)arg3 fenceID:(int)arg4 animation:(int)arg5;
+- (void)setStatusBarMode:(int)arg1 interfaceOrientation:(int)arg2 duration:(float)arg3 fenceID:(int)arg4 animation:(int)arg5 startTime:(double)arg6;
+- (void)setStatusBarOrientation:(int)arg1;
 - (void)setStatusBarOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setStatusBarOrientation:(int)arg1 animation:(int)arg2 duration:(double)arg3;
-- (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2 notifySpringBoardAndFence:(BOOL)arg3;
 - (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2;
-- (void)setStatusBarOrientation:(int)arg1;
+- (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2 notifySpringBoardAndFence:(BOOL)arg3;
 - (void)setStatusBarShowsProgress:(BOOL)arg1;
+- (void)setStatusBarStyle:(int)arg1;
 - (void)setStatusBarStyle:(int)arg1 animated:(BOOL)arg2;
-- (void)setStatusBarStyle:(int)arg1 animation:(int)arg2 startTime:(double)arg3 duration:(double)arg4 curve:(int)arg5;
 - (void)setStatusBarStyle:(int)arg1 animation:(int)arg2;
+- (void)setStatusBarStyle:(int)arg1 animation:(int)arg2 startTime:(double)arg3 duration:(double)arg4 curve:(int)arg5;
 - (void)setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarStyle:(int)arg1 duration:(double)arg2;
-- (void)setStatusBarStyle:(int)arg1;
 - (void)setSuspensionAnimationDelay:(double)arg1;
-- (void)setSystemVolumeHUDEnabled:(BOOL)arg1 forAudioCategory:(id)arg2;
 - (void)setSystemVolumeHUDEnabled:(BOOL)arg1;
+- (void)setSystemVolumeHUDEnabled:(BOOL)arg1 forAudioCategory:(id)arg2;
 - (void)setUsesBackgroundNetwork:(BOOL)arg1;
 - (void)setWantsLockEvents:(BOOL)arg1;
 - (void)setWantsVolumeButtonEvents:(BOOL)arg1;
@@ -826,18 +826,18 @@
 - (void)startCHUDRecording:(id)arg1;
 - (void)startLeaking;
 - (void)startedIPTest:(id)arg1;
-- (void)startedSubTest:(id)arg1 forTest:(id)arg2 withMetrics:(id)arg3;
 - (void)startedSubTest:(id)arg1 forTest:(id)arg2;
+- (void)startedSubTest:(id)arg1 forTest:(id)arg2 withMetrics:(id)arg3;
 - (void)startedTest:(id)arg1;
+- (id)statusBar;
 - (void)statusBar:(id)arg1 didAnimateFromHeight:(float)arg2 toHeight:(float)arg3 animation:(int)arg4;
 - (int)statusBar:(id)arg1 styleForRequestedStyle:(int)arg2 overrides:(int)arg3;
 - (void)statusBar:(id)arg1 willAnimateFromHeight:(float)arg2 toHeight:(float)arg3 duration:(double)arg4 animation:(int)arg5;
-- (id)statusBar;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })statusBarFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })statusBarFrameForOrientation:(int)arg1;
 - (float)statusBarHeight;
-- (float)statusBarHeightForOrientation:(int)arg1 ignoreHidden:(BOOL)arg2;
 - (float)statusBarHeightForOrientation:(int)arg1;
+- (float)statusBarHeightForOrientation:(int)arg1 ignoreHidden:(BOOL)arg2;
 - (int)statusBarMode;
 - (int)statusBarOrientation;
 - (double)statusBarOrientationAnimationDuration;

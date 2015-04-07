@@ -4,7 +4,7 @@
 
 @class NSObject<OS_dispatch_queue>, NSString, PCSimpleTimer;
 
-@interface PCPersistentTimer : NSObject <PCLoggingDelegate, CUTPowerMonitorDelegate> {
+@interface PCPersistentTimer : NSObject <CUTPowerMonitorDelegate, PCLoggingDelegate> {
     BOOL _disableSystemWaking;
     double _fireTime;
     unsigned int _guidancePriority;
@@ -56,8 +56,8 @@
 - (id)loggingIdentifier;
 - (double)minimumEarlyFireProportion;
 - (void)scheduleInQueue:(id)arg1;
-- (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1;
+- (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;
 - (void)setDisableSystemWaking:(BOOL)arg1;
 - (void)setMinimumEarlyFireProportion:(double)arg1;
 - (id)userInfo;

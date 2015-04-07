@@ -16,9 +16,9 @@
 @property(copy) NSString * message;
 @property(copy) NSDictionary * userInfo;
 
++ (id)warningWithMessage:(id)arg1;
 + (id)warningWithMessage:(id)arg1 affectedObject:(id)arg2;
 + (id)warningWithMessage:(id)arg1 affectedObjects:(id)arg2;
-+ (id)warningWithMessage:(id)arg1;
 
 - (id)affectedObjects;
 - (void)dealloc;

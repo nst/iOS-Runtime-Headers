@@ -11,7 +11,11 @@
 @interface _UIDocumentContainerObserver : NSObject {
     NSMutableSet *_added;
     NSArray *_descriptors;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSOrderedSet *_lastSnapshot;
     NSDate *_lastSnapshotDate;
     NSMutableDictionary *_moved;

@@ -9,8 +9,16 @@
 @class <MFMessageBodyElement_Private>, DOMRange, NSMutableArray;
 
 @interface MFMessageBodyDOMQuoteSubparser : MFMessageBodySubparser {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _foundDedentedAttributionRangeBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _foundTrailingEmptyQuoteRangeBlock;
+
     <MFMessageBodyElement_Private> *_lastUnindentedAttributionHint;
     <MFMessageBodyElement_Private> *_lastUnindentedElement;
     unsigned int _trailingEmptyQuoteLevel;

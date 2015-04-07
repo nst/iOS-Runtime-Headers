@@ -5,10 +5,10 @@
 @class GEORPUserCredentials, NSData, NSString;
 
 @interface GEORPProblemOptInRequest : PBRequest <NSCopying> {
-    struct { 
-        unsigned int didOptIn : 1; 
     NSData *_devicePushToken;
     BOOL _didOptIn;
+    struct { 
+        unsigned int didOptIn : 1; 
     } _has;
     NSString *_problemId;
     GEORPUserCredentials *_userCredentials;

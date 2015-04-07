@@ -10,16 +10,16 @@
 @class NSString;
 
 @interface VKRasterTrafficMapModel : VKMapTileModel <VKMapLayer> {
+    BOOL _needsTileStencil;
+    int _sourceTileZtoStencilOffset;
     struct shared_ptr<md::StyleQuery> { 
         struct StyleQuery {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
+    } _trafficDrawStyle;
     struct unique_ptr<vk::TrafficManager, std::__1::default_delete<vk::TrafficManager> > { 
         struct __compressed_pair<vk::TrafficManager *, std::__1::default_delete<vk::TrafficManager> > { 
             struct TrafficManager {} *__first_; 
         } __ptr_; 
-    BOOL _needsTileStencil;
-    int _sourceTileZtoStencilOffset;
-    } _trafficDrawStyle;
     } _trafficManager;
 }
 

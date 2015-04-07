@@ -29,8 +29,8 @@
 - (void)releaseHold:(id)arg1 reply:(id)arg2;
 - (void)removePlugIns:(id)arg1 reply:(id)arg2;
 - (id)replyQueue;
-- (id)request:(const char *)arg1 paths:(id)arg2;
 - (id)request:(const char *)arg1;
+- (id)request:(const char *)arg1 paths:(id)arg2;
 - (void)send:(id)arg1 reply:(id)arg2;
 - (void)set:(id)arg1 uuids:(id)arg2;
 - (void)setPkd:(id)arg1;

@@ -3,6 +3,12 @@
  */
 
 @interface AWDPowerBluetoothMetrics : PBCodable <NSCopying> {
+    unsigned int _btConnectedDuration;
+    unsigned int _btOthersDuration;
+    unsigned int _btRxDuration;
+    unsigned int _btSleepDuration;
+    unsigned int _btTotalPowerMicroWatt;
+    unsigned int _btTxDuration;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int btConnectedDuration : 1; 
@@ -11,12 +17,6 @@
         unsigned int btSleepDuration : 1; 
         unsigned int btTotalPowerMicroWatt : 1; 
         unsigned int btTxDuration : 1; 
-    unsigned int _btConnectedDuration;
-    unsigned int _btOthersDuration;
-    unsigned int _btRxDuration;
-    unsigned int _btSleepDuration;
-    unsigned int _btTotalPowerMicroWatt;
-    unsigned int _btTxDuration;
     } _has;
     unsigned long long _timestamp;
 }

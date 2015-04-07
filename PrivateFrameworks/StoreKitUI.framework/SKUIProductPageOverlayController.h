@@ -4,7 +4,7 @@
 
 @class <SKUIProductPageOverlayDelegate>, NSArray, NSString, SKUIClientContext, SKUIItem, SKUIOverlayContainerViewController, UIView, UIViewController;
 
-@interface SKUIProductPageOverlayController : NSObject <SKUIIPadProductPageDelegate, SKStoreProductViewControllerDelegate> {
+@interface SKUIProductPageOverlayController : NSObject <SKStoreProductViewControllerDelegate, SKUIIPadProductPageDelegate> {
     SKUIClientContext *_clientContext;
     <SKUIProductPageOverlayDelegate> *_delegate;
     SKUIItem *_initialItem;

@@ -4,18 +4,18 @@
 
 @interface VKPStyleAttribute : PBCodable <NSCopying> {
     struct { 
+        unsigned int score : 1; 
+    } _has;
+    struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _intValues;
+    int _key;
     struct { 
         unsigned long long *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        unsigned int score : 1; 
-    } _has;
-    } _intValues;
-    int _key;
     } _longIntValues;
     int _score;
 }

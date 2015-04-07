@@ -5,12 +5,12 @@
 @class NSDictionary;
 
 @interface FigCaptureMovieFileRecordingSettings : FigCaptureRecordingSettings <NSCoding> {
+    NSDictionary *_audioSettings;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    NSDictionary *_audioSettings;
     } _movieFragmentInterval;
     NSDictionary *_movieLevelMetadata;
     BOOL _sendThumbnailIOSurface;

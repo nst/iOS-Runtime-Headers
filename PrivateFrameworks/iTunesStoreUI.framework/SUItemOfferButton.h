@@ -40,8 +40,8 @@
 - (void)setItemOfferButtonStyle:(id)arg1;
 - (void)setOfferTitle:(id)arg1;
 - (void)setShouldShowConfirmation:(BOOL)arg1;
-- (void)setShowingConfirmation:(BOOL)arg1 duration:(double)arg2;
 - (void)setShowingConfirmation:(BOOL)arg1;
+- (void)setShowingConfirmation:(BOOL)arg1 duration:(double)arg2;
 - (BOOL)shouldShowConfirmation;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 

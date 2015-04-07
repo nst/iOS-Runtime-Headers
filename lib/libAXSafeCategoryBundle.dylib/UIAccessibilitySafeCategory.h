@@ -13,8 +13,8 @@
 + (id)_initializeSafeCategoryFromValidationManager;
 + (id)_installLocalValidationMethodOnClassNamed:(id)arg1;
 + (id)_installSafeCategoryOnClass:(Class)arg1 isManaged:(BOOL)arg2;
-+ (id)_installSafeCategoryOnClassNamed:(id)arg1 isManaged:(BOOL)arg2;
 + (void)_installSafeCategoryOnClassNamed:(id)arg1;
++ (id)_installSafeCategoryOnClassNamed:(id)arg1 isManaged:(BOOL)arg2;
 + (id)_installSafeCategoryValidationMethod;
 + (void)safeCategoryAddDependenciesToCollection:(id)arg1;
 + (Class)safeCategoryBaseClass;

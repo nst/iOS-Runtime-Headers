@@ -11,13 +11,17 @@
 @interface FontAssetDownloadManager : NSObject {
     struct TCFRef<const __CFArray *> { 
         struct __CFArray {} *fRef; 
-    struct TCFRef<const __CFSet *> { 
-        struct __CFSet {} *fRef; 
     } fDescriptors;
     NSMutableDictionary *fDownloadOptions;
+    struct TCFRef<const __CFSet *> { 
+        struct __CFSet {} *fRef; 
     } fMandatoryAttributes;
     NSSet *fPreciousFontLanguages;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id fProgressCallbackBlock;
+
     NSMutableDictionary *fProgressParams;
 }
 

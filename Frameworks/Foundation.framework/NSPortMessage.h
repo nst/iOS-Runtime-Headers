@@ -9,8 +9,8 @@
     NSPort *localPort;
     unsigned int msgid;
     NSPort *remotePort;
-    void *reserved2;
     void *reserved;
+    void *reserved2;
 }
 
 @property(copy,readonly) NSArray * components;

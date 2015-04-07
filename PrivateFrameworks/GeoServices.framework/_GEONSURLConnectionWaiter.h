@@ -9,7 +9,11 @@
 @class NSMutableData, NSString, NSURLConnection, NSURLResponse;
 
 @interface _GEONSURLConnectionWaiter : NSObject <NSURLConnectionDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callback;
+
     NSURLConnection *_conn;
     NSMutableData *_data;
     NSURLResponse *_response;

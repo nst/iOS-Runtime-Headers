@@ -12,7 +12,11 @@
     NSDate *_fireDate;
     double _interval;
     PLOperator *_operator;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _operatorBlock;
+
     BOOL _repeats;
     NSTimer *_timer;
     double _tolerance;

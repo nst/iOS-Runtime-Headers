@@ -3,14 +3,14 @@
  */
 
 @interface PdrParameters : PBCodable <NSCopying> {
+    float _biasVariancePerSecond;
+    float _gyroVariance;
     struct { 
         unsigned int biasVariancePerSecond : 1; 
         unsigned int gyroVariance : 1; 
         unsigned int magnetometerReliability : 1; 
         unsigned int omegaVariancePerSecond : 1; 
         unsigned int pdrVsWifi : 1; 
-    float _biasVariancePerSecond;
-    float _gyroVariance;
     } _has;
     float _magnetometerReliability;
     float _omegaVariancePerSecond;

@@ -5,12 +5,12 @@
 @class NSString, SUTouchCaptureView, SUUIAppearance, UINavigationItem, UIView;
 
 @interface SUBarButtonItem : UIBarButtonItem {
+    UIView *_accessoryView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIView *_accessoryView;
     } _accessoryViewInsets;
     SUUIAppearance *_confirmationAppearance;
     UINavigationItem *_lastNavigationItem;

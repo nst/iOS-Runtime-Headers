@@ -5,13 +5,13 @@
 @class <PUCollectionViewLayoutProvider>, NSMutableDictionary;
 
 @interface PUCollectionViewLayoutCache : UICollectionViewLayout {
-    struct { 
-        unsigned int hasSupplementaryLayoutAttributes : 1; 
-        unsigned int hasDecorationLayoutAttributes : 1; 
     BOOL _cachesResults;
     NSMutableDictionary *_decorationViewLayoutAttributesByKind;
     NSMutableDictionary *_itemLayoutAttributesByIndexPath;
     <PUCollectionViewLayoutProvider> *_layoutProvider;
+    struct { 
+        unsigned int hasSupplementaryLayoutAttributes : 1; 
+        unsigned int hasDecorationLayoutAttributes : 1; 
     } _layoutProviderFlags;
     NSMutableDictionary *_supplementaryViewLayoutAttributesByKind;
 }

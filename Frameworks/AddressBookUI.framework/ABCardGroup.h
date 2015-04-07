@@ -28,10 +28,10 @@
 - (id)_loadActionItems;
 - (id)actionItems;
 - (id)actions;
-- (void)addAction:(id)arg1 withTitle:(id)arg2 color:(id)arg3 transportType:(int)arg4;
 - (void)addAction:(id)arg1 withTitle:(id)arg2;
-- (id)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 destructive:(BOOL)arg4;
+- (void)addAction:(id)arg1 withTitle:(id)arg2 color:(id)arg3 transportType:(int)arg4;
 - (id)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
+- (id)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 destructive:(BOOL)arg4;
 - (BOOL)addSpacerFromPreviousGroup;
 - (id)contact;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

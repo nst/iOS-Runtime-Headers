@@ -8,7 +8,11 @@
 
 @interface VMUObjectGraph : VMUDirectedGraph {
     struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; } *_internalizedNodes;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _nodeProvider;
+
     struct _VMUObjectGraphEdge { unsigned int x1 : 64; unsigned int x2 : 4; unsigned int x3 : 60; } *_referenceTable;
     unsigned int _referenceTableCapacity;
     unsigned int _referenceTableCount;

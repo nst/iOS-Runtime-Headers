@@ -5,11 +5,11 @@
 @class NSMutableArray;
 
 @interface GEOBusinessOptions : PBCodable <NSCopying> {
+    NSMutableArray *_attributeKeys;
     struct { 
         unsigned int maxBusinessResults : 1; 
         unsigned int includeBusinessHours : 1; 
         unsigned int includeCenter : 1; 
-    NSMutableArray *_attributeKeys;
     } _has;
     BOOL _includeBusinessHours;
     BOOL _includeCenter;

@@ -5,6 +5,8 @@
 @class NSString;
 
 @interface RCLayoutMetrics : NSObject <NSCopying> {
+    float _hPresentedRecordMemoHeight;
+    NSString *_label;
     struct { 
         float scale; 
         float vDeltaWaveformToTimeBaseline; 
@@ -26,8 +28,6 @@
         float vDeltaLockAbsoluteTopToWaveformTop; 
         float vDeltaLockNotificationListBottom; 
         float vDeltaLockNotificationListBottomToRecordingTimeBaseline; 
-    float _hPresentedRecordMemoHeight;
-    NSString *_label;
     } _metricInfo;
 }
 

@@ -4,7 +4,7 @@
 
 @class NSError, NSString, SSDownloadPhase;
 
-@interface SSDownloadStatus : NSObject <SSXPCCoding, NSCopying> {
+@interface SSDownloadStatus : NSObject <NSCopying, SSXPCCoding> {
     SSDownloadPhase *_activePhase;
     BOOL _contentRestricted;
     NSError *_error;

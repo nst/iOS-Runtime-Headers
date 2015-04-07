@@ -18,8 +18,8 @@
 @property float totalSize;
 @property <PSStorageReporting> * usageBundleStorageReporter;
 
-+ (id)usageBundleAppForBundleWithIdentifier:(id)arg1 withTotalSize:(float)arg2 andCategories:(id)arg3;
 + (id)usageBundleAppForBundleWithIdentifier:(id)arg1 withTotalSize:(float)arg2;
++ (id)usageBundleAppForBundleWithIdentifier:(id)arg1 withTotalSize:(float)arg2 andCategories:(id)arg3;
 
 - (id)bundleIdentifier;
 - (id)categories;

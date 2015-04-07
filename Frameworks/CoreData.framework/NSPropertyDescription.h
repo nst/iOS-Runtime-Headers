@@ -5,6 +5,11 @@
 @class NSArray, NSData, NSDictionary, NSEntityDescription, NSMutableDictionary, NSString;
 
 @interface NSPropertyDescription : NSObject <NSCoding, NSCopying> {
+    NSEntityDescription *_entity;
+    long _entitysReferenceIDForProperty;
+    void *_extraIvars;
+    BOOL _indexedBySpotlight;
+    NSString *_name;
     struct __propertyDescriptionFlags { 
         unsigned int _isReadOnly : 1; 
         unsigned int _isTransient : 1; 
@@ -16,11 +21,6 @@
         unsigned int _extraIvarsAreInDataBlob : 1; 
         unsigned int _isOrdered : 1; 
         unsigned int _reservedPropertyDescription : 23; 
-    NSEntityDescription *_entity;
-    long _entitysReferenceIDForProperty;
-    void *_extraIvars;
-    BOOL _indexedBySpotlight;
-    NSString *_name;
     } _propertyDescriptionFlags;
     BOOL _storedInExternalRecord;
     id _underlyingProperty;

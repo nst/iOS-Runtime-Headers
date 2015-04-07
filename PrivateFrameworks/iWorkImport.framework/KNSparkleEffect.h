@@ -5,6 +5,8 @@
 @class KNAnimationContext, KNBuildSparkleSystem, KNSparkleEffect, NSString, TSDGLDataBuffer, TSDGLShader, TSDGLTextureInfo, TSDTexturedRectangle;
 
 @interface KNSparkleEffect : NSObject <KNAnimationOpenGLEffect> {
+    KNAnimationContext *mAnimationContext;
+    int mBuildType;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,6 +16,16 @@
             float width; 
             float height; 
         } size; 
+    } mDestinationRect;
+    unsigned int mDirection;
+    float mDuration;
+    KNSparkleEffect *mEffect;
+    TSDGLDataBuffer *mObjectDataBuffer;
+    TSDGLShader *mObjectShader;
+    TSDGLShader *mSparkleShader;
+    KNBuildSparkleSystem *mSparkleSystem;
+    TSDGLTextureInfo *mSparkleTexture;
+    TSDTexturedRectangle *mTexture;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -31,18 +43,6 @@
         float m42; 
         float m43; 
         float m44; 
-    KNAnimationContext *mAnimationContext;
-    int mBuildType;
-    } mDestinationRect;
-    unsigned int mDirection;
-    float mDuration;
-    KNSparkleEffect *mEffect;
-    TSDGLDataBuffer *mObjectDataBuffer;
-    TSDGLShader *mObjectShader;
-    TSDGLShader *mSparkleShader;
-    KNBuildSparkleSystem *mSparkleSystem;
-    TSDGLTextureInfo *mSparkleTexture;
-    TSDTexturedRectangle *mTexture;
     } mTranslate;
 }
 

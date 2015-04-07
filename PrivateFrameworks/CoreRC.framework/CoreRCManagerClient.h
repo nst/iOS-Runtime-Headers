@@ -4,17 +4,13 @@
 
 @class NSString, NSXPCConnection;
 
-@interface CoreRCManagerClient : CoreRCManager <CoreRCXPCServiceCEC, CoreRCXPCClientCEC, CoreRCXPCServicePrivate, CoreRCXPCServiceCECPrivate, CoreRCXPCServiceIR, CoreRCXPCService, CoreRCXPCClient> {
+@interface CoreRCManagerClient : CoreRCManager <CoreRCXPCClient, CoreRCXPCClientCEC, CoreRCXPCService, CoreRCXPCServiceCEC, CoreRCXPCServiceCECPrivate, CoreRCXPCServiceIR, CoreRCXPCServicePrivate> {
     NSXPCConnection *_connection;
 }
 
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 
 - (void)addExternalDeviceOnBusAsync:(id)arg1 reply:(id)arg2;

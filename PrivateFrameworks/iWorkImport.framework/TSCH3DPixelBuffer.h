@@ -3,6 +3,8 @@
  */
 
 @interface TSCH3DPixelBuffer : NSObject {
+    struct CGContext { } *mBitmapContext;
+    unsigned int mComponents;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -14,8 +16,6 @@
             int g; 
             int t; 
         } ; 
-    struct CGContext { } *mBitmapContext;
-    unsigned int mComponents;
     } mSize;
 }
 

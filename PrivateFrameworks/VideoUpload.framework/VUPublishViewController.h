@@ -4,14 +4,7 @@
 
 @class <VUPublishViewControllerDelegate>, NSArray, NSMutableArray, NSString, PLTableViewEditableCell, UIAlertView, UIImageView, UIPickerView, UITableView, UITableViewCell, UIView, VUCategory, VUCategoryCell, VUFooterContainerView;
 
-@interface VUPublishViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate> {
-    struct { 
-        int title; 
-        int hd; 
-        int tags; 
-        int category; 
-        int access; 
-        int account; 
+@interface VUPublishViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     long long _HDSize;
     long long _SDSize;
     NSArray *_accessCells;
@@ -30,6 +23,13 @@
     PLTableViewEditableCell *_optionCells[2];
     UIPickerView *_picker;
     UIView *_pickerContainer;
+    struct { 
+        int title; 
+        int hd; 
+        int tags; 
+        int category; 
+        int access; 
+        int account; 
     } _sectionIndices;
     int _selectedOption;
     BOOL _showHDSection;

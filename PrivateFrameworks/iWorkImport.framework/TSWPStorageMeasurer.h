@@ -8,26 +8,24 @@
 
 @class <TSWPFootnoteHeightMeasurer>, <TSWPFootnoteMarkProvider>, <TSWPOffscreenColumn>, NSMutableArray, NSString, TSDCanvas, TSDLayout, TSPObject<TSDHint>, TSWPPadding, TSWPStorage;
 
-@interface TSWPStorageMeasurer : NSObject <TSWPLayoutTarget, TSWPLayoutOwner, TSWPColumnMetrics> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface TSWPStorageMeasurer : NSObject <TSWPColumnMetrics, TSWPLayoutOwner, TSWPLayoutTarget> {
     struct CGPoint { 
         float x; 
         float y; 
     } _anchor;
     NSMutableArray *_columns;
     unsigned int _flags;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _maxSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _minSize;
     TSWPStorage *_storage;
 }
 
-@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
-@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) BOOL alwaysStartsNewTarget;
 @property(readonly) struct CGPoint { float x1; float x2; } anchorPoint;
 @property(retain) NSMutableArray * anchoredDrawablesForRelayout;
@@ -53,11 +51,13 @@
 @property(readonly) int naturalDirection;
 @property(readonly) TSPObject<TSDHint> * nextTargetFirstChildHint;
 @property(retain,readonly) <TSWPOffscreenColumn> * nextTargetFirstColumn;
+@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) unsigned int pageCount;
 @property(readonly) unsigned int pageNumber;
 @property(readonly) TSDLayout * parentLayoutForInlineAttachments;
 @property(readonly) struct CGPoint { float x1; float x2; } position;
 @property(retain,readonly) <TSWPOffscreenColumn> * previousTargetLastColumn;
+@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) BOOL shouldHyphenate;
 @property(readonly) BOOL shrinkTextToFit;
 @property(readonly) Class superclass;

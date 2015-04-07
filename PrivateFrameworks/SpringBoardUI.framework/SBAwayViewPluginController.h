@@ -10,7 +10,11 @@
 
 @interface SBAwayViewPluginController : NSObject {
     BOOL _alwaysFullscreen;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _disableTransitionBlock;
+
     unsigned int _effectivePresentationStyle;
     NSString *_enablingApplicationBundleIdentifier;
     BOOL _fullscreen;
@@ -26,10 +30,10 @@
 @property(retain) UIView * view;
 @property BOOL viewCanBeDisplayed;
 
-+ (void)disableBundleNamed:(id)arg1 deactivationContext:(id)arg2;
 + (void)disableBundleNamed:(id)arg1;
-+ (void)enableBundleNamed:(id)arg1 activationContext:(id)arg2;
++ (void)disableBundleNamed:(id)arg1 deactivationContext:(id)arg2;
 + (void)enableBundleNamed:(id)arg1;
++ (void)enableBundleNamed:(id)arg1 activationContext:(id)arg2;
 
 - (id)_disableTransitionBlock;
 - (unsigned int)_effectivePresentationStyle;

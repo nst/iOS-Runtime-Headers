@@ -22,8 +22,8 @@
 - (void)_onQueue_doWorkIfNecessary;
 - (id)callbackQueue;
 - (id)init;
-- (id)initWithQueue:(id)arg1 takeOutTransactions:(BOOL)arg2;
 - (id)initWithQueue:(id)arg1;
+- (id)initWithQueue:(id)arg1 takeOutTransactions:(BOOL)arg2;
 - (void)performWork:(id)arg1;
 - (BOOL)performingWork;
 - (id)queue;

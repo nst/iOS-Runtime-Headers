@@ -5,9 +5,6 @@
 @class NSArray, NSString, NSTimer, WAKView, WebDataSource, WebEvent, WebPluginController;
 
 @interface WebHTMLViewPrivate : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
     NSTimer *autoscrollTimer;
     WebEvent *autoscrollTriggerEvent;
     BOOL closed;
@@ -17,8 +14,11 @@
     BOOL handlingMouseDownEvent;
     BOOL ignoringMouseDraggedEvents;
     BOOL inScrollPositionChanged;
-    struct WebHTMLViewInterpretKeyEventsParameters { struct KeyboardEvent {} *x1; boolx2; boolx3; boolx4; boolx5; } *interpretKeyEventsParameters;
+    struct WebHTMLViewInterpretKeyEventsParameters { struct KeyboardEvent {} *x1; bool x2; bool x3; bool x4; bool x5; } *interpretKeyEventsParameters;
     WebEvent *keyDownEvent;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } lastScrollPosition;
     WAKView *layerHostingView;
     WebEvent *mouseDownEvent;

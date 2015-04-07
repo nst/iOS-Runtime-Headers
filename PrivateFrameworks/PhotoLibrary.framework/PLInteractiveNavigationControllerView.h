@@ -5,11 +5,11 @@
 @class NSString, UINavigationBar, UIView;
 
 @interface PLInteractiveNavigationControllerView : UIView <UINavigationBarDelegate> {
+    UIView *_bottom;
     struct { 
         unsigned int transitioning : 1; 
         unsigned int headerViewIsVisible : 1; 
         unsigned int footerViewIsVisible : 1; 
-    UIView *_bottom;
     } _controllerViewFlags;
     UIView *_footer;
     UIView *_header;
@@ -45,13 +45,13 @@
 - (id)navigationBar;
 - (void)setBottomView:(id)arg1;
 - (void)setFooterView:(id)arg1;
-- (void)setFooterViewHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFooterViewHidden:(BOOL)arg1;
+- (void)setFooterViewHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHeaderView:(id)arg1;
-- (void)setHeaderViewHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHeaderViewHidden:(BOOL)arg1;
-- (void)setInteractiveView:(id)arg1 removePrevious:(BOOL)arg2;
+- (void)setHeaderViewHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setInteractiveView:(id)arg1;
+- (void)setInteractiveView:(id)arg1 removePrevious:(BOOL)arg2;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)setOverlayView:(id)arg1;
 - (void)setTopView:(id)arg1;

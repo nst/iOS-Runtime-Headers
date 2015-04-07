@@ -5,10 +5,10 @@
 @class NSMutableIndexSet;
 
 @interface TSTConcurrentMutableIndexSet : NSObject {
+    NSMutableIndexSet *mMutableIndexSet;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    NSMutableIndexSet *mMutableIndexSet;
     } mRWLock;
 }
 

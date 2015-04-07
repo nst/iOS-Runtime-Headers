@@ -4,7 +4,7 @@
 
 @class <UIWebSelectedItemPrivate>, DOMHTMLSelectElement, NSArray, NSString;
 
-@interface UIWebSelectMultiplePicker : UIPickerView <UIWebFormControl, UIPickerViewDataSource, UIPickerViewDelegate> {
+@interface UIWebSelectMultiplePicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, UIWebFormControl> {
     NSArray *_cachedItems;
     float _fontSize;
     float _layoutWidth;

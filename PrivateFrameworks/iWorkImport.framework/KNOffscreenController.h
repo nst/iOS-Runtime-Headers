@@ -5,13 +5,13 @@
 @class CALayer, KNAnimatedSlideView, KNPlaybackSession, KNShow, KNSlide, KNSlideNode;
 
 @interface KNOffscreenController : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     CALayer *_baseLayer;
     KNAnimatedSlideView *mAnimator;
     BOOL mFirstEvent;
     BOOL mIsImageGenerationCancelled;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mOutputSize;
     KNPlaybackSession *mSession;
     KNShow *mShow;
@@ -49,8 +49,8 @@
 - (BOOL)gotoNextSlide;
 - (BOOL)gotoPreviousSlide;
 - (BOOL)gotoSlideNode:(id)arg1 andEvent:(unsigned int)arg2;
-- (id)initWithShow:(id)arg1 canvasDelegate:(id)arg2 outputSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)initWithShow:(id)arg1 canvasDelegate:(id)arg2;
+- (id)initWithShow:(id)arg1 canvasDelegate:(id)arg2 outputSize:(struct CGSize { float x1; float x2; })arg3;
 - (struct CGSize { float x1; float x2; })outputSize;
 - (void)p_setAnimator:(id)arg1;
 - (int)playMode;

@@ -67,9 +67,9 @@
 - (id)bubbleValueSmall;
 - (id)buttonTitle;
 - (id)buyButtonTitle;
+- (id)caption;
 - (id)caption1;
 - (id)caption2;
-- (id)caption;
 - (id)cellActionItem;
 - (id)centered;
 - (id)challengeBubbleValue;
@@ -107,8 +107,8 @@
 - (id)leaderboardRankMedium;
 - (id)leaderboardRankSmall;
 - (id)light;
-- (id)lineBreakMode:(int)arg1;
 - (int)lineBreakMode;
+- (id)lineBreakMode:(int)arg1;
 - (id)lineHeight:(float)arg1;
 - (id)localPlayerColor;
 - (float)m34;

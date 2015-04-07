@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSString, NSURL;
 
-@interface SSItemArtworkImage : NSObject <SSXPCCoding, NSCopying> {
+@interface SSItemArtworkImage : NSObject <NSCopying, SSXPCCoding> {
     NSMutableDictionary *_dictionary;
     NSString *_imageKind;
 }

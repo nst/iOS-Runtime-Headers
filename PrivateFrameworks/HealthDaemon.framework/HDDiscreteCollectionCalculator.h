@@ -3,11 +3,6 @@
  */
 
 @interface HDDiscreteCollectionCalculator : NSObject {
-    struct { 
-        double avg; 
-        double max; 
-        double min; 
-        unsigned int count; 
     struct map<long long, _HDDiscreteStats, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, _HDDiscreteStats> > > { 
         struct __tree<std::__1::__value_type<long long, _HDDiscreteStats>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, _HDDiscreteStats>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, _HDDiscreteStats> > > { 
             struct __tree_node<std::__1::__value_type<long long, _HDDiscreteStats>, void *> {} *__begin_node_; 
@@ -21,6 +16,11 @@
             } __pair3_; 
         } __tree_; 
     } _bySource;
+    struct { 
+        double avg; 
+        double max; 
+        double min; 
+        unsigned int count; 
     } _currentStats;
     BOOL _detailBySource;
 }

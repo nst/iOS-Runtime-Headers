@@ -50,8 +50,8 @@
 - (int)defaultSymbolType;
 - (id)elementBuilder;
 - (int)fillSetFillProperty;
-- (unsigned int)filterChartLabelPosition:(unsigned int)arg1 forSeries:(id)arg2;
 - (unsigned int)filterChartLabelPosition:(unsigned int)arg1;
+- (unsigned int)filterChartLabelPosition:(unsigned int)arg1 forSeries:(id)arg2;
 - (BOOL)floatValueForLabelExplosion:(float*)arg1 series:(id)arg2;
 - (id)genericToSpecificPropertyMap;
 - (id)init;

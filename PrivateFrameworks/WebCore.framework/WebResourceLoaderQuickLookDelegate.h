@@ -5,18 +5,18 @@
 @class NSString;
 
 @interface WebResourceLoaderQuickLookDelegate : NSObject <NSURLConnectionDelegate> {
-    struct RefPtr<WebCore::ResourceLoader> { 
-        struct ResourceLoader {} *m_ptr; 
     BOOL _hasFailed;
     BOOL _hasSentDidReceiveResponse;
-    struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; boolx4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; } *_quickLookHandle;
+    struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; bool x4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; } *_quickLookHandle;
+    struct RefPtr<WebCore::ResourceLoader> { 
+        struct ResourceLoader {} *m_ptr; 
     } _resourceLoader;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
-@property struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; boolx4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; }* quickLookHandle;
+@property struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; bool x4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; }* quickLookHandle;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -28,7 +28,7 @@
 - (void)connection:(id)arg1 didReceiveDataArray:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (id)initWithResourceLoader:(struct PassRefPtr<WebCore::ResourceLoader> { struct ResourceLoader {} *x1; })arg1;
-- (struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; boolx4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; }*)quickLookHandle;
-- (void)setQuickLookHandle:(struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; boolx4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; }*)arg1;
+- (struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; bool x4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; }*)quickLookHandle;
+- (void)setQuickLookHandle:(struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; bool x4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; }*)arg1;
 
 @end

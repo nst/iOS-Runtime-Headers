@@ -5,6 +5,7 @@
 @class MTLIOAccelDevice, MTLIOAccelDeviceShmem, MTLIOAccelDeviceShmemPool;
 
 @interface MTLIOAccelDeviceShmem : NSObject {
+    MTLIOAccelDevice *_device;
     struct _MTLIOAccelDeviceShmemPrivate { 
         MTLIOAccelDeviceShmemPool *pool; 
         struct { 
@@ -12,12 +13,11 @@
             id *tqe_prev; 
         } entry; 
         unsigned long long time_added; 
-    MTLIOAccelDevice *_device;
     } _priv;
     unsigned int _shmemID;
     unsigned int _shmemSize;
     void *_virtualAddress;
-    boolpurgeable;
+    bool purgeable;
 }
 
 @property(readonly) unsigned int shmemID;

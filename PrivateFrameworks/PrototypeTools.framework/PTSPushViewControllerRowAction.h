@@ -7,7 +7,11 @@
  */
 
 @interface PTSPushViewControllerRowAction : PTSRowAction {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _viewControllerCreator;
+
 }
 
 @property(copy) id viewControllerCreator;

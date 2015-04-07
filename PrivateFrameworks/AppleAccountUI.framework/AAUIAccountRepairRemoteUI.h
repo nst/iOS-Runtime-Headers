@@ -16,7 +16,11 @@
     NSDictionary *_cookieHeadersForRepairRequest;
     <AAUIAccountRepairRemoteUIDelegate> *_delegate;
     BOOL _isModal;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _linkLoadCompletion;
+
     RUILoader *_loader;
     NSMutableArray *_objectModels;
     UIViewController *_originatingViewController;

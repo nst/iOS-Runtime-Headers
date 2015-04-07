@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURLSession;
 
-@interface AAURLSession : NSObject <NSURLSessionDelegate, NSURLSessionDataDelegate> {
+@interface AAURLSession : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
     NSMutableDictionary *_pendingCompletionsByTask;
     NSMutableDictionary *_receivedDataByTask;
     NSMutableDictionary *_retryCountByRequest;

@@ -9,10 +9,10 @@
         unsigned long long *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        unsigned int geoType : 1; 
     } _geoIds;
     int _geoType;
+    struct { 
+        unsigned int geoType : 1; 
     } _has;
     NSString *_matchedToken;
 }

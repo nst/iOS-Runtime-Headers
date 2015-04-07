@@ -4,7 +4,7 @@
 
 @class CLLocation, FMFHandle, NSDate, NSString;
 
-@interface FMFLocation : NSObject <NSCopying, NSSecureCoding, MKAnnotation> {
+@interface FMFLocation : NSObject <MKAnnotation, NSCopying, NSSecureCoding> {
     double _TTL;
     FMFHandle *_handle;
     NSString *_label;

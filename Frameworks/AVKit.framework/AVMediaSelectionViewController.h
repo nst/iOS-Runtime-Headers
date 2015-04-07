@@ -8,8 +8,12 @@
 
 @class AVMediaSelectionOption, AVPlayerController, NSString, UITableView;
 
-@interface AVMediaSelectionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface AVMediaSelectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _doneButtonHandler;
+
     AVPlayerController *_playerController;
     AVMediaSelectionOption *_selectedAudioMediaSelectionOption;
     AVMediaSelectionOption *_selectedLegibleMediaSelectionOption;

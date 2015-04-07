@@ -4,18 +4,18 @@
 
 @class NSString, NanoPhoneVoicemailBody;
 
-@interface NanoPhoneVoicemailMeta : PBCodable <SYObject, NSCopying> {
+@interface NanoPhoneVoicemailMeta : PBCodable <NSCopying, SYObject> {
+    NSString *_callbackNumber;
+    NSString *_dataPath;
+    double _date;
+    int _duration;
+    int _flags;
     struct { 
         unsigned int date : 1; 
         unsigned int identifier : 1; 
         unsigned int remoteUID : 1; 
         unsigned int duration : 1; 
         unsigned int flags : 1; 
-    NSString *_callbackNumber;
-    NSString *_dataPath;
-    double _date;
-    int _duration;
-    int _flags;
     } _has;
     long long _identifier;
     long long _remoteUID;

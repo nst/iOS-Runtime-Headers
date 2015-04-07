@@ -8,13 +8,13 @@
     struct CGSize { 
         float width; 
         float height; 
+    } _buttonSize;
+    BOOL _buttonSizeLoaded;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _buttonSize;
-    BOOL _buttonSizeLoaded;
     } _buttonTextAlignmentInsets;
     NSAttributedString *_transcriptButtonText;
 }

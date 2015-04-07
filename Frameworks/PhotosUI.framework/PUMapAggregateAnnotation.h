@@ -8,13 +8,13 @@
     struct { 
         double latitude; 
         double longitude; 
-    struct { 
-        double latitude; 
-        double longitude; 
     } _coordinate;
     unsigned int _hash;
     NSObject *_itemId;
     NSArray *_mapItems;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _originalCoordinate;
     unsigned int _relativeOrder;
     NSMutableSet *_subAnnotations;

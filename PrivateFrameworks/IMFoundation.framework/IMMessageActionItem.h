@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface IMMessageActionItem : IMItem <NSCoding, NSCopying, IMRemoteObjectCoding> {
+@interface IMMessageActionItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
     long long _actionType;
     NSString *_originalMessageGUID;
     NSString *_otherCountryCode;

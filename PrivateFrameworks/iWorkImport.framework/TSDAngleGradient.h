@@ -25,8 +25,8 @@
 - (id)initWithGradientStops:(id)arg1 type:(unsigned int)arg2 opacity:(float)arg3 angle:(float)arg4;
 - (id)initWithStartColor:(id)arg1 endColor:(id)arg2 type:(unsigned int)arg3 angle:(float)arg4;
 - (void)insertGradientStop:(id)arg1;
-- (id)insertStopAtFraction:(float)arg1 withColor:(id)arg2;
 - (id)insertStopAtFraction:(float)arg1;
+- (id)insertStopAtFraction:(float)arg1 withColor:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1;
@@ -37,8 +37,8 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_shadingTransformForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)paintPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)paintPath:(struct CGPath { }*)arg1 naturalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inContext:(struct CGContext { }*)arg3 isPDF:(BOOL)arg4;
-- (void)paintRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 atAngle:(float)arg3;
 - (void)paintRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)paintRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 atAngle:(float)arg3;
 - (void)removeStop:(id)arg1;
 - (id)removeStopAtIndex:(unsigned int)arg1;
 - (void)reverseStopOrder;

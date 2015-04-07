@@ -18,8 +18,12 @@
     NSObject<OS_dispatch_queue> *_queue;
     double _queueBudget;
     NSObject<OS_dispatch_source> *_requestOperationsSource;
-    NSOperationQueue *_transferQueue;
+
+  /* Unexpected information at end of encoded ivar type: i */
+  /* Error parsing encoded ivar type info: Ai */
     /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_suspendCount;
+
+    NSOperationQueue *_transferQueue;
 }
 
 @property <BRCTransferQueueDelegate> * delegate;

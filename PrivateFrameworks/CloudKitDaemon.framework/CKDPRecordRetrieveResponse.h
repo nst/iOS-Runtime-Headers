@@ -5,9 +5,9 @@
 @class CKDPRecord;
 
 @interface CKDPRecordRetrieveResponse : PBCodable <NSCopying> {
+    BOOL _clientVersionETagMatch;
     struct { 
         unsigned int clientVersionETagMatch : 1; 
-    BOOL _clientVersionETagMatch;
     } _has;
     CKDPRecord *_record;
 }

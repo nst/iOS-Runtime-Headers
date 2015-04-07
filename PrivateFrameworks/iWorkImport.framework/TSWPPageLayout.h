@@ -14,6 +14,7 @@
             float width; 
             float height; 
         } size; 
+    } _headerFooterBorderRects[2][3];
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,7 +24,6 @@
             float width; 
             float height; 
         } size; 
-    } _headerFooterBorderRects[2][3];
     } _headerFooterClipRects[2][3];
     TSWPLayout *_headerFooterLayouts[2][3];
 }

@@ -26,8 +26,8 @@
 + (BOOL)isGenericMFiAccessory:(id)arg1;
 + (BOOL)isSTAOnlyDevice:(id)arg1;
 + (BOOL)isUnconfiguredDevice:(id)arg1;
-+ (BOOL)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(BOOL)arg3 viewController:(id)arg4;
 + (BOOL)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(BOOL)arg3;
++ (BOOL)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(BOOL)arg3 viewController:(id)arg4;
 + (id)sharedInstance;
 + (id)unconfiguredDeviceName:(id)arg1;
 + (id)uniqueBaseStationName:(id)arg1 withBssid:(id)arg2;

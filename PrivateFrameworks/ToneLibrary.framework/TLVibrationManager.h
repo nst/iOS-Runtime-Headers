@@ -39,9 +39,9 @@
 - (id)_cachedSystemVibrationPatterns;
 - (id)_cachedUserGeneratedVibrationPatterns;
 - (id)_currentVibrationIdentifierForAlertType:(int)arg1 accountIdentifier:(id)arg2;
-- (int)_currentVibrationWatchAlertPolicyForAlertType:(int)arg1 accountIdentifier:(id)arg2 didFindPersistedWatchAlertPolicy:(BOOL*)arg3;
-- (int)_currentVibrationWatchAlertPolicyForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (int)_currentVibrationWatchAlertPolicyForAlertType:(int)arg1;
+- (int)_currentVibrationWatchAlertPolicyForAlertType:(int)arg1 accountIdentifier:(id)arg2;
+- (int)_currentVibrationWatchAlertPolicyForAlertType:(int)arg1 accountIdentifier:(id)arg2 didFindPersistedWatchAlertPolicy:(BOOL*)arg3;
 - (id)_currentVibrationWatchAlertPolicyPreferenceKeyForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (void)_didChangeUserGeneratedVibrationPatterns;
 - (void)_didSetVibrationPreferenceSuccessfullyWithKey:(id)arg1 inDomain:(id)arg2 usingPreferencesOfKind:(unsigned int)arg3;
@@ -64,8 +64,8 @@
 - (void)_setAllowsAutoRefresh:(BOOL)arg1;
 - (void)_setCachedSystemVibrationPatterns:(id)arg1;
 - (void)_setCachedUserGeneratedVibrationPatterns:(id)arg1;
-- (void)_setCurrentVibrationWatchAlertPolicy:(int)arg1 forAlertType:(int)arg2 accountIdentifier:(id)arg3;
 - (void)_setCurrentVibrationWatchAlertPolicy:(int)arg1 forAlertType:(int)arg2;
+- (void)_setCurrentVibrationWatchAlertPolicy:(int)arg1 forAlertType:(int)arg2 accountIdentifier:(id)arg3;
 - (void)_setNeedsRefresh:(BOOL)arg1;
 - (void)_setSpecialBehaviors:(unsigned int)arg1;
 - (void)_setTransientNanoPreferencesDomainAccessor:(id)arg1;
@@ -81,8 +81,8 @@
 - (id)allUserGeneratedVibrationIdentifiers;
 - (id)allUserSelectableSystemVibrationIdentifiers;
 - (BOOL)allowsAutoRefresh;
-- (id)currentVibrationIdentifierForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (id)currentVibrationIdentifierForAlertType:(int)arg1;
+- (id)currentVibrationIdentifierForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (id)currentVibrationNameForAlertType:(int)arg1;
 - (id)currentVibrationPatternForAlertType:(int)arg1;
 - (void)dealloc;
@@ -95,12 +95,12 @@
 - (BOOL)needsRefresh;
 - (id)noneVibrationName;
 - (id)noneVibrationPattern;
-- (id)patternForVibrationWithIdentifier:(id)arg1 repeating:(BOOL)arg2;
 - (id)patternForVibrationWithIdentifier:(id)arg1;
+- (id)patternForVibrationWithIdentifier:(id)arg1 repeating:(BOOL)arg2;
 - (BOOL)refresh;
 - (void)setAllowsAutoRefresh:(BOOL)arg1;
-- (void)setCurrentVibrationIdentifier:(id)arg1 forAlertType:(int)arg2 accountIdentifier:(id)arg3;
 - (void)setCurrentVibrationIdentifier:(id)arg1 forAlertType:(int)arg2;
+- (void)setCurrentVibrationIdentifier:(id)arg1 forAlertType:(int)arg2 accountIdentifier:(id)arg3;
 - (BOOL)setName:(id)arg1 forUserGeneratedVibrationWithIdentifier:(id)arg2 error:(id*)arg3;
 - (BOOL)shouldVibrateForCurrentRingerSwitchState;
 - (BOOL)shouldVibrateOnRing;

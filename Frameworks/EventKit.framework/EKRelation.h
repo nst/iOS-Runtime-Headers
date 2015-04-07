@@ -15,8 +15,8 @@
 @property(readonly) BOOL ownsRelatedObject;
 @property(readonly) BOOL toMany;
 
-+ (id)relationWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3 ownsRelated:(BOOL)arg4;
 + (id)relationWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3;
++ (id)relationWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3 ownsRelated:(BOOL)arg4;
 
 - (void)dealloc;
 - (id)description;

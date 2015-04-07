@@ -18,7 +18,7 @@
 - (void)postrender:(id)arg1;
 - (void)prerender:(id)arg1;
 - (void)rayPick:(id)arg1;
-- (void)render:(id)arg1 selector:(SEL)arg2;
 - (void)render:(id)arg1;
+- (void)render:(id)arg1 selector:(SEL)arg2;
 
 @end

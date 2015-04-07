@@ -4,7 +4,7 @@
 
 @class AXHATimer, AXHearingAidMode, CBPeripheral, NSArray, NSDate, NSMutableDictionary, NSString;
 
-@interface AXHearingAidDevice : NSObject <CBPeripheralDelegate, AXHADeviceProtocol> {
+@interface AXHearingAidDevice : NSObject <AXHADeviceProtocol, CBPeripheralDelegate> {
     int _availableEars;
     BOOL _finishedLoading;
     BOOL _isListeningForStreamingChanges;

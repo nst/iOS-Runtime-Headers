@@ -23,13 +23,13 @@
 - (long long)encodedLength;
 - (unsigned long)fileType;
 - (BOOL)hasSameLocationAs:(id)arg1;
-- (id)initWithCopyOfData:(id)arg1 path:(id)arg2 cryptoKey:(id)arg3;
 - (id)initWithCopyOfData:(id)arg1 path:(id)arg2;
+- (id)initWithCopyOfData:(id)arg1 path:(id)arg2 cryptoKey:(id)arg3;
 - (id)initWithInputStream:(id)arg1 cryptoKey:(id)arg2 dataLength:(long long)arg3;
-- (id)initWithPath:(id)arg1 cryptoKey:(id)arg2 dataLength:(long long)arg3;
-- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2 cryptoKey:(id)arg3 dataLength:(long long)arg4;
-- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2;
 - (id)initWithPath:(id)arg1;
+- (id)initWithPath:(id)arg1 cryptoKey:(id)arg2 dataLength:(long long)arg3;
+- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2;
+- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2 cryptoKey:(id)arg3 dataLength:(long long)arg4;
 - (id)inputStream;
 - (BOOL)isCryptoKeyIdenticalToKey:(id)arg1;
 - (BOOL)isEncrypted;

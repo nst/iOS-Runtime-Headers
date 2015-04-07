@@ -4,11 +4,11 @@
 
 @class MKMapView;
 
-@interface MKMapCamera : NSObject <NSSecureCoding, NSCopying> {
+@interface MKMapCamera : NSObject <NSCopying, NSSecureCoding> {
+    double _altitude;
     struct { 
         double latitude; 
         double longitude; 
-    double _altitude;
     } _centerCoordinate;
     double _heading;
     MKMapView *_mapView;

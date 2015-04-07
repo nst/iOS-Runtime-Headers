@@ -4,16 +4,7 @@
 
 @class EKCalendarItem, EKEventStore, EKStructuredLocation, EKTravelRouteEstimationController, NSDate, NSIndexPath, NSString, UISwitch, UITableView, UIView;
 
-@interface EKEventTravelTimeEditViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate, EKTravelRouteEstimationControllerDelegate, EKEditItemViewControllerDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+@interface EKEventTravelTimeEditViewController : EKEditItemViewController <EKEditItemViewControllerDelegate, EKTravelRouteEstimationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSDate *_arrivalDate;
     EKCalendarItem *_calendarItem;
     NSIndexPath *_checkedItem;
@@ -24,6 +15,15 @@
     BOOL _estimationGroupIsShowing;
     EKEventStore *_eventStore;
     BOOL _externallySetValueGroupIsShowing;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _initFrame;
     BOOL _isAnimatingTableSections;
     BOOL _isOriginSelectionVisible;

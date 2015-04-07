@@ -8,7 +8,11 @@
 
 @interface CKDGetShareInvitationsURLRequest : CKDURLRequest {
     BOOL _queryAllContainers;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shareInvitationFetchedBlock;
+
     BOOL _shouldGetReceived;
 }
 

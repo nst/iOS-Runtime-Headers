@@ -5,14 +5,14 @@
 @class <PUCollectionViewReorderDelegate>, NSIndexPath, NSString, PUAutoScroller, UILongPressGestureRecognizer, UIView;
 
 @interface PUCollectionView : UICollectionView <UIGestureRecognizerDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
     PUAutoScroller *_autoScroller;
     UILongPressGestureRecognizer *_dragGestureRecognizer;
     NSIndexPath *_dragSourceIndexPath;
     NSIndexPath *_dragTargetIndexPath;
     UIView *_draggedView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _draggedViewCenterOffset;
     <PUCollectionViewReorderDelegate> *_reorderDelegate;
 }

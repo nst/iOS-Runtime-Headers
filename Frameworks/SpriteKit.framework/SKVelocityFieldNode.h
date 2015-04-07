@@ -9,8 +9,6 @@
 @class SKTexture;
 
 @interface SKVelocityFieldNode : SKFieldNode {
-     /* Encoded args for previous method: 8@0:4 */
-     /* Encoded args for previous method: v24@0:48 */
     SKTexture *_velocityTexture;
 }
 
@@ -24,8 +22,12 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)setVelocity:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: v24@0:48 */
+
 - (void)setVelocityTexture:(id)arg1;
 - (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)velocity;
+     /* Encoded args for previous method: 8@0:4 */
+
 - (id)velocityTexture;
 
 @end

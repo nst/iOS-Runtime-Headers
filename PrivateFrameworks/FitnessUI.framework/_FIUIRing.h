@@ -5,9 +5,6 @@
 @class UIColor, _FIUIIcon;
 
 @interface _FIUIRing : FIUIAnimatableObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
     UIColor *_bottomColor;
     float _bottomColorBlue;
     float _bottomColorGreen;
@@ -17,6 +14,9 @@
     _FIUIIcon *_icon;
     float _opacity;
     float _percentage;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _position;
     float _size;
     float _thickness;

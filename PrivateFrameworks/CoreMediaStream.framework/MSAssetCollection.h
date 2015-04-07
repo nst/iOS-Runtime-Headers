@@ -23,8 +23,8 @@
 @property(readonly) NSData * masterAssetHash;
 @property BOOL wasDeleted;
 
-+ (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
++ (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

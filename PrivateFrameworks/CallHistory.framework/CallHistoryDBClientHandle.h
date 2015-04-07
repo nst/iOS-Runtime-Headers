@@ -14,20 +14,20 @@
 
 - (void).cxx_destruct;
 - (id)convertToCHRecentCalls_sync:(id)arg1;
-- (BOOL)createCallRecord:(id)arg1 error:(id*)arg2 save:(BOOL)arg3;
-- (BOOL)createCallRecord:(id)arg1 error:(id*)arg2;
 - (BOOL)createCallRecord:(id)arg1;
-- (BOOL)createCallRecords:(id)arg1 error:(id*)arg2;
+- (BOOL)createCallRecord:(id)arg1 error:(id*)arg2;
+- (BOOL)createCallRecord:(id)arg1 error:(id*)arg2 save:(BOOL)arg3;
 - (BOOL)createCallRecords:(id)arg1;
+- (BOOL)createCallRecords:(id)arg1 error:(id*)arg2;
 - (id)dbStoreHandle;
 - (void)dealloc;
-- (BOOL)deleteAll:(id*)arg1;
 - (BOOL)deleteAll;
-- (BOOL)deleteObjectWithUniqueId:(id)arg1 error:(id*)arg2 save:(BOOL)arg3;
-- (BOOL)deleteObjectWithUniqueId:(id)arg1 error:(id*)arg2;
+- (BOOL)deleteAll:(id*)arg1;
 - (BOOL)deleteObjectWithUniqueId:(id)arg1;
-- (BOOL)deleteObjectsWithUniqueIds:(id)arg1 error:(id*)arg2;
+- (BOOL)deleteObjectWithUniqueId:(id)arg1 error:(id*)arg2;
+- (BOOL)deleteObjectWithUniqueId:(id)arg1 error:(id*)arg2 save:(BOOL)arg3;
 - (BOOL)deleteObjectsWithUniqueIds:(id)arg1;
+- (BOOL)deleteObjectsWithUniqueIds:(id)arg1 error:(id*)arg2;
 - (id)fetchAll;
 - (id)fetchAllNoLimit;
 - (id)fetchObjectWithUniqueId:(id)arg1;
@@ -49,13 +49,13 @@
 - (id)timerLifetime;
 - (id)timerOutgoing;
 - (void)unRegisterForNotifications;
-- (id)updateAllCallRecords:(id)arg1 error:(id*)arg2;
 - (id)updateAllCallRecords:(id)arg1;
+- (id)updateAllCallRecords:(id)arg1 error:(id*)arg2;
 - (id)updateAllCallRecords_sync:(id)arg1 error:(id*)arg2;
 - (BOOL)updateCallRecord_sync:(id)arg1 withChangeDict:(id)arg2;
-- (id)updateCallRecords:(id)arg1 error:(id*)arg2 save:(BOOL)arg3;
-- (id)updateCallRecords:(id)arg1 error:(id*)arg2;
 - (id)updateCallRecords:(id)arg1;
+- (id)updateCallRecords:(id)arg1 error:(id*)arg2;
+- (id)updateCallRecords:(id)arg1 error:(id*)arg2 save:(BOOL)arg3;
 - (id)updateCallRecords_sync:(id)arg1 error:(id*)arg2 save:(BOOL)arg3;
 - (BOOL)willHandleNotification_sync:(id)arg1;
 

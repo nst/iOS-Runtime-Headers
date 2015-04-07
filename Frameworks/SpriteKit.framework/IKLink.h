@@ -5,31 +5,31 @@
 @class SKNode;
 
 @interface IKLink : NSObject {
-    union _GLKVector2 { 
-        struct { 
-            float x; 
-            float y; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-        } ; 
-        float v[2]; 
-    union _GLKVector2 { 
-        struct { 
-            float x; 
-            float y; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-        } ; 
-        float v[2]; 
     float _angle;
     float _angleInitial;
     float _length;
     SKNode *_node;
+    union _GLKVector2 { 
+        struct { 
+            float x; 
+            float y; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+        } ; 
+        float v[2]; 
     } _position;
+    union _GLKVector2 { 
+        struct { 
+            float x; 
+            float y; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+        } ; 
+        float v[2]; 
     } _size;
 }
 

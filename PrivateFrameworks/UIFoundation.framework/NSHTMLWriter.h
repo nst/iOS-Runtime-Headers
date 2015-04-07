@@ -5,14 +5,6 @@
 @class NSAttributedString, NSData, NSDictionary, NSFileWrapper, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSMutableString, NSString, NSURL;
 
 @interface NSHTMLWriter : NSObject {
-    struct { 
-        unsigned int interchangeNewline : 1; 
-        unsigned int noDefaultFonts : 1; 
-        unsigned int tabsToSpaces : 1; 
-        unsigned int coalesceTabSpans : 1; 
-        unsigned int usedTabSpan : 1; 
-        unsigned int encodingIsUnicode : 1; 
-        unsigned int pad : 26; 
     NSAttributedString *_attrStr;
     NSMutableArray *_blockStyleStrings;
     NSMutableString *_bodyStr;
@@ -23,6 +15,14 @@
     unsigned int _excludedElements1;
     unsigned int _excludedElements2;
     NSFileWrapper *_fileWrapper;
+    struct { 
+        unsigned int interchangeNewline : 1; 
+        unsigned int noDefaultFonts : 1; 
+        unsigned int tabsToSpaces : 1; 
+        unsigned int coalesceTabSpans : 1; 
+        unsigned int usedTabSpan : 1; 
+        unsigned int encodingIsUnicode : 1; 
+        unsigned int pad : 26; 
     } _flags;
     NSMutableDictionary *_fontDescriptions;
     NSMutableDictionary *_fontNames;

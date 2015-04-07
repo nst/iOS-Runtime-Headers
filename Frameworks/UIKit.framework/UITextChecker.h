@@ -14,8 +14,8 @@
 + (id)_textCheckerBackgroundQueue;
 + (id)_wordsInDictionary:(id)arg1;
 + (id)availableLanguages;
-+ (id)bestLanguageForString:(id)arg1 fromAlternatives:(id)arg2 currentLanguage:(id)arg3 insertionPointIndex:(unsigned int)arg4 scriptForBestLanguage:(id*)arg5;
 + (id)bestLanguageForString:(id)arg1 fromAlternatives:(id)arg2 currentLanguage:(id)arg3;
++ (id)bestLanguageForString:(id)arg1 fromAlternatives:(id)arg2 currentLanguage:(id)arg3 insertionPointIndex:(unsigned int)arg4 scriptForBestLanguage:(id*)arg5;
 + (struct __CFSet { }*)createDictHashTable:(BOOL)arg1;
 + (id)dictionaryInfo:(id)arg1;
 + (BOOL)hasLearnedWord:(id)arg1;

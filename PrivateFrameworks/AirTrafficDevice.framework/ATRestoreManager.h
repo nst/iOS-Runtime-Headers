@@ -4,7 +4,7 @@
 
 @class ATAssetManager, ATRestoreAssetLink, ATSession, ATStoreAssetLink, MSVXPCTransaction, NSObject<OS_dispatch_queue>, NSString;
 
-@interface ATRestoreManager : NSObject <ATEnvironmentMonitorObserver, ATSessionObserver, ATRestoreAssetLinkDelegate> {
+@interface ATRestoreManager : NSObject <ATEnvironmentMonitorObserver, ATRestoreAssetLinkDelegate, ATSessionObserver> {
     ATRestoreAssetLink *_applicationDataRestoreLink;
     ATAssetManager *_assetManager;
     BOOL _cancelled;

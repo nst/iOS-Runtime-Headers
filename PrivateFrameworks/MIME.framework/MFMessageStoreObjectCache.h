@@ -11,8 +11,16 @@
 @interface MFMessageStoreObjectCache : NSObject {
     struct __CFDictionary { } *_cache;
     long _capacity;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _comparator;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _keyGenerator;
+
     NSLock *_lock;
 }
 

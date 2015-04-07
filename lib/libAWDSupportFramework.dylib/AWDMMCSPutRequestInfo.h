@@ -5,17 +5,6 @@
 @class NSMutableArray, NSString;
 
 @interface AWDMMCSPutRequestInfo : PBCodable <NSCopying> {
-    struct { 
-        unsigned int duration : 1; 
-        unsigned int startTime : 1; 
-        unsigned int timestamp : 1; 
-        unsigned int cancelledErrorCode : 1; 
-        unsigned int chunksUploaded : 1; 
-        unsigned int itemCount : 1; 
-        unsigned int itemsAlreadyPresentCount : 1; 
-        unsigned int itemsNotPresentCount : 1; 
-        unsigned int itemsPartiallyPresentCount : 1; 
-        unsigned int requestErrorCode : 1; 
     NSMutableArray *_authHttpInfos;
     NSMutableArray *_cancelErrors;
     int _cancelledErrorCode;
@@ -27,6 +16,17 @@
     NSMutableArray *_containerHttpInfos;
     long long _duration;
     NSMutableArray *_errors;
+    struct { 
+        unsigned int duration : 1; 
+        unsigned int startTime : 1; 
+        unsigned int timestamp : 1; 
+        unsigned int cancelledErrorCode : 1; 
+        unsigned int chunksUploaded : 1; 
+        unsigned int itemCount : 1; 
+        unsigned int itemsAlreadyPresentCount : 1; 
+        unsigned int itemsNotPresentCount : 1; 
+        unsigned int itemsPartiallyPresentCount : 1; 
+        unsigned int requestErrorCode : 1; 
     } _has;
     int _itemCount;
     int _itemsAlreadyPresentCount;

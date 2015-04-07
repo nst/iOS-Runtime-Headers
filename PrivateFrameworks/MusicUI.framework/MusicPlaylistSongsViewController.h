@@ -5,12 +5,12 @@
 @class MusicPlaylistActionsView, NSOperationQueue, NSString, UIActionSheet;
 
 @interface MusicPlaylistSongsViewController : MusicSongsViewController <MusicPickerOverlayDelegate, MusicViewControllerKeepLocalContainer, UIActionSheetDelegate> {
+    MusicPlaylistActionsView *_actionsView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    MusicPlaylistActionsView *_actionsView;
     } _actionsViewContentInsetAdditions;
     UIActionSheet *_clearActionSheet;
     UIActionSheet *_deleteActionSheet;

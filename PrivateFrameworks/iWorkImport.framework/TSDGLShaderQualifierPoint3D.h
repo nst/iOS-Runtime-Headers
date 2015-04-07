@@ -7,11 +7,11 @@
         float x; 
         float y; 
         float z; 
+    } _GLPoint3DValue;
     struct { 
         float x; 
         float y; 
         float z; 
-    } _GLPoint3DValue;
     } _proposedGLPoint3DValue;
 }
 

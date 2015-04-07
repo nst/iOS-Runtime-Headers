@@ -27,8 +27,8 @@
 - (void)dealloc;
 - (void)endSession;
 - (id)initWithQueue:(id)arg1 delegate:(id)arg2;
-- (id)initWithSocket:(int)arg1 queue:(id)arg2 delegate:(id)arg3 start:(BOOL)arg4;
 - (id)initWithSocket:(int)arg1 queue:(id)arg2 delegate:(id)arg3;
+- (id)initWithSocket:(int)arg1 queue:(id)arg2 delegate:(id)arg3 start:(BOOL)arg4;
 - (BOOL)sendData:(id)arg1;
 - (void)setDestination:(id)arg1;
 - (int)socket;

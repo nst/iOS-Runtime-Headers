@@ -4,7 +4,7 @@
 
 @class NSArray, NSDate, NSString, NSTimeZone, NSURL, SGSimpleNamedEmailAddress;
 
-@interface SGSimpleCalendarEvent : NSObject <NSSecureCoding, NSCopying> {
+@interface SGSimpleCalendarEvent : NSObject <NSCopying, NSSecureCoding> {
     NSURL *_URL;
     NSString *_calendar;
     NSDate *_creationDate;

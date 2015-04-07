@@ -5,10 +5,10 @@
 @class UIColor;
 
 @interface SUShadow : NSObject <NSCoding, NSCopying> {
+    UIColor *_color;
     struct CGSize { 
         float width; 
         float height; 
-    UIColor *_color;
     } _offset;
     float _opacity;
     float _radius;

@@ -5,27 +5,6 @@
 @class NSAttributedString, NSIndexSet, NSString, UIColor, UIFont;
 
 @interface EKDayOccurrenceContentView : UIView {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     BOOL _allDay;
     BOOL _allDayDrawingStyle;
     NSAttributedString *_attributedContentString;
@@ -41,6 +20,15 @@
     BOOL _declined;
     BOOL _facebook;
     unsigned int _fontCompressionDegree;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _fullTextRect;
     BOOL _hideText;
     NSString *_location;
@@ -57,8 +45,20 @@
     NSString *_time;
     UIColor *_timeTextColor;
     NSString *_title;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _titleEndPoint;
     NSIndexSet *_titleMetrics;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _titleRect;
     UIColor *_titleTextColor;
     BOOL _usesSmallText;

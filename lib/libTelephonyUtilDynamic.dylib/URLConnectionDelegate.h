@@ -5,17 +5,17 @@
 @class NSDictionary, NSMutableData, NSString;
 
 @interface URLConnectionDelegate : NSObject <NSURLConnectionDelegate> {
+    NSMutableData *fData;
     struct weak_ptr<ctu::Http::URLConnectionCallbackHandler> { 
         struct URLConnectionCallbackHandler {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ctu::Http::HttpResponse> { 
-        struct HttpResponse {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    boolfRedirection;
-    NSMutableData *fData;
     } fHandler;
     NSMutableData *fPostData;
     NSDictionary *fProxySettings;
+    bool fRedirection;
+    struct shared_ptr<ctu::Http::HttpResponse> { 
+        struct HttpResponse {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } fResponse;
 }
 

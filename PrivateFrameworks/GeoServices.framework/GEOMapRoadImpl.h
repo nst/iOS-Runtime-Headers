@@ -5,9 +5,6 @@
 @class GEOMapAccess, NSString;
 
 @interface GEOMapRoadImpl : NSObject <GEOMapRoad> {
-    struct shared_ptr<geo::MapEdgeRoad> { 
-        struct MapEdgeRoad {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
     struct vector<GEOLocationCoordinate2D, std::__1::allocator<GEOLocationCoordinate2D> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
@@ -15,6 +12,9 @@
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
     } _coords;
+    struct shared_ptr<geo::MapEdgeRoad> { 
+        struct MapEdgeRoad {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _edge;
     GEOMapAccess *_map;
 }

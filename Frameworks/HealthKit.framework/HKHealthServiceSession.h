@@ -9,13 +9,25 @@
 @class HKHealthService, NSArray, NSLock;
 
 @interface HKHealthServiceSession : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _characteristicsHandler;
+
     NSArray *_interestedTransitoryKeys;
     NSLock *_propertyLock;
     HKHealthService *_service;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sessionHandler;
+
     unsigned int _sessionIdentifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _transitoryDataHandler;
+
 }
 
 @property(copy) id characteristicsHandler;

@@ -3,19 +3,19 @@
  */
 
 @interface UIFloatArray : NSObject {
-    union { 
-        float singleton; 
-        float *array; 
+    int _count;
     struct { 
         unsigned int valueIsSingleton : 1; 
         unsigned int hideGaps : 1; 
         unsigned int unused : 30; 
-    int _count;
     } _floatArrayFlags;
     int _gapCount;
     float _gapValue;
     int *_gaps;
     float _minValue;
+    union { 
+        float singleton; 
+        float *array; 
     } _values;
 }
 
@@ -34,8 +34,8 @@
 - (float)minValue;
 - (struct { float x1; float x2; })offsetsForGapIndex:(int)arg1;
 - (struct { float x1; float x2; })offsetsForIndex:(int)arg1;
-- (BOOL)refreshWithDataProvider:(id)arg1 singleValue:(float)arg2;
 - (BOOL)refreshWithDataProvider:(id)arg1;
+- (BOOL)refreshWithDataProvider:(id)arg1 singleValue:(float)arg2;
 - (float)singleValue;
 - (float)sum;
 - (int)valueCount;

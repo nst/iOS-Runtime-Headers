@@ -5,14 +5,14 @@
 @class PUPhotoView, PUPhotosZoomingSharingGridCell, UIView;
 
 @interface PUPhotosSharingGridCell : UICollectionViewCell {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     UIView *_highlightOverlayView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _lastZoomPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _originalZoomPoint;
     PUPhotoView *_photoView;
     PUPhotosZoomingSharingGridCell *_zoomingCell;

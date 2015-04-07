@@ -14,18 +14,25 @@
 @class <TSDHint>, NSDictionary, NSString;
 
 @interface TPPageHint : NSObject <TSWPOffscreenColumn> {
+    NSDictionary *_anchoredAttachmentPositions;
+    <TSDHint> *_firstChildHint;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    } _footnoteAutoNumberRange;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    } _footnoteLayoutRange;
     struct vector<TSWPTargetHint, std::__1::allocator<TSWPTargetHint> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<TSWPTargetHint *, std::__1::allocator<TSWPTargetHint> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+    } _hints;
+    <TSDHint> *_lastChildHint;
+    int _pageKind;
     struct TSWPTopicNumberHints { 
         struct map<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> >, std::__1::less<const TSWPListStyle *>, std::__1::allocator<std::__1::pair<const TSWPListStyle *const, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > > > > { 
             struct __tree<std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, std::__1::__map_value_compare<const TSWPListStyle *, std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, std::__1::less<const TSWPListStyle *>, true>, std::__1::allocator<std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > > > > { 
@@ -42,17 +49,9 @@
         } _numbersForListStyle; 
         unsigned int _charIndex; 
         unsigned int _validThroughCharIndex; 
-    NSDictionary *_anchoredAttachmentPositions;
-    <TSDHint> *_firstChildHint;
-    } _footnoteAutoNumberRange;
-    } _footnoteLayoutRange;
-    } _hints;
-    <TSDHint> *_lastChildHint;
-    int _pageKind;
     } _topicNumbers;
 }
 
-@property /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * topicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(retain) NSDictionary * anchoredAttachmentPositions;
 @property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } anchoredRange;
 @property(copy,readonly) NSString * debugDescription;
@@ -68,6 +67,7 @@
 @property(readonly) unsigned int startAnchoredCharIndex;
 @property(readonly) unsigned int startCharIndex;
 @property(readonly) Class superclass;
+@property /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * topicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

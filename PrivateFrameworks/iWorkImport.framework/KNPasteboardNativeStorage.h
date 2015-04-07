@@ -13,15 +13,15 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     } _originalShowSize;
     NSArray *mBuildChunks;
     NSArray *mBuilds;
     NSArray *mDrawables;
     NSArray *mGeometriesInRoot;
     NSArray *mMasterSlideNodes;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mOriginalShowSize;
     NSString *mSlideNodeUUID;
     NSArray *mSlideNodes;
@@ -44,12 +44,12 @@
 - (id)geometriesInRoot;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 drawables:(id)arg2 builds:(id)arg3 buildChunks:(id)arg4;
-- (id)initWithContext:(id)arg1 slideNodes:(id)arg2 textStorageTitleRanges:(id)arg3 drawables:(id)arg4 builds:(id)arg5 buildChunks:(id)arg6 drawableGeometriesInRoot:(id)arg7 slideNodeUUID:(id)arg8;
-- (id)initWithContext:(id)arg1 slideNodes:(id)arg2 textStorageTitleRanges:(id)arg3;
 - (id)initWithContext:(id)arg1 slideNodes:(id)arg2;
+- (id)initWithContext:(id)arg1 slideNodes:(id)arg2 textStorageTitleRanges:(id)arg3;
+- (id)initWithContext:(id)arg1 slideNodes:(id)arg2 textStorageTitleRanges:(id)arg3 drawables:(id)arg4 builds:(id)arg5 buildChunks:(id)arg6 drawableGeometriesInRoot:(id)arg7 slideNodeUUID:(id)arg8;
 - (void)loadFromArchive:(const struct PasteboardNativeStorageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct RepeatedPtrField<KN::BuildChunkArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct Size {} *x8; struct RepeatedPtrField<TSP::Range> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; struct RepeatedPtrField<TSD::GeometryArchive> { void **x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; int x12; unsigned int x13[1]; }*)arg1 unarchiver:(id)arg2;
-- (void)originalShowSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })originalShowSize;
+- (void)originalShowSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)saveToArchive:(struct PasteboardNativeStorageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct RepeatedPtrField<KN::BuildChunkArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct Size {} *x8; struct RepeatedPtrField<TSP::Range> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; struct RepeatedPtrField<TSD::GeometryArchive> { void **x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; int x12; unsigned int x13[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setOriginalShowSize:(struct CGSize { float x1; float x2; })arg1;

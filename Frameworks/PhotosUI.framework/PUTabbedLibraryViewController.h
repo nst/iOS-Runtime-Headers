@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSMutableIndexSet, NSString, PUMomentsZoomLevelManager, PUSessionInfo, PUTabbedLibraryViewControllerSpec, UINavigationController;
 
-@interface PUTabbedLibraryViewController : UITabBarController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLInvitationRecordsObserver, PLDismissableViewController, PLRootLibraryNavigationController, UINavigationControllerDelegate> {
+@interface PUTabbedLibraryViewController : UITabBarController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLDismissableViewController, PLInvitationRecordsObserver, PLRootLibraryNavigationController, UINavigationControllerDelegate> {
     NSMutableIndexSet *_everDisplayedContentModes;
     NSDictionary *_filteredAlbumListsByContentMode;
     int _pendingSelectedContentMode;

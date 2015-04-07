@@ -22,8 +22,8 @@
 - (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(id)arg3;
 - (id)fileURL;
 - (void)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5 withCompletion:(id)arg6;
-- (id)initWithFileURL:(id)arg1 error:(id*)arg2 processingQueue:(id)arg3;
 - (id)initWithFileURL:(id)arg1 error:(id*)arg2;
+- (id)initWithFileURL:(id)arg1 error:(id*)arg2 processingQueue:(id)arg3;
 - (id)manifestHash;
 - (id)processingQueue;
 - (id)remoteAssetManager;

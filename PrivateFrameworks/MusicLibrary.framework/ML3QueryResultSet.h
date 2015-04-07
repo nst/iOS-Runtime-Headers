@@ -5,22 +5,22 @@
 @class ML3Query, ML3QueryResultSet_BackingStore, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface ML3QueryResultSet : NSObject <NSCopying> {
+    ML3QueryResultSet_BackingStore *_backingStore;
+    ML3Query *_query;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_requestCoalescingQueue;
+    unsigned long long _revision;
     struct vector<ML3Section, std::__1::allocator<ML3Section> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<ML3Section *, std::__1::allocator<ML3Section> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    ML3QueryResultSet_BackingStore *_backingStore;
-    ML3Query *_query;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_requestCoalescingQueue;
-    unsigned long long _revision;
     } _sectionIndexes;
     NSString *_subCollectionCountProperty;
+    bool _supportsIncrementalUpdate;
     unsigned long _totalCount;
     NSMutableArray *_updateToLibraryCurrentRevisionCompletionBlocks;
-    bool_supportsIncrementalUpdate;
 }
 
 @property(readonly) unsigned long count;
@@ -47,8 +47,8 @@
 - (id)initWithQuery:(id)arg1;
 - (id)query;
 - (void)resetBackingStore;
-- (void)resultAtIndex:(unsigned long)arg1 withCompletion:(id)arg2;
 - (id)resultAtIndex:(unsigned long)arg1;
+- (void)resultAtIndex:(unsigned long)arg1 withCompletion:(id)arg2;
 - (unsigned long long)revision;
 - (id)sectionIndexTitles;
 - (unsigned int)songCountAtIndex:(unsigned long)arg1;

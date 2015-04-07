@@ -5,26 +5,17 @@
 @class CAMediaTimingFunction, NSArray, NSMutableArray;
 
 @interface TSCHMultiDataLayerAnimationInfo : NSObject <NSCopying> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     BOOL mAboveIntercept;
     BOOL mAtIntercept;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mChartBodyFrameInRepElementSpace;
     BOOL mCrossesIntercept;
     BOOL mCurrentAboveIntercept;
@@ -32,6 +23,15 @@
     float mDuration;
     BOOL mElementUndefined;
     BOOL mHorizontalChart;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mInterceptRect;
     NSArray *mKeyTimes;
     NSMutableArray *mLayerAnimationValues;
@@ -58,8 +58,8 @@
 
 - (id).cxx_construct;
 - (BOOL)aboveIntercept;
-- (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(BOOL)arg5;
 - (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4;
+- (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(BOOL)arg5;
 - (void)addImageContentsAnimationForLayer:(id)arg1 fromImage:(id)arg2 toImage:(id)arg3 keyTimes:(id)arg4;
 - (BOOL)atIntercept;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })chartBodyFrameInRepElementSpace;

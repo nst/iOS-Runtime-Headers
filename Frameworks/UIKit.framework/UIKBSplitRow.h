@@ -5,11 +5,11 @@
 @class NSDictionary, NSMutableArray, UIKBTree;
 
 @interface UIKBSplitRow : NSObject {
+    UIKBTree *_attrlistLeft;
+    UIKBTree *_attrlistRight;
     struct CGSize { 
         float width; 
         float height; 
-    UIKBTree *_attrlistLeft;
-    UIKBTree *_attrlistRight;
     } _defaultKeySize;
     UIKBTree *_geolistLeft;
     UIKBTree *_geolistRight;

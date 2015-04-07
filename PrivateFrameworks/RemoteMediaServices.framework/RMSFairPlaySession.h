@@ -3,10 +3,10 @@
  */
 
 @interface RMSFairPlaySession : NSObject {
+    BOOL _handshakeComplete;
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
         unsigned char ID[20]; 
-    BOOL _handshakeComplete;
     } _hardwareInfo;
     struct FPSAPContextOpaque_ { } *_sessionToken;
 }

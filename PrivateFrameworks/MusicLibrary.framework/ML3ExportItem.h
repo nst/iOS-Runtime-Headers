@@ -28,8 +28,8 @@
 - (id)exportData;
 - (BOOL)hasValueForProperty:(unsigned int)arg1;
 - (id)initWithPersistentId:(long long)arg1 entityClass:(Class)arg2 library:(id)arg3;
-- (id)initWithPersistentId:(long long)arg1 entityClass:(Class)arg2 propertyKeysToExport:(unsigned int*)arg3 numKeys:(unsigned int)arg4 library:(id)arg5;
 - (id)initWithPersistentId:(long long)arg1 entityClass:(id)arg2 properties:(id)arg3 library:(id)arg4;
+- (id)initWithPersistentId:(long long)arg1 entityClass:(Class)arg2 propertyKeysToExport:(unsigned int*)arg3 numKeys:(unsigned int)arg4 library:(id)arg5;
 - (BOOL)isValid;
 - (id)library;
 - (int)longValueForProperty:(unsigned int)arg1;

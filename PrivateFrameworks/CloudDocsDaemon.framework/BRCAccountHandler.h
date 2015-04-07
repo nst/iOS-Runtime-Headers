@@ -18,8 +18,8 @@
 
 + (void)_migrateAccountIfNecessaryForAccountID:(id)arg1;
 + (id)inSystemStoreAccountIDForUbiquityDataclass;
-+ (id)inSystemStoreAccountIDWithServiceValidation:(BOOL)arg1 isServiceEnabled:(BOOL*)arg2 didCompleteFirstSyncDown:(BOOL*)arg3;
 + (id)inSystemStoreAccountIDWithServiceValidation:(BOOL)arg1;
++ (id)inSystemStoreAccountIDWithServiceValidation:(BOOL)arg1 isServiceEnabled:(BOOL*)arg2 didCompleteFirstSyncDown:(BOOL*)arg3;
 + (BOOL)isAccountStillUsingUbiquity;
 
 - (void).cxx_destruct;

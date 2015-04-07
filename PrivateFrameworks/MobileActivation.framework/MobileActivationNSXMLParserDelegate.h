@@ -7,9 +7,9 @@
 @interface MobileActivationNSXMLParserDelegate : NSObject <NSXMLParserDelegate> {
     NSMutableDictionary *_activationTicket;
     NSMutableString *_currentPlist;
+    bool _recertifying;
+    bool _renderHTML;
     int _state;
-    bool_recertifying;
-    bool_renderHTML;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -17,8 +17,8 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-- (id)activationTicket:(id*)arg1 andRenderHTML:(bool*)arg2;
 - (id)activationTicket:(id*)arg1;
+- (id)activationTicket:(id*)arg1 andRenderHTML:(bool*)arg2;
 - (void)appendClosingTagForElementName:(id)arg1;
 - (void)appendOpeningTagForElementName:(id)arg1 andAttributes:(id)arg2;
 - (void)dealloc;

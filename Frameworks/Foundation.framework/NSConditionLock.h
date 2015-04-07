@@ -21,8 +21,8 @@
 - (id)initWithCondition:(int)arg1;
 - (void)lock;
 - (BOOL)lockBeforeDate:(id)arg1;
-- (BOOL)lockWhenCondition:(int)arg1 beforeDate:(id)arg2;
 - (void)lockWhenCondition:(int)arg1;
+- (BOOL)lockWhenCondition:(int)arg1 beforeDate:(id)arg2;
 - (id)name;
 - (void)setName:(id)arg1;
 - (BOOL)tryLock;

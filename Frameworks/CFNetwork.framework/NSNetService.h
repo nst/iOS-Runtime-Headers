@@ -41,8 +41,8 @@
 - (id)hostName;
 - (BOOL)includesPeerToPeer;
 - (id)initWithCFNetService:(struct __CFNetService { }*)arg1;
-- (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3 port:(int)arg4;
 - (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3;
+- (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3 port:(int)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
 - (id)normalizedType;

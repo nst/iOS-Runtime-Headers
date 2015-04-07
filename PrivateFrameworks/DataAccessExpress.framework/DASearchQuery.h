@@ -5,10 +5,10 @@
 @class <DASearchQueryConsumer>, NSString;
 
 @interface DASearchQuery : NSObject {
+    <DASearchQueryConsumer> *_consumer;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    <DASearchQueryConsumer> *_consumer;
     } _range;
     NSString *_searchID;
     NSString *_searchString;

@@ -4,7 +4,7 @@
 
 @class NSArray, NSObject<WebPDFViewPlaceholderDelegate>, NSString, WebDataSource;
 
-@interface WebPDFViewPlaceholder : WAKView <WebPDFDocumentView, WebPDFDocumentRepresentation> {
+@interface WebPDFViewPlaceholder : WAKView <WebPDFDocumentRepresentation, WebPDFDocumentView> {
     struct CGSize { 
         float width; 
         float height; 

@@ -8,12 +8,47 @@
 
 @class <MKMapViewDelegate>, <MKMapViewDelegate><MKMapViewDelegatePrivate>, CLLocation, MKAnnotationContainerView, MKAnnotationView, MKAttributionLabel, MKBasicMapView, MKCompassView, MKMapAnnotationManager, MKMapCamera, MKMapGestureController, MKMapViewInternal, MKOverlayContainerView, MKScaleView, MKUserLocation, NSArray, NSString, NSTimer, UIGestureRecognizer, UIImageView, UILabel, UILongPressGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer, UITextView, UIView, VKLabelMarker, VKMapView, VKPuckAnimator, _MKEnvironmentLabel;
 
-@interface MKMapView : UIView <VKPuckAnimatorDelegate, MKOverlayContainerViewDelegate, UIGestureRecognizerDelegate, MKVariableDelayTapRecognizerDelegate, MKAnnotationContainerViewDelegate, VKMapViewDelegate, MKMapGestureControllerDelegate, MKAnnotationMarkerContainer, MKAnnotationManagerDelegate, GEOResourceManifestTileGroupObserver, NSCoding> {
+@interface MKMapView : UIView <GEOResourceManifestTileGroupObserver, MKAnnotationContainerViewDelegate, MKAnnotationManagerDelegate, MKAnnotationMarkerContainer, MKMapGestureControllerDelegate, MKOverlayContainerViewDelegate, MKVariableDelayTapRecognizerDelegate, NSCoding, UIGestureRecognizerDelegate, VKMapViewDelegate, VKPuckAnimatorDelegate> {
+    MKAnnotationContainerView *_annotationContainer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _annotationCoordinateTest;
+
+    MKMapAnnotationManager *_annotationManager;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _annotationRectTest;
+
+    UIImageView *_attributionBadgeView;
+    MKAttributionLabel *_attributionLabel;
+    BOOL _automaticallySnapsToNorth;
+    MKBasicMapView *_basicMapView;
+    id _bottomLayoutGuide;
+    MKMapCamera *_camera;
+    BOOL _compassEnabled;
+    NSTimer *_compassHideTimer;
+    MKCompassView *_compassView;
+    BOOL _compassVisible;
+    UIView *_contentView;
+    unsigned long long _currentFlyoverAnimationID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _debugConsoleAdditionalInfoProvider;
+
+    _MKEnvironmentLabel *_debugCurrentEnvironmentLabel;
+    NSTimer *_debugTimer;
+    UILabel *_debugView;
+    unsigned int _debugViewIndex;
+    NSTimer *_defaultLocationTimer;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
+    } _edgeInsets;
     struct { 
         unsigned int callsDelegateForAllRegionChanges : 1; 
         unsigned int changingRegion : 1; 
@@ -79,29 +114,6 @@
         unsigned int delegateDidChangeUserTrackingMode : 1; 
         unsigned int delegateDidChangeUserTrackingModeButton : 1; 
         unsigned int delegateDidChangeMapType : 1; 
-    MKAnnotationContainerView *_annotationContainer;
-    id _annotationCoordinateTest;
-    MKMapAnnotationManager *_annotationManager;
-    id _annotationRectTest;
-    UIImageView *_attributionBadgeView;
-    MKAttributionLabel *_attributionLabel;
-    BOOL _automaticallySnapsToNorth;
-    MKBasicMapView *_basicMapView;
-    id _bottomLayoutGuide;
-    MKMapCamera *_camera;
-    BOOL _compassEnabled;
-    NSTimer *_compassHideTimer;
-    MKCompassView *_compassView;
-    BOOL _compassVisible;
-    UIView *_contentView;
-    unsigned long long _currentFlyoverAnimationID;
-    id _debugConsoleAdditionalInfoProvider;
-    _MKEnvironmentLabel *_debugCurrentEnvironmentLabel;
-    NSTimer *_debugTimer;
-    UILabel *_debugView;
-    unsigned int _debugViewIndex;
-    NSTimer *_defaultLocationTimer;
-    } _edgeInsets;
     } _flags;
     MKMapGestureController *_gestureController;
     BOOL _hasSetLayoutMargins;
@@ -114,15 +126,27 @@
     UITapGestureRecognizer *_nonselectingTapGestureRecognizer;
     MKOverlayContainerView *_overlayContainer;
     VKLabelMarker *_pressedLabelMarker;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _regionSetterWhenSized;
+
     <MKMapViewDelegate><MKMapViewDelegatePrivate> *_safeDelegate;
     BOOL _scaleEnabled;
     MKScaleView *_scaleView;
     BOOL _scaleVisible;
     UIView *_scrollContainerView;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _selectAnnotationViewAfterRedrawBlock;
+
     UITapGestureRecognizer *_selectingTapGestureRecognizer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _showCalloutAfterRegionChangeBlock;
+
     NSTimer *_startEffectsTimer;
     unsigned int _suspendedEffectsCount;
     id _topLayoutGuide;
@@ -142,12 +166,9 @@
 @property struct { double x1; double x2; } centerCoordinate;
 @property(getter=_currentFlyoverAnimationID,setter=_setCurrentFlyoverAnimationID:) unsigned long long currentFlyoverAnimationID;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property <MKMapViewDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
 @property(getter=_detailedDescription,readonly) NSString * detailedDescription;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property BOOL ignoreLocationUpdates;
 @property unsigned int mapType;
@@ -161,7 +182,6 @@
 @property BOOL showsBuildings;
 @property BOOL showsPointsOfInterest;
 @property BOOL showsUserLocation;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(readonly) MKUserLocation * userLocation;
 @property(retain,readonly) MKAnnotationView * userLocationView;
@@ -193,8 +213,8 @@
 - (BOOL)_annotationViewsAreAddedImmediately;
 - (int)_applicationState;
 - (BOOL)_automaticallySnapsToNorth;
-- (float)_boundedZoomLevel:(float)arg1 coordinate:(struct { double x1; double x2; })arg2;
 - (float)_boundedZoomLevel:(float)arg1;
+- (float)_boundedZoomLevel:(float)arg1 coordinate:(struct { double x1; double x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calloutContentRect;
 - (id)_calloutPopoverController;
 - (id)_camera;
@@ -244,8 +264,8 @@
 - (void)_fixUserLocationFromPresentationValue;
 - (void)_forceFrame;
 - (double)_goToCenterCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(float)arg2 animated:(BOOL)arg3;
-- (void)_goToMapRegion:(id)arg1 duration:(double)arg2 animated:(BOOL)arg3 completionHandler:(id)arg4;
 - (void)_goToMapRegion:(id)arg1 duration:(double)arg2 animated:(BOOL)arg3;
+- (void)_goToMapRegion:(id)arg1 duration:(double)arg2 animated:(BOOL)arg3 completionHandler:(id)arg4;
 - (void)_handleLongPressDidEnd;
 - (void)_handleStyleDebugGesture:(id)arg1;
 - (void)_handleTapToDeselect:(id)arg1;
@@ -287,8 +307,8 @@
 - (id)_panningGestureRecognizer;
 - (void)_pauseFlyoverAnimation;
 - (void)_pauseUserLocationUpdates;
-- (void)_performFlyoverAnimation:(id)arg1 animateToStart:(BOOL)arg2;
 - (void)_performFlyoverAnimation:(id)arg1;
+- (void)_performFlyoverAnimation:(id)arg1 animateToStart:(BOOL)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_prepareFlyoverAnimation:(id)arg1 inBackground:(BOOL)arg2 completion:(id)arg3;
 - (void)_removePersistentVectorOverlay:(id)arg1;
@@ -303,8 +323,8 @@
 - (BOOL)_rotationPossible;
 - (int)_roundedZoomLevel;
 - (void)_selectAnnotation:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (void)_selectLabelMarker:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_selectLabelMarker:(id)arg1 animated:(BOOL)arg2;
+- (void)_selectLabelMarker:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_selectUserLocationTypeWithDeltaZoomLevel:(float)arg1;
 - (id)_selectedLabelMarker;
 - (id)_selectingTapGestureRecognizer;
@@ -312,17 +332,17 @@
 - (void)_setAllowsPopoverWhenNotInWindow:(BOOL)arg1;
 - (void)_setApplicationState:(int)arg1;
 - (void)_setAutomaticallySnapsToNorth:(BOOL)arg1;
+- (void)_setCamera:(id)arg1;
 - (void)_setCamera:(id)arg1 animated:(BOOL)arg2;
 - (void)_setCamera:(id)arg1 duration:(double)arg2 timing:(id)arg3;
 - (void)_setCamera:(id)arg1 duration:(double)arg2 timingCurve:(int)arg3;
-- (void)_setCamera:(id)arg1;
 - (void)_setCanSelectAllLabels:(BOOL)arg1;
 - (void)_setCanSelectPOIs:(BOOL)arg1;
 - (void)_setCompassVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setCurrentFlyoverAnimationID:(unsigned long long)arg1;
 - (void)_setDebugConsoleAdditionalInfoProvider:(id)arg1;
-- (void)_setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 explicit:(BOOL)arg2;
 - (void)_setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 explicit:(BOOL)arg2;
 - (void)_setLabelEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setLocationPropagationEnabled:(BOOL)arg1;
 - (void)_setLocationPulseEnabled:(BOOL)arg1;
@@ -332,8 +352,8 @@
 - (void)_setPanWithMomentum:(BOOL)arg1;
 - (void)_setSafeDelegate:(id)arg1;
 - (void)_setScaleVisible:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_setScrolling:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setScrolling:(BOOL)arg1;
+- (void)_setScrolling:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setShouldAnimatePositionWithRouteMatch:(BOOL)arg1;
 - (void)_setShouldDelayLocationUpdatesUntilInitialRendering:(BOOL)arg1;
 - (void)_setShouldSplitRouteLine:(BOOL)arg1;
@@ -383,8 +403,8 @@
 - (void)_updateDebugViewFrameWithEdgeInsets;
 - (void)_updateEffects;
 - (void)_updateEnvironmentLabelText;
-- (void)_updateFromCamera:(id)arg1 duration:(double)arg2 timing:(id)arg3;
 - (void)_updateFromCamera:(id)arg1;
+- (void)_updateFromCamera:(id)arg1 duration:(double)arg2 timing:(id)arg3;
 - (void)_updateHeading:(id)arg1 animated:(BOOL)arg2;
 - (void)_updateHeadingOrientation;
 - (void)_updateIconsShouldAlignToPixels;
@@ -425,10 +445,10 @@
 - (void)addAnnotation:(id)arg1;
 - (void)addAnnotationRepresentation:(id)arg1 allowAnimation:(BOOL)arg2;
 - (void)addAnnotations:(id)arg1;
-- (void)addOverlay:(id)arg1 level:(int)arg2;
 - (void)addOverlay:(id)arg1;
-- (void)addOverlays:(id)arg1 level:(int)arg2;
+- (void)addOverlay:(id)arg1 level:(int)arg2;
 - (void)addOverlays:(id)arg1;
+- (void)addOverlays:(id)arg1 level:(int)arg2;
 - (void)annotationContainer:(id)arg1 annotationView:(id)arg2 calloutAccessoryControlTapped:(id)arg3;
 - (float)annotationContainer:(id)arg1 pinDropDistanceForCoordinate:(struct { double x1; double x2; })arg2 maxDistance:(float*)arg3 startPoint:(struct CGPoint { float x1; float x2; }*)arg4 shadowStartPoint:(struct CGPoint { float x1; float x2; }*)arg5;
 - (void)annotationContainer:(id)arg1 scrollToRevealCalloutWithOffset:(struct CGPoint { float x1; float x2; })arg2 annotationCoordinate:(struct { double x1; double x2; })arg3 completionHandler:(id)arg4;
@@ -518,8 +538,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertOverlay:(id)arg1 aboveOverlay:(id)arg2;
-- (void)insertOverlay:(id)arg1 atIndex:(unsigned int)arg2 level:(int)arg3;
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)insertOverlay:(id)arg1 atIndex:(unsigned int)arg2 level:(int)arg3;
 - (void)insertOverlay:(id)arg1 belowOverlay:(id)arg2;
 - (BOOL)isCompassEnabled;
 - (BOOL)isLocationConsoleEnabled;
@@ -569,8 +589,8 @@
 - (void)mapLayerDidFinishLoadingTiles:(id)arg1;
 - (void)mapLayerDidStartLoadingTiles:(id)arg1;
 - (void)mapLayerWillStartFlyoverTour:(id)arg1;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectThatFits:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 edgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectThatFits:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectThatFits:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 edgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)mapRegion;
 - (unsigned int)mapType;
 - (void)moveAnnotationRepresentation:(id)arg1 fromCoordinate:(struct { double x1; double x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4;
@@ -607,11 +627,11 @@
 - (void)setBackdropViewQualityChangingDisabled:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCallsDelegateForAllRegionChanges:(BOOL)arg1;
-- (void)setCamera:(id)arg1 animated:(BOOL)arg2;
 - (void)setCamera:(id)arg1;
+- (void)setCamera:(id)arg1 animated:(BOOL)arg2;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 animated:(BOOL)arg2;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 animated:(BOOL)arg2;
 - (void)setCompassEnabled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -622,8 +642,8 @@
 - (void)setMapType:(unsigned int)arg1;
 - (void)setPitchEnabled:(BOOL)arg1;
 - (void)setPredictedUserLocation:(id)arg1;
-- (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)setRendersInBackground:(BOOL)arg1;
 - (void)setRotateEnabled:(BOOL)arg1;
 - (void)setScaleEnabled:(BOOL)arg1;
@@ -636,11 +656,11 @@
 - (void)setShowsPointsOfInterest:(BOOL)arg1;
 - (void)setShowsUserLocation:(BOOL)arg1;
 - (void)setSuspended:(BOOL)arg1;
-- (void)setUserTrackingMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setUserTrackingMode:(int)arg1;
+- (void)setUserTrackingMode:(int)arg1 animated:(BOOL)arg2;
+- (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 edgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 animated:(BOOL)arg3;
-- (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setZoomEnabled:(BOOL)arg1;
 - (void)set_annotationViewsAreAddedImmediately:(BOOL)arg1;
 - (void)set_compassHideTimer:(id)arg1;

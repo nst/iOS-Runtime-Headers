@@ -22,8 +22,8 @@
 @property(readonly) NSString * presetKind;
 @property int scope;
 
-- (void)addIndexedStyle:(id)arg1 withEntryStyle:(id)arg2 showInTOC:(BOOL)arg3;
 - (void)addIndexedStyle:(id)arg1 withEntryStyle:(id)arg2;
+- (void)addIndexedStyle:(id)arg1 withEntryStyle:(id)arg2 showInTOC:(BOOL)arg3;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

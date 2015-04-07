@@ -23,8 +23,8 @@
 
 + (id)updateGroup;
 + (id)updateGroupForTargetQueue:(id)arg1;
-+ (id)updateGroupWithName:(id)arg1 taregetQueue:(id)arg2;
 + (id)updateGroupWithName:(id)arg1;
++ (id)updateGroupWithName:(id)arg1 taregetQueue:(id)arg2;
 
 - (void)applyUpdates;
 - (void)cancelUpdates;

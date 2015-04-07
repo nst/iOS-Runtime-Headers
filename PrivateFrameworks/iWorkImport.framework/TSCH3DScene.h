@@ -52,8 +52,8 @@
 - (id)main;
 - (void)makeAllObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeDelegatesFromDelegator:(id)arg1;
-- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
+- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (id)mutablePropertiesForType:(id)arg1;
 - (id)objects;
 - (id)original;

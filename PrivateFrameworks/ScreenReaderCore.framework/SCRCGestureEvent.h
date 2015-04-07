@@ -10,8 +10,8 @@
         float y; 
     } _averageLocation;
     unsigned int _deviceIdentifier;
-    unsigned int _fingerCount;
     SCRCGestureFinger *_finger[8];
+    unsigned int _fingerCount;
     double _time;
 }
 

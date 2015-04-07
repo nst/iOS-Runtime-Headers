@@ -5,10 +5,10 @@
 @class NSObject<OS_dispatch_queue>, PLCloudPhotoLibraryManager, PLPhotoLibrary;
 
 @interface PLCacheDeleteManager : NSObject {
+    bool _cancelRequested;
     PLCloudPhotoLibraryManager *_cloudManager;
     PLPhotoLibrary *_photoLibrary;
     NSObject<OS_dispatch_queue> *_pruneQueue;
-    bool_cancelRequested;
 }
 
 + (void)deleteExpiredTrashBinObjects;

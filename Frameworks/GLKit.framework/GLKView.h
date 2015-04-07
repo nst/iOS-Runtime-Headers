@@ -10,11 +10,11 @@
 @class <GLKViewDelegate>, EAGLContext, NSMutableDictionary, UIImage;
 
 @interface GLKView : UIView <NSCoding> {
-    int (*_drawRectIMP)();
     EAGLContext *_context;
     <GLKViewDelegate> *_delegate;
     unsigned int _depthRenderbuffer;
     unsigned int _depthStencilRenderbuffer;
+    int (*_drawRectIMP)();
     int _drawableColorFormat;
     int _drawableDepthFormat;
     int _drawableHeight;
@@ -56,7 +56,6 @@
 
 + (Class)layerClass;
 
-- (int (*)())drawRectIMP;
 - (BOOL)_canDrawContent;
 - (BOOL)_controlsOwnScaleFactor;
 - (void)_createFramebuffer;
@@ -75,6 +74,7 @@
 - (unsigned int)depthStencilRenderbuffer;
 - (void)display;
 - (void)displayLayer:(id)arg1;
+- (int (*)())drawRectIMP;
 - (int)drawableColorFormat;
 - (int)drawableDepthFormat;
 - (int)drawableHeight;
@@ -86,8 +86,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)inDraw;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
 - (void)layoutSubviews;
 - (unsigned int)multisampleColorRenderbuffer;
 - (unsigned int)multisampleFramebuffer;

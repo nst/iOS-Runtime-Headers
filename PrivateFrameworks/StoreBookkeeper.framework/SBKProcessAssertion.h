@@ -10,7 +10,11 @@
 
 @interface SBKProcessAssertion : NSObject {
     BKSProcessAssertion *_bkProcessAssertion;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _expirationBlock;
+
     id _expirationObserver;
     unsigned int _identifier;
     NSObject<OS_dispatch_queue> *_queue;

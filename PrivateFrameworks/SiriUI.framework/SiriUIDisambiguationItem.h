@@ -5,9 +5,6 @@
 @class NSString, UIImageView;
 
 @interface SiriUIDisambiguationItem : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     NSString *_extraDisambiguationSubText;
     NSString *_extraDisambiguationText;
     NSString *_headingText;
@@ -15,6 +12,9 @@
     BOOL _showsFavoriteStar;
     NSString *_subtitle;
     NSString *_title;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _titleBoldedRange;
 }
 

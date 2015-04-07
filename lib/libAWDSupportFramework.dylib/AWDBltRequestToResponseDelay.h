@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface AWDBltRequestToResponseDelay : PBCodable <NSCopying> {
+    unsigned int _delayMs;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int delayMs : 1; 
-    unsigned int _delayMs;
     } _has;
     unsigned long long _timestamp;
     NSString *_uniqueid;

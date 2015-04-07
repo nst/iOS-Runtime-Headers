@@ -17,7 +17,11 @@
     NSRunLoop *_runLoop;
     BOOL _running;
     BOOL _scheduled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _timeoutCallback;
+
     double _timeoutInterval;
     NSObject<OS_dispatch_source> *_timer;
 }

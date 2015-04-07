@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface NNMKProtoAccountAdditionOrUpdate : PBCodable <NSCopying> {
-    struct { 
-        unsigned int shouldArchive : 1; 
     NSString *_accountId;
     NSString *_displayName;
+    struct { 
+        unsigned int shouldArchive : 1; 
     } _has;
     BOOL _shouldArchive;
 }

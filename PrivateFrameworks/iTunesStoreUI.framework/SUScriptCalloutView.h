@@ -28,8 +28,8 @@
 - (id)scriptAttributeKeys;
 - (void)setSubtitle:(id)arg1;
 - (void)setTargetX:(float)arg1 y:(float)arg2 width:(float)arg3 height:(float)arg4;
-- (void)setTitle:(id)arg1 subtitle:(id)arg2;
 - (void)setTitle:(id)arg1;
+- (void)setTitle:(id)arg1 subtitle:(id)arg2;
 - (void)setVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)subtitle;
 - (id)title;

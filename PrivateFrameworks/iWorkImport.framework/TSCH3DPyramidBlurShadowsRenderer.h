@@ -5,6 +5,7 @@
 @class NSArray, TSCH3DPyramidBlurFBOResource;
 
 @interface TSCH3DPyramidBlurShadowsRenderer : NSObject <TSCH3DShadowsRenderer> {
+    TSCH3DPyramidBlurFBOResource *mFinalShadowResource;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,7 +17,6 @@
             int g; 
             int t; 
         } ; 
-    TSCH3DPyramidBlurFBOResource *mFinalShadowResource;
     } mInitialSize;
     NSArray *mPyramidResources;
     int mRequestedSize;

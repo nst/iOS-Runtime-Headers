@@ -5,15 +5,15 @@
 @class NSData, NSString;
 
 @interface MPPMediaPredicateValue : PBCodable <NSCopying> {
+    BOOL _boolPredicateValue;
+    NSData *_bytesPredicateValue;
+    double _doublePredicateValue;
+    float _floatPredicateValue;
     struct { 
         unsigned int doublePredicateValue : 1; 
         unsigned int integerPredicateValue : 1; 
         unsigned int floatPredicateValue : 1; 
         unsigned int boolPredicateValue : 1; 
-    BOOL _boolPredicateValue;
-    NSData *_bytesPredicateValue;
-    double _doublePredicateValue;
-    float _floatPredicateValue;
     } _has;
     long long _integerPredicateValue;
     NSString *_stringPredicateValue;

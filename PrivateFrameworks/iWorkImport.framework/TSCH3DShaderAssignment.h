@@ -5,20 +5,20 @@
 @class NSArray, NSString, TSCH3DShaderProgram, TSCH3DShaderVariableLinkage;
 
 @interface TSCH3DShaderAssignment : NSObject <TSCH3DShaderStatement> {
+    TSCH3DShaderVariableLinkage *mAssignee;
     struct TSCH3DShaderVariableScopeType { 
         unsigned int mValue; 
-    struct TSCH3DShaderType { 
-        unsigned int mValue; 
+    } mAssigneeScope;
     struct vector<TSCH3DShaderVariableScopeType, std::__1::allocator<TSCH3DShaderVariableScopeType> > { 
         struct TSCH3DShaderVariableScopeType {} *__begin_; 
         struct TSCH3DShaderVariableScopeType {} *__end_; 
         struct __compressed_pair<TSCH3DShaderVariableScopeType *, std::__1::allocator<TSCH3DShaderVariableScopeType> > { 
             struct TSCH3DShaderVariableScopeType {} *__first_; 
         } __end_cap_; 
-    TSCH3DShaderVariableLinkage *mAssignee;
-    } mAssigneeScope;
     } mDependeeScopes;
     NSArray *mDependees;
+    struct TSCH3DShaderType { 
+        unsigned int mValue; 
     } mLinkageType;
     TSCH3DShaderProgram *mProgram;
     NSString *mStatement;

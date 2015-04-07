@@ -26,8 +26,8 @@
 - (id)_stringWithDescriptionForResponseError:(id)arg1;
 - (id)data;
 - (id)error;
-- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2 bodyIsPlist:(BOOL)arg3;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2 bodyIsPlist:(BOOL)arg3;
 - (id)maxAge;
 - (id)protocolVersion;
 - (id)responseDictionary;

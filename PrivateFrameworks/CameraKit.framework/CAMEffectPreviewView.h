@@ -5,11 +5,11 @@
 @class NSString, UILabel, UIView;
 
 @interface CAMEffectPreviewView : UICollectionViewCell {
+    UIView *_dimmingView;
+    UILabel *_nameLabel;
     struct CGSize { 
         float width; 
         float height; 
-    UIView *_dimmingView;
-    UILabel *_nameLabel;
     } _thumbnailSize;
     UIView *_thumbnailView;
 }

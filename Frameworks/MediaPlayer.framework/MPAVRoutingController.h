@@ -60,8 +60,8 @@
 - (id)name;
 - (BOOL)pickBestDeviceRoute;
 - (BOOL)pickHandsetRoute;
-- (BOOL)pickRoute:(id)arg1 withPassword:(id)arg2;
 - (BOOL)pickRoute:(id)arg1;
+- (BOOL)pickRoute:(id)arg1 withPassword:(id)arg2;
 - (BOOL)pickSpeakerRoute;
 - (id)pickedRoute;
 - (BOOL)receiverRouteIsPicked;

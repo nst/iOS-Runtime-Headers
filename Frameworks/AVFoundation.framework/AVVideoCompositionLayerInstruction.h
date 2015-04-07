@@ -4,7 +4,7 @@
 
 @class AVVideoCompositionLayerInstructionInternal;
 
-@interface AVVideoCompositionLayerInstruction : NSObject <NSSecureCoding, NSCopying, NSMutableCopying> {
+@interface AVVideoCompositionLayerInstruction : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     AVVideoCompositionLayerInstructionInternal *_layerInstruction;
 }
 

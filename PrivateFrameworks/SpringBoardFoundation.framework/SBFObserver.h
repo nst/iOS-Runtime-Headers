@@ -5,8 +5,8 @@
 @interface SBFObserver : NSObject {
 }
 
-+ (id)observerWithResultBlock:(id)arg1 completionBlock:(id)arg2 failureBlock:(id)arg3;
 + (id)observerWithResultBlock:(id)arg1;
++ (id)observerWithResultBlock:(id)arg1 completionBlock:(id)arg2 failureBlock:(id)arg3;
 + (void)sendArray:(id)arg1 error:(id)arg2 toObserver:(id)arg3;
 + (void)sendObserver:(id)arg1 resultsOfBlock:(id)arg2;
 

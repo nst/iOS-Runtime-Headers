@@ -3,13 +3,13 @@
  */
 
 @interface SUReportConcernViewController : SUTableViewController {
+    BOOL _animatingKeyboard;
+    unsigned long long _itemIdentifier;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    BOOL _animatingKeyboard;
-    unsigned long long _itemIdentifier;
     } _originalTableInsets;
 }
 

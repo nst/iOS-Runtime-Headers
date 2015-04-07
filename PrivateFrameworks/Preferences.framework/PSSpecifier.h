@@ -63,10 +63,10 @@
 + (id)groupSpecifierWithFooterLinkButton:(id)arg1;
 + (id)groupSpecifierWithFooterText:(id)arg1 linkButton:(id)arg2;
 + (id)groupSpecifierWithFooterText:(id)arg1 linkButtons:(id)arg2;
-+ (id)groupSpecifierWithHeader:(id)arg1 footer:(id)arg2 linkButtons:(id)arg3;
 + (id)groupSpecifierWithHeader:(id)arg1 footer:(id)arg2;
-+ (id)groupSpecifierWithID:(id)arg1 name:(id)arg2;
++ (id)groupSpecifierWithHeader:(id)arg1 footer:(id)arg2 linkButtons:(id)arg3;
 + (id)groupSpecifierWithID:(id)arg1;
++ (id)groupSpecifierWithID:(id)arg1 name:(id)arg2;
 + (id)groupSpecifierWithName:(id)arg1;
 + (int)keyboardTypeForString:(id)arg1;
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(int)arg6 edit:(Class)arg7;
@@ -117,10 +117,10 @@
 - (void)setTarget:(id)arg1;
 - (void)setTitleDictionary:(id)arg1;
 - (void)setUserInfo:(id)arg1;
-- (void)setValues:(id)arg1 titles:(id)arg2 shortTitles:(id)arg3 usingLocalizedTitleSorting:(BOOL)arg4;
-- (void)setValues:(id)arg1 titles:(id)arg2 shortTitles:(id)arg3;
-- (void)setValues:(id)arg1 titles:(id)arg2;
 - (void)setValues:(id)arg1;
+- (void)setValues:(id)arg1 titles:(id)arg2;
+- (void)setValues:(id)arg1 titles:(id)arg2 shortTitles:(id)arg3;
+- (void)setValues:(id)arg1 titles:(id)arg2 shortTitles:(id)arg3 usingLocalizedTitleSorting:(BOOL)arg4;
 - (void)setupIconImageWithBundle:(id)arg1;
 - (void)setupIconImageWithPath:(id)arg1;
 - (id)shortTitleDictionary;

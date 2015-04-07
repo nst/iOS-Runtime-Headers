@@ -5,16 +5,16 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface TTSAudioSession : NSObject {
-    struct { 
-        int category; 
-        long activity; 
-    struct { 
-        int category; 
-        long activity; 
     struct __CFBag { } *_activityBag;
     BOOL _audioSessionIsSetUp;
     BOOL _bluetoothAllowed;
+    struct { 
+        int category; 
+        long activity; 
     } _cachedState;
+    struct { 
+        int category; 
+        long activity; 
     } _desiredState;
     NSObject<OS_dispatch_queue> *_queue;
     int _serverGeneration;

@@ -8,13 +8,13 @@
         float left; 
         float bottom; 
         float right; 
+    } _alignmentEdgeInsets;
+    int _blendMode;
     struct { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _alignmentEdgeInsets;
-    int _blendMode;
     } _edgeInsets;
     int _exifOrientation;
     int _idiom;

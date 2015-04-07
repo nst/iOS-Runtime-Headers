@@ -5,10 +5,6 @@
 @class <TSPArchiverManagerDelegate>, NSMapTable, NSObject<OS_dispatch_queue>, TSPDescriptionGenerator;
 
 @interface TSPArchiverManager : NSObject {
-    struct { 
-        unsigned int isStopped : 1; 
-        unsigned int delegateRespondsToDidCreateArchiver : 1; 
-        unsigned int delegateRespondsToShouldDelayArchivingObject : 1; 
     NSObject<OS_dispatch_queue> *_archiveCompletionQueue;
     NSObject<OS_dispatch_queue> *_archiveDefaultQueue;
     NSObject<OS_dispatch_queue> *_archiveHighQueue;
@@ -19,6 +15,10 @@
     NSObject<OS_dispatch_queue> *_archiversLowQueue;
     <TSPArchiverManagerDelegate> *_delegate;
     TSPDescriptionGenerator *_descriptionGenerator;
+    struct { 
+        unsigned int isStopped : 1; 
+        unsigned int delegateRespondsToDidCreateArchiver : 1; 
+        unsigned int delegateRespondsToShouldDelayArchivingObject : 1; 
     } _flags;
 }
 
@@ -34,8 +34,8 @@
 - (void)dealloc;
 - (id)descriptionGenerator;
 - (id)init;
-- (id)initWithDelegate:(id)arg1 archiverClass:(Class)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 archiverClass:(Class)arg2;
 - (void)setDescriptionGenerator:(id)arg1;
 - (void)stop;
 

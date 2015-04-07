@@ -3,12 +3,12 @@
  */
 
 @interface TSDGLStateSnapshot : NSObject <NSCopying> {
+    unsigned int _currentGL_ACTIVE_TEXTURE;
     struct { 
         int x; 
         int y; 
         int width; 
         int height; 
-    unsigned int _currentGL_ACTIVE_TEXTURE;
     } _currentGL_VIEWPORT;
 }
 

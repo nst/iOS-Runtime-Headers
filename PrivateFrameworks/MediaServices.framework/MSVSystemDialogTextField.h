@@ -14,8 +14,8 @@
 @property(getter=isSecure) BOOL secure;
 @property(copy) NSString * title;
 
-+ (id)textFieldWithTitle:(id)arg1 secure:(BOOL)arg2;
 + (id)textFieldWithTitle:(id)arg1;
++ (id)textFieldWithTitle:(id)arg1 secure:(BOOL)arg2;
 
 - (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1;

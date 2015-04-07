@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface HKObjectType : NSObject <NSSecureCoding, NSCopying> {
+@interface HKObjectType : NSObject <NSCopying, NSSecureCoding> {
     int _code;
     Class _dataObjectClass;
     NSString *_identifier;

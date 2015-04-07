@@ -25,11 +25,11 @@
 @property(retain) SKTexture * texture;
 
 + (id)spriteNodeWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-+ (id)spriteNodeWithImageNamed:(id)arg1 normalMapped:(BOOL)arg2;
 + (id)spriteNodeWithImageNamed:(id)arg1;
++ (id)spriteNodeWithImageNamed:(id)arg1 normalMapped:(BOOL)arg2;
++ (id)spriteNodeWithTexture:(id)arg1;
 + (id)spriteNodeWithTexture:(id)arg1 normalMap:(id)arg2;
 + (id)spriteNodeWithTexture:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-+ (id)spriteNodeWithTexture:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_copyImageData;
@@ -48,8 +48,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)initWithImageNamed:(id)arg1;
-- (id)initWithTexture:(id)arg1 color:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 - (id)initWithTexture:(id)arg1;
+- (id)initWithTexture:(id)arg1 color:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 - (BOOL)isEqualToNode:(id)arg1;
 - (unsigned int)lightingBitMask;
 - (id)normalTexture;

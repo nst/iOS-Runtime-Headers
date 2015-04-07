@@ -11,12 +11,16 @@
 @interface AppLaunchStatsScheduler : NSObject <DuetLoggerProtocol, DuetSaveAndRestore> {
     NSRunLoop *aplsRunloop;
     AppLaunchStatsState *aplsState;
-    boolusefulDate;
     NSDate *fireWakeupDate;
     PCPersistentTimer *pcpTimer;
     NSDate *startDate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id theCallback;
+
     int timeZoneSecondsFromGMT;
+    bool usefulDate;
 }
 
 - (void).cxx_destruct;

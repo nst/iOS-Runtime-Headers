@@ -19,7 +19,11 @@
     int _platformExitInfo;
     BOOL _qos;
     int _suspendCount;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _terminationHandler;
+
     BOOL _terminationRun;
     NSPort *_tmpPort;
 }

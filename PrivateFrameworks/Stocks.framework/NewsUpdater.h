@@ -14,7 +14,11 @@
     StockNewsItemCollection *_lastNewsItemCollection;
     double _lastResponseTimestamp;
     Stock *_stock;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateCompletionHandler;
+
 }
 
 @property <NewsUpdaterDelegate> * delegate;
@@ -28,8 +32,8 @@
 - (id)delegate;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
-- (void)fetchNewsForStock:(id)arg1 withCompletion:(id)arg2;
 - (void)fetchNewsForStock:(id)arg1;
+- (void)fetchNewsForStock:(id)arg1 withCompletion:(id)arg2;
 - (id)init;
 - (void)loadNewsCacheFromDiskForSymbol:(id)arg1;
 - (void)parseData:(id)arg1;

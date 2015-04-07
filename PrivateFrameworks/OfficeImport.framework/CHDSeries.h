@@ -5,16 +5,16 @@
 @class CHDChart, CHDChartType, CHDData, CHDDataLabel, CHDDataValue, CHDErrorBar, CHDFormula, EDCollection, EDKeyedCollection, NSString, OADGraphicProperties;
 
 @interface CHDSeries : NSObject <EDKeyedObject> {
-    boolmDateTimeFormattingFlag;
-    boolmHiddenFlag;
     CHDData *mCategoryData;
     CHDChart *mChart;
     CHDChartType *mChartType;
     EDKeyedCollection *mDataValuePropertiesCollection;
+    bool mDateTimeFormattingFlag;
     CHDDataLabel *mDefaultDataLabel;
     CHDErrorBar *mErrorBarX;
     CHDErrorBar *mErrorBarY;
     OADGraphicProperties *mGraphicProperties;
+    bool mHiddenFlag;
     CHDDataValue *mLastCachedName;
     CHDFormula *mName;
     unsigned int mOrder;

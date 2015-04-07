@@ -19,8 +19,8 @@
 - (long long)countOfEnqueuedCommand:(id)arg1;
 - (long long)countOfEnqueuedCommands;
 - (int)dbQueueAssetCountAlbumGUID:(id)arg1 inQueue:(id)arg2;
-- (void)dbQueueEnqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5 sequenceNumber:(long long)arg6;
 - (void)dbQueueEnqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5;
+- (void)dbQueueEnqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5 sequenceNumber:(long long)arg6;
 - (BOOL)dbQueueIsAssetCollectionWithGUIDPending:(id)arg1;
 - (BOOL)dbQueueIsGUIDQueued:(id)arg1 inQueue:(id)arg2;
 - (long long)dbQueueNextCommandSequenceNumber;

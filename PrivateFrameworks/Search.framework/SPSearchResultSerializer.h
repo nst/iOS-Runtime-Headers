@@ -26,16 +26,16 @@
 
 - (unsigned int)_allocateSize:(unsigned int)arg1;
 - (id)_convertConformingResult:(id)arg1;
-- (BOOL)appendResult:(id)arg1 toSection:(id)arg2;
 - (BOOL)appendResult:(id)arg1;
+- (BOOL)appendResult:(id)arg1 toSection:(id)arg2;
 - (BOOL)appendSection:(id)arg1;
 - (unsigned int)byteVector;
 - (unsigned int)byteVectorCount;
 - (BOOL)completed;
 - (void)dealloc;
 - (id)init;
-- (id)initWithInitialCapacity:(unsigned int)arg1 inProc:(BOOL)arg2;
 - (id)initWithInitialCapacity:(unsigned int)arg1;
+- (id)initWithInitialCapacity:(unsigned int)arg1 inProc:(BOOL)arg2;
 - (unsigned int)sectionCount;
 - (void)serialize;
 

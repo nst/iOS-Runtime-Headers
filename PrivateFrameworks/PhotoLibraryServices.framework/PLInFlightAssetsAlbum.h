@@ -4,7 +4,7 @@
 
 @class <NSObject><NSCopying>, NSArray, NSCache, NSDate, NSDictionary, NSFetchRequest, NSMutableOrderedSet, NSNumber, NSObject<PLIndexMappingCache>, NSOrderedSet, NSString, NSURL, PLManagedAlbum, PLManagedAsset, UIImage;
 
-@interface PLInFlightAssetsAlbum : NSObject <PLAlbumProtocol, PLIndexMappingCache, PLDerivedAlbumOrigin> {
+@interface PLInFlightAssetsAlbum : NSObject <PLAlbumProtocol, PLDerivedAlbumOrigin, PLIndexMappingCache> {
     NSCache *__assetCache;
     BOOL __notificationsEnabled;
     NSMutableOrderedSet *_albumOIDs;

@@ -6,10 +6,10 @@
     struct CGPoint { 
         float x; 
         float y; 
+    } mPoint;
     struct CGSize { 
         float width; 
         float height; 
-    } mPoint;
     } mSize;
 }
 

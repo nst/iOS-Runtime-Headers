@@ -17,8 +17,8 @@
 - (void)finalize;
 - (id)init;
 - (id)initWithAttributedString:(id)arg1;
-- (id)initWithString:(id)arg1 attributes:(id)arg2;
 - (id)initWithString:(id)arg1;
+- (id)initWithString:(id)arg1 attributes:(id)arg2;
 - (unsigned int)length;
 - (id)string;
 

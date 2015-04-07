@@ -13,7 +13,11 @@
     NSObject<OS_xpc_object> *connection;
     NSObject<OS_dispatch_queue> *connectionQueue;
     BOOL didStop;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id messageHandler;
+
     int notifyToken;
     NSObject<OS_dispatch_queue> *replyQueue;
     NSObject<OS_dispatch_queue> *sessionQueue;
@@ -29,8 +33,8 @@
 - (void)dealloc;
 - (id)initWithClientName:(id)arg1 replyHandlerQueue:(id)arg2 messageHandler:(id)arg3;
 - (BOOL)registerForBSDNotifications;
-- (void)sendMessageToFud:(id)arg1 reply:(id)arg2;
 - (void)sendMessageToFud:(id)arg1;
+- (void)sendMessageToFud:(id)arg1 reply:(id)arg2;
 - (void)stop;
 
 @end

@@ -93,8 +93,8 @@
 - (void)setPresentationCourse:(double)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShouldDisplayHeading:(BOOL)arg1;
-- (void)setZoomDirection:(int)arg1 deltaScale:(float)arg2;
 - (void)setZoomDirection:(int)arg1;
+- (void)setZoomDirection:(int)arg1 deltaScale:(float)arg2;
 - (BOOL)shouldDisplayHeading;
 - (void)updateStateFromLocation:(id)arg1 duration:(double)arg2;
 - (int)zoomDirection;

@@ -10,12 +10,6 @@
 @class NSArray;
 
 @interface TSTTableFilterSet : TSPObject <TSPCopying> {
-    struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
-        unsigned int *__begin_; 
-        unsigned int *__end_; 
-        struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
-            unsigned int *__first_; 
-        } __end_cap_; 
     struct vector<bool, std::__1::allocator<bool> > { 
         unsigned long *__begin_; 
         unsigned int __size_; 
@@ -23,6 +17,12 @@
             unsigned long __first_; 
         } __cap_alloc_; 
     } mFilterEnabled;
+    struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
+        unsigned int *__begin_; 
+        unsigned int *__end_; 
+        struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
+            unsigned int *__first_; 
+        } __end_cap_; 
     } mFilterOffsets;
     BOOL mIsEnabled;
     BOOL mNeedsFormulaRewriteForImport;
@@ -50,7 +50,7 @@
 - (id)filterIndicesForColumn:(unsigned char)arg1 inTable:(id)arg2;
 - (int)filterSetType;
 - (unsigned int)firstFilterIndexForColumn:(unsigned char)arg1 inTable:(id)arg2;
-- (id)initFromArchive:(const struct FilterSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; boolx4; boolx5; struct RepeatedPtrField<TST::FilterRuleArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedField<unsigned int> { unsigned int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; struct RepeatedField<bool> { bool*x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; unsigned int x10[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initFromArchive:(const struct FilterSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; bool x4; bool x5; struct RepeatedPtrField<TST::FilterRuleArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedField<unsigned int> { unsigned int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; struct RepeatedField<bool> { bool *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; unsigned int x10[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithFilterRules:(id)arg1 type:(int)arg2 context:(id)arg3;
 - (BOOL)isEnabled;
@@ -70,7 +70,7 @@
 - (unsigned int)ruleCount;
 - (id)ruleInFilter:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (unsigned int)ruleIndexInFilter:(unsigned int)arg1 matchingCell:(id)arg2;
-- (void)saveToArchive:(struct FilterSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; boolx4; boolx5; struct RepeatedPtrField<TST::FilterRuleArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedField<unsigned int> { unsigned int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; struct RepeatedField<bool> { bool*x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; unsigned int x10[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct FilterSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; bool x4; bool x5; struct RepeatedPtrField<TST::FilterRuleArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedField<unsigned int> { unsigned int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; struct RepeatedField<bool> { bool *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; unsigned int x10[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setFilterSetType:(int)arg1;
 - (void)setIsEnabled:(BOOL)arg1;

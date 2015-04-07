@@ -4,7 +4,7 @@
 
 @class <NSCopying><NSObject>, <_UIDocumentPickerRemoteViewControllerContaining>, NSExtension, NSString;
 
-@interface _UIDocumentPickerRemoteViewController : _UIRemoteViewController <_UIDocumentPickerViewControllerHost, _UIDocumentPickerServiceInvalidating> {
+@interface _UIDocumentPickerRemoteViewController : _UIRemoteViewController <_UIDocumentPickerServiceInvalidating, _UIDocumentPickerViewControllerHost> {
     NSExtension *_extension;
     <NSCopying><NSObject> *_extensionRequestIdentifier;
     NSString *_identifier;

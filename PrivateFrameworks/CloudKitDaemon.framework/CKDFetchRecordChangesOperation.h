@@ -12,7 +12,11 @@
     CKServerChangeToken *_clientChangeToken;
     NSArray *_desiredKeys;
     CKServerChangeToken *_previousServerChangeToken;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordChangedBlock;
+
     CKRecordZoneID *_recordZoneID;
     NSData *_resultClientChangeToken;
     NSData *_resultClientChangeTokenData;

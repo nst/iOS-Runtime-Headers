@@ -45,8 +45,8 @@
 - (id)init;
 - (id)initWithPreferences:(id)arg1;
 - (BOOL)isURL:(id)arg1 onList:(id)arg2;
-- (BOOL)isURLAllowed:(id)arg1 reason:(id*)arg2 shouldFilter:(BOOL*)arg3 foundOnList:(BOOL*)arg4;
 - (BOOL)isURLAllowed:(id)arg1;
+- (BOOL)isURLAllowed:(id)arg1 reason:(id*)arg2 shouldFilter:(BOOL*)arg3 foundOnList:(BOOL*)arg4;
 - (id)pronounceOnPageURLString:(id)arg1 shouldFilter:(BOOL*)arg2;
 - (void)setAlwaysAllowHTTPS:(BOOL)arg1;
 - (void)setFilterEnabled:(BOOL)arg1;

@@ -13,7 +13,11 @@
     double __timestampBeganShowing;
     _UIBackdropView *_backgroundView;
     NSArray *_backgroundViewConstraints;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     float _currentProgress;
     BOOL _isDeterminate;
     NSArray *_labelAndPieProgressConstraints;

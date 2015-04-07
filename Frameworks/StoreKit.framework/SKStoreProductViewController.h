@@ -17,7 +17,11 @@
     _UIAsyncInvocation *_cancelRequest;
     NSString *_clientIdentifier;
     <SKStoreProductViewControllerDelegatePrivate> *_delegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _loadBlock;
+
     int _originalStatusBarStyle;
     int _productPageStyle;
     NSString *_promptString;

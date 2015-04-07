@@ -5,16 +5,16 @@
 @class SUCellConfiguration, SUItemOfferButton, SUTableCellContentView, UIBezierPath, UIColor;
 
 @interface SUTableCell : UITableViewCell {
+    UIColor *_bottomBorderColor;
+    SUTableCellContentView *_configurationView;
+    int _editState;
+    unsigned int _hideHighlight : 1;
+    SUItemOfferButton *_itemOfferButton;
     struct { 
         unsigned int localIndex; 
         unsigned int localCount; 
         unsigned int globalIndex; 
         unsigned int globalCount; 
-    unsigned int _hideHighlight : 1;
-    UIColor *_bottomBorderColor;
-    SUTableCellContentView *_configurationView;
-    int _editState;
-    SUItemOfferButton *_itemOfferButton;
     } _position;
     UIColor *_topBorderColor;
 }

@@ -23,8 +23,8 @@
 - (struct __CFUUID { }*)formulaOwnerID;
 - (void)headerCellContentWasModified:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 calculationEngine:(id)arg2;
 - (id)initWithContext:(id)arg1;
+- (id)initWithContext:(id)arg1 calculationEngine:(id)arg2;
 - (struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })rangeForTrackedReference:(id)arg1 gettingTrackedCell:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; }*)arg2;
 - (id)referenceForTrackedReference:(id)arg1 sticky:(BOOL)arg2;
 - (BOOL)referenceNameIsUnique:(id)arg1 forReference:(struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg2 contextTable:(struct __CFUUID { }*)arg3;
@@ -41,8 +41,8 @@
 - (void)trackedReferenceWasDeleted:(id)arg1 fromOwnerID:(struct __CFUUID { }*)arg2;
 - (id)trackedReferencesExactlyMatchingString:(id)arg1 scopedToTable:(struct __CFUUID { }*)arg2;
 - (BOOL)trackedReferencesExistForTable:(struct __CFUUID { }*)arg1;
-- (id)trackedReferencesMatchingPrefix:(id)arg1 scopedToTable:(struct __CFUUID { }*)arg2;
 - (id)trackedReferencesMatchingPrefix:(id)arg1;
+- (id)trackedReferencesMatchingPrefix:(id)arg1 scopedToTable:(struct __CFUUID { }*)arg2;
 - (void)updateTrackedHeaders:(struct __CFUUID { }*)arg1;
 
 @end

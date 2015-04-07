@@ -23,8 +23,8 @@
 - (void)_reloadViewStyling;
 - (id)delegate;
 - (int)indexOfCheckedTitle;
-- (id)initWithMenuTitles:(id)arg1 images:(id)arg2;
 - (id)initWithMenuTitles:(id)arg1;
+- (id)initWithMenuTitles:(id)arg1 images:(id)arg2;
 - (void)loadView;
 - (id)menuImages;
 - (int)menuStyle;

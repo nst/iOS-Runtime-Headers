@@ -5,9 +5,14 @@
 @class <PUMapAnnotationManagerDataSource>, MKMapView, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, PUMapAnnotationQuadtree;
 
 @interface PUMapAnnotationManager : NSObject <PUMapAnnotationQuadtreeDataSource> {
+    NSMutableDictionary *_activeAnnotationAddresses;
+    NSMutableSet *_activeAnnotations;
+    BOOL _alwaysFadeRemoves;
+    NSMutableSet *_animatedRemoves;
     struct CGSize { 
         float width; 
         float height; 
+    } _annotationSize;
     struct { 
         struct { 
             double latitude; 
@@ -17,15 +22,10 @@
             double latitudeDelta; 
             double longitudeDelta; 
         } span; 
+    } _currentCoordRegion;
     struct CGSize { 
         float width; 
         float height; 
-    NSMutableDictionary *_activeAnnotationAddresses;
-    NSMutableSet *_activeAnnotations;
-    BOOL _alwaysFadeRemoves;
-    NSMutableSet *_animatedRemoves;
-    } _annotationSize;
-    } _currentCoordRegion;
     } _currentMapSize;
     unsigned int _currentTreeLevel;
     <PUMapAnnotationManagerDataSource> *_dataSource;
@@ -75,12 +75,12 @@
 - (id)dataSource;
 - (id)init;
 - (id)mapAnnotationQuadtree:(id)arg1 aggregateAnnotationForAnnotations:(id)arg2 averageCoordinate:(struct { double x1; double x2; })arg3;
-- (void)mapView:(id)arg1 didAddAnnotationViews:(id)arg2;
 - (id)mapView;
+- (void)mapView:(id)arg1 didAddAnnotationViews:(id)arg2;
 - (void)removeAllMapAnnotations;
 - (void)removeAnnotation:(id)arg1;
-- (void)removeAnnotations:(id)arg1 thenAddAnnotations:(id)arg2;
 - (void)removeAnnotations:(id)arg1;
+- (void)removeAnnotations:(id)arg1 thenAddAnnotations:(id)arg2;
 - (void)setAlwaysFadeRemoves:(BOOL)arg1;
 - (void)setAnnotationSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDataSource:(id)arg1;

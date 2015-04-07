@@ -5,14 +5,6 @@
 @class TSCHChartInfo, TSCHChartModel;
 
 @interface TSCHChartLayout : NSObject {
-    struct { 
-        BOOL forceOmitLegend; 
-        BOOL forceOmitTitle; 
-        BOOL forceOmitAxisTitle; 
-        BOOL enable3DTightBounds; 
-        BOOL enable3DScaledDepthBounds; 
-        BOOL enable3DSageMaxDepthRatio; 
-        unsigned int max3DLimitingSeries; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,6 +16,14 @@
         } size; 
     } _legendModelGeometryFrame;
     TSCHChartInfo *mChartInfo;
+    struct { 
+        BOOL forceOmitLegend; 
+        BOOL forceOmitTitle; 
+        BOOL forceOmitAxisTitle; 
+        BOOL enable3DTightBounds; 
+        BOOL enable3DScaledDepthBounds; 
+        BOOL enable3DSageMaxDepthRatio; 
+        unsigned int max3DLimitingSeries; 
     } mLayoutSettings;
     BOOL mNeedsLayout;
 }

@@ -5,19 +5,19 @@
 @class CKDPIdentifier, CKDPRecordZoneIdentifier, CKDPSubscriptionNotification, NSMutableArray;
 
 @interface CKDPSubscription : PBCodable <NSCopying> {
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
+    int _evaluationType;
+    NSMutableArray *_filters;
+    BOOL _fireOnce;
     struct { 
         unsigned int evaluationType : 1; 
         unsigned int owner : 1; 
         unsigned int fireOnce : 1; 
-    int _evaluationType;
-    NSMutableArray *_filters;
-    BOOL _fireOnce;
     } _has;
     CKDPIdentifier *_identifier;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _mutationTriggers;
     CKDPSubscriptionNotification *_notification;
     int _owner;

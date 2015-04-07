@@ -5,8 +5,8 @@
 @interface TUICFInterface : NSObject {
 }
 
-+ (void)allowCallForDestinationID:(id)arg1 service:(int)arg2 completionHandler:(id)arg3;
 + (BOOL)allowCallForDestinationID:(id)arg1 service:(int)arg2;
++ (void)allowCallForDestinationID:(id)arg1 service:(int)arg2 completionHandler:(id)arg3;
 + (id)serviceIdentifierForService:(int)arg1;
 
 @end

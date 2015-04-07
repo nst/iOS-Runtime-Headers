@@ -40,8 +40,8 @@
 - (id)containerIDsWithReverseAliases;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)generateLogicalExtension:(id)arg1 physicalExtension:(id)arg2;
-- (id)initWithLocalItem:(id)arg1 itemDiffs:(unsigned long long)arg2 updateDiffs:(unsigned short)arg3;
 - (id)initWithLocalItem:(id)arg1 itemDiffs:(unsigned long long)arg2;
+- (id)initWithLocalItem:(id)arg1 itemDiffs:(unsigned long long)arg2 updateDiffs:(unsigned short)arg3;
 - (id)itemID;
 - (void)merge:(id)arg1;
 - (unsigned long long)oldParentFileID;

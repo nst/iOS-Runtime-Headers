@@ -22,11 +22,11 @@
 + (id)maxRowIDForPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (long long)nextSyncAnchorWithStartAnchor:(long long)arg1 predicate:(id)arg2 excludedSyncStore:(id)arg3 healthDatabase:(id)arg4 error:(id*)arg5;
 + (long long)nextSyncAnchorWithStartAnchor:(long long)arg1 predicate:(id)arg2 excludedSyncStore:(id)arg3 orderingProperties:(id)arg4 orderingDirections:(id)arg5 limit:(unsigned int)arg6 healthDatabase:(id)arg7 error:(id*)arg8;
-+ (BOOL)performReadTransactionWithHealthDatabase:(id)arg1 error:(id*)arg2 usingBlock:(id)arg3 inaccessibilityHandler:(id)arg4;
 + (BOOL)performReadTransactionWithHealthDatabase:(id)arg1 error:(id*)arg2 usingBlock:(id)arg3;
++ (BOOL)performReadTransactionWithHealthDatabase:(id)arg1 error:(id*)arg2 usingBlock:(id)arg3 inaccessibilityHandler:(id)arg4;
 + (BOOL)performReadTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2;
-+ (BOOL)performWriteTransactionWithHealthDatabase:(id)arg1 error:(id*)arg2 usingBlock:(id)arg3 inaccessibilityHandler:(id)arg4;
 + (BOOL)performWriteTransactionWithHealthDatabase:(id)arg1 error:(id*)arg2 usingBlock:(id)arg3;
++ (BOOL)performWriteTransactionWithHealthDatabase:(id)arg1 error:(id*)arg2 usingBlock:(id)arg3 inaccessibilityHandler:(id)arg4;
 + (id)predicateForSyncWithPredicate:(id)arg1 excludedSyncStore:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3;
 + (id)propertyForSyncAnchor;
 + (id)propertyForSyncProvenance;

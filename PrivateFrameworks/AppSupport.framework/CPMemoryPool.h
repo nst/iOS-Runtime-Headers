@@ -5,11 +5,11 @@
 @class NSMutableArray;
 
 @interface CPMemoryPool : NSObject {
+    NSMutableArray *_files;
+    char *_label;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    NSMutableArray *_files;
-    char *_label;
     } _lock;
     unsigned long _slotLength;
 }

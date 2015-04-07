@@ -4,7 +4,7 @@
 
 @class APSConnection, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface FTMessageDelivery_APS : FTMessageDelivery <FTMessageQueueDelegate, APSConnectionDelegate> {
+@interface FTMessageDelivery_APS : FTMessageDelivery <APSConnectionDelegate, FTMessageQueueDelegate> {
     Class _APSConnectionClass;
     Class _APSOutgoingMessageClass;
     NSMutableDictionary *_apsMessageMap;
@@ -62,12 +62,12 @@
 - (id)allMessages;
 - (BOOL)busy;
 - (void)cancelMessage:(id)arg1;
+- (id)connection;
 - (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
 - (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
 - (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)connection:(id)arg1 didSendOutgoingMessage:(id)arg2;
-- (id)connection;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;

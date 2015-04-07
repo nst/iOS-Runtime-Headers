@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray, NSObject<SPSearchAgentDelegate>, NSString, SPDaemonQueryToken, SPSearchResultSection;
 
-@interface SPSearchAgent : NSObject <SPDaemonQueryDelegate, MCProfileConnectionObserver> {
+@interface SPSearchAgent : NSObject <MCProfileConnectionObserver, SPDaemonQueryDelegate> {
     SPDaemonQueryToken *_currentToken;
     NSObject<SPSearchAgentDelegate> *_delegate;
     BOOL _observersAdded;

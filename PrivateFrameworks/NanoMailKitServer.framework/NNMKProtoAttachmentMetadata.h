@@ -5,15 +5,15 @@
 @class NSString;
 
 @interface NNMKProtoAttachmentMetadata : PBCodable <NSCopying> {
+    NSString *_contentId;
+    NSString *_fileName;
+    unsigned int _fileSize;
     struct { 
         unsigned int fileSize : 1; 
         unsigned int imageHeight : 1; 
         unsigned int imageWidth : 1; 
         unsigned int type : 1; 
         unsigned int renderOnClient : 1; 
-    NSString *_contentId;
-    NSString *_fileName;
-    unsigned int _fileSize;
     } _has;
     float _imageHeight;
     float _imageWidth;

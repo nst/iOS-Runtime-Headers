@@ -36,8 +36,8 @@
 - (void)_setLazyDestinationEntityName:(id)arg1;
 - (void)_updateInverse:(id)arg1;
 - (BOOL)_validateValuesAreOfDestinationEntity:(id)arg1 source:(id)arg2;
-- (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2 proxyContext:(id)arg3;
 - (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2;
+- (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2 proxyContext:(id)arg3;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(id)arg6 fetchRequests:(id)arg7;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -10,7 +10,11 @@
 
 @interface MCNearbyDiscoveryPeerConnection : NSObject <NSStreamDelegate> {
     BOOL _connected;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _connectedHandler;
+
     unsigned int _currentSequenceNumber;
     NSMutableData *_dataReceived;
     NSMutableData *_dataToSend;
@@ -21,7 +25,11 @@
     NSMutableArray *_messageReceiptHandlerList;
     NSOutputStream *_outputStream;
     BOOL _readyToWrite;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _receiveDataHandler;
+
     NSMutableArray *_receivedDataHoldingQueue;
     NSString *_remoteServiceName;
     BOOL _shouldSendHello;

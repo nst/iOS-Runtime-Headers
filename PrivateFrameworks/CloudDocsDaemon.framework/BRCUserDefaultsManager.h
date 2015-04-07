@@ -9,7 +9,11 @@
 @class NSDictionary, NSMutableDictionary, NSOperationQueue, NSString, NSURL, NSURLSession;
 
 @interface BRCUserDefaultsManager : NSObject <NSURLSessionDownloadDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _configurationPlistDidUpdateBlock;
+
     NSOperationQueue *_downloadQueue;
     NSDictionary *_serverConfigurationDict;
     NSURL *_serverConfigurationURL;

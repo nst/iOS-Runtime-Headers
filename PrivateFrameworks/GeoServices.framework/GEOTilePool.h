@@ -5,6 +5,8 @@
 @class GEOTileCache, NSObject<OS_dispatch_source>;
 
 @interface GEOTilePool : NSObject {
+    GEOTileCache *_cache;
+    NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
     struct _GEOGenericContainer<_GEOTileKey, id, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, geo::GEOGenericContainerWeakReferenceTag, 0, 0, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> { 
         struct mutex { 
             struct _opaque_pthread_mutex_t { 
@@ -50,8 +52,6 @@
         unsigned int _maxCost; 
         unsigned int _currentCost; 
         unsigned int _currentCount; 
-    GEOTileCache *_cache;
-    NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
     } _pool;
 }
 

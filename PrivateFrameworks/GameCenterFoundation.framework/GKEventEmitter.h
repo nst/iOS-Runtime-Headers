@@ -16,8 +16,8 @@
 @property BOOL shouldQueue;
 @property(retain) NSMutableArray * supportedProtocols;
 
-+ (id)eventEmitterForProtocols:(id)arg1 shouldQueue:(BOOL)arg2;
 + (id)eventEmitterForProtocols:(id)arg1;
++ (id)eventEmitterForProtocols:(id)arg1 shouldQueue:(BOOL)arg2;
 
 - (void)dealloc;
 - (void)dispatchQueuedEventsToListener:(id)arg1;

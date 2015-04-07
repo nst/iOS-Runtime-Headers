@@ -5,6 +5,8 @@
 @class NSString;
 
 @interface AWDHomeKitConfiguration : PBCodable <NSCopying> {
+    unsigned int _databaseSize;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int databaseSize : 1; 
@@ -17,8 +19,6 @@
         unsigned int numServices : 1; 
         unsigned int numTriggers : 1; 
         unsigned int numUsers : 1; 
-    unsigned int _databaseSize;
-    NSString *_guid;
     } _has;
     unsigned int _numAccessories;
     unsigned int _numAccessoryServiceGroups;

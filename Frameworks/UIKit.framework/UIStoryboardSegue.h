@@ -11,7 +11,11 @@
 @interface UIStoryboardSegue : NSObject {
     id _destinationViewController;
     NSString *_identifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _performHandler;
+
     id _sender;
     id _sourceViewController;
 }

@@ -5,14 +5,14 @@
 @class NSArray, NSNumber, PUPhotoView, PUProgressIndicatorView, UIImageView, UIView;
 
 @interface PUPhotosGridCell : UICollectionViewCell {
+    UIImageView *_cloudIconImageView;
+    BOOL _cloudIconVisible;
+    int _currentImageRequestID;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIImageView *_cloudIconImageView;
-    BOOL _cloudIconVisible;
-    int _currentImageRequestID;
     } _fillerEdgeInsets;
     UIView *_highlightOverlayView;
     PUPhotoView *_photoContentView;
@@ -67,8 +67,8 @@
 - (void)setFillerEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setPhotoContentView:(id)arg1;
-- (void)setProgress:(id)arg1 immediately:(BOOL)arg2;
 - (void)setProgress:(id)arg1;
+- (void)setProgress:(id)arg1 immediately:(BOOL)arg2;
 - (void)setSelectionBadgeVisible:(BOOL)arg1;
 - (void)setTemporaryPhotoContentView:(id)arg1;
 - (void)setTemporaryPhotoImage:(id)arg1 with:(int)arg2;

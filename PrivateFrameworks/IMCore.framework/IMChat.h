@@ -5,13 +5,6 @@
 @class <IMChatItemRules>, <IMChatSendProgressDelegate>, IMAccount, IMChatItem, IMChatRegistry, IMHandle, IMMessage, IMMultiDict, IMScheduledUpdater, IMTimingCollection, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSTimer;
 
 @interface IMChat : NSObject {
-    unsigned int _hasBeenConfigured : 1;
-    unsigned int _isFirstMessageInvitation : 1;
-    unsigned int _wasInvitationHandled : 1;
-    unsigned int _didSendAFinishedMessage : 1;
-    unsigned int _hasPendingMarkRead : 1;
-    unsigned int _isUpdatingChatItems : 1;
-    unsigned int _isRecording : 1;
     IMAccount *_account;
     NSArray *_attachments;
     float _cachedSendProgress;
@@ -26,6 +19,7 @@
     NSDate *_dateModified;
     unsigned int _dbFailedCount;
     unsigned int _dbUnreadCount;
+    unsigned int _didSendAFinishedMessage : 1;
     NSString *_displayName;
     BOOL _downgradeState;
     IMScheduledUpdater *_downgradeStateUpdater;
@@ -34,9 +28,14 @@
     NSString *_groupID;
     NSString *_guid;
     NSMutableSet *_guids;
+    unsigned int _hasBeenConfigured : 1;
+    unsigned int _hasPendingMarkRead : 1;
     NSString *_identifier;
     BOOL _ignoreDowngradeStatusUpdates;
     IMMessage *_invitationForPendingParticipants;
+    unsigned int _isFirstMessageInvitation : 1;
+    unsigned int _isRecording : 1;
+    unsigned int _isUpdatingChatItems : 1;
     NSMutableDictionary *_itemMap;
     int _joinState;
     NSString *_lastAddressedHandleID;
@@ -57,6 +56,7 @@
     NSString *_typingGUID;
     id _typingIndicatorTimer;
     NSMutableDictionary *_unfinishedMessageMap;
+    unsigned int _wasInvitationHandled : 1;
 }
 
 @property(setter=_setGUIDs:,retain) NSMutableSet * _guids;
@@ -146,8 +146,8 @@
 - (void)_handleDeliveredCommand:(id)arg1;
 - (void)_handleHandleStatusChanged:(id)arg1;
 - (void)_handleIncomingCommand:(id)arg1;
-- (BOOL)_handleIncomingItem:(id)arg1 shouldQueue:(BOOL)arg2;
 - (BOOL)_handleIncomingItem:(id)arg1;
+- (BOOL)_handleIncomingItem:(id)arg1 shouldQueue:(BOOL)arg2;
 - (void)_handleMessageGUIDDeletions:(id)arg1;
 - (BOOL)_hasCommunicatedOnService:(id)arg1;
 - (BOOL)_hasSendingMessages;
@@ -155,8 +155,8 @@
 - (id)_initWithGUID:(id)arg1 account:(id)arg2 style:(unsigned char)arg3 roomName:(id)arg4 displayName:(id)arg5 items:(id)arg6 participants:(id)arg7;
 - (void)_initialize;
 - (void)_insertChatItemsForItem:(id)arg1;
-- (void)_insertHistoricalMessages:(id)arg1 queryID:(id)arg2 isRefresh:(BOOL)arg3 isHistoryQuery:(BOOL)arg4 limit:(unsigned int)arg5;
 - (void)_insertHistoricalMessages:(id)arg1 queryID:(id)arg2 isRefresh:(BOOL)arg3 isHistoryQuery:(BOOL)arg4;
+- (void)_insertHistoricalMessages:(id)arg1 queryID:(id)arg2 isRefresh:(BOOL)arg3 isHistoryQuery:(BOOL)arg4 limit:(unsigned int)arg5;
 - (void)_invalidateDowngradeState;
 - (void)_inviteParticipants:(id)arg1 reason:(id)arg2;
 - (void)_invitePendingParticipants;
@@ -171,8 +171,8 @@
 - (void)_participant:(id)arg1 statusChanged:(int)arg2;
 - (id)_pendingParticipants;
 - (id)_performQueryWithKey:(id)arg1 loadImmediately:(BOOL)arg2 block:(id)arg3;
-- (void)_postNotification:(id)arg1 userInfo:(id)arg2 shouldLog:(BOOL)arg3;
 - (void)_postNotification:(id)arg1 userInfo:(id)arg2;
+- (void)_postNotification:(id)arg1 userInfo:(id)arg2 shouldLog:(BOOL)arg3;
 - (id)_previousAccountForService:(id)arg1;
 - (id)_privateInitWithAccount:(id)arg1 style:(unsigned char)arg2 roomName:(id)arg3 messages:(id)arg4 participants:(id)arg5;
 - (float)_progressSending:(unsigned int*)arg1 of:(unsigned int*)arg2;
@@ -191,8 +191,8 @@
 - (void)_sendCurrentLocationMessageUsingLocationManager:(id)arg1;
 - (void)_sendMessage:(id)arg1 adjustingSender:(BOOL)arg2 shouldQueue:(BOOL)arg3;
 - (void)_sendProgressTimerFired:(id)arg1;
-- (void)_setAccount:(id)arg1 locally:(BOOL)arg2;
 - (void)_setAccount:(id)arg1;
+- (void)_setAccount:(id)arg1 locally:(BOOL)arg2;
 - (void)_setAndIncrementDowngradeMarkersForManual:(BOOL)arg1;
 - (void)_setAttachments:(id)arg1;
 - (void)_setChatProperties:(id)arg1;
@@ -200,8 +200,8 @@
 - (void)_setDBUnreadCount:(unsigned int)arg1;
 - (void)_setDisplayName:(id)arg1;
 - (void)_setGUIDs:(id)arg1;
-- (void)_setJoinState:(int)arg1 quietly:(BOOL)arg2;
 - (void)_setJoinState:(int)arg1;
+- (void)_setJoinState:(int)arg1 quietly:(BOOL)arg2;
 - (void)_setLocalUserIsTyping:(BOOL)arg1 recording:(BOOL)arg2 suppliedGUID:(id)arg3;
 - (void)_setNextStaleChatItem:(id)arg1;
 - (void)_setParticipantState:(unsigned int)arg1 forHandle:(id)arg2 quietly:(BOOL)arg3;
@@ -222,8 +222,8 @@
 - (void)_unmapSendingItem:(id)arg1;
 - (void)_unwatchHandleStatusChangedForHandle:(id)arg1;
 - (void)_updateChatItems;
-- (void)_updateChatItemsWithReason:(id)arg1 block:(id)arg2 shouldPost:(BOOL)arg3;
 - (void)_updateChatItemsWithReason:(id)arg1 block:(id)arg2;
+- (void)_updateChatItemsWithReason:(id)arg1 block:(id)arg2 shouldPost:(BOOL)arg3;
 - (void)_updateDisplayName:(id)arg1;
 - (void)_updateDowngradeState:(BOOL)arg1 checkAgainInterval:(double)arg2;
 - (void)_updateSendProgress;
@@ -290,8 +290,8 @@
 - (id)lastMessage;
 - (void)leave;
 - (id)loadFrequentRepliesLimit:(unsigned int)arg1 loadImmediately:(BOOL)arg2;
-- (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned int)arg2 loadImmediately:(BOOL)arg3;
 - (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned int)arg2;
+- (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned int)arg2 loadImmediately:(BOOL)arg3;
 - (id)loadMessagesUpToGUID:(id)arg1 date:(id)arg2 limit:(unsigned int)arg3 loadImmediately:(BOOL)arg4;
 - (id)loadMessagesUpToGUID:(id)arg1 limit:(unsigned int)arg2;
 - (id)loadUnreadMessagesWithLimit:(unsigned int)arg1 fallbackToMessagesUpToGUID:(id)arg2;
@@ -332,8 +332,8 @@
 - (void)setLocalUserIsRecording:(BOOL)arg1;
 - (void)setLocalUserIsTyping:(BOOL)arg1;
 - (void)setNumberOfMessagesToKeepLoaded:(unsigned int)arg1;
-- (void)setRecipient:(id)arg1 locally:(BOOL)arg2;
 - (void)setRecipient:(id)arg1;
+- (void)setRecipient:(id)arg1 locally:(BOOL)arg2;
 - (void)setRoomName:(id)arg1;
 - (void)setSendProgressDelegate:(id)arg1;
 - (void)setValue:(id)arg1 forChatProperty:(id)arg2;
@@ -347,8 +347,8 @@
 - (id)testChatItems;
 - (unsigned int)unreadMessageCount;
 - (void)updateChatItemsIfNeeded;
-- (void)updateMessage:(id)arg1 flags:(unsigned long long)arg2;
 - (void)updateMessage:(id)arg1;
+- (void)updateMessage:(id)arg1 flags:(unsigned long long)arg2;
 - (id)valueForChatProperty:(id)arg1;
 - (id)valueForProperty:(id)arg1 ofParticipant:(id)arg2;
 

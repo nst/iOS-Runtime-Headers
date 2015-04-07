@@ -9,7 +9,7 @@
 
 @class NSString;
 
-@interface NSSet : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, PQLBindable> {
+@interface NSSet : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable> {
 }
 
 @property(readonly) unsigned int count;
@@ -24,23 +24,23 @@
 + (id)intersectionOfSets:(id)arg1;
 + (id)intersectionOfSets:(id)arg1;
 + (id)newSetWithObjects:(const id*)arg1 count:(unsigned int)arg2;
-+ (BOOL)set:(id)arg1 isEqualToSet:(id)arg2;
-+ (BOOL)set:(id)arg1 isEqualToSet:(id)arg2;
-+ (BOOL)set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)set;
-+ (id)setWithArray:(id)arg1 copyItems:(BOOL)arg2;
-+ (id)setWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
-+ (id)setWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (BOOL)set:(id)arg1 isEqualToSet:(id)arg2;
++ (BOOL)set:(id)arg1 isEqualToSet:(id)arg2;
++ (BOOL)set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)setWithArray:(id)arg1;
++ (id)setWithArray:(id)arg1 copyItems:(BOOL)arg2;
++ (id)setWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)setWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
 + (id)setWithObject:(id)arg1;
-+ (id)setWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 + (id)setWithObjects:(id)arg1;
-+ (id)setWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
-+ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
-+ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)setWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 + (id)setWithOrderedSet:(id)arg1;
-+ (id)setWithSet:(id)arg1 copyItems:(BOOL)arg2;
++ (id)setWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
++ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
 + (id)setWithSet:(id)arg1;
++ (id)setWithSet:(id)arg1 copyItems:(BOOL)arg2;
 + (BOOL)supportsSecureCoding;
 + (BOOL)supportsSecureCoding;
 
@@ -59,8 +59,8 @@
 - (id)_distinctUnionOfObjectsForKeyPath:(id)arg1;
 - (id)_distinctUnionOfSetsForKeyPath:(id)arg1;
 - (id)_gkDistinctValuesForKeyPath:(id)arg1;
-- (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1;
+- (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
 - (id)_gkMapWithBlock:(id)arg1;
 - (id)_gkSetByRemovingObject:(id)arg1;
 - (id)_gkValuesForKeyPath:(id)arg1;
@@ -83,34 +83,34 @@
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (unsigned int)countForObject:(id)arg1;
 - (id)description;
-- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (id)descriptionWithLocale:(id)arg1;
+- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateObjectsUsingBlock:(id)arg1;
 - (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (id)filteredSetUsingPredicate:(id)arg1;
+- (void)getObjects:(id*)arg1;
 - (void)getObjects:(id*)arg1 count:(unsigned int)arg2;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)getObjects:(id*)arg1;
 - (BOOL)hasVariations;
 - (unsigned int)hash;
-- (id)initWithArray:(id)arg1 copyItems:(BOOL)arg2;
-- (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
-- (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithArray:(id)arg1;
+- (id)initWithArray:(id)arg1 copyItems:(BOOL)arg2;
+- (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithObject:(id)arg1;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (id)initWithObjects:(id)arg1;
-- (id)initWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
-- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
-- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (id)initWithOrderedSet:(id)arg1;
-- (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
+- (id)initWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
+- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
 - (id)initWithSet:(id)arg1;
+- (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
 - (BOOL)intersectsOrderedSet:(id)arg1;
 - (BOOL)intersectsSet:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -118,8 +118,8 @@
 - (BOOL)isNSSet__;
 - (BOOL)isSubsetOfOrderedSet:(id)arg1;
 - (BOOL)isSubsetOfSet:(id)arg1;
-- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
+- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)member:(id)arg1;
 - (id)members:(id)arg1 notFoundMarker:(id)arg2;
 - (id)mf_getAllObjectsAsArray;
@@ -130,8 +130,8 @@
 - (id)objectsPassingTest:(id)arg1;
 - (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (unsigned int)pl_countOfObjectsPassingTest:(id)arg1;
-- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)safari_arrayByMappingObjectsUsingBlock:(id)arg1;
 - (id)setByAddingObject:(id)arg1;

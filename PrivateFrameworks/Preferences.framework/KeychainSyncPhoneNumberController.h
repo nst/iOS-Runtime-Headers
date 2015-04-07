@@ -4,7 +4,7 @@
 
 @class <KeychainSyncViewControllerDelegate>, KeychainSyncPhoneSettingsFragment, NSString, UIAlertView, UILabel;
 
-@interface KeychainSyncPhoneNumberController : PSKeychainSyncViewController <KeychainSyncPhoneSettingsFragmentDelegate, UIAlertViewDelegate, KeychainSyncViewController> {
+@interface KeychainSyncPhoneNumberController : PSKeychainSyncViewController <KeychainSyncPhoneSettingsFragmentDelegate, KeychainSyncViewController, UIAlertViewDelegate> {
     UILabel *_footerLabel;
     UIAlertView *_invalidPhoneNumberAlert;
     KeychainSyncPhoneSettingsFragment *_phoneSettingsFragment;

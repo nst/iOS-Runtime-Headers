@@ -5,15 +5,15 @@
 @class NSDictionary, NSMutableData, NSString;
 
 @interface CKAudioAnalyzer : NSObject <Endpointer> {
-    struct { 
-        float rms; 
-        unsigned int zc; 
     struct OpaqueAudioComponentInstance { } *_audioUnitEPVAD;
     float _decoderLatency;
     BOOL _detectedMusic;
     double _endWaitTime;
     int _endpointMode;
     NSMutableData *_floatSampleBuffer;
+    struct { 
+        float rms; 
+        unsigned int zc; 
     } _frameAnalysisArray[25];
     unsigned long _frameRate;
     unsigned int _framesSeen;

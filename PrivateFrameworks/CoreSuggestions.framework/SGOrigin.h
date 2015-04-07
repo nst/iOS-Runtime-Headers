@@ -5,10 +5,10 @@
 @class NSDate, NSString, NSURL;
 
 @interface SGOrigin : NSObject <NSCopying, NSSecureCoding> {
+    NSString *_contextSnippet;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    NSString *_contextSnippet;
     } _contextSnippetRange;
     NSDate *_date;
     NSString *_externalKey;

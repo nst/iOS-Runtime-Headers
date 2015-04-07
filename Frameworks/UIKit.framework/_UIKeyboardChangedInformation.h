@@ -3,6 +3,8 @@
  */
 
 @interface _UIKeyboardChangedInformation : NSObject <NSSecureCoding> {
+    unsigned int _animationFencingPort;
+    BOOL _keyboardOnScreen;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,8 +14,6 @@
             float width; 
             float height; 
         } size; 
-    unsigned int _animationFencingPort;
-    BOOL _keyboardOnScreen;
     } _keyboardPosition;
 }
 

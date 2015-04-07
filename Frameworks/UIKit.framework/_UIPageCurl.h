@@ -5,6 +5,8 @@
 @class NSMutableArray, NSMutableSet, NSNumber, UIView, _UIPageCurlState;
 
 @interface _UIPageCurl : NSObject {
+    NSMutableArray *_activeStateQueue;
+    NSMutableSet *_completedStates;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    NSMutableArray *_activeStateQueue;
-    NSMutableSet *_completedStates;
     } _contentRect;
     UIView *_contentView;
     double _delayBetweenSuccessiveAnimations;

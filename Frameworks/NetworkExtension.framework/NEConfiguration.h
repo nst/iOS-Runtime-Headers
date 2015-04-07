@@ -4,7 +4,7 @@
 
 @class NEAOVPN, NEContentFilter, NEProfileIngestionPayloadInfo, NEVPN, NEVPNApp, NSString, NSUUID;
 
-@interface NEConfiguration : NSObject <NEProfilePayloadHandlerDelegate, NEConfigurationValidating, NSSecureCoding, NSCopying> {
+@interface NEConfiguration : NSObject <NEConfigurationValidating, NEProfilePayloadHandlerDelegate, NSCopying, NSSecureCoding> {
     NEVPN *_VPN;
     NEAOVPN *_alwaysOnVPN;
     NEVPNApp *_appVPN;

@@ -5,8 +5,8 @@
 @class CHDMarker, NSString;
 
 @interface CHDLineSeries : CHDSeries <CHDMarkerOwner> {
-    boolmSmooth;
     CHDMarker *mMarker;
+    bool mSmooth;
 }
 
 @property(copy,readonly) NSString * debugDescription;

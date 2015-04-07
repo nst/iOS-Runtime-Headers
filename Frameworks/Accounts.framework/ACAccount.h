@@ -11,7 +11,11 @@
 @interface ACAccount : NSObject <NSSecureCoding> {
     BOOL _accountAccessAvailable;
     NSString *_accountDescription;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _accountPropertiesTransformer;
+
     ACAccountType *_accountType;
     BOOL _active;
     BOOL _authenticated;
@@ -241,8 +245,8 @@
 - (id)initWithAccountType:(id)arg1;
 - (id)initWithAppleID:(id)arg1 password:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithManagedAccount:(id)arg1 accountStore:(id)arg2;
 - (id)initWithManagedAccount:(id)arg1;
+- (id)initWithManagedAccount:(id)arg1 accountStore:(id)arg2;
 - (BOOL)isActive;
 - (BOOL)isAuthenticated;
 - (BOOL)isDirty;

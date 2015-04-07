@@ -4,18 +4,18 @@
 
 @class <MFModernLabelledAtomListDelegate>, NSDictionary, NSMutableArray, NSString, UIColor, UILabel, UIView;
 
-@interface MFModernLabelledAtomList : UIView <MFPassthroughViewProvider, MFModernAddressAtomDelegate> {
-    unsigned int _needsReflow : 1;
-    unsigned int _isChangingFrame : 1;
+@interface MFModernLabelledAtomList : UIView <MFModernAddressAtomDelegate, MFPassthroughViewProvider> {
     NSMutableArray *_addressAtoms;
     void *_addressBook;
     UIView *_baselineView;
     <MFModernLabelledAtomListDelegate> *_delegate;
     float _firstLineWidth;
+    unsigned int _isChangingFrame : 1;
     UILabel *_label;
     UIColor *_labelTextColor;
     BOOL _labelVisible;
     float _lineSpacing;
+    unsigned int _needsReflow : 1;
     unsigned int _numberOfRows;
     BOOL _primary;
     NSDictionary *_recipients;
@@ -68,8 +68,8 @@
 - (void)setAddressAtomTarget:(id)arg1 action:(SEL)arg2;
 - (void)setAtomAlpha:(float)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFirstLineWidth:(float)arg1 reflow:(BOOL)arg2;
 - (void)setFirstLineWidth:(float)arg1;
+- (void)setFirstLineWidth:(float)arg1 reflow:(BOOL)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLabelTextColor:(id)arg1;
 - (void)setLabelVisible:(BOOL)arg1;

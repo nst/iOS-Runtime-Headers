@@ -11,7 +11,11 @@
 @interface FTRegAppleIDSetupManager : NSObject {
     NSArray *_candidateAliases;
     IDSAccountController *_faceTimeAccountController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     IDSAccountController *_iMessageAccountController;
     NSArray *_selectedAliases;
     NSString *_selectionSummaryText;
@@ -33,8 +37,8 @@
 - (id)_appleID;
 - (void)_cleanup;
 - (void)_notifyFailureWithError:(id)arg1;
-- (void)_notifySuccess:(BOOL)arg1 error:(id)arg2;
 - (void)_notifySuccess;
+- (void)_notifySuccess:(BOOL)arg1 error:(id)arg2;
 - (BOOL)_shouldShowAliasSelectionUI;
 - (void)_updateCandidateAliases;
 - (void)_updateSelectionSummaryText;

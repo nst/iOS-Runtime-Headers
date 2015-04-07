@@ -5,14 +5,14 @@
 @class <TSKAnnotation>, NSArray, NSString, TSCHChartDrawableInfo, TSCHSearchSelection;
 
 @interface TSCHSearchReference : NSObject <TSKSearchReference> {
-    struct CGPoint { 
-        float x; 
-        float y; 
     BOOL _autohideHighlight;
     NSArray *_findHighlights;
     BOOL _pulseHighlight;
     <TSKAnnotation> *annotation;
     TSCHSearchSelection *mSelection;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } searchReferencePoint;
 }
 

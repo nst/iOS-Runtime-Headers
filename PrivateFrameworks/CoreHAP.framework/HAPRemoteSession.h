@@ -14,22 +14,42 @@
     unsigned char _cipherWriteKey[32];
     unsigned char _cipherWriteNonce[8];
     BOOL _commitResponded;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _findPeerHandler;
+
     NSObject<OS_dispatch_source> *_idleTimer;
     NSObject<OS_dispatch_queue> *_internalQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _internalRequestHandler;
+
     const char *_label;
     unsigned char _pairVerifyDone;
     struct PairingSessionPrivate { } *_pairVerifySession;
     NSMutableDictionary *_prepareRequests;
     BOOL _prepareResponded;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _requestHandler;
+
     NSString *_sessionID;
     BOOL _started;
     int _state;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _stoppedHandler;
+
     NSMutableDictionary *_transactions;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _transportSendMessage;
+
     int _type;
     NSObject<OS_dispatch_queue> *_userQueue;
     NSMutableArray *_userTransactions;

@@ -3,11 +3,11 @@
  */
 
 @interface UIRemoveControlMinusButton : UIControl {
+    unsigned int _hiding : 1;
+    unsigned int _reserved : 28;
     unsigned int _rotated : 1;
     unsigned int _rotating : 1;
-    unsigned int _hiding : 1;
     unsigned int _showAsPlus : 1;
-    unsigned int _reserved : 28;
     float _verticalOffset;
 }
 

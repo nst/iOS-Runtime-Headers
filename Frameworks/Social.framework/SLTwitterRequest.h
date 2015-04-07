@@ -39,8 +39,8 @@
 - (id)commandName;
 - (id)credential;
 - (id)initWithCredential:(id)arg1 URL:(id)arg2;
-- (id)initWithURL:(id)arg1 parameters:(id)arg2 requestMethod:(int)arg3;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 parameters:(id)arg2 requestMethod:(int)arg3;
 - (id)multiPartBodyData;
 - (id)parameters;
 - (void)performJSONRequestWithHandler:(id)arg1;

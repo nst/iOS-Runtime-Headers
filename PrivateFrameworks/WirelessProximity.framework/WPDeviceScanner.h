@@ -29,8 +29,8 @@
 - (void)connectionInterrupted;
 - (void)dealloc;
 - (id)description;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (id)liveDevices;
 - (void)messageArrived:(id)arg1;
 - (void)postDevice:(id)arg1;

@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface MKUserLocationAnnotation : NSObject <MKUserLocationAnnotation> {
+    double _accuracy;
     struct { 
         double latitude; 
         double longitude; 
-    double _accuracy;
     } _coordinate;
 }
 

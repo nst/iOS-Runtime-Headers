@@ -4,7 +4,7 @@
 
 @class CKShareID, CKSharedItemID, NSObject<CKCommenting>, NSString;
 
-@interface CKCommentQuery : NSObject <NSSecureCoding, NSCopying> {
+@interface CKCommentQuery : NSObject <NSCopying, NSSecureCoding> {
     NSString *_context;
     CKSharedItemID *_creatorID;
     NSObject<CKCommenting> *_owner;

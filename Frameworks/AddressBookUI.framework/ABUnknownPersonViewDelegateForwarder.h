@@ -4,7 +4,7 @@
 
 @class ABUnknownPersonViewController, NSString;
 
-@interface ABUnknownPersonViewDelegateForwarder : NSObject <UITableViewDelegate, UITableViewDataSource> {
+@interface ABUnknownPersonViewDelegateForwarder : NSObject <UITableViewDataSource, UITableViewDelegate> {
     ABUnknownPersonViewController *_viewController;
 }
 

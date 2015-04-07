@@ -3,14 +3,14 @@
  */
 
 @interface AWDCallHistoryDatabaseMigration : PBCodable <NSCopying> {
+    unsigned int _domain;
+    unsigned int _error;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int domain : 1; 
         unsigned int error : 1; 
         unsigned int newSchema : 1; 
         unsigned int oldSchema : 1; 
-    unsigned int _domain;
-    unsigned int _error;
     } _has;
     unsigned int _newSchema;
     unsigned int _oldSchema;

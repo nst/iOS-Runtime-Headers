@@ -49,8 +49,8 @@
 - (id)pParticipantFromShareParticipant:(id)arg1;
 - (id)pPulseDataFromUserPresence:(id)arg1;
 - (id)pQueryFromQuery:(id)arg1 error:(id*)arg2;
-- (id)pRecordFromRecord:(id)arg1 forCache:(BOOL)arg2;
 - (id)pRecordFromRecord:(id)arg1;
+- (id)pRecordFromRecord:(id)arg1 forCache:(BOOL)arg2;
 - (id)pRecordIdentifierFromRecordID:(id)arg1;
 - (id)pRecordZoneFromRecordZone:(id)arg1;
 - (id)pRecordZoneIdentifierFromRecordZoneID:(id)arg1;

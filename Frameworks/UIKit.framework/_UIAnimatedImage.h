@@ -34,8 +34,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithImages:(id)arg1 duration:(double)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (id)resizableImageWithCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 resizingMode:(int)arg2;
 - (id)resizableImageWithCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)resizableImageWithCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 resizingMode:(int)arg2;
 - (int)resizingMode;
 
 @end

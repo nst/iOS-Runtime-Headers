@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface _UIDatePickerComponent : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     unsigned int _calendarUnit;
     unsigned int _equivalentUnit;
     NSString *_formatString;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _unitRange;
     float _width;
 }
@@ -21,8 +21,8 @@
 @property struct _NSRange { unsigned int x1; unsigned int x2; } unitRange;
 @property float width;
 
-+ (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2 desiredUnits:(int)arg3;
 + (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2;
++ (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2 desiredUnits:(int)arg3;
 
 - (id)_initWithFormatString:(id)arg1 calendarUnit:(unsigned int)arg2;
 - (unsigned int)calendarUnit;

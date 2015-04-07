@@ -5,9 +5,9 @@
 @interface _WKVideoFileUploadItem : _WKFileUploadItem {
     struct RetainPtr<NSString> { 
         void *m_ptr; 
+    } _filePath;
     struct RetainPtr<NSURL> { 
         void *m_ptr; 
-    } _filePath;
     } _mediaURL;
 }
 

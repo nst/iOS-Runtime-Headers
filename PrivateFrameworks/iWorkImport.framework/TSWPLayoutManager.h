@@ -5,9 +5,6 @@
 @class <TSWPLayoutOwner>, TSWPCTTypesetterCache, TSWPStorage;
 
 @interface TSWPLayoutManager : NSObject <TSWPStorageObserver> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     struct TSWPTopicNumberHints { 
         struct map<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> >, std::__1::less<const TSWPListStyle *>, std::__1::allocator<std::__1::pair<const TSWPListStyle *const, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > > > > { 
             struct __tree<std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, std::__1::__map_value_compare<const TSWPListStyle *, std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, std::__1::less<const TSWPListStyle *>, true>, std::__1::allocator<std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > > > > { 
@@ -26,6 +23,9 @@
         unsigned int _validThroughCharIndex; 
     } _cachedTopicNumbers;
     int _delta;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _dirtyRange;
     BOOL _isObservingStorage;
     <TSWPLayoutOwner> *_owner;
@@ -56,8 +56,8 @@
 - (BOOL)needsLayoutInColumn:(id)arg1;
 - (id)owner;
 - (int)p_layoutConfigFlagsForTarget:(id)arg1;
-- (void)storage:(id)arg1 didChangeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 delta:(int)arg3 broadcastKind:(int)arg4;
 - (id)storage;
+- (void)storage:(id)arg1 didChangeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 delta:(int)arg3 broadcastKind:(int)arg4;
 - (id)styleProvider;
 - (id)typesetterCache;
 - (void)willRemoveAttachmentLayout:(id)arg1;

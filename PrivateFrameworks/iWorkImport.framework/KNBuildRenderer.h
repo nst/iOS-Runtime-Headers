@@ -66,8 +66,8 @@
 - (id)p_keyForAnimation;
 - (void)p_removeAnimations;
 - (void)p_resetAnimations;
-- (id)p_textureSetForStage:(int)arg1 context:(id)arg2 isAtEndOfBuild:(BOOL)arg3 shouldForceRebuild:(BOOL)arg4 shouldRender:(BOOL)arg5;
 - (id)p_textureSetForStage:(int)arg1 context:(id)arg2 isAtEndOfBuild:(BOOL)arg3 shouldForceRebuild:(BOOL)arg4;
+- (id)p_textureSetForStage:(int)arg1 context:(id)arg2 isAtEndOfBuild:(BOOL)arg3 shouldForceRebuild:(BOOL)arg4 shouldRender:(BOOL)arg5;
 - (id)parentLayer;
 - (void)pauseAnimationsAtTime:(double)arg1;
 - (void)prepareAnimations;
@@ -89,8 +89,8 @@
 - (id)textureContext;
 - (unsigned int)textureDeliveryStyle;
 - (id)textureSet;
-- (id)textureSetForStage:(int)arg1 context:(id)arg2 shouldForceRebuild:(BOOL)arg3;
 - (id)textureSetForStage:(int)arg1 context:(id)arg2;
+- (id)textureSetForStage:(int)arg1 context:(id)arg2 shouldForceRebuild:(BOOL)arg3;
 - (id)textureSetWithoutRenderedContents;
 - (void)updateAnimationsForLayerTime:(double)arg1;
 

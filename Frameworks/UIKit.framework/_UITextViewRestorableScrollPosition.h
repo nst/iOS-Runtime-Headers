@@ -3,10 +3,10 @@
  */
 
 @interface _UITextViewRestorableScrollPosition : NSObject <NSCoding> {
+    float _offsetInLine;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    float _offsetInLine;
     } _range;
 }
 

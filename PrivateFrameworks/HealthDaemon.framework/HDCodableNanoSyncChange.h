@@ -4,12 +4,12 @@
 
 @class NSMutableArray, NSString;
 
-@interface HDCodableNanoSyncChange : PBCodable <HDSyncChange, HDNanoSyncDescription, NSCopying> {
+@interface HDCodableNanoSyncChange : PBCodable <HDNanoSyncDescription, HDSyncChange, NSCopying> {
+    long long _endAnchor;
     struct { 
         unsigned int endAnchor : 1; 
         unsigned int startAnchor : 1; 
         unsigned int objectType : 1; 
-    long long _endAnchor;
     } _has;
     NSMutableArray *_objectDatas;
     int _objectType;

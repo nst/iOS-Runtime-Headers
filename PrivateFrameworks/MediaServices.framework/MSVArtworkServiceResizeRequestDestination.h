@@ -5,10 +5,10 @@
 @class NSURL;
 
 @interface MSVArtworkServiceResizeRequestDestination : NSObject <NSSecureCoding> {
+    float _destinationCompressionQuality;
     struct CGSize { 
         float width; 
         float height; 
-    float _destinationCompressionQuality;
     } _destinationSize;
     NSURL *_destinationURL;
 }

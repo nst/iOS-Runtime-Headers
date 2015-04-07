@@ -4,7 +4,7 @@
 
 @class CUTWeakReference, IDSBaseSocketPairConnection, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
-@interface _IDSSession : NSObject <IDSDaemonListenerProtocol, IDSBaseSocketPairConnectionDelegate> {
+@interface _IDSSession : NSObject <IDSBaseSocketPairConnectionDelegate, IDSDaemonListenerProtocol> {
     NSString *_accountID;
     id _boostContext;
     CUTWeakReference *_delegate;

@@ -5,9 +5,9 @@
 @class NSMutableArray, NSString;
 
 @interface VKPShieldIndexTextEntry : PBCodable <NSCopying> {
+    NSString *_artworkIdentifier;
     struct { 
         unsigned int shieldType : 1; 
-    NSString *_artworkIdentifier;
     } _has;
     NSMutableArray *_shieldTexts;
     int _shieldType;

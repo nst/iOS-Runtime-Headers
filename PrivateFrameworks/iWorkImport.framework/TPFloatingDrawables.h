@@ -12,8 +12,8 @@
 
 @property(readonly) TPDocumentRoot * documentRoot;
 
-- (void)addDrawable:(id)arg1 toPageIndex:(unsigned int)arg2 insertContext:(id)arg3 suppressDOLC:(BOOL)arg4;
 - (void)addDrawable:(id)arg1 toPageIndex:(unsigned int)arg2 insertContext:(id)arg3;
+- (void)addDrawable:(id)arg1 toPageIndex:(unsigned int)arg2 insertContext:(id)arg3 suppressDOLC:(BOOL)arg4;
 - (void)addDrawables:(id)arg1 toPageIndex:(unsigned int)arg2 insertContext:(id)arg3;
 - (id)allDrawables;
 - (unsigned int)countOfAllDrawables;
@@ -31,8 +31,8 @@
 - (void)p_addDrawable:(id)arg1 toPageIndex:(unsigned int)arg2;
 - (void)p_removeDrawable:(id)arg1;
 - (unsigned int)pageIndexForDrawable:(id)arg1;
-- (void)removeDrawable:(id)arg1 suppressDOLC:(BOOL)arg2;
 - (void)removeDrawable:(id)arg1;
+- (void)removeDrawable:(id)arg1 suppressDOLC:(BOOL)arg2;
 - (void)removeDrawables:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;

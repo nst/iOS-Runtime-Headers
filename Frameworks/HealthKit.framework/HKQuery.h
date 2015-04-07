@@ -44,9 +44,9 @@
 + (id)predicateForObjectsFromSource:(id)arg1;
 + (id)predicateForObjectsFromSources:(id)arg1;
 + (id)predicateForObjectsFromWorkout:(id)arg1;
++ (id)predicateForObjectsWithMetadataKey:(id)arg1;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 allowedValues:(id)arg2;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 operatorType:(unsigned int)arg2 value:(id)arg3;
-+ (id)predicateForObjectsWithMetadataKey:(id)arg1;
 + (id)predicateForObjectsWithNoCorrelation;
 + (id)predicateForObjectsWithUUIDs:(id)arg1;
 + (id)predicateForQuantitySamplesWithOperatorType:(unsigned int)arg1 quantity:(id)arg2;

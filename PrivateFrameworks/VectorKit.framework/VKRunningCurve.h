@@ -4,41 +4,41 @@
 
 @interface VKRunningCurve : NSObject {
     struct { 
-        struct VKPoint { 
-            double x; 
-            double y; 
-            double z; 
-        } position; 
-        struct Matrix<double, 3, 1> { 
-            double _e[3]; 
-        } tangent; 
-        BOOL tangentValid; 
-    struct { 
-        struct VKPoint { 
-            double x; 
-            double y; 
-            double z; 
-        } position; 
-        struct Matrix<double, 3, 1> { 
-            double _e[3]; 
-        } tangent; 
-        BOOL tangentValid; 
-    struct { 
-        struct VKPoint { 
-            double x; 
-            double y; 
-            double z; 
-        } position; 
-        struct Matrix<double, 3, 1> { 
-            double _e[3]; 
-        } tangent; 
-        BOOL tangentValid; 
-    struct { 
         double mb[4][3]; 
     } _mb;
     BOOL _mbValid;
+    struct { 
+        struct VKPoint { 
+            double x; 
+            double y; 
+            double z; 
+        } position; 
+        struct Matrix<double, 3, 1> { 
+            double _e[3]; 
+        } tangent; 
+        BOOL tangentValid; 
     } _p0;
+    struct { 
+        struct VKPoint { 
+            double x; 
+            double y; 
+            double z; 
+        } position; 
+        struct Matrix<double, 3, 1> { 
+            double _e[3]; 
+        } tangent; 
+        BOOL tangentValid; 
     } _p1;
+    struct { 
+        struct VKPoint { 
+            double x; 
+            double y; 
+            double z; 
+        } position; 
+        struct Matrix<double, 3, 1> { 
+            double _e[3]; 
+        } tangent; 
+        BOOL tangentValid; 
     } _pu;
     double _t0;
     double _t1;

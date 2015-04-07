@@ -14,9 +14,9 @@
         struct type { 
             unsigned char __lx[192]; 
         } data; 
+    } _download;
     struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
-    } _download;
     } _originatingWebView;
 }
 
@@ -28,9 +28,9 @@
 @property(readonly) NSURLRequest * request;
 @property(readonly) Class superclass;
 
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (void)cancel;
 - (void)dealloc;
 - (id)originatingWebView;

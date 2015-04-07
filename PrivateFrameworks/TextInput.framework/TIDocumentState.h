@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface TIDocumentState : NSObject <NSSecureCoding> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     NSString *_contextAfterInput;
     NSString *_contextBeforeInput;
     NSString *_markedText;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _selectedRangeInMarkedText;
     NSString *_selectedText;
 }

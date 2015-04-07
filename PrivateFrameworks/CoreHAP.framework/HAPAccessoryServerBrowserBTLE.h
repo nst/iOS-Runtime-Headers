@@ -18,7 +18,11 @@
     BOOL _performingGeneralScan;
     NSMapTable *_peripheralsWithConnectionRequestTuples;
     NSMutableArray *_powerOnCentralManagerCompletions;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _reachabilityCompletion;
+
     NSMutableArray *_targetedScanAccessoryIdentifiers;
     NSObject<OS_dispatch_source> *_targetedScanTimer;
 }
@@ -63,11 +67,11 @@
 - (void)_startScanningForPairingPeers;
 - (void)_stopActiveScan;
 - (void)_updateTargetedScanTimer;
+- (id)centralManager;
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
 - (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
-- (id)centralManager;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)connectToBTLEAccessoryServer:(id)arg1;
 - (id)delegate;
@@ -84,8 +88,8 @@
 - (void)probeReachabilityForAccessoryServersWithIdentifiers:(id)arg1 onQueue:(id)arg2 withCompletion:(id)arg3;
 - (id)reachabilityCompletion;
 - (void)setCentralManager:(id)arg1;
-- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
 - (void)setDiscoveredPeripheralsWithAccessories:(id)arg1;
 - (void)setIdentifersWithReachabilityScanTuples:(id)arg1;

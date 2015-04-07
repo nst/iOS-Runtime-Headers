@@ -18,10 +18,18 @@
     NSString *_languageCode;
     BOOL _maintainsInput;
     NSURL *_outputPath;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pauseHandler;
+
     double _pitch;
     double _rate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _stopHandler;
+
     NSString *_text;
     BOOL _useCustomVoice;
     NSString *_voiceName;

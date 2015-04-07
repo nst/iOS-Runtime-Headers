@@ -4,73 +4,17 @@
 
 @class <UICoordinateSpace>, FBSDisplay, NSArray, NSDictionary, NSMutableArray, NSString, UIScreen, UIScreenMode, UISoftwareDimmingWindow, UITraitCollection, UIWindow, _UIScreenFixedCoordinateSpace, _UIScreenTransparentHitTestWindow;
 
-@interface UIScreen : NSObject <UICoordinateSpace, _UITraitEnvironmentInternal, UITraitEnvironment> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct { 
-        unsigned int bitsPerComponent : 4; 
-        unsigned int initialized : 1; 
-        unsigned int connected : 1; 
-        unsigned int overscanCompensation : 2; 
-        unsigned int screenUpdatesDisabled : 1; 
-        unsigned int wantsWideContentMargins : 1; 
-        unsigned int queriedDeviceContentMargins : 1; 
-        unsigned int hasCalculatedPointsPerInch : 1; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+@interface UIScreen : NSObject <UICoordinateSpace, UITraitEnvironment, _UITraitEnvironmentInternal> {
     NSArray *_availableDisplayModes;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _bounds;
     NSDictionary *_capabilities;
     UITraitCollection *_defaultTraitCollection;
@@ -80,26 +24,82 @@
     _UIScreenFixedCoordinateSpace *_fixedCoordinateSpace;
     float _horizontalScale;
     int _interfaceOrientation;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _interfaceOrientedBounds;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _jailOffset;
     int _jailOrientation;
     float _jailScale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _jailSize;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _jailTouchInsets;
     BOOL _jailUsesHitTestWindow;
     int _lastNotifiedBacklightLevel;
     UITraitCollection *_lastNotifiedTraitCollection;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _mainSceneReferenceBounds;
     UITraitCollection *_overrideTraitCollection;
     NSMutableArray *_pausedWindows;
     float _pointsPerInch;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _referenceBounds;
     float _scale;
     UIWindow *_screenDisablingWindow;
+    struct { 
+        unsigned int bitsPerComponent : 4; 
+        unsigned int initialized : 1; 
+        unsigned int connected : 1; 
+        unsigned int overscanCompensation : 2; 
+        unsigned int screenUpdatesDisabled : 1; 
+        unsigned int wantsWideContentMargins : 1; 
+        unsigned int queriedDeviceContentMargins : 1; 
+        unsigned int hasCalculatedPointsPerInch : 1; 
     } _screenFlags;
     UISoftwareDimmingWindow *_softwareDimmingWindow;
     double _startedPausingWindows;
     float _touchScaleFactor;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _unjailedReferenceBounds;
     int _userInterfaceIdiom;
     BOOL _wantsSoftwareDimming;
@@ -142,11 +142,11 @@
 @property(readonly) UITraitCollection * traitCollection;
 @property BOOL wantsSoftwareDimming;
 
-+ (void)_FBSDisplayDidPossiblyConnect:(id)arg1 withScene:(id)arg2 andPost:(BOOL)arg3;
-+ (void)_FBSDisplayDidPossiblyConnect:(id)arg1 withScene:(id)arg2;
 + (void)_FBSDisplayDidPossiblyConnect:(id)arg1;
-+ (void)_FBSDisplayDidPossiblyDisconnect:(id)arg1 forSceneDestruction:(id)arg2;
++ (void)_FBSDisplayDidPossiblyConnect:(id)arg1 withScene:(id)arg2;
++ (void)_FBSDisplayDidPossiblyConnect:(id)arg1 withScene:(id)arg2 andPost:(BOOL)arg3;
 + (void)_FBSDisplayDidPossiblyDisconnect:(id)arg1;
++ (void)_FBSDisplayDidPossiblyDisconnect:(id)arg1 forSceneDestruction:(id)arg2;
 + (id)__connectedFBSDisplays;
 + (id)__createPlugInScreenForFBSDisplay:(id)arg1;
 + (void)_beginDisableScreenUpdatesForSnapshot;
@@ -175,9 +175,9 @@
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForScreenOriginRotation:(float)arg1;
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToRotateScreen:(float)arg1;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(int)arg1 usingStatusbarHeight:(float)arg2 ignoreStatusBar:(BOOL)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(int)arg1 usingStatusbarHeight:(float)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(int)arg1 usingStatusbarHeight:(float)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(int)arg1 usingStatusbarHeight:(float)arg2 ignoreStatusBar:(BOOL)arg3;
 - (BOOL)_areBoundsJailed;
 - (BOOL)_areListsLimited;
 - (BOOL)_areMusicListsLimited;
@@ -234,8 +234,8 @@
 - (id)_overrideTraitCollection;
 - (BOOL)_overscanAdjustmentNeedsUpdate;
 - (float)_pointsPerInch;
-- (struct CGPoint { float x1; float x2; })_positionForWindowTransformLayerInJail:(BOOL)arg1 offsetByScreenJail:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })_positionForWindowTransformLayerInJail:(BOOL)arg1;
+- (struct CGPoint { float x1; float x2; })_positionForWindowTransformLayerInJail:(BOOL)arg1 offsetByScreenJail:(BOOL)arg2;
 - (void)_postBrightnessDidChangeNotificationIfAppropriate;
 - (void)_prepareForWindow;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_rawJailedBoundsEdgeInsets;
@@ -256,8 +256,8 @@
 - (void)_setJailUsesHitTestWindow:(BOOL)arg1;
 - (void)_setLastNotifiedBacklightLevel:(int)arg1;
 - (void)_setLastNotifiedTraitCollection:(id)arg1;
-- (void)_setMainSceneReferenceBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 computingMetricsIfNecessary:(BOOL)arg2;
 - (void)_setMainSceneReferenceBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setMainSceneReferenceBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 computingMetricsIfNecessary:(BOOL)arg2;
 - (void)_setOverrideTraitCollection:(id)arg1;
 - (void)_setScale:(float)arg1;
 - (void)_setSoftwareDimmingWindow:(id)arg1;

@@ -7,8 +7,8 @@
 
 + (void)_postDeliveryAccountsHaveChanged;
 + (id)accountTypeIdentifier;
-+ (id)accountWithHostname:(id)arg1 username:(id)arg2 lookForExistingAccounts:(BOOL)arg3;
 + (id)accountWithHostname:(id)arg1 username:(id)arg2;
++ (id)accountWithHostname:(id)arg1 username:(id)arg2 lookForExistingAccounts:(BOOL)arg3;
 + (id)accountWithIdentifier:(id)arg1;
 + (id)accountWithUniqueId:(id)arg1;
 + (void)addDeliveryAccount:(id)arg1;

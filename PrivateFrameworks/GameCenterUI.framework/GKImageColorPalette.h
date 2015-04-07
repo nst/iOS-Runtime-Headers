@@ -5,9 +5,6 @@
 @class NSArray;
 
 @interface GKImageColorPalette : GKColorPalette {
-    struct CGSize { 
-        float width; 
-        float height; 
     float _borderPercentageForBorderDetection;
     unsigned long _brightnessHistogram[256];
     unsigned long _brightnessSpread;
@@ -16,6 +13,9 @@
     unsigned long _hueHistogram[360];
     unsigned long _hueSpread;
     struct HSVColor { float x1; float x2; float x3; } *_imageHSVMap;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _imageSize;
     unsigned long _saturationHistogram[256];
     unsigned long _saturationSpread;

@@ -89,9 +89,9 @@
 @property(readonly) NSString * vendorName;
 
 + (id)applicationProxyForBundleURL:(id)arg1;
++ (id)applicationProxyForIdentifier:(id)arg1;
 + (id)applicationProxyForIdentifier:(id)arg1 placeholder:(BOOL)arg2;
 + (id)applicationProxyForIdentifier:(id)arg1 roleIdentifier:(id)arg2;
-+ (id)applicationProxyForIdentifier:(id)arg1;
 + (id)applicationProxyForItemID:(id)arg1;
 + (id)applicationProxyWithBundleUnitID:(unsigned long)arg1;
 + (BOOL)supportsSecureCoding;

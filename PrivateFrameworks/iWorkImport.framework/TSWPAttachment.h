@@ -4,7 +4,7 @@
 
 @class NSString, TSWPStorage;
 
-@interface TSWPAttachment : TSPObject <TSKDocumentObject, TSDOwningAttachment, TSPCopying> {
+@interface TSWPAttachment : TSPObject <TSDOwningAttachment, TSKDocumentObject, TSPCopying> {
     TSWPStorage *_parentStorage;
 }
 

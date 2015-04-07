@@ -6,11 +6,11 @@
 
 @interface GEOMapsLaunchFeedbackCollection : PBCodable <NSCopying> {
     struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    struct { 
         unsigned int sessionId : 1; 
     } _has;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionId;
     NSString *_sourceAppBundleId;
     NSString *_uriScheme;

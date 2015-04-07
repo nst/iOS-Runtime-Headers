@@ -8,8 +8,8 @@
 + (id)_serverConnection;
 + (void)clearAllCloudTabDevices;
 + (void)clearTabsForCurrentDevice;
-+ (void)didToggleCloudTabs:(BOOL)arg1 terminateAfterUpdating:(BOOL)arg2;
 + (void)didToggleCloudTabs:(BOOL)arg1;
++ (void)didToggleCloudTabs:(BOOL)arg1 terminateAfterUpdating:(BOOL)arg2;
 + (void)didTogglePrivateBrowsing:(BOOL)arg1;
 
 @end

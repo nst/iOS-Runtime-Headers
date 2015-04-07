@@ -4,7 +4,7 @@
 
 @class CPLResource, NSData, NSString;
 
-@interface CPLAdjustments : NSObject <NSSecureCoding, NSCopying> {
+@interface CPLAdjustments : NSObject <NSCopying, NSSecureCoding> {
     NSString *_adjustmentCompoundVersion;
     NSString *_adjustmentCreatorCode;
     CPLResource *_adjustmentData;

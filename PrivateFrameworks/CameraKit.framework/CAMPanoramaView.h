@@ -5,59 +5,32 @@
 @class <PLCameraPanoramaViewDelegate>, CADisplayLink, CALayer, CAMPanoramaArrowView, CAMPanoramaLabel, CAMPanoramaLevelView, CMMotionManager, NSOperationQueue, NSString, UIImageView, UIView;
 
 @interface CAMPanoramaView : UIView <UIAccelerometerDelegate> {
+    NSOperationQueue *_accelerometerQueue;
+    CAMPanoramaArrowView *_arrowView;
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    NSOperationQueue *_accelerometerQueue;
-    CAMPanoramaArrowView *_arrowView;
     } _arrowViewBeginCenter;
     float _currentAcceleration;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _currentArrowFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _currentMaskFrame;
     float _currentSpeed;
     int _deferredDeviceOrientation;
@@ -68,7 +41,25 @@
     int _frameCounter;
     BOOL _ignorePreviewUpdates;
     float _initialAcceleration;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _initialArrowFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _initialMaskFrame;
     CAMPanoramaLabel *_instructionalText;
     UIView *_instructionalTextBackground;
@@ -87,6 +78,15 @@
     float _previewScale;
     BOOL _showingFastText;
     BOOL _showingMoveText;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _visiblePreviewRect;
 }
 

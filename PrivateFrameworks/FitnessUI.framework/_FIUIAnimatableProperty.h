@@ -12,8 +12,16 @@
     NSMutableArray *_animations;
     id _currentValue;
     id _endValue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _getter;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _setter;
+
     id _startValue;
 }
 

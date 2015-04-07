@@ -3,8 +3,8 @@
  */
 
 @interface CHDLine2DType : CHDLineType {
-    boolmShowMarker;
-    boolmStockType;
+    bool mShowMarker;
+    bool mStockType;
 }
 
 - (id)initWithChart:(id)arg1;

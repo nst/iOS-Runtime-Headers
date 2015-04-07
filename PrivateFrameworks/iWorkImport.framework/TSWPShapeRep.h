@@ -4,12 +4,12 @@
 
 @class CALayer, NSObject<TSDContainerInfo>, NSString, TSWPRep, TSWPStorage;
 
-@interface TSWPShapeRep : TSDShapeRep <TSDMagicMoveMatching, TSDContainerRep, TSWPShapeLayoutDelegate> {
+@interface TSWPShapeRep : TSDShapeRep <TSDContainerRep, TSDMagicMoveMatching, TSWPShapeLayoutDelegate> {
+    TSWPRep *_containedRep;
+    BOOL _editingContainedRep;
     struct CGPoint { 
         float x; 
         float y; 
-    TSWPRep *_containedRep;
-    BOOL _editingContainedRep;
     } _originalAutosizePositionOffset;
     CALayer *_overflowGlyphLayer;
 }
@@ -71,10 +71,10 @@
 - (BOOL)p_shouldShowTextOverflowGlyph;
 - (float)p_textureSetOpacity;
 - (void)processChangedProperty:(int)arg1;
-- (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)recursivelyPerformSelector:(SEL)arg1;
-- (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2;
+- (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1;
+- (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2;
 - (id)resizedGeometryForTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)selectChildRep:(id)arg1;
 - (BOOL)selectionIsAppropriateToShowInvisiblePathHighlight;

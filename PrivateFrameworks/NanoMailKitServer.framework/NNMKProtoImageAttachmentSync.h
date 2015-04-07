@@ -5,11 +5,11 @@
 @class NSData, NSString;
 
 @interface NNMKProtoImageAttachmentSync : PBCodable <NSCopying> {
-    struct { 
-        unsigned int fullSyncVersion : 1; 
     NSString *_contentId;
     NSData *_dateSynced;
     unsigned int _fullSyncVersion;
+    struct { 
+        unsigned int fullSyncVersion : 1; 
     } _has;
     NSData *_imageData;
     NSString *_messageId;

@@ -88,9 +88,9 @@
 - (id)elementFromPoint:(int)arg1 y:(int)arg2;
 - (id)evaluate:(id)arg1 :(id)arg2 :(id)arg3 :(unsigned short)arg4 :(id)arg5;
 - (id)evaluate:(id)arg1 contextNode:(id)arg2 resolver:(id)arg3 type:(unsigned short)arg4 inResult:(id)arg5;
-- (BOOL)execCommand:(id)arg1 userInterface:(BOOL)arg2 value:(id)arg3;
-- (BOOL)execCommand:(id)arg1 userInterface:(BOOL)arg2;
 - (BOOL)execCommand:(id)arg1;
+- (BOOL)execCommand:(id)arg1 userInterface:(BOOL)arg2;
+- (BOOL)execCommand:(id)arg1 userInterface:(BOOL)arg2 value:(id)arg3;
 - (id)forms;
 - (id)getComputedStyle:(id)arg1 :(id)arg2;
 - (id)getComputedStyle:(id)arg1 pseudoElement:(id)arg2;
@@ -100,8 +100,8 @@
 - (id)getElementsByTagName:(id)arg1;
 - (id)getElementsByTagNameNS:(id)arg1 :(id)arg2;
 - (id)getElementsByTagNameNS:(id)arg1 localName:(id)arg2;
-- (id)getMatchedCSSRules:(id)arg1 pseudoElement:(id)arg2 authorOnly:(BOOL)arg3;
 - (id)getMatchedCSSRules:(id)arg1 pseudoElement:(id)arg2;
+- (id)getMatchedCSSRules:(id)arg1 pseudoElement:(id)arg2 authorOnly:(BOOL)arg3;
 - (id)getOverrideStyle:(id)arg1 :(id)arg2;
 - (id)getOverrideStyle:(id)arg1 pseudoElement:(id)arg2;
 - (BOOL)hasFocus;

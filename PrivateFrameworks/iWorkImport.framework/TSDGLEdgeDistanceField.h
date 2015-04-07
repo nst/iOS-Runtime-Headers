@@ -5,22 +5,13 @@
 @class TSDGLDataBuffer, TSDGLFrameBuffer, TSDGLState;
 
 @interface TSDGLEdgeDistanceField : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    TSDGLState *_GLState;
+    float _downsampleScale;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    TSDGLState *_GLState;
-    float _downsampleScale;
     } _edgeInsets;
     TSDGLFrameBuffer *_exteriorFramebuffer;
     unsigned int _inputTexture;
@@ -28,9 +19,18 @@
     int _oldViewport[4];
     TSDGLDataBuffer *_origDataBuffer;
     TSDGLDataBuffer *_rectDataBuffer;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _resultTextureSize;
     TSDGLDataBuffer *_squareDataBuffer;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _squareSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _textureSize;
 }
 

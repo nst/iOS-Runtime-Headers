@@ -5,14 +5,14 @@
 @class NSArray;
 
 @interface MTLComputePipelineReflection : NSObject {
+    NSArray *_arguments;
+    NSArray *_builtInArguments;
     struct { 
         unsigned int kernelRegisterSpill : 1; 
         unsigned int threadgroupBarrier : 1; 
         unsigned int deviceMemoryAtomics : 1; 
         unsigned int threadgroupMemoryAtomics : 1; 
         unsigned int reserved : 60; 
-    NSArray *_arguments;
-    NSArray *_builtInArguments;
     } _flags;
 }
 

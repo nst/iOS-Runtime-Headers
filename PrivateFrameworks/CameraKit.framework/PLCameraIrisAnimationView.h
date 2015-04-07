@@ -3,12 +3,12 @@
  */
 
 @interface PLCameraIrisAnimationView : UIView {
-    struct CGPoint { 
-        float x; 
-        float y; 
     id irisAnimationDelegate;
     SEL irisAnimationDidStopSelector;
     double irisAnimationDuration;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } irisAnimationPosition;
     BOOL shouldSetupAnimationInDidMoveToWindow;
 }

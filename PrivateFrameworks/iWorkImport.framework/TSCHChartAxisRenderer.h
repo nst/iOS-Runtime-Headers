@@ -5,6 +5,8 @@
 @class NSString, TSCHSelectionPath;
 
 @interface TSCHChartAxisRenderer : TSCHRenderer <TSCHCompositeRendering> {
+    TSCHSelectionPath *mAxisTitleSelectionPath;
+    NSString *mEditingString;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    TSCHSelectionPath *mAxisTitleSelectionPath;
-    NSString *mEditingString;
     } mStartingEditingFrame;
 }
 

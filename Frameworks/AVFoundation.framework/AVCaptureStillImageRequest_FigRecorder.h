@@ -7,17 +7,25 @@
  */
 
 @interface AVCaptureStillImageRequest_FigRecorder : NSObject <NSCopying> {
-    struct CGSize { 
-        float width; 
-        float height; 
     int _HDRMode;
     unsigned long _imageDataFormatType;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _iosurfaceCompletionBlock;
+
     float _jpegQuality;
     BOOL _jpegQualitySpecified;
     BOOL _noiseReductionEnabled;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _previewImageSize;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sbufCompletionBlock;
+
     unsigned long _shutterSoundID;
     BOOL _stillImageMirrored;
     int _stillImageOrientation;

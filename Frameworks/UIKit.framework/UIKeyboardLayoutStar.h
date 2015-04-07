@@ -174,8 +174,8 @@
 - (void)downActionShiftWithKey:(id)arg1;
 - (struct CGSize { float x1; float x2; })dragGestureSize;
 - (BOOL)edgeSwipeGestureEnabled;
-- (void)fadeMenu:(id)arg1 forKey:(id)arg2 withDelay:(float)arg3;
 - (void)fadeMenu:(id)arg1 forKey:(id)arg2;
+- (void)fadeMenu:(id)arg1 forKey:(id)arg2 withDelay:(float)arg3;
 - (void)fadeWithInvocation:(id)arg1;
 - (void)finishHandBiasTransition;
 - (void)finishSplit;
@@ -185,8 +185,8 @@
 - (id)flickStringForInputKey:(id)arg1 direction:(int)arg2;
 - (void)flushKeyCache:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeyWithRepresentedString:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1 onKeyplaneName:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1 onKeyplaneName:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForLastKeyWithRepresentedString:(id)arg1;
 - (id)generateInfoForTouch:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
@@ -194,13 +194,13 @@
 - (id)getFlickCompositeImageForKey:(id)arg1 direction:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)getPopupBackgroundImageForKey:(id)arg1 direction:(int)arg2 popupInfo:(id)arg3 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (void)handleDelayedCentroidUpdate;
-- (void)handleDismissFlickView:(id)arg1;
 - (void)handleDismissFlickView;
+- (void)handleDismissFlickView:(id)arg1;
 - (void)handleFlick:(id)arg1;
 - (void)handleKeyboardMenusForTouch:(id)arg1;
 - (void)handleMultitapTimerFired;
-- (void)handlePopupView:(id)arg1;
 - (void)handlePopupView;
+- (void)handlePopupView:(id)arg1;
 - (SEL)handlerForNotification:(id)arg1;
 - (BOOL)handwritingPlane;
 - (BOOL)hasAccentKey;
@@ -283,10 +283,10 @@
 - (void)setHideKeysUnderIndicator:(BOOL)arg1;
 - (void)setKeyForTouchInfo:(id)arg1 key:(id)arg2;
 - (void)setKeyboardAppearance:(int)arg1;
-- (void)setKeyboardDim:(BOOL)arg1 amount:(float)arg2 withDuration:(float)arg3;
 - (void)setKeyboardDim:(BOOL)arg1;
-- (void)setKeyboardName:(id)arg1 appearance:(int)arg2;
+- (void)setKeyboardDim:(BOOL)arg1 amount:(float)arg2 withDuration:(float)arg3;
 - (void)setKeyboardName:(id)arg1;
+- (void)setKeyboardName:(id)arg1 appearance:(int)arg2;
 - (void)setKeyplaneName:(id)arg1;
 - (void)setLabel:(id)arg1 forKey:(id)arg2;
 - (void)setLayoutTag:(id)arg1;

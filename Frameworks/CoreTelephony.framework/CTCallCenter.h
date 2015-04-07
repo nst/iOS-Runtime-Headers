@@ -9,7 +9,11 @@
 @class NSSet;
 
 @interface CTCallCenter : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callEventHandler;
+
     NSSet *_currentCalls;
     void *_server;
 }

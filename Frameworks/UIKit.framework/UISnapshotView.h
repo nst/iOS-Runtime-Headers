@@ -5,27 +5,38 @@
 @class NSMutableArray, NSString, UIColor, UIImageView, UIView;
 
 @interface UISnapshotView : UIView <UIStatusBarTinting> {
-    struct CGSize { 
-        float width; 
-        float height; 
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+    } _contentBeyondBounds;
     struct CGPoint { 
         float x; 
         float y; 
+    } _contentOffset;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _contentSize;
+    unsigned int _disableEdgeAntialiasing : 1;
+    unsigned int _disableVerticalStretch : 1;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _edgeInsets;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _edgePadding;
+    UIColor *_edgePaddingColor;
+    NSMutableArray *_edgePaddingViews;
+    UIView *_imageView;
+    UIImageView *_shadowView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -35,17 +46,6 @@
             float width; 
             float height; 
         } size; 
-    unsigned int _disableEdgeAntialiasing : 1;
-    unsigned int _disableVerticalStretch : 1;
-    } _contentBeyondBounds;
-    } _contentOffset;
-    } _contentSize;
-    } _edgeInsets;
-    } _edgePadding;
-    UIColor *_edgePaddingColor;
-    NSMutableArray *_edgePaddingViews;
-    UIView *_imageView;
-    UIImageView *_shadowView;
     } _snapshotRect;
     UIColor *_statusBarTintColor;
 }

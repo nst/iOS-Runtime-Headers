@@ -64,10 +64,10 @@
 - (unsigned int)numberOfAudioRoutes;
 - (BOOL)pickBestDeviceRoute;
 - (BOOL)pickHandsetRoute;
-- (BOOL)pickRoute:(id)arg1 withPassword:(id)arg2;
 - (BOOL)pickRoute:(id)arg1;
-- (BOOL)pickRouteAtIndex:(unsigned int)arg1 withPassword:(id)arg2;
+- (BOOL)pickRoute:(id)arg1 withPassword:(id)arg2;
 - (BOOL)pickRouteAtIndex:(unsigned int)arg1;
+- (BOOL)pickRouteAtIndex:(unsigned int)arg1 withPassword:(id)arg2;
 - (BOOL)pickSpeakerRoute;
 - (id)pickedRouteDescription;
 - (BOOL)receiverRouteIsPicked;

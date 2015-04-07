@@ -4,7 +4,7 @@
 
 @class AVAssetInternal, NSArray;
 
-@interface AVAsset : NSObject <NSCopying, AVAsynchronousKeyValueLoading> {
+@interface AVAsset : NSObject <AVAsynchronousKeyValueLoading, NSCopying> {
     AVAssetInternal *_asset;
 }
 
@@ -20,8 +20,8 @@
 @property(readonly) id propertyListForProxy;
 
 + (id)assetProxyWithPropertyList:(id)arg1;
-+ (id)assetWithURL:(id)arg1 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;
 + (id)assetWithURL:(id)arg1;
++ (id)assetWithURL:(id)arg1 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;
 + (id)keyPathsForValuesAffectingNaturalSizeWithPreferredTransforms;
 
 - (BOOL)MP_canAffectNetworkPlayability;
@@ -95,8 +95,8 @@
 - (id)propertyListForProxy;
 - (BOOL)providesPreciseDurationAndTiming;
 - (unsigned int)referenceRestrictions;
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (int)statusOfValueForKey:(id)arg1;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (id)subtitleAlternatesTrackGroup;
 - (id)trackGroups;
 - (id)trackReferences;

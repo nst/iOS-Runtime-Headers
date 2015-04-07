@@ -9,7 +9,11 @@
 @class HDMetadataValueStatement, HDSQLiteDatabase, NSArray, NSDictionary, NSMutableDictionary;
 
 @interface HDDataPropertyApplier : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _authorizationFilter;
+
     HDSQLiteDatabase *_database;
     HDMetadataValueStatement *_metadataValueStatement;
     NSArray *_propertyOrder;

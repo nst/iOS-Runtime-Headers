@@ -5,14 +5,14 @@
 @class NSMapTable, NSMutableArray, VKLabelTile;
 
 @interface VKLabelNavTileData : NSObject {
+    BOOL _foundTileEdgeJunctions;
+    NSMapTable *_geoJunctionToJunctionMap;
     struct vector<LabelNavJunctionInfo, std::__1::allocator<LabelNavJunctionInfo> > { 
         struct LabelNavJunctionInfo {} *__begin_; 
         struct LabelNavJunctionInfo {} *__end_; 
         struct __compressed_pair<LabelNavJunctionInfo *, std::__1::allocator<LabelNavJunctionInfo> > { 
             struct LabelNavJunctionInfo {} *__first_; 
         } __end_cap_; 
-    BOOL _foundTileEdgeJunctions;
-    NSMapTable *_geoJunctionToJunctionMap;
     } _junctionInfos;
     NSMutableArray *_oppositeCarriagewayJunctions;
     BOOL _oppositeCarriagewayJunctionsValid;

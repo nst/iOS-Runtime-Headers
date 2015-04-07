@@ -11,7 +11,11 @@
 @interface CKSQLitePool : NSObject {
     NSMutableArray *_dbs;
     BOOL _drainScheduled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _factory;
+
     NSObject<OS_dispatch_queue> *_queue;
 }
 
@@ -32,8 +36,8 @@
 - (BOOL)drainScheduled;
 - (id)factory;
 - (id)initWithFactory:(id)arg1;
-- (BOOL)performWithDatabase:(id)arg1 error:(id*)arg2;
 - (void)performWithDatabase:(id)arg1;
+- (BOOL)performWithDatabase:(id)arg1 error:(id*)arg2;
 - (id)queue;
 - (void)releaseDatabase:(id)arg1;
 - (void)setDbs:(id)arg1;

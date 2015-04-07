@@ -5,9 +5,9 @@
 @class NSString, UILabel;
 
 @interface UIDatePickerWeekMonthDayView : UIView {
+    UILabel *_dateLabel;
     struct { 
         unsigned int weekdayLast : 1; 
-    UILabel *_dateLabel;
     } _datePickerWeekMonthDayViewFlags;
     NSString *_formattedDateString;
     BOOL _isModern;

@@ -4,7 +4,7 @@
 
 @class <MSSubscribeStorageProtocol>, <MSSubscriberDelegate>, MSMediaStreamDaemon, MSObjectQueue, MSReauthorizationProtocol, MSSubscribeStreamsProtocol, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface MSSubscriber : MSCupidStateMachine <MSSubscriber, MSSubscribeStreamsProtocolDelegate, MSSubscribeStorageProtocolDelegate, MSReauthorizationProtocolDelegate> {
+@interface MSSubscriber : MSCupidStateMachine <MSReauthorizationProtocolDelegate, MSSubscribeStorageProtocolDelegate, MSSubscribeStreamsProtocolDelegate, MSSubscriber> {
     NSMutableArray *_assetsBeingRetrieved;
     BOOL _checkOneMoreTime;
     MSMediaStreamDaemon *_daemon;

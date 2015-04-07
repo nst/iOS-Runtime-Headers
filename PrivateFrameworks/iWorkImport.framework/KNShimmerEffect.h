@@ -5,6 +5,26 @@
 @class KNAnimationContext, KNShimmerObjectSystem, KNShimmerParticleSystem, NSString, TSDGLDataBuffer, TSDGLShader, TSDGLTextureInfo, TSDTexturedRectangle;
 
 @interface KNShimmerEffect : NSObject <KNAnimationOpenGLEffect> {
+    KNAnimationContext *mAnimationContext;
+    struct CATransform3D { 
+        float m11; 
+        float m12; 
+        float m13; 
+        float m14; 
+        float m21; 
+        float m22; 
+        float m23; 
+        float m24; 
+        float m31; 
+        float m32; 
+        float m33; 
+        float m34; 
+        float m41; 
+        float m42; 
+        float m43; 
+        float m44; 
+    } mBaseTransform;
+    int mBuildType;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,43 +34,6 @@
             float width; 
             float height; 
         } size; 
-    struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
-    struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
-    KNAnimationContext *mAnimationContext;
-    } mBaseTransform;
-    int mBuildType;
     } mDestinationRect;
     unsigned int mDirection;
     float mDuration;
@@ -63,6 +46,23 @@
     TSDGLShader *mParticleSystemShader;
     TSDGLTextureInfo *mShimmerTexture;
     TSDTexturedRectangle *mTexture;
+    struct CATransform3D { 
+        float m11; 
+        float m12; 
+        float m13; 
+        float m14; 
+        float m21; 
+        float m22; 
+        float m23; 
+        float m24; 
+        float m31; 
+        float m32; 
+        float m33; 
+        float m34; 
+        float m41; 
+        float m42; 
+        float m43; 
+        float m44; 
     } mTranslate;
 }
 

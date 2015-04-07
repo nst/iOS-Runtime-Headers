@@ -4,7 +4,7 @@
 
 @class <SKUIProductPageChildViewControllerDelegate>, NSString, SKUIClientContext, SKUIColorScheme, SKUIProductPageHeaderViewController, SKUIProductPagePlaceholderScrollView, UIActivityIndicatorView, UIScrollView;
 
-@interface SKUIProductPagePlaceholderViewController : UIViewController <UIScrollViewDelegate, SKUIProductPageChildViewController> {
+@interface SKUIProductPagePlaceholderViewController : UIViewController <SKUIProductPageChildViewController, UIScrollViewDelegate> {
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
     <SKUIProductPageChildViewControllerDelegate> *_delegate;

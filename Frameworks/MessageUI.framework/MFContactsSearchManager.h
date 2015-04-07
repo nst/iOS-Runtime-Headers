@@ -47,8 +47,8 @@
 - (void)dealloc;
 - (unsigned int)implicitGroupCreationThreshold;
 - (BOOL)includeUpcomingEventMembers;
-- (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3 recentsBundleIdentifier:(id)arg4;
 - (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3;
+- (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3 recentsBundleIdentifier:(id)arg4;
 - (id)recentsBundleIdentifier;
 - (id)searchAccountIDs;
 - (id)searchAccounts;

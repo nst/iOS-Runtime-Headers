@@ -9,6 +9,20 @@
 @class NSMutableArray, UIView, UIWindow, _UIModalItem;
 
 @interface _UIModalItemsPresentingViewController : UIViewController {
+    UIView *_backgroundView;
+    _UIModalItem *_currentItem;
+    UIView *_currentItemView;
+    UIView *_dimmingView;
+    BOOL _isInTransition;
+    _UIModalItem *_itemBeingDismissed;
+    _UIModalItem *_itemBeingPresented;
+    NSMutableArray *_items;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _itemsTransitionCompletion;
+
+    NSMutableArray *_itemsViews;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,16 +32,6 @@
             float width; 
             float height; 
         } size; 
-    UIView *_backgroundView;
-    _UIModalItem *_currentItem;
-    UIView *_currentItemView;
-    UIView *_dimmingView;
-    BOOL _isInTransition;
-    _UIModalItem *_itemBeingDismissed;
-    _UIModalItem *_itemBeingPresented;
-    NSMutableArray *_items;
-    id _itemsTransitionCompletion;
-    NSMutableArray *_itemsViews;
     } _keyboardFrame;
     float _keyboardHeight;
     NSMutableArray *_occludedWindows;
@@ -41,16 +45,16 @@
 @property(copy) id itemsTransitionCompletion;
 @property(retain) UIWindow * rotationDelegate;
 
-- (void)_applyDismissingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2 forceCenter:(BOOL)arg3;
 - (void)_applyDismissingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2;
-- (void)_applyPresentingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2 forceCenter:(BOOL)arg3;
+- (void)_applyDismissingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2 forceCenter:(BOOL)arg3;
 - (void)_applyPresentingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2;
+- (void)_applyPresentingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2 forceCenter:(BOOL)arg3;
 - (void)_applyPresentingAnimationStartingStateForModalItem:(id)arg1 view:(id)arg2;
 - (void)_applyPresentingViewMetricsStateForModalItem:(id)arg1;
 - (id)_createViewForItem:(id)arg1;
 - (void)_desaturateUI;
-- (void)_dismissItem:(id)arg1 andPresentItem:(id)arg2 animated:(BOOL)arg3 completion:(id)arg4 keepDimmingView:(BOOL)arg5;
 - (void)_dismissItem:(id)arg1 andPresentItem:(id)arg2 animated:(BOOL)arg3 completion:(id)arg4;
+- (void)_dismissItem:(id)arg1 andPresentItem:(id)arg2 animated:(BOOL)arg3 completion:(id)arg4 keepDimmingView:(BOOL)arg5;
 - (void)_dismissMe:(id)arg1 animated:(BOOL)arg2;
 - (void)_enqueueAdditionalTransitionCompletion:(id)arg1;
 - (void)_hide;

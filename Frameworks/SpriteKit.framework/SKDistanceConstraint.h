@@ -5,11 +5,11 @@
 @class SKNode, SKRange;
 
 @interface SKDistanceConstraint : SKConstraint {
+    SKRange *_distanceRange;
+    SKNode *_node;
     struct CGPoint { 
         float x; 
         float y; 
-    SKRange *_distanceRange;
-    SKNode *_node;
     } _point;
 }
 

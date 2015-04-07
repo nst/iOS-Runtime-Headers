@@ -17,8 +17,8 @@
 + (void)addSingletonObjectsToContext:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
-+ (id)sharedMomentLibraryInManagedObjectContext:(id)arg1 createIfNecessary:(BOOL)arg2;
 + (id)sharedMomentLibraryInManagedObjectContext:(id)arg1;
++ (id)sharedMomentLibraryInManagedObjectContext:(id)arg1 createIfNecessary:(BOOL)arg2;
 
 - (id)_typeDescription;
 - (void)addMoments:(id)arg1;

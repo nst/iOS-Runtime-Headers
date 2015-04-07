@@ -10,7 +10,11 @@
 
 @interface CKDFetchSubscriptionsOperation : CKDDatabaseOperation {
     BOOL _isFetchAllSubscriptionsOperation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _subscriptionFetchedProgressBlock;
+
     NSArray *_subscriptionIDs;
     NSArray *_subscriptions;
 }

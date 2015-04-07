@@ -119,13 +119,13 @@
 + (id)findCCNameInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
 + (id)findCCNumberInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
 + (id)findCCObjects:(id)arg1 InImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg2 nameRects:(id)arg3 dateRects:(id)arg4;
-+ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2 roi:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2;
-+ (id)findObjects:(id)arg1 inCorrectedImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg2 nameRects:(id)arg3 dateRects:(id)arg4;
++ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2 roi:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (id)findObjects:(id)arg1 inCorrectedImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg2;
++ (id)findObjects:(id)arg1 inCorrectedImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg2 nameRects:(id)arg3 dateRects:(id)arg4;
 + (id)findObjects:(id)arg1 inImage:(id)arg2 properties:(id)arg3;
-+ (id)findObjects:(id)arg1 inPixelBuffer:(struct __CVBuffer { }*)arg2 withFixedCut:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 nameRects:(id)arg4 dateRects:(id)arg5;
 + (id)findObjects:(id)arg1 inPixelBuffer:(struct __CVBuffer { }*)arg2 withFixedCut:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
++ (id)findObjects:(id)arg1 inPixelBuffer:(struct __CVBuffer { }*)arg2 withFixedCut:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 nameRects:(id)arg4 dateRects:(id)arg5;
 + (void)loadFonts;
 + (unsigned int)supportedCameraCount;
 

@@ -3,11 +3,11 @@
  */
 
 @interface UITouchTapInfo : NSObject {
+    float _multiTapDelay;
+    float _rejectAsTapThrehold;
     struct CGPoint { 
         float x; 
         float y; 
-    float _multiTapDelay;
-    float _rejectAsTapThrehold;
     } _startPosition;
     double _startTime;
     unsigned int _tapCount;

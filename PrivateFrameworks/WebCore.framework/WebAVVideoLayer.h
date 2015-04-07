@@ -5,8 +5,12 @@
 @interface WebAVVideoLayer : CALayer <AVVideoLayer> {
     struct RetainPtr<WebAVPlayerController> { 
         void *m_ptr; 
+    } _avPlayerController;
     struct RetainPtr<AVPlayerViewController> { 
         void *m_ptr; 
+    } _avPlayerViewController;
+    BOOL _readyForDisplay;
+    int _videoLayerGravity;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,10 +20,6 @@
             float width; 
             float height; 
         } size; 
-    } _avPlayerController;
-    } _avPlayerViewController;
-    BOOL _readyForDisplay;
-    int _videoLayerGravity;
     } _videoRect;
 }
 

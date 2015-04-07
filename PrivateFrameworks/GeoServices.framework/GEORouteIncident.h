@@ -5,6 +5,9 @@
 @class GEOLatLng, NSString;
 
 @interface GEORouteIncident : PBCodable <NSCopying> {
+    NSString *_crossStreet;
+    long long _endTime;
+    BOOL _endTimeReliable;
     struct { 
         unsigned int endTime : 1; 
         unsigned int startTime : 1; 
@@ -14,9 +17,6 @@
         unsigned int significance : 1; 
         unsigned int type : 1; 
         unsigned int endTimeReliable : 1; 
-    NSString *_crossStreet;
-    long long _endTime;
-    BOOL _endTimeReliable;
     } _has;
     NSString *_incidentId;
     NSString *_info;

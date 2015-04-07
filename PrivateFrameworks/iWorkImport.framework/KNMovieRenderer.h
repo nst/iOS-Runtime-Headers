@@ -5,6 +5,7 @@
 @class <TSDMovieHUDViewController>, CALayer, KNBuildRenderer, NSObject<NSCopying>, NSObject<TSKMediaPlayerController>, NSString;
 
 @interface KNMovieRenderer : KNBuildRenderer <TSKMediaPlayerControllerDelegate> {
+    KNBuildRenderer *mBuildInRenderer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,25 +15,24 @@
             float width; 
             float height; 
         } size; 
-    unsigned int mHasMoviePlaybackStarted : 1;
-    unsigned int mNeedsToSendMovieStartCallback : 1;
-    unsigned int mNeedsToSendBuildEndCallback : 1;
-    unsigned int mIsObservingVideoLayerReadyForDisplay : 1;
-    unsigned int mNeedsPlaybackAtStartTime : 1;
-    unsigned int mHasPendingTogglePlayingControl : 1;
-    unsigned int mPendingTogglePlayingControlStartsPlaying : 1;
-    unsigned int mShouldMoviePlaybackEndOnCompletion : 1;
-    unsigned int mWasMoviePlayingBeforeAnimationPause : 1;
-    KNBuildRenderer *mBuildInRenderer;
     } mFrameInContainerView;
+    unsigned int mHasMoviePlaybackStarted : 1;
+    unsigned int mHasPendingTogglePlayingControl : 1;
+    unsigned int mIsObservingVideoLayerReadyForDisplay : 1;
     SEL mMovieStartCallbackSelector;
     id mMovieStartCallbackTarget;
+    unsigned int mNeedsPlaybackAtStartTime : 1;
+    unsigned int mNeedsToSendBuildEndCallback : 1;
+    unsigned int mNeedsToSendMovieStartCallback : 1;
+    unsigned int mPendingTogglePlayingControlStartsPlaying : 1;
     double mPlaybackAtStartTimePauseOffset;
     double mPlaybackAtStartTimePauseTime;
     NSObject<TSKMediaPlayerController> *mPlayerController;
+    unsigned int mShouldMoviePlaybackEndOnCompletion : 1;
     double mStartTime;
     CALayer *mVideoLayer;
     <TSDMovieHUDViewController> *mViewController;
+    unsigned int mWasMoviePlayingBeforeAnimationPause : 1;
 }
 
 @property KNBuildRenderer * buildInRenderer;
@@ -79,8 +79,8 @@
 - (void)pauseAnimations;
 - (void)pauseAnimationsAtTime:(double)arg1;
 - (void)playbackDidStopForPlayerController:(id)arg1;
-- (void)playerController:(id)arg1 playbackDidFailWithError:(id)arg2;
 - (id)playerController;
+- (void)playerController:(id)arg1 playbackDidFailWithError:(id)arg2;
 - (void)registerForMovieStartCallback:(SEL)arg1 target:(id)arg2;
 - (void)removeAnimationsAndFinish:(BOOL)arg1;
 - (void)resumeAnimationsIfPaused;

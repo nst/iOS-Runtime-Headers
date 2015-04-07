@@ -25,8 +25,8 @@
 @property float mass;
 @property float stiffness;
 
-+ (id)_moduleWithSectionTitle:(id)arg1 delay:(BOOL)arg2;
 + (id)_moduleWithSectionTitle:(id)arg1;
++ (id)_moduleWithSectionTitle:(id)arg1 delay:(BOOL)arg2;
 + (id)settingsControllerModule;
 
 - (id)BSAnimationSettings;

@@ -5,10 +5,10 @@
 @class <SiriUISuggestionsViewDelegate>, NSArray, NSMutableOrderedSet, NSString, NSTimer, SiriUIAcousticIDSpinner, UIColor, UILabel;
 
 @interface SiriUISuggestionsView : UIView {
+    SiriUIAcousticIDSpinner *_acousticIDSpinner;
     struct CGPoint { 
         float x; 
         float y; 
-    SiriUIAcousticIDSpinner *_acousticIDSpinner;
     } _contentOffset;
     <SiriUISuggestionsViewDelegate> *_delegate;
     BOOL _firstSuggestionPresentation;

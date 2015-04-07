@@ -12,9 +12,17 @@
     NSArray *_actions;
     BLAlertViewController *_alertView;
     BLAlertAction *_cancelAction;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _conditionBlock;
+
     id _context;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _executionBlock;
+
     int _options;
     BOOL _showing;
     BLAlert *_strongSelf;
@@ -39,11 +47,11 @@
 - (id)conditionBlock;
 - (id)context;
 - (void)dealloc;
-- (void)hide:(BOOL)arg1;
 - (void)hide;
+- (void)hide:(BOOL)arg1;
 - (void)hideWithCompletionBlock:(id)arg1;
-- (void)hideWithDelay:(double)arg1 completionBlock:(id)arg2;
 - (void)hideWithDelay:(double)arg1;
+- (void)hideWithDelay:(double)arg1 completionBlock:(id)arg2;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 cancelAction:(id)arg3 otherActions:(id)arg4;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 options:(int)arg3 cancelAction:(id)arg4 otherActions:(id)arg5;
 - (BOOL)isShowing;

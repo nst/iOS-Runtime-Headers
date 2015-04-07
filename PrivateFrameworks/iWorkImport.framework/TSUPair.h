@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUPair : NSObject <NSCopying, NSMutableCopying, NSCoding> {
+@interface TSUPair : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     id mFirst;
     id mSecond;
 }

@@ -5,10 +5,10 @@
 @class UIColor;
 
 @interface PT2DGraphDatum : NSObject <PT2DGraphDatum> {
+    UIColor *_color;
     struct CGPoint { 
         float x; 
         float y; 
-    UIColor *_color;
     } _graphPoint;
 }
 

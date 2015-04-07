@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface MIPArtist : PBCodable <NSCopying> {
+    NSString *_artworkId;
     struct { 
         unsigned int persistentId : 1; 
         unsigned int storeId : 1; 
-    NSString *_artworkId;
     } _has;
     NSString *_name;
     long long _persistentId;

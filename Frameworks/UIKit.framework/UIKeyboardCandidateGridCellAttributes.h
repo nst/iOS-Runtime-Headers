@@ -5,15 +5,6 @@
 @class NSIndexPath;
 
 @interface UIKeyboardCandidateGridCellAttributes : UICollectionViewLayoutAttributes {
-    struct { 
-        unsigned int idiom : 6; 
-        unsigned int landscape : 1; 
-        unsigned int split : 1; 
-        unsigned int appearance : 8; 
-        unsigned int rendering : 16; 
-    struct CGSize { 
-        float width; 
-        float height; 
     NSIndexPath *_candidateIndexPath;
     unsigned int _candidateNumber;
     int _candidatesVisualStyle;
@@ -24,8 +15,17 @@
     BOOL _groupShowsAlternativeText;
     BOOL _needsPaddingForIndexScrubber;
     unsigned int _rowIndex;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _rowSize;
     BOOL _secondaryCandidateAppearance;
+    struct { 
+        unsigned int idiom : 6; 
+        unsigned int landscape : 1; 
+        unsigned int split : 1; 
+        unsigned int appearance : 8; 
+        unsigned int rendering : 16; 
     } _visualStyling;
 }
 

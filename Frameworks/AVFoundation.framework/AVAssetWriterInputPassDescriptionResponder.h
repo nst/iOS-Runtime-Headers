@@ -9,7 +9,11 @@
 @class AVAssetWriterInputPassDescription, NSObject<OS_dispatch_queue>;
 
 @interface AVAssetWriterInputPassDescriptionResponder : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callbackBlock;
+
     NSObject<OS_dispatch_queue> *_callbackQueue;
     BOOL _hasRespondedAtLeastOnce;
     AVAssetWriterInputPassDescription *_mostRecentPassDescription;

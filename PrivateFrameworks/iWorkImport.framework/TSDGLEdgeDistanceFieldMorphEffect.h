@@ -5,6 +5,8 @@
 @class TSDGLShader, TSDGLTextureInfo;
 
 @interface TSDGLEdgeDistanceFieldMorphEffect : NSObject {
+    BOOL _didSetupTextureAdjustment;
+    BOOL _didTeardown;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,6 +16,17 @@
             float width; 
             float height; 
         } size; 
+    } _incomingTextBounds;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
+    } _incomingTextureEdgeInsetsAdjustmentMatrix;
+    TSDGLTextureInfo *_incomingTextureInfo;
+    BOOL _isTextStyleIdenticalExceptSize;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,6 +36,7 @@
             float width; 
             float height; 
         } size; 
+    } _outgoingTextBounds;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -30,27 +44,13 @@
         float d; 
         float tx; 
         float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+    } _outgoingTextureEdgeInsetsAdjustmentMatrix;
+    TSDGLTextureInfo *_outgoingTextureInfo;
+    TSDGLShader *_shader;
     struct { 
         float skew; 
         float skewOffset; 
         float scale; 
-    BOOL _didSetupTextureAdjustment;
-    BOOL _didTeardown;
-    } _incomingTextBounds;
-    } _incomingTextureEdgeInsetsAdjustmentMatrix;
-    TSDGLTextureInfo *_incomingTextureInfo;
-    BOOL _isTextStyleIdenticalExceptSize;
-    } _outgoingTextBounds;
-    } _outgoingTextureEdgeInsetsAdjustmentMatrix;
-    TSDGLTextureInfo *_outgoingTextureInfo;
-    TSDGLShader *_shader;
     } _textureAdjustment;
 }
 

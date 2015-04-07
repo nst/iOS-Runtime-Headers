@@ -5,24 +5,6 @@
 @class <STRunViewDelegate>, NSString, NSTimer, STRunCaloriesLabel, STRunDistanceLabel, STRunPaceLabel, STRunProgressView, STRunTimeLabel, SWRunWorkoutProxy, UIButton, UIImageView, UILabel, UIView;
 
 @interface STRunView : UIView {
-    struct { 
-        unsigned int timerPaused : 1; 
-        unsigned int shouldStartTimer : 1; 
-        unsigned int isLockScreen : 1; 
-        unsigned int animateForResumeEventsOnly : 1; 
-        unsigned int canHighlightPowerSong : 1; 
-        unsigned int validPaceReceived : 1; 
-        unsigned int noMusic : 1; 
-        unsigned int seekHandled : 1; 
-        unsigned int seekAllowed : 1; 
-        unsigned int needsNowPlayingLayout : 1; 
-        unsigned int forceTimeExtrapolation : 1; 
-        unsigned int goalCompleted : 1; 
-        unsigned int useMetricDistance : 1; 
-        unsigned int forceMetricForDistanceOnly : 1; 
-        unsigned int throttleNextPauseResume : 1; 
-        unsigned int shouldControlMusic : 1; 
-        unsigned int unused : 16; 
     NSTimer *_considerSeekTimer;
     int _currentSeekDirection;
     <STRunViewDelegate> *_delegate;
@@ -42,6 +24,24 @@
     UIView *_rotationContainer;
     STRunCaloriesLabel *_runCaloriesLabel;
     STRunDistanceLabel *_runDistanceLabel;
+    struct { 
+        unsigned int timerPaused : 1; 
+        unsigned int shouldStartTimer : 1; 
+        unsigned int isLockScreen : 1; 
+        unsigned int animateForResumeEventsOnly : 1; 
+        unsigned int canHighlightPowerSong : 1; 
+        unsigned int validPaceReceived : 1; 
+        unsigned int noMusic : 1; 
+        unsigned int seekHandled : 1; 
+        unsigned int seekAllowed : 1; 
+        unsigned int needsNowPlayingLayout : 1; 
+        unsigned int forceTimeExtrapolation : 1; 
+        unsigned int goalCompleted : 1; 
+        unsigned int useMetricDistance : 1; 
+        unsigned int forceMetricForDistanceOnly : 1; 
+        unsigned int throttleNextPauseResume : 1; 
+        unsigned int shouldControlMusic : 1; 
+        unsigned int unused : 16; 
     } _runFlagsBitfield;
     STRunPaceLabel *_runPaceLabel;
     STRunProgressView *_runProgressView;
@@ -125,8 +125,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 workoutProxy:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 workoutProxy:(id)arg2;
 - (int)interface;
 - (BOOL)isLockScreen;
 - (void)layoutSubviews;

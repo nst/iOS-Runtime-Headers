@@ -4,7 +4,7 @@
 
 @class CalendarNotesCell, NSString;
 
-@interface EKEventNotesInlineEditItem : EKEventEditItem <UITextViewDelegate, EKCalendarItemInlineEditItem> {
+@interface EKEventNotesInlineEditItem : EKEventEditItem <EKCalendarItemInlineEditItem, UITextViewDelegate> {
     CalendarNotesCell *_cell;
     NSString *_lastTextChange;
 }

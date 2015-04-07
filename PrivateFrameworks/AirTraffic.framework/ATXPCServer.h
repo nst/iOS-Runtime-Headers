@@ -11,12 +11,28 @@
 @interface ATXPCServer : NSObject {
     NSObject<OS_xpc_object> *_conn;
     NSMutableSet *_connections;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _defaultMessageHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _disconnectHandler;
+
     NSMutableDictionary *_handlerMap;
     NSObject<OS_dispatch_source> *_idleTimerSource;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _lockdownHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shutdownHandler;
+
     BOOL _timerHasFiredSinceLastMessage;
     NSObject<OS_dispatch_queue> *_timerQueue;
 }

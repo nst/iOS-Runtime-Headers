@@ -8,17 +8,21 @@
 
 @class <PUCloudSharedPostCommentViewControllerDelegate>, NSArray, NSMutableArray, NSString, PUCloudSharedBackdropView, PUStackView, UIColor, UILabel, UITableView, UITextView, UIView;
 
-@interface PUCloudSharedPostCommentViewController : UIViewController <UITextViewDelegate, UITableViewDataSource, UITableViewDelegate, PLModalDimmingContained> {
-    struct { 
-        unsigned int hasDidCancelComment : 1; 
-        unsigned int hasDidSendComment : 1; 
+@interface PUCloudSharedPostCommentViewController : UIViewController <PLModalDimmingContained, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate> {
     NSString *_albumName;
     NSMutableArray *_attachments;
     NSArray *_backgroundConstraints;
     UIView *_backgroundView;
     <PUCloudSharedPostCommentViewControllerDelegate> *_commentDelegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     PUCloudSharedBackdropView *_containerView;
+    struct { 
+        unsigned int hasDidCancelComment : 1; 
+        unsigned int hasDidSendComment : 1; 
     } _delegateFlags;
     NSArray *_dialogConstraints;
     UIView *_dialogView;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface IMLocationShareStatusChangeItem : IMItem <NSCoding, NSCopying, IMRemoteObjectCoding> {
+@interface IMLocationShareStatusChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
     BOOL _actionable;
     long long _direction;
     BOOL _expired;

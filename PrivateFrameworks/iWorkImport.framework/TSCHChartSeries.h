@@ -4,7 +4,7 @@
 
 @class <TSCHStyleActAlike>, NSObject<TSCHUnretainedParent>, NSString, TSCHChartGridAdapter, TSCHChartModel, TSCHChartSeriesType, TSCHErrorBarData, TSCHTrendLineData, TSUPointerKeyDictionary;
 
-@interface TSCHChartSeries : NSObject <TSCHUnretainedParent, TSCHStyleOwning> {
+@interface TSCHChartSeries : NSObject <TSCHStyleOwning, TSCHUnretainedParent> {
     TSUPointerKeyDictionary *mAxisTable;
     unsigned int mBarGapIndex;
     TSCHChartModel *mChartModel;
@@ -108,12 +108,12 @@
 - (id)swapTuplesForParagraphStyleMutations:(id)arg1 forReferencingProperty:(int)arg2;
 - (id)trendLineData;
 - (id)trendLineLegendText;
-- (id)valueForAxis:(id)arg1 index:(unsigned int)arg2 multiDataSetIndex:(unsigned int)arg3;
 - (id)valueForAxis:(id)arg1 index:(unsigned int)arg2;
-- (id)valueForAxisID:(id)arg1 index:(unsigned int)arg2 multiDataSetIndex:(unsigned int)arg3;
+- (id)valueForAxis:(id)arg1 index:(unsigned int)arg2 multiDataSetIndex:(unsigned int)arg3;
 - (id)valueForAxisID:(id)arg1 index:(unsigned int)arg2;
+- (id)valueForAxisID:(id)arg1 index:(unsigned int)arg2 multiDataSetIndex:(unsigned int)arg3;
 - (id)valueForProperty:(int)arg1;
-- (id*)valuesForAxis:(id)arg1 indexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 multiDataSetIndex:(unsigned int)arg3;
 - (id*)valuesForAxis:(id)arg1 indexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id*)valuesForAxis:(id)arg1 indexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 multiDataSetIndex:(unsigned int)arg3;
 
 @end

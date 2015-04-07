@@ -92,8 +92,8 @@
 - (double)remainingTime;
 - (void)removePeriodicTimeObserver:(id)arg1;
 - (int)repeatMode;
-- (void)scrubToTime:(double)arg1 withTolerance:(double)arg2 completionHandler:(id)arg3;
 - (void)scrubToTime:(double)arg1 withTolerance:(double)arg2;
+- (void)scrubToTime:(double)arg1 withTolerance:(double)arg2 completionHandler:(id)arg3;
 - (void)seekBackwardByOneFrame;
 - (void)seekForwardByOneFrame;
 - (void)seekToBeginning;

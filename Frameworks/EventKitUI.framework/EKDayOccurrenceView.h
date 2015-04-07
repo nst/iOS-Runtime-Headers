@@ -4,37 +4,7 @@
 
 @class EKDayOccurrenceContentView, EKDayOccurrenceTravelTimeView, EKDayOccurrenceView, EKEvent, NSString, UIColor, UIImageView, UIView;
 
-@interface EKDayOccurrenceView : UIView <NSCopying, EKDayOccurrenceTravelTimeViewMetricsDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    unsigned int _touchKeptInsideOccurrence : 1;
-    unsigned int _offsetContentForLandscape : 1;
+@interface EKDayOccurrenceView : UIView <EKDayOccurrenceTravelTimeViewMetricsDelegate, NSCopying> {
     BOOL _allDay;
     BOOL _allDayDrawingStyle;
     float _bottomPinningProximity;
@@ -51,13 +21,24 @@
     BOOL _hideBackgroundImage;
     BOOL _hideText;
     BOOL _isSelectedCopyView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _margin;
     BOOL _needsBackgroundImageUpdate;
     BOOL _needsContentCalc;
     BOOL _needsReply;
     EKEvent *_occurrence;
     int _occurrenceBackgroundStyle;
+    unsigned int _offsetContentForLandscape : 1;
     float _originalXBeforeOffset;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _padding;
     UIView *_pinFadeView;
     BOOL _reduceLayoutProcessingForAnimation;
@@ -66,11 +47,30 @@
     BOOL _showsTravelTime;
     UIView *_startResizeHandle;
     BOOL _tentative;
+    unsigned int _touchKeptInsideOccurrence : 1;
     UIImageView *_travelBackgroundView;
     double _travelTime;
     EKDayOccurrenceTravelTimeView *_travelTimeContentView;
     float _travelTimeSubviewHeightInPoints;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _unpinnedEventBackgroundFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _unpinnedTravelBackgroundFrame;
     float _visibleHeight;
     BOOL _visibleHeightLocked;
@@ -135,9 +135,9 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentStretchRectForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultMargin;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultPadding;
-+ (float)minimumHeightForOrientation:(int)arg1 isAllDay:(BOOL)arg2 usesSmallText:(BOOL)arg3;
-+ (float)minimumHeightForOrientation:(int)arg1 isAllDay:(BOOL)arg2;
 + (float)minimumHeightForOrientation:(int)arg1;
++ (float)minimumHeightForOrientation:(int)arg1 isAllDay:(BOOL)arg2;
++ (float)minimumHeightForOrientation:(int)arg1 isAllDay:(BOOL)arg2 usesSmallText:(BOOL)arg3;
 + (id)occurrenceViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 - (void).cxx_destruct;
@@ -202,8 +202,8 @@
 - (BOOL)selected;
 - (id)selectedCopy;
 - (void)setAllDay:(BOOL)arg1;
-- (void)setAllDayDrawingStyle:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setAllDayDrawingStyle:(BOOL)arg1;
+- (void)setAllDayDrawingStyle:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setBirthday:(BOOL)arg1;
 - (void)setBottomPinningProximity:(float)arg1;
 - (void)setCancelled:(BOOL)arg1;
@@ -217,8 +217,8 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setHideBackgroundImage:(BOOL)arg1;
-- (void)setHideText:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)setHideText:(BOOL)arg1;
+- (void)setHideText:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)setIsSelectedCopyView:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setMargin:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

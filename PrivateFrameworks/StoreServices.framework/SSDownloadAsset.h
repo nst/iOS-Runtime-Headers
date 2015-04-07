@@ -39,8 +39,8 @@
 - (id)downloadPath;
 - (long long)fileSize;
 - (id)finalizedPath;
-- (id)initWithURLRequest:(id)arg1 type:(int)arg2;
 - (id)initWithURLRequest:(id)arg1;
+- (id)initWithURLRequest:(id)arg1 type:(int)arg2;
 - (id)initWithURLRequestProperties:(id)arg1;
 - (BOOL)isExternal;
 - (id)sinfs;

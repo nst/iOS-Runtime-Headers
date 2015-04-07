@@ -5,15 +5,6 @@
 @class NSManagedObjectContext, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSSQLAdapter, NSSQLConnection, NSSQLEntity, NSSQLModel, NSSQLRow, NSSQLRowCache, NSSaveChangesRequest, NSSet, NSString, NSURL;
 
 @interface NSSQLCore : NSPersistentStore <NSFilePresenter> {
-    struct _sqlCoreFlags { 
-        unsigned int beganTransaction : 1; 
-        unsigned int ignoreEntityCaching : 1; 
-        unsigned int storeMetadataClean : 1; 
-        unsigned int useToManyCaching : 1; 
-        unsigned int useSyntaxColoredLogging : 1; 
-        unsigned int checkedExternalReferences : 1; 
-        unsigned int fileProtectionType : 3; 
-        unsigned int _RESERVED : 23; 
     NSSQLAdapter *_adapter;
     NSMutableDictionary *_batchFaultBuffer;
     NSMutableDictionary *_batchToManyFaultBuffer;
@@ -38,6 +29,15 @@
     id _observer;
     NSSQLRowCache *_rowCache;
     NSMutableSet *_rowsInCurrentSave;
+    struct _sqlCoreFlags { 
+        unsigned int beganTransaction : 1; 
+        unsigned int ignoreEntityCaching : 1; 
+        unsigned int storeMetadataClean : 1; 
+        unsigned int useToManyCaching : 1; 
+        unsigned int useSyntaxColoredLogging : 1; 
+        unsigned int checkedExternalReferences : 1; 
+        unsigned int fileProtectionType : 3; 
+        unsigned int _RESERVED : 23; 
     } _sqlCoreFlags;
     NSMutableDictionary *_storeMetadata;
     struct __CFDictionary { } *_toManyCache;
@@ -198,8 +198,8 @@
 - (void)rollbackTransaction;
 - (void)rollbackTransaction_core;
 - (id)rowCache;
-- (id)rowForObjectID:(id)arg1 after:(double)arg2;
 - (id)rowForObjectID:(id)arg1;
+- (id)rowForObjectID:(id)arg1 after:(double)arg2;
 - (id)safeguardLocationForFileWithUUID:(id)arg1;
 - (id)saveChanges:(id)arg1;
 - (void)setCurrentContext:(id)arg1;

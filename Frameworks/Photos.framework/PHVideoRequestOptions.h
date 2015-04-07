@@ -9,7 +9,11 @@
 @interface PHVideoRequestOptions : NSObject {
     int _deliveryMode;
     BOOL _networkAccessAllowed;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
     BOOL _streamingAllowed;
     int _version;
 }

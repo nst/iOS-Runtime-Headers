@@ -53,8 +53,8 @@
 - (void)setLang:(id)arg1;
 - (void)setOuterHTML:(id)arg1;
 - (void)setOuterText:(id)arg1;
-- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForIOSCaret:(BOOL)arg3;
 - (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
+- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForIOSCaret:(BOOL)arg3;
 - (void)setSpellcheck:(BOOL)arg1;
 - (void)setTabIndex:(int)arg1;
 - (void)setTitle:(id)arg1;

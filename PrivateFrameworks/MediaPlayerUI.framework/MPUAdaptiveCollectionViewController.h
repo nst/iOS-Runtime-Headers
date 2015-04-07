@@ -10,13 +10,13 @@
         float left; 
         float bottom; 
         float right; 
+    } _contentInsetAdditions;
+    MPUInsetProxyScrollView *_insetProxyScrollView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsetAdditions;
-    MPUInsetProxyScrollView *_insetProxyScrollView;
     } _scrollIndicatorInsetsAdditions;
     NSMutableDictionary *_sizeClassToClassMap;
 }

@@ -8,9 +8,6 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     } _brailleSelection;
     NSMutableAttributedString *_brailleString;
     int _contractionMode;
@@ -22,6 +19,9 @@
     BOOL _showDotsSevenAndEight;
     BOOL _showEightDot;
     NSString *_text;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _textSelection;
     int _token;
 }
@@ -39,8 +39,8 @@
 - (id)description;
 - (BOOL)focused;
 - (BOOL)hasSelection;
-- (id)initWithText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5 contractionMode:(int)arg6 showEightDot:(BOOL)arg7 showDotsSevenAndEight:(BOOL)arg8 technical:(BOOL)arg9;
 - (id)initWithText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5 contractionMode:(int)arg6 showEightDot:(BOOL)arg7 showDotsSevenAndEight:(BOOL)arg8;
+- (id)initWithText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5 contractionMode:(int)arg6 showEightDot:(BOOL)arg7 showDotsSevenAndEight:(BOOL)arg8 technical:(BOOL)arg9;
 - (id)initWithText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4 token:(int)arg5 focused:(BOOL)arg6 contractionMode:(int)arg7 showEightDot:(BOOL)arg8 showDotsSevenAndEight:(BOOL)arg9 technical:(BOOL)arg10;
 - (BOOL)isFocusedOrSelected;
 - (id)language;

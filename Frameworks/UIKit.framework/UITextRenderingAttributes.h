@@ -5,15 +5,6 @@
 @class UIFont;
 
 @interface UITextRenderingAttributes : NSObject <NSCopying> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     float _actualFontSize;
     float _actualTrackingAdjustment;
     int _alignment;
@@ -26,6 +17,15 @@
     float _minimumFontSize;
     float _minimumTrackingAdjustment;
     float _trackingAdjustment;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _truncationRect;
 }
 

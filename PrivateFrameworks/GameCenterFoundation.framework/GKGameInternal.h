@@ -5,6 +5,7 @@
 @class GKStoreItemInternal, NSDictionary, NSString;
 
 @interface GKGameInternal : GKGameDescriptor {
+    NSString *_defaultLeaderboardIdentifier;
     union { 
         struct { 
             unsigned int _platform : 8; 
@@ -20,7 +21,6 @@
             unsigned int _reserved : 13; 
         } ; 
         unsigned int _value; 
-    NSString *_defaultLeaderboardIdentifier;
     } _flags;
     NSDictionary *_icons;
     unsigned short _maxAchievementPoints;

@@ -55,6 +55,7 @@
 - (void)setHeaderViewController:(id)arg1;
 - (void)setSections:(id)arg1;
 - (void)setTextLayoutCache:(id)arg1;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
@@ -64,7 +65,6 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)tableView;
 - (id)textLayoutCache;
 - (void)viewWillAppear:(BOOL)arg1;
 

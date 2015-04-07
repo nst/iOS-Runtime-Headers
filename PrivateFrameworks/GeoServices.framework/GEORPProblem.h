@@ -6,10 +6,6 @@
 
 @interface GEORPProblem : PBCodable <NSCopying> {
     struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
         unsigned int problemType : 1; 
         unsigned int protocolVersion : 1; 
     } _has;
@@ -17,6 +13,10 @@
     GEORPProblemCorrections *_problemCorrections;
     int _problemType;
     unsigned int _protocolVersion;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _userPaths;
 }
 

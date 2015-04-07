@@ -5,9 +5,9 @@
 @class CKDPRecord, CKDPRecordIdentifier, CKDPRecordType, NSString;
 
 @interface CKDPRecordRetrieveChangesResponseRecordChange : PBCodable <NSCopying> {
+    NSString *_etag;
     struct { 
         unsigned int type : 1; 
-    NSString *_etag;
     } _has;
     CKDPRecord *_record;
     CKDPRecordIdentifier *_recordIdentifier;

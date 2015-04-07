@@ -5,19 +5,20 @@
 @class CALayer, UIPDFPageView;
 
 @interface UIPDFTextRangeWidget : NSObject <UIPDFSelectionWidget> {
-    struct CGPoint { 
-        float x; 
-        float y; 
     CALayer *_endBar;
     CALayer *_endHandle;
     unsigned int _endIndex;
     long _endRectangle;
+    bool _endRight;
     CALayer *_endSelectionGrabber;
     float _endX;
     CALayer *_fixedSelectionGrabber;
     struct CGColor { } *_grabberColor;
     float _handleHeight;
     float _handleWidth;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _initialSelectionPointOnPage;
     float _offsetX;
     float _offsetY;
@@ -25,11 +26,10 @@
     CALayer *_startBar;
     CALayer *_startHandle;
     unsigned int _startIndex;
+    bool _startLeft;
     long _startRectangle;
     CALayer *_startSelectionGrabber;
     float _startX;
-    bool_endRight;
-    bool_startLeft;
 }
 
 @property(readonly) struct CGPoint { float x1; float x2; } currentSelectionPointOnPage;

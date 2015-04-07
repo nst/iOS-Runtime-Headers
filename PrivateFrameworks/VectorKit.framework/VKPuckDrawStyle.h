@@ -9,9 +9,9 @@
 @interface VKPuckDrawStyle : VKRenderStyle {
 }
 
+@property(readonly) float arrowBrightness;
 @property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  arrowColor; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) struct  arrowColorStale; /* unknown property attribute:  1>=[4f]} */
-@property(readonly) float arrowBrightness;
 @property(readonly) float circleBrightness;
 @property(readonly) BOOL hasArrowBrightness;
 @property(readonly) BOOL hasArrowColor;

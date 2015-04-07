@@ -28,8 +28,8 @@
 - (id)createBitmap:(unsigned int)arg1 :(unsigned int)arg2 :(unsigned int)arg3 :(unsigned int)arg4 :(const char *)arg5 :(unsigned int)arg6;
 - (int)createBrush:(int)arg1 :(id)arg2 :(int)arg3 :(unsigned int)arg4;
 - (id)createColorWithRGBBytes:(unsigned char)arg1 :(unsigned char)arg2 :(unsigned char)arg3 :(unsigned char)arg4;
-- (id)createDIBitmap:(const char *)arg1 :(unsigned int)arg2 :(const char *)arg3 :(unsigned int)arg4 :(int)arg5;
 - (id)createDIBitmap:(const char *)arg1 :(unsigned int)arg2 :(int)arg3;
+- (id)createDIBitmap:(const char *)arg1 :(unsigned int)arg2 :(const char *)arg3 :(unsigned int)arg4 :(int)arg5;
 - (int)createFontIndirect:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
 - (int)createFontIndirectW:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22 :(unsigned int)arg23;
 - (int)createPalette:(id)arg1 :(unsigned int)arg2;
@@ -73,8 +73,8 @@
 - (int)polygon:(struct CGPoint { float x1; float x2; }*)arg1 :(int)arg2;
 - (int)polyline:(struct CGPoint { float x1; float x2; }*)arg1 :(int)arg2;
 - (int)realizePalette;
-- (id)recolor:(id)arg1 fill:(BOOL)arg2;
 - (id)recolor:(unsigned char)arg1 :(unsigned char)arg2 :(unsigned char)arg3 fill:(BOOL)arg4;
+- (id)recolor:(id)arg1 fill:(BOOL)arg2;
 - (int)rectangle:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4;
 - (int)resizePalette:(unsigned int)arg1 :(unsigned int)arg2;
 - (int)restoreDC:(int)arg1;
@@ -108,8 +108,8 @@
 - (int)setWindowExt:(int)arg1 :(int)arg2;
 - (int)setWindowOrg:(int)arg1 :(int)arg2;
 - (int)setWorldTransform:(const struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg1;
-- (int)stretchBlt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(id)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(unsigned int)arg10 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg11 :(unsigned int)arg12 usePaletteForBilevel:(BOOL)arg13;
 - (int)stretchBlt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(id)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(unsigned int)arg10 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg11 :(unsigned int)arg12;
+- (int)stretchBlt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(id)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(unsigned int)arg10 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg11 :(unsigned int)arg12 usePaletteForBilevel:(BOOL)arg13;
 - (int)strokeAndFillPath:(bool)arg1 :(bool)arg2;
 - (int)textOut:(int)arg1 :(int)arg2 :(id)arg3;
 - (int)textOutEncoded:(int)arg1 :(int)arg2 :(id)arg3;

@@ -31,10 +31,10 @@
 - (unsigned int)getParameter:(unsigned int)arg1 to:(int*)arg2;
 - (id)initForBrushes;
 - (id)initForShadow;
+- (id)initWithAPI:(unsigned int)arg1;
 - (id)initWithAPI:(unsigned int)arg1 properties:(id)arg2;
 - (id)initWithAPI:(unsigned int)arg1 sharedWithCompute:(BOOL)arg2;
 - (id)initWithAPI:(unsigned int)arg1 sharegroup:(id)arg2;
-- (id)initWithAPI:(unsigned int)arg1;
 - (BOOL)isMultiThreaded;
 - (BOOL)presentRenderbuffer:(unsigned int)arg1;
 - (BOOL)renderbufferStorage:(unsigned int)arg1 fromDrawable:(id)arg2;

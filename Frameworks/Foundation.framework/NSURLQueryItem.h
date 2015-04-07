@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface NSURLQueryItem : NSObject <NSSecureCoding, NSCopying> {
+@interface NSURLQueryItem : NSObject <NSCopying, NSSecureCoding> {
     NSString *_name;
     NSString *_value;
 }

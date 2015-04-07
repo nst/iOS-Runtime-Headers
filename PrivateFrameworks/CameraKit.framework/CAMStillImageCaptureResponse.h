@@ -12,7 +12,11 @@
     NSString *_avalancheUUID;
     CIFilter *_effectFilter;
     BOOL _finalResponse;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _stillImageCompletionBlock;
+
     UIImage *_stillImageFilteredPreviewImage;
     struct __IOSurface { } *_stillImageFilteredPreviewSurface;
     NSData *_stillImageJPEGData;
@@ -21,7 +25,11 @@
     struct opaqueCMSampleBuffer { } *_stillImageOriginalSampleBuffer;
     struct __IOSurface { } *_stillImageOriginalSurface;
     unsigned long _stillImageOriginalSurfaceSize;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _stillImageRequestEnqueuedBlock;
+
     UIImage *_stillImageUnfilteredPreviewImage;
     struct __IOSurface { } *_stillImageUnfilteredPreviewSurface;
     NSString *_timelapseDestinationPath;

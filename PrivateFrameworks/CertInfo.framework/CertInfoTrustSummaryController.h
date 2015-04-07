@@ -5,12 +5,12 @@
 @class <CertInfoTrustDescription>, <CertInfoTrustSummaryControllerDelegate>, UIBarButtonItem, UITableViewCell;
 
 @interface CertInfoTrustSummaryController : UITableViewController {
-    unsigned int _showsDoneButton : 1;
     <CertInfoTrustSummaryControllerDelegate> *_delegate;
     <CertInfoTrustDescription> *_description;
     UITableViewCell *_descriptionCell;
     UIBarButtonItem *_doneButton;
     UITableViewCell *_headerCell;
+    unsigned int _showsDoneButton : 1;
 }
 
 @property <CertInfoTrustSummaryControllerDelegate> * delegate;

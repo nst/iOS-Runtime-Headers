@@ -5,25 +5,25 @@
 @class <AFAssistantUIService>, <AFSpeechDelegate>, NSArray, NSError, NSMutableDictionary, NSObject<OS_dispatch_source>, NSString, NSXPCConnection;
 
 @interface AFConnection : NSObject {
-    unsigned int _stateInSync : 1;
-    unsigned int _shouldSpeak : 1;
-    unsigned int _isCapturingSpeech : 1;
-    unsigned int _hasOutstandingRequest : 1;
-    unsigned int _clientStateIsInSync : 1;
-    unsigned int _voiceOverIsActive : 1;
     unsigned int _audioSessionID;
     NSArray *_cachedBulletins;
+    unsigned int _clientStateIsInSync : 1;
     NSXPCConnection *_connection;
     <AFAssistantUIService> *_delegate;
     BOOL _hasActiveRequest;
     BOOL _hasActiveTimeout;
+    unsigned int _hasOutstandingRequest : 1;
+    unsigned int _isCapturingSpeech : 1;
     NSError *_lastRetryError;
     void *_levelsSharedMem;
     NSObject<OS_dispatch_source> *_levelsTimer;
     NSString *_outstandingRequestClass;
     NSMutableDictionary *_replyHandlerForAceId;
     unsigned long _sharedMemSize;
+    unsigned int _shouldSpeak : 1;
     <AFSpeechDelegate> *_speechDelegate;
+    unsigned int _stateInSync : 1;
+    unsigned int _voiceOverIsActive : 1;
 }
 
 @property <AFAssistantUIService> * delegate;
@@ -61,8 +61,8 @@
 - (void)_extendRequestTimeout;
 - (void)_invokeRequestTimeout;
 - (void)_requestDidEnd;
-- (void)_requestWillBeginWithRequestClass:(id)arg1 isSpeechRequest:(BOOL)arg2 isBackgroundRequest:(BOOL)arg3;
 - (void)_requestWillBeginWithRequestClass:(id)arg1 isSpeechRequest:(BOOL)arg2;
+- (void)_requestWillBeginWithRequestClass:(id)arg1 isSpeechRequest:(BOOL)arg2 isBackgroundRequest:(BOOL)arg3;
 - (void)_scheduleRequestTimeout;
 - (void)_setAudioSessionID:(unsigned int)arg1;
 - (void)_setLevelsWithSharedMem:(id)arg1;
@@ -111,8 +111,8 @@
 - (void)recordMetrics:(id)arg1;
 - (void)rollbackClearContext;
 - (void)rollbackRequest;
-- (void)sendGenericAceCommand:(id)arg1 conflictHandler:(id)arg2;
 - (void)sendGenericAceCommand:(id)arg1;
+- (void)sendGenericAceCommand:(id)arg1 conflictHandler:(id)arg2;
 - (void)sendReplyCommand:(id)arg1;
 - (void)setAlertContextWithBulletins:(id)arg1;
 - (void)setApplicationContext:(id)arg1;
@@ -133,8 +133,8 @@
 - (void)startRequestWithText:(id)arg1;
 - (void)startSpeechPronunciationRequestWithOptions:(id)arg1 pronunciationContext:(id)arg2;
 - (void)startSpeechRequestWithOptions:(id)arg1;
-- (void)startSpeechRequestWithSpeechFileAtURL:(id)arg1 isNarrowBand:(BOOL)arg2;
 - (void)startSpeechRequestWithSpeechFileAtURL:(id)arg1;
+- (void)startSpeechRequestWithSpeechFileAtURL:(id)arg1 isNarrowBand:(BOOL)arg2;
 - (void)stopSpeech;
 - (void)stopSpeechWithOptions:(id)arg1;
 - (void)telephonyRequestCompleted;

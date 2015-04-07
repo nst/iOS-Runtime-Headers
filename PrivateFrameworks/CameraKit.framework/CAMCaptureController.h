@@ -8,19 +8,60 @@
 
 @class <PLCameraControllerDelegate>, AVCaptureDevice, AVCaptureDeviceFormat, AVCaptureDeviceInput, AVCaptureMetadataOutput, AVCaptureMovieFileOutput, AVCaptureOutput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, BKSAccelerometer, CAMAvalancheCaptureService, CAMDebugCaptureService, CAMEffectsRenderer, CCCameraConnection, CIFilter, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSTimer;
 
-@interface CAMCaptureController : NSObject <AVCaptureMetadataOutputObjectsDelegate, PLCameraEffectsRendererDelegate, BKSAccelerometerDelegate, AVCaptureFileOutputRecordingDelegate, AVCaptureVideoDataOutputSampleBufferDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+@interface CAMCaptureController : NSObject <AVCaptureFileOutputRecordingDelegate, AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, BKSAccelerometerDelegate, PLCameraEffectsRendererDelegate> {
+    BOOL _HDRDetectionEnabled;
+    BOOL __atomicEffectsAvailable;
+    BOOL __atomicModeChangeWaitingForConfigureSession;
+    BOOL __atomicModeChangeWaitingForPreviewStarted;
+    CAMAvalancheCaptureService *__avalancheCaptureService;
+    NSObject<OS_dispatch_queue> *__captureIsolationQueue;
+    BOOL __configuringCamera;
+    NSMutableArray *__currentFaceMetadata;
+    CAMDebugCaptureService *__debugCaptureService;
+    NSMutableArray *__deferredVideoCaptureRequests;
+    int __deviceLockCount;
+    NSObject<OS_dispatch_queue> *__effectFilterIndexQueue;
+    NSDictionary *__effectFilterIndices;
+    NSObject<OS_dispatch_queue> *__effectRenderingQueue;
+    BOOL __ignoreSubjectAreaChanges;
+    double __ignoreSubjectAreaChangesUntilTime;
+    NSMutableArray *__inflightPanoramaCaptureRequests;
+    NSMutableArray *__inflightStillImageCaptureRequests;
+    NSMutableArray *__inflightVideoCaptureResponses;
+    BOOL __locationAcquiredForTimelapseCapture;
+    BOOL __lockExposureAfterExposeFinishes;
+    BOOL __lockFocusAfterFocusFinishes;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id __lockLensPositionCompletionBlock;
+
+    float __lockLensPositionTarget;
+    BOOL __panoramaProcessorReadyForSampleBuffers;
+    BOOL __previewLayerEnabledForRenderer;
+    BOOL __previewPaused;
+    NSMutableArray *__processingPanoramaCaptureRequests;
+    BOOL __rebuildingSession;
+    NSMutableDictionary *__servicesByType;
+    BOOL __sessionReady;
+    BOOL __videoDataOutputEnabledForRenderer;
+    BOOL __wasStillImageStabilzationOnBeforeTimedCapture;
+    BKSAccelerometer *_accelerometer;
+    AVCaptureDevice *_avCaptureDeviceAudio;
+    AVCaptureDevice *_avCaptureDeviceBack;
+    AVCaptureDevice *_avCaptureDeviceFront;
+    AVCaptureDeviceInput *_avCaptureInputAudio;
+    AVCaptureDeviceInput *_avCaptureInputBack;
+    AVCaptureDeviceInput *_avCaptureInputFront;
+    AVCaptureVideoDataOutput *_avCaptureOutputEffectPreview;
+    AVCaptureMetadataOutput *_avCaptureOutputMetadata;
+    NSObject<OS_dispatch_queue> *_avCaptureOutputMetadataQueue;
+    AVCaptureVideoDataOutput *_avCaptureOutputPanorama;
+    AVCaptureStillImageOutput *_avCaptureOutputPhoto;
+    AVCaptureMovieFileOutput *_avCaptureOutputVideo;
+    AVCaptureSession *_avCaptureSession;
+    NSObject<OS_dispatch_queue> *_avCaptureSessionDispatchQueue;
+    int _cameraDevice;
     struct { 
         unsigned int supportsVideo : 1; 
         unsigned int supportsHDRRear : 1; 
@@ -122,61 +163,21 @@
         unsigned int delegateDidFinishPanoramaRequest : 1; 
         unsigned int delegatePanoramaConfigurationChanged : 1; 
         unsigned int delegateDidOutputPanoramaParameters : 1; 
-    BOOL _HDRDetectionEnabled;
-    BOOL __atomicEffectsAvailable;
-    BOOL __atomicModeChangeWaitingForConfigureSession;
-    BOOL __atomicModeChangeWaitingForPreviewStarted;
-    CAMAvalancheCaptureService *__avalancheCaptureService;
-    NSObject<OS_dispatch_queue> *__captureIsolationQueue;
-    BOOL __configuringCamera;
-    NSMutableArray *__currentFaceMetadata;
-    CAMDebugCaptureService *__debugCaptureService;
-    NSMutableArray *__deferredVideoCaptureRequests;
-    int __deviceLockCount;
-    NSObject<OS_dispatch_queue> *__effectFilterIndexQueue;
-    NSDictionary *__effectFilterIndices;
-    NSObject<OS_dispatch_queue> *__effectRenderingQueue;
-    BOOL __ignoreSubjectAreaChanges;
-    double __ignoreSubjectAreaChangesUntilTime;
-    NSMutableArray *__inflightPanoramaCaptureRequests;
-    NSMutableArray *__inflightStillImageCaptureRequests;
-    NSMutableArray *__inflightVideoCaptureResponses;
-    BOOL __locationAcquiredForTimelapseCapture;
-    BOOL __lockExposureAfterExposeFinishes;
-    BOOL __lockFocusAfterFocusFinishes;
-    id __lockLensPositionCompletionBlock;
-    float __lockLensPositionTarget;
-    BOOL __panoramaProcessorReadyForSampleBuffers;
-    BOOL __previewLayerEnabledForRenderer;
-    BOOL __previewPaused;
-    NSMutableArray *__processingPanoramaCaptureRequests;
-    BOOL __rebuildingSession;
-    NSMutableDictionary *__servicesByType;
-    BOOL __sessionReady;
-    BOOL __videoDataOutputEnabledForRenderer;
-    BOOL __wasStillImageStabilzationOnBeforeTimedCapture;
-    BKSAccelerometer *_accelerometer;
-    AVCaptureDevice *_avCaptureDeviceAudio;
-    AVCaptureDevice *_avCaptureDeviceBack;
-    AVCaptureDevice *_avCaptureDeviceFront;
-    AVCaptureDeviceInput *_avCaptureInputAudio;
-    AVCaptureDeviceInput *_avCaptureInputBack;
-    AVCaptureDeviceInput *_avCaptureInputFront;
-    AVCaptureVideoDataOutput *_avCaptureOutputEffectPreview;
-    AVCaptureMetadataOutput *_avCaptureOutputMetadata;
-    NSObject<OS_dispatch_queue> *_avCaptureOutputMetadataQueue;
-    AVCaptureVideoDataOutput *_avCaptureOutputPanorama;
-    AVCaptureStillImageOutput *_avCaptureOutputPhoto;
-    AVCaptureMovieFileOutput *_avCaptureOutputVideo;
-    AVCaptureSession *_avCaptureSession;
-    NSObject<OS_dispatch_queue> *_avCaptureSessionDispatchQueue;
-    int _cameraDevice;
     } _cameraFlags;
     int _cameraMode;
     int _cameraOrientation;
     BOOL _canCapturePhotoFromVideoModeWhenNotRecording;
     int _captureOrientation;
     BOOL _capturingTimelapse;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _cleanAperture;
     AVCaptureDevice *_currentDevice;
     AVCaptureDeviceInput *_currentInput;
@@ -208,6 +209,9 @@
     BOOL _mogulFormatFrontSupportsAlternate;
     struct _CAImageQueue { } *_panoramaImageQueue;
     float _panoramaPreviewScale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _panoramaPreviewSize;
     struct OpaqueFigSampleBufferProcessor { } *_panoramaProcessor;
     BOOL _performingAvalancheCapture;
@@ -224,7 +228,11 @@
     BOOL _userLockedFocus;
     NSString *_videoCapturePath;
     int _videoCaptureQuality;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id postSessionSetupBlock;
+
 }
 
 @property(getter=isHDRDetectionEnabled) BOOL HDRDetectionEnabled;
@@ -479,8 +487,8 @@
 - (void)_setAtomicEffectsAvailable:(BOOL)arg1;
 - (void)_setAtomicModeChangeWaitingForConfigureSession:(BOOL)arg1;
 - (void)_setAtomicModeChangeWaitingForPreviewStarted:(BOOL)arg1;
-- (void)_setCameraMode:(int)arg1 cameraDevice:(int)arg2 forceConfigure:(BOOL)arg3;
 - (void)_setCameraMode:(int)arg1 cameraDevice:(int)arg2;
+- (void)_setCameraMode:(int)arg1 cameraDevice:(int)arg2 forceConfigure:(BOOL)arg3;
 - (void)_setConfiguringCamera:(BOOL)arg1;
 - (void)_setDefaultPrewarmDate:(id)arg1;
 - (void)_setDelaySuspend:(BOOL)arg1;
@@ -701,8 +709,8 @@
 - (void)resumeSubjectAreaChangesAfterDelay:(double)arg1;
 - (void)sendModeToRemoteShutterConnection;
 - (void)setCameraDevice:(int)arg1;
-- (void)setCameraMode:(int)arg1 device:(int)arg2;
 - (void)setCameraMode:(int)arg1;
+- (void)setCameraMode:(int)arg1 device:(int)arg2;
 - (void)setCanCapturePhotoFromVideoModeWhenNotRecording:(BOOL)arg1;
 - (void)setCaptureOrientation:(int)arg1;
 - (void)setCapturingTimelapse:(BOOL)arg1;
@@ -735,16 +743,16 @@
 - (void)setUseAlternateSlomoFront:(BOOL)arg1;
 - (void)setUseAlternateSlomoRear:(BOOL)arg1;
 - (void)setUserLockedExposure:(BOOL)arg1;
-- (void)setUserLockedFocus:(BOOL)arg1 exposure:(BOOL)arg2;
 - (void)setUserLockedFocus:(BOOL)arg1;
+- (void)setUserLockedFocus:(BOOL)arg1 exposure:(BOOL)arg2;
 - (void)setVideoCaptureMaximumDuration:(double)arg1;
 - (void)setVideoCaptureQuality:(int)arg1;
 - (void)setVideoZoomFactor:(float)arg1;
 - (void)set_rebuildingSession:(BOOL)arg1;
 - (void)smoothFocusAtCenterForVideoRecording;
 - (void)startAvalancheCapture;
-- (void)startPreview:(id)arg1;
 - (void)startPreview;
+- (void)startPreview:(id)arg1;
 - (void)startVideoCapture;
 - (void)stopPanoramaCapture;
 - (void)stopPreview;

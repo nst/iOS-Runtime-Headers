@@ -5,7 +5,7 @@
 @class CALayer;
 
 @interface CAPackage : NSObject {
-    struct _CAPackageData { id x1; id x2; id x3; boolx4; boolx5; id x6; id x7; } *_data;
+    struct _CAPackageData { id x1; id x2; id x3; bool x4; bool x5; id x6; id x7; } *_data;
 }
 
 @property(getter=isGeometryFlipped,readonly) BOOL geometryFlipped;

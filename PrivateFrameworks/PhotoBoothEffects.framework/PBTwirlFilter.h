@@ -3,11 +3,11 @@
  */
 
 @interface PBTwirlFilter : PBFilter {
+    float _inputAmount;
+    bool firstTime;
     struct CGPoint { 
         float x; 
         float y; 
-    float _inputAmount;
-    boolfirstTime;
     } inputPoint;
     float inputRotation;
     float lastInputAngle;

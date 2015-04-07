@@ -9,7 +9,11 @@
 @class BRCMinHeap, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface BRCThrottledScheduler : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cb;
+
     NSObject<OS_dispatch_group> *_hasWorkGroup;
     BRCMinHeap *_minHeap;
     NSString *_name;

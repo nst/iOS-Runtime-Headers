@@ -15,8 +15,8 @@
 - (void).cxx_destruct;
 - (id)completion;
 - (id)credential;
-- (id)initWithCredential:(id)arg1 protectionSpace:(id)arg2;
 - (id)initWithCredential:(id)arg1;
+- (id)initWithCredential:(id)arg1 protectionSpace:(id)arg2;
 - (id)protectionSpace;
 
 @end

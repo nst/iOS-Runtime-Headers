@@ -4,7 +4,7 @@
 
 @class NSDate, NSString;
 
-@interface MBSnapshot : NSObject <NSCopying, NSCoding> {
+@interface MBSnapshot : NSObject <NSCoding, NSCopying> {
     NSDate *_date;
     NSString *_deviceName;
     BOOL _isCompatible;

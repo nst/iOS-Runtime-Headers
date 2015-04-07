@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, UIBarButtonItem, UIMoreListCellLayoutManager, UITableView;
 
-@interface UIMoreListController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface UIMoreListController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     BOOL _allowsCustomizing;
     BOOL _disableCustomizing;
     BOOL _hideNavigationBar;

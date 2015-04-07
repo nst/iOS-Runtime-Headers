@@ -5,9 +5,9 @@
 @class NSMutableArray, NSString;
 
 @interface CSLUIPBUIPluginTriggerRequest : PBRequest <NSCopying> {
+    NSMutableArray *_dictionarys;
     struct { 
         unsigned int reason : 1; 
-    NSMutableArray *_dictionarys;
     } _has;
     NSString *_name;
     int _reason;

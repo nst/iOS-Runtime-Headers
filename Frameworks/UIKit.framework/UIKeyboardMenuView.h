@@ -4,7 +4,19 @@
 
 @class NSString, NSTimer, UIDimmingView, UIInputSwitcherSelectionExtraView, UIInputSwitcherShadowView, UIInputSwitcherTableView, UIKBTree, UIKeyboardLayoutStar;
 
-@interface UIKeyboardMenuView : UIView <UITableViewDataSource, UITableViewDelegate, UIDimmingViewDelegate> {
+@interface UIKeyboardMenuView : UIView <UIDimmingViewDelegate, UITableViewDataSource, UITableViewDelegate> {
+    UIKeyboardLayoutStar *_layout;
+    UIKBTree *_referenceKey;
+    BOOL _usesDarkTheme;
+    BOOL _usesStraightLeftEdge;
+    UIDimmingView *m_dimmingView;
+    int m_firstVisibleRow;
+    int m_mode;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } m_point;
+    float m_pointerOffset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,18 +26,6 @@
             float width; 
             float height; 
         } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    UIKeyboardLayoutStar *_layout;
-    UIKBTree *_referenceKey;
-    BOOL _usesDarkTheme;
-    BOOL _usesStraightLeftEdge;
-    UIDimmingView *m_dimmingView;
-    int m_firstVisibleRow;
-    int m_mode;
-    } m_point;
-    float m_pointerOffset;
     } m_referenceRect;
     int m_scrollDirection;
     double m_scrollStartTime;

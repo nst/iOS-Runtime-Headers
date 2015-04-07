@@ -20,8 +20,8 @@
 
 - (id)context;
 - (void)dealloc;
-- (id)featuresInImage:(id)arg1 options:(id)arg2;
 - (id)featuresInImage:(id)arg1;
+- (id)featuresInImage:(id)arg1 options:(id)arg2;
 - (id)featuresInImageUsingCCRect:(id)arg1 options:(id)arg2;
 - (void)finalize;
 - (id)initWithContext:(id)arg1 options:(id)arg2;

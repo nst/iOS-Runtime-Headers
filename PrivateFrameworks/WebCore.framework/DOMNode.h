@@ -9,7 +9,7 @@
 
 @class <UITextInputDelegate>, <UITextInputTokenizer>, DOMDocument, DOMElement, DOMNamedNodeMap, DOMNode, DOMNodeList, NSDictionary, NSString, UIColor, UIImage, UIResponder<UITextInput>, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIView<UITextInputPrivate>, WebArchive;
 
-@interface DOMNode : DOMObject <DOMEventTarget, UIKeyboardInput, UITextInputPrivate, UIKeyInput, UITextInputTokenizer, UIWebSelectionBlock, UITextInput_Internal> {
+@interface DOMNode : DOMObject <DOMEventTarget, UIKeyInput, UIKeyboardInput, UITextInputPrivate, UITextInputTokenizer, UITextInput_Internal, UIWebSelectionBlock> {
 }
 
 @property(getter=_proxyTextInput,readonly) UIResponder<UITextInput> * __content;
@@ -26,11 +26,7 @@
 @property(readonly) DOMNodeList * childNodes;
 @property BOOL contentsIsSingleValue;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property BOOL deferBecomingResponder;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property BOOL disablePrediction;
 @property BOOL displaySecureTextUsingPlainText;
@@ -40,8 +36,6 @@
 @property(readonly) UITextPosition * endOfDocument;
 @property(readonly) DOMNode * firstChild;
 @property BOOL forceEnableDictation;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property <UITextInputDelegate> * inputDelegate;
 @property(retain) UIColor * insertionPointColor;
@@ -81,8 +75,6 @@
 @property int shortcutConversionType;
 @property int spellCheckingType;
 @property(readonly) Class superclass;
-@property(readonly) Class superclass;
-@property(readonly) Class superclass;
 @property BOOL suppressReturnKeyStyling;
 @property(copy) NSString * textContent;
 @property(readonly) UIView * textInputView;
@@ -96,7 +88,6 @@
 
 + (id)_nodeFromJSWrapper:(struct OpaqueJSValue { }*)arg1;
 
-- (struct Element { int (**x1)(); struct Weak<WebCore::JSDOMWrapper> { struct WeakImpl {} *x_2_1_1; } x2; int x3; unsigned int x4; struct ContainerNode {} *x5; struct TreeScope {} *x6; struct Node {} *x7; struct Node {} *x8; union DataUnion { struct RenderObject {} *x_9_1_1; struct NodeRareDataBase {} *x_9_1_2; } x9; struct Node {} *x10; struct Node {} *x11; struct QualifiedName { struct RefPtr<WebCore::QualifiedName::QualifiedNameImpl> { struct QualifiedNameImpl {} *x_1_2_1; } x_12_1_1; } x12; struct RefPtr<WebCore::ElementData> { struct ElementData {} *x_13_1_1; } x13; }*)_linkElement;
 - (void)_accessoryClear;
 - (unsigned long)_characterAfterCaretSelection;
 - (unsigned long)_characterBeforeCaretSelection;
@@ -123,6 +114,7 @@
 - (BOOL)_isEmptySelection;
 - (id)_keyInput;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lastRectForRange:(id)arg1;
+- (struct Element { int (**x1)(); struct Weak<WebCore::JSDOMWrapper> { struct WeakImpl {} *x_2_1_1; } x2; int x3; unsigned int x4; struct ContainerNode {} *x5; struct TreeScope {} *x6; struct Node {} *x7; struct Node {} *x8; union DataUnion { struct RenderObject {} *x_9_1_1; struct NodeRareDataBase {} *x_9_1_2; } x9; struct Node {} *x10; struct Node {} *x11; struct QualifiedName { struct RefPtr<WebCore::QualifiedName::QualifiedNameImpl> { struct QualifiedNameImpl {} *x_1_2_1; } x_12_1_1; } x12; struct RefPtr<WebCore::ElementData> { struct ElementData {} *x_13_1_1; } x13; }*)_linkElement;
 - (void)_moveCurrentSelection:(int)arg1;
 - (id)_moveDown:(BOOL)arg1 withHistory:(id)arg2;
 - (id)_moveLeft:(BOOL)arg1 withHistory:(id)arg2;
@@ -217,14 +209,14 @@
 - (id)childNodes;
 - (void)clearMarkedText;
 - (id)cloneNode:(BOOL)arg1;
-- (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1 withinRange:(id)arg2;
 - (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1 withinRange:(id)arg2;
 - (unsigned short)compareDocumentPosition:(id)arg1;
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (float)computedFontSize;
 - (void)confirmMarkedText:(id)arg1;
-- (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1 withInset:(float)arg2;
 - (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1 withInset:(float)arg2;
 - (BOOL)contains:(id)arg1;
 - (BOOL)containsBlock:(id)arg1;
 - (BOOL)containsNode:(id)arg1;
@@ -382,8 +374,8 @@
 - (id)replaceChild:(id)arg1 :(id)arg2;
 - (id)replaceChild:(id)arg1 oldChild:(id)arg2;
 - (void)replaceCurrentWordWithText:(id)arg1;
-- (void)replaceRange:(id)arg1 withText:(id)arg2 closeTyping:(BOOL)arg3;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
+- (void)replaceRange:(id)arg1 withText:(id)arg2 closeTyping:(BOOL)arg3;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (BOOL)requiresKeyEvents;
 - (int)returnKeyType;
@@ -408,11 +400,11 @@
 - (void)setPrefix:(id)arg1;
 - (void)setReturnKeyType:(int)arg1;
 - (void)setSecure:(BOOL)arg1;
-- (void)setSelectedTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2;
 - (void)setSelectedTextRange:(id)arg1;
+- (void)setSelectedTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2;
 - (void)setSelectionAffinity:(int)arg1;
-- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1 inset:(float)arg2;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1 inset:(float)arg2;
 - (void)setText:(id)arg1;
 - (void)setTextContent:(id)arg1;
 - (void)setTextLoupeVisibility:(int)arg1;

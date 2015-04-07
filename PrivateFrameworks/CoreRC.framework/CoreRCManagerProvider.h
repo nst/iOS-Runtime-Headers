@@ -25,9 +25,9 @@
 - (id)firstCECOverrideFromPaths:(id)arg1;
 - (void)initCECOverrides;
 - (id)initWithSerialQueue:(id)arg1;
+- (id)interfaceController;
 - (void)interfaceController:(id)arg1 didAddInterface:(id)arg2;
 - (void)interfaceController:(id)arg1 didRemoveInterface:(id)arg2;
-- (id)interfaceController;
 - (id)pluginOverride;
 - (id)propertyForKey:(id)arg1 ofBus:(id)arg2 error:(id*)arg3;
 - (void)setPluginOverride:(id)arg1;

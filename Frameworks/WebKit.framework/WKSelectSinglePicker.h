@@ -4,7 +4,7 @@
 
 @class NSString, WKContentView;
 
-@interface WKSelectSinglePicker : UIPickerView <WKFormControl, UIPickerViewDataSource, UIPickerViewDelegate> {
+@interface WKSelectSinglePicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, WKFormControl> {
     int _selectedIndex;
     WKContentView *_view;
 }

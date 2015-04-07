@@ -52,8 +52,8 @@
 - (void)fetchRemainingUUIDs:(id)arg1;
 - (BOOL)hasPendingChanges;
 - (id)init;
-- (id)initWithDisplayTitle:(id)arg1 uuids:(id)arg2;
 - (id)initWithDisplayTitle:(id)arg1;
+- (id)initWithDisplayTitle:(id)arg1 uuids:(id)arg2;
 - (BOOL)isEmpty;
 - (void)restart;
 - (id)searchString;

@@ -5,31 +5,31 @@
 @class NSMutableArray, TSDTextureSet, TSDTexturedRectangle;
 
 @interface TSCH3DChartRepCachedTexture : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     unsigned int mDeliveryStyle;
     int mEffectiveTextureStage;
     TSDTextureSet *mFinalTexture;
     BOOL mIsSingleImage;
     BOOL mIsTorndown;
     TSDTexturedRectangle *mLegend;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mTextureBoundingRect;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mTextureSetBoundingRect;
     NSMutableArray *mTextures;
     TSDTextureSet *mVisibleTexture;

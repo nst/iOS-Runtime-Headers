@@ -5,12 +5,6 @@
 @class NSArray, NSEntityDescription, NSKnownKeysMappingStrategy, NSMutableArray, NSMutableDictionary, NSSQLEntity, NSSQLEntityKey, NSSQLModel, NSSQLOptLockKey, NSSQLPrimaryKey, NSSQLStatement, NSSQLStoreMappingGenerator, NSString;
 
 @interface NSSQLEntity : NSStoreMapping {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct __sqlentityFlags { 
-        unsigned int _hasAttributesWithExternalDataReferences : 1; 
-        unsigned int _reserved : 31; 
     NSMutableArray *_attrColumns;
     NSMutableArray *_columnsToFetch;
     struct __CFDictionary { } *_correlationDeleteCache;
@@ -41,12 +35,18 @@
     NSArray *_propertyManyToManyCache;
     NSKnownKeysMappingStrategy *_propertyMapping;
     NSSQLEntity *_rootEntity;
+    struct __sqlentityFlags { 
+        unsigned int _hasAttributesWithExternalDataReferences : 1; 
+        unsigned int _reserved : 31; 
     } _sqlentityFlags;
     NSMutableArray *_subentities;
     unsigned int _subentityMaxID;
     NSSQLEntity *_superentity;
     NSString *_tableName;
     NSMutableDictionary *_toManyRelationshipStatementCache;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _toOneRange;
     NSMutableArray *_virtualFKs;
 }
@@ -80,8 +80,8 @@
 - (void)cacheCorrelationMasterReorderStatementPart2:(id)arg1 forRelationship:(id)arg2;
 - (void)cacheCorrelationReorderStatement:(id)arg1 forRelationship:(id)arg2;
 - (void)cacheDeletionStatement:(id)arg1;
-- (void)cacheFaultingStatement:(id)arg1 andFetchRequest:(id)arg2 forRelationship:(id)arg3;
 - (void)cacheFaultingStatement:(id)arg1;
+- (void)cacheFaultingStatement:(id)arg1 andFetchRequest:(id)arg2 forRelationship:(id)arg3;
 - (void)cacheInsertStatement:(id)arg1;
 - (void)clearCachedStatements;
 - (id)columnsToCreate;

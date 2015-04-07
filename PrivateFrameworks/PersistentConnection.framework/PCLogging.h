@@ -16,8 +16,8 @@
 + (void)enableLoggingForCustomHandler:(id)arg1;
 + (id)getMainBundleId;
 + (void)initialize;
-+ (void)logAtLevel:(int)arg1 delegate:(id)arg2 format:(id)arg3 arguments:(void*)arg4;
 + (void)logAtLevel:(int)arg1 delegate:(id)arg2 format:(id)arg3;
++ (void)logAtLevel:(int)arg1 delegate:(id)arg2 format:(id)arg3 arguments:(void*)arg4;
 + (id)logFileDirectory;
 + (void)logKeepAliveInterval:(double)arg1 forServiceIdentifier:(id)arg2;
 + (BOOL)loggingEnabledForLevel:(int)arg1;

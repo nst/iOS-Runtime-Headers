@@ -24,10 +24,18 @@
     BOOL __shouldShowCameraRoll;
     NSDictionary *_configuration;
     <PLApplicationCameraViewControllerDelegate> *_delegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _doneButtonAction;
+
     BOOL _isReadyToTest;
     CAMKeepDaemonAliveAssertion *_keepDaemonAliveAssertion;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _previewButtonAction;
+
     double _sessionStartTime;
     int _testPictureCounter;
     double _testPictureRepeatDelay;

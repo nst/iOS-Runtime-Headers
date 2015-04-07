@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSOperationQueue, NSString, NSURL, NSURLConnection, NSURLRequest;
 
-@interface NSURLConnectionInternal : NSObject <NSURLConnectionRequired, NSURLAuthenticationChallengeSender> {
+@interface NSURLConnectionInternal : NSObject <NSURLAuthenticationChallengeSender, NSURLConnectionRequired> {
     NSURLConnection *_connection;
     BOOL _connectionActive;
     NSDictionary *_connectionProperties;
@@ -25,8 +25,8 @@
 - (void)_setDelegateQueue:(id)arg1;
 - (id)_timingData;
 - (void)_withActiveConnectionAndDelegate:(id)arg1;
-- (void)_withConnectionAndDelegate:(id)arg1 onlyActive:(BOOL)arg2;
 - (void)_withConnectionAndDelegate:(id)arg1;
+- (void)_withConnectionAndDelegate:(id)arg1 onlyActive:(BOOL)arg2;
 - (void)_withConnectionDisconnectFromConnection;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;

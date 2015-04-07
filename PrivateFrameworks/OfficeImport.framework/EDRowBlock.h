@@ -36,8 +36,8 @@
 - (void)removeCellAtIndex:(unsigned int)arg1 rowInfo:(struct EDRowInfo {}**)arg2;
 - (unsigned int)rowCount;
 - (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoAtIndex:(unsigned int)arg1;
-- (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoWithRowNumber:(unsigned int)arg1 createIfNil:(bool)arg2;
 - (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoWithRowNumber:(unsigned int)arg1;
+- (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoWithRowNumber:(unsigned int)arg1 createIfNil:(bool)arg2;
 - (void)setIndex:(unsigned int)arg1;
 - (unsigned long)startOfCellsOrThrow;
 - (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned int*)arg2;

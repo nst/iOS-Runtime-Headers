@@ -14,7 +14,7 @@
 - (void)feedbackEventFailedWithReason:(unsigned char)arg1;
 - (void)feedbackEventSucceeded;
 - (void)feedbackEventWasCancelled;
-- (void)feedbackWithReason:(unsigned char)arg1 atTime:(double)arg2;
 - (void)feedbackWithReason:(unsigned char)arg1;
+- (void)feedbackWithReason:(unsigned char)arg1 atTime:(double)arg2;
 
 @end

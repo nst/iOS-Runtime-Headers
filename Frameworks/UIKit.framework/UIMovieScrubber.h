@@ -5,18 +5,23 @@
 @class <UIMovieScrubberDataSource>, <UIMovieScrubberDelegate>, NSString, UIImage, UIImageView, UILabel, UIMovieScrubberEditingView, UIMovieScrubberTrackView;
 
 @interface UIMovieScrubber : UIControl <UIMovieScrubberTrackViewDataSource, UIMovieScrubberTrackViewDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+    <UIMovieScrubberDataSource> *_dataSource;
+    <UIMovieScrubberDelegate> *_delegate;
+    float _edgeInset;
+    BOOL _editable;
+    UIMovieScrubberEditingView *_editingView;
+    UILabel *_elapsedLabel;
+    UIImage *_fillImage;
+    float _hitOffset;
+    UIImage *_innerShadowImage;
+    UIImage *_maskImage;
+    double _maxTrimmedLength;
+    double _maximumValue;
+    double _minTrimmedLength;
+    double _minimumValue;
+    UILabel *_remainingLabel;
+    UIImage *_shadowImage;
+    BOOL _showTimeViews;
     struct { 
         unsigned int continuous : 1; 
         unsigned int animating : 1; 
@@ -50,27 +55,22 @@
         unsigned int delegateDidEndAnimatingZoom : 1; 
         unsigned int delegateWillZoom : 1; 
         unsigned int dataSourceRequestThumbnailImageIsSummmary : 1; 
-    <UIMovieScrubberDataSource> *_dataSource;
-    <UIMovieScrubberDelegate> *_delegate;
-    float _edgeInset;
-    BOOL _editable;
-    UIMovieScrubberEditingView *_editingView;
-    UILabel *_elapsedLabel;
-    UIImage *_fillImage;
-    float _hitOffset;
-    UIImage *_innerShadowImage;
-    UIImage *_maskImage;
-    double _maxTrimmedLength;
-    double _maximumValue;
-    double _minTrimmedLength;
-    double _minimumValue;
-    UILabel *_remainingLabel;
-    UIImage *_shadowImage;
-    BOOL _showTimeViews;
     } _sliderFlags;
     UIImageView *_thumbView;
     int _timeComponents;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _touchLocationWhenTrackPressBegan;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _trackRect;
     UIMovieScrubberTrackView *_trackView;
     double _trimEndValue;
@@ -181,8 +181,8 @@
 - (void)setDuration:(double)arg1;
 - (void)setEdgeInset:(float)arg1;
 - (void)setEditable:(BOOL)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMaximumTrimLength:(double)arg1;
 - (void)setMinimumTrimLength:(double)arg1;
@@ -192,8 +192,8 @@
 - (void)setThumbnailImage:(struct CGImage { }*)arg1 forTimestamp:(id)arg2;
 - (void)setTrimEndValue:(double)arg1;
 - (void)setTrimStartValue:(double)arg1;
-- (void)setValue:(double)arg1 animated:(BOOL)arg2;
 - (void)setValue:(double)arg1;
+- (void)setValue:(double)arg1 animated:(BOOL)arg2;
 - (void)setZoomAnimationDuration:(double)arg1;
 - (void)setZoomDelay:(double)arg1;
 - (BOOL)showTimeViews;

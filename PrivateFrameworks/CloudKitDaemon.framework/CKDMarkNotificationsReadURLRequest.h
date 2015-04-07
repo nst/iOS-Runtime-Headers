@@ -11,7 +11,11 @@
 @interface CKDMarkNotificationsReadURLRequest : CKDURLRequest {
     NSArray *_notificationIDs;
     NSMutableDictionary *_notificationIDsByRequestID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _notificationMarkedReadProgressBlock;
+
 }
 
 @property(retain) NSArray * notificationIDs;

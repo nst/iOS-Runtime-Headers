@@ -5,14 +5,14 @@
 @class <MPMediaLibraryDataProviderPrivate>, NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface MPMediaEntityCache : NSObject {
-    struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
     struct __CFDictionary { } *_concreteEntitiesByDataProviderEntityClass;
     NSMutableArray *_entityTemporaryReferences;
     <MPMediaLibraryDataProviderPrivate> *_mediaLibraryDataProvider;
     BOOL _mediaLibraryDataProviderRespondsToSupportsEntityChangeTrackingMethod;
     NSObject<OS_dispatch_queue> *_queue;
+    struct _opaque_pthread_rwlock_t { 
+        long __sig; 
+        BOOL __opaque[124]; 
     } _rwlock;
 }
 

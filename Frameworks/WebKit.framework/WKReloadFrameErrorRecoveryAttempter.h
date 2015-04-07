@@ -5,16 +5,16 @@
 @class NSString;
 
 @interface WKReloadFrameErrorRecoveryAttempter : NSObject <_WKErrorRecoveryAttempting> {
-    struct WeakObjCPtr<WKWebView> { 
-        id m_weakReference; 
     struct RetainPtr<_WKFrameHandle> { 
         void *m_ptr; 
+    } _frameHandle;
     struct String { 
         struct RefPtr<WTF::StringImpl> { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
-    } _frameHandle;
     } _urlString;
+    struct WeakObjCPtr<WKWebView> { 
+        id m_weakReference; 
     } _webView;
 }
 

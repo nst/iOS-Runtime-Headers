@@ -14,10 +14,10 @@
 - (id)contentForUSBUsingBuffer:(void*)arg1 capacity:(unsigned long)arg2;
 - (id)description;
 - (unsigned short)eventCode;
-- (id)initWithEventCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4 parameter3:(unsigned long)arg5;
-- (id)initWithEventCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4;
-- (id)initWithEventCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3;
 - (id)initWithEventCode:(unsigned short)arg1 transactionID:(unsigned long)arg2;
+- (id)initWithEventCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3;
+- (id)initWithEventCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4;
+- (id)initWithEventCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4 parameter3:(unsigned long)arg5;
 - (id)initWithTCPBuffer:(void*)arg1;
 - (id)initWithUSBBuffer:(void*)arg1;
 - (unsigned long)parameter1;

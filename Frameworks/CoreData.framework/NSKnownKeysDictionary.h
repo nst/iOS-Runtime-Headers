@@ -15,8 +15,8 @@
 
 - (void)_setValues:(id*)arg1 retain:(BOOL)arg2;
 - (void)getKeys:(id*)arg1;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (void)getObjects:(id*)arg1;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (id)initForKeys:(id)arg1;
 - (id)initWithSearchStrategy:(id)arg1;
 - (id)mapping;

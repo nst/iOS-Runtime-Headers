@@ -5,15 +5,6 @@
 @class NSData, NSString;
 
 @interface CUIThemeRendition : NSObject {
-    struct _renditionkeytoken { 
-        unsigned short identifier; 
-        unsigned short value; 
-    struct { 
-        unsigned int isHeaderFlaggedFPO : 1; 
-        unsigned int isExcludedFromContrastFilter : 1; 
-        unsigned int isVectorBased : 1; 
-        unsigned int isOpaque : 1; 
-        unsigned int reserved : 28; 
     int _artworkStatus;
     int _blendMode;
     unsigned int _colorSpaceID;
@@ -21,9 +12,18 @@
     struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_key;
     NSString *_name;
     float _opacity;
+    struct { 
+        unsigned int isHeaderFlaggedFPO : 1; 
+        unsigned int isExcludedFromContrastFilter : 1; 
+        unsigned int isVectorBased : 1; 
+        unsigned int isOpaque : 1; 
+        unsigned int reserved : 28; 
     } _renditionFlags;
     unsigned int _scale;
     NSData *_srcData;
+    struct _renditionkeytoken { 
+        unsigned short identifier; 
+        unsigned short value; 
     } _stackKey[16];
     unsigned int _subtype;
     int _templateRenderingMode;
@@ -58,8 +58,8 @@
 - (float)gradientDrawingAngle;
 - (unsigned int)gradientStyle;
 - (id)imageForSliceIndex:(int)arg1;
-- (id)initWithCSIData:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2 artworkStatus:(int)arg3;
 - (id)initWithCSIData:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2;
+- (id)initWithCSIData:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2 artworkStatus:(int)arg3;
 - (BOOL)isHeaderFlaggedFPO;
 - (BOOL)isOpaque;
 - (BOOL)isScaled;

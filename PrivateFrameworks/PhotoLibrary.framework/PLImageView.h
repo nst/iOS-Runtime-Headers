@@ -5,28 +5,28 @@
 @class NSString, PLPhotoTilePlaceholderView, PLTiledLayer, PLVideoView, UILabel, UIView;
 
 @interface PLImageView : UIImageView {
-    struct CGSize { 
-        float width; 
-        float height; 
-    unsigned int _shadowEnabled : 1;
-    unsigned int _suppressShadowDrawing : 1;
-    unsigned int _borderViewIsVisible : 1;
-    unsigned int _drawsBorder : 1;
     float _accessoryViewsAlpha;
     float _aspectRatio;
     UIView *_borderView;
+    unsigned int _borderViewIsVisible : 1;
     UIView *_bottomRightAccessoryView;
+    unsigned int _drawsBorder : 1;
     BOOL _edgeAntialiasingEnabled;
     int _fullSizeImageOrientation;
     PLTiledLayer *_fullSizeImageTiledLayer;
     double _lastBorderAlphaTime;
     double _lastShadowAlphaTime;
     UIView *_leftAccessoryView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _leftAccessoryViewOffset;
     NSString *_name;
     float _placeholderScale;
     PLPhotoTilePlaceholderView *_placeholderView;
+    unsigned int _shadowEnabled : 1;
     BOOL _showsPlaceholder;
+    unsigned int _suppressShadowDrawing : 1;
     UILabel *_textBadge;
     float _transitionProgress;
     PLVideoView *_videoView;
@@ -78,18 +78,18 @@
 - (struct CGSize { float x1; float x2; })placeholderSize;
 - (void)renderSnapshotInContext:(struct CGContext { }*)arg1;
 - (void)setAccessoryViewsAlpha:(float)arg1;
-- (void)setBorderAndAccessoriesAlpha:(float)arg1 forced:(BOOL)arg2;
 - (void)setBorderAndAccessoriesAlpha:(float)arg1;
+- (void)setBorderAndAccessoriesAlpha:(float)arg1 forced:(BOOL)arg2;
 - (void)setBorderAndAccessoriesVisible:(BOOL)arg1;
-- (void)setBottomRightAccessoryView:(id)arg1 animated:(BOOL)arg2;
 - (void)setBottomRightAccessoryView:(id)arg1;
+- (void)setBottomRightAccessoryView:(id)arg1 animated:(BOOL)arg2;
 - (void)setDimmed:(BOOL)arg1;
 - (void)setDrawsBorder:(BOOL)arg1;
 - (void)setEdgeAntialiasingEnabled:(BOOL)arg1;
 - (void)setFullSizeImageJPEGData:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 orientation:(int)arg3;
 - (void)setImage:(id)arg1;
-- (void)setLeftAccessoryView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftAccessoryView:(id)arg1;
+- (void)setLeftAccessoryView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftAccessoryViewOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setName:(id)arg1;
 - (void)setPlaceholderScale:(float)arg1;
@@ -99,8 +99,8 @@
 - (void)setTransitionProgress:(float)arg1;
 - (void)setVideoView:(id)arg1;
 - (BOOL)showsPlaceholder;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 allowRounding:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 allowRounding:(BOOL)arg2;
 - (id)textBadgeString;
 - (float)transitionProgress;
 - (void)updateFullSizeImageVisibleArea;

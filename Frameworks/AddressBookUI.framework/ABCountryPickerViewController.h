@@ -4,7 +4,7 @@
 
 @class NSArray, NSDictionary, NSIndexPath, NSString, UILocalizedIndexedCollation, UISearchBar, UISearchDisplayController, UITableView;
 
-@interface ABCountryPickerViewController : ABPickerViewController <UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate, UISearchBarDelegate> {
+@interface ABCountryPickerViewController : ABPickerViewController <UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSArray *_allCountries;
     UILocalizedIndexedCollation *_collation;
     NSArray *_filteredCountries;

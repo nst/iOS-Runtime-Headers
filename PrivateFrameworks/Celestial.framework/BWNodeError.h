@@ -17,9 +17,9 @@
 @property(readonly) NSString * sourceNodeDescription;
 @property(readonly) FigCaptureStillImageSettings * stillImageSettings;
 
++ (id)newError:(long)arg1 sourceNode:(id)arg2;
 + (id)newError:(long)arg1 sourceNode:(id)arg2 recordingSettings:(id)arg3;
 + (id)newError:(long)arg1 sourceNode:(id)arg2 stillImageSettings:(id)arg3;
-+ (id)newError:(long)arg1 sourceNode:(id)arg2;
 
 - (id)_initWithError:(long)arg1 sourceNode:(id)arg2 stillImageSettings:(id)arg3 recordingSettings:(id)arg4;
 - (void)dealloc;

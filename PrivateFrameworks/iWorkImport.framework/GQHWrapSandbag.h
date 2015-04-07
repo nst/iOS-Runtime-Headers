@@ -3,10 +3,10 @@
  */
 
 @interface GQHWrapSandbag : NSObject {
+    BOOL mFloatsLeft;
     struct CGSize { 
         float width; 
         float height; 
-    BOOL mFloatsLeft;
     } mSize;
 }
 

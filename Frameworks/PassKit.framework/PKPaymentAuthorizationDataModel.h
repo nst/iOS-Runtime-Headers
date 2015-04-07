@@ -27,7 +27,11 @@
     CNContact *_shippingPhone;
     NSDecimalNumber *_transactionAmount;
     NSMutableDictionary *_typeToItemMap;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateHandler;
+
 }
 
 @property(readonly) NSArray * acceptedPasses;

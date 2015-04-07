@@ -5,9 +5,6 @@
 @class NSArray, NSHashTable, NSMapTable, NSString, VMUSampler;
 
 @interface VMUCallTreeRoot : VMUCallTreeNode {
-    struct _CSTypeRef { 
-        unsigned int _opaque_1; 
-        unsigned int _opaque_2; 
     NSMapTable *_addressToLeafSymbolNameMap;
     NSMapTable *_addressToSymbolNameMap;
     NSArray *_binaryImages;
@@ -15,13 +12,16 @@
     NSMapTable *_dispatchQueueSerialNumToNameMap;
     unsigned int _options;
     VMUSampler *_sampler;
+    struct _CSTypeRef { 
+        unsigned int _opaque_1; 
+        unsigned int _opaque_2; 
     } _symbolicator;
     NSMapTable *_threadPortToNameMap;
     NSHashTable *_uniqueNodeNames;
 }
 
-- (id)addBacktrace:(id)arg1 count:(unsigned int)arg2 numBytes:(unsigned long long)arg3;
 - (id)addBacktrace:(id)arg1;
+- (id)addBacktrace:(id)arg1 count:(unsigned int)arg2 numBytes:(unsigned long long)arg3;
 - (void)addChildWithName:(id)arg1 address:(unsigned long long)arg2 count:(unsigned int)arg3 numBytes:(unsigned long long)arg4 toNode:(id)arg5;
 - (void)allBacktracesHaveBeenAdded;
 - (id)chargeSystemLibrariesToCallersAndKeepBoundaries:(BOOL)arg1;

@@ -5,29 +5,29 @@
 @class NSArray, PKExtendedPhysicsBody, PKPhysicsJoint;
 
 @interface UIAttachmentBehavior : UIDynamicBehavior {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        unsigned int dampingSet : 1; 
-        unsigned int frequencySet : 1; 
-        unsigned int lengthSet : 1; 
-        unsigned int isRevolute : 1; 
     PKExtendedPhysicsBody *_anchorBody;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _anchorPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _anchorPointA;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _anchorPointB;
     int _attachedBehaviorType;
     float _damping;
     float _frequency;
     PKPhysicsJoint *_joint;
     float _length;
+    struct { 
+        unsigned int dampingSet : 1; 
+        unsigned int frequencySet : 1; 
+        unsigned int lengthSet : 1; 
+        unsigned int isRevolute : 1; 
     } _stateFlags;
     int _type;
 }

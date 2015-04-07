@@ -5,6 +5,11 @@
 @class NSString;
 
 @interface AWDPushSent : PBCodable <NSCopying> {
+    unsigned int _connectionType;
+    unsigned int _dualChannelState;
+    unsigned int _error;
+    unsigned int _flushes;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
@@ -14,11 +19,6 @@
         unsigned int linkQuality : 1; 
         unsigned int payloadSize : 1; 
         unsigned int sendDuration : 1; 
-    unsigned int _connectionType;
-    unsigned int _dualChannelState;
-    unsigned int _error;
-    unsigned int _flushes;
-    NSString *_guid;
     } _has;
     int _linkQuality;
     unsigned int _payloadSize;

@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface SSPurchaseHistoryItem : NSObject <SSXPCCoding, NSCopying> {
+@interface SSPurchaseHistoryItem : NSObject <NSCopying, SSXPCCoding> {
     NSMutableDictionary *_properties;
 }
 

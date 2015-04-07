@@ -5,13 +5,13 @@
 @class AVAsset, AVPlayerItem, MPAVItem, NSURL;
 
 @interface MPMovie : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     double _endPlaybackTime;
     BOOL _explicitlySetMovieSourceType;
     MPAVItem *_item;
     double _lastKnownDuration;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _lastKnownNaturalSize;
     unsigned int _lastKnownType;
     BOOL _movieIsUnplayable;

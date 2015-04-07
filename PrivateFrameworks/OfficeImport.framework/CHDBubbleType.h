@@ -3,9 +3,9 @@
  */
 
 @interface CHDBubbleType : CHDChartType {
-    boolmShowNegativeBubbles;
-    boolmSizeRepresentsRadius;
     int mBubbleScale;
+    bool mShowNegativeBubbles;
+    bool mSizeRepresentsRadius;
 }
 
 - (int)bubbleScale;

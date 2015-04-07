@@ -37,8 +37,8 @@
 - (id)htmlData;
 - (id)init;
 - (id)initWithMimeBody:(id)arg1;
-- (id)initWithMimePart:(id)arg1 htmlData:(id)arg2 encoding:(unsigned long)arg3;
 - (id)initWithMimePart:(id)arg1;
+- (id)initWithMimePart:(id)arg1 htmlData:(id)arg2 encoding:(unsigned long)arg3;
 - (id)mimeBody;
 - (id)mimePart;
 - (id)mimePartForURL:(id)arg1;

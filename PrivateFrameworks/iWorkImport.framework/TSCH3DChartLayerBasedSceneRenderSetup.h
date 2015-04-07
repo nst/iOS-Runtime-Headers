@@ -5,6 +5,8 @@
 @class CALayer, CALayer<TSCH3DGLLayer>;
 
 @interface TSCH3DChartLayerBasedSceneRenderSetup : TSCH3DChartSceneRenderSetup {
+    CALayer<TSCH3DGLLayer> *mLayer;
+    CALayer *mPixelAlignmentLayer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    CALayer<TSCH3DGLLayer> *mLayer;
-    CALayer *mPixelAlignmentLayer;
     } mVisibleBoundsInLayerRelativeSpace;
 }
 

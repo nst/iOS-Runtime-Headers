@@ -8,48 +8,19 @@
 
 @class CAMEffectSelectionViewController, CIContext, CIFilter, EAGLContext, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSTimer, NSUndoManager, PLEditOverlayTextView, PLImageAdjustmentView, PLManagedAsset, PLProgressHUD, UIActionSheet, UIAlertView, UIImage, UINavigationBar, UIPopoverController, UIScrollView, UIToolbar, UIView;
 
-@interface PLEditPhotoController : UIViewController <PLImageAdjustmentViewDelegate, UIScrollViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, CAMEffectSelectionViewControllerDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    unsigned int _didInitializeNavigationItem : 1;
-    unsigned int _toolbarWasHidden : 1;
-    unsigned int _isUserAction : 1;
-    unsigned int _isCroppingImage : 1;
-    unsigned int _didTapForRedEyeCorrection : 1;
-    unsigned int _didEverTapForRedEyeCorrection : 1;
-    unsigned int _isCanceling : 1;
-    unsigned int _isOrderedOut : 1;
-    unsigned int _autoAdjustmentEnabled : 1;
-    unsigned int _preloadingEnhancementFilters : 1;
-    unsigned int _applyingAutoEnhance : 1;
-    unsigned int _modal : 1;
-    unsigned int _isUsingProxyImage : 1;
-    unsigned int _shouldPublishToPhotoStreams : 1;
-    unsigned int _needsFilteredFullSizeImage : 1;
-    unsigned int _preloadedEffectFilters : 1;
-    unsigned int _stopPreloadEffectFilters : 1;
+@interface PLEditPhotoController : UIViewController <CAMEffectSelectionViewControllerDelegate, PLImageAdjustmentViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, UIScrollViewDelegate> {
     BOOL __toolbarHidden;
     int __viewAnimationEnabledCount;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _actionCompletionBlock;
+
     UIActionSheet *_actionSheet;
     UIImage *_adjustedImage;
     UIAlertView *_alertView;
+    unsigned int _applyingAutoEnhance : 1;
+    unsigned int _autoAdjustmentEnabled : 1;
     NSArray *_autoAdjustmentFilters;
     NSArray *_autoRedEyeCorrections;
     CIFilter *_autoRedEyeFilter;
@@ -59,29 +30,67 @@
     CIContext *_ciContextMainThread;
     CIContext *_ciContextThumbnails;
     int _currentMode;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _didEndZoomingBlock;
+
+    unsigned int _didEverTapForRedEyeCorrection : 1;
+    unsigned int _didInitializeNavigationItem : 1;
+    unsigned int _didTapForRedEyeCorrection : 1;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _editCompletionBlock;
+
     PLImageAdjustmentView *_editView;
     PLManagedAsset *_editedPhoto;
     NSArray *_effectFilters;
     NSObject<OS_dispatch_queue> *_effectQueueFullSize;
     NSObject<OS_dispatch_queue> *_effectQueueThumbnails;
     CAMEffectSelectionViewController *_effectSelectionViewController;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _enhanceCalcRect;
     EAGLContext *_glesContextFullSize;
     EAGLContext *_glesContextThumbnails;
     NSDictionary *_initialAdjustmentState;
     int _initialOrientation;
+    unsigned int _isCanceling : 1;
+    unsigned int _isCroppingImage : 1;
+    unsigned int _isOrderedOut : 1;
+    unsigned int _isUserAction : 1;
+    unsigned int _isUsingProxyImage : 1;
     UIImage *_largeThumbnailImage;
     NSTimer *_messageTimer;
     PLEditOverlayTextView *_messageView;
+    unsigned int _modal : 1;
     NSMutableArray *_navBarItems;
     UINavigationBar *_navigationBar;
+    unsigned int _needsFilteredFullSizeImage : 1;
     unsigned int _nextPreloadEffectFilterIndex;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _normalizedCropRect;
     NSArray *_originalItems;
     PLManagedAsset *_pendingPhoto;
     UIPopoverController *_popover;
+    unsigned int _preloadedEffectFilters : 1;
+    unsigned int _preloadingEnhancementFilters : 1;
     NSDictionary *_previousAdjustmentState;
     NSUndoManager *_previousUndoManager;
     unsigned int _redEyeCycleCount;
@@ -91,12 +100,15 @@
     PLProgressHUD *_savingHUD;
     UIImage *_scaledCachedImage;
     UIScrollView *_scrollView;
+    unsigned int _shouldPublishToPhotoStreams : 1;
     UIImage *_smallThumbnailImage;
+    unsigned int _stopPreloadEffectFilters : 1;
     float _straightenAngle;
     BOOL _supportsEffects;
     NSMutableDictionary *_thumbnailCache;
     NSDictionary *_thumbnailCacheAdjustmentState;
     UIToolbar *_toolbar;
+    unsigned int _toolbarWasHidden : 1;
     NSUndoManager *_undoManager;
     UIView *_zoomView;
 }
@@ -121,8 +133,8 @@
 + (void)initialize;
 
 - (void)_addRedEyeCorrections:(id)arg1 fromFilter:(id)arg2 isUserAction:(BOOL)arg3;
-- (BOOL)_adjustmentState:(id)arg1 isEqualTo:(id)arg2;
 - (id)_adjustmentState;
+- (BOOL)_adjustmentState:(id)arg1 isEqualTo:(id)arg2;
 - (void)_autoAdjustImage;
 - (id)_autoAdjustmentFilters;
 - (id)_buttonWithTag:(int)arg1;
@@ -178,8 +190,8 @@
 - (void)_setAutoRedEyeFilterFromArray:(id)arg1;
 - (void)_setControlsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setEditMode:(int)arg1;
-- (void)_setEditedImage:(id)arg1 isProxyImage:(BOOL)arg2 updateCropAndStraighten:(BOOL)arg3 forceAnimate:(BOOL)arg4;
 - (void)_setEditedImage:(id)arg1 isProxyImage:(BOOL)arg2 updateCropAndStraighten:(BOOL)arg3;
+- (void)_setEditedImage:(id)arg1 isProxyImage:(BOOL)arg2 updateCropAndStraighten:(BOOL)arg3 forceAnimate:(BOOL)arg4;
 - (void)_setEditedPhoto:(id)arg1 resetFilters:(BOOL)arg2;
 - (BOOL)_setRedEyeCorrections:(id)arg1 changedCorrections:(id*)arg2;
 - (void)_setToolbarHidden:(BOOL)arg1;

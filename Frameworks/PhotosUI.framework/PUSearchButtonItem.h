@@ -5,6 +5,11 @@
 @class PUSearchButtonItemCustomView, UINavigationItem, UISearchBar, UIView;
 
 @interface PUSearchButtonItem : UIBarButtonItem {
+    PUSearchButtonItemCustomView *_customView;
+    UINavigationItem *_navigationItem;
+    BOOL _nudgesSearchIcon;
+    UISearchBar *_searchBar;
+    UIView *_searchIcon;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,11 +19,6 @@
             float width; 
             float height; 
         } size; 
-    PUSearchButtonItemCustomView *_customView;
-    UINavigationItem *_navigationItem;
-    BOOL _nudgesSearchIcon;
-    UISearchBar *_searchBar;
-    UIView *_searchIcon;
     } _searchIconDefaultBounds;
     BOOL _showingSearchBar;
     BOOL _wantsShowingSearchBar;

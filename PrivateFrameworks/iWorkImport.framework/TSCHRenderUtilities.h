@@ -7,8 +7,8 @@
 
 + (void)addTextSubselectionHalosToArray:(id)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
 + (void)addTextSubselectionKnobsToArray:(id)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
-+ (BOOL)centerPointForSeries:(id)arg1 index:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 point:(struct CGPoint { float x1; float x2; }*)arg4 nullsUseIntercept:(BOOL)arg5;
 + (BOOL)centerPointForSeries:(id)arg1 index:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 point:(struct CGPoint { float x1; float x2; }*)arg4;
++ (BOOL)centerPointForSeries:(id)arg1 index:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 point:(struct CGPoint { float x1; float x2; }*)arg4 nullsUseIntercept:(BOOL)arg5;
 + (void)drawFill:(id)arg1 inContext:(struct CGContext { }*)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (void)drawFill:(id)arg1 inContext:(struct CGContext { }*)arg2 path:(struct CGPath { }*)arg3;
 + (void)drawNullFillSwatchInContext:(struct CGContext { }*)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;

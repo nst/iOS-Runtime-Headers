@@ -5,13 +5,13 @@
 @class NSAttributedString, UIColor, UIScrollView, _UIRefreshControlContentView;
 
 @interface UIRefreshControl : UIControl {
+    float _additionalTopInset;
+    BOOL _adjustingInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    float _additionalTopInset;
-    BOOL _adjustingInsets;
     } _appliedInsets;
     _UIRefreshControlContentView *_contentView;
     BOOL _insetsApplied;

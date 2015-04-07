@@ -5,12 +5,6 @@
 @class <SCROSBrailleDisplayManagerDelegate>, NSAttributedString, NSData, NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SCROBrailleDisplay, SCROBrailleDisplayHistory, SCROBrailleDisplayManagedQueue, SCROBrailleEventDispatcher, SCROBrailleFormatter, SCRODBluetoothBrailleDisplay;
 
 @interface SCROBrailleDisplayManager : NSObject <SCROBrailleDisplayDelegate> {
-    struct { 
-        NSData *aggregatedData; 
-        int virtualAlignment; 
-        int masterStatusCellIndex; 
-        BOOL currentAnnouncementUnread; 
-        BOOL anyUnreadAnnouncements; 
     int _alertPriority;
     double _alertTimeout;
     struct __CFRunLoopTimer { } *_alertTimer;
@@ -39,6 +33,12 @@
     BOOL _shouldBatchUpdates;
     BOOL _showDotsSevenAndEight;
     BOOL _showEightDot;
+    struct { 
+        NSData *aggregatedData; 
+        int virtualAlignment; 
+        int masterStatusCellIndex; 
+        BOOL currentAnnouncementUnread; 
+        BOOL anyUnreadAnnouncements; 
     } _status;
     NSAttributedString *_statusString;
     SCROBrailleDisplay *_stealthBrailleDisplay;
@@ -144,8 +144,8 @@
 - (void)setInputContractionMode:(int)arg1;
 - (void)setInputEightDotBraille:(BOOL)arg1;
 - (void)setLineDescriptorDisplayCallbackEnabled:(BOOL)arg1;
-- (void)setMainAttributedString:(id)arg1 forceUpdate:(BOOL)arg2;
 - (void)setMainAttributedString:(id)arg1;
+- (void)setMainAttributedString:(id)arg1 forceUpdate:(BOOL)arg2;
 - (void)setMasterStatusCellIndex:(long)arg1;
 - (void)setPrepareToMemorizeNextKey:(BOOL)arg1 immediate:(BOOL)arg2 forDisplayWithToken:(long)arg3;
 - (void)setPrimaryBrailleDisplay:(long)arg1;

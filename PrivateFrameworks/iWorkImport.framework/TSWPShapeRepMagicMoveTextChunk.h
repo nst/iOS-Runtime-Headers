@@ -5,12 +5,12 @@
 @class NSMutableIndexSet, NSString, TSWPShapeRep;
 
 @interface TSWPShapeRepMagicMoveTextChunk : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     BOOL _hasListLabel;
     BOOL _isVisible;
     float _opacityFromRenderer;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
     TSWPShapeRep *_rep;
     int _stageIndex;

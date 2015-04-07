@@ -46,10 +46,10 @@
 - (BOOL)_includeZilchRoutePoints;
 - (id)_mapkit_initWithAllTransportTypesSource:(id)arg1 destination:(id)arg2 arrivalDate:(id)arg3;
 - (id)_mapkit_initWithAllTransportTypesSource:(id)arg1 destination:(id)arg2 departureDate:(id)arg3;
-- (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 arrivalDate:(id)arg4 includeTravelTimes:(BOOL)arg5 includeTrafficIncidents:(BOOL)arg6 includeEntryPoints:(BOOL)arg7 includeRoutePoints:(BOOL)arg8;
 - (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 arrivalDate:(id)arg4;
-- (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 departureDate:(id)arg4 includeTravelTimes:(BOOL)arg5 includeTrafficIncidents:(BOOL)arg6 includeEntryPoints:(BOOL)arg7 includeRoutePoints:(BOOL)arg8;
+- (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 arrivalDate:(id)arg4 includeTravelTimes:(BOOL)arg5 includeTrafficIncidents:(BOOL)arg6 includeEntryPoints:(BOOL)arg7 includeRoutePoints:(BOOL)arg8;
 - (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 departureDate:(id)arg4;
+- (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 departureDate:(id)arg4 includeTravelTimes:(BOOL)arg5 includeTrafficIncidents:(BOOL)arg6 includeEntryPoints:(BOOL)arg7 includeRoutePoints:(BOOL)arg8;
 - (void)_setAdditionalTransportTypesRequested:(id)arg1;
 - (void)_setIncludeDistanceInETA:(BOOL)arg1;
 - (unsigned int)_transportType;

@@ -50,8 +50,8 @@
 - (id)msgDispatcher;
 - (id)name;
 - (id)pendingRequests;
-- (void)removeRoom:(id)arg1 completionHandler:(id)arg2;
 - (void)removeRoom:(id)arg1;
+- (void)removeRoom:(id)arg1 completionHandler:(id)arg2;
 - (id)roomWithUUID:(id)arg1;
 - (id)rooms;
 - (void)setCurrentRooms:(id)arg1;

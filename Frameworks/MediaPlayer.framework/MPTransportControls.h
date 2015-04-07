@@ -5,7 +5,6 @@
 @class MPAVController, MPAVItem, MPButton, NSMutableIndexSet, NSString;
 
 @interface MPTransportControls : UIView {
-    unsigned int _playing : 1;
     BOOL _allowsWirelessPlayback;
     MPButton *_alternatesButton;
     MPButton *_bookmarkButton;
@@ -20,6 +19,7 @@
     MPButton *_nextButton;
     MPButton *_playButton;
     MPAVController *_player;
+    unsigned int _playing : 1;
     MPButton *_previousButton;
     BOOL _registeredForPlayerNotifications;
     MPButton *_rewind15SecondsButton;
@@ -97,8 +97,8 @@
 - (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
-- (void)setDesiredParts:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (void)setDesiredParts:(unsigned long long)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
@@ -106,8 +106,8 @@
 - (void)setPlayer:(id)arg1;
 - (void)setRegisteredForPlayerNotifications:(BOOL)arg1;
 - (void)setTarget:(id)arg1;
-- (void)setVisibleParts:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (void)setVisibleParts:(unsigned long long)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (BOOL)showsVolumeSliderWhenNoVolumeControlAvailable;
 - (id)target;
 - (void)tintColorDidChange;

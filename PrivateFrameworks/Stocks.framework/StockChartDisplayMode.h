@@ -5,24 +5,24 @@
 @class NSString, UIColor;
 
 @interface StockChartDisplayMode : NSObject <NSCopying> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     BOOL _HUDEnabled;
     UIColor *_axisLabelsColor;
     struct CGGradient { } *_backgroundGradient;
     UIColor *_backgroundLinesColor;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _chartSize;
     BOOL _graphOverlapsYAxisLabels;
     NSString *_hash;
     unsigned int _horizontalGridlineCount;
     float _intervalRowHeight;
     UIColor *_lineColor;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _lineGraphInsets;
     float _lineWidth;
     int _maxInterval;

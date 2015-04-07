@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface AXNotificationHandler : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _dispatcher;
+
     NSString *_notificationName;
     unsigned int _observerIdentifier;
     id _target;
@@ -37,8 +41,8 @@
 - (id)_target;
 - (void)dealloc;
 - (id)description;
-- (id)initWithNotificationName:(id)arg1 target:(id)arg2 dispatcher:(id)arg3 startObserving:(BOOL)arg4;
 - (id)initWithNotificationName:(id)arg1 target:(id)arg2 dispatcher:(id)arg3;
+- (id)initWithNotificationName:(id)arg1 target:(id)arg2 dispatcher:(id)arg3 startObserving:(BOOL)arg4;
 - (id)initWithNotificationName:(id)arg1 target:(id)arg2 handler:(SEL)arg3;
 - (void)invalidate;
 - (BOOL)isValid;

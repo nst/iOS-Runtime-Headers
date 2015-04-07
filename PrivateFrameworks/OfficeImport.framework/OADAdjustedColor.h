@@ -9,8 +9,8 @@
     int mAdjustmentType;
     OADColor *mBaseColor;
     BOOL mGray;
-    BOOL mInvert128;
     BOOL mInvert;
+    BOOL mInvert128;
 }
 
 - (unsigned char)adjustmentParam;
@@ -21,8 +21,8 @@
 - (BOOL)gray;
 - (unsigned int)hash;
 - (id)initWithBaseColor:(id)arg1 adjustmentType:(int)arg2 adjustmentParam:(unsigned char)arg3 invert:(BOOL)arg4 invert128:(BOOL)arg5 gray:(BOOL)arg6;
-- (BOOL)invert128;
 - (BOOL)invert;
+- (BOOL)invert128;
 - (BOOL)isEqual:(id)arg1;
 
 @end

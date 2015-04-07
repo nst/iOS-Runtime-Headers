@@ -7,7 +7,11 @@
  */
 
 @interface _PUSettingsController : PTSettingsController {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _onViewDidDisappearBlock;
+
 }
 
 @property(copy) id onViewDidDisappearBlock;

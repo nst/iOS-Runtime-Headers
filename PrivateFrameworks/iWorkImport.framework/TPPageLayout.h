@@ -4,7 +4,7 @@
 
 @class <NSFastEnumeration>, <TPMasterDrawableProvider>, <TSWPHeaderFooterProvider>, NSArray, TPBodyLayout, TPFootnoteContainerLayout, TPInflatableFootnoteContainerLayout, TPMarginAdjustLayout, TSURetainedPointerKeyDictionary, TSWPPadding;
 
-@interface TPPageLayout : TSWPPageLayout <TSWPLayoutParent, TSWPColumnMetrics, TPAttachmentLayoutParent> {
+@interface TPPageLayout : TSWPPageLayout <TPAttachmentLayoutParent, TSWPColumnMetrics, TSWPLayoutParent> {
     BOOL _childLayoutsValid;
     unsigned int _contentFlags;
     TPInflatableFootnoteContainerLayout *_footnoteContainerLayout;

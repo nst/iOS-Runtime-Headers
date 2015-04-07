@@ -7,8 +7,16 @@
  */
 
 @interface PSSpecifierAction : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _getter;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _setter;
+
 }
 
 @property(copy) id getter;

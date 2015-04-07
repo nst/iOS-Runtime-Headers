@@ -5,10 +5,10 @@
 @class CertUITrustManager, NSString;
 
 @interface CertUIConnectionDelegate : NSObject {
+    NSString *_connectionDisplayName;
     struct { 
         unsigned int canAuthenticateAgainstProtectionSpace : 1; 
         unsigned int didReceiveAuthenticationChallenge : 1; 
-    NSString *_connectionDisplayName;
     } _delegateRespondsTo;
     id _forwardingDelegate;
     CertUITrustManager *_trustManager;

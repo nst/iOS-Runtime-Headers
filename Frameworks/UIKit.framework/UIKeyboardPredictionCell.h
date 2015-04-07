@@ -5,27 +5,6 @@
 @class TIKeyboardCandidate, UIKBKeyView, UIMorphingLabel, UIView;
 
 @interface UIKeyboardPredictionCell : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -36,7 +15,25 @@
             float height; 
         } size; 
     } _activeFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _baseFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _collapsedFrame;
     BOOL _isAutocorrection;
     BOOL _isCenter;
@@ -46,6 +43,9 @@
     int _state;
     UIKBKeyView *m_activeKeyView;
     UIKBKeyView *m_enabledKeyView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } m_keyViewSize;
     UIMorphingLabel *m_label;
     BOOL m_lightKeyboard;
@@ -84,8 +84,8 @@
 - (void)setIsCenter:(BOOL)arg1;
 - (void)setIsLongCandidate:(BOOL)arg1;
 - (void)setIsTypedString:(BOOL)arg1;
-- (void)setState:(int)arg1 withText:(id)arg2;
 - (void)setState:(int)arg1;
+- (void)setState:(int)arg1 withText:(id)arg2;
 - (void)setText:(id)arg1 prediction:(id)arg2 active:(BOOL)arg3;
 - (void)setVisibleRect;
 - (int)state;

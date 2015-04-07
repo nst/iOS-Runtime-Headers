@@ -18,8 +18,8 @@
 @property(readonly) Class superclass;
 @property(copy) id value;
 
-+ (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(int)arg3;
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2;
++ (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(int)arg3;
 
 - (void).cxx_destruct;
 - (id)ML3PredicateForContainer;

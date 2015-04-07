@@ -28,8 +28,8 @@
 - (void)setDestinationPlaceholderHidden:(BOOL)arg1;
 - (void)setDestinationPlaceholderStyle:(int)arg1 airPlayDeviceName:(id)arg2;
 - (void)setPlayer:(id)arg1;
-- (void)setScaleMode:(unsigned int)arg1 duration:(double)arg2;
 - (void)setScaleMode:(unsigned int)arg1;
+- (void)setScaleMode:(unsigned int)arg1 duration:(double)arg2;
 - (id)videoView;
 
 @end

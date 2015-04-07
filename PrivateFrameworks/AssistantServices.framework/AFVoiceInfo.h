@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AFVoiceInfo : NSObject <NSSecureCoding, NSCopying> {
+@interface AFVoiceInfo : NSObject <NSCopying, NSSecureCoding> {
     int _gender;
     BOOL _isCustom;
     NSString *_languageCode;

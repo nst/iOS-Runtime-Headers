@@ -5,10 +5,10 @@
 @class NSMutableArray, NSString, SKUIVerticalLockupView;
 
 @interface SKUIEditorialCardCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIPerspectiveView, SKUIViewElementView> {
+    NSMutableArray *_allLockupViews;
     struct CGSize { 
         float width; 
         float height; 
-    NSMutableArray *_allLockupViews;
     } _primaryLockupSize;
     SKUIVerticalLockupView *_primaryLockupView;
 }

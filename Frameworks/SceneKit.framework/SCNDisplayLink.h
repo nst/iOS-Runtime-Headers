@@ -10,7 +10,11 @@
 
 @interface SCNDisplayLink : NSObject {
     BOOL _asynchronous;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
     CADisplayLink *_caDisplayLink;
     int _frameInterval;
     BOOL _invalidated;
@@ -39,8 +43,8 @@
 - (BOOL)isPaused;
 - (int)queuedFrameCount;
 - (void)setFrameInterval:(int)arg1;
-- (void)setPaused:(BOOL)arg1 nextFrameTimeHint:(double)arg2;
 - (void)setPaused:(BOOL)arg1;
+- (void)setPaused:(BOOL)arg1 nextFrameTimeHint:(double)arg2;
 - (void)willDie;
 
 @end

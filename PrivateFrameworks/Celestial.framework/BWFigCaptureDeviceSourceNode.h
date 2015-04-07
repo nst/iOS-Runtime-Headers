@@ -9,24 +9,6 @@
 @class BWFigVideoCaptureDevice, BWNodeOutput, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface BWFigCaptureDeviceSourceNode : BWSourceNode <BWFigCameraSourceNode> {
-    struct { 
-        int width; 
-        int height; 
-    struct { 
-        int width; 
-        int height; 
-    struct { 
-        int width; 
-        int height; 
-    struct { 
-        int width; 
-        int height; 
-    struct { 
-        int width; 
-        int height; 
-    struct { 
-        int width; 
-        int height; 
     float _aeMaxGain;
     BOOL _automaticallyEnablesLowLightBoostWhenAvailable;
     BWFigVideoCaptureDevice *_captureDevice;
@@ -37,31 +19,57 @@
     float _maxFrameRate;
     int _maxIntegrationTimeOverride;
     float _minFrameRate;
+    struct { 
+        int width; 
+        int height; 
     } _minOutputDimensions;
     int _minOutputDimensionsSensorFormatIndex;
     int _motionAttachmentsSource;
     int _offlineConfigurationSeed;
+    struct { 
+        int width; 
+        int height; 
     } _outputDimensions;
     BOOL _requiresOverscan;
     int _resolvedOfflineConfigurationSeed;
     int _resolvedSensorFormatIndex;
+    struct { 
+        int width; 
+        int height; 
     } _sensorDimensions;
     int _sensorFormatIndex;
+    struct { 
+        int width; 
+        int height; 
     } _sensorOverscanDimensions;
     unsigned long _sensorPixelFormat;
     BWNodeOutput *_stillImageOutput;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _stillImageSBufHandler;
+
     NSObject<OS_dispatch_queue> *_streamEventDispatchQueue;
     NSObject<OS_dispatch_group> *_streamEventNotificationGroup;
     BOOL _streamFormatChangeInFlight;
+    struct { 
+        int width; 
+        int height; 
     } _streamOutputDimensions;
+    struct { 
+        int width; 
+        int height; 
     } _streamOutputDimensionsAfterFormatChange;
     int _streamSensorFormatIndex;
     unsigned long _streamSensorPixelFormat;
     unsigned long _streamSensorPixelFormatAfterFormatChange;
     BOOL _temporalNoiseReductionEnabled;
     BWNodeOutput *_videoCaptureOutput;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _videoSBufHandler;
+
 }
 
 @property(readonly) BWFigVideoCaptureDevice * captureDevice;

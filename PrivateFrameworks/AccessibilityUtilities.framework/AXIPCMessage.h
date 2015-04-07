@@ -28,9 +28,9 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKey:(int)arg1 payload:(id)arg2 keyDebugInfo:(id)arg3;
-- (id)initWithKey:(int)arg1 payload:(id)arg2;
 - (id)initWithKey:(int)arg1;
+- (id)initWithKey:(int)arg1 payload:(id)arg2;
+- (id)initWithKey:(int)arg1 payload:(id)arg2 keyDebugInfo:(id)arg3;
 - (int)key;
 - (id)payload;
 - (id)senderBundleId;

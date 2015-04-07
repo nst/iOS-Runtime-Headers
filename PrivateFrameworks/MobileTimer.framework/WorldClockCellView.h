@@ -42,8 +42,8 @@
 - (int)runMode;
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setStyle:(int)arg1;
+- (void)setStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setTimeZone:(id)arg1;
 - (void)significantTimeChange:(id)arg1;
 - (void)start;

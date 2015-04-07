@@ -9,7 +9,11 @@
 @class MCPeerID, MCResourceDownloader, MCResourceProgressObserver, NSMutableData, NSObject<OS_dispatch_source>, NSProgress, NSString, NSURL;
 
 @interface MCSessionStream : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     int _fd;
     NSMutableData *_incomingBuffer;
     NSString *_name;

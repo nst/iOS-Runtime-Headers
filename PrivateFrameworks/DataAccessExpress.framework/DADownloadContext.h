@@ -11,8 +11,16 @@
 @interface DADownloadContext : NSObject {
     NSString *_accountID;
     NSString *_attachmentUUID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
     NSObject<OS_dispatch_queue> *_queue;
 }
 

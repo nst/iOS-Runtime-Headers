@@ -5,16 +5,12 @@
 @class NSData, NSMutableArray;
 
 @interface GEODirectionsResponse : PBCodable <NSCopying> {
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
+    NSData *_directionsResponseID;
     struct { 
         unsigned int instructionSignFillColor : 1; 
         unsigned int localDistanceUnits : 1; 
         unsigned int isNavigable : 1; 
         unsigned int routeDeviatesFromOriginal : 1; 
-    NSData *_directionsResponseID;
     } _has;
     NSMutableArray *_incidentsOffRoutes;
     NSMutableArray *_incidentsOnRoutes;
@@ -28,6 +24,10 @@
     BOOL _routeDeviatesFromOriginal;
     NSMutableArray *_routes;
     int _status;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _supportedTransportTypes;
 }
 

@@ -10,8 +10,8 @@
 + (id)hiTimingFunction;
 + (id)sharedBubblePathAnimator;
 
-- (void)animateTransition:(id)arg1 completionHandler:(id)arg2;
 - (void)animateTransition:(id)arg1;
+- (void)animateTransition:(id)arg1 completionHandler:(id)arg2;
 - (int)animatorType;
 - (BOOL)bubblesOnscreenAtBeginning;
 - (BOOL)bubblesOnscreenAtEnd;

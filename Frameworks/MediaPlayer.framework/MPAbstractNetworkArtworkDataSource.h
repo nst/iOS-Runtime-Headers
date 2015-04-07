@@ -4,7 +4,7 @@
 
 @class NSCache, NSMapTable, NSObject<OS_dispatch_queue>, NSString, NSURLSession, NSURLSessionConfiguration;
 
-@interface MPAbstractNetworkArtworkDataSource : NSObject <NSURLSessionDataDelegate, MPArtworkDataSource> {
+@interface MPAbstractNetworkArtworkDataSource : NSObject <MPArtworkDataSource, NSURLSessionDataDelegate> {
     NSURLSession *_URLSession;
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSCache *_artworkRepresentationCache;

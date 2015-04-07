@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray, NSString;
 
-@interface KNChartMultiDataBuild : KNAnimationEffect <KNChunkableBuildAnimator, KNAnimationPluginMagicChart> {
+@interface KNChartMultiDataBuild : KNAnimationEffect <KNAnimationPluginMagicChart, KNChunkableBuildAnimator> {
     NSArray *mChartAnimatedLayers;
     NSMutableArray *mLayersToRestore;
 }

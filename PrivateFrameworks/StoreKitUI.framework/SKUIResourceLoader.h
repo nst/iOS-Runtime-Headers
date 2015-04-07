@@ -28,8 +28,8 @@
 - (id)clientContext;
 - (id)delegate;
 - (id)init;
-- (id)initWithOperationQueue:(id)arg1 clientContext:(id)arg2;
 - (id)initWithOperationQueue:(id)arg1;
+- (id)initWithOperationQueue:(id)arg1 clientContext:(id)arg2;
 - (BOOL)isIdle;
 - (BOOL)loadResourceWithRequest:(id)arg1 reason:(int)arg2;
 - (id)operationQueue;

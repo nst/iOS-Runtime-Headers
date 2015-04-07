@@ -8,26 +8,7 @@
 
 @class <PKPassGroupStackViewDatasource>, <PKPassGroupStackViewDelegate><UIScrollViewDelegate>, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSTimer, PKGroup, PKPass, PKPassGroupView, PKPassPaymentFooterView, PKPaymentService, PKReusablePassViewQueue;
 
-@interface PKPassGroupStackView : UIScrollView <PKPassDeleteDelegate, PKPaymentServiceDelegate, PKPassGroupViewDelegate, PKPassDeleteHandler> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        unsigned int isShowingHeader : 1; 
-        unsigned int isDeleting : 1; 
-        unsigned int isSettingContentOffset : 1; 
-        unsigned int isContinuingModalPresentation : 1; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        unsigned int isReordering : 1; 
-        unsigned int isReorderPeekCompensated : 1; 
-        unsigned int hasScrolledUp : 1; 
-        unsigned int hasScrolledDown : 1; 
+@interface PKPassGroupStackView : UIScrollView <PKPassDeleteDelegate, PKPassDeleteHandler, PKPassGroupViewDelegate, PKPaymentServiceDelegate> {
     NSMutableDictionary *_animatorsByGroupID;
     NSTimer *_autoscrollTimer;
     int _currentTestReps;
@@ -37,12 +18,23 @@
     BOOL _hasSuspendedTransition;
     float _headerHeight;
     BOOL _inPassthroughHitTest;
+    struct { 
+        unsigned int isShowingHeader : 1; 
+        unsigned int isDeleting : 1; 
+        unsigned int isSettingContentOffset : 1; 
+        unsigned int isContinuingModalPresentation : 1; 
     } _layoutFlags;
     unsigned int _modalGroupIndex;
     PKGroup *_modallyPresentedGroup;
     PKPassGroupView *_modallyPresentedGroupView;
     int _nextState;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _originalContentOffset;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _panningVelocity;
     NSMutableArray *_passPileViews;
     NSArray *_passthroughViews;
@@ -52,7 +44,15 @@
     unsigned int _previousIndexOfReorderedGroup;
     int _priorState;
     PKPassGroupView *_reorderedGroupView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _reorderedGroupViewPositionInFrame;
+    struct { 
+        unsigned int isReordering : 1; 
+        unsigned int isReorderPeekCompensated : 1; 
+        unsigned int hasScrolledUp : 1; 
+        unsigned int hasScrolledDown : 1; 
     } _reorderingFlags;
     PKReusablePassViewQueue *_reusableCardViewQueue;
     int _scrollingTestState;
@@ -61,7 +61,11 @@
     BOOL _showingFooter;
     int _suspendedNextState;
     NSMutableArray *_suspendedTransitionCompletionHandlers;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _transitionCanceller;
+
     NSMutableArray *_transitionCompletionHandlers;
     unsigned int _userInteractionCounter;
 }
@@ -125,8 +129,8 @@
 - (id)_groupViewAtIndexWhileEnsuringVisible:(unsigned int)arg1 withContentMode:(int)arg2;
 - (id)_groupViewWithGroup:(id)arg1;
 - (void)_handleModalGroupGesture:(id)arg1;
-- (unsigned int)_indexForNativePositionInTable:(struct CGPoint { float x1; float x2; })arg1 roundToClosestIndex:(BOOL)arg2;
 - (unsigned int)_indexForNativePositionInTable:(struct CGPoint { float x1; float x2; })arg1;
+- (unsigned int)_indexForNativePositionInTable:(struct CGPoint { float x1; float x2; })arg1 roundToClosestIndex:(BOOL)arg2;
 - (unsigned int)_indexOfGroupView:(id)arg1;
 - (unsigned int)_indexOfReorderedGroupView;
 - (BOOL)_isGroupAtIndexInModalPile:(unsigned int)arg1;
@@ -185,12 +189,12 @@
 - (void)_updateContentInset;
 - (void)_updateGroupStateForGroupViewInModalPresentation:(id)arg1 animated:(BOOL)arg2;
 - (void)_updateGroupStateForGroupViewInStackPresentation:(id)arg1 animated:(BOOL)arg2;
-- (void)_updateGroupView:(id)arg1 toPresentationState:(int)arg2 withSpringFactory:(id)arg3 atIndex:(unsigned int)arg4;
 - (void)_updateGroupView:(id)arg1 toPresentationState:(int)arg2 withSpringFactory:(id)arg3;
+- (void)_updateGroupView:(id)arg1 toPresentationState:(int)arg2 withSpringFactory:(id)arg3 atIndex:(unsigned int)arg4;
 - (void)_updatePaymentFooterViewAnimated:(BOOL)arg1;
 - (void)_updatePaymentFooterViewIfNecessaryAnimated:(BOOL)arg1 withBecomeVisibleDelay:(double)arg2;
-- (void)_updatePositionForGroupView:(id)arg1 toPresentationState:(int)arg2 withSpringFactory:(id)arg3 atIndex:(unsigned int)arg4;
 - (void)_updatePositionForGroupView:(id)arg1 toPresentationState:(int)arg2 withSpringFactory:(id)arg3;
+- (void)_updatePositionForGroupView:(id)arg1 toPresentationState:(int)arg2 withSpringFactory:(id)arg3 atIndex:(unsigned int)arg4;
 - (void)_updateTransformForGroupView:(id)arg1 toPresentationState:(int)arg2 withSpringFactory:(id)arg3;
 - (float)_xPositionForGroupView:(id)arg1 forState:(int)arg2;
 - (float)_yForGroupInModalPileAtIndex:(unsigned int)arg1;
@@ -260,9 +264,9 @@
 - (void)setHeaderHeight:(float)arg1;
 - (void)setModalGroupIndex:(unsigned int)arg1;
 - (void)setPassthroughViews:(id)arg1;
-- (void)setPresentationState:(int)arg1 animated:(BOOL)arg2 withCompletionHandler:(id)arg3;
-- (void)setPresentationState:(int)arg1 animated:(BOOL)arg2;
 - (void)setPresentationState:(int)arg1;
+- (void)setPresentationState:(int)arg1 animated:(BOOL)arg2;
+- (void)setPresentationState:(int)arg1 animated:(BOOL)arg2 withCompletionHandler:(id)arg3;
 - (void)stageGroupInPresentationState:(int)arg1 atIndex:(unsigned int)arg2;
 - (void)testFlipToBack;
 - (void)testFlipToFront;

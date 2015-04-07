@@ -14,6 +14,12 @@
             float width; 
             float height; 
         } size; 
+    } _endRect;
+    BOOL _isEditable;
+    BOOL _isNone;
+    BOOL _isRange;
+    unsigned int _selectedTextLength;
+    NSArray *_selectionRects;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,12 +29,6 @@
             float width; 
             float height; 
         } size; 
-    } _endRect;
-    BOOL _isEditable;
-    BOOL _isNone;
-    BOOL _isRange;
-    unsigned int _selectedTextLength;
-    NSArray *_selectionRects;
     } _startRect;
 }
 

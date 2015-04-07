@@ -4,10 +4,7 @@
 
 @class NSArray, NSMapTable, NSMutableSet, NSString, PUAdjustmentsMode, PUAdjustmentsModeBar, PUAdjustmentsToolControllerSpec, PUSnappingController, UIScrollView;
 
-@interface PUAdjustmentsToolController : PUPhotoEditToolController <UIScrollViewDelegate, UIGestureRecognizerDelegate, PUAdjustmentsModeBarDataSource, PUAdjustmentsModeBarDelegate, PUPhotoEditVisualLevelSliderDataSource> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface PUAdjustmentsToolController : PUPhotoEditToolController <PUAdjustmentsModeBarDataSource, PUAdjustmentsModeBarDelegate, PUPhotoEditVisualLevelSliderDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     NSArray *__allAvailableModes;
     PUSnappingController *__snappingController;
     UIScrollView *_adjustmentScrollView;
@@ -16,6 +13,9 @@
     NSArray *_adjustmentsModeBarConstraints;
     NSMutableSet *_cleanSliderThumbnailsModes;
     float _currentModeLevelSliderOffset;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _interactionInitialScrollOffset;
     int _interactionMode;
     float _interactiveModeTransitionStartOffset;
@@ -81,8 +81,8 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (id)selectedToolbarIcon;
-- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (void)setLayoutOrientation:(int)arg1;
+- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (id)toolbarIcon;
 - (void)updateViewConstraints;
 - (void)viewDidDisappear:(BOOL)arg1;

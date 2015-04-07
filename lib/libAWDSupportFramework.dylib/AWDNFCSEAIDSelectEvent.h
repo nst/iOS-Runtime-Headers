@@ -5,10 +5,10 @@
 @class NSData;
 
 @interface AWDNFCSEAIDSelectEvent : PBCodable <NSCopying> {
+    NSData *_aid;
     struct { 
         unsigned int timeDeltaFromReference : 1; 
         unsigned int timestamp : 1; 
-    NSData *_aid;
     } _has;
     unsigned long long _timeDeltaFromReference;
     unsigned long long _timestamp;

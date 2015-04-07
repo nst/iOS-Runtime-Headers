@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface MKBlockBasedSnapshotRequester : NSObject <MKMapSnapshotCreatorRequester> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id handler;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

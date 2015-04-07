@@ -5,14 +5,14 @@
 @class NSArray, NSString, UIColor, UIFont;
 
 @interface UITableViewIndex : UIControl {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     float _bottomPadding;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _cachedSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _cachedSizeToFit;
     NSArray *_entries;
     UIFont *_font;

@@ -4,7 +4,7 @@
 
 @class ADBannerView, ADInterstitialAd, NSString, NSURL, UIViewController;
 
-@interface _ADUIViewControllerAdController : NSObject <_UIViewControllerContentViewEmbedding, ADBannerViewDelegate, ADInterstitialAdDelegate> {
+@interface _ADUIViewControllerAdController : NSObject <ADBannerViewDelegate, ADInterstitialAdDelegate, _UIViewControllerContentViewEmbedding> {
     NSString *_bannerAdSection;
     NSString *_bannerAuthUserName;
     NSURL *_bannerServerURL;
@@ -50,8 +50,8 @@
 - (id)bannerAdSection;
 - (id)bannerAuthUserName;
 - (id)bannerServerURL;
-- (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (id)bannerView;
+- (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)bannerViewActionDidFinish:(id)arg1;
 - (BOOL)bannerViewActionShouldBegin:(id)arg1 willLeaveApplication:(BOOL)arg2;
 - (void)bannerViewDidLoadAd:(id)arg1;
@@ -60,8 +60,8 @@
 - (id)contentViewController;
 - (void)dealloc;
 - (id)initWithContentViewController:(id)arg1;
-- (void)interstitialAd:(id)arg1 didFailWithError:(id)arg2;
 - (id)interstitialAd;
+- (void)interstitialAd:(id)arg1 didFailWithError:(id)arg2;
 - (void)interstitialAdActionDidFinish:(id)arg1;
 - (void)interstitialAdDidUnload:(id)arg1;
 - (id)interstitialAdSection;

@@ -7,15 +7,15 @@
         unsigned long long *list; 
         unsigned int count; 
         unsigned int size; 
+    } _attributeValues;
+    struct { 
+        unsigned int styleReference : 1; 
+    } _has;
+    unsigned int _key;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        unsigned int styleReference : 1; 
-    } _attributeValues;
-    } _has;
-    unsigned int _key;
     } _nodeIndices;
     unsigned int _score;
     unsigned int _styleReference;

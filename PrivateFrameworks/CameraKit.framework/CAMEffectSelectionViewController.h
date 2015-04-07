@@ -4,19 +4,19 @@
 
 @class <CAMEffectSelectionViewControllerDelegate>, CIFilter, NSArray, NSIndexPath, NSString, UICollectionView, UICollectionViewFlowLayout;
 
-@interface CAMEffectSelectionViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface CAMEffectSelectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     NSIndexPath *__selectedIndexPath;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _cellSize;
     UICollectionView *_collectionView;
     <CAMEffectSelectionViewControllerDelegate> *_delegate;
     NSArray *_effects;
     UICollectionViewFlowLayout *_layout;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _thumbnailSize;
 }
 

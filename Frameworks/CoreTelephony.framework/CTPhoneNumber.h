@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CTPhoneNumber : NSObject <NSCopying, CTMessageAddress> {
+@interface CTPhoneNumber : NSObject <CTMessageAddress, NSCopying> {
     NSString *_countryCode;
     NSString *_digits;
     BOOL _isShortCode;

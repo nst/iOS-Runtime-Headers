@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface GEOClientCapabilities : PBCodable <NSCopying> {
-    struct { 
-        unsigned int maxManeuverTypeSupported : 1; 
-        unsigned int internalInstall : 1; 
     NSString *_appMajorVersion;
     NSString *_appMinorVersion;
     NSString *_hardwareModel;
+    struct { 
+        unsigned int maxManeuverTypeSupported : 1; 
+        unsigned int internalInstall : 1; 
     } _has;
     BOOL _internalInstall;
     int _maxManeuverTypeSupported;

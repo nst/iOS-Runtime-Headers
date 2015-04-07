@@ -13,7 +13,11 @@
     NSInputStream *_inputStreamForSocket;
     BOOL _isDefaultPairedDevice;
     NSString *_nsuuid;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _openSocketCompletionHandler;
+
     NSString *_openSocketCompletionHandlerID;
     NSObject<OS_dispatch_queue> *_openSocketCompletionHandlerQueue;
     NSOutputStream *_outputStreamForSocket;

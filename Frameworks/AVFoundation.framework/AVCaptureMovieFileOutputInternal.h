@@ -5,12 +5,12 @@
 @class AVWeakReference, NSArray, NSMutableArray;
 
 @interface AVCaptureMovieFileOutputInternal : NSObject {
+    NSArray *metadata;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    NSArray *metadata;
     } movieFragmentInterval;
     BOOL paused;
     BOOL recording;

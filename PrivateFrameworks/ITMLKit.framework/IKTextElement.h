@@ -28,8 +28,8 @@
 - (unsigned int)_styleForTagName:(id)arg1;
 - (id)accessibilityText;
 - (unsigned int)alignment;
-- (id)attributedStringWithFont:(id)arg1 foregroundColor:(id)arg2 textAlignment:(int)arg3;
 - (id)attributedStringWithFont:(id)arg1;
+- (id)attributedStringWithFont:(id)arg1 foregroundColor:(id)arg2 textAlignment:(int)arg3;
 - (id)badges;
 - (id)color;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

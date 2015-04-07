@@ -17,7 +17,6 @@
 @property(retain) TSWPStorage * containedStorage;
 @property(retain) NSString * customMarkString;
 
-- (const struct TextualAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; int x4; int x5; unsigned int x6[1]; }*)textualAttachmentArchiveFromUnarchiver:(id)arg1;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (void)applyMark;
 - (void)checkDebug;
@@ -28,8 +27,8 @@
 - (int)elementKind;
 - (unsigned int)findCharIndex;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 wpStorage:(id)arg2;
 - (id)initWithContext:(id)arg1;
+- (id)initWithContext:(id)arg1 wpStorage:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSearchable;
 - (void)saveToArchiver:(id)arg1;
@@ -39,6 +38,7 @@
 - (void)setParentStorage:(id)arg1;
 - (BOOL)shouldArchiveStringEquivalent;
 - (id)stringEquivalent;
+- (const struct TextualAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; int x4; int x5; unsigned int x6[1]; }*)textualAttachmentArchiveFromUnarchiver:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;

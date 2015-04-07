@@ -5,15 +5,15 @@
 @class <MTLCommandQueue>, <MTLDevice>, MTLRenderPassDescriptor, NSString, _MTLCommandBuffer<MTLCommandBuffer>;
 
 @interface _MTLParallelRenderCommandEncoder : NSObject <MTLParallelRenderCommandEncoder> {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     _MTLCommandBuffer<MTLCommandBuffer> *_commandBuffer;
     id *_commandBuffers;
     unsigned long _commandBuffersCount;
     unsigned long _commandBuffersSize;
     <MTLDevice> *_device;
     NSString *_label;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _lock;
     <MTLCommandQueue> *_queue;
     MTLRenderPassDescriptor *_renderPassDescriptor;

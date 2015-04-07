@@ -5,22 +5,10 @@
 @class CADisplayLink, NSArray;
 
 @interface CKTranscriptCollectionViewLayout : UICollectionViewLayout {
-    struct CGPoint { 
-        float x; 
-        float y; 
+    float _anchorYPosition;
     struct CGSize { 
         float width; 
         float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    float _anchorYPosition;
     } _contentSize;
     CADisplayLink *_displayLink;
     BOOL _easingUp;
@@ -30,8 +18,20 @@
     NSArray *_layoutAttributes;
     double _prevTimestamp;
     BOOL _shouldDisplayLinkInvalidateLayout;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _targetContentOffset;
     BOOL _useInitialLayoutAttributesForRotation;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _visibleBounds;
 }
 

@@ -19,8 +19,8 @@
 + (void)initializeFileGroupPrefixAndExtensions;
 
 - (unsigned int)_calculateBaseDirectoryValue;
-- (BOOL)_canAddItemWithPrefix:(id)arg1 minimumFileGroupNumber:(int)arg2;
 - (BOOL)_canAddItemWithPrefix:(id)arg1;
+- (BOOL)_canAddItemWithPrefix:(id)arg1 minimumFileGroupNumber:(int)arg2;
 - (id)_lastUsedFileGroupUserInfoKey;
 - (id)_nextAvailableFileGroupWithPrefix:(id)arg1 extension:(id)arg2;
 - (BOOL)canAddFileGroupWithGroupNumber:(int)arg1;

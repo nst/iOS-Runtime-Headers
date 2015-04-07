@@ -4,7 +4,7 @@
 
 @class <BBDataProviderStoreDelegate>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
 
-@interface BBRemoteDataProviderConnectionResolver : NSObject <BBDataProviderConnectionCheckinServer, BBRemoteDataProviderStoreDelegate, NSXPCListenerDelegate, BBDataProviderStore> {
+@interface BBRemoteDataProviderConnectionResolver : NSObject <BBDataProviderConnectionCheckinServer, BBDataProviderStore, BBRemoteDataProviderStoreDelegate, NSXPCListenerDelegate> {
     NSMutableDictionary *_dataProviderConnectionsBySectionID;
     NSMutableDictionary *_dataProviderConnectionsByService;
     NSMutableDictionary *_dataProviderConnectionsByUniversalSectionID;

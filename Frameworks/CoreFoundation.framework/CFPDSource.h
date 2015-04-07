@@ -5,26 +5,26 @@
 @class CFPDDataBuffer, NSObject<OS_dispatch_queue>;
 
 @interface CFPDSource : NSObject {
-    unsigned int _dirty : 1;
-    unsigned int _byHost : 1;
-    unsigned int _managed : 1;
-    unsigned int _neverCache : 1;
-    unsigned int _checkedForNonPrefsPlist : 1;
-    unsigned int _hasDrainedPendingChangesSinceLastReplyToOwner : 1;
-    unsigned int _restrictedReadability : 1;
-    unsigned int _waitingForDeviceUnlock : 1;
     const char *_actualPath;
+    unsigned int _byHost : 1;
+    unsigned int _checkedForNonPrefsPlist : 1;
+    unsigned int _dirty : 1;
     struct __CFString { } *_domain;
     short _generationShmemIndex;
+    unsigned int _hasDrainedPendingChangesSinceLastReplyToOwner : 1;
     unsigned int _lastEgid;
     unsigned int _lastEuid;
+    unsigned int _managed : 1;
+    unsigned int _neverCache : 1;
     int _owner;
     const char *_pathToTemporaryFileToWriteTo;
     struct __CFArray { } *_pendingChangesQueue;
     CFPDDataBuffer *_plist;
     BOOL _plistAccessingCount;
     NSObject<OS_dispatch_queue> *_queue;
+    unsigned int _restrictedReadability : 1;
     struct __CFString { } *_userName;
+    unsigned int _waitingForDeviceUnlock : 1;
 }
 
 + (void)synchronousWithSourceCache:(id)arg1;

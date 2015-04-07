@@ -10,8 +10,8 @@
     BOOL _inverted;
 }
 
-+ (id)predicateWithAssociatedEntityClass:(Class)arg1 associatedPredicate:(id)arg2 inverted:(BOOL)arg3;
 + (id)predicateWithAssociatedEntityClass:(Class)arg1;
++ (id)predicateWithAssociatedEntityClass:(Class)arg1 associatedPredicate:(id)arg2 inverted:(BOOL)arg3;
 
 - (void).cxx_destruct;
 - (id)SQLForEntityClass:(Class)arg1;

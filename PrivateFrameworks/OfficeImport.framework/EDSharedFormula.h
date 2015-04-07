@@ -8,8 +8,8 @@
     unsigned int _baseFormulaIndex;
     EDReference *_baseFormulaRange;
     int _columnBaseOrOffset;
+    bool _forceNonBaseFormula;
     int _rowBaseOrOffset;
-    bool_forceNonBaseFormula;
 }
 
 @property unsigned int baseFormulaIndex;

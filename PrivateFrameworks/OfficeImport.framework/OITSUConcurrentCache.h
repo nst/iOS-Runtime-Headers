@@ -19,8 +19,8 @@
 - (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;
 - (id)readWriteQueue;
 - (void)removeAllObjects;
-- (void)removeObjectForKey:(id)arg1 andWait:(BOOL)arg2;
 - (void)removeObjectForKey:(id)arg1;
+- (void)removeObjectForKey:(id)arg1 andWait:(BOOL)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)unload;
 

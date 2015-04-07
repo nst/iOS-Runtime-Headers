@@ -83,9 +83,9 @@
 - (id)resolverContainerForName:(id)arg1 caseSensitive:(BOOL)arg2;
 - (id)resolverContainerNameForResolver:(id)arg1;
 - (id)resolverContainerNamesMatchingPrefix:(id)arg1;
+- (id)resolverMatchingName:(id)arg1;
 - (id)resolverMatchingName:(id)arg1 contextContainerName:(id)arg2;
 - (id)resolverMatchingName:(id)arg1 contextResolver:(id)arg2;
-- (id)resolverMatchingName:(id)arg1;
 - (id)resolversMatchingPrefix:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (id)selectedQuickCalcFunctions;

@@ -4,7 +4,7 @@
 
 @class KNMotionBlurAnimationPluginWrapper, NSString;
 
-@interface KNBuildPivot : KNAnimationEffect <KNChunkableBuildAnimator, KNAnimationPluginArchiving> {
+@interface KNBuildPivot : KNAnimationEffect <KNAnimationPluginArchiving, KNChunkableBuildAnimator> {
     KNMotionBlurAnimationPluginWrapper *_motionBlurWrapper;
 }
 

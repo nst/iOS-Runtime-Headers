@@ -5,56 +5,56 @@
 @class MPUExtrasGridCellStyle, MPUExtrasGridHeaderStyle, MPUExtrasGridSectionHeaderStyle, NSDictionary, NSString, UIColor;
 
 @interface MPUExtrasGridViewControllerStyle : NSObject {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     BOOL _adjustsContentInsetByBottomNavBar;
     UIColor *_backgroundColor;
     float _cellLineSpacing;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _collectionViewInsets;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _defaultCellSectionInsets;
     MPUExtrasGridCellStyle *_defaultCellStyle;
     float _defaultSpacing;
     NSDictionary *_detailDefaultFontAttributes;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _detailInsets;
     UIColor *_detailTextColor;
     NSString *_detailTextStyle;
     MPUExtrasGridHeaderStyle *_headerStyle;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _imageCellSectionInsets;
     MPUExtrasGridCellStyle *_imageCellStyle;
     float _imageSpacing;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _productCellSectionInsets;
     MPUExtrasGridCellStyle *_productCellStyle;
     float _productSpacing;
     MPUExtrasGridSectionHeaderStyle *_sectionHeaderStyle;
     BOOL _showsScrollFade;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _videoCellSectionInsets;
     MPUExtrasGridCellStyle *_videoCellStyle;
     float _videoSpacing;

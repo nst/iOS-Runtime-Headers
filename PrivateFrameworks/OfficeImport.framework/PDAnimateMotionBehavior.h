@@ -5,9 +5,6 @@
 @class NSString;
 
 @interface PDAnimateMotionBehavior : PDAnimateScaleBehavior {
-    struct CGPoint { 
-        float x; 
-        float y; 
     double mAngle;
     BOOL mHasAngle;
     BOOL mHasOriginType;
@@ -16,6 +13,9 @@
     int mOriginType;
     NSString *mPath;
     int mPointType;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mRotationCenter;
 }
 

@@ -11,7 +11,11 @@
 @interface bundleIDEntry : NSObject {
     NSMutableArray *_netres;
     long long _seq;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id handler;
+
 }
 
 @property(copy) id handler;

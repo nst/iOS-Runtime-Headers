@@ -17,8 +17,8 @@
 
 @property(retain) <AssistantCallbackUIDelegate> * uiDelegate;
 
-+ (void)keychainPasswordForBaseStation:(id)arg1 delegate:(id)arg2;
 + (id)keychainPasswordForBaseStation:(id)arg1;
++ (void)keychainPasswordForBaseStation:(id)arg1 delegate:(id)arg2;
 + (long)removeKeychainPasswordForBaseStation:(id)arg1;
 + (long)updateKeychainBasePassword:(id)arg1 forMACAddress:(id)arg2 withBaseName:(id)arg3;
 + (long)updateKeychainNetworkPassword:(id)arg1 forNetworkNamed:(id)arg2;

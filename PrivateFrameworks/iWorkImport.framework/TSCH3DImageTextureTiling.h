@@ -27,18 +27,18 @@
 @property int xposition;
 @property int yposition;
 
-+ (id)instanceWithArchive:(const struct Chart3DImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DBaseImageTextureTilingArchive {} *x3; int x4; int x5; int x6; int x7; int x8; int x9; int x10; boolx11; int x12; unsigned int x13[1]; }*)arg1 unarchiver:(id)arg2;
++ (id)instanceWithArchive:(const struct Chart3DImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DBaseImageTextureTilingArchive {} *x3; int x4; int x5; int x6; int x7; int x8; int x9; int x10; bool x11; int x12; unsigned int x13[1]; }*)arg1 unarchiver:(id)arg2;
 
 - (void)copyFromBaseImageTextureTiling:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)face;
 - (unsigned int)hash;
-- (id)initWithArchive:(const struct Chart3DImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DBaseImageTextureTilingArchive {} *x3; int x4; int x5; int x6; int x7; int x8; int x9; int x10; boolx11; int x12; unsigned int x13[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct Chart3DImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DBaseImageTextureTilingArchive {} *x3; int x4; int x5; int x6; int x7; int x8; int x9; int x10; bool x11; int x12; unsigned int x13[1]; }*)arg1 unarchiver:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (int)mode;
 - (void)restoreDefault;
 - (BOOL)reveal;
-- (void)saveToArchive:(struct Chart3DImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DBaseImageTextureTilingArchive {} *x3; int x4; int x5; int x6; int x7; int x8; int x9; int x10; boolx11; int x12; unsigned int x13[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct Chart3DImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DBaseImageTextureTilingArchive {} *x3; int x4; int x5; int x6; int x7; int x8; int x9; int x10; bool x11; int x12; unsigned int x13[1]; }*)arg1 archiver:(id)arg2;
 - (int)scontinuity;
 - (void)setFace:(int)arg1;
 - (void)setMode:(int)arg1;

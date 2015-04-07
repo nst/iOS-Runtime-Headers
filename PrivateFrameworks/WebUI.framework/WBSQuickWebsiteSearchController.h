@@ -5,15 +5,15 @@
 @class NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface WBSQuickWebsiteSearchController : NSObject {
-    struct unique_ptr<SafariShared::CoalescedAsynchronousWriter, std::__1::default_delete<SafariShared::CoalescedAsynchronousWriter> > { 
-        struct __compressed_pair<SafariShared::CoalescedAsynchronousWriter *, std::__1::default_delete<SafariShared::CoalescedAsynchronousWriter> > { 
-            struct CoalescedAsynchronousWriter {} *__first_; 
-        } __ptr_; 
     NSMutableDictionary *_hostSetsByOpenSearchDescriptionDocumentURLString;
     NSMutableDictionary *_openSearchDescriptionsByDescriptionDocumentURLString;
     NSMutableDictionary *_quickWebsiteSearchProvidersByHost;
     NSObject<OS_dispatch_queue> *_quickWebsiteSearchProvidersBySourcePageURLStringAccessQueue;
     BOOL _quickWebsiteSearchProvidersLoadedFromDisk;
+    struct unique_ptr<SafariShared::CoalescedAsynchronousWriter, std::__1::default_delete<SafariShared::CoalescedAsynchronousWriter> > { 
+        struct __compressed_pair<SafariShared::CoalescedAsynchronousWriter *, std::__1::default_delete<SafariShared::CoalescedAsynchronousWriter> > { 
+            struct CoalescedAsynchronousWriter {} *__first_; 
+        } __ptr_; 
     } _writer;
 }
 

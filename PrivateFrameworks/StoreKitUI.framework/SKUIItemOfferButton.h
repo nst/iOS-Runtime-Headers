@@ -5,12 +5,6 @@
 @class <SKUIItemOfferButtonDelegate>, NSMutableAttributedString, NSString, SKUICircleProgressIndicator, SKUIFocusedTouchGestureRecognizer, SKUIItemOfferButtonState, UIColor, UIImage, UIImageView, UILabel, UIView;
 
 @interface SKUIItemOfferButton : UIControl <SKUIViewElementOfferButton> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     UIColor *_backgroundColor;
     UIView *_borderView;
     SKUIFocusedTouchGestureRecognizer *_cancelGestureRecognizer;
@@ -18,6 +12,9 @@
     UIColor *_cloudTintColor;
     UIColor *_confirmationColor;
     NSMutableAttributedString *_confirmationTitleAttributedString;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _confirmationTitleFitSize;
     int _confirmationTitleStyle;
     <SKUIItemOfferButtonDelegate> *_delegate;
@@ -29,6 +26,9 @@
     BOOL _showsConfirmationState;
     SKUIItemOfferButtonState *_state;
     NSMutableAttributedString *_titleAttributedString;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _titleFitSize;
     UILabel *_titleLabel;
     int _titleStyle;
@@ -126,14 +126,14 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1;
 - (void)setItemOfferDelegate:(id)arg1;
-- (void)setProgress:(float)arg1 animated:(BOOL)arg2;
 - (void)setProgress:(float)arg1;
-- (void)setProgressType:(int)arg1 animated:(BOOL)arg2;
+- (void)setProgress:(float)arg1 animated:(BOOL)arg2;
 - (void)setProgressType:(int)arg1;
+- (void)setProgressType:(int)arg1 animated:(BOOL)arg2;
 - (void)setShowingConfirmation:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsConfirmationState:(BOOL)arg1;
-- (BOOL)setTitle:(id)arg1 confirmationTitle:(id)arg2 itemState:(id)arg3 clientContext:(id)arg4 animated:(BOOL)arg5;
 - (void)setTitle:(id)arg1;
+- (BOOL)setTitle:(id)arg1 confirmationTitle:(id)arg2 itemState:(id)arg3 clientContext:(id)arg4 animated:(BOOL)arg5;
 - (void)setTitleStyle:(int)arg1;
 - (void)setUniversal:(BOOL)arg1;
 - (BOOL)setValuesUsingItemOffer:(id)arg1 itemState:(id)arg2 clientContext:(id)arg3 animated:(BOOL)arg4;

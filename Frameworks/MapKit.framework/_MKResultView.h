@@ -83,8 +83,8 @@
 - (int)iconFormat;
 - (id)imageView;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 highlightsOnTouch:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 highlightsOnTouch:(BOOL)arg2;
 - (id)initWithMapItem:(id)arg1;
 - (id)initWithMapItems:(id)arg1 primaryLabelText:(id)arg2;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;

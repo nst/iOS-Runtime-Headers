@@ -55,8 +55,8 @@
 - (void)setCustomizableViewControllerIdentifiers:(id)arg1;
 - (void)setDisplayEmptyTabs:(BOOL)arg1;
 - (void)setNavigationControllerDelegate:(id)arg1;
-- (void)setOrderedViewControllerIdentifiers:(id)arg1 animated:(BOOL)arg2;
 - (void)setOrderedViewControllerIdentifiers:(id)arg1;
+- (void)setOrderedViewControllerIdentifiers:(id)arg1 animated:(BOOL)arg2;
 - (void)setSupportsTransiency:(BOOL)arg1;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)supportsTransiency;

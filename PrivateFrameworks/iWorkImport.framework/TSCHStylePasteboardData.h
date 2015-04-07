@@ -30,8 +30,8 @@
 - (void)dealloc;
 - (BOOL)entireChart;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(BOOL)arg4;
 - (id)initWithContext:(id)arg1;
+- (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(BOOL)arg4;
 - (id)interopParagraphStyle;
 - (id)interopShapeStyle;
 - (id)legendStyle;

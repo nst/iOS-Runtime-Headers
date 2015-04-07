@@ -5,6 +5,7 @@
 @class MFPGraphicsState, MFPObjectTable, NSMutableArray, NSMutableDictionary;
 
 @interface MFPGraphics : NSObject {
+    NSMutableDictionary *mAvailableFonts;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    NSMutableDictionary *mAvailableFonts;
     } mCanvas;
     MFPGraphicsState *mCurrentState;
     int mHorzDpi;

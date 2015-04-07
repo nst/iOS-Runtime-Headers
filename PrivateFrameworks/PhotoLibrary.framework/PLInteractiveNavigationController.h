@@ -4,14 +4,7 @@
 
 @class <PLInteractiveNavigationControllerDelegate>, NSMutableArray, NSString, PLExpandableView, PLInteractiveNavigationControllerView, UIView, UIViewController;
 
-@interface PLInteractiveNavigationController : UIViewController <UINavigationBarDelegate, PLExpandableViewDelegate> {
-    struct { 
-        unsigned int operation : 3; 
-        unsigned int visible : 1; 
-        unsigned int programmaticPopInProgress : 1; 
-        unsigned int finishingCurrentOperation : 1; 
-        unsigned int previousControllerWasEditing : 1; 
-        unsigned int propagateEditingMode : 1; 
+@interface PLInteractiveNavigationController : UIViewController <PLExpandableViewDelegate, UINavigationBarDelegate> {
     struct { 
         unsigned int blockAppearanceCallbacks : 1; 
         unsigned int inExplicitAppearanceTransition : 1; 
@@ -26,6 +19,13 @@
     UIView *_overlayView;
     UIViewController *_previousViewController;
     NSMutableArray *_stack;
+    struct { 
+        unsigned int operation : 3; 
+        unsigned int visible : 1; 
+        unsigned int programmaticPopInProgress : 1; 
+        unsigned int finishingCurrentOperation : 1; 
+        unsigned int previousControllerWasEditing : 1; 
+        unsigned int propagateEditingMode : 1; 
     } _stackFlags;
     <PLInteractiveNavigationControllerDelegate> *delegate;
 }
@@ -47,8 +47,8 @@
 - (void)_finishCurrentOperationBeforePushingViewController:(id)arg1;
 - (void)_finishedAnimatingTopAlpha:(id)arg1 finished:(id)arg2 topItem:(id)arg3;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
-- (void)_notifyAction:(SEL)arg1 expandableView:(id)arg2 duration:(double)arg3;
 - (void)_notifyAction:(SEL)arg1 expandableView:(id)arg2;
+- (void)_notifyAction:(SEL)arg1 expandableView:(id)arg2 duration:(double)arg3;
 - (void)_performNavBarPushPop:(int)arg1 transition:(int)arg2;
 - (void)_processNavBarPushPopQueue;
 - (void)_removeTopViewController;
@@ -88,10 +88,10 @@
 - (BOOL)isPoppingViewController;
 - (BOOL)isPushingViewController;
 - (void)loadView;
+- (id)navigationBar;
 - (void)navigationBar:(id)arg1 didPopItem:(id)arg2;
 - (void)navigationBar:(id)arg1 didPushItem:(id)arg2;
 - (BOOL)navigationBar:(id)arg1 shouldPopItem:(id)arg2;
-- (id)navigationBar;
 - (BOOL)pl_behavesLikeNavigationControllerForNotifications;
 - (void)popToRootViewController;
 - (void)popToRootViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
@@ -103,11 +103,11 @@
 - (id)rotatingHeaderView;
 - (void)setDelegate:(id)arg1;
 - (void)setFooterView:(id)arg1;
-- (void)setFooterViewHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFooterViewHidden:(BOOL)arg1;
+- (void)setFooterViewHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHeaderView:(id)arg1;
-- (void)setHeaderViewHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHeaderViewHidden:(BOOL)arg1;
+- (void)setHeaderViewHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShouldPropagateEditingMode:(BOOL)arg1;
 - (void)setTopViewControllerAlpha:(float)arg1;
 - (void)setTransitionProgress:(float)arg1 withDuration:(double)arg2;

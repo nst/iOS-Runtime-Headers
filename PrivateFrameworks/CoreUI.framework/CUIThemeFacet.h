@@ -4,22 +4,22 @@
 
 @class NSString;
 
-@interface CUIThemeFacet : NSObject <CUIThemeImageSource, NSCopying, NSCoding> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface CUIThemeFacet : NSObject <CUIThemeImageSource, NSCoding, NSCopying> {
     struct { 
         unsigned int hasCheckedButtonGlyph : 1; 
         unsigned int isButtonGlyph : 1; 
         unsigned int reserved : 14; 
     } _fFlags;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _hotSpot;
     struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_renditionKeyList;
     int _renditionType;
     unsigned int _themeIndex;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _thumbnailSize;
 }
 
@@ -69,8 +69,8 @@
 - (int)blendMode;
 - (id)blendModeAsCAFilterString;
 - (int)controlSize;
-- (struct CGImage { }*)copyLayerImageContentsAndCenter:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 renditionKey:(id)arg2;
 - (struct CGImage { }*)copyLayerImageContentsAndCenter:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
+- (struct CGImage { }*)copyLayerImageContentsAndCenter:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 renditionKey:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -107,10 +107,10 @@
 - (id)image;
 - (id)imageForSlice:(int)arg1 withKeyAdjustment:(id)arg2;
 - (id)imageForSliceIndex:(int)arg1;
-- (id)imageForState:(int)arg1 value:(int)arg2 size:(unsigned int)arg3;
-- (id)imageForState:(int)arg1 value:(int)arg2;
-- (id)imageForState:(int)arg1 withValue:(int)arg2;
 - (id)imageForState:(int)arg1;
+- (id)imageForState:(int)arg1 value:(int)arg2;
+- (id)imageForState:(int)arg1 value:(int)arg2 size:(unsigned int)arg3;
+- (id)imageForState:(int)arg1 withValue:(int)arg2;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)imageWithKeyAdjustment:(id)arg1;
 - (id)imageWithSize:(struct CGSize { float x1; float x2; })arg1 keyAdjustment:(id)arg2;

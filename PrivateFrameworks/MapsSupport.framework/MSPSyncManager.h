@@ -61,8 +61,8 @@
 - (void)syncStoreDidCompleteFullSync:(id)arg1;
 - (void)syncStoreDidUpdate:(id)arg1;
 - (void)syncStoreEnqueuedAllFullSyncMessages:(id)arg1 context:(id)arg2;
-- (void)syncStoreWillUpdate:(id)arg1 objectCount:(unsigned int)arg2;
 - (void)syncStoreWillUpdate:(id)arg1;
+- (void)syncStoreWillUpdate:(id)arg1 objectCount:(unsigned int)arg2;
 - (void)transaction:(id)arg1;
 - (void)updateBookmark:(id)arg1 transaction:(id)arg2;
 - (void)updateHistoryItem:(id)arg1 transaction:(id)arg2;

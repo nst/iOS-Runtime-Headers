@@ -3,6 +3,14 @@
  */
 
 @interface AWDLBClientConnectionReport : PBCodable <NSCopying> {
+    long long _bytesReceived;
+    long long _bytesSent;
+    long long _connectionDuration;
+    int _connectionJoiningFailure;
+    int _connectionJoiningLbConnectionMigration;
+    int _connectionJoiningLbConnectionState;
+    unsigned long long _connectionServiceId;
+    int _dataPathResult;
     struct { 
         unsigned int bytesReceived : 1; 
         unsigned int bytesSent : 1; 
@@ -15,14 +23,6 @@
         unsigned int connectionJoiningLbConnectionMigration : 1; 
         unsigned int connectionJoiningLbConnectionState : 1; 
         unsigned int dataPathResult : 1; 
-    long long _bytesReceived;
-    long long _bytesSent;
-    long long _connectionDuration;
-    int _connectionJoiningFailure;
-    int _connectionJoiningLbConnectionMigration;
-    int _connectionJoiningLbConnectionState;
-    unsigned long long _connectionServiceId;
-    int _dataPathResult;
     } _has;
     long long _timeToConnectionFailure;
     long long _timeToFirstResponse;

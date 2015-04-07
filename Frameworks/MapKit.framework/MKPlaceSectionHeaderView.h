@@ -48,8 +48,8 @@
 - (void)setSeeMoreButton:(id)arg1;
 - (void)setSeeMoreButtonConstraints:(id)arg1;
 - (void)setShowSeeMoreButton:(BOOL)arg1;
-- (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (void)setTarget:(id)arg1;
+- (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (BOOL)showSeeMoreButton;
 - (id)target;
 - (void)updateConstraints;

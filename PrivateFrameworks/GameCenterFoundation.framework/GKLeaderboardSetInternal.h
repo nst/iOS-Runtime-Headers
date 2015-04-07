@@ -30,8 +30,8 @@
 - (id)leaderboardIdentifiers;
 - (void)setGroupIdentifier:(id)arg1;
 - (void)setIcons:(id)arg1;
-- (void)setIdentifier:(id)arg1;
 - (id)setIdentifier;
+- (void)setIdentifier:(id)arg1;
 - (void)setLeaderboardIdentifiers:(id)arg1;
 - (void)setSetIdentifier:(id)arg1;
 - (void)setTitle:(id)arg1;

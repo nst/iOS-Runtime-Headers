@@ -10,11 +10,11 @@
         float left; 
         float bottom; 
         float right; 
+    } _contentInset;
+    SKUIHeaderViewElement *_header;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentInset;
-    SKUIHeaderViewElement *_header;
     } _lastFitSize;
     NSArray *_lines;
     NSMapTable *_views;

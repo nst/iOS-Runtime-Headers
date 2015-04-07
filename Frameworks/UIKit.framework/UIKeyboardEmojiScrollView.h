@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString, UIKeyboardEmojiCategory, UIKeyboardEmojiInputController, UILabel, UIPageControl, UIScrollView, UIView;
 
-@interface UIKeyboardEmojiScrollView : UIKBKeyView <UIScrollViewDelegate, UIKeyboardEmojiInput, UIKeyboardEmojiPressIndicationDelegate> {
+@interface UIKeyboardEmojiScrollView : UIKBKeyView <UIKeyboardEmojiInput, UIKeyboardEmojiPressIndicationDelegate, UIScrollViewDelegate> {
     UIKeyboardEmojiCategory *_category;
     UILabel *_categoryLabel;
     int _currentPage;

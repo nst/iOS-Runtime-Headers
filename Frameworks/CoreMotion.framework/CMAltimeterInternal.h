@@ -14,12 +14,16 @@
 @class NSOperationQueue;
 
 @interface CMAltimeterInternal : NSObject {
+    float fBarometricBaseAltitude;
     struct Sample { 
         double timestamp; 
         struct { 
             float pressure; 
             float temperature; 
         } pressureData; 
+    } fBaseAltimeterSample;
+    bool fBaselineReceived;
+    struct Dispatcher { int (**x1)(); id x2; } *fFilteredPressureDispatcher;
     struct deque<float, std::__1::allocator<float> > { 
         struct __split_buffer<float *, std::__1::allocator<float *> > { 
             float **__first_; 
@@ -33,12 +37,12 @@
         struct __compressed_pair<unsigned long, std::__1::allocator<float> > { 
             unsigned long __first_; 
         } __size_; 
-    boolfBaselineReceived;
-    float fBarometricBaseAltitude;
-    } fBaseAltimeterSample;
-    struct Dispatcher { int (**x1)(); id x2; } *fFilteredPressureDispatcher;
     } fPressureSamples;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id fRelativeAltimeterHandler;
+
     NSOperationQueue *fRelativeAltimeterQueue;
 }
 

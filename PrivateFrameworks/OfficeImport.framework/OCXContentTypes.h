@@ -15,8 +15,8 @@
 
 - (void)addContentTypeForContentType:(id)arg1 extension:(id)arg2;
 - (id)addContentTypeForKey:(id)arg1 contentType:(id)arg2 path:(id)arg3;
-- (BOOL)containsContentType:(id)arg1 withKey:(id)arg2;
 - (BOOL)containsContentType:(id)arg1;
+- (BOOL)containsContentType:(id)arg1 withKey:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isLastEntryContentType:(id)arg1;

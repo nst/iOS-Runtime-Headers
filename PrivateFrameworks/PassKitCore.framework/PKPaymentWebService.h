@@ -83,8 +83,8 @@
 - (id)backgroundDelegate;
 - (void)backgroundDownloadDevicePassesSinceLastUpdatedTag:(BOOL)arg1;
 - (void)backgroundDownloadPassAtURL:(id)arg1;
-- (void)backgroundDownloadRemotePassAssets:(id)arg1 forSuffixesAndScreenScales:(id)arg2;
 - (void)backgroundDownloadRemotePassAssets:(id)arg1;
+- (void)backgroundDownloadRemotePassAssets:(id)arg1 forSuffixesAndScreenScales:(id)arg2;
 - (void)backgroundDownloadWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2;
 - (id)brokerURL;
 - (void)configurePaymentServiceWithCompletion:(id)arg1;
@@ -96,8 +96,8 @@
 - (void)devicePassesSinceLastUpdatedTag:(BOOL)arg1 withCompletion:(id)arg2;
 - (void)eligibilityForPaymentCredential:(id)arg1 completion:(id)arg2;
 - (void)inAppPaymentNonceForPass:(id)arg1 completion:(id)arg2;
-- (id)initWithContext:(id)arg1 delegate:(id)arg2;
 - (id)initWithContext:(id)arg1;
+- (id)initWithContext:(id)arg1 delegate:(id)arg2;
 - (void)invalidateBackgroundSession;
 - (unsigned int)maxCards;
 - (BOOL)needsConfiguration;

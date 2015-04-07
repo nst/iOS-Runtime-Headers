@@ -9,7 +9,7 @@
 
 @class KNSlideNode, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, TSUPointerKeyDictionary, TSUWeakReference;
 
-@interface KNTheme : TSATheme <TSSPresetSource, TSKTransformableObject, TSKDocumentObject> {
+@interface KNTheme : TSATheme <TSKDocumentObject, TSKTransformableObject, TSSPresetSource> {
     NSMutableArray *mClassicThemeRecords;
     BOOL mDefaultMasterSlideNodeIsOurBestGuess;
     NSObject<OS_dispatch_queue> *mDefaultMasterSlideNodeQueue;
@@ -65,7 +65,7 @@
 - (id)initWithContext:(id)arg1;
 - (void)insertMasterSlideNode:(id)arg1 withThumbnails:(id)arg2 atIndex:(unsigned int)arg3 dolcContext:(id)arg4;
 - (void)invalidateSlideNameCache;
-- (void)loadFromArchive:(const struct ThemeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ThemeArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; struct Reference {} *x8; boolx9; int x10; unsigned int x11[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct ThemeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ThemeArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; struct Reference {} *x8; bool x9; int x10; unsigned int x11[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)mappedMasterForPasteForMaster:(id)arg1;
 - (id)mappedMasterForPasteForSlide:(id)arg1;
 - (id)mappedMasterForThemeChangeForMaster:(id)arg1;
@@ -84,7 +84,7 @@
 - (void)removeAllMasters;
 - (void)removeMasterSlideNode:(id)arg1;
 - (void)resolveDefaultMaster;
-- (void)saveToArchive:(struct ThemeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ThemeArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; struct Reference {} *x8; boolx9; int x10; unsigned int x11[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ThemeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ThemeArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; struct Reference {} *x8; bool x9; int x10; unsigned int x11[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)selectSecondMasterAsDefault;
 - (void)setClassicThemeRecords:(id)arg1;

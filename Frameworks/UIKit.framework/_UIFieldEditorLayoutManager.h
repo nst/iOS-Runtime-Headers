@@ -3,7 +3,7 @@
  */
 
 @interface _UIFieldEditorLayoutManager : NSLayoutManager {
-    bool_needsExtraBulletRendering;
+    bool _needsExtraBulletRendering;
 }
 
 @property bool needsExtraBulletRendering;

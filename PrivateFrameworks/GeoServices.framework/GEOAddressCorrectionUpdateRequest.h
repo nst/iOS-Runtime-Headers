@@ -5,10 +5,10 @@
 @class NSMutableArray, NSString;
 
 @interface GEOAddressCorrectionUpdateRequest : PBRequest <NSCopying> {
-    struct { 
-        unsigned int correctionStatus : 1; 
     NSString *_addressID;
     int _correctionStatus;
+    struct { 
+        unsigned int correctionStatus : 1; 
     } _has;
     NSMutableArray *_significantLocations;
 }

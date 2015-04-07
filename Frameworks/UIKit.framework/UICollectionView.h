@@ -9,33 +9,15 @@
 @class <UICollectionViewDataSource>, <UICollectionViewDelegate>, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UICollectionReusableView, UICollectionViewData, UICollectionViewLayout, UICollectionViewLayoutAttributes, UICollectionViewUpdate, UITouch, UIView, _UIDynamicAnimationGroup;
 
 @interface UICollectionView : UIScrollView {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+    UIView *_backgroundView;
+    NSMutableDictionary *_cellClassDict;
+    NSMutableDictionary *_cellNibDict;
+    NSMutableDictionary *_cellNibExternalObjectsTables;
+    NSMutableDictionary *_cellReuseQueues;
+    NSMutableDictionary *_clonedCellsDict;
+    NSMutableDictionary *_clonedDecorationViewsDict;
+    NSMutableDictionary *_clonedSupplementaryViewsDict;
+    UICollectionViewData *_collectionViewData;
     struct { 
         unsigned int delegateShouldHighlightItemAtIndexPath : 1; 
         unsigned int delegateDidHighlightItemAtIndexPath : 1; 
@@ -70,19 +52,10 @@
         unsigned int updating : 1; 
         unsigned int updatingVisibleCells : 1; 
         unsigned int preRotationBoundsSet : 1; 
+    } _collectionViewFlags;
     struct CGPoint { 
         float x; 
         float y; 
-    UIView *_backgroundView;
-    NSMutableDictionary *_cellClassDict;
-    NSMutableDictionary *_cellNibDict;
-    NSMutableDictionary *_cellNibExternalObjectsTables;
-    NSMutableDictionary *_cellReuseQueues;
-    NSMutableDictionary *_clonedCellsDict;
-    NSMutableDictionary *_clonedDecorationViewsDict;
-    NSMutableDictionary *_clonedSupplementaryViewsDict;
-    UICollectionViewData *_collectionViewData;
-    } _collectionViewFlags;
     } _currentCenterOffset;
     float _currentInteractiveTransitionProgress;
     double _currentInteractiveTransitionTimeStamp;
@@ -98,31 +71,61 @@
     NSMutableSet *_indexPathsForHighlightedItems;
     NSMutableSet *_indexPathsForSelectedItems;
     NSMutableArray *_insertItems;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _interactiveCompletionHandler;
+
     NSMutableDictionary *_interactiveTransitionInfos;
     NSMutableDictionary *_interactiveTransitionValueTrackingDict;
     NSMutableDictionary *_invalidatedDecorationIndexPaths;
     NSMutableSet *_invalidatedItemIndexPaths;
     NSMutableDictionary *_invalidatedSupplementaryIndexPaths;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _invalidationBlock;
+
     BOOL _isInInteractiveTransition;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _lastLayoutOffset;
     UICollectionViewLayout *_layout;
     NSMutableArray *_moveItems;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _navigationCompletion;
+
     UIView *_newContentView;
     UICollectionViewLayout *_nextLayoutForInteractiveTranstion;
     NSArray *_originalDeleteItems;
     NSArray *_originalInsertItems;
     NSMutableSet *_pendingDeselectionIndexPaths;
     NSIndexPath *_pendingSelectionIndexPath;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _preRotationBounds;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _previousCenterOffset;
     float _previousInteractiveTransitionProgress;
     double _previousInteractiveTransitionTimeStamp;
     NSMutableArray *_reloadItems;
     int _reloadingSuspendedCount;
     int _rotationAnimationCount;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _rotationBoundsOffset;
     BOOL _shouldAccumulateTrackedLayoutValues;
     double _startTimeStamp;
@@ -136,6 +139,15 @@
     id _updateCompletionHandler;
     int _updateCount;
     BOOL _usesLegacyExternalInputSupport;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _visibleBounds;
     NSMutableDictionary *_visibleCellsDict;
     NSMutableDictionary *_visibleDecorationViewsDict;
@@ -165,8 +177,8 @@
 - (struct CGPoint { float x1; float x2; })__ck_scrollToBottomContentOffsetHidingIndexPath:(id)arg1;
 - (void)__ck_scrollToTopOfCellAtIndexPath:(id)arg1 hidingCellAtIndexPath:(id)arg2 animated:(BOOL)arg3;
 - (void)_addControlledSubview:(id)arg1 atZIndex:(int)arg2;
-- (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2 andSet:(id)arg3;
 - (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2;
+- (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2 andSet:(id)arg3;
 - (void)_applyLayoutAttributes:(id)arg1 toView:(id)arg2;
 - (id)_arrayForUpdateAction:(int)arg1;
 - (void)_beginUpdates;
@@ -200,13 +212,13 @@
 - (id)_gkReuseIdentifierForClass:(Class)arg1;
 - (id)_gkVisibleCellForIndexPath:(id)arg1;
 - (void)_highlightFirstVisibleItemIfAppropriate;
-- (BOOL)_highlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3 notifyDelegate:(BOOL)arg4;
 - (BOOL)_highlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
+- (BOOL)_highlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3 notifyDelegate:(BOOL)arg4;
 - (id)_indexPathForView:(id)arg1 ofType:(unsigned int)arg2;
 - (BOOL)_indexPathIsValid:(id)arg1;
 - (id)_indexPathsForVisibleDecorationViewsOfKind:(id)arg1;
-- (id)_indexPathsForVisibleSupplementaryViewsOfKind:(id)arg1 isDecorationView:(BOOL)arg2;
 - (id)_indexPathsForVisibleSupplementaryViewsOfKind:(id)arg1;
+- (id)_indexPathsForVisibleSupplementaryViewsOfKind:(id)arg1 isDecorationView:(BOOL)arg2;
 - (void)_invalidateLayoutIfNecessary;
 - (void)_invalidateLayoutWithContext:(id)arg1;
 - (void)_invalidateWithBlock:(id)arg1;
@@ -265,10 +277,10 @@
 - (id)_visibleCellForIndexPath:(id)arg1;
 - (id)_visibleDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)_visibleDecorationViewsOfKind:(id)arg1;
-- (id)_visibleSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2 isDecorationView:(BOOL)arg3;
 - (id)_visibleSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)_visibleSupplementaryViewsOfKind:(id)arg1 isDecorationView:(BOOL)arg2;
+- (id)_visibleSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2 isDecorationView:(BOOL)arg3;
 - (id)_visibleSupplementaryViewsOfKind:(id)arg1;
+- (id)_visibleSupplementaryViewsOfKind:(id)arg1 isDecorationView:(BOOL)arg2;
 - (id)_visibleViewDictForElementCategory:(unsigned int)arg1 elementKind:(id)arg2;
 - (id)_visibleViewForLayoutAttributes:(id)arg1;
 - (id)_visibleViews;
@@ -299,8 +311,8 @@
 - (id)indexPathsForSelectedItems;
 - (id)indexPathsForVisibleItems;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
 - (void)insertItemsAtIndexPaths:(id)arg1;
 - (void)insertSections:(id)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
@@ -328,9 +340,9 @@
 - (void)setAllowsSelection:(BOOL)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (void)setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2;
 - (void)setCollectionViewLayout:(id)arg1;
+- (void)setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2;
+- (void)setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;

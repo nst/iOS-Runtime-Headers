@@ -4,10 +4,7 @@
 
 @class EKReminderDueDateEditItem, EKReminderLocationPickerModel, EKReminderRecurrenceEditItem, EKStructuredLocation, NSDate, NSString, UIAlertView, UIImageView, UILabel, UITableViewCell, UIView;
 
-@interface EKReminderAlertEditItem : EKReminderEditItem <EKReminderLocationPickerModelDelegate, EKReminderLocationPickerDelegate, UIAlertViewDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface EKReminderAlertEditItem : EKReminderEditItem <EKReminderLocationPickerDelegate, EKReminderLocationPickerModelDelegate, UIAlertViewDelegate> {
     int _alarmProximity;
     unsigned int _alertType;
     BOOL _allowsRecurrence;
@@ -23,6 +20,9 @@
     BOOL _ignoreLocationPickerModelSelectionChanges;
     BOOL _isAtALocation;
     BOOL _isOnADay;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _lastSeenFooterSize;
     BOOL _locationAlertsAvailable;
     UITableViewCell *_locationCell;

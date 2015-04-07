@@ -18,7 +18,7 @@
 - (id)player;
 - (unsigned int)scaleMode;
 - (void)setPlayer:(id)arg1;
-- (void)setScaleMode:(unsigned int)arg1 duration:(double)arg2;
 - (void)setScaleMode:(unsigned int)arg1;
+- (void)setScaleMode:(unsigned int)arg1 duration:(double)arg2;
 
 @end

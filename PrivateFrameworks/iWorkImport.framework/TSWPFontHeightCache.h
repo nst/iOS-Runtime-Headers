@@ -3,6 +3,7 @@
  */
 
 @interface TSWPFontHeightCache : NSObject {
+    unsigned int _cacheSize;
     struct list<unsigned long, std::__1::allocator<unsigned long> > { 
         struct __list_node_base<unsigned long, void *> { 
             struct __list_node<unsigned long, void *> {} *__prev_; 
@@ -11,6 +12,7 @@
         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<unsigned long, void *> > > { 
             unsigned long __first_; 
         } __size_alloc_; 
+    } _fontHashList;
     struct map<unsigned long, TSWPFontHeightCacheEntry, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TSWPFontHeightCacheEntry> > > { 
         struct __tree<std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry> > > { 
             struct __tree_node<std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, void *> {} *__begin_node_; 
@@ -23,12 +25,10 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
+    } _fontHashToInfoMap;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    unsigned int _cacheSize;
-    } _fontHashList;
-    } _fontHashToInfoMap;
     } _lock;
     unsigned int _maxCacheSize;
 }

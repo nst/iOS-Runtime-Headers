@@ -5,6 +5,10 @@
 @class NSData, NSString;
 
 @interface _PFExternalReferenceData : NSData {
+    unsigned int _bytesLengthForExternalReference;
+    unsigned int _bytesLengthForStore;
+    void *_bytesPtrForExternalReference;
+    void *_bytesPtrForStore;
     struct __externalDataFlags { 
         unsigned int _isStoredExternally : 1; 
         unsigned int _hasMappedData : 1; 
@@ -13,10 +17,6 @@
         unsigned int _isStoredUbiquitously : 1; 
         unsigned int _createdByUbiquityImport : 1; 
         unsigned int _reserved : 24; 
-    unsigned int _bytesLengthForExternalReference;
-    unsigned int _bytesLengthForStore;
-    void *_bytesPtrForExternalReference;
-    void *_bytesPtrForStore;
     } _externalDataFlags;
     NSString *_externalReferenceLocation;
     NSData *_originalData;
@@ -65,8 +65,8 @@
 - (BOOL)hasExternalReferenceContent;
 - (id)initForExternalLocation:(id)arg1 safeguardLocation:(id)arg2 data:(id)arg3 protectionLevel:(int)arg4;
 - (id)initForUbiquityDictionary:(id)arg1 store:(id)arg2;
-- (id)initWithStoreBytes:(const void*)arg1 length:(unsigned int)arg2 externalLocation:(id)arg3 safeguardLocation:(id)arg4 protectionLevel:(int)arg5 ubiquitousLocation:(id)arg6;
 - (id)initWithStoreBytes:(const void*)arg1 length:(unsigned int)arg2 externalLocation:(id)arg3 safeguardLocation:(id)arg4 protectionLevel:(int)arg5;
+- (id)initWithStoreBytes:(const void*)arg1 length:(unsigned int)arg2 externalLocation:(id)arg3 safeguardLocation:(id)arg4 protectionLevel:(int)arg5 ubiquitousLocation:(id)arg6;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToData:(id)arg1;
 - (unsigned int)length;

@@ -10,8 +10,16 @@
 
 @interface WFPINEntryViewController : UIViewController <WFPINEntryViewControllerProtocol> {
     NSURL *_URL;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _dismissCompletionHandler;
+
     _UIFallbackPresentationViewController *_fallbackPresentationVC;
     NSString *_pageTitle;
     WFRemotePINEntryViewController *_remoteViewController;

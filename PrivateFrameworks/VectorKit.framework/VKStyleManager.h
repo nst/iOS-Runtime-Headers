@@ -5,6 +5,14 @@
 @class NSString, VKGenericShieldDrawStyle, VKPGlobalProperties, VKSharedResources, VKStylesheet;
 
 @interface VKStyleManager : NSObject {
+    float _blendingFactor;
+    BOOL _canSelectIcons;
+    unsigned int _connectedVariant;
+    VKGenericShieldDrawStyle *_defaultGenericShieldStyle;
+    unsigned int _mapDisplayStyle;
+    unsigned int _mapDisplayStyleVariant;
+    int _mapMode;
+    VKSharedResources *_sharedResources;
     struct unordered_map<StyleKey, std::__1::weak_ptr<md::StyleQuery>, std::__1::hash<StyleKey>, std::__1::equal_to<StyleKey>, std::__1::allocator<std::__1::pair<const StyleKey, std::__1::weak_ptr<md::StyleQuery> > > > { 
         struct __hash_table<std::__1::__hash_value_type<StyleKey, std::__1::weak_ptr<md::StyleQuery> >, std::__1::__unordered_map_hasher<StyleKey, std::__1::__hash_value_type<StyleKey, std::__1::weak_ptr<md::StyleQuery> >, std::__1::hash<StyleKey>, true>, std::__1::__unordered_map_equal<StyleKey, std::__1::__hash_value_type<StyleKey, std::__1::weak_ptr<md::StyleQuery> >, std::__1::equal_to<StyleKey>, true>, std::__1::allocator<std::__1::__hash_value_type<StyleKey, std::__1::weak_ptr<md::StyleQuery> > > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<StyleKey, std::__1::weak_ptr<md::StyleQuery> >, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<StyleKey, std::__1::weak_ptr<md::StyleQuery> >, void *> *> > > { 
@@ -29,18 +37,10 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
+    } _styleQueries;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    float _blendingFactor;
-    BOOL _canSelectIcons;
-    unsigned int _connectedVariant;
-    VKGenericShieldDrawStyle *_defaultGenericShieldStyle;
-    unsigned int _mapDisplayStyle;
-    unsigned int _mapDisplayStyleVariant;
-    int _mapMode;
-    VKSharedResources *_sharedResources;
-    } _styleQueries;
     } _styleQueryCreationLock;
     VKStylesheet *_stylesheet;
     int _targetDisplay;
@@ -91,9 +91,9 @@
 - (float)shieldBrightnessForDisplayStyle:(unsigned int)arg1;
 - (float)shieldBrightnessForVectorType:(int)arg1;
 - (id)styleGlobalProperties;
-- (struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })styleQueryForFeatureAttributes:(id)arg1 vectorType:(const int*)arg2 locale:(id)arg3 selectionState:(BOOL)arg4;
-- (struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })styleQueryForFeatureAttributes:(id)arg1 vectorType:(int)arg2;
 - (struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })styleQueryForFeatureAttributes:(id)arg1;
+- (struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })styleQueryForFeatureAttributes:(id)arg1 vectorType:(int)arg2;
+- (struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })styleQueryForFeatureAttributes:(id)arg1 vectorType:(const int*)arg2 locale:(id)arg3 selectionState:(BOOL)arg4;
 - (id)stylesheet;
 - (BOOL)supportsMapDisplayStyle:(unsigned int)arg1;
 - (BOOL)supportsNightMode;

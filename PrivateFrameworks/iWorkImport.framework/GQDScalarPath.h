@@ -3,10 +3,10 @@
  */
 
 @interface GQDScalarPath : GQDPath {
+    double mScalar;
     struct CGSize { 
         float width; 
         float height; 
-    double mScalar;
     } mSize;
     int mType;
 }

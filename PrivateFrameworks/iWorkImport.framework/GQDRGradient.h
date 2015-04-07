@@ -10,15 +10,15 @@
 @class NSString;
 
 @interface GQDRGradient : NSObject <GQDNameMappable> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     float mAngle;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mEnd;
     float mOpacity;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mStart;
     struct __CFArray { } *mStops;
     int mType;

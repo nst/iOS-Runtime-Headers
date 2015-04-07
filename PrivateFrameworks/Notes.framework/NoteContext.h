@@ -53,10 +53,10 @@
 - (id)allNotesWithoutBodiesInCollection:(id)arg1;
 - (id)allStores;
 - (id)allVisibleNotes;
-- (id)allVisibleNotesInCollection:(id)arg1 sorted:(BOOL)arg2;
 - (id)allVisibleNotesInCollection:(id)arg1;
-- (id)allVisibleNotesMatchingPredicate:(id)arg1 sorted:(BOOL)arg2;
+- (id)allVisibleNotesInCollection:(id)arg1 sorted:(BOOL)arg2;
 - (id)allVisibleNotesMatchingPredicate:(id)arg1;
+- (id)allVisibleNotesMatchingPredicate:(id)arg1 sorted:(BOOL)arg2;
 - (void)batchFaultNotes:(id)arg1;
 - (void)cleanUpLocks;
 - (void)clearCaches;
@@ -93,8 +93,8 @@
 - (void)indexNotes:(id)arg1;
 - (id)init;
 - (id)initForMigrator;
-- (id)initWithAccountUtilities:(id)arg1 inMigrator:(BOOL)arg2;
 - (id)initWithAccountUtilities:(id)arg1;
+- (id)initWithAccountUtilities:(id)arg1 inMigrator:(BOOL)arg2;
 - (void)invalidate;
 - (BOOL)isIndexing;
 - (id)liveNotesNeedingBodiesPredicate;

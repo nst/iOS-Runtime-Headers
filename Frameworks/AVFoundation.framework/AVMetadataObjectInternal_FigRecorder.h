@@ -14,20 +14,20 @@
             float width; 
             float height; 
         } size; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     } bounds;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } duration;
     AVCaptureInput_FigRecorder *input;
     AVMetadataObject_FigRecorder *originalMetadataObject;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } time;
     NSString *type;
 }

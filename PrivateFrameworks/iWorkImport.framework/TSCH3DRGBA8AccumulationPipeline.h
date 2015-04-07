@@ -6,9 +6,9 @@
     int mCurrentPass;
 }
 
-- (struct AccumulationData { float x1; float x2; struct RenderState { boolx_3_1_1; int x_3_1_2; boolx_3_1_3; boolx_3_1_4; boolx_3_1_5; boolx_3_1_6; boolx_3_1_7; float x_3_1_8; float x_3_1_9; struct EnableClipDistances { struct array<signed char, 8> { BOOL x_1_3_1[8]; } x_10_2_1; } x_3_1_10; } x3; })mixedAccumulation;
+- (struct AccumulationData { float x1; float x2; struct RenderState { bool x_3_1_1; int x_3_1_2; bool x_3_1_3; bool x_3_1_4; bool x_3_1_5; bool x_3_1_6; bool x_3_1_7; float x_3_1_8; float x_3_1_9; struct EnableClipDistances { struct array<signed char, 8> { BOOL x_1_3_1[8]; } x_10_2_1; } x_3_1_10; } x3; })mixedAccumulation;
 - (BOOL)prepareFramebuffer;
-- (struct AccumulationData { float x1; float x2; struct RenderState { boolx_3_1_1; int x_3_1_2; boolx_3_1_3; boolx_3_1_4; boolx_3_1_5; boolx_3_1_6; boolx_3_1_7; float x_3_1_8; float x_3_1_9; struct EnableClipDistances { struct array<signed char, 8> { BOOL x_1_3_1[8]; } x_10_2_1; } x_3_1_10; } x3; })progressiveAccumulationWithPerentage:(float)arg1;
+- (struct AccumulationData { float x1; float x2; struct RenderState { bool x_3_1_1; int x_3_1_2; bool x_3_1_3; bool x_3_1_4; bool x_3_1_5; bool x_3_1_6; bool x_3_1_7; float x_3_1_8; float x_3_1_9; struct EnableClipDistances { struct array<signed char, 8> { BOOL x_1_3_1[8]; } x_10_2_1; } x_3_1_10; } x3; })progressiveAccumulationWithPerentage:(float)arg1;
 - (void)reset;
 - (void)setupShaderEffects;
 

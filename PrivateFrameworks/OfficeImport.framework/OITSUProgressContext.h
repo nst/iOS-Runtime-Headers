@@ -14,8 +14,8 @@
 - (void)addProgressObserver:(id)arg1 selector:(SEL)arg2;
 - (id)addProgressObserverBlock:(id)arg1;
 - (void)advanceProgress:(double)arg1;
-- (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;
 - (void)createStageWithSteps:(double)arg1;
+- (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;
 - (double)currentPosition;
 - (id)currentStage;
 - (void)dealloc;

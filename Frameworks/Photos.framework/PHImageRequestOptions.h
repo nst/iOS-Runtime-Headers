@@ -7,6 +7,14 @@
  */
 
 @interface PHImageRequestOptions : NSObject <NSCopying> {
+    BOOL _allowPlaceholder;
+    double _aspectRatioHint;
+    BOOL _deliveryFirstResultAsynchronously;
+    int _deliveryMode;
+    double _demoteFactor;
+    double _downloadUpdateInterval;
+    int _loadingMode;
+    BOOL _networkAccessAllowed;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,16 +24,12 @@
             float width; 
             float height; 
         } size; 
-    BOOL _allowPlaceholder;
-    double _aspectRatioHint;
-    BOOL _deliveryFirstResultAsynchronously;
-    int _deliveryMode;
-    double _demoteFactor;
-    double _downloadUpdateInterval;
-    int _loadingMode;
-    BOOL _networkAccessAllowed;
     } _normalizedCropRect;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
     int _rank;
     int _resizeMode;
     BOOL _synchronous;

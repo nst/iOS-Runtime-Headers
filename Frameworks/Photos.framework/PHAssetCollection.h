@@ -40,7 +40,11 @@
     int _plAlbumKind;
     PHQuery *_query;
     BOOL _shouldDeleteWhenEmpty;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sortingComparator;
+
     NSDate *_startDate;
     NSString *_title;
     NSString *_transientIdentifier;
@@ -105,10 +109,10 @@
 + (id)posterImageForAssetCollection:(id)arg1;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 subtype:(int)arg2;
-+ (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2;
-+ (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2 identifier:(id)arg3;
++ (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2;
++ (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 
 - (void).cxx_destruct;
 - (BOOL)_canShowCloudComments;
@@ -137,9 +141,9 @@
 - (id)groupURL;
 - (BOOL)hasUnseenContentBoolValue;
 - (id)importSessionID;
-- (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4 albumKind:(int)arg5 subtype:(int)arg6;
-- (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4 albumKind:(int)arg5;
 - (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4;
+- (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4 albumKind:(int)arg5;
+- (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4 albumKind:(int)arg5 subtype:(int)arg6;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
 - (BOOL)isCameraRoll;
 - (BOOL)isCloudSharedAlbum;

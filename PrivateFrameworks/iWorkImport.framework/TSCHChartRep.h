@@ -9,9 +9,6 @@
 @class CALayer, CAShapeLayer, NSArray, NSString, TSCHChartDrawableInfo, TSCHChartLayout, TSCHMessageView, TSCHRendererLayer, TSCHSearchSelection, TSCHSelectionPath;
 
 @interface TSCHChartRep : TSWPTextHostRep <TSCHChartRepPlatformProtocols, TSCHSupportsRendering> {
-    struct CGPoint { 
-        float x; 
-        float y; 
     TSCHSelectionPath *mActiveTextEditingPath;
     BOOL mAwaitingLegendSubselection;
     BOOL mBuildingChunks;
@@ -24,8 +21,16 @@
     int mChunkPhase;
     BOOL mChunkTexturesValid;
     int mCurrentChunk;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mDrawingOpEndBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mDrawingOpStartBlock;
+
     BOOL mDrawingSearchReference;
     BOOL mEditorIsEditingInfo;
     BOOL mFinishedBecomingSelected;
@@ -36,6 +41,9 @@
     BOOL mInvalidateLegendLayerForLayerBasedRep;
     BOOL mIsKPFExportForMultiData;
     BOOL mIsLayerBasedRep;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mLastSubselectionLayerRelativeReferencePosition;
     CAShapeLayer *mLegendBorderHaloLayer;
     BOOL mLegendBorderHaloLayerPathValid;
@@ -134,8 +142,8 @@
 - (id)geometry;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })geometryFrame;
 - (BOOL)hasSubselection;
-- (id)hitChartElements:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
 - (id)hitChartElements:(struct CGPoint { float x1; float x2; })arg1;
+- (id)hitChartElements:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
 - (id)imageForSearchReference:(id)arg1 forPath:(struct CGPath { }*)arg2 shouldPulsate:(BOOL)arg3;
 - (BOOL)inPrintPreviewMode;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
@@ -195,8 +203,8 @@
 - (void)p_validateLegendSelectionHalo;
 - (void)p_validateMediatorEditingHaloLayer;
 - (BOOL)planeIsVisible:(int)arg1;
-- (int)planeState:(int)arg1 finalElements:(BOOL)arg2 chunkStage:(int)arg3;
 - (int)planeState:(int)arg1 finalElements:(BOOL)arg2;
+- (int)planeState:(int)arg1 finalElements:(BOOL)arg2 chunkStage:(int)arg3;
 - (void)processChanges:(id)arg1;
 - (void)protected_dynamicStyleChangeDidEnd:(id)arg1;
 - (void)protected_dynamicStyleChangeWillBegin:(id)arg1;
@@ -214,12 +222,12 @@
 - (BOOL)renderLabels;
 - (BOOL)renderLegendIntoSeparateLayer;
 - (id)renderSeriesIndexSet;
-- (id)renderSeriesIndexSetForFinalElements:(BOOL)arg1 currentChunk:(int)arg2;
 - (id)renderSeriesIndexSetForFinalElements:(BOOL)arg1;
+- (id)renderSeriesIndexSetForFinalElements:(BOOL)arg1 currentChunk:(int)arg2;
 - (BOOL)renderTrendLinesForSeriesIndex:(unsigned int)arg1;
-- (id)renderValueIndexSetForSeries:(unsigned int)arg1 finalElements:(BOOL)arg2 currentChunk:(int)arg3;
-- (id)renderValueIndexSetForSeries:(unsigned int)arg1 finalElements:(BOOL)arg2;
 - (id)renderValueIndexSetForSeries:(unsigned int)arg1;
+- (id)renderValueIndexSetForSeries:(unsigned int)arg1 finalElements:(BOOL)arg2;
+- (id)renderValueIndexSetForSeries:(unsigned int)arg1 finalElements:(BOOL)arg2 currentChunk:(int)arg3;
 - (id)renderers;
 - (BOOL)requireSeparateLabelLayer;
 - (BOOL)rotationKnobHitByNaturalPoint:(struct CGPoint { float x1; float x2; })arg1;

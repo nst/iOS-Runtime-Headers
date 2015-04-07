@@ -4,7 +4,7 @@
 
 @class ATIDSConnectionInfo, IDSService, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface ATIDSService : ATMessageLinkListener <IDSServiceDelegate, ATSocketDelegate> {
+@interface ATIDSService : ATMessageLinkListener <ATSocketDelegate, IDSServiceDelegate> {
     ATIDSConnectionInfo *_connectionInfo;
     NSMutableArray *_listeners;
     NSObject<OS_dispatch_queue> *_queue;

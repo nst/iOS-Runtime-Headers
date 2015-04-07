@@ -9,13 +9,21 @@
 @class GKLabel, UIImageView;
 
 @interface GKNotificationBannerView : UIView {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     double _duration;
     UIImageView *_imageView;
     GKLabel *_messageLabel;
     float _preferredWidthPad;
     GKLabel *_titleLabel;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _touchHandler;
+
 }
 
 @property(copy) id completionHandler;

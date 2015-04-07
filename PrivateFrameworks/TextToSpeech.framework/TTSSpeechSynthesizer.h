@@ -5,14 +5,6 @@
 @class <TTSSpeechSynthesizerDelegate>, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface TTSSpeechSynthesizer : NSObject <TTSSpeechConnectionDelegate> {
-    struct { 
-        unsigned int delegateStartWithRequest : 1; 
-        unsigned int delegateFinishWithRequest : 1; 
-        unsigned int delegateFinishWithPhonemesSpokenWithRequest : 1; 
-        unsigned int delegatePauseWithRequest : 1; 
-        unsigned int delegateContinueWithRequest : 1; 
-        unsigned int delegateWillSpeakWithRequest : 1; 
-        unsigned int willUseInput : 1; 
     unsigned int _audioQueueFlags;
     unsigned int _audioSessionID;
     BOOL _audioSessionIDIsValid;
@@ -24,6 +16,14 @@
     NSObject<OS_dispatch_queue> *_queue;
     float _rate;
     NSMutableArray *_speechRequests;
+    struct { 
+        unsigned int delegateStartWithRequest : 1; 
+        unsigned int delegateFinishWithRequest : 1; 
+        unsigned int delegateFinishWithPhonemesSpokenWithRequest : 1; 
+        unsigned int delegatePauseWithRequest : 1; 
+        unsigned int delegateContinueWithRequest : 1; 
+        unsigned int delegateWillSpeakWithRequest : 1; 
+        unsigned int willUseInput : 1; 
     } _synthesizerFlags;
     BOOL _useSharedSession;
     NSString *_voiceIdentifier;

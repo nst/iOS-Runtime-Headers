@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface NEProxyServer : NSObject <NEConfigurationValidating, NEPrettyDescription, NSSecureCoding, NSCopying> {
+@interface NEProxyServer : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     NSString *_address;
     BOOL _authenticationRequired;
     NSString *_password;

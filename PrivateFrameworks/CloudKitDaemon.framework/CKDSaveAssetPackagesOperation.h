@@ -9,7 +9,11 @@
 @class <CKDCancelling>, NSArray, NSMutableArray, NSOperationQueue;
 
 @interface CKDSaveAssetPackagesOperation : CKDDatabaseOperation {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _assetPackageSavedProgressBlock;
+
     <CKDCancelling> *_cancelToken;
     NSMutableArray *_manifestsToRemove;
     NSOperationQueue *_operationQueue;

@@ -27,8 +27,8 @@
 + (id)bridgedClientInfoHTTPHeader;
 
 - (void).cxx_destruct;
-- (id)_sendProtobuf:(id)arg1 responseExpected:(BOOL)arg2 extraOptions:(id)arg3;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(BOOL)arg2;
+- (id)_sendProtobuf:(id)arg1 responseExpected:(BOOL)arg2 extraOptions:(id)arg3;
 - (void)_setOrResetCleanupTimerForRequest:(id)arg1;
 - (void)configurationDataResponse:(id)arg1;
 - (void)configurationDataWithCompletionHandler:(id)arg1;

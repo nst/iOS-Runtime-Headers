@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSFileSecurity : NSFileSecurity <NSCopying, NSCoding> {
+@interface __NSFileSecurity : NSFileSecurity <NSCoding, NSCopying> {
     struct _filesec { } *_filesec;
 }
 

@@ -4,7 +4,7 @@
 
 @class NSArray, NSURL;
 
-@interface NEOnDemandRule : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
+@interface NEOnDemandRule : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     NSArray *_DNSSearchDomainMatch;
     NSArray *_DNSServerAddressMatch;
     NSArray *_SSIDMatch;

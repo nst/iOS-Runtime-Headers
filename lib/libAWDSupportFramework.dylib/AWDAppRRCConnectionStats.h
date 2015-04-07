@@ -5,6 +5,9 @@
 @class NSString;
 
 @interface AWDAppRRCConnectionStats : PBCodable <NSCopying> {
+    unsigned int _bundleBGDuration;
+    unsigned int _bundleFGDuration;
+    NSString *_bundleName;
     struct { 
         unsigned int bundleBGDuration : 1; 
         unsigned int bundleFGDuration : 1; 
@@ -12,9 +15,6 @@
         unsigned int numMTConnectionTriggered : 1; 
         unsigned int rAT : 1; 
         unsigned int totalBytesTransferred : 1; 
-    unsigned int _bundleBGDuration;
-    unsigned int _bundleFGDuration;
-    NSString *_bundleName;
     } _has;
     unsigned int _numMOConnectionTriggered;
     unsigned int _numMTConnectionTriggered;

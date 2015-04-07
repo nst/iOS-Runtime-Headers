@@ -4,7 +4,7 @@
 
 @class NSNumber, NSString;
 
-@interface SFCompanionService : NSObject <NSSecureCoding, NSCopying> {
+@interface SFCompanionService : NSObject <NSCopying, NSSecureCoding> {
     NSString *_deviceID;
     NSString *_deviceName;
     NSString *_identifier;

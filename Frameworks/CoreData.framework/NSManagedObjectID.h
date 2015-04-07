@@ -18,8 +18,8 @@
 - (id)URIRepresentation;
 - (BOOL)_isDeallocating;
 - (BOOL)_isPersistentStoreAlive;
-- (long long)_referenceData64;
 - (id)_referenceData;
+- (long long)_referenceData64;
 - (id)_retainedURIString;
 - (id)_storeIdentifier;
 - (id)_storeInfo1;

@@ -13,10 +13,18 @@
     MPMediaItem *_firstItem;
     MPNowPlayingObserver *_nowPlayingObserver;
     int _playbackShuffleMode;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _repeatChangeHandler;
+
     MPAVController *_repeatChangeHandlerPlayer;
     int _repeatMode;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shuffleChangeHandler;
+
     MPAVController *_shuffleChangeHandlerPlayer;
     int _shuffleMode;
 }

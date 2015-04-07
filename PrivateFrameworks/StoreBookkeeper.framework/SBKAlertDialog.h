@@ -11,7 +11,11 @@
 @interface SBKAlertDialog : NSObject {
     NSString *_acceptButtonTitle;
     NSString *_cancelButtonTitle;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     NSString *_message;
     NSString *_title;
 }

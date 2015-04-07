@@ -56,15 +56,15 @@
 - (void)setIsPaused:(BOOL)arg1;
 - (void)setOriginalSpeechRateForJobOverride:(id)arg1;
 - (void)setSpeechEnabled:(BOOL)arg1;
-- (void)showControlCenterControls:(BOOL)arg1;
 - (BOOL)showControlCenterControls;
+- (void)showControlCenterControls:(BOOL)arg1;
 - (BOOL)speechEnabled;
 - (void)speechSynthesizer:(id)arg1 didContinueSpeakingRequest:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(BOOL)arg3 withError:(id)arg4;
 - (void)speechSynthesizer:(id)arg1 didPauseSpeakingRequest:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didStartSpeakingRequest:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 forRequest:(id)arg3;
-- (void)stopSpeaking:(int)arg1;
 - (void)stopSpeaking;
+- (void)stopSpeaking:(int)arg1;
 
 @end

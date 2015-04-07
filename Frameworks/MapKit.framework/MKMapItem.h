@@ -178,9 +178,9 @@
 - (id)initWithCLLocation:(id)arg1;
 - (id)initWithContact:(id)arg1;
 - (id)initWithGeoMapItem:(id)arg1 isPlaceHolderPlace:(BOOL)arg2;
+- (id)initWithPlace:(id)arg1;
 - (id)initWithPlace:(id)arg1 isPlaceHolderPlace:(BOOL)arg2;
 - (id)initWithPlace:(id)arg1 sessionGuid:(id)arg2;
-- (id)initWithPlace:(id)arg1;
 - (id)initWithPlacemark:(id)arg1;
 - (id)initWithUrlRepresentation:(id)arg1;
 - (BOOL)isCurrentLocation;

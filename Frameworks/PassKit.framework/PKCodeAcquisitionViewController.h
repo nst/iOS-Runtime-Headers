@@ -4,7 +4,7 @@
 
 @class <PKCodeAcquisitionDelegate>, NSMutableData, NSSet, NSString, NSURLConnection, PKCaptureSession, PKReticleView, UILabel, UINavigationBar, UIProgressView;
 
-@interface PKCodeAcquisitionViewController : UIViewController <PKCaptureDelegate, NSURLConnectionDataDelegate, UIGestureRecognizerDelegate> {
+@interface PKCodeAcquisitionViewController : UIViewController <NSURLConnectionDataDelegate, PKCaptureDelegate, UIGestureRecognizerDelegate> {
     UILabel *_captionLabel;
     PKCaptureSession *_captureSession;
     <PKCodeAcquisitionDelegate> *_delegate;
@@ -26,8 +26,8 @@
 @property(readonly) Class superclass;
 
 - (void)_cleanupDownload;
-- (void)_handleDownloadFailureWithReason:(id)arg1 errorToDisplay:(id)arg2;
 - (void)_handleDownloadFailureWithReason:(id)arg1;
+- (void)_handleDownloadFailureWithReason:(id)arg1 errorToDisplay:(id)arg2;
 - (void)_handleDownloadedPass:(id)arg1;
 - (void)_handleFoundCode:(id)arg1;
 - (void)_handleSingleTap:(id)arg1;

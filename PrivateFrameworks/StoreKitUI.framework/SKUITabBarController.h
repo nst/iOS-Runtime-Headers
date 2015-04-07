@@ -25,8 +25,8 @@
 - (void)cancelTransientViewController:(id)arg1;
 - (id)floatingOverlayViewController;
 - (id)init;
-- (void)moreNavigationController:(id)arg1 didSelectItemAtIndex:(int)arg2;
 - (id)moreNavigationController;
+- (void)moreNavigationController:(id)arg1 didSelectItemAtIndex:(int)arg2;
 - (void)setFloatingOverlayViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setTabBarBackdropStyle:(int)arg1;
 - (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;

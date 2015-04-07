@@ -34,8 +34,8 @@
 - (id)activeUserActivityUUID;
 - (BOOL)activityContinuationIsEnabled;
 - (void)addUserActivity:(id)arg1;
-- (void)askClientUserActivityToSave:(id)arg1 completionHandler:(id)arg2;
 - (void)askClientUserActivityToSave:(id)arg1;
+- (void)askClientUserActivityToSave:(id)arg1 completionHandler:(id)arg2;
 - (id)connection;
 - (id)createByDecodingUserActivity:(id)arg1;
 - (void)dealloc;

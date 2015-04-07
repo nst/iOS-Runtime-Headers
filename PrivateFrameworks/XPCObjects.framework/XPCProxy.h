@@ -10,7 +10,11 @@
 
 @interface XPCProxy : NSObject <NSCopying> {
     NSObject<OS_xpc_object> *_connection;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _errorHandler;
+
     NSObject<OS_dispatch_queue> *_internalQueue;
     BOOL _invalidated;
     NSObject<OS_dispatch_queue> *_queue;

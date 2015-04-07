@@ -5,16 +5,16 @@
 @class NSString, TSCECalculationEngine, TSTExpressionNode, TSTTableInfo;
 
 @interface TSTFormula : NSObject <NSCopying> {
-    struct { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
     TSCECalculationEngine *mCalculationEngine;
     BOOL mEmpty;
     TSTExpressionNode *mExpressionTree;
     BOOL mFixupFormulas;
     BOOL mFormulaFixupsShouldStick;
     BOOL mFormulaWasFixable;
+    struct { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
     } mHostCell;
     TSTTableInfo *mHostInfo;
     NSString *mInitialWhitespace;
@@ -65,8 +65,8 @@
 - (id)nodesToCheckForBareArgumentPlaceholders;
 - (id)p_fixFormula:(id)arg1;
 - (id)p_formulaAsTextReturningTokenValues:(BOOL)arg1;
-- (void)reparseWithStorage:(id)arg1 adjustExpressionTree:(id)arg2;
 - (void)reparseWithStorage:(id)arg1;
+- (void)reparseWithStorage:(id)arg1 adjustExpressionTree:(id)arg2;
 - (BOOL)requireEqualsToken;
 - (void)reset;
 - (void)setCalculationEngine:(id)arg1;

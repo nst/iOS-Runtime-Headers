@@ -5,12 +5,12 @@
 @class CKDClientContext, NSError, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSOperationQueue;
 
 @interface CKDMescalSession : NSObject {
-    struct FairPlayHWInfo_ { 
-        unsigned int IDLength; 
-        unsigned char ID[20]; 
     CKDClientContext *_context;
     BOOL _isSetup;
     NSError *_lastSetupError;
+    struct FairPlayHWInfo_ { 
+        unsigned int IDLength; 
+        unsigned char ID[20]; 
     } _mescalHWInfo;
     struct FPSAPContextOpaque_ { } *_mescalSession;
     NSObject<OS_dispatch_queue> *_opQueue;

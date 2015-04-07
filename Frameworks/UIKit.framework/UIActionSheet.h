@@ -62,8 +62,8 @@
 - (id)_titleLabel;
 - (void)_toggleButtonSelectionAtIndex:(unsigned int)arg1;
 - (int)actionSheetStyle;
-- (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (int)addButtonWithTitle:(id)arg1;
+- (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)addMediaButtonWithTitle:(id)arg1 iconView:(id)arg2 andTableIconView:(id)arg3;
 - (id)bodyText;
 - (id)buttonAtIndex:(int)arg1;

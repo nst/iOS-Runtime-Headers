@@ -5,14 +5,14 @@
 @class NSMutableSet, UIView;
 
 @interface SKUIFocusedTouchGestureRecognizer : UIGestureRecognizer {
+    NSMutableSet *_activeTouches;
+    BOOL _didTouchOutside;
+    UIView *_focusedView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSMutableSet *_activeTouches;
-    BOOL _didTouchOutside;
-    UIView *_focusedView;
     } _touchAllowance;
 }
 

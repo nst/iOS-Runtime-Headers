@@ -33,8 +33,6 @@
 
 + (id)createSyntheticCandidate:(id)arg1 withLexicon:(void*)arg2 language:(int)arg3;
 
-- (struct MecabraCandidateBase { int (**x1)(); int x2; }*)rawCandidate;
-- (struct ConversionCandidate { int (**x1)(); int x2; }*)rawConversionCandidate;
 - (id)analysisString;
 - (id)convertedAnalysisString;
 - (id)convertedAnalysisStringForFirstSyllable;
@@ -63,6 +61,8 @@
 - (unsigned short)matchType;
 - (unsigned short)matchedLengthType;
 - (long)phraseBoundaryAfterWordAtIndex:(long)arg1;
+- (struct MecabraCandidateBase { int (**x1)(); int x2; }*)rawCandidate;
+- (struct ConversionCandidate { int (**x1)(); int x2; }*)rawConversionCandidate;
 - (unsigned short)rcAttrAtIndex:(unsigned int)arg1;
 - (void)setWeight:(unsigned int)arg1;
 - (id)surface;

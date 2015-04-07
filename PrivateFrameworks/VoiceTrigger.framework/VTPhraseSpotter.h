@@ -37,7 +37,11 @@
     int _nonceTriggerNotificationToken;
     BOOL _phraseSpotterEnabled;
     BOOL _pretriggered;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _readyCompletion;
+
     BOOL _registeredForPhraseSpotterNotification;
     NSString *_resourcePath;
     unsigned int _sampleCountAtFirstChance;
@@ -68,8 +72,8 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (id)_analyzeEvents:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; boolx5; }*)arg1 shouldFireNonce:(BOOL)arg2 isTrigger:(BOOL*)arg3;
-- (id)_analyzeMakeResult:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; boolx5; }*)arg1 isNearMiss:(BOOL)arg2 isSecondChance:(BOOL)arg3 effectiveThreshold:(double)arg4 isNonce:(BOOL)arg5;
+- (id)_analyzeEvents:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1 shouldFireNonce:(BOOL)arg2 isTrigger:(BOOL*)arg3;
+- (id)_analyzeMakeResult:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1 isNearMiss:(BOOL)arg2 isSecondChance:(BOOL)arg3 effectiveThreshold:(double)arg4 isNonce:(BOOL)arg5;
 - (void)_analyzeReset;
 - (void)_assetsAvailable:(id)arg1;
 - (id)_capturePath:(BOOL)arg1;
@@ -98,8 +102,8 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithConfig:(id)arg1 resourcePath:(id)arg2 triggerThreshold:(double)arg3;
-- (id)initWithHardwareSampleRate:(double)arg1 readyCompletion:(id)arg2;
 - (id)initWithHardwareSampleRate:(double)arg1;
+- (id)initWithHardwareSampleRate:(double)arg1 readyCompletion:(id)arg2;
 - (double)lastScore;
 - (unsigned long long)sampleCount;
 - (unsigned long long)sampleCountAtEndOfTrigger;

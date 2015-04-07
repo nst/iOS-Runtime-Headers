@@ -10,8 +10,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
-@property(copy) NSString * providerId2;
 @property(copy) NSURL * providerId;
+@property(copy) NSString * providerId2;
 @property(retain) SALocalSearchRating * rating;
 @property(copy) NSArray * selectReviews;
 @property(readonly) Class superclass;
@@ -22,8 +22,8 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (id)providerId2;
 - (id)providerId;
+- (id)providerId2;
 - (id)rating;
 - (id)selectReviews;
 - (void)setProviderId2:(id)arg1;

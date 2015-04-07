@@ -5,12 +5,6 @@
 @class UIColor;
 
 @interface _UIGraphicsLetterpressStyle : NSObject <NSCopying> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     UIColor *bottomGradientColor;
     UIColor *embossHighlightColor;
     UIColor *embossShadowColor;
@@ -19,10 +13,16 @@
     int innerShadowBlendMode;
     float innerShadowBlur;
     UIColor *innerShadowColor;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } innerShadowOffset;
     int outerShadowBlendMode;
     float outerShadowBlur;
     UIColor *outerShadowColor;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } outerShadowOffset;
     UIColor *topGradientColor;
 }

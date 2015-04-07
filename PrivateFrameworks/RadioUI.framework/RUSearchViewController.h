@@ -5,6 +5,12 @@
 @class <RUSearchViewControllerDelegate>, NSError, NSMutableArray, NSString, RUMetricsController, RUSearchDataSource, RadioSearchStationResult, SKUICircleProgressIndicator, SSMetricsPageEvent, UILabel, UITableView, UIView;
 
 @interface RUSearchViewController : UIViewController <RUSearchDataSourceDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
+    SKUICircleProgressIndicator *_activityIndicatorView;
+    RadioSearchStationResult *_addingStationResult;
+    RUSearchDataSource *_dataSource;
+    <RUSearchViewControllerDelegate> *_delegate;
+    BOOL _displaysCoreSeedName;
+    BOOL _excludeFeaturedStations;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,12 +20,6 @@
             float width; 
             float height; 
         } size; 
-    SKUICircleProgressIndicator *_activityIndicatorView;
-    RadioSearchStationResult *_addingStationResult;
-    RUSearchDataSource *_dataSource;
-    <RUSearchViewControllerDelegate> *_delegate;
-    BOOL _displaysCoreSeedName;
-    BOOL _excludeFeaturedStations;
     } _keyboardFrame;
     SSMetricsPageEvent *_lastPageEvent;
     NSError *_lastSearchError;
@@ -94,6 +94,7 @@
 - (void)setShowsAddingIndicator:(BOOL)arg1;
 - (void)setTableViewBackgroundView:(id)arg1;
 - (BOOL)showsAddingIndicator;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
@@ -104,7 +105,6 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
-- (id)tableView;
 - (id)tableViewBackgroundView;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -9,20 +9,20 @@
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
             float *__first_; 
         } __end_cap_; 
-    struct vector<float, std::__1::allocator<float> > { 
-        float *__begin_; 
-        float *__end_; 
-        struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
-        } __end_cap_; 
-    struct vector<float, std::__1::allocator<float> > { 
-        float *__begin_; 
-        float *__end_; 
-        struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
-        } __end_cap_; 
     } mExplode;
+    struct vector<float, std::__1::allocator<float> > { 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
+        } __end_cap_; 
     } mPercentOfTotal;
+    struct vector<float, std::__1::allocator<float> > { 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
+        } __end_cap_; 
     } mRotation;
 }
 
@@ -33,8 +33,8 @@
 - (struct GeometryResource { int x1; struct ObjcSharedPtr<TSCH3DResource> { id x_2_1_1; } x2; struct GeometryArrays { unsigned int x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; struct ObjcSharedPtr<TSCH3DGeometry> { id x_4_1_1; } x4; })boundsGeometryForSeries:(id)arg1 index:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (float)elementTransformDepthFromPropertyAccessor:(const struct ChartScenePropertyAccessor { id x1; id x2; }*)arg1;
-- (float)explosionAtElementIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1 propertyAccessor:(const struct ChartScenePropertyAccessor { id x1; id x2; }*)arg2;
 - (float)explosionAtElementIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1;
+- (float)explosionAtElementIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1 propertyAccessor:(const struct ChartScenePropertyAccessor { id x1; id x2; }*)arg2;
 - (int)flatIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1;
 - (float)percentOfTotalAtElementIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1;
 - (void)reset;

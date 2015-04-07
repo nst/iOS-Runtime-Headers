@@ -4,7 +4,7 @@
 
 @class NSString, NSURL, NSURLResponseInternal;
 
-@interface NSURLResponse : NSObject <NSSecureCoding, NSCopying> {
+@interface NSURLResponse : NSObject <NSCopying, NSSecureCoding> {
     NSURLResponseInternal *_internal;
 }
 

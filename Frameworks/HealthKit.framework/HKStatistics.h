@@ -4,7 +4,7 @@
 
 @class HKQuantity, HKQuantityType, NSArray, NSDate, NSDictionary;
 
-@interface HKStatistics : NSObject <NSSecureCoding, NSCopying> {
+@interface HKStatistics : NSObject <NSCopying, NSSecureCoding> {
     HKQuantity *_averageQuantity;
     NSDictionary *_averageQuantityBySource;
     unsigned int _dataCount;

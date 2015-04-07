@@ -14,7 +14,11 @@
     NSMutableDictionary *_commentsToSaveByLocalID;
     NSMutableArray *_deletedCommentIDs;
     NSMutableDictionary *_errorsByCommentID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _modifyShareCommentCompletionBlock;
+
     NSMutableArray *_savedComments;
     CKShareID *_shareID;
 }

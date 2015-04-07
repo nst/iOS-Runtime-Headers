@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface AWDAirPlayPhotoSessionEndedOnServer : PBCodable <NSCopying> {
+    unsigned int _duration;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int duration : 1; 
@@ -14,7 +15,6 @@
         unsigned int minPhotoBytes : 1; 
         unsigned int reason : 1; 
         unsigned int totalPhotos : 1; 
-    unsigned int _duration;
     } _has;
     unsigned int _maxBPS;
     unsigned int _maxPhotoBytes;

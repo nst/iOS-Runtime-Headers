@@ -5,10 +5,10 @@
 @class UITableViewCell;
 
 @interface _UITableViewCellGrabber : UIControl {
+    UITableViewCell *_cell;
     struct CGPoint { 
         float x; 
         float y; 
-    UITableViewCell *_cell;
     } _downPoint;
 }
 

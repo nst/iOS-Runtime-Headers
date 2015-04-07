@@ -30,12 +30,12 @@
 - (double)_initialTouchTimestamp;
 - (void)_invalidateGestureRecognizerForWindowCache;
 - (void)_moveTouchesFromView:(id)arg1 toView:(id)arg2;
-- (void)_removeTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
 - (void)_removeTouch:(id)arg1;
+- (void)_removeTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
 - (void)_removeTouchesForKey:(id)arg1;
 - (void)_removeTouchesForWindow:(id)arg1;
-- (void)_touchesForGesture:(id)arg1 withPhase:(int)arg2 intoSet:(id)arg3;
 - (id)_touchesForGesture:(id)arg1 withPhase:(int)arg2;
+- (void)_touchesForGesture:(id)arg1 withPhase:(int)arg2 intoSet:(id)arg3;
 - (id)_touchesForGestureRecognizer:(id)arg1;
 - (id)_touchesForKey:(id)arg1;
 - (id)_touchesForView:(id)arg1 withPhase:(int)arg2;

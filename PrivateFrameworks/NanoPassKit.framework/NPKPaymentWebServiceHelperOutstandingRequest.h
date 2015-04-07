@@ -10,7 +10,11 @@
 
 @interface NPKPaymentWebServiceHelperOutstandingRequest : NSObject {
     id _completionHandler;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _errorHandler;
+
     NSString *_messageIdentifier;
     NSObject<OS_dispatch_source> *_timeoutTimer;
 }

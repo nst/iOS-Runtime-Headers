@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface TNPersistentChartMediator : TSCHPersistentChartMediator <TSKDocumentObject, TSCECalculationEngineRegistration> {
+@interface TNPersistentChartMediator : TSCHPersistentChartMediator <TSCECalculationEngineRegistration, TSKDocumentObject> {
 }
 
 @property(copy,readonly) NSString * debugDescription;

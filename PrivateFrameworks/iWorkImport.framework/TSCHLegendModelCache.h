@@ -5,14 +5,14 @@
 @class NSArray, TSCHLegendCellMetrics, TSCHLegendViewCache, TSDShadow, TSDStroke, TSWPParagraphStyle;
 
 @interface TSCHLegendModelCache : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     unsigned int mCellCount;
     NSArray *mCells;
     float mEffectiveStrokeWidth;
     id mFill;
     float mHorizontalCellSpacing;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mLargestCellSize;
     TSCHLegendViewCache *mLastLegendViewCache;
     float mLastLegendWidth;

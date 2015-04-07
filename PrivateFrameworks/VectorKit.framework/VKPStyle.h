@@ -5,12 +5,12 @@
 @class NSData, NSMutableArray, NSString, VKPStyleProperties;
 
 @interface VKPStyle : PBCodable <NSCopying> {
+    NSMutableArray *_attributes;
+    NSData *_contents;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    NSMutableArray *_attributes;
-    NSData *_contents;
     } _inherits;
     NSString *_name;
     VKPStyleProperties *_properties;

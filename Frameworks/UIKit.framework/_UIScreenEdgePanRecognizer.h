@@ -5,6 +5,25 @@
 @class <_UIScreenEdgePanRecognizerDelegate>, NSString, UIDelayedAction, _UIScreenEdgePanRecognizerSettings;
 
 @interface _UIScreenEdgePanRecognizer : NSObject <_UISettingsKeyObserver> {
+    <_UIScreenEdgePanRecognizerDelegate> *_delegate;
+    float _gestureRestrictionFactor;
+    BOOL _hasDoneInitialBackProjectionTest;
+    BOOL _hasRecordedData;
+    int _initialInterfaceOrientation;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _initialTouchLocation;
+    double _initialTouchTimestamp;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _lastTouchLocation;
+    double _lastTouchTimestamp;
+    UIDelayedAction *_recognitionTimer;
+    unsigned int _recognizedRegion;
+    BOOL _requiresFlatThumb;
+    BOOL _requiresLongPress;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,25 +33,6 @@
             float width; 
             float height; 
         } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    <_UIScreenEdgePanRecognizerDelegate> *_delegate;
-    float _gestureRestrictionFactor;
-    BOOL _hasDoneInitialBackProjectionTest;
-    BOOL _hasRecordedData;
-    int _initialInterfaceOrientation;
-    } _initialTouchLocation;
-    double _initialTouchTimestamp;
-    } _lastTouchLocation;
-    double _lastTouchTimestamp;
-    UIDelayedAction *_recognitionTimer;
-    unsigned int _recognizedRegion;
-    BOOL _requiresFlatThumb;
-    BOOL _requiresLongPress;
     } _screenBounds;
     _UIScreenEdgePanRecognizerSettings *_settings;
     int _state;
@@ -83,8 +83,8 @@
 - (void)setSettings:(id)arg1;
 - (void)setShouldUseGrapeFlags:(BOOL)arg1;
 - (void)setTargetEdges:(unsigned int)arg1;
-- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (id)settings;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (BOOL)shouldUseGrapeFlags;
 - (int)state;
 - (unsigned int)targetEdges;

@@ -4,7 +4,7 @@
 
 @class CAAnimation, CALayer, NSString;
 
-@interface CAStateTransitionElement : NSObject <NSCopying, NSCoding> {
+@interface CAStateTransitionElement : NSObject <NSCoding, NSCopying> {
     CAAnimation *_animation;
     BOOL _enabled;
     NSString *_key;

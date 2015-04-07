@@ -9,14 +9,38 @@
 @class GEORequester, NSString;
 
 @interface GEORPVoltaireProblemProvider : GEORPProblemProvider <PBRequesterDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _notificationAvailabilityErrorHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _notificationAvailabilityFinishedHandler;
+
     GEORequester *_notificationAvailabilityRequester;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _statusErrorHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _statusFinishedHandler;
+
     GEORequester *_statusRequester;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _submissionErrorHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _submissionFinishedHandler;
+
     GEORequester *_submissionRequester;
 }
 

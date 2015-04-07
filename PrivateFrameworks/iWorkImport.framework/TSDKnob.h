@@ -5,17 +5,17 @@
 @class CALayer, CAShapeLayer, TSDBezierPath, TSDRep;
 
 @interface TSDKnob : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     CAShapeLayer *mHitRegionLayer;
     TSDBezierPath *mHitRegionPath;
     CALayer *mLayer;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mOffset;
     BOOL mOffsetValid;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mPosition;
     float mRadius;
     TSDRep *mRep;
@@ -48,8 +48,8 @@
 - (float)i_rotationInDegreesForKnobOnRep:(id)arg1;
 - (id)init;
 - (id)initWithType:(int)arg1 position:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3 tag:(unsigned int)arg4 onRep:(id)arg5;
-- (BOOL)isHitByUnscaledPoint:(struct CGPoint { float x1; float x2; })arg1 andRep:(id)arg2 returningDistance:(float*)arg3;
 - (BOOL)isHitByUnscaledPoint:(struct CGPoint { float x1; float x2; })arg1 andRep:(id)arg2;
+- (BOOL)isHitByUnscaledPoint:(struct CGPoint { float x1; float x2; })arg1 andRep:(id)arg2 returningDistance:(float*)arg3;
 - (id)knobImage;
 - (id)layer;
 - (BOOL)obscuresKnob:(id)arg1;

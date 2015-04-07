@@ -4,7 +4,7 @@
 
 @class <SKUIRedeemCameraViewControllerDelegate>, CRCodeRedeemerController, NSString, SKUIRedeem, UIBarButtonItem;
 
-@interface SKUIRedeemCameraViewController : SKUIRedeemStepViewController <CRCodeRedeemerControllerDelegate, SKUIRedeemCameraViewDelegate, UIAlertViewDelegate, SKUIRedeemCameraViewControllerDelegate> {
+@interface SKUIRedeemCameraViewController : SKUIRedeemStepViewController <CRCodeRedeemerControllerDelegate, SKUIRedeemCameraViewControllerDelegate, SKUIRedeemCameraViewDelegate, UIAlertViewDelegate> {
     BOOL _alreadyPushed;
     CRCodeRedeemerController *_camera;
     int _category;

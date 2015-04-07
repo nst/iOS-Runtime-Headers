@@ -4,7 +4,7 @@
 
 @class <NSObject><NSCopying>, NSArray, NSDate, NSDictionary, NSIndexSet, NSMutableIndexSet, NSMutableOrderedSet, NSNumber, NSObject<PLAlbumProtocol>, NSOrderedSet, NSPredicate, NSString, NSURL, PLIndexMapper, PLManagedAsset, UIImage;
 
-@interface PLFilteredAlbum : NSObject <PLUserEditableAlbumProtocol, PLCloudSharedAlbumProtocol, PLIndexMapperDataSource, PLIndexMappingCache> {
+@interface PLFilteredAlbum : NSObject <PLCloudSharedAlbumProtocol, PLIndexMapperDataSource, PLIndexMappingCache, PLUserEditableAlbumProtocol> {
     struct NSObject { Class x1; } *_backingAlbum;
     BOOL _backingAlbumSupportsCloudShared;
     BOOL _backingAlbumSupportsEdits;
@@ -106,8 +106,8 @@
 @property(readonly) unsigned int videosCount;
 
 + (id)descriptionForAlbumFilter:(int)arg1 parameters:(id)arg2;
-+ (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 filter:(int)arg2 parameters:(id)arg3;
 + (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 filter:(int)arg2;
++ (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 filter:(int)arg2 parameters:(id)arg3;
 + (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 intersectFilter:(int)arg2;
 + (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 predicate:(id)arg2;
 + (id)filteredIndexesInAlbum:(struct NSObject { Class x1; }*)arg1 predicate:(id)arg2;

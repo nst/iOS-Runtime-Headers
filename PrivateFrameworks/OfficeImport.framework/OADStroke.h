@@ -5,20 +5,20 @@
 @class OADColor, OADDash, OADFill, OADLineEnd, OADLineJoin;
 
 @interface OADStroke : OADProperties <NSCopying> {
-    unsigned int mIsColorOverridden : 1;
-    unsigned int mIsCompoundTypeOverridden : 1;
-    unsigned int mIsCapOverridden : 1;
-    unsigned int mIsWidthOverridden : 1;
-    unsigned int mIsJoinOverridden : 1;
-    unsigned int mIsDashOverridden : 1;
-    unsigned int mIsFillOverridden : 1;
-    unsigned int mIsPenAlignmentOverridden : 1;
     unsigned char mCap;
     OADColor *mColor;
     unsigned char mCompoundType;
     OADDash *mDash;
     OADFill *mFill;
     OADLineEnd *mHead;
+    unsigned int mIsCapOverridden : 1;
+    unsigned int mIsColorOverridden : 1;
+    unsigned int mIsCompoundTypeOverridden : 1;
+    unsigned int mIsDashOverridden : 1;
+    unsigned int mIsFillOverridden : 1;
+    unsigned int mIsJoinOverridden : 1;
+    unsigned int mIsPenAlignmentOverridden : 1;
+    unsigned int mIsWidthOverridden : 1;
     OADLineJoin *mJoin;
     unsigned char mPenAlignment;
     OADLineEnd *mTail;

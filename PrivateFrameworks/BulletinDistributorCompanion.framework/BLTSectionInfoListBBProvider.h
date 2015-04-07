@@ -4,7 +4,7 @@
 
 @class <BLTSectionInfoListProviderDelegate>, BLTSectionInfoObserver, LSApplicationWorkspace, NSObject<OS_dispatch_queue>, NSString;
 
-@interface BLTSectionInfoListBBProvider : NSObject <LSApplicationWorkspaceObserverProtocol, BLTSectionInfoObserverDelegate> {
+@interface BLTSectionInfoListBBProvider : NSObject <BLTSectionInfoObserverDelegate, LSApplicationWorkspaceObserverProtocol> {
     LSApplicationWorkspace *_appWorkspace;
     <BLTSectionInfoListProviderDelegate> *_delegate;
     BLTSectionInfoObserver *_observer;

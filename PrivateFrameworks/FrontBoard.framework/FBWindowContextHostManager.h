@@ -5,13 +5,13 @@
 @class <FBWindowContextHostManagerDelegate>, FBOrderedRequesters, FBScene, FBWindowContextHostView, FBWindowContextManager, NSHashTable, NSMutableDictionary, NSString, UIColor;
 
 @interface FBWindowContextHostManager : NSObject <FBWindowContextHostViewDelegate> {
-    struct { 
-        unsigned int delegateOverrideRequester : 1; 
-        unsigned int delegateShouldEnableContextHostingForRequester : 1; 
     FBWindowContextManager *_contextManager;
     UIColor *_defaultBackgroundColorWhileHosting;
     UIColor *_defaultBackgroundColorWhileNotHosting;
     <FBWindowContextHostManagerDelegate> *_delegate;
+    struct { 
+        unsigned int delegateOverrideRequester : 1; 
+        unsigned int delegateShouldEnableContextHostingForRequester : 1; 
     } _flags;
     NSMutableDictionary *_hostRequesterInfo;
     FBOrderedRequesters *_hostRequesters;
@@ -34,8 +34,8 @@
 @property(readonly) Class superclass;
 
 - (void)_applyRequesterInfo:(id)arg1;
-- (id)_hostViewForRequester:(id)arg1 enableAndOrderFront:(BOOL)arg2;
 - (id)_hostViewForRequester:(id)arg1;
+- (id)_hostViewForRequester:(id)arg1 enableAndOrderFront:(BOOL)arg2;
 - (id)_infoForRequester:(id)arg1;
 - (void)_notePropertiesSetOnRealContextHostViewWhichIReallyNeedToChangeAndIKnowWhatImDoingISwear:(id)arg1 originalProperties:(id)arg2 forRequester:(id)arg3;
 - (id)_overrideRequesterIfNecessary:(id)arg1;
@@ -54,10 +54,10 @@
 - (void)disableHostingForRequester:(id)arg1;
 - (void)enableHostingForRequester:(id)arg1 orderFront:(BOOL)arg2;
 - (void)enableHostingForRequester:(id)arg1 priority:(int)arg2;
-- (id)hostViewForRequester:(id)arg1 appearanceStyle:(unsigned int)arg2;
-- (id)hostViewForRequester:(id)arg1 enableAndOrderFront:(BOOL)arg2 appearanceStyle:(unsigned int)arg3;
-- (id)hostViewForRequester:(id)arg1 enableAndOrderFront:(BOOL)arg2;
 - (id)hostViewForRequester:(id)arg1;
+- (id)hostViewForRequester:(id)arg1 appearanceStyle:(unsigned int)arg2;
+- (id)hostViewForRequester:(id)arg1 enableAndOrderFront:(BOOL)arg2;
+- (id)hostViewForRequester:(id)arg1 enableAndOrderFront:(BOOL)arg2 appearanceStyle:(unsigned int)arg3;
 - (id)identifier;
 - (id)initWithContextManager:(id)arg1 scene:(id)arg2;
 - (void)invalidate;

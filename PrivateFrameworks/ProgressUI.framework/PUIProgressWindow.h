@@ -5,14 +5,14 @@
 @class CAContext, CALayer, NSString;
 
 @interface PUIProgressWindow : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     struct CGImage { } *_appleLogo;
     CAContext *_context;
     float _currentProgress;
     float _displayOrientation;
     float _displayScale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _displaySize;
     BOOL _forceInverted;
     CALayer *_layer;
@@ -52,11 +52,11 @@
 - (id)init;
 - (id)initWithForceInverted:(BOOL)arg1;
 - (id)initWithOptions:(unsigned int)arg1 contextLevel:(float)arg2 appearance:(int)arg3;
+- (id)initWithProgressBarVisibility:(BOOL)arg1;
 - (id)initWithProgressBarVisibility:(BOOL)arg1 context:(id)arg2;
 - (id)initWithProgressBarVisibility:(BOOL)arg1 createContext:(BOOL)arg2 contextLevel:(float)arg3 appearance:(int)arg4;
-- (id)initWithProgressBarVisibility:(BOOL)arg1 level:(float)arg2 forceInverted:(BOOL)arg3;
 - (id)initWithProgressBarVisibility:(BOOL)arg1 level:(float)arg2;
-- (id)initWithProgressBarVisibility:(BOOL)arg1;
+- (id)initWithProgressBarVisibility:(BOOL)arg1 level:(float)arg2 forceInverted:(BOOL)arg3;
 - (id)layer;
 - (void)setPluginName:(id)arg1;
 - (void)setProgressValue:(float)arg1;

@@ -43,12 +43,12 @@
 + (void)tsp_performSynchronousOperationWithThreadDictionaryObject:(id)arg1 forKey:(id)arg2 usingBlock:(id)arg3;
 + (void)tsp_runFinalizeHandlersForReadCoordinator:(id)arg1 usingBlock:(id)arg2;
 
-- (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2 modes:(id)arg3;
-- (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2;
-- (void)__im_performBlock:(id)arg1 modes:(id)arg2;
-- (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2 modes:(id)arg3;
-- (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
 - (void)__im_performBlock:(id)arg1;
+- (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2;
+- (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2 modes:(id)arg3;
+- (void)__im_performBlock:(id)arg1 modes:(id)arg2;
+- (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
+- (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2 modes:(id)arg3;
 - (void)_nq:(id)arg1;
 - (void)cancel;
 - (void)dealloc;

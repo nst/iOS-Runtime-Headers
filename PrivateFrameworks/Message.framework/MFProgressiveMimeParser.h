@@ -5,12 +5,6 @@
 @class MFMimePart, NSArray, NSData, NSMutableData;
 
 @interface MFProgressiveMimeParser : NSObject {
-    struct { 
-        unsigned int delegateBeganMimePart : 1; 
-        unsigned int delegateFinishedMimePart : 1; 
-        unsigned int delegateBeganData : 1; 
-        unsigned int delegateFailed : 1; 
-        unsigned int state : 3; 
     id _context;
     NSData *_currentBoundary;
     MFMimePart *_currentPart;
@@ -18,6 +12,12 @@
     NSMutableData *_data;
     id _delegate;
     unsigned int _lastLength;
+    struct { 
+        unsigned int delegateBeganMimePart : 1; 
+        unsigned int delegateFinishedMimePart : 1; 
+        unsigned int delegateBeganData : 1; 
+        unsigned int delegateFailed : 1; 
+        unsigned int state : 3; 
     } _parserFlags;
     NSArray *_preserveHeaders;
     MFMimePart *_topLevelPart;

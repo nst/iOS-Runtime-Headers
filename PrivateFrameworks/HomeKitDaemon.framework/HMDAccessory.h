@@ -4,7 +4,7 @@
 
 @class HAPAccessory, HMDAccessory, HMDAccessoryManager, HMDHome, HMDRoom, HMMessageDispatcher, NSArray, NSData, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSUUID;
 
-@interface HMDAccessory : NSObject <NSSecureCoding, HMMessageReceiver> {
+@interface HMDAccessory : NSObject <HMMessageReceiver, NSSecureCoding> {
     HMDAccessoryManager *_accessoryManager;
     BOOL _blocked;
     HMDAccessory *_bridge;
@@ -95,8 +95,8 @@
 - (id)bridge;
 - (id)configurationAppIdentifier;
 - (void)configure:(id)arg1 msgDispatcher:(id)arg2 accessoryManager:(id)arg3;
-- (void)configureWithAccessory:(id)arg1 forRemoval:(BOOL)arg2 queue:(id)arg3 completion:(id)arg4;
 - (void)configureWithAccessory:(id)arg1 forRemoval:(BOOL)arg2;
+- (void)configureWithAccessory:(id)arg1 forRemoval:(BOOL)arg2 queue:(id)arg3 completion:(id)arg4;
 - (id)description;
 - (id)descriptionNonBlocking;
 - (void)didEncounterError:(id)arg1;
@@ -149,8 +149,8 @@
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPairingRetryTimer:(id)arg1;
-- (void)setPairingUsername:(id)arg1 publicKey:(id)arg2;
 - (void)setPairingUsername:(id)arg1;
+- (void)setPairingUsername:(id)arg1 publicKey:(id)arg2;
 - (void)setProvidedName:(id)arg1;
 - (void)setPublicKey:(id)arg1;
 - (void)setRemoteAccessState:(BOOL)arg1;

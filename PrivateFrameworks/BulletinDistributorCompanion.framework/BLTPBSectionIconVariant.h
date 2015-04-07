@@ -5,9 +5,9 @@
 @class NSData;
 
 @interface BLTPBSectionIconVariant : PBCodable <NSCopying> {
+    unsigned int _format;
     struct { 
         unsigned int precomposed : 1; 
-    unsigned int _format;
     } _has;
     NSData *_imageData;
     BOOL _precomposed;

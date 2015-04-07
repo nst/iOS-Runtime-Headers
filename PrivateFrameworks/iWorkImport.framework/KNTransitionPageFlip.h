@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, TSDGLDataBuffer, TSDGLMotionBlurEffect, TSDGLShader;
 
-@interface KNTransitionPageFlip : KNAnimationEffect <KNFrameAnimator, KNAnimationPluginArchiving> {
+@interface KNTransitionPageFlip : KNAnimationEffect <KNAnimationPluginArchiving, KNFrameAnimator> {
     TSDGLDataBuffer *_dataBuffer;
     NSArray *_dataBufferAttributes;
     TSDGLMotionBlurEffect *_motionBlurEffect;

@@ -5,14 +5,6 @@
 @class NSArray, UISnapshotView, UIView, UIWindow;
 
 @interface UIClientRotationContext : NSObject {
-    struct { 
-        BOOL animateContentRotation; 
-        BOOL preserveHeight; 
-        BOOL avoidFadingBottomOfContent; 
-        BOOL skipSnapshotOfEndState; 
-        BOOL preventAdditveAnimations; 
-        float contentStretchRightEdgeInset; 
-        int edgeClip; 
     NSArray *_backdropViews;
     UISnapshotView *_contentSnapshotViewStart;
     float _contentTopAdjustmentStart;
@@ -31,6 +23,14 @@
     BOOL _orderKeyboardInAfterRotating;
     id _rotatingClient;
     UIView *_rotatingSnapshotView;
+    struct { 
+        BOOL animateContentRotation; 
+        BOOL preserveHeight; 
+        BOOL avoidFadingBottomOfContent; 
+        BOOL skipSnapshotOfEndState; 
+        BOOL preventAdditveAnimations; 
+        float contentStretchRightEdgeInset; 
+        int edgeClip; 
     } _rotationSettings;
     BOOL _skipClientRotationCallbacks;
     BOOL _skipFooterRotation;

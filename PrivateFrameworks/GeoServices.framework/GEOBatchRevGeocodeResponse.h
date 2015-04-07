@@ -5,13 +5,13 @@
 @class NSDictionary, NSMutableArray;
 
 @interface GEOBatchRevGeocodeResponse : PBCodable <NSCopying> {
+    NSMutableArray *_batchPlaceResults;
+    NSMutableArray *_clusters;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int statusCode : 1; 
         unsigned int ttl : 1; 
         unsigned int version : 1; 
-    NSMutableArray *_batchPlaceResults;
-    NSMutableArray *_clusters;
     } _has;
     int _statusCode;
     double _timestamp;

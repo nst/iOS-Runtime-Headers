@@ -7,7 +7,11 @@
  */
 
 @interface MKMapItemMetadataDealRequest : MKMapItemMetadataRequest {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _dealHandler;
+
 }
 
 @property(copy) id dealHandler;

@@ -5,55 +5,55 @@
 @class NSString, WKPreferences, WKProcessPool, WKUserContentController, WKWebView, WKWebViewContentProviderRegistry, _WKVisitedLinkProvider, _WKWebsiteDataStore;
 
 @interface WKWebViewConfiguration : NSObject <NSCopying> {
-    struct LazyInitialized<WKProcessPool> { 
-        boolm_isInitialized; 
-        struct RetainPtr<WKProcessPool> { 
-            void *m_ptr; 
-        } m_value; 
-    struct LazyInitialized<WKPreferences> { 
-        boolm_isInitialized; 
-        struct RetainPtr<WKPreferences> { 
-            void *m_ptr; 
-        } m_value; 
-    struct LazyInitialized<WKUserContentController> { 
-        boolm_isInitialized; 
-        struct RetainPtr<WKUserContentController> { 
-            void *m_ptr; 
-        } m_value; 
-    struct LazyInitialized<_WKVisitedLinkProvider> { 
-        boolm_isInitialized; 
-        struct RetainPtr<_WKVisitedLinkProvider> { 
-            void *m_ptr; 
-        } m_value; 
-    struct LazyInitialized<_WKWebsiteDataStore> { 
-        boolm_isInitialized; 
-        struct RetainPtr<_WKWebsiteDataStore> { 
-            void *m_ptr; 
-        } m_value; 
+    BOOL _allowsInlineMediaPlayback;
     struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
-    struct WeakObjCPtr<WKWebView> { 
-        id m_weakReference; 
-    struct RetainPtr<NSString> { 
-        void *m_ptr; 
+    } _alternateWebViewForNavigationGestures;
     struct LazyInitialized<WKWebViewContentProviderRegistry> { 
-        boolm_isInitialized; 
+        bool m_isInitialized; 
         struct RetainPtr<WKWebViewContentProviderRegistry> { 
             void *m_ptr; 
         } m_value; 
-    BOOL _allowsInlineMediaPlayback;
-    } _alternateWebViewForNavigationGestures;
     } _contentProviderRegistry;
+    struct RetainPtr<NSString> { 
+        void *m_ptr; 
     } _groupIdentifier;
     BOOL _mediaPlaybackAllowsAirPlay;
     BOOL _mediaPlaybackRequiresUserAction;
+    struct LazyInitialized<WKPreferences> { 
+        bool m_isInitialized; 
+        struct RetainPtr<WKPreferences> { 
+            void *m_ptr; 
+        } m_value; 
     } _preferences;
+    struct LazyInitialized<WKProcessPool> { 
+        bool m_isInitialized; 
+        struct RetainPtr<WKProcessPool> { 
+            void *m_ptr; 
+        } m_value; 
     } _processPool;
+    struct WeakObjCPtr<WKWebView> { 
+        id m_weakReference; 
     } _relatedWebView;
     int _selectionGranularity;
     BOOL _suppressesIncrementalRendering;
+    struct LazyInitialized<WKUserContentController> { 
+        bool m_isInitialized; 
+        struct RetainPtr<WKUserContentController> { 
+            void *m_ptr; 
+        } m_value; 
     } _userContentController;
+    struct LazyInitialized<_WKVisitedLinkProvider> { 
+        bool m_isInitialized; 
+        struct RetainPtr<_WKVisitedLinkProvider> { 
+            void *m_ptr; 
+        } m_value; 
     } _visitedLinkProvider;
+    struct LazyInitialized<_WKWebsiteDataStore> { 
+        bool m_isInitialized; 
+        struct RetainPtr<_WKWebsiteDataStore> { 
+            void *m_ptr; 
+        } m_value; 
     } _websiteDataStore;
 }
 

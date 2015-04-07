@@ -5,11 +5,11 @@
 @class MSPDroppedPin, NSString, PBUnknownFields;
 
 @interface MSPPinStorage : PBCodable <NSCopying> {
+    MSPDroppedPin *_droppedPin;
     struct { 
         unsigned int position : 1; 
         unsigned int timestamp : 1; 
         unsigned int type : 1; 
-    MSPDroppedPin *_droppedPin;
     } _has;
     NSString *_identifier;
     double _position;

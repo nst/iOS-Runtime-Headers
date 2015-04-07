@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface SUOperationProgress : NSObject <NSSecureCoding, NSCopying> {
+@interface SUOperationProgress : NSObject <NSCopying, NSSecureCoding> {
     float _normalizedPercentComplete;
     float _percentComplete;
     NSString *_phase;

@@ -6,14 +6,14 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     } _vertex1;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _vertex2;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _vertex3;
 }
 

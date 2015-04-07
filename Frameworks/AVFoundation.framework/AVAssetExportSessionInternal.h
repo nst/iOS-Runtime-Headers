@@ -9,24 +9,6 @@
 @class AVAsset, AVAssetTrack, AVAudioMix, AVCustomVideoCompositorSession, AVMetadataItemFilter, AVVideoComposition, AVWeakReference, NSArray, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSURL;
 
 @interface AVAssetExportSessionInternal : NSObject {
-    struct { 
-        struct { 
-            long long value; 
-            int timescale; 
-            unsigned int flags; 
-            long long epoch; 
-        } start; 
-        struct { 
-            long long value; 
-            int timescale; 
-            unsigned int flags; 
-            long long epoch; 
-        } duration; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     NSString *actualOutputFileType;
     AVAsset *asset;
     AVAudioMix *audioMix;
@@ -40,22 +22,44 @@
     NSError *error;
     void *figVideoCompositor;
     AVAssetTrack *firstVideoTrack;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id handler;
+
     long long maxFileSize;
     NSArray *metadata;
     AVMetadataItemFilter *metadataItemFilter;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } minVideoFrameDuration;
     BOOL optimizeForNetworkUse;
     BOOL outputFileCreatedByRemaker;
     NSString *outputFileType;
     NSURL *outputURL;
-    NSString *preset16x9;
     NSString *preset;
+    NSString *preset16x9;
     float progress;
     NSObject<OS_dispatch_queue> *readWriteQueue;
     struct OpaqueFigRemaker { } *remaker;
     NSObject<OS_dispatch_queue> *remakerNotificationSerializationQueue;
     int status;
+    struct { 
+        struct { 
+            long long value; 
+            int timescale; 
+            unsigned int flags; 
+            long long epoch; 
+        } start; 
+        struct { 
+            long long value; 
+            int timescale; 
+            unsigned int flags; 
+            long long epoch; 
+        } duration; 
     } timeRange;
     BOOL useMultiPass;
     AVVideoComposition *videoComposition;

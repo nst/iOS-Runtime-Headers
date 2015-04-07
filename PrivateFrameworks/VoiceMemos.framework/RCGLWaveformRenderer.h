@@ -5,30 +5,6 @@
 @class <RCGLWaveformRendererDelegate>, CADisplayLink, CALayer, EAGLContext, NSString, RCUIConfiguration, RCWaveformDataSource;
 
 @interface RCGLWaveformRenderer : UIViewController <GLKViewDelegate, RCWaveformDataSourceObserver> {
-    struct { 
-        double beginTime; 
-        double endTime; 
-    struct { 
-        double beginTime; 
-        double endTime; 
-    struct vector<float, std::__1::allocator<float> > { 
-        float *__begin_; 
-        float *__end_; 
-        struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
-        } __end_cap_; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct { 
-        double beginTime; 
-        double endTime; 
     RCUIConfiguration *_UIConfiguration;
     BOOL _buffersInitialized;
     float _cachedContentWidth;
@@ -42,8 +18,20 @@
     int _foregroundColorUniform;
     int _highlightColorTimelineRange;
     int _highlightColorUniform;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _highlightTimeRange;
     BOOL _isAnimatingModelview;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _lastViewportRect;
     CALayer *_modelviewLayer;
     int _modelviewUniform;
@@ -51,6 +39,9 @@
     BOOL _paused;
     BOOL _preparedForRendering;
     int _projectionUniform;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _renderedTimeRange;
     BOOL _renderedTimeRangeIsApproximatedWaveform;
     unsigned int _renderedWaveformVertices;
@@ -59,7 +50,16 @@
     BOOL _shadersInitialized;
     float _spacingWidth;
     unsigned int _vertexBuffers[2];
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _visibleTimeRange;
+    struct vector<float, std::__1::allocator<float> > { 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
+        } __end_cap_; 
     } _waveformVertexData;
 }
 
@@ -109,8 +109,8 @@
 - (void)_stopRendering;
 - (void)_stopUpdating;
 - (void)_teardownNotifications;
-- (double)_timeForPixelOffset:(float)arg1 withVisibleTimeRange:(struct { double x1; double x2; })arg2;
 - (double)_timeForPixelOffset:(float)arg1;
+- (double)_timeForPixelOffset:(float)arg1 withVisibleTimeRange:(struct { double x1; double x2; })arg2;
 - (void)_updateClearColor;
 - (void)_updateForegroundColor;
 - (void)_updateHighlightTimeRange;
@@ -125,8 +125,8 @@
 - (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)glkViewRenderingContextValidityDidChange:(id)arg1;
 - (struct { double x1; double x2; })highlightTimeRange;
-- (float)horizontalOffsetAtTime:(double)arg1 withVisibleTimeRange:(struct { double x1; double x2; })arg2;
 - (float)horizontalOffsetAtTime:(double)arg1;
+- (float)horizontalOffsetAtTime:(double)arg1 withVisibleTimeRange:(struct { double x1; double x2; })arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isPaused;
 - (void)loadView;
@@ -140,11 +140,11 @@
 - (void)setRendererDelegate:(id)arg1;
 - (void)setSpacingWidth:(float)arg1;
 - (void)setUIConfiguration:(id)arg1;
-- (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1 withAnimationDuration:(double)arg2;
 - (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1;
+- (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1 withAnimationDuration:(double)arg2;
 - (float)spacingWidth;
-- (double)timeAtHorizontalOffset:(float)arg1 withVisibleTimeRange:(struct { double x1; double x2; })arg2;
 - (double)timeAtHorizontalOffset:(float)arg1;
+- (double)timeAtHorizontalOffset:(float)arg1 withVisibleTimeRange:(struct { double x1; double x2; })arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(BOOL)arg1;

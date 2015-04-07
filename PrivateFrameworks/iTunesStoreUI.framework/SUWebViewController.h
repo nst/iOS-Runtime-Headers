@@ -8,13 +8,17 @@
 
 @class ISURLRequestPerformance, NSString, NSURL, SSAuthenticationContext, SSMutableAuthenticationContext, SUDelayedNavigationItem, SUMescalSession, SUObjectPool, SUStorePageProtocol, SUWebView, SUWebViewManager;
 
-@interface SUWebViewController : SUViewController <SUWebViewManagerDelegate, SUWebViewDelegate> {
+@interface SUWebViewController : SUViewController <SUWebViewDelegate, SUWebViewManagerDelegate> {
     SSMutableAuthenticationContext *_authenticationContext;
     SUDelayedNavigationItem *_delayedNavigationItem;
     NSURL *_displayedURL;
     BOOL _hasEverAppeared;
     int _lastKnownOrientation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _loadBlock;
+
     SUMescalSession *_mescalSession;
     SUObjectPool *_objectPool;
     ISURLRequestPerformance *_performanceMetrics;

@@ -9,7 +9,11 @@
 @class <_MFSearchResultsConsumer>;
 
 @interface _MFSearchProcessResultsOperation : NSOperation {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     <_MFSearchResultsConsumer> *_consumer;
     unsigned int _type;
 }

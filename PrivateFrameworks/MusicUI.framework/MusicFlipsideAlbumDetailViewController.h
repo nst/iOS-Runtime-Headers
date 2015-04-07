@@ -4,7 +4,7 @@
 
 @class <MPURatingControlDelegate>, NSIndexPath, NSString;
 
-@interface MusicFlipsideAlbumDetailViewController : MusicAlbumsDetailViewController <MusicFlipsideRating, MPURatingControlDelegate> {
+@interface MusicFlipsideAlbumDetailViewController : MusicAlbumsDetailViewController <MPURatingControlDelegate, MusicFlipsideRating> {
     <MPURatingControlDelegate> *_ratingDelegate;
     NSIndexPath *_ratingItemIndexPath;
 }
@@ -30,8 +30,8 @@
 - (id)ratingDelegate;
 - (void)ratingDidChangeForRatingControl:(id)arg1;
 - (void)setRatingDelegate:(id)arg1;
-- (void)setShowingRating:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowingRating:(BOOL)arg1;
+- (void)setShowingRating:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (BOOL)showingRating;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;

@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface BBNotificationBehaviorFavoritesListDelegate : NSObject <ABPredicateDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handlerBlock;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -19,7 +23,7 @@
 
 - (void)dealloc;
 - (id)initWithHandlerBlock:(id)arg1;
-- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 - (BOOL)predicateShouldContinue:(id)arg1;
+- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 
 @end

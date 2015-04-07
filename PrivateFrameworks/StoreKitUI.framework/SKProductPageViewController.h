@@ -4,7 +4,7 @@
 
 @class <SKProductPageViewControllerDelegate>, <SKProductPageViewControllerDelegatePrivate>, NSDictionary, NSString, NSURL, SKUIBannerViewController, SKUIClientContext, SKUIIPadProductPageViewController, SKUIIPhoneProductPageViewController, SKUIITunesStoreUIPageViewController, SKUIItemStateCenter, SSMetricsPageEvent, SUBarButtonItem, SUDialogManager, SUPreviewOverlayViewController, SUPurchaseManager;
 
-@interface SKProductPageViewController : SUViewController <SKUIBannerViewDelegate, SKUIIPadProductPageDelegate, SKUIIPhoneProductPageDelegate, SUClientInterfaceDelegatePrivate, SUPurchaseManagerDelegate, SKUIItemStateCenterObserver> {
+@interface SKProductPageViewController : SUViewController <SKUIBannerViewDelegate, SKUIIPadProductPageDelegate, SKUIIPhoneProductPageDelegate, SKUIItemStateCenterObserver, SUClientInterfaceDelegatePrivate, SUPurchaseManagerDelegate> {
     NSString *_additionalPurchaseParameters;
     NSString *_affiliateIdentifier;
     BOOL _askToBuy;
@@ -83,8 +83,8 @@
 - (BOOL)askToBuy;
 - (void)bannerView:(id)arg1 didFailWithError:(id)arg2;
 - (void)bannerViewDidClose:(id)arg1;
-- (id)cancelButtonTitle:(id)arg1;
 - (id)cancelButtonTitle;
+- (id)cancelButtonTitle:(id)arg1;
 - (void)clientInterface:(id)arg1 exitStoreWithReason:(int)arg2;
 - (void)clientInterface:(id)arg1 hidePreviewOverlayAnimated:(BOOL)arg2;
 - (void)clientInterface:(id)arg1 presentDialog:(id)arg2;

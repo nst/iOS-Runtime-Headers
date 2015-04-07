@@ -5,22 +5,6 @@
 @class CALayer, TSUImage;
 
 @interface TSKHighlightController : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -32,7 +16,23 @@
     CALayer *_containingLayer;
     TSUImage *_image;
     CALayer *_imageLayer;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _layerTransform;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _overallRect;
     struct CGPath { } *_path;
     float _viewScale;

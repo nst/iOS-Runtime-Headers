@@ -5,8 +5,8 @@
 @class SUReflectionView, UIImageView;
 
 @interface SUReflectionImageView : UIView {
-    unsigned int _nonSquareImage : 1;
     UIImageView *_imageView;
+    unsigned int _nonSquareImage : 1;
     SUReflectionView *_reflection;
     float _reflectionAlpha;
     float _reflectionHeight;

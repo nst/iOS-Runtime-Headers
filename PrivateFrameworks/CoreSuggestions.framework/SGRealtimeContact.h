@@ -4,7 +4,7 @@
 
 @class SGContact;
 
-@interface SGRealtimeContact : NSObject <NSSecureCoding, NSCopying> {
+@interface SGRealtimeContact : NSObject <NSCopying, NSSecureCoding> {
     int _abPersonId;
     SGContact *_contact;
     int _state;

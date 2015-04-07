@@ -10,6 +10,14 @@
 @class <MMCSEngineDelegate>, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSThread, NSTimer, NSURL;
 
 @interface MMCSEngine : NSObject {
+    NSString *_appIDHeader;
+    BOOL _autoGenerateItemID;
+    NSMutableDictionary *_autoItemIDDictionary;
+    NSObject<OS_dispatch_queue> *_autoItemIDDictionaryQueue;
+    NSURL *_autoItemIDPersistenceURL;
+    NSString *_dataClass;
+    <MMCSEngineDelegate> *_delegate;
+    struct __MMCSEngine { } *_engine;
     struct { 
         int version; 
         void *context; 
@@ -19,14 +27,6 @@
         int (*putItemProgressCallback)(); 
         int (*putItemDoneCallback)(); 
         int (*requestCompletedCallback)(); 
-    NSString *_appIDHeader;
-    BOOL _autoGenerateItemID;
-    NSMutableDictionary *_autoItemIDDictionary;
-    NSObject<OS_dispatch_queue> *_autoItemIDDictionaryQueue;
-    NSURL *_autoItemIDPersistenceURL;
-    NSString *_dataClass;
-    <MMCSEngineDelegate> *_delegate;
-    struct __MMCSEngine { } *_engine;
     } _engineClientContext;
     BOOL _isDone;
     BOOL _isMetricsGatheringEnabled;
@@ -73,14 +73,14 @@
 - (id)delegate;
 - (void)getAssets:(id)arg1 requestURL:(id)arg2 DSID:(id)arg3 options:(id)arg4;
 - (BOOL)hasOutstandingActivity;
-- (id)initWithWorkPath:(id)arg1 appIDHeader:(id)arg2 dataClass:(id)arg3 options:(id)arg4 modes:(id)arg5;
 - (id)initWithWorkPath:(id)arg1 appIDHeader:(id)arg2 dataClass:(id)arg3 options:(id)arg4;
+- (id)initWithWorkPath:(id)arg1 appIDHeader:(id)arg2 dataClass:(id)arg3 options:(id)arg4 modes:(id)arg5;
 - (BOOL)isActive;
 - (BOOL)isDone;
 - (BOOL)isMetricsGatheringEnabled;
 - (void)performBlock:(id)arg1;
-- (void)performBlockOnWorkThread:(id)arg1 waitUntilDone:(BOOL)arg2;
 - (void)performBlockOnWorkThread:(id)arg1;
+- (void)performBlockOnWorkThread:(id)arg1 waitUntilDone:(BOOL)arg2;
 - (void)putAssets:(id)arg1 requestURL:(id)arg2 DSID:(id)arg3 options:(id)arg4;
 - (void)registerAssetForUpload:(id)arg1 completionBlock:(id)arg2;
 - (void)registerAssets:(id)arg1 forDownloadCompletionBlock:(id)arg2;

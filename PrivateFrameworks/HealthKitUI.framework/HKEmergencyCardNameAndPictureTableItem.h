@@ -4,7 +4,7 @@
 
 @class <HKEmergencyCardRowHeightChangeDelegate>, HKMedicalIDEditorNameAndPhotoCell, NSString;
 
-@interface HKEmergencyCardNameAndPictureTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate, HKMedicalIDEditorCellHeightChangeDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate> {
+@interface HKEmergencyCardNameAndPictureTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate, HKMedicalIDEditorCellHeightChangeDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     HKMedicalIDEditorNameAndPhotoCell *_cell;
     <HKEmergencyCardRowHeightChangeDelegate> *_rowHeightChangeDelegate;
     BOOL _showingDeletePhotoButton;

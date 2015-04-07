@@ -5,10 +5,10 @@
 @class NSString, TSCHSelectionPath;
 
 @interface TSCHSearchSelection : TSCHSelection {
+    NSString *mOriginalString;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    NSString *mOriginalString;
     } mRange;
 }
 

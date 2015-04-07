@@ -5,10 +5,10 @@
 @class OADPath;
 
 @interface CMFreeFormShapeBuilder : CMLineShapeBuilder {
+    OADPath *_path;
     struct CGSize { 
         float width; 
         float height; 
-    OADPath *_path;
     } _space;
 }
 

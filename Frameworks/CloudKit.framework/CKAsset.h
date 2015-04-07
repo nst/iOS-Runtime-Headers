@@ -90,8 +90,8 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDeviceID:(id)arg1 fileID:(id)arg2 generationID:(id)arg3;
-- (id)initWithFileURL:(id)arg1 signature:(id)arg2 assetHandleUUID:(id)arg3;
 - (id)initWithFileURL:(id)arg1;
+- (id)initWithFileURL:(id)arg1 signature:(id)arg2 assetHandleUUID:(id)arg3;
 - (id)inlineData;
 - (BOOL)isUploaded;
 - (id)owner;

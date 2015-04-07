@@ -25,10 +25,10 @@
 
 @property <NSKeyedUnarchiverDelegate> * delegate;
 
-+ (id)MSSafeUnarchiveObjectWithData:(id)arg1 outError:(id*)arg2;
 + (id)MSSafeUnarchiveObjectWithData:(id)arg1;
-+ (id)MSSafeUnarchiveObjectWithFile:(id)arg1 outError:(id*)arg2;
++ (id)MSSafeUnarchiveObjectWithData:(id)arg1 outError:(id*)arg2;
 + (id)MSSafeUnarchiveObjectWithFile:(id)arg1;
++ (id)MSSafeUnarchiveObjectWithFile:(id)arg1 outError:(id*)arg2;
 + (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
 + (id)_sp_secureUnarchiveObjectWithData:(id)arg1;
 + (Class)classForClassName:(id)arg1;
@@ -44,8 +44,8 @@
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
 + (id)unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
 + (id)unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
-+ (id)unarchiveObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1;
++ (id)unarchiveObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 + (id)unarchiveObjectWithFile:(id)arg1;
 
 - (id)_allowedClassNames;

@@ -12,7 +12,11 @@
     NSArray *_notificationNames;
     id _observer;
     PLOperator *_operator;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _operatorBlock;
+
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 

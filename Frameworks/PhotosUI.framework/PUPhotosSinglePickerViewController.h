@@ -10,7 +10,11 @@
 
 @interface PUPhotosSinglePickerViewController : PUPhotosGridViewController {
     UIBarButtonItem *_cancelButton;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     UIBarButtonItem *_doneButton;
 }
 

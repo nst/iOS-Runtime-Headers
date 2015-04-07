@@ -15,7 +15,11 @@
     BOOL _activityInProgress;
     BOOL _addedToTaskList;
     UIBarButtonItem *_cancelButton;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _confirmationViewCompletion;
+
     UIBarButtonItem *_doneButton;
     UIProgressHUD *_hud;
     NSTimer *_idleJiggleTimer;
@@ -86,8 +90,8 @@
 - (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 cancelButtonIndex:(int)arg5 context:(id)arg6 forceAlert:(BOOL)arg7 completion:(id)arg8;
 - (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 context:(id)arg5 completion:(id)arg6;
 - (id)specifiers;
-- (void)startValidationWithPrompt:(id)arg1 userInteraction:(BOOL)arg2;
 - (void)startValidationWithPrompt:(id)arg1;
+- (void)startValidationWithPrompt:(id)arg1 userInteraction:(BOOL)arg2;
 - (void)stopValidationWithPrompt:(id)arg1 showButtons:(BOOL)arg2;
 - (void)updateValidationPrompt:(id)arg1;
 - (BOOL)validationInProgress;

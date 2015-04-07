@@ -27,8 +27,8 @@
 - (void)dealloc;
 - (void)didCancel;
 - (BOOL)finishWithError:(id)arg1;
-- (BOOL)finishWithResult:(id)arg1 error:(id)arg2;
 - (BOOL)finishWithResult:(id)arg1;
+- (BOOL)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)init;
 - (BOOL)isCancelled;
 - (BOOL)isFinished;

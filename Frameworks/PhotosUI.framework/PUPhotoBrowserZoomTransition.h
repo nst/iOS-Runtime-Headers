@@ -14,7 +14,11 @@
     <PUPhotoBrowserZoomTransitionDelegate> *_delegate;
     BOOL _didFinish;
     UIImageView *_impostorImageView;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _individualAnimationCompletion;
+
     BOOL _shouldEnd;
     BOOL _useFallbackAnimation;
     id _userInteractionDisabledToken;

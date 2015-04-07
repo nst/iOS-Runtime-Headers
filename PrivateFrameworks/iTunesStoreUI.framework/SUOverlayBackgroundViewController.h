@@ -5,6 +5,12 @@
 @class <SUOverlayBackgroundDelegate>, NSArray, NSMutableArray, NSString, SUOverlayViewController, SUScalingFlipView, SUTouchCaptureView, UISwipeGestureRecognizer;
 
 @interface SUOverlayBackgroundViewController : SUViewController <SUScalingFlipViewDelegate, UIGestureRecognizerDelegate> {
+    NSMutableArray *_actionQueue;
+    SUScalingFlipView *_activeFlipView;
+    BOOL _askingToDismissEverything;
+    BOOL _askingToDismissSelection;
+    SUTouchCaptureView *_captureView;
+    <SUOverlayBackgroundDelegate> *_delegate;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,12 +20,6 @@
             float width; 
             float height; 
         } size; 
-    NSMutableArray *_actionQueue;
-    SUScalingFlipView *_activeFlipView;
-    BOOL _askingToDismissEverything;
-    BOOL _askingToDismissSelection;
-    SUTouchCaptureView *_captureView;
-    <SUOverlayBackgroundDelegate> *_delegate;
     } _keyboardFrame;
     int _selectedViewControllerIndex;
     UISwipeGestureRecognizer *_swipeGestureRecognizer;

@@ -10,7 +10,11 @@
 
 @interface SKStarRatingAlertViewDelegate : NSObject <UIAlertViewDelegate> {
     SKStarRatingAlertView *_alertView;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

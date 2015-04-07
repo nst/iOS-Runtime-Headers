@@ -8,15 +8,15 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     } _labelRange;
     unsigned int _matchType;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _valueRange;
     NSString *_valueString;
 }

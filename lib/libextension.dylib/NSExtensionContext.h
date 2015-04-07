@@ -8,7 +8,7 @@
 
 @class <_NSExtensionContextHosting>, <_NSExtensionContextVending>, NSArray, NSString, NSUUID, NSXPCConnection, NSXPCListener;
 
-@interface NSExtensionContext : NSObject <NSSecureCoding, NSCopying, NSXPCListenerDelegate, _NSExtensionAuxHostingBase> {
+@interface NSExtensionContext : NSObject <NSCopying, NSSecureCoding, NSXPCListenerDelegate, _NSExtensionAuxHostingBase> {
     NSUUID *__UUID;
     NSXPCConnection *__auxiliaryConnection;
     NSXPCListener *__auxiliaryListener;
@@ -16,7 +16,11 @@
     <_NSExtensionContextHosting> *__extensionHostProxy;
     <_NSExtensionContextVending> *__extensionVendorProxy;
     id __principalObject;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __requestCleanUpBlock;
+
     NSArray *_inputItems;
 }
 
@@ -76,9 +80,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithInputItems:(id)arg1;
 - (id)initWithInputItems:(id)arg1 contextUUID:(id)arg2;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
-- (id)initWithInputItems:(id)arg1;
 - (id)inputItems;
 - (void)invalidate;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

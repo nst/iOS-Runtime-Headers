@@ -8,11 +8,15 @@
 
 @class NSArray, NSDate, NSIndexSet, NSMutableIndexSet, NSOrderedSet, NSString, PLManagedAsset, PLPhotoLibrary;
 
-@interface PLAvalanche : NSObject <PLAssetContainer, PLAssetChangeObserver> {
+@interface PLAvalanche : NSObject <PLAssetChangeObserver, PLAssetContainer> {
     PLManagedAsset *__aNewPick;
     PLManagedAsset *__anOldPick;
     NSMutableIndexSet *__autoPickIndexes;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __completionHandler;
+
     NSIndexSet *__originalAutoPickIndexes;
     unsigned int __originalStackIndex;
     NSIndexSet *__originalUserFavoriteIndexes;

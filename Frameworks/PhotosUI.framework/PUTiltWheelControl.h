@@ -5,10 +5,10 @@
 @class NSString, PUSnappingController, PUTiltWheel, PUTiltWheelTriangleView;
 
 @interface PUTiltWheelControl : UIControl <PUTiltWheelDataSource> {
+    BOOL __needsDataReload;
     struct CGPoint { 
         float x; 
         float y; 
-    BOOL __needsDataReload;
     } __panPreviousPoint;
     PUSnappingController *__snappingController;
     PUTiltWheel *__tiltWheel;
@@ -60,8 +60,8 @@
 - (float)minTiltAngle;
 - (void)setMaxTiltAngle:(float)arg1;
 - (void)setMinTiltAngle:(float)arg1;
-- (void)setTiltAngle:(float)arg1 animated:(BOOL)arg2;
 - (void)setTiltAngle:(float)arg1;
+- (void)setTiltAngle:(float)arg1 animated:(BOOL)arg2;
 - (void)setWheelOrientation:(int)arg1;
 - (float)tiltAngle;
 - (unsigned int)tiltWheelMarkedIndicatorStep:(id)arg1;

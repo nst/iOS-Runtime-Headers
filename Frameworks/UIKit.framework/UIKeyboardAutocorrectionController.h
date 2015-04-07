@@ -28,8 +28,8 @@
 - (BOOL)requestedAutocorrection;
 - (void)setAutocorrectionList:(id)arg1;
 - (void)setDeferredAutocorrection:(BOOL)arg1;
-- (void)setNeedsAutocorrection:(BOOL)arg1;
 - (void)setNeedsAutocorrection;
+- (void)setNeedsAutocorrection:(BOOL)arg1;
 - (void)setRequestedAutocorrection:(BOOL)arg1;
 - (void)updateSuggestionViews;
 

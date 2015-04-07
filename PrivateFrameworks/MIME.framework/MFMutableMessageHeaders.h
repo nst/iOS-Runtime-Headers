@@ -11,8 +11,8 @@
 
 - (void)_appendAddedHeaderKey:(id)arg1 value:(id)arg2 toData:(id)arg3;
 - (void)_appendHeaderKey:(id)arg1 value:(id)arg2 toData:(id)arg3;
-- (id)_copyHeaderValueForKey:(id)arg1 offset:(unsigned int*)arg2 decoded:(BOOL)arg3;
 - (id)_copyHeaderValueForKey:(id)arg1;
+- (id)_copyHeaderValueForKey:(id)arg1 offset:(unsigned int*)arg2 decoded:(BOOL)arg3;
 - (id)_headerValueForKey:(id)arg1;
 - (id)allHeaderKeys;
 - (void)dealloc;

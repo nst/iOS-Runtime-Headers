@@ -8,7 +8,7 @@
 
 @class <PUPhotoBrowserControllerDelegate>, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, PHAsset, PHAssetCollection, PHCachingImageManager, PHFetchResult, PLCloudSharedComment, PLPhotoBrowserController, PLPhotoTileViewController, PLSlalomRegionEditor, PUAirplayRoute, PUAvalancheReviewController, PUPhotoBrowserControllerSpec, PUPhotoBrowserTitleView, PUPhotoPinchGestureRecognizer, PUPhotosSharingViewController, PUSlideshowSettings, PUVideoEditPluginSession, UIColor, UIImage, UIMovieScrubber, UIPopoverController, UIView, _UIContentUnavailableView, _UINavigationControllerPalette;
 
-@interface PUPhotoBrowserController : UIViewController <PLPhotoBrowserControllerDelegate, PUPhotosSharingViewControllerDelegate, PUPhotosSharingTransitionDelegate, PUPhotoEditViewControllerDelegate, UIGestureRecognizerDelegate, PUCollectionViewLayoutProvider, PUAvalancheReviewControllerDelegate, UIPopoverControllerDelegate, PUVideoEditPluginSessionDataSource, PUEditPluginSessionDelegate, PUPhotoLibraryUIChangeObserver, PLDismissableViewController, PHAssetCollectionDataSource> {
+@interface PUPhotoBrowserController : UIViewController <PHAssetCollectionDataSource, PLDismissableViewController, PLPhotoBrowserControllerDelegate, PUAvalancheReviewControllerDelegate, PUCollectionViewLayoutProvider, PUEditPluginSessionDelegate, PUPhotoEditViewControllerDelegate, PUPhotoLibraryUIChangeObserver, PUPhotosSharingTransitionDelegate, PUPhotosSharingViewControllerDelegate, PUVideoEditPluginSessionDataSource, UIGestureRecognizerDelegate, UIPopoverControllerDelegate> {
     _UIContentUnavailableView *__emptyPlaceholderView;
     id __lockScreenSharingObserver;
     unsigned int _allowedActions;
@@ -38,7 +38,11 @@
     BOOL _overlaysVisible;
     BOOL _photoBackgroundHidden;
     PUPhotoPinchGestureRecognizer *_photoPinchGestureRecognizer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _ppt_onDidEndPagingBlock;
+
     PUPhotosSharingViewController *_sharingViewController;
     BOOL _shouldShowOverlaysWhenViewAppears;
     PLSlalomRegionEditor *_slalomRegionEditor;
@@ -107,9 +111,9 @@
 - (BOOL)_dismissLegacyPopovers;
 - (void)_dismissSharingViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
 - (void)_dismissViewControllerInNavigationController:(id)arg1;
-- (void)_displayShareSheet:(id)arg1 completion:(id)arg2 isLockScreenCamera:(BOOL)arg3;
-- (void)_displayShareSheet:(id)arg1 completion:(id)arg2;
 - (void)_displayShareSheet:(id)arg1;
+- (void)_displayShareSheet:(id)arg1 completion:(id)arg2;
+- (void)_displayShareSheet:(id)arg1 completion:(id)arg2 isLockScreenCamera:(BOOL)arg3;
 - (void)_downloadCurrentItem:(id)arg1;
 - (int)_editActionTypeForCurrentAsset;
 - (id)_emptyPlaceholderView;
@@ -147,9 +151,9 @@
 - (void)_saveTrimmedVideo:(id)arg1;
 - (void)_setEmptyPlaceholderView:(id)arg1;
 - (void)_setLockScreenSharingObserver:(id)arg1;
-- (void)_setOverlaysVisible:(BOOL)arg1 animated:(BOOL)arg2 updateBarsVisibility:(BOOL)arg3;
-- (void)_setOverlaysVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setOverlaysVisible:(BOOL)arg1;
+- (void)_setOverlaysVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setOverlaysVisible:(BOOL)arg1 animated:(BOOL)arg2 updateBarsVisibility:(BOOL)arg3;
 - (void)_setOverlaysVisibleForModalTransition:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setupStandardNavigationItem:(id)arg1;
 - (void)_showAirplayPicker:(id)arg1;

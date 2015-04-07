@@ -5,9 +5,9 @@
 @class NSMutableArray;
 
 @interface RMSAudioRoutesDidUpdateMessage : PBCodable <NSCopying> {
+    NSMutableArray *_audioRoutes;
     struct { 
         unsigned int sessionIdentifier : 1; 
-    NSMutableArray *_audioRoutes;
     } _has;
     int _sessionIdentifier;
 }

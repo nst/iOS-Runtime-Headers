@@ -3,10 +3,10 @@
  */
 
 @interface TSDTilingTileLayer : TSDNoDefaultImplicitActionLayer {
+    unsigned int mIndex;
     struct { 
         unsigned int x; 
         unsigned int y; 
-    unsigned int mIndex;
     } mLocation;
     BOOL mNeedsTileDisplay;
 }

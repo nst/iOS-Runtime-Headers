@@ -23,11 +23,11 @@
 - (id)newestCreationDate;
 - (id)oldest;
 - (id)oldestCreationDate;
-- (void)setNewest:(id)arg1 creationDate:(id)arg2;
 - (void)setNewest:(id)arg1;
+- (void)setNewest:(id)arg1 creationDate:(id)arg2;
 - (void)setNewestCreationDate:(id)arg1;
-- (void)setOldest:(id)arg1 creationDate:(id)arg2;
 - (void)setOldest:(id)arg1;
+- (void)setOldest:(id)arg1 creationDate:(id)arg2;
 - (void)setOldestCreationDate:(id)arg1;
 
 @end

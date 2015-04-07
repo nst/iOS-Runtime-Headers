@@ -9,9 +9,21 @@
 @class NSString;
 
 @interface PUAlertView : UIAlertView <UIAlertViewDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shouldEnableFirstOtherButtonBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _willDismissHandler;
+
 }
 
 @property(copy) id completionHandler;

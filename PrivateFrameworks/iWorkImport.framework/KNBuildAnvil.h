@@ -4,7 +4,7 @@
 
 @class NSString, TSDGLDataBuffer, TSDGLParticleSystem, TSDGLShader, TSDGLTextureInfo;
 
-@interface KNBuildAnvil : KNAnimationEffect <KNFrameBuildAnimator, KNAnimationPluginArchiving> {
+@interface KNBuildAnvil : KNAnimationEffect <KNAnimationPluginArchiving, KNFrameBuildAnimator> {
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -22,27 +22,27 @@
         float m42; 
         float m43; 
         float m44; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     } _baseTransform;
     struct CGPoint { float x1; float x2; } *_cameraShakePoints;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _drawableFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _frameRect;
     TSDGLDataBuffer *_objectBlurDataBuffer;
     TSDGLShader *_objectBlurShader;

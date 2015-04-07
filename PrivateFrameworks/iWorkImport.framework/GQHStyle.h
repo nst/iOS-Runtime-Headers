@@ -27,9 +27,9 @@
 - (BOOL)getAttribute:(struct __CFString { }*)arg1 trblValue:(id*)arg2;
 - (BOOL)getAttribute:(struct __CFString { }*)arg1 value:(const struct __CFString {}**)arg2;
 - (id)init;
+- (void)setStyleOnCurrentNode:(id)arg1;
 - (void)setStyleOnCurrentNode:(id)arg1 mappingBaseStyleClass:(id)arg2 baseClassType:(Class)arg3;
 - (void)setStyleOnCurrentNode:(id)arg1 mappingBaseStyleClasses:(struct __CFArray { }*)arg2 baseClassTypes:(struct __CFArray { }*)arg3;
-- (void)setStyleOnCurrentNode:(id)arg1;
 - (void)setupCssClassAttribute:(id)arg1;
 
 @end

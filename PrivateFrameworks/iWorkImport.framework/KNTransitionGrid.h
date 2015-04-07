@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface KNTransitionGrid : KNAnimationEffect <KNTransitionAnimator, KNAnimationPluginArchiving> {
+@interface KNTransitionGrid : KNAnimationEffect <KNAnimationPluginArchiving, KNTransitionAnimator> {
 }
 
 @property(copy,readonly) NSString * debugDescription;

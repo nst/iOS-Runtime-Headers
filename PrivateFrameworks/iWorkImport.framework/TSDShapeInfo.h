@@ -9,7 +9,7 @@
 
 @class NSString, TSDFill, TSDLineEnd, TSDPathSource, TSDShapeStyle;
 
-@interface TSDShapeInfo : TSDStyledInfo <TSSThemedObject, TSDMixing, TSDReducableInfo, TSKSearchable> {
+@interface TSDShapeInfo : TSDStyledInfo <TSDMixing, TSDReducableInfo, TSKSearchable, TSSThemedObject> {
     TSDLineEnd *mHeadLineEnd;
     TSDPathSource *mPathSource;
     TSDShapeStyle *mStyle;
@@ -40,9 +40,9 @@
 - (id)headLineEnd;
 - (id)imageDatasForReducingFileSizeWithAssociatedHints;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct ShapeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct Reference {} *x4; struct PathSourceArchive {} *x5; struct LineEndArchive {} *x6; struct LineEndArchive {} *x7; int x8; unsigned int x9[1]; }*)arg1 unarchiver:(id)arg2;

@@ -13,8 +13,8 @@
 - (void).cxx_destruct;
 - (BOOL)_isLocalSource;
 - (BOOL)_requiresHostAndOwner;
-- (BOOL)_supportsConsistentExternalIDAcrossDevices:(int)arg1;
 - (BOOL)_supportsConsistentExternalIDAcrossDevices;
+- (BOOL)_supportsConsistentExternalIDAcrossDevices:(int)arg1;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithSource:(id)arg1 type:(unsigned int)arg2;

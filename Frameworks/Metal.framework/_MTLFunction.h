@@ -10,17 +10,9 @@
 @class <MTLDevice>, NSArray, NSString;
 
 @interface _MTLFunction : NSObject <MTLFunctionSPI> {
-    struct MTLFunctionOffsets { 
-        unsigned long long publicArguments; 
-        unsigned long long privateArguments; 
-    struct MTLFunctionVersions { 
-        unsigned short airMajorVersion; 
-        unsigned short airMinorVersion; 
-        unsigned short languageMajorVersion; 
-        unsigned short languageMinorVersion; 
+    int _bitCodeOffset;
     struct { 
         unsigned char key[32]; 
-    int _bitCodeOffset;
     } _bitcodeHash;
     <MTLDevice> *_device;
     NSString *_filePath;
@@ -28,9 +20,17 @@
     struct MTLLibraryData { int (**x1)(); int x2; id x3; } *_libraryData;
     int _lineNumber;
     NSString *_name;
+    struct MTLFunctionOffsets { 
+        unsigned long long publicArguments; 
+        unsigned long long privateArguments; 
     } _offsets;
     unsigned char _privateMetadataInitialized;
     id _vendorPrivate;
+    struct MTLFunctionVersions { 
+        unsigned short airMajorVersion; 
+        unsigned short airMinorVersion; 
+        unsigned short languageMajorVersion; 
+        unsigned short languageMinorVersion; 
     } _versions;
     NSArray *_vertexAttributes;
     unsigned char _vertexAttributesInitialized;
@@ -52,7 +52,6 @@
 @property(readonly) id vendorPrivate;
 @property(readonly) NSArray * vertexAttributes;
 
-- (struct MTLLibraryData { int (**x1)(); int x2; id x3; }*)libraryData;
 - (id).cxx_construct;
 - (int)bitCodeOffset;
 - (struct { unsigned char x1[32]; })bitcodeHash;
@@ -64,6 +63,7 @@
 - (const struct MTLFunctionVersions { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; }*)functionVersions;
 - (id)initWithName:(id)arg1 bitcodeHash:(const struct { unsigned char x1[32]; }*)arg2 type:(unsigned int)arg3 libraryData:(struct MTLLibraryData { int (**x1)(); int x2; id x3; }*)arg4 offsets:(struct MTLFunctionOffsets { unsigned long long x1; unsigned long long x2; }*)arg5 versions:(struct MTLFunctionVersions { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; }*)arg6 device:(id)arg7;
 - (void)initializePrivateMetadata;
+- (struct MTLLibraryData { int (**x1)(); int x2; id x3; }*)libraryData;
 - (int)lineNumber;
 - (id)name;
 - (void)setBitCodeOffset:(int)arg1;

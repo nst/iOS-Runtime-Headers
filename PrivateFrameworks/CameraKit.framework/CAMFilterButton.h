@@ -5,12 +5,12 @@
 @class UIImageView;
 
 @interface CAMFilterButton : UIButton {
+    UIImageView *__circlesImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIImageView *__circlesImageView;
     } _tappableEdgeInsets;
 }
 

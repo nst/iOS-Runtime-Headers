@@ -5,15 +5,15 @@
 @class UIColor;
 
 @interface SKUIIndexBarEntry : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
     } _contentEdgeInsets;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _contentSize;
     int _entryType;
     BOOL _hasValidContentSize;

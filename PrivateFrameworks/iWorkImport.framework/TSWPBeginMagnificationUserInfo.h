@@ -5,14 +5,14 @@
 @class TSWPRep;
 
 @interface TSWPBeginMagnificationUserInfo : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     BOOL _animated;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _magnificationPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _offset;
     TSWPRep *_target;
 }

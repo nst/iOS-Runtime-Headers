@@ -4,7 +4,7 @@
 
 @class <SKUISearchChildViewControllerDelegate>, NSArray, NSDictionary, NSMutableDictionary, NSString, SKUIClientContext, SKUIIPadSearchHeaderView, SKUIItemCollectionController, SKUIMetricsController, SKUISearchPage, SKUISearchRelatedView, SKUISearchResultGroupController, UICollectionView;
 
-@interface SKUIIPadSearchViewController : UIViewController <SKUIIPadSearchHeaderViewDelegate, SKUIItemCollectionDelegate, SKUIMetricsViewController, UICollectionViewDataSource, UICollectionViewDelegate, SKUISearchRelatedViewDelegate, SKUISearchResultGroupControllerDelegate, UIViewControllerRestoration> {
+@interface SKUIIPadSearchViewController : UIViewController <SKUIIPadSearchHeaderViewDelegate, SKUIItemCollectionDelegate, SKUIMetricsViewController, SKUISearchRelatedViewDelegate, SKUISearchResultGroupControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerRestoration> {
     SKUIClientContext *_clientContext;
     UICollectionView *_collectionView;
     <SKUISearchChildViewControllerDelegate> *_delegate;

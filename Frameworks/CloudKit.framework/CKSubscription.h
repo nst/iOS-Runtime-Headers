@@ -4,7 +4,7 @@
 
 @class CKNotificationInfo, CKRecordZoneID, NSPredicate, NSString;
 
-@interface CKSubscription : NSObject <NSSecureCoding, NSCopying> {
+@interface CKSubscription : NSObject <NSCopying, NSSecureCoding> {
     CKNotificationInfo *_notificationInfo;
     NSPredicate *_predicate;
     NSString *_recordType;

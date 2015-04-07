@@ -5,12 +5,12 @@
 @class NSArray, NSMutableArray;
 
 @interface AVCaptureMovieFileOutputInternal_FigRecorder : NSObject {
+    NSArray *metadata;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    NSArray *metadata;
     } movieFragmentInterval;
     NSMutableArray *recordingDelegatesArray;
     BOOL sendLastVideoPreviewFrame;

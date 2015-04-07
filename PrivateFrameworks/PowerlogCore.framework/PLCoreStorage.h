@@ -55,10 +55,10 @@
 - (id)dailyTaskTimer;
 - (void)dailyTasks;
 - (void)dealloc;
-- (void)deleteAllEntriesForKey:(id)arg1 beforeTimestamp:(id)arg2 withFilters:(id)arg3;
-- (void)deleteAllEntriesForKey:(id)arg1 beforeTimestamp:(id)arg2;
-- (void)deleteAllEntriesForKey:(id)arg1 withFilters:(id)arg2;
 - (void)deleteAllEntriesForKey:(id)arg1;
+- (void)deleteAllEntriesForKey:(id)arg1 beforeTimestamp:(id)arg2;
+- (void)deleteAllEntriesForKey:(id)arg1 beforeTimestamp:(id)arg2 withFilters:(id)arg3;
+- (void)deleteAllEntriesForKey:(id)arg1 withFilters:(id)arg2;
 - (void)deleteAllLinksInCRFolder;
 - (void)deleteEntry:(id)arg1;
 - (void)deleteEntryForKey:(id)arg1 WithRowID:(long long)arg2;
@@ -81,8 +81,8 @@
 - (id)keybagFirstUnlockNotification;
 - (id)lastEntriesForKey:(id)arg1 count:(long long)arg2 withFilters:(id)arg3;
 - (id)lastEntryCache;
-- (id)lastEntryForKey:(id)arg1 withFilters:(id)arg2;
 - (id)lastEntryForKey:(id)arg1;
+- (id)lastEntryForKey:(id)arg1 withFilters:(id)arg2;
 - (void)linkMainDBToCRFolderWithUUID:(id)arg1;
 - (void)loadDynamicValuesIntoEntry:(id)arg1;
 - (void)loadLookupTableValuesIntoEntry:(id)arg1;

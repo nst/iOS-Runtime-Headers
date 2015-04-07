@@ -5,8 +5,8 @@
 @interface TSCHStyleBootstrapping : NSObject <TSSPresetSource> {
 }
 
-+ (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3 reservedCount:(unsigned int)arg4;
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
++ (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3 reservedCount:(unsigned int)arg4;
 + (void)bootstrapStylesInStylesheet:(id)arg1 numberOfPresets:(unsigned int)arg2;
 + (id)p_bootstrappedStylePresetInContext:(id)arg1 stylesheet:(id)arg2 presetIndex:(unsigned int)arg3;
 + (id)p_defaultParagraphStyleOfClass:(Class)arg1 stylesheet:(id)arg2 identifier:(id)arg3;

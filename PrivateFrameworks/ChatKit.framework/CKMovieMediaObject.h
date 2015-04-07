@@ -5,12 +5,12 @@
 @class AVURLAsset;
 
 @interface CKMovieMediaObject : CKAVMediaObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     AVURLAsset *_asset;
     BOOL _checkedVideoInfo;
     BOOL _hasVideoTrack;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _pxSize;
 }
 

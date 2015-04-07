@@ -50,9 +50,9 @@
 - (id)_cachedTonePreferences;
 - (id)_copyITunesRingtonesFromManifestPath:(id)arg1 mediaDirectoryPath:(id)arg2;
 - (id)_currentToneIdentifierForAlertType:(int)arg1 accountIdentifier:(id)arg2;
-- (int)_currentToneWatchAlertPolicyForAlertType:(int)arg1 accountIdentifier:(id)arg2 didFindPersistedWatchAlertPolicy:(BOOL*)arg3;
-- (int)_currentToneWatchAlertPolicyForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (int)_currentToneWatchAlertPolicyForAlertType:(int)arg1;
+- (int)_currentToneWatchAlertPolicyForAlertType:(int)arg1 accountIdentifier:(id)arg2;
+- (int)_currentToneWatchAlertPolicyForAlertType:(int)arg1 accountIdentifier:(id)arg2 didFindPersistedWatchAlertPolicy:(BOOL*)arg3;
 - (id)_currentToneWatchAlertPolicyPreferenceKeyForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (id)_defaultRingtoneName;
 - (id)_defaultRingtonePath;
@@ -101,8 +101,8 @@
 - (void)_setAccessQueue:(id)arg1;
 - (void)_setAlertTonesByIdentifier:(id)arg1;
 - (void)_setCachedTonePreferences:(id)arg1;
-- (void)_setCurrentToneWatchAlertPolicy:(int)arg1 forAlertType:(int)arg2 accountIdentifier:(id)arg3;
 - (void)_setCurrentToneWatchAlertPolicy:(int)arg1 forAlertType:(int)arg2;
+- (void)_setCurrentToneWatchAlertPolicy:(int)arg1 forAlertType:(int)arg2 accountIdentifier:(id)arg3;
 - (void)_setITunesToneIdentifiersByPID:(id)arg1;
 - (void)_setITunesTonesByIdentifier:(id)arg1;
 - (void)_setPreviewBehaviorsByDefaultIdentifier:(id)arg1;
@@ -119,8 +119,8 @@
 - (id)_systemRingtoneDirectory;
 - (id)_systemSoundDirectory;
 - (id)_toneIdentifierAliasMap;
-- (id)_toneIdentifierForFileAtPath:(id)arg1 isValid:(BOOL*)arg2;
 - (id)_toneIdentifierForFileAtPath:(id)arg1;
+- (id)_toneIdentifierForFileAtPath:(id)arg1 isValid:(BOOL*)arg2;
 - (BOOL)_toneIsSettableForAlertType:(int)arg1;
 - (id)_tonePreferencesFromService;
 - (BOOL)_toneWithIdentifierIsDefaultRingtone:(id)arg1;
@@ -132,11 +132,11 @@
 - (id)_transientNanoPreferencesDomainAccessor;
 - (BOOL)_wasAffectedByAccidentalToneDeletion;
 - (BOOL)_watchPrefersSalientNotifications;
-- (id)currentToneIdentifierForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (id)currentToneIdentifierForAlertType:(int)arg1;
+- (id)currentToneIdentifierForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (id)currentToneNameForAlertType:(int)arg1;
-- (unsigned long)currentToneSoundIDForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (unsigned long)currentToneSoundIDForAlertType:(int)arg1;
+- (unsigned long)currentToneSoundIDForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)defaultRingtoneIdentifier;
 - (id)defaultToneIdentifierForAlertType:(int)arg1;
@@ -147,8 +147,8 @@
 - (id)nameForToneIdentifier:(id)arg1;
 - (id)newAVItemForToneIdentifier:(id)arg1;
 - (void)removeImportedToneWithIdentifier:(id)arg1;
-- (void)setCurrentToneIdentifier:(id)arg1 forAlertType:(int)arg2 accountIdentifier:(id)arg3;
 - (void)setCurrentToneIdentifier:(id)arg1 forAlertType:(int)arg2;
+- (void)setCurrentToneIdentifier:(id)arg1 forAlertType:(int)arg2 accountIdentifier:(id)arg3;
 - (unsigned long)soundIDForToneIdentifier:(id)arg1;
 - (BOOL)toneWithIdentifierIsValid:(id)arg1;
 

@@ -9,6 +9,59 @@
 @class IMAccount, IMServiceImpl, NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString, NSTimer;
 
 @interface CNFRegController : NSObject <IMSystemMonitorListener> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _accountActivationChangedBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _accountAddedBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _accountAuthorizationChangedBlock;
+
+    NSMutableDictionary *_accountFilterCache;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _accountRegistrationBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _accountRemovedBlock;
+
+    NSArray *_accounts;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _alertHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _aliasAddedBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _aliasRemovedBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _aliasStatusChangedBlock;
+
+    NSDictionary *_cachedCallerIDMap;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _callerIdChangedBlock;
+
     struct { 
         unsigned int listeningForAccountChanges : 1; 
         unsigned int listeningForCallerIDChanges : 1; 
@@ -18,37 +71,48 @@
         unsigned int showedWifiFirstRunAlert : 1; 
         unsigned int ignoringAccountChanges : 1; 
         unsigned int activatingAccounts : 1; 
-    id _accountActivationChangedBlock;
-    id _accountAddedBlock;
-    id _accountAuthorizationChangedBlock;
-    NSMutableDictionary *_accountFilterCache;
-    id _accountRegistrationBlock;
-    id _accountRemovedBlock;
-    NSArray *_accounts;
-    id _alertHandler;
-    id _aliasAddedBlock;
-    id _aliasRemovedBlock;
-    id _aliasStatusChangedBlock;
-    NSDictionary *_cachedCallerIDMap;
-    id _callerIdChangedBlock;
     } _controllerFlags;
     unsigned int _logIndent;
     NSString *_logName;
     unsigned char _originalCellFlag;
     BOOL _originalUsesBackgroundNetwork;
     unsigned char _originalWifiFlag;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _profileChangedBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _profileStatusChangedBlock;
+
     int _requiredWifiCount;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resetBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _serviceDidBecomeUnsupportedBlock;
+
     int _serviceType;
     NSArray *_services;
     IMAccount *_systemAccount;
     int _systemAccountType;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _vettedAliasesChangedBlock;
+
     NSTimer *_wifiAlertWatchTimer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _willLaunchURLBlock;
+
 }
 
 @property(copy) id accountActivationChangedBlock;
@@ -145,18 +209,18 @@
 - (void)accountRegistrationChanged:(id)arg1;
 - (void)accountRemoved:(id)arg1;
 - (id)accountRemovedBlock;
-- (unsigned int)accountState:(id)arg1;
 - (unsigned int)accountState;
+- (unsigned int)accountState:(id)arg1;
 - (unsigned int)accountStateForAccount:(id)arg1;
 - (id)accountWithLogin:(id)arg1;
 - (id)accounts;
-- (id)accountsWithFilter:(int)arg1 message:(id)arg2;
 - (id)accountsWithFilter:(int)arg1;
+- (id)accountsWithFilter:(int)arg1 message:(id)arg2;
 - (void)activateAccounts;
 - (void)activateAccountsExcludingAccounts:(id)arg1;
 - (id)activeAccounts;
-- (BOOL)addAlias:(id)arg1 toAccount:(id)arg2;
 - (BOOL)addAlias:(id)arg1;
+- (BOOL)addAlias:(id)arg1 toAccount:(id)arg2;
 - (id)alertHandler;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)aliasAddedBlock;
@@ -181,8 +245,8 @@
 - (BOOL)canRemoveAlias:(id)arg1;
 - (BOOL)cellularDataEnabled;
 - (void)clearAllCaches;
-- (void)connect:(BOOL)arg1;
 - (void)connect;
+- (void)connect:(BOOL)arg1;
 - (void)deactivateAccounts;
 - (void)dealloc;
 - (BOOL)deviceCanTakeNetworkAction;

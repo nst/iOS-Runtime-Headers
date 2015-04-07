@@ -5,10 +5,10 @@
 @class GEOMapAccess, GEOMapTileFinder, GEOVectorTile, NSMutableArray;
 
 @interface GEOMapEdgeConnectionFinder : GEOMapRequest {
+    NSMutableArray *_builders;
     struct { 
         double latitude; 
         double longitude; 
-    NSMutableArray *_builders;
     } _coordinate;
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; } *_junction;
     GEOMapAccess *_map;

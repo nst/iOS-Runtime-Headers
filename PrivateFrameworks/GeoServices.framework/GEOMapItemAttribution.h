@@ -19,9 +19,9 @@
 - (id)attributionApps;
 - (id)attributionURLs;
 - (void)dealloc;
+- (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 poiID:(id)arg3;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 yelpID:(id)arg3;
-- (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2;
 - (id)providerLogoPathForScale:(float)arg1;
 - (id)providerName;
 - (id)providerSnippetLogoPathForScale:(float)arg1;

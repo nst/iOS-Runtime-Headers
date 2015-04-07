@@ -3,17 +3,17 @@
  */
 
 @interface GEOLocationShiftFunctionResponse : NSObject {
-    struct { 
-        double latitude; 
-        double longitude; 
-    struct { 
-        double latitude; 
-        double longitude; 
     double _creationTime;
     BOOL _isPolyLocationShift;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _originalCoordinate;
     double _params[9];
     double _radius;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _shiftedCoordinate;
     BOOL _shouldUsePolyShiftFunction;
 }

@@ -15,9 +15,9 @@
 @property AssistantUIViewController * parentController;
 
 + (id)containerViewWithWidth:(float)arg1;
++ (id)labelViewInContainer:(id*)arg1 width:(float)arg2;
 + (id)labelViewInContainer:(id*)arg1 width:(float)arg2 constrain:(BOOL)arg3;
 + (id)labelViewInContainer:(id*)arg1 width:(float)arg2 withSpinner:(id*)arg3 above:(BOOL)arg4;
-+ (id)labelViewInContainer:(id*)arg1 width:(float)arg2;
 + (id)tableViewWithWidth:(float)arg1 height:(float)arg2;
 + (id)topoViewWithWidth:(float)arg1;
 

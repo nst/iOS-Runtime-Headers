@@ -11,7 +11,11 @@
 @interface _MFMessageCollector : NSObject <MessageConsumer, QueryProgressMonitor> {
     NSMutableArray *_messages;
     MFActivityMonitor *_monitor;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _transmogrifier;
+
 }
 
 @property(copy) id transmogrifier;

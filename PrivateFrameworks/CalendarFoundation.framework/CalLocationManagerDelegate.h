@@ -9,7 +9,11 @@
 @class CLLocation, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface CalLocationManagerDelegate : NSObject <CLLocationManagerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     CLLocation *_currentLocation;
     BOOL _didFinish;
     NSObject<OS_dispatch_queue> *_queue;

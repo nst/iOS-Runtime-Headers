@@ -13,7 +13,11 @@
     BOOL _backFaceIsTall;
     PKPassColorProfile *_colorProfile;
     int _contentMode;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _delayedContentModeCanceller;
+
     <WLCardViewDelegate> *_delegate;
     float _flipLayoutOvershoot;
     float _flipOvershoot;
@@ -59,8 +63,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfVisibleFace;
 - (BOOL)frontFaceBodyContentCreated;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithPass:(id)arg1 content:(int)arg2;
 - (id)initWithPass:(id)arg1;
+- (id)initWithPass:(id)arg1 content:(int)arg2;
 - (BOOL)isFrontmostPassView;
 - (id)item;
 - (void)layoutSubviews;
@@ -73,9 +77,9 @@
 - (void)presentDiff:(id)arg1 completion:(id)arg2;
 - (void)registerForEnterBackgroundNotification;
 - (void)setBackFaceIsTall:(BOOL)arg1;
-- (void)setContentMode:(int)arg1 animated:(BOOL)arg2 withDelay:(double)arg3;
-- (void)setContentMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setContentMode:(int)arg1;
+- (void)setContentMode:(int)arg1 animated:(BOOL)arg2;
+- (void)setContentMode:(int)arg1 animated:(BOOL)arg2 withDelay:(double)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setDimmer:(float)arg1 animated:(BOOL)arg2;
 - (void)setIsFrontmostPassView:(BOOL)arg1;

@@ -32,8 +32,8 @@
 - (id)customPath;
 - (void)dealloc;
 - (id)fillColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 active:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 active:(BOOL)arg2;
 - (float)lineWidth;
 - (float)outlineAlpha;
 - (void)setActive:(BOOL)arg1;
@@ -42,8 +42,8 @@
 - (void)setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFillColor:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setLineWidth:(float)arg1 updatePath:(BOOL)arg2;
 - (void)setLineWidth:(float)arg1;
+- (void)setLineWidth:(float)arg1 updatePath:(BOOL)arg2;
 - (void)setOutlineAlpha:(float)arg1;
 - (void)setStrokeColor:(id)arg1;
 - (id)strokeColor;

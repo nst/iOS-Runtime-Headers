@@ -3,10 +3,10 @@
  */
 
 @interface TKVibrationRecorderRippleRingLayer : CAShapeLayer {
+    double _creationTimestamp;
     struct CGPoint { 
         float x; 
         float y; 
-    double _creationTimestamp;
     } _normalizedRingLocation;
     float _ringSpeed;
 }

@@ -5,6 +5,9 @@
 @class NSData;
 
 @interface AWDNFCTSMEndEvent : PBCodable <NSCopying> {
+    NSData *_aid;
+    BOOL _authEnable;
+    NSData *_discretionaryData;
     struct { 
         unsigned int timeDeltaFromReference : 1; 
         unsigned int timestamp : 1; 
@@ -13,9 +16,6 @@
         unsigned int authEnable : 1; 
         unsigned int mfdEnable : 1; 
         unsigned int restricted : 1; 
-    NSData *_aid;
-    BOOL _authEnable;
-    NSData *_discretionaryData;
     } _has;
     unsigned int _lcState;
     BOOL _mfdEnable;

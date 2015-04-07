@@ -5,13 +5,13 @@
 @class NSMutableArray, NSString;
 
 @interface SPSearchResultSection : PBCodable <NSCopying> {
-    struct { 
-        unsigned int domain : 1; 
-        unsigned int flags : 1; 
     NSString *_category;
     NSString *_displayIdentifier;
     unsigned int _domain;
     int _flags;
+    struct { 
+        unsigned int domain : 1; 
+        unsigned int flags : 1; 
     } _has;
     NSString *_icon;
     NSMutableArray *_results;

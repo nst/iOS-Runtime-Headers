@@ -31,8 +31,8 @@
 - (id)route;
 - (void)setDebugCell:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMirroringSwitchVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setMirroringSwitchVisible:(BOOL)arg1;
+- (void)setMirroringSwitchVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setRoute:(id)arg1;
 - (void)setTintColor:(id)arg1;
 

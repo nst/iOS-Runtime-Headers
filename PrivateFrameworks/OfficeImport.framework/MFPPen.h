@@ -5,13 +5,6 @@
 @class MFPBrush, MFPCustomLineCap;
 
 @interface MFPPen : NSObject {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
     int mAlignment;
     MFPBrush *mBrush;
     float *mCompoundArray;
@@ -27,6 +20,13 @@
     int mLineJoin;
     float mMiterLimit;
     int mStartCap;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } mTransform;
     float mWidth;
 }
@@ -59,8 +59,8 @@
 - (void)setCustomStartCap:(id)arg1;
 - (void)setDashCap:(int)arg1;
 - (void)setDashOffset:(float)arg1;
-- (void)setDashPattern:(const float*)arg1 count:(int)arg2 toPath:(id)arg3;
 - (void)setDashPattern:(const float*)arg1 count:(int)arg2;
+- (void)setDashPattern:(const float*)arg1 count:(int)arg2 toPath:(id)arg3;
 - (void)setDashStyle:(int)arg1;
 - (void)setEndCap:(int)arg1;
 - (void)setLineJoin:(int)arg1;

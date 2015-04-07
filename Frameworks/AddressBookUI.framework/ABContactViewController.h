@@ -4,7 +4,7 @@
 
 @class <ABContactViewControllerDelegate>, <ABPresenterDelegate>, ABCardFaceTimeGroup, ABCardGroup, ABCardLinkedCardsGroup, ABContactAction, ABContactAddFavoriteAction, ABContactAddLinkedCardAction, ABContactAddNewFieldAction, ABContactAddToExistingContactAction, ABContactCreateNewContactAction, ABContactHeaderDisplayView, ABContactHeaderEditView, ABContactHeaderView, ABContactToggleBlockCallerAction, ABContactView, ABMedicalIDAction, ABPropertyAction, ABPropertyFaceTimeAction, ABPropertyIDSRequest, ABPropertyLinkedCardsAction, ABSiriContactContextProvider, CNContact, CNContactStyle, HKHealthStore, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, UIView;
 
-@interface ABContactViewController : UITableViewController <ABPropertyActionDelegate, ABPropertyCellDelegate, ABContactGroupPickerDelegate, ABPresenterDelegate, UIPopoverControllerDelegate, ABContactAddLinkedCardActionDelegate, ABContactHeaderViewDelegate, ABContactViewControllerDelegate, UIAdaptivePresentationControllerDelegate, ABContactViewDataSource, ABContactViewDelegate, UIViewControllerRestoration> {
+@interface ABContactViewController : UITableViewController <ABContactAddLinkedCardActionDelegate, ABContactGroupPickerDelegate, ABContactHeaderViewDelegate, ABContactViewControllerDelegate, ABContactViewDataSource, ABContactViewDelegate, ABPresenterDelegate, ABPropertyActionDelegate, ABPropertyCellDelegate, UIAdaptivePresentationControllerDelegate, UIPopoverControllerDelegate, UIViewControllerRestoration> {
     ABContactAddFavoriteAction *_addFavoriteAction;
     ABContactAddLinkedCardAction *_addLinkedCardAction;
     ABContactAddNewFieldAction *_addNewFieldAction;
@@ -217,8 +217,8 @@
 - (void)actionDidUpdate:(id)arg1;
 - (void)actionWasCanceled:(id)arg1;
 - (int)adaptivePresentationStyleForPresentationController:(id)arg1;
-- (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 inGroup:(id)arg4 destructive:(BOOL)arg5;
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 inGroup:(id)arg4;
+- (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 inGroup:(id)arg4 destructive:(BOOL)arg5;
 - (void)addCardGroup:(id)arg1 afterGroup:(id)arg2;
 - (void)addEditingItemAtIndexPath:(id)arg1;
 - (id)addFavoriteAction;
@@ -266,11 +266,11 @@
 - (void)contactGroupPickerDidFinish:(id)arg1 withGroup:(id)arg2;
 - (id)contactHeaderView;
 - (id)contactStyle;
+- (id)contactView;
 - (id)contactView:(id)arg1 cellForItemAtIndex:(int)arg2 inGroup:(id)arg3;
 - (void)contactView:(id)arg1 didSelectItemAtIndex:(int)arg2 inGroup:(id)arg3;
 - (float)contactView:(id)arg1 heightForItemAtIndex:(int)arg2 inGroup:(id)arg3;
 - (int)contactView:(id)arg1 numberOfItemsInGroup:(id)arg2;
-- (id)contactView;
 - (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
 - (id)contentScrollView;
 - (void)contentSizeCategoryDidChange:(id)arg1;
@@ -413,6 +413,7 @@
 - (BOOL)shouldAllowSelectingContact:(id)arg1;
 - (BOOL)shouldShowLinkedContacts;
 - (id)siriContextProvider;
+- (id)tableView;
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (BOOL)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -433,7 +434,6 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
-- (id)tableView;
 - (void)toggleEditing:(id)arg1;
 - (struct { id x1; id x2; id x3; id x4; })transitionToEditing:(BOOL)arg1;
 - (void)updateContactsViewWithBlock:(id)arg1 completion:(id)arg2;

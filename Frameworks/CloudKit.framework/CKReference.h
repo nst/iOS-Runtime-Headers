@@ -4,7 +4,7 @@
 
 @class CKRecordID, NSString;
 
-@interface CKReference : NSObject <CKRecordValue, NSSecureCoding, NSCopying> {
+@interface CKReference : NSObject <CKRecordValue, NSCopying, NSSecureCoding> {
     CKRecordID *_recordID;
     unsigned int _referenceAction;
 }

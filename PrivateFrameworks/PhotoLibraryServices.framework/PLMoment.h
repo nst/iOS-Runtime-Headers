@@ -42,9 +42,9 @@
 @property(retain) NSDate * startDate;
 @property(readonly) Class superclass;
 @property(retain) PLManagedAsset * tertiaryKeyAsset;
+@property(retain) NSString * title;
 @property(retain) NSString * title2;
 @property(retain) NSString * title3;
-@property(retain) NSString * title;
 @property(retain,readonly) NSObject<NSCopying> * uniqueObjectID;
 @property(retain) NSArray * userTitles;
 @property(retain) NSString * uuid;

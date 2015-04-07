@@ -12,7 +12,11 @@
     NSMutableArray *_auditHistory;
     BOOL _buildAuditHistory;
     NSMutableArray *_childTransactions;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     <BSLogging> *_debugLogger;
     BOOL _failed;
     NSString *_failureReason;
@@ -78,8 +82,8 @@
 - (void)_removeChildTransaction:(id)arg1;
 - (void)_removeLifeAssertion:(id)arg1;
 - (BOOL)_removeMilestones:(id)arg1 ignoringAuditHistory:(BOOL)arg2;
-- (void)_setParentTransaction:(id)arg1 assertIfNecessary:(BOOL)arg2;
 - (void)_setParentTransaction:(id)arg1;
+- (void)_setParentTransaction:(id)arg1 assertIfNecessary:(BOOL)arg2;
 - (void)_setState:(unsigned int)arg1;
 - (BOOL)_shouldComplete;
 - (unsigned int)_state;

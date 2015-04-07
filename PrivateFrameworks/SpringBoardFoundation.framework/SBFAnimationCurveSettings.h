@@ -6,10 +6,10 @@
     struct CGPoint { 
         float x; 
         float y; 
+    } _controlPoint1;
     struct CGPoint { 
         float x; 
         float y; 
-    } _controlPoint1;
     } _controlPoint2;
     unsigned int _curve;
 }

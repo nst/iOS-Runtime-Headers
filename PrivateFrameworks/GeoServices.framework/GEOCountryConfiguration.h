@@ -37,10 +37,10 @@
 - (void)_notifyUpdateCompletionHandlers:(BOOL)arg1;
 - (void)_reachabilityChanged:(id)arg1;
 - (void)_resetSupportedFeatures;
-- (BOOL)countryCode:(id)arg1 supportsFeature:(int)arg2;
 - (id)countryCode;
-- (id)countryDefaultForKey:(id)arg1 sourcePtr:(int*)arg2;
+- (BOOL)countryCode:(id)arg1 supportsFeature:(int)arg2;
 - (id)countryDefaultForKey:(id)arg1;
+- (id)countryDefaultForKey:(id)arg1 sourcePtr:(int*)arg2;
 - (BOOL)currentCountrySupportsCarIntegration;
 - (BOOL)currentCountrySupportsDirections;
 - (BOOL)currentCountrySupportsFeature:(int)arg1;
@@ -48,8 +48,8 @@
 - (BOOL)currentCountrySupportsRouteGenius;
 - (BOOL)currentCountrySupportsTraffic;
 - (void)dealloc;
-- (id)defaultForKey:(id)arg1 defaultValue:(id)arg2 sourcePtr:(int*)arg3;
 - (id)defaultForKey:(id)arg1 defaultValue:(id)arg2;
+- (id)defaultForKey:(id)arg1 defaultValue:(id)arg2 sourcePtr:(int*)arg3;
 - (id)init;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;

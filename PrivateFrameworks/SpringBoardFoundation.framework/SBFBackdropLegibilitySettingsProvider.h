@@ -4,7 +4,7 @@
 
 @class <SBFLegibilitySettingsProviderDelegate>, NSString, _UIBackdropView, _UILegibilitySettings;
 
-@interface SBFBackdropLegibilitySettingsProvider : NSObject <_UIBackdropViewObserver, SBFLegibilitySettingsProvider> {
+@interface SBFBackdropLegibilitySettingsProvider : NSObject <SBFLegibilitySettingsProvider, _UIBackdropViewObserver> {
     _UIBackdropView *_backdropView;
     <SBFLegibilitySettingsProviderDelegate> *_delegate;
     _UILegibilitySettings *_legibilitySettings;

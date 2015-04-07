@@ -5,20 +5,14 @@
 @class CAShapeLayer;
 
 @interface NetTopoDeviceConnectionLayer : NetTopoObjectLayer {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     struct CGPath { } *_arrowhead;
     struct CGColor { } *_clearColor;
     CAShapeLayer *_connectionLineLayer;
     unsigned int _connectionMediumFallback;
     unsigned int _connectionStyle;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _downstreamConnectionPoint;
     struct CGPath { } *_hitTestPath;
     struct CGColor { } *_lineColorActive;
@@ -26,7 +20,13 @@
     struct CGColor { } *_lineColorInactive;
     struct CGColor { } *_lineColorWiFi;
     struct CGColor { } *_selectedLineColor;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _siblingMergePoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _upstreamConnectionPoint;
     unsigned int _upstreamConnectionSide;
     unsigned int _upstreamDeviceSpatialRelationship;

@@ -5,11 +5,11 @@
 @class IKAppContext, IKTemplateStyleSheet, IKViewElementStyleFactory;
 
 @interface IKViewElementFactory : NSObject {
+    IKAppContext *_appContext;
     struct { 
         unsigned int sparse : 1; 
         unsigned int parsingUpdatedTree : 1; 
         unsigned int parsingReorderedSiblings : 1; 
-    IKAppContext *_appContext;
     } _parsingFlags;
     IKViewElementStyleFactory *_styleFactory;
     IKTemplateStyleSheet *_styleSheet;

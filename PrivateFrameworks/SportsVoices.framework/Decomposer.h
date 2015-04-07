@@ -8,9 +8,9 @@
     NSArray *_availableSoundFiles;
     NSBundle *_bundle;
     NSMutableDictionary *_cache;
+    bool _debugging;
     id _delegate;
     int _iterations;
-    bool_debugging;
 }
 
 @property id delegate;
@@ -18,8 +18,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithDirectory:(id)arg1 bundle:(id)arg2;
-- (id)optimalDecompositionOf:(id)arg1 isSubsetOfWhole:(BOOL)arg2;
 - (id)optimalDecompositionOf:(id)arg1;
+- (id)optimalDecompositionOf:(id)arg1 isSubsetOfWhole:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

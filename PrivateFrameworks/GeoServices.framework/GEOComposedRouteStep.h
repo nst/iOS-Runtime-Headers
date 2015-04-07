@@ -5,15 +5,15 @@
 @class GEOComposedRoute, GEOComposedRouteStep, GEOStep;
 
 @interface GEOComposedRouteStep : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     GEOComposedRoute *_composedRoute;
     GEOStep *_geoStep;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _maneuverPointRange;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _pointRange;
     int _routeLegType;
     unsigned int _stepIndex;

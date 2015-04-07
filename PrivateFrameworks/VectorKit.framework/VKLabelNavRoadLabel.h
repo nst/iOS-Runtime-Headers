@@ -5,13 +5,13 @@
 @class <VKLabelNavFeature>, NSString;
 
 @interface VKLabelNavRoadLabel : NSObject {
-    struct shared_ptr<vk::NavLabel> { 
-        struct NavLabel {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
     int _alignment;
     float _desiredOffsetDistance;
     NSString *_displayGroup;
     unsigned int _displayID;
+    struct shared_ptr<vk::NavLabel> { 
+        struct NavLabel {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _label;
     <VKLabelNavFeature> *_navFeature;
     int _navLabelType;

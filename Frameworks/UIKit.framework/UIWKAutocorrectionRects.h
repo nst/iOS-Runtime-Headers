@@ -12,6 +12,7 @@
             float width; 
             float height; 
         } size; 
+    } _firstRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -21,7 +22,6 @@
             float width; 
             float height; 
         } size; 
-    } _firstRect;
     } _lastRect;
 }
 

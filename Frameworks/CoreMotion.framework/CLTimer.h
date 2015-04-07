@@ -10,7 +10,11 @@
 
 @interface CLTimer : NSObject {
     double _fireInterval;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     double _nextFireTime;
     <CLTimerScheduler> *_scheduler;
     CLSilo *_silo;
@@ -28,10 +32,10 @@
 - (double)nextFireTime;
 - (void)setFireInterval:(double)arg1;
 - (void)setHandler:(id)arg1;
-- (void)setNextFireAfterDelay:(double)arg1 interval:(double)arg2;
 - (void)setNextFireAfterDelay:(double)arg1;
-- (void)setNextFireTime:(double)arg1 interval:(double)arg2;
+- (void)setNextFireAfterDelay:(double)arg1 interval:(double)arg2;
 - (void)setNextFireTime:(double)arg1;
+- (void)setNextFireTime:(double)arg1 interval:(double)arg2;
 - (void)shouldFire;
 - (void)updateScheduler;
 

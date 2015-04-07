@@ -16,30 +16,30 @@
             float g; 
             float t; 
         } ; 
-    struct tvec2<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-    struct tvec2<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
     } mCachedCategoryAxisLabelsSize;
+    struct tvec2<float> { 
+        union { 
+            float x; 
+            float r; 
+            float s; 
+        } ; 
+        union { 
+            float y; 
+            float g; 
+            float t; 
+        } ; 
     } mCachedSeriesLabelsSize;
+    struct tvec2<float> { 
+        union { 
+            float x; 
+            float r; 
+            float s; 
+        } ; 
+        union { 
+            float y; 
+            float g; 
+            float t; 
+        } ; 
     } mCachedValueAxisLabelsSize;
     TSCHChartInfo *mInfo;
     TSCH3DScene *mScene;

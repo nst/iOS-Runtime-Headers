@@ -5,9 +5,10 @@
 @class NSArray, NSMutableArray, UIImageView, UILabel, UISnapshotView, UITabBar, UITabBarItem, UITabBarItemProxy;
 
 @interface UITabBarCustomizeView : UIView {
-    struct CGPoint { 
-        float x; 
-        float y; 
+    NSArray *_availableItems;
+    UISnapshotView *_dragImage;
+    UITabBarItem *_draggingItem;
+    UITabBarItemProxy *_draggingProxy;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,10 +18,6 @@
             float width; 
             float height; 
         } size; 
-    NSArray *_availableItems;
-    UISnapshotView *_dragImage;
-    UITabBarItem *_draggingItem;
-    UITabBarItemProxy *_draggingProxy;
     } _firstItemRect;
     NSMutableArray *_fixedItems;
     float _gridOffset;
@@ -29,6 +26,9 @@
     UITabBarItem *_replaceItem;
     UIImageView *_replacementGlow;
     UITabBarItem *_selectedBeforeItem;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _startPoint;
     UITabBar *_tabBar;
     UILabel *_titleLabel;

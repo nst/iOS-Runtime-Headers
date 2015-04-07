@@ -9,9 +9,17 @@
 @class BWNode, NSString;
 
 @interface FigBWNodeRenderObserver : NSObject <BWNodeRenderDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _formatDidBecomeLiveHandler;
+
     BWNode *_node;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _willRenderSampleBufferHandler;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

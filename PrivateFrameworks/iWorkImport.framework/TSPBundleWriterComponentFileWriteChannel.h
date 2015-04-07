@@ -10,7 +10,11 @@
 
 @interface TSPBundleWriterComponentFileWriteChannel : NSObject <TSPComponentWriteChannel> {
     NSURL *_URL;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     BOOL _isClosed;
     NSObject<OS_dispatch_queue> *_queue;
     TSUFileIOChannel *_writeChannel;

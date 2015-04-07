@@ -43,8 +43,8 @@
 - (void)setDimsWhenHighlighted:(BOOL)arg1;
 - (void)setDisplayingPlaceholder:(BOOL)arg1;
 - (void)setForcesAnimatedUnhighlighting:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlightedAnimationImages:(id)arg1;
 - (void)setHighlightedImage:(id)arg1;
 - (void)setImage:(id)arg1;

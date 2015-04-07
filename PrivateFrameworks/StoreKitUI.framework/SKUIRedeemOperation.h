@@ -12,7 +12,11 @@
     BOOL _cameraRecognized;
     SKUIClientContext *_clientContext;
     NSString *_code;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resultBlock;
+
 }
 
 @property BOOL cameraRecognized;

@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSTextCheckingResult : NSObject <NSCopying, NSCoding> {
+@interface NSTextCheckingResult : NSObject <NSCoding, NSCopying> {
 }
 
 @property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property(readonly) unsigned long long resultType;
 
 + (id)addressCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2;
-+ (id)correctionCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2 alternativeStrings:(id)arg3;
 + (id)correctionCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2;
++ (id)correctionCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2 alternativeStrings:(id)arg3;
 + (id)dashCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2;
-+ (id)dateCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4;
 + (id)dateCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2;
++ (id)dateCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4;
 + (id)grammarCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 details:(id)arg2;
 + (void)initialize;
 + (id)linkCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 URL:(id)arg2;

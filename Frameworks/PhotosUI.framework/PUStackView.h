@@ -5,30 +5,6 @@
 @class NSArray, NSPointerArray, PUPhotoDecoration, UIColor, UIImage, UIImageView, UIView;
 
 @interface PUStackView : UIView {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     UIView *__backgroundView;
     NSPointerArray *__imageSizes;
     int __numberOfViews;
@@ -45,12 +21,36 @@
     BOOL _needsDynamicLayout;
     int _numberOfVisibleItems;
     PUPhotoDecoration *_photoDecoration;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _stackOffset;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _stackPerspectiveFactor;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _stackPerspectiveInsets;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _stackPerspectiveOffset;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _stackSize;
     unsigned int _style;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _transforms[9];
 }
 

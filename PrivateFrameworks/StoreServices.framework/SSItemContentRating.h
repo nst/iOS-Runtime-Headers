@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSMutableDictionary, NSString, SSItemArtworkImage;
 
-@interface SSItemContentRating : NSObject <SSXPCCoding, NSCopying> {
+@interface SSItemContentRating : NSObject <NSCopying, SSXPCCoding> {
     NSMutableDictionary *_dictionary;
 }
 

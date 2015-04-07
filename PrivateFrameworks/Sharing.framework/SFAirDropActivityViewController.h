@@ -4,7 +4,7 @@
 
 @class ALAssetsLibrary, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<SFAirDropActivityViewControllerDelegate>, NSOperationQueue, NSString, SFAirDropActiveIconView, SFAirDropBrowser, SFAirDropIconView, SFCollectionViewFlowLayout, SFWirelessSettingsController, UICollectionView, UILabel;
 
-@interface SFAirDropActivityViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, SFAirDropBrowserDelegate, SFPersonCollectionViewCellDelegate, SFWirelessSettingsControllerDelegate> {
+@interface SFAirDropActivityViewController : UIViewController <SFAirDropBrowserDelegate, SFPersonCollectionViewCellDelegate, SFWirelessSettingsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     NSLayoutConstraint *_airDropActiveIconLeftConstraint;
     SFAirDropActiveIconView *_airDropActiveIconView;
     NSLayoutConstraint *_airDropIconLeftConstraint;

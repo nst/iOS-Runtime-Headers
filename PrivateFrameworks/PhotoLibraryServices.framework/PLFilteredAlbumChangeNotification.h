@@ -4,7 +4,7 @@
 
 @class NSIndexSet, NSString, PLAssetContainerChangeNotification, PLFilteredAlbum, PLIndexMapper;
 
-@interface PLFilteredAlbumChangeNotification : PLAssetContainerChangeNotification <PLIndexMapperDataSource, PLDerivedNotification> {
+@interface PLFilteredAlbumChangeNotification : PLAssetContainerChangeNotification <PLDerivedNotification, PLIndexMapperDataSource> {
     PLFilteredAlbum *_album;
     PLAssetContainerChangeNotification *_backingNotification;
     NSIndexSet *_filteredIndexes;
@@ -13,14 +13,10 @@
 }
 
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(copy) NSIndexSet * filteredIndexes;
 @property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
 @property(retain,readonly) PLIndexMapper * indexMapper;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(retain,readonly) NSIndexSet * updatedFilteredIndexes;
 

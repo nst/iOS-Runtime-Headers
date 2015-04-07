@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface SACommandFailed : SABaseClientBoundCommand <SAServerBoundCommand, SAClientBoundCommand> {
+@interface SACommandFailed : SABaseClientBoundCommand <SAClientBoundCommand, SAServerBoundCommand> {
 }
 
 @property(copy) NSString * aceId;

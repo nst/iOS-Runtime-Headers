@@ -5,11 +5,20 @@
 @class NSMutableArray, NSString, SKBitmapFont, SKSpriteNode, UIColor;
 
 @interface SKLabelNode : SKNode {
+    SKBitmapFont *_bmf;
     struct { 
         float r; 
         float g; 
         float b; 
         float a; 
+    } _fontColor;
+    NSString *_fontName;
+    float _fontSize;
+    int _horizontalAlignmentMode;
+    int _labelBlendMode;
+    UIColor *_labelColor;
+    float _labelColorBlend;
+    NSString *_text;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -19,15 +28,6 @@
             float width; 
             float height; 
         } size; 
-    SKBitmapFont *_bmf;
-    } _fontColor;
-    NSString *_fontName;
-    float _fontSize;
-    int _horizontalAlignmentMode;
-    int _labelBlendMode;
-    UIColor *_labelColor;
-    float _labelColorBlend;
-    NSString *_text;
     } _textRect;
     SKSpriteNode *_textSprite;
     NSMutableArray *_textSprites;

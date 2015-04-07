@@ -53,8 +53,8 @@
 - (BOOL)getColor:(struct _colordef { unsigned int x1; unsigned int x2; struct _rgbquad { unsigned int x_3_1_1 : 8; unsigned int x_3_1_2 : 8; unsigned int x_3_1_3 : 8; unsigned int x_3_1_4 : 8; } x3; }*)arg1 forName:(const char *)arg2;
 - (BOOL)getFontName:(id*)arg1 baselineOffset:(float*)arg2 forFontType:(id)arg3;
 - (BOOL)hasColorForName:(const char *)arg1;
-- (id)initWithPath:(id)arg1 forWriting:(BOOL)arg2;
 - (id)initWithPath:(id)arg1;
+- (id)initWithPath:(id)arg1 forWriting:(BOOL)arg2;
 - (const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; }*)keyFormat;
 - (id)keyFormatData;
 - (int)keySemantics;

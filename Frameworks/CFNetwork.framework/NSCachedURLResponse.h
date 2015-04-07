@@ -4,7 +4,7 @@
 
 @class NSCachedURLResponseInternal, NSData, NSDictionary, NSURLResponse;
 
-@interface NSCachedURLResponse : NSObject <NSSecureCoding, NSCopying> {
+@interface NSCachedURLResponse : NSObject <NSCopying, NSSecureCoding> {
     NSCachedURLResponseInternal *_internal;
 }
 
@@ -29,8 +29,8 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithResponse:(id)arg1 data:(id)arg2 userInfo:(id)arg3 storagePolicy:(unsigned int)arg4;
 - (id)initWithResponse:(id)arg1 data:(id)arg2;
+- (id)initWithResponse:(id)arg1 data:(id)arg2 userInfo:(id)arg3 storagePolicy:(unsigned int)arg4;
 - (id)initWithResponse:(id)arg1 dataArray:(id)arg2 userInfo:(id)arg3 storagePolicy:(unsigned int)arg4;
 - (id)response;
 - (unsigned int)storagePolicy;

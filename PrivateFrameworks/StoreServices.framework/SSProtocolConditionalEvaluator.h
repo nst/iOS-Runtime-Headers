@@ -22,7 +22,7 @@
 - (id)dictionaryByEvaluatingConditions;
 - (id)dictionaryByRemovingConditions;
 - (id)init;
-- (id)initWithDictionary:(id)arg1 conditionalContext:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 conditionalContext:(id)arg2;
 
 @end

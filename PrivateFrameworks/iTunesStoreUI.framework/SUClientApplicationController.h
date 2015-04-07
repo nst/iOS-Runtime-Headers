@@ -115,8 +115,8 @@
 - (void)setupUI;
 - (BOOL)shouldPrepareUserInterfaceWhenActivated;
 - (id)showMainPageForItemKind:(id)arg1 sectionIdentifiers:(id)arg2;
-- (BOOL)tabBarController:(id)arg1 shouldShowSection:(id)arg2;
 - (id)tabBarController;
+- (BOOL)tabBarController:(id)arg1 shouldShowSection:(id)arg2;
 - (id)tabBarControllerForClientInterface:(id)arg1;
 - (void)tearDownUI;
 - (id)topNavigationController;

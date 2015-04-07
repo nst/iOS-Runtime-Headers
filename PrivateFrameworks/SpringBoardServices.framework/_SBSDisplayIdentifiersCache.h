@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_queue>, NSSet;
 
 @interface _SBSDisplayIdentifiersCache : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _changedBlock;
+
     int _changedToken;
     NSSet *_displayIdentifiers;
     NSObject<OS_dispatch_queue> *_queue;

@@ -27,8 +27,8 @@
 - (void)setShiftFunction:(id)arg1;
 - (void)setShiftRequest:(id)arg1;
 - (BOOL)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 shiftedCoordinate:(struct { double x1; double x2; }*)arg3 shiftedAccuracy:(double*)arg4;
-- (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3 mustGoToNetworkCallback:(id)arg4 errorHandler:(id)arg5 callbackQueue:(id)arg6;
 - (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3;
+- (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3 mustGoToNetworkCallback:(id)arg4 errorHandler:(id)arg5 callbackQueue:(id)arg6;
 - (id)shiftFunction;
 - (id)shiftRequest;
 

@@ -5,25 +5,25 @@
 @class NSCondition, NSMutableArray, NSMutableDictionary, TSUWeakReference;
 
 @interface TSKAccessController : NSObject {
-    struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
-    struct _TSKThreadInfo { 
-        struct _opaque_pthread_t {} *threadId; 
-        unsigned int count; 
-    struct _TSKThreadTicketInfo { 
-        unsigned int useCount; 
-        id ticket; 
     NSCondition *_cond;
     TSUWeakReference *_delegate;
     struct __CFRunLoopSource { } *_mainThreadPingSource;
     NSMutableArray *_pendingMainThreadInvocations;
     unsigned int _readerCount;
+    struct _TSKThreadInfo { 
+        struct _opaque_pthread_t {} *threadId; 
+        unsigned int count; 
     } _readerInfo[64];
+    struct _opaque_pthread_rwlock_t { 
+        long __sig; 
+        BOOL __opaque[124]; 
     } _rwLock;
     BOOL _secondaryThreadWriting;
     NSMutableDictionary *_signalIdentifiers;
     unsigned int _ticketCount;
+    struct _TSKThreadTicketInfo { 
+        unsigned int useCount; 
+        id ticket; 
     } _ticketInfo[64];
     NSMutableDictionary *_waitIdentifiers;
     BOOL _writeBlockedMainThread;
@@ -56,20 +56,20 @@
 - (void)p_writeLockAndBlockMainThread:(BOOL)arg1;
 - (void)p_writeUnlock;
 - (void)p_writeUnlockAndPerformWithMainThreadBlocked:(id)arg1;
-- (void)performRead:(SEL)arg1 thenReadOnMainThread:(SEL)arg2 withTarget:(id)arg3 argument:(void*)arg4;
-- (void)performRead:(SEL)arg1 thenWrite:(SEL)arg2 thenReadOnMainThread:(SEL)arg3 withTarget:(id)arg4 argument:(void*)arg5 passReadResultToMainThreadRead:(BOOL)arg6;
-- (void)performRead:(SEL)arg1 thenWrite:(SEL)arg2 thenReadOnMainThread:(SEL)arg3 withTarget:(id)arg4 argument:(void*)arg5;
-- (void)performRead:(SEL)arg1 withTarget:(id)arg2 argument:(void*)arg3 argument2:(void*)arg4;
-- (void)performRead:(SEL)arg1 withTarget:(id)arg2 argument:(void*)arg3;
 - (void)performRead:(id)arg1;
+- (void)performRead:(SEL)arg1 thenReadOnMainThread:(SEL)arg2 withTarget:(id)arg3 argument:(void*)arg4;
+- (void)performRead:(SEL)arg1 thenWrite:(SEL)arg2 thenReadOnMainThread:(SEL)arg3 withTarget:(id)arg4 argument:(void*)arg5;
+- (void)performRead:(SEL)arg1 thenWrite:(SEL)arg2 thenReadOnMainThread:(SEL)arg3 withTarget:(id)arg4 argument:(void*)arg5 passReadResultToMainThreadRead:(BOOL)arg6;
+- (void)performRead:(SEL)arg1 withTarget:(id)arg2 argument:(void*)arg3;
+- (void)performRead:(SEL)arg1 withTarget:(id)arg2 argument:(void*)arg3 argument2:(void*)arg4;
 - (void)performReadGrantingTicket:(id)arg1;
 - (void)performReadWithTicket:(id)arg1 block:(id)arg2;
-- (void)performWrite:(SEL)arg1 withTarget:(id)arg2 argument:(void*)arg3;
-- (void)performWrite:(id)arg1 blockMainThread:(BOOL)arg2;
 - (void)performWrite:(id)arg1;
+- (void)performWrite:(id)arg1 blockMainThread:(BOOL)arg2;
+- (void)performWrite:(SEL)arg1 withTarget:(id)arg2 argument:(void*)arg3;
 - (void)signalIdentifier:(id)arg1;
 - (void)spinMainThreadRunLoopUntil:(SEL)arg1 onTarget:(id)arg2;
-- (BOOL)waitOnIdentifier:(id)arg1 untilDate:(id)arg2 releaseReadWhileWaiting:(BOOL)arg3;
 - (void)waitOnIdentifier:(id)arg1;
+- (BOOL)waitOnIdentifier:(id)arg1 untilDate:(id)arg2 releaseReadWhileWaiting:(BOOL)arg3;
 
 @end

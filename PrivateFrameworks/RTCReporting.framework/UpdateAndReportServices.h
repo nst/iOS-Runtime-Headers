@@ -7,9 +7,13 @@
  */
 
 @interface UpdateAndReportServices : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
-    bool_report;
-    bool_update;
+
+    bool _report;
+    bool _update;
 }
 
 @property(copy) id block;

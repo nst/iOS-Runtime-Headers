@@ -4,13 +4,13 @@
 
 @class NSArray, NSDictionary, NSString, UIView, _UISettings, _UISettingsGroup;
 
-@interface PTSHUD : UIView <UIGestureRecognizerDelegate, _UISettingsKeyPathObserver, _UISettingsGroupObserver> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface PTSHUD : UIView <UIGestureRecognizerDelegate, _UISettingsGroupObserver, _UISettingsKeyPathObserver> {
     NSDictionary *_configuration;
     BOOL _enteringModalEditingSavedModeTableViewCell;
     BOOL _exitingModalEditingSavedModeTableViewCell;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _initialPoint;
     NSString *_mode;
     UIView *_panView;
@@ -45,8 +45,8 @@
 - (void)addSavedSettings;
 - (void)addSettingsAction:(id)arg1;
 - (id)configuration;
-- (void)configureForSettings:(id)arg1 settingsGroup:(id)arg2;
 - (void)configureForSettings:(id)arg1;
+- (void)configureForSettings:(id)arg1 settingsGroup:(id)arg2;
 - (void)editSavedModeTableAction:(id)arg1;
 - (BOOL)enteringModalEditingSavedModeTableViewCell;
 - (BOOL)exitingModalEditingSavedModeTableViewCell;
@@ -75,12 +75,12 @@
 - (void)setSettings:(id)arg1;
 - (void)setSettingsGroup:(id)arg1;
 - (void)setShowing:(BOOL)arg1;
-- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)settings;
+- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
+- (id)settingsGroup;
 - (void)settingsGroup:(id)arg1 didInsertSettings:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)settingsGroup:(id)arg1 didMoveSettings:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;
 - (void)settingsGroup:(id)arg1 didRemoveSettings:(id)arg2 atIndex:(unsigned int)arg3;
-- (id)settingsGroup;
 - (void)show;
 - (void)showControlsModeAction:(id)arg1;
 - (void)showInMode:(id)arg1;

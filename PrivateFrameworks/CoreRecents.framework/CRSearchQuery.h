@@ -9,12 +9,20 @@
 @class NSArray, NSPredicate;
 
 @interface CRSearchQuery : NSObject <NSSecureCoding> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _comparator;
+
     NSArray *_domains;
     unsigned int _implicitGroupThreshold;
     unsigned int _options;
     NSPredicate *_predicate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _weightDecayer;
+
 }
 
 @property(copy) id comparator;

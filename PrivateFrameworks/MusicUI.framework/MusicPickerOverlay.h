@@ -28,8 +28,8 @@
 - (BOOL)shouldDisplayAddAllAsDisabledFromDataSource:(id)arg1;
 - (BOOL)shouldDisplayEntityAsDisabled:(id)arg1;
 - (id)title;
+- (id)viewController;
 - (void)viewController:(id)arg1 didPickAllEntitiesFromDataSource:(id)arg2;
 - (void)viewController:(id)arg1 didPickEntity:(id)arg2;
-- (id)viewController;
 
 @end

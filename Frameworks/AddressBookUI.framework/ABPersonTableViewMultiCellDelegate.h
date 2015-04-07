@@ -4,7 +4,7 @@
 
 @class ABPersonPickersDelegate, ABPersonTableViewDataSource, ABStyleProvider, NSString, UIDatePicker;
 
-@interface ABPersonTableViewMultiCellDelegate : NSObject <ABMultiCellContentViewUpdateDelegate, ABPersonTableHeaderViewDelegate, ABDatePickerViewControllerDismissDelegate> {
+@interface ABPersonTableViewMultiCellDelegate : NSObject <ABDatePickerViewControllerDismissDelegate, ABMultiCellContentViewUpdateDelegate, ABPersonTableHeaderViewDelegate> {
     ABPersonTableViewDataSource *_dataSource;
     UIDatePicker *_datePicker;
     ABPersonPickersDelegate *_pickersDelegate;

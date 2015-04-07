@@ -4,7 +4,7 @@
 
 @class NSString, TSDGLDataBuffer, TSDGLMotionBlurEffect, TSDGLShader;
 
-@interface KNTransitionColorPlanes : KNAnimationEffect <KNFrameAnimator, KNAnimationPlugin, KNAnimationPluginArchiving> {
+@interface KNTransitionColorPlanes : KNAnimationEffect <KNAnimationPlugin, KNAnimationPluginArchiving, KNFrameAnimator> {
     unsigned int _colorCount;
     TSDGLDataBuffer *_colorDataBuffer;
     TSDGLShader *_colorShader;

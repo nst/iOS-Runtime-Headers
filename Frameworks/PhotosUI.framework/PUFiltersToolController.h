@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableDictionary, NSString, PUFiltersToolControllerSpec, UICollectionView;
 
-@interface PUFiltersToolController : PUPhotoEditToolController <UICollectionViewDelegate, UICollectionViewDataSource> {
+@interface PUFiltersToolController : PUPhotoEditToolController <UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView *__collectionView;
     BOOL __needsThumbnails;
     unsigned int __selectedFilterIndex;
@@ -37,8 +37,8 @@
 - (id)_selectedIndexPath;
 - (void)_setCollectionView:(id)arg1;
 - (void)_setNeedsThumbnails;
-- (void)_setSelectedFilterIndex:(unsigned int)arg1 animated:(BOOL)arg2 explicitly:(BOOL)arg3;
 - (void)_setSelectedFilterIndex:(unsigned int)arg1;
+- (void)_setSelectedFilterIndex:(unsigned int)arg1 animated:(BOOL)arg2 explicitly:(BOOL)arg3;
 - (void)_setThumbnailImages:(id)arg1;
 - (id)_thumbnailImageForIndex:(unsigned int)arg1;
 - (id)_thumbnailImages;
@@ -57,8 +57,8 @@
 - (void)resetToDefaultValueAnimated:(BOOL)arg1;
 - (id)selectedToolbarIcon;
 - (void)setDelegate:(id)arg1;
-- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (void)setLayoutOrientation:(int)arg1;
+- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (id)toolbarIcon;
 - (void)updateViewConstraints;
 - (void)viewDidAppear:(BOOL)arg1;

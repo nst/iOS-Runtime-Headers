@@ -3,9 +3,9 @@
  */
 
 @interface PBBProtoTellGizmoToSetCrownOrientation : PBCodable <NSCopying> {
+    BOOL _crownOrientationRight;
     struct { 
         unsigned int crownOrientationRight : 1; 
-    BOOL _crownOrientationRight;
     } _has;
 }
 

@@ -4,32 +4,32 @@
 
 @class NSString, UIScrollView, UIView, WKWebView;
 
-@interface WKPDFView : UIView <WKWebViewContentProvider, UIPDFPageViewDelegate> {
-    struct RetainPtr<UIPDFDocument> { 
-        void *m_ptr; 
-    struct RetainPtr<NSString> { 
-        void *m_ptr; 
+@interface WKPDFView : UIView <UIPDFPageViewDelegate, WKWebViewContentProvider> {
+    unsigned int _centerPageNumber;
+    UIView *_fixedOverlayView;
+    BOOL _isStartingZoom;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _minimumSize;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _overlaidAccessoryViewsInset;
     struct RetainPtr<WKPDFPageNumberIndicator> { 
         void *m_ptr; 
+    } _pageNumberIndicator;
     struct Vector<PDFPageInfo, 0, WTF::CrashOnOverflow> { 
         struct { /* ? */ } *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    unsigned int _centerPageNumber;
-    UIView *_fixedOverlayView;
-    BOOL _isStartingZoom;
-    } _minimumSize;
-    } _overlaidAccessoryViewsInset;
-    } _pageNumberIndicator;
     } _pages;
+    struct RetainPtr<UIPDFDocument> { 
+        void *m_ptr; 
     } _pdfDocument;
     UIScrollView *_scrollView;
+    struct RetainPtr<NSString> { 
+        void *m_ptr; 
     } _suggestedFilename;
     WKWebView *_webView;
 }

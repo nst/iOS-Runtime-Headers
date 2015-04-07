@@ -12,7 +12,11 @@
     CertInfoCertificateSummaryDescriptionCell *_descriptionCell;
     NSDate *_expirationDate;
     CertInfoCertificateHeaderCell *_headerCell;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _moreDetailsSelectedBlock;
+
     NSString *_purpose;
     UITableView *_tableView;
     NSString *_trustSubtitle;
@@ -46,11 +50,11 @@
 - (void)setPurpose:(id)arg1;
 - (void)setTrustSubtitle:(id)arg1;
 - (void)setTrustTitle:(id)arg1;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView;
 - (id)trustSubtitle;
 - (id)trustTitle;
 

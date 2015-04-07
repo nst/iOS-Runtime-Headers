@@ -3,6 +3,11 @@
  */
 
 @interface BLRetouchReefRepairOperator : NSObject {
+    int _brushSize;
+    void *_buffer;
+    int _height;
+    void *_maskBuffer;
+    int _maskHeight;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,11 +17,6 @@
             float width; 
             float height; 
         } size; 
-    int _brushSize;
-    void *_buffer;
-    int _height;
-    void *_maskBuffer;
-    int _maskHeight;
     } _maskRect;
     int _maskRowBytes;
     int _maskWidth;

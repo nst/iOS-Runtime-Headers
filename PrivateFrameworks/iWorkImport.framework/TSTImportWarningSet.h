@@ -24,11 +24,11 @@
         unsigned int mCondFormatUnsupportedTimePeriodImportWarning : 1; 
         unsigned int mUnsupportedConditionalFormatImportWarning : 1; 
         unsigned int mUnsupportedDataFormatImportWarning : 1; 
+    } mCellWarning;
     struct TSTImportFormulaWarning { 
         int mType; 
         NSString *mOriginalFormula; 
         NSString *mSupplementaryText; 
-    } mCellWarning;
     } mFormulaWarning;
     NSString *mOriginalDataFormat;
 }
@@ -75,13 +75,13 @@
 - (unsigned int)hash;
 - (id)individualWarnings;
 - (id)init;
-- (id)initFromArchive:(const struct ImportWarningSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ImportWarningSetArchive_FormulaImportWarning {} *x3; boolx4; boolx5; boolx6; boolx7; boolx8; boolx9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; boolx16; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x17; int x18; unsigned int x19[1]; }*)arg1;
+- (id)initFromArchive:(const struct ImportWarningSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ImportWarningSetArchive_FormulaImportWarning {} *x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; bool x15; bool x16; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x17; int x18; unsigned int x19[1]; }*)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isTransposeWarning;
 - (id)localizedWarningStrings;
 - (id)objectByRemovingPropertiesInMap:(id)arg1 addingPropertiesInMap:(id)arg2;
 - (id)propertiesMatchingThoseInMap:(id)arg1;
-- (void)saveToArchive:(struct ImportWarningSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ImportWarningSetArchive_FormulaImportWarning {} *x3; boolx4; boolx5; boolx6; boolx7; boolx8; boolx9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; boolx16; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x17; int x18; unsigned int x19[1]; }*)arg1;
+- (void)saveToArchive:(struct ImportWarningSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ImportWarningSetArchive_FormulaImportWarning {} *x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; bool x15; bool x16; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x17; int x18; unsigned int x19[1]; }*)arg1;
 - (id)warningSetByAddingWarningsFromSet:(id)arg1;
 - (id)warningSetByRemovingWarningsFromSet:(id)arg1;
 

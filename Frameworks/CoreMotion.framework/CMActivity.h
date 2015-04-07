@@ -8,7 +8,7 @@
         int confidence; 
         int mountedState; 
         int mountedConfidence; 
-        boolisStanding; 
+        bool isStanding; 
         float tilt; 
         double timestamp; 
         int exitState; 
@@ -28,14 +28,14 @@
 + (BOOL)supportsSecureCoding;
 
 - (id).cxx_construct;
-- (struct CLMotionActivity { int x1; int x2; int x3; int x4; boolx5; float x6; double x7; int x8; double x9; double x10; })activity;
+- (struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; int x8; double x9; double x10; })activity;
 - (int)confidence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasExitedVehicle;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; boolx5; float x6; double x7; int x8; double x9; double x10; })arg1;
+- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; int x8; double x9; double x10; })arg1;
 - (BOOL)isDriving;
 - (BOOL)isMoving;
 - (BOOL)isRunning;

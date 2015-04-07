@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface TSDMediaInfo : TSDStyledInfo {
-    struct CGSize { 
-        float width; 
-        float height; 
     struct { 
         unsigned int isPlaceholder : 1; 
         unsigned int wasMediaReplaced : 1; 
     } mFlags;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mOriginalSize;
 }
 

@@ -4,7 +4,7 @@
 
 @class <TSDAudioHUDController>, CALayer, NSString, TSDMovieInfo, TSKAVPlayerController;
 
-@interface TSDAudioRep : TSDMediaRep <TSKMediaPlayerControllerDelegate, TSDAudioHUDControllerDelegate> {
+@interface TSDAudioRep : TSDMediaRep <TSDAudioHUDControllerDelegate, TSKMediaPlayerControllerDelegate> {
     <TSDAudioHUDController> *mAudioHUDController;
     CALayer *mAudioImageLayer;
     float mDynamicVolume;
@@ -62,8 +62,8 @@
 - (void)p_updateStartTime;
 - (void)p_updateVolume;
 - (void)playbackDidStopForPlayerController:(id)arg1;
-- (void)playerController:(id)arg1 playbackDidFailWithError:(id)arg2;
 - (id)playerController;
+- (void)playerController:(id)arg1 playbackDidFailWithError:(id)arg2;
 - (void)processChangedProperty:(int)arg1;
 - (BOOL)providesGuidesWhileAligning;
 - (void)setupPlayerControllerForAudioHUDController:(id)arg1;

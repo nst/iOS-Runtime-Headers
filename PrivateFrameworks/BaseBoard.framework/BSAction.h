@@ -8,15 +8,19 @@
 
 @class BSSettings, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_xpc_object>, NSString;
 
-@interface BSAction : NSObject <BSXPCCoding, BSSettingDescriptionProvider> {
-    struct { 
-        unsigned int port; 
-        NSObject<OS_xpc_object> *endpoint; 
+@interface BSAction : NSObject <BSSettingDescriptionProvider, BSXPCCoding> {
     BOOL _expectsResponse;
     BSSettings *_info;
     NSObject<OS_dispatch_queue> *_queue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _queue_handler;
+
     BOOL _queue_hasBeenNeutered;
+    struct { 
+        unsigned int port; 
+        NSObject<OS_xpc_object> *endpoint; 
     } _queue_listenerTokens;
     NSObject<OS_dispatch_source> *_queue_timer;
     unsigned long long _timeout;

@@ -7,7 +7,11 @@
  */
 
 @interface ML3DatabaseFunctionBlock : ML3DatabaseFunction {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
 }
 
 @property(copy) id block;

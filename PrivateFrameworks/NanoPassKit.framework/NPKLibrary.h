@@ -63,8 +63,8 @@
 - (BOOL)disableCaching;
 - (void)getDeviceHasAnyPaymentPassesWithCompletion:(id)arg1;
 - (void)getDiffForPassWithID:(id)arg1 reply:(id)arg2;
-- (void)getPassWithID:(id)arg1 reply:(id)arg2 queue:(id)arg3;
 - (void)getPassWithID:(id)arg1 reply:(id)arg2;
+- (void)getPassWithID:(id)arg1 reply:(id)arg2 queue:(id)arg3;
 - (void)handlePassLibraryChangedNotification:(id)arg1;
 - (void)handleRelevancyCheckCompletedNotification:(id)arg1;
 - (void)handleRelevancyPotentialChangedNotification:(id)arg1;

@@ -30,8 +30,8 @@
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (id)document;
 - (id)getImageIfAvailableForPage:(unsigned int)arg1;
-- (id)initWithDocument:(id)arg1 cacheCount:(unsigned int)arg2 lookAhead:(unsigned int)arg3;
 - (id)initWithDocument:(id)arg1;
+- (id)initWithDocument:(id)arg1 cacheCount:(unsigned int)arg2 lookAhead:(unsigned int)arg3;
 - (unsigned int)lookAhead;
 - (unsigned int)pageCount;
 

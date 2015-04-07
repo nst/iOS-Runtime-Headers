@@ -3,9 +3,8 @@
  */
 
 @interface GEOPlaceSearchFeedbackRequest : PBRequest <NSCopying> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
+    long long _businessID;
+    int _feedbackType;
     struct { 
         unsigned int sessionGUID : 1; 
         unsigned int businessID : 1; 
@@ -15,13 +14,14 @@
         unsigned int numberOfResults : 1; 
         unsigned int positionInResults : 1; 
         unsigned int sequenceNumber : 1; 
-    long long _businessID;
-    int _feedbackType;
     } _has;
     int _localSearchProviderID;
     int _numberOfResults;
     int _positionInResults;
     int _sequenceNumber;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionGUID;
     double _timestamp;
 }

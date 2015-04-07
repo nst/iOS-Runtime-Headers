@@ -8,14 +8,12 @@
 
 @class <TSWPFootnoteHeightMeasurer>, <TSWPFootnoteMarkProvider>, <TSWPOffscreenColumn>, NSMutableArray, NSString, TPFootnoteHeightMeasurer, TSDCanvas, TSDLayout, TSPObject<TSDHint>;
 
-@interface TPBodyLayout : TSDLayout <TSWPLayoutTarget, TPAttachmentLayoutParent> {
+@interface TPBodyLayout : TSDLayout <TPAttachmentLayoutParent, TSWPLayoutTarget> {
     NSMutableArray *_anchoredDrawablesForRelayout;
     NSMutableArray *_columns;
     TPFootnoteHeightMeasurer *_footnoteHeightMeasurer;
 }
 
-@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
-@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) struct CGPoint { float x1; float x2; } anchorPoint;
 @property(retain) NSMutableArray * anchoredDrawablesForRelayout;
 @property(readonly) unsigned int autosizeFlags;
@@ -37,11 +35,13 @@
 @property(readonly) int naturalDirection;
 @property(readonly) TSPObject<TSDHint> * nextTargetFirstChildHint;
 @property(retain,readonly) <TSWPOffscreenColumn> * nextTargetFirstColumn;
+@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) unsigned int pageCount;
 @property(readonly) unsigned int pageNumber;
 @property(readonly) TSDLayout * parentLayoutForInlineAttachments;
 @property(readonly) struct CGPoint { float x1; float x2; } position;
 @property(retain,readonly) <TSWPOffscreenColumn> * previousTargetLastColumn;
+@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) BOOL shouldHyphenate;
 @property(readonly) Class superclass;
 @property(readonly) BOOL textIsVertical;

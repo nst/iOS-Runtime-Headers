@@ -10,10 +10,18 @@
 
 @interface NMRProtobufSerialization : NSObject {
     NSDictionary *_dictionaryKeyToProtobufKeyMapping;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _dictionaryValueToProtobufValueTransformer;
+
     Class _protobufClass;
     NSDictionary *_protobufKeyToDictionaryKeyMapping;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _protobufValueToDictionaryValueTransformer;
+
 }
 
 @property(copy) NSDictionary * dictionaryKeyToProtobufKeyMapping;

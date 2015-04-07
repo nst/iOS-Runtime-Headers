@@ -73,8 +73,8 @@
 - (void)setHapticIntensity:(float)arg1;
 - (void)setMuted:(BOOL)arg1;
 - (void)setSystemMuted:(BOOL)arg1;
-- (void)setVolumeValue:(float)arg1 muted:(BOOL)arg2 overrideEULimit:(BOOL)arg3;
 - (void)setVolumeValue:(float)arg1;
+- (void)setVolumeValue:(float)arg1 muted:(BOOL)arg2 overrideEULimit:(BOOL)arg3;
 - (float)volumeValue;
 
 @end

@@ -4,7 +4,7 @@
 
 @class CIColor, NSString;
 
-@interface UIColor : NSObject <NSSecureCoding, NSCopying> {
+@interface UIColor : NSObject <NSCopying, NSSecureCoding> {
     NSString *_systemColorName;
 }
 
@@ -20,14 +20,14 @@
 + (id)_accessibilityButtonShapesDisabledBackgroundColorOnDark;
 + (id)_accessibilityButtonShapesNoBlendModeBackgroundColorOnDark;
 + (id)_accessibilityButtonShapesNoBlendModeBackgroundColorOnLight;
-+ (id)_alternateBackgroundColor2;
 + (id)_alternateBackgroundColor;
-+ (id)_alternateForegroundColor2;
++ (id)_alternateBackgroundColor2;
 + (id)_alternateForegroundColor;
++ (id)_alternateForegroundColor2;
 + (id)_alternateGrayColorForFontSize:(float)arg1;
 + (id)_alternateSystemInteractionTintColor;
-+ (id)_alternateTextColor2;
 + (id)_alternateTextColor;
++ (id)_alternateTextColor2;
 + (id)_alternateUISwitchableSelectorPairs;
 + (id)_barHairlineShadowColor;
 + (id)_barStyleBlackHairlineShadowColor;
@@ -249,8 +249,8 @@
 - (struct CGColor { }*)CGColor;
 - (id)CIColor;
 - (BOOL)SCNColorGetRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
-- (id)_colorBlendedWithColor:(id)arg1 compositingFilter:(id)arg2;
 - (id)_colorBlendedWithColor:(id)arg1;
+- (id)_colorBlendedWithColor:(id)arg1 compositingFilter:(id)arg2;
 - (id)_colorBlendedWithColors:(id)arg1;
 - (float)_colorDifferenceFromColor:(id)arg1;
 - (BOOL)_getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;

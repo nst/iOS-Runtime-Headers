@@ -6,9 +6,9 @@
 
 @interface MTLStructMember : NSObject {
     unsigned int _dataType : 16;
-    unsigned int _offset : 32;
     id _details;
     NSString *_name;
+    unsigned int _offset : 32;
 }
 
 @property(readonly) unsigned int dataType;

@@ -4,7 +4,7 @@
 
 @class <_MKPlaceViewControllerDelegate>, ABPeoplePickerNavigationController, CNContact, MKDistanceDetailProvider, MKMapItem, MKPlaceActionsViewController, MKPlaceHeaderView, MKPlaceInfoViewController, MKPlaceNearbyAppsMetricsCoordinator, MKSegmentedControlTabBarView, NSArray, NSMapTable, NSString, SKProductPageViewController, UITapGestureRecognizer;
 
-@interface _MKPlaceViewController : MKStackingViewController <MKStackingViewControllerDelegate, MKActivityViewControllerDelegate, ABContactViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, MKPlaceSharedAttributionDelegate, MKPlaceNearbyAppsViewControllerDelegate, SKProductPageViewControllerDelegate, MKPlaceHeaderViewDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceInfoViewControllerDelegate, MKPlaceActionsViewControllerDelegate> {
+@interface _MKPlaceViewController : MKStackingViewController <ABContactViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, MKActivityViewControllerDelegate, MKPlaceActionsViewControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceHeaderViewDelegate, MKPlaceInfoViewControllerDelegate, MKPlaceNearbyAppsViewControllerDelegate, MKPlaceSharedAttributionDelegate, MKStackingViewControllerDelegate, SKProductPageViewControllerDelegate> {
     MKPlaceActionsViewController *_actionsViewController;
     NSMapTable *_additionalViewControllers;
     void *_addressBook;
@@ -138,8 +138,8 @@
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (void)openInfoAttribution;
 - (id)originalContact;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)placeCardPhotosController:(id)arg1 didSelectViewPhotoWithID:(id)arg2;
 - (void)placeCardPhotosControllerDidSelectAddPhoto:(id)arg1;
@@ -165,8 +165,8 @@
 - (void)setHeaderTitle:(id)arg1;
 - (void)setHideDirectionsButtons:(BOOL)arg1;
 - (void)setHideInlineMap:(BOOL)arg1;
-- (void)setMapItem:(id)arg1 contact:(id)arg2 updateOriginalContact:(BOOL)arg3;
 - (void)setMapItem:(id)arg1;
+- (void)setMapItem:(id)arg1 contact:(id)arg2 updateOriginalContact:(BOOL)arg3;
 - (void)setOriginalContact:(id)arg1;
 - (void)setPlaceHeaderView:(id)arg1;
 - (void)setPlaceViewControllerDelegate:(id)arg1;

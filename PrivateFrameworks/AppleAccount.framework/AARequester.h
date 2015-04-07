@@ -11,7 +11,11 @@
 @interface AARequester : NSOperation {
     BOOL _canceled;
     NSMutableData *_data;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSObject<OS_dispatch_queue> *_handlerQueue;
     NSHTTPURLResponse *_httpResponse;
     BOOL _isCanceled;

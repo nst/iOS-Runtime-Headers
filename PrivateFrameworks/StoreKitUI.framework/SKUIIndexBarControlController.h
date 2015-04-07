@@ -5,14 +5,14 @@
 @class <SKUIIndexBarControlControllerDataSource>, <SKUIIndexBarControlControllerDelegate>, NSMapTable, NSString, SKUIIndexBarControl, SKUIIndexBarEntryDescriptor, SKUIResourceLoader;
 
 @interface SKUIIndexBarControlController : NSObject <SKUIIndexBarControlDataSource, SKUIIndexBarControlDelegate> {
+    SKUIIndexBarEntryDescriptor *_combinedEntryDescriptor;
+    <SKUIIndexBarControlControllerDataSource> *_dataSource;
     struct { 
         unsigned int dataSourceRespondsToCombinedEntry : 1; 
         unsigned int dataSourceRespondsToNumberOfSections : 1; 
         unsigned int delegateRespondsToDidSelectEntryAtIndexPath : 1; 
         unsigned int delegateRespondsToDidSelectBeyondBottom : 1; 
         unsigned int delegateRespondsToDidSelectBeyondTop : 1; 
-    SKUIIndexBarEntryDescriptor *_combinedEntryDescriptor;
-    <SKUIIndexBarControlControllerDataSource> *_dataSource;
     } _dataSourceDelegateFlags;
     <SKUIIndexBarControlControllerDelegate> *_delegate;
     NSMapTable *_entryDescriptorToCachedEntry;
@@ -49,10 +49,10 @@
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
+- (id)indexBarControl;
 - (void)indexBarControl:(id)arg1 didSelectEntryAtIndexPath:(id)arg2;
 - (id)indexBarControl:(id)arg1 entryAtIndexPath:(id)arg2;
 - (int)indexBarControl:(id)arg1 numberOfEntriesInSection:(int)arg2;
-- (id)indexBarControl;
 - (void)indexBarControlDidSelectBeyondBottom:(id)arg1;
 - (void)indexBarControlDidSelectBeyondTop:(id)arg1;
 - (id)init;

@@ -11,7 +11,11 @@
 @interface WBUFormAutoCompleteState : NSObject <UIActionSheetDelegate, WBUCreditCardCaptureViewControllerDelegate> {
     int _action;
     BOOL _canAutoComplete;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _creditCardCaptureCompletionHandler;
+
     WBUFormDataController *_dataController;
     NSDictionary *_formMetadata;
     unsigned int _formType;

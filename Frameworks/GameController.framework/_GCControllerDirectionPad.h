@@ -9,7 +9,11 @@
 @class _GCControllerAxisInput;
 
 @interface _GCControllerDirectionPad : GCControllerDirectionPad {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _valueChangedHandler;
+
     _GCControllerAxisInput *_xAxis;
     _GCControllerAxisInput *_yAxis;
 }

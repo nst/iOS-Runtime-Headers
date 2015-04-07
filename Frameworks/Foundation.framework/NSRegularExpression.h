@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface NSRegularExpression : NSObject <NSCopying, NSCoding> {
+@interface NSRegularExpression : NSObject <NSCoding, NSCopying> {
     int _checkout;
     void *_internal;
     unsigned int _options;

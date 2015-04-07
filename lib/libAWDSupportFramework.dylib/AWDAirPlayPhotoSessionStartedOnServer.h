@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface AWDAirPlayPhotoSessionStartedOnServer : PBCodable <NSCopying> {
+    NSString *_clientModel;
+    NSString *_clientVersion;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int status : 1; 
         unsigned int transportType : 1; 
-    NSString *_clientModel;
-    NSString *_clientVersion;
     } _has;
     NSString *_sessionUUID;
     int _status;

@@ -55,8 +55,8 @@
 - (id)markerOvalPath;
 - (id)markerOvalPathSmall;
 - (void)prepareForReuse;
-- (void)setAnnotationSize:(float)arg1 animated:(BOOL)arg2;
 - (void)setAnnotationSize:(int)arg1;
+- (void)setAnnotationSize:(float)arg1 animated:(BOOL)arg2;
 - (void)setCenterImageLayer:(id)arg1;
 - (void)setCircleLayer:(id)arg1;
 - (void)setFutureRotationAmount:(float)arg1;

@@ -4,19 +4,7 @@
 
 @class NSDate, NSMutableArray, NSString, TPDocumentRoot, TPFootnoteLayoutController, TPOffscreenLayoutController, TPPageLayoutState, TSUMutablePointerSet, TSWPLayoutManager;
 
-@interface TPPageController : NSObject <TPPageLayoutInfoProvider, TSWPLayoutOwner, TPLayoutStateConsumer, TPLayoutStateProvider> {
-    struct multimap<unsigned int, TPPageLayout *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, TPPageLayout *> > > { 
-        struct __tree<std::__1::__value_type<unsigned int, TPPageLayout *>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, TPPageLayout *>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, TPPageLayout *> > > { 
-            struct __tree_node<std::__1::__value_type<unsigned int, TPPageLayout *>, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, TPPageLayout *>, void *> > > { 
-                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
-                    struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
-            } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, TPPageLayout *>, std::__1::less<unsigned int>, true> > { 
-                unsigned long __first_; 
-            } __pair3_; 
-        } __tree_; 
+@interface TPPageController : NSObject <TPLayoutStateConsumer, TPLayoutStateProvider, TPPageLayoutInfoProvider, TSWPLayoutOwner> {
     int _backgroundLayoutEnabled;
     int _backgroundLayoutSuspendCount;
     NSDate *_bgLayoutStartDate;
@@ -33,6 +21,18 @@
     TSUMutablePointerSet *_layoutObservers;
     TPPageLayoutState *_layoutState;
     NSMutableArray *_pageGeneratorStack;
+    struct multimap<unsigned int, TPPageLayout *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, TPPageLayout *> > > { 
+        struct __tree<std::__1::__value_type<unsigned int, TPPageLayout *>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, TPPageLayout *>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, TPPageLayout *> > > { 
+            struct __tree_node<std::__1::__value_type<unsigned int, TPPageLayout *>, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, TPPageLayout *>, void *> > > { 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
+                    struct __tree_node_base<void *> {} *__left_; 
+                } __first_; 
+            } __pair1_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, TPPageLayout *>, std::__1::less<unsigned int>, true> > { 
+                unsigned long __first_; 
+            } __pair3_; 
+        } __tree_; 
     } _pageLayoutCache;
     NSMutableArray *_sectionHints;
     BOOL _shouldUpdatePageCount;
@@ -40,14 +40,10 @@
 
 @property BOOL backgroundLayoutEnabled;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int firstPageIndexNeedingLayout;
 @property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int pageCount;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -96,8 +92,8 @@
 - (unsigned int)lastPageCountForArchivedLayoutState:(id)arg1;
 - (void)layoutManager:(id)arg1 didClearDirtyRangeWithDelta:(int)arg2 afterCharIndex:(unsigned int)arg3;
 - (void)layoutManagerNeedsLayout:(id)arg1;
-- (void)layoutThroughPageIndex:(unsigned int)arg1 forLayoutController:(id)arg2;
 - (void)layoutThroughPageIndex:(unsigned int)arg1;
+- (void)layoutThroughPageIndex:(unsigned int)arg1 forLayoutController:(id)arg2;
 - (id)masterDrawableProviderForPageIndex:(unsigned int)arg1;
 - (BOOL)okToAnchorDrawable:(id)arg1 toPageIndex:(unsigned int)arg2;
 - (void)p_advanceSectionIndex;

@@ -5,14 +5,14 @@
 @class NSData, NSString, UIImage;
 
 @interface CKImageData : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     unsigned int _count;
     NSData *_data;
     struct CGImageSource { } *_imageSource;
     BOOL _initializedProperties;
     int _orientation;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _pxSize;
 }
 

@@ -72,8 +72,8 @@
 - (void)disconnect;
 - (id)fairPlayInfo;
 - (id)homeSharingGroupID;
-- (id)initWithBaseURL:(id)arg1 connectionType:(int)arg2;
 - (id)initWithBaseURL:(id)arg1;
+- (id)initWithBaseURL:(id)arg1 connectionType:(int)arg2;
 - (id)initWithConfiguration:(id)arg1 connectionType:(int)arg2;
 - (unsigned int)interfaceID;
 - (BOOL)isAuthenticationRequired;

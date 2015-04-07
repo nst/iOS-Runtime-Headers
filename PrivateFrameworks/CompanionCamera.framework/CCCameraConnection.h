@@ -4,7 +4,7 @@
 
 @class <CCCameraConnectionDelegate>, CCCameraConnectionInternal, FigCameraViewfinder, FigCameraViewfinderSession, NSString, NSXPCConnection;
 
-@interface CCCameraConnection : NSObject <CCCameraConnectionProtocol, AVCaptureVideoDataOutputSampleBufferDelegate, FigCameraViewfinderDelegate, FigCameraViewfinderSessionDelegate> {
+@interface CCCameraConnection : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate, CCCameraConnectionProtocol, FigCameraViewfinderDelegate, FigCameraViewfinderSessionDelegate> {
     <CCCameraConnectionDelegate> *_delegate;
     CCCameraConnectionInternal *_internal;
     id _orientationChangeObserver;

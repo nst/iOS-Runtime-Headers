@@ -5,6 +5,7 @@
 @class TSCH3DNormalDirectionMapper;
 
 @interface TSCH3DBarExtrusionGeometry : TSCH3DExtrusionGeometry {
+    float mBottomCapScale;
     struct BarExtrusionSetting { 
         float size; 
         BOOL hasTopBevel; 
@@ -26,15 +27,14 @@
                 float creaseAngle; 
             } spine; 
         } details; 
+    } mExtrusionSetting;
+    TSCH3DNormalDirectionMapper *mNormalDirectionMapper;
     struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { 
         struct tvec3<float> {} *__begin_; 
         struct tvec3<float> {} *__end_; 
         struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { 
             struct tvec3<float> {} *__first_; 
         } __end_cap_; 
-    float mBottomCapScale;
-    } mExtrusionSetting;
-    TSCH3DNormalDirectionMapper *mNormalDirectionMapper;
     } mNormalizedSpine;
     float mScaleMappingStartingHeight;
 }

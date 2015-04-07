@@ -8,10 +8,10 @@
 }
 
 + (id)colorWithCGColor:(struct CGColor { }*)arg1;
-+ (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
-+ (id)colorWithSRGBRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
++ (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (id)colorWithSRGBRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
++ (id)colorWithSRGBRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (id)colorWithString:(id)arg1;
 
 - (struct CGColor { }*)CGColor;

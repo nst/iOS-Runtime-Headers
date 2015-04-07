@@ -4,7 +4,7 @@
 
 @class CKContainerID, CKSharedItemID, NSDate, NSString;
 
-@interface CKComment : NSObject <NSSecureCoding, NSCopying> {
+@interface CKComment : NSObject <NSCopying, NSSecureCoding> {
     NSString *_commentID;
     CKSharedItemID *_commentedItemID;
     NSString *_commenterID;

@@ -5,12 +5,12 @@
 @class NSATSGlyphStorage, NSATSTypesetter, NSString;
 
 @interface NSATSGlyphStorage : CTGlyphStorageInterface {
+    long _bufferSize;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+    } _characterRange;
+    struct __CFSet { } *_children;
     struct { 
         unsigned int _hasNonNominalGlyph : 1; 
         unsigned int _hasPositionalStake : 1; 
@@ -20,10 +20,10 @@
         unsigned int _isUnordered : 1; 
         unsigned int _hasTotalAbsorbedCount : 1; 
         unsigned int _reserved : 25; 
-    long _bufferSize;
-    } _characterRange;
-    struct __CFSet { } *_children;
     } _gFlags;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _glyphRange;
     struct __CTGlyphStorage { } *_glyphStorage;
     const struct { id x1; id x2; int x3; int x4; float x5; float x6; float x7; float x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 1; unsigned int x_10_1_4 : 1; unsigned int x_10_1_5 : 1; unsigned int x_10_1_6 : 1; unsigned int x_10_1_7 : 1; unsigned int x_10_1_8 : 1; unsigned int x_10_1_9 : 24; } x10; } *_lastElasticRun;

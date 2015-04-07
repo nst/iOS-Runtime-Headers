@@ -4,7 +4,7 @@
 
 @class CNContactPickerHostViewController, NSString;
 
-@interface CNContactPickerExtensionHostContext : NSExtensionContext <CNContactPickerServiceProtocol, CNContactPickerHostProtocol> {
+@interface CNContactPickerExtensionHostContext : NSExtensionContext <CNContactPickerHostProtocol, CNContactPickerServiceProtocol> {
     CNContactPickerHostViewController *_viewController;
 }
 

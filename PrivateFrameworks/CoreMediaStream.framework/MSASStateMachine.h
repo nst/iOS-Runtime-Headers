@@ -8,7 +8,7 @@
 
 @class MSASAssetDownloader, MSASAssetUploader, MSASPersonModel, MSASPhoneInvitations, MSASProtocol, MSAlbumSharingDaemon, MSBackoffManager, MSImageScalingSpecification, NSArray, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface MSASStateMachine : NSObject <MSBackoffManagerDelegate, MSASAssetUploaderDelegate, MSASAssetDownloaderDelegate> {
+@interface MSASStateMachine : NSObject <MSASAssetDownloaderDelegate, MSASAssetUploaderDelegate, MSBackoffManagerDelegate> {
     MSBackoffManager *_MMCSBackoffManager;
     NSDictionary *_MMCSBackoffManagerParameters;
     MSASAssetDownloader *_assetDownloader;
@@ -34,12 +34,20 @@
     MSASPersonModel *_model;
     NSString *_personID;
     MSASPhoneInvitations *_phoneInvitations;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _postCommandCompletionBlock;
+
     MSASProtocol *_protocol;
     NSObject<OS_dispatch_queue> *_serverSideConfigQueue;
     NSDictionary *_serverSideConfiguration;
     NSString *_serverSideConfigurationVersion;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _stopHandlerBlock;
+
     MSImageScalingSpecification *_thumbnailImageScalingSpecification;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
@@ -158,8 +166,8 @@
 - (BOOL)hasEnqueuedActivities;
 - (BOOL)hasShutDown;
 - (id)init;
-- (id)initWithPersonID:(id)arg1 eventQueue:(id)arg2;
 - (id)initWithPersonID:(id)arg1;
+- (id)initWithPersonID:(id)arg1 eventQueue:(id)arg2;
 - (BOOL)isInRetryState;
 - (BOOL)isRetryingOutstandingActivities;
 - (id)latestNextActivityDate;

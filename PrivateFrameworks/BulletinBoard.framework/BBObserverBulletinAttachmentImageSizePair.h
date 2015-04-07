@@ -5,10 +5,10 @@
 @class UIImage;
 
 @interface BBObserverBulletinAttachmentImageSizePair : NSObject {
+    UIImage *_image;
     struct CGSize { 
         float width; 
         float height; 
-    UIImage *_image;
     } _size;
 }
 

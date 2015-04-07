@@ -94,10 +94,10 @@
 - (id)newFeaturedStationWithDictionary:(id)arg1;
 - (id)newPreviewStationWithDictionary:(id)arg1;
 - (id)newStationWithDictionary:(id)arg1;
-- (void)noteTrackWasSkippedForStation:(id)arg1 onDate:(id)arg2;
 - (void)noteTrackWasSkippedForStation:(id)arg1;
-- (unsigned int)numberOfTracksSkippedForStation:(id)arg1 returningEarliestSkipDate:(id*)arg2;
+- (void)noteTrackWasSkippedForStation:(id)arg1 onDate:(id)arg2;
 - (unsigned int)numberOfTracksSkippedForStation:(id)arg1;
+- (unsigned int)numberOfTracksSkippedForStation:(id)arg1 returningEarliestSkipDate:(id*)arg2;
 - (void)performTransactionWithBlock:(id)arg1;
 - (void)performWriteTransactionWithBlock:(id)arg1;
 - (id)previewStations;

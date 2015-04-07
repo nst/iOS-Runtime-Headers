@@ -4,7 +4,7 @@
 
 @class MPUExtrasContext, MPUExtrasLoadingView, MPUExtrasMainTemplateViewController, NSString, UIViewController;
 
-@interface MPUExtrasNavigationController : UINavigationController <MPUExtrasLoadingViewDelegate, IKAppNavigationController> {
+@interface MPUExtrasNavigationController : UINavigationController <IKAppNavigationController, MPUExtrasLoadingViewDelegate> {
     BOOL _clearStackOnPush;
     MPUExtrasContext *_context;
     UIViewController *_emptyViewController;

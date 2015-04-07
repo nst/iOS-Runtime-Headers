@@ -4,21 +4,15 @@
 
 @class CALayer, CAShapeLayer, NSArray, NSString, TSKHighlightArrayController, TSKPulseAnimationController, TSWPEditingController, TSWPLayout, TSWPSearchReference, TSWPSelection, TSWPStorage;
 
-@interface TSWPRep : TSDContainerRep <TSKHighlightArrayControllerProtocol, TSKPulseAnimationControllerProtocol, TSWPHyperlinkHostRepProtocol, TSDDecorator> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+@interface TSWPRep : TSDContainerRep <TSDDecorator, TSKHighlightArrayControllerProtocol, TSKPulseAnimationControllerProtocol, TSWPHyperlinkHostRepProtocol> {
     TSWPSearchReference *_activeSearchReference;
     BOOL _caretAnimationDisabled;
     CALayer *_caretLayer;
     TSKPulseAnimationController *_caretPulseController;
     CALayer *_dragAndDropCaretLayer;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _dragRange;
     TSWPSelection *_dropSelection;
     BOOL _findIsShowing;
@@ -39,6 +33,9 @@
     NSArray *_searchReferences;
     CAShapeLayer *_secondaryHighlightLayer;
     int _secondaryHighlightPathStyle;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _secondaryHighlightRange;
     BOOL _selectionChanged;
     CAShapeLayer *_selectionHighlightLayer;
@@ -47,6 +44,9 @@
     CAShapeLayer *_smartFieldHighlightLayer;
     BOOL _suppressCaret;
     BOOL _suppressSelectionHighlight;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _suppressedMisspellingRange;
     TSWPEditingController *_textEditor;
     CALayer *_textLayers[2];
@@ -86,8 +86,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForCharIndex:(unsigned int)arg1 leadingEdge:(BOOL)arg2 caretAffinity:(int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForSelection:(id)arg1;
 - (unsigned int)charCountOfGlyphStartingAtCharIndex:(unsigned int)arg1;
-- (unsigned int)charIndexForPointWithPinning:(struct CGPoint { float x1; float x2; })arg1 isTail:(BOOL)arg2 selectionType:(int)arg3;
 - (unsigned int)charIndexForPointWithPinning:(struct CGPoint { float x1; float x2; })arg1;
+- (unsigned int)charIndexForPointWithPinning:(struct CGPoint { float x1; float x2; })arg1 isTail:(BOOL)arg2 selectionType:(int)arg3;
 - (unsigned int)charIndexFromPoint:(struct CGPoint { float x1; float x2; })arg1 allowPastBreak:(BOOL)arg2 allowNotFound:(BOOL)arg3 isAtEndOfLine:(BOOL*)arg4 leadingEdge:(BOOL*)arg5;
 - (unsigned int)charIndexFromPoint:(struct CGPoint { float x1; float x2; })arg1 allowPastBreak:(BOOL)arg2 allowNotFound:(BOOL)arg3 pastCenterGoesToNextChar:(BOOL)arg4 isAtEndOfLine:(BOOL*)arg5 leadingEdge:(BOOL*)arg6;
 - (unsigned int)charIndexFromPoint:(struct CGPoint { float x1; float x2; })arg1 allowPastBreak:(BOOL)arg2 isAtEndOfLine:(BOOL*)arg3;
@@ -109,8 +109,8 @@
 - (BOOL)doesNeedDisplayOnEditingDidEnd;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })dragRange;
 - (int)dragTypeAtCanvasPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)drawInContext:(struct CGContext { }*)arg1 limitSelection:(id)arg2 suppressInvisibles:(BOOL)arg3;
 - (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)drawInContext:(struct CGContext { }*)arg1 limitSelection:(id)arg2 suppressInvisibles:(BOOL)arg3;
 - (void)drawInLayerContext:(struct CGContext { }*)arg1;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)drawRubyInContext:(struct CGContext { }*)arg1 rubyFieldStart:(unsigned int)arg2 rubyGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
@@ -219,8 +219,8 @@
 - (void)pulseAnimationDidStopForPulse:(id)arg1;
 - (void)pulseCaret;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection:(id)arg1 includeRuby:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection:(id)arg1 includeRuby:(BOOL)arg2;
 - (id)repForCharIndex:(unsigned int)arg1 isStart:(BOOL)arg2;
 - (id)repForDragging;
 - (id)rubyFieldAtPoint:(struct CGPoint { float x1; float x2; })arg1;

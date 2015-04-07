@@ -5,6 +5,18 @@
 @class <VSSpeechSynthesizerDelegate>, NSObject<OS_dispatch_queue>, NSString, VSKeepAlive, VSSpeechConnection;
 
 @interface VSSpeechSynthesizer : NSObject <VSSpeechConnectionDelegate> {
+    unsigned int _audioQueueFlags;
+    unsigned int _audioSessionID;
+    BOOL _audioSessionIDIsValid;
+    <VSSpeechSynthesizerDelegate> *_delegate;
+    int _footprint;
+    int _gender;
+    VSKeepAlive *_inactiveKeepAlive;
+    VSKeepAlive *_keepAlive;
+    float _pitch;
+    NSObject<OS_dispatch_queue> *_queue;
+    float _rate;
+    VSSpeechConnection *_speechConnection;
     struct { 
         unsigned int delegateStart : 1; 
         unsigned int delegateFinish : 1; 
@@ -19,18 +31,6 @@
         unsigned int delegateContinueWithRequest : 1; 
         unsigned int delegateWillSpeakWithRequest : 1; 
         unsigned int willUseInput : 1; 
-    unsigned int _audioQueueFlags;
-    unsigned int _audioSessionID;
-    BOOL _audioSessionIDIsValid;
-    <VSSpeechSynthesizerDelegate> *_delegate;
-    int _footprint;
-    int _gender;
-    VSKeepAlive *_inactiveKeepAlive;
-    VSKeepAlive *_keepAlive;
-    float _pitch;
-    NSObject<OS_dispatch_queue> *_queue;
-    float _rate;
-    VSSpeechConnection *_speechConnection;
     } _synthesizerFlags;
     BOOL _useCustomVoice;
     BOOL _useSharedSession;

@@ -59,8 +59,8 @@
 - (float)heightForAutohidingTableHeaderView;
 - (float)heightForFooterInSection:(int)arg1 canGuess:(BOOL)arg2;
 - (float)heightForHeaderInSection:(int)arg1 canGuess:(BOOL)arg2;
-- (float)heightForRow:(int)arg1 inSection:(int)arg2 canGuess:(BOOL)arg3 adjustForReorderedRow:(BOOL)arg4;
 - (float)heightForRow:(int)arg1 inSection:(int)arg2 canGuess:(BOOL)arg3;
+- (float)heightForRow:(int)arg1 inSection:(int)arg2 canGuess:(BOOL)arg3 adjustForReorderedRow:(BOOL)arg4;
 - (float)heightForSection:(int)arg1;
 - (float)heightForTable;
 - (float)heightForTableFooterView;

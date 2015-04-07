@@ -5,11 +5,11 @@
 @class <TKVibrationRecorderStyleProvider>, CAAnimation, NSMutableArray, NSMutableDictionary;
 
 @interface TKVibrationRecorderRippleView : UIView {
+    BOOL _animating;
+    float _currentSpeedCoefficient;
     struct CGPoint { 
         float x; 
         float y; 
-    BOOL _animating;
-    float _currentSpeedCoefficient;
     } _currentTouchLocation;
     double _currentTouchStartTime;
     float _fadeOutRadius;

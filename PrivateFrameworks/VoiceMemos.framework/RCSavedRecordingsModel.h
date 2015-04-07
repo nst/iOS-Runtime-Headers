@@ -64,8 +64,8 @@
 - (BOOL)hasExistingRecordingForAudioFile:(id)arg1;
 - (id)indexPathForRecording:(id)arg1;
 - (id)init;
-- (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3 customLabelBase:(id)arg4;
 - (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3;
+- (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3 customLabelBase:(id)arg4;
 - (int)isSavingDisabledCount;
 - (id)nextRecordingDefaultLabelWithCustomLabelBase:(id)arg1;
 - (void)performBlockAndWait:(id)arg1;
@@ -81,8 +81,8 @@
 - (BOOL)saveManagedObjectContext:(id*)arg1;
 - (void)setIsSavingDisabledCount:(int)arg1;
 - (void)setValid:(BOOL)arg1;
-- (BOOL)setValue:(id)arg1 forDatabaseProperty:(id)arg2 save:(BOOL)arg3;
 - (BOOL)setValue:(id)arg1 forDatabaseProperty:(id)arg2;
+- (BOOL)setValue:(id)arg1 forDatabaseProperty:(id)arg2 save:(BOOL)arg3;
 - (BOOL)valid;
 - (id)valueForDatabaseProperty:(id)arg1;
 

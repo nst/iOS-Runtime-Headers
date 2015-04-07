@@ -28,9 +28,9 @@
 + (void)initialize;
 + (id)newTrustManager;
 + (id)passwordForHost:(id)arg1 username:(id)arg2 port:(int)arg3 keychainProtocol:(void*)arg4;
++ (id)passwordForServiceName:(id)arg1 accountName:(id)arg2;
 + (id)passwordForServiceName:(id)arg1 accountName:(id)arg2 error:(id*)arg3;
 + (id)passwordForServiceName:(id)arg1 accountName:(id)arg2 synchronizable:(BOOL)arg3 error:(id*)arg4;
-+ (id)passwordForServiceName:(id)arg1 accountName:(id)arg2;
 + (id)persistentReferenceForIdentity:(struct __SecIdentity { }*)arg1 error:(id*)arg2;
 + (void)removePasswordForHost:(id)arg1 username:(id)arg2 port:(int)arg3 keychainProtocol:(void*)arg4;
 + (void)removePasswordForServiceName:(id)arg1 accountName:(id)arg2;

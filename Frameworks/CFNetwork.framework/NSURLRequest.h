@@ -4,7 +4,7 @@
 
 @class GKFairPlaySAPSession, NSData, NSDictionary, NSInputStream, NSString, NSURL, NSURLRequestInternal;
 
-@interface NSURLRequest : NSObject <NSSecureCoding, NSCopying, NSMutableCopying> {
+@interface NSURLRequest : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSURLRequestInternal *_internal;
 }
 
@@ -26,8 +26,8 @@
 + (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
 + (double)defaultTimeoutInterval;
 + (id)getObjectKeyWithIndex:(long)arg1;
-+ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (id)requestWithURL:(id)arg1;
++ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (void)setAllowsAnyHTTPSCertificate:(BOOL)arg1 forHost:(id)arg2;
 + (void)setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 + (void)setDefaultTimeoutInterval:(double)arg1;
@@ -75,8 +75,8 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)mainDocumentURL;

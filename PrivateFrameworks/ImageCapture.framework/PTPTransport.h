@@ -5,17 +5,17 @@
 @class PTPOperationResponsePacket, PTPWrappedBytes;
 
 @interface PTPTransport : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
     BOOL _busy;
     struct __CFRunLoopSource { } *_callbackDummyMachPortRLSrc;
     struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } *_callbackThread;
+    struct _opaque_pthread_cond_t { 
+        long __sig; 
+        BOOL __opaque[24]; 
     } _callbackThreadCondition;
     BOOL _callbackThreadConditionSignaled;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _callbackThreadMutex;
     struct __CFRunLoop { } *_callbackThreadRunLoop;
     unsigned long _canceledTransactionID;
@@ -24,8 +24,8 @@
     id _delegate;
     BOOL _delegateNeedsResponse;
     unsigned long long _excessReceivedDataSize;
-    BOOL _headerBufferFound;
     unsigned char _headerBuffer[12];
+    BOOL _headerBufferFound;
     PTPOperationResponsePacket *_response;
     BOOL _responseReceived;
     int _role;

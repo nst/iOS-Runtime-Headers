@@ -50,8 +50,8 @@
 - (id)initWithSocket:(int)arg1 queue:(id)arg2 delegate:(id)arg3 priority:(int)arg4;
 - (BOOL)isConnected;
 - (BOOL)isEmpty;
-- (BOOL)sendDataMessage:(id)arg1 canFragment:(BOOL)arg2;
 - (BOOL)sendDataMessage:(id)arg1;
+- (BOOL)sendDataMessage:(id)arg1 canFragment:(BOOL)arg2;
 - (void)setFragmentationSize:(unsigned int)arg1;
 - (void)setInFlightMessageCountLowWaterMark:(unsigned int)arg1;
 - (void)setNotifyWhenConnectionReceivesBytes:(BOOL)arg1;

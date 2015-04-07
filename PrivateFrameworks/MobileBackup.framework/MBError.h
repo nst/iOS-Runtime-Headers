@@ -7,8 +7,8 @@
 
 + (int)codeForErrno:(int)arg1;
 + (int)codeForNSError:(id)arg1;
-+ (id)descriptionForError:(id)arg1 paths:(BOOL)arg2;
 + (id)descriptionForError:(id)arg1;
++ (id)descriptionForError:(id)arg1 paths:(BOOL)arg2;
 + (id)dictionaryRepresentationForError:(id)arg1;
 + (int)errnoForError:(id)arg1;
 + (id)errorForHTTPURLResponse:(id)arg1 error:(id)arg2;

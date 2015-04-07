@@ -14,19 +14,23 @@
 @class NSObject<OS_dispatch_semaphore>, NSOperationQueue;
 
 @interface CMDeviceOrientationManagerInternal : NSObject {
-    struct Sample { 
-        double timestamp; 
-        int orientation; 
-    struct Sample { 
-        double timestamp; 
-        int orientation; 
-    boolfEnableOrientationNotification;
     struct Dispatcher { int (**x1)(); id x2; } *fDeviceOrientationDispatcher;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id fDeviceOrientationHandler;
+
     NSOperationQueue *fDeviceOrientationQueue;
     NSObject<OS_dispatch_semaphore> *fDeviceOrientationSemaphore;
     BOOL fDidSignalSemaphore;
+    bool fEnableOrientationNotification;
+    struct Sample { 
+        double timestamp; 
+        int orientation; 
     } fLastSignificantOrientationSample;
+    struct Sample { 
+        double timestamp; 
+        int orientation; 
     } fLatestDeviceOrientationSample;
     int fOrientationCallbackMode;
     int fSampleLock;

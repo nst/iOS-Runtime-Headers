@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface AWDHomeKitEvent : PBCodable <NSCopying> {
+    unsigned int _eventType;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int eventType : 1; 
-    unsigned int _eventType;
-    NSString *_guid;
     } _has;
     unsigned long long _timestamp;
 }

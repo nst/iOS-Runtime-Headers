@@ -14,6 +14,8 @@
             float width; 
             float height; 
         } size; 
+    } mLeftGeneratingObjectRect;
+    TSDSpacingGuideUILayer *mLeftSpacingUILayer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,8 +25,6 @@
             float width; 
             float height; 
         } size; 
-    } mLeftGeneratingObjectRect;
-    TSDSpacingGuideUILayer *mLeftSpacingUILayer;
     } mRightGeneratingObjectRect;
     TSDSpacingGuideUILayer *mRightSpacingUILayer;
     TSDSwappableAxesGeometry *mVerticalGeom;

@@ -10,9 +10,12 @@
 @class <TNUIStateDelegate>, NSArray, NSSet, TNChartSelection, TNSheetSelection, TSTTableSelection, TSURetainedPointerKeyDictionary;
 
 @interface TNUIState : NSObject <NSCopying> {
+    TNChartSelection *mChartSelection;
+    <TNUIStateDelegate> *mDelegate;
     struct CGSize { 
         float width; 
         float height; 
+    } mDesktopScreenSize;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -22,9 +25,6 @@
             float width; 
             float height; 
         } size; 
-    TNChartSelection *mChartSelection;
-    <TNUIStateDelegate> *mDelegate;
-    } mDesktopScreenSize;
     } mDesktopWindowFrame;
     int mDocumentMode;
     TSURetainedPointerKeyDictionary *mEditModeSheetUIStates;
@@ -85,7 +85,7 @@
 - (BOOL)hasVisibleRect;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithArchive:(const struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; unsigned int x5; unsigned int x6; struct SelectionArchive {} *x7; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; int x9; int x10; unsigned int x11; unsigned int x12; struct ChartSelectionArchive {} *x13; struct Reference {} *x14; int x15; boolx16; boolx17; boolx18; boolx19; struct RepeatedField<unsigned int> { unsigned int *x_20_1_1; int x_20_1_2; int x_20_1_3; } x20; struct Point {} *x21; struct Size {} *x22; struct Size {} *x23; boolx24; int x25; unsigned int x26[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; unsigned int x5; unsigned int x6; struct SelectionArchive {} *x7; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; int x9; int x10; unsigned int x11; unsigned int x12; struct ChartSelectionArchive {} *x13; struct Reference {} *x14; int x15; bool x16; bool x17; bool x18; bool x19; struct RepeatedField<unsigned int> { unsigned int *x_20_1_1; int x_20_1_2; int x_20_1_3; } x20; struct Point {} *x21; struct Size {} *x22; struct Size {} *x23; bool x24; int x25; unsigned int x26[1]; }*)arg1 unarchiver:(id)arg2;
 - (int)inspectorPaneViewMode;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isInspectorPaneVisible;
@@ -98,7 +98,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previousVisibleRect;
 - (void)removeUIStateForSheet:(id)arg1;
 - (BOOL)removedAllQuickCalcFunctions;
-- (void)saveToArchive:(struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; unsigned int x5; unsigned int x6; struct SelectionArchive {} *x7; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; int x9; int x10; unsigned int x11; unsigned int x12; struct ChartSelectionArchive {} *x13; struct Reference {} *x14; int x15; boolx16; boolx17; boolx18; boolx19; struct RepeatedField<unsigned int> { unsigned int *x_20_1_1; int x_20_1_2; int x_20_1_3; } x20; struct Point {} *x21; struct Size {} *x22; struct Size {} *x23; boolx24; int x25; unsigned int x26[1]; }*)arg1 archiver:(id)arg2 context:(id)arg3;
+- (void)saveToArchive:(struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; unsigned int x5; unsigned int x6; struct SelectionArchive {} *x7; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; int x9; int x10; unsigned int x11; unsigned int x12; struct ChartSelectionArchive {} *x13; struct Reference {} *x14; int x15; bool x16; bool x17; bool x18; bool x19; struct RepeatedField<unsigned int> { unsigned int *x_20_1_1; int x_20_1_2; int x_20_1_3; } x20; struct Point {} *x21; struct Size {} *x22; struct Size {} *x23; bool x24; int x25; unsigned int x26[1]; }*)arg1 archiver:(id)arg2 context:(id)arg3;
 - (struct CGPoint { float x1; float x2; })scrollPosition;
 - (id)selectedInfos;
 - (id)selectedQuickCalcFunctions;
@@ -111,8 +111,8 @@
 - (void)setFormFocusedRecordIndex:(unsigned short)arg1;
 - (void)setInspectorPaneViewMode:(int)arg1;
 - (void)setInspectorPaneVisible:(BOOL)arg1;
-- (void)setPreviousVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSheet:(id)arg2;
 - (void)setPreviousVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPreviousVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSheet:(id)arg2;
 - (void)setRemovedAllQuickCalcFunctions:(BOOL)arg1;
 - (void)setSelectedInfos:(id)arg1;
 - (void)setSelectedQuickCalcFunctions:(id)arg1;
@@ -122,8 +122,8 @@
 - (void)setTableEditingMode:(int)arg1;
 - (void)setTableSelection:(id)arg1;
 - (void)setUIState:(id)arg1 forSheet:(id)arg2;
-- (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSheet:(id)arg2;
 - (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSheet:(id)arg2;
 - (id)sheetSelection;
 - (BOOL)showCanvasGuides;
 - (BOOL)showsComments;

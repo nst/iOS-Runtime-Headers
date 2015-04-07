@@ -5,21 +5,21 @@
 @class <TSKAnnotation>, NSArray, NSString, TSWPSelection, TSWPSmartField, TSWPStorage;
 
 @interface TSWPSearchReference : NSObject <TSKSearchReference> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     BOOL _autohideHighlight;
     NSArray *_findHighlights;
     BOOL _pulseHighlight;
     BOOL _refersToSmartField;
     TSWPSelection *_selection;
     TSWPSmartField *_smartField;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _smartFieldRange;
     TSWPStorage *_storage;
     <TSKAnnotation> *annotation;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } searchReferencePoint;
 }
 

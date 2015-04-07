@@ -4,7 +4,7 @@
 
 @class <PUSearchViewControllerDelegate>, <UITableViewDataSource><UITableViewDelegate>, NSMutableDictionary, NSString, PHImageManager, PSIDatabase, PUPingTimer, PUSearchResultsDataSource, PUSuggestedSearchResultsDataSource, UIBarButtonItem, UIPanGestureRecognizer, UISearchBar, UITableView, UIView, _UIBackdropView, _UIDynamicValueAnimation;
 
-@interface PUSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, PUSearchResultsDelegate, PUSuggestedSearchResultsDelegate> {
+@interface PUSearchViewController : UIViewController <PUSearchResultsDelegate, PUSuggestedSearchResultsDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
     _UIBackdropView *_backdropView;
     UIView *_backgroundView;
     UIBarButtonItem *_cancelButton;

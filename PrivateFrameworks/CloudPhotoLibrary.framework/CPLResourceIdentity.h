@@ -4,15 +4,15 @@
 
 @class NSString, NSURL;
 
-@interface CPLResourceIdentity : NSObject <NSSecureCoding, NSCopying> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface CPLResourceIdentity : NSObject <NSCopying, NSSecureCoding> {
     BOOL _available;
     unsigned int _fileSize;
     NSURL *_fileURL;
     NSString *_fileUTI;
     NSString *_fingerPrint;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _imageDimensions;
 }
 

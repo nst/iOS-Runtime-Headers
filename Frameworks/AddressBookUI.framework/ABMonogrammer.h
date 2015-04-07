@@ -45,8 +45,8 @@
 - (float)innerBorderWidth;
 - (id)knockoutMaskMonogram;
 - (id)maskForMonogram;
-- (id)monogramForPerson:(void*)arg1 isPersonImage:(BOOL*)arg2;
 - (id)monogramForPerson:(void*)arg1;
+- (id)monogramForPerson:(void*)arg1 isPersonImage:(BOOL*)arg2;
 - (id)monogramForPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 - (void)monogramsAsFlatImages;
 - (void)monogramsForStark;

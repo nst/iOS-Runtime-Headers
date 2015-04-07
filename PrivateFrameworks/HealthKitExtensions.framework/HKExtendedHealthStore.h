@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, _HKExtendedHealthStoreProxy;
 
 @interface HKExtendedHealthStore : NSObject <HKExtendedClientInterface> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _achievementsAddedHandler;
+
     NSObject<OS_dispatch_queue> *_clientQueue;
     NSXPCConnection *_connection;
     _HKExtendedHealthStoreProxy *_connectionProxy;

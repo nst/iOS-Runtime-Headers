@@ -19,12 +19,11 @@
     } _framesToMetadataMap;
 }
 
-- (struct FrameMetadata { int (**x1)(); struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow> { struct OpaqueJSValue {} **x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct OpaqueJSValue {} *x3; struct OpaqueJSValue {} *x4; struct OpaqueJSContext {} *x5; id x6; id x7; }*)metadataForFrame:(id)arg1 requestType:(unsigned int)arg2;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)autoFillFormAsynchronouslyInFrame:(id)arg1 withValues:(id)arg2 selectFieldAfterFilling:(id)arg3;
-- (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 fillSynchronously:(BOOL)arg3 selectFieldAfterFilling:(id)arg4;
 - (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2;
+- (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 fillSynchronously:(BOOL)arg3 selectFieldAfterFilling:(id)arg4;
 - (void)autoFillFormSynchronouslyInFrame:(id)arg1 withValues:(id)arg2;
 - (void)clearMetadataForFrame:(id)arg1;
 - (void)clearScriptWorld;
@@ -42,6 +41,7 @@
 - (void)getMetadataForTextField:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id*)arg3 formMetadata:(id*)arg4;
 - (id)init;
 - (id)metadataForForm:(id)arg1 inFrame:(id)arg2 requestType:(unsigned int)arg3;
+- (struct FrameMetadata { int (**x1)(); struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow> { struct OpaqueJSValue {} **x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct OpaqueJSValue {} *x3; struct OpaqueJSValue {} *x4; struct OpaqueJSContext {} *x5; id x6; id x7; }*)metadataForFrame:(id)arg1 requestType:(unsigned int)arg2;
 - (BOOL)pageWithMainFrameMeetsEditedFormTextWarningCriteria:(id)arg1;
 - (void)passwordFieldBlurredInFrame:(id)arg1;
 - (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2;

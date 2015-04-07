@@ -41,8 +41,8 @@
 - (id)countryOverride;
 - (void)dealloc;
 - (id)description;
-- (id)displayNameIncludingCountry:(BOOL)arg1 withFormat:(id)arg2;
 - (id)displayNameIncludingCountry:(BOOL)arg1;
+- (id)displayNameIncludingCountry:(BOOL)arg1 withFormat:(id)arg2;
 - (void)ensureLocalized;
 - (unsigned int)hash;
 - (int)identifier;

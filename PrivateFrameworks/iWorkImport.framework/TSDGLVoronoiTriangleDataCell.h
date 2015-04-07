@@ -3,9 +3,6 @@
  */
 
 @interface TSDGLVoronoiTriangleDataCell : NSObject {
-    struct { 
-        float x; 
-        float y; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,6 +13,9 @@
             float height; 
         } size; 
     } _bounds;
+    struct { 
+        float x; 
+        float y; 
     } _centerPoint;
     unsigned int _triangleCount;
     unsigned int _vertexCount;

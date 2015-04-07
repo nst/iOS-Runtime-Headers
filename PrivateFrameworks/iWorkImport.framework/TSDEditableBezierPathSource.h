@@ -9,7 +9,9 @@
 
 @class NSArray, NSMutableArray, TSDBezierNode;
 
-@interface TSDEditableBezierPathSource : TSDPathSource <TSDRealignablePathSource, TSDMixing> {
+@interface TSDEditableBezierPathSource : TSDPathSource <TSDMixing, TSDRealignablePathSource> {
+    unsigned int mActiveSubpath;
+    BOOL mHasLockedFlipTransform;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -17,8 +19,6 @@
         float d; 
         float tx; 
         float ty; 
-    unsigned int mActiveSubpath;
-    BOOL mHasLockedFlipTransform;
     } mLockedFlipTransform;
     NSMutableArray *mSubpaths;
 }
@@ -77,7 +77,7 @@
 - (id)firstNode;
 - (BOOL)hasSelectedNode;
 - (id)init;
-- (id)initWithArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1;
+- (id)initWithArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; bool x9; bool x10; int x11; unsigned int x12[1]; }*)arg1;
 - (id)insertNodeAtPoint:(struct CGPoint { float x1; float x2; })arg1 tolerance:(float)arg2;
 - (BOOL)isCircular;
 - (BOOL)isClosed;
@@ -110,7 +110,7 @@
 - (void)removeLastNode;
 - (void)removeNode:(id)arg1;
 - (void)reverseDirection;
-- (void)saveToArchive:(struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1;
+- (void)saveToArchive:(struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; bool x9; bool x10; int x11; unsigned int x12[1]; }*)arg1;
 - (void)selectAllNodes;
 - (void)selectSubpathForNode:(id)arg1 toggle:(BOOL)arg2;
 - (void)setBezierPath:(id)arg1;

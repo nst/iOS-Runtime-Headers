@@ -5,6 +5,7 @@
 @class Protocol;
 
 @interface CLIntersiloInterface : NSObject {
+    Protocol *_protocol;
     struct map<SEL *, CLIntersiloInterfaceSelectorInfo *, std::__1::less<SEL *>, std::__1::allocator<std::__1::pair<SEL *const, CLIntersiloInterfaceSelectorInfo *> > > { 
         struct __tree<std::__1::__value_type<SEL *, CLIntersiloInterfaceSelectorInfo *>, std::__1::__map_value_compare<SEL *, std::__1::__value_type<SEL *, CLIntersiloInterfaceSelectorInfo *>, std::__1::less<SEL *>, true>, std::__1::allocator<std::__1::__value_type<SEL *, CLIntersiloInterfaceSelectorInfo *> > > { 
             struct __tree_node<std::__1::__value_type<SEL *, CLIntersiloInterfaceSelectorInfo *>, void *> {} *__begin_node_; 
@@ -17,7 +18,6 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    Protocol *_protocol;
     } _selectors;
 }
 

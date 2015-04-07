@@ -5,13 +5,13 @@
 @class NSDictionary, UIBarButtonItem, UIButton, UIToolbar;
 
 @interface PUCloudPhotoSettingsViewController : UITableViewController {
+    bool _isAutorefreshingStatistics;
     NSDictionary *_latestStatisticsSnapshot;
     UIBarButtonItem *_playPauseToolbarButton;
     UIButton *_resetStatisticsButton;
     int _statisticsPeriod;
     UIToolbar *_statisticsPeriodToolbar;
     struct __CFNotificationCenter { } *_updateNotificationsCtr;
-    bool_isAutorefreshingStatistics;
 }
 
 + (id)settingsMenuActionHandler;

@@ -5,11 +5,11 @@
 @class CAShapeLayer, NSDate, NSTimer;
 
 @interface PLRoundProgressView : UIView {
+    CAShapeLayer *_circleLayer;
+    float _increaseRate;
     struct CGPoint { 
         float x; 
         float y; 
-    CAShapeLayer *_circleLayer;
-    float _increaseRate;
     } _pieCenter;
     float _pieRadius;
     NSDate *_prevUpdateTime;
@@ -25,8 +25,8 @@
 - (void)_setupSubviews;
 - (void)dealloc;
 - (void)increaseUIProgress:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)recalculateIncreaseProgress:(float)arg1 withTimeDiff:(double)arg2;
 - (void)resetProgress;
 - (void)setInitialIncreaseRatePerFrame:(float)arg1;

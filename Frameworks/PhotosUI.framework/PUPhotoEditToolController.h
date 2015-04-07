@@ -30,8 +30,8 @@
 @property(readonly) int layoutOrientation;
 @property(readonly) NSString * localizedName;
 @property(readonly) NSString * localizedResetToolActionTitle;
-@property(getter=isPerformingLiveInteraction) BOOL performingLiveInteraction;
 @property(getter=isPerformingLiveInteraction,readonly) BOOL performingLiveInteraction;
+@property(getter=isPerformingLiveInteraction) BOOL performingLiveInteraction;
 @property(readonly) PLPhotoEditMutableModel * photoEditModel;
 @property(retain) UIButton * preferredAlternateToolbarButton;
 @property(readonly) UIButton * preferredAlternateToolbarButton;
@@ -40,8 +40,8 @@
 @property unsigned int preferredRenderMode;
 @property(readonly) unsigned int preferredRenderMode;
 @property(readonly) UIImage * selectedToolbarIcon;
-@property(retain) PUPhotoEditToolControllerSpec * spec;
 @property(readonly) PUPhotoEditToolControllerSpec * spec;
+@property(retain) PUPhotoEditToolControllerSpec * spec;
 @property(readonly) Class superclass;
 @property(readonly) UIImage * toolbarIcon;
 @property(readonly) PUPhotoEditValuesCalculator * valuesCalculator;
@@ -82,8 +82,8 @@
 - (void)scrollViewDidZoom:(id)arg1;
 - (id)selectedToolbarIcon;
 - (void)setDelegate:(id)arg1;
-- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (void)setLayoutOrientation:(int)arg1;
+- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (void)setPerformingLiveInteraction:(BOOL)arg1;
 - (void)setPreferredAlternateToolbarButton:(id)arg1;
 - (void)setPreferredRenderMode:(unsigned int)arg1;

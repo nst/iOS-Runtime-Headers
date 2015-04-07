@@ -11,8 +11,16 @@
 @interface MFMessageBodyOriginalTextSubparser : MFMessageBodySubparser {
     BOOL _foundForwardSeparator;
     BOOL _foundText;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _foundTextBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _foundWhitespaceBlock;
+
     <MFMessageBodyElement_Private> *_lastNonWhitespaceTextElement;
     NSMutableArray *_lastTextElements;
 }

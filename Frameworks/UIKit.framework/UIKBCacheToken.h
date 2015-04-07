@@ -21,8 +21,8 @@
 @property struct CGSize { float x1; float x2; } size;
 @property(readonly) NSString * string;
 
-+ (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 + (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2;
++ (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 + (id)tokenForKeyMask:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 + (id)tokenForKeyplane:(id)arg1;
 + (id)tokenTemplateFilledForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;

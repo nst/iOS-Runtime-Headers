@@ -5,15 +5,15 @@
 @class NSDictionary, NSPersistentStoreCoordinator, NSString, NSURL;
 
 @interface NSPersistentStore : NSObject {
+    NSString *_configurationName;
+    NSPersistentStoreCoordinator *_coordinator;
+    id _defaultFaultHandler;
+    id _externalRecordsMonitor;
     struct _objectStoreFlags { 
         unsigned int isReadOnly : 1; 
         unsigned int cleanOnRemove : 1; 
         unsigned int isMDDirty : 1; 
         unsigned int _RESERVED : 29; 
-    NSString *_configurationName;
-    NSPersistentStoreCoordinator *_coordinator;
-    id _defaultFaultHandler;
-    id _externalRecordsMonitor;
     } _flags;
     id *_oidFactories;
     NSDictionary *_options;

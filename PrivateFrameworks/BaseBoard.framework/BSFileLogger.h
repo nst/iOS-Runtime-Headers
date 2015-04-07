@@ -36,8 +36,8 @@
 - (void)_enableLogCategory:(id)arg1;
 - (void)_queue_appendLogForCategory:(id)arg1 withFormat:(id)arg2 arguments:(void*)arg3;
 - (BOOL)_queue_isEnabledForCategory:(id)arg1;
-- (void)_setEnabled:(BOOL)arg1 fromDefaults:(BOOL)arg2;
 - (void)_setEnabled:(BOOL)arg1;
+- (void)_setEnabled:(BOOL)arg1 fromDefaults:(BOOL)arg2;
 - (id)composedLogForCategory:(id)arg1 destination:(unsigned int)arg2 format:(id)arg3 arguments:(void*)arg4;
 - (void)dealloc;
 - (id)delegate;
@@ -49,8 +49,8 @@
 - (id)logPreferenceDomain;
 - (id)logPreferenceName;
 - (id)logPrefixForCategory:(id)arg1 destination:(unsigned int)arg2;
-- (void)logWithFormat:(id)arg1 arguments:(void*)arg2;
 - (void)logWithFormat:(id)arg1;
+- (void)logWithFormat:(id)arg1 arguments:(void*)arg2;
 - (id)loggerForCatagory:(id)arg1;
 - (int)maxLogCount;
 - (unsigned int)maxLogLinesInMemory;

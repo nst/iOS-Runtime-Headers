@@ -5,12 +5,12 @@
 @class NSString, SKUICollectionViewCell<SKUIViewElementView>, SKUIViewElementLayoutContext;
 
 @interface SKUIViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
+    Class _cellClass;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    Class _cellClass;
     } _cellContentInset;
     SKUIViewElementLayoutContext *_cellLayoutContext;
     float _firstSectionTopInset;

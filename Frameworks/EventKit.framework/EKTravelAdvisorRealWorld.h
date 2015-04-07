@@ -8,16 +8,32 @@
 
 @class CLLocation, CLLocationManager, EKTravelAgendaItem, NSBundle, NSObject<OS_dispatch_queue>, NSString, PCPersistentTimer;
 
-@interface EKTravelAdvisorRealWorld : NSObject <EKTravelAdvisorWorld, CLLocationManagerDelegate> {
+@interface EKTravelAdvisorRealWorld : NSObject <CLLocationManagerDelegate, EKTravelAdvisorWorld> {
     EKTravelAgendaItem *_agendaItem;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _alarmHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _geofenceHandler;
+
     CLLocation *_geofenceInitialLocation;
     CLLocationManager *_geofenceLocationManager;
     BOOL _geofenceUsingSignificantLocationUpdates;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _locationAuthorizationHandler;
+
     NSBundle *_locationBundle;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _locationHandler;
+
     CLLocation *_locationInitialLocation;
     PCPersistentTimer *_persistentTimer;
     CLLocationManager *_pollingLocationManager;

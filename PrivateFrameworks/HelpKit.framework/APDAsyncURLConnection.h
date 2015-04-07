@@ -11,9 +11,17 @@
 @interface APDAsyncURLConnection : NSURLConnection <UIAlertViewDelegate> {
     NSURLResponse *_URLResponse;
     NSURLAuthenticationChallenge *_requestChanllenge;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mCompleteBlock;
+
     NSMutableData *mData;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mErrorBlock;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

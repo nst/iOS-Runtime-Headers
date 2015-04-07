@@ -5,13 +5,13 @@
 @class <ABPersonTabsLayoutManager>, ABPersonViewControllerHelper, NSString, UIView;
 
 @interface ABPersonTableView : UITableView <ABPersonTabsScrollView> {
+    ABPersonViewControllerHelper *_helper;
+    float _minimumBottomInset;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    ABPersonViewControllerHelper *_helper;
-    float _minimumBottomInset;
     } _savedContentInset;
     <ABPersonTabsLayoutManager> *_tabsLayoutManager;
 }

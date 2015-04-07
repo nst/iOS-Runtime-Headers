@@ -31,8 +31,8 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithAttributedString:(id)arg1;
-- (id)initWithString:(id)arg1 attributes:(id)arg2;
 - (id)initWithString:(id)arg1;
+- (id)initWithString:(id)arg1 attributes:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)length;
 - (oneway void)release;

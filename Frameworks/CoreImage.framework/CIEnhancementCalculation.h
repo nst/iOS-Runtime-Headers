@@ -5,9 +5,6 @@
 @class CIEnhancementHistogram;
 
 @interface CIEnhancementCalculation : NSObject {
-    struct { 
-        float i; 
-        float q; 
     CIEnhancementHistogram *borderHist;
     float curvePercent;
     float exposureValue;
@@ -16,6 +13,9 @@
     CIEnhancementHistogram *lumHist;
     float maxShadow;
     float minShadow;
+    struct { 
+        float i; 
+        float q; 
     } originalFaceColor;
     float percentFaceChange;
     CIEnhancementHistogram *rgbSumHist;

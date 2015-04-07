@@ -25,8 +25,8 @@
 - (void)addNodesToArray:(id)arg1;
 - (void)addTemporarySmoothNodes;
 - (BOOL)allNodesSelected;
-- (void)appendToBezierPath:(id)arg1 selectedNodesOnly:(BOOL)arg2 fromIndex:(unsigned int)arg3;
 - (void)appendToBezierPath:(id)arg1;
+- (void)appendToBezierPath:(id)arg1 selectedNodesOnly:(BOOL)arg2 fromIndex:(unsigned int)arg3;
 - (id)bezierNodeUnderPoint:(struct CGPoint { float x1; float x2; })arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 andTolerance:(float)arg3 returningType:(int*)arg4;
 - (id)bezierPath;
 - (struct CGPoint { float x1; float x2; })calculateNewControlFromOriginalDelta:(struct CGPoint { float x1; float x2; })arg1 currentDelta:(struct CGPoint { float x1; float x2; })arg2 originalSmoothDelta:(struct CGPoint { float x1; float x2; })arg3 node:(struct CGPoint { float x1; float x2; })arg4;
@@ -67,8 +67,8 @@
 - (id)splitEdgeAtIndex:(unsigned int)arg1 atPercentage:(float)arg2;
 - (void)transformUsingAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)updateReflectedState;
+- (void)updateSmoothNodes;
 - (void)updateSmoothNodes:(id)arg1 addTemporaryNodes:(BOOL)arg2;
 - (int)updateSmoothNodes:(id)arg1 from:(int)arg2 to:(int)arg3 closed:(BOOL)arg4 addTemporaryNodes:(BOOL)arg5;
-- (void)updateSmoothNodes;
 
 @end

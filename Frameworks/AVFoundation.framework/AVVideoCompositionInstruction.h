@@ -4,7 +4,7 @@
 
 @class AVVideoCompositionInstructionInternal, NSArray, NSString;
 
-@interface AVVideoCompositionInstruction : NSObject <NSSecureCoding, NSCopying, NSMutableCopying, AVVideoCompositionInstruction> {
+@interface AVVideoCompositionInstruction : NSObject <AVVideoCompositionInstruction, NSCopying, NSMutableCopying, NSSecureCoding> {
     AVVideoCompositionInstructionInternal *_instruction;
 }
 

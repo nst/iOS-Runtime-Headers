@@ -3,7 +3,7 @@
  */
 
 @interface CHDDateAxis : CHDAxis {
-    boolmAutomatic;
+    bool mAutomatic;
     int mBaseTimeUnit;
     int mMajorTimeUnit;
     double mMajorUnitValue;

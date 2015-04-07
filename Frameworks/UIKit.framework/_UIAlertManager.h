@@ -15,15 +15,15 @@
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })calculatedAlertTransform;
 + (BOOL)cancelAlertsAnimated:(BOOL)arg1;
 + (BOOL)cancelTopMostAlertAnimated:(BOOL)arg1;
-+ (void)createAlertWindowIfNeeded:(BOOL)arg1 deferDisplay:(BOOL)arg2;
 + (void)createAlertWindowIfNeeded:(BOOL)arg1;
++ (void)createAlertWindowIfNeeded:(BOOL)arg1 deferDisplay:(BOOL)arg2;
 + (void)hideAlertsForTermination;
 + (void)hideDimmingViewAnimated:(BOOL)arg1;
 + (BOOL)hideTopMostAlertAnimated:(BOOL)arg1;
 + (void)hideTopmostMiniAlert;
 + (void)initialize;
-+ (void)noteOrientationChangingTo:(int)arg1 animated:(BOOL)arg2;
 + (void)noteOrientationChangingTo:(int)arg1;
++ (void)noteOrientationChangingTo:(int)arg1 animated:(BOOL)arg2;
 + (void)removeFromStack:(id)arg1;
 + (void)reorientAlertWindowTo:(int)arg1 animated:(BOOL)arg2 keyboard:(id)arg3;
 + (void)showDimmingViewAnimated:(BOOL)arg1;

@@ -9,27 +9,27 @@
 @class GEOComposedRouteSection, GEOSnappedRoutePath, VKPolylineOverlay;
 
 @interface VKPolylinePath : NSObject {
-    struct PolylineCoordinate { 
-        unsigned int index; 
-        float offset; 
-    struct PolylineCoordinate { 
-        unsigned int index; 
-        float offset; 
     VKPolylineOverlay *_overlay;
     BOOL _ownsPoints;
     unsigned int _pointCount;
     struct Matrix<float, 2, 1> { float x1[2]; } *_points;
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
     } _routeEnd;
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
     } _routeStart;
     GEOComposedRouteSection *_section;
     GEOSnappedRoutePath *_snappedPath;
     BOOL _trafficSpeed;
 }
 
-@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct * points; /* unknown property attribute:  1>=[2f]} */
 @property(readonly) BOOL hasCompletedMapMatching;
 @property(readonly) BOOL isMapMatched;
 @property(readonly) unsigned int pointCount;
+@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct * points; /* unknown property attribute:  1>=[2f]} */
 @property struct PolylineCoordinate { unsigned int x1; float x2; } routeEnd;
 @property struct PolylineCoordinate { unsigned int x1; float x2; } routeStart;
 @property(readonly) GEOComposedRouteSection * section;
@@ -42,8 +42,8 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasCompletedMapMatching;
-- (id)initWithOverlay:(id)arg1 section:(id)arg2 routeStartIndex:(unsigned int)arg3 routeEndIndex:(unsigned int)arg4;
 - (id)initWithOverlay:(id)arg1 section:(id)arg2;
+- (id)initWithOverlay:(id)arg1 section:(id)arg2 routeStartIndex:(unsigned int)arg3 routeEndIndex:(unsigned int)arg4;
 - (id)initWithOverlay:(id)arg1 snappedPath:(id)arg2;
 - (struct Matrix<float, 2, 1> { float x1[2]; })interpolateAt:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg1;
 - (BOOL)isMapMatched;

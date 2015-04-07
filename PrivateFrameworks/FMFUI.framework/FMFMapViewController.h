@@ -4,12 +4,7 @@
 
 @class <FMFMapViewControllerDelegate>, FMF3HiddenMapTrackingHandler, FMFMapOptionsViewController, FMFMapViewDelegateInternal, FMFNoLocationView, FMFRefreshBarButtonItem, FMFSession, FMFTitleView, MKMapView, MKUserTrackingBarButtonItem, NSSet, NSString, UIBarButtonItem, UIColor, UIImageView, UIToolbar, UIView;
 
-@interface FMFMapViewController : UIViewController <FMFSessionDelegateInternal, FMFMapViewDelegateInternalDelegate, FMF3HiddenMapTrackingHandlerDelegate, FMFNoLocationViewDelegate, FMFMapOptionsViewControllerDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+@interface FMFMapViewController : UIViewController <FMF3HiddenMapTrackingHandlerDelegate, FMFMapOptionsViewControllerDelegate, FMFMapViewDelegateInternalDelegate, FMFNoLocationViewDelegate, FMFSessionDelegateInternal> {
     BOOL __blockDidReceiveAnimation;
     NSSet *__internalHandlesShowingLocations;
     BOOL __isRenderingInitialMap;
@@ -22,6 +17,11 @@
     unsigned int _defaultMapType;
     <FMFMapViewControllerDelegate> *_delegate;
     UIBarButtonItem *_directionsBarButtonItem;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _edgeInsets;
     UIToolbar *_floatingLocationToolbar;
     UIView *_floatingToolbarView;
@@ -226,7 +226,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)zoomAndSelectHandle:(id)arg1;
-- (void)zoomToFit:(BOOL)arg1;
 - (void)zoomToFit;
+- (void)zoomToFit:(BOOL)arg1;
 
 @end

@@ -10,7 +10,11 @@
 
 @interface NSProgress : NSObject <NSProgressPublisher> {
     NSMutableDictionary *_acknowledgementHandlersByBundleID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cancellationHandler;
+
     NSMutableSet *_childrenGroups;
     NSXPCConnection *_connection;
     int _disconnectingBlockageCount;
@@ -18,8 +22,16 @@
     id _group;
     NSMutableDictionary *_lastNotificationTimesByKey;
     NSLock *_lock;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pausingHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _prioritizationHandler;
+
     NSString *_publisherID;
     int _remoteObserverCount;
     long long _reserved4;

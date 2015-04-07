@@ -3,15 +3,6 @@
  */
 
 @interface UIKeyboardEmojiGraphics : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     struct CGGradient { } *_backgroundGradient;
     struct UIKBTheme { } *_backgroundTheme;
     struct UIKBTheme { } *_categorySelectedTheme;
@@ -21,6 +12,15 @@
     struct CGGradient { } *_darkDividerGradient;
     struct UIKBTheme { } *_darkDividerTheme;
     struct UIKBTheme { } *_dividerTheme;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _imageRect;
     struct CGGradient { } *_selectedDividerGradient;
     struct CGColor { } *_selectedDividerStart;
@@ -63,8 +63,8 @@
 - (id)generateImageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 name:(id)arg2 pressed:(BOOL)arg3;
 - (id)init;
 - (void)initializeThemes;
-- (id)keyImageWithDisplayString:(id)arg1 state:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 fontSize:(float)arg4 offset:(struct CGPoint { float x1; float x2; })arg5;
 - (id)keyImageWithDisplayString:(id)arg1 state:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 fontSize:(float)arg4;
+- (id)keyImageWithDisplayString:(id)arg1 state:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 fontSize:(float)arg4 offset:(struct CGPoint { float x1; float x2; })arg5;
 - (id)pageIndicatorCurrentGenerator:(id)arg1;
 - (id)pageIndicatorGenerator:(id)arg1;
 - (id)protoKeyWithDisplayString:(id)arg1;

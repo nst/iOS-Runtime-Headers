@@ -10,22 +10,22 @@
 @class GEOVectorTile, NSString, UIView;
 
 @interface VKLabelMarker : NSObject <MKCalloutSource> {
-    struct shared_ptr<vk::LabelManager> { 
-        struct LabelManager {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<vk::InfoLabel> { 
-        struct InfoLabel {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
+    float _contentScale;
+    unsigned long long _featureID;
     struct _retain_ptr<GEOVectorTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { 
         int (**_vptr$_retain_ptr)(); 
         GEOVectorTile *_obj; 
         struct _retain_objc { } _retain; 
         struct _release_objc { } _release; 
-    float _contentScale;
-    unsigned long long _featureID;
     } _featureTile;
     int _featureType;
+    struct shared_ptr<vk::InfoLabel> { 
+        struct InfoLabel {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _label;
+    struct shared_ptr<vk::LabelManager> { 
+        struct LabelManager {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _manager;
     NSString *_subtitle;
 }

@@ -32,8 +32,8 @@
 @property(readonly) int version;
 
 + (id)badFieldTypeErrorWithField:(id)arg1;
-+ (id)badFieldValueErrorWithField:(id)arg1 underlyingError:(id)arg2;
 + (id)badFieldValueErrorWithField:(id)arg1;
++ (id)badFieldValueErrorWithField:(id)arg1 underlyingError:(id)arg2;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)localizedParenthesizedFormDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)localizedPluralForm;

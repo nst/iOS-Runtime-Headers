@@ -4,7 +4,7 @@
 
 @class <HMAccessoryDelegate>, HMHome, HMMessageDispatcher, HMRoom, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
-@interface HMAccessory : NSObject <NSSecureCoding, HMMessageReceiver> {
+@interface HMAccessory : NSObject <HMMessageReceiver, NSSecureCoding> {
     BOOL _blocked;
     BOOL _bridgedAccessory;
     <HMAccessoryDelegate> *_delegate;

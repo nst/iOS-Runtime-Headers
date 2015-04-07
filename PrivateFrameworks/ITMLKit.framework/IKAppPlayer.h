@@ -4,7 +4,7 @@
 
 @class <IKAppPlayerDelegate>, IKAppContext, IKJSPlayer, NSString;
 
-@interface IKAppPlayer : NSObject <IKJSPlayerAppBridge, IKDOMFeature> {
+@interface IKAppPlayer : NSObject <IKDOMFeature, IKJSPlayerAppBridge> {
     IKAppContext *_appContext;
     <IKAppPlayerDelegate> *_delegate;
     NSString *_featureName;

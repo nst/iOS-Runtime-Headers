@@ -18,8 +18,8 @@
 - (id)_bottomRule;
 - (id)_titleLabel;
 - (void)dealloc;
-- (id)initWithPass:(id)arg1 title:(id)arg2 body:(id)arg3 buttonTitle:(id)arg4 action:(SEL)arg5 isImportant:(BOOL)arg6;
 - (id)initWithPass:(id)arg1 title:(id)arg2 body:(id)arg3;
+- (id)initWithPass:(id)arg1 title:(id)arg2 body:(id)arg3 buttonTitle:(id)arg4 action:(SEL)arg5 isImportant:(BOOL)arg6;
 - (void)layoutSubviews;
 
 @end

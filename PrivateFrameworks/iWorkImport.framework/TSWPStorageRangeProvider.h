@@ -5,11 +5,11 @@
 @class NSObject, NSString;
 
 @interface TSWPStorageRangeProvider : NSObject {
+    NSString *_identifier;
+    NSObject *_object;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    NSString *_identifier;
-    NSObject *_object;
     } _range;
 }
 

@@ -4,7 +4,7 @@
 
 @class IDSAccount, NSMapTable, NSMutableDictionary, NSSet, NSString;
 
-@interface _IDSConnection : NSObject <IDSDaemonListenerProtocol, IDSAccountDelegate> {
+@interface _IDSConnection : NSObject <IDSAccountDelegate, IDSDaemonListenerProtocol> {
     IDSAccount *_account;
     NSSet *_commands;
     unsigned int _delegateCapabilities;
@@ -23,18 +23,18 @@
 @property(readonly) BOOL isActive;
 @property(readonly) Class superclass;
 
-- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)_callDelegatesWithBlock:(id)arg1;
+- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)_connect;
 - (void)_handleLastCallForPendingIdentifier:(id)arg1 callbackID:(id)arg2;
 - (void)_resendPendingSends;
 - (id)_sendWithParameters:(id)arg1 options:(id)arg2 loggingType:(id)arg3 loggingDataSize:(unsigned int)arg4;
 - (void)_setTemporaryMessageContext:(id)arg1;
 - (BOOL)_shouldAcceptIncomingType:(id)arg1 forTopic:(id)arg2 toIdentifier:(id)arg3;
+- (id)account;
 - (void)account:(id)arg1 devicesChanged:(id)arg2;
 - (void)account:(id)arg1 isActiveChanged:(BOOL)arg2;
 - (void)account:(id)arg1 nearbyDevicesChanged:(id)arg2;
-- (id)account;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)daemonConnected;
 - (void)dataReceived:(id)arg1 withGUID:(id)arg2 forTopic:(id)arg3 toIdentifier:(id)arg4 fromID:(id)arg5 context:(id)arg6;

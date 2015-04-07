@@ -5,19 +5,19 @@
 @class EDResources, OADGraphicProperties;
 
 @interface CHDDataLabel : NSObject {
-    boolmIsPositionAffineTransform;
-    boolmShowBubbleSize;
-    boolmShowCategoryName;
-    boolmShowLeaderLines;
-    boolmShowLegendKey;
-    boolmShowPercent;
-    boolmShowSeriesName;
-    boolmShowValue;
     unsigned int mContentFormatId;
     OADGraphicProperties *mGraphicProperties;
+    bool mIsPositionAffineTransform;
     int mPosition;
     EDResources *mResources;
     double mRotation;
+    bool mShowBubbleSize;
+    bool mShowCategoryName;
+    bool mShowLeaderLines;
+    bool mShowLegendKey;
+    bool mShowPercent;
+    bool mShowSeriesName;
+    bool mShowValue;
     unsigned int mStringIndex;
 }
 

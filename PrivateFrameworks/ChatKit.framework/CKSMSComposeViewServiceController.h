@@ -4,7 +4,7 @@
 
 @class CKModalTranscriptController, NSString;
 
-@interface CKSMSComposeViewServiceController : UINavigationController <CKTranscriptComposeDelegate, CKSMSComposeViewServiceProtocol> {
+@interface CKSMSComposeViewServiceController : UINavigationController <CKSMSComposeViewServiceProtocol, CKTranscriptComposeDelegate> {
     BOOL _canEditRecipients;
     BOOL _disableCameraAttachments;
     BOOL _forceMMS;

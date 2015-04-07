@@ -7,11 +7,11 @@
         double *list; 
         unsigned int count; 
         unsigned int size; 
+    } _latitudes;
     struct { 
         double *list; 
         unsigned int count; 
         unsigned int size; 
-    } _latitudes;
     } _longitudes;
     double _tolerance;
 }

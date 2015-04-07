@@ -4,7 +4,7 @@
 
 @class <UIViewControllerContextTransitioning>, NSString, UIView, _UINavigationInteractiveTransitionBase, _UIParallaxDimmingView;
 
-@interface _UINavigationParallaxTransition : NSObject <_UIBasicAnimationFactory, UIViewControllerAnimatedTransitioningEx> {
+@interface _UINavigationParallaxTransition : NSObject <UIViewControllerAnimatedTransitioningEx, _UIBasicAnimationFactory> {
     _UIParallaxDimmingView *_borderDimmingView;
     UIView *_clipUnderView;
     BOOL _clipUnderlapWhileTransitioning;

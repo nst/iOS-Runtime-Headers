@@ -14,7 +14,11 @@
     BOOL _allowsRemove;
     PHChangeRequestHelper *_changeRequestHelper;
     NSString *_destinationEntityName;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _isDestinationObjectValid;
+
     NSMutableArray *_mutableObjectIDsAndUUIDs;
     NSArray *_originalObjectIDs;
     NSString *_relationshipName;

@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface AWDEventKitSyncIsNotifiableEvent : PBCodable <NSCopying> {
+    unsigned long long _deltaProcessingTime;
+    unsigned long long _deltaTransitTime;
     struct { 
         unsigned int deltaProcessingTime : 1; 
         unsigned int deltaTransitTime : 1; 
         unsigned int timestamp : 1; 
         unsigned int willTriggerNotification : 1; 
-    unsigned long long _deltaProcessingTime;
-    unsigned long long _deltaTransitTime;
     } _has;
     NSString *_reason;
     unsigned long long _timestamp;

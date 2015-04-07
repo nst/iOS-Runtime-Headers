@@ -9,12 +9,16 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface MPAVPeriodicTimeObserverInfo : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _block;
+
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    id _block;
     } _interval;
     NSObject<OS_dispatch_queue> *_queue;
 }

@@ -10,6 +10,10 @@
 @class NSHashTable, NSObject<OS_dispatch_queue>, NSString, TSPDatabase;
 
 @interface TSPDatabaseReader : TSPReader <TSPDatabaseUnarchiverDelegate> {
+    TSPDatabase *_database;
+    NSObject<OS_dispatch_queue> *_databaseQueue;
+    unsigned long long _databaseVersion;
+    NSHashTable *_datas;
     struct hash_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
         struct __hash_table<std::__1::pair<const long long, bool>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, bool>, TSP::IdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, bool>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > > { 
@@ -34,10 +38,6 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    TSPDatabase *_database;
-    NSObject<OS_dispatch_queue> *_databaseQueue;
-    unsigned long long _databaseVersion;
-    NSHashTable *_datas;
     } _readIdentifiers;
 }
 
@@ -51,19 +51,19 @@
 @property(readonly) BOOL isFromPasteboard;
 @property(readonly) Class superclass;
 
-- (struct Message { int (**x1)(); }*)newDataMessageForDatabaseObject:(id)arg1;
-- (struct Message { int (**x1)(); }*)newImageDataMessageForDatabaseObject:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)beginReadingWithCompletionQueue:(id)arg1 completion:(id)arg2;
-- (id)dataForOldDataArchive:(const struct DatabaseDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; unsigned long long x6; unsigned int x7; boolx8; int x9; unsigned int x10[1]; }*)arg1;
+- (id)dataForOldDataArchive:(const struct DatabaseDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; unsigned long long x6; unsigned int x7; bool x8; int x9; unsigned int x10[1]; }*)arg1;
 - (void)dealloc;
 - (void)didUnarchiveObject:(id)arg1 withUnarchiver:(id)arg2;
-- (id)filenameFromOldDataArchive:(const struct DatabaseDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; unsigned long long x6; unsigned int x7; boolx8; int x9; unsigned int x10[1]; }*)arg1;
+- (id)filenameFromOldDataArchive:(const struct DatabaseDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; unsigned long long x6; unsigned int x7; bool x8; int x9; unsigned int x10[1]; }*)arg1;
 - (struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree_node<long long, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<long long> > { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)filterIdentifiers:(const struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree_node<long long, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<long long> > { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)arg1;
 - (id)init;
 - (id)initWithComponent:(id)arg1 delegate:(id)arg2;
 - (id)initWithComponent:(id)arg1 finalizeHandlerQueue:(id)arg2 delegate:(id)arg3 database:(id)arg4 databaseVersion:(unsigned long long)arg5;
+- (struct Message { int (**x1)(); }*)newDataMessageForDatabaseObject:(id)arg1;
+- (struct Message { int (**x1)(); }*)newImageDataMessageForDatabaseObject:(id)arg1;
 - (id)newUnarchiverWithDatabaseObject:(id)arg1;
 - (id)objectUUIDMap;
 - (void)unarchiveObjectWithIdentifierAsync:(long long)arg1;

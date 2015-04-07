@@ -132,8 +132,8 @@
 - (id)setupForeGroundQuery;
 - (void)setupPostAccountingQueries;
 - (void)setupQueries;
-- (double)snapRails:(id)arg1 withLastSnapTime:(double)arg2 withLoggingArray:(id)arg3;
 - (id)snapRails;
+- (double)snapRails:(id)arg1 withLastSnapTime:(double)arg2 withLoggingArray:(id)arg3;
 - (void)storeAggregatedResult:(id)arg1 withValue:(double)arg2;
 - (void)storeQueryResult:(id)arg1 withEntryKeyName:(id)arg2 withAggKey:(id)arg3 forQuery:(id)arg4;
 - (void)testRailEnergy;

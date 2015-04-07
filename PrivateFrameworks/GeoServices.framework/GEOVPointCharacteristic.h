@@ -5,6 +5,9 @@
 @class GEOVLaneCharacteristic;
 
 @interface GEOVPointCharacteristic : PBCodable <NSCopying> {
+    BOOL _brunnelEntry;
+    BOOL _castShadow;
+    BOOL _cropped;
     struct { 
         unsigned int roadLaneCount : 1; 
         unsigned int roadOffset : 1; 
@@ -15,9 +18,6 @@
         unsigned int castShadow : 1; 
         unsigned int cropped : 1; 
         unsigned int shouldDrawLanes : 1; 
-    BOOL _brunnelEntry;
-    BOOL _castShadow;
-    BOOL _cropped;
     } _has;
     GEOVLaneCharacteristic *_laneCharacteristic;
     int _roadLaneCount;

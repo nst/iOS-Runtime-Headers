@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface AWDNFCHardwareExceptionEvent : PBCodable <NSCopying> {
+    NSString *_exceptionData;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int type : 1; 
-    NSString *_exceptionData;
     } _has;
     unsigned long long _timestamp;
     unsigned int _type;

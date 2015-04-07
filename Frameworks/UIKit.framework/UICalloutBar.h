@@ -5,49 +5,16 @@
 @class NSArray, NSDictionary, NSMutableArray, NSString, UICalloutBarBackground, UICalloutBarButton, UIResponder;
 
 @interface UICalloutBar : UIView {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     int m_arrowDirection;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } m_controlFrame;
     NSDictionary *m_currentAppearOrFadeContext;
     int m_currentPage;
@@ -63,9 +30,21 @@
     UICalloutBarButton *m_nextButton;
     UICalloutBarBackground *m_overlay;
     int m_pageCount;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_pointAboveControls;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_pointBelowControls;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_pointLeftOfControls;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_pointRightOfControls;
     UICalloutBarButton *m_previousButton;
     BOOL m_recalcVisibleItems;
@@ -76,11 +55,32 @@
     BOOL m_showAllReplacements;
     float m_supressedHorizontalMovementX;
     BOOL m_supressesHorizontalMovement;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } m_supressesHorizontalMovementFrame;
     NSArray *m_systemButtonDescriptions;
     int m_targetDirection;
     BOOL m_targetHorizontal;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_targetPoint;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } m_targetRect;
     NSString *m_untruncatedString;
 }
@@ -174,10 +174,10 @@
 - (void)setTargetDirection:(int)arg1;
 - (void)setTargetHorizontal:(BOOL)arg1;
 - (void)setTargetPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 arrowDirection:(int)arg2;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 pointBelowControls:(struct CGPoint { float x1; float x2; })arg2 pointAboveControls:(struct CGPoint { float x1; float x2; })arg3;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 pointLeftOfControls:(struct CGPoint { float x1; float x2; })arg2 pointRightOfControls:(struct CGPoint { float x1; float x2; })arg3;
-- (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setUntruncatedString:(id)arg1;
 - (void)show;
 - (BOOL)showAllReplacements;

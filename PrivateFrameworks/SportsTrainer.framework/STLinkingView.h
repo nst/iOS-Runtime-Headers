@@ -48,8 +48,8 @@
 - (id)serialNumber;
 - (void)setBordered:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLinkingType:(int)arg1 animated:(BOOL)arg2;
 - (void)setLinkingType:(int)arg1;
+- (void)setLinkingType:(int)arg1 animated:(BOOL)arg2;
 - (void)setSerialNumber:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 

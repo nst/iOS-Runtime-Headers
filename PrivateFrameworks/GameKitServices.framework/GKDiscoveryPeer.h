@@ -17,7 +17,11 @@
     NSMutableSet *_interfaces;
     NSMutableArray *_orderedInterfaces;
     NSString *_playerID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resolveTimeoutHandler;
+
     GKSimpleTimer *_resolveTimer;
     NSMutableArray *_sendDataBuffer;
     NSString *_serviceName;

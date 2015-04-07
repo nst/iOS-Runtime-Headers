@@ -5,25 +5,25 @@
 @class <TSKHighlightArrayControllerProtocol>, NSArray, NSMutableArray;
 
 @interface TSKHighlightArrayController : NSObject <TSKPulseAnimationControllerProtocol> {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
     BOOL _autohide;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _canvasTransform;
     NSMutableArray *_controllers;
     BOOL _creatingLayers;
     <TSKHighlightArrayControllerProtocol> *_delegate;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _layerTransform;
     NSMutableArray *_layers;
     BOOL _pulsating;

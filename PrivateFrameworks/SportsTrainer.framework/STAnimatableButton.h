@@ -5,13 +5,13 @@
 @class NSString, STAnimatableButtonSlice, STShadowLabel, UIColor, UIImage;
 
 @interface STAnimatableButton : UIView <STAnimatableButtonSliceDelegate> {
+    SEL _action;
+    UIImage *_highlightedImage;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    SEL _action;
-    UIImage *_highlightedImage;
     } _hitRectEdgeInsets;
     UIImage *_image;
     BOOL _isLandscape;

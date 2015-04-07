@@ -22,10 +22,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)encodeToArchive:(struct FilterRuleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FormulaPredicateArchive {} *x3; boolx4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
+- (void)encodeToArchive:(struct FilterRuleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FormulaPredicateArchive {} *x3; bool x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
 - (struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; }*)formula;
 - (unsigned int)hash;
-- (id)initFromArchive:(const struct FilterRuleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FormulaPredicateArchive {} *x3; boolx4; int x5; unsigned int x6[1]; }*)arg1;
+- (id)initFromArchive:(const struct FilterRuleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FormulaPredicateArchive {} *x3; bool x4; int x5; unsigned int x6[1]; }*)arg1;
 - (id)initRuleWhereValuesInTable:(id)arg1 inColumn:(unsigned char)arg2 matchCell:(id)arg3;
 - (id)initWithFormulaPredicate:(id)arg1;
 - (BOOL)isEnabled;

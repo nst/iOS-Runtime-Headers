@@ -5,13 +5,13 @@
 @class NSData, NSMutableArray, NSString;
 
 @interface NNMKProtoMessageContentSync : PBCodable <NSCopying> {
+    NSMutableArray *_attachments;
+    NSData *_dateSynced;
+    unsigned int _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
         unsigned int mainAlternativeValid : 1; 
         unsigned int partiallyLoaded : 1; 
-    NSMutableArray *_attachments;
-    NSData *_dateSynced;
-    unsigned int _fullSyncVersion;
     } _has;
     BOOL _mainAlternativeValid;
     NSString *_messageId;

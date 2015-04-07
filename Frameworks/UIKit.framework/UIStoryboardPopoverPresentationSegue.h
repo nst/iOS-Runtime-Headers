@@ -5,6 +5,7 @@
 @class NSArray, NSString, UIBarButtonItem, UIView;
 
 @interface UIStoryboardPopoverPresentationSegue : UIStoryboardSegue <UIPopoverPresentationControllerDelegate> {
+    UIBarButtonItem *_anchorBarButtonItem;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    UIBarButtonItem *_anchorBarButtonItem;
     } _anchorRect;
     UIView *_anchorView;
     NSArray *_passthroughViews;

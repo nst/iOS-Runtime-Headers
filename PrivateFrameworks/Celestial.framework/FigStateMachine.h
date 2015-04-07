@@ -33,10 +33,10 @@
 - (BOOL)performsAtomicStateTransitions;
 - (void)setLabel:(id)arg1 forState:(unsigned int)arg2;
 - (void)setPerformsAtomicStateTransitions:(BOOL)arg1;
+- (BOOL)transitionToState:(unsigned int)arg1;
 - (BOOL)transitionToState:(unsigned int)arg1 errorStatus:(long)arg2;
 - (BOOL)transitionToState:(unsigned int)arg1 fromState:(unsigned int)arg2;
 - (BOOL)transitionToState:(unsigned int)arg1 fromStates:(unsigned int)arg2;
-- (BOOL)transitionToState:(unsigned int)arg1;
 - (void)whenTransitioningFromState:(unsigned int)arg1 toState:(unsigned int)arg2 callHandler:(id)arg3;
 - (void)whenTransitioningToState:(unsigned int)arg1 callHandler:(id)arg2;
 - (void)whenTransitioningToStateFails:(unsigned int)arg1 callHandler:(id)arg2;

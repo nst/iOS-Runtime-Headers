@@ -5,6 +5,11 @@
 @class NSIndexPath, UIView;
 
 @interface UIViewAnimation : NSObject {
+    BOOL _animateFromCurrentPosition;
+    int _curve;
+    BOOL _editing;
+    float _endAlpha;
+    float _endFraction;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,11 +19,6 @@
             float width; 
             float height; 
         } size; 
-    BOOL _animateFromCurrentPosition;
-    int _curve;
-    BOOL _editing;
-    float _endAlpha;
-    float _endFraction;
     } _endRect;
     NSIndexPath *_indexPath;
     BOOL _shouldAllowGroupOpacityAfterAnimation;

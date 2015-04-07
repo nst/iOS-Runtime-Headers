@@ -3,15 +3,15 @@
  */
 
 @interface _NMRSendCommandResultMessageProtobuf : PBCodable <NSCopying> {
+    unsigned int _errorCode;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _handlerReturnStatus;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int errorCode : 1; 
-    unsigned int _errorCode;
-    } _handlerReturnStatus;
     } _has;
     double _timestamp;
 }

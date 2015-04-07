@@ -17,8 +17,8 @@
 + (BOOL)isDifficultName:(id)arg1;
 + (double)nameSimilarity:(id)arg1 and:(id)arg2;
 + (id)nameStringFromEmailAddress:(id)arg1;
-+ (BOOL)namesApproximatelyMatch:(id)arg1 and:(id)arg2 threshold:(double)arg3;
 + (BOOL)namesApproximatelyMatch:(id)arg1 and:(id)arg2;
++ (BOOL)namesApproximatelyMatch:(id)arg1 and:(id)arg2 threshold:(double)arg3;
 + (id)possibleNameStringFromEmailAddress:(id)arg1;
 + (id)sgNameFromString:(id)arg1;
 + (BOOL)shouldInvertOrderOfFirst:(id)arg1 last:(id)arg2;
@@ -27,7 +27,7 @@
 + (id)surnameFromName:(id)arg1;
 + (id)universalCleanName:(id)arg1;
 + (double)unnormalizedNameSimilarity:(id)arg1 and:(id)arg2;
-+ (BOOL)unnormalizedNamesApproximatelyMatch:(id)arg1 and:(id)arg2 threshold:(double)arg3;
 + (BOOL)unnormalizedNamesApproximatelyMatch:(id)arg1 and:(id)arg2;
++ (BOOL)unnormalizedNamesApproximatelyMatch:(id)arg1 and:(id)arg2 threshold:(double)arg3;
 
 @end

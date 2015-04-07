@@ -10,6 +10,7 @@
 @class SCNPhysicsBody, SCNPhysicsWorld;
 
 @interface SCNPhysicsBallSocketJoint : SCNPhysicsBehavior {
+    struct btPoint2PointConstraint { int (**x1)(); int x2; int x3; union { int x_4_1_1; void *x_4_1_2; } x4; float x5; bool x6; bool x7; int x8; struct btRigidBody {} *x9; struct btRigidBody {} *x10; float x11; float x12; struct btJointFeedback {} *x13; struct btJacobianEntry { struct btVector3 { float x_1_2_1[4]; } x_14_1_1; struct btVector3 { float x_2_2_1[4]; } x_14_1_2; struct btVector3 { float x_3_2_1[4]; } x_14_1_3; struct btVector3 { float x_4_2_1[4]; } x_14_1_4; struct btVector3 { float x_5_2_1[4]; } x_14_1_5; float x_14_1_6; } x14[3]; struct btVector3 { float x_15_1_1[4]; } x15; struct btVector3 { float x_16_1_1[4]; } x16; int x17; float x18; float x19; bool x20; struct btConstraintSetting { float x_21_1_1; float x_21_1_2; float x_21_1_3; } x21; } *_constraint;
     struct { 
         SCNPhysicsBody *bodyA; 
         SCNPhysicsBody *bodyB; 
@@ -23,7 +24,6 @@
             float y; 
             float z; 
         } anchorB; 
-    struct btPoint2PointConstraint { int (**x1)(); int x2; int x3; union { int x_4_1_1; void *x_4_1_2; } x4; float x5; boolx6; boolx7; int x8; struct btRigidBody {} *x9; struct btRigidBody {} *x10; float x11; float x12; struct btJointFeedback {} *x13; struct btJacobianEntry { struct btVector3 { float x_1_2_1[4]; } x_14_1_1; struct btVector3 { float x_2_2_1[4]; } x_14_1_2; struct btVector3 { float x_3_2_1[4]; } x_14_1_3; struct btVector3 { float x_4_2_1[4]; } x_14_1_4; struct btVector3 { float x_5_2_1[4]; } x_14_1_5; float x_14_1_6; } x14[3]; struct btVector3 { float x_15_1_1[4]; } x15; struct btVector3 { float x_16_1_1[4]; } x16; int x17; float x18; float x19; boolx20; struct btConstraintSetting { float x_21_1_1; float x_21_1_2; float x_21_1_3; } x21; } *_constraint;
     } _definition;
     SCNPhysicsWorld *_world;
 }

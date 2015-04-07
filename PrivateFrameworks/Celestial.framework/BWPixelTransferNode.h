@@ -5,37 +5,37 @@
 @class BWPixelBufferPool;
 
 @interface BWPixelTransferNode : BWNode {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct { 
-        int width; 
-        int height; 
     int _cropMode;
     BOOL _flipHorizontal;
     BOOL _flipVertical;
     BOOL _haveLiveInputCropRect;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _inputCropRect;
     BWPixelBufferPool *_intermediateBufferPool;
+    struct { 
+        int width; 
+        int height; 
     } _intermediatePoolDimensions;
     int _liveCropMode;
     BOOL _liveFlipHorizontal;
     BOOL _liveFlipVertical;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _liveInputCropRect;
     BOOL _liveLowSpeed;
     BOOL _livePassesBuffersThroughWhenPossible;

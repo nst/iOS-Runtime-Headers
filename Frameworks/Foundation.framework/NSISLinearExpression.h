@@ -4,7 +4,8 @@
 
 @class NSString;
 
-@interface NSISLinearExpression : NSObject <NSISRowBody, NSFastEnumeration> {
+@interface NSISLinearExpression : NSObject <NSFastEnumeration, NSISRowBody> {
+    double constant;
     union { 
         struct { 
             id stored_extern_marker; 
@@ -16,7 +17,6 @@
         } inline_slab; 
         unsigned char padding[36]; 
         void *_workaround13455311; 
-    double constant;
     } data;
     unsigned int inline_capacity;
     unsigned int var_count;
@@ -31,10 +31,10 @@
 + (id)acquireFromPoolForUseCase:(int)arg1;
 + (id)newExpressionWithCapacity:(unsigned int)arg1;
 
-- (void)addExpression:(id)arg1 times:(double)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
 - (void)addExpression:(id)arg1 times:(double)arg2;
-- (void)addVariable:(id)arg1 coefficient:(double)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
+- (void)addExpression:(id)arg1 times:(double)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
 - (void)addVariable:(id)arg1 coefficient:(double)arg2;
+- (void)addVariable:(id)arg1 coefficient:(double)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
 - (double)coefficientForVariable:(id)arg1;
 - (double)constant;
 - (id)copyContentsAndReturnToPool;
@@ -52,8 +52,8 @@
 - (void)removeVariable:(id)arg1;
 - (void)replaceVariable:(id)arg1 withExpression:(id)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
 - (void)replaceVariable:(id)arg1 withVariable:(id)arg2 coefficient:(double)arg3;
-- (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2 timesVariable:(id)arg3 processVariableNewToReceiver:(id)arg4 processVariableDroppedFromReceiver:(id)arg5;
 - (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2;
+- (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2 timesVariable:(id)arg3 processVariableNewToReceiver:(id)arg4 processVariableDroppedFromReceiver:(id)arg5;
 - (void)returnToPool;
 - (void)scaleBy:(double)arg1;
 - (void)setCoefficient:(double)arg1 forVariable:(id)arg2;

@@ -12,7 +12,11 @@
     float _additionalConstant;
     BOOL _autoUpdatingConstantShrinks;
     id _autoitem;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _constantLoadingBlock;
+
     float _defaultConstant;
     BOOL _isConstantUpdatingConstraint;
     id _preferredContentSizeDidChangeObserver;

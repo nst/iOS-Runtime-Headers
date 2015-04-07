@@ -5,8 +5,8 @@
 @class NSString;
 
 @interface IMTranscriptChatItem : IMChatItem {
-    unsigned int _contiguousLoaded : 1;
     unsigned char _attachmentContiguousType;
+    unsigned int _contiguousLoaded : 1;
     unsigned char _contiguousType;
     NSString *_guid;
 }

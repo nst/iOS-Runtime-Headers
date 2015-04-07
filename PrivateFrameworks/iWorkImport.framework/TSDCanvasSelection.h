@@ -9,7 +9,7 @@
 
 @class NSSet, NSString, TSDDrawableInfo<TSDContainerInfo>;
 
-@interface TSDCanvasSelection : TSKSelection <TSDCanvasSelection, NSCopying> {
+@interface TSDCanvasSelection : TSKSelection <NSCopying, TSDCanvasSelection> {
     TSDDrawableInfo<TSDContainerInfo> *mContainer;
     NSSet *mInfos;
 }
@@ -40,8 +40,8 @@
 - (id)infos;
 - (id)infosOfClass:(Class)arg1;
 - (id)initWithArchive:(const struct CanvasSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithInfos:(id)arg1 andContainer:(id)arg2;
 - (id)initWithInfos:(id)arg1;
+- (id)initWithInfos:(id)arg1 andContainer:(id)arg2;
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
 - (void)saveToArchive:(struct CanvasSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;

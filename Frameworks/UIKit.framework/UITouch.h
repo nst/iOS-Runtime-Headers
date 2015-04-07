@@ -5,28 +5,19 @@
 @class <_UITouchPhaseChangeDelegate>, NSArray, NSMutableArray, NSString, UIResponder, UIView, UIWindow;
 
 @interface UITouch : NSObject <_UIResponderForwardable> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        unsigned int _firstTouchForView : 1; 
-        unsigned int _isTap : 1; 
-        unsigned int _isDelayed : 1; 
-        unsigned int _sentTouchesEnded : 1; 
-        unsigned int _abandonForwardingRecord : 1; 
+    <_UITouchPhaseChangeDelegate> *__phaseChangeDelegate;
+    UIWindow *__windowServerHitTestWindow;
     struct CGSize { 
         float width; 
         float height; 
-    <_UITouchPhaseChangeDelegate> *__phaseChangeDelegate;
-    UIWindow *__windowServerHitTestWindow;
     } _displacement;
     BOOL _eaten;
     int _edgeType;
     NSMutableArray *_forwardingRecord;
     NSMutableArray *_gestureRecognizers;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _locationInWindow;
     float _majorRadiusTolerance;
     float _movementMagnitudeSquared;
@@ -35,11 +26,20 @@
     float _pathMajorRadius;
     int _phase;
     float _pressure;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _previousLocationInWindow;
     float _previousPressure;
     int _savedPhase;
     unsigned int _tapCount;
     double _timestamp;
+    struct { 
+        unsigned int _firstTouchForView : 1; 
+        unsigned int _isTap : 1; 
+        unsigned int _isDelayed : 1; 
+        unsigned int _sentTouchesEnded : 1; 
+        unsigned int _abandonForwardingRecord : 1; 
     } _touchFlags;
     UIView *_view;
     UIView *_warpedIntoView;

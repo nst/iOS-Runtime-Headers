@@ -10,7 +10,11 @@
 
 @interface HMDApplicationStateMonitor : NSObject {
     BKSApplicationStateMonitor *_bkAppStateMonitor;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _notificationHandler;
+
     NSObject<OS_dispatch_queue> *_notificationQueue;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
@@ -29,8 +33,8 @@
 - (id)notificationHandler;
 - (id)notificationQueue;
 - (void)setBkAppStateMonitor:(id)arg1;
-- (void)setNotificationHandler:(id)arg1 queue:(id)arg2;
 - (void)setNotificationHandler:(id)arg1;
+- (void)setNotificationHandler:(id)arg1 queue:(id)arg2;
 - (void)setNotificationQueue:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)start;

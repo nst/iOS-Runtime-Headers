@@ -4,10 +4,7 @@
 
 @class <SKUISlideshowViewControllerDataSource>, <SKUISlideshowViewControllerDelegate>, NSMutableDictionary, NSOperationQueue, NSString, SKUIClientContext, UIPageViewController, UIPercentDrivenInteractiveTransition;
 
-@interface SKUISlideshowViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, SKUISlideshowItemViewControllerDelegate, UIViewControllerTransitioningDelegate> {
-    struct { 
-        int style; 
-        BOOL hidden; 
+@interface SKUISlideshowViewController : UIViewController <SKUISlideshowItemViewControllerDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIViewControllerTransitioningDelegate> {
     SKUIClientContext *_clientContext;
     int _currentIndex;
     <SKUISlideshowViewControllerDataSource> *_dataSource;
@@ -18,6 +15,9 @@
     BOOL _overlayVisible;
     UIPageViewController *_pageViewController;
     NSOperationQueue *_remoteLoadQueue;
+    struct { 
+        int style; 
+        BOOL hidden; 
     } _savedStatusBarState;
     BOOL _shouldCancelDelayedOverlayVisibilityChange;
     UIPercentDrivenInteractiveTransition *_transition;

@@ -14,8 +14,8 @@
 + (void)getAvailableThumbnailIndexWithHandler:(id)arg1;
 + (void)getAvailableThumbnailIndexesWithCount:(unsigned int)arg1 handler:(id)arg2;
 + (unsigned int)nextAvailableThumbnailIndex;
-+ (void)recycleThumbnailIndexes:(id)arg1 timestamp:(unsigned long long)arg2;
 + (void)recycleThumbnailIndexes:(id)arg1;
++ (void)recycleThumbnailIndexes:(id)arg1 timestamp:(unsigned long long)arg2;
 + (id)sharedInstance;
 
 - (id)fetchOccupiedThumbnailIndexesWithLibrary:(id)arg1;

@@ -3,24 +3,6 @@
  */
 
 @interface AVMetadataFaceObjectInternal : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     int _faceID;
     BOOL _hasLeftEyeBounds;
     BOOL _hasLeftEyeClosedConfidence;
@@ -29,8 +11,26 @@
     BOOL _hasRollAngle;
     BOOL _hasSmileConfidence;
     BOOL _hasYawAngle;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _leftEyeBounds;
     int _leftEyeClosedConfidence;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _rightEyeBounds;
     int _rightEyeClosedConfidence;
     float _rollAngle;

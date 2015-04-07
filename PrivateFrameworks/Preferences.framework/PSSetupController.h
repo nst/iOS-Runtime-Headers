@@ -13,8 +13,8 @@
 - (id)controller;
 - (void)dealloc;
 - (void)dismiss;
-- (void)dismissAnimated:(BOOL)arg1 completion:(id)arg2;
 - (void)dismissAnimated:(BOOL)arg1;
+- (void)dismissAnimated:(BOOL)arg1 completion:(id)arg2;
 - (void)dismissWithCompletion:(id)arg1;
 - (void)handleURL:(id)arg1;
 - (id)init;

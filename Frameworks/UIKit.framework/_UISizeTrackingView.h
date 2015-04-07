@@ -5,10 +5,10 @@
 @class _UIRemoteViewController;
 
 @interface _UISizeTrackingView : UIView <_UIScrollToTopView> {
+    BOOL _hasIntrinsicContentSize;
     struct CGSize { 
         float width; 
         float height; 
-    BOOL _hasIntrinsicContentSize;
     } _intrinsicContentSize;
     _UIRemoteViewController *_remoteViewController;
     id _textEffectsOperatorProxy;

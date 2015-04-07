@@ -5,13 +5,6 @@
 @class NSData;
 
 @interface NSBigMutableString : NSMutableString {
-    struct { 
-        unsigned int isStorage : 1; 
-        unsigned int isUnicode : 1; 
-        unsigned int hasBOM : 1; 
-        unsigned int swap : 1; 
-        unsigned int immutable : 1; 
-        unsigned int  : 27; 
     union { 
         struct { 
             NSData *data; 
@@ -21,6 +14,13 @@
             struct __CFStorage {} *storage; 
         } s; 
     } contents;
+    struct { 
+        unsigned int isStorage : 1; 
+        unsigned int isUnicode : 1; 
+        unsigned int hasBOM : 1; 
+        unsigned int swap : 1; 
+        unsigned int immutable : 1; 
+        unsigned int  : 27; 
     } flags;
     unsigned int length;
 }

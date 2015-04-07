@@ -9,11 +9,15 @@
 @class NSMutableArray;
 
 @interface UIKeyboardSplitControlMenu : UIKeyboardMenuView {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _finishSplitTransitionBlock;
+
+    NSMutableArray *m_menuOptions;
     struct CGSize { 
         float width; 
         float height; 
-    id _finishSplitTransitionBlock;
-    NSMutableArray *m_menuOptions;
     } m_preferredSize;
 }
 

@@ -5,11 +5,11 @@
 @class UIInterpolatingMotionEffect, UIMotionEffectGroup, _UITiltMotionEffect;
 
 @interface _UIParallaxMotionEffect : UIMotionEffect {
+    UIMotionEffectGroup *_group;
+    UIInterpolatingMotionEffect *_horizontalSlideEffect;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    UIMotionEffectGroup *_group;
-    UIInterpolatingMotionEffect *_horizontalSlideEffect;
     } _slideMagnitude;
     _UITiltMotionEffect *_tiltEffect;
     UIInterpolatingMotionEffect *_verticalSlideEffect;

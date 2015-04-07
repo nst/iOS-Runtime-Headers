@@ -19,9 +19,9 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithMapper:(id)arg1;
+- (id)mappedStyleForStyle:(id)arg1;
 - (id)mappedStyleForStyle:(id)arg1 bakeComputable:(BOOL)arg2;
 - (id)mappedStyleForStyle:(id)arg1 inThemeStylesheet:(BOOL)arg2;
-- (id)mappedStyleForStyle:(id)arg1;
 - (void)popMappingContext:(id)arg1;
 - (void)pushMappingContext:(id)arg1;
 - (id)targetStylesheet;

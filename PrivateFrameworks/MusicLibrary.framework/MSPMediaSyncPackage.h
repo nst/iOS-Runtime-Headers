@@ -5,10 +5,10 @@
 @class MSPMediaSyncError, MSPMediaSyncHeader, MSPMediaSyncOperation;
 
 @interface MSPMediaSyncPackage : PBCodable <NSCopying> {
+    MSPMediaSyncError *_error;
     struct { 
         unsigned int type : 1; 
         unsigned int lastPackage : 1; 
-    MSPMediaSyncError *_error;
     } _has;
     MSPMediaSyncHeader *_header;
     BOOL _lastPackage;

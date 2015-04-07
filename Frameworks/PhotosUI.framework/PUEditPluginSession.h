@@ -4,7 +4,7 @@
 
 @class <PUEditPluginSessionDataSource>, <PUEditPluginSessionDelegate>, NSString, PHAsset, PUEditPlugin, PUEditPluginManager, UINavigationController, UIViewController;
 
-@interface PUEditPluginSession : NSObject <PUEditPluginHostViewControllerDataSource, PUEditPluginHostViewControllerDelegate, UINavigationControllerDelegate, UIActivityGroupViewControllerDelegate> {
+@interface PUEditPluginSession : NSObject <PUEditPluginHostViewControllerDataSource, PUEditPluginHostViewControllerDelegate, UIActivityGroupViewControllerDelegate, UINavigationControllerDelegate> {
     UIViewController *__hostViewController;
     int _adjustmentType;
     PHAsset *_asset;

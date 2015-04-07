@@ -33,10 +33,10 @@
 @property(readonly) int sourceType;
 
 + (id)newGroupWrapperFromDictionaryRepresentation:(id)arg1 withAddressBook:(void*)arg2;
-+ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountStore:(id)arg3 excludingSearchableStores:(BOOL)arg4 isSoleAccount:(BOOL)arg5;
-+ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountStore:(id)arg3;
-+ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 excludingSearchableStores:(BOOL)arg3;
 + (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2;
++ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountStore:(id)arg3;
++ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountStore:(id)arg3 excludingSearchableStores:(BOOL)arg4 isSoleAccount:(BOOL)arg5;
++ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 excludingSearchableStores:(BOOL)arg3;
 
 - (id)_accountDescriptionBasedOnIdentifier;
 - (id)_rootGroupWrapper;
@@ -64,8 +64,8 @@
 - (void)setChildGroupWrappers:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setParentGroupWrapper:(id)arg1;
-- (void)setSelected:(BOOL)arg1 propagateSelectionToChildren:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1 propagateSelectionToChildren:(BOOL)arg2;
 - (void)setShouldBeSelectedWhenAllChildrenAreSelected:(BOOL)arg1;
 - (BOOL)shouldBeSelectedWhenAllChildrenAreSelected;
 - (BOOL)showLinkedPeople;

@@ -3,10 +3,10 @@
  */
 
 @interface SCRCGestureFinger : NSObject {
+    unsigned int _identifier;
     struct CGPoint { 
         float x; 
         float y; 
-    unsigned int _identifier;
     } _location;
 }
 

@@ -7,8 +7,16 @@
  */
 
 @interface CAAnimationDelegateBlockHelper : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _animationDidStartBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _animationDidStopBlock;
+
 }
 
 @property(copy) id animationDidStartBlock;

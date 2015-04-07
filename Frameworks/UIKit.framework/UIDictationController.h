@@ -9,9 +9,6 @@
 @class AFDictationConnection, AFDictationOptions, AFPreferences, CADisplayLink, NSArray, NSMutableArray, NSString, NSTimer, UIAlertView, UIDictationStreamingOperations, UIKeyboardInputMode, UIWindow, _UIDictationPrivacySheetController;
 
 @interface UIDictationController : NSObject <_UITouchPhaseChangeDelegate> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     NSArray *_availableLanguages;
     id _callCenter;
     void *_callCenterFrameworkFileHandle;
@@ -24,9 +21,16 @@
     BOOL _discardNextHypothesis;
     void *_facetimeCallFrameworkFileHandle;
     id _facetimeCallManager;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _finalResultsOperation;
+
     BOOL _hasPreheated;
     UIKeyboardInputMode *_inputModeThatInvokedDictation;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _insertionRange;
     NSString *_language;
     double _lastAnimationUpdateTimeStamp;
@@ -90,13 +94,13 @@
 + (id)metadataDictionaryForCorrectionIdentifier:(id)arg1;
 + (BOOL)openAssistantFrameworkIfNecessary;
 + (void)poppedLastStreamingOperation;
-+ (id)serializedDictationPhrases:(id)arg1 fromKeyboard:(BOOL)arg2 transform:(struct __CFString { }*)arg3;
 + (id)serializedDictationPhrases:(id)arg1;
++ (id)serializedDictationPhrases:(id)arg1 fromKeyboard:(BOOL)arg2 transform:(struct __CFString { }*)arg3;
 + (id)serializedDictationPhrasesFromTokenMatrix:(id)arg1 fromKeyboard:(BOOL)arg2 transform:(struct __CFString { }*)arg3;
-+ (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2 fromKeyboard:(BOOL)arg3 options:(id)arg4;
-+ (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2 ranges:(id*)arg3 options:(id)arg4;
-+ (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2 ranges:(id*)arg3;
 + (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2;
++ (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2 fromKeyboard:(BOOL)arg3 options:(id)arg4;
++ (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2 ranges:(id*)arg3;
++ (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2 ranges:(id*)arg3 options:(id)arg4;
 + (float)serverManualEndpointingThreshold;
 + (BOOL)setupForOpeningConnections;
 + (BOOL)setupForPhraseSerialization;

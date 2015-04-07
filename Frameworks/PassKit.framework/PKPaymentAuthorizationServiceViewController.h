@@ -4,7 +4,7 @@
 
 @class <PKPaymentAuthorizationHostProtocol>, NSLayoutConstraint, NSMutableArray, NSString, PKAuthenticator, PKPaymentAuthorizationDataModel, PKPaymentAuthorizationFooterView, PKPaymentAuthorizationLayout, PKPaymentAuthorizationNavigationBar, PKPaymentAuthorizationTotalView, PKPaymentOptionsViewController, PKPaymentService, PKPaymentWebService, UITableView, UIView;
 
-@interface PKPaymentAuthorizationServiceViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, PKAuthenticatorDelegate, PKPaymentOptionsViewControllerDelegate, PKPaymentAuthorizationServiceProtocol> {
+@interface PKPaymentAuthorizationServiceViewController : UIViewController <PKAuthenticatorDelegate, PKPaymentAuthorizationServiceProtocol, PKPaymentOptionsViewControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     PKAuthenticator *_authenticator;
     BOOL _awaitingClientCallbackReply;
     NSMutableArray *_clientCallbackBlocks;
@@ -97,8 +97,8 @@
 - (void)setModel:(id)arg1;
 - (void)setPaymentService:(id)arg1;
 - (void)setPaymentWebService:(id)arg1;
-- (void)setState:(unsigned int)arg1 param:(id)arg2;
 - (void)setState:(unsigned int)arg1;
+- (void)setState:(unsigned int)arg1 param:(id)arg2;
 - (unsigned int)state;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

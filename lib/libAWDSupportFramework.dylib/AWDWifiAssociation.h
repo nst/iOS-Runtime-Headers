@@ -5,17 +5,17 @@
 @class NSData, NSString;
 
 @interface AWDWifiAssociation : PBCodable <NSCopying> {
+    NSData *_bssidOui;
+    int _channel;
+    int _deauthReason;
+    NSData *_deauthSourceOui;
+    unsigned int _error;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int channel : 1; 
         unsigned int deauthReason : 1; 
         unsigned int error : 1; 
         unsigned int signal : 1; 
-    NSData *_bssidOui;
-    int _channel;
-    int _deauthReason;
-    NSData *_deauthSourceOui;
-    unsigned int _error;
     } _has;
     NSString *_security;
     int _signal;

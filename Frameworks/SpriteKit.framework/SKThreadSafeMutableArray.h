@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray;
 
-@interface SKThreadSafeMutableArray : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration> {
+@interface SKThreadSafeMutableArray : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding> {
     NSMutableArray *_storage;
     int _storageLock;
 }

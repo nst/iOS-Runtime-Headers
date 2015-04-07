@@ -5,6 +5,11 @@
 @class <NSFetchedResultsControllerDelegate>, NSArray, NSFetchRequest, NSManagedObjectContext, NSString;
 
 @interface NSFetchedResultsController : NSObject {
+    void *_cache;
+    NSString *_cacheName;
+    id _delegate;
+    NSFetchRequest *_fetchRequest;
+    id _fetchedObjects;
     struct _fetchResultsControllerFlags { 
         unsigned int _sendObjectChangeNotifications : 1; 
         unsigned int _sendSectionChangeNotifications : 1; 
@@ -18,11 +23,6 @@
         unsigned int _usesNonpersistedProperties : 1; 
         unsigned int _includesSubentities : 1; 
         unsigned int _reservedFlags : 21; 
-    void *_cache;
-    NSString *_cacheName;
-    id _delegate;
-    NSFetchRequest *_fetchRequest;
-    id _fetchedObjects;
     } _flags;
     NSManagedObjectContext *_managedObjectContext;
     id _sectionIndexTitles;

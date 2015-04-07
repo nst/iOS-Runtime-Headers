@@ -56,10 +56,10 @@
 - (void)_setPurchaseURLBagType:(int)arg1;
 - (void)_setScriptAppContext:(id)arg1;
 - (void)_setValue:(id)arg1 forConfigurationKey:(id)arg2;
+- (id)clientInterface;
 - (void)clientInterface:(id)arg1 dispatchOnPageResponseWithData:(id)arg2 response:(id)arg3;
 - (void)clientInterface:(id)arg1 dispatchXEvent:(id)arg2 completionBlock:(id)arg3;
 - (void)clientInterface:(id)arg1 presentDialog:(id)arg2;
-- (id)clientInterface;
 - (void)customizePurchase:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -67,8 +67,8 @@
 - (id)initWithConfigurationDictionary:(id)arg1;
 - (void)loadValueForConfigurationKey:(id)arg1 completionBlock:(id)arg2;
 - (id)localizedAlertWithError:(id)arg1;
-- (id)localizedStringForKey:(id)arg1 inTable:(id)arg2;
 - (id)localizedStringForKey:(id)arg1;
+- (id)localizedStringForKey:(id)arg1 inTable:(id)arg2;
 - (id)metricsConfigurationIdentifier;
 - (id)metricsPageContextForViewController:(id)arg1;
 - (id)navigationHistory;

@@ -35,8 +35,8 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setIconVerticalOffset:(float)arg1;
-- (void)setMinimumTitleFontSize:(float)arg1 maximumTitleFontSize:(float)arg2;
 - (void)setMinimumTitleFontSize:(float)arg1;
+- (void)setMinimumTitleFontSize:(float)arg1 maximumTitleFontSize:(float)arg2;
 - (void)setPlusSeparatedTitle:(id)arg1;
 - (void)setTitleImagePadding:(float)arg1;
 - (void)setTitleVerticalOffset:(float)arg1;

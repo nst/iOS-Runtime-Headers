@@ -4,7 +4,7 @@
 
 @class NEVPNProtocol, NSArray;
 
-@interface NEVPN : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
+@interface NEVPN : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _enabled;
     BOOL _onDemandEnabled;
     NSArray *_onDemandRules;

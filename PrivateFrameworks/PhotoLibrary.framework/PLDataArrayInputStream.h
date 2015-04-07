@@ -10,14 +10,14 @@
 @class <PLDataArrayInputStreamProgressDelegate>, NSArray, NSMutableData;
 
 @interface PLDataArrayInputStream : NSInputStream {
+    NSMutableData *_bodyData;
+    int (*_clientCallback)();
     struct { 
         int version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
         int (*copyDescription)(); 
-    int (*_clientCallback)();
-    NSMutableData *_bodyData;
     } _clientContext;
     unsigned int _currentIndex;
     unsigned int _currentLength;

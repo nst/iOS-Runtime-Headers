@@ -10,10 +10,10 @@
 @interface QLBasePreviewParts : QLPreviewParts {
 }
 
-+ (int (*)())dataCallbackForUTI:(id)arg1 andSize:(unsigned int)arg2;
-+ (int (*)())urlCallbackForUTI:(id)arg1;
 + (BOOL)canConvertDocumentType:(id)arg1;
++ (int (*)())dataCallbackForUTI:(id)arg1 andSize:(unsigned int)arg2;
 + (BOOL)isBundleURL:(id)arg1;
++ (int (*)())urlCallbackForUTI:(id)arg1;
 
 - (void)computePreview;
 

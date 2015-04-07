@@ -9,14 +9,24 @@
 @class UIImage, UIView;
 
 @interface UIOldSliderControl : UIControl {
-    union { 
-        UIImage *image; 
-        id view; 
-        /* Warning: Unrecognized filer type: ')' using 'void*' */ void*UIView; 
-    union { 
-        UIImage *image; 
-        id view; 
-        /* Warning: Unrecognized filer type: ')' using 'void*' */ void*UIView; 
+    float _animationEndValue;
+    float _hitOffset;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _idleTrackingPoint;
+    double _idleTrackingTime;
+    UIView *_knob;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _lastTrackingPoint;
+    double _lastTrackingTime;
+    float _maxValue;
+    UIImage *_maxValueImage;
+    float _minValue;
+    UIImage *_minValueImage;
+    int _numberOfTickMarks;
     struct { 
         unsigned int allowsOnlyTickMarks : 1; 
         unsigned int animating : 1; 
@@ -28,30 +38,26 @@
         unsigned int shouldFlipValue : 1; 
         unsigned int needsNonOpaqueFills : 1; 
         unsigned int reserved : 24; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    float _animationEndValue;
-    float _hitOffset;
-    } _idleTrackingPoint;
-    double _idleTrackingTime;
-    UIView *_knob;
-    } _lastTrackingPoint;
-    double _lastTrackingTime;
-    float _maxValue;
-    UIImage *_maxValueImage;
-    float _minValue;
-    UIImage *_minValueImage;
-    int _numberOfTickMarks;
     } _sliderFlags;
     UIImage *_sliderLeftCap;
+
+  /* Error parsing encoded ivar type info: (?="image"@"UIImage""view"@"UIView") */
+    union { 
+        UIImage *image; 
+        id view; 
+        /* Warning: Unrecognized filer type: ')' using 'void*' */ void*UIView; 
     } _sliderLeftFill;
+
     UIImage *_sliderLeftFillCap;
     UIImage *_sliderRightCap;
+
+  /* Error parsing encoded ivar type info: (?="image"@"UIImage""view"@"UIView") */
+    union { 
+        UIImage *image; 
+        id view; 
+        /* Warning: Unrecognized filer type: ')' using 'void*' */ void*UIView; 
     } _sliderRightFill;
+
     UIImage *_sliderRightFullCap;
     float _value;
 }
@@ -74,15 +80,15 @@
 - (id)createSliderKnobView;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawSliderInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 dirtyRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)drawSliderInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawSliderInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 dirtyRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)drawSliderPiece:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fillBounds;
 - (id)imageForSliderPiece:(int)arg1;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 layeredFill:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 layeredFill:(BOOL)arg2;
 - (BOOL)isAnimatingValueChange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maxValueImageBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })minValueImageBounds;
@@ -98,9 +104,9 @@
 - (void)setNumberOfTickMarks:(int)arg1;
 - (void)setSendActionDuringAnimation:(BOOL)arg1;
 - (void)setShowValue:(BOOL)arg1;
-- (void)setValue:(float)arg1 animated:(BOOL)arg2 animationCurve:(int)arg3;
-- (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (void)setValue:(float)arg1;
+- (void)setValue:(float)arg1 animated:(BOOL)arg2;
+- (void)setValue:(float)arg1 animated:(BOOL)arg2 animationCurve:(int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sliderBounds;
 - (void)sliderBoundsChanged;
 - (float)value;

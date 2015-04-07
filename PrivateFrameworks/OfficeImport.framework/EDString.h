@@ -4,8 +4,8 @@
 
 @class EDPhoneticInfo, EDRunsCollection, NSString;
 
-@interface EDString : NSObject <NSCopying, EDImmutableObject> {
-    boolmDoNotModify;
+@interface EDString : NSObject <EDImmutableObject, NSCopying> {
+    bool mDoNotModify;
     EDPhoneticInfo *mPhoneticInfo;
     EDRunsCollection *mRuns;
     NSString *mString;
@@ -16,8 +16,8 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (id)edStringWithString:(id)arg1 runs:(id)arg2;
 + (id)edStringWithString:(id)arg1;
++ (id)edStringWithString:(id)arg1 runs:(id)arg2;
 + (id)string;
 
 - (void)appendString:(id)arg1;
@@ -27,8 +27,8 @@
 - (id)firstRunFont;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithString:(id)arg1 runs:(id)arg2;
 - (id)initWithString:(id)arg1;
+- (id)initWithString:(id)arg1 runs:(id)arg2;
 - (bool)isEmpty;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEDString:(id)arg1;

@@ -5,8 +5,8 @@
 @class UIToolbar;
 
 @interface PLToolbar : UIToolbar {
-    unsigned int _backgroundHidden : 1;
     unsigned int _backgroundAlwaysVisible : 1;
+    unsigned int _backgroundHidden : 1;
     UIToolbar *_persistentToolbar;
 }
 

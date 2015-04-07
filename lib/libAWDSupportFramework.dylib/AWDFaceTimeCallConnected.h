@@ -5,6 +5,10 @@
 @class NSString;
 
 @interface AWDFaceTimeCallConnected : PBCodable <NSCopying> {
+    unsigned int _connectDuration;
+    unsigned int _connectionType;
+    unsigned int _currentNatType;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectDuration : 1; 
@@ -17,10 +21,6 @@
         unsigned int remoteNatType : 1; 
         unsigned int remoteNetworkConnection : 1; 
         unsigned int usesRelay : 1; 
-    unsigned int _connectDuration;
-    unsigned int _connectionType;
-    unsigned int _currentNatType;
-    NSString *_guid;
     } _has;
     unsigned int _isVideo;
     unsigned int _localNetworkConnection;

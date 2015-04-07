@@ -23,8 +23,8 @@
 @property(retain) NSMutableArray * slideLayouts;
 @property BOOL slideNumberPlaceholderIsVisible;
 
-- (void)addSlideLayout:(id)arg1;
 - (id)addSlideLayout;
+- (void)addSlideLayout:(id)arg1;
 - (id)bodyTextStyle;
 - (id)colorMap;
 - (id)colorScheme;

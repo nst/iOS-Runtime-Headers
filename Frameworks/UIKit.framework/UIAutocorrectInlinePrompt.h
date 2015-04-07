@@ -5,15 +5,6 @@
 @class NSArray, NSMutableArray, NSString, TIKeyboardCandidateResultSet, UIView;
 
 @interface UIAutocorrectInlinePrompt : UIView <UIKeyboardCandidateList> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     TIKeyboardCandidateResultSet *_candidateResultSet;
     BOOL _showHiddenCandidatesOnly;
     NSString *m_correction;
@@ -25,6 +16,15 @@
     int m_index;
     float m_maxX;
     BOOL m_mouseDown;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } m_originalTypedTextRect;
     float m_originalTypedTextRectCorrectionAmount;
     int m_promptTextType;

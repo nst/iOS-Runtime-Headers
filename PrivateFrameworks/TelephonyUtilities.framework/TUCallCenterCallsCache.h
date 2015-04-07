@@ -23,10 +23,10 @@
 @property(retain) NSObject<OS_dispatch_semaphore> * uniqueProxyIdentifierToProxyCallSemaphore;
 
 - (void)_updateCallWithCallState:(id)arg1 loadPersistentState:(BOOL)arg2;
-- (id)callForCTCall:(struct __CTCall { }*)arg1 shouldSkipLoadingCallState:(BOOL)arg2;
 - (id)callForCTCall:(struct __CTCall { }*)arg1;
-- (id)callForChat:(id)arg1 shouldSkipLoadingCallState:(BOOL)arg2;
+- (id)callForCTCall:(struct __CTCall { }*)arg1 shouldSkipLoadingCallState:(BOOL)arg2;
 - (id)callForChat:(id)arg1;
+- (id)callForChat:(id)arg1 shouldSkipLoadingCallState:(BOOL)arg2;
 - (id)callRefToTelephonyCall;
 - (id)callRefToTelephonyCallSemaphore;
 - (id)chatGUIDToFaceTimeCall;

@@ -4,7 +4,7 @@
 
 @class <CKAttachmentViewControllerDelegate>, CKAttachmentCollectionView, CKConversation, CKFeedCollectionViewLayout, CKQLPreviewController, CKTranscriptRecipientsController, NSArray, NSMutableArray, NSString, UIBarButtonItem, UICollectionViewFlowLayout;
 
-@interface CKAttachmentViewController : CKViewController <CKFeedCollectionViewLayoutDelegate, UICollectionViewDelegateFlowLayout, CKAttachmentCellDelegate, CKFeedCollectionViewLayoutDatasource, CKTranscriptRecipientsControllerDelegate, UICollectionViewDataSource, QLPreviewControllerDelegate> {
+@interface CKAttachmentViewController : CKViewController <CKAttachmentCellDelegate, CKFeedCollectionViewLayoutDatasource, CKFeedCollectionViewLayoutDelegate, CKTranscriptRecipientsControllerDelegate, QLPreviewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     CKAttachmentCollectionView *_collectionView;
     CKConversation *_conversation;
     <CKAttachmentViewControllerDelegate> *_delegate;
@@ -52,6 +52,7 @@
 - (void)_showAllPreviewItemsForPreviewController:(id)arg1;
 - (void)_updateToolbar;
 - (struct CGImage { }*)cgImageForUIImage:(id)arg1;
+- (id)collectionView;
 - (BOOL)collectionView:(id)arg1 canPerformAction:(SEL)arg2 forItemAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
@@ -81,7 +82,6 @@
 - (void)collectionView:(id)arg1 performAction:(SEL)arg2 forItemAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldShowMenuForItemAtIndexPath:(id)arg2;
-- (id)collectionView;
 - (id)conversation;
 - (void)dealloc;
 - (id)delegate;

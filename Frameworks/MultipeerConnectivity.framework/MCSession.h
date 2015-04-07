@@ -32,7 +32,6 @@
 @property(retain) NSMutableDictionary * peerIDMap;
 @property(retain) NSMutableDictionary * peerStates;
 @property <MCSessionPrivateDelegate> * privateDelegate;
-@property <MCSessionPrivateDelegate> * privateDelegate;
 @property(readonly) NSArray * securityIdentity;
 @property(retain) NSObject<OS_dispatch_queue> * syncQueue;
 
@@ -54,8 +53,8 @@
 - (int)encryptionPreference;
 - (unsigned int)gckPID;
 - (struct OpaqueGCKSession { }*)gckSession;
-- (id)initWithPeer:(id)arg1 securityIdentity:(id)arg2 encryptionPreference:(int)arg3;
 - (id)initWithPeer:(id)arg1;
+- (id)initWithPeer:(id)arg1 securityIdentity:(id)arg2 encryptionPreference:(int)arg3;
 - (BOOL)isEncryptionPreferenceCompatible:(int)arg1;
 - (id)myPeerID;
 - (void)nearbyConnectionDataForPeer:(id)arg1 withCompletionHandler:(id)arg2;

@@ -19,8 +19,8 @@
 + (id)_appearanceForClass:(Class)arg1 withContainerList:(id)arg2;
 + (id)_appearanceNodeForClassInfo:(id)arg1 containerList:(id)arg2;
 + (id)_appearanceWithClassInfo:(id)arg1 containerList:(id)arg2;
-+ (void)_applyInvocationsTo:(id)arg1 window:(id)arg2 matchingSelector:(SEL)arg3;
 + (void)_applyInvocationsTo:(id)arg1 window:(id)arg2;
++ (void)_applyInvocationsTo:(id)arg1 window:(id)arg2 matchingSelector:(SEL)arg3;
 + (id)_currentAppearanceSource;
 + (BOOL)_hasAnyCustomizations;
 + (BOOL)_hasCustomizationsForClass:(Class)arg1 guideClass:(Class)arg2;

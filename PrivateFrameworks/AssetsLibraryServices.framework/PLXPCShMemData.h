@@ -11,8 +11,8 @@
 - (const void*)bytes;
 - (void)dealloc;
 - (id)description;
-- (id)initWithXPCShmem:(id)arg1 length:(long long)arg2;
 - (id)initWithXPCShmem:(id)arg1;
+- (id)initWithXPCShmem:(id)arg1 length:(long long)arg2;
 - (unsigned int)length;
 
 @end

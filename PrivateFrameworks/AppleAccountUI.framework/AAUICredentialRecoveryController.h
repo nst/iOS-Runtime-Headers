@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSObject<AAUICredentialRecoveryPresentationDelegate>, NSString, NSURL, RUILoader, RUIPage, UIActivityIndicatorView, UIBarButtonItem, UINavigationController, UINavigationItem, UIViewController;
 
-@interface AAUICredentialRecoveryController : NSObject <RUIObjectModelDelegate, RUILoaderDelegate> {
+@interface AAUICredentialRecoveryController : NSObject <RUILoaderDelegate, RUIObjectModelDelegate> {
     NSObject<AAUICredentialRecoveryPresentationDelegate> *_delegate;
     BOOL _isModal;
     BOOL _isShowingSpinner;

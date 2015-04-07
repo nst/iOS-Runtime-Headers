@@ -3,6 +3,9 @@
  */
 
 @interface TSCH3DGenericAxisLabelPositioner : NSObject <TSCH3DAxisLabelPositioner> {
+    unsigned int mAlignment;
+    unsigned int mAxis;
+    float mOffset;
     struct tvec2<float> { 
         union { 
             float x; 
@@ -14,18 +17,15 @@
             float g; 
             float t; 
         } ; 
-    unsigned int mAlignment;
-    unsigned int mAxis;
-    float mOffset;
     } mRange;
 }
 
 + (id)horizontal;
-+ (id)horizontalWithRange:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1 offset:(float)arg2;
 + (id)horizontalWithRange:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
++ (id)horizontalWithRange:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1 offset:(float)arg2;
 + (id)vertical;
-+ (id)verticalWithRange:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1 offset:(float)arg2;
 + (id)verticalWithRange:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
++ (id)verticalWithRange:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1 offset:(float)arg2;
 
 - (id).cxx_construct;
 - (unsigned int)alignmentForChartDirection:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1;

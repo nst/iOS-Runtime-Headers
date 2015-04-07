@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface MFReformattedAddress : NSObject {
+    NSString *_address;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    NSString *_address;
     } _middleTruncationRange;
 }
 

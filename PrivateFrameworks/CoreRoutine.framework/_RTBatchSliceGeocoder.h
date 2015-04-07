@@ -5,10 +5,10 @@
 @class <GEOMapServiceTicket>, NSArray, NSObject<OS_dispatch_semaphore>;
 
 @interface _RTBatchSliceGeocoder : NSObject {
+    NSArray *_geoMapItems;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    NSArray *_geoMapItems;
     } _range;
     NSObject<OS_dispatch_semaphore> *_semaphore;
     <GEOMapServiceTicket> *_ticket;

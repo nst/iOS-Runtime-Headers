@@ -9,32 +9,32 @@
 }
 
 + (id)allChartTypes;
-+ (id)areaChart3D;
 + (id)areaChart;
-+ (id)barChart3D;
++ (id)areaChart3D;
 + (id)barChart;
++ (id)barChart3D;
 + (id)bubbleChart;
 + (id)chartTypePlaceholderForDefault3DScaleProperty;
-+ (id)columnChart3D;
 + (id)columnChart;
++ (id)columnChart3D;
 + (id)constantDepthInfoChartScaleForInfoChartScale:(id)arg1 chartType:(id)arg2 barShape:(int)arg3;
-+ (id)lineChart3D;
 + (id)lineChart;
++ (id)lineChart3D;
 + (id)mixedChart;
 + (id)multiDataBarChart;
 + (id)multiDataBubbleChart;
 + (id)multiDataColumnChart;
 + (id)multiDataScatterChart;
-+ (id)pieChart3D;
 + (id)pieChart;
++ (id)pieChart3D;
 + (float)sageDepthFactorForExportingChartInfo:(id)arg1;
 + (id)scatterChart;
-+ (id)stackedAreaChart3D;
 + (id)stackedAreaChart;
-+ (id)stackedBarChart3D;
++ (id)stackedAreaChart3D;
 + (id)stackedBarChart;
-+ (id)stackedColumnChart3D;
++ (id)stackedBarChart3D;
 + (id)stackedColumnChart;
++ (id)stackedColumnChart3D;
 + (id)twoYAxisChart;
 
 - (id)allCDESectionLabels;

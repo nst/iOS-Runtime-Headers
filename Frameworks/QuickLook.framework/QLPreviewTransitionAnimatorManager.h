@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface QLPreviewTransitionAnimatorManager : NSObject <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate> {
+@interface QLPreviewTransitionAnimatorManager : NSObject <UINavigationControllerDelegate, UIViewControllerTransitioningDelegate> {
 }
 
 @property(copy,readonly) NSString * debugDescription;

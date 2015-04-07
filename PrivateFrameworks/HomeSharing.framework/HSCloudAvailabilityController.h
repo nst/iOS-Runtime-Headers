@@ -4,7 +4,7 @@
 
 @class NSObject<OS_dispatch_queue>, NSString, RadiosPreferences;
 
-@interface HSCloudAvailabilityController : NSObject <RadiosPreferencesDelegate, HSCloudAvailability> {
+@interface HSCloudAvailabilityController : NSObject <HSCloudAvailability, RadiosPreferencesDelegate> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     BOOL _canShowCloudDownloadButtons;
     BOOL _canShowCloudMusic;

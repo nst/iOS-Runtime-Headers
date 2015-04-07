@@ -14,7 +14,11 @@
     NSUUID *_contextToken;
     NSError *_error;
     id _exportedHostingObject;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     BOOL _isCancelledOrComplete;
     BOOL _legacyAppearance;
     NSObject<OS_dispatch_queue> *_queue;

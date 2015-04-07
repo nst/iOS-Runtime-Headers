@@ -5,10 +5,10 @@
 @class NSMutableArray;
 
 @interface _MPUProtoBufUserActivityContext : PBCodable <NSCopying> {
+    NSMutableArray *_containerItems;
     struct { 
         unsigned int originatorType : 1; 
         unsigned int originatorVersion : 1; 
-    NSMutableArray *_containerItems;
     } _has;
     int _originatorType;
     int _originatorVersion;

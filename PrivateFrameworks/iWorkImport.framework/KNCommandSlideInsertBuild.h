@@ -19,8 +19,8 @@
 - (void)commit;
 - (void)dealloc;
 - (unsigned int)index;
-- (id)initWithSlideNode:(id)arg1 build:(id)arg2 atIndex:(unsigned int)arg3 createChunks:(BOOL)arg4;
 - (id)initWithSlideNode:(id)arg1 build:(id)arg2 atIndex:(unsigned int)arg3;
+- (id)initWithSlideNode:(id)arg1 build:(id)arg2 atIndex:(unsigned int)arg3 createChunks:(BOOL)arg4;
 - (id)p_buildAtPriorIndex;
 - (void)p_do;
 - (unsigned int)p_indexForInsertingChunks;

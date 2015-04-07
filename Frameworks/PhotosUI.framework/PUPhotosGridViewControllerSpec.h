@@ -5,10 +5,10 @@
 @class PUAlbumPickerViewControllerSpec, PUPhotosPickerViewControllerSpec;
 
 @interface PUPhotosGridViewControllerSpec : NSObject {
+    PUAlbumPickerViewControllerSpec *_albumPickerViewControllerSpec;
     struct CGSize { 
         float width; 
         float height; 
-    PUAlbumPickerViewControllerSpec *_albumPickerViewControllerSpec;
     } _baseInterItemSpacing;
     BOOL _canDisplayEditActionsInNavigationBar;
     BOOL _canDisplayOptionsInPopover;

@@ -15,8 +15,8 @@
 + (BOOL)_insertValues:(id)arg1 forKeys:(id)arg2 modificationDates:(id)arg3 domain:(id)arg4 category:(id)arg5 provenance:(id)arg6 healthDaemon:(id)arg7 error:(id*)arg8;
 + (id)_predicateForCategory:(id)arg1;
 + (id)_predicateForDomain:(id)arg1;
-+ (id)_predicateForKey:(id)arg1 domain:(id)arg2 category:(id)arg3 provenance:(id)arg4;
 + (id)_predicateForKey:(id)arg1;
++ (id)_predicateForKey:(id)arg1 domain:(id)arg2 category:(id)arg3 provenance:(id)arg4;
 + (id)_predicateForKeys:(id)arg1;
 + (id)_predicateForProvenance:(id)arg1;
 + (id)_propertySettersForCodable;

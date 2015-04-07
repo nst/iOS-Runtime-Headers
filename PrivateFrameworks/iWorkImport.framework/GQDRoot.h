@@ -32,8 +32,8 @@
 - (void)initializeAppBundleResourcesUrl:(struct __CFURL { }*)arg1;
 - (void)loadAppBundleResourceToColorMap;
 - (id)objectWithXmlUid:(const char *)arg1;
-- (BOOL)readDocumentVersion:(struct _xmlTextReader { }*)arg1 isTooNew:(BOOL*)arg2;
 - (BOOL)readDocumentVersion:(struct _xmlTextReader { }*)arg1;
+- (BOOL)readDocumentVersion:(struct _xmlTextReader { }*)arg1 isTooNew:(BOOL*)arg2;
 - (id)uuid;
 
 @end

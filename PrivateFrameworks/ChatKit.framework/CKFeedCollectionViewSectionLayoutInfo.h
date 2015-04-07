@@ -5,37 +5,37 @@
 @class NSArray;
 
 @interface CKFeedCollectionViewSectionLayoutInfo : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
+    int _firstJoinedSection;
+    NSArray *_fixedLayoutAttributes;
+    NSArray *_floatingLayoutAttributes;
     struct CGSize { 
         float width; 
         float height; 
+    } _footerSize;
+    id _groupID;
     struct CGSize { 
         float width; 
         float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    } _headerSize;
+    BOOL _hidden;
+    int _lastJoinedSection;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    int _firstJoinedSection;
-    NSArray *_fixedLayoutAttributes;
-    NSArray *_floatingLayoutAttributes;
-    } _footerSize;
-    id _groupID;
-    } _headerSize;
-    BOOL _hidden;
-    int _lastJoinedSection;
     } _margins;
     int _nextVisibleSection;
     int _numberOfTilesOmitted;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _origin;
     int _previousVisibleSection;
     int _sectionType;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     NSArray *_tileLayoutAttributes;
 }

@@ -5,13 +5,13 @@
 @class NSString, UILongPressGestureRecognizer, UIView;
 
 @interface UICollectionViewCell : UICollectionReusableView <UIGestureRecognizerDelegate> {
+    UIView *_backgroundView;
     struct { 
         unsigned int selected : 1; 
         unsigned int highlighted : 1; 
         unsigned int showingMenu : 1; 
         unsigned int clearSelectionWhenMenuDisappears : 1; 
         unsigned int waitingForSelectionAnimationHalfwayPoint : 1; 
-    UIView *_backgroundView;
     } _collectionCellFlags;
     UIView *_contentView;
     BOOL _highlighted;

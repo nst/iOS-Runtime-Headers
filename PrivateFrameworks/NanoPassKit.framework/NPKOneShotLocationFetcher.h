@@ -9,7 +9,11 @@
 @class CLLocationManager, NSObject<OS_dispatch_source>, NSString;
 
 @interface NPKOneShotLocationFetcher : NSObject <CLLocationManagerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     NSObject<OS_dispatch_source> *_locationFixTimeout;
     CLLocationManager *_locationManager;
 }
@@ -28,9 +32,9 @@
 - (void)dealloc;
 - (void)fetchLocationWithCompletion:(id)arg1;
 - (id)locationFixTimeout;
+- (id)locationManager;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (id)locationManager;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setLocationFixTimeout:(id)arg1;
 - (void)setLocationManager:(id)arg1;

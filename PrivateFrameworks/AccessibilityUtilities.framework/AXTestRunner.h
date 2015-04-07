@@ -7,8 +7,16 @@
  */
 
 @interface AXTestRunner : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _postTestAction;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _preTestAction;
+
 }
 
 @property(copy) id postTestAction;

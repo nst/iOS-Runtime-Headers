@@ -4,16 +4,7 @@
 
 @class <UIToolbarDelegate>, NSArray, NSString, UIColor, UIImageView, UIView, _UIBackdropView;
 
-@interface UIToolbar : UIView <_UIShadowedView, _UIBackdropViewGraphicsQualityChangeDelegate, _UIBarPositioningInternal, UIBarPositioning> {
-    struct { 
-        unsigned int barStyle : 3; 
-        unsigned int mode : 2; 
-        unsigned int wasEnabled : 1; 
-        unsigned int downButtonSentAction : 1; 
-        unsigned int barTranslucence : 3; 
-        unsigned int isLocked : 1; 
-        unsigned int backgroundLayoutNeedsUpdate : 1; 
-        unsigned int hasCustomBackgroundView : 1; 
+@interface UIToolbar : UIView <UIBarPositioning, _UIBackdropViewGraphicsQualityChangeDelegate, _UIBarPositioningInternal, _UIShadowedView> {
     _UIBackdropView *_adaptiveBackdrop;
     id _appearanceStorage;
     NSString *_backdropViewLayerGroupName;
@@ -31,6 +22,15 @@
     NSArray *_items;
     int _pressedTag;
     UIView *_shadowView;
+    struct { 
+        unsigned int barStyle : 3; 
+        unsigned int mode : 2; 
+        unsigned int wasEnabled : 1; 
+        unsigned int downButtonSentAction : 1; 
+        unsigned int barTranslucence : 3; 
+        unsigned int isLocked : 1; 
+        unsigned int backgroundLayoutNeedsUpdate : 1; 
+        unsigned int hasCustomBackgroundView : 1; 
     } _toolbarFlags;
     BOOL _wantsLetterpressContent;
 }
@@ -100,8 +100,8 @@
 - (BOOL)_isTopBar_legacy;
 - (void)_layoutBackgroundViewConsideringStatusBar;
 - (void)_populateArchivedSubviews:(id)arg1;
-- (id)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2 resetFontScaleAdjustment:(BOOL)arg3 actuallyRepositionButtons:(BOOL)arg4;
 - (void)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2 resetFontScaleAdjustment:(BOOL)arg3;
+- (id)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2 resetFontScaleAdjustment:(BOOL)arg3 actuallyRepositionButtons:(BOOL)arg4;
 - (id)_repositionedItemsFromItems:(id)arg1 withBarButtonFrames:(id*)arg2 withHitRects:(id*)arg3 buttonIndexes:(id*)arg4 textButtonIndexes:(id*)arg5;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (void)_setAdaptiveToolbarDisabled:(BOOL)arg1;
@@ -173,8 +173,8 @@
 - (void)setBadgeAnimated:(BOOL)arg1 forButton:(int)arg2;
 - (void)setBadgeGlyph:(id)arg1 forButton:(int)arg2;
 - (void)setBadgeValue:(id)arg1 forButton:(int)arg2;
-- (void)setBarStyle:(int)arg1 force:(BOOL)arg2;
 - (void)setBarStyle:(int)arg1;
+- (void)setBarStyle:(int)arg1 force:(BOOL)arg2;
 - (void)setBarTintColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setButtonBarTrackingMode:(int)arg1;
@@ -185,8 +185,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setExtraEdgeInsets:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setItems:(id)arg1;
+- (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setMode:(int)arg1;
 - (void)setOnStateForButton:(BOOL)arg1 forButton:(int)arg2;
 - (void)setShadowImage:(id)arg1 forToolbarPosition:(int)arg2;

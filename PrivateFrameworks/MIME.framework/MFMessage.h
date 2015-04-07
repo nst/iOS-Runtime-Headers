@@ -5,9 +5,9 @@
 @class MFMessageStore, MFMimePart, NSArray, NSString, NSURL;
 
 @interface MFMessage : NSObject <NSCopying> {
-    unsigned int _calculatedAttachmentInfo : 1;
     NSArray *_bcc;
     NSString *_cachedMessageIDHeader;
+    unsigned int _calculatedAttachmentInfo : 1;
     NSArray *_cc;
     NSString *_contentType;
     long long _conversationID;
@@ -31,8 +31,8 @@
 @property(retain) MFMimePart * parentPart;
 
 + (Class)dataMessageStoreToUse;
-+ (id)messageWithRFC822Data:(id)arg1 withParentPart:(id)arg2;
 + (id)messageWithRFC822Data:(id)arg1;
++ (id)messageWithRFC822Data:(id)arg1 withParentPart:(id)arg2;
 + (void)setMessageClassForStore:(id)arg1;
 
 - (void)_calculateAttachmentInfoFromBody:(id)arg1;
@@ -49,9 +49,9 @@
 - (id)bccIfCached;
 - (id)bestAlternativeInPart:(id)arg1;
 - (id)bodyData;
-- (id)bodyDataIsComplete:(BOOL*)arg1 isPartial:(BOOL*)arg2 downloadIfNecessary:(BOOL)arg3;
-- (id)bodyDataIsComplete:(BOOL*)arg1 isPartial:(BOOL*)arg2;
 - (id)bodyDataIsComplete:(BOOL*)arg1;
+- (id)bodyDataIsComplete:(BOOL*)arg1 isPartial:(BOOL*)arg2;
+- (id)bodyDataIsComplete:(BOOL*)arg1 isPartial:(BOOL*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (void)calculateAttachmentInfoFromBody:(id)arg1;
 - (BOOL)calculatedNumberOfAttachments;
 - (BOOL)canBeDeleted;
@@ -61,9 +61,9 @@
 - (long long)conversationID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataConsumerForMimePart:(id)arg1;
-- (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
-- (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3;
 - (id)dataForMimePart:(id)arg1;
+- (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3;
+- (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
 - (id)dataPathForMimePart:(id)arg1;
 - (id)dateReceived;
 - (double)dateReceivedAsTimeIntervalSince1970;
@@ -88,8 +88,8 @@
 - (id)messageBodyIfAvailable;
 - (id)messageBodyIfAvailableUpdatingFlags:(BOOL)arg1;
 - (id)messageBodyUpdatingFlags:(BOOL)arg1;
-- (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (id)messageData;
+- (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (id)messageDataIsComplete:(BOOL*)arg1 downloadIfNecessary:(BOOL)arg2;
 - (id)messageID;
 - (long long)messageIDHash;
@@ -124,13 +124,13 @@
 - (void)setMessageInfoFromMessage:(id)arg1;
 - (void)setMessageStore:(id)arg1;
 - (void)setMessageURL:(id)arg1;
-- (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3;
 - (void)setNumberOfAttachments:(unsigned int)arg1;
+- (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3;
 - (void)setParentPart:(id)arg1;
 - (void)setPreferredEncoding:(unsigned long)arg1;
 - (void)setSender:(id)arg1;
-- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
 - (void)setSubject:(id)arg1;
+- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
 - (void)setTo:(id)arg1;
 - (id)subject;
 - (id)subjectIfCached;

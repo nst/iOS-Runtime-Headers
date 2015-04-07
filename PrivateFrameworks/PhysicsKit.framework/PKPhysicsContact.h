@@ -5,15 +5,15 @@
 @class PKPhysicsBody;
 
 @interface PKPhysicsContact : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
+    PKPhysicsBody *_bodyA;
+    PKPhysicsBody *_bodyB;
     struct CGVector { 
         float dx; 
         float dy; 
-    PKPhysicsBody *_bodyA;
-    PKPhysicsBody *_bodyB;
     } _contactNormal;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _contactPoint;
     BOOL _didBegin;
     BOOL _didEnd;

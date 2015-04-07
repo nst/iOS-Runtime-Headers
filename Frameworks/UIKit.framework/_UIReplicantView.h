@@ -5,12 +5,12 @@
 @class UIScreen, _UIReplicantContentView, _UISlotIdWrapper;
 
 @interface _UIReplicantView : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
     _UIReplicantContentView *_contentView;
     UIScreen *_screen;
     _UISlotIdWrapper *_slotIdWrapper;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _snapshotSize;
 }
 

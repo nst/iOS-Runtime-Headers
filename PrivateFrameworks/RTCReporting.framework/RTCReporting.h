@@ -13,7 +13,11 @@
     int _counter;
     NSArray *_enabledBackendNames;
     int _intervalMultiplier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _loggingBlock;
+
     NSMutableDictionary *_periodicServiceDict;
     NSObject<OS_dispatch_queue> *_reportingQueue;
     NSObject<OS_dispatch_source> *_timer;
@@ -30,8 +34,8 @@
 - (BOOL)flushMessages;
 - (int)getUploadflag;
 - (id)initWithSessionInfo:(id)arg1 userInfo:(id)arg2 frameworksToCheck:(id)arg3;
-- (id)initWithSessionInfo:(int)arg1 version:(unsigned short)arg2 sessionID:(unsigned int)arg3 frameworksToCheck:(id)arg4;
 - (id)initWithSessionInfo:(int)arg1 version:(unsigned short)arg2 sessionID:(unsigned int)arg3;
+- (id)initWithSessionInfo:(int)arg1 version:(unsigned short)arg2 sessionID:(unsigned int)arg3 frameworksToCheck:(id)arg4;
 - (id)messageLoggingBlock;
 - (BOOL)registerPeriodicTask:(id)arg1 needToUpDate:(bool)arg2 needToReport:(bool)arg3 service_block:(id)arg4;
 - (BOOL)registerPeriodicTaskForModule:(unsigned int)arg1 needToUpdate:(BOOL)arg2 needToReport:(BOOL)arg3 serviceBlock:(id)arg4;

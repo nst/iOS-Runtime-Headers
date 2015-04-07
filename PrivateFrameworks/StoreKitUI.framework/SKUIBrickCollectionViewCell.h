@@ -5,15 +5,15 @@
 @class NSString, SKUIClientContext, SKUICountdown, SKUICountdownView, UIColor, UIImage, UIImageView, UILabel, UIView;
 
 @interface SKUIBrickCollectionViewCell : UICollectionViewCell {
+    NSString *_accessibilityLabel;
+    SKUIClientContext *_clientContext;
+    SKUICountdownView *_countdownView;
+    BOOL _itemImageHidden;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSString *_accessibilityLabel;
-    SKUIClientContext *_clientContext;
-    SKUICountdownView *_countdownView;
-    BOOL _itemImageHidden;
     } _itemImageInsets;
     UIImageView *_itemImageView;
     UIImageView *_overlayImageView;

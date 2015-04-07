@@ -10,12 +10,12 @@
 @class <TSTCanvasReferenceProvider>, NSString, TSTReferenceNode, TSUColor;
 
 @interface TSTCompletionToken : TSTWPTokenAttachment {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     <TSTCanvasReferenceProvider> *mCanvasReferenceProvider;
     NSString *mCompletionText;
     TSTReferenceNode *mEditingReferenceNode;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } mPrefixRange;
     TSUColor *mReferenceColor;
     int mRenderAsTokenType;

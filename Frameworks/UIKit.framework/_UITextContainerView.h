@@ -5,31 +5,31 @@
 @class NSDictionary, NSLayoutManager, NSString, NSTextContainer, NSTextStorage;
 
 @interface _UITextContainerView : UIView <NSUITextViewCommonMethods> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+    NSDictionary *_linkTextAttributes;
     struct CGSize { 
         float width; 
         float height; 
+    } _maxSize;
     struct CGSize { 
         float width; 
         float height; 
+    } _minSize;
     struct { 
         unsigned int textContainerOriginInvalid : 1; 
         unsigned int verticalLayout : 2; 
         unsigned int horizontallyResizable : 1; 
         unsigned int verticallyResizable : 1; 
-    NSDictionary *_linkTextAttributes;
-    } _maxSize;
-    } _minSize;
     } _tcvFlags;
     NSTextContainer *_textContainer;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _textContainerInset;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _textContainerOrigin;
 }
 
@@ -62,8 +62,8 @@
 - (id)delegate;
 - (id)description;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
 - (void)invalidateTextContainerOrigin;
 - (BOOL)isHorizontallyResizable;
 - (BOOL)isVerticallyResizable;

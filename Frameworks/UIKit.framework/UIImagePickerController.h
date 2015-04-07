@@ -14,13 +14,13 @@
             float width; 
             float height; 
         } size; 
+    } _cropRect;
+    id _image;
     struct { 
         unsigned int visible : 1; 
         unsigned int isCleaningUp : 1; 
         unsigned int savingOptions : 3; 
         unsigned int didRevertStatusBar : 1; 
-    } _cropRect;
-    id _image;
     } _imagePickerFlags;
     NSArray *_mediaTypes;
     BOOL _previousStatusBarHidden;

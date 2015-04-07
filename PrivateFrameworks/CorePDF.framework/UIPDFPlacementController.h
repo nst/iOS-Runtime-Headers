@@ -5,10 +5,10 @@
 @class NSMutableArray, UIPDFPageView;
 
 @interface UIPDFPlacementController : NSObject {
+    NSMutableArray *_popups;
     struct CGSize { 
         float width; 
         float height; 
-    NSMutableArray *_popups;
     } _viewSize;
     UIPDFPageView *pageView;
 }

@@ -20,8 +20,8 @@
 - (void)layoutSubviews;
 - (id)ratingControl;
 - (void)setContentBoundsEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setShowsRatingControl:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsRatingControl:(BOOL)arg1;
+- (void)setShowsRatingControl:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)showsRatingControl;
 
 @end

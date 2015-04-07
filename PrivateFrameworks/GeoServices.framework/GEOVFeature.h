@@ -5,22 +5,20 @@
 @class GEOVCharacteristics, NSData, NSMutableArray;
 
 @interface GEOVFeature : PBCodable <NSCopying> {
+    unsigned long long _businessID;
+    unsigned int _centerlineCount;
+    unsigned int _centerlineStart;
+    GEOVCharacteristics *_characteristics;
+    float _endLaneWidth;
+    float _endOffset;
+    float _endRoadOffset;
+    unsigned int _entryPointMask;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
+    } _extrusionHeights;
+    int _formOfWay;
     struct { 
         unsigned int businessID : 1; 
         unsigned int uID : 1; 
@@ -44,17 +42,11 @@
         unsigned int travelDirection : 1; 
         unsigned int type : 1; 
         unsigned int polyIsConvex : 1; 
-    unsigned long long _businessID;
-    unsigned int _centerlineCount;
-    unsigned int _centerlineStart;
-    GEOVCharacteristics *_characteristics;
-    float _endLaneWidth;
-    float _endOffset;
-    float _endRoadOffset;
-    unsigned int _entryPointMask;
-    } _extrusionHeights;
-    int _formOfWay;
     } _has;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _labelOffsets;
     float _minzoomRank;
     NSData *_oBSOLETECenterlines;
@@ -66,7 +58,15 @@
     int _roadClass;
     int _sectionCount;
     int _sectionStart;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _shieldLabelOffsets;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _shieldLabelTypes;
     int _speedLimit;
     float _startLaneWidth;

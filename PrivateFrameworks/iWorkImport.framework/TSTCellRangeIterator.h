@@ -5,6 +5,9 @@
 @class <TSTCellRangeIteratorDelegate>, TSTCell, TSTCellIterator;
 
 @interface TSTCellRangeIterator : NSObject {
+    TSTCellIterator *mCellIterator;
+    BOOL mCellValidForDelegate;
+    <TSTCellRangeIteratorDelegate> *mDelegate;
     struct { 
         struct { 
             unsigned short row; 
@@ -34,9 +37,6 @@
         BOOL mHidden; 
         BOOL mHiddenRow; 
         BOOL mHiddenColumn; 
-    TSTCellIterator *mCellIterator;
-    BOOL mCellValidForDelegate;
-    <TSTCellRangeIteratorDelegate> *mDelegate;
     } mIterData;
     BOOL mIterDataValid;
 }

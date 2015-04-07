@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CKContainerID : NSObject <NSSecureCoding, NSCopying> {
+@interface CKContainerID : NSObject <NSCopying, NSSecureCoding> {
     NSString *_containerIdentifier;
     int _environment;
 }

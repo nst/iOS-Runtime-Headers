@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface MBBackup : NSObject <NSCopying, NSCoding> {
+@interface MBBackup : NSObject <NSCoding, NSCopying> {
     NSString *_backupUDID;
     NSString *_deviceClass;
     NSString *_hardwareModel;

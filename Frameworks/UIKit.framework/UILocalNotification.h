@@ -4,7 +4,7 @@
 
 @class CLRegion, NSCalendar, NSDate, NSDictionary, NSString, NSTimeZone;
 
-@interface UILocalNotification : NSObject <NSCopying, NSCoding> {
+@interface UILocalNotification : NSObject <NSCoding, NSCopying> {
 }
 
 @property(copy) NSString * alertAction;

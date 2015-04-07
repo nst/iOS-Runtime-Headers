@@ -5,10 +5,10 @@
 @class NSMutableDictionary, NSString;
 
 @interface BBObjectCache : NSObject {
+    NSMutableDictionary *_cache;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    NSMutableDictionary *_cache;
     } _cacheMutex;
     NSString *_identifier;
 }

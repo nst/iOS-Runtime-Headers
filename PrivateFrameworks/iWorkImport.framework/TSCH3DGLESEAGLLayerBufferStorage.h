@@ -5,6 +5,7 @@
 @class CAEAGLLayer;
 
 @interface TSCH3DGLESEAGLLayerBufferStorage : TSCH3DRenderBufferStorage {
+    CAEAGLLayer *mLayer;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,7 +17,6 @@
             int g; 
             int t; 
         } ; 
-    CAEAGLLayer *mLayer;
     } mSize;
 }
 

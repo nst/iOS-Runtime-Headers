@@ -4,7 +4,7 @@
 
 @class <RUTrackActionsDelegate>, NSString, RUTrackActionsView, UIImage;
 
-@interface RUTrackActionsViewController : UIViewController <RUTrackActionsDelegate, RUTrackActioning> {
+@interface RUTrackActionsViewController : UIViewController <RUTrackActioning, RUTrackActionsDelegate> {
     <RUTrackActionsDelegate> *_trackActionsDelegate;
     RUTrackActionsView *_trackActionsView;
 }

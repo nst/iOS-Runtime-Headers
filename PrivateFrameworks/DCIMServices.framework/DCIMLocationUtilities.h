@@ -6,7 +6,7 @@
 }
 
 + (id)_sharedGPSDateAndTimestampFormatter;
-+ (id)locationFromImageProperties:(id)arg1 timestampIfMissing:(id)arg2;
 + (id)locationFromImageProperties:(id)arg1;
++ (id)locationFromImageProperties:(id)arg1 timestampIfMissing:(id)arg2;
 
 @end

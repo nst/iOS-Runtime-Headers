@@ -11,7 +11,11 @@
 @interface PUAdjustmentsModePickerCell : UITableViewCell {
     UIButton *_accessoryButton;
     NSArray *_accessoryButtonConstraints;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _buttonAction;
+
     int _buttonType;
     NSString *_currentDisplayValue;
     UILabel *_displayValueLabel;

@@ -5,10 +5,10 @@
 @class CKDPCommentSummary, NSData, NSMutableArray;
 
 @interface CKDPGetCommentsResponse : PBCodable <NSCopying> {
-    struct { 
-        unsigned int totalCount : 1; 
     NSMutableArray *_comments;
     NSData *_continuationMarker;
+    struct { 
+        unsigned int totalCount : 1; 
     } _has;
     CKDPCommentSummary *_summary;
     int _totalCount;

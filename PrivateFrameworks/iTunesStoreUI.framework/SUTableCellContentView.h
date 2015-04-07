@@ -5,15 +5,15 @@
 @class NSMutableArray, NSString, SUCellConfiguration, UIBezierPath, UIView;
 
 @interface SUTableCellContentView : UIView <SUCellConfigurationView> {
-    unsigned int _drawAsDisabled : 1;
-    unsigned int _highlighted : 1;
-    unsigned int _highlightsOnlyContentView : 1;
-    unsigned int _useSubviewLayout : 1;
     int _clipCorners;
     UIBezierPath *_clipPath;
     SUCellConfiguration *_configuration;
+    unsigned int _drawAsDisabled : 1;
+    unsigned int _highlighted : 1;
+    unsigned int _highlightsOnlyContentView : 1;
     UIView *_overlayView;
     NSMutableArray *_subviews;
+    unsigned int _useSubviewLayout : 1;
 }
 
 @property int clipCorners;
@@ -54,8 +54,8 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setHighlightsOnlyContentView:(BOOL)arg1;
-- (void)setUsesSubviews:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setUsesSubviews:(BOOL)arg1;
+- (void)setUsesSubviews:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)usesSubviews;
 
 @end

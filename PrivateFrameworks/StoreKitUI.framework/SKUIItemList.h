@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSSet, NSString;
 
-@interface SKUIItemList : NSObject <SKUICacheCoding, NSCopying> {
+@interface SKUIItemList : NSObject <NSCopying, SKUICacheCoding> {
     NSMutableArray *_items;
     NSString *_seeAllTitle;
     NSString *_seeAllURLString;

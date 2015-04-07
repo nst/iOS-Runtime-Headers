@@ -3,13 +3,13 @@
  */
 
 @interface UIKeyboardCandidateGridSecondaryCandidatesLayout : UICollectionViewFlowLayout {
+    int _candidatesVisualStyle;
     struct { 
         unsigned int idiom : 6; 
         unsigned int landscape : 1; 
         unsigned int split : 1; 
         unsigned int appearance : 8; 
         unsigned int rendering : 16; 
-    int _candidatesVisualStyle;
     } _visualStyling;
 }
 

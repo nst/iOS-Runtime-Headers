@@ -10,10 +10,18 @@
 
 @interface PSSearchResults : NSObject <NSCopying> {
     NSMutableDictionary *_entriesBySection;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _entryComparator;
+
     NSMutableSet *_explicitlyAddedSectionEntries;
     BOOL _needsSorting;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sectionComparator;
+
     NSMutableArray *_sectionEntries;
     BOOL _treatSectionEntriesAsRegularEntries;
 }

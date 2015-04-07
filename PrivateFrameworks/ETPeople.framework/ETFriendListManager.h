@@ -5,12 +5,12 @@
 @class ETPerson, NPSDomainAccessor, NPSManager, NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface ETFriendListManager : NSObject {
+    NPSDomainAccessor *_domainAccessor;
+    ETPerson *_ephemeralPerson;
     struct { 
         unsigned int structuralChange : 1; 
         unsigned int needsReload : 1; 
         unsigned int needsRefresh : 1; 
-    NPSDomainAccessor *_domainAccessor;
-    ETPerson *_ephemeralPerson;
     } _flags;
     NSMutableArray *_friendList;
     NPSManager *_npsManager;

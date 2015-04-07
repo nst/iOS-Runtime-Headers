@@ -35,8 +35,8 @@
 + (id)maxValueForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3;
 + (Class)memoryEntityClass;
 + (id)minValueForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3;
-+ (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2;
++ (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 
 - (id)_copyTableClusteredValuesWithValues:(id)arg1;
 - (BOOL)_deleteRowFromTable:(id)arg1 usingColumn:(id)arg2;

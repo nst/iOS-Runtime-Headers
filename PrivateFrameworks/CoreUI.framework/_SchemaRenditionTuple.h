@@ -5,10 +5,10 @@
 @class NSMutableDictionary;
 
 @interface _SchemaRenditionTuple : NSObject {
+    NSMutableDictionary *info;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    NSMutableDictionary *info;
     } key[16];
 }
 

@@ -11,7 +11,11 @@
 @interface AARequest : NSObject <NSURLSessionDataDelegate> {
     struct OpaqueCFHTTPCookieStorage { } *_cookieStorage;
     BOOL _flushCache;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSString *_initialURLString;
     NSString *_machineId;
     NSString *_oneTimePassword;

@@ -42,10 +42,10 @@
 - (int)databaseID;
 - (id)endOfRedirectChain;
 - (long long)generation;
-- (id)initWithHistoryItem:(id)arg1 sqliteRow:(id)arg2 baseColumnIndex:(unsigned int)arg3;
 - (id)initWithHistoryItem:(id)arg1 sqliteRow:(id)arg2;
-- (id)initWithHistoryItem:(id)arg1 visitTime:(double)arg2 loadWasSuccesful:(BOOL)arg3 wasHTTPNonGet:(BOOL)arg4 origin:(int)arg5;
+- (id)initWithHistoryItem:(id)arg1 sqliteRow:(id)arg2 baseColumnIndex:(unsigned int)arg3;
 - (id)initWithHistoryItem:(id)arg1 visitTime:(double)arg2;
+- (id)initWithHistoryItem:(id)arg1 visitTime:(double)arg2 loadWasSuccesful:(BOOL)arg3 wasHTTPNonGet:(BOOL)arg4 origin:(int)arg5;
 - (BOOL)isSynthesized;
 - (id)item;
 - (BOOL)loadWasSuccessful;

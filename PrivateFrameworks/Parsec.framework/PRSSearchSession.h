@@ -4,7 +4,7 @@
 
 @class <PRSSessionController>, NSArray, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, NSTimer;
 
-@interface PRSSearchSession : NSObject <PRSResourceProvider, PRSImageSource> {
+@interface PRSSearchSession : NSObject <PRSImageSource, PRSResourceProvider> {
     NSMutableSet *_cachedResults;
     NSMutableSet *_cachedWebResults;
     <PRSSessionController> *_client;
@@ -53,8 +53,8 @@
 - (id)fteLocString;
 - (void)getCachedQueries:(id*)arg1 results:(id*)arg2 webSearch:(BOOL)arg3;
 - (void)getImageWithIdentifier:(id)arg1 block:(id)arg2;
-- (id)initWithClient:(id)arg1 clientQueue:(id)arg2;
 - (id)initWithClient:(id)arg1;
+- (id)initWithClient:(id)arg1 clientQueue:(id)arg2;
 - (BOOL)isLocaleSupported:(id)arg1;
 - (BOOL)isValid;
 - (void)killFeedback;

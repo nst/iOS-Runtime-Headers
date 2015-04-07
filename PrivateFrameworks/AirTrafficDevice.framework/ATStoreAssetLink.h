@@ -4,7 +4,7 @@
 
 @class <ATAssetLinkDelegate>, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SSDownloadManager;
 
-@interface ATStoreAssetLink : NSObject <SSDownloadManagerObserver, SSDownloadHandlerDelegate, ATAssetLink> {
+@interface ATStoreAssetLink : NSObject <ATAssetLink, SSDownloadHandlerDelegate, SSDownloadManagerObserver> {
     NSMutableDictionary *_assetsByStoreID;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     <ATAssetLinkDelegate> *_delegate;
@@ -35,8 +35,8 @@
 - (void)cancelAssets:(id)arg1;
 - (void)close;
 - (id)delegate;
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)downloadManager;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)enqueueAssets:(id)arg1 force:(BOOL)arg2;
 - (id)init;
 - (BOOL)isOpen;

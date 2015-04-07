@@ -5,11 +5,19 @@
 @class NSString, UIColor, UIImage, UIView;
 
 @interface UITabBarItem : UIBarItem {
+    SEL _action;
+    id _appearanceStorage;
+    NSString *_badgeValue;
+    int _barMetrics;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
+    } _imageInsets;
+    int _imageStyle;
+    UIImage *_selectedImage;
+    UIImage *_selectedTemplateImage;
     struct { 
         unsigned int enabled : 1; 
         unsigned int style : 3; 
@@ -19,14 +27,6 @@
         unsigned int animatedBadge : 1; 
         unsigned int customSelectedImage : 1; 
         unsigned int customUnselectedImage : 1; 
-    SEL _action;
-    id _appearanceStorage;
-    NSString *_badgeValue;
-    int _barMetrics;
-    } _imageInsets;
-    int _imageStyle;
-    UIImage *_selectedImage;
-    UIImage *_selectedTemplateImage;
     } _tabBarItemFlags;
     int _tag;
     id _target;
@@ -52,8 +52,8 @@
 + (id)_appearanceBlindViewClasses;
 
 - (int)_barMetrics;
-- (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 withTint:(BOOL)arg3;
 - (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2;
+- (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 withTint:(BOOL)arg3;
 - (int)_imageStyle;
 - (id)_internalTemplateImage;
 - (id)_internalTemplateImages;
@@ -92,8 +92,8 @@
 - (id)selectedImage;
 - (void)setAction:(SEL)arg1;
 - (void)setAnimatedBadge:(BOOL)arg1;
-- (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (void)setBadgeValue:(id)arg1;
+- (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFinishedSelectedImage:(id)arg1 withFinishedUnselectedImage:(id)arg2;
 - (void)setImage:(id)arg1;

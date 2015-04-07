@@ -10,6 +10,12 @@
 @class <TSUStreamReadChannel>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface TSUZipInflateReadChannel : NSObject <TSUStreamReadChannel> {
+    unsigned int _CRC;
+    char *_outBuffer;
+    unsigned long _outBufferSize;
+    <TSUStreamReadChannel> *_readChannel;
+    NSObject<OS_dispatch_queue> *_readQueue;
+    unsigned long _remainingUncompressedSize;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -25,12 +31,6 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    unsigned int _CRC;
-    char *_outBuffer;
-    unsigned long _outBufferSize;
-    <TSUStreamReadChannel> *_readChannel;
-    NSObject<OS_dispatch_queue> *_readQueue;
-    unsigned long _remainingUncompressedSize;
     } _stream;
     BOOL _validateCRC;
 }

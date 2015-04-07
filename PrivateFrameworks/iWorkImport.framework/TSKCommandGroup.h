@@ -23,11 +23,11 @@
 @property(readonly) BOOL isEmpty;
 @property(readonly) Class superclass;
 
-- (const struct CommandGroupArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct CommandArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct IndexSet {} *x5; int x6; unsigned int x7[1]; }*)commandGroupArchiveFromUnarchiver:(id)arg1;
 - (id)actionString;
 - (void)addCommand:(id)arg1;
 - (void)addCommandIfNotNil:(id)arg1;
 - (void)addCommandsFromArray:(id)arg1;
+- (const struct CommandGroupArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct CommandArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct IndexSet {} *x5; int x6; unsigned int x7[1]; }*)commandGroupArchiveFromUnarchiver:(id)arg1;
 - (id)commands;
 - (void)commit;
 - (void)dealloc;

@@ -12,7 +12,11 @@
     NSXPCConnection *_connection;
     NSLock *_lock;
     NSMutableDictionary *_proxiesByPublisherID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _publishingHandler;
+
     NSString *_subscriberID;
 }
 

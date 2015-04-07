@@ -4,7 +4,7 @@
 
 @class IDSService, NACEventThrottler, NACRunAssertion, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface NACIDSServer : NSObject <IDSServiceDelegate, MPVolumeControllerDelegate, MPAVRoutingControllerDelegate> {
+@interface NACIDSServer : NSObject <IDSServiceDelegate, MPAVRoutingControllerDelegate, MPVolumeControllerDelegate> {
     NACEventThrottler *_hapticThrottler;
     NSObject<OS_dispatch_queue> *_idsDispatchQueue;
     IDSService *_idsService;

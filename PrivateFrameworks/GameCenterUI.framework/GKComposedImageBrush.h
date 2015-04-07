@@ -5,13 +5,13 @@
 @class UIImage;
 
 @interface GKComposedImageBrush : GKImageBrush {
+    UIImage *_backgroundImage;
+    UIImage *_maskImage;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIImage *_backgroundImage;
-    UIImage *_maskImage;
     } _maskInsets;
     UIImage *_overlayImage;
 }

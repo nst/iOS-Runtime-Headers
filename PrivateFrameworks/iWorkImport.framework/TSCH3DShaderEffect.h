@@ -16,7 +16,7 @@
 - (Class)stateClass;
 - (id)stateSharingID;
 - (void)updateState:(id)arg1 effectsStates:(id)arg2;
-- (void)uploadData:(id)arg1 effectsStates:(id)arg2 updateCurrentStates:(id)arg3;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;
+- (void)uploadData:(id)arg1 effectsStates:(id)arg2 updateCurrentStates:(id)arg3;
 
 @end

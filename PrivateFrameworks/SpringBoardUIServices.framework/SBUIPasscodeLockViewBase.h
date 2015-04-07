@@ -4,7 +4,7 @@
 
 @class <SBFLegibilitySettingsProvider>, <SBUIPasscodeLockViewDelegate>, <SBUIPasscodeLockViewDelegate_Internal>, NSString, SBUIPasscodeEntryField, UIColor, _UILegibilitySettings;
 
-@interface SBUIPasscodeLockViewBase : UIView <SBUIBiometricEventObserver, SBFLegibilitySettingsProviderDelegate, SBUIPasscodeLockView_Internal, SBUIPasscodeLockView> {
+@interface SBUIPasscodeLockViewBase : UIView <SBFLegibilitySettingsProviderDelegate, SBUIBiometricEventObserver, SBUIPasscodeLockView, SBUIPasscodeLockView_Internal> {
     BOOL _allowsStatusTextUpdatingOnResignFirstResponder;
     BOOL _appearingForSmartCoverUnlock;
     float _backgroundAlpha;

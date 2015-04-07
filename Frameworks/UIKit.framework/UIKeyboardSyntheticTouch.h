@@ -5,12 +5,12 @@
 @class UIWindow;
 
 @interface UIKeyboardSyntheticTouch : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
     unsigned char _pathIdentity;
     unsigned char _pathIndex;
     float _pathMajorRadius;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } locationInWindow;
     int phase;
     unsigned int tapCount;

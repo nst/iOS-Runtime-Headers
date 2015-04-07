@@ -162,12 +162,12 @@
 - (void)showExternalURL:(id)arg1;
 - (void)showTransientViewController:(id)arg1;
 - (void)suspendApplicationWithOptions:(id)arg1;
+- (id)tabBarController;
 - (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
 - (void)tabBarController:(id)arg1 didReselectViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 - (BOOL)tabBarController:(id)arg1 shouldSelectViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 willTransitionToSize:(struct CGSize { float x1; float x2; })arg2 withTransitionCoordinator:(id)arg3;
-- (id)tabBarController;
 - (unsigned int)tabBarControllerSupportedInterfaceOrientations:(id)arg1;
 - (id)tabBarItems;
 - (void)updateTabBarWithItems:(id)arg1 animated:(BOOL)arg2;

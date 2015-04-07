@@ -5,6 +5,10 @@
 @class CPChunk<CPGraphicUser>, CPParagraph, CPTextLine;
 
 @interface CPGraphicObject : CPChunk {
+    CPParagraph *anchoringParagraph;
+    CPTextLine *anchoringTextLine;
+    unsigned int clipIndex;
+    BOOL isInZoneBorder;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,10 +18,6 @@
             float width; 
             float height; 
         } size; 
-    CPParagraph *anchoringParagraph;
-    CPTextLine *anchoringTextLine;
-    unsigned int clipIndex;
-    BOOL isInZoneBorder;
     } renderedBounds;
     CPChunk<CPGraphicUser> *user;
     int zoneGraphicType;

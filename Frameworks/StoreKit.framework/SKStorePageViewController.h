@@ -10,7 +10,11 @@
 
 @interface SKStorePageViewController : UIViewController <SKStoreProductViewControllerDelegate> {
     _UIAsyncInvocation *_cancelRequest;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _loadBlock;
+
     SKStoreProductViewController *_productPageViewController;
     SKRemoteStorePageViewController *_remoteViewController;
     SKInvocationQueueProxy<SKUIServiceStorePageViewController> *_serviceProxy;

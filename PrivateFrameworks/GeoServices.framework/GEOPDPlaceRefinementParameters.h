@@ -5,10 +5,10 @@
 @class GEOLatLng, GEOStructuredAddress, NSString;
 
 @interface GEOPDPlaceRefinementParameters : PBCodable <NSCopying> {
+    GEOStructuredAddress *_addressHint;
     struct { 
         unsigned int muid : 1; 
         unsigned int resultProviderId : 1; 
-    GEOStructuredAddress *_addressHint;
     } _has;
     GEOLatLng *_locationHint;
     unsigned long long _muid;

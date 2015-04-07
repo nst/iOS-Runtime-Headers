@@ -51,8 +51,8 @@
 + (struct CGSize { float x1; float x2; })minimumSize;
 + (void)rtb_displayAlertWithTitle:(id)arg1 message:(id)arg2 leftButtonTitle:(id)arg3 leftButtonAction:(id)arg4 rightButtonTitle:(id)arg5 rightButtonAction:(id)arg6;
 
-- (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (id)_addButtonWithTitle:(id)arg1;
+- (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (id)_addButtonWithTitleText:(id)arg1;
 - (id)_addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (id)_alertController;
@@ -105,9 +105,9 @@
 - (void)_updateMessageAndSubtitle;
 - (void)_useLegacyUI:(BOOL)arg1;
 - (void)_useUndoStyle:(BOOL)arg1;
+- (int)addButtonWithTitle:(id)arg1;
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
-- (int)addButtonWithTitle:(id)arg1;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (int)alertSheetStyle;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
@@ -146,9 +146,9 @@
 - (int)numberOfButtons;
 - (int)numberOfLinesInTitle;
 - (int)numberOfRows;
+- (void)popupAlertAnimated:(BOOL)arg1;
 - (void)popupAlertAnimated:(BOOL)arg1 animationType:(int)arg2;
 - (void)popupAlertAnimated:(BOOL)arg1 atOffset:(float)arg2;
-- (void)popupAlertAnimated:(BOOL)arg1;
 - (void)presentSheetFromAboveView:(id)arg1;
 - (void)presentSheetFromBehindView:(id)arg1;
 - (void)presentSheetFromButtonBar:(id)arg1;

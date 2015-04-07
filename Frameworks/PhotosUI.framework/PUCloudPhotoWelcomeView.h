@@ -5,11 +5,11 @@
 @class <PUCloudPhotoWelcomeViewDelegate>, NSLayoutConstraint, UIButton, UIImageView, UILabel;
 
 @interface PUCloudPhotoWelcomeView : UIView {
+    UILabel *_bodyLabel;
+    <PUCloudPhotoWelcomeViewDelegate> *_delegate;
     struct { 
         unsigned int delegateRespondsToGoButtonTapped : 1; 
         unsigned int delegateRespondsToLearnMoreTapped : 1; 
-    UILabel *_bodyLabel;
-    <PUCloudPhotoWelcomeViewDelegate> *_delegate;
     } _delegateFlags;
     UILabel *_finePrintLabel;
     UIButton *_goButton;

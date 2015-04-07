@@ -9,8 +9,16 @@
 @class NSExtension;
 
 @interface UIActivity : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _activityCompletionHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _activityCompletionWithItemsHandler;
+
     int _defaultPriority;
 }
 
@@ -45,8 +53,8 @@
 - (void)_willPresentAsFormSheet;
 - (id)activityCompletionHandler;
 - (id)activityCompletionWithItemsHandler;
-- (void)activityDidFinish:(BOOL)arg1 items:(id)arg2 error:(id)arg3;
 - (void)activityDidFinish:(BOOL)arg1;
+- (void)activityDidFinish:(BOOL)arg1 items:(id)arg2 error:(id)arg3;
 - (id)activityImage;
 - (id)activitySettingsImage;
 - (id)activityTitle;

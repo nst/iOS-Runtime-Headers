@@ -39,8 +39,8 @@
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMachServiceName:(id)arg1;
-- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(BOOL)arg2;
 - (void)subscribeToSectionID:(id)arg1;
+- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(BOOL)arg2;
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (void)unsubscribeFromSectionID:(id)arg1;
 

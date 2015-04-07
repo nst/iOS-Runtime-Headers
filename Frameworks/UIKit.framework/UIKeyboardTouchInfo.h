@@ -5,14 +5,14 @@
 @class UIKBTree, UITouch;
 
 @interface UIKeyboardTouchInfo : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     BOOL _dragged;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _initialDragPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _initialPoint;
     UIKBTree *_key;
     UIKBTree *_keyplane;

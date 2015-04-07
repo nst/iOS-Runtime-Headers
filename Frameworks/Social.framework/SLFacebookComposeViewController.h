@@ -8,20 +8,24 @@
 
 @class ACAccount, ACAccountStore, ALAssetsLibrary, CLInUseAssertion, NSString, SLComposeSheetConfigurationItem, SLFacebookAlbumChooserViewController, SLFacebookAlbumManager, SLFacebookPlaceManager, SLFacebookPost, SLFacebookPostPrivacyManager, SLFacebookSession, SLFacebookVideoOptionsViewController, SLSheetPlaceViewController, SLVideoQualityOption, UIViewController<SLFacebookAudienceViewController>;
 
-@interface SLFacebookComposeViewController : SLComposeServiceViewController <SLFacebookAudienceViewControllerDelegate, SLFacebookAlbumChooserViewControllerDelegate, SLFacebookVideoOptionsDelegate, SLPlaceDataSourceDelegate, SLSheetPlaceViewControllerDelegate> {
+@interface SLFacebookComposeViewController : SLComposeServiceViewController <SLFacebookAlbumChooserViewControllerDelegate, SLFacebookAudienceViewControllerDelegate, SLFacebookVideoOptionsDelegate, SLPlaceDataSourceDelegate, SLSheetPlaceViewControllerDelegate> {
+    ACAccountStore *_accountStore;
     struct { 
         unsigned int showAlbumAction : 1; 
         unsigned int showPrivacyAction : 1; 
         unsigned int showPlaceAction : 1; 
         unsigned int showVideoDetailAction : 1; 
-    ACAccountStore *_accountStore;
     } _actionFlags;
     SLFacebookAlbumChooserViewController *_albumChooserViewController;
     SLComposeSheetConfigurationItem *_albumConfigurationItem;
     SLFacebookAlbumManager *_albumManager;
     ALAssetsLibrary *_assetsLibrary;
     UIViewController<SLFacebookAudienceViewController> *_audienceViewController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     BOOL _didFetchPrivilegedAccount;
     BOOL _hasAccessToAccount;
     BOOL _hasCheckedAccess;

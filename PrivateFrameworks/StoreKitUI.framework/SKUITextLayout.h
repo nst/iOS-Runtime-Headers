@@ -5,16 +5,16 @@
 @class NSString;
 
 @interface SKUITextLayout : NSObject <SKUICachedLayout> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     struct __CTFramesetter { } *_framesetter;
     BOOL _requiresTruncation;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     struct __CTFrame { } *_textFrame;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _truncatedSize;
 }
 

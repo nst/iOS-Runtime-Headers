@@ -8,10 +8,14 @@
 
 @class ADPlayer, ADPrerollView, AVPlayerViewController, MPMoviePlayerController, NSString;
 
-@interface ADPrerollController : NSObject <ADPrerollViewDelegate, ADPlayerDelegate> {
+@interface ADPrerollController : NSObject <ADPlayerDelegate, ADPrerollViewDelegate> {
     ADPlayer *_adPlayer;
     AVPlayerViewController *_avPlayerViewController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     BOOL _isObservingThirdPartyAVPlayer;
     MPMoviePlayerController *_moviePlayerController;
     BOOL _setupInProgress;
@@ -38,10 +42,10 @@
 - (void)_handlePlaybackCompletion:(BOOL)arg1;
 - (BOOL)_isEmbedded;
 - (void)actionButtonPressed;
+- (id)adPlayer;
 - (void)adPlayer:(id)arg1 didChangePlaybackState:(unsigned int)arg2;
 - (void)adPlayer:(id)arg1 elapsedTime:(double)arg2 totalTime:(double)arg3;
 - (void)adPlayer:(id)arg1 readyForPlaybackWithAVPlayer:(id)arg2 impressionProperties:(id)arg3;
-- (id)adPlayer;
 - (void)adPlayerDidBeginAction:(id)arg1;
 - (void)adPlayerDidFinishPlayback:(id)arg1;
 - (void)adPlayerDidTimeout:(id)arg1;

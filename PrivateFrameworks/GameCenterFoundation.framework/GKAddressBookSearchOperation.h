@@ -9,7 +9,11 @@
 @class NSMutableArray, NSString;
 
 @interface GKAddressBookSearchOperation : ABSearchOperation <ABSearchOperationDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSMutableArray *_matches;
 }
 

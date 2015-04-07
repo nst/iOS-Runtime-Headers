@@ -12,8 +12,8 @@
 
 - (void)_backupDidBeginNotification;
 - (void)_establishConnection;
-- (id)_sendRequest:(id)arg1 arguments:(id)arg2 error:(id*)arg3;
 - (id)_sendRequest:(id)arg1 arguments:(id)arg2;
+- (id)_sendRequest:(id)arg1 arguments:(id)arg2 error:(id*)arg3;
 - (void)accountChanged;
 - (BOOL)acquireLockWithBackupUDID:(id)arg1 owner:(id)arg2 timeout:(double)arg3 error:(id*)arg4;
 - (BOOL)addFileToBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2 domainName:(id)arg3 relativePath:(id)arg4 fromPath:(id)arg5 error:(id*)arg6;
@@ -72,8 +72,8 @@
 - (id)restoreInfo;
 - (id)restoreState;
 - (void)setAllowiTunesBackup:(BOOL)arg1;
-- (void)setBackupEnabled:(BOOL)arg1 forDomainName:(id)arg2;
 - (void)setBackupEnabled:(BOOL)arg1;
+- (void)setBackupEnabled:(BOOL)arg1 forDomainName:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setLogLevel:(int)arg1;
 - (BOOL)setupBackupWithPasscode:(id)arg1 error:(id*)arg2;

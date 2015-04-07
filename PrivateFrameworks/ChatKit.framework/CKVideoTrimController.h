@@ -4,7 +4,7 @@
 
 @class <CKTrimControllerDelegate>, CKMediaObject, NSString, UIVideoEditorController;
 
-@interface CKVideoTrimController : NSObject <UIVideoEditorControllerDelegatePrivate, UINavigationControllerDelegate> {
+@interface CKVideoTrimController : NSObject <UINavigationControllerDelegate, UIVideoEditorControllerDelegatePrivate> {
     <CKTrimControllerDelegate> *_delegate;
     UIVideoEditorController *_editVideoVC;
     CKMediaObject *_originalMediaObject;

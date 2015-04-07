@@ -3,11 +3,11 @@
  */
 
 @interface PBMirrorFilter : PBFilter {
+    bool firstTime;
+    float inputOrientation;
     struct CGPoint { 
         float x; 
         float y; 
-    boolfirstTime;
-    float inputOrientation;
     } inputPoint;
     float lastInputAngle;
     float lastInputX;

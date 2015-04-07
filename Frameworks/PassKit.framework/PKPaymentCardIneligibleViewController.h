@@ -10,8 +10,16 @@
 
 @interface PKPaymentCardIneligibleViewController : UIViewController <UIWebViewDelegate> {
     PKPaymentCredential *_credential;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _learnMorePresentationHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _preflightCompletion;
+
     BOOL _preloadLearnMoreWebView;
     int _setupContext;
     <PKPaymentSetupViewControllerDelegate> *_setupDelegate;
@@ -46,9 +54,9 @@
 - (int)setupContext;
 - (id)setupDelegate;
 - (void)viewDidLoad;
+- (id)webView;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
-- (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;
 
 @end

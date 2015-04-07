@@ -18,8 +18,8 @@
 - (id)AVFileURL;
 - (double)duration;
 - (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(id)arg2;
-- (id)initWithAVFileURL:(id)arg1 savesGeneratedWaveform:(BOOL)arg2 segmentFlushInterval:(double)arg3;
 - (id)initWithAVFileURL:(id)arg1;
+- (id)initWithAVFileURL:(id)arg1 savesGeneratedWaveform:(BOOL)arg2 segmentFlushInterval:(double)arg3;
 - (float)loadingProgress;
 - (void)saveGeneratedWaveformIfNecessary;
 - (BOOL)savesGeneratedWaveform;

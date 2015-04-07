@@ -5,10 +5,10 @@
 @class NSMutableDictionary;
 
 @interface _NSThreadData : NSObject {
+    id argument;
     struct _opaque_pthread_attr_t { 
         long __sig; 
         BOOL __opaque[36]; 
-    id argument;
     } attr;
     unsigned char cancel;
     double defpri;

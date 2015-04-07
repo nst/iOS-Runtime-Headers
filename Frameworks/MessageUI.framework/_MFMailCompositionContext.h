@@ -67,11 +67,11 @@
 - (id)initReplyAllToMessage:(id)arg1;
 - (id)initReplyToMessage:(id)arg1;
 - (id)initSendAgainDraftOfMessage:(id)arg1;
+- (id)initWithComposeType:(int)arg1;
 - (id)initWithComposeType:(int)arg1 RFC822Data:(id)arg2;
 - (id)initWithComposeType:(int)arg1 originalMessage:(id)arg2;
-- (id)initWithComposeType:(int)arg1;
-- (id)initWithURL:(id)arg1 composeType:(int)arg2 originalMessage:(id)arg3;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 composeType:(int)arg2 originalMessage:(id)arg3;
 - (BOOL)loadRest;
 - (id)loadingContext;
 - (id)messageBody;

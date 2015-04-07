@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSOperationQueue, NSString, NSURLSession, NSURLSessionConfiguration;
 
-@interface MMCSHTTPSession : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate> {
+@interface MMCSHTTPSession : NSObject <NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate, NSURLSessionDelegate, NSURLSessionTaskDelegate> {
     NSMutableDictionary *_contextsForTasks;
     BOOL _isBackground;
     NSOperationQueue *_operationQueue;

@@ -8,10 +8,18 @@
 
 @class CLInUseAssertion, NSBundle, NSCache, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, SLRemoteSessionProxy<SLTwitterRemoteSessionProtocol>;
 
-@interface SLTwitterSession : NSObject <SLTwitterClientSessionProtocol, SLMicroBlogSheetDelegate> {
+@interface SLTwitterSession : NSObject <SLMicroBlogSheetDelegate, SLTwitterClientSessionProtocol> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _connectionResetBlock;
+
     CLInUseAssertion *_locationInUseAssertion;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _locationInformationChangedBlock;
+
     NSCache *_profileImageCache;
     SLRemoteSessionProxy<SLTwitterRemoteSessionProtocol> *_remoteSession;
     NSObject<OS_dispatch_queue> *_remoteSessionQueue;

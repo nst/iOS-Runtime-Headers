@@ -5,16 +5,16 @@
 @class NSFetchRequest, NSManagedObjectContext, _PFArray;
 
 @interface _PFBatchFaultingArray : NSArray {
-    struct _PFBatchFaultingArrayFlags { 
-        unsigned int _LRUIndex : 8; 
-        unsigned int _uniformEntity : 1; 
-        unsigned int _RESERVED : 23; 
     unsigned int *_LRUBatches;
     _PFArray *_array;
     unsigned int _batchSize;
     int _cd_rc;
     unsigned int _count;
     unsigned int *_entryFlags;
+    struct _PFBatchFaultingArrayFlags { 
+        unsigned int _LRUIndex : 8; 
+        unsigned int _uniformEntity : 1; 
+        unsigned int _RESERVED : 23; 
     } _flags;
     NSManagedObjectContext *_moc;
     NSFetchRequest *_request;
@@ -35,13 +35,13 @@
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getObjects:(id*)arg1;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
-- (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfObject:(id)arg1;
-- (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
+- (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithPFArray:(id)arg1 andRequest:(id)arg2 andContext:(id)arg3;
 - (BOOL)isEqualToArray:(id)arg1;
 - (id)managedObjectIDAtIndex:(unsigned int)arg1;

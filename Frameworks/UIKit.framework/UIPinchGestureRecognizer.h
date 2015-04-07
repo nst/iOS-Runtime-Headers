@@ -5,18 +5,11 @@
 @class UITouch;
 
 @interface UIPinchGestureRecognizer : UIGestureRecognizer {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
     struct CGPoint { 
         float x; 
         float y; 
-    unsigned int _endsOnSingleTouch : 1;
     } _anchorSceneReferencePoint;
+    unsigned int _endsOnSingleTouch : 1;
     float _hysteresis;
     float _initialTouchDistance;
     float _initialTouchScale;
@@ -24,6 +17,13 @@
     float _previousVelocity;
     float _scaleThreshold;
     UITouch *_touches[2];
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _transform;
     id _transformAnalyzer;
     float _velocity;

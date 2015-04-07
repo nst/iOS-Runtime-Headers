@@ -59,8 +59,8 @@
 - (BOOL)_boolForAccountInfoKey:(id)arg1 defaultValue:(BOOL)arg2;
 - (BOOL)_connectAndAuthenticate:(id)arg1;
 - (id)_credential;
-- (id)_credentialCreateIfNecessary:(BOOL)arg1 error:(id*)arg2;
 - (id)_credentialCreateIfNecessary:(BOOL)arg1;
+- (id)_credentialCreateIfNecessary:(BOOL)arg1 error:(id*)arg2;
 - (id)_newConnection;
 - (id)_objectForAccountInfoKey:(id)arg1;
 - (id)_password;
@@ -84,8 +84,8 @@
 - (id)copyDiagnosticInformation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)credentialAccessibility;
-- (id)credentialItemForKey:(id)arg1 error:(id*)arg2;
 - (id)credentialItemForKey:(id)arg1;
+- (id)credentialItemForKey:(id)arg1 error:(id*)arg2;
 - (id)customDescriptionForError:(id)arg1 authScheme:(id)arg2 defaultDescription:(id)arg3;
 - (id)customTitleForAuthenticationError:(id)arg1 authScheme:(id)arg2 defaultTitle:(id)arg3;
 - (id)customTitleForError:(id)arg1 authScheme:(id)arg2 defaultTitle:(id)arg3;
@@ -135,8 +135,8 @@
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
 - (void)setActive:(BOOL)arg1;
 - (void)setClientCertificates:(id)arg1;
-- (BOOL)setCredentialItem:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (void)setCredentialItem:(id)arg1 forKey:(id)arg2;
+- (BOOL)setCredentialItem:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (void)setDisplayName:(id)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setHostname:(id)arg1;

@@ -5,6 +5,9 @@
 @class NSArray, TSCH3DFBOResource;
 
 @interface TSCH3DSimpleBlurShadowsRenderer : NSObject <TSCH3DShadowsRenderer> {
+    TSCH3DFBOResource *mBlurFBOResource;
+    NSArray *mBlurParametersArray;
+    TSCH3DFBOResource *mShadowsFBOResource;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,9 +19,6 @@
             int g; 
             int t; 
         } ; 
-    TSCH3DFBOResource *mBlurFBOResource;
-    NSArray *mBlurParametersArray;
-    TSCH3DFBOResource *mShadowsFBOResource;
     } mShadowsSize;
 }
 

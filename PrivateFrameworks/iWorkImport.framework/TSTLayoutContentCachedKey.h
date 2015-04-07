@@ -5,13 +5,13 @@
 @class NSString, TSWPParagraphStyle;
 
 @interface TSTLayoutContentCachedKey : NSObject <NSCopying> {
+    BOOL mCellWraps;
+    float mHeight;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    BOOL mCellWraps;
-    float mHeight;
     } mPaddingInsets;
     TSWPParagraphStyle *mParagraphStyle;
     NSString *mString;

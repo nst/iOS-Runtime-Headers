@@ -4,7 +4,7 @@
 
 @class <SUPurchaseManagerDelegate>, NSMutableArray, NSMutableSet, NSSet, NSString, SUQueueSessionManager;
 
-@interface SUPurchaseManager : NSObject <SSPurchaseRequestDelegatePrivate, SUContinuationDelegate, SSDownloadManagerObserver, SSPurchaseRequestDelegate> {
+@interface SUPurchaseManager : NSObject <SSDownloadManagerObserver, SSPurchaseRequestDelegate, SSPurchaseRequestDelegatePrivate, SUContinuationDelegate> {
     <SUPurchaseManagerDelegate> *_delegate;
     NSMutableSet *_futurePurchases;
     NSMutableSet *_inflightContinuations;
@@ -63,8 +63,8 @@
 - (void)cancelFuturePurchase:(id)arg1;
 - (void)continuation:(id)arg1 failedWithError:(id)arg2;
 - (void)continuationFinished:(id)arg1;
-- (id)copyPurchaseForScriptObject:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (id)copyPurchaseForScriptObject:(id)arg1;
+- (id)copyPurchaseForScriptObject:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)endUpdates;
@@ -78,8 +78,8 @@
 - (void)purchaseRequest:(id)arg1 purchaseDidFail:(id)arg2 withError:(id)arg3;
 - (void)purchaseRequest:(id)arg1 purchaseDidSucceed:(id)arg2;
 - (void)purchaseRequest:(id)arg1 purchaseDidSucceedWithResponse:(id)arg2;
-- (void)purchaseScriptObject:(id)arg1 withOptions:(id)arg2 inContext:(struct OpaqueJSContext { }*)arg3;
 - (void)purchaseScriptObject:(id)arg1;
+- (void)purchaseScriptObject:(id)arg1 withOptions:(id)arg2 inContext:(struct OpaqueJSContext { }*)arg3;
 - (id)purchasedItemIdentifiers;
 - (id)queueSessionManager;
 - (void)removePurchasedItemIdentifier:(unsigned long long)arg1;

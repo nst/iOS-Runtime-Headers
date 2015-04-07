@@ -5,10 +5,6 @@
 @class CALayer, NSMutableDictionary, UIKBCacheToken;
 
 @interface UIKeyboardFlipTransitionView : UIKeyboardSplitTransitionView {
-    struct { 
-        unsigned int shiftKeys : 1; 
-        unsigned int returnKeys : 1; 
-        unsigned int moreIntlKeys : 1; 
     CALayer *_backDarkening;
     CALayer *_backDarkeningLeft;
     CALayer *_backDarkeningRight;
@@ -18,6 +14,10 @@
     UIKBCacheToken *_endKeyplaneToken;
     CALayer *_frontDarkening;
     CALayer *_frontFace;
+    struct { 
+        unsigned int shiftKeys : 1; 
+        unsigned int returnKeys : 1; 
+        unsigned int moreIntlKeys : 1; 
     } _rebuildFlags;
     BOOL _showingFrontFace;
     UIKBCacheToken *_startKeyplaneToken;

@@ -4,9 +4,7 @@
 
 @class NSString, UIColor, UIImage;
 
-@interface UITextInputTraits : NSObject <UITextInputTraits, UITextInputTraits_Private, NSCopying> {
-    unsigned int keyboardType : 8;
-    unsigned int keyboardAppearance : 8;
+@interface UITextInputTraits : NSObject <NSCopying, UITextInputTraits, UITextInputTraits_Private> {
     BOOL acceptsEmoji;
     BOOL acceptsFloatingKeyboard;
     BOOL acceptsSplitKeyboard;
@@ -24,6 +22,8 @@
     UIColor *insertionPointColor;
     unsigned int insertionPointWidth;
     BOOL isSingleLineDocument;
+    unsigned int keyboardAppearance : 8;
+    unsigned int keyboardType : 8;
     BOOL learnsCorrections;
     NSString *responseContext;
     BOOL returnKeyGoesToNextResponder;

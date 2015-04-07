@@ -5,14 +5,14 @@
 @class GEOAddress, GEOPlace, GEOPlaceSearchRequest, NSMutableArray, NSString;
 
 @interface GEOPlaceResult : PBCodable <NSCopying> {
+    NSMutableArray *_additionalPlaces;
+    int _cacheControl;
+    unsigned long long _flyoverTourMuid;
     struct { 
         unsigned int flyoverTourMuid : 1; 
         unsigned int cacheControl : 1; 
         unsigned int travelDistance : 1; 
         unsigned int travelTime : 1; 
-    NSMutableArray *_additionalPlaces;
-    int _cacheControl;
-    unsigned long long _flyoverTourMuid;
     } _has;
     NSMutableArray *_matchedTokens;
     NSMutableArray *_namedFeatures;

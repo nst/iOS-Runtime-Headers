@@ -5,11 +5,11 @@
 @class NSMutableDictionary, SCNNode;
 
 @interface SCNIKConstraint : SCNConstraint {
+    SCNNode *_chainRootNode;
     struct SCNVector3 { 
         float x; 
         float y; 
         float z; 
-    SCNNode *_chainRootNode;
     } _ikTarget;
     NSMutableDictionary *_jointsPerNode;
     id _reserved;

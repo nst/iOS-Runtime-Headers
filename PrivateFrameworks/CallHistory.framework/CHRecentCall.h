@@ -4,7 +4,7 @@
 
 @class <CHPhoneBookManagerProtocol>, NSDate, NSMutableArray, NSNumber, NSString;
 
-@interface CHRecentCall : CHSynchronizedLoggable <NSSecureCoding, NSCopying> {
+@interface CHRecentCall : CHSynchronizedLoggable <NSCopying, NSSecureCoding> {
     NSString *_addressBookCallerIDMultiValueId;
     NSString *_addressBookRecordId;
     BOOL _answered;

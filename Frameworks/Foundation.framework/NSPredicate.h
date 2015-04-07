@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface NSPredicate : NSObject <NSSecureCoding, NSCopying> {
+@interface NSPredicate : NSObject <NSCopying, NSSecureCoding> {
     struct _predicateFlags { 
         unsigned int _evaluationBlocked : 1; 
         unsigned int _reservedPredicateFlags : 31; 
@@ -21,9 +21,9 @@
 + (id)predicateForLikesInAsset:(id)arg1;
 + (id)predicateWithBlock:(id)arg1;
 + (id)predicateWithCKDPQueryFilters:(id)arg1 translator:(id)arg2;
++ (id)predicateWithFormat:(id)arg1;
 + (id)predicateWithFormat:(id)arg1 argumentArray:(id)arg2;
 + (id)predicateWithFormat:(id)arg1 arguments:(void*)arg2;
-+ (id)predicateWithFormat:(id)arg1;
 + (id)predicateWithSortedCKDPQueryFilters:(id)arg1 translator:(id)arg2;
 + (id)predicateWithValue:(BOOL)arg1;
 + (struct __CFLocale { }*)retainedLocale;
@@ -43,8 +43,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
 - (BOOL)evaluateWithObject:(id)arg1;
+- (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
 - (id)generateMetadataDescription;
 - (id)hk_filterRepresentationForDataTypes:(id)arg1 filterClasses:(id)arg2;
 - (id)initWithCoder:(id)arg1;

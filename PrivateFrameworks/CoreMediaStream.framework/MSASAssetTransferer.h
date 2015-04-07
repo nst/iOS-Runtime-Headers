@@ -68,8 +68,8 @@
 - (id)focusAlbumGUID;
 - (id)focusAssetCollectionGUID;
 - (BOOL)hasShutDown;
-- (id)initWithPersonID:(id)arg1 eventQueue:(id)arg2;
 - (id)initWithPersonID:(id)arg1;
+- (id)initWithPersonID:(id)arg1 eventQueue:(id)arg2;
 - (int)maxBatchCount;
 - (double)maxMMCSTokenValidityTimeInterval;
 - (int)maxRetryCount;

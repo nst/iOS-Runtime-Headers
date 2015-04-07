@@ -5,10 +5,10 @@
 @class NSMutableArray, NSString;
 
 @interface GEOCategory : PBCodable <NSCopying> {
-    struct { 
-        unsigned int geoOntologyId : 1; 
     NSString *_alias;
     long long _geoOntologyId;
+    struct { 
+        unsigned int geoOntologyId : 1; 
     } _has;
     int _level;
     NSMutableArray *_localizedNames;

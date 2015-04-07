@@ -5,21 +5,6 @@
 @class UIGestureAnimation, UIScrollAnimation;
 
 @interface UIGestureInfo : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -29,9 +14,15 @@
             float width; 
             float height; 
         } size; 
+    } centerRect;
+    id delegate;
+    int enabledGestures;
+    float endDegrees;
+    float endScale;
     struct CGPoint { 
         float x; 
         float y; 
+    } endScrollPoint;
     struct { 
         unsigned int pushedRunLoop : 1; 
         unsigned int isRotatingRight : 1; 
@@ -39,12 +30,6 @@
         unsigned int zoomsFromCurrentToMinOrMax : 1; 
         unsigned int updatesScroller : 1; 
         unsigned int isAnimatingZoomFailure : 1; 
-    } centerRect;
-    id delegate;
-    int enabledGestures;
-    float endDegrees;
-    float endScale;
-    } endScrollPoint;
     } flags;
     float maxDegrees;
     float maxScale;
@@ -57,16 +42,31 @@
     int rotationState;
     UIScrollAnimation *scrollAnimation;
     float startDegrees;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } startGestureInner;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } startGestureOuter;
     float startScale;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } startScrollPoint;
     float unadjustedScale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } visibleSize;
     UIGestureAnimation *zoomAnimation;
     float zoomAnimationProgress;
     float zoomFailureDuration;
     float zoomFailureStartScale;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } zoomFailureWindowPoint;
     float zoomMultiplier;
     int zoomRubberBandHysteresisCount;

@@ -4,7 +4,7 @@
 
 @class NSString, UIKeyboard, UITransitionView, UIView<PINEntryView>;
 
-@interface DevicePINPane : PSEditingPane <UIKeyInput, UITextInputTraits, PSPINEntryViewDelegate> {
+@interface DevicePINPane : PSEditingPane <PSPINEntryViewDelegate, UIKeyInput, UITextInputTraits> {
     int _autocapitalizationType;
     int _autocorrectionType;
     BOOL _isBlocked;
@@ -57,9 +57,9 @@
 - (void)layoutSubviews;
 - (void)okButtonPressed;
 - (id)password;
+- (id)pinView;
 - (void)pinView:(id)arg1 pinEntered:(id)arg2;
 - (void)pinView:(id)arg1 pinValueChanged:(id)arg2;
-- (id)pinView;
 - (BOOL)requiresKeyboard;
 - (BOOL)resignFirstResponder;
 - (void)setAutocapitalizationType:(int)arg1;
@@ -70,8 +70,8 @@
 - (void)setKeyboardUserInteractionEnabled:(BOOL)arg1;
 - (void)setPINPolicyString:(id)arg1 visible:(BOOL)arg2;
 - (void)setPinView:(id)arg1;
-- (void)setSimplePIN:(BOOL)arg1 requiresKeyboard:(BOOL)arg2 numericOnly:(BOOL)arg3;
 - (void)setSimplePIN:(BOOL)arg1 requiresKeyboard:(BOOL)arg2;
+- (void)setSimplePIN:(BOOL)arg1 requiresKeyboard:(BOOL)arg2 numericOnly:(BOOL)arg3;
 - (void)setText:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)showError:(id)arg1 error:(id)arg2 isBlocked:(BOOL)arg3 animate:(BOOL)arg4;

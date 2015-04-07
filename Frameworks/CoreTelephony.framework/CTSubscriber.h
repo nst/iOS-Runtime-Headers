@@ -9,7 +9,11 @@
 @class NSData;
 
 @interface CTSubscriber : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: "__end_"^{block<void (^)(NSDictionary *)>}"__end_cap_"{__compressed_pair<dispatch::block<void (^)(NSDictionary *)> *, std::__1::allocator<dispatch::block<void (^)(NSDictionary *)> > >="__first_"^{block<void (^)(NSDictionary *)>}}} */
+  /* Error parsing encoded ivar type info: {vector<dispatch::block<void (^)(NSDictionary *)>, std::__1::allocator<dispatch::block<void (^)(NSDictionary *)> > >="__begin_"^{block<void (^)(NSDictionary *)>}"__end_"^{block<void (^)(NSDictionary *)>}"__end_cap_"{__compressed_pair<dispatch::block<void (^)(NSDictionary *)> *, std::__1::allocator<dispatch::block<void (^)(NSDictionary *)> > >="__first_"^{block<void (^)(NSDictionary *)>}}} */
     struct vector<dispatch::block<void (^)(NSDictionary *)>, std::__1::allocator<dispatch::block<void (^)(NSDictionary *)> > >="__begin_"^{block<void (^)(NSDictionary *)> {} _authCallbacks;
+
     struct __CTServerConnection { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct dispatch_queue_s {} *x2; struct CTServerState {} *x3; unsigned char x4; unsigned int x5; struct _xpc_connection_s {} *x6; } *_server;
 }
 

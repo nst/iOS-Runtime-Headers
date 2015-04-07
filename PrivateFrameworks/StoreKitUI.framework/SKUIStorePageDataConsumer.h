@@ -23,7 +23,7 @@
 - (id)objectForData:(id)arg1 response:(id)arg2 error:(id*)arg3;
 - (void)setStorePageClass:(Class)arg1;
 - (Class)storePageClass;
-- (id)storePageWithDictionary:(id)arg1 response:(id)arg2;
 - (id)storePageWithDictionary:(id)arg1;
+- (id)storePageWithDictionary:(id)arg1 response:(id)arg2;
 
 @end

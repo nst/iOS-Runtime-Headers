@@ -5,10 +5,10 @@
 @class NSMutableArray, NSString;
 
 @interface GEOTileSet : PBCodable <NSCopying> {
+    NSString *_baseURL;
     struct { 
         unsigned int updateBehavior : 1; 
         unsigned int multiTileURLUsesStatusCodes : 1; 
-    NSString *_baseURL;
     } _has;
     NSString *_localizationURL;
     NSString *_multiTileURL;

@@ -5,15 +5,6 @@
 @class NSMutableArray, UIResponder, UIView, UIWindow;
 
 @interface UITransitionView : UIView <NSCoding> {
-    struct { 
-        unsigned int animationInProgress : 1; 
-        unsigned int ignoresInteractionEvents : 1; 
-        unsigned int shouldNotifyDidCompleteImmediately : 1; 
-        unsigned int useViewControllerAppearanceCallbacks : 1; 
-        unsigned int shouldRestoreFromViewAlpha : 1; 
-        unsigned int shouldRasterize : 1; 
-        unsigned int enableRotationAfterTransition : 1; 
-        unsigned int removeFromView : 1; 
     int _animationTimingCurve;
     float _curlUpRevealedHeight;
     id _delegate;
@@ -23,6 +14,15 @@
     BOOL _ignoreDirectTouchEvents;
     UIWindow *_originalWindow;
     UIView *_toView;
+    struct { 
+        unsigned int animationInProgress : 1; 
+        unsigned int ignoresInteractionEvents : 1; 
+        unsigned int shouldNotifyDidCompleteImmediately : 1; 
+        unsigned int useViewControllerAppearanceCallbacks : 1; 
+        unsigned int shouldRestoreFromViewAlpha : 1; 
+        unsigned int shouldRasterize : 1; 
+        unsigned int enableRotationAfterTransition : 1; 
+        unsigned int removeFromView : 1; 
     } _transitionViewFlags;
 }
 
@@ -60,8 +60,8 @@
 - (void)setShouldNotifyDidCompleteImmediately:(BOOL)arg1;
 - (BOOL)shouldNotifyDidCompleteImmediately;
 - (id)toView;
-- (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3 removeFromView:(BOOL)arg4;
 - (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3;
+- (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3 removeFromView:(BOOL)arg4;
 - (BOOL)transition:(int)arg1 toView:(id)arg2;
 
 @end

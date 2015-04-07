@@ -12,7 +12,11 @@
     BOOL _isUpload;
     BRQueryItem *_item;
     NSProgress *_progress;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _stopped;
     id _subscriber;

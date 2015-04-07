@@ -4,7 +4,7 @@
 
 @interface WebUserContentURLPatternPrivate : NSObject {
     struct UserContentURLPattern { 
-        boolm_invalid; 
+        bool m_invalid; 
         struct String { 
             struct RefPtr<WTF::StringImpl> { 
                 struct StringImpl {} *m_ptr; 
@@ -20,7 +20,7 @@
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } m_path; 
-        boolm_matchSubdomains; 
+        bool m_matchSubdomains; 
     } pattern;
 }
 

@@ -5,15 +5,15 @@
 @class AVAssetInspector, AVAssetInspectorLoader, NSMutableArray;
 
 @interface AVCompositionInternal : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     AVAssetInspector *assetInspector;
     long assetInspectorInitializationOnce;
     AVAssetInspectorLoader *assetInspectorLoader;
     struct OpaqueFigFormatReader { } *formatReader;
     long formatReaderInitializationOnce;
     struct OpaqueFigMutableComposition { } *mutableComposition;
+    struct CGSize { 
+        float width; 
+        float height; 
     } naturalSize;
     NSMutableArray *tracks;
     long tracksInitializationOnce;

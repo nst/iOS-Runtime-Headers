@@ -4,7 +4,7 @@
 
 @class NSString, NSURL, SSURLBag;
 
-@interface SBKStoreURLBagContext : NSObject <NSMutableCopying, NSCopying> {
+@interface SBKStoreURLBagContext : NSObject <NSCopying, NSMutableCopying> {
     SSURLBag *_bag;
     NSString *_domain;
     BOOL _domainDisabled;

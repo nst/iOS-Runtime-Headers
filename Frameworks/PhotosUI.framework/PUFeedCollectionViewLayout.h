@@ -5,37 +5,37 @@
 @class NSMutableArray;
 
 @interface PUFeedCollectionViewLayout : UICollectionViewLayout {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
     } _captionPadding;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _contentSize;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _floatPadding;
     float _floatingBottomDecorationHeight;
     int _flowDirection;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _interTileSpacing;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _noCaptionSpacing;
     float _sectionHeaderBackgroundHeight;
     NSMutableArray *_sectionLayoutInfos;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _sectionReferenceSize;
     BOOL _shouldDisplayCaptionsBelowBatches;
     BOOL _shouldDisplaySectionHeadersBelowSections;

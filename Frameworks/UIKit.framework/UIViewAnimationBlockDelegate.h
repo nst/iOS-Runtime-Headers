@@ -10,10 +10,18 @@
     BOOL _allowUserInteraction;
     BOOL _allowsUserInteractionToCutOffEndOfAnimation;
     BOOL _animationDidStopSent;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     BOOL _didBeginBlockAnimation;
     BOOL _isZeroDuration;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _start;
+
 }
 
 @property(readonly) BOOL _allowsUserInteraction;

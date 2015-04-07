@@ -8,10 +8,7 @@
 
 @class <UIKeyInput>, <UIKeyboardCandidateList>, <UIKeyboardImplGeometryDelegate>, <UIKeyboardInput>, <UIKeyboardRecording><UIApplicationEventRecording>, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<UIKeyboardRecording><UIApplicationEventRecording>, NSString, TIKeyboardCandidateResultSet, TIKeyboardInputManagerState, TIKeyboardInputManagerStub, TIKeyboardLayout, TIKeyboardState, TIKeyboardTouchEvent, UIAlertView, UIAutocorrectInlinePrompt, UIDelayedAction, UIKeyboardAutocorrectionController, UIKeyboardLayout, UIKeyboardScheduledTask, UIKeyboardTaskQueue, UIPhysicalKeyboardEvent, UIResponder, UIResponder<UIKeyInput>, UIResponder<UITextInput>, UIResponder<UITextInputPrivate>, UIResponder<UIWKInteractionViewProtocol>, UITextInputArrowKeyHistory, UITextInputTraits, UIView, _UIActionWhenIdle;
 
-@interface UIKeyboardImpl : UIView <_UIIVCResponseDelegateImpl, UIKeyboardCandidateListDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface UIKeyboardImpl : UIView <UIKeyboardCandidateListDelegate, _UIIVCResponseDelegateImpl> {
     UIKeyboardScheduledTask *_autocorrectPromptTask;
     NSDictionary *_candidateRequestInfo;
     int _currentAlertReason;
@@ -59,7 +56,11 @@
     BOOL m_didSyncDocumentStateToInputDelegate;
     BOOL m_doubleSpacePeriodPreference;
     BOOL m_doubleSpacePeriodWasAppliedInCurrentContext;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id m_externalTask;
+
     <UIKeyboardImplGeometryDelegate> *m_geometryDelegate;
     BOOL m_hardwareKeyboardAttached;
     UIPhysicalKeyboardEvent *m_hardwareRepeatEvent;
@@ -68,9 +69,16 @@
     BOOL m_inDealloc;
     BOOL m_initializationDone;
     TIKeyboardInputManagerState *m_inputManagerState;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_inputPoint;
     BOOL m_insideKeyInputDelegateCall;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id m_keyInputCompletionHandler;
+
     TIKeyboardState *m_keyboardState;
     NSMutableDictionary *m_keyedLayouts;
     NSMutableArray *m_keyplaneNamesCurrentDelegate;
@@ -138,7 +146,6 @@
 @property(readonly) UIKeyboardAutocorrectionController * autocorrectionController;
 @property(retain) NSDictionary * candidateRequestInfo;
 @property(readonly) BOOL centerFilled;
-@property(retain) id changedDelegate;
 @property(retain) id changedDelegate;
 @property BOOL committingCandidate;
 @property(copy,readonly) NSString * debugDescription;
@@ -260,34 +267,34 @@
 - (BOOL)_shouldRequestInputManagerSyncForKeyboardOutputCallbacks:(id)arg1;
 - (void)_updateSoundPreheatingForWindow:(id)arg1;
 - (void)_wheelChangedWithEvent:(id)arg1;
-- (void)acceptAutocorrection:(id)arg1 executionContextPassingTIKeyboardCandidate:(id)arg2;
 - (void)acceptAutocorrection;
+- (void)acceptAutocorrection:(id)arg1 executionContextPassingTIKeyboardCandidate:(id)arg2;
 - (void)acceptAutocorrectionAndEndComposition;
-- (void)acceptAutocorrectionForWordTerminator:(id)arg1 executionContextPassingTIKeyboardCandidate:(id)arg2;
 - (id)acceptAutocorrectionForWordTerminator:(id)arg1;
-- (void)acceptCandidate:(id)arg1 atIndex:(unsigned int)arg2 executionContext:(id)arg3;
-- (void)acceptCandidate:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)acceptCandidate:(id)arg1 forInput:(id)arg2;
+- (void)acceptAutocorrectionForWordTerminator:(id)arg1 executionContextPassingTIKeyboardCandidate:(id)arg2;
 - (void)acceptCandidate:(id)arg1;
+- (void)acceptCandidate:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)acceptCandidate:(id)arg1 atIndex:(unsigned int)arg2 executionContext:(id)arg3;
+- (void)acceptCandidate:(id)arg1 forInput:(id)arg2;
 - (void)acceptCurrentCandidate;
-- (void)acceptCurrentCandidateForInput:(id)arg1 executionContext:(id)arg2;
 - (void)acceptCurrentCandidateForInput:(id)arg1;
+- (void)acceptCurrentCandidateForInput:(id)arg1 executionContext:(id)arg2;
 - (void)acceptCurrentCandidateIfSelected;
 - (void)acceptCurrentCandidateIfSelectedWithExecutionContext:(id)arg1;
 - (void)acceptCurrentCandidateWithExecutionContext:(id)arg1;
 - (void)acceptFirstCandidate;
 - (BOOL)acceptInputString:(id)arg1;
-- (void)acceptPredictiveInput:(id)arg1 executionContext:(id)arg2;
 - (void)acceptPredictiveInput:(id)arg1;
-- (BOOL)acceptWord:(id)arg1 firstDelete:(unsigned int)arg2 forInput:(id)arg3;
+- (void)acceptPredictiveInput:(id)arg1 executionContext:(id)arg2;
 - (BOOL)acceptWord:(id)arg1 firstDelete:(unsigned int)arg2;
+- (BOOL)acceptWord:(id)arg1 firstDelete:(unsigned int)arg2 forInput:(id)arg3;
 - (void)addInputEvent:(id)arg1 executionContext:(id)arg2;
-- (void)addInputObject:(id)arg1 executionContext:(id)arg2;
 - (void)addInputObject:(id)arg1;
-- (void)addInputString:(id)arg1 fromVariantKey:(BOOL)arg2;
-- (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2 executionContext:(id)arg3;
-- (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2;
+- (void)addInputObject:(id)arg1 executionContext:(id)arg2;
 - (void)addInputString:(id)arg1;
+- (void)addInputString:(id)arg1 fromVariantKey:(BOOL)arg2;
+- (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2;
+- (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2 executionContext:(id)arg3;
 - (void)addWordTerminator:(id)arg1 afterSpace:(BOOL)arg2 elapsedTime:(double)arg3 executionContext:(id)arg4;
 - (void)adjustPhraseBoundaryInForwardDirection:(BOOL)arg1 executionContext:(id)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
@@ -363,8 +370,8 @@
 - (BOOL)committingCandidate;
 - (void)completeAcceptCandidate:(id)arg1;
 - (void)completeAcceptCandidateBeforeAddingInputObject:(id)arg1 executionContext:(id)arg2;
-- (void)completeAddInputString:(id)arg1 generateCandidates:(BOOL)arg2;
 - (void)completeAddInputString:(id)arg1;
+- (void)completeAddInputString:(id)arg1 generateCandidates:(BOOL)arg2;
 - (void)completeDeleteFromInput;
 - (void)completeDeleteOnceFromInputWithCharacterBefore:(unsigned long)arg1;
 - (void)completeHandleAutoDelete;
@@ -444,8 +451,8 @@
 - (void)handleDeleteWithExecutionContext:(id)arg1;
 - (id)handleDoubleSpacePeriodForInputString:(id)arg1 afterSpace:(BOOL)arg2 elapsedTime:(double)arg3;
 - (BOOL)handleKeyCommand:(id)arg1 repeatOkay:(BOOL*)arg2;
-- (void)handleKeyEvent:(id)arg1 executionContext:(id)arg2;
 - (void)handleKeyEvent:(id)arg1;
+- (void)handleKeyEvent:(id)arg1 executionContext:(id)arg2;
 - (void)handleKeyWithString:(id)arg1 forKeyEvent:(id)arg2 executionContext:(id)arg3;
 - (void)handleKeyboardInput:(id)arg1 executionContext:(id)arg2;
 - (void)handleObserverCallback;
@@ -585,8 +592,8 @@
 - (void)setDefaultTextInputTraits:(id)arg1;
 - (void)setDeferredDidSetDelegateAction:(id)arg1;
 - (void)setDelayedCandidateRequest:(id)arg1;
-- (void)setDelegate:(id)arg1 force:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1 force:(BOOL)arg2;
 - (void)setExternalTask:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGeometryDelegate:(id)arg1;
@@ -601,16 +608,16 @@
 - (void)setInitialDirection;
 - (void)setInputManagerFromCurrentInputMode;
 - (void)setInputManagerState:(id)arg1;
-- (void)setInputMode:(id)arg1 userInitiated:(BOOL)arg2 updateIndicator:(BOOL)arg3 executionContext:(id)arg4;
-- (void)setInputMode:(id)arg1 userInitiated:(BOOL)arg2;
 - (void)setInputMode:(id)arg1;
+- (void)setInputMode:(id)arg1 userInitiated:(BOOL)arg2;
+- (void)setInputMode:(id)arg1 userInitiated:(BOOL)arg2 updateIndicator:(BOOL)arg3 executionContext:(id)arg4;
 - (void)setInputModeFromPreferences;
 - (void)setInputModeToNextASCIICapableInPreferredList;
 - (void)setInputModeToNextInPreferredListWithExecutionContext:(id)arg1;
 - (void)setInputPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setKeyboardAlertView:(id)arg1;
-- (void)setKeyboardInputMode:(id)arg1 userInitiated:(BOOL)arg2 updateIndicator:(BOOL)arg3 executionContext:(id)arg4;
 - (void)setKeyboardInputMode:(id)arg1 userInitiated:(BOOL)arg2;
+- (void)setKeyboardInputMode:(id)arg1 userInitiated:(BOOL)arg2 updateIndicator:(BOOL)arg3 executionContext:(id)arg4;
 - (void)setLabel:(id)arg1 forKey:(id)arg2;
 - (void)setLayoutForKeyHitTest:(id)arg1;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inputString:(id)arg3 searchString:(id)arg4;
@@ -621,8 +628,8 @@
 - (void)setReturnKeyEnabled:(BOOL)arg1;
 - (void)setRivenSplitLock:(BOOL)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setShift:(BOOL)arg1 autoshift:(BOOL)arg2;
 - (void)setShift:(BOOL)arg1;
+- (void)setShift:(BOOL)arg1 autoshift:(BOOL)arg2;
 - (void)setShiftLocked:(BOOL)arg1;
 - (void)setShiftLockedForced:(BOOL)arg1;
 - (void)setShiftNeedsUpdate;
@@ -663,8 +670,8 @@
 - (void)showPreviousCandidate;
 - (BOOL)showsCandidateBar;
 - (BOOL)showsCandidateInline;
-- (void)skipHitTestForTouchEvent:(id)arg1 delayed:(BOOL)arg2;
 - (void)skipHitTestForTouchEvent:(id)arg1;
+- (void)skipHitTestForTouchEvent:(id)arg1 delayed:(BOOL)arg2;
 - (BOOL)softwareKeyboardShownByTouch;
 - (BOOL)splitTransitionInProgress;
 - (void)startAutoDeleteTimer;
@@ -686,16 +693,16 @@
 - (void)takeTextInputTraitsFromDelegate;
 - (id)taskQueue;
 - (void)testAutocorrectionPromptWithCorrection:(id)arg1;
-- (void)textChanged:(id)arg1 executionContext:(id)arg2;
 - (void)textChanged:(id)arg1;
+- (void)textChanged:(id)arg1 executionContext:(id)arg2;
 - (void)textDidChange:(id)arg1;
 - (void)textFrameChanged:(id)arg1;
 - (int)textInputChangingCount;
 - (id)textInputTraits;
 - (void)textWillChange:(id)arg1;
 - (void)timeElapsed:(unsigned int)arg1 message:(id)arg2;
-- (void)timeMark:(unsigned int)arg1 message:(id)arg2;
 - (void)timeMark:(unsigned int)arg1;
+- (void)timeMark:(unsigned int)arg1 message:(id)arg2;
 - (void)toggleShift;
 - (void)toggleSoftwareKeyboard;
 - (void)touchAutoDeleteTimerWithThreshold:(double)arg1;
@@ -706,11 +713,11 @@
 - (void)trackUsageForAcceptedAutocorrection:(id)arg1 promptWasShowing:(BOOL)arg2;
 - (void)trackUsageForCandidateAcceptedAction:(id)arg1;
 - (void)trackUsageForPromptedCorrection:(id)arg1 inputString:(id)arg2 previousPrompt:(id)arg3;
-- (void)unmarkText:(id)arg1;
 - (void)unmarkText;
+- (void)unmarkText:(id)arg1;
+- (void)updateAutocorrectPrompt:(id)arg1;
 - (void)updateAutocorrectPrompt:(id)arg1 correctionRects:(id)arg2;
 - (void)updateAutocorrectPrompt:(id)arg1 executionContext:(id)arg2;
-- (void)updateAutocorrectPrompt:(id)arg1;
 - (void)updateCandidateDisplay;
 - (void)updateCandidateDisplayAsyncWithCandidateSet:(id)arg1;
 - (void)updateChangeTimeAndIncrementCount;
@@ -721,8 +728,8 @@
 - (void)updateFromTextInputTraits;
 - (void)updateHardwareKeyboardLayout;
 - (void)updateInputManagerAutocapitalizationType;
-- (void)updateInputModeIndicatorOnSingleKeyOnly:(BOOL)arg1 preserveIfPossible:(BOOL)arg2;
 - (void)updateInputModeIndicatorOnSingleKeyOnly:(BOOL)arg1;
+- (void)updateInputModeIndicatorOnSingleKeyOnly:(BOOL)arg1 preserveIfPossible:(BOOL)arg2;
 - (void)updateInputModeLastChosenPreference;
 - (id)updateKeyBehaviors:(id)arg1 withBehaviors:(id)arg2 forState:(id)arg3;
 - (void)updateKeyboardConfigurations;
@@ -735,8 +742,8 @@
 - (void)updateLayoutToCurrentInterfaceOrientation;
 - (void)updateNoContentViews;
 - (void)updateObserverState;
-- (void)updateReturnKey:(BOOL)arg1;
 - (void)updateReturnKey;
+- (void)updateReturnKey:(BOOL)arg1;
 - (void)updateShiftState;
 - (void)updateStylingTraitsIfNeeded;
 - (void)updateTextCandidateView;

@@ -9,35 +9,35 @@
 
 @class NSString, VKCamera, VKDispatch, VKLayoutContext, VKTimer, VKWorld;
 
-@interface VKImageCanvas : GGLImageCanvas <VKWorldDelegate, VKAnimationRunner> {
-    struct MapCamera { 
-        struct View {} *_view; 
-        struct Viewport {} *_viewport; 
-        void *_layoutContext; 
-    struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { 
-        struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { 
-            struct RenderQueue {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { 
-        struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { 
-            struct RenderQueue {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<<anonymous>::YFlipPass, std::__1::default_delete<<anonymous>::YFlipPass> > { 
-        struct __compressed_pair<<anonymous>::YFlipPass *, std::__1::default_delete<<anonymous>::YFlipPass> > { 
-            struct YFlipPass {} *__first_; 
-        } __ptr_; 
+@interface VKImageCanvas : GGLImageCanvas <VKAnimationRunner, VKWorldDelegate> {
     VKCamera *_camera;
     VKDispatch *_dispatch;
     double _frameTimestamp;
     VKLayoutContext *_layoutContext;
     VKTimer *_layoutTimer;
+    struct MapCamera { 
+        struct View {} *_view; 
+        struct Viewport {} *_viewport; 
+        void *_layoutContext; 
     } _mapCamera;
     struct RenderTree { int (**x1)(); id x2; } *_mapScene;
     BOOL _needsLayout;
+    struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { 
+        struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { 
+            struct RenderQueue {} *__first_; 
+        } __ptr_; 
     } _renderQueue;
+    struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { 
+        struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { 
+            struct RenderQueue {} *__first_; 
+        } __ptr_; 
     } _renderQueueResolve;
     BOOL _shouldDrawWhileLoading;
     VKWorld *_world;
+    struct unique_ptr<<anonymous>::YFlipPass, std::__1::default_delete<<anonymous>::YFlipPass> > { 
+        struct __compressed_pair<<anonymous>::YFlipPass *, std::__1::default_delete<<anonymous>::YFlipPass> > { 
+            struct YFlipPass {} *__first_; 
+        } __ptr_; 
     } _yFlipPass;
 }
 
@@ -61,10 +61,10 @@
 - (void)dealloc;
 - (void)didReceiveMemoryWarning:(BOOL)arg1;
 - (id)dispatch;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 useMultisampling:(BOOL)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4 homeQueue:(id)arg5;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 useMultisampling:(BOOL)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 useMultisampling:(BOOL)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4 homeQueue:(id)arg5;
 - (void)loadScene;
-- (void)renderSceneWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; boolx5; float x6; }*)arg1 completion:(id)arg2;
+- (void)renderSceneWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; bool x5; float x6; }*)arg1 completion:(id)arg2;
 - (void)runAnimation:(id)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)world;

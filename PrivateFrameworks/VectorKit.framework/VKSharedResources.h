@@ -10,26 +10,26 @@
 @class VKGGLTextureManager, VKIconManager, VKResourceManager, VKShieldManager, VKStylesheetVendor, VKTrafficIncidentImageManager;
 
 @interface VKSharedResources : NSObject {
-    struct shared_ptr<ggl::Device> { 
-        struct Device {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
     struct unique_ptr<ggl::AlphaAtlas, std::__1::default_delete<ggl::AlphaAtlas> > { 
         struct __compressed_pair<ggl::AlphaAtlas *, std::__1::default_delete<ggl::AlphaAtlas> > { 
             struct AlphaAtlas {} *__first_; 
         } __ptr_; 
-    struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
-        struct __compressed_pair<ggl::IsoAlphaAtlas *, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
-            struct IsoAlphaAtlas {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
-        struct __compressed_pair<ggl::IsoAlphaAtlas *, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
-            struct IsoAlphaAtlas {} *__first_; 
-        } __ptr_; 
     } _alphaAtlas;
+    struct shared_ptr<ggl::Device> { 
+        struct Device {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _device;
     VKGGLTextureManager *_gglTextureManager;
+    struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
+        struct __compressed_pair<ggl::IsoAlphaAtlas *, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
+            struct IsoAlphaAtlas {} *__first_; 
+        } __ptr_; 
     } _highInflationAlphaAtlas;
     VKIconManager *_iconManager;
+    struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
+        struct __compressed_pair<ggl::IsoAlphaAtlas *, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
+            struct IsoAlphaAtlas {} *__first_; 
+        } __ptr_; 
     } _isoAlphaAtlas;
     VKResourceManager *_resourceManager;
     VKShieldManager *_shieldManager;
@@ -38,7 +38,7 @@
     VKTrafficIncidentImageManager *_trafficIncidentImageManager;
 }
 
-@property(readonly) struct AlphaAtlas { unsigned int x1; boolx2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; struct Texture2D {} *x7; }* alphaAtlas;
+@property(readonly) struct AlphaAtlas { unsigned int x1; bool x2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; struct Texture2D {} *x7; }* alphaAtlas;
 @property(readonly) struct Device { int (**x1)(); int x2; }* device;
 @property(readonly) VKGGLTextureManager * gglTextureManager;
 @property(readonly) struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; }* highInflationAlphaAtlas;
@@ -51,11 +51,11 @@
 
 + (id)sharedResourcesForTileGroupIdentifier:(unsigned int)arg1;
 
-- (struct Device { int (**x1)(); int x2; }*)device;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct AlphaAtlas { unsigned int x1; boolx2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; struct Texture2D {} *x7; }*)alphaAtlas;
+- (struct AlphaAtlas { unsigned int x1; bool x2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; struct Texture2D {} *x7; }*)alphaAtlas;
 - (void)dealloc;
+- (struct Device { int (**x1)(); int x2; }*)device;
 - (id)gglTextureManager;
 - (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; }*)highInflationAlphaAtlas;
 - (id)iconManager;

@@ -16,8 +16,8 @@
 
 - (void).cxx_destruct;
 - (id)additionalToolbarItems;
-- (id)initWithSettings:(id)arg1 presentingRow:(id)arg2;
 - (id)initWithSettings:(id)arg1;
+- (id)initWithSettings:(id)arg1 presentingRow:(id)arg2;
 - (void)module:(id)arg1 didInsertRows:(id)arg2 deleteRows:(id)arg3;
 - (void)module:(id)arg1 didInsertSections:(id)arg2 deleteSections:(id)arg3;
 - (void)moduleDidReload:(id)arg1;

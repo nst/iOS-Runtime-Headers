@@ -17,8 +17,8 @@
 - (id)advertisedItemUUID;
 - (id)allUUIDsOfType:(unsigned int)arg1;
 - (void)callDidSaveDelegate:(id)arg1;
-- (void)callWillSaveDelegate:(id)arg1 completionHandler:(id)arg2;
 - (void)callWillSaveDelegate:(id)arg1;
+- (void)callWillSaveDelegate:(id)arg1 completionHandler:(id)arg2;
 - (id)connection;
 - (id)currentAdvertisedItemUUID;
 - (void)dealloc;

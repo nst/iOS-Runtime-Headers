@@ -17,8 +17,8 @@
 @property(readonly) Class superclass;
 
 - (int)layoutOrientation;
-- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (void)setLayoutOrientation:(int)arg1;
+- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (float)standardBottomBarHeight;
 - (float)standardSideBarWidth;
 

@@ -9,6 +9,11 @@
 @class <PLExpandableViewDelegate>;
 
 @interface PLExpandableView : UIView {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _collapsingCompletionHandler;
+
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,27 +23,8 @@
             float width; 
             float height; 
         } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+    } _contractedFrame;
+    <PLExpandableViewDelegate> *_delegate;
     struct { 
         unsigned int state : 3; 
         unsigned int prevState : 3; 
@@ -59,19 +45,41 @@
         unsigned int delegateWillCancelCollapsing : 1; 
         unsigned int delegateDidCancelCollapsing : 1; 
         unsigned int delegateExpandedFractionChanged : 1; 
-    id _collapsingCompletionHandler;
-    } _contractedFrame;
-    <PLExpandableViewDelegate> *_delegate;
     } _expandFlags;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _expandedFrame;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _expansionCompletionHandler;
+
     float _expansionFraction;
     unsigned int _leftTouchIndex;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _leftTouchLocation;
     float _pinchVelocity;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _previousLeftLocation;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _previousRightLocation;
     unsigned int _rightTouchIndex;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _rightTouchLocation;
     double _trackingTimeInterval;
 }

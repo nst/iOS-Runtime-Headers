@@ -26,14 +26,14 @@
 - (int)_readResponseRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 isContinuation:(BOOL*)arg2;
 - (int)_sendBytes:(const char *)arg1 length:(unsigned int)arg2 progressHandler:(id)arg3;
 - (int)_sendCommand:(const char *)arg1 length:(unsigned int)arg2 argument:(id)arg3 trailer:(const char *)arg4;
-- (int)_sendData:(id)arg1 progressHandler:(id)arg2;
 - (int)_sendData:(id)arg1;
+- (int)_sendData:(id)arg1 progressHandler:(id)arg2;
 - (void)_setLastResponse:(id)arg1;
 - (BOOL)_supportsExtension:(id)arg1;
 - (BOOL)_supportsSaveSentExtension;
 - (void)abort;
-- (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
 - (BOOL)authenticateUsingAccount:(id)arg1;
+- (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
 - (id)authenticationMechanisms;
 - (BOOL)connectUsingAccount:(id)arg1;
 - (id)dataForDataCmd;
@@ -44,8 +44,8 @@
 - (id)init;
 - (id)lastResponse;
 - (id)lastResponseLine;
-- (int)mailFrom:(id)arg1 recipients:(id)arg2 withData:(id)arg3 host:(id)arg4 errorTitle:(id*)arg5 errorMessage:(id*)arg6 serverResponse:(id*)arg7 displayError:(BOOL*)arg8 errorCode:(int*)arg9;
 - (int)mailFrom:(id)arg1;
+- (int)mailFrom:(id)arg1 recipients:(id)arg2 withData:(id)arg3 host:(id)arg4 errorTitle:(id*)arg5 errorMessage:(id*)arg6 serverResponse:(id*)arg7 displayError:(BOOL*)arg8 errorCode:(int*)arg9;
 - (unsigned long long)maximumMessageBytes;
 - (int)noop;
 - (int)quit;

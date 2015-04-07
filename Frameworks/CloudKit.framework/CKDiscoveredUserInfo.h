@@ -4,7 +4,7 @@
 
 @class CKRecordID, NSString;
 
-@interface CKDiscoveredUserInfo : NSObject <NSSecureCoding, NSCopying> {
+@interface CKDiscoveredUserInfo : NSObject <NSCopying, NSSecureCoding> {
     NSString *_firstName;
     NSString *_lastName;
     CKRecordID *_userRecordID;

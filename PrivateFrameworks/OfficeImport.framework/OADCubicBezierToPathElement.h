@@ -12,27 +12,27 @@
             BOOL isFormulaResult; 
             int value; 
         } y; 
-    struct OADAdjustPoint { 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } x; 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } y; 
-    struct OADAdjustPoint { 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } x; 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } y; 
     } mControlPoint1;
+    struct OADAdjustPoint { 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } x; 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } y; 
     } mControlPoint2;
     BOOL mRelative;
+    struct OADAdjustPoint { 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } x; 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } y; 
     } mToPoint;
 }
 

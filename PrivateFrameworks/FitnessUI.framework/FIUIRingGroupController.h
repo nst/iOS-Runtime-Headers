@@ -5,12 +5,12 @@
 @class <FIUIRingGroupAnimationStatusDelegate>, NSArray;
 
 @interface FIUIRingGroupController : FIUIAnimatableObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
     float _additionalSpacingAtIndex;
     <FIUIRingGroupAnimationStatusDelegate> *_animationStatusDelegate;
     float _backingOrigin;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _center;
     int *_iconAnimationFrameNumbers;
     int _numberOfRings;
@@ -77,9 +77,9 @@
 - (void)setIconDotTextureOrigin:(struct CGPoint { float x1; float x2; })arg1 ofRingAtIndex:(int)arg2;
 - (void)setIconFirstFrameOrigin:(struct CGPoint { float x1; float x2; })arg1 frameSize:(struct CGSize { float x1; float x2; })arg2 frameCount:(int)arg3 columns:(int)arg4 ofRingAtIndex:(int)arg5;
 - (void)setOpacity:(float)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
+- (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3 completion:(id)arg4;
 - (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3 duration:(double)arg4 timingFunction:(id)arg5 completion:(id)arg6;
-- (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)setRingDiameter:(float)arg1;
 - (void)setRingIconSize:(float)arg1;
 - (void)setRingInterspacing:(float)arg1;

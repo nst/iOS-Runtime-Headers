@@ -5,30 +5,27 @@
 @class <TSDCanvasDelegate>, NSArray, NSSet, TSDInteractiveCanvasController, TSDLayoutController, TSKAccessController, TSKChangeNotifier, TSKDocumentRoot, TSPObjectContext;
 
 @interface TSDCanvas : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct { 
-        unsigned int layout : 1; 
-        unsigned int reps : 1; 
-        unsigned int visibleBounds : 1; 
-        unsigned int layers : 1; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     NSSet *mAllReps;
     BOOL mAllowsFontSubpixelQuantization;
     struct CGColor { } *mBackgroundColor;
     TSDInteractiveCanvasController *mCanvasController;
     BOOL mClipToCanvas;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } mContentInset;
     float mContentsScale;
     <TSDCanvasDelegate> *mDelegate;
     BOOL mIgnoringClickThrough;
     BOOL mInLayout;
     NSArray *mInfos;
+    struct { 
+        unsigned int layout : 1; 
+        unsigned int reps : 1; 
+        unsigned int visibleBounds : 1; 
+        unsigned int layers : 1; 
     } mInvalidFlags;
     BOOL mIsTemporaryForLayout;
     TSDLayoutController *mLayoutController;
@@ -36,6 +33,9 @@
     struct __CFDictionary { } *mRepsByLayout;
     BOOL mSuppressesShadowsAndReflections;
     NSArray *mTopLevelReps;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mUnscaledSize;
     float mViewScale;
 }
@@ -82,10 +82,10 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })i_clipRectForCreatingRepsFromLayouts;
 - (void)i_clipsImagesToBounds:(BOOL)arg1;
 - (struct CGContext { }*)i_createContextToDrawImageInScaledRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withTargetIntegralSize:(struct CGSize { float x1; float x2; })arg2 returningBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 integralBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4 forceSRGB:(BOOL)arg5;
-- (void)i_drawBackgroundInContext:(struct CGContext { }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)i_drawBackgroundInContext:(struct CGContext { }*)arg1;
-- (void)i_drawRepsInContext:(struct CGContext { }*)arg1 distort:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (void)i_drawBackgroundInContext:(struct CGContext { }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)i_drawRepsInContext:(struct CGContext { }*)arg1;
+- (void)i_drawRepsInContext:(struct CGContext { }*)arg1 distort:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
 - (struct CGImage { }*)i_image;
 - (struct CGImage { }*)i_imageInScaledRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forceSRGB:(BOOL)arg2;
 - (struct CGImage { }*)i_imageInScaledRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withTargetIntegralSize:(struct CGSize { float x1; float x2; })arg2 distortedToMatch:(BOOL)arg3 forceSRGB:(BOOL)arg4;

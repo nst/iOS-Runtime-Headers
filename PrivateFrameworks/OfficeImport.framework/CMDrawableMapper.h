@@ -14,15 +14,6 @@
             float width; 
             float height; 
         } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     } mBox;
     OADDrawable *mDrawable;
     NSString *mExtension;
@@ -35,6 +26,15 @@
     float mRotation;
     NSString *mSourcePath;
     CMDrawableStyle *mStyle;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mUncroppedBox;
 }
 

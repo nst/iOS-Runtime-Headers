@@ -3,8 +3,8 @@
  */
 
 @interface EDPageSetup : NSObject {
-    boolmCustomFirstPageNumber;
     float mBottomMargin;
+    bool mCustomFirstPageNumber;
     unsigned long mFirstPageNumber;
     unsigned long mFitToHeight;
     unsigned long mFitToWidth;

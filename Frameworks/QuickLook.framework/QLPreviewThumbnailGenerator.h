@@ -5,12 +5,12 @@
 @class <QLPreviewItem>, NSString, UIImage;
 
 @interface QLPreviewThumbnailGenerator : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSString *_contentType;
     <QLPreviewItem> *_item;
     float _scale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     int _status;
     UIImage *_thumbnailImage;

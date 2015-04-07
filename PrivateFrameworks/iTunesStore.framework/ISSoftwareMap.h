@@ -12,8 +12,8 @@
 
 + (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
 + (void)_startWatchingInstallationNotifications;
-+ (id)applicationForBundleIdentifier:(id)arg1 applicationType:(id)arg2;
 + (id)applicationForBundleIdentifier:(id)arg1;
++ (id)applicationForBundleIdentifier:(id)arg1 applicationType:(id)arg2;
 + (id)containerPathForApp:(id)arg1 homeDirectory:(id)arg2 systemMetadataDirectory:(id)arg3;
 + (id)copySoftwareUpdatesPropertyListWithApplications:(id)arg1 updatesContext:(id)arg2;
 + (id)currentMap;

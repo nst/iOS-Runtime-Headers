@@ -12,11 +12,19 @@
     NSMutableData *_dataBuffer;
     SSVURLDataConsumer *_dataConsumer;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _expiredOutputBlock;
+
     BOOL _iTunesStoreRequest;
     NSData *_inputData;
     SSMetricsPageEvent *_metricsPageEvent;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _outputBlock;
+
     NSMutableSet *_protocolRedirectURLs;
     BOOL _recordsMetrics;
     NSURL *_redirectURL;

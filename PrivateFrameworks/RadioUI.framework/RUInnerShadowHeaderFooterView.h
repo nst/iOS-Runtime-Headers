@@ -5,12 +5,12 @@
 @class UIColor, UIView;
 
 @interface RUInnerShadowHeaderFooterView : UITableViewHeaderFooterView {
+    UIView *_shadowBackgroundView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIView *_shadowBackgroundView;
     } _shadowEdgeInsets;
     UIView *_shadowView;
 }

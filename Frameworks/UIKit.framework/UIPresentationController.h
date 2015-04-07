@@ -8,16 +8,33 @@
 
 @class <UIAdaptivePresentationControllerDelegate>, <UIViewControllerAnimatedTransitioning>, <UIViewControllerInteractiveTransitioning>, NSString, UITraitCollection, UIView, UIViewController;
 
-@interface UIPresentationController : NSObject <_UIAppearanceContainer, _UITraitEnvironmentInternal, _UIContentContainerInternal, UIAppearanceContainer, UITraitEnvironment, UIContentContainer> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface UIPresentationController : NSObject <UIAppearanceContainer, UIContentContainer, UITraitEnvironment, _UIAppearanceContainer, _UIContentContainerInternal, _UITraitEnvironmentInternal> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __computeToEndFrameForCurrentTransition;
+
     UIView *__currentPresentationSuperview;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __currentTransitionDidComplete;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __fromViewForCurrentTransition;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __toViewForCurrentTransition;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __transitionViewForCurrentTransition;
+
     BOOL _changedPresentingViewControllerDuringAdaptation;
     BOOL _containerIgnoresDirectTouchEvents;
     UIView *_containerView;
@@ -31,6 +48,9 @@
     BOOL _needsDidAppear;
     BOOL _needsDidDisappear;
     UITraitCollection *_overrideTraitCollection;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _preferredContentSize;
     UIView *_presentationView;
     UIViewController *_presentedViewController;
@@ -143,8 +163,8 @@
 - (id)_transitionViewForCurrentTransition;
 - (BOOL)_transitioningFrom;
 - (BOOL)_transitioningTo;
-- (void)_transplantView:(id)arg1 toSuperview:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)_transplantView:(id)arg1 toSuperview:(id)arg2;
+- (void)_transplantView:(id)arg1 toSuperview:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)_updateTraitsIfNecessary;
 - (void)_window:(id)arg1 willTransitionToTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (int)adaptivePresentationStyle;

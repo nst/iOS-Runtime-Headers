@@ -10,7 +10,11 @@
 
 @interface NEConfigurationManager : NSObject {
     NSData *_SCPreferencesSignature;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _changedHandler;
+
     int _changedNotifyToken;
     NSObject<OS_dispatch_queue> *_changedQueue;
     NSDictionary *_currentIndex;
@@ -71,8 +75,8 @@
 - (id)decoder;
 - (id)delegate;
 - (id)description;
-- (void)didLoadConfiguration:(id)arg1 withSignature:(id)arg2;
 - (void)didLoadConfiguration:(id)arg1;
+- (void)didLoadConfiguration:(id)arg1 withSignature:(id)arg2;
 - (id)errorWithCode:(int)arg1 specifics:(id)arg2;
 - (id)filterIndexWithFilter:(id)arg1;
 - (long long)generation;
@@ -114,8 +118,8 @@
 - (void)sendRequest:(id)arg1 responseHandler:(id)arg2;
 - (void)setChangedHandler:(id)arg1;
 - (void)setChangedNotifyToken:(int)arg1;
-- (void)setChangedQueue:(id)arg1 andHandler:(id)arg2;
 - (void)setChangedQueue:(id)arg1;
+- (void)setChangedQueue:(id)arg1 andHandler:(id)arg2;
 - (void)setCurrentIndex:(id)arg1;
 - (void)setDecoder:(id)arg1;
 - (void)setDelegate:(id)arg1;

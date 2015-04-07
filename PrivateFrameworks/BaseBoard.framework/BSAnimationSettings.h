@@ -4,7 +4,7 @@
 
 @class CAMediaTimingFunction, NSString;
 
-@interface BSAnimationSettings : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, BSXPCCoding> {
+@interface BSAnimationSettings : NSObject <BSXPCCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
     double _delay;
     double _duration;
     double _frameInterval;
@@ -20,10 +20,10 @@
 @property(readonly) Class superclass;
 @property(retain,readonly) CAMediaTimingFunction * timingFunction;
 
-+ (id)settingsWithDuration:(double)arg1 delay:(double)arg2 timingFunction:(id)arg3;
-+ (id)settingsWithDuration:(double)arg1 delay:(double)arg2;
-+ (id)settingsWithDuration:(double)arg1 timingFunction:(id)arg2;
 + (id)settingsWithDuration:(double)arg1;
++ (id)settingsWithDuration:(double)arg1 delay:(double)arg2;
++ (id)settingsWithDuration:(double)arg1 delay:(double)arg2 timingFunction:(id)arg3;
++ (id)settingsWithDuration:(double)arg1 timingFunction:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (id)_initWithDuration:(double)arg1 delay:(double)arg2 frameInterval:(double)arg3 timingFunction:(id)arg4;

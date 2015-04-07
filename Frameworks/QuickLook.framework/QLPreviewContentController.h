@@ -5,21 +5,6 @@
 @class <QLPreviewContentDataSource>, <QLPreviewContentDelegate>, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString, QLAirPlayController, UIColor, UILongPressGestureRecognizer, UIPageViewController, UISegmentedControl, UITapGestureRecognizer;
 
 @interface QLPreviewContentController : UIViewController <QLPreviewContentControllerProtocol, QLPreviewItemInteractionDelegate> {
-    struct { 
-        int pid; 
-        struct { 
-            unsigned int val[8]; 
-        } audit_token; 
-        struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } contentFrame; 
     QLAirPlayController *_airPlayController;
     UIColor *_backgroundColor;
     BOOL _blockRemoteImages;
@@ -43,6 +28,21 @@
     BOOL _swiping;
     UITapGestureRecognizer *_tapRecognizer;
     BOOL _transitioning;
+    struct { 
+        int pid; 
+        struct { 
+            unsigned int val[8]; 
+        } audit_token; 
+        struct CGRect { 
+            struct CGPoint { 
+                float x; 
+                float y; 
+            } origin; 
+            struct CGSize { 
+                float width; 
+                float height; 
+            } size; 
+        } contentFrame; 
     } clientContext;
 }
 
@@ -121,8 +121,8 @@
 - (int)previewMode;
 - (id)printPageHelper;
 - (id)printPageRenderer;
-- (void)refreshCurrentPreviewItem:(BOOL)arg1;
 - (void)refreshCurrentPreviewItem;
+- (void)refreshCurrentPreviewItem:(BOOL)arg1;
 - (void)scrubToValue:(double)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBlockRemoteImages:(BOOL)arg1;

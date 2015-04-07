@@ -30,13 +30,13 @@
 - (id)sectionInfoPreviouslySentMessageStore;
 - (id)sectionSubtypeParametersIconsPreviouslySentMessageStore;
 - (void)setDelegate:(id)arg1;
+- (void)setSectionInfo:(id)arg1;
 - (void)setSectionInfo:(id)arg1 completion:(id)arg2;
 - (void)setSectionInfo:(id)arg1 withQueue:(id)arg2 withSent:(id)arg3 withAcknowledgement:(id)arg4;
-- (void)setSectionInfo:(id)arg1;
 - (void)setSectionInfoPreviouslySentMessageStore:(id)arg1;
+- (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3;
 - (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3 completion:(id)arg4;
 - (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3 withQueue:(id)arg4 withSent:(id)arg5 withAcknowledgement:(id)arg6;
-- (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3;
 - (void)setSectionSubtypeParametersIconsPreviouslySentMessageStore:(id)arg1;
 
 @end

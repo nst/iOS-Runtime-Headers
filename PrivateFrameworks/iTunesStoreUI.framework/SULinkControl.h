@@ -5,9 +5,9 @@
 @class UILabel;
 
 @interface SULinkControl : UIControl {
-    unsigned int _sizeIsDirty : 1;
     UILabel *_label;
     BOOL _shouldDrawUnderline;
+    unsigned int _sizeIsDirty : 1;
     int _style;
 }
 

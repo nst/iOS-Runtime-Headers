@@ -21,8 +21,8 @@
 - (void)dealloc;
 - (id)initWithPresentingRow:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)row:(id)arg1 didChangeValue:(id)arg2;
 - (id)row;
+- (void)row:(id)arg1 didChangeValue:(id)arg2;
 - (void)setRow:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

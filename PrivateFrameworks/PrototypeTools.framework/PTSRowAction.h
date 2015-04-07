@@ -8,7 +8,11 @@
 
 @interface PTSRowAction : NSObject <NSCopying> {
     BOOL _deselectRowOnSuccess;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
 }
 
 @property BOOL deselectRowOnSuccess;

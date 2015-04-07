@@ -52,15 +52,15 @@
 - (void)setAction:(SEL)arg1;
 - (void)setAlignment:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setSettings:(id)arg1 valueKeyPath:(id)arg2;
 - (void)setSettings:(id)arg1;
+- (void)setSettings:(id)arg1 valueKeyPath:(id)arg2;
 - (void)setSubviewConstraints:(id)arg1;
 - (void)setSwitchControl:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setValueKeyPath:(id)arg1;
-- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)settings;
+- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)subviewConstraints;
 - (id)switchControl;
 - (id)target;

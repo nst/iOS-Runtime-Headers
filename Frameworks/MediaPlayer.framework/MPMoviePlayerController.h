@@ -72,8 +72,8 @@
 - (void)setCurrentPlaybackRate:(float)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;
 - (void)setEndPlaybackTime:(double)arg1;
-- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1;
+- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setInitialPlaybackTime:(double)arg1;
 - (void)setMovieSourceType:(int)arg1;
 - (void)setRepeatMode:(int)arg1;

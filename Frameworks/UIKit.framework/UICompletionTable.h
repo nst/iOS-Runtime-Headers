@@ -4,7 +4,7 @@
 
 @class NSString, UICompletionTablePrivate;
 
-@interface UICompletionTable : UIView <UITableViewDelegate, UITableViewDataSource> {
+@interface UICompletionTable : UIView <UITableViewDataSource, UITableViewDelegate> {
     UICompletionTablePrivate *_private;
 }
 

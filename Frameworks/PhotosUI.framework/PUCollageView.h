@@ -5,12 +5,12 @@
 @class NSArray, NSPointerArray;
 
 @interface PUCollageView : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSPointerArray *__imageSizes;
     NSArray *__imageViews;
     int __numberOfImageViews;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _collageSize;
     int _numberOfItems;
     float _spacing;

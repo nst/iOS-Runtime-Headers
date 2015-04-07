@@ -9,7 +9,11 @@
 @class EKEventStore, NSPredicate, NSString;
 
 @interface EKPredicateSearch : NSObject <EKCancellableRemoteOperation> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callback;
+
     id _cancellationToken;
     Class _entityClass;
     BOOL _finished;

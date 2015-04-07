@@ -5,9 +5,6 @@
 @class NSDictionary, OITSUColor;
 
 @interface MFPColorAdjust : NSObject {
-    struct { 
-        OITSUColor *mLow; 
-        OITSUColor *mHigh; 
     struct MFPColorMatrix { float x1[5][5]; } *mColorMatrix;
     int mColorMatrixFlags;
     BOOL mEnabled;
@@ -15,6 +12,9 @@
     struct MFPColorMatrix { float x1[5][5]; } *mGrayMatrix;
     NSDictionary *mRecolorMap;
     float mThreshold;
+    struct { 
+        OITSUColor *mLow; 
+        OITSUColor *mHigh; 
     } mTransparentRange;
 }
 

@@ -5,12 +5,14 @@
 @class <MFDragDestination>, <MFDraggableItem>, MFGobblerGestureRecognizer, NSMutableArray, NSMutableDictionary, NSString, NSTimer, UIGestureRecognizer, UIView, UIWindow;
 
 @interface MFDragManager : NSObject <UIGestureRecognizerDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+    <MFDragDestination> *_currentDestination;
+    UIGestureRecognizer *_currentGestureBeingProcessed;
+    NSMutableArray *_dragContextValues;
+    NSMutableArray *_dragDestinations;
+    NSMutableArray *_dragSources;
+    BOOL _dragWasSuccessful;
+    UIWindow *_dragWindow;
+    <MFDraggableItem> *_draggedItem;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,19 +22,17 @@
             float width; 
             float height; 
         } size; 
-    <MFDragDestination> *_currentDestination;
-    UIGestureRecognizer *_currentGestureBeingProcessed;
-    NSMutableArray *_dragContextValues;
-    NSMutableArray *_dragDestinations;
-    NSMutableArray *_dragSources;
-    BOOL _dragWasSuccessful;
-    UIWindow *_dragWindow;
-    <MFDraggableItem> *_draggedItem;
     } _draggedItemOriginalFrame;
     UIView *_draggedItemView;
     NSMutableDictionary *_gestureRecognizersForSource;
     MFGobblerGestureRecognizer *_gobblerGestureRecognizer;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _offsetCenterOfDraggedView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _previousGestureLocation;
     NSTimer *_scrollTimer;
     BOOL _scrollingForDrag;

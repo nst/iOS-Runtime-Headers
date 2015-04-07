@@ -5,10 +5,10 @@
 @class UIImage;
 
 @interface MPArtworkRepresentation : NSObject {
+    UIImage *_image;
     struct CGSize { 
         float width; 
         float height; 
-    UIImage *_image;
     } _representationSize;
 }
 

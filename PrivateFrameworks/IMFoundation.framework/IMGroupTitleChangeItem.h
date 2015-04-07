@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface IMGroupTitleChangeItem : IMItem <NSCoding, NSCopying, IMRemoteObjectCoding> {
+@interface IMGroupTitleChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
     NSString *_otherCountryCode;
     NSString *_otherHandle;
     NSString *_otherUnformattedID;

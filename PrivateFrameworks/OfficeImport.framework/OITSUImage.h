@@ -20,8 +20,8 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)imageNamed:(id)arg1;
-+ (id)imageWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
 + (id)imageWithCGImage:(struct CGImage { }*)arg1;
++ (id)imageWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
 + (id)imageWithContentsOfFile:(id)arg1;
 + (id)imageWithData:(id)arg1;
 + (id)imageWithUIImage:(id)arg1;
@@ -41,8 +41,8 @@
 - (int)imageOrientation;
 - (id)imagePartsWithLeftCapWidth:(float)arg1 rightCapWidth:(float)arg2 topCapHeight:(float)arg3 bottomCapHeight:(float)arg4;
 - (id)init;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
 - (id)initWithCGImage:(struct CGImage { }*)arg1;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithImageSourceRef:(struct CGImageSource { }*)arg1;

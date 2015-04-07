@@ -29,8 +29,8 @@
 - (id)_service;
 - (id)_wrappedSendFailureError:(id)arg1;
 - (BOOL)hasPeer;
-- (id)initWithServiceIdentifier:(id)arg1 requireNearbyPeer:(BOOL)arg2;
 - (id)initWithServiceIdentifier:(id)arg1;
+- (id)initWithServiceIdentifier:(id)arg1 requireNearbyPeer:(BOOL)arg2;
 - (void)sendRequestType:(unsigned int)arg1 fireAndForget:(BOOL)arg2;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;

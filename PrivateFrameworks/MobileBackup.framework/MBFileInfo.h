@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSString;
 
-@interface MBFileInfo : NSObject <NSCopying, NSCoding> {
+@interface MBFileInfo : NSObject <NSCoding, NSCopying> {
     NSDictionary *_extendedAttributes;
     BOOL _isDirectory;
     NSString *_path;

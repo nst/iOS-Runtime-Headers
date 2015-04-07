@@ -17,7 +17,7 @@
 - (BOOL)_itemNotificationIsRelevantToObservedPlayer:(id)arg1;
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)dealloc;
-- (id)initWithPlayer:(id)arg1 playbackCoordinator:(id)arg2;
 - (id)initWithPlayer:(id)arg1;
+- (id)initWithPlayer:(id)arg1 playbackCoordinator:(id)arg2;
 
 @end

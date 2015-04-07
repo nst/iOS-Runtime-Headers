@@ -5,6 +5,8 @@
 @class NSString;
 
 @interface AWDAirPlayAudioSessionEndedOnClient : PBCodable <NSCopying> {
+    unsigned int _duration;
+    unsigned int _futileRetransmits;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int duration : 1; 
@@ -12,8 +14,6 @@
         unsigned int reason : 1; 
         unsigned int retransmits : 1; 
         unsigned int slowKeepAlives : 1; 
-    unsigned int _duration;
-    unsigned int _futileRetransmits;
     } _has;
     int _reason;
     unsigned int _retransmits;

@@ -5,10 +5,10 @@
 @class NSData;
 
 @interface _NMRMediaRemoteGetStateMessageProfobuf : PBCodable <NSCopying> {
+    NSData *_applicationInfoDigest;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int state : 1; 
-    NSData *_applicationInfoDigest;
     } _has;
     NSData *_knownDigest;
     NSData *_nowPlayingInfoDigest;

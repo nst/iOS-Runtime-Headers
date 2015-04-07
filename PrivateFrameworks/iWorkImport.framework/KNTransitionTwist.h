@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, TSDGLDataBuffer, TSDGLMotionBlurEffect, TSDGLShader;
 
-@interface KNTransitionTwist : KNAnimationEffect <KNFrameAnimator, KNAnimationPluginArchiving> {
+@interface KNTransitionTwist : KNAnimationEffect <KNAnimationPluginArchiving, KNFrameAnimator> {
     NSArray *_bufferAttributes;
     TSDGLDataBuffer *_dataBuffer;
     TSDGLMotionBlurEffect *_motionBlurEffect;

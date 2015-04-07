@@ -3,7 +3,7 @@
  */
 
 @interface TCColorPalettizer : NSObject {
-    boolisDefaultPaletteSize;
+    bool isDefaultPaletteSize;
     struct _tagOctree { struct _tagOctreeNode {} *x1; unsigned short x2; unsigned short x3; struct _tagRgbQuad {} *x4; struct _tagLevelItem {} *x5[9]; } *m_pTree;
 }
 

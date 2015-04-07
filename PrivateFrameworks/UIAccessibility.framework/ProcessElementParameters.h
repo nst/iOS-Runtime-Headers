@@ -12,7 +12,11 @@
     BOOL _grouped;
     unsigned int _maximumNumberOfElements;
     BOOL _onlyIncludeVisible;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shouldAddElement;
+
 }
 
 @property BOOL didCutOffElements;

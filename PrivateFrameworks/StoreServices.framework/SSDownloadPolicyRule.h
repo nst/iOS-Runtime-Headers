@@ -4,7 +4,7 @@
 
 @class NSSet, NSString;
 
-@interface SSDownloadPolicyRule : NSObject <NSCoding, SSXPCCoding, NSCopying> {
+@interface SSDownloadPolicyRule : NSObject <NSCoding, NSCopying, SSXPCCoding> {
     NSSet *_applicationStates;
     float _batteryLevel;
     int _cellularDataStates;

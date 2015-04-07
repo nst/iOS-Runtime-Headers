@@ -4,7 +4,7 @@
 
 @class NSObject<OS_dispatch_io>, NSString;
 
-@interface TSUFileIOChannel : NSObject <TSUReadChannel, TSUStreamWriteChannel, TSURandomWriteChannel> {
+@interface TSUFileIOChannel : NSObject <TSURandomWriteChannel, TSUReadChannel, TSUStreamWriteChannel> {
     NSObject<OS_dispatch_io> *_channel;
     BOOL _isClosed;
 }

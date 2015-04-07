@@ -43,8 +43,8 @@
 - (id)_urlEncodedString:(id)arg1;
 - (id)account;
 - (void)addMultiPart:(id)arg1;
-- (void)addMultipartData:(id)arg1 withName:(id)arg2 type:(id)arg3 filename:(id)arg4;
 - (void)addMultipartData:(id)arg1 withName:(id)arg2 type:(id)arg3;
+- (void)addMultipartData:(id)arg1 withName:(id)arg2 type:(id)arg3 filename:(id)arg4;
 - (int)callingPID;
 - (id)completeMultiParts;
 - (id)dictionaryRepresentationForJSONSerialization;
@@ -56,8 +56,8 @@
 - (unsigned int)networkServiceType;
 - (id)parameterForKey:(id)arg1;
 - (id)parameters;
-- (void)performJSONRequestWithHandler:(id)arg1 retryCount:(int)arg2;
 - (void)performJSONRequestWithHandler:(id)arg1;
+- (void)performJSONRequestWithHandler:(id)arg1 retryCount:(int)arg2;
 - (void)performRequestWithHandler:(id)arg1;
 - (id)preparedURLRequest;
 - (void)removeParameterForKey:(id)arg1;

@@ -5,9 +5,9 @@
 @class NSData, NSMutableArray;
 
 @interface CKDPNotificationSyncResponse : PBCodable <NSCopying> {
+    NSData *_changeID;
     struct { 
         unsigned int moreAvailable : 1; 
-    NSData *_changeID;
     } _has;
     BOOL _moreAvailable;
     NSMutableArray *_pushMessages;

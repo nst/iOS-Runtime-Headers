@@ -29,6 +29,18 @@
                 float height; 
             } size; 
         } desiredBounds; 
+    } _anchor;
+    UIImageView *_bottomAnchor;
+    id _delegate;
+    NSMutableArray *_fadeInViews;
+    NSMutableArray *_fadeOutViews;
+    struct { 
+        unsigned int animated : 1; 
+        unsigned int didMoveCalled : 1; 
+        unsigned int hasPendingAnimatedLayout : 1; 
+        unsigned int canAnchorFromBottom : 1; 
+        unsigned int reserved : 28; 
+    } _flags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -38,18 +50,6 @@
             float width; 
             float height; 
         } size; 
-    struct { 
-        unsigned int animated : 1; 
-        unsigned int didMoveCalled : 1; 
-        unsigned int hasPendingAnimatedLayout : 1; 
-        unsigned int canAnchorFromBottom : 1; 
-        unsigned int reserved : 28; 
-    } _anchor;
-    UIImageView *_bottomAnchor;
-    id _delegate;
-    NSMutableArray *_fadeInViews;
-    NSMutableArray *_fadeOutViews;
-    } _flags;
     } _frame;
     NSTimer *_layoutAnimationTimer;
     UIImageView *_leftBackground;
@@ -130,14 +130,14 @@
 - (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 animate:(BOOL)arg3;
 - (void)setCanAnchorFromBottom:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftView:(id)arg1;
+- (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
 - (void)setMaximumWidth:(float)arg1;
 - (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setRightView:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightView:(id)arg1;
-- (void)setSubtitle:(id)arg1 animated:(BOOL)arg2;
+- (void)setRightView:(id)arg1 animated:(BOOL)arg2;
 - (void)setSubtitle:(id)arg1;
+- (void)setSubtitle:(id)arg1 animated:(BOOL)arg2;
 - (void)setSubtitleLineBreakMode:(int)arg1;
 - (void)setSubtitleTextAlignment:(int)arg1;
 - (void)setTemporaryTitle:(id)arg1;

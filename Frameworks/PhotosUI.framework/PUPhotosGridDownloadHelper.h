@@ -9,7 +9,11 @@
 @class NSString, PUPhotosGridViewController, PUResourceDownloadRequest;
 
 @interface PUPhotosGridDownloadHelper : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _currentDownloadSuccessHandler;
+
     NSString *_currentGridProgressIdentifier;
     PUResourceDownloadRequest *_currentResourceDownloadRequest;
     PUPhotosGridViewController *_gridViewController;

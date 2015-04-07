@@ -30,8 +30,8 @@
 - (id)layout;
 - (id)payWithPasscodeButton;
 - (void)setLayout:(id)arg1;
-- (void)setState:(int)arg1 string:(id)arg2 animated:(BOOL)arg3;
 - (void)setState:(int)arg1;
+- (void)setState:(int)arg1 string:(id)arg2 animated:(BOOL)arg3;
 - (int)state;
 - (void)updateConstraints;
 

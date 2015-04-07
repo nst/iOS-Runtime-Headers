@@ -5,9 +5,12 @@
 @class NSArray, NSIndexSet, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface SGPipelineEntity : SGEntity {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+    struct __DDResult { } *_dataDetectorsSignature;
+    NSMutableDictionary *_emailToCanonicalEmailCache;
+    NSMutableArray *_enrichments;
+    BOOL _fullDownloadRequested;
+    NSArray *_headers;
+    unsigned int *_htmlOffsets;
     struct { 
         struct { 
             unsigned short bom; 
@@ -18,22 +21,19 @@
         BOOL inhumanAuthorName; 
         BOOL inhumanBody; 
         BOOL isTemplate; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct __DDResult { } *_dataDetectorsSignature;
-    NSMutableDictionary *_emailToCanonicalEmailCache;
-    NSMutableArray *_enrichments;
-    BOOL _fullDownloadRequested;
-    NSArray *_headers;
-    unsigned int *_htmlOffsets;
     } _inhumanFeatures;
     NSString *_plainTextContentCache;
     BOOL _plainTextContentCacheGenerated;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _plainTextContentCacheLock;
     NSArray *_plainTextDetectedData;
     NSArray *_plainTextLines;
     NSIndexSet *_plainTextQuotedRegions;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _plainTextSigRange;
     NSIndexSet *_plainTextTabularRegions;
 }
@@ -93,8 +93,8 @@
 - (id)initPrivately;
 - (id)initWithContactDetailWithKey:(id)arg1 type:(unsigned int)arg2 curated:(BOOL)arg3 parent:(id)arg4 value:(id)arg5 context:(id)arg6;
 - (id)initWithCuratedContactWithABRecordID:(int)arg1 sourceKey:(id)arg2 name:(id)arg3 creationTimestamp:(id)arg4 lastModifiedTimestamp:(id)arg5 emailAddresses:(id)arg6 phoneNumbers:(id)arg7 postalAddresses:(id)arg8;
-- (id)initWithDuplicateKey:(id)arg1 title:(id)arg2 parent:(id)arg3;
 - (id)initWithDuplicateKey:(id)arg1 title:(id)arg2;
+- (id)initWithDuplicateKey:(id)arg1 title:(id)arg2 parent:(id)arg3;
 - (id)initWithEmailMessage:(id)arg1 fromSource:(id)arg2;
 - (id)initWithParent:(id)arg1;
 - (id)initWithPseudoContactWithKey:(id)arg1 parent:(id)arg2 name:(id)arg3;

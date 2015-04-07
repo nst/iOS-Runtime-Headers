@@ -102,8 +102,8 @@
 - (id)pendingTransactions;
 - (id)queue;
 - (id)requestURL;
-- (void)scheduleTransaction:(id)arg1 withTransactionFinishedBlock:(id)arg2;
 - (void)scheduleTransaction:(id)arg1;
+- (void)scheduleTransaction:(id)arg1 withTransactionFinishedBlock:(id)arg2;
 - (void)setAccount:(id)arg1;
 - (void)setAuthenticationController:(id)arg1;
 - (void)setBackgroundTaskAssertion:(id)arg1;

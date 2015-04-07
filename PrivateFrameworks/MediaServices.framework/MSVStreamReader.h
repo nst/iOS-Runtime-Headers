@@ -16,9 +16,21 @@
 @interface MSVStreamReader : NSObject <NSStreamDelegate> {
     BOOL _closeOnStop;
     BOOL _compress;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _didEncounterErrorBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _didFinishReadingBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _didReadDataBlock;
+
     unsigned int _maximumBufferSize;
     NSObject<OS_dispatch_queue> *_queue;
     NSInputStream *_stream;
@@ -61,8 +73,8 @@
 - (BOOL)shouldCompress;
 - (void)start;
 - (void)stop;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (id)stream;
+- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (double)timestamp;
 
 @end

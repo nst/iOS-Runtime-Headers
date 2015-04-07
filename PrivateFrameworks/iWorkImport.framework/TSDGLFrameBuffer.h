@@ -5,9 +5,6 @@
 @class NSArray, NSDictionary, NSMutableArray, NSString;
 
 @interface TSDGLFrameBuffer : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     int _currentBindingOption;
     int _currentDrawBufferCount;
     unsigned int _currentDrawBuffers[1];
@@ -20,6 +17,9 @@
     NSString *_name;
     NSDictionary *_namesToTextureDict;
     BOOL _shouldDeleteTexturesOnTeardown;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     NSArray *_textureConfigs;
     NSArray *_textureConfigsByAttachment;
@@ -33,11 +33,11 @@
 
 + (int)currentGLFramebuffer;
 + (int)currentGLFramebufferWithBindingOption:(int)arg1;
-+ (void)setCurrentGLFramebuffer:(int)arg1 withBindingOption:(int)arg2;
 + (void)setCurrentGLFramebuffer:(int)arg1;
++ (void)setCurrentGLFramebuffer:(int)arg1 withBindingOption:(int)arg2;
 
-- (unsigned int)GLTextureAtIndex:(unsigned int)arg1 attachment:(unsigned int)arg2;
 - (unsigned int)GLTextureAtIndex:(unsigned int)arg1;
+- (unsigned int)GLTextureAtIndex:(unsigned int)arg1 attachment:(unsigned int)arg2;
 - (unsigned int)GLTextureNamed:(id)arg1;
 - (void)bindFramebuffer;
 - (void)bindFramebufferWithBindingOption:(int)arg1;
@@ -46,18 +46,18 @@
 - (int)currentTextureIndexAtAttachment:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 textureConfigs:(id)arg2;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 textureCount:(unsigned int)arg2;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isBound;
 - (id)name;
 - (BOOL)p_isCurrentDrawBuffersEqualToDrawbuffers:(unsigned int*)arg1 count:(int)arg2;
 - (void)p_setDrawBuffersAndReadBuffer;
 - (void)p_setFramebufferTextureAtAttachmentIndex:(int)arg1 bindingOption:(int)arg2;
-- (void)setCurrentTextureIndex:(unsigned int)arg1 atAttachment:(unsigned int)arg2;
 - (void)setCurrentTextureIndex:(unsigned int)arg1;
-- (void)setCurrentTextureNamed:(id)arg1 atAttachment:(unsigned int)arg2;
+- (void)setCurrentTextureIndex:(unsigned int)arg1 atAttachment:(unsigned int)arg2;
 - (void)setCurrentTextureNamed:(id)arg1;
+- (void)setCurrentTextureNamed:(id)arg1 atAttachment:(unsigned int)arg2;
 - (void)setCurrentTextureToNextAtAttachment:(unsigned int)arg1;
 - (void)setCurrentTexturesToNext;
 - (void)setName:(id)arg1;
@@ -67,7 +67,7 @@
 - (struct CGSize { float x1; float x2; })size;
 - (struct CGSize { float x1; float x2; })sizeOfGLTextureNamed:(id)arg1;
 - (void)teardown;
-- (void)unbindFramebufferAndBindGLFramebuffer:(int)arg1 withBindingOption:(int)arg2;
 - (void)unbindFramebufferAndBindGLFramebuffer:(int)arg1;
+- (void)unbindFramebufferAndBindGLFramebuffer:(int)arg1 withBindingOption:(int)arg2;
 
 @end

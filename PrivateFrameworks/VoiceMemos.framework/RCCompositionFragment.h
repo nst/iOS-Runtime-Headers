@@ -4,16 +4,16 @@
 
 @class NSString, NSURL;
 
-@interface RCCompositionFragment : NSObject <NSMutableCopying, NSCopying, RCDictionaryPListRepresentationCoding> {
-    struct { 
-        double beginTime; 
-        double endTime; 
-    struct { 
-        double beginTime; 
-        double endTime; 
+@interface RCCompositionFragment : NSObject <NSCopying, NSMutableCopying, RCDictionaryPListRepresentationCoding> {
     NSURL *_AVOutputURL;
     double _contentDuration;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _timeRangeInComposition;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _timeRangeInContentToUse;
 }
 

@@ -4,7 +4,7 @@
 
 @class <TSWPFootnoteMarkProvider>, NSString, TSWPPadding;
 
-@interface TPFootnoteContainerLayout : TSDLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPFootnoteMarkProvider> {
+@interface TPFootnoteContainerLayout : TSDLayout <TSWPColumnMetrics, TSWPFootnoteMarkProvider, TSWPLayoutParent> {
     <TSWPFootnoteMarkProvider> *_footnoteMarkProvider;
     float _footnoteSpacing;
     BOOL _includeFootnoteSeparatorLine;

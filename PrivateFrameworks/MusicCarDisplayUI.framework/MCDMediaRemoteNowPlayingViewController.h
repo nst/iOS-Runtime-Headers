@@ -4,7 +4,7 @@
 
 @class MCDNowPlayingViewController, MPUNowPlayingController, NSDictionary, NSString, UIAlertController;
 
-@interface MCDMediaRemoteNowPlayingViewController : UIViewController <MPUNowPlayingDelegate, MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate> {
+@interface MCDMediaRemoteNowPlayingViewController : UIViewController <MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate, MPUNowPlayingDelegate> {
     struct { 
         unsigned int play : 1; 
         unsigned int pause : 1; 

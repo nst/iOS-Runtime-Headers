@@ -18,7 +18,11 @@
     NSObject *mCurrentRenderingTicket;
     KNSlideNode *mCurrentSlideNode;
     BOOL mDisableAutoAnimationRemoval;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mEndShowHandler;
+
     BOOL mHasEndShowHandlerBeenCancelled;
     KNSlideNode *mLastVisitedSlideNode;
     int mPlayMode;

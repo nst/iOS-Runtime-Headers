@@ -4,22 +4,7 @@
 
 @class <UITextInputDelegate>, <UITextInputTokenizer>, <UITextViewDelegate>, MPUTextContainerContentSizeUpdater, NSAttributedString, NSDictionary, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIAutoscroll, UIColor, UIFont, UIImage, UITextInputController, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UICharacterStreamingManager, _UISiriStreamingManager, _UITextContainerView, _UITextViewRestorableScrollPosition;
 
-@interface UITextView : UIScrollView <UITextLinkInteraction, UITextInputControllerDelegate, UITextAutoscrolling, UIKeyboardInput, UITextInputTraits_Private, _UIMultilineTextContentSizing, _UILayoutBaselineUpdating, UITextInput, ABText, MPUAutoupdatingTextContainer> {
-    struct { 
-        unsigned int needsScrollToSelectionAfterLayout : 1; 
-        unsigned int isInteractingWithLink : 1; 
-        unsigned int linkInteractionIsLongPress : 1; 
-        unsigned int editable : 1; 
-        unsigned int reentrancyGuard : 1; 
-        unsigned int usesExplicitPreferredMaxLayoutWidth : 1; 
-        unsigned int determiningPreferredMaxLayoutWidth : 1; 
-        unsigned int inSecondConstraintsPass : 1; 
-        unsigned int interactiveSelectionDisabled : 1; 
-        unsigned int selectable : 1; 
-        unsigned int shouldPresentSheetsInAWindowLayeredAboveTheKeyboard : 1; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface UITextView : UIScrollView <ABText, MPUAutoupdatingTextContainer, UIKeyboardInput, UITextAutoscrolling, UITextInput, UITextInputControllerDelegate, UITextInputTraits_Private, UITextLinkInteraction, _UILayoutBaselineUpdating, _UIMultilineTextContentSizing> {
     UIAutoscroll *_autoscroll;
     _UICharacterStreamingManager *_characterStreamingManager;
     BOOL _clearsOnInsertion;
@@ -37,6 +22,9 @@
     float _preferredMaxLayoutWidth;
     id _private;
     _UITextViewRestorableScrollPosition *_scrollTarget;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _scrollTargetOffset;
     int _siriAnimationStyle;
     NSDictionary *_siriParameters;
@@ -45,6 +33,18 @@
     UITextInputTraits *_textInputTraits;
     NSTextStorage *_textStorage;
     <UITextInputTokenizer> *_tokenizer;
+    struct { 
+        unsigned int needsScrollToSelectionAfterLayout : 1; 
+        unsigned int isInteractingWithLink : 1; 
+        unsigned int linkInteractionIsLongPress : 1; 
+        unsigned int editable : 1; 
+        unsigned int reentrancyGuard : 1; 
+        unsigned int usesExplicitPreferredMaxLayoutWidth : 1; 
+        unsigned int determiningPreferredMaxLayoutWidth : 1; 
+        unsigned int inSecondConstraintsPass : 1; 
+        unsigned int interactiveSelectionDisabled : 1; 
+        unsigned int selectable : 1; 
+        unsigned int shouldPresentSheetsInAWindowLayeredAboveTheKeyboard : 1; 
     } _tvFlags;
 }
 
@@ -58,7 +58,6 @@
 @property BOOL acceptsSplitKeyboard;
 @property BOOL allowsEditingTextAttributes;
 @property(copy) NSAttributedString * attributedText;
-@property(copy) NSAttributedString * attributedText;
 @property int autocapitalizationType;
 @property(copy) NSString * autocorrectionContext;
 @property int autocorrectionType;
@@ -67,12 +66,8 @@
 @property BOOL contentsIsSingleValue;
 @property unsigned int dataDetectorTypes;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property BOOL deferBecomingResponder;
 @property <UITextViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property BOOL disablePrediction;
 @property BOOL displaySecureTextUsingPlainText;
@@ -82,10 +77,7 @@
 @property BOOL enablesReturnKeyOnNonWhiteSpaceContent;
 @property(readonly) UITextPosition * endOfDocument;
 @property(retain) UIFont * font;
-@property(retain) UIFont * font;
 @property BOOL forceEnableDictation;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property(retain) UIView * inputAccessoryView;
 @property <UITextInputDelegate> * inputDelegate;
@@ -113,8 +105,6 @@
 @property(retain) UIColor * selectionHighlightColor;
 @property int shortcutConversionType;
 @property int spellCheckingType;
-@property(readonly) Class superclass;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property BOOL suppressReturnKeyStyling;
 @property(copy) NSString * text;
@@ -234,8 +224,8 @@
 - (id)characterRangeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)characterRangeByExtendingPosition:(id)arg1 inDirection:(int)arg2;
 - (BOOL)clearsOnInsertion;
-- (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1 withinRange:(id)arg2;
 - (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1 withinRange:(id)arg2;
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
@@ -262,9 +252,9 @@
 - (void)increaseSize:(id)arg1;
 - (id)initReadonlyAndUnselectableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 font:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)inputAccessoryView;
 - (id)inputDelegate;
 - (id)inputView;

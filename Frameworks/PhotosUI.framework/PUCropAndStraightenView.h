@@ -4,25 +4,7 @@
 
 @class <PUCropAndStraightenViewDelegate>, NSString, UIImage, UIImageView, UIScrollView, UIView;
 
-@interface PUCropAndStraightenView : UIView <UIScrollViewDelegate, UIGestureRecognizerDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+@interface PUCropAndStraightenView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -40,7 +22,25 @@
     BOOL __updatingForCrop;
     BOOL __updatingForFit;
     BOOL __updatingForStraighten;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _canvasFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _cropRect;
     <PUCropAndStraightenViewDelegate> *_delegate;
     UIImage *_image;

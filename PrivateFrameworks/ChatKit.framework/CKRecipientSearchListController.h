@@ -4,7 +4,7 @@
 
 @class <CKRecipientSearchListControllerDelegate>, CKContactsSearchManager, IDSBatchIDQueryController, IMAccount, NSArray, NSDate, NSString;
 
-@interface CKRecipientSearchListController : UITableViewController <IDSBatchIDQueryControllerDelegate, CKContactsSearchManagerDelegate> {
+@interface CKRecipientSearchListController : UITableViewController <CKContactsSearchManagerDelegate, IDSBatchIDQueryControllerDelegate> {
     IMAccount *_defaultiMessageAccount;
     <CKRecipientSearchListControllerDelegate> *_delegate;
     NSArray *_enteredRecipients;

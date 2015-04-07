@@ -4,7 +4,7 @@
 
 @class <PUFeedSectionInfosManagerDelegate>, NSDate, NSMapTable, NSMutableArray, PLPhotoLibrary;
 
-@interface PUFeedSectionInfosManager : NSObject <PLCloudFeedEntriesObserver, PLCloudCommentsChangeObserver, PLAssetChangeObserver, PLPhotoLibraryShouldReloadObserver> {
+@interface PUFeedSectionInfosManager : NSObject <PLAssetChangeObserver, PLCloudCommentsChangeObserver, PLCloudFeedEntriesObserver, PLPhotoLibraryShouldReloadObserver> {
     <PUFeedSectionInfosManagerDelegate> *_delegate;
     NSDate *_earliestDate;
     NSMutableArray *_pendingAssetsChangeNotifications;

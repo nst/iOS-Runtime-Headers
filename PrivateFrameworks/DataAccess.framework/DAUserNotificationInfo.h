@@ -10,7 +10,11 @@
 
 @interface DAUserNotificationInfo : NSObject {
     NSString *_groupIdentifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
 }
 
 @property(copy) NSString * groupIdentifier;

@@ -14,21 +14,12 @@
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, VKLabelNavRoadGraph, VKPolylineOverlayPainter;
 
 @interface VKLabelNavSupport : NSObject {
-    struct PolylineCoordinate { 
-        unsigned int index; 
-        float offset; 
     struct vector<std::__1::shared_ptr<vk::NavLabel>, std::__1::allocator<std::__1::shared_ptr<vk::NavLabel> > > { 
         struct shared_ptr<vk::NavLabel> {} *__begin_; 
         struct shared_ptr<vk::NavLabel> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<vk::NavLabel> *, std::__1::allocator<std::__1::shared_ptr<vk::NavLabel> > > { 
             struct shared_ptr<vk::NavLabel> {} *__first_; 
         } __end_cap_; 
-    struct PolylineCoordinate { 
-        unsigned int index; 
-        float offset; 
-    struct PolylineCoordinate { 
-        unsigned int index; 
-        float offset; 
     } _activeSigns;
     BOOL _checkIfRouteSubrangeChanged;
     BOOL _checkOnRouteLabelsAlignment;
@@ -57,8 +48,17 @@
     NSMutableSet *_roadNamesInGuidance;
     VKPolylineOverlayPainter *_route;
     NSMutableArray *_routeRoadInfos;
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
     } _routeSubrangeEnd;
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
     } _routeSubrangeStart;
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
     } _routeUserOffset;
     unsigned int _stepIndex;
     NSMutableSet *_tiles;

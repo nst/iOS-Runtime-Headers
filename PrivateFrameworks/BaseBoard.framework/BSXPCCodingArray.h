@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface BSXPCCodingArray : NSObject <NSFastEnumeration, BSXPCCoding> {
+@interface BSXPCCodingArray : NSObject <BSXPCCoding, NSFastEnumeration> {
     NSArray *_array;
 }
 

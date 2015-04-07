@@ -5,10 +5,10 @@
 @class NSData;
 
 @interface _MFDigestMD5Authenticator : MFSASLAuthenticator {
-    unsigned int _maxbuf : 16;
-    unsigned int _securityLevel : 2;
     void *_cryptInfo;
     NSData *_expectedResponse;
+    unsigned int _maxbuf : 16;
+    unsigned int _securityLevel : 2;
 }
 
 - (void)dealloc;

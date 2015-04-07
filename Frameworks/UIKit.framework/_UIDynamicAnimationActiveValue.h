@@ -3,13 +3,13 @@
  */
 
 @interface _UIDynamicAnimationActiveValue : NSObject {
-    unsigned int _lowerBoundary : 1;
-    unsigned int _upperBoundary : 1;
     id _applier;
     double _boundaryPull;
+    unsigned int _lowerBoundary : 1;
     double _maximumActiveValue;
     double _minimumActiveValue;
     int _type;
+    unsigned int _upperBoundary : 1;
     double _value;
 }
 

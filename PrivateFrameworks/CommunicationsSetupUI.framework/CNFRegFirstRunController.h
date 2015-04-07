@@ -48,12 +48,12 @@
 - (id)_rightButtonItem;
 - (void)_rightButtonTapped;
 - (void)_setupEventHandlers;
-- (void)_startActivityIndicatorWithTitle:(id)arg1 animated:(BOOL)arg2 allowCancel:(BOOL)arg3;
 - (void)_startActivityIndicatorWithTitle:(id)arg1 animated:(BOOL)arg2;
+- (void)_startActivityIndicatorWithTitle:(id)arg1 animated:(BOOL)arg2 allowCancel:(BOOL)arg3;
 - (void)_startListeningForReturnKey;
 - (void)_startTimeoutWithDuration:(double)arg1;
-- (void)_startValidationModeAnimated:(BOOL)arg1 allowCancel:(BOOL)arg2;
 - (void)_startValidationModeAnimated:(BOOL)arg1;
+- (void)_startValidationModeAnimated:(BOOL)arg1 allowCancel:(BOOL)arg2;
 - (void)_stopActivityIndicatorAnimated:(BOOL)arg1;
 - (void)_stopActivityIndicatorWithTitle:(id)arg1 animated:(BOOL)arg2;
 - (void)_stopListeningForReturnKey;
@@ -73,8 +73,8 @@
 - (id)delegate;
 - (BOOL)dismissWithState:(unsigned int)arg1;
 - (id)initWithParentController:(id)arg1 account:(id)arg2;
-- (id)initWithRegController:(id)arg1 account:(id)arg2;
 - (id)initWithRegController:(id)arg1;
+- (id)initWithRegController:(id)arg1 account:(id)arg2;
 - (BOOL)previousHidesBackButton;
 - (id)previousLeftButton;
 - (id)previousRightButton;

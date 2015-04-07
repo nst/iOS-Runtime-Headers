@@ -5,6 +5,8 @@
 @class TSCH3DChartBoundsLayout, TSCH3DVector, TSCHChartInfo;
 
 @interface TSCH3DChartResizerHelper : NSObject {
+    TSCH3DChartBoundsLayout *mBoundsLayout;
+    TSCHChartInfo *mChartInfo;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,17 +18,7 @@
             int g; 
             int t; 
         } ; 
-    struct tvec2<int> { 
-        union { 
-            int x; 
-            int r; 
-            int s; 
-        } ; 
-        union { 
-            int y; 
-            int g; 
-            int t; 
-        } ; 
+    } mContainingViewport;
     struct { 
         BOOL forceOmitLegend; 
         BOOL forceOmitTitle; 
@@ -35,10 +27,18 @@
         BOOL enable3DScaledDepthBounds; 
         BOOL enable3DSageMaxDepthRatio; 
         unsigned int max3DLimitingSeries; 
-    TSCH3DChartBoundsLayout *mBoundsLayout;
-    TSCHChartInfo *mChartInfo;
-    } mContainingViewport;
     } mLayoutSettings;
+    struct tvec2<int> { 
+        union { 
+            int x; 
+            int r; 
+            int s; 
+        } ; 
+        union { 
+            int y; 
+            int g; 
+            int t; 
+        } ; 
     } mOriginalContainingViewport;
 }
 
@@ -55,7 +55,7 @@
 - (id).cxx_construct;
 - (id)boundsLayoutForScene:(id)arg1 mode:(int)arg2;
 - (id)boundsLayoutResizedForScene:(id)arg1 bounds:(const struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; }*)arg2 resizeStartingSize:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg3 mode:(int)arg4 returningResultSize:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg5;
-- (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })chartBodyLayoutOffsetInChartAreaLayoutSpaceUsingConverter:(const struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; boolx3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; }*)arg1;
+- (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })chartBodyLayoutOffsetInChartAreaLayoutSpaceUsingConverter:(const struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; bool x3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; }*)arg1;
 - (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })chartBodySizeByResizingScene:(id)arg1 toLayoutSize:(const struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg2 resizeStartingSize:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg3 returningChartBodyLayoutOffsetInChartAreaLayoutSpace:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg4 resultLayoutSize:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg5;
 - (id)chartInfo;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })containingViewport;

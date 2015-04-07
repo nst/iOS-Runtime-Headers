@@ -5,16 +5,6 @@
 @class NSArray, NSDictionary, NSLayoutManager;
 
 @interface NSTextContainer : NSObject <NSCoding, NSTextLayoutOrientationProvider> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct __tcFlags { 
-        unsigned int widthTracksTextView : 1; 
-        unsigned int heightTracksTextView : 1; 
-        unsigned int observingFrameChanges : 1; 
-        unsigned int lineBreakMode : 4; 
-        unsigned int oldAPI : 1; 
-        unsigned int _reserved : 8; 
     NSDictionary *_attributesForExtraLineFragment;
     float _cacheBoundsMaxY;
     float _cacheBoundsMinY;
@@ -27,7 +17,17 @@
     float _lineFragmentPadding;
     unsigned int _maximumLines;
     float _minimumWidth;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
+    struct __tcFlags { 
+        unsigned int widthTracksTextView : 1; 
+        unsigned int heightTracksTextView : 1; 
+        unsigned int observingFrameChanges : 1; 
+        unsigned int lineBreakMode : 4; 
+        unsigned int oldAPI : 1; 
+        unsigned int _reserved : 8; 
     } _tcFlags;
     id _textView;
 }

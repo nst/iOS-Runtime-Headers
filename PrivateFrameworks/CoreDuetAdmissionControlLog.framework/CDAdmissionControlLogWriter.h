@@ -24,8 +24,8 @@
 - (const char *)facility;
 - (id)init;
 - (id)initWithFacility:(id)arg1;
-- (id)initWithLogFile:(id)arg1 forFacility:(id)arg2;
 - (id)initWithLogFile:(id)arg1;
+- (id)initWithLogFile:(id)arg1 forFacility:(id)arg2;
 - (void)logCoreDuetAdmissionCheckForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 value:(id)arg4 sequenceNumber:(unsigned long long)arg5 probability:(double)arg6 threshold:(double)arg7 BON:(unsigned long long)arg8 reason:(id)arg9 admitted:(BOOL)arg10 ableID:(unsigned long long)arg11;
 - (void)logCoreDuetAdmissionCheckForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 value:(id)arg4 sequenceNumber:(unsigned long long)arg5 probability:(double)arg6 threshold:(double)arg7 BON:(unsigned long long)arg8 role:(unsigned int)arg9 reason:(id)arg10 admitted:(BOOL)arg11 ableID:(unsigned long long)arg12;
 - (void)logCoreDuetAdmissionCheckForDevice:(unsigned int)arg1 remoteDevice:(unsigned int)arg2 Client:(unsigned long long)arg3 attributeID:(unsigned long long)arg4 attribute:(id)arg5 value:(id)arg6 sequenceNumber:(unsigned long long)arg7 probability:(double)arg8 threshold:(double)arg9 BON:(unsigned long long)arg10 role:(unsigned int)arg11 reason:(id)arg12 admitted:(BOOL)arg13 ableID:(unsigned long long)arg14;
@@ -35,8 +35,8 @@
 - (void)logCoreDuetEventStartForDevice:(unsigned int)arg1 remoteDevice:(unsigned int)arg2 Client:(unsigned long long)arg3 attributeID:(unsigned long long)arg4 attribute:(id)arg5 updateType:(unsigned int)arg6 sequenceNumber:(unsigned long long)arg7 value:(id)arg8;
 - (void)logCoreDuetEventStopForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned int)arg4 sequenceNumber:(unsigned long long)arg5 value:(id)arg6 cellIn:(unsigned long long)arg7 cellOut:(unsigned long long)arg8 wifiIn:(unsigned long long)arg9 wifiOut:(unsigned long long)arg10;
 - (void)logCoreDuetEventStopForDevice:(unsigned int)arg1 remoteDevice:(unsigned int)arg2 Client:(unsigned long long)arg3 attributeID:(unsigned long long)arg4 attribute:(id)arg5 updateType:(unsigned int)arg6 sequenceNumber:(unsigned long long)arg7 value:(id)arg8 cellIn:(unsigned long long)arg9 cellOut:(unsigned long long)arg10 wifiIn:(unsigned long long)arg11 wifiOut:(unsigned long long)arg12;
-- (void)logDictionary:(id)arg1 withMsg:(struct __asl_object_s { }*)arg2;
 - (void)logDictionary:(id)arg1;
+- (void)logDictionary:(id)arg1 withMsg:(struct __asl_object_s { }*)arg2;
 - (void)logString:(id)arg1;
 - (id)logfile;
 - (id)powerLog;

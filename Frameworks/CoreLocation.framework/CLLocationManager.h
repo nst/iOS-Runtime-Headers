@@ -57,8 +57,8 @@
 + (BOOL)isMonitoringAvailableForClass:(Class)arg1;
 + (BOOL)isRangingAvailable;
 + (BOOL)isStatusBarIconEnabledForLocationEntityClass:(unsigned int)arg1;
-+ (BOOL)locationServicesEnabled:(BOOL)arg1;
 + (BOOL)locationServicesEnabled;
++ (BOOL)locationServicesEnabled:(BOOL)arg1;
 + (BOOL)mapCorrectionAvailable;
 + (unsigned int)primaryEntityClassForLocationDictionary:(id)arg1;
 + (int)regionMonitoringAuthorizationStatusForBundle:(id)arg1;
@@ -98,8 +98,8 @@
 - (void)historicLocationsFromDate:(id)arg1 forInterval:(double)arg2;
 - (id)init;
 - (id)initWithEffectiveBundle:(id)arg1;
-- (id)initWithEffectiveBundleIdentifier:(id)arg1 bundle:(id)arg2;
 - (id)initWithEffectiveBundleIdentifier:(id)arg1;
+- (id)initWithEffectiveBundleIdentifier:(id)arg1 bundle:(id)arg2;
 - (struct __CLClient { }*)internalClient;
 - (BOOL)isDynamicAccuracyReductionEnabled;
 - (BOOL)isLocationServicesPreferencesDialogEnabled;
@@ -164,8 +164,8 @@
 - (void)setPurpose:(id)arg1;
 - (void)setSupportInfo:(BOOL)arg1;
 - (void)startAppStatusUpdates;
-- (void)startMonitoringForRegion:(id)arg1 desiredAccuracy:(double)arg2;
 - (void)startMonitoringForRegion:(id)arg1;
+- (void)startMonitoringForRegion:(id)arg1 desiredAccuracy:(double)arg2;
 - (void)startMonitoringSignificantLocationChanges;
 - (void)startMonitoringVisits;
 - (void)startRangingBeaconsInRegion:(id)arg1;

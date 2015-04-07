@@ -30,8 +30,8 @@
 - (id)__sendMessage:(id)arg1 queue:(id)arg2 reply:(id)arg3 failBlock:(id)arg4 waitForReply:(BOOL)arg5;
 - (id)_cacheForService:(id)arg1;
 - (id)_cachedStatusForDestination:(id)arg1 service:(id)arg2;
-- (void)_callDelegatesWithBlock:(id)arg1 delegateMap:(id)arg2;
 - (void)_callDelegatesWithBlock:(id)arg1;
+- (void)_callDelegatesWithBlock:(id)arg1 delegateMap:(id)arg2;
 - (void)_connect;
 - (int)_currentCachedIDStatusForDestination:(id)arg1 service:(id)arg2 listenerID:(id)arg3;
 - (id)_delegateMapForListenerID:(id)arg1 service:(id)arg2;
@@ -61,8 +61,8 @@
 - (id)initWithDelegateContext:(id)arg1 queue:(id)arg2;
 - (BOOL)refreshIDStatusForDestination:(id)arg1 service:(id)arg2 listenerID:(id)arg3 queue:(id)arg4 completionBlock:(id)arg5;
 - (BOOL)refreshIDStatusForDestinations:(id)arg1 service:(id)arg2 listenerID:(id)arg3 queue:(id)arg4 completionBlock:(id)arg5;
-- (void)removeDelegate:(id)arg1 forService:(id)arg2 listenerID:(id)arg3;
 - (void)removeDelegate:(id)arg1;
+- (void)removeDelegate:(id)arg1 forService:(id)arg2 listenerID:(id)arg3;
 - (BOOL)removeListenerID:(id)arg1 forService:(id)arg2;
 
 @end

@@ -72,8 +72,8 @@
 + (BOOL)checkString:(id)arg1 isOneOfStrings:(id)arg2 key:(id)arg3 errorDomain:(id)arg4 errorCode:(int)arg5 errorString:(id)arg6 outError:(id*)arg7;
 + (id)dataFromCMSEncodedData:(id)arg1 outSignerCertificates:(id*)arg2;
 + (int)evaluateTrust:(struct __SecTrust { }*)arg1;
-+ (int)evaluateTrustOfCertificateChain:(id)arg1 outIsAllowedToWriteDefaults:(BOOL*)arg2;
 + (int)evaluateTrustOfCertificateChain:(id)arg1;
++ (int)evaluateTrustOfCertificateChain:(id)arg1 outIsAllowedToWriteDefaults:(BOOL*)arg2;
 + (id)missingFieldErrorWithField:(id)arg1;
 + (id)profileDictionaryFromProfileData:(id)arg1 outError:(id*)arg2;
 + (id)profileWithData:(id)arg1 fileName:(id)arg2 allowEmptyPayload:(BOOL)arg3 outError:(id*)arg4;

@@ -5,13 +5,13 @@
 @class MFSMTPConnection, NSTimer;
 
 @interface SMTPAccount : DeliveryAccount {
-    unsigned int _supportsPipelining : 1;
-    unsigned int _supportsOutboxCopy : 1;
-    unsigned int _useCellDataOnly : 1;
     MFSMTPConnection *_connection;
     Class _deliveryClass;
     long _lastTimerSetTime;
+    unsigned int _supportsOutboxCopy : 1;
+    unsigned int _supportsPipelining : 1;
     NSTimer *_timer;
+    unsigned int _useCellDataOnly : 1;
 }
 
 + (id)accountTypeString;

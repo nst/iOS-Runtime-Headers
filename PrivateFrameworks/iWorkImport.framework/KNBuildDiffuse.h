@@ -22,28 +22,28 @@
         float m42; 
         float m43; 
         float m44; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     } mBaseTransform;
     TSDGLShader *mDiffuseShader;
     KNBuildDiffuseSystem *mDiffuseSystem;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mDrawableFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mFrameRect;
     TSDGLDataBuffer *mQuadDataBuffer;
     TSDGLShader *mQuadShader;

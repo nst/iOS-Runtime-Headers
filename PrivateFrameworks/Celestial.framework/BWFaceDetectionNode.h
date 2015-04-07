@@ -5,30 +5,6 @@
 @class BWNodeOutput;
 
 @interface BWFaceDetectionNode : BWFanOutNode {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     struct opaqueCMFormatDescription { } *_boxedFormatDescription;
     BWNodeOutput *_boxedMetadataOutput;
     BOOL _boxedMetadataOutputEnabled;
@@ -42,9 +18,33 @@
     unsigned long _localIDOfDetectedFaceYaw;
     BWNodeOutput *_metadataObjectOutput;
     BOOL _metadataObjectOutputEnabled;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _prevBoxedFaceDur;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _prevBoxedFacePTS;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _prevBoxedNoFacePTS;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _rectOfInterest;
 }
 

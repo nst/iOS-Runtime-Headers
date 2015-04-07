@@ -10,9 +10,17 @@
 
 @interface CKPublishAssetsOperation : CKDatabaseOperation {
     unsigned int _URLOptions;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _assetPublishedBlock;
+
     NSDictionary *_fileNamesByAssetFieldNames;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _publishAssetCompletionBlock;
+
     NSArray *_recordIDs;
     unsigned int _requestedTTL;
 }

@@ -9,7 +9,11 @@
 @class NSString, UIPickerView;
 
 @interface EKUICustomRecurrenceIntervalViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _changeBlock;
+
     int _frequency;
     int _interval;
     BOOL _maximumInterval;
@@ -33,10 +37,10 @@
 - (void)loadView;
 - (BOOL)maximumInterval;
 - (int)numberOfComponentsInPickerView:(id)arg1;
+- (id)pickerView;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
-- (id)pickerView;
 - (void)setChangeBlock:(id)arg1;
 - (void)setFrequency:(int)arg1;
 - (void)setInterval:(int)arg1;

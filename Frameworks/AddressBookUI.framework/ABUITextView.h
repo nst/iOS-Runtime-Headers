@@ -5,21 +5,21 @@
 @class ABSwellTextView, UIColor;
 
 @interface ABUITextView : UITextView {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     BOOL _disallowsSetContentOffset;
     UIColor *_highlightedTextColor;
     BOOL _informParentOfContentSizeChange;
     BOOL _isHighlighted;
     float _lastContentHeight;
     ABSwellTextView *_parent;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _pinnedCursorPosition;
     UIColor *_savedTextColor;
     UIColor *_shadowColor;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _shadowOffset;
 }
 

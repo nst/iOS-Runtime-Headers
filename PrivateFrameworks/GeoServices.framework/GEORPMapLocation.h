@@ -5,9 +5,9 @@
 @class GEOLatLng, GEOPDViewportInfo, NSData;
 
 @interface GEORPMapLocation : PBCodable <NSCopying> {
+    GEOLatLng *_coordinate;
     struct { 
         unsigned int zoomLevel : 1; 
-    GEOLatLng *_coordinate;
     } _has;
     NSData *_image;
     GEOPDViewportInfo *_viewportInfo;

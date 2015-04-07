@@ -36,14 +36,14 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAlignment:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setSettings:(id)arg1 valueKeyPath:(id)arg2;
 - (void)setSettings:(id)arg1;
+- (void)setSettings:(id)arg1 valueKeyPath:(id)arg2;
 - (void)setSettingsGroup:(id)arg1;
 - (void)setValueKeyPath:(id)arg1;
 - (void)setXAxisValueKeyPath:(id)arg1;
 - (void)setYAxisValueKeyPath:(id)arg1;
-- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)settings;
+- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)settingsGroup;
 - (void)updateGraphData;
 - (id)valueKeyPath;

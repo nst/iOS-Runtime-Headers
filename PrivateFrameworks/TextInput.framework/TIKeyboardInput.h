@@ -5,6 +5,8 @@
 @class <NSCopying><NSObject><NSSecureCoding>, NSString, TIKeyboardCandidate, TIKeyboardTouchEvent;
 
 @interface TIKeyboardInput : NSObject <NSSecureCoding> {
+    TIKeyboardCandidate *_acceptedCandidate;
+    BOOL _backspace;
     union { 
         int integerValue; 
         struct { 
@@ -15,8 +17,6 @@
             unsigned int flick : 1; 
             unsigned int synthesizedByAcceptingCandidate : 1; 
         } fields; 
-    TIKeyboardCandidate *_acceptedCandidate;
-    BOOL _backspace;
     } _flags;
     <NSCopying><NSObject><NSSecureCoding> *_object;
     NSString *_string;

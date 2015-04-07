@@ -10,7 +10,11 @@
 
 @interface _NSActivityAssertion : NSObject {
     long long _ended;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _expirationHandler;
+
     unsigned long long _options;
     NSObject<OS_voucher> *_previousVoucher;
     BKSProcessAssertion *_processAssertion;

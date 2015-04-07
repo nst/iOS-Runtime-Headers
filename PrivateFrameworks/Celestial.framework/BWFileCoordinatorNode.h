@@ -5,63 +5,63 @@
 @class BWNodeInput, FigCaptureRecordingSettings, NSArray;
 
 @interface BWFileCoordinatorNode : BWNode {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     long long _currSettingsID;
     struct OpaqueCMBlockBuffer { } *_emptyMetadataSampleData;
     BOOL _firstAudioHasBeenProcessed;
     const struct opaqueCMFormatDescription {} **_formatDescriptionsForInputs;
     BOOL _haveSeenAudioWhenStarting;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _inputOffset;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _largestMetadataPTS;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _largestStagedSupportingAudioVideoStagedPTS;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _lastMasterDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _lastMasterEndingPTS;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _lastMasterPTS;
     BOOL _lowLatencyCanTossExtraVideoWhenStopping;
     BOOL _lowLatencyCanTransitionEarlyToRecording;
     BOOL _lowLatencyModeEnabled;
     BWNodeInput *_masterInput;
     unsigned int _masterInputIndex;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _masterStartingPTS;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _masterStoppingPTS;
     unsigned int _numActionOnlyOutputs;
     unsigned int _numAudioInputs;

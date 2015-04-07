@@ -5,9 +5,6 @@
 @class NSArray, NSNumberFormatter, NSString, NSTimer, UIButton, UILabel, UISlider, _UISettings;
 
 @interface PTSSlider : UIView <PTSHUDControl, _UISettingsKeyPathObserver> {
-    struct { 
-        double mark; 
-        double limit; 
     int _alignment;
     NSTimer *_buttonRepeatTimer;
     UIButton *_downIncrementButton;
@@ -19,6 +16,9 @@
     NSArray *_subviewConstraints;
     UILabel *_titleLabel;
     UIButton *_upIncrementButton;
+    struct { 
+        double mark; 
+        double limit; 
     } _valueChangePublishTTL;
     NSString *_valueKeyPath;
     UILabel *_valueLabel;
@@ -79,22 +79,22 @@
 - (void)setDownIncrementButton:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setIncrement:(float)arg1;
-- (void)setSettings:(id)arg1 valueKeyPath:(id)arg2;
 - (void)setSettings:(id)arg1;
+- (void)setSettings:(id)arg1 valueKeyPath:(id)arg2;
 - (void)setShowsValueLabel:(BOOL)arg1;
 - (void)setSliderControl:(id)arg1;
 - (void)setSubviewConstraints:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setUpIncrementButton:(id)arg1;
-- (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (void)setValue:(float)arg1;
+- (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (void)setValueChangePublishTTL:(struct { double x1; double x2; })arg1;
 - (void)setValueKeyPath:(id)arg1;
 - (void)setValueLabel:(id)arg1;
 - (void)setValueLabelFormatter:(id)arg1;
 - (void)setValueLabelStrings:(id)arg1;
-- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)settings;
+- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (BOOL)showsValueLabel;
 - (id)sliderControl;
 - (void)stopIncrementRepeatAction;

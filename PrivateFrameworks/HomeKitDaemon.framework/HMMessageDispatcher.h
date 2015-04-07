@@ -23,9 +23,9 @@
 - (BOOL)isRemoteSource;
 - (id)notificationHandlers;
 - (void)registerForMessage:(id)arg1 receiver:(id)arg2 messageHandler:(id)arg3;
+- (void)sendMessage:(id)arg1 target:(id)arg2;
 - (void)sendMessage:(id)arg1 target:(id)arg2 andInvokeCompletionHandler:(id)arg3;
 - (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
-- (void)sendMessage:(id)arg1 target:(id)arg2;
 - (void)setNotificationHandlers:(id)arg1;
 - (void)setRemoteSource:(BOOL)arg1;
 - (void)setTransport:(id)arg1;

@@ -75,8 +75,8 @@
 - (id)infoForDataSource:(id)arg1;
 - (id)infoForSegment:(int)arg1;
 - (void)infosChanged;
-- (id)initWithDataSources:(id)arg1 rootDataSource:(id)arg2;
 - (id)initWithDataSources:(id)arg1;
+- (id)initWithDataSources:(id)arg1 rootDataSource:(id)arg2;
 - (BOOL)item:(id)arg1 matchesSearchTerms:(id)arg2 inSection:(int)arg3;
 - (id)itemAtIndexPath:(id)arg1;
 - (SEL)noContentButtonAction;
@@ -109,8 +109,8 @@
 - (void)setSegmentInfos:(id)arg1;
 - (void)setSegmentedHeaderClass:(Class)arg1;
 - (void)setSelectedDataSource:(id)arg1;
-- (void)setSelectedDataSourceIndex:(unsigned int)arg1 reload:(BOOL)arg2;
 - (void)setSelectedDataSourceIndex:(unsigned int)arg1;
+- (void)setSelectedDataSourceIndex:(unsigned int)arg1 reload:(BOOL)arg2;
 - (void)setSelectedSegmentInfo:(id)arg1;
 - (void)setShouldHideSegment:(BOOL)arg1;
 - (void)setTitle:(id)arg1 forDataSource:(id)arg2;

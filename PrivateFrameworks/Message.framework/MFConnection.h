@@ -10,17 +10,17 @@
 @class <MFSASLSecurityLayer>, NSArray, NSData, NSMutableString, NSString, _MFSocket;
 
 @interface MFConnection : NSObject {
-    unsigned int _isFetching : 1;
     unsigned int _allowFallbacks : 1;
-    unsigned int _compressionEnabled : 1;
     char *_buffer;
     unsigned int _bufferLength;
     int _bufferRemainingBytes;
     unsigned int _bufferStart;
+    unsigned int _compressionEnabled : 1;
     struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_deflater;
     unsigned long _desiredBufferLength;
     unsigned int _dontLogReads;
     struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_inflater;
+    unsigned int _isFetching : 1;
     double _lastUsedTime;
     NSData *_logData;
     unsigned int _readBytesNotLogged;
@@ -56,8 +56,8 @@
 + (BOOL)shouldTryFallbacksAfterError:(id)arg1;
 
 - (void)_setupNetworkLogging;
-- (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
 - (BOOL)authenticateUsingAccount:(id)arg1;
+- (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
 - (id)authenticationMechanisms;
 - (id)capabilities;
 - (BOOL)connectUsingAccount:(id)arg1;
@@ -85,7 +85,7 @@
 - (BOOL)startTLSForAccount:(id)arg1;
 - (BOOL)usesOpportunisticSockets;
 - (BOOL)writeBytes:(const char *)arg1 length:(unsigned long)arg2 dontLogBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (BOOL)writeData:(id)arg1 dontLogBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)writeData:(id)arg1;
+- (BOOL)writeData:(id)arg1 dontLogBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 
 @end

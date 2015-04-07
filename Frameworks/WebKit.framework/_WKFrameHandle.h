@@ -9,7 +9,7 @@
 
 @class NSString;
 
-@interface _WKFrameHandle : NSObject <WKObject, NSCopying, NSSecureCoding> {
+@interface _WKFrameHandle : NSObject <NSCopying, NSSecureCoding, WKObject> {
     struct ObjectStorage<API::FrameHandle> { 
         struct type { 
             unsigned char __lx[16]; 
@@ -26,8 +26,8 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
+- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (unsigned long long)_frameID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

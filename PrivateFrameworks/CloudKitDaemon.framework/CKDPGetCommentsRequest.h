@@ -5,9 +5,9 @@
 @class CKDPCommentedOnId, CKDPQuerySort, NSData, NSString;
 
 @interface CKDPGetCommentsRequest : PBRequest <NSCopying> {
+    NSData *_continuationMarker;
     struct { 
         unsigned int limit : 1; 
-    NSData *_continuationMarker;
     } _has;
     CKDPCommentedOnId *_identifier;
     unsigned int _limit;

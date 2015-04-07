@@ -10,8 +10,16 @@
 
 @interface DMXPCConnection : NSObject {
     NSObject<OS_xpc_object> *_connection;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _interruptionHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _invalidationHandler;
+
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_replyQueue;
 }

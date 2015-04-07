@@ -8,10 +8,9 @@
 
 @class <PUCollectionViewLayoutTransitioningDelegate>, <PUSectionedGridLayoutDelegate>, NSArray, NSDictionary, NSIndexPath, NSIndexSet, NSPointerArray, NSSet, NSString, PULayoutAnimationsHelper, PULayoutSampledSectioning, PUSectionedGridLayoutInvalidationContext, UICollectionViewLayout, UICollectionViewLayoutAttributes;
 
-@interface PUSectionedGridLayout : UICollectionViewLayout <PUReorderableLayout, PUPhotosGridTransitioningLayout, PUCollectionViewLayoutDelegating, PUGridLayoutProtocol> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface PUSectionedGridLayout : UICollectionViewLayout <PUCollectionViewLayoutDelegating, PUGridLayoutProtocol, PUPhotosGridTransitioningLayout, PUReorderableLayout> {
+    PUSectionedGridLayoutInvalidationContext *_cachedFloatingHeaderInvalidationContext;
+    int _cachedFloatingHeaderInvalidationContextNewVisualSection;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -21,31 +20,12 @@
             float width; 
             float height; 
         } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    PUSectionedGridLayoutInvalidationContext *_cachedFloatingHeaderInvalidationContext;
-    int _cachedFloatingHeaderInvalidationContextNewVisualSection;
     } _cachedLayoutAttributesLastKnownRect;
     NSArray *_cachedNonHeaderLayoutAttributesInRect;
     int _columnsPerRow;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _contentSize;
     float _cropAmount;
     int _cropType;
@@ -68,7 +48,13 @@
     float _globalTopPadding;
     BOOL _hasFloatingHeaders;
     NSSet *_hiddenItemIndexPaths;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _interItemSpacing;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _itemSize;
     BOOL _layoutDataIsValid;
     PULayoutSampledSectioning *_layoutSectioning;
@@ -82,6 +68,11 @@
     BOOL _samplingDataIsValid;
     NSPointerArray *_samplingHelpersByVisualSection;
     float _sectionBottomPadding;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _sectionContentInset;
     NSString *_sectionHeaderElementKind;
     float _sectionHeaderHeight;
@@ -92,10 +83,20 @@
     int _totalVisualSections;
     int _transitionAnchorColumnOffset;
     BOOL _transitionAnchorShiftsColumns;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _transitionAnimationEndCleanupBlock;
+
     PULayoutAnimationsHelper *_transitionAnimationsHelper;
     BOOL _transitionApplyingEffectiveContentOrigin;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _transitionEffectiveContentOrigin;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _transitionEndContentOffset;
     NSIndexPath *_transitionExplicitAnchorItemIndexPath;
     NSIndexPath *_transitionFirstVisibleRowVisualPath;
@@ -105,6 +106,9 @@
     UICollectionViewLayout *_transitionLayout;
     NSDictionary *_transitionSectionInfosByTransitionSection;
     NSDictionary *_transitionSectionInfosByVisualSection;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _transitionStartContentOffset;
     BOOL _transitionZoomingOut;
     <PUCollectionViewLayoutTransitioningDelegate> *_transitioningDelegate;

@@ -5,10 +5,10 @@
 @class <SKUIComposeReviewViewDelegate>, NSString, SKUIComposeReviewHeaderView, SKUIReviewMetadata, SULoadingView, SUTextContentView, UIScrollView;
 
 @interface SKUIComposeReviewView : UIView <SKUIComposeReviewHeaderDelegate, UITextContentViewDelegate> {
-    unsigned int _loading : 1;
     int _currentBodyLength;
     <SKUIComposeReviewViewDelegate> *_delegate;
     SKUIComposeReviewHeaderView *_headerView;
+    unsigned int _loading : 1;
     SULoadingView *_loadingView;
     SKUIReviewMetadata *_review;
     UIScrollView *_scrollView;

@@ -3,10 +3,9 @@
  */
 
 @interface TPLegacyPhonePad : UIControl {
-    unsigned int _delegateSoundCallbacks : 1;
-    unsigned int _soundsActivated : 1;
     float _bottomHeight;
     id _delegate;
+    unsigned int _delegateSoundCallbacks : 1;
     int _downKey;
     int _highlightKey;
     unsigned int _incompleteSounds;
@@ -17,6 +16,7 @@
     float _midWidth;
     BOOL _playsSounds;
     float _rightWidth;
+    unsigned int _soundsActivated : 1;
     BOOL _supportsHardPause;
     float _topHeight;
 }

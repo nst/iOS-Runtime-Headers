@@ -10,7 +10,11 @@
 
 @interface UIInputViewAnimationStyleExtraView : NSObject {
     int _alignment;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _animation;
+
     int _clipContainerType;
     UIView *_view;
 }

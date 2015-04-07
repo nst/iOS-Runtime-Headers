@@ -5,9 +5,8 @@
 @class NSLocale;
 
 @interface VKMapSnapshotRequest : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
+    NSLocale *_locale;
+    int _mapType;
     struct { 
         struct { 
             double latitude; 
@@ -17,10 +16,11 @@
             double latitudeDelta; 
             double longitudeDelta; 
         } span; 
-    NSLocale *_locale;
-    int _mapType;
     } _region;
     unsigned int _scale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     unsigned int _tileGroupID;
 }

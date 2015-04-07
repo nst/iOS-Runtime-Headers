@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface TIWordTokenizer : NSObject {
+    unsigned int m_bufferOffset;
     struct { 
         unsigned short buffer[64]; 
         struct __CFString {} *theString; 
@@ -16,16 +17,15 @@
         } rangeToBuffer; 
         int bufferedRangeStart; 
         int bufferedRangeEnd; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    unsigned int m_bufferOffset;
     } m_inlineBuffer;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } m_searchRange;
     NSString *m_string;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } m_tokenRange;
 }
 

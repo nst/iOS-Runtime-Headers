@@ -9,6 +9,9 @@
 @class CKTiledLayoutGeneratorScanState;
 
 @interface CKTiledLayoutGenerator : NSObject {
+    int _cacheHeadLocation;
+    int _cacheTailLocation;
+    id _cachedBatchID[20];
     struct { 
         int index; 
         struct CGSize { 
@@ -21,38 +24,59 @@
         } minimumSize; 
         BOOL hasCaption; 
         BOOL isBatchStart; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    } _cachedTileInfo[20];
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    int _cacheHeadLocation;
-    int _cacheTailLocation;
-    id _cachedBatchID[20];
-    } _cachedTileInfo[20];
     } _captionPadding;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _interTileSpacing;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _noCaptionSpacing;
     int _numberOfMagneticGuidelines;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _parsedFrameBlock;
+
     float _roundingScale;
     int _scanLocation;
     int _scanSpecialSequenceCount;
     BOOL _scannedBatchHasCaption;
     id _scannedBatchID;
     BOOL _shouldStop;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _tileBatchIDBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _tileCaptionSizeBlock;
+
     int _tileCount;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _tileHasCaptionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _tileImageSizeBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _tileMinimumSizeBlock;
+
 }
 
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } captionPadding;

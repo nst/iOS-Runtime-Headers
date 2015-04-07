@@ -15,9 +15,17 @@
     struct __IOHIDManager { } *_hidManager;
     BOOL _idleTimerNeedsReset;
     NSTimer *_idleWatchTimer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _logger;
+
     <GameControllerDaemon> *_remote;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _requestConnectedHostsCallback;
+
     unsigned int _usbAddedIterator;
     struct IONotificationPort { } *_usbNotify;
     unsigned int _usbRemovedIterator;

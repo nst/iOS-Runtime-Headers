@@ -33,9 +33,9 @@
 @property(retain) UIImage * waveformImage;
 @property(retain) UIImageView * waveformImageView;
 
+- (id)audioController;
 - (void)audioController:(id)arg1 mediaObjectDidFinishPlaying:(id)arg2;
 - (void)audioController:(id)arg1 mediaObjectProgressDidChange:(id)arg2 currentTime:(double)arg3 duration:(double)arg4;
-- (id)audioController;
 - (void)audioControllerDidPause:(id)arg1;
 - (void)audioControllerDidStop:(id)arg1;
 - (id)audioMediaObject;

@@ -15,7 +15,11 @@
     <MCAdvertiserAssistantDelegate> *_delegate;
     NSDictionary *_discoveryInfo;
     NSBundle *_frameworkBundle;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _invitationHandlerForPresentedAlert;
+
     NSMutableArray *_invitationsBuffer;
     BOOL _isAdvertising;
     MCPeerID *_myPeerID;
@@ -42,11 +46,11 @@
 @property(readonly) Class superclass;
 @property BOOL wasAdvertising;
 
-- (void)advertiser:(id)arg1 didReceiveInvitationFromPeer:(id)arg2 withContext:(id)arg3 invitationHandler:(id)arg4;
 - (id)advertiser;
+- (void)advertiser:(id)arg1 didReceiveInvitationFromPeer:(id)arg2 withContext:(id)arg3 invitationHandler:(id)arg4;
+- (id)alertView;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)alertView;
 - (id)appName;
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)applicationWillTerminateNotification:(id)arg1;

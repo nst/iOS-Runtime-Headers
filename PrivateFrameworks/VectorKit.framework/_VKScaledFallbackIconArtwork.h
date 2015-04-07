@@ -5,10 +5,10 @@
 @class VKIconArtwork;
 
 @interface _VKScaledFallbackIconArtwork : VKIconArtwork {
+    VKIconArtwork *_artwork;
     struct CGSize { 
         float width; 
         float height; 
-    VKIconArtwork *_artwork;
     } _size;
 }
 

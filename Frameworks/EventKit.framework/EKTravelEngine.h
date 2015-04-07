@@ -9,7 +9,11 @@
 @class EKTravelAdvisor, EKTravelEngineThrottle, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, PCPersistentTimer;
 
 @interface EKTravelEngine : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _adviceBlock;
+
     BOOL _databaseIsEncryptedAndUnreadable;
     NSMutableDictionary *_eventExternalURLsToAgendaEntries;
     BOOL _needsRefresh;

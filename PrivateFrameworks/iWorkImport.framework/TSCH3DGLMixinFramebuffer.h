@@ -34,7 +34,7 @@
 - (void)protectInSession:(id)arg1 unprotectOnFail:(BOOL)arg2;
 - (void)setClearColor:(const struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; }*)arg1;
 - (void)setClearDepth:(float)arg1;
-- (void)setColorMask:(const struct tvec4<bool> { union { boolx_1_1_1; boolx_1_1_2; boolx_1_1_3; } x1; union { boolx_2_1_1; boolx_2_1_2; boolx_2_1_3; } x2; union { boolx_3_1_1; boolx_3_1_2; boolx_3_1_3; } x3; union { boolx_4_1_1; boolx_4_1_2; boolx_4_1_3; } x4; }*)arg1;
+- (void)setColorMask:(const struct tvec4<bool> { union { bool x_1_1_1; bool x_1_1_2; bool x_1_1_3; } x1; union { bool x_2_1_1; bool x_2_1_2; bool x_2_1_3; } x2; union { bool x_3_1_1; bool x_3_1_2; bool x_3_1_3; } x3; union { bool x_4_1_1; bool x_4_1_2; bool x_4_1_3; } x4; }*)arg1;
 - (void)setDepthFunction:(int)arg1;
 - (void)setDepthMask:(unsigned char)arg1;
 - (void)setOriginal:(id)arg1;

@@ -5,11 +5,11 @@
 @class SKNode, SKRange;
 
 @interface SKOrientationConstraint : SKConstraint {
+    SKNode *_node;
+    SKRange *_offset;
     struct CGPoint { 
         float x; 
         float y; 
-    SKNode *_node;
-    SKRange *_offset;
     } _point;
 }
 

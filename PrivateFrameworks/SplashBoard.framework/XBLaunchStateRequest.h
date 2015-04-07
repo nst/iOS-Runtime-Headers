@@ -5,31 +5,31 @@
 @class NSString;
 
 @interface XBLaunchStateRequest : NSObject <BSXPCCoding> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     int _currentOrientation;
     BOOL _isLaunchingLive;
     BOOL _isMainScene;
     int _launchingOrientation;
     float _scale;
     NSString *_sceneID;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _screenBounds;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _statusBarJailRect;
     unsigned int _statusBarState;
 }

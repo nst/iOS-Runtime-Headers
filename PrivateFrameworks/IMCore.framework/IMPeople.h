@@ -19,8 +19,8 @@
 - (void)_addedPeople:(id)arg1;
 - (BOOL)addIMHandle:(id)arg1;
 - (void)addNotificationObserver:(id)arg1 selector:(SEL)arg2;
-- (BOOL)addPeopleFromArray:(id)arg1 skipMe:(BOOL)arg2;
 - (BOOL)addPeopleFromArray:(id)arg1;
+- (BOOL)addPeopleFromArray:(id)arg1 skipMe:(BOOL)arg2;
 - (void)addedIMHandle:(id)arg1;
 - (void)beginCoalescedChanges;
 - (BOOL)coalescingChanges;

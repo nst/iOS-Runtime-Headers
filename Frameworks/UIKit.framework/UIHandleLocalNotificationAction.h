@@ -17,9 +17,9 @@
 - (id)action;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id)arg4;
+- (id)initWithNotification:(id)arg1;
 - (id)initWithNotification:(id)arg1 action:(id)arg2 withHandler:(id)arg3;
 - (id)initWithNotification:(id)arg1 withHandler:(id)arg2;
-- (id)initWithNotification:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)notification;

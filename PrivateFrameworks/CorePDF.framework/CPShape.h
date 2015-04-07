@@ -3,13 +3,6 @@
  */
 
 @interface CPShape : CPGraphicObject <CPDisposable> {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
     BOOL boundsComputed;
     struct CGColor { } *fillColor;
     union CGPDFObject { } *fillObject;
@@ -18,6 +11,13 @@
     int lineJoin;
     float lineWidth;
     float miterLimit;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } paintTransform;
     struct CGPath { } *path;
     unsigned int pdfObjectID;

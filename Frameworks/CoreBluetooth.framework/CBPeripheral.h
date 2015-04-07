@@ -5,6 +5,10 @@
 @class <CBPeripheralDelegate>, CBCentralManager, NSArray, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
 
 @interface CBPeripheral : CBPeer {
+    NSNumber *_RSSI;
+    NSMutableDictionary *_attributes;
+    CBCentralManager *_centralManager;
+    <CBPeripheralDelegate> *_delegate;
     struct { 
         unsigned int didUpdateName : 1; 
         unsigned int didModifyServices : 1; 
@@ -21,10 +25,6 @@
         unsigned int didUpdateDescriptorValue : 1; 
         unsigned int didWriteDescriptorValue : 1; 
         unsigned int didReceiveTimeSync : 1; 
-    NSNumber *_RSSI;
-    NSMutableDictionary *_attributes;
-    CBCentralManager *_centralManager;
-    <CBPeripheralDelegate> *_delegate;
     } _delegateFlags;
     BOOL _isConnectedToSystem;
     NSString *_name;

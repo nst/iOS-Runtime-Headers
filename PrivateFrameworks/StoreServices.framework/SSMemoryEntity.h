@@ -17,8 +17,8 @@
 + (id)anyInDatabase:(id)arg1 predicate:(id)arg2;
 + (Class)databaseEntityClass;
 + (id)defaultProperties;
-+ (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2;
++ (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)databaseID;

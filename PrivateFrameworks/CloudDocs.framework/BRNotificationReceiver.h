@@ -25,8 +25,12 @@
     unsigned int _receivedChanges;
     NSMutableArray *_senders;
     NSObject<OS_dispatch_source> *_source;
-    NSObject<OS_dispatch_source> *_timer;
+
+  /* Unexpected information at end of encoded ivar type: i */
+  /* Error parsing encoded ivar type info: Ai */
     /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_suspendCount;
+
+    NSObject<OS_dispatch_source> *_timer;
 }
 
 @property unsigned int batchingChanges;

@@ -46,8 +46,8 @@
 - (void).cxx_destruct;
 - (id)addAlternateForMessageVersion:(unsigned long long)arg1;
 - (void)addOwnedSparseReferenceArray:(id)arg1 toArchive:(struct SparseReferenceArrayArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::SparseReferenceArrayArchive_Entry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg2;
-- (void)addSparseReferenceArray:(id)arg1 toArchive:(struct SparseReferenceArrayArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::SparseReferenceArrayArchive_Entry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg2 owned:(BOOL)arg3;
 - (void)addSparseReferenceArray:(id)arg1 toArchive:(struct SparseReferenceArrayArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::SparseReferenceArrayArchive_Entry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg2;
+- (void)addSparseReferenceArray:(id)arg1 toArchive:(struct SparseReferenceArrayArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::SparseReferenceArrayArchive_Entry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg2 owned:(BOOL)arg3;
 - (void)aggregateReferencesFromArchiver:(id)arg1;
 - (id)aggregatedCommandToModelReferences;
 - (id)aggregatedDataReferences;

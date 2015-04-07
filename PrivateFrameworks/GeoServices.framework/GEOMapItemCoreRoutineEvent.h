@@ -5,20 +5,20 @@
 @class GEOAddress, GEOFeatureStyleAttributes, GEOMapItemClientAttributes, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOPDFlyover, GEOPDPlace, GEOPlace, NSArray, NSData, NSDate, NSDictionary, NSString, NSURL;
 
 @interface GEOMapItemCoreRoutineEvent : NSObject <GEOMapItemPrivate> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
+    NSDictionary *_addressDictionary;
+    GEOMapItemClientAttributes *_clientAttributes;
     struct { 
         double latitude; 
         double longitude; 
-    NSDictionary *_addressDictionary;
-    GEOMapItemClientAttributes *_clientAttributes;
     } _coordinate;
     NSDate *_eventDate;
     BOOL _eventIsAllDay;
     NSString *_eventName;
     NSString *_eventTitle;
     GEOPlace *_place;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionID;
 }
 

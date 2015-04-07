@@ -9,7 +9,11 @@
 @class NSMutableData, NSString;
 
 @interface _MKAppImageManagerContainer : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     NSMutableData *_data;
     NSString *_urlString;
 }

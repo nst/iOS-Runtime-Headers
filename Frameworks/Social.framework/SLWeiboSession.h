@@ -8,10 +8,18 @@
 
 @class CLInUseAssertion, NSBundle, NSCache, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol>;
 
-@interface SLWeiboSession : NSObject <SLWeiboClientSessionProtocol, SLMicroBlogSheetDelegate> {
+@interface SLWeiboSession : NSObject <SLMicroBlogSheetDelegate, SLWeiboClientSessionProtocol> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _connectionResetBlock;
+
     CLInUseAssertion *_locationInUseAssertion;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _locationInformationChangedBlock;
+
     NSCache *_profileImageCache;
     SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol> *_remoteSession;
     NSObject<OS_dispatch_queue> *_remoteSessionQueue;

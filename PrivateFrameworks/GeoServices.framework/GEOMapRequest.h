@@ -9,7 +9,11 @@
 @class GEOMapRequestManager;
 
 @interface GEOMapRequest : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     BOOL _isFinished;
     GEOMapRequestManager *_requestManager;
 }

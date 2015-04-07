@@ -56,8 +56,8 @@
 - (void)_printStatisticsCollection:(id)arg1;
 - (void)_printUpdatedStatistics:(id)arg1;
 - (void)_queue_restartCurrentActivityCacheQueryAfterError;
-- (void)_sendMessageToObservers:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (void)_sendMessageToObservers:(SEL)arg1 withObject:(id)arg2;
+- (void)_sendMessageToObservers:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (void)_setKnownSources:(id)arg1;
 - (void)achievementsDidChangeInModel:(id)arg1;
 - (id)achievementsModel;

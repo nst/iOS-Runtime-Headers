@@ -19,10 +19,10 @@
 - (void)_captureOrUpdateLaunchImagesForApplications:(id)arg1 firstImageIsReady:(id)arg2;
 - (void)_removeAllCachedLaunchImages;
 - (void)_removeCachedLaunchImagesForApplications:(id)arg1 forgetApp:(BOOL)arg2;
+- (id)applicationLibrary;
 - (void)applicationLibrary:(id)arg1 _willNotify_didAddApplications:(id)arg2 completion:(id)arg3;
 - (void)applicationLibrary:(id)arg1 _willNotify_didReplaceApplications:(id)arg2 withApplications:(id)arg3 completion:(id)arg4;
 - (void)applicationLibrary:(id)arg1 didRemoveApplications:(id)arg2 completion:(id)arg3;
-- (id)applicationLibrary;
 - (void)dealloc;
 - (id)init;
 - (void)setApplicationLibrary:(id)arg1;

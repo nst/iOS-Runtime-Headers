@@ -5,21 +5,21 @@
 @class NSString, UIImageView, UILabel;
 
 @interface SKStarRatingControl : UIControl {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     UIImageView *_backgroundImageView;
     UILabel *_explanationLabel;
     UIImageView *_foregroundImageView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _hitPadding;
     float _starWidth;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _trackingLastPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _trackingStartPoint;
     float _value;
 }

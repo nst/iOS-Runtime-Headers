@@ -9,41 +9,6 @@
 @class <AVPlayerItemDelegate>, AVAsset, AVAudioMix, AVCustomVideoCompositorSession, AVPlayerConnection, AVPlayerItem, AVPropertyStorage, AVVideoComposition, AVWeakReference, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface AVPlayerItemInternal : NSObject {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     unsigned int RTCReportingFlags;
     NSURL *URL;
     BOOL allowProgressiveSwitchUp;
@@ -75,6 +40,11 @@
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
     struct OpaqueCMTimebase { } *figTimebase;
     void *figVideoCompositor;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } forwardPlaybackEndTime;
     NSDictionary *gaplessInfo;
     NSMutableArray *handlersToCallWhenReadyForEnqueueing;
@@ -88,8 +58,23 @@
     struct __CFString { } *initialFigTimePitchAlgorithm;
     BOOL initialLimitReadAhead;
     int initialPlaybackLikelyToKeepUpTrigger;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } initialTime;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } initialToleranceAfter;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } initialToleranceBefore;
     int initialVariantIndex;
     BOOL initialWillNeverSeekBackwardsHint;
@@ -99,9 +84,19 @@
     NSArray *itemOutputs;
     NSMutableArray *itemVideoOutputs;
     NSObject<OS_dispatch_queue> *ivarAccessQueue;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } maximumTrailingBufferDuration;
     NSString *mediaKind;
     NSMutableDictionary *mediaOptionsSelectedByClient;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } minimumIntervalForIFrameOnlyPlayback;
     BOOL minimumIntervalForIFrameOnlyPlaybackWasSet;
     BOOL needTimedMetadataNotification;
@@ -120,9 +115,18 @@
     NSDictionary *rampInOutInfo;
     BOOL requiresAccessLog;
     unsigned int restrictions;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } reversePlaybackEndTime;
     BOOL savesDownloadedDataToDiskWhenDone;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id seekCompletionHandler;
+
     struct OpaqueFigSimpleMutex { } *seekIDMutex;
     BOOL seekingWaitsForVideoCompositionRendering;
     NSString *serviceIdentifier;

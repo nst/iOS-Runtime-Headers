@@ -23,13 +23,13 @@
 @property(readonly) Class superclass;
 
 - (id)_alongsideAnimationViews;
-- (id)_alongsideAnimations:(BOOL)arg1;
 - (id)_alongsideAnimations;
-- (id)_alongsideCompletions:(BOOL)arg1;
+- (id)_alongsideAnimations:(BOOL)arg1;
 - (id)_alongsideCompletions;
+- (id)_alongsideCompletions:(BOOL)arg1;
 - (void)_applyBlocks:(id)arg1 releaseBlocks:(id)arg2;
-- (id)_interactiveChangeHandlers:(BOOL)arg1;
 - (id)_interactiveChangeHandlers;
+- (id)_interactiveChangeHandlers:(BOOL)arg1;
 - (id)_mainContext;
 - (void)_setAlongsideAnimationViews:(id)arg1;
 - (void)_setAlongsideAnimations:(id)arg1;

@@ -3,26 +3,6 @@
  */
 
 @interface TSTTableRepProcessChangesActions : NSObject {
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
     BOOL _hideChromeContextMenuButton;
     BOOL _hideStepperHUD;
     BOOL _invalidateAllChrome;
@@ -34,7 +14,27 @@
     BOOL _setNeedsDisplay;
     BOOL _syncReferenceHighlightState;
     BOOL _updateEditorRemainders;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } dirtyCellRange;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } dirtyStrokeRange;
 }
 

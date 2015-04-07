@@ -20,7 +20,6 @@
 + (void)saveShapeStylePropertyMap:(id)arg1 toArchive:(struct ShapeStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FillArchive {} *x3; struct StrokeArchive {} *x4; struct ShadowArchive {} *x5; struct ReflectionArchive {} *x6; float x7; int x8; unsigned int x9[1]; }*)arg2 archiver:(id)arg3;
 + (BOOL)validateFloatValue:(float*)arg1 forProperty:(int)arg2;
 
-- (const struct ShapeStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct ShapeStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)shapeStyleArchiveFromUnarchiver:(id)arg1;
 - (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
 - (void)fixImageFillTechniqueForSwatchOfSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initFromUnarchiver:(id)arg1;
@@ -29,6 +28,7 @@
 - (int)mixingTypeWithObject:(id)arg1;
 - (void)saveToArchive:(struct ShapeStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct ShapeStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
+- (const struct ShapeStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct ShapeStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)shapeStyleArchiveFromUnarchiver:(id)arg1;
 - (BOOL)wantsHighContrastBackgroundColor;
 
 @end

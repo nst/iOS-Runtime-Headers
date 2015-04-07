@@ -8,10 +8,10 @@
     struct CGPoint { 
         float x; 
         float y; 
+    } mAdornmentPosition;
     struct CGSize { 
         float width; 
         float height; 
-    } mAdornmentPosition;
     } mAdornmentSize;
     float mBottomHeight;
     float mBottomInset;

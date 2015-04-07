@@ -84,8 +84,8 @@
 - (BOOL)hasLayoutTag:(id)arg1;
 - (int)highlightedVariantIndex;
 - (int)indexOfSubtree:(id)arg1;
-- (id)initWithType:(int)arg1 withName:(id)arg2 withProperties:(id)arg3 withSubtrees:(id)arg4 withCache:(id)arg5;
 - (id)initWithType:(int)arg1;
+- (id)initWithType:(int)arg1 withName:(id)arg2 withProperties:(id)arg3 withSubtrees:(id)arg4 withCache:(id)arg5;
 - (int)intForProperty:(id)arg1;
 - (int)interactionType;
 - (BOOL)isAlphabeticPlane;
@@ -183,8 +183,8 @@
 - (id)stringForProperty:(id)arg1;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })stylingFromVisualStyle;
 - (void)subsumeDisappearingKeyName:(id)arg1 intoKeyName:(id)arg2 factors:(id)arg3;
-- (id)subtreeWithName:(id)arg1 rows:(id)arg2;
 - (id)subtreeWithName:(id)arg1;
+- (id)subtreeWithName:(id)arg1 rows:(id)arg2;
 - (id)subtreeWithType:(int)arg1;
 - (id)subtrees;
 - (BOOL)subtreesAreOrdered;

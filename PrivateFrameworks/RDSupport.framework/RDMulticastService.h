@@ -10,16 +10,28 @@
 
 @interface RDMulticastService : NSObject {
     int _connectionState;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _connectionStateChangedBlock;
+
     BOOL _continueAfterHandshake;
     BOOL _didCompleteHandshake;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handshakeCompletionBlock;
+
     NSObject<OS_dispatch_queue> *_handshakeWorkQueue;
     NSString *_lastKnownIDSPairingRecordsState;
     NSString *_localIP;
     NSString *_localInterfaceName;
     struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; } *_multicastAddr;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _multicastPayloadCallback;
+
     NSObject<OS_dispatch_source> *_multicastSendTimer;
     NSObject<OS_dispatch_source> *_readSource;
     int _receiveSocketFd;

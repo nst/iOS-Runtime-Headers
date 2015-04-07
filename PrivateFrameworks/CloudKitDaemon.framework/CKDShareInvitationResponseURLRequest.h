@@ -10,7 +10,11 @@
 
 @interface CKDShareInvitationResponseURLRequest : CKDURLRequest {
     NSMutableDictionary *_invitationIDByRequestID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _invitationResponsePostedBlock;
+
     NSArray *_invitationsToAccept;
     NSArray *_invitationsToDecline;
 }

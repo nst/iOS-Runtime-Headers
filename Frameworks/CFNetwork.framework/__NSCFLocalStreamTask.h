@@ -11,7 +11,11 @@
 @interface __NSCFLocalStreamTask : __NSCFLocalSessionTask <NSURLSessionStreamTaskSubclass> {
     NSObject<OS_dispatch_data> *_buffer;
     struct __CFWriteStream { } *_sinkForResponseBytes;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _streamCompletion;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

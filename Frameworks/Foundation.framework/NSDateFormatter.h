@@ -68,8 +68,8 @@
 - (void)_regenerateFormatter;
 - (void)_regenerateFormatterIfAbsent;
 - (void)_reset;
-- (void)_setDateFormat:(id)arg1 alreadyLocked:(BOOL)arg2;
 - (void)_setDateFormat:(id)arg1;
+- (void)_setDateFormat:(id)arg1 alreadyLocked:(BOOL)arg2;
 - (void)_setIsLenient:(BOOL)arg1;
 - (void)_setUsesCharacterDirection:(BOOL)arg1;
 - (id)_timeZone_forOldMethods;
@@ -143,8 +143,8 @@
 - (id)standaloneQuarterSymbols;
 - (id)standaloneWeekdaySymbols;
 - (id)stringForObjectValue:(id)arg1;
-- (id)stringFromDate:(id)arg1 withRelativeToTimeZone:(id)arg2;
 - (id)stringFromDate:(id)arg1;
+- (id)stringFromDate:(id)arg1 withRelativeToTimeZone:(id)arg2;
 - (unsigned int)timeStyle;
 - (id)timeZone;
 - (id)twoDigitStartDate;

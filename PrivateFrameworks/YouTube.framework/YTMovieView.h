@@ -45,8 +45,8 @@
 - (id)fullscreenView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isPlaying;
-- (BOOL)moviePlayer:(id)arg1 validateAction:(SEL)arg2;
 - (id)moviePlayer;
+- (BOOL)moviePlayer:(id)arg1 validateAction:(SEL)arg2;
 - (BOOL)moviePlayerAddBookmarkButtonPressed:(id)arg1;
 - (BOOL)moviePlayerBackwardButtonPressed:(id)arg1;
 - (void)moviePlayerBufferingStateDidChange:(id)arg1;

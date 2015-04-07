@@ -17,7 +17,11 @@
     short lastTriggeredSlot;
     unsigned long long records;
     AppLaunchStatsSaveAndRestore *saveAndRestoreContext;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id scoreCallback;
+
     NSObject<OS_dispatch_queue> *statsQueue;
 }
 

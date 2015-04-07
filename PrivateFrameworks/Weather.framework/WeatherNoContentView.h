@@ -5,10 +5,10 @@
 @class UIView;
 
 @interface WeatherNoContentView : UIView {
+    UIView *_centerView;
     struct { 
         float centerLabelHorizontalOffset; 
         float viewSize; 
-    UIView *_centerView;
     } _layout;
 }
 

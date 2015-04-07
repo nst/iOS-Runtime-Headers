@@ -45,8 +45,8 @@
 - (void)accessChanged;
 - (id)accessDeniedView;
 - (void*)addressBook;
-- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (id)contactViewController;
+- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (id)dataSource;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;

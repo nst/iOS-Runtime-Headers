@@ -22,8 +22,8 @@
 - (id)init;
 - (int)p_resourceUpdateFlag;
 - (void)p_updateResourceUpdateFlags:(int)arg1;
-- (id)resourceAtIndex:(unsigned int)arg1 created:(BOOL*)arg2 ifAbsent:(id)arg3;
 - (id)resourceAtIndex:(unsigned int)arg1;
+- (id)resourceAtIndex:(unsigned int)arg1 created:(BOOL*)arg2 ifAbsent:(id)arg3;
 - (unsigned int)resourceCount;
 - (void)setCachingEnabled:(BOOL)arg1;
 

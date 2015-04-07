@@ -5,12 +5,12 @@
 @class NSDictionary, NSString, UIColor;
 
 @interface MPUExtrasGridSectionHeaderStyle : NSObject {
+    NSDictionary *_defaultFontAttributes;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSDictionary *_defaultFontAttributes;
     } _insets;
     float _textBaselineDescender;
     float _textBaselineHeight;

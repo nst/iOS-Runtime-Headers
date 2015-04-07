@@ -4,7 +4,7 @@
 
 @class NSString, SKStoreProductViewController, SKUIIPhoneProductPageViewController, SKUIStorePageViewController, UIViewController;
 
-@interface SUSKUIStorePageViewController : SUViewController <SKUIIPhoneProductPageDelegate, SKStoreProductViewControllerDelegatePrivate> {
+@interface SUSKUIStorePageViewController : SUViewController <SKStoreProductViewControllerDelegatePrivate, SKUIIPhoneProductPageDelegate> {
     UIViewController *_activeChildViewController;
     SKUIIPhoneProductPageViewController *_iphoneProductPageViewController;
     SKStoreProductViewController *_remoteProductViewController;

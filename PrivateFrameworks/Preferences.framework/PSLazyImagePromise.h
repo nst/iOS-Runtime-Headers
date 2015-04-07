@@ -14,7 +14,11 @@
     BOOL _imageLoaded;
     NSString *_imageName;
     NSString *_imagePath;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _loadBlock;
+
 }
 
 @property(readonly) UIImage * image;

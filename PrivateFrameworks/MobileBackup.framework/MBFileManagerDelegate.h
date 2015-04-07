@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface MBFileManagerDelegate : NSObject <NSFileManagerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shouldCopyItemAtPathToPath;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

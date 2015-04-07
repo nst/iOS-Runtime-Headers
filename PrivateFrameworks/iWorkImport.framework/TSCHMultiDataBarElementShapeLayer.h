@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHMultiDataBarElementShapeLayer : CAShapeLayer <TSCHMultiDataElementShapeLayer, TSCHMultiDataAnimatingPathLayerProtocol> {
+@interface TSCHMultiDataBarElementShapeLayer : CAShapeLayer <TSCHMultiDataAnimatingPathLayerProtocol, TSCHMultiDataElementShapeLayer> {
     BOOL mAboveIntercept;
     struct CGPath { } *mPresentationPath;
 }

@@ -5,14 +5,6 @@
 @class NSArray, NSMapTable;
 
 @interface UIDynamicItemBehavior : UIDynamicBehavior {
-    struct { 
-        unsigned int elasticityChanged : 1; 
-        unsigned int frictionChanged : 1; 
-        unsigned int densityChanged : 1; 
-        unsigned int resistanceChanged : 1; 
-        unsigned int angularResistanceChanged : 1; 
-        unsigned int rotationEnabledChanged : 1; 
-        unsigned int useDefaultViewPropertiesApplierChanged : 1; 
     BOOL _allowsRotation;
     float _angularResistance;
     NSMapTable *_cachedAngularVelocities;
@@ -21,6 +13,14 @@
     float _elasticity;
     float _friction;
     float _resistance;
+    struct { 
+        unsigned int elasticityChanged : 1; 
+        unsigned int frictionChanged : 1; 
+        unsigned int densityChanged : 1; 
+        unsigned int resistanceChanged : 1; 
+        unsigned int angularResistanceChanged : 1; 
+        unsigned int rotationEnabledChanged : 1; 
+        unsigned int useDefaultViewPropertiesApplierChanged : 1; 
     } _stateFlags;
     BOOL _useCircularBoundingBox;
     BOOL _useDefaultViewPropertiesApplier;

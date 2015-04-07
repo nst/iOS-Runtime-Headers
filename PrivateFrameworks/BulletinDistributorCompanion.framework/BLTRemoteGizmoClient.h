@@ -15,12 +15,12 @@
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)addBulletin:(id)arg1 playLightsAndSirens:(BOOL)arg2;
 - (void)addBulletin:(id)arg1 playLightsAndSirens:(BOOL)arg2 updateType:(unsigned int)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5;
 - (void)addBulletin:(id)arg1 playLightsAndSirens:(BOOL)arg2 updateType:(unsigned int)arg3 withTimeout:(id)arg4 completion:(id)arg5;
-- (void)addBulletin:(id)arg1 playLightsAndSirens:(BOOL)arg2;
 - (void)addBulletinSummary:(id)arg1;
-- (void)cancelBulletinWithPublisherMatchID:(id)arg1 universalSectionID:(id)arg2 feed:(unsigned int)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5;
 - (void)cancelBulletinWithPublisherMatchID:(id)arg1 universalSectionID:(id)arg2 feed:(unsigned int)arg3;
+- (void)cancelBulletinWithPublisherMatchID:(id)arg1 universalSectionID:(id)arg2 feed:(unsigned int)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5;
 - (void)handleAcknowledgeActionRequest:(id)arg1;
 - (void)handleDidPlayLightsAndSirensReply:(id)arg1;
 - (void)handleDismissActionRequest:(id)arg1;

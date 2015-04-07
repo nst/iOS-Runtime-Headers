@@ -10,11 +10,19 @@
 
 @interface AXIPCServer : NSObject {
     unsigned int _assignedServerPort;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _clientInvalidationHandler;
+
     unsigned int _clientInvalidationPort;
     struct __CFRunLoopSource { } *_clientInvalidationSource;
     NSMutableSet *_connectedClients;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _defaultHandler;
+
     NSMutableDictionary *_entitlements;
     NSMutableDictionary *_handlers;
     BOOL _perPidService;
@@ -58,8 +66,8 @@
 - (void)setClientInvalidationCallback:(id)arg1;
 - (void)setDefaultHandler:(id)arg1;
 - (void)setHandler:(id)arg1 forKey:(int)arg2;
-- (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 forKey:(int)arg3 possibleRequiredEntitlements:(id)arg4;
 - (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 forKey:(int)arg3;
+- (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 forKey:(int)arg3 possibleRequiredEntitlements:(id)arg4;
 - (void)setHandlers:(id)arg1;
 - (void)setPerPidService:(BOOL)arg1;
 - (void)setRunning:(BOOL)arg1;

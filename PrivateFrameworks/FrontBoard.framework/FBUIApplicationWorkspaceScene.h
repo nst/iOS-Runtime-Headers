@@ -30,8 +30,8 @@
 - (void)_workspaceQueue_deactivateResponseReceived:(id)arg1;
 - (unsigned int)_workspaceQueue_determineSceneActionFromSettings:(id)arg1 toSettings:(id)arg2;
 - (void)_workspaceQueue_dropAllProcessAssertions;
-- (void)_workspaceQueue_dropDeliverMessageProcessAssertion:(BOOL)arg1;
 - (void)_workspaceQueue_dropDeliverMessageProcessAssertion;
+- (void)_workspaceQueue_dropDeliverMessageProcessAssertion:(BOOL)arg1;
 - (void)_workspaceQueue_dropResumeProcessAssertion;
 - (void)_workspaceQueue_dropSEOProcessAssertion;
 - (void)_workspaceQueue_dropSuspendingProcessAssertion;

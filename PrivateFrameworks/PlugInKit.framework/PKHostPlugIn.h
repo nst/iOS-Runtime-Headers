@@ -8,7 +8,7 @@
 
 @class <PKCorePlugInProtocol>, <PKPlugIn>, NSArray, NSBundle, NSDate, NSDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL, NSUUID, NSUserDefaults, NSXPCConnection, Protocol;
 
-@interface PKHostPlugIn : PKPlugInCore <PKPlugInPrivate, NSXPCConnectionDelegate> {
+@interface PKHostPlugIn : PKPlugInCore <NSXPCConnectionDelegate, PKPlugInPrivate> {
     NSObject<OS_dispatch_queue> *__replyQueue;
     NSObject<OS_dispatch_queue> *__startQueue;
     NSObject<OS_dispatch_queue> *__syncQueue;
@@ -17,7 +17,11 @@
     NSDictionary *_discoveryExtensions;
     NSBundle *_embeddedBundle;
     id _embeddedPrincipal;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _notificationBlock;
+
     id _plugInPrincipal;
     NSXPCConnection *_pluginConnection;
     id _queuedHostPrincipal;

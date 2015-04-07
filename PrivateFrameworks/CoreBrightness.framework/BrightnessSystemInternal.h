@@ -9,13 +9,17 @@
 @class BLControl, NSMutableDictionary, NSString, NSTimer;
 
 @interface BrightnessSystemInternal : NSThread <NSXPCListenerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callback;
+
     NSMutableDictionary *_clients;
     NSMutableDictionary *_clientsProps;
+    bool _initializationComplete;
+    bool _shouldKeepRunning;
     NSTimer *_timer;
     BLControl *bl;
-    bool_initializationComplete;
-    bool_shouldKeepRunning;
 }
 
 @property(copy,readonly) NSString * debugDescription;

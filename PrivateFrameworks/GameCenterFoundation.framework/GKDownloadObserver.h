@@ -17,8 +17,8 @@
 + (id)sharedObserver;
 
 - (void)dealloc;
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)downloadManager;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)init;
 - (BOOL)isDownloadingGame:(id)arg1;
 - (void)setDownloadManager:(id)arg1;

@@ -29,8 +29,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned int)hash;
-- (id)initWithURL:(id)arg1 sourceApplication:(id)arg2 annotation:(id)arg3;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 sourceApplication:(id)arg2 annotation:(id)arg3;
 - (id)initWithURLBagKey:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)newURLRequest;

@@ -29,8 +29,8 @@
 - (void)canActivateApplication:(id)arg1 withResult:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (void)exitAndRelaunch:(BOOL)arg1 withOptions:(unsigned int)arg2;
 - (void)exitAndRelaunch:(BOOL)arg1;
+- (void)exitAndRelaunch:(BOOL)arg1 withOptions:(unsigned int)arg2;
 - (void)handleActions:(id)arg1 source:(id)arg2 withResult:(id)arg3;
 - (id)initWithQueue:(id)arg1;
 - (int)pidForApplication:(id)arg1;

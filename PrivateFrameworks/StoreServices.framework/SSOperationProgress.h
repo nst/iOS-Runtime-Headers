@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface SSOperationProgress : NSObject <SSXPCCoding, NSCopying> {
+@interface SSOperationProgress : NSObject <NSCopying, SSXPCCoding> {
     BOOL _canPause;
     double _changeRate;
     long long _currentValue;

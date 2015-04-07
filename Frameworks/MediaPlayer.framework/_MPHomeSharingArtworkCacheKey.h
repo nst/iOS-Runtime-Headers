@@ -3,10 +3,10 @@
  */
 
 @interface _MPHomeSharingArtworkCacheKey : NSObject {
+    unsigned long long _persistentID;
     struct CGSize { 
         float width; 
         float height; 
-    unsigned long long _persistentID;
     } _size;
 }
 

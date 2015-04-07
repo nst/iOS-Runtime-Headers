@@ -5,12 +5,12 @@
 @class NSData, NSObject<OS_dispatch_semaphore>;
 
 @interface _UIDecompressionInfo : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL decompressionComplete;
     NSData *imageData;
     unsigned long jpegDecodeRequestID;
+    struct CGSize { 
+        float width; 
+        float height; 
     } maxSize;
     BOOL metadataComplete;
     NSObject<OS_dispatch_semaphore> *metadataSemaphore;

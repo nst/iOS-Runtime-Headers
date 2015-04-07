@@ -14,30 +14,34 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface BLControl : NSObject {
+    bool AABEnabled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callback;
+
     void *_callbackContext;
     struct AABC {} *aab[2];
+    bool aabExist;
     struct __IOHIDServiceClient {} *alsClient[3];
     unsigned int alsCount;
     unsigned int alsNode[3];
     unsigned int alsOrientation[3];
     unsigned int backlight[2];
-    boolAABEnabled;
-    boolaabExist;
-    boolignoreALSEvents;
-    boolignoreBrightnessKey;
-    boolmonitorALSOnly;
-    booloverrideIgnoreBrightness;
-    booluseRootQueue;
-    unsigned int displayCount;
     struct __Display {} *display[2];
+    unsigned int displayCount;
     unsigned int driverNode[3];
     struct __IOHIDEventSystemClient { } *hidSystemClient;
-    struct LegacyBacklightC { int (**x1)(); unsigned int x2; struct __Display {} *x3; unsigned int x4; int x5; struct __IOHIDServiceClient {} *x6; float x7; struct _ALS_Struct { float x_8_1_1; float x_8_1_2; float x_8_1_3; float x_8_1_4; int x_8_1_5; float x_8_1_6; float x_8_1_7; float x_8_1_8; float x_8_1_9; id x_8_1_10; struct { unsigned int x_11_2_1; boolx_11_2_2; boolx_11_2_3; float x_11_2_4; float x_11_2_5; float x_11_2_6; } x_8_1_11; struct { int x_12_2_1; unsigned char x_12_2_2; float x_12_2_3; unsigned int x_12_2_4; id x_12_2_5; } x_8_1_12; struct { unsigned char x_13_2_1; float x_13_2_2; id x_13_2_3; } x_8_1_13; } x8; struct __CFDictionary {} *x9; float x10; int (*x11)(); void *x12; } *legacyAutoBacklight;
-    unsigned int otherClientsCount;
+    bool ignoreALSEvents;
+    bool ignoreBrightnessKey;
+    struct LegacyBacklightC { int (**x1)(); unsigned int x2; struct __Display {} *x3; unsigned int x4; int x5; struct __IOHIDServiceClient {} *x6; float x7; struct _ALS_Struct { float x_8_1_1; float x_8_1_2; float x_8_1_3; float x_8_1_4; int x_8_1_5; float x_8_1_6; float x_8_1_7; float x_8_1_8; float x_8_1_9; id x_8_1_10; struct { unsigned int x_11_2_1; bool x_11_2_2; bool x_11_2_3; float x_11_2_4; float x_11_2_5; float x_11_2_6; } x_8_1_11; struct { int x_12_2_1; unsigned char x_12_2_2; float x_12_2_3; unsigned int x_12_2_4; id x_12_2_5; } x_8_1_12; struct { unsigned char x_13_2_1; float x_13_2_2; id x_13_2_3; } x_8_1_13; } x8; struct __CFDictionary {} *x9; float x10; int (*x11)(); void *x12; } *legacyAutoBacklight;
+    bool monitorALSOnly;
     struct __IOHIDServiceClient {} *otherClients[3];
+    unsigned int otherClientsCount;
+    bool overrideIgnoreBrightness;
     NSObject<OS_dispatch_queue> *queue;
     NSObject<OS_dispatch_queue> *rootQueue;
+    bool useRootQueue;
 }
 
 - (void)callBlockWithProperty:(struct __CFString { }*)arg1 value:(void*)arg2;

@@ -8,9 +8,13 @@
 
 @class CNFRegController, IDSAccountController, NSDictionary, NSString;
 
-@interface FTRegAccountServiceDelegate : NSObject <AASetupAssistantDelegateService, AAAppleIDLoginPlugin> {
+@interface FTRegAccountServiceDelegate : NSObject <AAAppleIDLoginPlugin, AASetupAssistantDelegateService> {
     IDSAccountController *_accountController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     CNFRegController *_regController;
     NSDictionary *_responseDictionary;
 }

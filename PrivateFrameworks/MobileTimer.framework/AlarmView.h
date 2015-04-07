@@ -48,8 +48,8 @@
 - (id)repeatLabel;
 - (id)repeatText;
 - (id)secondaryDesignatorLabel;
-- (void)setName:(id)arg1 andRepeatText:(id)arg2 textColor:(id)arg3;
 - (void)setName:(id)arg1;
+- (void)setName:(id)arg1 andRepeatText:(id)arg2 textColor:(id)arg3;
 - (void)setNameFont:(id)arg1;
 - (void)setRepeatFont:(id)arg1;
 - (void)setRepeatText:(id)arg1;

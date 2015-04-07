@@ -4,7 +4,7 @@
 
 @class NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, _UISettings;
 
-@interface PTSSection : NSObject <_UISettingsKeyPathObserver, _UISettingsGroupObserver> {
+@interface PTSSection : NSObject <_UISettingsGroupObserver, _UISettingsKeyPathObserver> {
     NSMutableArray *_allConcreteRows;
     NSArray *_appearanceConditions;
     NSMutableDictionary *_concreteRowsByTemplateIndex;
@@ -51,8 +51,8 @@
 - (void)setSettings:(id)arg1;
 - (void)setSubmoduleKeyPath:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)settings;
+- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (void)settingsGroup:(id)arg1 didInsertSettings:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)settingsGroup:(id)arg1 didMoveSettings:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;
 - (void)settingsGroup:(id)arg1 didRemoveSettings:(id)arg2 atIndex:(unsigned int)arg3;

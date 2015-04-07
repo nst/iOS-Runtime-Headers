@@ -5,13 +5,20 @@
 @class GEOLocation, GEOMapRegion, NSMutableArray, NSString;
 
 @interface GEOMapServiceTraits : PBCodable <NSCopying> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
+    int _action;
+    NSString *_appIdentifier;
+    NSString *_appMajorVersion;
+    NSString *_appMinorVersion;
+    int _carHeadunitInteractionModel;
+    NSString *_carHeadunitManufacturer;
+    NSString *_carHeadunitModel;
+    double _carHeadunitPixelHeight;
+    double _carHeadunitPixelWidth;
+    NSString *_deviceDisplayLocale;
+    NSMutableArray *_deviceInstalledKeyboardLocales;
+    NSString *_deviceKeyboardLocale;
+    GEOLocation *_deviceLocation;
+    NSString *_deviceSpokenLocale;
     struct { 
         unsigned int sessionId : 1; 
         unsigned int carHeadunitPixelHeight : 1; 
@@ -27,20 +34,6 @@
         unsigned int timeSinceMapEnteredForeground : 1; 
         unsigned int timeSinceMapViewportChanged : 1; 
         unsigned int isAPICall : 1; 
-    int _action;
-    NSString *_appIdentifier;
-    NSString *_appMajorVersion;
-    NSString *_appMinorVersion;
-    int _carHeadunitInteractionModel;
-    NSString *_carHeadunitManufacturer;
-    NSString *_carHeadunitModel;
-    double _carHeadunitPixelHeight;
-    double _carHeadunitPixelWidth;
-    NSString *_deviceDisplayLocale;
-    NSMutableArray *_deviceInstalledKeyboardLocales;
-    NSString *_deviceKeyboardLocale;
-    GEOLocation *_deviceLocation;
-    NSString *_deviceSpokenLocale;
     } _has;
     BOOL _isAPICall;
     GEOMapRegion *_mapRegion;
@@ -51,10 +44,17 @@
     NSMutableArray *_reviewUserPhotoSizes;
     unsigned int _reviewUserPhotosCount;
     unsigned int _sequenceNumber;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionId;
     int _source;
     unsigned int _timeSinceMapEnteredForeground;
     unsigned int _timeSinceMapViewportChanged;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _transportTypes;
 }
 

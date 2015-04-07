@@ -4,7 +4,7 @@
 
 @class <AFUISpeechSynthesisDelegate>, <AFUISpeechSynthesisLocalDelegate>, AFUIQueue, AFVoiceInfo, NSMutableArray, NSString, VSSpeechSynthesizer;
 
-@interface AFUISpeechSynthesis : NSObject <AFUIQueueDelegate, AFUISpeechSynthesisElementDelegate, VSSpeechSynthesizerDelegate, AFUISpeechSynthesis> {
+@interface AFUISpeechSynthesis : NSObject <AFUIQueueDelegate, AFUISpeechSynthesis, AFUISpeechSynthesisElementDelegate, VSSpeechSynthesizerDelegate> {
     NSMutableArray *_activeElements;
     <AFUISpeechSynthesisDelegate> *_delegate;
     AFUIQueue *_elementQueue;

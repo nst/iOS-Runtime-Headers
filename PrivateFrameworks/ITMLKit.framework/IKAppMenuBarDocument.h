@@ -4,7 +4,7 @@
 
 @class <IKAppMenuBarDocumentDelegate>, IKAppContext, IKJSMenuBarDocument, IKViewElement, NSMutableDictionary, NSString;
 
-@interface IKAppMenuBarDocument : NSObject <IKJSMenuBarDocumentAppBridge, IKDOMFeature> {
+@interface IKAppMenuBarDocument : NSObject <IKDOMFeature, IKJSMenuBarDocumentAppBridge> {
     IKAppContext *_appContext;
     <IKAppMenuBarDocumentDelegate> *_delegate;
     NSMutableDictionary *_documentOptionsByMenuItemElementID;

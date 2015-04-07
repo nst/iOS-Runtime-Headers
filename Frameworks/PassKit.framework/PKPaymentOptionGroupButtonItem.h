@@ -7,7 +7,11 @@
  */
 
 @interface PKPaymentOptionGroupButtonItem : PKPaymentOptionGroupItem {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _buttonHandler;
+
 }
 
 @property(copy) id buttonHandler;

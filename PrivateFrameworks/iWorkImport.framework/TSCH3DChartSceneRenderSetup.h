@@ -14,6 +14,8 @@
             float g; 
             float t; 
         } ; 
+    } mOffsetFromLayerRelativeToBodyCanvas;
+    float mScale;
     struct ChartProjectedBoundsSpaces { 
         struct box<glm::detail::tvec2<float> > { 
             struct tvec2<float> { 
@@ -223,8 +225,6 @@
                 } ; 
             } mMax; 
         } mContainingViewport; 
-    } mOffsetFromLayerRelativeToBodyCanvas;
-    float mScale;
     } mSpaces;
 }
 
@@ -235,7 +235,7 @@
 + (id)setup;
 
 - (id).cxx_construct;
-- (struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; boolx3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; })converter;
+- (struct ChartProjectedBoundsConverter { struct ChartProjectedBoundsSpaces {} *x1; float x2; bool x3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; })converter;
 - (void)copyFromChartRenderSetup:(id)arg1;
 - (id)init;
 - (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })offsetFromLayerRelativeToBodyCanvas;

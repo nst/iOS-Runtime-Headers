@@ -15,7 +15,11 @@
     NSOperationQueue *_messageQueue;
     BOOL _started;
     struct __FSEventStream { } *_streamRef;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateHandler;
+
     NSURL *_url;
 }
 

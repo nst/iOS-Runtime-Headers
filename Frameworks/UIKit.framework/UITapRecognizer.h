@@ -5,25 +5,25 @@
 @class <UITapRecognizerDelegate>, NSArray, NSMutableArray, NSMutableSet;
 
 @interface UITapRecognizer : NSObject <NSCoding> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    unsigned int _timerOn : 1;
-    unsigned int _noNewTouches : 1;
     NSMutableSet *_activeTouches;
     float _allowableMovement;
     int _currentNumberOfTaps;
     int _currentNumberOfTouches;
     id _delegate;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _location;
     double _maximumIntervalBetweenSuccessiveTaps;
     double _maximumSingleTapDuration;
+    unsigned int _noNewTouches : 1;
     unsigned int _numberOfTapsRequired;
     unsigned int _numberOfTouchesRequired;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _startPoint;
+    unsigned int _timerOn : 1;
     NSMutableArray *_touches;
 }
 

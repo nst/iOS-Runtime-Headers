@@ -5,9 +5,6 @@
 @class NSString;
 
 @interface _MPUFallAnimatorDynamicItem : NSObject <UIDynamicItem> {
-    struct CGPoint { 
-        float x; 
-        float y; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,6 +14,11 @@
             float width; 
             float height; 
         } size; 
+    } _bounds;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _center;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -24,8 +26,6 @@
         float d; 
         float tx; 
         float ty; 
-    } _bounds;
-    } _center;
     } _transform;
 }
 

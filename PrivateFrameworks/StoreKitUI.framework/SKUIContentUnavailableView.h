@@ -5,13 +5,13 @@
 @class NSString, SKUIAttributedStringView, SKUIButtonViewElement, SKUIImageView, SKUIImageViewElement, UIControl;
 
 @interface SKUIContentUnavailableView : SKUIViewReuseView <SKUIViewElementView> {
+    UIControl *_button;
+    SKUIButtonViewElement *_buttonElement;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIControl *_button;
-    SKUIButtonViewElement *_buttonElement;
     } _contentInset;
     SKUIImageViewElement *_imageElement;
     SKUIImageView *_imageView;

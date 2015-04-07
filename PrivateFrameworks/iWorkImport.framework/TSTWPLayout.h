@@ -5,56 +5,56 @@
 @class TSTCellStyle, TSWPPadding, TSWPParagraphStyle;
 
 @interface TSTWPLayout : TSWPLayout {
+    BOOL _cacheIsValid;
+    unsigned int _cachedAutoSizeFlags;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _cachedAutosizedFrame;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    BOOL _cacheIsValid;
-    unsigned int _cachedAutoSizeFlags;
-    } _cachedAutosizedFrame;
     } _cachedCellID;
     TSTCellStyle *_cachedCellStyle;
     BOOL _cachedCellWraps;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _cachedMaskRect;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } _cachedMaskSpillRange;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } _cachedMergeRange;
     TSWPPadding *_cachedPadding;
     int _cachedParagraphAlignment;

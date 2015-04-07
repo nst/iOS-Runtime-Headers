@@ -17,8 +17,8 @@
 - (void)layoutSubviews;
 - (unsigned int)roundedCornersEdge;
 - (void)setRoundedCornersEdge:(unsigned int)arg1;
-- (void)setThumbnail:(id)arg1 animated:(BOOL)arg2;
 - (void)setThumbnail:(id)arg1;
+- (void)setThumbnail:(id)arg1 animated:(BOOL)arg2;
 - (id)thumbnail;
 
 @end

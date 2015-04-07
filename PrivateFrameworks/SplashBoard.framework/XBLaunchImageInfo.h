@@ -5,9 +5,6 @@
 @class NSString, UIImage;
 
 @interface XBLaunchImageInfo : NSObject <BSXPCCoding> {
-    struct CGSize { 
-        float width; 
-        float height; 
     UIImage *_image;
     BOOL _isDownscaled;
     BOOL _isOpaque;
@@ -15,6 +12,9 @@
     int _orientation;
     NSString *_path;
     float _scale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
 }
 

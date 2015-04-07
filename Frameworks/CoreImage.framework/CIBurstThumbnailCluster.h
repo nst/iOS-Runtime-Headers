@@ -11,7 +11,11 @@
 @interface CIBurstThumbnailCluster : NSObject {
     struct __IOSurface { } *_fullsizeJpegData;
     NSMutableArray *burstImages;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id completionBlock;
+
     CIBurstYUVImage *image;
     NSMutableDictionary *imageProps;
 }

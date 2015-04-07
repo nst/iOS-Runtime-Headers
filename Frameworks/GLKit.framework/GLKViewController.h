@@ -9,8 +9,7 @@
 
 @class <GLKViewControllerDelegate>, CADisplayLink, GLKDisplayLinkMessenger, NSString, UIScreen;
 
-@interface GLKViewController : UIViewController <NSCoding, GLKViewDelegate> {
-    int (*_updateIMP)();
+@interface GLKViewController : UIViewController <GLKViewDelegate, NSCoding> {
     <GLKViewControllerDelegate> *_delegate;
     CADisplayLink *_displayLink;
     GLKDisplayLinkMessenger *_displayLinkMessenger;
@@ -35,6 +34,7 @@
     double _timeSinceLastResumeStartTime;
     double _timeSinceLastUpdate;
     double _timeSinceLastUpdatePreviousTime;
+    int (*_updateIMP)();
     BOOL _viewIsVisible;
 }
 
@@ -70,7 +70,6 @@
 @property int (* updateIMP;
 @property BOOL viewIsVisible;
 
-- (int (*)())updateIMP;
 - (int)_calculateScreenFramesPerSecond:(id)arg1;
 - (void)_configureNotifications;
 - (void)_createDisplayLinkForScreen:(id)arg1;
@@ -133,6 +132,7 @@
 - (double)timeSinceLastResumeStartTime;
 - (double)timeSinceLastUpdate;
 - (double)timeSinceLastUpdatePreviousTime;
+- (int (*)())updateIMP;
 - (void)viewDidLoad;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (void)viewDidUnload;

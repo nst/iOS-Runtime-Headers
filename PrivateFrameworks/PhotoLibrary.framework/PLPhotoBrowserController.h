@@ -4,47 +4,7 @@
 
 @class <PLPhotoBrowserControllerDelegate>, <PLRootLibraryNavigationController>, NSArray, NSDictionary, NSIndexPath, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSNumberFormatter, NSString, NSTimer, PHAsset, PHAssetCollection, PHCachingImageManager, PHFetchResult, PLAirPlayBackgroundView, PLAirPlaySession, PLAssetContainerDataSource, PLDeletePhotosActionController, PLEditPhotoController, PLPhotoScrubber, PLPhotoTileViewController, PLPictureFramePlugin, PLProgressHUD, PLProgressView, PLVideoRemaker, PLVideoView, UIActionSheet, UIAlertView, UIImage, UILongPressGestureRecognizer, UINavigationBar, UIPageController, UIScrollView, UITransitionView, UIView, UIWindow;
 
-@interface PLPhotoBrowserController : UIViewController <PLAirPlaySessionDataSource, PLPhotoScrubberSpeedDelegate, UIPageControllerDelegate, PLPhotoTileViewControllerDelegate, PLVideoViewDelegate, UIScrollViewDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIActionSheetDelegate, PLPhotoScrubberDataSource, UIPopoverControllerDelegate, PLSlideshowPluginDelegate, AirPlayRemoteSlideshowDelegate, PLDismissableViewController, PHPhotoLibraryChangeObserver> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    unsigned int _videoEditingMode : 1;
-    unsigned int _remaking : 1;
-    unsigned int _isEditingPhoto : 1;
-    unsigned int _clearingFullScreenView : 1;
-    unsigned int _scrolling : 1;
-    unsigned int _canShowCopyCallout : 1;
-    unsigned int _viewIsDisappearing : 1;
-    unsigned int _viewDidAppear : 1;
-    unsigned int _didRotate : 1;
-    unsigned int _isAnimatingTrash : 1;
-    unsigned int _isPlayingMusic : 1;
-    unsigned int _didStartMusicPlayback : 1;
-    unsigned int _rotationDisabledUnderCropOverlay : 1;
-    unsigned int _didSetSimpleRemotePriority : 1;
-    unsigned int _paging : 1;
-    unsigned int _collapsing : 1;
-    unsigned int _rotating : 1;
-    unsigned int _reloadPhotoScrubber : 1;
-    unsigned int _videoViewWillBeginEditing : 1;
-    unsigned int _playVideoOnActivation : 1;
-    unsigned int _remakingWasCancelled : 1;
-    unsigned int _canUploadHDVideoOver3G : 1;
-    unsigned int _didSetHDVideoUploadCapability : 1;
-    unsigned int _didShowHDRPrompt : 1;
-    unsigned int _imagesAreShuffled : 1;
-    unsigned int _isEditingComment : 1;
-    unsigned int _slideShowIsStreamed : 1;
-    unsigned int _airTunesSlideShowIsEnding : 1;
+@interface PLPhotoBrowserController : UIViewController <AirPlayRemoteSlideshowDelegate, PHPhotoLibraryChangeObserver, PLAirPlaySessionDataSource, PLDismissableViewController, PLPhotoScrubberDataSource, PLPhotoScrubberSpeedDelegate, PLPhotoTileViewControllerDelegate, PLSlideshowPluginDelegate, PLVideoViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, UIPageControllerDelegate, UIPopoverControllerDelegate, UIScrollViewDelegate> {
     <PLPhotoBrowserControllerDelegate> *__delegate;
     BOOL __enableInteractionEventsAfterUpdatingTileIndex;
     PLAssetContainerDataSource *__originalAssetContainerDataSource;
@@ -54,6 +14,7 @@
     SEL _activityAction;
     id _activityTarget;
     PLAirPlayBackgroundView *_airTunesBackgroundView;
+    unsigned int _airTunesSlideShowIsEnding : 1;
     PLAirPlaySession *_airplaySession;
     UIAlertView *_alertView;
     BOOL _animating;
@@ -65,9 +26,16 @@
     PHCachingImageManager *_cachingImageManager;
     UITransitionView *_cameraTransitionView;
     BOOL _canDelayImageLoading;
+    unsigned int _canShowCopyCallout : 1;
+    unsigned int _canUploadHDVideoOver3G : 1;
+    unsigned int _clearingFullScreenView : 1;
+    unsigned int _collapsing : 1;
     UINavigationBar *_commentsEditBar;
     int _commentsInteractionMode;
     BOOL _commentsTableWasVisible;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _contentStartSize;
     int _currentAirTunesMode;
     NSString *_currentAirTunesTransition;
@@ -82,21 +50,41 @@
     NSIndexPath *_deletedIndexPath;
     PLPhotoTileViewController *_deletedTile;
     BOOL _deletesDuplicatesWhenNecessary;
+    unsigned int _didRotate : 1;
+    unsigned int _didSetHDVideoUploadCapability : 1;
+    unsigned int _didSetSimpleRemotePriority : 1;
+    unsigned int _didShowHDRPrompt : 1;
+    unsigned int _didStartMusicPlayback : 1;
     PLEditPhotoController *_editController;
     float _endScale;
     UIView *_fadeToBlackView;
     BOOL _fadingToBlack;
     BOOL _ignoringInteractionEventsForVideoViewRemaking;
     NSMutableDictionary *_imageRequestsByIdentifier;
+    unsigned int _imagesAreShuffled : 1;
+    unsigned int _isAnimatingTrash : 1;
     BOOL _isCameraApp;
+    unsigned int _isEditingComment : 1;
+    unsigned int _isEditingPhoto : 1;
+    unsigned int _isPlayingMusic : 1;
     NSIndexPath *_lastDisplayedRemoteSlideshowPhotoIndexPath;
     NSIndexPath *_lastStreamedPhotoIndexPath;
     UIImage *_loadedImage;
     double _maximumTrimLength;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _menuControllerSourceRect;
     PLPhotoTileViewController *_mostRecentlyActiveTile;
     unsigned int _navigationBarDisabled;
     UIPageController *_pageController;
+    unsigned int _paging : 1;
     NSMutableArray *_pendingAssetChangeNotifications;
     NSMutableArray *_pendingCollectionListChangeNotifications;
     PHAsset *_pendingPhoto;
@@ -105,17 +93,24 @@
     id _photoActionInvoker;
     PLPhotoScrubber *_photoScrubber;
     int _photoThumbnailFormat;
+    unsigned int _playVideoOnActivation : 1;
     BOOL _playingVideo;
     NSIndexPath *_priorIndexPath;
     PLProgressView *_progressView;
     int _publicGlobalUUIDRequestCount;
     UILongPressGestureRecognizer *_recognizer;
+    unsigned int _reloadPhotoScrubber : 1;
     PLVideoRemaker *_remaker;
     UIView *_remakerContainerView;
     int _remakerMode;
+    unsigned int _remaking : 1;
+    unsigned int _remakingWasCancelled : 1;
+    unsigned int _rotating : 1;
     unsigned int _rotationDisabled;
+    unsigned int _rotationDisabledUnderCropOverlay : 1;
     PLProgressHUD *_savingPhotoHud;
     UIScrollView *_scroller;
+    unsigned int _scrolling : 1;
     NSNumberFormatter *_scrubOverlayTitleFormatter;
     NSIndexPath *_scrubbedImageIndexPath;
     int _scrubberAssetContainerIndex;
@@ -123,6 +118,7 @@
     int _showErrorAlert;
     BOOL _showingNextImage;
     BOOL _showsAirTunesOption;
+    unsigned int _slideShowIsStreamed : 1;
     double _slideshowDelay;
     NSIndexPath *_slideshowEndIndexPath;
     BOOL _slideshowIsEnding;
@@ -145,6 +141,10 @@
     NSMutableDictionary *_tvOutTileCache;
     UITransitionView *_tvOutTransitionView;
     UIWindow *_tvOutWindow;
+    unsigned int _videoEditingMode : 1;
+    unsigned int _videoViewWillBeginEditing : 1;
+    unsigned int _viewDidAppear : 1;
+    unsigned int _viewIsDisappearing : 1;
     BOOL shouldShowOverlaysWhenViewAppears;
     BOOL shouldShowOverlaysWhenViewDisappears;
 }
@@ -250,8 +250,8 @@
 - (void)_fetchPublicGlobalUUIDForCurrentAsset:(id)arg1;
 - (id)_findIndexPathForAssetWithObjectID:(id)arg1 globalUUID:(id)arg2 priorIndexPath:(id)arg3 assetCollection:(id)arg4;
 - (void)_finishRemoveAsset:(id)arg1 atIndexPath:(id)arg2;
-- (void)_flushTileCache:(id)arg1 preservingTilesInPageController:(id)arg2;
 - (void)_flushTileCache;
+- (void)_flushTileCache:(id)arg1 preservingTilesInPageController:(id)arg2;
 - (void)_forceDismissActionSheet:(BOOL)arg1 enableToolbarTimer:(BOOL)arg2;
 - (void)_forceDismissAlertView:(BOOL)arg1 enableToolbarTimer:(BOOL)arg2;
 - (void)_forceDismissDeleteController:(BOOL)arg1 enableToolbarTimer:(BOOL)arg2;
@@ -277,8 +277,8 @@
 - (id)_originalAssetContainerDataSource;
 - (Class)_pageControllerScrollViewClass;
 - (BOOL)_pauseSlideshow;
-- (void)_pauseVideoPlaybackForIndexPath:(id)arg1 fullStop:(BOOL)arg2;
 - (void)_pauseVideoPlaybackForIndexPath:(id)arg1;
+- (void)_pauseVideoPlaybackForIndexPath:(id)arg1 fullStop:(BOOL)arg2;
 - (id)_pendingAssetForTileUpdate;
 - (void)_performCATransition:(id)arg1;
 - (void)_performPostAlbumStreamTasksWithNewlyCreatedAlbum:(struct NSObject { Class x1; }*)arg1;
@@ -306,14 +306,14 @@
 - (id)_scrubbedImageIndexPath;
 - (void)_scrubberDidBeginScrubbing:(id)arg1;
 - (void)_scrubberDidEndScrubbing:(id)arg1;
-- (void)_setCurrentIndexPath:(id)arg1 refreshAssetTrackingDetails:(BOOL)arg2;
 - (void)_setCurrentIndexPath:(id)arg1;
+- (void)_setCurrentIndexPath:(id)arg1 refreshAssetTrackingDetails:(BOOL)arg2;
 - (void)_setDeletedIndexPath:(id)arg1;
 - (void)_setEnableInteractionEventsAfterUpdatingTileIndex:(BOOL)arg1;
 - (void)_setIgnoreInteractionEventsForVideoViewRemaking:(BOOL)arg1;
 - (void)_setLastDisplayedRemoteSlideshowPhotoIndexPath:(id)arg1;
-- (void)_setMusicIsPlaying:(BOOL)arg1 forPhoto:(id)arg2;
 - (void)_setMusicIsPlaying:(BOOL)arg1;
+- (void)_setMusicIsPlaying:(BOOL)arg1 forPhoto:(id)arg2;
 - (void)_setOriginalAssetContainerDataSource:(id)arg1;
 - (void)_setPendingAssetForTileUpdate:(id)arg1;
 - (void)_setPriorIndexPath:(id)arg1;
@@ -439,8 +439,8 @@
 - (id)newNavigationBar;
 - (id)newToolbar;
 - (int)numPhotosInAlbumForPhotoScrubber:(id)arg1;
-- (id)pageController:(id)arg1 viewControllerAtIndex:(int)arg2;
 - (id)pageController;
+- (id)pageController:(id)arg1 viewControllerAtIndex:(int)arg2;
 - (void)pageControllerDidEndPaging:(id)arg1;
 - (id)pageControllerScrollView;
 - (id)pageControllerView;
@@ -450,9 +450,9 @@
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (id)photoScrollerTitle;
+- (id)photoScrubber;
 - (id)photoScrubber:(id)arg1 loadImageSynchronously:(BOOL)arg2 atIndex:(int)arg3 forLoupe:(BOOL)arg4;
 - (void)photoScrubber:(id)arg1 scrubbingSpeedDidChange:(int)arg2;
-- (id)photoScrubber;
 - (int)photoThumbnailFormat;
 - (void)photoTileViewController:(id)arg1 commentsControllerWillBeginScrolling:(id)arg2;
 - (void)photoTileViewController:(id)arg1 didAppear:(BOOL)arg2;
@@ -495,10 +495,10 @@
 - (void)setCanDelayImageLoading:(BOOL)arg1;
 - (void)setCanShowCopyCallout:(BOOL)arg1;
 - (void)setCurrentAsset:(id)arg1;
-- (void)setCurrentIndexPath:(id)arg1 updateAfterAnimation:(BOOL)arg2;
 - (void)setCurrentIndexPath:(id)arg1;
-- (void)setCurrentTileIndex:(unsigned int)arg1 updateAfterAnimation:(BOOL)arg2;
+- (void)setCurrentIndexPath:(id)arg1 updateAfterAnimation:(BOOL)arg2;
 - (void)setCurrentTileIndex:(unsigned int)arg1;
+- (void)setCurrentTileIndex:(unsigned int)arg1 updateAfterAnimation:(BOOL)arg2;
 - (void)setDelayImageLoading:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeletesDuplicatesWhenNecessary:(BOOL)arg1;
@@ -518,8 +518,8 @@
 - (void)setSlideshowSettingsForCurrentAssetContainer:(id)arg1;
 - (void)setStatusBarIsLocked:(BOOL)arg1;
 - (void)setUsesPhotoBrowserStyleStatusBar:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setVideoEditingMode:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setVideoEditingMode:(BOOL)arg1;
+- (void)setVideoEditingMode:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldPlayVideoWhenViewAppears;
 - (BOOL)shouldShowActionMenu;
 - (BOOL)shouldShowOverlaysWhenViewAppears;

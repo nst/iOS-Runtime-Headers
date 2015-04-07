@@ -26,8 +26,8 @@
 - (id)initWithSerializedRepresentation:(id)arg1;
 - (id)internalDescription;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)pid64;
 - (unsigned int)pid;
+- (unsigned long long)pid64;
 - (id)serializedRepresentation;
 
 @end

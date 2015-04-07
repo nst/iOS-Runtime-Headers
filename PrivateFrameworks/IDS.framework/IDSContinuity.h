@@ -17,12 +17,12 @@
 - (void)startAdvertisingOfType:(int)arg1 withData:(id)arg2 withOptions:(id)arg3;
 - (void)startScanningForType:(int)arg1 withData:(id)arg2 peers:(id)arg3 withOptions:(id)arg4;
 - (void)startScanningForType:(int)arg1 withData:(id)arg2 withOptions:(id)arg3;
-- (void)startTrackingPeer:(id)arg1 forType:(int)arg2;
 - (void)startTrackingPeer:(id)arg1;
+- (void)startTrackingPeer:(id)arg1 forType:(int)arg2;
 - (int)state;
 - (void)stopAdvertisingOfType:(int)arg1;
 - (void)stopScanningForType:(int)arg1;
-- (void)stopTrackingPeer:(id)arg1 forType:(int)arg2;
 - (void)stopTrackingPeer:(id)arg1;
+- (void)stopTrackingPeer:(id)arg1 forType:(int)arg2;
 
 @end

@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSString;
 
-@interface UIFontDescriptor : NSObject <NSCopying, NSCoding> {
+@interface UIFontDescriptor : NSObject <NSCoding, NSCopying> {
     NSMutableDictionary *_attributes;
     id _reserved1;
     id _reserved2;
@@ -19,13 +19,13 @@
 @property(readonly) unsigned int symbolicTraits;
 
 + (id)_createMungledDictionary:(id)arg1;
-+ (id)defaultFontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 options:(unsigned int)arg3;
 + (id)defaultFontDescriptorWithTextStyle:(id)arg1;
++ (id)defaultFontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 options:(unsigned int)arg3;
 + (id)fontDescriptorWithFontAttributes:(id)arg1;
 + (id)fontDescriptorWithName:(id)arg1 matrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
 + (id)fontDescriptorWithName:(id)arg1 size:(float)arg2;
-+ (id)preferredFontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 options:(unsigned int)arg3;
 + (id)preferredFontDescriptorWithTextStyle:(id)arg1;
++ (id)preferredFontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 options:(unsigned int)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (id)_attributes;

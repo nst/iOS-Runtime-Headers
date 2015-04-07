@@ -76,8 +76,8 @@
 - (void)setCanEnableDoneButton:(BOOL)arg1;
 - (void)setCanEnablePreviewButton:(BOOL)arg1;
 - (void)setCanRecord:(BOOL)arg1;
-- (void)setControlsConfiguration:(int)arg1 animate:(BOOL)arg2;
 - (void)setControlsConfiguration:(int)arg1;
+- (void)setControlsConfiguration:(int)arg1 animate:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setLayoutMetrics:(id)arg1;
 - (void)setShowsBottomSeparatorLine:(BOOL)arg1;

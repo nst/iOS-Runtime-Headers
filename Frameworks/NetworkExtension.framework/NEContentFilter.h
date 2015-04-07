@@ -4,7 +4,7 @@
 
 @class NEContentFilterPlugin;
 
-@interface NEContentFilter : NSObject <NEConfigurationValidating, NEPrettyDescription, NSSecureCoding, NSCopying> {
+@interface NEContentFilter : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _enabled;
     NEContentFilterPlugin *_plugin;
 }

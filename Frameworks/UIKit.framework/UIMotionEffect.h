@@ -4,7 +4,7 @@
 
 @class _UIMotionAnalyzerSettings;
 
-@interface UIMotionEffect : NSObject <NSCopying, NSCoding> {
+@interface UIMotionEffect : NSObject <NSCoding, NSCopying> {
     _UIMotionAnalyzerSettings *_preferredMotionAnalyzerSettings;
 }
 

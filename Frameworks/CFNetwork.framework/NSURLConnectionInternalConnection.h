@@ -11,8 +11,8 @@
     NSURLAuthenticationChallenge *_currNSChallenge;
     long long _expectedTotalBytes;
     struct __CFString { } *_fileName;
+    bool _shouldSkipCancelOnRelease;
     long long _totalBytes;
-    bool_shouldSkipCancelOnRelease;
 }
 
 @property(copy,readonly) NSString * debugDescription;

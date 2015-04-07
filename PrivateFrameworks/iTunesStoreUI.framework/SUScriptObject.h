@@ -6,10 +6,10 @@
 
 @interface SUScriptObject : NSObject {
     unsigned int _checkOutWhenHidden : 1;
-    unsigned int _isVisible : 1;
     NSString *_className;
     NSMutableArray *_eventListeners;
     SUScriptObjectInvocationBatch *_invocationBatch;
+    unsigned int _isVisible : 1;
     NSLock *_lock;
     SUScriptNativeObject *_nativeObject;
     SUScriptObject *_parentScriptObject;
@@ -47,8 +47,8 @@
 - (id)copyObjectForScriptFromPoolWithClass:(Class)arg1;
 - (void)dealloc;
 - (void)didPerformBatchedInvocations;
-- (void)dispatchEvent:(id)arg1 forName:(id)arg2 synchronously:(BOOL)arg3;
 - (void)dispatchEvent:(id)arg1 forName:(id)arg2;
+- (void)dispatchEvent:(id)arg1 forName:(id)arg2 synchronously:(BOOL)arg3;
 - (BOOL)equals:(id)arg1;
 - (void)finalizeForWebScript;
 - (id)init;
@@ -57,8 +57,8 @@
 - (void)loadImageWithURL:(id)arg1 completionBlock:(id)arg2;
 - (void)lock;
 - (id)nativeObject;
-- (id)newImageWithURL:(id)arg1 scale:(float)arg2;
 - (id)newImageWithURL:(id)arg1;
+- (id)newImageWithURL:(id)arg1 scale:(float)arg2;
 - (id)parentScriptObject;
 - (id)parentViewController;
 - (void)removeListenerForEventWithName:(id)arg1 callback:(id)arg2 useCapture:(BOOL)arg3;

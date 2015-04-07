@@ -5,6 +5,10 @@
 @class <NSObject>, NSObject<OS_dispatch_queue>, TSDTileStorage, TSKAccessController;
 
 @interface TSDTileProvider : NSObject {
+    TSKAccessController *mAccessController;
+    NSObject<OS_dispatch_queue> *mQueue;
+    <NSObject> *mTarget;
+    TSDTileStorage *mTileStorage;
     struct { 
         struct { 
             unsigned int x; 
@@ -14,10 +18,6 @@
             unsigned int x; 
             unsigned int y; 
         } bottomRight; 
-    TSKAccessController *mAccessController;
-    NSObject<OS_dispatch_queue> *mQueue;
-    <NSObject> *mTarget;
-    TSDTileStorage *mTileStorage;
     } mVisibleTileRect;
 }
 

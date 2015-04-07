@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface _IMNotificationObservationHelper : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
     NSString *_name;
     id _object;
     id _observer;

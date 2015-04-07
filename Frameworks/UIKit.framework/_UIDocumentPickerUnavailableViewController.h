@@ -9,8 +9,8 @@
     NSURL *_buttonURL;
     NSLayoutConstraint *_imageToTitleConstraint;
     UIImageView *_leadImageView;
-    UILabel *_textLabel2;
     UILabel *_textLabel;
+    UILabel *_textLabel2;
     NSLayoutConstraint *_textToButtonConstraint;
     NSLayoutConstraint *_textToTextConstraint;
     UILabel *_titleLabel;
@@ -22,8 +22,8 @@
 @property(retain) NSURL * buttonURL;
 @property(retain) NSLayoutConstraint * imageToTitleConstraint;
 @property(retain) UIImageView * leadImageView;
-@property(retain) UILabel * textLabel2;
 @property(retain) UILabel * textLabel;
+@property(retain) UILabel * textLabel2;
 @property(retain) NSLayoutConstraint * textToButtonConstraint;
 @property(retain) NSLayoutConstraint * textToTextConstraint;
 @property(retain) UILabel * titleLabel;
@@ -50,8 +50,8 @@
 - (void)setTitleLabel:(id)arg1;
 - (void)setTitleToTextConstraint:(id)arg1;
 - (void)setTopConstraint:(id)arg1;
-- (id)textLabel2;
 - (id)textLabel;
+- (id)textLabel2;
 - (id)textToButtonConstraint;
 - (id)textToTextConstraint;
 - (id)titleLabel;

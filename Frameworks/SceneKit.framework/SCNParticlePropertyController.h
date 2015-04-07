@@ -4,7 +4,7 @@
 
 @class CAAnimation, NSString, SCNNode;
 
-@interface SCNParticlePropertyController : NSObject <NSSecureCoding, NSCopying> {
+@interface SCNParticlePropertyController : NSObject <NSCopying, NSSecureCoding> {
     CAAnimation *_animation;
     id _c3dAnimation;
     float _inputBias;

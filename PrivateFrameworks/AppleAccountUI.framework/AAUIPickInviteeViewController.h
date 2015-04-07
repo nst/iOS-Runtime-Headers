@@ -4,7 +4,7 @@
 
 @class <AAUIPickInviteeDelegate>, AAUIContactsSearchController, ABMonogrammer, ACAccount, ACAccountStore, NSArray, NSString, UIBarButtonItem, UILabel, UITableView, UITextField, UIView;
 
-@interface AAUIPickInviteeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, AAUIContactsSearchDelegate> {
+@interface AAUIPickInviteeViewController : UIViewController <AAUIContactsSearchDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     ACAccount *_account;
     ACAccountStore *_accountStore;
     void *_addressBook;

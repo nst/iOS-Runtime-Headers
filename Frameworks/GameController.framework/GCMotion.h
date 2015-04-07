@@ -9,30 +9,34 @@
 @class CMMotionManager, GCController;
 
 @interface GCMotion : NSObject {
-    struct { 
-        double x; 
-        double y; 
-        double z; 
-    struct { 
-        double x; 
-        double y; 
-        double z; 
     struct GCQuaternion { 
         double x; 
         double y; 
         double z; 
         double w; 
+    } _attitude;
+    GCController *_controller;
     struct { 
         double x; 
         double y; 
         double z; 
-    } _attitude;
-    GCController *_controller;
     } _gravity;
     CMMotionManager *_motionMgr;
+    struct { 
+        double x; 
+        double y; 
+        double z; 
     } _rotationRate;
+    struct { 
+        double x; 
+        double y; 
+        double z; 
     } _userAcceleration;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _valueChangedHandler;
+
 }
 
 @property(readonly) struct GCQuaternion { double x1; double x2; double x3; double x4; } attitude;

@@ -10,7 +10,11 @@
 
 @interface HKCurrentActivityCacheQuery : HKQuery {
     HKActivityCache *_lastActivityCache;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateHandler;
+
 }
 
 @property(retain) HKActivityCache * lastActivityCache;

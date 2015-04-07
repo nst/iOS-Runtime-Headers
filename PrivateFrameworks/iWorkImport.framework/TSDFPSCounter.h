@@ -12,8 +12,8 @@
 }
 
 - (void)addFrame;
-- (void)addFrameAtDrawTime:(double)arg1 duration:(double)arg2;
 - (void)addFrameAtDrawTime:(double)arg1;
+- (void)addFrameAtDrawTime:(double)arg1 duration:(double)arg2;
 - (void)dealloc;
 - (id)fpsGraphString;
 - (id)fpsSummaryString;

@@ -5,9 +5,6 @@
 @class NSDictionary, NSMutableArray, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface PLImageTable : NSObject <PLThumbPersistenceManager> {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSMutableArray *_allSegments;
     BOOL _dying;
     int _entryCount;
@@ -24,6 +21,9 @@
     BOOL _readOnly;
     unsigned int _segmentCount;
     unsigned long _segmentLength;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _thumbnailSize;
 }
 
@@ -50,8 +50,8 @@
 - (id)_debugDescription;
 - (void)_doPreheatWithCompletionHandler:(id)arg1;
 - (int)_fileDescriptor;
-- (void)_flushEntryAtAddress:(void*)arg1 count:(int)arg2;
 - (void)_flushEntryAtAddress:(void*)arg1;
+- (void)_flushEntryAtAddress:(void*)arg1 count:(int)arg2;
 - (id)_getAndClearPreheatIndexes;
 - (void)_releaseSegment:(id)arg1;
 - (void)_releaseSegmentAtIndex:(int)arg1;
@@ -78,8 +78,8 @@
 - (int)imageRowBytes;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (int)imageWidth;
-- (id)initWithPath:(id)arg1 imageFormat:(int)arg2 readOnly:(BOOL)arg3;
 - (id)initWithPath:(id)arg1 imageFormat:(int)arg2;
+- (id)initWithPath:(id)arg1 imageFormat:(int)arg2 readOnly:(BOOL)arg3;
 - (BOOL)isReadOnly;
 - (id)originalPreheatItemForAsset:(id)arg1 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg2 options:(unsigned int)arg3;
 - (id)path;

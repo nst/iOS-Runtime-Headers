@@ -4,7 +4,7 @@
 
 @class NSNumber, TSCH3DTexture;
 
-@interface TSCH3DTextureResource : TSCH3DResource <TSCHUnretainedParent, TSCH3DOptimizedTextureResource> {
+@interface TSCH3DTextureResource : TSCH3DResource <TSCH3DOptimizedTextureResource, TSCHUnretainedParent> {
     NSNumber *mCachedHash;
     TSCH3DTexture *mParent;
 }

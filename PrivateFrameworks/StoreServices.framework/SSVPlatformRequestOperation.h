@@ -17,7 +17,11 @@
     NSArray *_itemIdentifiers;
     NSString *_keyProfile;
     int _personalizationStyle;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _responseBlock;
+
     NSString *_storeFrontSuffix;
     NSNumber *_timeoutInterval;
     NSString *_userAgent;

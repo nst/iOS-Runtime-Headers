@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface AWDAirPlaySlideshowSessionStartedOnServer : PBCodable <NSCopying> {
+    NSString *_clientModel;
+    NSString *_clientVersion;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int repeat : 1; 
         unsigned int slideMs : 1; 
         unsigned int status : 1; 
         unsigned int transportType : 1; 
-    NSString *_clientModel;
-    NSString *_clientVersion;
     } _has;
     unsigned int _repeat;
     NSString *_sessionUUID;

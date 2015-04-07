@@ -33,11 +33,11 @@
 - (id)contentColor;
 - (void)dealloc;
 - (float)imageOutset;
-- (id)initWithContentColor:(id)arg1 contrast:(float)arg2;
 - (id)initWithContentColor:(id)arg1;
+- (id)initWithContentColor:(id)arg1 contrast:(float)arg2;
+- (id)initWithStyle:(int)arg1;
 - (id)initWithStyle:(int)arg1 contentColor:(id)arg2;
 - (id)initWithStyle:(int)arg1 primaryColor:(id)arg2 secondaryColor:(id)arg3 shadowColor:(id)arg4;
-- (id)initWithStyle:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (float)minFillHeight;
 - (id)primaryColor;

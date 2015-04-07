@@ -4,7 +4,7 @@
 
 @class ABFavoritesListManager, BBApplicationLauncher, BBDataProviderManager, BBDismissalSyncCache, BBSyncService, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_source>, NSSet, NSString, NSXPCListener;
 
-@interface BBServer : NSObject <ABPredicateDelegate, BBDataProviderManagerDelegate, BBNotificationBehaviorUtilitiesServerProtocol, BBServerConduitServerInterface, BBSettingsGatewayServerInterface, NSXPCListenerDelegate, BBSyncServiceDelegate> {
+@interface BBServer : NSObject <ABPredicateDelegate, BBDataProviderManagerDelegate, BBNotificationBehaviorUtilitiesServerProtocol, BBServerConduitServerInterface, BBSettingsGatewayServerInterface, BBSyncServiceDelegate, NSXPCListenerDelegate> {
     NSMutableArray *_activeBehaviorOverrideTypesChangeClients;
     NSMutableArray *_activeBehaviorOverrideTypesChangeSettingsGateways;
     unsigned int _activeBehaviorOverrides;
@@ -75,12 +75,8 @@
 }
 
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 
 + (id)behaviorUtilitiesServerInterface;
@@ -88,8 +84,8 @@
 
 - (unsigned int)_activeBehaviorOverrideTypesConsideringSystemState:(BOOL)arg1;
 - (id)_activeSectionIDsForCategory:(int)arg1;
-- (void)_addActiveSectionID:(id)arg1 toCategory:(int)arg2;
 - (void)_addActiveSectionID:(id)arg1;
+- (void)_addActiveSectionID:(id)arg1 toCategory:(int)arg2;
 - (void)_addBulletin:(id)arg1;
 - (void)_addObserver:(id)arg1;
 - (void)_addSectionID:(id)arg1 toSortedSectionIDsForCategory:(int)arg2;
@@ -102,8 +98,8 @@
 - (unsigned int)_adjustedBehaviorOverrideTypes:(unsigned int)arg1 basedOnSystemState:(unsigned int)arg2;
 - (id)_allBulletinsForSectionID:(id)arg1;
 - (id)_applicableSectionInfosForBulletin:(id)arg1 inSection:(id)arg2;
-- (void)_assignIDToBulletinRequest:(id)arg1 checkAgainstBulletins:(id)arg2;
 - (void)_assignIDToBulletinRequest:(id)arg1;
+- (void)_assignIDToBulletinRequest:(id)arg1 checkAgainstBulletins:(id)arg2;
 - (unsigned int)_behaviorOverrideState;
 - (void)_behaviorOverrideStatusChangedFromSource:(unsigned int)arg1;
 - (void)_behaviorOverrideTypesChangedFromSource:(unsigned int)arg1;
@@ -138,8 +134,8 @@
 - (void)_expireBulletinsAndRescheduleTimerIfNecessary;
 - (void)_expireBulletinsDueToSystemEvent:(unsigned int)arg1;
 - (id)_favoritesListManager;
-- (unsigned int)_feedsForBulletin:(id)arg1 destinations:(unsigned int)arg2 alwaysToLockScreen:(BOOL)arg3;
 - (unsigned int)_feedsForBulletin:(id)arg1 destinations:(unsigned int)arg2;
+- (unsigned int)_feedsForBulletin:(id)arg1 destinations:(unsigned int)arg2 alwaysToLockScreen:(BOOL)arg3;
 - (unsigned int)_filtersForSectionID:(id)arg1;
 - (void)_handleSignificantTimeChange;
 - (void)_handleSystemSleep;
@@ -166,14 +162,14 @@
 - (void)_performPendingBulletinUpdatesForBulletinID:(id)arg1;
 - (void)_privilegedSenderAddressBookGroupRecordIDChangedFromSource:(unsigned int)arg1;
 - (void)_privilegedSenderTypesChangedFromSource:(unsigned int)arg1;
-- (void)_publishBulletinRequest:(id)arg1 forSectionID:(id)arg2 forDestinations:(unsigned int)arg3 alwaysToLockScreen:(BOOL)arg4;
 - (void)_publishBulletinRequest:(id)arg1 forSectionID:(id)arg2 forDestinations:(unsigned int)arg3;
+- (void)_publishBulletinRequest:(id)arg1 forSectionID:(id)arg2 forDestinations:(unsigned int)arg3 alwaysToLockScreen:(BOOL)arg4;
 - (void)_publishBulletinsForAllDataProviders;
 - (void)_reloadReloadSectionInfoForSectionID:(id)arg1;
 - (void)_reloadSectionParametersForSectionID:(id)arg1;
 - (id)_removalsForNoticesSection:(id)arg1 addition:(id)arg2 keepAddition:(BOOL*)arg3;
-- (void)_removeActiveSectionID:(id)arg1 fromCategory:(int)arg2;
 - (void)_removeActiveSectionID:(id)arg1;
+- (void)_removeActiveSectionID:(id)arg1 fromCategory:(int)arg2;
 - (void)_removeBulletin:(id)arg1 rescheduleTimerIfAffected:(BOOL)arg2 shouldSync:(BOOL)arg3;
 - (void)_removeBulletin:(id)arg1 shouldSync:(BOOL)arg2;
 - (void)_removeObserver:(id)arg1;
@@ -184,8 +180,8 @@
 - (void)_removeUtilityConnection:(id)arg1;
 - (void)_resumeAllSuspendedConnections;
 - (void)_saveUpdatedClearedInfo:(id)arg1 forSectionID:(id)arg2;
-- (void)_saveUpdatedSectionInfo:(id)arg1 forSectionID:(id)arg2 inCategory:(int)arg3;
 - (void)_saveUpdatedSectionInfo:(id)arg1 forSectionID:(id)arg2;
+- (void)_saveUpdatedSectionInfo:(id)arg1 forSectionID:(id)arg2 inCategory:(int)arg3;
 - (void)_scheduleExpirationForBulletin:(id)arg1;
 - (void)_scheduleTimerForDate:(id)arg1;
 - (id)_sectionIDsToMigrate;
@@ -209,8 +205,8 @@
 - (void)_setBehaviorOverridesTimer;
 - (void)_setClearedInfo:(id)arg1 forSectionID:(id)arg2;
 - (void)_setPrivilegedSenderTypes:(unsigned int)arg1 source:(unsigned int)arg2;
-- (void)_setSectionInfo:(id)arg1 forSectionID:(id)arg2 inCategory:(int)arg3;
 - (void)_setSectionInfo:(id)arg1 forSectionID:(id)arg2;
+- (void)_setSectionInfo:(id)arg1 forSectionID:(id)arg2 inCategory:(int)arg3;
 - (void)_sortSectionIDs:(id)arg1 usingGuideArray:(id)arg2;
 - (void)_sortSectionIDs:(id)arg1 usingOrder:(id)arg2;
 - (id)_sortedActiveSectionsForCategory:(int)arg1;
@@ -289,12 +285,12 @@
 - (void)observer:(id)arg1 setObserverFeed:(unsigned int)arg2 asLightsAndSirensGateway:(id)arg3 priority:(unsigned int)arg4;
 - (void)observer:(id)arg1 setObserverFeed:(unsigned int)arg2 attachToLightsAndSirensGateway:(id)arg3;
 - (void)ping:(id)arg1;
-- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 - (BOOL)predicateShouldContinue:(id)arg1;
+- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 - (unsigned int)privilegedSenderTypes;
 - (void)publishBulletin:(id)arg1 destinations:(unsigned int)arg2 alwaysToLockScreen:(BOOL)arg3;
-- (void)publishBulletinRequest:(id)arg1 destinations:(unsigned int)arg2 alwaysToLockScreen:(BOOL)arg3;
 - (void)publishBulletinRequest:(id)arg1 destinations:(unsigned int)arg2;
+- (void)publishBulletinRequest:(id)arg1 destinations:(unsigned int)arg2 alwaysToLockScreen:(BOOL)arg3;
 - (void)removeBulletinID:(id)arg1 fromFutureSection:(id)arg2;
 - (void)removeBulletinID:(id)arg1 fromNoticesSection:(id)arg2;
 - (void)removeBulletinID:(id)arg1 fromSection:(id)arg2 inFeed:(unsigned int)arg3;

@@ -16,9 +16,9 @@
 @property(copy) NSString * bundleVersion;
 @property(retain) NSNumber * externalVersion;
 
++ (id)gameDescriptorWithBundleID:(id)arg1;
 + (id)gameDescriptorWithBundleID:(id)arg1 adamID:(id)arg2;
 + (id)gameDescriptorWithBundleID:(id)arg1 bundleVersion:(id)arg2 adamID:(id)arg3;
-+ (id)gameDescriptorWithBundleID:(id)arg1;
 + (id)secureCodedPropertyKeys;
 + (BOOL)supportsSecureCoding;
 

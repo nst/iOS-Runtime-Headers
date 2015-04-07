@@ -5,8 +5,8 @@
 @interface SGMailPatterns : NSObject {
 }
 
-+ (id)headerPattern:(id)arg1;
 + (id)headerPattern;
++ (id)headerPattern:(id)arg1;
 + (id)headersPattern;
 + (void)initialize;
 + (id)messageSeparatorPattern;

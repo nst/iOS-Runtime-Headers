@@ -12,7 +12,11 @@
     NSString *_cachedLocalizedPlatformName;
     SBFDeviceLockController *_deviceLockController;
     BOOL _enabled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSString *_subtitleText;
     NSTimer *_timer;
     NSString *_titleText;

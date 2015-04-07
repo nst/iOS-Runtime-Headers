@@ -4,7 +4,7 @@
 
 @class BBColor, BBImage, NSString;
 
-@interface BBAppearance : NSObject <BBUniquableObject, NSSecureCoding, NSCopying> {
+@interface BBAppearance : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
     BBColor *_color;
     BBImage *_image;
     int _style;

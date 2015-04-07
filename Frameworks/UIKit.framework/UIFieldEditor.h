@@ -4,41 +4,41 @@
 
 @class <UITextInputDelegate>, <UITextInputTokenizer>, NSDictionary, NSString, NSTextContainer, NSTimer, UIAutoscroll, UITextField, UITextInputController, UITextPosition, UITextRange, UIView, _UICascadingTextStorage, _UIFieldEditorContentView, _UIFieldEditorLayoutManager;
 
-@interface UIFieldEditor : UIScrollView <UITextInputControllerDelegate, NSLayoutManagerDelegate, NSUITextViewCommonMethods, UIAutoscrollContainer, UITextInput, UITextAutoscrolling, UIKeyboardInput> {
+@interface UIFieldEditor : UIScrollView <NSLayoutManagerDelegate, NSUITextViewCommonMethods, UIAutoscrollContainer, UIKeyboardInput, UITextAutoscrolling, UITextInput, UITextInputControllerDelegate> {
+    UIAutoscroll *_autoscroll;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _autoscrollContentOffset;
+    _UIFieldEditorContentView *_contentView;
+    float _contentWidth;
     struct { 
         unsigned int delegateRespondsToFieldEditorDidChange : 1; 
         unsigned int delegateRespondsToShouldInsertText : 1; 
         unsigned int delegateRespondsToShouldReplaceWithText : 1; 
         unsigned int suppressScrollToSelection : 1; 
         unsigned int clearOnNextEdit : 1; 
+    } _feFlags;
+    UITextInputController *_inputController;
+    _UIFieldEditorLayoutManager *_layoutManager;
+    NSTimer *_obscureAllTextTimer;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    UIAutoscroll *_autoscroll;
-    } _autoscrollContentOffset;
-    _UIFieldEditorContentView *_contentView;
-    float _contentWidth;
-    } _feFlags;
-    UITextInputController *_inputController;
-    _UIFieldEditorLayoutManager *_layoutManager;
-    NSTimer *_obscureAllTextTimer;
     } _padding;
     _UIFieldEditorContentView *_passcodeStyleCutoutView;
     UITextField *_proxiedView;
     NSTextContainer *_textContainer;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _textContainerOrigin;
     _UICascadingTextStorage *_textStorage;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _unobscuredSecureRange;
 }
 
@@ -111,8 +111,8 @@
 - (id)characterRangeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)characterRangeByExtendingPosition:(id)arg1 inDirection:(int)arg2;
 - (void)clearText;
-- (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1 withinRange:(id)arg2;
 - (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1 withinRange:(id)arg2;
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrameForView:(id)arg1;
 - (void)dealloc;
@@ -174,8 +174,8 @@
 - (id)selectedTextRange;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectionRange;
 - (id)selectionRectsForRange:(id)arg1;
-- (void)setAttributedText:(id)arg1 andSetCaretSelectionAfterText:(BOOL)arg2;
 - (void)setAttributedText:(id)arg1;
+- (void)setAttributedText:(id)arg1 andSetCaretSelectionAfterText:(BOOL)arg2;
 - (void)setAutoscrollContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setBaseWritingDirection:(int)arg1 forRange:(id)arg2;
 - (void)setConstrainedFrameSize:(struct CGSize { float x1; float x2; })arg1;
@@ -187,14 +187,14 @@
 - (void)setMarkedTextStyle:(id)arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avoidAdditionalLayout:(BOOL)arg2;
 - (void)setPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;
 - (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
+- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setSelectedTextRange:(id)arg1;
 - (void)setSelection:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setStyle:(id)arg1;
-- (void)setText:(id)arg1 andSetCaretSelectionAfterText:(BOOL)arg2;
 - (void)setText:(id)arg1;
+- (void)setText:(id)arg1 andSetCaretSelectionAfterText:(BOOL)arg2;
 - (void)setTextColor:(id)arg1;
 - (void)setTextContainer:(id)arg1;
 - (void)setTypingAttributes:(id)arg1;

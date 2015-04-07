@@ -49,12 +49,12 @@
 - (void)logEventForwardSDEventActionCode;
 - (void)logEventForwardUTRANRRCNextStateAs:(id)arg1 andCurrStateAs:(id)arg2 andRateAs:(id)arg3;
 - (void)logEventForwardWCDMARRCPrevStateAs:(id)arg1 andCurrState:(id)arg2 andRate:(id)arg3;
-- (void)logEventIntervalCMCallEventConnWithId:(id)arg1 andCallType:(id)arg2 andSysMode:(id)arg3 andClientId:(id)arg4;
 - (void)logEventIntervalCMCallEventConnWithId:(id)arg1 andCallType:(id)arg2 andSysMode:(id)arg3;
-- (void)logEventIntervalCMCallEventEndWithId:(id)arg1 andNumCalls:(id)arg2 andClientId:(id)arg3;
+- (void)logEventIntervalCMCallEventConnWithId:(id)arg1 andCallType:(id)arg2 andSysMode:(id)arg3 andClientId:(id)arg4;
 - (void)logEventIntervalCMCallEventEndWithId:(id)arg1 andNumCalls:(id)arg2;
-- (void)logEventIntervalCMCallEventOrigWithId:(id)arg1 andCallType:(id)arg2 andSrvType:(id)arg3 andClientId:(id)arg4;
+- (void)logEventIntervalCMCallEventEndWithId:(id)arg1 andNumCalls:(id)arg2 andClientId:(id)arg3;
 - (void)logEventIntervalCMCallEventOrigWithId:(id)arg1 andCallType:(id)arg2 andSrvType:(id)arg3;
+- (void)logEventIntervalCMCallEventOrigWithId:(id)arg1 andCallType:(id)arg2 andSrvType:(id)arg3 andClientId:(id)arg4;
 - (void)logEventNoneEventNotProcessed;
 - (void)logEventPointCMExitCodeWithState:(id)arg1;
 - (void)refreshBBEurekaEventMsgLite;

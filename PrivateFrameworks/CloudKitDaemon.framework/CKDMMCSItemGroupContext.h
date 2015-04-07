@@ -10,11 +10,23 @@
 
 @interface CKDMMCSItemGroupContext : NSObject <CKDCancelling> {
     CKDMMCS *_MMCS;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     CKDMMCSItemGroup *_itemGroup;
     NSMutableDictionary *_itemsByID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _startBlock;
+
 }
 
 @property(retain) CKDMMCS * MMCS;

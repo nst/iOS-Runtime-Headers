@@ -4,7 +4,7 @@
 
 @class NSArray, NSURL;
 
-@interface NEEvaluateConnectionRule : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
+@interface NEEvaluateConnectionRule : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     int _action;
     NSArray *_matchDomains;
     NSURL *_probeURL;

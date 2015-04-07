@@ -27,8 +27,8 @@
 + (BOOL)internalBuild;
 + (BOOL)isICE;
 + (BOOL)isIPod;
-+ (BOOL)isMav10;
 + (BOOL)isMav1;
++ (BOOL)isMav10;
 + (BOOL)isMav2;
 + (BOOL)isMav4;
 + (BOOL)isMav5;
@@ -38,8 +38,8 @@
 + (BOOL)isWiFiChipset4324;
 + (BOOL)isWiFiChipset43291;
 + (BOOL)isWiFiChipset4330;
-+ (BOOL)isWiFiChipset43342;
 + (BOOL)isWiFiChipset4334;
++ (BOOL)isWiFiChipset43342;
 + (BOOL)isWiFiChipset4345;
 + (BOOL)isWiFiChipset4350;
 + (short)logModeForEntryKey:(id)arg1 withKey:(id)arg2 andValue:(id)arg3;

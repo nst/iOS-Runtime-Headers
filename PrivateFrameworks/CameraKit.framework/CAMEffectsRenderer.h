@@ -9,7 +9,11 @@
 @class <PLCameraEffectsRendererDelegate>, CAMEffectsFullsizeView, CAMEffectsGridView, CAMVideoPreviewView, CIContext, EAGLContext, NSObject<OS_dispatch_queue>;
 
 @interface CAMEffectsRenderer : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __atomicPreviewStartedBlock;
+
     BOOL __atomicPreviewStartedNotificationNeeded;
     BOOL __inBackground;
     BOOL __previewLayerEnabled;
@@ -109,11 +113,11 @@
 - (void)setAtomicVideoPreviewView:(id)arg1;
 - (void)setCameraMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFilterIndex:(unsigned int)arg1 forceStateChange:(BOOL)arg2 renderNotifyBlock:(id)arg3;
 - (void)setFilterIndex:(unsigned int)arg1;
+- (void)setFilterIndex:(unsigned int)arg1 forceStateChange:(BOOL)arg2 renderNotifyBlock:(id)arg3;
 - (void)setMirrorFilterRendering:(BOOL)arg1;
-- (void)setShowGrid:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowGrid:(BOOL)arg1;
+- (void)setShowGrid:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setVideoPreviewView:(id)arg1;
 - (id)videoPreviewView;
 

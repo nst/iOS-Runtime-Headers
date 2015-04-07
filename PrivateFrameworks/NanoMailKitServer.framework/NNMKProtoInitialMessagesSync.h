@@ -5,12 +5,12 @@
 @class NSData, NSMutableArray, NSString;
 
 @interface NNMKProtoInitialMessagesSync : PBCodable <NSCopying> {
-    struct { 
-        unsigned int fullSyncVersion : 1; 
-        unsigned int syncedMailboxType : 1; 
     NSData *_dateForRequestingMoreMessages;
     NSData *_dateSynced;
     unsigned int _fullSyncVersion;
+    struct { 
+        unsigned int fullSyncVersion : 1; 
+        unsigned int syncedMailboxType : 1; 
     } _has;
     NSMutableArray *_initialMessages;
     NSString *_syncedMailboxAccountId;

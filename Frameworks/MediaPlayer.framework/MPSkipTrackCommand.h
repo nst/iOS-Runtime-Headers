@@ -3,11 +3,11 @@
  */
 
 @interface MPSkipTrackCommand : MPRemoteCommand {
+    BOOL _adPreventsDisplay;
     struct { 
         int numberOfAvailableSkips; 
         int skipFrequency; 
         double skipInterval; 
-    BOOL _adPreventsDisplay;
     } _skipLimit;
 }
 

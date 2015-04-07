@@ -5,13 +5,13 @@
 @class NSData, TDRenditionSpec;
 
 @interface TDRenditionEntry : NSObject {
-    struct _renditionkeytoken { 
-        unsigned short identifier; 
-        unsigned short value; 
     NSData *assetData;
     struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *key;
     const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; } *keyFormat;
     TDRenditionSpec *renditionSpec;
+    struct _renditionkeytoken { 
+        unsigned short identifier; 
+        unsigned short value; 
     } stackKey[16];
 }
 

@@ -29,9 +29,9 @@
 - (void)dealloc;
 - (void)deliverNotification:(id)arg1 userInfo:(id)arg2;
 - (id)name;
-- (BOOL)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
-- (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)postNotificationName:(id)arg1;
+- (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
+- (BOOL)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
 - (void)runServer;
 - (void)runServerOnCurrentThread;
 - (void)startDeliveringNotificationsToMainThread;

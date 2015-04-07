@@ -55,8 +55,8 @@
 - (void)_performDeferredUpdatesForEntry:(id)arg1;
 - (void)_performSpecifierUpdates:(id)arg1 forSearchEntries:(id)arg2;
 - (void)_reloadSearchEntries:(id)arg1;
-- (void)_removeSearchEntries:(id)arg1 usingBlock:(id)arg2 forReload:(BOOL)arg3;
 - (void)_removeSearchEntries:(id)arg1 usingBlock:(id)arg2;
+- (void)_removeSearchEntries:(id)arg1 usingBlock:(id)arg2 forReload:(BOOL)arg3;
 - (id)_rootSpecifiers;
 - (id)_searchEntriesForSpecifierDataSource:(id)arg1;
 - (void)_updateWithNewSearchResults:(id)arg1 forQuery:(id)arg2 newSearch:(BOOL)arg3;
@@ -66,8 +66,8 @@
 - (void)addRootSpecifier:(id)arg1;
 - (id)currentQuery;
 - (id)currentResults;
-- (void)dataSource:(id)arg1 performUpdates:(id)arg2;
 - (id)dataSource;
+- (void)dataSource:(id)arg1 performUpdates:(id)arg2;
 - (void)dealloc;
 - (BOOL)hasCompletedIndexing;
 - (id)init;

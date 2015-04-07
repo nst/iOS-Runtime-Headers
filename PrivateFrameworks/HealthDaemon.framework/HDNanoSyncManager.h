@@ -4,7 +4,7 @@
 
 @class <HDHealthDaemon>, HDIDSMessageCenter, HDNanoPairingPersistentInfo, HDNanoPairingRecord, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSUUID;
 
-@interface HDNanoSyncManager : NSObject <HDDiagnosticObject, HDHealthDaemonReadyObserver, HDDatabaseProtectedDataObserver, HDDataObserver, HDIDSMessageCenterDelegate, HDSyncStore, HDPairedWatchBundleIdentifierProvider, HDProcessStateObserver> {
+@interface HDNanoSyncManager : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HDDiagnosticObject, HDHealthDaemonReadyObserver, HDIDSMessageCenterDelegate, HDPairedWatchBundleIdentifierProvider, HDProcessStateObserver, HDSyncStore> {
     NSMutableArray *_activationCompletions;
     NSObject<OS_dispatch_source> *_activationTimer;
     HDNanoPairingRecord *_activePairingRecord;
@@ -100,8 +100,8 @@
 - (void)_setPairingActivated:(BOOL)arg1;
 - (void)_showFitnessAppIfNeeded;
 - (id)_stateString;
-- (void)_syncImmediatelyWithReason:(id)arg1 pullRequest:(BOOL)arg2;
 - (void)_syncImmediatelyWithReason:(id)arg1;
+- (void)_syncImmediatelyWithReason:(id)arg1 pullRequest:(BOOL)arg2;
 - (BOOL)_syncQueue_applyActivationRestore:(id)arg1 request:(id)arg2 error:(id*)arg3;
 - (void)_unregisterForSyncTriggers;
 - (void)_userCharacteristicsDidChange:(id)arg1;
@@ -119,9 +119,9 @@
 - (BOOL)isMaster;
 - (BOOL)isPairingActivated;
 - (id)lastPeriodicSyncDate;
+- (id)messageCenter;
 - (void)messageCenter:(id)arg1 didResolveIDSIdentifierForRequest:(id)arg2;
 - (void)messageCenter:(id)arg1 didResolveIDSIdentifierForResponse:(id)arg2;
-- (id)messageCenter;
 - (void)messageCenterActivationError:(id)arg1;
 - (void)messageCenterChangesError:(id)arg1;
 - (void)messageCenterDidReceiveActivationRequest:(id)arg1;

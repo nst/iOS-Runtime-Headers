@@ -43,8 +43,8 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
 - (id)initWithContext:(id)arg1 functionIndex:(int)arg2 children:(id)arg3 firstIndex:(unsigned int)arg4 lastIndex:(unsigned int)arg5;
-- (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2 unwrapped:(BOOL)arg3;
 - (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2;
+- (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2 unwrapped:(BOOL)arg3;
 - (id)invalidFunctionName;
 - (BOOL)isDescendantOfChild:(id)arg1;
 - (BOOL)isEmptyFunctionNode;

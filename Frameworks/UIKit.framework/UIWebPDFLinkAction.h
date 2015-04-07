@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface UIWebPDFLinkAction : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id handler;
+
     NSString *title;
     int type;
 }

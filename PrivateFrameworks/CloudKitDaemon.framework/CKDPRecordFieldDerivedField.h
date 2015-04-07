@@ -5,13 +5,13 @@
 @class CKDPRecordFieldIdentifier, NSMutableArray;
 
 @interface CKDPRecordFieldDerivedField : PBCodable <NSCopying> {
-    struct { 
-        unsigned int aggregationFunction : 1; 
     CKDPRecordFieldIdentifier *_aggregatedField;
     NSMutableArray *_aggregatedTypes;
     int _aggregationFunction;
     NSMutableArray *_filters;
     CKDPRecordFieldIdentifier *_groupByField;
+    struct { 
+        unsigned int aggregationFunction : 1; 
     } _has;
     CKDPRecordFieldIdentifier *_identifier;
     NSMutableArray *_targetTypes;

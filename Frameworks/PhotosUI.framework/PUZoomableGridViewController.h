@@ -4,7 +4,7 @@
 
 @class NSArray, NSIndexPath, NSString, NSTimer, PLCPLStatus, PUGridMagnifiedImageViewController, PUGridPinchGestureRecognizer, PUGridZoomLevelInfo, PUMomentsZoomLevelManager, PUZoomableGridTransition, PUZoomableGridViewControllerSpec, UITapGestureRecognizer;
 
-@interface PUZoomableGridViewController : PUPhotosGridViewController <PUMagnfiedViewControllerDelegate, PLCPLStatusDelegate> {
+@interface PUZoomableGridViewController : PUPhotosGridViewController <PLCPLStatusDelegate, PUMagnfiedViewControllerDelegate> {
     PLCPLStatus *__cplStatus;
     NSTimer *__cplStatusUpdateTimer;
     PUGridPinchGestureRecognizer *__gridPinchGestureRecognizer;
@@ -35,13 +35,9 @@
 @property(readonly) PUZoomableGridTransition * currentGridZoomTransitionInfo;
 @property(setter=_setCurrentGridZoomTransitionInfo:,retain) PUZoomableGridTransition * currentGridZoomTransitionInfo;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property(setter=_setMagnifiedImageViewController:,retain) PUGridMagnifiedImageViewController * magnifiedImageViewController;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(readonly) unsigned int zoomLevel;
 @property(readonly) PUMomentsZoomLevelManager * zoomLevelManager;

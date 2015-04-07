@@ -5,11 +5,11 @@
 @class EDReference, EDTable;
 
 @interface EFTableData : NSObject {
+    int mMakeups;
     struct EFRefTok { 
         int type; 
         unsigned int dataSize; 
         unsigned char data[12]; 
-    int mMakeups;
     } mRefTok;
     EDReference *mReference;
     EDTable *mTable;

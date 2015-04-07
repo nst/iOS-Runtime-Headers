@@ -10,7 +10,11 @@
 
 @interface CTCellularPlanRequest : NSObject <NSURLConnectionDataDelegate> {
     NSDictionary *_bootstrapSettings;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     NSURLConnection *_connection;
     NSError *_error;
     NSDictionary *_internetSettings;
@@ -57,16 +61,16 @@
 - (void)_startRequestWithNextConnectionTypeOrFail;
 - (void)cancel;
 - (id)completionBlock;
+- (id)connection;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)connection;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (id)error;
 - (id)initGetWithUrl:(id)arg1;
-- (id)initJsonPostWithUrl:(id)arg1 jsonData:(id)arg2 internetSettings:(id)arg3 bootstrapSettings:(id)arg4;
 - (id)initJsonPostWithUrl:(id)arg1 jsonData:(id)arg2;
+- (id)initJsonPostWithUrl:(id)arg1 jsonData:(id)arg2 internetSettings:(id)arg3 bootstrapSettings:(id)arg4;
 - (id)initPostWithUrl:(id)arg1;
 - (id)initWithUrl:(id)arg1 httpMethod:(id)arg2 httpHeaders:(id)arg3 httpBody:(id)arg4;
 - (struct dispatch_queue_s { }*)queue;

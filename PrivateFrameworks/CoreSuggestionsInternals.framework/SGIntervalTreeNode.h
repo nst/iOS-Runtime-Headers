@@ -25,8 +25,8 @@
 - (BOOL)isSpannedBy:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)isSpannedByLeft:(unsigned int)arg1;
 - (BOOL)isSpannedByRight:(unsigned int)arg1;
-- (void)queryRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toResults:(id)arg2;
 - (id)queryRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)queryRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toResults:(id)arg2;
 - (void)storePosition:(unsigned int)arg1;
 
 @end

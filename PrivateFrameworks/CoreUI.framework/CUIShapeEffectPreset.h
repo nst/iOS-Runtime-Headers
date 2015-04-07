@@ -3,6 +3,7 @@
  */
 
 @interface CUIShapeEffectPreset : NSObject {
+    unsigned int _effectIndex[8];
     struct { 
         unsigned int effectType; 
         unsigned int effectParameter; 
@@ -17,7 +18,6 @@
             short angleValue; 
             unsigned int enumValue; 
         } effectValue; 
-    unsigned int _effectIndex[8];
     } _parameterList[35];
     float _scaleFactor;
 }

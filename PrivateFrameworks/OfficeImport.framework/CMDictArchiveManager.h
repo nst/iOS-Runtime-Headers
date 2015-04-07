@@ -5,8 +5,8 @@
 @class NSMutableDictionary, NSMutableString, NSString;
 
 @interface CMDictArchiveManager : CMArchiveManager {
-    boolmIsFrameset;
     NSMutableString *mCssString;
+    bool mIsFrameset;
     NSMutableString *mMainHtml;
     NSString *mName;
     NSString *mPrefix;
@@ -15,8 +15,8 @@
     NSMutableDictionary *mStyleCache;
 }
 
-- (void)addCssStyle:(id)arg1 withName:(id)arg2;
 - (id)addCssStyle:(id)arg1;
+- (void)addCssStyle:(id)arg1 withName:(id)arg2;
 - (id)copyDictionaryWithSizeInfos:(BOOL)arg1;
 - (id)copyResourceWithName:(id)arg1;
 - (id)cssStylesheetString;

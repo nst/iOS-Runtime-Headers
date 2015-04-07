@@ -35,15 +35,15 @@
 - (void)eraseStartOfLine;
 - (id)initWithFd:(int)arg1 forceColor:(BOOL)arg2;
 - (BOOL)isatty;
-- (void)puts:(const char *)arg1 len:(unsigned long)arg2;
 - (void)puts:(const char *)arg1;
+- (void)puts:(const char *)arg1 len:(unsigned long)arg2;
 - (void)reset;
 - (void)startAttributes:(int)arg1;
-- (void)startBgColor:(int)arg1 attr:(int)arg2;
 - (void)startBgColor:(int)arg1;
+- (void)startBgColor:(int)arg1 attr:(int)arg2;
+- (void)startFgColor:(int)arg1;
 - (void)startFgColor:(int)arg1 attr:(int)arg2;
 - (void)startFgColor:(int)arg1 bgColor:(int)arg2 attr:(int)arg3;
-- (void)startFgColor:(int)arg1;
 - (void)startNewLine;
 - (void)startPager;
 - (id)startStringForFgColor:(int)arg1 bgColor:(int)arg2 attr:(int)arg3;

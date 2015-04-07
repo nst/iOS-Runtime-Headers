@@ -5,6 +5,7 @@
 @class NSHashTable;
 
 @interface FBSceneTransform : NSObject {
+    NSHashTable *_targets;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -12,7 +13,6 @@
         float d; 
         float tx; 
         float ty; 
-    NSHashTable *_targets;
     } _transform;
 }
 

@@ -5,9 +5,9 @@
 @class CKDPQuery, CKDPRecordZoneIdentifier, CKDPRequestedFields, NSData;
 
 @interface CKDPQueryRetrieveRequest : PBRequest <NSCopying> {
+    NSData *_continuationMarker;
     struct { 
         unsigned int limit : 1; 
-    NSData *_continuationMarker;
     } _has;
     unsigned int _limit;
     CKDPQuery *_query;

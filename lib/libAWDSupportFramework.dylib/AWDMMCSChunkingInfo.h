@@ -5,13 +5,6 @@
 @class NSMutableArray, NSString;
 
 @interface AWDMMCSChunkingInfo : PBCodable <NSCopying> {
-    struct { 
-        unsigned int byteCount : 1; 
-        unsigned int chunkCount : 1; 
-        unsigned int duration : 1; 
-        unsigned int startTime : 1; 
-        unsigned int errorCode : 1; 
-        unsigned int cancelled : 1; 
     long long _byteCount;
     BOOL _cancelled;
     long long _chunkCount;
@@ -19,6 +12,13 @@
     long long _duration;
     int _errorCode;
     NSString *_errorDomain;
+    struct { 
+        unsigned int byteCount : 1; 
+        unsigned int chunkCount : 1; 
+        unsigned int duration : 1; 
+        unsigned int startTime : 1; 
+        unsigned int errorCode : 1; 
+        unsigned int cancelled : 1; 
     } _has;
     long long _startTime;
 }

@@ -9,27 +9,42 @@
 @class <UIViewControllerAnimatedTransitioning>, <UIViewControllerInteractiveTransitioning>, NSArray, NSString, UIView, _UIViewControllerTransitionCoordinator;
 
 @interface _UIViewControllerTransitionContext : NSObject <UIViewControllerContextTransitioningEx> {
-    struct { 
-        unsigned int interactorImplementsCompletionSpeed : 1; 
-        unsigned int interactorImplementsCompletionCurve : 1; 
-        unsigned int transitionWasCancelled : 1; 
-        unsigned int transitionIsCompleting : 1; 
     BOOL __allowUserInteraction;
     <UIViewControllerAnimatedTransitioning> *__animator;
     _UIViewControllerTransitionCoordinator *__auxContext;
     int __completionCurve;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __completionHandler;
+
     float __completionVelocity;
     NSArray *__containerViews;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __didCompleteHandler;
+
     double __duration;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __interactiveUpdateHandler;
+
     <UIViewControllerInteractiveTransitioning> *__interactor;
     BOOL __isPresentation;
     float __percentOffset;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __postInteractiveCompletionHandler;
+
     int __state;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __willCompleteHandler;
+
     UIView *_containerView;
     NSArray *_disabledViews;
     BOOL _initiallyInteractive;
@@ -38,6 +53,11 @@
     int _presentationStyle;
     float _previousPercentComplete;
     BOOL _rotating;
+    struct { 
+        unsigned int interactorImplementsCompletionSpeed : 1; 
+        unsigned int interactorImplementsCompletionCurve : 1; 
+        unsigned int transitionWasCancelled : 1; 
+        unsigned int transitionIsCompleting : 1; 
     } _transitionContextFlags;
 }
 

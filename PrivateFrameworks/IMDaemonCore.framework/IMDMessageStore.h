@@ -41,10 +41,10 @@
 - (id)chatsForMessageGUID:(id)arg1;
 - (void)cleanseAttachments;
 - (void)dealloc;
-- (id)deleteMessageGUIDs:(id)arg1 inChat:(id)arg2;
 - (id)deleteMessageGUIDs:(id)arg1;
-- (id)deleteMessagesWithChatIdentifiers:(id)arg1 style:(unsigned char)arg2 onServices:(id)arg3 completion:(id)arg4;
+- (id)deleteMessageGUIDs:(id)arg1 inChat:(id)arg2;
 - (id)deleteMessagesWithChatIdentifiers:(id)arg1 style:(unsigned char)arg2 onServices:(id)arg3;
+- (id)deleteMessagesWithChatIdentifiers:(id)arg1 style:(unsigned char)arg2 onServices:(id)arg3 completion:(id)arg4;
 - (id)deleteMessagesWithReplaceMessageID:(int)arg1 fromHandle:(id)arg2 onService:(id)arg3;
 - (id)existingMessageSimilarToMessage:(id)arg1 skipServices:(id)arg2 skipGUIDs:(id)arg3 withinTimeInterval:(double)arg4 participants:(id)arg5;
 - (id)frequentRepliesForForChatIdentifiers:(id)arg1 onServices:(id)arg2 limit:(unsigned int)arg3;

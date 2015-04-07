@@ -3,11 +3,11 @@
  */
 
 @interface GEOPDETA : PBCodable <NSCopying> {
+    unsigned int _distance;
     struct { 
         unsigned int distance : 1; 
         unsigned int time : 1; 
         unsigned int transportType : 1; 
-    unsigned int _distance;
     } _has;
     unsigned int _time;
     int _transportType;

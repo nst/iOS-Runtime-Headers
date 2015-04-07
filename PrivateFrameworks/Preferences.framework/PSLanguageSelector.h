@@ -21,8 +21,8 @@
 - (id)languagesWithAvailableLocaleIdentifiers;
 - (BOOL)preferredLanguages;
 - (id)renderableLanguagesFromList:(id)arg1;
-- (void)setLanguage:(id)arg1 fallback:(id)arg2;
 - (void)setLanguage:(id)arg1;
+- (void)setLanguage:(id)arg1 fallback:(id)arg2;
 - (id)supportedLanguages;
 - (id)systemLanguages;
 - (id)userDeviceLanguageOrder;

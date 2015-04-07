@@ -5,11 +5,11 @@
 @class UIImage;
 
 @interface QLThumbnailOperation : NSOperation {
+    UIImage *_image;
+    int _index;
     struct CGSize { 
         float width; 
         float height; 
-    UIImage *_image;
-    int _index;
     } _size;
 }
 

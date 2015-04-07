@@ -44,12 +44,12 @@
 - (BOOL)saveChats;
 - (void)systemDidLeaveFirstDataProtectionLock;
 - (void)systemDidUnlock;
-- (void)updateLastMessageForChat:(id)arg1 hintMessage:(id)arg2;
 - (void)updateLastMessageForChat:(id)arg1;
+- (void)updateLastMessageForChat:(id)arg1 hintMessage:(id)arg2;
 - (BOOL)updateProperties:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3;
+- (void)updateStateForChat:(id)arg1;
 - (void)updateStateForChat:(id)arg1 forcePost:(BOOL)arg2;
 - (void)updateStateForChat:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3 forcePost:(BOOL)arg4;
-- (void)updateStateForChat:(id)arg1;
 - (BOOL)updateUnreadCountForChat:(id)arg1;
 
 @end

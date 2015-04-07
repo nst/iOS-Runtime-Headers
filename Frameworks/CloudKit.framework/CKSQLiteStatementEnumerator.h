@@ -9,7 +9,11 @@
 @class CKSQLiteStatement;
 
 @interface CKSQLiteStatementEnumerator : NSEnumerator {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
     BOOL _closed;
     CKSQLiteStatement *_statement;
 }

@@ -5,11 +5,11 @@
 @class TSCHLegendModelCache;
 
 @interface TSCHLegendViewCache : NSObject <TSCHUnretainedParent> {
+    unsigned int mCellCount;
+    struct CGPoint { float x1; float x2; } *mCellOrigins;
     struct CGSize { 
         float width; 
         float height; 
-    unsigned int mCellCount;
-    struct CGPoint { float x1; float x2; } *mCellOrigins;
     } mFinalSize;
     TSCHLegendModelCache *mModelCache;
     unsigned int mNumberOfColumns;

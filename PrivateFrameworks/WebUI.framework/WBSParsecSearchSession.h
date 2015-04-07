@@ -5,23 +5,23 @@
 @class <WBSParsecSearchSessionDelegate>, NSMutableArray, NSMutableDictionary, NSURLSession, WBSCompletionQuery, WBSParsecSearchClient, WBSParsecSearchResultCache;
 
 @interface WBSParsecSearchSession : NSObject {
-    struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { 
-        struct duration<long long, std::__1::ratio<1, 1000000000> > { 
-            long long __rep_; 
-        } __d_; 
-    struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { 
-        struct duration<long long, std::__1::ratio<1, 1000000000> > { 
-            long long __rep_; 
-        } __d_; 
     WBSParsecSearchClient *_client;
     WBSCompletionQuery *_currentQuery;
     <WBSParsecSearchSessionDelegate> *_delegate;
     NSMutableArray *_feedbackActions;
     BOOL _hasRespondedToCurrentQuery;
+    struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { 
+        struct duration<long long, std::__1::ratio<1, 1000000000> > { 
+            long long __rep_; 
+        } __d_; 
     } _latestQueryTimestamp;
     double _minimumIntervalBetweenQueriesFromResponseHeaders;
     NSMutableDictionary *_resultSetPrefixCache;
     WBSParsecSearchResultCache *_searchResultCache;
+    struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { 
+        struct duration<long long, std::__1::ratio<1, 1000000000> > { 
+            long long __rep_; 
+        } __d_; 
     } _sessionStartTimestamp;
     float _uiScale;
     NSURLSession *_urlSession;
@@ -52,8 +52,8 @@
 - (id)_searchFallbackURLForQuery:(id)arg1;
 - (void)_searchRequestFailedForQuery:(id)arg1;
 - (id)_searchRequestForQuery:(id)arg1;
-- (id)_searchURLForQuery:(id)arg1 baseURL:(id)arg2;
 - (id)_searchURLForQuery:(id)arg1;
+- (id)_searchURLForQuery:(id)arg1 baseURL:(id)arg2;
 - (void)_sendGeneratedFeedback;
 - (void)_sendWarmupRequest;
 - (double)_timeToFirstByteForDataTask:(id)arg1;
@@ -72,9 +72,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setUIScale:(float)arg1;
 - (float)uiScale;
-- (void)userDidCancelSession:(int)arg1;
 - (void)userDidCancelSession;
-- (void)userDidSelectCompletionListItem:(id)arg1 hidingParsecResult:(id)arg2;
+- (void)userDidCancelSession:(int)arg1;
 - (void)userDidSelectCompletionListItem:(id)arg1;
+- (void)userDidSelectCompletionListItem:(id)arg1 hidingParsecResult:(id)arg2;
 
 @end

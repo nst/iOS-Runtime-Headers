@@ -16,9 +16,9 @@
 
 + (void)assembleURL:(id)arg1 sandbox:(id)arg2 physicalURL:(id)arg3 physicalSandbox:(id)arg4;
 + (BOOL)supportsSecureCoding;
++ (id)wrapperWithURL:(id)arg1;
 + (id)wrapperWithURL:(id)arg1 createSandboxIfNoneAttached:(BOOL)arg2;
 + (id)wrapperWithURL:(id)arg1 readonly:(BOOL)arg2;
-+ (id)wrapperWithURL:(id)arg1;
 
 - (BOOL)createSandbox;
 - (void)dealloc;

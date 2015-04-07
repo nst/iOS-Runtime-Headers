@@ -5,6 +5,9 @@
 @class MFActivityMonitor, MFMailboxUid, MailAccount;
 
 @interface MFMailMessageStore : MFMessageStore {
+    MailAccount *_account;
+    unsigned int _deletedMessageCount;
+    unsigned int _deletedMessagesSize;
     struct { 
         unsigned int isReadOnly : 1; 
         unsigned int hasUnsavedChangesToMessageData : 1; 
@@ -16,9 +19,6 @@
         unsigned int isTryingToClose : 1; 
         unsigned int compactOnClose : 1; 
         unsigned int reserved : 23; 
-    MailAccount *_account;
-    unsigned int _deletedMessageCount;
-    unsigned int _deletedMessagesSize;
     } _flags;
     unsigned int _generationNumber;
     unsigned int _lastFetchCount;
@@ -29,8 +29,8 @@
 }
 
 + (Class)classForMimePart;
-+ (unsigned int)copyMessages:(id)arg1 toMailbox:(id)arg2 markAsRead:(BOOL)arg3 deleteOriginals:(BOOL)arg4 isDeletion:(BOOL)arg5 unsuccessfulOnes:(id)arg6 newMessages:(id)arg7;
 + (unsigned int)copyMessages:(id)arg1 toMailbox:(id)arg2 markAsRead:(BOOL)arg3 deleteOriginals:(BOOL)arg4 isDeletion:(BOOL)arg5 unsuccessfulOnes:(id)arg6;
++ (unsigned int)copyMessages:(id)arg1 toMailbox:(id)arg2 markAsRead:(BOOL)arg3 deleteOriginals:(BOOL)arg4 isDeletion:(BOOL)arg5 unsuccessfulOnes:(id)arg6 newMessages:(id)arg7;
 + (BOOL)createEmptyStoreForPath:(id)arg1;
 + (BOOL)createEmptyStoreIfNeededForPath:(id)arg1;
 + (Class)headersClass;
@@ -48,10 +48,10 @@
 - (id)account;
 - (void)allMessageFlagsDidChange:(id)arg1;
 - (BOOL)allowsAppend;
-- (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4 flagsToSet:(id)arg5;
-- (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4;
-- (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3;
 - (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2;
+- (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3;
+- (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4;
+- (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4 flagsToSet:(id)arg5;
 - (int)archiveDestination;
 - (BOOL)canCompact;
 - (BOOL)canDeleteMessage:(id)arg1;
@@ -60,8 +60,8 @@
 - (void)cancelOpen;
 - (void)close;
 - (id)copyMessagesMatchingCriterion:(id)arg1 options:(unsigned int)arg2;
-- (id)copyMessagesMatchingText:(id)arg1 options:(unsigned int)arg2;
 - (id)copyMessagesMatchingText:(id)arg1;
+- (id)copyMessagesMatchingText:(id)arg1 options:(unsigned int)arg2;
 - (id)copyMessagesWithRemoteIDs:(id)arg1 options:(unsigned int)arg2;
 - (id)copyOfAllMessages;
 - (id)copyOfAllMessagesForBodyLoadingFromRowID:(unsigned int)arg1 limit:(unsigned int)arg2;
@@ -78,8 +78,8 @@
 - (int)fetchMessagesMatchingCriterion:(id)arg1 limit:(unsigned int)arg2;
 - (int)fetchMessagesWithMessageIDs:(id)arg1 andSetFlags:(unsigned long long)arg2;
 - (int)fetchMessagesWithRemoteIDs:(id)arg1 andSetFlags:(unsigned long long)arg2;
-- (int)fetchMobileSynchronously:(unsigned int)arg1 preservingUID:(id)arg2 options:(unsigned int)arg3;
 - (int)fetchMobileSynchronously:(unsigned int)arg1;
+- (int)fetchMobileSynchronously:(unsigned int)arg1 preservingUID:(id)arg2 options:(unsigned int)arg3;
 - (int)fetchNumMessages:(unsigned int)arg1 preservingUID:(id)arg2 options:(unsigned int)arg3;
 - (unsigned int)fetchWindow;
 - (id)finishRoutingMessages:(id)arg1 routed:(id)arg2;
@@ -103,8 +103,8 @@
 - (void)messageFlagsDidChange:(id)arg1 flags:(id)arg2;
 - (id)messageForMessageID:(id)arg1 options:(unsigned int)arg2;
 - (id)messageForRemoteID:(id)arg1;
-- (void)messagesWereAdded:(id)arg1 earliestReceivedDate:(id)arg2;
 - (void)messagesWereAdded:(id)arg1;
+- (void)messagesWereAdded:(id)arg1 earliestReceivedDate:(id)arg2;
 - (void)messagesWereCompacted:(id)arg1;
 - (void)messagesWereDeleted:(id)arg1;
 - (void)messagesWillBeCompacted:(id)arg1;

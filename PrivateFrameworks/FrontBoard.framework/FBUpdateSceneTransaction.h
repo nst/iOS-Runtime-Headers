@@ -10,9 +10,17 @@
 
 @interface FBUpdateSceneTransaction : FBTransaction <FBSceneManagerObserver, FBSynchronizedTransaction> {
     <FBSceneClientProvider> *_clientProvider;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _clientProviderProvider;
+
     FBSSceneClientSettings *_clientSettings;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _clientSettingsProvider;
+
     id _context;
     BOOL _destroyed;
     FBWaitForSceneDestructionTransaction *_destuctionTransaction;

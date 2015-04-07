@@ -4,21 +4,21 @@
 
 @class <UIViewControllerAnimatedTransitioning>, NSMapTable, NSObject<OS_dispatch_queue>, NSString, UIView, UIViewController<NCWidgetProviding>, _UIViewControllerTransitionContext;
 
-@interface _NCWidgetViewController : UIViewController <_NCWidgetViewController_Service_IPC, SBUISizeObservingViewDelegate> {
+@interface _NCWidgetViewController : UIViewController <SBUISizeObservingViewDelegate, _NCWidgetViewController_Service_IPC> {
+    _UIViewControllerTransitionContext *_activeTransitionContext;
+    NSMapTable *_activeTransitionContextsByRequestID;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
+    } _clientMarginInsets;
+    float _clientPreferredViewHeight;
+    UIViewController<NCWidgetProviding> *_contentProvidingViewController;
     struct { 
         unsigned int implementsPerformUpdateWithCompletionHandler : 1; 
         unsigned int implementsMarginInsets : 1; 
         unsigned int implementsContentWidthDidChange : 1; 
-    _UIViewControllerTransitionContext *_activeTransitionContext;
-    NSMapTable *_activeTransitionContextsByRequestID;
-    } _clientMarginInsets;
-    float _clientPreferredViewHeight;
-    UIViewController<NCWidgetProviding> *_contentProvidingViewController;
     } _contentProvidingViewControllerFlags;
     UIView *_contentView;
     NSObject<OS_dispatch_queue> *_remoteViewControllerProxyQueue;
@@ -59,8 +59,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sanitizedClientFrameFromHostSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setContentProvidingViewController:(id)arg1;
 - (BOOL)_shouldRemoveViewFromHierarchyOnDisappear;
-- (id)_transitionContextForRequestIdentifier:(id)arg1 usingAutolayout:(BOOL)arg2 createIfNecessary:(BOOL)arg3;
 - (id)_transitionContextForRequestIdentifier:(id)arg1;
+- (id)_transitionContextForRequestIdentifier:(id)arg1 usingAutolayout:(BOOL)arg2 createIfNecessary:(BOOL)arg3;
 - (void)_willAppearInRemoteViewController;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (void)dealloc;

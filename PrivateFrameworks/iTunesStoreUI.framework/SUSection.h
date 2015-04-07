@@ -52,8 +52,8 @@
 - (id)identifier;
 - (id)image;
 - (id)imageForSectionButtonWithTag:(int)arg1;
-- (id)initWithClientInterface:(id)arg1 sectionType:(int)arg2 defaultPNGStyle:(int)arg3;
 - (id)initWithClientInterface:(id)arg1;
+- (id)initWithClientInterface:(id)arg1 sectionType:(int)arg2 defaultPNGStyle:(int)arg3;
 - (BOOL)isDefaultSection;
 - (BOOL)isTransient;
 - (BOOL)isUsingLocalArtwork;

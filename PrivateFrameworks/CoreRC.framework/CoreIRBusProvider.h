@@ -21,9 +21,9 @@
 - (Class)classForCoder;
 - (void)dealloc;
 - (id)initWithInterface:(id)arg1;
+- (id)interface;
 - (void)interface:(id)arg1 receivedCommand:(id)arg2;
 - (void)interface:(id)arg1 receivedHIDEvent:(id)arg2;
-- (id)interface;
 - (id)localDevice;
 - (id)propertyForKey:(id)arg1 error:(id*)arg2;
 - (void)setManager:(id)arg1;

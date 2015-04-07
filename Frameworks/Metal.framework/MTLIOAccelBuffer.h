@@ -9,7 +9,11 @@
 @class MTLIOAccelBuffer;
 
 @interface MTLIOAccelBuffer : MTLIOAccelResource {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deallocator;
+
     unsigned int _length;
     MTLIOAccelBuffer *_masterBuffer;
     short _masterBufferIndex;

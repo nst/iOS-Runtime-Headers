@@ -36,14 +36,14 @@
 + (id)newMappedDataForExternalReference:(id)arg1;
 + (id)newMutableArrayFromCollection:(id)arg1 byRemovingItems:(id)arg2;
 + (id)newMutableArrayFromCollection:(id)arg1 forParentContext:(id)arg2;
-+ (id)newMutableOrderedSetFromCollection:(id)arg1 forParentContext:(id)arg2;
 + (id)newMutableOrderedSetFromCollection:(id)arg1;
++ (id)newMutableOrderedSetFromCollection:(id)arg1 forParentContext:(id)arg2;
 + (id)newMutableSetFromCollection:(id)arg1 byRemovingItems:(id)arg2;
 + (id)newMutableSetFromCollection:(id)arg1 forParentContext:(id)arg2;
++ (id)newOrderedSetFromCollection:(id)arg1;
 + (id)newOrderedSetFromCollection:(id)arg1 byAddingItems:(id)arg2;
 + (id)newOrderedSetFromCollection:(id)arg1 byInsertingItems:(id)arg2 atIndex:(unsigned int)arg3;
 + (id)newOrderedSetFromCollection:(id)arg1 byRemovingItems:(id)arg2;
-+ (id)newOrderedSetFromCollection:(id)arg1;
 + (id)newOrderedSetOfObjectIDsFromCollection:(id)arg1;
 + (id)newSetOfObjectIDsFromCollection:(id)arg1;
 + (void)readBytesForExternalReferenceData:(id)arg1 intoBuffer:(void*)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;

@@ -57,8 +57,8 @@
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 description:(id)arg2;
-- (id)initWithManagedAccountType:(id)arg1 accountStore:(id)arg2;
 - (id)initWithManagedAccountType:(id)arg1;
+- (id)initWithManagedAccountType:(id)arg1 accountStore:(id)arg2;
 - (id)objectID;
 - (id)owningBundleID;
 - (id)owningTeamID;

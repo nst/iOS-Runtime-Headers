@@ -23,7 +23,11 @@
     NSMutableArray *_openParentRequests;
     NSString *_rootViewControllerID;
     id _runLoopObserver;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _textInputCompletion;
+
 }
 
 @property(retain) NSMutableArray * activeComplicationsConnections;

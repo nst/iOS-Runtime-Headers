@@ -5,47 +5,27 @@
 @class GLKEffect, GLKEffectPropertyConstantColor, GLKEffectPropertyFog, GLKEffectPropertyLight, GLKEffectPropertyMaterial, GLKEffectPropertyTexture, GLKEffectPropertyTransform, NSArray, NSMutableArray, NSString;
 
 @interface GLKBaseEffect : NSObject <GLKNamedEffect> {
-    union _GLKVector4 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-            float q; 
-        } ; 
-        float v[4]; 
-    union _GLKVector4 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-            float q; 
-        } ; 
-        float v[4]; 
     unsigned char _colorMaterialEnabled;
+    union _GLKVector4 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+            float q; 
+        } ; 
+        float v[4]; 
     } _constantColor;
     GLKEffectPropertyConstantColor *_constantColorProp;
     GLKEffect *_effect;
@@ -56,6 +36,26 @@
     GLKEffectPropertyLight *_light0;
     GLKEffectPropertyLight *_light1;
     GLKEffectPropertyLight *_light2;
+    union _GLKVector4 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+            float q; 
+        } ; 
+        float v[4]; 
     } _lightModelAmbientColor;
     unsigned char _lightModelTwoSided;
     int _lightingType;

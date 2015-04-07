@@ -12,7 +12,11 @@
     NSString *_bulletinID;
     NSString *_sectionID;
     NSDate *_timeout;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _timeoutHandler;
+
 }
 
 @property(retain) NSString * bulletinID;

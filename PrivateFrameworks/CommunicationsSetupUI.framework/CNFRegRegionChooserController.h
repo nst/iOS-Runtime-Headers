@@ -4,7 +4,7 @@
 
 @class <CNFRegRegionChooserDelegate>, NSArray, NSString, PSRootController, PSSpecifier, UISearchController, UIViewController<PSController>;
 
-@interface CNFRegRegionChooserController : UITableViewController <UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate, CNFRegRegionChooserDelegate, PSController> {
+@interface CNFRegRegionChooserController : UITableViewController <CNFRegRegionChooserDelegate, PSController, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating> {
     <CNFRegRegionChooserDelegate> *_delegate;
     NSArray *_filteredRegionList;
     UIViewController<PSController> *_parentController;
@@ -61,8 +61,8 @@
 - (void)setSelectedRegionID:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)showController:(id)arg1 animate:(BOOL)arg2;
 - (void)showController:(id)arg1;
+- (void)showController:(id)arg1 animate:(BOOL)arg2;
 - (id)specifier;
 - (void)statusBarWillAnimateByHeight:(float)arg1;
 - (void)suspend;

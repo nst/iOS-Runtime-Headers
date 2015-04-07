@@ -4,7 +4,7 @@
 
 @class UINavigationController, VUPublishPost, VUPublishViewController;
 
-@interface VUPublishAgent : PLPublishingAgent <VUPublishViewControllerDelegate, VUPublishPostDelegate> {
+@interface VUPublishAgent : PLPublishingAgent <VUPublishPostDelegate, VUPublishViewControllerDelegate> {
     UINavigationController *_navigationController;
     VUPublishPost *_publishPost;
     VUPublishViewController *_publishViewController;

@@ -5,9 +5,18 @@
 @class CALayer, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, TSDRep, TSUNoCopyDictionary;
 
 @interface TSDTextureSet : NSObject <NSCopying> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+    BOOL _isFlippedHorizontally;
+    int _objectType;
+    int _stageIndex;
+    float _textureAnimationPercent;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    } mActiveChunkIndices;
+    NSMutableArray *mAllTextures;
+    CALayer *mAlternateLayer;
+    NSDictionary *mBakedAttributes;
+    NSMutableDictionary *mBoundingRectForStage;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,22 +26,10 @@
             float width; 
             float height; 
         } size; 
+    } mBounds;
     struct CGPoint { 
         float x; 
         float y; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    BOOL _isFlippedHorizontally;
-    int _objectType;
-    int _stageIndex;
-    float _textureAnimationPercent;
-    } mActiveChunkIndices;
-    NSMutableArray *mAllTextures;
-    CALayer *mAlternateLayer;
-    NSDictionary *mBakedAttributes;
-    NSMutableDictionary *mBoundingRectForStage;
-    } mBounds;
     } mCenter;
     unsigned int mChunkCount;
     struct CGColorSpace { } *mColorSpace;
@@ -43,6 +40,9 @@
     BOOL mIsMagicMove;
     CALayer *mLayer;
     int mMaxStageIndex;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mOriginalPosition;
     TSDRep *mRep;
     NSMutableDictionary *mReverseFinalTextureForStage;
@@ -86,15 +86,15 @@
 
 - (void)addFinalTexture:(id)arg1 forStage:(int)arg2 reverse:(BOOL)arg3;
 - (void)addPerspectiveLayerToTexture:(id)arg1 withShowSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)addRenderable:(id)arg1 forStage:(int)arg2;
 - (void)addRenderable:(id)arg1;
+- (void)addRenderable:(id)arg1 forStage:(int)arg2;
 - (void)adjustAnchorPointRelativeToCenterOfRotation;
 - (id)allTextures;
 - (id)alternateLayer;
 - (void)applyActionEffect:(id)arg1 viewScale:(float)arg2 isMagicMove:(BOOL)arg3 shouldBake:(BOOL)arg4 applyScaleOnly:(BOOL)arg5 ignoreScale:(BOOL)arg6 shouldCheckActionKeys:(BOOL)arg7;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForStage:(int)arg1 isBuildIn:(BOOL)arg2;
 - (id)boundingRectForStage;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForStage:(int)arg1 isBuildIn:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })center;
 - (unsigned int)chunkCount;
 - (struct CGColorSpace { }*)colorSpace;
@@ -128,8 +128,8 @@
 - (void)resetAnchorPoint;
 - (void)resetToOriginalSource;
 - (void)setAlternateLayer:(id)arg1;
-- (void)setBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forStage:(int)arg2;
 - (void)setBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forStage:(int)arg2;
 - (void)setBoundingRectForStage:(id)arg1;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;

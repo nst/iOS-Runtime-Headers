@@ -5,6 +5,9 @@
 @class _UIFlowLayoutRow, _UIFlowLayoutSection;
 
 @interface _UIFlowLayoutItem : NSObject {
+    struct { 
+        unsigned int positionEstimated : 1; 
+    } _itemFlags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,9 +17,6 @@
             float width; 
             float height; 
         } size; 
-    struct { 
-        unsigned int positionEstimated : 1; 
-    } _itemFlags;
     } _itemFrame;
     _UIFlowLayoutRow *_rowObject;
     _UIFlowLayoutSection *_section;

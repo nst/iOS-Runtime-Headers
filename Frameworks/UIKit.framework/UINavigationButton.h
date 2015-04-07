@@ -5,21 +5,19 @@
 @class NSDictionary, NSSet, NSString, UIBarButtonItem, UIColor, UIImage, UINavigationItem;
 
 @interface UINavigationButton : UIButton {
-    struct CGSize { 
-        float width; 
-        float height; 
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    unsigned int _wantsLetterpressContent : 1;
-    unsigned int _size : 2;
     } __additionalSelectionInsets;
     BOOL __barItemHidden;
     Class _appearanceGuideClass;
     id _appearanceStorage;
     int _barStyle;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _boundsAdjustment;
     int _buttonItemStyle;
     BOOL _createdByBarButtonItem;
@@ -32,9 +30,11 @@
     UINavigationItem *_originatingNavigationItem;
     NSSet *_possibleSystemItems;
     NSSet *_possibleTitles;
+    unsigned int _size : 2;
     int _style;
     NSDictionary *_stylesForSizingTitles;
     BOOL _wantsBlendModeForAccessibilityBackgrounds;
+    unsigned int _wantsLetterpressContent : 1;
 }
 
 @property(setter=_setAdditionalSelectionInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _additionalSelectionInsets;
@@ -142,13 +142,13 @@
 - (int)controlSize;
 - (void)dealloc;
 - (id)image;
-- (id)initWithImage:(id)arg1 style:(int)arg2;
-- (id)initWithImage:(id)arg1 width:(float)arg2 style:(int)arg3 applyBezel:(BOOL)arg4 forBarStyle:(int)arg5 buttonItemStyle:(int)arg6;
-- (id)initWithImage:(id)arg1 width:(float)arg2 style:(int)arg3;
 - (id)initWithImage:(id)arg1;
+- (id)initWithImage:(id)arg1 style:(int)arg2;
+- (id)initWithImage:(id)arg1 width:(float)arg2 style:(int)arg3;
+- (id)initWithImage:(id)arg1 width:(float)arg2 style:(int)arg3 applyBezel:(BOOL)arg4 forBarStyle:(int)arg5 buttonItemStyle:(int)arg6;
+- (id)initWithTitle:(id)arg1;
 - (id)initWithTitle:(id)arg1 possibleTitles:(id)arg2 style:(int)arg3;
 - (id)initWithTitle:(id)arg1 style:(int)arg2;
-- (id)initWithTitle:(id)arg1;
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 possibleSystemItems:(id)arg6 tintColor:(id)arg7 applyBezel:(BOOL)arg8 forButtonItemStyle:(int)arg9;
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6;
 - (void)layoutSubviews;

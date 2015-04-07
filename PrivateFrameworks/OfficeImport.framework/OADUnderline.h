@@ -5,9 +5,9 @@
 @class OADFill, OADStroke;
 
 @interface OADUnderline : NSObject {
+    OADFill *mFill;
     unsigned int mIsUsingTextFill : 1;
     unsigned int mIsUsingTextStroke : 1;
-    OADFill *mFill;
     OADStroke *mStroke;
     unsigned char mType;
 }

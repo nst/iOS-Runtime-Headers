@@ -11,7 +11,11 @@
 @interface ReservationStationObject : NSObject <DuetLoggerProtocol> {
     int appType;
     NSString *bundleID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id forceEndHandler;
+
     long long lockTime;
     NSObject<OS_dispatch_queue> *rsDispatchQueue;
     long long seqNum;

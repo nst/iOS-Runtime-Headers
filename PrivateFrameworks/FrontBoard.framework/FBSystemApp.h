@@ -4,7 +4,7 @@
 
 @class FBSceneClientProviderInvalidationAction, NSMapTable, NSMutableDictionary, NSString;
 
-@interface FBSystemApp : UIApplication <FBSceneClient, FBSSceneUpdater, BKSSystemApplicationDelegate, FBSceneClientProvider> {
+@interface FBSystemApp : UIApplication <BKSSystemApplicationDelegate, FBSSceneUpdater, FBSceneClient, FBSceneClientProvider> {
     NSMapTable *_hostsByIdentifier;
     NSMutableDictionary *_initialClientSettingsByIdentifier;
     FBSceneClientProviderInvalidationAction *_invalidationAction;

@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface MPAbstractFullScreenVideoViewController : MPVideoViewController <MPSwipableViewDelegate> {
+    unsigned int _autoHidingForItemChange : 1;
     unsigned int _requestExitAfterHidingControls : 1;
     unsigned int _rotateAfterHidingControls : 1;
-    unsigned int _showControlsAfterRotate : 1;
-    unsigned int _autoHidingForItemChange : 1;
     unsigned int _scheduledAutoHide : 1;
+    unsigned int _showControlsAfterRotate : 1;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -19,8 +19,8 @@
 
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_autohideControlsOverlay;
-- (void)_hideOverlayWithAnimation:(BOOL)arg1 shouldUpdateAutohideFlag:(BOOL)arg2;
 - (void)_hideOverlayWithAnimation:(BOOL)arg1;
+- (void)_hideOverlayWithAnimation:(BOOL)arg1 shouldUpdateAutohideFlag:(BOOL)arg2;
 - (void)_resumedEventsOnlyNotification:(id)arg1;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
 - (int)_validInterfaceOrientation;

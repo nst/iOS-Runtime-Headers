@@ -4,7 +4,11 @@
 
 @class MFPopoverController, NSArray, NSMutableArray, NSString, UIActionSheet, UIBarButtonItem, UIView;
 
-@interface MFMailPopoverManager : NSObject <UIPopoverPresentationControllerDelegate, UIActionSheetDelegate> {
+@interface MFMailPopoverManager : NSObject <UIActionSheetDelegate, UIPopoverPresentationControllerDelegate> {
+    UIActionSheet *_actionSheet;
+    id _actionSheetDelegate;
+    unsigned int _currentArrowDirections;
+    UIBarButtonItem *_currentBarButtonItem;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,10 +18,6 @@
             float width; 
             float height; 
         } size; 
-    UIActionSheet *_actionSheet;
-    id _actionSheetDelegate;
-    unsigned int _currentArrowDirections;
-    UIBarButtonItem *_currentBarButtonItem;
     } _currentRect;
     UIView *_currentView;
     id _delegate;
@@ -58,10 +58,10 @@
 - (BOOL)_isEquivalentToCurrentPopover:(id)arg1;
 - (void)_popoverDismissalDidFinish;
 - (void)_willPresentPopover:(id)arg1;
+- (id)actionSheet;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
-- (id)actionSheet;
 - (void)actionSheetCancel:(id)arg1;
 - (int)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)addPassthroughView:(id)arg1;

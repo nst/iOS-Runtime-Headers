@@ -23,7 +23,11 @@
     long long initialSyncChangeCount;
     unsigned char isInitialSync;
     struct __CFString { } *preferenceID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id registrationBlock;
+
     NSObject<OS_dispatch_queue> *registrationQueue;
     long long storageChangeCount;
     struct __CFURL { } *urlOnDisk;
@@ -55,8 +59,8 @@
 - (void*)getValueForKey:(struct __CFString { }*)arg1;
 - (unsigned char)hasExternalChanges;
 - (id)initWithApplicationID:(struct __CFString { }*)arg1 shared:(BOOL)arg2;
-- (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3 additionalSource:(BOOL)arg4;
 - (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3;
+- (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3 additionalSource:(BOOL)arg4;
 - (unsigned char)isInitialSync;
 - (long)maximumDataLengthPerKey;
 - (long)maximumKeyCount;

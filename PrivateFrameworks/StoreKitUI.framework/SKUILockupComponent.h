@@ -5,13 +5,13 @@
 @class SKUIEditorialComponent, SKUIItem, SKUILockupViewElement;
 
 @interface SKUILockupComponent : SKUIPageComponent {
+    SKUIEditorialComponent *_editorial;
+    SKUIItem *_item;
+    long long _itemIdentifier;
     struct SKUILockupStyle { 
         int artworkSize; 
         int layoutStyle; 
         unsigned int visibleFields; 
-    SKUIEditorialComponent *_editorial;
-    SKUIItem *_item;
-    long long _itemIdentifier;
     } _lockupStyle;
 }
 

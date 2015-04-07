@@ -35,8 +35,8 @@
 - (BOOL)getBibliographyString:(id*)arg1 andCitationStrings:(id*)arg2 forCitationInfos:(id)arg3 usingPosition:(unsigned int)arg4;
 - (BOOL)getBibliographyString:(id*)arg1 andCitationStrings:(id*)arg2 forCitationRecords:(id)arg3 usingPosition:(unsigned int)arg4;
 - (BOOL)getFormattedTextForCitation:(id)arg1 usingPosition:(unsigned int)arg2 outCitation:(id*)arg3 outBiblioEntry:(id*)arg4;
-- (id)infoForCitation:(id)arg1 isFootnote:(BOOL)arg2;
 - (id)infoForCitation:(id)arg1;
+- (id)infoForCitation:(id)arg1 isFootnote:(BOOL)arg2;
 - (id)infosForAdjacentCitations:(id)arg1 isFootnote:(BOOL)arg2;
 - (id)init;
 - (BOOL)isEndNoteAvailable;

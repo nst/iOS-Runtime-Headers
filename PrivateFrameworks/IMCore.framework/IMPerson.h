@@ -39,11 +39,11 @@
 + (id)allPeople;
 + (id)existingABPeopleWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
 + (id)existingABPersonForPerson:(id)arg1;
++ (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5 countryCode:(id)arg6 identifier:(int*)arg7;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5 identifier:(int*)arg6;
-+ (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5;
-+ (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3 orNumber:(id)arg4;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3;
++ (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3 orNumber:(id)arg4;
 + (id)existingABPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 + (id)existingABPersonWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
 
@@ -60,8 +60,8 @@
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
-- (id)emailHandlesForService:(id)arg1 includeBaseEmail:(BOOL)arg2;
 - (id)emailHandlesForService:(id)arg1;
+- (id)emailHandlesForService:(id)arg1 includeBaseEmail:(BOOL)arg2;
 - (id)emails;
 - (void)finalize;
 - (id)firstName;
@@ -86,8 +86,8 @@
 - (int)recordID;
 - (void)save;
 - (void)setEmails:(id)arg1;
-- (void)setFirstName:(id)arg1 lastName:(id)arg2;
 - (void)setFirstName:(id)arg1;
+- (void)setFirstName:(id)arg1 lastName:(id)arg2;
 - (void)setImageData:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setNickname:(id)arg1;

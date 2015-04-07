@@ -10,7 +10,11 @@
 
 @interface SKUITonePurchaseController : NSObject <ABPeoplePickerNavigationControllerDelegate> {
     SKUIClientContext *_clientContext;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     SKUIItem *_item;
     UIViewController *_parentViewController;
     ABPeoplePickerNavigationController *_peoplePicker;
@@ -33,8 +37,8 @@
 - (void)dealloc;
 - (id)initWithItem:(id)arg1;
 - (id)parentViewController;
-- (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2;
+- (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setParentViewController:(id)arg1;

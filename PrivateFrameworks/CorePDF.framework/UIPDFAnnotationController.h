@@ -5,25 +5,25 @@
 @class <NSObject><UIPDFAnnotationControllerDelegate>, CALayer, NSString, UIColor, UIPDFAnnotation, UIPDFMarkupAnnotation, UIPDFPageView;
 
 @interface UIPDFAnnotationController : NSObject <UIGestureRecognizerDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        int location; 
-        int length; 
+    BOOL _allowEditing;
     struct CGSize { 
         float width; 
         float height; 
-    BOOL _allowEditing;
     } _cachedMarginNoteSize;
     UIPDFMarkupAnnotation *_currentAnnotation;
     UIColor *_currentColor;
     <NSObject><UIPDFAnnotationControllerDelegate> *_delegate;
     CALayer *_drawingSurface;
+    struct { 
+        int location; 
+        int length; 
     } _initialRange;
     int _lock;
     BOOL _moving;
     UIPDFPageView *_pageView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _startPoint;
     BOOL _tracking;
     BOOL makeUnderlineAnnotation;
@@ -103,8 +103,8 @@
 - (void)setView:(id)arg1;
 - (void)startTracking:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)trackMoved:(struct CGPoint { float x1; float x2; })arg1;
-- (void)tracking:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)tracking;
+- (void)tracking:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGImage { }*)underlineImageFor:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)unlock;
 - (BOOL)willDoSomethingWithTap:(struct CGPoint { float x1; float x2; })arg1;

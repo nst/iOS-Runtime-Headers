@@ -5,15 +5,6 @@
 @class CALayer, NSString, UIKBRenderConfig, UIKBTree, UIKeyboardMenuView;
 
 @interface UIKBKeyView : UIView <UIKBCacheableView> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     NSString *_cachedTraitsHashString;
     CALayer *_keyBackgrounds;
     CALayer *_keyBorders;
@@ -24,6 +15,15 @@
     BOOL _renderAsMask;
     int _renderedKeyState;
     struct __CFBoolean { } *m_allowsCaching;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } m_drawFrame;
     UIKBTree *m_key;
     UIKBTree *m_keyplane;

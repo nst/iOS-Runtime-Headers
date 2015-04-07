@@ -5,9 +5,6 @@
 @class NSArray, NSHashTable, NSMutableDictionary, NSOperationQueue, NSString, NSURL, SKUIClientContext;
 
 @interface SKUIGiftConfiguration : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     NSArray *_charities;
     NSMutableDictionary *_charityImages;
     SKUIClientContext *_clientContext;
@@ -15,6 +12,9 @@
     int _currencySymbolPosition;
     NSArray *_fixedGiftAmountLabels;
     NSArray *_fixedGiftAmountValues;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _giftAmountRange;
     NSURL *_giftPurchaseURL;
     NSURL *_giftValidationURL;

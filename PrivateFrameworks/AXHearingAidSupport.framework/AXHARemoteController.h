@@ -71,8 +71,8 @@
 - (void)receivedData:(id)arg1;
 - (void)resetConnection;
 - (void)sendDataChunk;
-- (BOOL)sendObject:(id)arg1 withSendCompletion:(id)arg2;
 - (BOOL)sendObject:(id)arg1;
+- (BOOL)sendObject:(id)arg1 withSendCompletion:(id)arg2;
 - (id)service;
 - (void)setCommunicationTimer:(id)arg1;
 - (void)setCurrentMessageInFlight:(id)arg1;

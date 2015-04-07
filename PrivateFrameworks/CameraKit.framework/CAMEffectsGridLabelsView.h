@@ -42,8 +42,8 @@
 - (int)orientation;
 - (void)setDisableLayoutForLabels:(BOOL)arg1;
 - (void)setGridView:(id)arg1;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setOrientation:(int)arg1;
+- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)set_backdropView:(id)arg1;
 - (void)set_legibilitySettingsProvider:(id)arg1;
 - (void)updateFilterLabels;

@@ -28,8 +28,8 @@
 + (id)_appearanceRecorderWhenContainedIn:(Class)arg1;
 + (id)_appearanceWhenContainedIn:(id)arg1;
 + (id)appearance;
-+ (id)appearanceForTraitCollection:(id)arg1 whenContainedIn:(Class)arg2;
 + (id)appearanceForTraitCollection:(id)arg1;
++ (id)appearanceForTraitCollection:(id)arg1 whenContainedIn:(Class)arg2;
 + (id)appearanceWhenContainedIn:(Class)arg1;
 
 - (BOOL)_hasCustomizableInstanceAppearanceModifications;

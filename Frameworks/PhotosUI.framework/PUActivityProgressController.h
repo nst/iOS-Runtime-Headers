@@ -10,7 +10,11 @@
 
 @interface PUActivityProgressController : NSObject {
     UIAlertController *_alertController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cancellationHandler;
+
     UIView *_containerView;
     BOOL _didHide;
     BOOL _didShow;

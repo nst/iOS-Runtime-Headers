@@ -5,6 +5,11 @@
 @class BLTPBSectionIcon, NSMutableArray, NSString;
 
 @interface BLTPBSectionInfo : PBCodable <NSCopying> {
+    unsigned int _alertType;
+    BOOL _allowsNotifications;
+    NSString *_displayName;
+    BOOL _displaysCriticalBulletins;
+    NSString *_factorySectionID;
     struct { 
         unsigned int alertType : 1; 
         unsigned int notificationCenterLimit : 1; 
@@ -22,11 +27,6 @@
         unsigned int showsMessagePreview : 1; 
         unsigned int showsOnExternalDevices : 1; 
         unsigned int suppressFromSettings : 1; 
-    unsigned int _alertType;
-    BOOL _allowsNotifications;
-    NSString *_displayName;
-    BOOL _displaysCriticalBulletins;
-    NSString *_factorySectionID;
     } _has;
     BLTPBSectionIcon *_icon;
     BOOL _iconsStripped;

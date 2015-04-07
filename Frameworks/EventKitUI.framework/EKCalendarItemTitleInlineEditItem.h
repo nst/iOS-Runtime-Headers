@@ -4,7 +4,7 @@
 
 @class EKParticipant, EKRequestAvailabilityOperation, EKUILocationEditItemCell, NSArray, NSString, UITableViewCell, UIView;
 
-@interface EKCalendarItemTitleInlineEditItem : EKCalendarItemEditItem <UITextFieldDelegate, EKEditItemViewControllerDelegate, EKCalendarItemInlineEditItem> {
+@interface EKCalendarItemTitleInlineEditItem : EKCalendarItemEditItem <EKCalendarItemInlineEditItem, EKEditItemViewControllerDelegate, UITextFieldDelegate> {
     EKRequestAvailabilityOperation *_availabilityRequest;
     NSArray *_availabilitySpansForLocation;
     UIView *_clearButtonView;

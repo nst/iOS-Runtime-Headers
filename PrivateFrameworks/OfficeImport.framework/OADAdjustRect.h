@@ -6,18 +6,18 @@
     struct OADAdjustCoord { 
         BOOL isFormulaResult; 
         int value; 
-    struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
-        int value; 
-    struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
-        int value; 
-    struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
-        int value; 
     } mBottom;
+    struct OADAdjustCoord { 
+        BOOL isFormulaResult; 
+        int value; 
     } mLeft;
+    struct OADAdjustCoord { 
+        BOOL isFormulaResult; 
+        int value; 
     } mRight;
+    struct OADAdjustCoord { 
+        BOOL isFormulaResult; 
+        int value; 
     } mTop;
 }
 

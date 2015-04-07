@@ -5,16 +5,16 @@
 @class NSMutableDictionary, NSString, TSDRep;
 
 @interface TSDMagicMoveMatchObject : NSObject {
+    NSMutableDictionary *_attributes;
+    NSString *_name;
     struct CGPoint { 
         float x; 
         float y; 
+    } _position;
+    TSDRep *_rep;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    NSMutableDictionary *_attributes;
-    NSString *_name;
-    } _position;
-    TSDRep *_rep;
     } _stringRange;
     NSString *_stringValue;
     int _zOrder;

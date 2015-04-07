@@ -70,8 +70,8 @@
 - (void)enableCancelAction:(BOOL)arg1;
 - (void)enableDestructiveAction:(BOOL)arg1;
 - (void)enableOKAction:(BOOL)arg1;
-- (id)initWithViewController:(id)arg1 actionSheet:(BOOL)arg2;
 - (id)initWithViewController:(id)arg1;
+- (id)initWithViewController:(id)arg1 actionSheet:(BOOL)arg2;
 - (id)message;
 - (id)okAction;
 - (id)okButtonTitle;

@@ -5,13 +5,13 @@
 @class NSArray, SKUIClientContext, SKUIColorScheme, UIButton, UIControl, UIImageView, UILabel, UIView;
 
 @interface SKUIReviewsFacebookView : UIView {
+    SKUIClientContext *_clientContext;
+    SKUIColorScheme *_colorScheme;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
     } _contentInsets;
     NSArray *_friendNames;
     UILabel *_friendsLabel;

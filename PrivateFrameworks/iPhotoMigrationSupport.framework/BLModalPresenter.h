@@ -5,6 +5,7 @@
 @class BLModalPresenterRootViewController, NSMutableArray, NSString;
 
 @interface BLModalPresenter : UIWindow <UIKeyInput> {
+    NSMutableArray *_controllers;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    NSMutableArray *_controllers;
     } _keyboard;
     BOOL _keyboardVisible;
     int _lockCount;
@@ -57,8 +57,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)orientationDidChange:(id)arg1;
 - (void)orientationWillChange:(id)arg1;
-- (void)showController:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)showController:(id)arg1;
+- (void)showController:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)unlockKeyboard;
 
 @end

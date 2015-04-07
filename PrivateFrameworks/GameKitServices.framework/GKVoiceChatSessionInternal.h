@@ -4,7 +4,7 @@
 
 @class <GKVoiceChatSessionDelegate>, GKInterfaceListener, GKRWLock, GKSessionInternal, GKVoiceChatServiceFocus, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, VoiceChatSessionRoster;
 
-@interface GKVoiceChatSessionInternal : NSObject <GKSessionVoiceChatDelegate, GKVoiceChatClient, VideoConferenceSpeakingDelegate, InterfaceListenerDelegate> {
+@interface GKVoiceChatSessionInternal : NSObject <GKSessionVoiceChatDelegate, GKVoiceChatClient, InterfaceListenerDelegate, VideoConferenceSpeakingDelegate> {
     unsigned int _conferenceID;
     NSMutableArray *_connectedFocusPeers;
     NSMutableArray *_connectedPeers;
@@ -38,17 +38,13 @@
 @property(getter=isActiveSession) BOOL activeSession;
 @property(readonly) unsigned int conferenceID;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property <GKVoiceChatSessionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property BOOL isUsingSuppression;
 @property(readonly) NSArray * peerList;
 @property(readonly) NSString * sessionName;
 @property float sessionVolume;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property unsigned int talkingPeersLimit;
 

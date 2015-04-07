@@ -28,8 +28,8 @@
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithImage:(id)arg1 alternateImage:(id)arg2 barStyle:(int)arg3 barButtonItemStyle:(int)arg4 tintColor:(id)arg5 bezel:(BOOL)arg6;
-- (void)setBezelStyleForBarStyle:(int)arg1 tintColor:(id)arg2 iconTintColor:(id)arg3 iconTintColorDidChange:(BOOL)arg4;
 - (void)setBezelStyleForBarStyle:(int)arg1 tintColor:(id)arg2;
+- (void)setBezelStyleForBarStyle:(int)arg1 tintColor:(id)arg2 iconTintColor:(id)arg3 iconTintColorDidChange:(BOOL)arg4;
 - (void)setFlipped:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)showAlternateImage:(BOOL)arg1;

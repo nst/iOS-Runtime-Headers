@@ -10,10 +10,10 @@
 @class FigCaptureStillImageSettings, NSArray, NSDictionary, NSString;
 
 @interface BWSISNode : BWNode <BWBracketSettingsProvider> {
-    int (*_createSampleBufferProcessorFunction)();
     NSArray *_afWindowParamsArray;
     BOOL _allowExperimentalOverrides;
     float _bracketGainCap;
+    int (*_createSampleBufferProcessorFunction)();
     FigCaptureStillImageSettings *_currentCaptureSettings;
     NSArray *_exposureValues;
     NSDictionary *_fusionParamsDictionary;

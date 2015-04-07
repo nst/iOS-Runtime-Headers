@@ -5,17 +5,17 @@
 @class NSArray, NSMutableArray, TPPageLayout, TSDAbstractLayout, TSDLayoutGeometry;
 
 @interface TSDAbstractLayout : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     NSMutableArray *mChildren;
     TSDLayoutGeometry *mGeometry;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mInterimPosition;
     BOOL mInterimPositionXSet;
     BOOL mInterimPositionYSet;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mLastInterimPosition;
     BOOL mLastInterimPositionXSet;
     BOOL mLastInterimPositionYSet;
@@ -54,8 +54,8 @@
 - (id)geometry;
 - (id)geometryForTransforming;
 - (id)geometryInParent;
-- (id)geometryInRoot:(id)arg1;
 - (id)geometryInRoot;
+- (id)geometryInRoot:(id)arg1;
 - (id)init;
 - (void)insertChild:(id)arg1 above:(id)arg2;
 - (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;

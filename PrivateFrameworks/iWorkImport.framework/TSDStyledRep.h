@@ -5,16 +5,16 @@
 @class CALayer, TSDMutableReflection, TSDReflection, TSDShadow;
 
 @interface TSDStyledRep : TSDRep {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        unsigned int shadowInvalid : 1; 
     TSDMutableReflection *mDynamicReflection;
     TSDShadow *mDynamicShadow;
+    struct { 
+        unsigned int shadowInvalid : 1; 
     } mFlags;
     BOOL mIsUpdatingReflectionOpacity;
     BOOL mIsUpdatingShadow;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mOriginalReflectionLayerPositionInScaledCanvas;
     CALayer *mReflectionLayer;
     CALayer *mShadowLayer;
@@ -40,8 +40,8 @@
 - (void)disposeReflectionLayer;
 - (void)drawGradientWithAlphaOverReflection:(struct CGContext { }*)arg1 applyingOpacity:(BOOL)arg2 reflectionSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)drawInContextWithoutEffects:(struct CGContext { }*)arg1 withContent:(BOOL)arg2 withStroke:(BOOL)arg3 withOpacity:(BOOL)arg4 forAlphaOnly:(BOOL)arg5 drawChildren:(BOOL)arg6;
 - (void)drawInContextWithoutEffects:(struct CGContext { }*)arg1;
+- (void)drawInContextWithoutEffects:(struct CGContext { }*)arg1 withContent:(BOOL)arg2 withStroke:(BOOL)arg3 withOpacity:(BOOL)arg4 forAlphaOnly:(BOOL)arg5 drawChildren:(BOOL)arg6;
 - (void)drawInContextWithoutEffectsForAlphaOnly:(struct CGContext { }*)arg1;
 - (void)drawInContextWithoutEffectsOrChildren:(struct CGContext { }*)arg1;
 - (void)drawInContextWithoutEffectsOrChildrenForAlphaOnly:(struct CGContext { }*)arg1;

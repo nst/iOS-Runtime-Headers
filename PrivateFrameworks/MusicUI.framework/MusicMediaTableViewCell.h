@@ -47,8 +47,8 @@
 - (int)playbackState;
 - (id)rightAccessoryHighlightedImage;
 - (id)rightAccessoryImage;
-- (void)setArtworkImage:(id)arg1 animated:(BOOL)arg2;
 - (void)setArtworkImage:(id)arg1;
+- (void)setArtworkImage:(id)arg1 animated:(BOOL)arg2;
 - (void)setContentBoundsEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDetailEmphasizedText:(id)arg1;
 - (void)setDetailText:(id)arg1;
@@ -57,8 +57,8 @@
 - (void)setExplicitTrack:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setOfferButtonActionHandler:(id)arg1;
-- (void)setOfferButtonState:(id)arg1 animated:(BOOL)arg2;
 - (void)setOfferButtonState:(id)arg1;
+- (void)setOfferButtonState:(id)arg1 animated:(BOOL)arg2;
 - (void)setPlaceholderSubtitleText:(id)arg1;
 - (void)setPlaceholderTitleText:(id)arg1;
 - (void)setPlaybackState:(int)arg1;

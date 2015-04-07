@@ -54,8 +54,8 @@
 - (id)cellStyleForTableArea:(int)arg1;
 - (id)copy;
 - (id)copyWithContext:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1 context:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1 context:(id)arg2;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)dictionaryWithPreset:(unsigned int)arg1;
@@ -68,9 +68,9 @@
 - (id)headerRowTextStyle;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithArchive:(const struct TableStyleNetworkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct Reference {} *x4; struct Reference {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; unsigned int x14; int x15; unsigned int x16[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 fromArray:(id)arg2 presetID:(unsigned int)arg3;
 - (id)initWithContext:(id)arg1 fromDictionary:(id)arg2 withPreset:(unsigned int)arg3;
-- (id)initWithContext:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)loadFromArchive:(const struct TableStyleNetworkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct Reference {} *x4; struct Reference {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; unsigned int x14; int x15; unsigned int x16[1]; }*)arg1 withUnarchiver:(id)arg2;
 - (void)p_captureAndFlattenStyles:(id)arg1;

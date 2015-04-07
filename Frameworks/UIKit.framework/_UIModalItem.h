@@ -9,26 +9,21 @@
 @class <UIModalItemDelegate>, NSArray, NSAttributedString, NSMutableArray, NSString, UITextInputTraits, UIView, UIViewController, _UIModalItemBackgroundView, _UIModalItemContentView, _UIModalItemRepresentationView;
 
 @interface _UIModalItem : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
     UIViewController *_anchorViewController;
     _UIModalItemBackgroundView *_backgroundView;
     NSArray *_buttonTitles;
     int _cancelButtonIndex;
     NSString *_cancelButtonTitle;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     _UIModalItemContentView *_contentView;
     UIViewController *_contentViewController;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _contentViewControllerSize;
     int _defaultButtonIndex;
     NSString *_defaultButtonTitle;
@@ -56,6 +51,15 @@
     NSString *_passwordPlaceholderString;
     NSString *_passwordString;
     UITextInputTraits *_passwordTraits;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _popoverTargetRect;
     UIView *_popoverTargetView;
     int _presentAnimationType;

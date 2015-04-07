@@ -5,10 +5,10 @@
 @class GEOComposedWaypoint, NSString;
 
 @interface GEONavigationRouteSummary : PBCodable <NSCopying> {
-    struct { 
-        unsigned int transportType : 1; 
     GEOComposedWaypoint *_destination;
     NSString *_destinationName;
+    struct { 
+        unsigned int transportType : 1; 
     } _has;
     GEOComposedWaypoint *_origin;
     int _transportType;

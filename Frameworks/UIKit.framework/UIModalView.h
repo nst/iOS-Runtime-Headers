@@ -5,6 +5,18 @@
 @class <UIModalViewDelegate>, NSMutableArray, NSString, UILabel, UIToolbar, UIView, UIWindow;
 
 @interface UIModalView : UIView <UITextFieldDelegate> {
+    float _bodyTextHeight;
+    UILabel *_bodyTextLabel;
+    NSMutableArray *_buttons;
+    int _cancelButton;
+    id _context;
+    int _defaultButton;
+    <UIModalViewDelegate> *_delegate;
+    UIView *_dimView;
+    UIWindow *_dimWindow;
+    int _dismissButtonIndex;
+    int _firstOtherButton;
+    UIView *_keyboard;
     struct { 
         unsigned int numberOfRows : 7; 
         unsigned int delegateAlertSheetButtonClicked : 1; 
@@ -43,18 +55,6 @@
         unsigned int useAutomaticKB : 1; 
         unsigned int shouldHandleFirstKeyUpEvent : 1; 
         unsigned int cancelWhenDoneAnimating : 1; 
-    float _bodyTextHeight;
-    UILabel *_bodyTextLabel;
-    NSMutableArray *_buttons;
-    int _cancelButton;
-    id _context;
-    int _defaultButton;
-    <UIModalViewDelegate> *_delegate;
-    UIView *_dimView;
-    UIWindow *_dimWindow;
-    int _dismissButtonIndex;
-    int _firstOtherButton;
-    UIView *_keyboard;
     } _modalViewFlags;
     UIWindow *_originalWindow;
     UIView *_sheetView;
@@ -88,8 +88,8 @@
 + (id)topMostAlert;
 + (id)visibleAlert;
 
-- (id)_addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)_addButtonWithTitle:(id)arg1;
+- (id)_addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)_addButtonWithTitleText:(id)arg1;
 - (void)_alertSheetAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_alertSheetTextFieldReturn:(id)arg1;
@@ -146,8 +146,8 @@
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
 - (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
-- (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (int)addButtonWithTitle:(id)arg1;
+- (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (int)alertSheetStyle;
 - (struct CGSize { float x1; float x2; })backgroundSize;
@@ -180,15 +180,15 @@
 - (BOOL)isVisible;
 - (id)keyboard;
 - (void)layout;
-- (void)layoutAnimated:(BOOL)arg1 withDuration:(double)arg2;
 - (void)layoutAnimated:(BOOL)arg1;
+- (void)layoutAnimated:(BOOL)arg1 withDuration:(double)arg2;
 - (id)message;
 - (int)numberOfButtons;
 - (int)numberOfLinesInTitle;
 - (int)numberOfRows;
+- (void)popupAlertAnimated:(BOOL)arg1;
 - (void)popupAlertAnimated:(BOOL)arg1 atOffset:(float)arg2;
 - (void)popupAlertAnimated:(BOOL)arg1 fromBarButtonItem:(id)arg2;
-- (void)popupAlertAnimated:(BOOL)arg1;
 - (void)presentSheetFromAboveView:(id)arg1;
 - (void)presentSheetFromBehindView:(id)arg1;
 - (void)presentSheetFromButtonBar:(id)arg1;

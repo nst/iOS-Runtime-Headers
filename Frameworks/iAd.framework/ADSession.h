@@ -4,7 +4,7 @@
 
 @class <ADSSession_RPC>, ADAdSheetConnection, NSMutableArray, NSString;
 
-@interface ADSession : NSObject <ADSession_RPC, ADAdSheetProxyDelegate, ADAdSheetConnectionDelegate> {
+@interface ADSession : NSObject <ADAdSheetConnectionDelegate, ADAdSheetProxyDelegate, ADSession_RPC> {
     NSMutableArray *_adSpaces;
     BOOL _applicationCanReceiveBackgroundAds;
     int _classicUnavailableToken;

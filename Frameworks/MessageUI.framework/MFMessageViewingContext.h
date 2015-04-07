@@ -5,27 +5,27 @@
 @class <MFMessageViewingContextDelegate>, MFActivityMonitor, MFAttachmentManager, MFError, MFLock, MFMailMessage, MFMessageBody, MFMimePart, NSArray, NSConditionLock, NSError, NSObject<MFMessageViewingContextDelegate>, NSObject<OS_dispatch_queue>, SGSuggestionsService;
 
 @interface MFMessageViewingContext : NSObject {
-    unsigned int _loadedFullData : 1;
-    unsigned int _hasNoContent : 1;
-    unsigned int _failedToLoad : 1;
-    unsigned int _isOutgoingMessage : 1;
-    unsigned int _isDraftMessage : 1;
-    unsigned int _isEditableMessage : 1;
-    unsigned int _showMailboxName : 1;
-    unsigned int _shouldAnalyzeMessage : 1;
     MFAttachmentManager *_attachmentManager;
     MFMessageBody *_body;
     id _content;
     MFLock *_contentLock;
     unsigned int _contentOffset;
     NSObject<MFMessageViewingContextDelegate> *_delegate;
+    unsigned int _failedToLoad : 1;
+    unsigned int _hasNoContent : 1;
+    unsigned int _isDraftMessage : 1;
+    unsigned int _isEditableMessage : 1;
+    unsigned int _isOutgoingMessage : 1;
     int _loadAlternative;
     unsigned int _loadIncrement;
     MFActivityMonitor *_loadTask;
+    unsigned int _loadedFullData : 1;
     MFMimePart *_loadedPart;
     MFMailMessage *_message;
     NSError *_messageAnalysisError;
     MFError *_secureMIMEError;
+    unsigned int _shouldAnalyzeMessage : 1;
+    unsigned int _showMailboxName : 1;
     NSArray *_signers;
     NSArray *_suggestions;
     NSConditionLock *_suggestionsLock;

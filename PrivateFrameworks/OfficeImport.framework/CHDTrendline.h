@@ -5,9 +5,9 @@
 @class CHDTrendlineLabel, EDString, OADGraphicProperties;
 
 @interface CHDTrendline : NSObject {
-    boolmDisplayEquation;
-    boolmDisplayRSquaredValue;
     double mBackward;
+    bool mDisplayEquation;
+    bool mDisplayRSquaredValue;
     double mForward;
     OADGraphicProperties *mGraphicProperties;
     double mInterceptYAxis;

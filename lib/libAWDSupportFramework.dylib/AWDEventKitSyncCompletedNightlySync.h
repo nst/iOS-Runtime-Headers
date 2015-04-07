@@ -3,11 +3,11 @@
  */
 
 @interface AWDEventKitSyncCompletedNightlySync : PBCodable <NSCopying> {
+    unsigned int _eventsSynced;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int eventsSynced : 1; 
         unsigned int success : 1; 
-    unsigned int _eventsSynced;
     } _has;
     BOOL _success;
     unsigned long long _timestamp;

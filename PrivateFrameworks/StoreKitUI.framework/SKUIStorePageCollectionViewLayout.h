@@ -5,15 +5,15 @@
 @class NSArray, NSIndexSet, NSMapTable, NSString, UIColor;
 
 @interface SKUIStorePageCollectionViewLayout : UICollectionViewFlowLayout <SKUIStorePageCollectionViewLayout> {
+    BOOL _allowsPinningTransitions;
+    NSString *_backdropGroupName;
+    UIColor *_collectionViewBackgroundColor;
     struct { 
         unsigned int respondsToIndexPathsForPinningItems : 1; 
         unsigned int respondsToPinningContentInsetForItemAtIndexPath : 1; 
         unsigned int respondsToPinningStyleForItemAtIndexPath : 1; 
         unsigned int respondsToPinningTransitionStyleForItemAtIndexPath : 1; 
         unsigned int respondsToWillApplyLayoutAttributes : 1; 
-    BOOL _allowsPinningTransitions;
-    NSString *_backdropGroupName;
-    UIColor *_collectionViewBackgroundColor;
     } _collectionViewDelegateFlags;
     NSIndexSet *_expandChildPageSectionsIndexSet;
     BOOL _hasValidIndexPathsForPinningItems;

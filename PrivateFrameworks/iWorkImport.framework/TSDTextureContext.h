@@ -6,10 +6,15 @@
 
 @interface TSDTextureContext : NSObject <NSCopying> {
     unsigned int _isMagicMove : 1;
+    <TSDAnimationSession> *_session;
     unsigned int _shouldAddFinal : 1;
-    unsigned int _shouldAddMasks : 1;
-    unsigned int _shouldAddReversedFinal : 1;
     unsigned int _shouldAddMagicMoveObjectOnly : 1;
+    unsigned int _shouldAddMasks : 1;
+    BOOL _shouldAddNoShapeAttributes;
+    unsigned int _shouldAddReversedFinal : 1;
+    unsigned int _shouldDistortToFit : 1;
+    unsigned int _shouldForceTextureGeneration : 1;
+    unsigned int _shouldIgnoreScaleInSourceImage : 1;
     unsigned int _shouldNotAddContainedReps : 1;
     unsigned int _shouldNotAddShapeAttributes : 1;
     unsigned int _shouldNotAddText : 1;
@@ -18,11 +23,6 @@
     unsigned int _shouldSeparateShadow : 1;
     unsigned int _shouldSeparateStroke : 1;
     unsigned int _shouldSeparateText : 1;
-    unsigned int _shouldIgnoreScaleInSourceImage : 1;
-    unsigned int _shouldDistortToFit : 1;
-    unsigned int _shouldForceTextureGeneration : 1;
-    <TSDAnimationSession> *_session;
-    BOOL _shouldAddNoShapeAttributes;
 }
 
 @property BOOL isMagicMove;

@@ -5,6 +5,7 @@
 @class NSMutableArray, NSString;
 
 @interface OADGroup : OADDrawable <OADDrawableContainer> {
+    NSMutableArray *mChildren;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    NSMutableArray *mChildren;
     } mLogicalBounds;
 }
 

@@ -9,7 +9,11 @@
 @class NSString, NSURL, QLPreviewItemProxy, QLServicePreviewContentController;
 
 @interface QLPreviewRemoteItem : NSObject <QLPreviewItem> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     QLServicePreviewContentController *_contentController;
     int _index;
     QLPreviewItemProxy *_proxy;

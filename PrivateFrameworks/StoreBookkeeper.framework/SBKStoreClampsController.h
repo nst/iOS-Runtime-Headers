@@ -64,8 +64,8 @@
 - (id)queue;
 - (void)reset;
 - (void)saveToUserDefaults;
-- (void)setAccountIdentifierCheckTimestamp:(double)arg1;
 - (void)setAccountIdentifierCheckTimestamp;
+- (void)setAccountIdentifierCheckTimestamp:(double)arg1;
 - (void)setAuthenticationNeededTimestamp:(double)arg1;
 - (void)setAuthenticationRequest;
 - (void)setBackOffUntil:(double)arg1;
@@ -76,8 +76,8 @@
 - (void)setQueue:(id)arg1;
 - (void)setTimestampForTransaction:(id)arg1;
 - (void)setTransactionClamps:(id)arg1;
-- (void)setUserAcceptedSyncTimestamp:(double)arg1;
 - (void)setUserAcceptedSyncTimestamp;
+- (void)setUserAcceptedSyncTimestamp:(double)arg1;
 - (void)setUserCancelledSignIn;
 - (void)setUserCancelledSignInBackOffUntil:(double)arg1;
 - (id)transactionClamps;

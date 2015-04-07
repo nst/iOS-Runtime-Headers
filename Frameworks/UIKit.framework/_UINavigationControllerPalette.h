@@ -5,6 +5,19 @@
 @class NSArray, UINavigationController, UIView, UIViewController;
 
 @interface _UINavigationControllerPalette : UIView {
+    NSArray *__backgroundConstraints;
+    UIView *__backgroundView;
+    NSArray *__constraints;
+    BOOL __paletteOverridesPinningBar;
+    BOOL __palettePinningBarHidden;
+    id __pinningBar;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } __size;
+    UIViewController *__unpinnedController;
+    unsigned int _boundaryEdge;
+    UINavigationController *_navController;
     struct { 
         unsigned int isAttached : 1; 
         unsigned int attachmentIsChanging : 1; 
@@ -12,26 +25,13 @@
         unsigned int pinned : 1; 
         unsigned int pinningBarShadowIsHidden : 1; 
         unsigned int paletteShadowIsHidden : 1; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    } _paletteFlags;
+    BOOL _paletteIsAboveBar;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSArray *__backgroundConstraints;
-    UIView *__backgroundView;
-    NSArray *__constraints;
-    BOOL __paletteOverridesPinningBar;
-    BOOL __palettePinningBarHidden;
-    id __pinningBar;
-    } __size;
-    UIViewController *__unpinnedController;
-    unsigned int _boundaryEdge;
-    UINavigationController *_navController;
-    } _paletteFlags;
-    BOOL _paletteIsAboveBar;
     } _preferredContentInsets;
     BOOL _visibleWhenPinningBarIsHidden;
 }
@@ -101,8 +101,8 @@
 - (BOOL)paletteShadowIsHidden;
 - (BOOL)pinningBarShadowIsHidden;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredContentInsets;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isAnimating:(BOOL)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isAnimating:(BOOL)arg2;
 - (void)setPaletteIsAboveBar:(BOOL)arg1;
 - (void)setPaletteShadowIsHidden:(BOOL)arg1;
 - (void)setPinned:(BOOL)arg1;

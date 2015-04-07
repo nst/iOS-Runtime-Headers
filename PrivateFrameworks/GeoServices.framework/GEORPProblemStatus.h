@@ -5,10 +5,10 @@
 @class GEORPResolution, NSString;
 
 @interface GEORPProblemStatus : PBCodable <NSCopying> {
+    double _creationDate;
     struct { 
         unsigned int creationDate : 1; 
         unsigned int problemState : 1; 
-    double _creationDate;
     } _has;
     NSString *_problemId;
     GEORPResolution *_problemResolution;

@@ -4,7 +4,7 @@
 
 @class <AFUISiriViewControllerDataSource>, <AFUISiriViewControllerDelegate>, AFUIRequestOptions, AFUISiriRemoteViewController, AFUISiriSession, AFUISiriView, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSTimer, SiriUIAudioRoutePickerController, UIStatusBar;
 
-@interface AFUISiriViewController : UIViewController <AFUISiriRemoteViewControllerDataSource, AFUISiriRemoteViewControllerDelegate, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate> {
+@interface AFUISiriViewController : UIViewController <AFUISiriRemoteViewControllerDataSource, AFUISiriRemoteViewControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate> {
     BOOL _active;
     BOOL _attemptingRemoteViewControllerPresentation;
     AFUIRequestOptions *_currentRequestOptions;
@@ -131,8 +131,8 @@
 - (void)preheat;
 - (void)presentRemoteViewControllerIfNecessary;
 - (void)resetContext;
-- (void)routePickerController:(id)arg1 hasRoutesToPick:(BOOL)arg2;
 - (id)routePickerController;
+- (void)routePickerController:(id)arg1 hasRoutesToPick:(BOOL)arg2;
 - (void)routePickerControllerPickedNewRoute:(id)arg1 isBluetooth:(BOOL)arg2;
 - (void)setAlertContext;
 - (void)setDataSource:(id)arg1;

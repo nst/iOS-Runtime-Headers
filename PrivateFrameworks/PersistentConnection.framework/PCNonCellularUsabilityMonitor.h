@@ -4,7 +4,7 @@
 
 @class <PCInterfaceUsabilityMonitorDelegate>, CUTWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface PCNonCellularUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorProtocol, PCInterfaceUsabilityMonitorDelegate> {
+@interface PCNonCellularUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorDelegate, PCInterfaceUsabilityMonitorProtocol> {
     NSObject<OS_dispatch_queue> *_delegateQueue;
     CUTWeakReference *_delegateReference;
     NSString *_demoOverrideInterface;

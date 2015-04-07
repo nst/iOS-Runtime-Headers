@@ -9,7 +9,11 @@
 @class NSString, UIViewController;
 
 @interface UIViewControllerAction : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     float _curlUpRevealedHeight;
     NSString *_name;
     int _transition;

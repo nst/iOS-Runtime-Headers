@@ -4,7 +4,7 @@
 
 @class CECBusPollingOperation, CECInterface, NSObject<OS_dispatch_queue>, NSString;
 
-@interface CoreCECBusProvider : CoreCECBus <CECInterfaceDelegate, CECBusPollingOperationDelegate, NSCopying, NSSecureCoding> {
+@interface CoreCECBusProvider : CoreCECBus <CECBusPollingOperationDelegate, CECInterfaceDelegate, NSCopying, NSSecureCoding> {
     CECInterface *_interface;
     CECBusPollingOperation *_pollingOperation;
     unsigned char _powerStatus;
@@ -33,15 +33,15 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithInterface:(id)arg1;
-- (void)interface:(id)arg1 receivedFrame:(struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })arg2;
 - (id)interface;
+- (void)interface:(id)arg1 receivedFrame:(struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })arg2;
 - (void)interfacePropertiesChanged:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)linkStateChanged:(BOOL)arg1 error:(id*)arg2;
+- (id)pollingOperation;
 - (void)pollingOperation:(id)arg1 deviceNotRespondingAtAddress:(unsigned char)arg2;
 - (void)pollingOperation:(id)arg1 encounteredError:(id)arg2 forMessage:(id)arg3;
 - (BOOL)pollingOperation:(id)arg1 shouldSkipAddress:(unsigned char)arg2;
-- (id)pollingOperation;
 - (void)pollingOperationCompleted:(id)arg1;
 - (unsigned char)powerStatus;
 - (id)propertyForKey:(id)arg1 error:(id*)arg2;

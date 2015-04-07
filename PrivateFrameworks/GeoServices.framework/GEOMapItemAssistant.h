@@ -5,9 +5,6 @@
 @class GEOAddress, GEOFeatureStyleAttributes, GEOLocation, GEOMapItemClientAttributes, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOPDFlyover, GEOPDPlace, GEOPlace, NSArray, NSData, NSDate, NSDictionary, NSString, NSURL;
 
 @interface GEOMapItemAssistant : NSObject <GEOMapItemPrivate> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
     NSDictionary *_addressDictionary;
     NSString *_attributionID;
     NSURL *_businessURL;
@@ -18,6 +15,9 @@
     NSString *_phoneNumber;
     GEOPlace *_place;
     unsigned int _sampleSizeForUserRatingScore;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionID;
 }
 

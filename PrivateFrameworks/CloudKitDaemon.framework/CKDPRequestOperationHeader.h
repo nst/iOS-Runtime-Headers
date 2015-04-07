@@ -5,16 +5,6 @@
 @class CKDPIdentifier, CKDPLocale, NSData, NSString;
 
 @interface CKDPRequestOperationHeader : PBCodable <NSCopying> {
-    struct { 
-        unsigned int applicationConfigVersion : 1; 
-        unsigned int deviceFlowControlBudget : 1; 
-        unsigned int deviceFlowControlBudgetCap : 1; 
-        unsigned int deviceProtocolVersion : 1; 
-        unsigned int globalConfigVersion : 1; 
-        unsigned int applicationContainerEnvironment : 1; 
-        unsigned int deviceFlowControlRegeneration : 1; 
-        unsigned int isolationLevel : 1; 
-        unsigned int targetDatabase : 1; 
     NSString *_applicationBundle;
     unsigned long long _applicationConfigVersion;
     NSString *_applicationContainer;
@@ -34,6 +24,16 @@
     unsigned long long _deviceProtocolVersion;
     NSString *_deviceSoftwareVersion;
     unsigned long long _globalConfigVersion;
+    struct { 
+        unsigned int applicationConfigVersion : 1; 
+        unsigned int deviceFlowControlBudget : 1; 
+        unsigned int deviceFlowControlBudgetCap : 1; 
+        unsigned int deviceProtocolVersion : 1; 
+        unsigned int globalConfigVersion : 1; 
+        unsigned int applicationContainerEnvironment : 1; 
+        unsigned int deviceFlowControlRegeneration : 1; 
+        unsigned int isolationLevel : 1; 
+        unsigned int targetDatabase : 1; 
     } _has;
     int _isolationLevel;
     CKDPLocale *_locale;

@@ -5,19 +5,18 @@
 @class <SCNSceneRendererDelegate>, EAGLContext, NSArray, NSRecursiveLock, NSString, SCNDisplayLink, SCNEventHandler, SCNJitterer, SCNNode, SCNRenderer, SCNScene, SCNSpriteKitEventHandler, SCNTechnique, SKScene, UIColor;
 
 @interface SCNView : UIView <SCNSceneRenderer, SCNTechniqueSupport> {
-    unsigned int _ibNoMultisampling : 1;
-    unsigned int _allowsBrowsing : 1;
-    unsigned int _isOpaque : 1;
-    unsigned int _firstDrawDone : 1;
-    unsigned int _appIsDeactivated : 1;
-    unsigned int _viewIsOffscreen : 1;
     SCNDisplayLink *__displayLink;
     NSString *__ibSceneName;
+    unsigned int _allowsBrowsing : 1;
+    unsigned int _appIsDeactivated : 1;
     UIColor *_backgroundColor;
     NSArray *_controllerGestureRecognizers;
     double _currentSystemTime;
     id _delegate;
     SCNEventHandler *_eventHandler;
+    unsigned int _firstDrawDone : 1;
+    unsigned int _ibNoMultisampling : 1;
+    unsigned int _isOpaque : 1;
     SCNJitterer *_jitterer;
     NSRecursiveLock *_lock;
     SCNRenderer *_renderer;
@@ -25,6 +24,7 @@
     char *_snapshotImageData;
     unsigned long _snapshotImageDataLength;
     SCNSpriteKitEventHandler *_spriteKitEventHandler;
+    unsigned int _viewIsOffscreen : 1;
 }
 
 @property BOOL allowsCameraControl;
@@ -93,8 +93,8 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 options:(id)arg2;
 - (id)hitTestWithSegmentFromPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg1 toPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg2 options:(id)arg3;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(id)arg2;
 - (BOOL)isJitteringEnabled;
 - (BOOL)isNodeInsideFrustum:(id)arg1 withPointOfView:(id)arg2;
 - (BOOL)isOpaque;
@@ -126,8 +126,8 @@
 - (void)setLoops:(BOOL)arg1;
 - (void)setOverlaySKScene:(id)arg1;
 - (void)setPlaying:(BOOL)arg1;
-- (void)setPointOfView:(id)arg1 animate:(BOOL)arg2;
 - (void)setPointOfView:(id)arg1;
+- (void)setPointOfView:(id)arg1 animate:(BOOL)arg2;
 - (void)setPreferredFramesPerSecond:(int)arg1;
 - (void)setScene:(id)arg1;
 - (void)setSceneTime:(double)arg1;

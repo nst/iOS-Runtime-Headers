@@ -13,10 +13,18 @@
     _UIActivityBundleHelper *_activityBundleHelper;
     NSExtension *_applicationExtension;
     id _extensionContextIdentifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _extensionRequestCleanupCompletion;
+
     UIViewController *_extensionViewController;
     NSString *_localizedExtensionBundleName;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _presenterCompletion;
+
     UIViewController *_presenterViewController;
     UIImage *_renderedActivityImage;
     UIImage *_renderedActivitySettingsImage;
@@ -34,8 +42,8 @@
 @property(retain) UIImage * renderedActivityImage;
 @property(retain) UIImage * renderedActivitySettingsImage;
 
-+ (id)_applicationExtensionActivitiesForItems:(id)arg1 sourceIsManaged:(BOOL)arg2;
 + (id)_applicationExtensionActivitiesForItems:(id)arg1;
++ (id)_applicationExtensionActivitiesForItems:(id)arg1 sourceIsManaged:(BOOL)arg2;
 + (int)activityCategory;
 
 - (id)_activityImage;

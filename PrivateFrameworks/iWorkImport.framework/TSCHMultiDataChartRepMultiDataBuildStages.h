@@ -5,12 +5,12 @@
 @class TSCHMultiDataChartRep;
 
 @interface TSCHMultiDataChartRepMultiDataBuildStages : NSObject <TSCHUnretainedParent> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     unsigned int mCurrentStage;
     float mDuration;
     TSCHMultiDataChartRep *mRep;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } mStages;
     float mTotalDuration;
 }

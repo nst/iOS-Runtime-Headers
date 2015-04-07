@@ -10,8 +10,8 @@
 
 @property(retain) NSString * statusString;
 
-+ (id)statusTypeFromCode:(int)arg1 statusString:(id)arg2;
 + (id)statusTypeFromCode:(int)arg1;
++ (id)statusTypeFromCode:(int)arg1 statusString:(id)arg2;
 + (id)statusValueFromICSString:(id)arg1;
 
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;

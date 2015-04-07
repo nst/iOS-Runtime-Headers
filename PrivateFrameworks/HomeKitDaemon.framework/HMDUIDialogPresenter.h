@@ -20,8 +20,8 @@
 - (void)confirmRemoveUser:(id)arg1 fromHome:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
 - (void)displayKeychainSyncForHome:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (id)init;
-- (BOOL)presentDialogWithInfo:(id)arg1 options:(unsigned long)arg2 textField:(id*)arg3 timeout:(double)arg4;
 - (BOOL)presentDialogWithInfo:(id)arg1 options:(unsigned long)arg2 textField:(id*)arg3;
+- (BOOL)presentDialogWithInfo:(id)arg1 options:(unsigned long)arg2 textField:(id*)arg3 timeout:(double)arg4;
 - (void)requestPairingPasswordForAccessory:(id)arg1 home:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
 - (void)requestUserPermissionForUnauthenticatedAccessory:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (void)setWorkQueue:(id)arg1;

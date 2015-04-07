@@ -3,6 +3,7 @@
  */
 
 @interface AWDWRMLinkPrefChange1 : PBCodable <NSCopying> {
+    unsigned int _count;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int count : 1; 
@@ -32,7 +33,6 @@
         unsigned int nWifiBadTransportSymptom : 1; 
         unsigned int nWifiNotInit : 1; 
         unsigned int nWifiNotReady : 1; 
-    unsigned int _count;
     } _has;
     unsigned int _nCallActive;
     unsigned int _nCallIdle;

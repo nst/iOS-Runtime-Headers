@@ -48,15 +48,15 @@
 - (id)domainsWithPreviousData;
 - (void)domainsWithPreviousDataChanged;
 - (id)encryptOrDecryptData:(id)arg1 encrypt:(BOOL)arg2;
-- (void)getCredentialMatches:(id*)arg1 andPotentialMatches:(id*)arg2 forURL:(id)arg3 matchingPartialUsername:(id)arg4 omittingCredentialsUserHasDeniedAccessTo:(BOOL)arg5;
 - (void)getCredentialMatches:(id*)arg1 andPotentialMatches:(id*)arg2 forURL:(id)arg3 matchingPartialUsername:(id)arg4;
+- (void)getCredentialMatches:(id*)arg1 andPotentialMatches:(id*)arg2 forURL:(id)arg3 matchingPartialUsername:(id)arg4 omittingCredentialsUserHasDeniedAccessTo:(BOOL)arg5;
 - (void)getFormFieldValues:(id*)arg1 andFieldToFocus:(id*)arg2 forCreditCardForm:(id)arg3 fromCreditCardData:(id)arg4;
 - (BOOL)hasCredentialsForPageWithMainFrame:(id)arg1;
 - (BOOL)hasUserDeniedAccessToCredential:(id)arg1 inProtectionSpace:(id)arg2;
 - (id)infoForDomain:(id)arg1;
 - (id)init;
-- (id)lastUsedUsernameForURL:(id)arg1 protectionSpace:(id*)arg2;
 - (id)lastUsedUsernameForURL:(id)arg1;
+- (id)lastUsedUsernameForURL:(id)arg1 protectionSpace:(id*)arg2;
 - (void)loadCompletionDBIfNeeded;
 - (id)matchForLoginOrChangePasswordForm:(id)arg1 atURL:(id)arg2 potentialMatches:(id*)arg3;
 - (id)matchesForControl:(id)arg1 withName:(id)arg2 atURL:(id)arg3 matchingPartialString:(id)arg4 usingOnlyAddressBookData:(BOOL)arg5;
@@ -72,10 +72,10 @@
 - (BOOL)shouldAutoFillPasswords;
 - (id)substituteCredential:(id)arg1 inProtectionSpace:(id)arg2;
 - (id)valuesForCreditCardForm:(id)arg1 fromCreditCardData:(id)arg2;
-- (id)valuesForLoginOrChangePasswordForm:(id)arg1 atURL:(id)arg2 potentialMatches:(id*)arg3;
 - (id)valuesForLoginOrChangePasswordForm:(id)arg1 atURL:(id)arg2;
-- (id)valuesForStandardForm:(id)arg1 inDomain:(id)arg2 usingOnlyAddressBookData:(BOOL)arg3 matches:(id*)arg4 preferredLabel:(id)arg5;
+- (id)valuesForLoginOrChangePasswordForm:(id)arg1 atURL:(id)arg2 potentialMatches:(id*)arg3;
 - (id)valuesForStandardForm:(id)arg1 inDomain:(id)arg2 usingOnlyAddressBookData:(BOOL)arg3 matches:(id*)arg4;
+- (id)valuesForStandardForm:(id)arg1 inDomain:(id)arg2 usingOnlyAddressBookData:(BOOL)arg3 matches:(id*)arg4 preferredLabel:(id)arg5;
 - (id)valuesFromCredential:(id)arg1 forLoginOrChangePasswordForm:(id)arg2;
 - (void)willSubmitFormWithCredentials:(id)arg1 atURL:(id)arg2 username:(id*)arg3 password:(id*)arg4;
 

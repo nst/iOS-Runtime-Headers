@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, TSDGLDataBuffer, TSDGLMotionBlurEffect, TSDGLShader;
 
-@interface KNTransitionFlop : KNAnimationEffect <KNFrameAnimator, KNAnimationPluginArchiving> {
+@interface KNTransitionFlop : KNAnimationEffect <KNAnimationPluginArchiving, KNFrameAnimator> {
     NSArray *_colorBufferAttributes;
     unsigned int _colorNormalAttributeIndex;
     unsigned int _colorPositionAttributeIndex;

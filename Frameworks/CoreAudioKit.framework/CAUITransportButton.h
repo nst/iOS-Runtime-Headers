@@ -3,6 +3,8 @@
  */
 
 @interface CAUITransportButton : UIButton {
+    int drawingStyle;
+    struct CGColor { } *fillColor;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,8 +14,6 @@
             float width; 
             float height; 
         } size; 
-    int drawingStyle;
-    struct CGColor { } *fillColor;
     } imageRect;
 }
 

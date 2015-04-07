@@ -5,9 +5,6 @@
 @class GEOTileCache, NSString;
 
 @interface MKTileOverlay : NSObject <MKOverlay> {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSString *_URLTemplate;
     BOOL _canReplaceMapContent;
     BOOL _geometryFlipped;
@@ -15,6 +12,9 @@
     int _minimumZ;
     unsigned int _providerID;
     GEOTileCache *_tileCache;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _tileSize;
 }
 

@@ -9,10 +9,10 @@
 @class CAEAGLLayer, EAGLContext, PLGLLayerDelegate;
 
 @interface CAMGLView : UIView {
+    EAGLContext *__atomicContext;
     struct CGSize { 
         float width; 
         float height; 
-    EAGLContext *__atomicContext;
     } __atomicFixedSize;
     BOOL __atomicRetainedBacking;
     BOOL __disableLayoutForGLLayerInternal;
@@ -23,7 +23,11 @@
     unsigned int _framebuffer;
     CAEAGLLayer *_glLayer;
     PLGLLayerDelegate *_glLayerDelegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _renderNotifyBlock;
+
     unsigned int _renderbuffer;
 }
 

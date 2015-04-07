@@ -32,8 +32,8 @@
 @property(readonly) BOOL shouldBeUngrouped;
 @property(readonly) Class superclass;
 
-+ (id)groupWithElements:(id)arg1 label:(id)arg2;
 + (id)groupWithElements:(id)arg1;
++ (id)groupWithElements:(id)arg1 label:(id)arg2;
 + (id)groupWithGenerator:(id)arg1;
 
 - (void)_commonInitWithElements:(id)arg1 label:(id)arg2 generator:(id)arg3;

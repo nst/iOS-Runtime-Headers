@@ -4,7 +4,7 @@
 
 @class NSSet, NSString, NSUUID;
 
-@interface AXVoiceOverUserSubstitution : NSObject <NSSecureCoding, NSCopying> {
+@interface AXVoiceOverUserSubstitution : NSObject <NSCopying, NSSecureCoding> {
     BOOL _active;
     BOOL _appliesToAllApps;
     NSSet *_bundleIdentifiers;

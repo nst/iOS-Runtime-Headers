@@ -4,7 +4,7 @@
 
 @class GEOComposedRoute, GEOMapRegion, NSString, VKTrafficSegmentsAlongRoute;
 
-@interface VKPolylineOverlay : NSObject <VKOverlay, GEOComposedRouteObserver> {
+@interface VKPolylineOverlay : NSObject <GEOComposedRouteObserver, VKOverlay> {
     GEOComposedRoute *_composedRoute;
     BOOL _isReadyForSnapping;
     struct __CFSet { } *_observers;
@@ -26,8 +26,8 @@
 - (void)_updateTraffic;
 - (void)addObserver:(id)arg1;
 - (id)boundingMapRegion;
-- (void)composedRoute:(id)arg1 selectedSections:(id)arg2 deselectedSections:(id)arg3;
 - (id)composedRoute;
+- (void)composedRoute:(id)arg1 selectedSections:(id)arg2 deselectedSections:(id)arg3;
 - (void)composedRouteUpdatedSnappedPaths:(id)arg1;
 - (void)composedRouteUpdatedTraffic:(id)arg1;
 - (struct { double x1; double x2; })coordinate;

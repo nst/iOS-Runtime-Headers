@@ -9,6 +9,64 @@
 @class CALayer, FBSScene, NSArray, NSMutableArray, NSMutableSet, NSString, NSUndoManager, UIColor, UIResponder, UIScreen, UITraitCollection, UIView, UIViewController, _UIResponderSelectionCursor, _UISimulatedApplicationResizeGestureRecognizerDelegate, _UISystemGestureGateGestureRecognizer, _UIViewControllerNullAnimationTransitionCoordinator, _UIWindowAnimationController;
 
 @interface UIWindow : UIView <NSISEngineDelegate> {
+    _UIWindowAnimationController *__animationController;
+    BOOL __containedGestureRecognizersShouldRespectGestureServerInstructions;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id __rotationCompleteBlock;
+
+    BOOL __shouldHitTestEntireScreen;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id __shouldPreventRotationHook;
+
+    _UISimulatedApplicationResizeGestureRecognizerDelegate *__simulatedApplicationResizeGestureRecognizerDelegate;
+    BOOL __usesLegacySupportedOrientationChecks;
+    BOOL _attachable;
+    int _containedGestureRecognizerMaximumState;
+    id _currentTintView;
+    NSString *_debugName;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _deferredLaunchBlock;
+
+    id _delegate;
+    UITraitCollection *_destinationTraitCollection;
+    UIView *_exclusiveTouchView;
+    id _fingerInfo;
+    UIResponder *_firstResponder;
+    int _fromWindowOrientation;
+    int _horizontalSizeClassStateRestorationOverride;
+    UIView *_lastMouseDownView;
+    UIView *_lastMouseEnteredView;
+    double _lastTouchTimestamp;
+    id _layerContext;
+    _UIResponderSelectionCursor *_responderSelectionCursor;
+    NSArray *_rootViewConstraints;
+    UIViewController *_rootViewController;
+    NSMutableArray *_rotationViewControllers;
+    UIColor *_savedBackgroundColor;
+    FBSScene *_scene;
+    UIScreen *_screen;
+    BOOL _shouldDisableTransformLayerScalingForSnapshotting;
+    NSMutableSet *_subtreeMonitoringViews;
+    _UISystemGestureGateGestureRecognizer *_systemGestureGateForGestures;
+    _UISystemGestureGateGestureRecognizer *_systemGestureGateForTouches;
+    unsigned int _systemGesturesArePossible : 1;
+    NSMutableSet *_tintViews;
+    int _toWindowOrientation;
+    id _touchData;
+    struct __CFDictionary { } *_touchMap;
+    UITraitCollection *_traitCollection;
+    _UIViewControllerNullAnimationTransitionCoordinator *_traitCollectionChangeTransitionCoordinator;
+    CALayer *_transformLayer;
+    NSUndoManager *_undoManager;
+    int _verticalSizeClassStateRestorationOverride;
+    int _viewOrientation;
+    id _windowController;
     struct { 
         unsigned int delegateWillRotate : 1; 
         unsigned int delegateDidRotate : 1; 
@@ -42,52 +100,6 @@
         unsigned int statusBarFollowsOrientation : 1; 
         unsigned int secure : 1; 
         unsigned int isMainSceneSized : 1; 
-    unsigned int _systemGesturesArePossible : 1;
-    _UIWindowAnimationController *__animationController;
-    BOOL __containedGestureRecognizersShouldRespectGestureServerInstructions;
-    id __rotationCompleteBlock;
-    BOOL __shouldHitTestEntireScreen;
-    id __shouldPreventRotationHook;
-    _UISimulatedApplicationResizeGestureRecognizerDelegate *__simulatedApplicationResizeGestureRecognizerDelegate;
-    BOOL __usesLegacySupportedOrientationChecks;
-    BOOL _attachable;
-    int _containedGestureRecognizerMaximumState;
-    id _currentTintView;
-    NSString *_debugName;
-    id _deferredLaunchBlock;
-    id _delegate;
-    UITraitCollection *_destinationTraitCollection;
-    UIView *_exclusiveTouchView;
-    id _fingerInfo;
-    UIResponder *_firstResponder;
-    int _fromWindowOrientation;
-    int _horizontalSizeClassStateRestorationOverride;
-    UIView *_lastMouseDownView;
-    UIView *_lastMouseEnteredView;
-    double _lastTouchTimestamp;
-    id _layerContext;
-    _UIResponderSelectionCursor *_responderSelectionCursor;
-    NSArray *_rootViewConstraints;
-    UIViewController *_rootViewController;
-    NSMutableArray *_rotationViewControllers;
-    UIColor *_savedBackgroundColor;
-    FBSScene *_scene;
-    UIScreen *_screen;
-    BOOL _shouldDisableTransformLayerScalingForSnapshotting;
-    NSMutableSet *_subtreeMonitoringViews;
-    _UISystemGestureGateGestureRecognizer *_systemGestureGateForGestures;
-    _UISystemGestureGateGestureRecognizer *_systemGestureGateForTouches;
-    NSMutableSet *_tintViews;
-    int _toWindowOrientation;
-    id _touchData;
-    struct __CFDictionary { } *_touchMap;
-    UITraitCollection *_traitCollection;
-    _UIViewControllerNullAnimationTransitionCoordinator *_traitCollectionChangeTransitionCoordinator;
-    CALayer *_transformLayer;
-    NSUndoManager *_undoManager;
-    int _verticalSizeClassStateRestorationOverride;
-    int _viewOrientation;
-    id _windowController;
     } _windowFlags;
     NSArray *_windowInternalConstraints;
     float _windowLevel;
@@ -130,10 +142,10 @@
 + (BOOL)_isSecure;
 + (BOOL)_isSystemWindow;
 + (unsigned int)_keyWindowStackSize;
-+ (void)_noteStatusBarHeightChanged:(float)arg1 oldHeight:(float)arg2 forAutolayoutRootViewsOnly:(BOOL)arg3;
 + (void)_noteStatusBarHeightChanged:(float)arg1 oldHeight:(float)arg2;
-+ (void)_popKeyWindow:(id)arg1;
++ (void)_noteStatusBarHeightChanged:(float)arg1 oldHeight:(float)arg2 forAutolayoutRootViewsOnly:(BOOL)arg3;
 + (void)_popKeyWindow;
++ (void)_popKeyWindow:(id)arg1;
 + (void)_prepareWindowsForAppResume;
 + (void)_prepareWindowsForAppSuspend;
 + (void)_prepareWindowsPassingTestForAppResume:(id)arg1;
@@ -145,21 +157,21 @@
 + (id)_statusBarControllingWindow;
 + (void)_synchronizeDrawing;
 + (unsigned int)_synchronizeDrawingAcrossProcesses;
-+ (void)_synchronizeDrawingAcrossProcessesOverPort:(unsigned int)arg1 withPreCommitHandler:(id)arg2;
 + (void)_synchronizeDrawingAcrossProcessesOverPort:(unsigned int)arg1;
++ (void)_synchronizeDrawingAcrossProcessesOverPort:(unsigned int)arg1 withPreCommitHandler:(id)arg2;
 + (unsigned int)_synchronizeDrawingAcrossProcessesWithPreCommitHandler:(id)arg1;
 + (id)_topVisibleWindowPassingTest:(id)arg1;
 + (BOOL)_transformLayerRotationsAreEnabled;
 + (void)adjustForAccessibilityIfNeeded:(id)arg1;
-+ (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 forScreen:(id)arg3;
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2;
++ (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 forScreen:(id)arg3;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })constrainFrameToScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (void*)createIOSurfaceFromScreen:(id)arg1;
 + (void*)createIOSurfaceOnScreen:(id)arg1 withContextIds:(const unsigned int*)arg2 count:(unsigned int)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 usePurpleGfx:(BOOL)arg5 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg6;
 + (void*)createIOSurfaceWithContextId:(unsigned int)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg4;
 + (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 usePurpleGfx:(BOOL)arg4 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg5;
-+ (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (void*)createScreenIOSurface;
 + (void)initialize;
 + (id)keyWindow;
@@ -234,8 +246,8 @@
 - (id)_exclusiveTouchView;
 - (unsigned int)_expectedWindowInternalConstraintsCount;
 - (void)_finishedFirstHalfRotation:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3 skipNotification:(BOOL)arg4;
 - (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3 skipNotification:(BOOL)arg4;
 - (id)_firstResponder;
 - (void)_forceTwoPartRotationAnimation:(BOOL)arg1;
 - (int)_fromWindowOrientation;
@@ -247,9 +259,9 @@
 - (BOOL)_ignoresHitTest;
 - (BOOL)_includeInDefaultImageSnapshot;
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 attached:(BOOL)arg2;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 debugName:(id)arg2;
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 debugName:(id)arg2 attached:(BOOL)arg3;
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 debugName:(id)arg2 scene:(id)arg3 attached:(BOOL)arg4;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 debugName:(id)arg2;
 - (id)_initWithOrientation:(int)arg1;
 - (void)_initializeLayoutEngine;
 - (void)_installSimulatedApplicationResizeGesture;
@@ -331,12 +343,12 @@
 - (void)_setRootViewConstraints:(id)arg1;
 - (void)_setRotatableClient:(id)arg1 toOrientation:(int)arg2 applyTransformToWindow:(BOOL)arg3 updateStatusBar:(BOOL)arg4 duration:(double)arg5 force:(BOOL)arg6 isRotating:(BOOL)arg7;
 - (void)_setRotatableClient:(id)arg1 toOrientation:(int)arg2 duration:(double)arg3 force:(BOOL)arg4;
-- (void)_setRotatableClient:(id)arg1 toOrientation:(int)arg2 updateStatusBar:(BOOL)arg3 duration:(double)arg4 force:(BOOL)arg5 isRotating:(BOOL)arg6;
 - (void)_setRotatableClient:(id)arg1 toOrientation:(int)arg2 updateStatusBar:(BOOL)arg3 duration:(double)arg4 force:(BOOL)arg5;
-- (void)_setRotatableViewOrientation:(int)arg1 duration:(double)arg2 force:(BOOL)arg3;
+- (void)_setRotatableClient:(id)arg1 toOrientation:(int)arg2 updateStatusBar:(BOOL)arg3 duration:(double)arg4 force:(BOOL)arg5 isRotating:(BOOL)arg6;
 - (void)_setRotatableViewOrientation:(int)arg1 duration:(double)arg2;
-- (void)_setRotatableViewOrientation:(int)arg1 updateStatusBar:(BOOL)arg2 duration:(double)arg3 force:(BOOL)arg4;
+- (void)_setRotatableViewOrientation:(int)arg1 duration:(double)arg2 force:(BOOL)arg3;
 - (void)_setRotatableViewOrientation:(int)arg1 updateStatusBar:(BOOL)arg2 duration:(double)arg3;
+- (void)_setRotatableViewOrientation:(int)arg1 updateStatusBar:(BOOL)arg2 duration:(double)arg3 force:(BOOL)arg4;
 - (void)_setRotationCompleteBlock:(id)arg1;
 - (void)_setScene:(id)arg1;
 - (void)_setSecure:(BOOL)arg1;
@@ -352,8 +364,8 @@
 - (void)_setWindowInterfaceOrientation:(int)arg1;
 - (void)_setWindowInternalConstraints:(id)arg1;
 - (BOOL)_shouldApplyHorizontalPixelScaleTransform;
-- (BOOL)_shouldAutorotateToInterfaceOrientation:(int)arg1 checkForDismissal:(BOOL)arg2 isRotationDisabled:(BOOL*)arg3;
 - (BOOL)_shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)_shouldAutorotateToInterfaceOrientation:(int)arg1 checkForDismissal:(BOOL)arg2 isRotationDisabled:(BOOL*)arg3;
 - (BOOL)_shouldCreateContextAsSecure;
 - (BOOL)_shouldDelayTouchForSystemGestures:(id)arg1;
 - (BOOL)_shouldDisableTransformLayerScalingForSnapshotting;
@@ -380,8 +392,8 @@
 - (float)_touchSloppinessFactor;
 - (id)_traitCollectionChangeTransitionCoordinator;
 - (id)_traitCollectionForSize:(struct CGSize { float x1; float x2; })arg1 screen:(id)arg2;
-- (id)_traitCollectionForSize:(struct CGSize { float x1; float x2; })arg1 screenCollection:(id)arg2 virtualHorizontalSizeClass:(int)arg3 virtualVerticalSizeClass:(int)arg4;
 - (id)_traitCollectionForSize:(struct CGSize { float x1; float x2; })arg1 screenCollection:(id)arg2;
+- (id)_traitCollectionForSize:(struct CGSize { float x1; float x2; })arg1 screenCollection:(id)arg2 virtualHorizontalSizeClass:(int)arg3 virtualVerticalSizeClass:(int)arg4;
 - (id)_traitCollectionWhenRotated;
 - (struct CGPoint { float x1; float x2; })_transformDisplayToWindowCoordinates:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_transformLayerShouldMaskToBounds:(BOOL)arg1;
@@ -395,15 +407,15 @@
 - (void)_updateContextOrderingAndSetLayerHidden:(BOOL)arg1;
 - (void)_updateCurrentTintView;
 - (void)_updateCurrentTintViewForPotentialTintView:(id)arg1;
-- (void)_updateInterfaceOrientationFromDeviceOrientation:(BOOL)arg1;
 - (void)_updateInterfaceOrientationFromDeviceOrientation;
+- (void)_updateInterfaceOrientationFromDeviceOrientation:(BOOL)arg1;
 - (void)_updateInterfaceOrientationFromDeviceOrientationIfRotationEnabled:(BOOL)arg1;
 - (void)_updateIsSceneSizedFlag;
 - (void)_updateRootViewConstraintsForInterfaceOrientationAndStatusBarHeight;
 - (void)_updateSceneIfNecessary;
 - (void)_updateSimulatedApplicationResizeGestureForInterfaceOrientationChange;
-- (void)_updateStatusBarToInterfaceOrientation:(int)arg1 duration:(double)arg2 fenceID:(int)arg3 animation:(int)arg4;
 - (void)_updateStatusBarToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)_updateStatusBarToInterfaceOrientation:(int)arg1 duration:(double)arg2 fenceID:(int)arg3 animation:(int)arg4;
 - (void)_updateToInterfaceOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_updateToInterfaceOrientation:(int)arg1 duration:(double)arg2 force:(BOOL)arg3;
 - (void)_updateTransformLayer;
@@ -488,8 +500,8 @@
 - (id)rootViewController;
 - (id)screen;
 - (void)sendEvent:(id)arg1;
-- (void)setAutorotates:(BOOL)arg1 forceUpdateInterfaceOrientation:(BOOL)arg2;
 - (void)setAutorotates:(BOOL)arg1;
+- (void)setAutorotates:(BOOL)arg1 forceUpdateInterfaceOrientation:(BOOL)arg2;
 - (void)setBecomeKeyOnOrderFront:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
@@ -504,8 +516,8 @@
 - (void)setScreen:(id)arg1;
 - (void)setWindowLevel:(float)arg1;
 - (void)setupForOrientation:(int)arg1;
-- (void)synchronizeDrawingWithID:(int)arg1 count:(unsigned int)arg2;
 - (void)synchronizeDrawingWithID:(int)arg1;
+- (void)synchronizeDrawingWithID:(int)arg1 count:(unsigned int)arg2;
 - (id)traitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)undo:(id)arg1;

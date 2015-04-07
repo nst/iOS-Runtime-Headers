@@ -81,10 +81,10 @@
 - (void)notifyUserOfQuotaDepletion;
 - (id)password;
 - (id)personID;
-- (void)presentQuotaDepletionAlertForDataclass:(id)arg1 withHandler:(id)arg2;
 - (void)presentQuotaDepletionAlertForDataclass:(id)arg1;
-- (BOOL)presentQuotaDepletionAlertForDataclassIfNecessary:(id)arg1 withHandler:(id)arg2;
+- (void)presentQuotaDepletionAlertForDataclass:(id)arg1 withHandler:(id)arg2;
 - (BOOL)presentQuotaDepletionAlertForDataclassIfNecessary:(id)arg1;
+- (BOOL)presentQuotaDepletionAlertForDataclassIfNecessary:(id)arg1 withHandler:(id)arg2;
 - (BOOL)primaryAccount;
 - (id)primaryEmail;
 - (BOOL)primaryEmailVerified;

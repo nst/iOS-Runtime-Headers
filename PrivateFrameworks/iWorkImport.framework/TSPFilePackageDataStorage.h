@@ -5,14 +5,14 @@
 @class NSString, TSPFilePackage;
 
 @interface TSPFilePackageDataStorage : TSPStreamDataStorage {
+    unsigned int _CRC;
+    unsigned long long _encodedLength;
     struct { 
         unsigned int didCalculateIsReadable : 1; 
         unsigned int didCalculateEncodedLength : 1; 
         unsigned int didCalculateCRC : 1; 
         unsigned int isReadable : 1; 
         unsigned int isMissingData : 1; 
-    unsigned int _CRC;
-    unsigned long long _encodedLength;
     } _flags;
     TSPFilePackage *_package;
     NSString *_path;

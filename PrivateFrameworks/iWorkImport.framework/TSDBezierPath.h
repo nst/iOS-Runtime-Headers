@@ -7,7 +7,13 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@interface TSDBezierPath : NSObject <NSCopying, NSCoding> {
+@interface TSDBezierPath : NSObject <NSCoding, NSCopying> {
+    struct { 
+        unsigned int sfr_flags : 8; 
+        unsigned int sfr_pathState : 2; 
+        unsigned int sfr_calculatedLengths : 1; 
+        unsigned int sfr_unused : 21; 
+    } sfr_bpFlags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,12 +23,6 @@
             float width; 
             float height; 
         } size; 
-    struct { 
-        unsigned int sfr_flags : 8; 
-        unsigned int sfr_pathState : 2; 
-        unsigned int sfr_calculatedLengths : 1; 
-        unsigned int sfr_unused : 21; 
-    } sfr_bpFlags;
     } sfr_controlPointBounds;
     unsigned int sfr_dashedLineCount;
     float *sfr_dashedLinePattern;
@@ -74,13 +74,13 @@
 + (unsigned int)lineJoinStyle;
 + (float)lineWidth;
 + (float)miterLimit;
-+ (id)outlineBezierPath:(id)arg1 withThreshold:(float)arg2;
 + (id)outlineBezierPath:(id)arg1;
++ (id)outlineBezierPath:(id)arg1 withThreshold:(float)arg2;
 + (id)outsideEdgeOfBezierPath:(id)arg1;
-+ (struct Path { int x1; int x2; int x3; struct path_descr {} *x4; int x5; int x6; boolx7; boolx8; int x9; int x10; int x11; char *x12; }*)p_bezierToPath:(id)arg1;
++ (struct Path { int x1; int x2; int x3; struct path_descr {} *x4; int x5; int x6; bool x7; bool x8; int x9; int x10; int x11; char *x12; }*)p_bezierToPath:(id)arg1;
 + (id)p_booleanWithBezierPaths:(id)arg1 operation:(int)arg2;
-+ (id)p_pathToBezier:(struct Path { int x1; int x2; int x3; struct path_descr {} *x4; int x5; int x6; boolx7; boolx8; int x9; int x10; int x11; char *x12; }*)arg1;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_pathToBounds:(struct Path { int x1; int x2; int x3; struct path_descr {} *x4; int x5; int x6; boolx7; boolx8; int x9; int x10; int x11; char *x12; }*)arg1;
++ (id)p_pathToBezier:(struct Path { int x1; int x2; int x3; struct path_descr {} *x4; int x5; int x6; bool x7; bool x8; int x9; int x10; int x11; char *x12; }*)arg1;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_pathToBounds:(struct Path { int x1; int x2; int x3; struct path_descr {} *x4; int x5; int x6; bool x7; bool x8; int x9; int x10; int x11; char *x12; }*)arg1;
 + (void)setDefaultFlatness:(float)arg1;
 + (void)setDefaultLineCapStyle:(unsigned int)arg1;
 + (void)setDefaultLineJoinStyle:(unsigned int)arg1;
@@ -117,25 +117,25 @@
 - (BOOL)_isValid:(float)arg1;
 - (void)addClip;
 - (void)addIntersectionsWithLine:(struct CGPoint { float x1; float x2; }[2])arg1 to:(id)arg2;
-- (void)addIntersectionsWithPath:(id)arg1 to:(id)arg2 allIntersections:(BOOL)arg3 reversed:(BOOL)arg4;
 - (void)addIntersectionsWithPath:(id)arg1 to:(id)arg2;
+- (void)addIntersectionsWithPath:(id)arg1 to:(id)arg2 allIntersections:(BOOL)arg3 reversed:(BOOL)arg4;
 - (void)addPathToContext:(struct CGContext { }*)arg1;
 - (id)aliasedPathInContext:(struct CGContext { }*)arg1 effectiveStrokeWidth:(float)arg2;
 - (id)aliasedPathWithViewScale:(float)arg1 effectiveStrokeWidth:(float)arg2;
 - (void)alignBoundsToOrigin;
+- (void)appendBezierPath:(id)arg1;
 - (void)appendBezierPath:(id)arg1 fromSegment:(int)arg2 t:(float)arg3 toSegment:(int)arg4 t:(float)arg5 withoutMove:(BOOL)arg6;
 - (void)appendBezierPath:(id)arg1 fromSegment:(int)arg2 toSegment:(int)arg3;
-- (void)appendBezierPath:(id)arg1;
 - (void)appendBezierPathWithArcFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3;
-- (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4 clockwise:(BOOL)arg5;
 - (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4;
+- (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4 clockwise:(BOOL)arg5;
 - (void)appendBezierPathWithArcWithEllipseBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 startAngle:(float)arg2 swingAngle:(float)arg3 angleType:(int)arg4 startNewPath:(BOOL)arg5;
 - (void)appendBezierPathWithArcWithEllipseBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 startRadialVector:(struct CGPoint { float x1; float x2; })arg2 endRadialVector:(struct CGPoint { float x1; float x2; })arg3 angleSign:(int)arg4 startNewPath:(BOOL)arg5;
 - (void)appendBezierPathWithOvalInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)appendBezierPathWithPoints:(struct CGPoint { float x1; float x2; }*)arg1 count:(int)arg2;
 - (void)appendBezierPathWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)bezierPathByFittingCurve:(id)arg1;
 - (id)bezierPathByFittingCurve;
+- (id)bezierPathByFittingCurve:(id)arg1;
 - (id)bezierPathByFlatteningPath;
 - (id)bezierPathByOffsettingPath:(float)arg1 joinStyle:(unsigned int)arg2 withThreshold:(float)arg3;
 - (id)bezierPathByRemovingRedundantElements;
@@ -156,15 +156,15 @@
 - (id)copyFromSegment:(int)arg1 t:(float)arg2 toSegment:(int)arg3 t:(float)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct CGPoint { float x1; float x2; })currentPoint;
-- (float)curvatureAt:(float)arg1 fromElement:(int)arg2;
 - (float)curvatureAt:(float)arg1;
+- (float)curvatureAt:(float)arg1 fromElement:(int)arg2;
 - (void)curveToPoint:(struct CGPoint { float x1; float x2; })arg1 controlPoint1:(struct CGPoint { float x1; float x2; })arg2 controlPoint2:(struct CGPoint { float x1; float x2; })arg3;
 - (void)dealloc;
 - (id)description;
 - (float)distanceToPoint:(struct CGPoint { float x1; float x2; })arg1 elementIndex:(unsigned int*)arg2 tValue:(float*)arg3 threshold:(float)arg4;
+- (unsigned int)elementAtIndex:(int)arg1;
 - (unsigned int)elementAtIndex:(int)arg1 allPoints:(struct CGPoint { float x1; float x2; }*)arg2;
 - (unsigned int)elementAtIndex:(int)arg1 associatedPoints:(struct CGPoint { float x1; float x2; }*)arg2;
-- (unsigned int)elementAtIndex:(int)arg1;
 - (int)elementCount;
 - (int)elementPercentage:(float*)arg1 forOverallPercentage:(float)arg2;
 - (float)elementPercentageFromElement:(int)arg1 forOverallPercentage:(float)arg2;
@@ -175,8 +175,8 @@
 - (void)flattenIntoPath:(id)arg1;
 - (void)getLineDash:(float*)arg1 count:(int*)arg2 phase:(float*)arg3;
 - (void)getStartPoint:(struct CGPoint { float x1; float x2; }*)arg1 andEndPoint:(struct CGPoint { float x1; float x2; }*)arg2;
-- (struct CGPoint { float x1; float x2; })gradientAt:(float)arg1 fromElement:(int)arg2;
 - (struct CGPoint { float x1; float x2; })gradientAt:(float)arg1;
+- (struct CGPoint { float x1; float x2; })gradientAt:(float)arg1 fromElement:(int)arg2;
 - (id)init;
 - (id)initWithArchive:(const struct Path { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Path_Element> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1;
 - (id)initWithCString:(const char *)arg1;
@@ -205,8 +205,8 @@
 - (float)lineWidth;
 - (float)miterLimit;
 - (void)moveToPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })myGradientAt:(float)arg1 fromElement:(int)arg2;
 - (struct CGPoint { float x1; float x2; })myGradientAt:(float)arg1;
+- (struct CGPoint { float x1; float x2; })myGradientAt:(float)arg1 fromElement:(int)arg2;
 - (struct CGPoint { float x1; float x2; })nearestAngleOnPathToLine:(struct CGPoint { float x1; float x2; }[2])arg1;
 - (struct CGPoint { float x1; float x2; })nearestPointOnPathToLine:(struct CGPoint { float x1; float x2; }[2])arg1;
 - (id)outlineStroke;
@@ -247,7 +247,7 @@
 - (struct CGPoint { float x1; float x2; })transformedTotalCoordinate:(struct CGPoint { float x1; float x2; })arg1 inElement:(int)arg2 withPressure:(id)arg3;
 - (id)uniteWithBezierPath:(id)arg1;
 - (unsigned int)windingRule;
-- (float)yValueFromXValue:(float)arg1 elementIndex:(int*)arg2 parametricValue:(float*)arg3;
 - (float)yValueFromXValue:(float)arg1;
+- (float)yValueFromXValue:(float)arg1 elementIndex:(int*)arg2 parametricValue:(float*)arg3;
 
 @end

@@ -9,14 +9,22 @@
 @class NSArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface HSBrowser : NSObject <NSNetServiceDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _addLibraryHandler;
+
     NSArray *_availableLibraries;
     int _browserType;
     struct _DNSServiceRef_t { } *_dnsService;
     NSObject<OS_dispatch_queue> *_dnsServiceQueue;
     NSString *_homeSharingGroupID;
     BOOL _isBrowsing;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _removeLibraryHandler;
+
 }
 
 @property(readonly) NSArray * availableLibraries;

@@ -5,52 +5,40 @@
 @class NSArray, NSMutableArray, UIResponder<UITextInput>, UISelectionGrabber, UITextSelectionView, UITouch;
 
 @interface UITextRangeView : UIView {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     UITouch *m_activeTouch;
     BOOL m_animateUpdate;
     BOOL m_baseIsStart;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_basePoint;
     BOOL m_commandsWereShowing;
     UIResponder<UITextInput> *m_container;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } m_endEdge;
     UISelectionGrabber *m_endGrabber;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_extentPoint;
     double m_firstMovedTime;
     BOOL m_inGesture;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_initialBasePoint;
     float m_initialDistance;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_initialExtentPoint;
     BOOL m_inputViewIsChanging;
     BOOL m_magnifying;
@@ -61,8 +49,20 @@
     BOOL m_scaling;
     BOOL m_scrolling;
     UITextSelectionView *m_selectionView;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } m_startEdge;
     UISelectionGrabber *m_startGrabber;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } m_touchOffset;
 }
 
@@ -160,8 +160,8 @@
 - (void)setScaling:(BOOL)arg1;
 - (void)setStartEdge:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setStartGrabber:(id)arg1;
-- (void)setTouchOffset:(struct CGPoint { float x1; float x2; })arg1 touchPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setTouchOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setTouchOffset:(struct CGPoint { float x1; float x2; })arg1 touchPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)startAnimating;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })startEdge;
 - (id)startGrabber;

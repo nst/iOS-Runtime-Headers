@@ -5,11 +5,11 @@
 @class RCComposition, RCCompositionWaveformDataSource, RCGLWaveformRenderer, RCUIConfiguration, UIImage;
 
 @interface RCWaveformRasterizationOperation : NSOperation {
+    RCComposition *_composition;
+    RCCompositionWaveformDataSource *_dataSource;
     struct CGSize { 
         float width; 
         float height; 
-    RCComposition *_composition;
-    RCCompositionWaveformDataSource *_dataSource;
     } _imageSize;
     BOOL _loadingSuccessful;
     UIImage *_rasterizedImage;

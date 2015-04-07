@@ -31,8 +31,8 @@
 @property(retain) NSString * title;
 @property(readonly) NSString * uuid;
 
-+ (id)changeRequestForAssetCollection:(id)arg1 assets:(id)arg2;
 + (id)changeRequestForAssetCollection:(id)arg1;
++ (id)changeRequestForAssetCollection:(id)arg1 assets:(id)arg2;
 + (id)creationRequestForAssetCollectionWithTitle:(id)arg1;
 + (void)deleteAssetCollections:(id)arg1;
 

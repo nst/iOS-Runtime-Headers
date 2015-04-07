@@ -12,7 +12,10 @@
  */
 
 @interface SCNActionFade : SCNAction {
-    struct SCNCActionFade { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; boolx6; double x7; double x8; float x9; float x10; double x11; boolx12; boolx13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; BOOL x25; } *_mycaction;
+
+  /* Error parsing encoded ivar type info: ^{SCNCActionFade=^^?f@?@BddffdBB@?^{__CFString}ifffffffc} */
+    struct SCNCActionFade { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; bool x6; double x7; double x8; float x9; float x10; double x11; bool x12; bool x13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; BOOL x25; } *_mycaction;
+
 }
 
 + (id)fadeInWithDuration:(double)arg1;

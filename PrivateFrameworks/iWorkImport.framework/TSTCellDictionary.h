@@ -5,10 +5,10 @@
 @class TSUIntegerKeyDictionary;
 
 @interface TSTCellDictionary : NSObject {
+    TSUIntegerKeyDictionary *mDict;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    TSUIntegerKeyDictionary *mDict;
     } mDictRWLock;
 }
 

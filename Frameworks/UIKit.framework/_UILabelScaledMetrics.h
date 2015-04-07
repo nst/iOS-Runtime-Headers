@@ -5,18 +5,18 @@
 @class NSAttributedString;
 
 @interface _UILabelScaledMetrics : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     float _actualScaleFactor;
     float _baselineOffset;
     NSAttributedString *_scaledAttributedText;
     float _scaledBaselineOffset;
     float _scaledLineHeight;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _scaledSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _targetSize;
 }
 

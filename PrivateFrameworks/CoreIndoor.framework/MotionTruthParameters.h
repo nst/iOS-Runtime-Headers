@@ -3,12 +3,12 @@
  */
 
 @interface MotionTruthParameters : PBCodable <NSCopying> {
+    float _bias;
+    float _errorPeriodSeconds;
     struct { 
         unsigned int bias : 1; 
         unsigned int errorPeriodSeconds : 1; 
         unsigned int scale : 1; 
-    float _bias;
-    float _errorPeriodSeconds;
     } _has;
     float _scale;
 }

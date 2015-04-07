@@ -5,15 +5,6 @@
 @class CALayer, NSArray, NSDictionary, NSObject<OS_dispatch_queue>, TSDCanvas, TSDInteractiveCanvasController, TSDKnobTracker, TSDLayout, TSDLayoutGeometry, TSDRep<TSDContainerRep>, TSDTextureContext, TSDTextureSet, TSDTilingBackgroundQueue;
 
 @interface TSDRep : NSObject <TSDMagicMoveMatching> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     TSDCanvas *mCanvas;
     struct CGColor { } *mDefaultSelectionHighlightColor;
     CALayer *mDragAndDropHighlightLayer;
@@ -24,6 +15,15 @@
     BOOL mKnobsAreShowing;
     TSDLayoutGeometry *mLastGeometryInRoot;
     TSDLayout *mLayout;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mOriginalLayerFrameInScaledCanvas;
     TSDRep<TSDContainerRep> *mParentRep;
     CALayer *mSelectionHighlightLayer;
@@ -107,12 +107,12 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clipRect;
 - (id)colorBehindLayer:(id)arg1;
 - (id)commandController;
+- (void)computeDirectLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 andTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2;
 - (void)computeDirectLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 andTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 basedOnLayoutGeometry:(id)arg3;
 - (void)computeDirectLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 andTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 basedOnTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 andSize:(struct CGSize { float x1; float x2; })arg4;
-- (void)computeDirectLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 andTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2;
 - (id)connectedReps;
-- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1 withSlop:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1 withSlop:(struct CGSize { float x1; float x2; })arg2;
 - (struct CGPoint { float x1; float x2; })convertKnobPositionFromUnscaledCanvas:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertKnobPositionToUnscaledCanvas:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertNaturalPointFromLayerRelative:(struct CGPoint { float x1; float x2; })arg1;
@@ -156,17 +156,17 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameInScreenSpace;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameInUnscaledCanvas;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameInUnscaledCanvasIncludingChrome;
-- (BOOL)handleDoubleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 onKnob:(id)arg2;
 - (BOOL)handleDoubleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)handleDoubleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 onKnob:(id)arg2;
 - (BOOL)handleMultipleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)handleSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 onKnob:(id)arg2;
 - (BOOL)handleSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)handleSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 onKnob:(id)arg2;
 - (BOOL)handlesEditMenu;
 - (BOOL)hasBeenRemoved;
-- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
 - (id)hitRep:(struct CGPoint { float x1; float x2; })arg1;
-- (id)hitRepChrome:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
+- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
 - (id)hitRepChrome:(struct CGPoint { float x1; float x2; })arg1;
+- (id)hitRepChrome:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
 - (id)hitReps:(struct CGPoint { float x1; float x2; })arg1 withSlop:(struct CGSize { float x1; float x2; })arg2;
 - (id)hitReps:(struct CGPoint { float x1; float x2; })arg1 withSlopBlock:(id)arg2;
 - (id)hyperlinkRegions;
@@ -251,12 +251,12 @@
 - (id)queueForDrawingTilingLayerInBackground:(id)arg1;
 - (void)recursivelyDrawChildrenInContext:(struct CGContext { }*)arg1;
 - (void)recursivelyDrawInContext:(struct CGContext { }*)arg1;
-- (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
-- (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)recursivelyPerformSelector:(SEL)arg1;
-- (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
-- (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2;
+- (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;
+- (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1;
+- (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2;
+- (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (BOOL)repDirectlyManagesContentsScaleOfLayer:(id)arg1;
 - (id)repForDragging;
 - (id)repForHandleSingleTap;

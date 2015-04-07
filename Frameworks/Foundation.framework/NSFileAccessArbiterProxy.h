@@ -13,7 +13,11 @@
     NSMutableDictionary *_providersByID;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_xpc_object> *_server;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _serverEventHandler;
+
     NSObject<OS_dispatch_queue> *_serverQueue;
 }
 

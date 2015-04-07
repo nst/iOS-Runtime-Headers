@@ -5,15 +5,15 @@
 @class NSURLRequest, NSURLResponse, WKFrameInfo;
 
 @interface WKNavigationResponse : NSObject {
+    BOOL _canShowMIMEType;
     struct RetainPtr<WKFrameInfo> { 
         void *m_ptr; 
+    } _frame;
     struct RetainPtr<NSURLRequest> { 
         void *m_ptr; 
+    } _request;
     struct RetainPtr<NSURLResponse> { 
         void *m_ptr; 
-    BOOL _canShowMIMEType;
-    } _frame;
-    } _request;
     } _response;
 }
 

@@ -5,10 +5,10 @@
 @class NSString, UICollectionView, UICollectionViewLayoutAttributes;
 
 @interface UICollectionReusableView : UIView {
-    struct { 
-        unsigned int wasDequeued : 1; 
     UICollectionView *_collectionView;
     UICollectionViewLayoutAttributes *_layoutAttributes;
+    struct { 
+        unsigned int wasDequeued : 1; 
     } _reusableViewFlags;
     NSString *_reuseIdentifier;
     int _updateAnimationCount;
@@ -24,8 +24,8 @@
 + (void)_gkSetupSelectableTwoLineLayoutWithCell:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
 + (id)_gkSetupThreeLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLine:(id)arg3 middleLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
 + (id)_gkSetupTwoLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLabel:(id)arg3 lowerLabel:(id)arg4 leadingBetween:(float)arg5 fontTextStyle:(id)arg6 metricOverrides:(id)arg7;
-+ (id)_gkStandardConstraintMetricsForIdiom:(int)arg1 withOverrides:(id)arg2;
 + (id)_gkStandardConstraintMetricsForIdiom:(int)arg1;
++ (id)_gkStandardConstraintMetricsForIdiom:(int)arg1 withOverrides:(id)arg2;
 + (void)registerSupplementaryViewClassesForKind:(id)arg1 withCollectionView:(id)arg2;
 
 - (void)_addUpdateAnimation;

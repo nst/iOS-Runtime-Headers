@@ -5,17 +5,17 @@
 @class NSMutableDictionary, NSString, UIColor, UIImage;
 
 @interface UISearchBarBackground : _UIBarBackgroundImageView <_UIBarPositioningInternal> {
-    unsigned int _usesEmbeddedAppearance : 1;
     unsigned int _actingAsNavBar : 1;
-    unsigned int _usesContiguousBarBackground : 1;
-    unsigned int _barStyle : 3;
-    unsigned int _barTranslucence : 3;
     unsigned int _barHasController;
     int _barPosition;
+    unsigned int _barStyle : 3;
     UIColor *_barTintColor;
+    unsigned int _barTranslucence : 3;
     NSMutableDictionary *_customBackgroundImages;
     NSMutableDictionary *_generatedBackgroundImages;
     unsigned int _searchBarStyle;
+    unsigned int _usesContiguousBarBackground : 1;
+    unsigned int _usesEmbeddedAppearance : 1;
 }
 
 @property(readonly) UIImage * backgroundImage;

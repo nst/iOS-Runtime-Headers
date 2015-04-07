@@ -8,7 +8,18 @@
 
 @class CNFRegController, CNFRegLoadingView, NSMutableArray, NSString, NSTimer, RUILoader, UIAlertView, UIWebView;
 
-@interface CNFRegServerWebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate, RUIObjectModelDelegate> {
+@interface CNFRegServerWebViewController : UIViewController <RUIObjectModelDelegate, UIAlertViewDelegate, UIWebViewDelegate> {
+    UIAlertView *_alert;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _alertHandler;
+
+    RUILoader *_loader;
+    CNFRegLoadingView *_loadingView;
+    NSMutableArray *_objectModels;
+    CNFRegController *_regController;
+    NSTimer *_timeoutTimer;
     struct { 
         unsigned int isLoading : 1; 
         unsigned int isLoaded : 1; 
@@ -18,13 +29,6 @@
         unsigned int checkedLogState : 1; 
         unsigned int shouldLog : 1; 
         unsigned int timedOut; 
-    UIAlertView *_alert;
-    id _alertHandler;
-    RUILoader *_loader;
-    CNFRegLoadingView *_loadingView;
-    NSMutableArray *_objectModels;
-    CNFRegController *_regController;
-    NSTimer *_timeoutTimer;
     } _webControllerFlags;
     UIWebView *_webView;
 }

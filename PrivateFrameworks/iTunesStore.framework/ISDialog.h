@@ -115,8 +115,8 @@
 - (void)setTextFields:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUnlockActionButtonIndex:(int)arg1;
-- (void)setValue:(id)arg1 forUserInfoKey:(id)arg2;
 - (void)setValue:(void*)arg1 forCFUserNotificationKey:(struct __CFString { }*)arg2;
+- (void)setValue:(id)arg1 forUserInfoKey:(id)arg2;
 - (BOOL)shouldDismissAfterUnlock;
 - (BOOL)shouldDisplayAsTopMost;
 - (BOOL)shouldPendInSetupIfNotAllowed;

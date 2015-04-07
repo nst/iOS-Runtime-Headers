@@ -7,12 +7,12 @@
 @interface WKProcessGroup : NSObject {
     struct RefPtr<WebKit::WebContext> { 
         struct WebContext {} *m_ptr; 
+    } _context;
     struct WeakObjCPtr<id<WKProcessGroupDelegate> > { 
         id m_weakReference; 
+    } _delegate;
     struct RetainPtr<WKGeolocationProviderIOS> { 
         void *m_ptr; 
-    } _context;
-    } _delegate;
     } _geolocationProvider;
 }
 

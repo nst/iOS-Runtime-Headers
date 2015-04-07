@@ -4,7 +4,13 @@
 
 @class KNClassicStylesheetRecord, NSArray, NSString;
 
-@interface KNMasterSlide : KNAbstractSlide <TSSThemeAsset, TSKTransformableObject> {
+@interface KNMasterSlide : KNAbstractSlide <TSKTransformableObject, TSSThemeAsset> {
+    NSArray *mBodyListStyles;
+    NSArray *mBodyParagraphStyles;
+    BOOL mCalculatedHasBug16580905;
+    KNClassicStylesheetRecord *mClassicStylesheetRecord;
+    BOOL mHasBug16580905;
+    NSString *mName;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,12 +20,6 @@
             float width; 
             float height; 
         } size; 
-    NSArray *mBodyListStyles;
-    NSArray *mBodyParagraphStyles;
-    BOOL mCalculatedHasBug16580905;
-    KNClassicStylesheetRecord *mClassicStylesheetRecord;
-    BOOL mHasBug16580905;
-    NSString *mName;
     } mObjectRect;
     BOOL mSlideObjectsLayerWithMaster;
     NSString *mThumbnailTextForBodyPlaceholder;

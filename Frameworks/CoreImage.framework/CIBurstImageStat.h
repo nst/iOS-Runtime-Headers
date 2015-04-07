@@ -5,38 +5,6 @@
 @class NSMutableArray, NSString;
 
 @interface CIBurstImageStat : NSObject {
-    struct FastRegistration_Signatures { 
-        float *piRow; 
-        unsigned int nPiRow; 
-        struct Projections_meanStdTable { 
-            float *sumTable; 
-            float *sumSqTable; 
-        } piRowTable; 
-        float *piCol; 
-        unsigned int nPiCol; 
-        struct Projections_meanStdTable { 
-            float *sumTable; 
-            float *sumSqTable; 
-        } piColTable; 
-    struct GridROI_t { 
-        int startX; 
-        int startY; 
-        int endX; 
-        int endY; 
-    struct GridROI_t { 
-        int startX; 
-        int startY; 
-        int endX; 
-        int endY; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     int AEAverage;
     BOOL AEStable;
     int AETarget;
@@ -56,8 +24,22 @@
     BOOL emotionallyRejected;
     BOOL exclude;
     NSMutableArray *faceStatArray;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } facesRoiRect;
     int gridHeight;
+    struct GridROI_t { 
+        int startX; 
+        int startY; 
+        int endX; 
+        int endY; 
     } gridROI;
     int gridWidth;
     BOOL hasRegistrationData;
@@ -71,12 +53,30 @@
     int numHWFaces;
     int orientation;
     void *projectionMemoryBlock;
+    struct FastRegistration_Signatures { 
+        float *piRow; 
+        unsigned int nPiRow; 
+        struct Projections_meanStdTable { 
+            float *sumTable; 
+            float *sumSqTable; 
+        } piRowTable; 
+        float *piCol; 
+        unsigned int nPiCol; 
+        struct Projections_meanStdTable { 
+            float *sumTable; 
+            float *sumSqTable; 
+        } piColTable; 
     } projectionSignature;
     float registrationErrorIntegral;
     float registrationErrorX;
     float registrationErrorY;
     float roiSize;
     struct SharpnessGridElement_t { unsigned char x1; unsigned char x2; float x3; } *sharpnessGrid;
+    struct GridROI_t { 
+        int startX; 
+        int startY; 
+        int endX; 
+        int endY; 
     } smoothedROI;
     int temporalOrder;
     double timeReceived;

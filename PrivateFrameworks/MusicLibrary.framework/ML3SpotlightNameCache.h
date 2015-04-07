@@ -5,6 +5,8 @@
 @class ML3MusicLibrary;
 
 @interface ML3SpotlightNameCache : NSObject {
+    BOOL _idle;
+    ML3MusicLibrary *_library;
     struct unordered_map<long long, NSString *, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, NSString *> > > { 
         struct __hash_table<std::__1::__hash_value_type<long long, NSString *>, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, NSString *>, std::__1::hash<long long>, true>, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, NSString *>, std::__1::equal_to<long long>, true>, std::__1::allocator<std::__1::__hash_value_type<long long, NSString *> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *> *> > > { 
@@ -29,8 +31,6 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    BOOL _idle;
-    ML3MusicLibrary *_library;
     } _map;
 }
 

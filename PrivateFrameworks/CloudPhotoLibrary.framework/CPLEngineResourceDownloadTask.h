@@ -10,13 +10,33 @@
 
 @interface CPLEngineResourceDownloadTask : CPLResourceTransferTask {
     BOOL _backgroundTask;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cancelHandler;
+
     NSString *_clientBundleID;
     CPLResource *_cloudResource;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _didStartHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _launchHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
     unsigned int _taskIdentifierForQueue;
     <CPLEngineTransportTask> *_transportTask;
 }

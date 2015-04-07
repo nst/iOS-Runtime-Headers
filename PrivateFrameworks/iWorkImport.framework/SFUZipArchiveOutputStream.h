@@ -40,8 +40,8 @@
 - (void)flush;
 - (unsigned long long)freeBytes;
 - (id)initWithOutputStream:(id)arg1 cryptoKey:(id)arg2 passphraseHint:(id)arg3;
-- (id)initWithPath:(id)arg1 cryptoKey:(id)arg2 passphraseHint:(id)arg3;
 - (id)initWithPath:(id)arg1;
+- (id)initWithPath:(id)arg1 cryptoKey:(id)arg2 passphraseHint:(id)arg3;
 - (void)moveToPath:(id)arg1;
 - (void)removeEntryWithName:(id)arg1;
 - (void)reset;

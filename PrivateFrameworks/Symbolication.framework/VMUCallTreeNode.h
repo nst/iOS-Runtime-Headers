@@ -5,22 +5,22 @@
 @class NSString, VMUCallTreeNode;
 
 @interface VMUCallTreeNode : NSObject {
-    union { 
-        void *theChild; 
-        void **theChildren; 
     unsigned long long _address;
     unsigned int _count;
     NSString *_name;
     unsigned long long _numBytes;
     unsigned int _numChildren;
     VMUCallTreeNode *_parent;
+    union { 
+        void *theChild; 
+        void **theChildren; 
     } _un;
 }
 
 + (id)makeFakeRootForNode:(id)arg1;
 + (id)nodeWithName:(id)arg1 address:(unsigned long long)arg2 count:(unsigned int)arg3 numBytes:(unsigned long long)arg4;
-+ (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2 sampler:(id)arg3 options:(unsigned int)arg4;
 + (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
++ (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2 sampler:(id)arg3 options:(unsigned int)arg4;
 
 - (void)addChild:(id)arg1;
 - (unsigned long long)address;
@@ -37,12 +37,12 @@
 - (unsigned int)count;
 - (void)countFunctionOccurrencesInTree:(id)arg1;
 - (void)dealloc;
-- (id)filterOutSymbols:(id)arg1 required:(id)arg2;
 - (id)filterOutSymbols:(id)arg1;
-- (id)findOrAddChildWithName:(id)arg1 address:(unsigned long long)arg2 nodeSearchType:(int)arg3 isLeafNode:(BOOL)arg4;
+- (id)filterOutSymbols:(id)arg1 required:(id)arg2;
 - (id)findOrAddChildWithName:(id)arg1 address:(unsigned long long)arg2;
-- (id)fullOutputWithThreshold:(unsigned int)arg1 showPseudoNodes:(BOOL)arg2;
+- (id)findOrAddChildWithName:(id)arg1 address:(unsigned long long)arg2 nodeSearchType:(int)arg3 isLeafNode:(BOOL)arg4;
 - (id)fullOutputWithThreshold:(unsigned int)arg1;
+- (id)fullOutputWithThreshold:(unsigned int)arg1 showPseudoNodes:(BOOL)arg2;
 - (void)getBrowserName:(id)arg1;
 - (id)initWithName:(id)arg1 address:(unsigned long long)arg2 count:(unsigned int)arg3 numBytes:(unsigned long long)arg4;
 - (id)invertedNode;
@@ -62,10 +62,10 @@
 - (id)pseudoNodeTopOfStackChild;
 - (void)setChildren:(id)arg1;
 - (void)setNumChildren:(unsigned int)arg1;
-- (id)sortedChildrenWithPseudoNode:(id)arg1 withCompare:(SEL)arg2;
 - (id)sortedChildrenWithPseudoNode;
-- (id)stringFromCallTreeIndentIfNoBranches:(BOOL)arg1 showPseudoNodes:(BOOL)arg2;
+- (id)sortedChildrenWithPseudoNode:(id)arg1 withCompare:(SEL)arg2;
 - (id)stringFromCallTreeIndentIfNoBranches:(BOOL)arg1;
+- (id)stringFromCallTreeIndentIfNoBranches:(BOOL)arg1 showPseudoNodes:(BOOL)arg2;
 - (BOOL)symbolNameIsUnknown;
 
 @end

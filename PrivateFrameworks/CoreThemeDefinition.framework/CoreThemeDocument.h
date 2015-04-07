@@ -67,13 +67,13 @@
 - (void)_synchronousSave;
 - (id)_themeBitSource:(id*)arg1;
 - (id)_themeBitSourceForReferencedFilesAtURLs:(id)arg1 createIfNecessary:(BOOL)arg2;
-- (id)addAssetsAtFileURLs:(id)arg1 createProductions:(BOOL)arg2 referenceFiles:(BOOL)arg3 bitSource:(id)arg4 customInfos:(id)arg5;
-- (id)addAssetsAtFileURLs:(id)arg1 createProductions:(BOOL)arg2;
 - (id)addAssetsAtFileURLs:(id)arg1;
-- (void)addThemeBitSourceAtPath:(id)arg1 createProductions:(BOOL)arg2;
+- (id)addAssetsAtFileURLs:(id)arg1 createProductions:(BOOL)arg2;
+- (id)addAssetsAtFileURLs:(id)arg1 createProductions:(BOOL)arg2 referenceFiles:(BOOL)arg3 bitSource:(id)arg4 customInfos:(id)arg5;
 - (void)addThemeBitSourceAtPath:(id)arg1;
-- (id)allObjectsForEntity:(id)arg1 withSortDescriptors:(id)arg2 error:(id*)arg3;
+- (void)addThemeBitSourceAtPath:(id)arg1 createProductions:(BOOL)arg2;
 - (id)allObjectsForEntity:(id)arg1 withSortDescriptors:(id)arg2;
+- (id)allObjectsForEntity:(id)arg1 withSortDescriptors:(id)arg2 error:(id*)arg3;
 - (BOOL)allowMultipleInstancesOfElementID:(int)arg1;
 - (id)artworkDraftTypeWithIdentifier:(int)arg1;
 - (id)artworkFormat;
@@ -96,8 +96,8 @@
 - (id)createAssetWithName:(id)arg1 inCategory:(id)arg2 forThemeBitSource:(id)arg3;
 - (id)createAssetWithName:(id)arg1 scaleFactor:(unsigned int)arg2 inCategory:(id)arg3 forThemeBitSource:(id)arg4;
 - (BOOL)createCustomArtworkProductionsForCustomAssets:(id)arg1 withImportInfos:(id)arg2 error:(id*)arg3;
-- (id)createEffectStyleProductionForPartDefinition:(id)arg1 withNameIdentifier:(id)arg2;
 - (id)createEffectStyleProductionForPartDefinition:(id)arg1;
+- (id)createEffectStyleProductionForPartDefinition:(id)arg1 withNameIdentifier:(id)arg2;
 - (id)createElementProductionWithAsset:(id)arg1;
 - (id)createNamedArtworkProductionsForAssets:(id)arg1 customInfos:(id)arg2 error:(id*)arg3;
 - (id)createNamedEffectProductionWithName:(id)arg1 isText:(BOOL)arg2;
@@ -161,8 +161,8 @@
 - (id)namedElementWithName:(id)arg1;
 - (id)namedElementsForElementDefinition:(id)arg1;
 - (id)newObjectForEntity:(id)arg1;
-- (id)objectsForEntity:(id)arg1 withPredicate:(id)arg2 sortDescriptors:(id)arg3 error:(id*)arg4;
 - (id)objectsForEntity:(id)arg1 withPredicate:(id)arg2 sortDescriptors:(id)arg3;
+- (id)objectsForEntity:(id)arg1 withPredicate:(id)arg2 sortDescriptors:(id)arg3 error:(id*)arg4;
 - (id)partWithIdentifier:(int)arg1;
 - (id)pathToAsset:(id)arg1;
 - (id)pathToRepresentedDocument;

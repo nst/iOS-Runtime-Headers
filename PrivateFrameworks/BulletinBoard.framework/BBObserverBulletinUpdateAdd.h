@@ -11,8 +11,8 @@
 + (BOOL)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithBulletin:(id)arg1 updateType:(int)arg2 transactionID:(unsigned int)arg3 shouldPlayLightsAndSirens:(BOOL)arg4;
 - (id)initWithBulletin:(id)arg1 updateType:(int)arg2 transactionID:(unsigned int)arg3;
+- (id)initWithBulletin:(id)arg1 updateType:(int)arg2 transactionID:(unsigned int)arg3 shouldPlayLightsAndSirens:(BOOL)arg4;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)shouldPlayLightsAndSirens;
 

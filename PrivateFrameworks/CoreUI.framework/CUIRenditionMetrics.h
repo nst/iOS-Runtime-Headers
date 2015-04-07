@@ -3,31 +3,31 @@
  */
 
 @interface CUIRenditionMetrics : NSObject {
+    float _baseline;
     struct CGSize { 
         float width; 
         float height; 
+    } _contentBottomLeftMargin;
     struct CGSize { 
         float width; 
         float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    } _contentTopRightMargin;
     struct crmFlags { 
         unsigned int scalesVertically : 1; 
         unsigned int scalesHorizontally : 1; 
         unsigned int reserved : 14; 
-    float _baseline;
-    } _contentBottomLeftMargin;
-    } _contentTopRightMargin;
     } _crmFlags;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _edgeBottomLeftMargin;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _edgeTopRightMargin;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _imageSize;
     float _scale;
 }

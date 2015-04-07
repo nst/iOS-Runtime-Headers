@@ -5,12 +5,12 @@
 @class MIPArtist, MIPSeries, NSString;
 
 @interface MIPTVShow : PBCodable <NSCopying> {
-    struct { 
-        unsigned int seasonNumber : 1; 
-        unsigned int videoQuality : 1; 
     MIPArtist *_artist;
     NSString *_episodeId;
     NSString *_episodeSortId;
+    struct { 
+        unsigned int seasonNumber : 1; 
+        unsigned int videoQuality : 1; 
     } _has;
     NSString *_networkName;
     int _seasonNumber;

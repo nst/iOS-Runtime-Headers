@@ -11,7 +11,7 @@
 
 @interface CSDBThreadedRecordStore : NSObject {
     NSString *_identifier;
-    struct CSDBRecordStore { struct __CFString {} *x1; struct CSDBSqliteDatabase {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFDictionary {} *x5; struct __CFDictionary {} *x6; struct __CFSet {} *x7; boolx8; struct { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; } x9; int (*x10)(); struct __CFSet {} *x11; struct __CFDictionary {} *x12; void *x13; int x14; struct { int x_15_1_1; int x_15_1_2; long long *x_15_1_3; struct __CFSet {} *x_15_1_4; } x15; } *_recordStore;
+    struct CSDBRecordStore { struct __CFString {} *x1; struct CSDBSqliteDatabase {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFDictionary {} *x5; struct __CFDictionary {} *x6; struct __CFSet {} *x7; bool x8; struct { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; } x9; int (*x10)(); struct __CFSet {} *x11; struct __CFDictionary {} *x12; void *x13; int x14; struct { int x_15_1_1; int x_15_1_2; long long *x_15_1_3; struct __CFSet {} *x_15_1_4; } x15; } *_recordStore;
     NSObject<OS_dispatch_queue> *_recordStoreQueue;
     _CSDBThreadObject *_thread;
     BOOL _wantsRegister;

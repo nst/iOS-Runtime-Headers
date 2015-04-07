@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface MSPMediaSyncError : PBCodable <NSCopying> {
-    struct { 
-        unsigned int errorCode : 1; 
     int _errorCode;
     NSString *_errorDescription;
+    struct { 
+        unsigned int errorCode : 1; 
     } _has;
 }
 

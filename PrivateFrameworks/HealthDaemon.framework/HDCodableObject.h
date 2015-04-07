@@ -5,9 +5,9 @@
 @class HDCodableMetadataDictionary, NSData, NSString;
 
 @interface HDCodableObject : PBCodable <NSCopying> {
+    double _creationDate;
     struct { 
         unsigned int creationDate : 1; 
-    double _creationDate;
     } _has;
     HDCodableMetadataDictionary *_metadataDictionary;
     NSString *_sourceBundleIdentifier;

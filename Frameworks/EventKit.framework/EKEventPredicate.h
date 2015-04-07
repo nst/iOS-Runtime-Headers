@@ -24,8 +24,8 @@
 @property(readonly) NSTimeZone * timeZone;
 @property(readonly) NSString * title;
 
-+ (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4 loadDefaultProperties:(BOOL)arg5;
 + (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4;
++ (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4 loadDefaultProperties:(BOOL)arg5;
 + (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 eventUUID:(id)arg4 calendars:(id)arg5;
 + (id)predicateWithStartDate:(id)arg1 title:(id)arg2 calendars:(id)arg3;
 + (BOOL)supportsSecureCoding;
@@ -38,8 +38,8 @@
 - (BOOL)evaluateWithObject:(id)arg1;
 - (id)eventUUID;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4 loadDefaultProperties:(BOOL)arg5;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4;
+- (id)initWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4 loadDefaultProperties:(BOOL)arg5;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 eventUUID:(id)arg4 calendars:(id)arg5;
 - (id)initWithStartDate:(id)arg1 title:(id)arg2 calendars:(id)arg3;
 - (BOOL)isEqual:(id)arg1;

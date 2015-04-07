@@ -5,35 +5,15 @@
 @class GLKTextureInfo, NSArray, UIImage;
 
 @interface FIUIRingsViewController : GLKViewController <FIUIRingGroupAnimationStatusDelegate> {
-    union _GLKMatrix4 { 
-        struct { 
-            float m00; 
-            float m01; 
-            float m02; 
-            float m03; 
-            float m10; 
-            float m11; 
-            float m12; 
-            float m13; 
-            float m20; 
-            float m21; 
-            float m22; 
-            float m23; 
-            float m30; 
-            float m31; 
-            float m32; 
-            float m33; 
-        } ; 
-        float m[16]; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     BOOL _buffersCreated;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _cachedGroupCenter;
     float _cachedPointSize[3];
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _cachedPosition[3];
     float _cachedThickness[3];
     unsigned int _color1Attribute;
@@ -67,6 +47,26 @@
     unsigned int _positionAttribute;
     unsigned int _positionBuffer;
     BOOL _prevRingsAreEmpty;
+    union _GLKMatrix4 { 
+        struct { 
+            float m00; 
+            float m01; 
+            float m02; 
+            float m03; 
+            float m10; 
+            float m11; 
+            float m12; 
+            float m13; 
+            float m20; 
+            float m21; 
+            float m22; 
+            float m23; 
+            float m30; 
+            float m31; 
+            float m32; 
+            float m33; 
+        } ; 
+        float m[16]; 
     } _projectionMatrix;
     unsigned int _ringEmptyProgram;
     NSArray *_ringGroups;

@@ -5,13 +5,13 @@
 @class NSData, NSMutableArray;
 
 @interface GEOTrafficRerouteFeedbackCollection : PBCodable <NSCopying> {
+    NSData *_directionResponseID;
     struct { 
         unsigned int oldRouteHistoricTravelTime : 1; 
         unsigned int oldRouteTravelTime : 1; 
         unsigned int reroutedRouteHistoricTravelTime : 1; 
         unsigned int reroutedRouteTravelTime : 1; 
         unsigned int oldRouteBlocked : 1; 
-    NSData *_directionResponseID;
     } _has;
     BOOL _oldRouteBlocked;
     unsigned int _oldRouteHistoricTravelTime;

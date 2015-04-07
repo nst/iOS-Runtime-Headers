@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface GEOTrafficIncident : PBCodable <NSCopying> {
+    double _endTime;
     struct { 
         unsigned int endTime : 1; 
         unsigned int lastUpdated : 1; 
@@ -13,7 +14,6 @@
         unsigned int type : 1; 
         unsigned int vertexCount : 1; 
         unsigned int vertexOffset : 1; 
-    double _endTime;
     } _has;
     NSString *_info;
     double _lastUpdated;

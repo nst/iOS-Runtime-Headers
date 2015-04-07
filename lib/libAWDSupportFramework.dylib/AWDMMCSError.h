@@ -5,10 +5,10 @@
 @class NSMutableArray, NSString;
 
 @interface AWDMMCSError : PBCodable <NSCopying> {
-    struct { 
-        unsigned int code : 1; 
     int _code;
     NSString *_domain;
+    struct { 
+        unsigned int code : 1; 
     } _has;
     NSMutableArray *_underlyingErrors;
 }

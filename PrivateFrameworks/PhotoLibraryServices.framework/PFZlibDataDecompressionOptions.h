@@ -7,9 +7,17 @@
  */
 
 @interface PFZlibDataDecompressionOptions : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _createBuffer;
+
     BOOL _decompressAllAtOnce;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _growData;
+
     int _windowBits;
 }
 

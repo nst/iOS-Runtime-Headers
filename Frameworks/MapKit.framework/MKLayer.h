@@ -12,14 +12,14 @@
             float width; 
             float height; 
         } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     } _hitBounds;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _hitOffset;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _hitOutset;
 }
 

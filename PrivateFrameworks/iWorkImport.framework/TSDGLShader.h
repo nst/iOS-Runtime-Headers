@@ -35,10 +35,10 @@
 - (id)initWithDefaultVelocityShader;
 - (id)initWithDefaultVelocityVisualizerShader;
 - (id)initWithDefaultVerticalBlurShader;
-- (id)initWithShaderFileName:(id)arg1 bundle:(id)arg2 uniforms:(id)arg3 attributes:(id)arg4 defines:(id)arg5;
 - (id)initWithShaderFileName:(id)arg1 bundle:(id)arg2;
-- (id)initWithVertexShader:(id)arg1 fragmentShader:(id)arg2 uniforms:(id)arg3 attributes:(id)arg4 defines:(id)arg5;
+- (id)initWithShaderFileName:(id)arg1 bundle:(id)arg2 uniforms:(id)arg3 attributes:(id)arg4 defines:(id)arg5;
 - (id)initWithVertexShader:(id)arg1 fragmentShader:(id)arg2;
+- (id)initWithVertexShader:(id)arg1 fragmentShader:(id)arg2 uniforms:(id)arg3 attributes:(id)arg4 defines:(id)arg5;
 - (id)initWithVertexShaderFileName:(id)arg1 fragmentShaderFileName:(id)arg2 bundle:(id)arg3 uniforms:(id)arg4 attributes:(id)arg5 defines:(id)arg6;
 - (BOOL)isActive;
 - (BOOL)loadVertexShader:(id)arg1 fragmentShader:(id)arg2 defines:(id)arg3;

@@ -4,7 +4,7 @@
 
 @class MPUTransportButtonEventHandler, NSString;
 
-@interface MPUTransportControlCenterButton : SBUIControlCenterButton <SBUIControlCenterButtonDelegate, MPUTransportButton> {
+@interface MPUTransportControlCenterButton : SBUIControlCenterButton <MPUTransportButton, SBUIControlCenterButtonDelegate> {
     MPUTransportButtonEventHandler *_transportButtonEventHandler;
 }
 

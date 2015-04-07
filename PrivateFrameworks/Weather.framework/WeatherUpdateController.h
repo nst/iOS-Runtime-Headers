@@ -10,10 +10,22 @@
 
 @interface WeatherUpdateController : NSObject <CLLocationManagerDelegate, WeatherValidatorDelegate> {
     CLLocationManager *_locationManager;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id currentLocationCompletion;
+
     CLLocationManager *locationManager;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id searchCompletion;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id weatherInfoCompletion;
+
 }
 
 @property(copy) id currentLocationCompletion;
@@ -34,9 +46,9 @@
 - (void)dealloc;
 - (void)didFailWithError:(id)arg1;
 - (void)didValidateLocation:(id)arg1;
+- (id)locationManager;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (id)locationManager;
 - (void)removeAllCities;
 - (id)searchCompletion;
 - (void)searchForCitiesWithName:(id)arg1 withCompletionHandler:(id)arg2;

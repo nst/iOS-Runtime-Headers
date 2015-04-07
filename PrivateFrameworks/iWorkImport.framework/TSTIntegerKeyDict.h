@@ -12,8 +12,8 @@
 }
 
 - (id)allValues;
-- (void)applyFunction:(int (*)())arg1 withState:(void*)arg2 andState:(void*)arg3;
 - (void)applyFunction:(int (*)())arg1 withState:(void*)arg2;
+- (void)applyFunction:(int (*)())arg1 withState:(void*)arg2 andState:(void*)arg3;
 - (int)count;
 - (void)dealloc;
 - (void)enumerateObjectsUsingBlock:(id)arg1;

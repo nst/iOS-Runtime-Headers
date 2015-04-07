@@ -36,10 +36,10 @@
 - (void)dealloc;
 - (void)detachDatabaseWithName:(id)arg1;
 - (BOOL)dropTable:(id)arg1;
-- (BOOL)executeSQL:(id)arg1 argument:(id)arg2 error:(id*)arg3;
-- (BOOL)executeSQL:(id)arg1 error:(id*)arg2 retryIfBusy:(BOOL)arg3;
-- (BOOL)executeSQL:(id)arg1 error:(id*)arg2;
 - (BOOL)executeSQL:(id)arg1;
+- (BOOL)executeSQL:(id)arg1 argument:(id)arg2 error:(id*)arg3;
+- (BOOL)executeSQL:(id)arg1 error:(id*)arg2;
+- (BOOL)executeSQL:(id)arg1 error:(id*)arg2 retryIfBusy:(BOOL)arg3;
 - (id)fileURL;
 - (id)getLastErrorWithResultCode:(int)arg1;
 - (id)initWithDatabaseURL:(id)arg1;

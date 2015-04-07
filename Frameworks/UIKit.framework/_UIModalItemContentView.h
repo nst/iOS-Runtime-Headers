@@ -5,21 +5,15 @@
 @class NSString, UIButton, UILabel, UITableView, UITextField, UIView, UIViewController, _UIModalItem, _UIModalItemsPresentingViewController;
 
 @interface _UIModalItemContentView : UIView <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     UIViewController *_accessoryViewController;
     UIView *_accessoryViewControllerContrainerView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _accessoryViewControllerSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _actualViewControllerSize;
     UITableView *_buttonTable;
     UIButton *_cancelButton;
@@ -28,10 +22,16 @@
     int _defaultButtonIndex;
     BOOL _enableFirstOtherButton;
     UITextField *_loginTextField;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _maxSize;
     UILabel *_messageLabel;
     _UIModalItem *_modalItem;
     UITextField *_passwordTextField;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _presentingSize;
     _UIModalItemsPresentingViewController *_presentingViewController;
     UILabel *_subtitleLabel;
@@ -94,8 +94,8 @@
 - (void)setDefaultButton:(id)arg1;
 - (void)setEnableFirstOtherButton:(BOOL)arg1;
 - (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setModalItem:(id)arg1 skipLayout:(BOOL)arg2;
 - (void)setModalItem:(id)arg1;
+- (void)setModalItem:(id)arg1 skipLayout:(BOOL)arg2;
 - (void)setPresentingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPresentingViewController:(id)arg1;
 - (id)subtitleLabel;

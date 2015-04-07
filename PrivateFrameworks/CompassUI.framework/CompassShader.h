@@ -5,6 +5,9 @@
 @class NSArray, NSString;
 
 @interface CompassShader : NSObject {
+    NSString *_fragmentName;
+    unsigned int _program;
+    NSArray *_uniformNames;
     struct map<std::__1::basic_string<char>, int, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, int> > > { 
         struct __tree<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, int> > > { 
             struct __tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> {} *__begin_node_; 
@@ -17,9 +20,6 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    NSString *_fragmentName;
-    unsigned int _program;
-    NSArray *_uniformNames;
     } _uniforms;
     NSString *_vertexName;
 }

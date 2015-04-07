@@ -4,22 +4,22 @@
 
 @class NSData, NSMutableArray, NSString, NSURLRequest, QLPDFHanderDelegateForwarder, QLPreviewConverter, QLScrubView, UIView, UIWebView;
 
-@interface QLWebViewDisplayBundle : QLDisplayBundle <UIWebViewDelegate, UIScrollViewDelegate, QLScrubViewDataSource, UIWebPDFViewHandlerDelegate> {
-    unsigned int _isLoadedDuringZoom : 1;
-    unsigned int _isHTMLContent : 1;
-    unsigned int _isXMLContent : 1;
-    unsigned int _isPDFContent : 1;
-    unsigned int _isSpreadsheetContent : 1;
-    unsigned int _isPlainText : 1;
-    unsigned int _isRTFContent : 1;
-    unsigned int _isCSVContent : 1;
-    unsigned int _loadStarted : 1;
+@interface QLWebViewDisplayBundle : QLDisplayBundle <QLScrubViewDataSource, UIScrollViewDelegate, UIWebPDFViewHandlerDelegate, UIWebViewDelegate> {
     UIView *_accessoryView;
     float _defaultZoom;
     QLPDFHanderDelegateForwarder *_forwarder;
     NSMutableArray *_htmlSlideNodes;
     BOOL _inScroll;
+    unsigned int _isCSVContent : 1;
+    unsigned int _isHTMLContent : 1;
+    unsigned int _isLoadedDuringZoom : 1;
+    unsigned int _isPDFContent : 1;
+    unsigned int _isPlainText : 1;
+    unsigned int _isRTFContent : 1;
+    unsigned int _isSpreadsheetContent : 1;
+    unsigned int _isXMLContent : 1;
     int _lastPage;
+    unsigned int _loadStarted : 1;
     float _navigationBarVerticalOffset;
     NSData *_pdfPreviewData;
     QLPreviewConverter *_previewConverter;

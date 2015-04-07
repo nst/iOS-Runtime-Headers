@@ -24,8 +24,8 @@
 @property(retain,readonly) NSString * serviceName;
 @property(readonly) Class superclass;
 
-- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)_callDelegatesWithBlock:(id)arg1;
+- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)_connect;
 - (void)_loadCachedAccounts;
 - (void)_loadCachedAccountsWithDictionaries:(id)arg1;

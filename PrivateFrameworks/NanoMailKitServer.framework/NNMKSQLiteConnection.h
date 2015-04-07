@@ -38,8 +38,8 @@
 - (BOOL)isInTransaction;
 - (int)lastErrorCode;
 - (id)lastErrorMessage;
-- (struct sqlite3_stmt { }*)preparedStatementForPattern:(id)arg1 cacheStatement:(BOOL)arg2;
 - (struct sqlite3_stmt { }*)preparedStatementForPattern:(id)arg1;
+- (struct sqlite3_stmt { }*)preparedStatementForPattern:(id)arg1 cacheStatement:(BOOL)arg2;
 - (BOOL)rollbackTransaction;
 - (void)setCachedPreparedStatementsKeyedBySQLPattern:(id)arg1;
 - (void)setDb:(struct sqlite3 { }*)arg1;

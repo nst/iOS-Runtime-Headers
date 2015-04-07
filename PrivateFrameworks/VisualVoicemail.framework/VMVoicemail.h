@@ -33,8 +33,8 @@
 - (void)_lockedPreemptivelySetFlags:(unsigned int)arg1 clearFlags:(unsigned int)arg2 unlockedBlock:(id*)arg3;
 - (void)_preemptivelySetFlags:(unsigned int)arg1 clearFlags:(unsigned int)arg2;
 - (void)_updateCache;
-- (void*)abRecordUsingAddressBook:(void*)arg1 withIdentifier:(int*)arg2;
 - (void*)abRecordUsingAddressBook:(void*)arg1;
+- (void*)abRecordUsingAddressBook:(void*)arg1 withIdentifier:(int*)arg2;
 - (id)cachedAddressBookRef;
 - (id)cachedDisplayName;
 - (id)callbackNumber;

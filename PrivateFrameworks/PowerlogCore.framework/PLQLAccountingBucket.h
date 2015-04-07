@@ -5,12 +5,12 @@
 @class NSMutableArray, NSMutableDictionary;
 
 @interface PLQLAccountingBucket : NSObject {
-    struct _PLTimeIntervalRange { 
-        double location; 
-        double length; 
     NSMutableDictionary *_accountedEnergy;
     NSMutableArray *_accountingEvents;
     double _energy;
+    struct _PLTimeIntervalRange { 
+        double location; 
+        double length; 
     } _range;
 }
 

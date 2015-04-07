@@ -5,11 +5,11 @@
 @class <TSDHint>;
 
 @interface TNHintCacheEntry : NSObject {
+    <TSDHint> *mHint;
+    BOOL mIsValid;
     struct CGPoint { 
         float x; 
         float y; 
-    <TSDHint> *mHint;
-    BOOL mIsValid;
     } mOrigin;
 }
 

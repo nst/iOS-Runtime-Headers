@@ -4,10 +4,28 @@
 
 @class MPUTextContainerContentSizeUpdater, NSAttributedString, NSDictionary, NSMutableDictionary, NSString, UIColor, UIFont, _UILabelScaledMetrics;
 
-@interface UILabel : UIView <_UIMultilineTextContentSizing, NSCoding, ABText, MPUAutoupdatingTextContainer> {
+@interface UILabel : UIView <ABText, MPUAutoupdatingTextContainer, NSCoding, _UIMultilineTextContentSizing> {
+    BOOL __textColorFollowsTintColor;
+    id _content;
+    NSMutableDictionary *_defaultAttributes;
+    float _firstLineBaseline;
+    UIColor *_highlightedColor;
+    float _lastLineBaseline;
+    id _layout;
+    int _lineSpacing;
+    int _measuredNumberOfLines;
+    float _minimumFontSize;
+    float _minimumScaleFactor;
+    int _numberOfLines;
+    float _preferredMaxLayoutWidth;
+    float _previousFirstLineBaseline;
+    float _previousLastLineBaseline;
+    _UILabelScaledMetrics *_scaledMetrics;
     struct CGSize { 
         float width; 
         float height; 
+    } _size;
+    NSAttributedString *_synthesizedAttributedText;
     struct { 
         unsigned int unused1 : 3; 
         unsigned int highlighted : 1; 
@@ -31,24 +49,6 @@
         unsigned int usesSimpleTextEffects : 1; 
         unsigned int isComplexString : 1; 
         unsigned int wantsUnderlineForAccessibilityButtonShapesEnabled : 1; 
-    BOOL __textColorFollowsTintColor;
-    id _content;
-    NSMutableDictionary *_defaultAttributes;
-    float _firstLineBaseline;
-    UIColor *_highlightedColor;
-    float _lastLineBaseline;
-    id _layout;
-    int _lineSpacing;
-    int _measuredNumberOfLines;
-    float _minimumFontSize;
-    float _minimumScaleFactor;
-    int _numberOfLines;
-    float _preferredMaxLayoutWidth;
-    float _previousFirstLineBaseline;
-    float _previousLastLineBaseline;
-    _UILabelScaledMetrics *_scaledMetrics;
-    } _size;
-    NSAttributedString *_synthesizedAttributedText;
     } _textLabelFlags;
 }
 
@@ -64,25 +64,16 @@
 @property(getter=_synthesizedAttributedText,setter=_setSynthesizedAttributedText:,retain) NSAttributedString * _synthesizedAttributedText;
 @property(setter=_setTextColorFollowsTintColor:) BOOL _textColorFollowsTintColor;
 @property(setter=_setWantsUnderlineForAccessibilityButtonShapesEnabled:) BOOL _wantsUnderlineForAccessibilityButtonShapesEnabled;
-@property(setter=_setWantsUnderlineForAccessibilityButtonShapesEnabled:) BOOL _wantsUnderlineForAccessibilityButtonShapesEnabled;
 @property(copy) NSString * ab_text;
 @property(copy) NSDictionary * ab_textAttributes;
 @property BOOL adjustsFontSizeToFitWidth;
 @property BOOL adjustsLetterSpacingToFitWidth;
 @property(copy) NSAttributedString * attributedText;
-@property(copy) NSAttributedString * attributedText;
 @property int baselineAdjustment;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(getter=isEnabled) BOOL enabled;
 @property(retain) UIFont * font;
-@property(retain) UIFont * font;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property(getter=isHighlighted) BOOL highlighted;
 @property(retain) UIColor * highlightedTextColor;
@@ -96,8 +87,6 @@
 @property(readonly) float rc_capOffsetFromTop;
 @property(retain) UIColor * shadowColor;
 @property struct CGSize { float x1; float x2; } shadowOffset;
-@property(readonly) Class superclass;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(copy) NSString * text;
 @property int textAlignment;
@@ -209,8 +198,8 @@
 - (int)baselineAdjustment;
 - (BOOL)centersHorizontally;
 - (id)color;
-- (void)configureForIKTextElement:(id)arg1 fontDescriptor:(id)arg2 textStyle:(id)arg3 capitalize:(BOOL)arg4;
 - (void)configureForIKTextElement:(id)arg1 fontDescriptor:(id)arg2 textStyle:(id)arg3;
+- (void)configureForIKTextElement:(id)arg1 fontDescriptor:(id)arg2 textStyle:(id)arg3 capitalize:(BOOL)arg4;
 - (id)currentTextColor;
 - (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
@@ -286,8 +275,8 @@
 - (id)text;
 - (int)textAlignment;
 - (id)textColor;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2;
 - (struct CGSize { float x1; float x2; })textSize;
 - (struct CGSize { float x1; float x2; })textSizeForWidth:(float)arg1;
 - (void)tintColorDidChange;

@@ -5,16 +5,16 @@
 @class GKCollectionViewDataSource, NSArray, NSMutableDictionary, NSString;
 
 @interface GKDataSourceMetrics : GKGridLayoutMetrics {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     NSString *_cachedKey;
     NSArray *_childMetrics;
     GKCollectionViewDataSource *_dataSource;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _globalSectionRange;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _localSectionRange;
     NSMutableDictionary *_sectionToMetrics;
 }

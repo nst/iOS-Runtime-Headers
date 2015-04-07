@@ -5,6 +5,7 @@
 @class TSCH3DChartModelEnumerator;
 
 @interface TSCH3DChartBasicElementProperties : TSCH3DChartMutableElementProperties {
+    TSCH3DChartModelEnumerator *mEnumerator;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,7 +17,6 @@
             int g; 
             int t; 
         } ; 
-    TSCH3DChartModelEnumerator *mEnumerator;
     } mSize;
 }
 

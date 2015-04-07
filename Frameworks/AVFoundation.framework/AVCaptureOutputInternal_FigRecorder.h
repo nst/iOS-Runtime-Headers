@@ -5,6 +5,8 @@
 @class AVCaptureSession_FigRecorder, NSMutableArray;
 
 @interface AVCaptureOutputInternal_FigRecorder : NSObject {
+    int changeSeed;
+    NSMutableArray *connections;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -12,8 +14,6 @@
         float d; 
         float tx; 
         float ty; 
-    int changeSeed;
-    NSMutableArray *connections;
     } metadataTransform;
     BOOL physicallyMirrorsVideo;
     float rollAdjustment;

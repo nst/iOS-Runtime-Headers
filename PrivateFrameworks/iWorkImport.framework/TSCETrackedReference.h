@@ -8,10 +8,10 @@
  */
 
 @interface TSCETrackedReference : NSObject <NSCopying> {
+    struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; } *mAST;
     struct { 
         unsigned int formulaID : 24; 
         unsigned int reserved : 8; 
-    struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; } *mAST;
     } mFormulaID;
 }
 

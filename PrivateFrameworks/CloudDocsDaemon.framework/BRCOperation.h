@@ -15,7 +15,11 @@
     BRCLocalContainer *_container;
     CKDatabase *_database;
     BOOL _executing;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _finishBlock;
+
     BOOL _finished;
     NSObject<OS_dispatch_group> *_group;
     NSObject<OS_dispatch_queue> *_internalQueue;
@@ -23,7 +27,11 @@
     NSError *_lastError;
     NSDate *_lastTryDate;
     id _logSections;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _mainBlock;
+
     NSString *_name;
     NSDate *_nextTryDate;
     BRCThrottle *_operationThrottle;
@@ -71,8 +79,8 @@
 - (BOOL)finishIfCancelled;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)init;
-- (id)initWithName:(id)arg1 group:(id)arg2;
 - (id)initWithName:(id)arg1;
+- (id)initWithName:(id)arg1 group:(id)arg2;
 - (BOOL)isConcurrent;
 - (BOOL)isDiscretionary;
 - (BOOL)isExecuting;

@@ -5,14 +5,14 @@
 @class NSString, NSURL, UIImage;
 
 @interface SUSectionButton : NSObject <NSCopying> {
+    NSString *_accessibilityTitle;
+    NSString *_displayTitle;
+    UIImage *_image;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSString *_accessibilityTitle;
-    NSString *_displayTitle;
-    UIImage *_image;
     } _imageInsets;
     NSURL *_imageURL;
     float _imageURLScale;

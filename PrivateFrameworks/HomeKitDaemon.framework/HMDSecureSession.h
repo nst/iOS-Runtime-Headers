@@ -17,7 +17,11 @@
     HMMessageDispatcher *_notificationDispatcher;
     HMDNotificationRelay *_notificationRelay;
     NSUUID *_sessionID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _stoppedNotificationHandler;
+
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 

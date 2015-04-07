@@ -5,7 +5,7 @@
 @interface CTCellularPlanError : NSObject {
 }
 
-+ (id)errorForCode:(int)arg1 withDescription:(id)arg2;
 + (id)errorForCode:(int)arg1;
++ (id)errorForCode:(int)arg1 withDescription:(id)arg2;
 
 @end

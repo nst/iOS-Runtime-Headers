@@ -13,7 +13,11 @@
     NSArray *_invitationsToAccept;
     NSArray *_invitationsToDecline;
     NSMutableDictionary *_responseErrorsByInvitationID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shareInvitationResponseCompletionBlock;
+
     NSMutableDictionary *_successfulResponsesByID;
 }
 

@@ -4,7 +4,7 @@
 
 @class <HDHealthDaemon>, NSDate, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface HDUserCharacteristicsManager : NSObject <HDHealthDaemonReadyObserver, HDDatabaseProtectedDataObserver, HDDataObserver, HDDiagnosticObject> {
+@interface HDUserCharacteristicsManager : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HDDiagnosticObject, HDHealthDaemonReadyObserver> {
     <HDHealthDaemon> *_healthDaemon;
     NSDictionary *_lastUserProfile;
     BOOL _needsUpdateAfterUnlock;

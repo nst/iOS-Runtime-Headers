@@ -23,8 +23,8 @@
 @property(readonly) BOOL wasPreparedAsStationEntryAdSlot;
 
 - (void).cxx_destruct;
-- (void)adSlot:(id)arg1 didChangeSelectedAds:(id)arg2 previousAds:(id)arg3;
 - (id)adSlot;
+- (void)adSlot:(id)arg1 didChangeSelectedAds:(id)arg2 previousAds:(id)arg3;
 - (id)adTracks;
 - (void)dealloc;
 - (void)didFinishPlaybackOfAdTracks:(id)arg1 skippedCount:(int)arg2;

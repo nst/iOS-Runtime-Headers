@@ -4,7 +4,7 @@
 
 @class <ATMessageLink>, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
-@interface ATMessageLinkProxyConnection : NSObject <ATMessageLinkProxyConnection, NSStreamDelegate, ATMessageLinkObserver, ATMessageLinkRequestHandler> {
+@interface ATMessageLinkProxyConnection : NSObject <ATMessageLinkObserver, ATMessageLinkProxyConnection, ATMessageLinkRequestHandler, NSStreamDelegate> {
     NSXPCConnection *_connection;
     <ATMessageLink> *_messageLink;
     NSObject<OS_dispatch_queue> *_queue;
@@ -25,8 +25,8 @@
 - (void)connectWithCompletion:(id)arg1;
 - (id)connection;
 - (id)initWithMessageLink:(id)arg1 connection:(id)arg2;
-- (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2;
 - (id)messageLink;
+- (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)messageLinkWasClosed:(id)arg1;
 - (void)messageLinkWasInitialized:(id)arg1;
 - (void)messageLinkWasOpened:(id)arg1;

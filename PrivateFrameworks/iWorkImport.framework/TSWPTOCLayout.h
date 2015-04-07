@@ -5,11 +5,11 @@
 @class TSWPTOCLayoutHint;
 
 @interface TSWPTOCLayout : TSWPShapeLayout {
+    TSWPTOCLayoutHint *_hint;
+    unsigned int _initialCharIndex;
     struct CGSize { 
         float width; 
         float height; 
-    TSWPTOCLayoutHint *_hint;
-    unsigned int _initialCharIndex;
     } _maxSize;
 }
 
@@ -30,8 +30,8 @@
 - (void)dealloc;
 - (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
 - (id)hint;
-- (id)initWithInfo:(id)arg1 initialCharIndex:(unsigned int)arg2 maxSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)initWithInfo:(id)arg1;
+- (id)initWithInfo:(id)arg1 initialCharIndex:(unsigned int)arg2 maxSize:(struct CGSize { float x1; float x2; })arg3;
 - (unsigned int)initialCharIndex;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (BOOL)isLastLayoutInTOC;

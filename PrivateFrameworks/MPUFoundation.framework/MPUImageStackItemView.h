@@ -5,6 +5,8 @@
 @class UIImage, UIImageView;
 
 @interface MPUImageStackItemView : MPUStackItemView {
+    UIImage *_image;
+    float _imageAlpha;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,6 +16,7 @@
             float width; 
             float height; 
         } size; 
+    } _imageContentsRect;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -21,9 +24,6 @@
         float d; 
         float tx; 
         float ty; 
-    UIImage *_image;
-    float _imageAlpha;
-    } _imageContentsRect;
     } _imageTransform;
     UIImageView *_imageView;
 }

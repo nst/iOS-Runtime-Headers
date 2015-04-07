@@ -5,11 +5,11 @@
 @class NSArray, NSString, PLEntry;
 
 @interface PLRail : PLOperator {
+    BOOL _cacheOn;
+    NSArray *_cacheResults;
     struct _PLTimeIntervalRange { 
         double location; 
         double length; 
-    BOOL _cacheOn;
-    NSArray *_cacheResults;
     } _cacheTimeRange;
     BOOL _isNegativePowerSupported;
     PLEntry *_lastSnapshot;

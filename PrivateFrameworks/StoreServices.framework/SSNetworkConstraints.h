@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface SSNetworkConstraints : NSObject <NSCoding, SSXPCCoding, NSCopying> {
+@interface SSNetworkConstraints : NSObject <NSCoding, NSCopying, SSXPCCoding> {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSMutableDictionary *_sizeLimits;
 }

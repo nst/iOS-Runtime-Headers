@@ -10,7 +10,11 @@
 
 @interface OITSUFastReadInvalidatingCache : NSObject {
     NSCondition *mCondition;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mGenerator;
+
     BOOL mIsGenerating;
     long long mReaderCount;
     BOOL mReentrant;

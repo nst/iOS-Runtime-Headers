@@ -4,16 +4,16 @@
 
 @class <SKUIScreenshotsDelegate>, NSArray, NSMutableArray, NSOperationQueue, NSString, SKUIClientContext, SKUIScreenshotDataConsumer, SKUIVideoImageDataConsumer, UICollectionView;
 
-@interface SKUIScreenshotsViewController : UIViewController <SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate, UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface SKUIScreenshotsViewController : UIViewController <SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate> {
     SKUIClientContext *_clientContext;
     UICollectionView *_collectionView;
     SKUIScreenshotDataConsumer *_dataConsumer;
     <SKUIScreenshotsDelegate> *_delegate;
     NSOperationQueue *_operationQueue;
     NSMutableArray *_screenshotImages;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _screenshotMaxSize;
     NSMutableArray *_screenshotRawImages;
     NSArray *_screenshots;

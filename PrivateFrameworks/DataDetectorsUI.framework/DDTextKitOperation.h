@@ -5,10 +5,10 @@
 @class UITextView;
 
 @interface DDTextKitOperation : DDOperation {
+    int _editCount;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    int _editCount;
     } _range;
 }
 

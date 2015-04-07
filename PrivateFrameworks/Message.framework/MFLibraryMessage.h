@@ -10,7 +10,11 @@
 
 @interface MFLibraryMessage : MFMailMessage {
     unsigned long long _conversationFlags;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deallocationHandler;
+
     unsigned int _libraryID;
     unsigned int _mailboxID;
     NSString *_messageID;
@@ -86,8 +90,8 @@
 - (void)setMutableInfoFromMessage:(id)arg1;
 - (void)setOriginalMailboxID:(unsigned int)arg1;
 - (void)setPreferredEncoding:(unsigned long)arg1;
-- (void)setRemoteID:(const char *)arg1 flags:(unsigned long long)arg2 size:(unsigned int)arg3 mailboxID:(unsigned int)arg4 originalMailboxID:(unsigned int)arg5;
 - (void)setRemoteID:(id)arg1;
+- (void)setRemoteID:(const char *)arg1 flags:(unsigned long long)arg2 size:(unsigned int)arg3 mailboxID:(unsigned int)arg4 originalMailboxID:(unsigned int)arg5;
 - (void)setSummary:(id)arg1;
 - (void)setUid:(unsigned long)arg1;
 - (void)setUniqueRemoteId:(unsigned long long)arg1;

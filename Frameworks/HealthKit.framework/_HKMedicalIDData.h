@@ -4,7 +4,7 @@
 
 @class HKQuantity, NSArray, NSData, NSDate, NSNumber, NSString;
 
-@interface _HKMedicalIDData : NSObject <NSSecureCoding, NSCopying> {
+@interface _HKMedicalIDData : NSObject <NSCopying, NSSecureCoding> {
     NSString *_allergyInfo;
     NSDate *_birthdate;
     int _bloodType;

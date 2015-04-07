@@ -4,7 +4,7 @@
 
 @class NSArray, NSDictionary, NSMutableArray, NSString, NSURLRequest, SKUIIPadSearchViewController, SKUIIPhoneSearchViewController, SKUIMetricsController, SKUIProductPageOverlayController, SKUISearchFieldController, SKUISearchPage, SSMetricsPageEvent, SSMetricsSearchEvent, SSVLoadURLOperation;
 
-@interface SKUISearchViewController : SKUIViewController <SKUISearchChildViewControllerDelegate, SKUIProductPageOverlayDelegate, SKUIMetricsViewController, SKUIViewControllerTesting> {
+@interface SKUISearchViewController : SKUIViewController <SKUIMetricsViewController, SKUIProductPageOverlayDelegate, SKUISearchChildViewControllerDelegate, SKUIViewControllerTesting> {
     NSDictionary *_facetSelections;
     SKUIIPadSearchViewController *_iPadViewController;
     SKUIIPhoneSearchViewController *_iPhoneViewController;
@@ -61,10 +61,10 @@
 - (void)searchChildViewControllerDidSelectRelatedBackButton:(id)arg1 withMetricsEvent:(id)arg2;
 - (id)searchFieldController;
 - (void)searchWithExternalURL:(id)arg1;
-- (void)searchWithSearchTerm:(id)arg1 metricsEvent:(id)arg2;
 - (void)searchWithSearchTerm:(id)arg1;
-- (void)searchWithURL:(id)arg1 metricsEvent:(id)arg2;
+- (void)searchWithSearchTerm:(id)arg1 metricsEvent:(id)arg2;
 - (void)searchWithURL:(id)arg1;
+- (void)searchWithURL:(id)arg1 metricsEvent:(id)arg2;
 - (void)setClientContext:(id)arg1;
 - (void)setSearchFieldController:(id)arg1;
 - (void)showError:(id)arg1;

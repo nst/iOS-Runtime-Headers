@@ -3,9 +3,9 @@
  */
 
 @interface CKDPUserPrivacySettings : PBCodable <NSCopying> {
+    BOOL _discoverable;
     struct { 
         unsigned int discoverable : 1; 
-    BOOL _discoverable;
     } _has;
 }
 

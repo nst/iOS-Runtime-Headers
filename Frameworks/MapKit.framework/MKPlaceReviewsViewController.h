@@ -4,7 +4,7 @@
 
 @class <MKPlaceCardReviewsControllerDelegate>, ABMonogrammer, GEORating, MKMapItem, NSString, _MKPlaceViewController;
 
-@interface MKPlaceReviewsViewController : UITableViewController <MKPlaceReviewsViewCheckInWriteCellDelegate, MKStackingViewControllerPreferredSizeUse, MKPlaceAttributionCellProvider> {
+@interface MKPlaceReviewsViewController : UITableViewController <MKPlaceAttributionCellProvider, MKPlaceReviewsViewCheckInWriteCellDelegate, MKStackingViewControllerPreferredSizeUse> {
     BOOL _hasAttribution;
     MKMapItem *_mapItem;
     ABMonogrammer *_monogrammer;

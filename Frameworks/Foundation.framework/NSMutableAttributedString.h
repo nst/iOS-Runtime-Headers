@@ -45,11 +45,11 @@
 - (void)mf_removeAttribute:(id)arg1;
 - (void)mf_setString:(id)arg1;
 - (id)mutableString;
-- (BOOL)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
 - (BOOL)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
+- (BOOL)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
 - (BOOL)readFromFileURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
-- (BOOL)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
 - (BOOL)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
+- (BOOL)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
 - (void)removeAttribute:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)removeCharactersWithAttribute:(id)arg1;
 - (void)replaceAttribute:(id)arg1 value:(id)arg2 withValue:(id)arg3;

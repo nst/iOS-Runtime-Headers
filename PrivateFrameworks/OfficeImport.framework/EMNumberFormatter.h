@@ -14,9 +14,9 @@
     NSString *_excelFormatString;
     int _formatType;
     struct __CFNumberFormatter { } *_genericFormatter;
+    bool _isNegativeRed;
     struct __CFNumberFormatter { } *_percentFormatter;
     struct __CFNumberFormatter { } *_smallNumberFormatter;
-    bool_isNegativeRed;
 }
 
 + (id)formatterForFormat:(id)arg1;

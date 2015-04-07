@@ -3,11 +3,11 @@
  */
 
 @interface WKRemoteObject : NSObject {
-    struct RetainPtr<_WKRemoteObjectRegistry> { 
-        void *m_ptr; 
     struct RetainPtr<_WKRemoteObjectInterface> { 
         void *m_ptr; 
     } _interface;
+    struct RetainPtr<_WKRemoteObjectRegistry> { 
+        void *m_ptr; 
     } _objectRegistry;
 }
 

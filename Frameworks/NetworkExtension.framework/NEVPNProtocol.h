@@ -4,7 +4,7 @@
 
 @class NEIdentityKeychainItem, NEKeychainItem, NEProxySettings, NSData, NSString, NSUUID;
 
-@interface NEVPNProtocol : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSCopying, NSSecureCoding> {
+@interface NEVPNProtocol : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _disconnectOnIdle;
     int _disconnectOnIdleTimeout;
     BOOL _disconnectOnLogout;
@@ -119,8 +119,8 @@
 - (void)setUsername:(id)arg1;
 - (void)syncWithKeychainInDomain:(int)arg1 configuration:(id)arg2 suffix:(id)arg3;
 - (void)syncWithKeychainInDomainCommon:(int)arg1;
-- (id)type2str;
 - (int)type;
+- (id)type2str;
 - (BOOL)updateWithServiceProtocolsFromService:(struct __SCNetworkService { }*)arg1;
 - (id)username;
 

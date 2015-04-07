@@ -26,8 +26,8 @@
 - (id)appendName:(id)arg1 selector:(SEL)arg2;
 - (id)appendName:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)appendName:(id)arg1 unsignedInteger:(unsigned int)arg2;
-- (id)appendNamesAndObjects:(id)arg1 args:(void*)arg2;
 - (id)appendNamesAndObjects:(id)arg1;
+- (id)appendNamesAndObjects:(id)arg1 args:(void*)arg2;
 - (id)appendObject:(id)arg1 withName:(id)arg2;
 - (id)build;
 - (void)dealloc;

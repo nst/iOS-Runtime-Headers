@@ -10,7 +10,11 @@
 
 @interface UIPrintingProgress : NSObject {
     UIAlertView *_alert;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cancelHandler;
+
     double _displayTime;
     BOOL _donePrinting;
     BOOL _forceDisplayAsAlert;

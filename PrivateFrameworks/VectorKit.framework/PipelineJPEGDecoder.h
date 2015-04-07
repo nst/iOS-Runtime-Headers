@@ -3,19 +3,19 @@
  */
 
 @interface PipelineJPEGDecoder : NSObject {
-    struct { 
-        void *opaque1; 
-        long opaque2; 
-    struct { 
-        void *opaque1; 
-        long opaque2; 
+    int current420SurfaceCount;
     struct CGSize { 
         float width; 
         float height; 
-    int current420SurfaceCount;
     } imageSize;
     unsigned int maxJPEGSize;
+    struct { 
+        void *opaque1; 
+        long opaque2; 
     } pool420;
+    struct { 
+        void *opaque1; 
+        long opaque2; 
     } poolJPEG;
     unsigned int requestedImageCount;
 }

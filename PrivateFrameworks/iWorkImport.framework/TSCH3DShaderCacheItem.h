@@ -5,6 +5,8 @@
 @class NSObject, NSSet, TSCH3DShaderResource;
 
 @interface TSCH3DShaderCacheItem : NSObject {
+    NSSet *mDebugEffects;
+    TSCH3DShaderResource *mShader;
     struct ObjectStateMatchObject { 
         struct ObjcSharedPtr<NSSet> { 
             NSSet *mValue; 
@@ -45,8 +47,6 @@
         struct array<NSObject *, 8> { 
             NSObject *__elems_[8]; 
         } mTextures; 
-    NSSet *mDebugEffects;
-    TSCH3DShaderResource *mShader;
     } mState;
 }
 

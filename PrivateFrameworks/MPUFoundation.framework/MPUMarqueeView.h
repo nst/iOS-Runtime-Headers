@@ -5,10 +5,10 @@
 @class <MPUMarqueeViewDelegate>, NSUUID, UIView;
 
 @interface MPUMarqueeView : UIView {
+    float _contentGap;
     struct CGSize { 
         float width; 
         float height; 
-    float _contentGap;
     } _contentSize;
     UIView *_contentView;
     NSUUID *_currentAnimationID;
@@ -48,8 +48,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMarqueeDelay:(double)arg1;
-- (void)setMarqueeEnabled:(BOOL)arg1 withOptions:(long long)arg2;
 - (void)setMarqueeEnabled:(BOOL)arg1;
+- (void)setMarqueeEnabled:(BOOL)arg1 withOptions:(long long)arg2;
 - (void)setMarqueeScrollRate:(double)arg1;
 
 @end

@@ -5,8 +5,8 @@
 @interface RMSDAAPParser : NSObject {
 }
 
-+ (id)objectWithData:(id)arg1 error:(id*)arg2;
 + (id)objectWithData:(id)arg1;
++ (id)objectWithData:(id)arg1 error:(id*)arg2;
 + (id)sharedInstance;
 + (id)typeForDRCPValueType:(int)arg1;
 

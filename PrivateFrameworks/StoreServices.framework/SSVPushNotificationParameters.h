@@ -4,7 +4,7 @@
 
 @class NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSString;
 
-@interface SSVPushNotificationParameters : NSObject <SSXPCCoding, NSCopying> {
+@interface SSVPushNotificationParameters : NSObject <NSCopying, SSXPCCoding> {
     NSNumber *_accountIdentifier;
     NSString *_environmentName;
     NSMutableDictionary *_parameterDictionary;

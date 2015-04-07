@@ -5,6 +5,13 @@
 @class NSDate, NSDocumentDifferenceSize, NSLock, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSOperationQueue, NSString, NSTimer, NSURL, NSUndoManager, NSUserActivity;
 
 @interface UIDocument : NSObject <NSFilePresenter> {
+    NSLock *_activityContinuationLock;
+    id _alertPresenter;
+    NSTimer *_autosavingTimer;
+    NSUserActivity *_currentUserActivity;
+    id _differenceDueToRecentChanges;
+    id _differenceSincePreservingPreviousVersion;
+    id _differenceSinceSaving;
     struct __docFlags { 
         unsigned int inClose : 1; 
         unsigned int isOpen : 1; 
@@ -18,13 +25,6 @@
         unsigned int savingError : 1; 
         unsigned int inConflict : 1; 
         unsigned int needToStopAccessingSecurityScopedResource : 1; 
-    NSLock *_activityContinuationLock;
-    id _alertPresenter;
-    NSTimer *_autosavingTimer;
-    NSUserActivity *_currentUserActivity;
-    id _differenceDueToRecentChanges;
-    id _differenceSincePreservingPreviousVersion;
-    id _differenceSinceSaving;
     } _docFlags;
     NSLock *_documentPropertyLock;
     NSObject<OS_dispatch_queue> *_fileAccessQueue;

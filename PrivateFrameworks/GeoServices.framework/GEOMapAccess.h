@@ -11,7 +11,11 @@
 @interface GEOMapAccess : GEOMapRequestManager {
     NSObject<OS_dispatch_queue> *_callbackQueue;
     <GEOMapAccessRestrictions> *_restrictions;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _tileErrorHandler;
+
 }
 
 @property(readonly) BOOL allowsNetworkTileLoad;

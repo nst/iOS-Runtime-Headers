@@ -10,7 +10,11 @@
 
 @interface NSBlockExpression : NSExpression {
     NSArray *_arguments;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
 }
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;

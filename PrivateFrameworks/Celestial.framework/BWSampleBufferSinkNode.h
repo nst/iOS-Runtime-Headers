@@ -7,7 +7,11 @@
  */
 
 @interface BWSampleBufferSinkNode : BWSinkNode {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sampleBufferAvailableHandler;
+
 }
 
 @property(copy) id sampleBufferAvailableHandler;

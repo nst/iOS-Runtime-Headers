@@ -9,16 +9,20 @@
 @class NSLayoutConstraint, NSMutableArray, NSString, UIButton, UILabel, UIView, _UIBackdropView;
 
 @interface _UIContentUnavailableView : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
     UIButton *_actionButton;
     _UIBackdropView *_backdrop;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _buttonAction;
+
     NSString *_buttonTitle;
     UIView *_containerView;
     NSMutableArray *_containerViewContraints;
     UIView *_fromSnapshot;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _fromSnapshotSize;
     NSString *_message;
     UILabel *_messageLabel;
@@ -49,9 +53,9 @@
 - (id)buttonTitle;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3 includeBackdrop:(BOOL)arg4;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3 includeBackdrop:(BOOL)arg4;
 - (void)layoutSubviews;
 - (id)message;
 - (void)setButtonAction:(id)arg1;

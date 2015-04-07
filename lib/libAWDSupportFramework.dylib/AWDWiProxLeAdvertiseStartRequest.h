@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface AWDWiProxLeAdvertiseStartRequest : PBRequest <NSCopying> {
+    unsigned int _dataLength;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int dataLength : 1; 
         unsigned int type : 1; 
-    unsigned int _dataLength;
     } _has;
     NSString *_sessionId;
     unsigned long long _timestamp;

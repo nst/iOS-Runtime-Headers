@@ -5,10 +5,10 @@
 @class NSString, TSWPFilteredString, TSWPStorage;
 
 @interface TSWPSearch : TSKSearch {
+    TSWPFilteredString *_filteredString;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    TSWPFilteredString *_filteredString;
     } _range;
     NSString *_searchedString;
     TSWPStorage *_storage;

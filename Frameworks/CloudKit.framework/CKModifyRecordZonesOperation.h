@@ -11,7 +11,11 @@
 @interface CKModifyRecordZonesOperation : CKDatabaseOperation {
     NSMutableArray *_deletedRecordZoneIDs;
     BOOL _markZonesAsUserPurged;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _modifyRecordZonesCompletionBlock;
+
     NSMutableDictionary *_recordZoneErrors;
     NSArray *_recordZoneIDsToDelete;
     NSMutableDictionary *_recordZonesByZoneIDs;

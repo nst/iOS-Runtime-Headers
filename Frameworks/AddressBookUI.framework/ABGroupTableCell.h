@@ -17,8 +17,8 @@
 @property(readonly) Class superclass;
 
 - (void)dealloc;
-- (void)groupWrapper:(id)arg1 didBecomeSelected:(BOOL)arg2;
 - (id)groupWrapper;
+- (void)groupWrapper:(id)arg1 didBecomeSelected:(BOOL)arg2;
 - (void)setGroupWrapper:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;

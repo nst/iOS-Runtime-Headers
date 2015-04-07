@@ -34,6 +34,22 @@
             float w; 
         } ; 
         float q[4]; 
+    } _absoluteQuaternion;
+    UIWindow *_diagnosticsWindow;
+    float _distanceMultiplier;
+    BOOL _hasReferenceQuaternion;
+    UIView *_horizontalLockIndicator;
+    UILabel *_idleIndicator;
+    float _idleLeeway;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
+    } _idleStartOffset;
+    double _idleStartTime;
+    float _jumpThreshold;
+    double _lastUpdate;
+    float _lockStrength;
+    float _lockValue;
     union _GLKQuaternion { 
         struct { 
             union _GLKVector3 { 
@@ -63,22 +79,6 @@
             float w; 
         } ; 
         float q[4]; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    } _absoluteQuaternion;
-    UIWindow *_diagnosticsWindow;
-    float _distanceMultiplier;
-    BOOL _hasReferenceQuaternion;
-    UIView *_horizontalLockIndicator;
-    UILabel *_idleIndicator;
-    float _idleLeeway;
-    } _idleStartOffset;
-    double _idleStartTime;
-    float _jumpThreshold;
-    double _lastUpdate;
-    float _lockStrength;
-    float _lockValue;
     } _referenceQuaternion;
     float _referenceShiftSpeed;
     float _secondsBeforeIdle;
@@ -122,7 +122,7 @@
 - (void)reset;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)updateWithDeviceMotion:(id)arg1;
-- (void)updateWithDeviceMotionStruct:(const struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; int x5; boolx6; boolx7; boolx8; }*)arg1 timestamp:(double)arg2;
+- (void)updateWithDeviceMotionStruct:(const struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; int x5; bool x6; bool x7; bool x8; }*)arg1 timestamp:(double)arg2;
 - (id)viewerRelativeDevicePose;
 
 @end

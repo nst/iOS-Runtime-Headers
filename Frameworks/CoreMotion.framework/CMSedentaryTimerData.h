@@ -4,7 +4,7 @@
 
 @class NSDate;
 
-@interface CMSedentaryTimerData : NSObject <NSSecureCoding, NSCopying> {
+@interface CMSedentaryTimerData : NSObject <NSCopying, NSSecureCoding> {
     int fAlarmType;
     BOOL fDidWake;
     double fFiredDate;

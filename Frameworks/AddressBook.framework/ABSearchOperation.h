@@ -17,7 +17,11 @@
     void *_internalSearchAddressBook;
     NSPredicate *_predicate;
     NSArray *_prefetchProperties;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
     NSThread *_progressBlockThread;
     unsigned int _sortOrdering;
 }
@@ -55,9 +59,9 @@
 - (BOOL)isConcurrent;
 - (void)main;
 - (id)predicate;
-- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2 moreComing:(BOOL)arg3;
-- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 - (BOOL)predicateShouldContinue:(id)arg1;
+- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
+- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2 moreComing:(BOOL)arg3;
 - (id)prefetchProperties;
 - (id)progressBlock;
 - (void)setAddressBook:(void*)arg1;

@@ -56,8 +56,8 @@
 - (void)handleMessage:(id)arg1;
 - (int)indefinitelyHeldBufferCount;
 - (unsigned int)index;
-- (id)initWithMediaType:(unsigned long)arg1 node:(id)arg2 index:(unsigned int)arg3;
 - (id)initWithMediaType:(unsigned long)arg1 node:(id)arg2;
+- (id)initWithMediaType:(unsigned long)arg1 node:(id)arg2 index:(unsigned int)arg3;
 - (void)invalidate;
 - (BOOL)isEnabled;
 - (long long)liveConfigurationID;

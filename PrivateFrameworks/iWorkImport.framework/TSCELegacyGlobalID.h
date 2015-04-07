@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCELegacyGlobalID : NSObject <NSCopying, NSCoding> {
+@interface TSCELegacyGlobalID : NSObject <NSCoding, NSCopying> {
     unsigned char mBytes[16];
 }
 

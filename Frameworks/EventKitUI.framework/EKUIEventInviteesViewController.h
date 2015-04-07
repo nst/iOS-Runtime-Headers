@@ -4,7 +4,7 @@
 
 @class <EKEditItemViewControllerDelegate>, EKEvent, EKUIEventInviteesEditViewController, EKUIEventInviteesView, EKUIInviteeAlternativeTimeSearcher, EKUIInviteesViewAllInviteesCanAttendSection, EKUIInviteesViewInvisibleInviteeStatusSection, EKUIInviteesViewNotRespondedInviteesSection, EKUIInviteesViewOriginalConflictSection, EKUIInviteesViewRespondedInviteesSection, EKUIInviteesViewSomeInviteesCanAttendSection, NSArray, NSDate, NSString;
 
-@interface EKUIEventInviteesViewController : UITableViewController <EKEditItemViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, EKEditItemViewControllerProtocol> {
+@interface EKUIEventInviteesViewController : UITableViewController <EKEditItemViewControllerDelegate, EKEditItemViewControllerProtocol, UITableViewDataSource, UITableViewDelegate> {
     EKUIInviteesViewAllInviteesCanAttendSection *_allInviteesCanAttendSection;
     EKUIInviteeAlternativeTimeSearcher *_availabilitySearcher;
     BOOL _editable;

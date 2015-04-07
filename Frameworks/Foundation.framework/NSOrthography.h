@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSString;
 
-@interface NSOrthography : NSObject <NSCopying, NSCoding> {
+@interface NSOrthography : NSObject <NSCoding, NSCopying> {
 }
 
 @property(copy,readonly) NSString * dominantScript;

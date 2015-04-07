@@ -5,6 +5,7 @@
 @class NSMutableArray;
 
 @interface TSCH3DArray2D : NSObject {
+    NSMutableArray *mElements;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,7 +17,6 @@
             int g; 
             int t; 
         } ; 
-    NSMutableArray *mElements;
     } mSize;
 }
 

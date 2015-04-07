@@ -5,14 +5,6 @@
 @class AVWeakReference, NSDictionary, NSMutableArray;
 
 @interface AVCaptureStillImageOutputInternal : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct { 
-        unsigned int imageCount; 
-        int outputFormat; 
-        unsigned int outputWidth; 
-        unsigned int outputHeight; 
     BOOL EV0CaptureEnabled;
     int HDRCaptureMode;
     BOOL SISActive;
@@ -27,7 +19,15 @@
     BOOL noiseReductionEnabled;
     NSDictionary *outputSettings;
     NSMutableArray *prepareRequests;
+    struct { 
+        unsigned int imageCount; 
+        int outputFormat; 
+        unsigned int outputWidth; 
+        unsigned int outputHeight; 
     } preparedBracket;
+    struct CGSize { 
+        float width; 
+        float height; 
     } previewImageSize;
     BOOL rawCaptureEnabled;
     unsigned long shutterSoundID;

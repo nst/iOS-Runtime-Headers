@@ -5,9 +5,9 @@
 @class NSMutableArray;
 
 @interface AWDPowerAppBBMetrics : PBCodable <NSCopying> {
+    NSMutableArray *_appPowers;
     struct { 
         unsigned int timestamp : 1; 
-    NSMutableArray *_appPowers;
     } _has;
     unsigned long long _timestamp;
 }

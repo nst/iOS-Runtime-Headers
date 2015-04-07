@@ -10,7 +10,11 @@
 
 @interface GKSimpleComposeController : GKBaseComposeController {
     NSString *_defaultMessage;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _doneHandler;
+
     NSArray *_players;
     GKComposeHeaderWithStaticRecipients *_toField;
 }

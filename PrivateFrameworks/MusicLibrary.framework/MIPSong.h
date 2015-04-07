@@ -5,14 +5,6 @@
 @class MIPAlbum, MIPArtist, MIPGenre, MIPPlaybackInfo, NSString;
 
 @interface MIPSong : PBCodable <NSCopying> {
-    struct { 
-        unsigned int geniusId : 1; 
-        unsigned int audioFormat : 1; 
-        unsigned int discNumber : 1; 
-        unsigned int trackNumber : 1; 
-        unsigned int userRating : 1; 
-        unsigned int excludeFromShuffle : 1; 
-        unsigned int hasVideo : 1; 
     MIPAlbum *_album;
     MIPArtist *_artist;
     int _audioFormat;
@@ -21,6 +13,14 @@
     BOOL _excludeFromShuffle;
     long long _geniusId;
     MIPGenre *_genre;
+    struct { 
+        unsigned int geniusId : 1; 
+        unsigned int audioFormat : 1; 
+        unsigned int discNumber : 1; 
+        unsigned int trackNumber : 1; 
+        unsigned int userRating : 1; 
+        unsigned int excludeFromShuffle : 1; 
+        unsigned int hasVideo : 1; 
     } _has;
     BOOL _hasVideo;
     NSString *_lyrics;

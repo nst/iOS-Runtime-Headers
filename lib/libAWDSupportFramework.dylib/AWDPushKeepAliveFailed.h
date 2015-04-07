@@ -5,16 +5,16 @@
 @class NSString;
 
 @interface AWDPushKeepAliveFailed : PBCodable <NSCopying> {
+    unsigned int _connectionType;
+    unsigned int _dualChannelState;
+    int _error;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
         unsigned int dualChannelState : 1; 
         unsigned int error : 1; 
         unsigned int linkQuality : 1; 
-    unsigned int _connectionType;
-    unsigned int _dualChannelState;
-    int _error;
-    NSString *_guid;
     } _has;
     int _linkQuality;
     unsigned long long _timestamp;

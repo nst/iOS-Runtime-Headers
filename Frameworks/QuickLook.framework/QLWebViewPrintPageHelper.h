@@ -5,12 +5,12 @@
 @class NSString, NSURLRequest, QLPreviewConverter, UIWebBrowserView;
 
 @interface QLWebViewPrintPageHelper : NSObject <QLRemotePrintPageHelper> {
-    struct CGSize { 
-        float width; 
-        float height; 
     UIWebBrowserView *_browserView;
     NSString *_documentType;
     QLPreviewConverter *_previewConverter;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _printableSize;
     NSURLRequest *_request;
 }

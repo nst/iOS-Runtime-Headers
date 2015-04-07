@@ -42,10 +42,10 @@
 - (void)becomeCurrentPage;
 - (void)clearAllMenuItems;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrame;
-- (id)contextForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(int)arg3;
 - (id)contextForSegueWithIdentifier:(id)arg1;
-- (id)contextsForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(int)arg3;
+- (id)contextForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(int)arg3;
 - (id)contextsForSegueWithIdentifier:(id)arg1;
+- (id)contextsForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(int)arg3;
 - (void)didDeactivate;
 - (void)dismissController;
 - (void)dismissTextInputController;
@@ -69,8 +69,8 @@
 - (void)setViewControllerID:(id)arg1;
 - (void)table:(id)arg1 didSelectRowAtIndex:(int)arg2;
 - (id)topLevelObjects;
-- (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3;
 - (void)updateUserActivity:(id)arg1 userInfo:(id)arg2;
+- (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3;
 - (id)viewControllerID;
 - (void)willActivate;
 

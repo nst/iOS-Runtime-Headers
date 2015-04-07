@@ -5,11 +5,11 @@
 @class <AVCaptureVideoDataOutputSampleBufferDelegate>, AVCaptureDeviceInput, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, NSString;
 
 @interface CRCaptureSessionManager : NSObject {
+    NSString *_cameraMode;
+    int _cameraPosition;
     struct CGSize { 
         float width; 
         float height; 
-    NSString *_cameraMode;
-    int _cameraPosition;
     } _cameraResolution;
     AVCaptureSession *_captureSession;
     <AVCaptureVideoDataOutputSampleBufferDelegate> *_captureSessionDelegate;
@@ -53,8 +53,8 @@
 - (id)captureVideoDataOutput;
 - (void)changeCameraConfiguration;
 - (struct CGPoint { float x1; float x2; })convertCameraPoint:(struct CGPoint { float x1; float x2; })arg1 fromLayer:(id)arg2;
-- (struct CGPoint { float x1; float x2; })convertCameraPoint:(struct CGPoint { float x1; float x2; })arg1 toLayer:(id)arg2 flipped:(BOOL)arg3;
 - (struct CGPoint { float x1; float x2; })convertCameraPoint:(struct CGPoint { float x1; float x2; })arg1 toLayer:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertCameraPoint:(struct CGPoint { float x1; float x2; })arg1 toLayer:(id)arg2 flipped:(BOOL)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertCameraRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromLayer:(id)arg2;
 - (struct __CVBuffer { }*)correctedCreditCardBuffer;
 - (id)deviceInput;
@@ -66,8 +66,8 @@
 - (BOOL)isRearCamera;
 - (BOOL)isRunning;
 - (id)previewLayer;
-- (void)refocusOnPoint:(struct CGPoint { float x1; float x2; })arg1 exposure:(BOOL)arg2;
 - (void)refocusOnPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)refocusOnPoint:(struct CGPoint { float x1; float x2; })arg1 exposure:(BOOL)arg2;
 - (void)resetFocus;
 - (void)setCameraMode:(id)arg1;
 - (void)setCameraPosition:(int)arg1;

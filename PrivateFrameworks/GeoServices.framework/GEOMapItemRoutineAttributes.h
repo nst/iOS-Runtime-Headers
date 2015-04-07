@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface GEOMapItemRoutineAttributes : PBCodable <NSCopying> {
+    double _eventDate;
+    NSString *_eventName;
     struct { 
         unsigned int eventDate : 1; 
         unsigned int loiType : 1; 
         unsigned int isEventAllDay : 1; 
-    double _eventDate;
-    NSString *_eventName;
     } _has;
     BOOL _isEventAllDay;
     int _loiType;

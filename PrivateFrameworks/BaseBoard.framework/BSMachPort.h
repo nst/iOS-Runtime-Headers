@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface BSMachPort : NSObject <NSCopying, BSXPCCoding> {
+@interface BSMachPort : NSObject <BSXPCCoding, NSCopying> {
     NSString *_debugDescription;
     BOOL _invalidated;
     unsigned int _port;
@@ -32,8 +32,8 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithPort:(unsigned int)arg1 withRights:(id)arg2;
 - (id)initWithRight:(int)arg1;
-- (id)initWithSendRight:(unsigned int)arg1 assumeOwnership:(BOOL)arg2;
 - (id)initWithSendRight:(unsigned int)arg1;
+- (id)initWithSendRight:(unsigned int)arg1 assumeOwnership:(BOOL)arg2;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)invalidate;
 - (BOOL)isUsable;

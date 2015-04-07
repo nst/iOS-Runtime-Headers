@@ -5,13 +5,13 @@
 @class <RUCreateStationViewControllerDelegate><RUEditStationsViewControllerDelegate>, MPUBorderDrawingCache, NSArray, NSIndexPath, NSString, RUCreateStationViewController, RUParallelScrollView, RUProxyTableView, UIAlertView, _UIBackdropView;
 
 @interface RUEditStationsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    _UIBackdropView *_backdropView;
+    RUParallelScrollView *_containerScrollView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    _UIBackdropView *_backdropView;
-    RUParallelScrollView *_containerScrollView;
     } _containerScrollViewContentInsetAdditions;
     RUCreateStationViewController *_createStationViewController;
     <RUCreateStationViewControllerDelegate><RUEditStationsViewControllerDelegate> *_delegate;

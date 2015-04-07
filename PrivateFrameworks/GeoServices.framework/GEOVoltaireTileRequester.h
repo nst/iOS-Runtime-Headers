@@ -4,7 +4,7 @@
 
 @class GEOVoltaireSimpleTileRequester, NSMutableArray, NSString, NSThread, NSTimer;
 
-@interface GEOVoltaireTileRequester : GEOTileRequester <GEOVoltaireMultiTileDownloaderDelegate, GEOTileRequesterDelegate, GEOResourceManifestTileGroupObserver> {
+@interface GEOVoltaireTileRequester : GEOTileRequester <GEOResourceManifestTileGroupObserver, GEOTileRequesterDelegate, GEOVoltaireMultiTileDownloaderDelegate> {
     NSMutableArray *_activeDownloads;
     NSTimer *_activeTileGroupTimeoutTimer;
     NSMutableArray *_errors;

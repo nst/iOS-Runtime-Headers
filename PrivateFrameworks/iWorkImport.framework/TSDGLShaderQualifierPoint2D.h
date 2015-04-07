@@ -6,10 +6,10 @@
     struct { 
         float x; 
         float y; 
+    } _GLPoint2DValue;
     struct { 
         float x; 
         float y; 
-    } _GLPoint2DValue;
     } _proposedGLPoint2DValue;
 }
 

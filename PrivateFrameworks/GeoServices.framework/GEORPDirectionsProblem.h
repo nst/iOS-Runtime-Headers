@@ -5,9 +5,9 @@
 @class NSData;
 
 @interface GEORPDirectionsProblem : PBCodable <NSCopying> {
+    NSData *_directionsResponseId;
     struct { 
         unsigned int problematicStepIndex : 1; 
-    NSData *_directionsResponseId;
     } _has;
     NSData *_overviewScreenshotImageData;
     unsigned int _problematicStepIndex;

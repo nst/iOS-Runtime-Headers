@@ -5,15 +5,11 @@
 @class <UIDocumentInteractionControllerDelegate>, NSArray, NSString, NSURL, UIActivityViewController, UIBarButtonItem, UIPopoverController, UIView, UIViewController, _UIPreviewItemProxy;
 
 @interface UIDocumentInteractionController : NSObject <UIActionSheetDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    UIActivityViewController *_activityViewController;
+    id _annotation;
+    id _applicationToOpen;
+    NSArray *_availableApplications;
+    <UIDocumentInteractionControllerDelegate> *_delegate;
     struct { 
         unsigned int delegateViewControllerForPreview : 1; 
         unsigned int delegateRectForPreview : 1; 
@@ -40,16 +36,20 @@
         unsigned int delegateProvidesActivityItem : 1; 
         unsigned int delegateProvidesPrintInfo : 1; 
         unsigned int performingActivity : 1; 
-    UIActivityViewController *_activityViewController;
-    id _annotation;
-    id _applicationToOpen;
-    NSArray *_availableApplications;
-    <UIDocumentInteractionControllerDelegate> *_delegate;
     } _documentInteractionControllerFlags;
     NSArray *_gestureRecognizers;
     NSArray *_icons;
     UIPopoverController *_popoverController;
     UIBarButtonItem *_presentItem;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _presentRect;
     UIView *_presentView;
     UIViewController *_presentingViewController;
@@ -79,11 +79,8 @@
 @property(readonly) id previewController;
 @property(readonly) _UIPreviewItemProxy * previewItemProxy;
 @property BOOL shouldUnzipDocument;
-@property BOOL shouldUnzipDocument;
-@property BOOL sourceIsManaged;
 @property BOOL sourceIsManaged;
 @property(readonly) Class superclass;
-@property(retain) NSString * uniqueIdentifier;
 @property(retain) NSString * uniqueIdentifier;
 
 + (id)_UTIForFileURL:(id)arg1;
@@ -135,8 +132,8 @@
 - (BOOL)_setupForOpenInMenu;
 - (BOOL)_setupForOptionsMenu;
 - (BOOL)_setupPreviewController;
-- (id)_unzipFileAndSetupPayload:(id)arg1 completion:(id)arg2;
 - (void)_unzipFileAndSetupPayload:(id)arg1;
+- (id)_unzipFileAndSetupPayload:(id)arg1 completion:(id)arg2;
 - (id)_unzippedDocumentURL;
 - (id)activityViewController;
 - (id)annotation;
@@ -154,18 +151,18 @@
 - (int)numberOfPreviewItemsInPreviewController:(id)arg1;
 - (void)openDocumentWithDefaultApplication;
 - (void)openResourceOperation:(id)arg1 didFinishCopyingResource:(id)arg2;
-- (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (id)popoverController;
+- (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (BOOL)presentOpenInMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)presentOpenInMenuFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)presentOptionsMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)presentOptionsMenuFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)presentPreviewAnimated:(BOOL)arg1;
 - (id)presentingNavigationController;
+- (id)previewController;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id*)arg3;
 - (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
 - (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
-- (id)previewController;
 - (void)previewControllerDidDismiss:(id)arg1;
 - (void)previewControllerWillDismiss:(id)arg1;
 - (id)previewItemProxy;

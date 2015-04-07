@@ -5,12 +5,12 @@
 @class NSString, UIImage;
 
 @interface MFAttachmentImageGenerator : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSString *_displayString;
     UIImage *_image;
     float _maxImageHeight;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _textSize;
 }
 

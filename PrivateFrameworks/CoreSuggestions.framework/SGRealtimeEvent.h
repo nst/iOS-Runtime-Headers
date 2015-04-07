@@ -4,7 +4,7 @@
 
 @class NSString, SGEvent;
 
-@interface SGRealtimeEvent : NSObject <NSSecureCoding, NSCopying> {
+@interface SGRealtimeEvent : NSObject <NSCopying, NSSecureCoding> {
     SGEvent *_event;
     NSString *_eventIdentifier;
     int _state;

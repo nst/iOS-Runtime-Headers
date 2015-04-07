@@ -3,6 +3,10 @@
  */
 
 @interface CPTableCell : CPChunk <CPDisposable> {
+    struct CGColor { } *backgroundColor;
+    unsigned int backgroundGraphicCount;
+    id *backgroundGraphics;
+    struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGColor {} *x2; unsigned int x3; id *x4; } *borders;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,18 +16,14 @@
             float width; 
             float height; 
         } size; 
-    struct { 
-        int location; 
-        int length; 
-    struct { 
-        int location; 
-        int length; 
-    struct CGColor { } *backgroundColor;
-    unsigned int backgroundGraphicCount;
-    id *backgroundGraphics;
-    struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGColor {} *x2; unsigned int x3; id *x4; } *borders;
     } cellBounds;
+    struct { 
+        int location; 
+        int length; 
     } columnSpan;
+    struct { 
+        int location; 
+        int length; 
     } rowSpan;
 }
 

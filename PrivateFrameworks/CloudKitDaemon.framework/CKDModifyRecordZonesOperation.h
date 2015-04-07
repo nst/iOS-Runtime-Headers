@@ -10,14 +10,22 @@
 
 @interface CKDModifyRecordZonesOperation : CKDDatabaseOperation {
     BOOL _allowDefaultZoneSave;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deleteCompletionBlock;
+
     BOOL _markZonesAsUserPurged;
     int _numZoneSaveAttempts;
     NSMutableDictionary *_pcsOplockFailureCountByZoneID;
     NSArray *_recordZoneIDsToDelete;
     NSMutableDictionary *_recordZonesByZoneID;
     NSMutableArray *_recordZonesToSave;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _saveCompletionBlock;
+
 }
 
 @property BOOL allowDefaultZoneSave;

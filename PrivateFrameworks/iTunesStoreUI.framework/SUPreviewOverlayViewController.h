@@ -13,7 +13,11 @@
         float width; 
         float height; 
     } _contentSize;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _loadBlock;
+
     BOOL _loaded;
     float _paddingRight;
     float _paddingTop;

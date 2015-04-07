@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface TSPDatabaseInputStream : NSObject <TSUStreamReadChannel, SFUInputStream> {
+@interface TSPDatabaseInputStream : NSObject <SFUInputStream, TSUStreamReadChannel> {
     struct sqlite3_blob { } *_blob;
     int _length;
     int _offset;

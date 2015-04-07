@@ -5,10 +5,6 @@
 @class NSMutableDictionary, NSObject<TNPageControllerDelegate>, NSString, TNDocumentRoot, TNPageCoordinateDictionary, TNPrintProperties, TNSheet, TSUPointerKeyDictionary;
 
 @interface TNPageController : NSObject <TSKChangeSourceObserver> {
-    struct { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
     float _footerTextHeight;
     float _headerTextHeight;
     TNPrintProperties *_printProperties;
@@ -21,6 +17,10 @@
     TNPageCoordinateDictionary *mHeaderLayerCache;
     TSUPointerKeyDictionary *mHintCacheDictionary;
     BOOL mInDynamicContentScaleChange;
+    struct { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
     } mMaxPageCoordinate;
     BOOL mMaxPageCoordinateValid;
     BOOL mPageCountsValid;

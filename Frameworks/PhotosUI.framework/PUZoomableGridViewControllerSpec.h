@@ -5,58 +5,58 @@
 @class PUPhotosGridViewControllerSpec;
 
 @interface PUZoomableGridViewControllerSpec : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     BOOL _canDisplayMultipleRightBarButtonItems;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _collectionsLevelSectionHeaderContentInset;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _collectionsLevelSectionHeaderHighlightInset;
     int _collectionsSectionHeaderStyle;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _fullMomentsLevelSectionHeaderContentInset;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _fullMomentsLevelSectionHeaderHighlightInset;
     int _fullMomentsLevelThumbnailFormat;
     int _fullMomentsSectionHeaderStyle;
     PUPhotosGridViewControllerSpec *_gridSpec;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _magnifiedDragEdgeInsets;
     int _magnifiedImageFormat;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _magnifiedImageSize;
     float _magnifiedYOffset;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _yearsLevelSectionHeaderContentInset;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _yearsLevelSectionHeaderHighlightInset;
     int _yearsSectionHeaderStyle;
 }

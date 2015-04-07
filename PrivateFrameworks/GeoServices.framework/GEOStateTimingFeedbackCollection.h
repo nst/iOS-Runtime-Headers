@@ -5,14 +5,14 @@
 @class NSMutableArray;
 
 @interface GEOStateTimingFeedbackCollection : PBCodable <NSCopying> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
+    double _durationInOldState;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int durationInOldState : 1; 
-    double _durationInOldState;
     } _has;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionID;
     NSMutableArray *_stateTransitions;
 }

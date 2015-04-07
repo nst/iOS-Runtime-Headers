@@ -4,7 +4,7 @@
 
 @class AXHATimer, CBCentralManager, NSLock, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface AXHearingAidDeviceController : NSObject <CBCentralManagerDelegate, AXHADeviceControllerProtocol> {
+@interface AXHearingAidDeviceController : NSObject <AXHADeviceControllerProtocol, CBCentralManagerDelegate> {
     AXHATimer *_advertisingTimeoutTimer;
     NSMutableDictionary *_advertisingTimestamps;
     AXHATimer *_availableDeviceTimer;

@@ -5,11 +5,11 @@
 @class WKContentView;
 
 @interface WKSelectPopover : WKFormRotatingAccessoryPopover <WKFormControl> {
-    struct RetainPtr<WKSelectTableViewController> { 
-        void *m_ptr; 
     struct RetainPtr<UIKeyboard> { 
         void *m_ptr; 
     } _keyboard;
+    struct RetainPtr<WKSelectTableViewController> { 
+        void *m_ptr; 
     } _tableViewController;
     WKContentView *_view;
 }

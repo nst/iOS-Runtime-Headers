@@ -39,9 +39,9 @@
 - (id)cachedClassName;
 - (void)checkPointDB;
 - (void)closeConnection;
-- (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withTableFilters:(id)arg4 vacuumDB:(BOOL)arg5;
-- (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3;
 - (BOOL)copyDatabaseToPath:(id)arg1;
+- (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3;
+- (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withTableFilters:(id)arg4 vacuumDB:(BOOL)arg5;
 - (void)createCoveringIndexOnTable:(id)arg1 forColumns:(id)arg2;
 - (void)createIndexOnTable:(id)arg1 forColumn:(id)arg2;
 - (void)createTableName:(id)arg1 withColumns:(id)arg2;
@@ -105,8 +105,8 @@
 - (id)tableInfo:(id)arg1;
 - (int)transactionInProgress;
 - (id)transactionLock;
-- (void)trimAllTablesFromDate:(id)arg1 toDate:(id)arg2 withTableFilters:(id)arg3;
 - (void)trimAllTablesFromDate:(id)arg1 toDate:(id)arg2;
+- (void)trimAllTablesFromDate:(id)arg1 toDate:(id)arg2 withTableFilters:(id)arg3;
 - (void)trimTable:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withFilter:(id)arg4;
 - (void)updateEntry:(id)arg1;
 - (void)vacuum;

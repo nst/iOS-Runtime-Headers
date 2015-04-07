@@ -3,10 +3,10 @@
  */
 
 @interface NSRunStorage : NSObject <NSCopying> {
+    unsigned int _cachedBlock;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    unsigned int _cachedBlock;
     } _cachedBlockRange;
     unsigned int _count;
     unsigned int _elementSize;

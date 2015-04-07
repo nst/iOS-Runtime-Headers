@@ -5,33 +5,6 @@
 @class CALayer, NSArray, NSObject<SFPersonCollectionViewCellDelegate>, NSProgress, NSString, SFAirDropNode, SFCircleProgressView, UIColor, UILabel, _SFPersonImageView;
 
 @interface SFPersonCollectionViewCell : UICollectionViewCell {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     int _cellState;
     SFCircleProgressView *_circleProgressView;
     BOOL _darkStyleOnLegacyApp;
@@ -40,11 +13,38 @@
     UILabel *_failedLabel;
     UILabel *_nameLabel;
     CALayer *_nameLabelMaskLayer;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _nameLabelOneLineFrame;
     float _nameLabelOriginY;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _nameLabelTwoLinesFrame;
     SFAirDropNode *_person;
     _SFPersonImageView *_personImageView;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _personViewFrame;
     NSProgress *_progress;
     NSArray *_progressKeyPaths;
@@ -88,8 +88,8 @@
 - (void)resetPersonIconView;
 - (void)restoreCellStateFromFinalTransferState:(int)arg1;
 - (id)sessionID;
-- (void)setCellState:(int)arg1 animated:(BOOL)arg2;
 - (void)setCellState:(int)arg1;
+- (void)setCellState:(int)arg1 animated:(BOOL)arg2;
 - (void)setDarkStyleOnLegacyApp:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;

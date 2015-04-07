@@ -4,7 +4,7 @@
 
 @class <MPUMediaControlsTitlesViewDelegate>, CALayer, NSString;
 
-@interface MPUMediaControlsTitlesView : MPUNowPlayingTitlesView <SBUIControlCenterControlObserver, MPUContentSizeCategoryChanging> {
+@interface MPUMediaControlsTitlesView : MPUNowPlayingTitlesView <MPUContentSizeCategoryChanging, SBUIControlCenterControlObserver> {
     NSString *_appDisplayName;
     <MPUMediaControlsTitlesViewDelegate> *_delegate;
     CALayer *_detailEdgesLayerMask;

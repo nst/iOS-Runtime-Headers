@@ -9,10 +9,18 @@
 @class CKDMMCSItemGroupSet, NSMutableArray, NSObject<OS_dispatch_group>;
 
 @interface CKDMMCSItemGroupSetContext : NSObject <CKDCancelling> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _itemGroupCompletionBlock;
+
     NSMutableArray *_itemGroupContexts;
     CKDMMCSItemGroupSet *_itemGroupSet;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _itemGroupSetCompletionBlock;
+
     NSObject<OS_dispatch_group> *_itemGroupSetCompletionGroup;
 }
 

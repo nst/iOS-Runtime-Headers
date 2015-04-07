@@ -88,8 +88,8 @@
 - (id)preferredLanguages;
 - (unsigned int)realRepeatType;
 - (unsigned int)realShuffleType;
-- (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
 - (BOOL)reloadWithDataSource:(id)arg1;
+- (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
 - (unsigned int)repeatType;
 - (id)representedObject;
 - (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;

@@ -8,16 +8,20 @@
 
 @class <PUPhotoStreamComposeServiceDelegate>, NSArray, NSString;
 
-@interface PUPhotoStreamComposeServiceViewController : SLComposeServiceViewController <PUPhotoStreamsAlbumsTableViewControllerDelegate, PUPhotoStreamCreateTitleDelegate, PUCloudSharedCreateAlbumViewControllerDelegate, SLSheetViewHostProtocol> {
-    struct { 
-        unsigned int hasDidPost : 1; 
-        unsigned int hasDidCancel : 1; 
+@interface PUPhotoStreamComposeServiceViewController : SLComposeServiceViewController <PUCloudSharedCreateAlbumViewControllerDelegate, PUPhotoStreamCreateTitleDelegate, PUPhotoStreamsAlbumsTableViewControllerDelegate, SLSheetViewHostProtocol> {
     NSArray *_actions;
     BOOL _addToExistingWorkflow;
     struct NSObject { Class x1; } *_albumList;
     NSString *_albumTitle;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     <PUPhotoStreamComposeServiceDelegate> *_delegate;
+    struct { 
+        unsigned int hasDidPost : 1; 
+        unsigned int hasDidCancel : 1; 
     } _delegateFlags;
     BOOL _inCreateNewAlbum;
     NSString *_itemCountString;

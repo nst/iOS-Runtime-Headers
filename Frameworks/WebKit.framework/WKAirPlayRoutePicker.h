@@ -5,14 +5,14 @@
 @class NSString, WKContentView;
 
 @interface WKAirPlayRoutePicker : UIView <UIPopoverControllerDelegate> {
-    struct RetainPtr<MPAVRoutingController> { 
-        void *m_ptr; 
-    struct RetainPtr<MPAudioVideoRoutingPopoverController> { 
-        void *m_ptr; 
     struct RetainPtr<MPAudioVideoRoutingActionSheet> { 
         void *m_ptr; 
     } _actionSheet;
+    struct RetainPtr<MPAudioVideoRoutingPopoverController> { 
+        void *m_ptr; 
     } _popoverController;
+    struct RetainPtr<MPAVRoutingController> { 
+        void *m_ptr; 
     } _routingController;
     WKContentView *_view;
 }

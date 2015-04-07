@@ -69,8 +69,8 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCategoryName:(id)arg1;
 - (void)setItemImage:(id)arg1;
-- (void)setItemState:(id)arg1 animated:(BOOL)arg2;
 - (void)setItemState:(id)arg1;
+- (void)setItemState:(id)arg1 animated:(BOOL)arg2;
 - (void)setNumberOfUserRatings:(int)arg1;
 - (void)setPrice:(id)arg1;
 - (void)setTheme:(id)arg1;

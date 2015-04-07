@@ -25,8 +25,8 @@
 - (int)clearRetiredData;
 - (void)dealloc;
 - (id)description;
-- (id)initWithIdentifier:(id)arg1 cacheName:(id)arg2 database:(id)arg3 cacheEntryClass:(Class)arg4;
 - (id)initWithIdentifier:(id)arg1 cacheName:(id)arg2;
+- (id)initWithIdentifier:(id)arg1 cacheName:(id)arg2 database:(id)arg3 cacheEntryClass:(Class)arg4;
 - (unsigned int)maximumInlineBlobSize;
 - (id)setData:(id)arg1 expiring:(double)arg2 retiring:(double)arg3 lookupKey:(id)arg4 userInfo:(id)arg5;
 - (void)setMaximumInlineBlobSize:(unsigned int)arg1;

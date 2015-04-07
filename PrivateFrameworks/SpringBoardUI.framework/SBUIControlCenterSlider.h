@@ -4,12 +4,7 @@
 
 @class NSString, UIImage, UIVisualEffectView;
 
-@interface SBUIControlCenterSlider : _UIDynamicSlider <_UISettingsKeyObserver, SBUIControlCenterControl> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+@interface SBUIControlCenterSlider : _UIDynamicSlider <SBUIControlCenterControl, _UISettingsKeyObserver> {
     BOOL _adjusting;
     BOOL _customTrackImage;
     UIVisualEffectView *_highlightEffectView;
@@ -17,6 +12,11 @@
     UIImage *_maxValueMaskImage;
     UIImage *_minValueMaskImage;
     BOOL _shouldHighlightValueImagesWhileAdjusting;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _trackCapInsets;
     UIImage *_trackMaskImage;
     float _valueImagePadding;

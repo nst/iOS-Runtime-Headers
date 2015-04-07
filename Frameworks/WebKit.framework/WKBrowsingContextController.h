@@ -7,24 +7,24 @@
 @interface WKBrowsingContextController : NSObject {
     struct WeakObjCPtr<id<WKBrowsingContextHistoryDelegate> > { 
         id m_weakReference; 
+    } _historyDelegate;
+    struct WeakObjCPtr<id<WKBrowsingContextLoadDelegate> > { 
+        id m_weakReference; 
+    } _loadDelegate;
+    unsigned int _observedRenderingProgressEvents;
     struct RefPtr<WebKit::WebPageProxy> { 
         struct WebPageProxy {} *m_ptr; 
+    } _page;
     struct unique_ptr<PageLoadStateObserver, std::__1::default_delete<PageLoadStateObserver> > { 
         struct __compressed_pair<PageLoadStateObserver *, std::__1::default_delete<PageLoadStateObserver> > { 
             struct PageLoadStateObserver {} *__first_; 
         } __ptr_; 
-    struct WeakObjCPtr<id<WKBrowsingContextLoadDelegate> > { 
-        id m_weakReference; 
+    } _pageLoadStateObserver;
     struct WeakObjCPtr<id<WKBrowsingContextPolicyDelegate> > { 
         id m_weakReference; 
+    } _policyDelegate;
     struct RetainPtr<_WKRemoteObjectRegistry> { 
         void *m_ptr; 
-    } _historyDelegate;
-    } _loadDelegate;
-    unsigned int _observedRenderingProgressEvents;
-    } _page;
-    } _pageLoadStateObserver;
-    } _policyDelegate;
     } _remoteObjectRegistry;
 }
 
@@ -87,15 +87,15 @@
 - (id)historyDelegate;
 - (BOOL)isLoading;
 - (void)loadAlternateHTMLString:(id)arg1 baseURL:(id)arg2 forUnreachableURL:(id)arg3;
-- (void)loadData:(id)arg1 MIMEType:(id)arg2 textEncodingName:(id)arg3 baseURL:(id)arg4 userData:(id)arg5;
 - (void)loadData:(id)arg1 MIMEType:(id)arg2 textEncodingName:(id)arg3 baseURL:(id)arg4;
+- (void)loadData:(id)arg1 MIMEType:(id)arg2 textEncodingName:(id)arg3 baseURL:(id)arg4 userData:(id)arg5;
 - (id)loadDelegate;
-- (void)loadFileURL:(id)arg1 restrictToFilesWithin:(id)arg2 userData:(id)arg3;
 - (void)loadFileURL:(id)arg1 restrictToFilesWithin:(id)arg2;
-- (void)loadHTMLString:(id)arg1 baseURL:(id)arg2 userData:(id)arg3;
+- (void)loadFileURL:(id)arg1 restrictToFilesWithin:(id)arg2 userData:(id)arg3;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
-- (void)loadRequest:(id)arg1 userData:(id)arg2;
+- (void)loadHTMLString:(id)arg1 baseURL:(id)arg2 userData:(id)arg3;
 - (void)loadRequest:(id)arg1;
+- (void)loadRequest:(id)arg1 userData:(id)arg2;
 - (unsigned int)observedRenderingProgressEvents;
 - (unsigned int)pageCount;
 - (float)pageLength;

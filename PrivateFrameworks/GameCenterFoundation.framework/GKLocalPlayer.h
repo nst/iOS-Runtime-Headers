@@ -8,16 +8,24 @@
 
 @class GKEventEmitter<GKLocalPlayerListener>, GKInvite, NSDate, NSDictionary, NSInvocation, NSString, UIAlertView, UIViewController, UIViewController<GKAuthenticateViewController>;
 
-@interface GKLocalPlayer : GKPlayer <NSCoding, NSSecureCoding, GKSavedGameListener> {
+@interface GKLocalPlayer : GKPlayer <GKSavedGameListener, NSCoding, NSSecureCoding> {
     GKInvite *_acceptedInvite;
     UIViewController *_activeViewController;
     BOOL _appUnrecognized;
     NSDictionary *_authenticateAlertDictionary;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _authenticateHandler;
+
     BOOL _authenticated;
     BOOL _authenticating;
     BOOL _authenticatingCurrentAccount;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _authenticationCompletionHandler;
+
     UIAlertView *_currentAlert;
     NSInvocation *_currentFriendRequestInvocation;
     BOOL _didAuthenticate;
@@ -33,7 +41,11 @@
     BOOL _newToGameCenter;
     UIViewController *_rootViewController;
     UIViewController<GKAuthenticateViewController> *_signInViewController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _validateAccountCompletionHandler;
+
     BOOL _validatingAccount;
 }
 
@@ -181,8 +193,8 @@
 - (void)setPhoto:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setRootViewController:(id)arg1;
 - (void)setSignInViewController:(id)arg1;
-- (void)setStatus:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setStatus:(id)arg1;
+- (void)setStatus:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setValidateAccountCompletionHandler:(id)arg1;
 - (void)setValidatingAccount:(BOOL)arg1;
 - (void)setupForCloudSavedGames;

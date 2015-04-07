@@ -28,8 +28,8 @@
 - (void)handlePipeDisconnected:(id)arg1;
 - (void)handleStateUpdated:(id)arg1;
 - (id)identifiers;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (BOOL)isMsgAllowedWhenOff:(int)arg1;
 - (void)orphanPipes;
 - (id)pipeForName:(id)arg1 identifier:(id)arg2;

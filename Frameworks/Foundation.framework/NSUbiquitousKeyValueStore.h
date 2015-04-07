@@ -37,8 +37,8 @@
 - (int)_storeChangeFromSourceChange:(int)arg1;
 - (void)_syncConcurrently;
 - (void)_syncConcurrentlyForced:(BOOL)arg1;
-- (BOOL)_synchronizeForced:(BOOL)arg1 notificationQueue:(id)arg2;
 - (BOOL)_synchronizeForced:(BOOL)arg1;
+- (BOOL)_synchronizeForced:(BOOL)arg1 notificationQueue:(id)arg2;
 - (void)_unregisterFromDaemon;
 - (void)_useSourceAsyncWithBlock:(id)arg1;
 - (void)_useSourceSyncWithBlock:(id)arg1;
@@ -51,9 +51,9 @@
 - (double)doubleForKey:(id)arg1;
 - (void)finalize;
 - (id)init;
-- (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2 additionalStore:(BOOL)arg3;
-- (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1;
+- (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2;
+- (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2 additionalStore:(BOOL)arg3;
 - (long long)longLongForKey:(id)arg1;
 - (unsigned int)maximumDataLengthPerKey;
 - (unsigned int)maximumKeyCount;

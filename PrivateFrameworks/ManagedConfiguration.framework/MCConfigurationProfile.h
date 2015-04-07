@@ -22,8 +22,8 @@
 - (id)OTAProfile;
 - (void)_addObjectsOfClass:(Class)arg1 fromArray:(id)arg2 toArray:(id)arg3;
 - (id)_localizedPayloadSummaryByType:(id)arg1;
-- (id)_sortPayloads:(id)arg1;
 - (void)_sortPayloads;
+- (id)_sortPayloads:(id)arg1;
 - (id)_subjectSummaryFromCertificate:(struct __SecCertificate { }*)arg1;
 - (struct __SecCertificate { }*)copyCertificateFromPayloadWithUUID:(id)arg1;
 - (struct __SecCertificate { }*)copyCertificateWithPersistentID:(id)arg1;

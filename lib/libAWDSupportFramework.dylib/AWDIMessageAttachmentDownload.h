@@ -5,6 +5,12 @@
 @class NSString;
 
 @interface AWDIMessageAttachmentDownload : PBCodable <NSCopying> {
+    unsigned int _attachmentSize;
+    unsigned int _connectionType;
+    unsigned int _downloadDuration;
+    int _fzError;
+    int _genericError;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int attachmentSize : 1; 
@@ -15,12 +21,6 @@
         unsigned int linkQuality : 1; 
         unsigned int messageError : 1; 
         unsigned int tokenError : 1; 
-    unsigned int _attachmentSize;
-    unsigned int _connectionType;
-    unsigned int _downloadDuration;
-    int _fzError;
-    int _genericError;
-    NSString *_guid;
     } _has;
     int _linkQuality;
     unsigned int _messageError;

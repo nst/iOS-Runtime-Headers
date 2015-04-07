@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface SSProtocolConditionalContext : NSObject <NSCopying> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _itemLookupBlock;
+
     NSString *_platformName;
     NSString *_systemVersion;
 }

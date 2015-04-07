@@ -17,8 +17,8 @@
 - (char *)data;
 - (void)dealloc;
 - (int)height;
-- (id)initWithWidth:(int)arg1 height:(int)arg2 rowBytes:(int)arg3;
 - (id)initWithWidth:(int)arg1 height:(int)arg2;
+- (id)initWithWidth:(int)arg1 height:(int)arg2 rowBytes:(int)arg3;
 - (id)medianBitmap;
 - (int)rowBytes;
 - (void)unionWithBitmap:(id)arg1;

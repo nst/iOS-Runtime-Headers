@@ -5,12 +5,12 @@
 @class NSData;
 
 @interface GEOSuggestionsOptions : PBCodable <NSCopying> {
+    int _entriesType;
     struct { 
         unsigned int entriesType : 1; 
         unsigned int listType : 1; 
         unsigned int includeRankingFeatures : 1; 
         unsigned int normalizePOIs : 1; 
-    int _entriesType;
     } _has;
     BOOL _includeRankingFeatures;
     int _listType;

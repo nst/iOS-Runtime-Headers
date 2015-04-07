@@ -4,7 +4,7 @@
 
 @class <ABMembersDataSourceDelegate>, <ABStyleProvider>, ABBannerView, ABModel, ABUIPerson, NSMutableArray, NSString;
 
-@interface ABMembersDataSource : NSObject <UITableViewDelegate, UITableViewDataSource> {
+@interface ABMembersDataSource : NSObject <UITableViewDataSource, UITableViewDelegate> {
     void *_addressBook;
     ABBannerView *_bannerView;
     <ABMembersDataSourceDelegate> *_delegate;

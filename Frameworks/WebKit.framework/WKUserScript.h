@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface WKUserScript : NSObject <NSCopying> {
-    struct RetainPtr<NSString> { 
-        void *m_ptr; 
     BOOL _forMainFrameOnly;
     int _injectionTime;
+    struct RetainPtr<NSString> { 
+        void *m_ptr; 
     } _source;
 }
 

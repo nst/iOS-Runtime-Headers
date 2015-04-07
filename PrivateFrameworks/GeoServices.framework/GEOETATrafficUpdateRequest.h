@@ -5,21 +5,21 @@
 @class GEOClientCapabilities, GEOLocation, GEORouteAttributes, NSData, NSMutableArray;
 
 @interface GEOETATrafficUpdateRequest : PBRequest <NSCopying> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    struct { 
-        unsigned int sessionID : 1; 
-        unsigned int includeBetterRouteSuggestion : 1; 
     GEOClientCapabilities *_clientCapabilities;
     GEOLocation *_currentUserLocation;
     NSMutableArray *_destinationWaypointTypeds;
     NSData *_directionsResponseID;
+    struct { 
+        unsigned int sessionID : 1; 
+        unsigned int includeBetterRouteSuggestion : 1; 
     } _has;
     BOOL _includeBetterRouteSuggestion;
     GEORouteAttributes *_routeAttributes;
     NSMutableArray *_routes;
     NSMutableArray *_serviceTags;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionID;
 }
 

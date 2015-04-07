@@ -3,6 +3,10 @@
  */
 
 @interface AWDPowerApMetrics : PBCodable <NSCopying> {
+    unsigned int _apAwakeDuration;
+    unsigned int _cpuPowerMicroWatt;
+    unsigned int _dramPowerMicroWatt;
+    unsigned int _gpuPowerMicroWatt;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int apAwakeDuration : 1; 
@@ -10,10 +14,6 @@
         unsigned int dramPowerMicroWatt : 1; 
         unsigned int gpuPowerMicroWatt : 1; 
         unsigned int socPowerMicroWatt : 1; 
-    unsigned int _apAwakeDuration;
-    unsigned int _cpuPowerMicroWatt;
-    unsigned int _dramPowerMicroWatt;
-    unsigned int _gpuPowerMicroWatt;
     } _has;
     unsigned int _socPowerMicroWatt;
     unsigned long long _timestamp;

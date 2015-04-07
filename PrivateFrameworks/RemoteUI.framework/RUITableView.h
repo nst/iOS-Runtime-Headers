@@ -4,7 +4,7 @@
 
 @class NSDate, NSDictionary, NSIndexPath, NSMutableArray, NSString, RUIBarButtonItem, RUIObjectModel<RUITableViewDelegate>, RUIPhotoPicker, RUITableHeaderView, RUITableViewRow, UIDatePicker, UIPickerView, UITableView, _UIBackdropView;
 
-@interface RUITableView : RUIElement <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, RUITableViewRowDelegate, RUITableViewSectionDelegate> {
+@interface RUITableView : RUIElement <RUITableViewRowDelegate, RUITableViewSectionDelegate, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate> {
     UIDatePicker *_datePicker;
     RUITableViewRow *_defaultFirstResponderRow;
     NSIndexPath *_embeddedPickerRowIndexPath;
@@ -74,8 +74,8 @@
 - (id)objectModel;
 - (id)objectModelRowForIndexPath:(id)arg1;
 - (void)populatePostbackDictionary:(id)arg1;
-- (void)rowActivatedLink:(id)arg1 attributes:(id)arg2 completion:(id)arg3;
 - (void)rowActivatedLink:(id)arg1 attributes:(id)arg2;
+- (void)rowActivatedLink:(id)arg1 attributes:(id)arg2 completion:(id)arg3;
 - (void)rowDidChange:(id)arg1;
 - (void)rowDidEndEditing:(id)arg1;
 - (void)rowIsFirstResponder:(id)arg1;
@@ -95,6 +95,7 @@
 - (id)sourceURLForRUITableViewSection;
 - (id)subElementsWithName:(id)arg1;
 - (Class)tableCellClassForTableViewRow:(id)arg1;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -112,7 +113,6 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)tableView;
 - (id)textFieldRow:(id)arg1 changeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (void)textFieldStartedEditing:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

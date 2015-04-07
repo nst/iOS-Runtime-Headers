@@ -7,7 +7,11 @@
  */
 
 @interface _UIRefreshControlAnimationDelegate : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id block;
+
 }
 
 + (id)delegateWithCompletionBlock:(id)arg1;

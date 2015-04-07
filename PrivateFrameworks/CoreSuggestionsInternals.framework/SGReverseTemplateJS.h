@@ -21,7 +21,7 @@
 - (id)loadJSFromASCIIFile:(id)arg1;
 - (void)resetVM;
 - (void)setAssetPath:(id)arg1 locale:(id)arg2;
-- (void)shouldDownloadFull:(id)arg1 reply:(id)arg2;
 - (BOOL)shouldDownloadFull:(id)arg1;
+- (void)shouldDownloadFull:(id)arg1 reply:(id)arg2;
 
 @end

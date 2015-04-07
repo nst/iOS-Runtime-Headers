@@ -3,13 +3,13 @@
  */
 
 @interface __NSATSStringSegment : NSString {
-    struct { 
-        int location; 
-        int length; 
     unsigned short _buffer[128];
     const unsigned short *_characters;
     struct __CFString { } *_originalString;
     long _originalStringLength;
+    struct { 
+        int location; 
+        int length; 
     } _range;
 }
 

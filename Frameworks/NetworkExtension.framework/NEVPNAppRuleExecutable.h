@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface NEVPNAppRuleExecutable : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
+@interface NEVPNAppRuleExecutable : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     NSString *_matchDesignatedRequirement;
     NSString *_matchPath;
     NSString *_matchSigningIdentifier;

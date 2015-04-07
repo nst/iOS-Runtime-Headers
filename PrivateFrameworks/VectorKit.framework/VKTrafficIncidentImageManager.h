@@ -19,8 +19,8 @@
 + (id)sharedManager;
 
 - (void)dealloc;
-- (id)imageForIncidentType:(int)arg1 contentScale:(float)arg2 targetDisplay:(int)arg3;
 - (id)imageForIncidentType:(int)arg1 contentScale:(float)arg2;
+- (id)imageForIncidentType:(int)arg1 contentScale:(float)arg2 targetDisplay:(int)arg3;
 - (id)initWithTileGroupIdentifier:(unsigned int)arg1 resourceManager:(id)arg2;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;

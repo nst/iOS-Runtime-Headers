@@ -44,8 +44,8 @@
 - (int)componentType;
 - (double)duration;
 - (id)initWithArtwork:(id)arg1;
-- (id)initWithArtworkList:(id)arg1 appearance:(int)arg2;
 - (id)initWithArtworkList:(id)arg1;
+- (id)initWithArtworkList:(id)arg1 appearance:(int)arg2;
 - (id)initWithCustomPageContext:(id)arg1;
 - (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
 - (id)link;

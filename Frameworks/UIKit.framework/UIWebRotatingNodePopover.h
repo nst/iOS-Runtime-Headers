@@ -5,13 +5,13 @@
 @class <UIWebRotatingNodePopoverDelegate>, DOMNode, NSString, UIPopoverController;
 
 @interface UIWebRotatingNodePopover : NSObject <UIPopoverControllerDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
     <UIWebRotatingNodePopoverDelegate> *_dismissDelegate;
     BOOL _isRotating;
     DOMNode *_node;
     UIPopoverController *_popoverController;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _presentationPoint;
 }
 

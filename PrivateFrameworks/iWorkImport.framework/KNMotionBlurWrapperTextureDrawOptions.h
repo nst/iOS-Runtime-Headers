@@ -20,6 +20,13 @@
         float m42; 
         float m43; 
         float m44; 
+    } _MVPMatrix;
+    BOOL _isBackground;
+    BOOL _isEffect;
+    BOOL _isForeground;
+    BOOL _isHidden;
+    BOOL _isMoving;
+    float _opacity;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -37,13 +44,6 @@
         float m42; 
         float m43; 
         float m44; 
-    } _MVPMatrix;
-    BOOL _isBackground;
-    BOOL _isEffect;
-    BOOL _isForeground;
-    BOOL _isHidden;
-    BOOL _isMoving;
-    float _opacity;
     } _previousMVPMatrix;
     BOOL _wantsBackFaceCulling;
 }

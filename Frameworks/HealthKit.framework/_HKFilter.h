@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKFilter : NSObject <NSSecureCoding, NSCopying> {
+@interface _HKFilter : NSObject <NSCopying, NSSecureCoding> {
 }
 
 + (BOOL)filter:(id)arg1 acceptsDataObject:(id)arg2;

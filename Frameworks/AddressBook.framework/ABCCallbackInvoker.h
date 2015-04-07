@@ -8,8 +8,8 @@
  */
 
 @interface ABCCallbackInvoker : NSObject {
-    int (*cb)();
     void *ab;
+    int (*cb)();
     void *context;
 }
 

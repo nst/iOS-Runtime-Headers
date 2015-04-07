@@ -10,29 +10,20 @@
 @class KNMacUILayout, KNSlideCollectionSelection, NSMutableDictionary, NSSet;
 
 @interface KNUIState : NSObject <NSCopying> {
+    NSMutableDictionary *mChartUIState;
+    NSSet *mCollapsedSlideNodes;
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+    } mDesktopCanvasOffset;
+    float mDesktopCanvasViewScale;
     struct CGSize { 
         float width; 
         float height; 
-    NSMutableDictionary *mChartUIState;
-    NSSet *mCollapsedSlideNodes;
-    } mDesktopCanvasOffset;
-    float mDesktopCanvasViewScale;
     } mDesktopMainContentSize;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mDesktopMainWindowOrigin;
     float mDesktopNavigatorViewWidth;
     float mDesktopOutlineViewWidth;
@@ -42,12 +33,21 @@
     BOOL mHasPhone568CanvasViewScale;
     BOOL mHasPhoneCanvasOffset;
     BOOL mHasPhoneCanvasViewScale;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mIPadCanvasOffset;
     float mIPadCanvasViewScale;
     BOOL mLightTableHidesSkippedSlides;
     float mLightTableZoomScale;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mPhone568CanvasOffset;
     float mPhone568CanvasViewScale;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mPhoneCanvasOffset;
     float mPhoneCanvasViewScale;
     BOOL mShowMasterGuides;
@@ -94,8 +94,8 @@
 - (id)init;
 - (BOOL)lightTableHidesSkippedSlides;
 - (float)lightTableZoomScale;
-- (void)loadFromArchive:(const struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct Reference {} *x4; struct Size {} *x5; struct Point {} *x6; float x7; float x8; struct RepeatedPtrField<TSP::Reference> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; struct Point {} *x10; struct Point {} *x11; struct Reference {} *x12; float x13; float x14; struct Point {} *x15; struct RepeatedPtrField<TSCH::ChartUIState> { void **x_16_1_1; int x_16_1_2; int x_16_1_3; int x_16_1_4; } x16; float x17; boolx18; boolx19; boolx20; boolx21; struct RepeatedPtrField<TSP::Reference> { void **x_22_1_1; int x_22_1_2; int x_22_1_3; int x_22_1_4; } x22; float x23; float x24; struct Size {} *x25; boolx26; boolx27; float x28; struct Point {} *x29; int x30; unsigned int x31[1]; }*)arg1 unarchiver:(id)arg2 context:(id)arg3;
-- (void)saveToArchive:(struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct Reference {} *x4; struct Size {} *x5; struct Point {} *x6; float x7; float x8; struct RepeatedPtrField<TSP::Reference> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; struct Point {} *x10; struct Point {} *x11; struct Reference {} *x12; float x13; float x14; struct Point {} *x15; struct RepeatedPtrField<TSCH::ChartUIState> { void **x_16_1_1; int x_16_1_2; int x_16_1_3; int x_16_1_4; } x16; float x17; boolx18; boolx19; boolx20; boolx21; struct RepeatedPtrField<TSP::Reference> { void **x_22_1_1; int x_22_1_2; int x_22_1_3; int x_22_1_4; } x22; float x23; float x24; struct Size {} *x25; boolx26; boolx27; float x28; struct Point {} *x29; int x30; unsigned int x31[1]; }*)arg1 archiver:(id)arg2 context:(id)arg3;
+- (void)loadFromArchive:(const struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct Reference {} *x4; struct Size {} *x5; struct Point {} *x6; float x7; float x8; struct RepeatedPtrField<TSP::Reference> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; struct Point {} *x10; struct Point {} *x11; struct Reference {} *x12; float x13; float x14; struct Point {} *x15; struct RepeatedPtrField<TSCH::ChartUIState> { void **x_16_1_1; int x_16_1_2; int x_16_1_3; int x_16_1_4; } x16; float x17; bool x18; bool x19; bool x20; bool x21; struct RepeatedPtrField<TSP::Reference> { void **x_22_1_1; int x_22_1_2; int x_22_1_3; int x_22_1_4; } x22; float x23; float x24; struct Size {} *x25; bool x26; bool x27; float x28; struct Point {} *x29; int x30; unsigned int x31[1]; }*)arg1 unarchiver:(id)arg2 context:(id)arg3;
+- (void)saveToArchive:(struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct Reference {} *x4; struct Size {} *x5; struct Point {} *x6; float x7; float x8; struct RepeatedPtrField<TSP::Reference> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; struct Point {} *x10; struct Point {} *x11; struct Reference {} *x12; float x13; float x14; struct Point {} *x15; struct RepeatedPtrField<TSCH::ChartUIState> { void **x_16_1_1; int x_16_1_2; int x_16_1_3; int x_16_1_4; } x16; float x17; bool x18; bool x19; bool x20; bool x21; struct RepeatedPtrField<TSP::Reference> { void **x_22_1_1; int x_22_1_2; int x_22_1_3; int x_22_1_4; } x22; float x23; float x24; struct Size {} *x25; bool x26; bool x27; float x28; struct Point {} *x29; int x30; unsigned int x31[1]; }*)arg1 archiver:(id)arg2 context:(id)arg3;
 - (void)setCanvasOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCanvasViewScale:(float)arg1;
 - (void)setCollapsedSlideNodes:(id)arg1;

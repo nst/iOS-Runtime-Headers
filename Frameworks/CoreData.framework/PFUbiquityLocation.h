@@ -67,8 +67,8 @@
 + (id)createUbiquityExternalDataReferenceStoreLocationForStoreName:(id)arg1 withUbiquityRootLocation:(id)arg2;
 + (id)createUbiquityLocationForPath:(id)arg1 withUbiquityRootLocation:(id)arg2;
 + (id)createUbiquityLocationForPath:(id)arg1 withUbiquityRootPath:(id)arg2;
-+ (id)createUbiquityLocationForRootPath:(id)arg1 checkIsUbiquitous:(BOOL)arg2;
 + (id)createUbiquityLocationForRootPath:(id)arg1;
++ (id)createUbiquityLocationForRootPath:(id)arg1 checkIsUbiquitous:(BOOL)arg2;
 + (id)createUbiquityLocationForRootURL:(id)arg1;
 + (id)createUbiquityLocationForSubpath:(id)arg1 ofUbiquityRootPath:(id)arg2;
 + (id)createUbiquityLocationForURL:(id)arg1 withUbiquityRootLocation:(id)arg2;

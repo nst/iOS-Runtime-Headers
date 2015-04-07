@@ -23,8 +23,8 @@
 @property(readonly) unsigned short port;
 @property(readonly) Class superclass;
 
-+ (id)newServerWithName:(id)arg1 port:(unsigned short)arg2;
 + (id)newServerWithName:(id)arg1;
++ (id)newServerWithName:(id)arg1 port:(unsigned short)arg2;
 
 - (void).cxx_destruct;
 - (id)_initWithName:(id)arg1 port:(unsigned short)arg2;

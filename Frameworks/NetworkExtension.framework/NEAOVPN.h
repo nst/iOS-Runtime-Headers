@@ -4,7 +4,7 @@
 
 @class NSDictionary;
 
-@interface NEAOVPN : NSObject <NEConfigurationValidating, NEPrettyDescription, NSSecureCoding, NSCopying> {
+@interface NEAOVPN : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _allowAllCaptiveNetworkPlugins;
     BOOL _allowCaptiveWebSheet;
     NSDictionary *_allowedCaptiveNetworkPlugins;

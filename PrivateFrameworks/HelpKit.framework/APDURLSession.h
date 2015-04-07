@@ -4,7 +4,7 @@
 
 @class NSMutableData, NSString, NSURLRequest, NSURLSessionDataTask, NSURLSessionTask;
 
-@interface APDURLSession : NSObject <NSURLSessionDelegate, NSURLSessionDataDelegate> {
+@interface APDURLSession : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
     id _completionHandler;
     NSMutableData *_data;
     NSURLSessionDataTask *_dataTask;

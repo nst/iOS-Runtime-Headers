@@ -15,14 +15,14 @@
 - (id)URLs;
 - (void)addData:(id)arg1 forPasteboardType:(id)arg2;
 - (void)addItems:(id)arg1 isSmartCopy:(BOOL)arg2;
-- (void)addPasteboardItem:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)addPasteboardItem:(id)arg1;
+- (void)addPasteboardItem:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)addPasteboardItemForObject:(id)arg1 type:(id)arg2;
 - (void)addPasteboardItemIndex:(unsigned int)arg1 forType:(id)arg2;
 - (int)clearContents;
 - (BOOL)containsImportableTextTypes;
-- (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (id)dataForPasteboardType:(id)arg1;
+- (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (id)importablePlainTextTypes;
 - (id)initWithGeneralPasteboard;
 - (id)initWithNativePasteboard:(id)arg1;

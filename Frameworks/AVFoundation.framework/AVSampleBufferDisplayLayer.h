@@ -4,25 +4,18 @@
 
 @class AVSampleBufferDisplayLayerInternal, NSError, NSString;
 
-@interface AVSampleBufferDisplayLayer : CALayer <AVQueuedSampleBufferRendering, AVMediaDataRequesterConsumer, AVQueuedSampleBufferRenderingInternal> {
+@interface AVSampleBufferDisplayLayer : CALayer <AVMediaDataRequesterConsumer, AVQueuedSampleBufferRendering, AVQueuedSampleBufferRenderingInternal> {
     AVSampleBufferDisplayLayerInternal *_sampleBufferDisplayLayerInternal;
 }
 
 @property(retain) struct OpaqueCMTimebase { }* controlTimebase;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSError * error;
-@property(readonly) NSError * error;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL outputObscuredDueToInsufficientExternalProtection;
 @property(getter=isReadyForMoreMediaData,readonly) BOOL readyForMoreMediaData;
-@property(getter=isReadyForMoreMediaData,readonly) BOOL readyForMoreMediaData;
 @property(readonly) int status;
-@property(readonly) int status;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(retain,readonly) struct OpaqueCMTimebase { }* timebase;
 @property(copy) NSString * videoGravity;

@@ -5,12 +5,12 @@
 @class NSArray, NSString, SKUIColorScheme, SKUISegmentedControl;
 
 @interface SKUIPillsControl : UIControl {
+    SKUIColorScheme *_colorScheme;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    SKUIColorScheme *_colorScheme;
     } _contentInset;
     int _maximumNumberOfVisiblePills;
     NSString *_moreListTitle;

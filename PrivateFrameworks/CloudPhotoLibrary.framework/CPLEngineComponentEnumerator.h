@@ -10,7 +10,11 @@
 
 @interface CPLEngineComponentEnumerator : NSObject {
     NSEnumerator *_enumerator;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
 }
 
 - (void).cxx_destruct;

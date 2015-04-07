@@ -5,13 +5,13 @@
 @class NSDate, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, RadioStation;
 
 @interface RadioStationSkipController : NSObject {
-    unsigned int _skipsEnabled : 2;
     NSObject<OS_dispatch_queue> *_accessSerialQueue;
     NSObject<OS_dispatch_source> *_availableSkipsInvalidationTimer;
     BOOL _hasValidSkipInvalidationDate;
     unsigned int _monitoringCount;
     int _numberOfAvailableSkips;
     NSDate *_skipInvalidationDate;
+    unsigned int _skipsEnabled : 2;
     RadioStation *_station;
 }
 

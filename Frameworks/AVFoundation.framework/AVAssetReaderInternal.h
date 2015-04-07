@@ -5,6 +5,13 @@
 @class AVAsset, AVWeakKeyValueObserverProxy, AVWeakReference, NSError, NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface AVAssetReaderInternal : NSObject {
+    AVWeakKeyValueObserverProxy *KVOProxy;
+    AVAsset *asset;
+    NSError *error;
+    struct OpaqueFigAssetReader { } *figAssetReader;
+    NSMutableArray *outputs;
+    int status;
+    NSObject<OS_dispatch_queue> *statusReadWriteQueue;
     struct { 
         struct { 
             long long value; 
@@ -18,13 +25,6 @@
             unsigned int flags; 
             long long epoch; 
         } duration; 
-    AVWeakKeyValueObserverProxy *KVOProxy;
-    AVAsset *asset;
-    NSError *error;
-    struct OpaqueFigAssetReader { } *figAssetReader;
-    NSMutableArray *outputs;
-    int status;
-    NSObject<OS_dispatch_queue> *statusReadWriteQueue;
     } timeRange;
     AVWeakReference *weakReference;
 }

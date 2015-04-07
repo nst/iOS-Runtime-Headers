@@ -3,6 +3,8 @@
  */
 
 @interface _UITextKitSelectionRect : UITextSelectionRect {
+    BOOL _containsEnd;
+    BOOL _containsStart;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,8 +14,6 @@
             float width; 
             float height; 
         } size; 
-    BOOL _containsEnd;
-    BOOL _containsStart;
     } _rect;
     BOOL _vertical;
 }

@@ -5,10 +5,10 @@
 @class NSArray, NSObject<WebDocumentView>, UIWebDocumentView;
 
 @interface UIWebPaginationInfo : NSObject {
+    NSObject<WebDocumentView> *_documentView;
     struct CGSize { 
         float width; 
         float height; 
-    NSObject<WebDocumentView> *_documentView;
     } _layoutSize;
     NSArray *_pageRects;
     float _scaleFactor;

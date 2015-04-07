@@ -9,13 +9,25 @@
 @class UIDocument;
 
 @interface UIDocumentErrorRecoveryAttempter : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _appModalRecoveryAttempter;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _continuerOrNil;
+
+    UIDocument *_document;
     struct { 
         unsigned int attemptedRecovery : 1; 
-    id _appModalRecoveryAttempter;
-    id _continuerOrNil;
-    UIDocument *_document;
     } _errorRecoveryAttempterFlags;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recoveryCancelerOrNil;
+
     int _silentRecoveryOptionIndex;
     id _wrappedRecoveryAttempter;
 }

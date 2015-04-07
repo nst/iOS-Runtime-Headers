@@ -5,20 +5,7 @@
 @class AVAsset, AVPlayerItem, AVPlayerItemAccessLog, MPAVController, MPAlternateTextTrack, MPAlternateTracks, MPMediaItem, MPQueueFeeder, NSArray, NSData, NSObject<OS_dispatch_queue>, NSString, NSURL, RURadioAdTrack, RadioArtworkCollection, RadioAudioClip, RadioStreamTrack, RadioTrack;
 
 @interface MPAVItem : NSObject {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     unsigned int _advancedDuringPlayback : 1;
-    unsigned int _handledFinishTime : 1;
-    unsigned int _hasPlayedThisSession : 1;
-    unsigned int _wasCountedAsSkipped : 1;
-    unsigned int _watchingAttributes : 1;
-    unsigned int _userChangedItemsDuringPlayback : 1;
-    unsigned int _lyricsAvailable : 1;
-    unsigned int _timeMarkersNeedLoading : 1;
-    unsigned int _isStreamable : 2;
     long long _albumStoreID;
     MPAlternateTracks *_alternateTracks;
     NSArray *_artworkTimeMarkers;
@@ -35,20 +22,33 @@
     float _defaultPlaybackRate;
     BOOL _didAttemptToLoadAsset;
     MPQueueFeeder *_feeder;
+    unsigned int _handledFinishTime : 1;
+    unsigned int _hasPlayedThisSession : 1;
     BOOL _hasPostedNaturalSizeChange;
     BOOL _hasValidPlayerItemDuration;
     unsigned int _indexInQueueFeeder;
     BOOL _isAssetLoaded;
+    unsigned int _isStreamable : 2;
     BOOL _limitReadAhead;
     float _loudnessInfoVolumeNormalization;
+    unsigned int _lyricsAvailable : 1;
     MPMediaItem *_mediaItem;
     MPAVController *_player;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _playerItemDuration;
     double _seekableTimeRangesCacheTime;
     float _soundCheckVolumeNormalization;
     long long _storeID;
+    unsigned int _timeMarkersNeedLoading : 1;
     unsigned int _type;
     NSArray *_urlTimeMarkers;
+    unsigned int _userChangedItemsDuringPlayback : 1;
+    unsigned int _wasCountedAsSkipped : 1;
+    unsigned int _watchingAttributes : 1;
 }
 
 @property(readonly) AVPlayerItemAccessLog * accessLog;
@@ -231,8 +231,8 @@
 - (id)init;
 - (id)initWithAsset:(id)arg1;
 - (id)initWithPlayerItem:(id)arg1;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (BOOL)isAd;
 - (BOOL)isAlwaysLive;
 - (BOOL)isAssetLoaded;

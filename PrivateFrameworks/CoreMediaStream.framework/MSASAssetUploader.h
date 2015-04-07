@@ -54,8 +54,8 @@
 - (void)setItemsInFlight:(id)arg1;
 - (void)setState:(int)arg1;
 - (int)state;
-- (void)unregisterAssetCollections:(id)arg1 completionBlock:(id)arg2;
 - (void)unregisterAssetCollections:(id)arg1;
+- (void)unregisterAssetCollections:(id)arg1 completionBlock:(id)arg2;
 - (void)workQueueCancel;
 - (void)workQueueCancelAssetCollections:(id)arg1;
 - (void)workQueueDidFinishWithItem:(id)arg1 error:(id)arg2;

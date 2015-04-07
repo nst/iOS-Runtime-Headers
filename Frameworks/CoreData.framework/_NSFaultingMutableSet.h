@@ -5,12 +5,12 @@
 @class NSManagedObject, NSPropertyDescription;
 
 @interface _NSFaultingMutableSet : NSMutableSet {
+    int _cd_rc;
     struct _NSFaultingMutableSetFlags { 
         unsigned int _isFault : 1; 
         unsigned int _mustPropagateDelete : 1; 
         unsigned int _reserved : 14; 
         unsigned int _relationship : 16; 
-    int _cd_rc;
     } _flags;
     id _realSet;
     NSManagedObject *_source;
@@ -51,8 +51,8 @@
 - (BOOL)isEqualToSet:(id)arg1;
 - (BOOL)isFault;
 - (BOOL)isSubsetOfSet:(id)arg1;
-- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
+- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)member:(id)arg1;
 - (void)minusSet:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

@@ -13,8 +13,8 @@
 @property(retain) NSString * extid;
 
 + (id)resultWithIdentifier:(id)arg1 title:(id)arg2 subtitle:(id)arg3 summary:(id)arg4 auxiliaryTitle:(id)arg5 auxiliarySubtitle:(id)arg6 actionURL:(id)arg7 searchableContent:(id)arg8;
-+ (id)resultWithRecord:(id)arg1 domain:(unsigned int)arg2 displayIdentifier:(id)arg3 query:(id)arg4;
 + (id)resultWithRecord:(id)arg1;
++ (id)resultWithRecord:(id)arg1 domain:(unsigned int)arg2 displayIdentifier:(id)arg3 query:(id)arg4;
 + (id)resultWithSearchResult:(id)arg1 identifier:(id)arg2 searchableContent:(id)arg3;
 
 - (id)content;

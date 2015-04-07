@@ -4,7 +4,7 @@
 
 @class <NSCoding>, NSData, NSDate, NSDictionary, NSError, NSString, NSURL;
 
-@interface MSAsset : NSObject <MMCSAsset, NSSecureCoding, NSCopying> {
+@interface MSAsset : NSObject <MMCSAsset, NSCopying, NSSecureCoding> {
     NSString *_GUID;
     NSString *_MMCSAccessHeader;
     NSDate *_MMCSAccessHeaderTimeStamp;
@@ -109,8 +109,8 @@
 - (void)setFileData:(id)arg1;
 - (void)setFileHash:(id)arg1;
 - (void)setGUID:(id)arg1;
-- (void)setMMCSAccessHeader:(id)arg1 andTimeStamp:(id)arg2;
 - (void)setMMCSAccessHeader:(id)arg1;
+- (void)setMMCSAccessHeader:(id)arg1 andTimeStamp:(id)arg2;
 - (void)setMMCSAccessHeaderTimeStamp:(id)arg1;
 - (void)setMMCSError:(id)arg1;
 - (void)setMMCSHash:(id)arg1;

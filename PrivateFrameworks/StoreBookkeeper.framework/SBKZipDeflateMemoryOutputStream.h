@@ -10,6 +10,9 @@
 @class NSMutableData;
 
 @interface SBKZipDeflateMemoryOutputStream : NSObject {
+    int _bufferingSize;
+    char *_outputBuffer;
+    NSMutableData *deflatedData;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -25,9 +28,6 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    int _bufferingSize;
-    char *_outputBuffer;
-    NSMutableData *deflatedData;
     } zstream;
 }
 

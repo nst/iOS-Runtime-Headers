@@ -5,10 +5,10 @@
 @class NSData, NSMutableArray;
 
 @interface CKDPRecordRetrieveChangesResponse : PBCodable <NSCopying> {
-    struct { 
-        unsigned int status : 1; 
     NSMutableArray *_changedRecords;
     NSData *_clientChangeToken;
+    struct { 
+        unsigned int status : 1; 
     } _has;
     int _status;
     NSData *_syncContinuationToken;

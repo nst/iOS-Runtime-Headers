@@ -5,13 +5,6 @@
 @class CIFilter;
 
 @interface BLAdjustmentModel : NSObject {
-    struct { 
-        int type; 
-        float x; 
-        float y; 
-        float ri; 
-        float gq; 
-        float b; 
     float _autoBlackLevelAtShadowsMaxLevel;
     float _autoShadowsMaxLevel;
     float _blackLevel;
@@ -54,6 +47,13 @@
     float _underwaterBalanceWaterBlend;
     BOOL _useVibrancy;
     CIFilter *_vibranceFilter;
+    struct { 
+        int type; 
+        float x; 
+        float y; 
+        float ri; 
+        float gq; 
+        float b; 
     } _whiteBalance;
     float _whiteLevel;
 }

@@ -5,19 +5,19 @@
 @class MDDisplayLayer, NSString, VKAnchor, VKLayoutContext;
 
 @interface VKAnchorWrapper : NSObject <VKAnchorDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        double latitude; 
-        double longitude; 
     VKAnchor *_anchor;
     MDDisplayLayer *_displayLayer;
     BOOL _followsTerrain;
     BOOL _isUpdating;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _lastCoordinate;
     VKLayoutContext *_lastLayoutContext;
     double _pointsPerMeter;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _screenPointInCanvas;
 }
 

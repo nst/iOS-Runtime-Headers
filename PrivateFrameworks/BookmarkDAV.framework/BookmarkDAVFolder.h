@@ -4,7 +4,7 @@
 
 @class CoreDAVErrorItem, NSArray, NSData, NSDictionary, NSMutableArray, NSString, NSURL;
 
-@interface BookmarkDAVFolder : CoreDAVContainer <CoreDAVModifiedContainer, CoreDAVAddedContainer, CoreDAVLeafDataPayload> {
+@interface BookmarkDAVFolder : CoreDAVContainer <CoreDAVAddedContainer, CoreDAVLeafDataPayload, CoreDAVModifiedContainer> {
     NSDictionary *_appleAttributes;
     NSString *_bulkParsedCTag;
     NSString *_bulkParsedPTag;

@@ -4,7 +4,7 @@
 
 @class AVWeakReference, NSArray, NSString, NSURL;
 
-@interface AVAssetInspectorLoader : NSObject <NSCopying, AVAsynchronousKeyValueLoading> {
+@interface AVAssetInspectorLoader : NSObject <AVAsynchronousKeyValueLoading, NSCopying> {
     AVWeakReference *_weakReference;
 }
 

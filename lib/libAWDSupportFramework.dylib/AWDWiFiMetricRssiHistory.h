@@ -4,12 +4,12 @@
 
 @interface AWDWiFiMetricRssiHistory : PBCodable <NSCopying> {
     struct { 
+        unsigned int timestamp : 1; 
+    } _has;
+    struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        unsigned int timestamp : 1; 
-    } _has;
     } _rssiHistorys;
     unsigned long long _timestamp;
 }

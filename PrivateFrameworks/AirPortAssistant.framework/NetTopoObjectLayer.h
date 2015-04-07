@@ -5,59 +5,59 @@
 @class BubbleTextLayer, NSMutableArray, NSString, NSTimer, NetTopoObjectLayer, TopoNumberBadge, TopoProgressBar, UIImage;
 
 @interface NetTopoObjectLayer : CALayer {
+    NetTopoObjectLayer *_ancestor;
+    id _associatedNode;
     struct CGSize { 
         float width; 
         float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    NetTopoObjectLayer *_ancestor;
-    id _associatedNode;
     } _boundsSizeConstraint;
     float _change;
     NSMutableArray *_children;
     unsigned int _column;
     NetTopoObjectLayer *_contourThread;
     BOOL _ghosted;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _imageCoreFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _imageFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _imageSelectionFrame;
     BOOL _isExpanded;
     BubbleTextLayer *_labelLayer;
     float _labelPinnedHeight;
-    struct CGColor { } *_labelSelectedFillColor2;
     struct CGColor { } *_labelSelectedFillColor;
+    struct CGColor { } *_labelSelectedFillColor2;
     struct CGColor { } *_labelSelectedTextColor;
     NSString *_labelString;
     struct CGColor { } *_labelUnselectedFillColor;
     struct CGColor { } *_labelUnselectedTextColor;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _layoutOrigin;
     float _layoutScale;
     float _mod;

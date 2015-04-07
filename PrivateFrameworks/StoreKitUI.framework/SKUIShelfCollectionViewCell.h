@@ -5,12 +5,12 @@
 @class NSString, UICollectionView;
 
 @interface SKUIShelfCollectionViewCell : SKUICollectionViewCell <SKUIPerspectiveView> {
+    UICollectionView *_collectionView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UICollectionView *_collectionView;
     } _contentInset;
     BOOL _rendersWithPerspective;
 }

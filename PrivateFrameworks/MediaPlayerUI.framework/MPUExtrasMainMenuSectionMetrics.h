@@ -5,9 +5,6 @@
 @class <MPUExtrasMainMenuSectionMetricsDataSource>, UIFontDescriptor;
 
 @interface MPUExtrasMainMenuSectionMetrics : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     struct CGSize { float x1; float x2; } *_calculatedSizes;
     <MPUExtrasMainMenuSectionMetricsDataSource> *_dataSource;
     float _desiredCellSpacing;
@@ -20,6 +17,9 @@
     float _minimumCellSpacing;
     UIFontDescriptor *_minimumFontDescriptor;
     BOOL _needsUpdate;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _totalFittingSize;
 }
 

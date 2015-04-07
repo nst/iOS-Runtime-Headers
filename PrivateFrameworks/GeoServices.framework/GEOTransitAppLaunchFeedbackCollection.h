@@ -5,10 +5,10 @@
 @class GEOLatLng, NSString;
 
 @interface GEOTransitAppLaunchFeedbackCollection : PBCodable <NSCopying> {
-    struct { 
-        unsigned int timestamp : 1; 
     NSString *_bundleIdentifier;
     GEOLatLng *_destination;
+    struct { 
+        unsigned int timestamp : 1; 
     } _has;
     GEOLatLng *_source;
     double _timestamp;

@@ -3,68 +3,68 @@
  */
 
 @interface TSCH3DExtrusionGeometry : TSCH3DGeometry {
+    BOOL mBeginCap;
+    int mBeginCapCount;
+    unsigned int mBeginCapOffset;
     struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { 
         struct tvec2<float> {} *__begin_; 
         struct tvec2<float> {} *__end_; 
         struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { 
             struct tvec2<float> {} *__first_; 
         } __end_cap_; 
+    } mCrossSection;
+    float mCrossSectionCreaseAngle;
+    BOOL mEndCap;
+    int mEndCapCount;
+    unsigned int mEndCapOffset;
+    struct tvec3<float> { 
+        union { 
+            float x; 
+            float r; 
+            float s; 
+        } ; 
+        union { 
+            float y; 
+            float g; 
+            float t; 
+        } ; 
+        union { 
+            float z; 
+            float b; 
+            float p; 
+        } ; 
+    } mNormalBias;
+    struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { 
+        struct tvec2<float> {} *__begin_; 
+        struct tvec2<float> {} *__end_; 
+        struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { 
+            struct tvec2<float> {} *__first_; 
+        } __end_cap_; 
+    } mScale;
     struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { 
         struct tvec3<float> {} *__begin_; 
         struct tvec3<float> {} *__end_; 
         struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { 
             struct tvec3<float> {} *__first_; 
         } __end_cap_; 
-    struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { 
-        struct tvec2<float> {} *__begin_; 
-        struct tvec2<float> {} *__end_; 
-        struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { 
-            struct tvec2<float> {} *__first_; 
-        } __end_cap_; 
-    struct tvec3<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-        union { 
-            float z; 
-            float b; 
-            float p; 
-        } ; 
-    struct tvec3<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-        union { 
-            float z; 
-            float b; 
-            float p; 
-        } ; 
-    BOOL mBeginCap;
-    int mBeginCapCount;
-    unsigned int mBeginCapOffset;
-    } mCrossSection;
-    float mCrossSectionCreaseAngle;
-    BOOL mEndCap;
-    int mEndCapCount;
-    unsigned int mEndCapOffset;
-    } mNormalBias;
-    } mScale;
     } mSpine;
     float mSpineCreaseAngle;
+    struct tvec3<float> { 
+        union { 
+            float x; 
+            float r; 
+            float s; 
+        } ; 
+        union { 
+            float y; 
+            float g; 
+            float t; 
+        } ; 
+        union { 
+            float z; 
+            float b; 
+            float p; 
+        } ; 
     } mSpineDirectionBias;
 }
 

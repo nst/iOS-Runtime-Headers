@@ -4,7 +4,7 @@
 
 @class CKContainerID, CKRecordZoneID, NSData, NSString;
 
-@interface CKRecordZone : NSObject <NSSecureCoding, NSCopying> {
+@interface CKRecordZone : NSObject <NSCopying, NSSecureCoding> {
     long long _assetQuotaUsage;
     unsigned int _capabilities;
     NSData *_clientChangeToken;

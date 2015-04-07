@@ -5,16 +5,16 @@
 @class NSString, SiriUIContentButton, SiriUIKeyline, SiriUISnippetViewController, UICollectionReusableView<SiriUIReusableView>, UILabel, UIView;
 
 @interface SiriUISnippetControllerCell : UICollectionViewCell <SiriUIReusableView> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     SiriUIKeyline *_bottomKeyline;
     UILabel *_cancelledLabel;
     UICollectionReusableView<SiriUIReusableView> *_footerView;
     UICollectionReusableView<SiriUIReusableView> *_headerView;
     UIView *_snippetBackgroundView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _snippetEdgeInsets;
     SiriUIContentButton *_snippetPunchOutButton;
     SiriUISnippetViewController *_snippetViewController;

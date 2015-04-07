@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface GKObserverTrampoline : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
     int _cancellationPredicate;
     NSString *_keyPath;
     id _observee;

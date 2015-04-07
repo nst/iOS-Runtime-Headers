@@ -18,8 +18,8 @@
 + (id)initForKeys:(id)arg1;
 + (id)initWithCapacity:(unsigned int)arg1;
 + (id)initWithCoder:(id)arg1;
-+ (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 + (id)initWithDictionary:(id)arg1;
++ (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 + (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
 + (id)initWithSearchStrategy:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -41,8 +41,8 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)getKeys:(id*)arg1;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (void)getObjects:(id*)arg1;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (BOOL)isEqualToDictionary:(id)arg1;
 - (id)keyEnumerator;
 - (const id*)knownKeyValuesPointer;

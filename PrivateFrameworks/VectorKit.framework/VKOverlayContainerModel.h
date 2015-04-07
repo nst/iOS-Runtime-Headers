@@ -9,17 +9,9 @@
 
 @class <VKOverlayContainerDelegate>, <VKOverlayContainerRouteDelegate>, <VKRouteMatchedAnnotationPresentation>, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, VKSkyModel, VKStyleManager;
 
-@interface VKOverlayContainerModel : VKMapTileModel <VKRouteMatchedAnnotationPresentationObserver, VKMapLayer, VKStyleManagerObserver> {
-    struct { 
-        struct VKPoint { 
-            double x; 
-            double y; 
-            double z; 
-        } position; 
-        double course; 
-        BOOL onRoute; 
+@interface VKOverlayContainerModel : VKMapTileModel <VKMapLayer, VKRouteMatchedAnnotationPresentationObserver, VKStyleManagerObserver> {
     unsigned int _applicationState;
-    struct ClearItem { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; boolx3; float x4; unsigned char x5; int x6; unsigned char x7; struct Box<unsigned int, 2> { struct Matrix<unsigned int, 2, 1> { unsigned int x_1_2_1[2]; } x_8_1_1; struct Matrix<unsigned int, 2, 1> { unsigned int x_2_2_1[2]; } x_8_1_2; } x8; } *_clearItem;
+    struct ClearItem { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; bool x3; float x4; unsigned char x5; int x6; unsigned char x7; struct Box<unsigned int, 2> { struct Matrix<unsigned int, 2, 1> { unsigned int x_1_2_1[2]; } x_8_1_1; struct Matrix<unsigned int, 2, 1> { unsigned int x_2_2_1[2]; } x_8_1_2; } x8; } *_clearItem;
     <VKOverlayContainerDelegate> *_delegate;
     BOOL _isShowingRouteInStandardMode;
     NSMutableArray *_overlayPainters;
@@ -28,6 +20,14 @@
     NSMutableSet *_overlaysToRemove;
     NSMutableSet *_persistentOverlays;
     NSMapTable *_persistentOverlaysToPainters;
+    struct { 
+        struct VKPoint { 
+            double x; 
+            double y; 
+            double z; 
+        } position; 
+        double course; 
+        BOOL onRoute; 
     } _puckPosition;
     <VKOverlayContainerRouteDelegate> *_routeDelegate;
     <VKRouteMatchedAnnotationPresentation> *_routeLineSplitAnnotation;

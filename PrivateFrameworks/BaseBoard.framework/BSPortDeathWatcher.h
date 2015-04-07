@@ -9,7 +9,11 @@
 @class BSDispatchSource, BSMachSendRight, NSObject<OS_dispatch_queue>;
 
 @interface BSPortDeathWatcher : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSObject<OS_dispatch_queue> *_queue;
     BSMachSendRight *_sendRight;
     BSDispatchSource *_source;

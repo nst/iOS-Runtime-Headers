@@ -5,7 +5,7 @@
 @interface TSPAlternateArchiver : TSPArchiverBase {
 }
 
-- (id)initWithObject:(id)arg1 messageVersion:(unsigned long long)arg2;
 - (id)initWithObject:(id)arg1;
+- (id)initWithObject:(id)arg1 messageVersion:(unsigned long long)arg2;
 
 @end

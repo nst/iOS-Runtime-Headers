@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@interface SUDownloadMetadata : NSObject <NSSecureCoding, NSCopying> {
+@interface SUDownloadMetadata : NSObject <NSCopying, NSSecureCoding> {
     int _activeDownloadPolicyType;
     BOOL _autoDownload;
     int _downloadFeeAgreementStatus;

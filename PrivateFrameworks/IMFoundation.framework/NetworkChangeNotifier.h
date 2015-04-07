@@ -4,7 +4,7 @@
 
 @class IMConnectionMonitor, NSArray, NSString;
 
-@interface NetworkChangeNotifier : NSObject <IMSystemMonitorListener, IMConnectionMonitorDelegate> {
+@interface NetworkChangeNotifier : NSObject <IMConnectionMonitorDelegate, IMSystemMonitorListener> {
     IMConnectionMonitor *_connectionMonitor;
     BOOL _lastPostedNetworkUp;
     NSString *_myIP;

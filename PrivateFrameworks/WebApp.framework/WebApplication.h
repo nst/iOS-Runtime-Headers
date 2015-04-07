@@ -23,7 +23,7 @@
 - (BOOL)applicationSuspendWithSettings:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)bringToFrontWebAppControllerForWebAppURL:(id)arg1;
-- (id)nameOfDefaultImageToUpdateAtSuspension:(int)arg1;
 - (id)nameOfDefaultImageToUpdateAtSuspension;
+- (id)nameOfDefaultImageToUpdateAtSuspension:(int)arg1;
 
 @end

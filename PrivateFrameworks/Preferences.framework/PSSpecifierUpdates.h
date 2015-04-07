@@ -32,14 +32,14 @@
 - (id)_init;
 - (id)_initForCopyWithOriginalSpecifiers:(id)arg1 currentSpecifiers:(id)arg2 updates:(id)arg3;
 - (void)_operationFailed:(id)arg1 reason:(id)arg2;
+- (BOOL)appendSpecifier:(id)arg1;
 - (BOOL)appendSpecifier:(id)arg1 toGroup:(id)arg2;
 - (BOOL)appendSpecifier:(id)arg1 toGroupAtGroupIndex:(unsigned int)arg2;
 - (BOOL)appendSpecifier:(id)arg1 toGroupWithID:(id)arg2;
-- (BOOL)appendSpecifier:(id)arg1;
+- (BOOL)appendSpecifiers:(id)arg1;
 - (BOOL)appendSpecifiers:(id)arg1 toGroup:(id)arg2;
 - (BOOL)appendSpecifiers:(id)arg1 toGroupAtGroupIndex:(unsigned int)arg2;
 - (BOOL)appendSpecifiers:(id)arg1 toGroupWithID:(id)arg2;
-- (BOOL)appendSpecifiers:(id)arg1;
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentSpecifiers;
@@ -50,8 +50,8 @@
 - (unsigned int)indexOfSpecifier:(id)arg1;
 - (unsigned int)indexOfSpecifierWithID:(id)arg1;
 - (id)init;
-- (id)initWithSpecifiers:(id)arg1 applyUpdates:(id)arg2;
 - (id)initWithSpecifiers:(id)arg1;
+- (id)initWithSpecifiers:(id)arg1 applyUpdates:(id)arg2;
 - (BOOL)insertContiguousSpecifiers:(id)arg1 afterSpecifier:(id)arg2;
 - (BOOL)insertContiguousSpecifiers:(id)arg1 afterSpecifierWithID:(id)arg2;
 - (BOOL)insertContiguousSpecifiers:(id)arg1 atIndex:(unsigned int)arg2;

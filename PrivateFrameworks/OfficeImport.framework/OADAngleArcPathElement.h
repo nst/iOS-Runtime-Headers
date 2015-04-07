@@ -3,34 +3,34 @@
  */
 
 @interface OADAngleArcPathElement : OADPathElement {
-    struct OADAdjustPoint { 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } x; 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } y; 
-    struct OADAdjustPoint { 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } x; 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } y; 
-    struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
-        int value; 
     struct OADAdjustCoord { 
         BOOL isFormulaResult; 
         int value; 
     } mAngleLength;
+    struct OADAdjustPoint { 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } x; 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } y; 
     } mCenter;
     BOOL mConnectedToPrevious;
+    struct OADAdjustPoint { 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } x; 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } y; 
     } mSemiaxes;
+    struct OADAdjustCoord { 
+        BOOL isFormulaResult; 
+        int value; 
     } mStartAngle;
 }
 

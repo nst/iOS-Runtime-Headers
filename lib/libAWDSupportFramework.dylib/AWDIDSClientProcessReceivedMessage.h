@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface AWDIDSClientProcessReceivedMessage : PBCodable <NSCopying> {
+    unsigned long long _deltaTime;
     struct { 
         unsigned int deltaTime : 1; 
         unsigned int payloadSize : 1; 
@@ -12,7 +13,6 @@
         unsigned int qos : 1; 
         unsigned int threadPriority : 1; 
         unsigned int timestamp : 1; 
-    unsigned long long _deltaTime;
     } _has;
     unsigned long long _payloadSize;
     unsigned long long _priority;

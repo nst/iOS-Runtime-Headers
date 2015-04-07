@@ -5,25 +5,6 @@
 @class UIColor, UILabel, UIToolbarButtonBadge, UIView, _UIPressedIndicatorView;
 
 @interface UIToolbarButton : UIControl {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -37,9 +18,28 @@
     BOOL _barHeight;
     int _barStyle;
     BOOL _bezel;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _glowAdjust;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _hitRect;
     UIView *_info;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _infoInsets;
     BOOL _isAnimatedTrashButton;
     BOOL _isInTopBar;
@@ -75,8 +75,8 @@
 - (void)_adjustPushButtonForMiniBar:(BOOL)arg1 isChangingBarHeight:(BOOL)arg2;
 - (void)_adjustToolbarButtonInfo;
 - (void)_adjustToolbarButtonInfoTintColorHasChanged:(BOOL)arg1;
-- (void)_animateImage:(float)arg1 withButtonBar:(id)arg2 target:(id)arg3 didFinishSelector:(SEL)arg4;
 - (void)_animateImage:(float)arg1 withButtonBar:(id)arg2;
+- (void)_animateImage:(float)arg1 withButtonBar:(id)arg2 target:(id)arg3 didFinishSelector:(SEL)arg4;
 - (Class)_appearanceGuideClass;
 - (void)_applyBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (id)_backgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;

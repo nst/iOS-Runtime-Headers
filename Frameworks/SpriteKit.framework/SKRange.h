@@ -11,8 +11,8 @@
 @property float upperLimit;
 
 + (id)rangeWithConstantValue:(float)arg1;
-+ (id)rangeWithLowerLimit:(float)arg1 upperLimit:(float)arg2;
 + (id)rangeWithLowerLimit:(float)arg1;
++ (id)rangeWithLowerLimit:(float)arg1 upperLimit:(float)arg2;
 + (id)rangeWithNoLimits;
 + (id)rangeWithUpperLimit:(float)arg1;
 + (id)rangeWithValue:(float)arg1 variance:(float)arg2;

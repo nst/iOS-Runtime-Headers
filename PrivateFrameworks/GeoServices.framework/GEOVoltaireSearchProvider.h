@@ -10,8 +10,16 @@
 
 @interface GEOVoltaireSearchProvider : GEOSearchProvider <PBRequesterDelegate> {
     BOOL _cancelled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _finished;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _refinement;
+
     GEORequester *_requester;
 }
 

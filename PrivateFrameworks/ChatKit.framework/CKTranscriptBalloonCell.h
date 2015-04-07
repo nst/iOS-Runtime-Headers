@@ -5,13 +5,13 @@
 @class CKBalloonView, NSAttributedString, UILabel;
 
 @interface CKTranscriptBalloonCell : CKTranscriptMessageCell {
-    struct CGSize { 
-        float width; 
-        float height; 
     CKBalloonView *_balloonView;
     UILabel *_drawerLabel;
     NSAttributedString *_drawerText;
     BOOL _drawerTextChanged;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _drawerTextSize;
     BOOL _drawerWasVisible;
 }

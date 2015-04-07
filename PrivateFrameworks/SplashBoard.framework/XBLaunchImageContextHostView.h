@@ -10,7 +10,11 @@
 
 @interface XBLaunchImageContextHostView : UIView {
     NSString *_bundleID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _captureBlock;
+
     CALayerHost *_contentLayer;
     id _delegate;
     float _remoteScale;

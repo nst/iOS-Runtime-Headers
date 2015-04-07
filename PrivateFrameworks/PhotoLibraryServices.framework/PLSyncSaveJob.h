@@ -11,7 +11,11 @@
 @interface PLSyncSaveJob : NSObject {
     NSDate *_cleanupBeforeDate;
     BOOL _cleanupSyncState;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _finishedBlock;
+
     NSSet *albumURIs;
     NSDate *creationDate;
     NSArray *facesInfo;

@@ -12,7 +12,11 @@
     PUAlbumListViewController *__albumListViewController;
     PUAlbumPickerSessionInfo *_albumPickerSessionInfo;
     PHCollectionList *_collectionList;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     UINavigationController *_contentNavigationController;
     PUAlbumPickerViewControllerSpec *_spec;
 }

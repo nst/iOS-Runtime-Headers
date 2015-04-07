@@ -4,7 +4,7 @@
 
 @class <CKCameraSheetViewControllerDelegate>, ALAssetsLibrary, CKDispatchQueue, CKTranscriptController, NSArray, NSCache, NSMutableArray, NSObject<OS_dispatch_group>, NSString, UICollectionView, UITableView, UITapGestureRecognizer, UIView, UIWindow;
 
-@interface CKPhotoPickerSheetViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate> {
+@interface CKPhotoPickerSheetViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSArray *_assets;
     UIView *_bgDimmingView;
     UITableView *_buttonsTableView;

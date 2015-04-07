@@ -5,9 +5,9 @@
 @class GEOLatLng, GEOMapItemStorage, NSString, PBUnknownFields;
 
 @interface MSPPlaceBookmark : PBCodable <NSCopying> {
+    GEOLatLng *_droppedPinCoordinate;
     struct { 
         unsigned int origin : 1; 
-    GEOLatLng *_droppedPinCoordinate;
     } _has;
     GEOMapItemStorage *_mapItemStorage;
     int _origin;

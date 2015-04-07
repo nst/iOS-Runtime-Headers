@@ -5,6 +5,7 @@
 @class NSDictionary, NSString;
 
 @interface WKInterfaceDevice : NSObject {
+    NSString *_preferredContentSizeCategory;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    NSString *_preferredContentSizeCategory;
     } _screenBounds;
     float _screenScale;
 }

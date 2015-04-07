@@ -13,6 +13,7 @@
         unsigned int _hasSingleRange : 1; 
         unsigned int _cacheValid : 1; 
         unsigned int _reservedArrayBinderController : 29; 
+    } _indexSetFlags;
     union { 
         struct { 
             struct _NSRange { 
@@ -24,21 +25,19 @@
             void *_data; 
             void *_reserved; 
         } _multipleRanges; 
-    } _indexSetFlags;
     } _internal;
 }
 
 @property(readonly) unsigned int count;
 @property(readonly) unsigned int firstIndex;
 @property(readonly) BOOL isSingleContiguousRange;
-@property(readonly) BOOL isSingleContiguousRange;
 @property(readonly) unsigned int lastIndex;
 
 + (id)_gkIndexSetWithArray:(id)arg1;
 + (id)indexSet;
 + (id)indexSetWithIndex:(unsigned int)arg1;
-+ (id)indexSetWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
 + (id)indexSetWithIndexes:(unsigned int)arg1;
++ (id)indexSetWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
 + (id)indexSetWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
 + (id)indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;

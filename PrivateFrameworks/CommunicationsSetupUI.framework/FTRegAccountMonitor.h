@@ -5,10 +5,10 @@
 @class FTRegConnectionHandler, IMServiceImpl, NSArray;
 
 @interface FTRegAccountMonitor : NSObject {
-    struct { 
-        unsigned int listeningForNotifications : 1; 
     NSArray *_accounts;
     FTRegConnectionHandler *_connectionHandler;
+    struct { 
+        unsigned int listeningForNotifications : 1; 
     } _monitorFlags;
     IMServiceImpl *_service;
     int _serviceType;

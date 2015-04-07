@@ -29,8 +29,8 @@
 - (void)_queue_handleSceneActions:(id)arg1;
 - (void)_queue_handleSceneUpdate:(id)arg1;
 - (void)_queue_handleTransactionBookEnd;
-- (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2 withResponseEvent:(id)arg3 ofType:(Class)arg4;
 - (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2;
+- (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2 withResponseEvent:(id)arg3 ofType:(Class)arg4;
 - (void)_queue_sendReplyForMessage:(id)arg1 withEvent:(id)arg2;
 - (id)_queue_workspaceEventFromMessage:(id)arg1 ofType:(Class)arg2;
 - (void)_sendMessage:(int)arg1 withEvent:(id)arg2;

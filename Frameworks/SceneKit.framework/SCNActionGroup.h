@@ -15,7 +15,10 @@
 
 @interface SCNActionGroup : SCNAction {
     NSArray *_actions;
-    struct SCNCActionGroup { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; boolx6; double x7; double x8; float x9; float x10; double x11; boolx12; boolx13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; struct list<SCNCAction *, std::__1::allocator<SCNCAction *> > { struct __list_node_base<SCNCAction *, void *> { struct __list_node<SCNCAction *, void *> {} *x_1_2_1; struct __list_node<SCNCAction *, void *> {} *x_1_2_2; } x_22_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SCNCAction *, void *> > > { unsigned long x_2_2_1; } x_22_1_2; } x22; } *_mycaction;
+
+  /* Error parsing encoded ivar type info: ^{SCNCActionGroup=^^?f@?@BddffdBB@?^{__CFString}iffff{list<SCNCAction *, std::__1::allocator<SCNCAction *> >={__list_node_base<SCNCAction *, void *>=^{__list_node<SCNCAction *, void *>}^{__list_node<SCNCAction *, void *>}}{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SCNCAction *, void *> > >=L}}} */
+    struct SCNCActionGroup { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; bool x6; double x7; double x8; float x9; float x10; double x11; bool x12; bool x13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; struct list<SCNCAction *, std::__1::allocator<SCNCAction *> > { struct __list_node_base<SCNCAction *, void *> { struct __list_node<SCNCAction *, void *> {} *x_1_2_1; struct __list_node<SCNCAction *, void *> {} *x_1_2_2; } x_22_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SCNCAction *, void *> > > { unsigned long x_2_2_1; } x_22_1_2; } x22; } *_mycaction;
+
 }
 
 + (id)groupWithActions:(id)arg1;

@@ -5,6 +5,10 @@
 @class MIPMultiverseIdentifier, MIPSmartPlaylistInfo, NSMutableArray, NSString;
 
 @interface MIPPlaylist : PBCodable <NSCopying> {
+    NSMutableArray *_childIdentifiers;
+    NSString *_cloudGlobalId;
+    int _distinguishedKind;
+    MIPMultiverseIdentifier *_geniusSeedTrackIdentifier;
     struct { 
         unsigned int storeId : 1; 
         unsigned int distinguishedKind : 1; 
@@ -12,10 +16,6 @@
         unsigned int type : 1; 
         unsigned int hidden : 1; 
         unsigned int reversedSorting : 1; 
-    NSMutableArray *_childIdentifiers;
-    NSString *_cloudGlobalId;
-    int _distinguishedKind;
-    MIPMultiverseIdentifier *_geniusSeedTrackIdentifier;
     } _has;
     BOOL _hidden;
     NSMutableArray *_items;

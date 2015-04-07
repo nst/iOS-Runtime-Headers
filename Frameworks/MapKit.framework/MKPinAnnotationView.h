@@ -75,8 +75,8 @@
 - (void)setAnimatesDrop:(BOOL)arg1;
 - (void)setAnnotation:(id)arg1;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setDragState:(unsigned int)arg1;
+- (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setPinColor:(unsigned int)arg1;
 

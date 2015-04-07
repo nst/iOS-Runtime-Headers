@@ -5,9 +5,9 @@
 @class <MFGuaranteedCollectingDataConsumer>, NSData, NSString;
 
 @interface MFPartialNetworkDataConsumer : NSObject <MFDataConsumer> {
-    unsigned int _seenNetworkLineEndings : 1;
     unsigned int _length;
     <MFGuaranteedCollectingDataConsumer> *_rawDataConsumer;
+    unsigned int _seenNetworkLineEndings : 1;
     NSData *_strippedData;
 }
 

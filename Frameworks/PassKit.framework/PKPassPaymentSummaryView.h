@@ -4,7 +4,7 @@
 
 @class <PKPassPaymentSummaryViewDelegate>, NSNumberFormatter, NSString, PKPaymentMessage, PKPaymentPass, PKPaymentTransaction, UITableView;
 
-@interface PKPassPaymentSummaryView : UIView <UITableViewDataSource, UITableViewDelegate, PKPassPaymentSummaryCellDelegate> {
+@interface PKPassPaymentSummaryView : UIView <PKPassPaymentSummaryCellDelegate, UITableViewDataSource, UITableViewDelegate> {
     <PKPassPaymentSummaryViewDelegate> *_delegate;
     PKPaymentMessage *_message;
     NSNumberFormatter *_numberFormatter;
@@ -43,11 +43,11 @@
 - (id)pass;
 - (void)paymentSummaryCellDetailsButtonPressed:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMessage:(id)arg1 animated:(BOOL)arg2;
 - (void)setMessage:(id)arg1;
+- (void)setMessage:(id)arg1 animated:(BOOL)arg2;
 - (void)setPass:(id)arg1;
-- (void)setTransaction:(id)arg1 animated:(BOOL)arg2;
 - (void)setTransaction:(id)arg1;
+- (void)setTransaction:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;

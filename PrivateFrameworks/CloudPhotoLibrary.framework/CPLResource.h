@@ -4,7 +4,7 @@
 
 @class CPLResourceIdentity, NSString;
 
-@interface CPLResource : NSObject <NSSecureCoding, NSCopying> {
+@interface CPLResource : NSObject <NSCopying, NSSecureCoding> {
     BOOL _generateDerivative;
     CPLResourceIdentity *_identity;
     NSString *_itemIdentifier;
@@ -32,8 +32,8 @@
 - (unsigned int)hash;
 - (id)identity;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithResourceIdentity:(id)arg1 itemIdentifier:(id)arg2 resourceType:(unsigned int)arg3;
 - (id)initWithResourceIdentity:(id)arg1 itemIdentifier:(id)arg2;
+- (id)initWithResourceIdentity:(id)arg1 itemIdentifier:(id)arg2 resourceType:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)itemIdentifier;
 - (unsigned int)maxPixelSizeForPhotoResource;

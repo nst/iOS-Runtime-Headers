@@ -20,8 +20,8 @@
 - (id)description;
 - (id)destinationURL;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 andOverwrite:(int)arg3;
 - (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2;
+- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 andOverwrite:(int)arg3;
 - (id)initWithURL:(id)arg1;
 - (int)overwrite;
 - (id)requestBody;

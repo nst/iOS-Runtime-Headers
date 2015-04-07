@@ -12,10 +12,10 @@
 @property double frameInterval;
 @property(retain) CAMediaTimingFunction * timingFunction;
 
-+ (id)settingsWithDuration:(double)arg1 delay:(double)arg2 timingFunction:(id)arg3;
-+ (id)settingsWithDuration:(double)arg1 delay:(double)arg2;
-+ (id)settingsWithDuration:(double)arg1 timingFunction:(id)arg2;
 + (id)settingsWithDuration:(double)arg1;
++ (id)settingsWithDuration:(double)arg1 delay:(double)arg2;
++ (id)settingsWithDuration:(double)arg1 delay:(double)arg2 timingFunction:(id)arg3;
++ (id)settingsWithDuration:(double)arg1 timingFunction:(id)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setDelay:(double)arg1;

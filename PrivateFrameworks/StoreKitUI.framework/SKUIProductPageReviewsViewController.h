@@ -4,7 +4,7 @@
 
 @class <SKUIProductPageChildViewControllerDelegate>, NSMutableIndexSet, NSOperationQueue, NSString, SKComposeReviewViewController, SKUIClientContext, SKUIFacebookLikeStatus, SKUIIPadCustomerReviewsHeaderView, SKUILayoutCache, SKUIProductPage, SKUIProductPageHeaderViewController, SKUIProductPageTableView, SKUIReviewList, SKUIReviewsFacebookViewController, SKUIReviewsHistogramViewController, SKUIStarRatingQueue, SSVLoadURLOperation, UIScrollView;
 
-@interface SKUIProductPageReviewsViewController : UIViewController <SKUILayoutCacheDelegate, SKComposeReviewDelegate, SKUIReviewsFacebookViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, SKUIProductPageChildViewController> {
+@interface SKUIProductPageReviewsViewController : UIViewController <SKComposeReviewDelegate, SKUILayoutCacheDelegate, SKUIProductPageChildViewController, SKUIReviewsFacebookViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     BOOL _askPermission;
     SKUIClientContext *_clientContext;
     SKComposeReviewViewController *_composeViewController;

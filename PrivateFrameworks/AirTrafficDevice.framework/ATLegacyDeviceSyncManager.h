@@ -8,12 +8,16 @@
 
 @class ATAsset, ATClientController, ATLegacyAssetLink, ATLegacyMessageLink, ATSession, ATUserDefaults, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface ATLegacyDeviceSyncManager : ATDeviceSyncManager <ATEnvironmentMonitorObserver, ATSessionObserver, ATLegacyAssetLinkProgressDelegate> {
+@interface ATLegacyDeviceSyncManager : ATDeviceSyncManager <ATEnvironmentMonitorObserver, ATLegacyAssetLinkProgressDelegate, ATSessionObserver> {
     ATLegacyAssetLink *_assetLink;
     BOOL _automaticSync;
     struct CacheDeleteToken { } *_cacheDeleteToken;
     ATClientController *_clientController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _clientProgressCallback;
+
     ATAsset *_currentAsset;
     NSString *_currentDataclass;
     ATLegacyMessageLink *_currentMessageLink;

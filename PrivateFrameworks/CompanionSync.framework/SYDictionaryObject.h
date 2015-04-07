@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSString;
 
-@interface SYDictionaryObject : NSObject <SYObject, NSSecureCoding> {
+@interface SYDictionaryObject : NSObject <NSSecureCoding, SYObject> {
     NSDictionary *_properties;
 }
 

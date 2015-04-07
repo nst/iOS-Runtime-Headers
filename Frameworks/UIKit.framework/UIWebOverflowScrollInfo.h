@@ -5,11 +5,11 @@
 @class DOMNode;
 
 @interface UIWebOverflowScrollInfo : NSObject {
+    BOOL _isUserScroll;
+    DOMNode *_node;
     struct CGPoint { 
         float x; 
         float y; 
-    BOOL _isUserScroll;
-    DOMNode *_node;
     } _offset;
 }
 

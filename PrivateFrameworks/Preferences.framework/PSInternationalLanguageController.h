@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, PSLanguage, PSLanguageSelector, PSLocaleSelector, UISearchBar, UITableView, UIView;
 
-@interface PSInternationalLanguageController : PSViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> {
+@interface PSInternationalLanguageController : PSViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
     PSLanguage *_checkedLanguage;
     UIView *_contentView;
     NSArray *_deviceLanguages;

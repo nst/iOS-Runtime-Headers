@@ -9,20 +9,20 @@
         unsigned long long *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int pinType : 1; 
-        unsigned int placeType : 1; 
     } _businessIds;
     GEOClientCapabilities *_clientCapabilities;
     NSString *_countryCode;
     NSData *_devicePushToken;
+    struct { 
+        unsigned int pinType : 1; 
+        unsigned int placeType : 1; 
     } _has;
     int _pinType;
     int _placeType;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _problemTypes;
 }
 

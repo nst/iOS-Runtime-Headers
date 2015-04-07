@@ -5,9 +5,9 @@
 @class BLTPBImage, NSString;
 
 @interface BLTPBAppearance : PBCodable <NSCopying> {
+    BOOL _destructive;
     struct { 
         unsigned int destructive : 1; 
-    BOOL _destructive;
     } _has;
     BLTPBImage *_image;
     NSString *_title;

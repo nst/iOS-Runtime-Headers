@@ -9,7 +9,11 @@
 @class <BRItemNotificationReceiving>, BRCItemID, BRCNotificationGatherer, BRCNotificationManager, BRCRelativePath, BRCXPCClient, BRNotificationQueue, NSMutableSet, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 @interface BRCNotificationPipe : NSObject <BRItemNotificationSending> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _boostReply;
+
     BRCXPCClient *_client;
     NSMutableSet *_externalContainers;
     BRCNotificationGatherer *_gatherer;

@@ -5,6 +5,8 @@
 @class NSArray, NSString, UIColor;
 
 @interface PTLegibleTextAssistantSettings : _UISettings {
+    BOOL _drawingShadowDrawsText;
+    UIColor *_foregroundColor;
     struct { 
         float meanRed; 
         float meanGreen; 
@@ -15,8 +17,6 @@
         float meanAlpha; 
         float standardDeviationBrightness; 
         float standardDeviationSaturation; 
-    BOOL _drawingShadowDrawsText;
-    UIColor *_foregroundColor;
     } _imageStatistics;
     NSArray *_shadowAlphas;
     NSString *_shadowCompositingFilterName;

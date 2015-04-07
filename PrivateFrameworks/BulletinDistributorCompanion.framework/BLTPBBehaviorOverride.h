@@ -5,12 +5,12 @@
 @class NSMutableArray;
 
 @interface BLTPBBehaviorOverride : PBCodable <NSCopying> {
-    struct { 
-        unsigned int behaviorOverrideMode : 1; 
-        unsigned int behaviorOverrideType : 1; 
     unsigned long long _behaviorOverrideMode;
     unsigned long long _behaviorOverrideType;
     NSMutableArray *_effectiveIntervals;
+    struct { 
+        unsigned int behaviorOverrideMode : 1; 
+        unsigned int behaviorOverrideType : 1; 
     } _has;
 }
 

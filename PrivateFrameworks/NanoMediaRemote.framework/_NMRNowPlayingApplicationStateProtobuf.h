@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface _NMRNowPlayingApplicationStateProtobuf : PBCodable <NSCopying> {
+    NSString *_bundleIdentifier;
     struct { 
         unsigned int playbackState : 1; 
-    NSString *_bundleIdentifier;
     } _has;
     NSString *_localizedDisplayName;
     unsigned int _playbackState;

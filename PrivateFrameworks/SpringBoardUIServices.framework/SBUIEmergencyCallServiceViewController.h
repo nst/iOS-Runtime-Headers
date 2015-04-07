@@ -15,8 +15,8 @@
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
-- (void)backgroundStyle:(id)arg1;
 - (int)backgroundStyle;
+- (void)backgroundStyle:(id)arg1;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)noteTintColorForBackgroundStyleChanged:(id)arg1;

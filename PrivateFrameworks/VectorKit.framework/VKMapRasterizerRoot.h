@@ -19,7 +19,7 @@
         struct Matrix<float, 4, 1> { 
             float _e[4]; 
         } color; 
-        boolclearDepthBuffer; 
+        bool clearDepthBuffer; 
         float depth; 
         unsigned char clearStencilBuffer; 
         int stencil; 

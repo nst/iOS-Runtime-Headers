@@ -20,9 +20,17 @@
     unsigned long _streamOutputLength;
     long long _streamOutputOffset;
     <TSUStreamReadChannel> *_streamReadChannel;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _streamReadChannelBlock;
+
     NSObject<OS_dispatch_queue> *_streamReadChannelOutputQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _streamReadChannelSourceHandler;
+
     NSObject<OS_dispatch_queue> *_streamReadChannelSourceQueue;
 }
 

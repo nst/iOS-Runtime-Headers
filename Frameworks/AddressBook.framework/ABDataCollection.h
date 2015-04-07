@@ -6,7 +6,13 @@
 
 @interface ABDataCollection : NSObject {
     void *_addressBook;
+    bool _isLocalSourceOnly;
+    bool _isLocalSourceRemaining;
+    bool _isMeCardHomeAddressSet;
+    bool _isMeCardSet;
+    bool _isMeCardWorkAddressSet;
     NSMutableDictionary *_propertyCountForRecordID;
+    bool _runningUnitTests;
     NSCountedSet *_sourceTypeScalarKeys;
     int _totalContacts;
     int _totalContactsWithAnniversaries;
@@ -14,12 +20,6 @@
     int _totalContactsWithPhotos;
     int _totalContactsWithYearOnBirthday;
     int _totalGroups;
-    bool_isLocalSourceOnly;
-    bool_isLocalSourceRemaining;
-    bool_isMeCardHomeAddressSet;
-    bool_isMeCardSet;
-    bool_isMeCardWorkAddressSet;
-    bool_runningUnitTests;
 }
 
 @property bool isLocalSourceOnly;

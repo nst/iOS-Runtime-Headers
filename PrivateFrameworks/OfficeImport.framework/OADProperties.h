@@ -27,7 +27,7 @@
 - (void)removeUnnecessaryOverrides;
 - (void)setMerged:(BOOL)arg1;
 - (void)setMergedWithParent:(BOOL)arg1;
-- (void)setParent:(id)arg1 myRestrictedClass:(Class)arg2;
 - (void)setParent:(id)arg1;
+- (void)setParent:(id)arg1 myRestrictedClass:(Class)arg2;
 
 @end

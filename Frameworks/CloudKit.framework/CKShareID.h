@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CKShareID : NSObject <NSSecureCoding, NSCopying> {
+@interface CKShareID : NSObject <NSCopying, NSSecureCoding> {
     NSString *_ownerName;
     NSString *_shareName;
 }

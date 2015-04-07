@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface AWDFaceTimeCallStarted : PBCodable <NSCopying> {
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int isCallUpgrade : 1; 
@@ -12,7 +13,6 @@
         unsigned int isToPhoneNumber : 1; 
         unsigned int isVideo : 1; 
         unsigned int onLockScreen : 1; 
-    NSString *_guid;
     } _has;
     unsigned int _isCallUpgrade;
     unsigned int _isToEmail;

@@ -5,153 +5,59 @@
 @class GLKEffectPropertyTransform;
 
 @interface GLKEffectPropertyLight : GLKEffectProperty {
-    union _GLKVector4 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-            float q; 
-        } ; 
-        float v[4]; 
-    union _GLKVector4 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-            float q; 
-        } ; 
-        float v[4]; 
-    union _GLKVector4 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-            float q; 
-        } ; 
-        float v[4]; 
-    union _GLKVector4 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-            float q; 
-        } ; 
-        float v[4]; 
-    union _GLKVector3 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-        } ; 
-        float v[3]; 
-    union _GLKVector3 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-        } ; 
-        float v[3]; 
-    union _GLKVector4 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-            float q; 
-        } ; 
-        float v[4]; 
-    struct GLKBigInt_s { 
-        unsigned long long n0; 
-        unsigned long long n1; 
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 
     } _allFshMasks;
+    struct GLKBigInt_s { 
+        unsigned long long n0; 
+        unsigned long long n1; 
     } _allVshMasks;
+    union _GLKVector4 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+            float q; 
+        } ; 
+        float v[4]; 
     } _ambientColor;
     int _ambientLoc;
     int _ambientTermLoc;
     float _constantAttenuation;
     int _constantAttenuationLoc;
+    union _GLKVector4 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+            float q; 
+        } ; 
+        float v[4]; 
     } _diffuseColor;
     int _diffuseLoc;
     unsigned long long *_effectDirtyUniforms;
@@ -162,19 +68,113 @@
     float _linearAttenuation;
     int _linearAttenuationLoc;
     int _normalizeLoc;
+    union _GLKVector3 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+        } ; 
+        float v[3]; 
     } _normalizedSpotDirectionEye;
     int _normalizedSpotDirectionEyeLoc;
+    union _GLKVector4 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+            float q; 
+        } ; 
+        float v[4]; 
     } _position;
+    union _GLKVector4 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+            float q; 
+        } ; 
+        float v[4]; 
     } _positionEye;
     int _positionEyeLoc;
     unsigned char _positionEyeStale;
     float _quadraticAttenuation;
     int _quadraticAttenuationLoc;
+    union _GLKVector4 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+            float q; 
+        } ; 
+        float v[4]; 
     } _specularColor;
     int _specularLoc;
     float _spotCutoff;
     float _spotCutoffDegrees;
     int _spotCutoffLoc;
+    union _GLKVector3 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+        } ; 
+        float v[3]; 
     } _spotDirection;
     float _spotExponent;
     int _spotExponentLoc;

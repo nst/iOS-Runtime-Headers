@@ -12,7 +12,11 @@
     NSString *_groupType;
     int _indexForSelectedItem;
     NSArray *_items;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _selectionChangedHandler;
+
 }
 
 @property(readonly) NSString * groupDisplayName;

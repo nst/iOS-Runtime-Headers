@@ -5,10 +5,10 @@
 @class <PUPhotoEditVisualLevelSliderDataSource>, NSString, UICollectionView, UICollectionViewFlowLayout;
 
 @interface PUPhotoEditVisualLevelSlider : PUPhotoEditLevelSlider <UICollectionViewDataSource> {
+    <PUPhotoEditVisualLevelSliderDataSource> *_dataSource;
     struct CGSize { 
         float width; 
         float height; 
-    <PUPhotoEditVisualLevelSliderDataSource> *_dataSource;
     } _thumbnailSize;
     UICollectionView *_thumbnailsStripCollectionView;
     UICollectionViewFlowLayout *_thumbnailsStripFlowLayout;

@@ -11,7 +11,11 @@
 @interface MPUViewControllerConfiguration : NSObject {
     NSString *_aggregateStatisticDisplayCountKey;
     Class _cellConfigurationClass;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _configurationBlock;
+
     MPUDataSourceConfiguration *_dataSourceConfiguration;
     Class _navigationControllerClass;
     Class _viewControllerClass;
@@ -28,16 +32,16 @@
 @property BOOL wantsModalPresentation;
 @property BOOL wantsNavigationController;
 
-+ (id)configurationWithViewControllerClass:(Class)arg1 cellConfigurationClass:(Class)arg2;
 + (id)configurationWithViewControllerClass:(Class)arg1;
++ (id)configurationWithViewControllerClass:(Class)arg1 cellConfigurationClass:(Class)arg2;
 
 - (void).cxx_destruct;
 - (id)aggregateStatisticDisplayCountKey;
 - (Class)cellConfigurationClass;
 - (id)configurationBlock;
 - (id)dataSourceConfiguration;
-- (id)initWithViewControllerClass:(Class)arg1 cellConfigurationClass:(Class)arg2;
 - (id)initWithViewControllerClass:(Class)arg1;
+- (id)initWithViewControllerClass:(Class)arg1 cellConfigurationClass:(Class)arg2;
 - (Class)navigationControllerClass;
 - (void)setAggregateStatisticDisplayCountKey:(id)arg1;
 - (void)setConfigurationBlock:(id)arg1;

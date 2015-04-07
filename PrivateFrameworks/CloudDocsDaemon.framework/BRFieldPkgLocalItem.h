@@ -5,11 +5,11 @@
 @class BRFieldPkgItem;
 
 @interface BRFieldPkgLocalItem : PBCodable <NSCopying> {
+    long long _fileID;
+    unsigned int _generationID;
     struct { 
         unsigned int size : 1; 
         unsigned int generationID : 1; 
-    long long _fileID;
-    unsigned int _generationID;
     } _has;
     BRFieldPkgItem *_item;
     long long _size;

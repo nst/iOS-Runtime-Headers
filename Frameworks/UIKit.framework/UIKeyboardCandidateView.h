@@ -5,11 +5,11 @@
 @class UIImageView, UIKeyboardCandidateBar, UIKeyboardCandidateGrid, UIKeyboardCandidateSortControl, UIKeyboardCandidateSplitKeyboardToggleButton, UIKeyboardCandidateUnsplitKeyboardToggleButton, UIView<UIKeyboardCandidateList>;
 
 @interface UIKeyboardCandidateView : UIInputView {
+    UIKeyboardCandidateBar *_bar;
     struct { 
         unsigned int isExtended; 
         unsigned int didMinimizeKeyboard; 
         unsigned int isSplit; 
-    UIKeyboardCandidateBar *_bar;
     } _candidateBarFlags;
     UIKeyboardCandidateGrid *_extendedView;
     UIView<UIKeyboardCandidateList> *_inlineView;
@@ -27,8 +27,8 @@
 + (float)defaultExtendedControlHeight;
 + (void)setActiveCandidateView:(id)arg1;
 + (id)sharedInstance;
-+ (id)sharedInstanceForInlineView:(BOOL)arg1;
 + (id)sharedInstanceForInlineView;
++ (id)sharedInstanceForInlineView:(BOOL)arg1;
 
 - (unsigned int)_numberOfColumns:(BOOL)arg1;
 - (void)_toggleExtendedCandidateView:(id)arg1;

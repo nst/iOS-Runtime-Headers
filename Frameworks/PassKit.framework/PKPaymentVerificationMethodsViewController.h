@@ -16,7 +16,11 @@
     unsigned int _selectedIndex;
     <PKPaymentSetupViewControllerDelegate> *_setupDelegate;
     NSArray *_verificationChannels;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _verificationRequestHandler;
+
 }
 
 @property(retain) UIImage * passSnapshot;

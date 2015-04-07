@@ -14,10 +14,10 @@
             float width; 
             float height; 
         } size; 
+    } _collapsedRect;
     struct CGSize { 
         float width; 
         float height; 
-    } _collapsedRect;
     } presentationSize;
 }
 

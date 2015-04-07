@@ -4,25 +4,7 @@
 
 @class KNAnimParameterGroup, NSString, TSDGLDataBuffer, TSDGLShader;
 
-@interface KNBuildFromDarkness : KNAnimationEffect <KNFrameBuildAnimator, KNAnimationPluginArchiving> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+@interface KNBuildFromDarkness : KNAnimationEffect <KNAnimationPluginArchiving, KNFrameBuildAnimator> {
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -42,8 +24,26 @@
         float m44; 
     } _baseTransform;
     TSDGLDataBuffer *_dataBuffer;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _drawableFrame;
     unsigned int _edgeTextureName;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _frameRect;
     KNAnimParameterGroup *_parameterGroup;
     TSDGLShader *_shader;

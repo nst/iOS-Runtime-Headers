@@ -4,7 +4,7 @@
 
 @class <PUAdjustmentsModeBarDataSource>, <PUAdjustmentsModeBarDelegate>, NSArray, NSLayoutConstraint, NSNumberFormatter, NSString, PUAdjustmentsMode, UITableView, UIView, _PUSliderPlayheadBaseView, _UIDynamicValueAnimation;
 
-@interface PUAdjustmentsModeBar : UIView <UITableViewDataSource, UITableViewDelegate, PUPhotoEditLayoutStaticAdaptable> {
+@interface PUAdjustmentsModeBar : UIView <PUPhotoEditLayoutStaticAdaptable, UITableViewDataSource, UITableViewDelegate> {
     UIView *_adjustmentViewsContainer;
     NSArray *_adjustmentViewsContainerConstraints;
     NSArray *_allAdjustmentModes;
@@ -107,10 +107,10 @@
 - (void)setDelegate:(id)arg1;
 - (void)setListViewExpanded:(BOOL)arg1 explicitly:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)setPlayheadSize:(float)arg1;
-- (void)setPlayheadViewVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setPlayheadViewVisible:(BOOL)arg1;
-- (void)setSelectedMode:(id)arg1 animated:(BOOL)arg2;
+- (void)setPlayheadViewVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelectedMode:(id)arg1;
+- (void)setSelectedMode:(id)arg1 animated:(BOOL)arg2;
 - (void)setShortSideSize:(float)arg1;
 - (void)setSlidersLongContentLength:(float)arg1;
 - (void)setSlidersShortSideLength:(float)arg1;

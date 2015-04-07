@@ -93,12 +93,12 @@
 - (void)setCombinesPhotoDecorations:(BOOL)arg1;
 - (void)setCustomImageView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEditCapabilities:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setEditCapabilities:(unsigned int)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditCapabilities:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setLayout:(int)arg1;
 - (void)setPinned:(BOOL)arg1;
 - (void)setShowsDeleteButtonWhenEditing:(BOOL)arg1;

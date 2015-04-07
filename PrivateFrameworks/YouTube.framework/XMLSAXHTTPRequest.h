@@ -10,6 +10,10 @@
 @class NSMutableData, NSString, NSURLConnection, NSURLRequest;
 
 @interface XMLSAXHTTPRequest : NSObject <NSURLConnectionDelegate> {
+    NSURLConnection *_connection;
+    BOOL _invalidResponse;
+    NSMutableData *_rawData;
+    NSURLRequest *_request;
     struct _xmlSAXHandler { 
         int (*internalSubset)(); 
         int (*isStandalone)(); 
@@ -43,10 +47,6 @@
         int (*startElementNs)(); 
         int (*endElementNs)(); 
         int (*serror)(); 
-    NSURLConnection *_connection;
-    BOOL _invalidResponse;
-    NSMutableData *_rawData;
-    NSURLRequest *_request;
     } _saxHandler;
 }
 

@@ -10,18 +10,18 @@
 @class NSString;
 
 @interface _CFStreamDelegate : NSObject <NSStreamDelegate> {
-    struct { 
-        int version; 
-        void *info; 
-        int (*retain)(); 
-        int (*release)(); 
-        int (*copyDescription)(); 
     union { 
         int (*_rcb)(); 
         int (*_wcb)(); 
         int (*genericCallback)(); 
         void *genericPointer; 
     } _cb;
+    struct { 
+        int version; 
+        void *info; 
+        int (*retain)(); 
+        int (*release)(); 
+        int (*copyDescription)(); 
     } _client;
     unsigned long _flags;
 }

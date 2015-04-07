@@ -5,10 +5,10 @@
 @class _NMRCommandOptionsProtobuf;
 
 @interface _NMRSendCommandMessageProtobuf : PBCodable <NSCopying> {
+    int _command;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int command : 1; 
-    int _command;
     } _has;
     _NMRCommandOptionsProtobuf *_options;
     double _timestamp;

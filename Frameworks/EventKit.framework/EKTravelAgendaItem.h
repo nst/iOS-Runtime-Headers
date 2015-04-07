@@ -9,7 +9,11 @@
 @class CLLocation, NSDate, NSMutableArray;
 
 @interface EKTravelAgendaItem : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _adviceBlock;
+
     NSDate *_date;
     BOOL _haveAdvised;
     double _initialDistanceFromDestination;

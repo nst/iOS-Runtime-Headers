@@ -3,10 +3,10 @@
  */
 
 @interface TIKeyboardTouchEvent : NSObject <NSSecureCoding> {
+    int _forcedKeyCode;
     struct CGPoint { 
         float x; 
         float y; 
-    int _forcedKeyCode;
     } _location;
     int _pathIndex;
     float _radius;

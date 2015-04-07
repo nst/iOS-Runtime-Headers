@@ -19,14 +19,14 @@
 - (struct CGFunction { }*)colorShader;
 - (id)colorStops;
 - (void)dealloc;
-- (void)drawFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2 options:(unsigned int)arg3 withContext:(struct CGContext { }*)arg4;
 - (void)drawFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2 options:(unsigned int)arg3;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 angle:(float)arg2 withContext:(struct CGContext { }*)arg3;
+- (void)drawFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2 options:(unsigned int)arg3 withContext:(struct CGContext { }*)arg4;
 - (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 angle:(float)arg2;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 angle:(float)arg2 withContext:(struct CGContext { }*)arg3;
 - (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 relativeCenterPosition:(struct CGPoint { float x1; float x2; })arg2 withContext:(struct CGContext { }*)arg3;
 - (id)fillColor;
-- (id)initWithColors:(id)arg1 colorlocations:(id)arg2 colorMidpoints:(id)arg3 opacities:(id)arg4 opacityLocations:(id)arg5 opacityMidpoints:(id)arg6 smoothingCoefficient:(float)arg7 fillColor:(id)arg8 colorSpace:(struct CGColorSpace { }*)arg9 dither:(BOOL)arg10;
 - (id)initWithColors:(id)arg1 colorlocations:(id)arg2 colorMidpoints:(id)arg3 opacities:(id)arg4 opacityLocations:(id)arg5 opacityMidpoints:(id)arg6 smoothingCoefficient:(float)arg7 fillColor:(id)arg8 colorSpace:(struct CGColorSpace { }*)arg9;
+- (id)initWithColors:(id)arg1 colorlocations:(id)arg2 colorMidpoints:(id)arg3 opacities:(id)arg4 opacityLocations:(id)arg5 opacityMidpoints:(id)arg6 smoothingCoefficient:(float)arg7 fillColor:(id)arg8 colorSpace:(struct CGColorSpace { }*)arg9 dither:(BOOL)arg10;
 - (id)interpolatedColorAtLocation:(float)arg1;
 - (BOOL)isDithered;
 - (id)opacityLocations;

@@ -9,7 +9,7 @@
 
 @class NSString;
 
-@interface CAFilter : NSObject <NSCopying, NSMutableCopying, NSCoding> {
+@interface CAFilter : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     void *_attr;
     void *_cache;
     unsigned int _flags;
@@ -28,9 +28,9 @@
 + (id)filterWithName:(id)arg1;
 + (id)filterWithType:(id)arg1;
 
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (BOOL)cachesInputImage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

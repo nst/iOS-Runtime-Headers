@@ -5,6 +5,21 @@
 @class NSString;
 
 @interface UIKBCacheToken_Key : UIKBCacheToken {
+    NSString *_cacheDisplayString;
+    int _clipCorners;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _displayInsets;
+    int _displayRowHint;
+    int _displayTypeHint;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _size;
+    int _state;
     union { 
         struct { 
             unsigned int idiom : 6; 
@@ -14,27 +29,12 @@
             unsigned int rendering : 16; 
         } styling; 
         int intValue; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    NSString *_cacheDisplayString;
-    int _clipCorners;
-    } _displayInsets;
-    int _displayRowHint;
-    int _displayTypeHint;
-    } _size;
-    int _state;
     } _style;
     BOOL _usesInsets;
 }
 
-+ (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 + (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2;
++ (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 
 - (id)_initWithKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 - (id)_stringWithAdditionalValues:(id)arg1;

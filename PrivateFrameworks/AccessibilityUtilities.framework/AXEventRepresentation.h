@@ -4,13 +4,7 @@
 
 @class AXEventHandInfoRepresentation, AXEventKeyInfoRepresentation, NSData, NSString;
 
-@interface AXEventRepresentation : NSObject <NSSecureCoding, NSCopying> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface AXEventRepresentation : NSObject <NSCopying, NSSecureCoding> {
     NSData *_HIDAttributeData;
     unsigned long long _HIDTime;
     unsigned long long _additionalFlags;
@@ -22,6 +16,9 @@
     BOOL _isBuiltIn;
     BOOL _isGeneratedEvent;
     AXEventKeyInfoRepresentation *_keyInfo;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _location;
     int _pid;
     unsigned long long _senderID;
@@ -30,6 +27,9 @@
     unsigned long long _time;
     unsigned int _type;
     void *_window;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _windowLocation;
 }
 

@@ -5,6 +5,7 @@
 @class UIImageView, _UIBackdropView;
 
 @interface UICalloutBarBackground : _UIBackdropView {
+    UIImageView *_blurMaskView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    UIImageView *_blurMaskView;
     } _highlightRect;
     _UIBackdropView *_separatorView;
     UIImageView *_tintMaskView;

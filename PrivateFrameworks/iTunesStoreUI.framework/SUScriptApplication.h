@@ -51,10 +51,10 @@
 - (id)scriptAttributeKeys;
 - (void)scrollIconToVisible:(id)arg1 shouldSuspend:(BOOL)arg2;
 - (void)setIconBadgeNumber:(id)arg1;
-- (void)setStatusBarHidden:(BOOL)arg1 withAnimation:(int)arg2;
 - (void)setStatusBarHidden:(id)arg1;
-- (void)setStatusBarStyle:(int)arg1 animated:(BOOL)arg2;
+- (void)setStatusBarHidden:(BOOL)arg1 withAnimation:(int)arg2;
 - (void)setStatusBarStyle:(int)arg1;
+- (void)setStatusBarStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)showNewsstand;
 - (int)statusBarAnimationFade;
 - (int)statusBarAnimationNone;

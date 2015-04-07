@@ -15,7 +15,11 @@
     CDDClientConnection *_cddClientConnection;
     unsigned long long _clientId;
     int _deviceChangeToken;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deviceHandler;
+
     NSSet *_deviceList;
     BOOL _enabledCaching;
     BOOL _unlocked;
@@ -64,8 +68,8 @@
 - (id)getDevices;
 - (id)getDevicesInternal;
 - (id)init;
-- (id)initWithClientId:(unsigned long long)arg1 enableCaching:(BOOL)arg2;
 - (id)initWithClientId:(unsigned long long)arg1;
+- (id)initWithClientId:(unsigned long long)arg1 enableCaching:(BOOL)arg2;
 - (BOOL)isClassCLocked;
 - (BOOL)loadDylibs;
 - (id)registerAttributeWithName:(id)arg1 type:(int)arg2 dataProtectionClass:(id)arg3 error:(id*)arg4;

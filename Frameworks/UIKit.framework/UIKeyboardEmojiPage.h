@@ -5,15 +5,18 @@
 @class NSArray, NSDictionary, UIKBRenderConfig, UIKeyboardEmojiInputController, UIKeyboardEmojiView, UITouch;
 
 @interface UIKeyboardEmojiPage : UIView {
+    UITouch *_activeTouch;
+    NSArray *_emoji;
+    NSDictionary *_emojiAttributes;
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+    } _emojiPadding;
     struct CGSize { 
         float width; 
         float height; 
+    } _emojiSize;
+    UIKeyboardEmojiInputController *_inputController;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,13 +26,10 @@
             float width; 
             float height; 
         } size; 
-    UITouch *_activeTouch;
-    NSArray *_emoji;
-    NSDictionary *_emojiAttributes;
-    } _emojiPadding;
-    } _emojiSize;
-    UIKeyboardEmojiInputController *_inputController;
     } _keyActivationRect;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _margin;
     BOOL _needsEmojiRendering;
     BOOL _needsLayout;

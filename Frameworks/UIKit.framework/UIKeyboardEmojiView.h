@@ -30,8 +30,8 @@
 - (id)popup;
 - (id)renderConfig;
 - (void)setDelegate:(id)arg1;
-- (void)setEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setEmoji:(id)arg1;
+- (void)setEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setImageView:(id)arg1;
 - (void)setPopup:(id)arg1;
 - (void)setRenderConfig:(id)arg1;

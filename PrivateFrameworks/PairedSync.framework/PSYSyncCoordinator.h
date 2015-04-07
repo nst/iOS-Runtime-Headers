@@ -9,17 +9,21 @@
 @class <PSYSyncCoordinatorDelegate>, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, NSXPCListener, PSYSyncRestrictionProvider;
 
 @interface PSYSyncCoordinator : NSObject <NSXPCListenerDelegate, PSYActivity, PSYSyncRestrictionProviderDelegate> {
+    NSXPCConnection *_connection;
+    <PSYSyncCoordinatorDelegate> *_delegate;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    NSXPCConnection *_connection;
-    <PSYSyncCoordinatorDelegate> *_delegate;
     } _delegateLock;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     BOOL _hasStartedListening;
     BOOL _isFullSyncInProgress;
     NSXPCListener *_listener;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pendingCompletion;
+
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_serviceName;
     unsigned int _syncRestriction;
@@ -49,8 +53,8 @@
 - (id)defaultsTransactionIDKey;
 - (id)delegate;
 - (void)exitForTestInput:(id)arg1;
-- (id)initWithServiceName:(id)arg1 serviceLookupPath:(id)arg2;
 - (id)initWithServiceName:(id)arg1;
+- (id)initWithServiceName:(id)arg1 serviceLookupPath:(id)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)performDelegateBlock:(id)arg1;
 - (id)persistedCompletionError;
@@ -61,8 +65,8 @@
 - (BOOL)savePersistentState;
 - (id)serviceName;
 - (void)setConnection:(id)arg1;
-- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setPersistedCompletionError:(id)arg1;
 - (void)setPersistedState:(int)arg1;
 - (void)setPersistedTransactionID:(id)arg1;

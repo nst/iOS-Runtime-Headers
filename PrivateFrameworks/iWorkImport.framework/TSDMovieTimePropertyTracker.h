@@ -10,7 +10,11 @@
 
 @interface TSDMovieTimePropertyTracker : NSObject {
     BOOL mChangesPosterTime;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mCommitCompletionHandler;
+
     BOOL mDidCancel;
     BOOL mDynamicVisibleTimeChangeDidBegin;
     AVAssetImageGenerator *mMovieAssetImageGenerator;

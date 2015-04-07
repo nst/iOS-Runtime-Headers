@@ -10,7 +10,11 @@
 
 @interface _MPUViewControllerCreationInformation : NSObject {
     NSDictionary *_attributes;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _defaultQueryCreationHandler;
+
 }
 
 @property(readonly) NSDictionary * attributes;

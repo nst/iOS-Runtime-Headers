@@ -5,10 +5,10 @@
 @class NSMutableArray;
 
 @interface AWDPowerBBAppRRCMetrics : PBCodable <NSCopying> {
+    NSMutableArray *_appConnStats;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int numRRCConnections : 1; 
-    NSMutableArray *_appConnStats;
     } _has;
     unsigned int _numRRCConnections;
     unsigned long long _timestamp;

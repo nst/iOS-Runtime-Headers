@@ -5,21 +5,21 @@
 @class NSString, UIColor, UIImage;
 
 @interface EKLegacyUIOccurrenceListItem : UIView {
-    unsigned int _isAllDay : 1;
-    unsigned int _isBirthday : 1;
-    unsigned int _isFacebook : 1;
-    unsigned int _tentative : 1;
-    unsigned int _declined : 1;
-    unsigned int _needsReply : 1;
     unsigned int _cancelled : 1;
-    unsigned int _isEndDate : 1;
-    unsigned int _indentsWithoutDot : 1;
-    unsigned int _showsColors : 1;
+    unsigned int _declined : 1;
     unsigned int _designator : 2;
     UIImage *_dot;
     UIColor *_dotColor;
+    unsigned int _indentsWithoutDot : 1;
+    unsigned int _isAllDay : 1;
+    unsigned int _isBirthday : 1;
+    unsigned int _isEndDate : 1;
+    unsigned int _isFacebook : 1;
     BOOL _isSelected;
     NSString *_location;
+    unsigned int _needsReply : 1;
+    unsigned int _showsColors : 1;
+    unsigned int _tentative : 1;
     NSString *_timeString;
     NSString *_title;
 }

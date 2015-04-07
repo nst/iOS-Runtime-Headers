@@ -5,8 +5,8 @@
 @class NSString;
 
 @interface WDHyperlinkFieldMarker : WDFieldMarker {
-    unsigned int mInternalLink : 1;
     NSString *mFragment;
+    unsigned int mInternalLink : 1;
     NSString *mLink;
 }
 

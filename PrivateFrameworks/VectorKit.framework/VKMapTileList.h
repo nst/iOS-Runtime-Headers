@@ -9,9 +9,13 @@
 @class __end_;
 
 @interface VKMapTileList : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: } */
+  /* Error parsing encoded ivar type info: {vector<VKMapTile *, std::__1::allocator<VKMapTile *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKMapTile **, std::__1::allocator<VKMapTile *> >="__first_"^@}} */
     /* Warning: unhandled struct encoding: '{vector<VKMapTile *, std::__1::allocator<VKMapTile *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKMapTile **, std::__1::allocator<VKMapTile *> >="__first_"^@}}' */ struct vector<VKMapTile *, std::__1::allocator<VKMapTile *> > { 
         __end_ **__begin_; 
     } _list;
+
     float _maximumStyleZ;
 }
 

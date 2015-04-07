@@ -9,7 +9,11 @@
 @class BSDispatchSource;
 
 @interface BSProcessDeathWatcher : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deathHandler;
+
     BSDispatchSource *_source;
 }
 

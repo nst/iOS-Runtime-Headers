@@ -26,8 +26,8 @@
 - (bool)cleanArea:(unsigned int)arg1 updateSheet:(BOOL)arg2;
 - (bool)cleanArray:(unsigned int)arg1;
 - (void)cleanFormula:(id)arg1 name:(id)arg2;
-- (void)cleanFormula:(id)arg1 sheet:(id)arg2 name:(id)arg3;
 - (void)cleanFormula:(id)arg1 sheet:(id)arg2;
+- (void)cleanFormula:(id)arg1 sheet:(id)arg2 name:(id)arg3;
 - (bool)cleanFunc:(unsigned int)arg1;
 - (bool)cleanFuncVar:(unsigned int)arg1;
 - (bool)cleanName:(unsigned int)arg1 nameIndex:(unsigned int)arg2 sheetIndex:(unsigned int)arg3 tokenOffset:(int*)arg4;
@@ -49,15 +49,15 @@
 - (bool)isThereContentOutsideOfLassoBoundsForSheet:(id)arg1 rowMin:(int)arg2 rowMax:(int)arg3 columnMin:(int)arg4 columnMax:(int)arg5;
 - (id)newFormulaToCleanFromSharedFormula:(id)arg1;
 - (void)prepareToProcessFormula:(id)arg1 sheet:(id)arg2 name:(id)arg3;
-- (void)reportWarning:(int)arg1 parameter:(id)arg2;
 - (void)reportWarning:(int)arg1;
+- (void)reportWarning:(int)arg1 parameter:(id)arg2;
 - (void)reset;
 - (void)updateSheet:(id)arg1 row:(int)arg2 rowRelative:(bool)arg3 column:(int)arg4 columnRelative:(bool)arg5;
 - (void)updateSheet:(id)arg1 rowMin:(int)arg2 rowMinRelative:(bool)arg3 rowMax:(int)arg4 rowMaxRelative:(bool)arg5 columnMin:(int)arg6 columnMinRelative:(bool)arg7 columnMax:(int)arg8 columnMaxRelative:(bool)arg9;
 - (void)updateWorksheet:(id)arg1 row:(int)arg2 column:(int)arg3 inDictionary:(id)arg4;
 - (bool)useEvaluationStackToCheckFunctionId:(int)arg1 functionName:(id)arg2 tokenIndex:(unsigned int)arg3;
-- (id)useEvaluationStackToGetParameter:(unsigned int)arg1 tokenIndex:(unsigned int)arg2 allReferencesAllowed:(bool)arg3 success:(bool*)arg4;
 - (unsigned int)useEvaluationStackToGetParameter:(unsigned int)arg1 tokenIndex:(unsigned int)arg2;
+- (id)useEvaluationStackToGetParameter:(unsigned int)arg1 tokenIndex:(unsigned int)arg2 allReferencesAllowed:(bool)arg3 success:(bool*)arg4;
 - (id)worksheetFromLinkReferenceIndex:(unsigned int)arg1;
 
 @end

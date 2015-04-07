@@ -4,7 +4,7 @@
 
 @class NSString, _HKDimension, _HKFactorization;
 
-@interface HKUnit : NSObject <NSSecureCoding, NSCopying> {
+@interface HKUnit : NSObject <NSCopying, NSSecureCoding> {
     _HKFactorization *_baseUnitReduction;
     _HKFactorization *_dimensionReduction;
     long _reduceToken;

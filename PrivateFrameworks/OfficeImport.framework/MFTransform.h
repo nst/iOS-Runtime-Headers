@@ -12,18 +12,25 @@
         float d; 
         float tx; 
         float ty; 
+    } m_combinedTransform;
+    NSObject<MFDeviceDriver> *m_deviceDriver;
+    int m_mapMode;
     struct CGPoint { 
         float x; 
         float y; 
+    } m_viewportExt;
     struct CGPoint { 
         float x; 
         float y; 
+    } m_viewportOrg;
     struct CGPoint { 
         float x; 
         float y; 
+    } m_windowExt;
     struct CGPoint { 
         float x; 
         float y; 
+    } m_windowOrg;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -31,13 +38,6 @@
         float d; 
         float tx; 
         float ty; 
-    } m_combinedTransform;
-    NSObject<MFDeviceDriver> *m_deviceDriver;
-    int m_mapMode;
-    } m_viewportExt;
-    } m_viewportOrg;
-    } m_windowExt;
-    } m_windowOrg;
     } m_world;
 }
 
@@ -61,14 +61,14 @@
 - (int)scaleWindowExt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4;
 - (int)setMapMode:(int)arg1;
 - (void)setTransformMatrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (int)setViewportExt:(int)arg1 :(int)arg2;
 - (void)setViewportExt:(struct CGPoint { float x1; float x2; })arg1;
-- (int)setViewportOrg:(int)arg1 :(int)arg2;
+- (int)setViewportExt:(int)arg1 :(int)arg2;
 - (void)setViewportOrg:(struct CGPoint { float x1; float x2; })arg1;
-- (int)setWindowExt:(int)arg1 :(int)arg2;
+- (int)setViewportOrg:(int)arg1 :(int)arg2;
 - (void)setWindowExt:(struct CGPoint { float x1; float x2; })arg1;
-- (int)setWindowOrg:(int)arg1 :(int)arg2;
+- (int)setWindowExt:(int)arg1 :(int)arg2;
 - (void)setWindowOrg:(struct CGPoint { float x1; float x2; })arg1;
+- (int)setWindowOrg:(int)arg1 :(int)arg2;
 - (void)setWorldMatrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (int)setWorldTransform:(const struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg1;
 - (int)updateTransform;

@@ -9,12 +9,16 @@
 @class NSError;
 
 @interface RCTrimTimeRangeOperation : NSOperation {
+    BOOL _canSimulateTrimmingProgress;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _progressUpdateBlock;
+
+    float _simulatedProgress;
     struct { 
         double beginTime; 
         double endTime; 
-    BOOL _canSimulateTrimmingProgress;
-    id _progressUpdateBlock;
-    float _simulatedProgress;
     } _timeRange;
     BOOL _trimMode;
 }

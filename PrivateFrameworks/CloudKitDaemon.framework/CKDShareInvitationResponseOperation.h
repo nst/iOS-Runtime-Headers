@@ -12,7 +12,11 @@
     NSMutableDictionary *_invitationsByInvitationID;
     NSArray *_invitationsToAccept;
     NSArray *_invitationsToDecline;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shareInvitationResponseProgressBlock;
+
 }
 
 @property(retain) NSMutableDictionary * invitationsByInvitationID;

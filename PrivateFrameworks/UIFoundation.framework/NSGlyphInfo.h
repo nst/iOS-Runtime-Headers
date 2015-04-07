@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface NSGlyphInfo : NSObject <NSCopying, NSCoding> {
+@interface NSGlyphInfo : NSObject <NSCoding, NSCopying> {
     NSString *_baseString;
 }
 

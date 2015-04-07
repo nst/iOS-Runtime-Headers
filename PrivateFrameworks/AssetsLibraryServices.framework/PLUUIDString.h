@@ -3,8 +3,8 @@
  */
 
 @interface PLUUIDString : NSString {
-    BOOL _uuidString[37];
     unsigned char _uuid[16];
+    BOOL _uuidString[37];
 }
 
 + (id)UUIDString;

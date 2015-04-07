@@ -5,16 +5,6 @@
 @class <BWNodeOutputConsumer>, BWFormat, BWFormatRequirements, BWNode, BWNodeConnection, BWPixelBufferPool, BWVideoFormat, NSString;
 
 @interface BWNodeOutput : NSObject {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     long long _configurationID;
     <BWNodeOutputConsumer> *_consumer;
     BOOL _consumerIsANodeConnection;
@@ -23,7 +13,17 @@
     BWFormat *_format;
     BWFormatRequirements *_formatRequirements;
     int _indexOfInputWhichDrivesThisOutput;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _lastEmittedPTS;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _lastValidPTS;
     long long _liveConfigurationID;
     BWFormat *_liveFormat;

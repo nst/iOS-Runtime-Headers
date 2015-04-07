@@ -4,10 +4,7 @@
 
 @class <RCAVWaveformViewControllerDelegate>, NSString, RCAVState, RCCaptureSession, RCCompositionController, RCGLWaveformViewController, RCLayoutMetrics, RCPreviewController, RCUIConfiguration, RCWaveformDataSource;
 
-@interface RCAVWaveformViewController : UIViewController <RCGLWaveformViewDelegate, RCPreviewControllerObserver, RCCaptureSessionObserver> {
-    struct { 
-        double beginTime; 
-        double endTime; 
+@interface RCAVWaveformViewController : UIViewController <RCCaptureSessionObserver, RCGLWaveformViewDelegate, RCPreviewControllerObserver> {
     RCAVState *_AVState;
     RCUIConfiguration *_UIConfiguration;
     RCCompositionController *_activeCaptureCompositionController;
@@ -21,6 +18,9 @@
     double _defaultVisibleDuration;
     <RCAVWaveformViewControllerDelegate> *_delegate;
     double _duration;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _highlightTimeRange;
     RCLayoutMetrics *_layoutMetrics;
     double _maximumSelectionDuration;
@@ -119,8 +119,8 @@
 - (void)setCurrentTimeTracksCapturedEndPoint:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setHighlightTimeRange:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })setHighlightTimeRange;
+- (void)setHighlightTimeRange:(struct { double x1; double x2; })arg1;
 - (void)setLayoutMetrics:(id)arg1;
 - (void)setMaximumSelectionDuration:(double)arg1;
 - (void)setScreenUpdatesDisabled:(BOOL)arg1;
@@ -141,9 +141,9 @@
 - (float)waveformBottomLineInset;
 - (id)waveformDataSource;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })waveformRectForLayoutBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)waveformViewController;
 - (void)waveformViewController:(id)arg1 didChangeToSelectedTimeRange:(struct { double x1; double x2; })arg2;
 - (void)waveformViewController:(id)arg1 didScrubToTime:(double)arg2 finished:(BOOL)arg3;
-- (id)waveformViewController;
 - (void)waveformViewControllerDidEndEditingSelectedTimeRange:(id)arg1;
 - (void)waveformViewControllerWillBeginEditingSelectedTimeRange:(id)arg1;
 

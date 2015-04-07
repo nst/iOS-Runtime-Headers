@@ -13,7 +13,11 @@
     ALAssetsLibrary *_assetsLibrary;
     NSMutableArray *_deliveryQueue;
     NSObject<OS_dispatch_queue> *_downsamplingQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchCompletion;
+
     NSError *_lastError;
     unsigned int _maxByteSize;
     int _numRequestedImages;

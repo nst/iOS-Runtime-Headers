@@ -22,12 +22,12 @@
 - (id)defaultTraitsWithTraits:(id)arg1;
 - (id)init;
 - (id)mapItemsForUpdatedPlacesInResolution:(id)arg1;
-- (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)submitUsageForTraits:(id)arg1;
+- (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
+- (void)submitUsageForTraitsWithAction:(int)arg1;
 - (void)submitUsageForTraitsWithAction:(int)arg1 flyoverAnimationID:(unsigned long long)arg2;
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2;
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapRegion:(id)arg2 zoomLevel:(double)arg3;
-- (void)submitUsageForTraitsWithAction:(int)arg1;
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)ticketForForwardGeocodeAddress:(id)arg1 traits:(id)arg2;
 - (id)ticketForForwardGeocodeString:(id)arg1 traits:(id)arg2;

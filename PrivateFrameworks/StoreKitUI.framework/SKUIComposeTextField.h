@@ -41,7 +41,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
-- (BOOL)textField:(id)arg1 shouldInsertText:(id)arg2 replacingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)textField;
+- (BOOL)textField:(id)arg1 shouldInsertText:(id)arg2 replacingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 
 @end

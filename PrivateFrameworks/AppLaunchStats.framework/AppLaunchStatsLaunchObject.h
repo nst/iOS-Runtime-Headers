@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface AppLaunchStatsLaunchObject : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id aplsLaunchQueueBlock;
+
     NSString *bundleID;
 }
 

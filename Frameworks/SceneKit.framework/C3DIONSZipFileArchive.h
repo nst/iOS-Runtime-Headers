@@ -5,13 +5,6 @@
 @class NSArray, NSData, NSDictionary, NSMutableDictionary, NSString;
 
 @interface C3DIONSZipFileArchive : NSObject {
-    struct __zFlags { 
-        unsigned int providerSuppliesContents : 1; 
-        unsigned int providerSuppliesStreams : 1; 
-        unsigned int providerSuppliesProperties : 1; 
-        unsigned int noContentsCaching : 1; 
-        unsigned int fileOpen : 1; 
-        unsigned int reserved : 27; 
     NSMutableDictionary *_cachedContents;
     NSDictionary *_contents;
     NSData *_data;
@@ -20,8 +13,15 @@
     NSString *_path;
     NSDictionary *_properties;
     id _provider;
-    void *_reserved2[5];
     void *_reserved;
+    void *_reserved2[5];
+    struct __zFlags { 
+        unsigned int providerSuppliesContents : 1; 
+        unsigned int providerSuppliesStreams : 1; 
+        unsigned int providerSuppliesProperties : 1; 
+        unsigned int noContentsCaching : 1; 
+        unsigned int fileOpen : 1; 
+        unsigned int reserved : 27; 
     } _zFlags;
 }
 

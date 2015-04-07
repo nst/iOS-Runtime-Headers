@@ -9,7 +9,11 @@
 @class PUAirplayRoute, PUAirplayRouteTableViewDataSource;
 
 @interface PUAirplayRoutePickerViewController : UITableViewController {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     PUAirplayRouteTableViewDataSource *_dataSource;
     BOOL _makeRouteCurrentBeforeReturning;
     PUAirplayRoute *_markedRoute;

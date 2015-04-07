@@ -42,8 +42,8 @@
 - (id)applicationProcessForPID:(int)arg1;
 - (void)applicationProcessWillLaunch:(id)arg1;
 - (id)applicationProcessesForBundleIdentifier:(id)arg1;
-- (id)createApplicationProcessForBundleID:(id)arg1 withExecutionContext:(id)arg2;
 - (id)createApplicationProcessForBundleID:(id)arg1;
+- (id)createApplicationProcessForBundleID:(id)arg1 withExecutionContext:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)init;

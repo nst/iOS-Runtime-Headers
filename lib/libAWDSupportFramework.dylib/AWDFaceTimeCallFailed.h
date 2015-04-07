@@ -5,6 +5,24 @@
 @class NSString;
 
 @interface AWDFaceTimeCallFailed : PBCodable <NSCopying> {
+    unsigned int _backCameraCaptureDuration;
+    unsigned int _callDuration;
+    unsigned int _conferenceMiscError;
+    unsigned int _connectDuration;
+    unsigned int _connectionType;
+    unsigned int _currentNatType;
+    unsigned int _dataRate;
+    unsigned int _diagnosticPingAvg;
+    unsigned int _diagnosticPingMax;
+    unsigned int _diagnosticPingMin;
+    unsigned int _diagnosticPingPacketLoss;
+    unsigned int _endedReason;
+    unsigned int _frontCameraCaptureDuration;
+    unsigned int _gameKitError;
+    int _genericError;
+    int _gksError;
+    int _gksReturnCode;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int backCameraCaptureDuration : 1; 
@@ -45,24 +63,6 @@
         unsigned int remoteNetworkConnection : 1; 
         unsigned int usesRelay : 1; 
         unsigned int viceroyError : 1; 
-    unsigned int _backCameraCaptureDuration;
-    unsigned int _callDuration;
-    unsigned int _conferenceMiscError;
-    unsigned int _connectDuration;
-    unsigned int _connectionType;
-    unsigned int _currentNatType;
-    unsigned int _dataRate;
-    unsigned int _diagnosticPingAvg;
-    unsigned int _diagnosticPingMax;
-    unsigned int _diagnosticPingMin;
-    unsigned int _diagnosticPingPacketLoss;
-    unsigned int _endedReason;
-    unsigned int _frontCameraCaptureDuration;
-    unsigned int _gameKitError;
-    int _genericError;
-    int _gksError;
-    int _gksReturnCode;
-    NSString *_guid;
     } _has;
     unsigned int _invitationServiceError;
     unsigned int _isAudioInterrupted;

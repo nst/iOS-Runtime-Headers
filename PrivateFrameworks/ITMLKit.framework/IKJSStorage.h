@@ -5,10 +5,10 @@
 @class <IKAppDataStoring>, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface IKJSStorage : IKJSObject <IKJSStorage> {
-    unsigned int _usesExternalDataStore : 1;
     <IKAppDataStoring> *_appStorage;
     NSMutableDictionary *_storageDict;
     NSObject<OS_dispatch_queue> *_storageQueue;
+    unsigned int _usesExternalDataStore : 1;
 }
 
 @property <IKAppDataStoring> * appStorage;

@@ -5,16 +5,16 @@
 @class UIFont;
 
 @interface TopoNumberBadge : CALayer {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     int _count;
     UIFont *_font;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _imageSize;
     id _owningView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _textSize;
 }
 

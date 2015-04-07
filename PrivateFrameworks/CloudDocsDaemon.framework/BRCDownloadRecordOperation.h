@@ -10,7 +10,11 @@
 
 @interface BRCDownloadRecordOperation : BRCMultiplexableOperation {
     NSDictionary *_desiredPackageFileIndices;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _downloadCompletionBlock;
+
     NSString *_etag;
     CKRecordID *_recordID;
 }

@@ -3,10 +3,10 @@
  */
 
 @interface _CSIRenditionBlockData : NSObject {
-    unsigned int _mmappedData : 1;
     char *_data;
     unsigned int _dataPixelFormat;
     unsigned char _imageBlockReleaseCount;
+    unsigned int _mmappedData : 1;
     BOOL _name[128];
     unsigned int _nrows;
     int _pixelFormat;

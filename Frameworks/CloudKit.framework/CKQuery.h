@@ -4,7 +4,7 @@
 
 @class NSArray, NSPredicate, NSString;
 
-@interface CKQuery : NSObject <NSSecureCoding, NSCopying> {
+@interface CKQuery : NSObject <NSCopying, NSSecureCoding> {
     NSPredicate *_predicate;
     NSString *_recordType;
     NSArray *_sortDescriptors;

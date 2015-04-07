@@ -18,8 +18,8 @@
 @property(copy) NSString * fontName;
 
 + (id)fontForStyles:(id*)arg1 count:(unsigned int)arg2;
-+ (id)fontWithName:(id)arg1 compatibilityName:(id)arg2;
 + (id)fontWithName:(id)arg1;
++ (id)fontWithName:(id)arg1 compatibilityName:(id)arg2;
 + (BOOL)isKeyValueProxyLeafType;
 
 - (id)compatibilityName;
@@ -30,8 +30,8 @@
 - (id)fontName;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithFontName:(id)arg1 compatibilityName:(id)arg2;
 - (id)initWithFontName:(id)arg1;
+- (id)initWithFontName:(id)arg1 compatibilityName:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (void)setCompatibilityName:(id)arg1;
 - (void)setFontName:(id)arg1;

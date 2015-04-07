@@ -16,13 +16,13 @@
 + (id)currentProductType;
 + (id)currentProductVersion;
 + (id)currentReleaseType;
-+ (id)errorWithCode:(int)arg1 originalError:(id)arg2;
 + (id)errorWithCode:(int)arg1;
++ (id)errorWithCode:(int)arg1 originalError:(id)arg2;
 + (BOOL)freeCachedSpaceSynchronous:(unsigned long long)arg1 timeout:(double)arg2;
 + (id)gregorianCalendar;
 + (BOOL)hasCellularRadio;
-+ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 deltaSpaceNeeded:(unsigned long long*)arg2;
 + (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1;
++ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 deltaSpaceNeeded:(unsigned long long*)arg2;
 + (int)installationKeybagState;
 + (BOOL)isCellularDataCapable;
 + (BOOL)isDaemon;
@@ -34,8 +34,8 @@
 + (id)serialNumber;
 + (void)setIsDaemon:(BOOL)arg1;
 + (id)taskQueue;
-+ (id)translateError:(id)arg1 withAddedUserInfo:(id)arg2;
 + (id)translateError:(id)arg1;
++ (id)translateError:(id)arg1 withAddedUserInfo:(id)arg2;
 + (int)translateErrorCodeFromError:(id)arg1;
 
 @end

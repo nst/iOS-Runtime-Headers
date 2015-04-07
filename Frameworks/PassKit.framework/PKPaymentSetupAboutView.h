@@ -11,8 +11,8 @@
 }
 
 - (void)dealloc;
-- (id)initWithBodyText:(id)arg1 detailButtonText:(id)arg2;
 - (id)initWithBodyText:(id)arg1;
+- (id)initWithBodyText:(id)arg1 detailButtonText:(id)arg2;
 - (void)layoutSubviews;
 - (void)setButtonAction:(SEL)arg1;
 

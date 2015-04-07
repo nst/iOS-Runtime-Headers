@@ -5,13 +5,13 @@
 @class GEOVConnectivity, NSData, NSMutableArray;
 
 @interface GEOVTile : PBCodable <NSCopying> {
+    NSMutableArray *_coastlines;
+    GEOVConnectivity *_connectivity;
     struct { 
         unsigned int minZ : 1; 
         unsigned int sectionDeltaLengthBits : 1; 
         unsigned int vertexBits : 1; 
         unsigned int zBits : 1; 
-    NSMutableArray *_coastlines;
-    GEOVConnectivity *_connectivity;
     } _has;
     NSMutableArray *_labelLanguages;
     NSData *_labels;

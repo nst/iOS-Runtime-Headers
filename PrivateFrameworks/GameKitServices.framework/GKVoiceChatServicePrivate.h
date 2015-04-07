@@ -5,6 +5,13 @@
 @class <GKVoiceChatClient>, GKVoiceChatDictionary, GKVoiceChatService, LoopbackSocketTunnel, NSLock, NSRecursiveLock, NSString, VideoConference;
 
 @interface GKVoiceChatServicePrivate : NSObject <VideoConferenceDelegate, VideoConferenceRealTimeChannel> {
+    int bundle;
+    int chatMode;
+    <GKVoiceChatClient> *client;
+    BOOL clientHasRTChannel;
+    NSLock *clientLock;
+    VideoConference *conf;
+    unsigned long curCallID;
     struct tagCONNRESULT { 
         unsigned int dwCallID; 
         int iResultCount; 
@@ -79,13 +86,6 @@
         int bIfPrimary; 
         int bIfReplaceOnly; 
         struct tagCONNRESULT {} *next; 
-    int bundle;
-    int chatMode;
-    <GKVoiceChatClient> *client;
-    BOOL clientHasRTChannel;
-    NSLock *clientLock;
-    VideoConference *conf;
-    unsigned long curCallID;
     } currentConnResult;
     int didUseICE;
     BOOL focus;
@@ -170,8 +170,8 @@
 - (void)setRemoteVideoLayer:(void*)arg1;
 - (void)setState:(int)arg1;
 - (void)setWrapperService:(id)arg1;
-- (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2 withCallID:(unsigned long)arg3;
 - (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2;
+- (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2 withCallID:(unsigned long)arg3;
 - (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
 - (int)state;
 - (void)stopVoiceChatProc:(id)arg1;

@@ -5,6 +5,10 @@
 @class NSString;
 
 @interface AWDAirPlayScreenSessionStartedOnClient : PBCodable <NSCopying> {
+    unsigned int _audioCompressionType;
+    unsigned int _bonjourMs;
+    unsigned int _configMs;
+    unsigned int _connectMs;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int audioCompressionType : 1; 
@@ -14,10 +18,6 @@
         unsigned int prepareMs : 1; 
         unsigned int status : 1; 
         unsigned int transportType : 1; 
-    unsigned int _audioCompressionType;
-    unsigned int _bonjourMs;
-    unsigned int _configMs;
-    unsigned int _connectMs;
     } _has;
     unsigned int _prepareMs;
     NSString *_sessionUUID;

@@ -9,7 +9,11 @@
 @class NSTimer;
 
 @interface GCControllerMBDelegate : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     struct BTPairingAgentImpl { } *_pairingAgent;
     struct BTSessionImpl { } *_session;
     NSTimer *_timer;

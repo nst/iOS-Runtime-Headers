@@ -55,8 +55,8 @@
 + (void)_dumpAllDateCombinationsWithFormatters;
 
 - (id)_currentLocale;
-- (BOOL)_date:(id)arg1 isWithinDaysInThePast:(int)arg2 fromCurrentDate:(id)arg3;
 - (BOOL)_date:(id)arg1 isWithinDaysInThePast:(int)arg2;
+- (BOOL)_date:(id)arg1 isWithinDaysInThePast:(int)arg2 fromCurrentDate:(id)arg3;
 - (id)_dateCombinationAfterUpdatingCurrentDateWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3 dateFormatter:(id)arg4 calendarUnit:(unsigned int)arg5 value:(int)arg6;
 - (id)_dateCombinationAfterUpdatingStartAndEndDatesWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3 dateFormatter:(id)arg4 calendarUnit:(unsigned int)arg5 value:(int)arg6;
 - (id)_dateCombinationWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3 dateFormatter:(id)arg4;
@@ -93,8 +93,8 @@
 - (void)configureForFormatPreset:(unsigned int)arg1;
 - (void)dealloc;
 - (id)formattedDate:(id)arg1;
-- (id)formattedDateRangeWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3;
 - (id)formattedDateRangeWithStartDate:(id)arg1 endDate:(id)arg2;
+- (id)formattedDateRangeWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3;
 - (BOOL)includeDayNumbers;
 - (BOOL)includeDayNumbersWhenMonthsDiffer;
 - (id)init;

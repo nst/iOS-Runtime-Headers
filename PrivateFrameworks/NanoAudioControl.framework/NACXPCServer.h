@@ -4,7 +4,7 @@
 
 @class NACIDSClient, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
 
-@interface NACXPCServer : NSObject <NSXPCListenerDelegate, NACXPCInterface, NACIDSClientDelegate> {
+@interface NACXPCServer : NSObject <NACIDSClientDelegate, NACXPCInterface, NSXPCListenerDelegate> {
     BOOL _audioAndHapticPreviewIsPlaying;
     NSObject<OS_dispatch_queue> *_audioAndHapticPreviewQueue;
     NSMutableDictionary *_audioRoutesRecords;

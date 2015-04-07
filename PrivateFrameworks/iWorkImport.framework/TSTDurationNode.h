@@ -8,6 +8,7 @@
  */
 
 @interface TSTDurationNode : TSTExpressionNode {
+    BOOL mBlank;
     struct TSTDurationWrapper { 
         double timeInterval; 
         struct { 
@@ -16,7 +17,6 @@
             int mDurationUnitLargest; 
             int mDurationStyle; 
         } durationFormat; 
-    BOOL mBlank;
     } mValue;
 }
 

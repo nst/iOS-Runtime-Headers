@@ -5,15 +5,15 @@
 @class VKRasterTile, VKTile;
 
 @interface VKMapTile : VKTile <NSCopying> {
+    struct shared_ptr<vk::LabelMapTile> { 
+        struct LabelMapTile {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _labelMapTile;
     struct { 
         float x0; 
         float x1; 
         float y0; 
         float y1; 
-    struct shared_ptr<vk::LabelMapTile> { 
-        struct LabelMapTile {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    } _labelMapTile;
     } _localBounds[34];
     float _maximumStyleZ;
     BOOL _needsRasterization;

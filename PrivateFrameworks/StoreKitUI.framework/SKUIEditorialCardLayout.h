@@ -5,11 +5,11 @@
 @class NSArray, NSMutableArray, SKUILockupViewElement;
 
 @interface SKUIEditorialCardLayout : NSObject {
+    NSMutableArray *_allLockups;
+    SKUILockupViewElement *_primaryLockup;
     struct CGSize { 
         float width; 
         float height; 
-    NSMutableArray *_allLockups;
-    SKUILockupViewElement *_primaryLockup;
     } _primaryLockupSize;
     float _secondaryLockupWidth;
 }

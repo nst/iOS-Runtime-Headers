@@ -17,17 +17,16 @@
         unsigned int progress_max_ms; 
         unsigned int update_max_num; 
         unsigned int update_max_ms; 
+    } _batchingParameters;
+    NSString *_bundleIdentifier;
     int (*_create_result_callbacks_equal)();
     int (*_create_result_callbacks_release)();
+    void *_create_result_context;
     int (*_create_result_fn)();
     int (*_create_value_callbacks_equal)();
     int (*_create_value_callbacks_release)();
-    int (*_create_value_fn)();
-    int (*_sort_fn)();
-    } _batchingParameters;
-    NSString *_bundleIdentifier;
-    void *_create_result_context;
     void *_create_value_context;
+    int (*_create_value_fn)();
     int _disableCount;
     BOOL _needsCrashEvicting;
     BOOL _needsCrashMarking;
@@ -43,6 +42,7 @@
     NSArray *_searchScopes;
     BOOL _sendHasUpdateNotification;
     void *_sort_context;
+    int (*_sort_fn)();
     NSArray *_sortingAttributes;
     NSMutableDictionary *_toBeInsertedByFileObjectID;
     NSMutableDictionary *_toBeRemovedByFileObjectID;
@@ -65,8 +65,8 @@
 
 - (BOOL)_collectUpdates:(id)arg1;
 - (void)_performBlock:(id)arg1;
-- (void)_postNote:(struct __CFString { }*)arg1 userInfo:(id)arg2;
 - (void)_postNote:(struct __CFString { }*)arg1;
+- (void)_postNote:(struct __CFString { }*)arg1 userInfo:(id)arg2;
 - (void)_processChanges:(id)arg1;
 - (void)_processUpdates;
 - (id)_replacementObjectForQueryItem:(id)arg1;

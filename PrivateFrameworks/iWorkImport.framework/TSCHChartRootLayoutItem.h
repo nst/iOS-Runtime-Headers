@@ -5,6 +5,20 @@
 @class NSDictionary, TSCHChartAbstractAreaLayoutItem, TSCHChartInfo, TSCHChartModel, TSCHLegendAreaLayoutItem;
 
 @interface TSCHChartRootLayoutItem : TSCHChartLayoutItem <TSCHUnretainedParent> {
+    TSCHChartAbstractAreaLayoutItem *mChartArea;
+    TSCHChartInfo *mChartInfo;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } mChartInnerFrame;
+    TSCHChartModel *mChartModel;
+    BOOL mInResize;
     struct { 
         BOOL forceOmitLegend; 
         BOOL forceOmitTitle; 
@@ -13,6 +27,8 @@
         BOOL enable3DScaledDepthBounds; 
         BOOL enable3DSageMaxDepthRatio; 
         unsigned int max3DLimitingSeries; 
+    } mLayoutSettings;
+    TSCHLegendAreaLayoutItem *mLegend;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -22,27 +38,11 @@
             float width; 
             float height; 
         } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    } mLegendInnerFrame;
+    NSDictionary *mSeriesIndexedPieWedgeExplosions;
     struct CGSize { 
         float width; 
         float height; 
-    TSCHChartAbstractAreaLayoutItem *mChartArea;
-    TSCHChartInfo *mChartInfo;
-    } mChartInnerFrame;
-    TSCHChartModel *mChartModel;
-    BOOL mInResize;
-    } mLayoutSettings;
-    TSCHLegendAreaLayoutItem *mLegend;
-    } mLegendInnerFrame;
-    NSDictionary *mSeriesIndexedPieWedgeExplosions;
     } mStartingSize;
 }
 

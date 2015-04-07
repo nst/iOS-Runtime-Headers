@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSNumber, NSString, NSURL, SSAccount;
 
-@interface HSConnectionConfiguration : NSObject <HSXPCCoding, NSSecureCoding, NSCopying, NSMutableCopying> {
+@interface HSConnectionConfiguration : NSObject <HSXPCCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
     SSAccount *_account;
     NSURL *_baseURL;
     NSString *_buildIdentifier;

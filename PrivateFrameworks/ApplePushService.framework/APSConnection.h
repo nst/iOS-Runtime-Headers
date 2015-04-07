@@ -87,10 +87,10 @@
 - (id)enabledTopics;
 - (BOOL)hasIdentity;
 - (id)ignoredTopics;
-- (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2 queue:(id)arg3;
-- (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2;
-- (id)initWithEnvironmentName:(id)arg1 queue:(id)arg2;
 - (id)initWithEnvironmentName:(id)arg1;
+- (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2;
+- (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2 queue:(id)arg3;
+- (id)initWithEnvironmentName:(id)arg1 queue:(id)arg2;
 - (void)invalidateTokenForTopic:(id)arg1 identifier:(id)arg2;
 - (BOOL)isConnected;
 - (id)ivarQueue;
@@ -107,9 +107,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEnableCriticalReliability:(BOOL)arg1;
 - (void)setEnableStatusNotifications:(BOOL)arg1;
-- (void)setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2 opportunisticTopics:(id)arg3;
-- (void)setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2;
 - (void)setEnabledTopics:(id)arg1;
+- (void)setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2;
+- (void)setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2 opportunisticTopics:(id)arg3;
 - (void)setLargeMessageSize:(unsigned int)arg1;
 - (void)setMessageSize:(unsigned int)arg1;
 - (void)setUsesAppLaunchStats:(BOOL)arg1;

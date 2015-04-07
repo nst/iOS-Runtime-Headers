@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString, TSCH3DChartRep, TSCH3DGeometry, TSCH3DScene;
 
-@interface TSCH3DGetSelectionKnobsPositionsPipelineDelegate : NSObject <TSCHUnretainedParent, TSCH3DSceneDelegate, TSCH3DChartAllSceneObjectDelegate, TSCH3DChartElementSceneObjectGeometryDelegate> {
+@interface TSCH3DGetSelectionKnobsPositionsPipelineDelegate : NSObject <TSCH3DChartAllSceneObjectDelegate, TSCH3DChartElementSceneObjectGeometryDelegate, TSCH3DSceneDelegate, TSCHUnretainedParent> {
     int mCurrentLabelType;
     TSCH3DGeometry *mGeometry;
     int mKnobsMode;

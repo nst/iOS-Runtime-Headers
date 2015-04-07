@@ -14,7 +14,11 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _isInTransaction;
     BOOL _readOnly;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _setupBlock;
+
     struct __CFDictionary { } *_statementCache;
     BOOL _takesTaskCompletionAssertions;
     struct SBSProcessAssertion { } *_taskAssertion;
@@ -47,15 +51,15 @@
 - (void)dispatchBlockSync:(id)arg1;
 - (void)endTaskCompletionAssertion;
 - (BOOL)executeSQL:(id)arg1;
-- (id)initWithDatabaseURL:(id)arg1 readOnly:(BOOL)arg2;
 - (id)initWithDatabaseURL:(id)arg1;
+- (id)initWithDatabaseURL:(id)arg1 readOnly:(BOOL)arg2;
 - (id)newDispatchSourceWithType:(struct dispatch_source_type_s { }*)arg1;
 - (void)performTransactionWithBlock:(id)arg1;
 - (void)prepareStatementForSQL:(id)arg1 cache:(BOOL)arg2 usingBlock:(id)arg3;
 - (void)setSetupBlock:(id)arg1;
 - (void)setTakesTaskCompletionAssertions:(BOOL)arg1;
-- (BOOL)setUserVersion:(int)arg1 forDatabase:(id)arg2;
 - (BOOL)setUserVersion:(int)arg1;
+- (BOOL)setUserVersion:(int)arg1 forDatabase:(id)arg2;
 - (id)setupBlock;
 - (BOOL)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1;
 - (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;

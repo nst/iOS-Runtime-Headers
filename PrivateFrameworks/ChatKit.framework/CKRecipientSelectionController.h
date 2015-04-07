@@ -4,7 +4,7 @@
 
 @class <CKRecipientSelectionControllerDelegate>, ABPeoplePickerNavigationController, CKComposeRecipientView, CKPendingConversation, CKRecipientSearchListController, MFComposeRecipient, NSArray, NSMutableDictionary, NSString, UIScrollView, UIView;
 
-@interface CKRecipientSelectionController : CKViewController <MFComposeRecipientTextViewDelegate, CKRecipientSearchListControllerDelegate, MFGroupDetailViewControllerDelegate, UINavigationControllerDelegate, ABPeoplePickerNavigationControllerDelegate> {
+@interface CKRecipientSelectionController : CKViewController <ABPeoplePickerNavigationControllerDelegate, CKRecipientSearchListControllerDelegate, MFComposeRecipientTextViewDelegate, MFGroupDetailViewControllerDelegate, UINavigationControllerDelegate> {
     NSArray *_addressBookProperties;
     CKPendingConversation *_conversation;
     <CKRecipientSelectionControllerDelegate> *_delegate;
@@ -124,8 +124,8 @@
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)parentControllerDidResume:(BOOL)arg1 animating:(BOOL)arg2;
 - (id)peoplePickerController;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (unsigned int)presentationOptionsForRecipient:(id)arg1;
 - (BOOL)preventAtomization;
@@ -141,11 +141,11 @@
 - (void)refreshComposeSendingServiceForAddresses:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)removeRecipient:(id)arg1;
 - (void)reset;
+- (id)searchListController;
 - (void)searchListController:(id)arg1 accessoryPickedForRecipient:(id)arg2;
 - (void)searchListController:(id)arg1 destinationsUpdated:(id)arg2;
 - (void)searchListController:(id)arg1 didSelectRecipient:(id)arg2;
 - (int)searchListController:(id)arg1 idStatusForIDSID:(id)arg2;
-- (id)searchListController;
 - (void)searchListControllerDidFinishSearch:(id)arg1;
 - (void)searchListControllerDidScroll:(id)arg1;
 - (void)setAddressBookProperties:(id)arg1;

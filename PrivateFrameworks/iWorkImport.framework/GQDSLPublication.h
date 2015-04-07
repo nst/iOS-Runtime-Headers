@@ -5,15 +5,15 @@
 @class GQDSLPageMargins, GQDSStylesheet;
 
 @interface GQDSLPublication : GQDRoot {
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL mHasBody;
     BOOL mHasFooters;
     BOOL mHasHeaders;
     BOOL mIsOldTemplateNameMapInitialized;
     struct __CFDictionary { } *mOldTemplateNameMap;
     GQDSLPageMargins *mPageMargins;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mPageSize;
     BOOL mShowOutliner;
     GQDSStylesheet *mStylesheet;

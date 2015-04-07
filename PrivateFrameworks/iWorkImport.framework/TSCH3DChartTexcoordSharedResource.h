@@ -22,8 +22,8 @@
 - (void)setChildRegenerated:(BOOL)arg1;
 - (void)setGenerator:(id)arg1;
 - (void)setNormal:(id)arg1;
-- (void)setVertex:(id)arg1 normal:(id)arg2 generator:(id)arg3;
 - (void)setVertex:(id)arg1;
+- (void)setVertex:(id)arg1 normal:(id)arg2 generator:(id)arg3;
 - (id)vertex;
 
 @end

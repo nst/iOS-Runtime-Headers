@@ -24,9 +24,6 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-     /* Encoded args for previous method: v12@0:4R@8 */
-     /* Encoded args for previous method: v16@0:4R@8i12 */
-     /* Encoded args for previous method: v20@0:4R@8i12@16 */
     } _clients;
     struct CLNotifierBase { int (**x1)(); } *_notifier;
 }
@@ -34,16 +31,22 @@
 @property(readonly) struct CLNotifierBase { int (**x1)(); }* notifier;
 @property BOOL valid;
 
-- (struct CLNotifierBase { int (**x1)(); }*)notifier;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)debugDescription;
 - (void)forget:(/* Warning: Unrecognized filer type: 'R' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: v12@0:4R@8 */
+
 - (id)initInSilo:(id)arg1;
 - (void)invalidate;
+- (struct CLNotifierBase { int (**x1)(); }*)notifier;
 - (int)notifierClientNumForCoparty:(id)arg1;
 - (void)register:(/* Warning: Unrecognized filer type: 'R' using 'void*' */ void*)arg1 forNotification:(int)arg2 registrationInfo:(id)arg3;
+     /* Encoded args for previous method: v20@0:4R@8i12@16 */
+
 - (void)setAdaptedNotifier:(struct CLNotifierBase { int (**x1)(); }*)arg1;
 - (void)unregister:(/* Warning: Unrecognized filer type: 'R' using 'void*' */ void*)arg1 forNotification:(int)arg2;
+     /* Encoded args for previous method: v16@0:4R@8i12 */
+
 
 @end

@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSString, NSXPCListener;
 
-@interface ATSessionServerListener : NSObject <NSXPCListenerDelegate, ATSessionServer> {
+@interface ATSessionServerListener : NSObject <ATSessionServer, NSXPCListenerDelegate> {
     NSXPCListener *_listener;
     NSMutableDictionary *_sessionProxiesBySessionID;
 }

@@ -61,8 +61,8 @@
 - (void)enableUndoRedo;
 - (void)endFieldEditing;
 - (void)endLocalEditing;
-- (void)enqueueCommand:(id)arg1 withSelectionBehavior:(id)arg2;
 - (void)enqueueCommand:(id)arg1;
+- (void)enqueueCommand:(id)arg1 withSelectionBehavior:(id)arg2;
 - (id)executingCommand;
 - (void)forceCloseAutomaticGroup;
 - (int)groupingLevel;

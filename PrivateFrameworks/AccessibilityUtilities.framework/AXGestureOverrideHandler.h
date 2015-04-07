@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface AXGestureOverrideHandler : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSString *_identifier;
     unsigned int _type;
 }

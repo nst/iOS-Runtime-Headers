@@ -5,6 +5,11 @@
 @class UIView;
 
 @interface PLCropOverlayLayer : UIView {
+    UIView *_bottomEdgeLayer;
+    UIView *_bottomLeftCornerLayer;
+    UIView *_bottomOpaqueLayer;
+    UIView *_bottomRightCornerLayer;
+    UIView *_bottomThirdLayer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,25 +19,20 @@
             float width; 
             float height; 
         } size; 
-    unsigned int _showsCropRect : 1;
-    unsigned int _showThirdsGrid : 1;
-    unsigned int _showsStraightenGrid : 1;
-    unsigned int _thirdsVisible : 1;
-    unsigned int _highlighted : 1;
-    UIView *_bottomEdgeLayer;
-    UIView *_bottomLeftCornerLayer;
-    UIView *_bottomOpaqueLayer;
-    UIView *_bottomRightCornerLayer;
-    UIView *_bottomThirdLayer;
     } _cropRect;
+    unsigned int _highlighted : 1;
     UIView *_leftEdgeLayer;
     UIView *_leftOpaqueLayer;
     UIView *_leftThirdLayer;
     UIView *_rightEdgeLayer;
     UIView *_rightOpaqueLayer;
     UIView *_rightThirdLayer;
+    unsigned int _showThirdsGrid : 1;
+    unsigned int _showsCropRect : 1;
+    unsigned int _showsStraightenGrid : 1;
     UIView *_straightenHorizontalLayers[6];
     UIView *_straightenVerticalLayers[6];
+    unsigned int _thirdsVisible : 1;
     UIView *_topEdgeLayer;
     UIView *_topLeftCornerLayer;
     UIView *_topOpaqueLayer;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CTAsciiAddress : NSObject <NSCopying, CTMessageAddress> {
+@interface CTAsciiAddress : NSObject <CTMessageAddress, NSCopying> {
     NSString *_address;
 }
 

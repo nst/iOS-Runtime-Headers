@@ -13,8 +13,8 @@
 @property(readonly) NSString * stringB;
 
 + (id)editScriptForSmallestSingleEditFromString:(id)arg1 toString:(id)arg2;
-+ (id)editScriptFromString:(id)arg1 toString:(id)arg2 chunkSize:(int)arg3 orderAtomsAscending:(BOOL)arg4 operationPrecedence:(int)arg5 options:(int)arg6;
 + (id)editScriptFromString:(id)arg1 toString:(id)arg2;
++ (id)editScriptFromString:(id)arg1 toString:(id)arg2 chunkSize:(int)arg3 orderAtomsAscending:(BOOL)arg4 operationPrecedence:(int)arg5 options:(int)arg6;
 
 - (void)addToCurrentScriptAtomEditOperation:(int)arg1 editIndex:(unsigned int)arg2 newText:(id)arg3 indexInArrayB:(unsigned int)arg4;
 - (id)applyToString:(id)arg1;

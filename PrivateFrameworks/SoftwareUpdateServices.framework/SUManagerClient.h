@@ -22,8 +22,8 @@
 
 - (void)_invalidateConnection;
 - (id)_remoteInterface;
-- (id)_remoteInterfaceWithErrorHandler:(id)arg1 connectIfNecessary:(BOOL)arg2;
 - (id)_remoteInterfaceWithErrorHandler:(id)arg1;
+- (id)_remoteInterfaceWithErrorHandler:(id)arg1 connectIfNecessary:(BOOL)arg2;
 - (void)_setClientType;
 - (void)automaticDownloadDidFailToStartForNewUpdateAvailable:(id)arg1 withError:(id)arg2;
 - (void)cancelDownload:(id)arg1;
@@ -39,8 +39,8 @@
 - (void)downloadProgressDidChange:(id)arg1;
 - (void)downloadWasInvalidatedForNewUpdateAvailable:(id)arg1;
 - (id)init;
-- (id)initWithDelegate:(id)arg1 clientType:(int)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 clientType:(int)arg2;
 - (id)installDescriptor;
 - (void)installDidFail:(id)arg1 withError:(id)arg2;
 - (void)installDidFinish:(id)arg1;

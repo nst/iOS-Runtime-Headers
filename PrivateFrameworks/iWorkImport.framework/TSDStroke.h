@@ -9,7 +9,7 @@
 
 @class NSString, TSDStrokePattern, TSUColor;
 
-@interface TSDStroke : NSObject <TSSThemeAsset, TSDPathPainter, TSDMixing, NSCopying, NSMutableCopying> {
+@interface TSDStroke : NSObject <NSCopying, NSMutableCopying, TSDMixing, TSDPathPainter, TSSThemeAsset> {
     float mActualWidth;
     int mCap;
     TSUColor *mColor;
@@ -57,8 +57,8 @@
 + (id)p_newEmptyStroke;
 + (id)p_newStroke;
 + (id)stroke;
-+ (id)strokeWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5;
 + (id)strokeWithColor:(id)arg1 width:(float)arg2;
++ (id)strokeWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5;
 + (id)zeroWidthEmptyStroke;
 
 - (void)aaDefeatedPaintLineEnd:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 inContext:(struct CGContext { }*)arg5;
@@ -66,8 +66,8 @@
 - (void)applyInteriorWrapPropertiesToContext:(struct CGContext { }*)arg1 insideStroke:(BOOL)arg2;
 - (void)applyToCAShapeLayer:(id)arg1 insideStroke:(BOOL)arg2 withScale:(float)arg3;
 - (void)applyToCAShapeLayer:(id)arg1 withScale:(float)arg2;
-- (void)applyToContext:(struct CGContext { }*)arg1 insideStroke:(BOOL)arg2;
 - (void)applyToContext:(struct CGContext { }*)arg1;
+- (void)applyToContext:(struct CGContext { }*)arg1 insideStroke:(BOOL)arg2;
 - (void)applyToRepCALayer:(id)arg1 withScale:(float)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForLineEnd:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForPath:(id)arg1;
@@ -88,8 +88,8 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; int x5; int x6; float x7; struct StrokePatternArchive {} *x8; struct SmartStrokeArchive {} *x9; struct FrameArchive {} *x10; struct PatternedStrokeArchive {} *x11; int x12; unsigned int x13[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5 miterLimit:(float)arg6;
 - (id)initWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5;
+- (id)initWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5 miterLimit:(float)arg6;
 - (BOOL)isDash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToStroke:(id)arg1;
@@ -109,11 +109,11 @@
 - (struct _TSDStrokeOutsets { float x1; float x2; float x3; float x4; })outsets;
 - (void)p_setPatternPropertiesFromStroke:(id)arg1;
 - (void)p_setPropertiesFromStroke:(id)arg1;
-- (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 inContext:(struct CGContext { }*)arg5 useFastDrawing:(BOOL)arg6;
 - (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 inContext:(struct CGContext { }*)arg5;
+- (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 inContext:(struct CGContext { }*)arg5 useFastDrawing:(BOOL)arg6;
 - (void)paintPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
-- (void)paintPath:(struct CGPath { }*)arg1 wantsInteriorStroke:(BOOL)arg2 inContext:(struct CGContext { }*)arg3 useFastDrawing:(BOOL)arg4;
 - (void)paintPath:(struct CGPath { }*)arg1 wantsInteriorStroke:(BOOL)arg2 inContext:(struct CGContext { }*)arg3;
+- (void)paintPath:(struct CGPath { }*)arg1 wantsInteriorStroke:(BOOL)arg2 inContext:(struct CGContext { }*)arg3 useFastDrawing:(BOOL)arg4;
 - (void)paintPathWithNormalClip:(struct CGPath { }*)arg1 wantsInteriorStroke:(BOOL)arg2 inContext:(struct CGContext { }*)arg3;
 - (void)paintRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (void)paintRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wantsInteriorStroke:(BOOL)arg2 inContext:(struct CGContext { }*)arg3;

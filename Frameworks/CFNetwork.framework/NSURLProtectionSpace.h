@@ -4,7 +4,7 @@
 
 @class NSString, NSURLProtectionSpaceInternal;
 
-@interface NSURLProtectionSpace : NSObject <NSSecureCoding, NSCopying> {
+@interface NSURLProtectionSpace : NSObject <NSCopying, NSSecureCoding> {
     NSURLProtectionSpaceInternal *_internal;
 }
 

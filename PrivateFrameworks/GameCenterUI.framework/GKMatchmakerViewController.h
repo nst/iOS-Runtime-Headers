@@ -56,10 +56,10 @@
 - (void)inviterCancelledNotification:(id)arg1;
 - (BOOL)isHosted;
 - (void)localPlayerAcceptedGameInvite:(id)arg1;
+- (id)match;
 - (void)match:(id)arg1 didFailWithError:(id)arg2;
 - (void)match:(id)arg1 didReceiveData:(id)arg2 fromRemotePlayer:(id)arg3;
 - (void)match:(id)arg1 player:(id)arg2 didChangeConnectionState:(int)arg3;
-- (id)match;
 - (id)matchRequest;
 - (id)matchmakerDelegate;
 - (void)playersToInvite:(id)arg1;

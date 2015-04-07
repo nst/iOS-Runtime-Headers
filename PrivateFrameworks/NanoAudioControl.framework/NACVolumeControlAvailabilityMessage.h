@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface NACVolumeControlAvailabilityMessage : PBCodable <NSCopying> {
+    NSString *_category;
     struct { 
         unsigned int volumeControlAvailable : 1; 
-    NSString *_category;
     } _has;
     BOOL _volumeControlAvailable;
 }

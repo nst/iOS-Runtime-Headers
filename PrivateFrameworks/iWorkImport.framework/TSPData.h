@@ -10,10 +10,10 @@
 @class <TSPDataStorage>, NSObject<OS_dispatch_queue>, NSString, TSPDataManager, TSPObjectContext;
 
 @interface TSPData : NSObject <TSPSplitableData> {
-    struct array<unsigned char, 20> { 
-        unsigned char __elems_[20]; 
     NSObject<OS_dispatch_queue> *_accessQueue;
     int _didCull;
+    struct array<unsigned char, 20> { 
+        unsigned char __elems_[20]; 
     } _digest;
     NSString *_filename;
     long long _identifier;

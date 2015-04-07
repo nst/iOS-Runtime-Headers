@@ -5,13 +5,13 @@
 @class NSArray, NSString;
 
 @interface PSMagnifyMode : NSObject <NSCopying> {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSString *_localizedName;
     NSString *_name;
     NSArray *_previewHTMLStrings;
     NSArray *_previewStyleSheets;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     BOOL _zoomed;
 }

@@ -12,7 +12,11 @@
     City *_currentCity;
     CLGeocoder *_geoCoder;
     BOOL _isGeoCoding;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _localWeatherHandler;
+
 }
 
 @property(retain) City * currentCity;
@@ -33,7 +37,7 @@
 - (BOOL)isDataValid:(id)arg1;
 - (void)parsedResultCity:(id)arg1;
 - (void)setCurrentCity:(id)arg1;
-- (void)updateWeatherForLocation:(id)arg1 city:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)updateWeatherForLocation:(id)arg1 city:(id)arg2;
+- (void)updateWeatherForLocation:(id)arg1 city:(id)arg2 withCompletionHandler:(id)arg3;
 
 @end

@@ -50,8 +50,8 @@
 - (void)setButtonDividerViews:(id)arg1;
 - (void)setButtonsArray:(id)arg1;
 - (void)setButtonsDictionary:(id)arg1;
-- (void)setButtonsMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setButtonsMode:(int)arg1;
+- (void)setButtonsMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setHighlightedControlIndex:(int)arg1;
 - (void)setMuted:(BOOL)arg1;

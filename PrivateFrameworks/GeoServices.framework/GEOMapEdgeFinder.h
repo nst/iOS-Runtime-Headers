@@ -14,7 +14,11 @@
         double y; 
     } _centerPoint;
     NSMutableSet *_edgeBuilders;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _edgeHandler;
+
     double _mapRadius;
     GEOMapTileFinder *_tileFinder;
 }

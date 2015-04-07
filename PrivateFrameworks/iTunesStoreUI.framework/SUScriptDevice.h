@@ -23,9 +23,9 @@
 @property(readonly) NSArray * automaticDownloadMediaTypes;
 @property(readonly) NSString * capabilityNameEmail;
 @property(readonly) NSString * capabilityNameExplicitMedia;
+@property(readonly) NSString * capabilityNameHDVideo;
 @property(readonly) NSString * capabilityNameHDVideo1080p;
 @property(readonly) NSString * capabilityNameHDVideo720p;
-@property(readonly) NSString * capabilityNameHDVideo;
 @property(readonly) NSString * capabilityNamePodcasts;
 @property(readonly) NSString * capabilityNameWiFi;
 @property(readonly) unsigned long deviceTypeIdentifier;
@@ -126,9 +126,9 @@
 - (int)boolValueForRestriction:(id)arg1;
 - (id)capabilityNameEmail;
 - (id)capabilityNameExplicitMedia;
+- (id)capabilityNameHDVideo;
 - (id)capabilityNameHDVideo1080p;
 - (id)capabilityNameHDVideo720p;
-- (id)capabilityNameHDVideo;
 - (id)capabilityNamePodcasts;
 - (id)capabilityNameWiFi;
 - (id)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(BOOL)arg2;

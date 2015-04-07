@@ -19,8 +19,8 @@
 + (BOOL)isMessageDraft:(id)arg1;
 + (id)myEmailAddresses;
 + (id)recipientsOfMessage:(id)arg1;
-+ (unsigned int)relationOfMessage:(id)arg1 toMessage:(id)arg2 previousSenders:(id)arg3 myEmailAddresses:(id)arg4;
 + (unsigned int)relationOfMessage:(id)arg1 toMessage:(id)arg2;
++ (unsigned int)relationOfMessage:(id)arg1 toMessage:(id)arg2 previousSenders:(id)arg3 myEmailAddresses:(id)arg4;
 + (id)sendersOfMessage:(id)arg1;
 
 - (void)dealloc;

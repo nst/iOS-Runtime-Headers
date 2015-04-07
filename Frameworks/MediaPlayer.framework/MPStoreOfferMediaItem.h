@@ -4,7 +4,7 @@
 
 @class MPStoreOfferContentRating, MPStoreOfferMediaItemArtworkDescriptor, NSDictionary, NSNumber;
 
-@interface MPStoreOfferMediaItem : MPNondurableMediaItem <NSSecureCoding, NSCopying> {
+@interface MPStoreOfferMediaItem : MPNondurableMediaItem <NSCopying, NSSecureCoding> {
     MPStoreOfferContentRating *_contentRating;
     id _discNumber;
     NSNumber *_itemID;

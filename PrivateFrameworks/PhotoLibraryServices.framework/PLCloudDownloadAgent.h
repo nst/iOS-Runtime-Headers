@@ -5,12 +5,12 @@
 @class NSObject<OS_dispatch_queue>, PLCloudPhotoLibraryManager, PLPhotoLibrary;
 
 @interface PLCloudDownloadAgent : PLCloudScenarioProducer {
-    struct { 
-        int retries; 
-        int state; 
     NSObject<OS_dispatch_queue> *_agentQueue;
     PLPhotoLibrary *_localLibrary;
     PLCloudPhotoLibraryManager *_remoteLibrary;
+    struct { 
+        int retries; 
+        int state; 
     } _walkStatus[4];
 }
 

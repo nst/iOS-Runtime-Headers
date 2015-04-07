@@ -4,7 +4,7 @@
 
 @class BKSTouchDeliveryPolicyAssertion, NSArray, NSError, NSMutableArray, NSString, UIActionSheet, UIDimmingView, UIView, _UIAsyncInvocation, _UIRemoteView, _UIRemoteViewService, _UISizeTrackingView, _UITextEffectsRemoteView, _UITextServiceSession, _UIViewServiceInterface;
 
-@interface _UIRemoteViewController : UIViewController <_UIRemoteViewController_ViewControllerOperatorInterface, _UIRemoteViewController_TextEffectsOperatorInterface, UIActionSheetDelegate> {
+@interface _UIRemoteViewController : UIViewController <UIActionSheetDelegate, _UIRemoteViewController_TextEffectsOperatorInterface, _UIRemoteViewController_ViewControllerOperatorInterface> {
     BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
     NSArray *_allowedNotifications;

@@ -5,7 +5,7 @@
 @class EDReferenceCollection, NSMutableArray;
 
 @interface EDConditionalFormatting : NSObject {
-    boolmApplyToDate;
+    bool mApplyToDate;
     EDReferenceCollection *mRanges;
     NSMutableArray *mRules;
 }

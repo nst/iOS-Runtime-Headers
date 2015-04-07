@@ -4,7 +4,7 @@
 
 @class <MKPlaceNearbyAppsViewControllerDelegate>, NSArray, NSString;
 
-@interface MKPlaceNearbyAppsViewController : UITableViewController <MKStackingViewControllerPreferredSizeUse, MKPlaceViewNearbyAppsCellDelegate> {
+@interface MKPlaceNearbyAppsViewController : UITableViewController <MKPlaceViewNearbyAppsCellDelegate, MKStackingViewControllerPreferredSizeUse> {
     <MKPlaceNearbyAppsViewControllerDelegate> *_nearbyAppsDelegate;
     NSArray *_storeItems;
 }

@@ -5,95 +5,6 @@
 @class <TSTLayoutDynamicCellFillProtocol>, <TSTLayoutDynamicColumnSwapProtocol>, <TSTLayoutDynamicContentProtocol>, <TSTLayoutDynamicRowSwapProtocol>, NSIndexSet, NSLock, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_group>, NSPointerArray, NSString, TSDFill, TSDInfoGeometry, TSDLayoutGeometry, TSKChangeNotifier, TSTCellRegion, TSTConcurrentMutableIndexSet, TSTDupContentCache, TSTHiddenRowsColumnsCache, TSTLayout, TSTLayoutDynamicResizeInfo, TSTMergeRangeSortedSet, TSTRWRetainedPointerKeyDictionary, TSTStrokeDefaultVendor, TSTStrokeWidthCache, TSTTableInfo, TSTTableModel, TSTWPColumnCache, TSTWidthHeightCache, TSUColor, TSUWidthLimitedQueue, TSWPEditingController;
 
 @interface TSTMasterLayout : NSObject <TSKChangeSourceObserver> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL mBandedFillIsValid;
     TSDFill *mBandedFillObject;
     NSPointerArray *mBottomRowStrokes;
@@ -119,11 +30,51 @@
     float mDynamicColumnTabSize;
     <TSTLayoutDynamicContentProtocol> *mDynamicContentDelegate;
     TSUColor *mDynamicFontColor;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } mDynamicFontColorCellRange;
     float mDynamicHeightResize;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } mDynamicHidingContent;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } mDynamicHidingRowsCols;
     int mDynamicHidingRowsColsDirection;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } mDynamicHidingText;
     TSDInfoGeometry *mDynamicInfoGeometry;
     NSMutableSet *mDynamicLayouts;
@@ -131,11 +82,41 @@
     BOOL mDynamicRepressFrozenHeader;
     TSTLayoutDynamicResizeInfo *mDynamicResizeInfo;
     float mDynamicResizingColumnAdjustment;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } mDynamicResizingColumnRange;
     BOOL mDynamicResizingColumns;
     float mDynamicResizingRowAdjustment;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } mDynamicResizingRowRange;
     BOOL mDynamicResizingRows;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } mDynamicRevealingRowsCols;
     int mDynamicRevealingRowsColsDirection;
     int mDynamicRowAdjustment;
@@ -143,6 +124,10 @@
     float mDynamicRowTabSize;
     TSDLayoutGeometry *mDynamicSavedLayoutGeometry;
     TSTCellRegion *mDynamicSelectionRegion;
+    struct { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
     } mDynamicSuppressingConditionalStylesCellID;
     float mDynamicTableNameResize;
     float mDynamicWidthResize;
@@ -158,6 +143,9 @@
     NSPointerArray *mLeftColumnStrokes;
     NSLock *mLock;
     unsigned int mMaxConcurrentTasks;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mMaximumPartitionSize;
     TSTMergeRangeSortedSet *mMergeRanges;
     unsigned int mNumCellsPerTask;
@@ -168,11 +156,23 @@
     TSTStrokeWidthCache *mRowToStrokeHeightCache;
     TSTConcurrentMutableIndexSet *mSpillStrokeColumns;
     TSTStrokeDefaultVendor *mStrokesDefaultVendor;
+    struct _opaque_pthread_rwlock_t { 
+        long __sig; 
+        BOOL __opaque[124]; 
     } mStrokesRWLock;
     float mTableDefaultFontHeightForArea[4];
     BOOL mTableDefaultFontHeightsAreValid;
     int mTableEnvironment;
     TSTTableInfo *mTableInfo;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mTableNameBounds;
     BOOL mTableNameEnabled;
     int mTableRowsBehavior;
@@ -249,8 +249,8 @@
 - (id).cxx_construct;
 - (id)accountingParagraphStylePropertyMapForCell:(id)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)addChangeDescriptor:(id)arg1;
-- (void)addChangeDescriptorWithType:(int)arg1 andCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 andStrokeRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3;
 - (void)addChangeDescriptorWithType:(int)arg1 andCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
+- (void)addChangeDescriptorWithType:(int)arg1 andCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 andStrokeRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3;
 - (void)addDynamicLayoutBeginIfNecessary:(id)arg1;
 - (BOOL)adjustGridColumnForVisibility:(unsigned int*)arg1 isLeft:(BOOL)arg2;
 - (BOOL)adjustGridRowForVisibility:(unsigned int*)arg1 isTop:(BOOL)arg2;
@@ -335,17 +335,17 @@
 - (BOOL)isDynamicallyChangingSelection;
 - (BOOL)isDynamicallyColumnTabResizing;
 - (BOOL)isDynamicallyHidingContentOfCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (BOOL)isDynamicallyHidingRowsCols:(int)arg1 rowColIndex:(unsigned short)arg2;
 - (BOOL)isDynamicallyHidingRowsCols;
+- (BOOL)isDynamicallyHidingRowsCols:(int)arg1 rowColIndex:(unsigned short)arg2;
 - (BOOL)isDynamicallyHidingRowsColsCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (BOOL)isDynamicallyHidingTextOfCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (BOOL)isDynamicallyRepressingFrozenHeaders;
-- (BOOL)isDynamicallyResizing:(int)arg1 rowColIndex:(unsigned short)arg2;
 - (BOOL)isDynamicallyResizing:(int)arg1;
+- (BOOL)isDynamicallyResizing:(int)arg1 rowColIndex:(unsigned short)arg2;
 - (BOOL)isDynamicallyResizingCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (BOOL)isDynamicallyResizingTableName;
-- (BOOL)isDynamicallyRevealingRowsCols:(int)arg1 rowColIndex:(unsigned short)arg2;
 - (BOOL)isDynamicallyRevealingRowsCols;
+- (BOOL)isDynamicallyRevealingRowsCols:(int)arg1 rowColIndex:(unsigned short)arg2;
 - (BOOL)isDynamicallyRowTabResizing;
 - (BOOL)isDynamicallySettingBandedFill;
 - (BOOL)isDynamicallySwappingColumns;

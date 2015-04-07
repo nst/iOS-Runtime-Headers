@@ -9,7 +9,11 @@
 @class <DADataclassLockWatcher>;
 
 @interface DAWaiterWrapper : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     int _dataclasses;
     <DADataclassLockWatcher> *_waiter;
     int _waiterNum;

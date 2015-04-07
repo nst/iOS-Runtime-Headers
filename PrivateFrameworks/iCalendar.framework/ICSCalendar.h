@@ -56,9 +56,9 @@
 - (id)prodid;
 - (id)propertiesToIncludeForChecksumVersion:(int)arg1;
 - (void)setCalscale:(id)arg1;
+- (void)setComponents:(id)arg1;
 - (void)setComponents:(id)arg1 options:(int)arg2;
 - (void)setComponents:(id)arg1 timeZones:(BOOL)arg2;
-- (void)setComponents:(id)arg1;
 - (void)setMethod:(int)arg1;
 - (void)setProdid:(id)arg1;
 - (void)setVersion:(id)arg1;

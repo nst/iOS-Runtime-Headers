@@ -13,8 +13,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 negate:(BOOL)arg3 options:(unsigned int)arg4;
 - (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 negate:(BOOL)arg3;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 negate:(BOOL)arg3 options:(unsigned int)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNegation;
 - (unsigned int)options;

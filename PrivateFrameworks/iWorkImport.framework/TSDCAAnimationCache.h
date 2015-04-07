@@ -5,43 +5,11 @@
 @class CAAnimation, CALayer, NSDictionary;
 
 @interface TSDCAAnimationCache : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
     BOOL _anchorPointAnimationExists;
     struct CGPoint { float x1; float x2; } *_anchorPointCache;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _anchorPointInitialValue;
     BOOL _anchorPointZAnimationExists;
     float *_anchorPointZCache;
@@ -55,6 +23,15 @@
     float _borderWidthInitialValue;
     BOOL _boundsAnimationExists;
     struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } *_boundsCache;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _boundsInitialValue;
     int _cacheValuesCount;
     BOOL _contentsAnimationExists;
@@ -73,9 +50,29 @@
     NSDictionary *_overrideInitialValuesDict;
     BOOL _positionAnimationExists;
     struct CGPoint { float x1; float x2; } *_positionCache;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _positionInitialValue;
     BOOL _transformAnimationExists;
     struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } *_transformCache;
+    struct CATransform3D { 
+        float m11; 
+        float m12; 
+        float m13; 
+        float m14; 
+        float m21; 
+        float m22; 
+        float m23; 
+        float m24; 
+        float m31; 
+        float m32; 
+        float m33; 
+        float m34; 
+        float m41; 
+        float m42; 
+        float m43; 
+        float m44; 
     } _transformInitialValue;
     BOOL _transformRotationAnimationExists;
     float *_transformRotationCache;
@@ -100,6 +97,9 @@
     float _transformScaleYInitialValue;
     BOOL _transformTranslationAnimationExists;
     struct CGPoint { float x1; float x2; } *_transformTranslationCache;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _transformTranslationInitialValue;
     BOOL _transformTranslationXAnimationExists;
     float *_transformTranslationXCache;

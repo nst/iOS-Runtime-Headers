@@ -35,8 +35,8 @@
 - (void)setCustomizableViewControllerIdentifiers:(id)arg1;
 - (void)setSelectedViewControllerIdentifier:(id)arg1;
 - (void)setViewControllerFactoryClass:(Class)arg1;
-- (void)setViewControllerIdentifiers:(id)arg1 animated:(BOOL)arg2;
 - (void)setViewControllerIdentifiers:(id)arg1;
+- (void)setViewControllerIdentifiers:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldSelectViewController:(id)arg1;
 - (Class)viewControllerFactoryClass;
 - (id)viewControllerIdentifiers;

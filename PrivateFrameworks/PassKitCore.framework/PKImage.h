@@ -29,11 +29,11 @@
 @property(readonly) BOOL stretches;
 @property(readonly) BOOL tiles;
 
-+ (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(float*)arg3 preferredScreenScale:(float)arg4 suffix:(id)arg5;
 + (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(float*)arg3;
++ (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(float*)arg3 preferredScreenScale:(float)arg4 suffix:(id)arg5;
 + (id)hashOfImageNamed:(id)arg1 inBundle:(id)arg2;
-+ (id)imageNamed:(id)arg1 inBundle:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
++ (id)imageNamed:(id)arg1 inBundle:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
 + (id)passesImageNamed:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
@@ -43,8 +43,8 @@
 - (struct PKEdgeInsets { float x1; float x2; float x3; float x4; })capInsets;
 - (void)dealloc;
 - (struct CGSize { float x1; float x2; })downscaleSizeMatchingScale:(float)arg1;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 withBlendMode:(int)arg3 alpha:(float)arg4;
 - (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 withBlendMode:(int)arg3 alpha:(float)arg4;
 - (void)encodeWithCoder:(id)arg1;
 - (id)imageData;
 - (id)imageHash;

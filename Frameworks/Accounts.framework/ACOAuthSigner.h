@@ -17,12 +17,12 @@
 - (void)_connectToRemoteOAuthSignerUsingEndpoint:(id)arg1;
 - (void)dealloc;
 - (void)disconnectFromRemoteOAuthSigner;
-- (id)initWithAccount:(id)arg1 remoteEndpoint:(id)arg2;
 - (id)initWithAccount:(id)arg1;
+- (id)initWithAccount:(id)arg1 remoteEndpoint:(id)arg2;
 - (void)setShouldIncludeAppIdInRequest:(BOOL)arg1;
 - (BOOL)shouldIncludeAppIdInRequest;
+- (id)signedURLRequestWithURLRequest:(id)arg1;
 - (id)signedURLRequestWithURLRequest:(id)arg1 applicationID:(id)arg2 timestamp:(id)arg3;
 - (id)signedURLRequestWithURLRequest:(id)arg1 callingPID:(id)arg2 timestamp:(id)arg3;
-- (id)signedURLRequestWithURLRequest:(id)arg1;
 
 @end

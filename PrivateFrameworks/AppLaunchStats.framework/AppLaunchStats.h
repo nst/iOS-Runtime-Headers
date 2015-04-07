@@ -27,22 +27,9 @@
     NSObject<OS_dispatch_queue> *appLaunchStatDQueue;
     NSObject<OS_dispatch_queue> *appLaunchStatPushQueue;
     NSNumber *batteryCapacity;
-    boolbudgetsInitialized;
-    booldisableAllDueToSleep;
-    booldisableFetch;
-    booldisableHighPriorityPush;
-    booldisableLowPriorityPush;
-    booldisableTrending;
-    boolenableCoreDuet;
-    boolisAppForecastUpdating;
-    boolisClassCLocked;
-    boolisDataBudgetUpdating;
-    boolisInternalInstall;
-    boolisNoprewarmUpdating;
-    boolisPowerBudgetsUpdating;
-    boollastFetchWasTooLongAgo;
     NSObject<OS_dispatch_queue> *budgetQueue;
     CDSession *budget_session;
+    bool budgetsInitialized;
     CDAttribute *bundleIdAttribute;
     int classCLockedToken;
     int configToken;
@@ -50,27 +37,48 @@
     CDBudget *dataBudget;
     <AppLaunchStatsDelegate> *delegate;
     NSObject<OS_dispatch_queue> *delegateQueue;
+    bool disableAllDueToSleep;
+    bool disableFetch;
+    bool disableHighPriorityPush;
+    bool disableLowPriorityPush;
+    bool disableTrending;
     int displayStateToken;
     NSDistributedNotificationCenter *distNotCenter;
+    bool enableCoreDuet;
     CDBudget *energyBudget;
     int externalTrigToken;
     int externaltriggerType;
     NSString *fakeBundleID;
+    bool isAppForecastUpdating;
+    bool isClassCLocked;
+    bool isDataBudgetUpdating;
+    bool isInternalInstall;
+    bool isNoprewarmUpdating;
+    bool isPowerBudgetsUpdating;
     NSDate *lastDateOfAliveList;
     NSDate *lastExternalTrigTime;
+    bool lastFetchWasTooLongAgo;
     int lockStateToken;
     long long lowPriorityStartTime;
     int messageStatusAPSD;
     NSMutableDictionary *meterTokenTracker;
     NSDate *oneHourBudgetReset;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id pendingHandler;
+
     NSDate *periodicTimeTracker;
     int pluggedInToken;
     unsigned char prefUIKitFakeSwitch;
     int pushListToken;
     int pushToken;
     int pushTokenLST;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id recommendHandler;
+
     int resourceStatus;
     int semaphoreSigToken;
     CDSession *session;

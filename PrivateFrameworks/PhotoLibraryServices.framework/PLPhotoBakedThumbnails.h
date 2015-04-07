@@ -5,9 +5,6 @@
 @class NSData, NSMutableArray, NSMutableDictionary;
 
 @interface PLPhotoBakedThumbnails : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     unsigned int _count;
     BOOL _dataIsMutable;
     int _format;
@@ -16,6 +13,9 @@
     BOOL _optionsAccessed;
     NSData *_optionsData;
     int _singleThumbnailImageLength;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     NSData *_thumbnailData;
     NSMutableArray *_thumbnailImages;
@@ -42,10 +42,10 @@
 - (id)description;
 - (int)format;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRect;
-- (id)initWithContentsOfFile:(id)arg1 format:(int)arg2 readOnly:(BOOL)arg3;
 - (id)initWithContentsOfFile:(id)arg1 format:(int)arg2;
-- (id)initWithData:(id)arg1 format:(int)arg2 readOnly:(BOOL)arg3;
+- (id)initWithContentsOfFile:(id)arg1 format:(int)arg2 readOnly:(BOOL)arg3;
 - (id)initWithData:(id)arg1 format:(int)arg2;
+- (id)initWithData:(id)arg1 format:(int)arg2 readOnly:(BOOL)arg3;
 - (id)initWithImages:(id)arg1 format:(int)arg2 orientation:(int*)arg3 options:(id)arg4 delegate:(id)arg5;
 - (id)options;
 - (id)optionsData;

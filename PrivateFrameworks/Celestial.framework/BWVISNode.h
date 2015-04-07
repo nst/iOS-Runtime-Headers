@@ -5,10 +5,10 @@
 @class NSDictionary;
 
 @interface BWVISNode : BWNode {
+    BOOL _offline;
     struct { 
         int width; 
         int height; 
-    BOOL _offline;
     } _offlineOutputDimensions;
     NSDictionary *_optionsDict;
     unsigned long _outputHeight;

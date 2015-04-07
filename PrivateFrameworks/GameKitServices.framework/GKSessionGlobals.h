@@ -3,12 +3,12 @@
  */
 
 @interface GKSessionGlobals : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     unsigned int *_activePIDList;
     unsigned long _activePIDListCount;
     unsigned long _activePIDListSize;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _lock;
 }
 

@@ -14,13 +14,13 @@
         struct __compressed_pair<std::__1::pair<TSUColumnRowCoordinate, TSCEFormula> *, std::__1::allocator<std::__1::pair<TSUColumnRowCoordinate, TSCEFormula> > > { 
             struct pair<TSUColumnRowCoordinate, TSCEFormula> {} *__first_; 
         } __end_cap_; 
+    } mFormulas;
     struct vector<TSUColumnRowCoordinate, std::__1::allocator<TSUColumnRowCoordinate> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<TSUColumnRowCoordinate *, std::__1::allocator<TSUColumnRowCoordinate> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    } mFormulas;
     } mNonFormulaCells;
 }
 

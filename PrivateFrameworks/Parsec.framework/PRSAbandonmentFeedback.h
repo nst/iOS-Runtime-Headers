@@ -12,8 +12,8 @@
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInput:(id)arg1 timestamp:(int)arg2 method:(unsigned int)arg3;
 - (id)initWithInput:(id)arg1 timestamp:(int)arg2;
+- (id)initWithInput:(id)arg1 timestamp:(int)arg2 method:(unsigned int)arg3;
 - (unsigned int)method;
 - (id)plist;
 - (id)type;

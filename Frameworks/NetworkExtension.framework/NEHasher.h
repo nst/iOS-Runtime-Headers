@@ -28,8 +28,8 @@
 - (id)decodePropertyListForKey:(id)arg1;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
 - (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
-- (void)encodeBytes:(const char *)arg1 length:(unsigned int)arg2 forKey:(id)arg3;
 - (void)encodeBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (void)encodeBytes:(const char *)arg1 length:(unsigned int)arg2 forKey:(id)arg3;
 - (void)encodeConditionalObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeDataObject:(id)arg1;
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;

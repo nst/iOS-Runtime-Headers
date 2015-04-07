@@ -5,107 +5,107 @@
 @class TSCH3DCamera, TSCH3DScene;
 
 @interface TSCH3DLabelsRendererTransforms : NSObject {
-    struct tmat4x4<float> { 
-        struct tvec4<float> { 
-            union { 
-                float x; 
-                float r; 
-                float s; 
-            } ; 
-            union { 
-                float y; 
-                float g; 
-                float t; 
-            } ; 
-            union { 
-                float z; 
-                float b; 
-                float p; 
-            } ; 
-            union { 
-                float w; 
-                float a; 
-                float q; 
-            } ; 
-        } value[4]; 
-    struct tmat4x4<float> { 
-        struct tvec4<float> { 
-            union { 
-                float x; 
-                float r; 
-                float s; 
-            } ; 
-            union { 
-                float y; 
-                float g; 
-                float t; 
-            } ; 
-            union { 
-                float z; 
-                float b; 
-                float p; 
-            } ; 
-            union { 
-                float w; 
-                float a; 
-                float q; 
-            } ; 
-        } value[4]; 
-    struct tmat4x4<float> { 
-        struct tvec4<float> { 
-            union { 
-                float x; 
-                float r; 
-                float s; 
-            } ; 
-            union { 
-                float y; 
-                float g; 
-                float t; 
-            } ; 
-            union { 
-                float z; 
-                float b; 
-                float p; 
-            } ; 
-            union { 
-                float w; 
-                float a; 
-                float q; 
-            } ; 
-        } value[4]; 
-    struct tmat4x4<float> { 
-        struct tvec4<float> { 
-            union { 
-                float x; 
-                float r; 
-                float s; 
-            } ; 
-            union { 
-                float y; 
-                float g; 
-                float t; 
-            } ; 
-            union { 
-                float z; 
-                float b; 
-                float p; 
-            } ; 
-            union { 
-                float w; 
-                float a; 
-                float q; 
-            } ; 
-        } value[4]; 
-    struct bitset<5> { 
-        unsigned int __first_; 
     struct ChartScenePropertyAccessor { id x1; id x2; } *mAccessor;
     TSCH3DCamera *mCamera;
+    struct tmat4x4<float> { 
+        struct tvec4<float> { 
+            union { 
+                float x; 
+                float r; 
+                float s; 
+            } ; 
+            union { 
+                float y; 
+                float g; 
+                float t; 
+            } ; 
+            union { 
+                float z; 
+                float b; 
+                float p; 
+            } ; 
+            union { 
+                float w; 
+                float a; 
+                float q; 
+            } ; 
+        } value[4]; 
     } mProjector;
     TSCH3DScene *mScene;
+    struct tmat4x4<float> { 
+        struct tvec4<float> { 
+            union { 
+                float x; 
+                float r; 
+                float s; 
+            } ; 
+            union { 
+                float y; 
+                float g; 
+                float t; 
+            } ; 
+            union { 
+                float z; 
+                float b; 
+                float p; 
+            } ; 
+            union { 
+                float w; 
+                float a; 
+                float q; 
+            } ; 
+        } value[4]; 
     } mStageToWorld;
+    struct tmat4x4<float> { 
+        struct tvec4<float> { 
+            union { 
+                float x; 
+                float r; 
+                float s; 
+            } ; 
+            union { 
+                float y; 
+                float g; 
+                float t; 
+            } ; 
+            union { 
+                float z; 
+                float b; 
+                float p; 
+            } ; 
+            union { 
+                float w; 
+                float a; 
+                float q; 
+            } ; 
+        } value[4]; 
     } mUnitToWorld;
+    struct bitset<5> { 
+        unsigned int __first_; 
     } mValidBits;
+    struct tmat4x4<float> { 
+        struct tvec4<float> { 
+            union { 
+                float x; 
+                float r; 
+                float s; 
+            } ; 
+            union { 
+                float y; 
+                float g; 
+                float t; 
+            } ; 
+            union { 
+                float z; 
+                float b; 
+                float p; 
+            } ; 
+            union { 
+                float w; 
+                float a; 
+                float q; 
+            } ; 
+        } value[4]; 
     } mWorldToStage;
 }
 

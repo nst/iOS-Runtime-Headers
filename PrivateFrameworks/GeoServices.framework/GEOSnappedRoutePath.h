@@ -10,13 +10,13 @@
 @class GEOComposedRoute, GEOComposedRouteSection, GEOMapRequest, NSArray;
 
 @interface GEOSnappedRoutePath : NSObject {
+    GEOMapRequest *_edgeSearchRequest;
+    NSArray *_edges;
+    BOOL _hasCompletedMapMatching;
     struct unique_ptr<geo::RouteMapMatchingSection, std::__1::default_delete<geo::RouteMapMatchingSection> > { 
         struct __compressed_pair<geo::RouteMapMatchingSection *, std::__1::default_delete<geo::RouteMapMatchingSection> > { 
             struct RouteMapMatchingSection {} *__first_; 
         } __ptr_; 
-    GEOMapRequest *_edgeSearchRequest;
-    NSArray *_edges;
-    BOOL _hasCompletedMapMatching;
     } _mapMatchingSection;
     struct __CFSet { } *_observers;
     GEOComposedRoute *_route;
@@ -36,7 +36,6 @@
 @property(readonly) unsigned int routeStartIndex;
 @property(readonly) GEOComposedRouteSection * section;
 
-- (const struct RouteMapMatchingSection { int (**x1)(); }*)mapMatchingSection;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (float)_calculateEdgeLengthFrom:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 to:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 startCoord:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg3 endCoord:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg4;
@@ -50,6 +49,7 @@
 - (id)initWithRoute:(id)arg1 section:(id)arg2 routeStartIndex:(unsigned int)arg3 routeEndIndex:(unsigned int)arg4;
 - (BOOL)isMapMatched;
 - (BOOL)isMapMatching;
+- (const struct RouteMapMatchingSection { int (**x1)(); }*)mapMatchingSection;
 - (void)matchWithDecoder:(id)arg1 completionHandler:(id)arg2;
 - (BOOL)removeObserver:(id)arg1;
 - (unsigned int)routeEndIndex;

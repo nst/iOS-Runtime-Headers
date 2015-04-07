@@ -5,39 +5,39 @@
 @class NSString;
 
 @interface UIKBGeometry : NSObject <NSCoding, NSCopying> {
-    struct { 
-        float amount; 
-        int unit; 
-    struct { 
-        float amount; 
-        int unit; 
-    struct { 
-        float amount; 
-        int unit; 
-    struct { 
-        float amount; 
-        int unit; 
-    struct { 
-        float amount; 
-        int unit; 
-    struct { 
-        float amount; 
-        int unit; 
-    struct { 
-        float amount; 
-        int unit; 
-    struct { 
-        float amount; 
-        int unit; 
     BOOL m_explicitlySpecified;
+    struct { 
+        float amount; 
+        int unit; 
     } m_h;
     NSString *m_name;
+    struct { 
+        float amount; 
+        int unit; 
     } m_paddingBottom;
+    struct { 
+        float amount; 
+        int unit; 
     } m_paddingLeft;
+    struct { 
+        float amount; 
+        int unit; 
     } m_paddingRight;
+    struct { 
+        float amount; 
+        int unit; 
     } m_paddingTop;
+    struct { 
+        float amount; 
+        int unit; 
     } m_w;
+    struct { 
+        float amount; 
+        int unit; 
     } m_x;
+    struct { 
+        float amount; 
+        int unit; 
     } m_y;
 }
 

@@ -28,8 +28,8 @@
 - (void)discoverAccessoryServerWithIdentifier:(id)arg1;
 - (id)discoveredAccessoryServers;
 - (id)initWithQueue:(id)arg1;
-- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
 - (void)setDiscoveredAccessoryServers:(id)arg1;
 - (void)startDiscoveringAccessoryServers;

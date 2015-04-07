@@ -5,6 +5,15 @@
 @class NSMutableArray, NSString;
 
 @interface AWDCaptiveSession : PBCodable <NSCopying> {
+    NSString *_appTriggeredPassiveSymptom;
+    NSString *_autoLoginCarrierID;
+    BOOL _autoLoginFailed;
+    unsigned int _autoLoginType;
+    BOOL _detectedNotCaptiveHandledByCNP;
+    unsigned int _durationNetworkNotCaptive;
+    unsigned int _durationOnNetwork;
+    NSString *_handlerCNP;
+    BOOL _handlerCNPTriggeredLogOff;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int autoLoginType : 1; 
@@ -23,15 +32,6 @@
         unsigned int passiveCaptivityDetected : 1; 
         unsigned int websheetScraped : 1; 
         unsigned int wisprDetected : 1; 
-    NSString *_appTriggeredPassiveSymptom;
-    NSString *_autoLoginCarrierID;
-    BOOL _autoLoginFailed;
-    unsigned int _autoLoginType;
-    BOOL _detectedNotCaptiveHandledByCNP;
-    unsigned int _durationNetworkNotCaptive;
-    unsigned int _durationOnNetwork;
-    NSString *_handlerCNP;
-    BOOL _handlerCNPTriggeredLogOff;
     } _has;
     NSMutableArray *_installedCNPDisplayIDs;
     BOOL _isDetectedCaptive;

@@ -5,36 +5,36 @@
 @class NSString, UIColor, UIScrollView, WKBrowsingContextController, WKViewData;
 
 @interface WKView : UIView <UIScrollViewDelegate> {
-    struct RetainPtr<WKScrollView> { 
-        void *m_ptr; 
+    BOOL _allowsBackForwardNavigationGestures;
     struct RetainPtr<WKContentView> { 
         void *m_ptr; 
+    } _contentView;
+    WKViewData *_data;
+    BOOL _drawsBackground;
+    BOOL _drawsTransparentBackground;
     struct unique_ptr<WebKit::ViewGestureController, std::__1::default_delete<WebKit::ViewGestureController> > { 
         struct __compressed_pair<WebKit::ViewGestureController *, std::__1::default_delete<WebKit::ViewGestureController> > { 
             struct ViewGestureController {} *__first_; 
         } __ptr_; 
+    } _gestureController;
+    BOOL _hasStaticMinimumLayoutSize;
+    bool _isChangingObscuredInsetsInteractively;
+    BOOL _isWaitingForNewLayerTreeAfterDidCommitLoad;
+    float _lastAdjustmentForScroller;
     struct CGSize { 
         float width; 
         float height; 
+    } _minimumLayoutSizeOverride;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    BOOL _allowsBackForwardNavigationGestures;
-    } _contentView;
-    WKViewData *_data;
-    BOOL _drawsBackground;
-    BOOL _drawsTransparentBackground;
-    } _gestureController;
-    BOOL _hasStaticMinimumLayoutSize;
-    BOOL _isWaitingForNewLayerTreeAfterDidCommitLoad;
-    float _lastAdjustmentForScroller;
-    } _minimumLayoutSizeOverride;
     } _obscuredInsets;
+    struct RetainPtr<WKScrollView> { 
+        void *m_ptr; 
     } _scrollView;
     unsigned int _unused;
-    bool_isChangingObscuredInsetsInteractively;
 }
 
 @property(setter=_setBackgroundExtendsBeyondPage:) BOOL _backgroundExtendsBeyondPage;
@@ -75,10 +75,10 @@
 - (BOOL)drawsBackground;
 - (BOOL)drawsTransparentBackground;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contextRef:(struct OpaqueWKContext { }*)arg2 pageGroupRef:(struct OpaqueWKPageGroup { }*)arg3 relatedToPage:(struct OpaqueWKPage { }*)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contextRef:(struct OpaqueWKContext { }*)arg2 pageGroupRef:(struct OpaqueWKPageGroup { }*)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 processGroup:(id)arg2 browsingContextGroup:(id)arg3 relatedToView:(id)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contextRef:(struct OpaqueWKContext { }*)arg2 pageGroupRef:(struct OpaqueWKPageGroup { }*)arg3 relatedToPage:(struct OpaqueWKPage { }*)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 processGroup:(id)arg2 browsingContextGroup:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 processGroup:(id)arg2 browsingContextGroup:(id)arg3 relatedToView:(id)arg4;
 - (struct CGSize { float x1; float x2; })minimumLayoutSizeOverride;
 - (struct OpaqueWKPage { }*)pageRef;
 - (id)scrollView;

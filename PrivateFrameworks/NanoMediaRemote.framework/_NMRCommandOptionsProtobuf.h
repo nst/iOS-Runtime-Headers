@@ -5,6 +5,8 @@
 @class NSData, NSString;
 
 @interface _NMRCommandOptionsProtobuf : PBCodable <NSCopying> {
+    NSString *_destinationAppDisplayID;
+    BOOL _externalPlayerCommand;
     struct { 
         unsigned int playbackPosition : 1; 
         unsigned int radioStationID : 1; 
@@ -18,8 +20,6 @@
         unsigned int externalPlayerCommand : 1; 
         unsigned int negative : 1; 
         unsigned int requestDefermentToPlaybackQueuePosition : 1; 
-    NSString *_destinationAppDisplayID;
-    BOOL _externalPlayerCommand;
     } _has;
     NSString *_mediaType;
     BOOL _negative;

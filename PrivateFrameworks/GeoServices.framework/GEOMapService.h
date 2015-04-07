@@ -14,8 +14,8 @@
 - (id)_cl_ticketForForwardGeocodeAddressDictionary:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)_cl_ticketForForwardGeocodeString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)_cl_ticketForReverseGeocodeLocation:(id)arg1 traits:(id)arg2;
-- (id)_geoMapItemForData:(id)arg1 withSource:(unsigned int)arg2;
 - (id)_geoMapItemForData:(id)arg1;
+- (id)_geoMapItemForData:(id)arg1 withSource:(unsigned int)arg2;
 - (void)_geoMapItemsForResponseData:(id)arg1 handler:(id)arg2;
 - (id)_geoMapItemsForUpdatedPlacesInResolution:(id)arg1;
 - (void)_localeChanged:(id)arg1;
@@ -37,9 +37,9 @@
 - (id)init;
 - (int)localSearchProviderID;
 - (id)searchURL;
+- (void)submitUsageForTraits:(id)arg1;
 - (void)submitUsageForTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
-- (void)submitUsageForTraits:(id)arg1;
 - (id)ticketForBatchReverseGeocodeLocations:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 additionalPlaceTypes:(int*)arg3 additionalPlaceTypesCount:(unsigned int)arg4 traits:(id)arg5;
 - (id)ticketForBatchReverseGeocodeLocations:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 traits:(id)arg3;
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;

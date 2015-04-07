@@ -10,8 +10,8 @@
 - (void)dealloc;
 - (unsigned long long)encodedLength;
 - (id)fileURL;
-- (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2 isValidated:(BOOL)arg3;
 - (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2;
+- (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2 isValidated:(BOOL)arg3;
 - (BOOL)isReadable;
 - (BOOL)needsDownload;
 - (void)performReadWithAccessor:(id)arg1;

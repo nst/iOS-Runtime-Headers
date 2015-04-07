@@ -38,11 +38,11 @@
 - (int)numberOfEntryFields;
 - (void)okButtonClicked:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setKeyboardType:(int)arg1 appearance:(int)arg2 emptyContentReturnKeyType:(int)arg3;
-- (void)setKeyboardType:(int)arg1 appearance:(int)arg2;
 - (void)setKeyboardType:(int)arg1;
-- (void)setNumberOfEntryFields:(int)arg1 opaqueBackground:(BOOL)arg2;
+- (void)setKeyboardType:(int)arg1 appearance:(int)arg2;
+- (void)setKeyboardType:(int)arg1 appearance:(int)arg2 emptyContentReturnKeyType:(int)arg3;
 - (void)setNumberOfEntryFields:(int)arg1;
+- (void)setNumberOfEntryFields:(int)arg1 opaqueBackground:(BOOL)arg2;
 - (void)setShowsOKButton:(BOOL)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setTextCentersHorizontally:(BOOL)arg1;

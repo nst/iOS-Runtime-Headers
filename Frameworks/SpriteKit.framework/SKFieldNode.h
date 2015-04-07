@@ -9,10 +9,6 @@
 @class PKPhysicsField, SKRegion, SKTexture;
 
 @interface SKFieldNode : SKNode {
-     /* Encoded args for previous method: @24@0:48 */
-     /* Encoded args for previous method: @24@0:48 */
-     /* Encoded args for previous method: 8@0:4 */
-     /* Encoded args for previous method: v24@0:48 */
     float _animationSpeed;
     BOOL _exclusive;
     PKPhysicsField *_field;
@@ -37,6 +33,8 @@
 + (id)dragField;
 + (id)electricField;
 + (id)linearGravityFieldWithVector:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: @24@0:48 */
+
 + (id)magneticField;
 + (id)noiseFieldWithSmoothness:(float)arg1 animationSpeed:(float)arg2;
 + (id)radialGravityField;
@@ -44,6 +42,8 @@
 + (id)turbulenceFieldWithSmoothness:(float)arg1 animationSpeed:(float)arg2;
 + (id)velocityFieldWithTexture:(id)arg1;
 + (id)velocityFieldWithVector:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: @24@0:48 */
+
 + (id)vortexField;
 
 - (void).cxx_destruct;
@@ -52,13 +52,15 @@
 - (unsigned int)categoryBitMask;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)direction;
+     /* Encoded args for previous method: 8@0:4 */
+
 - (void)encodeWithCoder:(id)arg1;
 - (float)falloff;
 - (id)field;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithCoder:(id)arg1 field:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1 field:(id)arg2;
 - (BOOL)isEnabled;
 - (BOOL)isEqualToNode:(id)arg1;
 - (BOOL)isExclusive;
@@ -67,6 +69,8 @@
 - (void)setAnimationSpeed:(float)arg1;
 - (void)setCategoryBitMask:(unsigned int)arg1;
 - (void)setDirection:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: v24@0:48 */
+
 - (void)setEnabled:(BOOL)arg1;
 - (void)setExclusive:(BOOL)arg1;
 - (void)setFalloff:(float)arg1;

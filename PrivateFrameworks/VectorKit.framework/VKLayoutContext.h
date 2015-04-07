@@ -5,17 +5,32 @@
 @class <MDRenderTarget>, VKAnchorContext, VKCamera, VKViewTransform;
 
 @interface VKLayoutContext : NSObject {
+    VKAnchorContext *_anchorContext;
+    VKCamera *_camera;
+    <MDRenderTarget> *_canvas;
+    VKCamera *_defaultTrackingCamera;
+    struct shared_ptr<ggl::Device> { 
+        struct Device {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _device;
+    BOOL _forceLayout;
+    BOOL _hasMovingOccluders;
+    BOOL _hasOccluders;
+    BOOL _iconsShouldAlignToPixels;
     struct VKEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    struct shared_ptr<ggl::PolygonBase::MeshMesh> { 
-        struct MeshMesh {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::TextureMesh::MeshMesh> { 
-        struct MeshMesh {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
+    } _labelEdgeInsets;
+    struct Loader { 
+        struct unique_ptr<ggl::LoaderImpl, std::__1::default_delete<ggl::LoaderImpl> > { 
+            struct __compressed_pair<ggl::LoaderImpl *, std::__1::default_delete<ggl::LoaderImpl> > { 
+                struct LoaderImpl {} *__first_; 
+            } __ptr_; 
+        } _loaderImpl; 
+    } _loader;
+    BOOL _preloadOnly;
     struct StencilManager { 
         unsigned char _stencilStart; 
         unsigned char _stencilEnd; 
@@ -25,7 +40,7 @@
             struct Matrix<float, 4, 1> { 
                 float _e[4]; 
             } color; 
-            boolclearDepthBuffer; 
+            bool clearDepthBuffer; 
             float depth; 
             unsigned char clearStencilBuffer; 
             int stencil; 
@@ -39,34 +54,19 @@
                 } _maximum; 
             } scissorRect; 
         } _stencilResetItem; 
-    struct shared_ptr<ggl::Device> { 
-        struct Device {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct Loader { 
-        struct unique_ptr<ggl::LoaderImpl, std::__1::default_delete<ggl::LoaderImpl> > { 
-            struct __compressed_pair<ggl::LoaderImpl *, std::__1::default_delete<ggl::LoaderImpl> > { 
-                struct LoaderImpl {} *__first_; 
-            } __ptr_; 
-        } _loaderImpl; 
-    VKAnchorContext *_anchorContext;
-    VKCamera *_camera;
-    <MDRenderTarget> *_canvas;
-    VKCamera *_defaultTrackingCamera;
-    } _device;
-    BOOL _forceLayout;
-    BOOL _hasMovingOccluders;
-    BOOL _hasOccluders;
-    BOOL _iconsShouldAlignToPixels;
-    } _labelEdgeInsets;
-    } _loader;
-    BOOL _preloadOnly;
     } _stencilManager;
     int _styleZ;
     float _styleZAdjust;
     double _timestamp;
     VKCamera *_transitionCamera;
     int _transitionMapMode;
+    struct shared_ptr<ggl::PolygonBase::MeshMesh> { 
+        struct MeshMesh {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _unitMesh;
+    struct shared_ptr<ggl::TextureMesh::MeshMesh> { 
+        struct MeshMesh {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _unitTextureMesh;
     VKViewTransform *_viewTransform;
     float _z;
@@ -97,8 +97,8 @@
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })labelEdgeInsets;
 - (struct Loader { struct unique_ptr<ggl::LoaderImpl, std::__1::default_delete<ggl::LoaderImpl> > { struct __compressed_pair<ggl::LoaderImpl *, std::__1::default_delete<ggl::LoaderImpl> > { struct LoaderImpl {} *x_1_2_1; } x_1_1_1; } x1; }*)loader;
 - (void)markStencilAsDirty;
-- (unsigned char)reserveStencilValues:(unsigned char)arg1 clearItem:(struct ClearItem {}**)arg2 fromTop:(BOOL)arg3;
 - (unsigned char)reserveStencilValues:(unsigned char)arg1 clearItem:(struct ClearItem {}**)arg2;
+- (unsigned char)reserveStencilValues:(unsigned char)arg1 clearItem:(struct ClearItem {}**)arg2 fromTop:(BOOL)arg3;
 - (void)setAnchorContext:(id)arg1;
 - (void)setDefaultTrackingCamera:(id)arg1;
 - (void)setLabelEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

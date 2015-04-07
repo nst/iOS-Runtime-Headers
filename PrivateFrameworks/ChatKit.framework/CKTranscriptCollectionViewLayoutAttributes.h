@@ -5,24 +5,7 @@
 @class CKChatItem;
 
 @interface CKTranscriptCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    CKChatItem *_chatItem;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -40,9 +23,17 @@
         float m42; 
         float m43; 
         float m44; 
-    CKChatItem *_chatItem;
     } _contentTransform3D;
     float _currentCenterY;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _currentFrame;
     float _easing;
     float _factor;
@@ -51,6 +42,15 @@
     BOOL _orientation;
     float _targetCenterY;
     float _targetEasing;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _targetFrame;
 }
 

@@ -4,13 +4,7 @@
 
 @class GEOMapRegion, NSString, VKAnimation, VKMapCanvas, VKMapModel, VKTrackingCameraController;
 
-@interface VKMapCameraController : VKScreenCameraController <VKTrackingCameraControllerDelegate, VKInteractiveCameraController> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface VKMapCameraController : VKScreenCameraController <VKInteractiveCameraController, VKTrackingCameraControllerDelegate> {
     double _cameraHorizontalOffset;
     double _canonicalSkyHeight;
     double _finalPitch;
@@ -22,8 +16,14 @@
     double _minDistanceToGroundAlongForwardVector;
     float _navigationPuckSize;
     BOOL _panning;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _pinchStartFocusPoint;
     BOOL _pinching;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _pitchStartFocusPoint;
     BOOL _pitching;
     BOOL _shouldLimitTrackingCameraHeight;
@@ -111,8 +111,8 @@
 - (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id)arg5;
 - (void)pauseCameraMotion;
 - (void)pinch:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
-- (void)pitch:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
 - (double)pitch;
+- (void)pitch:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
 - (double)presentationYaw;
 - (void)puckAnimator:(id)arg1 updatedPosition:(struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; }*)arg2;
 - (void)puckAnimator:(id)arg1 updatedTargetPosition:(struct VKPoint { double x1; double x2; double x3; })arg2;
@@ -124,8 +124,8 @@
 - (void)setAllowDatelineWraparound:(BOOL)arg1;
 - (void)setCameraHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;
 - (void)setCanonicalSkyHeight:(double)arg1;
-- (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(id)arg6 completion:(id)arg7;
+- (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGesturing:(BOOL)arg1;
 - (void)setMapCanvas:(id)arg1;

@@ -10,12 +10,12 @@
 @class NSString;
 
 @interface NSKeyValueAccessor : NSObject {
-    int (*_implementation)();
     id _containerClassID;
     void *_extraArgument1;
     void *_extraArgument2;
     void *_extraArgument3;
     unsigned int _extraArgumentCount;
+    int (*_implementation)();
     NSString *_key;
     SEL _selector;
 }

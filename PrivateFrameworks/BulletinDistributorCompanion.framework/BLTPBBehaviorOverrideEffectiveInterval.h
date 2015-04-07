@@ -5,10 +5,10 @@
 @class BLTPBDateComponents, NSString;
 
 @interface BLTPBBehaviorOverrideEffectiveInterval : PBCodable <NSCopying> {
-    struct { 
-        unsigned int repeatInterval : 1; 
     NSString *_calendarIdentifier;
     BLTPBDateComponents *_endComponents;
+    struct { 
+        unsigned int repeatInterval : 1; 
     } _has;
     int _repeatInterval;
     BLTPBDateComponents *_startComponents;

@@ -10,13 +10,13 @@
 @class <NSStreamDelegate>, NSArray, SLRequestBodyInputStream, SLRequestMultiPartInputStream;
 
 @interface SLRequestBodyInputStream : NSInputStream {
+    int (*_clientCallback)();
     struct { 
         int version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
         int (*copyDescription)(); 
-    int (*_clientCallback)();
     } _clientContext;
     unsigned int _currentIndex;
     unsigned int _currentLength;

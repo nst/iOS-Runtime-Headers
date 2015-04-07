@@ -5,23 +5,6 @@
 @class <RCWaveformSelectionOverlayDelegate>, CALayer, NSMutableDictionary, RCOverlayBarLayer, RCTextLayer, RCUIConfiguration;
 
 @interface RCWaveformSelectionOverlay : UIView {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct { 
-        double beginTime; 
-        double endTime; 
     RCUIConfiguration *_UIConfiguration;
     double _assetCurrentTime;
     double _assetDuration;
@@ -38,10 +21,27 @@
     CALayer *_middleSelectionOverlay;
     double _requestedAnimatedLayoutDuration;
     BOOL _requestedNonAnimatedLayout;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _selectedTimeRange;
     double _selectedTimeRangeMaximumDuration;
     double _selectedTimeRangeMinimumDuration;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _selectionAreaInsets;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _selectionRect;
     BOOL _sublayersCreated;
     double _trackedAssetCurrentTime;
@@ -114,8 +114,8 @@
 - (void)setDisplayingSelectionTimes:(BOOL)arg1;
 - (void)setEditingEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSelectedTimeRange:(struct { double x1; double x2; })arg1 withAnimationDuration:(double)arg2;
 - (void)setSelectedTimeRange:(struct { double x1; double x2; })arg1;
+- (void)setSelectedTimeRange:(struct { double x1; double x2; })arg1 withAnimationDuration:(double)arg2;
 - (void)setSelectedTimeRangeMaximumDuration:(double)arg1;
 - (void)setSelectedTimeRangeMinimumDuration:(double)arg1;
 - (void)setSelectionRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

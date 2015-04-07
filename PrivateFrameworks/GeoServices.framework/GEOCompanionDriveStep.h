@@ -5,14 +5,14 @@
 @class GEONameInfo, NSMutableArray, NSString;
 
 @interface GEOCompanionDriveStep : PBCodable <GEOCompanionManeuverStep, NSCopying> {
+    int _drivingSide;
+    GEONameInfo *_exitNumber;
     struct { 
         unsigned int drivingSide : 1; 
         unsigned int junctionType : 1; 
         unsigned int maneuverType : 1; 
         unsigned int shieldType : 1; 
         unsigned int toFreeway : 1; 
-    int _drivingSide;
-    GEONameInfo *_exitNumber;
     } _has;
     struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_junctionElements;
     unsigned int _junctionElementsCount;
@@ -33,26 +33,18 @@
 @property BOOL hasDrivingSide;
 @property(readonly) BOOL hasExitNumber;
 @property BOOL hasJunctionType;
-@property BOOL hasJunctionType;
-@property BOOL hasManeuverType;
 @property BOOL hasManeuverType;
 @property(readonly) BOOL hasShield;
 @property BOOL hasShieldType;
 @property BOOL hasToFreeway;
 @property(readonly) unsigned int hash;
 @property(readonly) struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }* junctionElements;
-@property(readonly) struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }* junctionElements;
-@property(readonly) unsigned int junctionElementsCount;
 @property(readonly) unsigned int junctionElementsCount;
 @property int junctionType;
-@property int junctionType;
 @property(retain) NSMutableArray * maneuverNames;
-@property(retain) NSMutableArray * maneuverNames;
-@property int maneuverType;
 @property int maneuverType;
 @property(retain) NSString * shield;
 @property int shieldType;
-@property(retain) NSMutableArray * signposts;
 @property(retain) NSMutableArray * signposts;
 @property(readonly) Class superclass;
 @property BOOL toFreeway;

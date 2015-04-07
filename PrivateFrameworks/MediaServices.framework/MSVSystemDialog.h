@@ -11,7 +11,11 @@
 @interface MSVSystemDialog : NSObject {
     struct __CFRunLoopSource { } *_activeRunLoopSource;
     MSVSystemDialogOptions *_options;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pendingCompletion;
+
     struct __CFUserNotification { } *_presentedUserNotification;
     NSMutableArray *_textFields;
 }

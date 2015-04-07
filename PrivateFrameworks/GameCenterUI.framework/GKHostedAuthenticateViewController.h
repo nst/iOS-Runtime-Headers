@@ -9,9 +9,17 @@
 @class NSError, NSString;
 
 @interface GKHostedAuthenticateViewController : GKHostedViewController <GKAuthenticateViewController> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     BOOL _disablesSignIn;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _dismissCompletionHandler;
+
     NSError *_error;
     int _mode;
     BOOL _rotationLocked;

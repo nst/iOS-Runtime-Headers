@@ -5,6 +5,9 @@
 @class <VKRasterOverlayDelegate>, VKRasterOverlayTileSource;
 
 @interface VKRasterOverlay : NSObject {
+    <VKRasterOverlayDelegate> *_delegate;
+    unsigned int _level;
+    VKRasterOverlayTileSource *_mapModel;
     struct { 
         struct { 
             double x; 
@@ -14,9 +17,6 @@
             double width; 
             double height; 
         } size; 
-    <VKRasterOverlayDelegate> *_delegate;
-    unsigned int _level;
-    VKRasterOverlayTileSource *_mapModel;
     } _replaceMapContentInRect;
     VKRasterOverlayTileSource *_tileSource;
 }

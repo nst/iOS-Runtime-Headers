@@ -10,7 +10,11 @@
 
 @interface MKMapSnapshotter : NSObject {
     NSObject<OS_dispatch_queue> *_callbackQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     int _loadingFlag;
     BOOL _needsResume;
     MKMapSnapshotOptions *_options;

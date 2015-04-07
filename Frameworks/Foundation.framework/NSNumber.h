@@ -21,19 +21,10 @@
 @property(readonly) BOOL charValue;
 @property(readonly) int chartGridValueType;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; } decimalValue;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(readonly) double doubleValue;
 @property(readonly) float floatValue;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property(readonly) int intValue;
 @property(readonly) int integerValue;
@@ -41,9 +32,6 @@
 @property(readonly) long longValue;
 @property(readonly) short shortValue;
 @property(copy,readonly) NSString * stringValue;
-@property(readonly) Class superclass;
-@property(readonly) Class superclass;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(readonly) unsigned char unsignedCharValue;
 @property(readonly) unsigned int unsignedIntValue;
@@ -90,12 +78,12 @@
 + (BOOL)parseString:(id)arg1 intoUInt64:(unsigned long long*)arg2;
 + (BOOL)supportsSecureCoding;
 
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (id)CAMLType;
 - (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (float)CA_distanceToValue:(id)arg1;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
-- (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; boolx10; }*)arg4;
+- (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; bool x10; }*)arg4;
 - (id)CA_roundToIntegerFromValue:(id)arg1;
 - (float)CGFloatValue;
 - (float)CGFloatValue;

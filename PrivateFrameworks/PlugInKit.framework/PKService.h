@@ -48,8 +48,8 @@
 - (void)mergeSubsystemList:(id)arg1 from:(id)arg2;
 - (void)mergeSubsystems:(id)arg1 from:(id)arg2;
 - (id)personalities;
-- (id)personalityNamed:(id)arg1 forHostPid:(int)arg2;
 - (id)personalityNamed:(id)arg1;
+- (id)personalityNamed:(id)arg1 forHostPid:(int)arg2;
 - (id)plugInPrincipalForPlugInNamed:(id)arg1;
 - (void)registerPersonality:(id)arg1;
 - (void)run;

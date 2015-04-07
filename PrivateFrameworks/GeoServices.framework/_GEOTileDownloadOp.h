@@ -5,17 +5,6 @@
 @class GEOSimpleTileRequester, NSData, NSMutableData, NSString, NSURL, NSURLConnection, _GEOTileDownloadOp;
 
 @interface _GEOTileDownloadOp : NSObject <NSURLConnectionDelegate> {
-    struct _GEOTileKey { 
-        unsigned int z : 6; 
-        unsigned int x : 26; 
-        unsigned int y : 26; 
-        unsigned int type : 6; 
-        unsigned int pixelSize : 8; 
-        unsigned int textScale : 8; 
-        unsigned int provider : 8; 
-        unsigned int expires : 1; 
-        unsigned int reserved1 : 7; 
-        unsigned char reserved2[4]; 
     int _attempts;
     NSData *_auditToken;
     _GEOTileDownloadOp *_baseTile;
@@ -29,6 +18,17 @@
     NSString *_editionHeader;
     BOOL _finished;
     BOOL _gotData;
+    struct _GEOTileKey { 
+        unsigned int z : 6; 
+        unsigned int x : 26; 
+        unsigned int y : 26; 
+        unsigned int type : 6; 
+        unsigned int pixelSize : 8; 
+        unsigned int textScale : 8; 
+        unsigned int provider : 8; 
+        unsigned int expires : 1; 
+        unsigned int reserved1 : 7; 
+        unsigned char reserved2[4]; 
     } _key;
     _GEOTileDownloadOp *_localizationTile;
     BOOL _requireWiFi;

@@ -30,16 +30,16 @@
 - (void)didChangeCurrentEditorsWhenCommittingInspectorChanges;
 - (void)editorDidChangeSelection:(id)arg1 withSelectionFlags:(unsigned int)arg2;
 - (void)editorDidChangeSelectionAndWantsKeyboard:(id)arg1 withSelectionFlags:(unsigned int)arg2;
-- (id)editorForEditAction:(SEL)arg1 withSender:(id)arg2 response:(int*)arg3;
 - (id)editorForEditAction:(SEL)arg1 withSender:(id)arg2;
+- (id)editorForEditAction:(SEL)arg1 withSender:(id)arg2 response:(int*)arg3;
 - (void)editorSelectionWasForciblyChanged:(id)arg1;
 - (void)endTransaction;
 - (void)enumerateEditorsOnStackUsingBlock:(id)arg1;
 - (id)init;
 - (id)initWithDocumentRoot:(id)arg1;
 - (BOOL)isChangingCurrentEditorsWhenCommittingInspectorChanges;
-- (id)mostSpecificCurrentEditorOfClass:(Class)arg1 conformingToProtocol:(id)arg2;
 - (id)mostSpecificCurrentEditorOfClass:(Class)arg1;
+- (id)mostSpecificCurrentEditorOfClass:(Class)arg1 conformingToProtocol:(id)arg2;
 - (id)mostSpecificEditorConformingToProtocol:(id)arg1;
 - (void)notifyResignedTextInputEditors;
 - (id)objectForInspectorPropertyKey:(id)arg1;
@@ -49,8 +49,8 @@
 - (void)p_willChangeCurrentEditors;
 - (void)p_willChangeCurrentEditorsWithNewEditors:(id)arg1;
 - (void)p_willChangeTextInputEditor;
-- (void)popEditor:(id)arg1 andPushTextInputEditor:(id)arg2;
 - (void)popEditor:(id)arg1;
+- (void)popEditor:(id)arg1 andPushTextInputEditor:(id)arg2;
 - (void)popToEditor:(id)arg1;
 - (void)pushEditor:(id)arg1;
 - (void)removeObjectForInspectorPropertyKey:(id)arg1;

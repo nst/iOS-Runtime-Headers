@@ -5,9 +5,10 @@
 @class NSMutableArray, NSString;
 
 @interface GEOPDAnalyticMetadata : PBCodable <NSCopying> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
+    NSString *_appIdentifier;
+    NSString *_appMajorVersion;
+    NSString *_appMinorVersion;
+    NSString *_hardwareModel;
     struct { 
         unsigned int sessionId : 1; 
         unsigned int requestSource : 1; 
@@ -15,10 +16,6 @@
         unsigned int isFromApi : 1; 
         unsigned int isInternalInstall : 1; 
         unsigned int isInternalTool : 1; 
-    NSString *_appIdentifier;
-    NSString *_appMajorVersion;
-    NSString *_appMinorVersion;
-    NSString *_hardwareModel;
     } _has;
     BOOL _isFromApi;
     BOOL _isInternalInstall;
@@ -27,6 +24,9 @@
     int _requestSource;
     unsigned int _sequenceNumber;
     NSMutableArray *_serviceTags;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionId;
 }
 

@@ -8,12 +8,12 @@
         float y; 
         float z; 
         float w; 
+    } _GLPoint4DValue;
     struct { 
         float x; 
         float y; 
         float z; 
         float w; 
-    } _GLPoint4DValue;
     } _proposedGLPoint4DValue;
 }
 

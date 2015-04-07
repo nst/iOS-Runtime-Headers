@@ -5,9 +5,17 @@
 @class NSObject<TSSPreset>, NSString, TSKDocumentRoot, UIView;
 
 @interface TSDSwatchRenderingOperation : NSOperation {
+    struct CGImage { } *mDeliveredImage;
+    TSKDocumentRoot *mDocumentRoot;
+    NSString *mIdentifier;
+    float mImageScale;
     struct CGSize { 
         float width; 
         float height; 
+    } mImageSize;
+    unsigned int mInsertPopoverPageNumber;
+    unsigned int mInsertPopoverPageType;
+    NSObject<TSSPreset> *mPreset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,14 +25,6 @@
             float width; 
             float height; 
         } size; 
-    struct CGImage { } *mDeliveredImage;
-    TSKDocumentRoot *mDocumentRoot;
-    NSString *mIdentifier;
-    float mImageScale;
-    } mImageSize;
-    unsigned int mInsertPopoverPageNumber;
-    unsigned int mInsertPopoverPageType;
-    NSObject<TSSPreset> *mPreset;
     } mSwatchFrame;
     UIView *mView;
 }

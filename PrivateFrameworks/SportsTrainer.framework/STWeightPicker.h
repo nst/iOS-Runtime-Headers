@@ -33,8 +33,8 @@
 - (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
 - (void)saveCurrentWeight;
 - (int)selectedWeightUnit;
-- (void)setWeightInLbs:(float)arg1 animated:(BOOL)arg2;
 - (void)setWeightInLbs:(float)arg1;
+- (void)setWeightInLbs:(float)arg1 animated:(BOOL)arg2;
 - (void)setWeightPickerDelegate:(id)arg1;
 - (float)weightInKg;
 - (float)weightInLbs;

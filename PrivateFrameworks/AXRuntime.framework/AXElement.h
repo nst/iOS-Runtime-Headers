@@ -146,8 +146,8 @@
 - (id)parentGroup;
 - (struct CGPath { }*)path;
 - (void)pauseAutoscrolling;
-- (BOOL)performAction:(int)arg1 withValue:(id)arg2;
 - (BOOL)performAction:(int)arg1;
+- (BOOL)performAction:(int)arg1 withValue:(id)arg2;
 - (BOOL)press;
 - (id)previousElementsWithCount:(unsigned int)arg1;
 - (BOOL)representsScannerGroup;

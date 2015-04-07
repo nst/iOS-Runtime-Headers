@@ -9,14 +9,42 @@
 @class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
 @interface BBSettingsGateway : NSObject <BBSettingsGatewayClientInterface> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _activeOverrideTypesChangedHandler;
+
     NSXPCConnection *_connection;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _overrideStateChangeHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _overrideStatusChangeHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _overridesChangedHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _overridesEffectiveWhileUnlockedChangedHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _privilegedSenderGroupChangedHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _privilegedSenderTypesChangedHandler;
+
     NSObject<OS_dispatch_queue> *_queue;
 }
 
@@ -50,28 +78,28 @@
 - (void)setActiveBehaviorOverrideTypesChangeHandler:(id)arg1;
 - (void)setActiveBehaviorOverrideTypesWithSourceChangeHandler:(id)arg1;
 - (void)setBehaviorOverrideStateChangeHandler:(id)arg1;
-- (void)setBehaviorOverrideStatus:(int)arg1 source:(unsigned int)arg2;
 - (void)setBehaviorOverrideStatus:(int)arg1;
+- (void)setBehaviorOverrideStatus:(int)arg1 source:(unsigned int)arg2;
 - (void)setBehaviorOverrideStatusChangeHandler:(id)arg1;
 - (void)setBehaviorOverrideStatusWithSourceChangeHandler:(id)arg1;
-- (void)setBehaviorOverrides:(id)arg1 source:(unsigned int)arg2;
 - (void)setBehaviorOverrides:(id)arg1;
+- (void)setBehaviorOverrides:(id)arg1 source:(unsigned int)arg2;
 - (void)setBehaviorOverridesChangeHandler:(id)arg1;
-- (void)setBehaviorOverridesEffectiveWhileUnlocked:(BOOL)arg1 source:(unsigned int)arg2;
 - (void)setBehaviorOverridesEffectiveWhileUnlocked:(BOOL)arg1;
+- (void)setBehaviorOverridesEffectiveWhileUnlocked:(BOOL)arg1 source:(unsigned int)arg2;
 - (void)setBehaviorOverridesEffectiveWhileUnlockedChangeHandler:(id)arg1;
 - (void)setBehaviorOverridesEnabled:(BOOL)arg1;
 - (void)setBehaviorOverridesWithSourceChangeHandler:(id)arg1;
-- (void)setOrderedSectionIDs:(id)arg1 forCategory:(int)arg2;
 - (void)setOrderedSectionIDs:(id)arg1;
-- (void)setPrivilegedSenderAddressBookGroupRecordID:(int)arg1 name:(id)arg2 source:(unsigned int)arg3;
+- (void)setOrderedSectionIDs:(id)arg1 forCategory:(int)arg2;
 - (void)setPrivilegedSenderAddressBookGroupRecordID:(int)arg1 name:(id)arg2;
+- (void)setPrivilegedSenderAddressBookGroupRecordID:(int)arg1 name:(id)arg2 source:(unsigned int)arg3;
 - (void)setPrivilegedSenderAddressBookGroupRecordIDWithSourceChangeHandler:(id)arg1;
-- (void)setPrivilegedSenderTypes:(unsigned int)arg1 source:(unsigned int)arg2;
 - (void)setPrivilegedSenderTypes:(unsigned int)arg1;
+- (void)setPrivilegedSenderTypes:(unsigned int)arg1 source:(unsigned int)arg2;
 - (void)setPrivilegedSenderTypesWithSourceChangeHandler:(id)arg1;
-- (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2 inCategory:(int)arg3;
 - (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2;
+- (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2 inCategory:(int)arg3;
 - (void)setSectionOrderRule:(int)arg1;
 
 @end

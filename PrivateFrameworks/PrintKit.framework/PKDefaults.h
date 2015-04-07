@@ -5,8 +5,8 @@
 @interface PKDefaults : NSObject {
 }
 
-+ (void)addLastUsedPrinter:(id)arg1 duplexMode:(id)arg2 lastUsedSize:(struct CGSize { float x1; float x2; })arg3 forPhoto:(BOOL)arg4;
 + (void)addLastUsedPrinter:(id)arg1 duplexMode:(id)arg2 lastUsedSize:(struct CGSize { float x1; float x2; })arg3;
++ (void)addLastUsedPrinter:(id)arg1 duplexMode:(id)arg2 lastUsedSize:(struct CGSize { float x1; float x2; })arg3 forPhoto:(BOOL)arg4;
 + (id)lastUsedPrinters;
 + (id)lastUsedPrintersForPhoto:(BOOL)arg1;
 + (int)printerLookupWithArray:(id)arg1 withTimeout:(double)arg2 completionHandler:(id)arg3;

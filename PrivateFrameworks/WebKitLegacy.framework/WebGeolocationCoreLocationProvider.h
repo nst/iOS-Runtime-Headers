@@ -5,10 +5,10 @@
 @class <WebGeolocationCoreLocationUpdateListener>, NSString;
 
 @interface WebGeolocationCoreLocationProvider : NSObject <CLLocationManagerDelegate> {
-    struct RetainPtr<CLLocationManager> { 
-        void *m_ptr; 
     BOOL _isWaitingForAuthorization;
     int _lastAuthorizationStatus;
+    struct RetainPtr<CLLocationManager> { 
+        void *m_ptr; 
     } _locationManager;
     <WebGeolocationCoreLocationUpdateListener> *_positionListener;
 }

@@ -9,8 +9,16 @@
 @class IMTimer, NSMutableArray;
 
 @interface IDSAppleRegistrationKeychainReader : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _purgeCancelBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _purgeEnqueueBlock;
+
     IMTimer *_purgeTimer;
     NSMutableArray *_registrationData;
 }

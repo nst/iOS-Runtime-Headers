@@ -35,8 +35,8 @@
 - (BOOL)_isCompany;
 - (id)_prodID;
 - (id)_realCompositeName;
-- (BOOL)_showField:(unsigned int)arg1 identifier:(int)arg2;
 - (BOOL)_showField:(unsigned int)arg1;
+- (BOOL)_showField:(unsigned int)arg1 identifier:(int)arg2;
 - (id)_typeParameterForToneType:(id)arg1;
 - (BOOL)_usesArrayForExternalPropKey:(id)arg1;
 - (id)_vCardKeyForAddressLabel:(id)arg1 vCard3:(BOOL)arg2;

@@ -9,7 +9,11 @@
 @class NSArray, NSMutableDictionary;
 
 @interface CKDGetSharesURLRequest : CKDURLRequest {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shareFetchedBlock;
+
     NSMutableDictionary *_shareIDByRequestID;
     NSArray *_shareIDsToFetch;
 }

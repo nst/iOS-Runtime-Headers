@@ -5,19 +5,19 @@
 @class NSMutableSet, NSString, NSTimer, TSDCanvasView;
 
 @interface TSDHUDViewController : UIViewController {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     TSDCanvasView *mCanvasView;
     int mHUDOffset;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mHUDPoint;
     NSString *mLastStringSet;
     double mLastTimeUpdated;
     NSMutableSet *mObjectsShowingHUD;
     NSTimer *mStringTimer;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mTouchPoint;
 }
 
@@ -28,7 +28,7 @@
 - (void)p_labelTextTimerFired;
 - (void)setLabelText:(id)arg1;
 - (void)showHUDForKey:(id)arg1 forTouchPoint:(struct CGPoint { float x1; float x2; })arg2 inCanvasView:(id)arg3 withNudge:(struct CGSize { float x1; float x2; })arg4 size:(int)arg5;
-- (void)showHUDForKey:(id)arg1 forTouchPoint:(struct CGPoint { float x1; float x2; })arg2 inCanvasView:(id)arg3 withUpwardsNudge:(float)arg4 size:(int)arg5;
 - (void)showHUDForKey:(id)arg1 forTouchPoint:(struct CGPoint { float x1; float x2; })arg2 inCanvasView:(id)arg3 withUpwardsNudge:(float)arg4;
+- (void)showHUDForKey:(id)arg1 forTouchPoint:(struct CGPoint { float x1; float x2; })arg2 inCanvasView:(id)arg3 withUpwardsNudge:(float)arg4 size:(int)arg5;
 
 @end

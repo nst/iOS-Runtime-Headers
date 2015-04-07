@@ -5,19 +5,19 @@
 @class NSMutableArray;
 
 @interface GEOPlaceSearchFeedbackCollection : PBCodable <NSCopying> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
+    NSMutableArray *_actionCaptures;
+    unsigned long long _businessID;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int businessID : 1; 
         unsigned int placeID : 1; 
         unsigned int localSearchProviderID : 1; 
-    NSMutableArray *_actionCaptures;
-    unsigned long long _businessID;
     } _has;
     int _localSearchProviderID;
     long long _placeID;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionID;
 }
 

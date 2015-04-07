@@ -13,7 +13,11 @@
     BOOL _executingOnMainThread;
     UIKeyboardTaskExecutionContext *_executionContext;
     NSConditionLock *_lock;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _mainThreadContinuation;
+
     NSMutableArray *_tasks;
 }
 

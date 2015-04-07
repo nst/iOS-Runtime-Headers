@@ -11,7 +11,11 @@
 @interface TSDMovieInfoImporter : TSDInfoImporter {
     AVAsset *mAsset;
     TSDMovieCompatibilityChecker *mCompatibilityChecker;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mCompletionHandler;
+
     BOOL mDidMessageDelegateAboutMovieCompatibility;
     NSError *mError;
     NSObject<OS_dispatch_queue> *mImportQueue;

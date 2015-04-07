@@ -4,7 +4,7 @@
 
 @class <SetupUIConfigDelegate>, NSDate, NSDictionary, NSMutableSet, NSString;
 
-@interface AUSetupController : AssistantCallbackController <SetupUIConfigDelegateResult, AutoGuessSetup, BaseStationSetup> {
+@interface AUSetupController : AssistantCallbackController <AutoGuessSetup, BaseStationSetup, SetupUIConfigDelegateResult> {
     BOOL _activeTask;
     NSString *_autoGuessSetupRecommendation;
     BOOL _autoJoinState;
@@ -58,8 +58,8 @@
 - (int)busyState;
 - (long)cancelSetup;
 - (long)cancelTask;
-- (long)closeAllConnections:(BOOL)arg1;
 - (long)closeAllConnections;
+- (long)closeAllConnections:(BOOL)arg1;
 - (id)context;
 - (long)copyValue:(id*)arg1 forBSSetting:(int)arg2;
 - (long)copyValue:(id*)arg1 forSettingPath:(id)arg2;

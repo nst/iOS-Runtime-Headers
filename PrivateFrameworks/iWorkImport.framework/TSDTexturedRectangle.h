@@ -9,59 +9,63 @@
 @class CALayer, NSMutableArray, NSMutableDictionary, NSString, TSDTextureSet, TSUColor;
 
 @interface TSDTexturedRectangle : NSObject <NSCopying> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     BOOL _isVerticalText;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _singleTextureSize;
     NSString *_text;
     float _textBaseline;
     TSUColor *_textColor;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _textRange;
     float _textXHeight;
     NSMutableDictionary *mAttributes;
     struct CGImage { } *mBakedImage;
     struct CGColorSpace { } *mColorSpace;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mContentRect;
     BOOL mIsFlattened;
     CALayer *mLayer;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mOffset;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mOriginalFrame;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mOriginalPosition;
     TSDTextureSet *mParent;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id mRenderBlock;
+
     BOOL mSingleTextureContainsMipmaps;
     unsigned int mSingleTextureName;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mSize;
     struct CGImage { } *mSourceImage;
     NSMutableArray *mTags;

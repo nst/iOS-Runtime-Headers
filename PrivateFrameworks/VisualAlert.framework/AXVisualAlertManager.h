@@ -39,8 +39,8 @@
 + (id)sharedVisualAlertManager;
 
 - (id)_activePattern;
-- (void)_beginVisualAlertForType:(unsigned int)arg1 repeat:(BOOL)arg2 skipAutomaticStopOnUserInteraction:(BOOL)arg3;
 - (void)_beginVisualAlertForType:(unsigned int)arg1 repeat:(BOOL)arg2;
+- (void)_beginVisualAlertForType:(unsigned int)arg1 repeat:(BOOL)arg2 skipAutomaticStopOnUserInteraction:(BOOL)arg3;
 - (void)_endVisualAlert;
 - (void)_handleBeginVisualAlertForAlarmWithSound:(BOOL)arg1;
 - (void)_handleBeginVisualAlertForIncomingCall;

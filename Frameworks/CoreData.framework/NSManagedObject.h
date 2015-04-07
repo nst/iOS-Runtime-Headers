@@ -63,7 +63,6 @@
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 + (id)retain;
 
-- (int (*)())methodForSelector:(SEL)arg1;
 - (id)_allProperties__;
 - (int)_batch_release__;
 - (id)_calculateDiffsBetweenOrderedSet:(id)arg1 andOrderedSet:(id)arg2;
@@ -121,8 +120,8 @@
 - (id)_originalSnapshot__;
 - (id)_persistentProperties__;
 - (void)_prepropagateDeleteForMerge;
-- (void)_propagateDelete:(unsigned int)arg1;
 - (void)_propagateDelete;
+- (void)_propagateDelete:(unsigned int)arg1;
 - (id)_referenceQueue__;
 - (id)_removeObsoleteKeysFromDictionary:(id)arg1;
 - (id)_reservedCurrentEventSnapshot;
@@ -163,8 +162,8 @@
 - (id)dictionaryWithValuesForKeys:(id)arg1;
 - (void)didAccessValueForKey:(id)arg1;
 - (void)didChange:(unsigned int)arg1 valuesAtIndexes:(id)arg2 forKey:(id)arg3;
-- (void)didChangeValueForKey:(id)arg1 withSetMutation:(unsigned int)arg2 usingObjects:(id)arg3;
 - (void)didChangeValueForKey:(id)arg1;
+- (void)didChangeValueForKey:(id)arg1 withSetMutation:(unsigned int)arg2 usingObjects:(id)arg3;
 - (void)didFireFault;
 - (void)didRefresh:(BOOL)arg1;
 - (void)didSave;
@@ -187,6 +186,7 @@
 - (BOOL)isInserted;
 - (BOOL)isUpdated;
 - (id)managedObjectContext;
+- (int (*)())methodForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)mutableArrayValueForKey:(id)arg1;
 - (id)mutableOrderedSetValueForKey:(id)arg1;
@@ -216,8 +216,8 @@
 - (BOOL)wasForgotten;
 - (void)willAccessValueForKey:(id)arg1;
 - (void)willChange:(unsigned int)arg1 valuesAtIndexes:(id)arg2 forKey:(id)arg3;
-- (void)willChangeValueForKey:(id)arg1 withSetMutation:(unsigned int)arg2 usingObjects:(id)arg3;
 - (void)willChangeValueForKey:(id)arg1;
+- (void)willChangeValueForKey:(id)arg1 withSetMutation:(unsigned int)arg2 usingObjects:(id)arg3;
 - (void)willFireFault;
 - (void)willRefresh:(BOOL)arg1;
 - (void)willSave;

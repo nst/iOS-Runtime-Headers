@@ -5,13 +5,10 @@
 @class TSDGLDataBuffer, TSDGLFrameBuffer, TSDGLShader;
 
 @interface TSDGLBloomEffect : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     TSDGLShader *_bloomShader;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _blurBufferSize;
     TSDGLDataBuffer *_blurDataBuffer;
     TSDGLFrameBuffer *_blurFramebuffer;
@@ -20,10 +17,13 @@
     TSDGLShader *_blurVerticalShader;
     TSDGLFrameBuffer *_colorFramebuffer;
     TSDGLDataBuffer *_dataBuffer;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _effectSize;
     TSDGLShader *_fboTransferShader;
-    BOOL _oldViewportRectInitialized;
     int _oldViewportRect[4];
+    BOOL _oldViewportRectInitialized;
 }
 
 - (void)bindFramebuffer;

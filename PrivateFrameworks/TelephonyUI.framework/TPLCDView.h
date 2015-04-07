@@ -5,10 +5,10 @@
 @class TPLCDSubImageView, TPLCDTextView, UIView;
 
 @interface TPLCDView : TPLCDBar {
-    unsigned int _layoutAsLabelled : 1;
     UIView *_contentView;
     TPLCDSubImageView *_imageView;
     TPLCDTextView *_labelView;
+    unsigned int _layoutAsLabelled : 1;
     TPLCDTextView *_textView;
     BOOL _verticallyCenterTextViewIfLabelless;
 }
@@ -34,8 +34,8 @@
 - (void)layoutSubviews;
 - (id)secondLineText;
 - (void)setContentsAlpha:(float)arg1;
-- (void)setLabel:(id)arg1 animate:(BOOL)arg2;
 - (void)setLabel:(id)arg1;
+- (void)setLabel:(id)arg1 animate:(BOOL)arg2;
 - (void)setLabelFontSize:(float)arg1;
 - (void)setLayoutAsLabelled:(BOOL)arg1;
 - (void)setSecondLineText:(id)arg1;

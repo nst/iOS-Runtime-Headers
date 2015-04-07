@@ -58,8 +58,8 @@
 - (void)noteFailedProtocolRequest;
 - (void)noteFalseMoreAvailableResponse;
 - (void)noteNewHBIDataPoint:(int)arg1;
-- (void)noteSuccessfulRequestWithNumDownloadedElements:(int)arg1 numUploadedElements:(int)arg2;
 - (void)noteSuccessfulRequestWithNumDownloadedElements:(int)arg1;
+- (void)noteSuccessfulRequestWithNumDownloadedElements:(int)arg1 numUploadedElements:(int)arg2;
 - (void)noteTimeSpentInNetworking:(double)arg1;
 - (int)numHBIDataPoints;
 - (id)persistentUUID;

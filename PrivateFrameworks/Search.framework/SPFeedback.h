@@ -32,8 +32,8 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)input;
-- (id)parsecFeedbackFromSession:(id)arg1 class:(Class)arg2;
 - (id)parsecFeedbackFromSession:(id)arg1;
+- (id)parsecFeedbackFromSession:(id)arg1 class:(Class)arg2;
 - (id)results;
 - (void)setDomain:(unsigned int)arg1;
 - (void)setFbq:(id)arg1;

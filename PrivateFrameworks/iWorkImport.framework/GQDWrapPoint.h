@@ -5,12 +5,12 @@
 @class GQDDrawable;
 
 @interface GQDWrapPoint : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
     float mDistance;
     GQDDrawable *mDrawable;
     int mFlowType;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mPoint;
     int mZIndex;
 }

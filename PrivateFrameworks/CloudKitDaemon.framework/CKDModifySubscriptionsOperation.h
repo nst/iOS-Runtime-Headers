@@ -9,8 +9,16 @@
 @class NSArray, NSMutableDictionary;
 
 @interface CKDModifySubscriptionsOperation : CKDDatabaseOperation {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deleteCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _saveCompletionBlock;
+
     NSArray *_subscriptionIDsToDelete;
     NSMutableDictionary *_subscriptionsByServerID;
     NSArray *_subscriptionsToSave;

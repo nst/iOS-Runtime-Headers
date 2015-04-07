@@ -4,7 +4,7 @@
 
 @class KNMotionBlurAnimationPluginWrapper, NSMutableArray, NSString;
 
-@interface KNBuildBlinds : KNAnimationEffect <KNChunkableBuildAnimator, KNAnimationPluginArchiving> {
+@interface KNBuildBlinds : KNAnimationEffect <KNAnimationPluginArchiving, KNChunkableBuildAnimator> {
     NSMutableArray *_layerToOldParentArray;
     KNMotionBlurAnimationPluginWrapper *_motionBlurWrapper;
 }

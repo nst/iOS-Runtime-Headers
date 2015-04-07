@@ -4,7 +4,7 @@
 
 @class NSArray, NSNumber, NSString;
 
-@interface SSTonePurchase : SSPurchase <SSXPCCoding, NSCoding, NSCopying> {
+@interface SSTonePurchase : SSPurchase <NSCoding, NSCopying, SSXPCCoding> {
     NSArray *_allowedToneStyles;
     NSNumber *_assigneeIdentifier;
     NSString *_assigneeToneStyle;

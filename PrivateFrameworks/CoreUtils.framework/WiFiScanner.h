@@ -11,7 +11,11 @@
 @interface WiFiScanner : NSObject {
     BOOL _autoPoweredOn;
     NSMutableSet *_devices;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _scanActive;
     struct __CFArray { } *_scanChannels;

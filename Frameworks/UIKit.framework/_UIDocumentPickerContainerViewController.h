@@ -39,8 +39,8 @@
 - (id)model;
 - (id)searchPalette;
 - (id)serviceViewController;
-- (void)setChildViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setChildViewController:(id)arg1;
+- (void)setChildViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setModel:(id)arg1;
 - (void)setRootContainer:(BOOL)arg1;
 - (void)setSearchPalette:(id)arg1;

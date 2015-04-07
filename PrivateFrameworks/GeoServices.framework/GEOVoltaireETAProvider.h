@@ -10,11 +10,27 @@
 
 @interface GEOVoltaireETAProvider : GEOETAProvider <PBRequesterDelegate> {
     BOOL _cancelled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _errorHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _finishedHandler;
+
     GEORequester *_requester;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _simpleETARequestFinishedHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _willSendRequestHandler;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

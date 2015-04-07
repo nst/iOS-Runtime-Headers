@@ -27,8 +27,8 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (void)commitMagnifyMode:(id)arg1 withRelaunchURL:(id)arg2;
 + (void)commitMagnifyMode:(id)arg1;
++ (void)commitMagnifyMode:(id)arg1 withRelaunchURL:(id)arg2;
 + (id)currentMagnifyMode;
 + (id)localizedMagnifyModeName;
 + (BOOL)shouldShowMagnify;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface HKSource : NSObject <NSSecureCoding, NSCopying, HDCoding> {
+@interface HKSource : NSObject <HDCoding, NSCopying, NSSecureCoding> {
     NSString *_bundleIdentifier;
     BOOL _localDevice;
     NSString *_name;

@@ -8,9 +8,6 @@
  */
 
 @interface TSPUnknownField : NSObject {
-    struct shared_ptr<google::protobuf::UnknownFieldSet> { 
-        struct UnknownFieldSet {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
     struct FieldInfo { 
         int (**_vptr$MessageLite)(); 
         struct UnknownFieldSet { 
@@ -34,15 +31,18 @@
         int _cached_size_; 
         unsigned int _has_bits_[1]; 
     } _fieldInfo;
+    struct shared_ptr<google::protobuf::UnknownFieldSet> { 
+        struct UnknownFieldSet {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _fieldSet;
 }
 
 + (id)unknownFieldWithFieldSet:(struct shared_ptr<google::protobuf::UnknownFieldSet> { struct UnknownFieldSet {} *x1; struct __shared_weak_count {} *x2; }*)arg1 fieldInfo:(const struct FieldInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FieldPath {} *x3; int x4; int x5; struct RepeatedField<unsigned long long> { unsigned long long *x_6_1_1; int x_6_1_2; int x_6_1_3; } x6; int x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; int x10; unsigned int x11[1]; }*)arg2;
 
-- (const struct FieldInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FieldPath {} *x3; int x4; int x5; struct RepeatedField<unsigned long long> { unsigned long long *x_6_1_1; int x_6_1_2; int x_6_1_3; } x6; int x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; int x10; unsigned int x11[1]; }*)fieldInfo;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)debugDescription;
+- (const struct FieldInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FieldPath {} *x3; int x4; int x5; struct RepeatedField<unsigned long long> { unsigned long long *x_6_1_1; int x_6_1_2; int x_6_1_3; } x6; int x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; int x10; unsigned int x11[1]; }*)fieldInfo;
 - (id)initWithFieldSet:(struct shared_ptr<google::protobuf::UnknownFieldSet> { struct UnknownFieldSet {} *x1; struct __shared_weak_count {} *x2; }*)arg1 fieldInfo:(const struct FieldInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FieldPath {} *x3; int x4; int x5; struct RepeatedField<unsigned long long> { unsigned long long *x_6_1_1; int x_6_1_2; int x_6_1_3; } x6; int x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; int x10; unsigned int x11[1]; }*)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)mergeToUnknownFieldSet:(struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x1; }*)arg1;

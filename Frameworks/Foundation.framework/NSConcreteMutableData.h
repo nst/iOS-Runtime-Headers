@@ -3,13 +3,13 @@
  */
 
 @interface NSConcreteMutableData : NSMutableData {
-    unsigned int _reserved : 1;
-    unsigned int _needToZero : 1;
-    unsigned int _hasVM : 1;
-    unsigned int _retainCount : 29;
     void *_bytes;
     unsigned int _capacity;
+    unsigned int _hasVM : 1;
     unsigned int _length;
+    unsigned int _needToZero : 1;
+    unsigned int _reserved : 1;
+    unsigned int _retainCount : 29;
 }
 
 - (void)_freeBytes;

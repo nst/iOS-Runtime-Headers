@@ -10,8 +10,8 @@
     struct __CFArray { } *_delegatesForDelayedNotification;
 }
 
-- (void)addDelayedNotification:(id)arg1 withInfo:(struct __CFDictionary { }*)arg2 allowDuplicateNotification:(BOOL)arg3;
 - (void)addDelayedNotification:(id)arg1;
+- (void)addDelayedNotification:(id)arg1 withInfo:(struct __CFDictionary { }*)arg2 allowDuplicateNotification:(BOOL)arg3;
 - (void)addDelegate:(id)arg1;
 - (BOOL)containsDelegate:(id)arg1;
 - (void)dealloc;

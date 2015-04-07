@@ -8,31 +8,15 @@
 
 @class <CKTranscriptComposeDelegate>, CKAudioTrimViewController, CKComposeRecipientSelectionController, CKComposition, CKConversation, CKGradientReferenceView, CKMessageEncodingInfo, CKMessageEntryView, CKPhotoPickerSheetViewController, CKQLPreviewController, CKRaiseGesture, CKScheduledUpdater, CKSendAnimationWindow, CKTranscriptCollectionViewController, CKTranscriptGroupHeaderView, CKTranscriptTypingIndicatorCell, CKVideoMessageRecordingViewController, CKVideoTrimController, NSArray, NSMutableArray, NSNotification, NSNumber, NSString, UIBarButtonItem, UIImagePickerController, UINavigationItem, UIProgressView, UITapGestureRecognizer, UIToolbar, UIView, UIWindow;
 
-@interface CKTranscriptController : CKScrollViewController <CKVideoMessageRecordingViewControllerDelegate, CKCameraSheetViewControllerDelegate, UIViewControllerTransitioningDelegate, CKJoystickGestureRecognizerButtonDelegate, UIAlertViewDelegate, ABPeoplePickerNavigationControllerDelegate, CKTranscriptCollectionViewControllerDelegate, CKComposeRecipientSelectionControllerDelegate, CKMessageEntryViewDelegate, IMChatSendProgressDelegate, CKTrimControllerDelegate, UIActionSheetDelegate, UIModalViewDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate, UINavigationControllerDelegate, AFContextProvider, UIKeyInput, QLPreviewControllerDelegate> {
-    unsigned int _locked : 1;
-    unsigned int _viewNeedsSetup : 1;
-    unsigned int _newRecipient : 1;
-    unsigned int _sending : 1;
-    unsigned int _transitioningToTranscript : 1;
-    unsigned int _entryViewCanAcceptFocus : 1;
-    unsigned int _isAnimatingMessageSend : 1;
-    unsigned int _entryViewWasActiveBeforeEdit : 1;
-    unsigned int _entryViewWasActiveBeforePushingViewController : 1;
-    unsigned int _entryViewWasActiveBeforeNewComposeThrow : 1;
-    unsigned int _entryViewWasActiveBeforeSwitchingConversations : 1;
-    unsigned int _recipientSelectionViewWasActiveBeforeFirstResponderChange : 1;
-    unsigned int _automaticKeyboardWasDisabled : 1;
-    unsigned int _togglingEditing : 1;
-    unsigned int _keyboardUndocked : 1;
-    unsigned int _suspendScrollDueToMediaViewing : 1;
-    unsigned int _triedToResetEntryViewSizeWhileNotInAWindow : 1;
-    unsigned int _triedToResetOverlayViewSizeWhileNotInAWindow : 1;
-    unsigned int _preparingForResume : 1;
-    unsigned int _settingConversation : 1;
-    unsigned int _needsTransitionToFullTranscript : 1;
+@interface CKTranscriptController : CKScrollViewController <ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate, AFContextProvider, CKCameraSheetViewControllerDelegate, CKComposeRecipientSelectionControllerDelegate, CKJoystickGestureRecognizerButtonDelegate, CKMessageEntryViewDelegate, CKTranscriptCollectionViewControllerDelegate, CKTrimControllerDelegate, CKVideoMessageRecordingViewControllerDelegate, IMChatSendProgressDelegate, QLPreviewControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIKeyInput, UIModalViewDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate> {
     UIToolbar *_actionsToolbar;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _alertViewHandler;
+
     CKAudioTrimViewController *_audioTrimController;
+    unsigned int _automaticKeyboardWasDisabled : 1;
     UIWindow *_autorotateDisabledWindow;
     CKGradientReferenceView *_backPlacard;
     BOOL _canSafelyDismissImagePicker;
@@ -48,47 +32,71 @@
     BOOL _dimmed;
     UIBarButtonItem *_editCancelItem;
     CKMessageEntryView *_entryView;
+    unsigned int _entryViewCanAcceptFocus : 1;
+    unsigned int _entryViewWasActiveBeforeEdit : 1;
+    unsigned int _entryViewWasActiveBeforeNewComposeThrow : 1;
+    unsigned int _entryViewWasActiveBeforePushingViewController : 1;
+    unsigned int _entryViewWasActiveBeforeSwitchingConversations : 1;
     CKTranscriptGroupHeaderView *_groupHeaderView;
     BOOL _hasPrepopulatedRecipients;
     BOOL _hideEntryViewForModalDismissal;
     NSString *_initialSystemKeyboardID;
+    unsigned int _isAnimatingMessageSend : 1;
     NSNotification *_keyboardNotification;
+    unsigned int _keyboardUndocked : 1;
+    unsigned int _locked : 1;
     UITapGestureRecognizer *_loggingTapGestureRecognizer;
     UIImagePickerController *_mediaController;
     UINavigationItem *_navItem;
+    unsigned int _needsTransitionToFullTranscript : 1;
     CKComposition *_newComposition;
     NSArray *_newCompositionAddresses;
     NSArray *_newCompositionRecipients;
+    unsigned int _newRecipient : 1;
     CKPhotoPickerSheetViewController *_photoPickerController;
+    unsigned int _preparingForResume : 1;
     CKComposition *_presetComposition;
     CKQLPreviewController *_previewController;
     BOOL _programaticallyMadeEntryViewActive;
     UIProgressView *_progressBar;
     BOOL _progressColor;
     CKRaiseGesture *_raiseGesture;
+    unsigned int _recipientSelectionViewWasActiveBeforeFirstResponderChange : 1;
     CKScheduledUpdater *_refreshServiceForSendingUpdater;
     BOOL _safeToMarkAsRead;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _scrollBlock;
+
     CKSendAnimationWindow *_sendAnimationWindow;
     float _sendProgress;
     unsigned int _sendProgressSendCount;
     unsigned int _sendProgressTotalCount;
+    unsigned int _sending : 1;
     NSString *_serviceAvailabilityKey;
+    unsigned int _settingConversation : 1;
     int _setupState;
     BOOL _showingKeyboard;
     BOOL _showingPhotoPicker;
     BOOL _showingVideoMessageRecordingView;
+    unsigned int _suspendScrollDueToMediaViewing : 1;
     CKMessageEncodingInfo *_textMessageEncodingInfo;
     UIView *_throwAnimationEnforcementView;
     UIView *_throwAnimationSnapshotView;
     NSMutableArray *_throwBalloonViews;
     NSMutableArray *_throwEndFrames;
     NSMutableArray *_throwIntermediateFrames;
+    unsigned int _togglingEditing : 1;
     unsigned int _transcriptNeedsUpdate;
+    unsigned int _transitioningToTranscript : 1;
+    unsigned int _triedToResetEntryViewSizeWhileNotInAWindow : 1;
+    unsigned int _triedToResetOverlayViewSizeWhileNotInAWindow : 1;
     CKTranscriptTypingIndicatorCell *_typingIndicatorForSendAnimation;
     CKScheduledUpdater *_typingUpdater;
     CKVideoMessageRecordingViewController *_videoMessageRecordingViewController;
     CKVideoTrimController *_videoTrimController;
+    unsigned int _viewNeedsSetup : 1;
     BOOL _visible;
 }
 
@@ -103,8 +111,6 @@
 @property(retain,readonly) CKComposeRecipientSelectionController * composeRecipientSelectionController;
 @property(retain) CKComposition * compositionBeingTrimmed;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(retain) UIBarButtonItem * detailsButton;
 @property(getter=isDimmed) BOOL dimmed;
@@ -113,7 +119,6 @@
 @property(retain) CKMessageEntryView * entryView;
 @property(retain) CKTranscriptGroupHeaderView * groupHeaderView;
 @property BOOL hasPrepopulatedRecipients;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property BOOL hideEntryViewForModalDismissal;
 @property int keyboardAppearance;
@@ -131,7 +136,6 @@
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 @property(retain) CKSendAnimationWindow * sendAnimationWindow;
 @property int spellCheckingType;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(retain) UIView * throwAnimationEnforcementView;
 @property(retain) UIView * throwAnimationSnapshotView;
@@ -244,8 +248,8 @@
 - (BOOL)canBecomeFirstResponder;
 - (id)canSafelyDismissImagePicker;
 - (void)cancelButtonClicked:(id)arg1;
-- (void)chat:(id)arg1 progressDidChange:(float)arg2 sendingMessages:(id)arg3 sendCount:(unsigned int)arg4 totalCount:(unsigned int)arg5 finished:(BOOL)arg6;
 - (id)chat;
+- (void)chat:(id)arg1 progressDidChange:(float)arg2 sendingMessages:(id)arg3 sendCount:(unsigned int)arg4 totalCount:(unsigned int)arg5 finished:(BOOL)arg6;
 - (void)ckPhotoPickerViewController:(id)arg1 resizeToSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)ckPhotoPickerViewController:(id)arg1 selectedAssets:(id)arg2 shouldSend:(BOOL)arg3;
 - (void)ckPhotoPickerViewControllerCancel:(id)arg1;
@@ -332,8 +336,8 @@
 - (void)parentControllerDidBecomeActive;
 - (void)parentControllerDidResume:(BOOL)arg1 animating:(BOOL)arg2;
 - (void)peoplePickerNavigationController:(id)arg1 insertEditorDidConfirm:(BOOL)arg2 forPerson:(void*)arg3;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(int*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)performResumeDeferredSetup;

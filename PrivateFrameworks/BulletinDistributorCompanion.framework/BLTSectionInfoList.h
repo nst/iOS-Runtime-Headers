@@ -5,10 +5,10 @@
 @class <BLTSectionInfoListDelegate>, BLTSectionInfoListBBProvider, BLTSectionInfoListBridgeProvider, NSMutableDictionary, NSString;
 
 @interface BLTSectionInfoList : NSObject <BLTSectionInfoListProviderDelegate> {
+    <BLTSectionInfoListDelegate> *_delegate;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    <BLTSectionInfoListDelegate> *_delegate;
     } _lock;
     BLTSectionInfoListBridgeProvider *_overrideProvider;
     NSMutableDictionary *_sectionInfoListItemsBySectionID;

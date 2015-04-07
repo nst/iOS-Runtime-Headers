@@ -4,7 +4,7 @@
 
 @class CKRecordZoneID, NSString;
 
-@interface CKRecordID : NSObject <NSSecureCoding, NSCopying> {
+@interface CKRecordID : NSObject <NSCopying, NSSecureCoding> {
     NSString *_recordName;
     CKRecordZoneID *_zoneID;
 }
@@ -27,8 +27,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRecordName:(id)arg1 zoneID:(id)arg2;
 - (id)initWithRecordName:(id)arg1;
+- (id)initWithRecordName:(id)arg1 zoneID:(id)arg2;
 - (id)initWithSqliteRepresentation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)markServerItemDeadInContainer:(id)arg1 stateIsInconsistent:(BOOL)arg2;

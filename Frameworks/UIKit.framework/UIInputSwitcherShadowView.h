@@ -5,6 +5,7 @@
 @class NSArray, UIKeyboardMenuView, _UIBackdropView;
 
 @interface UIInputSwitcherShadowView : UIView {
+    _UIBackdropView *_blurView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    _UIBackdropView *_blurView;
     } _keyRect;
     UIKeyboardMenuView *_menu;
     NSArray *m_gradientColors;

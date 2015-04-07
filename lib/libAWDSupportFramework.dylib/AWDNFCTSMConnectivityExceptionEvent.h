@@ -5,10 +5,10 @@
 @class NSData;
 
 @interface AWDNFCTSMConnectivityExceptionEvent : PBCodable <NSCopying> {
+    unsigned int _errorCode;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int errorCode : 1; 
-    unsigned int _errorCode;
     } _has;
     unsigned long long _timestamp;
     NSData *_uuidReference;

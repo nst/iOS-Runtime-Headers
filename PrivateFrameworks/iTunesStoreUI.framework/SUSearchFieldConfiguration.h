@@ -41,8 +41,8 @@
 - (void)dealloc;
 - (id)hintsURLRequestPropertiesForNetworkType:(int)arg1;
 - (id)init;
-- (id)initWithDictionary:(id)arg1 clientInterface:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 clientInterface:(id)arg2;
 - (BOOL)isRootViewOnly;
 - (void)loadFromDictionary:(id)arg1;
 - (int)location;

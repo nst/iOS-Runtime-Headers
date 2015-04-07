@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface CKDURLSessionPool : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegatePrivate, NSURLSessionDataDelegate> {
+@interface CKDURLSessionPool : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegatePrivate> {
     NSMutableDictionary *_delegateByTaskDescription;
     NSMutableDictionary *_ephemeralSessionByTaskDescription;
     NSObject<OS_dispatch_queue> *_queue;

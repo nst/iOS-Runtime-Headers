@@ -5,11 +5,11 @@
 @class NSData, NSString;
 
 @interface HDCodableTimestampedKeyValuePair : PBCodable <NSCopying> {
+    NSData *_bytesValue;
     struct { 
         unsigned int numberDoubleValue : 1; 
         unsigned int numberIntValue : 1; 
         unsigned int timestamp : 1; 
-    NSData *_bytesValue;
     } _has;
     NSString *_key;
     double _numberDoubleValue;

@@ -12,7 +12,11 @@
     NSMutableDictionary *_errorsByItemID;
     NSMutableDictionary *_itemsToLikeByID;
     NSMutableDictionary *_itemsToUnlikeByID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _likeItemsCompletionBlock;
+
     NSMutableArray *_likedItems;
     CKShareID *_shareID;
     NSMutableArray *_unlikedItems;

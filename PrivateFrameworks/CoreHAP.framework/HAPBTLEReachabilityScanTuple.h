@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_queue>, NSString;
 
 @interface HAPBTLEReachabilityScanTuple : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     NSString *_identifier;
     NSObject<OS_dispatch_queue> *_queue;
 }

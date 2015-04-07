@@ -17,8 +17,8 @@
 - (id)account;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)dealloc;
-- (id)initWithAccount:(id)arg1 commands:(id)arg2;
 - (id)initWithAccount:(id)arg1;
+- (id)initWithAccount:(id)arg1 commands:(id)arg2;
 - (BOOL)isActive;
 - (void)removeDelegate:(id)arg1;
 - (BOOL)sendData:(id)arg1 toDestinations:(id)arg2 priority:(int)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;

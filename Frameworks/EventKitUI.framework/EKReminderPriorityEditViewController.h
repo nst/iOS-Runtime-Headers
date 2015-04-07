@@ -4,7 +4,7 @@
 
 @class NSString, UITableView;
 
-@interface EKReminderPriorityEditViewController : EKEditItemViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface EKReminderPriorityEditViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate> {
     unsigned int _priority;
     UITableView *_tableView;
 }

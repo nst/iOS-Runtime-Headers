@@ -4,35 +4,97 @@
 
 @class <UITableViewDataSource>, <UITableViewDelegate>, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIColor, UIGobblerGestureRecognizer, UIImage, UILongPressGestureRecognizer, UIRefreshControl, UIScrollView, UISwipeGestureRecognizer, UITableViewCell, UITableViewCountView, UITableViewIndex, UITableViewIndexOverlayIndicatorView, UITableViewIndexOverlaySelectionView, UITableViewRowData, UITableViewWrapperView, UITouch, UIView, UIVisualEffect, _UITableViewDeleteAnimationSupport, _UITableViewReorderingSupport, _UITableViewUpdateSupport;
 
-@interface UITableView : UIScrollView <UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate, NSCoding> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+@interface UITableView : UIScrollView <NSCoding, UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate> {
+    UIView *_backgroundView;
+    float _bottomPadding;
+    NSMutableDictionary *_cellClassDict;
+    UIColor *_checkmarkColor;
+    UIView *_clearBlendingView;
+    NSMutableSet *_clientGesturesRequiringTableGesturesToFail;
+    UITableViewCountView *_countLabel;
+    int _currentIndexTitleIndex;
+    UITouch *_currentTouch;
+    _UITableViewUpdateSupport *_currentUpdate;
+    <UITableViewDataSource> *_dataSource;
+    NSArray *_defaultSectionIndexTitles;
+    id _deferredEditingHandler;
+    _UITableViewDeleteAnimationSupport *_deleteAnimationSupport;
+    NSMutableArray *_deleteItems;
+    NSIndexPath *_displayingCellContentStringIndexPath;
+    float _estimatedRowHeight;
+    float _estimatedSectionFooterHeight;
+    float _estimatedSectionHeaderHeight;
+    NSMutableArray *_extraSeparators;
+    NSIndexPath *_firstResponderIndexPath;
+    UIView *_firstResponderView;
+    int _firstResponderViewType;
+    NSMutableDictionary *_headerFooterClassDict;
+    NSMutableDictionary *_headerFooterNibMap;
+    NSMutableArray *_hiddenSeparatorIndexPaths;
+    NSMutableArray *_highlightedIndexPaths;
+    UITableViewIndex *_index;
+    UIColor *_indexBackgroundColor;
+    UIColor *_indexColor;
+    NSTimer *_indexOverlayIndicatorEventIgnoreTimer;
+    UITableViewIndexOverlayIndicatorView *_indexOverlayIndicatorView;
+    UITableViewIndexOverlaySelectionView *_indexOverlaySelectionView;
+    NSTimer *_indexOverlayTimer;
+    UIColor *_indexTrackingBackgroundColor;
+    NSMutableArray *_insertItems;
+    int _longPressAutoscrollDirection;
+    NSTimer *_longPressAutoscrollTimer;
+    UILongPressGestureRecognizer *_longPressGestureRecognizer;
+    NSMutableArray *_moveItems;
+    UIImage *_multiSelectCheckmarkImage;
+    UIImage *_multiSelectNotSelectedImage;
+    UIView *_newContentView;
+    NSMutableDictionary *_nibExternalObjectsTables;
+    NSMutableDictionary *_nibMap;
+    NSMutableArray *_pendingDeselectionIndexPaths;
+    NSIndexPath *_pendingSelectionIndexPath;
     struct CGPoint { 
         float x; 
         float y; 
+    } _postLayoutContentOffset;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
+    } _preReloadVisibleRowRange;
+    UIRefreshControl *_refreshControl;
+    NSMutableArray *_reloadItems;
+    _UITableViewReorderingSupport *_reorderingSupport;
+    NSMutableDictionary *_reusableHeaderFooterViews;
+    NSMutableDictionary *_reusableTableCells;
+    UITableViewRowData *_rowData;
+    float _rowHeight;
+    UIColor *_sectionBorderColor;
+    float _sectionBorderWidth;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _sectionContentInset;
+    float _sectionFooterHeight;
+    float _sectionHeaderHeight;
+    int _sectionIndexMinimumDisplayRowCount;
+    NSArray *_sectionIndexTitlesForTableView;
+    NSMutableArray *_selectedIndexPaths;
+    UIColor *_separatorBottomShadowColor;
+    UIColor *_separatorColor;
+    UIVisualEffect *_separatorEffect;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _separatorInset;
+    UIColor *_separatorTopShadowColor;
+    UISwipeGestureRecognizer *_swipeGestureRecognizer;
+    UITableViewCell *_swipeToDeleteCell;
+    UIGobblerGestureRecognizer *_swipeToDeleteGobblerGestureRecognizer;
+    int _swipeToDeleteRow;
+    int _swipeToDeleteSection;
     struct { 
         unsigned int dataSourceNumberOfRowsInSection : 1; 
         unsigned int dataSourceCellForRow : 1; 
@@ -190,80 +252,6 @@
         unsigned int usingCustomLayoutMargins : 1; 
         unsigned int settingDefaultLayoutMargins : 1; 
         unsigned int deallocating : 1; 
-    UIView *_backgroundView;
-    float _bottomPadding;
-    NSMutableDictionary *_cellClassDict;
-    UIColor *_checkmarkColor;
-    UIView *_clearBlendingView;
-    NSMutableSet *_clientGesturesRequiringTableGesturesToFail;
-    UITableViewCountView *_countLabel;
-    int _currentIndexTitleIndex;
-    UITouch *_currentTouch;
-    _UITableViewUpdateSupport *_currentUpdate;
-    <UITableViewDataSource> *_dataSource;
-    NSArray *_defaultSectionIndexTitles;
-    id _deferredEditingHandler;
-    _UITableViewDeleteAnimationSupport *_deleteAnimationSupport;
-    NSMutableArray *_deleteItems;
-    NSIndexPath *_displayingCellContentStringIndexPath;
-    float _estimatedRowHeight;
-    float _estimatedSectionFooterHeight;
-    float _estimatedSectionHeaderHeight;
-    NSMutableArray *_extraSeparators;
-    NSIndexPath *_firstResponderIndexPath;
-    UIView *_firstResponderView;
-    int _firstResponderViewType;
-    NSMutableDictionary *_headerFooterClassDict;
-    NSMutableDictionary *_headerFooterNibMap;
-    NSMutableArray *_hiddenSeparatorIndexPaths;
-    NSMutableArray *_highlightedIndexPaths;
-    UITableViewIndex *_index;
-    UIColor *_indexBackgroundColor;
-    UIColor *_indexColor;
-    NSTimer *_indexOverlayIndicatorEventIgnoreTimer;
-    UITableViewIndexOverlayIndicatorView *_indexOverlayIndicatorView;
-    UITableViewIndexOverlaySelectionView *_indexOverlaySelectionView;
-    NSTimer *_indexOverlayTimer;
-    UIColor *_indexTrackingBackgroundColor;
-    NSMutableArray *_insertItems;
-    int _longPressAutoscrollDirection;
-    NSTimer *_longPressAutoscrollTimer;
-    UILongPressGestureRecognizer *_longPressGestureRecognizer;
-    NSMutableArray *_moveItems;
-    UIImage *_multiSelectCheckmarkImage;
-    UIImage *_multiSelectNotSelectedImage;
-    UIView *_newContentView;
-    NSMutableDictionary *_nibExternalObjectsTables;
-    NSMutableDictionary *_nibMap;
-    NSMutableArray *_pendingDeselectionIndexPaths;
-    NSIndexPath *_pendingSelectionIndexPath;
-    } _postLayoutContentOffset;
-    } _preReloadVisibleRowRange;
-    UIRefreshControl *_refreshControl;
-    NSMutableArray *_reloadItems;
-    _UITableViewReorderingSupport *_reorderingSupport;
-    NSMutableDictionary *_reusableHeaderFooterViews;
-    NSMutableDictionary *_reusableTableCells;
-    UITableViewRowData *_rowData;
-    float _rowHeight;
-    UIColor *_sectionBorderColor;
-    float _sectionBorderWidth;
-    } _sectionContentInset;
-    float _sectionFooterHeight;
-    float _sectionHeaderHeight;
-    int _sectionIndexMinimumDisplayRowCount;
-    NSArray *_sectionIndexTitlesForTableView;
-    NSMutableArray *_selectedIndexPaths;
-    UIColor *_separatorBottomShadowColor;
-    UIColor *_separatorColor;
-    UIVisualEffect *_separatorEffect;
-    } _separatorInset;
-    UIColor *_separatorTopShadowColor;
-    UISwipeGestureRecognizer *_swipeGestureRecognizer;
-    UITableViewCell *_swipeToDeleteCell;
-    UIGobblerGestureRecognizer *_swipeToDeleteGobblerGestureRecognizer;
-    int _swipeToDeleteRow;
-    int _swipeToDeleteSection;
     } _tableFlags;
     UIView *_tableFooterView;
     UIView *_tableHeaderBackgroundView;
@@ -278,10 +266,22 @@
     int _updateAnimationCount;
     id _updateCompletionHandler;
     int _updateCount;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _visibleBounds;
     NSMutableArray *_visibleCells;
     struct __CFDictionary { } *_visibleFooterViews;
     struct __CFDictionary { } *_visibleHeaderViews;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _visibleRows;
     UITableViewWrapperView *_wrapperView;
 }
@@ -436,8 +436,8 @@
 - (id)_deleteConfirmationButton;
 - (id)_deleteConfirmationButtonForRowAtIndexPath:(id)arg1;
 - (id)_dequeueReusableViewOfType:(int)arg1 withIdentifier:(id)arg2;
-- (void)_deselectAllNonMultiSelectRowsAnimated:(BOOL)arg1 notifyDelegate:(BOOL)arg2;
 - (void)_deselectAllNonMultiSelectRowsAnimated:(BOOL)arg1;
+- (void)_deselectAllNonMultiSelectRowsAnimated:(BOOL)arg1 notifyDelegate:(BOOL)arg2;
 - (void)_deselectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
 - (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)_didInsertRowForTableCell:(id)arg1;
@@ -485,8 +485,8 @@
 - (float)_heightForHeaderView:(id)arg1 inSection:(int)arg2;
 - (float)_heightForRowAtIndexPath:(id)arg1;
 - (float)_heightForSeparator;
-- (void)_hideIndexOverlay:(id)arg1;
 - (void)_hideIndexOverlay;
+- (void)_hideIndexOverlay:(id)arg1;
 - (void)_hideSeparatorForRowAtIndexPath:(id)arg1;
 - (void)_highlightCell:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3 highlight:(BOOL)arg4;
 - (BOOL)_highlightFirstVisibleRowIfAppropriate;
@@ -546,8 +546,8 @@
 - (void)_removeIndex;
 - (void)_removeTableViewGestureRecognizers;
 - (void)_removeWasCanceledForCell:(id)arg1;
-- (void)_reorderPositionChangedForCell:(id)arg1 withScrollFactorPercentage:(float)arg2;
 - (void)_reorderPositionChangedForCell:(id)arg1;
+- (void)_reorderPositionChangedForCell:(id)arg1 withScrollFactorPercentage:(float)arg2;
 - (id)_reorderingCell;
 - (id)_reorderingIndexPath;
 - (id)_reorderingSupport;
@@ -619,8 +619,8 @@
 - (void)_setSeparatorBackdropOverlayBlendMode:(int)arg1;
 - (void)_setSeparatorsDrawAsOverlay:(BOOL)arg1;
 - (void)_setSeparatorsDrawInVibrantLightModeUIAppearance:(id)arg1;
-- (void)_setSwipeToDeleteCell:(id)arg1 installGobbler:(BOOL)arg2;
 - (void)_setSwipeToDeleteCell:(id)arg1;
+- (void)_setSwipeToDeleteCell:(id)arg1 installGobbler:(BOOL)arg2;
 - (void)_setTopPadding:(float)arg1;
 - (void)_setTopSeparatorCell:(id)arg1;
 - (void)_setUsesStaticScrollBar:(BOOL)arg1;
@@ -724,13 +724,13 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBoundsIncludingRowsOnly;
 - (id)_visibleCellForGlobalRow:(int)arg1;
 - (id)_visibleCells;
-- (id)_visibleFooterViewForSection:(int)arg1 includeTentativeViews:(BOOL)arg2;
 - (id)_visibleFooterViewForSection:(int)arg1;
+- (id)_visibleFooterViewForSection:(int)arg1 includeTentativeViews:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleGlobalRows;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleGlobalRowsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_visibleHeaderFooterViews;
-- (id)_visibleHeaderViewForSection:(int)arg1 includeTentativeViews:(BOOL)arg2;
 - (id)_visibleHeaderViewForSection:(int)arg1;
+- (id)_visibleHeaderViewForSection:(int)arg1 includeTentativeViews:(BOOL)arg2;
 - (id)_visibleSubviewsInHeaderFooterDictionary:(struct __CFDictionary { }*)arg1;
 - (BOOL)_wantsSwipes;
 - (BOOL)_wasEditing;
@@ -762,8 +762,8 @@
 - (id)deleteConfirmationIndexPath;
 - (void)deleteRowsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
 - (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
-- (id)dequeueReusableCellWithIdentifier:(id)arg1 forIndexPath:(id)arg2;
 - (id)dequeueReusableCellWithIdentifier:(id)arg1;
+- (id)dequeueReusableCellWithIdentifier:(id)arg1 forIndexPath:(id)arg2;
 - (id)dequeueReusableHeaderFooterViewWithIdentifier:(id)arg1;
 - (void)deselectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (void)didMoveToWindow;
@@ -794,8 +794,8 @@
 - (id)indexPathsForSelectedRows;
 - (id)indexPathsForVisibleRows;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)insertRowsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
 - (void)insertSections:(id)arg1 withRowAnimation:(int)arg2;
 - (BOOL)isEditing;
@@ -868,8 +868,8 @@
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeleteConfirmationIndexPath:(id)arg1 animated:(BOOL)arg2;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEstimatedRowHeight:(float)arg1;
 - (void)setEstimatedSectionFooterHeight:(float)arg1;
 - (void)setEstimatedSectionHeaderHeight:(float)arg1;

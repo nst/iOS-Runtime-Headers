@@ -5,10 +5,10 @@
 @class NSNumber;
 
 @interface AutoCropper : NSObject {
+    NSNumber *bufferZone;
     struct CGSize { 
         float width; 
         float height; 
-    NSNumber *bufferZone;
     } originalImageSize;
     BOOL shouldFavorBottom;
     BOOL shouldFavorTop;

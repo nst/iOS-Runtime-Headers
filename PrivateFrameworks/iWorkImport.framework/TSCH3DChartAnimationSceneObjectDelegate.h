@@ -5,6 +5,7 @@
 @class NSArray, NSMutableDictionary, NSString, TSCH3DAnimationTimeSlice, TSCH3DAnimationTiming;
 
 @interface TSCH3DChartAnimationSceneObjectDelegate : NSObject <TSCH3DChartAllSceneObjectDelegate> {
+    NSArray *mAnimationClips;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,7 +17,6 @@
             int g; 
             int t; 
         } ; 
-    NSArray *mAnimationClips;
     } mCurrentInterpolatedTimeElementIndex;
     TSCH3DAnimationTiming *mElementTiming;
     TSCH3DAnimationTimeSlice *mTimeSlice;

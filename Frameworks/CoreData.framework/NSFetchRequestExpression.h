@@ -5,10 +5,10 @@
 @class NSExpression;
 
 @interface NSFetchRequestExpression : NSExpression {
+    NSExpression *_fetchRequest;
     struct _fetchExpressionFlags { 
         unsigned int isCountOnly : 1; 
         unsigned int _RESERVED : 31; 
-    NSExpression *_fetchRequest;
     } _flags;
     NSExpression *_managedObjectContext;
     void *_reserved1;

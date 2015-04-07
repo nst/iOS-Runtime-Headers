@@ -10,10 +10,10 @@
 @class NSSet;
 
 @interface WKRemoteObjectDecoder : NSCoder {
-    struct RetainPtr<_WKRemoteObjectInterface> { 
-        void *m_ptr; 
     NSSet *_allowedClasses;
     const struct ImmutableDictionary { int (**x1)(); id x2; struct HashMap<WTF::String, WTF::RefPtr<API::Object>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RefPtr<API::Object> > > { struct HashTable<WTF::String, WTF::KeyValuePair<WTF::String, WTF::RefPtr<API::Object> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::String, WTF::RefPtr<API::Object> > >, WTF::StringHash, WTF::HashMap<WTF::String, WTF::RefPtr<API::Object>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RefPtr<API::Object> > >::KeyValuePairTraits, WTF::HashTraits<WTF::String> > { struct KeyValuePair<WTF::String, WTF::RefPtr<API::Object> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_3_1_1; } x3; } *_currentDictionary;
+    struct RetainPtr<_WKRemoteObjectInterface> { 
+        void *m_ptr; 
     } _interface;
     const struct Array { int (**x1)(); id x2; struct Vector<WTF::RefPtr<API::Object>, 0, WTF::CrashOnOverflow> { struct RefPtr<API::Object> {} *x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; } x3; } *_objectStream;
     unsigned long _objectStreamPosition;

@@ -5,6 +5,9 @@
 @class MIPArtist, NSString;
 
 @interface MIPAlbum : PBCodable <NSCopying> {
+    MIPArtist *_artist;
+    NSString *_artworkId;
+    BOOL _compilation;
     struct { 
         unsigned int persistentId : 1; 
         unsigned int storeId : 1; 
@@ -12,9 +15,6 @@
         unsigned int numTracks : 1; 
         unsigned int userRating : 1; 
         unsigned int compilation : 1; 
-    MIPArtist *_artist;
-    NSString *_artworkId;
-    BOOL _compilation;
     } _has;
     NSString *_name;
     int _numDiscs;

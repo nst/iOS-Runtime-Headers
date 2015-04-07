@@ -6,18 +6,11 @@
 
 @interface GEORouteAttributes : PBCodable <NSCopying> {
     struct { 
-        double _time; 
-        int _flexibility; 
-        int _type; 
-        struct { 
-            unsigned int time : 1; 
-            unsigned int flexibility : 1; 
-            unsigned int type : 1; 
-        } _has; 
-    struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _additionalTransportTypes;
+    int _basicPointsToBeIncluded;
     struct { 
         unsigned int timepoint : 1; 
         unsigned int basicPointsToBeIncluded : 1; 
@@ -33,8 +26,6 @@
         unsigned int includeTrafficAlongRoute : 1; 
         unsigned int includeTrafficIncidents : 1; 
         unsigned int includeZilchPoints : 1; 
-    } _additionalTransportTypes;
-    int _basicPointsToBeIncluded;
     } _has;
     BOOL _includeContingencyRoutes;
     BOOL _includeHistoricTravelTime;
@@ -47,6 +38,15 @@
     BOOL _includeZilchPoints;
     int _mainTransportType;
     NSString *_phoneticLocaleIdentifier;
+    struct { 
+        double _time; 
+        int _flexibility; 
+        int _type; 
+        struct { 
+            unsigned int time : 1; 
+            unsigned int flexibility : 1; 
+            unsigned int type : 1; 
+        } _has; 
     } _timepoint;
     int _trafficType;
     unsigned int _walkingLimitMeters;

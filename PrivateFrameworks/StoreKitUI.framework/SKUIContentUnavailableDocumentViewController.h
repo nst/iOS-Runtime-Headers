@@ -4,7 +4,7 @@
 
 @class NSString, SKUIContentUnavailableTemplateElement, SKUIContentUnavailableView, SKUILayoutCache, SKUIViewElementLayoutContext;
 
-@interface SKUIContentUnavailableDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUILayoutCacheDelegate, SKUIDocumentViewController> {
+@interface SKUIContentUnavailableDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIDocumentViewController, SKUILayoutCacheDelegate> {
     SKUIContentUnavailableView *_contentUnavailableView;
     SKUIViewElementLayoutContext *_layoutContext;
     SKUIContentUnavailableTemplateElement *_templateElement;

@@ -5,19 +5,29 @@
 @class NSArray, NSMutableIndexSet, NSString, NSURL, SKUIItemArtworkContext, SKUISwooshView, SKUIVideoImageDataConsumer, UICollectionView;
 
 @interface SKUILockupSwooshViewController : SKUISwooshViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
+    SKUIItemArtworkContext *_artworkContext;
+    UICollectionView *_collectionView;
     struct SKUILockupStyle { 
         int artworkSize; 
         int layoutStyle; 
         unsigned int visibleFields; 
+    } _defaultLockupStyle;
+    BOOL _delegateWantsWillDisplay;
+    BOOL _didInitialReload;
     struct CGSize { 
         float width; 
         float height; 
+    } _expectedImageSize;
+    NSMutableIndexSet *_hiddenIconIndexSet;
+    NSArray *_lockups;
     struct CGSize { 
         float width; 
         float height; 
+    } _maxCellSize;
     struct CGSize { 
         float width; 
         float height; 
+    } _maxImageSize;
     struct { 
         struct CGSize { 
             float width; 
@@ -43,16 +53,6 @@
         float interItemSpacingMixed; 
         float interItemSpacingNewsstand; 
         float interItemSpacingVideoLockup; 
-    SKUIItemArtworkContext *_artworkContext;
-    UICollectionView *_collectionView;
-    } _defaultLockupStyle;
-    BOOL _delegateWantsWillDisplay;
-    BOOL _didInitialReload;
-    } _expectedImageSize;
-    NSMutableIndexSet *_hiddenIconIndexSet;
-    NSArray *_lockups;
-    } _maxCellSize;
-    } _maxImageSize;
     } _metrics;
     BOOL _seeAllHidden;
     int _seeAllStyle;

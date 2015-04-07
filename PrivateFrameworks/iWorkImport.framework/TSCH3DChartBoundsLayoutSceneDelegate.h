@@ -4,7 +4,12 @@
 
 @class NSString, TSCH3DGetBoundsPipeline, TSCH3DLabelsRendererTransforms, TSUMutablePointerSet;
 
-@interface TSCH3DChartBoundsLayoutSceneDelegate : NSObject <TSCH3DSceneObjectDelegator, TSCH3DSceneDelegate, TSCH3DChartAllSceneObjectDelegate> {
+@interface TSCH3DChartBoundsLayoutSceneDelegate : NSObject <TSCH3DChartAllSceneObjectDelegate, TSCH3DSceneDelegate, TSCH3DSceneObjectDelegator> {
+    struct ActiveLabelsTypeBounds { int x1; struct ObjcSharedPtr<NSMutableIndexSet> { id x_2_1_1; } x2; struct map<int, TSCH3D::CachedLabelBoundsArray, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, TSCH3D::CachedLabelBoundsArray> > > { struct __tree<std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray>, std::__1::__map_value_compare<int, std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray> > > { struct __tree_node<std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray>, void *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray>, std::__1::less<int>, true> > { unsigned long x_3_3_1; } x_1_2_3; } x_3_1_1; } x3; } *mActiveBounds;
+    TSUMutablePointerSet *mDebugCachedSceneObjects;
+    BOOL mLabelsDidOverride;
+    BOOL mLabelsHaveCache;
+    TSCH3DGetBoundsPipeline *mPipeline;
     struct map<TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds, std::__1::less<TSCH3D::SceneObjectSharedPointer>, std::__1::allocator<std::__1::pair<const TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds> > > { 
         struct __tree<std::__1::__value_type<TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds>, std::__1::__map_value_compare<TSCH3D::SceneObjectSharedPointer, std::__1::__value_type<TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds>, std::__1::less<TSCH3D::SceneObjectSharedPointer>, true>, std::__1::allocator<std::__1::__value_type<TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds> > > { 
             struct __tree_node<std::__1::__value_type<TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds>, void *> {} *__begin_node_; 
@@ -17,11 +22,6 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    struct ActiveLabelsTypeBounds { int x1; struct ObjcSharedPtr<NSMutableIndexSet> { id x_2_1_1; } x2; struct map<int, TSCH3D::CachedLabelBoundsArray, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, TSCH3D::CachedLabelBoundsArray> > > { struct __tree<std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray>, std::__1::__map_value_compare<int, std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray> > > { struct __tree_node<std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray>, void *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, TSCH3D::CachedLabelBoundsArray>, std::__1::less<int>, true> > { unsigned long x_3_3_1; } x_1_2_3; } x_3_1_1; } x3; } *mActiveBounds;
-    TSUMutablePointerSet *mDebugCachedSceneObjects;
-    BOOL mLabelsDidOverride;
-    BOOL mLabelsHaveCache;
-    TSCH3DGetBoundsPipeline *mPipeline;
     } mSceneObjectLabelsBounds;
     TSCH3DLabelsRendererTransforms *mTransforms;
 }

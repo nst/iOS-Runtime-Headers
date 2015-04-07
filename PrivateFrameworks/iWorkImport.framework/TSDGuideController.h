@@ -53,8 +53,8 @@
 + (BOOL)shouldAlignToSpacingGuides;
 
 - (void)beginAlignmentOperationForRep:(id)arg1;
-- (void)beginAlignmentOperationForReps:(id)arg1 preventCenterGuides:(BOOL)arg2 preventSpacingGuides:(BOOL)arg3;
 - (void)beginAlignmentOperationForReps:(id)arg1;
+- (void)beginAlignmentOperationForReps:(id)arg1 preventCenterGuides:(BOOL)arg2 preventSpacingGuides:(BOOL)arg3;
 - (id)decoratorOverlayLayers;
 - (BOOL)didJustSnapInX;
 - (BOOL)didJustSnapInY;
@@ -77,13 +77,13 @@
 - (BOOL)p_sizingGuidesAreRelevantForOrientation:(int)arg1 whileDraggingKnobTag:(unsigned int)arg2;
 - (float)p_spacingForCenterOrSpacingGuide:(id)arg1;
 - (void)setDoNotRemoveExistingGuidesWhenDisplaying:(BOOL)arg1;
-- (void)showGuidesAlignedWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKnobTag:(unsigned int)arg2 shouldRenderX:(BOOL)arg3 shouldRenderY:(BOOL)arg4 shouldRenderSizeGuides:(BOOL)arg5;
 - (void)showGuidesAlignedWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKnobTag:(unsigned int)arg2;
+- (void)showGuidesAlignedWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKnobTag:(unsigned int)arg2 shouldRenderX:(BOOL)arg3 shouldRenderY:(BOOL)arg4 shouldRenderSizeGuides:(BOOL)arg5;
 - (void)showGuidesAlignedWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 shouldRenderX:(BOOL)arg2 shouldRenderY:(BOOL)arg3;
 - (void)showSizingGuideUIForRep:(id)arg1 matchingWidth:(BOOL)arg2 matchingHeight:(BOOL)arg3;
 - (void)showSizingGuidesAlignedWithLayout:(id)arg1 forKnobTag:(unsigned int)arg2;
-- (struct CGPoint { float x1; float x2; })snapRectToGuides:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKnobTag:(unsigned int)arg2 snapSize:(BOOL)arg3;
-- (struct CGPoint { float x1; float x2; })snapRectToGuides:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKnobTag:(unsigned int)arg2;
 - (struct CGPoint { float x1; float x2; })snapRectToGuides:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })snapRectToGuides:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKnobTag:(unsigned int)arg2;
+- (struct CGPoint { float x1; float x2; })snapRectToGuides:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKnobTag:(unsigned int)arg2 snapSize:(BOOL)arg3;
 
 @end

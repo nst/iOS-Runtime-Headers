@@ -10,6 +10,7 @@
 @class NSArray;
 
 @interface MSReauthorizationProtocol : MSStreamsProtocol {
+    NSArray *_assetsInFlight;
     struct __MSRPCContext { 
         struct __MSSPCContext { 
             void *owner; 
@@ -33,7 +34,6 @@
         int (*authFailedCallback)(); 
         int (*didReceiveRetryAfterCallback)(); 
         int (*didReceiveServerSideConfigurationVersionCallback)(); 
-    NSArray *_assetsInFlight;
     } _context;
 }
 

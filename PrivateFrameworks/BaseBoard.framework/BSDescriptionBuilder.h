@@ -11,22 +11,22 @@
 
 + (id)builderWithObject:(id)arg1;
 + (id)componentSeparator;
-+ (id)descriptionForObject:(id)arg1 withObjectsAndNames:(id)arg2;
 + (id)descriptionForObject:(id)arg1;
++ (id)descriptionForObject:(id)arg1 withObjectsAndNames:(id)arg2;
 + (id)nameObjectSeparator;
 
 - (id)appendBool:(BOOL)arg1 withName:(id)arg2;
 - (id)appendCString:(const char *)arg1 withName:(id)arg2;
-- (id)appendFloat:(float)arg1 withName:(id)arg2 decimalPrecision:(unsigned int)arg3;
 - (id)appendFloat:(float)arg1 withName:(id)arg2;
+- (id)appendFloat:(float)arg1 withName:(id)arg2 decimalPrecision:(unsigned int)arg3;
 - (id)appendInt:(int)arg1 withName:(id)arg2;
 - (id)appendInteger:(int)arg1 withName:(id)arg2;
 - (id)appendKey:(id)arg1;
 - (id)appendKeys:(id)arg1;
-- (id)appendObject:(id)arg1 withName:(id)arg2 skipIfNil:(BOOL)arg3;
 - (id)appendObject:(id)arg1 withName:(id)arg2;
-- (id)appendObjectsAndNames:(id)arg1 args:(void*)arg2;
+- (id)appendObject:(id)arg1 withName:(id)arg2 skipIfNil:(BOOL)arg3;
 - (id)appendObjectsAndNames:(id)arg1;
+- (id)appendObjectsAndNames:(id)arg1 args:(void*)arg2;
 - (id)appendPoint:(struct CGPoint { float x1; float x2; })arg1 withName:(id)arg2;
 - (id)appendPointer:(void*)arg1 withName:(id)arg2;
 - (id)appendQueue:(id)arg1 withName:(id)arg2;

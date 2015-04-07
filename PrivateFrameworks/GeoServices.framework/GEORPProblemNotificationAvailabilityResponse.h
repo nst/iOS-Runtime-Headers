@@ -4,13 +4,13 @@
 
 @interface GEORPProblemNotificationAvailabilityResponse : PBCodable <NSCopying> {
     struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
         unsigned int statusCode : 1; 
     } _has;
     int _statusCode;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _supportedProblemTypes;
 }
 

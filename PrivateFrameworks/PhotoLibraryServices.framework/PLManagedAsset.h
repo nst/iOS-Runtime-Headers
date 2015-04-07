@@ -4,7 +4,7 @@
 
 @class <PLCloudSharedAlbumProtocol>, CLLocation, NSArray, NSData, NSDate, NSDictionary, NSError, NSManagedObject, NSNumber, NSObject<NSCopying>, NSOrderedSet, NSSet, NSString, NSURL, PLAdditionalAssetAttributes, PLCloudFeedAssetsEntry, PLCloudMaster, PLManagedAsset, PLMoment, UIImage;
 
-@interface PLManagedAsset : PLManagedObject <UIActivityItemSource, PLMomentAssetData_Private, _PLImageLoadingAsset> {
+@interface PLManagedAsset : PLManagedObject <PLMomentAssetData_Private, UIActivityItemSource, _PLImageLoadingAsset> {
     BOOL _didLoadReverseGeo;
     BOOL _didPrepareForDeletion;
     BOOL _disableDupeAnalysis;
@@ -130,7 +130,6 @@
 @property short kindSubtype;
 @property(retain) NSDate * lastSharedDate;
 @property(retain) NSOrderedSet * likeComments;
-@property(retain) NSOrderedSet * likeComments;
 @property(retain) CLLocation * location;
 @property(retain) NSData * locationData;
 @property int locationHash;
@@ -254,8 +253,8 @@
 + (id)incompleteAssetsInManagedObjectContext:(id)arg1;
 + (int)indexSheetBakedFormat;
 + (int)indexSheetUnbakedFormat;
-+ (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource {}**)arg5 imageData:(id*)arg6 isPlaceholder:(BOOL)arg7;
 + (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource {}**)arg5 imageData:(id*)arg6;
++ (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource {}**)arg5 imageData:(id*)arg6 isPlaceholder:(BOOL)arg7;
 + (id)insertInManagedObjectContext:(id)arg1;
 + (BOOL)isValidFileExtensionForImport:(id)arg1;
 + (id)keyPathsForValuesAffectingGpsCoordinate;
@@ -276,8 +275,8 @@
 + (id)pathsForAllIncompleteAssetsInManagedObjectContext:(id)arg1;
 + (id)persistedRecentlyUsedGUIDS;
 + (int)pfAdjustmentsBaseVersionFromAdjustmentBaseVersion:(int)arg1;
-+ (id)photoFromAssetURL:(id)arg1 photoLibrary:(id)arg2 sidecar:(id*)arg3;
 + (id)photoFromAssetURL:(id)arg1 photoLibrary:(id)arg2;
++ (id)photoFromAssetURL:(id)arg1 photoLibrary:(id)arg2 sidecar:(id*)arg3;
 + (id)pl_PHAssetsForManagedAssets:(id)arg1;
 + (int)portraitScrubberThumbnailFormat;
 + (int)posterThumbnailFormat;
@@ -289,8 +288,8 @@
 + (id)sortedCloudSharedAssetsWithPlaceholderKind:(short)arg1 ascending:(BOOL)arg2 inLibrary:(id)arg3;
 + (int)thumbnailFormat;
 + (id)uniformTypeIdentifierFromPathExtension:(id)arg1 assetType:(short)arg2;
-+ (id)uuidFromAssetURL:(id)arg1 fileExtension:(id*)arg2 sidecarIndex:(id*)arg3;
 + (id)uuidFromAssetURL:(id)arg1;
++ (id)uuidFromAssetURL:(id)arg1 fileExtension:(id*)arg2 sidecarIndex:(id*)arg3;
 + (int)wildcatIndexSheetFormat;
 + (int)wildcatPhotoScrubberFormat;
 + (int)wildcatStackFormat;
@@ -342,8 +341,8 @@
 - (BOOL)_setDefaultSlowMotionAdjustments;
 - (id)_settingsDictionaryFromFilter:(id)arg1;
 - (id)_settingsDictionaryFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (struct CGSize { float x1; float x2; })_sizeOfImageAtURL:(id)arg1 checkOrientationIsUp:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })_sizeOfImageAtURL:(id)arg1;
+- (struct CGSize { float x1; float x2; })_sizeOfImageAtURL:(id)arg1 checkOrientationIsUp:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })_targetSizeForInputSize:(struct CGSize { float x1; float x2; })arg1 maxPixelSize:(unsigned int)arg2;
 - (BOOL)_writeXMPHeaderWithProperties:(id)arg1 orientation:(int)arg2;
 - (void)_writeXMPSidecarWithProperties:(id)arg1 orientation:(int)arg2;
@@ -459,8 +458,8 @@
 - (BOOL)hasLegacyRequiredResourcesLocallyAvailable;
 - (BOOL)hasOriginalFile;
 - (struct CGSize { float x1; float x2; })imageSize;
-- (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)imageWithFormat:(int)arg1;
+- (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)importSessionID;
 - (void)incrementUploadAttempts;
 - (id)indexSheetImage;
@@ -591,8 +590,8 @@
 - (BOOL)reverseLocationDataIsValid;
 - (void)revertToOriginal;
 - (id)searchCategoryData;
-- (void)setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(int)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7 isSubstandardRender:(BOOL)arg8 fullSizeRenderSize:(struct CGSize { float x1; float x2; })arg9 shouldUpdateAttributes:(BOOL)arg10 inManagedObjectContext:(id)arg11;
 - (void)setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(int)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7;
+- (void)setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(int)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7 isSubstandardRender:(BOOL)arg8 fullSizeRenderSize:(struct CGSize { float x1; float x2; })arg9 shouldUpdateAttributes:(BOOL)arg10 inManagedObjectContext:(id)arg11;
 - (BOOL)setAttributesFromMainFileURL:(id)arg1 fullSizeRenderURL:(id)arg2 savedAssetType:(short)arg3 isPlaceholder:(BOOL)arg4 overwriteOriginalProperties:(BOOL)arg5 imageSource:(struct CGImageSource {}**)arg6 imageData:(id*)arg7;
 - (void)setCachedNonPersistedVideoPlaybackURL:(id)arg1;
 - (void)setCachedNonPersistedVideoPlaybackURLError:(id)arg1;

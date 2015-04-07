@@ -52,8 +52,8 @@
 - (struct OpaqueFigAssetTrack { }*)_figAssetTrack;
 - (unsigned long)_figMediaType;
 - (struct OpaqueFigTrackReader { }*)_figTrackReader;
-- (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2;
+- (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (id)_initWithAsset:(id)arg1 trackIndex:(long)arg2;
 - (id)_trackReferences;
 - (id)_weakReference;

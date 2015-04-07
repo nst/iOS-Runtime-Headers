@@ -23,8 +23,8 @@
 
 + (id)_possiblyCachedButtonForInitializedButton:(id)arg1;
 + (void)_removeButtonFromCache:(id)arg1;
-+ (id)buttonWithTitle:(id)arg1 action:(id)arg2 identifier:(id)arg3;
 + (id)buttonWithTitle:(id)arg1 action:(id)arg2;
++ (id)buttonWithTitle:(id)arg1 action:(id)arg2 identifier:(id)arg3;
 + (id)buttonWithTitle:(id)arg1 glyphData:(id)arg2 action:(id)arg3 identifier:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 image:(id)arg2 action:(id)arg3 identifier:(id)arg4;
 + (BOOL)supportsSecureCoding;

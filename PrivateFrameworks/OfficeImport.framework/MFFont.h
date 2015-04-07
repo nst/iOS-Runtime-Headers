@@ -5,9 +5,6 @@
 @class NSString;
 
 @interface MFFont : NSObject <MFObject> {
-    boolm_lfItalic;
-    boolm_lfStrikeOut;
-    boolm_lfUnderline;
     unsigned int m_elfCulture;
     NSString *m_elfFullName;
     unsigned int m_elfMatch;
@@ -21,9 +18,12 @@
     int m_lfEscapement;
     NSString *m_lfFaceName;
     int m_lfHeight;
+    bool m_lfItalic;
     int m_lfOrientation;
     int m_lfOutPrecision;
     int m_lfQuality;
+    bool m_lfStrikeOut;
+    bool m_lfUnderline;
     int m_lfWeight;
     int m_lfWidth;
     int m_pitch;

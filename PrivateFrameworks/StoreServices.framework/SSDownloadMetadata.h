@@ -4,7 +4,7 @@
 
 @class NSArray, NSData, NSDate, NSDictionary, NSLock, NSMutableDictionary, NSNumber, NSString, NSURL, SSItemImageCollection;
 
-@interface SSDownloadMetadata : NSObject <SSXPCCoding, NSCoding, NSCopying> {
+@interface SSDownloadMetadata : NSObject <NSCoding, NSCopying, SSXPCCoding> {
     NSMutableDictionary *_dictionary;
     int _keyStyle;
     NSLock *_lock;
@@ -111,8 +111,8 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)initWithItem:(id)arg1;
+- (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)initWithKind:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isAutomaticDownload;

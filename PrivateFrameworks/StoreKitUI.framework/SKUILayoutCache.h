@@ -22,8 +22,8 @@
 - (void)commitLayoutRequests;
 - (id)delegate;
 - (id)init;
-- (id)layoutForIndex:(int)arg1 forced:(BOOL)arg2;
 - (id)layoutForIndex:(int)arg1;
+- (id)layoutForIndex:(int)arg1 forced:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })populateCacheWithLayoutRequests:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

@@ -4,7 +4,7 @@
 
 @class NSData, NSURL;
 
-@interface _NSItemProviderSandboxedResource : NSObject <NSSecureCoding, NSCopying> {
+@interface _NSItemProviderSandboxedResource : NSObject <NSCopying, NSSecureCoding> {
     BOOL _accessingSecurityScopedResource;
     NSURL *_resourceURL;
     NSData *_sandboxExtensionToken;

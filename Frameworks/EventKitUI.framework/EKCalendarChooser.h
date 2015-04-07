@@ -5,6 +5,14 @@
 @class <EKCalendarChooserDelegate>, <EKStyleProvider>, EKCalendar, EKEventStore, EKSource, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, UIRefreshControl, UITableView, _UIAccessDeniedView;
 
 @interface EKCalendarChooser : UIViewController {
+    _UIAccessDeniedView *_accessDeniedView;
+    NSIndexPath *_checkedRow;
+    int _chooserMode;
+    NSMutableDictionary *_customGroupMap;
+    <EKCalendarChooserDelegate> *_delegate;
+    BOOL _disableCalendarEditing;
+    unsigned int _entityType;
+    EKEventStore *_eventStore;
     struct { 
         unsigned int listIsFlat : 1; 
         unsigned int showAll : 1; 
@@ -17,14 +25,6 @@
         unsigned int showsWritableCalendarsOnly : 1; 
         unsigned int showsRefreshButton : 1; 
         unsigned int allowsPullToRefresh : 1; 
-    _UIAccessDeniedView *_accessDeniedView;
-    NSIndexPath *_checkedRow;
-    int _chooserMode;
-    NSMutableDictionary *_customGroupMap;
-    <EKCalendarChooserDelegate> *_delegate;
-    BOOL _disableCalendarEditing;
-    unsigned int _entityType;
-    EKEventStore *_eventStore;
     } _flags;
     NSMutableArray *_groups;
     int _lastAuthorizationStatus;
@@ -125,8 +125,8 @@
 - (id)eventStore;
 - (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; })flags;
 - (id)groups;
-- (id)initWithSelectionStyle:(int)arg1 displayStyle:(int)arg2 entityType:(unsigned int)arg3 eventStore:(id)arg4 limitedToSource:(id)arg5;
 - (id)initWithSelectionStyle:(int)arg1 displayStyle:(int)arg2 entityType:(unsigned int)arg3 eventStore:(id)arg4;
+- (id)initWithSelectionStyle:(int)arg1 displayStyle:(int)arg2 entityType:(unsigned int)arg3 eventStore:(id)arg4 limitedToSource:(id)arg5;
 - (id)initWithSelectionStyle:(int)arg1 displayStyle:(int)arg2 eventStore:(id)arg3;
 - (int)lastAuthorizationStatus;
 - (id)limitedToSource;
@@ -182,6 +182,7 @@
 - (id)storeGroupMap;
 - (id)styleProvider;
 - (unsigned int)supportedInterfaceOrientations;
+- (id)tableView;
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -191,7 +192,6 @@
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (id)tableView;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 

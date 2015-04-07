@@ -10,6 +10,7 @@
 @class <MSServerSideConfigProtocolDelegate>, NSString, NSURL;
 
 @interface MSServerSideConfigProtocol : NSObject {
+    NSURL *_configURL;
     struct __MSSSCPCContext { 
         struct __MSSPCContext { 
             void *owner; 
@@ -31,7 +32,6 @@
         } _super; 
         int (*didFinishCallback)(); 
         int (*didFailAuthenticationCallback)(); 
-    NSURL *_configURL;
     } _context;
     <MSServerSideConfigProtocolDelegate> *_delegate;
     NSString *_personID;

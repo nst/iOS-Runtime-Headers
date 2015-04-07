@@ -5,16 +5,6 @@
 @class AVCaptureInputPort_FigRecorder, AVCaptureOutput_FigRecorder, AVCaptureVideoPreviewLayer_FigRecorder, NSArray, NSMutableArray;
 
 @interface AVCaptureConnectionInternal_FigRecorder : NSObject {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     BOOL active;
     NSArray *audioChannelLevels;
     NSMutableArray *audioChannels;
@@ -28,8 +18,18 @@
     int outputChangeSeedOnDisable;
     BOOL preferredVideoStabilizationMode;
     AVCaptureInputPort_FigRecorder *videoInputPort;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } videoMaxFrameDuration;
     float videoMaxScaleAndCropFactor;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } videoMinFrameDuration;
     BOOL videoMirrored;
     BOOL videoMirroringSupported;

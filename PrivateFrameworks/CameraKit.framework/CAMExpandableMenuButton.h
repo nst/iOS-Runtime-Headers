@@ -5,11 +5,6 @@
 @class <CAMExpandableMenuButtonDelegate>, NSIndexSet, NSMutableArray, NSMutableIndexSet, UIView;
 
 @interface CAMExpandableMenuButton : UIControl {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     UIView *__headerView;
     NSIndexSet *__hiddenIndexesWhileCollapsed;
     NSMutableIndexSet *__highlightedIndexesWhileCollapsed;
@@ -19,6 +14,11 @@
     int _expansionOrientation;
     int _orientation;
     int _selectedIndex;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _tappableEdgeInsets;
 }
 
@@ -86,8 +86,8 @@
 - (void)setExpandableMenuDelegate:(id)arg1;
 - (void)setExpansionOrientation:(int)arg1;
 - (void)setHighlighted:(BOOL)arg1 forIndex:(int)arg2;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setOrientation:(int)arg1;
+- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setSelectedIndex:(int)arg1;
 - (void)setTappableEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)shouldIgnoreMenuInteraction;

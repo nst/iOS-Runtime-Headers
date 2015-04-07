@@ -5,17 +5,6 @@
 @class EKCurrentTimeMarkerView, NSMutableArray, NSString, UIColor, UIImageView, UIView;
 
 @interface EKDayGridView : UIView <EKCurrentTimeMarkerViewUpdating> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    unsigned int _leftBorder : 1;
-    unsigned int _rightBorder : 1;
     BOOL _animatesTimeMarker;
     UIColor *_backgroundColor;
     unsigned int _daysToDisplay;
@@ -26,11 +15,22 @@
     float _hourHeight;
     float _hoursToPadBottom;
     float _hoursToPadTop;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _lastBounds;
+    unsigned int _leftBorder : 1;
     UIView *_leftBorderView;
     UIColor *_lineColor;
     NSMutableArray *_middleBorderViews;
     int _orientation;
+    unsigned int _rightBorder : 1;
     BOOL _rightBorderInsetsOccurrences;
     UIView *_rightBorderView;
     int _selected;
@@ -86,8 +86,8 @@
 - (float)hourHeight;
 - (float)hoursToPadBottom;
 - (float)hoursToPadTop;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundColor:(id)arg2 opaque:(BOOL)arg3 numberOfDaysToDisplay:(unsigned int)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundColor:(id)arg2 opaque:(BOOL)arg3 numberOfDaysToDisplay:(unsigned int)arg4;
 - (BOOL)isSelected;
 - (void)layoutSubviews;
 - (id)lineColor;

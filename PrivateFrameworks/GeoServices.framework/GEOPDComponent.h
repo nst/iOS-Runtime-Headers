@@ -5,6 +5,8 @@
 @class GEOPDAttribution, GEOPDSource, NSMutableArray;
 
 @interface GEOPDComponent : PBCodable <NSCopying> {
+    GEOPDAttribution *_attribution;
+    int _cacheControl;
     struct { 
         unsigned int timestampFirstSeen : 1; 
         unsigned int cacheControl : 1; 
@@ -14,8 +16,6 @@
         unsigned int type : 1; 
         unsigned int valuesAvailable : 1; 
         unsigned int version : 1; 
-    GEOPDAttribution *_attribution;
-    int _cacheControl;
     } _has;
     GEOPDSource *_source;
     int _startIndex;

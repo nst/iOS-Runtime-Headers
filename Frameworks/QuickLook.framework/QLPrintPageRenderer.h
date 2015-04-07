@@ -5,13 +5,13 @@
 @class <QLPrintPageRendererDataSource>;
 
 @interface QLPrintPageRenderer : UIPrintPageRenderer {
-    struct CGSize { 
-        float width; 
-        float height; 
     int _cachedNumberOfPages;
     <QLPrintPageRendererDataSource> *_dataSource;
     int _numberOfPrintedPages;
     BOOL _printingDone;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _sizeWhenNumberOfPagesWasCached;
 }
 

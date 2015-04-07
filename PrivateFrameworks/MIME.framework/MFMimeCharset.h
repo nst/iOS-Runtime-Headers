@@ -5,16 +5,16 @@
 @class NSString;
 
 @interface MFMimeCharset : NSObject {
-    unsigned int _coversLargeUnicodeSubset : 1;
-    unsigned int _useBase64InHeaders : 1;
     unsigned int _canBeUsedForOutgoingMessages : 1;
     NSString *_charsetName;
+    unsigned int _coversLargeUnicodeSubset : 1;
     unsigned long _encoding;
     NSString *_primaryLanguage;
+    unsigned int _useBase64InHeaders : 1;
 }
 
-+ (id)allMimeCharsets:(BOOL)arg1;
 + (id)allMimeCharsets;
++ (id)allMimeCharsets:(BOOL)arg1;
 + (id)charsetForEncoding:(unsigned long)arg1;
 + (id)preferredMimeCharset;
 

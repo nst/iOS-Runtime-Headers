@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface TSDGLFrameBufferTextureLookupInfo : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     unsigned int _attachment;
     int _indexOnAttachment;
     NSString *_name;
     unsigned int _textureName;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _textureSize;
 }
 

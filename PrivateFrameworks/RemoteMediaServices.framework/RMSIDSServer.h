@@ -4,7 +4,7 @@
 
 @class IDSService, NSMutableDictionary, NSString, RMSSessionManager;
 
-@interface RMSIDSServer : NSObject <IDSServiceDelegate, RMSSessionManagerDelegate, RMSDiscoverySessionDelegate, RMSPairingSessionDelegate, RMSDAAPControlSessionDelegate> {
+@interface RMSIDSServer : NSObject <IDSServiceDelegate, RMSDAAPControlSessionDelegate, RMSDiscoverySessionDelegate, RMSPairingSessionDelegate, RMSSessionManagerDelegate> {
     IDSService *_idsService;
     NSMutableDictionary *_nowPlayingSessions;
     NSMutableDictionary *_pairingSessions;

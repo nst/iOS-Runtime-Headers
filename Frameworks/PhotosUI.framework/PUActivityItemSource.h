@@ -16,13 +16,29 @@
     int __remakerWasCancelled;
     NSURL *__videoRemakerURL;
     PHAsset *_asset;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     _PUActivityItemSourceOperation *_currentOperation;
     BOOL _hasRecognizedVideoAdjustments;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _postCompletionHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
     PLVideoRemaker *_remaker;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _remakerCompletionHandler;
+
     id _strongSelf;
 }
 

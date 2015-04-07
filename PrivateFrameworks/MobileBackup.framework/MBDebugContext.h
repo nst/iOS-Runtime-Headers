@@ -20,8 +20,8 @@
 - (id)init;
 - (int)intForName:(id)arg1;
 - (BOOL)isFlagSet:(id)arg1;
-- (id)performSelectorForName:(id)arg1 withObject:(id)arg2;
 - (id)performSelectorForName:(id)arg1;
+- (id)performSelectorForName:(id)arg1 withObject:(id)arg2;
 - (void)removeValueForName:(id)arg1;
 - (void)setBool:(BOOL)arg1 forName:(id)arg2;
 - (void)setDelegate:(id)arg1 andSelector:(SEL)arg2 forName:(id)arg3;

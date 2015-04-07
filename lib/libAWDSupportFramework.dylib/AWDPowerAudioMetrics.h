@@ -3,26 +3,26 @@
  */
 
 @interface AWDPowerAudioMetrics : PBCodable <NSCopying> {
+    unsigned int _audioHeadsetDuration;
+    unsigned int _audioHeadsetPowerMicroWatt;
+    unsigned int _audioSpeakerDuration;
+    unsigned int _audioSpeakerPowerMicroWatt;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _audioVolumeLevelDurationSpeakers;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _audioVolumeLevelDurations;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int audioHeadsetDuration : 1; 
         unsigned int audioHeadsetPowerMicroWatt : 1; 
         unsigned int audioSpeakerDuration : 1; 
         unsigned int audioSpeakerPowerMicroWatt : 1; 
-    unsigned int _audioHeadsetDuration;
-    unsigned int _audioHeadsetPowerMicroWatt;
-    unsigned int _audioSpeakerDuration;
-    unsigned int _audioSpeakerPowerMicroWatt;
-    } _audioVolumeLevelDurationSpeakers;
-    } _audioVolumeLevelDurations;
     } _has;
     unsigned long long _timestamp;
 }

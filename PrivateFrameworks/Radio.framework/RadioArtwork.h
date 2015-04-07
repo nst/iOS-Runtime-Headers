@@ -5,10 +5,10 @@
 @class NSURL;
 
 @interface RadioArtwork : NSObject <NSCopying> {
+    NSURL *_URL;
     struct CGSize { 
         float width; 
         float height; 
-    NSURL *_URL;
     } _pixelSize;
 }
 

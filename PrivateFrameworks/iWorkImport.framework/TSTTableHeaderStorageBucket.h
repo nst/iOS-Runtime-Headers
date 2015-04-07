@@ -24,8 +24,8 @@
 - (int)count;
 - (void)dealloc;
 - (unsigned long)flushableSize;
-- (id)headerForKey:(unsigned long)arg1 willModify:(BOOL)arg2 createIfNotThere:(BOOL)arg3;
 - (id)headerForKey:(unsigned long)arg1 willModify:(BOOL)arg2;
+- (id)headerForKey:(unsigned long)arg1 willModify:(BOOL)arg2 createIfNotThere:(BOOL)arg3;
 - (float)horizontalScaleFactor;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;

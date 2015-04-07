@@ -4,11 +4,11 @@
 
 @class NSString;
 
-@interface BRFieldCKInfo : PBCodable <PQLBindable, PQLResultSetInitializer, NSCopying> {
+@interface BRFieldCKInfo : PBCodable <NSCopying, PQLBindable, PQLResultSetInitializer> {
+    NSString *_etag;
     struct { 
         unsigned int knownToServer : 1; 
         unsigned int wasCached : 1; 
-    NSString *_etag;
     } _has;
     BOOL _knownToServer;
     BOOL _wasCached;

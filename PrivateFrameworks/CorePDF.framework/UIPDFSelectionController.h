@@ -8,21 +8,6 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     } _adjustedPoint;
     BOOL _cancelled;
     long _firstIndex;
@@ -36,9 +21,24 @@
     BOOL _preceeds;
     BOOL _rangeMode;
     BOOL _resizingWidget;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _selectionBounds;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _selectionFixedPoint;
     <UIPDFSelectionWidget><NSObject> *_selectionWidget;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _startPoint;
 }
 

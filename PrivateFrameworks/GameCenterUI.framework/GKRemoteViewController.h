@@ -9,7 +9,11 @@
 @class GKGame, GKHostedViewController, NSMutableDictionary, NSString, UIColor;
 
 @interface GKRemoteViewController : _UIRemoteViewController <GKServiceViewControllerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _blockToPerformAfterViewDidAppear;
+
     BOOL _didSetRemoteGame;
     NSMutableDictionary *_dirtyProperties;
     GKGame *_game;
@@ -68,8 +72,8 @@
 - (void)setupRemoteView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidAppear:(BOOL)arg1;
 - (BOOL)viewDidAppear;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

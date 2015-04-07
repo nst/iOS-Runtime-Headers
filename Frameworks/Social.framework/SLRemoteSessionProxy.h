@@ -10,7 +10,11 @@
 
 @interface SLRemoteSessionProxy : NSObject {
     NSXPCConnection *_connection;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _connectionResetBlock;
+
     NSXPCInterface *_exportedInterface;
     NSObject *_exportedObject;
     NSMutableArray *_guaranteedRemoteCalls;

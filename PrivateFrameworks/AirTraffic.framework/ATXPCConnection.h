@@ -12,10 +12,22 @@
     BOOL _assertionHeld;
     NSObject<OS_xpc_object> *_conn;
     id _context;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _disconnectHandler;
+
     NSObject<OS_dispatch_queue> *_eventQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _lockdownHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _messageHandler;
+
     NSMutableSet *_outstandingMessages;
 }
 
@@ -44,8 +56,8 @@
 - (id)initWithXPCConnection:(id)arg1;
 - (id)lockdownHandler;
 - (id)messageHandler;
-- (void)sendMessage:(id)arg1 withReply:(id)arg2;
 - (void)sendMessage:(id)arg1;
+- (void)sendMessage:(id)arg1 withReply:(id)arg2;
 - (id)serviceName;
 - (void)setAssertionHeld:(BOOL)arg1;
 - (void)setContext:(id)arg1;

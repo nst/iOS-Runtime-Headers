@@ -5,8 +5,8 @@
 @class OADDrawable, WDCharacterProperties;
 
 @interface WDOfficeArt : WDRun {
-    boolmFloating;
     OADDrawable *mDrawable;
+    bool mFloating;
     WDCharacterProperties *mProperties;
 }
 

@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_queue>, NSString;
 
 @interface SSDistributedNotificationCenterObserver : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_name;
 }

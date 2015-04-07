@@ -21,8 +21,8 @@
 @property unsigned int thumbnailBatchFetchSize;
 
 - (id)_addAssetWithURL:(id)arg1 existingOID:(id)arg2;
-- (id)addAssetWithURLs:(id)arg1 forceInsert:(BOOL)arg2 forceUpdate:(BOOL)arg3;
 - (id)addAssetWithURLs:(id)arg1;
+- (id)addAssetWithURLs:(id)arg1 forceInsert:(BOOL)arg2 forceUpdate:(BOOL)arg3;
 - (void)addAvailableThumbnailIndex:(unsigned int)arg1;
 - (id)assetURLisInDatabase:(id)arg1;
 - (void)dealloc;

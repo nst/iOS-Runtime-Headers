@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSString;
 
-@interface NSNotification : NSObject <NSCopying, NSCoding> {
+@interface NSNotification : NSObject <NSCoding, NSCopying> {
 }
 
 @property(copy,readonly) NSString * name;
@@ -12,8 +12,8 @@
 @property(copy,readonly) NSDictionary * userInfo;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)notificationWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 + (id)notificationWithName:(id)arg1 object:(id)arg2;
++ (id)notificationWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

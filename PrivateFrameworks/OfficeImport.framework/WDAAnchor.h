@@ -5,6 +5,7 @@
 @class NSArray;
 
 @interface WDAAnchor : NSObject {
+    BOOL mAllowOverlap;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    BOOL mAllowOverlap;
     } mBounds;
     int mHorizontalPosition;
     int mRelativeHorizontalPosition;

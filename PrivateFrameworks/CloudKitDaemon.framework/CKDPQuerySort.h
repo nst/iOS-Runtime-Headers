@@ -5,10 +5,10 @@
 @class CKDPLocationCoordinate, CKDPRecordFieldIdentifier;
 
 @interface CKDPQuerySort : PBCodable <NSCopying> {
-    struct { 
-        unsigned int order : 1; 
     CKDPLocationCoordinate *_coordinate;
     CKDPRecordFieldIdentifier *_fieldName;
+    struct { 
+        unsigned int order : 1; 
     } _has;
     int _order;
 }

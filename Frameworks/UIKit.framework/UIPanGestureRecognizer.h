@@ -5,24 +5,24 @@
 @class NSMutableArray, UIPanGestureVelocitySample;
 
 @interface UIPanGestureRecognizer : UIGestureRecognizer {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    unsigned int _failsPastMaxTouches : 1;
     unsigned int _canPanHorizontally : 1;
     unsigned int _canPanVertically : 1;
-    unsigned int _ignoresStationaryTouches : 1;
+    unsigned int _failsPastMaxTouches : 1;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _firstSceneReferenceLocation;
     float _hysteresis;
+    unsigned int _ignoresStationaryTouches : 1;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _lastSceneReferenceLocation;
     unsigned int _lastTouchCount;
     double _lastTouchTime;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _lastUnadjustedSceneReferenceLocation;
     unsigned int _maximumNumberOfTouches;
     unsigned int _minimumNumberOfTouches;

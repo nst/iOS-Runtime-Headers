@@ -14,8 +14,8 @@
 - (void)executeSync:(id)arg1;
 - (BOOL)executeSyncWithBOOL:(id)arg1;
 - (id)executeSyncWithResult:(id)arg1;
-- (id)initWithName:(id)arg1 queue:(id)arg2;
 - (id)initWithName:(id)arg1;
+- (id)initWithName:(id)arg1 queue:(id)arg2;
 - (void)logWithLevel:(unsigned int)arg1 withFormat:(id)arg2;
 - (id)queue;
 - (BOOL)shouldLogForLevel:(unsigned int)arg1;

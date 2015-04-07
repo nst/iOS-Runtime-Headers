@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface GEOUsageCollection : PBCodable <NSCopying> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
+    int _cellWifi;
+    NSString *_countryCode;
+    int _geoService;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int timestamp : 1; 
@@ -17,14 +17,14 @@
         unsigned int responseDataSize : 1; 
         unsigned int responseTime : 1; 
         unsigned int sessionIDIsPersistent : 1; 
-    int _cellWifi;
-    NSString *_countryCode;
-    int _geoService;
     } _has;
     NSString *_hwMachine;
     int _requestDataSize;
     int _responseDataSize;
     int _responseTime;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionID;
     BOOL _sessionIDIsPersistent;
     struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_tileUsages;

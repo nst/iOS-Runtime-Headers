@@ -14,9 +14,21 @@
     NSData *_clientChangeTokenData;
     NSDictionary *_conflictLosersToResolveByRecordID;
     NSMutableArray *_deletedRecordIDs;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _modifyRecordsCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _perRecordCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _perRecordProgressBlock;
+
     NSMutableDictionary *_recordErrors;
     NSArray *_recordIDsToDelete;
     NSDictionary *_recordIDsToDeleteToEtags;

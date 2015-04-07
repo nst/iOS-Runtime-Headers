@@ -4,7 +4,7 @@
 
 @class NSDate, NSNumber;
 
-@interface CMOdometerData : NSObject <NSSecureCoding, NSCopying> {
+@interface CMOdometerData : NSObject <NSCopying, NSSecureCoding> {
     NSNumber *_averageSpeed;
     NSNumber *_currentSpeed;
     NSNumber *_distance;

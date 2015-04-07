@@ -3,18 +3,18 @@
  */
 
 @interface WKPDFPageNumberIndicator : UIView {
-    struct RetainPtr<UILabel> { 
-        void *m_ptr; 
     struct RetainPtr<_UIBackdropView> { 
-        void *m_ptr; 
-    struct RetainPtr<NSTimer> { 
         void *m_ptr; 
     } _backdropView;
     unsigned int _currentPageNumber;
+    bool _hasValidPageCountAndCurrentPage;
+    struct RetainPtr<UILabel> { 
+        void *m_ptr; 
     } _label;
     unsigned int _pageCount;
+    struct RetainPtr<NSTimer> { 
+        void *m_ptr; 
     } _timer;
-    bool_hasValidPageCountAndCurrentPage;
 }
 
 @property unsigned int currentPageNumber;

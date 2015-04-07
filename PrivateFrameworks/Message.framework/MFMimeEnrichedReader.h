@@ -5,6 +5,10 @@
 @class NSMutableString;
 
 @interface MFMimeEnrichedReader : NSObject {
+    struct __CFArray { } *_commandStack;
+    long _currentIndex;
+    unsigned int _eatOneNewline : 1;
+    float _indentWidth;
     struct { 
         unsigned short buffer[64]; 
         struct __CFString {} *theString; 
@@ -16,20 +20,16 @@
         } rangeToBuffer; 
         int bufferedRangeStart; 
         int bufferedRangeEnd; 
-    unsigned int _eatOneNewline : 1;
-    unsigned int _insideComment : 1;
-    unsigned int _wantsPlainText : 1;
-    unsigned int _noFillLevel : 30;
-    struct __CFArray { } *_commandStack;
-    long _currentIndex;
-    float _indentWidth;
     } _inputBuffer;
     long _inputLength;
+    unsigned int _insideComment : 1;
     int _lastQuoteLevel;
+    unsigned int _noFillLevel : 30;
     NSMutableString *_outputBuffer;
     id _outputString;
     struct __CFString { } *_postpendHTML;
     struct __CFString { } *_prependHTML;
+    unsigned int _wantsPlainText : 1;
 }
 
 + (struct __CFCharacterSet { }*)parenSet;

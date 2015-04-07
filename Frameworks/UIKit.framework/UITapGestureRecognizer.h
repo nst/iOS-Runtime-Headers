@@ -5,12 +5,12 @@
 @class NSArray;
 
 @interface UITapGestureRecognizer : UIGestureRecognizer {
-    struct CGPoint { 
-        float x; 
-        float y; 
     int _buttonType;
     unsigned int _delaysRecognitionForGreaterTapCounts;
     id _imp;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _locationInView;
 }
 

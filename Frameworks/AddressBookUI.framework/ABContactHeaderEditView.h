@@ -4,7 +4,7 @@
 
 @class <ABPropertyCellDelegate>, NSArray, NSString, UITableView;
 
-@interface ABContactHeaderEditView : ABContactHeaderView <UITableViewDelegate, UITableViewDataSource, ABPropertyGroupItemDelegate, ABContactPhotoViewDelegate> {
+@interface ABContactHeaderEditView : ABContactHeaderView <ABContactPhotoViewDelegate, ABPropertyGroupItemDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSArray *_editingGroups;
     UITableView *_editingTable;
     <ABPropertyCellDelegate> *_namePropertyDelegate;
@@ -31,8 +31,8 @@
 - (void)reloadDataPreservingChanges:(BOOL)arg1;
 - (id)selectEditingGroupAtIndex:(unsigned int)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setEditingGroups:(id)arg1 withUpdate:(BOOL)arg2;
 - (void)setEditingGroups:(id)arg1;
+- (void)setEditingGroups:(id)arg1 withUpdate:(BOOL)arg2;
 - (void)setNamePropertyDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;

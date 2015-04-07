@@ -9,7 +9,7 @@
 
 @class TSUColor;
 
-@interface TSDColorFill : TSDFill <TSDMixing, NSCopying, NSMutableCopying> {
+@interface TSDColorFill : TSDFill <NSCopying, NSMutableCopying, TSDMixing> {
     TSUColor *mColor;
 }
 

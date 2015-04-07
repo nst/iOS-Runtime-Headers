@@ -14,20 +14,11 @@
 @class NSString, VKLabelNavJunction, VKLabelNavRoadLabel, VKLabelTile;
 
 @interface VKLabelNavRoad : NSObject <VKLabelNavFeature> {
-    struct vector<gm::Matrix<double, 2, 1>, std::__1::allocator<gm::Matrix<double, 2, 1> > > { 
-        struct Matrix<double, 2, 1> {} *__begin_; 
-        struct Matrix<double, 2, 1> {} *__end_; 
-        struct __compressed_pair<gm::Matrix<double, 2, 1> *, std::__1::allocator<gm::Matrix<double, 2, 1> > > { 
-            struct Matrix<double, 2, 1> {} *__first_; 
-        } __end_cap_; 
-    struct Matrix<float, 2, 1> { 
-        float _e[2]; 
-    struct PolylineCoordinate { 
-        unsigned int index; 
-        float offset; 
     BOOL _areLabelsDisabled;
     BOOL _areNavStylesInitialized;
     struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; unsigned long long x_1_1_12; id x_1_1_13; int x_1_1_14; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; } *_data;
+    struct Matrix<float, 2, 1> { 
+        float _e[2]; 
     } _direction;
     BOOL _hasVisibleShields;
     BOOL _hasVisibleSigns;
@@ -45,9 +36,18 @@
     VKLabelNavRoadLabel *_roadShield;
     VKLabelNavRoadLabel *_roadSign;
     float _routeCrossProduct;
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
     } _routeOffset;
     NSString *_shieldDisplayGroup;
     NSString *_shieldGroup;
+    struct vector<gm::Matrix<double, 2, 1>, std::__1::allocator<gm::Matrix<double, 2, 1> > > { 
+        struct Matrix<double, 2, 1> {} *__begin_; 
+        struct Matrix<double, 2, 1> {} *__end_; 
+        struct __compressed_pair<gm::Matrix<double, 2, 1> *, std::__1::allocator<gm::Matrix<double, 2, 1> > > { 
+            struct Matrix<double, 2, 1> {} *__first_; 
+        } __end_cap_; 
     } _simplifiedPoints;
     BOOL _suppressRoadSignIfShieldPresent;
     VKLabelTile *_tile;
@@ -55,9 +55,9 @@
     unsigned int _vertexIndexB;
 }
 
-@property /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  direction; /* unknown property attribute:  1>=[2f]} */
 @property BOOL areLabelsDisabled;
 @property(readonly) const char * cstrName;
+@property /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  direction; /* unknown property attribute:  1>=[2f]} */
 @property int intraRoadPriority;
 @property(readonly) BOOL isAwayFromRoute;
 @property BOOL isGuidanceStepStart;

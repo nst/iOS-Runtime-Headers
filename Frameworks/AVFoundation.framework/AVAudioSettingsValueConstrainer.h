@@ -5,35 +5,35 @@
 @class NSArray, NSMutableArray;
 
 @interface AVAudioSettingsValueConstrainer : NSObject {
-    struct AudioStreamBasicDescription { 
-        double mSampleRate; 
-        unsigned int mFormatID; 
-        unsigned int mFormatFlags; 
-        unsigned int mBytesPerPacket; 
-        unsigned int mFramesPerPacket; 
-        unsigned int mBytesPerFrame; 
-        unsigned int mChannelsPerFrame; 
-        unsigned int mBitsPerChannel; 
-        unsigned int mReserved; 
-    struct AudioStreamBasicDescription { 
-        double mSampleRate; 
-        unsigned int mFormatID; 
-        unsigned int mFormatFlags; 
-        unsigned int mBytesPerPacket; 
-        unsigned int mFramesPerPacket; 
-        unsigned int mBytesPerFrame; 
-        unsigned int mChannelsPerFrame; 
-        unsigned int mBitsPerChannel; 
-        unsigned int mReserved; 
     NSMutableArray *_applicableOutputDataRatesForSampleRate;
     NSMutableArray *_applicableOutputSampleRatesForDataRate;
     struct OpaqueAudioConverter { } *_audioConverter;
     NSMutableArray *_availableOutputDataRates;
     NSArray *_availableOutputSampleRates;
+    struct AudioStreamBasicDescription { 
+        double mSampleRate; 
+        unsigned int mFormatID; 
+        unsigned int mFormatFlags; 
+        unsigned int mBytesPerPacket; 
+        unsigned int mFramesPerPacket; 
+        unsigned int mBytesPerFrame; 
+        unsigned int mChannelsPerFrame; 
+        unsigned int mBitsPerChannel; 
+        unsigned int mReserved; 
     } _inputASBD;
     BOOL _needApplicableParameters;
     BOOL _needAvailableSampleRates;
     BOOL _needNewConverter;
+    struct AudioStreamBasicDescription { 
+        double mSampleRate; 
+        unsigned int mFormatID; 
+        unsigned int mFormatFlags; 
+        unsigned int mBytesPerPacket; 
+        unsigned int mFramesPerPacket; 
+        unsigned int mBytesPerFrame; 
+        unsigned int mChannelsPerFrame; 
+        unsigned int mBitsPerChannel; 
+        unsigned int mReserved; 
     } _outputASBD;
     unsigned long _outputDataRate;
 }

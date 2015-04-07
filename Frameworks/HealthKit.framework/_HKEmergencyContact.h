@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface _HKEmergencyContact : NSObject <NSSecureCoding, NSCopying> {
+@interface _HKEmergencyContact : NSObject <NSCopying, NSSecureCoding> {
     NSString *_name;
     NSString *_phoneNumber;
     NSString *_relationship;

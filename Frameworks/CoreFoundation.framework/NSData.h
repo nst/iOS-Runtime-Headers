@@ -9,7 +9,7 @@
 
 @class NSData, NSString;
 
-@interface NSData : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, CKRecordValue, PQLBindable, PQLResultSetInitializer, TSPSplitableData> {
+@interface NSData : NSObject <CKRecordValue, NSCopying, NSMutableCopying, NSSecureCoding, PQLBindable, PQLResultSetInitializer, TSPSplitableData> {
 }
 
 @property(readonly) NSData * SHA1Data;
@@ -22,21 +22,13 @@
 @property(readonly) BOOL brc_signatureIsValid;
 @property(readonly) const void* bytes;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property(readonly) unsigned int length;
 @property(readonly) Class superclass;
-@property(readonly) Class superclass;
-@property(readonly) Class superclass;
 
-+ (id)CKDataWithHexString:(id)arg1 stringIsUppercase:(BOOL)arg2;
 + (id)CKDataWithHexString:(id)arg1;
++ (id)CKDataWithHexString:(id)arg1 stringIsUppercase:(BOOL)arg2;
 + (id)MCDataWithCFData:(struct __CFData { }*)arg1;
 + (id)MCDataWithHexString:(id)arg1;
 + (id)SBKStringByMD5HashingString:(id)arg1;
@@ -50,20 +42,20 @@
 + (id)dataForRadioRequestParameters:(id)arg1 isAsynchronousBackgroundRequest:(BOOL)arg2 error:(id*)arg3;
 + (id)dataForRadioRequestParameters:(id)arg1 protocolVersion:(int)arg2 isAsynchronousBackgroundRequest:(BOOL)arg3 error:(id*)arg4;
 + (id)dataWithBytes:(const void*)arg1 length:(unsigned int)arg2;
-+ (id)dataWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
 + (id)dataWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
-+ (id)dataWithContentsOfFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
++ (id)dataWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
 + (id)dataWithContentsOfFile:(id)arg1;
++ (id)dataWithContentsOfFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 + (id)dataWithContentsOfMappedFile:(id)arg1;
-+ (id)dataWithContentsOfURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 + (id)dataWithContentsOfURL:(id)arg1;
++ (id)dataWithContentsOfURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 + (id)dataWithData:(id)arg1;
-+ (id)dataWithHexString:(id)arg1 stringIsUppercase:(BOOL)arg2;
 + (id)dataWithHexString:(id)arg1;
++ (id)dataWithHexString:(id)arg1 stringIsUppercase:(BOOL)arg2;
 + (id)dataWithSockAddr:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1;
 + (id)makeArchive:(const void*)arg1 length:(unsigned long)arg2 level:(float)arg3;
 + (id)mappedDataWithContentsOfTemporaryFile:(id)arg1 error:(id*)arg2;
-+ (id)nsDataWithOcBinaryData:(const struct OcBinaryData { int (**x1)(); unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; boolx7; struct SsrwOOStream {} *x8; }*)arg1;
++ (id)nsDataWithOcBinaryData:(const struct OcBinaryData { int (**x1)(); unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; bool x7; struct SsrwOOStream {} *x8; }*)arg1;
 + (id)pl_dataWithMappedContentsOfFileDescriptor:(int)arg1;
 + (id)pl_dataWithMappedContentsOfFileHandle:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -181,9 +173,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateByteRangesUsingBlock:(id)arg1;
 - (id)fileSafeBase64Encoding;
+- (void)getBytes:(void*)arg1;
 - (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
 - (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)getBytes:(void*)arg1;
 - (id)gzipDeflate:(float)arg1;
 - (id)gzipInflate;
 - (unsigned int)hash;
@@ -201,18 +193,18 @@
 - (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 deallocator:(id)arg4;
 - (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
+- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
 - (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 deallocator:(id)arg3;
 - (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
-- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1 error:(id*)arg2;
 - (id)initWithContentsOfFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)initWithContentsOfFile:(id)arg1;
-- (id)initWithContentsOfMappedFile:(id)arg1 error:(id*)arg2;
 - (id)initWithContentsOfMappedFile:(id)arg1;
-- (id)initWithContentsOfURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)initWithContentsOfMappedFile:(id)arg1 error:(id*)arg2;
 - (id)initWithContentsOfURL:(id)arg1;
+- (id)initWithContentsOfURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (id)initWithData:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToData:(id)arg1;
@@ -235,11 +227,11 @@
 - (id)mf_encodeModifiedBase64;
 - (BOOL)mf_immutable;
 - (id)mf_locationsOfUnixNewlinesNeedingConversion;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfByteFromSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfByteFromSet:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfCString:(const char *)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfCString:(const char *)arg1 options:(unsigned int)arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfByteFromSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfCString:(const char *)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfCString:(const char *)arg1 options:(unsigned int)arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfCString:(const char *)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfData:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfRFC822HeaderData;
 - (id)mf_subdataFromIndex:(unsigned int)arg1;
@@ -253,8 +245,8 @@
 - (void)pl_adviceWillNeed;
 - (unsigned int)pl_advisoryLength;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
-- (id)propertyListForRadioResponseReturningError:(id*)arg1 unparsedResponseDictionary:(id*)arg2;
 - (id)propertyListForRadioResponseReturningError:(id*)arg1;
+- (id)propertyListForRadioResponseReturningError:(id*)arg1 unparsedResponseDictionary:(id*)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfData:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)replacementObjectForCoder:(id)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
@@ -275,8 +267,8 @@
 - (BOOL)tsp_writeToURL:(id)arg1 encryptionKey:(id)arg2;
 - (id)uppercaseHexStringWithoutSpaces;
 - (id)webSafeBase64Data;
-- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
+- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
 - (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;

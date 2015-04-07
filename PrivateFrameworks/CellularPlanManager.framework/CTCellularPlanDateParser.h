@@ -12,7 +12,7 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (BOOL)validate:(id)arg1 parseTo:(double*)arg2;
 + (BOOL)validate:(id)arg1;
++ (BOOL)validate:(id)arg1 parseTo:(double*)arg2;
 
 @end

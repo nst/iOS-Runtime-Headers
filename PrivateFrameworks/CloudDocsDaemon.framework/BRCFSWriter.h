@@ -8,10 +8,14 @@
 
 @class BRCAccountSession, NSObject<OS_dispatch_queue>, NSString;
 
-@interface BRCFSWriter : NSObject <BRCModule, BRCFileCoordinationWriting> {
+@interface BRCFSWriter : NSObject <BRCFileCoordinationWriting, BRCModule> {
     NSObject<OS_dispatch_queue> *_serialQueue;
     BRCAccountSession *_session;
+
+  /* Unexpected information at end of encoded ivar type: i */
+  /* Error parsing encoded ivar type info: Ai */
     /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_suspendCount;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

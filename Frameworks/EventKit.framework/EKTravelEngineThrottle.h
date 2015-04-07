@@ -9,7 +9,11 @@
 @class NSDate, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, PCPersistentTimer;
 
 @interface EKTravelEngineThrottle : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _adviceBlock;
+
     PCPersistentTimer *_emissionTimer;
     NSDate *_nextEmissionDate;
     unsigned int _numberOfThrottleAdviceObjectsToEmitLater;

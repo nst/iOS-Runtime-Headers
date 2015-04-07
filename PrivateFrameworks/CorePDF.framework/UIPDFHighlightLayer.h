@@ -3,11 +3,11 @@
  */
 
 @interface UIPDFHighlightLayer : CALayer {
+    struct CGPath { } *_borderPath;
+    struct CGPath { } *_clipPath;
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPath { } *_borderPath;
-    struct CGPath { } *_clipPath;
     } offset;
 }
 

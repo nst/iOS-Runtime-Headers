@@ -5,10 +5,10 @@
 @class NSMutableArray, NSString;
 
 @interface TSTTemporaryCollectionNode : NSObject {
+    NSMutableArray *mChildren;
     struct TSCEVectorIndexPair { 
         unsigned short column; 
         unsigned short row; 
-    NSMutableArray *mChildren;
     } mDimensions;
     unsigned int mFirstIndex;
     unsigned int mLastIndex;

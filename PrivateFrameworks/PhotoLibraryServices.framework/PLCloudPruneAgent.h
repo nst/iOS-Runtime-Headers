@@ -5,13 +5,13 @@
 @class NSObject<OS_dispatch_queue>, PLCloudPhotoLibraryManager, PLPhotoLibrary;
 
 @interface PLCloudPruneAgent : PLCloudScenarioProducer {
-    struct { 
-        int retries; 
-        int state; 
     NSObject<OS_dispatch_queue> *_agentQueue;
     long _lastPruneRequest;
     PLPhotoLibrary *_localLibrary;
     PLCloudPhotoLibraryManager *_remoteLibrary;
+    struct { 
+        int retries; 
+        int state; 
     } _walkStatus[5];
 }
 
@@ -31,8 +31,8 @@
 - (id)localLibrary;
 - (void)pruneOlderMediums;
 - (void)pruneOlderOriginals;
-- (void)pruneResources:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)pruneResources;
+- (void)pruneResources:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)pruneResourcesOfType:(unsigned int)arg1 createdBeforeDate:(id)arg2 then:(id)arg3;
 - (void)pruneResourcesOfType:(unsigned int)arg1 then:(id)arg2;
 - (BOOL)pruningEnabled;

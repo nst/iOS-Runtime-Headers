@@ -4,7 +4,7 @@
 
 @class NSArray, NSDate, NSString, NSURL;
 
-@interface RCComposition : NSObject <NSMutableCopying, NSCopying, RCDictionaryPListRepresentationCoding> {
+@interface RCComposition : NSObject <NSCopying, NSMutableCopying, RCDictionaryPListRepresentationCoding> {
     double _cachedComposedAVURLDuration;
     NSURL *_composedAVURL;
     NSArray *_composedFragments;

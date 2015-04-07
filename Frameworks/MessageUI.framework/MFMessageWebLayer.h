@@ -9,9 +9,6 @@
 @class DOMRange, MFLibraryMessage, MFMessageReformattingContext, NSMutableDictionary, NSObject<MFMessageWebLayerDelegate>, NSString, NSTimer;
 
 @interface MFMessageWebLayer : UIWebBrowserView {
-    unsigned int _shouldReformat : 1;
-    unsigned int _unitTests : 1;
-    unsigned int _isFromEntourage : 1;
     unsigned int _bottomReplyLastQuoteLevel;
     DOMRange *_bottomReplyRange;
     NSString *_currentUUID;
@@ -21,17 +18,28 @@
     int _displayStyle;
     BOOL _hasUnloadedRemoteImages;
     NSTimer *_ignorePendingStylesheetsTimer;
+    unsigned int _isFromEntourage : 1;
     BOOL _isReformatting;
     NSString *_mainFrameURL;
     NSObject<MFMessageWebLayerDelegate> *_mwlDelegate;
     NSString *_originalHTMLString;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _postDisplayCancellationBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _postDisplayOperationBlock;
+
     BOOL _prePrintDataDetectionPending;
     MFMessageReformattingContext *_reformattingContext;
     BOOL _shouldAttemptToReformatMessage;
+    unsigned int _shouldReformat : 1;
     BOOL _showRemoteImages;
     BOOL _stoppedLoading;
+    unsigned int _unitTests : 1;
 }
 
 @property unsigned int bottomReplyLastQuoteLevel;

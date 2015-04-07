@@ -5,6 +5,11 @@
 @class NSMutableDictionary;
 
 @interface PLProcessPortMap : NSObject {
+    struct proc_fdinfo { int x1; unsigned int x2; } *Fds;
+    int NbFds;
+    int NbPids;
+    int *Pids;
+    NSMutableDictionary *processFDs;
     struct socket_fdinfo { 
         struct proc_fileinfo { 
             unsigned int fi_openflags; 
@@ -219,11 +224,6 @@
                 } pri_kern_ctl; 
             } soi_proto; 
         } psi; 
-    struct proc_fdinfo { int x1; unsigned int x2; } *Fds;
-    int NbFds;
-    int NbPids;
-    int *Pids;
-    NSMutableDictionary *processFDs;
     } si;
 }
 

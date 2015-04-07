@@ -11,11 +11,15 @@
 @interface AppLaunchStatsAggD : NSObject {
     int BGReportToken;
     NSObject<OS_dispatch_queue> *aggDQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id appisFetchable;
+
     long long avgDownloadsize;
     long long avgPWConsumed;
     unsigned long blameReasons[29];
-    boolbuildLaunchStats;
+    bool buildLaunchStats;
     NSDate *cycleStart;
     int fetchAppFiltered[7];
     int fetchAttempt;

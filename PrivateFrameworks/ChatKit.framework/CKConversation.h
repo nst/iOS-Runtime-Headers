@@ -5,9 +5,9 @@
 @class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSString;
 
 @interface CKConversation : NSObject {
+    IMChat *_chat;
     struct { 
         unsigned int ignoringTypingUpdates : 1; 
-    IMChat *_chat;
     } _conversationFlags;
     NSAttributedString *_groupName;
     unsigned int _limitToLoad;
@@ -59,16 +59,16 @@
 
 + (BOOL)_iMessage_canAcceptMediaObjectType:(int)arg1 givenMediaObjects:(id)arg2;
 + (BOOL)_iMessage_canSendComposition:(id)arg1 error:(id*)arg2;
-+ (BOOL)_iMessage_canSendMessageWithMediaObjectTypes:(int*)arg1 errorCode:(int*)arg2;
 + (BOOL)_iMessage_canSendMessageWithMediaObjectTypes:(int*)arg1;
++ (BOOL)_iMessage_canSendMessageWithMediaObjectTypes:(int*)arg1 errorCode:(int*)arg2;
 + (id)_iMessage_localizedErrorForReason:(int)arg1;
 + (int)_iMessage_maxAttachmentCount;
 + (unsigned int)_iMessage_maxTransferFileSizeForWiFi:(BOOL)arg1;
 + (double)_iMessage_maxTrimDurationForMediaType:(int)arg1;
 + (BOOL)_sms_canAcceptMediaObjectType:(int)arg1 givenMediaObjects:(id)arg2;
 + (BOOL)_sms_canSendComposition:(id)arg1 error:(id*)arg2;
-+ (BOOL)_sms_canSendMessageWithMediaObjectTypes:(int*)arg1 errorCode:(int*)arg2;
 + (BOOL)_sms_canSendMessageWithMediaObjectTypes:(int*)arg1;
++ (BOOL)_sms_canSendMessageWithMediaObjectTypes:(int*)arg1 errorCode:(int*)arg2;
 + (id)_sms_localizedErrorForReason:(int)arg1;
 + (int)_sms_maxAttachmentCount;
 + (double)_sms_maxTrimDurationForMediaType:(int)arg1;

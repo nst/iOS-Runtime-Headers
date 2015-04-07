@@ -8,15 +8,15 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     } _centerToSelectionPointOffset;
     UIImageView *_dragDotView;
     int _position;
     UIWebSelectionView *_selectionView;
     int _textPosition;
     UITouch *_touch;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _touchToCenterOffset;
 }
 

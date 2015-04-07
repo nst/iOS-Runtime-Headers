@@ -3,11 +3,11 @@
  */
 
 @interface BodyFixedDetectorParameters : PBCodable <NSCopying> {
+    unsigned long long _currentWindowNanos;
     struct { 
         unsigned int currentWindowNanos : 1; 
         unsigned int referenceWindowNanos : 1; 
         unsigned int maxExcessRadiansPerSecond : 1; 
-    unsigned long long _currentWindowNanos;
     } _has;
     float _maxExcessRadiansPerSecond;
     unsigned long long _referenceWindowNanos;

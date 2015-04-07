@@ -8,25 +8,7 @@
 
 @class NSArray, NSMutableDictionary, NSMutableSet, NSString, PHCachingImageManager, PHCollection, PHCollectionList, PHFetchResult, PUAlbumListTransitionContext, PUAlbumListViewControllerSpec, PUAlbumStreamActivity, PUCollageView, PUCollectionView, PUFeedRecentsManager, PUFeedViewController, PULongPressableBarButtonItem, PUPhotoPinchGestureRecognizer, PUPhotosGlobalFooterView, PUPhotosGridViewController, PUSearchButtonItem, PUSearchViewController, PUSectionedGridLayout, PUSessionInfo, UIBarButtonItem, UICollectionViewLayout, UITableView, UIView, UIViewController, _UIContentUnavailableView;
 
-@interface PUAlbumListViewController : UIViewController <UIGestureRecognizerDelegate, PUStackedAlbumTransitionDelegate, PUAlbumStreamActivityDelegate, PUFeedRecentsManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, PUCollectionViewReorderDelegate, PUSectionedGridLayoutDelegate, UITableViewDataSource, UITableViewDelegate, PUAlbumListTableViewCellDelegate, UIPopoverPresentationControllerDelegate, UISearchBarDelegate, PUSearchViewControllerDelegate, PUPhotoLibraryUIChangeObserver, PLNavigableAssetContainerListViewController, PLCloudFeedNavigating, PLNavigablePhotoStreamViewController, PUStackedAlbumControllerTransition> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+@interface PUAlbumListViewController : UIViewController <PLCloudFeedNavigating, PLNavigableAssetContainerListViewController, PLNavigablePhotoStreamViewController, PUAlbumListTableViewCellDelegate, PUAlbumStreamActivityDelegate, PUCollectionViewReorderDelegate, PUFeedRecentsManagerDelegate, PUPhotoLibraryUIChangeObserver, PUSearchViewControllerDelegate, PUSectionedGridLayoutDelegate, PUStackedAlbumControllerTransition, PUStackedAlbumTransitionDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
     BOOL __aboutToCreateAlbum;
     UICollectionViewLayout *__albumListTransitionLayout;
     UIView *__backgroundView;
@@ -37,16 +19,33 @@
     PUFeedRecentsManager *__feedRecentsManager;
     int __ignoredReorderNotificationCount;
     BOOL __isKeyboardAware;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __justCreatedCollectionAnimationCompletionHandler;
+
     NSString *__justCreatedCollectionIdentifier;
     PUCollectionView *__mainCollectionView;
     PUSectionedGridLayout *__mainCollectionViewLayout;
     UITableView *__mainTableView;
     PUPhotosGridViewController *__modalSearchResultsViewController;
     PUSearchViewController *__modalSearchViewController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __onViewDidLayoutSubviewsBlock;
+
     PUPhotoPinchGestureRecognizer *__photoPinchGestureRecognizer;
     NSMutableSet *__preheatedCollections;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } __previousPreheatRect;
     NSArray *__syncProgressAlbums;
     PUCollageView *_aggregateCollageView;
@@ -64,6 +63,15 @@
     PHFetchResult *_filteredFetchResult;
     BOOL _isRootFolder;
     BOOL _isRootSharedAlbumList;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _lastLayoutUpdateBounds;
     BOOL _progressViewVisible;
     PHCollection *_pushedAlbum;
@@ -267,6 +275,7 @@
 - (BOOL)cloudFeedInvitationForAlbumIsAvailableForNavigation:(id)arg1;
 - (id)collectionAtIndexPath:(id)arg1;
 - (id)collectionList;
+- (id)collectionView;
 - (BOOL)collectionView:(id)arg1 canReorderItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
@@ -276,7 +285,6 @@
 - (id)collectionView:(id)arg1 targetIndexPathForMoveFromIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 transitionLayoutForOldLayout:(id)arg2 newLayout:(id)arg3;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
-- (id)collectionView;
 - (id)collectionsFetchResult;
 - (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(BOOL)arg4;
 - (void)dealloc;
@@ -346,8 +354,8 @@
 - (id)sessionInfo;
 - (void)sessionInfoPhotoSelectionDidChange:(id)arg1;
 - (void)setAlbumListTransitionContext:(id)arg1;
-- (void)setAlbumListTransitionLayout:(id)arg1 animated:(BOOL)arg2;
 - (void)setAlbumListTransitionLayout:(id)arg1;
+- (void)setAlbumListTransitionLayout:(id)arg1 animated:(BOOL)arg2;
 - (void)setCollectionList:(id)arg1;
 - (void)setCollectionsFetchResult:(id)arg1;
 - (void)setDisallowsSearch:(BOOL)arg1;

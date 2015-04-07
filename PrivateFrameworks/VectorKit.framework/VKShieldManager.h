@@ -50,6 +50,8 @@
         unsigned int _maxCost; 
         unsigned int _currentCost; 
         unsigned int _currentCount; 
+    } _artworkPool;
+    NSMapTable *_atlases;
     struct _GEOGenericContainer<md::GenericShieldCacheKey, VKShieldArtwork *, std::__1::hash<md::GenericShieldCacheKey>, std::__1::equal_to<md::GenericShieldCacheKey>, geo::GEOGenericContainerWeakReferenceTag, 0, 0, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> { 
         struct mutex { 
             struct _opaque_pthread_mutex_t { 
@@ -95,8 +97,6 @@
         unsigned int _maxCost; 
         unsigned int _currentCost; 
         unsigned int _currentCount; 
-    } _artworkPool;
-    NSMapTable *_atlases;
     } _genericArtworks;
     VKGenericShieldGenerator *_genericShieldGenerator;
     NSMapTable *_indexes;

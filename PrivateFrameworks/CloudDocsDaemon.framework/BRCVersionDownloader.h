@@ -4,7 +4,7 @@
 
 @class BRCLocalContainer, BRCTransferQueue, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface BRCVersionDownloader : NSObject <BRCTransferQueueDelegate, BRCLifeCycle> {
+@interface BRCVersionDownloader : NSObject <BRCLifeCycle, BRCTransferQueueDelegate> {
     BRCLocalContainer *_container;
     NSMutableDictionary *_multiplexerForDesiredKeys;
     NSObject<OS_dispatch_queue> *_queue;

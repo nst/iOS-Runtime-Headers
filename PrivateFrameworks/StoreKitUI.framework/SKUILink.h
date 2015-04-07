@@ -30,8 +30,8 @@
 - (void)_setItem:(id)arg1;
 - (id)initWithComponentContext:(id)arg1;
 - (id)initWithLinkDictionary:(id)arg1;
-- (id)initWithURL:(id)arg1 title:(id)arg2 targetString:(id)arg3;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 title:(id)arg2 targetString:(id)arg3;
 - (BOOL)isActionable;
 - (id)item;
 - (id)itemIdentifier;

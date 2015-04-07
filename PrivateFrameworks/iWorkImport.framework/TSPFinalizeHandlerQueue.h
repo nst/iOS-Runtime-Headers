@@ -5,12 +5,7 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface TSPFinalizeHandlerQueue : NSObject {
-    struct vector<TSP::FinalizeHandlerItem *, std::__1::allocator<TSP::FinalizeHandlerItem *> > { 
-        struct FinalizeHandlerItem {} **__begin_; 
-        struct FinalizeHandlerItem {} **__end_; 
-        struct __compressed_pair<TSP::FinalizeHandlerItem **, std::__1::allocator<TSP::FinalizeHandlerItem *> > { 
-            struct FinalizeHandlerItem {} **__first_; 
-        } __end_cap_; 
+    NSObject<OS_dispatch_queue> *_accessQueue;
     struct hash_map<const long long, TSP::FinalizeHandlerItem, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSP::FinalizeHandlerItem> > > { 
         struct __hash_table<std::__1::pair<const long long, TSP::FinalizeHandlerItem>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSP::FinalizeHandlerItem>, TSP::IdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSP::FinalizeHandlerItem>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, TSP::FinalizeHandlerItem> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, TSP::FinalizeHandlerItem>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::FinalizeHandlerItem>, void *> *> > > { 
@@ -35,8 +30,13 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    NSObject<OS_dispatch_queue> *_accessQueue;
     } _map;
+    struct vector<TSP::FinalizeHandlerItem *, std::__1::allocator<TSP::FinalizeHandlerItem *> > { 
+        struct FinalizeHandlerItem {} **__begin_; 
+        struct FinalizeHandlerItem {} **__end_; 
+        struct __compressed_pair<TSP::FinalizeHandlerItem **, std::__1::allocator<TSP::FinalizeHandlerItem *> > { 
+            struct FinalizeHandlerItem {} **__first_; 
+        } __end_cap_; 
     } _order;
 }
 

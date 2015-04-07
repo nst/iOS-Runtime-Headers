@@ -22,25 +22,16 @@
         float m42; 
         float m43; 
         float m44; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     } mBaseTransform;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mDrawableFrame;
     TSDGLDataBuffer *mFBODataBuffer;
     TSDGLShader *mFBOShader;
@@ -48,6 +39,15 @@
     TSDGLShader *mFlameShader;
     KNBuildFlameSystem *mFlameSystem;
     TSDGLTextureInfo *mFlameTexture;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mFrameRect;
     unsigned int mFramebuffer;
     TSDGLDataBuffer *mObjectDataBuffer;

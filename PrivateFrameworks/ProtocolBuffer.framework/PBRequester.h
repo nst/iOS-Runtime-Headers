@@ -5,6 +5,16 @@
 @class <PBRequesterDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableData, NSMutableDictionary, NSRunLoop, NSString, NSThread, NSURL, NSURLConnection, PBDataReader;
 
 @interface PBRequester : NSObject <NSURLConnectionDelegate> {
+    NSURL *_URL;
+    NSArray *_clientCertificates;
+    NSURLConnection *_connection;
+    NSDictionary *_connectionProperties;
+    NSRunLoop *_connectionRunLoop;
+    NSMutableData *_data;
+    PBDataReader *_dataReader;
+    <PBRequesterDelegate> *_delegate;
+    BOOL _didNotifyRequestCompleted;
+    unsigned int _downloadPayloadSize;
     struct { 
         unsigned int ignoresResponse : 1; 
         unsigned int loading : 1; 
@@ -17,16 +27,6 @@
         unsigned int delegateDidFailWithError : 1; 
         unsigned int paused : 1; 
         unsigned int resuming : 1; 
-    NSURL *_URL;
-    NSArray *_clientCertificates;
-    NSURLConnection *_connection;
-    NSDictionary *_connectionProperties;
-    NSRunLoop *_connectionRunLoop;
-    NSMutableData *_data;
-    PBDataReader *_dataReader;
-    <PBRequesterDelegate> *_delegate;
-    BOOL _didNotifyRequestCompleted;
-    unsigned int _downloadPayloadSize;
     } _flags;
     NSMutableDictionary *_httpRequestHeaders;
     NSDictionary *_httpResponseHeaders;
@@ -99,11 +99,11 @@
 - (void)cancelWithErrorCode:(int)arg1;
 - (void)clearRequests;
 - (id)clientCertificates;
+- (id)connection;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)connection:(id)arg1 willSendRequestForEstablishedConnection:(id)arg2 properties:(id)arg3;
-- (id)connection;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (id)connectionRunLoop;
 - (void)dealloc;
@@ -122,8 +122,8 @@
 - (id)logResponseToFile;
 - (BOOL)needsCancel;
 - (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
-- (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2 connectionProperties:(id)arg3;
 - (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2;
+- (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2 connectionProperties:(id)arg3;
 - (void)pause;
 - (BOOL)readResponsePreamble:(id)arg1;
 - (id)requestPreamble;
@@ -142,8 +142,8 @@
 - (void)setIgnoresResponse:(BOOL)arg1;
 - (void)setLogRequestToFile:(id)arg1;
 - (void)setLogResponseToFile:(id)arg1;
-- (void)setNeedsCancel:(BOOL)arg1;
 - (void)setNeedsCancel;
+- (void)setNeedsCancel:(BOOL)arg1;
 - (void)setShouldHandleCookies:(BOOL)arg1;
 - (void)setTimeoutSeconds:(double)arg1;
 - (void)setURL:(id)arg1;

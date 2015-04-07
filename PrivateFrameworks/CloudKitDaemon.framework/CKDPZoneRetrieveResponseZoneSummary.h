@@ -5,14 +5,14 @@
 @class CKDPZone, NSData;
 
 @interface CKDPZoneRetrieveResponseZoneSummary : PBCodable <NSCopying> {
-    struct { 
-        unsigned int assetQuotaUsage : 1; 
-        unsigned int metadataQuotaUsage : 1; 
-        unsigned int deviceCount : 1; 
     long long _assetQuotaUsage;
     NSData *_clientChangeToken;
     NSData *_currentServerContinuationToken;
     int _deviceCount;
+    struct { 
+        unsigned int assetQuotaUsage : 1; 
+        unsigned int metadataQuotaUsage : 1; 
+        unsigned int deviceCount : 1; 
     } _has;
     long long _metadataQuotaUsage;
     CKDPZone *_targetZone;

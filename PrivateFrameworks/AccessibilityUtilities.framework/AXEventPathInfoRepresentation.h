@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXEventPathInfoRepresentation : NSObject <NSSecureCoding, NSCopying> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface AXEventPathInfoRepresentation : NSObject <NSCopying, NSSecureCoding> {
     float _pathDensity;
     unsigned int _pathEventMask;
     unsigned char _pathIdentity;
     unsigned char _pathIndex;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _pathLocation;
     float _pathMajorRadius;
     float _pathMinorRadius;

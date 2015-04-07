@@ -5,15 +5,15 @@
 @class NSArray, NSString;
 
 @interface TSDGLFrameBufferTextureConfig : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     unsigned int _GLFormat;
     int _GLInternalFormat;
     unsigned int _GLType;
     unsigned int _attachment;
     BOOL _isTextureNameGenerated;
     NSString *_name;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     NSArray *_textureParameters;
 }

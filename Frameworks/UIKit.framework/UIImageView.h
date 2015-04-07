@@ -5,12 +5,12 @@
 @class NSArray, UIColor, UIImage;
 
 @interface UIImageView : UIView {
+    BOOL __animatesContents;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    BOOL __animatesContents;
     } _cachedEdgeInsetsForEffects;
     BOOL _edgeInsetsForEffectsAreValid;
     id _storage;
@@ -56,8 +56,8 @@
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_invalidateTemplateSettings;
 - (BOOL)_masksTemplateImages;
-- (BOOL)_needsImageEffectsForImage:(id)arg1 suppressColorizing:(BOOL)arg2;
 - (BOOL)_needsImageEffectsForImage:(id)arg1;
+- (BOOL)_needsImageEffectsForImage:(id)arg1 suppressColorizing:(BOOL)arg2;
 - (BOOL)_recomputePretilingState;
 - (void)_resolveImageForTrait:(id)arg1;
 - (void)_setAnimatesContents:(BOOL)arg1;
@@ -98,8 +98,8 @@
 - (struct CGImage { }*)imageRef;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
 - (id)initWithImage:(id)arg1;
+- (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isAnimating;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;

@@ -5,6 +5,7 @@
 @class NSArray, NSMutableArray;
 
 @interface SKUIGridComponent : SKUIPageComponent {
+    NSMutableArray *_children;
     struct SKUIEditorialStyle { 
         int alignment; 
         int bodyFontWeight; 
@@ -13,13 +14,12 @@
         int titleFontWeight; 
         float titleFontSize; 
         float titleSpacing; 
+    } _editorialStyle;
+    int _gridType;
     struct SKUILockupStyle { 
         int artworkSize; 
         int layoutStyle; 
         unsigned int visibleFields; 
-    NSMutableArray *_children;
-    } _editorialStyle;
-    int _gridType;
     } _lockupStyle;
     int _missingItemCount;
     BOOL _showsIndexNumbers;

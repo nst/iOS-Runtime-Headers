@@ -5,9 +5,9 @@
 @class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AppLaunchStatsSaveAndRestore : NSObject {
+    bool allowSave;
     NSObject<OS_dispatch_queue> *aplsSaveAndRestoreQueue;
-    boolallowSave;
-    boolhasSavedData;
+    bool hasSavedData;
     NSMutableArray *saveRestoreObjects;
     NSMutableDictionary *saveState;
 }

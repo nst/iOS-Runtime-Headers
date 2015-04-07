@@ -10,13 +10,21 @@
 
 @interface HKStatisticsCollectionQuery : HKQuery {
     NSDate *_anchorDate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _initialResultsHandler;
+
     NSDateComponents *_intervalComponents;
     NSNumber *_lastAnchor;
     unsigned int _mergeStrategy;
     unsigned int _options;
     HKStatisticsCollection *_statisticsCollection;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _statisticsUpdateHandler;
+
 }
 
 @property(readonly) NSDate * anchorDate;

@@ -32,6 +32,7 @@
 - (BOOL)endsScrubbing;
 - (unsigned int)hash;
 - (id)initWithContext:(id)arg1 archive:(const struct RecordingEventArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; struct RecordingNavigationEventArchive {} *x4; struct RecordingLaserEventArchive {} *x5; struct RecordingPauseEventArchive {} *x6; struct RecordingMovieEventArchive {} *x7; int x8; unsigned int x9[1]; }*)arg2 unarchiver:(id)arg3;
+- (id)initWithStartTime:(double)arg1;
 - (id)initWithStartTime:(double)arg1 beginningScrubbingForMovieInfo:(id)arg2;
 - (id)initWithStartTime:(double)arg1 endingScrubbingForMovieInfo:(id)arg2 withRate:(double)arg3;
 - (id)initWithStartTime:(double)arg1 movieInfo:(id)arg2 movieEventType:(int)arg3 movieEventValue:(double)arg4;
@@ -39,7 +40,6 @@
 - (id)initWithStartTime:(double)arg1 movieInfo:(id)arg2 seekTime:(double)arg3;
 - (id)initWithStartTime:(double)arg1 startingPlaybackForMovieInfo:(id)arg2;
 - (id)initWithStartTime:(double)arg1 stoppingPlaybackForMovieInfo:(id)arg2;
-- (id)initWithStartTime:(double)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isIgnoredWhenSeeking;
 - (int)movieEventType;

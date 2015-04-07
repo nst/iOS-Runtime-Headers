@@ -10,19 +10,19 @@
 @class <WKWebProcessPlugInFormDelegatePrivate>, <WKWebProcessPlugInLoadDelegate>, NSString, WKBrowsingContextHandle, WKDOMDocument, WKDOMRange, WKWebProcessPlugInFrame, WKWebProcessPlugInPageGroup, _WKRemoteObjectRegistry;
 
 @interface WKWebProcessPlugInBrowserContextController : NSObject <WKObject> {
+    struct WeakObjCPtr<id<WKWebProcessPlugInFormDelegatePrivate> > { 
+        id m_weakReference; 
+    } _formDelegate;
+    struct WeakObjCPtr<id<WKWebProcessPlugInLoadDelegate> > { 
+        id m_weakReference; 
+    } _loadDelegate;
     struct ObjectStorage<WebKit::WebPage> { 
         struct type { 
             unsigned char __lx[1360]; 
         } data; 
-    struct WeakObjCPtr<id<WKWebProcessPlugInLoadDelegate> > { 
-        id m_weakReference; 
-    struct WeakObjCPtr<id<WKWebProcessPlugInFormDelegatePrivate> > { 
-        id m_weakReference; 
+    } _page;
     struct RetainPtr<_WKRemoteObjectRegistry> { 
         void *m_ptr; 
-    } _formDelegate;
-    } _loadDelegate;
-    } _page;
     } _remoteObjectRegistry;
 }
 
@@ -45,9 +45,9 @@
 
 + (id)lookUpBrowsingContextFromHandle:(id)arg1;
 
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (struct OpaqueWKBundlePage { }*)_bundlePageRef;
 - (BOOL)_defersLoading;
 - (id)_formDelegate;

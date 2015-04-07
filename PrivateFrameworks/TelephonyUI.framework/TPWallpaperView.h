@@ -35,8 +35,8 @@
 - (void)setBackdropEffectView:(id)arg1;
 - (void)setBlurProportion:(float)arg1;
 - (void)setBlursBackground:(BOOL)arg1;
-- (void)setContactImage:(id)arg1 animated:(BOOL)arg2;
 - (void)setContactImage:(id)arg1;
+- (void)setContactImage:(id)arg1 animated:(BOOL)arg2;
 - (void)setContactImageView:(id)arg1;
 - (void)setHidesContactImage:(BOOL)arg1;
 - (void)setShouldBindBlurringWithPresenceOfContactImage:(BOOL)arg1;

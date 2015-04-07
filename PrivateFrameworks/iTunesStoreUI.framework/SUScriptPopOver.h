@@ -59,8 +59,8 @@
 - (id)scriptAttributeKeys;
 - (void)setBackgroundStyle:(int)arg1;
 - (void)setContentHeight:(float)arg1;
-- (void)setContentWidth:(float)arg1 height:(float)arg2 animated:(BOOL)arg3;
 - (void)setContentWidth:(float)arg1;
+- (void)setContentWidth:(float)arg1 height:(float)arg2 animated:(BOOL)arg3;
 - (void)setNativePopoverController:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (BOOL)showFromElement:(id)arg1;

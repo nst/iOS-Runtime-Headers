@@ -5,19 +5,6 @@
 @class AVAsset, AVCustomVideoCompositorSession, AVVideoComposition, AVWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVAssetImageGeneratorInternal : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     NSString *apertureMode;
     BOOL appliesPreferredTrackTransform;
     AVAsset *asset;
@@ -25,9 +12,22 @@
     AVCustomVideoCompositorSession *customVideoCompositorSession;
     struct OpaqueFigAssetImageGenerator { } *generator;
     NSObject<OS_dispatch_queue> *imageRequestQueue;
+    struct CGSize { 
+        float width; 
+        float height; 
     } maximumSize;
     int nextRequestID;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } requestedTimeToleranceAfter;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } requestedTimeToleranceBefore;
     NSMutableArray *requests;
     NSObject<OS_dispatch_queue> *requestsQueue;

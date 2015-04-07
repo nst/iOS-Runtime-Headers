@@ -4,7 +4,7 @@
 
 @class NSString, UIColor, UIImage, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIView<_UISwitchInternalViewProtocol>;
 
-@interface UISwitch : UIControl <UIGestureRecognizerDelegate, NSCoding> {
+@interface UISwitch : UIControl <NSCoding, UIGestureRecognizerDelegate> {
     UIView<_UISwitchInternalViewProtocol> *_control;
     float _enabledAlpha;
     BOOL _on;
@@ -82,8 +82,8 @@
 - (void)setEnabledAlpha:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setOffImage:(id)arg1;
-- (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setOn:(BOOL)arg1;
+- (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setOnImage:(id)arg1;
 - (void)setOnTintColor:(id)arg1;
 - (void)setThumbTintColor:(id)arg1;

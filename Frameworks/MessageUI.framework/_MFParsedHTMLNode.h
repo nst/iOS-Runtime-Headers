@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString, _MFParsedHTMLNode;
 
-@interface _MFParsedHTMLNode : NSObject <MFMessageBodyTreeNode, MFMessageBodyConsumableInnerTextNode> {
+@interface _MFParsedHTMLNode : NSObject <MFMessageBodyConsumableInnerTextNode, MFMessageBodyTreeNode> {
     NSMutableArray *_childNodes;
     unsigned int _endLocation;
     NSString *_htmlString;

@@ -4,15 +4,15 @@
 
 @class NSString, UIRefreshControl, UITableView, UITableViewDataSource, _UIFilteredDataSource;
 
-@interface UITableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    struct { 
-        unsigned int clearsSelectionOnViewWillAppear : 1; 
-        unsigned int insetsApplied : 1; 
-        unsigned int adjustingInsets : 1; 
+@interface UITableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     _UIFilteredDataSource *_filteredDataSource;
     int _filteredDataType;
     id _keyboardSupport;
     id _staticDataSource;
+    struct { 
+        unsigned int clearsSelectionOnViewWillAppear : 1; 
+        unsigned int insetsApplied : 1; 
+        unsigned int adjustingInsets : 1; 
     } _tableViewControllerFlags;
     int _tableViewStyle;
 }
@@ -52,6 +52,7 @@
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setRefreshControl:(id)arg1;
 - (void)setTableView:(id)arg1;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
@@ -64,7 +65,6 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
-- (id)tableView;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

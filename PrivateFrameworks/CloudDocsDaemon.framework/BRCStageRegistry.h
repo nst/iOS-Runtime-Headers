@@ -8,7 +8,7 @@
 
 @class BRCAccountSession, BRCStagePersistedState, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
-@interface BRCStageRegistry : NSObject <BRCModule, BRCLowDiskDelegate> {
+@interface BRCStageRegistry : NSObject <BRCLowDiskDelegate, BRCModule> {
     NSMutableSet *_containersWithUnflushedFileIDs;
     int _deviceID;
     NSObject<OS_dispatch_queue> *_flushingQueue;
@@ -20,8 +20,12 @@
     BRCAccountSession *_session;
     unsigned long long _stageDirectoryFileID[7];
     NSString *_stageDirectoryPath[7];
-    NSMutableSet *_unflushedStagedFileIDs;
+
+  /* Unexpected information at end of encoded ivar type: i */
+  /* Error parsing encoded ivar type info: Ai */
     /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_suspendCount;
+
+    NSMutableSet *_unflushedStagedFileIDs;
 }
 
 @property(copy,readonly) NSString * debugDescription;

@@ -4,7 +4,7 @@
 
 @class NSSharedKeySet;
 
-@interface NSSharedKeySet : NSObject <NSFastEnumeration, NSCopying, NSCoding> {
+@interface NSSharedKeySet : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
     unsigned int _M;
     double _c;
     unsigned int _factor;

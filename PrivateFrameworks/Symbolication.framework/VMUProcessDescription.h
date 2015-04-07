@@ -60,8 +60,8 @@
 - (id)description;
 - (id)displayName;
 - (id)executablePath;
-- (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2 getBinariesList:(BOOL)arg3;
 - (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2;
+- (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2 getBinariesList:(BOOL)arg3;
 - (BOOL)isAppleApplication;
 - (id)parentProcessName;
 - (int)pid;

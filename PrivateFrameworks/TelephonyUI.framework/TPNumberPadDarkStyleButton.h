@@ -9,8 +9,8 @@
 + (float)highlightCrossfadeHighlightFadeDuration;
 + (float)highlightCrossfadeNormalBeginTime;
 + (float)highlightCrossfadeNormalFadeDuration;
-+ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
 + (id)imageForCharacter:(unsigned int)arg1;
++ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
 + (float)unhighlightCrossfadeHighlightBeginTime;
 + (float)unhighlightCrossfadeHighlightFadeDuration;
 + (float)unhighlightCrossfadeNormalBeginTime;

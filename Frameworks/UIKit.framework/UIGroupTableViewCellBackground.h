@@ -5,21 +5,21 @@
 @class UIColor, UIView;
 
 @interface UIGroupTableViewCellBackground : UIView {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct { 
-        unsigned int selected : 1; 
     int _animationCount;
     UIView *_bottomSeparatorView;
+    struct { 
+        unsigned int selected : 1; 
     } _groupBackgroundFlags;
     int _newSectionLocation;
     float _sectionBorderWidth;
     int _sectionLocation;
     int _selectionStyle;
     UIColor *_selectionTintColor;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _separatorInset;
     int _separatorStyle;
     UIView *_topSeparatorView;
@@ -70,12 +70,12 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSectionBorderWidth:(float)arg1;
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 - (void)setSectionLocation:(int)arg1;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSelectionStyle:(int)arg1;
-- (void)setSelectionTintColor:(id)arg1 layoutSubviews:(BOOL)arg2;
 - (void)setSelectionTintColor:(id)arg1;
+- (void)setSelectionTintColor:(id)arg1 layoutSubviews:(BOOL)arg2;
 - (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSeparatorStyle:(int)arg1;
 

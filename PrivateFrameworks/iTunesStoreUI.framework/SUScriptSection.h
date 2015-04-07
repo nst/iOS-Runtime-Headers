@@ -27,8 +27,8 @@
 - (id)identifier;
 - (id)initWithNativeSection:(id)arg1;
 - (id)scriptAttributeKeys;
-- (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (void)setBadgeValue:(id)arg1;
+- (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (BOOL)transient;
 - (id)viewController;
 

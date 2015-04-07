@@ -9,7 +9,7 @@
 
 @class KNAbstractSlide, KNBuild, KNSlide, NSArray, NSObject<TSDContainerInfo>, NSString, NSURL, TSDDefaultPartitioner, TSDDrawableComment, TSDExteriorTextWrap, TSDInfoGeometry, TSPLazyReference, TSPObject<TSDOwningAttachment>, TSSPropertySetChangeDetails;
 
-@interface TSDDrawableInfo : TSPObject <TSDChangeableInfo, TSKDocumentObject, TSKTransformableObject, TSKSearchable> {
+@interface TSDDrawableInfo : TSPObject <TSDChangeableInfo, TSKDocumentObject, TSKSearchable, TSKTransformableObject> {
     NSString *mAccessibilityDescription;
     BOOL mAspectRatioLocked;
     TSSPropertySetChangeDetails *mChanges;
@@ -120,7 +120,7 @@
 - (BOOL)isThemeContent;
 - (BOOL)isUserModifiable;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct DrawableArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct GeometryArchive {} *x3; struct Reference {} *x4; struct ExteriorTextWrapArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct Reference {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct DrawableArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct GeometryArchive {} *x3; struct Reference {} *x4; struct ExteriorTextWrapArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct Reference {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; bool x9; bool x10; int x11; unsigned int x12[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
 - (BOOL)matchesObjectPlaceholderGeometry;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
@@ -134,7 +134,7 @@
 - (id)presetKind;
 - (Class)repClass;
 - (BOOL)reverseChunkingIsSupported;
-- (void)saveToArchive:(struct DrawableArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct GeometryArchive {} *x3; struct Reference {} *x4; struct ExteriorTextWrapArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct Reference {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct DrawableArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct GeometryArchive {} *x3; struct Reference {} *x4; struct ExteriorTextWrapArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct Reference {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; bool x9; bool x10; int x11; unsigned int x12[1]; }*)arg1 archiver:(id)arg2;
 - (id)searchForAnnotationsWithHitBlock:(id)arg1;
 - (void)setAccessibilityDescription:(id)arg1;
 - (void)setAspectRatioLocked:(BOOL)arg1;

@@ -4,7 +4,7 @@
 
 @class NSDictionary;
 
-@interface NSTextTab : NSObject <NSCopying, NSCoding> {
+@interface NSTextTab : NSObject <NSCoding, NSCopying> {
     struct { 
         unsigned int alignment : 4; 
         unsigned int refCount : 24; 

@@ -9,7 +9,7 @@
 
 @class BRCDesiredVersion, BRCItemID, BRCLocalContainer, BRCLocalItem, BRCLocalStatInfo, BRCLocalVersion, NSMutableSet, NSNumber, NSString;
 
-@interface BRCLocalItem : NSObject <BRCSyncThrottleItemProtocol, BRCItem> {
+@interface BRCLocalItem : NSObject <BRCItem, BRCSyncThrottleItemProtocol> {
     BRCLocalContainer *_container;
     BRCLocalVersion *_currentVersion;
     unsigned long long _dbRowID;
@@ -190,8 +190,8 @@
 - (void)markRemovedFromFilesystemForServerEdit:(BOOL)arg1;
 - (void)markRenamedUsingServerItem:(id)arg1 parentFileID:(id)arg2;
 - (void)markReserved;
-- (void)markStagedWithFileID:(unsigned long long)arg1 generationID:(unsigned int)arg2 documentID:(unsigned int)arg3;
 - (void)markStagedWithFileID:(unsigned long long)arg1 generationID:(unsigned int)arg2;
+- (void)markStagedWithFileID:(unsigned long long)arg1 generationID:(unsigned int)arg2 documentID:(unsigned int)arg3;
 - (void)markUploadedWithRecord:(id)arg1;
 - (void)moveAsideLocally;
 - (BOOL)moveDocumentToStageFromDownloadPath:(id)arg1;
@@ -220,8 +220,8 @@
 - (void)triggerTransferNotificationIfNeeded;
 - (void)unstageDesiredLosers;
 - (void)updateContentsCKInfoAndDeviceIDFromServerItem:(id)arg1;
-- (BOOL)updateFromFSAtPath:(id)arg1 parentID:(id)arg2;
 - (void)updateFromFSAtPath:(id)arg1;
+- (BOOL)updateFromFSAtPath:(id)arg1 parentID:(id)arg2;
 - (BOOL)updateLocationAndMetaFromFSAtPath:(id)arg1 parentID:(id)arg2;
 - (void)updateStatMetadataFromServerItem:(id)arg1;
 - (void)updateStructuralCKInfoFromServerItem:(id)arg1;

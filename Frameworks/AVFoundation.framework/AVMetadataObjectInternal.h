@@ -5,16 +5,6 @@
 @class AVCaptureInput, AVMetadataObject, NSString;
 
 @interface AVMetadataObjectInternal : NSObject {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -25,9 +15,19 @@
             float height; 
         } size; 
     } _bounds;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _duration;
     AVCaptureInput *_input;
     AVMetadataObject *_originalMetadataObject;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _time;
     NSString *_type;
 }

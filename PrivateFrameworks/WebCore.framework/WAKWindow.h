@@ -14,54 +14,58 @@
 @class CALayer, WAKView;
 
 @interface WAKWindow : WAKResponder {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     struct CGSize { 
         float width; 
         float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct TCMalloc_SpinLock { 
-        unsigned int lockword_; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     } _availableScreenSize;
     WAKView *_contentView;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _exposedScrollViewRect;
+    struct TCMalloc_SpinLock { 
+        unsigned int lockword_; 
     } _exposedScrollViewRectLock;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _frame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _frozenVisibleRect;
     CALayer *_hostLayer;
     WAKView *_nextResponder;
     WAKView *_responderView;
     CALayer *_rootLayer;
     float _screenScale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _screenSize;
-    struct LegacyTileCache { id x1; struct RetainPtr<CGImage *> { void *x_2_1_1; } x2; boolx3; boolx4; boolx5; struct RetainPtr<LegacyTileCacheTombstone> { void *x_6_1_1; } x6; int x7; int x8; struct IntSize { int x_9_1_1; int x_9_1_2; } x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; struct OwnPtr<WebCore::LegacyTileGrid> { struct LegacyTileGrid {} *x_16_1_1; } x16; struct OwnPtr<WebCore::LegacyTileGrid> { struct LegacyTileGrid {} *x_17_1_1; } x17; struct Timer<WebCore::LegacyTileCache> { int (**x_18_1_1)(); double x_18_1_2; double x_18_1_3; double x_18_1_4; int x_18_1_5; unsigned int x_18_1_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow> {} *x_18_1_7; struct function<void ()>={type=[12C] {} x_18_1_8; struct __base<void ()> {} *x_18_1_9; } x18; } *_tileCache;
+
+  /* Unexpected information at end of encoded ivar type: {Vector<WebCore::IntRect, 0, WTF::CrashOnOverflow>=^{IntRect}II}fff{Mutex={_opaque_pthread_mutex_t=l[40c]}}{Mutex={_opaque_pthread_mutex_t=l[40c]}}{Mutex={_opaque_pthread_mutex_t=l[40c]}}B} */
+  /* Error parsing encoded ivar type info: ^{LegacyTileCache=@{RetainPtr<CGImage *>=^v}BBB{RetainPtr<LegacyTileCacheTombstone>=^v}ii{IntSize=ii}BBBBBB{OwnPtr<WebCore::LegacyTileGrid>=^{LegacyTileGrid}}{OwnPtr<WebCore::LegacyTileGrid>=^{LegacyTileGrid}}{Timer<WebCore::LegacyTileCache>=^^?dddiI^{Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow>}{function<void ()>={type=[12C]}^{__base<void ()>}}}{Vector<WebCore::IntRect, 0, WTF::CrashOnOverflow>=^{IntRect}II}fff{Mutex={_opaque_pthread_mutex_t=l[40c]}}{Mutex={_opaque_pthread_mutex_t=l[40c]}}{Mutex={_opaque_pthread_mutex_t=l[40c]}}B} */
+    struct LegacyTileCache { id x1; struct RetainPtr<CGImage *> { void *x_2_1_1; } x2; bool x3; bool x4; bool x5; struct RetainPtr<LegacyTileCacheTombstone> { void *x_6_1_1; } x6; int x7; int x8; struct IntSize { int x_9_1_1; int x_9_1_2; } x9; bool x10; bool x11; bool x12; bool x13; bool x14; bool x15; struct OwnPtr<WebCore::LegacyTileGrid> { struct LegacyTileGrid {} *x_16_1_1; } x16; struct OwnPtr<WebCore::LegacyTileGrid> { struct LegacyTileGrid {} *x_17_1_1; } x17; struct Timer<WebCore::LegacyTileCache> { int (**x_18_1_1)(); double x_18_1_2; double x_18_1_3; double x_18_1_4; int x_18_1_5; unsigned int x_18_1_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow> {} *x_18_1_7; struct function<void ()>={type=[12C] {} x_18_1_8; struct __base<void ()> {} *x_18_1_9; } x18; } *_tileCache;
+
     BOOL _useOrientationDependentFontAntialiasing;
     BOOL _visible;
 }
@@ -73,7 +77,6 @@
 + (BOOL)hasLandscapeOrientation;
 + (void)setOrientationProvider:(id)arg1;
 
-- (struct LegacyTileCache { id x1; struct RetainPtr<CGImage *> { void *x_2_1_1; } x2; boolx3; boolx4; boolx5; struct RetainPtr<LegacyTileCacheTombstone> { void *x_6_1_1; } x6; int x7; int x8; struct IntSize { int x_9_1_1; int x_9_1_2; } x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; struct OwnPtr<WebCore::LegacyTileGrid> { struct LegacyTileGrid {} *x_16_1_1; } x16; struct OwnPtr<WebCore::LegacyTileGrid> { struct LegacyTileGrid {} *x_17_1_1; } x17; struct Timer<WebCore::LegacyTileCache> { int (**x_18_1_1)(); double x_18_1_2; double x_18_1_3; double x_18_1_4; int x_18_1_5; unsigned int x_18_1_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow> {} *x_18_1_7; struct function<void ()>={type=[12C] {} x_18_1_8; struct __base<void ()> {} *x_18_1_9; } x18; }*)tileCache;
 - (id).cxx_construct;
 - (id)_newFirstResponderAfterResigning;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleRectRespectingMasksToBounds:(BOOL)arg1;
@@ -140,6 +143,7 @@
 - (void)setUseOrientationDependentFontAntialiasing:(BOOL)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (void)setZoomedOutTileScale:(float)arg1;
+- (struct LegacyTileCache { id x1; struct RetainPtr<CGImage *> { void *x_2_1_1; } x2; bool x3; bool x4; bool x5; struct RetainPtr<LegacyTileCacheTombstone> { void *x_6_1_1; } x6; int x7; int x8; struct IntSize { int x_9_1_1; int x_9_1_2; } x9; bool x10; bool x11; bool x12; bool x13; bool x14; bool x15; struct OwnPtr<WebCore::LegacyTileGrid> { struct LegacyTileGrid {} *x_16_1_1; } x16; struct OwnPtr<WebCore::LegacyTileGrid> { struct LegacyTileGrid {} *x_17_1_1; } x17; struct Timer<WebCore::LegacyTileCache> { int (**x_18_1_1)(); double x_18_1_2; double x_18_1_3; double x_18_1_4; int x_18_1_5; unsigned int x_18_1_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow> {} *x_18_1_7; struct function<void ()>={type=[12C] {} x_18_1_8; struct __base<void ()> {} *x_18_1_9; } x18; }*)tileCache;
 - (BOOL)tilesOpaque;
 - (int)tilingDirection;
 - (int)tilingMode;

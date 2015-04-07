@@ -14,7 +14,11 @@
     BOOL _hasSentCompletion;
     BRCOperationMultiplexer *_multiplexer;
     double _progress;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
     unsigned long long _size;
 }
 

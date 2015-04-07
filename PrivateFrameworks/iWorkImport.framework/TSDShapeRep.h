@@ -3,27 +3,27 @@
  */
 
 @interface TSDShapeRep : TSDStyledRep <TSDMagicMoveMatching> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     BOOL mDirectlyManagesLayerContent;
     BOOL mFrameInUnscaledCanvasIsValid;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mFrameInUnscaledCanvasRelativeToSuper;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mOriginalAliasedAlignmentFrameInLayerFrame;
     BOOL mShadowOnChildrenDisabled;
 }

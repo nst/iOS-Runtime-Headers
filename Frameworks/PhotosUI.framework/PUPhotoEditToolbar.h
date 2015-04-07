@@ -42,8 +42,8 @@
 - (void)setMainActionButton:(id)arg1;
 - (void)setSecondaryActionButton:(id)arg1;
 - (void)setToolButtons:(id)arg1;
-- (void)setUseTranslucentBackground:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setUseTranslucentBackground:(BOOL)arg1;
+- (void)setUseTranslucentBackground:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setupWithLayoutOrientation:(int)arg1;
 - (id)toolButtons;
 - (void)updateConstraints;

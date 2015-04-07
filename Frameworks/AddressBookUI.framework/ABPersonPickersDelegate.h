@@ -4,7 +4,7 @@
 
 @class ABImagePickerController, ABPersonTableViewDataSource, ABPersonViewControllerHelper, ABStyleProvider, NSString;
 
-@interface ABPersonPickersDelegate : NSObject <ABPickerViewControllerDelegate, ABImagePickerControllerDelegate> {
+@interface ABPersonPickersDelegate : NSObject <ABImagePickerControllerDelegate, ABPickerViewControllerDelegate> {
     ABPersonTableViewDataSource *_dataSource;
     ABPersonViewControllerHelper *_helper;
     ABImagePickerController *_imagePicker;
@@ -31,10 +31,10 @@
 - (void)dealloc;
 - (void)finishTearingDownImagePickerController;
 - (id)helper;
+- (id)imagePicker;
 - (void)imagePicker:(id)arg1 didDismissActionSheet:(id)arg2;
 - (void)imagePicker:(id)arg1 pickedPhoto:(id)arg2;
 - (void)imagePicker:(id)arg1 presentActionSheet:(id)arg2;
-- (id)imagePicker;
 - (id)imagePickerControllerViewControllerToPresentModal:(id)arg1;
 - (id)imagePickerControllerViewForApplyImageAnimation:(id)arg1;
 - (void)imagePickerWillBeRemoved:(id)arg1;

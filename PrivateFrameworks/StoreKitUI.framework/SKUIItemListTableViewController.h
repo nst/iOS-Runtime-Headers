@@ -5,9 +5,6 @@
 @class <SKUIItemListTableDelegate>, NSMutableIndexSet, NSOperationQueue, NSString, SKUIClientContext, SKUIItemArtworkContext, SKUIItemCollectionController, SKUIItemList, SKUIResourceLoader, SKUIStyledImageDataConsumer, SKUIUber, SSVLoadURLOperation;
 
 @interface SKUIItemListTableViewController : UITableViewController <SKUIItemCollectionDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
     SKUIItemArtworkContext *_artworkContext;
     SKUIClientContext *_clientContext;
     <SKUIItemListTableDelegate> *_delegate;
@@ -16,6 +13,9 @@
     BOOL _delegateWantsWillDisplay;
     BOOL _didLoadMore;
     NSMutableIndexSet *_hiddenIconIndexSet;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _imageBoundingSize;
     SKUIItemCollectionController *_itemCollectionController;
     SKUIItemList *_itemList;

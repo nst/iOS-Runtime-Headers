@@ -5,14 +5,14 @@
 @class <CoreActivityActivityDelegate>, NSTimer;
 
 @interface ActivityCounts : NSObject {
+    NSTimer *_calorieComputeTimer;
+    <CoreActivityActivityDelegate> *_delegate;
+    int _epoch_count;
     struct { 
         double xagg; 
         double yagg; 
         double zagg; 
         int numSamples; 
-    NSTimer *_calorieComputeTimer;
-    <CoreActivityActivityDelegate> *_delegate;
-    int _epoch_count;
     } calorieFeature;
 }
 

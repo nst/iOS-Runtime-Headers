@@ -5,10 +5,10 @@
 @class CKDPRecordIdentifier, CKDPRecordZoneIdentifier;
 
 @interface CKDPResource : PBCodable <NSCopying> {
+    long long _customClientResourceType;
     struct { 
         unsigned int customClientResourceType : 1; 
         unsigned int targetDatabase : 1; 
-    long long _customClientResourceType;
     } _has;
     CKDPRecordIdentifier *_recordId;
     int _targetDatabase;

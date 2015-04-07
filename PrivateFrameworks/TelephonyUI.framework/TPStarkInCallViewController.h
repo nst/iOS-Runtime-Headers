@@ -4,7 +4,7 @@
 
 @class <TPStarkInCallViewControllerDelegate>, NSArray, NSString, NSTimer, TPStarkInCallButtonsView, TPStarkInCallHardPauseButton, TPStarkPhoneCallGalleryView, TUCall, TUReplyWithMessageStore, UIView;
 
-@interface TPStarkInCallViewController : UIViewController <TPStarkPhoneCallGalleryViewDelegate, TPStarkHardPauseButtonDelegate, TPStarkInCallButtonsViewDelegate, UIActionSheetDelegate> {
+@interface TPStarkInCallViewController : UIViewController <TPStarkHardPauseButtonDelegate, TPStarkInCallButtonsViewDelegate, TPStarkPhoneCallGalleryViewDelegate, UIActionSheetDelegate> {
     TPStarkInCallButtonsView *_buttonsView;
     TUCall *_callToDecline;
     NSArray *_conferenceParticipants;
@@ -93,8 +93,8 @@
 - (void)setHardPauseButton:(id)arg1;
 - (void)setIncomingPhoneCall:(id)arg1;
 - (void)setIsMuted:(BOOL)arg1;
-- (void)setPrimaryPhoneCalls:(id)arg1 conferencePhoneCalls:(id)arg2 incomingPhoneCall:(id)arg3;
 - (void)setPrimaryPhoneCalls:(id)arg1;
+- (void)setPrimaryPhoneCalls:(id)arg1 conferencePhoneCalls:(id)arg2 incomingPhoneCall:(id)arg3;
 - (void)setViewUpdateClockTickTimer:(id)arg1;
 - (void)updateButtonsViewState;
 - (void)viewDidAppear:(BOOL)arg1;

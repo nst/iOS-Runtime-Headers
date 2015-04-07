@@ -5,22 +5,22 @@
 @class NSArray, NSMutableArray, PT2DGraphAxisStyle, UIColor;
 
 @interface PT2DGraphView : UIView {
-    struct CGPoint { 
-        float x; 
-        float y; 
+    NSArray *_data;
+    UIColor *_dataColor;
     struct CGSize { 
         float width; 
         float height; 
+    } _datumSize;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSArray *_data;
-    UIColor *_dataColor;
-    } _datumSize;
     } _edgeInsets;
     UIColor *_groundColor;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _origin;
     NSArray *_provisionalData;
     UIColor *_provisionalDataColor;

@@ -4,7 +4,7 @@
 
 @class HKQuantity, NSDate, NSDateComponents, NSString;
 
-@interface HKActivityCache : HKSample <NSCopying, HDCoding> {
+@interface HKActivityCache : HKSample <HDCoding, NSCopying> {
     long long _activeEnergyBurnedAnchor;
     double _activeHours;
     long long _activeHoursAnchor;
@@ -85,8 +85,8 @@
 - (void)_setBriskMinutesAnchor:(long long)arg1;
 - (void)_setCacheIndex:(long long)arg1;
 - (void)_setEnergyBurned:(id)arg1;
-- (void)_setEnergyBurnedGoal:(id)arg1 date:(id)arg2;
 - (void)_setEnergyBurnedGoal:(id)arg1;
+- (void)_setEnergyBurnedGoal:(id)arg1 date:(id)arg2;
 - (void)_setEnergyBurnedGoalAnchor:(long long)arg1;
 - (void)_setEnergyBurnedGoalDateOnly:(id)arg1;
 - (void)_setEnergyBurnedGoalOnly:(id)arg1;

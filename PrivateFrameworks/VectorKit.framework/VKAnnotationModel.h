@@ -14,14 +14,12 @@
 @class NSArray, NSMutableArray, NSMutableSet, NSString, VKAnnotationMarker, VKMapModel, VKStyleManager;
 
 @interface VKAnnotationModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
-    struct { 
-        int from; 
-        int to; 
-        unsigned int fromDisplayStyle; 
-        unsigned int toDisplayStyle; 
-        float fraction; 
     NSMutableSet *_animatingMarkers;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _annotationMarkerDeselectionCallback;
+
     NSMutableArray *_annotationMarkers;
     BOOL _didDragMarker;
     VKAnnotationMarker *_draggingAnnotationMarker;
@@ -29,6 +27,12 @@
     VKMapModel *_mapModel;
     NSMutableArray *_markersToAnimate;
     VKAnnotationMarker *_selectedAnnotationMarker;
+    struct { 
+        int from; 
+        int to; 
+        unsigned int fromDisplayStyle; 
+        unsigned int toDisplayStyle; 
+        float fraction; 
     } _styleTransitionState;
 }
 

@@ -16,8 +16,8 @@
 + (id)dataWithProperties:(id)arg1 layersProperties:(id)arg2 identifier:(id)arg3 imageSource:(id)arg4;
 + (id)textureWithImageData:(id)arg1;
 
-- (struct Color { float x1; float x2; float x3; float x4; })colorFromRedKey:(id)arg1 greenKey:(id)arg2 blueKey:(id)arg3 defaultGray:(float)arg4;
 - (struct ColorResult { BOOL x1; struct Color { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; })colorFromRedKey:(id)arg1 greenKey:(id)arg2 blueKey:(id)arg3;
+- (struct Color { float x1; float x2; float x3; float x4; })colorFromRedKey:(id)arg1 greenKey:(id)arg2 blueKey:(id)arg3 defaultGray:(float)arg4;
 - (void)dealloc;
 - (struct Color { float x1; float x2; float x3; float x4; })diffuse;
 - (struct Color { float x1; float x2; float x3; float x4; })emissive;

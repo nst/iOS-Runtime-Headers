@@ -3,11 +3,11 @@
  */
 
 @interface EDPivotAreaReference : NSObject {
-    boolmByPosition;
-    boolmRelative;
-    boolmSelected;
+    bool mByPosition;
     unsigned long mCount;
     unsigned long mFieldId;
+    bool mRelative;
+    bool mSelected;
 }
 
 + (id)pivotAreaReference;

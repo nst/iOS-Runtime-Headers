@@ -5,70 +5,47 @@
 @class <TSTCanvasReferenceController>, <TSTTableAnimationController>, <TSTTableChromeProvider>, <TSTTableRepDelegate>, CALayer, CAShapeLayer, NSMutableArray, NSMutableDictionary, NSSet, NSString, TSDCanvasView, TSDEditorController, TSDKnobTracker<TSTTableKnobTrackerVisitorProtocol>, TSDTilingLayer, TSTAnimation, TSTCellRegion, TSTEditingState, TSTLayout, TSTMasterLayout, TSTSearchReference, TSTSelectionDragController, TSTTableCellTextEditingRep, TSTTableInfo, TSTTableModel, TSTTableReferences, TSTTableSelection, TSWPHyperlinkField, TSWPStorage, TSWPTextEditing;
 
 @interface TSTTableRep : TSWPTextHostRep <UITextFieldDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
-    struct { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
-    struct { 
-        struct { 
-            unsigned short row; 
-            unsigned char column; 
-            unsigned char reserved; 
-        } origin; 
-        struct { 
-            unsigned short numberOfColumns; 
-            unsigned short numberOfRows; 
-        } size; 
-    struct { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
     BOOL _settingSelection;
     <TSTTableAnimationController> *mAnimationController;
     NSMutableArray *mAnimationStack;
     <TSTCanvasReferenceController> *mCanvasReferenceController;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mCanvasVisibleRect;
     TSTSelectionDragController *mCellDragController;
     CAShapeLayer *mCellEditingMaskLayer;
     NSMutableDictionary *mChildTextReps;
     TSTTableCellTextEditingRep *mContainedTextEditingRep;
+    struct { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
     } mControlCellID;
     float mCurrentScreenScale;
     <TSTTableRepDelegate> *mDelegate;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } mDirtyCellRange;
     BOOL mDragByHandleOnly;
+    struct { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
     } mEditingHyperlinkCellID;
     CAShapeLayer *mFindSelectionHighlightLayer;
     CAShapeLayer *mHighlightedHyperlinkLayer;
@@ -87,9 +64,22 @@
     CALayer *mOverlayFrozenHeaderTableBodyMask;
     CALayer *mOverlayFrozenHeaderTableNameMask;
     TSDTilingLayer *mOverlayTableName;
+    struct { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
     } mRatingsDragCellID;
     BOOL mRecursivelyDrawingInContext;
     TSTTableReferences *mReferences;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mSearchSelectionBounds;
     BOOL mSelectionUsesBezierPath;
     BOOL mSelectsCellOnInitialTap;
@@ -101,6 +91,16 @@
     NSSet *mVisibleFillKnobs;
     TSDKnobTracker<TSTTableKnobTrackerVisitorProtocol> *mVisitorKnobTracker;
     BOOL mWPEndedTableNameEditing;
+    struct { 
+        struct { 
+            unsigned short row; 
+            unsigned char column; 
+            unsigned char reserved; 
+        } origin; 
+        struct { 
+            unsigned short numberOfColumns; 
+            unsigned short numberOfRows; 
+        } size; 
     } mZoomToEditVisibleCellRange;
 }
 
@@ -171,8 +171,8 @@
 - (id)hitRepChrome:(struct CGPoint { float x1; float x2; })arg1;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (void)invalidateAnnotationColor;
-- (void)invalidateCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 fittingRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 invalidateSize:(BOOL)arg3;
 - (void)invalidateCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)invalidateCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 fittingRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 invalidateSize:(BOOL)arg3;
 - (void)invalidateComments;
 - (void)invalidateEditingCell;
 - (void)invalidateFrozenHeaders;

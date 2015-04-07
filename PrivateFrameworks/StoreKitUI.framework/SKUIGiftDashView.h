@@ -5,10 +5,10 @@
 @class UIColor;
 
 @interface SKUIGiftDashView : UIView {
+    UIColor *_dashColor;
     struct CGSize { 
         float width; 
         float height; 
-    UIColor *_dashColor;
     } _dashSize;
     float _dashSpacing;
 }

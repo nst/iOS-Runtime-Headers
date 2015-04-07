@@ -4,7 +4,7 @@
 
 @class NSArray, NSDictionary, NSString;
 
-@interface NSException : NSObject <NSCopying, NSCoding> {
+@interface NSException : NSObject <NSCoding, NSCopying> {
     NSString *name;
     NSString *reason;
     id reserved;
@@ -20,8 +20,8 @@
 + (void)errnoRaise:(id)arg1 format:(id)arg2;
 + (void)errnoRaise:(id)arg1 format:(id)arg2;
 + (id)exceptionWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
-+ (void)raise:(id)arg1 format:(id)arg2 arguments:(void*)arg3;
 + (void)raise:(id)arg1 format:(id)arg2;
++ (void)raise:(id)arg1 format:(id)arg2 arguments:(void*)arg3;
 + (void)raiseWithError:(id)arg1;
 + (void)raiseWithError:(id)arg1;
 

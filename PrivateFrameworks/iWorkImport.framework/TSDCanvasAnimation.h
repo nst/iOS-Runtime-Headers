@@ -12,7 +12,11 @@
     BOOL _allAnimationsFinishedBeforeStopping;
     TSUNoCopyDictionary *_animationDictionariesForLayers;
     NSString *_animationID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     void *_context;
     double _delay;
     id _delegate;

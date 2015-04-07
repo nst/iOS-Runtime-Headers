@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_source>;
 
 @interface NACEventThrottler : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _eventBlock;
+
     double _lastUpdateTime;
     double _minimumDelay;
     NSObject<OS_dispatch_source> *_timer;

@@ -4,7 +4,7 @@
 
 @class <NSCopying><NSSecureCoding>, GSDocumentIdentifier, GSStagingPrefix, NSData, NSURL;
 
-@interface GSPermanentStorage : NSObject <GSAdditionStoringPrivate, GSAdditionStoring> {
+@interface GSPermanentStorage : NSObject <GSAdditionStoring, GSAdditionStoringPrivate> {
     GSDocumentIdentifier *_documentID;
     NSURL *_documentURL;
     NSData *_privExtension;

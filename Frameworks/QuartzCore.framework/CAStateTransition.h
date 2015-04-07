@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface CAStateTransition : NSObject <NSCopying, NSCoding> {
+@interface CAStateTransition : NSObject <NSCoding, NSCopying> {
     NSArray *_elements;
     NSString *_fromState;
     NSString *_toState;

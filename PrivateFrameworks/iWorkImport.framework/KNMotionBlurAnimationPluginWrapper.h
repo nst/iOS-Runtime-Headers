@@ -9,6 +9,8 @@
 @class KNMotionBlurWrapper, NSArray, NSDictionary, NSObject<KNAnimationPluginAnimationRendering>;
 
 @interface KNMotionBlurAnimationPluginWrapper : NSObject {
+    NSDictionary *_animationCacheDict;
+    NSDictionary *_animationDict;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,6 +20,8 @@
             float width; 
             float height; 
         } size; 
+    } _animationFrame;
+    NSObject<KNAnimationPluginAnimationRendering> *_animationPlugin;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -27,6 +31,10 @@
             float width; 
             float height; 
         } size; 
+    } _drawableFrame;
+    NSArray *_generatedTextures;
+    BOOL _isSetup;
+    KNMotionBlurWrapper *_motionBlurWrapper;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -44,18 +52,14 @@
         float m42; 
         float m43; 
         float m44; 
-    NSDictionary *_animationCacheDict;
-    NSDictionary *_animationDict;
-    } _animationFrame;
-    NSObject<KNAnimationPluginAnimationRendering> *_animationPlugin;
-    } _drawableFrame;
-    NSArray *_generatedTextures;
-    BOOL _isSetup;
-    KNMotionBlurWrapper *_motionBlurWrapper;
     } _projectionTransform;
     BOOL _shouldDrawMotionBlur;
     BOOL _shouldGenerateNewTexturesFromLayers;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _textureDrawOptionsBlock;
+
 }
 
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } animationFrame;

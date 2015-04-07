@@ -10,7 +10,11 @@
 
 @interface GKDiscoveryBonjourResolveContainer : NSObject {
     GKDiscoveryBonjour *_context;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resolveCompletionHandler;
+
     NSMutableArray *_serviceRefList;
 }
 

@@ -5,11 +5,11 @@
 @class NSDictionary;
 
 @interface BLRedEyeBrushTap : AutoEncodeDecodeObject {
+    int _destinationWidth;
+    NSDictionary *_eyeRepairData;
     struct CGPoint { 
         float x; 
         float y; 
-    int _destinationWidth;
-    NSDictionary *_eyeRepairData;
     } _point;
     double _timestamp;
 }

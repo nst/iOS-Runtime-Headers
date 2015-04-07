@@ -15,10 +15,10 @@
 - (void).cxx_destruct;
 - (id)_createStepSampleWithStepCount:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (id)_dateComponentsFromString:(id)arg1;
-- (void)_failedTest:(id)arg1 withResults:(id)arg2;
 - (void)_failedTest:(id)arg1;
-- (void)_finishedTest:(id)arg1 extraResults:(id)arg2;
+- (void)_failedTest:(id)arg1 withResults:(id)arg2;
 - (void)_finishedTest:(id)arg1;
+- (void)_finishedTest:(id)arg1 extraResults:(id)arg2;
 - (id)_generateStepSamples:(int)arg1;
 - (void)_invalidParams:(id)arg1 forTest:(id)arg2;
 - (unsigned int)_randomNumberBetweenMin:(unsigned int)arg1 max:(unsigned int)arg2;

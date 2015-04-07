@@ -16,7 +16,10 @@
 @interface SKSequence : SKAction {
     NSArray *_actions;
     unsigned long _animIndex;
-    struct SKCSequence { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; struct vector<SKCAction *, std::__1::allocator<SKCAction *> > { struct SKCAction {} **x_22_1_1; struct SKCAction {} **x_22_1_2; struct __compressed_pair<SKCAction **, std::__1::allocator<SKCAction *> > { struct SKCAction {} **x_3_2_1; } x_22_1_3; } x22; unsigned long x23; } *_mycaction;
+
+  /* Error parsing encoded ivar type info: ^{SKCSequence=^^?If@?@BddffdBB@?iffff{vector<SKCAction *, std::__1::allocator<SKCAction *> >=^^{SKCAction}^^{SKCAction}{__compressed_pair<SKCAction **, std::__1::allocator<SKCAction *> >=^^{SKCAction}}}L} */
+    struct SKCSequence { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; bool x7; double x8; double x9; float x10; float x11; double x12; bool x13; bool x14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; struct vector<SKCAction *, std::__1::allocator<SKCAction *> > { struct SKCAction {} **x_22_1_1; struct SKCAction {} **x_22_1_2; struct __compressed_pair<SKCAction **, std::__1::allocator<SKCAction *> > { struct SKCAction {} **x_3_2_1; } x_22_1_3; } x22; unsigned long x23; } *_mycaction;
+
 }
 
 + (id)sequenceWithActions:(id)arg1;

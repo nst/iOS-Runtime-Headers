@@ -15,7 +15,11 @@
     float _cloudRightInset;
     NSString *_copyright;
     UILabel *_copyrightYearLabel;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _downloadActionBlock;
+
     UILabel *_durationLabel;
     UIView *_hairlineView;
     MPUItemOfferButton *_itemOfferButton;

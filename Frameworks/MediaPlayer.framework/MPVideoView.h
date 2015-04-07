@@ -56,9 +56,9 @@
 - (void)setMovieTitle:(id)arg1;
 - (void)setMovieWithPath:(id)arg1;
 - (void)setPlayer:(id)arg1;
+- (void)setScaleMode:(unsigned int)arg1;
 - (void)setScaleMode:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setScaleMode:(unsigned int)arg1 duration:(float)arg2;
-- (void)setScaleMode:(unsigned int)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setStopTime:(double)arg1;
 - (void)setVideoID:(id)arg1;

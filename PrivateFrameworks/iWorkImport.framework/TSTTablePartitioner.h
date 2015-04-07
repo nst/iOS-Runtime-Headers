@@ -5,13 +5,13 @@
 @class NSMutableDictionary, TSDInfoGeometry, TSTLayout, TSTTableInfo, TSUPointerKeyDictionary;
 
 @interface TSTTablePartitioner : NSObject <TSDPartitioner> {
-    struct CGSize { 
-        float width; 
-        float height; 
     float mFirstPartitionWidth;
     TSUPointerKeyDictionary *mHintMatricesByCanvas;
     TSDInfoGeometry *mInfoGeometry;
     NSMutableDictionary *mPartitioningPassCache;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mScaleToFit;
     TSTLayout *mScaledLayout;
     TSTTableInfo *mTableInfo;

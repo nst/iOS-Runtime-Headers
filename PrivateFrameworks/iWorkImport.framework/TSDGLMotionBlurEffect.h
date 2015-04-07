@@ -5,12 +5,6 @@
 @class TSDGLDataBuffer, TSDGLFrameBuffer, TSDGLShader, TSDGLState;
 
 @interface TSDGLMotionBlurEffect : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     TSDGLDataBuffer *_FBODataBuffer;
     TSDGLState *_GLState;
     TSDGLDataBuffer *_colorFBODataBuffer;
@@ -19,10 +13,16 @@
     int _debugDrawMode;
     TSDGLShader *_defaultTextureShader;
     float _framebufferScale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _framebufferSize;
     BOOL _isSingleObject;
     float _motionBlurStrength;
     int _originalViewport[4];
+    struct CGSize { 
+        float width; 
+        float height; 
     } _slideSize;
     TSDGLShader *_velocityCollectionShader;
     TSDGLDataBuffer *_velocityFBODataBuffer;

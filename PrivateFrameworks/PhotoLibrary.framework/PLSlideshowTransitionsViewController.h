@@ -30,8 +30,8 @@
 - (id)selectedTransition;
 - (void)setAlternateLocalizations:(id)arg1;
 - (void)setSelectedTransition:(id)arg1;
-- (void)setTransitionKeys:(id)arg1 alternateLocalizations:(id)arg2;
 - (void)setTransitionKeys:(id)arg1;
+- (void)setTransitionKeys:(id)arg1 alternateLocalizations:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

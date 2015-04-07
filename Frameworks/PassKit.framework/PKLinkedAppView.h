@@ -56,8 +56,8 @@
 - (void)_cleanupViews;
 - (struct CGSize { float x1; float x2; })_desiredSizeForNewsstandItem:(id)arg1;
 - (int)_iconOptionsForItem:(id)arg1;
-- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2 requireStrictMatch:(BOOL)arg3;
 - (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2 requireStrictMatch:(BOOL)arg3;
 - (int)_iconVariantForImage:(id)arg1 item:(id)arg2;
 - (id)_imageForSize:(struct CGSize { float x1; float x2; })arg1 fromArtwork:(id)arg2 requireStrictMatch:(BOOL)arg3;
 - (BOOL)_itemArtNeedsShine:(id)arg1;

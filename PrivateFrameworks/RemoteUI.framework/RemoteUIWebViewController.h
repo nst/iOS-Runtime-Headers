@@ -10,7 +10,11 @@
 
 @interface RemoteUIWebViewController : UIViewController <UIWebViewDelegate> {
     <RemoteUIWebViewControllerDelegate> *_delegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _loadCompletion;
+
     BOOL _scalesPageToFit;
     _UIBackdropView *_statusBarBackdrop;
     UIToolbar *_toolbar;
@@ -30,16 +34,16 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)donePressed:(id)arg1;
-- (void)loadURL:(id)arg1 completion:(id)arg2;
 - (void)loadURL:(id)arg1;
+- (void)loadURL:(id)arg1 completion:(id)arg2;
 - (BOOL)scalesPageToFit;
 - (void)setDelegate:(id)arg1;
 - (void)setScalesPageToFit:(BOOL)arg1;
 - (id)toolbar;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (id)webView;
+- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webViewDidFinishLoad:(id)arg1;
 
 @end

@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface RMSAudioRouteMessage : PBCodable <NSCopying> {
+    NSString *_displayName;
     struct { 
         unsigned int macAddress : 1; 
         unsigned int selected : 1; 
         unsigned int supportsVideo : 1; 
-    NSString *_displayName;
     } _has;
     long long _macAddress;
     BOOL _selected;

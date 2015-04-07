@@ -5,38 +5,6 @@
 @class <NSObject><UIPDFPageViewDelegate>, CALayer, NSMutableArray, UIActivityIndicatorView, UIColor, UIImage, UIPDFAnnotationController, UIPDFDocument, UIPDFPage, UIPDFPageContentDelegate, UIPDFSearchHighlightsController, UIPDFSelectionController, UIPDFViewTouchHandler;
 
 @interface UIPDFPageView : UIView {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     UIActivityIndicatorView *_activityIndicator;
     BOOL _allowHighlighting;
     BOOL _allowSelection;
@@ -53,6 +21,15 @@
     float _cachedScale;
     UIPDFPageContentDelegate *_contentDelegate;
     CALayer *_contentLayer;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _cropBox;
     <NSObject><UIPDFPageViewDelegate> *_delegate;
     UIPDFDocument *_document;
@@ -63,6 +40,13 @@
     float _margin;
     UIPDFPage *_page;
     unsigned int _pageIndex;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _pageToViewTransform;
     BOOL _scalePageOnDraw;
     UIPDFSearchHighlightsController *_searchHighlightController;
@@ -74,8 +58,24 @@
     UIPDFViewTouchHandler *_touchHandler;
     BOOL _useBackingLayer;
     BOOL _useTiledContent;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _viewToPageTransform;
     BOOL showAnnotations;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } zoomRect;
 }
 
@@ -138,8 +138,8 @@
 - (void)highlightSearchSelection:(id)arg1 animated:(BOOL)arg2;
 - (void)ignoreTouches:(BOOL)arg1;
 - (id)init;
-- (id)initWithPage:(id)arg1 tiledContent:(BOOL)arg2;
 - (id)initWithPage:(id)arg1;
+- (id)initWithPage:(id)arg1 tiledContent:(BOOL)arg2;
 - (void)layoutSubviews;
 - (void)layoutTextEffects;
 - (float)margin;

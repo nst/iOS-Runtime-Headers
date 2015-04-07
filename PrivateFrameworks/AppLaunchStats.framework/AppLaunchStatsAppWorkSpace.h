@@ -8,9 +8,13 @@
 
 @class AppLaunchStatsSaveAndRestore, LSApplicationWorkspace, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface AppLaunchStatsAppWorkSpace : NSObject <LSApplicationWorkspaceObserverProtocol, DuetLoggerProtocol, DuetSaveAndRestore> {
+@interface AppLaunchStatsAppWorkSpace : NSObject <DuetLoggerProtocol, DuetSaveAndRestore, LSApplicationWorkspaceObserverProtocol> {
     LSApplicationWorkspace *appWorkSpace;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id callback;
+
     AppLaunchStatsSaveAndRestore *saveAndRestoreContext;
     NSMutableDictionary *uninstalledApps;
     NSObject<OS_dispatch_queue> *wsQueue;

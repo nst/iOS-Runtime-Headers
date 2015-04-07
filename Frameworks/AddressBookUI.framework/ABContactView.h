@@ -5,14 +5,14 @@
 @class <ABContactViewDataSource>, <ABContactViewDelegate>, ABContactHeaderView, CNContact, NSDictionary, UIColor, UIView;
 
 @interface ABContactView : UITableView {
+    NSDictionary *_actionTextAttributes;
+    BOOL _cellsLayoutCachingEnabled;
+    CNContact *_contact;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSDictionary *_actionTextAttributes;
-    BOOL _cellsLayoutCachingEnabled;
-    CNContact *_contact;
     } _contentMargins;
     UIView *_customHeaderView;
     NSDictionary *_labelTextAttributes;

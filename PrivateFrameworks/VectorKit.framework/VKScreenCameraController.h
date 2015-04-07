@@ -5,25 +5,25 @@
 @class <VKTrackableAnnotation>, NSString, VKAnimation, VKAnnotationTrackingCameraController;
 
 @interface VKScreenCameraController : VKCameraController <VKCameraControllerDelegate> {
+    VKAnnotationTrackingCameraController *_annotationTrackingCameraController;
+    int _annotationTrackingZoomStyle;
+    double _beganDoublePanPitch;
     struct VKEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    VKAnnotationTrackingCameraController *_annotationTrackingCameraController;
-    int _annotationTrackingZoomStyle;
-    double _beganDoublePanPitch;
     } _edgeInsets;
     BOOL _isPitchIncreasing;
     BOOL _isPitchable;
     double _lastRotation;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _panLastScreenPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _panStartScreenPoint;
     VKAnimation *_pitchAnimation;
     VKAnimation *_regionAnimation;

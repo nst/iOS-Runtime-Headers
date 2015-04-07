@@ -4,7 +4,7 @@
 
 @class NSData, NSDate, NSString;
 
-@interface CPLRecordChange : NSObject <NSSecureCoding, NSCopying> {
+@interface CPLRecordChange : NSObject <NSCopying, NSSecureCoding> {
     unsigned int _changeType;
     NSDate *_dateDeleted;
     NSString *_identifier;
@@ -72,8 +72,8 @@
 - (id)proposedCloudIdentifierWithError:(id*)arg1;
 - (id)proposedLocalIdentifier;
 - (id)realIdentifier;
-- (id)realRecordChangeFromRecordChange:(id)arg1 newRecord:(id*)arg2 updatedProperties:(id*)arg3;
 - (id)realRecordChangeFromRecordChange:(id)arg1 newRecord:(id*)arg2;
+- (id)realRecordChangeFromRecordChange:(id)arg1 newRecord:(id*)arg2 updatedProperties:(id*)arg3;
 - (unsigned long long)realResourceSize;
 - (id)recordChangeData;
 - (id)recordModificationDate;

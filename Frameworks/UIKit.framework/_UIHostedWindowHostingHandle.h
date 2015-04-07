@@ -3,13 +3,7 @@
  */
 
 @interface _UIHostedWindowHostingHandle : NSObject <NSSecureCoding> {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+    unsigned int _contextID;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -19,8 +13,14 @@
             float width; 
             float height; 
         } size; 
-    unsigned int _contextID;
     } _rootLayerFrame;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _rootLayerTransform;
 }
 

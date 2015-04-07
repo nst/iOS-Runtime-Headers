@@ -4,7 +4,7 @@
 
 @class NSCountedSet, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
-@interface CPLProxyLibraryManager : CPLPlatformObject <CPLClientLibraryManagerProtocol, NSXPCConnectionDelegate, CPLLibraryManagerImplementation> {
+@interface CPLProxyLibraryManager : CPLPlatformObject <CPLClientLibraryManagerProtocol, CPLLibraryManagerImplementation, NSXPCConnectionDelegate> {
     NSXPCConnection *_connection;
     BOOL _diagnosticsEnabled;
     NSCountedSet *_disablingReasons;

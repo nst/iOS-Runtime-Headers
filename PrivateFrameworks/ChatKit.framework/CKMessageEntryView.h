@@ -4,31 +4,11 @@
 
 @class <CKJoystickGestureRecognizerButtonDelegate>, <CKMessageEntryViewDelegate>, CAMShutterButton, CKAudioRecorder, CKComposition, CKConversation, CKInlineAudioReplyButtonController, CKJoystickController, CKJoystickGestureRecognizerButton, CKMessageEntryAudioHintView, CKMessageEntryContentView, CKMessageEntryRecordedAudioView, CKMessageEntryWaveformView, NSString, UIButton, UILabel, UIView, _UIBackdropView, _UITextFieldRoundedRectBackgroundViewNeue;
 
-@interface CKMessageEntryView : UIView <CKMessageEntryContentViewDelegate, CKAudioRecorderDelegate, CKJoystickControllerDelegate, CKMessageEntryRecordedAudioViewDelegate, CKJoystickGestureRecognizerButtonDelegate, CKInlineAudioReplyButtonDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+@interface CKMessageEntryView : UIView <CKAudioRecorderDelegate, CKInlineAudioReplyButtonDelegate, CKJoystickControllerDelegate, CKJoystickGestureRecognizerButtonDelegate, CKMessageEntryContentViewDelegate, CKMessageEntryRecordedAudioViewDelegate> {
     UIButton *_audioButton;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _audioButtonSize;
     CKComposition *_audioComposition;
     CKMessageEntryAudioHintView *_audioHintView;
@@ -38,6 +18,9 @@
     _UIBackdropView *_backdropView;
     BOOL _characterCountHidden;
     UILabel *_characterCountLabel;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _characterCountSize;
     BOOL _composingRecipient;
     UIView *_contentClipView;
@@ -46,6 +29,9 @@
     _UITextFieldRoundedRectBackgroundViewNeue *_coverView;
     <CKMessageEntryViewDelegate> *_delegate;
     UIButton *_deleteAudioRecordingButton;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _deleteAudioRecordingButtonSize;
     BOOL _dimmed;
     UIView *_dimmingView;
@@ -56,11 +42,22 @@
     UIView *_knockoutCoverView;
     BOOL _performingJoystickSendAction;
     UIButton *_photoButton;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _photoButtonSize;
     CKMessageEntryRecordedAudioView *_recordedAudioView;
     CKAudioRecorder *_recorder;
     UIButton *_sendButton;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _sendButtonSize;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _sendTextAlignmentInsets;
     BOOL _sendingMessage;
     BOOL _shouldKnockoutCoverView;
@@ -74,6 +71,9 @@
     <CKJoystickGestureRecognizerButtonDelegate> *_videoDelegate;
     CKJoystickGestureRecognizerButton *_videoJoystickGestureRecognizerButton;
     CKMessageEntryWaveformView *_waveformView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _waveformViewSize;
 }
 

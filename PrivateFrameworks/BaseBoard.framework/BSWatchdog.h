@@ -10,7 +10,11 @@
 
 @interface BSWatchdog : NSObject {
     BOOL _completed;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     <BSWatchdogDelegate> *_delegate;
     BOOL _hasFired;
     BOOL _invalidated;
@@ -39,10 +43,10 @@
 - (id)delegate;
 - (id)description;
 - (BOOL)hasFired;
-- (id)initWithProvider:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)initWithProvider:(id)arg1 queue:(id)arg2;
-- (id)initWithTimeout:(double)arg1 queue:(id)arg2 completion:(id)arg3;
+- (id)initWithProvider:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)initWithTimeout:(double)arg1 queue:(id)arg2;
+- (id)initWithTimeout:(double)arg1 queue:(id)arg2 completion:(id)arg3;
 - (void)invalidate;
 - (id)provider;
 - (id)queue;

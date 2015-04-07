@@ -4,7 +4,7 @@
 
 @class <EKReminderLocationPickerDelegate>, <EKStyleProvider>, EKReminderLocationPickerCell, EKReminderLocationPickerModel, NSString, UIAlertView;
 
-@interface EKReminderLocationPicker : UITableViewController <ABPeoplePickerNavigationControllerDelegate, EKReminderLocationPickerModelDelegate, UIAlertViewDelegate, UITextFieldDelegate, EKReminderLocationPickerCellButtonHandler> {
+@interface EKReminderLocationPicker : UITableViewController <ABPeoplePickerNavigationControllerDelegate, EKReminderLocationPickerCellButtonHandler, EKReminderLocationPickerModelDelegate, UIAlertViewDelegate, UITextFieldDelegate> {
     BOOL _allowsShowInMap;
     EKReminderLocationPickerCell *_currentLocationCell;
     BOOL _hasEditedText;

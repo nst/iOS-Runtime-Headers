@@ -9,7 +9,11 @@
 @class <CKComposeRecipientSelectionControllerDelegate>, NSArray, NSString;
 
 @interface CKComposeRecipientSelectionController : CKRecipientSelectionController <UITextFieldDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sendBlock;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

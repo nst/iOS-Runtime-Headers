@@ -14,8 +14,8 @@
 + (id)clearColor;
 + (id)colorWithBGR:(unsigned long)arg1;
 + (id)colorWithBGRValue:(long)arg1;
-+ (id)colorWithBinaryRed:(int)arg1 green:(int)arg2 blue:(int)arg3 alpha:(int)arg4;
 + (id)colorWithBinaryRed:(int)arg1 green:(int)arg2 blue:(int)arg3;
++ (id)colorWithBinaryRed:(int)arg1 green:(int)arg2 blue:(int)arg3 alpha:(int)arg4;
 + (id)colorWithCGColor:(struct CGColor { }*)arg1;
 + (id)colorWithCalibratedHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 + (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;

@@ -14,7 +14,7 @@
 - (void)_prepareShiftForLocation:(id)arg1 withCompletionHandler:(id)arg2 withShiftRequestBlock:(id)arg3;
 - (id)init;
 - (BOOL)isLocationShiftEnabled;
-- (void)shiftLocation:(id)arg1 withCompletionHandler:(id)arg2 callbackQueue:(id)arg3;
 - (void)shiftLocation:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)shiftLocation:(id)arg1 withCompletionHandler:(id)arg2 callbackQueue:(id)arg3;
 
 @end

@@ -15,8 +15,8 @@
 + (id)nonTerminalWithLabel:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_checkForCycles:(id)arg1;
 - (void)_checkForCycles;
+- (void)_checkForCycles:(id)arg1;
 - (void)_invalidate;
 - (id)_label;
 - (unsigned int)_minimumLength;

@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface TSCH3DViewFrustumCullingDelegate : NSObject <TSCH3DChartAllSceneObjectDelegate, TSCH3DSceneObjectDelegator> {
+    unsigned int mCullCnt;
+    unsigned int mCullTotalCnt;
     struct vector<TSCH3D::Math::ExtendedTypesDetails::plane<glm::detail::tvec3<float> >, std::__1::allocator<TSCH3D::Math::ExtendedTypesDetails::plane<glm::detail::tvec3<float> > > > { 
         struct plane<glm::detail::tvec3<float> > {} *__begin_; 
         struct plane<glm::detail::tvec3<float> > {} *__end_; 
         struct __compressed_pair<TSCH3D::Math::ExtendedTypesDetails::plane<glm::detail::tvec3<float> > *, std::__1::allocator<TSCH3D::Math::ExtendedTypesDetails::plane<glm::detail::tvec3<float> > > > { 
             struct plane<glm::detail::tvec3<float> > {} *__first_; 
         } __end_cap_; 
-    unsigned int mCullCnt;
-    unsigned int mCullTotalCnt;
     } mCullingPlanes;
 }
 

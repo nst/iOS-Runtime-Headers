@@ -5,12 +5,20 @@
 @class <SCROBrailleDisplayCommandDispatcherProtocol>, <SCROBrailleDisplayDelegate>, <SCROBrailleDriverProtocol>, <SCROIOElementProtocol>, NSData, NSLock, NSMutableArray, NSMutableString, NSString, SCROBrailleEventDispatcher, SCROBrailleLine;
 
 @interface SCROBrailleDisplay : NSObject <SCROBrailleDisplayCommandDispatcherDelegate> {
-    struct { 
-        NSData *realData; 
-        NSData *virtualData; 
-        NSData *aggregatedData; 
-        int virtualAlignment; 
-        int masterStatusCellIndex; 
+    BOOL _automaticBrailleTranslationEnabled;
+    struct __CFRunLoopTimer { } *_blinkerEventTimer;
+    BOOL _blinkingEnabled;
+    <SCROBrailleDriverProtocol> *_brailleDriver;
+    int _brailleInputMode;
+    SCROBrailleLine *_brailleLine;
+    <SCROBrailleDisplayCommandDispatcherProtocol> *_commandDispatcher;
+    NSLock *_contentLock;
+    int _contractionMode;
+    <SCROBrailleDisplayDelegate> *_delegate;
+    BOOL _delegateWantsDisplayCallback;
+    NSString *_driverIdentifier;
+    NSString *_driverModelIdentifier;
+    SCROBrailleEventDispatcher *_eventDispatcher;
     struct { 
         double quietSince; 
         double busySince; 
@@ -42,20 +50,6 @@
         double lastBrailleChordPosted; 
         double brailleCharExponentialMovingAverage; 
         double brailleTranslationTimeout; 
-    BOOL _automaticBrailleTranslationEnabled;
-    struct __CFRunLoopTimer { } *_blinkerEventTimer;
-    BOOL _blinkingEnabled;
-    <SCROBrailleDriverProtocol> *_brailleDriver;
-    int _brailleInputMode;
-    SCROBrailleLine *_brailleLine;
-    <SCROBrailleDisplayCommandDispatcherProtocol> *_commandDispatcher;
-    NSLock *_contentLock;
-    int _contractionMode;
-    <SCROBrailleDisplayDelegate> *_delegate;
-    BOOL _delegateWantsDisplayCallback;
-    NSString *_driverIdentifier;
-    NSString *_driverModelIdentifier;
-    SCROBrailleEventDispatcher *_eventDispatcher;
     } _input;
     BOOL _inputAllowed;
     SCROBrailleLine *_inputBrailleLine;
@@ -72,6 +66,12 @@
     struct __CFRunLoop { } *_runLoop;
     BOOL _shouldBatchUpdates;
     BOOL _showEightDot;
+    struct { 
+        NSData *realData; 
+        NSData *virtualData; 
+        NSData *aggregatedData; 
+        int virtualAlignment; 
+        int masterStatusCellIndex; 
     } _status;
     int _statusSize;
 }

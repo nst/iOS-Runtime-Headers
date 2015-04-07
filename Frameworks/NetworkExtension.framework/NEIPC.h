@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_data>, NSObject<OS_dispatch_io>;
 
 @interface NEIPC : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _messageHandler;
+
     NSObject<OS_dispatch_data> *_previousData;
     int _socket;
     NSObject<OS_dispatch_io> *_socket_io;

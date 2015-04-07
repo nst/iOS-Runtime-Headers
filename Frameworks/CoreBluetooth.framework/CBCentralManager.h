@@ -5,6 +5,8 @@
 @class <CBCentralManagerDelegate>, CBPairingAgent, CBXpcConnection, NSMapTable, NSString;
 
 @interface CBCentralManager : NSObject <CBPairingAgentParentDelegate, CBXpcConnectionDelegate> {
+    CBXpcConnection *_connection;
+    <CBCentralManagerDelegate> *_delegate;
     struct { 
         unsigned int willRestoreState : 1; 
         unsigned int didRetrievePeripherals : 1; 
@@ -16,8 +18,6 @@
         unsigned int didUpdatePeripheralConnectionState : 1; 
         unsigned int didLoseZone : 1; 
         unsigned int didUpdateConnectionParameters : 1; 
-    CBXpcConnection *_connection;
-    <CBCentralManagerDelegate> *_delegate;
     } _delegateFlags;
     BOOL _isScanning;
     CBPairingAgent *_pairingAgent;
@@ -34,8 +34,8 @@
 @property int state;
 @property(readonly) Class superclass;
 
-- (void)cancelPeripheralConnection:(id)arg1 force:(BOOL)arg2;
 - (void)cancelPeripheralConnection:(id)arg1;
+- (void)cancelPeripheralConnection:(id)arg1 force:(BOOL)arg2;
 - (void)connectPeripheral:(id)arg1 options:(id)arg2;
 - (id)dataArrayToUUIDArray:(id)arg1;
 - (void)dealloc;
@@ -52,8 +52,8 @@
 - (void)handleRestoringState:(id)arg1;
 - (void)handleStateUpdated:(id)arg1;
 - (void)handleZoneLost:(id)arg1;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3;
 - (BOOL)isMsgAllowedAlways:(int)arg1;
 - (BOOL)isMsgAllowedWhenOff:(int)arg1;
 - (BOOL)isScanning;
@@ -63,8 +63,8 @@
 - (id)peripheralWithInfo:(id)arg1;
 - (oneway void)release;
 - (void)retrieveConnectedPeripherals;
-- (id)retrieveConnectedPeripheralsWithServices:(id)arg1 allowAll:(BOOL)arg2;
 - (id)retrieveConnectedPeripheralsWithServices:(id)arg1;
+- (id)retrieveConnectedPeripheralsWithServices:(id)arg1 allowAll:(BOOL)arg2;
 - (void)retrievePeripherals:(id)arg1;
 - (id)retrievePeripheralsWithIdentifiers:(id)arg1;
 - (void)scanForPeripheralsWithServices:(id)arg1 options:(id)arg2;

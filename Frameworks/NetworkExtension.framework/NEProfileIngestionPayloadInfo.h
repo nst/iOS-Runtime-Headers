@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface NEProfileIngestionPayloadInfo : NSObject <NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
+@interface NEProfileIngestionPayloadInfo : NSObject <NEConfigurationLegacySupport, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _applicationCreated;
     BOOL _isSetAside;
     NSString *_payloadOrganization;

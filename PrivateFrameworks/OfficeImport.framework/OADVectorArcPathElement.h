@@ -6,40 +6,40 @@
     struct OADAdjustCoord { 
         BOOL isFormulaResult; 
         int value; 
-    struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
-        int value; 
-    struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
-        int value; 
-    struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
-        int value; 
-    struct OADAdjustPoint { 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } x; 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } y; 
-    struct OADAdjustPoint { 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } x; 
-        struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
-            int value; 
-        } y; 
     } mBottom;
     BOOL mClockwise;
     BOOL mConnectedToPrevious;
+    struct OADAdjustPoint { 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } x; 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } y; 
     } mEndVector;
+    struct OADAdjustCoord { 
+        BOOL isFormulaResult; 
+        int value; 
     } mLeft;
+    struct OADAdjustCoord { 
+        BOOL isFormulaResult; 
+        int value; 
     } mRight;
+    struct OADAdjustPoint { 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } x; 
+        struct OADAdjustCoord { 
+            BOOL isFormulaResult; 
+            int value; 
+        } y; 
     } mStartVector;
+    struct OADAdjustCoord { 
+        BOOL isFormulaResult; 
+        int value; 
     } mTop;
 }
 

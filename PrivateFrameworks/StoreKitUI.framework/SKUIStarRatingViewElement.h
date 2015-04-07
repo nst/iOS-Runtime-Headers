@@ -5,10 +5,10 @@
 @class SKUIViewElementText;
 
 @interface SKUIStarRatingViewElement : SKUIViewElement {
+    bool _enabled;
     float _ratingValue;
     int _starType;
     SKUIViewElementText *_text;
-    bool_enabled;
 }
 
 @property(readonly) float ratingValue;

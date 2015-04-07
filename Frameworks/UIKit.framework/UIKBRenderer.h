@@ -9,18 +9,22 @@
 @class NSData, NSString, UIImage;
 
 @interface UIKBRenderer : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSString *_cacheKey;
     struct CGContext { } *_cachingContext;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cachingContextCompletion;
+
     BOOL _containsRGBContent;
     struct CGContext { } *_ctx;
     BOOL _opaque;
     int _renderFlags;
     UIImage *_renderedImage;
     float _scale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
 }
 
@@ -70,8 +74,8 @@
 - (id)pathForFlickPopupGeometries:(id)arg1;
 - (id)pathForRenderGeometry:(id)arg1;
 - (id)pathForSplitGeometry:(id)arg1;
-- (void)renderBackgroundTraits:(id)arg1 allowCaching:(BOOL)arg2;
 - (void)renderBackgroundTraits:(id)arg1;
+- (void)renderBackgroundTraits:(id)arg1 allowCaching:(BOOL)arg2;
 - (void)renderEdgeEffect:(id)arg1 withTraits:(id)arg2;
 - (int)renderFlags;
 - (void)renderKeyContents:(id)arg1 withTraits:(id)arg2;

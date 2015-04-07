@@ -55,8 +55,8 @@
 - (void)p_calcRegression:(unsigned int)arg1 xData:(double*)arg2 yData:(double*)arg3;
 - (id)p_dataPointValues;
 - (id)p_equationStorageWithText:(id)arg1;
-- (unsigned int)p_fillArrayX:(double*)arg1 andY:(double*)arg2 fromPoints:(id)arg3 hasNegativeX:(BOOL*)arg4;
 - (unsigned int)p_fillArrayX:(id)arg1 andY:(id)arg2 fromPoints:(id)arg3;
+- (unsigned int)p_fillArrayX:(double*)arg1 andY:(double*)arg2 fromPoints:(id)arg3 hasNegativeX:(BOOL*)arg4;
 - (void)p_generateRegression;
 - (int)p_getTrendLineType;
 - (id)p_linePathFromPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;

@@ -5,6 +5,17 @@
 @class BBSectionIcon, BBSectionInfo, BBSectionParameters, NSArray, NSDictionary, NSString;
 
 @interface BBDataProviderIdentity : NSObject <NSSecureCoding> {
+    BBSectionInfo *_defaultSectionInfo;
+    NSArray *_defaultSubsectionInfos;
+    NSString *_parentSectionIdentifier;
+    NSString *_sectionDisplayName;
+    BBSectionIcon *_sectionIcon;
+    NSString *_sectionIdentifier;
+    BBSectionParameters *_sectionParameters;
+    NSArray *_sortDescriptors;
+    NSString *_sortKey;
+    NSDictionary *_subsectionDisplayNames;
+    BOOL _syncsBulletinDismissal;
     struct { 
         unsigned int pushDataProvider : 1; 
         unsigned int dataProviderDidLoad : 1; 
@@ -31,17 +42,6 @@
         unsigned int universalSectionIdentifier : 1; 
         unsigned int parentSectionIdentifier : 1; 
         unsigned int primaryAttachmentDataForRecordID : 1; 
-    BBSectionInfo *_defaultSectionInfo;
-    NSArray *_defaultSubsectionInfos;
-    NSString *_parentSectionIdentifier;
-    NSString *_sectionDisplayName;
-    BBSectionIcon *_sectionIcon;
-    NSString *_sectionIdentifier;
-    BBSectionParameters *_sectionParameters;
-    NSArray *_sortDescriptors;
-    NSString *_sortKey;
-    NSDictionary *_subsectionDisplayNames;
-    BOOL _syncsBulletinDismissal;
     } _traits;
     NSString *_universalSectionIdentifier;
 }

@@ -3,6 +3,8 @@
  */
 
 @interface PLCropModel : NSObject {
+    float _angle;
+    float _cropConstrain;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,16 +14,14 @@
             float width; 
             float height; 
         } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    float _angle;
-    float _cropConstrain;
     } _cropRect;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _nsqPhotoSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _photoSize;
 }
 

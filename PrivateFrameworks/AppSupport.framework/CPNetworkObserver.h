@@ -34,8 +34,8 @@
 - (BOOL)isNetworkReachable;
 - (BOOL)isWiFiEnabled;
 - (void)removeNetworkReachableObserver:(id)arg1;
-- (void)removeObserver:(id)arg1 forHostname:(id)arg2;
 - (void)removeObserver:(id)arg1;
+- (void)removeObserver:(id)arg1 forHostname:(id)arg2;
 - (void)removeWiFiObserver:(id)arg1;
 
 @end

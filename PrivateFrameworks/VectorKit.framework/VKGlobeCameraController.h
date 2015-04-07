@@ -12,9 +12,9 @@
 @interface VKGlobeCameraController : VKScreenCameraController <VKInteractiveCameraController> {
     struct CameraManager { 
         int (**_vptr$CameraManager)(); 
-        bool_panBegin; 
-        bool_panInProgress; 
-        bool_panEnd; 
+        bool _panBegin; 
+        bool _panInProgress; 
+        bool _panEnd; 
         struct Vector2i { 
             int _x; 
             int _y; 
@@ -33,10 +33,10 @@
             double _height; 
         } _panStartPosition; 
         double _panDistance; 
-        bool_panAtStartPosition; 
-        bool_rotateBegin; 
-        bool_rotateInProgress; 
-        bool_rotateEnd; 
+        bool _panAtStartPosition; 
+        bool _rotateBegin; 
+        bool _rotateInProgress; 
+        bool _rotateEnd; 
         struct Position3d { 
             double _latitude; 
             double _longitude; 
@@ -47,9 +47,9 @@
             int _y; 
         } _rotateCurrentCursor; 
         double _rotateAngle; 
-        bool_tiltBegin; 
-        bool_tiltInProgress; 
-        bool_tiltEnd; 
+        bool _tiltBegin; 
+        bool _tiltInProgress; 
+        bool _tiltEnd; 
         struct Position3d { 
             double _latitude; 
             double _longitude; 
@@ -60,9 +60,9 @@
             int _y; 
         } _tiltCurrentCursor; 
         double _tiltAngle; 
-        bool_zoomBegin; 
-        bool_zoomInProgress; 
-        bool_zoomEnd; 
+        bool _zoomBegin; 
+        bool _zoomInProgress; 
+        bool _zoomEnd; 
         struct Position3d { 
             double _latitude; 
             double _longitude; 
@@ -73,12 +73,12 @@
             int _y; 
         } _zoomCurrentCursor; 
         double _zoomFactor; 
-        bool_zoomRotateToNorth; 
-        bool_useTiltLimit; 
+        bool _zoomRotateToNorth; 
+        bool _useTiltLimit; 
         int _tiltLimitMode; 
-        bool_tiltLimitPushDownEnabled; 
-        bool_tiltLimitTransferInProgress; 
-        bool_tiltLimitPushDown; 
+        bool _tiltLimitPushDownEnabled; 
+        bool _tiltLimitTransferInProgress; 
+        bool _tiltLimitPushDown; 
         double _startPushDownTilt; 
         double _tiltLimitTransferFraction; 
         double _startTiltLimitTilt; 
@@ -114,7 +114,6 @@
 @property(readonly) Class superclass;
 @property(readonly) double yaw;
 
-- (struct GlobeView { int (**x1)(); }*)globeView;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_centerScreenPoint;
@@ -132,6 +131,7 @@
 - (void)enter3DMode;
 - (void)exit3DMode;
 - (void)flyoverTourAnimation:(id)arg1 animateToStart:(BOOL)arg2 labelChanged:(id)arg3 stateChange:(id)arg4;
+- (struct GlobeView { int (**x1)(); }*)globeView;
 - (id)init;
 - (BOOL)isFlyoverTourStarted;
 - (BOOL)isFullyPitched;
@@ -144,15 +144,15 @@
 - (void)moveTo:(struct { double x1; double x2; })arg1 zoom:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 duration:(double)arg5 timingCurve:(id)arg6 completion:(id)arg7;
 - (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id)arg5;
 - (void)pauseFlyoverTourAnimation;
-- (void)pitch:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
 - (double)pitch;
+- (void)pitch:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
 - (double)presentationYaw;
 - (BOOL)restoreViewportFromInfo:(id)arg1;
 - (void)resumeFlyoverTourAnimation;
 - (void)rotate:(double)arg1 atScreenPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)rotateTo:(double)arg1 animated:(BOOL)arg2;
-- (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(id)arg6 completion:(id)arg7;
+- (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setGesturing:(BOOL)arg1;
 - (void)setGlobeView:(struct GlobeView { int (**x1)(); }*)arg1;
 - (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id)arg5;

@@ -9,7 +9,7 @@
 
 @class <TSCHNotifyOnModify>, TSCHChartInfo, TSUIntToIntDictionary;
 
-@interface TSCHChartMediator : NSObject <TSCHUnretainedParent, NSCopying> {
+@interface TSCHChartMediator : NSObject <NSCopying, TSCHUnretainedParent> {
     TSCHChartInfo *mChartInfo;
     TSUIntToIntDictionary *mGridSeriesIndexForRemoteSeriesIndex;
     <TSCHNotifyOnModify> *mObjectToNotify;

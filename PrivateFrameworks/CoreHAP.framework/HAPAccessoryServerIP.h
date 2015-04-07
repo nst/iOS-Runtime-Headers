@@ -8,7 +8,7 @@
 
 @class <HAPAccessoryServerIPDelegatePrivate>, HAPAccessory, HAPHTTPClient, NSArray, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface HAPAccessoryServerIP : HAPAccessoryServer <HAPHTTPClientDelegate, HAPHTTPClientDebugDelegate> {
+@interface HAPAccessoryServerIP : HAPAccessoryServer <HAPHTTPClientDebugDelegate, HAPHTTPClientDelegate> {
     NSString *_accessoryServerName;
     NSDictionary *_bonjourDeviceInfo;
     unsigned int _configNumber;
@@ -22,8 +22,16 @@
     NSArray *_ipServices;
     struct MFiSAP { } *_mfiSAP;
     NSString *_model;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _netServiceResolveCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pairVerifyCompletionBlock;
+
     struct PairingSessionPrivate { } *_pairingSession;
     HAPAccessory *_primaryAccessoryForServer;
     NSString *_protocolVersion;
@@ -119,10 +127,10 @@
 - (void)discoverAccessories;
 - (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id)arg3 queue:(id)arg4;
 - (BOOL)establishingSecureConnection;
+- (id)httpClient;
 - (void)httpClient:(id)arg1 didReceiveEvent:(id)arg2;
 - (void)httpClient:(id)arg1 didReceiveHTTPMessageWithHeaders:(id)arg2 body:(id)arg3;
 - (void)httpClient:(id)arg1 willSendHTTPMessageWithHeaders:(id)arg2 body:(id)arg3;
-- (id)httpClient;
 - (void)httpClientDidCloseConnectionDueToServer:(id)arg1;
 - (id)identifier;
 - (void)identifyWithCompletion:(id)arg1;
@@ -148,8 +156,8 @@
 - (void)setBonjourDeviceInfo:(id)arg1;
 - (void)setConfigNumber:(unsigned int)arg1;
 - (void)setControllerUsername:(id)arg1;
-- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
 - (void)setDeviceID:(id)arg1;
 - (void)setEstablishingSecureConnection:(BOOL)arg1;

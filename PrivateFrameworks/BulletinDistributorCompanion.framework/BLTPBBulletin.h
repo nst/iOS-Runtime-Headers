@@ -5,14 +5,6 @@
 @class BLTPBAction, NSData, NSMutableArray, NSString;
 
 @interface BLTPBBulletin : PBCodable <NSCopying> {
-    struct { 
-        unsigned int date : 1; 
-        unsigned int publicationDate : 1; 
-        unsigned int attachmentType : 1; 
-        unsigned int sectionSubtype : 1; 
-        unsigned int soundAlertType : 1; 
-        unsigned int containsUpdatedAttachment : 1; 
-        unsigned int loading : 1; 
     NSData *_alertSuppressionContexts;
     NSData *_attachment;
     unsigned int _attachmentType;
@@ -23,6 +15,14 @@
     double _date;
     BLTPBAction *_dismissAction;
     unsigned int _feed;
+    struct { 
+        unsigned int date : 1; 
+        unsigned int publicationDate : 1; 
+        unsigned int attachmentType : 1; 
+        unsigned int sectionSubtype : 1; 
+        unsigned int soundAlertType : 1; 
+        unsigned int containsUpdatedAttachment : 1; 
+        unsigned int loading : 1; 
     } _has;
     BOOL _includesSound;
     BOOL _loading;

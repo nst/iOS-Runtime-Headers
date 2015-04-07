@@ -11,7 +11,11 @@
 @interface WeatherIdentifierUpdater : WeatherUpdater {
     NSMutableArray *_parsedCities;
     NSArray *_requestedCities;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _woeidWeatherHandler;
+
 }
 
 @property(retain) NSMutableArray * parsedCities;

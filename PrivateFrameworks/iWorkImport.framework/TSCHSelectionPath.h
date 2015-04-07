@@ -18,8 +18,8 @@
 @property(readonly) TSCHSelectionPathType * pathType;
 @property(readonly) TSCHSelectionPath * subSelection;
 
-+ (id)selectionPathWithPathType:(id)arg1 arguments:(id)arg2 subSelection:(id)arg3;
 + (id)selectionPathWithPathType:(id)arg1 arguments:(id)arg2;
++ (id)selectionPathWithPathType:(id)arg1 arguments:(id)arg2 subSelection:(id)arg3;
 + (id)selectionPathWithType:(id)arg1 name:(id)arg2 arguments:(id)arg3;
 + (id)seriesSelectionPathWithSeriesIndex:(unsigned int)arg1;
 + (id)seriesSymbolsSelectionPathWithSeriesIndex:(unsigned int)arg1;

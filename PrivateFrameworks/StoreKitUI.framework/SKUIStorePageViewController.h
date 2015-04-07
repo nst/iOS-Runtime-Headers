@@ -4,7 +4,7 @@
 
 @class <SKUIStorePageDelegate>, NSDictionary, NSOperationQueue, NSString, NSURLRequest, SKUIClientContext, SKUIColorScheme, SKUIMetricsController, SKUIStorePage, SKUIStorePageSectionsViewController, SSMetricsPageEvent, SSVLoadURLOperation, UIRefreshControl;
 
-@interface SKUIStorePageViewController : UIViewController <SKUIStorePageSectionsDelegate, SKUIViewControllerTesting, SKUIMetricsViewController, UIViewControllerRestoration> {
+@interface SKUIStorePageViewController : UIViewController <SKUIMetricsViewController, SKUIStorePageSectionsDelegate, SKUIViewControllerTesting, UIViewControllerRestoration> {
     SKUIClientContext *_clientContext;
     <SKUIStorePageDelegate> *_delegate;
     NSString *_lastDataConsumerClassName;

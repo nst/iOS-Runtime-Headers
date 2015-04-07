@@ -5,17 +5,12 @@
 @class MPUArtworkView, NSArray, NSString, UILabel, UIView;
 
 @interface MPUAutolayoutTableViewCell : UITableViewCell {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     BOOL _alignsSeparatorInsetsWithLabels;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _artworkInsets;
     NSArray *_artworkLayoutConstraints;
     UIView *_artworkLayoutGuide;
@@ -28,6 +23,11 @@
     BOOL _expanded;
     NSArray *_expansionConstraints;
     UIView *_expansionView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _labelContentViewInsets;
     NSArray *_labelHorizontalLayoutConstraints;
     UIView *_labelLayoutGuide;

@@ -24,8 +24,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(BOOL)arg3 uniqueIdentifier:(id)arg4;
 - (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(BOOL)arg3;
+- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(BOOL)arg3 uniqueIdentifier:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExclusive;
 - (BOOL)isExclusive;

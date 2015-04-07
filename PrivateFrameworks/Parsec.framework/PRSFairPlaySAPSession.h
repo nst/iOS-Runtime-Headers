@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface PRSFairPlaySAPSession : NSObject {
+    NSString *_SAPVersion;
+    BOOL _complete;
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
         unsigned char ID[20]; 
-    NSString *_SAPVersion;
-    BOOL _complete;
     } _hardwareInfo;
     struct FPSAPContextOpaque_ { } *_session;
 }

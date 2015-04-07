@@ -5,20 +5,6 @@
 @class <TSPComponentWriteChannel>, <TSPComponentWriterDelegate>, NSHashTable, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, TSPArchiverManager, TSPComponent, TSPObject;
 
 @interface TSPComponentWriter : NSObject {
-    struct vector<TSP::ObjectStackEntry, std::__1::allocator<TSP::ObjectStackEntry> > { 
-        struct ObjectStackEntry {} *__begin_; 
-        struct ObjectStackEntry {} *__end_; 
-        struct __compressed_pair<TSP::ObjectStackEntry *, std::__1::allocator<TSP::ObjectStackEntry> > { 
-            struct ObjectStackEntry {} *__first_; 
-        } __end_cap_; 
-    struct { 
-        unsigned int success : 1; 
-        unsigned int isErrorRecoverable : 1; 
-        unsigned int delegateRespondsToNeedsDocumentRecovery : 1; 
-        unsigned int delegateRespondsToLocatorForClaimingComponent : 1; 
-        unsigned int delegateRespondsToObjectBelongsToLinkedComponent : 1; 
-        unsigned int delegateRespondsToExternalPackageDidWriteObject : 1; 
-        unsigned int delegateRespondsToShouldDelayWritingObject : 1; 
     NSHashTable *_analyzedCommandToModelReferences;
     NSHashTable *_archivedObjects;
     NSMapTable *_archivedObjectsDictionary;
@@ -29,6 +15,14 @@
     <TSPComponentWriterDelegate> *_delegate;
     NSObject<OS_dispatch_semaphore> *_delegateSemaphore;
     NSHashTable *_externalReferences;
+    struct { 
+        unsigned int success : 1; 
+        unsigned int isErrorRecoverable : 1; 
+        unsigned int delegateRespondsToNeedsDocumentRecovery : 1; 
+        unsigned int delegateRespondsToLocatorForClaimingComponent : 1; 
+        unsigned int delegateRespondsToObjectBelongsToLinkedComponent : 1; 
+        unsigned int delegateRespondsToExternalPackageDidWriteObject : 1; 
+        unsigned int delegateRespondsToShouldDelayWritingObject : 1; 
     } _flags;
     NSObject<OS_dispatch_queue> *_globalConcurrentQueue;
     NSHashTable *_indirectCommandToModelExternalReferences;
@@ -36,6 +30,12 @@
     NSString *_locator;
     int _mode;
     NSHashTable *_newCommandToModelReferences;
+    struct vector<TSP::ObjectStackEntry, std::__1::allocator<TSP::ObjectStackEntry> > { 
+        struct ObjectStackEntry {} *__begin_; 
+        struct ObjectStackEntry {} *__end_; 
+        struct __compressed_pair<TSP::ObjectStackEntry *, std::__1::allocator<TSP::ObjectStackEntry> > { 
+            struct ObjectStackEntry {} *__first_; 
+        } __end_cap_; 
     } _objectStack;
     NSMutableDictionary *_objectUUIDToIdentifierDictionary;
     unsigned char _packageIdentifier;

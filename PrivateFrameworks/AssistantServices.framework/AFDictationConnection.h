@@ -5,7 +5,6 @@
 @class <AFDictationDelegate>, NSString, NSXPCConnection;
 
 @interface AFDictationConnection : NSObject {
-    unsigned int _stateInSync : 1;
     unsigned int _audioSessionID;
     float _averagePower;
     NSXPCConnection *_connection;
@@ -15,6 +14,7 @@
     BOOL _isWaitingForAudioFile;
     NSString *_lastUsedLanguage;
     float _peakPower;
+    unsigned int _stateInSync : 1;
 }
 
 @property(readonly) BOOL currentlyUsingLocalDication;
@@ -71,8 +71,8 @@
 - (void)prepareWithOptions:(id)arg1;
 - (void)sendSpeechCorrection:(id)arg1 forIdentifier:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2 speechOptions:(id)arg3;
 - (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2;
+- (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2 speechOptions:(id)arg3;
 - (void)startDictationWithSpeechFileAtURL:(id)arg1 isNarrowBand:(BOOL)arg2 options:(id)arg3 forLanguage:(id)arg4;
 - (void)startDictationWithSpeechFileAtURL:(id)arg1 options:(id)arg2 forLanguage:(id)arg3;
 - (void)stopSpeech;

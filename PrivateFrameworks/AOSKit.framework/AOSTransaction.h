@@ -14,12 +14,16 @@
 @class NSConditionLock, NSObject<OS_dispatch_queue>;
 
 @interface AOSTransaction : NSObject <NSCoding> {
-    int (*callbackFunction)();
-    int (*contextRelease)();
-    int (*contextRetain)();
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id callbackBlock;
+
+    int (*callbackFunction)();
     NSObject<OS_dispatch_queue> *callbackQueue;
     void *context;
+    int (*contextRelease)();
+    int (*contextRetain)();
     unsigned char didFinish;
     unsigned char didSucceed;
     struct __CFError { } *error;

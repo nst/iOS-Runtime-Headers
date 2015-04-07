@@ -5,30 +5,12 @@
 @class CAMCaptureController, CAMExposureBiasSlider, CAMFocusAttachmentView, CAMFocusLockAttachmentView, CAMFocusLockView, CAMFocusPointView, CAMFocusSplitAttachmentView, CAMFocusView, CAMVideoPreviewView, NSMutableDictionary, UIView;
 
 @interface CAMPreviewView : UIView {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    unsigned int _canShowFocus : 1;
-    unsigned int _controlsAreVisible : 1;
     int __exposureBiasSide;
     CAMCaptureController *__sharedCameraController;
     BOOL __showExposureBiasSlider;
+    unsigned int _canShowFocus : 1;
     CAMFocusView *_continuousAutoFocusView;
+    unsigned int _controlsAreVisible : 1;
     float _dimmingStrength;
     UIView *_dimmingView;
     CAMFocusAttachmentView *_dismissFocusAttachment;
@@ -42,7 +24,25 @@
     UIView *_focusContainerView;
     CAMFocusPointView *_focusView;
     BOOL _hideExposureBiasSlider;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _lastExposureFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _lastFocusFrame;
     CAMFocusLockAttachmentView *_lockFocusAttachment;
     CAMFocusLockView *_lockFocusView;
@@ -126,8 +126,8 @@
 - (void)resetFocusViewFadeOutSuspensions;
 - (void)resumeFocusViewFadeOutResetPending:(BOOL)arg1;
 - (void)setControlsAreVisible:(BOOL)arg1;
-- (void)setDimmingStrength:(float)arg1 duration:(double)arg2;
 - (void)setDimmingStrength:(float)arg1;
+- (void)setDimmingStrength:(float)arg1 duration:(double)arg2;
 - (void)setExposureBiasMax:(float)arg1;
 - (void)setExposureBiasMin:(float)arg1;
 - (void)setExposureBiasSide:(int)arg1 animated:(BOOL)arg2;
@@ -140,8 +140,8 @@
 - (void)setShowLockFocusAttachment:(BOOL)arg1;
 - (void)setShowSplitFocusAndExposureAttachment:(BOOL)arg1;
 - (void)setSplitFocusAndExposure:(BOOL)arg1;
-- (void)setSquare:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSquare:(BOOL)arg1;
+- (void)setSquare:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)set_sharedCameraController:(id)arg1;
 - (void)showContinuousAutoFocusView;
 - (BOOL)showExposureBiasSliderOnChange;

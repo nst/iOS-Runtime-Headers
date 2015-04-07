@@ -10,7 +10,11 @@
 
 @interface CKModifySubscriptionsOperation : CKDatabaseOperation {
     NSMutableArray *_deletedSubscriptionIDs;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _modifySubscriptionsCompletionBlock;
+
     NSMutableArray *_savedSubscriptions;
     NSMutableDictionary *_subscriptionErrors;
     NSArray *_subscriptionIDsToDelete;

@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface GKSupplementaryViewMetrics : NSObject <NSCopying> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     int _animateWithSection;
     SEL _configurator;
     float _desiredHeight;
     float _desiredWidth;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _globalSectionRange;
     BOOL _hidden;
     NSString *_kind;

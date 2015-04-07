@@ -15,7 +15,7 @@
 - (id)_queryPredicateForProperties:(id)arg1;
 - (id)_sortedMatcherPredicatesFromSoftwareUpdateAsset:(id)arg1;
 - (void)dealloc;
-- (id)initWithSoftwareUpdateAsset:(id)arg1 limitingToStates:(int)arg2;
 - (id)initWithSoftwareUpdateAsset:(id)arg1;
+- (id)initWithSoftwareUpdateAsset:(id)arg1 limitingToStates:(int)arg2;
 
 @end

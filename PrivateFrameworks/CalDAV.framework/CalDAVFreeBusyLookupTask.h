@@ -14,8 +14,8 @@
 + (id)_icsDate:(id)arg1 calendar:(id)arg2;
 
 - (void)dealloc;
-- (id)initWithOrganizer:(id)arg1 originator:(id)arg2 attendees:(id)arg3 start:(id)arg4 end:(id)arg5 outboxURL:(id)arg6 maskedUID:(id)arg7 extendedFreeBusy:(BOOL)arg8 prodID:(id)arg9;
 - (id)initWithOrganizer:(id)arg1 originator:(id)arg2 attendees:(id)arg3 start:(id)arg4 end:(id)arg5 outboxURL:(id)arg6 maskedUID:(id)arg7;
+- (id)initWithOrganizer:(id)arg1 originator:(id)arg2 attendees:(id)arg3 start:(id)arg4 end:(id)arg5 outboxURL:(id)arg6 maskedUID:(id)arg7 extendedFreeBusy:(BOOL)arg8 prodID:(id)arg9;
 - (id)maskedUID;
 - (void)setMaskedUID:(id)arg1;
 

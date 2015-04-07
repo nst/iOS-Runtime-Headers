@@ -10,23 +10,23 @@
 @class NSArray, UIImageView, UIView;
 
 @interface UIDragger : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    int (*_interpolator)();
     SEL _action;
     id _delegate;
     double _duration;
     UIImageView *_fingerView;
+    int (*_interpolator)();
     unsigned long long _lastTimestamp;
     NSArray *_modes;
     unsigned int _port;
     BOOL _showFinger;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _startLocation;
     unsigned long long _startTimestamp;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _stopLocation;
     unsigned long long _stopTimestamp;
     UIView *_target;

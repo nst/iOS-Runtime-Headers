@@ -12,16 +12,28 @@
     BOOL _accountActive;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSObject<OS_dispatch_queue> *_clientCallbackQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cloudDataDeletedNotificationHandler;
+
     HMDCloudDataSyncStateFilter *_cloudDataSyncStateFilter;
     BOOL _cloudRecordExists;
     NSData *_cloudServerTokenData;
     HMMessageDispatcher *_configSyncDispatcher;
     CKContainer *_container;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _controllerKeyAvailableNotificationHandler;
+
     NSObject<OS_dispatch_source> *_controllerKeyPollTimer;
     CKDatabase *_database;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchCompletionHandler;
+
     CKRecordID *_homeDataBlobRecordID;
     CKRecordZone *_homeDataBlobRecordZone;
     CKSubscription *_homeDataBlobSubscription;

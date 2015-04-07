@@ -5,18 +5,6 @@
 @class NSArray, NSDictionary, NSMutableArray, UICollectionViewFlowLayout;
 
 @interface _UIFlowLayoutInfo : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
     struct CGSize { 
         float width; 
         float height; 
@@ -26,12 +14,24 @@
     BOOL _horizontal;
     BOOL _isValid;
     UICollectionViewFlowLayout *_layout;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _layoutSize;
     BOOL _leftToRight;
     NSDictionary *_rowAlignmentOptions;
     NSMutableArray *_sections;
     BOOL _useFloatingHeaderFooter;
     BOOL _usesFloatingHeaderFooter;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _visibleBounds;
 }
 

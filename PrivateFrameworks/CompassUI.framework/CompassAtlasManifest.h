@@ -17,11 +17,11 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
+    } _items;
+    CompassImageNode *_rootNode;
     struct CGSize { 
         float width; 
         float height; 
-    } _items;
-    CompassImageNode *_rootNode;
     } _size;
 }
 

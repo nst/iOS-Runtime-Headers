@@ -4,7 +4,7 @@
 
 @class IMConnectionMonitor, IMDAccount, IMDService, IMSystemProxySettingsFetcher, IMTimer, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSString, NSTimer;
 
-@interface IMDServiceSession : NSObject <IMSystemMonitorListener, IMConnectionMonitorDelegate, IMServiceSessionProtocol> {
+@interface IMDServiceSession : NSObject <IMConnectionMonitorDelegate, IMServiceSessionProtocol, IMSystemMonitorListener> {
     IMDAccount *_account;
     BOOL _activated;
     BOOL _awaitingDataContext;
@@ -181,9 +181,9 @@
 - (void)didChangeMemberStatus:(int)arg1 forHandle:(id)arg2 forChat:(id)arg3 style:(unsigned char)arg4;
 - (void)didChangeMemberStatus:(int)arg1 forHandle:(id)arg2 fromHandle:(id)arg3 unformattedNumber:(id)arg4 countryCode:(id)arg5 forChat:(id)arg6 style:(unsigned char)arg7;
 - (void)didChangeMemberStatus:(int)arg1 forHandle:(id)arg2 unformattedNumber:(id)arg3 countryCode:(id)arg4 forChat:(id)arg5 style:(unsigned char)arg6;
+- (void)didJoinChat:(id)arg1 style:(unsigned char)arg2;
 - (void)didJoinChat:(id)arg1 style:(unsigned char)arg2 displayName:(id)arg3 groupID:(id)arg4 handleInfo:(id)arg5;
 - (void)didJoinChat:(id)arg1 style:(unsigned char)arg2 handleInfo:(id)arg3;
-- (void)didJoinChat:(id)arg1 style:(unsigned char)arg2;
 - (void)didLeaveChat:(id)arg1 style:(unsigned char)arg2;
 - (void)didReceiveDisplayNameChange:(id)arg1 fromID:(id)arg2 forChat:(id)arg3 style:(unsigned char)arg4;
 - (void)didReceiveError:(unsigned int)arg1 forMessageID:(id)arg2 forceError:(BOOL)arg3;
@@ -200,14 +200,14 @@
 - (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 completionBlock:(id)arg7;
 - (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 useMessageSuppression:(BOOL)arg7 completionBlock:(id)arg8;
 - (void)didReceiveReplaceMessageID:(int)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
-- (void)didSendMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 forceDate:(id)arg4;
 - (void)didSendMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
+- (void)didSendMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 forceDate:(id)arg4;
 - (void)didSendMessagePlayedReceiptForMessageID:(id)arg1;
 - (void)didSendMessageReadReceiptForMessageID:(id)arg1;
 - (void)didSendMessageSavedReceiptForMessageID:(id)arg1;
+- (void)didUpdateChatStatus:(int)arg1 chat:(id)arg2 style:(unsigned char)arg3;
 - (void)didUpdateChatStatus:(int)arg1 chat:(id)arg2 style:(unsigned char)arg3 displayName:(id)arg4 groupID:(id)arg5 handleInfo:(id)arg6;
 - (void)didUpdateChatStatus:(int)arg1 chat:(id)arg2 style:(unsigned char)arg3 handleInfo:(id)arg4;
-- (void)didUpdateChatStatus:(int)arg1 chat:(id)arg2 style:(unsigned char)arg3;
 - (void)disallowReconnection;
 - (id)displayName;
 - (void)endBuddyChanges;
@@ -246,8 +246,8 @@
 - (void)noteLastItemFromStorage:(id)arg1;
 - (void)noteMessagesMarkedAsReadForChatWithGUID:(id)arg1;
 - (void)noteSuppressedMessageUpdate:(id)arg1;
-- (void)notifyDidSendMessageID:(id)arg1 shouldNotify:(BOOL)arg2;
 - (void)notifyDidSendMessageID:(id)arg1;
+- (void)notifyDidSendMessageID:(id)arg1 shouldNotify:(BOOL)arg2;
 - (BOOL)overrideNetworkAvailability;
 - (id)password;
 - (void)passwordUpdated;
@@ -264,9 +264,9 @@
 - (void)refreshServiceCapabilities;
 - (void)registerAccount;
 - (void)registerChat:(id)arg1 groupID:(id)arg2 style:(unsigned char)arg3;
+- (void)registerChat:(id)arg1 style:(unsigned char)arg2;
 - (void)registerChat:(id)arg1 style:(unsigned char)arg2 displayName:(id)arg3 groupID:(id)arg4 handleInfo:(id)arg5;
 - (void)registerChat:(id)arg1 style:(unsigned char)arg2 handleInfo:(id)arg3;
-- (void)registerChat:(id)arg1 style:(unsigned char)arg2;
 - (id)registrationAlertInfo;
 - (int)registrationError;
 - (int)registrationStatus;
@@ -312,8 +312,8 @@
 - (void)setBlockList:(id)arg1;
 - (void)setBlockingMode:(unsigned int)arg1;
 - (void)setIdleTime:(unsigned long)arg1;
-- (void)setLoginStatus:(unsigned int)arg1 message:(id)arg2 reason:(int)arg3 properties:(id)arg4;
 - (void)setLoginStatus:(unsigned int)arg1 message:(id)arg2;
+- (void)setLoginStatus:(unsigned int)arg1 message:(id)arg2 reason:(int)arg3 properties:(id)arg4;
 - (void)setPendingReadReceiptFromStorageCount:(unsigned int)arg1;
 - (void)setProperties:(id)arg1 ofParticipant:(id)arg2 inChat:(id)arg3 style:(unsigned char)arg4;
 - (void)setProperties:(id)arg1 ofParticipant:(id)arg2 inChatID:(id)arg3 identifier:(id)arg4 style:(unsigned char)arg5;

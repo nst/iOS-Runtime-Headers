@@ -33,9 +33,9 @@
 - (id)delegate;
 - (id)description;
 - (void)ignoreDevice;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2 machName:(id)arg3 options:(id)arg4;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2 machName:(id)arg3;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2 machName:(id)arg3;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2 machName:(id)arg3 options:(id)arg4;
 - (void)initXPCHandler:(id)arg1;
 - (void)messageArrived:(id)arg1;
 - (id)queue;

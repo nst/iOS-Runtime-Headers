@@ -8,12 +8,6 @@
  */
 
 @interface _WKRemoteObjectRegistry : NSObject {
-    struct unique_ptr<WebKit::RemoteObjectRegistry, std::__1::default_delete<WebKit::RemoteObjectRegistry> > { 
-        struct __compressed_pair<WebKit::RemoteObjectRegistry *, std::__1::default_delete<WebKit::RemoteObjectRegistry> > { 
-            struct RemoteObjectRegistry {} *__first_; 
-        } __ptr_; 
-    struct RetainPtr<NSMapTable> { 
-        void *m_ptr; 
     struct HashMap<WTF::String, std::__1::pair<WTF::RetainPtr<id>, WTF::RetainPtr<_WKRemoteObjectInterface> >, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<std::__1::pair<WTF::RetainPtr<id>, WTF::RetainPtr<_WKRemoteObjectInterface> > > > { 
         struct HashTable<WTF::String, WTF::KeyValuePair<WTF::String, std::__1::pair<WTF::RetainPtr<id>, WTF::RetainPtr<_WKRemoteObjectInterface> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::String, std::__1::pair<WTF::RetainPtr<id>, WTF::RetainPtr<_WKRemoteObjectInterface> > > >, WTF::StringHash, WTF::HashMap<WTF::String, std::__1::pair<WTF::RetainPtr<id>, WTF::RetainPtr<_WKRemoteObjectInterface> >, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<std::__1::pair<WTF::RetainPtr<id>, WTF::RetainPtr<_WKRemoteObjectInterface> > > >::KeyValuePairTraits, WTF::HashTraits<WTF::String> > { 
             struct KeyValuePair<WTF::String, std::__1::pair<WTF::RetainPtr<id>, WTF::RetainPtr<_WKRemoteObjectInterface> > > {} *m_table; 
@@ -23,13 +17,18 @@
             int m_deletedCount; 
         } m_impl; 
     } _exportedObjects;
+    struct RetainPtr<NSMapTable> { 
+        void *m_ptr; 
     } _remoteObjectProxies;
+    struct unique_ptr<WebKit::RemoteObjectRegistry, std::__1::default_delete<WebKit::RemoteObjectRegistry> > { 
+        struct __compressed_pair<WebKit::RemoteObjectRegistry *, std::__1::default_delete<WebKit::RemoteObjectRegistry> > { 
+            struct RemoteObjectRegistry {} *__first_; 
+        } __ptr_; 
     } _remoteObjectRegistry;
 }
 
 @property(readonly) struct RemoteObjectRegistry { int (**x1)(); id x2; struct MessageSender {} *x3; }* remoteObjectRegistry;
 
-- (struct RemoteObjectRegistry { int (**x1)(); id x2; struct MessageSender {} *x3; }*)remoteObjectRegistry;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_initWithMessageSender:(struct MessageSender { int (**x1)(); }*)arg1;
@@ -39,6 +38,7 @@
 - (void)_sendInvocation:(id)arg1 interface:(id)arg2;
 - (void)registerExportedObject:(id)arg1 interface:(id)arg2;
 - (id)remoteObjectProxyWithInterface:(id)arg1;
+- (struct RemoteObjectRegistry { int (**x1)(); id x2; struct MessageSender {} *x3; }*)remoteObjectRegistry;
 - (void)unregisterExportedObject:(id)arg1 interface:(id)arg2;
 
 @end

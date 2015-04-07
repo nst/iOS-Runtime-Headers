@@ -4,7 +4,7 @@
 
 @class NSArray;
 
-@interface TNChartFormulaArgumentCollection : NSObject <NSFastEnumeration, NSCopying, NSMutableCopying> {
+@interface TNChartFormulaArgumentCollection : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying> {
     NSArray *mArray;
 }
 

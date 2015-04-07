@@ -5,6 +5,7 @@
 @class GKGameInternal, NSArray, NSDate, NSDictionary, NSNumber, NSString;
 
 @interface GKPlayerInternal : GKInternalRepresentation {
+    NSString *_alias;
     union { 
         struct { 
             unsigned int _unused : 8; 
@@ -15,7 +16,6 @@
             unsigned int _reserved : 18; 
         } ; 
         unsigned int _value; 
-    NSString *_alias;
     } _flags;
     unsigned int _numberOfAchievementPoints;
     unsigned int _numberOfAchievements;

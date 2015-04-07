@@ -3,15 +3,15 @@
  */
 
 @interface GQDCallout2Path : GQDPath {
+    double mCornerRadius;
     struct CGSize { 
         float width; 
         float height; 
+    } mSize;
+    BOOL mTailAtCenter;
     struct CGPoint { 
         float x; 
         float y; 
-    double mCornerRadius;
-    } mSize;
-    BOOL mTailAtCenter;
     } mTailPosition;
     double mTailSize;
 }

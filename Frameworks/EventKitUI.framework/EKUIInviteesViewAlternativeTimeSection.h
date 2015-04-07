@@ -18,13 +18,29 @@
     BOOL _initialSearchInProgress;
     int _lastCheckedRow;
     unsigned int _maximumNumberOfTimeSlotsToShow;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _newTimeChosen;
+
     unsigned int _reuseIdentifierVersion;
     NSMutableSet *_rowsShowingAllParticipants;
     BOOL _searchExhausted;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _showMoreAlternativeTimesTapped;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _showPreviewOfEventAtTime;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _tableViewCellHook;
+
 }
 
 @property(retain) NSArray * alternativeTimes;

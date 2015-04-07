@@ -15,7 +15,11 @@
     unsigned int _ivarCount;
     int *_ivarScanSizes;
     struct objc_ivar {} **_localIvarList;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _reader;
+
     NSString *_remoteBinaryName;
     NSString *_remoteClassName;
     unsigned long long _remoteIsa;

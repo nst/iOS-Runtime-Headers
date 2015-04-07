@@ -34,10 +34,10 @@
 - (void).cxx_destruct;
 - (void)beginIgnoringCachedObjectEviction;
 - (void)cacheComponent:(id)arg1 isDiscardingContent:(BOOL)arg2;
-- (void)componentForRootObjectIdentifier:(long long)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)componentForRootObjectIdentifier:(long long)arg1;
-- (void)componentForRootObjectOfLazyReference:(id)arg1 queue:(id)arg2 completion:(id)arg3;
+- (void)componentForRootObjectIdentifier:(long long)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)componentForRootObjectOfLazyReference:(id)arg1;
+- (void)componentForRootObjectOfLazyReference:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)componentForRootObjectOfLazyReferenceImpl:(id)arg1;
 - (id)context;
 - (void)dealloc;

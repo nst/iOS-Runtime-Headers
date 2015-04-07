@@ -7,11 +7,11 @@
         float x; 
         float y; 
         float z; 
+    } max;
     struct SCNVector3 { 
         float x; 
         float y; 
         float z; 
-    } max;
     } min;
 }
 

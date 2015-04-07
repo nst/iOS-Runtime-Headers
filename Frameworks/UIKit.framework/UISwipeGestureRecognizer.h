@@ -5,11 +5,8 @@
 @class NSMutableArray;
 
 @interface UISwipeGestureRecognizer : UIGestureRecognizer {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    unsigned int _failed : 1;
     unsigned int _direction;
+    unsigned int _failed : 1;
     double _maximumDuration;
     float _maximumPrimaryMovement;
     float _maximumSecondaryMovement;
@@ -18,6 +15,9 @@
     unsigned int _numberOfTouchesRequired;
     float _rateOfMaximumMovementDecay;
     float _rateOfMinimumMovementDecay;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _startLocation;
     struct CGPoint { float x1; float x2; } *_startLocations;
     double _startTime;

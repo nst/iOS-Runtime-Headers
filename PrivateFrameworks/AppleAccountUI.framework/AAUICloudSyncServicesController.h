@@ -14,7 +14,11 @@
     ACAccountStore *_accountStore;
     NSMutableArray *_dataclassesRequiringMergeDecision;
     BOOL _didUserConsentToMerge;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     BOOL _isVerifyingExistingEmailAccount;
     NSMutableDictionary *_queuedDataclassActions;
     MFAccountValidator *_validator;

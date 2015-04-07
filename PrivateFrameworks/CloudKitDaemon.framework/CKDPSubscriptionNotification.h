@@ -5,11 +5,11 @@
 @class CKDPSubscriptionNotificationAlert, NSMutableArray;
 
 @interface CKDPSubscriptionNotification : PBCodable <NSCopying> {
+    NSMutableArray *_additionalFields;
+    CKDPSubscriptionNotificationAlert *_alert;
     struct { 
         unsigned int shouldBadge : 1; 
         unsigned int shouldSendContentAvailable : 1; 
-    NSMutableArray *_additionalFields;
-    CKDPSubscriptionNotificationAlert *_alert;
     } _has;
     BOOL _shouldBadge;
     BOOL _shouldSendContentAvailable;

@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface VKRouteRoadInfo : NSObject {
+    NSString *_name;
     struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    NSString *_name;
     } _routeOffset;
     NSString *_shieldGroup;
 }

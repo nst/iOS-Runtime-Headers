@@ -9,10 +9,14 @@
 @class JSValue, JSVirtualMachine, JSWrapperMap, NSString;
 
 @interface JSContext : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id exceptionHandler;
+
+    struct OpaqueJSContext { } *m_context;
     struct Strong<JSC::JSObject> { 
         struct JSValue {} *m_slot; 
-    id exceptionHandler;
-    struct OpaqueJSContext { } *m_context;
     } m_exception;
     JSVirtualMachine *m_virtualMachine;
     JSWrapperMap *m_wrapperMap;
@@ -44,8 +48,8 @@
 - (BOOL)boolFromNotifyException:(struct OpaqueJSValue { }*)arg1;
 - (void)dealloc;
 - (void)endCallbackWithData:(struct CallbackData { struct CallbackData {} *x1; id x2; id x3; struct OpaqueJSValue {} *x4; struct OpaqueJSValue {} *x5; unsigned int x6; struct OpaqueJSValue {} **x7; id x8; }*)arg1;
-- (id)evaluateScript:(id)arg1 withSourceURL:(id)arg2;
 - (id)evaluateScript:(id)arg1;
+- (id)evaluateScript:(id)arg1 withSourceURL:(id)arg2;
 - (id)exception;
 - (id)exceptionHandler;
 - (id)globalObject;

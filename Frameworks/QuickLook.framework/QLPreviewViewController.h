@@ -4,7 +4,10 @@
 
 @class <QLPreviewItem>, <QLPreviewItemInteractionDelegate>, NSLayoutConstraint, NSString, NSTimer, QLDisplayBundle, QLGenericView, QLProgressView, UIDocumentPasswordView, UIView;
 
-@interface QLPreviewViewController : UIViewController <QLPreviewItemInteractionDelegate, UIDocumentPasswordViewDelegate, QLSwippableItemProtocol> {
+@interface QLPreviewViewController : UIViewController <QLPreviewItemInteractionDelegate, QLSwippableItemProtocol, UIDocumentPasswordViewDelegate> {
+    UIView *_accessoryContainerView;
+    QLGenericView *_airPlayPasswordView;
+    float _aspectRatio;
     struct { 
         int pid; 
         struct { 
@@ -20,6 +23,13 @@
                 float height; 
             } size; 
         } contentFrame; 
+    } _clientContext;
+    UIView *_contentContainerView;
+    QLDisplayBundle *_displayBundle;
+    <QLPreviewItemInteractionDelegate> *_displayBundleDelegate;
+    UIDocumentPasswordView *_documentPasswordView;
+    NSLayoutConstraint *_documentPasswordViewKeyboardConstraint;
+    int _index;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -29,16 +39,6 @@
             float width; 
             float height; 
         } size; 
-    UIView *_accessoryContainerView;
-    QLGenericView *_airPlayPasswordView;
-    float _aspectRatio;
-    } _clientContext;
-    UIView *_contentContainerView;
-    QLDisplayBundle *_displayBundle;
-    <QLPreviewItemInteractionDelegate> *_displayBundleDelegate;
-    UIDocumentPasswordView *_documentPasswordView;
-    NSLayoutConstraint *_documentPasswordViewKeyboardConstraint;
-    int _index;
     } _initialFrame;
     BOOL _loadedWithPassword;
     NSString *_loadingTextForMissingFiles;
@@ -108,6 +108,7 @@
 - (void)loadView;
 - (void)overlayWasInteractedWithOnPreviewItem:(id)arg1;
 - (void)preloadIfNeeded;
+- (id)previewItem;
 - (void)previewItem:(id)arg1 receivedTapOnURL:(id)arg2;
 - (void)previewItem:(id)arg1 requiresDisplayBundle:(id)arg2 withHints:(id)arg3;
 - (void)previewItem:(id)arg1 setAVState:(id)arg2;
@@ -115,7 +116,6 @@
 - (void)previewItem:(id)arg1 willHideOverlayWithDuration:(double)arg2;
 - (id)previewItem:(id)arg1 willSendRequest:(id)arg2;
 - (void)previewItem:(id)arg1 willShowOverlayWithDuration:(double)arg2;
-- (id)previewItem;
 - (void)previewItemDidExitFullScreen:(id)arg1;
 - (void)previewItemDidLoad:(id)arg1 atIndex:(int)arg2 withError:(id)arg3;
 - (void)previewItemWillLoad:(id)arg1;

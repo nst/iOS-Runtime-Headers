@@ -10,7 +10,11 @@
 
 @interface _UIBackgroundTaskInfo : NSObject {
     int _count;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _expireHandler;
+
     BKSProcessAssertion *_processAssertion;
     unsigned int _taskId;
 }

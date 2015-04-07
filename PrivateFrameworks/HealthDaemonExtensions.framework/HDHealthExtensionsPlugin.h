@@ -4,7 +4,7 @@
 
 @class <HDHealthDaemon>, NSMutableArray, NSString, NSXPCListener;
 
-@interface HDHealthExtensionsPlugin : NSObject <NSXPCListenerDelegate, HDHealthPlugin, HDDiagnosticObject> {
+@interface HDHealthExtensionsPlugin : NSObject <HDDiagnosticObject, HDHealthPlugin, NSXPCListenerDelegate> {
     <HDHealthDaemon> *_healthDaemon;
     NSXPCListener *_listener;
     NSMutableArray *_servers;
@@ -23,8 +23,8 @@
 - (id)diagnosticDescription;
 - (id)healthDaemon;
 - (id)initWithHealthDaemon:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)listener;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)serverWithClient:(id)arg1 error:(id*)arg2;
 - (id)servers;
 - (void)setListener:(id)arg1;

@@ -11,7 +11,11 @@
 @interface _NSProgressProxy : NSProgress {
     <NSProgressPublisher> *_forwarder;
     BOOL _isOld;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _unpublishingHandler;
+
 }
 
 - (void)_acknowledgeWithSuccess:(BOOL)arg1;

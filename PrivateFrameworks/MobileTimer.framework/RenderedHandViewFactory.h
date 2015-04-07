@@ -5,23 +5,23 @@
 @class NSBundle, NSMutableDictionary, NSString;
 
 @interface RenderedHandViewFactory : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL _allowCaching;
     NSMutableDictionary *_angleCache;
     NSString *_imagePath;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _offset;
     struct CGPDFPage { } *_page;
     unsigned int _registeredClientsCount;
     NSBundle *_resourcesBundle;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _scale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _viewSize;
 }
 

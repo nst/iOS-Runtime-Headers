@@ -39,8 +39,8 @@
 - (id)getBackupListWithFiltering:(BOOL)arg1 error:(id*)arg2;
 - (int)getLogLevel;
 - (id)init;
-- (id)initWithDelegate:(id)arg1 eventQueue:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 eventQueue:(id)arg2;
 - (void)insufficientFreeSpaceToRestore;
 - (BOOL)isBackupEnabled;
 - (BOOL)isBackupEnabledForDomainName:(id)arg1;
@@ -54,24 +54,24 @@
 - (BOOL)restoreDataExistsForApplicationWithBundleID:(id)arg1 size:(unsigned long long*)arg2;
 - (id)restoreFailuresForDataclass:(id)arg1 assetType:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (BOOL)restoreFileExistsWithPath:(id)arg1;
+- (void)restoreFileWithPath:(id)arg1;
 - (BOOL)restoreFileWithPath:(id)arg1 context:(id)arg2 error:(id*)arg3;
 - (BOOL)restoreFileWithPath:(id)arg1 error:(id*)arg2;
-- (void)restoreFileWithPath:(id)arg1;
 - (id)restoreFilesForDomain:(id)arg1 error:(id*)arg2;
 - (id)restoreFilesForDomain:(id)arg1 relativePath:(id)arg2 pendingOnly:(BOOL)arg3 error:(id*)arg4;
 - (id)restoreFilesForDomain:(id)arg1 relativePath:(id)arg2 pendingOnly:(BOOL)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 error:(id*)arg5;
 - (id)restoreInfo;
 - (id)restoreState;
 - (void)setAllowiTunesBackup:(BOOL)arg1;
-- (void)setBackupEnabled:(BOOL)arg1 forDomainName:(id)arg2;
 - (void)setBackupEnabled:(BOOL)arg1;
+- (void)setBackupEnabled:(BOOL)arg1 forDomainName:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setLogLevel:(int)arg1;
 - (BOOL)setupBackupWithPasscode:(id)arg1 error:(id*)arg2;
 - (void)startBackup;
 - (BOOL)startBackupWithError:(id*)arg1;
-- (BOOL)startRestoreForBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2 error:(id*)arg3;
 - (void)startRestoreForBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2;
+- (BOOL)startRestoreForBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)startScanWithError:(id*)arg1;
 - (void)syncBackupEnabled;
 

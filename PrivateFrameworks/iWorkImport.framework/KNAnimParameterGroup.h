@@ -19,8 +19,8 @@
 
 - (void)dealloc;
 - (id)initWithFileName:(id)arg1;
-- (id)mediaTimingFunctionForAnimationCurve:(id)arg1 reversed:(BOOL)arg2;
 - (id)mediaTimingFunctionForAnimationCurve:(id)arg1;
+- (id)mediaTimingFunctionForAnimationCurve:(id)arg1 reversed:(BOOL)arg2;
 - (id)name;
 - (id)parameterArray;
 - (void)readAnimationCurvesFromFile;

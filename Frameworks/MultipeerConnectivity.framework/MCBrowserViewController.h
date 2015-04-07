@@ -4,7 +4,7 @@
 
 @class <MCBrowserViewControllerDelegate>, MCNearbyServiceBrowser, MCPeerID, MCSession, NSBundle, NSMutableArray, NSMutableDictionary, NSString, UIBarButtonItem, UINavigationBar, UITableView;
 
-@interface MCBrowserViewController : UIViewController <MCSessionPrivateDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UINavigationBarDelegate, MCNearbyServiceBrowserDelegate> {
+@interface MCBrowserViewController : UIViewController <MCNearbyServiceBrowserDelegate, MCSessionPrivateDelegate, UIAlertViewDelegate, UINavigationBarDelegate, UITableViewDataSource, UITableViewDelegate> {
     MCNearbyServiceBrowser *_browser;
     UIBarButtonItem *_cancelButton;
     unsigned int _declinedPeersCount;
@@ -46,9 +46,9 @@
 @property(readonly) Class superclass;
 @property(retain) UITableView * tableView;
 
+- (id)browser;
 - (void)browser:(id)arg1 foundPeer:(id)arg2 withDiscoveryInfo:(id)arg3;
 - (void)browser:(id)arg1 lostPeer:(id)arg2;
-- (id)browser;
 - (id)cancelButton;
 - (void)cancelTapped:(id)arg1;
 - (void)dealloc;
@@ -79,12 +79,12 @@
 - (void)peer:(id)arg1 changedStateTo:(int)arg2;
 - (void)peerJoinedSession;
 - (int)positionForBar:(id)arg1;
+- (id)session;
 - (void)session:(id)arg1 didFinishReceivingResourceWithName:(id)arg2 fromPeer:(id)arg3 atURL:(id)arg4 withError:(id)arg5 propagate:(BOOL*)arg6;
 - (void)session:(id)arg1 didReceiveData:(id)arg2 fromPeer:(id)arg3 propagate:(BOOL*)arg4;
 - (void)session:(id)arg1 didReceiveStream:(id)arg2 withName:(id)arg3 fromPeer:(id)arg4 propagate:(BOOL*)arg5;
 - (void)session:(id)arg1 didStartReceivingResourceWithName:(id)arg2 fromPeer:(id)arg3 withProgress:(id)arg4 propagate:(BOOL*)arg5;
 - (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3 propagate:(BOOL*)arg4;
-- (id)session;
 - (void)setBrowser:(id)arg1;
 - (void)setCancelButton:(id)arg1;
 - (void)setDeclinedPeersCount:(unsigned int)arg1;
@@ -101,6 +101,7 @@
 - (void)setNearbyPeersSection:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setTableView:(id)arg1;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
@@ -108,7 +109,6 @@
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (id)tableView;
 - (void)verifyPeerIsAccountedFor:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;

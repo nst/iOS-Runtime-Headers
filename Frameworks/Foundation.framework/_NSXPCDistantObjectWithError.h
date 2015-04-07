@@ -7,7 +7,11 @@
  */
 
 @interface _NSXPCDistantObjectWithError : _NSXPCDistantObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _errorBlock;
+
 }
 
 @property(copy) id errorBlock;

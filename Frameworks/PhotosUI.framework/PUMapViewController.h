@@ -4,11 +4,11 @@
 
 @class MKMapView, NSArray, NSMutableArray, NSObject<PLDiagnosticsProvider>, NSString, PHFetchResult, PUMapAnnotationManager, PUMapViewControllerSpec;
 
-@interface PUMapViewController : UIViewController <PUPhotoLibraryUIChangeObserver, MKMapViewDelegate, PUMapAnnotationManagerDataSource, PUPhotoBrowserZoomTransitionDelegate, PUStackedAlbumTransitionDelegate> {
+@interface PUMapViewController : UIViewController <MKMapViewDelegate, PUMapAnnotationManagerDataSource, PUPhotoBrowserZoomTransitionDelegate, PUPhotoLibraryUIChangeObserver, PUStackedAlbumTransitionDelegate> {
+    PUMapAnnotationManager *_annotationManager;
     struct CGSize { 
         float width; 
         float height; 
-    PUMapAnnotationManager *_annotationManager;
     } _annotationSize;
     float _annotationWidth;
     PHFetchResult *_assetsFetchResult;
@@ -43,8 +43,8 @@
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapRectWithDefaultZoomCenteredAtCoordinate:(struct { double x1; double x2; })arg1;
 - (id)_puAnnotationViewForAnnotation:(id)arg1;
 - (void)_showLocations:(id)arg1 animated:(BOOL)arg2;
-- (void)_updateAnnotationsForMapItems:(id)arg1 shouldScroll:(BOOL)arg2;
 - (void)_updateAnnotationsForMapItems:(id)arg1;
+- (void)_updateAnnotationsForMapItems:(id)arg1 shouldScroll:(BOOL)arg2;
 - (void)_updateMapAssets;
 - (void)_updateNavItem;
 - (void)dealloc;

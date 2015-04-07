@@ -4,7 +4,7 @@
 
 @class NSArray, NSPointerFunctions, NSSet;
 
-@interface NSHashTable : NSObject <NSCopying, NSCoding, NSFastEnumeration> {
+@interface NSHashTable : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
 }
 
 @property(copy,readonly) NSArray * allObjects;

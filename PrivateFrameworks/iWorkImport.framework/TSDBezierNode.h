@@ -6,14 +6,14 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     } mIn;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mNode;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mOut;
     int mReflectedState;
     BOOL mSelected;
@@ -28,8 +28,8 @@
 @property(getter=isSelected) BOOL selected;
 @property int type;
 
-+ (id)bezierNodeWithPoint:(struct CGPoint { float x1; float x2; })arg1 inControlPoint:(struct CGPoint { float x1; float x2; })arg2 outControlPoint:(struct CGPoint { float x1; float x2; })arg3;
 + (id)bezierNodeWithPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (id)bezierNodeWithPoint:(struct CGPoint { float x1; float x2; })arg1 inControlPoint:(struct CGPoint { float x1; float x2; })arg2 outControlPoint:(struct CGPoint { float x1; float x2; })arg3;
 
 - (void)balanceControlPoints;
 - (void)collapse;
@@ -43,13 +43,13 @@
 - (struct CGPoint { float x1; float x2; })outControlPoint;
 - (int)reflectedState;
 - (id)reflectedStateString;
-- (void)setInControlPoint:(struct CGPoint { float x1; float x2; })arg1 reflect:(int)arg2 constrain:(BOOL)arg3;
 - (void)setInControlPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInControlPoint:(struct CGPoint { float x1; float x2; })arg1 reflect:(int)arg2 constrain:(BOOL)arg3;
 - (void)setInControlPointFromReflection:(struct CGPoint { float x1; float x2; })arg1 constrain:(BOOL)arg2;
 - (void)setNode:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setNodePoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setOutControlPoint:(struct CGPoint { float x1; float x2; })arg1 reflect:(int)arg2 constrain:(BOOL)arg3;
 - (void)setOutControlPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setOutControlPoint:(struct CGPoint { float x1; float x2; })arg1 reflect:(int)arg2 constrain:(BOOL)arg3;
 - (void)setReflectedState:(int)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setType:(int)arg1;

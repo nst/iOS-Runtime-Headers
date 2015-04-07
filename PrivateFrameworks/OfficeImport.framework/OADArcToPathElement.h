@@ -3,6 +3,10 @@
  */
 
 @interface OADArcToPathElement : OADPathElement {
+    struct OADAdjustCoord { 
+        BOOL isFormulaResult; 
+        int value; 
+    } mAngleLength;
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
@@ -12,14 +16,10 @@
             BOOL isFormulaResult; 
             int value; 
         } y; 
-    struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
-        int value; 
-    struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
-        int value; 
-    } mAngleLength;
     } mSemiaxes;
+    struct OADAdjustCoord { 
+        BOOL isFormulaResult; 
+        int value; 
     } mStartAngle;
 }
 

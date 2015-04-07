@@ -9,10 +9,9 @@
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+    } _characteristicTypes;
+    unsigned int _duration;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int duration : 1; 
@@ -20,13 +19,14 @@
         unsigned int resultCode : 1; 
         unsigned int resultType : 1; 
         unsigned int transportType : 1; 
-    } _characteristicTypes;
-    unsigned int _duration;
-    NSString *_guid;
     } _has;
     unsigned int _isClient;
     int _resultCode;
     unsigned int _resultType;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _serviceTypes;
     unsigned long long _timestamp;
     unsigned int _transportType;

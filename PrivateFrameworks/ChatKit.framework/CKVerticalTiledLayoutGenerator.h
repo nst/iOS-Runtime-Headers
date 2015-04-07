@@ -3,9 +3,6 @@
  */
 
 @interface CKVerticalTiledLayoutGenerator : CKTiledLayoutGenerator {
-    struct CGPoint { 
-        float x; 
-        float y; 
     struct { 
         int index; 
         struct CGSize { 
@@ -19,6 +16,9 @@
         BOOL hasCaption; 
         BOOL isBatchStart; 
     } _enqueuedCaptionTileInfo;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _origin;
     float _referenceWidth;
     BOOL _shouldDisplayCaptionsBelowBatches;

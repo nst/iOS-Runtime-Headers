@@ -65,8 +65,8 @@
 - (id)effect;
 - (BOOL)hasAutomaticTrigger;
 - (id)initWithArchive:(const struct TransitionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct TransitionAttributesArchive {} *x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
-- (id)initWithOwner:(id)arg1 attributes:(id)arg2;
 - (id)initWithOwner:(id)arg1;
+- (id)initWithOwner:(id)arg1 attributes:(id)arg2;
 - (id)inspectableAttributes;
 - (BOOL)isMagicMove;
 - (id)localizedEventTriggerNames;

@@ -5,13 +5,13 @@
 @class NSMutableArray;
 
 @interface SKUIShelfLayoutData : NSObject {
+    float _columnSpacing;
+    NSMutableArray *_columnWidths;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    float _columnSpacing;
-    NSMutableArray *_columnWidths;
     } _contentInset;
     int _numberOfRows;
     float *_rowHeights;

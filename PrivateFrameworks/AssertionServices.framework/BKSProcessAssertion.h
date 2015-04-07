@@ -11,13 +11,21 @@
 @interface BKSProcessAssertion : NSObject <BKSProcessAssertionClientHandler> {
     BOOL _acquired;
     BOOL _acquiring;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _acquisitionHandler;
+
     NSString *_bundleIdentifier;
     BKSProcessAssertionClient *_client;
     NSObject<OS_dispatch_queue> *_clientQueue;
     unsigned int _flags;
     NSString *_identifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _invalidationHandler;
+
     BSSignal *_invalidationSignal;
     NSString *_name;
     int _pid;

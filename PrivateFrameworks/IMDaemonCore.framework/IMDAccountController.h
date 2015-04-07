@@ -42,10 +42,10 @@
 - (id)connectedAccountsForService:(id)arg1;
 - (id)connectingAccounts;
 - (id)connectingAccountsForService:(id)arg1;
-- (void)deactivateAccount:(id)arg1 force:(BOOL)arg2;
 - (void)deactivateAccount:(id)arg1;
-- (void)deactivateAccounts:(id)arg1 force:(BOOL)arg2;
+- (void)deactivateAccount:(id)arg1 force:(BOOL)arg2;
 - (void)deactivateAccounts:(id)arg1;
+- (void)deactivateAccounts:(id)arg1 force:(BOOL)arg2;
 - (void)dealloc;
 - (void)deferredSave;
 - (id)init;

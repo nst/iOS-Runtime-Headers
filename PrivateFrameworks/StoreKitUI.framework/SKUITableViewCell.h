@@ -5,13 +5,13 @@
 @class SKUIBorderView, UIColor;
 
 @interface SKUITableViewCell : UITableViewCell {
+    float _borderPaddingLeft;
+    SKUIBorderView *_bottomBorderView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    float _borderPaddingLeft;
-    SKUIBorderView *_bottomBorderView;
     } _textLabelInsets;
     float _titlePaddingLeft;
     SKUIBorderView *_topBorderView;

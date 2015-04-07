@@ -4,7 +4,7 @@
 
 @class ATSession, NSString, NSXPCConnection;
 
-@interface ATSessionProxyConnection : NSObject <ATSessionProxy, ATSessionObserver> {
+@interface ATSessionProxyConnection : NSObject <ATSessionObserver, ATSessionProxy> {
     NSXPCConnection *_connection;
     ATSession *_session;
 }

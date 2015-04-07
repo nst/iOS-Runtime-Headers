@@ -10,13 +10,33 @@
 
 @interface AXSpeechAction : NSObject {
     BOOL _cannotInterrupt;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionCallback;
+
     NSMutableArray *_emojiRangeReplacements;
     NSString *_language;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _onPauseCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _onResumeCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _onSpeechStartCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _onWillSpeakRangeCallback;
+
     float _pitch;
     NSString *_processedString;
     BOOL _shouldDetectLanguage;

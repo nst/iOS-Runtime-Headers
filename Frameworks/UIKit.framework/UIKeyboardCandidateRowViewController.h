@@ -4,7 +4,7 @@
 
 @class <UIKeyboardCandidateListDelegate>, <UIKeyboardCandidateRowViewControllerDelegate>, NSArray, NSString, TIKeyboardCandidateResultSet, UIKBCandidateCollectionView;
 
-@interface UIKeyboardCandidateRowViewController : UIViewController <UIKeyboardCandidateList, UICollectionViewDelegate, UICollectionViewDataSource> {
+@interface UIKeyboardCandidateRowViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIKeyboardCandidateList> {
     <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
     TIKeyboardCandidateResultSet *_candidateSet;
     Class _cellClass;
@@ -35,12 +35,12 @@
 - (id)candidates;
 - (void)candidatesDidChange;
 - (Class)cellClass;
+- (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
-- (id)collectionView;
 - (id)currentCandidate;
 - (unsigned int)currentIndex;
 - (id)delegate;

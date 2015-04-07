@@ -93,10 +93,10 @@
 - (BOOL)isPackageTimeValidWithEntry:(id)arg1;
 - (BOOL)isPackageValidWithEntry:(id)arg1;
 - (BOOL)isUIAlertEnabled;
-- (void)lteRRCCallback:(id)arg1;
 - (id)lteRRCCallback;
-- (void)msgLiteCallback:(id)arg1;
+- (void)lteRRCCallback:(id)arg1;
 - (id)msgLiteCallback;
+- (void)msgLiteCallback:(id)arg1;
 - (id)notToRemoveDate;
 - (double)percentageHistogramFromArray:(id)arg1;
 - (void)resetAllCounters:(id)arg1;
@@ -129,11 +129,11 @@
 - (void)setupInitExclusions;
 - (id)startExclusionPeriods;
 - (void)submitAWD;
-- (void)telActivityCallback:(id)arg1;
 - (id)telActivityCallback;
+- (void)telActivityCallback:(id)arg1;
 - (double)totalNormalARMUtility;
-- (void)wcdmaRRCCallback:(id)arg1;
 - (id)wcdmaRRCCallback;
+- (void)wcdmaRRCCallback:(id)arg1;
 - (void)writeToHelperTable:(id)arg1 WithValue:(double)arg2 withDate:(id)arg3;
 
 @end

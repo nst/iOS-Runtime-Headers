@@ -5,12 +5,12 @@
 @class NSData;
 
 @interface AWDWiFiMetricsKnownNetworksEvent : PBCodable <NSCopying> {
+    unsigned int _eventType;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int eventType : 1; 
         unsigned int networkSecurity : 1; 
         unsigned int networkTypeBitMap : 1; 
-    unsigned int _eventType;
     } _has;
     unsigned int _networkSecurity;
     unsigned int _networkTypeBitMap;

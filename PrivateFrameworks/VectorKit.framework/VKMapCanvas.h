@@ -4,14 +4,14 @@
 
 @class <GEORoutePreloadSession>, <VKInteractiveMapDelegate>, <VKRouteMatchedAnnotationPresentation>, <VKTrackableAnnotation>, GEOMapRegion, GEOResourceManifestConfiguration, NSArray, NSString, VKAnchorWrapper, VKCamera, VKMapCameraController, VKMapModel, VKPolylineOverlayPainter, VKStyleManager;
 
-@interface VKMapCanvas : VKScreenCanvas <VKMapModelDelegate, VKOverlayContainerRouteDelegate, VKInteractiveMap> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface VKMapCanvas : VKScreenCanvas <VKInteractiveMap, VKMapModelDelegate, VKOverlayContainerRouteDelegate> {
     VKMapCameraController *_cameraController;
     VKCamera *_defaultTrackingCamera;
     <VKInteractiveMapDelegate> *_delegate;
     BOOL _hasLastValidCanvasSizeZoomLevel;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _lastCanvasSize;
     float _lastValidCanvasSizeZoomLevel;
     VKMapModel *_map;
@@ -224,9 +224,9 @@
 - (void)setApplicationState:(unsigned int)arg1;
 - (void)setCameraHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;
 - (void)setCanonicalSkyHeight:(double)arg1;
-- (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(id)arg6 completion:(id)arg7;
+- (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setContentsScale:(float)arg1;
 - (void)setCurrentLocationText:(id)arg1;
 - (void)setDebugDynamicMapModesEnabled:(BOOL)arg1;
@@ -242,10 +242,10 @@
 - (void)setLabelMarkerSelectionEnabled:(BOOL)arg1;
 - (void)setLabelScaleFactor:(int)arg1;
 - (void)setLocalizeLabels:(BOOL)arg1;
-- (void)setMapRegion:(id)arg1 animated:(BOOL)arg2;
-- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id)arg5;
-- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4;
 - (void)setMapRegion:(id)arg1;
+- (void)setMapRegion:(id)arg1 animated:(BOOL)arg2;
+- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4;
+- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id)arg5;
 - (void)setMapType:(int)arg1;
 - (void)setNavigationShieldSize:(int)arg1;
 - (void)setNeedsDisplay;

@@ -4,12 +4,12 @@
 
 @class _UIMotionEffectAcceleratedOutputRange;
 
-@interface _UIViewerRelativeDevicePose : NSObject <NSCopying, NSCoding> {
+@interface _UIViewerRelativeDevicePose : NSObject <NSCoding, NSCopying> {
+    _UIMotionEffectAcceleratedOutputRange *_acceleratedOutputRange;
+    float _planarRotationAngle;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    _UIMotionEffectAcceleratedOutputRange *_acceleratedOutputRange;
-    float _planarRotationAngle;
     } _viewerOffset;
 }
 

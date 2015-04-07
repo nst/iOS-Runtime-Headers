@@ -13,7 +13,11 @@
     NSArray *_builtinItems;
     CNContactStyle *_contactStyle;
     NSArray *_customItems;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _itemLocalizationBlock;
+
     NSString *_itemLocalizationKey;
     NSIndexPath *_selectedIndexPath;
     NSString *_selectedItem;

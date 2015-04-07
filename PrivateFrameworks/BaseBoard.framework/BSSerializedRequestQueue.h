@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface BSSerializedRequestQueue : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _conditionBlock;
+
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSObject<OS_dispatch_queue> *_workQueue;
 }

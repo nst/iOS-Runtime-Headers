@@ -5,11 +5,11 @@
 @class GEOPlaceResult;
 
 @interface GEOCluster : PBCodable <NSCopying> {
+    GEOPlaceResult *_container;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    GEOPlaceResult *_container;
     } _indexs;
 }
 

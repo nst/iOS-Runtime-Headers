@@ -34,10 +34,18 @@
     NSLayoutConstraint *_participantsViewToBottomTimeLabelConstraint;
     NSLayoutConstraint *_participantsViewToContentViewConstraint;
     NSArray *_persistentConstraints;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _showAllConflictedParticipantsTapped;
+
     BOOL _showAllParticipants;
     UIButton *_showPreviewButton;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _showPreviewOfEventAtTime;
+
     NSDate *_startDate;
     UITapGestureRecognizer *_tappedMoreRecognizer;
     UITextView *_textViewForTextSizeTesting;

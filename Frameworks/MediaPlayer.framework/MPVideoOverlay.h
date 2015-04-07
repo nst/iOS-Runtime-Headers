@@ -4,7 +4,7 @@
 
 @class <MPVideoControllerProtocol>, <MPVideoOverlayDelegate>, MPAVController, MPAVItem, MPDetailSlider, NSMutableDictionary, NSString, UINavigationBar;
 
-@interface MPVideoOverlay : UIView <MPVideoOverlay, MPDetailSliderDelegate> {
+@interface MPVideoOverlay : UIView <MPDetailSliderDelegate, MPVideoOverlay> {
     BOOL _controlsAutohideDisabled;
     <MPVideoOverlayDelegate> *_delegate;
     unsigned long long _desiredParts;
@@ -64,15 +64,15 @@
 - (void)registerForPlayerNotifications;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setDesiredParts:(unsigned long long)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setItem:(id)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setVideoViewController:(id)arg1;
-- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setVisibleParts:(unsigned long long)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)showAlternateTracks;
 - (void)startTicking;
 - (void)stopTicking;

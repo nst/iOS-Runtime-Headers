@@ -34,8 +34,8 @@
 - (id)fetchObjectsWithPredicate:(id)arg1;
 - (id)fetchObjectsWithUniqueIds:(id)arg1;
 - (id)fetchWithCallTypes:(unsigned int)arg1;
-- (id)fetchWithPredicate:(id)arg1 forEntity:(id)arg2 withLimit:(BOOL)arg3;
 - (id)fetchWithPredicate:(id)arg1 forEntity:(id)arg2;
+- (id)fetchWithPredicate:(id)arg1 forEntity:(id)arg2 withLimit:(BOOL)arg3;
 - (id)getArrayForCallTypeMask:(unsigned int)arg1;
 - (void)handleCallDBPropContextDidSaveNotification:(id)arg1;
 - (void)handleCallRecordContextDidSaveNotification:(id)arg1;

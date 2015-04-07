@@ -8,6 +8,7 @@
  */
 
 @interface PLPlacesMapKitSupport : NSObject {
+    Class _annotationViewClass;
     struct { 
         struct { 
             double x; 
@@ -17,6 +18,7 @@
             double width; 
             double height; 
         } size; 
+    } _mapRectNull;
     struct { 
         struct { 
             double x; 
@@ -26,6 +28,8 @@
             double width; 
             double height; 
         } size; 
+    } _mapRectWorld;
+    Class _mapViewClass;
     int (*_mkCoordinateForMapPoint)();
     int (*_mkCoordinateRegionForMapRect)();
     int (*_mkMapPointForCoordinate)();
@@ -36,10 +40,6 @@
     int (*_mkMapRectMakeWithRadialDistance)();
     int (*_mkMapRectUnion)();
     int (*_mkMetersPerMapPointAtLatitude)();
-    Class _annotationViewClass;
-    } _mapRectNull;
-    } _mapRectWorld;
-    Class _mapViewClass;
     Class _pinAnnotationViewClass;
     Class _polylineClass;
     Class _polylineViewClass;

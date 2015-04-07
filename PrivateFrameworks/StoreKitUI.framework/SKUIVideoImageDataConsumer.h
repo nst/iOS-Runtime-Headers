@@ -5,16 +5,16 @@
 @class SKUIColorScheme, UIColor;
 
 @interface SKUIVideoImageDataConsumer : SKUIImageDataConsumer {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     unsigned int _allowedOrientations;
     UIColor *_backgroundColor;
     SKUIColorScheme *_colorScheme;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _landscapeSize;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _portraitSize;
 }
 

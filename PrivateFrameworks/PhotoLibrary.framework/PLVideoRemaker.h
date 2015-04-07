@@ -15,7 +15,11 @@
     AVAssetExportSession *_exportSession;
     int _mode;
     float _percentComplete;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
     NSTimer *_progressTimer;
     PLProgressView *_progressView;
     double _trimEndTime;

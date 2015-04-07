@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKDisplayProfile : NSObject <NSSecureCoding, NSCopying> {
+@interface PKDisplayProfile : NSObject <NSCopying, NSSecureCoding> {
     int _type;
 }
 

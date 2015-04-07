@@ -3,10 +3,10 @@
  */
 
 @interface AWDEventKitSyncSyncedAttendeeResponseFromWatch : PBCodable <NSCopying> {
+    unsigned long long _deltaTransitTime;
     struct { 
         unsigned int deltaTransitTime : 1; 
         unsigned int timestamp : 1; 
-    unsigned long long _deltaTransitTime;
     } _has;
     unsigned long long _timestamp;
 }

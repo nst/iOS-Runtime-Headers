@@ -8,8 +8,12 @@
 
 @class MKSmallCalloutViewController, NSString, UIPopoverController, UIView, _MKPopoverEmbeddingView;
 
-@interface MKPopoverBasedAnnotationCalloutController : MKAnnotationCalloutController <_MKPopoverEmbeddingViewWindowDelegate, _UIPopoverControllerMapsTransitionDelegate, UIPopoverControllerDelegate, UIPopoverControllerDelegatePrivate, MKSmallCalloutViewControllerDelegate> {
+@interface MKPopoverBasedAnnotationCalloutController : MKAnnotationCalloutController <MKSmallCalloutViewControllerDelegate, UIPopoverControllerDelegate, UIPopoverControllerDelegatePrivate, _MKPopoverEmbeddingViewWindowDelegate, _UIPopoverControllerMapsTransitionDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _afterMoveToWindowBlock;
+
     BOOL _allowsPopoverWhenNotInWindow;
     BOOL _animatingIn;
     MKSmallCalloutViewController *_calloutViewController;
@@ -51,8 +55,8 @@
 - (void)hideCalloutAnimated:(BOOL)arg1;
 - (id)init;
 - (BOOL)isCalloutExpanded;
-- (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (id)popoverController;
+- (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (void)setAllowsPopoverWhenNotInWindow:(BOOL)arg1;
 - (void)setMapDisplayStyle:(unsigned int)arg1;
 - (void)showCalloutForAnnotationView:(id)arg1 animated:(BOOL)arg2 scrollToFit:(BOOL)arg3 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;

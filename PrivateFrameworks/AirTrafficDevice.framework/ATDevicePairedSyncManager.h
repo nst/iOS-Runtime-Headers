@@ -4,7 +4,7 @@
 
 @class ATDeviceService, ATIDSService, NSObject<OS_dispatch_queue>, NSString, PSYProgressObserver;
 
-@interface ATDevicePairedSyncManager : NSObject <PSYProgressObserverDelegate, ATMessageLinkObserver, ATIDSServiceListener, ATSessionObserver> {
+@interface ATDevicePairedSyncManager : NSObject <ATIDSServiceListener, ATMessageLinkObserver, ATSessionObserver, PSYProgressObserverDelegate> {
     ATDeviceService *_deviceService;
     ATIDSService *_idsService;
     BOOL _initialSyncPhaseCompleted;

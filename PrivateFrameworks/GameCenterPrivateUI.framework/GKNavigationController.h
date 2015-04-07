@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GKNavigationController : UINavigationController <UIViewControllerRestoration, UINavigationBarDelegate> {
+@interface GKNavigationController : UINavigationController <UINavigationBarDelegate, UIViewControllerRestoration> {
     NSMutableArray *_deferredTransitions;
 }
 

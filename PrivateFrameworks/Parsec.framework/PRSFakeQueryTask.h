@@ -11,8 +11,8 @@
 @property(retain) PRSSearchCompletionResultSet * results;
 
 - (void).cxx_destruct;
-- (id)initWithSession:(id)arg1 handler:(id)arg2 queue:(id)arg3 feedback:(id)arg4 results:(id)arg5;
 - (id)initWithSession:(id)arg1 handler:(id)arg2 queue:(id)arg3;
+- (id)initWithSession:(id)arg1 handler:(id)arg2 queue:(id)arg3 feedback:(id)arg4 results:(id)arg5;
 - (id)results;
 - (void)resume;
 - (void)setResults:(id)arg1;

@@ -25,8 +25,8 @@
 @property(readonly) NSMapTable * updatedLastVisitsByItem;
 
 - (void).cxx_destruct;
-- (id)_extraVisitsToDeleteWhenDeletingItems:(id)arg1 visits:(id)arg2 relatedVisitKey:(id)arg3 relatedVisitsQueryFactory:(id)arg4;
 - (id)_extraVisitsToDeleteWhenDeletingItems:(id)arg1 visits:(id)arg2;
+- (id)_extraVisitsToDeleteWhenDeletingItems:(id)arg1 visits:(id)arg2 relatedVisitKey:(id)arg3 relatedVisitsQueryFactory:(id)arg4;
 - (void)_prepareWithTriggeringItems:(id)arg1 triggeringVisits:(id)arg2;
 - (id)_visitsForItems:(id)arg1;
 - (id)allItemsToDelete;

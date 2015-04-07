@@ -5,8 +5,8 @@
 @class EDCollection, EDResources, NSString;
 
 @interface EDPhoneticInfo : NSObject <EDImmutableObject> {
-    boolmDoNotModify;
     int mAlign;
+    bool mDoNotModify;
     unsigned int mFontIndex;
     EDResources *mResources;
     EDCollection *mRuns;

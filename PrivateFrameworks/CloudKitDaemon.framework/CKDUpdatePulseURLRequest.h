@@ -16,7 +16,11 @@
     CKShareID *_shareID;
     int _state;
     double _ttl;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updatePulseProgressBlock;
+
 }
 
 @property(copy) NSString * apsEnvironmentString;

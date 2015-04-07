@@ -5,13 +5,13 @@
 @class NSMapTable, NSMutableArray, NSString, SKUIDividerView, SKUIMenuPopoverController, UIControl;
 
 @interface SKUIFilterBarView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIMenuPopoverDelegate, SKUIViewElementView> {
+    SKUIDividerView *_bottomDividerView;
+    NSMutableArray *_centerElementViews;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    SKUIDividerView *_bottomDividerView;
-    NSMutableArray *_centerElementViews;
     } _contentInset;
     NSMutableArray *_elementControllers;
     UIControl *_focusedMenuButton;

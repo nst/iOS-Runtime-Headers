@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AXEventKeyInfoRepresentation : NSObject <NSSecureCoding, NSCopying> {
+@interface AXEventKeyInfoRepresentation : NSObject <NSCopying, NSSecureCoding> {
     unsigned short _keyCode;
     BOOL _keyDown;
     NSString *_modifiedInput;

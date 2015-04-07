@@ -4,7 +4,7 @@
 
 @class NSData, NSDictionary, NSString;
 
-@interface NEContentFilterPlugin : NSObject <NEConfigurationValidating, NEPrettyDescription, NSSecureCoding, NSCopying> {
+@interface NEContentFilterPlugin : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _filterBrowsers;
     BOOL _filterSockets;
     NSData *_identityReference;

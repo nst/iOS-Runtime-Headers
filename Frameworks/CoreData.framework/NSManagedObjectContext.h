@@ -5,6 +5,14 @@
 @class NSManagedObjectContext, NSMutableDictionary, NSMutableSet, NSPersistentStoreCoordinator, NSSet, NSString, NSUndoManager;
 
 @interface NSManagedObjectContext : NSObject <NSCoding, NSLocking> {
+    id *_additionalPrivateIvars;
+    id *_cachedObsInfoByEntity;
+    int _cd_rc;
+    NSMutableSet *_changedObjects;
+    NSString *_contextLabel;
+    NSMutableSet *_deletedObjects;
+    void *_dispatchQueue;
+    double _fetchTimestamp;
     struct _managedObjectContextFlags { 
         unsigned int _registeredForCallback : 1; 
         unsigned int _propagatesDeletesAtEndOfEvent : 1; 
@@ -29,14 +37,6 @@
         unsigned int _isMerging : 1; 
         unsigned int _concurrencyType : 1; 
         unsigned int _reservedFlags : 10; 
-    id *_additionalPrivateIvars;
-    id *_cachedObsInfoByEntity;
-    int _cd_rc;
-    NSMutableSet *_changedObjects;
-    NSString *_contextLabel;
-    NSMutableSet *_deletedObjects;
-    void *_dispatchQueue;
-    double _fetchTimestamp;
     } _flags;
     int _ignoreChangeNotification;
     id _infoByGID;
@@ -121,8 +121,8 @@
 - (void)_forceInsertionForObject:(id)arg1;
 - (void)_forceRegisterLostFault:(id)arg1;
 - (void)_forceRemoveFromDeletedObjects:(id)arg1;
-- (void)_forgetObject:(id)arg1 propagateToObjectStore:(BOOL)arg2 removeFromRegistry:(BOOL)arg3;
 - (void)_forgetObject:(id)arg1 propagateToObjectStore:(BOOL)arg2;
+- (void)_forgetObject:(id)arg1 propagateToObjectStore:(BOOL)arg2 removeFromRegistry:(BOOL)arg3;
 - (id)_globalIDForObject:(id)arg1;
 - (id)_globalIDsForObjects:(id)arg1;
 - (void)_growRegistrationCollectionForEntitySlot:(unsigned int)arg1 toSize:(unsigned int)arg2;
@@ -185,9 +185,9 @@
 - (void)_registerUndoForModifiedObjects:(id)arg1;
 - (void)_registerUndoForOperation:(SEL)arg1 withObjects:(id)arg2 withExtraArguments:(id)arg3;
 - (void)_resetAllChanges;
+- (id)_retainedObjectWithID:(id)arg1;
 - (id)_retainedObjectWithID:(id)arg1 error:(id*)arg2;
 - (id)_retainedObjectWithID:(id)arg1 optionalHandler:(id)arg2 withInlineStorage:(BOOL)arg3;
-- (id)_retainedObjectWithID:(id)arg1;
 - (id)_retainedObjectsFromRemovedStore:(id)arg1;
 - (id)_retainedRegisteredObjects;
 - (void)_sendCommitEditingSelectorToTarget:(id)arg1 sender:(id)arg2 selector:(SEL)arg3 flag:(BOOL)arg4 contextInfo:(void*)arg5 delayed:(BOOL)arg6;

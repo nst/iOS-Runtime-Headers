@@ -44,8 +44,8 @@
 - (void)logAllApps;
 - (void)logAllPlugins;
 - (void)logEventPointApplication;
-- (void)logEventPointApplicationForDisplayID:(id)arg1 withPid:(int)arg2 withState:(id)arg3 withReasons:(id)arg4;
 - (void)logEventPointApplicationForDisplayID:(id)arg1;
+- (void)logEventPointApplicationForDisplayID:(id)arg1 withPid:(int)arg2 withState:(id)arg3 withReasons:(id)arg4;
 - (void)logInstalledApp:(id)arg1;
 - (void)logInstalledPlugin:(id)arg1;
 - (void)logUninstalledApp:(id)arg1;

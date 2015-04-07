@@ -3,11 +3,11 @@
  */
 
 @interface TSDDragInsertionContext : TSDInsertionContext {
+    BOOL mFromDragToInsertController;
+    BOOL mInsertFloating;
     struct CGPoint { 
         float x; 
         float y; 
-    BOOL mFromDragToInsertController;
-    BOOL mInsertFloating;
     } mPreferredCenter;
     BOOL mPreferredCenterRequired;
     BOOL mShouldEndEditing;

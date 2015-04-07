@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSMutableArray, NSString, PKAuthenticator, PKPassPaymentPayStateView, PKPassPaymentSummaryView, PKPaymentService, UIButton;
 
-@interface PKPassPaymentContainerView : PKPassPaymentFooterContentView <PKPaymentServiceDelegate, PKAuthenticatorDelegate, PKPassPaymentSummaryViewDelegate, PKPassPaymentPayStateViewDelegate> {
+@interface PKPassPaymentContainerView : PKPassPaymentFooterContentView <PKAuthenticatorDelegate, PKPassPaymentPayStateViewDelegate, PKPassPaymentSummaryViewDelegate, PKPaymentServiceDelegate> {
     UIButton *_actionButton;
     BOOL _authenticating;
     PKAuthenticator *_authenticator;
@@ -34,10 +34,10 @@
 
 - (void)_activateForPayment;
 - (void)_applyLatestTransactionAndMessageToSummaryView;
-- (void)_applyPayState:(int)arg1 afterDelay:(double)arg2;
-- (void)_applyPayState:(int)arg1 withTextOverride:(id)arg2 completionHandler:(id)arg3;
-- (void)_applyPayState:(int)arg1 withTextOverride:(id)arg2;
 - (void)_applyPayState:(int)arg1;
+- (void)_applyPayState:(int)arg1 afterDelay:(double)arg2;
+- (void)_applyPayState:(int)arg1 withTextOverride:(id)arg2;
+- (void)_applyPayState:(int)arg1 withTextOverride:(id)arg2 completionHandler:(id)arg3;
 - (void)_authorizeForPaymentWithCredential:(id)arg1;
 - (void)_beginPasscodeOnlyAuthentication;
 - (void)_beginPaymentAuthorization;
@@ -71,8 +71,8 @@
 - (void)_prearmButtonPressed:(id)arg1;
 - (void)_promoteToAuthorizedStateIfPossible;
 - (void)_resetToIdleState;
-- (void)_resetToIdleStateAfterDelay:(double)arg1 whileIgnoreField:(BOOL)arg2;
 - (void)_resetToIdleStateAfterDelay:(double)arg1;
+- (void)_resetToIdleStateAfterDelay:(double)arg1 whileIgnoreField:(BOOL)arg2;
 - (void)_resetToIdleStateWhileIgnoringField:(BOOL)arg1;
 - (BOOL)_showSummaryState;
 - (void)_startFingerprintAnimation;

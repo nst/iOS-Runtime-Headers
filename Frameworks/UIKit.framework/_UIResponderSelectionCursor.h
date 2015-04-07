@@ -5,16 +5,10 @@
 @class NSArray, NSMapTable, NSMutableArray, UIImageView, UIPanGestureRecognizer, UIResponder, UIScrollView, UIWindow;
 
 @interface _UIResponderSelectionCursor : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     UIScrollView *_activeFirstResponderScrollView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _activeFirstResponderScrollViewOffset;
     float _consecutiveWithinRowAccumulator;
     BOOL _dirtyGeometry;
@@ -23,8 +17,14 @@
     UIResponder *_mostLikelyToBeSelectedItem;
     UIPanGestureRecognizer *_panResponderSelectionRecognizer;
     NSArray *_remoteGestures;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _responderSelectionStartLocation;
     UIImageView *_responderSelectionView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _scrollingOffset;
     UIScrollView *_scrollingScrollView;
     NSMutableArray *_selectableItems;

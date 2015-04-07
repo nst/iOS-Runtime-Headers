@@ -5,6 +5,9 @@
 @class NSString;
 
 @interface AWDSMSSentMessage : PBCodable <NSCopying> {
+    int _ctError;
+    int _fzError;
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int ctError : 1; 
@@ -14,9 +17,6 @@
         unsigned int isToEmail : 1; 
         unsigned int isToPhoneNumber : 1; 
         unsigned int sendDuration : 1; 
-    int _ctError;
-    int _fzError;
-    NSString *_guid;
     } _has;
     unsigned int _hasAttachments;
     unsigned int _isGroupMessage;

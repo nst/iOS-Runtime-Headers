@@ -29,8 +29,8 @@
 - (id)externalizedContext;
 - (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(id)arg3;
 - (id)init;
-- (id)initWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2;
 - (id)initWithExternalizedContext:(id)arg1;
+- (id)initWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2;
 - (id)initWithUIDelegate:(id)arg1;
 - (void)invalidate;
 - (BOOL)isCancelButtonVisible;

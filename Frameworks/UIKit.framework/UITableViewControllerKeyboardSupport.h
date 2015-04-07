@@ -5,10 +5,10 @@
 @class UITableViewController;
 
 @interface UITableViewControllerKeyboardSupport : NSObject {
-    unsigned int _viewIsDisappearing : 1;
-    unsigned int _registeredForNotifications : 1;
     float _adjustmentForKeyboard;
+    unsigned int _registeredForNotifications : 1;
     UITableViewController *_tableViewController;
+    unsigned int _viewIsDisappearing : 1;
 }
 
 @property float adjustmentForKeyboard;

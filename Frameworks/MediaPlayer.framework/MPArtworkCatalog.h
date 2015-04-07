@@ -9,14 +9,18 @@
 @class <MPArtworkDataSource>, NSCache, NSString;
 
 @interface MPArtworkCatalog : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSString *_cacheIdentifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _configurationBlock;
+
     <MPArtworkDataSource> *_dataSource;
     id _destination;
     float _destinationScale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _fittingSize;
     BOOL _loadingRepresentation;
     id _requestingContext;
@@ -61,12 +65,12 @@
 - (void)requestImageWithCompletionHandler:(id)arg1;
 - (id)requestingContext;
 - (struct CGSize { float x1; float x2; })scaledFittingSize;
-- (void)setCacheIdentifier:(id)arg1 forRequestingContext:(id)arg2;
 - (void)setCacheIdentifier:(id)arg1;
+- (void)setCacheIdentifier:(id)arg1 forRequestingContext:(id)arg2;
 - (void)setConfigurationBlock:(id)arg1;
 - (void)setDataSource:(id)arg1;
-- (void)setDestination:(id)arg1 configurationBlock:(id)arg2;
 - (void)setDestination:(id)arg1;
+- (void)setDestination:(id)arg1 configurationBlock:(id)arg2;
 - (void)setDestinationScale:(float)arg1;
 - (void)setFittingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setLoadingRepresentation:(BOOL)arg1;

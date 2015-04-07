@@ -4,7 +4,7 @@
 
 @class <SBFLegibilitySettingsProviderDelegate>, NSDictionary, NSString, NSTimer, SBFLockScreenSimpleDateFormatter, UIImage, _UILegibilitySettings;
 
-@interface SBSUIWallpaperPreviewViewController : UIViewController <SBFWallpaperViewLegibilityObserver, SBFLegibilitySettingsProvider> {
+@interface SBSUIWallpaperPreviewViewController : UIViewController <SBFLegibilitySettingsProvider, SBFWallpaperViewLegibilityObserver> {
     BOOL _allowScrolling;
     BOOL _colorSamplingEnabled;
     SBFLockScreenSimpleDateFormatter *_dateFormatter;
@@ -37,15 +37,15 @@
 - (void)_stopDateTimer;
 - (void)_updateDateView;
 - (id)_wallpaperView;
+- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 supportsCropping:(BOOL)arg3 variant:(int)arg4;
 - (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 variant:(int)arg2 options:(id)arg3;
-- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)colorSamplingEnabled;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithColorSamplingEnabled:(BOOL)arg1;
-- (id)initWithImage:(id)arg1 name:(id)arg2;
 - (id)initWithImage:(id)arg1;
+- (id)initWithImage:(id)arg1 name:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithProceduralWallpaper:(id)arg1 options:(id)arg2;
 - (id)initWithScrollableImage:(id)arg1;

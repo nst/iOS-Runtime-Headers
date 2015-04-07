@@ -26,8 +26,8 @@
 + (BOOL)isLunarCalendarDefaultOnForLanguage:(id)arg1 locale:(id)arg2;
 + (BOOL)isYearlessDate:(id)arg1 forCalendar:(id)arg2;
 + (id)languageCharSetList;
-+ (id)localeForCalendarID:(id)arg1 andLocale:(id)arg2;
 + (id)localeForCalendarID:(id)arg1;
++ (id)localeForCalendarID:(id)arg1 andLocale:(id)arg2;
 + (id)lunarCalendarsForLocaleID:(id)arg1;
 + (id)nativeNameForLanguage:(id)arg1 context:(unsigned int)arg2;
 + (id)normalizedLanguageIDFromString:(id)arg1;

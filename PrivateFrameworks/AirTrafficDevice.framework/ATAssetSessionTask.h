@@ -19,7 +19,11 @@
     double _retryInterval;
     NSObject<OS_dispatch_source> *_retryTimer;
     BOOL _retryUntilFinished;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shouldRetryAssetBlock;
+
     BOOL _waitingForRetry;
 }
 
@@ -36,9 +40,9 @@
 
 - (void).cxx_destruct;
 - (void)_finishAsset:(id)arg1 withError:(id)arg2;
+- (id)assetLinkController;
 - (void)assetLinkController:(id)arg1 didFinishAsset:(id)arg2;
 - (void)assetLinkController:(id)arg1 didUpdateAsset:(id)arg2;
-- (id)assetLinkController;
 - (void)cancel;
 - (void)cancelAllAssets;
 - (id)dataClass;

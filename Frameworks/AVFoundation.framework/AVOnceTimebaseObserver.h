@@ -7,13 +7,17 @@
  */
 
 @interface AVOnceTimebaseObserver : AVTimebaseObserver {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _block;
+
+    BOOL _didFire;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    id _block;
-    BOOL _didFire;
     } _fireTime;
 }
 

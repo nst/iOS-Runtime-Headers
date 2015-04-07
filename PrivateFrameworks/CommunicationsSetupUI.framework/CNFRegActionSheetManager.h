@@ -11,8 +11,16 @@
 @interface CNFRegActionSheetManager : NSObject <UIActionSheetDelegate> {
     UIActionSheet *_actionSheet;
     BOOL _dismissingActionSheetForRotation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _presenter;
+
 }
 
 @property(retain) UIActionSheet * actionSheet;
@@ -25,9 +33,9 @@
 
 + (id)sharedInstance;
 
+- (id)actionSheet;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)actionSheet;
 - (void)dealloc;
 - (void)dismissCurrentActionSheet;
 - (void)handleDidRotate:(id)arg1;

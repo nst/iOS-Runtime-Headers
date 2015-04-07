@@ -5,12 +5,12 @@
 @class NSMutableArray;
 
 @interface GEOPDPlace : PBCodable <NSCopying> {
+    NSMutableArray *_components;
     struct { 
         unsigned int muid : 1; 
         unsigned int preferredMuid : 1; 
         unsigned int resultProviderId : 1; 
         unsigned int status : 1; 
-    NSMutableArray *_components;
     } _has;
     unsigned long long _muid;
     unsigned long long _preferredMuid;

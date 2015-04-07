@@ -5,24 +5,6 @@
 @class NSArray, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, UICollectionView, UICollectionViewData;
 
 @interface UICollectionViewUpdate : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     id *_animatedFooters;
     id *_animatedHeaders;
     id *_animatedItems;
@@ -39,10 +21,28 @@
     int *_newGlobalItemMap;
     UICollectionViewData *_newModel;
     int *_newSectionMap;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _newVisibleBounds;
     int *_oldGlobalItemMap;
     UICollectionViewData *_oldModel;
     int *_oldSectionMap;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _oldVisibleBounds;
     NSArray *_updateItems;
     NSMutableArray *_viewAnimations;

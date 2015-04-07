@@ -10,16 +10,16 @@
 @class NSString, VKStyleManager;
 
 @interface VKRoadMapModel : VKVectorMapModel <VKStyleManagerObserver> {
-    struct unique_ptr<vk::RoadManager, std::__1::default_delete<vk::RoadManager> > { 
-        struct __compressed_pair<vk::RoadManager *, std::__1::default_delete<vk::RoadManager> > { 
-            struct RoadManager {} *__first_; 
-        } __ptr_; 
+    unsigned long long _mapLayerPosition;
     struct unique_ptr<vk::PatternedManager, std::__1::default_delete<vk::PatternedManager> > { 
         struct __compressed_pair<vk::PatternedManager *, std::__1::default_delete<vk::PatternedManager> > { 
             struct PatternedManager {} *__first_; 
         } __ptr_; 
-    unsigned long long _mapLayerPosition;
     } _patternedRibbonManager;
+    struct unique_ptr<vk::RoadManager, std::__1::default_delete<vk::RoadManager> > { 
+        struct __compressed_pair<vk::RoadManager *, std::__1::default_delete<vk::RoadManager> > { 
+            struct RoadManager {} *__first_; 
+        } __ptr_; 
     } _roadManager;
 }
 

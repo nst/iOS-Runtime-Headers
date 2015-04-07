@@ -28,8 +28,8 @@
 - (void)getMediaTypeCounts;
 - (unsigned int)hash;
 - (id)identifier;
-- (id)initWithObjects:(id)arg1 identifier:(id)arg2 registerIfNeeded:(BOOL)arg3;
 - (id)initWithObjects:(id)arg1;
+- (id)initWithObjects:(id)arg1 identifier:(id)arg2 registerIfNeeded:(BOOL)arg3;
 - (BOOL)interestedInChange:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)objectIDAtIndex:(unsigned int)arg1;

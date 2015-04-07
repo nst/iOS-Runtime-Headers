@@ -5,6 +5,7 @@
 @class NSMutableArray, NSString;
 
 @interface MIPMultiverseIdentifier : PBCodable <NSCopying> {
+    long long _accountId;
     struct { 
         unsigned int accountId : 1; 
         unsigned int purchaseHistoryId : 1; 
@@ -12,7 +13,6 @@
         unsigned int storeId : 1; 
         unsigned int mediaObjectType : 1; 
         unsigned int mediaType : 1; 
-    long long _accountId;
     } _has;
     NSMutableArray *_libraryIdentifiers;
     int _mediaObjectType;

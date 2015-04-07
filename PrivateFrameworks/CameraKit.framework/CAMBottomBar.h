@@ -121,8 +121,8 @@
 - (void)layoutSubviews;
 - (id)modeDial;
 - (int)orientation;
-- (void)setBackgroundStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setBackgroundStyle:(int)arg1;
+- (void)setBackgroundStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setCancelButton:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setElapsedTimeView:(id)arg1;

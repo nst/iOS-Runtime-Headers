@@ -5,9 +5,6 @@
 @class <FUScrollWheelDataSource>, <FUScrollWheelDelegate>, NSMutableArray, NSMutableDictionary, NSString, UIFont, UIImageView, UIScrollView, UIView;
 
 @interface FUScrollWheel : UIView <UIScrollViewDelegate> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     UIView *_bottomDividerView;
     unsigned int _currentIndex;
     <FUScrollWheelDataSource> *_dataSource;
@@ -17,6 +14,9 @@
     BOOL _loaded;
     UIImageView *_maskLayer;
     unsigned int _numberOfRows;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _previousRange;
     NSMutableArray *_reusableLabelsQueue;
     UIScrollView *_scrollView;

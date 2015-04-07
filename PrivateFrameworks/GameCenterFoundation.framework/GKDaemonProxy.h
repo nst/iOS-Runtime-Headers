@@ -4,7 +4,7 @@
 
 @class <GKDaemonProxyDataUpdateDelegate>, <GKDaemonProxyNetworkActivityIndicatorDelegate>, GKThreadsafeDictionary, NSDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSXPCConnection;
 
-@interface GKDaemonProxy : NSObject <NSXPCConnectionDelegate, GKClientProtocol> {
+@interface GKDaemonProxy : NSObject <GKClientProtocol, NSXPCConnectionDelegate> {
     NSObject<OS_dispatch_semaphore> *_concurrentRequestSemaphore;
     NSXPCConnection *_connection;
     <GKDaemonProxyDataUpdateDelegate> *_dataUpdateDelegate;
@@ -67,8 +67,8 @@
 - (oneway void)challengeReceived:(id)arg1;
 - (oneway void)completedChallengeSelected:(id)arg1;
 - (oneway void)completedOptimisticAuthenticationWithResponse:(id)arg1 error:(id)arg2;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (id)connection;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (id)dataUpdateDelegate;
 - (void)dealloc;
 - (void)dispatchCompletedChallenge:(id)arg1;

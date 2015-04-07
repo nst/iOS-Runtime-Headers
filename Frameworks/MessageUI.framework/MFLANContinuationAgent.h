@@ -9,7 +9,11 @@
 @class MFLANContinuationContext;
 
 @interface MFLANContinuationAgent : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _connectCallbackBlock;
+
     MFLANContinuationContext *_continuationContext;
     struct __CFRunLoopSource { } *_serverRunLoopSource;
     BOOL _serverRunning;

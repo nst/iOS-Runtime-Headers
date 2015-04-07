@@ -87,11 +87,11 @@
 - (id)actionTypeReturnToLibrary;
 - (id)activeAudioPlayers;
 - (id)activeNetworkType;
-- (void)addExternalDownloads:(id)arg1 options:(id)arg2;
 - (void)addExternalDownloads:(id)arg1;
+- (void)addExternalDownloads:(id)arg1 options:(id)arg2;
 - (void)addExternalDownloadsFromManifestURL:(id)arg1;
-- (void)addPurchaseWithInfo:(id)arg1 options:(id)arg2;
 - (void)addPurchaseWithInfo:(id)arg1;
+- (void)addPurchaseWithInfo:(id)arg1 options:(id)arg2;
 - (id)appleAccountStore;
 - (id)application;
 - (id)applicationAccessibilityEnabled;
@@ -130,8 +130,8 @@
 - (void)getSoftwareApplicationWithBundleID:(id)arg1 completionFunction:(id)arg2;
 - (id)globalRootObject;
 - (void)goBack;
-- (void)gotoStoreURL:(id)arg1 ofType:(id)arg2 withAuthentication:(BOOL)arg3 forceAuthentication:(BOOL)arg4;
 - (void)gotoStoreURL:(id)arg1;
+- (void)gotoStoreURL:(id)arg1 ofType:(id)arg2 withAuthentication:(BOOL)arg3 forceAuthentication:(BOOL)arg4;
 - (void)handleDialogPropertyListString:(id)arg1;
 - (void)handleProtocolPropertyListString:(id)arg1;
 - (void)handleRootObjectWithPropertyListString:(id)arg1;

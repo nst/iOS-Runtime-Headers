@@ -5,10 +5,10 @@
 @class NSData, NSMutableArray, NSString;
 
 @interface HDCodableNanoSyncActivationRestore : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, NSCopying> {
+    NSString *_deviceSourceIdentifier;
     struct { 
         unsigned int sequenceNumber : 1; 
         unsigned int statusCode : 1; 
-    NSString *_deviceSourceIdentifier;
     } _has;
     NSData *_restoreIdentifier;
     NSMutableArray *_restores;
@@ -17,8 +17,6 @@
 }
 
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(retain) NSString * deviceSourceIdentifier;
 @property(readonly) BOOL hasDeviceSourceIdentifier;
@@ -26,12 +24,10 @@
 @property BOOL hasSequenceNumber;
 @property BOOL hasStatusCode;
 @property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
 @property(retain) NSData * restoreIdentifier;
 @property(retain) NSMutableArray * restores;
 @property long long sequenceNumber;
 @property int statusCode;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 
 + (id)activationRestoreWithRestoreUUID:(id)arg1 sequenceNumber:(long long)arg2 statusCode:(int)arg3;

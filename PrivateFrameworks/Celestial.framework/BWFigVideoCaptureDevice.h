@@ -14,71 +14,15 @@
 @class <BWFigVideoDeviceStillImageCaptureDelegate>, BWDeviceMotionActivityDetector, BWStillImageTimeMachine, BWZoomCommandHandler, FigCaptureThermalMonitor, NSArray, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface BWFigVideoCaptureDevice : BWCaptureDevice <BWZoomCompletionDelegate> {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct { 
-        double integrationTime; 
-        float normalizedSNR; 
-        float baseISO; 
-        double exposureBias; 
-        float gain; 
-        unsigned int conversionGain; 
-        unsigned int readNoise_1x; 
-        unsigned int readNoise_8x; 
-        unsigned int aeAvg; 
-        unsigned int motionDataStatus; 
-        long long frameCount; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        float redGain; 
-        float greenGain; 
-        float blueGain; 
-    struct { 
-        float redGain; 
-        float greenGain; 
-        float blueGain; 
-    struct { 
-        int width; 
-        int height; 
-    struct { 
-        int width; 
-        int height; 
-    struct { 
-        int width; 
-        int height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    int (*_createAutofocusSampleBufferProcessorFunction)();
     float _ISO;
     int _activeFormatIndex;
     int _aeFrameWaitCount;
     int _aeRequestCount;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _aeRequestTime;
     BOOL _aeStable;
     BOOL _allowAEStableNotifications;
@@ -96,12 +40,43 @@
     BOOL _awbStable;
     NSObject<OS_dispatch_queue> *_bufferServicingQueue;
     BOOL _cacheDetectedFacesForBracketedCapture;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _cachedExposureRect;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _cachedFocusRect;
     BOOL _clientProcessHasAccessToCamera;
     int _clientRetainedBufferCountHint;
     struct OpaqueCMClock { } *_clock;
+    int (*_createAutofocusSampleBufferProcessorFunction)();
     int _currentBiasedExposureCompletedID;
+    struct { 
+        double integrationTime; 
+        float normalizedSNR; 
+        float baseISO; 
+        double exposureBias; 
+        float gain; 
+        unsigned int conversionGain; 
+        unsigned int readNoise_1x; 
+        unsigned int readNoise_8x; 
+        unsigned int aeAvg; 
+        unsigned int motionDataStatus; 
+        long long frameCount; 
     } _currentFrameStatistics;
     int _currentImageControlMode;
     int _currentManualExposureCompletedID;
@@ -110,9 +85,18 @@
     BOOL _deferMetadataDictionaryCreation;
     struct OpaqueFigCaptureDevice { } *_device;
     BWDeviceMotionActivityDetector *_deviceMotionActivityDetector;
+    struct { 
+        float redGain; 
+        float greenGain; 
+        float blueGain; 
     } _deviceWhiteBalanceGains;
     BOOL _enableSphereWhenAvailable;
     int _expectedImagesForCaptureStillImageNow;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _exposureDuration;
     float _exposureTargetBias;
     float _exposureTargetOffset;
@@ -126,12 +110,22 @@
     int _frameStatisticsLock;
     BOOL _fullRangeVideo;
     BOOL _grabNextFrame;
+    struct { 
+        float redGain; 
+        float greenGain; 
+        float blueGain; 
     } _grayWorldWhiteBalanceGains;
     BOOL _hasFlash;
     BOOL _hasSphere;
     BOOL _hdrScene;
     BOOL _hdrSceneDetectionEnabled;
+    struct { 
+        int width; 
+        int height; 
     } _ispOutputDimensions;
+    struct { 
+        int width; 
+        int height; 
     } _lastISPCropDimensions;
     NSArray *_lastValidDetectedFacesArray;
     float _lensPosition;
@@ -139,6 +133,9 @@
     int _lowLightBoostLock;
     BOOL _lowLightBoostSupportedForFormat;
     struct OpaqueFigSimpleMutex { } *_manualPropertyMutex;
+    struct { 
+        int width; 
+        int height; 
     } _maxISPCropDimensions;
     float _maxISPZoomFactor;
     int _maximumFrameRate;
@@ -146,6 +143,9 @@
     BOOL _motionDataInvalid;
     NSObject<OS_dispatch_queue> *_notificationQueue;
     NSMutableDictionary *_observedProperties;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _overscanPercentage;
     struct __CFString { } *_portType;
     int _position;
@@ -156,7 +156,11 @@
     int _skippedFramesCountForAF;
     BOOL _sphereEnabled;
     int _sphereLock;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _stillImageBufferTimeMachineHandler;
+
     <BWFigVideoDeviceStillImageCaptureDelegate> *_stillImageCaptureDelegate;
     NSObject<OS_dispatch_group> *_stillImageCaptureDelegateDispatchGroup;
     BOOL _stillImageCaptureEnabled;
@@ -348,8 +352,8 @@
 - (void)unregisterForFaceDetectionMetadata;
 - (BOOL)unregisterStillImageBufferHandler:(id)arg1 error:(id*)arg2;
 - (BOOL)usesFullRangeVideo;
-- (void)zoomCommandHandler:(id)arg1 didApplyZoomFactor:(float)arg2 rampComplete:(BOOL)arg3 rampCommandID:(int)arg4;
 - (id)zoomCommandHandler;
+- (void)zoomCommandHandler:(id)arg1 didApplyZoomFactor:(float)arg2 rampComplete:(BOOL)arg3 rampCommandID:(int)arg4;
 - (float)zoomFactor;
 
 @end

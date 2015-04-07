@@ -5,10 +5,10 @@
 @class CompassAtlasManifest;
 
 @interface CompassAtlas : NSObject {
+    CompassAtlasManifest *_manifest;
     struct CGSize { 
         float width; 
         float height; 
-    CompassAtlasManifest *_manifest;
     } _size;
     unsigned int _texName;
 }

@@ -7,7 +7,11 @@
  */
 
 @interface SCNAnimationEvent : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _eventBlock;
+
     double _eventTime;
     id _reserved;
 }

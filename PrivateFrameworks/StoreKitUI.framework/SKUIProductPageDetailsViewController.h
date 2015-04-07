@@ -4,7 +4,7 @@
 
 @class <SKUIProductPageChildViewControllerDelegate>, NSMutableArray, NSOperationQueue, NSString, SKUIClientContext, SKUILayoutCache, SKUIProductPage, SKUIProductPageHeaderViewController, SKUIProductPageTableHeaderOnlySection, SKUIProductPageTableTextBoxSection, SKUIProductPageTableViewController, SKUIResourceLoader, UIScrollView;
 
-@interface SKUIProductPageDetailsViewController : UIViewController <SKUIScreenshotsDelegate, SKUIItemStateCenterObserver, SKUITableViewSectionDelegate, SKUIProductPageChildViewController> {
+@interface SKUIProductPageDetailsViewController : UIViewController <SKUIItemStateCenterObserver, SKUIProductPageChildViewController, SKUIScreenshotsDelegate, SKUITableViewSectionDelegate> {
     BOOL _askPermission;
     SKUIClientContext *_clientContext;
     SKUIProductPageTableHeaderOnlySection *_copyrightSection;

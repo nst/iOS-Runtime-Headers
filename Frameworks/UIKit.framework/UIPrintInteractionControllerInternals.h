@@ -5,14 +5,14 @@
 @class PKPrintSettings, PKPrinter, UIPrintInfo, UIPrintPageRenderer, UIPrintPanelViewController, UIPrintPaper, UIPrintingProgress;
 
 @interface UIPrintInteractionControllerInternals : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     UIPrintInfo *_activePrintInfo;
     int _currentPage;
     UIPrintPageRenderer *_formatterRenderer;
     BOOL _manualPrintPageEnabled;
     int _pageCount;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _pageRange;
     UIPrintPaper *_paper;
     int _printInfoState;

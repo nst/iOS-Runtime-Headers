@@ -20,8 +20,8 @@
 - (id)description;
 - (id)initWithPackageChecker:(id)arg1;
 - (id)initWithPath:(id)arg1 isPackage:(BOOL)arg2 packageChecker:(id)arg3;
-- (void)insertInItemsSource:(id)arg1 archiveController:(id)arg2 atIndex:(unsigned int*)arg3 uiIndex:(unsigned int*)arg4 level:(int)arg5;
 - (void)insertInItemsSource:(id)arg1 archiveController:(id)arg2;
+- (void)insertInItemsSource:(id)arg1 archiveController:(id)arg2 atIndex:(unsigned int*)arg3 uiIndex:(unsigned int*)arg4 level:(int)arg5;
 - (BOOL)isFolder;
 - (BOOL)isPackage;
 - (id)path;

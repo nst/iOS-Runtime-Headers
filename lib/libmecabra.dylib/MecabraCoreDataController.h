@@ -67,9 +67,9 @@
 - (void)removeCoreDataUbiquitySupportFolder:(id)arg1;
 - (id)removeDuplicatesForEntry:(id)arg1 uniquingKeys:(id)arg2 sortDescriptors:(id)arg3 restrictToNumberOfElements:(unsigned int)arg4 identifierKey:(id)arg5;
 - (void)save;
+- (id)searchResultsWithValueDictionary:(id)arg1;
 - (id)searchResultsWithValueDictionary:(id)arg1 managedObjectContext:(id)arg2 sortDescriptors:(id)arg3;
 - (id)searchResultsWithValueDictionary:(id)arg1 sortDescriptors:(id)arg2;
-- (id)searchResultsWithValueDictionary:(id)arg1;
 - (void)sendRemoteNotification;
 - (void)setDatabaseProperty:(id)arg1 forKey:(id)arg2;
 - (void)setLocalStoreURL:(id)arg1;

@@ -37,8 +37,8 @@
 - (void)_processInitialGrowthAction:(int)arg1;
 - (void)_processRefinedGrowthAction:(int)arg1;
 - (void)_processSteadyStateAction:(int)arg1;
-- (void)_resetAlgorithmToInterval:(double)arg1 stage:(int)arg2;
 - (void)_resetAlgorithmToInterval:(double)arg1;
+- (void)_resetAlgorithmToInterval:(double)arg1 stage:(int)arg2;
 - (void)_setCurrentKeepAliveInterval:(double)arg1;
 - (double)_steadyStateTimeout;
 - (id)_stringForAction:(int)arg1;

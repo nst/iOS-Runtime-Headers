@@ -5,21 +5,21 @@
 @class NSMutableArray;
 
 @interface GEORegionalResource : PBCodable <NSCopying> {
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+    NSMutableArray *_attributions;
     struct { 
         unsigned int x : 1; 
         unsigned int y : 1; 
         unsigned int z : 1; 
-    NSMutableArray *_attributions;
     } _has;
     NSMutableArray *_iconChecksums;
     NSMutableArray *_icons;
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_tileRanges;
     unsigned int _tileRangesCount;
     unsigned int _tileRangesSpace;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _validSubManifestVersions;
     unsigned int _x;
     unsigned int _y;

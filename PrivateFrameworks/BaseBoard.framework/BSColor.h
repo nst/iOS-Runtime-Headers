@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface BSColor : NSObject <NSCopying, NSSecureCoding, BSXPCCoding> {
+@interface BSColor : NSObject <BSXPCCoding, NSCopying, NSSecureCoding> {
     float _alpha;
     float _blue;
     float _green;

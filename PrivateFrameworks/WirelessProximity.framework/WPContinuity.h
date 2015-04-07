@@ -37,8 +37,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)startAdvertisingOfType:(int)arg1 withData:(id)arg2;
-- (void)startScanningForType:(int)arg1 withData:(id)arg2 peers:(id)arg3;
 - (void)startScanningForType:(int)arg1 withData:(id)arg2;
+- (void)startScanningForType:(int)arg1 withData:(id)arg2 peers:(id)arg3;
 - (void)startTrackingPeer:(id)arg1;
 - (int)state;
 - (void)stopAdvertisingOfType:(int)arg1;

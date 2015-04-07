@@ -9,21 +9,33 @@
 @class <VKAnimationRunner>, NSString;
 
 @interface VKAnimation : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _completionHandler;
+
+    double _duration;
     struct { 
         unsigned int resuming : 1; 
         unsigned int runsForever : 1; 
         unsigned int startTimestampSet : 1; 
         unsigned int state : 3; 
-    id _completionHandler;
-    double _duration;
     } _flags;
     double _lastTimestamp;
     NSString *_name;
     int _priority;
     <VKAnimationRunner> *_runner;
     double _startTimestamp;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _stepHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _timingFunction;
+
 }
 
 @property(copy) id completionHandler;
@@ -43,12 +55,12 @@
 - (id)description;
 - (double)duration;
 - (id)init;
+- (id)initWithDuration:(double)arg1;
 - (id)initWithDuration:(double)arg1 name:(id)arg2;
 - (id)initWithDuration:(double)arg1 priority:(int)arg2 name:(id)arg3;
-- (id)initWithDuration:(double)arg1;
 - (id)initWithName:(id)arg1;
-- (id)initWithPriority:(int)arg1 name:(id)arg2;
 - (id)initWithPriority:(int)arg1;
+- (id)initWithPriority:(int)arg1 name:(id)arg2;
 - (void)onTimerFired:(double)arg1;
 - (void)pause;
 - (int)priority;

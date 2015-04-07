@@ -9,7 +9,7 @@
 
 @class CALayer, CAMeshTransform, NSArray, NSDictionary, NSString;
 
-@interface CALayer : NSObject <CAPropertyInfo, NSCoding, CAMediaTiming> {
+@interface CALayer : NSObject <CAMediaTiming, CAPropertyInfo, NSCoding> {
     struct _CALayerIvars { 
         int refcount; 
         unsigned int magic; 
@@ -113,11 +113,11 @@
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
 @property float zPosition;
 
-+ (int (*)())CA_getterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
-+ (int (*)())CA_setterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
 + (void)CAMLParserEndElement:(id)arg1;
 + (void)CAMLParserStartElement:(id)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
++ (int (*)())CA_getterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
++ (int (*)())CA_setterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
 + (BOOL)_hasRenderLayerSubclass;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)defaultActionForKey:(id)arg1;
@@ -128,12 +128,12 @@
 + (id)properties;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
-- (struct Layer { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct Data { unsigned int x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned int x_3_1_6 : 3; unsigned int x_3_1_7 : 3; unsigned int x_3_1_8 : 4; unsigned int x_3_1_9 : 4; unsigned int x_3_1_10 : 1; unsigned int x_3_1_11 : 1; unsigned int x_3_1_12 : 1; unsigned int x_3_1_13 : 1; unsigned int x_3_1_14 : 1; unsigned int x_3_1_15 : 1; unsigned int x_3_1_16 : 1; unsigned int x_3_1_17 : 1; unsigned int x_3_1_18 : 1; unsigned int x_3_1_19 : 1; unsigned int x_3_1_20 : 1; unsigned int x_3_1_21 : 1; unsigned int x_3_1_22 : 1; unsigned int x_3_1_23 : 1; unsigned int x_3_1_24 : 1; unsigned int x_3_1_25 : 1; unsigned int x_3_1_26 : 1; unsigned int x_3_1_27 : 1; unsigned int x_3_1_28 : 1; unsigned int x_3_1_29 : 1; unsigned int x_3_1_30 : 30; struct Vec2<double> { double x_31_2_1; double x_31_2_2; } x_3_1_31; struct Rect { double x_32_2_1; double x_32_2_2; double x_32_2_3; double x_32_2_4; } x_3_1_32; } x3; struct Ref<CA::Render::Object> { struct Object {} *x_4_1_1; } x4; struct Ref<CA::Render::TypedArray<CA::Render::Layer> > { struct TypedArray<CA::Render::Layer> {} *x_5_1_1; } x5; struct Layer {} *x6; struct Ref<CA::Render::Layer::Ext> { struct Ext {} *x_7_1_1; } x7; struct Ref<CA::Render::TypedArray<CA::Render::Animation> > { struct TypedArray<CA::Render::Animation> {} *x_8_1_1; } x8; struct Ref<CA::Render::Handle> { struct Handle {} *x_9_1_1; } x9; }*)_copyRenderLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CA::Layer *, unsigned int *> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct List<void (^)()> {} *x7; struct Command {} *x8; struct Deleted {} *x9; struct List<const void *> {} *x10; struct Context {} *x11; struct HashTable<CA::Layer *, CA::Layer *> {} *x12; struct __CFRunLoop {} *x13; struct __CFRunLoopObserver {} *x14; struct LayoutList {} *x15; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; }*)arg1 layerFlags:(unsigned int)arg2 commitFlags:(unsigned int*)arg3;
 - (id).cxx_construct;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
 - (BOOL)_canDisplayConcurrently;
 - (void)_cancelAnimationTimer;
+- (struct Layer { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct Data { unsigned int x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned int x_3_1_6 : 3; unsigned int x_3_1_7 : 3; unsigned int x_3_1_8 : 4; unsigned int x_3_1_9 : 4; unsigned int x_3_1_10 : 1; unsigned int x_3_1_11 : 1; unsigned int x_3_1_12 : 1; unsigned int x_3_1_13 : 1; unsigned int x_3_1_14 : 1; unsigned int x_3_1_15 : 1; unsigned int x_3_1_16 : 1; unsigned int x_3_1_17 : 1; unsigned int x_3_1_18 : 1; unsigned int x_3_1_19 : 1; unsigned int x_3_1_20 : 1; unsigned int x_3_1_21 : 1; unsigned int x_3_1_22 : 1; unsigned int x_3_1_23 : 1; unsigned int x_3_1_24 : 1; unsigned int x_3_1_25 : 1; unsigned int x_3_1_26 : 1; unsigned int x_3_1_27 : 1; unsigned int x_3_1_28 : 1; unsigned int x_3_1_29 : 1; unsigned int x_3_1_30 : 30; struct Vec2<double> { double x_31_2_1; double x_31_2_2; } x_3_1_31; struct Rect { double x_32_2_1; double x_32_2_2; double x_32_2_3; double x_32_2_4; } x_3_1_32; } x3; struct Ref<CA::Render::Object> { struct Object {} *x_4_1_1; } x4; struct Ref<CA::Render::TypedArray<CA::Render::Layer> > { struct TypedArray<CA::Render::Layer> {} *x_5_1_1; } x5; struct Layer {} *x6; struct Ref<CA::Render::Layer::Ext> { struct Ext {} *x_7_1_1; } x7; struct Ref<CA::Render::TypedArray<CA::Render::Animation> > { struct TypedArray<CA::Render::Animation> {} *x_8_1_1; } x8; struct Ref<CA::Render::Handle> { struct Handle {} *x_9_1_1; } x9; }*)_copyRenderLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CA::Layer *, unsigned int *> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct List<void (^)()> {} *x7; struct Command {} *x8; struct Deleted {} *x9; struct List<const void *> {} *x10; struct Context {} *x11; struct HashTable<CA::Layer *, CA::Layer *> {} *x12; struct __CFRunLoop {} *x13; struct __CFRunLoopObserver {} *x14; struct LayoutList {} *x15; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; }*)arg1 layerFlags:(unsigned int)arg2 commitFlags:(unsigned int*)arg3;
 - (void)_dealloc;
 - (void)_didCommitLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CA::Layer *, unsigned int *> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct List<void (^)()> {} *x7; struct Command {} *x8; struct Deleted {} *x9; struct List<const void *> {} *x10; struct Context {} *x11; struct HashTable<CA::Layer *, CA::Layer *> {} *x12; struct __CFRunLoop {} *x13; struct __CFRunLoopObserver {} *x14; struct LayoutList {} *x15; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; }*)arg1;
 - (void)_display;
@@ -185,24 +185,24 @@
 - (void)addReflectionSubLayerWithHeight:(float)arg1 startOpacity:(float)arg2;
 - (void)addResetAnimation;
 - (void)addResetAnimationWithDelegate:(id)arg1;
-- (void)addRippleAnimationFromPosition:(struct CGPoint { float x1; float x2; })arg1 withScale:(float)arg2 addPerspectiveProjection:(BOOL)arg3;
-- (void)addRippleAnimationFromPosition:(struct CGPoint { float x1; float x2; })arg1 withScale:(float)arg2;
 - (void)addRippleAnimationFromPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addRippleAnimationFromPosition:(struct CGPoint { float x1; float x2; })arg1 withScale:(float)arg2;
+- (void)addRippleAnimationFromPosition:(struct CGPoint { float x1; float x2; })arg1 withScale:(float)arg2 addPerspectiveProjection:(BOOL)arg3;
 - (void)addRotateInAnimationWithDuration:(double)arg1 delay:(double)arg2;
 - (void)addSproingAnimationFromPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)addState:(id)arg1;
 - (void)addSublayer:(id)arg1;
 - (void)addWaveAnimation;
 - (void)addWaveAnimationWithOffset:(struct CGSize { float x1; float x2; })arg1 zPosition:(float)arg2;
-- (void)addWaveAnimationWithScale:(float)arg1 offset:(struct CGSize { float x1; float x2; })arg2 zPosition:(float)arg3 addPerspectiveProjection:(BOOL)arg4;
 - (void)addWaveAnimationWithScale:(float)arg1 offset:(struct CGSize { float x1; float x2; })arg2 zPosition:(float)arg3;
+- (void)addWaveAnimationWithScale:(float)arg1 offset:(struct CGSize { float x1; float x2; })arg2 zPosition:(float)arg3 addPerspectiveProjection:(BOOL)arg4;
 - (void)addZoomAnimation;
+- (void)addZoomAnimationFromPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)addZoomAnimationFromPoint:(struct CGPoint { float x1; float x2; })arg1 speed:(float)arg2;
 - (void)addZoomAnimationFromPoint:(struct CGPoint { float x1; float x2; })arg1 startingScale:(float)arg2;
-- (void)addZoomAnimationFromPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)addZoomDownAnimation;
-- (void)addZoomDownAnimationFromPoint:(struct CGPoint { float x1; float x2; })arg1 endingScale:(float)arg2 delay:(double)arg3;
 - (void)addZoomDownAnimationFromPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addZoomDownAnimationFromPoint:(struct CGPoint { float x1; float x2; })arg1 endingScale:(float)arg2 delay:(double)arg3;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransform;
 - (BOOL)allowsDisplayCompositing;
 - (BOOL)allowsEdgeAntialiasing;
@@ -345,8 +345,8 @@
 - (float)p_perspectiveZDistanceUsingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)pause;
 - (void)pauseAtTime:(double)arg1;
-- (id)pkui_addAdditiveAnimation:(id)arg1 withKeyPath:(id)arg2;
 - (id)pkui_addAdditiveAnimation:(id)arg1;
+- (id)pkui_addAdditiveAnimation:(id)arg1 withKeyPath:(id)arg2;
 - (id)pkui_additiveAnimationKeyPrefixForKeyPath:(id)arg1;
 - (double)pkui_elapsedDurationForAnimationWithKey:(id)arg1;
 - (double)pkui_remainingDurationForAnimationWithKey:(id)arg1;
@@ -526,8 +526,8 @@
 - (BOOL)tilingSafeHasContents;
 - (void)tilingSafeSetSublayers:(id)arg1;
 - (double)timeOffset;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform3DByApplyingAnimation:(id)arg1 atTime:(double)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 animationCache:(id)arg4;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform;
+- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform3DByApplyingAnimation:(id)arg1 atTime:(double)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 animationCache:(id)arg4;
 - (void)tsu_transformToQuadrilateralWithTopLeft:(struct CGPoint { float x1; float x2; })arg1 topRight:(struct CGPoint { float x1; float x2; })arg2 bottomLeft:(struct CGPoint { float x1; float x2; })arg3 bottomRight:(struct CGPoint { float x1; float x2; })arg4;
 - (BOOL)uiHasFilterWithName:(id)arg1;
 - (id)valueForKey:(id)arg1;

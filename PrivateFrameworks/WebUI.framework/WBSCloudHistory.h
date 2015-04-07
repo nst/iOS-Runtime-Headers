@@ -5,19 +5,15 @@
 @class <NSObject>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSTimer, WBSCloudHistorySyncThrottler;
 
 @interface WBSCloudHistory : NSObject <WBSCloudHistorySyncThrottlerDataStore> {
-    struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
-        struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
-            struct SuddenTerminationDisabler {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
-        struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
-            struct SuddenTerminationDisabler {} *__first_; 
-        } __ptr_; 
     BOOL _cloudHistoryEnabled;
     NSObject<OS_dispatch_queue> *_cloudHistoryQueue;
     WBSCloudHistorySyncThrottler *_fetchChangesThrottler;
     BOOL _fetchChangesWhenBackoffTimerFires;
     BOOL _fetchChangesWhenHistoryLoads;
+    struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
+        struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
+            struct SuddenTerminationDisabler {} *__first_; 
+        } __ptr_; 
     } _fetchOperationSuddenTerminationDisabler;
     <NSObject> *_historyWasLoadedObserver;
     unsigned int _numberOfDevicesInSyncCircle;
@@ -25,6 +21,10 @@
     WBSCloudHistorySyncThrottler *_saveChangesThrottler;
     BOOL _saveChangesWhenBackoffTimerFires;
     BOOL _saveChangesWhenHistoryLoads;
+    struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
+        struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
+            struct SuddenTerminationDisabler {} *__first_; 
+        } __ptr_; 
     } _saveOperationSuddenTerminationDisabler;
     NSTimer *_serverBackoffTimer;
     NSMutableDictionary *_syncCircleSizeRetrievalCompletionHandlersByOperation;

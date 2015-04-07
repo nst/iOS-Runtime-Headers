@@ -25,9 +25,9 @@
 - (void)dialog:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)dialogDidCancel:(id)arg1;
 - (int)numberOfPendingDialogs;
-- (BOOL)presentDialog:(id)arg1 withCompletionBlock:(id)arg2;
 - (BOOL)presentDialog:(id)arg1;
-- (BOOL)presentDialogForError:(id)arg1 withCompletionBlock:(id)arg2;
+- (BOOL)presentDialog:(id)arg1 withCompletionBlock:(id)arg2;
 - (BOOL)presentDialogForError:(id)arg1;
+- (BOOL)presentDialogForError:(id)arg1 withCompletionBlock:(id)arg2;
 
 @end

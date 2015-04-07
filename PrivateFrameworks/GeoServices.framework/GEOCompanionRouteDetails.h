@@ -5,28 +5,20 @@
 @class GEOMapItemStorage, NSData, NSMutableArray, NSString;
 
 @interface GEOCompanionRouteDetails : PBCodable <NSCopying> {
+    BOOL _canNavigate;
     struct { 
         double *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+    } _coordinates;
+    GEOMapItemStorage *_destination;
+    NSString *_destinationName;
+    unsigned int _distance;
     struct { 
         unsigned int distance : 1; 
         unsigned int historicalDuration : 1; 
         unsigned int originalDuration : 1; 
         unsigned int canNavigate : 1; 
-    BOOL _canNavigate;
-    } _coordinates;
-    GEOMapItemStorage *_destination;
-    NSString *_destinationName;
-    unsigned int _distance;
     } _has;
     unsigned int _historicalDuration;
     NSString *_name;
@@ -34,7 +26,15 @@
     unsigned int _originalDuration;
     NSData *_routeID;
     NSMutableArray *_steps;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _trafficColorOffsets;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _trafficColors;
 }
 

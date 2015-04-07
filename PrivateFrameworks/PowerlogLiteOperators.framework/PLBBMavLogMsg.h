@@ -78,8 +78,8 @@
     NSArray *_rx1SQAPowerHist;
     NSNumber *_rxTicks;
     NSArray *_spiOnOffState;
-    NSArray *_txPowerHist1x;
     NSArray *_txPowerHist;
+    NSArray *_txPowerHist1x;
     NSArray *_txPowerHistEVDO;
     NSNumber *_txTicks;
     NSArray *_uartOnOffState;
@@ -159,8 +159,8 @@
 @property(retain) NSArray * rx1SQAPowerHist;
 @property(retain) NSNumber * rxTicks;
 @property(retain) NSArray * spiOnOffState;
-@property(retain) NSArray * txPowerHist1x;
 @property(retain) NSArray * txPowerHist;
+@property(retain) NSArray * txPowerHist1x;
 @property(retain) NSArray * txPowerHistEVDO;
 @property(retain) NSNumber * txTicks;
 @property(retain) NSArray * uartOnOffState;
@@ -370,8 +370,8 @@
 - (void)setUartOnOffState:(id)arg1;
 - (void)setUsbStateCountHist:(id)arg1;
 - (id)spiOnOffState;
-- (id)txPowerHist1x;
 - (id)txPowerHist;
+- (id)txPowerHist1x;
 - (id)txPowerHistEVDO;
 - (id)txTicks;
 - (id)uartOnOffState;

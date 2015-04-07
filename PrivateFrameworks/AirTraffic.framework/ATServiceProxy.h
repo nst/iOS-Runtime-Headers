@@ -21,8 +21,8 @@
 - (id)init;
 - (id)initWithConnection:(id)arg1;
 - (id)messageLinks;
-- (void)service:(id)arg1 willOpenMessageLink:(id)arg2 completion:(id)arg3;
 - (void)service:(id)arg1 willOpenMessageLink:(id)arg2;
+- (void)service:(id)arg1 willOpenMessageLink:(id)arg2 completion:(id)arg3;
 - (void)setConnection:(id)arg1;
 
 @end

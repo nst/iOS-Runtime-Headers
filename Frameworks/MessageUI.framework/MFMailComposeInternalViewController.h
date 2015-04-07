@@ -5,24 +5,24 @@
 @class <MFMailComposeViewControllerDelegate>, MFMailComposePlaceholderViewController, MFMailComposeRemoteViewController, NSError, NSMutableArray, NSMutableDictionary, NSString, _UIAsyncInvocation;
 
 @interface MFMailComposeInternalViewController : UIViewController <MFMailComposeRemoteViewControllerDelegate> {
-    unsigned int _hasDelayedPresentation : 1;
-    unsigned int _didEndDelayedPresentation : 1;
-    unsigned int _compositionValuesAreFinalized : 1;
-    unsigned int _remoteViewControllerIsConfigured : 1;
-    unsigned int _isAppearing : 1;
-    unsigned int _didAppear : 1;
-    unsigned int _didFinish : 1;
-    unsigned int _delegateRespondsToBodyFinishedLoadingWithResult : 1;
     NSMutableArray *_attachments;
     id _autorotationDelegate;
     _UIAsyncInvocation *_cancellationInvocation;
     int _composeResult;
     NSError *_composeResultError;
     NSMutableDictionary *_compositionValues;
+    unsigned int _compositionValuesAreFinalized : 1;
+    unsigned int _delegateRespondsToBodyFinishedLoadingWithResult : 1;
+    unsigned int _didAppear : 1;
+    unsigned int _didEndDelayedPresentation : 1;
+    unsigned int _didFinish : 1;
+    unsigned int _hasDelayedPresentation : 1;
+    unsigned int _isAppearing : 1;
     <MFMailComposeViewControllerDelegate> *_mailComposeDelegate;
     NSString *_placeholderSubject;
     MFMailComposePlaceholderViewController *_placeholderViewController;
     double _presentationDelayBeganTimestamp;
+    unsigned int _remoteViewControllerIsConfigured : 1;
     MFMailComposeRemoteViewController *_serviceViewController;
 }
 

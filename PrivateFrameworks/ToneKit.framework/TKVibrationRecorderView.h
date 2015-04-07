@@ -68,8 +68,8 @@
 - (void)_setCurrentVibrationComponentDidStartTimestamp:(double)arg1;
 - (void)_setCurrentVibrationProgressDidStartTimestamp:(double)arg1;
 - (void)_setInstructionsLabel:(id)arg1;
-- (void)_setLeftButtonIdentifier:(int)arg1 enabled:(BOOL)arg2 rightButtonIdentifier:(int)arg3 enabled:(BOOL)arg4 animated:(BOOL)arg5;
 - (void)_setLeftButtonIdentifier:(int)arg1;
+- (void)_setLeftButtonIdentifier:(int)arg1 enabled:(BOOL)arg2 rightButtonIdentifier:(int)arg3 enabled:(BOOL)arg4 animated:(BOOL)arg5;
 - (void)_setProgressToolbarBottomConstraint:(id)arg1;
 - (void)_setProgressView:(id)arg1;
 - (void)_setReplayModeEnabled:(BOOL)arg1;

@@ -61,8 +61,8 @@
 - (void)layoutSubviews;
 - (void)resetWithNumberOfTicks:(int)arg1;
 - (void)setFont:(id)arg1;
-- (void)setStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setStyle:(int)arg1;
+- (void)setStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)startCountdownWithAnimationDelegate:(id)arg1;
 - (void)stopCountdown;
 - (int)style;

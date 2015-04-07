@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@interface NSAffineTransform : NSObject <NSCopying, NSCoding> {
+@interface NSAffineTransform : NSObject <NSCoding, NSCopying> {
     struct { 
         float m11; 
         float m12; 
@@ -22,9 +22,9 @@
 
 + (id)transform;
 
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (id)CAMLType;
 - (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (float)angle;
 - (void)appendTransform:(id)arg1;

@@ -5,27 +5,11 @@
 @class NSArray, NSIndexSet, NSMutableDictionary, NSMutableIndexSet, UICollectionView, UICollectionViewLayout, UICollectionViewLayoutInvalidationContext, UIDynamicAnimator, _UICollectionViewCompositionLayout;
 
 @interface UICollectionViewLayout : NSObject <NSCoding> {
+    UIDynamicAnimator *_animator;
+    UICollectionView *_collectionView;
     struct CGSize { 
         float width; 
         float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        unsigned int inTransitionFromTransitionLayout : 1; 
-        unsigned int inTransitionToTransitionLayout : 1; 
-        unsigned int prepared : 1; 
-    UIDynamicAnimator *_animator;
-    UICollectionView *_collectionView;
     } _collectionViewBoundsSize;
     struct _UICollectionViewCompositionLayout { Class x1; } *_compositionLayout;
     NSMutableDictionary *_decorationViewClassDict;
@@ -36,6 +20,15 @@
     NSMutableDictionary *_deletedSupplementaryIndexPathsDict;
     NSArray *_elementKinds;
     NSMutableDictionary *_finalAnimationLayoutAttributesDict;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _frame;
     NSMutableDictionary *_initialAnimationLayoutAttributesDict;
     NSMutableDictionary *_insertedDecorationIndexPathsDict;
@@ -43,7 +36,14 @@
     NSMutableDictionary *_insertedSupplementaryIndexPathsDict;
     UICollectionViewLayoutInvalidationContext *_invalidationContext;
     NSIndexSet *_items;
+    struct { 
+        unsigned int inTransitionFromTransitionLayout : 1; 
+        unsigned int inTransitionToTransitionLayout : 1; 
+        unsigned int prepared : 1; 
     } _layoutFlags;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _layoutOffset;
     unsigned int _layoutOffsetEdges;
     NSIndexSet *_sections;
@@ -68,8 +68,8 @@
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 
-- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2;
+- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bounds;
 - (struct _UICollectionViewCompositionLayout { Class x1; }*)_compositionLayout;
 - (id)_decorationViewForLayoutAttributes:(id)arg1;
@@ -151,8 +151,8 @@
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)shouldInvalidateLayoutForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
 - (id)snapshottedLayoutAttributeForItemAtIndexPath:(id)arg1;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGPoint { float x1; float x2; })transitionContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 keyItemIndexPath:(id)arg2;
 - (struct CGPoint { float x1; float x2; })updatesContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 

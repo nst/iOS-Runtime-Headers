@@ -5,12 +5,12 @@
 @class NSString, UICollectionView, UIPageControl, UIView;
 
 @interface MusicGeniusMixesViewController : MPUDataSourceViewController <MPUMiniPlayerParticipant, UICollectionViewDataSource, UICollectionViewDelegate> {
+    UICollectionView *_collectionView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UICollectionView *_collectionView;
     } _collectionViewContentInsetAdditions;
     BOOL _isVisible;
     UIPageControl *_pageControl;

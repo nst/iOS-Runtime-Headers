@@ -5,10 +5,6 @@
 @class EDCollection, EDReference, EDResources, NSString;
 
 @interface EDTable : NSObject {
-    boolmShowColumnStripes;
-    boolmShowFirstColumn;
-    boolmShowLastColumn;
-    boolmShowRowStripes;
     EDCollection *mColumnFilters;
     unsigned int mDataAreaBorderDxfIndex;
     unsigned int mDataAreaDxfIndex;
@@ -18,6 +14,10 @@
     unsigned int mHeaderRowDxfIndex;
     NSString *mName;
     EDResources *mResources;
+    bool mShowColumnStripes;
+    bool mShowFirstColumn;
+    bool mShowLastColumn;
+    bool mShowRowStripes;
     unsigned int mStyleIndex;
     NSString *mStyleName;
     unsigned int mTableBorderDxfIndex;

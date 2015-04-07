@@ -12,7 +12,11 @@
     struct IONotificationPort { } *_ioNotifyPort;
     unsigned int _notificationRef;
     PLOperator *_operator;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _operatorBlock;
+
     unsigned int _service;
     NSString *_serviceName;
 }
@@ -24,21 +28,21 @@
 @property unsigned int service;
 @property(retain) NSString * serviceName;
 
-+ (id)snapshotFromIOEntry:(unsigned int)arg1 forKey:(id)arg2;
 + (id)snapshotFromIOEntry:(unsigned int)arg1;
++ (id)snapshotFromIOEntry:(unsigned int)arg1 forKey:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithOperator:(id)arg1 forService:(id)arg2 withBlock:(id)arg3;
 - (id)initWithOperator:(id)arg1 forService:(id)arg2;
+- (id)initWithOperator:(id)arg1 forService:(id)arg2 withBlock:(id)arg3;
 - (struct IONotificationPort { }*)ioNotifyPort;
 - (unsigned int)notificationRef;
 - (id)operator;
 - (id)operatorBlock;
 - (id)properties;
 - (id)propertiesForKey:(id)arg1;
-- (id)propertiesFromIOEntry:(unsigned int)arg1 forKey:(id)arg2;
 - (id)propertiesFromIOEntry:(unsigned int)arg1;
+- (id)propertiesFromIOEntry:(unsigned int)arg1 forKey:(id)arg2;
 - (unsigned int)service;
 - (id)serviceName;
 - (void)setIoNotifyPort:(struct IONotificationPort { }*)arg1;

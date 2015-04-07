@@ -33,8 +33,8 @@
 - (void)internalSetObject:(id)arg1 forKey:(id)arg2;
 - (unsigned int)maxCount;
 - (id)missingEntryQueues;
-- (id)objectForKey:(id)arg1 withMissingHandler:(id)arg2;
 - (id)objectForKey:(id)arg1;
+- (id)objectForKey:(id)arg1 withMissingHandler:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;

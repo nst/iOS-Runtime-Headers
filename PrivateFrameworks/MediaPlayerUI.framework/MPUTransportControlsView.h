@@ -5,11 +5,6 @@
 @class <MPUTransportControlsViewDelegate>, MPUTransportButtonAttributes, NSArray, NSMutableDictionary, UIButton, UIButton<MPUTransportButton>, UIFont;
 
 @interface MPUTransportControlsView : UIView {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     BOOL _alwaysLive;
     NSArray *_availableControls;
     NSMutableDictionary *_availableControlsByGroup;
@@ -17,6 +12,11 @@
     double _displayedSkipBackwardInterval;
     double _displayedSkipForwardInterval;
     UIFont *_displayedSkipIntervalFont;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _insetsForExpandingButtons;
     UIButton<MPUTransportButton> *_leftButton;
     MPUTransportButtonAttributes *_leftButtonAttributes;

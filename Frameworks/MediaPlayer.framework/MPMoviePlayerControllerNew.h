@@ -4,7 +4,7 @@
 
 @class <MPMoviePlayerControllerDelegate>, MPAVController, MPInlineVideoController, MPMovieAccessLog, MPMovieErrorLog, MPMoviePlayerController, MPMovieView, MPNowPlayingObserver, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIWindow;
 
-@interface MPMoviePlayerControllerNew : NSObject <MPMovieViewDelegate, MPMediaPlayback> {
+@interface MPMoviePlayerControllerNew : NSObject <MPMediaPlayback, MPMovieViewDelegate> {
     NSDictionary *_HTTPHeaderFields;
     int _additionalButtons;
     NSMutableSet *_asyncImageGenerators;
@@ -105,8 +105,8 @@
 - (double)_playableStartTime;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_postDidFinishNotificationWithReason:(int)arg1;
-- (void)_postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)_postNotificationName:(id)arg1 object:(id)arg2;
+- (void)_postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)_prepareToPlayWithStartIndex:(unsigned int)arg1;
 - (void)_rateDidChangeNotification:(id)arg1;
 - (void)_resignActive;
@@ -117,8 +117,8 @@
 - (void)_serverDiedNotification:(id)arg1;
 - (void)_setAdditionalButtons:(int)arg1;
 - (void)_setAudioSessionModeOverride:(id)arg1;
-- (void)_setControlsHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setControlsHidden:(BOOL)arg1;
+- (void)_setControlsHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setCurrentPlaybackTime:(double)arg1 timeOption:(int)arg2;
 - (void)_setDelegate:(id)arg1;
 - (void)_setDisallowsAMRAudio:(BOOL)arg1;
@@ -195,8 +195,8 @@
 - (void)setCurrentPlaybackRate:(float)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;
 - (void)setEndPlaybackTime:(double)arg1;
-- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1;
+- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setInitialPlaybackTime:(double)arg1;
 - (void)setInlinePlaybackUsesTVOut:(BOOL)arg1;
 - (void)setMovieControlMode:(int)arg1;

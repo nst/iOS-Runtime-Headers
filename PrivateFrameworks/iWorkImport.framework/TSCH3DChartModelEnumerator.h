@@ -5,38 +5,38 @@
 @class NSArray, TSCH3DChartType, TSCHChartAxis, TSCHChartInfo, TSCHChartModel, TSCHChartSeries, TSCHChartSeriesType;
 
 @interface TSCH3DChartModelEnumerator : NSObject {
-    struct ValueEnumerator { 
-        BOOL mForward; 
-        unsigned int mIndex; 
-        unsigned int mMax; 
-        double mValue; 
-    struct ValueEnumerator { 
-        BOOL mForward; 
-        unsigned int mIndex; 
-        unsigned int mMax; 
-        double mValue; 
-    struct vector<double, std::__1::allocator<double> > { 
-        double *__begin_; 
-        double *__end_; 
-        struct __compressed_pair<double *, std::__1::allocator<double> > { 
-            double *__first_; 
-        } __end_cap_; 
-    struct vector<double, std::__1::allocator<double> > { 
-        double *__begin_; 
-        double *__end_; 
-        struct __compressed_pair<double *, std::__1::allocator<double> > { 
-            double *__first_; 
-        } __end_cap_; 
     TSCH3DChartType *mChartType;
+    struct ValueEnumerator { 
+        BOOL mForward; 
+        unsigned int mIndex; 
+        unsigned int mMax; 
+        double mValue; 
     } mCoordinate;
     TSCHChartAxis *mCoordinateAxis;
+    struct vector<double, std::__1::allocator<double> > { 
+        double *__begin_; 
+        double *__end_; 
+        struct __compressed_pair<double *, std::__1::allocator<double> > { 
+            double *__first_; 
+        } __end_cap_; 
     } mCoordinateValues;
     double mIntercept;
     TSCHChartModel *mModel;
     unsigned int mNumberOfValues;
+    struct ValueEnumerator { 
+        BOOL mForward; 
+        unsigned int mIndex; 
+        unsigned int mMax; 
+        double mValue; 
     } mSeries;
     NSArray *mSeriesList;
     TSCHChartSeriesType *mSeriesType;
+    struct vector<double, std::__1::allocator<double> > { 
+        double *__begin_; 
+        double *__end_; 
+        struct __compressed_pair<double *, std::__1::allocator<double> > { 
+            double *__first_; 
+        } __end_cap_; 
     } mSeriesValues;
     double mUnitSpaceIntercept;
     TSCHChartAxis *mValueAxis;
@@ -67,10 +67,10 @@
 - (BOOL)isValid;
 - (BOOL)isValidNonZero;
 - (id)model;
-- (id)nextElement:(unsigned int)arg1;
 - (id)nextElement;
-- (id)nextSeries:(unsigned int)arg1;
+- (id)nextElement:(unsigned int)arg1;
 - (id)nextSeries;
+- (id)nextSeries:(unsigned int)arg1;
 - (unsigned int)numberOfSeries;
 - (id)p_resetCoordinateEnumeration;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })position;

@@ -5,14 +5,14 @@
 @class <PSYSyncRestrictionProviderDelegate>, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface PSYSyncRestrictionProvider : NSObject <PSYDeviceSyncStateObserver> {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     <PSYSyncRestrictionProviderDelegate> *_delegate;
     BOOL _hasReceivedStartSync;
     NSURL *_pairingDataURL;
     NSObject<OS_dispatch_queue> *_queue;
     NSURL *_serviceDirectory;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _serviceDirectoryLock;
     NSString *_serviceName;
     unsigned int _syncRestriction;

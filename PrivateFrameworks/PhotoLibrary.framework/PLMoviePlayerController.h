@@ -117,9 +117,9 @@
 - (id)player;
 - (void)requestToBecomeActiveController;
 - (void)requestToResignAsActiveController;
-- (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2 forceUpdate:(BOOL)arg3;
-- (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2;
 - (void)setCurrentTime:(double)arg1;
+- (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2;
+- (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2 forceUpdate:(BOOL)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setIsActiveController:(BOOL)arg1;
 - (void)setPlayerItem:(id)arg1 startTime:(double)arg2;

@@ -9,55 +9,7 @@
 
 @class <VKBuildingFootprintMapModelDelegate>, NSString, VK3DObjectSubMapModel, VKAnimation, VKMercatorTerrainHeightCache, VKSkyModel;
 
-@interface VKBuildingFootprintMapModel : VKVectorMapModel <VKMercatorTerrainHeightProvider, VKMapLayer> {
-    struct unordered_map<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, std::__1::equal_to<VKVectorTile *>, std::__1::allocator<std::__1::pair<VKVectorTile *const, OccluderGroupList> > > { 
-        struct __hash_table<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true>, std::__1::__unordered_map_equal<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::equal_to<VKVectorTile *>, true>, std::__1::allocator<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
-                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
-                            unsigned long __first_; 
-                        } __data_; 
-                    } __second_; 
-                } __ptr_; 
-            } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> { 
-                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} *__next_; 
-                } __first_; 
-            } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true> > { 
-                unsigned long __first_; 
-            } __p2_; 
-            struct __compressed_pair<float, std::__1::__unordered_map_equal<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::equal_to<VKVectorTile *>, true> > { 
-                float __first_; 
-            } __p3_; 
-        } __table_; 
-    struct unordered_map<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, std::__1::equal_to<VKVectorTile *>, std::__1::allocator<std::__1::pair<VKVectorTile *const, OccluderGroupList> > > { 
-        struct __hash_table<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true>, std::__1::__unordered_map_equal<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::equal_to<VKVectorTile *>, true>, std::__1::allocator<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
-                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
-                            unsigned long __first_; 
-                        } __data_; 
-                    } __second_; 
-                } __ptr_; 
-            } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> { 
-                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} *__next_; 
-                } __first_; 
-            } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true> > { 
-                unsigned long __first_; 
-            } __p2_; 
-            struct __compressed_pair<float, std::__1::__unordered_map_equal<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::equal_to<VKVectorTile *>, true> > { 
-                float __first_; 
-            } __p3_; 
-        } __table_; 
+@interface VKBuildingFootprintMapModel : VKVectorMapModel <VKMapLayer, VKMercatorTerrainHeightProvider> {
     struct RenderItemBatcher { 
         struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { 
             struct Range {} *__begin_; 
@@ -108,107 +60,155 @@
                 struct MultiRange {} *__first_; 
             } __end_cap_; 
         } _rangePool; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::BuildingFlatStroke::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingFlatStroke::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::BuildingFlatStroke::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingFlatStroke::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::BuildingFlatStroke::Shader::Setup> {} *__first_; 
+    } _batcher;
+    float _brightness;
+    int _buildingMode;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
         } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::BuildingFlat::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingFlat::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::BuildingFlat::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingFlat::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::BuildingFlat::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::BuildingTop::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingTop::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::BuildingTop::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingTop::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::BuildingTop::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::PrefilteredLine::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::PrefilteredLine::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::PrefilteredLine::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::PrefilteredLine::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::PrefilteredLine::Shader::Setup> {} *__first_; 
-        } __ptr_; 
+    } _buildingRenderItemPool;
     struct unique_ptr<ggl::FragmentedPool<ggl::Building::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::Building::Shader::Setup> > > { 
         struct __compressed_pair<ggl::FragmentedPool<ggl::Building::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::Building::Shader::Setup> > > { 
             struct FragmentedPool<ggl::Building::Shader::Setup> {} *__first_; 
         } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::BuildingPointyRoof::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingPointyRoof::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::BuildingPointyRoof::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingPointyRoof::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::BuildingPointyRoof::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::BuildingShadow::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingShadow::Shader::Setup> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::BuildingShadow::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingShadow::Shader::Setup> > > { 
-            struct FragmentedPool<ggl::BuildingShadow::Shader::Setup> {} *__first_; 
-        } __ptr_; 
-    struct shared_ptr<ggl::RenderState> { 
-        struct RenderState {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::RenderState> { 
-        struct RenderState {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::RenderState> { 
-        struct RenderState {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::RenderState> { 
-        struct RenderState {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::RenderState> { 
-        struct RenderState {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::RenderState> { 
-        struct RenderState {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct shared_ptr<ggl::RenderState> { 
-        struct RenderState {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
-        } __ptr_; 
-    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
-            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
-        } __ptr_; 
-    } _batcher;
-    float _brightness;
-    int _buildingMode;
-    } _buildingRenderItemPool;
     } _buildingShaderSetupPool;
+    struct unordered_map<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, std::__1::equal_to<VKVectorTile *>, std::__1::allocator<std::__1::pair<VKVectorTile *const, OccluderGroupList> > > { 
+        struct __hash_table<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true>, std::__1::__unordered_map_equal<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::equal_to<VKVectorTile *>, true>, std::__1::allocator<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
+                            unsigned long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true> > { 
+                unsigned long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::equal_to<VKVectorTile *>, true> > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
     } _currentOccluders;
     <VKBuildingFootprintMapModelDelegate> *_delegate;
     VKAnimation *_fadeBuildingAnimation;
     BOOL _fadeTiles;
+    struct shared_ptr<ggl::RenderState> { 
+        struct RenderState {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _fillRenderState;
+    struct shared_ptr<ggl::RenderState> { 
+        struct RenderState {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _fillRenderStateWithBlending;
+    struct unique_ptr<ggl::FragmentedPool<ggl::BuildingFlat::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingFlat::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::BuildingFlat::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingFlat::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::BuildingFlat::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _fillShaderSetupPool;
     VKMercatorTerrainHeightCache *_heightCache;
     BOOL _initializedStyles;
     VK3DObjectSubMapModel *_landmarksModel;
     float _maxLayeringHeight;
     float _minLayeringHeight;
+    struct unique_ptr<ggl::FragmentedPool<ggl::BuildingPointyRoof::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingPointyRoof::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::BuildingPointyRoof::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingPointyRoof::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::BuildingPointyRoof::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _pointyRoofShaderSetupPool;
+    struct unordered_map<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, std::__1::equal_to<VKVectorTile *>, std::__1::allocator<std::__1::pair<VKVectorTile *const, OccluderGroupList> > > { 
+        struct __hash_table<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true>, std::__1::__unordered_map_equal<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::equal_to<VKVectorTile *>, true>, std::__1::allocator<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
+                            unsigned long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true> > { 
+                unsigned long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::equal_to<VKVectorTile *>, true> > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
     } _previousOccluders;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
     } _shadowRenderItemPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::BuildingShadow::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingShadow::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::BuildingShadow::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingShadow::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::BuildingShadow::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _shadowShaderSetupPool;
+    struct shared_ptr<ggl::RenderState> { 
+        struct RenderState {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _shadowsRenderState;
+    bool _shouldDraw3DBuildingsIn3DBuildingsRenderPass;
+    bool _shouldDraw3DBuildingsInVectorBuildingsRenderPass;
     VKSkyModel *_skyModel;
     int _stencilRef;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
     } _stroke3DRenderItemPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::PrefilteredLine::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::PrefilteredLine::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::PrefilteredLine::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::PrefilteredLine::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::PrefilteredLine::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _stroke3DShaderSetupPool;
+    struct shared_ptr<ggl::RenderState> { 
+        struct RenderState {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _strokeRenderState;
+    struct unique_ptr<ggl::FragmentedPool<ggl::BuildingFlatStroke::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingFlatStroke::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::BuildingFlatStroke::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingFlatStroke::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::BuildingFlatStroke::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _strokeShaderSetupPool;
     VKAnimation *_styleChangeAnimation;
     BOOL _supports3DBuildings;
     BOOL _supports3DStrokes;
     BOOL _supportsBuildingShadows;
     BOOL _supportsStrokes;
+    struct shared_ptr<ggl::RenderState> { 
+        struct RenderState {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _threeDRenderStateWithBlending;
+    struct shared_ptr<ggl::RenderState> { 
+        struct RenderState {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _threeDRenderStateWithoutBlending;
+    struct shared_ptr<ggl::RenderState> { 
+        struct RenderState {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _threeDStrokeRenderState;
+    struct unique_ptr<ggl::FragmentedPool<ggl::BuildingTop::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingTop::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::BuildingTop::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::BuildingTop::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::BuildingTop::Shader::Setup> {} *__first_; 
+        } __ptr_; 
     } _topShaderSetupPool;
     int _vectorType;
-    bool_shouldDraw3DBuildingsIn3DBuildingsRenderPass;
-    bool_shouldDraw3DBuildingsInVectorBuildingsRenderPass;
 }
 
 @property int buildingMode;
@@ -251,8 +251,8 @@
 - (void)reset;
 - (void)resetPools;
 - (void)setActive:(BOOL)arg1;
-- (void)setBuildingMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setBuildingMode:(int)arg1;
+- (void)setBuildingMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setFadeTiles:(BOOL)arg1;
 - (void)setLandmarksModel:(id)arg1;

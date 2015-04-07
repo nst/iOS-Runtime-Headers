@@ -9,9 +9,6 @@
 @class <NSISEngineDelegate>, NSISVariable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface NSISEngine : NSObject <NSISVariableDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL _accumulatingRemovals;
     int _automaticOptimizationDisabledCount;
     NSMapTable *_brokenConstraintNegativeErrors;
@@ -19,6 +16,9 @@
     unsigned int _changeCountAtLastOptimization;
     <NSISEngineDelegate> *_delegate;
     int _engineDelegateCallsDisabledCount;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _engineScalingCoefficients;
     NSISVariable *_headForObjectiveRow;
     struct __CFDictionary { } *_integralizationAdjustmentsForConstraintMarkers;
@@ -31,7 +31,11 @@
     NSMapTable *_rowsCrossIndex;
     BOOL _shouldIntegralize;
     unsigned int _totalChangeCount;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _unsatisfiabilityHandler;
+
     int _variableDelegateCallsDisabledCount;
     NSMutableSet *_variablesWithIntegralizationViolations;
     NSMutableArray *_variablesWithValueRestrictionViolations;

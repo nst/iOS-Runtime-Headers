@@ -21,8 +21,8 @@
 - (id)closestRepToPoint:(struct CGPoint { float x1; float x2; })arg1 forStorage:(id)arg2;
 - (void)dealloc;
 - (void)didBeginEditingText;
-- (void)getColumnLeftPosition:(float*)arg1 columnRightPosition:(float*)arg2 singleColumnAtSelectionPoint:(BOOL)arg3;
 - (void)getColumnLeftPosition:(float*)arg1 columnRightPosition:(float*)arg2;
+- (void)getColumnLeftPosition:(float*)arg1 columnRightPosition:(float*)arg2 singleColumnAtSelectionPoint:(BOOL)arg3;
 - (BOOL)handleHyperlinksWithTextGRs;
 - (void)hideDisplayedAnnotation;
 - (BOOL)hyperlinkPopoverIsShown;

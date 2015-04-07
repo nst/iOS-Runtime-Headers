@@ -16,6 +16,6 @@
 - (int)intAtIndex:(unsigned int)arg1;
 - (id)stringAtIndex:(unsigned int)arg1;
 - (id)uncopiedDataAtIndex:(unsigned int)arg1;
-- (struct RawData { boolx1; void *x2; int x3; })uncopiedRawDataAtIndex:(unsigned int)arg1;
+- (struct RawData { bool x1; void *x2; int x3; })uncopiedRawDataAtIndex:(unsigned int)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @class CKRecordID, NSDate;
 
-@interface CKUserPresence : NSObject <NSSecureCoding, NSCopying> {
+@interface CKUserPresence : NSObject <NSCopying, NSSecureCoding> {
     long long _additionalStatusFlags;
     NSDate *_lastCustom;
     NSDate *_lastEdited;

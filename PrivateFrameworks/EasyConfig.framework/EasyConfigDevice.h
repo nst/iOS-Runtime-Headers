@@ -14,31 +14,6 @@
 @class NSDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface EasyConfigDevice : NSObject <NSCopying> {
-    struct { 
-        double startTime; 
-        unsigned char userChangedFriendlyName; 
-        unsigned char playPasswordSet; 
-        unsigned char adminPasswordSet; 
-        unsigned char destinationNetworkRecommendationUsed; 
-        double secondsToGetLinkUpOnSWAP; 
-        int wifiJoinSWAPError; 
-        unsigned char hitJoiningTargetSWAPTimeout; 
-        int rssiOfSWAP; 
-        unsigned int snrOfSWAP; 
-        unsigned int channelOfSWAP; 
-    struct { 
-        double secondsToGetLinkUpOnDestination; 
-        int wifiJoinDestinationAPError; 
-        unsigned char destinationNetworkPSKInKeychain; 
-        unsigned char hitJoiningDestinationAPTimeout; 
-        int rssiOfDestinationAP; 
-        unsigned int snrOfDestinationAP; 
-        unsigned int channelOfDestinationAP; 
-     /* Encoded args for previous method: v12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CiC*III[32000C]*[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?@?}8 */
-     /* Encoded args for previous method: v12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CiC*III[32000C]*[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?@?}8 */
-     /* Encoded args for previous method: l12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CiC*III[32000C]*[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?@?}8 */
-     /* Encoded args for previous method: l12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CiC*III[32000C]*[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?@?}8 */
-     /* Encoded args for previous method: l12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CiC*III[32000C]*[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?@?}8 */
     NSDictionary *_airplayBonjourInfo;
     struct BonjourBrowser { } *_airplayBrowser;
     double _applyConfigFinishTime;
@@ -67,11 +42,35 @@
     BOOL _pausesAfterApply;
     double _postConfigCheckFinishTime;
     double _postConfigCheckStartTime;
+    struct { 
+        double secondsToGetLinkUpOnDestination; 
+        int wifiJoinDestinationAPError; 
+        unsigned char destinationNetworkPSKInKeychain; 
+        unsigned char hitJoiningDestinationAPTimeout; 
+        int rssiOfDestinationAP; 
+        unsigned int snrOfDestinationAP; 
+        unsigned int channelOfDestinationAP; 
     } _postConfigMetrics;
     BOOL _postConfigMetricsSet;
+    struct { 
+        double startTime; 
+        unsigned char userChangedFriendlyName; 
+        unsigned char playPasswordSet; 
+        unsigned char adminPasswordSet; 
+        unsigned char destinationNetworkRecommendationUsed; 
+        double secondsToGetLinkUpOnSWAP; 
+        int wifiJoinSWAPError; 
+        unsigned char hitJoiningTargetSWAPTimeout; 
+        int rssiOfSWAP; 
+        unsigned int snrOfSWAP; 
+        unsigned int channelOfSWAP; 
     } _preConfigMetrics;
     BOOL _preConfigMetricsSet;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _promptForSetupCodeBlock;
+
     NSDictionary *_raopBonjourInfo;
     struct BonjourBrowser { } *_raopBrowser;
     NSDictionary *_scanRecord;
@@ -98,6 +97,8 @@
 + (BOOL)supportedScanRecord:(id)arg1;
 
 - (void)_applyConfigCompletion:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned int x_3_1_9; struct { char *x_10_2_1; unsigned int x_10_2_2; char *x_10_2_3; unsigned int x_10_2_4; char *x_10_2_5; unsigned int x_10_2_6; char *x_10_2_7; unsigned int x_10_2_8; char *x_10_2_9; unsigned int x_10_2_10; char *x_10_2_11; unsigned int x_10_2_12; char *x_10_2_13; unsigned int x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned int x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned int x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned char x11[32000]; char *x12; struct iovec { void *x_13_1_1; unsigned int x_13_1_2; } x13[2]; struct iovec {} *x14; int x15; unsigned long long x16; int x17; int x18; int x19; void *x20; void *x21; void *x22; void *x23; void *x24; void *x25; int (*x26)(); id x27; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x28; }*)arg1;
+     /* Encoded args for previous method: v12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CiC*III[32000C]*[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?@?}8 */
+
 - (long)_applyConfigStart;
 - (long)_configureStart:(id)arg1;
 - (void)_findDevicePostConfigEvent:(unsigned int)arg1 info:(id)arg2;
@@ -107,16 +108,24 @@
 - (void)_handleError:(long)arg1;
 - (void)_logEnded;
 - (long)_mfiSAPNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned int x_3_1_9; struct { char *x_10_2_1; unsigned int x_10_2_2; char *x_10_2_3; unsigned int x_10_2_4; char *x_10_2_5; unsigned int x_10_2_6; char *x_10_2_7; unsigned int x_10_2_8; char *x_10_2_9; unsigned int x_10_2_10; char *x_10_2_11; unsigned int x_10_2_12; char *x_10_2_13; unsigned int x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned int x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned int x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned char x11[32000]; char *x12; struct iovec { void *x_13_1_1; unsigned int x_13_1_2; } x13[2]; struct iovec {} *x14; int x15; unsigned long long x16; int x17; int x18; int x19; void *x20; void *x21; void *x22; void *x23; void *x24; void *x25; int (*x26)(); id x27; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x28; }*)arg1;
+     /* Encoded args for previous method: l12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CiC*III[32000C]*[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?@?}8 */
+
 - (long)_mfiSAPStart;
 - (long)_pairSetupNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned int x_3_1_9; struct { char *x_10_2_1; unsigned int x_10_2_2; char *x_10_2_3; unsigned int x_10_2_4; char *x_10_2_5; unsigned int x_10_2_6; char *x_10_2_7; unsigned int x_10_2_8; char *x_10_2_9; unsigned int x_10_2_10; char *x_10_2_11; unsigned int x_10_2_12; char *x_10_2_13; unsigned int x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned int x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned int x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned char x11[32000]; char *x12; struct iovec { void *x_13_1_1; unsigned int x_13_1_2; } x13[2]; struct iovec {} *x14; int x15; unsigned long long x16; int x17; int x18; int x19; void *x20; void *x21; void *x22; void *x23; void *x24; void *x25; int (*x26)(); id x27; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x28; }*)arg1;
+     /* Encoded args for previous method: l12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CiC*III[32000C]*[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?@?}8 */
+
 - (long)_pairSetupStart;
 - (long)_pairVerifyNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned int x_3_1_9; struct { char *x_10_2_1; unsigned int x_10_2_2; char *x_10_2_3; unsigned int x_10_2_4; char *x_10_2_5; unsigned int x_10_2_6; char *x_10_2_7; unsigned int x_10_2_8; char *x_10_2_9; unsigned int x_10_2_10; char *x_10_2_11; unsigned int x_10_2_12; char *x_10_2_13; unsigned int x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned int x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned int x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned char x11[32000]; char *x12; struct iovec { void *x_13_1_1; unsigned int x_13_1_2; } x13[2]; struct iovec {} *x14; int x15; unsigned long long x16; int x17; int x18; int x19; void *x20; void *x21; void *x22; void *x23; void *x24; void *x25; int (*x26)(); id x27; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x28; }*)arg1;
+     /* Encoded args for previous method: l12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CiC*III[32000C]*[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?@?}8 */
+
 - (long)_pairVerifyStart;
 - (void)_postConfigCheckCompletion:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned int x_3_1_9; struct { char *x_10_2_1; unsigned int x_10_2_2; char *x_10_2_3; unsigned int x_10_2_4; char *x_10_2_5; unsigned int x_10_2_6; char *x_10_2_7; unsigned int x_10_2_8; char *x_10_2_9; unsigned int x_10_2_10; char *x_10_2_11; unsigned int x_10_2_12; char *x_10_2_13; unsigned int x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned int x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned int x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned char x11[32000]; char *x12; struct iovec { void *x_13_1_1; unsigned int x_13_1_2; } x13[2]; struct iovec {} *x14; int x15; unsigned long long x16; int x17; int x18; int x19; void *x20; void *x21; void *x22; void *x23; void *x24; void *x25; int (*x26)(); id x27; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x28; }*)arg1;
+     /* Encoded args for previous method: v12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CiC*III[32000C]*[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?@?}8 */
+
 - (void)_postConfigCheckStart:(id)arg1;
 - (void)_postNote:(id)arg1 info:(id)arg2;
-- (void)_postProgress:(int)arg1 withResponse:(id)arg2;
 - (void)_postProgress:(int)arg1;
+- (void)_postProgress:(int)arg1 withResponse:(id)arg2;
 - (long)_setupClient:(id)arg1;
 - (void)_start;
 - (long)_startBonjourWithTimeout:(int)arg1 handler:(id)arg2;

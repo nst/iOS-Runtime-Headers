@@ -5,14 +5,6 @@
 @class DOMDocument, DOMRange, NSData, NSDictionary, NSMutableArray, NSMutableAttributedString, NSMutableDictionary, NSString, NSURL, WebDataSource, WebView;
 
 @interface NSHTMLReader : NSObject {
-    struct { 
-        unsigned int isSoft : 1; 
-        unsigned int reachedStart : 1; 
-        unsigned int reachedEnd : 1; 
-        unsigned int isIndexing : 1; 
-        unsigned int isTesting : 1; 
-        unsigned int hasTrailingNewline : 1; 
-        unsigned int pad : 26; 
     NSMutableAttributedString *_attrStr;
     NSMutableDictionary *_attributesForElements;
     NSURL *_baseURL;
@@ -29,6 +21,14 @@
     NSMutableArray *_domStartAncestors;
     NSMutableDictionary *_elementIsBlockLevel;
     int _errorCode;
+    struct { 
+        unsigned int isSoft : 1; 
+        unsigned int reachedStart : 1; 
+        unsigned int reachedEnd : 1; 
+        unsigned int isIndexing : 1; 
+        unsigned int isTesting : 1; 
+        unsigned int hasTrailingNewline : 1; 
+        unsigned int pad : 26; 
     } _flags;
     NSMutableDictionary *_floatsForNodes;
     NSMutableDictionary *_fontCache;

@@ -9,14 +9,17 @@
 @class NSString, VSRecognitionSession;
 
 @interface VSRecognitionAction : NSObject {
+    NSString *_resultString;
+    VSRecognitionSession *_session;
+
+  /* Error parsing encoded ivar type info: (?="stringValue"@"NSString""attributedStringValue"@"NSAttributedString") */
     union { 
         NSString *stringValue; 
         id attributedStringValue; 
         /* Warning: Unrecognized filer type: ')' using 'void*' */ void*NSAttributedString; 
-    unsigned int _spokenStringIsAttributed : 1;
-    NSString *_resultString;
-    VSRecognitionSession *_session;
     } _spokenString;
+
+    unsigned int _spokenStringIsAttributed : 1;
     NSString *_statusString;
 }
 

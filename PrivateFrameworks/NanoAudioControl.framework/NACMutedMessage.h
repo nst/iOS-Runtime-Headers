@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface NACMutedMessage : PBCodable <NSCopying> {
+    NSString *_category;
     struct { 
         unsigned int muted : 1; 
-    NSString *_category;
     } _has;
     BOOL _muted;
 }

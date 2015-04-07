@@ -8,11 +8,15 @@
 
 @class EKRecurrenceChooserController, EKRecurrenceMonthChooserController, EKRecurrenceMonthlyChooserController, EKRecurrenceOrdinalChooserController, EKRecurrenceRule, EKRecurrenceWeekdayChooserController, EKUICustomRecurrenceIntervalViewController, NSDate, NSString, NSTimeZone, UIPickerView, UISwitch, UITableView, UITableViewCell;
 
-@interface EKUICustomRecurrenceViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, EKRecurrenceChooserControllerDelegate> {
+@interface EKUICustomRecurrenceViewController : UIViewController <EKRecurrenceChooserControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     int _cachedFrequency;
     int _cachedInterval;
     EKRecurrenceRule *_cachedRecurrenceRule;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     EKRecurrenceChooserController *_currentChooser;
     UIPickerView *_frequencyPickerView;
     UITableViewCell *_frequencySummaryCell;
@@ -65,8 +69,8 @@
 - (void)_refreshCacheAndPickers;
 - (void)_setShowingFrequencyPicker:(BOOL)arg1;
 - (void)_setShowingIntervalPicker:(BOOL)arg1;
-- (id)_stringForFrequency:(int)arg1 interval:(int)arg2;
 - (id)_stringForFrequency:(int)arg1;
+- (id)_stringForFrequency:(int)arg1 interval:(int)arg2;
 - (int)_tagForIndexPath:(id)arg1;
 - (void)_toggleInlineSpinnerForTag:(int)arg1;
 - (void)_updateCustomPickerView;
@@ -105,8 +109,8 @@
 - (void)setProhibitsMultipleDaysInMonthlyRecurrence:(BOOL)arg1;
 - (void)setProhibitsMultipleMonthsInYearlyRecurrence:(BOOL)arg1;
 - (void)setProhibitsYearlyRecurrenceInterval:(BOOL)arg1;
-- (void)setRecurrenceRule:(id)arg1 shouldUpdatePickers:(BOOL)arg2;
 - (void)setRecurrenceRule:(id)arg1;
+- (void)setRecurrenceRule:(id)arg1 shouldUpdatePickers:(BOOL)arg2;
 - (void)setRecurrenceSummaryString:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setTableView:(id)arg1;
@@ -116,6 +120,7 @@
 - (void)setYearlyChooser:(id)arg1;
 - (void)setYearlyOrdinalChooser:(id)arg1;
 - (id)startDate;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
@@ -123,7 +128,6 @@
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (id)tableView;
 - (id)timeZone;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (id)weeklyChooser;

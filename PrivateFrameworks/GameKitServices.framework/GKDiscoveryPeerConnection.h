@@ -10,7 +10,11 @@
 
 @interface GKDiscoveryPeerConnection : NSObject <GKSimpleTimerDelegate> {
     BOOL _connected;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _connectedHandler;
+
     GKAsyncSocket *_connectionSocket;
     double _connectionTimeoutInSeconds;
     unsigned int _currentSequenceNumber;
@@ -23,7 +27,11 @@
     NSMutableArray *_messageReceiptHandlerHoldingQueue;
     NSMutableArray *_messageReceiptHandlerList;
     id _peer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _receiveDataHandler;
+
     NSMutableArray *_receivedDataHoldingQueue;
     NSString *_remoteServiceName;
     NSObject<OS_dispatch_queue> *_syncQueue;

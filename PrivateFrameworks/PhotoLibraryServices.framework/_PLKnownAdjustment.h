@@ -10,7 +10,11 @@
 
 @interface _PLKnownAdjustment : NSObject {
     NSString *_identifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _settingsExtractionBlock;
+
     int _supportLevel;
     NSIndexSet *_supportedVersions;
 }

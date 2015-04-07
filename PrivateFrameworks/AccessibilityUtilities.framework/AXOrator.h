@@ -5,12 +5,6 @@
 @class <AXOratorDelegate>, AVSpeechSynthesizer, AVSpeechUtterance, AXLanguageTag, AXLanguageTaggedContent, NSArray, NSMutableArray, NSString;
 
 @interface AXOrator : NSObject <AVSpeechSynthesizerDelegate> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     BOOL _contentIsSpeakable;
     <AXOratorDelegate> *_delegate;
     BOOL _didRequestPauseSpeakingDuringAudioInterruption;
@@ -18,10 +12,16 @@
     BOOL _didRequestStartSpeakingDuringAudioInterruption;
     BOOL _isAudioSessionActive;
     BOOL _isInAudioInterruption;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _lastSpokenSubstringRange;
     AVSpeechUtterance *_lastUtterance;
     NSString *_lastUtteranceLanguageCode;
     AXLanguageTag *_lastUtteranceLanguageTag;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _lastUtteranceSubstringRange;
     unsigned int _numberOfTokensToSkip;
     NSString *_requestedLanguageCodeDuringAudioInterruption;
@@ -137,13 +137,13 @@
 - (id)speakingContentTokenRanges;
 - (float)speechRate;
 - (id)speechSequenceItems;
+- (id)speechSynthesizer;
 - (void)speechSynthesizer:(id)arg1 didCancelSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didContinueSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didPauseSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didStartSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 utterance:(id)arg3;
-- (id)speechSynthesizer;
 - (BOOL)startSpeakingWithPreferredLanguage:(id)arg1 alternativeVoiceId:(id)arg2 error:(id*)arg3;
 - (BOOL)stopSpeaking:(id*)arg1;
 - (id)voiceIdentifier;

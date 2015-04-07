@@ -4,33 +4,13 @@
 
 @class <VKAnnotation>, <VKAnnotationMarkerDelegate>, NSString, UIView, VKAnchor, VKAnimation;
 
-@interface VKAnnotationMarker : VKAnnotationMarkerLayer <VKAnchorDelegate, VKTrackableAnnotationPresentation, MKCalloutSource> {
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    struct { 
-        double latitude; 
-        double longitude; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        int from; 
-        int to; 
-        unsigned int fromDisplayStyle; 
-        unsigned int toDisplayStyle; 
-        float fraction; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface VKAnnotationMarker : VKAnnotationMarkerLayer <MKCalloutSource, VKAnchorDelegate, VKTrackableAnnotationPresentation> {
     VKAnchor *_anchor;
     BOOL _animatingToCoordinate;
     <VKAnnotation> *_annotation;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _calloutOffset;
     BOOL _canShowCallout;
     VKAnimation *_coordinateAnimation;
@@ -40,12 +20,32 @@
     float _dropFraction;
     BOOL _followsTerrain;
     BOOL _hidden;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _presentationCoordinate;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _presentationPoint;
+    struct VKPoint { 
+        double x; 
+        double y; 
+        double z; 
     } _projectedGroundPoint;
+    struct VKPoint { 
+        double x; 
+        double y; 
+        double z; 
     } _projectedPoint;
     NSString *_reuseIdentifier;
     BOOL _selected;
+    struct { 
+        int from; 
+        int to; 
+        unsigned int fromDisplayStyle; 
+        unsigned int toDisplayStyle; 
+        float fraction; 
     } _styleTransitionState;
     BOOL _tracking;
     BOOL _useScreenSpacePoint;
@@ -57,16 +57,13 @@
 @property(readonly) BOOL canAnimateIn;
 @property BOOL canShowCallout;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property <VKAnnotationMarkerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(retain) UIView * detailCalloutAccessoryView;
 @property int dragState;
 @property(getter=isDraggable) BOOL draggable;
 @property float dropFraction;
 @property BOOL followsTerrain;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property BOOL hidden;
 @property(retain) UIView * leftCalloutAccessoryView;
@@ -79,7 +76,6 @@
 @property(getter=isSelected) BOOL selected;
 @property struct { int x1; int x2; unsigned int x3; unsigned int x4; float x5; } styleTransitionState;
 @property(copy,readonly) NSString * subtitle;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * title;
 @property(getter=isTracking) BOOL tracking;
@@ -134,8 +130,8 @@
 - (void)setCanShowCallout:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDetailCalloutAccessoryView:(id)arg1;
-- (void)setDragState:(int)arg1 animated:(BOOL)arg2;
 - (void)setDragState:(int)arg1;
+- (void)setDragState:(int)arg1 animated:(BOOL)arg2;
 - (void)setDraggable:(BOOL)arg1;
 - (void)setDropFraction:(float)arg1;
 - (void)setFollowsTerrain:(BOOL)arg1;

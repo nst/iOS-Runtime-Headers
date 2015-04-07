@@ -4,7 +4,7 @@
 
 @class NSMapTable, NSMutableArray, NSString, SKUIGradientView, SKUIHorizontalLockupLayout, SKUILockupViewElement, SKUIPreviewProgressIndicator, SUPlayerStatus, UITapGestureRecognizer;
 
-@interface SKUIHorizontalLockupView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIOfferViewDelegate, UIGestureRecognizerDelegate, SKUIPerspectiveView, SKUIPreviewContainerView, SKUIViewElementView> {
+@interface SKUIHorizontalLockupView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIOfferViewDelegate, SKUIPerspectiveView, SKUIPreviewContainerView, SKUIViewElementView, UIGestureRecognizerDelegate> {
     struct UIEdgeInsets { 
         float top; 
         float left; 

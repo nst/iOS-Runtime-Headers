@@ -3,10 +3,10 @@
  */
 
 @interface NLArcMaskLayer : CAShapeLayer {
+    float _arcStart;
     struct CGPoint { 
         float x; 
         float y; 
-    float _arcStart;
     } _center;
     float _radius;
 }

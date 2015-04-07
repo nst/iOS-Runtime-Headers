@@ -4,7 +4,7 @@
 
 @class CKRecordID, NSString;
 
-@interface CKShareParticipant : NSObject <NSSecureCoding, NSCopying> {
+@interface CKShareParticipant : NSObject <NSCopying, NSSecureCoding> {
     int _acceptanceStatus;
     NSString *_emailAddress;
     NSString *_firstName;

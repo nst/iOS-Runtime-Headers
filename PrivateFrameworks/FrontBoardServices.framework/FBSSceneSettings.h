@@ -5,6 +5,11 @@
 @class BSSettings, NSArray, NSSet;
 
 @interface FBSSceneSettings : NSObject <NSCopying, NSMutableCopying> {
+    BOOL _backgrounded;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _contentOffset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,11 +19,6 @@
             float width; 
             float height; 
         } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    BOOL _backgrounded;
-    } _contentOffset;
     } _frame;
     NSSet *_ignoreOcclusionReasons;
     int _interfaceOrientation;

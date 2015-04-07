@@ -21,9 +21,9 @@
 + (BOOL)p_dumpRegistry;
 
 - (id)allAnimationInfos;
-- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2 includeObsoleteNames:(BOOL)arg3 drawable:(id)arg4;
-- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2 includeObsoleteNames:(BOOL)arg3;
 - (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2;
+- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2 includeObsoleteNames:(BOOL)arg3;
+- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2 includeObsoleteNames:(BOOL)arg3 drawable:(id)arg4;
 - (id)animationInfosForAnimationType:(int)arg1 category:(id)arg2;
 - (id)animationInfosForAnimationType:(int)arg1 filter:(id)arg2;
 - (BOOL)canMapEffectIdentifier:(id)arg1 animationType:(int)arg2 toEffectIdentifier:(id)arg3 includeObsoleteNames:(BOOL)arg4 forDrawable:(id)arg5;

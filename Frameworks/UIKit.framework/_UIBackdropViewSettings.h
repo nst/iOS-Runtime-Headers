@@ -114,10 +114,10 @@
 @property BOOL zoomsBack;
 
 + (id)darkeningTintColor;
-+ (id)settingsForPrivateStyle:(int)arg1 graphicsQuality:(int)arg2;
 + (id)settingsForPrivateStyle:(int)arg1;
-+ (id)settingsForStyle:(int)arg1 graphicsQuality:(int)arg2;
++ (id)settingsForPrivateStyle:(int)arg1 graphicsQuality:(int)arg2;
 + (id)settingsForStyle:(int)arg1;
++ (id)settingsForStyle:(int)arg1 graphicsQuality:(int)arg2;
 
 - (void)addKeyPathObserver:(id)arg1;
 - (BOOL)appliesTintAndBlurSettings;

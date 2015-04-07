@@ -4,7 +4,7 @@
 
 @class CPLEngineLibrary, CPLNetworkWatcher, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
-@interface CPLEngineSystemMonitor : NSObject <CPLNetworkWatcherDelegate, CPLEngineComponent> {
+@interface CPLEngineSystemMonitor : NSObject <CPLEngineComponent, CPLNetworkWatcherDelegate> {
     CPLEngineLibrary *_engineLibrary;
     NSObject<OS_dispatch_queue> *_queue;
     NSURL *_volumeURL;

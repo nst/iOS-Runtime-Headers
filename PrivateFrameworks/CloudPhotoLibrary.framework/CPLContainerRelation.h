@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CPLContainerRelation : NSObject <NSSecureCoding, NSCopying> {
+@interface CPLContainerRelation : NSObject <NSCopying, NSSecureCoding> {
     NSString *_containerIdentifier;
     BOOL _keyAsset;
     int _position;

@@ -4,7 +4,7 @@
 
 @class LSInstallProgressList, LSObserverTimer, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
-@interface LSInstallProgressDelegate : NSObject <NSXPCListenerDelegate, LSInstallProgressProtocol> {
+@interface LSInstallProgressDelegate : NSObject <LSInstallProgressProtocol, NSXPCListenerDelegate> {
     NSMutableSet *_inactiveInstalls;
     NSObject<OS_dispatch_queue> *_installControlsQueue;
     NSMutableDictionary *_installIndexes;

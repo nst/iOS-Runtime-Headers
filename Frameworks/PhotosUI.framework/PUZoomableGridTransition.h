@@ -5,12 +5,12 @@
 @class <UIViewControllerContextTransitioning>, NSIndexPath, NSString, PUMomentsZoomLevelManager, UICollectionView, UICollectionViewTransitionLayout;
 
 @interface PUZoomableGridTransition : NSObject <UIViewControllerInteractiveTransitioning> {
-    struct CGSize { 
-        float width; 
-        float height; 
     UICollectionViewTransitionLayout *__transitionLayout;
     NSIndexPath *_anchorItemIndexPath;
     UICollectionView *_collectionView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _currentInteractiveCenterOffset;
     float _currentInteractiveProgress;
     BOOL _interactive;

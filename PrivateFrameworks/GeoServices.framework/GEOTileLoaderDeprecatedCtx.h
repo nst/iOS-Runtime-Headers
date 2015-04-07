@@ -9,12 +9,28 @@
 @class GEOTileKeyList;
 
 @interface GEOTileLoaderDeprecatedCtx : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _error;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _finished;
+
     GEOTileKeyList *_notLoaded;
     GEOTileKeyList *_originalList;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progress;
+
     struct __CFRunLoop { } *_runloop;
     GEOTileKeyList *_satisfiedList;
     GEOTileKeyList *_submittedList;

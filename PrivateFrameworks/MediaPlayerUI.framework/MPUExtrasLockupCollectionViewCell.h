@@ -5,13 +5,13 @@
 @class IKLockupElement, MPUExtrasConstrainedArtworkContainerView, MPUExtrasZoomingImageInteractiveTransitionSourceContext, NSLayoutConstraint, NSString, UILabel, UIPinchGestureRecognizer, UIView;
 
 @interface MPUExtrasLockupCollectionViewCell : UICollectionViewCell <MPUExtrasCarouselCollectionViewCell> {
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL _allowsPinchingThumbnailImageForInteractiveZoomingImageTransition;
     NSLayoutConstraint *_artworkContainerHeightConstraint;
     MPUExtrasConstrainedArtworkContainerView *_artworkContainerView;
     NSLayoutConstraint *_artworkContainerWidthConstraint;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _artworkSize;
     NSLayoutConstraint *_descriptionBaselineConstraint;
     UILabel *_descriptionLabel;

@@ -5,6 +5,10 @@
 @class GEONameInfo, GEOTimeCheckpoints, NSMutableArray, NSString;
 
 @interface GEOStep : PBCodable <NSCopying> {
+    unsigned int _distance;
+    BOOL _endsOnFwy;
+    GEONameInfo *_exitNumber;
+    unsigned int _expectedTime;
     struct { 
         unsigned int distance : 1; 
         unsigned int expectedTime : 1; 
@@ -21,10 +25,6 @@
         unsigned int toFreeway : 1; 
         unsigned int tollAhead : 1; 
         unsigned int tollPrior : 1; 
-    unsigned int _distance;
-    BOOL _endsOnFwy;
-    GEONameInfo *_exitNumber;
-    unsigned int _expectedTime;
     } _has;
     int _hintFirstAnnouncementZilchIndex;
     NSString *_instructions;

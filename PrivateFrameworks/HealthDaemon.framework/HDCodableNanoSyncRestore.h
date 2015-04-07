@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface HDCodableNanoSyncRestore : PBCodable <HDSyncObjectCollection, HDNanoSyncDescription, NSCopying> {
+@interface HDCodableNanoSyncRestore : PBCodable <HDNanoSyncDescription, HDSyncObjectCollection, NSCopying> {
     struct { 
         unsigned int objectType : 1; 
     } _has;

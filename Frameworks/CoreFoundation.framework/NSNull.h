@@ -4,16 +4,12 @@
 
 @class NSString;
 
-@interface NSNull : NSObject <NSCopying, NSSecureCoding, PQLBindable, TSDPathPainter, TSDMixing> {
+@interface NSNull : NSObject <NSCopying, NSSecureCoding, PQLBindable, TSDMixing, TSDPathPainter> {
 }
 
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

@@ -48,12 +48,12 @@
 - (void)_setBoundsDelegate:(id)arg1;
 - (void)_setLockedForMutation:(BOOL)arg1;
 - (unsigned int)_transactionID;
+- (id)client;
 - (void)client:(id)arg1 attachContext:(id)arg2;
 - (void)client:(id)arg1 detachContext:(id)arg2;
 - (void)client:(id)arg1 didReceiveActions:(id)arg2;
 - (void)client:(id)arg1 didUpdateClientSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4;
 - (void)client:(id)arg1 updateContext:(id)arg2;
-- (id)client;
 - (id)clientProcess;
 - (id)clientProvider;
 - (id)clientSettings;

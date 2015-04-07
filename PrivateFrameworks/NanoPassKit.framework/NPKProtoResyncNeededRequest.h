@@ -5,11 +5,11 @@
 @class NPKProtoHash, NSMutableArray;
 
 @interface NPKProtoResyncNeededRequest : PBRequest <NSCopying> {
+    NPKProtoHash *_expectedHash;
+    BOOL _fullResyncNeeded;
     struct { 
         unsigned int resyncID : 1; 
         unsigned int fullResyncNeeded : 1; 
-    NPKProtoHash *_expectedHash;
-    BOOL _fullResyncNeeded;
     } _has;
     NSMutableArray *_manifestHashes;
     unsigned int _resyncID;

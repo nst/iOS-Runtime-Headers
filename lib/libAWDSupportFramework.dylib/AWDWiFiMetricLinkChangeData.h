@@ -5,10 +5,11 @@
 @class NSData;
 
 @interface AWDWiFiMetricLinkChangeData : PBCodable <NSCopying> {
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
+    unsigned int _akmSuites;
+    unsigned int _capabilities;
+    unsigned int _channel;
+    unsigned int _channelWidth;
+    unsigned int _flags;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int akmSuites : 1; 
@@ -31,11 +32,6 @@
         unsigned int wpaProtocol : 1; 
         unsigned int isInVol : 1; 
         unsigned int isLinkUp : 1; 
-    unsigned int _akmSuites;
-    unsigned int _capabilities;
-    unsigned int _channel;
-    unsigned int _channelWidth;
-    unsigned int _flags;
     } _has;
     unsigned int _htASel;
     unsigned int _htAmpduParams;
@@ -49,6 +45,10 @@
     NSData *_oui;
     unsigned int _phyMode;
     unsigned int _reason;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _rssiHistorys;
     unsigned int _securityType;
     unsigned int _subreason;

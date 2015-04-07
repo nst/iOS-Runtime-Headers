@@ -8,11 +8,15 @@
 
 @class <CPLEngineStoreUserIdentifier>, <CPLEngineTransportSetupTask>, CPLBackgroundDownloadsTask, CPLBackgroundUploadsTask, CPLEngineLibrary, CPLEngineSyncEmergencyTask, CPLGetAssetCountsTask, CPLMinglePulledChangesTask, CPLPlatformObject, CPLPullFromTransportTask, CPLPushToTransportTask, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface CPLEngineSyncManager : NSObject <CPLEngineSyncEmergencyTaskDelegate, CPLPushToTransportTaskDelegate, CPLPullFromTransportTaskDelegate, CPLMinglePulledChangesTaskDelegate, CPLBackgroundUploadsTaskDelegate, CPLBackgroundDownloadsTaskDelegate, CPLAbstractObject, CPLEngineComponent> {
+@interface CPLEngineSyncManager : NSObject <CPLAbstractObject, CPLBackgroundDownloadsTaskDelegate, CPLBackgroundUploadsTaskDelegate, CPLEngineComponent, CPLEngineSyncEmergencyTaskDelegate, CPLMinglePulledChangesTaskDelegate, CPLPullFromTransportTaskDelegate, CPLPushToTransportTaskDelegate> {
     NSMutableArray *_archivedManagementTasks;
     CPLBackgroundDownloadsTask *_backgroundDownloadsTask;
     CPLBackgroundUploadsTask *_backgroundUploadsTask;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _closingCompletionHandler;
+
     NSMutableDictionary *_completionHandlerPerTaskIdentifier;
     CPLEngineLibrary *_engineLibrary;
     BOOL _foreground;

@@ -9,10 +9,22 @@
 @class AVCaptureBracketedStillImageSettings;
 
 @interface AVCaptureStillImageRequest : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _bracketedCaptureCompletionBlock;
+
     AVCaptureBracketedStillImageSettings *_bracketedSettings;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _iosurfaceCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sbufCompletionBlock;
+
     long long _settingsID;
     unsigned long _shutterSoundID;
 }

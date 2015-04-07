@@ -5,9 +5,29 @@
 @class GEOAutomobileOptions, GEOWalkingOptions, GEOWaypoint, GEOWaypointTyped, NSMutableArray;
 
 @interface GEOETARequest : PBRequest <NSCopying> {
+    BOOL _allowPartialResults;
+    GEOAutomobileOptions *_automobileOptions;
+    NSMutableArray *_destinationWaypointTypeds;
+    NSMutableArray *_destinations;
+    unsigned int _distanceLimitMeters;
+    struct { 
+        unsigned int sessionID : 1; 
+        unsigned int timepoint : 1; 
+        unsigned int distanceLimitMeters : 1; 
+        unsigned int transportType : 1; 
+        unsigned int allowPartialResults : 1; 
+        unsigned int includeDistance : 1; 
+        unsigned int includeHistoricTravelTime : 1; 
+    } _has;
+    BOOL _includeDistance;
+    BOOL _includeHistoricTravelTime;
+    GEOWaypoint *_origin;
+    GEOWaypointTyped *_originWaypointTyped;
+    NSMutableArray *_serviceTags;
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
+    } _sessionID;
     struct { 
         double _time; 
         int _flexibility; 
@@ -17,26 +37,6 @@
             unsigned int flexibility : 1; 
             unsigned int type : 1; 
         } _has; 
-    struct { 
-        unsigned int sessionID : 1; 
-        unsigned int timepoint : 1; 
-        unsigned int distanceLimitMeters : 1; 
-        unsigned int transportType : 1; 
-        unsigned int allowPartialResults : 1; 
-        unsigned int includeDistance : 1; 
-        unsigned int includeHistoricTravelTime : 1; 
-    BOOL _allowPartialResults;
-    GEOAutomobileOptions *_automobileOptions;
-    NSMutableArray *_destinationWaypointTypeds;
-    NSMutableArray *_destinations;
-    unsigned int _distanceLimitMeters;
-    } _has;
-    BOOL _includeDistance;
-    BOOL _includeHistoricTravelTime;
-    GEOWaypoint *_origin;
-    GEOWaypointTyped *_originWaypointTyped;
-    NSMutableArray *_serviceTags;
-    } _sessionID;
     } _timepoint;
     int _transportType;
     GEOWalkingOptions *_walkingOptions;

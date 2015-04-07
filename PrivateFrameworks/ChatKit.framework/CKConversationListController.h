@@ -4,15 +4,14 @@
 
 @class CKConversationList, CKConversationSearcher, CKMessagesController, CKScheduledUpdater, NSArray, NSIndexPath, NSString, UIBarButtonItem, UITableView, UIToolbar, UIView;
 
-@interface CKConversationListController : UIViewController <UITableViewDataSource, UITableViewDelegate, CKConversationSearcherDelegate, UIActionSheetDelegate> {
-    unsigned int _isVisible : 1;
-    unsigned int _willRotate : 1;
+@interface CKConversationListController : UIViewController <CKConversationSearcherDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIToolbar *_buttonBar;
     CKConversationList *_conversationList;
     UIBarButtonItem *_currentEditButtonItem;
     NSArray *_frozenConversations;
     BOOL _isInitialLoad;
     BOOL _isShowingSwipeDeleteConfirmation;
+    unsigned int _isVisible : 1;
     CKMessagesController *_messagesController;
     UIView *_noMessagesDialogView;
     NSIndexPath *_previouslySelectedIndexPath;
@@ -20,6 +19,7 @@
     UITableView *_table;
     CKScheduledUpdater *_updater;
     unsigned int _willBeMarkedReadCount;
+    unsigned int _willRotate : 1;
 }
 
 @property CKConversationList * conversationList;

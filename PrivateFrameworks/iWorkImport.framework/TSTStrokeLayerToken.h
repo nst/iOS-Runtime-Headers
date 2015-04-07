@@ -5,10 +5,10 @@
 @class NSString, TSDStroke;
 
 @interface TSTStrokeLayerToken : NSObject <TSTStrokeLayerStrokeAndRange> {
+    unsigned int _position;
     struct TSTSimpleRange { 
         int origin; 
         unsigned int length; 
-    unsigned int _position;
     } _range;
     TSDStroke *_stroke;
 }

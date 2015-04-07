@@ -4,7 +4,7 @@
 
 @class NSCharacterSet, NSData;
 
-@interface NSCharacterSet : NSObject <NSCopying, NSMutableCopying, NSCoding> {
+@interface NSCharacterSet : NSObject <NSCoding, NSCopying, NSMutableCopying> {
 }
 
 @property(copy,readonly) NSData * bitmapRepresentation;

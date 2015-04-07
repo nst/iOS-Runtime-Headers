@@ -5,6 +5,14 @@
 @class NSHashTable;
 
 @interface MKAmbientLightMonitor : NSObject {
+    int _ambientLightLevel;
+    struct __IOHIDEventSystemClient { } *_client;
+    BOOL _debugLogLux;
+    float _lightLevelLowThreshold;
+    float _lightLevelMediumThreshold;
+    float _lightLevelNoneThreshold;
+    BOOL _monitoring;
+    NSHashTable *_observers;
     struct deque<float, std::__1::allocator<float> > { 
         struct __split_buffer<float *, std::__1::allocator<float *> > { 
             float **__first_; 
@@ -18,14 +26,6 @@
         struct __compressed_pair<unsigned long, std::__1::allocator<float> > { 
             unsigned long __first_; 
         } __size_; 
-    int _ambientLightLevel;
-    struct __IOHIDEventSystemClient { } *_client;
-    BOOL _debugLogLux;
-    float _lightLevelLowThreshold;
-    float _lightLevelMediumThreshold;
-    float _lightLevelNoneThreshold;
-    BOOL _monitoring;
-    NSHashTable *_observers;
     } _runningStatBuffer;
     unsigned int _runningStatSize;
     float _runningStatSum;

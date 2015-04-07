@@ -5,6 +5,21 @@
 @class NSIndexSet;
 
 @interface TSCH3DOrderedAnimationTimeSlice : TSCH3DAnimationTimeSlice {
+    struct vector<float, std::__1::allocator<float> > { 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
+        } __end_cap_; 
+    } mElemOffset;
+    struct vector<float, std::__1::allocator<float> > { 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
+        } __end_cap_; 
+    } mElemWeight;
+    NSIndexSet *mElements;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,21 +31,6 @@
             int g; 
             int t; 
         } ; 
-    struct vector<float, std::__1::allocator<float> > { 
-        float *__begin_; 
-        float *__end_; 
-        struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
-        } __end_cap_; 
-    struct vector<float, std::__1::allocator<float> > { 
-        float *__begin_; 
-        float *__end_; 
-        struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
-        } __end_cap_; 
-    } mElemOffset;
-    } mElemWeight;
-    NSIndexSet *mElements;
     } mSize;
 }
 

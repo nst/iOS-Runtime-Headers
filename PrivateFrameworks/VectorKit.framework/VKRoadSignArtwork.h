@@ -3,10 +3,10 @@
  */
 
 @interface VKRoadSignArtwork : NSObject {
+    float _contentScale;
     struct CGSize { 
         float width; 
         float height; 
-    float _contentScale;
     } _layoutSize;
     struct __CTLine { } *_line;
     BOOL _onRoute;

@@ -9,7 +9,11 @@
 @class NSString;
 
 @interface _CKDispatchQueueBlock : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
     unsigned int _fifo;
     NSString *_key;
     int _priority;

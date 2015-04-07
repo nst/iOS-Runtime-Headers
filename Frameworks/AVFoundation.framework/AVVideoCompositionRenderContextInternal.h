@@ -5,27 +5,6 @@
 @class AVVideoComposition, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVVideoCompositionRenderContextInternal : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct { 
-        int horizontalSpacing; 
-        int verticalSpacing; 
-    struct { 
-        float left; 
-        float top; 
-        float right; 
-        float bottom; 
-    struct { 
-        int width; 
-        int height; 
     NSDictionary *_basisProperties;
     struct __CFDictionary { } *_cleanApertureDict;
     NSDictionary *_clientRequiredPixelBufferAttributes;
@@ -33,15 +12,36 @@
     NSString *_destinationDesiredPixelBufferColorPrimaries;
     NSString *_destinationDesiredPixelBufferTransferFunction;
     NSString *_destinationDesiredPixelBufferYCbCrMatrix;
+    struct { 
+        int width; 
+        int height; 
     } _destinationPixelBufferDimensions;
+    struct { 
+        float left; 
+        float top; 
+        float right; 
+        float bottom; 
     } _edgeWidths;
     BOOL _highQualityRendering;
+    struct { 
+        int horizontalSpacing; 
+        int verticalSpacing; 
     } _pixelAspectRatio;
     struct __CFDictionary { } *_pixelAspectRatioDict;
     struct __CVPixelBufferPool { } *_pixelBufferPool;
     NSObject<OS_dispatch_queue> *_pixelBufferPoolQ;
     float _renderScale;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _renderTransform;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     AVVideoComposition *_videoComposition;
     int pixelFormatFamily;

@@ -56,8 +56,8 @@
 - (void)setObserverFeed:(unsigned int)arg1 attachToLightsAndSirensGateway:(id)arg2;
 - (void)setObserverWeak:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id)arg3;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2;
+- (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id)arg3;
 - (void)updateSectionInfo:(id)arg1 inCategory:(int)arg2;
 - (void)updateSectionOrder:(id)arg1 forCategory:(int)arg2;
 - (void)updateSectionOrderRule:(id)arg1;

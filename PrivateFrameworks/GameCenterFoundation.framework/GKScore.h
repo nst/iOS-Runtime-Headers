@@ -4,7 +4,7 @@
 
 @class GKGame, GKPlayer, GKScoreInternal, NSDate, NSString;
 
-@interface GKScore : NSObject <NSCopying, NSCoding, NSSecureCoding> {
+@interface GKScore : NSObject <NSCoding, NSCopying, NSSecureCoding> {
     GKGame *_game;
     GKScoreInternal *_internal;
     BOOL _shouldSetDefaultLeaderboard;
@@ -54,12 +54,12 @@
 - (id)init;
 - (id)initWithCategory:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithInternalRepresentation:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1 playerID:(id)arg2;
 - (id)initWithInternalRepresentation:(id)arg1 playerInternal:(id)arg2;
-- (id)initWithInternalRepresentation:(id)arg1;
+- (id)initWithLeaderboardIdentifier:(id)arg1;
 - (id)initWithLeaderboardIdentifier:(id)arg1 forPlayer:(id)arg2;
 - (id)initWithLeaderboardIdentifier:(id)arg1 player:(id)arg2;
-- (id)initWithLeaderboardIdentifier:(id)arg1;
 - (id)internal;
 - (BOOL)isEqual:(id)arg1;
 - (void)issueChallengeToPlayers:(id)arg1 message:(id)arg2;

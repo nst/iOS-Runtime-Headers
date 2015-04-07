@@ -26,8 +26,8 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
-- (id)initWithRequest:(id)arg1 traits:(id)arg2 mapItemToRefine:(id)arg3;
 - (id)initWithRequest:(id)arg1 traits:(id)arg2;
+- (id)initWithRequest:(id)arg1 traits:(id)arg2 mapItemToRefine:(id)arg3;
 - (BOOL)isCanceled;
 - (id)resultBoundingRegion;
 - (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;

@@ -32,8 +32,8 @@
 - (id)localizedTimeStringFromDate:(id)arg1 timeDesignator:(out id*)arg2;
 - (id)pmString;
 - (BOOL)timeDesignatorAppearsBeforeTime;
-- (id)timeDesignatorForDate:(id)arg1 timeZone:(id)arg2;
 - (id)timeDesignatorForDate:(id)arg1;
+- (id)timeDesignatorForDate:(id)arg1 timeZone:(id)arg2;
 - (BOOL)use24HourTime;
 
 @end

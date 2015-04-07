@@ -5,11 +5,11 @@
 @class NSMutableArray;
 
 @interface OADPath : NSObject {
+    NSMutableArray *mElements;
+    int mFillMode;
     struct CGSize { 
         float width; 
         float height; 
-    NSMutableArray *mElements;
-    int mFillMode;
     } mSize;
     BOOL mStroked;
 }

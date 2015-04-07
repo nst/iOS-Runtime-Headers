@@ -5,11 +5,11 @@
 @class NSArray, _UITableViewCellActionButton;
 
 @interface UITableViewCellDeleteConfirmationView : UIView {
+    _UITableViewCellActionButton *_accessoryView;
+    NSArray *_actionButtons;
     struct CGSize { 
         float width; 
         float height; 
-    _UITableViewCellActionButton *_accessoryView;
-    NSArray *_actionButtons;
     } _contentSize;
     float _cornerRadius;
     _UITableViewCellActionButton *_deleteView;

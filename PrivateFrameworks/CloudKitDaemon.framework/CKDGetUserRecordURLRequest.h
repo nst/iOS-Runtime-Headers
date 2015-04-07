@@ -9,7 +9,11 @@
 @class CKRecord;
 
 @interface CKDGetUserRecordURLRequest : CKDURLRequest {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordFetchedBlock;
+
     CKRecord *_userRecord;
 }
 

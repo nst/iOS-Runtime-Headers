@@ -9,7 +9,11 @@
 @interface MFVariableLayoutConstraint : NSObject {
     float _cachedInterpolatedValue;
     BOOL _cachedInterpolatedValueIsValid;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _interpolationFormula;
+
     float _medianValue;
 }
 

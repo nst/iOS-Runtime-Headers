@@ -64,8 +64,8 @@
 - (void)highlightSearchTerms:(BOOL)arg1;
 - (id)init;
 - (void)initializeTopicHistoryScrollMapWithScrollPosition:(id)arg1;
-- (void)loadTopic:(id)arg1 data:(id)arg2 useLocalResource:(BOOL)arg3;
 - (void)loadTopic:(id)arg1;
+- (void)loadTopic:(id)arg1 data:(id)arg2 useLocalResource:(BOOL)arg3;
 - (id)navigationItemFromURLString:(id)arg1;
 - (void)onConnectionChanged:(id)arg1;
 - (id)onGoBack;

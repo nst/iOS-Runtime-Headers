@@ -4,7 +4,7 @@
 
 @class NSString, QLArchiveTableViewController, QLPreviewController, UIDocumentInteractionController, UINavigationController, UIPopoverPresentationController;
 
-@interface QLArchiveViewer : NSObject <UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate> {
+@interface QLArchiveViewer : NSObject <UINavigationControllerDelegate, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIDocumentInteractionController *_documentInteractionController;
     UINavigationController *_navigationController;
     UIPopoverPresentationController *_presentationController;

@@ -5,13 +5,13 @@
 @class <SKUIOfferViewDelegate>, NSMapTable, NSMutableArray, NSString;
 
 @interface SKUIOfferView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIViewElementView> {
+    unsigned int _alignment;
+    NSMapTable *_buttonElements;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    unsigned int _alignment;
-    NSMapTable *_buttonElements;
     } _contentInset;
     <SKUIOfferViewDelegate> *_delegate;
     BOOL _isShowingConfirmation;

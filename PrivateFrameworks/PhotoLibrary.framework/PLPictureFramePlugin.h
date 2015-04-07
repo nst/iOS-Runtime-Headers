@@ -5,19 +5,19 @@
 @class NSString, PLCachedImage, PLCroppedImageView, PLImageCache, PLImageLoadingQueue, PLImageSource, PLManagedAsset;
 
 @interface PLPictureFramePlugin : PLSlideshowPlugin <PLImageLoadingQueueDelegate> {
-    unsigned int _didLoadFirstImage : 1;
-    unsigned int _slideshowTimerDidFire : 1;
-    unsigned int _slideshowTimerIsScheduled : 1;
-    unsigned int _paused : 1;
     PLCroppedImageView *_currentImageView;
     unsigned int _currentIndex;
+    unsigned int _didLoadFirstImage : 1;
     PLImageCache *_imageCache;
     struct __CFArray { } *_imageIndexes;
     PLImageLoadingQueue *_imageLoadingQueue;
     PLImageSource *_imageSource;
     PLCachedImage *_nextImage;
     PLCroppedImageView *_nextImageView;
+    unsigned int _paused : 1;
     PLManagedAsset *_requestedImage;
+    unsigned int _slideshowTimerDidFire : 1;
+    unsigned int _slideshowTimerIsScheduled : 1;
 }
 
 @property(copy,readonly) NSString * debugDescription;

@@ -8,18 +8,26 @@
 
 @class GKRemoteUIController, NSArray, NSData, NSError, NSMutableArray, NSString, NSURL, RUILoader, UINavigationController;
 
-@interface GKRemoteUIController : NSObject <RUILoaderDelegate, RUIObjectModelDelegate, GKRemoteUIAuxiliaryViewDelegate> {
+@interface GKRemoteUIController : NSObject <GKRemoteUIAuxiliaryViewDelegate, RUILoaderDelegate, RUIObjectModelDelegate> {
     BOOL _accountChanged;
     NSString *_alias;
     NSString *_appleID;
     NSString *_authToken;
     BOOL _complete;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     NSError *_error;
     NSString *_firstName;
     NSString *_lastName;
     int _layoutStyle;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _loadHandler;
+
     RUILoader *_loader;
     BOOL _loading;
     BOOL _loadingInitialUI;
@@ -95,9 +103,9 @@
 - (void)loadInitialRemoteUIWithHandler:(id)arg1;
 - (void)loadURL:(id)arg1 postBody:(id)arg2;
 - (void)loadURL:(id)arg1 postData:(id)arg2;
+- (id)loader;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
-- (id)loader;
 - (BOOL)loading;
 - (BOOL)loadingInitialUI;
 - (id)navigationController;

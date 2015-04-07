@@ -4,16 +4,16 @@
 
 @class NSString;
 
-@interface EDAlignmentInfo : NSObject <NSCopying, EDImmutableObject> {
-    boolmDoNotModify;
-    boolmHorizontalAlignOverridden;
-    boolmIndentOverridden;
-    boolmTextWrapped;
-    boolmTextWrappedOveridden;
-    boolmVerticalAlignOverridden;
+@interface EDAlignmentInfo : NSObject <EDImmutableObject, NSCopying> {
+    bool mDoNotModify;
+    bool mHorizontalAlignOverridden;
     int mHorizontalAlignment;
     int mIndent;
+    bool mIndentOverridden;
     int mTextRotation;
+    bool mTextWrapped;
+    bool mTextWrappedOveridden;
+    bool mVerticalAlignOverridden;
     int mVerticalAlignment;
 }
 

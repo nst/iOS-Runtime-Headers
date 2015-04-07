@@ -16,6 +16,21 @@
 @interface BRCLocalContainer : NSObject <BRCContainer> {
     NSMutableSet *_XPCClientsUsingUbiquity;
     BOOL _activated;
+
+  /* Unexpected information at end of encoded ivar type: I */
+  /* Error parsing encoded ivar type info: AI */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeAliasQueries;
+
+
+  /* Unexpected information at end of encoded ivar type: I */
+  /* Error parsing encoded ivar type info: AI */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeQueries;
+
+
+  /* Unexpected information at end of encoded ivar type: I */
+  /* Error parsing encoded ivar type info: AI */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeRecursiveQueries;
+
     BRCThrottle *_additionsThrottle;
     NSMutableIndexSet *_appliedTombstoneRanks;
     BRCDBThrottle *_applyThrottle;
@@ -62,8 +77,18 @@
     BRCAccountSession *_session;
     BOOL _shouldForceContainerForeground;
     unsigned int _state;
+
+  /* Unexpected information at end of encoded ivar type: I */
+  /* Error parsing encoded ivar type info: AI */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_syncBarriers;
+
     BRCSyncDownOperation *_syncDownOperation;
     BRCSyncOperationThrottle *_syncDownThrottle;
+
+  /* Unexpected information at end of encoded ivar type: I */
+  /* Error parsing encoded ivar type info: AI */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_syncState;
+
     NSArray *_syncThrottles;
     BRCSyncBudgetThrottle *_syncUpBudget;
     BRCSyncUpOperation *_syncUpOperation;
@@ -73,11 +98,6 @@
     NSObject<OS_dispatch_source> *_timerForGraceForegroundPeriod;
     BRCVersionDownloader *_versionDownloader;
     BRCVersionUploader *_versionUploader;
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeAliasQueries;
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeQueries;
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeRecursiveQueries;
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_syncBarriers;
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_syncState;
 }
 
 @property(retain) BRCAccountSession * accountSession;
@@ -279,8 +299,8 @@
 - (void)rescheduleUnappliedItemID:(id)arg1 forFaultCreation:(BOOL)arg2;
 - (void)rescheduleUnappliedRank:(id)arg1 forFaultCreation:(BOOL)arg2;
 - (id)reservedItemByParentID:(id)arg1 andDisplayName:(id)arg2;
-- (void)reset:(unsigned int)arg1 withCoordinationCompletionHandler:(id)arg2;
 - (void)reset:(unsigned int)arg1;
+- (void)reset:(unsigned int)arg1 withCoordinationCompletionHandler:(id)arg2;
 - (void)resetSyncBudgetAndThrottle;
 - (id)resolveClashOfAlias:(id)arg1 atPath:(id)arg2 withAlias:(id)arg3 atPath:(id)arg4;
 - (void)retriedUnappliedRank:(id)arg1;

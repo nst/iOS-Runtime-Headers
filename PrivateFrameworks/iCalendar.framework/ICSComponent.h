@@ -55,8 +55,8 @@
 + (int)statusFromString:(id)arg1;
 + (id)stringFromStatus:(int)arg1;
 
-- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
+- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)addComponent:(id)arg1;
 - (void)addProperty:(id)arg1 withValue:(id)arg2;
 - (id)allProperties;

@@ -9,8 +9,16 @@
 @class NSString;
 
 @interface UIWebElementAction : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _actionHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _dismissalHandler;
+
     NSString *_title;
     int _type;
 }
@@ -19,8 +27,8 @@
 @property(readonly) int type;
 
 + (id)customElementActionWithTitle:(id)arg1 actionHandler:(id)arg2;
-+ (id)standardElementActionWithType:(int)arg1 customTitle:(id)arg2;
 + (id)standardElementActionWithType:(int)arg1;
++ (id)standardElementActionWithType:(int)arg1 customTitle:(id)arg2;
 
 - (void)_runActionWithElement:(id)arg1 targetURL:(id)arg2 documentView:(id)arg3 interactionLocation:(struct CGPoint { float x1; float x2; })arg4;
 - (id)_title;

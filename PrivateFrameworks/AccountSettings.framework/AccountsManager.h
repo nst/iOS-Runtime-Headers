@@ -40,8 +40,8 @@
 - (void)_sendNotificationsForChangedAccounts;
 - (void)_setOriginalAccountDictionaries;
 - (id)accountWithIdentifier:(id)arg1;
-- (id)accountsWithTypes:(id)arg1 withLoader:(id)arg2;
 - (id)accountsWithTypes:(id)arg1;
+- (id)accountsWithTypes:(id)arg1 withLoader:(id)arg2;
 - (void)addChild:(id)arg1 toAccount:(id)arg2;
 - (id)allBasicAccounts;
 - (id)allBasicSyncableAccounts;

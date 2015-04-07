@@ -23,7 +23,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)icon;
-- (id)init:(const struct InterAppAudioAppInfo { boolx1; int x2; struct ObjCUIImage {} *x3; struct __CFString {} *x4; struct __CFString {} *x5; struct __CFURL {} *x6; }*)arg1 iconSize:(float)arg2;
+- (id)init:(const struct InterAppAudioAppInfo { bool x1; int x2; struct ObjCUIImage {} *x3; struct __CFString {} *x4; struct __CFString {} *x5; struct __CFURL {} *x6; }*)arg1 iconSize:(float)arg2;
 - (BOOL)isCurrentApp;
 - (BOOL)isHost;
 - (int)key;

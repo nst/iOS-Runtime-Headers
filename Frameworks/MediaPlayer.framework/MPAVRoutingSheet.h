@@ -11,7 +11,11 @@
 @interface MPAVRoutingSheet : UIView <MPAVRoutingViewControllerDelegate> {
     UIView *_backgroundView;
     UIButton *_cancelButton;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     UIView *_controlsView;
     UIWindow *_presentationWindow;
     MPAVRoutingViewController *_routingViewController;

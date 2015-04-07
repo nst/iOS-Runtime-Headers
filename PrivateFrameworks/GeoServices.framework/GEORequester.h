@@ -33,8 +33,8 @@
 - (void)dealloc;
 - (id)debugRequestName;
 - (BOOL)disableReplay;
-- (id)initWithURL:(id)arg1 andDelegate:(id)arg2 useBackgroundConnection:(BOOL)arg3;
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
+- (id)initWithURL:(id)arg1 andDelegate:(id)arg2 useBackgroundConnection:(BOOL)arg3;
 - (id)logRequestToFile;
 - (id)logResponseToFile;
 - (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;

@@ -7,7 +7,11 @@
  */
 
 @interface CKKeepMessagesSelectionList : PSListItemsController {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _sheetHandler;
+
 }
 
 @property(copy) id sheetHandler;

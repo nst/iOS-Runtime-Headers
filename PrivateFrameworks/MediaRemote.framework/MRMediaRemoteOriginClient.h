@@ -10,7 +10,11 @@
 
 @interface MRMediaRemoteOriginClient : NSObject {
     BOOL _canBeNowPlayingApp;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _commandHandlerBlock;
+
     NSMutableDictionary *_commandHandlerBlocks;
     BOOL _isOverrideApp;
     BOOL _keepAlive;
@@ -19,7 +23,11 @@
     MRNowPlayingArtwork *_nowPlayingArtwork;
     NSDictionary *_nowPlayingInfo;
     struct _MROrigin { } *_origin;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _playbackStateRequestHandler;
+
     unsigned int _routeDiscoveryMode;
 }
 

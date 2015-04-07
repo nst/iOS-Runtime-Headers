@@ -5,13 +5,13 @@
 @class CKDPIdentifier, NSData, NSString;
 
 @interface CKDPParticipant : PBCodable <NSCopying> {
+    BOOL _createdOutOfProcess;
+    NSString *_emailAddress;
     struct { 
         unsigned int participantType : 1; 
         unsigned int permission : 1; 
         unsigned int state : 1; 
         unsigned int createdOutOfProcess : 1; 
-    BOOL _createdOutOfProcess;
-    NSString *_emailAddress;
     } _has;
     NSData *_invitationSignature;
     CKDPIdentifier *_inviterId;

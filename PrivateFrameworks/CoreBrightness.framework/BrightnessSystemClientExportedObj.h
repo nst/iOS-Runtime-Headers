@@ -10,7 +10,11 @@
 
 @interface BrightnessSystemClientExportedObj : NSObject <BacklightSystemDelegateXpcProtocol> {
     BrightnessSystemClientInternal *_target;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id clientBlock;
+
     NSObject<OS_dispatch_queue> *queue;
 }
 

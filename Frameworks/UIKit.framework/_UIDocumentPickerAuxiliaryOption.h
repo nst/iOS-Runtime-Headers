@@ -9,7 +9,11 @@
 @class NSString, UIImage;
 
 @interface _UIDocumentPickerAuxiliaryOption : NSObject <NSSecureCoding> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSString *_identifier;
     UIImage *_image;
     unsigned int _order;

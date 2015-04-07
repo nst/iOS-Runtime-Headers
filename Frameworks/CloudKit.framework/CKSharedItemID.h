@@ -4,7 +4,7 @@
 
 @class CKContainerID, NSObject<NSSecureCoding><NSCopying>;
 
-@interface CKSharedItemID : NSObject <NSSecureCoding, NSCopying> {
+@interface CKSharedItemID : NSObject <NSCopying, NSSecureCoding> {
     CKContainerID *_containerID;
     NSObject<NSSecureCoding><NSCopying> *_itemIdentifier;
     int _itemType;
@@ -32,8 +32,8 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItemType:(int)arg1 itemIdentifier:(id)arg2 containerID:(id)arg3;
 - (id)initWithItemType:(int)arg1 itemIdentifier:(id)arg2;
+- (id)initWithItemType:(int)arg1 itemIdentifier:(id)arg2 containerID:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)itemIdentifier;
 - (int)itemType;

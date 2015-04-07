@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface AWDLQMDataTransfer : PBCodable <NSCopying> {
+    NSString *_bundleName;
     struct { 
         unsigned int lQM : 1; 
         unsigned int rxBytes : 1; 
         unsigned int stateDuration : 1; 
         unsigned int txBytes : 1; 
-    NSString *_bundleName;
     } _has;
     int _lQM;
     unsigned int _rxBytes;

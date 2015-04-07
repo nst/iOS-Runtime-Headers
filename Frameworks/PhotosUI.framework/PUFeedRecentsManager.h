@@ -4,7 +4,7 @@
 
 @class <PUFeedRecentsManagerDelegate>, NSMutableArray, NSOrderedSet, PLPhotoLibrary;
 
-@interface PUFeedRecentsManager : NSObject <PLCloudFeedEntriesObserver, PLAssetChangeObserver, PLPhotoLibraryShouldReloadObserver> {
+@interface PUFeedRecentsManager : NSObject <PLAssetChangeObserver, PLCloudFeedEntriesObserver, PLPhotoLibraryShouldReloadObserver> {
     NSOrderedSet *__cachedRecentAssets;
     int _count;
     <PUFeedRecentsManagerDelegate> *_delegate;

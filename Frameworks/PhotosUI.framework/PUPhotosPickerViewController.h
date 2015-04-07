@@ -8,9 +8,13 @@
 
 @class NSString, PUPhotosPickerSessionInfo, PUPhotosPickerViewControllerSpec, PUTabbedLibraryViewController;
 
-@interface PUPhotosPickerViewController : UIViewController <UITabBarControllerDelegate, PLAssetContainerListChangeObserver, PUSessionInfoObserver> {
+@interface PUPhotosPickerViewController : UIViewController <PLAssetContainerListChangeObserver, PUSessionInfoObserver, UITabBarControllerDelegate> {
     PUTabbedLibraryViewController *__tabbedLibraryViewController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     int _currentContentMode;
     PUPhotosPickerSessionInfo *_photosPickerSessionInfo;
     PUPhotosPickerViewControllerSpec *_spec;

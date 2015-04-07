@@ -11,7 +11,11 @@
 @interface MKLocationManagerSingleUpdater : NSObject <MKLocationManagerObserver, MKLocationManagerOperation> {
     BOOL _active;
     double _desiredAccuracy;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     MKLocationManager *_locationManager;
     MKLocationManagerSingleUpdater *_selfReference;
 }

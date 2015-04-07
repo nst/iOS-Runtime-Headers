@@ -5,6 +5,8 @@
 @class NSString;
 
 @interface TSCEReference : NSObject {
+    NSString *mOverrideText;
+    NSString *mOverrideTextAsTyped;
     struct { 
         int referenceType; 
         union { 
@@ -51,8 +53,6 @@
             } spanningRangeReference; 
             struct __CFUUID {} *tableID; 
         } referenceUnion; 
-    NSString *mOverrideText;
-    NSString *mOverrideTextAsTyped;
     } mRef;
     unsigned char mStickyBits;
     BOOL mWasConstructedViaNames;

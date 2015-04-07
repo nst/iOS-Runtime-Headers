@@ -9,28 +9,23 @@
 @class <UIKeyboardKeyplaneTransitionDelegate>, <UIKeyboardSplitTransitionDataSource>, CADisplayLink, NSArray, UIKeyboardSliceSet;
 
 @interface UIKeyboardSplitTransitionView : UIView {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     BOOL _centerFilled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     float _currentProgress;
     CADisplayLink *_displayLink;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _endFrame;
     double _finalTransitionStartTime;
     float _finishDuration;
@@ -39,6 +34,15 @@
     BOOL _isSplitTranslation;
     float _liftOffProgress;
     UIKeyboardSliceSet *_sliceSet;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _startFrame;
     <UIKeyboardSplitTransitionDataSource> *_transitionDataSource;
     <UIKeyboardKeyplaneTransitionDelegate> *_transitionDelegate;

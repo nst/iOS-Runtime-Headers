@@ -5,9 +5,6 @@
 @class NSMutableArray;
 
 @interface UIControl : UIView {
-    struct CGPoint { 
-        float x; 
-        float y; 
     struct { 
         unsigned int disabled : 1; 
         unsigned int tracking : 1; 
@@ -26,6 +23,9 @@
         unsigned int touchHasHighlighted : 1; 
     } _controlFlags;
     double _downTime;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _previousPoint;
     NSMutableArray *_targetActions;
 }
@@ -47,8 +47,8 @@
 - (BOOL)_hasActionForEventMask:(int)arg1;
 - (float)_highlightCornerRadius;
 - (void)_sendActionsForEvents:(int)arg1 withEvent:(id)arg2;
-- (void)_sendDelayedActions:(BOOL)arg1;
 - (void)_sendDelayedActions;
+- (void)_sendDelayedActions:(BOOL)arg1;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
 - (void)_setLastHighlightSuccessful:(BOOL)arg1;
 - (void)_setTouchHasHighlighted:(BOOL)arg1;

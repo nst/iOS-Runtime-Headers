@@ -47,8 +47,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)initWithDatabasePath:(id)arg1 maxReaders:(unsigned int)arg2 maxWriters:(unsigned int)arg3;
 - (id)initWithDatabasePath:(id)arg1 maxReaders:(unsigned int)arg2;
+- (id)initWithDatabasePath:(id)arg1 maxReaders:(unsigned int)arg2 maxWriters:(unsigned int)arg3;
 - (BOOL)isCurrentThreadConnectionInTransaction;
 - (BOOL)isLocked;
 - (void)lock;

@@ -5,12 +5,12 @@
 @class NSString, UIColor, UIFont, UILabel;
 
 @interface TKLabelContainerView : UIView {
+    UILabel *_label;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UILabel *_label;
     } _labelPaddingInsets;
 }
 

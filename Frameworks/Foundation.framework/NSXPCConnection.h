@@ -15,16 +15,24 @@
     id _exportInfo;
     id _importInfo;
     id _incomingReplyInfo;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _interruptionHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _invalidationHandler;
+
     id _lock;
     <NSObject> *_otherInfo;
     NSXPCInterface *_remoteObjectInterface;
     id _replyTable;
     id _reserved1;
     NSString *_serviceName;
-    unsigned int _state2;
     unsigned int _state;
+    unsigned int _state2;
     NSObject<OS_dispatch_queue> *_userQueue;
     void *_xconnection;
 }
@@ -69,10 +77,10 @@
 - (id)_queue;
 - (void)_removeImportedProxy:(unsigned long long)arg1;
 - (void)_sendDesistForProxyNumber:(unsigned long long)arg1;
-- (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5 userInfo:(id)arg6;
-- (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5;
-- (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4;
 - (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3;
+- (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4;
+- (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5;
+- (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5 userInfo:(id)arg6;
 - (void)_setQueue:(id)arg1;
 - (void)_setTargetUserIdentifier:(unsigned int)arg1;
 - (void)_setUUID:(id)arg1;
@@ -95,10 +103,10 @@
 - (id)initVinylTestClient;
 - (id)initWithEndpoint:(id)arg1;
 - (id)initWithListenerEndpoint:(id)arg1;
-- (id)initWithMachServiceName:(id)arg1 options:(unsigned int)arg2;
 - (id)initWithMachServiceName:(id)arg1;
-- (id)initWithServiceName:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithMachServiceName:(id)arg1 options:(unsigned int)arg2;
 - (id)initWithServiceName:(id)arg1;
+- (id)initWithServiceName:(id)arg1 options:(unsigned int)arg2;
 - (id)interruptionHandler;
 - (void)invalidate;
 - (id)invalidationHandler;

@@ -3,6 +3,9 @@
  */
 
 @interface VKPTrafficStyle : PBCodable <NSCopying> {
+    float _fadingOffset;
+    float _fadingSlope;
+    unsigned int _fillColor;
     struct { 
         unsigned int fadingOffset : 1; 
         unsigned int fadingSlope : 1; 
@@ -13,9 +16,6 @@
         unsigned int secondaryColor : 1; 
         unsigned int uNUSEDPattern : 1; 
         unsigned int widthFraction : 1; 
-    float _fadingOffset;
-    float _fadingSlope;
-    unsigned int _fillColor;
     } _has;
     float _patternLength;
     float _patternSlotLength;

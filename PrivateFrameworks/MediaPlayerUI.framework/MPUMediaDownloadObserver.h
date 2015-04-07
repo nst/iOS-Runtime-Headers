@@ -13,7 +13,11 @@
     BOOL _invalidated;
     BOOL _paused;
     long long _pid;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
+
     NSObject<OS_dispatch_queue> *_queue;
 }
 

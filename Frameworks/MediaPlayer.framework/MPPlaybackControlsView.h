@@ -5,25 +5,23 @@
 @class <MPPlaybackControlsDelegate>, CABasicAnimation, MPAVController, MPAVItem, MPButton, MPDetailSlider, MPTimeMarker, NSString, UIActivityIndicatorView, UIImage, UILabel, UIView;
 
 @interface MPPlaybackControlsView : UIView <MPDetailSliderDelegate> {
-    unsigned int _wantsTick : 1;
-    unsigned int _geniusButtonDisabled : 1;
-    unsigned int _fastForwardAndRewindButtonDisabled : 1;
-    unsigned int _playbackSpeedButtonDisabled : 1;
-    unsigned int _mailButtonDisabled : 1;
-    unsigned int _mailButtonHidden : 1;
-    unsigned int _useMediaDetailSlider : 1;
-    unsigned int _detailScrubbing : 1;
-    unsigned int _needsUpdateButtonVisibility : 1;
     UIActivityIndicatorView *_activityIndicator;
     <MPPlaybackControlsDelegate> *_delegate;
+    unsigned int _detailScrubbing : 1;
     unsigned long long _disabledParts;
+    unsigned int _fastForwardAndRewindButtonDisabled : 1;
     MPButton *_fastFowardButton;
     UIView *_fastFowardButtonBezel;
     MPButton *_geniusButton;
+    unsigned int _geniusButtonDisabled : 1;
     MPAVItem *_item;
     MPButton *_mailButton;
+    unsigned int _mailButtonDisabled : 1;
+    unsigned int _mailButtonHidden : 1;
     MPTimeMarker *_markerForProgressControlDuration;
+    unsigned int _needsUpdateButtonVisibility : 1;
     MPButton *_playbackSpeedButton;
+    unsigned int _playbackSpeedButtonDisabled : 1;
     MPAVController *_player;
     MPDetailSlider *_progressControl;
     double _progressOffset;
@@ -35,7 +33,9 @@
     MPButton *_shuffleButton;
     double _tickInterval;
     UILabel *_trackInfoLabel;
+    unsigned int _useMediaDetailSlider : 1;
     unsigned long long _visibleParts;
+    unsigned int _wantsTick : 1;
 }
 
 @property(copy,readonly) NSString * debugDescription;

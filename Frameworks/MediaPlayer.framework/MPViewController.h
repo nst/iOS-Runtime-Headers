@@ -8,20 +8,24 @@
 
 @class MPAVController, MPAVItem, MPTransitionController, MPViewController, NSString, UIView;
 
-@interface MPViewController : UIViewController <MPControllerProtocol, MPAVControllerNode> {
+@interface MPViewController : UIViewController <MPAVControllerNode, MPControllerProtocol> {
     unsigned int _appearing : 1;
-    unsigned int _observesApplicationSuspendResumeEventsOnly : 1;
-    unsigned int _showOverlayWhileAppearingDisabled : 1;
     id _delegate;
     BOOL _idleTimerDisabled;
     int _interfaceOrientation;
     MPAVItem *_item;
+    unsigned int _observesApplicationSuspendResumeEventsOnly : 1;
     MPAVController *_player;
     int _playerLockedCount;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _popViewControllerHandler;
+
     MPTransitionController *_pushedTransitionController;
     MPViewController *_pushedViewController;
     BOOL _registeredForPlayerNotifications;
+    unsigned int _showOverlayWhileAppearingDisabled : 1;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -78,8 +82,8 @@
 - (void)setIdleTimerDisabled:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setObservesApplicationSuspendResumeEventsOnly:(BOOL)arg1;
-- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 - (void)setOrientation:(int)arg1;
+- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 - (void)setPlayer:(id)arg1;
 - (void)setPopViewControllerHandler:(id)arg1;
 - (void)setRegisteredForPlayerNotifications:(BOOL)arg1;

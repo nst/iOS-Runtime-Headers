@@ -4,7 +4,7 @@
 
 @class <ABPersonImageDataDelegate>, CAKeyframeAnimation, NSArray, NSDictionary, NSString, UIImagePickerController, UIPopoverController;
 
-@interface ABImagePickerController : ABContentController <UIModalViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, ABMultipleSourceImagePickerDelegate> {
+@interface ABImagePickerController : ABContentController <ABMultipleSourceImagePickerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UIModalViewDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
     BOOL _allowsEditingExistingPhoto;
     NSDictionary *_animationContextDictionary;
     BOOL _applyImageChangesToAllPeople;
@@ -50,8 +50,8 @@
 - (void)choosePhoto;
 - (id)contentView;
 - (void)dealloc;
-- (void)delayedPerform:(SEL)arg1 withObject:(id)arg2;
 - (void)delayedPerform:(SEL)arg1;
+- (void)delayedPerform:(SEL)arg1 withObject:(id)arg2;
 - (void)deletePhoto:(BOOL)arg1;
 - (void)deletePhotoNoConfirm;
 - (void)doEditPhoto;

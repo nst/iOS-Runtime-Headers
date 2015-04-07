@@ -5,17 +5,13 @@
 @class NSArray, NSData, NSDate, NSMutableArray, NSMutableSet, NSSet, NSString, NSURL, WBSHistoryItem, WBSHistoryVisit;
 
 @interface WBSHistoryItem : NSObject {
-    struct Vector<int, 0, WTF::CrashOnOverflow> { 
-        int *m_buffer; 
-        unsigned int m_capacity; 
-        unsigned int m_size; 
-    struct Vector<int, 0, WTF::CrashOnOverflow> { 
-        int *m_buffer; 
-        unsigned int m_capacity; 
-        unsigned int m_size; 
     NSMutableArray *_autocompleteTriggers;
     float _cachedTopSitesURLPenalty;
     float _cachedTopSitesVisitScore;
+    struct Vector<int, 0, WTF::CrashOnOverflow> { 
+        int *m_buffer; 
+        unsigned int m_capacity; 
+        unsigned int m_size; 
     } _dailyVisitCounts;
     int _databaseID;
     double _lastTimeTopSitesScoreWasComputed;
@@ -28,6 +24,10 @@
     unsigned int _visitCount;
     NSMutableArray *_visits;
     NSMutableSet *_visitsPendingWriteToDataStore;
+    struct Vector<int, 0, WTF::CrashOnOverflow> { 
+        int *m_buffer; 
+        unsigned int m_capacity; 
+        unsigned int m_size; 
     } _weeklyVisitCounts;
 }
 

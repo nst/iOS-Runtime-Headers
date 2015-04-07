@@ -36,8 +36,8 @@
 - (BOOL)hasMoreThanOnePageToPrint;
 - (id)imager;
 - (BOOL)incrementPage;
-- (id)initWithDocumentRoot:(id)arg1 imager:(id)arg2;
 - (id)initWithDocumentRoot:(id)arg1;
+- (id)initWithDocumentRoot:(id)arg1 imager:(id)arg2;
 - (BOOL)isCancelled;
 - (BOOL)isQuit;
 - (void)p_drawCurrentPageWithContext:(struct CGContext { }*)arg1 returnSuccess:(BOOL*)arg2 createPage:(BOOL)arg3;

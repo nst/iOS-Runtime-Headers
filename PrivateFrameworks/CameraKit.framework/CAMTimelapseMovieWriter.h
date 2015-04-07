@@ -11,7 +11,11 @@
 @interface CAMTimelapseMovieWriter : NSObject {
     NSMutableDictionary *__availableImageData;
     NSMutableDictionary *__availablePixelBuffers;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id __completion;
+
     int __currentOutputFrameIndex;
     NSArray *__frameFilePaths;
     int __framesPerSecond;

@@ -5,12 +5,12 @@
 @class RCCompositionController;
 
 @interface RCSavedRecordingPreviewController : RCPreviewController {
-    struct { 
-        double beginTime; 
-        double endTime; 
     RCCompositionController *_compositionController;
     BOOL _postPrepareShouldPlay;
     double _postPrepareStartTime;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _postPrepareTimeRange;
 }
 

@@ -10,7 +10,11 @@
 
 @interface SGAsset : NSObject {
     NSString *_fileName;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _onUpdate;
+
     NSString *_resourcePath;
 }
 

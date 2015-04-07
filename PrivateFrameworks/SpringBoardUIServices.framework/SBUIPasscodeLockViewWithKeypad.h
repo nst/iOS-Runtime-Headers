@@ -4,7 +4,7 @@
 
 @class NSString, SBUIPasscodeLockNumberPad, UILabel, UIView;
 
-@interface SBUIPasscodeLockViewWithKeypad : SBUIPasscodeLockViewBase <SBUIPasscodeLockNumberPadDelegate, SBUIPasscodeEntryFieldDelegate> {
+@interface SBUIPasscodeLockViewWithKeypad : SBUIPasscodeLockViewBase <SBUIPasscodeEntryFieldDelegate, SBUIPasscodeLockNumberPadDelegate> {
     UIView *_bottomToNumberPadFiller;
     UIView *_entryFieldToNumberPadFiller;
     NSString *_lastCharacterBeforeBackspace;

@@ -8,7 +8,7 @@
 
 @class <AFUISiriViewDelegate>, NSString, SiriUIAudioRoutePickerButton, SiriUIHelpButton, UIButton, UIView, UIView<SBUIPasscodeLockView>, UIView<SiriUISiriStatusViewProtocol>, _UIBackdropView;
 
-@interface AFUISiriView : UIView <SiriUISiriStatusViewDelegate, SBUIPasscodeLockViewDelegate> {
+@interface AFUISiriView : UIView <SBUIPasscodeLockViewDelegate, SiriUISiriStatusViewDelegate> {
     SiriUIAudioRoutePickerButton *_audioRoutePickerButton;
     _UIBackdropView *_backdropView;
     BOOL _backdropViewVisible;
@@ -29,9 +29,17 @@
     UIView<SiriUISiriStatusViewProtocol> *_siriStatusView;
     UIView *_statusViewContainer;
     BOOL _statusViewHidden;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _triggerUpdater;
+
     unsigned int _unlockAttemptCount;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _unlockCompletion;
+
 }
 
 @property BOOL carDisplaySnippetVisible;
@@ -57,8 +65,8 @@
 - (void)_configureHelpButton;
 - (void)_configureReportBugButton;
 - (void)_helpButtonTapped:(id)arg1;
-- (void)_hideLockViewWithResult:(int)arg1 hideCompletion:(id)arg2;
 - (void)_hideLockViewWithResult:(int)arg1;
+- (void)_hideLockViewWithResult:(int)arg1 hideCompletion:(id)arg2;
 - (void)_layoutReportBugButton;
 - (id)_lockViewBackgroundColor;
 - (id)_lockViewLegibilityProvider;

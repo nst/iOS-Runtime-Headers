@@ -61,8 +61,8 @@
 - (id)copyOfMessageInfos;
 - (id)copyOfMessageInfosForConversationsContainingMessagesMatchingCriterion:(id)arg1;
 - (id)copyOfMessageInfosMatchingCriterion:(id)arg1;
-- (id)copyOfMessagesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 generation:(unsigned int*)arg3;
 - (id)copyOfMessagesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2;
+- (id)copyOfMessagesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 generation:(unsigned int*)arg3;
 - (struct __CFDictionary { }*)copySendersByLibraryIDForConversation:(long long)arg1 limit:(int)arg2;
 - (id)criterion;
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
@@ -85,8 +85,8 @@
 - (BOOL)hasCompleteDataForMimePart:(id)arg1;
 - (BOOL)hasMessageForAccount:(id)arg1;
 - (unsigned int)indexOfMessage:(id)arg1;
-- (id)initWithCriterion:(id)arg1 mailbox:(id)arg2 readOnly:(BOOL)arg3;
 - (id)initWithCriterion:(id)arg1;
+- (id)initWithCriterion:(id)arg1 mailbox:(id)arg2 readOnly:(BOOL)arg3;
 - (id)initWithMailbox:(id)arg1;
 - (id)initWithMailboxUid:(id)arg1 readOnly:(BOOL)arg2;
 - (void)invalidateFetchWindow;

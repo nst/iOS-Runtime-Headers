@@ -6,6 +6,7 @@
     struct CGSize { 
         float width; 
         float height; 
+    } mSize;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -13,7 +14,6 @@
         float d; 
         float tx; 
         float ty; 
-    } mSize;
     } mTransform;
 }
 

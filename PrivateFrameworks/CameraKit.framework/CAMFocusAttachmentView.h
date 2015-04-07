@@ -5,12 +5,12 @@
 @class UILabel;
 
 @interface CAMFocusAttachmentView : UIView {
+    UILabel *__label;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UILabel *__label;
     } _textInsets;
 }
 

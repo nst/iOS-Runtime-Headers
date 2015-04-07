@@ -5,9 +5,6 @@
 @class PUImageViewExtraction, UIButton, UIImage, UIImageView, UIView<PLVideoOverlayButton>;
 
 @interface PUFeedImageCell : PUFeedCell {
-    struct CGSize { 
-        float width; 
-        float height; 
     UIImageView *__centerOverlayImageView;
     UIButton *__commentButton;
     int __imageTag;
@@ -24,6 +21,9 @@
     int _imageAlignment;
     int _imageContentMode;
     BOOL _imageHidden;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _maximumImageSize;
     int _overlayOptions;
 }
@@ -89,8 +89,8 @@
 - (int)overlayOptions;
 - (void)prepareForReuse;
 - (void)setCommentCount:(int)arg1;
-- (void)setImage:(id)arg1 withTag:(int)arg2;
 - (void)setImage:(id)arg1;
+- (void)setImage:(id)arg1 withTag:(int)arg2;
 - (void)setImageAlignment:(int)arg1;
 - (void)setImageContentMode:(int)arg1;
 - (void)setImageHidden:(BOOL)arg1;

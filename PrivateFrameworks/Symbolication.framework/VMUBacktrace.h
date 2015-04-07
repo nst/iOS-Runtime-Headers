@@ -30,8 +30,8 @@
 - (void)fixupStackWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2 taskMemoryCache:(id)arg3;
 - (BOOL)hasSameCallstack:(id)arg1;
 - (id)initWithSamplingContext:(struct sampling_context_t { }*)arg1 thread:(unsigned int)arg2;
-- (id)initWithTask:(unsigned int)arg1 thread:(unsigned int)arg2 is64Bit:(BOOL)arg3 taskMemoryCache:(id)arg4;
 - (id)initWithTask:(unsigned int)arg1 thread:(unsigned int)arg2 is64Bit:(BOOL)arg3;
+- (id)initWithTask:(unsigned int)arg1 thread:(unsigned int)arg2 is64Bit:(BOOL)arg3 taskMemoryCache:(id)arg4;
 - (void)removeTopmostFrame;
 - (void)setEndTime:(double)arg1;
 - (void)setLengthTime:(double)arg1;

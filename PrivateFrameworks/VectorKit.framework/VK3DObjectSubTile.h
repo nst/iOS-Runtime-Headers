@@ -5,13 +5,13 @@
 @class GEOVectorTile, NSArray, NSMutableArray, VKSharedResources, VKStyleManager;
 
 @interface VK3DObjectSubTile : NSObject {
+    float _contentScale;
     struct vector<VKBuildingHeightMap, std::__1::allocator<VKBuildingHeightMap> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<VKBuildingHeightMap *, std::__1::allocator<VKBuildingHeightMap> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    float _contentScale;
     } _heights;
     GEOVectorTile *_modelTile;
     NSMutableArray *_objectGroups;

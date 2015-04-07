@@ -5,10 +5,10 @@
 @class GEOEquatorialCelestialBodyData, GEOHorizontalCelestialBodyData, GEOSolarEclipticCelestialBodyData, NSDate;
 
 @interface GEOCelestialEphemeris : NSObject {
+    int _body;
     struct { 
         double latitude; 
         double longitude; 
-    int _body;
     } _coordinate;
     NSDate *_date;
     GEOSolarEclipticCelestialBodyData *_eclipticCoord;
@@ -36,7 +36,7 @@
 
 - (id).cxx_construct;
 - (void)_getRightAscension:(double*)arg1 declination:(double*)arg2 forJulianDay:(double)arg3 forBody:(int)arg4;
-- (struct CAARiseTransitSetDetails { boolx1; double x2; boolx3; double x4; boolx5; double x6; })_riseTransitSetForBody:(int)arg1;
+- (struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; })_riseTransitSetForBody:(int)arg1;
 - (void)dealloc;
 - (id)eclipticCoord;
 - (double)elongation;

@@ -64,10 +64,10 @@
 - (BOOL)hasComplement;
 - (unsigned int)indexInBuild;
 - (unsigned int)indexOnSlide;
-- (id)initWithArchive:(const struct BuildChunkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; double x4; double x5; unsigned int x6; boolx7; boolx8; int x9; unsigned int x10[1]; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
+- (id)initWithArchive:(const struct BuildChunkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; double x4; double x5; unsigned int x6; bool x7; bool x8; int x9; unsigned int x10[1]; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
+- (id)initWithIndex:(unsigned int)arg1 inBuild:(id)arg2;
 - (id)initWithIndex:(unsigned int)arg1 inBuild:(id)arg2 copyingAttributesFromChunk:(id)arg3;
 - (id)initWithIndex:(unsigned int)arg1 inBuild:(id)arg2 referent:(unsigned int)arg3 copyingRemainingAttributesFromChunk:(id)arg4;
-- (id)initWithIndex:(unsigned int)arg1 inBuild:(id)arg2;
 - (id)inspectableAttributes;
 - (BOOL)isActive;
 - (BOOL)isAutomatic;
@@ -88,7 +88,7 @@
 - (void)p_setDurationFromBuildAttributes:(id)arg1;
 - (id)p_stringForReferent:(unsigned int)arg1;
 - (unsigned int)referent;
-- (void)saveToArchive:(struct BuildChunkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; double x4; double x5; unsigned int x6; boolx7; boolx8; int x9; unsigned int x10[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct BuildChunkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; double x4; double x5; unsigned int x6; bool x7; bool x8; int x9; unsigned int x10[1]; }*)arg1 archiver:(id)arg2;
 - (void)setAutomatic:(BOOL)arg1;
 - (void)setDelay:(double)arg1;
 - (void)setDuration:(double)arg1;

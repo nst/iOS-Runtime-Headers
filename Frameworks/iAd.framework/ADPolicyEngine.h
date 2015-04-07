@@ -73,8 +73,8 @@
 - (void)enablePolicyEngine;
 - (BOOL)enabled;
 - (void)finishedPresentingSharedInterstitialAd;
-- (id)heartbeatToken:(id*)arg1;
 - (id)heartbeatToken;
+- (id)heartbeatToken:(id*)arg1;
 - (id)heartbeatTokenError;
 - (double)heartbeatTokenExpiration;
 - (id)init;
@@ -96,8 +96,8 @@
 - (void)setCurrentSongData:(id)arg1;
 - (void)setCurrentStationData:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setHeartbeatToken:(id)arg1 expirationDate:(double)arg2 error:(id)arg3;
 - (void)setHeartbeatToken:(id)arg1;
+- (void)setHeartbeatToken:(id)arg1 expirationDate:(double)arg2 error:(id)arg3;
 - (void)setHeartbeatTokenError:(id)arg1;
 - (void)setHeartbeatTokenExpiration:(double)arg1;
 - (void)setLastSharedMediaPlayerVideoAdError:(id)arg1;
@@ -124,8 +124,8 @@
 - (void)sharedMediaPlayerVideoAdDidFailToReceiveAdWithError:(id)arg1;
 - (void)sharedMediaPlayerVideoAdDidLoad;
 - (void)sharedMediaPlayerVideoAdWillLoad;
-- (void)songBeganWithTags:(id)arg1 completionHandler:(id)arg2;
 - (void)songBeganWithTags:(id)arg1;
+- (void)songBeganWithTags:(id)arg1 completionHandler:(id)arg2;
 - (void)songSkipped;
 - (void)songStopped;
 - (void)stationChanged:(id)arg1 completionHandler:(id)arg2;

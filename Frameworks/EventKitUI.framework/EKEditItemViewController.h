@@ -5,6 +5,7 @@
 @class <EKEditItemViewControllerDelegate>, <EKStyleProvider>, EKUIRecurrenceAlertController;
 
 @interface EKEditItemViewController : UIViewController <EKEditItemViewControllerProtocol> {
+    <EKEditItemViewControllerDelegate> *_editDelegate;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    <EKEditItemViewControllerDelegate> *_editDelegate;
     } _initialFrame;
     BOOL _modal;
     EKUIRecurrenceAlertController *_recurrenceAlertController;
@@ -36,8 +36,8 @@
 - (void)didReceiveMemoryWarning;
 - (id)editDelegate;
 - (BOOL)fitsPopoverWhenKeyboardActive;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (float)marginForTableView:(id)arg1;
 - (BOOL)modal;
 - (void)popIfNonModal;

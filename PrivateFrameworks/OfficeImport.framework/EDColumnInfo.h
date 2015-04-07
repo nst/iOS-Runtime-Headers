@@ -4,8 +4,8 @@
 
 @class EDReference, EDResources, EDWorksheet, NSString;
 
-@interface EDColumnInfo : NSObject <NSCopying, EDKeyedObject> {
-    boolmHidden;
+@interface EDColumnInfo : NSObject <EDKeyedObject, NSCopying> {
+    bool mHidden;
     unsigned char mOutlineLevel;
     EDReference *mRange;
     EDResources *mResources;

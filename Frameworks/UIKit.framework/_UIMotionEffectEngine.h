@@ -5,6 +5,27 @@
 @class CADisplayLink, CMMotionManager, NSArray, NSMapTable, NSMutableSet, NSOperationQueue, _UIAssociationTable, _UILazyMapTable, _UIMotionEffectEngineLogger;
 
 @interface _UIMotionEffectEngine : NSObject {
+    BOOL _allAnalyzersAreCentered;
+    _UILazyMapTable *_analyzerSettingsToAnalyzers;
+    NSMapTable *_analyzersToEffects;
+    NSMapTable *_analyzersToHistories;
+    CADisplayLink *_displayLink;
+    _UIAssociationTable *_effectViewAssociationTable;
+    BOOL _generatingUpdates;
+    BOOL _hasAppliedAtLeastOneUpdateSinceStarting;
+    BOOL _hasReceivedAtLeastOneMotionEventSinceStarting;
+    BOOL _isPendingReset;
+    struct { 
+        double w; 
+        double x; 
+        double y; 
+        double z; 
+    } _lastDeviceQuaternion;
+    double _lastUpdateTimestamp;
+    NSOperationQueue *_motionEventQueue;
+    _UIMotionEffectEngineLogger *_motionLogger;
+    CMMotionManager *_motionManager;
+    int _pendingDeviceMotionLock;
     struct { 
         struct { 
             double w; 
@@ -28,30 +49,9 @@
             float z; 
         } magneticField; 
         int magneticFieldCalibrationLevel; 
-        booldoingYawCorrection; 
-        booldoingBiasEstimation; 
-        boolisInitialized; 
-    struct { 
-        double w; 
-        double x; 
-        double y; 
-        double z; 
-    BOOL _allAnalyzersAreCentered;
-    _UILazyMapTable *_analyzerSettingsToAnalyzers;
-    NSMapTable *_analyzersToEffects;
-    NSMapTable *_analyzersToHistories;
-    CADisplayLink *_displayLink;
-    _UIAssociationTable *_effectViewAssociationTable;
-    BOOL _generatingUpdates;
-    BOOL _hasAppliedAtLeastOneUpdateSinceStarting;
-    BOOL _hasReceivedAtLeastOneMotionEventSinceStarting;
-    BOOL _isPendingReset;
-    } _lastDeviceQuaternion;
-    double _lastUpdateTimestamp;
-    NSOperationQueue *_motionEventQueue;
-    _UIMotionEffectEngineLogger *_motionLogger;
-    CMMotionManager *_motionManager;
-    int _pendingDeviceMotionLock;
+        bool doingYawCorrection; 
+        bool doingBiasEstimation; 
+        bool isInitialized; 
     } _pendingDeviceMotionStruct;
     double _pendingDeviceMotionTimestamp;
     BOOL _pendingSlowDown;
@@ -77,7 +77,7 @@
 - (BOOL)_motionEffect:(id)arg1 belongsToView:(id)arg2;
 - (BOOL)_motionEffectsAreSuspendedForView:(id)arg1;
 - (id)_motionEffectsForView:(id)arg1;
-- (void)_scheduleUpdateWithDeviceMotion:(const struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; int x5; boolx6; boolx7; boolx8; }*)arg1 timestamp:(double)arg2;
+- (void)_scheduleUpdateWithDeviceMotion:(const struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; int x5; bool x6; bool x7; bool x8; }*)arg1 timestamp:(double)arg2;
 - (void)_setMotionManagerSensorStatus:(int)arg1;
 - (void)_setTargetInterfaceOrientation:(int)arg1;
 - (BOOL)_shouldGenerateUpdates;

@@ -5,6 +5,10 @@
 @class <BBObserverDelegate>, BBObserverServerProxy, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface BBObserver : NSObject {
+    NSMutableDictionary *_attachmentInfoByBulletinID;
+    NSMutableDictionary *_bulletinLifeAssertions;
+    NSMutableDictionary *_bulletinUpdateQueuesBySectionID;
+    <BBObserverDelegate> *_delegate;
     struct { 
         unsigned int addBulletinPlayLightsAndSirens : 1; 
         unsigned int addBulletin : 1; 
@@ -30,10 +34,6 @@
         unsigned int invalidatedBulletinIDs : 1; 
         unsigned int serverConnectionChanged : 1; 
         unsigned int serverReceivedResponse : 1; 
-    NSMutableDictionary *_attachmentInfoByBulletinID;
-    NSMutableDictionary *_bulletinLifeAssertions;
-    NSMutableDictionary *_bulletinUpdateQueuesBySectionID;
-    <BBObserverDelegate> *_delegate;
     } _delegateFlags;
     NSString *_gatewayName;
     unsigned int _gatewayPriority;
@@ -103,9 +103,9 @@
 - (void)getSortDescriptorsForSectionID:(id)arg1 withCompletion:(id)arg2;
 - (void)getUniversalSectionIDForSectionID:(id)arg1 withCompletion:(id)arg2;
 - (id)init;
+- (id)initWithQueue:(id)arg1;
 - (id)initWithQueue:(id)arg1 asGateway:(id)arg2 priority:(unsigned int)arg3;
 - (id)initWithQueue:(id)arg1 forGateway:(id)arg2;
-- (id)initWithQueue:(id)arg1;
 - (void)invalidate;
 - (BOOL)isValid;
 - (void)noteAlertBehaviorOverrideStateChanged:(id)arg1;
@@ -113,8 +113,8 @@
 - (void)noteServerReceivedResponseForBulletin:(id)arg1;
 - (unsigned int)observerFeed;
 - (id)parametersForSectionID:(id)arg1;
-- (void)removeBulletins:(id)arg1 inSection:(id)arg2 fromFeed:(unsigned int)arg3;
 - (void)removeBulletins:(id)arg1 inSection:(id)arg2;
+- (void)removeBulletins:(id)arg1 inSection:(id)arg2 fromFeed:(unsigned int)arg3;
 - (void)requestFutureBulletinsForSectionID:(id)arg1;
 - (void)requestListBulletinsForSectionID:(id)arg1;
 - (void)requestNoticesBulletinsForSectionID:(id)arg1;

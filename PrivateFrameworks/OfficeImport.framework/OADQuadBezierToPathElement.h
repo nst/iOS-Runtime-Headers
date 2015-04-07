@@ -12,6 +12,7 @@
             BOOL isFormulaResult; 
             int value; 
         } y; 
+    } mControlPoint;
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
@@ -21,7 +22,6 @@
             BOOL isFormulaResult; 
             int value; 
         } y; 
-    } mControlPoint;
     } mToPoint;
 }
 

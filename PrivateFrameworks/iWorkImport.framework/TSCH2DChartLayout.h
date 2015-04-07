@@ -5,35 +5,35 @@
 @class NSDictionary, NSValue, TSCHChartRootLayoutItem;
 
 @interface TSCH2DChartLayout : TSCHChartLayout {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     NSValue *mCachedOriginRelativeToChartAreaFrame;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mLastChartBodySize;
     TSCHChartRootLayoutItem *mLayoutTreeRoot;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mStartingChartInnerFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } mStartingLegendInnerFrame;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mStartingSize;
 }
 

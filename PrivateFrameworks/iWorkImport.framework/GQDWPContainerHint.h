@@ -3,6 +3,9 @@
  */
 
 @interface GQDWPContainerHint : NSObject {
+    long mAnchorLocation;
+    double mAttachmentPosition;
+    long mCIndex;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,9 +15,6 @@
             float width; 
             float height; 
         } size; 
-    long mAnchorLocation;
-    double mAttachmentPosition;
-    long mCIndex;
     } mFrame;
     long mLIndex;
     long mPageIndex;

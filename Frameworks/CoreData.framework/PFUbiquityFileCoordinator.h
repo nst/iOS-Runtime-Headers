@@ -11,8 +11,8 @@
 @property(readonly) NSString * localPeerID;
 
 + (id)newFileCoordinatorForUbiquitousExternalDataReferenceLocation:(id)arg1;
-+ (id)newFileCoordinatorForUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;
 + (id)newFileCoordinatorForUbiquityRootLocation:(id)arg1;
++ (id)newFileCoordinatorForUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;
 
 - (void)coordinateReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2 retryOnError:(BOOL)arg3 error:(id*)arg4 byAccessor:(id)arg5;
 - (void)dealloc;

@@ -6,8 +6,8 @@
 }
 
 + (id)_errorDomain;
-+ (id)descriptionForError:(id)arg1 paths:(BOOL)arg2;
 + (id)descriptionForError:(id)arg1;
++ (id)descriptionForError:(id)arg1 paths:(BOOL)arg2;
 + (id)dictionaryRepresentationForError:(id)arg1;
 + (id)errorWithCode:(int)arg1 URL:(id)arg2 format:(id)arg3;
 + (id)errorWithCode:(int)arg1 error:(id)arg2 URL:(id)arg3 format:(id)arg4;

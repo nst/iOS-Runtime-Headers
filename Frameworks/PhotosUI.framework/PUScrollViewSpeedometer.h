@@ -8,13 +8,10 @@
     struct CGPoint { 
         float x; 
         float y; 
+    } __lastContentOffset;
     struct CGSize { 
         float width; 
         float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } __lastContentOffset;
     } __lastContentSize;
     UIScrollView *__lastScrollView;
     double __lastTime;
@@ -28,6 +25,9 @@
     float _mediumLowerThreshold;
     float _mediumUpperThreshold;
     int _regime;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _scrollSpeed;
 }
 

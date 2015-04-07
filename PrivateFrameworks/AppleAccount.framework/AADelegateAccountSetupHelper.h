@@ -14,7 +14,11 @@
     NSMutableDictionary *_assistantDelegates;
     NSArray *_delegatesToSetup;
     NSObject<OS_dispatch_source> *_delegatetimer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSMutableArray *_pendingCompletionBundles;
 }
 

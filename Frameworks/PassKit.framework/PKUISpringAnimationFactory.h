@@ -9,7 +9,11 @@
 @class CAMediaTimingFunction, NSString;
 
 @interface PKUISpringAnimationFactory : NSObject <_UIBasicAnimationFactory> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _animationDelayHandler;
+
     float _damping;
     double _duration;
     float _mass;
@@ -33,8 +37,8 @@
 @property float velocity;
 
 + (id)defaultTimingFunction;
-+ (id)springAnimationWithKeyPath:(id)arg1 velocity:(float)arg2;
 + (id)springAnimationWithKeyPath:(id)arg1;
++ (id)springAnimationWithKeyPath:(id)arg1 velocity:(float)arg2;
 
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)_springAnimationForView:(id)arg1 withKeyPath:(id)arg2;
@@ -46,10 +50,10 @@
 - (void)dealloc;
 - (double)duration;
 - (id)init;
-- (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 velocity:(float)arg4 timing:(id)arg5;
 - (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 velocity:(float)arg4;
-- (id)initWithVelocity:(float)arg1 timing:(id)arg2;
+- (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 velocity:(float)arg4 timing:(id)arg5;
 - (id)initWithVelocity:(float)arg1;
+- (id)initWithVelocity:(float)arg1 timing:(id)arg2;
 - (float)mass;
 - (double)maximumVendedDelay;
 - (void)setAnimationDelayHandler:(id)arg1;

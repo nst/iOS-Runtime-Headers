@@ -11,7 +11,11 @@
 @interface RUIAlertView : RUIElement {
     UIAlertController *_alertController;
     int _buttonIndex;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     NSString *_message;
     RUIObjectModel<RUIAlertViewDelegate> *_objectModel;
     NSString *_title;

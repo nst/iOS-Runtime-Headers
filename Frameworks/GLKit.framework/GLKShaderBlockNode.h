@@ -4,16 +4,16 @@
 
 @class GLKShaderBlockNode, NSMutableString, NSString;
 
-@interface GLKShaderBlockNode : NSObject <NSXMLParserDelegate, NSCopying> {
-    struct GLKBigInt_s { 
-        unsigned long long n0; 
-        unsigned long long n1; 
+@interface GLKShaderBlockNode : NSObject <NSCopying, NSXMLParserDelegate> {
     NSMutableString *_blockText;
     GLKShaderBlockNode *_children;
     unsigned int _index;
     BOOL _indexedMask;
     NSString *_label;
     NSString *_loopVar;
+    struct GLKBigInt_s { 
+        unsigned long long n0; 
+        unsigned long long n1; 
     } _mask;
     GLKShaderBlockNode *_next;
     GLKShaderBlockNode *_parent;

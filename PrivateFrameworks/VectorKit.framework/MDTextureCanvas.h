@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface MDTextureCanvas : NSObject <MDRenderTarget> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     float _contentScale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _sizeInPixels;
 }
 

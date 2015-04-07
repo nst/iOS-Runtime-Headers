@@ -12,10 +12,8 @@
 
 @property(readonly) BOOL clientWantsReply;
 @property(retain,readonly) NSObject<OS_xpc_object> * connection;
-@property(retain,readonly) NSObject<OS_xpc_object> * connection;
 @property(retain,readonly) NSError * replyError;
 @property(readonly) BOOL replyIsError;
-@property NSObject<OS_xpc_object> * xpcReply;
 @property NSObject<OS_xpc_object> * xpcReply;
 
 + (void)runDaemonSideWithXPCEvent:(id)arg1 connection:(id)arg2;

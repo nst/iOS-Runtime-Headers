@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface ABFavoritesEntry : NSObject {
-    unsigned int _dirty : 1;
     NSString *_abDatabaseUUID;
     int _abIdentifier;
     int _abUid;
     void *_addressBook;
+    unsigned int _dirty : 1;
     NSString *_label;
     NSString *_name;
     int _property;
@@ -27,14 +27,14 @@
 - (void)_queueLookup;
 - (void)_unqueueLookup;
 - (void)dealloc;
-- (void)dictionaryRepresentation:(id*)arg1 isDirty:(BOOL*)arg2;
 - (id)dictionaryRepresentation;
+- (void)dictionaryRepresentation:(id*)arg1 isDirty:(BOOL*)arg2;
 - (id)displayName;
 - (int)identifier;
-- (id)initWithDictionaryRepresentation:(id)arg1 addressBook:(void*)arg2;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3 type:(int)arg4;
+- (id)initWithDictionaryRepresentation:(id)arg1 addressBook:(void*)arg2;
 - (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
+- (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3 type:(int)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (id)label;
 - (id)nonLocalizedLabel;

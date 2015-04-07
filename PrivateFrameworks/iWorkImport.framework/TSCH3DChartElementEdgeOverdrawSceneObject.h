@@ -5,6 +5,8 @@
 @class TSCH3DChartElementEdgeOverdraw, TSCH3DPrefilteredLineRenderer;
 
 @interface TSCH3DChartElementEdgeOverdrawSceneObject : TSCH3DSceneObject {
+    TSCH3DChartElementEdgeOverdraw *mOverdraw;
+    TSCH3DPrefilteredLineRenderer *mRenderer;
     struct box<glm::detail::tvec2<float> > { 
         struct tvec2<float> { 
             union { 
@@ -30,8 +32,6 @@
                 float t; 
             } ; 
         } mMax; 
-    TSCH3DChartElementEdgeOverdraw *mOverdraw;
-    TSCH3DPrefilteredLineRenderer *mRenderer;
     } mTexturePortion;
 }
 

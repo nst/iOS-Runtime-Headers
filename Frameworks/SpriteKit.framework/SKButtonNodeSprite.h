@@ -11,11 +11,23 @@
 @interface SKButtonNodeSprite : SKSpriteNode {
     NSObject<SKButtonNodeSpriteDelegate> *_delegate;
     SKAction *_downAction;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _downBlock;
+
     int _touches;
     SKAction *_upAction;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _upBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _upInsideBlock;
+
 }
 
 @property NSObject<SKButtonNodeSpriteDelegate> * delegate;

@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface MSTrackListTableHeaderView : UIView {
+    NSString *_title;
     struct CGSize { 
         float width; 
         float height; 
-    NSString *_title;
     } _titleSize;
 }
 

@@ -5,9 +5,6 @@
 @class <GQHContext>, GQHTableState, GQHXML, GQSDocument;
 
 @interface GQHState : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     int mCachedCellStyleIndex;
     struct __CFDictionary { } *mCachedTableStyles;
     int mCachedTextStyleIndex;
@@ -25,6 +22,9 @@
     int mParagraphCount;
     int mParagraphIndex;
     GQSDocument *mProcessorState;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mScale;
     <GQHContext> *mShapeContext;
     int mShapeIDCounter;
@@ -58,13 +58,13 @@
 - (id)htmlDoc;
 - (id)implicitStyle;
 - (int)indexForStyle:(const char *)arg1;
+- (id)initWithState:(id)arg1;
 - (id)initWithState:(id)arg1 documentSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)initWithState:(id)arg1 needIndexFile:(BOOL)arg2 documentSize:(struct CGSize { float x1; float x2; })arg3;
-- (id)initWithState:(id)arg1;
 - (void)invalidateTextScale;
 - (void)leaveGraphicObject;
-- (struct __CFString { }*)makeInlineStyle:(struct __CFString { }*)arg1 inDocument:(id)arg2;
 - (struct __CFString { }*)makeInlineStyle:(struct __CFString { }*)arg1;
+- (struct __CFString { }*)makeInlineStyle:(struct __CFString { }*)arg1 inDocument:(id)arg2;
 - (BOOL)multiColumned;
 - (BOOL)needAbsolutelyPositionedTables;
 - (int)outlineLevel;

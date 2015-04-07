@@ -9,6 +9,16 @@
 @class <__NSCFLocalDownloadFileOpener>, NSObject<OS_dispatch_io>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface __NSCFLocalDownloadFile : NSObject {
+    int _error;
+    <__NSCFLocalDownloadFileOpener> *_fileProvider;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _finishCompletion;
+
+    bool _finished;
+    NSString *_path;
+    BOOL _skipUnlink;
     struct stat { 
         int st_dev; 
         unsigned short st_mode; 
@@ -40,16 +50,10 @@
         unsigned int st_gen; 
         int st_lspare; 
         long long st_qspare[2]; 
-    int _error;
-    <__NSCFLocalDownloadFileOpener> *_fileProvider;
-    id _finishCompletion;
-    NSString *_path;
-    BOOL _skipUnlink;
     } _stat;
+    bool _truncateFile;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSObject<OS_dispatch_io> *_writeIO;
-    bool_finished;
-    bool_truncateFile;
 }
 
 @property int error;

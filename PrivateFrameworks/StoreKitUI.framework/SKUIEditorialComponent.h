@@ -5,6 +5,10 @@
 @class NSArray, NSAttributedString, NSString, SKUILabelViewElement;
 
 @interface SKUIEditorialComponent : SKUIPageComponent {
+    NSAttributedString *_bodyAttributedText;
+    NSString *_bodyText;
+    NSArray *_links;
+    int _maximumBodyLines;
     struct SKUIEditorialStyle { 
         int alignment; 
         int bodyFontWeight; 
@@ -13,10 +17,6 @@
         int titleFontWeight; 
         float titleFontSize; 
         float titleSpacing; 
-    NSAttributedString *_bodyAttributedText;
-    NSString *_bodyText;
-    NSArray *_links;
-    int _maximumBodyLines;
     } _style;
     NSString *_titleText;
     BOOL _usesLockupTitle;

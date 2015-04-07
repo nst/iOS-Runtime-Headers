@@ -8,19 +8,7 @@
 
 @class <EKEventGestureControllerDelegate>, <EKEventGestureControllerUntimedDelegate>, EKCalendarDate, EKDayOccurrenceView, EKEvent, NSString, NSTimer, UILongPressGestureRecognizer;
 
-@interface EKEventGestureController : NSObject <UIGestureRecognizerDelegate, UIAlertViewDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface EKEventGestureController : NSObject <UIAlertViewDelegate, UIGestureRecognizerDelegate> {
     BOOL _commitBlocked;
     int _consecutivePageTurnCount;
     EKCalendarDate *_currentDay;
@@ -32,6 +20,9 @@
     EKDayOccurrenceView *_draggingViewSource;
     EKEvent *_event;
     float _firstContactOfDraggingViewTop;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _firstTouchPoint;
     double _firstTouchTime;
     BOOL _forcedStart;
@@ -40,16 +31,29 @@
     BOOL _isInCancelRegion;
     BOOL _isMultiDayTimedEvent;
     BOOL _isNewEvent;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _latestTouchPoint;
     BOOL _needsCommit;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _previousTouchPoint;
     double _previousTouchTime;
     float _previousTouchVelocity;
     UILongPressGestureRecognizer *_recognizer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recurrenceSheetCompletionHandler;
+
     NSTimer *_scrollTimer;
     NSString *_sessionIdentifierForDebug;
     double _timeSinceEnteredPageMargin;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _touchOffset;
     int _touchOffsetDays;
     <EKEventGestureControllerUntimedDelegate> *_untimedDelegate;

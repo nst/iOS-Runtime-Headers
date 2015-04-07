@@ -10,9 +10,6 @@
 @class NSArray, NSCalendar, NSColor, NSData, NSFileWrapper, NSFont, NSMapTable, NSMutableArray, NSMutableAttributedString, NSMutableData, NSMutableDictionary, NSMutableParagraphStyle, NSTextTable;
 
 @interface NSRTFReader : NSObject {
-    union { 
-        unsigned char thin[128]; 
-        unsigned short fat[128]; 
     struct _NSAttributeInfo { 
         unsigned int toUniCharEncoding; 
         unsigned int codePageEncoding; 
@@ -33,44 +30,6 @@
         unsigned int paraStyleNeedsCopying : 1; 
         unsigned int hasWritingDirectionAttribute : 1; 
         unsigned int  : 15; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct _NSRTFPriv { 
-        void *reader; 
-        char *rtfInput; 
-        unsigned int rtfInputLength; 
-        unsigned int rtfInputLocation; 
-        unsigned int rtfHeaderEndLocation; 
-        int pushedChar; 
-        int pushedClass; 
-        int pushedMajor; 
-        int pushedMinor; 
-        int pushedParam; 
-        BOOL pushedTextBuf[1024]; 
-        int prevChar; 
-        int bumpLine; 
-        struct RTFFont {} *fontList; 
-        struct RTFColor {} *colorList; 
-        struct RTFStyle {} *styleList; 
-        char *inputName; 
-        char *outputName; 
-        int (*ccb[5])(); 
-        int (*readHook)(); 
-        int (*msgProc)(); 
-        int (*panicProc)(); 
-        BOOL textBuf[1024]; 
-        int textLen; 
-        int class; 
-        int major; 
-        int minor; 
-        int param; 
-        int lineNum; 
-        int linePos; 
-        int groupState; 
     } _attributeInfo;
     NSMutableData *_attributeInfoStack;
     NSMutableArray *_attributesStack;
@@ -107,9 +66,44 @@
     BOOL _limitReached;
     NSMutableDictionary *_listDefinitions;
     NSMutableArray *_nestedTables;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _paperSize;
     NSMutableArray *_previousRowArray;
     NSTextTable *_previousTable;
+    struct _NSRTFPriv { 
+        void *reader; 
+        char *rtfInput; 
+        unsigned int rtfInputLength; 
+        unsigned int rtfInputLocation; 
+        unsigned int rtfHeaderEndLocation; 
+        int pushedChar; 
+        int pushedClass; 
+        int pushedMajor; 
+        int pushedMinor; 
+        int pushedParam; 
+        BOOL pushedTextBuf[1024]; 
+        int prevChar; 
+        int bumpLine; 
+        struct RTFFont {} *fontList; 
+        struct RTFColor {} *colorList; 
+        struct RTFStyle {} *styleList; 
+        char *inputName; 
+        char *outputName; 
+        int (*ccb[5])(); 
+        int (*readHook)(); 
+        int (*msgProc)(); 
+        int (*panicProc)(); 
+        BOOL textBuf[1024]; 
+        int textLen; 
+        int class; 
+        int major; 
+        int minor; 
+        int param; 
+        int lineNum; 
+        int linePos; 
+        int groupState; 
     } _private;
     float _rMargin;
     int _readLimit;
@@ -119,6 +113,9 @@
     BOOL _setTableCells;
     float _tMargin;
     NSArray *_textBlocks;
+    union { 
+        unsigned char thin[128]; 
+        unsigned short fat[128]; 
     } _textBuffer;
     BOOL _textBufferContentsIsFat;
     unsigned int _textBufferIndex;
@@ -129,6 +126,9 @@
     unsigned int _verticalOrientationLocation;
     int _viewKind;
     int _viewScale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _viewSize;
 }
 

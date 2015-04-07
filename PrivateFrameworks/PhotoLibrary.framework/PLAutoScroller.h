@@ -5,10 +5,10 @@
 @class NSTimer, UIScrollView;
 
 @interface PLAutoScroller : NSObject {
+    NSTimer *_autoscrollTimer;
     struct CGPoint { 
         float x; 
         float y; 
-    NSTimer *_autoscrollTimer;
     } _targetPoint;
     UIScrollView *_targetScrollView;
     float _thresholdDistance;

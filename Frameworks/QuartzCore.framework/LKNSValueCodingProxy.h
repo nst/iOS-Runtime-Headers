@@ -3,6 +3,7 @@
  */
 
 @interface LKNSValueCodingProxy : CACodingProxy {
+    int _kind;
     union { 
         struct CGPoint { 
             float x; 
@@ -85,7 +86,6 @@
             float m44; 
             float m45; 
         } color_matrix; 
-    int _kind;
     } _u;
 }
 

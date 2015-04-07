@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@interface CMLogItem : NSObject <NSSecureCoding, NSCopying> {
+@interface CMLogItem : NSObject <NSCopying, NSSecureCoding> {
     id _internalLogItem;
 }
 

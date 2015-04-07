@@ -8,19 +8,7 @@
 
 @class NSIndexPath, NSMutableDictionary, NSString, PHAsset, PHAssetCollection, PHCachingImageManager, PHFetchResult, PLDeletePhotosActionController, PUActivityViewController, PUAlbumListTransitionContext, PUAlbumPickerViewController, PUPhotoBrowserController, PUPhotoPinchGestureRecognizer, PUPhotoSelectionManager, PUPhotosDataSource, PUPhotosGridViewController, PUPhotosGridViewControllerSpec, PUPhotosSinglePickerViewController, PUPopoverController, PUScrollViewSpeedometer, PUSearchButtonItem, PUSearchViewController, PUSessionInfo, UIActionSheet, UIBarButtonItem, UICollectionViewLayout, UICollectionViewLayout<PUGridLayoutProtocol>, UILongPressGestureRecognizer, UINavigationButton, UIView;
 
-@interface PUPhotosGridViewController : UICollectionViewController <UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate, PUCollectionViewReorderDelegate, PUSessionInfoObserver, PHAssetCollectionDataSource, _UISettingsKeyObserver, UISearchBarDelegate, PUSearchViewControllerDelegate, PUPhotosDataSourceChangeObserver, UIGestureRecognizerDelegate, PLNavigableAssetContainerViewController, PLDismissableViewController, PUStackedAlbumControllerTransition, PUScrollViewSpeedometerDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+@interface PUPhotosGridViewController : UICollectionViewController <PHAssetCollectionDataSource, PLDismissableViewController, PLNavigableAssetContainerViewController, PUCollectionViewReorderDelegate, PUPhotosDataSourceChangeObserver, PUScrollViewSpeedometerDelegate, PUSearchViewControllerDelegate, PUSessionInfoObserver, PUStackedAlbumControllerTransition, UIGestureRecognizerDelegate, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate, UISearchBarDelegate, _UISettingsKeyObserver> {
     PUActivityViewController *__activityViewController;
     UICollectionViewLayout *__albumListTransitionLayout;
     PUAlbumPickerViewController *__albumPickerViewController;
@@ -35,7 +23,19 @@
     PUPhotosGridViewController *__modalSearchResultsViewController;
     PUSearchViewController *__modalSearchViewController;
     unsigned int __previousCollectionsCount;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } __previousPreheatContentOffset;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } __previousPreheatRect;
     PUPopoverController *__puPopoverController;
     PUPhotoBrowserController *__pushedPhotoBrowserController;
@@ -61,8 +61,16 @@
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     UICollectionViewLayout<PUGridLayoutProtocol> *_mainGridLayout;
     NSIndexPath *_menuIndexPath;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _onViewDidAppearCompletion;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _onViewDidLayoutSubviewsBlock;
+
     PUSearchViewController *_passdownSearchViewController;
     PUPhotoPinchGestureRecognizer *_photoOrStackPinchGestureRecognizer;
     PUPhotoSelectionManager *_photoSelectionManager;
@@ -281,8 +289,8 @@
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)configureGlobalFooterView:(id)arg1;
 - (void)configureGlobalHeaderView:(id)arg1;
-- (void)configureGridCell:(id)arg1 forItemAtIndexPath:(id)arg2 assetMayHaveChanged:(BOOL)arg3;
 - (void)configureGridCell:(id)arg1 forItemAtIndexPath:(id)arg2;
+- (void)configureGridCell:(id)arg1 forItemAtIndexPath:(id)arg2 assetMayHaveChanged:(BOOL)arg3;
 - (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(BOOL)arg4;
 - (struct CGPoint { float x1; float x2; })contentOffsetForPreheating;
 - (id)contentScrollView;
@@ -344,8 +352,8 @@
 - (id)photoCollectionAtIndex:(unsigned int)arg1;
 - (id)photoOrStackPinchGestureRecognizer;
 - (id)photoSelectionManager;
-- (void)photosDataSource:(id)arg1 didChange:(id)arg2;
 - (id)photosDataSource;
+- (void)photosDataSource:(id)arg1 didChange:(id)arg2;
 - (void)photosDataSourceWillChange:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
@@ -384,8 +392,8 @@
 - (id)sessionInfoForTransferredAssets:(id)arg1;
 - (void)sessionInfoPhotoSelectionDidChange:(id)arg1;
 - (void)setAlbumListTransitionContext:(id)arg1;
-- (void)setAlbumListTransitionLayout:(id)arg1 animated:(BOOL)arg2;
 - (void)setAlbumListTransitionLayout:(id)arg1;
+- (void)setAlbumListTransitionLayout:(id)arg1 animated:(BOOL)arg2;
 - (void)setAllowedActions:(unsigned int)arg1;
 - (void)setAlternateContentView:(id)arg1;
 - (void)setAlwaysHideTabBar:(BOOL)arg1;

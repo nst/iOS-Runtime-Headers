@@ -4,7 +4,7 @@
 
 @class <ADPrerollViewDelegate>, ADPrerollBottomBar, ADPrerollTopBar, NSString, NSTimer, UIImageView;
 
-@interface ADPrerollView : UIView <UIGestureRecognizerDelegate, ADPrerollTopBarDelegate, ADPrerollBottomBarDelegate> {
+@interface ADPrerollView : UIView <ADPrerollBottomBarDelegate, ADPrerollTopBarDelegate, UIGestureRecognizerDelegate> {
     double _accumulatedViewingTime;
     BOOL _barsVisible;
     ADPrerollBottomBar *_bottomBar;

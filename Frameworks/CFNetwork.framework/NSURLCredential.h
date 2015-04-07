@@ -4,7 +4,7 @@
 
 @class NSURLCredentialInternal;
 
-@interface NSURLCredential : NSObject <NSSecureCoding, NSCopying> {
+@interface NSURLCredential : NSObject <NSCopying, NSSecureCoding> {
     NSURLCredentialInternal *_internal;
 }
 

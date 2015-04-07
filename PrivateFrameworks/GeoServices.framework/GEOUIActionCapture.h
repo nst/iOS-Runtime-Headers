@@ -3,12 +3,12 @@
  */
 
 @interface GEOUIActionCapture : PBCodable <NSCopying> {
+    int _actionType;
+    double _duration;
     struct { 
         unsigned int duration : 1; 
         unsigned int actionType : 1; 
         unsigned int sequenceNumber : 1; 
-    int _actionType;
-    double _duration;
     } _has;
     int _sequenceNumber;
 }

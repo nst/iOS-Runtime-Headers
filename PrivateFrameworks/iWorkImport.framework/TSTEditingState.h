@@ -5,19 +5,19 @@
 @class TSKCommandController, TSTCell, TSTSearchReference, TSTTableInfo, TSTTableModel, TSTTableSelection, TSTTextStatisticsTracker, TSUPointerKeyDictionary, TSWPStorage;
 
 @interface TSTEditingState : TSPObject <TSWPStorageObserver> {
-    struct { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
-    struct { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
     BOOL _dispatchingPreflight;
+    struct { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
     } _lastEditingCellID;
     BOOL mCellWasEditedInCurrentSession;
     TSUPointerKeyDictionary *mColoredReferences;
     TSTCell *mEditingCell;
+    struct { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
     } mEditingCellID;
     BOOL mEditingCellInProxy;
     int mEditingMode;

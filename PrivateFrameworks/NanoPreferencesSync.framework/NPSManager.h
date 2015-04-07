@@ -22,9 +22,9 @@
 - (void)setXpcConnection:(id)arg1;
 - (void)synchronizeManagedConfigurationKind:(id)arg1 feature:(id)arg2;
 - (void)synchronizeNanoDomain:(id)arg1 keys:(id)arg2;
+- (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2;
 - (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2 container:(id)arg3;
 - (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2 containerPath:(id)arg3;
-- (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2;
 - (void)unsafe_invalidate;
 - (id)xpcConnection;
 

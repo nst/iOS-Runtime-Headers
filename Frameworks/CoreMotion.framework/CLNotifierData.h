@@ -8,7 +8,11 @@
 
 @interface CLNotifierData : NSObject {
     void *_data;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _destructor;
+
 }
 
 @property void* data;

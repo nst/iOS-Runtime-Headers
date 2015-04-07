@@ -2,7 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OITSDBezierPath : NSObject <NSCopying, NSCoding> {
+@interface OITSDBezierPath : NSObject <NSCoding, NSCopying> {
+    struct { 
+        unsigned int sfr_flags : 8; 
+        unsigned int sfr_pathState : 2; 
+        unsigned int sfr_calculatedLengths : 1; 
+        unsigned int sfr_unused : 21; 
+    } sfr_bpFlags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,12 +18,6 @@
             float width; 
             float height; 
         } size; 
-    struct { 
-        unsigned int sfr_flags : 8; 
-        unsigned int sfr_pathState : 2; 
-        unsigned int sfr_calculatedLengths : 1; 
-        unsigned int sfr_unused : 21; 
-    } sfr_bpFlags;
     } sfr_controlPointBounds;
     unsigned int sfr_dashedLineCount;
     float *sfr_dashedLinePattern;
@@ -86,8 +86,8 @@
 - (void)addClip;
 - (void)appendBezierPath:(id)arg1;
 - (void)appendBezierPathWithArcFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3;
-- (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4 clockwise:(BOOL)arg5;
 - (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4;
+- (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4 clockwise:(BOOL)arg5;
 - (void)appendBezierPathWithArcWithEllipseBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 startAngle:(float)arg2 swingAngle:(float)arg3 angleType:(int)arg4 startNewPath:(BOOL)arg5;
 - (void)appendBezierPathWithArcWithEllipseBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 startRadialVector:(struct CGPoint { float x1; float x2; })arg2 endRadialVector:(struct CGPoint { float x1; float x2; })arg3 angleSign:(int)arg4 startNewPath:(BOOL)arg5;
 - (void)appendBezierPathWithOvalInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -109,9 +109,9 @@
 - (void)curveToPoint:(struct CGPoint { float x1; float x2; })arg1 controlPoint1:(struct CGPoint { float x1; float x2; })arg2 controlPoint2:(struct CGPoint { float x1; float x2; })arg3;
 - (void)dealloc;
 - (id)description;
+- (unsigned int)elementAtIndex:(int)arg1;
 - (unsigned int)elementAtIndex:(int)arg1 allPoints:(struct CGPoint { float x1; float x2; }*)arg2;
 - (unsigned int)elementAtIndex:(int)arg1 associatedPoints:(struct CGPoint { float x1; float x2; }*)arg2;
-- (unsigned int)elementAtIndex:(int)arg1;
 - (int)elementCount;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fill;

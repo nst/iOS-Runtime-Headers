@@ -5,13 +5,10 @@
 @class TSDAutoscroll, TSDInteractiveCanvasController, TSDKnob, TSDRep;
 
 @interface TSDKnobTracker : NSObject <TSDLayoutManipulatingTracker> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     TSDAutoscroll *mAutoscroll;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mCurrentPosition;
     BOOL mDidBegin;
     BOOL mDidDrag;
@@ -19,6 +16,9 @@
     BOOL mEndedOperationDueToESC;
     BOOL mIsInspectorDrivenTracking;
     TSDKnob *mKnob;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } mKnobOffset;
     TSDRep *mRep;
 }

@@ -38,8 +38,8 @@
 - (void)setTapGestureRecognizer:(id)arg1;
 - (BOOL)shouldPerformZoomingImageTransitionFromImageElement:(id)arg1 toImageAtIndex:(unsigned int)arg2;
 - (BOOL)showsPlaceholder;
-- (void)slideshowViewController:(id)arg1 loadImageAtIndex:(unsigned int)arg2 withCompletionHandler:(id)arg3;
 - (id)slideshowViewController;
+- (void)slideshowViewController:(id)arg1 loadImageAtIndex:(unsigned int)arg2 withCompletionHandler:(id)arg3;
 - (id)tapGestureRecognizer;
 - (id)templateElement;
 - (void)viewDidAppear:(BOOL)arg1;

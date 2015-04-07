@@ -5,11 +5,11 @@
 @class NSLayoutConstraint, UITapGestureRecognizer, UIView;
 
 @interface PKPaymentAuthorizationPresentationController : UIPresentationController {
+    UIView *_dimmingView;
+    NSLayoutConstraint *_leftConstraint;
     struct CGSize { 
         float width; 
         float height; 
-    UIView *_dimmingView;
-    NSLayoutConstraint *_leftConstraint;
     } _preferredContentSize;
     NSLayoutConstraint *_rightConstraint;
     UITapGestureRecognizer *_tap;

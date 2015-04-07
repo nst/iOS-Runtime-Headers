@@ -29,8 +29,8 @@
 - (void)setContentBoundsEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDurationText:(id)arg1;
 - (void)setMaximumDurationWidth:(float)arg1;
-- (void)setShowsRatingControl:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsRatingControl:(BOOL)arg1;
+- (void)setShowsRatingControl:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setTrackNumberText:(id)arg1;
 - (BOOL)showsRatingControl;
 - (id)trackNumberText;

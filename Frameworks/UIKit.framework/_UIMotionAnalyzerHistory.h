@@ -3,70 +3,70 @@
  */
 
 @interface _UIMotionAnalyzerHistory : NSObject {
+    BOOL _isApplyingHysteresis;
+    union _GLKQuaternion { 
+        struct { 
+            union _GLKVector3 { 
+                struct { 
+                    float x; 
+                    float y; 
+                    float z; 
+                } ; 
+                struct { 
+                    float r; 
+                    float g; 
+                    float b; 
+                } ; 
+                struct { 
+                    float s; 
+                    float t; 
+                    float p; 
+                } ; 
+                float v[3]; 
+            } v; 
+            float s; 
+        } ; 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
+        } ; 
+        float q[4]; 
+    } _lastAppliedRelativeQuaternion;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    union _GLKQuaternion { 
-        struct { 
-            union _GLKVector3 { 
-                struct { 
-                    float x; 
-                    float y; 
-                    float z; 
-                } ; 
-                struct { 
-                    float r; 
-                    float g; 
-                    float b; 
-                } ; 
-                struct { 
-                    float s; 
-                    float t; 
-                    float p; 
-                } ; 
-                float v[3]; 
-            } v; 
-            float s; 
-        } ; 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        float q[4]; 
-    union _GLKQuaternion { 
-        struct { 
-            union _GLKVector3 { 
-                struct { 
-                    float x; 
-                    float y; 
-                    float z; 
-                } ; 
-                struct { 
-                    float r; 
-                    float g; 
-                    float b; 
-                } ; 
-                struct { 
-                    float s; 
-                    float t; 
-                    float p; 
-                } ; 
-                float v[3]; 
-            } v; 
-            float s; 
-        } ; 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        float q[4]; 
-    BOOL _isApplyingHysteresis;
-    } _lastAppliedRelativeQuaternion;
     } _lastAppliedViewerOffset;
+    union _GLKQuaternion { 
+        struct { 
+            union _GLKVector3 { 
+                struct { 
+                    float x; 
+                    float y; 
+                    float z; 
+                } ; 
+                struct { 
+                    float r; 
+                    float g; 
+                    float b; 
+                } ; 
+                struct { 
+                    float s; 
+                    float t; 
+                    float p; 
+                } ; 
+                float v[3]; 
+            } v; 
+            float s; 
+        } ; 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
+        } ; 
+        float q[4]; 
     } _relativeQuaternionOnHysteresisEntry;
 }
 

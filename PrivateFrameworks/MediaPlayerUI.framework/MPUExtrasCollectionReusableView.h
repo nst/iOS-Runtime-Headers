@@ -5,13 +5,13 @@
 @class MPUContentSizeLayoutConstraint, NSArray, NSLayoutConstraint, UILabel, UIView;
 
 @interface MPUExtrasCollectionReusableView : UICollectionReusableView {
+    NSArray *_borderConstraints;
+    UIView *_borderView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSArray *_borderConstraints;
-    UIView *_borderView;
     } _labelInsets;
     MPUContentSizeLayoutConstraint *_textBottomConstraint;
     UILabel *_textLabel;

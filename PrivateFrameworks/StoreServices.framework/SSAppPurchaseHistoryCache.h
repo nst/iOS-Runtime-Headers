@@ -10,8 +10,8 @@
     SSAppPurchaseHistoryDatabase *_purchaseHistoryDatabase;
 }
 
-- (id)allUncachedImages:(id)arg1;
 - (id)allUncachedImages;
+- (id)allUncachedImages:(id)arg1;
 - (void)clearCacheForAdamID:(id)arg1;
 - (void)dealloc;
 - (id)imageDataForAdamID:(id)arg1;

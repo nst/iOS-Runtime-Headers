@@ -4,15 +4,15 @@
 
 @class NSString, SKUIButtonViewElement, SKUICellScrollView, SKUICheckboxInputViewElement, SKUIHorizontalLockupView, UIButton, UIImageView, UIView;
 
-@interface SKUIHorizontalLockupCollectionViewCell : SKUICollectionViewCell <UIScrollViewAccessibilityDelegate, SKUIPerspectiveView, SKUIViewElementView> {
+@interface SKUIHorizontalLockupCollectionViewCell : SKUICollectionViewCell <SKUIPerspectiveView, SKUIViewElementView, UIScrollViewAccessibilityDelegate> {
+    UIButton *_actionButton;
+    SKUIButtonViewElement *_actionButtonViewElement;
+    SKUICellScrollView *_actionsScrollView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIButton *_actionButton;
-    SKUIButtonViewElement *_actionButtonViewElement;
-    SKUICellScrollView *_actionsScrollView;
     } _contentInset;
     SKUICheckboxInputViewElement *_editModeCheckboxElement;
     UIImageView *_editModeControl;

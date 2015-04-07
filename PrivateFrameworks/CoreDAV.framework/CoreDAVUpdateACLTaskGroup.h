@@ -4,7 +4,7 @@
 
 @class CoreDAVPropFindTask, NSSet, NSString, NSURL;
 
-@interface CoreDAVUpdateACLTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate, CoreDAVACLTaskDelegate> {
+@interface CoreDAVUpdateACLTaskGroup : CoreDAVTaskGroup <CoreDAVACLTaskDelegate, CoreDAVPropFindTaskDelegate> {
     NSSet *_aceItems;
     CoreDAVPropFindTask *_fetchTask;
     int _state;

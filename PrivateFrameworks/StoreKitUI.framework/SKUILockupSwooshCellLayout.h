@@ -5,16 +5,13 @@
 @class NSString, UIColor, UIImage, UIImageView, UILabel;
 
 @interface SKUILockupSwooshCellLayout : SKUIItemCellLayout {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     UILabel *_artistNameLabel;
     UILabel *_categoryLabel;
     UIImageView *_iconHighlightImageView;
     UILabel *_itemCountLabel;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _maxImageSize;
     UILabel *_priceLabel;
     UIColor *_primaryTextColor;
@@ -23,6 +20,9 @@
     UIImageView *_videoHighlightImageView;
     UIImageView *_videoImageView;
     UIImageView *_videoPlayButtonImageView;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _videoSize;
     unsigned int _visibleFields;
 }

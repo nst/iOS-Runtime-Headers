@@ -5,15 +5,15 @@
 @class NSData;
 
 @interface HDCodableAchievement : PBCodable <NSCopying> {
+    long long _achievementType;
+    double _completedDate;
+    double _doubleValue;
+    NSData *_extraData;
     struct { 
         unsigned int achievementType : 1; 
         unsigned int completedDate : 1; 
         unsigned int doubleValue : 1; 
         unsigned int intValue : 1; 
-    long long _achievementType;
-    double _completedDate;
-    double _doubleValue;
-    NSData *_extraData;
     } _has;
     long long _intValue;
     NSData *_uuid;

@@ -5,17 +5,17 @@
 @class NSConcreteNotifyingMutableAttributedString;
 
 @interface NSConcreteTextStorage : NSTextStorage {
+    NSConcreteNotifyingMutableAttributedString *_contents;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
+    } _lock;
     struct { 
         unsigned int _forceFixAttributes : 1; 
         unsigned int _needLock : 1; 
         unsigned int _lockInitialized : 1; 
         unsigned int _inFixingAttributes : 1; 
         unsigned int _reserved : 28; 
-    NSConcreteNotifyingMutableAttributedString *_contents;
-    } _lock;
     } _pFlags;
 }
 
@@ -40,8 +40,8 @@
 - (BOOL)fixesAttributesLazily;
 - (id)init;
 - (id)initWithAttributedString:(id)arg1;
-- (id)initWithString:(id)arg1 attributes:(id)arg2;
 - (id)initWithString:(id)arg1;
+- (id)initWithString:(id)arg1 attributes:(id)arg2;
 - (unsigned int)length;
 - (void)removeAttribute:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;

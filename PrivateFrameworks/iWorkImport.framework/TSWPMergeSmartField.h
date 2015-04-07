@@ -29,7 +29,6 @@
 @property(copy) NSString * tableField;
 @property(copy) NSString * whitespace;
 
-- (const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; boolx5; int x6; unsigned int x7[1]; }*)placeholderSmartFieldArchiveFromUnarchiver:(id)arg1;
 - (BOOL)allowsPasteAsSmartField;
 - (int)category;
 - (id)copyWithContext:(id)arg1;
@@ -38,6 +37,7 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)key;
 - (id)label;
+- (const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; bool x5; int x6; unsigned int x7[1]; }*)placeholderSmartFieldArchiveFromUnarchiver:(id)arg1;
 - (id)property;
 - (BOOL)requiresFollowingWhitespace;
 - (void)saveToArchiver:(id)arg1;

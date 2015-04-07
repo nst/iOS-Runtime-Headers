@@ -4,7 +4,7 @@
 
 @class AMSBTLEConnectionManager, NSMutableArray, NSString, UIActivityIndicatorView;
 
-@interface CABTMIDICentralViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, BTLEConnectionTable, PeripheralForgottenDelegate, PeripheralConnectionStateDelegate> {
+@interface CABTMIDICentralViewController : UIViewController <BTLEConnectionTable, PeripheralConnectionStateDelegate, PeripheralForgottenDelegate, UITableViewDataSource, UITableViewDelegate> {
     AMSBTLEConnectionManager *connectionManager;
     BOOL didCleanup;
     UIActivityIndicatorView *indicator;

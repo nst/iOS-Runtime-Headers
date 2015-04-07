@@ -3,10 +3,10 @@
  */
 
 @interface CKImageAttachmentItem : CKAttachmentItem {
+    BOOL _backgroundEnqueued;
     struct CGSize { 
         float width; 
         float height; 
-    BOOL _backgroundEnqueued;
     } _imageSize;
     BOOL _useDefaultSize;
 }

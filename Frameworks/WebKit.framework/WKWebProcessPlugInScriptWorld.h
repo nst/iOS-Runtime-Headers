@@ -27,9 +27,9 @@
 + (id)normalWorld;
 + (id)world;
 
-- (struct InjectedBundleScriptWorld { int (**x1)(); id x2; struct RefPtr<WebCore::DOMWrapperWorld> { struct DOMWrapperWorld {} *x_3_1_1; } x3; }*)_scriptWorld;
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
+- (struct Object { int (**x1)(); id x2; }*)_apiObject;
+- (struct InjectedBundleScriptWorld { int (**x1)(); id x2; struct RefPtr<WebCore::DOMWrapperWorld> { struct DOMWrapperWorld {} *x_3_1_1; } x3; }*)_scriptWorld;
 - (void)clearWrappers;
 - (void)dealloc;
 

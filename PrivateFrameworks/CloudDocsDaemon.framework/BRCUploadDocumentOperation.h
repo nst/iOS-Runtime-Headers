@@ -11,8 +11,16 @@
 @interface BRCUploadDocumentOperation : BRCOperation <BRCUploadOperation> {
     BRCLocalItem *_item;
     BRCPackageManifestForUpload *_manifest;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _uploadCompletionBlock;
+
 }
 
 @property(readonly) double budgetRequired;

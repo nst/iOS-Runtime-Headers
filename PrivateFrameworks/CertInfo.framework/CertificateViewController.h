@@ -10,7 +10,11 @@
 
 @interface CertificateViewController : UITableViewController {
     int _certUIAction;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _certificateButtonActionHandler;
+
     NSString *_certificateButtonDescription;
     BOOL _certificateButtonIsDestructiveAction;
     NSString *_certificateButtonTitle;
@@ -67,11 +71,11 @@
 - (void)setCertificateIssuer:(id)arg1;
 - (void)setCertificateProperties:(id)arg1;
 - (void)setCertificatePurpose:(id)arg1;
-- (void)setCertificateTitle:(id)arg1 issuer:(id)arg2 purpose:(id)arg3 expiration:(id)arg4 properties:(id)arg5 isRoot:(BOOL)arg6 action:(int)arg7;
 - (void)setCertificateTitle:(id)arg1;
+- (void)setCertificateTitle:(id)arg1 issuer:(id)arg2 purpose:(id)arg3 expiration:(id)arg4 properties:(id)arg5 isRoot:(BOOL)arg6 action:(int)arg7;
 - (void)setCertificateTrust:(id)arg1;
-- (void)setShowCertificateButton:(BOOL)arg1 localizedTitle:(id)arg2 localizedDescription:(id)arg3 destructive:(BOOL)arg4 handler:(id)arg5;
 - (void)setShowCertificateButton:(BOOL)arg1;
+- (void)setShowCertificateButton:(BOOL)arg1 localizedTitle:(id)arg2 localizedDescription:(id)arg3 destructive:(BOOL)arg4 handler:(id)arg5;
 - (BOOL)showCertificateButton;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

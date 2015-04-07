@@ -5,25 +5,9 @@
 @class CoreCECDevice;
 
 @interface CoreCECDeviceProvider : CoreCECDevice {
-    struct { 
-        unsigned char destination; 
-        struct CECUserControl { 
-            unsigned char command; 
-            union CECUICommandOperand { 
-                struct CECChannelIdentifier { 
-                    unsigned int channelNumberFormat : 6; 
-                    unsigned int majorChannelNumber : 10; 
-                    unsigned int minorChannelNumber : 16; 
-                } channelIdentifier; 
-                unsigned char playMode; 
-                unsigned char broadcastType; 
-                unsigned char mediaNumber; 
-                unsigned char avInput; 
-                unsigned char audioInput; 
-                unsigned char soundPresentationControl; 
-            } operand; 
-        } control; 
-        BOOL isValid; 
+    unsigned short _deckStatusRequestMask;
+    unsigned char _sendFromAddress;
+    unsigned int _userControlFollowerSafetyTimeoutGeneration;
     struct { 
         CoreCECDevice *sender; 
         struct CECUserControl { 
@@ -43,11 +27,27 @@
             } operand; 
         } control; 
         BOOL isValid; 
-    unsigned short _deckStatusRequestMask;
-    unsigned char _sendFromAddress;
-    unsigned int _userControlFollowerSafetyTimeoutGeneration;
     } _userControlFollowerState;
     unsigned int _userControlInitiatorRepetitionTimeoutGeneration;
+    struct { 
+        unsigned char destination; 
+        struct CECUserControl { 
+            unsigned char command; 
+            union CECUICommandOperand { 
+                struct CECChannelIdentifier { 
+                    unsigned int channelNumberFormat : 6; 
+                    unsigned int majorChannelNumber : 10; 
+                    unsigned int minorChannelNumber : 16; 
+                } channelIdentifier; 
+                unsigned char playMode; 
+                unsigned char broadcastType; 
+                unsigned char mediaNumber; 
+                unsigned char avInput; 
+                unsigned char audioInput; 
+                unsigned char soundPresentationControl; 
+            } operand; 
+        } control; 
+        BOOL isValid; 
     } _userControlInitiatorState;
 }
 
@@ -132,8 +132,8 @@
 - (BOOL)setStreamPathPhysicalAddress:(unsigned int)arg1 error:(id*)arg2;
 - (BOOL)setSystemAudioControlEnabled:(BOOL)arg1 error:(id*)arg2;
 - (BOOL)standbyTo:(unsigned char)arg1 error:(id*)arg2;
-- (BOOL)systemAudioModeRequest:(unsigned char)arg1 to:(unsigned char)arg2 error:(id*)arg3;
 - (BOOL)systemAudioModeRequest:(unsigned int)arg1 error:(id*)arg2;
+- (BOOL)systemAudioModeRequest:(unsigned char)arg1 to:(unsigned char)arg2 error:(id*)arg3;
 - (BOOL)textViewOnTo:(unsigned char)arg1 error:(id*)arg2;
 - (void)trackMessage:(id)arg1 fromDevice:(id)arg2;
 - (void)trackMessage:(id)arg1 toDevice:(id)arg2;

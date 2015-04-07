@@ -10,9 +10,17 @@
 
 @interface SSXPCConnection : NSObject {
     NSObject<OS_xpc_object> *_connection;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _disconnectBlock;
+
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _messageBlock;
+
     NSObject<OS_dispatch_queue> *_replyQueue;
 }
 
@@ -29,8 +37,8 @@
 - (id)initWithServiceName:(id)arg1;
 - (id)initWithXPCConnection:(id)arg1;
 - (id)messageBlock;
-- (void)sendMessage:(id)arg1 withReply:(id)arg2;
 - (void)sendMessage:(id)arg1;
+- (void)sendMessage:(id)arg1 withReply:(id)arg2;
 - (void)sendSynchronousMessage:(id)arg1 withReply:(id)arg2;
 - (void)setDisconnectBlock:(id)arg1;
 - (void)setMessageBlock:(id)arg1;

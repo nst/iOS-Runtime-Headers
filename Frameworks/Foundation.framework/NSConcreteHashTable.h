@@ -10,6 +10,10 @@
 @class NSWeakCallback;
 
 @interface NSConcreteHashTable : NSHashTable {
+    unsigned int capacity;
+    unsigned int count;
+    unsigned int mutations;
+    unsigned int options;
     struct NSSlice { 
         void **items; 
         BOOL wantsStrong; 
@@ -35,10 +39,6 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-    unsigned int capacity;
-    unsigned int count;
-    unsigned int mutations;
-    unsigned int options;
     } slice;
 }
 

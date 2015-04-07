@@ -5,6 +5,15 @@
 @class NSString, TICharacterSetDescription, TIKeyEventMap, TIKeyboardBehaviors, TIKeyboardCandidate;
 
 @interface TIKeyboardInputManagerState : NSObject <NSCopying, NSSecureCoding> {
+    TIKeyboardCandidate *_autocorrectionRecordForInputString;
+    unsigned int _initialCandidateBatchCount;
+    unsigned int _inputCount;
+    unsigned int _inputIndex;
+    NSString *_inputString;
+    TICharacterSetDescription *_inputsPreventingAcceptSelectedCandidate;
+    TICharacterSetDescription *_inputsToReject;
+    TIKeyEventMap *_keyEventMap;
+    TIKeyboardBehaviors *_keyboardBehaviors;
     union { 
         int integerValue; 
         struct { 
@@ -24,15 +33,6 @@
             unsigned int suppressPlaceholderCandidate : 1; 
             unsigned int usesAutocorrectionLists : 1; 
         } fields; 
-    TIKeyboardCandidate *_autocorrectionRecordForInputString;
-    unsigned int _initialCandidateBatchCount;
-    unsigned int _inputCount;
-    unsigned int _inputIndex;
-    NSString *_inputString;
-    TICharacterSetDescription *_inputsPreventingAcceptSelectedCandidate;
-    TICharacterSetDescription *_inputsToReject;
-    TIKeyEventMap *_keyEventMap;
-    TIKeyboardBehaviors *_keyboardBehaviors;
     } _mask;
     NSString *_replacementForDoubleSpace;
     NSString *_searchStringForMarkedText;

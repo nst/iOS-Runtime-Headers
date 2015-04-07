@@ -10,7 +10,11 @@
 
 @interface CoreDAVTaskGroup : NSObject <CoreDAVSubmittable> {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     id _context;
     <CoreDAVTaskGroupDelegate> *_delegate;
     NSError *_error;
@@ -18,7 +22,11 @@
     BOOL _isFinished;
     BOOL _isTearingDown;
     NSMutableSet *_outstandingTasks;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _progressBlock;
+
     <CoreDAVTaskManager> *_taskManager;
     double _timeoutInterval;
 }
@@ -46,8 +54,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
-- (void)finishCoreDAVTaskGroupWithError:(id)arg1 delegateCallbackBlock:(id)arg2;
 - (void)finishCoreDAVTaskGroupWithError:(id)arg1;
+- (void)finishCoreDAVTaskGroupWithError:(id)arg1 delegateCallbackBlock:(id)arg2;
 - (void)finishEarlyWithError:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (id)outstandingTasks;

@@ -5,11 +5,11 @@
 @class CKDPUserPrivacySettings, NSMutableArray, NSString;
 
 @interface CKDPUserPrivacySettingsBatchLookupResponseContainerPrivacySettings : PBCodable <NSCopying> {
-    struct { 
-        unsigned int applicationContainerEnvironment : 1; 
     NSMutableArray *_applicationBundles;
     NSString *_applicationContainer;
     int _applicationContainerEnvironment;
+    struct { 
+        unsigned int applicationContainerEnvironment : 1; 
     } _has;
     CKDPUserPrivacySettings *_userPrivacySettings;
 }

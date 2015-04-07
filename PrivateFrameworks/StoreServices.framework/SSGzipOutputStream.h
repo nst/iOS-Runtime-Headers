@@ -10,6 +10,7 @@
 @class NSError, NSOutputStream;
 
 @interface SSGzipOutputStream : NSOutputStream {
+    NSOutputStream *_actualOutputStream;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -25,7 +26,6 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    NSOutputStream *_actualOutputStream;
     } _stream;
     unsigned int _streamContentLength;
     NSError *_streamError;

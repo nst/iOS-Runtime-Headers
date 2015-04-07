@@ -4,13 +4,7 @@
 
 @class <UIKeyboardCandidateGridCollectionViewControllerDelegate>, <UIKeyboardCandidateListDelegate>, NSArray, NSString, TIKeyboardCandidateResultSet, UIButton, UIKBCandidateCollectionView, UIKeyboardCandidateGridCollectionView, UIKeyboardCandidateGridLayout, UIView;
 
-@interface UIKeyboardCandidateGridCollectionViewController : UIViewController <UICollectionViewDataSource, UIKeyboardCandidateList, UIKeyboardCandidateGridLayoutDelegate> {
-    struct { 
-        unsigned int idiom : 6; 
-        unsigned int landscape : 1; 
-        unsigned int split : 1; 
-        unsigned int appearance : 8; 
-        unsigned int rendering : 16; 
+@interface UIKeyboardCandidateGridCollectionViewController : UIViewController <UICollectionViewDataSource, UIKeyboardCandidateGridLayoutDelegate, UIKeyboardCandidateList> {
     BOOL __usesDeemphasizedTextAppearance;
     BOOL _alwaysShowExtensionCandidates;
     NSArray *_candidateGroups;
@@ -29,6 +23,12 @@
     BOOL _showsExtensionCandidates;
     BOOL _singleLineMode;
     BOOL _supportsNumberKeySelection;
+    struct { 
+        unsigned int idiom : 6; 
+        unsigned int landscape : 1; 
+        unsigned int split : 1; 
+        unsigned int appearance : 8; 
+        unsigned int rendering : 16; 
     } _visualStyling;
 }
 
@@ -71,13 +71,13 @@
 - (void)candidateViewWillBeginExtendingWithVisibleCandidates:(id)arg1;
 - (void)candidatesDidChange;
 - (int)candidatesVisualStyle;
+- (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
-- (id)collectionView;
 - (id)collectionViewGridLayout;
 - (id)currentCandidate;
 - (unsigned int)currentIndex;
@@ -116,8 +116,8 @@
 - (unsigned int)rowIndexForCellAtIndexPath:(id)arg1;
 - (struct CGSize { float x1; float x2; })rowSizeForGridLayout;
 - (void)scrollToBottomWithAnimation:(BOOL)arg1;
-- (void)scrollToTopWithAnimation:(BOOL)arg1 revealHeaderView:(BOOL)arg2;
 - (void)scrollToTopWithAnimation:(BOOL)arg1;
+- (void)scrollToTopWithAnimation:(BOOL)arg1 revealHeaderView:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewIndexChanged:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;

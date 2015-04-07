@@ -5,28 +5,20 @@
 @class <SKUIIndexBarControlDataSource>, <SKUIIndexBarControlDelegate>, NSArray, NSDictionary, NSIndexPath, NSMapTable, SKUIIndexBarEntry;
 
 @interface SKUIIndexBarControl : UIControl {
-    struct CGSize { 
-        float width; 
-        float height; 
+    SKUIIndexBarEntry *_combinedEntry;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _contentEdgeInsets;
+    <SKUIIndexBarControlDataSource> *_dataSource;
     struct { 
         unsigned int dataSourceRespondsToCombinedEntry : 1; 
         unsigned int dataSourceRespondsToNumberOfSections : 1; 
         unsigned int delegateRespondsToDidSelectEntryAtIndexPath : 1; 
         unsigned int delegateRespondsToDidSelectBeyondBottom : 1; 
         unsigned int delegateRespondsToDidSelectBeyondTop : 1; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    SKUIIndexBarEntry *_combinedEntry;
-    } _contentEdgeInsets;
-    <SKUIIndexBarControlDataSource> *_dataSource;
     } _dataSourceDelegateFlags;
     NSDictionary *_defaultTextAttributes;
     <SKUIIndexBarControlDelegate> *_delegate;
@@ -38,12 +30,20 @@
     BOOL _hasValidNumberOfSections;
     BOOL _hasValidTotalEntryCount;
     BOOL _hasValidTotalSize;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _hitTestEdgeInsets;
     NSMapTable *_indexPathToEntryMapTable;
     NSIndexPath *_lastSelectedIndexPath;
     int _numberOfSections;
     NSMapTable *_sectionIndexToNumberOfEntriesMapTable;
     int _totalEntryCount;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _totalSize;
 }
 

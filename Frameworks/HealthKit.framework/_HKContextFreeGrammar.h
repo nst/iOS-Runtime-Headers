@@ -9,7 +9,11 @@
 @class NSCharacterSet, NSMutableSet, _HKCFGNonTerminal;
 
 @interface _HKContextFreeGrammar : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _emptyStringEvaluator;
+
     NSMutableSet *_nonTerminals;
     _HKCFGNonTerminal *_rootNonTerminal;
     NSCharacterSet *_terminalCharacters;
@@ -19,8 +23,8 @@
 @property(readonly) id emptyStringEvaluator;
 @property(readonly) _HKCFGNonTerminal * rootNonTerminal;
 
-+ (id)grammarWithRootNonTerminal:(id)arg1 emptyStringEvaluator:(id)arg2;
 + (id)grammarWithRootNonTerminal:(id)arg1;
++ (id)grammarWithRootNonTerminal:(id)arg1 emptyStringEvaluator:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_gatherExpressions;

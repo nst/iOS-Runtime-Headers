@@ -5,17 +5,17 @@
 @class NSArray;
 
 @interface _CUIKeyTestOrganizer : NSObject {
-    struct _renditionkeytoken { 
-        unsigned short identifier; 
-        unsigned short value; 
-    struct _renditionkeytoken { 
-        unsigned short identifier; 
-        unsigned short value; 
     unsigned int chooseCount;
     unsigned int flexAttributesCount;
     NSArray *orderedNonZeroFlexibleAttributes;
+    struct _renditionkeytoken { 
+        unsigned short identifier; 
+        unsigned short value; 
     } originalKey[16];
     unsigned int subchooseCount;
+    struct _renditionkeytoken { 
+        unsigned short identifier; 
+        unsigned short value; 
     } testKey[16];
 }
 

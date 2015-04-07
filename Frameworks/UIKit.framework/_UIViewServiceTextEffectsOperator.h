@@ -4,10 +4,7 @@
 
 @class NSArray, NSString, UIWindow, _UIAsyncInvocation;
 
-@interface _UIViewServiceTextEffectsOperator : NSObject <_UIViewServiceTextEffectsOperator_RemoteViewControllerInterface, _UIViewServiceDeputy, _UIViewServiceDeputyRotationDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface _UIViewServiceTextEffectsOperator : NSObject <_UIViewServiceDeputy, _UIViewServiceDeputyRotationDelegate, _UIViewServiceTextEffectsOperator_RemoteViewControllerInterface> {
     BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
     NSArray *_allowedNotifications;
@@ -19,6 +16,9 @@
     BOOL _localVCDisablesAutomaticBehaviors;
     _UIAsyncInvocation *_prepareForDisconnectionInvocation;
     id _remoteViewControllerProxy;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _windowOffset;
 }
 

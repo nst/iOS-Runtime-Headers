@@ -4,7 +4,7 @@
 
 @class NSCountedSet, NSHashTable, NSMutableSet, NSString;
 
-@interface FBUIApplicationResignActiveManager : NSObject <FBSceneManagerObserver, FBProcessManagerObserver> {
+@interface FBUIApplicationResignActiveManager : NSObject <FBProcessManagerObserver, FBSceneManagerObserver> {
     NSHashTable *_activeAssertions;
     NSCountedSet *_activeReasons;
     NSMutableSet *_eligibleProcesses;
@@ -21,15 +21,15 @@
 - (BOOL)_areEligibleSceneSettings:(id)arg1 forProcess:(id)arg2;
 - (BOOL)_isEligibleDisplay:(id)arg1;
 - (BOOL)_isEligibleProcess:(id)arg1;
-- (BOOL)_isEligibleScene:(id)arg1 forSettings:(id)arg2;
 - (BOOL)_isEligibleScene:(id)arg1;
+- (BOOL)_isEligibleScene:(id)arg1 forSettings:(id)arg2;
 - (void)_noteSceneWillUpdate:(id)arg1 oldSettings:(id)arg2 newSettings:(id)arg3;
 - (void)_removeDeactivationReason:(int)arg1;
-- (void)_sendResignActiveForReason:(int)arg1 toProcess:(id)arg2;
 - (void)_sendResignActiveForReason:(int)arg1;
+- (void)_sendResignActiveForReason:(int)arg1 toProcess:(id)arg2;
 - (void)_sendResignActiveToProcess:(id)arg1;
-- (void)_sendResumeActiveForReason:(int)arg1 toProcess:(id)arg2;
 - (void)_sendResumeActiveForReason:(int)arg1;
+- (void)_sendResumeActiveForReason:(int)arg1 toProcess:(id)arg2;
 - (void)_sendResumeActiveToProcess:(id)arg1;
 - (void)_trackProcess:(id)arg1;
 - (void)_untrackProcess:(id)arg1;

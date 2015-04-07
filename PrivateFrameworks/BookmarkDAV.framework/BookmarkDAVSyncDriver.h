@@ -8,22 +8,50 @@
 
 @class <CoreDAVAccountInfoProvider>, <CoreDAVTaskManager>, BookmarkDAVSyncData, NSDictionary, NSMutableSet, NSString, NSURL;
 
-@interface BookmarkDAVSyncDriver : NSObject <CoreDAVLocalDBTreeInfoProvider, CoreDAVDeleteTaskDelegate, CoreDAVGetAccountPropertiesTaskGroupDelegate, CoreDAVContainerInfoTaskGroupDelegate> {
+@interface BookmarkDAVSyncDriver : NSObject <CoreDAVContainerInfoTaskGroupDelegate, CoreDAVDeleteTaskDelegate, CoreDAVGetAccountPropertiesTaskGroupDelegate, CoreDAVLocalDBTreeInfoProvider> {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
     void *_changeToken;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _closeDBBlock;
+
     BOOL _forceSafariOrdering;
     BOOL _forceSave;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _getAccountPropertiesHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _getDBBlock;
+
     NSURL *_homeURL;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _openDBBlock;
+
     NSMutableSet *_outstandingTaskGroups;
     NSString *_pushKey;
     NSDictionary *_pushTransport;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _registerForPush;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _saveDBBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _syncHandler;
+
     <CoreDAVTaskManager> *_taskManager;
     BookmarkDAVSyncData *_topLevelSyncData;
 }

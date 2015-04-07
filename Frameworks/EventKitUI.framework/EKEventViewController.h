@@ -5,9 +5,6 @@
 @class <EKEventViewDelegate>, EKEvent, EKEventDetailItem, EKEventEditViewController, EKUIEventStatusButtonsView, EKUIRecurrenceAlertController, NSArray, NSString, SingleToolbarItemContainerView, UITableView, UIView, UIViewController, _UIAccessDeniedView;
 
 @interface EKEventViewController : UIViewController <EKEventTitleDetailItemDelegate, EKUIEventStatusButtonsViewDelegate, UIAlertViewDelegate> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     BOOL _ICSPreview;
     _UIAccessDeniedView *_accessDeniedView;
     EKEventEditViewController *_activeEventEditor;
@@ -21,6 +18,9 @@
     BOOL _dead;
     <EKEventViewDelegate> *_delegate;
     BOOL _didAppear;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _disclosedTableRange;
     int _disclosedTableSection;
     int _editorHideTransition;
@@ -112,8 +112,8 @@
 - (void)_presentValidationAlert:(id)arg1;
 - (void)_refreshEventAndReload;
 - (void)_reloadIfNeeded;
-- (void)_saveStatus:(int)arg1 span:(int)arg2;
 - (void)_saveStatus:(int)arg1;
+- (void)_saveStatus:(int)arg1 span:(int)arg2;
 - (unsigned int)_sectionForDetailItem:(id)arg1;
 - (void)_setNeedsReload;
 - (void)_setObservesKeyboardNotifications:(BOOL)arg1;
@@ -211,6 +211,7 @@
 - (BOOL)showsDoneButton;
 - (BOOL)showsOutOfDateMessage;
 - (unsigned int)supportedInterfaceOrientations;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -218,7 +219,6 @@
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (id)tableView;
 - (float)topInset;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)viewControllerForEventItem:(id)arg1;

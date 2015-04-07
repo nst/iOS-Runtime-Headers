@@ -9,7 +9,11 @@
 @class NSArray, NSDate, NSMetadataQuery, NSObject<OS_dispatch_queue>, NSOperationQueue, NSOrderedSet, NSPredicate, NSString;
 
 @interface _UIDocumentPickerDirectoryObserver : NSObject <NSMetadataQueryDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     Class _itemClass;
     NSOrderedSet *_lastSnapshot;
     NSDate *_lastSnapshotDate;

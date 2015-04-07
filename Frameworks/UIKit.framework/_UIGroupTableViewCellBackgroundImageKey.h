@@ -5,14 +5,6 @@
 @class UIColor;
 
 @interface _UIGroupTableViewCellBackgroundImageKey : NSObject <NSCopying> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     UIColor *_backgroundColor;
     UIColor *_bottomShadowColor;
     UIColor *_fillColor;
@@ -26,7 +18,15 @@
     UIColor *_selectionColor;
     int _selectionStyle;
     UIColor *_separatorColor;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _separatorInset;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _size;
     UIColor *_topShadowColor;
 }

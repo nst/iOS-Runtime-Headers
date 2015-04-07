@@ -10,7 +10,11 @@
 
 @interface CKAudioRecorder : NSObject <CKVoiceControllerDelegate> {
     BOOL _cancelled;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completion;
+
     <CKAudioRecorderDelegate> *_delegate;
     struct OpaqueAudioFileID { } *_fileID;
     NSURL *_fileURL;
@@ -70,13 +74,13 @@
 - (BOOL)shouldPlayStopSound;
 - (id)startDate;
 - (void)startRecordingAndPlaySound:(BOOL)arg1;
-- (void)startRecordingForRaiseGesture:(BOOL)arg1 shouldPlaySound:(BOOL)arg2;
 - (void)startRecordingForRaiseGesture;
+- (void)startRecordingForRaiseGesture:(BOOL)arg1 shouldPlaySound:(BOOL)arg2;
 - (void)stopRecording:(id)arg1;
 - (void)stopRecordingAndPlaySound:(BOOL)arg1 completion:(id)arg2;
 - (long long)totalPacketsCount;
-- (void)voiceController:(id)arg1 didUpdateAveragePower:(float)arg2;
 - (id)voiceController;
+- (void)voiceController:(id)arg1 didUpdateAveragePower:(float)arg2;
 - (void)voiceControllerDidDetectStartpoint:(id)arg1;
 - (void)voiceControllerDidFinishRecording:(id)arg1 successfully:(BOOL)arg2;
 - (void)voiceControllerDidStartRecording:(id)arg1;

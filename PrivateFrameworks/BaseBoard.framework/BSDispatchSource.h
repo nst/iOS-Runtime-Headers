@@ -9,8 +9,16 @@
 @class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
 @interface BSDispatchSource : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cancelHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _eventHandler;
+
     BOOL _invalidated;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_source;

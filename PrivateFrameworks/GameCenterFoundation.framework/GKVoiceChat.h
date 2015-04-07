@@ -11,8 +11,16 @@
 @interface GKVoiceChat : NSObject <GKVoiceChatSessionDelegate> {
     GKSession *_gkSession;
     GKVoiceChatSession *_gkVoiceChatSession;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _playerStateUpdateHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _playerVoiceChatStateDidChangeHandler;
+
     NSArray *_players;
 }
 
@@ -29,8 +37,8 @@
 
 - (void)dealloc;
 - (id)gkSession;
-- (void)gkVoiceChatSession:(id)arg1 stateUpdate:(unsigned int)arg2 forPeer:(id)arg3;
 - (id)gkVoiceChatSession;
+- (void)gkVoiceChatSession:(id)arg1 stateUpdate:(unsigned int)arg2 forPeer:(id)arg3;
 - (id)initChat:(id)arg1 withSession:(id)arg2 players:(id)arg3;
 - (BOOL)isActive;
 - (id)name;

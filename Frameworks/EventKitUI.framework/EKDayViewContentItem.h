@@ -5,6 +5,12 @@
 @class EKCalendarDate, EKDayOccurrenceView, EKEvent, NSDate, NSString;
 
 @interface EKDayViewContentItem : NSObject <CUIKSingleDayTimelineViewItem> {
+    float _bottomPinningProximity;
+    EKCalendarDate *_endDate;
+    unsigned int _eventIndex;
+    EKCalendarDate *_startDate;
+    float _topPinningProximity;
+    double _travelTime;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,12 +20,6 @@
             float width; 
             float height; 
         } size; 
-    float _bottomPinningProximity;
-    EKCalendarDate *_endDate;
-    unsigned int _eventIndex;
-    EKCalendarDate *_startDate;
-    float _topPinningProximity;
-    double _travelTime;
     } _unPinnedViewFrame;
     EKDayOccurrenceView *_view;
 }

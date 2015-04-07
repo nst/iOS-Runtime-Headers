@@ -4,10 +4,7 @@
 
 @class <MPDetailSliderDelegate>, MPDetailScrubController, NSString, NSTimer, UIImageView, UILabel, UIView;
 
-@interface MPDetailSlider : UISlider <MPDetailedScrubbing, MPDetailScrubControllerDelegate> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface MPDetailSlider : UISlider <MPDetailScrubControllerDelegate, MPDetailedScrubbing> {
     BOOL _allowsScrubbing;
     BOOL _autoscrubActive;
     NSTimer *_autoscrubTimer;
@@ -24,6 +21,9 @@
     BOOL _isTracking;
     float _maxTrackWidth;
     float _minTimeLabelWidth;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _previousLocationInView;
     MPDetailScrubController *_scrubController;
     int _style;
@@ -62,8 +62,8 @@
 - (id)_stringForTime:(double)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_thumbHitEdgeInsets;
 - (void)_updateForAvailableDuraton;
-- (void)_updateTimeDisplayForTime:(double)arg1 force:(BOOL)arg2;
 - (void)_updateTimeDisplayForTime:(double)arg1;
+- (void)_updateTimeDisplayForTime:(double)arg1 force:(BOOL)arg2;
 - (void)_updateTrackInset;
 - (BOOL)allowsDetailScrubbing;
 - (BOOL)allowsScrubbing;
@@ -82,9 +82,9 @@
 - (float)detailScrubbingVerticalRange;
 - (double)duration;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 maxTrackWidth:(float)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 maxTrackWidth:(float)arg3;
 - (BOOL)isTracking;
 - (void)layoutSubviews;
 - (id)localizedScrubSpeedText;

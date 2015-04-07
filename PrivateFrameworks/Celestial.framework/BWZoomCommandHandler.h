@@ -5,18 +5,13 @@
 @class <BWZoomCompletionDelegate>, BWZoomDelayBuffer;
 
 @interface BWZoomCommandHandler : NSObject {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     float _appliedZoomFactor;
     BOOL _clientCanCompensateForDelay;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _lastFramePTS;
     float _lastRequestedZoomFactor;
     float _rampAcceleration;
@@ -24,6 +19,11 @@
     int _rampCommandID;
     float _rampCurrentVelocity;
     float _rampStartFactor;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _rampStartTime;
     float _rampStartVelocity;
     float _rampTargetFactor;

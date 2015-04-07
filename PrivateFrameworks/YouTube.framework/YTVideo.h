@@ -30,7 +30,11 @@
     NSString *_restrictedCountries;
     NSString *_shortID;
     NSArray *_tags;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _thumbnailProxyBlock;
+
     NSURL *_thumbnailURL;
     NSString *_title;
     NSString *_unplayable;

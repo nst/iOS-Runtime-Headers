@@ -12,7 +12,11 @@
     UIColor *_backgroundColor;
     UIVisualEffect *_backgroundEffect;
     _UITableViewCellActionButton *_button;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     int _style;
     NSString *_title;
 }

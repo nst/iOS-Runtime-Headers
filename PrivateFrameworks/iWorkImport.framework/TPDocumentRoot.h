@@ -4,10 +4,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString, TPDocumentSettings, TPDrawablesZOrder, TPFloatingDrawables, TPInteractiveCanvasController, TPPageLayoutNotifier, TPPaginatedPageController, TPSection, TPTOCController, TPTheme, TSDThumbnailController, TSSStylesheet, TSWPStorage;
 
-@interface TPDocumentRoot : TSADocumentRoot <TSDThumbnailProducer, TSDInfoUUIDPathPrefixComponentsProvider, TSWPDrawableOLC, TSWPStorageParent, TSWPChangeSessionManager, TSWPChangeVisibility, TSTResolverContainerNameProvider, TSCEResolverContainer> {
-    struct CGSize { 
-        float width; 
-        float height; 
+@interface TPDocumentRoot : TSADocumentRoot <TSCEResolverContainer, TSDInfoUUIDPathPrefixComponentsProvider, TSDThumbnailProducer, TSTResolverContainerNameProvider, TSWPChangeSessionManager, TSWPChangeVisibility, TSWPDrawableOLC, TSWPStorageParent> {
     TSWPStorage *_bodyStorage;
     float _bottomMargin;
     NSMutableArray *_changeSessionHistory;
@@ -29,6 +26,9 @@
     unsigned int _orientation;
     TPPageLayoutNotifier *_pageLayoutNotifier;
     float _pageScale;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _pageSize;
     TPPaginatedPageController *_paginatedPageController;
     NSString *_paperID;
@@ -182,9 +182,9 @@
 - (id)resolverContainerForName:(id)arg1 caseSensitive:(BOOL)arg2;
 - (id)resolverContainerNameForResolver:(id)arg1;
 - (id)resolverContainerNamesMatchingPrefix:(id)arg1;
+- (id)resolverMatchingName:(id)arg1;
 - (id)resolverMatchingName:(id)arg1 contextContainerName:(id)arg2;
 - (id)resolverMatchingName:(id)arg1 contextResolver:(id)arg2;
-- (id)resolverMatchingName:(id)arg1;
 - (BOOL)resolverNameIsUsed:(id)arg1;
 - (id)resolversMatchingPrefix:(id)arg1;
 - (void)resumeBackgroundActivities;

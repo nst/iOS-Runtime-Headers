@@ -5,11 +5,6 @@
 @class <EKDayTimeViewDelegate>, EKCurrentTimeMarkerView, NSMutableArray, NSString, UIColor, UIView;
 
 @interface EKDayTimeView : UIView <EKCurrentTimeMarkerViewUpdating> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    unsigned int _leftBorder : 1;
-    unsigned int _rightBorder : 1;
     NSMutableArray *_contentViews;
     <EKDayTimeViewDelegate> *_delegate;
     float _designatorSize;
@@ -18,8 +13,13 @@
     float _hourHeightScale;
     float _hourSize;
     float _hoursToPad;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _hoursToRender;
+    unsigned int _leftBorder : 1;
     int _orientation;
+    unsigned int _rightBorder : 1;
     BOOL _showsTimeMarker;
     BOOL _showsTimeMarkerExtension;
     UIColor *_timeColor;
@@ -58,8 +58,8 @@
 + (void)_registerForInvalidation;
 + (id)allDayLabelBoldFont;
 + (id)allDayLabelFont;
-+ (float)defaultHeightForOrientation:(int)arg1 withHourScale:(float)arg2;
 + (float)defaultHeightForOrientation:(int)arg1;
++ (float)defaultHeightForOrientation:(int)arg1 withHourScale:(float)arg2;
 + (float)defaultHourScale;
 + (float)designatorSizeForOrientation:(int)arg1;
 + (float)hourHeightForOrientation:(int)arg1;

@@ -77,8 +77,8 @@
 - (void)sanitizeAssertionNameForEntry:(id)arg1;
 - (void)setAssertionAggregatedLastSample:(id)arg1;
 - (void)setAssertionBufferFullNotification:(id)arg1;
-- (void)setAssertionBufferFullNotificationActive:(BOOL)arg1 withReason:(id)arg2;
 - (void)setAssertionBufferFullNotificationActive:(BOOL)arg1;
+- (void)setAssertionBufferFullNotificationActive:(BOOL)arg1 withReason:(id)arg2;
 - (void)setAssertionBufferFullNotificationRearmTimer:(id)arg1;
 - (void)setAssertionBufferNotificationTracking:(id)arg1;
 - (void)setAssertionNotification:(id)arg1;

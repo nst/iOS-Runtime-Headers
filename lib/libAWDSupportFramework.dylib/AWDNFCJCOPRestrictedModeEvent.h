@@ -5,10 +5,10 @@
 @class NSData;
 
 @interface AWDNFCJCOPRestrictedModeEvent : PBCodable <NSCopying> {
+    BOOL _contactless;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int contactless : 1; 
-    BOOL _contactless;
     } _has;
     NSData *_log;
     unsigned long long _timestamp;

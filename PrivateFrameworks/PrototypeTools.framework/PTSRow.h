@@ -21,9 +21,17 @@
     UIImage *_staticImage;
     NSString *_staticTitle;
     NSString *_titleKeyPath;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _valueFormatter;
+
     NSString *_valueKeyPath;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _valueValidatator;
+
 }
 
 @property(copy) PTSRowAction * action;
@@ -53,28 +61,28 @@
 - (void)_sendImageChanged;
 - (void)_sendTitleChanged;
 - (void)_sendValueChanged;
-- (id)action:(id)arg1;
 - (id)action;
+- (id)action:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (id)allowedEditingTypes:(int)arg1;
 - (int)allowedEditingTypes;
+- (id)allowedEditingTypes:(int)arg1;
 - (BOOL)allowsDelete;
 - (BOOL)allowsDuplicate;
 - (BOOL)allowsReorder;
 - (BOOL)allowsShare;
 - (id)childSettingsForKeyPath:(id)arg1;
 - (id)concreteCopyWithIndex:(unsigned int)arg1;
-- (id)condition:(id)arg1;
 - (id)condition;
+- (id)condition:(id)arg1;
 - (id)conditionFormat:(id)arg1;
 - (void)dealloc;
 - (id)group;
 - (id)groupChild;
-- (id)groupKeyPath:(id)arg1;
 - (id)groupKeyPath;
+- (id)groupKeyPath:(id)arg1;
 - (id)image;
-- (id)imageKeyPath:(id)arg1;
 - (id)imageKeyPath;
+- (id)imageKeyPath:(id)arg1;
 - (id)init;
 - (id)pu_increment:(float)arg1;
 - (void)removeObserver:(id)arg1;
@@ -96,21 +104,21 @@
 - (void)setValueFormatter:(id)arg1;
 - (void)setValueKeyPath:(id)arg1;
 - (void)setValueValidatator:(id)arg1;
-- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)settings;
-- (id)staticImage:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)staticImage;
-- (id)staticTitle:(id)arg1;
+- (id)staticImage:(id)arg1;
 - (id)staticTitle;
+- (id)staticTitle:(id)arg1;
 - (id)title;
-- (id)titleKeyPath:(id)arg1;
 - (id)titleKeyPath;
+- (id)titleKeyPath:(id)arg1;
 - (void)updateWithRow:(id)arg1;
 - (id)value;
-- (id)valueFormatter:(id)arg1;
 - (id)valueFormatter;
-- (id)valueKeyPath:(id)arg1;
+- (id)valueFormatter:(id)arg1;
 - (id)valueKeyPath;
+- (id)valueKeyPath:(id)arg1;
 - (id)valueValidatator;
 - (id)valueValidator:(id)arg1;
 

@@ -5,6 +5,7 @@
 @class <PLPhotoTileCloudPlaceholderViewDelegate>, NSString, PLRoundProgressView, UIButton, UIView;
 
 @interface PLPhotoTileCloudPlaceholderView : UIView <PLTilePlaceholderView> {
+    <PLPhotoTileCloudPlaceholderViewDelegate> *_delegate;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    <PLPhotoTileCloudPlaceholderViewDelegate> *_delegate;
     } _imageRect;
     BOOL _indicatorIsVisible;
     double _lastViewPhaseChangeDate;

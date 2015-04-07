@@ -5,8 +5,8 @@
 @class <STEmpedLinkingManagerDelegate>;
 
 @interface STEmpedLinkingManager : NSObject {
-    unsigned int _isLinking : 1;
     <STEmpedLinkingManagerDelegate> *_delegate;
+    unsigned int _isLinking : 1;
 }
 
 @property <STEmpedLinkingManagerDelegate> * delegate;

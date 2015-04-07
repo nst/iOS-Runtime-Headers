@@ -5,19 +5,19 @@
 @class GEOPDPlace, GEOPlace, GEORPMapLocation, NSMutableArray, NSString;
 
 @interface GEORPProblemContext : PBCodable <NSCopying> {
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
+    NSMutableArray *_directionsRequests;
+    NSMutableArray *_directionsResponses;
     struct { 
         unsigned int sessionId : 1; 
         unsigned int pinType : 1; 
-    NSMutableArray *_directionsRequests;
-    NSMutableArray *_directionsResponses;
     } _has;
     GEORPMapLocation *_mapLocation;
     GEOPlace *_originalPlace;
     int _pinType;
     GEOPDPlace *_place;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
     } _sessionId;
     NSString *_tileStateLog;
     NSMutableArray *_visibleTileSets;

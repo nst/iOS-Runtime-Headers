@@ -5,11 +5,11 @@
 @class NSNumber, NSSet, NSString;
 
 @interface ETPerson : NSObject {
-    unsigned int _dirty : 1;
     NSString *_abDatabaseUID;
     NSString *_abRecordGUID;
     int _abRecordID;
     NSSet *_allValues;
+    unsigned int _dirty : 1;
     NSNumber *_emailAddressCount;
     BOOL _hasImage;
     BOOL _hasUnreadMessages;
@@ -42,8 +42,8 @@
 - (int)abRecordID;
 - (id)allValues;
 - (id)description;
-- (void)dictionaryRepresentation:(id*)arg1 isDirty:(BOOL*)arg2;
 - (id)dictionaryRepresentation;
+- (void)dictionaryRepresentation:(id*)arg1 isDirty:(BOOL*)arg2;
 - (id)displayName;
 - (BOOL)hasEmailAddress;
 - (BOOL)hasImage;

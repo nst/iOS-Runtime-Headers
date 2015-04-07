@@ -40,8 +40,8 @@
 - (void)_sendToObserversPausabilityDidChange:(id)arg1;
 - (void)_sendToObserversPercentCompleteDidChange:(id)arg1;
 - (void)_sendToObserversPlaceholderDidChangeSignificantly:(id)arg1;
-- (void)_setProxy:(id)arg1 force:(BOOL)arg2;
 - (void)_setProxy:(id)arg1;
+- (void)_setProxy:(id)arg1 force:(BOOL)arg2;
 - (void)addObserver:(id)arg1;
 - (void)cancel;
 - (void)dealloc;

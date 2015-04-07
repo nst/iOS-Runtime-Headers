@@ -27,9 +27,9 @@
 - (struct __CVPixelBufferPool { }*)cvPixelBufferPool;
 - (struct __CFDictionary { }*)cvPixelBufferPoolAuxAttributes;
 - (void)dealloc;
+- (id)initWithVideoFormat:(id)arg1 capacity:(unsigned long)arg2 name:(id)arg3;
 - (id)initWithVideoFormat:(id)arg1 capacity:(unsigned long)arg2 name:(id)arg3 additionalPixelBufferAttributes:(id)arg4;
 - (id)initWithVideoFormat:(id)arg1 capacity:(unsigned long)arg2 name:(id)arg3 clientProvidesPool:(BOOL)arg4;
-- (id)initWithVideoFormat:(id)arg1 capacity:(unsigned long)arg2 name:(id)arg3;
 - (struct __CVBuffer { }*)newPixelBuffer;
 - (long)preallocate;
 - (void)preallocateWithCompletionHandler:(id)arg1;

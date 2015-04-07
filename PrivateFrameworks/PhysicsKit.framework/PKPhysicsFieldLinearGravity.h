@@ -7,14 +7,16 @@
  */
 
 @interface PKPhysicsFieldLinearGravity : PKPhysicsField {
-     /* Encoded args for previous method: 8@0:4 */
-     /* Encoded args for previous method: v24@0:48 */
 }
 
 + (id)field;
 
 - (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)direction;
+     /* Encoded args for previous method: 8@0:4 */
+
 - (id)init;
 - (void)setDirection:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: v24@0:48 */
+
 
 @end

@@ -23,16 +23,16 @@
 - (void)continuityDidDiscoverType:(int)arg1 withData:(id)arg2 fromPeer:(id)arg3;
 - (void)continuityDidFailToStartAdvertisingOfType:(int)arg1 withError:(id)arg2;
 - (void)continuityDidFailToStartScanningForType:(int)arg1 withError:(id)arg2;
-- (void)continuityDidLosePeer:(id)arg1 forType:(int)arg2;
 - (void)continuityDidLosePeer:(id)arg1;
+- (void)continuityDidLosePeer:(id)arg1 forType:(int)arg2;
 - (void)continuityDidStartAdvertisingOfType:(int)arg1;
 - (void)continuityDidStartScanningForType:(int)arg1;
 - (void)continuityDidStartTrackingPeer:(id)arg1 error:(id)arg2;
 - (void)continuityDidStartTrackingPeer:(id)arg1 forType:(int)arg2 error:(id)arg3;
 - (void)continuityDidStopAdvertisingOfType:(int)arg1;
 - (void)continuityDidStopScanningForType:(int)arg1;
-- (void)continuityDidStopTrackingPeer:(id)arg1 forType:(int)arg2;
 - (void)continuityDidStopTrackingPeer:(id)arg1;
+- (void)continuityDidStopTrackingPeer:(id)arg1 forType:(int)arg2;
 - (void)continuityDidUpdateState:(int)arg1;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 delegateContext:(id)arg3;

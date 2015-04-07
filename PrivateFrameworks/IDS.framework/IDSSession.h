@@ -31,8 +31,8 @@
 - (BOOL)isMuted;
 - (BOOL)sendData:(id)arg1 error:(id*)arg2;
 - (void)sendInvitation;
-- (void)sendInvitationWithData:(id)arg1 declineOnError:(BOOL)arg2;
 - (void)sendInvitationWithData:(id)arg1;
+- (void)sendInvitationWithData:(id)arg1 declineOnError:(BOOL)arg2;
 - (void)sendInvitationWithOptions:(id)arg1;
 - (void)sendSessionMessage:(id)arg1;
 - (unsigned int)sessionEndedReason;

@@ -34,12 +34,12 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)dispatchQueue;
-- (id)initWithConnection:(id)arg1 delegate:(id)arg2 dispatchQueue:(id)arg3;
 - (id)initWithConnection:(id)arg1 delegate:(id)arg2;
+- (id)initWithConnection:(id)arg1 delegate:(id)arg2 dispatchQueue:(id)arg3;
 - (id)internalQueue;
 - (int)pid;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
 - (void)sendMessage:(id)arg1 userInfo:(id)arg2;
+- (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
 - (void)setBundleId:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setCurrentMessage:(id)arg1;

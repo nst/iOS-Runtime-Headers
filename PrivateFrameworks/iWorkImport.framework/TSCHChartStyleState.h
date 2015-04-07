@@ -21,8 +21,8 @@
 - (void)checkParagraphStyleIndicies;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)legendStyle;
-- (BOOL)otherStateIsEquivalent:(id)arg1 ignoringSeriesThemeStyles:(BOOL)arg2;
 - (BOOL)otherStateIsEquivalent:(id)arg1;
+- (BOOL)otherStateIsEquivalent:(id)arg1 ignoringSeriesThemeStyles:(BOOL)arg2;
 - (id)p_locationOfStyleInNetwork:(id)arg1;
 - (void)p_replaceReferencedStylesInMap:(id)arg1 withMapper:(id)arg2;
 - (BOOL)paragraphStyleIndexesAreValid;
@@ -40,8 +40,8 @@
 - (void)setSeriesThemeStyles:(id)arg1;
 - (void)setValueAxisStyles:(id)arg1;
 - (id)stateByExpandingSeriesStylesForSeriesCount:(unsigned int)arg1;
-- (id)stateByOptimizingParagraphStyleTableWithStylesheet:(id)arg1 withMapper:(id)arg2;
 - (id)stateByOptimizingParagraphStyleTableWithStylesheet:(id)arg1;
+- (id)stateByOptimizingParagraphStyleTableWithStylesheet:(id)arg1 withMapper:(id)arg2;
 - (id)stateByReducingSeriesPrivateStyles;
 - (id)styleNetworkDescription;
 - (id)usesOfParagraphStyleProperties;

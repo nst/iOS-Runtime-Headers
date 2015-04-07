@@ -5,6 +5,10 @@
 @class HDCodableSample, NSMutableArray;
 
 @interface HDCodableWorkout : PBCodable <NSCopying> {
+    double _duration;
+    NSMutableArray *_events;
+    double _goal;
+    long long _goalType;
     struct { 
         unsigned int duration : 1; 
         unsigned int goal : 1; 
@@ -12,10 +16,6 @@
         unsigned int totalDistanceInCanonicalUnit : 1; 
         unsigned int totalEnergyBurnedInCanonicalUnit : 1; 
         unsigned int type : 1; 
-    double _duration;
-    NSMutableArray *_events;
-    double _goal;
-    long long _goalType;
     } _has;
     HDCodableSample *_sample;
     double _totalDistanceInCanonicalUnit;

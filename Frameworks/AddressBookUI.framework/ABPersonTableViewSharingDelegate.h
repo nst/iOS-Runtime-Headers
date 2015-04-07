@@ -17,8 +17,16 @@
     BOOL _shareMessageBodyIsHTML;
     NSString *_shareMessageSubject;
     ABStyleProvider *_styleProvider;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _willTweetLocationCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _willWeiboLocationCallback;
+
 }
 
 @property(readonly) BOOL canSendMMS;
@@ -64,8 +72,8 @@
 - (void)shareContact:(id)arg1;
 - (void)shareContactByEmail:(id)arg1;
 - (void)shareContactByTextMessage:(id)arg1;
-- (void)shareContactFromButtonItem:(id)arg1 sender:(id)arg2;
 - (void)shareContactFromButtonItem:(id)arg1;
+- (void)shareContactFromButtonItem:(id)arg1 sender:(id)arg2;
 - (void)shareLocationOnTwitter:(id)arg1;
 - (void)shareLocationOnWeibo:(id)arg1;
 - (id)shareLocationSnapshotImage;

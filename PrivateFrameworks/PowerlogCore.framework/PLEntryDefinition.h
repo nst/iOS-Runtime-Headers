@@ -29,8 +29,8 @@
 + (id)dynamicKeyConfigsForEntryDefinition:(id)arg1;
 + (id)dynamicKeyConfigsForEntryKey:(id)arg1;
 + (id)entryDefinitionsForOperator:(id)arg1;
-+ (id)entryDefinitionsForOperatorClass:(Class)arg1 andOperatorName:(id)arg2;
 + (id)entryDefinitionsForOperatorClass:(Class)arg1;
++ (id)entryDefinitionsForOperatorClass:(Class)arg1 andOperatorName:(id)arg2;
 + (id)entryDefinitionsForOperatorName:(id)arg1;
 + (BOOL)filterEntryLoggingForEntryDefinition:(id)arg1;
 + (BOOL)filterEntryLoggingForEntryKey:(id)arg1;

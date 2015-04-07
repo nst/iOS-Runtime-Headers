@@ -3,18 +3,18 @@
  */
 
 @interface MFMessageInfo : NSObject {
-    unsigned int _flagged : 1;
-    unsigned int _read : 1;
-    unsigned int _deleted : 1;
-    unsigned int _uidIsLibraryID : 1;
-    unsigned int _hasAttachments : 1;
-    unsigned int _isVIP : 1;
     long long _conversationHash;
     unsigned int _dateReceivedInterval;
     unsigned int _dateSentInterval;
+    unsigned int _deleted : 1;
+    unsigned int _flagged : 1;
     long long _generationNumber;
+    unsigned int _hasAttachments : 1;
+    unsigned int _isVIP : 1;
     unsigned int _mailboxID;
+    unsigned int _read : 1;
     unsigned int _uid;
+    unsigned int _uidIsLibraryID : 1;
 }
 
 @property long long conversationHash;

@@ -22,10 +22,10 @@
 - (void)loadView;
 - (int)numberOfComponentsInPickerView:(id)arg1;
 - (int)ordinalValue;
+- (id)pickerView;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
-- (id)pickerView;
 - (void)setDelegate:(id)arg1;
 - (void)updateFromRecurrenceRule:(id)arg1;
 - (void)updateRecurrenceRuleBuilder:(id)arg1;

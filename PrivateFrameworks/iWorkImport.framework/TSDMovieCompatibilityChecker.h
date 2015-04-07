@@ -5,11 +5,11 @@
 @class AVAsset, NSError, NSSet;
 
 @interface TSDMovieCompatibilityChecker : NSObject {
+    AVAsset *mAsset;
+    int mCompatibilityLevel;
     struct { 
         int width; 
         int height; 
-    AVAsset *mAsset;
-    int mCompatibilityLevel;
     } mCustomMaxPlayableVideoDimensions;
     int mCustomMaxPlayableVideoPixelsPerFrame;
     NSSet *mCustomPlayableVideoCodecTypes;

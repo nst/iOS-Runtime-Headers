@@ -3,9 +3,9 @@
  */
 
 @interface GEOVPointOnRoad : PBCodable <NSCopying> {
+    int _featureIndex;
     struct { 
         unsigned int vertexIndex : 1; 
-    int _featureIndex;
     } _has;
     int _vertexIndex;
 }

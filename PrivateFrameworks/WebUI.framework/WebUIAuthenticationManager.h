@@ -13,8 +13,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)addAuthenticationChallenge:(id)arg1 displayPanel:(BOOL)arg2;
 - (void)addAuthenticationChallenge:(id)arg1;
+- (void)addAuthenticationChallenge:(id)arg1 displayPanel:(BOOL)arg2;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)authenticationChallenge;
 - (void)cancelAuthentication;

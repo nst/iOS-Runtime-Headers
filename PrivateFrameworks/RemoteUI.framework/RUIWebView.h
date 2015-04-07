@@ -29,9 +29,9 @@
 - (void)setHtml:(id)arg1;
 - (id)sourceURL;
 - (id)userStyleSheet;
+- (id)webView;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
-- (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;
 
 @end

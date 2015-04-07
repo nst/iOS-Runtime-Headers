@@ -5,10 +5,10 @@
 @class NSString;
 
 @interface AWDWiProxLeSendDataRequest : PBRequest <NSCopying> {
+    unsigned int _dataLength;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int dataLength : 1; 
-    unsigned int _dataLength;
     } _has;
     NSString *_peerId;
     NSString *_sessionId;

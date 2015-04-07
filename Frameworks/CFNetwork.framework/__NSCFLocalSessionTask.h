@@ -13,12 +13,20 @@
 
 @class NSData, NSInputStream, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_source>, NSString, NSURL, NSURLSessionConfiguration, __NSCFURLSessionConnection, __NSURLSessionLocal;
 
-@interface __NSCFLocalSessionTask : NSURLSessionTask <NSURLSessionTaskSubclass, NSURLSessionDataTaskSubclass, NSURLSessionUploadTaskSubclass, SessionConnectionDelegate> {
+@interface __NSCFLocalSessionTask : NSURLSessionTask <NSURLSessionDataTaskSubclass, NSURLSessionTaskSubclass, NSURLSessionUploadTaskSubclass, SessionConnectionDelegate> {
     NSURLSessionConfiguration *__configuration;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _async_initialization;
+
     __NSCFURLSessionConnection *_cfConn;
     struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; } *_connKey;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _dataTaskCompletion;
+
     NSObject<OS_dispatch_data> *_dataTaskData;
     BOOL _didIssueDidFinish;
     NSString *_duetAccountedBundleID;
@@ -57,7 +65,6 @@
 @property(retain) NSInputStream * uploadDataStream;
 @property(retain) NSURL * uploadFile;
 
-- (struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*)connKey;
 - (id)_configuration;
 - (void)_finishAllow;
 - (void)_finishBecomeDownload:(id)arg1;
@@ -90,6 +97,7 @@
 - (void)cancel_with_error:(id)arg1;
 - (id)canceledError;
 - (id)cfConn;
+- (struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*)connKey;
 - (void)connection:(id)arg1 _conditionalRequirementsChanged:(BOOL)arg2;
 - (void)connection:(id)arg1 _willSendRequestForEstablishedConnection:(id)arg2 completion:(id)arg3;
 - (void)connection:(id)arg1 challenged:(id)arg2 authCallback:(id)arg3;

@@ -62,8 +62,8 @@
 - (struct { double x1; double x2; })timeRangeToHighlight;
 - (void)updateAccumulatorWaveformSegmentsWithBlock:(id)arg1;
 - (BOOL)waitUntilFinished;
-- (void)waveformGenerator:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (id)waveformGenerator;
+- (void)waveformGenerator:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (void)waveformGeneratorDidFinishLoading:(id)arg1 error:(id)arg2;
 - (void)waveformGeneratorWillBeginLoading:(id)arg1;
 - (id)waveformSegmentsInTimeRange:(struct { double x1; double x2; })arg1;

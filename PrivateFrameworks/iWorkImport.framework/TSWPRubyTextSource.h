@@ -11,23 +11,23 @@
         struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
             unsigned int *__first_; 
         } __end_cap_; 
-    struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
-        unsigned int *__begin_; 
-        unsigned int *__end_; 
-        struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
-            unsigned int *__first_; 
-        } __end_cap_; 
+    } _bidiCharIndexes;
     struct vector<bool, std::__1::allocator<bool> > { 
         unsigned long *__begin_; 
         unsigned int __size_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { 
             unsigned long __first_; 
         } __cap_alloc_; 
-    } _bidiCharIndexes;
     } _bidiDirectionMarkIsRTLVector;
     unsigned int _length;
     TSWPRangeMap *_rangeMap;
     <TSWPTextSource> *_source;
+    struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
+        unsigned int *__begin_; 
+        unsigned int *__end_; 
+        struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
+            unsigned int *__first_; 
+        } __end_cap_; 
     } _spaceCharIndexes;
     unsigned int _storageLength;
 }

@@ -4,7 +4,7 @@
 
 @class NSNumber, UIColor;
 
-@interface UIStatusBarStyleRequest : NSObject <NSMutableCopying, NSCopying> {
+@interface UIStatusBarStyleRequest : NSObject <NSCopying, NSMutableCopying> {
     UIColor *_foregroundColor;
     BOOL _legacy;
     int _legibilityStyle;
@@ -24,8 +24,8 @@
 - (id)foregroundColor;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4 overrideHeight:(id)arg5;
 - (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4;
+- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4 overrideHeight:(id)arg5;
 - (BOOL)isDoubleHeight;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLegacy;

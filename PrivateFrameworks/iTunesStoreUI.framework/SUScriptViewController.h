@@ -73,8 +73,8 @@
 - (void)setNativeViewController:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setShowsLibraryButton:(id)arg1;
-- (void)setToolbarItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setToolbarItems:(id)arg1;
+- (void)setToolbarItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setTopBackgroundColor:(id)arg1;
 - (void)setTransientViewController:(id)arg1;
 - (void)setUsesBlurredBackground:(id)arg1;

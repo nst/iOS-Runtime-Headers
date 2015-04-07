@@ -10,11 +10,11 @@
 @class NSNumber, TSCH3DFillSetIdentifier, TSCH3DLightingModel, TSDFill;
 
 @interface TSCH3DFill : TSDFill {
+    TSCH3DFillSetIdentifier *mIdentifier;
+    TSDFill *mImageFill;
     struct CGSize { 
         float width; 
         float height; 
-    TSCH3DFillSetIdentifier *mIdentifier;
-    TSDFill *mImageFill;
     } mImageFillSize;
     TSCH3DLightingModel *mLightingModel;
     NSNumber *mPercentage;
@@ -51,8 +51,8 @@
 - (id)lightenByPercent:(float)arg1;
 - (id)lightingModel;
 - (void)nonatomicallySetLightingModel:(id)arg1;
-- (id)p_convertToTSDFillWithSize:(unsigned int)arg1 technique:(int)arg2 context:(id)arg3;
 - (id)p_convertToTSDFillWithSize:(unsigned int)arg1 technique:(int)arg2;
+- (id)p_convertToTSDFillWithSize:(unsigned int)arg1 technique:(int)arg2 context:(id)arg3;
 - (id)p_iconFill;
 - (id)p_imageFillForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2;
 - (id)p_imageFillForSize:(struct CGSize { float x1; float x2; })arg1;

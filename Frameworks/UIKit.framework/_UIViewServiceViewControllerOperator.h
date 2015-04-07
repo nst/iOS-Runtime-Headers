@@ -4,14 +4,7 @@
 
 @class <_UIViewServiceViewControllerOperatorDelegate>, NSArray, NSMutableArray, NSString, UIActionSheet, UIPopoverController, UIViewController, _UIAsyncInvocation, _UIHostedTextServiceSession, _UIHostedWindow, _UIViewServiceDummyPopoverController;
 
-@interface _UIViewServiceViewControllerOperator : UIViewController <_UIViewServiceViewControllerOperator_RemoteViewControllerInterface, _UIHostedTextServiceSessionDelegate, _UIViewServiceDummyPopoverControllerDelegate, _UIViewServiceDeputy, _UIViewServiceDeputyRotationSource> {
-    struct { 
-        unsigned int val[8]; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+@interface _UIViewServiceViewControllerOperator : UIViewController <_UIHostedTextServiceSessionDelegate, _UIViewServiceDeputy, _UIViewServiceDeputyRotationSource, _UIViewServiceDummyPopoverControllerDelegate, _UIViewServiceViewControllerOperator_RemoteViewControllerInterface> {
     BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
     BOOL _canShowTextServices;
@@ -21,6 +14,8 @@
     UIPopoverController *_displayedPopoverController;
     _UIViewServiceDummyPopoverController *_dummyPopoverController;
     unsigned int _hostAccessibilityServerPort;
+    struct { 
+        unsigned int val[8]; 
     } _hostAuditToken;
     NSString *_hostBundleID;
     int _hostPID;
@@ -31,6 +26,11 @@
     _UIAsyncInvocation *_invalidationInvocation;
     BOOL _isResigningFirstResponderFromHostNotification;
     UIViewController *_localViewController;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _localViewControllerRequestedInsets;
     NSArray *_plugInScenes;
     _UIAsyncInvocation *_prepareForDisconnectionInvocation;
@@ -93,8 +93,8 @@
 - (void)_dismissActionSheet:(id)arg1 withClickedButtonIndex:(int)arg2 animated:(BOOL)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
 - (void)_firstResponderDidChange:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displayingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displayingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
 - (id)_inputViewsKey;
 - (void)_invalidateUnconditionallyThen:(id)arg1;
 - (BOOL)_isDeallocating;

@@ -13,7 +13,11 @@
     NSDictionary *_attributes;
     unsigned int _flags;
     NSSet *_lastResults;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _report;
+
 }
 
 @property int annotationNotifyToken;

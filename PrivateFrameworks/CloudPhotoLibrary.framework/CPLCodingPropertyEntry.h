@@ -10,12 +10,12 @@
 @class NSSet, NSString;
 
 @interface CPLCodingPropertyEntry : NSObject {
-    int (*_propertyGetterIMP)();
-    int (*_propertySetterIMP)();
     struct objc_ivar { } *_ivar;
     NSSet *_propertyClasses;
     SEL _propertyGetter;
+    int (*_propertyGetterIMP)();
     SEL _propertySetter;
+    int (*_propertySetterIMP)();
     BOOL _propertyType;
     BOOL _readOnly;
     NSString *_structName;
@@ -31,8 +31,6 @@
 @property(getter=isReadOnly) BOOL readOnly;
 @property(copy) NSString * structName;
 
-- (int (*)())propertyGetterIMP;
-- (int (*)())propertySetterIMP;
 - (void).cxx_destruct;
 - (BOOL)isReadOnly;
 - (struct objc_ivar { }*)ivar;
@@ -40,7 +38,9 @@
 - (id)ivarValueForObject:(id)arg1;
 - (id)propertyClasses;
 - (SEL)propertyGetter;
+- (int (*)())propertyGetterIMP;
 - (SEL)propertySetter;
+- (int (*)())propertySetterIMP;
 - (BOOL)propertyType;
 - (void)setIvar:(struct objc_ivar { }*)arg1;
 - (void)setIvarValue:(id)arg1 forObject:(id)arg2;

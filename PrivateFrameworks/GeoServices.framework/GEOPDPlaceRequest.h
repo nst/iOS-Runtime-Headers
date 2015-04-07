@@ -5,12 +5,12 @@
 @class GEOPDAnalyticMetadata, GEOPDClientMetadata, GEOPDPlaceRequestParameters, NSMutableArray;
 
 @interface GEOPDPlaceRequest : PBRequest <NSCopying> {
-    struct { 
-        unsigned int requestType : 1; 
-        unsigned int suppressResultsRequiringAttribution : 1; 
     GEOPDAnalyticMetadata *_analyticMetadata;
     GEOPDClientMetadata *_clientMetadata;
     NSMutableArray *_displayLocales;
+    struct { 
+        unsigned int requestType : 1; 
+        unsigned int suppressResultsRequiringAttribution : 1; 
     } _has;
     GEOPDPlaceRequestParameters *_placeRequestParameters;
     int _requestType;

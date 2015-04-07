@@ -5,6 +5,7 @@
 @class NSArray, NSString;
 
 @interface UIMenuController : NSObject <UICalloutBarDelegate> {
+    int _arrowDirection;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    int _arrowDirection;
     } _targetRect;
 }
 
@@ -43,8 +43,8 @@
 - (id)menuItems;
 - (void)setArrowDirection:(int)arg1;
 - (void)setMenuItems:(id)arg1;
-- (void)setMenuVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setMenuVisible:(BOOL)arg1;
+- (void)setMenuVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
 - (void)update;
 

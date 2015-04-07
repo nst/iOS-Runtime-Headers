@@ -5,10 +5,10 @@
 @class GrammarPart, NSMutableArray, NSMutableDictionary;
 
 @interface Parser : NSObject {
+    bool _debugging;
     NSMutableDictionary *_grammarsPlist;
     NSMutableArray *_productionRules;
     GrammarPart *_theGrammar;
-    bool_debugging;
 }
 
 @property(readonly) NSMutableArray * productionRules;

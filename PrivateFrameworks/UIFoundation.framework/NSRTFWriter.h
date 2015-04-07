@@ -5,11 +5,6 @@
 @class NSAttributedString, NSDictionary, NSFileWrapper, NSMutableArray, NSMutableData, NSMutableDictionary;
 
 @interface NSRTFWriter : NSObject {
-    struct { 
-        unsigned int _forceColorWrite : 1; 
-        unsigned int _activeFontFeatures : 1; 
-        unsigned int _preserveNaturalAlignment : 1; 
-        unsigned int _reserved : 29; 
     NSAttributedString *_attrString;
     unsigned int _attrStringLength;
     NSMutableDictionary *_colors;
@@ -30,6 +25,11 @@
     NSMutableArray *_listRanges;
     NSMutableData *_output;
     float _rightMargin;
+    struct { 
+        unsigned int _forceColorWrite : 1; 
+        unsigned int _activeFontFeatures : 1; 
+        unsigned int _preserveNaturalAlignment : 1; 
+        unsigned int _reserved : 29; 
     } _rwFlags;
 }
 

@@ -4,7 +4,7 @@
 
 @class MPMediaItemCollection, MPMediaLibrary, MPMediaPlaylist, MPMediaQueryCriteria, MPMediaQuerySectionInfo, NSArray, NSDictionary, NSSet, NSString;
 
-@interface MPMediaQuery : NSObject <MPPProtobufferCoding, NSSecureCoding, NSCopying> {
+@interface MPMediaQuery : NSObject <MPPProtobufferCoding, NSCopying, NSSecureCoding> {
     MPMediaQueryCriteria *_criteria;
     int _isFilteringDisabled;
     MPMediaLibrary *_mediaLibrary;

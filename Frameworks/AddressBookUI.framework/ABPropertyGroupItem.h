@@ -69,8 +69,8 @@
 - (id)initWithLabeledValue:(id)arg1 group:(id)arg2 contacts:(id)arg3;
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalentToItem:(id)arg1 whenEditing:(BOOL)arg2;
 - (BOOL)isEquivalentToItem:(id)arg1;
+- (BOOL)isEquivalentToItem:(id)arg1 whenEditing:(BOOL)arg2;
 - (BOOL)isFavorite;
 - (BOOL)isFavoriteOfType:(int)arg1;
 - (BOOL)isReadonly;

@@ -62,10 +62,10 @@
 - (id)popoverBackgroundColor;
 - (void)setArrowDirection:(unsigned int)arg1;
 - (void)setArrowOffset:(float)arg1;
-- (void)setArrowVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setArrowVisible:(BOOL)arg1;
-- (void)setBackgroundStyle:(int)arg1 animated:(BOOL)arg2;
+- (void)setArrowVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setBackgroundStyle:(int)arg1;
+- (void)setBackgroundStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setDebugModeEnabled:(BOOL)arg1;
 - (void)setDimmingViewTopEdgeInset:(float)arg1;
 - (void)setPopoverBackgroundColor:(id)arg1;

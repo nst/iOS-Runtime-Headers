@@ -85,12 +85,12 @@
 - (id)responseHandlers;
 - (void)resume;
 - (void)sendRequest:(id)arg1;
+- (id)service;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 hasBeenDeliveredWithContext:(id)arg4;
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
-- (id)service;
-- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateRequiresACKs:(BOOL)arg1;
 - (void)setEnableTransmissionWindow:(BOOL)arg1;
 - (void)setMaxBytesInFlight:(unsigned int)arg1;

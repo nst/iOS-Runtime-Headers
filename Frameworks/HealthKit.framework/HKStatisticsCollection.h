@@ -12,7 +12,11 @@
     NSDate *_anchorDate;
     double _approximateStatisticsInterval;
     NSSet *_cachedSources;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _emptyStatisticsConstructor;
+
     NSMutableDictionary *_statisticsByIndex;
     NSDateComponents *_statisticsInterval;
     NSLock *_statisticsLock;
@@ -27,8 +31,8 @@
 - (void)_enumerateTimePeriodsFromDate:(id)arg1 toDate:(id)arg2 withBlock:(id)arg3;
 - (id)_fakeDataWithUnit:(id)arg1;
 - (id)_fakingValueForKey:(id)arg1;
-- (id)_initWithAnchorDate:(id)arg1 statisticsInterval:(id)arg2 emptyStatisticsConstructor:(id)arg3;
 - (id)_initWithAnchorDate:(id)arg1 statisticsInterval:(id)arg2;
+- (id)_initWithAnchorDate:(id)arg1 statisticsInterval:(id)arg2 emptyStatisticsConstructor:(id)arg3;
 - (BOOL)_insertStatistics:(id)arg1;
 - (id)_maxSumQuantityStatistics;
 - (id)_minSumQuantityStatistics;

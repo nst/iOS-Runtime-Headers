@@ -8,9 +8,6 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     } _keyboardSize;
     int _keyboardType;
     float _leftSideWidestRow;
@@ -21,6 +18,9 @@
     UIKeyboardSliceSet *_sliceSet;
     UIKBTree *_sourceKeyboard;
     UIKBTree *_sourceKeyplane;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _splitKeySizeFactor;
     NSDictionary *_splitLayoutHints;
 }

@@ -10,7 +10,11 @@
 
 @interface GCControllerCBDelegate : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate> {
     CBCentralManager *_centralManager;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     NSMutableArray *_connectedPeripherals;
     NSMutableArray *_foundPeripherals;
 }
@@ -23,13 +27,13 @@
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)centralManager;
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
 - (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didRetrieveConnectedPeripherals:(id)arg2;
 - (void)centralManager:(id)arg1 didRetrievePeripherals:(id)arg2;
-- (id)centralManager;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (id)completionHandler;
 - (void)fireCompletionHandler;

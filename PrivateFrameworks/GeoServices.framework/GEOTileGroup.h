@@ -3,46 +3,46 @@
  */
 
 @interface GEOTileGroup : PBCodable <NSCopying> {
+    unsigned int _attributionBadgeIndex;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _attributionIndexs;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+    } _fontIndexs;
     struct { 
         unsigned int attributionBadgeIndex : 1; 
-    unsigned int _attributionBadgeIndex;
-    } _attributionIndexs;
-    } _fontIndexs;
     } _has;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _iconIndexs;
     unsigned int _identifier;
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; } *_regionalResourceIndexs;
     unsigned int _regionalResourceIndexsCount;
     unsigned int _regionalResourceIndexsSpace;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _styleSheetIndexs;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _textureIndexs;
     struct { unsigned int x1; unsigned int x2; } *_tileSets;
     unsigned int _tileSetsCount;
     unsigned int _tileSetsSpace;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _xmlIndexs;
 }
 

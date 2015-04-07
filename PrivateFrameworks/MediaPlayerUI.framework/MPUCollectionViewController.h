@@ -20,13 +20,13 @@
 - (id)_createCollectionView;
 - (id)_createCollectionViewLayout;
 - (void)_updateVisibleCellsForDownloads:(id)arg1 updateAllCells:(BOOL)arg2;
+- (id)collectionView;
 - (BOOL)collectionView:(id)arg1 canEditItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 editingStyleForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
-- (id)collectionView;
 - (void)configureCell:(id)arg1 atIndexPath:(id)arg2 withEntity:(id)arg3 invalidationContext:(id)arg4;
 - (id)contentScrollView;
 - (void)dealloc;

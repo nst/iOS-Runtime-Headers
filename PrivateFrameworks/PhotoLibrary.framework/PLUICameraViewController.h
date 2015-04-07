@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface PLUICameraViewController : CAMCameraViewController <UIImagePickerCameraViewController> {
+    int _newStatusBarStyle;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -12,7 +13,6 @@
         float d; 
         float tx; 
         float ty; 
-    int _newStatusBarStyle;
     } _previewViewTransform;
     int _previousStatusBarStyle;
 }
@@ -34,8 +34,8 @@
 - (void)_editabilityChanged:(id)arg1;
 - (int)_imagePickerStatusBarStyle;
 - (void)_setAllowsStillFromVideoMode:(BOOL)arg1;
-- (void)_setCameraCaptureMode:(int)arg1 device:(int)arg2;
 - (void)_setCameraCaptureMode:(int)arg1;
+- (void)_setCameraCaptureMode:(int)arg1 device:(int)arg2;
 - (void)_setCameraDevice:(int)arg1;
 - (void)_setCameraFlashMode:(int)arg1;
 - (void)_setCameraOverlayView:(id)arg1;

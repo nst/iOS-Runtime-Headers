@@ -5,13 +5,13 @@
 @class NSArray, NSString;
 
 @interface MFSMTPResponse : NSObject <NSCopying> {
-    unsigned int _statusClass : 10;
-    unsigned int _statusSubject : 10;
-    unsigned int _statusDetail : 10;
     NSArray *_continuationResponses;
     id _lastResponseLine;
     int _status;
+    unsigned int _statusClass : 10;
+    unsigned int _statusDetail : 10;
     NSString *_statusString;
+    unsigned int _statusSubject : 10;
 }
 
 @property(retain) NSArray * continuationResponses;

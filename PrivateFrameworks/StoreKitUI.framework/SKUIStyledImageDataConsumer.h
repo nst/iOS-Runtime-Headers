@@ -5,17 +5,17 @@
 @class UIColor;
 
 @interface SKUIStyledImageDataConsumer : SKUIImageDataConsumer {
+    UIColor *_backgroundColor;
+    UIColor *_borderColor;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
+    } _borderWidths;
     struct CGSize { 
         float width; 
         float height; 
-    UIColor *_backgroundColor;
-    UIColor *_borderColor;
-    } _borderWidths;
     } _imageSize;
     int _imageTreatment;
 }
@@ -74,8 +74,8 @@
 - (id)backgroundColor;
 - (id)borderColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderWidths;
-- (id)imageForColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)imageForColor:(id)arg1;
+- (id)imageForColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)imageForImage:(id)arg1;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (int)imageTreatment;

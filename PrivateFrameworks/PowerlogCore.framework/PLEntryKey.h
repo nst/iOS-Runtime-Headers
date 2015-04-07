@@ -5,15 +5,15 @@
 @class NSString, PLEntryKey;
 
 @interface PLEntryKey : NSObject {
-    struct _PLTimeIntervalRange { 
-        double location; 
-        double length; 
     PLEntryKey *_baseEntryKey;
     NSString *_entryKey;
     NSString *_entryName;
     NSString *_entryType;
     BOOL _isDynamic;
     NSString *_operatorName;
+    struct _PLTimeIntervalRange { 
+        double location; 
+        double length; 
     } _timeIntervalRange;
     NSString *_wildCardName;
 }
@@ -31,16 +31,16 @@
 + (id)PLEntryAggregateKeysForOperatorClass:(Class)arg1;
 + (id)PLEntryAggregateKeysForOperatorName:(id)arg1;
 + (id)PLEntryKeyForEntryKey:(id)arg1;
-+ (id)PLEntryKeyForOperatorName:(id)arg1 withType:(id)arg2 withName:(id)arg3 withWildCardName:(id)arg4 isDynamic:(BOOL)arg5;
 + (id)PLEntryKeyForOperatorName:(id)arg1 withType:(id)arg2 withName:(id)arg3;
++ (id)PLEntryKeyForOperatorName:(id)arg1 withType:(id)arg2 withName:(id)arg3 withWildCardName:(id)arg4 isDynamic:(BOOL)arg5;
 + (id)PLEntryKeysForEntryType:(id)arg1;
 + (void)addPLEntryKey:(id)arg1;
 + (id)baseEntryKeyForEntryKey:(id)arg1;
 + (id)dynamicEntryKeyForEntryKey:(id)arg1;
-+ (id)entryKeyForOperatorName:(id)arg1 withType:(id)arg2 withName:(id)arg3 isDynamic:(BOOL)arg4;
-+ (id)entryKeyForOperatorName:(id)arg1 withType:(id)arg2 withName:(id)arg3 withWildCardName:(id)arg4 isDynamic:(BOOL)arg5;
-+ (id)entryKeyForOperatorName:(id)arg1 withType:(id)arg2 withName:(id)arg3 withWildCardName:(id)arg4;
 + (id)entryKeyForOperatorName:(id)arg1 withType:(id)arg2 withName:(id)arg3;
++ (id)entryKeyForOperatorName:(id)arg1 withType:(id)arg2 withName:(id)arg3 isDynamic:(BOOL)arg4;
++ (id)entryKeyForOperatorName:(id)arg1 withType:(id)arg2 withName:(id)arg3 withWildCardName:(id)arg4;
++ (id)entryKeyForOperatorName:(id)arg1 withType:(id)arg2 withName:(id)arg3 withWildCardName:(id)arg4 isDynamic:(BOOL)arg5;
 + (id)entryKeysForOperator:(id)arg1;
 + (id)entryKeysForOperatorClass:(Class)arg1;
 + (id)entryKeysForOperatorName:(id)arg1;

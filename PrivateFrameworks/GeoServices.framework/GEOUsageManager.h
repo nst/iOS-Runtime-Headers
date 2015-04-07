@@ -9,8 +9,16 @@
 @class GEORequester, GEOUsageCollectionRequest, NSLock, NSMapTable, NSMutableDictionary, NSString, NSTimer;
 
 @interface GEOUsageManager : NSObject <PBRequesterDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _backgroundTaskEnd;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _backgroundTaskStart;
+
     GEOUsageCollectionRequest *_request;
     NSLock *_requestLock;
     GEORequester *_requester;

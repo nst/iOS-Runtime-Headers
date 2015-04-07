@@ -5,14 +5,14 @@
 @class NSData, NSMutableArray, NSString;
 
 @interface NNMKProtoMessage : PBCodable <NSCopying> {
-    struct { 
-        unsigned int status : 1; 
     NSString *_accountId;
     NSMutableArray *_ccs;
     NSString *_conversationId;
     NSData *_dateReceived;
     NSData *_dateSent;
     NSString *_from;
+    struct { 
+        unsigned int status : 1; 
     } _has;
     NSString *_messageId;
     NSString *_messageIdHeader;

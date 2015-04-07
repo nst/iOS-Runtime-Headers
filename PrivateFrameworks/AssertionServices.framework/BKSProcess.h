@@ -39,8 +39,8 @@
 - (void)_handleDebuggingStateChanged:(id)arg1;
 - (void)_handleExpirationWarning:(id)arg1;
 - (void)_handleSuspendedStateChanged:(id)arg1;
-- (void)_sendMessageType:(int)arg1 withMessage:(id)arg2 withReplyHandler:(id)arg3 waitForReply:(BOOL)arg4;
 - (void)_sendMessageType:(int)arg1 withMessage:(id)arg2;
+- (void)_sendMessageType:(int)arg1 withMessage:(id)arg2 withReplyHandler:(id)arg3 waitForReply:(BOOL)arg4;
 - (double)backgroundTimeRemaining;
 - (BOOL)connectedToExternalAccessories;
 - (void)dealloc;

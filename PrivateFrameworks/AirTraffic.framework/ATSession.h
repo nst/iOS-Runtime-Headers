@@ -59,8 +59,8 @@
 - (void)_finishWithError:(id)arg1;
 - (id)_keysToObserve;
 - (void)_observeKeysForTask:(id)arg1;
-- (void)_performSelectorOnObservers:(SEL)arg1 object:(id)arg2 object:(id)arg3;
 - (void)_performSelectorOnObservers:(SEL)arg1 object:(id)arg2;
+- (void)_performSelectorOnObservers:(SEL)arg1 object:(id)arg2 object:(id)arg3;
 - (void)_stopObservingKeysForTask:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)addSessionTasks:(id)arg1;

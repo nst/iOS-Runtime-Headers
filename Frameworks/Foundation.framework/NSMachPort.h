@@ -13,8 +13,8 @@
 
 + (void)_fixNSMachPortLeak;
 + (id)port;
-+ (id)portWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
 + (id)portWithMachPort:(unsigned int)arg1;
++ (id)portWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
 + (void)resetAllPorts;
 + (BOOL)sendBeforeTime:(double)arg1 streamData:(id)arg2 components:(id)arg3 to:(id)arg4 from:(id)arg5 msgid:(unsigned int)arg6 reserved:(unsigned int)arg7;
 
@@ -26,8 +26,8 @@
 - (void)finalize;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
 - (id)initWithMachPort:(unsigned int)arg1;
+- (id)initWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
 - (void)invalidate;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKindOfClass:(Class)arg1;

@@ -5,15 +5,15 @@
 @class <UIPageControllerDelegate>, NSMutableArray, UIPageControl, UIScrollView, UIView, UIViewController;
 
 @interface UIPageController : UIViewController {
+    <UIPageControllerDelegate> *_delegate;
+    int _notificationState[3];
+    UIPageControl *_pageControl;
     struct { 
         unsigned int delegateViewControllerAtIndex : 1; 
         unsigned int delegateWillBeginPaging : 1; 
         unsigned int delegateDidEndPaging : 1; 
         unsigned int displaysPageControl : 1; 
         unsigned int wraps : 1; 
-    <UIPageControllerDelegate> *_delegate;
-    int _notificationState[3];
-    UIPageControl *_pageControl;
     } _pageControllerFlags;
     int _pageCount;
     int _pageSpacing;
@@ -58,8 +58,8 @@
 - (id)_previousViewController;
 - (int)_previousViewControllerNotificationState;
 - (void)_replaceViewControllerAtIndex:(int)arg1 withViewController:(id)arg2;
-- (void)_scrollView:(id)arg1 boundsDidChangeToSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)_scrollView;
+- (void)_scrollView:(id)arg1 boundsDidChangeToSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_scrollViewDidEndPaging;
 - (void)_scrollViewDidScroll:(id)arg1 forceUpdate:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scrollViewFrame;
@@ -90,9 +90,9 @@
 - (void)setDisplaysPageControl:(BOOL)arg1;
 - (void)setPageCount:(int)arg1;
 - (void)setPageSpacing:(float)arg1;
+- (void)setVisibleIndex:(int)arg1;
 - (void)setVisibleIndex:(int)arg1 animated:(BOOL)arg2;
 - (void)setVisibleIndex:(int)arg1 preservingLoadedViewControllers:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)setVisibleIndex:(int)arg1;
 - (void)setWraps:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

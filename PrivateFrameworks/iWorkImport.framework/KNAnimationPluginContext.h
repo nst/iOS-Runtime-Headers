@@ -5,27 +5,27 @@
 @class KNAnimatedBuild, NSArray, NSDictionary, NSString, TSDGLState, TSDRep;
 
 @interface KNAnimationPluginContext : NSObject <KNAnimationPluginContext> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     TSDGLState *_GLState;
     KNAnimatedBuild *_animatedBuild;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _boundingRect;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _boundingRectOnCanvas;
     unsigned int _direction;
     double _duration;

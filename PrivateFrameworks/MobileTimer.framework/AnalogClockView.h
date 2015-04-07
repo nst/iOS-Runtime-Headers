@@ -109,8 +109,8 @@
 - (void)setHandTransformForHandIndex:(int)arg1;
 - (void)setNighttime:(BOOL)arg1;
 - (void)setRunMode:(int)arg1;
-- (void)setTime:(id)arg1 animated:(BOOL)arg2;
 - (void)setTime:(id)arg1;
+- (void)setTime:(id)arg1 animated:(BOOL)arg2;
 - (void)setTimeZone:(id)arg1;
 - (void)start;
 - (void)stop;

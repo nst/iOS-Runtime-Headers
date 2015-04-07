@@ -4,15 +4,15 @@
 
 @class NPSDomainAccessor, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NanoTelephonyIDSProxy, PSYSyncCoordinator, SYStore;
 
-@interface VoicemailCompanionReplication : NSObject <SYStoreDelegate, PSYSyncCoordinatorDelegate> {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+@interface VoicemailCompanionReplication : NSObject <PSYSyncCoordinatorDelegate, SYStoreDelegate> {
     NSObject<OS_dispatch_queue> *_companionSyncQueue;
     NSObject<OS_dispatch_queue> *_concurrentQueue;
     PSYSyncCoordinator *_coordinator;
     BOOL _didSuspendCompanionSyncQueue;
     NPSDomainAccessor *_domainAccessor;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _domainAccessorMutexLock;
     NanoTelephonyIDSProxy *_proxy;
     SYStore *_syncStore;
@@ -53,11 +53,11 @@
 - (void)setSyncStore:(id)arg1;
 - (void)syncCoordinatorDidChangeSyncRestriction:(id)arg1;
 - (void)syncCoordinatorDidReceiveStartSyncCommand:(id)arg1;
+- (id)syncStore;
 - (void)syncStore:(id)arg1 encounteredErrorInFullSync:(id)arg2;
 - (void)syncStore:(id)arg1 objectAdded:(id)arg2;
 - (void)syncStore:(id)arg1 objectDeleted:(id)arg2;
 - (void)syncStore:(id)arg1 objectUpdated:(id)arg2;
-- (id)syncStore;
 - (id)syncStoreAllObjects:(id)arg1;
 - (void)syncStoreAllObjectsDeleted:(id)arg1;
 - (id)syncStoreAtIndexes:(id)arg1;

@@ -46,8 +46,8 @@
 - (id)infoForAsset:(struct NSObject { Class x1; }*)arg1;
 - (id)init;
 - (BOOL)libraryIsAvailable;
-- (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssetIDs:(id)arg2 deletedAssetIDs:(id)arg3 changedAssetIDs:(id)arg4;
 - (id)managedObjectContext;
+- (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssetIDs:(id)arg2 deletedAssetIDs:(id)arg3 changedAssetIDs:(id)arg4;
 - (id)photoLibrary;
 - (BOOL)ptpCanDeleteFiles;
 - (BOOL)ptpDeletePhotoWithKey:(struct NSObject { Class x1; }*)arg1 andExtension:(id)arg2;

@@ -3,9 +3,9 @@
  */
 
 @interface RMSBeginDiscoveryMessage : PBCodable <NSCopying> {
+    int _discoveryTypes;
     struct { 
         unsigned int discoveryTypes : 1; 
-    int _discoveryTypes;
     } _has;
 }
 

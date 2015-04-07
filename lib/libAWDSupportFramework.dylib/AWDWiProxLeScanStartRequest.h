@@ -5,12 +5,12 @@
 @class NSData, NSString;
 
 @interface AWDWiProxLeScanStartRequest : PBRequest <NSCopying> {
+    unsigned int _dataLength;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int dataLength : 1; 
         unsigned int numPeers : 1; 
         unsigned int type : 1; 
-    unsigned int _dataLength;
     } _has;
     unsigned int _numPeers;
     NSData *_peers;

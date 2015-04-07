@@ -40,8 +40,8 @@
 - (id)documentPasswordHint;
 - (id)documentPasswordHintForWrite;
 - (id)documentRoot;
-- (id)initWithURL:(id)arg1 error:(id*)arg2 passphrase:(id)arg3;
 - (id)initWithURL:(id)arg1 error:(id*)arg2;
+- (id)initWithURL:(id)arg1 error:(id*)arg2 passphrase:(id)arg3;
 - (id)name;
 - (void)presentPersistenceError:(id)arg1;
 - (void)setContext:(id)arg1;

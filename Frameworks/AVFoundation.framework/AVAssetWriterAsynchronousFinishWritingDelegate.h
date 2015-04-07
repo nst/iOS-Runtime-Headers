@@ -9,7 +9,11 @@
 @class AVAssetWriterFigAssetWriterNotificationHandler, AVWeakReference, NSString;
 
 @interface AVAssetWriterAsynchronousFinishWritingDelegate : NSObject <AVAssetWriterFigAssetWriterNotificationHandlerDelegate, AVAssetWriterFinishWritingHelperDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     int _handlerCalled;
     AVAssetWriterFigAssetWriterNotificationHandler *_notificationHandler;
     AVWeakReference *_weakReferenceToHelper;

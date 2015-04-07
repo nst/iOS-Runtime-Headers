@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString, UILabel, UIView;
 
-@interface EKCalendarShareesEditItem : EKCalendarEditItem <EKShareeViewControllerDelegate, EKShareePickerViewControllerDelegate> {
+@interface EKCalendarShareesEditItem : EKCalendarEditItem <EKShareePickerViewControllerDelegate, EKShareeViewControllerDelegate> {
     UILabel *_descriptionLabel;
     UIView *_footerView;
     NSMutableArray *_shareeCells;

@@ -3,22 +3,20 @@
  */
 
 @interface AWDLBConnectionReport : PBCodable <NSCopying> {
+    long long _bytesReceived;
+    long long _bytesSent;
+    long long _clientConnectionCount;
+    int _connectionAttemptCount;
+    int _connectionCellularFallbackCount;
+    long long _connectionDuration;
+    int _connectionFailureCount;
     struct { 
         long long *list; 
         unsigned int count; 
         unsigned int size; 
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        long long *list; 
-        unsigned int count; 
-        unsigned int size; 
-    struct { 
-        long long *list; 
-        unsigned int count; 
-        unsigned int size; 
+    } _connectionReadyTimes;
+    int _connectionSuccessMptcpCount;
+    int _connectionSuccessTcpCount;
     struct { 
         unsigned int bytesReceived : 1; 
         unsigned int bytesSent : 1; 
@@ -35,21 +33,23 @@
         unsigned int suspensionCount : 1; 
         unsigned int upgradeSuccessAndNotNeededCount : 1; 
         unsigned int upgradeSuccessAndPrimaryCount : 1; 
-    long long _bytesReceived;
-    long long _bytesSent;
-    long long _clientConnectionCount;
-    int _connectionAttemptCount;
-    int _connectionCellularFallbackCount;
-    long long _connectionDuration;
-    int _connectionFailureCount;
-    } _connectionReadyTimes;
-    int _connectionSuccessMptcpCount;
-    int _connectionSuccessTcpCount;
     } _has;
     int _resumptionFailureCount;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _resumptionFailureErrors;
+    struct { 
+        long long *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _resumptionFailureTimes;
     int _resumptionSuccessCount;
+    struct { 
+        long long *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _resumptionSuccessTimes;
     int _suspensionCount;
     unsigned long long _timestamp;

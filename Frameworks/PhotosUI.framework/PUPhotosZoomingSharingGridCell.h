@@ -5,6 +5,12 @@
 @class UIView;
 
 @interface PUPhotosZoomingSharingGridCell : PUPhotosSharingGridCell {
+    UIView *_badgeView;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _badgeViewDefaultCenter;
+    unsigned int _badgeViewLayoutAnchor;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,12 +20,6 @@
             float width; 
             float height; 
         } size; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    UIView *_badgeView;
-    } _badgeViewDefaultCenter;
-    unsigned int _badgeViewLayoutAnchor;
     } _defaultBounds;
 }
 

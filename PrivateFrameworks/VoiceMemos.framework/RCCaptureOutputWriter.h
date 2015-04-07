@@ -5,11 +5,6 @@
 @class <RCCaptureOutputWriterDelegate>, AVAssetWriter, AVCaptureAudioDataOutput, AVCaptureSession, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL, NSUUID;
 
 @interface RCCaptureOutputWriter : NSObject <AVCaptureAudioDataOutputSampleBufferDelegate> {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     AVCaptureSession *_AVCaptureSession;
     int _AVCaptureSessionStartupState;
     NSURL *_activeOutputFileURL;
@@ -30,6 +25,11 @@
     AVCaptureAudioDataOutput *_sampleBufferDataOutput;
     NSObject<OS_dispatch_queue> *_sampleBufferQueue;
     unsigned int _sampleBuffersWritten;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _sampleBuffersWrittenDuration;
     BOOL _waitingForAVCaptureSessionDidStart;
     int _writerState;

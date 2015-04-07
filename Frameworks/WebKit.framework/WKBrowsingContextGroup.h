@@ -27,8 +27,8 @@
 @property BOOL privateBrowsingEnabled;
 @property(readonly) Class superclass;
 
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
+- (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (struct OpaqueWKPageGroup { }*)_pageGroupRef;
 - (void)addUserScript:(id)arg1 baseURL:(id)arg2 whitelistedURLPatterns:(id)arg3 blacklistedURLPatterns:(id)arg4 injectionTime:(int)arg5 mainFrameOnly:(BOOL)arg6;
 - (void)addUserStyleSheet:(id)arg1 baseURL:(id)arg2 whitelistedURLPatterns:(id)arg3 blacklistedURLPatterns:(id)arg4 mainFrameOnly:(BOOL)arg5;

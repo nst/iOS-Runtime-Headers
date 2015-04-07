@@ -14,16 +14,22 @@
 @class NEAgentServer, NEPluginPreferences, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString, NSUUID;
 
 @interface NEAgentFilterPlugin : NSObject <NEAgentServerDelegate> {
-    struct NEAgentFilterPluginCallbacks { 
-        int (*PluginInit)(); 
-        int (*PluginStart)(); 
-        int (*PluginStop)(); 
-        int (*PluginEnvironmentEvent)(); 
-        int (*PluginDispose)(); 
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _browserDataCompleteHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _browserDataHandler;
+
     struct __CFDictionary { } *_browserFlows;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _browserNewFlowHandler;
+
     BOOL _builtInPlugin;
     void *_clientInfo;
     NSObject<OS_xpc_object> *_clientListener;
@@ -34,6 +40,12 @@
     struct __CFDictionary { } *_pendingGlobalPersistentData;
     struct __CFDictionary { } *_pendingPerConfigurationPersistentData;
     struct __CFBundle { } *_pluginBundle;
+    struct NEAgentFilterPluginCallbacks { 
+        int (*PluginInit)(); 
+        int (*PluginStart)(); 
+        int (*PluginStop)(); 
+        int (*PluginEnvironmentEvent)(); 
+        int (*PluginDispose)(); 
     } _pluginCallbacks;
     void *_pluginInfo;
     BOOL _pluginInitialized;

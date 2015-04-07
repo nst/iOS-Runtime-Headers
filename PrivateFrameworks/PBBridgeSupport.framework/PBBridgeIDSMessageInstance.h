@@ -9,7 +9,11 @@
 @class NSNumber;
 
 @interface PBBridgeIDSMessageInstance : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _retryAction;
+
     int _retryCount;
     double _retryInterval;
     NSNumber *_sentAbsoluteTime;

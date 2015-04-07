@@ -8,9 +8,13 @@
 
 @class NSObject<OS_dispatch_queue>, NSString, NSXPCListener, NSXPCListenerEndpoint;
 
-@interface VSGenericUpdateEndpoint : NSObject <NSXPCListenerDelegate, NSSecureCoding> {
+@interface VSGenericUpdateEndpoint : NSObject <NSSecureCoding, NSXPCListenerDelegate> {
     NSXPCListenerEndpoint *_endpoint;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     NSXPCListener *_listener;
     NSObject<OS_dispatch_queue> *_queue;
 }
@@ -35,8 +39,8 @@
 - (id)handler;
 - (id)initWithCoder:(id)arg1;
 - (void)invalidate;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)listener;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)queue;
 - (void)setEndpoint:(id)arg1;
 - (void)setHandler:(id)arg1;

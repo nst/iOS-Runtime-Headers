@@ -18,13 +18,21 @@
     NSObject<OS_dispatch_queue> *_monitoringQueue;
     NSObject<OS_dispatch_io> *_readChannel;
     NSObject<OS_dispatch_source> *_readMonitoringSource;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _readabilityHandler;
+
     NSObject<OS_dispatch_data> *_resultData;
     int _resultSocket;
     struct __CFRunLoop { } *_rl;
     struct __CFRunLoopSource { } *_source;
     NSObject<OS_dispatch_source> *_writeMonitoringSource;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _writeabilityHandler;
+
 }
 
 - (void)_cancelDispatchSources;
@@ -41,16 +49,16 @@
 - (int)fileDescriptor;
 - (void)finalize;
 - (id)init;
-- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
 - (id)initWithFileDescriptor:(int)arg1;
-- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
+- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
+- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithURL:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (unsigned long long)offsetInFile;
 - (void)performActivity:(int)arg1 modes:(id)arg2;
 - (id)port;
-- (unsigned int)readDataOfLength:(unsigned int)arg1 buffer:(char *)arg2;
 - (id)readDataOfLength:(unsigned int)arg1;
+- (unsigned int)readDataOfLength:(unsigned int)arg1 buffer:(char *)arg2;
 - (id)readDataToEndOfFile;
 - (void)readInBackgroundAndNotify;
 - (void)readInBackgroundAndNotifyForModes:(id)arg1;

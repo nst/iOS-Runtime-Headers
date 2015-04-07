@@ -5,9 +5,7 @@
 @class CALayer, NSMutableArray;
 
 @interface TSDTilingLayer : CALayer {
-    struct CGSize { 
-        float width; 
-        float height; 
+    NSMutableArray *mDirtyTiles;
     struct { 
         unsigned int tiled : 1; 
         unsigned int hasCustomContents : 1; 
@@ -15,6 +13,12 @@
         unsigned int needsTileLayout : 1; 
         unsigned int needsTileDisplay : 1; 
         unsigned int needsSelfDisplay : 1; 
+    } mFlags;
+    BOOL mHasEverHadTileLayout;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } mLastBoundsSize;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,15 +28,11 @@
             float width; 
             float height; 
         } size; 
+    } mLastVisibleBounds;
+    CALayer *mProviderContentLayer;
     struct CGSize { 
         float width; 
         float height; 
-    NSMutableArray *mDirtyTiles;
-    } mFlags;
-    BOOL mHasEverHadTileLayout;
-    } mLastBoundsSize;
-    } mLastVisibleBounds;
-    CALayer *mProviderContentLayer;
     } mTileSize;
     int mTilingMode;
 }

@@ -7,7 +7,11 @@
  */
 
 @interface HKStatisticsQuery : HKQuery {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     unsigned int _mergeStrategy;
     unsigned int _options;
 }

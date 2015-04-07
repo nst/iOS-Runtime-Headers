@@ -12,6 +12,10 @@
         float d; 
         float tx; 
         float ty; 
+    } _canvasSpaceToWrapSpace;
+    TPDocumentRoot *_documentRoot;
+    BOOL _wrapAnimationEnabled;
+    NSTimer *_wrapAnimationTimer;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -19,10 +23,6 @@
         float d; 
         float tx; 
         float ty; 
-    } _canvasSpaceToWrapSpace;
-    TPDocumentRoot *_documentRoot;
-    BOOL _wrapAnimationEnabled;
-    NSTimer *_wrapAnimationTimer;
     } _wrapSpaceToCanvasSpace;
 }
 

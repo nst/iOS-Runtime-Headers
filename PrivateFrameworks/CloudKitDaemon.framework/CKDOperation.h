@@ -91,8 +91,8 @@
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
 - (void)main;
-- (void)makeStateTransition:(BOOL)arg1;
 - (BOOL)makeStateTransition;
+- (void)makeStateTransition:(BOOL)arg1;
 - (id)nameForState:(unsigned int)arg1;
 - (id)newChildOperationInfoOfClass:(Class)arg1;
 - (id)operationID;

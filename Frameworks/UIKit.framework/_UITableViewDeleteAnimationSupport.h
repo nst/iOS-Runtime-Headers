@@ -5,10 +5,10 @@
 @class NSMutableArray;
 
 @interface _UITableViewDeleteAnimationSupport : NSObject {
-    unsigned int _enabledStateBeforeDeleteAnimation : 1;
-    unsigned int _reserved : 30;
     NSMutableArray *_cellsToDeleteAfterAnimation;
     int _deleteCount;
+    unsigned int _enabledStateBeforeDeleteAnimation : 1;
+    unsigned int _reserved : 30;
 }
 
 @end

@@ -23,8 +23,8 @@
 - (BOOL)evaluatePolicy:(id)arg1 hints:(id)arg2 error:(id*)arg3;
 - (void)evaluatePolicy:(id)arg1 hints:(id)arg2 reply:(id)arg3;
 - (void)invalidate;
-- (void)resultForTag:(id)arg1 reply:(id)arg2;
 - (id)resultForTag:(id)arg1;
+- (void)resultForTag:(id)arg1 reply:(id)arg2;
 - (void)sendClientRequest:(id)arg1 params:(id)arg2 reply:(id)arg3;
 - (BOOL)setupNewReferenceWithError:(id*)arg1;
 - (void)setupNewReferenceWithReply:(id)arg1;

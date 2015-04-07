@@ -4,7 +4,7 @@
 
 @class GKAchievementInternal, GKGame, GKPlayer, NSDate, NSString;
 
-@interface GKAchievement : NSObject <NSCopying, NSCoding, NSSecureCoding> {
+@interface GKAchievement : NSObject <NSCoding, NSCopying, NSSecureCoding> {
     GKGame *_game;
     BOOL _hidden;
     GKAchievementInternal *_internal;
@@ -58,11 +58,11 @@
 - (id)imageURL;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithIdentifier:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 forPlayer:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 player:(id)arg2;
-- (id)initWithIdentifier:(id)arg1;
-- (id)initWithInternalRepresentation:(id)arg1 playerID:(id)arg2;
 - (id)initWithInternalRepresentation:(id)arg1;
+- (id)initWithInternalRepresentation:(id)arg1 playerID:(id)arg2;
 - (id)internal;
 - (BOOL)isCompleted;
 - (BOOL)isEqual:(id)arg1;

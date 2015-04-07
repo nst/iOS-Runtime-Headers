@@ -9,18 +9,18 @@
         struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { 
             struct tvec3<float> {} *__first_; 
         } __end_cap_; 
-    struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { 
-        struct tvec3<float> {} *__begin_; 
-        struct tvec3<float> {} *__end_; 
-        struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { 
-            struct tvec3<float> {} *__first_; 
-        } __end_cap_; 
     } mBottomLine;
     int mCapCount;
     unsigned int mCapOffset;
     float mMaxZ;
     float mMinZ;
     BOOL mStacked;
+    struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { 
+        struct tvec3<float> {} *__begin_; 
+        struct tvec3<float> {} *__end_; 
+        struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { 
+            struct tvec3<float> {} *__first_; 
+        } __end_cap_; 
     } mTopLine;
     float mZeroValue;
 }

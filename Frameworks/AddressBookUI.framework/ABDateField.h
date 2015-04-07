@@ -5,12 +5,12 @@
 @class <ABDateFieldDelegate>, <ABDatePickerPresentationDelegate>, NSDate, UIButton, UIDatePicker;
 
 @interface ABDateField : ABUILabelWithPlaceholder {
-    struct CGSize { 
-        float width; 
-        float height; 
     UIButton *_clearButton;
     NSDate *_date;
     UIDatePicker *_datePicker;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _datePickerSize;
     <ABDateFieldDelegate> *_delegate;
     BOOL _editable;
@@ -32,8 +32,8 @@
 - (void)_clearButtonPressed:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clearButtonRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })_clearButtonSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isClearButtonPresent:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isClearButtonPresent:(BOOL)arg2;
 - (void)_dettachFromDatePicker:(id)arg1;
 - (float)_extraWidthForClearButton;
 - (void)_setClearButtonEnabled:(BOOL)arg1;

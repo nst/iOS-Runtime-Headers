@@ -9,14 +9,26 @@
 @class <SSPurchaseRequestDelegate>, NSArray, NSMutableSet, NSString, SSPurchaseManager;
 
 @interface SSPurchaseRequest : SSRequest <SSPurchaseManagerDelegate, SSXPCCoding> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     BOOL _createsDownloads;
     BOOL _isBackgroundRequest;
     BOOL _needsAuthentication;
     NSMutableSet *_openPurchaseIdentifiers;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _purchaseBlock;
+
     SSPurchaseManager *_purchaseManager;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _purchaseResponseBlock;
+
     NSArray *_purchases;
     BOOL _shouldValidatePurchases;
 }

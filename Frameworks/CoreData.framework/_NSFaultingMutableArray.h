@@ -5,10 +5,10 @@
 @class NSManagedObject, NSMutableArray, NSPropertyDescription;
 
 @interface _NSFaultingMutableArray : NSMutableArray {
+    int _cd_rc;
     struct _NSFaultingMutableArrayFlags { 
         unsigned int _isFault : 1; 
         unsigned int _reserved : 31; 
-    int _cd_rc;
     } _flags;
     NSMutableArray *_realArray;
     NSPropertyDescription *_relationship;
@@ -31,8 +31,8 @@
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
-- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (id)descriptionWithLocale:(id)arg1;
+- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (void)getObjects:(id*)arg1;

@@ -87,8 +87,8 @@
 - (void)_handleRemoveZone:(id)arg1;
 - (void)_handleRename:(id)arg1;
 - (void)_handleUnblock:(id)arg1;
-- (void)_notifyChangedCharacteristics:(id)arg1 identifier:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)_notifyChangedCharacteristics:(id)arg1;
+- (void)_notifyChangedCharacteristics:(id)arg1 identifier:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)_performAddPairingForUser:(id)arg1 destination:(id)arg2 remotePeer:(BOOL)arg3 userPrivilege:(unsigned int)arg4 controllerInfo:(id)arg5 identifier:(id)arg6 responseHandler:(id)arg7;
 - (void)_reachabilityChangedForAccessory:(id)arg1 reachable:(BOOL)arg2;
 - (void)_readCharacteristicValues:(id)arg1 identifier:(id)arg2 withCompletionHandler:(id)arg3;
@@ -106,9 +106,9 @@
 - (void)_sendInviteRequestForUser:(id)arg1 userPrivilege:(unsigned int)arg2 confirm:(BOOL)arg3 message:(id)arg4;
 - (void)_writeCharacteristicValues:(id)arg1 identifier:(id)arg2 withCompletionHandler:(id)arg3;
 - (id)accessories;
+- (id)accessoryManager;
 - (void)accessoryManager:(id)arg1 didAddPairedAccessories:(id)arg2 toBridgeAccessory:(id)arg3;
 - (void)accessoryManager:(id)arg1 didRemovePairedAccessories:(id)arg2 fromBridgeAccessory:(id)arg3;
-- (id)accessoryManager;
 - (id)accessoryWithName:(id)arg1;
 - (id)accessoryWithUUID:(id)arg1;
 - (id)actionSetWithName:(id)arg1;

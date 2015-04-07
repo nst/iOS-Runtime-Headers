@@ -5,24 +5,9 @@
 @class NSMutableArray, NSMutableIndexSet, NSString, UIColor;
 
 @interface UIPickerTableView : UITableView <UITableViewDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    NSMutableIndexSet *_checkedRows;
+    float _lastClickedOffset;
+    int _lastSelectedRow;
     struct { 
         unsigned int allowsMultipleSelection : 1; 
         unsigned int scrollingDirection : 2; 
@@ -32,15 +17,30 @@
         unsigned int pickerViewImplementsSelectionBarChanged : 2; 
         unsigned int cancellingAnimation : 1; 
         unsigned int updatingContentInset : 1; 
-    NSMutableIndexSet *_checkedRows;
-    float _lastClickedOffset;
-    int _lastSelectedRow;
     } _pickerTableFlags;
     NSMutableArray *_referencingCells;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _selectionBarRect;
     int _selectionBarRow;
     UIColor *_textColor;
     BOOL _usesModernStyle;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _visibleRect;
 }
 

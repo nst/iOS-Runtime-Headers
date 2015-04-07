@@ -5,10 +5,10 @@
 @class NSTimer;
 
 @interface _UISystemGestureGateGestureRecognizer : UIGestureRecognizer {
-    unsigned int _systemGesturesRecognitionPossible : 1;
-    unsigned int _waitingForSystemGestureStateNotification : 1;
     NSTimer *_delayTimeoutTimer;
     double _lastTouchTime;
+    unsigned int _systemGesturesRecognitionPossible : 1;
+    unsigned int _waitingForSystemGestureStateNotification : 1;
 }
 
 - (int)_gateGestureType;

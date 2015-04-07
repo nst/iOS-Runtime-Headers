@@ -10,6 +10,12 @@
 @class NSString, TSCECalculationEngine, TSDMultiPaneController, TSTReferenceColorHelper;
 
 @interface TSTReferenceNode : TSTExpressionNode {
+    BOOL mBlankForKeyboardInsertion;
+    TSCECalculationEngine *mCalculationEngine;
+    NSString *mFormulaPlainText;
+    struct __CFUUID { } *mHostTableID;
+    TSDMultiPaneController *mMenuPopoverController;
+    int mRangeContext;
     struct { 
         struct { 
             struct { 
@@ -24,12 +30,6 @@
             } mBottomRight; 
         } range; 
         struct __CFUUID {} *tableID; 
-    BOOL mBlankForKeyboardInsertion;
-    TSCECalculationEngine *mCalculationEngine;
-    NSString *mFormulaPlainText;
-    struct __CFUUID { } *mHostTableID;
-    TSDMultiPaneController *mMenuPopoverController;
-    int mRangeContext;
     } mRangeReference;
     BOOL mRangeWithFunction;
     NSString *mRefString;

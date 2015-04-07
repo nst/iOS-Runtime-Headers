@@ -5,11 +5,11 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface SUMescalSession : NSObject {
+    BOOL _complete;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
         unsigned char ID[20]; 
-    BOOL _complete;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
     } _hardwareInfo;
     struct FPSAPContextOpaque_ { } *_session;
 }

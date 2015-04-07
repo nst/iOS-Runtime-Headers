@@ -12,8 +12,8 @@
 @property int affinity;
 @property(retain) DOMRange * domRange;
 
-+ (id)wrapDOMRange:(id)arg1 withAffinity:(int)arg2;
 + (id)wrapDOMRange:(id)arg1;
++ (id)wrapDOMRange:(id)arg1 withAffinity:(int)arg2;
 
 - (void)adjustAffinityOfPosition:(id)arg1 isStart:(BOOL)arg2;
 - (int)affinity;

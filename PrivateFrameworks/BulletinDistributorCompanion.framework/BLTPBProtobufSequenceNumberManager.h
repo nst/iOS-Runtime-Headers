@@ -21,8 +21,8 @@
 - (void)_readSequenceNumbersFromStoreWithInitialDuplicateCapacity:(unsigned int)arg1;
 - (id)_sequenceNumbersURL;
 - (void)_writeSequenceNumbersToStore;
-- (id)initWithServiceName:(id)arg1 duplicateCapacity:(unsigned int)arg2;
 - (id)initWithServiceName:(id)arg1;
+- (id)initWithServiceName:(id)arg1 duplicateCapacity:(unsigned int)arg2;
 - (BOOL)isInitialSendSequenceNumber;
 - (unsigned long long)nextSendSequenceNumber;
 - (id)serviceName;

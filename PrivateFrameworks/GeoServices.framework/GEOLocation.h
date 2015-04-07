@@ -5,6 +5,9 @@
 @class GEOLatLng;
 
 @interface GEOLocation : PBCodable <NSCopying> {
+    int _altitude;
+    double _course;
+    double _courseAccuracy;
     struct { 
         unsigned int course : 1; 
         unsigned int courseAccuracy : 1; 
@@ -18,9 +21,6 @@
         unsigned int type : 1; 
         unsigned int isMatchedLocation : 1; 
         unsigned int isShifted : 1; 
-    int _altitude;
-    double _course;
-    double _courseAccuracy;
     } _has;
     double _heading;
     double _horizontalAccuracy;
@@ -90,9 +90,9 @@
 - (unsigned int)hash;
 - (double)heading;
 - (double)horizontalAccuracy;
+- (id)initWithCLLocation:(id)arg1;
 - (id)initWithCLLocation:(id)arg1 course:(double)arg2;
 - (id)initWithCLLocation:(id)arg1 useMatchInfo:(BOOL)arg2;
-- (id)initWithCLLocation:(id)arg1;
 - (id)initWithCoreLocation:(id)arg1;
 - (id)initWithGEOCoordinate:(struct { double x1; double x2; })arg1;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;

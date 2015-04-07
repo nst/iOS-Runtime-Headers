@@ -8,7 +8,43 @@
 
 @class <UISplitViewControllerDelegate>, NSArray, NSString, UIBarButtonItem, UIGestureRecognizer, UIPopoverController, UIResponder, UISnapshotView, UIView, UIViewController;
 
-@interface UISplitViewController : UIViewController <UIGestureRecognizerDelegate, GKContentRefresh, GKURLHandling> {
+@interface UISplitViewController : UIViewController <GKContentRefresh, GKURLHandling, UIGestureRecognizerDelegate> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id __clearPreventRotationHook;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id __didChangeBoundsBlock;
+
+    UIViewController *__preservedDetailController;
+    UIBarButtonItem *_barButtonItem;
+    NSString *_buttonTitle;
+    UISnapshotView *_collapsingDetailSnapshotView;
+    UISnapshotView *_collapsingMasterSnapshotView;
+    NSArray *_cornerImageViews;
+    float _cornerRadius;
+    id _delegate;
+    UIBarButtonItem *_displayModeButtonItem;
+    NSString *_displayModeButtonItemTitle;
+    int _effectiveTargetDisplayMode;
+    float _gutterWidth;
+    UIPopoverController *_hiddenPopoverController;
+    int _lastPresentedOrientation;
+    UIView *_masterBackgroundView;
+    float _masterColumnWidth;
+    float _maximumPrimaryColumnWidth;
+    float _minimumPrimaryColumnWidth;
+    int _pendingDisplayModeChangeCount;
+    UIGestureRecognizer *_popoverPresentationGestureRecognizer;
+    UIResponder *_postTransitionResponder;
+    int _preferredDisplayMode;
+    float _preferredPrimaryColumnWidthFraction;
+    BOOL _presentsInFadingPopover;
+    BOOL _presentsWithGesture;
+    BOOL _resizeForKeyboard;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,6 +54,8 @@
             float width; 
             float height; 
         } size; 
+    } _rotatingFromMasterViewFrame;
+    int _rotatingFromOrientation;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -27,6 +65,9 @@
             float width; 
             float height; 
         } size; 
+    } _rotatingToMasterViewFrame;
+    UIView *_rotationSnapshotView;
+    unsigned int _slideTransitionCount;
     struct { 
         unsigned int validDelegateHiddenMasterOrientations : 5; 
         unsigned int delegateHiddenMasterOrientations : 5; 
@@ -64,39 +105,6 @@
         unsigned int pendingPresentMasterViewController : 1; 
         unsigned int pendingUpdateTargetDisplayMode : 1; 
         unsigned int collapsingClockwise : 1; 
-    id __clearPreventRotationHook;
-    id __didChangeBoundsBlock;
-    UIViewController *__preservedDetailController;
-    UIBarButtonItem *_barButtonItem;
-    NSString *_buttonTitle;
-    UISnapshotView *_collapsingDetailSnapshotView;
-    UISnapshotView *_collapsingMasterSnapshotView;
-    NSArray *_cornerImageViews;
-    float _cornerRadius;
-    id _delegate;
-    UIBarButtonItem *_displayModeButtonItem;
-    NSString *_displayModeButtonItemTitle;
-    int _effectiveTargetDisplayMode;
-    float _gutterWidth;
-    UIPopoverController *_hiddenPopoverController;
-    int _lastPresentedOrientation;
-    UIView *_masterBackgroundView;
-    float _masterColumnWidth;
-    float _maximumPrimaryColumnWidth;
-    float _minimumPrimaryColumnWidth;
-    int _pendingDisplayModeChangeCount;
-    UIGestureRecognizer *_popoverPresentationGestureRecognizer;
-    UIResponder *_postTransitionResponder;
-    int _preferredDisplayMode;
-    float _preferredPrimaryColumnWidthFraction;
-    BOOL _presentsInFadingPopover;
-    BOOL _presentsWithGesture;
-    BOOL _resizeForKeyboard;
-    } _rotatingFromMasterViewFrame;
-    int _rotatingFromOrientation;
-    } _rotatingToMasterViewFrame;
-    UIView *_rotationSnapshotView;
-    unsigned int _slideTransitionCount;
     } _splitViewControllerFlags;
     UIView *_underBarSeparatorView;
     BOOL _useChangingBoundsLayout;
@@ -110,13 +118,10 @@
 @property(setter=_setResizesDetailOnSlide:) BOOL _resizesDetailOnSlide;
 @property(getter=isCollapsed,readonly) BOOL collapsed;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property <UISplitViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(readonly) int displayMode;
 @property float gutterWidth;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL hidesMasterViewInLandscape;
 @property BOOL hidesMasterViewInPortrait;
@@ -128,7 +133,6 @@
 @property BOOL presentsWithGesture;
 @property(readonly) float primaryColumnWidth;
 @property BOOL resizeForKeyboard;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(copy) NSArray * viewControllers;
 
@@ -159,8 +163,8 @@
 - (id)_defaultDisplayModes;
 - (int)_defaultTargetDisplayMode;
 - (BOOL)_delegateUsesLegacySlideSPI;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrameWithPopoverControllerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_didChangeBoundsBlock;
 - (void)_didTransitionTraitCollection;
@@ -194,8 +198,8 @@
 - (void)_layoutContainerViewDidMoveToWindow:(id)arg1;
 - (void)_layoutContainerViewWillMoveToWindow:(id)arg1;
 - (void)_loadNewSubviews:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_masterViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_masterViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_masterViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_popoverController:(id)arg1 didChangeFromVisible:(BOOL)arg2;
 - (void)_popoverController:(id)arg1 willAnimateToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_popoverController:(id)arg1 willChangeToVisible:(BOOL)arg2;

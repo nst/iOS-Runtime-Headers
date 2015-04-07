@@ -21,12 +21,12 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 + (id)blackColor;
 + (id)cmykColorFromReader:(struct _xmlTextReader { }*)arg1;
 + (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 + (void)readColorFromProcessor:(id)arg1 reader:(struct _xmlTextReader { }*)arg2;
 + (id)rgbColorFromReader:(struct _xmlTextReader { }*)arg1 calibrated:(BOOL)arg2;
++ (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 + (id)whiteColorFromReader:(struct _xmlTextReader { }*)arg1 calibrated:(BOOL)arg2;
 
 - (float)alphaComponent;

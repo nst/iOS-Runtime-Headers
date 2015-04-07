@@ -70,7 +70,7 @@
 - (void)startFinalizingTransfer:(id)arg1;
 - (void)startTransfer:(id)arg1;
 - (id)transferForGUID:(id)arg1;
-- (void)updateTransfer:(id)arg1 currentBytes:(unsigned long long)arg2 totalBytes:(unsigned long long)arg3;
 - (void)updateTransfer:(id)arg1;
+- (void)updateTransfer:(id)arg1 currentBytes:(unsigned long long)arg2 totalBytes:(unsigned long long)arg3;
 
 @end

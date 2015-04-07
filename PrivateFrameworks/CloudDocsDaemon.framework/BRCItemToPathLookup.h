@@ -5,13 +5,13 @@
 @class BRCLocalContainer, BRCLocalItem, BRCRelativePath, BRCServerItem, NSURL;
 
 @interface BRCItemToPathLookup : NSObject {
+    BRCLocalContainer *_container;
+    BOOL _documentIDMayStillExist;
     struct { 
         unsigned int byFileID : 1; 
         unsigned int byDocumentID : 1; 
         unsigned int byPath : 1; 
         unsigned int parent : 1; 
-    BRCLocalContainer *_container;
-    BOOL _documentIDMayStillExist;
     } _fetched;
     BRCLocalItem *_item;
     BRCRelativePath *_matchByDocumentID;

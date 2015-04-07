@@ -10,9 +10,9 @@
 @class GKButton, GKLabel, NSString;
 
 @interface GKSectionHeaderView : GKHeaderWithUnderlineView {
-    int (*_itemCountFormatter)();
     BOOL _allSectionItemsVisible;
     int _itemCount;
+    int (*_itemCountFormatter)();
     GKLabel *_leftLabel;
     BOOL _manualItemCount;
     int _maxItemCount;
@@ -42,13 +42,13 @@
 + (id)padMetrics;
 + (id)phoneMetrics;
 
-- (int (*)())itemCountFormatter;
 - (BOOL)allSectionItemsVisible;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)dealloc;
 - (void)establishConstraints;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)itemCount;
+- (int (*)())itemCountFormatter;
 - (id)leftLabel;
 - (id)leftText;
 - (BOOL)manualItemCount;

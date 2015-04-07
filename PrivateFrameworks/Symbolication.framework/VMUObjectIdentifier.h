@@ -9,23 +9,31 @@
 @class NSHashTable, NSMapTable, VMUClassInfoMap, VMUNonOverlappingRangeArray;
 
 @interface VMUObjectIdentifier : NSObject {
-    struct _CSTypeRef { 
-        unsigned int _opaque_1; 
-        unsigned int _opaque_2; 
     VMUClassInfoMap *_cfTypeIDtoClassInfo;
     unsigned long _coreFoundationCFTypeIsa;
     unsigned long _foundationCFTypeIsa;
     VMUClassInfoMap *_isaToClassInfo;
     NSMapTable *_isaToObjectLabelHandlerMap;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _isaTranslator;
+
     NSMapTable *_itemCountToLabelStringUniquingMap;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _memoryReader;
+
     unsigned int *_nonPointerIndexMapping;
     NSMapTable *_numberToLabelStringUniquingMap;
     NSHashTable *_objcRuntimeMallocBlocksHash;
     void *_remoteObjectBuffer;
     unsigned long _remoteObjectBufferSize;
     struct VMULabelUniquingDataForStringType { id x1; id x2; } *_stringToLabelStringUniquingData;
+    struct _CSTypeRef { 
+        unsigned int _opaque_1; 
+        unsigned int _opaque_2; 
     } _symbolicator;
     VMUNonOverlappingRangeArray *_targetProcessVMranges;
     unsigned int _task;
@@ -46,8 +54,8 @@
 - (void)enumerateRealizedClassInfosWithBlock:(id)arg1;
 - (void)findCFTypes;
 - (void)findObjCclasses;
-- (id)initWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithTask:(unsigned int)arg1;
+- (id)initWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
 - (id)labelForItemCount:(long)arg1;
 - (id)labelForMallocBlock:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)labelForMemory:(void*)arg1 length:(unsigned int)arg2;

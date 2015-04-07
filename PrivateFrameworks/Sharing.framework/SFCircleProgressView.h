@@ -23,9 +23,9 @@
 - (float)progressLineWidth;
 - (float)progressPresentationValue;
 - (int)progressStartPoint;
+- (void)setProgress:(float)arg1;
 - (void)setProgress:(float)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)setProgress:(float)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3 completion:(id)arg4;
-- (void)setProgress:(float)arg1;
 - (void)setProgressColor:(id)arg1;
 - (void)setProgressLineWidth:(float)arg1;
 - (void)setProgressStartPoint:(int)arg1;

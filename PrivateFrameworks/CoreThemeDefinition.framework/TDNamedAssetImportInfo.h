@@ -5,14 +5,6 @@
 @class NSDate, NSString, NSURL;
 
 @interface TDNamedAssetImportInfo : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -31,11 +23,19 @@
     NSString *_name;
     int _nameIdentifier;
     int _renditionType;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _resizableSliceSize;
     int _resizingMode;
     unsigned int _scaleFactor;
     int _sizeClassHorizontal;
     int _sizeClassVertical;
+    struct { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _sliceInsets;
     int _subtype;
     int _templateRenderingMode;

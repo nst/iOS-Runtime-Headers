@@ -34,12 +34,12 @@
 - (id)pendingMessages;
 - (void)reportConnectionForService:(id)arg1 accounts:(id)arg2 devices:(id)arg3;
 - (id)sendProtoBuf:(id)arg1 service:(id)arg2 priority:(int)arg3 responseIdentifier:(id)arg4 expectsResponse:(BOOL)arg5 retryCount:(int)arg6 retryInterval:(double)arg7;
+- (id)service;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;
-- (id)service;
 - (id)serviceIdentifier;
 - (void)setInflightMessages:(id)arg1;
 - (void)setPendingMessages:(id)arg1;

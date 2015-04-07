@@ -4,7 +4,7 @@
 
 @class <AFSiriTaskDelivering>, <AFSiriTaskmasterDelegate>, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
 
-@interface AFSiriTaskmaster : NSObject <AFSiriUsageResultHandling, NSXPCListenerDelegate, AFSiriRequestHandling> {
+@interface AFSiriTaskmaster : NSObject <AFSiriRequestHandling, AFSiriUsageResultHandling, NSXPCListenerDelegate> {
     <AFSiriTaskmasterDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
     <AFSiriTaskDelivering> *_taskDeliverer;

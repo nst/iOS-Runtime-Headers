@@ -4,8 +4,7 @@
 
 @class NSDate, NSString, PreferencesValueCell, UIDatePicker, UITableView, UITableViewCell;
 
-@interface EKRecurrenceEndEditItemViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate, EKCellShortener> {
-    unsigned int _updatingPicker : 1;
+@interface EKRecurrenceEndEditItemViewController : EKEditItemViewController <EKCellShortener, UITableViewDataSource, UITableViewDelegate> {
     NSDate *_bestInitialDate;
     PreferencesValueCell *_dateCell;
     UIDatePicker *_datePicker;
@@ -15,6 +14,7 @@
     NSDate *_repeatEndDate;
     int _shorteningStatus;
     UITableView *_table;
+    unsigned int _updatingPicker : 1;
 }
 
 @property(copy) NSDate * bestInitialDate;

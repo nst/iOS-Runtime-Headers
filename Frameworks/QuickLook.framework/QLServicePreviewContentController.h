@@ -4,11 +4,11 @@
 
 @class <QLPreviewContentDataSource>, <QLPreviewContentDelegate>, <QLRemotePrintPageHelper>, NSMutableDictionary, NSString, QLPreviewContentController, _UIHostedWindow;
 
-@interface QLServicePreviewContentController : UIViewController <QLRemotePreviewContentControllerProtocol, QLPreviewContentDataSource, QLPreviewContentDelegate> {
+@interface QLServicePreviewContentController : UIViewController <QLPreviewContentDataSource, QLPreviewContentDelegate, QLRemotePreviewContentControllerProtocol> {
+    BOOL _blockRemoteImages;
     struct CGSize { 
         float width; 
         float height; 
-    BOOL _blockRemoteImages;
     } _clientSize;
     _UIHostedWindow *_hostedWindow;
     int _numberOfPreviewItems;
@@ -63,8 +63,8 @@
 - (void)previewContentController:(id)arg1 didFailWithError:(id)arg2;
 - (void)previewContentController:(id)arg1 didLoadItem:(id)arg2 atIndex:(int)arg3 withError:(id)arg4;
 - (void)previewContentController:(id)arg1 didMoveToItem:(id)arg2 atIndex:(int)arg3;
-- (void)previewContentController:(id)arg1 previewItemAtIndex:(int)arg2 completionBlock:(id)arg3;
 - (id)previewContentController:(id)arg1 previewItemAtIndex:(int)arg2;
+- (void)previewContentController:(id)arg1 previewItemAtIndex:(int)arg2 completionBlock:(id)arg3;
 - (void)previewContentController:(id)arg1 receivedTapOnURL:(id)arg2;
 - (void)previewContentController:(id)arg1 setAVState:(id)arg2 forPreviewItem:(id)arg3;
 - (void)previewContentController:(id)arg1 willEnterFullScreenWithHostedWindow:(id)arg2;

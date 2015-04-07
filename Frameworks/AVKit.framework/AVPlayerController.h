@@ -83,8 +83,8 @@
 - (double)rate;
 - (void)scanBackward:(id)arg1;
 - (void)scanForward:(id)arg1;
-- (void)seekByTimeInterval:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (void)seekByTimeInterval:(double)arg1;
+- (void)seekByTimeInterval:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (void)seekChapterBackward:(id)arg1;
 - (void)seekChapterForward:(id)arg1;
 - (void)seekFrameBackward:(id)arg1;
@@ -92,8 +92,8 @@
 - (void)seekToBeginning:(id)arg1;
 - (void)seekToChapter:(id)arg1;
 - (void)seekToEnd:(id)arg1;
-- (void)seekToTime:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (void)seekToTime:(double)arg1;
+- (void)seekToTime:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (id)seekableTimeRanges;
 - (void)setAllowsExternalPlayback:(BOOL)arg1;
 - (void)setCALayerDestinationIsTVOut:(BOOL)arg1;

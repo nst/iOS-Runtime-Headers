@@ -13,11 +13,23 @@
     NSArray *_recordIDsToShare;
     NSArray *_recordIDsToShareReadWrite;
     NSArray *_recordIDsToUnshare;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordSharedBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recordUnsharedBlock;
+
     NSMutableArray *_sharedRecordIDs;
     NSMutableArray *_unsharedRecordIDs;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _webShareRecordsCompletionBlock;
+
 }
 
 @property(retain) NSMutableDictionary * recordErrors;

@@ -69,8 +69,8 @@
 + (id)_trimmedTitle:(id)arg1;
 
 - (id)UUID;
-- (id)_initWithSqliteRow:(struct sqlite3_stmt { }*)arg1 hasIcon:(BOOL)arg2;
 - (id)_initWithSqliteRow:(struct sqlite3_stmt { }*)arg1;
+- (id)_initWithSqliteRow:(struct sqlite3_stmt { }*)arg1 hasIcon:(BOOL)arg2;
 - (void)_markSpecial:(unsigned int)arg1;
 - (void)_modifyExtraReadingListAttributes:(id)arg1;
 - (void)_modifyLocalReadingListAttributes:(id)arg1;
@@ -155,8 +155,8 @@
 - (void)setSourceLocalizedAppName:(id)arg1;
 - (void)setSyncData:(id)arg1;
 - (void)setSyncKey:(id)arg1;
-- (void)setTitle:(id)arg1 previewText:(id)arg2 dateLastFetched:(id)arg3;
 - (void)setTitle:(id)arg1;
+- (void)setTitle:(id)arg1 previewText:(id)arg2 dateLastFetched:(id)arg3;
 - (void)setWebFilterStatus:(int)arg1;
 - (id)shortTypeDescription;
 - (BOOL)shouldReattemptArchive;

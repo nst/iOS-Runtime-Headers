@@ -39,8 +39,8 @@
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)hideTextStyleOptions;
 - (id)initWithView:(id)arg1;
-- (void)loupeGesture:(id)arg1;
 - (id)loupeGesture;
+- (void)loupeGesture:(id)arg1;
 - (void)oneFingerDoubleTap:(id)arg1;
 - (void)oneFingerTap:(id)arg1;
 - (void)oneFingerTripleTap:(id)arg1;
@@ -50,8 +50,8 @@
 - (void)rangeSelectionStarted:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)requiresImmediateUpdate;
 - (void)scheduleChineseTransliterationForText:(id)arg1;
-- (void)scheduleReplacementsForText:(id)arg1 withOptions:(unsigned int)arg2;
 - (void)scheduleReplacementsForText:(id)arg1;
+- (void)scheduleReplacementsForText:(id)arg1 withOptions:(unsigned int)arg2;
 - (void)scheduleReplacementsWithOptions:(unsigned int)arg1;
 - (void)scrollSelectionToVisible;
 - (void)selectAll:(id)arg1;
@@ -59,10 +59,10 @@
 - (void)selectWithTapGestureAt:(struct CGPoint { float x1; float x2; })arg1 withGesture:(int)arg2 withState:(int)arg3;
 - (void)selectWord;
 - (void)selectionChanged;
-- (void)selectionChangedWithGestureAt:(struct CGPoint { float x1; float x2; })arg1 withGesture:(int)arg2 withState:(int)arg3 withFlags:(int)arg4;
 - (void)selectionChangedWithGestureAt:(struct CGPoint { float x1; float x2; })arg1 withGesture:(int)arg2 withState:(int)arg3;
-- (void)selectionChangedWithTouchAt:(struct CGPoint { float x1; float x2; })arg1 withSelectionTouch:(int)arg2 withFlags:(int)arg3;
+- (void)selectionChangedWithGestureAt:(struct CGPoint { float x1; float x2; })arg1 withGesture:(int)arg2 withState:(int)arg3 withFlags:(int)arg4;
 - (void)selectionChangedWithTouchAt:(struct CGPoint { float x1; float x2; })arg1 withSelectionTouch:(int)arg2;
+- (void)selectionChangedWithTouchAt:(struct CGPoint { float x1; float x2; })arg1 withSelectionTouch:(int)arg2 withFlags:(int)arg3;
 - (BOOL)shouldTryReplacementsForText:(id)arg1 withOptions:(unsigned int)arg2;
 - (void)showDictionaryFor:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)showReplacementsForText:(id)arg1 withOptions:(unsigned int)arg2;

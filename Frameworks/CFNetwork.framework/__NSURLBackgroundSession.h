@@ -12,7 +12,11 @@
     NSString *_appWakeUUID;
     NSURL *_downloadDirectory;
     unsigned int _identSeed;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _invalidateCallback;
+
     NSObject<OS_dispatch_queue> *_invalidateQueue;
     BOOL _isInvalid;
     BOOL _isPrivileged;
@@ -60,8 +64,8 @@
 - (void)backgroundTask:(unsigned int)arg1 _willSendRequestForEstablishedConnection:(id)arg2 reply:(id)arg3;
 - (void)backgroundTask:(unsigned int)arg1 didCompleteWithError:(id)arg2 timingData:(id)arg3 reply:(id)arg4;
 - (void)backgroundTask:(unsigned int)arg1 didReceiveChallenge:(id)arg2 reply:(id)arg3;
-- (void)backgroundTask:(unsigned int)arg1 didReceiveResponse:(id)arg2 timingData:(id)arg3 reply:(id)arg4;
 - (void)backgroundTask:(unsigned int)arg1 didReceiveResponse:(id)arg2 timingData:(id)arg3;
+- (void)backgroundTask:(unsigned int)arg1 didReceiveResponse:(id)arg2 timingData:(id)arg3 reply:(id)arg4;
 - (void)backgroundTask:(unsigned int)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
 - (void)backgroundTask:(unsigned int)arg1 hasConnectionWaitingWithError:(id)arg2;
 - (void)backgroundTask:(unsigned int)arg1 hasConnectionWaitingWithReason:(long long)arg2;

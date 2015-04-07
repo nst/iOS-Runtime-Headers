@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, SLComposeServiceViewController, SLSheetTitleView, UIImage, UINavigationItem, UITableView, UITableViewController, UIView, UIViewController;
 
-@interface SLSheetRootViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SLComposeSheetConfigurationItemObserving> {
+@interface SLSheetRootViewController : UIViewController <SLComposeSheetConfigurationItemObserving, UITableViewDataSource, UITableViewDelegate> {
     UIViewController *_autoCompletionViewController;
     NSArray *_configurationItems;
     UIView *_contentView;
@@ -48,11 +48,11 @@
 - (void)setPostButtonEnabled:(BOOL)arg1;
 - (void)setServiceIconImage:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)tableView;
 - (void)updateContentViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

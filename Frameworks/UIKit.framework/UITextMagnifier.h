@@ -8,18 +8,18 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     } _animationPoint;
     int _autoscrollDirections;
     UIView *_autoscrollRenderer;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _magnificationPoint;
     UIView *_magnifierRenderer;
     UIView *_target;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _terminalPoint;
     BOOL _terminalPointPlacedCarefully;
     UIResponder<UITextInput> *_text;

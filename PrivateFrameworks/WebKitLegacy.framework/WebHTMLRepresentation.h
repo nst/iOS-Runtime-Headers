@@ -4,7 +4,7 @@
 
 @class NSString, WebHTMLRepresentationPrivate;
 
-@interface WebHTMLRepresentation : NSObject <WebDocumentRepresentation, WebDocumentDOM> {
+@interface WebHTMLRepresentation : NSObject <WebDocumentDOM, WebDocumentRepresentation> {
     WebHTMLRepresentationPrivate *_private;
 }
 
@@ -37,8 +37,8 @@
 - (id)matchLabels:(id)arg1 againstElement:(id)arg2;
 - (void)receivedData:(id)arg1 withDataSource:(id)arg2;
 - (void)receivedError:(id)arg1 withDataSource:(id)arg2;
-- (id)searchForLabels:(id)arg1 beforeElement:(id)arg2 resultDistance:(unsigned int*)arg3 resultIsInCellAbove:(BOOL*)arg4;
 - (id)searchForLabels:(id)arg1 beforeElement:(id)arg2;
+- (id)searchForLabels:(id)arg1 beforeElement:(id)arg2 resultDistance:(unsigned int*)arg3 resultIsInCellAbove:(BOOL*)arg4;
 - (void)setDataSource:(id)arg1;
 - (id)title;
 

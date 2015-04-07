@@ -8,11 +8,11 @@
         float columnAdjustment; 
         int rowIndex; 
         float rowAdjustment; 
+    } mFrom;
+    BOOL mIsRelative;
     struct CGSize { 
         float width; 
         float height; 
-    } mFrom;
-    BOOL mIsRelative;
     } mSize;
 }
 

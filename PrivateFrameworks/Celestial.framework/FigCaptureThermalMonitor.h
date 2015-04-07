@@ -12,7 +12,11 @@
     float _maxTorchLevel;
     NSObject<OS_dispatch_queue> *_notificationQueue;
     int _registrationToken;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _torchHandler;
+
 }
 
 @property(readonly) float maxTorchLevel;

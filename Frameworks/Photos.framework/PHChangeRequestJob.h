@@ -9,7 +9,11 @@
 @class NSObject<OS_xpc_object>, NSSet;
 
 @interface PHChangeRequestJob : PLDaemonJob {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     NSSet *_deletes;
     NSSet *_inserts;
     NSSet *_updates;

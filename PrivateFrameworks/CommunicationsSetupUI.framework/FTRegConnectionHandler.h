@@ -5,9 +5,9 @@
 @class NSString;
 
 @interface FTRegConnectionHandler : NSObject {
+    unsigned int _caps;
     struct { 
         unsigned int listeningForNotifications : 1; 
-    unsigned int _caps;
     } _handlerFlags;
     NSString *_listenerID;
     NSString *_logName;
@@ -33,11 +33,11 @@
 - (void)_startListeningForNotifications;
 - (void)_stopListeningForNotifications;
 - (unsigned int)caps;
-- (BOOL)connectToDaemon:(BOOL)arg1;
 - (BOOL)connectToDaemon;
+- (BOOL)connectToDaemon:(BOOL)arg1;
 - (void)dealloc;
-- (id)initWithServiceType:(int)arg1 name:(id)arg2 capabilities:(unsigned int)arg3;
 - (id)initWithServiceType:(int)arg1 name:(id)arg2;
+- (id)initWithServiceType:(int)arg1 name:(id)arg2 capabilities:(unsigned int)arg3;
 - (BOOL)isConnectedToDaemon;
 - (id)name;
 - (int)serviceType;

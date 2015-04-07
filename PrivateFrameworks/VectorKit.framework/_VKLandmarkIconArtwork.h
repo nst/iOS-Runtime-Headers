@@ -3,6 +3,8 @@
  */
 
 @interface _VKLandmarkIconArtwork : VKIconArtwork {
+    struct CGImage { } *_maskImage;
+    struct CGImage { } *_outlineMaskImage;
     struct { 
         int iconStyle; 
         struct Matrix<float, 4, 1> { 
@@ -37,8 +39,6 @@
         float iconBevelAmount; 
         unsigned int iconSourceStyleAttributeKey; 
         unsigned int iconSourceStyleMultipoiAttributeKey; 
-    struct CGImage { } *_maskImage;
-    struct CGImage { } *_outlineMaskImage;
     } _style;
 }
 

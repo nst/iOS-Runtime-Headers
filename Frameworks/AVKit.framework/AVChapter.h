@@ -11,7 +11,11 @@
 @interface AVChapter : NSObject <NSCopying> {
     double _duration;
     UIImage *_image;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _imageBlock;
+
     unsigned int _number;
     double _startTime;
     NSString *_title;

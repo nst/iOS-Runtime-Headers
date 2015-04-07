@@ -5,24 +5,14 @@
 @class AVOutputSettings, NSArray, NSDictionary, NSString, NSURL;
 
 @interface AVAssetWriterInputConfigurationState : NSObject {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    short _alternateGroupID;
+    BOOL _attachedToPixelBufferAdaptor;
+    int _chunkAlignment;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    short _alternateGroupID;
-    BOOL _attachedToPixelBufferAdaptor;
-    int _chunkAlignment;
     } _chunkDuration;
     int _chunkSize;
     BOOL _expectsMediaDataInRealTime;
@@ -33,6 +23,9 @@
     int _mediaTimeScale;
     NSString *_mediaType;
     NSArray *_metadataItems;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _naturalSize;
     AVOutputSettings *_outputSettings;
     BOOL _performsMultiPassEncodingIfSupported;
@@ -41,6 +34,13 @@
     struct opaqueCMFormatDescription { } *_sourceFormatHint;
     NSDictionary *_sourcePixelBufferAttributes;
     NSDictionary *_trackReferences;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _transform;
 }
 

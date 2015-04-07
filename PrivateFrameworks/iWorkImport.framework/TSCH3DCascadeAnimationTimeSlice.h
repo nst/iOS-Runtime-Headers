@@ -5,6 +5,9 @@
 @class NSIndexSet;
 
 @interface TSCH3DCascadeAnimationTimeSlice : TSCH3DAnimationTimeSlice {
+    unsigned int mCascadeSlices;
+    NSIndexSet *mElements;
+    BOOL mReverse;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,16 +19,13 @@
             int g; 
             int t; 
         } ; 
-    unsigned int mCascadeSlices;
-    NSIndexSet *mElements;
-    BOOL mReverse;
     } mSize;
 }
 
 @property unsigned int cascadeSlices;
 
-+ (id)timeSliceWithIndexSet:(id)arg1 size:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 reverse:(BOOL)arg3 cascadeSlices:(unsigned int)arg4;
 + (id)timeSliceWithIndexSet:(id)arg1 size:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 reverse:(BOOL)arg3;
++ (id)timeSliceWithIndexSet:(id)arg1 size:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 reverse:(BOOL)arg3 cascadeSlices:(unsigned int)arg4;
 
 - (id).cxx_construct;
 - (unsigned int)cascadeSlices;

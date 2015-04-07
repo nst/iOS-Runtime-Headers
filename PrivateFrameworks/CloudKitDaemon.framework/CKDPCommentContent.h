@@ -5,10 +5,10 @@
 @class NSData;
 
 @interface CKDPCommentContent : PBCodable <NSCopying> {
-    struct { 
-        unsigned int encrypted : 1; 
     NSData *_comment;
     BOOL _encrypted;
+    struct { 
+        unsigned int encrypted : 1; 
     } _has;
 }
 

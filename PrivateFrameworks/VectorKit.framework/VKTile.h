@@ -5,15 +5,7 @@
 @class VKTilePool;
 
 @interface VKTile : NSObject {
-    struct VKTileKey { 
-        unsigned int z; 
-        int x; 
-        int y; 
-        unsigned int pointSize; 
-    struct { 
-        double v[4][4]; 
-    struct { 
-        double v[4][4]; 
+    double _birthdate;
     struct VKCameraState { 
         struct VKPoint { 
             double x; 
@@ -25,6 +17,29 @@
         } orientation; 
         float aspectRatio; 
         float verticalFieldOfView; 
+    } _cameraState;
+    struct Matrix<double, 4, 4> { 
+        double _e[16]; 
+    } _gmInverseMatrix;
+    struct Matrix<double, 4, 4> { 
+        double _e[16]; 
+    } _gmMatrix;
+    struct Matrix<float, 4, 4> { 
+        float _e[16]; 
+    } _gmShaderMatrix;
+    struct { 
+        double v[4][4]; 
+    } _inverseMatrix;
+    struct VKTileKey { 
+        unsigned int z; 
+        int x; 
+        int y; 
+        unsigned int pointSize; 
+    } _key;
+    struct { 
+        double v[4][4]; 
+    } _matrix;
+    VKTilePool *_pool;
     union { 
         struct { 
             float m00; 
@@ -45,31 +60,16 @@
             float m33; 
         } ; 
         float m[16]; 
+    } _shaderMatrix;
+    struct shared_ptr<ggl::Tile::ViewUniformData> { 
+        struct ViewUniformData {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _viewUniformData;
     struct { 
         double x0; 
         double x1; 
         double y0; 
         double y1; 
-    struct Matrix<double, 4, 4> { 
-        double _e[16]; 
-    struct Matrix<double, 4, 4> { 
-        double _e[16]; 
-    struct Matrix<float, 4, 4> { 
-        float _e[16]; 
-    struct shared_ptr<ggl::Tile::ViewUniformData> { 
-        struct ViewUniformData {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    double _birthdate;
-    } _cameraState;
-    } _gmInverseMatrix;
-    } _gmMatrix;
-    } _gmShaderMatrix;
-    } _inverseMatrix;
-    } _key;
-    } _matrix;
-    VKTilePool *_pool;
-    } _shaderMatrix;
-    } _viewUniformData;
     } bounds;
 }
 

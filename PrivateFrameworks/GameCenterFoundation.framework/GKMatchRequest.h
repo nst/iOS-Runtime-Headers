@@ -10,8 +10,16 @@
 
 @interface GKMatchRequest : NSObject {
     GKMatchRequestInternal *_internal;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _inviteeResponseHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _recipientResponseHandler;
+
 }
 
 @property unsigned int defaultNumberOfPlayers;

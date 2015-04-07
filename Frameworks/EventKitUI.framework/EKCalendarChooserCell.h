@@ -31,8 +31,8 @@
 - (void)setContentAlpha:(float)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShouldAnimate:(BOOL)arg1;
-- (void)setShowCheckmarksOnLeft:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowCheckmarksOnLeft:(BOOL)arg1;
+- (void)setShowCheckmarksOnLeft:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsColorDot:(BOOL)arg1;
 - (BOOL)shouldAnimate;
 - (BOOL)showCheckmarksOnLeft;

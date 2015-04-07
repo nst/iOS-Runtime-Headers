@@ -11,9 +11,17 @@
 @interface SPXPCConnection : NSObject {
     NSObject<OS_xpc_object> *_conn;
     id _context;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _disconnectHandler;
+
     NSObject<OS_dispatch_queue> *_eventQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _messageHandler;
+
     NSMutableSet *_outstandingMessages;
     BOOL _ownsQueue;
     int _timeoutDisabled;
@@ -38,8 +46,8 @@
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
 - (id)initWithXPCConnection:(id)arg1;
 - (id)messageHandler;
-- (void)sendMessage:(id)arg1 withReply:(id)arg2;
 - (void)sendMessage:(id)arg1;
+- (void)sendMessage:(id)arg1 withReply:(id)arg2;
 - (id)serviceName;
 - (void)setContext:(id)arg1;
 - (void)setDisconnectHandler:(id)arg1;

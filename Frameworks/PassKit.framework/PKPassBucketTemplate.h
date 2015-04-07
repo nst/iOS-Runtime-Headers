@@ -5,6 +5,7 @@
 @class NSMutableArray, PKPassFieldTemplate;
 
 @interface PKPassBucketTemplate : NSObject {
+    int _bucketAlignment;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +15,6 @@
             float width; 
             float height; 
         } size; 
-    int _bucketAlignment;
     } _bucketRect;
     PKPassFieldTemplate *_defaultFieldTemplate;
     NSMutableArray *_fieldTemplates;

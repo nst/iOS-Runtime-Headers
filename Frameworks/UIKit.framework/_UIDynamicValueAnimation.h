@@ -10,7 +10,11 @@
 
 @interface _UIDynamicValueAnimation : _UIDynamicAnimation {
     NSMutableArray *_activeValues;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _applier;
+
     double _decelerationFactor;
     double _decelerationLnFactor;
     double _friction;
@@ -19,7 +23,11 @@
     double _unitSize;
     double _value;
     double _velocity;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _viewApplier;
+
 }
 
 @property(copy) NSArray * activeValues;
@@ -47,8 +55,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)removeActiveValue:(id)arg1;
 - (void)runWithCompletion:(id)arg1;
-- (void)runWithValueApplier:(id)arg1 completion:(id)arg2 forScreen:(id)arg3 runLoopMode:(id)arg4;
 - (void)runWithValueApplier:(id)arg1 completion:(id)arg2;
+- (void)runWithValueApplier:(id)arg1 completion:(id)arg2 forScreen:(id)arg3 runLoopMode:(id)arg4;
 - (void)setActiveValues:(id)arg1;
 - (void)setFriction:(double)arg1;
 - (void)setValue:(double)arg1;

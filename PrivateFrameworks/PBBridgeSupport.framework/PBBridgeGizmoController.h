@@ -9,20 +9,40 @@
 @class <PBBridgeConnectionDelegate>, NSString, NSTimer, UIAlertView;
 
 @interface PBBridgeGizmoController : PBBridgeIDSServiceDelegate <IDSServiceDelegate, PBBridgeGizmoProtocol> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _activationCompletion;
+
     unsigned short _activationState;
     NSTimer *_activationTimeout;
     BOOL _canBeginActivation;
     UIAlertView *_confirmationAlert;
     <PBBridgeConnectionDelegate> *_delegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _enableSiriCompletion;
+
     NSString *_internalLastSendMessageID;
     NSString *_languageIdentifer;
     BOOL _readyToCreatePasscode;
     NSString *_regionIdentifer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _siriStateCompletion;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateLanguageCompletion;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _updateRegionCompletion;
+
 }
 
 @property(copy) id activationCompletion;
@@ -53,8 +73,8 @@
 - (BOOL)_sendResponseToMessage:(id)arg1 withResponseMessageID:(unsigned short)arg2 withArguments:(id)arg3;
 - (id)activationCompletion;
 - (unsigned short)activationState;
-- (void)activationTimeout:(id)arg1;
 - (id)activationTimeout;
+- (void)activationTimeout:(id)arg1;
 - (void)beganAwaitingAbilityToActivate;
 - (BOOL)canBeginActivation;
 - (void)companionBecameAvailableWantsConfirmation:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class GQDSStyle, GQDSStylesheet, NSString;
 
-@interface GQPStyleReader : NSObject <GQPObjectReader, GQPObjectHandler> {
+@interface GQPStyleReader : NSObject <GQPObjectHandler, GQPObjectReader> {
     int mCurrentProperty;
     struct __CFArray { } *mEntries;
     char *mIdentifier;

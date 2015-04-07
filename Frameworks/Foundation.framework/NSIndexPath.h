@@ -37,8 +37,8 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)getIndexes:(unsigned int*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getIndexes:(unsigned int*)arg1;
+- (void)getIndexes:(unsigned int*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)hash;
 - (unsigned int)indexAtPosition:(unsigned int)arg1;
 - (id)indexPathByAddingIndex:(unsigned int)arg1;

@@ -5,17 +5,17 @@
 @class UIImage;
 
 @interface BLRepairLayerStack : BLBaseLayerStack {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     UIImage *_analysisImage;
     int _mode;
     UIImage *_redEyeSourceImage;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _redEyeSourceSize;
     UIImage *_repairSourceImage;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _repairSourceSize;
     UIImage *_sourceImage;
 }

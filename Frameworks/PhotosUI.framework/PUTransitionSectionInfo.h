@@ -5,10 +5,10 @@
 @class NSArray, NSIndexPath, NSIndexSet;
 
 @interface PUTransitionSectionInfo : NSObject {
+    NSIndexPath *_anchorRealPath;
     struct PUGridCoordinates { 
         int row; 
         int column; 
-    NSIndexPath *_anchorRealPath;
     } _anchorShiftOffset;
     int _contiguousRows;
     int _transitionSection;

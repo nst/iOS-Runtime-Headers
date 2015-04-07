@@ -10,7 +10,11 @@
 
 @interface HKAnchoredObjectQuery : HKQuery {
     NSNumber *_anchor;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     unsigned int _limit;
 }
 

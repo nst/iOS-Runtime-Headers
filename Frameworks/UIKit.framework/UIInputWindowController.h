@@ -8,44 +8,16 @@
 
 @class <_UIRemoteKeyboardControllerDelegate>, CADisplayLink, NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSString, UIInputViewController, UIInputViewPlacementTransition, UIInputViewSet, UIInputViewSetNotificationInfo, UIInputViewSetPlacement, UIKBInputBackdropView, UIPanGestureRecognizer, UIScrollView, UIView;
 
-@interface UIInputWindowController : UIViewController <UIScrollViewIntersectionDelegate, UIKeyboardKeyplaneTransitionDelegate, UIGestureRecognizerDelegate, UIInputViewAnimationHost, _UIRemoteKeyboardViewSource> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+@interface UIInputWindowController : UIViewController <UIGestureRecognizerDelegate, UIInputViewAnimationHost, UIKeyboardKeyplaneTransitionDelegate, UIScrollViewIntersectionDelegate, _UIRemoteKeyboardViewSource> {
     NSMutableDictionary *_accessoryBackdropViewEdgeConstraints;
     NSMutableDictionary *_accessoryViewEdgeConstraints;
     NSLayoutConstraint *_accessoryViewHeightConstraint;
     NSMutableArray *_animationStyleStack;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _bounceCompletionBlock;
+
     <_UIRemoteKeyboardControllerDelegate> *_controllerDelegate;
     UIInputViewPlacementTransition *_currentTransition;
     BOOL _didOverridePreLayoutHostViewFrame;
@@ -74,10 +46,39 @@
     UIInputViewSetPlacement *_placement;
     UIInputViewSet *_postRotationInputViewSet;
     UIInputViewSetPlacement *_postRotationPlacement;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _preLayoutHostViewFrame;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _preRotationInputAccessoryViewSize;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _preRotationInputAccessoryViewTransform;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _preRotationInputViewSize;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _preRotationInputViewTransform;
     UIView *_preRotationSnapshot;
     BOOL _requiresConstraintUpdate;
@@ -86,6 +87,9 @@
     UIInputViewSetNotificationInfo *_scrollViewNotificationInfo;
     BOOL _scrollViewShowsHorizontalScrollIndicator;
     BOOL _scrollViewTransitionFinishing;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _scrollViewTransitionPreviousPoint;
     BOOL _shouldNotifyRemoteKeyboards;
     BOOL _splitLockState;
@@ -219,8 +223,8 @@
 - (void)setInputViewSet:(id)arg1;
 - (void)setInputViewsHidden:(BOOL)arg1;
 - (void)setInterfaceAutorotationDisabled:(BOOL)arg1;
-- (void)setPlacement:(id)arg1 starting:(id)arg2 completion:(id)arg3;
 - (void)setPlacement:(id)arg1;
+- (void)setPlacement:(id)arg1 starting:(id)arg2 completion:(id)arg3;
 - (void)setPostRotationInputViewSet:(id)arg1;
 - (void)setPostRotationPlacement:(id)arg1;
 - (void)setRotationAwarePlacement:(id)arg1;

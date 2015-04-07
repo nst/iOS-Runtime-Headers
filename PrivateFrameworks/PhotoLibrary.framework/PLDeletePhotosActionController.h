@@ -14,12 +14,20 @@
     int _actionSheetStyle;
     NSArray *_additionalAssetsToDelete;
     NSArray *_assets;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
+
     BOOL _handlesDuplicates;
     BOOL _needsOnetimeConfirmationSheet;
     UIAlertView *_onetimeConfirmationSheet;
     PLPhotoLibrary *_photoLibrary;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _willDeleteHandler;
+
 }
 
 @property(readonly) int action;

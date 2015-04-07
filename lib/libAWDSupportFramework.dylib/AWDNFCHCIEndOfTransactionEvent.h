@@ -5,6 +5,12 @@
 @class NSData;
 
 @interface AWDNFCHCIEndOfTransactionEvent : PBCodable <NSCopying> {
+    NSData *_aid;
+    NSData *_cdi;
+    unsigned int _command;
+    unsigned int _commandStatus;
+    unsigned int _currencyCode;
+    unsigned int _cvm;
     struct { 
         unsigned int iad : 1; 
         unsigned int timeDeltaFromReference : 1; 
@@ -18,12 +24,6 @@
         unsigned int msc : 1; 
         unsigned int transactionStatus : 1; 
         unsigned int version : 1; 
-    NSData *_aid;
-    NSData *_cdi;
-    unsigned int _command;
-    unsigned int _commandStatus;
-    unsigned int _currencyCode;
-    unsigned int _cvm;
     } _has;
     unsigned long long _iad;
     unsigned int _informative;

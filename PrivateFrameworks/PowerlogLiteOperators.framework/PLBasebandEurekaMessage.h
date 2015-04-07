@@ -35,8 +35,8 @@
 - (id)estCauseLTE:(char *)arg1;
 - (id)establishmentCauseStringWCDMA:(char *)arg1;
 - (unsigned int)eventCode;
-- (id)eventCodeString:(unsigned int)arg1;
 - (id)eventCodeString;
+- (id)eventCodeString:(unsigned int)arg1;
 - (id)eventStringACC:(char *)arg1;
 - (id)eventStringOOS:(char *)arg1;
 - (id)eventStringSystemSelection;

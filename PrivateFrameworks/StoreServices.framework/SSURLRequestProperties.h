@@ -8,7 +8,7 @@
 
 @class NSArray, NSData, NSDictionary, NSInputStream, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
-@interface SSURLRequestProperties : NSObject <SSXPCCoding, NSCoding, NSCopying, NSMutableCopying> {
+@interface SSURLRequestProperties : NSObject <NSCoding, NSCopying, NSMutableCopying, SSXPCCoding> {
     int _allowedRetryCount;
     BOOL _allowsBootstrapCellularData;
     unsigned int _cachePolicy;
@@ -37,7 +37,11 @@
     double _timeoutInterval;
     NSString *_urlBagKey;
     int _urlBagType;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _urlBagURLBlock;
+
     NSArray *_urls;
     NSArray *_userAgentComponents;
 }

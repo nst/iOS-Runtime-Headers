@@ -21,10 +21,10 @@
 - (int)changeCount;
 - (id)color;
 - (id)colors;
-- (BOOL)containsPasteboardTypes:(id)arg1 inItemSet:(id)arg2;
 - (BOOL)containsPasteboardTypes:(id)arg1;
-- (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
+- (BOOL)containsPasteboardTypes:(id)arg1 inItemSet:(id)arg2;
 - (id)dataForPasteboardType:(id)arg1;
+- (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (id)image;
 - (id)images;
 - (id)itemSetWithPasteboardTypes:(id)arg1;

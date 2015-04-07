@@ -5,21 +5,21 @@
 @class NSAttributedString, NSMutableArray, NSPointerArray, NSString, UILabel, UIView;
 
 @interface PUSearchResultsContentView : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     NSAttributedString *_attributedTitle;
     NSString *_auxSubtitle;
     UILabel *_auxSubtitleLabel;
     float _clippingOffsetY;
     UIView *_clippingView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInsets;
     float _draggingOffsetX;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _imageSize;
     NSMutableArray *_imageViews;
     NSPointerArray *_images;

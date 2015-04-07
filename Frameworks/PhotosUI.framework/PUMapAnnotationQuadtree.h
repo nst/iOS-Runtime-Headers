@@ -29,8 +29,8 @@
 - (void)_collectLeafAnnotations:(id)arg1;
 - (void)_contributeAnnotations:(id)arg1;
 - (void)_freeCachedMemory;
-- (void)addAnnotation:(id)arg1 withCoordinate:(struct { double x1; double x2; })arg2 quantizedX:(unsigned int)arg3 quantizedY:(unsigned int)arg4;
 - (void)addAnnotation:(id)arg1;
+- (void)addAnnotation:(id)arg1 withCoordinate:(struct { double x1; double x2; })arg2 quantizedX:(unsigned int)arg3 quantizedY:(unsigned int)arg4;
 - (void)applicationDidReceiveMemoryWarning:(id)arg1;
 - (void)collectAnnotations:(id)arg1 atTreeLevel:(unsigned int)arg2 minCoordinate:(struct { double x1; double x2; })arg3 maxCoordinate:(struct { double x1; double x2; })arg4 updateId:(int)arg5 referenceId:(int*)arg6;
 - (id)dataSource;
@@ -38,8 +38,8 @@
 - (void)getMinCoordinate:(struct { double x1; double x2; }*)arg1 maxCoordinate:(struct { double x1; double x2; }*)arg2;
 - (id)initWithTreeLevel:(unsigned int)arg1 quantizedX:(unsigned int)arg2 quantizedY:(unsigned int)arg3;
 - (id)nextLevelForQuantizedX:(unsigned int)arg1 quantizedY:(unsigned int)arg2 createIfMissing:(BOOL)arg3;
-- (BOOL)removeAnnotation:(id)arg1 withCoordinate:(struct { double x1; double x2; })arg2 quantizedX:(unsigned int)arg3 quantizedY:(unsigned int)arg4;
 - (void)removeAnnotation:(id)arg1;
+- (BOOL)removeAnnotation:(id)arg1 withCoordinate:(struct { double x1; double x2; })arg2 quantizedX:(unsigned int)arg3 quantizedY:(unsigned int)arg4;
 - (void)setDataSource:(id)arg1;
 
 @end

@@ -3,6 +3,18 @@
  */
 
 @interface AWDWifiLinkQualityRecord : PBCodable <NSCopying> {
+    unsigned int _arpFailureCount;
+    unsigned int _bcnPerSign;
+    unsigned int _bcnRcvs;
+    unsigned int _bcnSched;
+    unsigned int _dnsServersImpacted;
+    unsigned int _dnsServersTotal;
+    unsigned int _fwTxFail;
+    unsigned int _fwTxFrames;
+    unsigned int _fwTxPerSign;
+    unsigned int _fwTxRetrans;
+    double _gateOpenTime;
+    unsigned int _gwArpExpiry;
     struct { 
         unsigned int gateOpenTime : 1; 
         unsigned int trafficWatchDuration : 1; 
@@ -32,18 +44,6 @@
         unsigned int usrImpact : 1; 
         unsigned int usrInput : 1; 
         unsigned int validState : 1; 
-    unsigned int _arpFailureCount;
-    unsigned int _bcnPerSign;
-    unsigned int _bcnRcvs;
-    unsigned int _bcnSched;
-    unsigned int _dnsServersImpacted;
-    unsigned int _dnsServersTotal;
-    unsigned int _fwTxFail;
-    unsigned int _fwTxFrames;
-    unsigned int _fwTxPerSign;
-    unsigned int _fwTxRetrans;
-    double _gateOpenTime;
-    unsigned int _gwArpExpiry;
     } _has;
     unsigned int _netScore;
     int _rssi;

@@ -18,8 +18,8 @@
 - (void)writeBigEndianFixed16:(unsigned short)arg1;
 - (void)writeBigEndianFixed32:(unsigned int)arg1;
 - (void)writeBigEndianShortThenString:(id)arg1;
-- (void)writeData:(id)arg1 forTag:(unsigned short)arg2;
 - (BOOL)writeData:(id)arg1;
+- (void)writeData:(id)arg1 forTag:(unsigned short)arg2;
 - (void)writeDouble:(double)arg1 forTag:(unsigned short)arg2;
 - (void)writeFixed32:(unsigned int)arg1 forTag:(unsigned short)arg2;
 - (void)writeFixed64:(unsigned long long)arg1 forTag:(unsigned short)arg2;

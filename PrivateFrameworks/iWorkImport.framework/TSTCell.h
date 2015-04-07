@@ -9,6 +9,8 @@
 @class <TSUMultipleChoiceListChoiceProviding>, NSString, TSDCommentStorage, TSTCellStyle, TSTConditionalStyleSet, TSTImportWarningSet, TSTRichTextPayload, TSUFormatObject, TSWPParagraphStyle, TSWPStorage;
 
 @interface TSTCell : NSObject <NSCopying> {
+
+  /* Error parsing encoded ivar type info: {?="mUnused"b8"mValueType"b8"mCellFlags"b16"mValue"(?="mDouble"d"mString"{?="mID"I"mString"@"NSString"}"mDate"@"NSDate")"mCellStyleID"I"mCellStyle"@"TSTCellStyle""mTextStyleID"I"mTextStyle"@"TSWPParagraphStyle""mConditionalStyleSetID"I"mConditionalStyleSet"@"TSTConditionalStyleSet""mConditionalAppliedRule"C"mFormulaID"I"mFormula"^{TSCEFormula}"mFormulaErrorID"I"mFormulaError"@"TSWPStorage""mRichTextPayloadID"I"mRichTextPayload"@"TSTRichTextPayload""mCommentStorageID"I"mCommentStorage"@"TSDCommentStorage""mImportWarningSetID"I"mImportWarningSet"@"TSTImportWarningSet""mCellFormats"{?="mExplicitFormatFlags"b16"mCurrentCellFormatID"I"mCurrentCellFormat"{?="mFormatType"i""(?="mNumberFormatStruct"{?="mCurrencyCodeIndex"b16"mDecimalPlaces"b8"mNegativeStyle"b3"mShowThousandsSeparator"b1"mUseAccountingStyle"b1}"mFractionFormatStruct"{?="mFractionAccuracy"b8}"mBaseFormatStruct"{?="mBase"b8"mBasePlaces"b8"mBaseUseMinusSign"b1}"mDateFormatStruct"{?="mSuppressDateFormat"b1"mSuppressTimeFormat"b1"mDateTimeFormat"@"NSString"}"mDurationFormatStruct"{?="mUseAutomaticUnits"b1"mDurationUnitSmallest"i"mDurationUnitLargest"i"mDurationStyle"i}"mCustomFormatStruct"{?="mCustomFormatID"I"mData"^{?}}"mControlFormatStruct"{?="mMinimum"d"mMaximum"d"mIncrement"d"mDisplayFormatType"i"mOrientation"b2"mPosition"b2}"mMultipleChoiceListFormatStruct"{?="mInitialValue"i"mMultipleChoiceListFormatID"I"mData"@"<TSUMultipleChoiceListChoiceProviding>"})}"mNumberFormatID"I"mNumberFormatRef"@"TSUFormatObject""mCurrencyFormatID"I"mCurrencyFormatRef"@"TSUFormatObject""mDurationFormatID"I"mDurationFormatRef"@"TSUFormatObject""mDateFormatID"I"mDateFormatRef"@"TSUFormatObject""mControlFormatID"I"mControlFormatRef"@"TSUFormatObject""mCustomFormatID"I"mCustomFormatRef"@"TSUFormatObject""mBaseFormatID"I"mBaseFormatRef"@"TSUFormatObject""mMultipleChoiceListFormatID"I"mMultipleChoiceListFormatRef"@"TSUFormatObject"}"mStrokePresetNumber"C} */
     struct { 
         unsigned int mUnused : 8; 
         unsigned int mValueType : 8; 
@@ -109,19 +111,20 @@
             unsigned char mStrokePresetNumber; 
         } mValue; 
     } mPrivate;
+
 }
 
 + (id)cell;
 
 - (id).cxx_construct;
 - (id)applyCellDiff:(id)arg1;
-- (void)applyFormulaResult:(const struct TSCEValue { unsigned int x1[68]; int x2; }*)arg1 context:(id)arg2 hasWarnings:(BOOL)arg3 outWriteDidBeginOrEndWithTextCell:(BOOL*)arg4;
 - (void)applyFormulaResult:(const struct TSCEValue { unsigned int x1[68]; int x2; }*)arg1;
+- (void)applyFormulaResult:(const struct TSCEValue { unsigned int x1[68]; int x2; }*)arg1 context:(id)arg2 hasWarnings:(BOOL)arg3 outWriteDidBeginOrEndWithTextCell:(BOOL*)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)inflateFromStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2 suppressingFormulaInflation:(BOOL)arg3;
 - (void)inflateFromStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2;
+- (void)inflateFromStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2 suppressingFormulaInflation:(BOOL)arg3;
 - (id)init;
 - (id)initWithCell:(id)arg1;
 - (id)initWithStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2;

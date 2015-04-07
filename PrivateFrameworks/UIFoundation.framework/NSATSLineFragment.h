@@ -8,18 +8,18 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+    } _characterRange;
+    long _elasticCharIndex;
+    float _elasticRangeWidth;
     struct { 
         unsigned int _directionState : 2; 
         unsigned int _drawsOutside : 1; 
         unsigned int _isLineArray : 1; 
         unsigned int _reserved : 28; 
-    } _characterRange;
-    long _elasticCharIndex;
-    float _elasticRangeWidth;
     } _flags;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _glyphRange;
     unsigned int _hyphenGlyph;
     float _hyphenGlyphWidth;

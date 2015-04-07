@@ -4,7 +4,7 @@
 
 @class NSDate;
 
-@interface _HKTimePeriod : NSObject <NSSecureCoding, NSCopying> {
+@interface _HKTimePeriod : NSObject <NSCopying, NSSecureCoding> {
     NSDate *_endDate;
     NSDate *_startDate;
 }

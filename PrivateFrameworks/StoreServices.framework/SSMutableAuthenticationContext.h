@@ -4,7 +4,7 @@
 
 @class NSArray, NSDictionary, NSNumber, NSString;
 
-@interface SSMutableAuthenticationContext : SSAuthenticationContext <SSXPCCoding, NSCopying, NSMutableCopying> {
+@interface SSMutableAuthenticationContext : SSAuthenticationContext <NSCopying, NSMutableCopying, SSXPCCoding> {
 }
 
 @property(copy) NSDictionary * HTTPHeaders;

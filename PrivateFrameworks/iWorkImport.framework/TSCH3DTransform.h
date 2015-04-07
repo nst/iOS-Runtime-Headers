@@ -19,43 +19,8 @@
             float b; 
             float p; 
         } ; 
-    struct tvec3<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-        union { 
-            float z; 
-            float b; 
-            float p; 
-        } ; 
-    struct tquat<float> { 
-        float x; 
-        float y; 
-        float z; 
-        float w; 
-    struct tvec3<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-        union { 
-            float z; 
-            float b; 
-            float p; 
-        } ; 
+    } mCenter;
+    BOOL mDirty;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -79,11 +44,46 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mCenter;
-    BOOL mDirty;
     } mMatrix;
+    struct tquat<float> { 
+        float x; 
+        float y; 
+        float z; 
+        float w; 
     } mRotation;
+    struct tvec3<float> { 
+        union { 
+            float x; 
+            float r; 
+            float s; 
+        } ; 
+        union { 
+            float y; 
+            float g; 
+            float t; 
+        } ; 
+        union { 
+            float z; 
+            float b; 
+            float p; 
+        } ; 
     } mScaleFactor;
+    struct tvec3<float> { 
+        union { 
+            float x; 
+            float r; 
+            float s; 
+        } ; 
+        union { 
+            float y; 
+            float g; 
+            float t; 
+        } ; 
+        union { 
+            float z; 
+            float b; 
+            float p; 
+        } ; 
     } mTranslation;
 }
 
@@ -95,7 +95,7 @@
 + (id)transform;
 
 - (id).cxx_construct;
-- (struct Transform { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; } x2; struct tquat<float> { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_4_1_3; } x4; boolx5; })asTSCH3DCPPTransform;
+- (struct Transform { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; } x2; struct tquat<float> { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_4_1_3; } x4; bool x5; })asTSCH3DCPPTransform;
 - (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })center;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;

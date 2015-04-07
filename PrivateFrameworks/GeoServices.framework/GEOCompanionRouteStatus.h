@@ -5,6 +5,10 @@
 @class GEOLatLng, GEOLocation, NSData;
 
 @interface GEOCompanionRouteStatus : PBCodable <NSCopying> {
+    unsigned int _distanceRemainingOnRoute;
+    unsigned int _distanceToManeuver;
+    unsigned int _distanceToRoute;
+    int _feedbackType;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int distanceRemainingOnRoute : 1; 
@@ -15,10 +19,6 @@
         unsigned int routeLocationIndex : 1; 
         unsigned int routeLocationOffset : 1; 
         unsigned int stepID : 1; 
-    unsigned int _distanceRemainingOnRoute;
-    unsigned int _distanceToManeuver;
-    unsigned int _distanceToRoute;
-    int _feedbackType;
     } _has;
     GEOLocation *_location;
     unsigned int _remainingTime;

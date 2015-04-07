@@ -4,16 +4,7 @@
 
 @class <UITabBarControllerDelegate>, <UITabBarControllerDelegate><UITabBarControllerDelegate_Private>, <UIViewControllerAnimatedTransitioning>, <UIViewControllerInteractiveTransitioning>, NSArray, NSMutableArray, NSString, UIMoreNavigationController, UINavigationController, UITabBar, UITapGestureRecognizer, UIView, UIViewController;
 
-@interface UITabBarController : UIViewController <UIGestureRecognizerDelegate, UITabBarDelegate, NSCoding, GKContentRefresh, GKURLHandling> {
-    struct { 
-        unsigned int isShowingMoreItem : 1; 
-        unsigned int needsToRebuildItems : 1; 
-        unsigned int isBarHidden : 1; 
-        unsigned int editButtonOnLeft : 1; 
-        unsigned int barLayoutIsValid : 1; 
-        unsigned int reselectTab : 1; 
-        unsigned int delegateSupportedInterfaceOrientations : 1; 
-        unsigned int delegatePreferredInterfaceOrientationForPresentation : 1; 
+@interface UITabBarController : UIViewController <GKContentRefresh, GKURLHandling, NSCoding, UIGestureRecognizerDelegate, UITabBarDelegate> {
     <UIViewControllerAnimatedTransitioning> *__animator;
     NSString *__backdropGroupName;
     <UIViewControllerInteractiveTransitioning> *__interactor;
@@ -30,6 +21,15 @@
     UIViewController *_selectedViewController;
     UIViewController *_selectedViewControllerDuringWillAppear;
     UITabBar *_tabBar;
+    struct { 
+        unsigned int isShowingMoreItem : 1; 
+        unsigned int needsToRebuildItems : 1; 
+        unsigned int isBarHidden : 1; 
+        unsigned int editButtonOnLeft : 1; 
+        unsigned int barLayoutIsValid : 1; 
+        unsigned int reselectTab : 1; 
+        unsigned int delegateSupportedInterfaceOrientations : 1; 
+        unsigned int delegatePreferredInterfaceOrientationForPresentation : 1; 
     } _tabBarControllerFlags;
     id _tabBarItemsToViewControllers;
     int _tabBarPosition;
@@ -43,17 +43,13 @@
 @property(setter=_setInteractor:,retain) <UIViewControllerInteractiveTransitioning> * _interactor;
 @property(copy) NSArray * customizableViewControllers;
 @property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * debugDescription;
 @property <UITabBarControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
 @property(readonly) unsigned int hash;
 @property NSMutableArray * moreChildViewControllers;
 @property(readonly) UINavigationController * moreNavigationController;
 @property unsigned int selectedIndex;
 @property UIViewController * selectedViewController;
-@property(readonly) Class superclass;
 @property(readonly) Class superclass;
 @property(readonly) UITabBar * tabBar;
 @property(copy) NSArray * viewControllers;
@@ -178,25 +174,25 @@
 - (void)setSelectedViewController:(id)arg1;
 - (void)setShowsEditButtonOnLeft:(BOOL)arg1;
 - (void)setTabBar:(id)arg1;
-- (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setTransientViewController:(id)arg1;
+- (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setView:(id)arg1;
-- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)setViewControllers:(id)arg1;
+- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showBarWithTransition:(int)arg1;
 - (BOOL)showsEditButtonOnLeft;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (unsigned int)supportedInterfaceOrientations;
+- (id)tabBar;
 - (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
 - (void)tabBar:(id)arg1 willBeginCustomizingItems:(id)arg2;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
-- (id)tabBar;
 - (void)tabBarSizingDidChange:(id)arg1;
 - (id)transientViewController;
 - (id)transitionCoordinator;
-- (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2 transition:(int)arg3 shouldSetSelected:(BOOL)arg4;
 - (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2;
+- (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2 transition:(int)arg3 shouldSetSelected:(BOOL)arg4;
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (void)updateTabBarItemForViewController:(id)arg1;
 - (id)viewControllers;

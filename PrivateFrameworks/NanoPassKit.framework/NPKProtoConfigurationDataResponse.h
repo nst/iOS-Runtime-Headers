@@ -5,9 +5,9 @@
 @class NSData;
 
 @interface NPKProtoConfigurationDataResponse : PBCodable <NSCopying> {
+    NSData *_configurationDataBytes;
     struct { 
         unsigned int pending : 1; 
-    NSData *_configurationDataBytes;
     } _has;
     BOOL _pending;
 }

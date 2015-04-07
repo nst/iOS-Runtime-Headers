@@ -5,8 +5,8 @@
 @class MFMimePart;
 
 @interface MFMimeBody : MFMessageBody {
-    unsigned int _preferredAlternative : 16;
     unsigned int _numAlternatives : 16;
+    unsigned int _preferredAlternative : 16;
     MFMimePart *_topLevelPart;
 }
 

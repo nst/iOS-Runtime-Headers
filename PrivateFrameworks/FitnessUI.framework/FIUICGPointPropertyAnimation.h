@@ -6,14 +6,14 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     } _currentValue;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _endValue;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _startValue;
 }
 

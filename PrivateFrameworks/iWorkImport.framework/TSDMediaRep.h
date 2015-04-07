@@ -5,6 +5,9 @@
 @class CALayer, CAShapeLayer, TSDFrameRep, TSDMediaInfo, TSDMediaLayout;
 
 @interface TSDMediaRep : TSDStyledRep {
+    CALayer *mFrameMaskLayer;
+    TSDFrameRep *mFrameRep;
+    BOOL mIsZooming;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,9 +17,6 @@
             float width; 
             float height; 
         } size; 
-    CALayer *mFrameMaskLayer;
-    TSDFrameRep *mFrameRep;
-    BOOL mIsZooming;
     } mLastPictureFrameLayerRect;
     CAShapeLayer *mMaskLayer;
     CAShapeLayer *mStrokeLayer;

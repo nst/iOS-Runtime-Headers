@@ -63,9 +63,9 @@
 - (id)previewController;
 - (int)previewMode;
 - (id)printPageHelper;
+- (id)printPageRenderer;
 - (id)printPageRenderer:(id)arg1 pdfDataForPageAtIndex:(int)arg2 printingDone:(BOOL*)arg3;
 - (void)printPageRenderer:(id)arg1 prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)printPageRenderer;
 - (void)refreshCurrentPreviewItem;
 - (void)scrubToValue:(double)arg1;
 - (void)setBlockRemoteImages:(BOOL)arg1;

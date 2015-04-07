@@ -4,7 +4,7 @@
 
 @class NSString, SKUINavigationDocumentController, SKUISplitViewTemplateElement, UISplitViewController, UIViewController;
 
-@interface SKUISplitViewDocumentViewController : SKUIViewController <SKUINavigationDocumentDelegate, SKUIDocumentViewController> {
+@interface SKUISplitViewDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUINavigationDocumentDelegate> {
     UIViewController *_delayingPresentationViewController;
     SKUINavigationDocumentController *_leftNavigationDocumentController;
     SKUINavigationDocumentController *_rightNavigationDocumentController;

@@ -5,10 +5,19 @@
 @class TSTCell, TSTLayoutContentCachedKey, TSWPColumn;
 
 @interface TSTCellStateForLayout : NSObject {
-    struct { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
+    TSTCell *mCell;
+    id mCellContents;
+    BOOL mCellPropsRowHeight;
+    BOOL mCellWraps;
+    BOOL mForDrawing;
+    BOOL mInDynamicLayout;
+    TSTLayoutContentCachedKey *mKeyVal;
+    int mLayoutCacheFlags;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } mMaxSize;
+    float mMaxWidthForChildren;
     struct { 
         struct { 
             unsigned short row; 
@@ -19,30 +28,21 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
+    } mMergedRange;
     struct CGSize { 
         float width; 
         float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    } mMinSize;
+    struct { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
+    } mModelCellID;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    TSTCell *mCell;
-    id mCellContents;
-    BOOL mCellPropsRowHeight;
-    BOOL mCellWraps;
-    BOOL mForDrawing;
-    BOOL mInDynamicLayout;
-    TSTLayoutContentCachedKey *mKeyVal;
-    int mLayoutCacheFlags;
-    } mMaxSize;
-    float mMaxWidthForChildren;
-    } mMergedRange;
-    } mMinSize;
-    } mModelCellID;
     } mPaddingInsets;
     unsigned int mPageCount;
     unsigned int mPageNumber;

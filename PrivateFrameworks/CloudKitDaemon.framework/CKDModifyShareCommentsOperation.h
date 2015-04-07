@@ -11,8 +11,16 @@
 @interface CKDModifyShareCommentsOperation : CKDOperation {
     NSArray *_commentIDsToDelete;
     NSArray *_commentsToSave;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _deleteCompletionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _saveCompletionBlock;
+
     CKShareID *_shareID;
 }
 

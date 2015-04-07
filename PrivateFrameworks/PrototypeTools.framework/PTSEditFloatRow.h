@@ -10,8 +10,8 @@
 
 - (id)between:(float)arg1 and:(float)arg2;
 - (id)init;
-- (id)precision:(unsigned int)arg1;
 - (unsigned int)precision;
+- (id)precision:(unsigned int)arg1;
 - (Class)rowTableViewCellClass;
 - (void)setPrecision:(unsigned int)arg1;
 - (void)updateWithRow:(id)arg1;

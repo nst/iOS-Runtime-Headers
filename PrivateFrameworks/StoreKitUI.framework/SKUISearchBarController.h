@@ -44,8 +44,8 @@
 - (id)parentViewController;
 - (void)reloadAfterDocumentUpdate;
 - (void)resignActive:(BOOL)arg1;
-- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
+- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;

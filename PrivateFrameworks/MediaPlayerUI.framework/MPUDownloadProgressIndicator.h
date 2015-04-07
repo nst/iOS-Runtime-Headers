@@ -41,12 +41,12 @@
 - (void)layoutSubviews;
 - (void)setCanCancel:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
-- (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (void)setValue:(float)arg1;
+- (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)style;
-- (void)updateFromObserver:(id)arg1 animated:(BOOL)arg2;
 - (void)updateFromObserver:(id)arg1;
+- (void)updateFromObserver:(id)arg1 animated:(BOOL)arg2;
 - (float)value;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface PBBProtoDidFailToCreatePasscode : PBCodable <NSCopying> {
+    int _error;
     struct { 
         unsigned int error : 1; 
-    int _error;
     } _has;
 }
 

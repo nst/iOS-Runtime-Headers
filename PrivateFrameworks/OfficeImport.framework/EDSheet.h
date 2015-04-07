@@ -5,15 +5,15 @@
 @class EDColorReference, EDHeaderFooter, EDPageSetup, EDProcessors, EDString, EDWarnings, EDWorkbook, ESDContainer, NSMutableArray, OITSUPointerKeyDictionary;
 
 @interface EDSheet : OCDDelayedNode {
-    boolmDisplayFormulas;
-    boolmDisplayGridlines;
-    boolmHidden;
-    boolmIsDialogSheet;
     OITSUPointerKeyDictionary *mCommentMap;
     EDColorReference *mDefaultGridlineColorReference;
+    bool mDisplayFormulas;
+    bool mDisplayGridlines;
     NSMutableArray *mDrawables;
     ESDContainer *mEscherDrawing;
     EDHeaderFooter *mHeaderFooter;
+    bool mHidden;
+    bool mIsDialogSheet;
     EDString *mName;
     EDPageSetup *mPageSetup;
     EDProcessors *mProcessors;

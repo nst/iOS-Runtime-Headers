@@ -3,11 +3,11 @@
  */
 
 @interface RMSAddToWishlistMessage : PBCodable <NSCopying> {
+    unsigned long long _databaseID;
     struct { 
         unsigned int databaseID : 1; 
         unsigned int itemID : 1; 
         unsigned int sessionIdentifier : 1; 
-    unsigned long long _databaseID;
     } _has;
     unsigned long long _itemID;
     int _sessionIdentifier;

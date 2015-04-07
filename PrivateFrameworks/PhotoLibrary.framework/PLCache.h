@@ -5,17 +5,17 @@
 @class NSMutableDictionary;
 
 @interface PLCache : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct entryList { 
-        struct lruEntry {} *tqh_first; 
-        struct lruEntry {} **tqh_last; 
     NSMutableDictionary *_cacheEntries;
     int _countLimit;
     int _currentCost;
     int _currentCount;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } _lock;
+    struct entryList { 
+        struct lruEntry {} *tqh_first; 
+        struct lruEntry {} **tqh_last; 
     } _lru;
     int _totalCostLimit;
 }
@@ -25,7 +25,7 @@
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(int)arg3;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(int)arg3;
 
 @end

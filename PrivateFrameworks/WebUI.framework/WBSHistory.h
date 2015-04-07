@@ -55,8 +55,8 @@
 - (void)_loadHistoryAsynchronouslyIfNeeded;
 - (id)_pushThrottlerData;
 - (void)_removeAllVisitedLinks;
-- (void)_removeHistoryItemsInResponseToUserAction:(id)arg1 completionHandler:(id)arg2;
 - (void)_removeHistoryItemsInResponseToUserAction:(id)arg1;
+- (void)_removeHistoryItemsInResponseToUserAction:(id)arg1 completionHandler:(id)arg2;
 - (id)_removeItemForURLString:(id)arg1;
 - (void)_removeItemFromStringsForUserTypedDomainExpansion:(id)arg1;
 - (void)_replayAndAddTombstone:(id)arg1;
@@ -81,15 +81,15 @@
 - (unsigned int)historyAgeLimitInDays;
 - (void)historyLoader:(id)arg1 didLoadItems:(id)arg2 discardedItems:(id)arg3 stringsForUserTypeDomainExpansion:(id)arg4;
 - (void)historyLoaderDidFinishLoading:(id)arg1;
-- (void)historyStore:(id)arg1 didPrepareToDeleteWithDeletionPlan:(id)arg2;
 - (id)historyStore;
+- (void)historyStore:(id)arg1 didPrepareToDeleteWithDeletionPlan:(id)arg2;
 - (void)historyStoreDidFailDatabaseIntegrityCheck:(id)arg1;
 - (BOOL)historyStoreShouldCheckDatabaseIntegrity:(id)arg1;
 - (id)init;
 - (id)itemForURL:(id)arg1;
 - (id)itemForURLString:(id)arg1;
-- (id)itemRedirectedFrom:(id)arg1 to:(id)arg2 origin:(int)arg3 date:(id)arg4;
 - (id)itemRedirectedFrom:(id)arg1 to:(id)arg2;
+- (id)itemRedirectedFrom:(id)arg1 to:(id)arg2 origin:(int)arg3 date:(id)arg4;
 - (id)itemVisitedAtURLString:(id)arg1 title:(id)arg2 timeOfVisit:(double)arg3 wasHTTPNonGet:(BOOL)arg4 wasFailure:(BOOL)arg5 increaseVisitCount:(BOOL)arg6 origin:(int)arg7;
 - (id)itemVisitedAtURLString:(id)arg1 title:(id)arg2 wasHTTPNonGet:(BOOL)arg3 wasFailure:(BOOL)arg4 increaseVisitCount:(BOOL)arg5;
 - (unsigned int)numberOfHistoryItems;

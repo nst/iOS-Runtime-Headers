@@ -9,15 +9,28 @@
 @class <MKAnnotation>, GEORouteMatch, MKAnnotationManager, MKUserLocationAnnotationViewProxy, NSString, UICalloutView, UIImage, UIView, VKAnchorWrapper, _MKAnnotationViewAnchor;
 
 @interface MKAnnotationView : UIView <MKAnnotationRepresentation, MKLocatableObject> {
-    struct { 
-        double latitude; 
-        double longitude; 
+    _MKAnnotationViewAnchor *_anchor;
+    BOOL _animatingToCoordinate;
+    <MKAnnotation> *_annotation;
+    MKAnnotationManager *_annotationManager;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _calloutHitTest;
+
     struct CGPoint { 
         float x; 
         float y; 
+    } _calloutOffset;
+    UICalloutView *_calloutView;
     struct CGPoint { 
         float x; 
         float y; 
+    } _centerOffset;
+    BOOL _customTransformApplied;
+    UIView *_detailCalloutAccessoryView;
+    unsigned int _dragState;
+    BOOL _explicitlyHidden;
     struct { 
         unsigned int disabled : 1; 
         unsigned int selected : 1; 
@@ -26,40 +39,35 @@
         unsigned int canDisplayDisclosureInCallout : 1; 
         unsigned int canDisplayPlacemarkInCallout : 1; 
         unsigned int draggable : 1; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    _MKAnnotationViewAnchor *_anchor;
-    BOOL _animatingToCoordinate;
-    <MKAnnotation> *_annotation;
-    MKAnnotationManager *_annotationManager;
-    id _calloutHitTest;
-    } _calloutOffset;
-    UICalloutView *_calloutView;
-    } _centerOffset;
-    BOOL _customTransformApplied;
-    UIView *_detailCalloutAccessoryView;
-    unsigned int _dragState;
-    BOOL _explicitlyHidden;
     } _flags;
     BOOL _hiddenForInvalidPoint;
     BOOL _hiddenForOffscreen;
     UIImage *_image;
     BOOL _internalTransformApplied;
     UIView *_leftCalloutAccessoryView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _leftCalloutOffset;
     unsigned int _mapDisplayStyle;
     float _mapPitchRadians;
     float _mapRotationRadians;
     unsigned int _mapType;
+    struct { 
+        double latitude; 
+        double longitude; 
     } _presentationCoordinate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _presentationCoordinateChangedCallback;
+
     double _presentationCourse;
     NSString *_reuseIdentifier;
     UIView *_rightCalloutAccessoryView;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _rightCalloutOffset;
     float _rotationRadians;
     GEORouteMatch *_routeMatch;
@@ -161,8 +169,8 @@
 - (void)_setRotationRadians:(float)arg1 withAnimation:(id)arg2;
 - (void)_setRouteMatch:(id)arg1;
 - (void)_setTracking:(BOOL)arg1;
-- (void)_setZIndex:(unsigned int)arg1 notify:(BOOL)arg2;
 - (void)_setZIndex:(unsigned int)arg1;
+- (void)_setZIndex:(unsigned int)arg1 notify:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantFrame;
 - (void)_transitionFrom:(int)arg1 to:(int)arg2 duration:(double)arg3;
@@ -201,8 +209,8 @@
 - (void)setCanShowCallout:(BOOL)arg1;
 - (void)setCenterOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDetailCalloutAccessoryView:(id)arg1;
-- (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setDragState:(unsigned int)arg1;
+- (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setDraggable:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
@@ -212,8 +220,8 @@
 - (void)setLeftCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRightCalloutAccessoryView:(id)arg1;
 - (void)setRightCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)set_calloutHitTest:(id)arg1;
 
 @end

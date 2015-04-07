@@ -34,8 +34,8 @@
 - (void)performStep:(id)arg1 withOptions:(id)arg2;
 - (id)queryNextStep:(id*)arg1;
 - (BOOL)registerForIdentifier:(id)arg1 isGroupIdentifier:(BOOL)arg2;
-- (BOOL)sendMessageForCommand:(int)arg1 withOptions:(id)arg2 requiresFilter:(BOOL)arg3 replyHandler:(id)arg4;
 - (BOOL)sendMessageForCommand:(int)arg1 withOptions:(id)arg2 requiresFilter:(BOOL)arg3;
+- (BOOL)sendMessageForCommand:(int)arg1 withOptions:(id)arg2 requiresFilter:(BOOL)arg3 replyHandler:(id)arg4;
 - (BOOL)setActiveDeviceClass:(id)arg1;
 - (BOOL)setLastRemoteFindDate:(id)arg1;
 - (void)unregister;

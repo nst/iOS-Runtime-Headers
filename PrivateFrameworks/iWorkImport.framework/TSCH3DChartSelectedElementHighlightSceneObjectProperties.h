@@ -5,6 +5,7 @@
 @class TSCH3DPrefilteredLineRenderer, TSCH3Dvec3DataBuffer;
 
 @interface TSCH3DChartSelectedElementHighlightSceneObjectProperties : NSObject {
+    TSCH3Dvec3DataBuffer *edgeVertices;
     struct tvec4<float> { 
         union { 
             float x; 
@@ -26,7 +27,6 @@
             float a; 
             float q; 
         } ; 
-    TSCH3Dvec3DataBuffer *edgeVertices;
     } mColor;
     TSCH3Dvec3DataBuffer *mEdgeVertices;
     TSCH3DPrefilteredLineRenderer *mRenderer;

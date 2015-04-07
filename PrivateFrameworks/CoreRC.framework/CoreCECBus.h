@@ -5,18 +5,18 @@
 @class CoreCECDevice, NSString;
 
 @interface CoreCECBus : CoreRCBus {
-    struct CECLanguage { 
-        unsigned char characters[3]; 
+    BOOL _hasLink;
     union CECOSDName { 
         unsigned char bytes[15]; 
         struct { 
             unsigned char length; 
             unsigned char characters[14]; 
         } string; 
-    BOOL _hasLink;
     } _osdNameASCII;
     unsigned int _physicalAddress;
     unsigned int _systemAudioModeStatus;
+    struct CECLanguage { 
+        unsigned char characters[3]; 
     } _tvLanguageCodeASCII;
 }
 

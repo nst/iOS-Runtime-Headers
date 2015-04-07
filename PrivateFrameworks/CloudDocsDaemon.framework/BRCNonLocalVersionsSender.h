@@ -15,7 +15,11 @@
     NSURL *_logicalURL;
     NSURL *_physicalURL;
     <BRNonLocalVersionReceiving> *_receiver;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _reply;
+
     BRCStatInfo *_st;
     struct NSObject { Class x1; } *_storage;
     NSString *_storagePathPrefix;

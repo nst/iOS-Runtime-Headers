@@ -4,7 +4,7 @@
 
 @class <UIWebSelectedItemPrivate>, DOMHTMLSelectElement, NSArray, NSString;
 
-@interface UIWebSelectSinglePicker : UIPickerView <UIWebFormControl, UIPickerViewDataSource, UIPickerViewDelegate> {
+@interface UIWebSelectSinglePicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, UIWebFormControl> {
     int _indexToSelectWhenDone;
     NSArray *_optionItems;
     <UIWebSelectedItemPrivate> *_optionToSelectWhenDone;

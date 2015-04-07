@@ -28,8 +28,8 @@
 - (long long)limitValue;
 - (id)objectForFirstRowAndColumn;
 - (id)rows;
-- (void)setLimitProperty:(id)arg1 limitValue:(long long)arg2;
 - (void)setLimitProperty:(id)arg1;
+- (void)setLimitProperty:(id)arg1 limitValue:(long long)arg2;
 - (void)setLimitValue:(long long)arg1;
 - (id)stringValueForFirstRowAndColumn;
 

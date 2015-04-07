@@ -48,8 +48,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setHidesStatusBar:(BOOL)arg1;
 - (void)setItems:(id)arg1;
-- (void)setLastItemExpanded:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setLastItemExpanded:(BOOL)arg1;
+- (void)setLastItemExpanded:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setOffset:(float)arg1;
 - (void)setSplitViewStyle:(BOOL)arg1;
 - (void)setZeroHeightWhenFirstChildExpanded:(BOOL)arg1;

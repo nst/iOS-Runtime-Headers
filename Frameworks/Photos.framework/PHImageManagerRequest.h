@@ -14,7 +14,11 @@
     NSObject<OS_dispatch_group> *_CPLDownloadWaitGroup;
     <_PLImageLoadingAsset> *_asset;
     NSString *_assetUUID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cancellationHandler;
+
     BOOL _cancelled;
     int _cloudSharedAssetPlaceholderKind;
     NSString *_debugFilename;

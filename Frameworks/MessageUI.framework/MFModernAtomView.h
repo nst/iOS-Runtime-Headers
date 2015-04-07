@@ -103,9 +103,9 @@
 - (void)setIsPrimaryAddressAtom:(BOOL)arg1;
 - (void)setPresentationOptions:(unsigned int)arg1;
 - (void)setScale:(float)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2 style:(unsigned int)arg3;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2 style:(unsigned int)arg3;
 - (void)setSeparatorHidden:(BOOL)arg1;
 - (void)setSeparatorIsLeftAligned:(BOOL)arg1;
 - (void)setSeparatorStyle:(int)arg1;

@@ -5,6 +5,7 @@
 @class NSData, NSString, SPProtoCacheMessage;
 
 @interface SPProtoSockPuppetObject : PBCodable <NSCopying> {
+    SPProtoCacheMessage *_cacheMessage;
     struct { 
         unsigned int ndouble : 1; 
         unsigned int nint64 : 1; 
@@ -14,7 +15,6 @@
         unsigned int nuint32 : 1; 
         unsigned int subtype : 1; 
         unsigned int nbool : 1; 
-    SPProtoCacheMessage *_cacheMessage;
     } _has;
     NSString *_key;
     BOOL _nbool;

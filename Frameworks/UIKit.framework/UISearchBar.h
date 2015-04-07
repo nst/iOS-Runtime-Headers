@@ -4,12 +4,38 @@
 
 @class <UISearchBarDelegate>, <UISearchBarDelegate><UISearchBarDelegate_Private>, NSArray, NSString, UIBarButtonItem, UIButton, UIColor, UIImage, UIImageView, UILabel, UISearchBarTextField, UISearchController, UITapGestureRecognizer, UITextInputTraits, UIView, _UIBackdropView, _UISearchBarNavigationItem, _UISearchBarScopeBarBackground;
 
-@interface UISearchBar : UIView <UITextInputTraits_Private, UIStatusBarTinting, _UIBarPositioningInternal, UIBarPositioning, UITextInputTraits> {
+@interface UISearchBar : UIView <UIBarPositioning, UIStatusBarTinting, UITextInputTraits, UITextInputTraits_Private, _UIBarPositioningInternal> {
+    BOOL __forceCenteredPlaceholderLayout;
+    unsigned int __scopeBarPosition;
+    UISearchController *__searchController;
+    BOOL __transplanting;
+    UIBarButtonItem *_animatedAppearanceBarButtonItem;
+    id _appearanceStorage;
+    _UIBackdropView *_backdrop;
+    unsigned int _backdropStyle;
+    UIView *_background;
+    int _barPosition;
+    UIColor *_barTintColor;
+    UIBarButtonItem *_cancelBarButtonItem;
+    UIButton *_cancelButton;
+    NSString *_cancelButtonText;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
+    } _contentInset;
+    id _controller;
+    <UISearchBarDelegate><UISearchBarDelegate_Private> *_delegate;
+    UIView *_inputAccessoryView;
+    UIButton *_leftButton;
+    UIView *_maskView;
+    _UISearchBarNavigationItem *_navigationItem;
+    UILabel *_promptLabel;
+    UIView *_scopeBar;
+    _UISearchBarScopeBarBackground *_scopeBarBackgroundView;
+    UIView *_scopeBarContainerView;
+    NSArray *_scopes;
     struct { 
         unsigned int barStyle : 3; 
         unsigned int showsBookmarkButton : 1; 
@@ -32,32 +58,6 @@
         unsigned int centerPlaceholder : 1; 
         unsigned int searchFieldLeftViewMode : 2; 
         unsigned int cancelButtonWantsLetterpress : 1; 
-    BOOL __forceCenteredPlaceholderLayout;
-    unsigned int __scopeBarPosition;
-    UISearchController *__searchController;
-    BOOL __transplanting;
-    UIBarButtonItem *_animatedAppearanceBarButtonItem;
-    id _appearanceStorage;
-    _UIBackdropView *_backdrop;
-    unsigned int _backdropStyle;
-    UIView *_background;
-    int _barPosition;
-    UIColor *_barTintColor;
-    UIBarButtonItem *_cancelBarButtonItem;
-    UIButton *_cancelButton;
-    NSString *_cancelButtonText;
-    } _contentInset;
-    id _controller;
-    <UISearchBarDelegate><UISearchBarDelegate_Private> *_delegate;
-    UIView *_inputAccessoryView;
-    UIButton *_leftButton;
-    UIView *_maskView;
-    _UISearchBarNavigationItem *_navigationItem;
-    UILabel *_promptLabel;
-    UIView *_scopeBar;
-    _UISearchBarScopeBarBackground *_scopeBarBackgroundView;
-    UIView *_scopeBarContainerView;
-    NSArray *_scopes;
     } _searchBarFlags;
     unsigned int _searchBarStyle;
     UISearchBarTextField *_searchField;
@@ -170,8 +170,8 @@
 - (id)_glyphAndTextColor:(BOOL)arg1;
 - (BOOL)_hasCustomAutolayoutNeighborSpacing;
 - (void)_identifyBarContainer;
-- (id)_imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2 customImage:(BOOL*)arg3;
 - (id)_imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2;
+- (id)_imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2 customImage:(BOOL*)arg3;
 - (BOOL)_isAtTop;
 - (BOOL)_isEnabled;
 - (BOOL)_isInBar;
@@ -209,8 +209,8 @@
 - (void)_setBarTintColor:(id)arg1 forceUpdate:(BOOL)arg2;
 - (void)_setCancelButtonText:(id)arg1;
 - (void)_setCancelButtonWantsLetterpress;
-- (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setEnabled:(BOOL)arg1;
+- (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setMaskActive:(BOOL)arg1;
 - (void)_setMaskBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setScopeBarHidden:(BOOL)arg1;
@@ -303,9 +303,9 @@
 - (struct UIOffset { float x1; float x2; })searchTextPositionAdjustment;
 - (int)selectedScopeButtonIndex;
 - (void)sendSubviewToBack:(id)arg1;
+- (void)setBackgroundImage:(id)arg1;
 - (void)setBackgroundImage:(id)arg1 forBarMetrics:(int)arg2;
 - (void)setBackgroundImage:(id)arg1 forBarPosition:(int)arg2 barMetrics:(int)arg3;
-- (void)setBackgroundImage:(id)arg1;
 - (void)setBarStyle:(int)arg1;
 - (void)setBarTintColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -337,8 +337,8 @@
 - (void)setSearchTextPositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setSelectedScopeButtonIndex:(int)arg1;
 - (void)setShowsBookmarkButton:(BOOL)arg1;
-- (void)setShowsCancelButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsCancelButton:(BOOL)arg1;
+- (void)setShowsCancelButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsScopeBar:(BOOL)arg1;
 - (void)setShowsSearchResultsButton:(BOOL)arg1;
 - (void)setText:(id)arg1;

@@ -29,8 +29,8 @@
 - (id)initWithAnimationMatch:(id)arg1;
 - (float)interpolatedZIndexAtPercent:(float)arg1;
 - (float)intersectionPercentWithZOrdererMatch:(id)arg1;
-- (BOOL)intersectsZOrdererMatch:(id)arg1 withAttemptedZIndex:(int)arg2;
 - (BOOL)intersectsZOrdererMatch:(id)arg1;
+- (BOOL)intersectsZOrdererMatch:(id)arg1 withAttemptedZIndex:(int)arg2;
 - (BOOL)isIncomingZIndexUnmatched;
 - (BOOL)isOutgoingZIndexUnmatched;
 - (id)outgoingTexture;

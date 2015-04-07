@@ -33,14 +33,14 @@
 + (id)entryWithEntryKey:(id)arg1 withRawData:(id)arg2;
 + (void)load;
 + (void)registerEntry:(Class)arg1;
-+ (id)summarizeAggregateEntries:(id)arg1 withPrimaryKeys:(id)arg2;
 + (id)summarizeAggregateEntries:(id)arg1;
++ (id)summarizeAggregateEntries:(id)arg1 withPrimaryKeys:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)allValues;
 - (id)arrayKeys;
-- (int)compare:(id)arg1 options:(short)arg2;
 - (int)compare:(id)arg1;
+- (int)compare:(id)arg1 options:(short)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)definedKeys;
@@ -59,10 +59,10 @@
 - (id)init;
 - (id)initEntryWithData:(id)arg1;
 - (id)initEntryWithRawData:(id)arg1;
+- (id)initWithEntryKey:(id)arg1;
 - (id)initWithEntryKey:(id)arg1 withData:(id)arg2;
 - (id)initWithEntryKey:(id)arg1 withDate:(id)arg2;
 - (id)initWithEntryKey:(id)arg1 withRawData:(id)arg2;
-- (id)initWithEntryKey:(id)arg1;
 - (BOOL)isErrorEntry;
 - (BOOL)isKeyAggregateValue:(id)arg1;
 - (BOOL)isKeyDynamic:(id)arg1;

@@ -5,6 +5,8 @@
 @class NSString;
 
 @interface _VKLandmarkIconKey : NSObject {
+    NSString *_name;
+    int _size;
     struct { 
         int iconStyle; 
         struct Matrix<float, 4, 1> { 
@@ -39,8 +41,6 @@
         float iconBevelAmount; 
         unsigned int iconSourceStyleAttributeKey; 
         unsigned int iconSourceStyleMultipoiAttributeKey; 
-    NSString *_name;
-    int _size;
     } _style;
 }
 

@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_source>;
 
 @interface CalMemorySensor : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fireBlock;
+
     unsigned int _interval;
     NSObject<OS_dispatch_source> *_timer;
     unsigned int _usage;

@@ -13,8 +13,6 @@
         float x; 
         float y; 
         float z; 
-     /* Encoded args for previous method: 24@0:48 */
-     /* Encoded args for previous method: 24@0:48 */
     } _originalCameraPosition;
     SCNScene *_scene;
     <SCNRenderer> *_scnRenderer;
@@ -50,6 +48,8 @@
 - (BOOL)loops;
 - (id)pointOfView;
 - (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)projectPoint:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: 24@0:48 */
+
 - (double)sceneTime;
 - (id)scnScene;
 - (void)setAutoenablesDefaultLighting:(BOOL)arg1;
@@ -60,6 +60,8 @@
 - (void)setScnScene:(id)arg1;
 - (void)setViewportSize:(struct CGSize { float x1; float x2; })arg1;
 - (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)unprojectPoint:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: 24@0:48 */
+
 - (struct CGSize { float x1; float x2; })viewportSize;
 
 @end

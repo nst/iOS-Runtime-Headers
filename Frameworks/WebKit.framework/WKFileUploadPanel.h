@@ -9,28 +9,28 @@
 
 @class <WKFileUploadPanelDelegate>, NSString, WKContentView;
 
-@interface WKFileUploadPanel : UIViewController <UIPopoverControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
-    struct RetainPtr<NSArray> { 
-        void *m_ptr; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct RetainPtr<UIImagePickerController> { 
-        void *m_ptr; 
+@interface WKFileUploadPanel : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
     struct RetainPtr<UIAlertController> { 
-        void *m_ptr; 
-    struct RetainPtr<UIViewController> { 
-        void *m_ptr; 
-    struct RetainPtr<UIPopoverController> { 
         void *m_ptr; 
     } _actionSheetController;
     BOOL _allowMultipleFiles;
     <WKFileUploadPanelDelegate> *_delegate;
+    struct RetainPtr<UIImagePickerController> { 
+        void *m_ptr; 
     } _imagePicker;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _interactionPoint;
     struct WebOpenPanelResultListenerProxy { int (**x1)(); id x2; struct RefPtr<WebKit::WebPageProxy> { struct WebPageProxy {} *x_3_1_1; } x3; } *_listener;
+    struct RetainPtr<NSArray> { 
+        void *m_ptr; 
     } _mimeTypes;
+    struct RetainPtr<UIPopoverController> { 
+        void *m_ptr; 
     } _presentationPopover;
+    struct RetainPtr<UIViewController> { 
+        void *m_ptr; 
     } _presentationViewController;
     BOOL _usingCamera;
     WKContentView *_view;
@@ -66,7 +66,7 @@
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (id)initWithView:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)presentWithParameters:(struct WebOpenPanelParameters { int (**x1)(); id x2; struct FileChooserSettings { boolx_3_1_1; struct Vector<WTF::String, 0, WTF::CrashOnOverflow> { struct String {} *x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; } x_3_1_2; struct Vector<WTF::String, 0, WTF::CrashOnOverflow> { struct String {} *x_3_2_1; unsigned int x_3_2_2; unsigned int x_3_2_3; } x_3_1_3; struct Vector<WTF::String, 0, WTF::CrashOnOverflow> { struct String {} *x_4_2_1; unsigned int x_4_2_2; unsigned int x_4_2_3; } x_3_1_4; } x3; }*)arg1 resultListener:(struct WebOpenPanelResultListenerProxy { int (**x1)(); id x2; struct RefPtr<WebKit::WebPageProxy> { struct WebPageProxy {} *x_3_1_1; } x3; }*)arg2;
+- (void)presentWithParameters:(struct WebOpenPanelParameters { int (**x1)(); id x2; struct FileChooserSettings { bool x_3_1_1; struct Vector<WTF::String, 0, WTF::CrashOnOverflow> { struct String {} *x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; } x_3_1_2; struct Vector<WTF::String, 0, WTF::CrashOnOverflow> { struct String {} *x_3_2_1; unsigned int x_3_2_2; unsigned int x_3_2_3; } x_3_1_3; struct Vector<WTF::String, 0, WTF::CrashOnOverflow> { struct String {} *x_4_2_1; unsigned int x_4_2_2; unsigned int x_4_2_3; } x_3_1_4; } x3; }*)arg1 resultListener:(struct WebOpenPanelResultListenerProxy { int (**x1)(); id x2; struct RefPtr<WebKit::WebPageProxy> { struct WebPageProxy {} *x_3_1_1; } x3; }*)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

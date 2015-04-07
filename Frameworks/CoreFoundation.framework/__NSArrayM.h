@@ -7,10 +7,10 @@
     unsigned int _doWeakAccess : 1;
     unsigned int _hasObjects : 1;
     unsigned int _hasStrongReferences : 1;
-    unsigned int _size : 28;
     id *_list;
     unsigned long _mutations;
     unsigned int _offset;
+    unsigned int _size : 28;
     unsigned int _used;
 }
 

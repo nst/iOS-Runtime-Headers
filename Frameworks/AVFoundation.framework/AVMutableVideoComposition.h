@@ -16,8 +16,8 @@
 @property struct CGSize { float x1; float x2; } renderSize;
 
 + (id)videoComposition;
-+ (id)videoCompositionWithPropertiesOfAsset:(id)arg1 videoGravity:(id)arg2;
 + (id)videoCompositionWithPropertiesOfAsset:(id)arg1;
++ (id)videoCompositionWithPropertiesOfAsset:(id)arg1 videoGravity:(id)arg2;
 
 - (id)animationTool;
 - (id)builtInCompositorName;

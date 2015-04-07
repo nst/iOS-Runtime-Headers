@@ -8,14 +8,12 @@
 
 @class <TSWPFootnoteHeightMeasurer>, <TSWPFootnoteMarkProvider>, <TSWPOffscreenColumn>, NSMutableArray, NSString, TSDBezierPath, TSDCanvas, TSDLayout, TSPObject<TSDHint>, TSWPLayoutManager;
 
-@interface TSWPLayout : TSDLayout <TSWPLayoutTarget, TSWPLayoutOwner> {
+@interface TSWPLayout : TSDLayout <TSWPLayoutOwner, TSWPLayoutTarget> {
     NSMutableArray *_columns;
     TSWPLayoutManager *_layoutManager;
     BOOL _textLayoutValid;
 }
 
-@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
-@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) struct CGPoint { float x1; float x2; } anchorPoint;
 @property(retain) NSMutableArray * anchoredDrawablesForRelayout;
 @property(readonly) unsigned int autosizeFlags;
@@ -39,11 +37,13 @@
 @property(readonly) int naturalDirection;
 @property(readonly) TSPObject<TSDHint> * nextTargetFirstChildHint;
 @property(retain,readonly) <TSWPOffscreenColumn> * nextTargetFirstColumn;
+@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) unsigned int pageCount;
 @property(readonly) unsigned int pageNumber;
 @property(readonly) TSDLayout * parentLayoutForInlineAttachments;
 @property(readonly) struct CGPoint { float x1; float x2; } position;
 @property(retain,readonly) <TSWPOffscreenColumn> * previousTargetLastColumn;
+@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 @property(readonly) BOOL shouldHyphenate;
 @property(readonly) BOOL shouldWrapAroundExternalDrawables;
 @property(readonly) Class superclass;
@@ -70,8 +70,8 @@
 - (id)dependentLayouts;
 - (id)footnoteHeightMeasurer;
 - (id)footnoteMarkProvider;
-- (id)initWithInfo:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithInfo:(id)arg1;
+- (id)initWithInfo:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void*)initialLayoutState;
 - (id)interiorClippingPath;
 - (void)invalidateForFootnoteNumberingChange;
@@ -82,8 +82,8 @@
 - (BOOL)isLastTarget;
 - (BOOL)isLayoutOffscreen;
 - (BOOL)layoutIsValid;
-- (void)layoutManager:(id)arg1 didClearDirtyRangeWithDelta:(int)arg2 afterCharIndex:(unsigned int)arg3;
 - (id)layoutManager;
+- (void)layoutManager:(id)arg1 didClearDirtyRangeWithDelta:(int)arg2 afterCharIndex:(unsigned int)arg3;
 - (void)layoutManagerNeedsLayout:(id)arg1;
 - (void)layoutSearchForAnnotationWithHitBlock:(id)arg1;
 - (void)layoutSearchForString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id)arg3;

@@ -40,8 +40,8 @@
 - (void)dealloc;
 - (int)defaultMaximumNumberOfVisibleItems;
 - (float)desiredSegmentWidth;
-- (id)initWithViewElement:(id)arg1 segmentedControl:(id)arg2;
 - (id)initWithViewElement:(id)arg1;
+- (id)initWithViewElement:(id)arg1 segmentedControl:(id)arg2;
 - (void)menuPopover:(id)arg1 didSelectMenuItemAtIndex:(int)arg2;
 - (void)menuPopover:(id)arg1 willRepositionToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)menuPopoverDidCancel:(id)arg1;

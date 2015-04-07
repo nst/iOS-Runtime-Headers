@@ -9,7 +9,11 @@
 @class FigCaptureStillImageSettings;
 
 @interface AVCapturePrepareBracketRequest : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     FigCaptureStillImageSettings *_settings;
 }
 

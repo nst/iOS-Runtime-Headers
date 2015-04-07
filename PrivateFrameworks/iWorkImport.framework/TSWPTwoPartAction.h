@@ -7,10 +7,22 @@
  */
 
 @interface TSWPTwoPartAction : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cancelAction;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _finishAction;
+
     BOOL _performImmediately;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _startAction;
+
 }
 
 @property BOOL performImmediately;

@@ -5,18 +5,18 @@
 @class RCUIConfiguration, UIColor;
 
 @interface RCChronologicalAnnotationView : UIView {
-    struct { 
-        double beginTime; 
-        double endTime; 
-    struct { 
-        double beginTime; 
-        double endTime; 
     RCUIConfiguration *_UIConfiguration;
     UIColor *_backgroundDebugColor;
     float _majorTickMinimumSpacing;
     double _majorTickTimeUnit;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _markerClippingRange;
     unsigned int _maximumMajorUnitsInVisibleDuration;
+    struct { 
+        double beginTime; 
+        double endTime; 
     } _visibleTimeRange;
 }
 

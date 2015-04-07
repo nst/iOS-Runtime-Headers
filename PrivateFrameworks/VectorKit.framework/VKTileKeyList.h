@@ -4,7 +4,7 @@
 
 @class VKTileKeyMap;
 
-@interface VKTileKeyList : NSObject <NSFastEnumeration, NSCopying> {
+@interface VKTileKeyList : NSObject <NSCopying, NSFastEnumeration> {
     unsigned int _count;
     void *_head;
     VKTileKeyMap *_map;
@@ -13,8 +13,8 @@
 }
 
 - (void)_addKeyToBack:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
-- (BOOL)addKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 lostKey:(struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (void)addKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
+- (BOOL)addKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 lostKey:(struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (unsigned int)capacity;
 - (BOOL)containsKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (id)copyWithMaxCapacity:(unsigned int)arg1;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CTEmailAddress : NSObject <NSCopying, CTMessageAddress> {
+@interface CTEmailAddress : NSObject <CTMessageAddress, NSCopying> {
     NSString *_address;
 }
 

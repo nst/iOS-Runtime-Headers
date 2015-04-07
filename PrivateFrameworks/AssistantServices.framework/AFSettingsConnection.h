@@ -35,9 +35,9 @@
 - (void)setActiveAccountIdentifier:(id)arg1;
 - (void)setAssistantEnabled:(BOOL)arg1;
 - (void)setDictationEnabled:(BOOL)arg1;
-- (void)setLanguage:(id)arg1 withCompletion:(id)arg2;
 - (void)setLanguage:(id)arg1;
-- (void)setOutputVoice:(id)arg1 withCompletion:(id)arg2;
+- (void)setLanguage:(id)arg1 withCompletion:(id)arg2;
 - (void)setOutputVoice:(id)arg1;
+- (void)setOutputVoice:(id)arg1 withCompletion:(id)arg2;
 
 @end

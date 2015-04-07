@@ -8,12 +8,12 @@
         float left; 
         float bottom; 
         float right; 
+    } _alignmentRectInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _alignmentRectInsets;
     } _hitRectInsets;
 }
 

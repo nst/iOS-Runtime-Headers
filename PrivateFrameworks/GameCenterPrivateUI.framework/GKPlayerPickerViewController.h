@@ -10,7 +10,11 @@
 
 @interface GKPlayerPickerViewController : GKCollectionViewController {
     GKGame *_game;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     int _maxSelectable;
     <GKNearbyBrowserDelegate> *_nearbyDelegate;
     NSArray *_preselectedPlayers;

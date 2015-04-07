@@ -4,7 +4,7 @@
 
 @class <HDHealthDaemon>, <HDQueryServerDelegate>, <NSXPCProxyCreating>, HKSampleType, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HKFilter;
 
-@interface HDQueryServer : NSObject <HDDatabaseProtectedDataObserver, HKQueryServer, HDDataObserver> {
+@interface HDQueryServer : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HKQueryServer> {
     <NSXPCProxyCreating> *_clientProxy;
     <HDHealthDaemon> *_daemon;
     <HDQueryServerDelegate> *_delegate;

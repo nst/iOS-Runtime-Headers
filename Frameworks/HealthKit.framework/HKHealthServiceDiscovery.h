@@ -7,7 +7,11 @@
  */
 
 @interface HKHealthServiceDiscovery : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _discoveryHandler;
+
     unsigned int _discoveryIdentifier;
     int _serviceType;
 }

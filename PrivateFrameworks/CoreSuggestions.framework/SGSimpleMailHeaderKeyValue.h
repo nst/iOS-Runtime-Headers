@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface SGSimpleMailHeaderKeyValue : NSObject <NSSecureCoding, NSCopying> {
+@interface SGSimpleMailHeaderKeyValue : NSObject <NSCopying, NSSecureCoding> {
     NSString *_key;
     NSString *_value;
 }

@@ -4,11 +4,11 @@
 
 @class NSDate;
 
-@interface CLVisit : NSObject <NSSecureCoding, NSCopying> {
+@interface CLVisit : NSObject <NSCopying, NSSecureCoding> {
+    NSDate *_arrivalDate;
     struct { 
         double latitude; 
         double longitude; 
-    NSDate *_arrivalDate;
     } _coordinate;
     NSDate *_departureDate;
     NSDate *_detectionDate;

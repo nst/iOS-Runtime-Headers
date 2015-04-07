@@ -45,8 +45,8 @@
 - (void)deleteFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (void)dropAllTables;
 - (void)end;
-- (void)executeSQL:(id)arg1 arguments:(void*)arg2;
 - (void)executeSQL:(id)arg1;
+- (void)executeSQL:(id)arg1 arguments:(void*)arg2;
 - (id)initWithPath:(id)arg1 schema:(id)arg2;
 - (long long)insertOrReplaceInto:(id)arg1 values:(id)arg2;
 - (long long)insertOrReplaceObject:(id)arg1;
@@ -65,11 +65,11 @@
 - (void)rollback;
 - (id)schema;
 - (id)schemaVersion;
-- (id)select:(id)arg1 from:(id)arg2 where:(id)arg3 bindings:(id)arg4;
 - (id)select:(id)arg1 from:(id)arg2;
+- (id)select:(id)arg1 from:(id)arg2 where:(id)arg3 bindings:(id)arg4;
 - (id)selectAllFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
-- (id)selectAllObjectsOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;
 - (id)selectAllObjectsOfClass:(Class)arg1;
+- (id)selectAllObjectsOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;
 - (unsigned int)selectCountFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (id)selectObjectOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;
 - (void)setCorrupt:(BOOL)arg1;

@@ -9,7 +9,11 @@
 @class AVAssetWriterInputPassDescription, NSError;
 
 @interface AVAssetWriterInputFigAssetWriterEndPassOperation : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     NSError *_error;
     struct OpaqueFigAssetWriter { } *_figAssetWriter;
     AVAssetWriterInputPassDescription *_nextPassDescription;

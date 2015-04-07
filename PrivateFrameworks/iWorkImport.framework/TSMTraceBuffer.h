@@ -5,9 +5,6 @@
 @class NSFileHandle, NSString, TSMTraceController;
 
 @interface TSMTraceBuffer : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     BOOL mActive;
     long mBufferID;
     long mBufferSize;
@@ -16,6 +13,9 @@
     struct __CFData { } *mData;
     NSFileHandle *mFileHandle;
     unsigned long mFilters[256];
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } mLock;
     BOOL mSynchronizedAccess;
     NSString *mTag;

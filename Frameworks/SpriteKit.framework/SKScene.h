@@ -5,28 +5,19 @@
 @class <SKSceneDelegate>, NSMutableArray, NSMutableDictionary, PKPhysicsWorld, SKPhysicsBody, SKPhysicsWorld, SKView, UIColor;
 
 @interface SKScene : SKEffectNode {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     BOOL __needsRender;
     BOOL __needsUpdate;
     PKPhysicsWorld *__pkPhysicsWorld;
     NSMutableArray *_allChildenWithConstraints;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _bounds;
     <SKSceneDelegate> *_delegate;
     BOOL _isSetup;
@@ -39,6 +30,15 @@
     BOOL _usesExplicitRender;
     BOOL _usesExplicitUpdate;
     id _view;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _visibleRect;
 }
 
@@ -58,8 +58,8 @@
 @property struct CGPoint { float x1; float x2; } visibleRectCenter;
 @property struct CGSize { float x1; float x2; } visibleRectSize;
 
-+ (id)sceneWithContentsOfFile:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)sceneWithContentsOfFile:(id)arg1;
++ (id)sceneWithContentsOfFile:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)sceneWithSize:(struct CGSize { float x1; float x2; })arg1;
 
 - (id).cxx_construct;

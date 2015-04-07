@@ -4,16 +4,7 @@
 
 @class <PLAssetContainer>, <PLAssetContainerList>, <PUAvalancheReviewControllerDelegate>, NSIndexPath, NSMutableDictionary, NSMutableSet, NSOrderedSet, NSString, PHCachingImageManager, PHFetchResult, PLAvalanche, PLManagedAsset, PUAvalancheReviewCollectionViewLayout, PUAvalancheReviewControllerSpec, PUPhotoBrowserController, PUPhotoPinchGestureRecognizer, PUPhotosSharingTransitionContext, PUPhotosZoomingSharingGridCell, PUReviewInstructionalView, PUReviewScrubber, PUTransitionViewAnimator, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer;
 
-@interface PUAvalancheReviewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, PUReviewScrubberDataSource, PUReviewScrubberDelegate, PUAvalancheReviewCollectionViewLayoutDelegate, UIGestureRecognizerDelegate, PUTransitionViewAnimatorDelegate, PUPhotosSharingTransitionViewController, PHAssetCollectionDataSource> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+@interface PUAvalancheReviewController : UIViewController <PHAssetCollectionDataSource, PUAvalancheReviewCollectionViewLayoutDelegate, PUPhotosSharingTransitionViewController, PUReviewScrubberDataSource, PUReviewScrubberDelegate, PUTransitionViewAnimatorDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
     PLAvalanche *__avalancheBeingReviewed;
     PHCachingImageManager *__cachingImageManager;
     UIBarButtonItem *__cancelBarButtonItem;
@@ -31,6 +22,15 @@
     PUPhotoPinchGestureRecognizer *__photoZoomPinchGestureRecognizer;
     NSMutableSet *__preheatedAssets;
     PUPhotoBrowserController *__presentingPhotoBrowserController;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } __previousPreheatRect;
     PUAvalancheReviewControllerSpec *__spec;
     UITapGestureRecognizer *__tapGestureRecognizer;

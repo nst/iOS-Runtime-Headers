@@ -5,10 +5,10 @@
 @class NSOrthography;
 
 @interface NSOrthographyCheckingResult : NSTextCheckingResult {
+    NSOrthography *_orthography;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    NSOrthography *_orthography;
     } _range;
 }
 

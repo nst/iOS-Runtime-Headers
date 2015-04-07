@@ -9,7 +9,11 @@
 @class NSProgress;
 
 @interface _NSXPCConnectionIncomingReplyBlockInfo : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _cleanupBlock;
+
     NSProgress *_progress;
 }
 

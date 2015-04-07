@@ -4,7 +4,8 @@
 
 @class NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
-@interface TSPReadCoordinatorBase : NSObject <TSPReaderDelegate, TSPLazyReferenceDelegate> {
+@interface TSPReadCoordinatorBase : NSObject <TSPLazyReferenceDelegate, TSPReaderDelegate> {
+    NSObject<OS_dispatch_queue> *_externalReferenceQueue;
     struct hash_map<long long, TSP::ExternalReferenceInfo, TSP::ObjectIdentifierHash, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, TSP::ExternalReferenceInfo> > > { 
         struct __hash_table<std::__1::pair<long long, TSP::ExternalReferenceInfo>, __gnu_cxx::__hash_map_hasher<std::__1::pair<long long, TSP::ExternalReferenceInfo>, TSP::ObjectIdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<long long, TSP::ExternalReferenceInfo>, std::__1::equal_to<long long>, true>, std::__1::allocator<std::__1::pair<long long, TSP::ExternalReferenceInfo> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<long long, TSP::ExternalReferenceInfo>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<long long, TSP::ExternalReferenceInfo>, void *> *> > > { 
@@ -29,18 +30,17 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
+    } _externalReferences;
+    NSHashTable *_lazyReferenceCopies;
+    NSMutableArray *_lazyReferenceObserverBlocks;
+    NSObject<OS_dispatch_queue> *_lazyReferenceQueue;
+    NSHashTable *_lazyReferences;
     struct vector<TSP::RepeatedExternalReferenceCompletionInfo, std::__1::allocator<TSP::RepeatedExternalReferenceCompletionInfo> > { 
         struct RepeatedExternalReferenceCompletionInfo {} *__begin_; 
         struct RepeatedExternalReferenceCompletionInfo {} *__end_; 
         struct __compressed_pair<TSP::RepeatedExternalReferenceCompletionInfo *, std::__1::allocator<TSP::RepeatedExternalReferenceCompletionInfo> > { 
             struct RepeatedExternalReferenceCompletionInfo {} *__first_; 
         } __end_cap_; 
-    NSObject<OS_dispatch_queue> *_externalReferenceQueue;
-    } _externalReferences;
-    NSHashTable *_lazyReferenceCopies;
-    NSMutableArray *_lazyReferenceObserverBlocks;
-    NSObject<OS_dispatch_queue> *_lazyReferenceQueue;
-    NSHashTable *_lazyReferences;
     } _repeatedExternalReferences;
     BOOL _success;
 }

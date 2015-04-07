@@ -79,8 +79,8 @@
 - (Class)classForCoder;
 - (int)compareDate:(id)arg1 toDate:(id)arg2 toUnitGranularity:(unsigned int)arg3;
 - (int)component:(unsigned int)arg1 fromDate:(id)arg2;
-- (id)components:(unsigned int)arg1 fromDate:(id)arg2 toDate:(id)arg3 options:(unsigned int)arg4;
 - (id)components:(unsigned int)arg1 fromDate:(id)arg2;
+- (id)components:(unsigned int)arg1 fromDate:(id)arg2 toDate:(id)arg3 options:(unsigned int)arg4;
 - (id)components:(unsigned int)arg1 fromDateComponents:(id)arg2 toDateComponents:(id)arg3 options:(unsigned int)arg4;
 - (id)componentsInTimeZone:(id)arg1 fromDate:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface AWDFaceTimeCallInterruptionEnded : PBCodable <NSCopying> {
+    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int interruptionDuration : 1; 
@@ -13,7 +14,6 @@
         unsigned int isVideoResumed : 1; 
         unsigned int linkQuality : 1; 
         unsigned int onLockScreen : 1; 
-    NSString *_guid;
     } _has;
     unsigned int _interruptionDuration;
     unsigned int _isAudioResumed;

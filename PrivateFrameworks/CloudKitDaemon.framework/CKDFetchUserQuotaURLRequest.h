@@ -7,7 +7,11 @@
  */
 
 @interface CKDFetchUserQuotaURLRequest : CKDURLRequest {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _quotaFetchedBlock;
+
 }
 
 @property(copy) id quotaFetchedBlock;

@@ -30,7 +30,7 @@
 - (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;
-- (void)setZoomed:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setZoomed:(BOOL)arg1;
+- (void)setZoomed:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

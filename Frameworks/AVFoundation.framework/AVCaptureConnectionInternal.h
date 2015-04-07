@@ -5,16 +5,6 @@
 @class AVCaptureDevice, AVCaptureInputPort, AVWeakReference, NSArray, NSMutableArray;
 
 @interface AVCaptureConnectionInternal : NSObject {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     BOOL active;
     int activeVideoStabilizationMode;
     NSArray *audioChannelLevels;
@@ -33,8 +23,18 @@
     int preferredVideoStabilizationMode;
     AVCaptureDevice *sourceDevice;
     AVCaptureInputPort *videoInputPort;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } videoMaxFrameDuration;
     float videoMaxScaleAndCropFactor;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } videoMinFrameDuration;
     BOOL videoMirrored;
     BOOL videoMirroringSupported;

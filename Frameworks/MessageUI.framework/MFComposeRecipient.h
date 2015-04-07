@@ -4,7 +4,7 @@
 
 @class MFComposeRecipientOriginContext, NSArray, NSString;
 
-@interface MFComposeRecipient : NSObject <NSCopying, MFDraggableItem, NSCoding> {
+@interface MFComposeRecipient : NSObject <MFDraggableItem, NSCoding, NSCopying> {
     NSString *_address;
     NSArray *_cachedCompleteMatches;
     NSArray *_cachedMatchedStrings;

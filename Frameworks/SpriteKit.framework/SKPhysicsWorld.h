@@ -9,12 +9,10 @@
 @class <SKPhysicsContactDelegate>;
 
 @interface SKPhysicsWorld : NSObject <NSCoding> {
+    <SKPhysicsContactDelegate> *_contactDelegate;
     struct CGVector { 
         float dx; 
         float dy; 
-     /* Encoded args for previous method: 24@0:48 */
-     /* Encoded args for previous method: 24@0:48 */
-    <SKPhysicsContactDelegate> *_contactDelegate;
     } _gravity;
     float speed;
 }
@@ -48,7 +46,11 @@
 - (void)removeBody:(id)arg1;
 - (void)removeJoint:(id)arg1;
 - (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)sampleFields:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: 24@0:48 */
+
 - (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)sampleFieldsAt:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: 24@0:48 */
+
 - (void)setContactDelegate:(id)arg1;
 - (void)setGravity:(struct CGVector { float x1; float x2; })arg1;
 - (void)setSpeed:(float)arg1;

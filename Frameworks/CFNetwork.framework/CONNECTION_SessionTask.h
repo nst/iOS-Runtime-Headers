@@ -12,18 +12,15 @@
 @interface CONNECTION_SessionTask : NSObject {
     struct __CFDictionary { } *_connectionProperties;
     struct _CFURLRequest { } *_currentRequest;
+    bool _is_cellular;
     Class _my_protocolForTask;
     NSMutableURLRequest *_nsCurrentRequest;
     NSURLRequest *_nsOriginalRequest;
     struct _CFURLRequest { } *_originalRequest;
     NSURLSession *_session;
     struct __CFDictionary { } *_socketProperties;
-    bool_is_cellular;
 }
 
-- (const struct XCookieStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCookieStorage;
-- (const struct XCredentialStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCredentialStorage;
-- (const struct XURLCache { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXURLCache;
 - (struct __CFDictionary { }*)_additionalHeaders;
 - (unsigned long)_allowedProtocolTypes;
 - (id)_allowsCellular;
@@ -42,6 +39,9 @@
 - (struct __CFHTTPMessage { }*)_copyHTTPMessage;
 - (struct _CFURLRequest { }*)_copyOriginalCFURLRequest;
 - (struct __CFDictionary { }*)_copySocketStreamProperties;
+- (const struct XCookieStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCookieStorage;
+- (const struct XCredentialStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCredentialStorage;
+- (const struct XURLCache { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXURLCache;
 - (struct _CFURLRequest { }*)_currentCFURLRequest;
 - (id)_disallowCellular;
 - (id)_expectedWorkload;

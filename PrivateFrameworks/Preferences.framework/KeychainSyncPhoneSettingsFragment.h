@@ -35,8 +35,8 @@
 - (void)setCountryInfo:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDialingCountryInfo:(id)arg1 forSpecifier:(id)arg2;
-- (void)setPhoneNumber:(id)arg1 forSpecifier:(id)arg2;
 - (void)setPhoneNumber:(id)arg1;
+- (void)setPhoneNumber:(id)arg1 forSpecifier:(id)arg2;
 - (void)setTitle:(id)arg1;
 - (id)specifiers;
 - (void)textFieldChanged:(id)arg1;

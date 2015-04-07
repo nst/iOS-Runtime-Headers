@@ -10,7 +10,11 @@
 
 @interface MKCoreLocationProvider : NSObject <CLLocationManagerDelegate, CLLocationManagerVehicleDelegate, MKLocationProvider> {
     NSLock *_authorizationLock;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _authorizationRequestBlock;
+
     int _authorizationStatus;
     CLLocationManager *_clLocationManager;
     <MKLocationProviderDelegate> *_delegate;

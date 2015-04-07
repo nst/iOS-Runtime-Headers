@@ -25,8 +25,8 @@
 - (id)description;
 - (id)document;
 - (unsigned int)indexOfBlock:(id)arg1;
-- (id)initWithDocument:(id)arg1 textType:(int)arg2 tableCell:(id)arg3;
 - (id)initWithDocument:(id)arg1 textType:(int)arg2;
+- (id)initWithDocument:(id)arg1 textType:(int)arg2 tableCell:(id)arg3;
 - (BOOL)isEmpty;
 - (id)lastBlock;
 - (id)newBlockIterator;

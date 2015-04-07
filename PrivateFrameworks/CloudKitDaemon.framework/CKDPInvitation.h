@@ -5,12 +5,12 @@
 @class CKDPDate, CKDPIdentifier, CKDPInvitationRecipient, CKDPShareIdentifier, NSData, NSString;
 
 @interface CKDPInvitation : PBCodable <NSCopying> {
-    struct { 
-        unsigned int applicationContainerEnvironment : 1; 
-        unsigned int state : 1; 
     NSString *_applicationContainer;
     int _applicationContainerEnvironment;
     CKDPDate *_createdAt;
+    struct { 
+        unsigned int applicationContainerEnvironment : 1; 
+        unsigned int state : 1; 
     } _has;
     CKDPIdentifier *_invitationId;
     NSString *_invitationImageUrl;

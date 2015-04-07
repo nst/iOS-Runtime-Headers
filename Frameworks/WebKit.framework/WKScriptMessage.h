@@ -7,15 +7,15 @@
 @interface WKScriptMessage : NSObject {
     struct RetainPtr<id> { 
         void *m_ptr; 
-    struct WeakObjCPtr<WKWebView> { 
-        id m_weakReference; 
+    } _body;
     struct RetainPtr<WKFrameInfo> { 
         void *m_ptr; 
+    } _frameInfo;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
-    } _body;
-    } _frameInfo;
     } _name;
+    struct WeakObjCPtr<WKWebView> { 
+        id m_weakReference; 
     } _webView;
 }
 

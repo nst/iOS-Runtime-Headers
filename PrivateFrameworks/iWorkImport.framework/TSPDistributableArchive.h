@@ -5,12 +5,12 @@
 @class SFUFileDataRepresentation, SFUMemoryDataRepresentation, SFUZipEntry;
 
 @interface TSPDistributableArchive : NSObject {
-    struct { 
-        unsigned long long version; 
-        unsigned long long compatibleVersion; 
     SFUFileDataRepresentation *_archiveFileRep;
     SFUMemoryDataRepresentation *_archiveMemoryRep;
     SFUZipEntry *_archiveZipEntryRep;
+    struct { 
+        unsigned long long version; 
+        unsigned long long compatibleVersion; 
     } _archivedVersions;
     struct map<long long, std::__1::pair<long long, long long>, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, std::__1::pair<long long, long long> > > > { struct __tree<std::__1::__value_type<long long, std::__1::pair<long long, long long> >, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, std::__1::pair<long long, long long> >, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, std::__1::pair<long long, long long> > > > { struct __tree_node<std::__1::__value_type<long long, std::__1::pair<long long, long long> >, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long long, std::__1::pair<long long, long long> >, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, std::__1::pair<long long, long long> >, std::__1::less<long long>, true> > { unsigned long x_3_2_1; } x_1_1_3; } x1; } *_entries;
 }

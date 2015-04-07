@@ -9,7 +9,11 @@
 @class NSObject<OS_dispatch_source>;
 
 @interface CalSignalSensor : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fireBlock;
+
     int _signal;
     NSObject<OS_dispatch_source> *_signalSource;
 }

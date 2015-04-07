@@ -4,7 +4,7 @@
 
 @class <ABStyleProvider>, <ABUnknownPersonViewControllerDelegate>, ABContactViewController, ABPersonTableViewActionsDelegate, ABPersonTableViewDataSource, ABPersonTableViewSharingDelegate, ABPersonViewControllerHelper, ABUIPerson, NSArray, NSMutableArray, NSString, UIFont, UIImage, UITableView, UIView;
 
-@interface ABUnknownPersonViewController_Modern : UIViewController <ABContactViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate> {
+@interface ABUnknownPersonViewController_Modern : UIViewController <ABContactViewControllerDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
     ABPersonTableViewActionsDelegate *_actionsDelegate;
     void *_addressBook;
     BOOL _allowsActions;
@@ -108,9 +108,9 @@
 - (id)attribution;
 - (BOOL)badgeEmailPropertiesForMailVIP;
 - (BOOL)canShareContact;
+- (id)contactViewController;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
-- (id)contactViewController;
 - (void)createNewContacts;
 - (id)customFooterView;
 - (id)customHeaderView;
@@ -125,8 +125,8 @@
 - (id)findMatchingCardsForRecord:(void*)arg1;
 - (id)helper;
 - (id)init;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
 - (id)initWithStyle:(int)arg1;
 - (id)initWithVCardData:(id)arg1;
 - (BOOL)isKindOfClass:(Class)arg1;
@@ -161,8 +161,8 @@
 - (void)setAllowsOnlyPhoneActions:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
 - (void)setAlternateName:(id)arg1;
-- (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setAttribution:(id)arg1;
+- (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setBadgeEmailPropertiesForMailVIP:(BOOL)arg1;
 - (void)setCardContentProvider:(id)arg1;
 - (void)setContactViewController:(id)arg1;
@@ -172,9 +172,9 @@
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setDisplayedProperties:(id)arg1;
 - (void)setDisplayedUIPerson:(id)arg1;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 important:(BOOL)arg3;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3 important:(BOOL)arg4;
-- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
 - (void)setIsLocation:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageDetail:(id)arg1;
@@ -183,8 +183,8 @@
 - (void)setPersonHeaderView:(id)arg1;
 - (void)setPrimaryCNProperty:(id)arg1;
 - (void)setPrimaryCountryCode:(id)arg1;
-- (void)setPrimaryProperty:(int)arg1 countryCode:(id)arg2;
 - (void)setPrimaryProperty:(int)arg1;
+- (void)setPrimaryProperty:(int)arg1 countryCode:(id)arg2;
 - (void)setSavesNewContactOnSuspend:(BOOL)arg1;
 - (void)setShareLocationSnapshotImage:(id)arg1;
 - (void)setShareLocationURL:(id)arg1;

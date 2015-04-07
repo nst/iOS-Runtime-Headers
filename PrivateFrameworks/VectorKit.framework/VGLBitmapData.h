@@ -5,6 +5,7 @@
 @class NSData;
 
 @interface VGLBitmapData : NSObject {
+    NSData *_bitmapData;
     struct VGLBitmapInfo { 
         unsigned int width; 
         unsigned int height; 
@@ -13,7 +14,6 @@
         unsigned int bytesPerRow; 
         struct CGColorSpace {} *space; 
         unsigned int bitmapInfo; 
-    NSData *_bitmapData;
     } _bitmapInfo;
     struct __IOSurface { } *_surface;
 }

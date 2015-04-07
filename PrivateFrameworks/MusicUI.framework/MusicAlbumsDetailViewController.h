@@ -4,7 +4,7 @@
 
 @class MPUCompletionQueryDataSource, NSOperationQueue, NSString;
 
-@interface MusicAlbumsDetailViewController : MusicTableViewController <MPUCompletionQueryDataSourceDelegate, MPUCompletionFooterViewDelegate, MusicViewControllerKeepLocalContainer> {
+@interface MusicAlbumsDetailViewController : MusicTableViewController <MPUCompletionFooterViewDelegate, MPUCompletionQueryDataSourceDelegate, MusicViewControllerKeepLocalContainer> {
     NSOperationQueue *_downloadabilityOperationQueue;
     int _downloadableSongCount;
     BOOL _hasEverReceivedWillAppear;

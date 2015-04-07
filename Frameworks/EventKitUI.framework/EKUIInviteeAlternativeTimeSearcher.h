@@ -28,7 +28,11 @@
     NSObject<OS_dispatch_queue> *_processingQueue;
     unsigned int _remainingSearchAttempts;
     EKSource *_source;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _stateChanged;
+
 }
 
 @property BOOL availabilityRequestInProgress;

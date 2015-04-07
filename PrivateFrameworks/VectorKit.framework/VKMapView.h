@@ -4,17 +4,14 @@
 
 @class <GEORoutePreloadSession>, <VKMapViewDelegate>, CADisplay, GEOMapRegion, GEOResourceManifestConfiguration, GGLDisplayLink, MDDisplayLayer, NSArray, NSMutableArray, NSString, VKAnimation, VKClassicGlobeCanvas, VKLabelMarker, VKMapCanvas, VKMemoryObserver, VKPolylineOverlayPainter, VKStyleManager;
 
-@interface VKMapView : CALayer <VKInteractiveMapDelegate, MDMapControllerDelegate, GGLLayerDisruptor, GGLRenderQueueSource> {
+@interface VKMapView : CALayer <GGLLayerDisruptor, GGLRenderQueueSource, MDMapControllerDelegate, VKInteractiveMapDelegate> {
+    GEOResourceManifestConfiguration *_additionalManifestConfiguration;
+    BOOL _additionalManifestConfigurationLoaderOpen;
     struct VKEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    struct shared_ptr<ggl::RenderQueue> { 
-        struct RenderQueue {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    GEOResourceManifestConfiguration *_additionalManifestConfiguration;
-    BOOL _additionalManifestConfigurationLoaderOpen;
     } _animatingToEdgeInsets;
     NSMutableArray *_annotationMarkersToAddToNewCanvas;
     unsigned int _applicationState;
@@ -34,6 +31,9 @@
     int _mapType;
     VKMemoryObserver *_memoryObserver;
     unsigned int _regionChangeCount;
+    struct shared_ptr<ggl::RenderQueue> { 
+        struct RenderQueue {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _renderQueue;
     int _requestedRate;
     VKLabelMarker *_selectedLabelMarker;
@@ -307,9 +307,9 @@
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCameraHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;
 - (void)setCanonicalSkyHeight:(double)arg1;
-- (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(id)arg6 completion:(id)arg7;
+- (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setContentsScale:(float)arg1;
 - (void)setCurrentLocationText:(id)arg1;
 - (void)setDebugDrawContinuously:(BOOL)arg1;
@@ -328,8 +328,8 @@
 - (void)setDisableRoads:(BOOL)arg1;
 - (void)setDisplayRate:(int)arg1;
 - (void)setDynamicMapModesEnabled:(BOOL)arg1;
-- (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1 duration:(double)arg2 timingFunction:(id)arg3 completionHandler:(id)arg4;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1 duration:(double)arg2 timingFunction:(id)arg3 completionHandler:(id)arg4;
 - (void)setExternalTrafficIncidents:(id)arg1;
 - (void)setFocusedLabelsPolylinePainter:(id)arg1;
 - (void)setFullyOccludedEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -343,12 +343,12 @@
 - (void)setLabelScaleFactor:(int)arg1;
 - (void)setLocalizeLabels:(BOOL)arg1;
 - (void)setMapDelegate:(id)arg1;
-- (void)setMapDisplayStyle:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setMapDisplayStyle:(unsigned int)arg1;
-- (void)setMapRegion:(id)arg1 animated:(BOOL)arg2;
-- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id)arg5;
-- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4;
+- (void)setMapDisplayStyle:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setMapRegion:(id)arg1;
+- (void)setMapRegion:(id)arg1 animated:(BOOL)arg2;
+- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4;
+- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id)arg5;
 - (void)setMapType:(int)arg1;
 - (void)setNavigationShieldSize:(int)arg1;
 - (void)setNeedsDisplay;
@@ -387,8 +387,8 @@
 - (BOOL)showsPointsOfInterest;
 - (void)startFlyoverAnimation:(id)arg1 animateToStart:(BOOL)arg2 completion:(id)arg3;
 - (void)startFlyoverTourAnimation:(unsigned long long)arg1 animateToStart:(BOOL)arg2 completion:(id)arg3;
-- (void)startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1 panAtStartPoint:(BOOL)arg2;
 - (void)startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1 panAtStartPoint:(BOOL)arg2;
 - (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;

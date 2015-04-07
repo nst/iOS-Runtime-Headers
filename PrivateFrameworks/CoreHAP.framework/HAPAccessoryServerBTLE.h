@@ -28,7 +28,11 @@
     CBCharacteristic *_modelCharacteristic;
     CBCharacteristic *_pairSetupCharacteristic;
     CBCharacteristic *_pairVerifyCharacteristic;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pairVerifyCompletionBlock;
+
     unsigned long long _pairingFeatureFlags;
     CBCharacteristic *_pairingFeaturesCharacteristic;
     BOOL _pairingFeaturesRead;
@@ -44,7 +48,11 @@
     NSData *_sessionWriteKey;
     BOOL _startPairingRequested;
     unsigned int _state;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _unpairedIdentifyCompletionBlock;
+
     BOOL _unpairedIdentifyRequested;
     NSMutableData *_writeNonce;
 }
@@ -186,12 +194,12 @@
 - (BOOL)pairingFeaturesRead;
 - (id)pairingService;
 - (id)pairingsCharacteristic;
+- (id)peripheral;
 - (void)peripheral:(id)arg1 didDiscoverCharacteristicsForService:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didDiscoverServices:(id)arg2;
 - (void)peripheral:(id)arg1 didModifyServices:(id)arg2;
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didWriteValueForCharacteristic:(id)arg2 error:(id)arg3;
-- (id)peripheral;
 - (id)queue;
 - (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (id)readNonce;
@@ -211,8 +219,8 @@
 - (void)setCharacteristicDiscoveryRequestCount:(unsigned int)arg1;
 - (void)setConnectionLifetimeTimer:(id)arg1;
 - (void)setControllerUsername:(id)arg1;
-- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
 - (void)setDisconnecting:(BOOL)arg1;
 - (void)setHapCharacteristicReadCompletionQueues:(id)arg1;

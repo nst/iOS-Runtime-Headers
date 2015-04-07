@@ -10,7 +10,11 @@
 
 @interface MCUserNotificationQueueEntry : NSObject {
     NSString *_alternateButtonText;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     NSString *_defaultButtonText;
     double _dismissAfterTimeInterval;
     BOOL _displayInAppWhitelistModes;

@@ -5,6 +5,7 @@
 @class GKPlayerInternal, NSDate, NSDictionary, NSString;
 
 @interface GKAchievementInternal : GKInternalRepresentation {
+    NSString *_achievedDescription;
     union { 
         struct { 
             unsigned int _maximumPoints : 16; 
@@ -13,7 +14,6 @@
             unsigned int _reserved : 14; 
         } ; 
         unsigned int _value; 
-    NSString *_achievedDescription;
     } _attributes;
     NSString *_groupIdentifier;
     NSDictionary *_icons;

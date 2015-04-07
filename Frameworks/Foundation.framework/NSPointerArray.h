@@ -4,7 +4,7 @@
 
 @class NSPointerFunctions;
 
-@interface NSPointerArray : NSObject <NSFastEnumeration, NSCopying, NSCoding> {
+@interface NSPointerArray : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
 }
 
 @property unsigned int count;

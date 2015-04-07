@@ -4,7 +4,7 @@
 
 @class NSArray, NSData, NSNumber, NSString;
 
-@interface SSPlayInfoRequestContext : NSObject <SSXPCCoding, NSCopying> {
+@interface SSPlayInfoRequestContext : NSObject <NSCopying, SSXPCCoding> {
     NSNumber *_accountIdentifier;
     NSNumber *_contentIdentifier;
     NSString *_playerGUID;

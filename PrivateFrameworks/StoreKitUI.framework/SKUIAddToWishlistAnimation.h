@@ -9,7 +9,11 @@
 @class UIImage, UINavigationButton;
 
 @interface SKUIAddToWishlistAnimation : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
     UIImage *_image;
     UINavigationButton *_targetButton;
 }

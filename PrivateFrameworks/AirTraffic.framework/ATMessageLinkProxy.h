@@ -4,7 +4,7 @@
 
 @class NSHashTable, NSMutableDictionary, NSString, NSXPCConnection, NSXPCListenerEndpoint;
 
-@interface ATMessageLinkProxy : NSObject <NSSecureCoding, ATMessageLinkObserver, ATMessageLinkRequestHandler, ATMessageLink> {
+@interface ATMessageLinkProxy : NSObject <ATMessageLink, ATMessageLinkObserver, ATMessageLinkRequestHandler, NSSecureCoding> {
     NSXPCConnection *_connection;
     NSXPCListenerEndpoint *_endpoint;
     int _endpointType;

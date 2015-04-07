@@ -5,18 +5,18 @@
 @class UILabel, UIView;
 
 @interface SiriUIReviewItemCell : SiriUIContentCollectionViewCell {
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
+    UILabel *_authorLabel;
+    int _characterLimit;
+    UILabel *_commentLabel;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UILabel *_authorLabel;
-    int _characterLimit;
-    UILabel *_commentLabel;
     } _contentInsets;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _ratingOffset;
     UIView *_ratingView;
 }

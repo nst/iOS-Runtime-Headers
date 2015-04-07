@@ -4,7 +4,7 @@
 
 @class KNBuildConfettiSystem, NSString, TSDGLDataBuffer, TSDGLShader;
 
-@interface KNTransitionConfetti : KNAnimationEffect <KNFrameAnimator, KNAnimationPluginArchiving> {
+@interface KNTransitionConfetti : KNAnimationEffect <KNAnimationPluginArchiving, KNFrameAnimator> {
     KNBuildConfettiSystem *mParticleSystem;
     TSDGLDataBuffer *mQuadDataBuffer;
     TSDGLShader *mQuadShader;

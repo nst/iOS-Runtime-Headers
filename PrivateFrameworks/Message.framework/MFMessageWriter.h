@@ -7,11 +7,11 @@
 @interface MFMessageWriter : NSObject {
     unsigned int _allows8BitMimeParts : 1;
     unsigned int _allowsBinaryMimeParts : 1;
-    unsigned int _writeSizeDispositionParameter : 1;
     unsigned int _allowsQuotedPrintable : 1;
     NSDictionary *_compositionSpecification;
     id _delegate;
     Class _messageClassToInstantiate;
+    unsigned int _writeSizeDispositionParameter : 1;
 }
 
 @property(readonly) NSDictionary * compositionSpecification;

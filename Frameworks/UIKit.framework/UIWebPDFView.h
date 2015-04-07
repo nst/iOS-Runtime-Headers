@@ -4,7 +4,15 @@
 
 @class NSArray, NSData, NSMutableArray, NSObject<UIWebPDFViewDelegate>, NSString, NSURL, UIColor, UIPDFDocument, UITapGestureRecognizer, WebPDFViewPlaceholder;
 
-@interface UIWebPDFView : UIView <UIPDFPageViewDelegate, UIPDFAnnotationControllerDelegate, WebPDFViewPlaceholderDelegate, UIPopoverControllerDelegate, UIGestureRecognizerDelegate> {
+@interface UIWebPDFView : UIView <UIGestureRecognizerDelegate, UIPDFAnnotationControllerDelegate, UIPDFPageViewDelegate, UIPopoverControllerDelegate, WebPDFViewPlaceholderDelegate> {
+    NSMutableArray *_backingLayerImageViews;
+    struct CGPDFDocument { } *_cgPDFDocument;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _contentOffsetAtScrollStart;
+    BOOL _delegateRespondsToDidScroll;
+    UIPDFDocument *_document;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,6 +22,8 @@
             float width; 
             float height; 
         } size; 
+    } _documentBounds;
+    float _documentScale;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -21,16 +31,6 @@
         float d; 
         float tx; 
         float ty; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    NSMutableArray *_backingLayerImageViews;
-    struct CGPDFDocument { } *_cgPDFDocument;
-    } _contentOffsetAtScrollStart;
-    BOOL _delegateRespondsToDidScroll;
-    UIPDFDocument *_document;
-    } _documentBounds;
-    float _documentScale;
     } _documentTransform;
     NSURL *_documentURL;
     BOOL _hasScheduledCacheUpdate;

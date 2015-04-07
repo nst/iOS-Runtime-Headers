@@ -4,7 +4,7 @@
 
 @class <TSWPShapeLayoutDelegate>, TSDWrapPolygon, TSWPLayout, TSWPPadding;
 
-@interface TSWPShapeLayout : TSDShapeLayout <TSWPLayoutParent, TSWPColumnMetrics, TSWPStorageObserver> {
+@interface TSWPShapeLayout : TSDShapeLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver> {
     TSDWrapPolygon *_cachedInteriorWrapPolygon;
     TSWPLayout *_containedLayout;
     <TSWPShapeLayoutDelegate> *_delegate;

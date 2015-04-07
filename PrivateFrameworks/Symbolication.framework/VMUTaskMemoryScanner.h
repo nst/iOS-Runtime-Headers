@@ -16,12 +16,20 @@
     unsigned int _classInfosCount;
     BOOL _exactScanningEnabled;
     unsigned long long _maxInteriorOffset;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _nodeLogger;
+
     VMUObjectIdentifier *_objectIdentifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _referenceLogger;
+
     VMUVMRegionIdentifier *_regionIdentifier;
     struct _VMURegionMap { void *x1; struct _VMURegionNode {} *x2; unsigned int x3; unsigned long long x4; unsigned long long x5; unsigned int x6[0]; } *_regionMap;
-    struct _VMURegionNode { unsigned long long x1; unsigned long long x2; unsigned int x3; unsigned int x4; void *x5; unsigned long long x6; struct _VMURegionNode {} *x7; boolx8; boolx9; struct { /* ? */ } *x10; unsigned int x11; unsigned long long x12; unsigned long long x13; int x14; int x15; unsigned int x16; unsigned char x17; unsigned char x18; } *_regions;
+    struct _VMURegionNode { unsigned long long x1; unsigned long long x2; unsigned int x3; unsigned int x4; void *x5; unsigned long long x6; struct _VMURegionNode {} *x7; bool x8; bool x9; struct { /* ? */ } *x10; unsigned int x11; unsigned long long x12; unsigned long long x13; int x14; int x15; unsigned int x16; unsigned char x17; unsigned char x18; } *_regions;
     unsigned int _regionsCount;
     unsigned int _regionsSize;
     int _scanningMask;
@@ -60,8 +68,8 @@
 - (unsigned int)mallocNodeCount;
 - (unsigned long long)maxInteriorOffset;
 - (unsigned int)nodeCount;
-- (id)nodeDescription:(unsigned int)arg1 withOffset:(unsigned long long)arg2;
 - (id)nodeDescription:(unsigned int)arg1;
+- (id)nodeDescription:(unsigned int)arg1 withOffset:(unsigned long long)arg2;
 - (struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })nodeDetails:(unsigned int)arg1;
 - (void)orderedNodeTraversal:(int)arg1 withBlock:(id)arg2;
 - (id)referenceDescription:(struct { unsigned long long x1; int x2; unsigned long long x3; })arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg4 alignmentSpacing:(unsigned int)arg5;

@@ -12,6 +12,7 @@
             float width; 
             float height; 
         } size; 
+    } mAnimationBounds;
     struct tvec2<float> { 
         union { 
             float x; 
@@ -23,7 +24,6 @@
             float g; 
             float t; 
         } ; 
-    } mAnimationBounds;
     } mBuildOffsetFromLayerRelativeToBodyCanvas;
 }
 

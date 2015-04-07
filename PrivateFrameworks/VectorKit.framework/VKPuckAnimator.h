@@ -5,15 +5,15 @@
 @class <VKPuckAnimatorDelegate>, <VKPuckAnimatorTarget>, GEORouteMatch, VKAnimation, VKPuckAnimatorLocationProjector, VKRunningCurve;
 
 @interface VKPuckAnimator : NSObject {
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
     VKAnimation *_animation;
     unsigned int _behavior;
     VKRunningCurve *_curve;
     <VKPuckAnimatorDelegate> *_delegate;
     GEORouteMatch *_lastProjectedLocation;
+    struct VKPoint { 
+        double x; 
+        double y; 
+        double z; 
     } _lastProjectedPosition;
     VKPuckAnimatorLocationProjector *_locationProjector;
     int _pausedCount;

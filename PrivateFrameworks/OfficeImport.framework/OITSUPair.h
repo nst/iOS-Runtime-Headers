@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OITSUPair : NSObject <NSCopying, NSMutableCopying, NSCoding> {
+@interface OITSUPair : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     id mFirst;
     id mSecond;
 }

@@ -13,17 +13,17 @@
 + (id)allProperties;
 + (id)artistAllAlbumsDefaultOrderingTerms;
 + (id)artistsDefaultOrderingTerms;
-+ (BOOL)clearLocationFromLibrary:(id)arg1 persistentIDs:(id)arg2 usingConnection:(id)arg3;
 + (BOOL)clearLocationFromLibrary:(id)arg1 persistentIDs:(id)arg2;
++ (BOOL)clearLocationFromLibrary:(id)arg1 persistentIDs:(id)arg2 usingConnection:(id)arg3;
 + (id)collectionClassesToUpdateBeforeDelete;
 + (id)composersDefaultOrderingTerms;
-+ (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2 orderingTerms:(id)arg3;
-+ (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2;
 + (id)containerQueryWithContainer:(id)arg1;
++ (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2;
++ (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2 orderingTerms:(id)arg3;
 + (id)databaseTable;
 + (id)defaultOrderingTerms;
-+ (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4 usingConnection:(id)arg5;
 + (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4;
++ (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4 usingConnection:(id)arg5;
 + (void)enumeratePathsToDeleteFromLibrary:(id)arg1 persistentIDs:(id)arg2 usingBlock:(id)arg3;
 + (id)extraTablesToDelete;
 + (id)extraTablesToInsert;
@@ -55,9 +55,9 @@
 + (BOOL)trackWithPersistentID:(long long)arg1 existsInLibrary:(id)arg2;
 + (BOOL)trackWithPersistentID:(long long)arg1 existsInLibraryWithConnection:(id)arg2;
 + (BOOL)trackWithPersistentID:(long long)arg1 visibleInLibrary:(id)arg2;
++ (BOOL)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(id)arg2;
 + (BOOL)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(id)arg2 deletedFileSize:(long long*)arg3;
 + (BOOL)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(id)arg2 deletionType:(int)arg3 deletedFileSize:(long long*)arg4;
-+ (BOOL)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(id)arg2;
 + (id)unsettableProperties;
 + (void)updateAllBookmarkableStoreBookmarkMetadataIdentifiersOnConnection:(id)arg1;
 
@@ -74,8 +74,8 @@
 - (BOOL)needsVideoSnapshot;
 - (BOOL)populateArtworkCacheWithArtworkData:(id)arg1;
 - (void)populateChapterDataWithImportChapters:(id)arg1;
-- (void)populateLocationPropertiesWithPath:(id)arg1 isProtected:(BOOL)arg2;
 - (void)populateLocationPropertiesWithPath:(id)arg1;
+- (void)populateLocationPropertiesWithPath:(id)arg1 isProtected:(BOOL)arg2;
 - (id)protocolItem;
 - (id)rawIntegrity;
 - (void)updateCollectionCloudStatus;

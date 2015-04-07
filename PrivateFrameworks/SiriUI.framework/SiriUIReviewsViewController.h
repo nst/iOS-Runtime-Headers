@@ -5,25 +5,25 @@
 @class <SiriUIReviewsViewControllerDelegate>, NSMutableArray, NSString, SALocalSearchReviewList, UICollectionView, UIView;
 
 @interface SiriUIReviewsViewController : SiriUISnippetViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
+    NSMutableArray *_cellSizeForRowCache;
     struct { 
         unsigned int didLoadCollectionView : 1; 
         unsigned int viewForRatingForReview : 1; 
         unsigned int offsetForRatingView : 1; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    NSMutableArray *_cellSizeForRowCache;
     } _delegateFlags;
     NSString *_providerName;
     UIView *_providerView;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _providerViewOffset;
     int _reviewCharacterLimit;
     SALocalSearchReviewList *_reviewList;
     <SiriUIReviewsViewControllerDelegate> *_reviewsDelegate;
     UIView *_totalRatingView;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _totalRatingViewOffset;
     float _verticalSpaceNeededForRatingView;
 }

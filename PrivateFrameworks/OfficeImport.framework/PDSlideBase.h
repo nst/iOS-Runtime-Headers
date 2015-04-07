@@ -5,14 +5,14 @@
 @class NSArray, NSString, OADBackground, OADShape, OADTableStyle, PDAnimation, PDTransition;
 
 @interface PDSlideBase : NSObject {
-    unsigned int mIsHidden : 1;
-    unsigned int mIsDoneWithContent : 1;
     PDAnimation *mAnimation;
     OADBackground *mBackground;
     BOOL mCachedSlideNumberPlaceholder;
     BOOL mCachedSlideNumberShape;
     OADTableStyle *mDefaultTableStyle;
     NSArray *mDrawables;
+    unsigned int mIsDoneWithContent : 1;
+    unsigned int mIsHidden : 1;
     NSString *mName;
     OADShape *mSlideNumberPlaceholder;
     OADShape *mSlideNumberShape;

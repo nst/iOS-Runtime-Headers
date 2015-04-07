@@ -73,11 +73,11 @@
 - (void)_handlePotentialDeviceChange:(struct __WiFiDeviceClient { }*)arg1;
 - (BOOL)_isPrimaryCellular;
 - (void)_performBackgroundInit;
-- (void)_performCurrentNetworkBlock:(id)arg1 withDevice:(struct __WiFiDeviceClient { }*)arg2 async:(BOOL)arg3;
-- (void)_performCurrentNetworkBlock:(id)arg1 withDevice:(struct __WiFiDeviceClient { }*)arg2;
 - (void)_performCurrentNetworkBlock:(id)arg1;
-- (void)_performDeviceBlock:(id)arg1 useCache:(BOOL)arg2;
+- (void)_performCurrentNetworkBlock:(id)arg1 withDevice:(struct __WiFiDeviceClient { }*)arg2;
+- (void)_performCurrentNetworkBlock:(id)arg1 withDevice:(struct __WiFiDeviceClient { }*)arg2 async:(BOOL)arg3;
 - (void)_performDeviceBlock:(id)arg1;
+- (void)_performDeviceBlock:(id)arg1 useCache:(BOOL)arg2;
 - (void)_performPowerReading;
 - (void)_setCurrentNetwork:(struct __WiFiNetwork { }*)arg1;
 - (id)_ssidFromNetwork:(struct __WiFiNetwork { }*)arg1;

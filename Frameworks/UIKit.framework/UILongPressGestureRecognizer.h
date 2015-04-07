@@ -5,20 +5,20 @@
 @class NSArray, NSMutableSet;
 
 @interface UILongPressGestureRecognizer : UIGestureRecognizer {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    unsigned int _gotTouchEnd : 1;
-    unsigned int _gotTooMany : 1;
-    unsigned int _gotEnoughTaps : 1;
-    unsigned int _cancelPastAllowableMovement : 1;
     NSMutableSet *_activeTouches;
     float _allowableMovement;
     int _buttonType;
+    unsigned int _cancelPastAllowableMovement : 1;
     id _enoughTimeElapsed;
+    unsigned int _gotEnoughTaps : 1;
+    unsigned int _gotTooMany : 1;
+    unsigned int _gotTouchEnd : 1;
     id _imp;
     double _minimumPressDuration;
     unsigned int _numberOfTouchesRequired;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _startPointScreen;
     id _tooMuchTimeElapsed;
     NSArray *_touches;

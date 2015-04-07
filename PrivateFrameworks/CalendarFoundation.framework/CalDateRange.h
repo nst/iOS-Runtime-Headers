@@ -4,7 +4,7 @@
 
 @class NSDate, NSString;
 
-@interface CalDateRange : NSObject <NSCopying, CalDateRangeProtocol, NSSecureCoding> {
+@interface CalDateRange : NSObject <CalDateRangeProtocol, NSCopying, NSSecureCoding> {
     NSDate *_endDate;
     NSDate *_startDate;
 }
@@ -39,8 +39,8 @@
 - (id)initWithStartDate:(id)arg1 duration:(double)arg2;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)intersectionWithRange:(id)arg1;
-- (BOOL)intersectsRange:(id)arg1 allowSinglePointIntersection:(BOOL)arg2;
 - (BOOL)intersectsRange:(id)arg1;
+- (BOOL)intersectsRange:(id)arg1 allowSinglePointIntersection:(BOOL)arg2;
 - (BOOL)intersectsRangeWithStartDate:(id)arg1 endDate:(id)arg2 allowSinglePointIntersection:(BOOL)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isValid;
@@ -48,9 +48,9 @@
 - (id)midpoint;
 - (void)setDuration:(double)arg1;
 - (void)setEndDate:(id)arg1;
+- (void)setStartDate:(id)arg1;
 - (void)setStartDate:(id)arg1 duration:(double)arg2;
 - (void)setStartDate:(id)arg1 endDate:(id)arg2;
-- (void)setStartDate:(id)arg1;
 - (id)startDate;
 - (id)subtractRange:(id)arg1;
 - (id)unionRange:(id)arg1;

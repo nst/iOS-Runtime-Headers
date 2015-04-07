@@ -5,36 +5,6 @@
 @class IMAVChat, IMHandle, NSArray, NSData, NSDictionary, NSMutableArray, NSString, NSTimer;
 
 @interface IMAVChatParticipant : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     NSArray *_additionalPeers;
     BOOL _audioMuted;
     IMAVChat *_avChat;
@@ -54,11 +24,41 @@
     NSData *_outFrequencyLevel;
     NSMutableArray *_participantsCallInfo;
     NSDictionary *_properties;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _remoteLandscapeContentRect;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _remoteLandscapeOrientation;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _remotePIPLandscapeOrientation;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _remotePIPPortraitOrientation;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _remotePortraitContentRect;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _remotePortraitOrientation;
     unsigned int _screenOrientation;
     BOOL _sendingAudio;
@@ -94,18 +94,14 @@
 @property(retain) NSData * inFrequencyLevel;
 @property(retain,readonly) IMHandle * invitedBy;
 @property(setter=setAudioMuted:) BOOL isAudioMuted;
-@property(setter=setAudioMuted:) BOOL isAudioMuted;
 @property(readonly) BOOL isInitiator;
 @property(readonly) BOOL isLocalParticipant;
 @property(readonly) BOOL isMediaStalled;
 @property(setter=setMediaStalled:) BOOL isMediaStalled;
 @property(readonly) BOOL isSendingAudio;
-@property(readonly) BOOL isSendingAudio;
-@property(readonly) BOOL isSendingVideo;
 @property(readonly) BOOL isSendingVideo;
 @property(readonly) BOOL isVideoDegraded;
 @property(setter=setVideoDegraded:) BOOL isVideoDegraded;
-@property(setter=setVideoPaused:) BOOL isVideoPaused;
 @property(setter=setVideoPaused:) BOOL isVideoPaused;
 @property(retain,readonly) NSString * name;
 @property(retain) NSData * outFrequencyLevel;

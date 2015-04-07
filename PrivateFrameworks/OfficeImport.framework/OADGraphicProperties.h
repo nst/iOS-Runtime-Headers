@@ -5,11 +5,11 @@
 @class NSArray, NSString, OADFill, OADScene3D, OADShape3D, OADStroke;
 
 @interface OADGraphicProperties : OADDrawableProperties <OADEffectsParent, OADProperties3DParent> {
-    unsigned int mHasIsBehindText : 1;
-    unsigned int mIsBehindText : 1;
     NSArray *mEffects;
     NSArray *mExts;
     OADFill *mFill;
+    unsigned int mHasIsBehindText : 1;
+    unsigned int mIsBehindText : 1;
     OADScene3D *mScene3D;
     OADShape3D *mShape3D;
     OADStroke *mStroke;

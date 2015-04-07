@@ -12,8 +12,8 @@
 @property BOOL useFakeEffectSource;
 
 - (void)layoutSubviews;
-- (void)setUseFakeEffectSource:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setUseFakeEffectSource:(BOOL)arg1;
+- (void)setUseFakeEffectSource:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)useFakeEffectSource;
 
 @end

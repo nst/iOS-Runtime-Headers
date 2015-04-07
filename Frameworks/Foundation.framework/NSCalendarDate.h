@@ -15,8 +15,8 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)calendarDate;
 + (id)dateWithNaturalLanguageString:(id)arg1 date:(id)arg2 locale:(id)arg3;
-+ (id)dateWithString:(id)arg1 calendarFormat:(id)arg2 locale:(id)arg3;
 + (id)dateWithString:(id)arg1 calendarFormat:(id)arg2;
++ (id)dateWithString:(id)arg1 calendarFormat:(id)arg2 locale:(id)arg3;
 + (id)dateWithYear:(int)arg1 month:(unsigned int)arg2 day:(unsigned int)arg3 hour:(unsigned int)arg4 minute:(unsigned int)arg5 second:(unsigned int)arg6 timeZone:(id)arg7;
 + (id)distantFuture;
 + (id)distantPast;
@@ -32,8 +32,8 @@
 - (int)dayOfYear;
 - (void)dealloc;
 - (id)description;
-- (id)descriptionWithCalendarFormat:(id)arg1 locale:(id)arg2;
 - (id)descriptionWithCalendarFormat:(id)arg1;
+- (id)descriptionWithCalendarFormat:(id)arg1 locale:(id)arg2;
 - (id)descriptionWithLocale:(id)arg1;
 - (id)ekmsuidGMTDateToDateInTimeZone:(id)arg1;
 - (id)ekmsuidStringForYearMonthDay;
@@ -41,9 +41,9 @@
 - (int)hourOfDay;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithString:(id)arg1 calendarFormat:(id)arg2 locale:(id)arg3;
-- (id)initWithString:(id)arg1 calendarFormat:(id)arg2;
 - (id)initWithString:(id)arg1;
+- (id)initWithString:(id)arg1 calendarFormat:(id)arg2;
+- (id)initWithString:(id)arg1 calendarFormat:(id)arg2 locale:(id)arg3;
 - (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
 - (id)initWithYear:(int)arg1 month:(unsigned int)arg2 day:(unsigned int)arg3 hour:(unsigned int)arg4 minute:(unsigned int)arg5 second:(unsigned int)arg6 timeZone:(id)arg7;
 - (int)microsecondOfSecond;

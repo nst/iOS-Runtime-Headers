@@ -5,11 +5,11 @@
 @class NSObject, NSString, TSWPStorage;
 
 @interface TSWPStorageIterationEvent : NSObject {
+    NSObject *_object;
+    NSString *_providerIdentifier;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    NSObject *_object;
-    NSString *_providerIdentifier;
     } _range;
     TSWPStorage *_storage;
     int _type;

@@ -35,7 +35,7 @@
 - (id)getFeedbackStringForKnob:(unsigned int)arg1;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1;
+- (id)initWithArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; bool x9; bool x10; int x11; unsigned int x12[1]; }*)arg1;
 - (id)initWithType:(int)arg1 scalar:(float)arg2 naturalSize:(struct CGSize { float x1; float x2; })arg3;
 - (BOOL)isCircular;
 - (BOOL)isEqual:(id)arg1;
@@ -55,7 +55,7 @@
 - (void)p_setControlKnobPointForChevron:(struct CGPoint { float x1; float x2; })arg1;
 - (void)p_setControlKnobPointForRegularPolygon:(struct CGPoint { float x1; float x2; })arg1;
 - (void)p_setControlKnobPointForRoundedRect:(struct CGPoint { float x1; float x2; })arg1;
-- (void)saveToArchive:(struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1;
+- (void)saveToArchive:(struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; bool x9; bool x10; int x11; unsigned int x12[1]; }*)arg1;
 - (float)scalar;
 - (struct CGSize { float x1; float x2; })scaleFactorForInscribedRectangle;
 - (void)scaleToNaturalSize:(struct CGSize { float x1; float x2; })arg1;

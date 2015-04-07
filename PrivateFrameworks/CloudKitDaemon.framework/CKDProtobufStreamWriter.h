@@ -10,6 +10,20 @@
 @class <CKDProtobufMessageSigningDelegate>, NSData, NSFileHandle, NSInputStream, NSMutableArray, NSObject<OS_dispatch_queue>, NSOutputStream, NSString;
 
 @interface CKDProtobufStreamWriter : NSObject <NSStreamDelegate> {
+    NSMutableArray *_allObjects;
+    NSFileHandle *_binaryLogFileHandle;
+    unsigned int _bufferSize;
+    NSData *_curData;
+    unsigned int _curDataPos;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    BOOL _haveFinishedCompression;
+    BOOL _haveFinishedStreaming;
+    BOOL _haveFlushedZlib;
+    NSFileHandle *_humanLogFileHandle;
+    NSInputStream *_inputStream;
+    NSOutputStream *_outputStream;
+    BOOL _shouldCompress;
+    <CKDProtobufMessageSigningDelegate> *_signingDelegate;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -25,20 +39,6 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    NSMutableArray *_allObjects;
-    NSFileHandle *_binaryLogFileHandle;
-    unsigned int _bufferSize;
-    NSData *_curData;
-    unsigned int _curDataPos;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _haveFinishedCompression;
-    BOOL _haveFinishedStreaming;
-    BOOL _haveFlushedZlib;
-    NSFileHandle *_humanLogFileHandle;
-    NSInputStream *_inputStream;
-    NSOutputStream *_outputStream;
-    BOOL _shouldCompress;
-    <CKDProtobufMessageSigningDelegate> *_signingDelegate;
     } _zlibStream;
 }
 

@@ -5,22 +5,22 @@
 @class NSString;
 
 @interface UIKBShadowEffect : NSObject <UIKBRenderEffect> {
+    NSString *_colorName;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _concaveInsets;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _insets;
     struct CGSize { 
         float width; 
         float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    NSString *_colorName;
-    } _concaveInsets;
-    } _insets;
     } _offset;
     float _weight;
 }

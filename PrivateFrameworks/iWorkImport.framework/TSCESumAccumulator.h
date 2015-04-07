@@ -10,6 +10,9 @@
 @class <TSUMultipleChoiceListChoiceProviding>, NSDate, NSString;
 
 @interface TSCESumAccumulator : NSObject {
+    NSDate *mDateAccumulator;
+    BOOL mFoundANumber;
+    BOOL mMixedDurationsAndNumbers;
     struct TSCENumberValue { 
         int (**_vptr$TSCEAbstractValue)(); 
         double mDouble; 
@@ -17,7 +20,7 @@
         struct TSUFormat { 
             int (**_vptr$TSUFormat)(); 
             int mFormatType; 
-            boolmIsImplicitFormat; 
+            bool mIsImplicitFormat; 
             union { 
                 struct { 
                     unsigned int mCurrencyCodeIndex : 16; 
@@ -66,9 +69,6 @@
             struct TSUCustomFormat {} *mCustomFormat; 
         } mFormat; 
         BOOL mIsUnitlessZero; 
-    NSDate *mDateAccumulator;
-    BOOL mFoundANumber;
-    BOOL mMixedDurationsAndNumbers;
     } mNumberAccumulator;
     double mSecondsToAdd;
 }

@@ -30,8 +30,8 @@
 - (void)mf_convertNetworkLineEndingsToUnixInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)mf_makeImmutable;
 - (void*)mutableBytes;
-- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2 length:(unsigned int)arg3;
 - (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2;
+- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2 length:(unsigned int)arg3;
 - (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withLELong:(long)arg2;
 - (void)resetBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setData:(id)arg1;

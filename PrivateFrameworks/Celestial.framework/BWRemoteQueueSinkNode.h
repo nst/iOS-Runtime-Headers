@@ -5,16 +5,16 @@
 @class <BWRemoteQueueSinkNodeDelegate>, NSDictionary;
 
 @interface BWRemoteQueueSinkNode : BWSinkNode {
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     BOOL _attachPanoramaMetadata;
     struct opaqueCMFormatDescription { } *_cachedVideoFormatDescription;
     int _clientVideoRetainedBufferCount;
     <BWRemoteQueueSinkNodeDelegate> *_delegate;
     BOOL _discardsLateSampleBuffers;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } _lastPTS;
     BOOL _mediaTypeIsVideo;
     struct remoteQueueSenderOpaque { } *_remoteQueueSender;

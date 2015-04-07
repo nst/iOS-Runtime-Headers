@@ -4,12 +4,12 @@
 
 @class NSString, WKContentView;
 
-@interface WKActionSheetAssistant : NSObject <WKActionSheetDelegate, DDDetectionControllerInteractionDelegate> {
-    struct RetainPtr<WKActionSheet> { 
-        void *m_ptr; 
+@interface WKActionSheetAssistant : NSObject <DDDetectionControllerInteractionDelegate, WKActionSheetDelegate> {
     struct RetainPtr<_WKActivatedElementInfo> { 
         void *m_ptr; 
     } _elementInfo;
+    struct RetainPtr<WKActionSheet> { 
+        void *m_ptr; 
     } _interactionSheet;
     WKContentView *_view;
 }

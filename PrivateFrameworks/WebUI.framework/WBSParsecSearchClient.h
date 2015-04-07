@@ -94,8 +94,8 @@
 - (id)_locationSourceForLocation:(id)arg1;
 - (void)_locationThread;
 - (void)_performBlock:(id)arg1;
-- (void)_performBlockOnLocationThread:(id)arg1 wait:(BOOL)arg2;
 - (void)_performBlockOnLocationThread:(id)arg1;
+- (void)_performBlockOnLocationThread:(id)arg1 wait:(BOOL)arg2;
 - (void)_performBlockOnLocationThreadAndWait:(id)arg1;
 - (void)_requestDeviceIP;
 - (void)_setDeviceIP:(id)arg1;

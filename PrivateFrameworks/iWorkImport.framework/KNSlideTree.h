@@ -36,8 +36,8 @@
 - (void)moveSlideNode:(id)arg1 inSlideNode:(id)arg2 toIndex:(unsigned int)arg3;
 - (unsigned int)numberOfSlidesUsingMasterSlide:(id)arg1;
 - (id)orderedSlideNodesInSelection:(id)arg1;
-- (void)p_addSlideNodeAndDescendantsOfSlideNode:(id)arg1 toArray:(id)arg2 slideNodesForUniqueIdentifiersDictionary:(id)arg3 slideNodesForFormulaReferencesDictionary:(id)arg4 formulaReferenceNamesForSlideNodesDictionary:(id)arg5 visibleSlidesSoFar:(unsigned int*)arg6 hiddenSlidesSoFar:(unsigned int*)arg7;
 - (void)p_addSlideNodeAndDescendantsOfSlideNode:(id)arg1 toArray:(id)arg2 slideNodesForUniqueIdentifiersDictionary:(id)arg3 slideNodesForFormulaReferencesDictionary:(id)arg4 formulaReferenceNamesForSlideNodesDictionary:(id)arg5;
+- (void)p_addSlideNodeAndDescendantsOfSlideNode:(id)arg1 toArray:(id)arg2 slideNodesForUniqueIdentifiersDictionary:(id)arg3 slideNodesForFormulaReferencesDictionary:(id)arg4 formulaReferenceNamesForSlideNodesDictionary:(id)arg5 visibleSlidesSoFar:(unsigned int*)arg6 hiddenSlidesSoFar:(unsigned int*)arg7;
 - (void)p_cacheSlideNodes;
 - (void)p_clearSlideNodeCache;
 - (void)reloadDisplayedNodes;

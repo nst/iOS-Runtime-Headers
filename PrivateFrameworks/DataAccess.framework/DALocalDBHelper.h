@@ -15,7 +15,11 @@
     void *_bookmarkDB;
     int _calConnectionCount;
     struct CalDatabase { } *_calDB;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _calUnitTestCallbackBlock;
+
     NSString *_clientIdentifier;
     int _noteConnectionCount;
     NoteContext *_noteDB;

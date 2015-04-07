@@ -41,8 +41,8 @@
 - (void)saveToArchiver:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDateStyle:(long)arg1;
-- (void)setFormat:(id)arg1 localeIdentifier:(id)arg2 dateStyle:(long)arg3 timeStyle:(long)arg4;
 - (void)setFormat:(id)arg1;
+- (void)setFormat:(id)arg1 localeIdentifier:(id)arg2 dateStyle:(long)arg3 timeStyle:(long)arg4;
 - (void)setLocaleIdentifier:(id)arg1;
 - (void)setNeedsUpdate:(BOOL)arg1;
 - (void)setTimeStyle:(long)arg1;

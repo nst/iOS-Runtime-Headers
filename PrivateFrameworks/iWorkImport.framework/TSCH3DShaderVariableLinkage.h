@@ -9,14 +9,6 @@
 @class NSMutableSet, TSCH3DShaderVariable;
 
 @interface TSCH3DShaderVariableLinkage : NSObject {
-    struct TSCH3DShaderType { 
-        unsigned int mValue; 
-    struct TSCH3DShaderVariableScopes { 
-        struct array<TSCH3DShaderVariableScopeType, 2> { 
-            struct TSCH3DShaderVariableScopeType { 
-                unsigned int mValue; 
-            } __elems_[2]; 
-        } mScopes; 
     struct TSCH3DShaderVariableScopes { 
         struct array<TSCH3DShaderVariableScopeType, 2> { 
             struct TSCH3DShaderVariableScopeType { 
@@ -26,14 +18,21 @@
     } mDeclaredScope;
     NSMutableSet *mDependees;
     BOOL mIsUsed;
+    struct TSCH3DShaderType { 
+        unsigned int mValue; 
     } mLinked;
+    struct TSCH3DShaderVariableScopes { 
+        struct array<TSCH3DShaderVariableScopeType, 2> { 
+            struct TSCH3DShaderVariableScopeType { 
+                unsigned int mValue; 
+            } __elems_[2]; 
+        } mScopes; 
     } mScope;
     TSCH3DShaderVariable *mVariable;
 }
 
-@property(readonly) /* Warning: unhandled struct encoding: '{TSCH3DShaderVariableScopes={array<TSCH3DShaderVariableScopeType' */ struct  scope; /* unknown property attribute:  2>=[2{TSCH3DShaderVariableScopeType=I}]}} */
-@property(readonly) struct  declaredScope; /* unknown property attribute:  2>=[2{TSCH3DShaderVariableScopeType=I}]}} */
 @property(readonly) BOOL canHaveFragment;
+@property(readonly) struct  declaredScope; /* unknown property attribute:  2>=[2{TSCH3DShaderVariableScopeType=I}]}} */
 @property(readonly) NSMutableSet * dependees;
 @property(readonly) BOOL hasAttribute;
 @property(readonly) BOOL hasFragment;
@@ -51,6 +50,7 @@
 @property(readonly) BOOL isVertexVarying;
 @property(readonly) struct TSCH3DShaderType { unsigned int x1; } linked;
 @property(readonly) BOOL notLinked;
+@property(readonly) /* Warning: unhandled struct encoding: '{TSCH3DShaderVariableScopes={array<TSCH3DShaderVariableScopeType' */ struct  scope; /* unknown property attribute:  2>=[2{TSCH3DShaderVariableScopeType=I}]}} */
 @property(readonly) BOOL scopeHasFragment;
 @property(readonly) BOOL scopedInAll;
 @property(readonly) struct TSCH3DShaderType { unsigned int x1; } shaderType;

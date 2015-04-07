@@ -22,8 +22,8 @@
 - (id)initWithConnection:(id)arg1;
 - (void)invalidate;
 - (void)sendMessage:(id)arg1;
-- (void)sendMessageWithPacker:(id)arg1 replyHandler:(id)arg2 onQueue:(id)arg3;
 - (void)sendMessageWithPacker:(id)arg1;
+- (void)sendMessageWithPacker:(id)arg1 replyHandler:(id)arg2 onQueue:(id)arg3;
 - (void)setConnection:(id)arg1;
 
 @end

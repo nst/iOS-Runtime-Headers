@@ -7,8 +7,8 @@
 
 - (unsigned int)_numberOfColumns;
 - (BOOL)canBeWrappedInLatexMathIndicators;
-- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2 openOperator:(id)arg3 openOperatorTreePosition:(id)arg4 closeOperator:(id)arg5 closeOperatorTreePosition:(id)arg6;
 - (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;
+- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2 openOperator:(id)arg3 openOperatorTreePosition:(id)arg4 closeOperator:(id)arg5 closeOperatorTreePosition:(id)arg6;
 - (BOOL)isMultiRowTable;
 - (id)latexDescriptionInMathMode:(BOOL)arg1;
 - (id)mathMLTag;

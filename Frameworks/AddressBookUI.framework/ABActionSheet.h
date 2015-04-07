@@ -12,14 +12,14 @@
 
 @property void* ab_context;
 
-- (id)_addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (int)_addButtonWithTitle:(id)arg1;
-- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(int)arg3 tag2:(int)arg4 tag3:(const void*)arg5 tag4:(const void*)arg6;
-- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(int)arg3 tag2:(int)arg4 tag3:(const void*)arg5;
-- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(int)arg3 tag2:(int)arg4;
+- (id)_addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(int)arg3;
-- (int)ab_addButtonWithTitle:(id)arg1 tag:(int)arg2 tag2:(int)arg3;
+- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(int)arg3 tag2:(int)arg4;
+- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(int)arg3 tag2:(int)arg4 tag3:(const void*)arg5;
+- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(int)arg3 tag2:(int)arg4 tag3:(const void*)arg5 tag4:(const void*)arg6;
 - (int)ab_addButtonWithTitle:(id)arg1 tag:(int)arg2;
+- (int)ab_addButtonWithTitle:(id)arg1 tag:(int)arg2 tag2:(int)arg3;
 - (void*)ab_context;
 - (int)ab_tag2AtIndex:(int)arg1;
 - (const void*)ab_tag3AtIndex:(int)arg1;

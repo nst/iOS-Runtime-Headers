@@ -4,7 +4,7 @@
 
 @class <PLAirTunesServicePickerViewControllerDelegate>, NSArray, NSDictionary, NSString, UITableView;
 
-@interface PLAirTunesServicePickerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface PLAirTunesServicePickerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSArray *_availableRoutes;
     id _delegate;
     NSDictionary *_selectedRoute;

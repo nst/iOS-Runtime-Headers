@@ -9,14 +9,18 @@
 @class PHImageRequestOptions;
 
 @interface PHImageRequest : PHImageManagerRequest {
-    struct CGSize { 
-        float width; 
-        float height; 
     int _bestFormat;
     int _contentMode;
     int _degradedFormat;
     PHImageRequestOptions *_options;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resultHandler;
+
+    struct CGSize { 
+        float width; 
+        float height; 
     } _targetSize;
 }
 

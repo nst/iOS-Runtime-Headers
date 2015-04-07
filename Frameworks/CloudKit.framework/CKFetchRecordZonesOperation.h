@@ -10,7 +10,11 @@
 
 @interface CKFetchRecordZonesOperation : CKDatabaseOperation {
     NSError *_fetchAllRecordZonesError;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchRecordZonesCompletionBlock;
+
     BOOL _ignorePCSFailures;
     BOOL _isFetchAllRecordZonesOperation;
     NSMutableDictionary *_recordZoneErrors;

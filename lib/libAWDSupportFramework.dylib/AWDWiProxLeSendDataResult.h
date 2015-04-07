@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface AWDWiProxLeSendDataResult : PBCodable <NSCopying> {
+    unsigned int _dataLength;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int dataLength : 1; 
         unsigned int result : 1; 
-    unsigned int _dataLength;
     } _has;
     NSString *_peerId;
     unsigned int _result;

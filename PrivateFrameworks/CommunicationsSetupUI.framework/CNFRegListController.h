@@ -8,8 +8,12 @@
 
 @class CNFRegController, NSString;
 
-@interface CNFRegListController : PSListController <CNFRegChangeAccountPasswordDelegate, CNFRegAccountAuthorizationDelegate, IMSystemMonitorListener> {
+@interface CNFRegListController : PSListController <CNFRegAccountAuthorizationDelegate, CNFRegChangeAccountPasswordDelegate, IMSystemMonitorListener> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _appearBlock;
+
     BOOL _appeared;
     CNFRegController *_regController;
     BOOL _shouldRerootPreferences;

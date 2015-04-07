@@ -23,13 +23,12 @@
 + (id)pointerFunctionsWithOptions:(unsigned int)arg1;
 
 - (int (*)())acquireFunction;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int (*)())descriptionFunction;
 - (int (*)())hashFunction;
+- (id)initWithOptions:(unsigned int)arg1;
 - (int (*)())isEqualFunction;
 - (int (*)())relinquishFunction;
-- (int (*)())sizeFunction;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithOptions:(unsigned int)arg1;
 - (void)setAcquireFunction:(int (*)())arg1;
 - (void)setDescriptionFunction:(int (*)())arg1;
 - (void)setHashFunction:(int (*)())arg1;
@@ -38,6 +37,7 @@
 - (void)setSizeFunction:(int (*)())arg1;
 - (void)setUsesStrongWriteBarrier:(BOOL)arg1;
 - (void)setUsesWeakReadAndWriteBarriers:(BOOL)arg1;
+- (int (*)())sizeFunction;
 - (BOOL)usesStrongWriteBarrier;
 - (BOOL)usesWeakReadAndWriteBarriers;
 

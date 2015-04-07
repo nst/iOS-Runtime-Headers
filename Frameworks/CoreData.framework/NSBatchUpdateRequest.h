@@ -5,14 +5,14 @@
 @class NSDictionary, NSEntityDescription, NSPredicate, NSString;
 
 @interface NSBatchUpdateRequest : NSPersistentStoreRequest <NSPredicatedStoreRequest> {
+    NSDictionary *_columnsToUpdate;
+    id _entity;
+    NSString *_entityName;
     struct _requestFlags { 
         unsigned int includesSubentities : 1; 
         unsigned int resultType : 2; 
         unsigned int entityIsName : 1; 
         unsigned int _RESERVED : 28; 
-    NSDictionary *_columnsToUpdate;
-    id _entity;
-    NSString *_entityName;
     } _flags;
     NSPredicate *_predicate;
 }

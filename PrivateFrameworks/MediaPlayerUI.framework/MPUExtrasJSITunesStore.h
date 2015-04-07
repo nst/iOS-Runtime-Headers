@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSString, UIViewController;
 
-@interface MPUExtrasJSITunesStore : IKJSITunesStore <SKStoreProductViewControllerDelegatePrivate, MPUExtrasJSITunesStore, IKJSITunesStore> {
+@interface MPUExtrasJSITunesStore : IKJSITunesStore <IKJSITunesStore, MPUExtrasJSITunesStore, SKStoreProductViewControllerDelegatePrivate> {
     UIViewController *_formPresentationViewController;
 }
 

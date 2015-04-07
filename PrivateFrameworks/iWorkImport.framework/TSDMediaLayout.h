@@ -14,8 +14,7 @@
             float width; 
             float height; 
         } size; 
-    struct { 
-        unsigned int alignmentFrame : 1; 
+    } mBoundsForStandardKnobs;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -25,9 +24,10 @@
             float width; 
             float height; 
         } size; 
-    } mBoundsForStandardKnobs;
     } mCachedAlignmentFrame;
     TSDMutableStroke *mDynamicStroke;
+    struct { 
+        unsigned int alignmentFrame : 1; 
     } mMediaInvalidFlags;
     BOOL mShouldRenderFrameStroke;
 }

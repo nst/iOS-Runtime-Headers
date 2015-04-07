@@ -4,7 +4,7 @@
 
 @class NSString, WebUIBrowserLoadingController, _UIServiceWebView;
 
-@interface _UIServiceWebViewController : UIViewController <_UIServiceWebViewControllerProtocol, WebUIBrowserLoadingControllerDelegate> {
+@interface _UIServiceWebViewController : UIViewController <WebUIBrowserLoadingControllerDelegate, _UIServiceWebViewControllerProtocol> {
     WebUIBrowserLoadingController *_loadingController;
     _UIServiceWebView *_uiWebView;
 }

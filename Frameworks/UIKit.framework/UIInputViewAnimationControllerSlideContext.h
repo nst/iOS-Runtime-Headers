@@ -5,6 +5,8 @@
 @class UIInputViewSetPlacement, UIView;
 
 @interface UIInputViewAnimationControllerSlideContext : NSObject {
+    UIInputViewSetPlacement *_endPlacement;
+    UIView *_snapshot;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    UIInputViewSetPlacement *_endPlacement;
-    UIView *_snapshot;
     } _snapshotEndFrame;
 }
 

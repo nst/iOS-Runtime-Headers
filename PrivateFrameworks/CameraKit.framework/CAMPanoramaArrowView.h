@@ -5,6 +5,9 @@
 @class CAShapeLayer, UIImageView, UIView;
 
 @interface CAMPanoramaArrowView : UIView {
+    UIImageView *_arrowHead;
+    UIView *_arrowTail;
+    CAShapeLayer *_arrowTailPiecesLayer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,9 +17,6 @@
             float width; 
             float height; 
         } size; 
-    UIImageView *_arrowHead;
-    UIView *_arrowTail;
-    CAShapeLayer *_arrowTailPiecesLayer;
     } _arrowTailRect;
     float _currentNormalizedSpeed;
     struct CGPath { } *_currentTailPiecesPath;

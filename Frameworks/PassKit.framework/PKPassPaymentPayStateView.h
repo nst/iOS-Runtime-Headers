@@ -36,8 +36,8 @@
 - (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
 - (void)setLabelAlpha:(float)arg1;
-- (void)setState:(int)arg1 textOverride:(id)arg2 completionHandler:(id)arg3;
 - (void)setState:(int)arg1;
+- (void)setState:(int)arg1 textOverride:(id)arg2 completionHandler:(id)arg3;
 - (int)state;
 
 @end

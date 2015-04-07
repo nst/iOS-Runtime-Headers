@@ -9,7 +9,6 @@
 @class NSDocInfo, NSString;
 
 @interface NSLeafProxy <NSCopying> {
-     /* Encoded args for previous method:  */
     NSString *dir;
     NSDocInfo *docInfo;
     NSString *file;
@@ -22,6 +21,8 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)forwardInvocation:(id)arg1;
 + (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)initialize;
+     /* Encoded args for previous method:  */
+
 
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;

@@ -5,11 +5,11 @@
 @class GEOLatLng, GEOTimezone;
 
 @interface GEOPDPlaceInfo : PBCodable <NSCopying> {
+    double _area;
+    GEOLatLng *_center;
     struct { 
         unsigned int area : 1; 
         unsigned int isApproximateCenter : 1; 
-    double _area;
-    GEOLatLng *_center;
     } _has;
     BOOL _isApproximateCenter;
     GEOTimezone *_timezone;

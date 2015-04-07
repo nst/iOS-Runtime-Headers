@@ -37,8 +37,8 @@
 @property(copy) NSArray * urlAddresses;
 
 + (id)contact;
-+ (id)contactWithRecord:(void*)arg1 unify:(BOOL)arg2;
 + (id)contactWithRecord:(void*)arg1;
++ (id)contactWithRecord:(void*)arg1 unify:(BOOL)arg2;
 
 - (struct __CFString { }*)_ABLabelFromCNLabel:(id)arg1;
 - (void)_setMultiValueForProperty:(int)arg1 values:(id)arg2 valueFromCNValue:(id)arg3;
@@ -49,11 +49,11 @@
 - (BOOL)deleteContact;
 - (BOOL)hasChanges;
 - (id)init;
-- (id)initWithRecord:(void*)arg1 unify:(BOOL)arg2 originalRecord:(void*)arg3;
 - (id)initWithRecord:(void*)arg1;
+- (id)initWithRecord:(void*)arg1 unify:(BOOL)arg2 originalRecord:(void*)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToContact:(id)arg1 includeIdentifiers:(BOOL)arg2;
 - (BOOL)isEqualToContact:(id)arg1;
+- (BOOL)isEqualToContact:(id)arg1 includeIdentifiers:(BOOL)arg2;
 - (BOOL)linkToContact:(id)arg1;
 - (BOOL)saveContact;
 - (BOOL)saveContactInAddressBook:(void*)arg1;

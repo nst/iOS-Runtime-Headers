@@ -5,9 +5,9 @@
 @class WKContentView;
 
 @interface WKDateTimePopover : WKFormRotatingAccessoryPopover <WKFormControl> {
+    WKContentView *_view;
     struct RetainPtr<WKDateTimePopoverViewController> { 
         void *m_ptr; 
-    WKContentView *_view;
     } _viewController;
 }
 

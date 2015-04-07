@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface AWDCompanionSyncErrorEvent : PBCodable <NSCopying> {
+    int _error;
     struct { 
         unsigned int sequenceNumber : 1; 
         unsigned int timestamp : 1; 
         unsigned int error : 1; 
-    int _error;
     } _has;
     unsigned long long _sequenceNumber;
     NSString *_service;

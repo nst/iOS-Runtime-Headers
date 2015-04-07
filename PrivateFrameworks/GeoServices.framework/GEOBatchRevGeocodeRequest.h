@@ -9,9 +9,9 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    } _additionalPlaceTypes;
     struct { 
         unsigned int splitIntoClusters : 1; 
-    } _additionalPlaceTypes;
     } _has;
     NSMutableArray *_locations;
     NSMutableArray *_serviceTags;

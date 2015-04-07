@@ -5,12 +5,12 @@
 @class NSString, UIView;
 
 @interface RUFocusedTouchGestureRecognizer : UIGestureRecognizer <UIGestureRecognizerDelegatePrivate> {
+    UIView *_focusedView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    UIView *_focusedView;
     } _touchAllowance;
 }
 

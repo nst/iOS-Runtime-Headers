@@ -5,15 +5,6 @@
 @class IMAVChatParticipant, NSData, NSDictionary, NSString;
 
 @interface TUCall : NSObject <NSSecureCoding> {
-    struct { 
-        unsigned int imageType : 2; 
-        unsigned int abUidIsValid : 1; 
-        unsigned int dialAssisted : 1; 
-        unsigned int dialedFromEmergencyUI : 1; 
-        unsigned int isEmergencyCall : 1; 
-        unsigned int isEmergencyCallIsValid : 1; 
-        unsigned int joiningConference : 1; 
-        unsigned int leavingConference : 1; 
     NSString *_abLabel;
     int _abUid;
     BOOL _allowsTTYSettingChanges;
@@ -32,6 +23,15 @@
     double _hostMessageSendTime;
     NSString *_isoCountryCode;
     NSString *_overrideName;
+    struct { 
+        unsigned int imageType : 2; 
+        unsigned int abUidIsValid : 1; 
+        unsigned int dialAssisted : 1; 
+        unsigned int dialedFromEmergencyUI : 1; 
+        unsigned int isEmergencyCall : 1; 
+        unsigned int isEmergencyCallIsValid : 1; 
+        unsigned int joiningConference : 1; 
+        unsigned int leavingConference : 1; 
     } _phoneCallFlags;
     int _provisionalHoldStatus;
     BOOL _requestingHandoff;

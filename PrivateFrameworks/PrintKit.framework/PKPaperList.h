@@ -39,8 +39,8 @@
 - (id)initWithTXTRecord:(id)arg1;
 - (BOOL)isPaperReady:(id)arg1;
 - (int)jobTypesSupported:(id)arg1;
-- (id)matchPaper:(id)arg1 inList:(id)arg2;
 - (id)matchPaper:(id)arg1;
+- (id)matchPaper:(id)arg1 inList:(id)arg2;
 - (id)matchedPaper:(id)arg1 preferBorderless:(BOOL)arg2 withDuplexMode:(id)arg3 didMatch:(BOOL*)arg4;
 - (id)paperListForDuplexMode:(id)arg1;
 - (id)papers;

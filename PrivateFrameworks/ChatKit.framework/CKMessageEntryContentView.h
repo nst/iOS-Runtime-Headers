@@ -5,16 +5,6 @@
 @class CKComposition, CKMessageEntryRichTextView, CKMessageEntryTextView, NSString, UIView;
 
 @interface CKMessageEntryContentView : UIScrollView <UITextViewDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     UIView *_activeView;
     CKComposition *_composition;
     UIView *_dividerLine;
@@ -24,8 +14,18 @@
     float _placeholderHeight;
     BOOL _shouldShowCharacterCount;
     BOOL _shouldShowSubject;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _subjectAlignmentInsets;
     CKMessageEntryTextView *_subjectView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _textAlignmentInsets;
     CKMessageEntryRichTextView *_textView;
 }

@@ -57,8 +57,8 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)helper;
 - (id)init;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
 - (id)initWithStyle:(int)arg1;
 - (BOOL)isRealViewLoaded;
 - (void)loadView;

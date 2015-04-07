@@ -4,7 +4,7 @@
 
 @class <EKEventAttachmentEditViewControllerDelegate>, NSArray, NSString, UITableView;
 
-@interface EKEventAttachmentEditViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate, EKEventAttachmentCellControllerDelegate> {
+@interface EKEventAttachmentEditViewController : EKEditItemViewController <EKEventAttachmentCellControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSArray *_cellControllers;
     <EKEventAttachmentEditViewControllerDelegate> *_delegate;
     UITableView *_table;

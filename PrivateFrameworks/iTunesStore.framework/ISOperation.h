@@ -64,8 +64,8 @@
 - (id)progress;
 - (int)progressWeight;
 - (void)releasePowerAssertionsDuringBlock:(id)arg1;
-- (void)run:(BOOL)arg1;
 - (void)run;
+- (void)run:(BOOL)arg1;
 - (long)runRunLoopUntilStopped;
 - (BOOL)runSubOperation:(id)arg1 onQueue:(id)arg2 error:(id*)arg3;
 - (BOOL)runSubOperation:(id)arg1 returningError:(id*)arg2;

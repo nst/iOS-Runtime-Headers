@@ -5,6 +5,30 @@
 @class NSDictionary, NSMutableArray, NSMutableDictionary, _UIFlowLayoutInfo;
 
 @interface UICollectionViewFlowLayout : UICollectionViewLayout {
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _contentOffsetAdjustment;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _contentSizeAdjustment;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _currentLayoutSize;
+    _UIFlowLayoutInfo *_data;
+    NSMutableDictionary *_deletedItemsAttributesDict;
+    NSMutableDictionary *_deletedSectionFootersAttributesDict;
+    NSMutableDictionary *_deletedSectionHeadersAttributesDict;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _estimatedItemSize;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _footerReferenceSize;
     struct { 
         unsigned int delegateSizeForItem : 1; 
         unsigned int delegateReferenceSizeForHeader : 1; 
@@ -16,52 +40,28 @@
         unsigned int layoutDataIsValid : 1; 
         unsigned int delegateInfoIsValid : 1; 
         unsigned int roundsToScreenScale : 1; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _contentOffsetAdjustment;
-    } _contentSizeAdjustment;
-    } _currentLayoutSize;
-    _UIFlowLayoutInfo *_data;
-    NSMutableDictionary *_deletedItemsAttributesDict;
-    NSMutableDictionary *_deletedSectionFootersAttributesDict;
-    NSMutableDictionary *_deletedSectionHeadersAttributesDict;
-    } _estimatedItemSize;
-    } _footerReferenceSize;
     } _gridLayoutFlags;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _headerReferenceSize;
     NSMutableArray *_indexPathsToValidate;
     NSMutableDictionary *_insertedItemsAttributesDict;
     NSMutableDictionary *_insertedSectionFootersAttributesDict;
     NSMutableDictionary *_insertedSectionHeadersAttributesDict;
     float _interitemSpacing;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _itemSize;
     float _lineSpacing;
     NSDictionary *_rowAlignmentsOptionsDictionary;
     int _scrollDirection;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _sectionInset;
 }
 
@@ -107,10 +107,10 @@
 - (struct CGSize { float x1; float x2; })footerReferenceSize;
 - (struct CGSize { float x1; float x2; })headerReferenceSize;
 - (id)indexPathForItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)indexesForSectionFootersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingData:(id)arg2;
 - (id)indexesForSectionFootersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)indexesForSectionHeadersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingData:(id)arg2;
+- (id)indexesForSectionFootersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingData:(id)arg2;
 - (id)indexesForSectionHeadersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)indexesForSectionHeadersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingData:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initialLayoutAttributesForFooterInInsertedSection:(int)arg1;
@@ -121,12 +121,12 @@
 - (id)invalidationContextForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
 - (struct CGSize { float x1; float x2; })itemSize;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)layoutAttributesForFooterInSection:(int)arg1 usingData:(id)arg2;
 - (id)layoutAttributesForFooterInSection:(int)arg1;
-- (id)layoutAttributesForHeaderInSection:(int)arg1 usingData:(id)arg2;
+- (id)layoutAttributesForFooterInSection:(int)arg1 usingData:(id)arg2;
 - (id)layoutAttributesForHeaderInSection:(int)arg1;
-- (id)layoutAttributesForItemAtIndexPath:(id)arg1 usingData:(id)arg2;
+- (id)layoutAttributesForHeaderInSection:(int)arg1 usingData:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
+- (id)layoutAttributesForItemAtIndexPath:(id)arg1 usingData:(id)arg2;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (float)minimumInteritemSpacing;
 - (float)minimumLineSpacing;

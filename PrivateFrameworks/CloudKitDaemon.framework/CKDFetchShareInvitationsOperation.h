@@ -11,7 +11,11 @@
 @interface CKDFetchShareInvitationsOperation : CKDOperation {
     int _fetchType;
     BOOL _queryAllContainers;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shareInvitationFetchedProgressBlock;
+
     NSArray *_shareInvitations;
 }
 

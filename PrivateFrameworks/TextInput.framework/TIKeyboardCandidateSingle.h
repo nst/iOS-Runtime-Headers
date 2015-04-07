@@ -23,8 +23,8 @@
 - (id)description;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCandidate:(id)arg1 forInput:(id)arg2;
 - (id)initWithCandidate:(id)arg1;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUnchangedInput:(id)arg1;

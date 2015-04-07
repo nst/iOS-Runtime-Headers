@@ -17,7 +17,11 @@
     PKInAppPaymentService *_inAppPaymentService;
     NSXPCListener *_listener;
     PKPaymentRequest *_paymentRequest;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _presentationCompletionBlock;
+
     NSObject<OS_dispatch_queue> *_queue;
     NSTimer *_timer;
 }
@@ -58,8 +62,8 @@
 - (id)hostIdentifier;
 - (id)inAppPaymentService;
 - (id)initWithPaymentRequest:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)listener;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)paymentRequest;
 - (void)presentWithCompletion:(id)arg1;
 - (id)presentationCompletionBlock;

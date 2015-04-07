@@ -10,15 +10,15 @@
 @class AVPlayerController, AVValueTiming, NSArray, NSString, WebAVMediaSelectionOption;
 
 @interface WebAVPlayerController : NSObject <AVPlayerViewControllerDelegate> {
-    struct CGSize { 
-        float width; 
-        float height; 
     NSArray *_audioMediaSelectionOptions;
     BOOL _canPause;
     BOOL _canPlay;
     BOOL _canScanBackward;
     BOOL _canSeek;
     BOOL _canTogglePlayback;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _contentDimensions;
     double _contentDuration;
     double _contentDurationWithinEndTimes;
@@ -90,7 +90,6 @@
 + (id)keyPathsForValuesAffectingPlaying;
 + (id)keyPathsForValuesAffectingPlayingOnExternalScreen;
 
-- (struct WebVideoFullscreenModel { int (**x1)(); }*)delegate;
 - (id).cxx_construct;
 - (id)audioMediaSelectionOptions;
 - (void)beginScanningBackward:(id)arg1;
@@ -110,6 +109,7 @@
 - (id)currentAudioMediaSelectionOption;
 - (id)currentLegibleMediaSelectionOption;
 - (void)dealloc;
+- (struct WebVideoFullscreenModel { int (**x1)(); }*)delegate;
 - (void)endScanningBackward:(id)arg1;
 - (void)endScanningForward:(id)arg1;
 - (void)endScrubbing:(id)arg1;

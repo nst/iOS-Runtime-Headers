@@ -3,6 +3,12 @@
  */
 
 @interface AWDPowerBBCallMetrics : PBCodable <NSCopying> {
+    unsigned int _bBAndDataPowerMicroWatt;
+    unsigned int _bBPowerMicroWatt;
+    unsigned int _bBTotalAndDataDuration;
+    unsigned int _bBTotalCallDuration;
+    unsigned int _connectedSleepDuration;
+    unsigned int _connectedSleepDurationData;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int bBAndDataPowerMicroWatt : 1; 
@@ -11,12 +17,6 @@
         unsigned int bBTotalCallDuration : 1; 
         unsigned int connectedSleepDuration : 1; 
         unsigned int connectedSleepDurationData : 1; 
-    unsigned int _bBAndDataPowerMicroWatt;
-    unsigned int _bBPowerMicroWatt;
-    unsigned int _bBTotalAndDataDuration;
-    unsigned int _bBTotalCallDuration;
-    unsigned int _connectedSleepDuration;
-    unsigned int _connectedSleepDurationData;
     } _has;
     unsigned long long _timestamp;
 }

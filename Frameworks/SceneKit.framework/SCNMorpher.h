@@ -4,11 +4,11 @@
 
 @class NSArray, NSMutableArray, NSString, SCNOrderedDictionary;
 
-@interface SCNMorpher : NSObject <SCNAnimatable, NSSecureCoding> {
-    unsigned int _isPresentationInstance : 1;
+@interface SCNMorpher : NSObject <NSSecureCoding, SCNAnimatable> {
     SCNOrderedDictionary *_animations;
     int _calculationMode;
-    struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; boolx6; } *_morpher;
+    unsigned int _isPresentationInstance : 1;
+    struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; bool x6; } *_morpher;
     NSString *_name;
     id _reserved;
     BOOL _shouldMorphNormals;
@@ -25,7 +25,7 @@
 
 + (id)SCNJSExportProtocol;
 + (id)morpher;
-+ (id)morpherWithMorphRef:(struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; boolx6; }*)arg1;
++ (id)morpherWithMorphRef:(struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; bool x6; }*)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void*)__CFObject;
@@ -37,11 +37,11 @@
 - (void)_syncEntityObjCModel;
 - (void)_syncObjCAnimations;
 - (void)_syncObjCModel;
-- (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (void)addAnimation:(id)arg1;
+- (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (id)animationForKey:(id)arg1;
 - (id)animationKeys;
-- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; boolx7; boolx8; boolx9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; struct _opaque_pthread_mutex_t { long x_16_1_1; BOOL x_16_1_2[40]; } x16; int x17; int x18; int x19; int x20; }*)animationManager;
+- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool x7; bool x8; bool x9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; struct _opaque_pthread_mutex_t { long x_16_1_1; BOOL x_16_1_2[40]; } x16; int x17; int x18; int x19; int x20; }*)animationManager;
 - (int)calculationMode;
 - (id)copy;
 - (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1;
@@ -51,19 +51,19 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)init;
-- (id)initPresentationMorpherWithMorphRef:(struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; boolx6; }*)arg1;
+- (id)initPresentationMorpherWithMorphRef:(struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; bool x6; }*)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMorphRef:(struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; boolx6; }*)arg1;
+- (id)initWithMorphRef:(struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; bool x6; }*)arg1;
 - (BOOL)isAnimationForKeyPaused:(id)arg1;
 - (BOOL)isPausedOrPausedByInheritance;
-- (struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; boolx6; }*)morphRef;
+- (struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; bool x6; }*)morphRef;
 - (id)name;
 - (void)pauseAnimationForKey:(id)arg1;
 - (id)presentationInstance;
 - (id)presentationMorpher;
 - (void)removeAllAnimations;
-- (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(float)arg2;
 - (void)removeAnimationForKey:(id)arg1;
+- (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(float)arg2;
 - (void)resumeAnimationForKey:(id)arg1;
 - (id)scene;
 - (struct __C3DScene { }*)sceneRef;

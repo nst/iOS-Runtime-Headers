@@ -54,8 +54,8 @@
 - (id)persistentOrDirtyPropertyForKey:(id)arg1;
 - (id)propertyForKey:(id)arg1 withPersistentFallback:(id)arg2;
 - (id)propertyName;
-- (BOOL)propertyValueForKey:(id)arg1 value:(id*)arg2;
 - (id)propertyValueForKey:(id)arg1;
+- (BOOL)propertyValueForKey:(id)arg1 value:(id*)arg2;
 - (BOOL)rebase;
 - (BOOL)refresh;
 - (id)relationForKey:(id)arg1;

@@ -17,10 +17,10 @@
 - (void)addNonNilObject:(id)arg1;
 - (void)addObject:(id)arg1;
 - (void)addObjects:(const id*)arg1 count:(unsigned int)arg2;
-- (void)addObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)addObjectsFromArray:(id)arg1;
-- (void)addObjectsFromOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)addObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)addObjectsFromOrderedSet:(id)arg1;
+- (void)addObjectsFromOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)addObjectsFromSet:(id)arg1;
 - (void)axSafelyAddObject:(id)arg1;
 - (Class)classForCoder;
@@ -37,10 +37,10 @@
 - (void)pl_addObjectIfNotNil:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
-- (void)removeObjectsInArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)removeObjectsInArray:(id)arg1;
-- (void)removeObjectsInOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)removeObjectsInArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)removeObjectsInOrderedSet:(id)arg1;
+- (void)removeObjectsInOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)removeObjectsInSet:(id)arg1;
 - (void)removeObjectsPassingTest:(id)arg1;
 - (void)removeObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;

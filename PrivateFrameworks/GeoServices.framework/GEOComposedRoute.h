@@ -90,9 +90,9 @@
 - (BOOL)checkDrivingArrivalForCoordinate:(struct { double x1; double x2; })arg1 coordinateOnRoute:(struct { double x1; double x2; })arg2 routePointIndex:(unsigned int)arg3 distanceFromRoute:(double)arg4 arrivalMapRegion:(id)arg5 checkArrivalRadius:(BOOL)arg6 checkDistanceAlongRoute:(BOOL)arg7 isOnRoute:(BOOL)arg8;
 - (void)clearSnappedPathsForObserver:(id)arg1;
 - (void*)controlPoints;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })coordinateAtOffset:(double)arg1;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })coordinateAtOffset:(double)arg1 fromRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })coordinateAtOffset:(double)arg1 fromRoutePoint:(unsigned int)arg2;
-- (struct PolylineCoordinate { unsigned int x1; float x2; })coordinateAtOffset:(double)arg1;
 - (double)courseAtRouteCoordinateIndex:(unsigned int)arg1;
 - (unsigned int)currentDisplayStep;
 - (void)dealloc;
@@ -131,8 +131,8 @@
 - (struct { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; })maneuverDisplayEndpointsAtIndex:(unsigned long)arg1;
 - (void)maneuverDisplayHasChanged;
 - (id)maneuverDisplaySteps;
-- (id)matchToRouteWithLocation:(id)arg1 trackedLocation:(id)arg2 onDate:(id)arg3 transportType:(int)arg4 useSnappedPaths:(BOOL)arg5 maxDistance:(double)arg6;
 - (id)matchToRouteWithLocation:(id)arg1 trackedLocation:(id)arg2 onDate:(id)arg3 transportType:(int)arg4 useSnappedPaths:(BOOL)arg5;
+- (id)matchToRouteWithLocation:(id)arg1 trackedLocation:(id)arg2 onDate:(id)arg3 transportType:(int)arg4 useSnappedPaths:(BOOL)arg5 maxDistance:(double)arg6;
 - (id)name;
 - (void)notifyTrafficUpdated;
 - (id)origin;
@@ -174,8 +174,8 @@
 - (unsigned int)trafficColorsCount;
 - (int)transportType;
 - (int)transportTypeForStep:(id)arg1;
-- (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1 startOffsetInPoints:(double)arg2 endOffsetInPoints:(double)arg3 roadWidthInPoints:(double)arg4;
 - (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1;
+- (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1 startOffsetInPoints:(double)arg2 endOffsetInPoints:(double)arg3 roadWidthInPoints:(double)arg4;
 - (id)zilchDataFromStepIndex:(unsigned int)arg1;
 
 @end

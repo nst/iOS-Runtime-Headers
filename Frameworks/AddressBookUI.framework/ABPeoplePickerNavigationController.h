@@ -5,6 +5,15 @@
 @class <ABPeoplePickerNavigationControllerDelegate>, <ABStyleProvider>, ABModel, CNContactPicker, NSArray, NSPredicate, UISplitViewController;
 
 @interface ABPeoplePickerNavigationController : UINavigationController {
+    void *_addressBook;
+    BOOL _allowsContactBlocking;
+    BOOL _allowsOnlyFaceTimeActions;
+    BOOL _allowsOnlyPhoneActions;
+    int _behavior;
+    CNContactPicker *_contactPicker;
+    UISplitViewController *_contactsSplitViewPresentationDelegate;
+    NSArray *_defaultToolbarItems;
+    struct __CFArray { } *_displayedProperties;
     struct { 
         unsigned int allowsEditing : 1; 
         unsigned int allowsCancel : 1; 
@@ -16,15 +25,6 @@
         unsigned int hidesPromptInLandscape : 1; 
         unsigned int forceInProcess : 1; 
         unsigned int forceOutOfProcess : 1; 
-    void *_addressBook;
-    BOOL _allowsContactBlocking;
-    BOOL _allowsOnlyFaceTimeActions;
-    BOOL _allowsOnlyPhoneActions;
-    int _behavior;
-    CNContactPicker *_contactPicker;
-    UISplitViewController *_contactsSplitViewPresentationDelegate;
-    NSArray *_defaultToolbarItems;
-    struct __CFArray { } *_displayedProperties;
     } _flags;
     BOOL _ignoreViewWillBePresented;
     int _insertionProperty;
@@ -76,8 +76,8 @@
 - (id)ab_defaultToolbarItems;
 - (BOOL)ab_ownsViewControllerToolbarItems:(id)arg1;
 - (void)ab_restoreViewControllerToolbarItems:(id)arg1 animated:(BOOL)arg2;
-- (void)ab_setDefaultToolbarItems:(id)arg1 animated:(BOOL)arg2;
 - (void)ab_setDefaultToolbarItems:(id)arg1;
+- (void)ab_setDefaultToolbarItems:(id)arg1 animated:(BOOL)arg2;
 - (void*)addressBook;
 - (BOOL)allowsActions;
 - (BOOL)allowsCancel;
@@ -92,8 +92,8 @@
 - (id)bannerValue;
 - (int)behavior;
 - (BOOL)ckCanDismissWhenSuspending;
-- (void)contactPicker:(id)arg1 didSelectContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(int)arg4;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
+- (void)contactPicker:(id)arg1 didSelectContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(int)arg4;
 - (void)contactPickerDidCancel:(id)arg1;
 - (id)contactPickerPresentedViewController:(id)arg1;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
@@ -110,10 +110,10 @@
 - (BOOL)hidesPromptInLandscape;
 - (BOOL)hidesSearchableSources;
 - (id)init;
-- (id)initAsAddressBook:(BOOL)arg1 withAddressBook:(void*)arg2 withStyle:(int)arg3;
-- (id)initAsAddressBook:(BOOL)arg1 withAddressBook:(void*)arg2;
-- (id)initAsAddressBook:(BOOL)arg1 withStyle:(int)arg2;
 - (id)initAsAddressBook:(BOOL)arg1;
+- (id)initAsAddressBook:(BOOL)arg1 withAddressBook:(void*)arg2;
+- (id)initAsAddressBook:(BOOL)arg1 withAddressBook:(void*)arg2 withStyle:(int)arg3;
+- (id)initAsAddressBook:(BOOL)arg1 withStyle:(int)arg2;
 - (id)initWithAddressBook:(void*)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(int)arg1;
@@ -132,8 +132,8 @@
 - (void)notePreferencesChanged;
 - (id)peoplePickerDelegate;
 - (void)personViewController:(id)arg1 requestedLinkForPerson:(id)arg2;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4 withMemberCell:(id)arg5;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4 withMemberCell:(id)arg5;
 - (void)popToDefaultViewController:(BOOL)arg1;
 - (id)predicateForEnablingPerson;
 - (id)predicateForSelectionOfPerson;
@@ -144,8 +144,8 @@
 - (id)prompt;
 - (id)promptForViewControllerType:(int)arg1 orientation:(int)arg2;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)removeChildViewController:(id)arg1 notifyDidMove:(BOOL)arg2;
 - (void)removeChildViewController:(id)arg1;
+- (void)removeChildViewController:(id)arg1 notifyDidMove:(BOOL)arg2;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)saveState;
 - (void)scrollToClosestContactMatching:(id)arg1;
@@ -175,8 +175,8 @@
 - (void)setPredicateForEnablingPerson:(id)arg1;
 - (void)setPredicateForSelectionOfPerson:(id)arg1;
 - (void)setPredicateForSelectionOfProperty:(id)arg1;
-- (void)setPrompt:(id)arg1 forViewControllerType:(int)arg2;
 - (void)setPrompt:(id)arg1;
+- (void)setPrompt:(id)arg1 forViewControllerType:(int)arg2;
 - (void)setStyleProvider:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (void)setupAsMePicker;
@@ -184,10 +184,10 @@
 - (void)setupViewControllers;
 - (BOOL)shouldContinueAfterSelectingPerson:(void*)arg1 cell:(id)arg2;
 - (BOOL)shouldPerformDefaultActionForPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3 withMemberCell:(id)arg4;
-- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3 forceDisableEditing:(BOOL)arg4;
 - (void)showCardForPerson:(void*)arg1;
-- (void)showMembersOfContactsFilter:(id)arg1 animate:(BOOL)arg2 loadState:(BOOL)arg3;
+- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3 forceDisableEditing:(BOOL)arg4;
 - (void)showMembersOfContactsFilter:(id)arg1;
+- (void)showMembersOfContactsFilter:(id)arg1 animate:(BOOL)arg2 loadState:(BOOL)arg3;
 - (void)showUnifiedCardForPerson:(void*)arg1;
 - (id)styleProvider;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;

@@ -12,7 +12,11 @@
     NSArray *_bundleIDs;
     SKUIClientContext *_clientContext;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _outputBlock;
+
 }
 
 @property(copy) id outputBlock;

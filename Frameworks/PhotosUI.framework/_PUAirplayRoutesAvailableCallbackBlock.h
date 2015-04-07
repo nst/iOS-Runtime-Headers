@@ -7,7 +7,11 @@
  */
 
 @interface _PUAirplayRoutesAvailableCallbackBlock : _PUWeakReferenceHolder {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _callbackBlock;
+
 }
 
 @property(copy) id callbackBlock;

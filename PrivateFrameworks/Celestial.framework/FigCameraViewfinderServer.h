@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
 
-@interface FigCameraViewfinderServer : NSObject <NSXPCListenerDelegate, FigCameraViewfinderDelegate, FigCameraViewfinderSessionDelegate> {
+@interface FigCameraViewfinderServer : NSObject <FigCameraViewfinderDelegate, FigCameraViewfinderSessionDelegate, NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSMutableArray *_connections;
     NSXPCListener *_serviceListener;

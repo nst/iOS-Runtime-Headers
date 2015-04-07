@@ -4,62 +4,20 @@
 
 @class <UIPopoverControllerDelegate>, NSArray, NSString, UIBarButtonItem, UIColor, UIDimmingView, UIPanGestureRecognizer, UIPopoverPresentationController, UIView, UIViewController, _UIPopoverLayoutInfo, _UIPopoverView;
 
-@interface UIPopoverController : NSObject <UIDimmingViewDelegate, UIGestureRecognizerDelegatePrivate, UIAppearanceContainer> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct { 
-        unsigned int isPresentingModalViewController : 1; 
-        unsigned int isPresentingActionSheet : 1; 
-        unsigned int wasIgnoringDimmingViewTouchesBeforeScrolling : 1; 
-        unsigned int isInTextEffectsWindow : 1; 
-        unsigned int isEmbeddingInView : 1; 
-        unsigned int embeddedPresentationBounces : 1; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+@interface UIPopoverController : NSObject <UIAppearanceContainer, UIDimmingViewDelegate, UIGestureRecognizerDelegatePrivate> {
     BOOL _allowResizePastTargetRect;
     UIColor *_backgroundColor;
     UIViewController *_contentViewController;
     unsigned int _currentArrowDirection;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _currentPresentationRectInView;
     UIView *_currentPresentationView;
     id _delegate;
@@ -68,6 +26,15 @@
     UIDimmingView *_dimmingView;
     UIPanGestureRecognizer *_dimmingViewGestureRecognizer;
     BOOL _dismissesOnRotation;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _embeddedTargetRect;
     BOOL _ignoresKeyboardNotifications;
     UIView *_layoutConstraintView;
@@ -78,9 +45,24 @@
     unsigned int _popoverArrowDirection;
     int _popoverBackgroundStyle;
     Class _popoverBackgroundViewClass;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _popoverContentSize;
+    struct { 
+        unsigned int isPresentingModalViewController : 1; 
+        unsigned int isPresentingActionSheet : 1; 
+        unsigned int wasIgnoringDimmingViewTouchesBeforeScrolling : 1; 
+        unsigned int isInTextEffectsWindow : 1; 
+        unsigned int isEmbeddingInView : 1; 
+        unsigned int embeddedPresentationBounces : 1; 
     } _popoverControllerFlags;
     int _popoverControllerStyle;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _popoverLayoutMargins;
     _UIPopoverView *_popoverView;
     _UIPopoverLayoutInfo *_preferredLayoutInfo;
@@ -99,7 +81,25 @@
     UIViewController *_splitParentController;
     id _target;
     UIBarButtonItem *_targetBarButtonItem;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _targetRectInDimmingView;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _targetRectInEmbeddingView;
     unsigned int _toViewAutoResizingMask;
     UIPanGestureRecognizer *_vendedGestureRecognizer;
@@ -187,8 +187,8 @@
 - (void)_postludeForDismissal;
 - (void)_presentPopoverBySlidingIn:(BOOL)arg1 fromEdge:(unsigned int)arg2 ofView:(id)arg3 animated:(BOOL)arg4 stateOnly:(BOOL)arg5 notifyDelegate:(BOOL)arg6;
 - (void)_presentPopoverFromEdge:(unsigned int)arg1 ofView:(id)arg2 animated:(BOOL)arg3;
-- (void)_presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 embeddedInView:(id)arg2 usingViewForLayoutConstraints:(id)arg3 permittedArrowDirections:(unsigned int)arg4 animate:(BOOL)arg5;
 - (void)_presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 embeddedInView:(id)arg2 usingViewForLayoutConstraints:(id)arg3 permittedArrowDirections:(unsigned int)arg4;
+- (void)_presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 embeddedInView:(id)arg2 usingViewForLayoutConstraints:(id)arg3 permittedArrowDirections:(unsigned int)arg4 animate:(BOOL)arg5;
 - (void)_presentShimmedPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
 - (float)_presentationAnimationDuration;
 - (id)_presentationController;
@@ -256,16 +256,16 @@
 - (void)presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
 - (void)setAllowResizePastTargetRect:(BOOL)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setContentViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setContentViewController:(id)arg1;
+- (void)setContentViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDimmingView:(id)arg1;
 - (void)setDismissesOnRotation:(BOOL)arg1;
 - (void)setPassthroughViews:(id)arg1;
 - (void)setPopoverArrowDirection:(unsigned int)arg1;
 - (void)setPopoverBackgroundViewClass:(Class)arg1;
-- (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)setPopoverFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)setPopoverLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPreferredLayoutInfo:(id)arg1;

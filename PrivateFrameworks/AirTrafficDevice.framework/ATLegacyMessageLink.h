@@ -4,7 +4,7 @@
 
 @class NSMutableData, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface ATLegacyMessageLink : ATLockdownMessageLink <ATSocketDelegate, ATLegacyMessageLink> {
+@interface ATLegacyMessageLink : ATLockdownMessageLink <ATLegacyMessageLink, ATSocketDelegate> {
     int _expectedBytesRemaining;
     NSMutableData *_incomingData;
     NSObject<OS_dispatch_queue> *_queue;

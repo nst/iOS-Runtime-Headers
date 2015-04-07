@@ -56,8 +56,8 @@
 - (id)changeRequestForUUID:(id)arg1;
 - (id)changeRequests;
 - (id)deletes;
-- (id)fetchPHObjectsForOIDs:(id)arg1 propertyHint:(unsigned int)arg2 includeTrash:(BOOL)arg3;
 - (id)fetchPHObjectsForOIDs:(id)arg1;
+- (id)fetchPHObjectsForOIDs:(id)arg1 propertyHint:(unsigned int)arg2 includeTrash:(BOOL)arg3;
 - (id)fetchPHObjectsForUUIDs:(id)arg1 entityName:(id)arg2;
 - (id)fetchResults;
 - (id)fetchUpdatedObject:(id)arg1;

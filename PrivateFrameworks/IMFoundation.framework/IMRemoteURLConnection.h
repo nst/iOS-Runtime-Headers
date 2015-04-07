@@ -9,7 +9,11 @@
 @class NSObject<OS_xpc_object>, NSString, NSURLRequest;
 
 @interface IMRemoteURLConnection : NSObject {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _block;
+
     NSString *_bundleIdentifierForDataUsage;
     BOOL _cancelled;
     NSObject<OS_xpc_object> *_connection;

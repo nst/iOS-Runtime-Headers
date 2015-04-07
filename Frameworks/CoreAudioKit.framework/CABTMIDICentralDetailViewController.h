@@ -4,7 +4,7 @@
 
 @class AMSBTLEPeripheral, NSString, NSTimer, UIViewController<PeripheralForgottenDelegate><PeripheralConnectionStateDelegate>;
 
-@interface CABTMIDICentralDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, BTLEConnectionTable> {
+@interface CABTMIDICentralDetailViewController : UIViewController <BTLEConnectionTable, UITableViewDataSource, UITableViewDelegate> {
     AMSBTLEPeripheral *_detailItem;
     UIViewController<PeripheralForgottenDelegate><PeripheralConnectionStateDelegate> *_viewController;
     NSTimer *connectionTimer;

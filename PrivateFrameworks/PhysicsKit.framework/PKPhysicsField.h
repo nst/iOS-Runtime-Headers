@@ -12,18 +12,20 @@
     struct shared_ptr<PKCField> { 
         struct PKCField {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-     /* Encoded args for previous method: 8@0:4 */
-     /* Encoded args for previous method: v24@0:48 */
-     /* Encoded args for previous method: 8@0:4 */
-     /* Encoded args for previous method: v24@0:48 */
-     /* Encoded args for previous method: v24@0:48 */
-     /* Encoded args for previous method: 8@0:4 */
     } _field;
     BOOL _override;
+
+  /* Unexpected information at end of encoded ivar type: @12@0:4@?8 */
+  /* Error parsing encoded ivar type info:  */
+    /* Warning: Unrecognized filer type: '' using 'void*' */ void*_position;
+
     PKRegion *_region;
     float _rotation;
-    /* Warning: Unrecognized filer type: '' using 'void*' */ void*_position;
+
+  /* Unexpected information at end of encoded ivar type: @12@0:4@?8 */
+  /* Error parsing encoded ivar type info:  */
     /* Warning: Unrecognized filer type: '' using 'void*' */ void*_scale;
+
 }
 
 @property unsigned int categoryBitMask;
@@ -45,6 +47,8 @@
 - (unsigned int)categoryBitMask;
 - (void)dealloc;
 - (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)direction;
+     /* Encoded args for previous method: 8@0:4 */
+
 - (float)falloff;
 - (id)init;
 - (BOOL)isActive;
@@ -53,23 +57,33 @@
 - (float)minimumRadius;
 - (BOOL)override;
 - (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)position;
+     /* Encoded args for previous method: 8@0:4 */
+
 - (id)region;
 - (id)representedObject;
 - (float)rotation;
 - (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)scale;
+     /* Encoded args for previous method: 8@0:4 */
+
 - (void)setActive:(BOOL)arg1;
 - (void)setCategoryBitMask:(unsigned int)arg1;
 - (void)setDirection:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: v24@0:48 */
+
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFalloff:(float)arg1;
 - (void)setIsOverride:(BOOL)arg1;
 - (void)setMinimumRadius:(float)arg1;
 - (void)setOverride:(BOOL)arg1;
 - (void)setPosition:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: v24@0:48 */
+
 - (void)setRegion:(id)arg1;
 - (void)setRepresentedObject:(id)arg1;
 - (void)setRotation:(float)arg1;
 - (void)setScale:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+     /* Encoded args for previous method: v24@0:48 */
+
 - (void)setStrength:(float)arg1;
 - (void)set_field:(struct shared_ptr<PKCField> { struct PKCField {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (float)strength;

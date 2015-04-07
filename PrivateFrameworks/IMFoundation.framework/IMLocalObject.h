@@ -23,8 +23,8 @@
 - (void)_cancelHandlerCompleted;
 - (void)_clearPort:(BOOL)arg1;
 - (id)_currentMessageContext;
-- (void)_enqueueInvocation:(id)arg1 xpcMessage:(id)arg2;
 - (void)_enqueueInvocation:(id)arg1;
+- (void)_enqueueInvocation:(id)arg1 xpcMessage:(id)arg2;
 - (void)_enqueueInvocationWithPriority:(id)arg1 priority:(int)arg2;
 - (void)_enqueueInvocationWithPriority:(id)arg1 xpcMessage:(id)arg2 priority:(int)arg3;
 - (BOOL)_handleInvocation:(id)arg1;
@@ -40,8 +40,8 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)handleInvocation:(id)arg1;
-- (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3 offMainThread:(BOOL)arg4;
 - (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3;
+- (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3 offMainThread:(BOOL)arg4;
 - (id)initWithTarget:(id)arg1 portName:(id)arg2 protocol:(id)arg3;
 - (id)initWithTarget:(id)arg1 protocol:(id)arg2;
 - (void)invalidate;

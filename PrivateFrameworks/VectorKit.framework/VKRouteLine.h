@@ -10,26 +10,13 @@
         double x1; 
         double y0; 
         double y1; 
-    struct { 
-        double v[4][4]; 
-    struct vector<geo::fast_shared_ptr<vk::RouteLineSection>, std::__1::allocator<geo::fast_shared_ptr<vk::RouteLineSection> > > { 
-        struct fast_shared_ptr<vk::RouteLineSection> {} *__begin_; 
-        struct fast_shared_ptr<vk::RouteLineSection> {} *__end_; 
-        struct __compressed_pair<geo::fast_shared_ptr<vk::RouteLineSection> *, std::__1::allocator<geo::fast_shared_ptr<vk::RouteLineSection> > > { 
-            struct fast_shared_ptr<vk::RouteLineSection> {} *__first_; 
-        } __end_cap_; 
-    struct fast_shared_ptr<vk::RouteLineSection> { 
-        struct _fast_shared_ptr_control {} *_control; 
-    struct PolylineCoordinate { 
-        unsigned int index; 
-        float offset; 
-    struct Matrix<float, 2, 1> { 
-        float _e[2]; 
     } _bounds;
     double _boundsInWorldUnit;
     double _boundsUnitsPerMeter;
     BOOL _curve;
     BOOL _hasNewRoadMatches;
+    struct { 
+        double v[4][4]; 
     } _inverseMatrix;
     double _lastTrafficTimeStamp;
     double _lastUserLocationMatchTimestamp;
@@ -38,10 +25,23 @@
     VKPolylineOverlay *_overlay;
     VKPolylineOverlayRenderRegion *_renderRegion;
     NSSet *_retainedTiles;
+    struct vector<geo::fast_shared_ptr<vk::RouteLineSection>, std::__1::allocator<geo::fast_shared_ptr<vk::RouteLineSection> > > { 
+        struct fast_shared_ptr<vk::RouteLineSection> {} *__begin_; 
+        struct fast_shared_ptr<vk::RouteLineSection> {} *__end_; 
+        struct __compressed_pair<geo::fast_shared_ptr<vk::RouteLineSection> *, std::__1::allocator<geo::fast_shared_ptr<vk::RouteLineSection> > > { 
+            struct fast_shared_ptr<vk::RouteLineSection> {} *__first_; 
+        } __end_cap_; 
     } _sections;
     double _simplificationEpsilonPoints;
+    struct Matrix<float, 2, 1> { 
+        float _e[2]; 
     } _userLocation;
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
     } _userLocationIndex;
+    struct fast_shared_ptr<vk::RouteLineSection> { 
+        struct _fast_shared_ptr_control {} *_control; 
     } _userLocationSection;
     double _viewUnitsPerPoint;
 }

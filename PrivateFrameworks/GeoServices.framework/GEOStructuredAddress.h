@@ -5,10 +5,6 @@
 @class NSMutableArray, NSString;
 
 @interface GEOStructuredAddress : PBCodable <GEOURLSerializable, NSCopying> {
-    struct { 
-        long long *list; 
-        unsigned int count; 
-        unsigned int size; 
     NSString *_administrativeArea;
     NSString *_administrativeAreaCode;
     NSMutableArray *_areaOfInterests;
@@ -16,6 +12,10 @@
     NSString *_countryCode;
     NSMutableArray *_dependentLocalitys;
     NSString *_fullThoroughfare;
+    struct { 
+        long long *list; 
+        unsigned int count; 
+        unsigned int size; 
     } _geoIds;
     NSString *_inlandWater;
     NSString *_locality;

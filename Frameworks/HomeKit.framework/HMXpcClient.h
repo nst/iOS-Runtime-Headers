@@ -14,7 +14,11 @@
     HMMessageDispatcher *_messageDispatcher;
     int _notifyRegisterToken;
     BOOL _notifyRegistered;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _reconnectionHandler;
+
     BOOL _requiresCheckin;
     NSXPCConnection *_xpcConnection;
 }
@@ -37,8 +41,8 @@
 - (id)connection;
 - (BOOL)connectionValid;
 - (void)dealloc;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id)arg5;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
+- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id)arg5;
 - (id)init;
 - (id)messageDispatcher;
 - (int)notifyRegisterToken;

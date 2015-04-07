@@ -5,6 +5,14 @@
 @class NSMutableDictionary, NSValue, UIColor, UIImage, UITabBarButtonLabel, UITabBarSelectionIndicatorView, UIView, UIVisualEffectView, _UIBadgeView;
 
 @interface UITabBarButton : UIControl {
+    Class _appearanceGuideClass;
+    _UIBadgeView *_badge;
+    BOOL _badgeAnimated;
+    BOOL _barHeight;
+    NSMutableDictionary *_buttonTintColorsForState;
+    BOOL _centerAllContents;
+    NSMutableDictionary *_contentTintColorsForState;
+    UIImage *_customSelectedIndicatorImage;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,33 +22,25 @@
             float width; 
             float height; 
         } size; 
+    } _hitRect;
+    UIView *_info;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    Class _appearanceGuideClass;
-    _UIBadgeView *_badge;
-    BOOL _badgeAnimated;
-    BOOL _barHeight;
-    NSMutableDictionary *_buttonTintColorsForState;
-    BOOL _centerAllContents;
-    NSMutableDictionary *_contentTintColorsForState;
-    UIImage *_customSelectedIndicatorImage;
-    } _hitRect;
-    UIView *_info;
     } _infoInsets;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _infoOffset;
     UITabBarButtonLabel *_label;
     NSValue *_labelOffsetValue;
     BOOL _selected;
     UITabBarSelectionIndicatorView *_selectedIndicator;
+    struct UIOffset { 
+        float horizontal; 
+        float vertical; 
     } _selectedInfoOffset;
     BOOL _showsHighlightedState;
     UIColor *_unselectedTintColor;
@@ -89,8 +89,8 @@
 - (void)_setTabBarHitRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (void)_setUnselectedTintColor:(id)arg1 forceLabelToConform:(BOOL)arg2;
 - (void)_setUnselectedTintColor:(id)arg1;
+- (void)_setUnselectedTintColor:(id)arg1 forceLabelToConform:(BOOL)arg2;
 - (void)_setUpSelectedIndicatorViewIfNeeded;
 - (void)_showSelectedIndicator:(BOOL)arg1 changeSelection:(BOOL)arg2;
 - (BOOL)_showsHighlightedState;

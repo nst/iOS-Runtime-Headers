@@ -9,14 +9,14 @@
 @class AVAudioSessionMediaPlayerOnly, AVPixelBufferAttributeMediator, AVPlayerItem, AVPropertyStorage, AVWeakKeyValueObserverProxy, AVWeakReference, NSArray, NSDictionary, NSError, NSHashTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVPlayerInternal : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     AVWeakKeyValueObserverProxy *KVOProxy;
     BOOL allowsOutOfBandTextTrackRendering;
     AVAudioSessionMediaPlayerOnly *audioSessionMediaPlayerOnly;
     BOOL autoSwitchStreamVariants;
     NSHashTable *avPlayerLayers;
+    struct CGSize { 
+        float width; 
+        float height; 
     } cachedDisplaySize;
     NSDictionary *cachedFigMediaSelectionCriteriaProperty;
     NSMutableSet *closedCaptionLayers;
@@ -43,7 +43,11 @@
     int pendingPrerollID;
     AVPixelBufferAttributeMediator *pixelBufferAttributeMediator;
     BOOL preparesItemsForPlaybackAsynchronously;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id prerollCompletionHandler;
+
     struct OpaqueFigSimpleMutex { } *prerollIDMutex;
     AVPropertyStorage *propertyStorage;
     struct OpaqueCMTimebase { } *proxyTimebase;

@@ -4,7 +4,7 @@
 
 @class SUDescriptor, SUDownloadMetadata, SUOperationProgress;
 
-@interface SUDownload : NSObject <NSSecureCoding, NSCopying> {
+@interface SUDownload : NSObject <NSCopying, NSSecureCoding> {
     SUDescriptor *_descriptor;
     SUDownloadMetadata *_metadata;
     SUOperationProgress *_progress;

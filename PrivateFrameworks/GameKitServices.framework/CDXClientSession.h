@@ -12,7 +12,11 @@
     CDXClient *CDXClient_;
     unsigned short *ack_;
     <CDXClientSessionDelegate> *delegate_;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id inboundHandler_;
+
     NSData *lastSent_;
     NSMutableIndexSet *participantsInFlight_;
     unsigned char pid_;
@@ -43,8 +47,8 @@
 - (void)recvRaw:(id)arg1 ticket:(id)arg2;
 - (void)resetRetransmitTimer;
 - (BOOL)retransmitEvent;
-- (BOOL)sendData:(id)arg1 toParticipants:(id)arg2;
 - (BOOL)sendData:(id)arg1;
+- (BOOL)sendData:(id)arg1 toParticipants:(id)arg2;
 - (BOOL)sendRaw:(id)arg1 toParticipants:(id)arg2;
 - (id)sessionKey;
 - (void)setDelegate:(id)arg1;

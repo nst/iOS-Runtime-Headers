@@ -27,6 +27,7 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
+    } mCellIDToMergeRegionTopLeft;
     struct hash_map<TSUColumnRowCoordinate, TSUColumnRowSize, TSTCellIDHasher, std::__1::equal_to<TSUColumnRowCoordinate>, std::__1::allocator<std::__1::pair<const TSUColumnRowCoordinate, TSUColumnRowSize> > > { 
         struct __hash_table<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowSize>, __gnu_cxx::__hash_map_hasher<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowSize>, TSTCellIDHasher, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowSize>, std::__1::equal_to<TSUColumnRowCoordinate>, true>, std::__1::allocator<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowSize> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowSize>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowSize>, void *> *> > > { 
@@ -51,6 +52,7 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
+    } mMergeRegionTopLeftToMergeRegionSize;
     struct { 
         struct { 
             unsigned short row; 
@@ -61,8 +63,6 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mCellIDToMergeRegionTopLeft;
-    } mMergeRegionTopLeftToMergeRegionSize;
     } mUnionedMergeRange;
 }
 

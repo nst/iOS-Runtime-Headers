@@ -5,12 +5,12 @@
 @class NSArray, NSString, NSURL;
 
 @interface SKUISwooshPageComponent : SKUIPageComponent {
+    NSArray *_bricks;
+    int _fcKind;
     struct SKUILockupStyle { 
         int artworkSize; 
         int layoutStyle; 
         unsigned int visibleFields; 
-    NSArray *_bricks;
-    int _fcKind;
     } _lockupStyle;
     NSArray *_lockups;
     NSArray *_mediaComponents;

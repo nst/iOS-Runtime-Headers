@@ -10,9 +10,11 @@
 @class TSTExpressionNode;
 
 @interface TSTWPTokenAttachment : TSWPUIGraphicalAttachment {
-    struct CGSize { 
-        float width; 
-        float height; 
+    BOOL mActive;
+    struct CGImage { } *mCachedImage;
+    float mCachedImageScreenScale;
+    TSTExpressionNode *mExpressionNode;
+    BOOL mInInvalidate;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -22,14 +24,12 @@
             float width; 
             float height; 
         } size; 
-    BOOL mActive;
-    struct CGImage { } *mCachedImage;
-    float mCachedImageScreenScale;
-    TSTExpressionNode *mExpressionNode;
-    BOOL mInInvalidate;
     } mMenuRect;
     BOOL mNeverShowsMenu;
     BOOL mSelected;
+    struct CGSize { 
+        float width; 
+        float height; 
     } mTextSize;
 }
 
@@ -43,8 +43,8 @@
 - (id).cxx_construct;
 - (struct CGImage { }*)cachedImage;
 - (float)cachedImageScreenScale;
-- (id)copyIntoContext:(id)arg1 bakeModes:(BOOL)arg2;
 - (id)copyIntoContext:(id)arg1;
+- (id)copyIntoContext:(id)arg1 bakeModes:(BOOL)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)detokenizedText;

@@ -3,15 +3,15 @@
  */
 
 @interface FigIOHIDMotionDelegate : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     int accelRingIndex;
     double accelRingTime[64];
     float accelRingX[64];
     float accelRingY[64];
     float accelRingZ[64];
     BOOL manageAccel;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     } ringMutex;
 }
 

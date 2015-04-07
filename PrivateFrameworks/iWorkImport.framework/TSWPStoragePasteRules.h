@@ -5,12 +5,11 @@
 @class TSPObject, TSWPColumnStyle, TSWPListStyle, TSWPParagraphStyle, TSWPStorage;
 
 @interface TSWPStoragePasteRules : NSObject {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+    unsigned int _actionFlags[4];
+    TSWPStorage *_destStorage;
+    unsigned int _flags;
+    unsigned int _lastFlag;
+    BOOL _mapDestTrailCS;
     struct { 
         TSWPParagraphStyle *parStyle; 
         TSPObject *section; 
@@ -91,15 +90,16 @@
                 } ; 
             } ; 
         } parBidiData; 
-    unsigned int _actionFlags[4];
-    TSWPStorage *_destStorage;
-    unsigned int _flags;
-    unsigned int _lastFlag;
-    BOOL _mapDestTrailCS;
     } _paragraphs[4];
     unsigned int _sourceColumnStyleCount;
     unsigned int _sourceSectionCount;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _srcLeadRange;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _srcTrailRange;
 }
 

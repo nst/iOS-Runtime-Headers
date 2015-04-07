@@ -6,8 +6,8 @@
 }
 
 + (id)crypotgraphyKey;
-+ (id)decryptData:(id)arg1 key:(id)arg2;
 + (id)decryptData:(id)arg1;
++ (id)decryptData:(id)arg1 key:(id)arg2;
 + (id)decryptDataAsData:(id)arg1;
 + (id)doCipher:(id)arg1 key:(id)arg2 CCOperation:(unsigned int)arg3;
 + (id)encryptData:(id)arg1 key:(id)arg2;

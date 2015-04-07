@@ -5,19 +5,19 @@
 @class NSString, SKUILinkButton, UIButton, UICollectionView, UIColor, UIControl, UILabel, UIView;
 
 @interface SKUISwooshView : UIView {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     UIView *_borderView;
     UICollectionView *_collectionView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _collectionViewInsets;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInsets;
     UIButton *_seeAllButton;
     BOOL _showsChevronForTitle;

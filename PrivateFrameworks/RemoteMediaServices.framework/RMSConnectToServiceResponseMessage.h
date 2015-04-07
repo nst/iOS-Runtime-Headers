@@ -5,10 +5,10 @@
 @class RMSControlInterfaceMessage;
 
 @interface RMSConnectToServiceResponseMessage : PBCodable <NSCopying> {
+    RMSControlInterfaceMessage *_controlInterface;
     struct { 
         unsigned int responseCode : 1; 
         unsigned int sessionIdentifier : 1; 
-    RMSControlInterfaceMessage *_controlInterface;
     } _has;
     int _responseCode;
     int _sessionIdentifier;

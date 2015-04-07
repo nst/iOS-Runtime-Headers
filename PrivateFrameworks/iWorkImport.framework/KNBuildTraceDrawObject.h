@@ -5,17 +5,6 @@
 @class TSDGLDataBuffer, TSDGLEdgeDistanceFieldTraceEffect, TSDGLShader, TSDTexturedRectangle;
 
 @interface KNBuildTraceDrawObject : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct { 
-        float x; 
-        float y; 
-    struct { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -34,11 +23,22 @@
         float m43; 
         float m44; 
     } _MVPMatrix;
+    struct { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
     } _color;
     TSDGLDataBuffer *_dataBuffer;
     TSDGLShader *_extraObjectShader;
+    struct { 
+        float x; 
+        float y; 
     } _extraObjectTextureSize;
     BOOL _isExtraObject;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _timing;
     TSDTexturedRectangle *_tr;
     TSDGLEdgeDistanceFieldTraceEffect *_traceEffect;

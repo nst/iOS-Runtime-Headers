@@ -4,7 +4,7 @@
 
 @class <MPVideoControllerProtocol>, <MPVideoOverlayDelegate>, MPAVController, MPAVItem, MPAudioAndSubtitlesController, MPDetailSlider, MPKnockoutButton, MPVolumeSlider, NSArray, NSLayoutConstraint, NSString, UIActivityIndicatorView, UIButton, UILabel, UINavigationBar, UIPopoverController, UIStatusBar, UIView, _UIBackdropView;
 
-@interface MPVideoPlaybackOverlayView : UIView <MPAudioAndSubtitlesControllerDelegate, UIPopoverControllerDelegate, MPVideoOverlay, MPDetailSliderDelegate> {
+@interface MPVideoPlaybackOverlayView : UIView <MPAudioAndSubtitlesControllerDelegate, MPDetailSliderDelegate, MPVideoOverlay, UIPopoverControllerDelegate> {
     BOOL _allowsExitFromFullscreen;
     UIButton *_audioAndSubtitlesButton;
     MPAudioAndSubtitlesController *_audioAndSubtitlesController;
@@ -136,8 +136,8 @@
 - (void)didMoveToWindow;
 - (unsigned long long)disabledParts;
 - (void)hideAlternateTracks;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)item;
 - (void)layoutSubviews;
 - (id)navigationBar;
@@ -152,21 +152,21 @@
 - (void)setAutomaticallyHandleTransportControls:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setDesiredParts:(unsigned long long)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHidden:(BOOL)arg1;
+- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 animateAlongside:(id)arg3 completionBlock:(id)arg4;
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
-- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHidden:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setVideoViewController:(id)arg1;
-- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setVisibleParts:(unsigned long long)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)showAlternateTracks;
 - (void)startTicking;
 - (void)stopTicking;

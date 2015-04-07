@@ -7,8 +7,16 @@
  */
 
 @interface FMFWildcardGestureRecognizer : UIGestureRecognizer {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _touchesBeganCallback;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _touchesEndedCallback;
+
 }
 
 @property(copy) id touchesBeganCallback;

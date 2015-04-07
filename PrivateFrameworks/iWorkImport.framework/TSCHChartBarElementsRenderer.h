@@ -3,6 +3,9 @@
  */
 
 @interface TSCHChartBarElementsRenderer : TSCHRenderer {
+    double mHitFudgeOffset;
+    unsigned int mHitSeriesIndex;
+    unsigned int mHitValueIndex;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,9 +15,6 @@
             float width; 
             float height; 
         } size; 
-    double mHitFudgeOffset;
-    unsigned int mHitSeriesIndex;
-    unsigned int mHitValueIndex;
     } mLastDrawRect;
     BOOL mResizeIsOutsideBody;
     BOOL mTouchInBody;

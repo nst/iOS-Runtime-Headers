@@ -5,9 +5,9 @@
 @class NSArray;
 
 @interface TSCHPieBodyLayoutItemPathCache : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
+    struct CGPath { } *pathLayoutRelative;
+    NSArray *pathSelectionKnobs;
+    struct CGPath { } *pathTransformRelative;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,11 +17,11 @@
             float width; 
             float height; 
         } size; 
-    struct CGPath { } *pathLayoutRelative;
-    NSArray *pathSelectionKnobs;
-    struct CGPath { } *pathTransformRelative;
     } rootedLayoutRect;
     unsigned int seriesIndex;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } wedgeCenterPoint;
 }
 

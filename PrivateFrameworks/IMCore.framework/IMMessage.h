@@ -95,8 +95,8 @@
 - (void)_updateTimeDelivered:(id)arg1;
 - (void)_updateTimePlayed:(id)arg1;
 - (void)_updateTimeRead:(id)arg1;
-- (int)compare:(id)arg1 comparisonType:(int)arg2;
 - (int)compare:(id)arg1;
+- (int)compare:(id)arg1 comparisonType:(int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

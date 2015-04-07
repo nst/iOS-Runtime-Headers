@@ -4,7 +4,7 @@
 
 @class <TSCH3DChartGeometryArrayCompilerDelegate>, NSString, TSCH3DChartModelEnumerator, TSCHChartSeries;
 
-@interface TSCH3DChartGeometryArrayCompiler : TSCH3DGeometryCollector <TSCH3DSceneObjectDelegator, TSCH3DChartAllElementSceneObjectDelegate> {
+@interface TSCH3DChartGeometryArrayCompiler : TSCH3DGeometryCollector <TSCH3DChartAllElementSceneObjectDelegate, TSCH3DSceneObjectDelegator> {
     struct tvec2<int> { 
         union { 
             int x; 

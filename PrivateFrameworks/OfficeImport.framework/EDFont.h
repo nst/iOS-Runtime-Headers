@@ -4,28 +4,28 @@
 
 @class EDColorReference, EDResources, NSString;
 
-@interface EDFont : NSObject <NSCopying, EDImmutableObject> {
-    boolmBold;
-    boolmBoldOverridden;
-    boolmDoNotModify;
-    boolmHeightOverridden;
-    boolmItalic;
-    boolmItalicOverridden;
-    boolmOutline;
-    boolmShadow;
-    boolmStrike;
-    boolmStrikeOverridden;
-    boolmUnderlineOverridden;
-    boolmWeightOverridden;
+@interface EDFont : NSObject <EDImmutableObject, NSCopying> {
+    bool mBold;
+    bool mBoldOverridden;
     int mCharSet;
     EDColorReference *mColorReference;
+    bool mDoNotModify;
     int mFamily;
     double mHeightInTwips;
+    bool mHeightOverridden;
+    bool mItalic;
+    bool mItalicOverridden;
     NSString *mName;
+    bool mOutline;
     EDResources *mResources;
     int mScript;
+    bool mShadow;
+    bool mStrike;
+    bool mStrikeOverridden;
     int mUnderline;
+    bool mUnderlineOverridden;
     unsigned int mWeight;
+    bool mWeightOverridden;
 }
 
 @property(copy,readonly) NSString * debugDescription;

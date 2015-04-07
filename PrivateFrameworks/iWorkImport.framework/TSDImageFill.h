@@ -9,7 +9,7 @@
 
 @class NSObject<OS_dispatch_queue>, NSString, TSPData, TSUColor, TSUFlushableCachedImage;
 
-@interface TSDImageFill : TSDFill <TSDMixing, TSSPreset, TSSPresetSource, NSCopying, NSMutableCopying> {
+@interface TSDImageFill : TSDFill <NSCopying, NSMutableCopying, TSDMixing, TSSPreset, TSSPresetSource> {
     struct CGSize { 
         float width; 
         float height; 

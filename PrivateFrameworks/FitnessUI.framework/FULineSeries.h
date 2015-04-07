@@ -5,9 +5,6 @@
 @class FUGradientObject, FUGradientView, FUShapeView, NSArray, UIColor, UIImageView, UIView;
 
 @interface FULineSeries : FUChartSeries {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     NSArray *_barViews;
     FUGradientObject *_fillGradient;
     FUGradientView *_fillView;
@@ -32,6 +29,9 @@
     FUGradientObject *_selectedFillGradient;
     UIColor *_selectedLineColor;
     UIColor *_selectedPointColor;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     } _selectedPointRange;
     float _sineWaveSmoothingFactor;
     BOOL _snapToPoint;
@@ -59,8 +59,8 @@
 
 - (void).cxx_destruct;
 - (void)_clipHighlightLayerWithPoints:(id)arg1;
-- (id)_fillPathForData:(id)arg1 waveForm:(int)arg2;
 - (id)_fillPathForData:(id)arg1;
+- (id)_fillPathForData:(id)arg1 waveForm:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_getClipRectFromPoints:(id)arg1;
 - (id)_getPointValuesAtIndexes:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_getRangeFromSelectedPoints:(id)arg1;
@@ -69,8 +69,8 @@
 - (void)_layoutFillViews;
 - (void)_layoutLine;
 - (void)_layoutPointViews;
-- (id)_pathForData:(id)arg1 waveForm:(int)arg2;
 - (id)_pathForData:(id)arg1;
+- (id)_pathForData:(id)arg1 waveForm:(int)arg2;
 - (id)_sawToothPathForData:(id)arg1;
 - (void)_setHighlightGradient;
 - (id)_sineWavePathForData:(id)arg1;

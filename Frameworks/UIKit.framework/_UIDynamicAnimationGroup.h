@@ -10,7 +10,11 @@
 
 @interface _UIDynamicAnimationGroup : _UIDynamicAnimation {
     NSMutableArray *_animations;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _applier;
+
     NSMutableArray *_runningAnimations;
 }
 
@@ -24,8 +28,8 @@
 - (void)dealloc;
 - (void)removeAnimation:(id)arg1;
 - (void)runWithCompletion:(id)arg1;
-- (void)runWithGroupApplier:(id)arg1 completion:(id)arg2 forScreen:(id)arg3 runLoopMode:(id)arg4;
 - (void)runWithGroupApplier:(id)arg1 completion:(id)arg2;
+- (void)runWithGroupApplier:(id)arg1 completion:(id)arg2 forScreen:(id)arg3 runLoopMode:(id)arg4;
 - (void)setAnimations:(id)arg1;
 
 @end

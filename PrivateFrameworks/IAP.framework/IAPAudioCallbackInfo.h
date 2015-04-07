@@ -11,16 +11,16 @@
 
 @interface IAPAudioCallbackInfo : NSObject {
     int (*_deviceStateChangedCallback)();
-    int (*_pauseOnHeadphoneDisconnectChangedCallback)();
-    int (*_volumeChangedCallback)();
-    int (*_volumeControlSupportChangedCallback)();
     void *_deviceStateChangedContext;
     CPDistributedNotificationCenter *_dnCenter;
     struct __CFRunLoop { } *_dnCenterRunLoop;
     CPDistributedNotificationCenter *_dnCenteriAP2;
     NSLock *_lock;
+    int (*_pauseOnHeadphoneDisconnectChangedCallback)();
     void *_pauseOnHeadphoneDisconnectChangedContext;
+    int (*_volumeChangedCallback)();
     void *_volumeChangedContext;
+    int (*_volumeControlSupportChangedCallback)();
     void *_volumeControlSupportChangedContext;
 }
 

@@ -5,10 +5,6 @@
 @class WebScriptObject;
 
 @interface WebScriptCallFramePrivate : NSObject {
-    struct String { 
-        struct RefPtr<WTF::StringImpl> { 
-            struct StringImpl {} *m_ptr; 
-        } m_impl; 
     struct JSValue { 
         union EncodedValueDescriptor { 
             long long asInt64; 
@@ -19,6 +15,10 @@
             } asBits; 
         } u; 
     } exceptionValue;
+    struct String { 
+        struct RefPtr<WTF::StringImpl> { 
+            struct StringImpl {} *m_ptr; 
+        } m_impl; 
     } functionName;
     WebScriptObject *globalObject;
 }

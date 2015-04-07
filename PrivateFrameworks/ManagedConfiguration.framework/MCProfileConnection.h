@@ -19,9 +19,21 @@
     NSObject<OS_dispatch_queue> *_publicXPCConnectionSyncQueue;
     NSXPCConnection *_xpcConnection;
     NSObject<OS_dispatch_queue> *_xpcConnectionSyncQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id passcodeReplyBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id showWarningsReplyBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id userInputReplyBlock;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -269,8 +281,8 @@
 - (void)removeObserver:(id)arg1;
 - (void)removeOrphanedClientRestrictions;
 - (void)removeProfileAsyncWithIdentifier:(id)arg1;
-- (void)removeProfileWithIdentifier:(id)arg1 completion:(id)arg2;
 - (void)removeProfileWithIdentifier:(id)arg1;
+- (void)removeProfileWithIdentifier:(id)arg1 completion:(id)arg2;
 - (BOOL)removeProvisioningProfileWithUUID:(id)arg1 outError:(id*)arg2;
 - (void)removeValueSetting:(id)arg1;
 - (void)removeWebContentFilterUserBlacklistedURLString:(id)arg1;
@@ -284,8 +296,8 @@
 - (void)retrieveCloudConfigurationFromURL:(id)arg1 username:(id)arg2 password:(id)arg3 anchorCertificates:(id)arg4 completionBlock:(id)arg5;
 - (void)setAutoCorrectionAllowed:(BOOL)arg1;
 - (void)setAutomaticAppUpdatesAllowed:(BOOL)arg1;
-- (void)setBoolValue:(BOOL)arg1 forSetting:(id)arg2 passcode:(id)arg3;
 - (void)setBoolValue:(BOOL)arg1 forSetting:(id)arg2;
+- (void)setBoolValue:(BOOL)arg1 forSetting:(id)arg2 passcode:(id)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setFingerprintUnlockAllowed:(BOOL)arg1 passcode:(id)arg2 completionBlock:(id)arg3;
 - (void)setGracePeriod:(unsigned int)arg1 passcode:(id)arg2 completionBlock:(id)arg3;
@@ -293,16 +305,16 @@
 - (void)setManagedEmailDomains:(id)arg1;
 - (void)setParameters:(id)arg1 forBoolSetting:(id)arg2;
 - (void)setParameters:(id)arg1 forValueSetting:(id)arg2;
-- (void)setParametersForSettingsByType:(id)arg1 passcode:(id)arg2;
 - (void)setParametersForSettingsByType:(id)arg1;
+- (void)setParametersForSettingsByType:(id)arg1 passcode:(id)arg2;
 - (void)setParentalControlsWhitelistedAppBundleIDs:(id)arg1;
 - (void)setPasscodeWasSetInBackup:(BOOL)arg1;
 - (void)setPredictiveKeyboardAllowed:(BOOL)arg1;
 - (void)setSpellCheckAllowed:(BOOL)arg1;
 - (void)setUserBookmarks:(id)arg1;
 - (void)setUserInfo:(id)arg1 forClientUUID:(id)arg2;
-- (void)setValue:(id)arg1 forSetting:(id)arg2 passcode:(id)arg3;
 - (void)setValue:(id)arg1 forSetting:(id)arg2;
+- (void)setValue:(id)arg1 forSetting:(id)arg2 passcode:(id)arg3;
 - (void)setValues:(id)arg1 forIntersectionSetting:(id)arg2;
 - (void)setValues:(id)arg1 forUnionSetting:(id)arg2;
 - (void)setWebContentFilterAutoPermittedURLStrings:(id)arg1;
@@ -319,8 +331,8 @@
 - (void)stashWebContentFilterAutoPermittedURLStrings;
 - (void)stashWebContentFilterUserBlacklistedURLStrings;
 - (void)storeCertificateData:(id)arg1 forHostIdentifier:(id)arg2;
-- (void)storeCloudConfigurationDetails:(id)arg1 completion:(id)arg2;
 - (void)storeCloudConfigurationDetails:(id)arg1;
+- (void)storeCloudConfigurationDetails:(id)arg1 completion:(id)arg2;
 - (void)storeProfileData:(id)arg1 configurationSource:(int)arg2 purpose:(int)arg3;
 - (void)submitUserInputResponses:(id)arg1;
 - (BOOL)transitionToProfileAcceptanceUI;
@@ -336,8 +348,8 @@
 - (id)userBookmarks;
 - (id)userInfoForClientUUID:(id)arg1;
 - (id)userSettings;
-- (BOOL)validatePasscode:(id)arg1 andUnlockContentProtectedDevice:(BOOL)arg2;
 - (BOOL)validatePasscode:(id)arg1;
+- (BOOL)validatePasscode:(id)arg1 andUnlockContentProtectedDevice:(BOOL)arg2;
 - (id)valueForFeature:(id)arg1;
 - (id)valueRestrictionForFeature:(id)arg1;
 - (BOOL)wasCloudConfigurationApplied;

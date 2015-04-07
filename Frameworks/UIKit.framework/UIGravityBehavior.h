@@ -32,13 +32,13 @@
 - (id)items;
 - (float)magnitude;
 - (void)removeItem:(id)arg1;
-- (void)setAngle:(float)arg1 magnitude:(float)arg2;
 - (void)setAngle:(float)arg1;
+- (void)setAngle:(float)arg1 magnitude:(float)arg2;
 - (void)setGravity:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setGravityDirection:(struct CGVector { float x1; float x2; })arg1;
 - (void)setMagnitude:(float)arg1;
-- (void)setXComponent:(float)arg1 yComponent:(float)arg2;
 - (void)setXComponent:(float)arg1;
+- (void)setXComponent:(float)arg1 yComponent:(float)arg2;
 - (void)setYComponent:(float)arg1;
 - (float)xComponent;
 - (float)yComponent;

@@ -52,10 +52,10 @@
     } _message;
 }
 
-- (struct PackageMetadata { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned long long x3; struct DocumentRevision {} *x4; struct RepeatedPtrField<TSP::ComponentInfo> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::DataInfo> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedField<unsigned int> { unsigned int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; int x8; struct RepeatedField<unsigned int> { unsigned int *x_9_1_1; int x_9_1_2; int x_9_1_3; } x9; int x10; struct RepeatedField<unsigned int> { unsigned int *x_11_1_1; int x_11_1_2; int x_11_1_3; } x11; int x12; unsigned long long x13; int x14; int x15; unsigned int x16[1]; }*)message;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)initFromUnarchiver:(id)arg1;
+- (struct PackageMetadata { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned long long x3; struct DocumentRevision {} *x4; struct RepeatedPtrField<TSP::ComponentInfo> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::DataInfo> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedField<unsigned int> { unsigned int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; int x8; struct RepeatedField<unsigned int> { unsigned int *x_9_1_1; int x_9_1_2; int x_9_1_3; } x9; int x10; struct RepeatedField<unsigned int> { unsigned int *x_11_1_1; int x_11_1_2; int x_11_1_3; } x11; int x12; unsigned long long x13; int x14; int x15; unsigned int x16[1]; }*)message;
 - (id)packageLocator;
 - (void)saveToArchiver:(id)arg1;
 - (long long)tsp_identifier;

@@ -5,29 +5,29 @@
 @class CALayer, UIColor, _SLSheetMaskLayer;
 
 @interface SLSheetMasklayer : CALayer {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     UIColor *_backgroundColor;
     CALayer *_bottomLayer;
     UIColor *_clipBackgroundColor;
     float _clipCornerRadius;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _lastBounds;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } _lastMaskRect;
     CALayer *_leftLayer;
     CALayer *_rightLayer;

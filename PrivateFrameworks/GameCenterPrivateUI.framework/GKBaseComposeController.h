@@ -5,6 +5,12 @@
 @class GKContiguousContainerView, GKTextView, NSArray, NSLayoutConstraint, NSString, UIScrollView, UIView;
 
 @interface GKBaseComposeController : GKLoadableContentViewController <UITextViewDelegate> {
+    UIScrollView *_backgroundView;
+    NSArray *_composeHeaderFields;
+    GKContiguousContainerView *_headerFieldContainer;
+    NSLayoutConstraint *_headerFieldContainerLeadingConstraint;
+    NSLayoutConstraint *_headerFieldContainerTrailingConstraint;
+    UIView *_intendedFirstResponder;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,12 +20,6 @@
             float width; 
             float height; 
         } size; 
-    UIScrollView *_backgroundView;
-    NSArray *_composeHeaderFields;
-    GKContiguousContainerView *_headerFieldContainer;
-    NSLayoutConstraint *_headerFieldContainerLeadingConstraint;
-    NSLayoutConstraint *_headerFieldContainerTrailingConstraint;
-    UIView *_intendedFirstResponder;
     } _lastKnownKeyboardFrame;
     GKTextView *_messageField;
     NSLayoutConstraint *_messageFieldLeadingConstraint;

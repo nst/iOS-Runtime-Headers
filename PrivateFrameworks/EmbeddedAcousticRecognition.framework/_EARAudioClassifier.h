@@ -5,6 +5,7 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface _EARAudioClassifier : NSObject {
+    int _leftContext;
     struct Nnet { 
         struct vector<kaldi::nnet1::Component *, std::__1::allocator<kaldi::nnet1::Component *> > { 
             struct Component {} **__begin_; 
@@ -33,7 +34,6 @@
             float l2_penalty; 
             float l1_penalty; 
         } opts_; 
-    int _leftContext;
     } _nnet;
     NSObject<OS_dispatch_queue> *_queue;
     int _rightContext;
@@ -41,8 +41,8 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)initWithContentsOfNNetFile:(id)arg1 leftContext:(int)arg2 rightContext:(int)arg3;
 - (id)initWithContentsOfNNetFile:(id)arg1;
+- (id)initWithContentsOfNNetFile:(id)arg1 leftContext:(int)arg2 rightContext:(int)arg3;
 - (id)startedClassificationSessionWithDelegate:(id)arg1 sampleRate:(float)arg2;
 
 @end

@@ -11,7 +11,11 @@
 @interface WBSAsynchronousRequestHelper : NSObject <NSURLConnectionDelegate> {
     NSURLConnection *_connection;
     NSMutableData *_data;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _handler;
+
     id _lifetimeExtender;
     NSOperationQueue *_queue;
     NSURLResponse *_response;

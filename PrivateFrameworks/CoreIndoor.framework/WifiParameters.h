@@ -3,11 +3,11 @@
  */
 
 @interface WifiParameters : PBCodable <NSCopying> {
+    int _batching;
     struct { 
         unsigned int batching : 1; 
         unsigned int historyTimespanSeconds : 1; 
         unsigned int scanPeriodSeconds : 1; 
-    int _batching;
     } _has;
     float _historyTimespanSeconds;
     float _scanPeriodSeconds;

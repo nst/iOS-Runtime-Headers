@@ -5,6 +5,8 @@
 @class CKScheduledUpdater, UIScrollView;
 
 @interface CKScrollViewController : CKViewController {
+    float _bottomInsetPadding;
+    BOOL _keyboardInteractionCancelled;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +16,6 @@
             float width; 
             float height; 
         } size; 
-    float _bottomInsetPadding;
-    BOOL _keyboardInteractionCancelled;
     } _keyboardScreenFrame;
     BOOL _keyboardVisible;
     UIScrollView *_scrollView;

@@ -9,6 +9,11 @@
 @class BRCAccountSession, BRCClientRanksPersistedState, BRCXPCClient, BRNotificationQueue, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PQLConnection;
 
 @interface BRCNotificationManager : NSObject <BRCModule> {
+
+  /* Unexpected information at end of encoded ivar type: I */
+  /* Error parsing encoded ivar type info: AI */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeAliasQueries;
+
     NSObject<OS_dispatch_queue> *_cacheQueue;
     BRCXPCClient *_client;
     BRNotificationQueue *_notifs;
@@ -17,7 +22,6 @@
     BRCAccountSession *_session;
     BRCClientRanksPersistedState *_state;
     NSMutableDictionary *_transferCache;
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeAliasQueries;
 }
 
 @property(readonly) BRCAccountSession * accountSession;

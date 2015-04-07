@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface KNTransitionSwoosh : KNAnimationEffect <KNTransitionAnimator, KNAnimationPluginArchiving> {
+@interface KNTransitionSwoosh : KNAnimationEffect <KNAnimationPluginArchiving, KNTransitionAnimator> {
 }
 
 @property(copy,readonly) NSString * debugDescription;

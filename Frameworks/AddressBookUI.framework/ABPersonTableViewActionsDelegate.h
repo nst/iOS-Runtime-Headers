@@ -4,7 +4,7 @@
 
 @class <ABFMFActionButtonsDelegate>, ABPersonTableActionDataSource, ABPersonTableTinyActionCell, ABPersonTableViewDataSource, ABStyleProvider, ABUIPerson, NSString;
 
-@interface ABPersonTableViewActionsDelegate : NSObject <UIActionSheetDelegate, ABPersonTableActionDelegate, ABPersonTableTinyActionDelegate> {
+@interface ABPersonTableViewActionsDelegate : NSObject <ABPersonTableActionDelegate, ABPersonTableTinyActionDelegate, UIActionSheetDelegate> {
     <ABFMFActionButtonsDelegate> *_FMFActionButtonsDelegate;
     ABPersonTableActionDataSource *_actionDataSource;
     int _actionSheetType;
@@ -39,8 +39,8 @@
 - (int)actionCountForGrouping:(int)arg1 inSection:(int)arg2 excludingProperty:(int)arg3 excludedPropertyGroupContext:(void*)arg4 outExcludedIndexPaths:(id*)arg5;
 - (int)actionCountForTopGroupingInSection:(int)arg1 excludingProperty:(int)arg2 excludedPropertyGroupContext:(void*)arg3 outExcludedIndexPaths:(id*)arg4;
 - (id)actionDataSource;
-- (int)actionGroupingCountForPropertyGroup:(id)arg1 whenEditing:(BOOL)arg2 assumeThatPropertyHasSection:(BOOL)arg3;
 - (int)actionGroupingCountForPropertyGroup:(id)arg1 whenEditing:(BOOL)arg2;
+- (int)actionGroupingCountForPropertyGroup:(id)arg1 whenEditing:(BOOL)arg2 assumeThatPropertyHasSection:(BOOL)arg3;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (BOOL)actionShouldPickHighlightedValue;
@@ -55,8 +55,8 @@
 - (id)dataSource;
 - (void)dealloc;
 - (int)groupingCountForProperty:(int)arg1;
-- (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(int)arg4 actionGrouping:(int)arg5 ordering:(int)arg6 outActions:(id*)arg7 outIndex:(int*)arg8;
 - (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(int)arg4 actionGrouping:(int)arg5 ordering:(int)arg6;
+- (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(int)arg4 actionGrouping:(int)arg5 ordering:(int)arg6 outActions:(id*)arg7 outIndex:(int*)arg8;
 - (int)highlightedValueIdentifier;
 - (id)highlightedValuePerson;
 - (int)highlightedValueProperty;
@@ -70,11 +70,11 @@
 - (void)reloadBottomActionCellAnimated:(BOOL)arg1;
 - (void)reloadBottomActionDataForFavorites:(BOOL)arg1 texting:(BOOL)arg2 sharing:(BOOL)arg3 conferencing:(BOOL)arg4;
 - (void)reloadBottomActions;
-- (void)reloadBottomActionsAnimated:(BOOL)arg1 favorites:(BOOL)arg2 texting:(BOOL)arg3 sharing:(BOOL)arg4 conferencing:(BOOL)arg5;
 - (void)reloadBottomActionsAnimated:(BOOL)arg1;
+- (void)reloadBottomActionsAnimated:(BOOL)arg1 favorites:(BOOL)arg2 texting:(BOOL)arg3 sharing:(BOOL)arg4 conferencing:(BOOL)arg5;
 - (void)reloadPrimaryPropertyActionsSection;
-- (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 property:(int)arg3 actionGrouping:(int)arg4 ordering:(int)arg5 animated:(BOOL)arg6;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 property:(int)arg3 actionGrouping:(int)arg4 ordering:(int)arg5;
+- (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 property:(int)arg3 actionGrouping:(int)arg4 ordering:(int)arg5 animated:(BOOL)arg6;
 - (void)sendTextMessage:(id)arg1 person:(id)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)setActionShouldPickHighlightedValue:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;
@@ -85,8 +85,8 @@
 - (void)setStyleProvider:(id)arg1;
 - (void)shareContactButtonClicked:(id)arg1;
 - (BOOL)shouldShowAction:(id)arg1 excludingProperty:(int)arg2 excludedPropertyGroupContext:(void*)arg3;
-- (BOOL)shouldShowActionForProperty:(int)arg1 propertyGroupContext:(void*)arg2 assumeThatPropertyHasSection:(BOOL)arg3;
 - (BOOL)shouldShowActionForProperty:(int)arg1 propertyGroupContext:(void*)arg2;
+- (BOOL)shouldShowActionForProperty:(int)arg1 propertyGroupContext:(void*)arg2 assumeThatPropertyHasSection:(BOOL)arg3;
 - (BOOL)shouldShowAddToFavoritesAction;
 - (id)styleProvider;
 - (void)tellDelegateAddToFavoriteWasSelectedForPropertyAtIndex:(int)arg1 inPropertyGroup:(id)arg2 entryType:(int)arg3;

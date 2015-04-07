@@ -143,8 +143,8 @@
 - (void)p_updateUIStateForMoviePlayability;
 - (void)p_updateVolume;
 - (void)playbackDidStopForPlayerController:(id)arg1;
-- (void)playerController:(id)arg1 playbackDidFailWithError:(id)arg2;
 - (id)playerController;
+- (void)playerController:(id)arg1 playbackDidFailWithError:(id)arg2;
 - (id)playerStrokeLayer;
 - (void)processChangedProperty:(int)arg1;
 - (id)reflectionPlayerStrokeLayer;

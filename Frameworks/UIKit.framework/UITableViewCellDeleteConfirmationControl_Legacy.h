@@ -25,8 +25,8 @@
 - (id)initWithTitle:(id)arg1;
 - (BOOL)isVisible;
 - (void)layoutSubviews;
-- (void)setVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setVisible:(BOOL)arg1;
+- (void)setVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)touchUpInside:(id)arg1;
 - (void)touchUpOutside:(id)arg1;
 

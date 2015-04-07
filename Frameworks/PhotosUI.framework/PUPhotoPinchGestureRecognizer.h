@@ -5,12 +5,8 @@
 @class PUValueFilter;
 
 @interface PUPhotoPinchGestureRecognizer : UIPinchGestureRecognizer {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
+    PUValueFilter *__rotationFilter;
+    BOOL __touchesNeedUpdate;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,11 +16,15 @@
             float width; 
             float height; 
         } size; 
-    PUValueFilter *__rotationFilter;
-    BOOL __touchesNeedUpdate;
     } _initialPinchRect;
-    BOOL _initialTouchLocationsSet;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _initialTouchLocations[2];
+    BOOL _initialTouchLocationsSet;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _latestTouchLocations[2];
     float _rotationHysteresisDegrees;
 }

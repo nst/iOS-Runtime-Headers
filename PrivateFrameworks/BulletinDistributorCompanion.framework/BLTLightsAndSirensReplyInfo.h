@@ -10,11 +10,15 @@
 
 @interface BLTLightsAndSirensReplyInfo : NSObject {
     NSDate *_bulletinPublicationDate;
+    bool _didLogAggd;
     unsigned int _didPlayLightsAndSirens;
     NSDate *_expiration;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _reply;
+
     BOOL _replySent;
-    bool_didLogAggd;
 }
 
 @property(retain) NSDate * bulletinPublicationDate;

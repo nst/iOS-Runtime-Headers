@@ -24,18 +24,18 @@
 @property(readonly) NSHashTable * referenceIdentifiers;
 @property(readonly) TSTCellRegion * strokeRegion;
 
-+ (id)changeDescriptorWithType:(int)arg1 cellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 cellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3 strokeRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg4;
++ (id)changeDescriptorWithType:(int)arg1;
 + (id)changeDescriptorWithType:(int)arg1 cellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 cellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3;
++ (id)changeDescriptorWithType:(int)arg1 cellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 cellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3 strokeRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg4;
 + (id)changeDescriptorWithType:(int)arg1 cellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 cellRegion:(id)arg3 strokeRegion:(id)arg4;
 + (id)changeDescriptorWithType:(int)arg1 cellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 strokeRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3;
-+ (id)changeDescriptorWithType:(int)arg1 cellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 strokeRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3;
 + (id)changeDescriptorWithType:(int)arg1 cellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
-+ (id)changeDescriptorWithType:(int)arg1 cellRegion:(id)arg2 strokeRegion:(id)arg3;
++ (id)changeDescriptorWithType:(int)arg1 cellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 strokeRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3;
 + (id)changeDescriptorWithType:(int)arg1 cellRegion:(id)arg2;
++ (id)changeDescriptorWithType:(int)arg1 cellRegion:(id)arg2 strokeRegion:(id)arg3;
 + (id)changeDescriptorWithType:(int)arg1 referenceIdentifiers:(id)arg2;
 + (id)changeDescriptorWithType:(int)arg1 strokeRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 + (id)changeDescriptorWithType:(int)arg1 strokeRegion:(id)arg2;
-+ (id)changeDescriptorWithType:(int)arg1;
 
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cellID;
 - (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cellRange;

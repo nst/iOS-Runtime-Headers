@@ -9,9 +9,21 @@
 @class NSString;
 
 @interface _SBFBlockObserver : NSObject <SBFObserver> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _failureBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resultBlock;
+
 }
 
 @property(copy,readonly) NSString * debugDescription;

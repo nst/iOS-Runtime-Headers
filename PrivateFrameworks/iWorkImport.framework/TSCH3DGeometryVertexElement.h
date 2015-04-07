@@ -5,11 +5,11 @@
 @class TSCH3DShaderVariable;
 
 @interface TSCH3DGeometryVertexElement : NSObject {
+    TSCH3DShaderVariable *mName;
     struct AttributeSpecs { 
         unsigned int stride; 
         unsigned int offset; 
         unsigned int components; 
-    TSCH3DShaderVariable *mName;
     } mSpecs;
 }
 

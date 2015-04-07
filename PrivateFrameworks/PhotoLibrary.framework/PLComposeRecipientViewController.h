@@ -4,7 +4,15 @@
 
 @class <PLComposeRecipientViewControllerDelegate>, MFContactsSearchManager, MFContactsSearchResultsModel, MFSearchShadowView, NSArray, NSNumber, NSString, PLComposeRecipientView, UIPopoverController, UIScrollView, UITableView;
 
-@interface PLComposeRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, MFContactsSearchConsumer, UITableViewDelegate, UITableViewDataSource, UIPopoverControllerDelegate> {
+@interface PLComposeRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, MFContactsSearchConsumer, UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
+    NSNumber *_currentSearchTaskID;
+    <PLComposeRecipientViewControllerDelegate> *_delegate;
+    struct { 
+        unsigned int showingPeoplePicker : 1; 
+        unsigned int showingSearchResultsTable : 1; 
+        unsigned int offsettingForResultsTable : 1; 
+        unsigned int wasFirstResponder : 1; 
+    } _flags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,14 +22,6 @@
             float width; 
             float height; 
         } size; 
-    struct { 
-        unsigned int showingPeoplePicker : 1; 
-        unsigned int showingSearchResultsTable : 1; 
-        unsigned int offsettingForResultsTable : 1; 
-        unsigned int wasFirstResponder : 1; 
-    NSNumber *_currentSearchTaskID;
-    <PLComposeRecipientViewControllerDelegate> *_delegate;
-    } _flags;
     } _keyboardFrame;
     unsigned int _maxExpandRows;
     UIPopoverController *_peoplePickerPopoverController;
@@ -86,8 +86,8 @@
 - (void)makeRecipientViewFirstResponder;
 - (void)makeRecipientViewResignFirstResponder;
 - (unsigned int)maxExpandRows;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)recipientView;

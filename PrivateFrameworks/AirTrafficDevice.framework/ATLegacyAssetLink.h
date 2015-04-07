@@ -4,7 +4,7 @@
 
 @class <ATAssetLinkDelegate>, <ATLegacyAssetLinkProgressDelegate>, ATLegacyMessageLink, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
-@interface ATLegacyAssetLink : NSObject <ATMessageLinkObserver, ATAssetLink> {
+@interface ATLegacyAssetLink : NSObject <ATAssetLink, ATMessageLinkObserver> {
     NSObject<OS_dispatch_queue> *_callbackQueue;
     <ATAssetLinkDelegate> *_delegate;
     NSMutableDictionary *_enqueuedAssetsByDataClass;

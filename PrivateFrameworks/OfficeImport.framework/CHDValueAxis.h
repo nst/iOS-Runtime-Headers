@@ -3,11 +3,11 @@
  */
 
 @interface CHDValueAxis : CHDAxis {
-    boolmAutoMajorUnitValue;
-    boolmAutoMinorUnitValue;
-    boolmPercentageFormattingFlag;
+    bool mAutoMajorUnitValue;
+    bool mAutoMinorUnitValue;
     double mMajorUnitValue;
     double mMinorUnitValue;
+    bool mPercentageFormattingFlag;
     double mScalingLogBase;
 }
 

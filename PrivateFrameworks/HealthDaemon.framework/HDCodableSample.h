@@ -5,12 +5,12 @@
 @class HDCodableObject;
 
 @interface HDCodableSample : PBCodable <NSCopying> {
+    long long _dataType;
+    double _endDate;
     struct { 
         unsigned int dataType : 1; 
         unsigned int endDate : 1; 
         unsigned int startDate : 1; 
-    long long _dataType;
-    double _endDate;
     } _has;
     HDCodableObject *_object;
     double _startDate;

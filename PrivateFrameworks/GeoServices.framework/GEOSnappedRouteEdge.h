@@ -8,6 +8,8 @@
  */
 
 @interface GEOSnappedRouteEdge : NSObject {
+    BOOL _clippedBack;
+    BOOL _clippedFront;
     struct { 
         struct { 
             double x; 
@@ -17,27 +19,25 @@
             double width; 
             double height; 
         } size; 
+    } _localBounds;
     struct shared_ptr<geo::MapEdgeRoad> { 
         struct MapEdgeRoad {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
+    } _mapEdge;
+    unsigned long _mapEdgeOffset;
     struct vector<GEOVectorTilePoint, std::__1::allocator<GEOVectorTilePoint> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<GEOVectorTilePoint *, std::__1::allocator<GEOVectorTilePoint> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
+    } _points;
     struct vector<geo::PolylineCoordinate, std::__1::allocator<geo::PolylineCoordinate> > { 
         struct PolylineCoordinate {} *__begin_; 
         struct PolylineCoordinate {} *__end_; 
         struct __compressed_pair<geo::PolylineCoordinate *, std::__1::allocator<geo::PolylineCoordinate> > { 
             struct PolylineCoordinate {} *__first_; 
         } __end_cap_; 
-    BOOL _clippedBack;
-    BOOL _clippedFront;
-    } _localBounds;
-    } _mapEdge;
-    unsigned long _mapEdgeOffset;
-    } _points;
     } _routeOffsets;
 }
 

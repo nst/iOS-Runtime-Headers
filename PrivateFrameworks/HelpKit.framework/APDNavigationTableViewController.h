@@ -4,7 +4,7 @@
 
 @class <APDNavigationTableViewControllerDelegate>, APDDataManager, NSMutableArray, NSString, UITableView, UIView;
 
-@interface APDNavigationTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface APDNavigationTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     BOOL _RTL;
     APDDataManager *_dataManager;
     <APDNavigationTableViewControllerDelegate> *_delegate;
@@ -34,11 +34,11 @@
 - (void)setTableFooterView:(id)arg1;
 - (void)setTableView:(id)arg1;
 - (id)tableFooterView;
+- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 willDeselectRowAtIndexPath:(id)arg2;
-- (id)tableView;
 - (BOOL)updateCellSelectionWithScollPosition:(int)arg1 topic:(id)arg2 animated:(BOOL)arg3;
 - (void)updateFooterView;
 - (void)updateLocalizedStrings;

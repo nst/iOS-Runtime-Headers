@@ -11,7 +11,11 @@
 @interface BRListNonLocalVersionsOperation : NSOperation <BRNonLocalVersionReceiving> {
     NSURL *_documentURL;
     BOOL _executing;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _fetchingVersionsDoneBlock;
+
     BOOL _finished;
     <BRNonLocalVersionSending> *_sender;
     BOOL _state;

@@ -27,9 +27,9 @@
 - (double)duration;
 - (id)eventTracks;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4 modificationDate:(id)arg5;
-- (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4;
 - (id)initWithContext:(id)arg1;
+- (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4;
+- (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4 modificationDate:(id)arg5;
 - (BOOL)isInSyncWithShow;
 - (id)modificationDate;
 - (id)movieTrack;

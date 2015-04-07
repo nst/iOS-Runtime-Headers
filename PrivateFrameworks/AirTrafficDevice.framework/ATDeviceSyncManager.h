@@ -4,7 +4,7 @@
 
 @class ATDeviceSettings, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface ATDeviceSyncManager : NSObject <ATMessageLinkObserver, ATSessionObserver, ATMessageLinkRequestHandler> {
+@interface ATDeviceSyncManager : NSObject <ATMessageLinkObserver, ATMessageLinkRequestHandler, ATSessionObserver> {
     NSMutableDictionary *_activeSessionsForLinkIDAndDataClass;
     NSObject<OS_dispatch_queue> *_queue;
     ATDeviceSettings *_settings;

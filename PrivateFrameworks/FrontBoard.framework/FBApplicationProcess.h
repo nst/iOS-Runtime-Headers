@@ -79,8 +79,8 @@
 - (void)_queue_dropContinuousProcessAssertion;
 - (void)_queue_dropLaunchProcessAssertion;
 - (int)_queue_effectiveVisibilityForSceneSettings:(id)arg1;
-- (int)_queue_effectiveVisibilityForVisibility:(int)arg1 underLock:(BOOL)arg2;
 - (int)_queue_effectiveVisibilityForVisibility:(int)arg1;
+- (int)_queue_effectiveVisibilityForVisibility:(int)arg1 underLock:(BOOL)arg2;
 - (void)_queue_enumerateApplicationObserversWithBlock:(id)arg1;
 - (double)_queue_execTime;
 - (void)_queue_executeBlockAfterLaunchCompletes:(id)arg1;
@@ -139,8 +139,8 @@
 - (BOOL)isPendingExit;
 - (BOOL)isRecordingAudio;
 - (BOOL)isSystemApplicationProcess;
-- (void)killForReason:(int)arg1 andReport:(BOOL)arg2 withDescription:(id)arg3 completion:(id)arg4;
 - (void)killForReason:(int)arg1 andReport:(BOOL)arg2 withDescription:(id)arg3;
+- (void)killForReason:(int)arg1 andReport:(BOOL)arg2 withDescription:(id)arg3 completion:(id)arg4;
 - (void)launchIfNecessary;
 - (void)noteWorkspaceLocked:(BOOL)arg1;
 - (void)process:(id)arg1 isBeingDebugged:(BOOL)arg2;

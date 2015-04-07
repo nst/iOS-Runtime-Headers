@@ -5,12 +5,7 @@
 @class AVCaptureConnection, AVCaptureSession, AVWeakReference, CALayer, NSString;
 
 @interface AVCaptureVideoPreviewLayerInternal : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
+    BOOL automaticallyAdjustsMirroring;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -18,7 +13,6 @@
         float d; 
         float tx; 
         float ty; 
-    BOOL automaticallyAdjustsMirroring;
     } captureDeviceTransform;
     int changeSeed;
     BOOL chromaNoiseReductionEnabled;
@@ -31,8 +25,14 @@
     BOOL mirrored;
     int orientation;
     float previewRotationDegrees;
+    struct CGSize { 
+        float width; 
+        float height; 
     } previewSize;
     float rollAdjustment;
+    struct CGSize { 
+        float width; 
+        float height; 
     } sensorSize;
     NSString *sensorToPreviewVTScalingMode;
     AVCaptureSession *session;

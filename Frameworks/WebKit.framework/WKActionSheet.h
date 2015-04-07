@@ -5,13 +5,13 @@
 @class <WKActionSheetDelegate>, WKContentView;
 
 @interface WKActionSheet : UIAlertController {
-    struct RetainPtr<UIViewController> { 
-        void *m_ptr; 
-    struct RetainPtr<id<UIPopoverPresentationControllerDelegate> > { 
-        void *m_ptr; 
     unsigned int _arrowDirections;
     BOOL _isRotating;
+    struct RetainPtr<id<UIPopoverPresentationControllerDelegate> > { 
+        void *m_ptr; 
     } _popoverPresentationControllerDelegateWhileRotating;
+    struct RetainPtr<UIViewController> { 
+        void *m_ptr; 
     } _presentedViewControllerWhileRotating;
     BOOL _readyToPresentAfterRotation;
     <WKActionSheetDelegate> *_sheetDelegate;

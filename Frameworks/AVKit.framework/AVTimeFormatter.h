@@ -3,8 +3,8 @@
  */
 
 @interface AVTimeFormatter : NSFormatter {
-    unsigned int _fullWidth : 1;
     double _formatTemplate;
+    unsigned int _fullWidth : 1;
     int _style;
 }
 

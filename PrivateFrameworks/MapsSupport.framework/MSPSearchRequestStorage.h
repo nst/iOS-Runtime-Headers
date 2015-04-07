@@ -5,11 +5,11 @@
 @class MSPDirectionsSearch, MSPQuerySearch, NSString, PBUnknownFields;
 
 @interface MSPSearchRequestStorage : PBCodable <NSCopying> {
+    MSPDirectionsSearch *_directionsSearch;
     struct { 
         unsigned int position : 1; 
         unsigned int timestamp : 1; 
         unsigned int searchType : 1; 
-    MSPDirectionsSearch *_directionsSearch;
     } _has;
     NSString *_identifier;
     double _position;

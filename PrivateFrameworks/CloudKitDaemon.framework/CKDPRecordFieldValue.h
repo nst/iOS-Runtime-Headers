@@ -5,14 +5,14 @@
 @class CKDPAsset, CKDPDate, CKDPLocationCoordinate, CKDPPackage, CKDPRecordReference, NSData, NSMutableArray, NSString;
 
 @interface CKDPRecordFieldValue : PBCodable <NSCopying> {
-    struct { 
-        unsigned int doubleValue : 1; 
-        unsigned int signedValue : 1; 
-        unsigned int type : 1; 
     CKDPAsset *_assetValue;
     NSData *_bytesValue;
     CKDPDate *_dateValue;
     double _doubleValue;
+    struct { 
+        unsigned int doubleValue : 1; 
+        unsigned int signedValue : 1; 
+        unsigned int type : 1; 
     } _has;
     NSMutableArray *_listValues;
     CKDPLocationCoordinate *_locationValue;

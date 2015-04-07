@@ -5,16 +5,16 @@
 @class EDResources, EDRunsCollection, NSString;
 
 @interface CHDDefaultTextProperty : NSObject <EDKeyedObject> {
-    boolmShowBubbleSizeLabel;
-    boolmShowCategoryLabel;
-    boolmShowPercentageLabel;
-    boolmShowSeriesLabel;
-    boolmShowValueLabel;
     unsigned int mContentFormatId;
     int mDefaultTextType;
     int mLabelPosition;
     EDResources *mResources;
     EDRunsCollection *mRuns;
+    bool mShowBubbleSizeLabel;
+    bool mShowCategoryLabel;
+    bool mShowPercentageLabel;
+    bool mShowSeriesLabel;
+    bool mShowValueLabel;
 }
 
 @property(copy,readonly) NSString * debugDescription;

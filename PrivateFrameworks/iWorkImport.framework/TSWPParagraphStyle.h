@@ -9,7 +9,7 @@
 
 @class NSString;
 
-@interface TSWPParagraphStyle : TSSStyle <TSSPreset, TSDMixing> {
+@interface TSWPParagraphStyle : TSSStyle <TSDMixing, TSSPreset> {
     void *_coreTextParagraphStyle;
     struct __CFDictionary { } *_scalePercentStyleCaches;
     struct __CFDictionary { } *_styleCache;
@@ -35,7 +35,6 @@
 + (id)propertiesAllowingNSNull;
 + (id)styleSummaryForPropertyMap:(id)arg1;
 
-- (const struct ParagraphStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct CharacterStylePropertiesArchive {} *x4; struct ParagraphStylePropertiesArchive {} *x5; unsigned int x6; int x7; unsigned int x8[1]; }*)paragraphStyleArchiveFromUnarchiver:(id)arg1;
 - (float)ascent;
 - (void)clearStyleCaches;
 - (void)dealloc;
@@ -54,6 +53,7 @@
 - (BOOL)p_coreTextWritingDirectionFromWPWritingDirection:(int)arg1;
 - (struct __CTParagraphStyle { }*)p_createCoreTextParagraphStyleWithCharacterStyle:(id)arg1 writingDirection:(int)arg2;
 - (struct __CFDictionary { }*)p_newCoreTextCharacterStyle:(id)arg1 allowLigatures:(BOOL)arg2 scalePercent:(unsigned int)arg3;
+- (const struct ParagraphStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct CharacterStylePropertiesArchive {} *x4; struct ParagraphStylePropertiesArchive {} *x5; unsigned int x6; int x7; unsigned int x8[1]; }*)paragraphStyleArchiveFromUnarchiver:(id)arg1;
 - (id)presetKind;
 - (void)saveToArchive:(struct ParagraphStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct CharacterStylePropertiesArchive {} *x4; struct ParagraphStylePropertiesArchive {} *x5; unsigned int x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;

@@ -4,16 +4,16 @@
 
 @class NSMutableDictionary;
 
-@interface ICSProperty : NSObject <NSCoding, ICSWriting> {
+@interface ICSProperty : NSObject <ICSWriting, NSCoding> {
     NSMutableDictionary *_parameters;
     unsigned int _type;
     id _value;
 }
 
-- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2 additionalParameters:(id)arg3;
+- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2 additionalParameters:(id)arg3;
 - (void)_appendDateTimeInDate:(id)arg1 asUTCToResult:(id)arg2;
 - (void)_setParsedValues:(id)arg1 type:(unsigned int)arg2;
 - (void)addParameter:(id)arg1 withRawValue:(id)arg2 options:(unsigned int)arg3;

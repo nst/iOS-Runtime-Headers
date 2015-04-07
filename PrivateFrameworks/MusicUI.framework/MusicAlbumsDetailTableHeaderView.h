@@ -13,10 +13,18 @@
     float _cloudRightInset;
     UILabel *_copyrightLabel;
     UILabel *_detailTextLabel;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _downloadActionBlock;
+
     UIView *_hairlineView;
     MPUItemOfferButton *_itemOfferButton;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _shuffleActionBlock;
+
     UIButton *_shuffleButton;
     int _songCount;
     UILabel *_titleLabel;

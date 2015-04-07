@@ -4,7 +4,7 @@
 
 @class EKCalendar, NSString;
 
-@interface EKSharee : EKObject <NSCopying, EKIdentityProtocol> {
+@interface EKSharee : EKObject <EKIdentityProtocol, NSCopying> {
 }
 
 @property(readonly) NSString * UUID;

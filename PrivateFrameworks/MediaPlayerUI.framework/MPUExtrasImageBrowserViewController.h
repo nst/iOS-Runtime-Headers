@@ -4,7 +4,7 @@
 
 @class <MPUExtrasImageBrowserViewControllerDataSource>, <MPUExtrasImageBrowserViewControllerDelegate>, <MPUExtrasZoomingImageInteractiveTransitionSource>, NSString, UIPageViewController;
 
-@interface MPUExtrasImageBrowserViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, MPUExtrasZoomingImageInteractiveTransitionSource, MPUExtrasZoomingImageTransitionParticipant> {
+@interface MPUExtrasImageBrowserViewController : UIViewController <MPUExtrasZoomingImageInteractiveTransitionSource, MPUExtrasZoomingImageTransitionParticipant, UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
     BOOL _allowsPinchingImageForInteractiveZoomingImageTransition;
     <MPUExtrasImageBrowserViewControllerDataSource> *_dataSource;
     <MPUExtrasImageBrowserViewControllerDelegate> *_delegate;
@@ -39,11 +39,11 @@
 - (void)finalizeZoomingImageTransitionWithContext:(id)arg1 transitionFinished:(BOOL)arg2;
 - (void)handlePinchGestureForZoomingImageInteractiveTransitionWithContext:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)pageViewController;
 - (void)pageViewController:(id)arg1 didFinishAnimating:(BOOL)arg2 previousViewControllers:(id)arg3 transitionCompleted:(BOOL)arg4;
 - (id)pageViewController:(id)arg1 viewControllerAfterViewController:(id)arg2;
 - (id)pageViewController:(id)arg1 viewControllerBeforeViewController:(id)arg2;
 - (void)pageViewController:(id)arg1 willTransitionToViewControllers:(id)arg2;
-- (id)pageViewController;
 - (void)performZoomingImageTransitionWithContext:(id)arg1;
 - (void)prepareZoomingImageTransitionWithContext:(id)arg1;
 - (void)setAllowsPinchingImageForInteractiveZoomingImageTransition:(BOOL)arg1;

@@ -23,10 +23,10 @@
 - (BOOL)isRemovingAccount;
 - (BOOL)isSavingAccount;
 - (void)removeAccount:(id)arg1;
-- (void)saveAccount:(id)arg1 requireVerification:(BOOL)arg2;
-- (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 requireVerification:(BOOL)arg3;
-- (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2;
 - (void)saveAccount:(id)arg1;
+- (void)saveAccount:(id)arg1 requireVerification:(BOOL)arg2;
+- (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2;
+- (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 requireVerification:(BOOL)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setIsRemovingAccount:(BOOL)arg1;
 - (void)setIsSavingAccount:(BOOL)arg1;

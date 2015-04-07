@@ -4,7 +4,7 @@
 
 @class NSDate, NSString;
 
-@interface APDDataCache : NSObject <NSCopying, NSCoding> {
+@interface APDDataCache : NSObject <NSCoding, NSCopying> {
     unsigned int _cacheType;
     unsigned int _fileSize;
     NSString *_identifier;

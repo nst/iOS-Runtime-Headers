@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface ATPError : PBCodable <NSCopying> {
-    struct { 
-        unsigned int domainCode : 1; 
-        unsigned int code : 1; 
     int _code;
     NSString *_domain;
     long long _domainCode;
     NSString *_errorDescription;
+    struct { 
+        unsigned int domainCode : 1; 
+        unsigned int code : 1; 
     } _has;
 }
 

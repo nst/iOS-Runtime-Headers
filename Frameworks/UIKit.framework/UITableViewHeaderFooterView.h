@@ -5,6 +5,10 @@
 @class NSString, UIColor, UIImage, UILabel, UITableView, UIView, _UITableViewHeaderFooterViewLabel;
 
 @interface UITableViewHeaderFooterView : UIView <UITableViewSubviewReusing> {
+    UIImage *_backgroundImage;
+    UIView *_backgroundView;
+    UIView *_contentView;
+    _UITableViewHeaderFooterViewLabel *_detailLabel;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,11 +18,7 @@
             float width; 
             float height; 
         } size; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+    } _frame;
     struct { 
         unsigned int isHeader : 1; 
         unsigned int labelBackgroundColorNeedsUpdate : 1; 
@@ -26,15 +26,15 @@
         unsigned int floating : 1; 
         unsigned int stripPadding : 1; 
         unsigned int isTopHeader : 1; 
-    UIImage *_backgroundImage;
-    UIView *_backgroundView;
-    UIView *_contentView;
-    _UITableViewHeaderFooterViewLabel *_detailLabel;
-    } _frame;
     } _headerFooterFlags;
     _UITableViewHeaderFooterViewLabel *_label;
     float _maxTitleWidth;
     NSString *_reuseIdentifier;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _separatorInset;
     UITableView *_tableView;
     int _tableViewStyle;

@@ -10,9 +10,6 @@
         float left; 
         float bottom; 
         float right; 
-    struct CGSize { 
-        float width; 
-        float height; 
     } _alignmentRectInsets;
     MPAVItem *_avItem;
     NSString *_baseOriginator;
@@ -23,6 +20,9 @@
     BOOL _isPurchaseAllowed;
     SKUIItemOfferButton *_itemOfferButton;
     MPMediaItem *_mediaItem;
+    struct CGSize { 
+        float width; 
+        float height; 
     } _overrideSize;
     int _overrideState;
     NSString *_overrideTitleText;

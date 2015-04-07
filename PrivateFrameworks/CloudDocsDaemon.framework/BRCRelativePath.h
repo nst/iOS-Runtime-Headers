@@ -9,26 +9,12 @@
 @class BRCAccountSession, BRCBookmark, BRCGenerationID, BRCLocalContainer, BRCRelativePath, NSData, NSDirectoryEnumerator, NSNumber, NSString, NSURL;
 
 @interface BRCRelativePath : NSObject <NSSecureCoding> {
-    struct timespec { 
-        int tv_sec; 
-        long tv_nsec; 
-    struct timespec { 
-        int tv_sec; 
-        long tv_nsec; 
-    struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
-    unsigned int _isExcluded : 1;
-    unsigned int _isInPackage : 1;
-    unsigned int _isPackageRoot : 1;
-    unsigned int _readFault : 1;
-    unsigned int _hasFinderTags : 1;
-    unsigned int _isBusy : 1;
-    unsigned int _isAlias : 1;
-    unsigned int _qtnResolved : 1;
     NSString *_absolutePath;
     BRCAccountSession *_accountSession;
     BRCRelativePath *_basePath;
+    struct timespec { 
+        int tv_sec; 
+        long tv_nsec; 
     } _birthtime;
     BRCBookmark *_bookmark;
     unsigned int _componentsCountToRoot;
@@ -43,17 +29,35 @@
     unsigned int _flags;
     unsigned int _fsGenerationID;
     BRCGenerationID *_generationID;
+    unsigned int _hasFinderTags : 1;
+    unsigned int _isAlias : 1;
+    unsigned int _isBusy : 1;
+    unsigned int _isExcluded : 1;
+    unsigned int _isInPackage : 1;
+    unsigned int _isPackageRoot : 1;
     unsigned short _mode;
+    struct timespec { 
+        int tv_sec; 
+        long tv_nsec; 
     } _mtime;
+    struct _opaque_pthread_rwlock_t { 
+        long __sig; 
+        BOOL __opaque[124]; 
     } _mutex;
     unsigned int _nlink;
+
+  /* Unexpected information at end of encoded ivar type: i */
+  /* Error parsing encoded ivar type info: Ai */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_openRefCount;
+
     unsigned long long _parentFileID;
+    unsigned int _qtnResolved : 1;
     NSData *_quarantineInfo;
+    unsigned int _readFault : 1;
     NSString *_relativePath;
     long long _size;
     NSString *_symlinkContent;
     NSNumber *_volumeID;
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_openRefCount;
 }
 
 @property(readonly) NSString * absolutePath;

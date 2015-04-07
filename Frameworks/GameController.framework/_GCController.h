@@ -9,7 +9,11 @@
 @class <GCNamedProfile>, NSString;
 
 @interface _GCController : GCController <NSSecureCoding> {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _controllerPausedHandler;
+
     unsigned int _deviceHash;
     struct __IOHIDDevice { } *_deviceRef;
     int _playerIndex;

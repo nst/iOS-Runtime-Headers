@@ -8,7 +8,19 @@
 
 @class <GEOTileLoaderInternalDelegate>, GEOTileLoaderConfiguration, GEOTilePool, GEOTileServerProxy, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
-@interface GEOTileLoaderInternal : GEOTileLoader <GEOTileServerProxyDelegate, GEOResourceManifestTileGroupObserver> {
+@interface GEOTileLoaderInternal : GEOTileLoader <GEOResourceManifestTileGroupObserver, GEOTileServerProxyDelegate> {
+    GEOTilePool *_cache;
+    GEOTileLoaderConfiguration *_config;
+    int _diskHits;
+    GEOTilePool *_expiringCache;
+
+  /* Unexpected information at end of encoded ivar type: "__next_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}}"__size_alloc_"{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> > >="__first_"L}} */
+  /* Error parsing encoded ivar type info: {list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}"__next_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}}"__size_alloc_"{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> > >="__first_"L}} */
+    struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> {} _freeableSizeRequesters;
+
+    <GEOTileLoaderInternalDelegate> *_internalDelegate;
+    NSObject<OS_dispatch_queue> *_internalDelegateQ;
+    BOOL _isUsageTimerScheduled;
     struct list<LoadItem, std::__1::allocator<LoadItem> > { 
         struct __list_node_base<LoadItem, void *> { 
             struct __list_node<LoadItem, void *> {} *__prev_; 
@@ -17,23 +29,49 @@
         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<LoadItem, void *> > > { 
             unsigned long __first_; 
         } __size_alloc_; 
+    } _loadItems;
+    NSObject<OS_dispatch_queue> *_loadQ;
     struct mutex { 
         struct _opaque_pthread_mutex_t { 
             long __sig; 
             BOOL __opaque[40]; 
         } __m_; 
+    } _lock;
+    int _memoryHits;
+    BOOL _networkActive;
+    int _networkHits;
+    NSMutableSet *_openers;
+    GEOTileServerProxy *_proxy;
+    struct deque<ErrorInfo, std::__1::allocator<ErrorInfo> > { 
+        struct __split_buffer<ErrorInfo *, std::__1::allocator<ErrorInfo *> > { 
+            struct ErrorInfo {} **__first_; 
+            struct ErrorInfo {} **__begin_; 
+            struct ErrorInfo {} **__end_; 
+            struct __compressed_pair<ErrorInfo **, std::__1::allocator<ErrorInfo *> > { 
+                struct ErrorInfo {} **__first_; 
+            } __end_cap_; 
+        } __map_; 
+        unsigned int __start_; 
+        struct __compressed_pair<unsigned long, std::__1::allocator<ErrorInfo> > { 
+            unsigned long __first_; 
+        } __size_; 
+    } _recentErrors;
+    int _rollingBatchId;
+
+  /* Unexpected information at end of encoded ivar type: "__next_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}}"__size_alloc_"{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> > >="__first_"L}} */
+  /* Error parsing encoded ivar type info: {list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}"__next_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}}"__size_alloc_"{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> > >="__first_"L}} */
+    struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> {} _shrinkCacheRequesters;
+
+    struct { 
+        double x; 
+        double y; 
+    } _sortPoint;
+    NSMutableArray *_tileDecoders;
     struct unique_ptr<geo::DispatchTimer, std::__1::default_delete<geo::DispatchTimer> > { 
         struct __compressed_pair<geo::DispatchTimer *, std::__1::default_delete<geo::DispatchTimer> > { 
             struct DispatchTimer {} *__first_; 
         } __ptr_; 
-    struct { 
-        double x; 
-        double y; 
-    struct mutex { 
-        struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
-        } __m_; 
+    } _timer;
     struct unordered_map<_GEOTileKey, UsageData, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<std::__1::pair<const _GEOTileKey, UsageData> > > { 
         struct __hash_table<std::__1::__hash_value_type<_GEOTileKey, UsageData>, std::__1::__unordered_map_hasher<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, UsageData>, std::__1::hash<GEOTileKey>, true>, std::__1::__unordered_map_equal<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, UsageData>, std::__1::equal_to<GEOTileKey>, true>, std::__1::allocator<std::__1::__hash_value_type<_GEOTileKey, UsageData> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, UsageData>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, UsageData>, void *> *> > > { 
@@ -58,47 +96,17 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
+    } _usageData;
+    struct mutex { 
+        struct _opaque_pthread_mutex_t { 
+            long __sig; 
+            BOOL __opaque[40]; 
+        } __m_; 
+    } _usageLock;
     struct unique_ptr<geo::DispatchTimer, std::__1::default_delete<geo::DispatchTimer> > { 
         struct __compressed_pair<geo::DispatchTimer *, std::__1::default_delete<geo::DispatchTimer> > { 
             struct DispatchTimer {} *__first_; 
         } __ptr_; 
-    struct deque<ErrorInfo, std::__1::allocator<ErrorInfo> > { 
-        struct __split_buffer<ErrorInfo *, std::__1::allocator<ErrorInfo *> > { 
-            struct ErrorInfo {} **__first_; 
-            struct ErrorInfo {} **__begin_; 
-            struct ErrorInfo {} **__end_; 
-            struct __compressed_pair<ErrorInfo **, std::__1::allocator<ErrorInfo *> > { 
-                struct ErrorInfo {} **__first_; 
-            } __end_cap_; 
-        } __map_; 
-        unsigned int __start_; 
-        struct __compressed_pair<unsigned long, std::__1::allocator<ErrorInfo> > { 
-            unsigned long __first_; 
-        } __size_; 
-    GEOTilePool *_cache;
-    GEOTileLoaderConfiguration *_config;
-    int _diskHits;
-    GEOTilePool *_expiringCache;
-    struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> {} _freeableSizeRequesters;
-    <GEOTileLoaderInternalDelegate> *_internalDelegate;
-    NSObject<OS_dispatch_queue> *_internalDelegateQ;
-    BOOL _isUsageTimerScheduled;
-    } _loadItems;
-    NSObject<OS_dispatch_queue> *_loadQ;
-    } _lock;
-    int _memoryHits;
-    BOOL _networkActive;
-    int _networkHits;
-    NSMutableSet *_openers;
-    GEOTileServerProxy *_proxy;
-    } _recentErrors;
-    int _rollingBatchId;
-    struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> {} _shrinkCacheRequesters;
-    } _sortPoint;
-    NSMutableArray *_tileDecoders;
-    } _timer;
-    } _usageData;
-    } _usageLock;
     } _usageTimer;
 }
 
@@ -142,13 +150,13 @@
 - (int)memoryHits;
 - (int)networkHits;
 - (void)openForClient:(id)arg1;
+- (id)proxy;
 - (void)proxy:(id)arg1 canShrinkDiskCacheByAmount:(unsigned long long)arg2;
 - (void)proxy:(id)arg1 didShrinkDiskCacheByAmount:(unsigned long long)arg2;
 - (void)proxy:(id)arg1 failedToLoadAllPendingTilesWithError:(id)arg2;
 - (void)proxy:(id)arg1 failedToLoadTiles:(id)arg2 error:(id)arg3;
 - (void)proxy:(id)arg1 loadedTile:(id)arg2 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg3 info:(id)arg4;
 - (void)proxy:(id)arg1 willGoToNetworkForTiles:(id)arg2;
-- (id)proxy;
 - (void)registerTileDecoder:(id)arg1;
 - (void)registerTileLoader:(Class)arg1;
 - (void)reportCorruptTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;

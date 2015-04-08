@@ -16,7 +16,15 @@
     int mShipVersion;
 }
 
+@property(readonly) NSArray * arguments;
 @property(readonly) int functionIndex;
+@property(readonly) NSString * functionName;
+@property(readonly) BOOL isOperator;
+@property(readonly) short maxArguments;
+@property(readonly) short minArguments;
+@property(readonly) unsigned int numArguments;
+@property(readonly) short repeatingGroupSize;
+@property(readonly) int versionShippedIn;
 
 + (id)functionSpecForFunctionIndex:(int)arg1;
 + (id)specDictionary;
@@ -26,18 +34,19 @@
 - (id)arguments;
 - (void)dealloc;
 - (id)description;
-- (id)displayString;
+- (id)displayStringForLocale:(id)arg1;
 - (int)functionIndex;
 - (id)functionName;
 - (id)initWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(int)arg4 isOperator:(BOOL)arg5 shipVersion:(int)arg6 arguments:(id)arg7 functionIndex:(int)arg8;
 - (BOOL)isOperator;
-- (id)localizedFunctionName;
-- (id)localizedToolTipString;
+- (id)localizedFunctionNameForLocale:(id)arg1;
+- (id)localizedToolTipStringForLocale:(id)arg1;
 - (short)maxArguments;
 - (short)minArguments;
 - (id)nativeSyntaxStringForArgument:(int)arg1;
 - (unsigned int)numArguments;
 - (void)p_ValidateArguments;
+- (short)repeatingGroupSize;
 - (int)versionShippedIn;
 
 @end

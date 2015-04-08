@@ -163,6 +163,7 @@
 - (void)dictationConnectionSpeechRecordingWillBegin:(id)arg1;
 - (void)dictationConnnectionDidChangeAvailability:(id)arg1;
 - (BOOL)dictationEnabled;
+- (BOOL)dictationIsModifyingText;
 - (id)dictationPhraseArrayFromDictationResult:(id)arg1;
 - (id)dictationPresenterWindow;
 - (id)dictationPrivacySheetController;

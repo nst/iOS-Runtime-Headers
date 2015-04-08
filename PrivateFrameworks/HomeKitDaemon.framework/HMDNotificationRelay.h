@@ -29,6 +29,7 @@
 - (void)_registerForNotifications;
 - (void)_relayResponseForNotificationState:(id)arg1;
 - (void)addPendingNotification:(id)arg1 forDestination:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
+- (void)dealloc;
 - (id)initWithMessageDispatcher:(id)arg1 notificationRelayDispatcher:(id)arg2;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;

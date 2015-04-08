@@ -6,7 +6,6 @@
     BOOL _appHasPolledOnceThisForegroundSession;
 }
 
-+ (id)_acaccountStore;
 + (BOOL)canInitiateDistributedPhotoStreamDeletionForAssetUUID:(id)arg1;
 + (id)iCloudServiceAccount;
 + (BOOL)photoStreamsEnabled;
@@ -14,7 +13,9 @@
 + (id)sharedPhotoStreamsHelper;
 + (BOOL)writeBreadcrumbContent:(id)arg1 forHashString:(id)arg2;
 
+- (void)_accountStoreDidChange:(id)arg1;
 - (void)_appDidEnterBackground:(id)arg1;
+- (void)_clearPhotoStreamAccountSettings;
 - (int)_serverIntegerLimitForKey:(id)arg1 debugDefaultKey:(id)arg2;
 - (void)cleanupPhotoStreamMetadataForAssetsWithUUIDs:(id)arg1 forStreamID:(id)arg2;
 - (void)clearCachedAccountState;

@@ -2,67 +2,88 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class HAPAccessoryServer, NSArray, NSNumber, NSObject<OS_dispatch_queue>, NSString;
+@class <HAPAccessoryDelegate>, HAPAccessoryServer, NSArray, NSNumber, NSObject<OS_dispatch_queue>, NSString;
 
 @interface HAPAccessory : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    <HAPAccessoryDelegate> *_delegate;
+    NSString *_identifier;
     NSNumber *_instanceID;
     NSString *_manufacturer;
     NSString *_model;
     NSString *_name;
     BOOL _primary;
+    BOOL _reachable;
     NSString *_serialNumber;
     HAPAccessoryServer *_server;
     NSArray *_services;
     NSString *_uniqueIdentifier;
+    NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * dispatchQueue;
+@property <HAPAccessoryDelegate> * delegate;
+@property(copy) NSString * identifier;
 @property(copy) NSNumber * instanceID;
 @property(readonly) int linkType;
 @property(copy) NSString * manufacturer;
 @property(copy) NSString * model;
 @property(copy) NSString * name;
+@property(getter=isPaired,readonly) BOOL paired;
 @property(getter=isPrimary) BOOL primary;
+@property(getter=isReachable) BOOL reachable;
 @property(copy) NSString * serialNumber;
 @property HAPAccessoryServer * server;
 @property(retain) NSArray * services;
+@property(readonly) BOOL supportsGroupedRequests;
 @property(copy) NSString * uniqueIdentifier;
+@property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
-+ (BOOL)isAccessoryWithUniqueIdentifier:(id)arg1 bridgedToServerWithIdentifier:(id)arg2;
-+ (BOOL)isAccessoryWithUniqueIdentifierPaired:(id)arg1;
-+ (BOOL)isAccessoryWithUniqueIdentifierPrimary:(id)arg1;
-+ (id)serverIdentifierForUniqueIdentifier:(id)arg1;
++ (BOOL)isAccessoryPairedWithIdentifier:(id)arg1;
++ (BOOL)isAccessoryPrimaryWithUniqueIdentifier:(id)arg1;
++ (id)serverIdentifierWithUniqueIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
+- (BOOL)_isReachable;
+- (void)_setReachable:(BOOL)arg1;
 - (BOOL)_updateAndValidateServices;
 - (BOOL)_updateForAccessoryInformationService;
 - (BOOL)_updateService:(id)arg1;
+- (id)delegate;
 - (id)description;
-- (id)dispatchQueue;
-- (id)initWithInstanceID:(id)arg1;
-- (id)initWithInstanceID:(id)arg1 parsedServices:(id)arg2;
+- (id)identifier;
+- (id)initWithServer:(id)arg1 instanceID:(id)arg2;
+- (id)initWithServer:(id)arg1 instanceID:(id)arg2 parsedServices:(id)arg3;
 - (id)instanceID;
+- (void)invalidate;
+- (BOOL)isPaired;
 - (BOOL)isPrimary;
+- (BOOL)isReachable;
 - (int)linkType;
 - (id)manufacturer;
 - (id)model;
 - (id)name;
+- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (id)serialNumber;
 - (id)server;
 - (id)services;
-- (void)setDispatchQueue:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setInstanceID:(id)arg1;
 - (void)setManufacturer:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPrimary:(BOOL)arg1;
+- (void)setReachable:(BOOL)arg1;
 - (void)setSerialNumber:(id)arg1;
 - (void)setServer:(id)arg1;
 - (void)setServices:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
+- (void)setWorkQueue:(id)arg1;
+- (BOOL)supportsGroupedRequests;
 - (id)uniqueIdentifier;
+- (BOOL)validateCharacteristicValues:(id*)arg1;
+- (id)workQueue;
+- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id)arg5;
 
 @end

@@ -43,6 +43,7 @@
 + (void)setDefaultInstructionalText:(id)arg1;
 + (BOOL)shouldDisableTextMorphsFromPropertiesBetweenOutgoingStorage:(id)arg1 outgoingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 incomingStorage:(id)arg3 incomingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 + (BOOL)stylesAreEqualWithOutgoingStorage:(id)arg1 outgoingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 incomingStorage:(id)arg3 incomingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
++ (id)textPropertiesAffectingObjectMatch;
 + (id)textPropertiesAffectingTextMorph;
 + (id)textPropertiesAffectingVisualStyle;
 + (id)textPropertiesAffectingVisualStyleExceptSize;
@@ -61,8 +62,6 @@
 - (unsigned int)chunkCountForTextureDeliveryStyle:(unsigned int)arg1 byGlyphStyle:(int)arg2 animationFilter:(id)arg3;
 - (int)columnDirection;
 - (id)columns;
-- (id)commandForPasteStyleWithContext:(id)arg1 pasteboardStyles:(id)arg2;
-- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (id)containedStorage;
 - (id)containedText;
 - (id)containedTextForDeliveryStyle:(unsigned int)arg1 chunkIndex:(unsigned int)arg2;
@@ -83,10 +82,10 @@
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (BOOL)isTextBox;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct ShapeInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeArchive {} *x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct ShapeInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ShapeArchive {} *x5; struct Reference {} *x6; }*)arg1 unarchiver:(id)arg2;
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (float)pOffsetForParagraphAlignment:(struct CGSize { float x1; float x2; })arg1;
 - (float)pOffsetForVerticalAlignment:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)p_chunkCountForByBullet;
@@ -99,7 +98,7 @@
 - (void)processSelectedStoragesWithStatisticsController:(id)arg1;
 - (id)propertyMapForNewPreset;
 - (Class)repClass;
-- (void)saveToArchive:(struct ShapeInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeArchive {} *x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ShapeInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ShapeArchive {} *x5; struct Reference {} *x6; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setColumns:(id)arg1;
 - (void)setContainedStorage:(id)arg1;
@@ -120,9 +119,9 @@
 - (struct CGPoint { float x1; float x2; })transformableObjectAnchorPoint;
 - (id)tswpShapeStyle;
 - (int)verticalAlignment;
-- (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
-- (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

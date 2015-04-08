@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, NSMutableArray, NSObject<TSDContainerInfo>, NSString, TNDocumentRoot, TSDGuideStorage, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSWPStorage;
+@class NSArray, NSMutableArray, NSObject<TSDContainerInfo>, NSString, TNDocumentRoot, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSWPStorage;
 
 @interface TNSheet : TSPObject <TSCEResolverContainer, TSDDrawableContainerInfo, TSKDocumentObject, TSKModel, TSKSearchTarget, TSWPHeaderFooterProvider> {
     float _pageFooterInset;
@@ -30,12 +30,9 @@
     int mPageOrder;
     BOOL mShowPageNumbers;
     unsigned int mTableNameCounter;
-    TSDGuideStorage *mUserDefinedGuideStorage;
     BOOL mUsesSingleHeaderFooter;
 }
 
-@property(readonly) NSArray * alignmentGuides;
-@property(readonly) NSArray * alignmentGuidesForEditing;
 @property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
 @property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
 @property float contentScale;
@@ -62,7 +59,6 @@
 @property BOOL showPageNumbers;
 @property int startPageNumber;
 @property(readonly) Class superclass;
-@property(retain) TSDGuideStorage * userDefinedGuideStorage;
 @property BOOL usesSingleHeaderFooter;
 @property(getter=isUsingStartPageNumber) BOOL usingStartPageNumber;
 
@@ -71,8 +67,6 @@
 
 - (id).cxx_construct;
 - (void)addChildInfo:(id)arg1;
-- (id)alignmentGuides;
-- (id)alignmentGuidesForEditing;
 - (float)bodyWidth;
 - (BOOL)canMoveDrawables:(id)arg1 toIndexes:(id)arg2;
 - (id)chartAndTableInfos;
@@ -83,7 +77,6 @@
 - (float)contentScale;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
-- (id)deletionRewriteCommandForAllTables;
 - (id)description;
 - (id)documentRoot;
 - (void)enumerateHeaderFooterStoragesWithBlock:(id)arg1;
@@ -99,7 +92,8 @@
 - (void)i_importHeadersFooters:(id)arg1 headerType:(int)arg2 useSingleHeaderFooter:(BOOL)arg3;
 - (id)i_newHeaderFooterStorage;
 - (BOOL)inPortraitPageOrientation;
-- (id)initFromArchive:(const struct SheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; bool x5; bool x6; bool x7; bool x8; float x9; struct EdgeInsetsArchive {} *x10; int x11; int x12; float x13; float x14; struct Reference {} *x15; struct Reference {} *x16; struct Reference {} *x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; bool x20; bool x21; int x22; unsigned int x23[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)infoForSelectionPath:(id)arg1;
+- (id)initFromArchive:(const struct SheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; bool x7; bool x8; bool x9; bool x10; float x11; struct EdgeInsetsArchive {} *x12; int x13; int x14; float x15; float x16; struct Reference {} *x17; struct Reference {} *x18; struct Reference {} *x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; bool x22; bool x23; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (void)insertChildInfo:(id)arg1 above:(id)arg2;
@@ -144,7 +138,9 @@
 - (id)resolverMatchingName:(id)arg1;
 - (BOOL)resolverNameIsUsed:(id)arg1;
 - (id)resolversMatchingPrefix:(id)arg1;
-- (void)saveToArchive:(struct SheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; bool x5; bool x6; bool x7; bool x8; float x9; struct EdgeInsetsArchive {} *x10; int x11; int x12; float x13; float x14; struct Reference {} *x15; struct Reference {} *x16; struct Reference {} *x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; bool x20; bool x21; int x22; unsigned int x23[1]; }*)arg1 archiver:(id)arg2;
+- (void)rollbackNextUntitledResolverIndex:(unsigned int)arg1;
+- (unsigned int)saveNextUntitledResolverIndex;
+- (void)saveToArchive:(struct SheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; bool x7; bool x8; bool x9; bool x10; float x11; struct EdgeInsetsArchive {} *x12; int x13; int x14; float x15; float x16; struct Reference {} *x17; struct Reference {} *x18; struct Reference {} *x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; bool x22; bool x23; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setChildInfos:(id)arg1;
 - (void)setContentScale:(float)arg1;
@@ -157,21 +153,20 @@
 - (void)setPageHeaderInset:(float)arg1;
 - (void)setPageOrder:(int)arg1;
 - (void)setParentInfo:(id)arg1;
+- (void)setPrimitiveGeometry:(id)arg1;
 - (void)setPrintMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setShowPageNumbers:(BOOL)arg1;
 - (void)setStartPageNumber:(int)arg1;
-- (void)setUserDefinedGuideStorage:(id)arg1;
 - (void)setUsesSingleHeaderFooter:(BOOL)arg1;
 - (void)setUsingStartPageNumber:(BOOL)arg1;
 - (BOOL)showPageNumbers;
 - (int)startPageNumber;
 - (id)tableInfoForName:(id)arg1 caseSensitive:(BOOL)arg2;
 - (id)tableInfos;
-- (id)userDefinedGuideStorage;
 - (BOOL)usesSingleHeaderFooter;
-- (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
-- (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

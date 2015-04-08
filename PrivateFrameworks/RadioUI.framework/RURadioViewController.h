@@ -186,6 +186,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)welcomeViewController:(id)arg1 didDismissFailureAlert:(id)arg2;
 - (void)welcomeViewController:(id)arg1 willDisplayFailureAlert:(id)arg2;
 - (void)welcomeViewControllerDidOptIn:(id)arg1;
 - (void)welcomeViewControllerDidReceiveServiceUnavailable:(id)arg1;

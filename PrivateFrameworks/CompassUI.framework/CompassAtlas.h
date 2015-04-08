@@ -14,6 +14,7 @@
 }
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)bind;
 - (void)dealloc;
 - (id)initWithImageData:(char *)arg1 manifest:(id)arg2;

@@ -13,7 +13,6 @@
 - (void)_decodeExtraDataWithCoder:(id)arg1;
 - (void)_encodeExtraDataWithCoder:(id)arg1;
 - (BOOL)_hasExtraData;
-- (BOOL)_requiresValue;
 - (BOOL)_validateConfiguration;
 - (unsigned int)activityType;
 - (id)description;

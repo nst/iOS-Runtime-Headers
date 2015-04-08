@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSDBezierPath, TSDWrapPolygon;
+@class NSString, TSDWrapSegments, TSUBezierPath;
 
 @interface TSDDrawableLayout : TSDLayout <TSDWrappable> {
-    TSDBezierPath *mCachedExternalWrapPath;
-    TSDBezierPath *mCachedWrapPath;
-    TSDWrapPolygon *mCachedWrapPolygon;
+    TSUBezierPath *mCachedExternalWrapPath;
+    TSUBezierPath *mCachedWrapPath;
+    TSDWrapSegments *mCachedWrapSegments;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -37,7 +37,8 @@
 - (BOOL)supportsInspectorPositioning;
 - (int)wrapDirection;
 - (int)wrapFitType;
-- (id)wrapPolygon;
+- (id)wrapPath;
+- (id)wrapSegments;
 - (int)wrapType;
 
 @end

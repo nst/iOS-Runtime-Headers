@@ -11,6 +11,7 @@
     long long _entryID;
     NSString *_entryKey;
     BOOL _isErrorEntry;
+    BOOL _writeToDB;
 }
 
 @property(readonly) NSArray * arrayKeys;
@@ -26,6 +27,7 @@
 @property BOOL isErrorEntry;
 @property(readonly) NSMutableArray * keys;
 @property(getter=allValues,readonly) NSMutableArray * values;
+@property BOOL writeToDB;
 
 + (Class)classForEntryKey:(id)arg1;
 + (id)entryKey;
@@ -86,7 +88,9 @@
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObjectsFromData:(id)arg1;
 - (void)setObjectsFromRawData:(id)arg1;
+- (void)setWriteToDB:(BOOL)arg1;
 - (int)staticArraySizeForKey:(id)arg1;
 - (id)unitForKey:(id)arg1;
+- (BOOL)writeToDB;
 
 @end

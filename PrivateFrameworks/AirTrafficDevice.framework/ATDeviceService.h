@@ -52,6 +52,7 @@
 - (void)dealloc;
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (void)environmentMonitorDidChangePower:(id)arg1;
+- (void)getAssetMetricswithCompletion:(id)arg1;
 - (void)getSyncStateWithCompletion:(id)arg1;
 - (void)idsServiceDevicesDidChange:(id)arg1;
 - (id)init;

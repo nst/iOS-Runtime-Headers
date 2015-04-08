@@ -9,7 +9,7 @@
     UIStatusBarForegroundStyleAttributes *_foregroundStyle;
     int _idiom;
     int _ignoreDataLevel;
-    BOOL _itemIsEnabled[30];
+    BOOL _itemIsEnabled[31];
     UIStatusBarLayoutManager *_layoutManagers[3];
     int _pendedActions;
     UIStatusBarComposedData *_pendedData;

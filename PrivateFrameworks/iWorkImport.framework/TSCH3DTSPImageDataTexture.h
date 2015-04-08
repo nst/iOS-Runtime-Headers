@@ -18,7 +18,7 @@
 @property(readonly) TSCH3DTSPImageData * data;
 @property(readonly) TSPData * imageData;
 
-+ (id)instanceWithArchive:(const struct Chart3DTSPImageDataTextureArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DataReference {} *x3; struct DataReference {} *x4; struct Reference {} *x5; struct Reference {} *x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
++ (id)instanceWithArchive:(const struct Chart3DTSPImageDataTextureArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DataReference {} *x5; struct DataReference {} *x6; struct Reference {} *x7; struct Reference {} *x8; }*)arg1 unarchiver:(id)arg2;
 + (id)textureWithImageData:(id)arg1 optimizedMipmapData:(id)arg2;
 
 - (BOOL)canLoadCachedFullMipmapBufferForDataCache:(id)arg1;
@@ -28,12 +28,12 @@
 - (BOOL)hasCompleteData;
 - (unsigned int)hash;
 - (id)imageData;
-- (id)initWithArchive:(const struct Chart3DTSPImageDataTextureArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DataReference {} *x3; struct DataReference {} *x4; struct Reference {} *x5; struct Reference {} *x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct Chart3DTSPImageDataTextureArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DataReference {} *x5; struct DataReference {} *x6; struct Reference {} *x7; struct Reference {} *x8; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithImageData:(id)arg1 optimizedMipmapData:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)optimizedMipmapBuffer;
 - (void)p_setOptimizedMipMapData:(id)arg1;
-- (void)saveToArchive:(struct Chart3DTSPImageDataTextureArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DataReference {} *x3; struct DataReference {} *x4; struct Reference {} *x5; struct Reference {} *x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct Chart3DTSPImageDataTextureArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DataReference {} *x5; struct DataReference {} *x6; struct Reference {} *x7; struct Reference {} *x8; }*)arg1 archiver:(id)arg2;
 - (void)setChanged:(BOOL)arg1;
 
 @end

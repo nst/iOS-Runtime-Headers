@@ -12,7 +12,6 @@
     unsigned int _pinColor;
     BOOL _settingUpOrbitAnimation;
     BOOL _showsPin;
-    BOOL _useSatellite;
     float _zoomLevel;
 }
 
@@ -26,7 +25,7 @@
 @property BOOL settingUpOrbitAnimation;
 @property BOOL showsPin;
 @property(readonly) Class superclass;
-@property BOOL useSatellite;
+@property(readonly) BOOL useSatellite;
 @property float zoomLevel;
 
 - (void).cxx_destruct;
@@ -50,7 +49,6 @@
 - (void)requestSnapshot;
 - (void)reset;
 - (void)resume;
-- (void)setBackgroundType:(int)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setOrbitCamera:(id)arg1;
@@ -58,7 +56,6 @@
 - (void)setPinColor:(unsigned int)arg1;
 - (void)setSettingUpOrbitAnimation:(BOOL)arg1;
 - (void)setShowsPin:(BOOL)arg1;
-- (void)setUseSatellite:(BOOL)arg1;
 - (void)setZoomLevel:(float)arg1;
 - (BOOL)settingUpOrbitAnimation;
 - (BOOL)showsPin;

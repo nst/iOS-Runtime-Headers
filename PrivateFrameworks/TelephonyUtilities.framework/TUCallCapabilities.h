@@ -29,13 +29,16 @@
 + (id)debugDescription;
 + (int)faceTimeAudioCallSupport;
 + (int)faceTimeVideoCallSupport;
++ (void)invalidateAndRefreshProvisioningURLs;
 + (void)invalidateCachedValues;
++ (BOOL)isProvisioningURLValid:(id)arg1;
 + (BOOL)isRelayCallingEnabled;
 + (BOOL)isWiFiCallingCurrentlyAvailable;
 + (BOOL)isWiFiCallingEnabled;
 + (void)setRelayCallingEnabled:(BOOL)arg1;
 + (void)setWiFiCallingCapabilityInformation:(id)arg1;
 + (void)setWiFiCallingEnabled:(BOOL)arg1;
++ (void)setWiFiCallingProvisioningURL:(id)arg1;
 + (BOOL)supportsDisplayingFaceTimeAudioCalls;
 + (BOOL)supportsDisplayingFaceTimeVideoCalls;
 + (BOOL)supportsDisplayingTelephonyCalls;
@@ -49,5 +52,6 @@
 + (BOOL)supportsTelephonyCalls;
 + (int)telephonyCallSupport;
 + (id)wiFiCallingCapabilityInformation;
++ (id)wiFiCallingProvisioningURL;
 
 @end

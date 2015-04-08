@@ -5,6 +5,6 @@
 @interface _MCDBrowsableTableView : UITableView {
 }
 
-- (void)_moveWithEvent:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
 
 @end

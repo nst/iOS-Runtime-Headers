@@ -25,7 +25,6 @@
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (long long)fileID;
@@ -35,6 +34,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)item;
+- (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setFileID:(long long)arg1;
 - (void)setGenerationID:(unsigned int)arg1;

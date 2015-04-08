@@ -19,7 +19,7 @@
     BOOL _didIgnoreFirstResponderResign;
     int _dragSourceOriginalIndex;
     BOOL _editable;
-    BOOL _focused;
+    BOOL _expanded;
     int _hideLastAtomComma;
     double _inputDelay;
     int _maxRecipients;
@@ -49,7 +49,7 @@
 @property(copy,readonly) NSString * description;
 @property BOOL didIgnoreFirstResponderResign;
 @property BOOL editable;
-@property BOOL focused;
+@property BOOL expanded;
 @property(readonly) unsigned int hash;
 @property int hideLastAtomComma;
 @property double inputDelay;
@@ -117,8 +117,8 @@
 - (void)dropItem:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })dropRect;
 - (BOOL)editable;
+- (BOOL)expanded;
 - (BOOL)finishEnteringRecipient;
-- (BOOL)focused;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDraggedItem:(id)arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)hasContent;
@@ -155,7 +155,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDidIgnoreFirstResponderResign:(BOOL)arg1;
 - (void)setEditable:(BOOL)arg1;
-- (void)setFocused:(BOOL)arg1;
+- (void)setExpanded:(BOOL)arg1;
 - (void)setHideLastAtomComma:(int)arg1;
 - (void)setInputDelay:(double)arg1;
 - (void)setLabel:(id)arg1;

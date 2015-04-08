@@ -35,6 +35,7 @@
 - (id)allAssetKeys;
 - (id)allRenditionNames;
 - (BOOL)assetExistsForKey:(id)arg1;
+- (BOOL)assetExistsForKeyData:(const void*)arg1 length:(unsigned long)arg2;
 - (id)assetForKey:(id)arg1;
 - (id)assetKeysMatchingBlock:(id)arg1;
 - (unsigned int)associatedChecksum;

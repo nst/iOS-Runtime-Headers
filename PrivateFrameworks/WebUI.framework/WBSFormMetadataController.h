@@ -50,6 +50,7 @@
 - (void)recursivelyCountUserEditedTextControlsInFrame:(id)arg1 textFields:(unsigned int*)arg2 textAreas:(unsigned int*)arg3;
 - (void)replaceRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inField:(id)arg2 inFrame:(id)arg3 withString:(id)arg4 andSelectTailStartingAt:(unsigned int)arg5;
 - (void)selectRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inField:(id)arg2 inFrame:(id)arg3;
+- (BOOL)shouldIncludeUnannotatedControls;
 - (void)textFieldBlurred:(id)arg1 inFrame:(id)arg2;
 - (void)textFieldFocused:(id)arg1 inFrame:(id)arg2;
 - (id)uniqueIDForTextField:(id)arg1 inFrame:(id)arg2;

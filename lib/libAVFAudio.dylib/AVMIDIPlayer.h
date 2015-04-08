@@ -22,8 +22,8 @@
 - (double)duration;
 - (void)finalize;
 - (unsigned long long)hostTimeForBeats:(double)arg1;
-- (struct MIDIPlayerImpl { struct OpaqueMusicPlayer {} *x1; struct OpaqueMusicSequence {} *x2; double x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; }*)impl;
-     /* Encoded args for previous method: ^{MIDIPlayerImpl=^{OpaqueMusicPlayer}^{OpaqueMusicSequence}d@?@}8@0:4 */
+- (struct MIDIPlayerImpl { struct OpaqueAUGraph {} *x1; struct OpaqueMusicPlayer {} *x2; struct OpaqueMusicSequence {} *x3; double x4; id x5; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x6; id x7; }*)impl;
+     /* Encoded args for previous method: ^{MIDIPlayerImpl=^{OpaqueAUGraph}^{OpaqueMusicPlayer}^{OpaqueMusicSequence}d@?@}8@0:4 */
 
 - (id)initBase;
 - (id)initWithContentsOfURL:(id)arg1 soundBankURL:(id)arg2 error:(id*)arg3;

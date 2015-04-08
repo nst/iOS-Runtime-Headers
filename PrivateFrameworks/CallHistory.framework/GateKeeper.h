@@ -10,8 +10,10 @@
 
 + (id)instance;
 
+- (void)cacheUnlockSinceBootState;
 - (BOOL)hasDeviceBeenUnlockedSinceBoot;
 - (id)init;
+- (void)reFetch;
 - (void)setHasDeviceBeenUnlockedSinceBoot:(BOOL)arg1;
 - (void)setupMobileKeyBag;
 

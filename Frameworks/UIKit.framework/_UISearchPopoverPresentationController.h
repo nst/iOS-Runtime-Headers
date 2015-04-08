@@ -31,7 +31,7 @@
 @property(readonly) Class superclass;
 
 - (id)_popoverHostingWindow;
-- (id)_presentationControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
+- (id)_presentationControllerForTraitCollection:(id)arg1;
 - (id)_presentedViewControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
 - (void)_transitionFromDidEnd;
 - (void)_transitionFromWillBegin;

@@ -8,7 +8,6 @@
     PLCropOverlayBottomBar *__bottomBar;
     UIButton *__cameraCancelButton;
     UIImageView *_bottomShineView;
-    UIButton *_cancelButton;
     PLContactPhotoOverlay *_contactPhotoOverlay;
     unsigned int _controlsAreVisible : 1;
     struct CGRect { 
@@ -26,8 +25,8 @@
     UIToolbar *_customToolbar;
     NSString *_defaultOKButtonTitle;
     id _delegate;
+    BOOL _displayedInPopover;
     PLProgressHUD *_hud;
-    unsigned int _isDisplayedInPopover : 1;
     BOOL _isEditingHomeScreen;
     BOOL _isEditingLockScreen;
     int _mode;
@@ -51,6 +50,7 @@
 @property(retain) CAMBottomBar * cameraBottomBar;
 @property(readonly) PLContactPhotoOverlay * contactPhotoOverlay;
 @property(copy) NSString * defaultOKButtonTitle;
+@property(getter=isDisplayedInPopover) BOOL displayedInPopover;
 @property BOOL isEditingHomeScreen;
 @property BOOL isEditingLockScreen;
 @property BOOL motionToggleHidden;
@@ -102,8 +102,9 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2 offsettingStatusBar:(BOOL)arg3 isDisplayedInPopover:(BOOL)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2 offsettingStatusBar:(BOOL)arg3;
 - (void)insertIrisView:(id)arg1;
+- (BOOL)isDisplayedInPopover;
 - (BOOL)isEditingHomeScreen;
 - (BOOL)isEditingLockScreen;
 - (BOOL)isTelephonyUIMode:(int)arg1;
@@ -116,12 +117,12 @@
 - (BOOL)previewMode;
 - (void)removeProgress;
 - (void)setCameraBottomBar:(id)arg1;
-- (void)setCancelButtonHidden:(BOOL)arg1;
 - (void)setCancelButtonTitle:(id)arg1;
 - (void)setControlsAreVisible:(BOOL)arg1;
 - (void)setCropRectVisible:(BOOL)arg1 duration:(float)arg2;
 - (void)setDefaultOKButtonTitle:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDisplayedInPopover:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setIsEditingHomeScreen:(BOOL)arg1;
 - (void)setIsEditingLockScreen:(BOOL)arg1;

@@ -2,29 +2,38 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class <PRSSessionController>, NSArray, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, NSTimer;
+@class <PRSSessionController>, NSArray, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface PRSSearchSession : NSObject <PRSImageSource, PRSResourceProvider> {
     NSMutableSet *_cachedResults;
     NSMutableSet *_cachedWebResults;
     <PRSSessionController> *_client;
     NSObject<OS_dispatch_queue> *_clientQueue;
+    BOOL _enableFeedbackDebugLogging;
     NSMutableArray *_feedback;
     NSObject<OS_dispatch_group> *_feedbackGroup;
     NSMutableSet *_feedbackTasks;
-    NSTimer *_guidTimer;
+    NSString *_fteLearnMoreString;
+    NSString *_fteLocString;
     double _lastQueryTime;
+    NSString *_lookupFirstUseDescription1;
+    NSString *_lookupFirstUseDescription2;
     double _retryAfter;
     double _sessionStartTime;
+    NSArray *_supportedServices;
+    NSString *_userAgent;
     BOOL _valid;
 }
 
 @property(retain) NSObject<OS_dispatch_queue> * clientQueue;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property BOOL enableFeedbackDebugLogging;
 @property(readonly) NSString * fteLearnMoreString;
 @property(readonly) NSString * fteLocString;
 @property(readonly) unsigned int hash;
+@property(readonly) NSString * lookupFirstUseDescription1;
+@property(readonly) NSString * lookupFirstUseDescription2;
 @property double retryAfter;
 @property(readonly) double searchRenderTimeout;
 @property double sessionStartTime;
@@ -41,13 +50,16 @@
 - (id)cachedResultSetForCompletionString:(id)arg1 webSearch:(BOOL)arg2;
 - (id)cachedResultSetForQuery:(id)arg1 webSearch:(BOOL)arg2;
 - (id)clientQueue;
+- (id)connectionType;
 - (id)copyCachedResult:(id)arg1 webSearch:(BOOL)arg2;
 - (id)createFeedbackRequest:(id*)arg1;
 - (id)createQueryURL:(id)arg1 userQueryString:(id)arg2 currentLocation:(id)arg3 locationSource:(id)arg4 currentCoordinates:(struct { double x1; double x2; })arg5 storeFrontId:(id)arg6 locale:(id)arg7 context:(id)arg8;
 - (id)createURLRequestWithString:(id)arg1 webSearch:(BOOL)arg2 scaleFactor:(float)arg3 allowLocation:(BOOL)arg4 fallbackURL:(id*)arg5;
 - (void)deactivate;
 - (void)dealloc;
-- (void)didDisplayCompletionListItems:(id)arg1 forQuery:(id)arg2;
+- (BOOL)enableFeedbackDebugLogging;
+- (void)enableFeedbackDebugLogging:(BOOL)arg1;
+- (id)fetchLookupBagProperties;
 - (BOOL)flushFeedback;
 - (id)fteLearnMoreString;
 - (id)fteLocString;
@@ -55,30 +67,30 @@
 - (void)getImageWithIdentifier:(id)arg1 block:(id)arg2;
 - (id)initWithClient:(id)arg1;
 - (id)initWithClient:(id)arg1 clientQueue:(id)arg2;
-- (BOOL)isLocaleSupported:(id)arg1;
+- (void)isLocaleSupported:(id)arg1 withReply:(id)arg2;
 - (BOOL)isValid;
 - (void)killFeedback;
+- (id)lookupFirstUseDescription1;
+- (id)lookupFirstUseDescription2;
 - (void)pruneCache;
 - (id)queryWithString:(id)arg1 handler:(id)arg2;
 - (id)queryWithString:(id)arg1 webSearch:(BOOL)arg2 handler:(id)arg3;
 - (id)queryWithString:(id)arg1 webSearch:(BOOL)arg2 scaleFactor:(float)arg3 handler:(id)arg4;
-- (void)refreshGUID;
-- (void)reloadGuid;
 - (id)resourceWithID:(id)arg1;
+- (int)resultSet:(id)arg1 isMatchForQuery:(id)arg2;
 - (double)retryAfter;
 - (double)searchRenderTimeout;
-- (BOOL)searchSupported:(BOOL)arg1;
-- (BOOL)sessionReady;
 - (double)sessionStartTime;
 - (void)setClientQueue:(id)arg1;
+- (void)setEnableFeedbackDebugLogging:(BOOL)arg1;
 - (void)setFeedbackStartTime;
 - (void)setRetryAfter:(double)arg1;
 - (void)setSessionStartTime:(double)arg1;
+- (void)setUserAgentString:(id)arg1;
 - (id)supportedServices;
 - (void)syncFeedback;
 - (id)urlRequestFromURL:(id)arg1;
 - (id)urlSessionForImage:(id)arg1;
-- (void)userDidCancelSession;
-- (void)userDidSelectCompletionListItem:(id)arg1;
+- (void)warmup;
 
 @end

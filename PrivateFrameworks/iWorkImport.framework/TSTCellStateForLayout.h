@@ -18,7 +18,7 @@
         float height; 
     } mMaxSize;
     float mMaxWidthForChildren;
-    struct { 
+    struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
             unsigned char column; 
@@ -61,7 +61,7 @@
 @property int layoutCacheFlags;
 @property struct CGSize { float x1; float x2; } maxSize;
 @property float maxWidthForChildren;
-@property struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } mergedRange;
+@property struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } mergedRange;
 @property struct CGSize { float x1; float x2; } minSize;
 @property struct { unsigned short x1; unsigned char x2; unsigned char x3; } modelCellID;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingInsets;
@@ -83,7 +83,7 @@
 - (int)layoutCacheFlags;
 - (struct CGSize { float x1; float x2; })maxSize;
 - (float)maxWidthForChildren;
-- (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })mergedRange;
+- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })mergedRange;
 - (struct CGSize { float x1; float x2; })minSize;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })modelCellID;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingInsets;
@@ -99,7 +99,7 @@
 - (void)setLayoutCacheFlags:(int)arg1;
 - (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setMaxWidthForChildren:(float)arg1;
-- (void)setMergedRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)setMergedRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)setMinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setModelCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)setPaddingInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

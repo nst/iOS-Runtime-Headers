@@ -13,8 +13,10 @@
 }
 
 - (void)addRecord:(id)arg1;
+- (void)addRecord:(id)arg1 ignoreBatchSize:(BOOL)arg2;
 - (int)currentBatchCount;
 - (void)dealloc;
+- (id)description;
 - (id)drainBatches;
 - (id)init;
 - (BOOL)isAboveMaximumResourceBudget;

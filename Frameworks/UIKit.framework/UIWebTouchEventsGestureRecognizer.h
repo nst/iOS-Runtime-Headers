@@ -6,6 +6,7 @@
 
 @interface UIWebTouchEventsGestureRecognizer : UIGestureRecognizer {
     BOOL _defaultPrevented;
+    BOOL _dispatchingTouchEvents;
     struct _UIWebTouchEvent { 
         int type; 
         double timestamp; 
@@ -32,6 +33,7 @@
 }
 
 @property(getter=isDefaultPrevented) BOOL defaultPrevented;
+@property(getter=isDispatchingTouchEvents,readonly) BOOL dispatchingTouchEvents;
 @property(readonly) BOOL inJavaScriptGesture;
 @property(readonly) const struct _UIWebTouchEvent { int x1; double x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; float x5; float x6; bool x7; struct _UIWebTouchPoint {} *x8; unsigned int x9; }* lastTouchEvent;
 @property(readonly) struct CGPoint { float x1; float x2; } locationInWindow;
@@ -51,6 +53,7 @@
 - (BOOL)inJavaScriptGesture;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 touchDelegate:(id)arg3;
 - (BOOL)isDefaultPrevented;
+- (BOOL)isDispatchingTouchEvents;
 - (const struct _UIWebTouchEvent { int x1; double x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; float x5; float x6; bool x7; struct _UIWebTouchPoint {} *x8; unsigned int x9; }*)lastTouchEvent;
 - (struct CGPoint { float x1; float x2; })locationInWindow;
 - (void)reset;

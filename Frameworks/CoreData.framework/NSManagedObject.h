@@ -117,6 +117,7 @@
 - (id)_newSnapshotForUndo__;
 - (void)_nilOutReservedCurrentEventSnapshot__;
 - (id)_obsoleteAttributes;
+- (id)_orderKeysForRelationshipWithName__:(id)arg1;
 - (id)_originalSnapshot__;
 - (id)_persistentProperties__;
 - (void)_prepropagateDeleteForMerge;
@@ -146,6 +147,7 @@
 - (void)_updateFromRefreshSnapshot:(id)arg1 includingTransients:(BOOL)arg2;
 - (void)_updateFromSnapshot:(id)arg1;
 - (void)_updateFromUndoSnapshot:(id)arg1;
+- (BOOL)_updateLocationsOfObjectsToLocationByOrderKey:(id)arg1 inRelationshipWithName:(id)arg2 error:(id*)arg3;
 - (void)_updateToManyRelationship:(id)arg1 from:(id)arg2 to:(id)arg3 with:(id)arg4;
 - (BOOL)_validateForSave:(id*)arg1;
 - (BOOL)_validatePropertiesWithError:(id*)arg1;
@@ -192,6 +194,7 @@
 - (id)mutableOrderedSetValueForKey:(id)arg1;
 - (id)mutableSetValueForKey:(id)arg1;
 - (id)objectID;
+- (id)objectIDsForRelationshipNamed:(id)arg1;
 - (id)observationInfo;
 - (void)prepareForDeletion;
 - (id)primitiveValueForKey:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class <MCDCarDisplayServiceProvider>, MCDButton, MCDNowPlayingViewController, MPAVController, MPMediaQuery, NSArray, NSString, UIAlertController, UIImage, UILabel;
+@class <MCDCarDisplayServiceProvider>, MCDButton, MCDNowPlayingViewController, MPAVController, MPMediaQuery, NSArray, NSString, NSTimer, UIAlertController, UIImage, UILabel;
 
 @interface MCDMusicNowPlayingViewController : UIViewController <AFContextProvider, MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate> {
     UIAlertController *_actionSheetAlertController;
@@ -19,6 +19,7 @@
     MPAVController *_player;
     UILabel *_rightTitleLabel;
     <MCDCarDisplayServiceProvider> *_serviceProvider;
+    NSTimer *_updateTimer;
     int _viewMode;
     MCDButton *_wishlistButton;
 }
@@ -37,7 +38,8 @@
 - (void)_itemStoreIDDidChangeNotification:(id)arg1;
 - (void)_itemTitlesDidChangeNotification:(id)arg1;
 - (void)_playbackContentsChanged:(id)arg1;
-- (void)_playerTick:(id)arg1;
+- (void)_playbackStateChanged:(id)arg1;
+- (void)_playerTick;
 - (void)_presentNowPlayingInfo;
 - (void)_registerForNotifications;
 - (void)_setPlayerRepeatType:(unsigned int)arg1;
@@ -73,6 +75,7 @@
 - (void)nowPlayingViewControllerToggleRepeat:(id)arg1;
 - (void)nowPlayingViewControllerToggleShuffle:(id)arg1;
 - (double)playbackDurationForNowPlayingViewController:(id)arg1 withElapsedTime:(out double*)arg2;
+- (id)preferredFocusedItem;
 - (id)repeatStringForNowPlayingViewController:(id)arg1;
 - (unsigned int)repeatTypeForNowPlayingViewController:(id)arg1;
 - (void)setControlPages:(id)arg1;

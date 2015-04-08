@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSDMovieHUDViewController>, CALayer, KNBuildRenderer, NSObject<NSCopying>, NSObject<TSKMediaPlayerController>, NSString;
+@class CALayer, KNBuildRenderer, NSObject<NSCopying>, NSObject<TSKMediaPlayerController>, NSString;
 
 @interface KNMovieRenderer : KNBuildRenderer <TSKMediaPlayerControllerDelegate> {
     KNBuildRenderer *mBuildInRenderer;
@@ -19,6 +19,7 @@
     unsigned int mHasMoviePlaybackStarted : 1;
     unsigned int mHasPendingTogglePlayingControl : 1;
     unsigned int mIsObservingVideoLayerReadyForDisplay : 1;
+    unsigned int mIsTeardownCompletionBlockPending : 1;
     SEL mMovieStartCallbackSelector;
     id mMovieStartCallbackTarget;
     unsigned int mNeedsPlaybackAtStartTime : 1;
@@ -31,7 +32,6 @@
     unsigned int mShouldMoviePlaybackEndOnCompletion : 1;
     double mStartTime;
     CALayer *mVideoLayer;
-    <TSDMovieHUDViewController> *mViewController;
     unsigned int mWasMoviePlayingBeforeAnimationPause : 1;
 }
 
@@ -44,7 +44,6 @@
 @property(readonly) CALayer * offscreenVideoLayer;
 @property(readonly) NSObject<TSKMediaPlayerController> * playerController;
 @property(readonly) Class superclass;
-@property(retain) <TSDMovieHUDViewController> * viewController;
 
 + (id)movieInfoForMovieTimelineMovieIdentifier:(id)arg1;
 + (id)movieTimelineMovieIdentifierForMovieInfo:(id)arg1;
@@ -64,6 +63,7 @@
 - (void)p_applyActionEffect:(id)arg1;
 - (void)p_cancelPlaybackAtStartTime;
 - (struct CGImage { }*)p_copyCurrentVideoFrameImage;
+- (struct CGImage { }*)p_copyCurrentVideoFrameImageUsingAVAssetImageGenerator;
 - (void)p_didEndMoviePlayback;
 - (void)p_didStartMoviePlayback;
 - (void)p_playbackDidFailWithError:(id)arg1;
@@ -86,11 +86,7 @@
 - (void)resumeAnimationsIfPaused;
 - (void)resumeAnimationsIfPausedAtTime:(double)arg1;
 - (void)setBuildInRenderer:(id)arg1;
-- (void)setFrameOnViewLayer:(id)arg1;
-- (void)setViewController:(id)arg1;
 - (void)stopAnimations;
 - (void)updateAnimationsForLayerTime:(double)arg1;
-- (void)updateHUD;
-- (id)viewController;
 
 @end

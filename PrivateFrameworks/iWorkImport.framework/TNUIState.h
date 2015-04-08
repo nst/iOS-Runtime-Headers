@@ -7,10 +7,10 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <TNUIStateDelegate>, NSArray, NSSet, TNChartSelection, TNSheetSelection, TSTTableSelection, TSURetainedPointerKeyDictionary;
+@class <TNUIStateDelegate>, NSArray, NSMutableDictionary, TNSheetSelection, TSKSelectionPath, TSURetainedPointerKeyDictionary;
 
 @interface TNUIState : NSObject <NSCopying> {
-    TNChartSelection *mChartSelection;
+    NSMutableDictionary *mChartUIState;
     <TNUIStateDelegate> *mDelegate;
     struct CGSize { 
         float width; 
@@ -31,23 +31,18 @@
     int mInspectorPaneViewMode;
     BOOL mInspectorPaneVisible;
     BOOL mRemovedAllQuickCalcFunctions;
-    NSSet *mSelectedInfos;
     NSArray *mSelectedQuickCalcFunctions;
-    TNSheetSelection *mSheetSelection;
+    TSKSelectionPath *mSelectionPath;
     TSURetainedPointerKeyDictionary *mSheetUIStates;
     BOOL mShowCanvasGuides;
     BOOL mShowsComments;
-    int mTableEditingMode;
-    TSTTableSelection *mTableSelection;
 }
 
-@property(retain) TNChartSelection * chartSelection;
+@property(readonly) NSMutableDictionary * chartUIState;
 @property <TNUIStateDelegate> * delegate;
 @property struct CGSize { float x1; float x2; } desktopScreenSize;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } desktopWindowFrame;
 @property int documentMode;
-@property unsigned char formFocusedFieldIndex;
-@property unsigned short formFocusedRecordIndex;
 @property(readonly) BOOL hasPreviousVisibleRect;
 @property(readonly) BOOL hasVisibleRect;
 @property int inspectorPaneViewMode;
@@ -57,19 +52,21 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previousVisibleRect;
 @property BOOL removedAllQuickCalcFunctions;
 @property(readonly) struct CGPoint { float x1; float x2; } scrollPosition;
-@property(retain) NSSet * selectedInfos;
 @property(copy) NSArray * selectedQuickCalcFunctions;
-@property(retain) TNSheetSelection * sheetSelection;
+@property(retain) TSKSelectionPath * selectionPath;
+@property(readonly) TNSheetSelection * sheetSelection;
 @property BOOL showCanvasGuides;
 @property BOOL showsComments;
-@property int tableEditingMode;
-@property(retain) TSTTableSelection * tableSelection;
 @property(readonly) float viewScale;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
 
++ (float)maximumViewScale;
++ (float)minimumViewScale;
+
 - (id).cxx_construct;
+- (id)UIStateForChart:(id)arg1;
 - (id)archivedUIStateInContext:(id)arg1;
-- (id)chartSelection;
+- (id)chartUIState;
 - (void)clearPreviousVisibleRect;
 - (void)clearVisibleRect;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -79,13 +76,12 @@
 - (struct CGSize { float x1; float x2; })desktopScreenSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })desktopWindowFrame;
 - (int)documentMode;
-- (unsigned char)formFocusedFieldIndex;
-- (unsigned short)formFocusedRecordIndex;
+- (void)enumerateSheetUIStatesWithBlock:(id)arg1;
 - (BOOL)hasPreviousVisibleRect;
 - (BOOL)hasVisibleRect;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithArchive:(const struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; unsigned int x5; unsigned int x6; struct SelectionArchive {} *x7; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; int x9; int x10; unsigned int x11; unsigned int x12; struct ChartSelectionArchive {} *x13; struct Reference {} *x14; int x15; bool x16; bool x17; bool x18; bool x19; struct RepeatedField<unsigned int> { unsigned int *x_20_1_1; int x_20_1_2; int x_20_1_3; } x20; struct Point {} *x21; struct Size {} *x22; struct Size {} *x23; bool x24; int x25; unsigned int x26[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; unsigned int x7; unsigned int x8; struct SelectionArchive {} *x9; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; int x11; int x12; unsigned int x13; unsigned int x14; struct ChartSelectionArchive {} *x15; struct Reference {} *x16; int x17; bool x18; bool x19; bool x20; bool x21; struct RepeatedField<unsigned int> { unsigned int *x_22_1_1; int x_22_1_2; int x_22_1_3; } x22; struct Point {} *x23; struct Size {} *x24; struct Size {} *x25; struct RepeatedPtrField<TSCH::ChartUIState> { void **x_26_1_1; int x_26_1_2; int x_26_1_3; int x_26_1_4; } x26; struct SelectionPathArchive {} *x27; bool x28; }*)arg1 unarchiver:(id)arg2;
 - (int)inspectorPaneViewMode;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isInspectorPaneVisible;
@@ -98,37 +94,31 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previousVisibleRect;
 - (void)removeUIStateForSheet:(id)arg1;
 - (BOOL)removedAllQuickCalcFunctions;
-- (void)saveToArchive:(struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; unsigned int x5; unsigned int x6; struct SelectionArchive {} *x7; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; int x9; int x10; unsigned int x11; unsigned int x12; struct ChartSelectionArchive {} *x13; struct Reference {} *x14; int x15; bool x16; bool x17; bool x18; bool x19; struct RepeatedField<unsigned int> { unsigned int *x_20_1_1; int x_20_1_2; int x_20_1_3; } x20; struct Point {} *x21; struct Size {} *x22; struct Size {} *x23; bool x24; int x25; unsigned int x26[1]; }*)arg1 archiver:(id)arg2 context:(id)arg3;
+- (void)saveToArchive:(struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; unsigned int x7; unsigned int x8; struct SelectionArchive {} *x9; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; int x11; int x12; unsigned int x13; unsigned int x14; struct ChartSelectionArchive {} *x15; struct Reference {} *x16; int x17; bool x18; bool x19; bool x20; bool x21; struct RepeatedField<unsigned int> { unsigned int *x_22_1_1; int x_22_1_2; int x_22_1_3; } x22; struct Point {} *x23; struct Size {} *x24; struct Size {} *x25; struct RepeatedPtrField<TSCH::ChartUIState> { void **x_26_1_1; int x_26_1_2; int x_26_1_3; int x_26_1_4; } x26; struct SelectionPathArchive {} *x27; bool x28; }*)arg1 archiver:(id)arg2 context:(id)arg3;
 - (struct CGPoint { float x1; float x2; })scrollPosition;
-- (id)selectedInfos;
 - (id)selectedQuickCalcFunctions;
-- (void)setChartSelection:(id)arg1;
+- (id)selectionPath;
 - (void)setDelegate:(id)arg1;
 - (void)setDesktopScreenSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDesktopWindowFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDocumentMode:(int)arg1;
-- (void)setFormFocusedFieldIndex:(unsigned char)arg1;
-- (void)setFormFocusedRecordIndex:(unsigned short)arg1;
 - (void)setInspectorPaneViewMode:(int)arg1;
 - (void)setInspectorPaneVisible:(BOOL)arg1;
 - (void)setPreviousVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPreviousVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSheet:(id)arg2;
 - (void)setRemovedAllQuickCalcFunctions:(BOOL)arg1;
-- (void)setSelectedInfos:(id)arg1;
 - (void)setSelectedQuickCalcFunctions:(id)arg1;
-- (void)setSheetSelection:(id)arg1;
+- (void)setSelectionPath:(id)arg1;
 - (void)setShowCanvasGuides:(BOOL)arg1;
 - (void)setShowsComments:(BOOL)arg1;
-- (void)setTableEditingMode:(int)arg1;
-- (void)setTableSelection:(id)arg1;
+- (void)setUIState:(id)arg1 forChart:(id)arg2;
 - (void)setUIState:(id)arg1 forSheet:(id)arg2;
 - (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSheet:(id)arg2;
 - (id)sheetSelection;
 - (BOOL)showCanvasGuides;
 - (BOOL)showsComments;
-- (int)tableEditingMode;
-- (id)tableSelection;
+- (id)uiStateForActiveSheet;
 - (id)uiStateForSheet:(id)arg1;
 - (float)viewScale;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;

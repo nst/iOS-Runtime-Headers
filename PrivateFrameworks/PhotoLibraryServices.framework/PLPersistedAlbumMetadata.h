@@ -36,6 +36,10 @@
 @property(retain) NSString * title;
 @property(retain) NSString * uuid;
 
++ (BOOL)_isAlbumMetadataExtension:(id)arg1;
++ (BOOL)_isFolderMetadataExtension:(id)arg1;
++ (BOOL)isAlbumMetadataPath:(id)arg1;
++ (BOOL)isFolderMetadataPath:(id)arg1;
 + (BOOL)isValidPath:(id)arg1;
 
 - (void)_readMetadata;

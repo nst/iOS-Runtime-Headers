@@ -9,6 +9,7 @@
     NSArray *_MCCAndMNCs;
     NSArray *_NAIRealmNames;
     BOOL _autoJoin;
+    NSNumber *_autoJoinNum;
     NSString *_certificateUUID;
     NSString *_credentialUUID;
     NSString *_displayedOperatorName;
@@ -16,7 +17,9 @@
     NSDictionary *_eapClientConfig;
     NSString *_encryptionType;
     BOOL _isHidden;
+    NSNumber *_isHiddenNum;
     BOOL _isHotspot;
+    NSNumber *_isHotspotNum;
     BOOL _isWEP;
     BOOL _isWPA;
     NSString *_password;
@@ -24,6 +27,7 @@
     NSArray *_payloadCertificateAnchorUUID;
     NSNumber *_priority;
     BOOL _proxyPACFallbackAllowed;
+    NSNumber *_proxyPACFallbackAllowedNum;
     NSString *_proxyPACURLString;
     NSString *_proxyPassword;
     NSString *_proxyServer;
@@ -32,6 +36,7 @@
     NSString *_proxyUsername;
     NSArray *_roamingConsortiumOIs;
     BOOL _serviceProviderRoamingEnabled;
+    NSNumber *_serviceProviderRoamingEnabledNum;
     NSString *_ssid;
     NSString *_username;
     BOOL _usernameRequired;
@@ -41,6 +46,7 @@
 @property(retain) NSArray * MCCAndMNCs;
 @property(retain) NSArray * NAIRealmNames;
 @property BOOL autoJoin;
+@property(retain) NSNumber * autoJoinNum;
 @property(retain) NSString * certificateUUID;
 @property(retain) NSString * credentialUUID;
 @property(retain) NSString * displayedOperatorName;
@@ -48,7 +54,9 @@
 @property(retain) NSDictionary * eapClientConfig;
 @property(retain) NSString * encryptionType;
 @property BOOL isHidden;
+@property(retain) NSNumber * isHiddenNum;
 @property BOOL isHotspot;
+@property(retain) NSNumber * isHotspotNum;
 @property BOOL isWEP;
 @property BOOL isWPA;
 @property(retain) NSString * password;
@@ -56,6 +64,7 @@
 @property(retain) NSArray * payloadCertificateAnchorUUID;
 @property(retain) NSNumber * priority;
 @property BOOL proxyPACFallbackAllowed;
+@property(retain) NSNumber * proxyPACFallbackAllowedNum;
 @property(retain) NSString * proxyPACURLString;
 @property(retain) NSString * proxyPassword;
 @property(retain) NSString * proxyServer;
@@ -64,6 +73,7 @@
 @property(retain) NSString * proxyUsername;
 @property(retain) NSArray * roamingConsortiumOIs;
 @property(getter=isServiceProviderRoamingEnabled) BOOL serviceProviderRoamingEnabled;
+@property(retain) NSNumber * serviceProviderRoamingEnabledNum;
 @property(retain) NSString * ssid;
 @property(retain) NSString * username;
 @property BOOL usernameRequired;
@@ -82,6 +92,7 @@
 - (BOOL)_isEAPSIMConfig:(id)arg1;
 - (id)_localizedEncryptionTypeString;
 - (BOOL)autoJoin;
+- (id)autoJoinNum;
 - (id)certificateUUID;
 - (id)credentialUUID;
 - (id)description;
@@ -92,7 +103,9 @@
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)installationWarnings;
 - (BOOL)isHidden;
+- (id)isHiddenNum;
 - (BOOL)isHotspot;
+- (id)isHotspotNum;
 - (BOOL)isServiceProviderRoamingEnabled;
 - (BOOL)isWEP;
 - (BOOL)isWPA;
@@ -102,6 +115,7 @@
 - (id)payloadDescriptionKeyValueSections;
 - (id)priority;
 - (BOOL)proxyPACFallbackAllowed;
+- (id)proxyPACFallbackAllowedNum;
 - (id)proxyPACURLString;
 - (id)proxyPassword;
 - (id)proxyServer;
@@ -109,7 +123,9 @@
 - (int)proxyType;
 - (id)proxyUsername;
 - (id)roamingConsortiumOIs;
+- (id)serviceProviderRoamingEnabledNum;
 - (void)setAutoJoin:(BOOL)arg1;
+- (void)setAutoJoinNum:(id)arg1;
 - (void)setCertificateUUID:(id)arg1;
 - (void)setCredentialUUID:(id)arg1;
 - (void)setDisplayedOperatorName:(id)arg1;
@@ -118,7 +134,9 @@
 - (void)setEncryptionType:(id)arg1;
 - (void)setHESSID:(id)arg1;
 - (void)setIsHidden:(BOOL)arg1;
+- (void)setIsHiddenNum:(id)arg1;
 - (void)setIsHotspot:(BOOL)arg1;
+- (void)setIsHotspotNum:(id)arg1;
 - (void)setIsWEP:(BOOL)arg1;
 - (void)setIsWPA:(BOOL)arg1;
 - (void)setMCCAndMNCs:(id)arg1;
@@ -128,6 +146,7 @@
 - (void)setPayloadCertificateAnchorUUID:(id)arg1;
 - (void)setPriority:(id)arg1;
 - (void)setProxyPACFallbackAllowed:(BOOL)arg1;
+- (void)setProxyPACFallbackAllowedNum:(id)arg1;
 - (void)setProxyPACURLString:(id)arg1;
 - (void)setProxyPassword:(id)arg1;
 - (void)setProxyServer:(id)arg1;
@@ -136,6 +155,7 @@
 - (void)setProxyUsername:(id)arg1;
 - (void)setRoamingConsortiumOIs:(id)arg1;
 - (void)setServiceProviderRoamingEnabled:(BOOL)arg1;
+- (void)setServiceProviderRoamingEnabledNum:(id)arg1;
 - (void)setSsid:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (void)setUsernameRequired:(BOOL)arg1;

@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEONavigationDelegate>, GEOComposedRoute, GEOLocation, GEONavigationDetails, GEORouteMatch, NSData, NSObject<OS_xpc_object>, NSString, NSXPCConnection;
+@class <GEONavigationDelegate>, GEOComposedRoute, GEOLocation, GEONavigationDetails, GEORouteMatch, NSData, NSLock, NSObject<OS_xpc_object>, NSString, NSXPCConnection;
 
 @interface GEONavigation : NSObject {
+    NSLock *_connectionLock;
     <GEONavigationDelegate> *_delegate;
     GEONavigationDetails *_details;
     NSObject<OS_xpc_object> *_geodConnection;
@@ -54,6 +55,7 @@
 - (double)distanceToManeuverStart;
 - (double)distanceToRoute;
 - (void)endNavigation;
+- (id)init;
 - (BOOL)isNavigating;
 - (id)location;
 - (BOOL)locationUnreliable;

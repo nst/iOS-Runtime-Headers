@@ -30,6 +30,7 @@
 - (void)_handleRenameRequest:(id)arg1;
 - (void)_registerForMessages;
 - (void)configure:(id)arg1 queue:(id)arg2;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)home;
 - (id)initWithCoder:(id)arg1;

@@ -2,81 +2,81 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPIdentifier, NSData, NSString;
+@class CKDPContactInformation, CKDPIdentifier, CKDPProtectionInfo;
 
 @interface CKDPParticipant : PBCodable <NSCopying> {
+    CKDPContactInformation *_contactInformation;
     BOOL _createdOutOfProcess;
-    NSString *_emailAddress;
     struct { 
         unsigned int participantType : 1; 
         unsigned int permission : 1; 
         unsigned int state : 1; 
         unsigned int createdOutOfProcess : 1; 
     } _has;
-    NSData *_invitationSignature;
     CKDPIdentifier *_inviterId;
     CKDPIdentifier *_participantId;
     int _participantType;
     int _permission;
+    CKDPProtectionInfo *_publicKey;
     int _state;
     CKDPIdentifier *_userId;
 }
 
+@property(retain) CKDPContactInformation * contactInformation;
 @property BOOL createdOutOfProcess;
-@property(retain) NSString * emailAddress;
+@property(readonly) BOOL hasContactInformation;
 @property BOOL hasCreatedOutOfProcess;
-@property(readonly) BOOL hasEmailAddress;
-@property(readonly) BOOL hasInvitationSignature;
 @property(readonly) BOOL hasInviterId;
 @property(readonly) BOOL hasParticipantId;
 @property BOOL hasParticipantType;
 @property BOOL hasPermission;
+@property(readonly) BOOL hasPublicKey;
 @property BOOL hasState;
 @property(readonly) BOOL hasUserId;
-@property(retain) NSData * invitationSignature;
 @property(retain) CKDPIdentifier * inviterId;
 @property(retain) CKDPIdentifier * participantId;
 @property int participantType;
 @property int permission;
+@property(retain) CKDPProtectionInfo * publicKey;
 @property int state;
 @property(retain) CKDPIdentifier * userId;
 
 - (void).cxx_destruct;
+- (id)contactInformation;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)createdOutOfProcess;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)emailAddress;
+- (BOOL)hasContactInformation;
 - (BOOL)hasCreatedOutOfProcess;
-- (BOOL)hasEmailAddress;
-- (BOOL)hasInvitationSignature;
 - (BOOL)hasInviterId;
 - (BOOL)hasParticipantId;
 - (BOOL)hasParticipantType;
 - (BOOL)hasPermission;
+- (BOOL)hasPublicKey;
 - (BOOL)hasState;
 - (BOOL)hasUserId;
 - (unsigned int)hash;
-- (id)invitationSignature;
 - (id)inviterId;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)participantId;
 - (int)participantType;
 - (int)permission;
+- (id)publicKey;
 - (BOOL)readFrom:(id)arg1;
+- (void)setContactInformation:(id)arg1;
 - (void)setCreatedOutOfProcess:(BOOL)arg1;
-- (void)setEmailAddress:(id)arg1;
 - (void)setHasCreatedOutOfProcess:(BOOL)arg1;
 - (void)setHasParticipantType:(BOOL)arg1;
 - (void)setHasPermission:(BOOL)arg1;
 - (void)setHasState:(BOOL)arg1;
-- (void)setInvitationSignature:(id)arg1;
 - (void)setInviterId:(id)arg1;
 - (void)setParticipantId:(id)arg1;
 - (void)setParticipantType:(int)arg1;
 - (void)setPermission:(int)arg1;
+- (void)setPublicKey:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setUserId:(id)arg1;
 - (int)state;

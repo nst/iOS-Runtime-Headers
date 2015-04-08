@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceInfoViewControllerDelegate>, ABCardGroup, MKMapItem, MKYelpDeal, NSArray, NSAttributedString, NSString, UIImage, _MKPlaceInfoViewControllerRouter, _MKPlaceViewController;
+@class <MKMapItemVendorDeal>, <MKPlaceInfoViewControllerDelegate>, ABCardGroup, MKMapItem, NSArray, NSAttributedString, NSString, UIImage, _MKPlaceInfoViewControllerRouter, _MKPlaceViewController;
 
 @interface MKPlaceInfoViewController : ABContactViewController <ABContactViewControllerDelegate, MKPlaceAttributionCellProvider, MKStackingViewControllerPreferredSizeUse> {
     _MKPlaceInfoViewControllerRouter *_actionsProxy;
     ABCardGroup *_businessInfoGroup;
     NSArray *_businessInfoOrder;
-    MKYelpDeal *_deal;
+    <MKMapItemVendorDeal> *_deal;
     ABCardGroup *_dealsGroup;
     <MKPlaceInfoViewControllerDelegate> *_infoDelegate;
     UIImage *_inlineMap;
@@ -20,7 +20,7 @@
 
 @property(retain) _MKPlaceInfoViewControllerRouter * actionsProxy;
 @property(retain) NSArray * businessInfoOrder;
-@property(retain) MKYelpDeal * deal;
+@property(retain) <MKMapItemVendorDeal> * deal;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;

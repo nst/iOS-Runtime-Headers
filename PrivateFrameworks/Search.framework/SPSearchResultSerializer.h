@@ -27,7 +27,6 @@
 - (unsigned int)_allocateSize:(unsigned int)arg1;
 - (id)_convertConformingResult:(id)arg1;
 - (BOOL)appendResult:(id)arg1;
-- (BOOL)appendResult:(id)arg1 toSection:(id)arg2;
 - (BOOL)appendSection:(id)arg1;
 - (unsigned int)byteVector;
 - (unsigned int)byteVectorCount;
@@ -36,7 +35,9 @@
 - (id)init;
 - (id)initWithInitialCapacity:(unsigned int)arg1;
 - (id)initWithInitialCapacity:(unsigned int)arg1 inProc:(BOOL)arg2;
+- (BOOL)lockedAppendResult:(id)arg1 toSection:(id)arg2;
 - (unsigned int)sectionCount;
 - (void)serialize;
+- (void)updateScoesForQuery:(id)arg1 inDomain:(int)arg2;
 
 @end

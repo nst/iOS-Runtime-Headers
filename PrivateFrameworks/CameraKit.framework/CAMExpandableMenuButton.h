@@ -53,6 +53,7 @@
 - (struct CGSize { float x1; float x2; })_layoutForVerticalCollapsedPortraitButton:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })_layoutForVerticalExpandedLandscapeButton:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })_layoutForVerticalExpandedPortraitButton:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })_layoutForVerticalExpandedPortraitButtonApplyToHeaderView:(BOOL)arg1 applyToSelectedItem:(BOOL)arg2 applyToOtherViews:(BOOL)arg3;
 - (struct CGSize { float x1; float x2; })_layoutForVerticalExpansionOrientation:(BOOL)arg1 expanded:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })_layoutMenuButton:(BOOL)arg1 expanded:(BOOL)arg2;
 - (id)_menuItems;

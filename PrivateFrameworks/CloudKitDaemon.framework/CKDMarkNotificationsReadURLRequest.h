@@ -35,5 +35,6 @@
 - (void)setNotificationIDs:(id)arg1;
 - (void)setNotificationIDsByRequestID:(id)arg1;
 - (void)setNotificationMarkedReadProgressBlock:(id)arg1;
+- (id)zoneIDsToLock;
 
 @end

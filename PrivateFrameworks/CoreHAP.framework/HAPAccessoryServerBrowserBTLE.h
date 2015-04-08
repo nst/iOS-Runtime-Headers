@@ -47,13 +47,13 @@
 - (void).cxx_destruct;
 - (void)_callPowerOnCompletionsWithError:(id)arg1;
 - (void)_cancelLostAccessoryServerTimer;
-- (void)_createHAPAccessoryAndNotifyDelegateWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3;
+- (void)_createHAPAccessoryAndNotifyDelegateWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4;
 - (BOOL)_delegateRespondsToSelector:(SEL)arg1;
 - (void)_discoverAccessoryServerWithIdentifier:(id)arg1;
 - (void)_handleConnectionRequestCompletionForPeripheral:(id)arg1;
 - (void)_handleTargetedScanTimeout;
 - (void)_notifyDelegatesOfRemovedAccessoryServer:(id)arg1;
-- (BOOL)_parseAdvertisementData:(id)arg1 forPeripheral:(id)arg2 name:(id*)arg3 pairingUsername:(id*)arg4;
+- (BOOL)_parseAdvertisementData:(id)arg1 forPeripheral:(id)arg2 name:(id*)arg3 pairingUsername:(id*)arg4 statusFlags:(id*)arg5;
 - (void)_performTargetedScanForAccessoryWithIdentifier:(id)arg1;
 - (void)_performTimedConnectionRequestForIdentifier:(id)arg1;
 - (void)_performTimedScanForIdentifiers:(id)arg1 workQueue:(id)arg2 withCompletion:(id)arg3;

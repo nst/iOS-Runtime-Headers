@@ -2,16 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TPTextWrapController;
+@class TPTextWrapController;
 
-@interface TPPaginatedPageController : TPPageController <TSKChangeSourceObserver> {
+@interface TPPaginatedPageController : TPPageController {
     TPTextWrapController *_wrapController;
 }
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 - (unsigned int)calculatePageIndexFromCanvasPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })canvasSizeToFitAllPages;
@@ -29,7 +24,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pageRectForPageIndex:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })pageSize;
 - (void)processHeaderFooterPropertyChanged;
-- (void)processSectionChanged:(id)arg1;
 - (void)syncProcessChanges:(id)arg1 forChangeSource:(id)arg2;
 - (void)teardown;
 - (id)textWrapper;

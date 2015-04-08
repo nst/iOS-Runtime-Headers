@@ -26,8 +26,8 @@
         id ticket; 
     } _ticketInfo[64];
     NSMutableDictionary *_waitIdentifiers;
-    BOOL _writeBlockedMainThread;
-    BOOL _writeHeld;
+    unsigned int _writeBlockedMainThreadCount;
+    unsigned int _writeHeldCount;
     NSMutableArray *_writerQueue;
 }
 

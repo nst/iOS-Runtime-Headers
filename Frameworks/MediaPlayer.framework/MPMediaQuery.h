@@ -12,6 +12,8 @@
     unsigned int _staticEntityType;
 }
 
+@property(getter=MCD_playlist,readonly) MPMediaPlaylist * MCD_playlist;
+@property(getter=MCD_playlistTitle,readonly) NSString * MCD_playlistTitle;
 @property(readonly) unsigned int _countOfCollections;
 @property(readonly) unsigned int _countOfItems;
 @property(readonly) BOOL _hasCollections;
@@ -19,7 +21,6 @@
 @property(readonly) MPMediaItemCollection * collectionByJoiningCollections;
 @property(readonly) NSArray * collectionPersistentIdentifiers;
 @property(copy) NSSet * collectionPropertiesToFetch;
-@property(readonly) NSArray * collectionPropertiesToFetchArray;
 @property(readonly) MPMediaQuerySectionInfo * collectionSectionInfo;
 @property(readonly) NSArray * collectionSections;
 @property(readonly) NSArray * collections;
@@ -33,7 +34,6 @@
 @property BOOL ignoreSystemFilterPredicates;
 @property(readonly) NSArray * itemPersistentIdentifiers;
 @property(copy) NSSet * itemPropertiesToFetch;
-@property(readonly) NSArray * itemPropertiesToFetchArray;
 @property(readonly) MPMediaQuerySectionInfo * itemSectionInfo;
 @property(readonly) NSArray * itemSections;
 @property(readonly) NSArray * items;
@@ -50,6 +50,7 @@
 
 + (id)ITunesUAudioQuery;
 + (id)ITunesUQuery;
++ (id)MCD_queryWithFilterPredicates:(id)arg1;
 + (id)activeGeniusPlaylist;
 + (id)albumArtistsQuery;
 + (id)albumsQuery;
@@ -81,6 +82,9 @@
 + (id)videosQuery;
 
 - (void).cxx_destruct;
+- (BOOL)MCD_isEqualToNowPlayingQuery:(id)arg1;
+- (id)MCD_playlist;
+- (id)MCD_playlistTitle;
 - (BOOL)MPSD_hasDownloadableEntities;
 - (BOOL)MPSD_hasDownloadingEntities;
 - (id)MPSD_mediaQueryForDownloadableEntities;
@@ -98,6 +102,7 @@
 - (BOOL)_hasItems;
 - (BOOL)_isFilteringDisabled;
 - (id)_music_nowPlayingComparableQuery;
+- (id)_music_nowPlayingComparableQuery;
 - (id)_orderingDirectionMappings;
 - (id)_orderingProperties;
 - (void)_setOrderingDirectionMappings:(id)arg1;
@@ -108,7 +113,6 @@
 - (id)collectionByJoiningCollections;
 - (id)collectionPersistentIdentifiers;
 - (id)collectionPropertiesToFetch;
-- (id)collectionPropertiesToFetchArray;
 - (id)collectionSectionInfo;
 - (id)collectionSections;
 - (id)collections;
@@ -134,7 +138,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)itemPersistentIdentifiers;
 - (id)itemPropertiesToFetch;
-- (id)itemPropertiesToFetchArray;
 - (id)itemSectionInfo;
 - (id)itemSections;
 - (id)items;

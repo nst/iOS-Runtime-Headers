@@ -34,7 +34,6 @@
 + (id)valueWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-+ (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)valueWithCGSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)valueWithCGSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)valueWithCGVector:(struct CGVector { float x1; float x2; })arg1;
@@ -106,10 +105,10 @@
 - (BOOL)_matchType:(const char *)arg1 size:(unsigned int)arg2;
 - (struct CGPoint { float x1; float x2; })cgPointValue;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cgRectValue;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cgRectValue;
 - (struct CGSize { float x1; float x2; })cgSizeValue;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)cplFullDescription;
 - (int)ddrangeCompare:(id)arg1;
 - (struct _DDRange { unsigned long long x1; unsigned long long x2; })ddrangeValue;
 - (id)description;
@@ -126,7 +125,7 @@
 - (BOOL)isEqualToValue:(id)arg1;
 - (BOOL)isNSValue__;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)nonretainedObjectValue;
 - (const char *)objCType;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;

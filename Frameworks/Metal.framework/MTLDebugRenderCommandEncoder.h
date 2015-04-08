@@ -23,6 +23,7 @@
     MTLDebugFunctionArgument *_fragmentTextures[31];
     unsigned int _frontFacingWinding;
     unsigned int _height;
+    const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; float x20; float x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; } *_limits;
     float _lineWidth;
     <MTLRenderPipelineState> *_renderPipelineState;
     struct { 
@@ -113,7 +114,9 @@
 - (void)setDepthBias:(float)arg1 slopeScale:(float)arg2 clamp:(float)arg3;
 - (void)setDepthStencilState:(id)arg1;
 - (void)setFragmentBuffer:(id)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
+- (void)setFragmentBufferOffset:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)setFragmentBuffers:(const id*)arg1 offsets:(const unsigned int*)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)setFragmentBytes:(const void*)arg1 length:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setFragmentSamplerState:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setFragmentSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 atIndex:(unsigned int)arg4;
 - (void)setFragmentSamplerStates:(const id*)arg1 lodMinClamps:(const float*)arg2 lodMaxClamps:(const float*)arg3 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
@@ -127,7 +130,9 @@
 - (void)setStencilReferenceValue:(unsigned int)arg1;
 - (void)setTriangleFillMode:(unsigned int)arg1;
 - (void)setVertexBuffer:(id)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
+- (void)setVertexBufferOffset:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)setVertexBuffers:(const id*)arg1 offsets:(const unsigned int*)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)setVertexBytes:(const void*)arg1 length:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setVertexSamplerState:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setVertexSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 atIndex:(unsigned int)arg4;
 - (void)setVertexSamplerStates:(const id*)arg1 lodMinClamps:(const float*)arg2 lodMaxClamps:(const float*)arg3 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;

@@ -24,9 +24,7 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (void)intersectionWithIndexSet:(id)arg1;
-- (void)intersectionWithIndexSet:(id)arg1;
 - (void)mf_intersectIndexes:(id)arg1;
-- (void)moveIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toOffset:(unsigned int)arg2;
 - (void)moveIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toOffset:(unsigned int)arg2;
 - (void)pl_adjustIndexesForDeletions:(id)arg1;
 - (void)pl_adjustIndexesForInsertions:(id)arg1;
@@ -39,5 +37,7 @@
 - (void)removeIndexesPassingTest:(id)arg1;
 - (void)removeIndexesWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (void)shiftIndexesStartingAtIndex:(unsigned int)arg1 by:(int)arg2;
+- (void)tsu_intersectionWithIndexSet:(id)arg1;
+- (void)tsu_moveIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toOffset:(unsigned int)arg2;
 
 @end

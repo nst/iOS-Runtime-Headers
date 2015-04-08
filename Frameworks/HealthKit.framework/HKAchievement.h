@@ -29,6 +29,7 @@
 + (id)_allAchievementTypeNames;
 + (Class)_classForAchievementType:(unsigned int)arg1;
 + (id)_nextUUID;
++ (BOOL)_requiresValueForAchievementType:(unsigned int)arg1;
 + (id)achievementWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3;
 + (id)achievementWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3 workoutActivityType:(unsigned int)arg4;
 + (id)createWithCodable:(id)arg1;
@@ -45,7 +46,6 @@
 - (BOOL)_hasExtraData;
 - (id)_localizedDescriptionForCompleteNumberOfTimes:(int)arg1;
 - (id)_localizedDescriptionForIncomplete;
-- (BOOL)_requiresValue;
 - (BOOL)_validateConfiguration;
 - (unsigned int)achievementType;
 - (id)codableRepresentationForSync;

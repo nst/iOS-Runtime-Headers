@@ -11,7 +11,7 @@
 
 + (Class)layerClass;
 
-- (void)_renderVisibleTimeRange;
+- (void)_setNeedsVisibleTimeRangeRendering;
 - (void)didMoveToWindow;
 - (BOOL)isCreatingSnapshot;
 - (BOOL)isRenderingContextValid;

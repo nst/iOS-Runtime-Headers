@@ -28,6 +28,7 @@
 + (id)_pendingRecordInvocationsForSource:(id)arg1;
 + (id)_recorderForSource:(id)arg1;
 + (id)_recordersExcludingSource:(id)arg1 withWindow:(id)arg2;
++ (void)_removeInvocationsForSource:(id)arg1;
 + (void)_removeWindow:(id)arg1 forSource:(id)arg2;
 + (id)_rootAppearancesNode;
 + (void)_setCurrentAppearanceSource:(id)arg1;
@@ -39,9 +40,11 @@
 - (id)_customizableClassInfo;
 - (void)_invalidateAppearanceInWindow:(id)arg1;
 - (BOOL)_isValidAppearanceForCustomizableObject:(id)arg1;
+- (void)_removeInvocationsForSource:(id)arg1;
 - (id)_resettableInvocations;
 - (id)_resettableInvocationsCreateIfNecessary;
 - (void)_setResettableInvocations:(id)arg1;
+- (id)_traitCollection;
 - (void)dealloc;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;

@@ -39,6 +39,7 @@
 - (void)_inqMergePendingChanges;
 - (void)_inqRestart;
 - (unsigned int)_inqTaskId;
+- (BOOL)_isTargetGroupResult:(id)arg1;
 - (void)_mergePendingChanges;
 - (void)_setAlbumUUID:(id)arg1;
 - (void)_setApproximateCount:(unsigned int)arg1;

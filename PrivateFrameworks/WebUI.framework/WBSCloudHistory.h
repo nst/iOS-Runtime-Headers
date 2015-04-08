@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class <NSObject>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSTimer, WBSCloudHistorySyncThrottler;
+@class <NSObject>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSTimer, WBSCloudHistoryPushAgentProxy, WBSCloudHistorySyncThrottler;
 
 @interface WBSCloudHistory : NSObject <WBSCloudHistorySyncThrottlerDataStore> {
     BOOL _cloudHistoryEnabled;
@@ -17,6 +17,8 @@
     } _fetchOperationSuddenTerminationDisabler;
     <NSObject> *_historyWasLoadedObserver;
     unsigned int _numberOfDevicesInSyncCircle;
+    WBSCloudHistoryPushAgentProxy *_pushAgent;
+    NSTimer *_pushNotificationFetchTimer;
     BOOL _removedHistoryItemsArePendingSave;
     WBSCloudHistorySyncThrottler *_saveChangesThrottler;
     BOOL _saveChangesWhenBackoffTimerFires;
@@ -52,12 +54,16 @@
 - (int)_estimatedPriorityForPotentialSaveAttempt;
 - (void)_fetchAndMergeChangesBypassingThrottler:(BOOL)arg1;
 - (void)_fetchAndMergeChangesWithServerChangeTokenData:(id)arg1 intoHistory:(id)arg2 withPriority:(int)arg3;
+- (void)_fetchChangesInResponseToPushNotification:(id)arg1;
 - (void)_fetchChangesWhenHistoryLoads;
 - (void)_historyItemsWereRemoved:(id)arg1;
 - (void)_historyWasLoaded:(id)arg1;
+- (void)_initializePushNotificationSupport;
 - (void)_performBlockAsynchronouslyOnCloudHistoryQueueAfterHistoryHasLoaded:(id)arg1;
 - (void)_postSaveChangesAttemptCompletedNotificationWithAllPendingDataSaved:(BOOL)arg1;
 - (int)_priorityForSaveWithVisits:(id)arg1 tombstones:(id)arg2 bypassingThrottler:(BOOL)arg3;
+- (void)_processPendingPushNotifications;
+- (void)_pushNotificationReceived:(id)arg1;
 - (void)_registerForHistoryWasLoadedNotificationIfNecessary;
 - (int)_resultFromError:(id)arg1;
 - (void)_saveChangesToCloudHistoryStoreBypassingThrottler:(BOOL)arg1;
@@ -65,6 +71,7 @@
 - (void)_saveVisits:(id)arg1 tombstones:(id)arg2 toCloudHistoryBypassingThrottler:(BOOL)arg3 withCallback:(id)arg4;
 - (void)_serverBackoffTimerFired:(id)arg1;
 - (void)_setCachedNumberOfDevicesInSyncCircle:(unsigned int)arg1;
+- (void)_updateDeviceCountInResponseToPushNotification;
 - (void)_updateFetchThrottlerAndSaveThrottlerPolicies;
 - (id)currentSaveChangesThrottlerPolicyString;
 - (id)dateOfNextPermittedSaveChangesAttempt;
@@ -75,6 +82,7 @@
 - (BOOL)isCloudHistoryEnabled;
 - (unsigned int)numberOfDevicesInSyncCircle;
 - (id)recordOfPastOperationsForThrottler:(id)arg1;
+- (void)resetForAccountChange;
 - (void)saveChangesToCloudHistoryStore;
 - (void)saveChangesToCloudHistoryStoreBypassingThrottler;
 - (void)setCloudHistoryEnabled:(BOOL)arg1;

@@ -46,6 +46,7 @@
 - (BOOL)_startVideoCapture;
 - (void)_stopVideoCapture;
 - (void)_takePicture;
+- (void)_updateCameraViewForPopover;
 - (void)_windowOrientationWillChange:(id)arg1;
 - (void)cameraView:(id)arg1 photoSaved:(id)arg2;
 - (void)cameraView:(id)arg1 videoSavedToPath:(id)arg2 editingInfo:(id)arg3;

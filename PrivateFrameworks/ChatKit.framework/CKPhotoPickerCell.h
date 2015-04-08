@@ -2,9 +2,32 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
+@class PLRoundProgressView, UIImageView;
+
 @interface CKPhotoPickerCell : UICollectionViewCell {
+    UIImageView *_imageView;
+    BOOL _isVideo;
+    PLRoundProgressView *_progressView;
+    UIImageView *_videoImageView;
 }
 
+@property(retain) UIImageView * imageView;
+@property BOOL isVideo;
+@property(retain) PLRoundProgressView * progressView;
+@property(retain) UIImageView * videoImageView;
+
+- (void)dealloc;
+- (id)imageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isVideo;
+- (void)layoutSubviews;
+- (void)prepareForReuse;
+- (id)progressView;
+- (void)setImageView:(id)arg1;
+- (void)setIsVideo:(BOOL)arg1;
+- (void)setProgressView:(id)arg1;
+- (void)setVideoImageView:(id)arg1;
+- (void)updateProgress:(double)arg1;
+- (id)videoImageView;
 
 @end

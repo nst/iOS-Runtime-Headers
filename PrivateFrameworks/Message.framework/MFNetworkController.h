@@ -4,7 +4,7 @@
 
 @class NSLock, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSThread, RadiosPreferences;
 
-@interface MFNetworkController : NSObject <RadiosPreferencesDelegate> {
+@interface MFNetworkController : NSObject <MFDiagnosticsGenerator, RadiosPreferencesDelegate> {
     NSMutableSet *_backgroundWifiClients;
     NSMutableSet *_calls;
     BOOL _data;
@@ -30,6 +30,10 @@
     void *_wifiManager;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 @property void* wifiManager;
 
 + (id)networkAssertionWithIdentifier:(id)arg1;

@@ -65,7 +65,6 @@
 - (struct CGColor { }*)backgroundColor;
 - (id)canvasController;
 - (id)changeNotifier;
-- (id)commandController;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (float)contentsScale;
 - (struct CGPoint { float x1; float x2; })convertBoundsToUnscaledPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -103,12 +102,14 @@
 - (id)infosToDisplay;
 - (id)init;
 - (id)initForTemporaryLayout;
+- (id)initWithLayoutControllerClass:(Class)arg1;
 - (void)invalidateLayers;
 - (void)invalidateReps;
 - (void)invalidateVisibleBounds;
 - (BOOL)isCanvasInteractive;
 - (BOOL)isDrawingIntoPDF;
 - (BOOL)isPrinting;
+- (BOOL)isRenderingForKPF;
 - (BOOL)isTemporaryForLayout;
 - (id)layoutController;
 - (void)layoutIfNeeded;

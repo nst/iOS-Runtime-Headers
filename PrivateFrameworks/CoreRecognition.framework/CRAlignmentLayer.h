@@ -38,6 +38,7 @@
 - (void)layoutSublayers;
 - (id)maskLayer;
 - (id)outlineLayer;
+- (void)resetLayer;
 - (void)setCardNumberLayer:(id)arg1;
 - (void)setCardholderNameLayer:(id)arg1;
 - (void)setExpirationDateLayer:(id)arg1;

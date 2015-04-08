@@ -20,6 +20,7 @@
 - (void)dealloc;
 - (id)initWithScreen:(id)arg1 hostTabBarController:(id)arg2;
 - (id)player;
+- (void)reloadRadio;
 - (id)serviceProvider;
 - (void)setPlayer:(id)arg1;
 - (void)setServiceProvider:(id)arg1;

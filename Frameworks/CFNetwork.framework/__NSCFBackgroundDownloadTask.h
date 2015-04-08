@@ -4,11 +4,9 @@
 
 @interface __NSCFBackgroundDownloadTask : __NSCFBackgroundSessionTask {
     BOOL _finished;
-    bool _suppressProgress;
 }
 
 @property BOOL finished;
-@property bool suppressProgress;
 
 - (void)_onqueue_cancelByProducingResumeData:(id)arg1;
 - (void)_onqueue_didFinishDownloadingToURL:(id)arg1;
@@ -20,7 +18,5 @@
 - (BOOL)finished;
 - (BOOL)isKindOfClass:(Class)arg1;
 - (void)setFinished:(BOOL)arg1;
-- (void)setSuppressProgress:(bool)arg1;
-- (bool)suppressProgress;
 
 @end

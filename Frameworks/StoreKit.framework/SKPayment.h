@@ -15,6 +15,7 @@
 @property(readonly) int quantity;
 @property(copy,readonly) NSData * requestData;
 @property(copy,readonly) NSDictionary * requestParameters;
+@property(readonly) BOOL simulatesAskToBuyInSandbox;
 
 + (id)paymentWithProduct:(id)arg1;
 + (id)paymentWithProductIdentifier:(id)arg1;
@@ -32,5 +33,6 @@
 - (int)quantity;
 - (id)requestData;
 - (id)requestParameters;
+- (BOOL)simulatesAskToBuyInSandbox;
 
 @end

@@ -30,6 +30,7 @@
 @property <TSPObjectDelegate> * tsp_delegate;
 @property(readonly) NSString * tsp_description;
 @property long long tsp_identifier;
+@property(readonly) BOOL tsp_isInDocument;
 @property long long tsp_modifyObjectToken;
 @property(readonly) long long tsp_unarchiverIdentifier;
 @property(readonly) TSPUnknownContent * tsp_unknownContent;
@@ -42,11 +43,17 @@
 - (BOOL)allowsImplicitComponentOwnership;
 - (id)componentRootObject;
 - (id)context;
+- (void)dealloc;
+- (void)deallocSOS;
 - (unsigned int)delayedArchivingPriority;
 - (void)didFinishUnarchiving;
+- (void)didInitFromSOS;
 - (void)didLoadChildObjectFromDocumentSupport:(id)arg1;
+- (BOOL)documentIsRTL;
 - (id)documentRoot;
 - (id)init;
+- (id)initBaseObjectWithContext:(id)arg1;
+- (id)initCommon;
 - (id)initDocumentObjectWithContext:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
@@ -54,6 +61,7 @@
 - (BOOL)isComponentRoot;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (BOOL)needsArchiving;
+- (id)objectLocale;
 - (id)objectUUID;
 - (id)objectUUIDPath;
 - (id)owningDocument;
@@ -67,11 +75,19 @@
 - (BOOL)shouldDelayArchiving;
 - (BOOL)storeOutsideObjectArchive;
 - (id)tsp_component;
+- (void)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 completion:(id)arg3;
+- (id)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (id)tsp_deepCopyWithOptions:(id)arg1;
+- (void)tsp_deepCopyWithOptions:(id)arg1 completion:(id)arg2;
 - (id)tsp_delegate;
 - (id)tsp_description;
 - (id)tsp_descriptionWithDepth:(unsigned int)arg1;
 - (long long)tsp_identifier;
+- (BOOL)tsp_isInDocument;
 - (long long)tsp_modifyObjectToken;
+- (id)tsp_objectInfoWithDepth:(unsigned int)arg1;
+- (id)tsp_referencedData;
+- (id)tsp_referencedObjects;
 - (long long)tsp_unarchiverIdentifier;
 - (id)tsp_unknownContent;
 - (void)wasAddedToDocument;
@@ -81,5 +97,6 @@
 - (void)willBeRemovedFromDocument;
 - (void)willModify;
 - (void)willModifyForUpgrade;
+- (void)willModifyToComponentRootObject:(id)arg1;
 
 @end

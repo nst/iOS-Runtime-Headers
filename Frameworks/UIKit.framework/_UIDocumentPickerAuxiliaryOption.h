@@ -16,6 +16,7 @@
 
     NSString *_identifier;
     UIImage *_image;
+    BOOL _newlyAdded;
     unsigned int _order;
     NSString *_title;
 }
@@ -23,6 +24,7 @@
 @property(copy) id handler;
 @property(copy) NSString * identifier;
 @property(retain) UIImage * image;
+@property(getter=isNewlyAdded) BOOL newlyAdded;
 @property unsigned int order;
 @property(copy) NSString * title;
 
@@ -35,10 +37,12 @@
 - (id)image;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isNewlyAdded;
 - (unsigned int)order;
 - (void)setHandler:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)setNewlyAdded:(BOOL)arg1;
 - (void)setOrder:(unsigned int)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

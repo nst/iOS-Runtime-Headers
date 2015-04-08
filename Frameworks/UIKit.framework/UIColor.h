@@ -63,6 +63,8 @@
 + (id)_vibrantLightDividerDarkeningColor;
 + (id)_vibrantLightFillBurnColor;
 + (id)_vibrantLightFillDarkeningColor;
++ (id)_vibrantLightSectionDelimiterDividerBurnColor;
++ (id)_vibrantLightSectionDelimiterDividerDarkeningColor;
 + (id)_webContentBackgroundColor;
 + (id)ab_colorWithR:(float)arg1 G:(float)arg2 B:(float)arg3 A:(float)arg4;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

@@ -21,6 +21,7 @@
 - (unsigned int)_numberOfActiveGlances;
 - (void)_saveSettings;
 - (void)addGlanceDefinition:(id)arg1;
+- (void)enumerateAllGlanceDefinitionsUsingBlock:(id)arg1;
 - (void)enumerateGlanceDefinitionsUsingBlock:(id)arg1;
 - (id)glanceDefinitionForAppBundleIdentifier:(id)arg1;
 - (id)glanceDefinitionForGlanceIdentifier:(id)arg1;

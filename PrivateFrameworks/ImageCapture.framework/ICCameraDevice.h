@@ -19,6 +19,7 @@
 @property unsigned int estimatedNumberOfDownloadableItems;
 @property(getter=isLocked) BOOL locked;
 @property(readonly) NSArray * mediaFiles;
+@property(readonly) NSArray * notifyArray;
 @property unsigned int numberOfDownloadableItems;
 @property(readonly) double timeOffset;
 @property(copy) NSString * volumePath;
@@ -26,6 +27,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (void)addFolder:(id)arg1;
+- (void)addObjectToNotifyArray:(id)arg1;
 - (void)addToMetadataFetchQ:(id)arg1;
 - (void)addToThumbnailFetchQ:(id)arg1;
 - (BOOL)allowsSyncingClock;
@@ -33,6 +35,7 @@
 - (BOOL)batteryLevelAvailable;
 - (BOOL)beingEjected;
 - (void)cancelDownload;
+- (void)clearNotifyArray;
 - (unsigned int)contentCatalogPercentCompleted;
 - (id)contents;
 - (void)dealloc;
@@ -54,7 +57,9 @@
 - (BOOL)isEjectable;
 - (BOOL)isLocked;
 - (id)mediaFiles;
+- (id)notifyArray;
 - (void)notifyDelegateOfAddedItem:(id)arg1;
+- (void)notifyDelegateOfAddedItems:(id)arg1;
 - (unsigned int)numberOfDownloadableItems;
 - (void)pendNotifyingDelegateOfAddedItem:(id)arg1;
 - (void)receivedDeviceCommandCompletion;

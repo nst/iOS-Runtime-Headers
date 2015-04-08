@@ -6,6 +6,7 @@
 
 @interface CTCellularPlan : NSObject <NSCopying, NSSecureCoding> {
     CTCellularPlanExtProperties *_extendedProperties;
+    NSString *_phoneNumber;
     CTCellularPlanProfile *_profile;
     CTCellularPlanSubscription *_subscription;
 }
@@ -20,6 +21,7 @@
 @property(retain) CTCellularPlanExtProperties * extendedProperties;
 @property(readonly) NSString * iccid;
 @property(readonly) BOOL isSelected;
+@property(retain) NSString * phoneNumber;
 @property(readonly) NSString * planDescription;
 @property(readonly) int planStatus;
 @property(readonly) int planType;
@@ -48,12 +50,14 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProfile:(id)arg1 subscription:(id)arg2;
 - (BOOL)isSelected;
+- (id)phoneNumber;
 - (id)planDescription;
 - (int)planStatus;
 - (int)planType;
 - (id)profile;
 - (id)profileId;
 - (void)setExtendedProperties:(id)arg1;
+- (void)setPhoneNumber:(id)arg1;
 - (void)setProfile:(id)arg1;
 - (void)setSubscription:(id)arg1;
 - (int)status;

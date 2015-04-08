@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUCropAndStraightenViewDelegate>, NSString, UIImage, UIImageView, UIScrollView, UIView;
+@class <PUCropAndStraightenViewDelegate>, NSString, PLImageGeometry, UIImage, UIImageView, UIScrollView, UIView;
 
 @interface PUCropAndStraightenView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     struct CGRect { 
@@ -15,10 +15,12 @@
             float height; 
         } size; 
     } __fittingRegion;
+    PLImageGeometry *__imageGeometry;
     UIImageView *__imageView;
     float __preferredZoomScale;
     UIScrollView *__scrollView;
     UIView *__scrollViewReference;
+    BOOL __scrollViewTracking;
     BOOL __updatingForCrop;
     BOOL __updatingForFit;
     BOOL __updatingForStraighten;
@@ -44,18 +46,20 @@
     } _cropRect;
     <PUCropAndStraightenViewDelegate> *_delegate;
     UIImage *_image;
-    float _rotationAngle;
+    int _orientation;
     float _straightenAngle;
     BOOL _tracking;
 }
 
 @property(setter=_setFittingRegion:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _fittingRegion;
+@property(setter=_setImageGeometry:,retain) PLImageGeometry * _imageGeometry;
 @property(setter=_setImageView:,retain) UIImageView * _imageView;
 @property(setter=_setPreferredZoomScale:) float _preferredZoomScale;
 @property(getter=_isRotationSideways,readonly) BOOL _rotationSideways;
 @property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } _rotationTransform;
 @property(setter=_setScrollView:,retain) UIScrollView * _scrollView;
 @property(setter=_setScrollViewReference:,retain) UIView * _scrollViewReference;
+@property(getter=_isScrollViewTracking,setter=_setScrollViewTracking:) BOOL _scrollViewTracking;
 @property(getter=_isUpdatingForCrop,setter=_setUpdatingForCrop:) BOOL _updatingForCrop;
 @property(getter=_isUpdatingForFit,setter=_setUpdatingForFit:) BOOL _updatingForFit;
 @property(getter=_isUpdatingForStraighten,setter=_setUpdatingForStraighten:) BOOL _updatingForStraighten;
@@ -68,7 +72,7 @@
 @property(readonly) unsigned int hash;
 @property(retain) UIImage * image;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageCropRect;
-@property float rotationAngle;
+@property int orientation;
 @property float straightenAngle;
 @property(readonly) Class superclass;
 @property(getter=isTracking) BOOL tracking;
@@ -80,8 +84,10 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_fullCropRect;
 - (void)_handleTouchingRecognizer:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageBounds;
+- (id)_imageGeometry;
 - (id)_imageView;
 - (BOOL)_isRotationSideways;
+- (BOOL)_isScrollViewTracking;
 - (BOOL)_isUpdatingForCrop;
 - (BOOL)_isUpdatingForFit;
 - (BOOL)_isUpdatingForStraighten;
@@ -90,10 +96,12 @@
 - (id)_scrollView;
 - (id)_scrollViewReference;
 - (void)_setFittingRegion:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setImageGeometry:(id)arg1;
 - (void)_setImageView:(id)arg1;
 - (void)_setPreferredZoomScale:(float)arg1;
 - (void)_setScrollView:(id)arg1;
 - (void)_setScrollViewReference:(id)arg1;
+- (void)_setScrollViewTracking:(BOOL)arg1;
 - (void)_setTracking:(BOOL)arg1;
 - (void)_setUpdatingForCrop:(BOOL)arg1;
 - (void)_setUpdatingForFit:(BOOL)arg1;
@@ -120,7 +128,7 @@
 - (BOOL)isDecelerating;
 - (BOOL)isTracking;
 - (void)layoutSubviews;
-- (float)rotationAngle;
+- (int)orientation;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
@@ -130,7 +138,7 @@
 - (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setRotationAngle:(float)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)setStraightenAngle:(float)arg1;
 - (float)straightenAngle;
 - (id)viewForZoomingInScrollView:(id)arg1;

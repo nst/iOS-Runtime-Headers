@@ -18,7 +18,9 @@
 - (void)dispatchThreadgroups:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1 threadsPerThreadgroup:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg2;
 - (void)executeBarrier;
 - (void)setBuffer:(id)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
+- (void)setBufferOffset:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)setBuffers:(const id*)arg1 offsets:(const unsigned int*)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)setBytes:(const void*)arg1 length:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setComputePipelineState:(id)arg1;
 - (void)setSamplerState:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 atIndex:(unsigned int)arg4;

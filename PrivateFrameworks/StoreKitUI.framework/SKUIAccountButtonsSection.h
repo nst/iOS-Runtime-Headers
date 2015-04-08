@@ -18,6 +18,7 @@
 - (id)_accountButtonsViewController;
 - (void)accountButtonsViewControllerDidSignIn:(id)arg1;
 - (void)accountButtonsViewControllerDidSignOut:(id)arg1;
+- (void)accountButtonsViewControllerDidTapECommerceLink:(id)arg1;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;

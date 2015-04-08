@@ -18,7 +18,6 @@
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqualToNode:(id)arg1;

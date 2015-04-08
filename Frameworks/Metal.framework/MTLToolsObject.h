@@ -13,6 +13,7 @@
     id _baseObject;
     struct ILayerLockingPolicy { int (**x1)(); } *_lockingPolicy;
     MTLToolsObject *_parent;
+    MTLToolsObject *_strongParent;
 }
 
 @property(retain) id baseObject;
@@ -31,6 +32,7 @@
 - (id)description;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2 lockingPolicy:(struct ILayerLockingPolicy { int (**x1)(); }*)arg3;
+- (id)initWithBaseObject:(id)arg1 strongParent:(id)arg2;
 - (struct ILayerLockingPolicy { int (**x1)(); }*)lockingPolicy;
 - (id)originalObject;
 - (id)parent;

@@ -66,7 +66,7 @@
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)didRotate;
 - (int)displayedImageIndex;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)init;
@@ -89,6 +89,6 @@
 - (void)setSpeedDelegate:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)speedDelegate;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotate;
 
 @end

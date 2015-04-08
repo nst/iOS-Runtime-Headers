@@ -37,5 +37,6 @@
 - (void)removePointerAtIndex:(unsigned int)arg1;
 - (void)replacePointerAtIndex:(unsigned int)arg1 withPointer:(void*)arg2;
 - (void)setCount:(unsigned int)arg1;
+- (void)tsu_enumerateNonNullPointersUsingBlock:(id)arg1;
 
 @end

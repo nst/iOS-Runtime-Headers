@@ -22,7 +22,7 @@
 - (BOOL)objectUUIDIsInDocument:(id)arg1;
 - (void)objectWasAddedToDocument:(id)arg1 options:(unsigned int)arg2;
 - (void)objectWillBeRemovedFromDocument:(id)arg1;
-- (id)objectWithUUID:(id)arg1;
+- (id)objectWithUUID:(id)arg1 onlyIfLoaded:(BOOL)arg2 validateNewObjects:(BOOL)arg3 identifier:(long long*)arg4;
 - (void)setPersistedUUIDMap:(id)arg1;
 - (BOOL)shouldSuppressAssertionForObjectUUID:(id)arg1;
 

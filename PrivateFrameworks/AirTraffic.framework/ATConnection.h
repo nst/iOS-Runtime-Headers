@@ -30,6 +30,7 @@
 - (void)dataMigrationFinished;
 - (void)dealloc;
 - (id)delegate;
+- (id)getAssetMetrics;
 - (id)init;
 - (BOOL)isSyncing:(BOOL*)arg1 automatically:(BOOL*)arg2 wirelessly:(BOOL*)arg3;
 - (void)keepATCAlive:(BOOL)arg1;

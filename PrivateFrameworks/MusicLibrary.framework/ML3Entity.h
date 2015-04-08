@@ -73,7 +73,6 @@
 + (int)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (id)spotlightPropertyForMPMediaEntityProperty:(id)arg1;
-+ (id)subCollectionCountProperty;
 + (id)subselectPropertyForProperty:(id)arg1;
 + (id)subselectStatementForProperty:(id)arg1;
 + (id)unsettableProperties;

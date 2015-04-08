@@ -5,6 +5,7 @@
 @class NSDictionary;
 
 @interface NSUbiquitousKeyValueStore : NSObject {
+    int _daemonWakeToken;
     id _private1;
     id _private2;
     id _private3;

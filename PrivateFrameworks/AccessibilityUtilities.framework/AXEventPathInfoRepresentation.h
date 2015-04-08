@@ -12,6 +12,7 @@
         float y; 
     } _pathLocation;
     float _pathMajorRadius;
+    float _pathMajorRadiusTolerance;
     float _pathMinorRadius;
     float _pathPressure;
     unsigned char _pathProximity;
@@ -27,6 +28,7 @@
 @property unsigned char pathIndex;
 @property struct CGPoint { float x1; float x2; } pathLocation;
 @property float pathMajorRadius;
+@property float pathMajorRadiusTolerance;
 @property float pathMinorRadius;
 @property float pathPressure;
 @property unsigned char pathProximity;
@@ -48,6 +50,7 @@
 - (unsigned char)pathIndex;
 - (struct CGPoint { float x1; float x2; })pathLocation;
 - (float)pathMajorRadius;
+- (float)pathMajorRadiusTolerance;
 - (float)pathMinorRadius;
 - (float)pathPressure;
 - (unsigned char)pathProximity;
@@ -61,6 +64,7 @@
 - (void)setPathIndex:(unsigned char)arg1;
 - (void)setPathLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPathMajorRadius:(float)arg1;
+- (void)setPathMajorRadiusTolerance:(float)arg1;
 - (void)setPathMinorRadius:(float)arg1;
 - (void)setPathPressure:(float)arg1;
 - (void)setPathProximity:(unsigned char)arg1;

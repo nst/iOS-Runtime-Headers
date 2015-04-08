@@ -45,6 +45,7 @@
 - (void)getBytes:(void*)arg1 bytesPerRow:(unsigned int)arg2 fromRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg3 mipmapLevel:(unsigned int)arg4;
 - (unsigned int)height;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
+- (id)initWithBaseObject:(id)arg1 strongParent:(id)arg2;
 - (struct __IOSurface { }*)iosurface;
 - (unsigned int)iosurfacePlane;
 - (BOOL)isDrawable;

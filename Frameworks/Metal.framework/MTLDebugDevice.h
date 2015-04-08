@@ -5,14 +5,13 @@
 @interface MTLDebugDevice : MTLToolsDevice {
 }
 
-+ (void)validateNewBufferArgs:(unsigned int)arg1 options:(unsigned int)arg2;
-
 - (void)_newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
 - (id)_newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (void)_newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
 - (id)_newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (void)_newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
 - (id)_newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
+- (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (id)newBufferWithBytes:(const void*)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3;
 - (id)newBufferWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3 deallocator:(id)arg4;
 - (id)newBufferWithLength:(unsigned int)arg1 options:(unsigned int)arg2;
@@ -39,5 +38,6 @@
 - (id)newSamplerStateWithDescriptor:(id)arg1;
 - (id)newTextureWithDescriptor:(id)arg1;
 - (id)newTextureWithDescriptor:(id)arg1 iosurface:(struct __IOSurface { }*)arg2 plane:(unsigned int)arg3;
+- (void)validateNewBufferArgs:(unsigned int)arg1 options:(unsigned int)arg2;
 
 @end

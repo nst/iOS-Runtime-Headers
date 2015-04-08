@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError, NSObject<OS_dispatch_queue>, NSString;
+@class NSError, NSString;
 
 @interface TSPIOHandlerWriteChannelAdapter : NSObject <TSPComponentWriteChannel> {
     NSError *_error;
@@ -15,7 +15,6 @@
   /* Error parsing encoded ivar type info: @? */
     id _handler;
 
-    NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -25,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (void)close;
-- (id)initWithQueue:(id)arg1 handler:(id)arg2;
+- (id)initWithHandler:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)writeData:(id)arg1;
 

@@ -27,17 +27,12 @@
 @property(readonly) CALayer * shadowLayer;
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
-- (id)additionalLayersUnderLayer;
 - (void)calculateTextureClipBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 andOffset:(struct CGPoint { float x1; float x2; }*)arg2 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3 andRectOnCanvas:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4 textureContext:(id)arg5 isUsingImageTexture:(BOOL)arg6;
 - (BOOL)canDrawShadowInOneStepWithChildren:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clipRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clipRectWithoutEffects;
-- (void)createReflectionLayer;
 - (void)dealloc;
 - (id)description;
-- (void)didUpdateEffectLayersForLayer:(id)arg1;
-- (void)didUpdateLayer:(id)arg1;
-- (void)disposeReflectionLayer;
 - (void)drawGradientWithAlphaOverReflection:(struct CGContext { }*)arg1 applyingOpacity:(BOOL)arg2 reflectionSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)drawInContextWithoutEffects:(struct CGContext { }*)arg1;
@@ -45,19 +40,10 @@
 - (void)drawInContextWithoutEffectsForAlphaOnly:(struct CGContext { }*)arg1;
 - (void)drawInContextWithoutEffectsOrChildren:(struct CGContext { }*)arg1;
 - (void)drawInContextWithoutEffectsOrChildrenForAlphaOnly:(struct CGContext { }*)arg1;
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)drawReflectionInContext:(struct CGContext { }*)arg1 drawChildren:(BOOL)arg2;
 - (void)drawReflectionInContext:(struct CGContext { }*)arg1 withTransparencyLayer:(BOOL)arg2 applyingOpacity:(BOOL)arg3 shouldClipGradient:(BOOL)arg4 withBlock:(id)arg5;
 - (void)drawReflectionIntoReflectionFrameInContext:(struct CGContext { }*)arg1 withTransparencyLayer:(BOOL)arg2 applyingOpacity:(BOOL)arg3 drawChildren:(BOOL)arg4;
 - (void)drawShadowInContext:(struct CGContext { }*)arg1 withChildren:(BOOL)arg2 withDrawableOpacity:(BOOL)arg3;
-- (void)dynamicDragDidBegin;
-- (void)dynamicReflectionOpacityChangeDidBegin;
-- (void)dynamicReflectionOpacityChangeDidEnd;
-- (void)dynamicReflectionOpacityUpdateToValue:(float)arg1;
-- (void)dynamicShadowChangeDidBegin;
-- (void)dynamicShadowChangeDidEnd;
-- (void)dynamicShadowUpdateToValue:(id)arg1;
-- (void)invalidateShadowLayer;
 - (BOOL)isInvisible;
 - (struct CGImage { }*)newFrameMaskForViewScale:(float)arg1 frameRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
 - (struct CGImage { }*)newShadowImageWithSize:(struct CGSize { float x1; float x2; })arg1 shadow:(id)arg2 drawSelector:(SEL)arg3 unflipped:(BOOL)arg4;
@@ -68,27 +54,17 @@
 - (void)p_drawReflectionIntoReflectionFrameInContext:(struct CGContext { }*)arg1 withTransparencyLayer:(BOOL)arg2 applyingOpacity:(BOOL)arg3 shouldClipGradient:(BOOL)arg4 withBlock:(id)arg5;
 - (struct CGImage { }*)p_newReflectionImageWithSize:(struct CGSize { float x1; float x2; })arg1 applyOpacity:(BOOL)arg2 viewScale:(float)arg3 withBlock:(id)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_rectWithEffectsAppliedToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 additionalTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 includeShadow:(BOOL)arg3 includeReflection:(BOOL)arg4;
-- (id)pathSourceForSelectionHighlightBehavior;
-- (void)positionShadowLayer:(id)arg1 forShadow:(id)arg2 withNaturalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (void)processChangedProperty:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectWithEffectsAppliedToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)reflection;
 - (id)reflectionLayer;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })reflectionLayerFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })reflectionLayerFrameInRoot;
-- (void)setNeedsDisplay;
 - (void)setTextureAttributes:(id)arg1;
 - (id)shadow;
 - (id)shadowLayer;
-- (BOOL)shouldHideSelectionHighlightDueToRectangularPath;
 - (BOOL)shouldShowReflection;
-- (BOOL)shouldShowSelectionHighlight;
 - (BOOL)shouldShowShadow;
 - (id)styledInfo;
 - (id)styledLayout;
 - (id)textureForContext:(id)arg1;
-- (void)viewScaleDidChange;
-- (void)willUpdateEffectLayersForLayer:(id)arg1;
-- (void)willUpdateLayer:(id)arg1;
 
 @end

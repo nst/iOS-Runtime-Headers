@@ -37,8 +37,11 @@
     NSMutableDictionary *launchDict;
     fetchDenyEntry *mostRecentDeny;
     fetchFilterEntry *mostRecentFilter;
+    unsigned long long numPrewarms;
+    unsigned long long numWarmedLaunches;
     NSMutableArray *pastCycle;
     NSMutableDictionary *previousPrewarmDict;
+    NSMutableDictionary *prewarmCountDict;
     NSMutableDictionary *prewarmDict;
     int prewarmEligibleZone[9];
     int prewarmHits;

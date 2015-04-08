@@ -12,6 +12,7 @@
 @interface TSSStylesheet : TSPObject <TSKTransformableObject> {
     BOOL mCanCullStyles;
     TSSStylesheet *mChild;
+    NSString *mDebugName;
     NSMutableDictionary *mIdentifierToStyleMap;
     BOOL mIsLocked;
     TSSStylesheet *mParent;
@@ -19,6 +20,7 @@
     TSUMutableRetainedPointerSet *mStyles;
 }
 
+@property(readonly) NSSet * baseStyles;
 @property BOOL canCullStyles;
 @property(readonly) TSSStylesheet * child;
 @property(copy,readonly) NSString * debugDescription;
@@ -46,6 +48,7 @@
 - (void)addStyle:(id)arg1 withIdentifier:(id)arg2;
 - (void)addStyle:(id)arg1 withParent:(id)arg2;
 - (void)addStyle:(id)arg1 withParent:(id)arg2 identifier:(id)arg3;
+- (id)baseStyles;
 - (BOOL)canCullStyles;
 - (BOOL)cascadedContainsStyle:(id)arg1;
 - (id)cascadedStyleWithIdentifier:(id)arg1;
@@ -53,7 +56,6 @@
 - (id)cascadedStylesPassingTest:(id)arg1;
 - (id)child;
 - (id)childrenOfStyle:(id)arg1;
-- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (BOOL)containsStyle:(id)arg1;
 - (void)dealloc;
 - (id)defaultCharacterStyle;
@@ -81,11 +83,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLocked;
 - (BOOL)isParentOf:(id)arg1;
+- (void)moveAllStylestoStylesheet:(id)arg1 stripIdentifiers:(BOOL)arg2;
+- (void)moveStyle:(id)arg1 toStylesheet:(id)arg2 stripIdentifiers:(BOOL)arg3 overwriteIdentifiers:(BOOL)arg4;
 - (id)namedStylesOfClass:(Class)arg1;
 - (id)pVariationOfStyle:(id)arg1 propertyMap:(id)arg2 matchStyles:(id)arg3 context:(id)arg4;
 - (void)p_addStyle:(id)arg1 withParent:(id)arg2 identifier:(id)arg3;
 - (void)p_addStyleToParentChildren:(id)arg1;
-- (struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree_node<long long, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<long long> > { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)p_allFilteredIdentifiersInArchive:(const struct StylesheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct Reference {} *x5; struct RepeatedPtrField<TSS::StylesheetArchive_StyleChildrenEntry> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; bool x7; bool x8; int x9; unsigned int x10[1]; }*)arg1 unarchiver:(id)arg2;
+- (struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree_node<long long, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<long long> > { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)p_allFilteredIdentifiersInArchive:(const struct StylesheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; struct RepeatedPtrField<TSS::StylesheetArchive_StyleChildrenEntry> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; bool x9; bool x10; }*)arg1 unarchiver:(id)arg2;
+- (id)p_boxedLabelTypesForNotesListStyles;
 - (id)p_defaultPresenterNotesListStylePropertyMapForListLabelType:(int)arg1;
 - (id)p_defaultPresenterNotesParagraphStylePropertyMap;
 - (id)p_defaultPresenterNotesParagraphStyleWithContext:(id)arg1;
@@ -94,6 +99,7 @@
 - (void)p_removeStyleFromParentChildren:(id)arg1;
 - (void)p_setIdentifier:(id)arg1 ofStyle:(id)arg2;
 - (void)p_setParent:(id)arg1 ofStyle:(id)arg2;
+- (BOOL)p_shouldDoDOLCForStyle:(id)arg1;
 - (id)p_stylesPassingTest:(id)arg1 cascade:(BOOL)arg2;
 - (void)p_upgradeDefaultPresenterNotesStylesResetExisting:(BOOL)arg1;
 - (id)packageLocator;
@@ -114,6 +120,8 @@
 - (id)styles;
 - (id)stylesOfClass:(Class)arg1;
 - (id)stylesPassingTest:(id)arg1;
+- (id)stylesToNotTransform;
+- (id)stylesToNotTransform;
 - (id)stylesWithName:(id)arg1;
 - (void)unlockStylesheetForDurationOfBlock:(id)arg1;
 - (id)unusedStyleIdentifierWithPackageString:(id)arg1 styleDescriptor:(id)arg2 contentTag:(id)arg3;

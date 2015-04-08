@@ -2,22 +2,23 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class DBHandleManager, NSString, TransactionManager;
+@class CallHistoryDBClientHandle, NSString, TransactionManager;
 
 @interface SyncManager : CHLogger <SyncManagerProtocol> {
-    DBHandleManager *_handleManager;
+    CallHistoryDBClientHandle *_dbHandle;
     TransactionManager *_transactionManager;
 }
 
+@property(readonly) CallHistoryDBClientHandle * dbHandle;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) DBHandleManager * handleManager;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addUpdateTransactions:(id)arg1;
 - (id)archiveCallObject:(id)arg1;
+- (id)dbHandle;
 - (void)deleteAllObjects;
 - (void)deleteObjectWithUniqueId:(id)arg1;
 - (void)deleteObjectsWithLimits:(id)arg1;
@@ -25,8 +26,8 @@
 - (id)fetchAllObjects;
 - (id)fetchObjectWithUniqueId:(id)arg1;
 - (id)fetchObjectsWithLimits:(id)arg1;
-- (id)handleManager;
 - (id)init;
+- (void)initDBHandle;
 - (void)insert:(id)arg1;
 - (void)insertRecordsWithoutTransactions:(id)arg1;
 - (void)insertWithoutTransaction:(id)arg1;

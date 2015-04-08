@@ -92,6 +92,7 @@
 - (BOOL)_willAnimateCancellation;
 - (BOOL)_willAnimateConfirmation;
 - (id)aceObject;
+- (id)alternativeAceCommandsToPerformIfNotExposingViews;
 - (id)attributedSubtitle;
 - (void)cancelButtonTapped:(id)arg1;
 - (void)configureReusableFooterView:(id)arg1;

@@ -6,6 +6,7 @@
 }
 
 - (BOOL)_shouldChangeStatusBarViewController;
+- (int)presentationStyle;
 - (BOOL)shouldRemovePresentersView;
 
 @end

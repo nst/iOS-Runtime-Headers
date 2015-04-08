@@ -18,7 +18,7 @@
 
 - (void)dealloc;
 - (id)description;
-- (id)initWithCompletion:(id)arg1 query:(id)arg2 traits:(id)arg3;
+- (id)initWithCompletion:(id)arg1 query:(id)arg2;
 - (id)initWithSuggestionEntryList:(id)arg1 query:(id)arg2 entryListIndex:(int)arg3 completion:(id)arg4 traits:(id)arg5;
 - (id)items;
 - (id)localizedSectionHeader;

@@ -33,7 +33,6 @@
 - (void)dealloc;
 - (id)expandedRecipients;
 - (BOOL)homogenizePreferredServiceForiMessage;
-- (BOOL)peoplePickerShouldUsePopovers;
 - (id)proposedRecipients;
 - (void)recipientSelectionControllerDidChange;
 - (void)reset;

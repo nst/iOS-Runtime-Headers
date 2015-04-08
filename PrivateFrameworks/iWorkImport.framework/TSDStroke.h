@@ -9,7 +9,7 @@
 
 @class NSString, TSDStrokePattern, TSUColor;
 
-@interface TSDStroke : NSObject <NSCopying, NSMutableCopying, TSDMixing, TSDPathPainter, TSSThemeAsset> {
+@interface TSDStroke : NSObject <NSCopying, NSMutableCopying, TSDMixing, TSDPathPainter, TSSPropertyCommandSerializing> {
     float mActualWidth;
     int mCap;
     TSUColor *mColor;
@@ -21,7 +21,7 @@
 
 @property float actualWidth;
 @property int cap;
-@property(retain) TSUColor * color;
+@property(copy) TSUColor * color;
 @property(readonly) float dashSpacing;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
@@ -37,7 +37,7 @@
 @property int join;
 @property float miterLimit;
 @property(readonly) struct _TSDStrokeOutsets { float x1; float x2; float x3; float x4; } outsets;
-@property(retain) TSDStrokePattern * pattern;
+@property(copy) TSDStrokePattern * pattern;
 @property(readonly) BOOL shouldRender;
 @property(readonly) BOOL solid;
 @property(readonly) float suggestedMinimumLineWidth;
@@ -51,11 +51,12 @@
 + (BOOL)canMixWithNilObjects;
 + (id)emptyStroke;
 + (id)emptyStrokeWithWidth:(float)arg1;
-+ (id)instanceWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; int x5; int x6; float x7; struct StrokePatternArchive {} *x8; struct SmartStrokeArchive {} *x9; struct FrameArchive {} *x10; struct PatternedStrokeArchive {} *x11; int x12; unsigned int x13[1]; }*)arg1 unarchiver:(id)arg2;
++ (id)instanceWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; int x7; int x8; float x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 unarchiver:(id)arg2;
 + (id)mergeRangeEmptyStroke;
 + (Class)mutableClass;
 + (id)p_newEmptyStroke;
 + (id)p_newStroke;
++ (id)portalStroke;
 + (id)stroke;
 + (id)strokeWithColor:(id)arg1 width:(float)arg2;
 + (id)strokeWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5;
@@ -87,7 +88,8 @@
 - (BOOL)empty;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; int x5; int x6; float x7; struct StrokePatternArchive {} *x8; struct SmartStrokeArchive {} *x9; struct FrameArchive {} *x10; struct PatternedStrokeArchive {} *x11; int x12; unsigned int x13[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initFromPropertyCommandMessage:(const struct Message { int (**x1)(); }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; int x7; int x8; float x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5;
 - (id)initWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5 miterLimit:(float)arg6;
 - (BOOL)isDash;
@@ -96,14 +98,13 @@
 - (BOOL)isFrame;
 - (BOOL)isNearlyWhite;
 - (BOOL)isNullStroke;
+- (BOOL)isPortalStroke;
 - (BOOL)isRoundDash;
-- (BOOL)isThemeEquivalent:(id)arg1;
 - (int)join;
 - (float)lineEndInsetAdjustment;
-- (SEL)mapThemeAssetSelector;
 - (float)miterLimit;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)needsToExtendJoinsForBoundsCalculation;
 - (struct _TSDStrokeOutsets { float x1; float x2; float x3; float x4; })outsets;
@@ -120,7 +121,8 @@
 - (id)pathForLineEnd:(id)arg1 wrapPath:(BOOL)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 atAngle:(float)arg4 withScale:(float)arg5;
 - (id)pattern;
 - (BOOL)prefersToApplyToCAShapeLayerDuringManipulation;
-- (void)saveToArchive:(struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; int x5; int x6; float x7; struct StrokePatternArchive {} *x8; struct SmartStrokeArchive {} *x9; struct FrameArchive {} *x10; struct PatternedStrokeArchive {} *x11; int x12; unsigned int x13[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; int x7; int x8; float x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 archiver:(id)arg2;
+- (void)saveToPropertyCommandMessage:(struct Message { int (**x1)(); }*)arg1 archiver:(id)arg2;
 - (void)setActualWidth:(float)arg1;
 - (void)setCap:(int)arg1;
 - (void)setColor:(id)arg1;

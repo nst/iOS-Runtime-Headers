@@ -7,19 +7,23 @@
 @interface TSDAnnotationController : NSObject {
 }
 
+@property(readonly) unsigned int annotationCount;
 @property(readonly) NSString * annotationNavigationString;
-@property(readonly) unsigned int documentAnnotationCount;
 @property(readonly) BOOL hasAnnotations;
 @property BOOL textSelectionChangeShouldDismissAnnotations;
 
 + (float)commentFontSize;
 
+- (unsigned int)annotationCount;
+- (id)annotationMenuItemTextShowNext;
+- (id)annotationMenuItemTextShowPrevious;
 - (id)annotationNavigationString;
-- (id)annotationNavigationTypeStringUsedForNavigating:(BOOL)arg1;
+- (id)annotationToolTipTextGoToNext;
+- (id)annotationToolTipTextGoToPrevious;
 - (void)commitCommentText:(id)arg1 forAnnotation:(id)arg2;
 - (void)didShowAnnotation:(id)arg1;
-- (unsigned int)documentAnnotationCount;
 - (BOOL)hasAnnotations;
+- (void)invalidateAnnotationAuthors;
 - (void)nextAnnotation:(id)arg1;
 - (void)previousAnnotation:(id)arg1;
 - (void)registerDelegate:(id)arg1;

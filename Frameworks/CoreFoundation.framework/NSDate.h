@@ -9,7 +9,7 @@
 
 @class NSString;
 
-@interface NSDate : NSObject <CKRecordValue, NSCopying, NSSecureCoding, PQLBindable, PQLResultSetInitializer, TSCHChartGridValue> {
+@interface NSDate : NSObject <CKRecordValue, NSCopying, NSSecureCoding, PQLValuable, PQLValuable, TSCHChartGridValue> {
 }
 
 @property(readonly) int chartGridValueType;
@@ -46,14 +46,12 @@
 + (id)dateWithNaturalLanguageString:(id)arg1;
 + (id)dateWithNaturalLanguageString:(id)arg1 date:(id)arg2 locale:(id)arg3;
 + (id)dateWithNaturalLanguageString:(id)arg1 locale:(id)arg2;
-+ (id)dateWithSerialNumber:(double)arg1 dateMode:(int)arg2;
 + (id)dateWithString:(id)arg1;
 + (id)dateWithTimeInterval:(double)arg1 sinceDate:(id)arg2;
 + (id)dateWithTimeIntervalSince1970:(double)arg1;
 + (id)dateWithTimeIntervalSinceNow:(double)arg1;
 + (id)dateWithTimeIntervalSinceReferenceDate:(double)arg1;
 + (id)dateWithWordDate:(const struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
-+ (id)dateWithYear:(int)arg1 month:(int)arg2 day:(int)arg3 hour:(int)arg4 minute:(int)arg5 second:(int)arg6;
 + (int)daysSince1970;
 + (int)daysSince1970;
 + (int)daysSpannedFromStartDate:(id)arg1 toEndDate:(id)arg2 allDay:(BOOL)arg3 inCalendar:(id)arg4;
@@ -70,9 +68,13 @@
 + (id)monotonicDateWithTimeIntervalSinceNow:(double)arg1;
 + (id)nearestMidnightAfterDate:(id)arg1;
 + (id)nearestMidnightBeforeDate:(id)arg1;
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (id)nextRoundedHour;
 + (BOOL)supportsSecureCoding;
 + (double)timeIntervalSinceReferenceDate;
++ (id)tsce_dateWithSerialNumber:(double)arg1 dateMode:(int)arg2;
++ (id)tsce_dateWithYear:(int)arg1 month:(int)arg2 day:(int)arg3 hour:(int)arg4 minute:(int)arg5 second:(int)arg6;
 
 - (BOOL)CalIsAfterDate:(id)arg1;
 - (BOOL)CalIsAfterOrSameAsDate:(id)arg1;
@@ -124,7 +126,6 @@
 - (id)dateRoundedToNearestFifteenMinutesInCalendar:(id)arg1;
 - (id)dateRoundedToStartOfNextDayInCalendar:(id)arg1;
 - (id)dateWithCalendarFormat:(id)arg1 timeZone:(id)arg2;
-- (int)day;
 - (int)dayInCalendar:(id)arg1;
 - (int)daysSince1970;
 - (id)description;
@@ -138,14 +139,11 @@
 - (double)geo_julianDay;
 - (double)geo_julianEphemerisDay;
 - (unsigned int)hash;
-- (int)hour;
 - (int)hourInCalendar:(id)arg1;
-- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDate:(id)arg1;
-- (id)initWithMessage:(const struct Date { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; int x4; unsigned int x5[1]; }*)arg1;
 - (id)initWithString:(id)arg1;
 - (id)initWithTimeInterval:(double)arg1 sinceDate:(id)arg2;
 - (id)initWithTimeIntervalSince1970:(double)arg1;
@@ -195,14 +193,11 @@
 - (id)localizedWeekdayMonthDayYearStringShortened:(BOOL)arg1;
 - (id)localizedWeekdayMonthYearStringShortened:(BOOL)arg1;
 - (id)localizedYearMonthAndDayStringShortened:(BOOL)arg1;
-- (double)mapToDouble;
 - (id)mf_descriptionForMimeHeaders;
 - (id)mf_replyPrefixForSender:(id)arg1;
-- (int)minute;
 - (int)minuteInCalendar:(id)arg1;
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (id)ml_stringValueForSQL;
-- (int)month;
 - (int)monthInCalendar:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 - (void)printComparisonToDate:(id)arg1;
@@ -218,9 +213,8 @@
 - (BOOL)safari_isInclusivelyBetweenDate:(id)arg1 andDate:(id)arg2;
 - (int)safari_numberOfWeeksUntilDate:(id)arg1;
 - (id)safari_startOfDay;
-- (void)saveToMessage:(struct Date { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; int x4; unsigned int x5[1]; }*)arg1;
-- (int)second;
 - (int)secondInCalendar:(id)arg1;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (double)timeIntervalSince1970;
 - (double)timeIntervalSinceDate:(id)arg1;
@@ -229,10 +223,18 @@
 - (double)timeIntervalSinceReferenceDate;
 - (id)timeOnlyComponentsInCalendar:(id)arg1;
 - (id)timeStringAlwaysIncludeMinutes:(BOOL)arg1;
+- (int)tsce_day;
+- (int)tsce_hour;
+- (double)tsce_mapToDouble;
+- (int)tsce_minute;
+- (int)tsce_month;
+- (int)tsce_second;
+- (int)tsce_weekday;
+- (int)tsce_year;
+- (id)tsp_initWithMessage:(const struct Date { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1;
+- (void)tsp_saveToMessage:(struct Date { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1;
 - (int)weekInCalendar:(id)arg1;
-- (int)weekday;
 - (int)weekdayInCalendar:(id)arg1;
-- (int)year;
 - (int)yearInCalendar:(id)arg1;
 
 @end

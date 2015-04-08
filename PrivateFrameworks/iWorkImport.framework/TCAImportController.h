@@ -16,7 +16,6 @@
 @property(readonly) Class superclass;
 
 - (void)addWarning:(id)arg1;
-- (id)additionalDocumentPropertiesForWrite;
 - (id)baseUUIDForObjectUUID;
 - (void)dealloc;
 - (void)finishImportWithSuccess:(BOOL)arg1 error:(id)arg2;

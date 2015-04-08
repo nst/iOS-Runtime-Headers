@@ -49,6 +49,8 @@
     unsigned int _itemTypeOverride;
     UIActivityIndicatorView *_loadingIndicator;
     BOOL _navigationBarHidden;
+    BOOL _needsTVWindowSetup;
+    BOOL _needsTVWindowTeardown;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     NSString *_playbackErrorDescription;
     MPAVController *_player;
@@ -137,7 +139,6 @@
 - (BOOL)_canEnableAirPlayVideoRoutes;
 - (void)_cancelOverlayIdleTimer;
 - (void)_delayedShowLoadingIndicator;
-- (void)_delayedUpdateBackgroundView;
 - (void)_destroyAudioOverlayView;
 - (void)_destroyVideoOverlayView;
 - (void)_destroyVideoSnapshotView;

@@ -16,6 +16,7 @@
 }
 
 @property(readonly) NSString * br_lastEditorDeviceName;
+@property(readonly) NSString * br_lastEditorName;
 @property(readonly) NSString * displayName;
 @property(readonly) BOOL isSavedConflict;
 @property(readonly) NSString * name;
@@ -33,12 +34,13 @@
 + (BOOL)brc_parseAdditionFilename:(id)arg1 mangledContainerID:(id*)arg2 itemID:(id*)arg3 etag:(id*)arg4;
 + (id)makeNameForUser:(unsigned int)arg1 name:(id)arg2;
 
+- (BOOL)_br_markResolvedWithError:(id*)arg1;
 - (id)_initWithStorage:(id)arg1 andDictionary:(id)arg2;
 - (void)_refreshWithDictionary:(id)arg1;
 - (id)br_lastEditorDeviceName;
+- (id)br_lastEditorName;
 - (BOOL)br_markResolvedWithError:(id*)arg1;
 - (BOOL)brc_parseMangledContainerID:(id*)arg1 itemID:(id*)arg2 etag:(id*)arg3;
-- (BOOL)brc_removeConflictLoserWithError:(id*)arg1;
 - (BOOL)copyAdditionContentToURL:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)description;

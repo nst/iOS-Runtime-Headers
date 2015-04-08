@@ -8,6 +8,7 @@
     _UIInputViewControllerOutput *_controllerOutput;
     _UIInputViewControllerState *_controllerState;
     <_UITextDocumentInterfaceDelegate> *_delegate;
+    TIKeyboardOutput *_keyboardOutput;
 }
 
 @property int autocapitalizationType;

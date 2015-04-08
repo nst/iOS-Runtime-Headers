@@ -12,6 +12,7 @@
 + (double)animationDuration;
 + (id)animationTimingFunction;
 + (id)animator;
++ (void)assertInactive;
 + (void)begin;
 + (void)commit;
 + (double)commitTime;

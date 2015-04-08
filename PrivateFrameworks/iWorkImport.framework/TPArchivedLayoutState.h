@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
+@class NSArray, NSSet;
 
 @interface TPArchivedLayoutState : TSPObject <TPArchivedLayoutStateProtocol> {
+    unsigned int _bodyLength;
     unsigned int _documentPageIndex;
     unsigned int _lastPageCount;
+    NSSet *_missingFonts;
     NSArray *_sectionHints;
     unsigned int _sectionIndex;
     unsigned int _sectionPageIndex;

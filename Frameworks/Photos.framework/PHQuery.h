@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSArray, NSFetchRequest, NSManagedObjectID, NSPredicate, NSString, PHFetchOptions, PHPhotoLibrary;
+@class NSArray, NSFetchRequest, NSManagedObjectID, NSMutableSet, NSPredicate, NSRelationshipDescription, NSString, PHCollection, PHFetchOptions, PHPhotoLibrary;
 
-@interface PHQuery : NSObject <NSCopying> {
+@interface PHQuery : NSObject <NSCopying, NSPredicateVisitor> {
     BOOL __includesCameraRoll;
     BOOL __includesCloudSharedAssets;
     BOOL __includesTrashedObjects;
@@ -12,12 +12,26 @@
     NSPredicate *_basePredicate;
     NSPredicate *_cachedFetchOptionsPredicate;
     int _collectionFetchType;
+    id _combinedQueryGroupKey;
+    NSString *_combinedQueryKeyPath;
+    NSManagedObjectID *_combinedQuerySeparatingIdentifier;
+    PHCollection *_containerCollection;
     NSManagedObjectID *_containerIdentifier;
+    NSRelationshipDescription *_containerRelationship;
+    unsigned long long _containerSortingAttributesIndexValue;
+    unsigned long long _containerToObjectRelationshipIndexValue;
     PHFetchOptions *_fetchOptions;
     NSFetchRequest *_fetchRequest;
     NSString *_fetchType;
     NSPredicate *_filterPredicate;
+    unsigned long long _filteringAttributesIndexValue;
+    NSMutableSet *_filteringKeys;
+    unsigned long long _filteringRelationshipsIndexValue;
+    unsigned long long _objectToContainerRelationshipIndexValue;
     PHPhotoLibrary *_photoLibrary;
+    BOOL _preparedCombinedQueryKeys;
+    BOOL _preparedContainerInfo;
+    BOOL _preparedFilteringAttributes;
     NSArray *_seedOIDs;
 }
 
@@ -26,6 +40,9 @@
 @property(setter=_setIncludesTrashedObjects:) BOOL _includesTrashedObjects;
 @property(setter=_setIncludesiTunesSyncAssets:) BOOL _includesiTunesSyncAssets;
 @property(readonly) NSPredicate * basePredicate;
+@property(readonly) id combinedQueryGroupKey;
+@property(readonly) NSString * combinedQueryKeyPath;
+@property(readonly) NSManagedObjectID * combinedQuerySeparatingIdentifier;
 @property(copy) PHFetchOptions * fetchOptions;
 @property(readonly) NSFetchRequest * fetchRequest;
 @property(readonly) NSString * fetchType;
@@ -33,12 +50,14 @@
 @property(readonly) PHPhotoLibrary * photoLibrary;
 @property(readonly) NSArray * seedOIDs;
 
-+ (id)_containerIdentifierForFetchType:(id)arg1 predicate:(id)arg2;
++ (id)_containerIdentifierForFetchType:(id)arg1 predicate:(id)arg2 outRelationship:(id*)arg3;
 + (id)_fetchOptionsForFetchingAssetsFromAssetCollection:(id)arg1 options:(id)arg2;
 + (id)_filterPredicateFromFetchOptionsPredicate:(id)arg1 phClass:(Class)arg2;
++ (id)_queryForKeyAssetInAssetCollection:(id)arg1 withRelationshipKeyPath:(id)arg2 options:(id)arg3;
 + (id)_relationshipForFetchType:(id)arg1 predicate:(id)arg2;
 + (id)_rootFolderID;
 + (id)_transformedSortDescriptors:(id)arg1 forFetchType:(id)arg2;
++ (id)combinedFetchRequestForQueries:(id)arg1;
 + (id)defaultSortDescriptorForFetchType:(id)arg1 predicate:(id)arg2;
 + (void)min:(id*)arg1 andMax:(id*)arg2 forKeypath:(id)arg3 ForType:(id)arg4 restrictedToOIDs:(id)arg5 inLibrary:(id)arg6;
 + (id)queryForAssetCollectionsContainingAsset:(id)arg1 withType:(int)arg2;
@@ -66,6 +85,7 @@
 + (id)queryForMoments;
 + (id)queryForMomentsContainingAssetsWithLocalIdentifiers:(id)arg1;
 + (id)queryForMomentsInMomentList:(id)arg1;
++ (id)queryForPrimaryKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)queryForRootAlbumCollectionList;
 + (id)queryForSecondaryKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)queryForTertiaryKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
@@ -75,30 +95,48 @@
 + (id)queryForType:(id)arg1 withIdentifiers:(id)arg2 local:(BOOL)arg3;
 
 - (void).cxx_destruct;
-- (id)_createFetchRequest;
+- (id)_containerRelationship;
+- (id)_createFetchRequestIncludingBasePredicate:(BOOL)arg1;
+- (id)_effectiveSortDescriptors;
 - (BOOL)_includesCameraRoll;
 - (BOOL)_includesCloudSharedAssets;
 - (BOOL)_includesTrashedObjects;
 - (BOOL)_includesiTunesSyncAssets;
+- (void)_prepareCombinedQueryKeys;
+- (void)_prepareContainerInfo;
+- (void)_prepareFilteringAttributes;
+- (void)_setContainerCollection:(id)arg1;
 - (void)_setIncludesCameraRoll:(BOOL)arg1;
 - (void)_setIncludesCloudSharedAssets:(BOOL)arg1;
 - (void)_setIncludesTrashedObjects:(BOOL)arg1;
 - (void)_setIncludesiTunesSyncAssets:(BOOL)arg1;
 - (id)basePredicate;
 - (int)collectionFetchType;
+- (id)combinedQueryGroupKey;
+- (id)combinedQueryKeyPath;
+- (id)combinedQuerySeparatingIdentifier;
 - (id)containerIdentifier;
+- (unsigned long long)containerSortingAttributesIndexValue;
+- (unsigned long long)containerToObjectRelationshipIndexValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)effectivePredicateForPHClass:(Class)arg1 request:(id)arg2;
+- (id)effectivePredicateForPHClass:(Class)arg1 request:(id)arg2 includingBasePredicate:(BOOL)arg3;
 - (id)executeQuery;
 - (id)fetchOptions;
 - (id)fetchRequest;
 - (id)fetchType;
 - (id)filterPredicate;
+- (unsigned long long)filteringAttributesIndexValue;
+- (unsigned long long)filteringRelationshipsIndexValue;
 - (id)initForType:(id)arg1 withBasePredicate:(id)arg2 inLibrary:(id)arg3;
 - (id)initForType:(id)arg1 withBasePredicate:(id)arg2 seedOIDs:(id)arg3 inLibrary:(id)arg4;
+- (unsigned long long)objectToContainerRelationshipIndexValue;
 - (id)photoLibrary;
 - (id)seedOIDs;
 - (void)setFetchOptions:(id)arg1;
+- (id)updatedQueryWithChange:(id)arg1;
+- (void)visitPredicate:(id)arg1;
+- (void)visitPredicateExpression:(id)arg1;
+- (void)visitPredicateOperator:(id)arg1;
 
 @end

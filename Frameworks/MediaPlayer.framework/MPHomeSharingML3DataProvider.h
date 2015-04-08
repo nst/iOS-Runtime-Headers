@@ -29,7 +29,7 @@
 - (void)_homeSharingGroupIDDidChangeNotification:(id)arg1;
 - (void)_homeSharingLibraryDidBecomeUnavailable:(id)arg1;
 - (void)_homeSharingLibraryDidUpdateRevisionNumber:(id)arg1;
-- (id)_tokenDataForMediaItem:(id)arg1;
+- (id)_tokenDataForAccountID:(unsigned long long)arg1;
 - (id)adjustedValueForMPProperty:(id)arg1 ofEntity:(id)arg2 withDefaultValue:(id)arg3;
 - (id)artworkDataSource;
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id)arg2 progressHandler:(id)arg3;

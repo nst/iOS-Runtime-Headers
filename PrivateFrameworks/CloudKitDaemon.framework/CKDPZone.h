@@ -2,26 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPProtectionInfo, CKDPRecordZoneIdentifier, CKDPShareIdentifier, NSString;
+@class CKDPProtectionInfo, CKDPRecordZoneIdentifier, NSString;
 
 @interface CKDPZone : PBCodable <NSCopying> {
     NSString *_etag;
     CKDPProtectionInfo *_protectionInfo;
-    CKDPShareIdentifier *_shareId;
     CKDPRecordZoneIdentifier *_zoneIdentifier;
-    NSString *_zoneProtectionInfoTag;
 }
 
 @property(retain) NSString * etag;
 @property(readonly) BOOL hasEtag;
 @property(readonly) BOOL hasProtectionInfo;
-@property(readonly) BOOL hasShareId;
 @property(readonly) BOOL hasZoneIdentifier;
-@property(readonly) BOOL hasZoneProtectionInfoTag;
 @property(retain) CKDPProtectionInfo * protectionInfo;
-@property(retain) CKDPShareIdentifier * shareId;
 @property(retain) CKDPRecordZoneIdentifier * zoneIdentifier;
-@property(retain) NSString * zoneProtectionInfoTag;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -31,9 +25,7 @@
 - (id)etag;
 - (BOOL)hasEtag;
 - (BOOL)hasProtectionInfo;
-- (BOOL)hasShareId;
 - (BOOL)hasZoneIdentifier;
-- (BOOL)hasZoneProtectionInfoTag;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -41,12 +33,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setEtag:(id)arg1;
 - (void)setProtectionInfo:(id)arg1;
-- (void)setShareId:(id)arg1;
 - (void)setZoneIdentifier:(id)arg1;
-- (void)setZoneProtectionInfoTag:(id)arg1;
-- (id)shareId;
 - (void)writeTo:(id)arg1;
 - (id)zoneIdentifier;
-- (id)zoneProtectionInfoTag;
 
 @end

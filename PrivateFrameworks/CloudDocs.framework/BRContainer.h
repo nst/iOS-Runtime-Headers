@@ -9,12 +9,14 @@
     long _currentStatusOnceToken;
     NSString *_identifier;
     BOOL _isCloudSyncTCCDisabled;
+    BOOL _isDocumentScopePublic;
     BOOL _isInInitialState;
     BOOL _isOverQuota;
     NSDate *_lastServerUpdate;
     long _lastServerUpdateOnceToken;
     NSMutableDictionary *_propertiesByBundleID;
     NSMultiReadUniWriteLock *_readWriteLock;
+    NSData *_sbExtension;
 }
 
 @property(copy,readonly) NSSet * bundleIdentifiers;
@@ -36,30 +38,44 @@
 @property(readonly) NSData * propertiesData;
 @property(readonly) NSString * supportedFolderLevels;
 
++ (id)URLForPlistOfContainerIdentifier:(id)arg1;
 + (void)_generateiOSIconsIntoDict:(id)arg1 usingBundle:(id)arg2;
 + (id)allContainers;
 + (id)allContainersByContainerID;
 + (id)classesForDecoding;
 + (id)containerForContainerID:(id)arg1;
 + (id)containerForItemAtURL:(id)arg1 error:(id*)arg2;
++ (id)containerIDFromSharedMangledID:(id)arg1;
 + (id)containerInRepositoryURL:(id)arg1 createIfMissing:(BOOL)arg2 error:(id*)arg3;
 + (id)containerInRepositoryURL:(id)arg1 error:(id*)arg2;
++ (id)containerRepositoryURLForIdentifier:(id)arg1;
 + (id)containersRepositoryURL;
 + (id)documentContainers;
-+ (id)mangleContainerID:(id)arg1;
++ (id)localizedNameForDefaultCloudDocsContainer;
++ (id)ownerNameFromSharedMangledID:(id)arg1;
 + (void)postContainerListUpdateNotification;
 + (void)postContainerStatusChangeNotificationWithID:(id)arg1 key:(id)arg2 value:(id)arg3;
++ (id)privateMangledContainerID:(id)arg1;
++ (id)privateUnmangledContainerID:(id)arg1;
 + (id)propertiesForContainerID:(id)arg1 usingBundle:(id)arg2 minimumBundleVersion:(id)arg3 bundleIcons:(id*)arg4;
 + (id)readMetadataForContainerID:(id)arg1 fromPlistAtPath:(id)arg2 createIfMissing:(BOOL)arg3 error:(id*)arg4;
++ (id)sharedMangledIDWithContainerID:(id)arg1 ownerName:(id)arg2;
 + (BOOL)supportsSecureCoding;
-+ (id)unmangleContainerID:(id)arg1;
 + (BOOL)validateContainerID:(id)arg1;
++ (BOOL)validateOwnerName:(id)arg1;
++ (BOOL)validateSharedMangledID:(id)arg1;
 + (BOOL)versionOfBundle:(id)arg1 changedFromVersion:(id)arg2;
 
+- (void)_computeCachedProperties;
+- (BOOL)_getIsDocumentScopePublic;
+- (void)_performWhileAccessingSecurityScopedContainer:(id)arg1;
+- (BOOL)_setProperties:(id)arg1 stagedBundleIconPaths:(id)arg2 bundleIconsDict:(id)arg3 salt:(id)arg4 needsRefresh:(BOOL)arg5;
 - (id)bundleIdentifiers;
 - (id)bundleIdentifiersEnumerator;
+- (id)containerRepositoryURL;
 - (unsigned int)currentStatus;
 - (void)dealloc;
+- (BOOL)deleteAllContentsOnClientAndServer:(id*)arg1;
 - (id)description;
 - (id)documentsTypes;
 - (id)documentsURL;
@@ -71,6 +87,7 @@
 - (id)iconURLs;
 - (id)identifier;
 - (id)imageDataForSize:(struct CGSize { float x1; float x2; })arg1 scale:(int)arg2;
+- (id)imageDataForSize:(struct CGSize { float x1; float x2; })arg1 scale:(int)arg2 isiOSIcon:(BOOL*)arg3;
 - (id)imageRepresentationsAvailable;
 - (id)importedTypes;
 - (id)initWithCoder:(id)arg1;
@@ -83,13 +100,16 @@
 - (id)localizedName;
 - (id)localizedNameForLocale:(id)arg1;
 - (id)mangledID;
+- (id)pathForIconName:(id)arg1;
+- (id)pathForPlist;
 - (id)propertiesData;
 - (void)setCurrentStatus:(unsigned int)arg1;
 - (void)setIsCloudSyncTCCDisabled:(BOOL)arg1;
 - (void)setIsInInitialState:(BOOL)arg1;
 - (void)setLastServerUpdate:(id)arg1;
-- (BOOL)setProperties:(id)arg1 stagedBundleIconPaths:(id)arg2 forBundleIdentifier:(id)arg3 salt:(id)arg4;
-- (BOOL)setPropertiesData:(id)arg1 stagedBundleIconPaths:(id)arg2 salt:(id)arg3 refresh:(BOOL)arg4;
+- (BOOL)setPropertiesFromExtractorDict:(id)arg1 bundleIcons:(id)arg2 forBundleIdentifier:(id)arg3 salt:(id)arg4;
+- (BOOL)setPropertiesFromRecordData:(id)arg1 stagedBundleIconPaths:(id)arg2 salt:(id)arg3;
+- (id)shortDescription;
 - (id)supportedFolderLevels;
 - (id)versionNumberForBundleIdentifier:(id)arg1;
 

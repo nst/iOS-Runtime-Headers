@@ -9,6 +9,6 @@
 + (id)responseAndTokenRuntimeStore;
 + (void)restoreFinished;
 + (void)saveiCloudResponseParameters:(id)arg1;
-+ (void)saveiCloudToken:(id)arg1 faceTimeToken:(id)arg2 madridToken:(id)arg3 gameCenterToken:(id)arg4;
++ (void)saveiCloudToken:(id)arg1 hsaToken:(id)arg2 fmipToken:(id)arg3 faceTimeToken:(id)arg4 madridToken:(id)arg5 gameCenterToken:(id)arg6;
 
 @end

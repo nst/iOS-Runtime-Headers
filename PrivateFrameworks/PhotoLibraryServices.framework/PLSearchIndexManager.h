@@ -50,12 +50,12 @@
 - (void)_inqCloseIndexIfAbleOrForce:(BOOL)arg1 isDelete:(BOOL)arg2;
 - (void)_inqCloseSearchIndexAndDelete:(BOOL)arg1 withCompletion:(id)arg2;
 - (unsigned int)_inqEnqueuedUUIDsCountForceLoad:(BOOL)arg1;
+- (void)_inqEnsurePhotoLibraryExists;
 - (void)_inqEnsureSearchIndexExists;
 - (void)_inqEnsureSearchMetadataExists;
 - (void)_inqEnsureSearchProgressExists;
 - (BOOL)_inqHasValidSearchIndex;
 - (BOOL)_inqIsIndexingPaused;
-- (id)_inqPhotoLibrary;
 - (void)_inqResumeIndexingIfNeeded;
 - (void)_inqSetIndexingPaused:(BOOL)arg1;
 - (BOOL)_inqUpdateLocale;
@@ -73,11 +73,12 @@
 - (void)applyUpdates:(id)arg1 completion:(id)arg2;
 - (void)closeSearchIndexWithCompletion:(id)arg1;
 - (void)dealloc;
-- (void)dropSearchIndexDatabase;
 - (void)dropSearchIndexWithCompletion:(id)arg1;
 - (unsigned int)enqueuedUUIDsCount;
+- (void)ensureSearchIndexExists;
 - (id)initWithSearchIndexDirectory:(id)arg1;
 - (BOOL)isIndexingPaused;
 - (void)setIndexingPaused:(BOOL)arg1;
+- (void)setIndexingPausedAndWait;
 
 @end

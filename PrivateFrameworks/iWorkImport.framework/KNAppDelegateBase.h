@@ -33,11 +33,22 @@
 - (id)previewImageNameForNativeDocument;
 - (void)registerAllowedElementKinds;
 - (void)registerClassTypeMappings;
+- (id)stringForCloseDocument;
+- (id)stringForCollaboratorConflict;
+- (id)stringForCollaboratorConflictDetails;
+- (id)stringForCollaboratorConflictWithKeepDetails;
+- (id)stringForCollaboratorsBlockedWhileOffline;
+- (id)stringForDocumentUpdated;
+- (id)stringForDocumentUpdatedByOwner;
+- (id)stringForDocumentUpdatedTitle;
+- (id)stringForRemoteVersionRestorationAlertMessage;
+- (id)stringForRemoteVersionRestorationWithUnsavedChangesAlertMessage;
+- (id)stringForUpdatingDocument;
 - (BOOL)supportsRTL;
+- (BOOL)supportsShrinkTextToFit;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;
 - (id)templateTypeDisplayName;
-- (void)wakeUpDownloadManager;
 
 @end

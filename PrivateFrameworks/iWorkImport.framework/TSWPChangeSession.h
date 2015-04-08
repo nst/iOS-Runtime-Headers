@@ -14,10 +14,13 @@
 @property(retain) NSDate * date;
 @property unsigned long sessionUID;
 
++ (BOOL)needsObjectUUID;
+
 - (id)author;
 - (id)date;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToSession:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (unsigned long)sessionUID;

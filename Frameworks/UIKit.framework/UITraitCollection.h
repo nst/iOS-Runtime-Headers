@@ -9,7 +9,7 @@
         int userInterfaceIdiom; 
         float displayScale; 
         int touchLevel; 
-        int interactionModel; 
+        unsigned int interactionModel; 
         int horizontalSizeClass; 
         int verticalSizeClass; 
     } _builtinTraits;
@@ -28,7 +28,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)traitCollectionWithDisplayScale:(float)arg1;
 + (id)traitCollectionWithHorizontalSizeClass:(int)arg1;
-+ (id)traitCollectionWithInteractionModel:(int)arg1;
++ (id)traitCollectionWithInteractionModel:(unsigned int)arg1;
 + (id)traitCollectionWithTouchLevel:(int)arg1;
 + (id)traitCollectionWithTraitsFromCollections:(id)arg1;
 + (id)traitCollectionWithUserInterfaceIdiom:(int)arg1;
@@ -36,7 +36,8 @@
 
 - (BOOL)MPU_hasCompactWidth;
 - (BOOL)MPU_hasRegularWidth;
-- (id)_initWithBuiltinTraitStorage:(struct { int x1; float x2; int x3; int x4; int x5; int x6; }*)arg1 clientDefinedTraits:(id)arg2;
+- (int)_compare:(id)arg1;
+- (id)_initWithBuiltinTraitStorage:(struct { int x1; float x2; int x3; unsigned int x4; int x5; int x6; }*)arg1 clientDefinedTraits:(id)arg2;
 - (BOOL)_matchesIntersectionWithTraitCollection:(id)arg1;
 - (id)_namedImageDescription;
 - (id)_valueForTraitNamed:(id)arg1;
@@ -50,9 +51,11 @@
 - (int)horizontalSizeClass;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (int)interactionModel;
+- (unsigned int)interactionModel;
 - (BOOL)isEqual:(id)arg1;
 - (int)touchLevel;
+- (BOOL)tsu_isCompactHeight;
+- (BOOL)tsu_isCompactWidth;
 - (int)userInterfaceIdiom;
 - (int)verticalSizeClass;
 

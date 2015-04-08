@@ -91,6 +91,7 @@
 - (BOOL)_stripPadding;
 - (void)_tableViewDidUpdateMarginWidth;
 - (struct CGSize { float x1; float x2; })_textSizeForWidth:(float)arg1;
+- (BOOL)_transparentFocusContainer;
 - (void)_updateBackgroundImage;
 - (void)_updateContentAndBackgroundView;
 - (void)_updateDetailLabelBackgroundColor;

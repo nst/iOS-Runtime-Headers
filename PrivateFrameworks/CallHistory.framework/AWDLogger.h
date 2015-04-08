@@ -16,7 +16,7 @@
 - (id)awdServer;
 - (void)callAddedWithNilUuid:(unsigned int)arg1 withCallStatus:(unsigned int)arg2;
 - (void)commCenterMigrationResult:(BOOL)arg1 withMigratedCallCount:(unsigned int)arg2;
-- (void)databaseMigrationResult:(BOOL)arg1;
+- (void)databaseMigrationResult:(BOOL)arg1 oldVersion:(int)arg2 newVersion:(int)arg3;
 - (void)databaseSaveError:(int)arg1 withTableName:(id)arg2;
 - (void)deleteAll:(unsigned int)arg1;
 - (void)entitlementRejection:(int)arg1;

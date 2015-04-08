@@ -56,6 +56,7 @@
 - (void)downloadDidStartForResourceTransferTask:(id)arg1;
 - (void)downloadOriginalsOfType:(id)arg1 localIdentifiers:(id)arg2 destinationURL:(id)arg3 progressIdentifier:(id)arg4 completionHandler:(id)arg5;
 - (void)enableSynchronizationWithReason:(id)arg1;
+- (void)getCloudCacheForRecordWithIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (void)getListOfComponentsWithCompletionHandler:(id)arg1;
 - (void)getMappedIdentifiersForIdentifiers:(id)arg1 inAreLocalIdentifiers:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)getResourcesForItemWithIdentifier:(id)arg1 completionHandler:(id)arg2;

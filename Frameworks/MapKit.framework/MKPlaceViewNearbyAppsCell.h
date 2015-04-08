@@ -15,6 +15,7 @@
         float width; 
         float height; 
     } _iconSize;
+    NSArray *_marginConstraints;
     NSArray *_storeItems;
 }
 
@@ -22,6 +23,7 @@
 @property <MKPlaceViewNearbyAppsCellDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property(retain) NSArray * marginConstraints;
 @property(retain) NSArray * storeItems;
 @property(readonly) Class superclass;
 
@@ -41,10 +43,13 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutMarginsDidChange;
+- (id)marginConstraints;
+- (void)refreshMarginConstraints;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setDelegate:(id)arg1;
+- (void)setMarginConstraints:(id)arg1;
 - (void)setStoreItems:(id)arg1;
 - (id)storeItems;
-- (void)tintColorDidChange;
 
 @end

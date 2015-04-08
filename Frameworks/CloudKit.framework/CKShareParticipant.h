@@ -2,73 +2,68 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKRecordID, NSString;
+@class CKShareID, CKUserIdentity, NSString;
 
 @interface CKShareParticipant : NSObject <NSCopying, NSSecureCoding> {
     int _acceptanceStatus;
-    NSString *_emailAddress;
-    NSString *_firstName;
     BOOL _isCurrentUser;
-    int _itemPermission;
-    NSString *_lastName;
-    int _listPermission;
     int _originalAcceptanceStatus;
-    int _originalItemPermission;
-    int _originalListPermission;
+    int _originalParticipantType;
+    int _originalPermission;
+    CKUserIdentity *_originalUserIdentity;
     NSString *_participantID;
-    CKRecordID *_userRecordID;
+    int _permission;
+    CKShareID *_shareID;
+    int _type;
+    CKUserIdentity *_userIdentity;
 }
 
 @property int acceptanceStatus;
-@property(copy) NSString * emailAddress;
-@property(copy) NSString * firstName;
 @property BOOL isCurrentUser;
-@property int itemPermission;
-@property(copy) NSString * lastName;
-@property int listPermission;
 @property int originalAcceptanceStatus;
-@property int originalItemPermission;
-@property int originalListPermission;
-@property(copy) NSString * participantID;
-@property(copy) CKRecordID * userRecordID;
+@property int originalParticipantType;
+@property int originalPermission;
+@property(retain) CKUserIdentity * originalUserIdentity;
+@property(retain) NSString * participantID;
+@property int permission;
+@property(retain) CKShareID * shareID;
+@property int type;
+@property(retain) CKUserIdentity * userIdentity;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
-- (id)_initWithUserRecordID:(id)arg1 participantID:(id)arg2 emailAddress:(id)arg3 acceptanceStatus:(int)arg4 itemPermission:(int)arg5 listPermission:(int)arg6;
 - (int)acceptanceStatus;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)description;
-- (id)emailAddress;
 - (void)encodeWithCoder:(id)arg1;
-- (id)firstName;
 - (unsigned int)hash;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithUserIdentity:(id)arg1;
 - (BOOL)isCurrentUser;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEquivalentToParticipant:(id)arg1;
-- (int)itemPermission;
-- (id)lastName;
-- (int)listPermission;
 - (int)originalAcceptanceStatus;
-- (int)originalItemPermission;
-- (int)originalListPermission;
+- (int)originalParticipantType;
+- (int)originalPermission;
+- (id)originalUserIdentity;
 - (id)participantID;
+- (int)permission;
 - (void)setAcceptanceStatus:(int)arg1;
-- (void)setEmailAddress:(id)arg1;
-- (void)setFirstName:(id)arg1;
 - (void)setIsCurrentUser:(BOOL)arg1;
-- (void)setItemPermission:(int)arg1;
-- (void)setLastName:(id)arg1;
-- (void)setListPermission:(int)arg1;
 - (void)setOriginalAcceptanceStatus:(int)arg1;
-- (void)setOriginalItemPermission:(int)arg1;
-- (void)setOriginalListPermission:(int)arg1;
+- (void)setOriginalParticipantType:(int)arg1;
+- (void)setOriginalPermission:(int)arg1;
+- (void)setOriginalUserIdentity:(id)arg1;
 - (void)setParticipantID:(id)arg1;
-- (void)setUserRecordID:(id)arg1;
-- (id)userRecordID;
+- (void)setPermission:(int)arg1;
+- (void)setShareID:(id)arg1;
+- (void)setType:(int)arg1;
+- (void)setUserIdentity:(id)arg1;
+- (id)shareID;
+- (int)type;
+- (id)userIdentity;
 
 @end

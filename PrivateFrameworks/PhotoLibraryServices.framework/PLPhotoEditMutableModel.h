@@ -9,6 +9,8 @@
     int _transactionDepth;
 }
 
+@property int appliedOrientation;
+@property(getter=isAutoCropped) BOOL autoCropped;
 @property(copy) NSArray * autoRedEyeCorrections;
 @property(copy) NSString * autoSmartColorIdentifier;
 @property float autoSmartColorLevel;
@@ -35,7 +37,6 @@
 @property BOOL legacyAutoEnhanceIsOn;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } normalizedCropRect;
 @property(copy) NSArray * redEyeCorrections;
-@property unsigned int rotation;
 @property float shadowsLevelOffset;
 @property(getter=isSmartBWEnabled) BOOL smartBWEnabled;
 @property float smartBWLevel;
@@ -60,7 +61,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)performChangesWithBlock:(id)arg1;
+- (void)pl_setCropConstraintForDataConstraint:(struct CGSize { float x1; float x2; })arg1 imageGeometry:(id)arg2;
+- (void)pl_setNormalizedCropRectForDataCrop:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 straightenAngle:(float)arg2 imageGeometry:(id)arg3;
 - (void)removeRedEyeCorrections:(id)arg1;
+- (void)setAppliedOrientation:(int)arg1;
+- (void)setAutoCropped:(BOOL)arg1;
 - (void)setAutoRedEyeCorrections:(id)arg1;
 - (void)setAutoSmartColorIdentifier:(id)arg1;
 - (void)setAutoSmartColorLevel:(float)arg1;
@@ -88,7 +93,6 @@
 - (void)setLegacyAutoEnhanceIsOn:(BOOL)arg1;
 - (void)setNormalizedCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setRedEyeCorrections:(id)arg1;
-- (void)setRotation:(unsigned int)arg1;
 - (void)setShadowsLevelOffset:(float)arg1;
 - (void)setSmartBWEnabled:(BOOL)arg1;
 - (void)setSmartBWLevel:(float)arg1;

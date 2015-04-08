@@ -47,6 +47,7 @@
 + (id)two;
 + (id)zero;
 
+- (BOOL)_allowsDirectEncoding;
 - (bool)_getCString:(char *)arg1 length:(int)arg2 multiplier:(double)arg3;
 - (BOOL)boolValue;
 - (BOOL)charValue;

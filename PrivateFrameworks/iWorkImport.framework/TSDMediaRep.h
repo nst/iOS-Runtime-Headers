@@ -25,34 +25,12 @@
 
 @property(readonly) TSDMediaInfo * mediaInfo;
 @property(readonly) TSDMediaLayout * mediaLayout;
-@property(readonly) BOOL shouldShowMediaReplaceUI;
 
-- (id)additionalLayersOverLayer;
-- (BOOL)canResetMediaSize;
-- (id)commandToResetMediaToInsertedSize;
-- (id)commandToResetMediaToRawPixelSize;
-- (id)commandToResetToSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)currentReplaceButtonHighlightedImage;
-- (id)currentReplaceButtonImage;
 - (void)dealloc;
-- (void)didEndZooming;
 - (BOOL)i_shouldRenderStroke:(id)arg1;
 - (void)i_updateFrameRep;
 - (BOOL)isPlaceholder;
 - (id)mediaInfo;
 - (id)mediaLayout;
-- (id)overlayLayers;
-- (void)p_addLayerForReplaceButtonToArray:(id)arg1;
-- (struct CGSize { float x1; float x2; })p_replaceButtonSize;
-- (struct CGPoint { float x1; float x2; })p_scaledPositionOfImageReplaceKnob;
-- (id)p_tapToReplaceLayer;
-- (void)p_updateTapToReplaceLayerPosition;
-- (void)processChangedProperty:(int)arg1;
-- (BOOL)replaceButtonContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)shouldAllowReplacementFromDrop;
-- (BOOL)shouldAllowReplacementFromPaste;
-- (BOOL)shouldShowMediaReplaceUI;
-- (id)visibleMediaReplaceButtonLayer;
-- (void)willBeginZooming;
 
 @end

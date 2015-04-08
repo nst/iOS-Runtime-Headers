@@ -2,27 +2,27 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSDate, NSNumber, NSString, NSURL;
+@class NSNumber, NSString;
 
 @interface CKAssetHandle : CKObject {
     NSString *_UUID;
     NSNumber *_deviceID;
     NSNumber *_fileID;
-    NSURL *_fileURL;
     NSNumber *_generationID;
     NSNumber *_itemID;
-    NSDate *_lastUsedDate;
+    NSNumber *_lastUsedTime;
+    NSString *_path;
 }
 
 @property(retain) NSString * UUID;
 @property(retain) NSNumber * deviceID;
 @property(retain) NSNumber * fileID;
-@property(retain) NSURL * fileURL;
 @property(retain) NSNumber * generationID;
 @property(retain) NSNumber * itemID;
-@property(retain) NSDate * lastUsedDate;
+@property(retain) NSNumber * lastUsedTime;
+@property(retain) NSString * path;
 
-+ (BOOL)getDeviceID:(id*)arg1 fileID:(id*)arg2 generationID:(id*)arg3 forFileURL:(id)arg4 erorr:(id*)arg5;
++ (BOOL)getDeviceID:(id*)arg1 fileID:(id*)arg2 generationID:(id*)arg3 forPath:(id)arg4 error:(id*)arg5;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -30,18 +30,18 @@
 - (id)description;
 - (id)deviceID;
 - (id)fileID;
-- (id)fileURL;
 - (id)generationID;
-- (id)initWithItemID:(id)arg1 UUID:(id)arg2 fileURL:(id)arg3;
+- (id)initWithItemID:(id)arg1 UUID:(id)arg2 path:(id)arg3;
 - (id)itemID;
-- (id)lastUsedDate;
+- (id)lastUsedTime;
 - (int)openFileDescriptorWithError:(id*)arg1;
+- (id)path;
 - (void)setDeviceID:(id)arg1;
 - (void)setFileID:(id)arg1;
-- (void)setFileURL:(id)arg1;
 - (void)setGenerationID:(id)arg1;
 - (void)setItemID:(id)arg1;
-- (void)setLastUsedDate:(id)arg1;
+- (void)setLastUsedTime:(id)arg1;
+- (void)setPath:(id)arg1;
 - (void)setUUID:(id)arg1;
 
 @end

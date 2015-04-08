@@ -9,7 +9,7 @@
 
 @class NSString;
 
-@interface NSSet : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable> {
+@interface NSSet : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable, PQLBindable> {
 }
 
 @property(readonly) unsigned int count;
@@ -21,12 +21,8 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)intersectionOfSet:(id)arg1 withSet:(id)arg2;
 + (id)intersectionOfSets:(id)arg1;
-+ (id)intersectionOfSets:(id)arg1;
-+ (id)intersectionOfSets:(id)arg1;
 + (id)newSetWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 + (id)set;
-+ (BOOL)set:(id)arg1 isEqualToSet:(id)arg2;
-+ (BOOL)set:(id)arg1 isEqualToSet:(id)arg2;
 + (BOOL)set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)setWithArray:(id)arg1;
 + (id)setWithArray:(id)arg1 copyItems:(BOOL)arg2;
@@ -43,6 +39,9 @@
 + (id)setWithSet:(id)arg1 copyItems:(BOOL)arg2;
 + (BOOL)supportsSecureCoding;
 + (BOOL)supportsSecureCoding;
++ (id)tsu_intersectionOfSets:(id)arg1;
++ (BOOL)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
++ (id)tsu_setWithSelectors:(SEL)arg1;
 
 - (id)CAMLType;
 - (void)CKAssignToContainerWithID:(id)arg1;
@@ -75,9 +74,6 @@
 - (Class)classForCoder;
 - (BOOL)containsObject:(id)arg1;
 - (BOOL)containsObjectIdenticalTo:(id)arg1;
-- (BOOL)containsObjectIdenticalTo:(id)arg1;
-- (BOOL)containsObjectIdenticalTo:(id)arg1;
-- (BOOL)containsStyleOrVariationOfStyle:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
@@ -94,7 +90,6 @@
 - (void)getObjects:(id*)arg1;
 - (void)getObjects:(id*)arg1 count:(unsigned int)arg2;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (BOOL)hasVariations;
 - (unsigned int)hash;
 - (id)initWithArray:(id)arg1;
 - (id)initWithArray:(id)arg1 copyItems:(BOOL)arg2;
@@ -138,11 +133,18 @@
 - (id)setByAddingObjectsFromArray:(id)arg1;
 - (id)setByAddingObjectsFromSet:(id)arg1;
 - (id)setByIntersectingWithSet:(id)arg1;
+- (id)setByRemovingObject:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)sortedArrayUsingComparator:(id)arg1;
 - (id)sortedArrayUsingDescriptors:(id)arg1;
 - (id)sortedArrayWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (BOOL)tss_containsStyleOrVariationOfStyle:(id)arg1;
+- (BOOL)tss_hasVariations;
+- (BOOL)tsu_containsObjectIdenticalTo:(id)arg1;
+- (id)tsu_setByMappingObjectsUsingBlock:(id)arg1;
+- (id)tsu_sortedArray;
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 

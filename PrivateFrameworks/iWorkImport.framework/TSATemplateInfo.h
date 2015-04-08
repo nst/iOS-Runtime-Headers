@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSBundle, NSString, NSURL;
+@class NSBundle, NSString, NSURL, UIImage;
 
 @interface TSATemplateInfo : NSObject {
     NSString *_displayName;
@@ -15,6 +15,7 @@
 @property(readonly) BOOL isAvailable;
 @property(readonly) BOOL isUserTemplate;
 @property(readonly) NSBundle * localizationBundle;
+@property(readonly) UIImage * previewImage;
 @property(readonly) NSURL * previewImageURL;
 
 - (void)dealloc;
@@ -27,6 +28,7 @@
 - (id)localizationBundle;
 - (id)makeIdentifier;
 - (void)prepareForNewDocumentWithQueue:(id)arg1 completionHandler:(id)arg2;
+- (id)previewImage;
 - (id)previewImageURL;
 - (void)setDisplayName:(id)arg1;
 

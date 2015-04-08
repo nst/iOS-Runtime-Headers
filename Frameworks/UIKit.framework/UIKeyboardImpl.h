@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <UIKeyInput>, <UIKeyboardCandidateList>, <UIKeyboardImplGeometryDelegate>, <UIKeyboardInput>, <UIKeyboardRecording><UIApplicationEventRecording>, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<UIKeyboardRecording><UIApplicationEventRecording>, NSString, TIKeyboardCandidateResultSet, TIKeyboardInputManagerState, TIKeyboardInputManagerStub, TIKeyboardLayout, TIKeyboardState, TIKeyboardTouchEvent, UIAlertView, UIAutocorrectInlinePrompt, UIDelayedAction, UIKeyboardAutocorrectionController, UIKeyboardLayout, UIKeyboardScheduledTask, UIKeyboardTaskQueue, UIPhysicalKeyboardEvent, UIResponder, UIResponder<UIKeyInput>, UIResponder<UITextInput>, UIResponder<UITextInputPrivate>, UIResponder<UIWKInteractionViewProtocol>, UITextInputArrowKeyHistory, UITextInputTraits, UIView, _UIActionWhenIdle;
+@class <UIKeyInput>, <UIKeyboardCandidateList>, <UIKeyboardImplGeometryDelegate>, <UIKeyboardInput>, <UIKeyboardRecording><UIApplicationEventRecording>, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<UIKeyboardRecording><UIApplicationEventRecording>, NSString, TIKeyboardCandidateResultSet, TIKeyboardInputManagerState, TIKeyboardInputManagerStub, TIKeyboardLayout, TIKeyboardState, TIKeyboardTouchEvent, UIAlertView, UIAutocorrectInlinePrompt, UIDelayedAction, UIKeyboardAutocorrectionController, UIKeyboardLayout, UIKeyboardScheduledTask, UIKeyboardTaskQueue, UIPhysicalKeyboardEvent, UIResponder, UIResponder<UIKeyInput>, UIResponder<UITextInput>, UIResponder<UITextInputPrivate>, UIResponder<UIWKInteractionViewProtocol>, UITextInputArrowKeyHistory, UITextInputTraits, UIView, WebEvent, _UIActionWhenIdle;
 
 @interface UIKeyboardImpl : UIView <UIKeyboardCandidateListDelegate, _UIIVCResponseDelegateImpl> {
     UIKeyboardScheduledTask *_autocorrectPromptTask;
@@ -84,6 +84,7 @@
     NSMutableArray *m_keyplaneNamesCurrentDelegate;
     NSMutableArray *m_keyplaneNamesPreviousDelegate;
     UIView *m_languageIndicator;
+    WebEvent *m_lastWebEvent;
     UIKeyboardLayout *m_layout;
     BOOL m_longPress;
     UIDelayedAction *m_longPressAction;
@@ -204,6 +205,7 @@
 + (BOOL)isSplit;
 + (id)keyboardScreen;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
++ (id)keyboardWindow;
 + (Class)layoutClassForCurrentInputMode;
 + (Class)layoutClassForInputMode:(id)arg1 keyboardType:(int)arg2;
 + (void)markElapsed:(id)arg1;
@@ -233,6 +235,7 @@
 
 - (id)UILanguagePreference;
 - (int)_clipCornersOfView:(id)arg1;
+- (void)_completePerformInputViewControllerOutput:(id)arg1 executionContext:(id)arg2;
 - (void)_continueHandleWebKeyEventWithTask:(id)arg1 executionContext:(id)arg2;
 - (id)_getAutocorrection;
 - (id)_getCurrentKeyboardName;
@@ -255,6 +258,7 @@
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (int)_positionInCandidateList:(id)arg1;
+- (void)_processInputViewControllerKeyboardOutput:(id)arg1 executionContext:(id)arg2;
 - (id)_rangeForAutocorrectionText:(id)arg1;
 - (void)_remapKeyEvent:(id)arg1 withKeyEventMap:(id)arg2;
 - (void)_requestInputManagerSync;
@@ -265,6 +269,7 @@
 - (void)_setShiftLockedEnabled:(BOOL)arg1;
 - (BOOL)_shouldMinimizeForHardwareKeyboard;
 - (BOOL)_shouldRequestInputManagerSyncForKeyboardOutputCallbacks:(id)arg1;
+- (void)_updateInputViewControllerOutput:(id)arg1 forKeyboardOutput:(id)arg2;
 - (void)_updateSoundPreheatingForWindow:(id)arg1;
 - (void)_wheelChangedWithEvent:(id)arg1;
 - (void)acceptAutocorrection;
@@ -331,7 +336,7 @@
 - (BOOL)callLayoutUsesAutoShift;
 - (BOOL)callShouldDeleteWithWordCountForRapidDelete:(int)arg1 characterCountForRapidDelete:(int)arg2;
 - (BOOL)callShouldInsertText:(id)arg1;
-- (BOOL)callShouldReplaceExtendedRange:(unsigned int)arg1 withText:(id)arg2 includeMarkedText:(BOOL)arg3;
+- (BOOL)callShouldReplaceExtendedRange:(int)arg1 withText:(id)arg2 includeMarkedText:(BOOL)arg3;
 - (BOOL)canHandleEvent:(id)arg1;
 - (BOOL)canHandleKeyHitTest;
 - (void)cancelAllKeyEvents;
@@ -341,6 +346,7 @@
 - (void)candidateListAcceptCandidate:(id)arg1;
 - (void)candidateListSelectionDidChange:(id)arg1;
 - (id)candidateRequestInfo;
+- (BOOL)candidateSelectionPredictionForTraits;
 - (BOOL)caretBlinks;
 - (BOOL)caretVisible;
 - (BOOL)centerFilled;
@@ -394,15 +400,17 @@
 - (void)deleteBackwardAndNotify:(BOOL)arg1;
 - (void)deleteForwardAndNotify:(BOOL)arg1;
 - (void)deleteFromInput;
-- (void)deleteFromInputWithExecutionContext:(id)arg1;
+- (void)deleteFromInputWithFlags:(unsigned int)arg1;
+- (void)deleteFromInputWithFlags:(unsigned int)arg1 executionContext:(id)arg2;
 - (void)deleteHandwritingStrokesAtIndexes:(id)arg1;
 - (void)deleteOnceFromInputWithExecutionContext:(id)arg1;
-- (id)desirableInputModesFromList:(id)arg1 forTraits:(id)arg2;
+- (id)desirableInputModesWithExtensions:(BOOL)arg1;
 - (void)detach;
 - (void)didAcceptAutocorrection:(id)arg1 wordTerminator:(id)arg2;
 - (void)didApplyAutocorrection:(id)arg1 autocorrectPromptFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)didChangePhraseBoundary;
 - (void)didHandleWebKeyEvent;
+- (void)didHandleWebKeyEvent:(id)arg1;
 - (void)didMoveToSuperview;
 - (void)didSetDelegate;
 - (void)dismissKeyboard;
@@ -573,6 +581,8 @@
 - (void)selectionScrolling:(id)arg1;
 - (id)selectionView;
 - (void)selectionWillChange:(id)arg1;
+- (void)sendCallbacksForPostCorrectionsRemoval;
+- (void)sendCallbacksForPreCorrectionsDisplay;
 - (void)setArrowKeyHistory:(id)arg1;
 - (void)setAutocorrectPromptTask:(id)arg1;
 - (void)setAutocorrectSpellingEnabled:(BOOL)arg1;
@@ -594,6 +604,7 @@
 - (void)setDelayedCandidateRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 force:(BOOL)arg2;
+- (void)setDocumentStateForAutocorrection:(id)arg1;
 - (void)setExternalTask:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGeometryDelegate:(id)arg1;
@@ -659,6 +670,7 @@
 - (BOOL)shouldSetInputModeInNextRun;
 - (BOOL)shouldShowCandidateBar;
 - (BOOL)shouldSkipCandidateSelection;
+- (BOOL)shouldSwitchFromInputManagerMode:(id)arg1 toInputMode:(id)arg2;
 - (BOOL)shouldSwitchInputMode:(id)arg1;
 - (void)showInformationalAlertIfNeededForReason:(int)arg1;
 - (BOOL)showInputModeIndicator;
@@ -728,6 +740,7 @@
 - (void)updateFromTextInputTraits;
 - (void)updateHardwareKeyboardLayout;
 - (void)updateInputManagerAutocapitalizationType;
+- (void)updateInputManagerMode;
 - (void)updateInputModeIndicatorOnSingleKeyOnly:(BOOL)arg1;
 - (void)updateInputModeIndicatorOnSingleKeyOnly:(BOOL)arg1 preserveIfPossible:(BOOL)arg2;
 - (void)updateInputModeLastChosenPreference;
@@ -751,6 +764,7 @@
 - (BOOL)usesAutoDeleteWord;
 - (BOOL)usesAutocorrectionLists;
 - (BOOL)usesCandidateSelection;
+- (void)willMoveToWindow:(id)arg1;
 - (void)willReplaceTextInRangedSelectionWithKeyboardInput;
 
 @end

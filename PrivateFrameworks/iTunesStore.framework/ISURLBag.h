@@ -65,6 +65,7 @@
 - (void)setLoadedFromDiskCache:(BOOL)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setURLBagContext:(id)arg1;
+- (BOOL)shouldSendAnonymousMachineIdentifierForURL:(id)arg1;
 - (BOOL)shouldSendGUIDForURL:(id)arg1;
 - (id)storeFrontIdentifier;
 - (id)urlForKey:(id)arg1;

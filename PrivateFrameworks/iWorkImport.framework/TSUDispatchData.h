@@ -5,6 +5,7 @@
 @class NSObject<OS_dispatch_data>;
 
 @interface TSUDispatchData : NSObject {
+    BOOL _alwaysDefragmentData;
     NSObject<OS_dispatch_data> *_data;
     NSObject<OS_dispatch_data> *_defragmentedData;
     NSObject<OS_dispatch_data> *_fragmentedData;
@@ -13,6 +14,7 @@
     unsigned long _size;
 }
 
+@property BOOL alwaysDefragmentData;
 @property(readonly) NSObject<OS_dispatch_data> * data;
 @property(readonly) NSObject<OS_dispatch_data> * defragmentedData;
 @property(readonly) NSObject<OS_dispatch_data> * fragmentedData;
@@ -21,14 +23,17 @@
 @property(readonly) unsigned long size;
 
 - (void).cxx_destruct;
+- (BOOL)alwaysDefragmentData;
 - (void)append:(id)arg1;
 - (id)data;
+- (void)defragmentData;
 - (id)defragmentedData;
 - (id)fragmentedData;
 - (unsigned int)fragmentsCount;
 - (id)init;
 - (id)initWithData:(id)arg1;
 - (unsigned int)maxFragmentsCount;
+- (void)setAlwaysDefragmentData:(BOOL)arg1;
 - (void)setMaxFragmentsCount:(unsigned int)arg1;
 - (unsigned long)size;
 

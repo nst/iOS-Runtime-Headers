@@ -27,6 +27,7 @@
 @property(retain) UILabel * titleLabel;
 
 + (struct CGSize { float x1; float x2; })defaultSizeForTraits:(id)arg1;
++ (id)folderIconForTraits:(id)arg1;
 + (struct CGSize { float x1; float x2; })thumbnailSizeForTraits:(id)arg1;
 
 - (void)_showPickableDiagnostic;

@@ -8,6 +8,7 @@
     NSMutableArray *_accessoryServerBrowsers;
     NSMapTable *_addAccessoryCompletionHandlersForAccessoryServers;
     HAPAccessoryServerBrowserBTLE *_btleAccessoryServerBrowser;
+    NSHashTable *_currentlyPairingAccessories;
     NSMapTable *_delegates;
     HAPAccessoryServerBrowserIP *_ipAccessoryServerBrowser;
     NSMutableSet *_pairedAccessories;
@@ -16,12 +17,14 @@
     NSHashTable *_removeAccessoryInProgressForHMDAccessories;
     NSMapTable *_retrievalCompletionTuplesForAccessories;
     NSMutableSet *_unpairedAccessories;
+    NSHashTable *_unpairedSecondaryHAPAccessories;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
 @property(retain) NSMutableArray * accessoryServerBrowsers;
 @property(retain) NSMapTable * addAccessoryCompletionHandlersForAccessoryServers;
 @property(retain) HAPAccessoryServerBrowserBTLE * btleAccessoryServerBrowser;
+@property(retain) NSHashTable * currentlyPairingAccessories;
 @property(copy,readonly) NSString * debugDescription;
 @property(retain) NSMapTable * delegates;
 @property(copy,readonly) NSString * description;
@@ -34,10 +37,14 @@
 @property(retain) NSMapTable * retrievalCompletionTuplesForAccessories;
 @property(readonly) Class superclass;
 @property(retain) NSMutableSet * unpairedAccessories;
+@property(retain) NSHashTable * unpairedSecondaryHAPAccessories;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
 - (void).cxx_destruct;
 - (BOOL)_accessoryServerIsBlocked:(id)arg1;
+- (void)_addUnpairedAccessoryForServer:(id)arg1;
+- (id)_allAccessories;
+- (id)_createNewlyPairedSecondaryAccessoriesWithIdentifier:(id)arg1;
 - (void)_createPairedAccessoriesForUnpairedAccessory:(id)arg1 server:(id)arg2;
 - (id)_dequeueAllRetrievalCompletionTuplesForAccessory:(id)arg1;
 - (void)_disablePairedAccessoriesForServer:(id)arg1 error:(id)arg2;
@@ -49,6 +56,7 @@
 - (void)_notifyDelegatesOfRemovedNewAccessory:(id)arg1;
 - (void)_pairAccessory:(id)arg1 home:(id)arg2 password:(id)arg3 completionHandler:(id)arg4;
 - (id)_pairedAccessoriesForServer:(id)arg1;
+- (id)_primaryAccessoryForServer:(id)arg1;
 - (void)_promptForPairingPasswordForServer:(id)arg1;
 - (void)_removeAccessoriesForPrimaryAccessory:(id)arg1 completionHandler:(id)arg2;
 - (void)_removeAccessory:(id)arg1 completionHandler:(id)arg2;
@@ -77,6 +85,7 @@
 - (void)accessoryServerBrowser:(id)arg1 didStartDiscoveringWithError:(id)arg2;
 - (void)accessoryServerBrowser:(id)arg1 didStopDiscoveringWithError:(id)arg2;
 - (id)accessoryServerBrowsers;
+- (void)accessoryServerDidUpdateHasPairings:(id)arg1;
 - (id)accessoryWithUUID:(id)arg1;
 - (id)addAccessoryCompletionHandlersForAccessoryServers;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
@@ -86,6 +95,7 @@
 - (id)allUnpairedAccessories;
 - (void)btleAccessoryReachabilityProbeTimer:(BOOL)arg1;
 - (id)btleAccessoryServerBrowser;
+- (id)currentlyPairingAccessories;
 - (id)delegates;
 - (id)initWithPairedAccessories:(id)arg1;
 - (id)ipAccessoryServerBrowser;
@@ -103,6 +113,7 @@
 - (void)setAccessoryServerBrowsers:(id)arg1;
 - (void)setAddAccessoryCompletionHandlersForAccessoryServers:(id)arg1;
 - (void)setBtleAccessoryServerBrowser:(id)arg1;
+- (void)setCurrentlyPairingAccessories:(id)arg1;
 - (void)setDelegates:(id)arg1;
 - (void)setIpAccessoryServerBrowser:(id)arg1;
 - (void)setPairedAccessories:(id)arg1;
@@ -111,10 +122,12 @@
 - (void)setRemoveAccessoryInProgressForHMDAccessories:(id)arg1;
 - (void)setRetrievalCompletionTuplesForAccessories:(id)arg1;
 - (void)setUnpairedAccessories:(id)arg1;
+- (void)setUnpairedSecondaryHAPAccessories:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)startDiscoveringAccessories;
 - (void)stopDiscoveringAccessories;
 - (id)unpairedAccessories;
+- (id)unpairedSecondaryHAPAccessories;
 - (id)workQueue;
 
 @end

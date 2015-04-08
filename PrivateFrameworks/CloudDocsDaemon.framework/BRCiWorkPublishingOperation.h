@@ -2,19 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCItemID, BRiWorkSharingInfo, NSArray;
+@class BRCItemID, BRCServerZone, NSArray, NSNumber, NSString;
 
-@interface BRCiWorkPublishingOperation : BRCOperation {
+@interface BRCiWorkPublishingOperation : _BRCOperation <BRCOperationSubclass> {
     BOOL _forPublish;
     BRCItemID *_itemID;
     BOOL _readonly;
     NSArray *_recordIDs;
-    BRiWorkSharingInfo *_sharingInfo;
+    BRCServerZone *_serverZone;
+    NSNumber *_sharingInfo;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_updateItemAfterShareCompleted;
-- (id)initWithItem:(id)arg1 forPublish:(BOOL)arg2 readonly:(BOOL)arg3;
+- (id)initWithDocumentItem:(id)arg1 forPublish:(BOOL)arg2 readonly:(BOOL)arg3;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
 

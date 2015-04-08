@@ -21,6 +21,7 @@
 @property(readonly) Class superclass;
 
 - (void)_debugLog:(id)arg1;
+- (id)_handlerForSceneID:(id)arg1;
 - (id)_loggingProem;
 - (void)_queue_ensureTransaction;
 - (void)_queue_handleActions:(id)arg1;

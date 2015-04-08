@@ -2,15 +2,17 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSAttributedString, NSMutableArray, UILabel;
+@class NSArray, NSAttributedString, NSMutableArray, UILabel;
 
 @interface MKPlaceAttributionCell : ABContactCell {
     UILabel *_label;
+    NSArray *_marginConstraints;
     NSMutableArray *_scaledConstraints;
 }
 
 @property(retain) NSAttributedString * attributionString;
 @property(retain) UILabel * label;
+@property(retain) NSArray * marginConstraints;
 @property(retain) NSMutableArray * scaledConstraints;
 
 + (id)fontForLabel;
@@ -22,9 +24,13 @@
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)label;
+- (void)layoutMarginsDidChange;
+- (id)marginConstraints;
+- (void)refreshMarginConstraints;
 - (id)scaledConstraints;
 - (void)setAttributionString:(id)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setMarginConstraints:(id)arg1;
 - (void)setScaledConstraints:(id)arg1;
 - (void)tintColorDidChange;
 - (void)updateConstraints;

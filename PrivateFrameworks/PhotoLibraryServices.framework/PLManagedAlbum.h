@@ -67,8 +67,10 @@
 @property(retain,readonly) NSString * uuid;
 @property(readonly) unsigned int videosCount;
 
++ (id)albumSupportsAssetOrderKeysPredicate;
 + (id)assetOrderByAbumUUIDs;
 + (id)baseSearchIndexPredicate;
++ (id)childKeyForOrdering;
 + (void)clearAssetOrderByAbumUUIDs;
 + (id)keyPathsForValuesAffectingApproximateCount;
 + (id)keyPathsForValuesAffectingPhotosCount;
@@ -92,8 +94,8 @@
 - (unsigned int)assetsCount;
 - (BOOL)canPerformEditOperation:(unsigned int)arg1;
 - (id)childKeyForOrdering;
-- (id)childToOrderKeyMap;
 - (unsigned int)countOfInternalUserEditableAssets;
+- (id)descriptionOfAssetOrderValues;
 - (void)didSave;
 - (id)filteredIndexesForPredicate:(id)arg1;
 - (void)getInternalUserEditableAssets:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -104,9 +106,10 @@
 - (id)internalUserEditableAssetsAtIndexes:(id)arg1;
 - (BOOL)isEmpty;
 - (BOOL)isValidKindForPersistence;
+- (id)migration_newOrderKeyChild:(id)arg1;
+- (id)migration_sortedOrderKeysForChildrenUsingMap:(id)arg1;
 - (id)mutableAssets;
 - (BOOL)needsPersistenceUpdate;
-- (id)newOrderKeyChild:(id)arg1;
 - (id)objectInInternalUserEditableAssetsAtIndex:(unsigned int)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)persistMetadataToFileSystem;
@@ -124,7 +127,6 @@
 - (void)setNeedsPersistenceUpdate:(BOOL)arg1;
 - (void)setResolvingConflicts:(BOOL)arg1;
 - (void)sortAssetsUsingiTunesAlbumOrder;
-- (id)sortedOrderKeysForChildrenUsingMap:(id)arg1;
 - (BOOL)supportsAssetOrderKeys;
 - (void)unregisterForChanges;
 - (id)userEditableAssets;

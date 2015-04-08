@@ -32,6 +32,7 @@
 @property(readonly) unsigned int firstIndex;
 @property(readonly) BOOL isSingleContiguousRange;
 @property(readonly) unsigned int lastIndex;
+@property(readonly) BOOL tsu_isSingleContiguousRange;
 
 + (id)_gkIndexSetWithArray:(id)arg1;
 + (id)indexSet;
@@ -40,8 +41,8 @@
 + (id)indexSetWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
 + (id)indexSetWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
-+ (id)indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
 + (BOOL)supportsSecureCoding;
++ (id)tsu_indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
 
 - (void)__ck_enumerateIndexesByProximityToIndex:(unsigned int)arg1 usingBlock:(id)arg2;
 - (id)__ck_indexPathItemsInSection:(int)arg1;
@@ -86,8 +87,6 @@
 - (unsigned int)indexLessThanOrEqualToIndex:(unsigned int)arg1;
 - (unsigned int)indexPassingTest:(id)arg1;
 - (id)indexSetByAddingIndexes:(id)arg1;
-- (id)indexSetByAddingIndexes:(id)arg1;
-- (id)indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (id)indexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
@@ -100,28 +99,36 @@
 - (id)initWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
 - (id)initWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (id)initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (id)initWithMessage:(const struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Range> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)intersectsIndexesInIndexSet:(id)arg1;
 - (BOOL)intersectsIndexesInIndexSet:(id)arg1;
 - (BOOL)intersectsIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToIndexSet:(id)arg1;
-- (BOOL)isSingleContiguousRange;
 - (BOOL)isSingleContiguousRange;
 - (unsigned int)lastIndex;
 - (id)mf_commaSeparatedString;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)pl_indexSetAdjustedForDeletions:(id)arg1;
 - (id)pl_indexSetAdjustedForInsertions:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })pl_rangeCoveringIndexSet;
 - (id)pl_shortDescription;
 - (unsigned int)pu_indexAtIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
 - (unsigned int)rangeCount;
 - (id)replacementObjectForPortCoder:(id)arg1;
-- (void)saveToMessage:(struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Range> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1;
+- (id)tsp_initWithMessage:(const struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Range> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
+- (void)tsp_saveToMessage:(struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Range> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
 - (unsigned int)tsu_indexAtPosition:(unsigned int)arg1;
+- (id)tsu_indexSetByAddingIndex:(unsigned int)arg1;
+- (id)tsu_indexSetByAddingIndexes:(id)arg1;
+- (id)tsu_indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)tsu_indexSetByIntersectingWithIndexes:(id)arg1;
+- (id)tsu_indexSetByIntersectingWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)tsu_initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (BOOL)tsu_intersectsIndexesInIndexSet:(id)arg1;
+- (BOOL)tsu_isSingleContiguousRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })tsu_leadingRangeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)tsu_positionOfIndex:(unsigned int)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })tsu_trailingRangeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

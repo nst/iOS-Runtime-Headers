@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class TSPLazyReference, TSTCustomFormatList, TSTMergeRegionMap, TSTTableHeaderStorage, TSTTileIDKeyDict, TSUIntToIntDictionary;
+@class NSMutableDictionary, TSKCustomFormatList, TSPLazyReference, TSTMergeRegionMap, TSTTableHeaderStorage, TSTTileIDKeyDict;
 
 @interface TSTTableDataStore : TSPContainedObject {
     unsigned long mCellCount;
@@ -24,12 +24,12 @@
     TSPLazyReference *mMultipleChoiceListFormatTableReference;
     unsigned short mNextColumnStripID;
     unsigned short mNextRowStripID;
-    TSTCustomFormatList *mPasteboardCustomFormatList;
-    TSUIntToIntDictionary *mPasteboardCustomFormatMap;
+    TSKCustomFormatList *mPasteboardCustomFormatList;
+    NSMutableDictionary *mPasteboardCustomFormatMap;
     TSPLazyReference *mRichTextPayloadTableReference;
     TSTTableHeaderStorage *mRowHeaderStorage;
     struct TSTTableRBTreeNode_s { unsigned short x1; unsigned short x2; struct TSTTableRBTreeNode_s {} *x3; struct TSTTableRBTreeNode_s {} *x4; struct TSTTableRBTreeNode_s {} *x5; BOOL x6; } *mRowTileIndex;
-    unsigned long mStorageVersion;
+    unsigned char mStorageVersion;
     TSPLazyReference *mStringTableReference;
     TSPLazyReference *mStyleTableReference;
     TSTTileIDKeyDict *mTileStorage;
@@ -37,19 +37,27 @@
 
 @property(readonly) BOOL hasPasteboardCustomFormats;
 
-- (void)clearPasteboardCustomFormatList;
-- (unsigned int)copyPasteboardCustomFormat:(unsigned int)arg1 toDocument:(id)arg2 clearingPasteboardFormat:(BOOL)arg3;
+- (id)addPasteboardCustomFormat:(id)arg1 toDocument:(id)arg2 updatingPasteboardFormat:(BOOL)arg3;
+- (void)clearPasteboardCustomFormatMap;
 - (void)copyPasteboardCustomFormatsFromDataStore:(id)arg1;
 - (void)dealloc;
 - (void)debugDump;
+- (void)enumerateCellStoragesInRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 withBlock:(id)arg2;
+- (void)enumerateColumnHeaderInfosWithBlock:(id)arg1;
+- (void)enumerateRowHeaderInfosWithBlock:(id)arg1;
+- (void)enumerateTilesAtNode:(struct TSTTableRBTreeNode_s { unsigned short x1; unsigned short x2; struct TSTTableRBTreeNode_s {} *x3; struct TSTTableRBTreeNode_s {} *x4; struct TSTTableRBTreeNode_s {} *x5; BOOL x6; }*)arg1 usingBlock:(id)arg2;
+- (void)gatherReorganizeValuesForColumn:(unsigned char)arg1 rowRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 outValues:(struct TSTCellReorganizeValue { unsigned int x1 : 8; unsigned int x2 : 8; union { double x_3_1_1; BOOL x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; struct TSTCellReorganizePopupInfo { unsigned int x_5_2_1; int x_5_2_2; } x_3_1_5; } x3; }*)arg3;
+- (BOOL)hasFormulaByID:(unsigned int)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (BOOL)hasPasteboardCustomFormats;
-- (id)initWithArchive:(const struct DataStore { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct HeaderStorage {} *x3; struct Reference {} *x4; struct TileStorage {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; unsigned int x14; unsigned int x15; struct TableRBTree {} *x16; struct TableRBTree {} *x17; struct Reference {} *x18; struct Reference {} *x19; struct Reference {} *x20; struct Reference {} *x21; unsigned int x22; int x23; unsigned int x24[1]; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
+- (id)indicesForValueCellsInRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (id)initWithArchive:(const struct DataStore { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct HeaderStorage {} *x5; struct Reference {} *x6; struct TileStorage {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; struct Reference {} *x14; struct Reference {} *x15; unsigned int x16; unsigned int x17; struct TableRBTree {} *x18; struct TableRBTree {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Reference {} *x23; unsigned int x24; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
 - (id)initWithOwner:(id)arg1;
 - (BOOL)needToUpgradeCellStorage;
 - (id)p_pasteboardCustomFormatList;
 - (id)p_pasteboardCustomFormatMap;
 - (void)p_updateTileStorageToCurrentVersion;
-- (void)saveToArchive:(struct DataStore { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct HeaderStorage {} *x3; struct Reference {} *x4; struct TileStorage {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; unsigned int x14; unsigned int x15; struct TableRBTree {} *x16; struct TableRBTree {} *x17; struct Reference {} *x18; struct Reference {} *x19; struct Reference {} *x20; struct Reference {} *x21; unsigned int x22; int x23; unsigned int x24[1]; }*)arg1 archiver:(id)arg2;
+- (void)reorganizeValueForStorage:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 16; unsigned int x_1_1_4 : 16; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; } x1; unsigned char x2[0]; }*)arg1 outValue:(struct TSTCellReorganizeValue { unsigned int x1 : 8; unsigned int x2 : 8; union { double x_3_1_1; BOOL x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; struct TSTCellReorganizePopupInfo { unsigned int x_5_2_1; int x_5_2_2; } x_3_1_5; } x3; }*)arg2;
+- (void)saveToArchive:(struct DataStore { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct HeaderStorage {} *x5; struct Reference {} *x6; struct TileStorage {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; struct Reference {} *x14; struct Reference {} *x15; unsigned int x16; unsigned int x17; struct TableRBTree {} *x18; struct TableRBTree {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Reference {} *x23; unsigned int x24; }*)arg1 archiver:(id)arg2;
 - (void)setStorageParentToInfo:(id)arg1;
 - (void)upgradeDataStoreCellStorage;
 - (void)validate;

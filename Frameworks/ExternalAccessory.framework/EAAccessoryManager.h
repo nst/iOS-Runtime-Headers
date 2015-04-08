@@ -51,14 +51,11 @@
 - (void)_iapServerDied:(id)arg1;
 - (id)_initFromSingletonCreationMethod;
 - (void)_integrateSequesteredAccessories;
-- (void)_ipAccessoryAvailable:(id)arg1;
-- (void)_ipAccessoryDidConnect:(id)arg1;
-- (void)_ipAccessoryDisconnected:(id)arg1;
-- (void)_ipAccessoryNotAvailable:(id)arg1;
 - (void)_locationNmeaDataAvailable:(id)arg1;
 - (void)_locationPointDataAvailable:(id)arg1;
 - (void)_nmeaFilteringSupportChanged:(id)arg1;
 - (void)_notifyObserversThatAccessoryDisconnectedWithUserInfo:(id)arg1;
+- (void)_pointOfInterestStatusReceived:(id)arg1;
 - (void)_removeAllAccessoriesFromArray:(id)arg1 notifyClients:(BOOL)arg2;
 - (BOOL)_shouldCheckForConnectedAccessories;
 - (void)_timeSyncInfoUpdated:(id)arg1;

@@ -113,6 +113,8 @@
 - (id)photoDecoration;
 - (void)prepareForReuse;
 - (void)setAlpha:(float)arg1 forItemAtIndex:(int)arg2;
+- (void)setBadgeType:(int)arg1 forItemAtIndex:(int)arg2;
+- (void)setBadgeType:(int)arg1 videoDuration:(double)arg2 forItemAtIndex:(int)arg3;
 - (void)setCombinesPhotoDecorations:(BOOL)arg1;
 - (void)setEmptyPlaceholderImage:(id)arg1;
 - (void)setGridBackgroundColor:(id)arg1;
@@ -130,7 +132,6 @@
 - (void)setStackPerspectiveOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setStackSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setStyle:(unsigned int)arg1;
-- (void)setVideoBannerVisible:(BOOL)arg1 duration:(double)arg2 videoSubtype:(short)arg3 forItemAtIndex:(int)arg4;
 - (id)stackItemViews;
 - (struct UIOffset { float x1; float x2; })stackOffset;
 - (struct CGPoint { float x1; float x2; })stackPerspectiveFactor;

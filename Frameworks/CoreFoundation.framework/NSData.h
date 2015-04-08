@@ -9,7 +9,7 @@
 
 @class NSData, NSString;
 
-@interface NSData : NSObject <CKRecordValue, NSCopying, NSMutableCopying, NSSecureCoding, PQLBindable, PQLResultSetInitializer, TSPSplitableData> {
+@interface NSData : NSObject <CKRecordValue, NSCopying, NSMutableCopying, NSSecureCoding, PQLValuable, PQLValuable, TSPSplitableData> {
 }
 
 @property(readonly) NSData * SHA1Data;
@@ -27,6 +27,7 @@
 @property(readonly) unsigned int length;
 @property(readonly) Class superclass;
 
++ (id)CKDataFromBase64URLSafeString:(id)arg1;
 + (id)CKDataWithHexString:(id)arg1;
 + (id)CKDataWithHexString:(id)arg1 stringIsUppercase:(BOOL)arg2;
 + (id)MCDataWithCFData:(struct __CFData { }*)arg1;
@@ -55,6 +56,8 @@
 + (id)dataWithSockAddr:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1;
 + (id)makeArchive:(const void*)arg1 length:(unsigned long)arg2 level:(float)arg3;
 + (id)mappedDataWithContentsOfTemporaryFile:(id)arg1 error:(id*)arg2;
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (id)nsDataWithOcBinaryData:(const struct OcBinaryData { int (**x1)(); unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; bool x7; struct SsrwOOStream {} *x8; }*)arg1;
 + (id)pl_dataWithMappedContentsOfFileDescriptor:(int)arg1;
 + (id)pl_dataWithMappedContentsOfFileHandle:(id)arg1;
@@ -180,12 +183,12 @@
 - (id)gzipInflate;
 - (unsigned int)hash;
 - (id)hexEncoding;
+- (id)hexRepresentationWithSpaces_AS:(BOOL)arg1;
 - (id)hexString;
 - (id)hexString;
 - (id)hexStringValue;
 - (unsigned int)hk_countOfUUIDs;
 - (void)hk_enumerateUUIDsUsingBlock:(id)arg1;
-- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initWithBase64EncodedData:(id)arg1 options:(unsigned int)arg2;
 - (id)initWithBase64EncodedString:(id)arg1 options:(unsigned int)arg2;
 - (id)initWithBase64EncodedString_gk:(id)arg1;
@@ -256,8 +259,8 @@
 - (id)sha1Digest;
 - (id)shortDescription;
 - (id)shortDescription;
-- (id)shortDescription;
 - (struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)sockAddr;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)subdataWithRangeNoCopy:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

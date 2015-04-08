@@ -24,5 +24,6 @@
 - (void)saveToArchiver:(id)arg1;
 - (void)setOverrideMapForSameAsSource:(id)arg1;
 - (void)updateAfterPasteForDocumentRoot:(id)arg1 pasteboardCustomFormatList:(id)arg2;
+- (void)upgradePreU2_0CustomFormatsForDocumentRoot:(id)arg1;
 
 @end

@@ -15,6 +15,7 @@
 @property(copy) NSArray * animations;
 
 - (void)CA_prepareRenderValue;
+- (id)TSDCAAnimationContextCache;
 - (id)TSD_animationForKeyPath:(id)arg1 atTime:(double)arg2;
 - (double)TSD_animationPercentByApplyingTimingFunctionForKeyPath:(id)arg1 atTime:(double)arg2;
 - (BOOL)TSD_containsAnimationForKeyPath:(id)arg1;
@@ -23,7 +24,8 @@
 - (unsigned int)_propertyFlagsForLayer:(id)arg1;
 - (id)animations;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
-- (void)p_getValue:(id*)arg1 animation:(id*)arg2 animationPercent:(double*)arg3 forKeyPath:(id)arg4 atTime:(double)arg5 animationCache:(id)arg6;
+- (double)p_animationPercentByApplyingTimingFunctionForKeyPath:(id)arg1 atTime:(double)arg2 contextCache:(id)arg3;
+- (void)p_getValue:(id*)arg1 animation:(id*)arg2 animationPercent:(double*)arg3 forKeyPath:(id)arg4 atTime:(double)arg5 animationCache:(id)arg6 contextCache:(id)arg7;
 - (void)setAnimations:(id)arg1;
 - (void)setDefaultDuration:(double)arg1;
 

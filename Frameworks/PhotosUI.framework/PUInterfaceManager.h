@@ -5,9 +5,23 @@
 @interface PUInterfaceManager : NSObject {
 }
 
-+ (void)_disabledUserInteractionTimeout:(id)arg1;
-+ (id)beginDisablingUserInteraction;
-+ (id)beginDisablingUserInteractionWithExpectedTimeout:(double)arg1;
++ (void)_disabledUserInteractionRequestDidTimeOut:(id)arg1;
++ (void)_handleInteractionDisablingTimeout;
++ (void)_handleInteractionDisablingTimeoutForAlbumStackTransition;
++ (void)_handleInteractionDisablingTimeoutForBannerViewImagesJump;
++ (void)_handleInteractionDisablingTimeoutForPhotoBrowserToPhotoEditorTransition;
++ (void)_handleInteractionDisablingTimeoutForPhotoBrowserZoomTransition;
++ (void)_handleInteractionDisablingTimeoutForPhotoEditorComputingAutoEnhance;
++ (void)_handleInteractionDisablingTimeoutForPhotoEditorLoadingImage;
++ (void)_handleInteractionDisablingTimeoutForPhotoEditorRevertingChanges;
++ (void)_handleInteractionDisablingTimeoutForPhotoEditorSavingChanges;
++ (void)_handleInteractionDisablingTimeoutForPhotoEditorToPhotoBrowserTransition;
++ (void)_handleInteractionDisablingTimeoutForPhotoEditorWaitingToDismiss;
++ (void)_handleInteractionDisablingTimeoutForSearchSelectResult;
++ (void)_handleInteractionDisablingTimeoutForSearchSelectSuggestion;
++ (void)_handleInteractionDisablingTimeoutForStartSlideshowFromGrid;
++ (id)beginDisablingUserInteractionForReason:(int)arg1;
++ (id)beginDisablingUserInteractionForReason:(int)arg1 withExpectedTimeout:(double)arg2;
 + (id)currentTheme;
 + (void)endDisablingUserInteraction:(id)arg1;
 + (BOOL)shouldUsePhoneLayoutWithTraitCollection:(id)arg1;

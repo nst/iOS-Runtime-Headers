@@ -5,15 +5,20 @@
 @class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>;
 
 @interface BWJPEGEncoderNode : BWNode {
+    BOOL _croppingEnabled;
     struct OpaqueVTPixelTransferSession { } *_pixelTransferSession;
     NSObject<OS_dispatch_group> *_thumbnailGenerationGroup;
     NSObject<OS_dispatch_queue> *_thumbnailGenerationQueue;
 }
 
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_cropRectForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 whenEnabled:(BOOL)arg3;
++ (BOOL)_croppingRequiredForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 whenEnabled:(BOOL)arg3;
++ (void)_updateMetadataForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 whenCroppingEnabled:(BOOL)arg3;
 + (void)initialize;
 
-- (void)_encodeJPEGForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 outputSurface:(struct __IOSurface {}**)arg3 outputSurfaceSize:(int*)arg4;
+- (void)_encodeJPEGForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 outputSurface:(struct __IOSurface {}**)arg3 outputSurfaceSize:(int*)arg4 outputSurfaceImageSize:(struct CGSize { float x1; float x2; }*)arg5;
 - (void)_generateThumbnailForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 outputSurface:(struct __IOSurface {}**)arg3;
+- (BOOL)croppingEnabled;
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (id)init;
@@ -21,5 +26,6 @@
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
+- (void)setCroppingEnabled:(BOOL)arg1;
 
 @end

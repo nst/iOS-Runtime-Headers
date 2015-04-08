@@ -16,6 +16,9 @@
 @property(readonly) BOOL isatty;
 @property(readonly) BOOL useColor;
 
++ (void)execPagerOnFileFd:(int)arg1;
++ (void)setupPagerForFd:(int)arg1;
+
 - (void)_putsAndCrop:(const char *)arg1 len:(unsigned long)arg2;
 - (unsigned long)_startInCString:(BOOL[256])arg1 fgColor:(int)arg2 bgColor:(int)arg3 attr:(int)arg4;
 - (void)changeAttributes:(int)arg1;

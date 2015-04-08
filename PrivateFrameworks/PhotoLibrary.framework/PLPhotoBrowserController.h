@@ -2,21 +2,22 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLPhotoBrowserControllerDelegate>, <PLRootLibraryNavigationController>, NSArray, NSDictionary, NSIndexPath, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSNumberFormatter, NSString, NSTimer, PHAsset, PHAssetCollection, PHCachingImageManager, PHFetchResult, PLAirPlayBackgroundView, PLAirPlaySession, PLAssetContainerDataSource, PLDeletePhotosActionController, PLEditPhotoController, PLPhotoScrubber, PLPhotoTileViewController, PLPictureFramePlugin, PLProgressHUD, PLProgressView, PLVideoRemaker, PLVideoView, UIActionSheet, UIAlertView, UIImage, UILongPressGestureRecognizer, UINavigationBar, UIPageController, UIScrollView, UITransitionView, UIView, UIWindow;
+@class <PLPhotoBrowserControllerDelegate>, <PLRootLibraryNavigationController>, NSArray, NSDictionary, NSIndexPath, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSNumberFormatter, NSString, NSTimer, PHAsset, PHAssetCollection, PHCachingImageManager, PHFetchResult, PLAirPlayBackgroundView, PLAirPlaySession, PLAssetContainerDataSource, PLDeletePhotosActionController, PLEditPhotoController, PLPhotoScrubber, PLPhotoTileViewController, PLPictureFramePlugin, PLProgressHUD, PLProgressView, PLVideoRemaker, PLVideoView, UIAlertController, UIAlertView, UIImage, UILongPressGestureRecognizer, UINavigationBar, UIPageController, UIScrollView, UITransitionView, UIView, UIWindow;
 
-@interface PLPhotoBrowserController : UIViewController <AirPlayRemoteSlideshowDelegate, PHPhotoLibraryChangeObserver, PLAirPlaySessionDataSource, PLDismissableViewController, PLPhotoScrubberDataSource, PLPhotoScrubberSpeedDelegate, PLPhotoTileViewControllerDelegate, PLSlideshowPluginDelegate, PLVideoViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, UIPageControllerDelegate, UIPopoverControllerDelegate, UIScrollViewDelegate> {
+@interface PLPhotoBrowserController : UIViewController <AirPlayRemoteSlideshowDelegate, PHPhotoLibraryChangeObserver, PLAirPlaySessionDataSource, PLDismissableViewController, PLPhotoScrubberDataSource, PLPhotoScrubberSpeedDelegate, PLPhotoTileViewControllerDelegate, PLSlideshowPluginDelegate, PLVideoViewDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, UIPageControllerDelegate, UIPopoverControllerDelegate, UIScrollViewDelegate> {
     <PLPhotoBrowserControllerDelegate> *__delegate;
     BOOL __enableInteractionEventsAfterUpdatingTileIndex;
     PLAssetContainerDataSource *__originalAssetContainerDataSource;
     PHAsset *__pendingAssetForTileUpdate;
     SEL _actionAfterForcedRotation;
-    UIActionSheet *_actionView;
+    UIAlertController *_actionSheetController;
     SEL _activityAction;
     id _activityTarget;
     PLAirPlayBackgroundView *_airTunesBackgroundView;
     unsigned int _airTunesSlideShowIsEnding : 1;
     PLAirPlaySession *_airplaySession;
     UIAlertView *_alertView;
+    UIAlertController *_alertViewController;
     BOOL _animating;
     unsigned int _appInteractionDisabled;
     PLAssetContainerDataSource *_assetContainerDataSource;
@@ -200,6 +201,7 @@
 @property(readonly) Class superclass;
 
 + (id)_imageRequestCacheQueue;
++ (BOOL)_shouldForwardViewWillTransitionToSize;
 + (void)setPageControllerScrollViewClass:(Class)arg1;
 
 - (id)_actionViewRootView;
@@ -294,13 +296,11 @@
 - (void)_prepareToFade;
 - (int)_presentEditPhotoController;
 - (id)_priorIndexPath;
-- (void)_redisplayActionSheet:(id)arg1;
 - (void)_redisplayDeleteController:(id)arg1;
 - (void)_removeAirTunesSlideShowViewAndReset;
 - (void)_removeProgressView;
 - (void)_removeSavingPhotoHUDForPhoto:(id)arg1;
 - (void)_removeTVOutWindow;
-- (void)_repositionPopoversIfNecessary;
 - (void)_requestImageForPhoto:(id)arg1 imageFormat:(int)arg2 inTile:(id)arg3 resultHandler:(id)arg4;
 - (void)_scheduleTimeoutForPendingAsset;
 - (id)_scrubbedImageIndexPath;
@@ -359,12 +359,11 @@
 - (void)_updateStatusBarVisibilityWithDuration:(double)arg1;
 - (void)_updateTVOutAfterAnimation;
 - (void)_updateTileAndImageCachesForChange:(id)arg1;
-- (void)_updateTileImageAfterZoomTransition;
 - (void)_updateTileIndexForPendingAssetIfNeededAndAvailable;
 - (void)_validateTileCache:(id)arg1;
 - (void)_willDisplayTileController:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)actionSheetDidFinish;
+- (void)actionSheetWillAppear;
 - (id)airPlayRemoteSlideshowAssetKeys:(id)arg1;
 - (void)airPlaySession:(id)arg1 didFailToStreamPhotoWithError:(id)arg2;
 - (id)airPlaySession:(id)arg1 nextPhotoForPhoto:(id)arg2;
@@ -413,7 +412,6 @@
 - (void)deleteImageClicked:(id)arg1;
 - (BOOL)deletesDuplicatesWhenNecessary;
 - (void)didEndEditingPhoto;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (BOOL)dismissPopovers;
 - (void)displayNextPhoto:(id)arg1;
 - (void)displayPreviousPhoto:(id)arg1;
@@ -470,6 +468,7 @@
 - (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
 - (void)photoTileViewControllerRequestsFullSizeImage:(id)arg1;
 - (void)photoTileViewControllerSingleTap:(id)arg1;
+- (id)photoTileViewControllerTopLayoutGuide:(id)arg1;
 - (void)photoTileViewControllerWillBeginGesture:(id)arg1;
 - (void)playCurrentMedia:(id)arg1;
 - (void)playSlideshowFromAlbumUsingOrigami:(BOOL)arg1;
@@ -477,7 +476,7 @@
 - (BOOL)prepareToDisplayActivitySheet;
 - (id)remakerContainerView;
 - (void)removeAdjacentCommentsTables;
-- (void)removeCurrentPhoto:(id)arg1;
+- (void)removeCurrentPhoto;
 - (void)removeRemakerContainerView;
 - (void)revealComment:(id)arg1;
 - (id)rootNavigationController;
@@ -569,9 +568,7 @@
 - (void)viewWillAppear;
 - (void)viewWillDisappear;
 - (void)viewWillLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)wantsPhotoBrowserStyleStatusBar;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willPresentActionSheet:(id)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -68,6 +68,7 @@
 - (struct CGImage { }*)imageForCurrentTime;
 - (struct CGImage { }*)imageForTime:(double)arg1;
 - (id)initWithData:(id)arg1 delegate:(id)arg2;
+- (id)initWithImageSource:(struct CGImageSource { }*)arg1 delegate:(id)arg2;
 - (BOOL)isFastForwarding;
 - (BOOL)isFastReversing;
 - (BOOL)isPlaying;

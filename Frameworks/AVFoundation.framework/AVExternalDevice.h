@@ -9,6 +9,7 @@
 }
 
 @property(readonly) NSString * ID;
+@property(readonly) NSData * MFiCertificateSerialNumber;
 @property(readonly) NSData * OEMIcon;
 @property(readonly) NSString * OEMIconLabel;
 @property(readonly) BOOL OEMIconVisible;
@@ -25,12 +26,15 @@
 @property(readonly) NSArray * screenIDs;
 @property(readonly) NSDictionary * screenInputCapabilities;
 @property(readonly) NSData * settingsIcon;
+@property(readonly) int transportType;
 
 + (id)currentCarPlayExternalDevice;
 + (id)currentExternalDevice;
++ (BOOL)setDiagnosticMode:(BOOL)arg1 error:(id*)arg2;
 + (id)sharedLocalDevice;
 
 - (id)ID;
+- (id)MFiCertificateSerialNumber;
 - (id)OEMIcon;
 - (id)OEMIconLabel;
 - (BOOL)OEMIconVisible;
@@ -62,5 +66,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)settingsIcon;
 - (void)takeScreenForClient:(id)arg1 reason:(id)arg2;
+- (int)transportType;
 
 @end

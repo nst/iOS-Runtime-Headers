@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITextInputDelegate>, <UITextInputTokenizer>, <UITextViewDelegate>, MPUTextContainerContentSizeUpdater, NSAttributedString, NSDictionary, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIAutoscroll, UIColor, UIFont, UIImage, UITextInputController, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UICharacterStreamingManager, _UISiriStreamingManager, _UITextContainerView, _UITextViewRestorableScrollPosition;
+@class <UITextInputDelegate>, <UITextInputTokenizer>, <UITextViewDelegate>, MPUTextContainerContentSizeUpdater, NSAttributedString, NSDictionary, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIAutoscroll, UIColor, UIFont, UIImage, UILabel, UITextInputController, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UICharacterStreamingManager, _UISiriStreamingManager, _UITextContainerView, _UITextViewRestorableScrollPosition;
 
 @interface UITextView : UIScrollView <ABText, MPUAutoupdatingTextContainer, UIKeyboardInput, UITextAutoscrolling, UITextInput, UITextInputControllerDelegate, UITextInputTraits_Private, UITextLinkInteraction, _UILayoutBaselineUpdating, _UIMultilineTextContentSizing> {
     UIAutoscroll *_autoscroll;
@@ -19,6 +19,7 @@
     float _lastBaselineOffsetFromBottom;
     NSLayoutManager *_layoutManager;
     id _linkInteractionItem;
+    UILabel *_placeholderLabel;
     float _preferredMaxLayoutWidth;
     id _private;
     _UITextViewRestorableScrollPosition *_scrollTarget;
@@ -161,6 +162,7 @@
 - (void)_keyboardDidShow:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_lastGlyphBaselineRightPointWithLayoutManager:(id)arg1;
 - (id)_layoutDebuggingTitle;
+- (void)_layoutPlaceholder;
 - (BOOL)_mightHaveSelection;
 - (BOOL)_needsDoubleUpdateConstraintsPass;
 - (void)_observedTextViewDidChange:(id)arg1;
@@ -183,6 +185,7 @@
 - (void)_resyncContainerFrameForNonAutolayout;
 - (void)_scrollRangeToVisible:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 animated:(BOOL)arg2;
 - (void)_scrollSelectionToVisibleInContainingScrollView;
+- (void)_scrollSelectionToVisibleInContainingScrollView:(BOOL)arg1;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
 - (void)_selectionMayChange:(id)arg1;
 - (void)_setDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
@@ -191,6 +194,7 @@
 - (void)_setInteractiveTextSelectionDisabled:(BOOL)arg1;
 - (void)_setPreferredMaxLayoutWidth:(float)arg1;
 - (void)_setScrollTarget:(id)arg1;
+- (void)_setWhitelistedTypingAttributes:(id)arg1;
 - (BOOL)_shouldScrollEnclosingScrollView;
 - (BOOL)_shouldStartDataDetectors;
 - (void)_showTextStyleOptions:(id)arg1;
@@ -203,12 +207,15 @@
 - (void)_transliterateChinese:(id)arg1;
 - (void)_updateBaselineInformationDependentOnBounds;
 - (void)_updateContentSize;
+- (void)_updatePlaceholderVisibility;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleRangeWithLayout:(BOOL)arg1;
 - (BOOL)_wantsBaselineUpdatingFollowingConstraintsPass;
+- (id)_whitelistedTypingAttributes;
 - (id)ab_text;
 - (id)ab_textAttributes;
 - (void)addTextAlternativesDisplayStyleToRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)allowsEditingTextAttributes;
+- (id)attributedPlaceholder;
 - (id)attributedText;
 - (id)automaticallySelectedOverlay;
 - (int)baseWritingDirectionForPosition:(id)arg1 inDirection:(int)arg2;
@@ -314,6 +321,7 @@
 - (void)setAb_text:(id)arg1;
 - (void)setAb_textAttributes:(id)arg1;
 - (void)setAllowsEditingTextAttributes:(BOOL)arg1;
+- (void)setAttributedPlaceholder:(id)arg1;
 - (void)setAttributedText:(id)arg1;
 - (void)setBaseWritingDirection:(int)arg1 forRange:(id)arg2;
 - (void)setBecomesEditableWithGestures:(BOOL)arg1;

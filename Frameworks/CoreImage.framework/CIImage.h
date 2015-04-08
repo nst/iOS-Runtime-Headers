@@ -39,6 +39,7 @@
 - (id)_imageByMatchingColorSpaceWorkingSpace:(struct CGColorSpace { }*)arg1;
 - (id)_imageByMatchingWorkingSpaceToColorSpace:(struct CGColorSpace { }*)arg1;
 - (id)_imageByPremultiplying;
+- (id)_imageByRenderingToIntermediate;
 - (id)_imageByUnpremultiplying;
 - (id)_initNaiveWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2;
 - (id)_initWithBitmapData:(id)arg1 bytesPerRow:(unsigned long)arg2 size:(struct CGSize { float x1; float x2; })arg3 format:(int)arg4 options:(id)arg5;

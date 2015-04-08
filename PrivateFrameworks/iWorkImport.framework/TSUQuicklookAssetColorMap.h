@@ -12,6 +12,7 @@
 @property(retain) NSString * appAssetPath;
 @property(retain) NSMutableDictionary * assetMap;
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)colorForResource:(id)arg1;
 + (BOOL)hasAppAssets;
 + (id)quicklookAssetMap;

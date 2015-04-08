@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDBezierPath, TSDLayoutGeometry;
+@class TSDLayoutGeometry, TSUBezierPath;
 
 @interface TSDGroupLayout : TSDContainerLayout <TSDWrappableParent> {
     struct CGRect { 
@@ -15,8 +15,8 @@
             float height; 
         } size; 
     } mBoundsForStandardKnobs;
-    TSDBezierPath *mCachedExternalWrapPath;
-    TSDBezierPath *mCachedWrapPath;
+    TSUBezierPath *mCachedExternalWrapPath;
+    TSUBezierPath *mCachedWrapPath;
     TSDLayoutGeometry *mDynamicLayoutGeometry;
 }
 
@@ -34,11 +34,13 @@
 - (id)descendentWrappables;
 - (void)dragBy:(struct CGPoint { float x1; float x2; })arg1;
 - (void)endDynamicOperation;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForCulling;
 - (id)i_computeWrapPath;
 - (id)i_externalWrapPath;
 - (id)i_wrapPath;
 - (void)invalidate;
 - (void)invalidateExteriorWrap;
+- (BOOL)isDraggable;
 - (id)layoutGeometryFromInfo;
 - (id)layoutsForProvidingGuidesForChildLayouts;
 - (struct CGSize { float x1; float x2; })minimumSize;
@@ -49,16 +51,15 @@
 - (void)p_invalidateParentForWrap;
 - (void)processChangedProperty:(int)arg1;
 - (BOOL)providesGuidesForChildLayouts;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPresentingAnnotationPopoverForSelection:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (id)reliedOnLayouts;
 - (BOOL)resizeMayChangeAspectRatio;
 - (void)setDynamicGeometry:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (BOOL)supportsFlipping;
+- (BOOL)supportsInspectorPositioning;
 - (BOOL)supportsParentRotation;
 - (BOOL)supportsRotation;
-- (void)takeRotationFromTracker:(id)arg1;
-- (void)takeSizeFromTracker:(id)arg1;
 - (id)visibleGeometries;
 - (void)wrappableChildInvalidated;
 

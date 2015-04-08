@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, NSDictionary, NSMutableArray, TSDFPSCounter;
+@class CALayer, NSDictionary, NSMutableArray, NSString, TSDFPSCounter;
 
 @interface KNTransitionRenderer : KNAnimationRenderer {
     NSDictionary *mAnimatedLayers;
@@ -12,6 +12,7 @@
     TSDFPSCounter *mFPSCounter;
     int mNumberOfAnimationsStarted;
     BOOL mOutgoingSlideRendered;
+    NSString *mRenderWaitIdentifier;
     BOOL mShouldAnimateTransition;
     NSMutableArray *mTextures;
     SEL mTransitionEndCallbackSelector;
@@ -46,5 +47,6 @@
 - (void)teardown;
 - (void)teardownTransitionIsExitingShow:(BOOL)arg1;
 - (void)updateAnimationsForLayerTime:(double)arg1;
+- (void)waitUntilAsyncRenderingIsComplete;
 
 @end

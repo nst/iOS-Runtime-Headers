@@ -11,23 +11,23 @@
 @interface CKDModifySharesURLRequest : CKDURLRequest {
     NSMutableDictionary *_participantIDByRequestID;
     NSMutableDictionary *_shareIDByRequestID;
-    NSArray *_shareIDsToDelete;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _shareModifiedBlock;
 
-    NSArray *_sharesToSave;
+    NSArray *_sharesToDelete;
+    NSMutableDictionary *_sharesToSaveByID;
 }
 
 @property(retain) NSMutableDictionary * participantIDByRequestID;
 @property(retain) NSMutableDictionary * shareIDByRequestID;
-@property(retain) NSArray * shareIDsToDelete;
 @property(copy) id shareModifiedBlock;
-@property(retain) NSArray * sharesToSave;
+@property(retain) NSArray * sharesToDelete;
+@property(retain) NSMutableDictionary * sharesToSaveByID;
 
 - (void).cxx_destruct;
-- (id)initWithSharesToSave:(id)arg1 shareIDsToDelete:(id)arg2;
+- (id)initWithSharesToSave:(id)arg1 sharesToDelete:(id)arg2;
 - (int)operationType;
 - (id)participantIDByRequestID;
 - (void)requestDidParseNodeFailure:(id)arg1;
@@ -36,12 +36,12 @@
 - (id)requestOperations;
 - (void)setParticipantIDByRequestID:(id)arg1;
 - (void)setShareIDByRequestID:(id)arg1;
-- (void)setShareIDsToDelete:(id)arg1;
 - (void)setShareModifiedBlock:(id)arg1;
-- (void)setSharesToSave:(id)arg1;
+- (void)setSharesToDelete:(id)arg1;
+- (void)setSharesToSaveByID:(id)arg1;
 - (id)shareIDByRequestID;
-- (id)shareIDsToDelete;
 - (id)shareModifiedBlock;
-- (id)sharesToSave;
+- (id)sharesToDelete;
+- (id)sharesToSaveByID;
 
 @end

@@ -10,6 +10,8 @@
 }
 
 + (id)_debugRequestName;
++ (int)_experimentDispatcherRequestTypeForRequest:(id)arg1;
++ (int)_experimentType;
 + (id)_serviceTypeNumber;
 + (unsigned int)_urlType;
 + (void)setAttributeData;
@@ -17,6 +19,7 @@
 
 - (void)_cancelRequest:(id)arg1;
 - (void)_startWithRequest:(id)arg1 traits:(id)arg2 completionHandler:(id)arg3;
+- (void)_startWithRequest:(id)arg1 traits:(id)arg2 timeout:(double)arg3 completionHandler:(id)arg4;
 - (id)_validateResponse:(id)arg1;
 - (void)dealloc;
 - (id)init;

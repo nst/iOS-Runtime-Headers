@@ -2,35 +2,31 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSDate, NSString, NSURL;
+@class NSString;
 
-@interface MKYelpDeal : NSObject <NSCopying> {
-    NSString *dealID;
-    NSDate *endDate;
-    NSDate *startDate;
+@interface MKYelpDeal : NSObject <MKMapItemVendorDeal> {
+    NSString *identifier;
     NSString *title;
-    NSURL *url;
+    NSString *urlString;
 }
 
-@property(retain) NSString * dealID;
-@property(retain) NSDate * endDate;
-@property(retain) NSDate * startDate;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned int hash;
+@property(retain) NSString * identifier;
+@property(readonly) Class superclass;
 @property(retain) NSString * title;
-@property(retain) NSURL * url;
+@property(retain) NSString * urlString;
 
 + (id)dealWithJSONObject:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)dealID;
-- (id)endDate;
-- (void)setDealID:(id)arg1;
-- (void)setEndDate:(id)arg1;
-- (void)setStartDate:(id)arg1;
+- (id)description;
+- (id)identifier;
+- (void)setIdentifier:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUrl:(id)arg1;
-- (id)startDate;
+- (void)setUrlString:(id)arg1;
 - (id)title;
-- (id)url;
+- (id)urlString;
 
 @end

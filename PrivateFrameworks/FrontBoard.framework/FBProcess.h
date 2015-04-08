@@ -15,6 +15,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     FBProcessState *_state;
     int _unsafe_pid;
+    BOOL _updatingState;
     FBWorkspace *_workspace;
 }
 

@@ -8,7 +8,7 @@
 
 @class FBApplicationProcess, FBProcessExecutionContext, FBProcessManager, FBWaitForProcessDeathTransaction, NSString;
 
-@interface FBApplicationProcessLaunchTransaction : FBTransaction <FBApplicationProcessObserver, FBProcessManagerObserver> {
+@interface FBApplicationProcessLaunchTransaction : FBTransaction <FBApplicationProcessObserver> {
     NSString *_bundleID;
     FBWaitForProcessDeathTransaction *_deathTransaction;
     FBProcessExecutionContext *_executionContext;
@@ -49,8 +49,6 @@
 - (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(id)arg2;
 - (id)initWithApplicationProcess:(id)arg1;
 - (id)process;
-- (void)processManager:(id)arg1 didAddProcess:(id)arg2;
-- (void)processManager:(id)arg1 didRemoveProcess:(id)arg2;
 - (void)removeObserver:(id)arg1;
 
 @end

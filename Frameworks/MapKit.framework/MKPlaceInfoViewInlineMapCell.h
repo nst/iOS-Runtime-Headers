@@ -2,15 +2,17 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIImage, UIImageView;
+@class NSArray, UIImage, UIImageView;
 
 @interface MKPlaceInfoViewInlineMapCell : ABContactCell {
     UIImage *_inlineMap;
     UIImageView *_inlineMapView;
+    NSArray *_marginConstraints;
 }
 
 @property(retain) UIImage * inlineMap;
 @property(retain) UIImageView * inlineMapView;
+@property(retain) NSArray * marginConstraints;
 
 + (BOOL)requiresConstraintBasedLayout;
 + (id)reuseIdentifier;
@@ -19,7 +21,11 @@
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)inlineMap;
 - (id)inlineMapView;
+- (void)layoutMarginsDidChange;
+- (id)marginConstraints;
+- (void)refreshMarginConstraints;
 - (void)setInlineMap:(id)arg1;
 - (void)setInlineMapView:(id)arg1;
+- (void)setMarginConstraints:(id)arg1;
 
 @end

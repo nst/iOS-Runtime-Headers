@@ -9,6 +9,7 @@
 @class NSArray, NSDate, NSMetadataQuery, NSObject<OS_dispatch_queue>, NSOperationQueue, NSOrderedSet, NSPredicate, NSString;
 
 @interface _UIDocumentPickerDirectoryObserver : NSObject <NSMetadataQueryDelegate> {
+    BOOL _afterInitialUpdate;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -22,10 +23,11 @@
     NSOperationQueue *_queryWorkerQueue;
     NSArray *_scopes;
     NSArray *_sortDescriptors;
-    NSArray *_staticItems;
+    NSOrderedSet *_staticItems;
     id _weak_updateHandlerWeakSelf;
 }
 
+@property BOOL afterInitialUpdate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) id handler;
@@ -39,7 +41,7 @@
 @property(retain) NSOperationQueue * queryWorkerQueue;
 @property(retain) NSArray * scopes;
 @property(retain) NSArray * sortDescriptors;
-@property(retain) NSArray * staticItems;
+@property(retain) NSOrderedSet * staticItems;
 @property(readonly) Class superclass;
 @property id updateHandlerWeakSelf;
 
@@ -49,9 +51,11 @@
 - (id)_queryResults;
 - (void)_queryUpdated:(id)arg1;
 - (void)_updateObservers:(id)arg1 reloadAll:(BOOL)arg2;
+- (BOOL)afterInitialUpdate;
 - (void)dealloc;
 - (id)handler;
 - (id)initWithScopes:(id)arg1 weakSelf:(id)arg2 updateHandler:(id)arg3 itemClass:(Class)arg4;
+- (void)invalidate;
 - (Class)itemClass;
 - (id)lastSnapshot;
 - (id)lastSnapshotDate;
@@ -61,6 +65,7 @@
 - (id)queryQueue;
 - (id)queryWorkerQueue;
 - (id)scopes;
+- (void)setAfterInitialUpdate:(BOOL)arg1;
 - (void)setHandler:(id)arg1;
 - (void)setItemClass:(Class)arg1;
 - (void)setLastSnapshot:(id)arg1;

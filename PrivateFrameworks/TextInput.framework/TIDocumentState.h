@@ -40,6 +40,7 @@
 - (id)description;
 - (BOOL)documentIsEmpty;
 - (id)documentStateAfterCollapsingSelection;
+- (id)documentStateAfterCursorAdjustment:(int)arg1;
 - (id)documentStateAfterDeletingBackward;
 - (id)documentStateAfterDeletingForward;
 - (id)documentStateAfterInsertingText:(id)arg1;

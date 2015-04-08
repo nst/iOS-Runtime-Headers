@@ -2,40 +2,46 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSSet;
 
 @interface PLChangeNode : NSObject {
     Class _changeHubClass;
     NSObject<OS_xpc_object> *_hubConnection;
+    BOOL _isObservingOrderKeys;
     NSObject<OS_dispatch_queue> *_isolationQueue;
     unsigned long long _lastKnownChangeHubEventIndex;
     unsigned char _nodeUUID[16];
     int _notifyToken;
+    NSSet *_observedRelationships;
+    NSMutableDictionary *_updatedOrderKeyObjectIDs;
 }
 
 + (id)_descriptionForEvent:(id)arg1;
 + (id)localChangeEventFromChangeHubEvent:(id)arg1;
 + (id)sharedNode;
 
+- (BOOL)_inq_registerForStoreOrderKeyUpdateNotificationFromManagedObjectContext:(id)arg1;
 - (void)_processCloudFeedUpdateDataFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
-- (void)_processDelayedAlbumOrderUpdates:(id)arg1 countUpdates:(id)arg2 transaction:(id)arg3;
-- (void)_processDelayedAlbumOrderUpdatesAndCountUpdatesFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
+- (void)_processDelayedAlbumCountUpdates:(id)arg1 transaction:(id)arg2;
+- (void)_processDelayedAlbumCountUpdatesFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedAssetsForFileSystemPersistencyFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedDupeAnalysisFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedSearchIndexUpdates:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedSearchIndexUpdatesFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)_processDeletionsFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)connectManagedObjectContext:(id)arg1;
-- (id)createXPCObjectFromDidSaveNotification:(id)arg1 updatedAttributesByObjectID:(id)arg2 updatedRelationshipsByObjectID:(id)arg3;
+- (id)createXPCObjectFromDidSaveNotification:(id)arg1 updatedAttributesByObjectID:(id)arg2 updatedRelationshipsByObjectID:(id)arg3 updatedOrderKeys:(id)arg4;
 - (void)dealloc;
 - (void)disconnectManagedObjectContext:(id)arg1;
 - (void)distributeRemoteChangeHubEvent:(id)arg1 withGroup:(id)arg2 transaction:(id)arg3;
 - (void)distributeRemoteContextDidSaveEvent:(id)arg1 withGroup:(id)arg2 transaction:(id)arg3;
 - (void)fetchNewEventsFromChangeHub;
 - (void)forceUserInterfaceReload;
+- (id)getAndClearUpdatedOrderKeys;
 - (void)handleRemoteChangeHubRequest:(id)arg1;
 - (id)init;
 - (BOOL)isEventOriginatingFromHere:(id)arg1;
+- (void)persistentStoreDidUpdateOrderKeys:(id)arg1;
 - (void)printChangeStore;
 - (void)processDelayedAssetsForFileSystemPersistency:(id)arg1 transaction:(id)arg2;
 - (void)processDelayedCloudFeedAlbumUpdates:(id)arg1 assetInserts:(id)arg2 assetUpdates:(id)arg3 commentInserts:(id)arg4 invitationRecordUpdates:(id)arg5 deletionEntries:(id)arg6 transaction:(id)arg7;

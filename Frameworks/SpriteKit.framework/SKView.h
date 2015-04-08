@@ -21,6 +21,7 @@
     int _frames;
     BOOL _hasRenderedForCurrentUpdate;
     BOOL _hasRenderedOnce;
+    BOOL _isBackgrounded;
     BOOL _isInTransition;
     BOOL _mouseIsDown;
     SKScene *_nextScene;

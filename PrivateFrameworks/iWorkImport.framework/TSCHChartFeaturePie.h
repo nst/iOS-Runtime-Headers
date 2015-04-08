@@ -14,6 +14,7 @@
 - (unsigned int)maxCellsToCheckForGridValueType;
 - (void)p_initializeAxisIDs;
 - (Class)presetImagerClass;
+- (int)representativeGridValueAxisType;
 - (unsigned int)styleIndexForAxisID:(id)arg1;
 - (BOOL)supportsBackgroundFill;
 - (BOOL)supportsBorderFrame;
@@ -24,6 +25,7 @@
 - (BOOL)supportsLabelExplosion;
 - (BOOL)supportsMoreThanOneLiveCategory;
 - (BOOL)supportsPercentNumberFormatting;
+- (BOOL)supportsReferenceLines;
 - (BOOL)supportsTrendLines;
 - (void)updateTitlesForExportingModel:(id)arg1 info:(id)arg2;
 - (id)userInterfaceName;

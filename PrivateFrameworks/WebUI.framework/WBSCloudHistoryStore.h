@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class CKDatabase, CKRecordZone, NSObject<OS_dispatch_queue>;
+@class CKDatabase, CKRecordZone, CKRecordZoneID, NSObject<OS_dispatch_queue>;
 
 @interface WBSCloudHistoryStore : NSObject {
     CKDatabase *_database;
     NSObject<OS_dispatch_queue> *_databaseQueue;
     CKRecordZone *_recordZone;
+    CKRecordZoneID *_recordZoneID;
 }
 
 + (id)sharedCloudHistoryStore;
@@ -21,16 +22,18 @@
 - (void)_fetchRecordsWithServerChangeToken:(id)arg1 numberOfFetchRecordsOperationsPerformedSoFar:(unsigned int)arg2 result:(id)arg3 completion:(id)arg4;
 - (void)_prepareRecordZoneWithCompletion:(id)arg1;
 - (id)_recordDataForDictionary:(id)arg1;
-- (id)_recordWithCloudHistoryVisits:(id)arg1 zoneID:(id)arg2;
-- (id)_recordWithHistoryTombstones:(id)arg1 zoneID:(id)arg2;
-- (id)_recordWithType:(id)arg1 zoneID:(id)arg2 version:(unsigned int)arg3 dataDictionary:(id)arg4;
-- (id)_recordsWithCloudHistoryVisits:(id)arg1 zoneID:(id)arg2;
+- (id)_recordWithCloudHistoryVisits:(id)arg1;
+- (id)_recordWithHistoryTombstones:(id)arg1;
+- (id)_recordWithType:(id)arg1 version:(unsigned int)arg2 dataDictionary:(id)arg3;
+- (id)_recordsWithCloudHistoryVisits:(id)arg1;
 - (void)_resetRecordZone;
 - (void)_saveCloudHistoryVisits:(id)arg1 tombstones:(id)arg2 completion:(id)arg3;
 - (void)_saveRecords:(id)arg1 withCompletion:(id)arg2;
+- (BOOL)_shouldTryToResetRecordZoneForError:(id)arg1;
 - (void)fetchNumberOfDevicesInSyncCircleWithCompletion:(id)arg1;
 - (void)fetchRecordsWithServerChangeTokenData:(id)arg1 completion:(id)arg2;
 - (id)init;
+- (void)initializePushNotifications:(id)arg1;
 - (void)saveCloudHistoryVisits:(id)arg1 tombstones:(id)arg2 completion:(id)arg3;
 
 @end

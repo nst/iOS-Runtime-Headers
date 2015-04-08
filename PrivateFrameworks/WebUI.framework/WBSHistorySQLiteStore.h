@@ -31,6 +31,7 @@
     NSMutableSet *_pendingDeletes;
     NSMutableSet *_pendingTombstones;
     NSMutableSet *_pendingVisitDeletes;
+    BOOL _pushNotificationsAreInitialized;
     NSData *_pushThrottlerData;
     NSMutableDictionary *_statements;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
@@ -49,6 +50,7 @@
 @property <WBSHistoryStoreDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property BOOL pushNotificationsAreInitialized;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -87,6 +89,7 @@
 - (void)_processPendingVisitDeletes;
 - (void)_processPendingWrites;
 - (void)_pruneTombstones;
+- (void)_pruneTombstonesOnDatabaseQueueWithEndDatePriorToTime:(double)arg1;
 - (void)_recomputeDerivedVisitCounts;
 - (void)_removeVisitsProvidedByBlockInvokedOnDatabaseQueue:(id)arg1 addingTombstone:(id)arg2 completionHandler:(id)arg3;
 - (void)_rescheduleMaintenance;
@@ -131,14 +134,17 @@
 - (void)itemWasReplaced:(id)arg1 byItem:(id)arg2;
 - (void)itemsWereAdded:(id)arg1;
 - (void)itemsWereModified:(id)arg1;
+- (BOOL)pushNotificationsAreInitialized;
 - (id)pushThrottlerData;
 - (void)removeItemsOnDatabaseQueue:(id)arg1;
 - (void)removePastHistoryVisitsForItem:(id)arg1 completionHandler:(id)arg2;
 - (void)replayAndAddTombstone:(id)arg1;
+- (void)resetCloudHistoryDataWithCompletionHandler:(id)arg1;
 - (void)savePendingChangesWithCompletionHandler:(id)arg1;
 - (void)setCachedNumberOfDevicesInSyncCircle:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFetchThrottlerData:(id)arg1;
+- (void)setPushNotificationsAreInitialized:(BOOL)arg1;
 - (void)setPushThrottlerData:(id)arg1;
 - (void)setServerChangeTokenData:(id)arg1;
 - (void)setSyncCircleSizeRetrievalThrottlerData:(id)arg1;

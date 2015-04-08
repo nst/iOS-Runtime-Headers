@@ -5,6 +5,7 @@
 @class ADBannerView, ADInterstitialAd, NSData, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface ADPolicyEngine : NSObject <ADBannerViewInternalDelegate, ADInterstitialAdDelegate> {
+    BOOL _canAutoEnable;
     NSData *_currentSongData;
     NSData *_currentStationData;
     BOOL _enabled;
@@ -26,6 +27,7 @@
     BOOL _visuallyEngaged;
 }
 
+@property BOOL canAutoEnable;
 @property(retain) NSData * currentSongData;
 @property(retain) NSData * currentStationData;
 @property(copy,readonly) NSString * debugDescription;
@@ -57,11 +59,13 @@
 - (void)_performWhenAdSheetConnectionEstablished:(id)arg1;
 - (void)acquireMatchSlotWithBodyParameters:(id)arg1 completionHandler:(id)arg2;
 - (void)acquireMatchSlotWithUserConfirmation:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)adSheetDidIdleDisablePolicyEngine;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)bannerViewActionDidFinish:(id)arg1;
 - (BOOL)bannerViewActionShouldBegin:(id)arg1 willLeaveApplication:(BOOL)arg2;
 - (void)bannerViewDidLoadAd:(id)arg1;
 - (void)bannerViewWillLoadAd:(id)arg1;
+- (BOOL)canAutoEnable;
 - (BOOL)canPresentSharedInterstitialAdWithResultMessage:(id*)arg1;
 - (BOOL)claimSharedMediaPlayerVideoAdWithError:(id*)arg1;
 - (id)currentSongData;
@@ -93,6 +97,7 @@
 - (void)reportListeningPresenceEvent:(int)arg1;
 - (void)reportStationTileImpression:(id)arg1;
 - (void)requestAdsForSlot:(id)arg1 completionHandler:(id)arg2;
+- (void)setCanAutoEnable:(BOOL)arg1;
 - (void)setCurrentSongData:(id)arg1;
 - (void)setCurrentStationData:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;

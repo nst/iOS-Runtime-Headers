@@ -16,6 +16,7 @@
         unsigned int buttonType : 8; 
         unsigned int shouldHandleScrollerMouseEvent : 1; 
         unsigned int titleFrozen : 1; 
+        unsigned int resendTraitToImageViews : 2; 
     } _buttonFlags;
     NSArray *_contentConstraints;
     struct UIEdgeInsets { 
@@ -130,13 +131,15 @@
 - (id)_externalBorderColorForState:(unsigned int)arg1;
 - (int)_externalDrawingStyleForState:(unsigned int)arg1;
 - (unsigned int)_externalFlatEdge;
+- (id)_externalFocusedTitleColor;
 - (id)_externalImageColorForState:(unsigned int)arg1;
 - (id)_externalTitleColorForState:(unsigned int)arg1;
+- (id)_externalUnfocusedBorderColor;
 - (id)_fadeOutAnimationWithKeyPath:(id)arg1;
-- (void)_focusStateDidChange;
 - (id)_font;
 - (BOOL)_hasDrawingStyle;
 - (BOOL)_hasHighlightColor;
+- (BOOL)_hasImageForProperty:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_highlightBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_highlightBoundsForDrawingStyle;
 - (float)_highlightCornerRadius;
@@ -148,11 +151,12 @@
 - (id)_imageView;
 - (void)_installSelectGestureRecognizer;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_internalTitlePaddingInsets;
+- (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_invalidateContentConstraints;
+- (BOOL)_isEffectivelyDisabledExternalRoundedRectButton;
 - (BOOL)_isExternalRoundedRectButton;
 - (BOOL)_isExternalRoundedRectButtonWithPressednessState;
-- (BOOL)_isFocusableElement;
 - (BOOL)_isModernButton;
 - (BOOL)_isTitleFrozen;
 - (void)_layoutBackgroundImageView;
@@ -240,6 +244,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)buttonType;
 - (void)cam_updateContentInsetsToCenterImageWithinMinimumSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)canBecomeFocused;
 - (void)configureFromScriptButton:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentEdgeInsets;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -253,6 +258,7 @@
 - (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
 - (void)encodeWithCoder:(id)arg1;
+- (void)focusedViewDidChange;
 - (id)font;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)image;
@@ -306,7 +312,6 @@
 - (void)setTitleShadowColor:(id)arg1 forState:(unsigned int)arg2;
 - (void)setTitleShadowColor:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)showsTouchWhenHighlighted;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)tintColorDidChange;
@@ -318,6 +323,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)titleShadowColorForState:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })titleShadowOffset;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
 - (id)viewForBaselineLayout;
 

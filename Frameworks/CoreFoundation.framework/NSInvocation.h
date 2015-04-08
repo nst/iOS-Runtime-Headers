@@ -28,13 +28,13 @@
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(void*)arg3;
 + (void)executeBlock:(id)arg1;
-+ (void)executeBlock:(id)arg1;
-+ (id)invocationWithBlock:(id)arg1;
 + (id)invocationWithBlock:(id)arg1;
 + (id)invocationWithMethodSignature:(id)arg1;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
++ (void)tsu_executeBlock:(id)arg1;
++ (id)tsu_invocationWithBlock:(id)arg1;
 
 - (void)__gkPrepareForFakeCallbackWithNoData:(BOOL)arg1 orError:(id)arg2;
 - (void)_addAttachedObject:(id)arg1;

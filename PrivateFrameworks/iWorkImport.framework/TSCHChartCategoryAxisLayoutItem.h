@@ -12,8 +12,6 @@
 @property(readonly) TSCHChartCategoryAxisLabelsLayoutItem * axisCategoryLabelsLayoutItem;
 @property(readonly) TSCHChartAxisSeriesLabelsLayoutItem * axisSeriesLabelsLayoutItem;
 
-+ (id)selectionPathType;
-
 - (id)axisCategoryLabelsLayoutItem;
 - (id)axisSeriesLabelsLayoutItem;
 - (void)buildSubTree;

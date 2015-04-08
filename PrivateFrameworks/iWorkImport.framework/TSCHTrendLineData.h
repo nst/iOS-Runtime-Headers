@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSCHChartSeries, TSDBezierPath, TSURegressionModel;
+@class NSString, TSCHChartSeries, TSUBezierPath, TSURegressionModel;
 
 @interface TSCHTrendLineData : NSObject <TSCHUnretainedParent> {
     struct CGRect { 
@@ -16,7 +16,7 @@
         } size; 
     } mCachedChartFrame;
     BOOL mCachedChartVertical;
-    TSDBezierPath *mCachedTrendLinePath;
+    TSUBezierPath *mCachedTrendLinePath;
     int mInputAxisType;
     int mLineType;
     double mMaxXValue;
@@ -54,7 +54,6 @@
 - (void)p_calcMARegression:(unsigned int)arg1 xData:(id)arg2 yData:(id)arg3;
 - (void)p_calcRegression:(unsigned int)arg1 xData:(double*)arg2 yData:(double*)arg3;
 - (id)p_dataPointValues;
-- (id)p_equationStorageWithText:(id)arg1;
 - (unsigned int)p_fillArrayX:(id)arg1 andY:(id)arg2 fromPoints:(id)arg3;
 - (unsigned int)p_fillArrayX:(double*)arg1 andY:(double*)arg2 fromPoints:(id)arg3 hasNegativeX:(BOOL*)arg4;
 - (void)p_generateRegression;

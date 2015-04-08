@@ -120,6 +120,7 @@
 - (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2;
 - (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2 completion:(id)arg3;
 - (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(BOOL)arg3 completion:(id)arg4;
+- (void)openAuthenticationURLForAccount:(id)arg1 withDelegateClassName:(id)arg2 fromBundleAtPath:(id)arg3 shouldConfirm:(BOOL)arg4 completion:(id)arg5;
 - (void)parentAccountForAccountWithIdentifier:(id)arg1 handler:(id)arg2;
 - (void)permissionForAccountType:(id)arg1 withHandler:(id)arg2;
 - (void)provisionedDataclassesForAccountWithIdentifier:(id)arg1 handler:(id)arg2;

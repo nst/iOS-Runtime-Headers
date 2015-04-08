@@ -7,9 +7,9 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <TSCHStyleActAlike>, NSArray, NSMutableArray, NSMutableDictionary, NSString, TSCHChartDrawableInfo, TSCHChartLayoutCache, TSCHChartMediator, TSCHChartModel, TSCHChartStylePreset, TSCHChartType, TSCHLegendModel, TSDInfoGeometry, TSPLazyReference;
+@class <TSCHStyleActAlike>, NSArray, NSMutableArray, NSMutableDictionary, NSString, TSCHChartDrawableInfo, TSCHChartLayoutCache, TSCHChartMediator, TSCHChartModel, TSCHChartStylePreset, TSCHChartType, TSCHLegendModel, TSDInfoGeometry, TSKCustomFormatList, TSPLazyReference, TSSStylesheet;
 
-@interface TSCHChartInfo : NSObject <NSCopying, TSCHStyleOwning, TSCHUnretainedParent, TSDMixing> {
+@interface TSCHChartInfo : NSObject <NSCopying, TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent, TSDMixing> {
     NSMutableArray *mCategoryAxisNonStyles;
     NSMutableArray *mCategoryAxisStyles;
     TSCHChartMediator *mChartMediator;
@@ -40,25 +40,30 @@
     TSDInfoGeometry *mNonInfoGeometry;
     <TSCHStyleActAlike> *mNonStyle;
     NSMutableArray *mParagraphStyles;
+    TSKCustomFormatList *mPasteboardCustomFormatList;
     struct CGPoint { 
         float x; 
         float y; 
     } mPreviewOrigin;
     NSMutableArray *mPrivateSeriesStyles;
+    NSMutableDictionary *mRefLineNonStylesMap;
+    NSMutableDictionary *mRefLineStylesMap;
     NSMutableArray *mSeriesNonStyles;
     <TSCHStyleActAlike> *mStyle;
     NSMutableDictionary *mStyleViewProxyMap;
     NSArray *mStyleViewProxyParagraphStyleArray;
+    <TSCHStyleActAlike> *mThemePresetRefLineStyle;
     NSMutableArray *mThemeSeriesStyles;
     NSMutableArray *mValueAxisNonStyles;
     NSMutableArray *mValueAxisStyles;
 }
 
-@property(retain) TSCHChartType * chartType;
+@property(retain,readonly) TSCHChartType * chartType;
 @property(copy,readonly) NSString * debugDescription;
 @property struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; } defaultLayoutSettings;
 @property(copy,readonly) NSString * description;
 @property BOOL displayMessageOnRepCreation;
+@property(readonly) TSSStylesheet * documentStylesheet;
 @property(readonly) TSCHChartDrawableInfo * drawableInfo;
 @property(copy) TSDInfoGeometry * geometry;
 @property(readonly) int gridDirection;
@@ -72,6 +77,7 @@
 @property(retain) TSCHChartMediator * mediator;
 @property(readonly) struct CGSize { float x1; float x2; } minimumChartBodySize;
 @property(retain) TSCHChartModel * model;
+@property(readonly) unsigned int multiDataSetIndex;
 @property(readonly) TSCHChartStylePreset * preset;
 @property struct CGPoint { float x1; float x2; } previewOrigin;
 @property(readonly) TSCHChartLayoutCache * sceneAreaLayoutItemCache;
@@ -101,6 +107,7 @@
 + (id)paragraphStyleIndexProperties;
 + (id)paragraphStylePropertiesChartsUse;
 + (id)propertiesThatInvalidateModel;
++ (id)referenceLineStyleIdentifierForRoleIndex:(unsigned int)arg1 ordinal:(unsigned int)arg2;
 + (id)scale3DPropertyToConstantDepthInfoChartScaleMappingsWithBarShape:(int)arg1 conversionBlock:(id)arg2;
 + (id)seriesStyleIdentifierForRoleIndex:(unsigned int)arg1 ordinal:(unsigned int)arg2;
 + (void)setCurrentThreadSceneAreaLayoutCache:(id)arg1;
@@ -108,15 +115,18 @@
 + (id)specificPropertiesThatCanContainCustomDateFormats;
 + (id)specificPropertiesThatCanContainCustomFormats;
 + (id)specificPropertiesThatCanContainCustomNumberFormats;
++ (unsigned char)styleOwnerPathType;
 + (id)swapTuplesForParagraphStyleMutations:(id)arg1 forReferencingProperty:(int)arg2 forStyleOwner:(id)arg3;
 + (id)valueAxisStyleIdentifierForRoleIndex:(unsigned int)arg1 ordinal:(unsigned int)arg2;
 
 - (unsigned int)addParagraphStyle:(id)arg1;
+- (void)addReferenceLineForAxisID:(id)arg1 nonStyle:(id)arg2 style:(id)arg3 uuid:(id)arg4;
 - (void)addViewStyleProxyForMutationTuples:(id)arg1 layouts:(id)arg2;
-- (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (id)allStyleOwners;
-- (void)applyChartStyleState:(id)arg1;
+- (id)allStylesAndNonStylesThatCanHaveCustomNumberFormats;
+- (id)applyStyleSwapTuple:(id)arg1;
 - (id)applyStyleSwapTuples:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateDefaultLegendPositionIfNeededWithOptionalLayout:(id)arg1;
 - (id)categoryAxisNonstyleAtIndex:(unsigned int)arg1;
 - (id)categoryAxisStyleAtIndex:(unsigned int)arg1;
 - (unsigned int)categoryAxisStyleCount;
@@ -127,16 +137,10 @@
 - (id)chartStyleState;
 - (id)chartType;
 - (void)chartTypeDidChangeWithDetails:(id)arg1;
-- (id)childCommandForApplyThemeCommand:(id)arg1;
 - (id)childInfos;
+- (id)clamped3DRotationPropertyObject;
 - (void)clearParent;
 - (void)clearViewStyleProxyForLayouts:(id)arg1;
-- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (id)commandSetCategoryName:(id)arg1 forCategoryIndex:(unsigned int)arg2;
-- (id)commandSetSeriesName:(id)arg1 forSeriesIndex:(unsigned int)arg2;
-- (id)commandToApplyViewProxiesToModel;
-- (id)commandToChangeAllChartFontsToFamilyName:(id)arg1;
-- (id)commandToScaleAllChartFontsBy:(float)arg1;
 - (id)context;
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -147,14 +151,18 @@
 - (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })defaultLayoutSettings;
 - (id)defaultProperties;
 - (int)defaultPropertyForGeneric:(int)arg1;
+- (void)deleteReferenceLineForAxisID:(id)arg1 uuid:(id)arg2;
 - (BOOL)displayMessageOnRepCreation;
+- (id)documentStylesheet;
 - (id)drawableInfo;
 - (int)elementKind;
 - (id)fillsForSeriesAndTheme;
 - (float)floatValueForProperty:(int)arg1 defaultValue:(float)arg2;
 - (id)g_genericToDefaultPropertyMap;
+- (id)g_operationPropertyNameForGenericProperty:(int)arg1;
 - (id)geometry;
 - (int)gridDirection;
+- (BOOL)gridEqualToDefaultGrid;
 - (BOOL)hasFloatValueForProperty:(int)arg1 value:(float*)arg2;
 - (BOOL)hasIntValueForProperty:(int)arg1 value:(int*)arg2;
 - (BOOL)hasObjectValueForProperty:(int)arg1 value:(id*)arg2;
@@ -165,7 +173,7 @@
 - (double)informationalMessageDuration;
 - (id)informationalMessageString;
 - (id)init;
-- (id)initWithChartType:(id)arg1 legendShowing:(id)arg2 chartBodyFrame:(id)arg3 chartAreaFrame:(id)arg4 circumscribingFrame:(id)arg5 legendFrame:(id)arg6 stylePreset:(id)arg7 privateSeriesStyles:(id)arg8 chartNonStyle:(id)arg9 legendNonStyle:(id)arg10 valueAxisNonStyles:(id)arg11 categoryAxisNonStyles:(id)arg12 seriesNonStyles:(id)arg13;
+- (id)initWithChartType:(id)arg1 legendShowing:(id)arg2 chartBodyFrame:(id)arg3 chartAreaFrame:(id)arg4 circumscribingFrame:(id)arg5 legendFrame:(id)arg6 stylePreset:(id)arg7 privateSeriesStyles:(id)arg8 chartNonStyle:(id)arg9 legendNonStyle:(id)arg10 valueAxisNonStyles:(id)arg11 categoryAxisNonStyles:(id)arg12 seriesNonStyles:(id)arg13 refLineNonStylesMap:(id)arg14 refLineStylesMap:(id)arg15;
 - (int)intValueForProperty:(int)arg1 defaultValue:(int)arg2;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (BOOL)isPhantom;
@@ -176,8 +184,8 @@
 - (id)legend;
 - (id)legendNonStyle;
 - (id)legendStyle;
-- (void)loadFromPreUFFArchive:(const struct ChartInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct ChartModelArchive {} *x4; struct Reference {} *x5; struct LegendModelArchive {} *x6; struct RectArchive {} *x7; struct RepeatedPtrField<TSP::Reference> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<TSP::Reference> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; struct RepeatedPtrField<TSP::Reference> { void **x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; struct RepeatedPtrField<TSP::Reference> { void **x_11_1_1; int x_11_1_2; int x_11_1_3; int x_11_1_4; } x11; struct RepeatedPtrField<TSP::Reference> { void **x_12_1_1; int x_12_1_2; int x_12_1_3; int x_12_1_4; } x12; int x13; int x14; struct SparseReferenceArrayArchive {} *x15; struct SparseReferenceArrayArchive {} *x16; struct Reference {} *x17; struct Reference {} *x18; struct Point {} *x19; struct Reference {} *x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; int x22; int x23; bool x24; int x25; unsigned int x26[1]; }*)arg1 unarchiver:(id)arg2 persistentChartInfo:(id)arg3;
-- (void)loadFromUnityArchive:(const struct ChartArchive { int (**x1)(); struct ExtensionSet { struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_3_1_1; } x3; int x4; int x5; struct RectArchive {} *x6; struct Reference {} *x7; struct ChartGridArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; int x12; bool x13; bool x14; struct Reference {} *x15; struct Reference {} *x16; struct RepeatedPtrField<TSP::Reference> { void **x_17_1_1; int x_17_1_2; int x_17_1_3; int x_17_1_4; } x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; struct SparseReferenceArrayArchive {} *x22; struct SparseReferenceArrayArchive {} *x23; struct RepeatedPtrField<TSP::Reference> { void **x_24_1_1; int x_24_1_2; int x_24_1_3; int x_24_1_4; } x24; unsigned int x25; int x26; unsigned int x27[1]; }*)arg1 unarchiver:(id)arg2 persistentChartInfo:(id)arg3;
+- (void)loadFromPreUFFArchive:(const struct ChartInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct ChartModelArchive {} *x6; struct Reference {} *x7; struct LegendModelArchive {} *x8; struct RectArchive {} *x9; struct RepeatedPtrField<TSP::Reference> { void **x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; struct RepeatedPtrField<TSP::Reference> { void **x_11_1_1; int x_11_1_2; int x_11_1_3; int x_11_1_4; } x11; struct RepeatedPtrField<TSP::Reference> { void **x_12_1_1; int x_12_1_2; int x_12_1_3; int x_12_1_4; } x12; struct RepeatedPtrField<TSP::Reference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::Reference> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; int x15; int x16; struct SparseReferenceArray {} *x17; struct SparseReferenceArray {} *x18; struct Reference {} *x19; struct Reference {} *x20; struct Point {} *x21; struct Reference {} *x22; struct RepeatedPtrField<TSP::Reference> { void **x_23_1_1; int x_23_1_2; int x_23_1_3; int x_23_1_4; } x23; int x24; int x25; bool x26; }*)arg1 unarchiver:(id)arg2 persistentChartInfo:(id)arg3;
+- (void)loadFromUnityArchive:(const struct ChartArchive { int (**x1)(); struct ExtensionSet { struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_3_1_1; } x3; unsigned int x4[1]; int x5; int x6; int x7; struct RectArchive {} *x8; struct Reference {} *x9; struct ChartGridArchive {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; struct Reference {} *x14; int x15; bool x16; bool x17; struct Reference {} *x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; struct RepeatedPtrField<TSP::Reference> { void **x_22_1_1; int x_22_1_2; int x_22_1_3; int x_22_1_4; } x22; struct RepeatedPtrField<TSP::Reference> { void **x_23_1_1; int x_23_1_2; int x_23_1_3; int x_23_1_4; } x23; struct SparseReferenceArray {} *x24; struct SparseReferenceArray {} *x25; struct RepeatedPtrField<TSP::Reference> { void **x_26_1_1; int x_26_1_2; int x_26_1_3; int x_26_1_4; } x26; unsigned int x27; }*)arg1 unarchiver:(id)arg2 persistentChartInfo:(id)arg3;
 - (id)masterFontNameForInspectors;
 - (float)maximumExplosion;
 - (float)maximumExplosionOfAllSeriesExcept:(id)arg1;
@@ -185,10 +193,11 @@
 - (float)minFrameDimensionForRadius:(float)arg1 withMaxExplosion:(float)arg2;
 - (struct CGSize { float x1; float x2; })minimumChartBodySize;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)model;
 - (void)modelDidInvalidateWithDetails:(id)arg1;
 - (id)modelForDataSetIndex:(unsigned int)arg1;
+- (unsigned int)multiDataSetIndex;
 - (id)newChartStylePresetByExampleWithPresetIndex:(unsigned int)arg1 forTheme:(id)arg2;
 - (id)newChartStylePresetByExampleWithPresetIndex:(unsigned int)arg1 withSeriesCount:(unsigned int)arg2 forTheme:(id)arg3;
 - (id)nonStyleForAxis:(id)arg1;
@@ -197,10 +206,10 @@
 - (id)nonstyle;
 - (unsigned int)numberOfThemeSeriesStyles;
 - (id)objectValueForProperty:(int)arg1;
-- (id)p_allStylesAndNonStylesThatCanHaveCustomNumberFormats;
-- (void)p_breakUpFontName:(id)arg1 isBold:(BOOL*)arg2 isItalic:(BOOL*)arg3;
+- (id)operationPropertyNameFromGenericProperty:(int)arg1;
 - (id)p_copyNonStyleArray:(id)arg1 inContext:(id)arg2;
 - (id)p_copyStyleAndNonStyleArray:(id)arg1 withZone:(struct _NSZone { }*)arg2 context:(id)arg3;
+- (id)p_copyStyleAndNonStyleMap:(id)arg1 withZone:(struct _NSZone { }*)arg2 context:(id)arg3;
 - (id)p_copyStyleArray:(id)arg1 inContext:(id)arg2 withMapper:(id)arg3;
 - (float)p_dataSetNameAccomodationWithOptionalLayout:(id)arg1;
 - (void)p_duplicatePersistableMembersOfCopiedChartUsingContext:(id)arg1;
@@ -209,27 +218,30 @@
 - (id)p_init;
 - (void)p_invalidateCachesInLayouts:(id)arg1;
 - (unsigned int)p_paragraphStyleIndexOfFirstCategoryAxisParagraphStyle;
-- (void)p_setChartType:(id)arg1 andSetLegendDefaults:(BOOL)arg2;
-- (void)p_setChartType:(id)arg1 andSetLegendDefaults:(BOOL)arg2 gridRowIds:(id)arg3 gridColumnIds:(id)arg4;
+- (unsigned int)p_refLineIndexWithUUID:(id)arg1 nonStyleItems:(id)arg2;
+- (BOOL)p_refLineNonStyleMapIsValid;
 - (void)p_setDrawableInfo:(id)arg1;
-- (id)p_swapTuplesForApplyingPreset:(id)arg1 preservingAppearance:(BOOL)arg2;
-- (id)p_swapTuplesForApplyingPresetRemovingOverrides:(id)arg1;
-- (id)p_swapTuplesForMutations:(id)arg1 isForImport:(BOOL)arg2;
+- (id)p_swapTuplesForMutations:(id)arg1;
 - (float)p_titleAccommodationWithLegendSize:(struct CGSize { float x1; float x2; })arg1 optionalLayout:(id)arg2;
+- (id)p_uuidForRefLineOnAxis:(id)arg1 havingNonStyle:(id)arg2;
 - (id)paragraphStyleAtIndex:(unsigned int)arg1;
 - (id)paragraphStyleForSelectionPath:(id)arg1;
 - (int)paragraphStylePropertyForSelectionPath:(id)arg1;
 - (id)paragraphStyles;
-- (void)performBlockWithStylesheetForAddingStyles:(id)arg1;
 - (void)performDeferredUpgradeAndImportOperations;
-- (void)performUpgradeForPersistentChartInfo:(id)arg1 archiveVersion:(unsigned long long)arg2 innerChartFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 isFromPasteboard:(BOOL)arg4;
 - (id)preset;
 - (struct CGPoint { float x1; float x2; })previewOrigin;
 - (float)radiusForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withMaxExplosion:(float)arg2;
+- (id)referenceLineNonStyleForAxisID:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)referenceLineNonStyleForAxisID:(id)arg1 uuid:(id)arg2 outIndex:(unsigned int*)arg3;
+- (id)referenceLineNonStyleItemsForAxisID:(id)arg1;
+- (id)referenceLineStyleForAxisID:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)referenceLineStyleForAxisID:(id)arg1 atIndex:(unsigned int)arg2 privateStyleOnly:(BOOL)arg3;
+- (BOOL)referenceLineStyleIsPrivate:(id)arg1;
 - (Class)repClass;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })resizedLegendFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 oldChartSize:(struct CGSize { float x1; float x2; })arg2 newChartSize:(struct CGSize { float x1; float x2; })arg3;
 - (float)sageDepthFactorForExport;
-- (void)saveToUnityArchive:(struct ChartArchive { int (**x1)(); struct ExtensionSet { struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_3_1_1; } x3; int x4; int x5; struct RectArchive {} *x6; struct Reference {} *x7; struct ChartGridArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; int x12; bool x13; bool x14; struct Reference {} *x15; struct Reference {} *x16; struct RepeatedPtrField<TSP::Reference> { void **x_17_1_1; int x_17_1_2; int x_17_1_3; int x_17_1_4; } x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; struct SparseReferenceArrayArchive {} *x22; struct SparseReferenceArrayArchive {} *x23; struct RepeatedPtrField<TSP::Reference> { void **x_24_1_1; int x_24_1_2; int x_24_1_3; int x_24_1_4; } x24; unsigned int x25; int x26; unsigned int x27[1]; }*)arg1 persistentChartInfo:(id)arg2 archiver:(id)arg3;
+- (void)saveToUnityArchive:(struct ChartArchive { int (**x1)(); struct ExtensionSet { struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_3_1_1; } x3; unsigned int x4[1]; int x5; int x6; int x7; struct RectArchive {} *x8; struct Reference {} *x9; struct ChartGridArchive {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; struct Reference {} *x14; int x15; bool x16; bool x17; struct Reference {} *x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; struct RepeatedPtrField<TSP::Reference> { void **x_22_1_1; int x_22_1_2; int x_22_1_3; int x_22_1_4; } x22; struct RepeatedPtrField<TSP::Reference> { void **x_23_1_1; int x_23_1_2; int x_23_1_3; int x_23_1_4; } x23; struct SparseReferenceArray {} *x24; struct SparseReferenceArray {} *x25; struct RepeatedPtrField<TSP::Reference> { void **x_26_1_1; int x_26_1_2; int x_26_1_3; int x_26_1_4; } x26; unsigned int x27; }*)arg1 persistentChartInfo:(id)arg2 archiver:(id)arg3;
 - (id)scaleAllStrokesInStyle:(id)arg1 byRatio:(float)arg2;
 - (id)sceneAreaLayoutItemCache;
 - (id)seriesNonstyleForSeriesIndex:(unsigned int)arg1;
@@ -238,8 +250,7 @@
 - (BOOL)seriesStyleIsPrivate:(id)arg1;
 - (void)setCategoryAxisNonstyle:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setChartNonstyle:(id)arg1;
-- (void)setChartType:(id)arg1;
-- (void)setChartType:(id)arg1 gridRowIds:(id)arg2 gridColumnIds:(id)arg3;
+- (void)setChartType:(id)arg1 andSetLegendDefaults:(BOOL)arg2 gridRowIds:(id)arg3 gridColumnIds:(id)arg4 gridEqualToDefaultGrid:(BOOL)arg5;
 - (void)setDefaultLayoutSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })arg1;
 - (void)setDefaultLegendPositionIfNeededWithOptionalLayout:(id)arg1;
 - (void)setDisplayMessageOnRepCreation:(BOOL)arg1;
@@ -257,6 +268,8 @@
 - (void)setModel:(id)arg1;
 - (void)setPreset:(id)arg1;
 - (void)setPreviewOrigin:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setReferenceLineNonStyleItem:(id)arg1 forAxisID:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)setReferenceLineStyle:(id)arg1 forAxisID:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)setSeriesNonstyle:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setValueAxisNonstyle:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setViewStyleProxyParagraphStyleArray:(id)arg1 layouts:(id)arg2;
@@ -265,15 +278,20 @@
 - (int)stringPropertyForSelectionPath:(id)arg1;
 - (id)style;
 - (id)styleForAxis:(id)arg1;
+- (id)styleOwnerForPath:(id)arg1;
 - (id)styleOwnerForRef:(id)arg1;
 - (id)styleOwnerForSelectionPath:(id)arg1;
 - (id)styleOwnerFromSwapType:(int)arg1 andIndex:(unsigned int)arg2;
+- (id)styleOwnerPathForRef:(id)arg1;
+- (id)styleOwnerPathForSemanticTag:(id)arg1;
+- (id)styleOwnerPathForStyleOwner:(id)arg1;
+- (id)styleOwnerRefForSemanticTag:(id)arg1;
 - (id)styleOwnerRefForStyleOwner:(id)arg1;
-- (id)swapTuplesForApplyingPreset:(id)arg1 withBehavior:(unsigned int)arg2;
-- (id)swapTuplesForMutations:(id)arg1;
-- (id)swapTuplesForMutationsForImport:(id)arg1;
+- (id)styleOwnerRefForStyleOwnerPath:(id)arg1;
+- (id)swapTuplesForMutations:(id)arg1 forImport:(BOOL)arg2;
 - (id)swapTuplesForParagraphStyleMutations:(id)arg1 forReferencingProperty:(int)arg2;
 - (id)tuplesToApplyState:(id)arg1;
+- (void)updateAfterPaste;
 - (void)updateTitlesForExportingModel:(id)arg1;
 - (id)valueAxisNonstyleAtIndex:(unsigned int)arg1;
 - (id)valueAxisStyleAtIndex:(unsigned int)arg1;

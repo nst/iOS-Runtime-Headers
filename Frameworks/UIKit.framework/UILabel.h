@@ -18,8 +18,8 @@
     float _minimumScaleFactor;
     int _numberOfLines;
     float _preferredMaxLayoutWidth;
+    float _previousBaselineOffsetFromBottom;
     float _previousFirstLineBaseline;
-    float _previousLastLineBaseline;
     _UILabelScaledMetrics *_scaledMetrics;
     struct CGSize { 
         float width; 
@@ -228,6 +228,8 @@
 - (float)minimumFontSize;
 - (float)minimumScaleFactor;
 - (int)numberOfLines;
+- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forceWordWrap:(BOOL)arg2;
 - (float)preferredMaxLayoutWidth;
 - (struct CGSize { float x1; float x2; })rawSize;
 - (float)rc_baselineOffsetFromBottom;

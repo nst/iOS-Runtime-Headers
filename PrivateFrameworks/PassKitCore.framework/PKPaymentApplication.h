@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSString;
+@class NSDecimalNumber, NSString;
 
 @interface PKPaymentApplication : NSObject <NSSecureCoding> {
     NSString *_applicationIdentifier;
     NSString *_dpanIdentifier;
     NSString *_dpanSuffix;
+    BOOL _inAppPINRequired;
+    NSDecimalNumber *_inAppPINRequiredAmount;
+    NSString *_inAppPINRequiredCurrency;
     int _paymentNetworkIdentifier;
+    NSString *_sanitizedDPAN;
     NSString *_secureElementIdentifier;
     int _state;
     BOOL _supportsContactlessPayment;
@@ -18,7 +22,11 @@
 @property(copy) NSString * applicationIdentifier;
 @property(setter=setDPANIdentifier:,copy) NSString * dpanIdentifier;
 @property(setter=setDPANSuffix:,copy) NSString * dpanSuffix;
+@property BOOL inAppPINRequired;
+@property(copy) NSDecimalNumber * inAppPINRequiredAmount;
+@property(copy) NSString * inAppPINRequiredCurrency;
 @property int paymentNetworkIdentifier;
+@property(setter=setSanitizedDPAN:,copy) NSString * sanitizedDPAN;
 @property(copy) NSString * secureElementIdentifier;
 @property int state;
 @property(readonly) NSString * stateAsString;
@@ -34,16 +42,24 @@
 - (id)dpanSuffix;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)inAppPINRequired;
+- (id)inAppPINRequiredAmount;
+- (id)inAppPINRequiredCurrency;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPaymentApplicationDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToPaymentApplication:(id)arg1;
 - (int)paymentNetworkIdentifier;
+- (id)sanitizedDPAN;
 - (id)secureElementIdentifier;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setDPANIdentifier:(id)arg1;
 - (void)setDPANSuffix:(id)arg1;
+- (void)setInAppPINRequired:(BOOL)arg1;
+- (void)setInAppPINRequiredAmount:(id)arg1;
+- (void)setInAppPINRequiredCurrency:(id)arg1;
 - (void)setPaymentNetworkIdentifier:(int)arg1;
+- (void)setSanitizedDPAN:(id)arg1;
 - (void)setSecureElementIdentifier:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setSupportsContactlessPayment:(BOOL)arg1;

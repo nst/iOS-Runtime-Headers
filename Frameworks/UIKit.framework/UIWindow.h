@@ -6,23 +6,18 @@
    See Warning(s) below.
  */
 
-@class CALayer, FBSScene, NSArray, NSMutableArray, NSMutableSet, NSString, NSUndoManager, UIColor, UIResponder, UIScreen, UITraitCollection, UIView, UIViewController, _UIResponderSelectionCursor, _UISimulatedApplicationResizeGestureRecognizerDelegate, _UISystemGestureGateGestureRecognizer, _UIViewControllerNullAnimationTransitionCoordinator, _UIWindowAnimationController;
+@class CALayer, FBSScene, NSArray, NSMutableArray, NSMutableSet, NSString, NSUndoManager, UIColor, UIResponder, UIScreen, UITraitCollection, UIView, UIViewController, _UIFocusEngine, _UISystemGestureGateGestureRecognizer, _UIViewControllerNullAnimationTransitionCoordinator, _UIWindowAnimationController;
 
 @interface UIWindow : UIView <NSISEngineDelegate> {
     _UIWindowAnimationController *__animationController;
     BOOL __containedGestureRecognizersShouldRespectGestureServerInstructions;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __rotationCompleteBlock;
-
+    int __deferredLaunchOrientation;
     BOOL __shouldHitTestEntireScreen;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id __shouldPreventRotationHook;
 
-    _UISimulatedApplicationResizeGestureRecognizerDelegate *__simulatedApplicationResizeGestureRecognizerDelegate;
     BOOL __usesLegacySupportedOrientationChecks;
     BOOL _attachable;
     int _containedGestureRecognizerMaximumState;
@@ -38,13 +33,13 @@
     UIView *_exclusiveTouchView;
     id _fingerInfo;
     UIResponder *_firstResponder;
+    _UIFocusEngine *_focusEngine;
     int _fromWindowOrientation;
     int _horizontalSizeClassStateRestorationOverride;
     UIView *_lastMouseDownView;
     UIView *_lastMouseEnteredView;
     double _lastTouchTimestamp;
     id _layerContext;
-    _UIResponderSelectionCursor *_responderSelectionCursor;
     NSArray *_rootViewConstraints;
     UIViewController *_rootViewController;
     NSMutableArray *_rotationViewControllers;
@@ -100,6 +95,7 @@
         unsigned int statusBarFollowsOrientation : 1; 
         unsigned int secure : 1; 
         unsigned int isMainSceneSized : 1; 
+        unsigned int debugNeedsHighlightItemOverlayUpdate : 1; 
     } _windowFlags;
     NSArray *_windowInternalConstraints;
     float _windowLevel;
@@ -111,13 +107,13 @@
 @property(getter=_animationController,setter=_setAnimationController:,retain) _UIWindowAnimationController * _animationController;
 @property(setter=_setContainedGestureRecognizersShouldRespectGestureServerInstructions:) BOOL _containedGestureRecognizersShouldRespectGestureServerInstructions;
 @property(setter=_setDeferredLaunchBlock:,copy) id _deferredLaunchBlock;
+@property(setter=_setDeferredLaunchOrientation:) int _deferredLaunchOrientation;
+@property(setter=_setFocusEngine:,retain) _UIFocusEngine * _focusEngine;
 @property(setter=_setLegacyOrientationChecks:) BOOL _legacyOrientationChecks;
 @property(setter=_setRootViewConstraints:,copy) NSArray * _rootViewConstraints;
-@property(setter=_setRotationCompleteBlock:,copy) id _rotationCompleteBlock;
 @property(setter=_setShouldDisableTransformLayerScalingForSnapshotting:) BOOL _shouldDisableTransformLayerScalingForSnapshotting;
 @property(setter=_setShouldHitTestEntireScreen:) BOOL _shouldHitTestEntireScreen;
 @property(setter=_setShouldPreventRotationHook:,copy) id _shouldPreventRotationHook;
-@property(setter=_setSimulatedApplicationResizeGestureRecognizerDelegate:,retain) _UISimulatedApplicationResizeGestureRecognizerDelegate * _simulatedApplicationResizeGestureRecognizerDelegate;
 @property(setter=_setTraitCollectionChangeTransitionCoordinator:,retain) _UIViewControllerNullAnimationTransitionCoordinator * _traitCollectionChangeTransitionCoordinator;
 @property(readonly) BOOL _usesLegacySupportedOrientationChecks;
 @property(setter=_setWindowInternalConstraints:,copy) NSArray * _windowInternalConstraints;
@@ -180,6 +176,7 @@
 - (struct CGSize { float x1; float x2; })MPU_rootViewSize;
 - (id)__clientsForRotationCallbacks;
 - (struct { int x1; int x2; })__sizeClassPair;
+- (BOOL)_accessibilityIsModalWithKeyboard;
 - (void)_addRotationViewController:(id)arg1;
 - (void)_addTintView:(id)arg1;
 - (void)_adjustSizeClassesAndResizeWindowToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -230,9 +227,11 @@
 - (void)_createSystemGestureGateGestureRecognizerIfNeeded;
 - (id)_currentTintView;
 - (id)_debugName;
+- (id)_deepestPreferredFocusItem;
 - (id)_deepestUnambiguousResponder;
 - (id)_deferralPropertiesWithContextID:(unsigned int)arg1;
 - (id)_deferredLaunchBlock;
+- (int)_deferredLaunchOrientation;
 - (id)_descendantWithAmbiguousLayout;
 - (void)_destroyContext;
 - (void)_destroyContextFromScreen:(id)arg1;
@@ -249,9 +248,11 @@
 - (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3 skipNotification:(BOOL)arg4;
 - (id)_firstResponder;
+- (id)_focusEngine;
+- (id)_focusedView;
+- (void)_focusedViewDidChange:(id)arg1;
 - (void)_forceTwoPartRotationAnimation:(BOOL)arg1;
 - (int)_fromWindowOrientation;
-- (void)_geometryDidChangeForView:(id)arg1;
 - (void)_handleDeviceOrientationChange:(id)arg1;
 - (void)_handleStatusBarOrientationChange:(id)arg1;
 - (BOOL)_hasContext;
@@ -264,7 +265,7 @@
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 debugName:(id)arg2 scene:(id)arg3 attached:(BOOL)arg4;
 - (id)_initWithOrientation:(int)arg1;
 - (void)_initializeLayoutEngine;
-- (void)_installSimulatedApplicationResizeGesture;
+- (void)_installFocusEngine;
 - (void)_invalidateWindowInternalConstraints;
 - (BOOL)_isAnyWindowRotating;
 - (BOOL)_isClippedByScreenJail;
@@ -273,7 +274,6 @@
 - (BOOL)_isInAWindow;
 - (BOOL)_isLoweringAnchoringConstraints;
 - (BOOL)_isOffsetByScreenJail;
-- (BOOL)_isPoint:(struct CGPoint { float x1; float x2; })arg1 relativeToPoint:(struct CGPoint { float x1; float x2; })arg2 inDirection:(int)arg3;
 - (BOOL)_isRotatedByScreenJail;
 - (BOOL)_isScaledByScreenJail;
 - (BOOL)_isScrollingEnabledForView:(id)arg1;
@@ -289,7 +289,6 @@
 - (void)_makeExternalKeyWindow;
 - (void)_makeKeyWindowIgnoringOldKeyWindow:(BOOL)arg1;
 - (void)_matchDeviceOrientation;
-- (void)_moveResponderSelectionInDirection:(int)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_moveWithEvent:(id)arg1;
 - (BOOL)_needsShakesWhenInactive;
 - (id)_normalInheritedTintColor;
@@ -302,6 +301,7 @@
 - (void)_registerScrollToTopView:(id)arg1;
 - (void)_registerViewForSubtreeMonitoring:(id)arg1;
 - (id)_registeredScrollToTopViews;
+- (void)_removeFocusEngine;
 - (void)_removeRotationViewController:(id)arg1;
 - (void)_removeTintView:(id)arg1;
 - (void)_resignKeyWindowStatus;
@@ -314,7 +314,6 @@
 - (id)_rootViewConstraintsUpdateIfNecessaryForView:(id)arg1;
 - (void)_rotateToBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withAnimator:(id)arg2 transitionContext:(id)arg3;
 - (void)_rotateWindowToOrientation:(int)arg1 updateStatusBar:(BOOL)arg2 duration:(double)arg3 skipCallbacks:(BOOL)arg4;
-- (id)_rotationCompleteBlock;
 - (id)_rotationViewControllers;
 - (id)_scene;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sceneBounds;
@@ -322,7 +321,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sceneReferenceBounds;
 - (id)_screen;
 - (void)_screenWillTransitionToTraitCollection:(id)arg1;
-- (void)_scrollResponderToVisible:(id)arg1;
 - (void)_scrollToTopViewsUnderScreenPointIfNecessary:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id)arg2;
 - (void)_sendButtonGesturesForEvent:(id)arg1;
 - (void)_sendButtonsForEvent:(id)arg1;
@@ -331,8 +329,10 @@
 - (void)_setAnimationController:(id)arg1;
 - (void)_setContainedGestureRecognizersShouldRespectGestureServerInstructions:(BOOL)arg1;
 - (void)_setDeferredLaunchBlock:(id)arg1;
+- (void)_setDeferredLaunchOrientation:(int)arg1;
 - (void)_setExclusiveTouchView:(id)arg1;
 - (void)_setFirstResponder:(id)arg1;
+- (void)_setFocusEngine:(id)arg1;
 - (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sendTraitNotifications:(BOOL)arg2;
 - (void)_setHidden:(BOOL)arg1 forced:(BOOL)arg2;
 - (void)_setIsLoweringAnchoringConstraints:(BOOL)arg1;
@@ -340,6 +340,7 @@
 - (void)_setLegacyOrientationChecks:(BOOL)arg1;
 - (void)_setMouseDownView:(id)arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (void)_setMouseEnteredView:(id)arg1;
+- (void)_setNeedsFocusItemOverlayUpdate;
 - (void)_setRootViewConstraints:(id)arg1;
 - (void)_setRotatableClient:(id)arg1 toOrientation:(int)arg2 applyTransformToWindow:(BOOL)arg3 updateStatusBar:(BOOL)arg4 duration:(double)arg5 force:(BOOL)arg6 isRotating:(BOOL)arg7;
 - (void)_setRotatableClient:(id)arg1 toOrientation:(int)arg2 duration:(double)arg3 force:(BOOL)arg4;
@@ -349,13 +350,11 @@
 - (void)_setRotatableViewOrientation:(int)arg1 duration:(double)arg2 force:(BOOL)arg3;
 - (void)_setRotatableViewOrientation:(int)arg1 updateStatusBar:(BOOL)arg2 duration:(double)arg3;
 - (void)_setRotatableViewOrientation:(int)arg1 updateStatusBar:(BOOL)arg2 duration:(double)arg3 force:(BOOL)arg4;
-- (void)_setRotationCompleteBlock:(id)arg1;
 - (void)_setScene:(id)arg1;
 - (void)_setSecure:(BOOL)arg1;
 - (void)_setShouldDisableTransformLayerScalingForSnapshotting:(BOOL)arg1;
 - (void)_setShouldHitTestEntireScreen:(BOOL)arg1;
 - (void)_setShouldPreventRotationHook:(id)arg1;
-- (void)_setSimulatedApplicationResizeGestureRecognizerDelegate:(id)arg1;
 - (void)_setStateRestorationVerticalSizeClass:(int)arg1 horizontalSizeClass:(int)arg2;
 - (void)_setSystemGestureRecognitionIsPossible:(BOOL)arg1 andTouchesAreCancelled:(BOOL)arg2;
 - (void)_setTouchMap:(struct __CFDictionary { }*)arg1;
@@ -373,9 +372,10 @@
 - (BOOL)_shouldParticipateInVirtualResizing;
 - (BOOL)_shouldPrepareScreenForWindow;
 - (id)_shouldPreventRotationHook;
+- (BOOL)_shouldPropigateTraitCollectionChanges;
 - (BOOL)_shouldResizeWithScene;
+- (BOOL)_shouldUseRemoteContext;
 - (BOOL)_shouldZoom;
-- (id)_simulatedApplicationResizeGestureRecognizerDelegate;
 - (void)_slideFooterFromOrientation:(int)arg1 toOrientation:(int)arg2 startSnapshot:(id)arg3 endSnapshot:(id)arg4 duration:(double)arg5;
 - (void)_slideHeaderView:(id)arg1 andFooterView:(id)arg2 offScreen:(BOOL)arg3 forInterfaceOrientation:(int)arg4;
 - (id)_subtreeMonitorsForView:(id)arg1;
@@ -407,13 +407,13 @@
 - (void)_updateContextOrderingAndSetLayerHidden:(BOOL)arg1;
 - (void)_updateCurrentTintView;
 - (void)_updateCurrentTintViewForPotentialTintView:(id)arg1;
+- (void)_updateFocusItemOverlayViews;
 - (void)_updateInterfaceOrientationFromDeviceOrientation;
 - (void)_updateInterfaceOrientationFromDeviceOrientation:(BOOL)arg1;
 - (void)_updateInterfaceOrientationFromDeviceOrientationIfRotationEnabled:(BOOL)arg1;
 - (void)_updateIsSceneSizedFlag;
 - (void)_updateRootViewConstraintsForInterfaceOrientationAndStatusBarHeight;
 - (void)_updateSceneIfNecessary;
-- (void)_updateSimulatedApplicationResizeGestureForInterfaceOrientationChange;
 - (void)_updateStatusBarToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)_updateStatusBarToInterfaceOrientation:(int)arg1 duration:(double)arg2 fenceID:(int)arg3 animation:(int)arg4;
 - (void)_updateToInterfaceOrientation:(int)arg1 animated:(BOOL)arg2;
@@ -425,10 +425,10 @@
 - (void)_updateWindowTraitsAndNotify:(BOOL)arg1;
 - (BOOL)_usesLegacySupportedOrientationChecks;
 - (BOOL)_usesWindowServerHitTesting;
+- (id)_viewControllersInPreferredFocusedChain;
 - (void)_willChangeToSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2 screen:(id)arg3 withTransitionCoordinator:(id)arg4;
 - (void)_willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_willTransitionToVirtualHorizontalSizeClass:(int)arg1 virtualVerticalSizeClass:(int)arg2;
-- (id)_window;
 - (id)_window;
 - (BOOL)_windowControlsStatusBarOrientation;
 - (int)_windowInterfaceOrientation;
@@ -471,6 +471,7 @@
 - (id)initWithContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)interfaceOrientation;
+- (BOOL)isAncestorOfItem:(id)arg1;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isInterfaceAutorotationDisabled;
 - (BOOL)isInternalWindow;
@@ -479,18 +480,18 @@
 - (BOOL)isUsingOnePartRotationAnimation;
 - (BOOL)keepContextInBackground;
 - (void)keyboardDidHide;
+- (void)layoutSubviews;
 - (float)level;
-- (void)loadFirstResponderScrollViewContentInDirection:(struct CGSize { float x1; float x2; })arg1;
 - (void)makeKey:(id)arg1;
 - (void)makeKeyAndOrderFront:(id)arg1;
 - (void)makeKeyAndVisible;
 - (void)makeKeyWindow;
 - (void)matchDeviceOrientation:(id)arg1;
-- (void)moveToNextResponderInDirection:(int)arg1;
 - (id)nextResponder;
 - (void)orderFront:(id)arg1;
 - (void)orderOut:(id)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)preferredFocusedItem;
 - (void)redo:(id)arg1;
 - (void)removeFromSuperview;
 - (id)removeTouchCaptureViewWithTag:(int)arg1;
@@ -511,6 +512,7 @@
 - (void)setHidden:(BOOL)arg1;
 - (void)setKeepContextInBackground:(BOOL)arg1;
 - (void)setLevel:(float)arg1;
+- (void)setNeedsPreferredFocusedItemUpdate;
 - (void)setResizesToFullScreen:(BOOL)arg1;
 - (void)setRootViewController:(id)arg1;
 - (void)setScreen:(id)arg1;
@@ -519,7 +521,6 @@
 - (void)synchronizeDrawingWithID:(int)arg1;
 - (void)synchronizeDrawingWithID:(int)arg1 count:(unsigned int)arg2;
 - (id)traitCollection;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)undo:(id)arg1;
 - (id)undoManager;
 - (void)updateConstraints;

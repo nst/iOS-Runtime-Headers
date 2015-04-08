@@ -7,18 +7,22 @@
 @interface MTLVertexAttribute : NSObject {
     BOOL _active;
     unsigned int _attributeIndex;
+    unsigned int _attributeType;
     NSString *_name;
 }
 
 @property(getter=isActive,readonly) BOOL active;
 @property(readonly) unsigned int attributeIndex;
+@property(readonly) unsigned int attributeType;
 @property(readonly) NSString * name;
 
 - (unsigned int)attributeIndex;
+- (unsigned int)attributeType;
 - (void)dealloc;
 - (id)description;
-- (id)initWithName:(id)arg1 attributeIndex:(unsigned int)arg2 isActive:(BOOL)arg3;
+- (id)initWithName:(id)arg1 attributeIndex:(unsigned int)arg2 attributeType:(unsigned int)arg3 isActive:(BOOL)arg4;
 - (BOOL)isActive;
 - (id)name;
+- (void)setAttributeType:(unsigned int)arg1;
 
 @end

@@ -30,7 +30,7 @@
 
     NSOperationQueue *fAmbientPressureQueue;
     double fAmbientPressureUpdateInterval;
-    int fAttitudeReferenceFrame;
+    unsigned int fAttitudeReferenceFrame;
     bool fCompassCalibrationHud;
 
   /* Error parsing encoded ivar type info: ^{CLConnectionClient={basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >={__compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> >={__rep=(?={__long=II*}{__short=(?=Cc)[11c]}{__raw=[3L]})}}}@@@^{CLConnection}{CLNameValuePair=^^?^{__CFDictionary}}{CLNameValuePair=^^?^{__CFDictionary}}{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >={__compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> >={__rep=(?={__long=II*}{__short=(?=Cc)[11c]}{__raw=[3L]})}}}@?@?@@?@?} */

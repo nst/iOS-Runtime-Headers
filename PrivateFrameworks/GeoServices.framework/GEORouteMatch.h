@@ -52,6 +52,7 @@
 - (id)description;
 - (double)distanceFromRoute;
 - (double)distanceTraveledOffRoute;
+- (double)fractionOfCurrentStepTraveled;
 - (unsigned int)hash;
 - (id)initWithComposedRoute:(id)arg1 routeStatus:(id)arg2;
 - (id)initWithRoute:(id)arg1 routeCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2 locationCoordinate:(struct { double x1; double x2; })arg3 stepIndex:(unsigned int)arg4 matchedCourse:(double)arg5 timestamp:(id)arg6;

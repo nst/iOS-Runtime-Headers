@@ -2,7 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class TSWPStorage;
+
 @interface TPPdfHyperlinkController : TSAPdfHyperlinkController {
+    TSWPStorage *mBodyStorage;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,9 +18,16 @@
     } mCanvasRect;
 }
 
++ (id)footnoteMarkNameForIndex:(unsigned int)arg1;
++ (id)footnoteRefNameForIndex:(unsigned int)arg1;
+
 - (id).cxx_construct;
+- (void)addHyperlinksForRep:(id)arg1 context:(struct CGContext { }*)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })canvasRect;
+- (id)destinationFromUrl:(id)arg1;
+- (BOOL)ignoreUrl:(id)arg1;
 - (id)initWithDocumentRoot:(id)arg1;
+- (BOOL)isDestination:(id)arg1;
 - (void)setCanvasRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

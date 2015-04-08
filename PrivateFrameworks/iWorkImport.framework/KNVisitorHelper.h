@@ -5,7 +5,7 @@
 @interface KNVisitorHelper : NSObject {
 }
 
-+ (id)commandGroupForSynchronizingPlaceholdersForSlide:(id)arg1 oldMasterSlidePropertySource:(id)arg2 newMasterSlidePropertySource:(id)arg3 alwaysMatchNewMaster:(BOOL)arg4 outNewZOrderArray:(id)arg5 outPlaceholdersForTags:(id)arg6;
++ (id)commandsForSynchronizingPlaceholdersForSlide:(id)arg1 oldMasterSlidePropertySource:(id)arg2 newMasterSlidePropertySource:(id)arg3 alwaysMatchNewMaster:(BOOL)arg4 outNewZOrderArray:(id)arg5 outPlaceholdersForTags:(id)arg6;
 + (BOOL)info:(id)arg1 hasSamePlaceholderTypeAsInfo:(id)arg2;
 + (id)infoInMasterSlidePropertySource:(id)arg1 correspondingToInfo:(id)arg2 inAbstractSlidePropertySource:(id)arg3;
 + (BOOL)infoIsPlaceholder:(id)arg1 inAbstractSlidePropertySource:(id)arg2;

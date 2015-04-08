@@ -14,18 +14,24 @@
     NSMutableArray *_localizedAttributions;
     NSString *_sourceIdentifier;
     unsigned int _sourceVersion;
+    NSMutableArray *_supportedComponentActions;
+    NSString *_webBaseActionURL;
 }
 
 @property(retain) NSMutableArray * attributionApps;
 @property(readonly) int* attributionRequirements;
 @property(readonly) unsigned int attributionRequirementsCount;
+@property(readonly) BOOL hasWebBaseActionURL;
 @property(retain) NSMutableArray * localizedAttributions;
 @property(retain) NSString * sourceIdentifier;
 @property unsigned int sourceVersion;
+@property(retain) NSMutableArray * supportedComponentActions;
+@property(retain) NSString * webBaseActionURL;
 
 - (void)addAttributionApps:(id)arg1;
 - (void)addAttributionRequirements:(int)arg1;
 - (void)addLocalizedAttribution:(id)arg1;
+- (void)addSupportedComponentActions:(id)arg1;
 - (id)attributionApps;
 - (id)attributionAppsAtIndex:(unsigned int)arg1;
 - (unsigned int)attributionAppsCount;
@@ -36,11 +42,13 @@
 - (void)clearAttributionApps;
 - (void)clearAttributionRequirements;
 - (void)clearLocalizedAttributions;
+- (void)clearSupportedComponentActions;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasWebBaseActionURL;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedAttributionAtIndex:(unsigned int)arg1;
@@ -53,8 +61,14 @@
 - (void)setLocalizedAttributions:(id)arg1;
 - (void)setSourceIdentifier:(id)arg1;
 - (void)setSourceVersion:(unsigned int)arg1;
+- (void)setSupportedComponentActions:(id)arg1;
+- (void)setWebBaseActionURL:(id)arg1;
 - (id)sourceIdentifier;
 - (unsigned int)sourceVersion;
+- (id)supportedComponentActions;
+- (id)supportedComponentActionsAtIndex:(unsigned int)arg1;
+- (unsigned int)supportedComponentActionsCount;
+- (id)webBaseActionURL;
 - (void)writeTo:(id)arg1;
 
 @end

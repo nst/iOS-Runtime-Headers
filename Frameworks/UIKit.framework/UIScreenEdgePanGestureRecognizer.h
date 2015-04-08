@@ -5,7 +5,6 @@
 @class NSString, _UIScreenEdgePanRecognizer;
 
 @interface UIScreenEdgePanGestureRecognizer : UIPanGestureRecognizer <_UIScreenEdgePanRecognizerDelegate> {
-    unsigned int _edges;
     _UIScreenEdgePanRecognizer *_recognizer;
 }
 

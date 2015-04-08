@@ -87,6 +87,7 @@
 - (void)synchronizeStateToDisk;
 - (void)synchronizeStateToDiskDoNotify:(BOOL)arg1;
 - (id)twcLogoURL;
+- (id)twcLogoURL:(id)arg1;
 - (id)twcURLString;
 - (BOOL)userGroupPrefsLockedWhenInit;
 - (void)writeDefaultValue:(id)arg1 forKey:(id)arg2;

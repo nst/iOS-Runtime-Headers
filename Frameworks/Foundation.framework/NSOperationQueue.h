@@ -26,6 +26,7 @@
 - (void)addOperationWithBlock:(id)arg1;
 - (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
 - (void)cancelAllOperations;
+- (void)cancelAllOperationsWithError:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)executeAndWaitForBlock:(id)arg1;

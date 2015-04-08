@@ -103,7 +103,9 @@
 - (void)invalidateRestrictions;
 - (void)invalidateSettings;
 - (BOOL)isBoolSettingLockedDownByRestrictions:(id)arg1;
+- (BOOL)isIntersectionSettingLockedDownByRestrictions:(id)arg1;
 - (BOOL)isSettingLockedDownByRestrictions:(id)arg1;
+- (BOOL)isUnionSettingLockedDownByRestrictions:(id)arg1;
 - (BOOL)isValueSettingLockedDownByRestrictions:(id)arg1;
 - (id)memberQueue;
 - (id)memberQueueClientRestrictions;

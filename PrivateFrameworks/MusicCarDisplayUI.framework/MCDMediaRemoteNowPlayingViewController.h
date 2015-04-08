@@ -26,6 +26,7 @@
     } __supportedCommandsFlags;
     UIAlertController *_actionSheetAlertController;
     double _elapsedTime;
+    NSString *_expectedPlaybackBundleIdentifier;
     BOOL _isScrubbing;
     MPUNowPlayingController *_nowPlayingController;
     NSDictionary *_nowPlayingInfo;
@@ -36,6 +37,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property(copy) NSString * expectedPlaybackBundleIdentifier;
 @property(readonly) unsigned int hash;
 @property(retain) NSDictionary * nowPlayingInfo;
 @property(readonly) Class superclass;
@@ -44,6 +46,8 @@
 - (unsigned int)_bestCommandForFastForwardPosition;
 - (unsigned int)_bestCommandForRewindPosition;
 - (struct _MRMediaRemoteCommandInfo { }*)_mediaCommandInfoForCommand:(unsigned int)arg1;
+- (void)_nowPlayingAppChangedIsPlaying:(id)arg1;
+- (BOOL)_nowPlayingBundleIDMatchesExpectedID;
 - (void)_performActionForRightCommand;
 - (void)_presentLikeBanActionSheet;
 - (double)_skipBackwardInterval;
@@ -55,6 +59,7 @@
 - (id)_titleForFeedbackCommand:(unsigned int)arg1;
 - (BOOL)_trackIsLiked;
 - (void)_updateAllContent;
+- (void)_updateNowPlayingDictionary:(id)arg1;
 - (void)_updatePlayControls;
 - (void)_updateSupportedCommands;
 - (void)_updateSupportedCommandsWithArray:(id)arg1;
@@ -62,6 +67,7 @@
 - (id)artistTextForNowPlayingController:(id)arg1;
 - (id)backgroundArtForNowPlayingController:(id)arg1;
 - (void)dealloc;
+- (id)expectedPlaybackBundleIdentifier;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)nowPlayingController:(id)arg1 elapsedTimeDidChange:(double)arg2;
 - (void)nowPlayingController:(id)arg1 nowPlayingApplicationDidChange:(id)arg2;
@@ -73,6 +79,8 @@
 - (BOOL)nowPlayingViewControllerIsPlaying:(id)arg1;
 - (BOOL)nowPlayingViewControllerIsShowingExplicitTrack:(id)arg1;
 - (double)playbackDurationForNowPlayingViewController:(id)arg1 withElapsedTime:(out double*)arg2;
+- (id)preferredFocusedItem;
+- (void)setExpectedPlaybackBundleIdentifier:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (id)titleForNowPlayingController:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

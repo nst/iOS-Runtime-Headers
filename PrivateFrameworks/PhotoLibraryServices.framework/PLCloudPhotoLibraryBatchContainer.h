@@ -21,6 +21,7 @@
 - (id)batchesSplitForError;
 - (unsigned int)count;
 - (void)dealloc;
+- (id)description;
 - (void)incrementRetryCount;
 - (id)init;
 - (id)lastAddedRecord;
@@ -30,6 +31,7 @@
 - (void)setReachedMinSplit:(BOOL)arg1;
 - (void)setRetryCount:(unsigned int)arg1;
 - (void)setWasSplit:(BOOL)arg1;
+- (void)validateResourcesAvailability;
 - (BOOL)wasSplit;
 
 @end

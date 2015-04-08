@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCServerContainer, NSString;
+@class BRCServerZone, NSString;
 
-@interface BRCSyncDownOperation : BRCOperation <BRCOperationSubclass> {
-    unsigned int _batchSize;
+@interface BRCSyncDownOperation : _BRCOperation <BRCOperationSubclass> {
     BOOL _hasCaughtUp;
     BOOL _isConsistent;
-    BRCServerContainer *_serverContainer;
+    BRCServerZone *_serverZone;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -18,18 +17,16 @@
 @property(readonly) BOOL isConsistent;
 @property(readonly) Class superclass;
 
-+ (id)syncDownAckQueue;
-
 - (void).cxx_destruct;
-- (id)_fetchRecordChangesOperationWithCompletion:(id)arg1;
-- (void)_saveRecordBatchIfNecessaryWithRecords:(id)arg1 deletedStructureRecordIDs:(id)arg2;
-- (id)_zoneCreationOperationWithCompletionBlock:(id)arg1;
+- (void)_learnOwnerIdentity:(id)arg1;
+- (void)_performAfterFetchingOwnerIdentityForShareID:(id)arg1 block:(id)arg2;
+- (void)_performAfterFetchingRecordChanges:(id)arg1;
+- (void)_performAfterFetchingXattrsForRecordIDs:(id)arg1 block:(id)arg2;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (BOOL)hasCaughtUp;
-- (id)initWithServerContainer:(id)arg1;
+- (id)initWithServerZone:(id)arg1;
 - (BOOL)isConsistent;
 - (void)main;
-- (void)scheduleFetchQuotaAndSyncDown;
 - (BOOL)shouldRetryForError:(id)arg1;
 
 @end

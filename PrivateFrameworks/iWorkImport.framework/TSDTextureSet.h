@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, TSDRep, TSUNoCopyDictionary;
+@class CALayer, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, TSDBitmapRenderingQualityInfo, TSDRep, TSUNoCopyDictionary;
 
 @interface TSDTextureSet : NSObject <NSCopying> {
     BOOL _isFlippedHorizontally;
@@ -16,6 +16,7 @@
     NSMutableArray *mAllTextures;
     CALayer *mAlternateLayer;
     NSDictionary *mBakedAttributes;
+    TSDBitmapRenderingQualityInfo *mBitmapRenderingQualityInfo;
     NSMutableDictionary *mBoundingRectForStage;
     struct CGRect { 
         struct CGPoint { 
@@ -58,6 +59,7 @@
 
 @property(readonly) NSArray * allTextures;
 @property(retain) CALayer * alternateLayer;
+@property(retain) TSDBitmapRenderingQualityInfo * bitmapRenderingQualityInfo;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
 @property(retain) NSDictionary * boundingRectForStage;
 @property struct CGPoint { float x1; float x2; } center;
@@ -84,6 +86,8 @@
 @property int textureZOrder;
 @property(readonly) NSArray * visibleTextures;
 
++ (id)newFlattenedTextureFromTextures:(id)arg1 newRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+
 - (void)addFinalTexture:(id)arg1 forStage:(int)arg2 reverse:(BOOL)arg3;
 - (void)addPerspectiveLayerToTexture:(id)arg1 withShowSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)addRenderable:(id)arg1;
@@ -92,6 +96,7 @@
 - (id)allTextures;
 - (id)alternateLayer;
 - (void)applyActionEffect:(id)arg1 viewScale:(float)arg2 isMagicMove:(BOOL)arg3 shouldBake:(BOOL)arg4 applyScaleOnly:(BOOL)arg5 ignoreScale:(BOOL)arg6 shouldCheckActionKeys:(BOOL)arg7;
+- (id)bitmapRenderingQualityInfo;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
 - (id)boundingRectForStage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForStage:(int)arg1 isBuildIn:(BOOL)arg2;
@@ -116,7 +121,6 @@
 - (id)layer;
 - (int)maxStageIndex;
 - (id)newFlattenedTexture;
-- (id)newFlattenedTextureFromTextures:(id)arg1 newRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (int)objectType;
 - (struct CGPoint { float x1; float x2; })originalPosition;
 - (void)p_applyPositionFromAttributes:(id)arg1 viewScale:(float)arg2;
@@ -128,6 +132,7 @@
 - (void)resetAnchorPoint;
 - (void)resetToOriginalSource;
 - (void)setAlternateLayer:(id)arg1;
+- (void)setBitmapRenderingQualityInfo:(id)arg1;
 - (void)setBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forStage:(int)arg2;
 - (void)setBoundingRectForStage:(id)arg1;

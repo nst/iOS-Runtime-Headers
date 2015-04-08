@@ -8,6 +8,9 @@
     NSArray *_allPickers;
     NSArray *_auxiliaryOptions;
     NSString *_currentExtensionIdentifier;
+    NSArray *_fileTypes;
+    BOOL _manage;
+    unsigned int _mode;
     <_UIDocumentPickerOverviewDelegate> *_weak_delegate;
 }
 
@@ -15,22 +18,34 @@
 @property(retain) NSArray * auxiliaryOptions;
 @property(retain) NSString * currentExtensionIdentifier;
 @property <_UIDocumentPickerOverviewDelegate> * delegate;
+@property(retain) NSArray * fileTypes;
+@property BOOL manage;
+@property unsigned int mode;
 
 - (id)allPickers;
 - (id)auxiliaryOptions;
 - (id)currentExtensionIdentifier;
 - (void)dealloc;
 - (id)delegate;
+- (id)fileTypes;
 - (id)initWithFileTypes:(id)arg1 mode:(unsigned int)arg2 auxiliaryOptions:(id)arg3 includeManagementItem:(BOOL)arg4;
+- (BOOL)manage;
+- (unsigned int)mode;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setAllPickers:(id)arg1;
 - (void)setAuxiliaryOptions:(id)arg1;
 - (void)setCurrentExtensionIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFileTypes:(id)arg1;
+- (void)setManage:(BOOL)arg1;
+- (void)setMode:(unsigned int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)updateContents;
+- (void)updatePreferredContentSize;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

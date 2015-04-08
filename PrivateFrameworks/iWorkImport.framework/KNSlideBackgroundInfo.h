@@ -16,7 +16,6 @@
 @property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) Class editorClass;
 @property(readonly) TSDFill * fill;
 @property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
 @property(copy) TSDInfoGeometry * geometry;
@@ -56,10 +55,11 @@
 - (void)setGeometry:(id)arg1;
 - (void)setOwningAttachment:(id)arg1;
 - (void)setParentInfo:(id)arg1;
+- (void)setPrimitiveGeometry:(id)arg1;
 - (id)slide;
-- (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
-- (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 - (void)willChangeProperty:(int)arg1;
 

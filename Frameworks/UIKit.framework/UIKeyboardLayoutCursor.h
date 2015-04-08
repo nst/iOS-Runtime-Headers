@@ -6,6 +6,7 @@
 
 @interface UIKeyboardLayoutCursor : UIKeyboardLayoutStar {
     UIKBTree *_indirectKeyboard;
+    int _savedSelectedKeyIndex;
     int _selectedKeyIndex;
     UIView *_selectionView;
     BOOL _suppressOperations;
@@ -51,6 +52,7 @@
 - (void)setKeyboardName:(id)arg1 appearance:(int)arg2;
 - (void)setKeyplaneName:(id)arg1;
 - (void)setSelectedKeyIndex:(int)arg1;
+- (BOOL)shouldMergeKey:(id)arg1;
 - (BOOL)shouldPreventInputManagerHitTestingForKey:(id)arg1;
 - (BOOL)shouldRetestKey:(id)arg1 withKeyplane:(id)arg2;
 - (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;

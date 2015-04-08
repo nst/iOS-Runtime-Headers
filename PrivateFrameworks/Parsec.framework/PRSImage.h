@@ -35,6 +35,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isTemplate;
 - (void)loadImageWithSource:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 completion:(id)arg3;
+- (void)loadImageWithSprite:(id)arg1 map:(id)arg2 completion:(id)arg3;
 - (void)preloadImageWithSource:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setDataType:(id)arg1;

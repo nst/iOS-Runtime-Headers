@@ -10,7 +10,7 @@
 }
 
 @property(copy) NSString * keyPath;
-@property(retain) id object;
+@property id object;
 
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 constantObject:(id)arg7 keyPath:(id)arg8;
 
@@ -22,5 +22,6 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setKeyPath:(id)arg1;
 - (void)setObject:(id)arg1;
+- (void)unbind;
 
 @end

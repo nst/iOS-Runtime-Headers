@@ -18,7 +18,6 @@
 + (id)instance;
 + (id)localizedCategoryNameForCategory:(int)arg1;
 + (id)localizedNameForUnsupportedAnimation:(id)arg1;
-+ (BOOL)p_dumpRegistry;
 
 - (id)allAnimationInfos;
 - (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2;

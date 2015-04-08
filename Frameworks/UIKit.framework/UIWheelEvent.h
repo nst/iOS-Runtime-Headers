@@ -5,7 +5,9 @@
 @class NSMutableArray;
 
 @interface UIWheelEvent : UIInternalEvent {
-    NSMutableArray *_recentScrollTimestamps;
+    int _recentScrollDistance;
+    NSMutableArray *_recentScrollEvents;
+    int lastSubtype;
 }
 
 - (BOOL)_canHaveVelocity;

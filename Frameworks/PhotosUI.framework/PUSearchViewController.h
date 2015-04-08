@@ -45,7 +45,9 @@
 @property(readonly) Class superclass;
 
 + (id)_screenSnapshot;
++ (BOOL)mustAdaptFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
 + (id)newSearchBar;
++ (BOOL)usePopoverAppearanceForTraitCollection:(id)arg1;
 + (void)viewController:(id)arg1 swapSearchViewController:(id)arg2 withResultsViewController:(id)arg3 animated:(BOOL)arg4 completion:(id)arg5;
 
 - (void).cxx_destruct;
@@ -56,9 +58,9 @@
 - (void)_cancelHorizontalPanResetAnimation;
 - (void)_configureCell:(id)arg1 inTableView:(id)arg2 atIndexAPath:(id)arg3;
 - (void)_configureTableView:(id)arg1;
-- (id)_fetchAssetsWithUUIDs:(id)arg1;
 - (void)_handleHorizontalPan:(id)arg1;
 - (BOOL)_isSuggestionsSection:(unsigned int)arg1;
+- (id)_localIdentifiersForUUIDs:(id)arg1;
 - (void)_mergeSearchResults;
 - (void)_mergeSuggestedSearchResultsAnimated:(BOOL)arg1;
 - (unsigned int)_numberOfTableViewSectionsOutSuggestionsSection:(unsigned int*)arg1 outRecentsSection:(unsigned int*)arg2;
@@ -75,6 +77,7 @@
 - (void)_setCurrentTableViewDataSource:(id)arg1;
 - (void)_setSearchText:(id)arg1;
 - (void)_setSelectedDisplayTitle:(id)arg1;
+- (void)_updateBackgroundView;
 - (void)_updateFloatingHeaderClippingInTableView:(id)arg1;
 - (void)_updateForSearchTextDidChangeWithoutAnimation;
 - (void)_updateNavigationBar;

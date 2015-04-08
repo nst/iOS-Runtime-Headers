@@ -58,7 +58,7 @@
 - (int)_iconOptionsForItem:(id)arg1;
 - (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2 requireStrictMatch:(BOOL)arg3;
-- (int)_iconVariantForImage:(id)arg1 item:(id)arg2;
+- (int)_iconVariantForScale:(float)arg1 item:(id)arg2;
 - (id)_imageForSize:(struct CGSize { float x1; float x2; })arg1 fromArtwork:(id)arg2 requireStrictMatch:(BOOL)arg3;
 - (BOOL)_itemArtNeedsShine:(id)arg1;
 - (BOOL)_itemIsNewsstandApp:(id)arg1;
@@ -78,7 +78,7 @@
 - (id)foundLibraryItem;
 - (id)foundStoreItem;
 - (id)iconView;
-- (id)initWithStoreIDs:(id)arg1 appLaunchURL:(id)arg2;
+- (id)initWithStoreIDs:(id)arg1 appLaunchURL:(id)arg2 reuseIdentifier:(id)arg3;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)loadingLabel;

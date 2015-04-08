@@ -17,7 +17,7 @@
 }
 
 - (void)beginSessionWithCompletionQueue:(id)arg1 completionHandler:(id)arg2;
-- (id)createPicRequest;
+- (id)createPicRequestWithError:(id*)arg1;
 - (void)dealloc;
 - (void)endSession;
 - (void)finalize;

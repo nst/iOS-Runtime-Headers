@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSHashTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSURL, NSURLSession;
+@class NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSURL, NSURLSession;
 
 @interface TSUDownloadManager : NSObject <NSURLSessionDownloadDelegate> {
     NSMutableDictionary *_activeTasks;
     NSObject<OS_dispatch_queue> *_activeTasksQueue;
     NSMutableArray *_completionHandlers;
     NSURLSession *_defaultURLSession;
+    NSMapTable *_downloadResults;
     NSHashTable *_downloadSessions;
     NSOperationQueue *_downloadSessionsQueue;
     NSMutableArray *_inProcessDownloadQueue;

@@ -3,11 +3,13 @@
  */
 
 @interface UIKeyboardEmojiCategoryController : NSObject {
+    int _currentCategory;
 }
 
 + (Class)classForCategoryControl;
 
 - (id)initWithCategoryControl:(id)arg1;
-- (void)setCurrentCategory:(id)arg1;
+- (int)sectionWithOffsetPercentage:(float)arg1;
+- (void)setCurrentCategory:(int)arg1;
 
 @end

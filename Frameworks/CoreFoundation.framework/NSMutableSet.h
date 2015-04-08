@@ -13,8 +13,6 @@
 - (void)_mutate;
 - (void)addMessageEntry:(id)arg1;
 - (void)addNonNilObject:(id)arg1;
-- (void)addNonNilObject:(id)arg1;
-- (void)addNonNilObject:(id)arg1;
 - (void)addObject:(id)arg1;
 - (void)addObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (void)addObjectsFromArray:(id)arg1;
@@ -49,10 +47,10 @@
 - (void)setObject:(id)arg1;
 - (void)setOrderedSet:(id)arg1;
 - (void)setSet:(id)arg1;
+- (void)tsu_addNonNilObject:(id)arg1;
+- (void)tsu_xorSet:(id)arg1;
 - (void)unionOrderedSet:(id)arg1;
 - (void)unionSet:(id)arg1;
-- (void)xorSet:(id)arg1;
-- (void)xorSet:(id)arg1;
 - (void)xorSet:(id)arg1;
 
 @end

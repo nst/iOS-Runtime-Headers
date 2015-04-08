@@ -49,7 +49,7 @@
 - (void)setActive:(BOOL)arg1;
 - (void)setGkSession:(id)arg1;
 - (void)setGkVoiceChatSession:(id)arg1;
-- (void)setLegacyMute:(BOOL)arg1 forPlayer:(id)arg2;
+- (void)setMute:(BOOL)arg1 forPlayer:(id)arg2;
 - (void)setPlayer:(id)arg1 muted:(BOOL)arg2;
 - (void)setPlayerStateUpdateHandler:(id)arg1;
 - (void)setPlayerVoiceChatStateDidChangeHandler:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface BRCItemID : NSObject <NSCopying, NSSecureCoding, PQLBindable, PQLResultSetInitializer> {
+@interface BRCItemID : NSObject <NSCopying, NSSecureCoding, PQLValuable> {
     unsigned char _kind;
     unsigned char _uuid[16];
 }
@@ -16,34 +16,37 @@
 @property(readonly) BOOL isDocuments;
 @property(readonly) BOOL isRoot;
 @property(readonly) NSString * itemIDString;
-@property(readonly) unsigned char kind;
 @property(readonly) NSString * shortItemIDString;
 @property(readonly) Class superclass;
 
 + (id)documentsItemID;
 + (void)initialize;
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
++ (id)newItemIDFromEnclosureUUID:(id)arg1;
++ (id)parseMangledItemID:(id)arg1 mangledContainerID:(id*)arg2 etag:(id*)arg3;
 + (id)rootItemID;
 + (BOOL)supportsSecureCoding;
 
 - (const char *)UTF8String;
+- (id)contentsRecordIDInZoneID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)derivedAliasItemIDWithOwnerName:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
-- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItemID:(id)arg1;
 - (id)initWithKind:(unsigned char)arg1 bytes:(const void*)arg2 length:(unsigned int)arg3;
-- (id)initWithSqlite3Value:(struct Mem { }*)arg1;
 - (id)initWithString:(id)arg1;
 - (BOOL)isDocuments;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToItemID:(id)arg1;
 - (BOOL)isRoot;
 - (id)itemIDString;
-- (unsigned char)kind;
+- (id)itemUUIDString;
 - (id)shortItemIDString;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (id)validatingDirectoryReferenceInZoneID:(id)arg1;
 
 @end

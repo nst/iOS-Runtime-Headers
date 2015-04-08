@@ -4,7 +4,7 @@
 
 @class <TSCHStyleActAlike>, NSObject<TSCHUnretainedParent>, NSString, TSCHChartGridAdapter, TSCHChartModel, TSCHChartSeriesType, TSCHErrorBarData, TSCHTrendLineData, TSUPointerKeyDictionary;
 
-@interface TSCHChartSeries : NSObject <TSCHStyleOwning, TSCHUnretainedParent> {
+@interface TSCHChartSeries : NSObject <TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent> {
     TSUPointerKeyDictionary *mAxisTable;
     unsigned int mBarGapIndex;
     TSCHChartModel *mChartModel;
@@ -38,6 +38,7 @@
 + (id)computedFillOrStroke:(id)arg1 forSeriesIndex:(unsigned int)arg2 numberOfThemeSeries:(unsigned int)arg3;
 + (id)defaultNumberFormat;
 + (id)stackedPercentageNumberFormat;
++ (unsigned char)styleOwnerPathType;
 
 - (int)adjustedNumberFormatType;
 - (id)axisForAxisType:(int)arg1;
@@ -59,6 +60,7 @@
 - (float)floatValueForProperty:(int)arg1 defaultValue:(float)arg2;
 - (id)formattedValueLabelStringForValueIndex:(unsigned int)arg1;
 - (id)g_genericToDefaultPropertyMap;
+- (id)g_operationPropertyNameForGenericProperty:(int)arg1;
 - (int)gridValueType;
 - (BOOL)hasCustomFormatForGridValueType:(int)arg1;
 - (BOOL)hasFloatValueForProperty:(int)arg1 value:(float*)arg2;
@@ -69,7 +71,6 @@
 - (void)invalidateCacheDataForSynchronization;
 - (BOOL)isMultiData;
 - (id)model;
-- (void)modelSyncMutateNonStyle:(id)arg1;
 - (void)modelSyncSetNonStyle:(id)arg1;
 - (void)modelSyncSetStyle:(id)arg1;
 - (unsigned int)multiDataSetIndex;
@@ -80,13 +81,13 @@
 - (id)nonstyle;
 - (unsigned int)numberOfValues;
 - (id)objectValueForProperty:(int)arg1;
+- (id)operationPropertyNameFromGenericProperty:(int)arg1;
 - (id)p_axisStorageForType:(int)arg1 create:(BOOL)arg2;
 - (void)p_generateComputedProperty:(int)arg1 objectValue:(id*)arg2 intValue:(int*)arg3 floatValue:(float*)arg4;
 - (id)p_genericToDefaultPropertyMap;
 - (id)p_representativeThemeSeries;
 - (BOOL)p_seriesIndexWithinThemeStyleCount;
 - (id)p_seriesNonStyleOrDefaultNonStyle;
-- (id)p_swapTuplesForMutations:(id)arg1 isForImport:(BOOL)arg2;
 - (BOOL)renderSeriesForClass:(Class)arg1;
 - (void)resetSeriesStorage;
 - (unsigned int)seriesIndex;
@@ -103,8 +104,7 @@
 - (BOOL)showTrendLineLegendText;
 - (int)specificPropertyForGeneric:(int)arg1;
 - (id)style;
-- (id)swapTuplesForMutations:(id)arg1;
-- (id)swapTuplesForMutationsForImport:(id)arg1;
+- (id)swapTuplesForMutations:(id)arg1 forImport:(BOOL)arg2;
 - (id)swapTuplesForParagraphStyleMutations:(id)arg1 forReferencingProperty:(int)arg2;
 - (id)trendLineData;
 - (id)trendLineLegendText;

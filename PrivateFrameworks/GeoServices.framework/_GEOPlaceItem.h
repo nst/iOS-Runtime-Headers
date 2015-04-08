@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOAddress, GEOFeatureStyleAttributes, GEOMapItemClientAttributes, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOMapServiceTraits, GEOPDFlyover, GEOPDPlace, GEOPlace, GEOPlaceResult, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSString, NSURL;
+@class GEOAddress, GEOFeatureStyleAttributes, GEOMapItemClientAttributes, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOPDBusinessClaim, GEOPDFlyover, GEOPDPlace, GEOPlace, GEOPlaceResult, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSString, NSURL;
 
 @interface _GEOPlaceItem : NSObject <GEOMapItemPrivate> {
     NSMapTable *_attributionInfoMap;
     GEOPlace *_place;
     GEOPlaceResult *_placeResult;
-    GEOMapServiceTraits *_traits;
 }
 
 @property(getter=_additionalPlaceInfos,readonly) NSArray * additionalPlaceInfos;
@@ -16,6 +15,7 @@
 @property(getter=_areaInMeters,readonly) double areaInMeters;
 @property(readonly) NSArray * areasOfInterest;
 @property(getter=_attribution,readonly) GEOMapItemPlaceAttribution * attribution;
+@property(getter=_businessClaim,readonly) GEOPDBusinessClaim * businessClaim;
 @property(getter=_businessURL,readonly) NSString * businessURL;
 @property(readonly) struct { double x1; double x2; } centerCoordinate;
 @property(getter=_clientAttributes,readonly) GEOMapItemClientAttributes * clientAttributes;
@@ -41,6 +41,7 @@
 @property(getter=_goodForKids,readonly) BOOL goodForKids;
 @property(getter=_hasAnyAmenities,readonly) BOOL hasAnyAmenities;
 @property(getter=_hasAreaInMeters,readonly) BOOL hasAreaInMeters;
+@property(getter=_hasBusinessClaim,readonly) BOOL hasBusinessClaim;
 @property(getter=_hasCurrentOperatingHours,readonly) BOOL hasCurrentOperatingHours;
 @property(getter=_hasDelivery,readonly) BOOL hasDelivery;
 @property(getter=_hasDeliveryAmenity,readonly) BOOL hasDeliveryAmenity;
@@ -52,7 +53,6 @@
 @property(getter=_hasPriceRange,readonly) BOOL hasPriceRange;
 @property(getter=_hasResolvablePartialInformation,readonly) BOOL hasResolvablePartialInformation;
 @property(getter=_hasResultProviderID,readonly) BOOL hasResultProviderID;
-@property(getter=_hasSessionGUID,readonly) BOOL hasSessionGUID;
 @property(getter=_hasTakesReservationsAmenity,readonly) BOOL hasTakesReservationsAmenity;
 @property(getter=_hasTelephone,readonly) BOOL hasTelephone;
 @property(getter=_hasUserRatingScore,readonly) BOOL hasUserRatingScore;
@@ -77,8 +77,6 @@
 @property(getter=_reviewsAttribution,readonly) GEOMapItemReviewsAttribution * reviewsAttribution;
 @property(getter=_roadAccessPoints,readonly) NSArray * roadAccessPoints;
 @property(getter=_sampleSizeForUserRatingScore,readonly) unsigned int sampleSizeForUserRatingScore;
-@property(getter=_sequenceNumber,readonly) unsigned int sequenceNumber;
-@property(getter=_sessionGUID,readonly) struct { unsigned long long x1; unsigned long long x2; } sessionGUID;
 @property(getter=_styleAttributes,readonly) GEOFeatureStyleAttributes * styleAttributes;
 @property(readonly) Class superclass;
 @property(getter=_takesReservations,readonly) BOOL takesReservations;
@@ -91,9 +89,11 @@
 - (id)_additionalPlaceInfos;
 - (double)_areaInMeters;
 - (id)_arrivalMapRegionForTransportType:(int)arg1;
+- (id)_asPlaceInfo;
 - (id)_attribution;
 - (id)_attributionForInfo:(id)arg1;
 - (id)_attributionInfoForDisplayRequirement:(int)arg1;
+- (id)_businessClaim;
 - (id)_businessURL;
 - (id)_clientAttributes;
 - (unsigned long long)_customIconID;
@@ -104,6 +104,7 @@
 - (BOOL)_goodForKids;
 - (BOOL)_hasAnyAmenities;
 - (BOOL)_hasAreaInMeters;
+- (BOOL)_hasBusinessClaim;
 - (BOOL)_hasCurrentOperatingHours;
 - (BOOL)_hasDelivery;
 - (BOOL)_hasDeliveryAmenity;
@@ -117,7 +118,6 @@
 - (BOOL)_hasPriceRange;
 - (BOOL)_hasResolvablePartialInformation;
 - (BOOL)_hasResultProviderID;
-- (BOOL)_hasSessionGUID;
 - (BOOL)_hasTakesReservationsAmenity;
 - (BOOL)_hasTelephone;
 - (BOOL)_hasTravelTimeForTransportType:(int)arg1;
@@ -144,8 +144,6 @@
 - (id)_reviewsAttribution;
 - (id)_roadAccessPoints;
 - (unsigned int)_sampleSizeForUserRatingScore;
-- (unsigned int)_sequenceNumber;
-- (struct { unsigned long long x1; unsigned long long x2; })_sessionGUID;
 - (BOOL)_showAddForRequirement:(int)arg1;
 - (BOOL)_showAttributionForRequirement:(int)arg1;
 - (id)_spokenAddressForLocale:(id)arg1;
@@ -178,8 +176,8 @@
 - (id)eventName;
 - (id)geoAddress;
 - (id)geoFenceMapRegion;
-- (id)initWithPlace:(id)arg1 traits:(id)arg2;
-- (id)initWithPlaceResult:(id)arg1 response:(id)arg2 traits:(id)arg3;
+- (id)initWithPlace:(id)arg1;
+- (id)initWithPlaceResult:(id)arg1 response:(id)arg2;
 - (BOOL)isDisputed;
 - (BOOL)isEventAllDay;
 - (BOOL)isValid;

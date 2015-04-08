@@ -28,6 +28,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_updateName:(id)arg1;
 - (id)accessory;
 - (id)associatedServiceType;
 - (id)characteristics;

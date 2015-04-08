@@ -5,8 +5,8 @@
 @class TSTCellStyle, TSWPParagraphStyle;
 
 @interface TSTLocalStylesKey : NSObject <NSCopying> {
-    TSTCellStyle *_cellStyle;
-    TSWPParagraphStyle *_textStyle;
+    TSTCellStyle *mCellStyle;
+    TSWPParagraphStyle *mTextStyle;
 }
 
 @property(retain) TSTCellStyle * cellStyle;

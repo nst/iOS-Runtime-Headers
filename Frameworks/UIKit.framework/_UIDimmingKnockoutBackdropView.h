@@ -2,14 +2,18 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, _UIBackdropView;
+@class NSString, UIView, _UIBackdropView;
 
-@interface _UIDimmingKnockoutBackdropView : UIView {
+@interface _UIDimmingKnockoutBackdropView : UIView <UIAlertControllerBackgroundView> {
     _UIBackdropView *backdropView;
     UIView *dimmingKnockoutView;
 }
 
 @property float cornerRadius;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 - (id)_dimmingKnockoutBackgroundColorForBackdropStyle:(int)arg1;
 - (id)_filterForBackdropStyle:(int)arg1;
@@ -17,5 +21,7 @@
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1;
 - (void)setCornerRadius:(float)arg1;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setPressed:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

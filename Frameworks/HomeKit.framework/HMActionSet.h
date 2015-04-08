@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class HMHome, HMMessageDispatcher, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
+@class HMHome, HMMessageDispatcher, NSMutableArray, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
 
 @interface HMActionSet : NSObject <HMMessageReceiver, NSSecureCoding> {
     NSMutableArray *_currentActions;
@@ -10,8 +10,6 @@
     HMHome *_home;
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;
-    NSMutableArray *_pendingActionTransactions;
-    NSMutableDictionary *_pendingRequests;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
@@ -27,8 +25,6 @@
 @property(readonly) NSUUID * messageTargetUUID;
 @property(retain) HMMessageDispatcher * msgDispatcher;
 @property(copy,readonly) NSString * name;
-@property(retain) NSMutableArray * pendingActionTransactions;
-@property(retain) NSMutableDictionary * pendingRequests;
 @property(readonly) Class superclass;
 @property(retain) NSUUID * uuid;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
@@ -41,6 +37,7 @@
 - (void)addAction:(id)arg1 completionHandler:(id)arg2;
 - (void)configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3;
 - (id)currentActions;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)handleActionAddedNotification:(id)arg1;
 - (void)handleActionRemovedNotification:(id)arg1;
@@ -57,16 +54,13 @@
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
 - (id)name;
-- (id)pendingActionTransactions;
-- (id)pendingRequests;
 - (void)removeAction:(id)arg1 completionHandler:(id)arg2;
 - (void)setCurrentActions:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
-- (void)setPendingActionTransactions:(id)arg1;
-- (void)setPendingRequests:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (void)unconfigure;
 - (void)updateAction:(id)arg1 changes:(id)arg2 completionHandler:(id)arg3;
 - (void)updateName:(id)arg1 completionHandler:(id)arg2;
 - (id)uuid;

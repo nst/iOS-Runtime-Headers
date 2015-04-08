@@ -14,7 +14,6 @@
     BOOL online;
     BOOL outputAvailable;
     CBPeripheral *peripheral;
-    BOOL shouldDisconnect;
     NSString *uuid;
 }
 
@@ -28,6 +27,7 @@
 @property(readonly) CBPeripheral * peripheral;
 @property(retain,readonly) NSString * uuid;
 
+- (BOOL)canConnect;
 - (BOOL)connect;
 - (void)dealloc;
 - (BOOL)disconnect;

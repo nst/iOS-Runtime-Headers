@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecord, CKDPRecordSaveRequestConflictLoserUpdate, NSMutableArray, NSString;
+@class CKDPRecord, CKDPRecordSaveRequestConflictLoserUpdate, CKDPRecordSaveRequestShareIdUpdate, NSMutableArray, NSString;
 
 @interface CKDPRecordSaveRequest : PBRequest <NSCopying> {
     CKDPRecordSaveRequestConflictLoserUpdate *_conflictLoserUpdate;
@@ -17,6 +17,8 @@
     CKDPRecord *_record;
     NSString *_recordProtectionInfoTag;
     int _saveSemantics;
+    NSString *_shareEtag;
+    CKDPRecordSaveRequestShareIdUpdate *_shareIDUpdate;
     NSString *_zoneProtectionInfoTag;
 }
 
@@ -30,11 +32,15 @@
 @property(readonly) BOOL hasRecord;
 @property(readonly) BOOL hasRecordProtectionInfoTag;
 @property BOOL hasSaveSemantics;
+@property(readonly) BOOL hasShareEtag;
+@property(readonly) BOOL hasShareIDUpdate;
 @property(readonly) BOOL hasZoneProtectionInfoTag;
 @property BOOL merge;
 @property(retain) CKDPRecord * record;
 @property(retain) NSString * recordProtectionInfoTag;
 @property int saveSemantics;
+@property(retain) NSString * shareEtag;
+@property(retain) CKDPRecordSaveRequestShareIdUpdate * shareIDUpdate;
 @property(retain) NSString * zoneProtectionInfoTag;
 
 + (id)options;
@@ -62,6 +68,8 @@
 - (BOOL)hasRecord;
 - (BOOL)hasRecordProtectionInfoTag;
 - (BOOL)hasSaveSemantics;
+- (BOOL)hasShareEtag;
+- (BOOL)hasShareIDUpdate;
 - (BOOL)hasZoneProtectionInfoTag;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -83,7 +91,11 @@
 - (void)setRecord:(id)arg1;
 - (void)setRecordProtectionInfoTag:(id)arg1;
 - (void)setSaveSemantics:(int)arg1;
+- (void)setShareEtag:(id)arg1;
+- (void)setShareIDUpdate:(id)arg1;
 - (void)setZoneProtectionInfoTag:(id)arg1;
+- (id)shareEtag;
+- (id)shareIDUpdate;
 - (void)writeTo:(id)arg1;
 - (id)zoneProtectionInfoTag;
 

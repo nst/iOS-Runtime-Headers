@@ -43,11 +43,11 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithParagraphIndex:(unsigned int)arg1 pageNumber:(unsigned int)arg2 numberFormat:(int)arg3 heading:(id)arg4 indexedStyle:(id)arg5 indexedListStyle:(id)arg6 indexedListStart:(unsigned int)arg7 indexedParagraphLevel:(unsigned int)arg8;
 - (BOOL)isEqual:(id)arg1;
-- (void)loadFromArchive:(const struct TOCEntryInstanceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3; unsigned int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; unsigned int x7; unsigned int x8; struct Reference {} *x9; unsigned int x10; int x11; unsigned int x12[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct TOCEntryInstanceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct Reference {} *x8; unsigned int x9; unsigned int x10; struct Reference {} *x11; unsigned int x12; }*)arg1 unarchiver:(id)arg2;
 - (int)numberFormat;
 - (unsigned int)pageNumber;
 - (unsigned int)paragraphIndex;
-- (void)saveToArchive:(struct TOCEntryInstanceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3; unsigned int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; unsigned int x7; unsigned int x8; struct Reference {} *x9; unsigned int x10; int x11; unsigned int x12[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct TOCEntryInstanceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct Reference {} *x8; unsigned int x9; unsigned int x10; struct Reference {} *x11; unsigned int x12; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 
 @end

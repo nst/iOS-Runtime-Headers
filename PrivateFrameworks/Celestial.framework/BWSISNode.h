@@ -58,5 +58,6 @@
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
+- (int)worstCaseInitialMaxBracketCountForBracketingMode:(int)arg1;
 
 @end

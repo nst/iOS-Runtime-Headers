@@ -10,6 +10,7 @@
     NSArray *_chatGuids;
     NSDate *_date;
     NSString *_guid;
+    BOOL _isAudioMessage;
     BOOL _isOutgoing;
     BOOL _isRead;
     long long _messageID;
@@ -25,6 +26,7 @@
 @property(retain,readonly) NSArray * chatGuids;
 @property(retain) NSDate * date;
 @property(retain) NSString * guid;
+@property BOOL isAudioMessage;
 @property BOOL isOutgoing;
 @property BOOL isRead;
 @property long long messageID;
@@ -41,6 +43,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)guid;
+- (BOOL)isAudioMessage;
 - (BOOL)isOutgoing;
 - (BOOL)isRead;
 - (long long)messageID;
@@ -50,6 +53,7 @@
 - (void)setChatGUIDs:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setGuid:(id)arg1;
+- (void)setIsAudioMessage:(BOOL)arg1;
 - (void)setIsOutgoing:(BOOL)arg1;
 - (void)setIsRead:(BOOL)arg1;
 - (void)setMessageID:(long long)arg1;

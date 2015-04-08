@@ -10,6 +10,8 @@
     NSMutableOrderedSet *_mutableOrderedSet;
 }
 
+- (id)_orderedObjectsAndKeys;
+- (BOOL)_reorderObjectsToLocationsByOrderKey:(id)arg1 error:(id*)arg2;
 - (void)addObject:(id)arg1;
 - (void)addObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (void)addObjectsFromArray:(id)arg1;

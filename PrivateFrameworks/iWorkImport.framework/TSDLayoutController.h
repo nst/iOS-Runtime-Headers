@@ -26,6 +26,7 @@
 - (void)invalidateChildrenOfLayout:(id)arg1;
 - (void)invalidateLayout:(id)arg1;
 - (void)invalidateLayoutForRecreation:(id)arg1;
+- (void)invalidateLayoutProxiesWithKeyPath:(id)arg1;
 - (BOOL)isLayoutOffscreen;
 - (id)layoutForInfo:(id)arg1;
 - (id)layoutForInfo:(id)arg1 childOfLayout:(id)arg2;

@@ -21,11 +21,8 @@
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (BOOL)isOpaque;
-- (BOOL)isSelectable;
-- (void)processChangedProperty:(int)arg1;
 - (id)slideBackgroundInfo;
 - (id)textureForContext:(id)arg1;
-- (int)tilingMode;
 - (BOOL)wantsToDistortWithImagerContext;
 
 @end

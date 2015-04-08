@@ -2,9 +2,31 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
+@class NSString, NSURL;
+
 @interface SPFeedbackEngagement : SPFeedback {
+    NSURL *_action_destination;
+    NSString *_cardType;
+    BOOL _engagementOnCard;
+    BOOL _userReturnedToResultsList;
 }
 
+@property(retain) NSURL * action_destination;
+@property(retain) NSString * cardType;
+@property BOOL engagementOnCard;
+@property BOOL userReturnedToResultsList;
+
+- (id)action_destination;
+- (id)cardType;
+- (void)encodeWithCoder:(id)arg1;
+- (BOOL)engagementOnCard;
+- (id)initWithCoder:(id)arg1;
 - (id)parsecFeedbackFromSession:(id)arg1;
+- (id)parsecFeedbackFromSession:(id)arg1 class:(Class)arg2;
+- (void)setAction_destination:(id)arg1;
+- (void)setCardType:(id)arg1;
+- (void)setEngagementOnCard:(BOOL)arg1;
+- (void)setUserReturnedToResultsList:(BOOL)arg1;
+- (BOOL)userReturnedToResultsList;
 
 @end

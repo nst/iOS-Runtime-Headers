@@ -10,6 +10,7 @@
     NSDictionary *_cloudDocsContainersByAppID;
     NSMutableSet *_observers;
     NSObject<OS_dispatch_queue> *_queue;
+    struct br_pacer_t { } *_refetchPacer;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -24,8 +25,9 @@
 - (void)_start;
 - (void)addObserver:(id)arg1;
 - (id)allApplicationIdentifiers;
-- (void)appListChanged;
 - (id)applicationIdentifiersForContainerID:(id)arg1;
+- (id)containerIDsForApplicationIdentifier:(id)arg1;
+- (void)dealloc;
 - (void)forceRefetchAppList;
 - (id)init;
 - (BOOL)isApplicationInstalledForContainerID:(id)arg1;

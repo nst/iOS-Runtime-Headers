@@ -24,6 +24,7 @@
     NSMutableArray *_mediaFiles;
     int _mediaFilesLock;
     NSObject<OS_dispatch_queue> *_metadataFetchQ;
+    NSMutableArray *_notifyArray;
     unsigned int _numberOfDownloadableItems;
     NSObject<OS_dispatch_queue> *_thumbnailFetchQ;
     double _timeOffset;
@@ -50,6 +51,7 @@
 @property(retain) NSMutableArray * mediaFiles;
 @property int mediaFilesLock;
 @property NSObject<OS_dispatch_queue> * metadataFetchQ;
+@property(retain) NSMutableArray * notifyArray;
 @property unsigned int numberOfDownloadableItems;
 @property NSObject<OS_dispatch_queue> * thumbnailFetchQ;
 @property double timeOffset;
@@ -79,6 +81,7 @@
 - (id)mediaFiles;
 - (int)mediaFilesLock;
 - (id)metadataFetchQ;
+- (id)notifyArray;
 - (unsigned int)numberOfDownloadableItems;
 - (void)setAccessRestrictedAppleDevice:(BOOL)arg1;
 - (void)setAllowsSyncingClock:(BOOL)arg1;
@@ -99,6 +102,7 @@
 - (void)setMediaFiles:(id)arg1;
 - (void)setMediaFilesLock:(int)arg1;
 - (void)setMetadataFetchQ:(id)arg1;
+- (void)setNotifyArray:(id)arg1;
 - (void)setNumberOfDownloadableItems:(unsigned int)arg1;
 - (void)setThumbnailFetchQ:(id)arg1;
 - (void)setTimeOffset:(double)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class <NNMKSyncProviderDelegate>, BLTPingSubscriber, NNMKAccountsSyncServiceServer, NNMKDeviceSyncRegistry, NNMKFetchesSyncServiceServer, NNMKMessageContentSyncServiceServer, NNMKMessagesSyncServiceServer, NNMKPairedDeviceInfo, NSDate, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSURL, PSYSyncCoordinator;
+@class <NNMKSyncProviderDelegate>, BLTPingSubscriber, NNMKAccountsSyncServiceServer, NNMKDeviceSyncRegistry, NNMKFetchesSyncServiceServer, NNMKMessageContentSyncServiceServer, NNMKMessagesSyncServiceServer, NNMKPairedDeviceInfo, NNMKProtectedSyncServiceServer, NSDate, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSURL, PSYSyncCoordinator;
 
 @interface NNMKSyncProvider : NNMKSyncEndpoint <NNMKAccountsSyncServiceServerDelegate, NNMKFetchesSyncServiceServerDelegate, NNMKMessageContentSyncServiceServerDelegate, NNMKMessagesSyncServiceServerDelegate, PSYSyncCoordinatorDelegate> {
     NNMKAccountsSyncServiceServer *_accountsSyncService;
@@ -24,6 +24,7 @@
     NNMKDeviceSyncRegistry *_pairedDeviceRegistry;
     NSDate *_pendingMoreMessagesForConversationIdRequestBeforeDateReceived;
     NSString *_pendingMoreMessagesForConversationIdRequestConversationId;
+    NNMKProtectedSyncServiceServer *_protectedSyncService;
     NSObject<OS_dispatch_queue> *_providerQueue;
     BOOL _trackingInitialSync;
 }
@@ -53,6 +54,7 @@
 @property(retain) NNMKDeviceSyncRegistry * pairedDeviceRegistry;
 @property(retain) NSDate * pendingMoreMessagesForConversationIdRequestBeforeDateReceived;
 @property(retain) NSString * pendingMoreMessagesForConversationIdRequestConversationId;
+@property(retain) NNMKProtectedSyncServiceServer * protectedSyncService;
 @property(retain) NSObject<OS_dispatch_queue> * providerQueue;
 @property(readonly) Class superclass;
 @property(readonly) NSString * syncedMailboxAccountId;
@@ -62,7 +64,7 @@
 @property BOOL trackingInitialSync;
 
 - (void).cxx_destruct;
-- (void)_addMessages:(id)arg1 messagesAreNew:(BOOL)arg2;
+- (void)_addMessages:(id)arg1 messagesAreNew:(BOOL)arg2 loadedFromLocalStorage:(BOOL)arg3;
 - (id)_bbSubsectionIdsForMessage:(id)arg1;
 - (BOOL)_currentSyncedMailboxAddsDeletesMessagesByStatusUpdates;
 - (void)_executePendingContentRequests;
@@ -130,6 +132,7 @@
 - (void)deleteMessagesWithIds:(id)arg1;
 - (id)fetchesSyncService;
 - (void)fetchesSyncServiceServer:(id)arg1 didNotifyInitialSyncFinished:(id)arg2;
+- (void)fetchesSyncServiceServer:(id)arg1 didNotifyProtectedChannelSupported:(id)arg2;
 - (void)fetchesSyncServiceServer:(id)arg1 didRequestContent:(id)arg2;
 - (void)fetchesSyncServiceServer:(id)arg1 didRequestFetch:(id)arg2;
 - (void)fetchesSyncServiceServer:(id)arg1 didRequestFullSync:(id)arg2;
@@ -170,6 +173,7 @@
 - (id)pairedDeviceRegistry;
 - (id)pendingMoreMessagesForConversationIdRequestBeforeDateReceived;
 - (id)pendingMoreMessagesForConversationIdRequestConversationId;
+- (id)protectedSyncService;
 - (id)providerQueue;
 - (void)replyWithAccountToResend:(id)arg1;
 - (void)replyWithAccounts:(id)arg1;
@@ -200,6 +204,7 @@
 - (void)setPairedDeviceRegistry:(id)arg1;
 - (void)setPendingMoreMessagesForConversationIdRequestBeforeDateReceived:(id)arg1;
 - (void)setPendingMoreMessagesForConversationIdRequestConversationId:(id)arg1;
+- (void)setProtectedSyncService:(id)arg1;
 - (void)setProviderQueue:(id)arg1;
 - (void)setTrackingInitialSync:(BOOL)arg1;
 - (void)syncCoordinatorDidReceiveStartSyncCommand:(id)arg1;

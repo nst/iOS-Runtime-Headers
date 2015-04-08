@@ -2,52 +2,40 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <_MKPlaceViewControllerDelegate>, ABPeoplePickerNavigationController, CNContact, MKDistanceDetailProvider, MKMapItem, MKPlaceActionsViewController, MKPlaceHeaderView, MKPlaceInfoViewController, MKPlaceNearbyAppsMetricsCoordinator, MKSegmentedControlTabBarView, NSArray, NSMapTable, NSString, SKProductPageViewController, UITapGestureRecognizer;
+@class <_MKPlaceViewControllerDelegate>, <_MKPlaceViewControllerFeedbackDelegate>, ABPeoplePickerNavigationController<ABContactViewControllerDelegate>, CNContact, MKDistanceDetailProvider, MKMapItem, MKPlaceActionsViewController, MKPlaceHeaderView, MKPlaceInfoViewController, MKPlaceNearbyAppsMetricsCoordinator, MKSegmentedControlTabBarView, NSArray, NSMapTable, NSMutableArray, NSString, SKProductPageViewController, UITapGestureRecognizer;
 
 @interface _MKPlaceViewController : MKStackingViewController <ABContactViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, MKActivityViewControllerDelegate, MKPlaceActionsViewControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceHeaderViewDelegate, MKPlaceInfoViewControllerDelegate, MKPlaceNearbyAppsViewControllerDelegate, MKPlaceSharedAttributionDelegate, MKStackingViewControllerDelegate, SKProductPageViewControllerDelegate> {
     MKPlaceActionsViewController *_actionsViewController;
     NSMapTable *_additionalViewControllers;
     void *_addressBook;
     CNContact *_contact;
-    ABPeoplePickerNavigationController *_contactsNavigationController;
-    BOOL _disableReportAProblem;
+    ABPeoplePickerNavigationController<ABContactViewControllerDelegate> *_contactsNavigationController;
     MKDistanceDetailProvider *_distanceMonitor;
     UITapGestureRecognizer *_flyoverTourTapRecognizer;
     BOOL _hasCheckedDistanceAvailability;
     BOOL _hasContactOnlyMapItem;
     float _headerHeight;
     NSString *_headerTitle;
-    BOOL _hideDirectionsButtons;
-    BOOL _hideInlineMap;
     MKPlaceInfoViewController *_infoViewController;
     BOOL _isSearchingForNearbyApps;
     MKMapItem *_mapItem;
     MKPlaceNearbyAppsMetricsCoordinator *_metricsCoordinator;
+    unsigned int _options;
     CNContact *_originalContact;
     void *_originalContactRecordCopy;
     BOOL _overrideDefaultShowRAP;
     MKPlaceHeaderView *_placeHeaderView;
     <_MKPlaceViewControllerDelegate> *_placeViewControllerDelegate;
+    <_MKPlaceViewControllerFeedbackDelegate> *_placeViewFeedbackDelegate;
     BOOL _showContactActions;
-    BOOL _showCreateReminder;
-    BOOL _showEditButton;
-    BOOL _showFlyoverTour;
-    BOOL _showInlineMapInHeader;
-    BOOL _showNearbyApps;
-    BOOL _showOpenInSkyline;
-    BOOL _showRemovePin;
-    BOOL _showReportAProblem;
-    BOOL _showRerouting;
-    BOOL _showShareActionsButton;
-    BOOL _showSimulateLocation;
-    BOOL _showTitleBar;
     NSArray *_storeItems;
     SKProductPageViewController *_storePageViewController;
     MKSegmentedControlTabBarView *_tabBar;
+    NSMutableArray *_viewDidAppearBlocks;
 }
 
 @property(readonly) CNContact * contact;
-@property ABPeoplePickerNavigationController * contactsNavigationController;
+@property ABPeoplePickerNavigationController<ABContactViewControllerDelegate> * contactsNavigationController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property BOOL disableReportAProblem;
@@ -60,9 +48,11 @@
 @property BOOL hideInlineMap;
 @property(retain) MKMapItem * mapItem;
 @property(readonly) MKPlaceNearbyAppsMetricsCoordinator * metricsCoordinator;
+@property unsigned int options;
 @property(retain) CNContact * originalContact;
 @property(retain) MKPlaceHeaderView * placeHeaderView;
 @property <_MKPlaceViewControllerDelegate> * placeViewControllerDelegate;
+@property <_MKPlaceViewControllerFeedbackDelegate> * placeViewFeedbackDelegate;
 @property BOOL showContactActions;
 @property BOOL showCreateReminder;
 @property BOOL showEditButton;
@@ -72,16 +62,17 @@
 @property BOOL showOpenInSkyline;
 @property BOOL showRemovePin;
 @property BOOL showReportAProblem;
-@property BOOL showRerouting;
 @property BOOL showShareActionsButton;
 @property BOOL showSimulateLocation;
 @property BOOL showTitleBar;
 @property(readonly) Class superclass;
 @property(retain) MKSegmentedControlTabBarView * tabBar;
+@property(retain) NSMutableArray * viewDidAppearBlocks;
 
 - (void).cxx_destruct;
 - (void)_commonInit;
-- (BOOL)_defaultShowReportAProblem;
+- (id)_contactForEditOperations;
+- (void)_didResolveAttribution:(id)arg1;
 - (void)_displayAppWithMetadata:(id)arg1;
 - (void)_findNearbyAppsAtCoordinate:(struct { double x1; double x2; })arg1;
 - (id)_mapTableKeyForSectionPosition:(int)arg1;
@@ -95,6 +86,7 @@
 - (void)_setViewControllersWithInformationViewControllers:(id)arg1;
 - (void)_setupHeaderView;
 - (void)_showEditSheet:(id)arg1;
+- (BOOL)_showReportAProblem;
 - (void)_showShareSheet:(id)arg1;
 - (void)_switchToTabAtIndex:(int)arg1;
 - (void)_tappedForFlyoverTour;
@@ -128,7 +120,9 @@
 - (void)infoViewController:(id)arg1 didSelectDeal:(id)arg2;
 - (id)init;
 - (id)initWithContact:(id)arg1 mapItem:(id)arg2;
+- (id)initWithContact:(id)arg1 mapItem:(id)arg2 options:(unsigned int)arg3;
 - (id)initWithMapItem:(id)arg1;
+- (id)initWithMapItem:(id)arg1 options:(unsigned int)arg2;
 - (id)mapItem;
 - (void)mapkitActivityViewController:(id)arg1 postCompletedActivityOfType:(id)arg2 completed:(BOOL)arg3;
 - (void)mapkitActivityViewController:(id)arg1 preCompletedActivityOfType:(id)arg2 completed:(BOOL)arg3;
@@ -137,6 +131,7 @@
 - (void)nearbyAppsController:(id)arg1 showStorePageWithURL:(id)arg2 storeID:(id)arg3;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (void)openInfoAttribution;
+- (unsigned int)options;
 - (id)originalContact;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
@@ -150,6 +145,7 @@
 - (void)placeCardReviewsControllerDidSelectWriteReview:(id)arg1;
 - (id)placeHeaderView;
 - (id)placeViewControllerDelegate;
+- (id)placeViewFeedbackDelegate;
 - (int)preferredStatusBarStyle;
 - (void)presentHeaderView;
 - (void)removeAdditionalViewController:(id)arg1;
@@ -167,9 +163,11 @@
 - (void)setHideInlineMap:(BOOL)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setMapItem:(id)arg1 contact:(id)arg2 updateOriginalContact:(BOOL)arg3;
+- (void)setOptions:(unsigned int)arg1;
 - (void)setOriginalContact:(id)arg1;
 - (void)setPlaceHeaderView:(id)arg1;
 - (void)setPlaceViewControllerDelegate:(id)arg1;
+- (void)setPlaceViewFeedbackDelegate:(id)arg1;
 - (void)setShowContactActions:(BOOL)arg1;
 - (void)setShowCreateReminder:(BOOL)arg1;
 - (void)setShowEditButton:(BOOL)arg1;
@@ -179,15 +177,14 @@
 - (void)setShowOpenInSkyline:(BOOL)arg1;
 - (void)setShowRemovePin:(BOOL)arg1;
 - (void)setShowReportAProblem:(BOOL)arg1;
-- (void)setShowRerouting:(BOOL)arg1;
 - (void)setShowShareActionsButton:(BOOL)arg1;
 - (void)setShowSimulateLocation:(BOOL)arg1;
 - (void)setShowTitleBar:(BOOL)arg1;
 - (void)setTabBar:(id)arg1;
+- (void)setViewDidAppearBlocks:(id)arg1;
 - (BOOL)shouldShowDirectionsForInfoViewController:(id)arg1;
 - (BOOL)shouldShowFlyoverTourForInfoViewController:(id)arg1;
 - (BOOL)shouldShowInlineMapForInfoViewController:(id)arg1;
-- (BOOL)shouldShowReroutingForInfoViewController:(id)arg1;
 - (BOOL)showContactActions;
 - (BOOL)showCreateReminder;
 - (BOOL)showEditButton;
@@ -197,7 +194,6 @@
 - (BOOL)showOpenInSkyline;
 - (BOOL)showRemovePin;
 - (BOOL)showReportAProblem;
-- (BOOL)showRerouting;
 - (BOOL)showShareActionsButton;
 - (BOOL)showSimulateLocation;
 - (BOOL)showTitleBar;
@@ -211,6 +207,7 @@
 - (id)tabBar;
 - (void)updateActionVisibility;
 - (void)viewDidAppear:(BOOL)arg1;
+- (id)viewDidAppearBlocks;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

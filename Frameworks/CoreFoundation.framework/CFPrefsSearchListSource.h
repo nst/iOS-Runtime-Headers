@@ -32,7 +32,7 @@
 - (void)freeze;
 - (long)generationCount;
 - (long)generationCountFromListOfSources:(id*)arg1 count:(long)arg2;
-- (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 error:(BOOL*)arg4;
+- (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 retryCount:(int)arg4 error:(BOOL*)arg5;
 - (id)initWithIdentifier:(struct __CFString { }*)arg1;
 - (void)lock;
 - (void)removeSource:(id)arg1;

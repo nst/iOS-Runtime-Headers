@@ -26,11 +26,11 @@
 - (id)initWithCellID:(id)arg1 dirtyPrecedentCount:(unsigned int)arg2;
 - (BOOL)isFormula;
 - (BOOL)isInCycle;
-- (int)numericCompare:(id)arg1;
 - (void)setCellID:(id)arg1;
 - (void)setDirtyPrecedentCount:(unsigned int)arg1;
 - (void)setIsFormula:(BOOL)arg1;
 - (void)setIsInCycle:(BOOL)arg1;
 - (id)stringForDependencyRow;
+- (int)tsce_numericCompare:(id)arg1;
 
 @end

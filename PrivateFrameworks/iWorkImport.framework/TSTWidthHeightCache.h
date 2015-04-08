@@ -21,8 +21,6 @@
         long __sig; 
         BOOL __opaque[124]; 
     } mLock;
-    unsigned char mMaxCol;
-    unsigned short mMaxRow;
     struct vector<float, std::__1::allocator<float> > { 
         float *__begin_; 
         float *__end_; 
@@ -44,8 +42,8 @@
 - (void)_increaseColCapacity:(unsigned int)arg1;
 - (void)_increaseRowCapacity:(unsigned int)arg1;
 - (void)dealloc;
-- (BOOL)deleteColsStartingWith:(unsigned char)arg1 andEndingWith:(unsigned char)arg2;
-- (BOOL)deleteRowsStartingWith:(unsigned short)arg1 andEndingWith:(unsigned short)arg2;
+- (BOOL)deleteColsStartingWith:(unsigned char)arg1 upToColumn:(unsigned char)arg2;
+- (BOOL)deleteRowsStartingWith:(unsigned short)arg1 upToRow:(unsigned short)arg2;
 - (float)getFitHeightForRow:(unsigned short)arg1;
 - (float)getFitWidthForCol:(unsigned char)arg1;
 - (float)getModelHeightForRow:(unsigned short)arg1;
@@ -55,23 +53,23 @@
 - (BOOL)insertCols:(unsigned short)arg1 atColumn:(unsigned char)arg2;
 - (BOOL)insertRows:(unsigned short)arg1 atRow:(unsigned short)arg2;
 - (void)logInternalState;
-- (BOOL)moveColsFrom:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 toCol:(unsigned char)arg2;
-- (BOOL)moveRowsFrom:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 toRow:(unsigned short)arg2;
+- (BOOL)moveColsFrom:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 toCol:(unsigned char)arg2;
+- (BOOL)moveRowsFrom:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 toRow:(unsigned short)arg2;
+- (void)p_resetFittingWidthsHeightsForRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)resetAllCol;
 - (void)resetAllRow;
-- (void)resetColWidthsStartingWith:(unsigned char)arg1 andEndingWith:(unsigned char)arg2;
+- (void)resetColWidthsStartingWith:(unsigned char)arg1 upToColumn:(unsigned char)arg2;
 - (void)resetFittingHeightsFromCollection:(id)arg1;
 - (BOOL)resetModelCache;
-- (BOOL)resetModelCacheRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (void)resetRowHeightsStartingWith:(unsigned short)arg1 andEndingWith:(unsigned short)arg2;
-- (void)resetWidthsHeightsForRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (BOOL)resetModelCacheRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)resetRowHeightsStartingWith:(unsigned short)arg1 upToRow:(unsigned short)arg2;
 - (BOOL)setFitDims:(struct CGSize { float x1; float x2; })arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (BOOL)setFitHeight:(float)arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (BOOL)setFitWidth:(float)arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)setFittingHeightsFromCollection:(id)arg1;
 - (BOOL)setModelHeight:(float)arg1 forRow:(unsigned short)arg2;
 - (BOOL)setModelWidth:(float)arg1 forColumn:(unsigned char)arg2;
-- (id)validateChangeDescriptors:(id)arg1 tableModel:(id)arg2;
+- (id)validateChangeDescriptors:(id)arg1;
 - (BOOL)verifyDims:(struct CGSize { float x1; float x2; })arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 
 @end

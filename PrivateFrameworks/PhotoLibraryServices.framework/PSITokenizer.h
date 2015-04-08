@@ -9,8 +9,8 @@
 }
 
 - (void)dealloc;
-- (void)enumerateTokensInString:(id)arg1 withOptions:(int)arg2 block:(id)arg3;
 - (id)init;
 - (id)newTokensFromString:(id)arg1 withOptions:(int)arg2 outCopyRanges:(id*)arg3;
+- (void)tokenizeString:(id)arg1 withOptions:(int)arg2 tokenOutput:(struct tokenOutput_t { id x1; id x2; id x3; struct { /* ? */ } *x4; int x5; int x6; struct { /* ? */ } *x7; int x8; int x9; }*)arg3;
 
 @end

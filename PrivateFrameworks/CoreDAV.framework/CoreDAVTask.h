@@ -62,6 +62,7 @@
     <CoreDAVTaskManager> *_taskManager;
     double _timeoutInterval;
     unsigned int _totalBytesReceived;
+    BOOL _triedRenewingCredential;
     NSString *_uniqueID;
     NSURL *_url;
 }
@@ -99,6 +100,7 @@
 - (id)_createBodyData;
 - (void)_failImmediately;
 - (void)_handleBadPasswordResponse;
+- (BOOL)_handleUnauthorizedAccessError:(id)arg1;
 - (BOOL)_includeGeneralHeaders;
 - (id)_requestForLogging;
 - (void)_sendTimeSpentInNetworkingToProvider;

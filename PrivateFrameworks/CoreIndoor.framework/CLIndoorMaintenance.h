@@ -12,13 +12,15 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
+- (void)doSynchronousXPC:(id)arg1 description:(const char *)arg2;
 - (id)endpointName;
 - (void)eraseEverything;
-- (void)onQueueEraseEverything;
-- (void)onQueuePrefetch:(id)arg1;
+- (void)onQueueEraseEverything:(id)arg1;
+- (void)onQueuePrefetch:(id)arg1 withCallback:(id)arg2;
 - (void)onQueueShutdown;
 - (void)prefetch:(id)arg1;
 - (id)remoteObjectProtocol;
+- (void)retrieveLocationRelevancyDurationWithCompletionHandler:(id)arg1;
 - (void)shutdown;
 - (BOOL)withinQueueCanReinitializeRemoteState;
 - (void)withinQueueInvalidateState;

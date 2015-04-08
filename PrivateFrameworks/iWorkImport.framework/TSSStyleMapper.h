@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSMutableSet, NSSet, NSString, TSKAddedToDocumentContext, TSSStylesheet, TSURetainedPointerKeyDictionary;
+@class NSMutableArray, NSMutableSet, NSSet, NSString, TSSStylesheet, TSURetainedPointerKeyDictionary;
 
 @interface TSSStyleMapper : NSObject <TSKStyleMapper> {
     BOOL _clientsMustRemap;
     NSMutableSet *_createdStyles;
-    TSKAddedToDocumentContext *_dolcContext;
     BOOL _forceMatchStyle;
     NSMutableArray *_mappingContext;
     TSURetainedPointerKeyDictionary *_styleMap;
     TSSStylesheet *_targetStylesheet;
-    TSSStylesheet *_targetThemeStylesheet;
-    BOOL _varyInThemeStylesheet;
 }
 
 @property BOOL clientsMustRemap;
@@ -31,9 +28,8 @@
 - (id)createdStyles;
 - (void)dealloc;
 - (BOOL)forceMatchStyle;
-- (id)initWithTargetStylesheet:(id)arg1 newStyleDOLCContext:(id)arg2;
+- (id)initWithTargetStylesheet:(id)arg1;
 - (id)mappedStyleForStyle:(id)arg1;
-- (id)mappedStyleForStyle:(id)arg1 inThemeStylesheet:(BOOL)arg2;
 - (void)popMappingContext:(id)arg1;
 - (void)pushMappingContext:(id)arg1;
 - (void)setClientsMustRemap:(BOOL)arg1;
@@ -46,7 +42,5 @@
 - (id)targetParentByNameMatchForStyle:(id)arg1;
 - (id)targetParentForStyle:(id)arg1;
 - (id)targetStylesheet;
-- (void)varyInThemeStylesheetForDurationOfBlock:(id)arg1;
-- (void)varyInThemeStylesheetIf:(BOOL)arg1 forDurationOfBlock:(id)arg2;
 
 @end

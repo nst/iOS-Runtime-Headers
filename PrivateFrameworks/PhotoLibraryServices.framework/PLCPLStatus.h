@@ -7,42 +7,58 @@
 @interface PLCPLStatus : NSObject <CPLStatusDelegate> {
     CPLStatus *_cplStatus;
     <PLCPLStatusDelegate> *_delegate;
-    unsigned int _imageDeletionCountSinceSync;
     BOOL _isCPLDataClassEnabled;
     BOOL _isCPLDataClassEnabledValid;
     unsigned int _numberOfImagesToDownload;
     unsigned int _numberOfImagesToUpload;
+    unsigned int _numberOfPulledAssets;
+    unsigned int _numberOfPushedAsset;
     unsigned int _numberOfVideosToDownload;
     unsigned int _numberOfVideosToUpload;
     NSProgress *_progress;
     id _progressSubscriber;
     double _syncProgress;
-    unsigned int _videoDeletionCountSinceSync;
+    unsigned int _syncProgressState;
+    unsigned int _totalAssetsOnServer;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <PLCPLStatusDelegate> * delegate;
 @property(copy,readonly) NSString * description;
+@property(readonly) BOOL diskIsLowOnSpace;
 @property(retain,readonly) NSDate * exitDeleteTime;
+@property(readonly) BOOL hasExitedCPL;
 @property(readonly) unsigned int hash;
+@property(readonly) BOOL isConnecting;
 @property(readonly) BOOL isEnabled;
 @property(readonly) BOOL isExceedingQuota;
+@property(readonly) BOOL isPreparing;
 @property(readonly) BOOL isSyncing;
 @property(retain,readonly) NSDate * lastSuccessfulSyncDate;
 @property(readonly) unsigned int numberOfImagesToDownload;
 @property(readonly) unsigned int numberOfImagesToUpload;
+@property(readonly) unsigned int numberOfPulledAssets;
+@property(readonly) unsigned int numberOfPushedAsset;
 @property(readonly) unsigned int numberOfVideosToDownload;
 @property(readonly) unsigned int numberOfVideosToUpload;
 @property(setter=_setProgress:,retain) NSProgress * progress;
 @property(readonly) Class superclass;
 @property(readonly) double syncProgress;
+@property(readonly) unsigned int totalAssetsOnServer;
 
-+ (id)_accountStore;
-+ (void)setDeletionCountsSinceLastSyncforImages:(unsigned int)arg1 videos:(unsigned int)arg2;
++ (void)_prepareQueue;
++ (void)_setPulledItemsCount:(unsigned int)arg1;
++ (id)readPListWithFilename:(id)arg1;
++ (void)setDownloadCountsForImages:(unsigned int)arg1 videos:(unsigned int)arg2;
++ (void)setPushedAssetCount:(unsigned int)arg1;
 + (void)setUploadCountsForImages:(unsigned int)arg1 videos:(unsigned int)arg2;
++ (void)writeDict:(id)arg1 withFilename:(id)arg2;
 
-- (void)_loadDeletionCounts;
-- (void)_loadUploadCounts;
+- (void)_calculateNumberOfPulledAssets;
+- (void)_calculateTotalAssetsOnServer;
+- (BOOL)_loadDownloadCounts;
+- (void)_loadPulledItemsCount;
+- (BOOL)_loadUploadCounts;
 - (void)_networkReachabilityChanged:(id)arg1;
 - (void)_setProgress:(id)arg1;
 - (void)_setSyncProgress:(double)arg1;
@@ -50,19 +66,25 @@
 - (void)_subscribeToProgress;
 - (void)_teardown;
 - (void)_unsubscribeFromProgress;
-- (void)_updateDownloadingItemsCount;
 - (void)_updateSyncProgress;
 - (void)accountStoreDidChange:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)diskIsLowOnSpace;
+- (unsigned int)diskSpaceLevel;
 - (id)exitDeleteTime;
+- (BOOL)hasExitedCPL;
 - (id)init;
+- (BOOL)isConnecting;
 - (BOOL)isEnabled;
 - (BOOL)isExceedingQuota;
+- (BOOL)isPreparing;
 - (BOOL)isSyncing;
 - (id)lastSuccessfulSyncDate;
 - (unsigned int)numberOfImagesToDownload;
 - (unsigned int)numberOfImagesToUpload;
+- (unsigned int)numberOfPulledAssets;
+- (unsigned int)numberOfPushedAsset;
 - (unsigned int)numberOfVideosToDownload;
 - (unsigned int)numberOfVideosToUpload;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -70,5 +92,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)statusDidChange:(id)arg1;
 - (double)syncProgress;
+- (unsigned int)totalAssetsOnServer;
 
 @end

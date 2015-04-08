@@ -7,96 +7,17 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSString;
+@class NSString, TSCH3DVector;
 
 @interface TSCH3DLight : NSObject <NSCopying> {
-    struct tvec4<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-        union { 
-            float z; 
-            float b; 
-            float p; 
-        } ; 
-        union { 
-            float w; 
-            float a; 
-            float q; 
-        } ; 
-    } mAmbientColor;
-    struct tvec3<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-        union { 
-            float z; 
-            float b; 
-            float p; 
-        } ; 
-    } mAttenuation;
-    int mCoordinateSpace;
-    struct tvec4<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-        union { 
-            float z; 
-            float b; 
-            float p; 
-        } ; 
-        union { 
-            float w; 
-            float a; 
-            float q; 
-        } ; 
-    } mDiffuseColor;
-    BOOL mEnabled;
-    float mIntensity;
-    NSString *mName;
-    struct tvec4<float> { 
-        union { 
-            float x; 
-            float r; 
-            float s; 
-        } ; 
-        union { 
-            float y; 
-            float g; 
-            float t; 
-        } ; 
-        union { 
-            float z; 
-            float b; 
-            float p; 
-        } ; 
-        union { 
-            float w; 
-            float a; 
-            float q; 
-        } ; 
-    } mSpecularColor;
+    TSCH3DVector *_ambientColor;
+    TSCH3DVector *_attenuation;
+    int _coordinateSpace;
+    TSCH3DVector *_diffuseColor;
+    BOOL _enabled;
+    float _intensity;
+    NSString *_name;
+    TSCH3DVector *_specularColor;
 }
 
 @property struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } ambientColor;
@@ -105,14 +26,13 @@
 @property struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } diffuseColor;
 @property BOOL enabled;
 @property float intensity;
-@property(retain) NSString * name;
+@property(copy) NSString * name;
 @property struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } specularColor;
 
-+ (id)instanceWithArchive:(const struct Chart3DLightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct Chart3DVectorArchive {} *x4; struct Chart3DVectorArchive {} *x5; struct Chart3DVectorArchive {} *x6; struct Chart3DVectorArchive {} *x7; float x8; unsigned int x9; struct Chart3DPointLightArchive {} *x10; struct Chart3DDirectionalLightArchive {} *x11; struct Chart3DSpotLightArchive {} *x12; bool x13; int x14; unsigned int x15[1]; }*)arg1 unarchiver:(id)arg2;
++ (id)instanceWithArchive:(const struct Chart3DLightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Chart3DVectorArchive {} *x6; struct Chart3DVectorArchive {} *x7; struct Chart3DVectorArchive {} *x8; struct Chart3DVectorArchive {} *x9; float x10; unsigned int x11; struct Chart3DPointLightArchive {} *x12; struct Chart3DDirectionalLightArchive {} *x13; struct Chart3DSpotLightArchive {} *x14; bool x15; }*)arg1 unarchiver:(id)arg2;
 + (id)light;
 + (id)lightClasses;
 
-- (id).cxx_construct;
 - (void)affect:(id)arg1 states:(id)arg2 texturePool:(id)arg3;
 - (struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })ambientColor;
 - (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })attenuation;
@@ -120,16 +40,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (void)didInitFromSOS;
 - (struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })diffuseColor;
 - (BOOL)enabled;
 - (id)init;
-- (id)initWithArchive:(const struct Chart3DLightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct Chart3DVectorArchive {} *x4; struct Chart3DVectorArchive {} *x5; struct Chart3DVectorArchive {} *x6; struct Chart3DVectorArchive {} *x7; float x8; unsigned int x9; struct Chart3DPointLightArchive {} *x10; struct Chart3DDirectionalLightArchive {} *x11; struct Chart3DSpotLightArchive {} *x12; bool x13; int x14; unsigned int x15[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithLightArchive:(const struct Chart3DLightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct Chart3DVectorArchive {} *x4; struct Chart3DVectorArchive {} *x5; struct Chart3DVectorArchive {} *x6; struct Chart3DVectorArchive {} *x7; float x8; unsigned int x9; struct Chart3DPointLightArchive {} *x10; struct Chart3DDirectionalLightArchive {} *x11; struct Chart3DSpotLightArchive {} *x12; bool x13; int x14; unsigned int x15[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct Chart3DLightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Chart3DVectorArchive {} *x6; struct Chart3DVectorArchive {} *x7; struct Chart3DVectorArchive {} *x8; struct Chart3DVectorArchive {} *x9; float x10; unsigned int x11; struct Chart3DPointLightArchive {} *x12; struct Chart3DDirectionalLightArchive {} *x13; struct Chart3DSpotLightArchive {} *x14; bool x15; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithLightArchive:(const struct Chart3DLightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Chart3DVectorArchive {} *x6; struct Chart3DVectorArchive {} *x7; struct Chart3DVectorArchive {} *x8; struct Chart3DVectorArchive {} *x9; float x10; unsigned int x11; struct Chart3DPointLightArchive {} *x12; struct Chart3DDirectionalLightArchive {} *x13; struct Chart3DSpotLightArchive {} *x14; bool x15; }*)arg1 unarchiver:(id)arg2;
 - (float)intensity;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (void)saveToArchive:(struct Chart3DLightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct Chart3DVectorArchive {} *x4; struct Chart3DVectorArchive {} *x5; struct Chart3DVectorArchive {} *x6; struct Chart3DVectorArchive {} *x7; float x8; unsigned int x9; struct Chart3DPointLightArchive {} *x10; struct Chart3DDirectionalLightArchive {} *x11; struct Chart3DSpotLightArchive {} *x12; bool x13; int x14; unsigned int x15[1]; }*)arg1 archiver:(id)arg2;
-- (void)saveToLightArchive:(struct Chart3DLightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct Chart3DVectorArchive {} *x4; struct Chart3DVectorArchive {} *x5; struct Chart3DVectorArchive {} *x6; struct Chart3DVectorArchive {} *x7; float x8; unsigned int x9; struct Chart3DPointLightArchive {} *x10; struct Chart3DDirectionalLightArchive {} *x11; struct Chart3DSpotLightArchive {} *x12; bool x13; int x14; unsigned int x15[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct Chart3DLightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Chart3DVectorArchive {} *x6; struct Chart3DVectorArchive {} *x7; struct Chart3DVectorArchive {} *x8; struct Chart3DVectorArchive {} *x9; float x10; unsigned int x11; struct Chart3DPointLightArchive {} *x12; struct Chart3DDirectionalLightArchive {} *x13; struct Chart3DSpotLightArchive {} *x14; bool x15; }*)arg1 archiver:(id)arg2;
+- (void)saveToLightArchive:(struct Chart3DLightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Chart3DVectorArchive {} *x6; struct Chart3DVectorArchive {} *x7; struct Chart3DVectorArchive {} *x8; struct Chart3DVectorArchive {} *x9; float x10; unsigned int x11; struct Chart3DPointLightArchive {} *x12; struct Chart3DDirectionalLightArchive {} *x13; struct Chart3DSpotLightArchive {} *x14; bool x15; }*)arg1 archiver:(id)arg2;
 - (void)setAmbientColor:(struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })arg1;
 - (void)setAttenuation:(struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })arg1;
 - (void)setCoordinateSpace:(int)arg1;

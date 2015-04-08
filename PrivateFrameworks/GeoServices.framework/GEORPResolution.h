@@ -2,22 +2,28 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, NSMutableArray;
+@class GEOMapRegion, NSMutableArray, NSString;
 
 @interface GEORPResolution : PBCodable <NSCopying> {
     GEOMapRegion *_displayRegion;
     struct { 
         unsigned int resolutionDate : 1; 
     } _has;
+    NSString *_localizedAlertText;
     NSMutableArray *_localizedChangeLists;
+    NSString *_localizedDescription;
     double _resolutionDate;
     NSMutableArray *_updatedPlaces;
 }
 
 @property(retain) GEOMapRegion * displayRegion;
 @property(readonly) BOOL hasDisplayRegion;
+@property(readonly) BOOL hasLocalizedAlertText;
+@property(readonly) BOOL hasLocalizedDescription;
 @property BOOL hasResolutionDate;
+@property(retain) NSString * localizedAlertText;
 @property(retain) NSMutableArray * localizedChangeLists;
+@property(retain) NSString * localizedDescription;
 @property double resolutionDate;
 @property(retain) NSMutableArray * updatedPlaces;
 
@@ -32,18 +38,24 @@
 - (id)dictionaryRepresentation;
 - (id)displayRegion;
 - (BOOL)hasDisplayRegion;
+- (BOOL)hasLocalizedAlertText;
+- (BOOL)hasLocalizedDescription;
 - (BOOL)hasResolutionDate;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)localizedAlertText;
 - (id)localizedChangeListAtIndex:(unsigned int)arg1;
 - (id)localizedChangeLists;
 - (unsigned int)localizedChangeListsCount;
+- (id)localizedDescription;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (double)resolutionDate;
 - (void)setDisplayRegion:(id)arg1;
 - (void)setHasResolutionDate:(BOOL)arg1;
+- (void)setLocalizedAlertText:(id)arg1;
 - (void)setLocalizedChangeLists:(id)arg1;
+- (void)setLocalizedDescription:(id)arg1;
 - (void)setResolutionDate:(double)arg1;
 - (void)setUpdatedPlaces:(id)arg1;
 - (id)updatedPlaceAtIndex:(unsigned int)arg1;

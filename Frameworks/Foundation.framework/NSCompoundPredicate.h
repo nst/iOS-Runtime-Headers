@@ -29,6 +29,7 @@
 - (id)ab_newQueryWithSortOrder:(unsigned int)arg1 addressBook:(void*)arg2 propertyIndices:(const struct __CFDictionary {}**)arg3;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (void)allowEvaluation;
+- (id)br_watchedURL;
 - (unsigned int)compoundPredicateType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

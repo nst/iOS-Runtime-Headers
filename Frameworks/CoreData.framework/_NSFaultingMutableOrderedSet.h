@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObject, NSPropertyDescription;
+@class NSManagedObject, NSMutableDictionary, NSPropertyDescription;
 
 @interface _NSFaultingMutableOrderedSet : NSMutableOrderedSet {
     int _cd_rc;
@@ -15,6 +15,7 @@
         unsigned int _reserved : 11; 
         unsigned int _relationship : 16; 
     } _flags;
+    NSMutableDictionary *_forcedKeys;
     id _grottyHack;
     unsigned int *_orderKeys;
     id _realSet;
@@ -35,7 +36,9 @@
 - (BOOL)_isIdenticalFault:(id)arg1;
 - (id)_newOrderKeys;
 - (unsigned int)_orderKeyForObject:(id)arg1;
+- (id)_orderedObjectsAndKeys;
 - (void)_populateOrderKeysUsingSnapshot:(id)arg1 orderKeys:(id)arg2 newIndexes:(unsigned int**)arg3 reorderedIndexes:(char **)arg4;
+- (BOOL)_reorderObjectsToLocationsByOrderKey:(id)arg1 error:(id*)arg2;
 - (void)_setProcessingIdempotentKVO:(BOOL)arg1;
 - (BOOL)_shouldProcessKVOChange;
 - (BOOL)_tryRetain;

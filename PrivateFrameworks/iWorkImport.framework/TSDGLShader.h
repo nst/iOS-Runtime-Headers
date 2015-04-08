@@ -35,11 +35,8 @@
 - (id)initWithDefaultVelocityShader;
 - (id)initWithDefaultVelocityVisualizerShader;
 - (id)initWithDefaultVerticalBlurShader;
-- (id)initWithShaderFileName:(id)arg1 bundle:(id)arg2;
-- (id)initWithShaderFileName:(id)arg1 bundle:(id)arg2 uniforms:(id)arg3 attributes:(id)arg4 defines:(id)arg5;
-- (id)initWithVertexShader:(id)arg1 fragmentShader:(id)arg2;
-- (id)initWithVertexShader:(id)arg1 fragmentShader:(id)arg2 uniforms:(id)arg3 attributes:(id)arg4 defines:(id)arg5;
-- (id)initWithVertexShaderFileName:(id)arg1 fragmentShaderFileName:(id)arg2 bundle:(id)arg3 uniforms:(id)arg4 attributes:(id)arg5 defines:(id)arg6;
+- (id)initWithVertexShader:(id)arg1 fragmentShader:(id)arg2 defines:(id)arg3;
+- (id)initWithVertexShaderFileName:(id)arg1 fragmentShaderFileName:(id)arg2 bundle:(id)arg3 defines:(id)arg4;
 - (BOOL)isActive;
 - (BOOL)loadVertexShader:(id)arg1 fragmentShader:(id)arg2 defines:(id)arg3;
 - (int)locationForAttribute:(id)arg1;
@@ -49,6 +46,7 @@
 - (id)p_contentsOfShader:(id)arg1 extension:(id)arg2 bundle:(id)arg3;
 - (id)p_qualifierForUniform:(id)arg1 class:(Class)arg2;
 - (void)p_setQualifiersIfNecessary;
+- (void)p_updateUniformsAndAttributesFromShader;
 - (unsigned int)programObject;
 - (void)setCGFloat:(float)arg1 forUniform:(id)arg2;
 - (void)setColor:(struct { float x1; float x2; float x3; float x4; })arg1 forUniform:(id)arg2;

@@ -11,6 +11,7 @@
 - (id)description;
 - (id)initWithTimeInterval:(double)arg1 tzOffsetTo:(int)arg2;
 - (double)interval;
+- (BOOL)isCloseTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (int)tzOffsetTo;
 

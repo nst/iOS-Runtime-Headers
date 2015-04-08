@@ -32,9 +32,11 @@
 - (void)setState:(int)arg1;
 - (void)startConnectionlessAdvertisingWithData:(id)arg1;
 - (void)startConnectionlessScanningWithData:(id)arg1;
+- (void)startTrackingPeer:(id)arg1 withData:(id)arg2;
 - (int)state;
 - (void)stopConnectionlessAdvertising;
 - (void)stopConnectionlessScanningWithData:(id)arg1;
+- (void)stopTrackingPeer:(id)arg1 withData:(id)arg2;
 - (void)updateState:(int)arg1;
 
 @end

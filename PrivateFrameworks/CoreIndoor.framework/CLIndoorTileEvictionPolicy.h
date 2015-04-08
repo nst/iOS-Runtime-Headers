@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)activity;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)forceClean;
 - (id)init;

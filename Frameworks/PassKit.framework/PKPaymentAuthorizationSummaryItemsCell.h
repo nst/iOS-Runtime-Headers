@@ -2,22 +2,19 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableArray, PKPaymentAuthorizationLayout;
+@class NSMutableArray, PKPaymentAuthorizationSummaryItemsView;
 
 @interface PKPaymentAuthorizationSummaryItemsCell : UITableViewCell {
     NSMutableArray *_constraints;
-    NSMutableArray *_labelViews;
-    PKPaymentAuthorizationLayout *_layout;
-    NSMutableArray *_valueViews;
+    PKPaymentAuthorizationSummaryItemsView *_summaryItemsView;
 }
 
-- (id)_labelAttributedStringWithString:(id)arg1;
-- (id)_valueAttributedStringWithString:(id)arg1;
-- (void)addLabel:(id)arg1 value:(id)arg2;
+@property(readonly) PKPaymentAuthorizationSummaryItemsView * summaryItemsView;
+
+- (void)_prepareConstraints;
 - (void)dealloc;
 - (id)initWithLayout:(id)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
-- (void)updateConstraints;
+- (id)summaryItemsView;
 
 @end

@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class <CKTranscriptComposeDelegate>, CKAudioTrimViewController, CKComposeRecipientSelectionController, CKComposition, CKConversation, CKGradientReferenceView, CKMessageEncodingInfo, CKMessageEntryView, CKPhotoPickerSheetViewController, CKQLPreviewController, CKRaiseGesture, CKScheduledUpdater, CKSendAnimationWindow, CKTranscriptCollectionViewController, CKTranscriptGroupHeaderView, CKTranscriptTypingIndicatorCell, CKVideoMessageRecordingViewController, CKVideoTrimController, NSArray, NSMutableArray, NSNotification, NSNumber, NSString, UIBarButtonItem, UIImagePickerController, UINavigationItem, UIProgressView, UITapGestureRecognizer, UIToolbar, UIView, UIWindow;
+@class <CKTranscriptComposeDelegate>, CKAudioTrimViewController, CKComposeRecipientSelectionController, CKComposition, CKConversation, CKGradientReferenceView, CKMessageEncodingInfo, CKMessageEntryView, CKPhotoPickerController, CKQLPreviewController, CKRaiseGesture, CKScheduledUpdater, CKSendAnimationWindow, CKTranscriptCollectionViewController, CKTranscriptHeaderViewController, CKTranscriptTypingIndicatorCell, CKVideoMessageRecordingViewController, CKVideoTrimController, NSArray, NSMutableArray, NSNotification, NSNumber, NSString, UIBarButtonItem, UIImagePickerController, UINavigationItem, UIProgressView, UITapGestureRecognizer, UIToolbar, UIView, UIWindow;
 
-@interface CKTranscriptController : CKScrollViewController <ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate, AFContextProvider, CKCameraSheetViewControllerDelegate, CKComposeRecipientSelectionControllerDelegate, CKJoystickGestureRecognizerButtonDelegate, CKMessageEntryViewDelegate, CKTranscriptCollectionViewControllerDelegate, CKTrimControllerDelegate, CKVideoMessageRecordingViewControllerDelegate, IMChatSendProgressDelegate, QLPreviewControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIKeyInput, UIModalViewDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate> {
+@interface CKTranscriptController : CKScrollViewController <ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate, AFContextProvider, CKComposeRecipientSelectionControllerDelegate, CKJoystickGestureRecognizerButtonDelegate, CKMessageEntryViewDelegate, CKTranscriptCollectionViewControllerDelegate, CKTrimControllerDelegate, CKVideoMessageRecordingViewControllerDelegate, IMChatSendProgressDelegate, PHPhotoLibraryChangeObserver, QLPreviewControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIKeyInput, UIModalViewDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate> {
     UIToolbar *_actionsToolbar;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -29,7 +29,6 @@
     CKConversation *_conversation;
     UIBarButtonItem *_detailsButton;
     BOOL _didCancel;
-    BOOL _dimmed;
     UIBarButtonItem *_editCancelItem;
     CKMessageEntryView *_entryView;
     unsigned int _entryViewCanAcceptFocus : 1;
@@ -37,7 +36,6 @@
     unsigned int _entryViewWasActiveBeforeNewComposeThrow : 1;
     unsigned int _entryViewWasActiveBeforePushingViewController : 1;
     unsigned int _entryViewWasActiveBeforeSwitchingConversations : 1;
-    CKTranscriptGroupHeaderView *_groupHeaderView;
     BOOL _hasPrepopulatedRecipients;
     BOOL _hideEntryViewForModalDismissal;
     NSString *_initialSystemKeyboardID;
@@ -53,7 +51,7 @@
     NSArray *_newCompositionAddresses;
     NSArray *_newCompositionRecipients;
     unsigned int _newRecipient : 1;
-    CKPhotoPickerSheetViewController *_photoPickerController;
+    CKPhotoPickerController *_photoPickerController;
     unsigned int _preparingForResume : 1;
     CKComposition *_presetComposition;
     CKQLPreviewController *_previewController;
@@ -88,6 +86,7 @@
     NSMutableArray *_throwEndFrames;
     NSMutableArray *_throwIntermediateFrames;
     unsigned int _togglingEditing : 1;
+    CKTranscriptHeaderViewController *_transcriptHeader;
     unsigned int _transcriptNeedsUpdate;
     unsigned int _transitioningToTranscript : 1;
     unsigned int _triedToResetEntryViewSizeWhileNotInAWindow : 1;
@@ -113,11 +112,9 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) UIBarButtonItem * detailsButton;
-@property(getter=isDimmed) BOOL dimmed;
 @property(retain) UIBarButtonItem * editCancelItem;
 @property BOOL enablesReturnKeyAutomatically;
 @property(retain) CKMessageEntryView * entryView;
-@property(retain) CKTranscriptGroupHeaderView * groupHeaderView;
 @property BOOL hasPrepopulatedRecipients;
 @property(readonly) unsigned int hash;
 @property BOOL hideEntryViewForModalDismissal;
@@ -125,6 +122,7 @@
 @property int keyboardType;
 @property(copy) NSArray * newCompositionAddresses;
 @property(copy) NSArray * newCompositionRecipients;
+@property(retain) CKPhotoPickerController * photoPickerController;
 @property(retain) CKComposition * presetComposition;
 @property BOOL programaticallyMadeEntryViewActive;
 @property(retain) UIProgressView * progressBar;
@@ -142,6 +140,7 @@
 @property(retain) NSMutableArray * throwBalloonViews;
 @property(retain) NSMutableArray * throwEndFrames;
 @property(retain) NSMutableArray * throwIntermediateFrames;
+@property(retain) CKTranscriptHeaderViewController * transcriptHeader;
 @property(retain) CKScheduledUpdater * typingUpdater;
 @property(retain) CKVideoMessageRecordingViewController * videoMessageRecordingViewController;
 @property BOOL visible;
@@ -182,6 +181,7 @@
 - (struct CGSize { float x1; float x2; })_idealSizeForEntryView;
 - (BOOL)_isGroupMessage;
 - (BOOL)_isVisible;
+- (void)_kickPhotoKit;
 - (void)_localeDidChange:(id)arg1;
 - (BOOL)_makeContentEntryViewActive;
 - (void)_makeFieldForFocusActive;
@@ -199,8 +199,8 @@
 - (void)_refreshViewForCurrentConversationIfNeeded;
 - (void)_refreshViewForNewRecipientIfNeeded;
 - (void)_removeRecipientSelectionView;
+- (void)_removeTranscriptHeaderAnimated:(BOOL)arg1;
 - (void)_resetEntryViewSize;
-- (void)_resetGroupHeaderPosition;
 - (BOOL)_resizeMessageEntryView:(id)arg1 animate:(BOOL)arg2;
 - (BOOL)_resizeMessageEntryViewWithAnimate:(BOOL)arg1;
 - (void)_saveDraftState;
@@ -212,7 +212,7 @@
 - (void)_setVisible:(BOOL)arg1;
 - (void)_setupMediaEntry;
 - (void)_setupRecipientSelectionView;
-- (void)_setupTranscriptGroupHeader;
+- (void)_setupTranscriptHeader;
 - (void)_setupTranscriptTableHeader;
 - (void)_setupViewForConversation;
 - (BOOL)_shouldAllowCameraAttachments;
@@ -220,7 +220,6 @@
 - (BOOL)_shouldUseExistingConversations;
 - (void)_showCurrentPreviewItemForPreviewController:(id)arg1;
 - (void)_showMapViewerForMediaObject:(id)arg1;
-- (void)_showMediaSourceSelectionSheet;
 - (void)_showPassbookCardViewForMediaObject:(id)arg1;
 - (void)_showPhotoPickerWithSourceType:(int)arg1;
 - (void)_showPhotosPicker;
@@ -232,9 +231,9 @@
 - (struct CGPoint { float x1; float x2; })_transcriptScrollToBottomOffsetWithHeightDelta:(float)arg1;
 - (void)_transferFinished:(id)arg1;
 - (void)_transferRestored:(id)arg1;
-- (void)_transitionFromCKPhotoPickerSheet:(id)arg1 toImagePickerWithSourceType:(int)arg2;
 - (void)_updateActionsToolbarItems;
 - (void)_updateBackPlacardSubviews;
+- (void)_updateTranscriptHeaderPosition;
 - (void)_userDidCancelCapturingImage;
 - (void)_userDidCaptureImage;
 - (void)addMedia:(id)arg1;
@@ -250,11 +249,6 @@
 - (void)cancelButtonClicked:(id)arg1;
 - (id)chat;
 - (void)chat:(id)arg1 progressDidChange:(float)arg2 sendingMessages:(id)arg3 sendCount:(unsigned int)arg4 totalCount:(unsigned int)arg5 finished:(BOOL)arg6;
-- (void)ckPhotoPickerViewController:(id)arg1 resizeToSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)ckPhotoPickerViewController:(id)arg1 selectedAssets:(id)arg2 shouldSend:(BOOL)arg3;
-- (void)ckPhotoPickerViewControllerCancel:(id)arg1;
-- (void)ckPhotoPickerViewControllerProceedToChooseExisting:(id)arg1;
-- (void)ckPhotoPickerViewControllerProceedToTakeAPicture:(id)arg1;
 - (void)ckVideoMessageRecordingViewController:(id)arg1 mediaObjectCaptured:(id)arg2 error:(id)arg3;
 - (void)ckVideoMessageRecordingViewControllerRecordingCanceled:(id)arg1;
 - (id)clearAllItem;
@@ -276,8 +270,8 @@
 - (id)detailsButton;
 - (void)didReceiveMemoryWarning;
 - (void)disableCameraAttachments;
+- (void)dismissKeyboard;
 - (void)dismissPeoplePicker:(id)arg1;
-- (void)dismissPhotoPickerViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)dismissPresentedViewController:(id)arg1;
 - (void)dismissVideoMessageRecordingViewController;
 - (void)dismissViewControllerWithTransition:(int)arg1 completion:(id)arg2;
@@ -288,7 +282,6 @@
 - (BOOL)getContainerWidth:(float*)arg1 offset:(float*)arg2;
 - (id)getCurrentContext;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })gradientFrameWithInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (id)groupHeaderView;
 - (BOOL)hasFailedRecipients;
 - (BOOL)hasPrepopulatedRecipients;
 - (BOOL)hasText;
@@ -301,8 +294,8 @@
 - (id)initWithNavigationController:(id)arg1;
 - (id)inputAccessoryView;
 - (void)insertText:(id)arg1;
+- (BOOL)isAnimatingMessageSend;
 - (BOOL)isComposingRecipient;
-- (BOOL)isDimmed;
 - (BOOL)isEditable;
 - (BOOL)isNewRecipient;
 - (BOOL)isSendingMessage;
@@ -344,9 +337,14 @@
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)personViewController:(id)arg1 shouldPresentMessageCompositionWithVCard:(id)arg2 filename:(id)arg3;
 - (BOOL)photoButtonEnabled;
+- (void)photoLibraryDidChange:(id)arg1;
+- (id)photoPickerController;
+- (void)photoPickerController:(id)arg1 requestsSendAssets:(id)arg2 sendImmediately:(BOOL)arg3;
+- (void)photoPickerControllerDidCancel:(id)arg1;
+- (void)photoPickerControllerRequestPresentCamera:(id)arg1;
+- (void)photoPickerControllerRequestPresentPhotoLibrary:(id)arg1;
 - (void)prepareForResume;
 - (void)prepareForSuspend;
-- (void)presentPhotoPickerViewController:(id)arg1 completion:(id)arg2;
 - (void)presentTrimControllerForMediaObject:(id)arg1;
 - (id)presetComposition;
 - (void)previewController:(id)arg1 didTransitionToState:(int)arg2;
@@ -400,11 +398,9 @@
 - (void)setCompositionBeingTrimmed:(id)arg1;
 - (void)setConversation:(id)arg1;
 - (void)setDetailsButton:(id)arg1;
-- (void)setDimmed:(BOOL)arg1;
 - (void)setEditCancelItem:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEntryView:(id)arg1;
-- (void)setGroupHeaderView:(id)arg1;
 - (void)setHasPrepopulatedRecipients:(BOOL)arg1;
 - (void)setHideEntryViewForModalDismissal:(BOOL)arg1;
 - (void)setNewComposition:(id)arg1 addresses:(id)arg2;
@@ -412,6 +408,7 @@
 - (void)setNewCompositionAddresses:(id)arg1;
 - (void)setNewCompositionRecipients:(id)arg1;
 - (void)setNewRecipient:(BOOL)arg1;
+- (void)setPhotoPickerController:(id)arg1;
 - (void)setPresetComposition:(id)arg1;
 - (void)setProgramaticallyMadeEntryViewActive:(BOOL)arg1;
 - (void)setProgressBar:(id)arg1;
@@ -426,6 +423,7 @@
 - (void)setThrowBalloonViews:(id)arg1;
 - (void)setThrowEndFrames:(id)arg1;
 - (void)setThrowIntermediateFrames:(id)arg1;
+- (void)setTranscriptHeader:(id)arg1;
 - (void)setTypingUpdater:(id)arg1;
 - (void)setVideoMessageRecordingViewController:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
@@ -444,6 +442,7 @@
 - (void)significantTimeChange;
 - (void)startSendAnimationForMessage:(id)arg1 shouldClearEntryComposition:(BOOL)arg2;
 - (void)startTrimmingMediaObjectsInComposition:(id)arg1;
+- (id)supportedMediaTypesForPhotoPicker:(id)arg1;
 - (void)systemApplicationWillEnterForeground;
 - (id)textInputContextIdentifier;
 - (id)throwAnimationEnforcementView;
@@ -462,9 +461,11 @@
 - (void)transcriptCollectionViewControllerChatItemsDidChange:(id)arg1;
 - (void)transcriptCollectionViewControllerDidInset:(id)arg1;
 - (void)transcriptCollectionViewControllerPlayingAudioDidChange:(id)arg1;
+- (void)transcriptCollectionViewControllerReportSpamButtonTapped:(id)arg1;
 - (BOOL)transcriptCollectionViewControllerShouldPlayAudio:(id)arg1;
 - (void)transcriptCollectionViewControllerWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (void)transcriptCollectionViewControllerWillScrollToBottom:(id)arg1;
+- (id)transcriptHeader;
 - (void)transitionFromNewMessageToConversation;
 - (void)trimController:(id)arg1 didFinishTrimmingMediaObject:(id)arg2 withReplacementMediaObject:(id)arg3;
 - (void)trimControllerDidCancel:(id)arg1;

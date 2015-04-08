@@ -11,6 +11,7 @@
 @property(readonly) NSNumber * userMin;
 
 + (id)axisForInfo:(id)arg1;
++ (unsigned char)styleOwnerPathType;
 
 - (void)adjustMinMaxForDataRangeInAnalysis:(id)arg1;
 - (id)computeMajorGridlinesFromMinMaxInAnalysis:(id)arg1;
@@ -35,9 +36,10 @@
 - (void)p_includeZeroWithMinValue:(double*)arg1 maxValue:(double*)arg2 userValues:(int)arg3;
 - (int)specificPropertyForGeneric:(int)arg1;
 - (BOOL)supportsAxisValueLabels;
+- (BOOL)supportsReferenceLines;
+- (void)updateModelAxisAnalysis:(id)arg1;
 - (void)updateModelMinMaxForErrorBarsOnSeries:(id)arg1 axisID:(id)arg2 analysis:(id)arg3;
 - (void)updateModelMinMaxForTrendLineOnSeries:(id)arg1 axisID:(id)arg2 analysis:(id)arg3;
-- (void)updateModelMinMaxInAnalysis:(id)arg1;
 - (id)userMax;
 - (id)userMin;
 - (double)validateUserMaxForDouble:(double)arg1;

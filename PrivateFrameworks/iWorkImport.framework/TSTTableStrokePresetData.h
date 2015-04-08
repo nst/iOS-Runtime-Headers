@@ -25,12 +25,12 @@
 - (id)exteriorStroke;
 - (id)horizontalStroke;
 - (id)init;
-- (id)initWithArchive:(const struct StrokePresetDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StrokeArchive {} *x3; struct StrokeArchive {} *x4; struct StrokeArchive {} *x5; int x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithDeprecatedArchive:(const struct Deprecated_StrokePresetDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Deprecated_TableStrokeArchive {} *x3; struct Deprecated_TableStrokeArchive {} *x4; struct Deprecated_TableStrokeArchive {} *x5; int x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct StrokePresetDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StrokeArchive {} *x5; struct StrokeArchive {} *x6; struct StrokeArchive {} *x7; int x8; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithDeprecatedArchive:(const struct Deprecated_StrokePresetDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Deprecated_TableStrokeArchive {} *x5; struct Deprecated_TableStrokeArchive {} *x6; struct Deprecated_TableStrokeArchive {} *x7; int x8; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithMask:(unsigned int)arg1 horizontalStroke:(id)arg2 verticalStroke:(id)arg3 exteriorStroke:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)mask;
-- (void)saveToArchive:(struct StrokePresetDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StrokeArchive {} *x3; struct StrokeArchive {} *x4; struct StrokeArchive {} *x5; int x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct StrokePresetDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StrokeArchive {} *x5; struct StrokeArchive {} *x6; struct StrokeArchive {} *x7; int x8; }*)arg1 archiver:(id)arg2;
 - (void)setExteriorStroke:(id)arg1;
 - (void)setHorizontalStroke:(id)arg1;
 - (void)setMask:(unsigned int)arg1;

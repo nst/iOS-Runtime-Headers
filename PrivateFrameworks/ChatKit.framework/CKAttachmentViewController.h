@@ -46,10 +46,12 @@
 - (void)_hideCurrentPreviewItemForPreviewController:(id)arg1;
 - (id)_iconForFileURL:(id)arg1 UTIType:(id)arg2;
 - (void)_loadAttachments;
+- (id)_mediaObjectsForAttachments:(id)arg1;
 - (void)_prewarmNextChunk;
 - (void)_saveAttachments:(id)arg1;
 - (void)_saveSelectedAttachments:(id)arg1;
 - (void)_showAllPreviewItemsForPreviewController:(id)arg1;
+- (void)_updateMediaObjects:(id)arg1;
 - (void)_updateToolbar;
 - (struct CGImage { }*)cgImageForUIImage:(id)arg1;
 - (id)collectionView;

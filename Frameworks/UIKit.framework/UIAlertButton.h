@@ -15,10 +15,10 @@
 @property float imageOffset;
 @property BOOL isNewStyle;
 
-- (void)_focusStateDidChange;
-- (BOOL)_isFocusableElement;
 - (void)_transitionHighlightViewToHighlighted:(BOOL)arg1;
+- (BOOL)canBecomeFocused;
 - (void)dealloc;
+- (void)focusedViewDidChange;
 - (id)highlightImage;
 - (id)highlightView;
 - (id)image;

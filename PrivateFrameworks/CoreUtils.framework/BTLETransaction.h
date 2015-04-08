@@ -15,7 +15,7 @@
 @property(copy) NSString * identifier;
 @property(copy) NSString * replyCharacteristic;
 @property(copy) NSData * replyData;
-@property CBATTRequest * request;
+@property(retain) CBATTRequest * request;
 @property(readonly) NSString * requestCharacteristic;
 @property(copy) NSData * requestData;
 @property BOOL waitingToUpdate;

@@ -9,6 +9,7 @@
         unsigned int count : 1; 
         unsigned int nCallActive : 1; 
         unsigned int nCallIdle : 1; 
+        unsigned int nCellularGood : 1; 
         unsigned int nData : 1; 
         unsigned int nNegativeStatusUpdate : 1; 
         unsigned int nPositiveStatusUpdate : 1; 
@@ -36,6 +37,7 @@
     } _has;
     unsigned int _nCallActive;
     unsigned int _nCallIdle;
+    unsigned int _nCellularGood;
     unsigned int _nData;
     unsigned int _nNegativeStatusUpdate;
     unsigned int _nPositiveStatusUpdate;
@@ -67,6 +69,7 @@
 @property BOOL hasCount;
 @property BOOL hasNCallActive;
 @property BOOL hasNCallIdle;
+@property BOOL hasNCellularGood;
 @property BOOL hasNData;
 @property BOOL hasNNegativeStatusUpdate;
 @property BOOL hasNPositiveStatusUpdate;
@@ -94,6 +97,7 @@
 @property BOOL hasTimestamp;
 @property unsigned int nCallActive;
 @property unsigned int nCallIdle;
+@property unsigned int nCellularGood;
 @property unsigned int nData;
 @property unsigned int nNegativeStatusUpdate;
 @property unsigned int nPositiveStatusUpdate;
@@ -128,6 +132,7 @@
 - (BOOL)hasCount;
 - (BOOL)hasNCallActive;
 - (BOOL)hasNCallIdle;
+- (BOOL)hasNCellularGood;
 - (BOOL)hasNData;
 - (BOOL)hasNNegativeStatusUpdate;
 - (BOOL)hasNPositiveStatusUpdate;
@@ -158,6 +163,7 @@
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)nCallActive;
 - (unsigned int)nCallIdle;
+- (unsigned int)nCellularGood;
 - (unsigned int)nData;
 - (unsigned int)nNegativeStatusUpdate;
 - (unsigned int)nPositiveStatusUpdate;
@@ -187,6 +193,7 @@
 - (void)setHasCount:(BOOL)arg1;
 - (void)setHasNCallActive:(BOOL)arg1;
 - (void)setHasNCallIdle:(BOOL)arg1;
+- (void)setHasNCellularGood:(BOOL)arg1;
 - (void)setHasNData:(BOOL)arg1;
 - (void)setHasNNegativeStatusUpdate:(BOOL)arg1;
 - (void)setHasNPositiveStatusUpdate:(BOOL)arg1;
@@ -214,6 +221,7 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setNCallActive:(unsigned int)arg1;
 - (void)setNCallIdle:(unsigned int)arg1;
+- (void)setNCellularGood:(unsigned int)arg1;
 - (void)setNData:(unsigned int)arg1;
 - (void)setNNegativeStatusUpdate:(unsigned int)arg1;
 - (void)setNPositiveStatusUpdate:(unsigned int)arg1;

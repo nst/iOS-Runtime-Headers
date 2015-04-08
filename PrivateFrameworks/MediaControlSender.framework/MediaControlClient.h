@@ -19,10 +19,6 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void)activateResource:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
-- (void)addResource:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
-- (void)addResourceData:(id)arg1 mimeType:(id)arg2 uuid:(id)arg3 completionQueue:(id)arg4 completionBlock:(id)arg5;
-- (void)addResourceFile:(id)arg1 mimeType:(id)arg2 uuid:(id)arg3 completionQueue:(id)arg4 completionBlock:(id)arg5;
 - (void)authorizeWithPICRequest:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)authorizeWithPICRequest:(id)arg1 options:(id)arg2 completionQueue:(id)arg3 completionBlock:(id)arg4;
 - (void)checkAuthentication;
@@ -42,7 +38,6 @@
 - (void)performRemoteAction:(id)arg1 withParams:(id)arg2 completionQueue:(id)arg3 completionBlock:(id)arg4;
 - (void)playWithParams:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)removeItem:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
-- (void)removeResource:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)sendPhotoData:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)sendPhotoData:(id)arg1 options:(id)arg2 completionQueue:(id)arg3 completionBlock:(id)arg4;
 - (void)setEventHandlerQueue:(id)arg1 eventHandlerBlock:(id)arg2;

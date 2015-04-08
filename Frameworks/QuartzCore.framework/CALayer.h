@@ -51,6 +51,8 @@
 @property float contentsScale;
 @property(copy) NSString * contentsScaling;
 @property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } contentsTransform;
+@property(retain) id cornerContents;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cornerContentsCenter;
 @property float cornerRadius;
 @property(retain,readonly) CALayer * currentLayer;
 @property id delegate;
@@ -71,6 +73,7 @@
 @property BOOL literalContentsCenter;
 @property(copy) NSString * magnificationFilter;
 @property(retain) CALayer * mask;
+@property unsigned int maskedCorners;
 @property BOOL masksToBounds;
 @property float mass;
 @property(copy) CAMeshTransform * meshTransform;
@@ -85,6 +88,7 @@
 @property(getter=isOpaque) BOOL opaque;
 @property struct CGPoint { float x1; float x2; } position;
 @property BOOL preloadsCache;
+@property BOOL rasterizationPrefersDisplayCompositing;
 @property float rasterizationScale;
 @property float repeatCount;
 @property double repeatDuration;
@@ -133,9 +137,10 @@
 - (id)CAMLTypeForKey:(id)arg1;
 - (BOOL)_canDisplayConcurrently;
 - (void)_cancelAnimationTimer;
-- (struct Layer { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct Data { unsigned int x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned int x_3_1_6 : 3; unsigned int x_3_1_7 : 3; unsigned int x_3_1_8 : 4; unsigned int x_3_1_9 : 4; unsigned int x_3_1_10 : 1; unsigned int x_3_1_11 : 1; unsigned int x_3_1_12 : 1; unsigned int x_3_1_13 : 1; unsigned int x_3_1_14 : 1; unsigned int x_3_1_15 : 1; unsigned int x_3_1_16 : 1; unsigned int x_3_1_17 : 1; unsigned int x_3_1_18 : 1; unsigned int x_3_1_19 : 1; unsigned int x_3_1_20 : 1; unsigned int x_3_1_21 : 1; unsigned int x_3_1_22 : 1; unsigned int x_3_1_23 : 1; unsigned int x_3_1_24 : 1; unsigned int x_3_1_25 : 1; unsigned int x_3_1_26 : 1; unsigned int x_3_1_27 : 1; unsigned int x_3_1_28 : 1; unsigned int x_3_1_29 : 1; unsigned int x_3_1_30 : 30; struct Vec2<double> { double x_31_2_1; double x_31_2_2; } x_3_1_31; struct Rect { double x_32_2_1; double x_32_2_2; double x_32_2_3; double x_32_2_4; } x_3_1_32; } x3; struct Ref<CA::Render::Object> { struct Object {} *x_4_1_1; } x4; struct Ref<CA::Render::TypedArray<CA::Render::Layer> > { struct TypedArray<CA::Render::Layer> {} *x_5_1_1; } x5; struct Layer {} *x6; struct Ref<CA::Render::Layer::Ext> { struct Ext {} *x_7_1_1; } x7; struct Ref<CA::Render::TypedArray<CA::Render::Animation> > { struct TypedArray<CA::Render::Animation> {} *x_8_1_1; } x8; struct Ref<CA::Render::Handle> { struct Handle {} *x_9_1_1; } x9; }*)_copyRenderLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CA::Layer *, unsigned int *> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct List<void (^)()> {} *x7; struct Command {} *x8; struct Deleted {} *x9; struct List<const void *> {} *x10; struct Context {} *x11; struct HashTable<CA::Layer *, CA::Layer *> {} *x12; struct __CFRunLoop {} *x13; struct __CFRunLoopObserver {} *x14; struct LayoutList {} *x15; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; }*)arg1 layerFlags:(unsigned int)arg2 commitFlags:(unsigned int*)arg3;
+- (struct Layer { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct Data { unsigned int x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned int x_3_1_6 : 3; unsigned int x_3_1_7 : 3; unsigned int x_3_1_8 : 4; unsigned int x_3_1_9 : 4; unsigned int x_3_1_10 : 4; unsigned int x_3_1_11 : 1; unsigned int x_3_1_12 : 1; unsigned int x_3_1_13 : 1; unsigned int x_3_1_14 : 1; unsigned int x_3_1_15 : 1; unsigned int x_3_1_16 : 1; unsigned int x_3_1_17 : 1; unsigned int x_3_1_18 : 1; unsigned int x_3_1_19 : 1; unsigned int x_3_1_20 : 1; unsigned int x_3_1_21 : 1; unsigned int x_3_1_22 : 1; unsigned int x_3_1_23 : 1; unsigned int x_3_1_24 : 1; unsigned int x_3_1_25 : 1; unsigned int x_3_1_26 : 1; unsigned int x_3_1_27 : 1; unsigned int x_3_1_28 : 1; unsigned int x_3_1_29 : 1; unsigned int x_3_1_30 : 1; unsigned int x_3_1_31 : 1; unsigned int x_3_1_32 : 25; struct Vec2<double> { double x_33_2_1; double x_33_2_2; } x_3_1_33; struct Rect { double x_34_2_1; double x_34_2_2; double x_34_2_3; double x_34_2_4; } x_3_1_34; } x3; struct Ref<CA::Render::Object> { struct Object {} *x_4_1_1; } x4; struct Ref<CA::Render::Object> { struct Object {} *x_5_1_1; } x5; struct Ref<CA::Render::TypedArray<CA::Render::Layer> > { struct TypedArray<CA::Render::Layer> {} *x_6_1_1; } x6; struct Layer {} *x7; struct Ref<CA::Render::Layer::Ext> { struct Ext {} *x_8_1_1; } x8; struct Ref<CA::Render::TypedArray<CA::Render::Animation> > { struct TypedArray<CA::Render::Animation> {} *x_9_1_1; } x9; struct Ref<CA::Render::Handle> { struct Handle {} *x_10_1_1; } x10; }*)_copyRenderLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CA::Layer *, unsigned int *> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct List<void (^)()> {} *x7; struct Command {} *x8; struct Deleted {} *x9; struct List<const void *> {} *x10; struct Context {} *x11; struct HashTable<CA::Layer *, CA::Layer *> {} *x12; struct __CFRunLoop {} *x13; struct __CFRunLoopObserver {} *x14; struct LayoutList {} *x15; struct List<CA::Layer *> {} *x16; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1 layerFlags:(unsigned int)arg2 commitFlags:(unsigned int*)arg3;
 - (void)_dealloc;
-- (void)_didCommitLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CA::Layer *, unsigned int *> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct List<void (^)()> {} *x7; struct Command {} *x8; struct Deleted {} *x9; struct List<const void *> {} *x10; struct Context {} *x11; struct HashTable<CA::Layer *, CA::Layer *> {} *x12; struct __CFRunLoop {} *x13; struct __CFRunLoopObserver {} *x14; struct LayoutList {} *x15; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; }*)arg1;
+- (BOOL)_deferrsDidBecomeVisiblePostCommit;
+- (void)_didCommitLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CA::Layer *, unsigned int *> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct List<void (^)()> {} *x7; struct Command {} *x8; struct Deleted {} *x9; struct List<const void *> {} *x10; struct Context {} *x11; struct HashTable<CA::Layer *, CA::Layer *> {} *x12; struct __CFRunLoop {} *x13; struct __CFRunLoopObserver {} *x14; struct LayoutList {} *x15; struct List<CA::Layer *> {} *x16; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1;
 - (void)_display;
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_gkParentSublayerTransform;
@@ -228,7 +233,6 @@
 - (float)borderWidth;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (BOOL)canDrawConcurrently;
-- (void)cancelLayoutForTilingLayers;
 - (void)clearHasBeenCommitted;
 - (BOOL)clearsContext;
 - (float)coefficientOfRestitution;
@@ -255,6 +259,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toLayer:(id)arg2;
 - (double)convertTime:(double)arg1 fromLayer:(id)arg2;
 - (double)convertTime:(double)arg1 toLayer:(id)arg2;
+- (id)cornerContents;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cornerContentsCenter;
 - (float)cornerRadius;
 - (id)currentLayer;
 - (void)dealloc;
@@ -324,6 +330,7 @@
 - (void)makeStretchableLayerWithoutImage:(struct CGImage { }*)arg1 leftCap:(float)arg2 rightCap:(float)arg3 topCap:(float)arg4 bottomCap:(float)arg5;
 - (void)makeStretchableLayerWithoutImage:(struct CGImage { }*)arg1 leftCap:(float)arg2 topCap:(float)arg3;
 - (id)mask;
+- (unsigned int)maskedCorners;
 - (BOOL)masksToBounds;
 - (float)mass;
 - (id)meshTransform;
@@ -341,7 +348,6 @@
 - (float)opacity;
 - (float)opacityByApplyingAnimation:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;
 - (BOOL)opaque;
-- (void)p_clearAllLayerDelegates;
 - (float)p_perspectiveZDistanceUsingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)pause;
 - (void)pauseAtTime:(double)arg1;
@@ -354,6 +360,7 @@
 - (struct CGSize { float x1; float x2; })preferredFrameSize;
 - (BOOL)preloadsCache;
 - (id)presentationLayer;
+- (BOOL)rasterizationPrefersDisplayCompositing;
 - (float)rasterizationScale;
 - (void*)regionBeingDrawn;
 - (oneway void)release;
@@ -431,6 +438,8 @@
 - (void)setContentsScale:(float)arg1;
 - (void)setContentsScaling:(id)arg1;
 - (void)setContentsTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setCornerContents:(id)arg1;
+- (void)setCornerContentsCenter:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDiffuseReflectance:(float)arg1;
@@ -454,6 +463,7 @@
 - (void)setLiteralContentsCenter:(BOOL)arg1;
 - (void)setMagnificationFilter:(id)arg1;
 - (void)setMask:(id)arg1;
+- (void)setMaskedCorners:(unsigned int)arg1;
 - (void)setMasksToBounds:(BOOL)arg1;
 - (void)setMass:(float)arg1;
 - (void)setMeshTransform:(id)arg1;
@@ -463,17 +473,16 @@
 - (void)setMomentOfInertia:(float)arg1;
 - (void)setName:(id)arg1;
 - (void)setNeedsDisplay;
-- (void)setNeedsDisplayForDirtyTiles:(id)arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNeedsDisplayOnBoundsChange:(BOOL)arg1;
 - (void)setNeedsLayout;
-- (void)setNeedsLayoutForTilingLayers;
 - (void)setNeedsLayoutOnGeometryChange:(BOOL)arg1;
 - (void)setOpacity:(float)arg1;
 - (void)setOpaque:(BOOL)arg1;
 - (void)setPerspectiveDistance:(float)arg1;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPreloadsCache:(BOOL)arg1;
+- (void)setRasterizationPrefersDisplayCompositing:(BOOL)arg1;
 - (void)setRasterizationScale:(float)arg1;
 - (void)setRepeatCount:(float)arg1;
 - (void)setRepeatDuration:(double)arg1;
@@ -493,7 +502,6 @@
 - (void)setSublayerTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
 - (void)setSublayers:(id)arg1;
 - (void)setSwapsMaskAndLayer:(BOOL)arg1;
-- (void)setTileContents:(id)arg1;
 - (void)setTimeOffset:(double)arg1;
 - (void)setTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
@@ -522,9 +530,6 @@
 - (id)sublayers;
 - (id)superlayer;
 - (BOOL)swapsMaskAndLayer;
-- (id)tileContentsLayer;
-- (BOOL)tilingSafeHasContents;
-- (void)tilingSafeSetSublayers:(id)arg1;
 - (double)timeOffset;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform3DByApplyingAnimation:(id)arg1 atTime:(double)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 animationCache:(id)arg4;

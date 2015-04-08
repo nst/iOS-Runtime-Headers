@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDCanonicalLocationSearchParameters, GEOPDGeocodingParameters, GEOPDLocationDirectedSearchParameters, GEOPDMerchantLookupParameters, GEOPDPlaceLookupParameters, GEOPDPlaceRefinementParameters, GEOPDReverseGeocodingParameters, GEOPDSearchParameters, GEOPDSiriSearchParameters;
+@class GEOPDAutocompleteParameters, GEOPDCanonicalLocationSearchParameters, GEOPDGeocodingParameters, GEOPDLocationDirectedSearchParameters, GEOPDMerchantLookupParameters, GEOPDPlaceLookupParameters, GEOPDPlaceRefinementParameters, GEOPDReverseGeocodingParameters, GEOPDSearchParameters, GEOPDSiriSearchParameters;
 
 @interface GEOPDPlaceRequestParameters : PBCodable <NSCopying> {
+    GEOPDAutocompleteParameters *_autocompleteParameters;
     GEOPDCanonicalLocationSearchParameters *_canonicalLocationSearchParameters;
     GEOPDGeocodingParameters *_geocodingParameters;
     GEOPDLocationDirectedSearchParameters *_locationDirectedSearchParameters;
@@ -16,8 +17,10 @@
     GEOPDSiriSearchParameters *_siriSearchParameters;
 }
 
+@property(retain) GEOPDAutocompleteParameters * autocompleteParameters;
 @property(retain) GEOPDCanonicalLocationSearchParameters * canonicalLocationSearchParameters;
 @property(retain) GEOPDGeocodingParameters * geocodingParameters;
+@property(readonly) BOOL hasAutocompleteParameters;
 @property(readonly) BOOL hasCanonicalLocationSearchParameters;
 @property(readonly) BOOL hasGeocodingParameters;
 @property(readonly) BOOL hasLocationDirectedSearchParameters;
@@ -35,6 +38,7 @@
 @property(retain) GEOPDSearchParameters * searchParameters;
 @property(retain) GEOPDSiriSearchParameters * siriSearchParameters;
 
+- (id)autocompleteParameters;
 - (id)canonicalLocationSearchParameters;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -42,6 +46,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)geocodingParameters;
+- (BOOL)hasAutocompleteParameters;
 - (BOOL)hasCanonicalLocationSearchParameters;
 - (BOOL)hasGeocodingParameters;
 - (BOOL)hasLocationDirectedSearchParameters;
@@ -58,9 +63,9 @@
 - (id)initWithForwardGeocodeAddressString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithMUIDs:(id)arg1 resultProviderID:(int)arg2;
 - (id)initWithMapItemToRefine:(id)arg1 traits:(id)arg2;
-- (id)initWithMerchantCode:(id)arg1 paymentNetwork:(id)arg2 transactionDate:(id)arg3 transactionLocation:(id)arg4;
+- (id)initWithMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 paymentNetwork:(id)arg3 transactionDate:(id)arg4 transactionLocation:(id)arg5;
 - (id)initWithReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1;
-- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 maxResults:(unsigned int)arg4 traits:(id)arg5;
+- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 autocompleteEntry:(id)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
 - (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 maxResults:(unsigned int)arg3;
 - (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4;
 - (BOOL)isEqual:(id)arg1;
@@ -72,6 +77,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)reverseGeocodingParameters;
 - (id)searchParameters;
+- (void)setAutocompleteParameters:(id)arg1;
 - (void)setCanonicalLocationSearchParameters:(id)arg1;
 - (void)setGeocodingParameters:(id)arg1;
 - (void)setLocationDirectedSearchParameters:(id)arg1;

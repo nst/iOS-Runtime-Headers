@@ -16,7 +16,6 @@
 @property BOOL clearsCacheOnApplicationBackground;
 @property BOOL clearsCacheOnLowMemoryWarnings;
 
-- (id)cacheKeys;
 - (BOOL)clearsCacheOnApplicationBackground;
 - (BOOL)clearsCacheOnLowMemoryWarnings;
 - (void)dealloc;

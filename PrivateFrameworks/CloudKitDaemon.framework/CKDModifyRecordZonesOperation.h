@@ -46,6 +46,7 @@
 - (void)_handleRecordZoneDeleted:(id)arg1 responseCode:(id)arg2;
 - (void)_handleRecordZoneSaved:(id)arg1 responseCode:(id)arg2;
 - (BOOL)_saveZonesToServer;
+- (void)_sendErrorForFailedZones;
 - (BOOL)allowDefaultZoneSave;
 - (id)deleteCompletionBlock;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

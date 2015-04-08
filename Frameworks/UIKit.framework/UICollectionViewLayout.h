@@ -85,14 +85,18 @@
 - (id)_indexPathsToInsertForDecorationViewOfKind:(id)arg1;
 - (id)_indexPathsToInsertForSupplementaryViewOfKind:(id)arg1;
 - (void)_invalidateLayoutUsingContext:(id)arg1;
+- (id)_invalidationContextForEndingReorderingItemToFinalIndexPaths:(id)arg1 previousIndexPaths:(id)arg2 reorderingCancelled:(BOOL)arg3;
+- (id)_invalidationContextForReorderingTargetPosition:(struct CGPoint { float x1; float x2; })arg1 targetIndexPaths:(id)arg2 withPreviousPosition:(struct CGPoint { float x1; float x2; })arg3 previousIndexPaths:(id)arg4;
 - (BOOL)_isPrepared;
 - (id)_items;
+- (id)_layoutAttributesForReorderedItemAtIndexPath:(id)arg1 withTargetPosition:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGPoint { float x1; float x2; })_layoutOffset;
 - (unsigned int)_layoutOffsetEdges;
 - (struct CGPoint { float x1; float x2; })_offsetInTopParentLayout:(struct _UICollectionViewCompositionLayout { Class x1; }**)arg1;
 - (void)_prepareForTransitionFromLayout:(id)arg1;
 - (void)_prepareForTransitionToLayout:(id)arg1;
 - (void)_prepareToAnimateFromCollectionViewItems:(id)arg1 atContentOffset:(struct CGPoint { float x1; float x2; })arg2 toItems:(id)arg3 atContentOffset:(struct CGPoint { float x1; float x2; })arg4;
+- (id)_reorderingTargetItemIndexPathForPosition:(struct CGPoint { float x1; float x2; })arg1 withPreviousIndexPath:(id)arg2;
 - (id)_sections;
 - (void)_setCollectionView:(id)arg1;
 - (void)_setCollectionViewBoundsSize:(struct CGSize { float x1; float x2; })arg1;

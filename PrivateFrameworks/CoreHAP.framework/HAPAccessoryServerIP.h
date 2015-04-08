@@ -38,6 +38,7 @@
     NSMutableArray *_queuedOperations;
     NSString *_sourceVersion;
     unsigned int _stateNumber;
+    unsigned int _statusFlags;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
@@ -62,6 +63,7 @@
 @property(retain) NSMutableArray * queuedOperations;
 @property(copy) NSString * sourceVersion;
 @property unsigned int stateNumber;
+@property unsigned int statusFlags;
 @property(readonly) Class superclass;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
@@ -81,7 +83,6 @@
 - (void)_getAttributeDatabase;
 - (void)_handleEventResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 characteristics:(id)arg5 requestedEventState:(BOOL)arg6 completion:(id)arg7 queue:(id)arg8;
 - (void)_handleHTTPClientErrors;
-- (long)_handleMFiSetupCompletionWithData:(id)arg1;
 - (long)_handlePairSetupCompletionWithData:(id)arg1;
 - (long)_handlePairVerifyCompletionWithData:(id)arg1;
 - (void)_handlePairingsResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 httpError:(id)arg4 removeRequest:(BOOL)arg5 completionQueue:(id)arg6 completionBlock:(id)arg7;
@@ -91,12 +92,12 @@
 - (BOOL)_isSessionEstablished;
 - (BOOL)_mergeExistingAccessory:(id)arg1 withNewAccessory:(id)arg2;
 - (BOOL)_mergeExistingService:(id)arg1 withNewService:(id)arg2;
-- (long)_mfiSetupStart;
 - (long)_pairSetupStart;
 - (long)_pairSetupTryPassword:(id)arg1;
 - (long)_pairVerifyStart;
 - (BOOL)_parseAndValidateTXTRecord;
 - (void)_parseAttributeDatabase:(id)arg1;
+- (id)_parseSerializedAccessory:(id)arg1;
 - (BOOL)_parseTXTRecordDictionary:(id)arg1;
 - (BOOL)_processEvent:(id)arg1 matchedCharacteristic:(id*)arg2;
 - (void)_processQueuedOperationsWithError:(id)arg1;
@@ -106,6 +107,8 @@
 - (void)_queueWriteCharacteristicValues:(id)arg1 queue:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id)arg4;
+- (id)_serverIdentifier;
+- (id)_serverName;
 - (void)_setDeviceIDWithString:(id)arg1;
 - (void)_startAddPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id)arg5;
 - (void)_tearDownSession;
@@ -127,6 +130,7 @@
 - (void)discoverAccessories;
 - (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id)arg3 queue:(id)arg4;
 - (BOOL)establishingSecureConnection;
+- (BOOL)hasPairings;
 - (id)httpClient;
 - (void)httpClient:(id)arg1 didReceiveEvent:(id)arg2;
 - (void)httpClient:(id)arg1 didReceiveHTTPMessageWithHeaders:(id)arg2 body:(id)arg3;
@@ -171,10 +175,12 @@
 - (void)setQueuedOperations:(id)arg1;
 - (void)setSourceVersion:(id)arg1;
 - (void)setStateNumber:(unsigned int)arg1;
+- (void)setStatusFlags:(unsigned int)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)sourceVersion;
 - (void)startPairing;
 - (unsigned int)stateNumber;
+- (unsigned int)statusFlags;
 - (BOOL)stopPairingWithError:(id*)arg1;
 - (BOOL)tryPairingPassword:(id)arg1 error:(id*)arg2;
 - (void)updateWithBonjourDeviceInfo:(id)arg1;

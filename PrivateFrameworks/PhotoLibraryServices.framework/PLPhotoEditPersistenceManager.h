@@ -15,6 +15,7 @@
 - (Class)_latestExporterClass;
 - (BOOL)canInterpretDataWithFormatIdentifier:(id)arg1 formatVersion:(id)arg2;
 - (id)dataFromPhotoEditModel:(id)arg1 imageWidth:(unsigned int)arg2 imageHeight:(unsigned int)arg3 exifOrientation:(int)arg4;
+- (id)debugDescriptionForAdjustmentData:(id)arg1;
 - (id)debugDescriptionForPhotoEditData:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3;
 - (id)latestFormatIdentifier;
 - (id)latestFormatVersion;

@@ -48,10 +48,10 @@
     long _objectStoreLockCount;
     id _parentObjectStore;
     id _queueOwner;
+    long _referenceCallbackRegistration;
     id _referenceQueue;
     NSMutableSet *_refreshedObjects;
     void *_reserved1;
-    id _reserved2;
     id _reserved3;
     id _reserved4;
     id _reserved6;
@@ -84,6 +84,7 @@
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
 
+- (id)_allOrderKeysForDestination:(id)arg1 inRelationship:(id)arg2 error:(id*)arg3;
 - (BOOL)_attemptCoalesceChangesForFetch;
 - (unsigned int)_batchRetainedObjects:(id*)arg1 forCount:(unsigned int)arg2 withIDs:(id*)arg3 optionalHandler:(id)arg4 withInlineStorage:(BOOL)arg5;
 - (void)_changeIDsForManagedObjects:(id)arg1 toIDs:(id)arg2;
@@ -147,10 +148,12 @@
 - (void)_mergeChangesFromRemoteContextSave:(id)arg1;
 - (void)_mergeRefreshEpilogueForObject:(id)arg1 mergeChanges:(BOOL)arg2;
 - (BOOL)_mergeRefreshObject:(id)arg1 mergeChanges:(BOOL)arg2 withPersistentSnapshot:(id)arg3;
+- (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (id)_newSaveRequestForCurrentState;
 - (id)_newUnchangedLockedObjects;
 - (void)_noop:(id)arg1;
 - (void)_objectsChangedInStore:(id)arg1;
+- (id)_orderKeysForRelationshipWithName__:(id)arg1 onObjectWithID:(id)arg2;
 - (id)_orderedSetWithResultsFromFetchRequest:(id)arg1;
 - (id)_parentObjectsForFetchRequest:(id)arg1 inContext:(id)arg2 error:(id*)arg3;
 - (BOOL)_parentObtainPermanentIDsForObjects:(id)arg1 context:(id)arg2 error:(id*)arg3;
@@ -177,6 +180,7 @@
 - (void)_propagateDeletesUsingTable:(id)arg1;
 - (BOOL)_propagatePendingDeletesAtEndOfEvent:(id*)arg1;
 - (void)_refaultObject:(id)arg1 globalID:(id)arg2 boolean:(BOOL)arg3;
+- (void)_registerAyncReferenceCallback;
 - (void)_registerClearStateWithUndoManager;
 - (void)_registerForNotificationsWithCoordinator:(id)arg1;
 - (void)_registerObject:(id)arg1 withID:(id)arg2;
@@ -215,11 +219,14 @@
 - (void)_undoManagerCheckpoint:(id)arg1;
 - (void)_undoUpdates:(id)arg1;
 - (void)_unregisterForNotifications;
+- (BOOL)_updateLocationsOfObjectsToLocationByOrderKey:(id)arg1 inRelationshipWithName:(id)arg2 onObjectWithID:(id)arg3 error:(id*)arg4;
 - (void)_updateUndoTransactionForThisEvent:(id)arg1 withDeletions:(id)arg2 withUpdates:(id)arg3;
 - (void)_updateUnprocessedOwnDestinations:(id)arg1;
 - (BOOL)_validateChangesForSave:(id*)arg1;
 - (BOOL)_validateDeletesUsingTable:(id)arg1 withError:(id*)arg2;
 - (BOOL)_validateObjects:(id)arg1 forOperation:(unsigned int)arg2 error:(id*)arg3 exhaustive:(BOOL)arg4 forSave:(BOOL)arg5;
+- (void)_youcreatedanNSManagedObjectContextOnthemainthreadandillegallypassedittoabackgroundthread;
+- (void)assertOnImproperDealloc;
 - (void)assignObject:(id)arg1 toPersistentStore:(id)arg2;
 - (BOOL)commitEditing;
 - (void)commitEditingWithDelegate:(id)arg1 didCommitSelector:(SEL)arg2 contextInfo:(void*)arg3;
@@ -232,6 +239,9 @@
 - (void)detectConflictsForObject:(id)arg1;
 - (void)discardEditing;
 - (void)encodeWithCoder:(id)arg1;
+- (id)enumerateObjectsFromFetchRequest:(id)arg1 count:(unsigned int*)arg2 batchSize:(unsigned int)arg3 usingBlock:(id)arg4;
+- (id)enumerateObjectsFromFetchRequest:(id)arg1 count:(unsigned int*)arg2 usingDefaultBatchSizeWithBlock:(id)arg3;
+- (id)enumerateWithIncrementalSaveUsingObjects:(id)arg1 withBlock:(id)arg2;
 - (id)executeFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)executeRequest:(id)arg1 error:(id*)arg2;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
@@ -264,12 +274,14 @@
 - (id)parentContext;
 - (void)performBlock:(id)arg1;
 - (void)performBlockAndWait:(id)arg1;
+- (void)performWithOptions:(unsigned int)arg1 andBlock:(id)arg2;
 - (id)persistentStoreCoordinator;
 - (id)photoLibrary;
 - (void)pl_refresh;
 - (void)processPendingChanges;
 - (BOOL)propagatesDeletesAtEndOfEvent;
 - (void)redo;
+- (void)refreshAllObjects;
 - (void)refreshObject:(id)arg1 mergeChanges:(BOOL)arg2;
 - (id)registeredObjects;
 - (oneway void)release;

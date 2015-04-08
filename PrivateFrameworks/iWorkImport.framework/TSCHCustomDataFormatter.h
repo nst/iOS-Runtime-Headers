@@ -2,31 +2,32 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSUCustomFormatWrapper;
+@class NSString, NSUUID, TSUCustomFormat;
 
 @interface TSCHCustomDataFormatter : NSObject <TSCHDataFormatter, TSCHDataFormatterPersistableStyleObject> {
-    unsigned int mCustomFormatListKey;
-    TSUCustomFormatWrapper *mCustomFormatWrapper;
+    TSUCustomFormat *mCustomFormat;
+    NSUUID *mCustomFormatListKey;
     int mFormatType;
 }
 
-@property(readonly) TSUCustomFormatWrapper * customFormatWrapper;
+@property(readonly) TSUCustomFormat * customFormat;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (id)dataFormatterWithCustomFormatWrapper:(id)arg1 customFormatListKey:(unsigned int)arg2 formatType:(int)arg3;
++ (id)dataFormatterWithCustomFormat:(id)arg1 customFormatListKey:(id)arg2 formatType:(int)arg3;
 
-- (id)chartFormattedInspectorStringForValue:(id)arg1;
-- (id)chartFormattedStringForValue:(id)arg1;
+- (id)chartFormattedInspectorStringForValue:(id)arg1 locale:(id)arg2;
+- (id)chartFormattedStringForValue:(id)arg1 locale:(id)arg2;
 - (id)convertToPersistableStyleObject;
-- (id)convertToSupportedClientFormatObject;
-- (id)customFormatWrapper;
+- (id)convertToSupportedClientFormatObjectWithLocale:(id)arg1;
+- (id)customFormat;
 - (void)dealloc;
 - (int)formatType;
-- (id)initWithCustomFormatWrapper:(id)arg1 customFormatListKey:(unsigned int)arg2 formatType:(int)arg3;
+- (id)initWithCustomFormat:(id)arg1 customFormatListKey:(id)arg2 formatType:(int)arg3;
 - (BOOL)isCompatibleWithDataFormatter:(id)arg1;
-- (id)p_stringForValue:(id)arg1;
+- (int)numberOfDecimalPlaces;
+- (id)p_stringForValue:(id)arg1 locale:(id)arg2;
 
 @end

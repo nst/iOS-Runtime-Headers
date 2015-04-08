@@ -18,6 +18,7 @@
 + (id)displayTypeStringQuery;
 + (id)extractDateStringAndUUIDStringFromFilePath:(id)arg1;
 + (BOOL)gasGaugeEnabled;
++ (int)getAudioRevOfDevice;
 + (int)getDisplayTypeOfDevice;
 + (int)getProcessorRevOfDevice;
 + (int)getTorchTypeOfDevice;

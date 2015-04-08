@@ -2,13 +2,21 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
+@class UIButton;
+
 @interface PKPassWelcomeView : PKWelcomeView {
+    UIButton *_appStoreButton;
 }
 
 + (float)headerImageRegionHeight;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })margins;
++ (id)messageAttributedString:(BOOL)arg1;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textInsets;
 
+- (void)_appStorePressed;
 - (void)_scanCodePressed;
+- (void)dealloc;
 - (id)init;
+- (void)layoutSubviews;
 
 @end

@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class <WLCardViewDelegate>, NSString, PKPass, PKPassBackFaceView, PKPassColorProfile, PKPassFaceView, PKPassFrontFaceView;
+@class <WLCardViewDelegate>, NSString, PKPass, PKPassBackFaceView, PKPassColorProfile, PKPassFaceView, PKPassFrontFaceView, UITapGestureRecognizer;
 
-@interface PKPassView : UIView <PKPassFaceDelegate> {
+@interface PKPassView : UIView <PKPassFaceDelegate, UIGestureRecognizerDelegate> {
     PKPassBackFaceView *_backFace;
     BOOL _backFaceIsTall;
     PKPassColorProfile *_colorProfile;
@@ -18,15 +18,27 @@
   /* Error parsing encoded ivar type info: @? */
     id _delayedContentModeCanceller;
 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _delayedFlipFrame;
     <WLCardViewDelegate> *_delegate;
     float _flipLayoutOvershoot;
     float _flipOvershoot;
+    BOOL _flipping;
     PKPassFrontFaceView *_frontFace;
     BOOL _isFrontmostPassView;
     PKPassFaceView *_otherFace;
     PKPass *_pass;
     int _priorContentMode;
     unsigned int _suppressedContent;
+    UITapGestureRecognizer *_tapRecognizer;
     PKPassFaceView *_visibleFace;
 }
 
@@ -60,8 +72,10 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)flipPass:(BOOL)arg1 fromLeft:(BOOL)arg2 notify:(BOOL)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfVisibleFace;
 - (BOOL)frontFaceBodyContentCreated;
+- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithPass:(id)arg1;
 - (id)initWithPass:(id)arg1 content:(int)arg2;
@@ -82,6 +96,7 @@
 - (void)setContentMode:(int)arg1 animated:(BOOL)arg2 withDelay:(double)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setDimmer:(float)arg1 animated:(BOOL)arg2;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIsFrontmostPassView:(BOOL)arg1;
 - (void)setSuppressedContent:(unsigned int)arg1;
 - (BOOL)showingFront;
@@ -92,9 +107,7 @@
 - (id)snapshotOfFrontFace;
 - (id)snapshotViewOfVisibleFaceAfterScreenUpdates:(BOOL)arg1;
 - (unsigned int)suppressedContent;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)tapRecognized:(id)arg1;
 - (id)uniqueID;
 - (void)unregisterForEnterBackgroundNotification;
 - (void)updateValidityDisplay;

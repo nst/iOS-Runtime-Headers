@@ -6,13 +6,16 @@
 
 @interface PKPaymentOptionGroupItem : NSObject {
     NSString *_detail;
+    BOOL _editable;
     NSString *_groupType;
     id _referenceObject;
     NSString *_title;
 }
 
 @property(readonly) NSString * detail;
+@property(getter=isEditable) BOOL editable;
 @property(readonly) NSString * groupType;
+@property(readonly) BOOL isDeletable;
 @property(readonly) BOOL isSelectable;
 @property(readonly) id referenceObject;
 @property(readonly) Class tableViewCellClass;
@@ -25,10 +28,13 @@
 - (id)groupType;
 - (unsigned int)hash;
 - (id)initWithReferenceObject:(id)arg1 title:(id)arg2 detail:(id)arg3 groupType:(id)arg4;
+- (BOOL)isDeletable;
+- (BOOL)isEditable;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToOptionGroupItem:(id)arg1;
 - (BOOL)isSelectable;
 - (id)referenceObject;
+- (void)setEditable:(BOOL)arg1;
 - (Class)tableViewCellClass;
 - (id)title;
 

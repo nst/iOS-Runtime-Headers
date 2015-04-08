@@ -11,10 +11,9 @@
     struct { 
         unsigned int barTranslucence : 3; 
         unsigned int barStyle : 3; 
-        unsigned int backgroundImageNeedsUpdate : 1; 
         unsigned int isContainedInPopover : 1; 
         unsigned int barWantsAdaptiveBackdrop : 1; 
-    } _navbarFlags;
+    } _navbarBackgroundFlags;
     UIImageView *_shadowView;
 }
 

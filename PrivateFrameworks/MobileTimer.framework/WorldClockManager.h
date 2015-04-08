@@ -18,14 +18,17 @@
 
 - (void)_notifyNano;
 - (unsigned int)addCity:(id)arg1;
+- (void)addDefaultCitiesIfNeeded;
 - (BOOL)canAddCity;
 - (BOOL)checkIfCitiesModified;
 - (id)cities;
 - (id)cityWithIdUrl:(id)arg1;
 - (void)dealloc;
+- (id)fixUpCityProperties:(id)arg1;
 - (id)lastModified;
 - (void)loadCities;
 - (void)moveCityFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
+- (void)pushCityPropertiesToPreferences;
 - (void)removeAllCities;
 - (void)removeCity:(id)arg1;
 - (void)removeCityAtIndex:(unsigned int)arg1;
@@ -34,5 +37,8 @@
 - (void)updateWeatherDataForCities:(id)arg1 withCompletion:(id)arg2;
 - (void)updateWeatherDataWithCompletion:(id)arg1;
 - (id)weatherReachabilityURL;
+- (id)worldClockCityFromPersistenceArray:(id)arg1;
+- (id)worldClockCityFromPersistenceDictionary:(id)arg1;
+- (id)worldClockCityFromPersistenceRepresentation:(id)arg1;
 
 @end

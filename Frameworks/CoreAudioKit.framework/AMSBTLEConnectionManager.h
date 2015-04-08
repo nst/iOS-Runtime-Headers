@@ -6,10 +6,10 @@
 
 @interface AMSBTLEConnectionManager : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate> {
     CBCentralManager *centralManager;
+    int centralState;
     NSMutableArray *connectedAMSPeripherals;
     NSMutableArray *connectedBTPeripherals;
     <BTLEConnectionTable> *controller;
-    BOOL leState;
     NSMutableArray *peripheralList;
     NSTimer *refreshTimer;
 }

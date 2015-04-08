@@ -10,7 +10,6 @@
     NSArray *_searchBundles;
 }
 
-@property(readonly) NSArray * datastores;
 @property(readonly) NSArray * searchBundles;
 
 + (id)sharedManager;
@@ -22,8 +21,10 @@
 - (void)dealloc;
 - (id)domainMap;
 - (void)lockDatastore:(id)arg1;
+- (BOOL)lockDatastore:(id)arg1 withTimeout:(double)arg2;
 - (void)resetDatastores;
 - (id)searchBundles;
+- (BOOL)tryLockDatastore:(id)arg1;
 - (void)unlockDatastore:(id)arg1;
 
 @end

@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class CIImage, NSDictionary, NSMutableDictionary, NSString, PLPhotoEditModel, PLPhotoEditRenderer, PUCropAndStraightenView, PUCropAspect, PUCropHandleView, PUCropOverlayView, PUCropToolControllerSpec, PUTiltWheelControl, UIButton, UIImage, UIView;
+@class CIImage, NSDictionary, NSMutableDictionary, NSString, PLImageGeometry, PLPhotoEditModel, PLPhotoEditRenderer, PUCropAndStraightenView, PUCropAspect, PUCropHandleView, PUCropOverlayView, PUCropToolControllerSpec, PUTiltWheelControl, UIAlertController, UIButton, UIImage, UIView;
 
 @interface PUCropToolController : PUPhotoEditToolController <PUCropAndStraightenViewDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate> {
     CIImage *__CIImage;
     BOOL __activeTool;
     NSMutableDictionary *__animationTargetsByKeyPath;
     NSMutableDictionary *__animationsByKeyPath;
+    UIAlertController *__aspectAlertController;
     UIButton *__aspectButton;
     BOOL __contentViewsHidden;
     unsigned int __contentViewsHiddenAnimationCount;
@@ -29,6 +30,7 @@
             float height; 
         } size; 
     } __cropViewFrameForLastModelLoad;
+    PLImageGeometry *__geometry;
     BOOL __hasAppliedCropSuggestion;
     BOOL __hasAutoAppliedCropSuggestion;
     BOOL __hasRequestedCropSuggestion;
@@ -67,10 +69,8 @@
     } __previewViewInsets;
     PLPhotoEditRenderer *__renderer;
     UIButton *__rotateButton;
-    float __rotateSnapshotStartAngle;
     UIView *__rotateSnapshotView;
     unsigned int __rotatingAnimationCount;
-    unsigned int __rotation;
     PUCropHandleView *__selectedCropHandleView;
     float __straightenAngle;
     struct CGRect { 
@@ -103,6 +103,7 @@
 @property(getter=_isActiveTool,setter=_setActiveTool:) BOOL _activeTool;
 @property(setter=_setAnimationTargetsByKeyPath:,retain) NSMutableDictionary * _animationTargetsByKeyPath;
 @property(setter=_setAnimationsByKeyPath:,retain) NSMutableDictionary * _animationsByKeyPath;
+@property(setter=_setAspectAlertController:) UIAlertController * _aspectAlertController;
 @property(setter=_setAspectButton:,retain) UIButton * _aspectButton;
 @property(setter=_setContentViewsHidden:) BOOL _contentViewsHidden;
 @property(setter=_setContentViewsHiddenAnimationCount:) unsigned int _contentViewsHiddenAnimationCount;
@@ -114,6 +115,7 @@
 @property(setter=_setCropToggleButtonTitle:,copy) NSString * _cropToggleButtonTitle;
 @property(setter=_setCropView:,retain) PUCropAndStraightenView * _cropView;
 @property(setter=_setCropViewFrameForLastModelLoad:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _cropViewFrameForLastModelLoad;
+@property(setter=_setGeometry:,retain) PLImageGeometry * _geometry;
 @property(setter=_setHasAppliedCropSuggestion:) BOOL _hasAppliedCropSuggestion;
 @property(setter=_setHasAutoAppliedCropSuggestion:) BOOL _hasAutoAppliedCropSuggestion;
 @property(setter=_setHasRequestedCropSuggestion:) BOOL _hasRequestedCropSuggestion;
@@ -129,10 +131,8 @@
 @property(setter=_setPreviewViewInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _previewViewInsets;
 @property(setter=_setRenderer:,retain) PLPhotoEditRenderer * _renderer;
 @property(setter=_setRotateButton:,retain) UIButton * _rotateButton;
-@property(setter=_setRotateSnapshotStartAngle:) float _rotateSnapshotStartAngle;
 @property(setter=_setRotateSnapshotView:,retain) UIView * _rotateSnapshotView;
 @property(setter=_setRotatingAnimationCount:) unsigned int _rotatingAnimationCount;
-@property(setter=_setRotation:) unsigned int _rotation;
 @property(setter=_setSelectedCropHandleView:,retain) PUCropHandleView * _selectedCropHandleView;
 @property(setter=_setStraightenAngle:) float _straightenAngle;
 @property(setter=_setSuggestedCrop:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _suggestedCrop;
@@ -158,6 +158,7 @@
 - (id)_animationsByKeyPath;
 - (struct CGVector { float x1; float x2; })_applyAspectOfCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toHandleMovement:(struct CGVector { float x1; float x2; })arg2;
 - (void)_applyCropSuggestion;
+- (id)_aspectAlertController;
 - (id)_aspectButton;
 - (void)_aspectButtonTapped:(id)arg1;
 - (void)_autoApplyCropSuggestionIfNeeded;
@@ -180,10 +181,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_cropViewFrameForLastModelLoad;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_defaultCropRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_defaultNormalizedCropRect;
-- (float)_defaultRotation;
+- (int)_defaultOrientation;
 - (float)_defaultStraightenAngle;
 - (struct CGVector { float x1; float x2; })_deltaMaskForHandle:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_denormalizeImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_geometry;
 - (void)_handleCropHandlePan:(id)arg1;
 - (void)_handleTouchingGesture:(id)arg1;
 - (BOOL)_hasAppliedCropSuggestion;
@@ -210,8 +212,10 @@
 - (void)_loadStateFromModel;
 - (BOOL)_needsImageLoad;
 - (BOOL)_needsModelLoad;
+- (BOOL)_needsRecomposeCropRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_normalizeImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_normalizedImageRect;
+- (void)_performGeometryChange:(id)arg1 animated:(BOOL)arg2;
 - (void)_performLocalModelChanges:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_pointForHandle:(unsigned int)arg1;
 - (struct CGPoint { float x1; float x2; })_pointForHandle:(unsigned int)arg1 onCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -222,17 +226,15 @@
 - (void)_resetAllValuesAnimated:(BOOL)arg1;
 - (id)_rotateButton;
 - (void)_rotateButtonTapped:(id)arg1;
-- (float)_rotateSnapshotStartAngle;
 - (id)_rotateSnapshotView;
 - (unsigned int)_rotatingAnimationCount;
-- (unsigned int)_rotation;
-- (unsigned int)_rotationAfterRotation:(unsigned int)arg1;
 - (id)_selectedCropHandleView;
 - (void)_setActiveTool:(BOOL)arg1;
 - (void)_setAnimation:(id)arg1 forKeyPath:(id)arg2;
 - (void)_setAnimationTarget:(id)arg1 forKeyPath:(id)arg2;
 - (void)_setAnimationTargetsByKeyPath:(id)arg1;
 - (void)_setAnimationsByKeyPath:(id)arg1;
+- (void)_setAspectAlertController:(id)arg1;
 - (void)_setAspectButton:(id)arg1;
 - (void)_setCIImage:(id)arg1;
 - (void)_setContentViewsHidden:(BOOL)arg1;
@@ -248,6 +250,7 @@
 - (void)_setCropToggleButtonTitle:(id)arg1;
 - (void)_setCropView:(id)arg1;
 - (void)_setCropViewFrameForLastModelLoad:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setGeometry:(id)arg1;
 - (void)_setHasAppliedCropSuggestion:(BOOL)arg1;
 - (void)_setHasAutoAppliedCropSuggestion:(BOOL)arg1;
 - (void)_setHasRequestedCropSuggestion:(BOOL)arg1;
@@ -263,11 +266,8 @@
 - (void)_setPreviewViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setRenderer:(id)arg1;
 - (void)_setRotateButton:(id)arg1;
-- (void)_setRotateSnapshotStartAngle:(float)arg1;
 - (void)_setRotateSnapshotView:(id)arg1;
 - (void)_setRotatingAnimationCount:(unsigned int)arg1;
-- (void)_setRotation:(unsigned int)arg1;
-- (void)_setRotation:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)_setSelectedCropHandleView:(id)arg1;
 - (void)_setStraightenAngle:(float)arg1;
 - (void)_setStraightenAngle:(float)arg1 animated:(BOOL)arg2;
@@ -315,8 +315,9 @@
 - (id)localizedName;
 - (id)localizedResetToolActionTitle;
 - (void)photoEditModelDidChange;
-- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
+- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredPreviewViewInsets;
+- (void)prepareForPopoverPresentation:(id)arg1;
 - (void)resetToDefaultValueAnimated:(BOOL)arg1;
 - (id)selectedToolbarIcon;
 - (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;

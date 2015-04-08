@@ -57,13 +57,16 @@
 - (void)captureStateTimingFeedbackCollection:(id)arg1;
 - (void)captureStateTransition:(id)arg1 force:(BOOL)arg2;
 - (void)captureSuggestionsFeedbackCollection:(id)arg1;
-- (void)captureTrafficRerouteFeedbackCollection:(id)arg1;
+- (void)captureTileStateForGridCoverage:(double)arg1 oldCoverage:(double)arg2 durationInLastState:(double)arg3;
+- (void)captureTileStateForLoadCoverage:(double)arg1 oldCoverage:(double)arg2 durationInLastState:(double)arg3;
 - (void)captureTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)captureTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
 - (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2;
+- (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2 requestType:(int)arg3;
 - (void)captureUsageDataForTiles:(id)arg1;
 - (void)clearStateTimingData;
+- (id)createTileSetStateForType:(int)arg1 newCoverage:(double)arg2 oldCoverage:(double)arg3 seconds:(double)arg4;
 - (void)dealloc;
 - (id)init;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;

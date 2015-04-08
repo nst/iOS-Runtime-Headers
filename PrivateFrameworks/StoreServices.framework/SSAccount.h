@@ -18,10 +18,12 @@
     BOOL _didFallbackToPassword;
     int _enabledServiceTypes;
     NSString *_firstName;
+    int _freeDownloadsPasswordSetting;
     NSString *_itunesPassSerialNumber;
     NSString *_lastName;
     NSLock *_lock;
     BOOL _newCustomer;
+    int _paidPurchasesPasswordSetting;
     NSString *_secureToken;
     NSString *_storeFrontID;
     NSNumber *_uniqueIdentifier;
@@ -42,9 +44,11 @@
 @property(copy,readonly) NSString * description;
 @property int enabledServiceTypes;
 @property(copy) NSString * firstName;
+@property int freeDownloadsPasswordSetting;
 @property(readonly) unsigned int hash;
 @property(copy) NSString * lastName;
 @property(getter=isNewCustomer) BOOL newCustomer;
+@property int paidPurchasesPasswordSetting;
 @property(copy) NSString * secureToken;
 @property(getter=isSocialEnabled) BOOL socialEnabled;
 @property(copy) NSString * storeFrontIdentifier;
@@ -70,6 +74,7 @@
 - (BOOL)didFallbackToPassword;
 - (int)enabledServiceTypes;
 - (id)firstName;
+- (int)freeDownloadsPasswordSetting;
 - (void)getDownloadKindsEligibleForContentRestoreWithBlock:(id)arg1;
 - (void)getITunesMatchStatusWithCompletionBlock:(id)arg1;
 - (void)getKeybagSyncDataWithType:(int)arg1 completionHandler:(id)arg2;
@@ -88,6 +93,7 @@
 - (BOOL)isSocialEnabled;
 - (id)lastName;
 - (BOOL)mergeValuesFromAccount:(id)arg1;
+- (int)paidPurchasesPasswordSetting;
 - (id)popBiometricToken;
 - (void)removeAvailableServiceTypes:(int)arg1;
 - (void)removeEnabledServiceTypes:(int)arg1;
@@ -106,15 +112,18 @@
 - (void)setDidFallbackToPassword:(BOOL)arg1;
 - (void)setEnabledServiceTypes:(int)arg1;
 - (void)setFirstName:(id)arg1;
+- (void)setFreeDownloadsPasswordSetting:(int)arg1;
 - (void)setITunesPassSerialNumber:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setLockdownDictionary:(id)arg1;
 - (void)setNewCustomer:(BOOL)arg1;
+- (void)setPaidPurchasesPasswordSetting:(int)arg1;
 - (void)setSecureToken:(id)arg1;
 - (void)setSocialEnabled:(BOOL)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (id)storeFrontIdentifier;
 - (id)uniqueIdentifier;
+- (void)updateAccountPasswordSettings:(id)arg1;
 
 @end

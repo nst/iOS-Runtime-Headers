@@ -14,7 +14,6 @@
     UILabel *_finePrintLabel;
     UIButton *_goButton;
     BOOL _goButtonEnabled;
-    BOOL _goButtonVisible;
     NSLayoutConstraint *_goButtonWidthConstraint;
     UIImageView *_graphicImageView;
     UILabel *_titleLabel;
@@ -25,7 +24,6 @@
 @property(retain) UILabel * finePrintLabel;
 @property(retain) UIButton * goButton;
 @property(getter=goButtonIsEnabled) BOOL goButtonEnabled;
-@property(getter=goButtonIsVisible) BOOL goButtonVisible;
 @property(retain) UIImageView * graphicImageView;
 @property(retain) UILabel * titleLabel;
 
@@ -41,7 +39,6 @@
 - (id)finePrintLabel;
 - (id)goButton;
 - (BOOL)goButtonIsEnabled;
-- (BOOL)goButtonIsVisible;
 - (id)graphicImageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
@@ -51,7 +48,6 @@
 - (void)setFinePrintLabel:(id)arg1;
 - (void)setGoButton:(id)arg1;
 - (void)setGoButtonEnabled:(BOOL)arg1;
-- (void)setGoButtonVisible:(BOOL)arg1;
 - (void)setGraphicImageView:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (id)titleLabel;

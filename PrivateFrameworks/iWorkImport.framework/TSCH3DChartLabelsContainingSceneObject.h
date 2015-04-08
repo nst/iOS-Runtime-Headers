@@ -11,6 +11,7 @@
 - (void)dealloc;
 - (void)dispatchElementLabelHandler:(id)arg1;
 - (void)getBounds:(id)arg1;
+- (void)getSceneObjectElementsBounds:(id)arg1;
 - (void)getSelectionKnobsPositions:(id)arg1;
 - (id)init;
 - (int)knobsModeForLabelType:(int)arg1 scene:(id)arg2;

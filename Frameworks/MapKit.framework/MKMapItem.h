@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <GEOMapItemPrivate>, GEOAddress, GEOFeatureStyleAttributes, GEOMapRegion, GEOPDFlyover, GEOPlace, MKMapItemMetadata, MKPlacemark, NSData, NSString, NSURL, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution;
+@class <GEOMapItemPrivate>, GEOAddress, GEOFeatureStyleAttributes, GEOMapRegion, GEOPDBusinessClaim, GEOPDFlyover, GEOPlace, MKMapItemMetadata, MKPlacemark, NSData, NSString, NSURL, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution;
 
 @interface MKMapItem : NSObject <GEOURLSerializable> {
     _MKMapItemPlaceAttribution *_attribution;
-    NSString *_extSessionGuid;
     <GEOMapItemPrivate> *_geoMapItem;
     BOOL _isCurrentLocation;
     BOOL _isPlaceHolder;
@@ -17,13 +16,13 @@
 }
 
 @property(getter=_attribution,readonly) _MKMapItemPlaceAttribution * attribution;
+@property(getter=_businessClaim,readonly) GEOPDBusinessClaim * businessClaim;
 @property(getter=_coordinate,readonly) struct { double x1; double x2; } coordinate;
 @property(getter=_customIconID,readonly) unsigned long long customIconID;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(getter=_disambiguationName,readonly) NSString * disambiguationName;
 @property(getter=_displayMapRegion,readonly) GEOMapRegion * displayMapRegion;
-@property(copy) NSString * extSessionGuid;
 @property(getter=_firstLocalizedCategoryName,readonly) NSString * firstLocalizedCategoryName;
 @property(getter=_flyover,readonly) GEOPDFlyover * flyover;
 @property(getter=_flyoverAnnouncementMessage,readonly) NSString * flyoverAnnouncement;
@@ -35,6 +34,7 @@
 @property(getter=_geoMapItem,readonly) <GEOMapItemPrivate> * geoMapItem;
 @property(getter=_goodForKids,readonly) BOOL goodForKids;
 @property(getter=_hasAnyAmenities,readonly) BOOL hasAnyAmenities;
+@property(getter=_hasBusinessClaim,readonly) BOOL hasBusinessClaim;
 @property(getter=_hasDelivery,readonly) BOOL hasDelivery;
 @property(getter=_hasDeliveryAmenity,readonly) BOOL hasDeliveryAmenity;
 @property(getter=_hasDisplayableAmenities,readonly) BOOL hasDisplayableAmenities;
@@ -47,7 +47,6 @@
 @property(getter=_hasOperatingHours,readonly) BOOL hasOperatingHours;
 @property(getter=_hasPriceRange,readonly) BOOL hasPriceRange;
 @property(getter=_hasResolvablePartialInformation,readonly) BOOL hasResolvablePartialInformation;
-@property(getter=_hasSessionGUID,readonly) BOOL hasSessionGUID;
 @property(getter=_hasTakesReservationsAmenity,readonly) BOOL hasTakesReservationsAmenity;
 @property(getter=_hasUserRatingScore,readonly) BOOL hasUserRatingScore;
 @property(readonly) unsigned int hash;
@@ -73,8 +72,6 @@
 @property(getter=_reviewsAttribution,readonly) _MKMapItemReviewsAttribution * reviewsAttribution;
 @property(getter=_reviewsDisplayName,readonly) NSString * reviewsDisplayName;
 @property(getter=_sampleSizeForUserRatingScore,readonly) unsigned int sampleSizeForUserRatingScore;
-@property(getter=_sequenceNumber,readonly) unsigned int sequenceNumber;
-@property(getter=_sessionGUID,readonly) struct { unsigned long long x1; unsigned long long x2; } sessionGUID;
 @property(getter=_shortAddress,readonly) NSString * shortAddress;
 @property(getter=_styleAttributes,readonly) GEOFeatureStyleAttributes * styleAttributes;
 @property(readonly) Class superclass;
@@ -89,6 +86,7 @@
 + (id)_itemWithGeoMapItem:(id)arg1;
 + (id)_mapItemWithWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 sessionID:(id)arg6 muid:(unsigned long long)arg7 attributionID:(id)arg8 sampleSizeForUserRatingScore:(unsigned int)arg9 normalizedUserRatingScore:(float)arg10;
 + (void)_mapItemsWithSerializedPlaceDataResponse:(id)arg1 handler:(id)arg2;
++ (id)_sharedSessionURLForPunchoutURL:(id)arg1;
 + (id)mapItemForCurrentLocation;
 + (id)mapItemWithDictionary:(id)arg1;
 + (id)mapItemWithSerializedPlaceData:(id)arg1;
@@ -102,8 +100,10 @@
 - (void).cxx_destruct;
 - (id)_attribution;
 - (id)_attributionWithDisplayName:(id)arg1 attributionFormat:(id)arg2 logo:(id)arg3;
+- (id)_businessClaim;
 - (struct { double x1; double x2; })_coordinate;
 - (unsigned long long)_customIconID;
+- (void)_didResolveAttribution:(id)arg1;
 - (id)_disambiguationName;
 - (id)_displayMapRegion;
 - (id)_firstLocalizedCategoryName;
@@ -116,6 +116,7 @@
 - (id)_getBusiness;
 - (BOOL)_goodForKids;
 - (BOOL)_hasAnyAmenities;
+- (BOOL)_hasBusinessClaim;
 - (BOOL)_hasDelivery;
 - (BOOL)_hasDeliveryAmenity;
 - (BOOL)_hasDisplayableAmenities;
@@ -129,12 +130,12 @@
 - (BOOL)_hasOperatingHours;
 - (BOOL)_hasPriceRange;
 - (BOOL)_hasResolvablePartialInformation;
-- (BOOL)_hasSessionGUID;
 - (BOOL)_hasTakesReservationsAmenity;
 - (BOOL)_hasUserRatingScore;
 - (id)_infoAttributionWithSourceStringFormat:(id)arg1 moreSourceStringFormat:(id)arg2;
 - (BOOL)_isEmptyContactMapItem;
 - (BOOL)_isEquivalentURLRepresentationTo:(id)arg1;
+- (id)_localizedBusinessHoursWithCurrentOpeningHoursOptions;
 - (id)_localizedCategoryNamesForType:(unsigned int)arg1;
 - (id)_localizedOperatingHours;
 - (id)_mapsDataString;
@@ -151,26 +152,22 @@
 - (id)_priceRangeString;
 - (id)_providerURL;
 - (int)_recommendedTransportType;
+- (void)_refreshAttribution;
 - (id)_reviewsAttribution;
 - (id)_reviewsAttributionWithSourceStringFormat:(id)arg1 moreSourceStringFormat:(id)arg2;
 - (id)_reviewsDisplayName;
 - (unsigned int)_sampleSizeForUserRatingScore;
-- (unsigned int)_sequenceNumber;
-- (struct { unsigned long long x1; unsigned long long x2; })_sessionGUID;
 - (void)_setRecord:(void*)arg1 property:(int)arg2 stringValue:(id)arg3 label:(id)arg4;
 - (id)_shortAddress;
 - (id)_styleAttributes;
 - (BOOL)_takesReservations;
 - (unsigned int)_travelDistanceForTransportType:(int)arg1;
 - (unsigned int)_travelTimeForTransportType:(int)arg1;
-- (id)_urlForPhotoWithUID:(id)arg1;
-- (id)_urlForReviewWithUID:(id)arg1;
-- (id)_urlForWritingAReview;
 - (id)_vendorID;
 - (id)_webURL;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)extSessionGuid;
 - (id)formattedNumberOfReviews;
 - (id)formattedNumberOfReviewsIncludingProvider;
 - (unsigned int)hash;
@@ -180,7 +177,6 @@
 - (id)initWithGeoMapItem:(id)arg1 isPlaceHolderPlace:(BOOL)arg2;
 - (id)initWithPlace:(id)arg1;
 - (id)initWithPlace:(id)arg1 isPlaceHolderPlace:(BOOL)arg2;
-- (id)initWithPlace:(id)arg1 sessionGuid:(id)arg2;
 - (id)initWithPlacemark:(id)arg1;
 - (id)initWithUrlRepresentation:(id)arg1;
 - (BOOL)isCurrentLocation;
@@ -192,7 +188,6 @@
 - (id)phoneNumber;
 - (id)place;
 - (id)placemark;
-- (void)setExtSessionGuid:(id)arg1;
 - (void)setIsCurrentLocation:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;

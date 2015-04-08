@@ -10,6 +10,7 @@
     HAPCharacteristicMetadata *_metadata;
     unsigned int _properties;
     HAPService *_service;
+    BOOL _shouldValidateValueAfterReading;
     NSString *_type;
     id _value;
 }
@@ -19,15 +20,13 @@
 @property(retain) HAPCharacteristicMetadata * metadata;
 @property unsigned int properties;
 @property HAPService * service;
+@property BOOL shouldValidateValueAfterReading;
+@property(readonly) BOOL supportsAdditionalAuthorizationData;
 @property(copy) NSString * type;
 @property(copy) id value;
 
-+ (id)characteristicTypeFromUUIDString:(id)arg1;
-+ (id)masterCharacteristicsUUIDDictionary;
-
 - (void).cxx_destruct;
 - (id)_generateValidMetadata:(id)arg1;
-- (id)_getDefaultMetadata;
 - (void)_updateMetadata:(id)arg1 withProvidedMetadata:(id)arg2;
 - (id)description;
 - (BOOL)eventNotificationsEnabled;
@@ -43,8 +42,11 @@
 - (void)setMetadata:(id)arg1;
 - (void)setProperties:(unsigned int)arg1;
 - (void)setService:(id)arg1;
+- (void)setShouldValidateValueAfterReading:(BOOL)arg1;
 - (void)setType:(id)arg1;
 - (void)setValue:(id)arg1;
+- (BOOL)shouldValidateValueAfterReading;
+- (BOOL)supportsAdditionalAuthorizationData;
 - (id)type;
 - (id)validateValue:(id)arg1 outValue:(id*)arg2;
 - (id)value;

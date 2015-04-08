@@ -5,7 +5,6 @@
 @class HMDHome, NSData, NSString, NSUUID;
 
 @interface HMDUser : NSObject <NSSecureCoding> {
-    NSString *_displayName;
     HMDHome *_home;
     NSString *_pairingUsername;
     unsigned int _privilege;
@@ -15,7 +14,6 @@
     NSUUID *_uuid;
 }
 
-@property(retain) NSString * displayName;
 @property(readonly) HMDHome * home;
 @property(copy,readonly) NSString * pairingUsername;
 @property(readonly) unsigned int privilege;
@@ -27,16 +25,15 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)home;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 displayName:(id)arg2 pairingUsername:(id)arg3 publicKey:(id)arg4 privilege:(unsigned int)arg5 remoteGateway:(BOOL)arg6 home:(id)arg7;
+- (id)initWithName:(id)arg1 pairingUsername:(id)arg2 publicKey:(id)arg3 privilege:(unsigned int)arg4 remoteGateway:(BOOL)arg5 home:(id)arg6;
 - (BOOL)isRemoteGateway;
+- (id)lookupDisplayName;
 - (id)pairingUsername;
 - (unsigned int)privilege;
 - (id)publicKey;
-- (void)setDisplayName:(id)arg1;
 - (id)userID;
 - (id)uuid;
 

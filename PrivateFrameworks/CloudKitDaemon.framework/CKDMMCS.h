@@ -15,7 +15,6 @@
 @property(retain) CKDAssetCache * assetCache;
 @property(getter=getMaxChunkCountForSection,readonly) unsigned long maxChunkCountForSection;
 @property(retain) NSString * path;
-@property(getter=getProtocolVersion,readonly) NSString * protocolVersion;
 
 + (id)MMCSWrapperForApplicationBundleID:(id)arg1 path:(id)arg2 assetDbPath:(id)arg3 fileDownloadPath:(id)arg4 packageDownloadPath:(id)arg5 packageUploadPath:(id)arg6 isUTAccount:(BOOL)arg7 error:(id*)arg8;
 + (int)_commonErrorCodeWithMMCSError:(id)arg1;
@@ -24,8 +23,10 @@
 + (id)_errorWithMMCSError:(id)arg1 description:(id)arg2 isGet:(BOOL)arg3;
 + (id)_errorWithMMCSError:(id)arg1 path:(id)arg2 description:(id)arg3 isGet:(BOOL)arg4;
 + (id)_userInfoFromMMCSRetryableError:(id)arg1;
-+ (id)emptyFileSignature;
++ (id)protocolVersion;
++ (void)purgeMMCSDirectoryWithMaxLifetime:(double)arg1 path:(id)arg2 assetsDbPath:(id)arg3;
 + (id)sharedWrappersByBundleID;
++ (id)zeroSizeFileSignature;
 
 - (void).cxx_destruct;
 - (id)MMCSEngineContext;
@@ -36,13 +37,11 @@
 - (id)_contextToRegisterItemGroup:(id)arg1 options:(id)arg2 completionHandler:(id)arg3;
 - (void)_logMMCSOptions:(id)arg1;
 - (id)_referenceIdentifierFromAssetKey:(id)arg1;
-- (id)_referenceSignatureFromReferenceIdentifier:(id)arg1 containerID:(id)arg2;
 - (id)assetCache;
 - (void)dealloc;
 - (id)getItemGroupSet:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
 - (struct __MMCSEngine { }*)getMMCSEngine;
 - (unsigned long)getMaxChunkCountForSection;
-- (id)getProtocolVersion;
 - (id)getSectionItem:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
 - (id)initWithMMCSEngineContext:(id)arg1 path:(id)arg2;
 - (id)path;

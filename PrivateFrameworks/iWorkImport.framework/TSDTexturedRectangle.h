@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CALayer, NSMutableArray, NSMutableDictionary, NSString, TSDTextureSet, TSUColor;
+@class CALayer, NSMutableArray, NSMutableDictionary, NSString, TSDBitmapRenderingQualityInfo, TSDTextureSet, TSUColor;
 
 @interface TSDTexturedRectangle : NSObject <NSCopying> {
     BOOL _isVerticalText;
@@ -24,6 +24,7 @@
     float _textXHeight;
     NSMutableDictionary *mAttributes;
     struct CGImage { } *mBakedImage;
+    TSDBitmapRenderingQualityInfo *mBitmapRenderingQualityInfo;
     struct CGColorSpace { } *mColorSpace;
     struct CGRect { 
         struct CGPoint { 
@@ -35,6 +36,7 @@
             float height; 
         } size; 
     } mContentRect;
+    BOOL mDidInitFromGLTexture;
     BOOL mIsFlattened;
     CALayer *mLayer;
     struct CGPoint { 
@@ -73,6 +75,7 @@
     int mTextureType;
 }
 
+@property(retain) TSDBitmapRenderingQualityInfo * bitmapRenderingQualityInfo;
 @property struct CGColorSpace { }* colorSpace;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentRect;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
@@ -105,8 +108,9 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForTextures:(id)arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectOnCanvasForTextures:(id)arg1;
 
-- (void)adjustAnchorRelativeToParentsCenterOfRotation:(struct CGPoint { float x1; float x2; })arg1 isMagicMove:(BOOL)arg2;
+- (void)adjustAnchorRelativeToCenterOfRotation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)bakeLayerWithAngle:(float)arg1 scale:(float)arg2;
+- (id)bitmapRenderingQualityInfo;
 - (struct CGColorSpace { }*)colorSpace;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertToCanvasCoordinates:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -119,6 +123,7 @@
 - (id)initWithCGImage:(struct CGImage { }*)arg1;
 - (id)initWithLayer:(id)arg1;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 offset:(struct CGPoint { float x1; float x2; })arg2 renderBlock:(id)arg3;
+- (id)initWithTextureInfo:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)isBackgroundTexture;
 - (BOOL)isFlattened;
 - (BOOL)isImageSource;
@@ -137,6 +142,7 @@
 - (void)renderLayerContentsIfNeeded;
 - (void)resetAnchorPoint;
 - (void)resetToSourceImage;
+- (void)setBitmapRenderingQualityInfo:(id)arg1;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;
 - (void)setContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIsFlattened:(BOOL)arg1;

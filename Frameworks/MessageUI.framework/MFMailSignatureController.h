@@ -34,7 +34,6 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_replaceSignatureForSender:(id)arg1 oldSignature:(id)arg2 withSignature:(id)arg3 document:(id)arg4 backwardsFromNode:(id)arg5 maxParagraphs:(unsigned int)arg6;
 - (id)_signatureMarkupStringForSender:(id)arg1;
 - (id)_signatureStringForSender:(id)arg1;
-- (id)_stripSignatureMarkup:(id)arg1;
 - (id)_updateSignatureElement:(id)arg1 withSignature:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)addSignatureForSender:(id)arg1 bodyField:(id)arg2 prepend:(BOOL)arg3;
 - (void)clearSignatureState;

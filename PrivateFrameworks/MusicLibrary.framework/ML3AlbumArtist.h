@@ -22,7 +22,6 @@
 + (id)protocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
 + (int)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
-+ (id)subCollectionCountProperty;
 + (id)trackForeignPersistentID;
 
 - (id)multiverseIdentifier;

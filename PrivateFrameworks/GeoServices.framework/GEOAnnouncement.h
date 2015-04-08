@@ -19,6 +19,7 @@
     } _has;
     GEOMapRegion *_mapRegion;
     int _releasePhase;
+    NSString *_title;
     NSString *_userMessage;
 }
 
@@ -38,9 +39,11 @@
 @property(readonly) BOOL hasFlyoverInfo;
 @property(readonly) BOOL hasMapRegion;
 @property BOOL hasReleasePhase;
+@property(readonly) BOOL hasTitle;
 @property(readonly) BOOL hasUserMessage;
 @property(retain) GEOMapRegion * mapRegion;
 @property int releasePhase;
+@property(retain) NSString * title;
 @property(retain) NSString * userMessage;
 
 - (unsigned int)announcementID;
@@ -64,6 +67,7 @@
 - (BOOL)hasFlyoverInfo;
 - (BOOL)hasMapRegion;
 - (BOOL)hasReleasePhase;
+- (BOOL)hasTitle;
 - (BOOL)hasUserMessage;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -83,7 +87,9 @@
 - (void)setHasReleasePhase:(BOOL)arg1;
 - (void)setMapRegion:(id)arg1;
 - (void)setReleasePhase:(int)arg1;
+- (void)setTitle:(id)arg1;
 - (void)setUserMessage:(id)arg1;
+- (id)title;
 - (id)userMessage;
 - (void)writeTo:(id)arg1;
 

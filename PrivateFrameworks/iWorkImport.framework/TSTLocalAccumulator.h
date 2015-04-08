@@ -3,12 +3,12 @@
  */
 
 @interface TSTLocalAccumulator : NSObject {
-    unsigned int _count;
+    unsigned int mCount;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } _idOfFirstOccurence;
+    } mIdOfFirstOccurence;
 }
 
 @property unsigned int count;

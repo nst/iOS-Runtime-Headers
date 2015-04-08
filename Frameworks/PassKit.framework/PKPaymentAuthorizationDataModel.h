@@ -11,6 +11,7 @@
 @interface PKPaymentAuthorizationDataModel : NSObject <PKPaymentValidating> {
     NSArray *_acceptedPasses;
     CNContact *_billingAddress;
+    CNContact *_cachedRecentAddress;
     PKPaymentOptionsDefaults *_defaults;
     unsigned int _holdPendingUpdatesCount;
     NSString *_hostAppLocalizedName;
@@ -22,9 +23,14 @@
     PKPaymentTransaction *_pendingTransaction;
     PKPaymentOptionsRecents *_recents;
     CNContact *_shippingAddress;
+    BOOL _shippingEditable;
+    NSString *_shippingEditableMessage;
     CNContact *_shippingEmail;
     PKShippingMethod *_shippingMethod;
+    CNContact *_shippingName;
     CNContact *_shippingPhone;
+    NSString *_shippingType;
+    NSMutableDictionary *_statusForPasses;
     NSDecimalNumber *_transactionAmount;
     NSMutableDictionary *_typeToItemMap;
 
@@ -36,6 +42,7 @@
 
 @property(readonly) NSArray * acceptedPasses;
 @property(retain) CNContact * billingAddress;
+@property(retain) CNContact * cachedRecentAddress;
 @property(readonly) NSString * currencyCode;
 @property(copy,readonly) NSString * debugDescription;
 @property(retain) PKPaymentOptionsDefaults * defaults;
@@ -50,11 +57,16 @@
 @property(retain) PKPaymentRequest * paymentRequest;
 @property(retain) NSArray * paymentSummaryItems;
 @property(retain) PKPaymentTransaction * pendingTransaction;
+@property(readonly) BOOL pinRequired;
 @property(retain) PKPaymentOptionsRecents * recents;
 @property(retain) CNContact * shippingAddress;
+@property(getter=isShippingEditable) BOOL shippingEditable;
+@property(retain) NSString * shippingEditableMessage;
 @property(retain) CNContact * shippingEmail;
 @property(retain) PKShippingMethod * shippingMethod;
+@property(retain) CNContact * shippingName;
 @property(retain) CNContact * shippingPhone;
+@property(retain) NSString * shippingType;
 @property(readonly) Class superclass;
 @property(retain) NSDecimalNumber * transactionAmount;
 @property(copy) id updateHandler;
@@ -67,15 +79,18 @@
 - (id)_initialShippingContactForPropertyID:(int)arg1;
 - (void)_notifyModelChanged;
 - (void)_setDataItem:(id)arg1;
+- (void)_setStatus:(int)arg1 forPaymentPass:(id)arg2;
 - (id)acceptedPasses;
 - (void)beginUpdates;
 - (id)billingAddress;
+- (id)cachedRecentAddress;
 - (id)currencyCode;
 - (void)dealloc;
 - (id)defaults;
 - (void)endUpdates;
 - (id)hostAppLocalizedName;
 - (id)init;
+- (BOOL)isShippingEditable;
 - (BOOL)isValidWithError:(id*)arg1;
 - (id)itemForType:(int)arg1;
 - (id)items;
@@ -86,9 +101,10 @@
 - (id)paymentRequest;
 - (id)paymentSummaryItems;
 - (id)pendingTransaction;
+- (BOOL)pinRequired;
 - (id)recents;
-- (void)rejectItemWithType:(int)arg1;
 - (void)setBillingAddress:(id)arg1;
+- (void)setCachedRecentAddress:(id)arg1;
 - (void)setDefaults:(id)arg1;
 - (void)setHostAppLocalizedName:(id)arg1;
 - (void)setLibrary:(id)arg1;
@@ -99,15 +115,24 @@
 - (void)setPendingTransaction:(id)arg1;
 - (void)setRecents:(id)arg1;
 - (void)setShippingAddress:(id)arg1;
+- (void)setShippingEditable:(BOOL)arg1;
+- (void)setShippingEditableMessage:(id)arg1;
 - (void)setShippingEmail:(id)arg1;
 - (void)setShippingMethod:(id)arg1;
+- (void)setShippingName:(id)arg1;
 - (void)setShippingPhone:(id)arg1;
+- (void)setShippingType:(id)arg1;
+- (void)setStatus:(int)arg1 forItemWithType:(int)arg2;
 - (void)setTransactionAmount:(id)arg1;
 - (void)setUpdateHandler:(id)arg1;
 - (id)shippingAddress;
+- (id)shippingEditableMessage;
 - (id)shippingEmail;
 - (id)shippingMethod;
+- (id)shippingName;
 - (id)shippingPhone;
+- (id)shippingType;
+- (int)statusForPass:(id)arg1;
 - (id)transactionAmount;
 - (id)updateHandler;
 

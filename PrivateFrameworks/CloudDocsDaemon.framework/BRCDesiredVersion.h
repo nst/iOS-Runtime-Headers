@@ -11,6 +11,7 @@
         struct { 
             unsigned int isFault : 1; 
             unsigned int startDownload : 1; 
+            unsigned int userInitiated : 1; 
         } ; 
     } _flags;
     NSString *_serverName;
@@ -20,10 +21,12 @@
 @property(copy,readonly) NSString * description;
 @property(retain) NSError * downloadError;
 @property(readonly) unsigned int hash;
-@property BOOL isFault;
+@property(readonly) BOOL isFault;
+@property unsigned int options;
 @property(readonly) NSString * serverName;
 @property(readonly) Class superclass;
-@property BOOL wantsContent;
+@property(readonly) BOOL userInitiated;
+@property(readonly) BOOL wantsContent;
 
 + (BOOL)supportsSecureCoding;
 
@@ -37,11 +40,12 @@
 - (id)initWithServerVersion:(id)arg1 serverName:(id)arg2;
 - (BOOL)isFault;
 - (BOOL)isStillValidForEtag:(id)arg1;
+- (unsigned int)options;
 - (id)serverName;
 - (void)setDownloadError:(id)arg1;
-- (void)setIsFault:(BOOL)arg1;
-- (void)setWantsContent:(BOOL)arg1;
+- (void)setOptions:(unsigned int)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (BOOL)userInitiated;
 - (BOOL)wantsContent;
 
 @end

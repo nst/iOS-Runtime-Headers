@@ -12,6 +12,7 @@
     double _billingStartDate;
     NSString *_carrierName;
     NSArray *_dataUsage;
+    NSArray *_homeCountryList;
     NSString *_iccid;
     NSString *_planDescription;
     int _planStatus;
@@ -27,6 +28,7 @@
 @property(readonly) double billingStartDate;
 @property(readonly) NSString * carrierName;
 @property(readonly) NSArray * dataUsage;
+@property(readonly) NSArray * homeCountryList;
 @property(readonly) NSString * iccid;
 @property(readonly) NSString * planDescription;
 @property(readonly) int planStatus;
@@ -47,9 +49,10 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)homeCountryList;
 - (id)iccid;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIccid:(id)arg1 subscriptionResult:(int)arg2 autoRenew:(BOOL)arg3 billingStartDate:(double)arg4 billingEndDate:(double)arg5 carrierName:(id)arg6 planType:(int)arg7 planDescription:(id)arg8 planStatus:(int)arg9 accountStatus:(int)arg10 accountURL:(id)arg11 timestamp:(double)arg12 dataUsage:(id)arg13;
+- (id)initWithIccid:(id)arg1 subscriptionResult:(int)arg2 autoRenew:(BOOL)arg3 billingStartDate:(double)arg4 billingEndDate:(double)arg5 carrierName:(id)arg6 planType:(int)arg7 planDescription:(id)arg8 planStatus:(int)arg9 accountStatus:(int)arg10 accountURL:(id)arg11 timestamp:(double)arg12 homeCountryList:(id)arg13 dataUsage:(id)arg14;
 - (BOOL)isEqualOrNewerThanSubscription:(id)arg1;
 - (id)planDescription;
 - (int)planStatus;

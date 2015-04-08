@@ -21,16 +21,17 @@
 
 + (id)currentContext;
 + (BOOL)setCurrentContext:(id)arg1;
++ (void)tsd_setCurrentContext:(id)arg1;
 
 - (unsigned int)API;
 - (struct EAGLMacroContext { }*)GetMacroContextPrivate;
 - (BOOL)attachImage:(unsigned int)arg1 toCoreSurface:(struct __IOSurface { }*)arg2 invertedRender:(BOOL)arg3;
+- (id)commonInitWithAPI:(unsigned int)arg1 properties:(id)arg2;
 - (void)dealloc;
 - (id)debugLabel;
 - (struct EAGLMacroContext { }*)getMacroContextPrivate;
 - (unsigned int)getParameter:(unsigned int)arg1 to:(int*)arg2;
 - (id)initForBrushes;
-- (id)initForShadow;
 - (id)initWithAPI:(unsigned int)arg1;
 - (id)initWithAPI:(unsigned int)arg1 properties:(id)arg2;
 - (id)initWithAPI:(unsigned int)arg1 sharedWithCompute:(BOOL)arg2;
@@ -46,5 +47,6 @@
 - (id)sharegroup;
 - (void)swapNotification:(struct __IOMobileFramebuffer { }*)arg1 forTransaction:(unsigned int)arg2 onLayer:(unsigned int)arg3;
 - (BOOL)texImageIOSurface:(struct __IOSurface { }*)arg1 target:(unsigned int)arg2 internalFormat:(unsigned int)arg3 width:(unsigned int)arg4 height:(unsigned int)arg5 format:(unsigned int)arg6 type:(unsigned int)arg7 plane:(unsigned int)arg8 invert:(BOOL)arg9;
+- (id)tsd_initForShadow;
 
 @end

@@ -25,7 +25,6 @@
 - (id)diagnosticsProviderForVisualSection:(int)arg1;
 - (void)didFinishZoomLevelTransition;
 - (id)displayTitle;
-- (BOOL)hasEnoughContentToDisplay;
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
 - (int)imageFormat;
 - (id)newCollectionViewLayout;

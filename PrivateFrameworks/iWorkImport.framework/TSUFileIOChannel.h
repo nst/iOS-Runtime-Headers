@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_io>, NSString;
+@class NSObject<OS_dispatch_io>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface TSUFileIOChannel : NSObject <TSURandomWriteChannel, TSUReadChannel, TSUStreamWriteChannel> {
     NSObject<OS_dispatch_io> *_channel;
     BOOL _isClosed;
+    NSObject<OS_dispatch_queue> *_readQueue;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -28,8 +29,8 @@
 - (id)initWithType:(unsigned long)arg1 channel:(id)arg2;
 - (id)initWithType:(unsigned long)arg1 descriptor:(int)arg2 queue:(id)arg3 cleanupHandler:(id)arg4;
 - (BOOL)isValid;
-- (void)readFromOffset:(long long)arg1 length:(unsigned long)arg2 queue:(id)arg3 handler:(id)arg4;
-- (void)readWithQueue:(id)arg1 handler:(id)arg2;
+- (void)readFromOffset:(long long)arg1 length:(unsigned long)arg2 handler:(id)arg3;
+- (void)readWithHandler:(id)arg1;
 - (void)setLowWater:(unsigned long)arg1;
 - (void)writeData:(id)arg1 offset:(long long)arg2 queue:(id)arg3 handler:(id)arg4;
 - (void)writeData:(id)arg1 queue:(id)arg2 handler:(id)arg3;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData;
+@class GEOPDAutocompleteEntry, NSData;
 
 @interface GEOSuggestionsFeedbackCollection : PBCodable <NSCopying> {
     struct { 
@@ -14,6 +14,7 @@
         unsigned long long _high; 
         unsigned long long _low; 
     } _sessionID;
+    GEOPDAutocompleteEntry *_suggestionEntry;
     int _suggestionEntryIndex;
     NSData *_suggestionEntryMetadata;
     NSData *_suggestionMetadata;
@@ -21,11 +22,13 @@
 }
 
 @property BOOL hasSessionID;
+@property(readonly) BOOL hasSuggestionEntry;
 @property BOOL hasSuggestionEntryIndex;
 @property(readonly) BOOL hasSuggestionEntryMetadata;
 @property(readonly) BOOL hasSuggestionMetadata;
 @property BOOL hasSuggestionsEntryListIndex;
 @property struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property(retain) GEOPDAutocompleteEntry * suggestionEntry;
 @property int suggestionEntryIndex;
 @property(retain) NSData * suggestionEntryMetadata;
 @property(retain) NSData * suggestionMetadata;
@@ -37,6 +40,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasSessionID;
+- (BOOL)hasSuggestionEntry;
 - (BOOL)hasSuggestionEntryIndex;
 - (BOOL)hasSuggestionEntryMetadata;
 - (BOOL)hasSuggestionMetadata;
@@ -50,10 +54,12 @@
 - (void)setHasSuggestionEntryIndex:(BOOL)arg1;
 - (void)setHasSuggestionsEntryListIndex:(BOOL)arg1;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSuggestionEntry:(id)arg1;
 - (void)setSuggestionEntryIndex:(int)arg1;
 - (void)setSuggestionEntryMetadata:(id)arg1;
 - (void)setSuggestionMetadata:(id)arg1;
 - (void)setSuggestionsEntryListIndex:(int)arg1;
+- (id)suggestionEntry;
 - (int)suggestionEntryIndex;
 - (id)suggestionEntryMetadata;
 - (id)suggestionMetadata;

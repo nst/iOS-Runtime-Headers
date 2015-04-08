@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSLock, NSMutableArray, NSMutableDictionary, NSString;
+@class <_GEOCountryConfigurationServerProxy>, NSLock, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface GEOCountryConfiguration : NSObject <GEOResourceManifestTileGroupObserver> {
+@interface GEOCountryConfiguration : NSObject <GEOResourceManifestTileGroupObserver, _GEOCountryConfigurationServerProxyDelegate> {
     NSString *_countryCode;
     NSLock *_countryCodeLock;
     BOOL _hasURLAuthenticationTimeToLive;
-    BOOL _isObservingReachability;
-    BOOL _isUpdating;
+    <_GEOCountryConfigurationServerProxy> *_serverProxy;
     NSMutableDictionary *_supportedFeatures;
     NSLock *_supportedFeaturesLock;
     NSMutableArray *_updateCompletionHandlers;
@@ -28,19 +27,16 @@
 @property(readonly) Class superclass;
 @property(readonly) double urlAuthenticationTimeToLive;
 
++ (void)disableServerConnection;
++ (void)setUseLocalProxy:(BOOL)arg1;
 + (id)sharedConfiguration;
 
-- (void)_checkCountryProvidersWithOldCountryCode:(id)arg1 providers:(id)arg2;
 - (id)_countryDefaultForKey:(id)arg1 inCountry:(id)arg2 sourcePtr:(int*)arg3;
 - (id)_defaultForKey:(id)arg1 inCountry:(id)arg2 defaultValue:(id)arg3 sourcePtr:(int*)arg4;
-- (void)_determineCurrentCountryCode:(id)arg1;
-- (void)_notifyUpdateCompletionHandlers:(BOOL)arg1;
-- (void)_reachabilityChanged:(id)arg1;
 - (void)_resetSupportedFeatures;
+- (void)_updateCountryConfiguration:(id)arg1 callbackQueue:(id)arg2;
 - (id)countryCode;
 - (BOOL)countryCode:(id)arg1 supportsFeature:(int)arg2;
-- (id)countryDefaultForKey:(id)arg1;
-- (id)countryDefaultForKey:(id)arg1 sourcePtr:(int*)arg2;
 - (BOOL)currentCountrySupportsCarIntegration;
 - (BOOL)currentCountrySupportsDirections;
 - (BOOL)currentCountrySupportsFeature:(int)arg1;
@@ -53,8 +49,11 @@
 - (id)init;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
+- (void)serverProxy:(id)arg1 countryCodeDidChange:(id)arg2;
+- (void)serverProxyProvidersDidChange:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)updateCountryConfiguration:(id)arg1;
+- (void)updateCountryConfiguration:(id)arg1 callbackQueue:(id)arg2;
 - (void)updateProvidersForCurrentCountry;
 - (double)urlAuthenticationTimeToLive;
 

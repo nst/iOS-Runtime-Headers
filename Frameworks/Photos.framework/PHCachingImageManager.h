@@ -4,19 +4,16 @@
 
 @interface PHCachingImageManager : PHImageManager {
     BOOL _allowsCachingHighQualityImages;
-    int _batchAssetCachingUpdateCount;
-    BOOL _shouldPurgePreheatItems;
 }
 
 @property BOOL allowsCachingHighQualityImages;
 
+- (id)_fireCloudDownloadOfImageForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg3 completionHandler:(id)arg4;
 - (id)_highPriorityRequestWaitGroup;
 - (BOOL)allowsCachingHighQualityImages;
 - (id)approximateThumbnailIndexesForAssets:(id)arg1;
-- (void)beginBatchAssetCachingUpdates;
 - (BOOL)canAvoidTouchingAssetsWithTargetSize:(struct CGSize { float x1; float x2; })arg1 contentMode:(int)arg2 options:(id)arg3 outBestFormat:(int*)arg4 outBestFormatIsTable:(BOOL*)arg5 outDegradedFormat:(int*)arg6 outDegradedFormatIsTable:(BOOL*)arg7;
 - (id)description;
-- (void)endBatchAssetCachingUpdates;
 - (id)init;
 - (void)setAllowsCachingHighQualityImages:(BOOL)arg1;
 - (void)startCachingImagesForAssets:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4;

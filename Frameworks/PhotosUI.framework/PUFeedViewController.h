@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSDictionary, NSIndexPath, NSMutableArray, NSMutableSet, NSString, PHCachingImageManager, PLCloudSharedAlbum, PLCloudSharedComment, PLDateRangeFormatter, PLManagedAlbumList, PLManagedAsset, PUAlbumStreamActivity, PUFeedAssetContainerList, PUFeedSectionInfosManager, PUFeedViewControllerRestorableState, PUFeedViewControllerSpec, PUPhotoPinchGestureRecognizer, PUPhotosPickerViewController, PUScrollViewSpeedometer, UIBarButtonItem, UICollectionView, UIPopoverController, UITapGestureRecognizer, UIViewController, _UIContentUnavailableView;
+@class NSDictionary, NSIndexPath, NSMutableArray, NSMutableSet, NSString, PHCachingImageManager, PLCloudSharedAlbum, PLCloudSharedComment, PLDateRangeFormatter, PLManagedAlbumList, PLManagedAsset, PUAlbumStreamActivity, PUFeedAssetContainerList, PUFeedSectionInfosManager, PUFeedViewController, PUFeedViewControllerRestorableState, PUFeedViewControllerSpec, PUPhotoPinchGestureRecognizer, PUPhotosPickerViewController, PUScrollViewSpeedometer, UIBarButtonItem, UICollectionView, UITapGestureRecognizer, UIViewController, _UIContentUnavailableView;
 
-@interface PUFeedViewController : UIViewController <PLCloudFeedNavigating, PLNavigableCloudFeedViewController, PUAlbumStreamActivityDelegate, PUFeedCollectionViewLayoutDelegate, PUFeedImageCellDelegate, PUFeedInvitationCellDelegate, PUFeedSectionInfosManagerDelegate, PUFeedTextCellDelegate, PUPhotoBrowserZoomTransitionDelegate, PUScrollViewSpeedometerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, _UISettingsKeyObserver> {
+@interface PUFeedViewController : UIViewController <PLCloudFeedNavigating, PLNavigableCloudFeedViewController, PUAlbumStreamActivityDelegate, PUFeedCollectionViewLayoutDelegate, PUFeedImageCellDelegate, PUFeedInvitationCellDelegate, PUFeedSectionInfosManagerDelegate, PUFeedTextCellDelegate, PUPhotoBrowserZoomTransitionDelegate, PUScrollViewSpeedometerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, _UISettingsKeyObserver> {
     PUAlbumStreamActivity *__albumStreamActivity;
     BOOL __appJustEnteredForeground;
     int __barsState;
@@ -23,7 +23,7 @@
     NSIndexPath *__indexPathForImageHiddenDuringZoomTransition;
     BOOL __interfaceBatchUpdateScheduled;
     UIBarButtonItem *__invitationsBarButtonItem;
-    UIPopoverController *__invitationsPopoverController;
+    PUFeedViewController *__invitationsPopoverRootController;
     BOOL __invitationsPopoverShowPending;
     NSDictionary *__justLikedSections;
     NSMutableArray *__lastPreheatIndexPathInfoList;
@@ -78,7 +78,7 @@
 @property(setter=_setIndexPathForImageHiddenDuringZoomTransition:,copy) NSIndexPath * _indexPathForImageHiddenDuringZoomTransition;
 @property(getter=_isInterfaceBatchUpdateScheduled,setter=_setInterfaceBatchUpdateScheduled:) BOOL _interfaceBatchUpdateScheduled;
 @property(setter=_setInvitationsBarButtonItem:,retain) UIBarButtonItem * _invitationsBarButtonItem;
-@property(setter=_setInvitationsPopoverController:,retain) UIPopoverController * _invitationsPopoverController;
+@property(setter=_setInvitationsPopoverRootController:,retain) PUFeedViewController * _invitationsPopoverRootController;
 @property(getter=_isInvitationsPopoverShowPending,setter=_setInvitationsPopoverShowPending:) BOOL _invitationsPopoverShowPending;
 @property(setter=_setJustLikedSections:,retain) NSDictionary * _justLikedSections;
 @property(retain) NSMutableArray * _lastPreheatIndexPathInfoList;
@@ -162,6 +162,7 @@
 - (void)_didTapSectionFooterFeedCell:(id)arg1;
 - (void)_didTapSectionHeaderFeedCell:(id)arg1;
 - (void)_didTapThumbnailOrOverlayPlayButtonInFeedCell:(id)arg1;
+- (void)_dismissInvitationsPopoverIfNeeded;
 - (id)_emptyPlaceholderView;
 - (void)_ensureWindowOfLoadedSectionInfosIncludesSection:(int)arg1;
 - (void)_enumerateCenterAssetsInRestorableState:(id)arg1 inCollectionView:(id)arg2 usingBlock:(id)arg3;
@@ -179,7 +180,7 @@
 - (void)_invalidatePreheatedAssets;
 - (id)_invitationsBarButtonItem;
 - (void)_invitationsButtonAction:(id)arg1;
-- (id)_invitationsPopoverController;
+- (id)_invitationsPopoverRootController;
 - (BOOL)_isAnySharedAlbumAvailable;
 - (BOOL)_isCollectionViewEmpty:(id)arg1;
 - (BOOL)_isCollectionViewScrolledToNewest;
@@ -233,7 +234,7 @@
 - (void)_setIndexPathForImageHiddenDuringZoomTransition:(id)arg1;
 - (void)_setInterfaceBatchUpdateScheduled:(BOOL)arg1;
 - (void)_setInvitationsBarButtonItem:(id)arg1;
-- (void)_setInvitationsPopoverController:(id)arg1;
+- (void)_setInvitationsPopoverRootController:(id)arg1;
 - (void)_setInvitationsPopoverShowPending:(BOOL)arg1;
 - (void)_setJustLikedSections:(id)arg1;
 - (void)_setLastPreheatedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
@@ -346,12 +347,15 @@
 - (void)navigateToRevealCloudFeedComment:(id)arg1 completion:(id)arg2;
 - (void)navigateToRevealCloudFeedInvitationForAlbum:(id)arg1 completion:(id)arg2;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
+- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (id)ppt_currentCollectionView;
+- (int)preferredStatusBarUpdateAnimation;
+- (BOOL)prefersStatusBarHidden;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
+- (void)prepareForPopoverPresentation:(id)arg1;
 - (BOOL)pu_handleSecondTabTap;
 - (BOOL)pu_shouldActAsTabRootViewController;
 - (BOOL)pu_wantsNavigationBarVisible;
-- (BOOL)pu_wantsStatusBarVisible;
 - (BOOL)pu_wantsTabBarVisible;
 - (BOOL)pu_wantsToolbarVisible;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -366,6 +370,7 @@
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (BOOL)shouldAutorotate;
 - (id)spec;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;

@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKRecord, CKRecordID, NSError, NSString;
+@class CKDProgressTracker, CKRecord, CKRecordID, NSError, NSString;
 
 @interface CKDModifyRecordMetadata : NSObject {
     NSError *_error;
     NSString *_etag;
     BOOL _isDelete;
+    CKDProgressTracker *_progressTracker;
     CKRecord *_record;
     CKRecordID *_recordID;
     CKRecord *_serverRecord;
@@ -17,6 +18,7 @@
 @property(retain) NSError * error;
 @property(retain) NSString * etag;
 @property BOOL isDelete;
+@property(retain) CKDProgressTracker * progressTracker;
 @property(retain) CKRecord * record;
 @property(retain) CKRecordID * recordID;
 @property(retain) CKRecord * serverRecord;
@@ -31,12 +33,14 @@
 - (id)error;
 - (id)etag;
 - (BOOL)isDelete;
+- (id)progressTracker;
 - (id)record;
 - (id)recordID;
 - (id)serverRecord;
 - (void)setError:(id)arg1;
 - (void)setEtag:(id)arg1;
 - (void)setIsDelete:(BOOL)arg1;
+- (void)setProgressTracker:(id)arg1;
 - (void)setRecord:(id)arg1;
 - (void)setRecordID:(id)arg1;
 - (void)setServerRecord:(id)arg1;

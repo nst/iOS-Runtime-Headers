@@ -21,6 +21,7 @@
             unsigned int isDownloadActive : 1; 
             unsigned int isDownloadRequested : 1; 
             unsigned int isAlias : 1; 
+            unsigned int shareOptions : 3; 
         } ; 
         unsigned short value; 
     } _flags;
@@ -60,6 +61,7 @@
 @property(readonly) NSString * path;
 @property(readonly) NSString * physicalName;
 @property id replacement;
+@property(readonly) unsigned int shareOptions;
 @property(readonly) NSNumber * size;
 @property(readonly) unsigned int uploadStatus;
 @property(readonly) NSURL * url;
@@ -101,6 +103,7 @@
 - (BOOL)isLive;
 - (BOOL)isNetworkOffline;
 - (BOOL)isPreCrash;
+- (BOOL)isShared;
 - (BOOL)isUploadActive;
 - (id)localRepresentationURL;
 - (id)logicalName;
@@ -111,11 +114,14 @@
 - (id)path;
 - (id)physicalName;
 - (id)replacement;
+- (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (void)setIsNetworkOffline:(BOOL)arg1;
 - (void)setIsPreCrash:(BOOL)arg1;
 - (void)setReplacement:(id)arg1;
-- (void)setTransferAttribute:(id)arg1 forKey:(id)arg2 diff:(unsigned short)arg3;
+- (unsigned int)shareOptions;
+- (id)sharedItemRole;
 - (id)size;
+- (id)subclassDescription;
 - (unsigned int)uploadStatus;
 - (id)url;
 - (id)valueForKey:(id)arg1;

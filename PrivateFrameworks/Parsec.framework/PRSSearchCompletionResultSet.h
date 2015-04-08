@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class <PRSSimpleResult>, NSArray, NSString, PRSDecoder;
+@class <PRSSimpleResult>, NSArray, NSMutableDictionary, NSString, PRSDecoder;
 
 @interface PRSSearchCompletionResultSet : NSObject <PRSDecoderDelegate> {
     BOOL _cacheable;
@@ -12,7 +12,10 @@
     <PRSSimpleResult> *_fakeMapsMoreResult;
     NSString *_feedbackQueryIdentifier;
     double _maxAge;
+    NSArray *_patternStrings;
+    NSMutableDictionary *_patternStringsToPatterns;
     NSString *_prefix;
+    NSString *_resultStatusString;
     NSArray *_results;
 }
 
@@ -24,7 +27,9 @@
 @property(readonly) NSString * feedbackQueryIdentifier;
 @property(readonly) unsigned int hash;
 @property double maxAge;
+@property(readonly) NSArray * patternStrings;
 @property(readonly) NSString * prefix;
+@property(readonly) NSString * resultStatusString;
 @property(readonly) NSArray * results;
 @property(readonly) Class superclass;
 
@@ -35,15 +40,18 @@
 - (id)completionString;
 - (id)convertedValue:(id)arg1 forPropertyPath:(id)arg2 ofObject:(id)arg3;
 - (id)description;
+- (void)enumeratePatternsUsingBlock:(id)arg1;
 - (id)feedbackQueryIdentifier;
 - (unsigned int)hash;
-- (id)initWithFactory:(id)arg1 session:(id)arg2 resourceProvider:(id)arg3 prefix:(id)arg4 completionString:(id)arg5 score:(float)arg6 resultStatusString:(id)arg7 feedbackQueryIdentifier:(id)arg8 resultDictionaries:(id)arg9;
+- (id)initWithFactory:(id)arg1 session:(id)arg2 resourceProvider:(id)arg3 prefix:(id)arg4 completionString:(id)arg5 score:(float)arg6 resultStatusString:(id)arg7 feedbackQueryIdentifier:(id)arg8 resultDictionaries:(id)arg9 matchesArray:(id)arg10 error:(id*)arg11;
 - (id)initWithResultSet:(id)arg1 prefix:(id)arg2 completionString:(id)arg3 score:(float)arg4;
 - (BOOL)isCacheable;
 - (BOOL)isEqual:(id)arg1;
 - (double)maxAge;
+- (id)patternStrings;
 - (id)prefix;
-- (id)resultForFactory:(id)arg1 session:(id)arg2 resourceProvider:(id)arg3 dictionary:(id)arg4;
+- (id)resultForFactory:(id)arg1 session:(id)arg2 resourceProvider:(id)arg3 dictionary:(id)arg4 error:(id*)arg5;
+- (id)resultStatusString;
 - (id)results;
 - (id)serverKeysForKey:(id)arg1 ofObject:(id)arg2;
 - (void)setMaxAge:(double)arg1;

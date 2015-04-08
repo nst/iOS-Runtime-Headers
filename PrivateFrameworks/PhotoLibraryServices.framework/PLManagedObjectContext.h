@@ -9,7 +9,6 @@
     NSMutableSet *_avalancheUUIDsForUpdate;
     int _changeSource;
     NSMutableSet *_delayedAlbumCountUpdates;
-    NSMutableSet *_delayedAlbumOrderUpdates;
     NSMutableSet *_delayedAssetsForFileSystemPersistency;
     NSMutableArray *_delayedCloudFeedAlbumUpdates;
     NSMutableArray *_delayedCloudFeedAssetInserts;
@@ -27,6 +26,7 @@
     BOOL _isBackingALAssetsLibrary;
     BOOL _isConnectedToChangeHub;
     BOOL _isInitializingSingletons;
+    BOOL _isLoadingPhotoLibrary;
     BOOL _isObservingChangesForPTPNotificationDelegate;
     PLMergePolicy *_mergePolicy;
     BOOL _mergingChanges;
@@ -47,6 +47,7 @@
 @property BOOL hasMetadataChanges;
 @property BOOL isBackingALAssetsLibrary;
 @property BOOL isInitializingSingletons;
+@property BOOL isLoadingPhotoLibrary;
 @property(readonly) BOOL isUserInterfaceContext;
 @property(readonly) BOOL mergingChanges;
 @property PLPhotoLibrary * photoLibrary;
@@ -57,6 +58,8 @@
 
 + (void)__prepareEntityPropertyLookups;
 + (id)_attributeNamesByIndexByEntityNames;
++ (void)_getStoreURL:(id*)arg1 options:(id*)arg2 enableNotifications:(BOOL)arg3;
++ (void)_getStoreURL:(id*)arg1 options:(id*)arg2 forFileURL:(id)arg3 enableNotifications:(BOOL)arg4;
 + (unsigned long long)_indexValueForPropertyNames:(id)arg1 entityName:(id)arg2 indexesByPropertyNamesByEntityNames:(id)arg3;
 + (id)_indexesByAttributeNamesByEntityNames;
 + (id)_indexesByRelationshipNamesByEntityNames;
@@ -75,14 +78,12 @@
 + (BOOL)databaseIsMissing;
 + (id)databasePath;
 + (void)delayedAlbumCountUpdatesFromChangeHubEvent:(id)arg1 countUpdates:(id*)arg2;
-+ (void)delayedAlbumOrderingUpdatesFromChangeHubEvent:(id)arg1 orderingUpdates:(id*)arg2;
 + (void)delayedAssetsForFileSystemPersistencyUpdatesFromChangeHubEvent:(id)arg1 assetUpdates:(id*)arg2;
 + (void)delayedCloudFeedDataFromChangeHubEvent:(id)arg1 albumUpdates:(id*)arg2 assetInserts:(id*)arg3 assetUpdates:(id*)arg4 commentInserts:(id*)arg5 invitationRecordUpdates:(id*)arg6 deletionEntries:(id*)arg7;
 + (void)delayedDupeAnalysisDataFromChangeHubEvent:(id)arg1 normalInserts:(id*)arg2 cloudInserts:(id*)arg3;
 + (void)delayedMomentDataFromChangeHubEvent:(id)arg1 insertsAndUpdates:(id*)arg2 deletes:(id*)arg3;
 + (void)delayedSearchIndexUpdatesFromChangeHubEvent:(id)arg1 updates:(id*)arg2;
-+ (void)getStoreURL:(id*)arg1 options:(id*)arg2;
-+ (void)getStoreURL:(id*)arg1 options:(id*)arg2 forFileURL:(id)arg3;
++ (void)getStoreURL:(id*)arg1;
 + (void)handleUnknownMergeEvent;
 + (BOOL)hasAtLeastOneAsset;
 + (BOOL)hasConfiguredPhotoLibrary;
@@ -113,7 +114,6 @@
 - (void)_recordStreamAssetForDupeAnalyzis:(id)arg1;
 - (BOOL)_tooManyAssetChangesToHandle:(unsigned int)arg1;
 - (void)appendDelayedAlbumCountUpdatesToXPCMessage:(id)arg1;
-- (void)appendDelayedAlbumOrderingUpdatesToXPCMessage:(id)arg1;
 - (void)appendDelayedAssetsForFileSystemPersistencyUpdate:(id)arg1;
 - (void)appendDelayedCloudFeedDataToXPCMessage:(id)arg1;
 - (void)appendDelayedDupeAnalysisToXPCMessage:(id)arg1;
@@ -134,7 +134,6 @@
 - (id)getAndClearRecordedAvalancheUUIDsForUpdate;
 - (void)getAndClearUpdatedObjectsAttributes:(id*)arg1 relationships:(id*)arg2;
 - (void)getDelayedAlbumCountUpdates:(id*)arg1;
-- (void)getDelayedAlbumOrderingUpdates:(id*)arg1;
 - (void)getDelayedAssetsForFilesystemPersistencyUpdates:(id*)arg1;
 - (void)getDelayedCloudFeedAlbumUpdates:(id*)arg1 assetInserts:(id*)arg2 assetUpdates:(id*)arg3 commentInserts:(id*)arg4 invitationRecordUpdates:(id*)arg5 deletionEntries:(id*)arg6;
 - (void)getDelayedDupeAnalysisNormalInserts:(id*)arg1 cloudInserts:(id*)arg2;
@@ -145,6 +144,7 @@
 - (id)initWithConcurrencyType:(unsigned int)arg1 useSharedPersistentStoreCoordinator:(BOOL)arg2;
 - (BOOL)isBackingALAssetsLibrary;
 - (BOOL)isInitializingSingletons;
+- (BOOL)isLoadingPhotoLibrary;
 - (BOOL)isReadOnly;
 - (BOOL)isUserInterfaceContext;
 - (BOOL)mergingChanges;
@@ -157,7 +157,6 @@
 - (void)recordAlbumCountUpdate:(id)arg1;
 - (void)recordAlbumForCloudDeletion:(id)arg1;
 - (void)recordAlbumForCloudFeedUpdate:(id)arg1;
-- (void)recordAlbumForOrderingUpdate:(id)arg1;
 - (void)recordAlbumForSearchIndexUpdate:(id)arg1;
 - (void)recordAssetForAlbumCountUpdate:(id)arg1;
 - (void)recordAssetForCloudDeletion:(id)arg1;
@@ -170,6 +169,8 @@
 - (void)recordCommentForCloudFeedUpdate:(id)arg1;
 - (void)recordInvitationRecordForCloudFeedUpdate:(id)arg1;
 - (void)recordManagedObjectWillSave:(id)arg1;
+- (void)recordPersonForSearchIndexUpdate:(id)arg1;
+- (void)recordPersonReferenceForSearchIndexUpdate:(id)arg1;
 - (BOOL)regenerateVideoThumbnails;
 - (void)registerFilesystemDeletionInfo:(id)arg1;
 - (BOOL)save:(id*)arg1;
@@ -181,6 +182,7 @@
 - (void)setHasMetadataChanges:(BOOL)arg1;
 - (void)setIsBackingALAssetsLibrary:(BOOL)arg1;
 - (void)setIsInitializingSingletons:(BOOL)arg1;
+- (void)setIsLoadingPhotoLibrary:(BOOL)arg1;
 - (void)setPhotoLibrary:(id)arg1;
 - (void)setPtpNotificationDelegate:(id)arg1;
 - (void)setRegenerateVideoThumbnails:(BOOL)arg1;

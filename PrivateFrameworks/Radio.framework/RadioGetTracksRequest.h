@@ -15,6 +15,7 @@
     int _reasonType;
     SSURLConnectionRequest *_request;
     BOOL _shouldIncludeAsset;
+    BOOL _skipPromptForSeamlessPlayback;
     RadioStation *_station;
 }
 
@@ -26,6 +27,7 @@
 @property(copy) RadioPlaybackContext * playbackContext;
 @property int reasonType;
 @property BOOL shouldIncludeAsset;
+@property BOOL skipPromptForSeamlessPlayback;
 
 - (void).cxx_destruct;
 - (id)additionalRequestParameters;
@@ -46,7 +48,9 @@
 - (void)setPlaybackContext:(id)arg1;
 - (void)setReasonType:(int)arg1;
 - (void)setShouldIncludeAsset:(BOOL)arg1;
+- (void)setSkipPromptForSeamlessPlayback:(BOOL)arg1;
 - (BOOL)shouldIncludeAsset;
+- (BOOL)skipPromptForSeamlessPlayback;
 - (void)startWithCompletionHandler:(id)arg1;
 
 @end

@@ -15,6 +15,7 @@
             void *m_ptr; 
         } m_value; 
     } _contentProviderRegistry;
+    BOOL _featureCounterEnabled;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     } _groupIdentifier;
@@ -59,6 +60,7 @@
 
 @property(setter=_setAlternateWebViewForNavigationGestures:) WKWebView * _alternateWebViewForNavigationGestures;
 @property(setter=_setContentProviderRegistry:) WKWebViewContentProviderRegistry * _contentProviderRegistry;
+@property(setter=_setFeatureCounterEnabled:) BOOL _featureCounterEnabled;
 @property(setter=_setGroupIdentifier:,copy) NSString * _groupIdentifier;
 @property(setter=_setRelatedWebView:) WKWebView * _relatedWebView;
 @property(setter=_setVisitedLinkProvider:,retain) _WKVisitedLinkProvider * _visitedLinkProvider;
@@ -76,10 +78,12 @@
 - (void).cxx_destruct;
 - (id)_alternateWebViewForNavigationGestures;
 - (id)_contentProviderRegistry;
+- (BOOL)_featureCounterEnabled;
 - (id)_groupIdentifier;
 - (id)_relatedWebView;
 - (void)_setAlternateWebViewForNavigationGestures:(id)arg1;
 - (void)_setContentProviderRegistry:(id)arg1;
+- (void)_setFeatureCounterEnabled:(BOOL)arg1;
 - (void)_setGroupIdentifier:(id)arg1;
 - (void)_setRelatedWebView:(id)arg1;
 - (void)_setVisitedLinkProvider:(id)arg1;

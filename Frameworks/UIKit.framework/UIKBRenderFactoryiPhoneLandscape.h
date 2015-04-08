@@ -7,12 +7,14 @@
 
 - (float)_row4ControlSegmentWidth;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
+- (id)biuKeyImageName;
 - (id)boldKeyImageName;
 - (id)copyKeyImageName;
 - (id)cutKeyImageName;
 - (id)deleteKeyImageName;
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
+- (float)emojiPopupDividerKeyOffset;
 - (id)globalKeyImageName;
 - (BOOL)isTallPopup;
 - (id)leftArrowKeyImageName;
@@ -31,7 +33,7 @@
 - (float)skinnyKeyThreshold;
 - (id)undoKeyImageName;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantDisplayFrameInsets;
-- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2;
+- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2 rowLimit:(int)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantPaddedFrameInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;
 - (struct CGPoint { float x1; float x2; })variantSymbolTextOffset;

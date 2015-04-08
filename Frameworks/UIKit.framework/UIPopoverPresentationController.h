@@ -156,7 +156,7 @@
 - (void)_containedViewControllerModalStateChanged;
 - (struct CGSize { float x1; float x2; })_currentPopoverContentSize;
 - (Class)_defaultChromeViewClass;
-- (int)_defaultPresentationStyleForCompactWidth;
+- (int)_defaultPresentationStyleForTraitCollection:(id)arg1;
 - (id)_dimmingView;
 - (float)_dimmingViewTopEdgeInset;
 - (void)_dismissPopoverAnimated:(BOOL)arg1 stateOnly:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
@@ -179,6 +179,7 @@
 - (void)_moveAwayFromTheKeyboard:(id)arg1;
 - (void)_newViewControllerWasPushed:(id)arg1;
 - (void)_newViewControllerWillBePushed:(id)arg1;
+- (id)_passthroughViews;
 - (void)_performHierarchyCheckOnViewController:(id)arg1;
 - (int)_popoverBackgroundStyle;
 - (BOOL)_popoverBackgroundViewWantsDefaultContentAppearance;
@@ -213,9 +214,11 @@
 - (void)_setRetainsSelfWhilePresented:(BOOL)arg1;
 - (void)_setShouldHideArrow:(BOOL)arg1;
 - (void)_setSplitParentController:(id)arg1;
+- (BOOL)_shouldChangeStatusBarViewController;
 - (BOOL)_shouldDisableInteractionDuringTransitions;
 - (BOOL)_shouldHideArrow;
 - (BOOL)_shouldKeepCurrentFirstResponder;
+- (BOOL)_shouldOccludeDuringPresentation;
 - (unsigned int)_slideTransitionCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sourceRect;
 - (id)_sourceView;
@@ -232,7 +235,6 @@
 - (void)_transitionFromWillBegin;
 - (void)_transitionToDidEnd;
 - (void)_transitionToWillBegin;
-- (int)adaptivePresentationStyle;
 - (BOOL)allowResizePastTargetRect;
 - (unsigned int)arrowDirection;
 - (id)backgroundColor;
@@ -258,6 +260,7 @@
 - (id)popoverView;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (id)preferredLayoutInfo;
+- (int)presentationStyle;
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;
 - (id)presentedView;

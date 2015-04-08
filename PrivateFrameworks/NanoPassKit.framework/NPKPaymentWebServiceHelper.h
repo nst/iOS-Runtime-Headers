@@ -30,6 +30,7 @@
 - (id)_sendProtobuf:(id)arg1 responseExpected:(BOOL)arg2;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(BOOL)arg2 extraOptions:(id)arg3;
 - (void)_setOrResetCleanupTimerForRequest:(id)arg1;
+- (id)_supportedRegionsForWebService:(id)arg1;
 - (void)configurationDataResponse:(id)arg1;
 - (void)configurationDataWithCompletionHandler:(id)arg1;
 - (unsigned int)context;
@@ -44,14 +45,15 @@
 - (id)initWithContext:(unsigned int)arg1 responseQueue:(id)arg2;
 - (id)internalQueue;
 - (id)outstandingRequests;
-- (int)paymentSupportedInCurrentRegion;
-- (void)paymentWebServiceDidRegister:(id)arg1;
+- (int)paymentSupportedInCurrentRegionForWebService:(id)arg1;
+- (void)paymentWebService:(id)arg1 didRegisterWithRegionMap:(id)arg2;
+- (void)paymentWebServiceDidUpdateConfiguration:(id)arg1;
 - (void)pendingRemovalResponse:(id)arg1;
 - (void)preconditionNotMet:(id)arg1;
 - (void)provisioningDataResponse:(id)arg1;
 - (void)provisioningDataWithCompletionHandler:(id)arg1;
 - (id)provisioningService;
-- (void)queueConnectionToTrustedServiceManagerWithCompletion:(id)arg1;
+- (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1 withCompletion:(id)arg2;
 - (void)queueTSMConnectionResponse:(id)arg1;
 - (void)registrationDataResponse:(id)arg1;
 - (void)registrationDataWithAuthToken:(id)arg1 completionHandler:(id)arg2;

@@ -26,7 +26,7 @@
     PUPhotoBrowserControllerSpec *_photoBrowserSpec;
     PUPhotosPickerViewControllerSpec *_photosPickerSpec;
     PUFeedViewControllerSpec *_popoverFeedViewControllerSpec;
-    int _promptType;
+    int _promptStyle;
     NSIndexSet *_qualityImageFormats;
     BOOL _shouldHideBarsInLandscape;
     BOOL _shouldShowInvitationsInPopover;
@@ -60,7 +60,7 @@
 @property(readonly) PUPhotoBrowserControllerSpec * photoBrowserSpec;
 @property(readonly) PUPhotosPickerViewControllerSpec * photosPickerSpec;
 @property(readonly) PUFeedViewControllerSpec * popoverFeedViewControllerSpec;
-@property(readonly) int promptType;
+@property(readonly) int promptStyle;
 @property(copy) NSIndexSet * qualityImageFormats;
 @property(readonly) BOOL shouldHideBarsInLandscape;
 @property(readonly) BOOL shouldShowInvitationsInPopover;
@@ -95,7 +95,7 @@
 - (id)photoBrowserSpec;
 - (id)photosPickerSpec;
 - (id)popoverFeedViewControllerSpec;
-- (int)promptType;
+- (int)promptStyle;
 - (id)qualityImageFormats;
 - (BOOL)shouldHideBarsInLandscape;
 - (BOOL)shouldShowCommentBadgesInCollectionViewType:(int)arg1;

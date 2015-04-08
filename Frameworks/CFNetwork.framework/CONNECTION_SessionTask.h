@@ -10,6 +10,7 @@
 @class NSMutableURLRequest, NSURLRequest, NSURLSession;
 
 @interface CONNECTION_SessionTask : NSObject {
+    struct __PerformanceTiming { } *__performanceTiming;
     struct __CFDictionary { } *_connectionProperties;
     struct _CFURLRequest { } *_currentRequest;
     bool _is_cellular;
@@ -21,7 +22,6 @@
     struct __CFDictionary { } *_socketProperties;
 }
 
-- (struct __CFDictionary { }*)_additionalHeaders;
 - (unsigned long)_allowedProtocolTypes;
 - (id)_allowsCellular;
 - (id)_backgroundTaskTimingData;
@@ -47,7 +47,7 @@
 - (id)_expectedWorkload;
 - (void)_initializeTimingDataWithSessionConfiguration:(id)arg1;
 - (id)_networkServiceType;
-- (id)_performanceTiming;
+- (struct __PerformanceTiming { }*)_performanceTiming;
 - (unsigned char)_preventsIdleSystemSleep;
 - (id)_priorityValue;
 - (id)_prohibitAuthUI;

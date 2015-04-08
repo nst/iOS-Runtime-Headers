@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <CPLEngineStoreUserIdentifier>, <CPLEngineTransportSetupTask>, CPLBackgroundDownloadsTask, CPLBackgroundUploadsTask, CPLEngineLibrary, CPLEngineSyncEmergencyTask, CPLGetAssetCountsTask, CPLMinglePulledChangesTask, CPLPlatformObject, CPLPullFromTransportTask, CPLPushToTransportTask, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class <CPLEngineStoreUserIdentifier>, <CPLEngineTransportSetupTask>, CPLBackgroundDownloadsTask, CPLBackgroundUploadsTask, CPLEngineLibrary, CPLEngineSyncEmergencyTask, CPLMinglePulledChangesTask, CPLPlatformObject, CPLPullFromTransportTask, CPLPushToTransportTask, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface CPLEngineSyncManager : NSObject <CPLAbstractObject, CPLBackgroundDownloadsTaskDelegate, CPLBackgroundUploadsTaskDelegate, CPLEngineComponent, CPLEngineSyncEmergencyTaskDelegate, CPLMinglePulledChangesTaskDelegate, CPLPullFromTransportTaskDelegate, CPLPushToTransportTaskDelegate> {
     NSMutableArray *_archivedManagementTasks;
@@ -20,14 +20,15 @@
     NSMutableDictionary *_completionHandlerPerTaskIdentifier;
     CPLEngineLibrary *_engineLibrary;
     BOOL _foreground;
-    CPLGetAssetCountsTask *_getAssetCountsTask;
     BOOL _hasTransactionForSyncSession;
     NSError *_lastError;
     NSMutableArray *_lastErrors;
+    NSString *_libraryZoneName;
     NSObject<OS_dispatch_queue> *_lock;
     CPLEngineSyncEmergencyTask *_managementTask;
     CPLMinglePulledChangesTask *_mingleTask;
     CPLPlatformObject *_platformObject;
+    CPLPullFromTransportTask *_prePullTask;
     CPLPullFromTransportTask *_pullTask;
     CPLPushToTransportTask *_pushTask;
     NSMutableArray *_setupBarriers;
@@ -56,8 +57,8 @@
 - (void)_advanceToNextStateLocked;
 - (void)_cancelAllTasksForBackgroundDownloads;
 - (void)_cancelAllTasksForBackgroundUploads;
-- (void)_cancelAllTasksForGetAssetCounts;
 - (void)_cancelAllTasksForManagement;
+- (void)_cancelAllTasksForPrePull;
 - (void)_cancelAllTasksForPull;
 - (void)_cancelAllTasksForPush;
 - (void)_cancelAllTasksForSetup;
@@ -65,16 +66,16 @@
 - (id)_descriptionForBackgroundDownloadsTasks;
 - (id)_descriptionForBackgroundUploadsTasks;
 - (id)_descriptionForCurrentState;
-- (id)_descriptionForGetAssetCountsTasks;
 - (id)_descriptionForLaunchedTasks;
 - (id)_descriptionForManagementTasks;
+- (id)_descriptionForPrePullTasks;
 - (id)_descriptionForPullTasks;
 - (id)_descriptionForPushTasks;
 - (id)_descriptionForSetupTasks;
 - (BOOL)_didFinishBackgroundDownloadsTask:(id)arg1 withError:(id)arg2 shouldStop:(BOOL*)arg3;
 - (BOOL)_didFinishBackgroundUploadsTask:(id)arg1 withError:(id)arg2 shouldStop:(BOOL*)arg3;
-- (BOOL)_didFinishGetAssetCountsTask:(id)arg1 withError:(id)arg2 shouldStop:(BOOL*)arg3;
 - (BOOL)_didFinishManagementTask:(id)arg1 withError:(id)arg2 shouldStop:(BOOL*)arg3;
+- (BOOL)_didFinishPrePullTask:(id)arg1 withError:(id)arg2 shouldStop:(BOOL*)arg3;
 - (BOOL)_didFinishPullTask:(id)arg1 withError:(id)arg2 shouldStop:(BOOL*)arg3;
 - (BOOL)_didFinishPushTask:(id)arg1 withError:(id)arg2 shouldStop:(BOOL*)arg3;
 - (BOOL)_didFinishSetupTaskWithError:(id)arg1 shouldStop:(BOOL*)arg2;
@@ -82,7 +83,7 @@
 - (BOOL)_launchNecessaryTasksForBackgroundDownloads;
 - (BOOL)_launchNecessaryTasksForBackgroundUploads;
 - (BOOL)_launchNecessaryTasksForCurrentStateLocked;
-- (BOOL)_launchNecessaryTasksForGetAssetCounts;
+- (BOOL)_launchNecessaryTasksForPrePull;
 - (BOOL)_launchNecessaryTasksForPull;
 - (BOOL)_launchNecessaryTasksForPush;
 - (BOOL)_launchSetupTask;
@@ -92,7 +93,7 @@
 - (BOOL)_prepareAndLaunchSyncTask:(id*)arg1;
 - (float)_progressForBackgroundDownloadsTask:(id)arg1 progress:(float)arg2;
 - (float)_progressForBackgroundUploadsTask:(id)arg1 progress:(float)arg2;
-- (float)_progressForGetAssetCountsTask:(id)arg1 progress:(float)arg2;
+- (float)_progressForPrePullTask:(id)arg1 progress:(float)arg2;
 - (float)_progressForPullTask:(id)arg1 progress:(float)arg2;
 - (float)_progressForPushTask:(id)arg1 progress:(float)arg2;
 - (void)_resetErrorForSyncSession;
@@ -121,7 +122,7 @@
 - (void)startSyncSessionWithMinimalPhase:(unsigned int)arg1;
 - (unsigned int)state;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
-- (void)task:(id)arg1 didProgress:(float)arg2;
+- (void)task:(id)arg1 didProgress:(float)arg2 userInfo:(id)arg3;
 - (id)task:(id)arg1 wantsToDownloadBatchesFromSyncAnchor:(id)arg2 completionHandler:(id)arg3;
 - (id)task:(id)arg1 wantsToPushBatch:(id)arg2 continuationBlock:(id)arg3;
 

@@ -111,6 +111,7 @@
 - (void)setSynchronousCallbackEnabled:(BOOL)arg1;
 - (BOOL)startPlaying;
 - (BOOL)startRecording;
+- (BOOL)startRecording:(id*)arg1;
 - (void)startpointDetected;
 - (void)stopPlaying;
 - (void)stopRecording;

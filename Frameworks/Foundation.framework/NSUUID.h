@@ -9,7 +9,7 @@
 
 @class NSString;
 
-@interface NSUUID : NSObject <NSCopying, NSSecureCoding, PQLBindable, PQLResultSetInitializer> {
+@interface NSUUID : NSObject <NSCopying, NSSecureCoding, PQLValuable, PQLValuable> {
 }
 
 @property(copy,readonly) NSString * UUIDString;
@@ -21,26 +21,30 @@
 + (id)UUID;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)hk_UUIDWithData:(id)arg1;
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (id)UUIDString;
 - (unsigned long)_cfTypeID;
 - (struct __CFString { }*)_cfUUIDString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)getUUIDBytes:(unsigned char[16])arg1;
 - (unsigned int)hash;
 - (id)hk_dataForUUIDBytes;
 - (id)init;
-- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMessage:(const struct UUID { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned long long x3; unsigned long long x4; int x5; unsigned int x6[1]; }*)arg1;
 - (id)initWithUUIDBytes:(unsigned char[16])arg1;
 - (id)initWithUUIDString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
-- (void)saveToMessage:(struct UUID { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned long long x3; unsigned long long x4; int x5; unsigned int x6[1]; }*)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (id)tsp_initWithMessage:(const struct UUID { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; unsigned long long x6; }*)arg1;
+- (void)tsp_saveToMessage:(struct UUID { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; unsigned long long x6; }*)arg1;
 
 @end

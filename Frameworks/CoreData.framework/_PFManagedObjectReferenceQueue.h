@@ -8,6 +8,7 @@
     int _cd_rc;
     NSManagedObjectContext *_context;
     int _flags;
+    int _processing;
     struct __CFArray { } *_queue;
     struct __CFRunLoopObserver { } *_rlObserver;
     int _signalRunloop;

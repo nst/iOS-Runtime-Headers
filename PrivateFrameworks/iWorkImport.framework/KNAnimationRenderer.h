@@ -35,5 +35,6 @@
 - (void)setDuration:(double)arg1;
 - (void)setupPluginContext;
 - (void)stopAnimations;
+- (void)teardown;
 
 @end

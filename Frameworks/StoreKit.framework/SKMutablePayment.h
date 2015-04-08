@@ -14,6 +14,7 @@
 @property int quantity;
 @property(copy) NSData * requestData;
 @property(copy) NSDictionary * requestParameters;
+@property BOOL simulatesAskToBuyInSandbox;
 
 - (void)setApplicationUsername:(id)arg1;
 - (void)setPartnerIdentifier:(id)arg1;
@@ -22,5 +23,6 @@
 - (void)setQuantity:(int)arg1;
 - (void)setRequestData:(id)arg1;
 - (void)setRequestParameters:(id)arg1;
+- (void)setSimulatesAskToBuyInSandbox:(BOOL)arg1;
 
 @end

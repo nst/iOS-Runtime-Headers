@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDBezierPath, TSDEditableBezierPathSource, TSDFill, TSDInfoGeometry, TSDMutableStroke, TSDPathSource;
+@class TSDEditableBezierPathSource, TSDFill, TSDInfoGeometry, TSDMutableStroke, TSDPathSource, TSUBezierPath;
 
 @interface TSDShapeLayout : TSDStyledLayout {
     struct CGRect { 
@@ -33,9 +33,9 @@
         float tx; 
         float ty; 
     } mCachedAlignmentFrameInRootTransformInRoot;
-    TSDBezierPath *mCachedClippedPath;
+    TSUBezierPath *mCachedClippedPath;
     TSDEditableBezierPathSource *mCachedEditableBezierPathSource;
-    TSDBezierPath *mCachedPath;
+    TSUBezierPath *mCachedPath;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -110,7 +110,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })aliasedAlignmentFrameForScale:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrameInRoot;
-- (void)beginDynamicOperation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
 - (BOOL)canBeIntersected;
 - (BOOL)canResetTextAndObjectHandles;
@@ -123,12 +122,8 @@
 - (void)dynamicStrokeWidthChangeDidBegin;
 - (void)dynamicStrokeWidthChangeDidEnd;
 - (void)dynamicStrokeWidthUpdateToValue:(float)arg1;
-- (void)dynamicallyMovingLineSegmentWithTracker:(id)arg1;
 - (id)editablePathSource;
-- (void)endDynamicOperation;
-- (void)endResize;
 - (id)fill;
-- (struct CGPoint { float x1; float x2; })getControlKnobPosition:(unsigned int)arg1;
 - (float)headLineEndAngle;
 - (struct CGPoint { float x1; float x2; })headLineEndPoint;
 - (struct CGPoint { float x1; float x2; })headPoint;
@@ -139,7 +134,6 @@
 - (void)invalidateFrame;
 - (void)invalidatePath;
 - (void)invalidatePathBounds;
-- (BOOL)isBeingManipulated;
 - (BOOL)isInvisible;
 - (BOOL)isInvisibleAutosizingShape;
 - (BOOL)isStrokeBeingManipulated;
@@ -148,8 +142,6 @@
 - (id)layoutInfoGeometry;
 - (float)lineEndScale;
 - (struct CGSize { float x1; float x2; })minimumSize;
-- (unsigned int)numberOfControlKnobs;
-- (void)offsetGeometryBy:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_boundsOfLineEndForHead:(BOOL)arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
 - (id)p_cachedPath;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_cachedPathBounds;
@@ -173,7 +165,6 @@
 - (BOOL)pathIsOpen;
 - (id)pathSource;
 - (void)processChangedProperty:(int)arg1;
-- (void)setControlKnobPosition:(unsigned int)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setDynamicFill:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shapeFrameWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
@@ -188,8 +179,6 @@
 - (float)tailLineEndAngle;
 - (struct CGPoint { float x1; float x2; })tailLineEndPoint;
 - (struct CGPoint { float x1; float x2; })tailPoint;
-- (void)takeRotationFromTracker:(id)arg1;
-- (void)takeSizeFromTracker:(id)arg1;
 - (id)textWrapperForExteriorWrap;
 - (struct CGPoint { float x1; float x2; })unclippedHeadPoint;
 - (struct CGPoint { float x1; float x2; })unclippedTailPoint;

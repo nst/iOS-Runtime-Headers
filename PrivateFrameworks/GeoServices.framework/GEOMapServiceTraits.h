@@ -41,6 +41,7 @@
     int _mode;
     NSMutableArray *_photoSizes;
     unsigned int _photosCount;
+    NSString *_providerID;
     NSMutableArray *_reviewUserPhotoSizes;
     unsigned int _reviewUserPhotosCount;
     unsigned int _sequenceNumber;
@@ -90,6 +91,7 @@
 @property BOOL hasMapZoomLevel;
 @property BOOL hasMode;
 @property BOOL hasPhotosCount;
+@property(readonly) BOOL hasProviderID;
 @property BOOL hasReviewUserPhotosCount;
 @property BOOL hasSequenceNumber;
 @property BOOL hasSessionId;
@@ -102,6 +104,7 @@
 @property int mode;
 @property(retain) NSMutableArray * photoSizes;
 @property unsigned int photosCount;
+@property(retain) NSString * providerID;
 @property(retain) NSMutableArray * reviewUserPhotoSizes;
 @property unsigned int reviewUserPhotosCount;
 @property unsigned int sequenceNumber;
@@ -160,6 +163,7 @@
 - (BOOL)hasMapZoomLevel;
 - (BOOL)hasMode;
 - (BOOL)hasPhotosCount;
+- (BOOL)hasProviderID;
 - (BOOL)hasReviewUserPhotosCount;
 - (BOOL)hasSequenceNumber;
 - (BOOL)hasSessionId;
@@ -177,6 +181,7 @@
 - (id)photoSizesAtIndex:(unsigned int)arg1;
 - (unsigned int)photoSizesCount;
 - (unsigned int)photosCount;
+- (id)providerID;
 - (BOOL)readFrom:(id)arg1;
 - (id)reviewUserPhotoSizes;
 - (id)reviewUserPhotoSizesAtIndex:(unsigned int)arg1;
@@ -218,6 +223,7 @@
 - (void)setMode:(int)arg1;
 - (void)setPhotoSizes:(id)arg1;
 - (void)setPhotosCount:(unsigned int)arg1;
+- (void)setProviderID:(id)arg1;
 - (void)setReviewUserPhotoSizes:(id)arg1;
 - (void)setReviewUserPhotosCount:(unsigned int)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;

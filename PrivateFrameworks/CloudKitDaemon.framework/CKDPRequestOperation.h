@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPAssetUploadTokenRetrieveRequest, CKDPDeleteCommentRequest, CKDPDeleteContainerRequest, CKDPGetCommentRequest, CKDPGetCommentsRequest, CKDPGetLikesRequest, CKDPInvitationAcceptRequest, CKDPInvitationDeclineRequest, CKDPInvitationQueryRequest, CKDPLikeRequest, CKDPMescalCertificateRequest, CKDPMescalSessionInfoRequest, CKDPMescalSignatureRequest, CKDPNotificationMarkReadRequest, CKDPNotificationSyncRequest, CKDPOperation, CKDPPkiRegisterRequest, CKDPPkiRetrieveRequest, CKDPPostCommentRequest, CKDPPromoteContainerSchemaRequest, CKDPPulseRequest, CKDPQueryRetrieveRequest, CKDPRecordDeleteRequest, CKDPRecordRetrieveChangesRequest, CKDPRecordRetrieveRequest, CKDPRecordRetrieveVersionsRequest, CKDPRecordSaveRequest, CKDPRequestOperationHeader, CKDPResetContainerRequest, CKDPSetBadgeCountRequest, CKDPShareCreateRequest, CKDPShareDeleteRequest, CKDPShareParticipantCreateRequest, CKDPShareParticipantDeleteRequest, CKDPShareParticipantUpdateRequest, CKDPShareRetrieveRequest, CKDPShareSetKeyRequest, CKDPSubscriptionCreateRequest, CKDPSubscriptionDeleteRequest, CKDPSubscriptionRetrieveRequest, CKDPTokenRegistrationRequest, CKDPTokenUnregistrationRequest, CKDPUnlikeRequest, CKDPUserAvailableQuotaRequest, CKDPUserPrivacySettingsBatchLookupRequest, CKDPUserPrivacySettingsResetRequest, CKDPUserPrivacySettingsRetrieveRequest, CKDPUserPrivacySettingsUpdateRequest, CKDPUserQueryRequest, CKDPUserRetrieveRequest, CKDPZoneDeleteRequest, CKDPZoneRetrieveRequest, CKDPZoneSaveRequest;
+@class CKDPAssetUploadTokenRetrieveRequest, CKDPDeleteCommentRequest, CKDPDeleteContainerRequest, CKDPGetCommentRequest, CKDPGetCommentsRequest, CKDPGetLikesRequest, CKDPLikeRequest, CKDPMescalCertificateRequest, CKDPMescalSessionInfoRequest, CKDPMescalSignatureRequest, CKDPNotificationMarkReadRequest, CKDPNotificationSyncRequest, CKDPOperation, CKDPPkiRegisterRequest, CKDPPkiRetrieveRequest, CKDPPostCommentRequest, CKDPPromoteContainerSchemaRequest, CKDPPulseRequest, CKDPQueryRetrieveRequest, CKDPRecordDeleteRequest, CKDPRecordRetrieveChangesRequest, CKDPRecordRetrieveRequest, CKDPRecordRetrieveVersionsRequest, CKDPRecordSaveRequest, CKDPRequestOperationHeader, CKDPResetContainerRequest, CKDPSetBadgeCountRequest, CKDPShareAcceptRequest, CKDPShareDeleteRequest, CKDPShareRetrieveRequest, CKDPShareSaveRequest, CKDPShareTokenDeleteRequest, CKDPShareTokenRetrieveRequest, CKDPShareTokenSaveRequest, CKDPSubscriptionCreateRequest, CKDPSubscriptionDeleteRequest, CKDPSubscriptionRetrieveRequest, CKDPTokenRegistrationRequest, CKDPTokenUnregistrationRequest, CKDPUnlikeRequest, CKDPUserAvailableQuotaRequest, CKDPUserPrivacySettingsBatchLookupRequest, CKDPUserPrivacySettingsResetRequest, CKDPUserPrivacySettingsRetrieveRequest, CKDPUserPrivacySettingsUpdateRequest, CKDPUserQueryRequest, CKDPUserRetrieveRequest, CKDPWebAuthTokenRetrieveRequest, CKDPZoneDeleteRequest, CKDPZoneRetrieveChangesRequest, CKDPZoneRetrieveRequest, CKDPZoneSaveRequest;
 
 @interface CKDPRequestOperation : PBCodable <NSCopying> {
     CKDPAssetUploadTokenRetrieveRequest *_assetUploadTokenRetrieveRequest;
@@ -12,9 +12,6 @@
     CKDPGetCommentsRequest *_getCommentsRequest;
     CKDPGetLikesRequest *_getLikesRequest;
     CKDPRequestOperationHeader *_header;
-    CKDPInvitationAcceptRequest *_invitationAcceptRequest;
-    CKDPInvitationDeclineRequest *_invitationDeclineRequest;
-    CKDPInvitationQueryRequest *_invitationQueryRequest;
     CKDPLikeRequest *_likeRequest;
     CKDPMescalCertificateRequest *_mescalCertificateRequest;
     CKDPMescalSessionInfoRequest *_mescalSessionInfoRequest;
@@ -35,13 +32,13 @@
     CKDPOperation *_request;
     CKDPResetContainerRequest *_resetContainerRequest;
     CKDPSetBadgeCountRequest *_setBadgeCountRequest;
-    CKDPShareCreateRequest *_shareCreateRequest;
+    CKDPShareAcceptRequest *_shareAcceptRequest;
     CKDPShareDeleteRequest *_shareDeleteRequest;
-    CKDPShareParticipantCreateRequest *_shareParticipantCreateRequest;
-    CKDPShareParticipantDeleteRequest *_shareParticipantDeleteRequest;
-    CKDPShareParticipantUpdateRequest *_shareParticipantUpdateRequest;
     CKDPShareRetrieveRequest *_shareRetrieveRequest;
-    CKDPShareSetKeyRequest *_shareSetKeyRequest;
+    CKDPShareSaveRequest *_shareSaveRequest;
+    CKDPShareTokenDeleteRequest *_shareTokenDeleteRequest;
+    CKDPShareTokenRetrieveRequest *_shareTokenRetrieveRequest;
+    CKDPShareTokenSaveRequest *_shareTokenSaveRequest;
     CKDPSubscriptionCreateRequest *_subscriptionCreateRequest;
     CKDPSubscriptionDeleteRequest *_subscriptionDeleteRequest;
     CKDPSubscriptionRetrieveRequest *_subscriptionRetrieveRequest;
@@ -55,7 +52,9 @@
     CKDPUserPrivacySettingsUpdateRequest *_userPrivacySettingsUpdateRequest;
     CKDPUserQueryRequest *_userQueryRequest;
     CKDPUserRetrieveRequest *_userRetrieveRequest;
+    CKDPWebAuthTokenRetrieveRequest *_webAuthTokenRetrieveRequest;
     CKDPZoneDeleteRequest *_zoneDeleteRequest;
+    CKDPZoneRetrieveChangesRequest *_zoneRetrieveChangesRequest;
     CKDPZoneRetrieveRequest *_zoneRetrieveRequest;
     CKDPZoneSaveRequest *_zoneSaveRequest;
 }
@@ -73,9 +72,6 @@
 @property(readonly) BOOL hasGetCommentsRequest;
 @property(readonly) BOOL hasGetLikesRequest;
 @property(readonly) BOOL hasHeader;
-@property(readonly) BOOL hasInvitationAcceptRequest;
-@property(readonly) BOOL hasInvitationDeclineRequest;
-@property(readonly) BOOL hasInvitationQueryRequest;
 @property(readonly) BOOL hasLikeRequest;
 @property(readonly) BOOL hasMescalCertificateRequest;
 @property(readonly) BOOL hasMescalSessionInfoRequest;
@@ -96,13 +92,13 @@
 @property(readonly) BOOL hasRequest;
 @property(readonly) BOOL hasResetContainerRequest;
 @property(readonly) BOOL hasSetBadgeCountRequest;
-@property(readonly) BOOL hasShareCreateRequest;
+@property(readonly) BOOL hasShareAcceptRequest;
 @property(readonly) BOOL hasShareDeleteRequest;
-@property(readonly) BOOL hasShareParticipantCreateRequest;
-@property(readonly) BOOL hasShareParticipantDeleteRequest;
-@property(readonly) BOOL hasShareParticipantUpdateRequest;
 @property(readonly) BOOL hasShareRetrieveRequest;
-@property(readonly) BOOL hasShareSetKeyRequest;
+@property(readonly) BOOL hasShareSaveRequest;
+@property(readonly) BOOL hasShareTokenDeleteRequest;
+@property(readonly) BOOL hasShareTokenRetrieveRequest;
+@property(readonly) BOOL hasShareTokenSaveRequest;
 @property(readonly) BOOL hasSubscriptionCreateRequest;
 @property(readonly) BOOL hasSubscriptionDeleteRequest;
 @property(readonly) BOOL hasSubscriptionRetrieveRequest;
@@ -116,13 +112,12 @@
 @property(readonly) BOOL hasUserPrivacySettingsUpdateRequest;
 @property(readonly) BOOL hasUserQueryRequest;
 @property(readonly) BOOL hasUserRetrieveRequest;
+@property(readonly) BOOL hasWebAuthTokenRetrieveRequest;
 @property(readonly) BOOL hasZoneDeleteRequest;
+@property(readonly) BOOL hasZoneRetrieveChangesRequest;
 @property(readonly) BOOL hasZoneRetrieveRequest;
 @property(readonly) BOOL hasZoneSaveRequest;
 @property(retain) CKDPRequestOperationHeader * header;
-@property(retain) CKDPInvitationAcceptRequest * invitationAcceptRequest;
-@property(retain) CKDPInvitationDeclineRequest * invitationDeclineRequest;
-@property(retain) CKDPInvitationQueryRequest * invitationQueryRequest;
 @property(retain) CKDPLikeRequest * likeRequest;
 @property(retain) CKDPMescalCertificateRequest * mescalCertificateRequest;
 @property(retain) CKDPMescalSessionInfoRequest * mescalSessionInfoRequest;
@@ -143,13 +138,13 @@
 @property(retain) CKDPOperation * request;
 @property(retain) CKDPResetContainerRequest * resetContainerRequest;
 @property(retain) CKDPSetBadgeCountRequest * setBadgeCountRequest;
-@property(retain) CKDPShareCreateRequest * shareCreateRequest;
+@property(retain) CKDPShareAcceptRequest * shareAcceptRequest;
 @property(retain) CKDPShareDeleteRequest * shareDeleteRequest;
-@property(retain) CKDPShareParticipantCreateRequest * shareParticipantCreateRequest;
-@property(retain) CKDPShareParticipantDeleteRequest * shareParticipantDeleteRequest;
-@property(retain) CKDPShareParticipantUpdateRequest * shareParticipantUpdateRequest;
 @property(retain) CKDPShareRetrieveRequest * shareRetrieveRequest;
-@property(retain) CKDPShareSetKeyRequest * shareSetKeyRequest;
+@property(retain) CKDPShareSaveRequest * shareSaveRequest;
+@property(retain) CKDPShareTokenDeleteRequest * shareTokenDeleteRequest;
+@property(retain) CKDPShareTokenRetrieveRequest * shareTokenRetrieveRequest;
+@property(retain) CKDPShareTokenSaveRequest * shareTokenSaveRequest;
 @property(retain) CKDPSubscriptionCreateRequest * subscriptionCreateRequest;
 @property(retain) CKDPSubscriptionDeleteRequest * subscriptionDeleteRequest;
 @property(retain) CKDPSubscriptionRetrieveRequest * subscriptionRetrieveRequest;
@@ -163,7 +158,9 @@
 @property(retain) CKDPUserPrivacySettingsUpdateRequest * userPrivacySettingsUpdateRequest;
 @property(retain) CKDPUserQueryRequest * userQueryRequest;
 @property(retain) CKDPUserRetrieveRequest * userRetrieveRequest;
+@property(retain) CKDPWebAuthTokenRetrieveRequest * webAuthTokenRetrieveRequest;
 @property(retain) CKDPZoneDeleteRequest * zoneDeleteRequest;
+@property(retain) CKDPZoneRetrieveChangesRequest * zoneRetrieveChangesRequest;
 @property(retain) CKDPZoneRetrieveRequest * zoneRetrieveRequest;
 @property(retain) CKDPZoneSaveRequest * zoneSaveRequest;
 
@@ -185,9 +182,6 @@
 - (BOOL)hasGetCommentsRequest;
 - (BOOL)hasGetLikesRequest;
 - (BOOL)hasHeader;
-- (BOOL)hasInvitationAcceptRequest;
-- (BOOL)hasInvitationDeclineRequest;
-- (BOOL)hasInvitationQueryRequest;
 - (BOOL)hasLikeRequest;
 - (BOOL)hasMescalCertificateRequest;
 - (BOOL)hasMescalSessionInfoRequest;
@@ -208,13 +202,13 @@
 - (BOOL)hasRequest;
 - (BOOL)hasResetContainerRequest;
 - (BOOL)hasSetBadgeCountRequest;
-- (BOOL)hasShareCreateRequest;
+- (BOOL)hasShareAcceptRequest;
 - (BOOL)hasShareDeleteRequest;
-- (BOOL)hasShareParticipantCreateRequest;
-- (BOOL)hasShareParticipantDeleteRequest;
-- (BOOL)hasShareParticipantUpdateRequest;
 - (BOOL)hasShareRetrieveRequest;
-- (BOOL)hasShareSetKeyRequest;
+- (BOOL)hasShareSaveRequest;
+- (BOOL)hasShareTokenDeleteRequest;
+- (BOOL)hasShareTokenRetrieveRequest;
+- (BOOL)hasShareTokenSaveRequest;
 - (BOOL)hasSubscriptionCreateRequest;
 - (BOOL)hasSubscriptionDeleteRequest;
 - (BOOL)hasSubscriptionRetrieveRequest;
@@ -228,14 +222,13 @@
 - (BOOL)hasUserPrivacySettingsUpdateRequest;
 - (BOOL)hasUserQueryRequest;
 - (BOOL)hasUserRetrieveRequest;
+- (BOOL)hasWebAuthTokenRetrieveRequest;
 - (BOOL)hasZoneDeleteRequest;
+- (BOOL)hasZoneRetrieveChangesRequest;
 - (BOOL)hasZoneRetrieveRequest;
 - (BOOL)hasZoneSaveRequest;
 - (unsigned int)hash;
 - (id)header;
-- (id)invitationAcceptRequest;
-- (id)invitationDeclineRequest;
-- (id)invitationQueryRequest;
 - (BOOL)isEqual:(id)arg1;
 - (id)likeRequest;
 - (void)mergeFrom:(id)arg1;
@@ -266,9 +259,6 @@
 - (void)setGetCommentsRequest:(id)arg1;
 - (void)setGetLikesRequest:(id)arg1;
 - (void)setHeader:(id)arg1;
-- (void)setInvitationAcceptRequest:(id)arg1;
-- (void)setInvitationDeclineRequest:(id)arg1;
-- (void)setInvitationQueryRequest:(id)arg1;
 - (void)setLikeRequest:(id)arg1;
 - (void)setMescalCertificateRequest:(id)arg1;
 - (void)setMescalSessionInfoRequest:(id)arg1;
@@ -289,13 +279,13 @@
 - (void)setRequest:(id)arg1;
 - (void)setResetContainerRequest:(id)arg1;
 - (void)setSetBadgeCountRequest:(id)arg1;
-- (void)setShareCreateRequest:(id)arg1;
+- (void)setShareAcceptRequest:(id)arg1;
 - (void)setShareDeleteRequest:(id)arg1;
-- (void)setShareParticipantCreateRequest:(id)arg1;
-- (void)setShareParticipantDeleteRequest:(id)arg1;
-- (void)setShareParticipantUpdateRequest:(id)arg1;
 - (void)setShareRetrieveRequest:(id)arg1;
-- (void)setShareSetKeyRequest:(id)arg1;
+- (void)setShareSaveRequest:(id)arg1;
+- (void)setShareTokenDeleteRequest:(id)arg1;
+- (void)setShareTokenRetrieveRequest:(id)arg1;
+- (void)setShareTokenSaveRequest:(id)arg1;
 - (void)setSubscriptionCreateRequest:(id)arg1;
 - (void)setSubscriptionDeleteRequest:(id)arg1;
 - (void)setSubscriptionRetrieveRequest:(id)arg1;
@@ -309,16 +299,18 @@
 - (void)setUserPrivacySettingsUpdateRequest:(id)arg1;
 - (void)setUserQueryRequest:(id)arg1;
 - (void)setUserRetrieveRequest:(id)arg1;
+- (void)setWebAuthTokenRetrieveRequest:(id)arg1;
 - (void)setZoneDeleteRequest:(id)arg1;
+- (void)setZoneRetrieveChangesRequest:(id)arg1;
 - (void)setZoneRetrieveRequest:(id)arg1;
 - (void)setZoneSaveRequest:(id)arg1;
-- (id)shareCreateRequest;
+- (id)shareAcceptRequest;
 - (id)shareDeleteRequest;
-- (id)shareParticipantCreateRequest;
-- (id)shareParticipantDeleteRequest;
-- (id)shareParticipantUpdateRequest;
 - (id)shareRetrieveRequest;
-- (id)shareSetKeyRequest;
+- (id)shareSaveRequest;
+- (id)shareTokenDeleteRequest;
+- (id)shareTokenRetrieveRequest;
+- (id)shareTokenSaveRequest;
 - (id)subscriptionCreateRequest;
 - (id)subscriptionDeleteRequest;
 - (id)subscriptionRetrieveRequest;
@@ -332,8 +324,10 @@
 - (id)userPrivacySettingsUpdateRequest;
 - (id)userQueryRequest;
 - (id)userRetrieveRequest;
+- (id)webAuthTokenRetrieveRequest;
 - (void)writeTo:(id)arg1;
 - (id)zoneDeleteRequest;
+- (id)zoneRetrieveChangesRequest;
 - (id)zoneRetrieveRequest;
 - (id)zoneSaveRequest;
 

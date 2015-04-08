@@ -5,6 +5,7 @@
 @class NSArray, NSNumber, NSString, NSURL;
 
 @interface TZVersionInfo : NSObject {
+    NSArray *_alertZones;
     NSString *_bundleVersion;
     NSArray *_changedFiles;
     NSURL *_diskLocation;
@@ -16,6 +17,7 @@
     NSString *_tzDataVersion;
 }
 
+@property(retain) NSArray * alertZones;
 @property(retain) NSString * bundleVersion;
 @property(retain) NSArray * changedFiles;
 @property(retain) NSURL * diskLocation;
@@ -36,6 +38,7 @@
 
 - (void).cxx_destruct;
 - (id)_initWithVersionInfoDictionary:(id)arg1 isPartial:(BOOL)arg2;
+- (id)alertZones;
 - (id)bundleVersion;
 - (id)changedFiles;
 - (int)compare:(id)arg1;
@@ -46,6 +49,7 @@
 - (id)icuNameBaseline;
 - (id)icuNameCurrent;
 - (BOOL)isBlank;
+- (void)setAlertZones:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
 - (void)setChangedFiles:(id)arg1;
 - (void)setDiskLocation:(id)arg1;

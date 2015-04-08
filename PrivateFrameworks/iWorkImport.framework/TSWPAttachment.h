@@ -10,7 +10,6 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long enabledKnobMask;
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL isAnchored;
 @property(readonly) BOOL isAttachedToBodyText;
@@ -30,7 +29,6 @@
 - (BOOL)changesWithPageNumber;
 - (id)copyWithContext:(id)arg1;
 - (int)elementKind;
-- (unsigned long long)enabledKnobMask;
 - (unsigned int)findCharIndex;
 - (void)infoChanged;
 - (id)initWithContext:(id)arg1;
@@ -40,14 +38,17 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPartitioned;
 - (BOOL)isSearchable;
+- (void)migrateStyleWithDocumentRoot:(id)arg1;
+- (id)objectsForStyleMigrating;
 - (id)parentStorage;
 - (Class)positionerClass;
 - (void)setParentStorage:(id)arg1;
 - (BOOL)specifiesEnabledKnobMask;
+- (BOOL)supportsUUID;
 - (id)topLevelAttachment;
-- (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
-- (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

@@ -42,6 +42,8 @@
     } _labelSize;
     _UILegibilitySettings *_legibilitySettings;
     BOOL _needsTextUpdate;
+    UIView *_reflectionImageView;
+    UIView *_shimmerImageView;
     BOOL _showing;
     UIView *_spotlightView;
     NSString *_text;
@@ -77,6 +79,8 @@
 @property struct CGSize { float x1; float x2; } labelSize;
 @property(retain) _UILegibilitySettings * legibilitySettings;
 @property BOOL needsTextUpdate;
+@property(retain) UIView * reflectionImageView;
+@property(retain) UIView * shimmerImageView;
 @property BOOL showing;
 @property(retain) UIView * spotlightView;
 @property(copy) NSString * text;
@@ -96,6 +100,9 @@
 - (struct CGSize { float x1; float x2; })_labelSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateHighlight;
 - (void)_updateLabelWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)addGlintyAnimations;
+- (void)addReflectionAnimationToLayer:(id)arg1;
+- (void)addShimmerAnimationToLayer:(id)arg1;
 - (BOOL)adjustsFontSizeToFitWidth;
 - (BOOL)allowsLuminanceAdjustments;
 - (BOOL)animating;
@@ -136,6 +143,8 @@
 - (void)layoutSubviews;
 - (id)legibilitySettings;
 - (BOOL)needsTextUpdate;
+- (id)reflectionImageView;
+- (void)removeGlintyAnimations;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (void)setAllowsLuminanceAdjustments:(BOOL)arg1;
 - (void)setAnimating:(BOOL)arg1;
@@ -162,6 +171,8 @@
 - (void)setLabelSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setNeedsTextUpdate:(BOOL)arg1;
+- (void)setReflectionImageView:(id)arg1;
+- (void)setShimmerImageView:(id)arg1;
 - (void)setShowing:(BOOL)arg1;
 - (void)setSpotlightView:(id)arg1;
 - (void)setText:(id)arg1;
@@ -170,6 +181,7 @@
 - (void)setUsesBackgroundDimming:(BOOL)arg1;
 - (void)setVibrantSettings:(id)arg1;
 - (id)shapeViewForCharactersInString:(id)arg1 withFont:(id)arg2 centeredInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (id)shimmerImageView;
 - (void)show;
 - (void)showBlur;
 - (void)showEffects;

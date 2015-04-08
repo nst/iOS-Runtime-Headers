@@ -5,6 +5,7 @@
 @interface _UIOverCurrentContextPresentationController : _UICurrentContextPresentationController {
 }
 
+- (int)presentationStyle;
 - (BOOL)shouldRemovePresentersView;
 
 @end

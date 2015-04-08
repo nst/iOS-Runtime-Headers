@@ -6,6 +6,8 @@
 
 @interface PLVideoView : UIView <PLMoviePlayerControllerDelegate, PLSlalomRegionEditorDelegate, UIMovieScrubberDataSource, UIMovieScrubberDelegate> {
     PFVideoAdjustments *__adjustmentsToCommit;
+    BOOL __attemptFetchingVideoDerivative;
+    BOOL __canAttemptFetchingVideoDerivative;
     BOOL __didEditSlalom;
     BOOL __didInsertMoviePlayerView;
     int __expectedNotificationsCount;
@@ -32,7 +34,6 @@
     AVAssetExportSession *_exportSession;
     NSArray *_imageGenerators;
     PLPhotoTileViewController *_imageTile;
-    int _interfaceOrientation;
     BOOL _isAirPlay;
     unsigned int _isMoviePlayerActive : 1;
     unsigned int _isTrimming : 1;
@@ -47,7 +48,6 @@
     unsigned int _moviePlayerIsReady : 1;
     unsigned int _moviePlayerIsReadyForDisplay : 1;
     unsigned int _needsReloadScrubberThumbnails : 1;
-    int _orientationWhenLastDisplayed;
     unsigned int _passthroughTrimming : 1;
     NSString *_pathToOriginalVideo;
     unsigned int _playFromBeginning : 1;
@@ -95,11 +95,13 @@
     NSTimer *_trimProgressTimer;
     NSString *_trimmedPath;
     PLManagedAsset *_trimmedVideoClip;
+    BOOL _useLandscapeCache;
     PLManagedAsset *_videoCameraImage;
     unsigned int _videoIsLandscape : 1;
     UIView *_videoOverlayBackgroundView;
     UIView<PLVideoOverlayButton> *_videoOverlayPlayButton;
     NSString *_videoPathAfterTrim;
+    double _videoStreamingStartTime;
     NSURL *_videoURL;
     unsigned int _viewWillAppear : 1;
     unsigned int _wasPlayingBeforeScrub : 1;
@@ -107,6 +109,8 @@
 }
 
 @property(readonly) PFVideoAdjustments * _adjustmentsToCommit;
+@property(setter=_setAttemptFetchingVideoDerivative:) BOOL _attemptFetchingVideoDerivative;
+@property(setter=_setCanAttemptFetchingVideoDerivative:) BOOL _canAttemptFetchingVideoDerivative;
 @property(setter=_setDidEditSlalom:) BOOL _didEditSlalom;
 @property BOOL _didInsertMoviePlayerView;
 @property(readonly) BOOL _didSetPhotoData;
@@ -130,7 +134,6 @@
 @property(readonly) double endTime;
 @property(readonly) unsigned int hash;
 @property PLPhotoTileViewController * imageTile;
-@property(readonly) int interfaceOrientation;
 @property BOOL loadMediaImmediately;
 @property(retain,readonly) NSString * pathForVideoFile;
 @property(readonly) UIImage * posterFrameImage;
@@ -158,8 +161,10 @@
 - (id)_adjustmentsToCommit;
 - (id)_assetForVideoPath:(id)arg1;
 - (id)_assetForVideoURL:(id)arg1;
+- (BOOL)_attemptFetchingVideoDerivative;
 - (BOOL)_canAccessVideo;
 - (BOOL)_canAirPlayCurrentVideo;
+- (BOOL)_canAttemptFetchingVideoDerivative;
 - (BOOL)_canCreateMetadata;
 - (BOOL)_canEditDuration:(double)arg1;
 - (BOOL)_canHandleAdjustmentData:(id)arg1;
@@ -183,6 +188,8 @@
 - (void)_enqueueAdjustmentsForCommit;
 - (int)_expectedNotificationsCount;
 - (void)_exportCompletedWithSuccess:(BOOL)arg1;
+- (void)_fetchLocalContentEditingInput;
+- (void)_fetchNonlocalVideo;
 - (id)_filePathForFlattenedVideo;
 - (id)_filePathForFlattenedVideoMetadata;
 - (void)_flattenVideoWithCompletionHandler:(id)arg1;
@@ -236,6 +243,8 @@
 - (double)_scrubberTimeFromMovieTime:(double)arg1;
 - (BOOL)_scrubberTimeNeedsMapping;
 - (void)_serviceImageGenerationRequests;
+- (void)_setAttemptFetchingVideoDerivative:(BOOL)arg1;
+- (void)_setCanAttemptFetchingVideoDerivative:(BOOL)arg1;
 - (void)_setDidEditSlalom:(BOOL)arg1;
 - (void)_setDuration:(double)arg1;
 - (void)_setLocalVideoUnavailable:(BOOL)arg1;
@@ -293,7 +302,6 @@
 - (id)imageTile;
 - (void)importerFinishedProcessingTrimmedVideo:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(int)arg3;
-- (int)interfaceOrientation;
 - (BOOL)isEditing;
 - (BOOL)isPlaying;
 - (BOOL)isTrimming;
@@ -316,6 +324,7 @@
 - (void)moviePlayerReadyToDisplay:(id)arg1;
 - (void)moviePlayerReadyToPlay:(id)arg1;
 - (id)moviePlayerRequestsPickedAirplayRoute:(id)arg1;
+- (BOOL)moviePlayerShouldNotifyOnPreparationError:(id)arg1;
 - (void)moviePlayerUpdatedDestinationPlaceholder:(id)arg1;
 - (void)moviePlayerWasSuspendedDuringPlayback:(id)arg1;
 - (void)movieScrubber:(id)arg1 editingEndValueDidChange:(double)arg2;
@@ -398,6 +407,7 @@
 - (id)trimProgressStack;
 - (void)trimUsingMode:(int)arg1 saveACopy:(BOOL)arg2;
 - (id)trimmedVideoClip;
+- (void)updateForRotationWithDuration:(double)arg1 isLandscape:(BOOL)arg2;
 - (void)updateScaleMode;
 - (id)videoCameraImage;
 - (id)videoOverlayPlayButton;
@@ -407,7 +417,6 @@
 - (void)viewDidDisappear;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)wasTrimmedInPlace;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willMoveToSuperview:(id)arg1;
 
 @end

@@ -17,6 +17,7 @@
         } orientation; 
         float aspectRatio; 
         float verticalFieldOfView; 
+        float horizontalOffset; 
     } _cameraState;
     struct Matrix<double, 4, 4> { 
         double _e[16]; 

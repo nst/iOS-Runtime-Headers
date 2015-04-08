@@ -51,6 +51,7 @@
     ABContactView *_editingContactView;
     NSMutableArray *_editingGroups;
     ABContactHeaderEditView *_editingHeaderView;
+    NSArray *_extraBarButtonItems;
     ABPropertyFaceTimeAction *_faceTimeAction;
     ABPropertyFaceTimeAction *_faceTimeAudioAction;
     ABPropertyIDSRequest *_faceTimeIDSRequest;
@@ -125,6 +126,7 @@
 @property(retain) ABContactView * editingContactView;
 @property(retain) NSMutableArray * editingGroups;
 @property(retain) ABContactHeaderEditView * editingHeaderView;
+@property(retain) NSArray * extraBarButtonItems;
 @property(retain) ABPropertyFaceTimeAction * faceTimeAction;
 @property(retain) ABPropertyFaceTimeAction * faceTimeAudioAction;
 @property(retain) ABPropertyIDSRequest * faceTimeIDSRequest;
@@ -167,6 +169,7 @@
 - (id)_cardGroupAtIndex:(int)arg1;
 - (id)_cellForIndexPath:(id)arg1;
 - (id)_currentGroups;
+- (id)_currentTopVisibleGroupInContactView:(id)arg1;
 - (id)_dateForProperty:(id)arg1;
 - (id)_faceTimeAction;
 - (id)_faceTimeAudioAction;
@@ -188,7 +191,7 @@
 - (void)_reloadMedicalIDGroup;
 - (void)_reloadPropertyGroupsPreservingChanges:(BOOL)arg1;
 - (void)_saveChangesForGroups:(id)arg1;
-- (void)_scrollContactView:(id)arg1 toVisibleGroupInContactView:(id)arg2;
+- (void)_scrollContactView:(id)arg1 toVisibleGroup:(id)arg2;
 - (id)_sendMessageActionAllowingEmailIDs:(BOOL)arg1;
 - (void)_setupAddToAddressBookActions;
 - (void)_setupCardActions;
@@ -290,6 +293,7 @@
 - (id)editingHeaderView;
 - (struct { id x1; id x2; id x3; id x4; })editingTransition;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
+- (id)extraBarButtonItems;
 - (id)faceTimeAction;
 - (id)faceTimeAudioAction;
 - (id)faceTimeIDSRequest;
@@ -382,6 +386,7 @@
 - (void)setEditingContactView:(id)arg1;
 - (void)setEditingGroups:(id)arg1;
 - (void)setEditingHeaderView:(id)arg1;
+- (void)setExtraBarButtonItems:(id)arg1;
 - (void)setFaceTimeAction:(id)arg1;
 - (void)setFaceTimeAudioAction:(id)arg1;
 - (void)setFaceTimeIDSRequest:(id)arg1;

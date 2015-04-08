@@ -22,7 +22,7 @@
 @property <PUPhotoStreamCreateTitleDelegate> * titleDelegate;
 
 - (void).cxx_destruct;
-- (void)_addConstraintsForInterfaceOrientation:(int)arg1;
+- (void)_addConstraintsForTraitCollection:(id)arg1;
 - (void)_cancelPost:(id)arg1;
 - (id)_placeholderColor;
 - (void)_setTitle:(id)arg1;
@@ -34,8 +34,9 @@
 - (void)setTitleDelegate:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
 - (id)titleDelegate;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

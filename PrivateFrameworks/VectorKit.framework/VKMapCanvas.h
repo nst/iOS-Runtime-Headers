@@ -21,6 +21,7 @@
 @property BOOL allowDatelineWraparound;
 @property(readonly) double altitude;
 @property(getter=isAnimatingToTrackAnnotation,readonly) BOOL animatingToTrackAnnotation;
+@property int annotationTrackingHeadingAnimationDisplayRate;
 @property int annotationTrackingZoomStyle;
 @property struct { double x1; double x2; double x3; } centerCoordinate;
 @property(copy,readonly) NSString * debugDescription;
@@ -96,6 +97,7 @@
 - (id)annotationMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 avoidCurrent:(BOOL)arg2;
 - (id)annotationMarkers;
 - (id)annotationRectTest;
+- (int)annotationTrackingHeadingAnimationDisplayRate;
 - (int)annotationTrackingZoomStyle;
 - (id)attributionsForCurrentRegion;
 - (void)cameraController:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
@@ -220,6 +222,7 @@
 - (void)setAdditionalManifestConfiguration:(id)arg1;
 - (void)setAllowDatelineWraparound:(BOOL)arg1;
 - (void)setAnnotationMarkerDeselectionCallback:(id)arg1;
+- (void)setAnnotationTrackingHeadingAnimationDisplayRate:(int)arg1;
 - (void)setAnnotationTrackingZoomStyle:(int)arg1;
 - (void)setApplicationState:(unsigned int)arg1;
 - (void)setCameraHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;

@@ -10,6 +10,7 @@
 @class <KNDocumentRootDelegate>, KNRecordingSyncMaintainer, KNShow, KNSlidePreviewManager, KNThumbnailManager, NSString;
 
 @interface KNDocumentRoot : TSADocumentRoot <TSKModel, TSTResolverContainerNameProvider> {
+    BOOL _isShowcastAllowed;
     BOOL mIsObservingRecording;
     KNRecordingSyncMaintainer *mRecordingSyncMaintainer;
     KNShow *mShow;
@@ -21,6 +22,7 @@
 @property <KNDocumentRootDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property(readonly) BOOL isShowcastAllowed;
 @property(retain) KNShow * show;
 @property(readonly) Class superclass;
 
@@ -31,21 +33,23 @@
 - (void)changeShowSizeTo:(struct CGSize { float x1; float x2; })arg1;
 - (id)childEnumerator;
 - (int)compareLocationSortingInfo:(id)arg1 toSortingInfo:(id)arg2;
-- (id)createViewStateRoot;
+- (id)createViewStateRootForContinuation:(BOOL)arg1;
 - (void)dealloc;
 - (void)documentDidLoad;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (BOOL)isMultiPageForQuickLook;
-- (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct Reference {} *x4; struct Reference {} *x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
+- (BOOL)isSharedReadOnly;
+- (BOOL)isShowcastAllowed;
+- (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DocumentArchive {} *x5; struct Reference {} *x6; struct Reference {} *x7; }*)arg1 unarchiver:(id)arg2;
 - (id)nameForResolverContainer:(id)arg1;
 - (void)p_applicationDidBecomeActive:(id)arg1;
 - (void)p_applicationWillResignActive:(id)arg1;
-- (id)p_buildsNeedingBuildOrChunkUpdateForChanges:(id)arg1;
+- (void)p_hyperlinkAndBreadcrumbUpgradeForUnity20SlideNodes:(id)arg1;
+- (void)p_thumbnailUpgradeForUnity20SlideNodes:(id)arg1 andMasterSlideNodess:(id)arg2;
 - (void)prepareForSavingAsTemplate;
 - (void)preprocessForSaveAsTheme;
 - (id)protected_defaultTextPresetOrdering;
-- (id)resizeCommandForSlideNode:(id)arg1 fromOldSize:(struct CGSize { float x1; float x2; })arg2 transformedObjects:(id)arg3;
 - (id)resolverContainerForName:(id)arg1 caseSensitive:(BOOL)arg2;
 - (id)resolverContainerNameForResolver:(id)arg1;
 - (id)resolverContainerNamesMatchingPrefix:(id)arg1;
@@ -53,20 +57,22 @@
 - (id)resolverMatchingName:(id)arg1 contextResolver:(id)arg2;
 - (id)resolversMatchingPrefix:(id)arg1;
 - (unsigned int)rootSearchTargetCountThroughIndex:(unsigned int)arg1;
-- (void)saveToArchive:(struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct Reference {} *x4; struct Reference {} *x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DocumentArchive {} *x5; struct Reference {} *x6; struct Reference {} *x7; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setShow:(id)arg1;
+- (void)setStylesheetForUpgradeToSingleStylesheet:(id)arg1;
 - (void)setTheme:(id)arg1;
 - (void)setThemeForTemplateImport:(id)arg1;
 - (void)setUIState:(id)arg1 forChart:(id)arg2;
 - (BOOL)shouldAllowDrawableInGroups:(id)arg1 forImport:(BOOL)arg2;
 - (BOOL)shouldShowComments;
 - (id)show;
+- (id)slideNodeForClearedShow;
 - (id)stylesheet;
 - (id)theme;
-- (void)updateBuildChunksAndBuildsForChanges:(id)arg1 executingCommandsInSequenceWithBlock:(id)arg2;
-- (void)upgradeTextStylesForUnity;
+- (void)upgradeTextStylesForUnityAfterSingleStylesheetUpgrade;
+- (BOOL)validateUIState:(id)arg1;
 - (id)warningLocationDescriptionForAffectedObjects:(id)arg1 sortingInfo:(id*)arg2;
 - (void)willClose;
 - (void)withRootSearchTargetAtIndex:(unsigned int)arg1 executeBlock:(id)arg2;

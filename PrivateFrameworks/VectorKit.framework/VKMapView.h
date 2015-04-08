@@ -46,6 +46,7 @@
 @property(readonly) double altitude;
 @property(getter=isAnimatingToTrackAnnotation,readonly) BOOL animatingToTrackAnnotation;
 @property(readonly) NSArray * annotationMarkers;
+@property int annotationTrackingHeadingAnimationDisplayRate;
 @property int annotationTrackingZoomStyle;
 @property unsigned int applicationState;
 @property(readonly) BOOL canEnter3DMode;
@@ -146,6 +147,7 @@
 - (id)annotationMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 avoidCurrent:(BOOL)arg2;
 - (id)annotationMarkers;
 - (id)annotationRectTest;
+- (int)annotationTrackingHeadingAnimationDisplayRate;
 - (int)annotationTrackingZoomStyle;
 - (unsigned int)applicationState;
 - (id)attributionsForCurrentRegion;
@@ -166,6 +168,7 @@
 - (struct { double x1; double x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toCoordinateFromLayer:(id)arg2;
 - (struct { double x1; double x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toMapPointFromLayer:(id)arg2;
 - (id)currentCanvas;
+- (BOOL)currentMapTypeSupportsNightMode;
 - (double)currentZoomLevel;
 - (BOOL)currentZoomLevelAllowsRotation;
 - (double)currentZoomLevelForTileSize:(int)arg1;
@@ -271,7 +274,7 @@
 - (double)pitch;
 - (BOOL)polygonsDisabled;
 - (void)preloadNavigationSceneResources;
-- (void)prepareFlyoverAnimation:(id)arg1 inBackground:(BOOL)arg2 completion:(id)arg3;
+- (void)prepareFlyoverAnimation:(id)arg1 completion:(id)arg2;
 - (double)presentationYaw;
 - (void)puckAnimator:(id)arg1 updatedPosition:(struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; }*)arg2;
 - (void)puckAnimator:(id)arg1 updatedTargetPosition:(struct VKPoint { double x1; double x2; double x3; })arg2;
@@ -302,6 +305,7 @@
 - (void)setAdditionalManifestConfiguration:(id)arg1;
 - (void)setAllowDatelineWraparound:(BOOL)arg1;
 - (void)setAnnotationMarkerDeselectionCallback:(id)arg1;
+- (void)setAnnotationTrackingHeadingAnimationDisplayRate:(int)arg1;
 - (void)setAnnotationTrackingZoomStyle:(int)arg1;
 - (void)setApplicationState:(unsigned int)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -404,10 +408,10 @@
 - (void)stopTracking;
 - (void)stopTrackingAnnotation;
 - (id)styleManager;
+- (id)styleManagerForCurrentMapType;
 - (BOOL)stylesheetIsDevResource;
 - (id)stylesheetName;
 - (BOOL)supportsMapType:(int)arg1;
-- (BOOL)supportsNightMode;
 - (int)targetDisplay;
 - (double)topDownMinimumZoomLevelForTileSize:(int)arg1;
 - (int)trackingCameraPanStyle;

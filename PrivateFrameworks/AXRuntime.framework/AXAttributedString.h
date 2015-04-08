@@ -10,7 +10,9 @@
 + (id)string;
 
 - (void)appendAXAttributedString:(id)arg1;
+- (void)appendFormat:(id)arg1;
 - (void)appendString:(id)arg1;
+- (void)appendStringOrAXAttributedString:(id)arg1;
 - (id)attributeValueForKey:(id)arg1;
 - (id)attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)attributesAtIndex:(int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
@@ -29,6 +31,7 @@
 - (BOOL)isAXAttributedString;
 - (unsigned int)length;
 - (id)lowercaseString;
+- (void)removeAttributes:(id)arg1;
 - (void)replaceString:(struct __CFString { }*)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;

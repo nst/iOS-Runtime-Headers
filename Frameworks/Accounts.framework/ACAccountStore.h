@@ -65,6 +65,8 @@
 - (id)allAccountTypes;
 - (id)allDataclasses;
 - (id)appPermissionsForAccountType:(id)arg1;
+- (id)br_appleAccountWithPersonID:(id)arg1;
+- (id)br_primaryAppleAccount;
 - (void)canSaveAccount:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)childAccountsForAccount:(id)arg1;
 - (id)childAccountsForAccount:(id)arg1 withTypeIdentifier:(id)arg2;
@@ -109,6 +111,7 @@
 - (void)notifyRemoteDevicesOfNewAccount:(id)arg1;
 - (void)notifyRemoteDevicesOfNewAccount:(id)arg1 withCompletion:(id)arg2;
 - (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(BOOL)arg3 completion:(id)arg4;
+- (void)openAuthenticationURLForAccount:(id)arg1 withDelegateClassName:(id)arg2 fromBundleAtPath:(id)arg3 shouldConfirm:(BOOL)arg4 completion:(id)arg5;
 - (id)parentAccountForAccount:(id)arg1;
 - (BOOL)permissionForAccountType:(id)arg1;
 - (id)provisionedDataclassesForAccount:(id)arg1;
@@ -132,6 +135,11 @@
 - (void)setNotificationsEnabled:(BOOL)arg1;
 - (void)setPermissionGranted:(BOOL)arg1 forBundleID:(id)arg2 onAccountType:(id)arg3;
 - (void)setRemoteAccountStoreSession:(id)arg1;
+- (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(BOOL)arg2 completion:(id)arg3;
+- (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(BOOL)arg2 delegateClassName:(id)arg3 completion:(id)arg4;
+- (void)sl_openGoogleAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id)arg2;
+- (void)sl_openYouTubeAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id)arg2;
+- (void)sl_openYouTubeAuthenticationSheetWithUsername:(id)arg1 accountDescription:(id)arg2 completion:(id)arg3;
 - (id)supportedDataclassesForAccountType:(id)arg1;
 - (id)syncableDataclassesForAccountType:(id)arg1;
 - (id)tetheredSyncSourceTypeForDataclass:(id)arg1;

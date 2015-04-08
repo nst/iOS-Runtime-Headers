@@ -21,6 +21,7 @@
     IMTimer *_markAsReadTimer;
     NSMutableArray *_pendingQueries;
     BOOL _postMessageSentNotifications;
+    NSMutableDictionary *_queryCompletionBlocks;
     NSMutableDictionary *_threadNameToChatMap;
     double _timerStartTimeInterval;
     NSUserActivity *_userActivity;
@@ -47,6 +48,7 @@
 - (id)_allCreatedChats;
 - (id)_allGUIDsForChat:(id)arg1;
 - (void)_blockUntilQueriesComplete:(id)arg1;
+- (void)_chat:(id)arg1 handleCompletionOfQuery:(id)arg2 withUserInfo:(id)arg3 success:(BOOL)arg4 error:(id)arg5;
 - (void)_chat:(id)arg1 inviteParticipants:(id)arg2 reason:(id)arg3;
 - (void)_chat:(id)arg1 joinWithProperties:(id)arg2;
 - (void)_chat:(id)arg1 removeParticipants:(id)arg2 reason:(id)arg3;
@@ -66,6 +68,7 @@
 - (void)_chat_loadFrequentReplies:(id)arg1 limit:(unsigned int)arg2 queryID:(id)arg3;
 - (void)_chat_loadHistory:(id)arg1 limit:(unsigned int)arg2 beforeGUID:(id)arg3 afterGUID:(id)arg4 queryID:(id)arg5;
 - (void)_chat_loadUnreadMessages:(id)arg1 limit:(unsigned int)arg2 fallbackGUID:(id)arg3 queryId:(id)arg4;
+- (void)_chat_markAsSpam:(id)arg1;
 - (void)_chat_remove:(id)arg1;
 - (void)_chat_sendReadReceiptForAllMessages:(id)arg1;
 - (void)_chat_storeItem:(id)arg1 inChat:(id)arg2;
@@ -92,6 +95,7 @@
 - (void)_processMessageForAccount:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 message:(id)arg5;
 - (void)_registerChat:(id)arg1 isIncoming:(BOOL)arg2 guid:(id)arg3;
 - (void)_registerChatDictionary:(id)arg1 forChat:(id)arg2 isIncoming:(BOOL)arg3 newGUID:(id)arg4;
+- (void)_registerCompletion:(id)arg1 forQueryID:(id)arg2;
 - (void)_setChatHasCommunicatedOveriMessage:(id)arg1;
 - (void)_setDefaultNumberOfMessagesToLoad:(unsigned int)arg1;
 - (void)_setPostMessageSentNotifications:(BOOL)arg1;

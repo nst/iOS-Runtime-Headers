@@ -33,6 +33,7 @@
 - (id)customAttributeDefaults;
 - (id)customAttributes;
 - (id)customAttributesForAttributeKey:(id)arg1;
+- (id)customEffectTimingCurveDisplayParametersForAttributes:(id)arg1 layoutStyleOnly:(BOOL)arg2;
 - (void)dealloc;
 - (id)defaultAttributes;
 - (id)description;
@@ -42,12 +43,12 @@
 - (id)initWithAnimationClass:(Class)arg1;
 - (BOOL)isDrift;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isType:(int)arg1;
 - (id)localizedActionBuildName;
 - (id)localizedBuildInName;
 - (id)localizedBuildOutName;
 - (id)localizedNameForType:(int)arg1;
 - (id)localizedTransitionName;
+- (BOOL)supportsAnimationType:(int)arg1;
 - (id)thumbnailImageNameForType:(int)arg1;
 - (id)validAnimationTypes;
 

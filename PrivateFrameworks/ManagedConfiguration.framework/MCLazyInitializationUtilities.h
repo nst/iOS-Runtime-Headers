@@ -9,6 +9,8 @@
 + (void)initAppleKeyStore;
 + (void)initCoreGraphics;
 + (void)initCoreText;
++ (void)initDAEAS;
++ (void)initDataAccess;
 + (void)initImageIO;
 + (void)initPowerlog;
 + (void)initVPNUtilities;

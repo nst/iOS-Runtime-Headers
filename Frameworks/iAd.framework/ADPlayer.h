@@ -21,6 +21,7 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
 @property BOOL playbackHasBegun;
+@property(readonly) float playbackRate;
 @property unsigned int playbackState;
 @property(readonly) Class superclass;
 @property(retain) id timeObserver;
@@ -46,7 +47,10 @@
 - (void)performAction;
 - (void)play;
 - (BOOL)playbackHasBegun;
+- (float)playbackRate;
 - (unsigned int)playbackState;
+- (void)playerDidPause;
+- (void)playerDidStart;
 - (void)playerItemDidFailedToPlayToEnd:(id)arg1;
 - (void)playerItemDidPlayToEnd:(id)arg1;
 - (void)playerItemEncounteredPlaybackStall:(id)arg1;

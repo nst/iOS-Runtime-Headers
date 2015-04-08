@@ -7,6 +7,7 @@
 @interface CPLEngineScheduler : NSObject <CPLAbstractObject, CPLEngineComponent> {
     unsigned int _currentRequestGeneration;
     unsigned int _currentSyncState;
+    unsigned int _disablingMinglingCount;
     NSCountedSet *_disablingReasons;
     CPLEngineLibrary *_engineLibrary;
     unsigned int _foregroundCalls;
@@ -18,6 +19,7 @@
     CPLPlatformObject *_platformObject;
     NSObject<OS_dispatch_queue> *_queue;
     unsigned int _requiredFirstState;
+    BOOL _shouldDoSecondNormalPullPhase;
     BOOL _shouldRetryASyncSessionForResourcesUpload;
     NSDate *_unavailabilityLimitDate;
 }
@@ -27,6 +29,7 @@
 @property(readonly) CPLEngineLibrary * engineLibrary;
 @property(readonly) unsigned int hash;
 @property(readonly) CPLPlatformObject * platformObject;
+@property(readonly) BOOL shouldDoSecondNormalPullPhase;
 @property(readonly) Class superclass;
 
 + (id)platformImplementationProtocol;
@@ -48,14 +51,18 @@
 - (void)_unscheduleNextSyncSession;
 - (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id)arg2;
 - (id)componentName;
+- (void)disableMingling;
 - (void)disableSynchronizationWithReason:(id)arg1;
+- (void)enableMingling;
 - (void)enableSynchronizationWithReason:(id)arg1;
 - (id)engineLibrary;
 - (void)getStatusDictionaryWithCompletionHandler:(id)arg1;
 - (void)getStatusWithCompletionHandler:(id)arg1;
 - (id)initWithEngineLibrary:(id)arg1;
 - (BOOL)isClientInForeground;
+- (BOOL)isMinglingEnabled;
 - (BOOL)isSynchronizationDisabledWithReasonError:(id*)arg1;
+- (void)kickOffSyncSession;
 - (void)noteClientIsInBackground;
 - (void)noteClientIsInForeground;
 - (void)noteClientIsInSyncWithClientCache;
@@ -74,6 +81,7 @@
 - (void)openWithCompletionHandler:(id)arg1;
 - (id)platformObject;
 - (void)resetBackoffInterval;
+- (BOOL)shouldDoSecondNormalPullPhase;
 - (void)startRequiredSyncSessionNow;
 
 @end

@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
+@class _PFWeakReference;
+
 @interface _PFArray : NSArray {
     id *_array;
     int _cd_rc;
@@ -15,6 +17,7 @@
         unsigned int managedObjects : 1; 
         unsigned int _RESERVED : 27; 
     } _flags;
+    _PFWeakReference *_weakContext;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;
@@ -40,6 +43,7 @@
 - (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2 andFlags:(unsigned int)arg3;
+- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2 andFlags:(unsigned int)arg3 andContext:(id)arg4;
 - (id)managedObjectIDAtIndex:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newArrayFromObjectIDs;

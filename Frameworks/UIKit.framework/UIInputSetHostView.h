@@ -7,6 +7,7 @@
 
 + (BOOL)_notifyOnExplicitLayout;
 + (BOOL)_retroactivelyRequiresConstraintBasedLayout;
++ (BOOL)_shouldHitTestInputViewFirst;
 
 - (int)_clipCornersOfView:(id)arg1;
 - (void)_resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1 splitWidthsChanged:(BOOL)arg2;

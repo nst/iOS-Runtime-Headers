@@ -46,13 +46,13 @@
 - (void)invalidateAndSynchronizeMediator;
 - (BOOL)isEditing;
 - (BOOL)isPhantom;
-- (void)loadFromArchive:(const struct ChartMediatorArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct RepeatedField<unsigned int> { unsigned int *x_4_1_1; int x_4_1_2; int x_4_1_3; } x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; unsigned int x7[1]; }*)arg1;
+- (void)loadFromArchive:(const struct ChartMediatorArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct RepeatedField<unsigned int> { unsigned int *x_6_1_1; int x_6_1_2; int x_6_1_3; } x6; struct RepeatedField<unsigned int> { unsigned int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; }*)arg1;
 - (id)objectToNotify;
 - (id)p_errorBarDataForSeries:(unsigned int)arg1 withSpec:(struct { unsigned int x1; int (*x2)(); void *x3; })arg2 updateType:(int)arg3;
 - (unsigned int)p_gridSeriesIndexForRemoteSeriesIndex:(unsigned int)arg1;
 - (unsigned int)p_remoteSeriesIndexForGridSeriesIndex:(unsigned int)arg1;
 - (BOOL)preferSeriesToValues;
-- (void)saveToArchive:(struct ChartMediatorArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct RepeatedField<unsigned int> { unsigned int *x_4_1_1; int x_4_1_2; int x_4_1_3; } x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; unsigned int x7[1]; }*)arg1;
+- (void)saveToArchive:(struct ChartMediatorArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct RepeatedField<unsigned int> { unsigned int *x_6_1_1; int x_6_1_2; int x_6_1_3; } x6; struct RepeatedField<unsigned int> { unsigned int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; }*)arg1;
 - (id)seriesDataFormulaForSeriesDimension:(id)arg1;
 - (id)seriesNameFormulaForSeriesIndex:(unsigned int)arg1;
 - (void)setChartInfo:(id)arg1;

@@ -11,9 +11,9 @@
     NSString *_errorTitle;
     UIActivityIndicatorView *_loadingIndicatorView;
     GKPlaceholderContentStateMachine *_loadingMachine;
-    NSString *_loadingState;
     SEL _noContentButtonAction;
     id _noContentButtonTarget;
+    NSString *_noContentButtonTitle;
     NSString *_noContentMessage;
     NSString *_noContentTitle;
     GKPlaceholderView *_placeholderView;

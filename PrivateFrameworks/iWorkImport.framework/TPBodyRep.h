@@ -2,18 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSSet, NSString;
+@class NSSet;
 
-@interface TPBodyRep : TSWPRep <TSKChangeSourceObserver> {
+@interface TPBodyRep : TSWPRep {
     NSSet *_lastSelectedInfos;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-
-- (id)beginEditing;
 - (id)colorBehindLayer:(id)arg1;
 - (void)dealloc;
 - (id)hitRep:(struct CGPoint { float x1; float x2; })arg1;
@@ -21,9 +15,6 @@
 - (id)hitReps:(struct CGPoint { float x1; float x2; })arg1 withSlop:(struct CGSize { float x1; float x2; })arg2;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (BOOL)p_doesRep:(id)arg1 containCharIndex:(unsigned int)arg2 isStart:(BOOL)arg3;
-- (id)repForCharIndex:(unsigned int)arg1 isStart:(BOOL)arg2;
-- (id)siblings;
 - (id)storage;
-- (void)willBeRemoved;
 
 @end

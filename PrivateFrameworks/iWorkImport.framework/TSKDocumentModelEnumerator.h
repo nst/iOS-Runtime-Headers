@@ -15,29 +15,26 @@
   /* Error parsing encoded ivar type info: @? */
     id _filter;
 
-    BOOL _filterBeforeAddingChildren;
     <TSKModel> *_root;
     BOOL _stop;
 }
 
 @property(retain) NSMutableArray * enumeratorStack;
 @property(copy) id filter;
-@property BOOL filterBeforeAddingChildren;
 @property(retain) <TSKModel> * root;
 
 - (void)dealloc;
 - (void)enumerateReferencedStylesUsingBlock:(id)arg1;
+- (void)enumerateStyleClientsUsingBlock:(id)arg1;
 - (void)enumerateUsingBlock:(id)arg1;
 - (id)enumeratorStack;
 - (id)filter;
-- (BOOL)filterBeforeAddingChildren;
 - (id)initWithEnumerator:(id)arg1 filter:(id)arg2;
 - (id)initWithRootModelObject:(id)arg1 filter:(id)arg2;
 - (id)nextObject;
 - (id)root;
 - (void)setEnumeratorStack:(id)arg1;
 - (void)setFilter:(id)arg1;
-- (void)setFilterBeforeAddingChildren:(BOOL)arg1;
 - (void)setRoot:(id)arg1;
 
 @end

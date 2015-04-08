@@ -10,7 +10,7 @@
 
 @interface CDSession : NSObject {
     NSObject<OS_dispatch_queue> *_cacheSerializerQ;
-    NSMutableDictionary *_cachedAttributeIDs;
+    NSMutableDictionary *_cachedAttributes;
     NSMutableDictionary *_cachedBudgets;
     CDDClientConnection *_cddClientConnection;
     unsigned long long _clientId;
@@ -27,7 +27,7 @@
 }
 
 @property(retain) NSObject<OS_dispatch_queue> * cacheSerializerQ;
-@property(retain) NSMutableDictionary * cachedAttributeIDs;
+@property(retain) NSMutableDictionary * cachedAttributes;
 @property(retain) NSMutableDictionary * cachedBudgets;
 @property(readonly) CDDClientConnection * cddClientConnection;
 @property unsigned long long clientId;
@@ -53,7 +53,7 @@
 - (id)budgetForName:(id)arg1 type:(int)arg2 error:(id*)arg3;
 - (id)budgetNamesWithError:(id*)arg1;
 - (id)cacheSerializerQ;
-- (id)cachedAttributeIDs;
+- (id)cachedAttributes;
 - (id)cachedBudgets;
 - (id)cddClientConnection;
 - (unsigned long long)clientId;
@@ -78,7 +78,7 @@
 - (id)representationStringFromAttribute:(id)arg1 value:(id)arg2 error:(id*)arg3;
 - (id)representationStringFromAttribute:(id)arg1 value:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (void)setCacheSerializerQ:(id)arg1;
-- (void)setCachedAttributeIDs:(id)arg1;
+- (void)setCachedAttributes:(id)arg1;
 - (void)setCachedBudgets:(id)arg1;
 - (void)setClientId:(unsigned long long)arg1;
 - (void)setDeviceChangeToken:(int)arg1;

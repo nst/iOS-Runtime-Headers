@@ -7,10 +7,9 @@
 
 - (id)_emojiBorderColor;
 - (id)_emojiCategoryControlKeyActiveTraits;
-- (id)_emojiCategoryControlKeyTraits;
 - (id)_emojiDefaultControlKeyActiveBackgroundColorGradient;
 - (id)_emojiDefaultControlKeyBackgroundColorGradient;
-- (id)_emojiInputViewKeyBackgroundColorGradient;
+- (id)_emojiSkinToneDividerColor;
 - (id)_emojiSpaceKeyActiveBackgroundColorGradient;
 - (id)_emojiSpaceKeyBackgroundColorGradient;
 - (id)backgroundTraitsForKeyplane:(id)arg1;

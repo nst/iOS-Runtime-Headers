@@ -118,6 +118,7 @@
 - (void)setGestureOverrides:(id)arg1;
 - (void)setHearingAidControlVisible:(BOOL)arg1;
 - (void)setOrientationLocked:(BOOL)arg1;
+- (void)setReachabilityEnabledDuration:(double)arg1;
 - (void)setReachabilityHandlers:(id)arg1;
 - (void)setShowSpeechPlaybackControls:(BOOL)arg1;
 - (void)setSiriIsTalking:(BOOL)arg1;
@@ -130,6 +131,7 @@
 - (void)startHearingAidServer;
 - (id)systemAppInfoWithQuery:(unsigned int)arg1;
 - (void)takeScreenshot;
+- (BOOL)toggleIncomingCall;
 - (void)toggleNotificationCenter;
 - (int)topEventPidOverride;
 - (void)unlockDevice;

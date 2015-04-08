@@ -2,9 +2,12 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
+@class NSMutableArray;
+
 @interface AWDPowerApMetrics : PBCodable <NSCopying> {
     unsigned int _apAwakeDuration;
     unsigned int _cpuPowerMicroWatt;
+    NSMutableArray *_datas;
     unsigned int _dramPowerMicroWatt;
     unsigned int _gpuPowerMicroWatt;
     struct { 
@@ -21,6 +24,7 @@
 
 @property unsigned int apAwakeDuration;
 @property unsigned int cpuPowerMicroWatt;
+@property(retain) NSMutableArray * datas;
 @property unsigned int dramPowerMicroWatt;
 @property unsigned int gpuPowerMicroWatt;
 @property BOOL hasApAwakeDuration;
@@ -32,10 +36,16 @@
 @property unsigned int socPowerMicroWatt;
 @property unsigned long long timestamp;
 
+- (void)addData:(id)arg1;
 - (unsigned int)apAwakeDuration;
+- (void)clearDatas;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)cpuPowerMicroWatt;
+- (id)dataAtIndex:(unsigned int)arg1;
+- (id)datas;
+- (unsigned int)datasCount;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)dramPowerMicroWatt;
@@ -52,6 +62,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setApAwakeDuration:(unsigned int)arg1;
 - (void)setCpuPowerMicroWatt:(unsigned int)arg1;
+- (void)setDatas:(id)arg1;
 - (void)setDramPowerMicroWatt:(unsigned int)arg1;
 - (void)setGpuPowerMicroWatt:(unsigned int)arg1;
 - (void)setHasApAwakeDuration:(BOOL)arg1;

@@ -2,19 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSString, TSKSelection, TSPObject<TSKModel>;
+@class NSMutableDictionary, NSString, TSKSelectionPath, TSWPSelection;
 
 @interface TPArchivedViewState : TSPObject {
+    TSWPSelection *_bodySelection;
+    BOOL _changeTrackingPaused;
     NSMutableDictionary *_chartUIState;
+    BOOL _hasShowsCTDeletions;
+    BOOL _hasShowsCTMarkup;
     BOOL _inspectorHidden;
     BOOL _layoutBordersVisible;
     BOOL _masterDrawablesSelectable;
     BOOL _rulerVisible;
     NSString *_selectedInspectorSwitchSegmentIdentifier;
-    TSKSelection *_selection;
-    TSPObject<TSKModel> *_selectionModel;
+    TSKSelectionPath *_selectionPath;
     BOOL _showUserDefinedGuides;
     BOOL _showsActivitySidebar;
+    BOOL _showsCTDeletions;
+    BOOL _showsCTMarkup;
     BOOL _showsComments;
     BOOL _showsPageNavigator;
     float _viewScale;

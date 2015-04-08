@@ -55,11 +55,9 @@
 + (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2 scale:(float)arg3;
 + (id)_backgroundGradientWithStartColor:(id)arg1 andEndColor:(id)arg2;
 + (id)_cachedImageForKey:(id)arg1 fromBlock:(id)arg2;
-+ (void)_clearAssetCaches;
 + (id)_defaultBackgroundGradient;
 + (id)_deviceSpecificImageNamed:(id)arg1;
 + (id)_deviceSpecificImageNamed:(id)arg1 inBundle:(id)arg2;
-+ (void)_dropResourceReferencesForURL:(id)arg1;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForStylePresetNames:(id)arg1 scale:(float)arg2;
 + (void)_flushCache:(id)arg1;
 + (void)_flushSharedImageCache;
@@ -79,6 +77,7 @@
 + (id)_tintedImageForSize:(struct CGSize { float x1; float x2; })arg1 withTint:(id)arg2 effectsImage:(id)arg3 maskImage:(id)arg4 style:(int)arg5;
 + (id)_tintedImageForSize:(struct CGSize { float x1; float x2; })arg1 withTint:(id)arg2 maskImage:(id)arg3 effectsImage:(id)arg4 style:(int)arg5;
 + (id)_tintedImageForSize:(struct CGSize { float x1; float x2; })arg1 withTint:(id)arg2 maskImage:(id)arg3 effectsImage:(id)arg4 style:(int)arg5 edgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg6;
++ (id)_tpImageNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3;
 + (id)abImageNamed:(id)arg1;
 + (id)abImageNamed:(id)arg1;
 + (id)ab_imageNamed:(id)arg1;
@@ -152,6 +151,7 @@
 + (BOOL)supportsSecureCoding;
 + (void)tiltShiftPrepareLivePreview:(void*)arg1 fromBuffer:(id)arg2;
 + (id)tpImageNamed:(id)arg1 inBundle:(id)arg2;
++ (id)tpStarkImageNamed:(id)arg1 inBundle:(id)arg2;
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForImageOrientation:(int)arg1 andSize:(struct CGSize { float x1; float x2; })arg2;
 + (BOOL)wantFXAngleInteractionForGroup:(int)arg1 value:(float)arg2;
 + (BOOL)wantFXAsymetricWidthDisplayForGroup:(int)arg1 value:(float)arg2;
@@ -295,6 +295,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)decode;
+- (id)description;
 - (id)description;
 - (void)draw1PartImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)draw1PartImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fraction:(float)arg2;

@@ -40,7 +40,6 @@
 - (void)clear;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasIsExecutable;
@@ -55,6 +54,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExecutable;
 - (BOOL)isWritable;
+- (void)mergeFrom:(id)arg1;
 - (long long)mtime;
 - (id)path;
 - (id)quarantineInfo;

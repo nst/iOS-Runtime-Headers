@@ -61,18 +61,19 @@
 - (id)component;
 - (id)init;
 - (id)initWithComponent:(id)arg1 locator:(id)arg2 rootObject:(id)arg3 delegate:(id)arg4 mode:(int)arg5 packageIdentifier:(unsigned char)arg6 writeChannel:(id)arg7 archiverManager:(id)arg8;
-- (BOOL)isObjectExternal:(id)arg1 parentObject:(id)arg2 validateAmbiguousObjectOwnership:(BOOL)arg3 claimingComponent:(id*)arg4 isOwnedByDifferentPackage:(BOOL*)arg5;
+- (BOOL)isObjectExternal:(id)arg1 archiverOrNil:(id)arg2 parentObject:(id)arg3 validateAmbiguousObjectOwnership:(BOOL)arg4 hasArchiverAccessLock:(BOOL)arg5 claimingComponent:(id*)arg6 isOwnedByDifferentPackage:(BOOL*)arg7;
 - (BOOL)isObjectExternalBecauseItAlreadyBelongsToAnotherComponent:(id)arg1 parentObject:(id)arg2 claimingComponent:(id*)arg3 claimingPackageIdentifier:(unsigned char*)arg4 claimingComponentWillBeLinked:(BOOL*)arg5;
+- (BOOL)isObjectExternalBecauseOfExplicitComponentOwnership:(id)arg1 archiverOrNil:(id)arg2 claimingComponentOrNil:(id)arg3 hasArchiverAccessLock:(BOOL)arg4 explicitComponentRootObject:(id*)arg5 claimingComponent:(id*)arg6 isOwnedByDifferentPackage:(BOOL*)arg7;
 - (unsigned long long)readVersion;
 - (BOOL)shouldAnalyzeCommandToModelReference:(id)arg1 isAnalyzingExternalComponent:(BOOL)arg2;
 - (BOOL)shouldDelayWritingObject:(id)arg1;
 - (BOOL)shouldWriteObject:(id)arg1;
-- (void)validateAmbiguousObjectOwnershipForObject:(id)arg1 parentObject:(id)arg2 claimingComponent:(id)arg3 claimingPackageIdentifier:(unsigned char)arg4 claimingComponentWillBeLinked:(BOOL)arg5;
-- (void)validateExplicitComponentOwnershipForObject:(id)arg1 parentObject:(id)arg2;
+- (void)validateAmbiguousObjectOwnershipForObject:(id)arg1 explicitComponentRootObject:(id)arg2 parentObject:(id)arg3 claimingComponent:(id)arg4 claimingPackageIdentifier:(unsigned char)arg5 claimingComponentWillBeLinked:(BOOL)arg6;
+- (void)validateExplicitComponentOwnershipForObject:(id)arg1 archiverOrNil:(id)arg2 parentObject:(id)arg3 hasArchiverAccessLock:(BOOL)arg4;
 - (BOOL)validateObjectContextForObject:(id)arg1;
 - (void)writeArchiver:(id)arg1;
 - (void)writeObject:(id)arg1 archiver:(id)arg2 parentObject:(id)arg3 completion:(id)arg4;
-- (void)writeObjects:(id)arg1 parentObject:(id)arg2 isCommandToModelReference:(BOOL)arg3 isAnalyzingExternalComponent:(BOOL)arg4 completion:(id)arg5;
+- (void)writeObjects:(id)arg1 parentObject:(id)arg2 isCommandToModelReference:(BOOL)arg3 isAnalyzingExternalComponent:(BOOL)arg4 hasArchiverAccessLock:(BOOL)arg5 completion:(id)arg6;
 - (unsigned long long)writeVersion;
 - (void)writeWithCompletionQueue:(id)arg1 completion:(id)arg2;
 

@@ -6,6 +6,17 @@
 
 @interface FBSDisplay : NSObject <BSXPCCoding, NSCopying, NSSecureCoding> {
     CADisplay *_caDisplay;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _referenceBounds;
+    float _scale;
     unsigned int _seed;
     int _tags;
     unsigned int _type;
@@ -16,7 +27,8 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
 @property(readonly) float orientation;
-@property(readonly) float scale;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } referenceBounds;
+@property float scale;
 @property unsigned int seed;
 @property(readonly) Class superclass;
 @property(readonly) int tags;
@@ -36,7 +48,7 @@
 - (unsigned int)hash;
 - (id)initWithCADisplay:(id)arg1;
 - (id)initWithCADisplay:(id)arg1 isMainDisplay:(BOOL)arg2;
-- (id)initWithCADisplay:(id)arg1 isMainDisplay:(BOOL)arg2 seed:(unsigned int)arg3 tags:(int)arg4;
+- (id)initWithCADisplay:(id)arg1 isMainDisplay:(BOOL)arg2 seed:(unsigned int)arg3 tags:(int)arg4 scale:(float)arg5;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (BOOL)isAirPlayDisplay;
@@ -50,9 +62,12 @@
 - (BOOL)isWatchOnlyDisplay;
 - (BOOL)isiPodOnlyDisplay;
 - (float)orientation;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })referenceBounds;
 - (float)scale;
 - (unsigned int)seed;
 - (void)setConnected:(BOOL)arg1;
+- (void)setReferenceBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setScale:(float)arg1;
 - (void)setSeed:(unsigned int)arg1;
 - (int)tags;
 - (unsigned int)type;

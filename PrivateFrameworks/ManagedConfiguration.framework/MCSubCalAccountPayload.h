@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSString;
+@class NSNumber, NSString;
 
 @interface MCSubCalAccountPayload : MCPayload {
     NSString *_accountDescription;
@@ -10,6 +10,7 @@
     NSString *_hostname;
     NSString *_password;
     BOOL _useSSL;
+    NSNumber *_useSSLNum;
     NSString *_username;
 }
 
@@ -18,6 +19,7 @@
 @property(retain,readonly) NSString * hostname;
 @property(retain,readonly) NSString * password;
 @property(readonly) BOOL useSSL;
+@property(readonly) NSNumber * useSSLNum;
 @property(retain,readonly) NSString * username;
 
 + (id)localizedPluralForm;
@@ -40,6 +42,7 @@
 - (id)subtitle2Label;
 - (id)title;
 - (BOOL)useSSL;
+- (id)useSSLNum;
 - (id)username;
 
 @end

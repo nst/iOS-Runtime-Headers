@@ -6,15 +6,18 @@
 
 @interface RCComposition : NSObject <NSCopying, NSMutableCopying, RCDictionaryPListRepresentationCoding> {
     double _cachedComposedAVURLDuration;
+    BOOL _cachedComposedAVURLDurationIsValid;
     NSURL *_composedAVURL;
     NSArray *_composedFragments;
     NSURL *_composedWaveformURL;
     NSDate *_creationDate;
     NSArray *_decomposedFragments;
+    BOOL _readonly;
     NSURL *_savedRecordingURI;
 }
 
 @property double cachedComposedAVURLDuration;
+@property BOOL cachedComposedAVURLDurationIsValid;
 @property(readonly) NSURL * composedAVURL;
 @property(readonly) double composedDuration;
 @property(readonly) NSArray * composedFragments;
@@ -24,6 +27,7 @@
 @property(retain) NSArray * decomposedFragments;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property BOOL readonly;
 @property(retain) NSURL * savedRecordingURI;
 @property(readonly) Class superclass;
 @property(readonly) NSString * title;
@@ -44,6 +48,7 @@
 - (double)_composedDuration;
 - (unsigned long long)_fileSizeOfComposedAssetsIncludingRelatedResources:(BOOL)arg1;
 - (double)cachedComposedAVURLDuration;
+- (BOOL)cachedComposedAVURLDurationIsValid;
 - (id)composedAVURL;
 - (double)composedDuration;
 - (id)composedFragments;
@@ -68,11 +73,14 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newRandomFragmentWithInsertionTimeRangeInComposition:(struct { double x1; double x2; })arg1 pathExtension:(id)arg2;
 - (id)playableAsset;
+- (BOOL)readonly;
 - (void)recacheComposedDuration;
 - (BOOL)saveMetadataToDefaultLocation;
 - (id)savedRecordingURI;
 - (void)setCachedComposedAVURLDuration:(double)arg1;
+- (void)setCachedComposedAVURLDurationIsValid:(BOOL)arg1;
 - (void)setDecomposedFragments:(id)arg1;
+- (void)setReadonly:(BOOL)arg1;
 - (void)setSavedRecordingURI:(id)arg1;
 - (void)setSavedRecordingURIFromRecoveredRecordingURI:(id)arg1;
 - (id)title;

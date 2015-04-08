@@ -25,8 +25,7 @@
 @property unsigned long long owningGroupId;
 
 + (void)_getTokenRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }[8])arg1 fromCompressedRanges:(unsigned long long[2])arg2;
-+ (void)getCompressedRanges:(unsigned long long[2])arg1 fromTokenRanges:(id)arg2;
-+ (id)newTokenRangesFromCompressedRanges:(unsigned long long[2])arg1;
++ (void)getCompressedRanges:(unsigned long long[2])arg1 fromTokenRanges:(struct { int x1; int x2; }*)arg2 count:(long)arg3;
 
 - (struct __CFArray { }*)assetIds;
 - (short)category;

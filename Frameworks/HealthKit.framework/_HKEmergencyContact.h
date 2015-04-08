@@ -2,29 +2,39 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSString;
+@class NSNumber, NSString;
 
 @interface _HKEmergencyContact : NSObject <NSCopying, NSSecureCoding> {
     NSString *_name;
+    NSNumber *_nameRecordID;
     NSString *_phoneNumber;
+    NSNumber *_phoneNumberPropertyID;
     NSString *_relationship;
 }
 
 @property(retain) NSString * name;
+@property(retain) NSNumber * nameRecordID;
 @property(retain) NSString * phoneNumber;
+@property(retain) NSNumber * phoneNumberPropertyID;
 @property(retain) NSString * relationship;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_migrateToSchemaVersion:(int)arg1 withAddressBook:(void*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)name;
+- (id)nameRecordID;
 - (id)phoneNumber;
+- (id)phoneNumberPropertyID;
 - (id)relationship;
 - (void)setName:(id)arg1;
+- (void)setNameRecordID:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
+- (void)setPhoneNumberPropertyID:(id)arg1;
 - (void)setRelationship:(id)arg1;
 
 @end

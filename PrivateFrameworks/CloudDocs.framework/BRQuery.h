@@ -64,7 +64,7 @@
 + (id)willBeginPossibleMoveOfItemAtURL:(id)arg1 toURL:(id)arg2;
 
 - (BOOL)_collectUpdates:(id)arg1;
-- (void)_performBlock:(id)arg1;
+- (void)_performBlockAsync:(id)arg1;
 - (void)_postNote:(struct __CFString { }*)arg1;
 - (void)_postNote:(struct __CFString { }*)arg1 userInfo:(id)arg2;
 - (void)_processChanges:(id)arg1;

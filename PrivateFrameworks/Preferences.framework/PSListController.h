@@ -48,6 +48,7 @@
     BOOL _requestingSpecifiersFromDataSource;
     BOOL _reusesCells;
     NSIndexPath *_savedSelectedIndexPath;
+    UIColor *_segmentedSliderTrackColor;
     UIColor *_separatorColor;
     BOOL _showingSetupController;
     NSString *_specifierID;
@@ -82,6 +83,7 @@
 @property(readonly) unsigned int hash;
 @property(readonly) int observerType;
 @property(retain) NSDictionary * pendingURLResourceDictionary;
+@property(retain) UIColor * segmentedSliderTrackColor;
 @property(retain) UIColor * separatorColor;
 @property(copy) NSString * specifierIDPendingPush;
 @property(readonly) Class superclass;
@@ -96,7 +98,7 @@
 - (id)_createGroupIndices:(id)arg1;
 - (id)_customViewForSpecifier:(id)arg1 class:(Class)arg2 isHeader:(BOOL)arg3;
 - (BOOL)_getGroup:(int*)arg1 row:(int*)arg2 ofSpecifierAtIndex:(int)arg3 groups:(id)arg4;
-- (float)_getKeyboardIntersectionHeight;
+- (float)_getKeyboardIntersectionHeightFromUserInfo:(id)arg1;
 - (void)_handleActionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)_insertContiguousSpecifiers:(id)arg1 atIndex:(int)arg2 animated:(BOOL)arg3;
 - (BOOL)_isRegularWidth;
@@ -135,6 +137,7 @@
 - (id)cellAccessoryHighlightColor;
 - (id)cellHighlightColor;
 - (void)clearCache;
+- (void)clearPendingURL;
 - (void)confirmationViewAcceptedForSpecifier:(id)arg1;
 - (void)confirmationViewCancelledForSpecifier:(id)arg1;
 - (BOOL)containsSpecifier:(id)arg1;
@@ -240,6 +243,7 @@
 - (void)replaceContiguousSpecifiers:(id)arg1 withSpecifiers:(id)arg2 animated:(BOOL)arg3;
 - (void)returnPressedAtEnd;
 - (int)rowsForGroup:(int)arg1;
+- (id)segmentedSliderTrackColor;
 - (void)selectRowForSpecifier:(id)arg1;
 - (id)separatorColor;
 - (void)setAltTextColor:(id)arg1;
@@ -262,6 +266,7 @@
 - (void)setForegroundColor:(id)arg1;
 - (void)setPendingURLResourceDictionary:(id)arg1;
 - (void)setReusesCells:(BOOL)arg1;
+- (void)setSegmentedSliderTrackColor:(id)arg1;
 - (void)setSeparatorColor:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)setSpecifierID:(id)arg1;

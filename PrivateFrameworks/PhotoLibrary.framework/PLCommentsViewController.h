@@ -41,6 +41,7 @@
 @property <PLCommentsViewControllerDelegate> * commentsControllerDelegate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property(retain) NSString * draftComment;
 @property BOOL editMode;
 @property(readonly) unsigned int hash;
 @property BOOL isCompact;
@@ -72,6 +73,7 @@
 - (void)cloudCommentsDidChange:(id)arg1;
 - (id)commentsControllerDelegate;
 - (void)dealloc;
+- (id)draftComment;
 - (BOOL)editMode;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isCompact;
@@ -86,7 +88,9 @@
 - (void)setAsset:(id)arg1;
 - (void)setAvailableBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCommentsControllerDelegate:(id)arg1;
+- (void)setDraftComment:(id)arg1;
 - (void)setEditMode:(BOOL)arg1;
+- (void)setEditMode:(BOOL)arg1 shouldBecomeFirstResponder:(BOOL)arg2;
 - (void)setIsCompact:(BOOL)arg1;
 - (void)setJustInsertedComment:(id)arg1;
 - (void)setRasterization:(BOOL)arg1;
@@ -105,11 +109,11 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (int)textCommentSection;
+- (void)updateForSizeChange;
 - (void)updateViewLayoutWithDuration:(double)arg1 completion:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

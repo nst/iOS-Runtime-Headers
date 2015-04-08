@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class <ISStoreURLOperationDelegate>, NSNumber;
+@class <ISStoreURLOperationDelegate>, NSNumber, SSURLBagContext;
 
 @interface ISStoreURLOperation : ISURLOperation {
     NSNumber *_authenticatedDSID;
@@ -16,6 +16,7 @@
     BOOL _useUserSpecificURLBag;
 }
 
+@property(readonly) SSURLBagContext * URLBagContext;
 @property(retain) NSNumber * authenticatedDSID;
 @property BOOL canSendGUIDParameter;
 @property <ISStoreURLOperationDelegate> * delegate;
@@ -36,13 +37,13 @@
 + (id)pingOperationWithUrl:(id)arg1;
 + (id)propertyListOperationWithURLBagKey:(id)arg1;
 
+- (id)URLBagContext;
 - (id)_account;
 - (void)_addStandardQueryParametersForURL:(id)arg1;
 - (BOOL)_authenticateWithContext:(id)arg1 error:(id*)arg2;
 - (BOOL)_canSendTokenToURL:(id)arg1;
 - (id)_copyAuthenticationContext;
 - (id)_copyAuthenticationContextForAttemptNumber:(int)arg1;
-- (id)_copyURLBagContext;
 - (BOOL)_isErrorTokenError:(id)arg1;
 - (id)_resolvedURLInBagContext:(id)arg1 URLBag:(id*)arg2;
 - (void)_runURLOperation;

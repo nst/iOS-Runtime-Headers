@@ -12,7 +12,7 @@
     BOOL mByMissingCellRange;
     BOOL mByRow;
     unsigned int mCellRangeCount;
-    struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } *mCellRanges;
+    struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } *mCellRanges;
     BOOL mDrawsBlackAndWhite;
     BOOL mExpandBackgroundFill;
     BOOL mFinal;
@@ -42,14 +42,14 @@
 @property(readonly) unsigned int stageCount;
 
 + (BOOL)deliveryStyleSupportedForExport:(unsigned int)arg1;
-+ (id)newAnimationWithLayout:(id)arg1 andCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
++ (id)newAnimationWithLayout:(id)arg1 andCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 + (id)newAnimationWithLayout:(id)arg1 andDeliveryStyle:(unsigned int)arg2;
-+ (unsigned int)stageCountForTextureDeliveryStyle:(unsigned int)arg1 andTable:(id)arg2;
++ (unsigned int)stageCountForTextureDeliveryStyle:(unsigned int)arg1 masterLayout:(id)arg2;
 + (unsigned int)textureDeliveryStyleFromDeliveryString:(id)arg1;
 + (id)textureDeliveryStylesLocalized:(BOOL)arg1;
 
-- (void)addCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cellRangeAtIndex:(unsigned int)arg1;
+- (void)addCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cellRangeAtIndex:(unsigned int)arg1;
 - (unsigned int)cellRangeCount;
 - (void)clearCellRanges;
 - (BOOL)clipStrokes;

@@ -23,11 +23,13 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned long long fileFormatVersion;
+@property(readonly) BOOL hasDocumentVersionUUID;
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL isCrossAppPaste;
 @property(readonly) BOOL isCrossDocumentPaste;
-@property(readonly) BOOL isFromPasteboard;
+@property(readonly) BOOL isFromCopy;
 @property(readonly) BOOL isReadingFromDocument;
+@property(readonly) unsigned char packageIdentifier;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -46,15 +48,18 @@
 - (BOOL)endReading;
 - (id)externalObjectForIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isReadFinished:(BOOL)arg3;
 - (unsigned long long)fileFormatVersion;
+- (BOOL)hasDocumentVersionUUID;
 - (id)init;
 - (id)initWithContext:(id)arg1 packageURL:(id)arg2 finalizeHandlerQueue:(id)arg3 documentResourceDataProvider:(id)arg4 error:(id*)arg5;
 - (BOOL)isReadingFromDocument;
+- (unsigned char)packageIdentifier;
 - (void)readComponent:(id)arg1 completionQueue:(id)arg2 completion:(id)arg3;
 - (void)readRootObjectWithCompletionQueue:(id)arg1 completion:(id)arg2;
 - (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(BOOL)arg4 allowUnknownObject:(BOOL)arg5 fromParentObject:(id)arg6 completion:(id)arg7;
 - (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4 fromParentObject:(id)arg5 completion:(id)arg6;
 - (void)reader:(id)arg1 didUnarchiveObject:(id)arg2;
 - (id)reader:(id)arg1 wantsDataForIdentifier:(long long)arg2;
+- (long long)reader:(id)arg1 wantsObjectIdentifierForUUID:(id)arg2;
 - (id)unarchivedObjectForIdentifier:(long long)arg1 isReadFinished:(BOOL)arg2;
 
 @end

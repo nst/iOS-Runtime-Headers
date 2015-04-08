@@ -13,6 +13,7 @@
 @property(readonly) long long expectedContentLength;
 @property(copy,readonly) NSString * suggestedFilename;
 @property(copy,readonly) NSString * textEncodingName;
+@property(readonly) BOOL tsu_isHTTPSuccess;
 
 + (id)_responseWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
 + (id)getObjectKeyWithIndex:(long)arg1;
@@ -43,6 +44,7 @@
 - (int)statusCode;
 - (id)suggestedFilename;
 - (id)textEncodingName;
+- (BOOL)tsu_isHTTPSuccess;
 - (id)webui_certificateChain;
 
 @end

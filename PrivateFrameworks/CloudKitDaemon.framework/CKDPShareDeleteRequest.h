@@ -2,13 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPShareIdentifier;
+@class CKDPProtectionInfo, CKDPShareIdentifier, NSString;
 
 @interface CKDPShareDeleteRequest : PBRequest <NSCopying> {
+    NSString *_etag;
+    CKDPProtectionInfo *_selfAddedPcs;
     CKDPShareIdentifier *_shareId;
 }
 
+@property(retain) NSString * etag;
+@property(readonly) BOOL hasEtag;
+@property(readonly) BOOL hasSelfAddedPcs;
 @property(readonly) BOOL hasShareId;
+@property(retain) CKDPProtectionInfo * selfAddedPcs;
 @property(retain) CKDPShareIdentifier * shareId;
 
 + (id)options;
@@ -18,6 +24,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)etag;
+- (BOOL)hasEtag;
+- (BOOL)hasSelfAddedPcs;
 - (BOOL)hasShareId;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -25,6 +34,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
+- (id)selfAddedPcs;
+- (void)setEtag:(id)arg1;
+- (void)setSelfAddedPcs:(id)arg1;
 - (void)setShareId:(id)arg1;
 - (id)shareId;
 - (void)writeTo:(id)arg1;

@@ -33,7 +33,7 @@
 - (id)initWithInfo:(id)arg1;
 - (float)inlineTableWidth;
 - (id)layoutForHint:(id)arg1 parentLayout:(id)arg2;
-- (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })measureCellRangeForNextPartitionOfSize:(struct CGSize { float x1; float x2; })arg1 previousHint:(id)arg2 horizontally:(BOOL)arg3;
+- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })measureCellRangeForNextPartitionOfSize:(struct CGSize { float x1; float x2; })arg1 previousHint:(id)arg2 horizontally:(BOOL)arg3;
 - (id)nextHintForSize:(struct CGSize { float x1; float x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
 - (id)nextLayoutForSize:(struct CGSize { float x1; float x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
 - (BOOL)p_didFinishPartitioningHint:(id)arg1 horizontally:(BOOL)arg2;

@@ -20,6 +20,7 @@
 + (id)_currentProcessContainerPath;
 + (void)_postBookmarksChangedSyncNotification;
 + (id)_safariContainerPath;
++ (id)_safariPreferencesDomain;
 + (id)_uniqueExternalUUID;
 + (BOOL)isLockedSync;
 + (BOOL)lockSync;

@@ -14,7 +14,7 @@
 @property(readonly) unsigned int hash;
 @property(readonly) PFUbiquityLocation * presentedItemLocation;
 @property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
-@property(readonly) NSURL * presentedItemURL;
+@property(copy,readonly) NSURL * presentedItemURL;
 @property(copy,readonly) NSURL * primaryPresentedItemURL;
 @property(readonly) Class superclass;
 

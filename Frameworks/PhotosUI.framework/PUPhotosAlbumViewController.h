@@ -2,14 +2,19 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, PHAssetCollection, PHFetchResult, PUPhotosPickerViewController;
+@class NSObject<PLAlbumProtocol>, NSString, PHAssetCollection, PHFetchResult, PUPhotosPickerViewController;
 
 @interface PUPhotosAlbumViewController : PUPhotosGridViewController <PUSectionedGridLayoutDelegate> {
+    BOOL __hasAccurateCounts;
+    BOOL __isCountingAssetTypes;
     PUPhotosPickerViewController *_activePhotosPickerViewController;
     struct NSObject { Class x1; } *_album;
     PHAssetCollection *_assetCollection;
 }
 
+@property(setter=_setHasAccurateCounts:) BOOL _hasAccurateCounts;
+@property(setter=_setCountingAssetTypes:) BOOL _isCountingAssetTypes;
+@property(retain) NSObject<PLAlbumProtocol> * album;
 @property(readonly) PHAssetCollection * assetCollection;
 @property(readonly) PHFetchResult * assetCollectionAssets;
 @property(copy,readonly) NSString * debugDescription;
@@ -18,7 +23,13 @@
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_countAssetTypesIfNeeded;
 - (id)_globalHeaderTitle;
+- (BOOL)_hasAccurateCounts;
+- (BOOL)_isCountingAssetTypes;
+- (void)_setCountingAssetTypes:(BOOL)arg1;
+- (void)_setHasAccurateCounts:(BOOL)arg1;
+- (struct NSObject { Class x1; }*)album;
 - (id)assetCollection;
 - (id)assetCollectionAssets;
 - (BOOL)canBeginStackCollapseTransition;
@@ -37,11 +48,13 @@
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (id)sessionInfoForTransferredAssets:(id)arg1;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1 existingFetchResults:(id)arg2;
 - (void)setAssetCollection:(id)arg1 fetchResultContainingAssetCollection:(id)arg2 filterPredicate:(id)arg3;
+- (void)setAssetCollection:(id)arg1 fetchResultContainingAssetCollection:(id)arg2 filterPredicate:(id)arg3 existingFetchResults:(id)arg4;
 - (void)setupScrubber;
 - (void)updateTitle;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)wantsAssetCounts;
 - (BOOL)wantsGlobalFooter;
 
 @end

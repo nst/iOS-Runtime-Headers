@@ -7,6 +7,7 @@
 @interface NSSQLiteConnection : NSSQLConnection {
     NSSQLiteStatement *_beginStatement;
     struct __CFDictionary { } *_cachedEntityUpdateStatements;
+    NSMutableDictionary *_cachedFetchStatements;
     NSSQLiteStatement *_commitStatement;
     struct sqlite3 { } *_db;
     NSString *_dbPathRegisteredWithBackupd;
@@ -87,9 +88,12 @@
 - (void)beginTransaction;
 - (void)bindTempTableForBindIntarray:(id)arg1;
 - (void)cacheCurrentDBStatementOn:(id)arg1;
+- (void)cacheStatement:(id)arg1 forRequestWithIdentifier:(id)arg2;
 - (void)cacheUpdateStatement:(id)arg1 forEntity:(id)arg2 andDeltasMask:(struct __CFBitVector { }*)arg3;
+- (id)cachedStatementForRequestWithIdentifier:(id)arg1;
 - (id)cachedUpdateStatementForEntity:(id)arg1 andDeltasMask:(struct __CFBitVector { }*)arg2;
 - (BOOL)canConnect;
+- (void)clearCachedStatementForRequestWithIdentifier:(id)arg1;
 - (void)commitTransaction;
 - (void)connect;
 - (id)createMapOfEntityNameToPKMaxForEntities:(id)arg1;
@@ -99,6 +103,7 @@
 - (void)dealloc;
 - (void)deleteCorrelation:(id)arg1;
 - (void)deleteRow:(id)arg1;
+- (id)deleteTransactionEntriesAfterPeerState:(id)arg1 forStoreName:(id)arg2;
 - (id)describeResults;
 - (void)didCreateSchema;
 - (void)disconnect;

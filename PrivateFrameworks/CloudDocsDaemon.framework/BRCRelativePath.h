@@ -6,19 +6,16 @@
    See Warning(s) below.
  */
 
-@class BRCAccountSession, BRCBookmark, BRCGenerationID, BRCLocalContainer, BRCRelativePath, NSData, NSDirectoryEnumerator, NSNumber, NSString, NSURL;
+@class BRCAccountSession, BRCBookmark, BRCGenerationID, BRCItemID, BRCLocalContainer, BRCRelativePath, BRCServerZone, NSData, NSDirectoryEnumerator, NSNumber, NSString, NSURL;
 
 @interface BRCRelativePath : NSObject <NSSecureCoding> {
     NSString *_absolutePath;
-    BRCAccountSession *_accountSession;
     BRCRelativePath *_basePath;
     struct timespec { 
         int tv_sec; 
         long tv_nsec; 
     } _birthtime;
     BRCBookmark *_bookmark;
-    unsigned int _componentsCountToRoot;
-    BRCLocalContainer *_container;
     NSDirectoryEnumerator *_descendantsEnumerator;
     int _deviceID;
     struct { int x1; long x2; long x3; char *x4; int x5; long x6; long x7; int x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct _telldir {} *x10; } *_dir;
@@ -55,13 +52,17 @@
     NSData *_quarantineInfo;
     unsigned int _readFault : 1;
     NSString *_relativePath;
+    BRCServerZone *_serverZone;
+    BRCAccountSession *_session;
+    BRCItemID *_sharedItemID;
+    NSString *_sharedOwnerName;
     long long _size;
     NSString *_symlinkContent;
+    unsigned short _type;
     NSNumber *_volumeID;
 }
 
 @property(readonly) NSString * absolutePath;
-@property(readonly) BRCAccountSession * accountSession;
 @property(readonly) long birthTime;
 @property(readonly) BRCBookmark * bookmark;
 @property(readonly) BRCLocalContainer * container;
@@ -80,7 +81,6 @@
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL isAlias;
 @property(readonly) BOOL isBusy;
-@property(readonly) BOOL isContainer;
 @property(readonly) BOOL isDocument;
 @property(readonly) BOOL isExcluded;
 @property(readonly) BOOL isExecutable;
@@ -90,7 +90,6 @@
 @property(readonly) BOOL isHiddenFile;
 @property(readonly) BOOL isInPackage;
 @property(readonly) BOOL isPackageRoot;
-@property(readonly) BOOL isParentedToContainer;
 @property(readonly) BOOL isRoot;
 @property(readonly) BOOL isSymLink;
 @property(readonly) BOOL isUnixDir;
@@ -98,17 +97,21 @@
 @property(readonly) long modificationTime;
 @property(readonly) unsigned long long parentFileID;
 @property(readonly) unsigned int parentHash;
-@property(readonly) NSString * pathRelativeToContainer;
 @property(readonly) NSString * pathRelativeToPackageRoot;
 @property(readonly) NSString * pathRelativeToRoot;
 @property(readonly) NSData * quarantineInfo;
 @property(readonly) BRCRelativePath * root;
+@property(readonly) BRCServerZone * serverZone;
+@property(readonly) BRCAccountSession * session;
+@property(readonly) BRCItemID * sharedItemID;
+@property(readonly) NSString * sharedOwnerName;
 @property(readonly) long long size;
 @property(readonly) NSString * symlinkContent;
+@property(readonly) unsigned short type;
 @property(readonly) NSURL * url;
 @property(readonly) NSNumber * volumeID;
 
-+ (int)locateByFileID:(unsigned long long)arg1 inContainer:(id)arg2;
++ (int)locateByFileID:(unsigned long long)arg1 zone:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -117,13 +120,12 @@
 - (id)_initWithPath:(id)arg1 relativeToRoot:(id)arg2;
 - (BOOL)_resolveAndKeepOpenMustExist:(BOOL)arg1 error:(int*)arg2;
 - (int)_resolveBasePath;
-- (int)_resolveContainer;
+- (int)_resolvePathTypeAndContainer;
 - (int)_resolveSymlinkRelativeTo:(int)arg1 path:(id)arg2;
 - (int)_resolveWhenDoesntExist;
 - (int)_resolveWhenExists;
 - (BOOL)_shouldKeepBasePathOpen;
 - (id)absolutePath;
-- (id)accountSession;
 - (long)birthTime;
 - (id)bookmark;
 - (void)close;
@@ -148,12 +150,11 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFileID:(unsigned long long)arg1 inContainer:(id)arg2;
-- (id)initWithPath:(id)arg1 inContainer:(id)arg2;
-- (id)initWithRootPath:(id)arg1 accountSession:(id)arg2;
+- (id)initWithFileID:(unsigned long long)arg1 zone:(id)arg2;
+- (id)initWithPath:(id)arg1 zone:(id)arg2;
+- (id)initWithRootPath:(id)arg1 session:(id)arg2;
 - (BOOL)isAlias;
 - (BOOL)isBusy;
-- (BOOL)isContainer;
 - (BOOL)isDocument;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToRelativePath:(id)arg1;
@@ -165,7 +166,6 @@
 - (BOOL)isHiddenFile;
 - (BOOL)isInPackage;
 - (BOOL)isPackageRoot;
-- (BOOL)isParentedToContainer;
 - (BOOL)isResolved;
 - (BOOL)isRoot;
 - (BOOL)isSymLink;
@@ -180,8 +180,6 @@
 - (unsigned long long)parentFileID;
 - (unsigned int)parentHash;
 - (id)pathOfPackageRoot;
-- (id)pathOfParent;
-- (id)pathRelativeToContainer;
 - (id)pathRelativeToPackageRoot;
 - (id)pathRelativeToRoot;
 - (id)pathWithChildAtPath:(id)arg1;
@@ -192,8 +190,13 @@
 - (BOOL)resolveAndKeepOpenMustExist:(BOOL)arg1 error:(int*)arg2;
 - (BOOL)resolveMustExist:(BOOL)arg1 error:(int*)arg2;
 - (id)root;
+- (id)serverZone;
+- (id)session;
+- (id)sharedItemID;
+- (id)sharedOwnerName;
 - (long long)size;
 - (id)symlinkContent;
+- (unsigned short)type;
 - (id)url;
 - (id)volumeID;
 

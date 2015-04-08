@@ -8,6 +8,7 @@
 - (id)_nameOfAddSharedAlbumPlaceholderImage;
 - (id)_nameOfEmptyAlbumPlaceholderImage;
 - (id)_nameOfEmptySharedAlbumPlaceholderImage;
+- (id)_nameOfHiddenAlbumPlaceholderImage;
 - (int)albumDeletionConfirmationStyle;
 - (BOOL)allowsAlbumCountSubtitle;
 - (BOOL)canDisplaySearchActionInNavigationBar;
@@ -25,6 +26,8 @@
 - (float)sectionFooterHeight;
 - (float)sectionHeaderHeight;
 - (BOOL)shouldUseTableView;
+- (BOOL)showsAlbumBadgeOnCellContentView;
+- (BOOL)showsAlbumBadgeOnStackView;
 - (struct UIOffset { float x1; float x2; })stackOffset;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })stackPerspectiveInsets;
 - (struct UIOffset { float x1; float x2; })stackPerspectiveOffset;

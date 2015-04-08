@@ -2,28 +2,20 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, _UIDocumentPickerContainerModel;
+@class UIImageView;
 
 @interface _UIDocumentPickerDocumentTableContainerCell : _UIDocumentPickerDocumentTableCell {
     UIImageView *_containerIconView;
-    _UIDocumentPickerContainerModel *_model;
-    id _observerToken;
 }
 
 @property(retain) UIImageView * containerIconView;
-@property(retain) _UIDocumentPickerContainerModel * model;
-@property(retain) id observerToken;
 
 - (id)containerIconView;
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (id)model;
-- (id)observerToken;
 - (void)prepareForReuse;
 - (void)reloadItem:(BOOL)arg1;
 - (void)setContainerIconView:(id)arg1;
-- (void)setModel:(id)arg1;
-- (void)setObserverToken:(id)arg1;
 
 @end

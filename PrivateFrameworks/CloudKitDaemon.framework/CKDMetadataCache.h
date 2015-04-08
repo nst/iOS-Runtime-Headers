@@ -10,6 +10,7 @@
 
 @property(retain) NSObject<OS_dispatch_queue> * cacheQueue;
 
++ (id)dbFileName;
 + (id)sharedCache;
 
 - (void).cxx_destruct;

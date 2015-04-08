@@ -29,6 +29,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityScrollVisibleRect;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)_accessibilitySetValue:(id)arg1;
 - (struct WebAccessibilityObjectWrapper { Class x1; struct AccessibilityObject {} *x2; int x3; unsigned long long x4; }*)_accessibilityTableAncestor;
 - (unsigned long long)_accessibilityTraitsFromAncestors;
 - (id)_accessibilityWebDocumentView;

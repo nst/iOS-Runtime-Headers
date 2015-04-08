@@ -14,12 +14,12 @@
 - (void)applyFunction:(int (*)())arg1 withState:(void*)arg2;
 - (int)count;
 - (void)dealloc;
-- (id)initWithArchive:(const struct TileStorage { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TST::TileStorage_Tile> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
+- (id)initWithArchive:(const struct TileStorage { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TST::TileStorage_Tile> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
 - (id)initWithOwner:(id)arg1;
 - (void)makeTilesPerformSelector:(SEL)arg1;
 - (void)removeAllTiles;
 - (void)removeTileForID:(struct { unsigned short x1; unsigned short x2; })arg1;
-- (void)saveToArchive:(struct TileStorage { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TST::TileStorage_Tile> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct TileStorage { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TST::TileStorage_Tile> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1 archiver:(id)arg2;
 - (void)setTile:(id)arg1 forID:(struct { unsigned short x1; unsigned short x2; })arg2;
 - (id)tileForID:(struct { unsigned short x1; unsigned short x2; })arg1;
 

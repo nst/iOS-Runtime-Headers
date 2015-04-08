@@ -28,6 +28,7 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly) NSString * verificationBodyString;
+@property(readonly) PKVerificationRequestRecord * verificationRecord;
 @property(readonly) NSString * verificationTitleString;
 
 - (id)_bankAppName;
@@ -51,13 +52,13 @@
 - (id)delegate;
 - (id)entryDelegate;
 - (id)initWithPaymentPass:(id)arg1 passView:(id)arg2 webService:(id)arg3 context:(int)arg4 delegate:(id)arg5;
-- (void)productViewControllerDidFinish:(id)arg1;
 - (void)selectOtherVerificationMethod:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEntryDelegate:(id)arg1;
 - (void)setRequestRecord:(id)arg1;
 - (void)sharedPaymentServiceChanged:(id)arg1;
 - (id)verificationBodyString;
+- (id)verificationRecord;
 - (id)verificationTitleString;
 
 @end

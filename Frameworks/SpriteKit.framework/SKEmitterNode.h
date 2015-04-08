@@ -82,7 +82,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)fieldBitMask;
 - (id)fieldInfluenceSequence;
-- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqualToNode:(id)arg1;

@@ -57,7 +57,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (float)falloff;
 - (id)field;
-- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1 field:(id)arg2;

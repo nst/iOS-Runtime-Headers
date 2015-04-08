@@ -18,7 +18,7 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
-@property(readonly) NSURL * presentedItemURL;
+@property(copy,readonly) NSURL * presentedItemURL;
 @property(copy,readonly) NSURL * primaryPresentedItemURL;
 @property(readonly) Class superclass;
 @property(readonly) BOOL usedExistingUUIDFile;

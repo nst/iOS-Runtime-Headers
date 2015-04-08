@@ -53,6 +53,7 @@
 - (id)indexPathOfAsset:(id)arg1;
 - (id)initWithAssetCollectionsFetchResult:(id)arg1 collectionsAssetsFetchResults:(id)arg2;
 - (id)lastAssetIndexPath;
+- (id)newAssetsFetchResults;
 - (id)pl_fetchAllAssets;
 - (void)viewControllerPhotoLibraryDidChange:(id)arg1;
 

@@ -40,6 +40,7 @@
 - (void).cxx_destruct;
 - (void)_checkAndDisplayMeDeviceSwitchAlert;
 - (oneway void)_iCloudAccountNameWithCompletion:(id)arg1;
+- (void)_registerForFMFDLaunchedNotification;
 - (void)_sendAutoSwitchMeDevice;
 - (void)_sendFriendshipOfferToHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
 - (void)addHandles:(id)arg1;
@@ -100,6 +101,7 @@
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithDelegate:(id)arg1 delegateQueue:(id)arg2;
+- (id)internalConnection;
 - (id)internalHandles;
 - (void)invalidate;
 - (void)invalidateWithError:(id)arg1;

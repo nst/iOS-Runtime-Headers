@@ -5,24 +5,33 @@
 @interface HMDPersistentStore : NSObject {
 }
 
-+ (id)decryptDataWithControllerKey:(id)arg1 error:(id*)arg2;
-+ (BOOL)deserializeHomes:(id*)arg1 primaryHome:(id*)arg2 accessories:(id*)arg3 fromData:(id)arg4;
++ (id)_decryptData:(id)arg1 withKey:(id)arg2 error:(id*)arg3;
++ (id)_encryptData:(id)arg1 withKey:(id)arg2 error:(id*)arg3;
++ (id)decryptDataWithControllerKey:(id)arg1 totalKeysFound:(unsigned int*)arg2 deleteExtraKeys:(BOOL)arg3 extraKeysWereDeleted:(BOOL*)arg4 error:(id*)arg5;
++ (id)decryptDataWithMetadataKey:(id)arg1 error:(id*)arg2;
++ (BOOL)deserializeHomeData:(id*)arg1 localStorage:(BOOL)arg2 fromData:(id)arg3;
++ (BOOL)deserializeMetadata:(id*)arg1 fromData:(id)arg2;
 + (id)encryptDataWithControllerKey:(id)arg1 error:(id*)arg2;
++ (id)encryptDataWithMetadataKey:(id)arg1 error:(id*)arg2;
 + (id)idsDataSyncJournalPath;
++ (id)protectedMetadataPath;
 + (id)protectedStorePath;
-+ (id)serializeHomes:(id)arg1 primaryHome:(id)arg2 accessories:(id)arg3 localStorage:(BOOL)arg4 remoteDeviceOnSameAccount:(BOOL)arg5;
++ (id)serializeHomeData:(id)arg1 localStorage:(BOOL)arg2 remoteDeviceOnSameAccount:(BOOL)arg3;
++ (id)serializeMetadata:(id)arg1;
 + (id)serverTokenPath;
 + (id)storeDirectoryPath;
-+ (id)storePath;
 + (id)transactionJournalPath;
 
 - (BOOL)archiveCloudServerTokenData:(id)arg1;
-- (BOOL)archiveHomes:(id)arg1 primaryHome:(id)arg2 accessories:(id)arg3;
+- (BOOL)archiveHomeData:(id)arg1;
 - (BOOL)archiveIDSDataSyncJournal:(id)arg1;
+- (BOOL)archiveMetadata:(id)arg1;
 - (BOOL)archiveTransactions:(id)arg1;
 - (void)resetConfiguration;
-- (id)unarchiveHomes:(id*)arg1 primaryHome:(id*)arg2 accessories:(id*)arg3;
+- (void)resetMetadata;
+- (id)unarchiveHomeData:(id*)arg1;
 - (id)unarchiveIDSDataSyncJournal;
+- (id)unarchiveMetadata:(id*)arg1;
 - (id)unarchiveServerTokenData:(BOOL*)arg1;
 - (id)unarchiveTransactionJournal;
 

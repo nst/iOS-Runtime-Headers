@@ -2,21 +2,43 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSPObjectContext, TSPPasteboardObject;
+@class NSDictionary, NSString, TSPObjectContext, TSPPasteboardObject;
 
-@interface TSPPasteboardReadAssistant : NSObject {
+@interface TSPPasteboardReadAssistant : NSObject <TSPDecoderReadCoordinatorDelegate> {
+    NSDictionary *_dataInfos;
+    BOOL _isCrossAppPaste;
+    BOOL _isCrossDocumentPaste;
     TSPObjectContext *_pasteboardContext;
     TSPPasteboardObject *_pasteboardObject;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned int hash;
 @property(readonly) TSPObjectContext * pasteboardContext;
 @property(readonly) TSPPasteboardObject * pasteboardObject;
+@property(readonly) Class superclass;
 
 + (id)contentDescriptionFromPasteboard:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)cachedDataForIdentifier:(long long)arg1;
+- (id)cachedMetadataObject;
+- (BOOL)canResolveExternalReferences;
+- (id)dataInfoForIdentifier:(long long)arg1;
+- (unsigned long long)fileFormatVersion;
+- (BOOL)hasDocumentVersionUUID;
 - (id)initWithPasteboard:(id)arg1 targetContext:(id)arg2;
+- (BOOL)isCrossAppPaste;
+- (BOOL)isCrossDocumentPaste;
+- (BOOL)isFromCopy;
+- (id)metadataComponent;
+- (long long)objectIdentifierForUUID:(id)arg1;
+- (id)objectUUIDForExternalReferenceToIdentifier:(long long)arg1;
 - (id)pasteboardContext;
 - (id)pasteboardObject;
+- (BOOL)processMetadataObject:(id)arg1 error:(id*)arg2;
+- (id)rootObjectComponent;
+- (BOOL)shouldResolveExternalReferencesUsingObjectUUID;
 
 @end

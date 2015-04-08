@@ -91,6 +91,7 @@
 - (id)_setupSignal:(int)arg1 handler:(id)arg2;
 - (void)_setupSignalHandlers;
 - (id)activeComplicationsConnections;
+- (void)applicationContentsDidReset:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidFinishConnecting:(id)arg1;
 - (void)applicationDidTerminate:(id)arg1;

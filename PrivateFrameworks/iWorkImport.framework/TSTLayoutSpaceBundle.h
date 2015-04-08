@@ -26,6 +26,9 @@
 
 - (void)dealloc;
 - (id)description;
+- (BOOL)enumerateFrozenLayoutSpacesUsingBlock:(id)arg1;
+- (void)enumerateLayoutSpacesUsingBlock:(id)arg1;
+- (BOOL)enumerateRepeatLayoutSpacesUsingBlock:(id)arg1;
 - (id)frozenHeaderColumnsSpace;
 - (id)frozenHeaderCornerSpace;
 - (id)frozenHeaderRowsSpace;
@@ -36,9 +39,6 @@
 - (void)invalidateCoordinatesAfterRow:(unsigned short)arg1;
 - (void)invalidateTableOffsets;
 - (id)layout;
-- (void)performActionOnEachLayoutSpace:(id)arg1;
-- (BOOL)performActionOnFrozenLayoutSpaces:(id)arg1;
-- (BOOL)performActionOnRepeatLayoutSpaces:(id)arg1;
 - (id)repeatHeaderColumnsSpace;
 - (id)repeatHeaderCornerSpace;
 - (id)repeatHeaderRowsSpace;

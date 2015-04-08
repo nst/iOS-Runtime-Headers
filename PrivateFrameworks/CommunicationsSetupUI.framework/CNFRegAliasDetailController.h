@@ -25,6 +25,7 @@
 
 - (void)_buildSpecifierCache:(id)arg1;
 - (void)_setupEventHandlers;
+- (BOOL)_shouldShowResendButton;
 - (void)_showAliasValidationError:(id)arg1;
 - (void)_showResendGroup:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateUIAnimated:(BOOL)arg1;

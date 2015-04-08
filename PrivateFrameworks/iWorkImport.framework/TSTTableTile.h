@@ -33,6 +33,7 @@
 - (unsigned short)numCells;
 - (unsigned short)numRows;
 - (id)packageLocator;
+- (void)pruneEmptyRows;
 - (id)rowInfos;
 - (void)saveToArchiver:(id)arg1;
 - (void)validate;

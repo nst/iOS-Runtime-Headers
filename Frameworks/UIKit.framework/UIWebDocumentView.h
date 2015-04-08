@@ -461,6 +461,7 @@
 - (id)delegate;
 - (void)deleteBackward;
 - (void)deleteFromInput;
+- (void)deleteFromInputWithFlags:(unsigned int)arg1;
 - (BOOL)detectsPhoneNumbers;
 - (int)deviceOrientation;
 - (id)dictationInterpretations;

@@ -48,6 +48,7 @@
         unsigned int annotationImplementsExpectedHeadingUpdateInterval : 1; 
     } _flags;
     float _headingAnimationCompletedAngle;
+    int _headingAnimationDisplayRate;
     double _pendingChangeDuration;
     double _pendingHeadingChangeDuration;
     int _zoomStyle;
@@ -55,6 +56,7 @@
 
 @property(readonly) <VKTrackableAnnotation> * annotation;
 @property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property int headingAnimationDisplayRate;
 @property(getter=isTrackingHeading,readonly) BOOL trackingHeading;
 @property int zoomStyle;
 
@@ -64,6 +66,8 @@
 - (id)annotation;
 - (void)dealloc;
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (int)headingAnimationDisplayRate;
+- (id)init;
 - (BOOL)isAnimating;
 - (BOOL)isTrackingHeading;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -71,6 +75,7 @@
 - (void)resumeAnimation;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGesturing:(BOOL)arg1;
+- (void)setHeadingAnimationDisplayRate:(int)arg1;
 - (void)setZoomStyle:(int)arg1;
 - (void)startTrackingAnnotation:(id)arg1 trackHeading:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)stopTrackingAnnotation;

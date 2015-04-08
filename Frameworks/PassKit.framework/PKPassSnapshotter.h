@@ -15,7 +15,7 @@
 
 + (void)purgeCacheOfPassSnapshotsWithUinqueID:(id)arg1;
 
-- (void)_cacheImage:(struct CGImage { }*)arg1 withKey:(id)arg2;
+- (void)_cacheItem:(id)arg1 withKey:(id)arg2;
 - (BOOL)_cachedImageWithKey:(id)arg1 completion:(id)arg2;
 - (void)_performSnapshot:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id)arg4;
 - (void)_prepareSnapshotViewWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id)arg4;

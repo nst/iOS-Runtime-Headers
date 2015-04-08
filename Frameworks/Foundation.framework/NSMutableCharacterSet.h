@@ -31,12 +31,12 @@
 - (void)formIntersectionWithCharacterSet:(id)arg1;
 - (void)formUnionWithCharacterSet:(id)arg1;
 - (id)init;
-- (id)initWithCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)invert;
 - (BOOL)isMutable;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)removeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)removeCharactersInString:(id)arg1;
+- (id)tswp_initWithCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
 
 @end

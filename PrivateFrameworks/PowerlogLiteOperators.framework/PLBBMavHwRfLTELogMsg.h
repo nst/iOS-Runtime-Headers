@@ -41,7 +41,6 @@
 @property(retain) NSArray * txPwrCnt;
 
 + (id)entryEventBackwardDefinitionBBMav10HwRfLTE;
-+ (id)entryEventBackwardDefinitionBBMavHwRfLTE;
 
 - (void).cxx_destruct;
 - (id)actRxTxCnt;
@@ -61,10 +60,8 @@
 - (id)kvPairs;
 - (id)logDuration;
 - (id)logEventBackwardBBMav10HwRfLTE;
-- (void)logEventBackwardBBMavHwRfLTE;
 - (void)populateEntry:(id)arg1;
 - (void)refreshMav10BBRfAllRats;
-- (void)refreshMavRfAllRats;
 - (void)sendAndLogPLEntry:(id)arg1 withName:(id)arg2 withType:(id)arg3;
 - (void)setActRxTxCnt:(id)arg1;
 - (void)setCaFreqInfo:(id)arg1;

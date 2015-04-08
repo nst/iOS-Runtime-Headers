@@ -18,6 +18,7 @@
     int _fastImageFormat;
     PUFeedViewControllerSpec *_feedViewControllerSpec;
     PUPhotosGridViewControllerSpec *_gridViewControllerSpec;
+    UIImage *_hiddenAlbumPlaceholderImage;
     float _maxSearchBarWidth;
     PUPhotosPanoramaViewControllerSpec *_panoramaViewControllerSpec;
     PUPhotosPickerViewControllerSpec *_photosPickerViewControllerSpec;
@@ -27,6 +28,8 @@
     BOOL _shouldUseCollageForCloudFeedPlaceholder;
     BOOL _shouldUseShortTitleForStandInAlbumList;
     BOOL _shouldUseTableView;
+    BOOL _showsAlbumBadgeOnCellContentView;
+    BOOL _showsAlbumBadgeOnStackView;
     BOOL _showsDeleteButtonOnCellContentView;
     struct UIOffset { 
         float horizontal; 
@@ -67,6 +70,7 @@
 @property(readonly) int fastImageFormat;
 @property(readonly) PUFeedViewControllerSpec * feedViewControllerSpec;
 @property(readonly) PUPhotosGridViewControllerSpec * gridViewControllerSpec;
+@property(readonly) UIImage * hiddenAlbumPlaceholderImage;
 @property(readonly) float maxSearchBarWidth;
 @property(readonly) PUPhotosPanoramaViewControllerSpec * panoramaViewControllerSpec;
 @property(readonly) PUPhotosPickerViewControllerSpec * photosPickerViewControllerSpec;
@@ -76,6 +80,8 @@
 @property(readonly) BOOL shouldUseCollageForCloudFeedPlaceholder;
 @property(readonly) BOOL shouldUseShortTitleForStandInAlbumList;
 @property(readonly) BOOL shouldUseTableView;
+@property(readonly) BOOL showsAlbumBadgeOnCellContentView;
+@property(readonly) BOOL showsAlbumBadgeOnStackView;
 @property(readonly) BOOL showsDeleteButtonOnCellContentView;
 @property(readonly) struct UIOffset { float x1; float x2; } stackOffset;
 @property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } stackPerspectiveInsets;
@@ -92,6 +98,7 @@
 - (id)_nameOfAddSharedAlbumPlaceholderImage;
 - (id)_nameOfEmptyAlbumPlaceholderImage;
 - (id)_nameOfEmptySharedAlbumPlaceholderImage;
+- (id)_nameOfHiddenAlbumPlaceholderImage;
 - (struct CGPoint { float x1; float x2; })_pixelRoundedOriginForCenteredImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)addSharedAlbumPlaceholderImage;
 - (int)albumDeletionConfirmationStyle;
@@ -112,6 +119,7 @@
 - (int)fastImageFormat;
 - (id)feedViewControllerSpec;
 - (id)gridViewControllerSpec;
+- (id)hiddenAlbumPlaceholderImage;
 - (float)maxSearchBarWidth;
 - (id)panoramaViewControllerSpec;
 - (id)photosPickerViewControllerSpec;
@@ -121,6 +129,8 @@
 - (BOOL)shouldUseCollageForCloudFeedPlaceholder;
 - (BOOL)shouldUseShortTitleForStandInAlbumList;
 - (BOOL)shouldUseTableView;
+- (BOOL)showsAlbumBadgeOnCellContentView;
+- (BOOL)showsAlbumBadgeOnStackView;
 - (BOOL)showsDeleteButtonOnCellContentView;
 - (struct UIOffset { float x1; float x2; })stackOffset;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })stackPerspectiveInsets;

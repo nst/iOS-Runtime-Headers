@@ -19,7 +19,7 @@
 + (struct CGPath { }*)newClipPathForSymbol:(int)arg1 at:(struct CGPoint { float x1; float x2; })arg2 width:(float)arg3 stroke:(id)arg4;
 + (struct CGImage { }*)newImageFromFills:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 spaceBetween:(struct CGSize { float x1; float x2; })arg3 scale:(float)arg4 borderColor:(id)arg5 outFillRects:(struct CGRect {}**)arg6;
 + (struct CGColor { }*)newLightenedColor:(struct CGColor { }*)arg1 byPercent:(float)arg2;
-+ (struct CGPath { }*)newStrokedPathFromPath:(struct CGPath { }*)arg1 stroke:(id)arg2;
++ (struct CGPath { }*)newStrokedPathFromPath:(struct CGPath { }*)arg1 stroke:(id)arg2 cap:(int)arg3;
 + (struct CGPath { }*)newUnitPathForSymbol:(int)arg1 symbolSize:(float)arg2 stroke:(id)arg3;
 + (struct CGPath { }*)p_newCirclePath:(struct CGPoint { float x1; float x2; })arg1 width:(float)arg2 pathLocation:(int)arg3 stroke:(id)arg4;
 + (struct CGPath { }*)p_newCrossPath:(struct CGPoint { float x1; float x2; })arg1 width:(float)arg2 pathLocation:(int)arg3 stroke:(id)arg4;

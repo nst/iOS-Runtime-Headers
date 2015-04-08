@@ -2,16 +2,28 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIInputViewKeyboardOutput : TIKeyboardOutput {
+@interface _UIInputViewKeyboardOutput : TIKeyboardOutput <NSCopying, NSSecureCoding> {
+    BOOL _didBeginOutput;
+    int _positionOffset;
 }
+
+@property BOOL didBeginOutput;
+@property int positionOffset;
 
 + (BOOL)supportsSecureCoding;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)didBeginOutput;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (int)positionOffset;
 - (void)setAcceptedCandidate:(id)arg1;
+- (void)setDidBeginOutput:(BOOL)arg1;
 - (void)setForwardDeletionCount:(unsigned int)arg1;
 - (void)setHandwritingStrokesToDelete:(id)arg1;
 - (void)setInsertionTextAfterSelection:(id)arg1;
+- (void)setPositionOffset:(int)arg1;
 - (void)setShortcutConversion:(id)arg1;
 - (void)setTextToCommit:(id)arg1;
 

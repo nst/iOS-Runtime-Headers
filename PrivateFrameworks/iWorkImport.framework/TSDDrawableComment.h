@@ -4,7 +4,7 @@
 
 @class <TSKModel>, NSDate, NSString, TSDCommentStorage, TSDDrawableInfo, TSKAnnotationAuthor;
 
-@interface TSDDrawableComment : NSObject <TSDAnnotationHosting, TSDCommentStorageDelegate> {
+@interface TSDDrawableComment : NSObject <TSDAnnotationHosting> {
     TSDDrawableInfo *mParent;
     TSDCommentStorage *mStorage;
 }
@@ -27,14 +27,12 @@
 - (int)annotationDisplayStringType;
 - (int)annotationType;
 - (id)author;
-- (id)commandForDeletingComment;
-- (void)commentStorageTextDidChange:(id)arg1;
+- (void)commentWillBeAddedToDocumentRoot;
 - (void)commitText:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;
 - (id)description;
-- (Class)editorClass;
 - (id)hostingModel;
 - (id)initWithParent:(id)arg1 storage:(id)arg2;
 - (BOOL)isEqual:(id)arg1;

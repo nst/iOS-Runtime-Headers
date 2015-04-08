@@ -2,51 +2,73 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, BRCRelativePath, NSObject<OS_dispatch_queue>, NSString;
+@class BRCCountedSet, BRCMinHeap, BRCRelativePath, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
-@interface BRCFSReader : NSObject <BRCFSEventsDelegate, BRCFileCoordinationReading, BRCModule> {
+@interface BRCFSReader : BRCFSSchedulerBase <BRCFSEventsDelegate, BRCFileCoordinationReading, BRCModule> {
+    BRCCountedSet *_coordinatedReaders;
     BRCRelativePath *_currentScan;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    BRCAccountSession *_session;
+    BRCMinHeap *_lostHeap;
+    NSObject<OS_dispatch_source> *_lostScanDelay;
+    NSObject<OS_dispatch_group> *_lostScanGroup;
+    NSObject<OS_dispatch_queue> *_lostScanQueue;
+    NSObject<OS_dispatch_source> *_lostScanSource;
+    BOOL _readerCountReachedMax;
+    BOOL _resumed;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property BOOL isCancelled;
+@property(readonly) NSObject<OS_dispatch_group> * lostScanGroup;
 @property(readonly) NSObject<OS_dispatch_queue> * serialQueue;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (BOOL)_canRetryThrottleID:(long long)arg1 zone:(id)arg2;
 - (void)_cancelScan;
+- (void)_close;
 - (void)_continueScan:(id)arg1;
-- (void)_didResolvedDocumentID:(unsigned int)arg1 fileID:(unsigned long long)arg2 container:(id)arg3;
+- (void)_createOrRetryThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3 throttle:(id)arg4 hasBeenTried:(BOOL)arg5;
+- (void)_didResolvedDocumentID:(unsigned int)arg1 fileID:(unsigned long long)arg2 zone:(id)arg3;
+- (void)_fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 item:(id)arg3 lookup:(id)arg4;
+- (void)_lostScanSchedule;
 - (void)_processDeadItem:(id)arg1;
 - (void)_processLostItem:(id)arg1;
 - (void)_processLostItem:(id)arg1 resolvedToPath:(id)arg2;
-- (void)_processNextLostItem:(id)arg1 inContainer:(id)arg2;
-- (void)_resolveDocumentID:(unsigned int)arg1 inContainer:(id)arg2;
+- (unsigned int)_readCoordinationCount;
+- (void)_resolveDocumentID:(unsigned int)arg1 zone:(id)arg2;
+- (void)_retriedThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3;
 - (void)_scanDirectory:(id)arg1 atPath:(id)arg2 lookup:(id)arg3;
 - (void)_scanDone:(id)arg1 atPath:(id)arg2 lookup:(id)arg3;
+- (void)_schedule;
+- (void)_scheduleCoordinatedReadForItem:(id)arg1 path:(id)arg2;
+- (BOOL)_scheduleOne:(id)arg1;
 - (void)_slowScanDirectoryAtPath:(id)arg1;
 - (void)_startScan:(id)arg1;
-- (void)_unlinkAliasAtPath:(id)arg1;
-- (void)close;
-- (void)fseventAtPath:(id)arg1 withFlags:(unsigned long)arg2;
-- (void)fseventOnAlias:(id)arg1 withFlags:(unsigned long)arg2 lookup:(id)arg3;
-- (void)fseventOnContainerPath:(id)arg1 withFlags:(unsigned long)arg2;
-- (void)fseventOnDeadPath:(id)arg1 withFlags:(unsigned long)arg2 lookup:(id)arg3;
-- (void)fseventOnDirectory:(id)arg1 withFlags:(unsigned long)arg2 lookup:(id)arg3;
-- (void)fseventOnDocument:(id)arg1 withFlags:(unsigned long)arg2 lookup:(id)arg3;
-- (void)fseventOnRootPath:(id)arg1 withFlags:(unsigned long)arg2;
+- (void)createThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3;
+- (void)didChangeLostScanStatusForContainer:(id)arg1;
+- (void)endReadCoordinationInZone:(id)arg1;
+- (void)fseventAtPath:(id)arg1 flags:(unsigned long)arg2;
+- (void)fseventInsideSharedEnclosure:(id)arg1 flags:(unsigned long)arg2;
+- (void)fseventOnAlias:(id)arg1 flags:(unsigned long)arg2 lookup:(id)arg3;
+- (void)fseventOnContainer:(id)arg1 flags:(unsigned long)arg2;
+- (void)fseventOnDirectory:(id)arg1 flags:(unsigned long)arg2 lookup:(id)arg3;
+- (void)fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 lookup:(id)arg3;
+- (void)fseventOnRoot:(id)arg1 flags:(unsigned long)arg2;
+- (void)fseventOnSharedRoot:(id)arg1 flags:(unsigned long)arg2;
 - (id)initWithAccountSession:(id)arg1;
-- (id)itemForCreatedDocumentsDirectory:(id)arg1 container:(id)arg2;
+- (id)itemForCreatedDocumentsDirectory:(id)arg1 container:(id)arg2 path:(id)arg3;
 - (id)lookupAndReadItemUnderCoordinationAtURL:(id)arg1;
+- (id)lostScanGroup;
 - (void)readUnderCoordinationAtURL:(id)arg1;
 - (BOOL)readUnderCoordinationWithLookup:(id)arg1;
 - (void)reset;
 - (void)resume;
-- (void)scanContainerAtPathIfNeeded:(id)arg1;
+- (void)scanContainerDocumentsIfNeeded:(id)arg1;
 - (id)serialQueue;
+- (BOOL)startReadCoordinationInZone:(id)arg1;
 - (void)suspend;
+- (void)unscheduleContainerForLostScan:(id)arg1;
 
 @end

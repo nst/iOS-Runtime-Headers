@@ -7,18 +7,22 @@
 @interface CKDPRecordRetrieveChangesRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int maxChanges : 1; 
+        unsigned int requestedChangeTypes : 1; 
     } _has;
     unsigned int _maxChanges;
+    int _requestedChangeTypes;
     CKDPRequestedFields *_requestedFields;
     NSData *_syncContinuationToken;
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
 @property BOOL hasMaxChanges;
+@property BOOL hasRequestedChangeTypes;
 @property(readonly) BOOL hasRequestedFields;
 @property(readonly) BOOL hasSyncContinuationToken;
 @property(readonly) BOOL hasZoneIdentifier;
 @property unsigned int maxChanges;
+@property int requestedChangeTypes;
 @property(retain) CKDPRequestedFields * requestedFields;
 @property(retain) NSData * syncContinuationToken;
 @property(retain) CKDPRecordZoneIdentifier * zoneIdentifier;
@@ -31,6 +35,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasMaxChanges;
+- (BOOL)hasRequestedChangeTypes;
 - (BOOL)hasRequestedFields;
 - (BOOL)hasSyncContinuationToken;
 - (BOOL)hasZoneIdentifier;
@@ -40,10 +45,13 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
+- (int)requestedChangeTypes;
 - (id)requestedFields;
 - (Class)responseClass;
 - (void)setHasMaxChanges:(BOOL)arg1;
+- (void)setHasRequestedChangeTypes:(BOOL)arg1;
 - (void)setMaxChanges:(unsigned int)arg1;
+- (void)setRequestedChangeTypes:(int)arg1;
 - (void)setRequestedFields:(id)arg1;
 - (void)setSyncContinuationToken:(id)arg1;
 - (void)setZoneIdentifier:(id)arg1;

@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
+@class NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface TSUNumberFormatter : NSObject {
     struct __CFString { } *mAdditionalCurrencyCode;
     struct __CFArray { } *mAdditionalCurrencyCodeFormatters;
     NSMutableDictionary *mCurrencyCodeToHalfWidthSymbolMap;
-    NSMutableDictionary *mCurrencyCodeToSymbolMap;
+    NSDictionary *mCurrencyCodeToSymbolMap;
     struct __CFArray { } *mCurrencyFormatters;
     NSString *mCurrencyString;
     struct __CFArray { } *mDecimalFormatters;
@@ -28,13 +28,14 @@
 
 + (id)availableCurrencyCodes;
 + (id)currencySymbolForCurrencyCode:(id)arg1;
++ (id)currencySymbolForCurrencyCode:(id)arg1 locale:(struct __CFLocale { }*)arg2;
 + (id)currentLocaleCurrencyCode;
 + (id)currentLocaleCurrencyDecimalSeparator;
 + (id)currentLocaleDecimalSeparator;
 + (id)currentLocaleListSeparator;
-+ (id)currentNonCachedLocaleCurrencyCode;
 + (id)currentNonCachedLocaleCurrencyDecimalSeparator;
 + (id)currentNonCachedLocaleDecimalSeparator;
++ (id)defaultCurrencyCodeForLocale:(struct __CFLocale { }*)arg1;
 + (unsigned short)defaultDecimalPlacesForCurrencyCode:(id)arg1;
 + (id)defaultFormatStringForValueType:(int)arg1;
 + (id)defaultFormatStringForValueType:(int)arg1 negativeStyle:(int)arg2;
@@ -44,15 +45,17 @@
 + (id)formatterForLocale:(struct __CFLocale { }*)arg1;
 + (void)initialize;
 + (id)localizedPercentSymbol;
++ (id)localizedPercentSymbolForLocale:(struct __CFLocale { }*)arg1;
 + (id)numberFormatStringSpecialSymbols;
 + (int)positionOfCurrencySymbolInNumberFormatSubpattern:(id)arg1;
 + (int)positionOfMinusSignInNumberFormatSubpattern:(id)arg1;
 + (int)positionOfSymbol:(id)arg1 inNumberFormatSubpattern:(id)arg2;
++ (id)stringBySubstitutingCharactersCFNumberFormatterDoesntUnderstand:(id)arg1;
 + (id)userVisibleCurrencyCodes;
 
+- (id)currencyCode;
 - (BOOL)currencyFromString:(struct __CFString { }*)arg1 additionalCurrencyCode:(struct __CFString { }*)arg2 value:(double*)arg3 formatString:(const struct __CFString {}**)arg4 currencyCode:(const struct __CFString {}**)arg5;
 - (id)currencySymbolForCurrencyCode:(id)arg1;
-- (id)currentLocaleCurrencyCode;
 - (void)dealloc;
 - (BOOL)decimalFromString:(struct __CFString { }*)arg1 value:(double*)arg2 formatString:(const struct __CFString {}**)arg3;
 - (id)defaultFormatStringForValueType:(int)arg1;

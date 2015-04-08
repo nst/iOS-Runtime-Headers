@@ -14,10 +14,13 @@
 @property long long protocolVersion;
 @property(retain) NSObject<OS_dispatch_queue> * replyQueue;
 
++ (id)convertToXPC:(id)arg1 version:(unsigned long long)arg2;
+
 - (void).cxx_destruct;
 - (void)accessPlugIns:(id)arg1 flags:(unsigned long long)arg2 reply:(id)arg3;
 - (void)addPlugIns:(id)arg1 reply:(id)arg2;
 - (void)bulkPlugins:(unsigned long long)arg1 reply:(id)arg2;
+- (id)convertFromXPC:(id)arg1;
 - (void)copyReceipt:(id)arg1;
 - (id)errorInReply:(id)arg1;
 - (void)holdPlugins:(id)arg1 flags:(unsigned long long)arg2 reply:(id)arg3;

@@ -8,11 +8,13 @@
     BOOL _animated;
     int _dataType;
     NSError *_error;
+    int _status;
 }
 
 @property BOOL animated;
 @property int dataType;
 @property(retain) NSError * error;
+@property int status;
 
 - (BOOL)animated;
 - (int)dataType;
@@ -20,5 +22,7 @@
 - (void)setAnimated:(BOOL)arg1;
 - (void)setDataType:(int)arg1;
 - (void)setError:(id)arg1;
+- (void)setStatus:(int)arg1;
+- (int)status;
 
 @end

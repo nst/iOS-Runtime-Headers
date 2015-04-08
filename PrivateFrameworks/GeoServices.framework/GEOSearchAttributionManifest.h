@@ -5,12 +5,19 @@
 @class NSMutableArray;
 
 @interface GEOSearchAttributionManifest : PBCodable <NSCopying> {
+    NSMutableArray *_actionComponentMapEntries;
     NSMutableArray *_searchAttributionSources;
 }
 
+@property(retain) NSMutableArray * actionComponentMapEntries;
 @property(retain) NSMutableArray * searchAttributionSources;
 
+- (id)actionComponentMapEntries;
+- (id)actionComponentMapEntriesAtIndex:(unsigned int)arg1;
+- (unsigned int)actionComponentMapEntriesCount;
+- (void)addActionComponentMapEntries:(id)arg1;
 - (void)addSearchAttributionSources:(id)arg1;
+- (void)clearActionComponentMapEntries;
 - (void)clearSearchAttributionSources;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -24,6 +31,7 @@
 - (id)searchAttributionSources;
 - (id)searchAttributionSourcesAtIndex:(unsigned int)arg1;
 - (unsigned int)searchAttributionSourcesCount;
+- (void)setActionComponentMapEntries:(id)arg1;
 - (void)setSearchAttributionSources:(id)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface GEOPhoneNumberMUIDMapper : NSObject {
+    NSString *_filePath;
     NSMutableDictionary *_phoneNumberMuidMapping;
     NSMutableArray *_uniquePhoneNumbers;
     NSObject<OS_dispatch_queue> *_writeQ;

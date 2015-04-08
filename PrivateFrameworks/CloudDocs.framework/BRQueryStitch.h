@@ -17,6 +17,7 @@
 
 - (void)_creationDone;
 - (void)_deletionDone;
+- (void)_enableUpdatesFromIPCAfterStitchingOnAllQueries;
 - (void)_renameDone;
 - (void)dealloc;
 - (id)description;

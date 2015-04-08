@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, TSDLayout<TSWPLayoutTarget>, TSDWrapPolygon, TSUPointerKeyDictionary, TSWPColumn;
+@class NSArray, NSMutableArray, TSDLayout<TSWPLayoutTarget>, TSDWrapSegments, TSUPointerKeyDictionary, TSWPColumn;
 
 @interface TPTextWrapCookie : NSObject {
     TSWPColumn *_column;
     NSMutableArray *_floatingWrappables;
-    TSDWrapPolygon *_interiorWrapPolygon;
+    TSDWrapSegments *_interiorWrapSegments;
     TSDLayout<TSWPLayoutTarget> *_target;
     struct CGAffineTransform { 
         float a; 
@@ -17,12 +17,12 @@
         float tx; 
         float ty; 
     } _targetInverseTransformInRoot;
-    TSUPointerKeyDictionary *_wrapPathInverseTransformInRootDictionary;
+    TSUPointerKeyDictionary *_wrapSegmentsInverseTransformInRootDictionary;
 }
 
 @property(retain) TSWPColumn * column;
 @property(retain,readonly) NSArray * floatingWrappables;
-@property(retain) TSDWrapPolygon * interiorWrapPolygon;
+@property(retain) TSDWrapSegments * interiorWrapSegments;
 @property TSDLayout<TSWPLayoutTarget> * target;
 @property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } targetInverseTransformInRoot;
 
@@ -33,12 +33,12 @@
 - (void)dealloc;
 - (id)floatingWrappables;
 - (id)initWithColumn:(id)arg1 targetLayout:(id)arg2;
-- (id)interiorWrapPolygon;
+- (id)interiorWrapSegments;
 - (void)setColumn:(id)arg1;
-- (void)setInteriorWrapPolygon:(id)arg1;
+- (void)setInteriorWrapSegments:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })targetInverseTransformInRoot;
-- (id)transformedWrapPolygonForWrappable:(id)arg1 canvasSpaceToWrapSpaceTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (id)transformedWrapSegmentsForWrappable:(id)arg1 canvasSpaceToWrapSpaceTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
 
 @end

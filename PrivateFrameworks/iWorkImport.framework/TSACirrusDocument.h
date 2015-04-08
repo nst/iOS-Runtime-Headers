@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <NSFilePresenter>, NSString, NSURL, NSUUID, TSADocumentRoot, TSPObjectContext, TSUTemporaryDirectory;
+@class <NSFilePresenter>, NSString, NSURL, NSUUID, TSADocumentRoot, TSKCollaborationState, TSPObjectContext, TSUTemporaryDirectory;
 
 @interface TSACirrusDocument : NSObject <TSADocumentRootDelegate, TSPObjectContextDelegate> {
     NSURL *_URL;
@@ -15,7 +15,7 @@
 @property(copy) NSURL * URL;
 @property(readonly) BOOL areNewExternalReferencesToDataAllowed;
 @property(readonly) NSUUID * baseUUIDForObjectUUID;
-@property(readonly) BOOL canUpgradeDocumentSupport;
+@property(readonly) TSKCollaborationState * collaborationState;
 @property(retain) TSPObjectContext * context;
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * defaultDraftName;
@@ -27,8 +27,11 @@
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL ignoreDocumentSupport;
 @property(readonly) BOOL isDocumentSupportTemporary;
+@property(readonly) BOOL isInCollaborationMode;
+@property(readonly) BOOL isInReadOnlyMode;
 @property(readonly) NSString * name;
 @property(readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
+@property(readonly) BOOL skipDocumentUpgrade;
 @property(readonly) Class superclass;
 
 - (id)URL;
@@ -40,12 +43,12 @@
 - (id)documentPasswordHint;
 - (id)documentPasswordHintForWrite;
 - (id)documentRoot;
-- (id)initWithURL:(id)arg1 error:(id*)arg2;
-- (id)initWithURL:(id)arg1 error:(id*)arg2 passphrase:(id)arg3;
+- (id)initWithURL:(id)arg1 appDocumentResourcesURL:(id)arg2 appDocumentResourcesMetadataURL:(id)arg3 error:(id*)arg4 passphrase:(id)arg5;
 - (id)name;
 - (void)presentPersistenceError:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setURL:(id)arg1;
+- (BOOL)skipDocumentUpgrade;
 - (id)supportDirectoryURL;
 
 @end

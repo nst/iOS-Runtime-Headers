@@ -177,7 +177,7 @@
 - (unsigned int)maxDigits;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)minDigits;
-- (struct CGImage { }*)newImageWithTextureAtlases:(id)arg1 atlasToImageCache:(id)arg2 contentScale:(float)arg3 colors:(struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; }*)arg4;
+- (struct CGImage { }*)newImageWithTextureAtlases:(id)arg1 atlasToImageCache:(id)arg2 atlasToImageCacheLock:(id)arg3 contentScale:(float)arg4 colors:(struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; }*)arg5;
 - (id)nonDigitFontName;
 - (float)nonDigitFontSize;
 - (float)paddingLeft;

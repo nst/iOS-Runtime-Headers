@@ -9,6 +9,7 @@
 - (id)genericToSpecificPropertyMap;
 - (void)p_initializeAxisIDs;
 - (Class)presetImagerClass;
+- (int)representativeGridValueAxisType;
 - (BOOL)requiresYAxisOrdinal;
 - (unsigned int)styleIndexForAxisID:(id)arg1;
 - (id)supportedAxisScales;
@@ -18,6 +19,7 @@
 - (BOOL)supportsGroupedShadows;
 - (BOOL)supportsIndividualShadowRendering;
 - (BOOL)supportsMultipleSeriesTypes;
+- (BOOL)supportsReferenceLines;
 - (BOOL)supportsSymbolOverhang;
 - (void)updateTitlesForExportingModel:(id)arg1 info:(id)arg2;
 - (id)userInterfaceName;

@@ -24,6 +24,7 @@
 - (void)_appendSubclassDescription:(id)arg1;
 - (int)_buttonType;
 - (BOOL)_delaysRecognitionForGreaterTapCounts;
+- (struct CGPoint { float x1; float x2; })_digitizerLocation;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;

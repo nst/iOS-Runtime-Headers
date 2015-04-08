@@ -22,16 +22,7 @@
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)layouts;
-- (unsigned int)offsetAtAttributeIndex:(unsigned int)arg1;
 - (void)reset;
 - (id)serializeDescriptor;
-- (void)setStride:(unsigned int)arg1 atVertexBufferIndex:(unsigned int)arg2;
-- (void)setStride:(unsigned int)arg1 stepFunction:(unsigned int)arg2 stepRate:(unsigned int)arg3 atVertexBufferIndex:(unsigned int)arg4;
-- (void)setVertexFormat:(unsigned int)arg1 offset:(unsigned int)arg2 vertexBufferIndex:(unsigned int)arg3 atAttributeIndex:(unsigned int)arg4;
-- (unsigned int)stepFunctionAtVertexBufferIndex:(unsigned int)arg1;
-- (unsigned int)stepRateAtVertexBufferIndex:(unsigned int)arg1;
-- (unsigned int)strideAtVertexBufferIndex:(unsigned int)arg1;
-- (unsigned int)vertexBufferIndexAtAttributeIndex:(unsigned int)arg1;
-- (unsigned int)vertexFormatAtAttributeIndex:(unsigned int)arg1;
 
 @end

@@ -10,10 +10,11 @@
 
 @property(getter=isActivating,readonly) BOOL activating;
 @property(readonly) NSString * applicationName;
-@property(readonly) BOOL centerOnInitialSelection;
 @property(retain) <TSKCompatibilityDelegate> * compatibilityDelegate;
 @property(readonly) BOOL designModeEnabled;
 @property(readonly) NSString * documentTypeDisplayName;
+@property unsigned int iWorkAuthorColorIndex;
+@property(copy) NSString * iWorkAuthorName;
 @property(getter=isInBackground,readonly) BOOL inBackground;
 @property(readonly) BOOL isCanvasFullScreen;
 @property(readonly) BOOL performanceModeEnabled;
@@ -31,13 +32,15 @@
 
 - (id)appChartPropertyOverrides;
 - (id)applicationName;
+- (id)applicationNameForTitleBar;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationToolbarFrame;
-- (BOOL)centerOnInitialSelection;
 - (id)compatibilityDelegate;
 - (id)createCompatibilityDelegate;
 - (id)defaultHyperlinkURL;
 - (BOOL)designModeEnabled;
 - (id)documentTypeDisplayName;
+- (unsigned int)iWorkAuthorColorIndex;
+- (id)iWorkAuthorName;
 - (id)init;
 - (id)invalidURLSchemes;
 - (BOOL)isActivating;
@@ -47,12 +50,14 @@
 - (BOOL)performanceModeEnabled;
 - (id)previewImageForType:(id)arg1;
 - (void)setCompatibilityDelegate:(id)arg1;
+- (void)setIWorkAuthorColorIndex:(unsigned int)arg1;
+- (void)setIWorkAuthorName:(id)arg1;
 - (BOOL)shouldGenerateGuidesForOffscreenLayouts;
 - (BOOL)shouldRenderContactShadow;
 - (BOOL)shouldRenderCurvedShadow;
 - (BOOL)shouldValidateMasterLayoutWhileInsertingRows;
 - (BOOL)supportsRTL;
-- (BOOL)supportsScrollingInPhoneCommentUI;
+- (BOOL)supportsShrinkTextToFit;
 - (BOOL)tableCellInspectorShowsNaturalAlignment;
 - (BOOL)tableHeaderInspectorShowsFreezeHeaderColumnsSwitch;
 - (BOOL)tableHeaderInspectorShowsFreezeHeaderRowsSwitch;

@@ -15,12 +15,13 @@
 - (void*)_copyOfUnifiedMeCard;
 - (void)_coreRecentsContactsForPropertyID:(int)arg1 queue:(id)arg2 completion:(id)arg3;
 - (void)dealloc;
+- (void)deleteRecent:(id)arg1 forPropertyID:(int)arg2;
 - (void)deleteRecentsForPropertyID:(int)arg1;
 - (id)init;
 - (id)meCardEntriesForPropertyID:(int)arg1;
 - (void)meCardEntriesForPropertyID:(int)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)recentsForPropertyID:(int)arg1;
 - (void)recentsForPropertyID:(int)arg1 queue:(id)arg2 completion:(id)arg3;
-- (void)saveItemToCoreRecents:(id)arg1 contact:(id)arg2 propertyID:(int)arg3;
+- (id)saveItemToCoreRecents:(id)arg1 contact:(id)arg2 propertyID:(int)arg3;
 
 @end

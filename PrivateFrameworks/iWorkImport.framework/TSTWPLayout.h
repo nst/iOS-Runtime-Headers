@@ -34,7 +34,7 @@
             float height; 
         } size; 
     } _cachedMaskRect;
-    struct { 
+    struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
             unsigned char column; 
@@ -45,7 +45,7 @@
             unsigned short numberOfRows; 
         } size; 
     } _cachedMaskSpillRange;
-    struct { 
+    struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
             unsigned char column; 
@@ -69,8 +69,8 @@
 @property(retain) TSTCellStyle * cachedCellStyle;
 @property BOOL cachedCellWraps;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cachedMaskRect;
-@property struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cachedMaskSpillRange;
-@property struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cachedMergeRange;
+@property struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cachedMaskSpillRange;
+@property struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cachedMergeRange;
 @property(retain) TSWPPadding * cachedPadding;
 @property int cachedParagraphAlignment;
 @property(retain) TSWPParagraphStyle * cachedTextStyle;
@@ -84,8 +84,8 @@
 - (id)cachedCellStyle;
 - (BOOL)cachedCellWraps;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cachedMaskRect;
-- (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cachedMaskSpillRange;
-- (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cachedMergeRange;
+- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cachedMaskSpillRange;
+- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cachedMergeRange;
 - (id)cachedPadding;
 - (int)cachedParagraphAlignment;
 - (id)cachedTextStyle;
@@ -100,8 +100,8 @@
 - (void)setCachedCellStyle:(id)arg1;
 - (void)setCachedCellWraps:(BOOL)arg1;
 - (void)setCachedMaskRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCachedMaskSpillRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (void)setCachedMergeRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)setCachedMaskSpillRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)setCachedMergeRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)setCachedPadding:(id)arg1;
 - (void)setCachedParagraphAlignment:(int)arg1;
 - (void)setCachedTextStyle:(id)arg1;

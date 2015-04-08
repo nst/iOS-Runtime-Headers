@@ -219,7 +219,7 @@
 - (void)_editingTransitionAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_endSwiping:(BOOL)arg1;
 - (void)_finishedFadingGrabber:(id)arg1 finished:(BOOL)arg2;
-- (void)_focusStateDidChange;
+- (void)_focusedViewDidChange:(id)arg1;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_grabberBeganReorder:(id)arg1;
 - (void)_grabberDragged:(id)arg1 yDelta:(float)arg2;
@@ -238,7 +238,6 @@
 - (BOOL)_isDeleteAnimationInProgress;
 - (BOOL)_isDeleteCancelationAnimationInProgress;
 - (BOOL)_isFocusable;
-- (BOOL)_isFocusableElement;
 - (BOOL)_isHighlighted;
 - (BOOL)_isInModalViewController;
 - (BOOL)_isMultiselecting;
@@ -382,6 +381,7 @@
 - (id)backgroundView;
 - (id)bottomShadowColor;
 - (BOOL)canBecomeFirstResponder;
+- (BOOL)canBecomeFocused;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)clipsContents;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -406,6 +406,7 @@
 - (id)editingData:(BOOL)arg1;
 - (int)editingStyle;
 - (void)encodeWithCoder:(id)arg1;
+- (void)focusedViewDidChange;
 - (id)font;
 - (BOOL)hidesAccessoryWhenEditing;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -517,6 +518,7 @@
 - (void)setTextFieldOffset:(float)arg1;
 - (void)setTopShadowColor:(id)arg1;
 - (void)setWasSwiped:(BOOL)arg1;
+- (BOOL)shouldChangeFocusedItem:(id)arg1 heading:(unsigned int)arg2;
 - (BOOL)shouldIndentWhileEditing;
 - (void)showSelectedBackgroundView:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)showingDeleteConfirmation;

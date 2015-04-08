@@ -18,7 +18,7 @@
 @property BOOL appliesX;
 @property BOOL appliesY;
 @property(copy) NSString * keyPath;
-@property(retain) CALayer * sourceLayer;
+@property CALayer * sourceLayer;
 @property(copy) NSArray * sourcePoints;
 @property BOOL targetsSuperlayer;
 

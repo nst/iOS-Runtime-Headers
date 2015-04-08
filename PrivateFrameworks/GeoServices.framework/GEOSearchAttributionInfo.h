@@ -12,6 +12,7 @@
     NSArray *_logoPaths;
     NSArray *_snippetLogoPaths;
     unsigned int _version;
+    NSString *_webBaseActionURL;
 }
 
 @property(retain) NSArray * attributionApps;
@@ -19,6 +20,7 @@
 @property(retain) NSString * identifier;
 @property unsigned int requirementsMask;
 @property unsigned int version;
+@property(retain) NSString * webBaseActionURL;
 
 + (BOOL)supportsSecureCoding;
 
@@ -41,8 +43,10 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setRequirementsMask:(unsigned int)arg1;
 - (void)setVersion:(unsigned int)arg1;
+- (void)setWebBaseActionURL:(id)arg1;
 - (id)snippetLogoPathForScale:(float)arg1;
 - (BOOL)supportsActionURLs;
 - (unsigned int)version;
+- (id)webBaseActionURL;
 
 @end

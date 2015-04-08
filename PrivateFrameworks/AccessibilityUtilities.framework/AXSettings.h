@@ -139,6 +139,7 @@
 @property int voiceOverTouchBrailleDisplayOutputMode;
 @property int voiceOverTouchBrailleGesturesInputMode;
 @property BOOL voiceOverTouchBraillePanningAutoTurnsReadingContent;
+@property BOOL voiceOverTouchSingleLetterQuickNavEnabled;
 @property BOOL writeAXLogsToFile;
 @property BOOL zoomAlwaysUseWindowedZoomForTyping;
 @property(retain) NSString * zoomCurrentLensEffect;
@@ -227,6 +228,7 @@
 - (BOOL)assistiveTouchSwitchUsageConfirmed;
 - (id)assistiveTouchSwitches;
 - (id)axFeatureQueue;
+- (void)clearVoicePrefersCompactSettings;
 - (void)dealloc;
 - (BOOL)enableHearingAidReporter;
 - (id)gaxInternalSettingsActiveAppID;
@@ -403,6 +405,7 @@
 - (void)setVoiceOverTouchBrailleDisplayOutputMode:(int)arg1;
 - (void)setVoiceOverTouchBrailleGesturesInputMode:(int)arg1;
 - (void)setVoiceOverTouchBraillePanningAutoTurnsReadingContent:(BOOL)arg1;
+- (void)setVoiceOverTouchSingleLetterQuickNavEnabled:(BOOL)arg1;
 - (void)setWriteAXLogsToFile:(BOOL)arg1;
 - (void)setZoomAlwaysUseWindowedZoomForTyping:(BOOL)arg1;
 - (void)setZoomCurrentLensEffect:(id)arg1;
@@ -463,6 +466,7 @@
 - (int)voiceOverTouchBrailleDisplayOutputMode;
 - (int)voiceOverTouchBrailleGesturesInputMode;
 - (BOOL)voiceOverTouchBraillePanningAutoTurnsReadingContent;
+- (BOOL)voiceOverTouchSingleLetterQuickNavEnabled;
 - (BOOL)writeAXLogsToFile;
 - (BOOL)zoomAlwaysUseWindowedZoomForTyping;
 - (id)zoomCurrentLensEffect;

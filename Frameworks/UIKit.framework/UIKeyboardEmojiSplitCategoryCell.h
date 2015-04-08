@@ -2,18 +2,24 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel;
+@class UIImageView, UILabel, UIView;
 
 @interface UIKeyboardEmojiSplitCategoryCell : UITableViewCell {
+    UIView *_selectedCircle;
     UIImageView *_symbol;
     UILabel *_title;
 }
 
+@property(retain) UIView * selectedCircle;
 @property(retain) UIImageView * symbol;
 @property(retain) UILabel * title;
 
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)selectedCircle;
+- (void)setPressIndicatorHidden:(BOOL)arg1;
+- (void)setSelectedCircle:(id)arg1;
+- (void)setSelectedCircleBlendMode:(BOOL)arg1;
 - (void)setSymbol:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleText:(id)arg1;

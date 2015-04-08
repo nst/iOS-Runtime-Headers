@@ -32,7 +32,7 @@
 @property(retain) NSData * suggestionMetadata;
 @property double turnaroundTime;
 
-- (void)_geoMapItemsWithTraits:(id)arg1 handler:(id)arg2;
+- (void)_geoMapItemsWithHandler:(id)arg1;
 - (void)addNamedFeatures:(id)arg1;
 - (void)addPlaceResult:(id)arg1;
 - (void)addSuggestionEntryLists:(id)arg1;

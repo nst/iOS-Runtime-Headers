@@ -15,6 +15,7 @@
 @property(readonly) Class superclass;
 
 - (void)dealloc;
+- (id)description;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (void)saveToArchiver:(id)arg1;

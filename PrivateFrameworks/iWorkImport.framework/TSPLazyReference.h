@@ -2,14 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPLazyReferenceDelegate>, TSPComponent, TSPObject;
+@class <TSPLazyReferenceDelegate>, NSUUID, TSPComponent, TSPObject;
 
 @interface TSPLazyReference : NSObject <NSCopying> {
-    BOOL _allowUnknownObject;
     TSPComponent *_component;
     <TSPLazyReferenceDelegate> *_delegate;
+    struct { 
+        unsigned int isWeak : 1; 
+        unsigned int isExternal : 1; 
+        unsigned int allowUnknownObject : 1; 
+    } _flags;
     long long _identifier;
-    BOOL _isWeak;
     TSPObject *_strongObject;
     TSPObject *_weakObject;
 }
@@ -17,15 +20,18 @@
 @property TSPComponent * component;
 @property <TSPLazyReferenceDelegate> * delegate;
 @property(readonly) long long identifier;
+@property BOOL isExternal;
 @property(readonly) BOOL isWeak;
 @property(readonly) id object;
 @property(readonly) id objectIfLoaded;
+@property(readonly) NSUUID * objectUUID;
 @property(retain) TSPObject * strongObject;
 @property(readonly) TSPObject * weakObject;
 
 + (id)referenceForObject:(id)arg1;
 + (id)weakReferenceForObject:(id)arg1;
 
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addLoadObserver:(id)arg1 action:(SEL)arg2;
 - (id)component;
@@ -42,13 +48,17 @@
 - (id)initWithObject:(id)arg1 isWeak:(BOOL)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLazyReference:(id)arg1;
+- (BOOL)isExternal;
 - (BOOL)isWeak;
 - (id)object;
 - (id)objectIfLoaded;
+- (id)objectUUID;
 - (BOOL)referencesObject:(id)arg1;
-- (void)resetIdentifier;
+- (void)resetIdentifierFromCopy:(BOOL)arg1;
+- (void)resetToIdentifier:(long long)arg1;
 - (void)setComponent:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIsExternal:(BOOL)arg1;
 - (void)setStrongObject:(id)arg1;
 - (id)strongObject;
 - (id)weakObject;

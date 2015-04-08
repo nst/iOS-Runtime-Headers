@@ -6,22 +6,20 @@
    See Warning(s) below.
  */
 
-@class CKDRecordCache, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_group>, NSSet;
+@class CKDRecordCache, NSArray, NSDictionary, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_group>, NSSet;
 
 @interface CKDFetchRecordsOperation : CKDDatabaseOperation {
     unsigned int _URLOptions;
-    NSMutableDictionary *_assetFetchGroupsByRecord;
     NSSet *_assetFieldNamesToPublishURLs;
-    NSMutableArray *_assetsToFetch;
     CKDRecordCache *_cache;
     NSMutableDictionary *_cachedRecords;
     NSSet *_desiredKeySet;
-    NSMapTable *_desiredPackageFileIndexSetsByPackage;
     NSDictionary *_desiredPackageFileIndices;
+    NSMapTable *_downloadTasksByRecordID;
     NSMutableDictionary *_errorsByRecordID;
     NSObject<OS_dispatch_group> *_fetchRecordsGroup;
+    BOOL _forcePCSDecrypt;
     NSArray *_fullRecordsToFetch;
-    NSMutableArray *_packagesToFetch;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -42,18 +40,16 @@
 }
 
 @property unsigned int URLOptions;
-@property(retain) NSMutableDictionary * assetFetchGroupsByRecord;
 @property(retain) NSSet * assetFieldNamesToPublishURLs;
-@property(retain) NSMutableArray * assetsToFetch;
 @property(retain) CKDRecordCache * cache;
 @property(retain) NSMutableDictionary * cachedRecords;
 @property(retain) NSSet * desiredKeySet;
-@property(retain) NSMapTable * desiredPackageFileIndexSetsByPackage;
 @property(retain) NSDictionary * desiredPackageFileIndices;
+@property(retain) NSMapTable * downloadTasksByRecordID;
 @property(retain) NSMutableDictionary * errorsByRecordID;
 @property(retain) NSObject<OS_dispatch_group> * fetchRecordsGroup;
+@property BOOL forcePCSDecrypt;
 @property(retain) NSArray * fullRecordsToFetch;
-@property(retain) NSMutableArray * packagesToFetch;
 @property(copy) id recordFetchCompletionBlock;
 @property(copy) id recordFetchProgressBlock;
 @property(retain) NSArray * recordIDsToFetch;
@@ -66,54 +62,48 @@
 
 - (void).cxx_destruct;
 - (unsigned int)URLOptions;
-- (id)_assetFetchGroupForRecord:(id)arg1;
+- (void)_addDownloadTaskForRecord:(id)arg1 completionBlock:(id)arg2;
 - (void)_continueHandleFetchedRecord:(id)arg1;
 - (void)_decryptPropertiesOnRecord:(id)arg1;
-- (void)_didFetchAsset:(id)arg1 withError:(id)arg2;
-- (void)_didFetchPackage:(id)arg1 withError:(id)arg2;
-- (void)_enqueueAsset:(id)arg1 forRecord:(id)arg2 ifSignatureMatches:(id)arg3;
-- (void)_enqueueAssetContentFetchesForRecord:(id)arg1;
-- (void)_enqueuePackage:(id)arg1 forRecord:(id)arg2;
-- (void)_fetchAssets;
-- (void)_fetchPackages;
+- (void)_didDownloadAssetsWithError:(id)arg1;
+- (void)_downloadAssets;
 - (void)_fetchRecords;
+- (void)_finishAllDownloadTasksWithError:(id)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordFetch:(id)arg1 recordID:(id)arg2 etagMatched:(BOOL)arg3 responseCode:(id)arg4;
-- (id)assetFetchGroupsByRecord;
+- (BOOL)_prepareAsset:(id)arg1 record:(id)arg2 recordKey:(id)arg3 signature:(id)arg4;
 - (id)assetFieldNamesToPublishURLs;
-- (id)assetsToFetch;
 - (id)cache;
 - (id)cachedRecords;
 - (id)desiredKeySet;
-- (id)desiredPackageFileIndexSetsByPackage;
 - (id)desiredPackageFileIndices;
+- (id)downloadTasksByRecordID;
 - (id)errorForRecordID:(id)arg1;
 - (id)errorsByRecordID;
 - (id)fetchRecordsGroup;
+- (void)finishWithError:(id)arg1;
+- (BOOL)forcePCSDecrypt;
 - (id)fullRecordsToFetch;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (BOOL)makeStateTransition;
 - (id)nameForState:(unsigned int)arg1;
-- (id)packagesToFetch;
 - (id)recordFetchCompletionBlock;
 - (id)recordFetchProgressBlock;
 - (id)recordIDsToFetch;
 - (id)recordIDsToVersionETags;
 - (unsigned int)requestedTTL;
-- (void)setAssetFetchGroupsByRecord:(id)arg1;
 - (void)setAssetFieldNamesToPublishURLs:(id)arg1;
-- (void)setAssetsToFetch:(id)arg1;
 - (void)setCache:(id)arg1;
 - (void)setCachedRecords:(id)arg1;
 - (void)setDesiredKeySet:(id)arg1;
-- (void)setDesiredPackageFileIndexSetsByPackage:(id)arg1;
 - (void)setDesiredPackageFileIndices:(id)arg1;
+- (void)setDownloadTasksByRecordID:(id)arg1;
 - (void)setError:(id)arg1 forRecordID:(id)arg2;
 - (void)setErrorsByRecordID:(id)arg1;
 - (void)setFetchRecordsGroup:(id)arg1;
+- (void)setForcePCSDecrypt:(BOOL)arg1;
 - (void)setFullRecordsToFetch:(id)arg1;
-- (void)setPackagesToFetch:(id)arg1;
 - (void)setRecordFetchCompletionBlock:(id)arg1;
 - (void)setRecordFetchProgressBlock:(id)arg1;
 - (void)setRecordIDsToFetch:(id)arg1;

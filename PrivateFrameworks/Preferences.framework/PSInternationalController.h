@@ -44,7 +44,6 @@
 + (void)setLocaleOnly:(id)arg1;
 + (id)shortTitlesForLanguageIdentifiers:(id)arg1;
 + (id)titlesForLanguageIdentifiers:(id)arg1;
-+ (void)updateAppleLanguages:(id)arg1 showPreferredLanguages:(BOOL)arg2;
 + (id)validateLocale:(id)arg1;
 
 - (void)_removeBlackFrame;
@@ -62,6 +61,7 @@
 - (id)locale:(id)arg1;
 - (void)localeChangedAction;
 - (id)localizedLanguage:(id)arg1;
+- (void)logStatistics;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (BOOL)onlyOneSystemLanguageInPreferredLanguages;
 - (id)preferredLanguagesGroup;
@@ -99,5 +99,6 @@
 - (id)updatedAppleLanguages;
 - (id)updatedDeviceLanguage;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

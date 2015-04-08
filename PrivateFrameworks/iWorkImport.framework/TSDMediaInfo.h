@@ -25,7 +25,6 @@
 @property BOOL wasMediaReplaced;
 
 - (struct CGPoint { float x1; float x2; })centerForReplacingWithNewMedia;
-- (id)commandForSettingBoxedValue:(id)arg1 forProperty:(int)arg2;
 - (id)copyWithContext:(id)arg1;
 - (struct CGSize { float x1; float x2; })defaultOriginalSize;
 - (unsigned int)flags;
@@ -34,6 +33,8 @@
 - (id)mediaDisplayName;
 - (id)mediaFileType;
 - (struct CGSize { float x1; float x2; })originalSize;
+- (id)propertyNameForFlagsCommand;
+- (id)propertyNameForOriginalSizeCommand;
 - (struct CGSize { float x1; float x2; })rawDataSize;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setGeometry:(id)arg1;

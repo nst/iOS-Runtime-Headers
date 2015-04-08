@@ -186,6 +186,7 @@
 - (id)barTintColor;
 - (void)beginCustomizingItems:(id)arg1;
 - (id)buttonItems;
+- (BOOL)canBecomeFocused;
 - (void)dealloc;
 - (id)delegate;
 - (void)dismissCustomizeSheet:(BOOL)arg1;
@@ -205,6 +206,7 @@
 - (float)itemWidth;
 - (id)items;
 - (void)layoutSubviews;
+- (id)preferredFocusedItem;
 - (void)removeConstraint:(id)arg1;
 - (id)selectedImageTintColor;
 - (id)selectedItem;
@@ -234,7 +236,6 @@
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
 - (void)setTranslucent:(BOOL)arg1;
 - (id)shadowImage;
-- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

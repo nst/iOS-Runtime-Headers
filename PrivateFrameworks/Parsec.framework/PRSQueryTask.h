@@ -28,6 +28,10 @@
 @property BOOL started;
 @property BOOL webSearch;
 
++ (void)initialize;
++ (void)resumeDecoding;
++ (void)suspendDecoding;
+
 - (void).cxx_destruct;
 - (void)cancel;
 - (BOOL)canceled;

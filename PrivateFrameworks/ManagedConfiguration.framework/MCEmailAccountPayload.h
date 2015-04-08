@@ -14,15 +14,18 @@
     NSString *_incomingMailServerIMAPPathPrefix;
     NSNumber *_incomingMailServerPortNumber;
     BOOL _incomingMailServerUseSSL;
+    NSNumber *_incomingMailServerUseSSLNum;
     NSString *_incomingMailServerUsername;
     NSString *_incomingPassword;
     NSString *_outgoingMailServerAuthentication;
     NSString *_outgoingMailServerHostname;
     NSNumber *_outgoingMailServerPortNumber;
     BOOL _outgoingMailServerUseSSL;
+    NSNumber *_outgoingMailServerUseSSLNum;
     NSString *_outgoingMailServerUsername;
     NSString *_outgoingPassword;
     BOOL _outgoingPasswordSameAsIncomingPassword;
+    NSNumber *_outgoingPasswordSameAsIncomingPasswordNum;
 }
 
 @property(retain,readonly) NSString * emailAccountDescription;
@@ -34,15 +37,18 @@
 @property(retain,readonly) NSString * incomingMailServerIMAPPathPrefix;
 @property(retain,readonly) NSNumber * incomingMailServerPortNumber;
 @property(readonly) BOOL incomingMailServerUseSSL;
+@property(readonly) NSNumber * incomingMailServerUseSSLNum;
 @property(retain,readonly) NSString * incomingMailServerUsername;
 @property(retain,readonly) NSString * incomingPassword;
 @property(retain,readonly) NSString * outgoingMailServerAuthentication;
 @property(retain,readonly) NSString * outgoingMailServerHostname;
 @property(retain,readonly) NSNumber * outgoingMailServerPortNumber;
 @property(readonly) BOOL outgoingMailServerUseSSL;
+@property(readonly) NSNumber * outgoingMailServerUseSSLNum;
 @property(retain,readonly) NSString * outgoingMailServerUsername;
 @property(retain,readonly) NSString * outgoingPassword;
 @property(readonly) BOOL outgoingPasswordSameAsIncomingPassword;
+@property(readonly) NSNumber * outgoingPasswordSameAsIncomingPasswordNum;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
@@ -62,6 +68,7 @@
 - (id)incomingMailServerIMAPPathPrefix;
 - (id)incomingMailServerPortNumber;
 - (BOOL)incomingMailServerUseSSL;
+- (id)incomingMailServerUseSSLNum;
 - (id)incomingMailServerUsername;
 - (id)incomingPassword;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
@@ -69,9 +76,11 @@
 - (id)outgoingMailServerHostname;
 - (id)outgoingMailServerPortNumber;
 - (BOOL)outgoingMailServerUseSSL;
+- (id)outgoingMailServerUseSSLNum;
 - (id)outgoingMailServerUsername;
 - (id)outgoingPassword;
 - (BOOL)outgoingPasswordSameAsIncomingPassword;
+- (id)outgoingPasswordSameAsIncomingPasswordNum;
 - (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 - (id)subtitle1Description;

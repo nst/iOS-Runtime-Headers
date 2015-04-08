@@ -21,6 +21,7 @@
 + (BOOL)canFilterByProperty:(id)arg1;
 
 - (void).cxx_destruct;
+- (int)MCD_sortPlaylistByName:(id)arg1;
 - (int)_sortPlaylistByName:(id)arg1;
 - (id)artworkCatalogsWithMaximumCount:(unsigned int)arg1;
 - (BOOL)canPlayUsingNetworkType:(int)arg1;

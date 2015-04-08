@@ -39,7 +39,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)geoPlaces;
-- (id)init;
 - (id)initWithName:(id)arg1 type:(unsigned int)arg2;
 - (id)localizedName;
 - (unsigned int)matchingCount;

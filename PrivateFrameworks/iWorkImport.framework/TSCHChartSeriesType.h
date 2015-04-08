@@ -35,6 +35,7 @@
 + (id)stackedBarSeries;
 + (id)stackedColumn3DSeries;
 + (id)stackedColumnSeries;
++ (id)styleArchTypes;
 
 - (unsigned int)adjustLabelPosition:(unsigned int)arg1 forAxisValue:(double)arg2 intercept:(double)arg3;
 - (id)autorelease;
@@ -73,6 +74,7 @@
 - (Class)sceneObjectClass;
 - (unsigned int)seriesIndexForDrawing:(id)arg1;
 - (id)seriesRendererClasses;
+- (int)specificFillSetFillProperty;
 - (id)supportedSymbols;
 - (id)supportedValueLabelsAxisCombinations;
 - (BOOL)supportsBarGap;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSData, NSNumber, NSString, NSURL;
+@class NSData, NSNumber, NSURL;
 
 @interface CKPackageItem : NSObject {
     NSNumber *_deviceID;
@@ -12,7 +12,6 @@
     unsigned long long _itemID;
     long long _offset;
     int _packageIndex;
-    NSString *_referenceIdentifier;
     long _sectionIndex;
     NSData *_signature;
     long long _size;
@@ -26,7 +25,6 @@
 @property unsigned long long itemID;
 @property long long offset;
 @property int packageIndex;
-@property(retain) NSString * referenceIdentifier;
 @property long sectionIndex;
 @property(retain) NSData * signature;
 @property long long size;
@@ -44,7 +42,6 @@
 - (unsigned long long)itemID;
 - (long long)offset;
 - (int)packageIndex;
-- (id)referenceIdentifier;
 - (long)sectionIndex;
 - (void)setDeviceID:(id)arg1;
 - (void)setFileID:(id)arg1;
@@ -53,7 +50,6 @@
 - (void)setItemID:(unsigned long long)arg1;
 - (void)setOffset:(long long)arg1;
 - (void)setPackageIndex:(int)arg1;
-- (void)setReferenceIdentifier:(id)arg1;
 - (void)setSectionIndex:(long)arg1;
 - (void)setSignature:(id)arg1;
 - (void)setSize:(long long)arg1;

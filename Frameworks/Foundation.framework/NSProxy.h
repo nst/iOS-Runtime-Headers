@@ -65,6 +65,17 @@
 + (Class)superclass;
 + (struct _NSZone { }*)zone;
 
+- (BOOL)_accessibilityBoolValueForKey:(id)arg1;
+- (int)_accessibilityIntegerValueForKey:(id)arg1;
+- (void)_accessibilityRemoveValueForKey:(id)arg1;
+- (void)_accessibilitySetAssignedValue:(id)arg1 forKey:(id)arg2;
+- (void)_accessibilitySetBoolValue:(BOOL)arg1 forKey:(id)arg2;
+- (void)_accessibilitySetIntegerValue:(int)arg1 forKey:(id)arg2;
+- (void)_accessibilitySetRetainedValue:(id)arg1 forKey:(id)arg2;
+- (void)_accessibilitySetUnsignedIntegerValue:(unsigned int)arg1 forKey:(id)arg2;
+- (void)_accessibilitySetValue:(id)arg1 forKey:(id)arg2 storageMode:(int)arg3;
+- (unsigned int)_accessibilityUnsignedIntegerValueForKey:(id)arg1;
+- (id)_accessibilityValueForKey:(id)arg1;
 - (BOOL)_allowsDirectEncoding;
 - (id)_copyDescription;
 - (BOOL)_isDeallocating;

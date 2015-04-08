@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @class NSString;
 
 @interface TSTTableHeaderStorageBucket : TSPObject <TSTTableHeaderStorage> {
@@ -20,9 +15,9 @@
 @property float horizontalScaleFactor;
 @property(readonly) Class superclass;
 
-- (void)applyFunction:(int (*)())arg1 withState:(void*)arg2 willModify:(BOOL)arg3;
 - (int)count;
 - (void)dealloc;
+- (void)enumerateHeadersWithBlock:(id)arg1;
 - (unsigned long)flushableSize;
 - (id)headerForKey:(unsigned long)arg1 willModify:(BOOL)arg2;
 - (id)headerForKey:(unsigned long)arg1 willModify:(BOOL)arg2 createIfNotThere:(BOOL)arg3;
@@ -30,7 +25,6 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (unsigned long)lowerBound:(unsigned long)arg1;
-- (void)makeHeadersPerformSelector:(SEL)arg1 willModify:(BOOL)arg2;
 - (unsigned long)maxKey;
 - (unsigned long)minKey;
 - (id)packageLocator;

@@ -89,6 +89,7 @@
 @property(readonly) float ticLength;
 @property float ticRadius;
 
+- (void).cxx_destruct;
 - (float)bearing;
 - (void)dealloc;
 - (void)generateCompassPoints;

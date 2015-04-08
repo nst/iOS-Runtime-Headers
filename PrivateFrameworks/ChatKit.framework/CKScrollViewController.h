@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKScheduledUpdater, UIScrollView;
+@class IMScheduledUpdater, UIScrollView;
 
 @interface CKScrollViewController : CKViewController {
     float _bottomInsetPadding;
@@ -21,7 +21,7 @@
     UIScrollView *_scrollView;
     BOOL _topInsetIncludesPalette;
     float _topInsetPadding;
-    CKScheduledUpdater *_updater;
+    IMScheduledUpdater *_updater;
 }
 
 @property(readonly) float bottomInsetPadding;
@@ -34,7 +34,7 @@
 @property(readonly) UIScrollView * scrollView;
 @property(readonly) BOOL topInsetIncludesPalette;
 @property(readonly) float topInsetPadding;
-@property(retain) CKScheduledUpdater * updater;
+@property(retain) IMScheduledUpdater * updater;
 
 - (float)_bottomRotatingFooterHeight;
 - (void)_changedStatusBarFrame:(id)arg1;
@@ -48,6 +48,7 @@
 - (void)contentInsetDidChange;
 - (void)contentInsetWillChange:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 animated:(BOOL)arg2 duration:(float)arg3;
 - (void)dealloc;
+- (void)endHoldingScrollGeometryUpdatesForAllKeys;
 - (void)endHoldingScrollGeometryUpdatesForKey:(id)arg1;
 - (id)init;
 - (BOOL)isKeyboardOnscreenWithoutAccessoryView;

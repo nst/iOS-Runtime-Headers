@@ -90,6 +90,7 @@
         float greenGain; 
         float blueGain; 
     } _deviceWhiteBalanceGains;
+    NSMutableDictionary *_dutyCycleMetadataCache;
     BOOL _enableSphereWhenAvailable;
     int _expectedImagesForCaptureStillImageNow;
     struct { 
@@ -247,6 +248,7 @@
 - (BOOL)_unprepareStillImageQueue;
 - (BOOL)_unprepareStreamQueue;
 - (long)_updateAutoFocusRectIfNeededForZoomFactor:(float)arg1;
+- (void)_updateDutyCycleMetadataCacheForActiveFormatIndex:(int)arg1;
 - (long)_updateExposureRectIfNeededForZoomFactor:(float)arg1;
 - (void)_updateExposureStateForAutofocusProperty:(struct __CFString { }*)arg1;
 - (long)_updateFaceDetectionConfigurationOnStream:(id)arg1;

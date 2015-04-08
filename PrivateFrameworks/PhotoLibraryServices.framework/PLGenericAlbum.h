@@ -6,7 +6,6 @@
 
 @interface PLGenericAlbum : _PLGenericAlbum <PLAlbumProtocol, PLDerivedAlbumOrigin, PLIndexMappersDataOrigin, PLOrderKeyObject> {
     NSObject<PLIndexMappingCache> *_derivededAlbums[5];
-    BOOL _isSpecial;
     BOOL didRegisteredWithUserInterfaceContext;
     BOOL isRegisteredForChanges;
 }
@@ -76,6 +75,7 @@
 @property(readonly) unsigned int videosCount;
 
 + (id)_insertNewAlbumWithKind:(int)arg1 title:(id)arg2 lastInterestingDate:(id)arg3 intoLibrary:(id)arg4;
++ (id)_predicateForSupportedAlbumTypes;
 + (id)_singletonFetchingAlbumWithKind:(int)arg1 library:(id)arg2;
 + (id)_singletonManagedAlbumWithKind:(int)arg1 library:(id)arg2;
 + (id)_unpushedParentsOfAlbums:(id)arg1;
@@ -89,10 +89,9 @@
 + (id)albumsForStreamID:(id)arg1 inLibrary:(id)arg2;
 + (id)albumsMatchingPredicate:(id)arg1 inLibrary:(id)arg2;
 + (id)albumsMatchingPredicate:(id)arg1 inManagedObjectContext:(id)arg2;
-+ (id)albumsToResetInLibrary:(id)arg1;
 + (id)albumsToUploadInitiallyInLibrary:(id)arg1 limit:(unsigned int)arg2;
-+ (id)albumsWithCloudGUID:(id)arg1 inManagedObjectContext:(id)arg2;
-+ (id)albumsWithCloudGUIDs:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)albumsWithCloudGUID:(id)arg1 inLibrary:(id)arg2;
++ (id)albumsWithCloudGUIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)albumsWithKind:(int)arg1 inManagedObjectContext:(id)arg2;
 + (id)albumsWithUUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)allAlbumsInLibrary:(id)arg1;
@@ -108,6 +107,7 @@
 + (id)allVerticalPanoramasAlbumInLibrary:(id)arg1;
 + (id)allVideosAlbumInLibrary:(id)arg1;
 + (id)cameraRollAlbumInLibrary:(id)arg1;
++ (id)childKeyForOrdering;
 + (id)cloudAlbumsInLibrary:(id)arg1;
 + (id)eventsWithName:(id)arg1 andImportSessionIdentifier:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)filesystemImportProgressAlbumInLibrary:(id)arg1;
@@ -128,6 +128,9 @@
 + (id)keyPathsForValuesAffectingName;
 + (id)localizedTitleForAlbumKind:(int)arg1;
 + (id)otaRestoreProgressAlbumInLibrary:(id)arg1;
++ (void)removeEmptyAlbumsForCloudResetInLibrary:(id)arg1;
++ (void)removeTrashedAlbumsAndFoldersForCloudResetInLibrary:(id)arg1;
++ (void)resetAlbumStateForCloudInLibrary:(id)arg1;
 + (id)rootFolderInLibrary:(id)arg1;
 + (id)syncProgressAlbumInLibrary:(id)arg1;
 + (id)trashBinAlbumInLibrary:(id)arg1;
@@ -155,11 +158,10 @@
 - (BOOL)canShowComments;
 - (id)childKeyForOrdering;
 - (id)childManagedObject;
-- (id)childToOrderKeyMap;
 - (id)cloudGUID;
 - (unsigned int)count;
 - (unsigned int)countForAssetsOfKind:(short)arg1;
-- (id)cplAlbumChange;
+- (id)cplAlbumChangeInPhotoLibrary:(id)arg1;
 - (void)dealloc;
 - (void)delete;
 - (id)description;
@@ -188,7 +190,6 @@
 - (BOOL)isRegisteredForChanges;
 - (BOOL)isRootFolder;
 - (BOOL)isSmartAlbum;
-- (BOOL)isSpecial;
 - (BOOL)isStandInAlbum;
 - (BOOL)isUserLibraryAlbum;
 - (BOOL)isWallpaperAlbum;
@@ -196,8 +197,8 @@
 - (int)kindValue;
 - (id)localizedLocationNames;
 - (id)localizedTitle;
+- (id)migration_sortedOrderKeysForChildrenUsingMap:(id)arg1;
 - (id)name;
-- (id)newOrderKeyChild:(id)arg1;
 - (long long)orderValue;
 - (id)photoLibrary;
 - (unsigned int)photosCount;
@@ -210,7 +211,6 @@
 - (void)setDidRegisteredWithUserInterfaceContext:(BOOL)arg1;
 - (void)setHasUnseenContentBoolValue:(BOOL)arg1;
 - (void)setIsRegisteredForChanges:(BOOL)arg1;
-- (void)setIsSpecial:(BOOL)arg1;
 - (void)setKind:(id)arg1;
 - (void)setKindValue:(int)arg1;
 - (void)setOrderValue:(long long)arg1;
@@ -220,7 +220,6 @@
 - (void)setUuid:(id)arg1;
 - (BOOL)shouldDeleteWhenEmpty;
 - (id)slideshowSettings;
-- (id)sortedOrderKeysForChildrenUsingMap:(id)arg1;
 - (id)sortingComparator;
 - (id)title;
 - (void)unregisterAllDerivedAlbums;

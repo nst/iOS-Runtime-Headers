@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSObject<TNPageControllerDelegate>, NSString, TNDocumentRoot, TNPageCoordinateDictionary, TNPrintProperties, TNSheet, TSUPointerKeyDictionary;
+@class NSMutableDictionary, NSObject<TNPageControllerDelegate>, TNDocumentRoot, TNPageCoordinateDictionary, TNPrintProperties, TNSheet, TSUPointerKeyDictionary;
 
-@interface TNPageController : NSObject <TSKChangeSourceObserver> {
-    float _footerTextHeight;
-    float _headerTextHeight;
+@interface TNPageController : NSObject {
     TNPrintProperties *_printProperties;
     NSMutableDictionary *mCachedAutoFitContentScaleDictionary;
     int mCachedPageCountDuringDynamicContentScaleChange;
@@ -14,7 +12,9 @@
     NSObject<TNPageControllerDelegate> *mDelegate;
     TNDocumentRoot *mDocumentRoot;
     TNPageCoordinateDictionary *mFooterLayerCache;
+    float mFooterTextHeight;
     TNPageCoordinateDictionary *mHeaderLayerCache;
+    float mHeaderTextHeight;
     TSUPointerKeyDictionary *mHintCacheDictionary;
     BOOL mInDynamicContentScaleChange;
     struct { 
@@ -34,12 +34,9 @@
 
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
 @property(readonly) float contentScale;
-@property(copy,readonly) NSString * debugDescription;
 @property NSObject<TNPageControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
 @property TNDocumentRoot * documentRoot;
 @property float footerTextHeight;
-@property(readonly) unsigned int hash;
 @property float headerTextHeight;
 @property(readonly) BOOL inDynamicContentScaleChange;
 @property(readonly) unsigned int numPages;
@@ -48,13 +45,11 @@
 @property(getter=isPortrait,readonly) BOOL portrait;
 @property(readonly) TNPrintProperties * printProperties;
 @property TNSheet * sheet;
-@property(readonly) Class superclass;
 @property float userViewScale;
 
 + (float)autoFitContentScaleForSheet:(id)arg1;
 + (id)p_cachedAutoFitContentScaleDictionary;
 + (float)p_contentScaleAutoFitForSheet:(id)arg1;
-+ (float)printViewDefaultUserViewScale;
 
 - (id).cxx_construct;
 - (void)canvasViewScaleDidChange:(float)arg1;
@@ -98,6 +93,7 @@
 - (int)p_pageCountForSheet:(id)arg1;
 - (id)p_pageInfoForPageAtIndex:(unsigned int)arg1;
 - (id)p_pageLayoutAtCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (float)p_printViewDefaultUserViewScale;
 - (int)p_priorPageCount;
 - (int)p_updateCachedPageCountForCurrentSheet;
 - (void)p_updateVisiblePageRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 forLayoutController:(id)arg2;
@@ -130,7 +126,6 @@
 - (void)setUserViewScale:(float)arg1;
 - (id)sheet;
 - (void)syncPositionOfLayout:(id)arg1 atCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (void)syncProcessChanges:(id)arg1 forChangeSource:(id)arg2;
 - (void)updateContentScale;
 - (void)updatePrintMargins;
 - (void)updateUserViewScale;

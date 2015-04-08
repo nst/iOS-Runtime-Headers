@@ -26,6 +26,7 @@
 @property(copy) NSURL * webpageURL;
 
 + (void)_fetchUserActivityWithUUID:(id)arg1 completionHandler:(id)arg2;
++ (void)_reportToCoreDuet:(id)arg1;
 + (id)_userFacingErrorForLaunchServicesError:(id)arg1 userInfo:(id)arg2;
 
 - (id)_frameworkDelegate;

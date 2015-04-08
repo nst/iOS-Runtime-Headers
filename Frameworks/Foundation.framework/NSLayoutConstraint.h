@@ -136,6 +136,7 @@
 - (BOOL)_tryToChangeContainerGeometryWithUndoHandler:(id)arg1;
 - (id)animations;
 - (id)asciiArtDescription;
+- (void)ax_removeFromContainer;
 - (float)constant;
 - (id)container;
 - (void)dealloc;

@@ -14,7 +14,9 @@
 @property(retain) GEODirectionsFeedbackCollection * currentFeedbackCollection;
 @property(retain) NSMutableSet * routeIDs;
 
+- (void)_updateFeedbackSessionWithResponseID:(id)arg1;
 - (void)addRouteID:(id)arg1 stepID:(unsigned int)arg2 completeStep:(BOOL)arg3;
+- (void)addTrafficRerouteFeedback:(id)arg1;
 - (id)currentDirectionsFeedback;
 - (id)currentFeedbackCollection;
 - (void)dealloc;
@@ -26,6 +28,8 @@
 - (void)setCurrentFeedbackCollection:(id)arg1;
 - (void)setFinalLocation:(id)arg1 asArrival:(BOOL)arg2;
 - (void)setRouteIDs:(id)arg1;
+- (void)setupFeedbackSessionWithResponseID:(id)arg1;
+- (void)startFeedbackSession;
 - (void)startFeedbackSessionForResponseID:(id)arg1;
 
 @end

@@ -41,6 +41,7 @@
 + (id)outputVoice;
 + (void)preheat;
 + (void)preheatWithStyle:(int)arg1;
++ (BOOL)siriIsSupportedForLanguageCode:(id)arg1 deviceProductVersion:(id)arg2 error:(id*)arg3;
 + (void)stopMonitoringAvailability;
 + (BOOL)userDataSyncNeeded;
 

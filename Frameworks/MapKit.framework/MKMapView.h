@@ -103,6 +103,7 @@
         unsigned int delayLocationUpdatesUntilInitialRendering : 1; 
         unsigned int isDraggingAnnotationView : 1; 
         unsigned int showsPressedLabelMarkerEffect : 1; 
+        unsigned int shouldLoadFallbackTiles : 1; 
         unsigned int delegateShouldReceiveTouch : 1; 
         unsigned int delegateShouldDelayTapResponse : 1; 
         unsigned int delegateDidUpdateUserLocation : 1; 
@@ -124,7 +125,9 @@
     unsigned int _mapType;
     VKMapView *_mapView;
     UITapGestureRecognizer *_nonselectingTapGestureRecognizer;
+    int _originalLoopRate;
     MKOverlayContainerView *_overlayContainer;
+    int _preGesturingLoopRate;
     VKLabelMarker *_pressedLabelMarker;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -310,7 +313,7 @@
 - (void)_performFlyoverAnimation:(id)arg1;
 - (void)_performFlyoverAnimation:(id)arg1 animateToStart:(BOOL)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
-- (void)_prepareFlyoverAnimation:(id)arg1 inBackground:(BOOL)arg2 completion:(id)arg3;
+- (void)_prepareFlyoverAnimation:(id)arg1 completion:(id)arg2;
 - (void)_removePersistentVectorOverlay:(id)arg1;
 - (void)_removeVectorOverlay:(id)arg1;
 - (void)_replaceAnnotation:(id)arg1 withAnnotation:(id)arg2;
@@ -356,6 +359,7 @@
 - (void)_setScrolling:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setShouldAnimatePositionWithRouteMatch:(BOOL)arg1;
 - (void)_setShouldDelayLocationUpdatesUntilInitialRendering:(BOOL)arg1;
+- (void)_setShouldLoadFallbackTiles:(BOOL)arg1;
 - (void)_setShouldSplitRouteLine:(BOOL)arg1;
 - (void)_setShowsCurrentEnvironmentName:(BOOL)arg1;
 - (void)_setShowsPressedLabelMarkerEffect:(BOOL)arg1;
@@ -375,6 +379,7 @@
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (BOOL)_shouldDelayLocationUpdatesUntilInitialRendering;
 - (BOOL)_shouldDisplayScaleForCurrentRegion;
+- (BOOL)_shouldLoadFallbackTiles;
 - (BOOL)_shouldSplitRouteLine;
 - (void)_showAnimationAtCoordinate:(struct { double x1; double x2; })arg1 withMapRegion:(id)arg2;
 - (BOOL)_showsCurrentEnvironmentName;
@@ -403,6 +408,7 @@
 - (void)_updateDebugViewFrameWithEdgeInsets;
 - (void)_updateEffects;
 - (void)_updateEnvironmentLabelText;
+- (void)_updateFallbackTileLoading;
 - (void)_updateFromCamera:(id)arg1;
 - (void)_updateFromCamera:(id)arg1 duration:(double)arg2 timing:(id)arg3;
 - (void)_updateHeading:(id)arg1 animated:(BOOL)arg2;

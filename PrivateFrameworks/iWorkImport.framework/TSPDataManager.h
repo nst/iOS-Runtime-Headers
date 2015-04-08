@@ -12,8 +12,8 @@
 @interface TSPDataManager : NSObject {
     TSPObjectContext *_context;
     NSObject<OS_dispatch_queue> *_datasQueue;
-    struct hash_map<const std::__1::array<unsigned char, 20>, TSPData *__weak, TSP::DataDigestHash, TSP::DataDigestEqualTo, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak> > > { 
-        struct __hash_table<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestEqualTo, true>, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak> > > { 
+    struct hash_map<const std::__1::array<unsigned char, 20>, TSPData *__weak, TSP::DigestHash, TSP::DigestEqualTo, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak> > > { 
+        struct __hash_table<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DigestHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DigestEqualTo, true>, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> > > { 
                     struct __hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> {} **__first_; 
@@ -29,10 +29,10 @@
                     struct __hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> {} *__next_; 
                 } __first_; 
             } __p1_; 
-            struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestHash, true> > { 
+            struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DigestHash, true> > { 
                 unsigned long __first_; 
             } __p2_; 
-            struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestEqualTo, true> > { 
+            struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DigestEqualTo, true> > { 
                 float __first_; 
             } __p3_; 
         } __table_; 
@@ -74,37 +74,42 @@
 @property(readonly) TSPObjectContext * context;
 
 + (void)readWithChannel:(id)arg1 handler:(id)arg2;
++ (void)readWithChannelImpl:(id)arg1 handler:(id)arg2;
++ (void)readWithURL:(id)arg1 handler:(id)arg2;
 + (BOOL)requestDocumentResourcesUsingDataProvider:(id)arg1 packageMetadata:(id)arg2;
-+ (id)stringForDigest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addData:(id)arg1;
-- (void)addDataFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 info:(const struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned long long x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; int x10; unsigned int x11[1]; }*)arg4 areExternalReferencesAllowed:(BOOL)arg5;
-- (id)addNewDataForStorage:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3;
+- (void)addDataFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 info:(const struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg4 areExternalReferencesAllowed:(BOOL)arg5;
+- (id)addNewDataForStorage:(id)arg1 digest:(id)arg2 filename:(id)arg3;
 - (id)checkForPersistenceWarningsWithPackageURL:(id)arg1;
 - (id)context;
 - (void)coordinateReadingNewFileURL:(id)arg1 byAccessor:(id)arg2;
 - (id)copyData:(id)arg1;
-- (id)dataForDigest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1;
-- (void)dataForDigest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 queue:(id)arg2 completion:(id)arg3;
-- (id)dataForDigestImpl:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 accessorBlock:(id)arg2;
-- (id)dataForDigestImpl:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 skipDocumentResourcesLookup:(BOOL)arg2 accessorBlock:(id)arg3;
-- (id)dataForExistingData:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3 temporaryPath:(id)arg4;
+- (id)dataForDigest:(id)arg1;
+- (void)dataForDigest:(id)arg1 queue:(id)arg2 completion:(id)arg3;
+- (id)dataForDigestImpl:(id)arg1 accessorBlock:(id)arg2;
+- (id)dataForDigestImpl:(id)arg1 skipDocumentResourcesLookup:(BOOL)arg2 accessorBlock:(id)arg3;
+- (id)dataForExistingData:(id)arg1 digest:(id)arg2 filename:(id)arg3 temporaryPath:(id)arg4;
 - (id)dataForIdentifier:(long long)arg1;
 - (id)dataForIdentifierImpl:(long long)arg1;
 - (id)dataFromAssetsLibraryURL:(id)arg1;
 - (void)dataFromAssetsLibraryURL:(id)arg1 completion:(id)arg2;
-- (id)dataFromExternalReferenceURL:(id)arg1 useFileCoordination:(BOOL)arg2;
-- (id)dataFromFileURL:(id)arg1 useFileCoordination:(BOOL)arg2;
+- (id)dataFromExternalReferenceURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
+- (void)dataFromFileURL:(id)arg1 filename:(id)arg2 context:(id)arg3 completionQueue:(id)arg4 completion:(id)arg5;
+- (id)dataFromFileURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
 - (id)dataFromNSData:(id)arg1 filename:(id)arg2;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2;
+- (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 completion:(id)arg3;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 linkURLOrNil:(id)arg3;
+- (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 linkURLOrNil:(id)arg3 completion:(id)arg4;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 temporaryPath:(id)arg3;
-- (id)dataFromURL:(id)arg1 useFileCoordination:(BOOL)arg2;
+- (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 temporaryPath:(id)arg3 completion:(id)arg4;
+- (id)dataFromURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
 - (id)dataOrNilForIdentifier:(long long)arg1;
-- (id)dataWithStorage:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3 skipDocumentResourcesLookup:(BOOL)arg4 accessorBlock:(id)arg5;
-- (id)dataWithTemporaryPath:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3;
+- (id)dataWithStorage:(id)arg1 digest:(id)arg2 filename:(id)arg3 skipDocumentResourcesLookup:(BOOL)arg4 accessorBlock:(id)arg5;
+- (id)dataWithTemporaryPath:(id)arg1 digest:(id)arg2 filename:(id)arg3;
 - (void)didCloseDocument;
 - (void)didSaveWithSaveOperationState:(id)arg1;
 - (id)documentResourceDataWithStorage:(id)arg1 digestString:(id)arg2 filename:(id)arg3;
@@ -116,6 +121,7 @@
 - (void)loadFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 packageMetadata:(id)arg4 areExternalReferencesAllowed:(BOOL)arg5;
 - (int)openTemporaryPath:(id)arg1;
 - (BOOL)prepareSaveWithOldPackage:(id)arg1 saveOperationState:(id)arg2;
+- (id)remoteDataWithURL:(id)arg1 digest:(id)arg2 filename:(id)arg3 canDownload:(BOOL)arg4 downloadPriority:(int)arg5;
 - (void)removeExternalReferenceForData:(id)arg1 storage:(id)arg2;
 - (void)removeExternalReferences;
 - (void)removeFileAtPath:(id)arg1;

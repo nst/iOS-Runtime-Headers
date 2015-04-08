@@ -8,6 +8,7 @@
     UIView *_contentView;
     PSRegion *_currentRegion;
     NSArray *_filteredListContent;
+    BOOL _hideKeyboardInSearchMode;
     PSLocaleSelector *_localeSelector;
     NSArray *_regionsList;
     UISearchBar *_searchBar;
@@ -39,8 +40,8 @@
 - (id)regionsList;
 - (void)reloadDataAndScrollToCheckedRegionAnimated:(BOOL)arg1;
 - (void)reloadSections;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
-- (void)searchBarCancelButtonClicked:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
 - (id)sectionIndexTitlesForTableView:(id)arg1;

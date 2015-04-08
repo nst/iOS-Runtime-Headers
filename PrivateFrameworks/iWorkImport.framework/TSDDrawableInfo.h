@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class KNAbstractSlide, KNBuild, KNSlide, NSArray, NSObject<TSDContainerInfo>, NSString, NSURL, TSDDefaultPartitioner, TSDDrawableComment, TSDExteriorTextWrap, TSDInfoGeometry, TSPLazyReference, TSPObject<TSDOwningAttachment>, TSSPropertySetChangeDetails;
+@class KNAbstractSlide, KNBuild, KNSlide, NSArray, NSObject<TSDContainerInfo>, NSSet, NSString, NSURL, TSDDefaultPartitioner, TSDDrawableComment, TSDExteriorTextWrap, TSDInfoGeometry, TSPLazyReference, TSPObject<TSDOwningAttachment>, TSSPropertySetChangeDetails;
 
 @interface TSDDrawableInfo : TSPObject <TSDChangeableInfo, TSKDocumentObject, TSKSearchable, TSKTransformableObject> {
     NSString *mAccessibilityDescription;
@@ -26,7 +26,7 @@
 
 @property(readonly) KNAbstractSlide * abstractSlide;
 @property(copy) NSString * accessibilityDescription;
-@property(readonly) NSArray * actionBuilds;
+@property(readonly) NSSet * actionBuilds;
 @property(readonly) NSArray * activeBuildChunks;
 @property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
 @property BOOL aspectRatioLocked;
@@ -35,12 +35,11 @@
 @property(readonly) unsigned int buildCount;
 @property(readonly) KNBuild * buildIn;
 @property(readonly) KNBuild * buildOut;
-@property(readonly) NSArray * builds;
+@property(readonly) NSSet * builds;
 @property(readonly) BOOL canSizeBeChangedIncrementally;
 @property(retain) TSDDrawableComment * comment;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) Class editorClass;
 @property(copy) TSDExteriorTextWrap * exteriorTextWrap;
 @property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
 @property(copy) TSDInfoGeometry * geometry;
@@ -50,15 +49,18 @@
 @property(readonly) unsigned int hash;
 @property(copy) NSURL * hyperlinkURL;
 @property(getter=isInlineWithText,readonly) BOOL inlineWithText;
+@property(readonly) BOOL isRightToLeft;
 @property(readonly) BOOL isUserModifiable;
 @property(getter=isLockable,readonly) BOOL lockable;
 @property(getter=isLocked) BOOL locked;
 @property BOOL matchesObjectPlaceholderGeometry;
+@property(readonly) BOOL mayHaveImplicitBuildEvents;
 @property TSPObject<TSDOwningAttachment> * owningAttachment;
 @property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
 @property NSObject<TSDContainerInfo> * parentInfo;
 @property(readonly) KNSlide * slide;
 @property(readonly) Class superclass;
+@property(readonly) BOOL supportsAccessibilityDescription;
 @property(readonly) BOOL supportsAttachedComments;
 @property(readonly) BOOL supportsHyperlinks;
 
@@ -88,8 +90,6 @@
 - (unsigned int)chunkCountForTextureDeliveryStyle:(unsigned int)arg1 byGlyphStyle:(int)arg2 animationFilter:(id)arg3;
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
 - (void)coalesceChanges:(id)arg1;
-- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (id)commandToFlipWithOrientation:(int)arg1;
 - (id)comment;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })computeFullTransform;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })computeLayoutFullTransform;
@@ -99,8 +99,6 @@
 - (id)descriptionForPasteboard;
 - (id)descriptionForPasteboardWithSource:(id)arg1;
 - (void)didCopy;
-- (void)didUngroupWithCommand:(id)arg1;
-- (Class)editorClass;
 - (int)elementKind;
 - (id)endCollectingChanges;
 - (id)exteriorTextWrap;
@@ -117,14 +115,16 @@
 - (BOOL)isInlineWithText;
 - (BOOL)isLockable;
 - (BOOL)isLocked;
+- (BOOL)isRightToLeft;
 - (BOOL)isThemeContent;
 - (BOOL)isUserModifiable;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct DrawableArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct GeometryArchive {} *x3; struct Reference {} *x4; struct ExteriorTextWrapArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct Reference {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; bool x9; bool x10; int x11; unsigned int x12[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct DrawableArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct GeometryArchive {} *x5; struct Reference {} *x6; struct ExteriorTextWrapArchive {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct Reference {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; bool x11; bool x12; }*)arg1 unarchiver:(id)arg2;
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
 - (BOOL)matchesObjectPlaceholderGeometry;
+- (BOOL)mayHaveImplicitBuildEvents;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)objectUUIDPath;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
@@ -134,8 +134,7 @@
 - (id)presetKind;
 - (Class)repClass;
 - (BOOL)reverseChunkingIsSupported;
-- (void)saveToArchive:(struct DrawableArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct GeometryArchive {} *x3; struct Reference {} *x4; struct ExteriorTextWrapArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct Reference {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; bool x9; bool x10; int x11; unsigned int x12[1]; }*)arg1 archiver:(id)arg2;
-- (id)searchForAnnotationsWithHitBlock:(id)arg1;
+- (void)saveToArchive:(struct DrawableArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct GeometryArchive {} *x5; struct Reference {} *x6; struct ExteriorTextWrapArchive {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct Reference {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; bool x11; bool x12; }*)arg1 archiver:(id)arg2;
 - (void)setAccessibilityDescription:(id)arg1;
 - (void)setAspectRatioLocked:(BOOL)arg1;
 - (void)setComment:(id)arg1;
@@ -147,8 +146,10 @@
 - (void)setMatchesObjectPlaceholderGeometry:(BOOL)arg1;
 - (void)setOwningAttachment:(id)arg1;
 - (void)setParentInfo:(id)arg1;
-- (void)setParentInfoDuringUnarchiving:(id)arg1 fromPasteboard:(BOOL)arg2;
+- (void)setParentInfoDuringUnarchiving:(id)arg1 fromCopy:(BOOL)arg2;
+- (void)setPrimitiveGeometry:(id)arg1;
 - (id)slide;
+- (BOOL)supportsAccessibilityDescription;
 - (BOOL)supportsAttachedComments;
 - (BOOL)supportsHyperlinks;
 - (BOOL)swizzled_matchesObjectPlaceholderGeometry;
@@ -159,13 +160,12 @@
 - (struct CGPoint { float x1; float x2; })transformableObjectAnchorPoint;
 - (id)transformedGeometryWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)uuidPathPrefixComponentsProvider;
-- (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
-- (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 - (void)willChangeProperties:(id)arg1;
 - (void)willChangeProperty:(int)arg1;
 - (void)willCopyWithOtherDrawables:(id)arg1;
-- (void)willGroupWithCommand:(id)arg1;
 
 @end

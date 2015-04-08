@@ -2,33 +2,35 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, _UIDocumentPickerContainerModel, _UIDocumentPickerSortOrderView, _UIDocumentPickerViewServiceViewController;
+@class <_UIDocumentPickerServiceViewController>, NSArray, NSString, UIActivityIndicatorView, _UIDocumentPickerContainerModel, _UIDocumentPickerSortOrderView;
 
-@interface _UIDocumentPickerDocumentCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface _UIDocumentPickerDocumentCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, _UIDocumentPickerContainedViewController> {
+    UIActivityIndicatorView *_initialActivityView;
     _UIDocumentPickerContainerModel *_model;
     NSArray *_modelObjects;
     id _monitoringToken;
-    _UIDocumentPickerViewServiceViewController *_serviceViewController;
     BOOL _shouldHideSortBar;
     _UIDocumentPickerSortOrderView *_sortView;
     BOOL _updatesMayAnimate;
+    <_UIDocumentPickerServiceViewController> *_weak_serviceViewController;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property(retain) UIActivityIndicatorView * initialActivityView;
 @property(retain) _UIDocumentPickerContainerModel * model;
 @property(copy) NSArray * modelObjects;
 @property(retain) id monitoringToken;
-@property _UIDocumentPickerViewServiceViewController * serviceViewController;
+@property <_UIDocumentPickerServiceViewController> * serviceViewController;
 @property BOOL shouldHideSortBar;
 @property(retain) _UIDocumentPickerSortOrderView * sortView;
 @property(readonly) Class superclass;
 @property BOOL updatesMayAnimate;
 
 - (void)_dynamicTypeSizeChanged:(id)arg1;
-- (void)_sortViewChanged:(id)arg1;
 - (void)_unlockAnimations;
+- (void)_updateIconSpacing;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
@@ -37,12 +39,14 @@
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (void)dealloc;
-- (void)didMoveToParentViewController:(id)arg1;
 - (id)initWithModel:(id)arg1;
+- (id)initialActivityView;
 - (id)model;
 - (id)modelObjects;
 - (id)monitoringToken;
+- (void)scrollSortViewToVisible;
 - (id)serviceViewController;
+- (void)setInitialActivityView:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setModelObjects:(id)arg1;
 - (void)setMonitoring:(BOOL)arg1;
@@ -53,10 +57,10 @@
 - (void)setUpdatesMayAnimate:(BOOL)arg1;
 - (BOOL)shouldHideSortBar;
 - (id)sortView;
-- (void)traitCollectionDidChange:(id)arg1;
 - (BOOL)updatesMayAnimate;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillLayoutSubviews;
 - (void)willMoveToParentViewController:(id)arg1;
 
 @end

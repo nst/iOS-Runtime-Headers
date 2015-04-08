@@ -22,6 +22,8 @@
     CPLEngineStore *_store;
     CPLEngineSyncManager *_syncManager;
     CPLEngineSystemMonitor *_systemMonitor;
+    unsigned int _totalAssetCount;
+    BOOL _totalAssetCountHasBeenCalculated;
     CPLEngineTransport *_transport;
 }
 
@@ -53,6 +55,7 @@
 - (void)_closeNextComponent:(id)arg1 deactivate:(BOOL)arg2 lastError:(id)arg3 completionHandler:(id)arg4;
 - (void)_openNextComponent:(id)arg1 completionHandler:(id)arg2;
 - (void)_performBlockWithLibrary:(BOOL)arg1 enumerateAttachedObjects:(id)arg2;
+- (void)_updateTotalAssetCountWithAssetCounts:(id)arg1;
 - (void)attachObject:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)clientLibraryBaseURL;
 - (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id)arg2;
@@ -81,6 +84,7 @@
 - (void)notifyAttachedObjectsUploadTaskDidStart:(id)arg1;
 - (void)openWithCompletionHandler:(id)arg1;
 - (id)platformObject;
+- (void)reportLibraryCorrupted;
 - (void)reportUnsuccessfulSync;
 - (id)scheduler;
 - (void)setExitDeleteTime:(id)arg1;
@@ -93,6 +97,7 @@
 - (id)store;
 - (id)syncManager;
 - (id)systemMonitor;
+- (unsigned int)totalAssetCountOnServer;
 - (id)transport;
 - (void)updateAssetCountsFromServer:(id)arg1;
 - (void)updateLastSuccessfullSyncDate:(id)arg1;

@@ -40,6 +40,7 @@
 + (unsigned int)defaultSecurePortNumber;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
++ (id)excludedAccountPropertyKeys;
 + (id)existingAccountForUniqueID:(id)arg1;
 + (id)hostname;
 + (BOOL)isCommonPortNumber:(unsigned int)arg1;
@@ -66,6 +67,7 @@
 - (id)_password;
 - (id)_passwordWithError:(id*)arg1;
 - (void)_queueAccountInfoDidChange;
+- (BOOL)_renewCredentialsWithOptions:(id)arg1 completion:(id)arg2;
 - (void)_setAccountProperties:(id)arg1;
 - (BOOL)_shouldTryDirectSSLConnectionOnPort:(unsigned int)arg1;
 - (id)accountClass;
@@ -87,8 +89,6 @@
 - (id)credentialItemForKey:(id)arg1;
 - (id)credentialItemForKey:(id)arg1 error:(id*)arg2;
 - (id)customDescriptionForError:(id)arg1 authScheme:(id)arg2 defaultDescription:(id)arg3;
-- (id)customTitleForAuthenticationError:(id)arg1 authScheme:(id)arg2 defaultTitle:(id)arg3;
-- (id)customTitleForError:(id)arg1 authScheme:(id)arg2 defaultTitle:(id)arg3;
 - (void)dealloc;
 - (id)defaultConnectionSettings;
 - (unsigned int)defaultPortNumber;
@@ -111,6 +111,7 @@
 - (id)managedTag;
 - (id)missingPasswordErrorWithTitle:(id)arg1;
 - (id)nameForMailboxUid:(id)arg1;
+- (id)oauth2Token;
 - (id)parentAccount;
 - (id)parentAccountIdentifier;
 - (id)password;
@@ -126,6 +127,7 @@
 - (void)removeAccountPropertyForKey:(id)arg1;
 - (void)removePersistentAccount;
 - (void)removeValueInAccountPropertiesForKey:(id)arg1;
+- (BOOL)renewCredentialsWithCompletion:(id)arg1;
 - (void)reportAuthenticationError:(id)arg1 authScheme:(id)arg2;
 - (BOOL)requiresAuthentication;
 - (void)savePersistentAccount;
@@ -140,6 +142,7 @@
 - (void)setDisplayName:(id)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setHostname:(id)arg1;
+- (BOOL)setOAuth2Token:(id)arg1 refreshToken:(id)arg2 error:(id*)arg3;
 - (void)setPassword:(id)arg1;
 - (void)setPersistentAccount:(id)arg1;
 - (void)setPortNumber:(unsigned int)arg1;

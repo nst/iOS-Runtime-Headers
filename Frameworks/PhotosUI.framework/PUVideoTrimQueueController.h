@@ -39,7 +39,6 @@
 - (BOOL)_shouldShowVideoTooLongAlertForVideoSource:(id)arg1;
 - (void)_showTrimViewControllerForSource:(id)arg1;
 - (void)_trimVideoSource:(id)arg1;
-- (id)_videoTooLongAlert;
 - (id)_videoTooLongAlertController;
 - (id)album;
 - (id)albumName;

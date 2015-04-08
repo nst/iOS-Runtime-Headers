@@ -7,8 +7,6 @@
 
 + (id)g_genericToSpecificPropertyMapCategoryAxis;
 
-- (id)animationDeliveryStylesForFilter:(id)arg1;
-- (id)animationFiltersWithDefaultFilters:(id)arg1;
 - (id)genericToSpecificPropertyMap;
 - (BOOL)isMultiData;
 - (id)p_genericToSpecificPropertyMap;

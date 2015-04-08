@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <NSCopying><NSObject>, <_UIDocumentPickerRemoteViewControllerContaining>, NSExtension, NSString;
+@class <NSCopying><NSObject>, NSExtension, NSString, UIViewController<_UIDocumentPickerRemoteViewControllerContaining>;
 
 @interface _UIDocumentPickerRemoteViewController : _UIRemoteViewController <_UIDocumentPickerServiceInvalidating, _UIDocumentPickerViewControllerHost> {
     NSExtension *_extension;
     <NSCopying><NSObject> *_extensionRequestIdentifier;
     NSString *_identifier;
-    <_UIDocumentPickerRemoteViewControllerContaining> *_publicController;
+    UIViewController<_UIDocumentPickerRemoteViewControllerContaining> *_publicController;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -17,7 +17,7 @@
 @property(copy) <NSCopying><NSObject> * extensionRequestIdentifier;
 @property(readonly) unsigned int hash;
 @property(retain) NSString * identifier;
-@property <_UIDocumentPickerRemoteViewControllerContaining> * publicController;
+@property UIViewController<_UIDocumentPickerRemoteViewControllerContaining> * publicController;
 @property(readonly) Class superclass;
 
 + (id)exportedInterface;
@@ -27,8 +27,8 @@
 - (void)_didSelectURLWrapper:(id)arg1;
 - (void)_dismissViewController;
 - (void)_dismissWithOption:(id)arg1;
-- (void)_preferredContentSizeChanged:(struct CGSize { float x1; float x2; })arg1;
 - (void)_stitchFileCreationAtURL:(id)arg1;
+- (void)_tintColorDidChangeToColor:(id)arg1;
 - (id)extension;
 - (id)extensionRequestIdentifier;
 - (id)identifier;
@@ -37,7 +37,9 @@
 - (void)setExtension:(id)arg1;
 - (void)setExtensionRequestIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPublicController:(id)arg1;
+- (void)viewDidLoad;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

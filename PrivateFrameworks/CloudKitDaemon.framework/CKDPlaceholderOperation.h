@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDClientContext, CKDOperation, NSDate, NSObject<OS_dispatch_group>, NSOperationQueue, NSString;
+@class CKDClientContext, CKDClientProxy, CKDOperation, NSDate, NSObject<OS_dispatch_group>, NSOperationQueue, NSString;
 
 @interface CKDPlaceholderOperation : NSOperation {
     NSObject<OS_dispatch_group> *_group;
@@ -17,6 +17,7 @@
 @property BOOL isExecuting;
 @property BOOL isFinished;
 @property(readonly) NSString * operationID;
+@property(readonly) CKDClientProxy * proxy;
 @property(readonly) CKDOperation * realOperation;
 @property(readonly) NSString * sectionID;
 @property(retain) NSDate * startDate;
@@ -34,6 +35,7 @@
 - (BOOL)isFinished;
 - (void)main;
 - (id)operationID;
+- (id)proxy;
 - (id)realOperation;
 - (id)sectionID;
 - (void)setIsExecuting:(BOOL)arg1;

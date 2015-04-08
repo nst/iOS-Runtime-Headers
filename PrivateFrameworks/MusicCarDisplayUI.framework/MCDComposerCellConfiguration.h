@@ -5,6 +5,12 @@
 @interface MCDComposerCellConfiguration : MCDArtistCellConfiguration {
 }
 
-+ (Class)musicProxyClass;
++ (id)itemPersistentIDProperty;
++ (id)mediaEntityPropertiesToFetch;
++ (id)persistentIDProperty;
++ (id)representativeItemPersistentIDProperty;
++ (id)representativeItemTitleProperty;
++ (id)titleProperty;
++ (id)unknownTitleText;
 
 @end

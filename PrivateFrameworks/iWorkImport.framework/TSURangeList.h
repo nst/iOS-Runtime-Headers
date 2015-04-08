@@ -21,10 +21,12 @@
 - (unsigned int)count;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithRangeList:(id)arg1;
+- (id)initWithString:(id)arg1;
 - (void)insertRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 atIndex:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
 - (void)removeRangeAtIndex:(unsigned int)arg1;
 - (void)replaceWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 atIndex:(unsigned int)arg2;
 - (void)reverse;
+- (id)stringValue;
 
 @end

@@ -265,7 +265,8 @@
 - (id)controller;
 - (void)dealloc;
 - (id)delegate;
-- (void)didMoveToWindow:(id)arg1;
+- (void)didMoveToSuperview;
+- (void)didMoveToWindow;
 - (BOOL)drawsBackground;
 - (BOOL)drawsBackgroundInPalette;
 - (void)encodeWithCoder:(id)arg1;
@@ -282,7 +283,6 @@
 - (BOOL)isTranslucent;
 - (void)layoutSubviews;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)movedToSuperview:(id)arg1;
 - (id)placeholder;
 - (struct UIOffset { float x1; float x2; })positionAdjustmentForSearchBarIcon:(int)arg1;
 - (BOOL)pretendsIsInBar;

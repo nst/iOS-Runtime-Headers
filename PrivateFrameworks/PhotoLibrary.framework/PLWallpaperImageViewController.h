@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, PLWallpaperNavigationItem, SBSUIWallpaperPreviewViewController;
 
-@interface PLWallpaperImageViewController : PLUIEditImageViewController <SBFLegibilitySettingsProviderDelegate, UIActionSheetDelegate> {
+@interface PLWallpaperImageViewController : PLUIEditImageViewController <SBFLegibilitySettingsProviderDelegate> {
     unsigned int _didSetImageMode : 1;
     BOOL _isWallpaperEdit;
     PLWallpaperNavigationItem *_navItem;
@@ -17,14 +17,10 @@
     NSString *_wallpaperTitle;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
 @property BOOL isWallpaperEdit;
 @property int previewType;
 @property int previewVariant;
 @property BOOL saveWallpaperData;
-@property(readonly) Class superclass;
 @property(retain) SBSUIWallpaperPreviewViewController * wallpaperPreviewViewController;
 @property(copy) NSString * wallpaperTitle;
 
@@ -54,6 +50,7 @@
 - (id)navigationItem;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
+- (BOOL)prefersStatusBarHidden;
 - (void)prepareForBackground:(id)arg1;
 - (void)prepareForForeground:(id)arg1;
 - (int)previewType;

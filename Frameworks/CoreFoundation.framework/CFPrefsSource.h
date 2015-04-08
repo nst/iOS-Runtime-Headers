@@ -38,7 +38,7 @@
 - (struct __CFString { }*)domainIdentifier;
 - (void)finalize;
 - (long)generationCount;
-- (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 error:(BOOL*)arg4;
+- (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 retryCount:(int)arg4 error:(BOOL*)arg5;
 - (id)init;
 - (BOOL)isByHost;
 - (void)lock;

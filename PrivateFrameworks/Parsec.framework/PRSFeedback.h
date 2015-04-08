@@ -13,7 +13,7 @@
 @property int timestamp;
 @property(readonly) NSString * type;
 
-+ (id)JSONDictionaryForFeedbackArray:(id)arg1;
++ (id)JSONDictionaryForFeedbackArray:(id)arg1 enableFeedbackDebugLogging:(BOOL)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableSet, _UIFlowLayoutInfo;
+@class NSArray, NSMutableArray, NSMutableSet, _UIFlowLayoutInfo;
 
 @interface _UIFlowLayoutSection : NSObject {
     float _actualGap;
@@ -68,7 +68,11 @@
             float height; 
         } size; 
     } _rectToKeepValid;
-    NSDictionary *_rowAlignmentOptions;
+    struct { 
+        int commonRowHorizontalAlignment; 
+        int lastRowHorizontalAlignment; 
+        int rowVerticalAlignment; 
+    } _rowAlignmentOptions;
     NSMutableArray *_rows;
     struct UIEdgeInsets { 
         float top; 
@@ -115,7 +119,7 @@
 @property(readonly) BOOL lastRowIncomplete;
 @property _UIFlowLayoutInfo * layoutInfo;
 @property(readonly) float otherMargin;
-@property(retain) NSDictionary * rowAlignmentOptions;
+@property struct { int x1; int x2; int x3; } rowAlignmentOptions;
 @property(readonly) NSMutableArray * rows;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionMargins;
 @property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } validItemRange;
@@ -155,7 +159,7 @@
 - (id)layoutInfo;
 - (void)logInvalidSizes;
 - (float)otherMargin;
-- (id)rowAlignmentOptions;
+- (struct { int x1; int x2; int x3; })rowAlignmentOptions;
 - (id)rows;
 - (id)rowsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionMargins;
@@ -170,7 +174,7 @@
 - (void)setItemSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setItemsCount:(int)arg1;
 - (void)setLayoutInfo:(id)arg1;
-- (void)setRowAlignmentOptions:(id)arg1;
+- (void)setRowAlignmentOptions:(struct { int x1; int x2; int x3; })arg1;
 - (void)setSectionMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1 forItemAtIndexPath:(id)arg2;
 - (void)setVerticalInterstice:(float)arg1;

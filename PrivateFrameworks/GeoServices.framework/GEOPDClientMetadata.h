@@ -12,8 +12,10 @@
     GEOLatLng *_deviceLocation;
     NSString *_deviceSpokenLocale;
     struct { 
+        unsigned int resultListAttributionSupport : 1; 
         unsigned int timeSinceMapEnteredForeground : 1; 
     } _has;
+    int _resultListAttributionSupport;
     unsigned int _timeSinceMapEnteredForeground;
 }
 
@@ -28,7 +30,9 @@
 @property(readonly) BOOL hasDeviceKeyboardLocale;
 @property(readonly) BOOL hasDeviceLocation;
 @property(readonly) BOOL hasDeviceSpokenLocale;
+@property BOOL hasResultListAttributionSupport;
 @property BOOL hasTimeSinceMapEnteredForeground;
+@property int resultListAttributionSupport;
 @property unsigned int timeSinceMapEnteredForeground;
 
 - (void)addDeviceInstalledKeyboardLocale:(id)arg1;
@@ -51,19 +55,23 @@
 - (BOOL)hasDeviceKeyboardLocale;
 - (BOOL)hasDeviceLocation;
 - (BOOL)hasDeviceSpokenLocale;
+- (BOOL)hasResultListAttributionSupport;
 - (BOOL)hasTimeSinceMapEnteredForeground;
 - (unsigned int)hash;
 - (id)initWithTraits:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (int)resultListAttributionSupport;
 - (void)setDeviceCountryCode:(id)arg1;
 - (void)setDeviceDisplayLocale:(id)arg1;
 - (void)setDeviceInstalledKeyboardLocales:(id)arg1;
 - (void)setDeviceKeyboardLocale:(id)arg1;
 - (void)setDeviceLocation:(id)arg1;
 - (void)setDeviceSpokenLocale:(id)arg1;
+- (void)setHasResultListAttributionSupport:(BOOL)arg1;
 - (void)setHasTimeSinceMapEnteredForeground:(BOOL)arg1;
+- (void)setResultListAttributionSupport:(int)arg1;
 - (void)setTimeSinceMapEnteredForeground:(unsigned int)arg1;
 - (unsigned int)timeSinceMapEnteredForeground;
 - (void)writeTo:(id)arg1;

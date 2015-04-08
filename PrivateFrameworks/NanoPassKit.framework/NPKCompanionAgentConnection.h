@@ -47,6 +47,7 @@
 - (void)setDefaultCardUniqueID:(id)arg1 completion:(id)arg2;
 - (void)setSharedPaymentWebServiceContext:(id)arg1;
 - (id)sharedPaymentWebServiceContext;
+- (void)shouldShowApplePaySettingsWithCompletion:(id)arg1;
 - (id)xpcConnection;
 
 @end

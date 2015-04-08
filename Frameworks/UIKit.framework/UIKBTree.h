@@ -54,6 +54,7 @@
 - (void)clearTransientCaches;
 - (int)clipCorners;
 - (id)componentName;
+- (BOOL)containsDividerVariant;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -83,6 +84,7 @@
 - (int)handBias;
 - (BOOL)hasLayoutTag:(id)arg1;
 - (int)highlightedVariantIndex;
+- (id)highlightedVariantsList;
 - (int)indexOfSubtree:(id)arg1;
 - (id)initWithType:(int)arg1;
 - (id)initWithType:(int)arg1 withName:(id)arg2 withProperties:(id)arg3 withSubtrees:(id)arg4 withCache:(id)arg5;
@@ -124,9 +126,11 @@
 - (BOOL)noLanguageIndicator;
 - (BOOL)notUseCandidateSelection;
 - (id)numberForProperty:(id)arg1;
+- (id)objectForProperty:(id)arg1;
 - (void)orderVariantKeys:(BOOL)arg1;
 - (id)overrideDisplayString;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedFrame;
+- (id)parentKey;
 - (void)precacheLayoutName:(id)arg1;
 - (float)primaryKeylayoutOffset;
 - (float)primaryKeylayoutWidthRatio;
@@ -135,6 +139,7 @@
 - (BOOL)renderKeyInKeyplane:(id)arg1;
 - (int)rendering;
 - (id)representedString;
+- (int)selectedVariantIndex;
 - (void)setActiveGeometriesList:(id)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setCache:(id)arg1;
@@ -147,11 +152,10 @@
 - (void)setFlickDirection:(int)arg1;
 - (void)setForceMultitap:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrameOnly:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGeometriesList:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setGhost:(BOOL)arg1;
-- (void)setHighlightedVariantIndex:(int)arg1;
+- (void)setHighlightedVariantsList:(id)arg1;
 - (void)setInteractionType:(int)arg1;
 - (void)setIsGenerated:(BOOL)arg1;
 - (void)setLayoutTag:(id)arg1;
@@ -159,9 +163,11 @@
 - (BOOL)setObject:(id)arg1 forProperty:(id)arg2;
 - (void)setOverrideDisplayString:(id)arg1;
 - (void)setPaddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setParentKey:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setRendering:(int)arg1;
 - (void)setRepresentedString:(id)arg1;
+- (void)setSelectedVariantIndex:(int)arg1;
 - (void)setShape:(id)arg1;
 - (void)setSplitMode:(int)arg1;
 - (void)setState:(int)arg1;

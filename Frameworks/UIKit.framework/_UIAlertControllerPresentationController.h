@@ -7,12 +7,14 @@
 @interface _UIAlertControllerPresentationController : UIPresentationController <UIAdaptivePresentationControllerDelegate> {
     BOOL __isCurrentContext;
     BOOL __shouldRespectNearestCurrentContextPresenter;
+    BOOL _chromeHidden;
     UIView *_dimmingView;
     BOOL constraintsPrepared;
     UIView *keyboardLayoutAlignmentAvailableSpaceView;
     _UIKeyboardLayoutAlignmentView *keyboardLayoutAlignmentView;
 }
 
+@property(getter=_isChromeHidden,setter=_setChromeHidden:) BOOL _chromeHidden;
 @property(readonly) UIView * _dimmingView;
 @property(setter=_setIsCurrentContext:) BOOL _isCurrentContext;
 @property(setter=_setShouldRespectNearestCurrentContextPresenter:) BOOL _shouldRespectNearestCurrentContextPresenter;
@@ -21,24 +23,27 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
+- (void)_containerViewWillLayoutSubviews;
 - (id)_dimmingView;
+- (BOOL)_isChromeHidden;
 - (BOOL)_isCurrentContext;
 - (void)_occludePresentingWindow:(BOOL)arg1;
 - (void)_prepareConstraintsIfNecessary;
+- (void)_prepareDimmingViewIfNecessary;
 - (id)_presentedAlertController;
 - (BOOL)_preserveResponderAcrossWindows;
+- (void)_setChromeHidden:(BOOL)arg1;
 - (void)_setIsCurrentContext:(BOOL)arg1;
 - (void)_setShouldRespectNearestCurrentContextPresenter:(BOOL)arg1;
+- (BOOL)_shouldChangeStatusBarViewController;
 - (BOOL)_shouldRespectDefinesPresentationContext;
 - (BOOL)_shouldRespectNearestCurrentContextPresenter;
 - (int)adaptivePresentationStyle;
 - (int)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (int)attributeToAlignAlertControllerViewBy;
 - (float)constantForAligningAlertControllerToAvailableSpace;
-- (void)containerViewDidLayoutSubviews;
 - (void)containerViewWillLayoutSubviews;
 - (void)dealloc;
-- (void)dismissalTransitionDidEnd:(BOOL)arg1;
 - (void)dismissalTransitionWillBegin;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;

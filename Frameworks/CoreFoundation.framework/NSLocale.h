@@ -30,6 +30,7 @@
 + (id)currentLocale;
 + (id)deviceLanguageIdentifier;
 + (id)deviceLanguageLocale;
++ (id)firstPreferredLanguage;
 + (id)internetServicesRegion;
 + (unsigned int)lineDirectionForLanguage:(id)arg1;
 + (id)localeForBundleLanguage:(id)arg1;

@@ -2,25 +2,27 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableArray, NSURLCredential, UIAlertView;
+@class NSMutableArray, UIAlertController;
 
 @interface WebUIAuthenticationManager : NSObject {
+    UIAlertController *_alertController;
     NSMutableArray *_authenticationChallenges;
-    UIAlertView *_authenticationView;
-    NSURLCredential *_credentials;
     id _delegate;
     BOOL _isShowingAuthenticationPanel;
 }
 
+@property id delegate;
+
 - (void).cxx_destruct;
+- (void)_cancel;
+- (void)_didResolveChallenge;
 - (void)addAuthenticationChallenge:(id)arg1;
 - (void)addAuthenticationChallenge:(id)arg1 displayPanel:(BOOL)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)authenticationChallenge;
 - (void)cancelAuthentication;
+- (id)delegate;
 - (void)removeAuthenticationChallenge:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setShowingAuthentication:(BOOL)arg1;
-- (void)sheetReturnKeyPressed:(id)arg1;
 
 @end

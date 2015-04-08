@@ -5,19 +5,23 @@
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface CKDURLSessionPool : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegatePrivate> {
+    int _backgroundSessionConnectionPoolLimit;
     NSMutableDictionary *_delegateByTaskDescription;
     NSMutableDictionary *_ephemeralSessionByTaskDescription;
+    int _networkdNotifyToken;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_sessionByIdentifier;
     NSMutableDictionary *_sessionConfigurationReferenceByIdentifier;
     NSMutableDictionary *_sessionConfigurationReferenceByName;
 }
 
+@property(readonly) int backgroundSessionConnectionPoolLimit;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
++ (id)backgroundSessionConnectionPoolName;
 + (id)sharedURLSessionPool;
 
 - (void).cxx_destruct;
@@ -34,9 +38,12 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id)arg5;
 - (id)_URLSessionWithConfiguration:(id)arg1 forDelegate:(id)arg2;
 - (void)_performAsyncOnDelegateOfSession:(id)arg1 task:(id)arg2 fromSelector:(SEL)arg3 block:(id)arg4;
+- (void)_updateBackgroundSessionConnectionPoolLimit;
+- (int)backgroundSessionConnectionPoolLimit;
 - (void)checkinSessionConfiguration:(id)arg1;
 - (id)checkoutSessionConfigurationWithName:(id)arg1;
 - (id)dataTaskWithTaskDescription:(id)arg1 configuration:(id)arg2 request:(id)arg3 delegate:(id)arg4;
+- (void)dealloc;
 - (id)init;
 - (void)invalidateDataTask:(id)arg1;
 - (void)setSessionConfiguration:(id)arg1 forName:(id)arg2;

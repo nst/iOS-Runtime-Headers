@@ -5,9 +5,6 @@
 @interface CAMPadImagePickerSpec : CAMImagePickerSpec {
 }
 
-- (int)bottomBarOrientation;
-- (int)modeDialOrientation;
-- (BOOL)shouldCreateBottomBar;
 - (BOOL)shouldCreateElapsedTimeView;
 - (BOOL)shouldCreateFiltersButton;
 - (BOOL)shouldCreateFlashButton;
@@ -18,7 +15,6 @@
 - (BOOL)shouldCreatePanoramaView;
 - (BOOL)shouldCreateShutterButton;
 - (BOOL)shouldCreateStillDuringVideo;
-- (BOOL)shouldCreateTopBar;
 - (BOOL)shouldCreateZoomSlider;
 
 @end

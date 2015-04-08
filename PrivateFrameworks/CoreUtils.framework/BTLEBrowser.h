@@ -2,76 +2,37 @@
    Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
-@class CBCentralManager, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSSet, NSString;
+@class CBCentralManager, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface BTLEBrowser : NSObject <CBCentralManagerDelegate> {
     NSMutableDictionary *_accessories;
     CBCentralManager *_centralManager;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _foundHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _lostHandler;
-
+    struct BTLEBrowserPrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; id x2; } *_cfBrowser;
+    void *_eventHandler_ctx;
+    int (*_eventHandler_f)();
     NSObject<OS_dispatch_source> *_lostTimer;
     NSObject<OS_dispatch_queue> *_queue;
-    NSSet *_serviceUUIDs;
     BOOL _started;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _stoppedHandler;
-
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; } *_ucat;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _updateHandler;
-
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(retain) NSObject<OS_dispatch_queue> * dispatchQueue;
-@property(copy) id foundHandler;
 @property(readonly) unsigned int hash;
-@property struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; }* logCategory;
-@property(copy) id lostHandler;
-@property(copy) NSSet * serviceUUIDs;
-@property(copy) id stoppedHandler;
 @property(readonly) Class superclass;
-@property(copy) id updateHandler;
 
 - (void)_lostTimer;
+- (void)_postEventType:(unsigned int)arg1 accessory:(id)arg2;
 - (void)_start;
 - (void)_stop:(long)arg1;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)dealloc;
-- (id)dispatchQueue;
-- (id)foundHandler;
-- (id)init;
-- (struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; }*)logCategory;
-- (id)lostHandler;
-- (id)serviceUUIDs;
-- (void)setDispatchQueue:(id)arg1;
-- (void)setFoundHandler:(id)arg1;
-- (void)setLogCategory:(struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; }*)arg1;
-- (void)setLostHandler:(id)arg1;
-- (void)setServiceUUIDs:(id)arg1;
-- (void)setStoppedHandler:(id)arg1;
-- (void)setUpdateHandler:(id)arg1;
-- (void)start;
-- (void)stop;
-- (id)stoppedHandler;
-- (id)updateHandler;
+- (id)initWithCFBrowser:(struct BTLEBrowserPrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; id x2; }*)arg1;
 
 @end

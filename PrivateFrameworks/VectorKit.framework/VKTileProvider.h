@@ -36,6 +36,7 @@
         } orientation; 
         float aspectRatio; 
         float verticalFieldOfView; 
+        float horizontalOffset; 
     } _lastCameraState;
     struct CGSize { 
         float width; 
@@ -184,7 +185,7 @@
 - (void)tileSourcesDidChange;
 - (id)tilesToRender;
 - (void)timerFired:(id)arg1;
-- (void)updateWithContext:(id)arg1;
+- (void)updateWithContext:(id)arg1 selectionScale:(float)arg2;
 - (BOOL)useSmallTileCache;
 - (id)visibleTileSets;
 - (void)willStartLoadingTiles;

@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPropertyBestFaceTimeQuery;
+@class ABPropertyBestIDSValueQuery;
 
 @interface ABPropertyFaceTimeAction : ABPropertyAction {
-    ABPropertyBestFaceTimeQuery *_bestFaceTimeQuery;
+    ABPropertyBestIDSValueQuery *_bestFaceTimeQuery;
     int _type;
 }
 
-@property(retain) ABPropertyBestFaceTimeQuery * bestFaceTimeQuery;
+@property(retain) ABPropertyBestIDSValueQuery * bestFaceTimeQuery;
 @property int type;
 
 - (void)_queryFaceTimeStatus;

@@ -5,7 +5,7 @@
 @interface TSPFileDataStorage : TSPStreamDataStorage {
 }
 
-- (id)AVAssetWithOptions:(id)arg1 contentTypeUTI:(id)arg2;
+- (id)AVAssetWithOptions:(id)arg1 forData:(id)arg2;
 - (id)bookmarkDataWithOptions:(unsigned int)arg1;
 - (unsigned long long)encodedLength;
 - (BOOL)isReadable;

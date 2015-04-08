@@ -11,6 +11,8 @@
 @property(readonly) int type;
 
 - (id)_allPhysicalButtons;
+- (struct CGPoint { float x1; float x2; })_digitizerLocation;
+- (unsigned int)_focusHeading;
 - (struct __GSEvent { }*)_gsEvent;
 - (struct __IOHIDEvent { }*)_hidEvent;
 - (id)_init;

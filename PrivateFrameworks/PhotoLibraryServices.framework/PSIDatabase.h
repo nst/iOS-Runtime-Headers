@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSObject<OS_dispatch_queue>, NSString, PSITokenizer;
+@class NSDictionary, NSMutableArray, NSMutableString, NSObject<OS_dispatch_queue>, NSString, PSITokenizer;
 
 @interface PSIDatabase : NSObject {
     struct sqlite3 { } *_db;
@@ -14,6 +14,13 @@
     NSObject<OS_dispatch_queue> *_searchQueue;
     NSObject<OS_dispatch_queue> *_serialQueue;
     PSITokenizer *_tokenizer;
+    NSMutableArray *_tokenizerOutputNormalizedTokens;
+    struct { 
+        int location; 
+        int length; 
+    } _tokenizerOutputRanges[8];
+    NSMutableString *_tokenizerOutputString;
+    NSMutableArray *_tokenizerOutputTokens;
 }
 
 @property(readonly) int options;
@@ -28,7 +35,8 @@
 - (id)_inqDequeueGroupObjectWithId:(unsigned long long)arg1 isCachedGroup:(BOOL*)arg2;
 - (void)_inqExecutePreparedStatement:(struct sqlite3_stmt { }*)arg1 allowError:(int)arg2 withStatementBlock:(id)arg3;
 - (void)_inqExecutePreparedStatement:(struct sqlite3_stmt { }*)arg1 withStatementBlock:(id)arg2;
-- (unsigned long long)_inqGroupIdForCategory:(short)arg1 owningGroupId:(unsigned long long)arg2 contentString:(id)arg3 insertIfNeeded:(BOOL)arg4 outCopyTokens:(id*)arg5;
+- (void)_inqGetTokensFromString:(id)arg1 forIndexing:(BOOL)arg2 tokenOutput:(struct tokenOutput_t { id x1; id x2; id x3; struct { /* ? */ } *x4; int x5; int x6; struct { /* ? */ } *x7; int x8; int x9; }*)arg3;
+- (unsigned long long)_inqGroupIdForCategory:(short)arg1 owningGroupId:(unsigned long long)arg2 contentString:(id)arg3 insertIfNeeded:(BOOL)arg4 tokenOutput:(const struct tokenOutput_t { id x1; id x2; id x3; struct { /* ? */ } *x4; int x5; int x6; struct { /* ? */ } *x7; int x8; int x9; }*)arg5;
 - (struct __CFArray { }*)_inqNewAssetIdsForGroupId:(unsigned long long)arg1;
 - (struct __CFArray { }*)_inqNewAssetUUIDsForAssetIds:(const void**)arg1 count:(long)arg2;
 - (id)_inqNewContentStringForGroupId:(unsigned long long)arg1;
@@ -36,7 +44,6 @@
 - (struct __CFSet { }*)_inqNewGroupIdsForAssetId:(unsigned long long)arg1;
 - (struct __CFSet { }*)_inqNewGroupIdsMatchingToken:(id)arg1;
 - (void*)_inqNewGroupsFromDeleteOperation:(BOOL)arg1 matchingGroupIds:(const void**)arg2 count:(long)arg3;
-- (id)_inqNewTokens:(id)arg1 forIndexing:(BOOL)arg2 outCopyRanges:(id*)arg3;
 - (void)_inqPerformBatch:(id)arg1;
 - (void)_inqPrepareAndExecuteStatement:(const char *)arg1;
 - (struct sqlite3_stmt { }*)_inqPrepareStatement:(const char *)arg1;
@@ -44,7 +51,7 @@
 - (void)_inqRecycleGroups;
 - (void)_inqRemoveUUID:(id)arg1 isInBatch:(BOOL)arg2;
 - (void)_inqUpdateGATableWithGroupId:(unsigned long long)arg1 assetId:(unsigned long long)arg2;
-- (void)_inqUpdatePrefixTreeWithGroupId:(unsigned long long)arg1 tokens:(id)arg2;
+- (void)_inqUpdatePrefixTreeWithGroupId:(unsigned long long)arg1 text:(id)arg2;
 - (void)_query:(id)arg1 recursiveAddToGroupResults:(id)arg2 aggregate:(id)arg3 atIndex:(unsigned int)arg4 outOf:(unsigned int)arg5 inGroupArrays:(id)arg6;
 - (void)addAsset:(id)arg1 withCompletion:(id)arg2;
 - (void)addAssets:(id)arg1 withCompletion:(id)arg2;

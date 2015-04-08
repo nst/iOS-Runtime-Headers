@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUFeedSettings, PUMomentsSettings, PUPhotoEditProtoSettings, PUPhotosGridSettings;
+@class PUFeedSettings, PUMomentsSettings, PUPhotoEditProtoSettings, PUPhotosGridSettings, PUSizeSettings;
 
 @interface PURootSettings : PUSettings {
     PUFeedSettings *_feedSettings;
@@ -11,6 +11,7 @@
     PUPhotoEditProtoSettings *_photoEditingSettings;
     PUPhotosGridSettings *_photosGridSettings;
     unsigned int _settingsVersion;
+    PUSizeSettings *_sizeSettings;
 }
 
 @property(retain) PUFeedSettings * feedSettings;
@@ -19,6 +20,7 @@
 @property(retain) PUPhotoEditProtoSettings * photoEditingSettings;
 @property(retain) PUPhotosGridSettings * photosGridSettings;
 @property unsigned int settingsVersion;
+@property(retain) PUSizeSettings * sizeSettings;
 
 + (void)_addRandomPhoto;
 + (id)_currentViewControllerStack;
@@ -43,6 +45,8 @@
 - (void)setPhotoEditingSettings:(id)arg1;
 - (void)setPhotosGridSettings:(id)arg1;
 - (void)setSettingsVersion:(unsigned int)arg1;
+- (void)setSizeSettings:(id)arg1;
 - (unsigned int)settingsVersion;
+- (id)sizeSettings;
 
 @end

@@ -10,13 +10,6 @@
 @class NSArray;
 
 @interface TSTTableFilterSet : TSPObject <TSPCopying> {
-    struct vector<bool, std::__1::allocator<bool> > { 
-        unsigned long *__begin_; 
-        unsigned int __size_; 
-        struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { 
-            unsigned long __first_; 
-        } __cap_alloc_; 
-    } mFilterEnabled;
     struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
         unsigned int *__begin_; 
         unsigned int *__end_; 
@@ -30,17 +23,23 @@
     int mType;
 }
 
+@property(readonly) BOOL canAddRules;
+@property(readonly) unsigned int filterCount;
+@property int filterSetType;
+@property BOOL isEnabled;
+@property(readonly) unsigned int newFilterIndex;
+@property(readonly) unsigned int ruleCount;
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)absoluteRuleIndicesForColumn:(unsigned char)arg1 inTable:(id)arg2;
-- (id)addRules:(id)arg1 atRuleIndices:(id)arg2 inFilter:(unsigned int)arg3 isNew:(BOOL)arg4;
-- (id)addRules:(id)arg1 inFilter:(unsigned int)arg2;
+- (void)addRules:(id)arg1 inFilter:(unsigned int)arg2;
+- (BOOL)canAddRules;
+- (BOOL)containsFilterRulesInUIDForm;
+- (id)copyByRewritingFilterRulesToGeometricFormWithContext:(id)arg1 withTableModel:(id)arg2;
+- (id)copyByRewritingFilterRulesToUidFormWithContext:(id)arg1 withTableModel:(id)arg2;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
-- (void)disableFilterAtIndex:(unsigned int)arg1;
-- (void)disableRuleAtIndex:(unsigned int)arg1 inFilterIndex:(unsigned int)arg2;
-- (void)enableFilterAtIndex:(unsigned int)arg1;
-- (void)enableRuleAtIndex:(unsigned int)arg1 inFilterIndex:(unsigned int)arg2;
 - (void)enumerateFilterIndicesInTable:(id)arg1 usingBlock:(id)arg2;
 - (void)enumerateFiltersForColumn:(unsigned char)arg1 withTable:(id)arg2 usingBlock:(id)arg3;
 - (void)enumerateFiltersInTable:(id)arg1 usingBlock:(id)arg2;
@@ -50,31 +49,29 @@
 - (id)filterIndicesForColumn:(unsigned char)arg1 inTable:(id)arg2;
 - (int)filterSetType;
 - (unsigned int)firstFilterIndexForColumn:(unsigned char)arg1 inTable:(id)arg2;
-- (id)initFromArchive:(const struct FilterSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; bool x4; bool x5; struct RepeatedPtrField<TST::FilterRuleArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedField<unsigned int> { unsigned int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; struct RepeatedField<bool> { bool *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; unsigned int x10[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initFromArchive:(const struct FilterSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; bool x6; bool x7; struct RepeatedPtrField<TST::FilterRuleArchive> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedField<unsigned int> { unsigned int *x_9_1_1; int x_9_1_2; int x_9_1_3; } x9; struct RepeatedField<bool> { bool *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithFilterRules:(id)arg1 type:(int)arg2 context:(id)arg3;
 - (BOOL)isEnabled;
-- (BOOL)isFilterEnabledAtIndex:(unsigned int)arg1;
-- (BOOL)isFilterEnabledInColumn:(unsigned char)arg1 withTable:(id)arg2;
-- (BOOL)isFilterRuleEnabledInColumn:(unsigned char)arg1 withTable:(id)arg2;
-- (BOOL)isRuleEnabledAtIndex:(unsigned int)arg1 inFilterIndex:(unsigned int)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)needsFormulaRewriteForImport;
 - (unsigned int)newFilterIndex;
 - (unsigned int)numberOfRulesInFilter:(unsigned int)arg1;
+- (void)p_addRules:(id)arg1 atRuleIndices:(id)arg2 inFilter:(unsigned int)arg3 isNew:(BOOL)arg4;
 - (BOOL)p_thresholdComparisonMatchesFilter:(int)arg1 withPredicateType:(int)arg2;
-- (id)removeRules:(id)arg1;
-- (id)removeRulesWithIndices:(id)arg1 inFilter:(unsigned int)arg2;
-- (id)replaceRule:(id)arg1 atRuleIndex:(unsigned int)arg2 inFilter:(unsigned int)arg3;
+- (void)removeRulesForColumnIndices:(id)arg1 withTableModel:(id)arg2;
+- (id)removeRulesWithAbsoluteIndices:(id)arg1;
+- (void)removeRulesWithIndices:(id)arg1 inFilter:(unsigned int)arg2;
+- (void)replaceRule:(id)arg1 atRuleIndex:(unsigned int)arg2 inFilter:(unsigned int)arg3;
 - (BOOL)rowIsShown:(unsigned short)arg1 withHiddenStateFormulaOwner:(id)arg2 withCalculationEngine:(id)arg3;
 - (id)ruleAtAbsoluteIndex:(unsigned int)arg1;
 - (unsigned int)ruleCount;
 - (id)ruleInFilter:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (unsigned int)ruleIndexInFilter:(unsigned int)arg1 matchingCell:(id)arg2;
-- (void)saveToArchive:(struct FilterSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; bool x4; bool x5; struct RepeatedPtrField<TST::FilterRuleArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedField<unsigned int> { unsigned int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; struct RepeatedField<bool> { bool *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; unsigned int x10[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct FilterSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; bool x6; bool x7; struct RepeatedPtrField<TST::FilterRuleArchive> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedField<unsigned int> { unsigned int *x_9_1_1; int x_9_1_2; int x_9_1_3; } x9; struct RepeatedField<bool> { bool *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setFilterSetType:(int)arg1;
 - (void)setIsEnabled:(BOOL)arg1;
 - (void)setNeedsFormulaRewriteForImport:(BOOL)arg1;
-- (void)setRulesAtAbsoluteIndices:(id)arg1 enabled:(BOOL)arg2;
 
 @end

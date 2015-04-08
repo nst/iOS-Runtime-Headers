@@ -30,6 +30,10 @@
             } __ptr_; 
         } _loaderImpl; 
     } _loader;
+    struct shared_ptr<ggl::PolygonBase::MeshMesh> { 
+        struct MeshMesh {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _polygonUnitMesh;
     BOOL _preloadOnly;
     struct StencilManager { 
         unsigned char _stencilStart; 
@@ -97,6 +101,7 @@
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })labelEdgeInsets;
 - (struct Loader { struct unique_ptr<ggl::LoaderImpl, std::__1::default_delete<ggl::LoaderImpl> > { struct __compressed_pair<ggl::LoaderImpl *, std::__1::default_delete<ggl::LoaderImpl> > { struct LoaderImpl {} *x_1_2_1; } x_1_1_1; } x1; }*)loader;
 - (void)markStencilAsDirty;
+- (struct shared_ptr<ggl::PolygonBase::MeshMesh> { struct MeshMesh {} *x1; struct __shared_weak_count {} *x2; })polygonUnitMesh;
 - (unsigned char)reserveStencilValues:(unsigned char)arg1 clearItem:(struct ClearItem {}**)arg2;
 - (unsigned char)reserveStencilValues:(unsigned char)arg1 clearItem:(struct ClearItem {}**)arg2 fromTop:(BOOL)arg3;
 - (void)setAnchorContext:(id)arg1;

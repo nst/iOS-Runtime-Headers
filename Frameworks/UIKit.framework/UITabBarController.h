@@ -30,6 +30,7 @@
         unsigned int reselectTab : 1; 
         unsigned int delegateSupportedInterfaceOrientations : 1; 
         unsigned int delegatePreferredInterfaceOrientationForPresentation : 1; 
+        unsigned int preferTabBarFocused : 1; 
     } _tabBarControllerFlags;
     id _tabBarItemsToViewControllers;
     int _tabBarPosition;
@@ -121,6 +122,7 @@
 - (void)_setSelectedViewController:(id)arg1;
 - (void)_setTabBarPosition:(int)arg1;
 - (void)_setTabBarVisualAltitude;
+- (void)_setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)_shouldPersistViewWhenCoding;
 - (BOOL)_shouldSynthesizeSupportedOrientations;
 - (BOOL)_shouldUseOnePartRotation;
@@ -157,6 +159,7 @@
 - (void)loadView;
 - (id)moreChildViewControllers;
 - (id)moreNavigationController;
+- (id)preferredFocusedItem;
 - (int)preferredInterfaceOrientationForPresentation;
 - (void)purgeMemoryForReason:(int)arg1;
 - (void)revealTabBarSelection;
@@ -189,6 +192,7 @@
 - (void)tabBar:(id)arg1 willBeginCustomizingItems:(id)arg2;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
 - (void)tabBarSizingDidChange:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)transientViewController;
 - (id)transitionCoordinator;
 - (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2;

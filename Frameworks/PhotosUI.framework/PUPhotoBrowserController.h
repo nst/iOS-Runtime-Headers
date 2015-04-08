@@ -6,11 +6,13 @@
    See Warning(s) below.
  */
 
-@class <PUPhotoBrowserControllerDelegate>, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, PHAsset, PHAssetCollection, PHCachingImageManager, PHFetchResult, PLCloudSharedComment, PLPhotoBrowserController, PLPhotoTileViewController, PLSlalomRegionEditor, PUAirplayRoute, PUAvalancheReviewController, PUPhotoBrowserControllerSpec, PUPhotoBrowserTitleView, PUPhotoPinchGestureRecognizer, PUPhotosSharingViewController, PUSlideshowSettings, PUVideoEditPluginSession, UIColor, UIImage, UIMovieScrubber, UIPopoverController, UIView, _UIContentUnavailableView, _UINavigationControllerPalette;
+@class <PUPhotoBrowserControllerDelegate>, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, PHAsset, PHAssetCollection, PHCachingImageManager, PHFetchResult, PLCloudSharedComment, PLPhotoBrowserController, PLPhotoTileViewController, PLSlalomRegionEditor, PUAirplayRoute, PUAirplayRoutePickerViewController, PUAvalancheReviewController, PUPhotoBrowserControllerSpec, PUPhotoBrowserTitleView, PUPhotoPinchGestureRecognizer, PUPhotosSharingViewController, PUSlideshowSettings, PUSlideshowSettingsViewController, PUVideoEditPluginSession, UIColor, UIImage, UIMovieScrubber, UIView, _UIContentUnavailableView, _UINavigationControllerPalette;
 
-@interface PUPhotoBrowserController : UIViewController <PHAssetCollectionDataSource, PLDismissableViewController, PLPhotoBrowserControllerDelegate, PUAvalancheReviewControllerDelegate, PUCollectionViewLayoutProvider, PUEditPluginSessionDelegate, PUPhotoEditViewControllerDelegate, PUPhotoLibraryUIChangeObserver, PUPhotosSharingTransitionDelegate, PUPhotosSharingViewControllerDelegate, PUVideoEditPluginSessionDataSource, UIGestureRecognizerDelegate, UIPopoverControllerDelegate> {
+@interface PUPhotoBrowserController : UIViewController <PHAssetCollectionDataSource, PLDismissableViewController, PLPhotoBrowserControllerDelegate, PUAvalancheReviewControllerDelegate, PUCollectionViewLayoutProvider, PUEditPluginSessionDelegate, PUPhotoEditViewControllerDelegate, PUPhotoLibraryUIChangeObserver, PUPhotosSharingTransitionDelegate, PUPhotosSharingViewControllerDelegate, PUVideoEditPluginSessionDataSource, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate> {
+    PUAirplayRoutePickerViewController *__airplayPickerViewController;
     _UIContentUnavailableView *__emptyPlaceholderView;
     id __lockScreenSharingObserver;
+    PUSlideshowSettingsViewController *__slideshowSettingsViewController;
     unsigned int _allowedActions;
     PHFetchResult *_assetCollections;
     PUPhotoBrowserTitleView *_assetTitleView;
@@ -21,7 +23,6 @@
     NSString *_cachedVideoAssetIdentifier;
     int _cachedVideoEditActionType;
     PUAirplayRoute *_currentAirplayRoute;
-    UIPopoverController *_currentPopoverController;
     PUSlideshowSettings *_deferredSlideshowSettings;
     <PUPhotoBrowserControllerDelegate> *_delegate;
     NSMutableDictionary *_downloadEndingProgressIndicatorViews;
@@ -55,8 +56,10 @@
     _UINavigationControllerPalette *_videoScrubberPalette;
 }
 
+@property(setter=_setAirplayPickerViewController:) PUAirplayRoutePickerViewController * _airplayPickerViewController;
 @property(setter=_setEmptyPlaceholderView:,retain) _UIContentUnavailableView * _emptyPlaceholderView;
 @property(setter=_setLockScreenSharingObserver:,retain) id _lockScreenSharingObserver;
+@property(setter=_setSlideshowSettingsViewController:) PUSlideshowSettingsViewController * _slideshowSettingsViewController;
 @property unsigned int allowedActions;
 @property(readonly) PHFetchResult * assetCollections;
 @property(readonly) PHFetchResult * assetCollectionsFetchResult;
@@ -89,6 +92,7 @@
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
+- (id)_airplayPickerViewController;
 - (BOOL)_allowsActions:(unsigned int)arg1;
 - (void)_animateInPalette;
 - (void)_animateOutPalette;
@@ -110,7 +114,6 @@
 - (void)_didFinishDownloadingAssetWithIdentifier:(id)arg1 success:(BOOL)arg2 canceled:(BOOL)arg3 error:(id)arg4;
 - (BOOL)_dismissLegacyPopovers;
 - (void)_dismissSharingViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
-- (void)_dismissViewControllerInNavigationController:(id)arg1;
 - (void)_displayShareSheet:(id)arg1;
 - (void)_displayShareSheet:(id)arg1 completion:(id)arg2;
 - (void)_displayShareSheet:(id)arg1 completion:(id)arg2 isLockScreenCamera:(BOOL)arg3;
@@ -140,7 +143,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_photoFrameForTileController:(id)arg1;
 - (void)_playCurrentMedia:(id)arg1;
 - (void)_prepareForSharingViewControllerDismiss:(id)arg1;
-- (void)_presentViewControllerInNavigationController:(id)arg1 fromBarButtonItem:(id)arg2;
 - (void)_pushPhotoEditorForAsset:(id)arg1;
 - (void)_removeAdjacentCommentsTables;
 - (void)_removeCurrentItem:(id)arg1;
@@ -149,15 +151,18 @@
 - (void)_returnToCamera:(id)arg1;
 - (void)_revealComments;
 - (void)_saveTrimmedVideo:(id)arg1;
+- (void)_setAirplayPickerViewController:(id)arg1;
 - (void)_setEmptyPlaceholderView:(id)arg1;
 - (void)_setLockScreenSharingObserver:(id)arg1;
 - (void)_setOverlaysVisible:(BOOL)arg1;
 - (void)_setOverlaysVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setOverlaysVisible:(BOOL)arg1 animated:(BOOL)arg2 updateBarsVisibility:(BOOL)arg3;
 - (void)_setOverlaysVisibleForModalTransition:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setSlideshowSettingsViewController:(id)arg1;
 - (void)_setupStandardNavigationItem:(id)arg1;
 - (void)_showAirplayPicker:(id)arg1;
 - (void)_showAllPhotos:(id)arg1;
+- (id)_slideshowSettingsViewController;
 - (id)_standardLeftNavigationItemsForCurrentAsset;
 - (id)_standardRightNavigationItemsForCurrentAsset;
 - (id)_standardToolbarItemsForCurrentAsset;
@@ -186,8 +191,6 @@
 - (void)_updateVideoScrubberVisibility;
 - (void)_updateVideoViewAttachments:(id)arg1;
 - (id)_videoTrimSaveItem;
-- (void)_waitForCondition:(id)arg1 withRetryCount:(int)arg2 retryInterval:(double)arg3 handler:(id)arg4;
-- (void)_waitUntilReadyToTransitionToShareSheetWithHandler:(id)arg1;
 - (unsigned int)allowedActions;
 - (BOOL)areOverlaysVisible;
 - (id)assetCollections;
@@ -276,7 +279,7 @@
 - (void)photosSharingViewControllerDidCancel:(id)arg1 needsDismiss:(BOOL)arg2;
 - (void)photosSharingViewControllerWillCancel:(id)arg1;
 - (void)playSlideshowFromAlbumUsingOrigami:(BOOL)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)ppt_dismissShareSheetWithCompletion:(id)arg1;
 - (id)ppt_legacyPhotoBrowserIndexPath;
 - (id)ppt_onDidEndPagingBlock;
@@ -287,11 +290,13 @@
 - (void)ppt_setOnDidEndPagingBlock:(id)arg1;
 - (void)ppt_setOverlaysVisible:(BOOL)arg1;
 - (id)ppt_sharingViewController;
+- (int)preferredStatusBarUpdateAnimation;
+- (BOOL)prefersStatusBarHidden;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (void)prepareForPhotoLibraryChange:(id)arg1;
+- (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(int)arg2 transitionCoordinator:(id)arg3;
 - (id)pu_debugRows;
 - (BOOL)pu_wantsNavigationBarVisible;
-- (BOOL)pu_wantsStatusBarVisible;
 - (BOOL)pu_wantsTabBarVisible;
 - (BOOL)pu_wantsToolbarVisible;
 - (void)setAllowedActions:(unsigned int)arg1;
@@ -317,6 +322,5 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willBeginNavigationOperation:(int)arg1 inNavigationController:(id)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

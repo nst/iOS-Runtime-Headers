@@ -86,6 +86,7 @@
 - (id)trackActioningObject:(id)arg1 localizedTitleForAction:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transportControlsView:(id)arg1 adjustedFrameOfTransportButtonWithControlType:(int)arg2 proposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (struct CGSize { float x1; float x2; })transportControlsView:(id)arg1 adjustedMaximumTransportButtonSizeWithProposedSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)transportControlsView:(id)arg1 colorForButtonWithControlType:(int)arg2;
 - (id)transportControlsView:(id)arg1 imageForTransportButtonWithControlType:(int)arg2;
 - (void)transportControlsView:(id)arg1 longPressBeginOnControlType:(int)arg2;
 - (void)transportControlsView:(id)arg1 longPressEndOnControlType:(int)arg2;

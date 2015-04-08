@@ -13,11 +13,18 @@
 
 @property(retain) TUCallModelState * callModelState;
 @property(retain) TUCallCenterCallsCache * callsCache;
+@property(readonly) BOOL canMergeCalls;
+@property(readonly) TUCall * conferenceCall;
 @property(retain) NSMutableArray * conferenceParticipantCalls;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property(readonly) TUCall * displayedCall;
 @property(retain) NSMutableArray * displayedCalls;
+@property(readonly) NSArray * displayedCallsNotIncludingIncomingCall;
+@property(retain,readonly) TUCall * frontmostAudioOrVideoCall;
+@property(readonly) TUCall * frontmostCall;
 @property(readonly) unsigned int hash;
+@property(readonly) BOOL inCall;
 @property(retain,readonly) TUCall * incomingCall;
 @property(retain,readonly) NSArray * incomingCalls;
 @property(readonly) Class superclass;
@@ -61,6 +68,8 @@
 - (void)answerCallWithHoldMusic:(id)arg1;
 - (BOOL)anyCallIsEndpointOnCurrentDevice;
 - (BOOL)anyCallIsHostedOnCurrentDevice;
+- (id)audioAndVideoCallsWithStatus:(int)arg1;
+- (id)audioOrVideoCallWithStatus:(int)arg1;
 - (unsigned int)callCountOnDefaultPairedDevice;
 - (id)callGroupsOnDefaultPairedDevice;
 - (id)callModelState;
@@ -80,6 +89,7 @@
 - (id)conferenceCall;
 - (id)conferenceParticipantCalls;
 - (void)createdOutgoingIMAVChat:(id)arg1;
+- (unsigned int)currentAudioAndVideoCallCount;
 - (id)currentAudioAndVideoCalls;
 - (int)currentCallCount;
 - (id)currentCallGroups;
@@ -116,6 +126,8 @@
 - (void)forceCallOutOfConference:(id)arg1;
 - (void)forceDisconnectOfCall:(id)arg1;
 - (void)forceUpdateOfCallList;
+- (id)frontmostAudioOrVideoCall;
+- (id)frontmostCall;
 - (void)handleCallAudioUpdatedForCall:(id)arg1 userInfo:(id)arg2;
 - (void)handleCallConnected:(id)arg1;
 - (void)handleCallFailed:(id)arg1;
@@ -142,7 +154,6 @@
 - (void)handleFilteredCall:(id)arg1 userInfo:(id)arg2;
 - (void)holdActiveAndAnswerCall:(id)arg1;
 - (BOOL)inCall;
-- (BOOL)inOutgoingCall;
 - (id)incomingCall;
 - (id)incomingCalls;
 - (id)incomingVideoCall;
@@ -158,7 +169,6 @@
 - (BOOL)isSendToVoicemailAllowed;
 - (BOOL)isSwappable;
 - (BOOL)isTakingCallsPrivateAllowed;
-- (BOOL)justAnIncomingCallExists;
 - (id)proxyCallWithDestinationID:(id)arg1 service:(int)arg2 status:(int)arg3 sourceIdentifier:(id)arg4 outgoing:(BOOL)arg5 conferenceIdentifier:(id)arg6 voicemail:(BOOL)arg7 callerNameFromNetwork:(id)arg8;
 - (id)proxyCallWithUniqueProxyIdentifier:(id)arg1;
 - (void)requestHandoffForAllCalls;

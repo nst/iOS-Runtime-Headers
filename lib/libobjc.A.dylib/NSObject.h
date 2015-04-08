@@ -9,7 +9,7 @@
 
 @class NSArray, NSString, UIBezierPath, _UITraitStorageList;
 
-@interface NSObject <NSObject, PQLResultSetInitializer> {
+@interface NSObject <NSObject, PQLResultSetInitializer, PQLResultSetInitializer> {
     Class isa;
 }
 
@@ -52,7 +52,6 @@
 + (BOOL)_accessibilityCalShow24Hours;
 + (BOOL)_accessibilityCalSpaceBetweenDesignatorsAndHour;
 + (void)_accessibilityConvertDecimalDegreeToDMS:(double)arg1 degreesPtr:(int*)arg2 minutesPtr:(int*)arg3 secondsPtr:(float*)arg4;
-+ (id)_accessibilityCreateAXUIElementsFromUIElements:(id)arg1 attributeDirection:(int)arg2 count:(unsigned long)arg3 startElement:(id)arg4;
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (id)_accessibilityStringForDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 + (id)_accessibilityStringForDayOfWeek:(int)arg1;
@@ -106,6 +105,7 @@
 + (id)cplAllPropertyNames;
 + (void)cplDumpProperties;
 + (BOOL)cplShouldIgnorePropertyForCoding:(id)arg1;
++ (BOOL)cplShouldIgnorePropertyForEquality:(id)arg1;
 + (void)dealloc;
 + (void)dealloc;
 + (id)debugDescription;
@@ -149,10 +149,7 @@
 + (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 + (id)new;
 + (BOOL)object:(id)arg1 isEqualToObject:(id)arg2;
-+ (BOOL)object:(id)arg1 isEqualToObject:(id)arg2;
 + (BOOL)overridesClassSelector:(SEL)arg1 ofBaseClass:(Class)arg2;
-+ (BOOL)overridesClassSelector:(SEL)arg1 ofBaseClass:(Class)arg2;
-+ (BOOL)overridesSelector:(SEL)arg1 ofBaseClass:(Class)arg2;
 + (BOOL)overridesSelector:(SEL)arg1 ofBaseClass:(Class)arg2;
 + (id)performSelector:(SEL)arg1;
 + (id)performSelector:(SEL)arg1 withObject:(id)arg2;
@@ -179,6 +176,9 @@
 + (void)setKeys:(id)arg1 triggerChangeNotificationsForDependentKey:(id)arg2;
 + (void)setVersion:(int)arg1;
 + (Class)superclass;
++ (BOOL)tsu_object:(id)arg1 isEqualToObject:(id)arg2;
++ (BOOL)tsu_overridesClassSelector:(SEL)arg1 ofBaseClass:(Class)arg2;
++ (BOOL)tsu_overridesSelector:(SEL)arg1 ofBaseClass:(Class)arg2;
 + (int)version;
 + (struct _NSZone { }*)zone;
 
@@ -243,6 +243,7 @@
 - (BOOL)_accessibilityAnimationsInProgress;
 - (void)_accessibilityAnnouncementComplete:(id)arg1;
 - (id)_accessibilityAppSwitcherApps;
+- (BOOL)_accessibilityAppendOrderedChildLeafDescendantsToArray:(id)arg1 count:(unsigned int)arg2 shouldStopAtRemoteElement:(BOOL)arg3 options:(id)arg4;
 - (id)_accessibilityApplication;
 - (id)_accessibilityAttributedValueForRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1;
 - (id)_accessibilityAutomaticIdentifier;
@@ -312,7 +313,10 @@
 - (id)_accessibilityElements;
 - (void)_accessibilityElementsDescriptionProcess:(id)arg1 tabCount:(int)arg2;
 - (id)_accessibilityElementsForSearchParameter:(id)arg1;
+- (id)_accessibilityElementsInDirectionWithCount:(unsigned int)arg1 options:(id)arg2;
 - (void)_accessibilityEnumerateAllCustomRotorTitlesWithAccumulator:(id*)arg1 usingBlock:(id)arg2;
+- (void)_accessibilityEnumerateSiblingsFromOrderedChildrenContainer:(id)arg1 fromChildAtIndex:(int)arg2 headerIndex:(int)arg3 footerIndex:(int)arg4 isMovingForward:(BOOL)arg5 usingBlock:(id)arg6;
+- (void)_accessibilityEnumerateSiblingsWithParent:(id*)arg1 options:(id)arg2 usingBlock:(id)arg3;
 - (id)_accessibilityEquivalenceTag;
 - (BOOL)_accessibilityFauxCollectionViewCellsDisabled;
 - (void)_accessibilityFinalize;
@@ -352,10 +356,12 @@
 - (BOOL)_accessibilityHasOrderedChildren;
 - (BOOL)_accessibilityHasTextOperations;
 - (BOOL)_accessibilityHasVariantKeys;
+- (BOOL)_accessibilityHasVisibleFrame;
 - (id)_accessibilityHeaderElement;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)_accessibilityHitTestReverseOrder;
 - (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
+- (id)_accessibilityHitTestSupplementaryViews:(struct CGPoint { float x1; float x2; })arg1 event:(id)arg2;
 - (id)_accessibilityHitTestSupplementaryViews:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2 withEvent:(id)arg3;
 - (BOOL)_accessibilityHitTestsStatusBar;
 - (int)_accessibilityHorizontalSizeClass;
@@ -391,6 +397,7 @@
 - (BOOL)_accessibilityIsMap;
 - (BOOL)_accessibilityIsMathTouchExplorationView;
 - (BOOL)_accessibilityIsNotFirstElement;
+- (BOOL)_accessibilityIsRemoteElement;
 - (BOOL)_accessibilityIsScannerElement;
 - (BOOL)_accessibilityIsScannerGroup;
 - (BOOL)_accessibilityIsScrollAncestor;
@@ -403,7 +410,7 @@
 - (BOOL)_accessibilityIsTouchContainer;
 - (BOOL)_accessibilityIsTourGuideRunning;
 - (BOOL)_accessibilityIsUserInteractionEnabled;
-- (BOOL)_accessibilityIsVisible;
+- (BOOL)_accessibilityIsVisibleByCompleteHitTest;
 - (BOOL)_accessibilityIsWebDocumentView;
 - (BOOL)_accessibilityIterateParentsForTestBlock:(id)arg1;
 - (void)_accessibilityIterateScrollParentsUsingBlock:(id)arg1;
@@ -418,6 +425,9 @@
 - (BOOL)_accessibilityLastHitTestNearBorder;
 - (id)_accessibilityLastOpaqueElement;
 - (id)_accessibilityLaunchableApps;
+- (id)_accessibilityLeafDescendantsWithCount:(unsigned int)arg1 options:(id)arg2;
+- (id)_accessibilityLeafDescendantsWithCount:(unsigned int)arg1 shouldStopAtRemoteElement:(BOOL)arg2 options:(id)arg3;
+- (id)_accessibilityLeafDescendantsWithOptions:(id)arg1;
 - (id)_accessibilityLineEndMarker:(id)arg1;
 - (int)_accessibilityLineEndPosition;
 - (id)_accessibilityLineNumberAndColumnForPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -438,16 +448,15 @@
 - (struct CGPoint { float x1; float x2; })_accessibilityMinScrubberPosition;
 - (float)_accessibilityMinValue;
 - (void)_accessibilityMoveSelectionToMarker:(id)arg1;
-- (id)_accessibilityNextElementsWithCount:(unsigned long)arg1 originalElement:(id)arg2;
 - (id)_accessibilityNextMarker:(id)arg1;
 - (id)_accessibilityObjectForTextMarker:(id)arg1;
-- (BOOL)_accessibilityObscuresScreen;
 - (BOOL)_accessibilityOnlyComparesByXAxis;
 - (id)_accessibilityOpaqueElementParent;
 - (BOOL)_accessibilityOpaqueElementProvider;
 - (void)_accessibilityOpaqueElementScrollToDirection:(int)arg1;
 - (BOOL)_accessibilityOpaqueElementScrollsContentIntoView;
 - (id)_accessibilityOpaqueElementsFrom:(id)arg1 direction:(int)arg2 searchTraits:(unsigned long long)arg3;
+- (id)_accessibilityOrderedChildrenContainer;
 - (BOOL)_accessibilityOverridesInstructionsHint;
 - (BOOL)_accessibilityOverridesInvalidFrames;
 - (BOOL)_accessibilityOverridesInvisibility;
@@ -456,12 +465,12 @@
 - (int)_accessibilityPageControlIndex;
 - (id)_accessibilityPageTextMarkerRange;
 - (id)_accessibilityParentForFindingScrollParent;
+- (id)_accessibilityParentFromOrderedChildrenContainer:(id)arg1;
 - (id)_accessibilityParentView;
 - (void)_accessibilityPaste;
 - (void)_accessibilityPauseAutoscrolling;
 - (BOOL)_accessibilityPerformCustomActionWithIdentifier:(id)arg1;
 - (BOOL)_accessibilityPerformEscape;
-- (BOOL)_accessibilityPerformLabelling:(id)arg1;
 - (BOOL)_accessibilityPerformLegacyCustomAction:(id)arg1;
 - (id)_accessibilityPhotoDescription;
 - (int)_accessibilityPickerType;
@@ -474,7 +483,6 @@
 - (void)_accessibilityPostValueChangedNotificationWithChangeType:(struct __CFString { }*)arg1 insertedText:(id)arg2;
 - (void)_accessibilityPostValueChangedNotificationWithInsertedText:(id)arg1;
 - (BOOL)_accessibilityPrefersHorizontalScrolling;
-- (id)_accessibilityPreviousElementsWithCount:(unsigned long)arg1 originalElement:(id)arg2;
 - (id)_accessibilityPreviousMarker:(id)arg1;
 - (void)_accessibilityProcessScannerGroupElementPieces:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityRangeForLineNumberAndColumn:(id)arg1;
@@ -483,6 +491,7 @@
 - (void)_accessibilityRawSetIsSpeakThisElement:(id)arg1;
 - (BOOL)_accessibilityReadAllContinuesWithScroll;
 - (BOOL)_accessibilityReadAllOnFocus;
+- (id)_accessibilityRemoteParent;
 - (void)_accessibilityRemoveActionBlockForKey:(unsigned long)arg1;
 - (void)_accessibilityRemoveAllActionBlocks;
 - (void)_accessibilityRemoveTrait:(unsigned long long)arg1;
@@ -526,6 +535,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedNSRangeForObject;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
 - (BOOL)_accessibilitySelfFoundByHitTesting;
+- (void)_accessibilitySendPageScrollFailedIfNecessary;
 - (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (BOOL)_accessibilityServesAsFirstElement;
 - (BOOL)_accessibilityServesAsFirstResponder;
@@ -563,11 +573,14 @@
 - (BOOL)_accessibilityShouldAttemptScrollToFrameOnParentView;
 - (BOOL)_accessibilityShouldAvoidAnnouncing;
 - (BOOL)_accessibilityShouldAvoidScrollingToViewBounds;
+- (BOOL)_accessibilityShouldBeProcessed:(id)arg1;
 - (BOOL)_accessibilityShouldInheritTraits;
 - (BOOL)_accessibilityShouldPerformIncrementOrDecrement;
 - (BOOL)_accessibilityShouldReleaseAfterUnregistration;
+- (BOOL)_accessibilityShouldScrollRemoteParent;
 - (BOOL)_accessibilityShouldSpeakMathEquationTrait;
 - (BOOL)_accessibilityShouldSpeakScrollStatusOnEntry;
+- (BOOL)_accessibilityShouldUseSupplementaryViews;
 - (BOOL)_accessibilityShouldUseViewHierarchyForFindingScrollParent;
 - (BOOL)_accessibilitySortCollectionViewLogically;
 - (int)_accessibilitySortPriority;
@@ -635,8 +648,8 @@
 - (id)_accessibilityVariantKeys;
 - (int)_accessibilityVerticalSizeClass;
 - (id)_accessibilityViewAncestorIsKindOf:(Class)arg1;
+- (id)_accessibilityViewChildrenWithOptions:(id)arg1;
 - (id)_accessibilityViewController;
-- (BOOL)_accessibilityViewIsVisible;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_accessibilityVisibleContentInset;
 - (id)_accessibilityVisibleElements;
 - (id)_accessibilityVisibleElementsGrouped:(BOOL)arg1;
@@ -682,6 +695,7 @@
 - (id)_gkViewDebuggingChildren;
 - (void)_handleRotatingFirstFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 secondFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 toOrientation:(int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_handleRotatingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toOrientation:(int)arg2;
+- (void)_handleSupplementaryViewIfNeededWithOrderedChildrenContainer:(id*)arg1 childOfOrderedChildrenContainer:(id*)arg2 headerIndex:(unsigned int*)arg3 footerIndex:(unsigned int*)arg4;
 - (id)_implicitObservationInfo;
 - (BOOL)_isDeallocating;
 - (BOOL)_isKVOA;
@@ -710,7 +724,6 @@
 - (void)_setAccessibilityFauxCollectionViewCellsDisabled:(BOOL)arg1;
 - (void)_setAccessibilityIsMainWindow:(BOOL)arg1;
 - (void)_setAccessibilityIsNotFirstElement:(BOOL)arg1;
-- (void)_setAccessibilityObscuresScreen:(BOOL)arg1;
 - (void)_setAccessibilityServesAsFirstElement:(BOOL)arg1;
 - (void)_setAccessibilityTableCellUsesDetailTextAsValue:(BOOL)arg1;
 - (void)_setAccessibilityUpdatesOnActivationAfterDelay:(BOOL)arg1;
@@ -742,8 +755,6 @@
 - (void)accessibilityDecrement;
 - (BOOL)accessibilityEditOperationAction:(id)arg1;
 - (id)accessibilityElementAtIndex:(int)arg1;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)accessibilityElementCount;
 - (int)accessibilityElementCount;
 - (void)accessibilityElementDidBecomeFocused;
 - (void)accessibilityElementDidBecomeFocused;
@@ -829,7 +840,6 @@
 - (void)allowSafePerformSelector;
 - (BOOL)allowsWeakReference;
 - (void)appendJsonStringToString:(id)arg1;
-- (void)appendJsonStringToString:(id)arg1;
 - (id)autoContentAccessingProxy;
 - (id)autorelease;
 - (id)awakeAfterUsingCoder:(id)arg1;
@@ -838,6 +848,8 @@
 - (id)axTrampolineForClass:(Class)arg1;
 - (id)ax_prettyDescription;
 - (id)blockingMainThreadProxy;
+- (BOOL)boolValueSafe;
+- (BOOL)boolValueSafe:(int*)arg1;
 - (BOOL)bs_isPlistableType;
 - (BOOL)bs_performSynchronously:(id)arg1 timeout:(double)arg2;
 - (BOOL)cancelPreviousDispatchAsyncWithCancellationIdentifier:(id)arg1;
@@ -880,6 +892,8 @@
 - (void)dispatchAsyncWithCancellationIdentifier:(id)arg1 delay:(double)arg2 queue:(id)arg3 block:(id)arg4;
 - (void)doesNotRecognizeSelector:(SEL)arg1;
 - (void)doesNotRecognizeSelector:(SEL)arg1;
+- (double)doubleValueSafe;
+- (double)doubleValueSafe:(int*)arg1;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)finalize;
 - (void)forwardInvocation:(id)arg1;
@@ -891,11 +905,13 @@
 - (unsigned int)hash;
 - (BOOL)implementsSelector:(SEL)arg1;
 - (int)indexOfAccessibilityElement:(id)arg1;
-- (int)indexOfAccessibilityElement:(id)arg1;
 - (id)init;
+- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initWithArchive:(const struct Message { int (**x1)(); }*)arg1 unarchiver:(id)arg2;
 - (id)initWithCPLArchiver:(id)arg1;
+- (long long)int64ValueSafe;
+- (long long)int64ValueSafe:(int*)arg1;
 - (BOOL)isAXAttributedString;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
@@ -962,7 +978,6 @@
 - (void)performSelector:(SEL)arg1 object:(id)arg2 afterDelay:(double)arg3;
 - (void)performSelector:(SEL)arg1 onThread:(id)arg2 withObject:(id)arg3 waitUntilDone:(BOOL)arg4;
 - (void)performSelector:(SEL)arg1 onThread:(id)arg2 withObject:(id)arg3 waitUntilDone:(BOOL)arg4 modes:(id)arg5;
-- (void)performSelector:(SEL)arg1 withIndexesFromSet:(id)arg2;
 - (id)performSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)performSelector:(SEL)arg1 withObject:(id)arg2 afterDelay:(double)arg3;
 - (void)performSelector:(SEL)arg1 withObject:(id)arg2 afterDelay:(double)arg3 ignoreMenuTracking:(BOOL)arg4;
@@ -971,7 +986,6 @@
 - (id)performSelector:(SEL)arg1 withObjectsAsArray:(id)arg2;
 - (double)performSelector:(SEL)arg1 withThreadKey:(id)arg2 count:(unsigned long)arg3 objects:(id)arg4;
 - (double)performSelector:(SEL)arg1 withThreadKey:(id)arg2 waitTime:(double)arg3 cancelMask:(unsigned long)arg4 count:(unsigned long)arg5 objects:(id)arg6;
-- (void)performSelector:(SEL)arg1 withValue:(id)arg2;
 - (void)performSelector:(SEL)arg1 withValue:(id)arg2;
 - (void)performSelectorInBackground:(SEL)arg1 withObject:(id)arg2;
 - (void)performSelectorOnMainThread:(SEL)arg1 withObject:(id)arg2 waitUntilDone:(BOOL)arg3;
@@ -1038,6 +1052,7 @@
 - (void)setValuesForKeysToNil:(id)arg1;
 - (void)setValuesForKeysWithDictionary:(id)arg1;
 - (void)set_accessibilityDidUpdateContainerReferenceForAccessibilityElements:(BOOL)arg1;
+- (void)sfu_appendJsonStringToString:(id)arg1;
 - (BOOL)shouldGroupAccessibilityChildren;
 - (void)smsComposeControllerAppeared:(id)arg1;
 - (void)smsComposeControllerCancelled:(id)arg1;
@@ -1052,11 +1067,17 @@
 - (id)storedClassNameForCPLArchiver:(id)arg1;
 - (id)storedIsAccessibilityElement;
 - (id)storedShouldGroupAccessibilityChildren;
+- (id)stringValueSafe;
+- (id)stringValueSafe:(int*)arg1;
 - (Class)superclass;
 - (id)threadDescription;
+- (void)tp_performSelector:(SEL)arg1 withIndexesFromSet:(id)arg2;
+- (void)tsu_performSelector:(SEL)arg1 withValue:(id)arg2;
 - (void)tsu_runBlock;
 - (void)tsu_runBlock;
 - (void)unregisterForTimeMarkerNotifications;
+- (const char *)utf8ValueSafe;
+- (const char *)utf8ValueSafe:(int*)arg1;
 - (BOOL)validateValue:(inout id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
 - (BOOL)validateValue:(inout id*)arg1 forKeyPath:(id)arg2 error:(out id*)arg3;
 - (id)valueForBlock:(id)arg1 forThreadKey:(id)arg2 waitTime:(double)arg3;

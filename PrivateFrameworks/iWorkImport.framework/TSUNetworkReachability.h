@@ -3,11 +3,14 @@
  */
 
 @interface TSUNetworkReachability : NSObject {
+    int _enableCount;
     BOOL _localWiFi;
+    BOOL _notifierActive;
     struct __SCNetworkReachability { } *_reachabilityRef;
 }
 
 @property(readonly) BOOL connectionRequired;
+@property BOOL notifierActive;
 @property(readonly) int status;
 
 + (id)networkReachabilityForDocumentResources;
@@ -21,10 +24,16 @@
 
 - (BOOL)connectionRequired;
 - (void)dealloc;
+- (void)disableNotifier;
+- (BOOL)enableNotifier;
 - (id)init;
 - (id)initWithReachabilityRef:(struct __SCNetworkReachability { }*)arg1;
 - (int)localWiFiStatusForFlags:(unsigned int)arg1;
 - (int)networkStatusForFlags:(unsigned int)arg1;
+- (BOOL)notifierActive;
+- (void)setNotifierActive:(BOOL)arg1;
+- (BOOL)startNotifier;
 - (int)status;
+- (void)stopNotifier;
 
 @end

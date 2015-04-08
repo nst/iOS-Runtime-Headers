@@ -92,9 +92,11 @@
 - (struct CGSize { float x1; float x2; })_defaultTitleShadowOffsetForState:(unsigned int)arg1;
 - (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
+- (id)_externalUnfocusedBorderColor;
 - (float)_fontScaleAdjustment;
 - (BOOL)_hasBaselineAlignedAbsoluteVerticalPosition:(out float*)arg1 withinNavBar:(id)arg2 forSize:(struct CGSize { float x1; float x2; })arg3;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_isExternalRoundedRectButton;
 - (BOOL)_isFontScaleInvalid;
 - (BOOL)_isModernButton;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathImageEdgeInsets;
@@ -138,6 +140,7 @@
 - (BOOL)_wantsAccessibilityButtonShapes;
 - (BOOL)_wantsBlendModeForAccessibilityBackgrounds;
 - (int)barStyle;
+- (BOOL)canBecomeFocused;
 - (BOOL)contentsEqualTo:(id)arg1 withStyle:(int)arg2;
 - (int)controlSize;
 - (void)dealloc;

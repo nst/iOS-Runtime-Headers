@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class <WKActionSheetDelegate>, WKContentView;
+@class <WKActionSheetDelegate>;
 
 @interface WKActionSheet : UIAlertController {
     unsigned int _arrowDirections;
@@ -15,7 +15,6 @@
     } _presentedViewControllerWhileRotating;
     BOOL _readyToPresentAfterRotation;
     <WKActionSheetDelegate> *_sheetDelegate;
-    WKContentView *_view;
 }
 
 @property unsigned int arrowDirections;
@@ -28,7 +27,7 @@
 - (void)dealloc;
 - (void)didRotate;
 - (void)doneWithSheet;
-- (id)initWithView:(id)arg1;
+- (id)init;
 - (BOOL)presentSheet;
 - (BOOL)presentSheetFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setArrowDirections:(unsigned int)arg1;

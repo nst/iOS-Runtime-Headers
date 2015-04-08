@@ -2,34 +2,40 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPShareIdentifier, NSData, NSMutableArray, NSString;
+@class CKDPProtectionInfo, CKDPShareIdentifier, NSData, NSMutableArray, NSString;
 
 @interface CKDPShare : PBCodable <NSCopying> {
+    NSString *_etag;
     struct { 
-        unsigned int resourceState : 1; 
+        unsigned int publicAccess : 1; 
     } _has;
-    NSData *_keyData;
-    NSString *_keyVersion;
+    NSData *_internalAppSpecificMetadata;
+    CKDPProtectionInfo *_invitedPcs;
     NSMutableArray *_participants;
-    NSData *_resource;
-    NSString *_resourceProvider;
-    int _resourceState;
+    int _publicAccess;
+    CKDPProtectionInfo *_selfAddedPcs;
     CKDPShareIdentifier *_shareId;
+    NSData *_shortTokenHash;
+    NSString *_shortTokenRoutingKey;
 }
 
-@property(readonly) BOOL hasKeyData;
-@property(readonly) BOOL hasKeyVersion;
-@property(readonly) BOOL hasResource;
-@property(readonly) BOOL hasResourceProvider;
-@property BOOL hasResourceState;
+@property(retain) NSString * etag;
+@property(readonly) BOOL hasEtag;
+@property(readonly) BOOL hasInternalAppSpecificMetadata;
+@property(readonly) BOOL hasInvitedPcs;
+@property BOOL hasPublicAccess;
+@property(readonly) BOOL hasSelfAddedPcs;
 @property(readonly) BOOL hasShareId;
-@property(retain) NSData * keyData;
-@property(retain) NSString * keyVersion;
+@property(readonly) BOOL hasShortTokenHash;
+@property(readonly) BOOL hasShortTokenRoutingKey;
+@property(retain) NSData * internalAppSpecificMetadata;
+@property(retain) CKDPProtectionInfo * invitedPcs;
 @property(retain) NSMutableArray * participants;
-@property(retain) NSData * resource;
-@property(retain) NSString * resourceProvider;
-@property int resourceState;
+@property int publicAccess;
+@property(retain) CKDPProtectionInfo * selfAddedPcs;
 @property(retain) CKDPShareIdentifier * shareId;
+@property(retain) NSData * shortTokenHash;
+@property(retain) NSString * shortTokenRoutingKey;
 
 - (void).cxx_destruct;
 - (void)addParticipant:(id)arg1;
@@ -38,33 +44,39 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasKeyData;
-- (BOOL)hasKeyVersion;
-- (BOOL)hasResource;
-- (BOOL)hasResourceProvider;
-- (BOOL)hasResourceState;
+- (id)etag;
+- (BOOL)hasEtag;
+- (BOOL)hasInternalAppSpecificMetadata;
+- (BOOL)hasInvitedPcs;
+- (BOOL)hasPublicAccess;
+- (BOOL)hasSelfAddedPcs;
 - (BOOL)hasShareId;
+- (BOOL)hasShortTokenHash;
+- (BOOL)hasShortTokenRoutingKey;
 - (unsigned int)hash;
+- (id)internalAppSpecificMetadata;
+- (id)invitedPcs;
 - (BOOL)isEqual:(id)arg1;
-- (id)keyData;
-- (id)keyVersion;
 - (void)mergeFrom:(id)arg1;
 - (id)participantAtIndex:(unsigned int)arg1;
 - (id)participants;
 - (unsigned int)participantsCount;
+- (int)publicAccess;
 - (BOOL)readFrom:(id)arg1;
-- (id)resource;
-- (id)resourceProvider;
-- (int)resourceState;
-- (void)setHasResourceState:(BOOL)arg1;
-- (void)setKeyData:(id)arg1;
-- (void)setKeyVersion:(id)arg1;
+- (id)selfAddedPcs;
+- (void)setEtag:(id)arg1;
+- (void)setHasPublicAccess:(BOOL)arg1;
+- (void)setInternalAppSpecificMetadata:(id)arg1;
+- (void)setInvitedPcs:(id)arg1;
 - (void)setParticipants:(id)arg1;
-- (void)setResource:(id)arg1;
-- (void)setResourceProvider:(id)arg1;
-- (void)setResourceState:(int)arg1;
+- (void)setPublicAccess:(int)arg1;
+- (void)setSelfAddedPcs:(id)arg1;
 - (void)setShareId:(id)arg1;
+- (void)setShortTokenHash:(id)arg1;
+- (void)setShortTokenRoutingKey:(id)arg1;
 - (id)shareId;
+- (id)shortTokenHash;
+- (id)shortTokenRoutingKey;
 - (void)writeTo:(id)arg1;
 
 @end

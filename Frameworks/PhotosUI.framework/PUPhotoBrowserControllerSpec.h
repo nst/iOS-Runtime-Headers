@@ -18,7 +18,6 @@
 @property(readonly) BOOL shouldShowPhotoScrubber;
 @property(readonly) BOOL shouldShowShareItem;
 @property(readonly) BOOL shouldShowSlideshowItem;
-@property(readonly) BOOL shouldUsePopovers;
 @property(readonly) unsigned int supportedInterfaceOrientations;
 @property(readonly) BOOL wantsCompactCommentsLayout;
 @property(readonly) BOOL wantsSubtitleForPhotobrowserTitleInLandscape;
@@ -36,7 +35,6 @@
 - (BOOL)shouldShowPhotoScrubber;
 - (BOOL)shouldShowShareItem;
 - (BOOL)shouldShowSlideshowItem;
-- (BOOL)shouldUsePopovers;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)wantsCompactCommentsLayout;
 - (BOOL)wantsSubtitleForPhotobrowserTitleInLandscape;

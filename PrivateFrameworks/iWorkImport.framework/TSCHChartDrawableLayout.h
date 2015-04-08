@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSDictionary, NSIndexSet, TSCH3DVector, TSCHChartDrawableLayoutLegendResizer, TSCHChartInfo, TSCHChartLayout, TSCHChartModel, TSDLayoutGeometry;
+@class NSArray, NSDictionary, NSIndexSet, TSCHChartDrawableLayoutLegendResizer, TSCHChartInfo, TSCHChartLayout, TSCHChartModel, TSDLayoutGeometry;
 
 @interface TSCHChartDrawableLayout : TSWPTextHostLayout {
     struct { 
@@ -38,7 +38,6 @@
 @property(retain) TSCHChartDrawableLayoutLegendResizer * p_legendResizer;
 @property(readonly) NSIndexSet * pieWedgeExplosionSeriesIndices;
 @property(copy) NSArray * pieWedgeExplosions;
-@property(readonly) TSCH3DVector * rotation3D;
 @property(copy) NSDictionary * seriesIndexedPieWedgeExplosions;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrame;
@@ -57,6 +56,7 @@
 - (unsigned int)dataSetIndex;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForCulling;
+- (id)i_computeUnitedWrapPath;
 - (id)i_computeWrapPath;
 - (id)initWithInfo:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })insertionFrame;
@@ -66,14 +66,12 @@
 - (void)invalidateSize;
 - (BOOL)is3DChart;
 - (id)layoutGeometryFromInfo;
-- (void)layoutSearchForSpellingErrorsWithHitBlock:(id)arg1 stop:(BOOL*)arg2;
-- (void)layoutSearchForString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id)arg3;
 - (id)legendGeometry;
 - (id)legendModelGeometry;
 - (struct CGSize { float x1; float x2; })minimumSize;
 - (id)model;
 - (void)offsetGeometryBy:(struct CGPoint { float x1; float x2; })arg1;
-- (void)p_addEdgeAlignmentGuidesForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 set:(id)arg2;
+- (void)p_addEdgeAlignmentGuidesForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 array:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_addMultiDataControlToInlineWrapBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)p_approximateMultiDataControlUnscaledHeight;
 - (float)p_approximateMultiDataControlUnscaledMinimumWidth;
@@ -87,6 +85,7 @@
 - (void)p_convertValidChartLayout:(id)arg1 andInfoGeometry:(id)arg2 toPureGeometry:(id*)arg3 toChartAreaGeometry:(id*)arg4 toShadowGeometry:(id*)arg5;
 - (void)p_forceValidateChartLayout;
 - (BOOL)p_isPrintingInBackground;
+- (BOOL)p_isRenderingForKPF;
 - (id)p_lastChartAreaGeometry;
 - (id)p_lastPureGeometry;
 - (id)p_legendGeometryForResize;
@@ -101,10 +100,8 @@
 - (void)processChangedProperty:(int)arg1;
 - (void)processChanges:(id)arg1;
 - (id)propertiesThatInvalidateLayout;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection:(id)arg1;
 - (id)renderersWithRep:(id)arg1;
 - (Class)repClassOverride;
-- (id)rotation3D;
 - (id)seriesIndexedPieWedgeExplosions;
 - (void)setChartLayoutPropertyValue:(id)arg1 forKey:(id)arg2;
 - (void)setDataSetIndex:(unsigned int)arg1;
@@ -116,12 +113,11 @@
 - (void)setP_legendGeometryForResize:(id)arg1;
 - (void)setP_legendResizer:(id)arg1;
 - (void)setPieWedgeExplosions:(id)arg1;
-- (void)setRotation3D:(id)arg1;
 - (void)setSeriesIndexedPieWedgeExplosions:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snappedLegendModelFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)supportsParentRotation;
 - (void)take3DDepth;
 - (void)validate;
+- (float)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(float)arg2;
 - (id)visibleGeometries;
 - (int)wrapFitType;
 

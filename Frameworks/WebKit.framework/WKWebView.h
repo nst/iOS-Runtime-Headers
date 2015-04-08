@@ -232,6 +232,7 @@
 - (void)_didFinishScrolling;
 - (void)_didInvokeUIScrollViewDelegateCallback;
 - (void)_didRelaunchProcess;
+- (void)_didSameDocumentNavigationForMainFrame:(int)arg1;
 - (void)_dynamicViewportUpdateChangedTargetToScale:(double)arg1 position:(struct CGPoint { float x1; float x2; })arg2 nextValidLayerTreeTransactionID:(unsigned long long)arg3;
 - (void)_endAnimatedResize;
 - (void)_endInteractiveObscuredInsetsChange;
@@ -280,6 +281,7 @@
 - (id)_restoreSessionState:(id)arg1 andNavigate:(BOOL)arg2;
 - (void)_scrollToContentOffset:(struct FloatPoint { float x1; float x2; })arg1;
 - (BOOL)_scrollToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 origin:(struct FloatPoint { float x1; float x2; })arg2 minimumScrollDistance:(float)arg3;
+- (void)_scrollViewDidInterruptDecelerating:(id)arg1;
 - (id)_sessionState;
 - (id)_sessionStateData;
 - (void)_setAddsVisitedLinks:(BOOL)arg1;
@@ -322,10 +324,10 @@
 - (id)_webViewPrintFormatter;
 - (void)_willInvokeUIScrollViewDelegateCallback;
 - (void)_windowDidRotate:(id)arg1;
-- (void)_zoomOutWithOrigin:(struct FloatPoint { float x1; float x2; })arg1;
+- (void)_zoomOutWithOrigin:(struct FloatPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)_zoomToFocusRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selectionRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fontSize:(float)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 allowScaling:(BOOL)arg6 forceScroll:(BOOL)arg7;
-- (void)_zoomToPoint:(struct FloatPoint { float x1; float x2; })arg1 atScale:(double)arg2;
-- (void)_zoomToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atScale:(double)arg2 origin:(struct FloatPoint { float x1; float x2; })arg3;
+- (void)_zoomToPoint:(struct FloatPoint { float x1; float x2; })arg1 atScale:(double)arg2 animated:(BOOL)arg3;
+- (void)_zoomToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atScale:(double)arg2 origin:(struct FloatPoint { float x1; float x2; })arg3 animated:(BOOL)arg4;
 - (BOOL)_zoomToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withOrigin:(struct FloatPoint { float x1; float x2; })arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 minimumScrollDistance:(float)arg6;
 - (BOOL)allowsBackForwardNavigationGestures;
 - (id)backForwardList;

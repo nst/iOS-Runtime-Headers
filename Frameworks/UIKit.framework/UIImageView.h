@@ -38,10 +38,13 @@
 + (id)backgroundImageViewForImage:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
 - (id)_activeImage;
+- (id)_adaptiveImageForImage:(id)arg1 assignedImage:(id)arg2 currentImage:(id)arg3 hasAdapted:(BOOL*)arg4;
 - (BOOL)_animatesContents;
 - (void)_applySettingsForLegibilityStyle:(int)arg1;
 - (id)_cachedPretiledImageForImage:(id)arg1;
 - (BOOL)_canDrawContent;
+- (id)_checkHighlightedImageForAdaptation:(id)arg1 hadAdapted:(BOOL*)arg2;
+- (id)_checkImageForAdaptation:(id)arg1 hasAdapted:(BOOL*)arg2;
 - (void)_clearPretiledImageCacheForImage:(id)arg1;
 - (id)_currentHighlightedImage;
 - (id)_currentImage;
@@ -124,7 +127,6 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startAnimating;
 - (void)stopAnimating;
-- (id)tintColor;
 - (void)tintColorDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
 - (BOOL)useBlockyMagnificationInClassic;

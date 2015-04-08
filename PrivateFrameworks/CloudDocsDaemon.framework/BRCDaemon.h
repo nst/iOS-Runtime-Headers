@@ -7,11 +7,10 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class BRCAccountHandler, BRCAccountSession, BRCCloudFileProvider, BRCVersionsFileProvider, NSDate, NSError, NSObject<OS_dispatch_source>, NSString, NSXPCListener, NSXPCListenerEndpoint;
+@class BRCAccountHandler, BRCAccountSession, BRCCloudFileProvider, BRCVersionsFileProvider, NSDate, NSError, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_source>, NSString, NSXPCListener, NSXPCListenerEndpoint;
 
 @interface BRCDaemon : NSObject <BRCAccountHandlerDelegate, BRCReachabilityDelegate, NSXPCListenerDelegate> {
     BRCAccountHandler *_accountHandler;
-    BRCAccountSession *_accountSession;
     NSString *_appSupportDirPath;
     NSString *_cacheDirPath;
     Class _containerClass;
@@ -25,6 +24,7 @@
     BOOL _resumed;
     NSString *_rootDirPath;
     int _serverAvailabilityNotifyToken;
+    BRCAccountSession *_session;
     NSObject<OS_dispatch_source> *_sigIntSrc;
     NSObject<OS_dispatch_source> *_sigQuitSrc;
     NSObject<OS_dispatch_source> *_sigTermSrc;
@@ -34,10 +34,11 @@
     BOOL _unitTestMode;
     BRCVersionsFileProvider *_versionsProvider;
     NSXPCListener *_xpcListener;
+    NSObject<OS_dispatch_group> *_xpcListenerBlockerUntilReady;
+    NSObject<OS_dispatch_group> *_xpcTokenListenerBlockerUntilReady;
 }
 
 @property(readonly) BRCAccountHandler * accountHandler;
-@property(retain) BRCAccountSession * accountSession;
 @property(retain) NSString * appSupportDirPath;
 @property(retain) NSString * cacheDirPath;
 @property(retain) Class containerClass;
@@ -52,6 +53,7 @@
 @property(retain) NSError * loggedOutError;
 @property(retain) NSString * logsDirPath;
 @property(retain) NSString * rootDirPath;
+@property(retain) BRCAccountSession * session;
 @property(readonly) NSDate * startupDate;
 @property(readonly) Class superclass;
 @property(readonly) NSString * ubiquityTokenSalt;
@@ -66,7 +68,6 @@
 - (id)accountHandler;
 - (void)accountHandler:(id)arg1 didChangeSessionTo:(id)arg2;
 - (void)accountHandler:(id)arg1 willChangeSessionFrom:(id)arg2;
-- (id)accountSession;
 - (id)appSupportDirPath;
 - (id)cacheDirPath;
 - (long long)computePurgableSpaceWithUrgency:(int)arg1;
@@ -87,7 +88,7 @@
 - (void)resume;
 - (id)rootDirPath;
 - (BOOL)selfCheck:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
-- (void)setAccountSession:(id)arg1;
+- (id)session;
 - (void)setAppSupportDirPath:(id)arg1;
 - (void)setCacheDirPath:(id)arg1;
 - (void)setContainerClass:(Class)arg1;
@@ -97,6 +98,7 @@
 - (void)setLoggedOutError:(id)arg1;
 - (void)setLogsDirPath:(id)arg1;
 - (void)setRootDirPath:(id)arg1;
+- (void)setSession:(id)arg1;
 - (void)setUp;
 - (void)setUpAnonymousListener;
 - (void)setUpSandbox;

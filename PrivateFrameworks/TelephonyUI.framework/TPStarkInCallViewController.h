@@ -39,6 +39,7 @@
 @property(retain) NSTimer * viewUpdateClockTickTimer;
 
 - (id)__sanitizedPrimaryPhoneCallOrdering:(id)arg1;
+- (void)_invalidateIntrinsicContentSizeForLabelsInView:(id)arg1;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
@@ -96,6 +97,7 @@
 - (void)setPrimaryPhoneCalls:(id)arg1;
 - (void)setPrimaryPhoneCalls:(id)arg1 conferencePhoneCalls:(id)arg2 incomingPhoneCall:(id)arg3;
 - (void)setViewUpdateClockTickTimer:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateButtonsViewState;
 - (void)viewDidAppear:(BOOL)arg1;
 - (id)viewUpdateClockTickTimer;

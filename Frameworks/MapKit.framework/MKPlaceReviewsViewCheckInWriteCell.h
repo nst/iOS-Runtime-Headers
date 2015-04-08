@@ -2,17 +2,19 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceReviewsViewCheckInWriteCellDelegate>, NSAttributedString, NSMutableArray, UILabel;
+@class <MKPlaceReviewsViewCheckInWriteCellDelegate>, NSArray, NSAttributedString, NSMutableArray, UILabel;
 
 @interface MKPlaceReviewsViewCheckInWriteCell : UITableViewCell {
     UILabel *_checkInLabel;
     <MKPlaceReviewsViewCheckInWriteCellDelegate> *_delegate;
+    NSArray *_marginConstraints;
     NSMutableArray *_scaledConstraints;
     UILabel *_writeReviewLabel;
 }
 
 @property(retain) NSAttributedString * checkInTitle;
 @property <MKPlaceReviewsViewCheckInWriteCellDelegate> * delegate;
+@property(retain) NSArray * marginConstraints;
 @property(retain) NSMutableArray * scaledConstraints;
 @property(retain) NSAttributedString * writeReviewTitle;
 
@@ -26,10 +28,14 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutMarginsDidChange;
+- (id)marginConstraints;
 - (id)newLabel;
+- (void)refreshMarginConstraints;
 - (id)scaledConstraints;
 - (void)setCheckInTitle:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setMarginConstraints:(id)arg1;
 - (void)setScaledConstraints:(id)arg1;
 - (void)setWriteReviewTitle:(id)arg1;
 - (void)tintColorDidChange;

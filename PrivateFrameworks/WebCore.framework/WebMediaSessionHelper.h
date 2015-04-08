@@ -19,6 +19,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)allocateVolumeView;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;

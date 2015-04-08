@@ -11,14 +11,7 @@
 @property BOOL hideKnobs;
 @property(readonly) TPPaginatedPageInfo * pageInfo;
 
-- (void)addKnobsToArray:(id)arg1;
-- (id)beginEditing;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
-- (BOOL)canEditWithEditor:(id)arg1;
-- (BOOL)doesNeedDisplayOnEditingDidEnd;
-- (void)editingDidEnd;
 - (BOOL)hideKnobs;
-- (id)newTrackerForKnob:(id)arg1;
 - (BOOL)p_isInDocumentSetup;
 - (BOOL)p_isMiddleFooterRep;
 - (BOOL)p_isMiddleHeaderRep;
@@ -26,8 +19,6 @@
 - (id)pageInfo;
 - (id)pageLayout;
 - (void)setHideKnobs:(BOOL)arg1;
-- (BOOL)shouldCreateKnobs;
 - (BOOL)shouldIgnoreSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 withRecognizer:(id)arg2;
-- (void)updatePositionsOfKnobs:(id)arg1;
 
 @end

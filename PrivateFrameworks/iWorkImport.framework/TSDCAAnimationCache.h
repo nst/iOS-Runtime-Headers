@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CAAnimation, CALayer, NSDictionary;
+@class <TSDCAAnimationContextCacheProtocol>, CAAnimation, CALayer, NSDictionary;
 
 @interface TSDCAAnimationCache : NSObject {
     BOOL _anchorPointAnimationExists;
@@ -15,6 +15,7 @@
     float *_anchorPointZCache;
     float _anchorPointZInitialValue;
     CAAnimation *_animation;
+    <TSDCAAnimationContextCacheProtocol> *_animationContextCache;
     float _animationDuration;
     BOOL _borderColorAnimationExists;
     struct CGColor { } *_borderColorInitialValue;
@@ -120,6 +121,7 @@
 @property(readonly) BOOL anchorPointZAnimationExists;
 @property(readonly) float anchorPointZInitialValue;
 @property(readonly) CAAnimation * animation;
+@property(readonly) <TSDCAAnimationContextCacheProtocol> * animationContextCache;
 @property(readonly) BOOL borderColorAnimationExists;
 @property(readonly) struct CGColor { }* borderColorInitialValue;
 @property(readonly) BOOL borderWidthAnimationExists;
@@ -172,6 +174,7 @@
 - (float)anchorPointZCachedValueAtTime:(double)arg1 layer:(id)arg2 animation:(id)arg3;
 - (float)anchorPointZInitialValue;
 - (id)animation;
+- (id)animationContextCache;
 - (BOOL)borderColorAnimationExists;
 - (struct CGColor { }*)borderColorInitialValue;
 - (BOOL)borderWidthAnimationExists;

@@ -16,6 +16,7 @@
     } _cachedSizeToFit;
     NSArray *_entries;
     UIFont *_font;
+    int _idiom;
     UIColor *_indexBackgroundColor;
     UIColor *_indexColor;
     UIColor *_indexTrackingBackgroundColor;
@@ -45,9 +46,11 @@
 - (int)_idiom;
 - (float)_minLineSpacingForIdiom:(int)arg1;
 - (void)_selectSectionForTouch:(id)arg1 withEvent:(id)arg2;
+- (void)_setIdiom:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBoundsForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 stride:(float*)arg2;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)canBecomeFocused;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;

@@ -28,7 +28,7 @@
 
 - (void).cxx_destruct;
 - (id)changeHandlingKey;
-- (id)changeHandlingValue;
+- (id)changeHandlingValueUsingSeedOids:(id)arg1 withChange:(id)arg2 usingManagedObjectContext:(id)arg3;
 - (int)collectionFetchType;
 - (id)containerIdentifier;
 - (id)description;
@@ -48,6 +48,7 @@
 - (id)objects;
 - (id)options;
 - (id)photoLibrary;
+- (void)prefetchObjectsAtIndexes:(id)arg1;
 - (void)updateRegistrationForChangeNotificationDeltas;
 
 @end

@@ -73,6 +73,7 @@
 - (id)metricsPageContextForViewController:(id)arg1;
 - (id)navigationHistory;
 - (id)navigationHistoryPersistenceKey;
+- (id)newLegacyStorePageViewControllerForURLResponse:(id)arg1;
 - (id)platformContext;
 - (id)purchaseReferrerURL;
 - (void)pushNavigationHistoryPageIdentifier:(id)arg1;

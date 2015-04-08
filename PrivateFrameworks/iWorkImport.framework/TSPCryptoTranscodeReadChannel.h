@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSUStreamReadChannel>, NSObject<OS_dispatch_queue>, NSString, SFUCryptoKey;
+@class <TSPMutableCryptoInfo>, <TSUStreamReadChannel>, NSString;
 
 @interface TSPCryptoTranscodeReadChannel : NSObject <TSUStreamReadChannel> {
-    SFUCryptoKey *_encryptionKey;
+    <TSPMutableCryptoInfo> *_encryptionInfo;
     <TSUStreamReadChannel> *_readChannel;
-    NSObject<OS_dispatch_queue> *_readQueue;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -17,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)close;
-- (id)initWithReadChannel:(id)arg1 decryptionKey:(id)arg2 encryptionKey:(id)arg3;
-- (void)readWithQueue:(id)arg1 handler:(id)arg2;
+- (id)initWithReadChannel:(id)arg1 decryptionInfo:(id)arg2 encryptionInfo:(id)arg3;
+- (void)readWithHandler:(id)arg1;
 
 @end

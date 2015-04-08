@@ -7,6 +7,7 @@
 @interface PKVerificationChannel : NSObject <NSCopying, NSSecureCoding> {
     NSString *_contactPoint;
     NSString *_identifier;
+    NSString *_organizationName;
     BOOL _requiresUserInteraction;
     NSString *_sourceAddress;
     unsigned int _type;
@@ -15,6 +16,7 @@
 
 @property(copy) NSString * contactPoint;
 @property(copy) NSString * identifier;
+@property(copy) NSString * organizationName;
 @property BOOL requiresUserInteraction;
 @property(copy) NSString * sourceAddress;
 @property unsigned int type;
@@ -22,7 +24,7 @@
 @property(readonly) NSString * typeDescriptionUnlocalized;
 
 + (BOOL)supportsSecureCoding;
-+ (id)verificationChannelWithDictionary:(id)arg1;
++ (id)verificationChannelWithDictionary:(id)arg1 andOrganizationName:(id)arg2;
 
 - (id)contactPoint;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -31,9 +33,11 @@
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)needsServerRequest;
+- (id)organizationName;
 - (BOOL)requiresUserInteraction;
 - (void)setContactPoint:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setOrganizationName:(id)arg1;
 - (void)setRequiresUserInteraction:(BOOL)arg1;
 - (void)setSourceAddress:(id)arg1;
 - (void)setType:(unsigned int)arg1;

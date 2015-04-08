@@ -8,34 +8,30 @@
 
 @class NSArray;
 
-@interface CKDFetchSharesOperation : CKDOperation {
-    BOOL _isFetchAllSharesOperation;
+@interface CKDFetchSharesOperation : CKDDatabaseOperation {
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _shareFetchedProgressBlock;
 
-    NSArray *_shareIDsToFetch;
-    NSArray *_shares;
+    NSArray *_shareIDs;
+    NSArray *_zoneIDs;
 }
 
-@property BOOL isFetchAllSharesOperation;
 @property(copy) id shareFetchedProgressBlock;
-@property(retain) NSArray * shareIDsToFetch;
-@property(retain) NSArray * shares;
+@property(retain) NSArray * shareIDs;
+@property(retain) NSArray * zoneIDs;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
-- (void)_handleShareFetched:(id)arg1 withID:(id)arg2 responseCode:(id)arg3;
+- (void)_handleShareFetched:(id)arg1 shareID:(id)arg2 zoneID:(id)arg3 operationResult:(id)arg4;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
-- (BOOL)isFetchAllSharesOperation;
 - (void)main;
-- (void)setIsFetchAllSharesOperation:(BOOL)arg1;
 - (void)setShareFetchedProgressBlock:(id)arg1;
-- (void)setShareIDsToFetch:(id)arg1;
-- (void)setShares:(id)arg1;
+- (void)setShareIDs:(id)arg1;
+- (void)setZoneIDs:(id)arg1;
 - (id)shareFetchedProgressBlock;
-- (id)shareIDsToFetch;
-- (id)shares;
+- (id)shareIDs;
+- (id)zoneIDs;
 
 @end

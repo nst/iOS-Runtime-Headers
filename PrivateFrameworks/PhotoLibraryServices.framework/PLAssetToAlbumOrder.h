@@ -5,7 +5,6 @@
 @class NSString, PLManagedAlbum, PLManagedAsset;
 
 @interface PLAssetToAlbumOrder : PLManagedObject <PLOrderKeyObject> {
-    BOOL _isSpecial;
 }
 
 @property(retain) PLManagedAlbum * album;
@@ -13,17 +12,13 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
-@property BOOL isSpecial;
 @property long long orderValue;
 @property(readonly) Class superclass;
 
 + (id)newAssetOrderForAsset:(id)arg1 album:(id)arg2;
 
 - (id)childManagedObject;
-- (id)description;
 - (void)didSave;
-- (BOOL)isSpecial;
 - (id)secondaryOrderSortKey;
-- (void)setIsSpecial:(BOOL)arg1;
 
 @end

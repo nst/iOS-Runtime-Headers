@@ -15,6 +15,8 @@
         struct UnknownFieldSet { 
             struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *fields_; 
         } _unknown_fields_; 
+        unsigned int _has_bits_[1]; 
+        int _cached_size_; 
         unsigned long long identifier_; 
         struct RepeatedPtrField<TSP::MessageInfo> { 
             void **elements_; 
@@ -22,8 +24,6 @@
             int allocated_size_; 
             int total_size_; 
         } message_infos_; 
-        int _cached_size_; 
-        unsigned int _has_bits_[1]; 
     } _archiveInfo;
     unsigned int _archiveInfoLength;
     <TSPComponentParserDelegate> *_delegate;

@@ -2,41 +2,26 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassDeleteHandler>, <PKPassLibraryDataProvider>, <PKPaymentVerificationEntryDelegate>, NSMutableArray, NSNumberFormatter, NSObject<OS_dispatch_source>, NSString, NSURL, PKPassView, PKPaymentApplication, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentService, PKPaymentVerificationPresentationController, PKPaymentWebService, PKVerificationRequestRecord, UIColor;
+@class <PKPassDeleteHandler>, <PKPassLibraryDataProvider>, <PKPaymentVerificationEntryDelegate>, NSArray, NSNumberFormatter, NSObject<OS_dispatch_source>, NSString, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentService, PKPaymentVerificationPresentationController, PKPaymentWebService, PKSettingTableCell, PKVerificationRequestRecord, UIColor;
 
-@interface PKPaymentPassDetailViewController : UITableViewController <MFMailComposeViewControllerDelegate, PKPaymentServiceDelegate, PKPaymentVerificationPresentationDelegate> {
+@interface PKPaymentPassDetailViewController : UITableViewController <MFMailComposeViewControllerDelegate, PKPaymentServiceDelegate, PKPaymentVerificationPresentationDelegate, UITableViewDataSource, UITableViewDelegate> {
     PKPaymentPassDetailActivationFooterView *_activationFooter;
-    NSString *_appLaunchToken;
-    int _cardInfoNameIndex;
-    int _cardInfoNumberIndex;
-    unsigned int _cardInfoSection;
-    unsigned int _contactIssuerSection;
     <PKPassLibraryDataProvider> *_dataProvider;
-    unsigned int _deleteCardSection;
+    BOOL _deepLinkingEnabled;
     <PKPassDeleteHandler> *_deleteOverrider;
     UIColor *_detailTextColor;
-    unsigned int _digitalAccountNumberSection;
+    int _detailViewStyle;
     UIColor *_highlightColor;
-    unsigned int _issuerAppSection;
-    int _legalInfoPrivacyPolicy;
-    unsigned int _legalInfoSection;
-    int _legalInfoTermsAndConditions;
     UIColor *_linkTextColor;
-    NSURL *_moreTransactionsURL;
+    PKSettingTableCell *_notificationSwitch;
     NSNumberFormatter *_numberFormatter;
     PKPaymentPass *_pass;
     BOOL _passDeletionInProgress;
-    unsigned int _passStateSection;
-    PKPassView *_passView;
-    PKPaymentApplication *_paymentApplication;
     PKPaymentService *_paymentService;
     UIColor *_primaryTextColor;
-    unsigned int _sectionCount;
-    int _style;
-    unsigned int _transactionNotificationsSection;
+    NSArray *_sections;
     NSObject<OS_dispatch_source> *_transactionTimer;
-    NSMutableArray *_transactions;
-    unsigned int _transactionsSection;
+    NSArray *_transactions;
     <PKPaymentVerificationEntryDelegate> *_verificationDelegate;
     PKPaymentVerificationPresentationController *_verificationPresenter;
     PKVerificationRequestRecord *_verificationRecord;
@@ -53,27 +38,35 @@
 @property UIColor * linkTextColor;
 @property UIColor * primaryTextColor;
 @property(readonly) Class superclass;
+@property(copy) NSArray * transactions;
 @property <PKPaymentVerificationEntryDelegate> * verificationDelegate;
 @property UIColor * warningTextColor;
 
 - (void)_activationFooterPressed:(id)arg1;
 - (id)_activationFooterView;
+- (id)_billingAddressCell;
 - (void)_callIssuer;
-- (void)_cancel:(id)arg1;
-- (id)_cardInfoCellForIndex:(unsigned int)arg1;
+- (id)_cardInfoCells;
 - (id)_cellForPassStateSection;
 - (id)_defaultCell;
-- (void)_deleteCard;
 - (id)_deleteCardCell;
+- (id)_deviceAccountNumberCell;
 - (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
+- (void)_didSelectBillingAddress;
+- (void)_didSelectContactBankSection;
+- (void)_didSelectDeleteCard;
 - (void)_didSelectPassStateSection;
-- (id)_digitalAccountNumberCell;
+- (void)_didSelectPrivacySectionAtRow:(int)arg1;
+- (void)_didSelectTransactionAtRow:(int)arg1;
+- (BOOL)_doesTableContainSection:(int)arg1;
+- (void)_done:(id)arg1;
 - (void)_emailIssuer;
 - (id)_footerTextForPassStateSection;
 - (id)_footerViewForPassStateSection;
 - (float)_footerViewHeightForPassStateSectionWithTableView:(id)arg1;
 - (id)_headerTitleForPassStateSection;
 - (float)_heightForPassStateSectionWithTableView:(id)arg1;
+- (unsigned int)_indexOfSection:(int)arg1;
 - (id)_infoCell:(id)arg1;
 - (id)_infoCell:(id)arg1 withDetailText:(id)arg2;
 - (id)_linkCellWithText:(id)arg1;
@@ -83,15 +76,15 @@
 - (void)_notificationSwitchChanged:(id)arg1;
 - (int)_numberOfRowsForPassStateSection;
 - (void)_openIssuerWebsite;
+- (id)_privacyTermsCells;
 - (void)_reloadTransactionsWithCompletion:(id)arg1;
 - (void)_reloadView;
-- (int)_rowsInCardInfoTable;
-- (int)_rowsInLegalInfoSection;
 - (void)_setPlaceholderColorForCell:(id)arg1;
 - (void)_setupSections;
 - (BOOL)_shouldShowContactCell;
 - (BOOL)_shouldShowPrivacyPolicyCell;
 - (BOOL)_shouldShowTermsCell;
+- (id)_subtitleCell;
 - (id)_transactionCellForIndexPath:(id)arg1;
 - (void)_updateTransactionsArrayWithTransaction:(id)arg1;
 - (void)dealloc;
@@ -112,8 +105,10 @@
 - (void)setHighlightColor:(id)arg1;
 - (void)setLinkTextColor:(id)arg1;
 - (void)setPrimaryTextColor:(id)arg1;
+- (void)setTransactions:(id)arg1;
 - (void)setVerificationDelegate:(id)arg1;
 - (void)setWarningTextColor:(id)arg1;
+- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
@@ -123,8 +118,11 @@
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (id)transactions;
 - (id)verificationDelegate;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (id)warningTextColor;
 
 @end

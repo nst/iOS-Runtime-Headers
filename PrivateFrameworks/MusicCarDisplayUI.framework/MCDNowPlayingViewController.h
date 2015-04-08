@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class <MCDNowPlayingViewControllerDataSource>, <MCDNowPlayingViewControllerDelegate>, MCDNowPlayingView, MCDPlayModeControlView, MCDTransportControlView, UIColor, UITapGestureRecognizer, UIViewController, _MCDNowPlayingHostView;
+@class <MCDNowPlayingViewControllerDataSource>, <MCDNowPlayingViewControllerDelegate>, MCDNowPlayingView, MCDPlayModeControlView, MCDTransportControlView, UIColor, UITapGestureRecognizer, UIViewController;
 
 @interface MCDNowPlayingViewController : UIViewController {
     UITapGestureRecognizer *_backPressRecognizer;
@@ -19,7 +19,6 @@
     UIViewController *_playModeViewController;
     MCDTransportControlView *_transportControlView;
     UIViewController *_transportViewController;
-    _MCDNowPlayingHostView *_viewForSelectingAFirstResponderForKnobSupport;
 }
 
 @property(readonly) UITapGestureRecognizer * backPressRecognizer;
@@ -47,7 +46,6 @@
 - (void)_updateRepeatStateWithType:(unsigned int)arg1;
 - (void)_updateShuffleStateWithType:(unsigned int)arg1;
 - (void)_updateTransportControl:(id)arg1 withDefaultImage:(id)arg2 actionType:(int)arg3;
-- (void)attemptFirstResponderThing;
 - (id)backPressRecognizer;
 - (id)dataSource;
 - (id)delegate;

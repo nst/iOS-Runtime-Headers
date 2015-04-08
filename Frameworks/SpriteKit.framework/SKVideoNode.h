@@ -24,7 +24,6 @@
 - (struct CGPoint { float x1; float x2; })anchorPoint;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
 - (id)init;
 - (id)initWithAVPlayer:(id)arg1;
 - (id)initWithCoder:(id)arg1;

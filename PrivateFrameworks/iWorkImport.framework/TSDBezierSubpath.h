@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, TSDBezierNode, TSDBezierPath;
+@class NSMutableArray, TSDBezierNode, TSUBezierPath;
 
 @interface TSDBezierSubpath : NSObject {
     BOOL mClosed;
@@ -10,7 +10,7 @@
 }
 
 @property(readonly) BOOL allNodesSelected;
-@property(readonly) TSDBezierPath * bezierPath;
+@property(readonly) TSUBezierPath * bezierPath;
 @property(readonly) BOOL canDeleteSelectedNodes;
 @property(readonly) BOOL closeIfEndpointsAreEqual;
 @property(getter=isClosed) BOOL closed;
@@ -42,7 +42,6 @@
 - (id)firstNode;
 - (BOOL)hasSelectedNode;
 - (id)init;
-- (id)insertNodeAtPoint:(struct CGPoint { float x1; float x2; })arg1 tolerance:(float)arg2;
 - (BOOL)isCircular;
 - (BOOL)isClosed;
 - (BOOL)isRectangular;

@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSDictionary, NSMutableIndexSet, NSString, PUMomentsZoomLevelManager, PUSessionInfo, PUTabbedLibraryViewControllerSpec, UINavigationController;
+@class NSMutableDictionary, NSMutableIndexSet, NSString, PUMomentsZoomLevelManager, PUSessionInfo, PUTabbedLibraryViewControllerSpec, UINavigationController;
 
 @interface PUTabbedLibraryViewController : UITabBarController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLDismissableViewController, PLInvitationRecordsObserver, PLRootLibraryNavigationController, UINavigationControllerDelegate> {
     NSMutableIndexSet *_everDisplayedContentModes;
-    NSDictionary *_filteredAlbumListsByContentMode;
+    NSMutableDictionary *_filteredAlbumListsByContentMode;
     int _pendingSelectedContentMode;
     PUSessionInfo *_sessionInfo;
     BOOL _sharedTabBadgeIsDirty;
@@ -51,6 +51,7 @@
 - (void)assetContainerDidChange:(id)arg1;
 - (void)assetContainerListDidChange:(id)arg1;
 - (BOOL)assetIsAvailableForNavigation:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2;
+- (BOOL)assetIsAvailableForNavigationInMoments:(id)arg1;
 - (BOOL)cloudFeedAssetIsAvailableForNavigation:(id)arg1;
 - (BOOL)cloudFeedCommentIsAvailableForNavigation:(id)arg1;
 - (BOOL)cloudFeedInvitationForAlbumIsAvailableForNavigation:(id)arg1;
@@ -69,6 +70,7 @@
 - (void)navigateToComment:(id)arg1 forAsset:(id)arg2 animated:(BOOL)arg3;
 - (void)navigateToContentMode:(int)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)navigateToInitialLocationInNavigationController:(id)arg1;
+- (void)navigateToPhotosContentBottomAnimated:(BOOL)arg1;
 - (void)navigateToRevealAlbum:(struct NSObject { Class x1; }*)arg1 initiallyHidden:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)navigateToRevealAsset:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 animated:(BOOL)arg3;
 - (void)navigateToRevealCloudFeedAsset:(id)arg1 completion:(id)arg2;

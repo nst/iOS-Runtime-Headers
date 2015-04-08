@@ -10,6 +10,7 @@
 
 @interface HMMessage : NSObject {
     NSUUID *_identifier;
+    BOOL _internalMessage;
     NSDictionary *_messagePayload;
     NSString *_name;
     BOOL _remoteSource;
@@ -21,13 +22,21 @@
     id _transport;
 }
 
+@property(getter=isAuthorizedForHomeDataAccess,readonly) BOOL authorizedForHomeDataAccess;
+@property(getter=isEntitledForAPIAccess,readonly) BOOL entitledForAPIAccess;
+@property(getter=isEntitledForBackgroundMode,readonly) BOOL entitledForBackgroundMode;
+@property(getter=isEntitledForSPIAccess,readonly) BOOL entitledForSPIAccess;
 @property(readonly) NSUUID * identifier;
+@property(getter=isInternalMessage,readonly) BOOL internalMessage;
 @property(readonly) NSDictionary * messagePayload;
 @property(readonly) NSString * name;
 @property(getter=isRemoteSource,readonly) BOOL remoteSource;
 @property(readonly) id responseHandler;
+@property(readonly) int sourcePid;
 @property(readonly) id transport;
 
++ (id)internalMessageWithName:(id)arg1 messagePayload:(id)arg2;
++ (id)internalMessageWithName:(id)arg1 messagePayload:(id)arg2 responseHandler:(id)arg3;
 + (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3;
 + (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 remoteSource:(BOOL)arg4;
 + (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 remoteSource:(BOOL)arg4 responseHandler:(id)arg5;
@@ -50,12 +59,18 @@
 - (id)dictionaryForKey:(id)arg1;
 - (id)errorForKey:(id)arg1;
 - (id)identifier;
-- (id)initWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 transport:(id)arg4 responseHandler:(id)arg5 remoteSource:(BOOL)arg6;
+- (id)initWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 transport:(id)arg4 responseHandler:(id)arg5 remoteSource:(BOOL)arg6 internalMessage:(BOOL)arg7;
+- (BOOL)isAuthorizedForHomeDataAccess;
+- (BOOL)isEntitledForAPIAccess;
+- (BOOL)isEntitledForBackgroundMode;
+- (BOOL)isEntitledForSPIAccess;
+- (BOOL)isInternalMessage;
 - (BOOL)isRemoteSource;
 - (id)messagePayload;
 - (id)name;
 - (id)nullForKey:(id)arg1;
 - (id)numberForKey:(id)arg1;
+- (id)proxyConnection;
 - (id)responseHandler;
 - (int)sourcePid;
 - (id)stringForKey:(id)arg1;

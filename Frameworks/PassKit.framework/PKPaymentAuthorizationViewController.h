@@ -34,6 +34,7 @@
 - (void)paymentAuthorizationController:(id)arg1 didSelectShippingMethod:(id)arg2 completion:(id)arg3;
 - (void)paymentAuthorizationController:(id)arg1 willFinishWithError:(id)arg2;
 - (void)paymentAuthorizationControllerDidFinish:(id)arg1;
+- (void)paymentAuthorizationControllerWillAuthorizePayment:(id)arg1;
 - (id)paymentController;
 - (id)privateDelegate;
 - (void)setDelegate:(id)arg1;

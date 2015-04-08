@@ -22,12 +22,12 @@
 - (id)debuggingName;
 - (id)description;
 - (unsigned int)hash;
-- (id)initWithArchive:(const struct ChartAxisIDArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg1;
+- (id)initWithArchive:(const struct ChartAxisIDArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; unsigned int x6; }*)arg1;
 - (id)initWithType:(int)arg1 ordinal:(unsigned int)arg2;
 - (BOOL)intersectsAxisID:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)ordinal;
-- (void)saveToArchive:(struct ChartAxisIDArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg1;
+- (void)saveToArchive:(struct ChartAxisIDArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; unsigned int x6; }*)arg1;
 - (int)type;
 
 @end

@@ -9,7 +9,6 @@
     NEConfigurationManager *_configurationManager;
     NEVPNConnection *_connection;
     BOOL _hasLoaded;
-    NSString *_localizedDescription;
 }
 
 @property(copy) NEConfiguration * configuration;

@@ -22,6 +22,7 @@
 - (void)_clearTouches;
 - (void)_clearViewForTouch:(id)arg1;
 - (id)_cloneEvent;
+- (struct CGPoint { float x1; float x2; })_digitizerLocation;
 - (void)_dismissSharedCalloutBarIfNeeded;
 - (id)_firstTouchForView:(id)arg1;
 - (id)_gestureRecognizersForWindow:(id)arg1;

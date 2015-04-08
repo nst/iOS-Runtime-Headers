@@ -7,52 +7,66 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class KNSlideNode, NSArray, NSMutableArray, NSMutableDictionary, TSUPointerKeyDictionary;
+@class KNSlideNode, NSArray, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSString, TSUPointerKeyDictionary;
 
-@interface KNSlideTree : TSPContainedObject {
+@interface KNSlideTree : TSPContainedObject <KNSlideCollection> {
     NSMutableArray *mDisplayedSlideNodeCache;
     TSUPointerKeyDictionary *mFormulaReferenceNamesForSlideNodesCache;
-    KNSlideNode *mRootSlideNode;
-    NSMutableArray *mSlideNodeCache;
+    NSMutableOrderedSet *mSlideNodes;
     NSMutableDictionary *mSlideNodesForFormulaReferenceNamesCache;
     NSMutableDictionary *mSlideNodesForUniqueIdentifiersCache;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(readonly) KNSlideNode * defaultSlideNodeForNewSelection;
+@property(copy,readonly) NSString * description;
 @property(retain) NSArray * displayedSlideNodes;
-@property(retain) KNSlideNode * rootSlideNode;
+@property(readonly) unsigned int hash;
 @property(readonly) NSArray * slideNodes;
+@property(readonly) Class superclass;
 @property(readonly) NSArray * visibleSlideNodes;
 
-- (void)addSlideNode:(id)arg1 atDepth:(int)arg2 dolcContext:(id)arg3;
++ (id)slideNodeDepthMapToCleanUpSlideNodes:(id)arg1 atDepths:(id)arg2 minimumValidDepth:(unsigned int)arg3;
++ (id)slideNodeDepthMapToCleanUpSlideNodes:(id)arg1 minimumValidDepth:(unsigned int)arg2;
+
+- (void)addSlideNode:(id)arg1 atDepth:(unsigned int)arg2 dolcContext:(id)arg3;
+- (void)addSlideNodeForDocumentUpgrade:(id)arg1 atDepth:(unsigned int)arg2;
 - (unsigned int)byBuildPageIndexForSlideIndex:(unsigned int)arg1 andEventIndex:(unsigned int)arg2;
+- (id)childrenOfSlideNode:(id)arg1;
 - (void)dealloc;
+- (id)defaultSlideNodeForNewSelection;
+- (id)descendantsOfSlideNode:(id)arg1 omitSkippedSlideNodes:(BOOL)arg2 omitCollapsedSlideNodes:(BOOL)arg3;
 - (id)displayedSlideNodes;
 - (id)formulaReferenceNameForSlideNode:(id)arg1;
 - (unsigned int)indexOfSlideNode:(id)arg1;
-- (id)initWithArchive:(const struct SlideTreeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
+- (id)initWithArchive:(const struct SlideTreeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
 - (id)initWithOwner:(id)arg1;
-- (void)insertSlideNode:(id)arg1 intoSlideNode:(id)arg2 atIndex:(unsigned int)arg3 dolcContext:(id)arg4;
+- (void)insertSlideNodes:(id)arg1 atIndexes:(id)arg2 slideNodesChangingDepths:(id)arg3 depthsOfSlideNodesChangingDepths:(id)arg4 dolcContext:(id)arg5;
 - (void)invalidateSlideNameCache;
-- (void)moveSlideNode:(id)arg1 inSlideNode:(id)arg2 toIndex:(unsigned int)arg3;
+- (BOOL)isEmpty;
+- (void)moveSlideNodes:(id)arg1 fromIndexes:(id)arg2 toIndexes:(id)arg3 slideNodesChangingDepths:(id)arg4 depthsOfSlideNodesChangingDepths:(id)arg5;
 - (unsigned int)numberOfSlidesUsingMasterSlide:(id)arg1;
+- (id)objectEnumerator;
 - (id)orderedSlideNodesInSelection:(id)arg1;
-- (void)p_addSlideNodeAndDescendantsOfSlideNode:(id)arg1 toArray:(id)arg2 slideNodesForUniqueIdentifiersDictionary:(id)arg3 slideNodesForFormulaReferencesDictionary:(id)arg4 formulaReferenceNamesForSlideNodesDictionary:(id)arg5;
-- (void)p_addSlideNodeAndDescendantsOfSlideNode:(id)arg1 toArray:(id)arg2 slideNodesForUniqueIdentifiersDictionary:(id)arg3 slideNodesForFormulaReferencesDictionary:(id)arg4 formulaReferenceNamesForSlideNodesDictionary:(id)arg5 visibleSlidesSoFar:(unsigned int*)arg6 hiddenSlidesSoFar:(unsigned int*)arg7;
 - (void)p_cacheSlideNodes;
 - (void)p_clearSlideNodeCache;
+- (void)p_logSlideTreeErrorWithMessage:(id)arg1 slideNodesOrderBeforeEdit:(id)arg2 depthsBeforeEdit:(id)arg3;
+- (id)parentOfSlideNode:(id)arg1;
 - (void)reloadDisplayedNodes;
 - (void)removeAll;
-- (void)removeSlideNode:(id)arg1 fromSlideNode:(id)arg2;
-- (id)rootSlideNode;
-- (void)saveToArchive:(struct SlideTreeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
+- (void)removeSlideNodes:(id)arg1 slideNodesChangingDepths:(id)arg2 depthsOfSlideNodesChangingDepths:(id)arg3;
+- (void)saveToArchive:(struct SlideTreeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; }*)arg1 archiver:(id)arg2;
 - (void)setDisplayedSlideNodes:(id)arg1;
-- (void)setRootSlideNode:(id)arg1;
 - (void)slideIndex:(unsigned int*)arg1 andEventIndex:(unsigned int*)arg2 forByBuildPageIndex:(unsigned int)arg3;
 - (id)slideNamesMatchingPrefix:(id)arg1;
+- (id)slideNodeAfterSlideNode:(id)arg1 omitSkippedSlideNodes:(BOOL)arg2 omitCollapsedSlideNodes:(BOOL)arg3;
 - (id)slideNodeAtIndex:(unsigned int)arg1 ignoreHiddenNodes:(BOOL)arg2;
+- (id)slideNodeBeforeSlideNode:(id)arg1 omitSkippedSlideNodes:(BOOL)arg2 omitCollapsedSlideNodes:(BOOL)arg3;
 - (id)slideNodeForFormulaReferenceName:(id)arg1 caseSensitive:(BOOL)arg2;
+- (BOOL)slideNodeIsDisplayed:(id)arg1;
 - (id)slideNodeWithUniqueIdentifier:(id)arg1;
 - (id)slideNodes;
+- (id)slideNodesInAscendingOrder:(id)arg1;
 - (unsigned int)slideNumberForSlideNode:(id)arg1;
 - (id)slidesUsingMasterSlide:(id)arg1;
 - (id)unhiddenSlideNodeAtIndex:(unsigned int)arg1;

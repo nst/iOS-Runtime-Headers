@@ -12,6 +12,7 @@
     CAMTimelapseShutterRingView *__timelapseOuterView;
     int _mode;
     BOOL _pulsing;
+    BOOL _showDisabled;
     struct CAMShutterButtonSpec { 
         float outerRingDiameter; 
         float outerRingStrokeWidth; 
@@ -28,6 +29,7 @@
 @property(readonly) CAMTimelapseShutterRingView * _timelapseOuterView;
 @property int mode;
 @property(getter=isPulsing) BOOL pulsing;
+@property BOOL showDisabled;
 @property struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; } spec;
 @property(getter=isSpinning) BOOL spinning;
 
@@ -68,7 +70,9 @@
 - (void)setMode:(int)arg1;
 - (void)setMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setPulsing:(BOOL)arg1;
+- (void)setShowDisabled:(BOOL)arg1;
 - (void)setSpinning:(BOOL)arg1;
+- (BOOL)showDisabled;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; })spec;
 

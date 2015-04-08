@@ -31,6 +31,16 @@
     NSData *_resultClientChangeTokenData;
     CKServerChangeToken *_resultServerChangeToken;
     unsigned int _resultsLimit;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _shareChangedBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _shareWithIDWasDeletedBlock;
+
     BOOL _shouldFetchAssetContents;
     int _status;
 }
@@ -46,6 +56,8 @@
 @property(retain) NSData * resultClientChangeTokenData;
 @property(retain) CKServerChangeToken * resultServerChangeToken;
 @property unsigned int resultsLimit;
+@property(copy) id shareChangedBlock;
+@property(copy) id shareWithIDWasDeletedBlock;
 @property BOOL shouldFetchAssetContents;
 @property int status;
 
@@ -54,6 +66,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (int)changeTypesFromSetCallbacks;
 - (id)desiredKeys;
 - (id)fetchRecordChangesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
@@ -78,8 +91,12 @@
 - (void)setResultClientChangeTokenData:(id)arg1;
 - (void)setResultServerChangeToken:(id)arg1;
 - (void)setResultsLimit:(unsigned int)arg1;
+- (void)setShareChangedBlock:(id)arg1;
+- (void)setShareWithIDWasDeletedBlock:(id)arg1;
 - (void)setShouldFetchAssetContents:(BOOL)arg1;
 - (void)setStatus:(int)arg1;
+- (id)shareChangedBlock;
+- (id)shareWithIDWasDeletedBlock;
 - (BOOL)shouldFetchAssetContents;
 - (int)status;
 

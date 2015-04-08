@@ -2,15 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIActivityGroupViewControllerDelegate>, NSArray, NSDictionary, NSIndexPath, NSString, UILongPressGestureRecognizer, _UIActivityUserDefaults, _UIUserDefaultsActivity;
+@class <UIActivityGroupViewControllerDataSource>, <UIActivityGroupViewControllerDelegate>, NSArray, NSDictionary, NSIndexPath, NSMutableDictionary, NSString, UILongPressGestureRecognizer, _UIActivityGroupActivityCell, _UIActivityUserDefaults, _UIUserDefaultsActivity;
 
 @interface UIActivityGroupViewController : UICollectionViewController <UIGestureRecognizerDelegate, _UIActivityGroupViewDelegateFlowLayout> {
     NSArray *_activities;
     int _activityCategory;
     BOOL _activityIndexDidChangeWhileDragging;
     BOOL _allowsUserCustomization;
+    NSMutableDictionary *_cachedPreferredItemSizesByString;
     NSDictionary *_customActivityTitles;
     BOOL _darkStyleOnLegacyApp;
+    <UIActivityGroupViewControllerDataSource> *_dataSource;
     <UIActivityGroupViewControllerDelegate> *_delegate;
     UILongPressGestureRecognizer *_editingGestureRecognizer;
     BOOL _embedded;
@@ -21,6 +23,7 @@
         float y; 
     } _initialDraggingLocation;
     BOOL _picker;
+    _UIActivityGroupActivityCell *_prototypeActivityCell;
     _UIActivityUserDefaults *_userDefaults;
     _UIUserDefaultsActivity *_userDefaultsActivity;
     NSArray *_visibleActivities;
@@ -30,8 +33,10 @@
 @property int activityCategory;
 @property BOOL activityIndexDidChangeWhileDragging;
 @property BOOL allowsUserCustomization;
+@property(retain) NSMutableDictionary * cachedPreferredItemSizesByString;
 @property(copy) NSDictionary * customActivityTitles;
 @property BOOL darkStyleOnLegacyApp;
+@property <UIActivityGroupViewControllerDataSource> * dataSource;
 @property(copy,readonly) NSString * debugDescription;
 @property <UIActivityGroupViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
@@ -42,15 +47,17 @@
 @property(copy) NSIndexPath * indexPathForMenuActivity;
 @property struct CGPoint { float x1; float x2; } initialDraggingLocation;
 @property(getter=isPicker) BOOL picker;
+@property(retain) _UIActivityGroupActivityCell * prototypeActivityCell;
 @property(readonly) Class superclass;
 @property(retain) _UIActivityUserDefaults * userDefaults;
 @property(retain) _UIUserDefaultsActivity * userDefaultsActivity;
 @property(copy) NSArray * visibleActivities;
 
-- (struct CGSize { float x1; float x2; })_preferredCellSize;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_preferredSectionInset;
+- (struct CGSize { float x1; float x2; })_cachedPreferredItemSizeForString:(id)arg1;
 - (void)_setActivities:(id)arg1 animated:(BOOL)arg2;
 - (void)_setVisibleActivities:(id)arg1 animated:(BOOL)arg2;
+- (id)_titleTextForActivity:(id)arg1;
+- (void)_updateItemSizeIfNeeded;
 - (void)_updateVisibleActivitiesAnimated:(BOOL)arg1;
 - (id)activities;
 - (int)activityCategory;
@@ -59,21 +66,20 @@
 - (BOOL)activityIndexDidChangeWhileDragging;
 - (void)activityUserDefaultsDidChange:(id)arg1;
 - (BOOL)allowsUserCustomization;
+- (id)cachedPreferredItemSizesByString;
 - (BOOL)canBecomeFirstResponder;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
 - (id)collectionView:(id)arg1 layout:(id)arg2 moveItemAtIndexPath:(id)arg3 toIndexPath:(id)arg4;
 - (id)collectionView:(id)arg1 layout:(id)arg2 needsContainerViewForDraggingItemAtIndexPath:(id)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(int)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 preferredSizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)customActivityTitles;
 - (BOOL)darkStyleOnLegacyApp;
+- (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
 - (id)editingGestureRecognizer;
@@ -89,16 +95,18 @@
 - (struct CGPoint { float x1; float x2; })initialDraggingLocation;
 - (BOOL)isEmbedded;
 - (BOOL)isPicker;
+- (id)prototypeActivityCell;
 - (void)registerForActivityUserDefaultsChanges;
 - (void)reloadItemForActivityOfTypeIfNeeded:(id)arg1;
-- (void)renameActivity:(id)arg1;
 - (void)setActivities:(id)arg1;
 - (void)setActivities:(id)arg1 animated:(BOOL)arg2;
 - (void)setActivityCategory:(int)arg1;
 - (void)setActivityIndexDidChangeWhileDragging:(BOOL)arg1;
 - (void)setAllowsUserCustomization:(BOOL)arg1;
+- (void)setCachedPreferredItemSizesByString:(id)arg1;
 - (void)setCustomActivityTitles:(id)arg1;
 - (void)setDarkStyleOnLegacyApp:(BOOL)arg1;
+- (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditingGestureRecognizer:(id)arg1;
@@ -107,15 +115,17 @@
 - (void)setIndexPathForMenuActivity:(id)arg1;
 - (void)setInitialDraggingLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPicker:(BOOL)arg1;
+- (void)setPrototypeActivityCell:(id)arg1;
 - (void)setUserDefaults:(id)arg1;
 - (void)setUserDefaultsActivity:(id)arg1;
 - (void)setVisibleActivities:(id)arg1;
 - (id)targetIndexPathForMoveFromRowAtIndexPath:(id)arg1 toProposedIndexPath:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)unregisterForActivityUserDefaultsChanges;
 - (id)userDefaults;
 - (id)userDefaultsActivity;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)visibleActivities;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

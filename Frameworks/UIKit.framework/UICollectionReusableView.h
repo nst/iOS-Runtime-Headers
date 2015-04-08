@@ -7,8 +7,11 @@
 @interface UICollectionReusableView : UIView {
     UICollectionView *_collectionView;
     UICollectionViewLayoutAttributes *_layoutAttributes;
+    BOOL _preferredAttributesValid;
     struct { 
         unsigned int wasDequeued : 1; 
+        unsigned int preferredAttributesValid : 1; 
+        unsigned int generatingPreferredAttributes : 1; 
     } _reusableViewFlags;
     NSString *_reuseIdentifier;
     int _updateAnimationCount;
@@ -17,6 +20,7 @@
 @property(getter=_collectionView,setter=_setCollectionView:) UICollectionView * collectionView;
 @property(getter=_isInUpdateAnimation,readonly) BOOL inUpdateAnimation;
 @property(getter=_layoutAttributes,setter=_setLayoutAttributes:,copy) UICollectionViewLayoutAttributes * layoutAttributes;
+@property(getter=_arePreferredAttributesValid) BOOL preferredAttributesValid;
 @property(copy) NSString * reuseIdentifier;
 
 + (void)_gkAdjustConstraintMargins:(id)arg1 leading:(float)arg2 trailing:(float)arg3;
@@ -29,6 +33,7 @@
 + (void)registerSupplementaryViewClassesForKind:(id)arg1 withCollectionView:(id)arg2;
 
 - (void)_addUpdateAnimation;
+- (BOOL)_arePreferredAttributesValid;
 - (void)_clearUpdateAnimation;
 - (id)_collectionView;
 - (BOOL)_disableRasterizeInAnimations;
@@ -36,9 +41,11 @@
 - (id)_gkNewStandardInfoLabel;
 - (id)_gkNewStandardTitleLabel;
 - (void)_gkSetLeadingGuideConstraint:(id)arg1 trailingGuideConstraint:(id)arg2;
+- (void)_invalidatePreferredAttributes;
 - (BOOL)_isInUpdateAnimation;
 - (id)_layoutAttributes;
 - (void)_markAsDequeued;
+- (id)_preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)_setBaseLayoutAttributes:(id)arg1;
 - (void)_setCollectionView:(id)arg1;
 - (void)_setLayoutAttributes:(id)arg1;
@@ -52,6 +59,7 @@
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)prepareForReuse;
 - (id)reuseIdentifier;
+- (void)setPreferredAttributesValid:(BOOL)arg1;
 - (void)willTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 
 @end

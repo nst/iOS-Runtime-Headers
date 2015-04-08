@@ -6,6 +6,7 @@
 
 @interface _UIDocumentPickerDescriptor : NSObject {
     NSExtension *_extension;
+    BOOL _newlyAdded;
 }
 
 @property BOOL enabled;
@@ -13,6 +14,7 @@
 @property(retain,readonly) NSString * fileProviderDocumentGroup;
 @property(copy,readonly) NSString * identifier;
 @property(copy,readonly) NSString * localizedName;
+@property(getter=isNewlyAdded) BOOL newlyAdded;
 @property(copy,readonly) NSString * nonUIIdentifier;
 @property(copy,readonly) NSArray * supportedContentTypes;
 
@@ -24,13 +26,16 @@
 + (id)enabledPickersForMode:(unsigned int)arg1 documentTypes:(id)arg2;
 + (id)hostBundleID;
 + (id)manageablePickers;
++ (id)pickerOrder;
 + (void)setCloudEnabledStatus:(BOOL)arg1;
 + (void)setHostBundleID:(id)arg1;
++ (void)setOrderFromPickers:(id)arg1;
 
 - (id)_extensionValueOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)_ownBundle;
 - (id)_parentApp;
 - (int)compare:(id)arg1;
+- (id)description;
 - (BOOL)enabled;
 - (id)extension;
 - (id)fileProviderDocumentGroup;
@@ -38,11 +43,13 @@
 - (id)identifier;
 - (id)imageWithScale:(float)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isNewlyAdded;
 - (id)localizedName;
 - (id)nonUIBundle;
 - (id)nonUIIdentifier;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setExtension:(id)arg1;
+- (void)setNewlyAdded:(BOOL)arg1;
 - (id)supportedContentTypes;
 - (BOOL)supportsPickerMode:(unsigned int)arg1;
 

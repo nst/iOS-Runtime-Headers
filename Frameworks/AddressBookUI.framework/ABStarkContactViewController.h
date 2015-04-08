@@ -2,10 +2,24 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABStarkContactViewController : ABContactViewController {
+@class ABCardiMessageEmailGroup, ABPropertyBestIDSValueQuery;
+
+@interface ABStarkContactViewController : ABContactViewController <ABPropertyBestIDSValueQueryDelegate> {
+    ABPropertyBestIDSValueQuery *_bestiMessageQuery;
+    ABCardiMessageEmailGroup *_iMessageEmailGroup;
 }
 
+@property(retain) ABPropertyBestIDSValueQuery * bestiMessageQuery;
+@property(retain) ABCardiMessageEmailGroup * iMessageEmailGroup;
+
+- (void)_initiateBestiMessagePropertyQuery;
+- (id)bestiMessageQuery;
+- (void)dealloc;
+- (id)iMessageEmailGroup;
 - (id)initWithContact:(id)arg1;
+- (void)queryComplete;
+- (void)setBestiMessageQuery:(id)arg1;
+- (void)setIMessageEmailGroup:(id)arg1;
 - (BOOL)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)title;

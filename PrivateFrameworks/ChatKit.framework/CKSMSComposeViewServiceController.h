@@ -52,6 +52,7 @@
 - (void)transcriptController:(id)arg1 didSelectNewConversation:(id)arg2;
 - (void)transcriptController:(id)arg1 didSendMessageInConversation:(id)arg2;
 - (void)transcriptController:(id)arg1 willSendComposition:(id)arg2 inConversation:(id)arg3;
+- (void)transcriptControllerDidReportSpam:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;

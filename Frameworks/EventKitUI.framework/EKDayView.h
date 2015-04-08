@@ -21,6 +21,7 @@
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
     NSArray *_existingTimedOcurrences;
     float _hourScale;
+    BOOL _isNowVisible;
     NSDate *_lastInspectedOccurrenceOnDate;
     struct CGPoint { 
         float x; 
@@ -74,6 +75,7 @@
 @property(readonly) unsigned int hash;
 @property float hourScale;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } hoursToRender;
+@property BOOL isNowVisible;
 @property(readonly) float leftContentInset;
 @property struct CGPoint { float x1; float x2; } normalizedContentOffset;
 @property int occurrenceBackgroundStyle;
@@ -106,16 +108,17 @@
 - (void)_finishedScrollToSecond;
 - (id)_generateVerticalGridExtensionImage;
 - (void)_invalidateMarkerTimer;
+- (BOOL)_isTimeMarkerFullyUnobstructed;
 - (void)_localeChanged;
 - (void)_notifyDelegateOfFinishedScrollingToOccurrence;
 - (struct CGPoint { float x1; float x2; })_pinchDistanceForGestureRecognizer:(id)arg1;
 - (float)_positionOfSecond:(int)arg1;
 - (void)_scrollToSecond:(int)arg1 animated:(BOOL)arg2 whenFinished:(id)arg3;
+- (void)_scrollViewWillBeginDragging:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scrollerRect;
 - (int)_secondAtPosition:(float)arg1;
 - (BOOL)_showingAllDaySection;
 - (void)_startMarkerTimer;
-- (void)_stopScrolling;
 - (void)_timeViewTapped:(id)arg1;
 - (void)_updateContentForSizeCategoryChange:(id)arg1;
 - (float)_verticalOffset;
@@ -165,6 +168,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2 displayDate:(id)arg3 backgroundColor:(id)arg4 opaque:(BOOL)arg5 scrollbarShowsInside:(BOOL)arg6;
 - (void)insertViewForEvent:(id)arg1 belowViewForOtherEvent:(id)arg2;
 - (BOOL)isAllDayLabelHighlighted;
+- (BOOL)isNowVisible;
 - (void)layoutSubviews;
 - (float)leftContentInset;
 - (float)maximumHourScale;
@@ -191,6 +195,7 @@
 - (float)scrollOffset;
 - (void)scrollToDate:(id)arg1 animated:(BOOL)arg2 whenFinished:(id)arg3;
 - (void)scrollToEvent:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
+- (void)scrollToNowAnimated:(BOOL)arg1 whenFinished:(id)arg2;
 - (BOOL)scrollTowardPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
@@ -215,6 +220,7 @@
 - (void)setGridLineColor:(id)arg1;
 - (void)setHourScale:(float)arg1;
 - (void)setHoursToRender:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setIsNowVisible:(BOOL)arg1;
 - (void)setNormalizedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setOccurrenceBackgroundStyle:(int)arg1;
 - (void)setOccurrenceLocationColor:(id)arg1;
@@ -237,6 +243,7 @@
 - (BOOL)showsTimeLabel;
 - (BOOL)showsTimeLine;
 - (BOOL)showsTimeMarker;
+- (void)stopScrolling;
 - (id)timeViewTextColor;
 - (void)updateMarkerPosition;
 - (BOOL)usesVibrantGridDrawing;

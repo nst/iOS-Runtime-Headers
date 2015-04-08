@@ -9,7 +9,6 @@
 @class NSArray, NSString;
 
 @interface ABPropertyIDSRequest : NSObject <IDSIDQueryControllerDelegate> {
-    BOOL _cancelled;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -25,7 +24,7 @@
     NSString *_service;
 }
 
-@property BOOL cancelled;
+@property(readonly) BOOL cancelled;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
@@ -47,7 +46,6 @@
 - (id)propertyItems;
 - (id)requestResultBlock;
 - (id)service;
-- (void)setCancelled:(BOOL)arg1;
 - (void)setIdQueryResultHandler:(id)arg1;
 - (void)setListenerID:(id)arg1;
 - (void)setPropertyItems:(id)arg1;

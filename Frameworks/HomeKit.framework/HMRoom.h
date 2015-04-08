@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class HMHome, HMMessageDispatcher, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMHome, HMMessageDispatcher, NSArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMRoom : NSObject <HMMessageReceiver, NSSecureCoding> {
     HMHome *_home;
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;
-    NSMutableDictionary *_pendingRequests;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
@@ -22,7 +21,6 @@
 @property(readonly) NSUUID * messageTargetUUID;
 @property(retain) HMMessageDispatcher * msgDispatcher;
 @property(copy,readonly) NSString * name;
-@property(retain) NSMutableDictionary * pendingRequests;
 @property(readonly) Class superclass;
 @property(retain) NSUUID * uuid;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
@@ -34,6 +32,7 @@
 - (void)_updateName:(id)arg1 completionHandler:(id)arg2;
 - (id)accessories;
 - (void)configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)handleRoomRenamedNotification:(id)arg1;
 - (id)home;
@@ -45,12 +44,11 @@
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
 - (id)name;
-- (id)pendingRequests;
 - (void)setHome:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
-- (void)setPendingRequests:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (void)unconfigure;
 - (void)updateName:(id)arg1 completionHandler:(id)arg2;
 - (id)uuid;
 - (id)workQueue;

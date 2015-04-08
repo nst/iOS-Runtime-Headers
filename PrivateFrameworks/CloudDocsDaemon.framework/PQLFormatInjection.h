@@ -17,6 +17,7 @@
 + (id)formatInjection:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)bindValuesToKeepAlive;
 - (int)bindWithStatement:(struct sqlite3_stmt { }*)arg1 startingAtIndex:(int)arg2;
 - (id)description;
 - (id)initWithFormat:(id)arg1 arguments:(void*)arg2;

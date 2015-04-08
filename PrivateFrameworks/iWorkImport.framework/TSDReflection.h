@@ -16,7 +16,7 @@
 @property(readonly) float opacity;
 
 + (BOOL)canMixWithNilObjects;
-+ (id)instanceWithArchive:(const struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
++ (id)instanceWithArchive:(const struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; }*)arg1 unarchiver:(id)arg2;
 + (id)reflection;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -24,14 +24,14 @@
 - (float)fadeAcceleration;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithArchive:(const struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithOpacity:(float)arg1;
 - (id)initWithOpacity:(float)arg1 fadeAcceleration:(float)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (float)opacity;
-- (void)saveToArchive:(struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; }*)arg1 archiver:(id)arg2;
 
 @end

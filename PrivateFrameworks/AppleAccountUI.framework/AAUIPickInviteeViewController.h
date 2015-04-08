@@ -2,16 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class <AAUIPickInviteeDelegate>, AAUIContactsSearchController, ABMonogrammer, ACAccount, ACAccountStore, NSArray, NSString, UIBarButtonItem, UILabel, UITableView, UITextField, UIView;
+@class <AAUIPickInviteeDelegate>, AAUIContactsSearchController, ABMonogrammer, ACAccount, ACAccountStore, NSArray, NSString, UIBarButtonItem, UIButton, UILabel, UITableView, UITextField, UIView;
 
 @interface AAUIPickInviteeViewController : UIViewController <AAUIContactsSearchDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     ACAccount *_account;
     ACAccountStore *_accountStore;
     void *_addressBook;
+    UILabel *_childAccountLabel;
     UITextField *_contactSearchBar;
     UIView *_contactSearchBarContainer;
     AAUIContactsSearchController *_contactsSearchController;
     UIView *_container;
+    UIButton *_createChildAccountButton;
+    NSString *_createChildAccountButtonTitle;
+    NSString *_createChildAccountInstructions;
     <AAUIPickInviteeDelegate> *_delegate;
     UILabel *_instructionsLabel;
     NSString *_inviteeCompositeName;
@@ -26,6 +30,8 @@
     UILabel *_toLabel;
 }
 
+@property(copy) NSString * createChildAccountButtonTitle;
+@property(copy) NSString * createChildAccountInstructions;
 @property(copy,readonly) NSString * debugDescription;
 @property <AAUIPickInviteeDelegate> * delegate;
 @property(copy,readonly) NSString * description;
@@ -38,6 +44,7 @@
 - (void).cxx_destruct;
 - (id)_attributedStringWithQueryHighlightedForString:(id)arg1 size:(float)arg2;
 - (void)_cancelButtonWasTapped:(id)arg1;
+- (void)_createChildAccountButtonWasTapped:(id)arg1;
 - (float)_heightForText:(id)arg1 width:(float)arg2;
 - (void)_hideSearchResults;
 - (id)_imageForPersonWithRecordID:(int)arg1;
@@ -46,6 +53,8 @@
 - (void)contactsSearchController:(id)arg1 didFindSortedResult:(id)arg2;
 - (void)contactsSearchController:(id)arg1 didFinishSearchWithSuccess:(BOOL)arg2;
 - (id)contentScrollView;
+- (id)createChildAccountButtonTitle;
+- (id)createChildAccountInstructions;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithAccount:(id)arg1 store:(id)arg2;
@@ -54,6 +63,8 @@
 - (id)inviteeShortName;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)setCreateChildAccountButtonTitle:(id)arg1;
+- (void)setCreateChildAccountInstructions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

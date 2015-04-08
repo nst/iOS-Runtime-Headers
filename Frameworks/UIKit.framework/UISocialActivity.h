@@ -18,6 +18,7 @@
 - (void)_cleanup;
 - (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (struct CGSize { float x1; float x2; })_thumbnailSize;
 - (id)activityType;
 - (id)activityViewController;
 - (id)builtinActivityType;

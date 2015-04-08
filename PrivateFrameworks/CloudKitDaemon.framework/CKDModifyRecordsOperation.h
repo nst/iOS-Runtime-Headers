@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CKDProtocolTranslator, CKDRecordCache, NSArray, NSData, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_group>;
+@class CKDProtocolTranslator, CKDRecordCache, NSArray, NSData, NSDictionary, NSMutableDictionary;
 
 @interface CKDModifyRecordsOperation : CKDDatabaseOperation {
     BOOL _atomic;
@@ -42,6 +42,11 @@
 
     BOOL _shouldOnlySaveAssetContent;
     CKDProtocolTranslator *_translator;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _uploadCompletionBlock;
+
 }
 
 @property BOOL atomic;
@@ -64,18 +69,18 @@
 @property int savePolicy;
 @property(copy) id saveProgressBlock;
 @property BOOL shouldOnlySaveAssetContent;
-@property unsigned int state;
-@property(retain) NSObject<OS_dispatch_group> * stateTransitionGroup;
 @property(readonly) CKDProtocolTranslator * translator;
+@property(copy) id uploadCompletionBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_addAssetToSave:(id)arg1 withRecordKey:(id)arg2 record:(id)arg3 error:(id*)arg4;
+- (void)_addShareToPCSData:(id)arg1 forMetadata:(id)arg2 withError:(id)arg3;
 - (BOOL)_canSetPreviousProtectionEtag;
 - (void)_clearProtectionDataForRecord:(id)arg1;
+- (void)_continueCreateAndSavePCSForMetadata:(id)arg1 zonePCS:(id)arg2 sharePCS:(id)arg3;
 - (void)_continueRecordsModify;
-- (void)_createAndSavePCSForMetadata:(id)arg1 withZonePCSData:(id)arg2;
+- (void)_createAndSavePCSForMetadata:(id)arg1;
 - (id)_createModifyRequestWithRecordsToSave:(id)arg1 recordsToDelete:(id)arg2 recordsToDeleteToEtags:(id)arg3 metadatasByRecordID:(id)arg4;
-- (void)_fetchExistingPCSForProvidedPCSData:(id)arg1 zonePCS:(id)arg2 metadata:(id)arg3;
+- (void)_fetchExistingPCSForProvidedPCSData:(id)arg1 metadata:(id)arg2;
 - (void)_fetchPCSDataForMetadata:(id)arg1;
 - (void)_fetchRecordPCSData;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -84,16 +89,17 @@
 - (void)_handleRecordDeleted:(id)arg1 metadata:(id)arg2 responseCode:(id)arg3;
 - (void)_handleRecordSaved:(id)arg1 metadata:(id)arg2 etag:(id)arg3 dateStatistics:(id)arg4 responseCode:(id)arg5 keysAssociatedWithETag:(id)arg6 recordForOplockFailure:(id)arg7 serverRecord:(id)arg8;
 - (void)_loadPCSDataForMetadata:(id)arg1;
+- (void)_markRecordMetadatasAsUploaded;
 - (void)_performCallbacksForAtomicZoneMetadatas:(id)arg1;
 - (void)_performCallbacksForNonAtomicZoneMetadatas:(id)arg1;
 - (void)_performMetadataCallbacks;
-- (void)_performSaveAssets:(id)arg1;
-- (void)_performSavePackages:(id)arg1;
+- (BOOL)_prepareAsset:(id)arg1 recordKey:(id)arg2 record:(id)arg3 error:(id*)arg4;
+- (id)_prepareAssetsForUpload;
 - (BOOL)_prepareRecordsForSave;
-- (BOOL)_saveAssets;
-- (void)_saveOnlyAssetContent;
-- (void)_savePackages;
 - (BOOL)_topoSortRecords;
+- (void)_unwrapRecordPCSForShare:(id)arg1;
+- (void)_unwrapRecordPCSForZone:(id)arg1;
+- (void)_uploadAssets;
 - (void)_verifyRecordEncryption;
 - (id)_wrapAssetKey:(id)arg1 forRecord:(id)arg2 withError:(id*)arg3;
 - (BOOL)_wrapEncryptedData:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2 forField:(id)arg3;
@@ -141,7 +147,9 @@
 - (void)setSavePolicy:(int)arg1;
 - (void)setSaveProgressBlock:(id)arg1;
 - (void)setShouldOnlySaveAssetContent:(BOOL)arg1;
+- (void)setUploadCompletionBlock:(id)arg1;
 - (BOOL)shouldOnlySaveAssetContent;
 - (id)translator;
+- (id)uploadCompletionBlock;
 
 @end

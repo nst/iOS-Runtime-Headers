@@ -9,7 +9,7 @@
 
 @class NSArray, NSNumber, NSString;
 
-@interface NSDictionary : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable> {
+@interface NSDictionary : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable, PQLBindable> {
 }
 
 @property(readonly) float averageRating;
@@ -50,10 +50,10 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)dictionary;
 + (id)dictionaryByInvertingDictionary:(id)arg1;
-+ (id)dictionaryByInvertingDictionary:(id)arg1;
 + (id)dictionaryWithArchiveData:(id)arg1;
 + (id)dictionaryWithArchiveData:(id)arg1 allowedClasses:(id)arg2;
 + (id)dictionaryWithContentsOfFile:(id)arg1;
++ (id)dictionaryWithContentsOfFileForLocale:(struct __CFLocale { }*)arg1 inDirectory:(id)arg2 inBundle:(id)arg3;
 + (id)dictionaryWithContentsOfURL:(id)arg1;
 + (id)dictionaryWithDictionary:(id)arg1;
 + (id)dictionaryWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
@@ -77,6 +77,7 @@
 + (id)sharedKeySetForKeys:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (BOOL)supportsSecureCoding;
++ (id)tsu_dictionaryByInvertingDictionary:(id)arg1;
 
 - (id)CAMLType;
 - (struct KeyValueArray { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct Object {} *x4[1]; }*)CA_copyRenderKeyValueArray;
@@ -138,6 +139,7 @@
 - (BOOL)__getValue:(id*)arg1 forKey:(id)arg2;
 - (id)__imDeepCopy;
 - (BOOL)__imIsMutable;
+- (id)_accessibilityLeafDescendantsWithCount:(unsigned int)arg1 shouldStopAtRemoteElement:(BOOL)arg2 options:(id)arg3;
 - (id)_arrayForKey:(id)arg1;
 - (BOOL)_boolForKey:(id)arg1;
 - (unsigned long)_cfTypeID;
@@ -183,9 +185,7 @@
 - (id)allObjects;
 - (id)allValues;
 - (void)appendJsonStringToString:(id)arg1;
-- (void)appendJsonStringToString:(id)arg1;
 - (id)archiveData;
-- (id)arrayForKey:(id)arg1;
 - (id)arrayForKey:(id)arg1;
 - (id)arrayForKey:(id)arg1;
 - (id)asQueryParameterString;
@@ -218,11 +218,8 @@
 - (id)blj_dictionaryBySwappingValuesWithDictionary:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
-- (BOOL)boolForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
 - (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
-- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
-- (BOOL)boolValueForKey:(id)arg1;
 - (BOOL)boolValueForKey:(id)arg1;
 - (void)bs_eachValue:(id)arg1;
 - (id)bs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
@@ -232,8 +229,6 @@
 - (unsigned long)bw_optimalMicPolarPattern;
 - (id)calendarForKey:(id)arg1;
 - (id)calendarForKey:(id)arg1;
-- (id)calendarForKey:(id)arg1;
-- (id)calendarFromDataForKey:(id)arg1;
 - (id)calendarFromDataForKey:(id)arg1;
 - (id)calendarFromDataForKey:(id)arg1;
 - (id)categories;
@@ -248,14 +243,10 @@
 - (id)creator;
 - (id)dataForKey:(id)arg1;
 - (id)dataForKey:(id)arg1;
-- (id)dataForKey:(id)arg1;
-- (id)dateComponentsForKey:(id)arg1;
 - (id)dateComponentsForKey:(id)arg1;
 - (id)dateComponentsForKey:(id)arg1;
 - (id)dateComponentsFromDataForKey:(id)arg1;
 - (id)dateComponentsFromDataForKey:(id)arg1;
-- (id)dateComponentsFromDataForKey:(id)arg1;
-- (id)dateForKey:(id)arg1;
 - (id)dateForKey:(id)arg1;
 - (id)dateForKey:(id)arg1;
 - (id)deepCopy;
@@ -265,7 +256,6 @@
 - (id)descriptionWithLocale:(id)arg1;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (id)dictionaryChanging:(id)arg1 to:(id)arg2;
-- (id)dictionaryForKey:(id)arg1;
 - (id)dictionaryForKey:(id)arg1;
 - (id)dictionaryForKey:(id)arg1;
 - (id)dictionaryFromChanges:(id)arg1;
@@ -278,8 +268,6 @@
 - (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (id)errorForKey:(id)arg1;
 - (id)errorForKey:(id)arg1;
-- (id)errorForKey:(id)arg1;
-- (id)errorFromDataForKey:(id)arg1;
 - (id)errorFromDataForKey:(id)arg1;
 - (id)errorFromDataForKey:(id)arg1;
 - (id)fileCreationDate;
@@ -351,38 +339,38 @@
 - (id)model;
 - (id)mutableArrayForKey:(id)arg1;
 - (id)mutableArrayForKey:(id)arg1;
-- (id)mutableArrayForKey:(id)arg1;
 - (id)mutableCopyWithElementsCopy;
 - (id)mutableCopyWithElementsCopy;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)mutableDeepAutoreleasedCopy;
 - (id)mutableDictionaryForKey:(id)arg1;
 - (id)mutableDictionaryForKey:(id)arg1;
-- (id)mutableDictionaryForKey:(id)arg1;
 - (unsigned long long)newRevision;
 - (id)npkRelevancyRelevantText;
 - (id)npkRelevancyUniqueID;
+- (id)nsValueForKey:(id)arg1;
+- (id)nsValueForKey:(id)arg1;
 - (id)nullForKey:(id)arg1;
 - (id)nullForKey:(id)arg1;
-- (id)nullForKey:(id)arg1;
-- (id)numberForKey:(id)arg1;
 - (id)numberForKey:(id)arg1;
 - (id)numberForKey:(id)arg1;
 - (id)numberForKeyPath:(id)arg1;
 - (id)objectEnumerator;
 - (id)objectForCFString:(struct __CFString { }*)arg1;
 - (id)objectForKey:(id)arg1;
+- (id)objectForKey:(id)arg1 locale:(struct __CFLocale { }*)arg2;
 - (id)objectForKey:(id)arg1 ofClass:(Class)arg2;
 - (id)objectForKeyPath:(id)arg1;
 - (id)objectForKeyPredicate:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)objectForNullMarkerForKey:(id)arg1;
 - (id)objectOfClass:(Class)arg1 forKey:(id)arg2;
-- (id)objectOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)objectOrNullMarkerForCFString:(struct __CFString { }*)arg1;
 - (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;
 - (float)offset;
 - (id)osVersion;
+- (BOOL)p_extractLanguage:(id*)arg1 script:(id*)arg2 region:(id*)arg3 fromString:(id)arg4;
+- (id)p_makeLocaleIdentifierWithLanguage:(id)arg1 script:(id)arg2 region:(id)arg3;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 - (id)plistData;
 - (id)priceFormatted;
@@ -422,34 +410,31 @@
 - (void)setOsVersion:(id)arg1;
 - (void)setVersionToken:(id)arg1;
 - (SEL)setupSelector;
+- (void)sfu_appendJsonStringToString:(id)arg1;
 - (id)shortDescription;
 - (id)shortDescription;
-- (id)shortDescription;
-- (id)shortDescriptionWithIndent:(id)arg1;
-- (id)shortDescriptionWithIndent:(id)arg1;
-- (id)shortDescriptionWithIndent:(id)arg1;
+- (id)shortDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2;
+- (id)shortDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (int)ssidAndBaseNameLocalizedCaseInsensitiveCompare:(id)arg1;
 - (int)ssidLocalizedCaseInsensitiveCompare:(id)arg1;
 - (id)storeID;
 - (id)stringForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;
-- (id)stringForKey:(id)arg1;
 - (id)stringForKeyPath:(id)arg1;
 - (SEL)testSelector;
 - (id)timeZoneForKey:(id)arg1;
 - (id)timeZoneForKey:(id)arg1;
-- (id)timeZoneForKey:(id)arg1;
-- (id)timeZoneFromDataForKey:(id)arg1;
 - (id)timeZoneFromDataForKey:(id)arg1;
 - (id)timeZoneFromDataForKey:(id)arg1;
 - (id)title;
 - (id)transitModeKeys;
+- (BOOL)tsu_boolValueForKey:(id)arg1;
+- (id)tsu_objectOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)url;
 - (id)uuidForKey:(id)arg1;
 - (id)uuidForKey:(id)arg1;
-- (id)uuidForKey:(id)arg1;
-- (id)uuidFromStringForKey:(id)arg1;
 - (id)uuidFromStringForKey:(id)arg1;
 - (id)uuidFromStringForKey:(id)arg1;
 - (id)valueForKey:(id)arg1;

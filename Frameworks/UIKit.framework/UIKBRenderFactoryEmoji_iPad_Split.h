@@ -8,8 +8,12 @@
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
+- (struct CGPoint { float x1; float x2; })emojiInternationalKeyOffset;
+- (float)emojiInternationalKeySize;
+- (struct CGPoint { float x1; float x2; })emojiPopupTextOffset;
 - (float)keyCornerRadius;
 - (id)lightKeycapsFontName;
+- (BOOL)shouldClearBaseDisplayStringForVariants:(id)arg1;
 - (id)thinKeycapsFontName;
 
 @end

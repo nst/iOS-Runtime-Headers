@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PLAssetContainer>, <PLAssetContainerList>, <PUAvalancheReviewControllerDelegate>, NSIndexPath, NSMutableDictionary, NSMutableSet, NSOrderedSet, NSString, PHCachingImageManager, PHFetchResult, PLAvalanche, PLManagedAsset, PUAvalancheReviewCollectionViewLayout, PUAvalancheReviewControllerSpec, PUPhotoBrowserController, PUPhotoPinchGestureRecognizer, PUPhotosSharingTransitionContext, PUPhotosZoomingSharingGridCell, PUReviewInstructionalView, PUReviewScrubber, PUTransitionViewAnimator, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer;
+@class <PLAssetContainer>, <PLAssetContainerList>, <PUAvalancheReviewControllerDelegate>, NSIndexPath, NSMutableDictionary, NSOrderedSet, NSString, PHCachingImageManager, PHFetchResult, PLAvalanche, PLManagedAsset, PUAvalancheReviewCollectionViewLayout, PUAvalancheReviewControllerSpec, PUPhotoBrowserController, PUPhotoPinchGestureRecognizer, PUPhotosSharingTransitionContext, PUPhotosZoomingSharingGridCell, PUReviewInstructionalView, PUReviewScrubber, PUTransitionViewAnimator, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer;
 
 @interface PUAvalancheReviewController : UIViewController <PHAssetCollectionDataSource, PUAvalancheReviewCollectionViewLayoutDelegate, PUPhotosSharingTransitionViewController, PUReviewScrubberDataSource, PUReviewScrubberDelegate, PUTransitionViewAnimatorDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
     PLAvalanche *__avalancheBeingReviewed;
@@ -20,18 +20,7 @@
     PUTransitionViewAnimator *__photoZoomAnimator;
     PUPhotosZoomingSharingGridCell *__photoZoomCell;
     PUPhotoPinchGestureRecognizer *__photoZoomPinchGestureRecognizer;
-    NSMutableSet *__preheatedAssets;
     PUPhotoBrowserController *__presentingPhotoBrowserController;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } __previousPreheatRect;
     PUAvalancheReviewControllerSpec *__spec;
     UITapGestureRecognizer *__tapGestureRecognizer;
     UICollectionViewLayout *__transitionLayout;
@@ -58,9 +47,7 @@
 @property(setter=_setPhotoZoomAnimator:,retain) PUTransitionViewAnimator * _photoZoomAnimator;
 @property(setter=_setPhotoZoomCell:,retain) PUPhotosZoomingSharingGridCell * _photoZoomCell;
 @property(setter=_setPhotoZoomPinchGestureRecognizer:,retain) PUPhotoPinchGestureRecognizer * _photoZoomPinchGestureRecognizer;
-@property(setter=_setPreheatedAssets:,retain) NSMutableSet * _preheatedAssets;
 @property(readonly) PUPhotoBrowserController * _presentingPhotoBrowserController;
-@property(setter=_setPreviousPreheatRect:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _previousPreheatRect;
 @property(readonly) PUReviewScrubber * _reviewScrubber;
 @property(readonly) PUAvalancheReviewControllerSpec * _spec;
 @property(readonly) UITapGestureRecognizer * _tapGestureRecognizer;
@@ -78,7 +65,6 @@
 + (id)filteringContext;
 
 - (void).cxx_destruct;
-- (id)_actionViewRootView;
 - (id)_assetAtIndexPath:(id)arg1;
 - (id)_avalancheBeingReviewed;
 - (void)_beginZoomingForCellAtIndexPath:(id)arg1;
@@ -115,23 +101,20 @@
 - (id)_photoZoomAnimator;
 - (id)_photoZoomCell;
 - (id)_photoZoomPinchGestureRecognizer;
-- (id)_preheatedAssets;
 - (id)_presentingPhotoBrowserController;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previousPreheatRect;
 - (void)_promoteFavoriteAssetsAndDeleteNonPicks:(BOOL)arg1 withReviewCompletionHandler:(id)arg2;
 - (void)_reallyToggleCurrentPickStatusAtIndexPath:(id)arg1;
 - (void)_reloadAvalancheDataWithAsset:(id)arg1;
-- (void)_resetPreheating;
 - (id)_reviewScrubber;
 - (id)_selectionViewAtIndexPath:(id)arg1 forCollectionView:(id)arg2;
 - (void)_setPhotoZoomAnimator:(id)arg1;
 - (void)_setPhotoZoomCell:(id)arg1;
 - (void)_setPhotoZoomPinchGestureRecognizer:(id)arg1;
-- (void)_setPreheatedAssets:(id)arg1;
-- (void)_setPreviousPreheatRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setTransitionLayout:(id)arg1;
 - (struct CGSize { float x1; float x2; })_sizeForItemAtIndexPath:(id)arg1 interfaceOrientation:(int)arg2;
 - (id)_spec;
+- (void)_startPreheatingAllAssets;
+- (void)_stopPreheatingAllAssets;
 - (id)_tapGestureRecognizer;
 - (void)_toggleCurrentPickStatusAtIndexPath:(id)arg1;
 - (id)_transitionLayout;
@@ -142,7 +125,6 @@
 - (void)_updateMainViewAnimated:(BOOL)arg1;
 - (void)_updateNavigationItemTitle;
 - (void)_updatePhotoForAsset:(id)arg1 cell:(id)arg2 atIndexPath:(id)arg3;
-- (void)_updatePreheatedAssets;
 - (void)_updateReviewScrubberFromContentOffset;
 - (BOOL)_updatingContentOffsetFromScrubbing;
 - (id)assetCollectionsFetchResult;
@@ -156,7 +138,6 @@
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)embeddedActivityView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })embeddedActivityViewFrameWhenShowing:(BOOL)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -189,10 +170,10 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (id)transitionCollectionView;
 - (void)transitionViewAnimatorDidEnd:(id)arg1 finished:(BOOL)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

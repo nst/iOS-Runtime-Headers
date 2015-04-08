@@ -23,7 +23,6 @@
 + (BOOL)useNewImageManager;
 
 - (void).cxx_destruct;
-- (id)_dictionaryBySettingObject:(id)arg1 forKey:(id)arg2 inDictionary:(id)arg3;
 - (id)_domain;
 - (int)_requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
 - (id)_videoAVObjectBuilderFromVideoURL:(id)arg1 info:(id)arg2 playbackOnly:(BOOL)arg3;
@@ -50,6 +49,8 @@
 - (int)requestPlayerItemForVideo:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
 - (void)requestSynchronousImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(id)arg5;
 - (void)requestSynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(id)arg5;
+- (id)thumbnailDataForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)unloadImageFilesForAsset:(id)arg1 minimumFormat:(int)arg2 completionHandler:(id)arg3;
 - (void)unregisterRequest:(id)arg1;
 
 @end

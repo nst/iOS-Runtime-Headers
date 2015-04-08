@@ -2,16 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, PHCachingImageManager, PHFetchResult, PUGridRenderedStrip, PUGridZoomLevelInfo, PUMomentsZoomLevelManager, PUSectionedGridLayout, PUZoomableGridViewController;
+@class NSString, PHCachingImageManager, PUGridRenderedStrip, PUGridZoomLevelInfo, PUMomentsZoomLevelManager, PUSectionedGridLayout, PUZoomableGridViewController;
 
 @interface PUGridZoomLevelInfo : NSObject <PUGridRenderedStripDataSource, PUPhotosSectionHeaderViewDelegate, PUSectionedGridLayoutDelegate> {
     PUGridZoomLevelInfo *_baseZoomLevelInfo;
     PHCachingImageManager *_cachingImageManager;
     PUSectionedGridLayout *_collectionViewLayout;
     PUGridRenderedStrip *_currentRenderedStrip;
-    PHFetchResult *_currentRenderedStripContainers;
-    int _currentRenderedStripSection;
-    PHFetchResult *_currentRenderedStripSectionAssets;
     NSString *_displayTitle;
     int _maxRowsPerSection;
     float _pendingContentWidth;
@@ -29,7 +26,6 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSString * displayTitle;
-@property(readonly) BOOL hasEnoughContentToDisplay;
 @property(readonly) unsigned int hash;
 @property(readonly) int imageFormat;
 @property(readonly) int maxRowsPerSection;
@@ -58,13 +54,12 @@
 - (BOOL)configureGridCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)configureSectionHeaderView:(id)arg1 forVisualSection:(int)arg2;
 - (BOOL)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(BOOL)arg4;
-- (BOOL)consolidatesAssetFetchesForPreheat;
 - (id)diagnosticsProviderForVisualSection:(int)arg1;
 - (void)didFinishZoomLevelTransition;
 - (void)didTapHeaderView:(id)arg1;
 - (id)displayTitle;
-- (BOOL)hasEnoughContentToDisplay;
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
+- (id)imageDataForAsset:(id)arg1 itemContentScale:(float)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (int)imageDeliveryMode;
 - (int)imageFormat;
 - (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
@@ -75,12 +70,8 @@
 - (void)prepareForTransitionFromZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (void)prepareForTransitionToZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (void)registerReusableViewClassesForCollectionView:(id)arg1;
-- (void)renderedStrip:(id)arg1 didEndRenderingPhotosInSection:(int)arg2;
-- (void)renderedStrip:(id)arg1 enumerateItemIndexPathsForVisualSection:(int)arg2 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id)arg4;
-- (id)renderedStrip:(id)arg1 imageDataForPhotoAtIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
-- (void)renderedStrip:(id)arg1 willBeginRenderingPhotosInSection:(int)arg2;
-- (void)renderedStripDidEndRendering:(id)arg1;
-- (void)renderedStripWillBeginRendering:(id)arg1;
+- (void)renderedStrip:(id)arg1 enumerateAssetsForVisualSection:(int)arg2 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id)arg4;
+- (id)renderedStrip:(id)arg1 imageDataForAsset:(id)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (id)renderedStripsElementKind;
 - (id)sectionHeaderElementKind;
 - (void)sectionedGridLayout:(id)arg1 didFinalizePrepareTransitionIsAppearing:(BOOL)arg2;

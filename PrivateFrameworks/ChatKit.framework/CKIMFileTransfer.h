@@ -13,10 +13,10 @@
     NSString *_filename;
     NSString *_guid;
     IMMessage *_imMessage;
+    NSObject<OS_dispatch_queue> *_isolationQueue;
     NSURL *_linkFileURL;
-    unsigned int _mediaObjectCount;
+    int _mediaObjectCount;
     BOOL _restoring;
-    NSObject<OS_dispatch_queue> *_serial_queue;
     unsigned long long _totalBytes;
     NSDictionary *_transcoderUserInfo;
     int _transferState;

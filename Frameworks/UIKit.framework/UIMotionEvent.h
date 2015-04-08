@@ -27,6 +27,7 @@
 - (void)_accelerometerDidDetectMovementWithTimestamp:(double)arg1;
 - (BOOL)_detectWhenNotActive;
 - (float)_determineShakeLevelX:(float)arg1 y:(float)arg2 z:(float)arg3 currentState:(int)arg4;
+- (void)_enablePeakDetectionForScreenBlanked:(id)arg1;
 - (void)_enablePeakDetectionIfNecessary;
 - (int)_feedStateMachine:(float)arg1 currentState:(int)arg2 timestamp:(double)arg3;
 - (float)_highPass:(float)arg1;

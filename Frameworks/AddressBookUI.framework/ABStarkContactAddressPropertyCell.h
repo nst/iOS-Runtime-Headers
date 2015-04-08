@@ -6,6 +6,7 @@
 }
 
 - (float)bottomBaselineConstant;
+- (id)constantConstraints;
 - (id)standardTransportIcon;
 - (float)topBaselineConstant;
 - (void)transportButtonClicked:(id)arg1;

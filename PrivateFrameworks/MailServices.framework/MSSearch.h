@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@class <MSSearchDelegate>, MSXPCConnection, NSString;
+@class <MSSearchDelegate>, NSString;
 
-@interface MSSearch : NSObject <MSDSearchResultsProtocol> {
-    MSXPCConnection *_connection;
+@interface MSSearch : MSXPCService <MSDSearchResultsProtocol> {
     <MSSearchDelegate> *_delegate;
 }
 
@@ -26,12 +25,12 @@
 - (id)_generateUnitTestReplyForMethod:(id)arg1 arg:(id)arg2 error:(id*)arg3;
 - (void)_generateUnitTestResponsesForResultArray:(id)arg1;
 - (id)_initWithDelegate:(id)arg1;
-- (id)_remoteObjectProxyWithErrorHandler:(id)arg1;
 - (BOOL)_unitTestsAreEnabled;
 - (void)cancel;
 - (void)dealloc;
 - (id)delegate;
 - (void)foundResults:(id)arg1 error:(id)arg2;
+- (id)newConnectionForInterface:(id)arg1;
 - (void)setDelegate:(id)arg1;
 
 @end

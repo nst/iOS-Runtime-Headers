@@ -13,12 +13,14 @@
         unsigned int timestamp : 1; 
         unsigned int cellWifi : 1; 
         unsigned int geoService : 1; 
+        unsigned int placeRequestType : 1; 
         unsigned int requestDataSize : 1; 
         unsigned int responseDataSize : 1; 
         unsigned int responseTime : 1; 
         unsigned int sessionIDIsPersistent : 1; 
     } _has;
     NSString *_hwMachine;
+    int _placeRequestType;
     int _requestDataSize;
     int _responseDataSize;
     int _responseTime;
@@ -40,6 +42,7 @@
 @property(readonly) BOOL hasCountryCode;
 @property BOOL hasGeoService;
 @property(readonly) BOOL hasHwMachine;
+@property BOOL hasPlaceRequestType;
 @property BOOL hasRequestDataSize;
 @property BOOL hasResponseDataSize;
 @property BOOL hasResponseTime;
@@ -47,6 +50,7 @@
 @property BOOL hasSessionIDIsPersistent;
 @property BOOL hasTimestamp;
 @property(retain) NSString * hwMachine;
+@property int placeRequestType;
 @property int requestDataSize;
 @property int responseDataSize;
 @property int responseTime;
@@ -70,6 +74,7 @@
 - (BOOL)hasCountryCode;
 - (BOOL)hasGeoService;
 - (BOOL)hasHwMachine;
+- (BOOL)hasPlaceRequestType;
 - (BOOL)hasRequestDataSize;
 - (BOOL)hasResponseDataSize;
 - (BOOL)hasResponseTime;
@@ -80,6 +85,7 @@
 - (id)hwMachine;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (int)placeRequestType;
 - (BOOL)readFrom:(id)arg1;
 - (int)requestDataSize;
 - (int)responseDataSize;
@@ -91,6 +97,7 @@
 - (void)setGeoService:(int)arg1;
 - (void)setHasCellWifi:(BOOL)arg1;
 - (void)setHasGeoService:(BOOL)arg1;
+- (void)setHasPlaceRequestType:(BOOL)arg1;
 - (void)setHasRequestDataSize:(BOOL)arg1;
 - (void)setHasResponseDataSize:(BOOL)arg1;
 - (void)setHasResponseTime:(BOOL)arg1;
@@ -98,6 +105,7 @@
 - (void)setHasSessionIDIsPersistent:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHwMachine:(id)arg1;
+- (void)setPlaceRequestType:(int)arg1;
 - (void)setRequestDataSize:(int)arg1;
 - (void)setResponseDataSize:(int)arg1;
 - (void)setResponseTime:(int)arg1;

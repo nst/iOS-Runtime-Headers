@@ -18,14 +18,10 @@
 + (BOOL)shouldCreateMeshSeriesStorage;
 + (id)wholePieBoundsResource;
 
-- (BOOL)alwaysRenderForElementBlendAnimationClip;
 - (Class)chartBoundsLayoutSceneDelegateClass;
 - (struct EdgeDetectionParameters { BOOL x1; BOOL x2; float x3; })edgeDetectionParameters;
 - (float)explosionAtElementIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1 forScene:(id)arg2;
 - (Class)getBounds3DClass;
-- (BOOL)growAnimationLinearInterpolationForChartDeliveryStyle:(unsigned int)arg1;
-- (BOOL)growAnimationSequenceInOrderForChartDeliveryStyle:(unsigned int)arg1;
-- (void)postAddDataToGeometryResourceAnimationData:(id)arg1;
 - (void)renderLabelsSceneObject:(id)arg1 pipeline:(id)arg2 enumerator:(id)arg3 properties:(id)arg4;
 - (Class)resizer3DClass;
 - (void)setExplosion:(float)arg1 atElementIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 forScene:(id)arg3;

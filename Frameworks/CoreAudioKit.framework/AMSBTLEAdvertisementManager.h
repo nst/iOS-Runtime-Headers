@@ -5,14 +5,12 @@
 @class CBPeripheralManager, NSString;
 
 @interface AMSBTLEAdvertisementManager : NSObject <CBPeripheralManagerDelegate> {
-    BOOL isAdvertising;
     CBPeripheralManager *peripheralManager;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
-@property(readonly) BOOL isAdvertising;
 @property(readonly) Class superclass;
 
 - (void)advertiseMIDIService;

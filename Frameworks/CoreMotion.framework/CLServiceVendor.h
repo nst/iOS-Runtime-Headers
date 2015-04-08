@@ -13,6 +13,7 @@
 + (BOOL)isServiceEnabled:(id)arg1;
 + (BOOL)isServiceRunning:(id)arg1;
 + (id)proxyForService:(id)arg1;
++ (id)proxyForService:(id)arg1 forClient:(id)arg2;
 + (void)rereadConfiguration;
 + (void)retireServiceWithName:(id)arg1;
 

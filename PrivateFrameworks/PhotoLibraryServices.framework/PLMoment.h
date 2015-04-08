@@ -52,7 +52,7 @@
 @property(retain) PLMomentList * yearMomentList;
 
 + (id)allAssetsIncludedInMomentsInLibrary:(id)arg1;
-+ (id)allAssetsIncludedInMomentsInManagedObjectContext:(id)arg1 error:(id*)arg2;
++ (id)allAssetsIncludedInMomentsInManagedObjectContext:(id)arg1 IDsOnly:(BOOL)arg2 error:(id*)arg3;
 + (id)allMomentsInLibrary:(id)arg1;
 + (id)allMomentsInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (id)allMomentsRequiringAnalysisInManagedObjectContext:(id)arg1 error:(id*)arg2;
@@ -72,6 +72,7 @@
 - (BOOL)canPerformEditOperation:(unsigned int)arg1;
 - (BOOL)canShowAvalancheStacks;
 - (BOOL)canShowComments;
+- (unsigned int)countForAssetsOfKind:(short)arg1;
 - (void)dealloc;
 - (void)delete;
 - (id)diagnosticInformation;

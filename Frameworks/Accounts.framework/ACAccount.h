@@ -217,6 +217,17 @@
 - (void)applySyncProperties:(id)arg1;
 - (BOOL)authenticated;
 - (id)authenticationType;
+- (id)br_dsid;
+- (id)br_firstName;
+- (BOOL)br_isCloudDocsMigrationComplete;
+- (BOOL)br_isEnabledForCloudDocs;
+- (BOOL)br_isEnabledForUbiquity;
+- (BOOL)br_isICloudAccount;
+- (BOOL)br_isPrimaryAccount;
+- (BOOL)br_isUsingCloudDocs;
+- (id)br_lastName;
+- (void)br_setCloudDocsMigrationComplete:(BOOL)arg1;
+- (void)br_setUsesCloudDocs:(BOOL)arg1;
 - (BOOL)canRemoveAccount;
 - (id)childAccounts;
 - (id)childAccountsWithAccountTypeIdentifier:(id)arg1;

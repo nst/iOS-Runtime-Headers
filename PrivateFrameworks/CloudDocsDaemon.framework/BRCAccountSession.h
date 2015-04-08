@@ -2,93 +2,243 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCContainerScheduler, BRCDatabaseManager, BRCDiskSpaceReclaimer, BRCFSEventsMonitor, BRCFSReader<BRCFileCoordinationReading>, BRCFSWriter<BRCFileCoordinationWriting>, BRCNotificationManager, BRCRelativePath, BRCStageRegistry, BRCThrottle, CDSession, NSMutableSet, NSString, PQLConnection;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class BRCApplyScheduler, BRCContainerScheduler, BRCDeadlineScheduler, BRCDiskSpaceReclaimer, BRCFSDownloader, BRCFSEventsMonitor, BRCFSReader<BRCFileCoordinationReading>, BRCFSUploader, BRCFSWriter<BRCFileCoordinationWriting>, BRCNotificationManager, BRCRelativePath, BRCServerPersistedState, BRCStageRegistry, BRCThrottle, CDSession, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL, PQLConnection;
 
 @interface BRCAccountSession : NSObject <BRCCloudDocsAppsObserver> {
     NSString *_accountID;
+    BRCThrottle *_aliasRemovalThrottle;
     NSString *_appSupportDirPath;
+    BRCApplyScheduler *_applyScheduler;
     NSString *_cacheDirPath;
+    PQLConnection *_clientDB;
+    NSMutableDictionary *_clientState;
     int _cloudDocsFD;
+    BRCThrottle *_containerResetThrottle;
     BRCThrottle *_containerScanThrottle;
     BRCContainerScheduler *_containerScheduler;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    } _containersCreationLock;
+    struct _opaque_pthread_rwlock_t { 
+        long __sig; 
+        BOOL __opaque[124]; 
+    } _containersLock;
     CDSession *_coreDuetSession;
-    BRCDatabaseManager *_dbManager;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _dbProfilingHook;
+
+    NSURL *_dbURL;
+    NSObject<OS_dispatch_source> *_dbWatcher;
+    NSObject<OS_dispatch_queue> *_dbWatcherQueue;
+    BRCDeadlineScheduler *_defaultScheduler;
     BRCDiskSpaceReclaimer *_diskReclaimer;
+
+  /* Unexpected information at end of encoded ivar type: i */
+  /* Error parsing encoded ivar type info: Ai */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_downloadSuspendCount;
+
+    BRCFSDownloader *_fsDownloader;
     BRCFSEventsMonitor *_fsEventsMonitor;
     BRCFSReader<BRCFileCoordinationReading> *_fsReader;
+    BRCFSUploader *_fsUploader;
     BRCFSWriter<BRCFileCoordinationWriting> *_fsWriter;
+    BOOL _isCancelled;
     BRCThrottle *_lostItemThrottle;
     BRCNotificationManager *_notificationManager;
     BRCThrottle *_operationFailureThrottle;
+    NSMutableDictionary *_privateLocalContainersByID;
+    NSMutableDictionary *_privateServerZonesByID;
+    BOOL _resumed;
     NSString *_rootDirPath;
+    PQLConnection *_serverDB;
+    BRCServerPersistedState *_serverState;
+    NSMutableDictionary *_serverZoneByZoneRowID;
+    NSMutableDictionary *_sharedLocalContainersByMangledID;
+    NSMutableDictionary *_sharedServerZonesByMangledID;
     BRCStageRegistry *_stageRegistry;
     BRCThrottle *_syncAppContainerThrottle;
+    NSMutableDictionary *_syncContexts;
     NSString *_ubiquityTokenSalt;
+
+  /* Unexpected information at end of encoded ivar type: i */
+  /* Error parsing encoded ivar type info: Ai */
+    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_uploadSuspendCount;
+
     NSMutableSet *_xpcClients;
 }
 
 @property(readonly) NSString * accountID;
+@property(readonly) BRCThrottle * aliasRemovalThrottle;
 @property(retain) NSString * appSupportDirPath;
+@property(readonly) BRCApplyScheduler * applyScheduler;
 @property(retain) NSString * cacheDirPath;
-@property(readonly) PQLConnection * clientTruthConnection;
+@property(readonly) PQLConnection * clientDB;
+@property(readonly) NSMutableDictionary * clientState;
+@property(readonly) BRCThrottle * containerResetThrottle;
 @property(readonly) BRCThrottle * containerScanThrottle;
 @property(readonly) BRCContainerScheduler * containerScheduler;
 @property(readonly) CDSession * coreDuetSession;
-@property(readonly) BRCDatabaseManager * dbManager;
 @property(copy,readonly) NSString * debugDescription;
+@property(readonly) BRCDeadlineScheduler * defaultScheduler;
 @property(copy,readonly) NSString * description;
 @property(readonly) BRCDiskSpaceReclaimer * diskReclaimer;
+@property(readonly) BRCFSDownloader * fsDownloader;
 @property(readonly) BRCFSEventsMonitor * fsEventsMonitor;
 @property(readonly) BRCFSReader<BRCFileCoordinationReading> * fsReader;
+@property(readonly) BRCFSUploader * fsUploader;
 @property(readonly) BRCFSWriter<BRCFileCoordinationWriting> * fsWriter;
 @property(readonly) unsigned int hash;
+@property(readonly) BOOL isCancelled;
 @property(readonly) BRCThrottle * lostItemThrottle;
 @property(readonly) BRCNotificationManager * notificationManager;
 @property(readonly) BRCThrottle * operationFailureThrottle;
 @property(readonly) BRCRelativePath * root;
 @property(retain) NSString * rootDirPath;
-@property(readonly) PQLConnection * serverTruthConnection;
+@property(readonly) PQLConnection * serverDB;
+@property(readonly) BRCServerPersistedState * serverState;
 @property(readonly) BRCStageRegistry * stageRegistry;
 @property(readonly) Class superclass;
 @property(readonly) BRCThrottle * syncAppContainerThrottle;
 @property(readonly) NSString * ubiquityTokenSalt;
 
++ (id)sessionForDumpingDatabasesAtURL:(id)arg1;
+
 - (void).cxx_destruct;
+- (BOOL)_attachDatabase:(id)arg1 toConnection:(id)arg2 error:(id*)arg3;
+- (BOOL)_checkIntegrity:(id)arg1 serverTruth:(BOOL)arg2 error:(id*)arg3;
+- (id)_containerMetadataRecordsToSave;
 - (void)_createAccountSupportPathIfNeeded:(id)arg1 protectParent:(BOOL)arg2;
+- (BOOL)_createLocalContainer:(id)arg1 ownerName:(id)arg2;
+- (BOOL)_createPrivateLocalContainer:(id)arg1;
+- (BOOL)_createSharedLocalContainer:(id)arg1 ownerName:(id)arg2;
+- (BOOL)_deleteLocalContainer:(id)arg1;
+- (BOOL)_dumpContainer:(id)arg1 toContext:(id)arg2 error:(id*)arg3;
+- (void)_loadContainersFromDisk;
+- (id)_localContainersMatchingSearchString:(id)arg1 db:(id)arg2;
+- (BOOL)_openClientTruthConnectionWithError:(id*)arg1;
+- (BOOL)_openServerTruthConnectionWithError:(id*)arg1;
+- (void)_registerLastBootIfNeeded:(id)arg1 table:(struct NSObject { Class x1; }*)arg2;
+- (BOOL)_setupBackupDetector:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg1 error:(id*)arg2;
+- (BOOL)_setupConnection:(id)arg1 databaseName:(id)arg2 error:(id*)arg3;
+- (void)_setupSharedPackageExtensionsApp;
 - (void)_setupThrottles;
+- (void)_startWatcher;
+- (BOOL)_stepBackupDetector:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1 newState:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg2 error:(id*)arg3;
+- (id)_unloadContainers;
 - (id)accountID;
+- (id)aliasRemovalThrottle;
 - (id)appSupportDirPath;
+- (id)applyScheduler;
+- (BOOL)backupDatabaseToURL:(id)arg1 error:(id*)arg2;
+- (struct PQLResultSet { Class x1; }*)bouncedItemsEnumerator;
 - (id)cacheDirPath;
-- (id)clientTruthConnection;
+- (void)cancelAllOperations;
+- (id)clientDB;
+- (id)clientState;
 - (void)close;
 - (void)closeAndResetLocalState;
+- (BOOL)closeDBWithError:(id*)arg1;
+- (void)closeXPCClientsSync;
 - (void)cloudDocsAppsListDidChange:(id)arg1;
+- (id)containerByMangledID:(id)arg1;
+- (id)containerResetThrottle;
 - (id)containerScanThrottle;
 - (id)containerScheduler;
 - (id)coreDuetSession;
-- (id)dbManager;
+- (id)createDeviceKeyForNameInServerDB:(id)arg1;
+- (id)createOwnerKeyForName:(id)arg1;
+- (id)createPrivateContainerIfNeeded:(id)arg1;
+- (BOOL)createPrivateContainerOnDisk:(id)arg1 createdRoot:(BOOL*)arg2 createdDocuments:(BOOL*)arg3;
+- (BOOL)createServerZone:(id)arg1;
+- (id)createSharedContainerIfNeeded:(id)arg1 ownerName:(id)arg2;
+- (BOOL)createSharedContainerOnDiskWithMangledID:(id)arg1 createdRoot:(BOOL*)arg2;
+- (void)dealloc;
+- (id)defaultScheduler;
+- (id)defaultSyncContext;
+- (BOOL)deleteServerZone:(id)arg1;
+- (id)description;
 - (void)destroyLocalData;
+- (void)destroySharedContainer:(id)arg1;
+- (id)deviceKeyForName:(id)arg1 db:(id)arg2;
+- (void)disableDatabaseProfilingForDB:(id)arg1;
 - (id)diskReclaimer;
+- (BOOL)dumpDatabaseToFileHandle:(id)arg1 containerID:(id)arg2 error:(id*)arg3;
+- (void)enableDatabaseProfilingForDB:(id)arg1;
+- (void)enumeratePrivateContainers:(id)arg1;
+- (void)enumerateServerZones:(id)arg1;
+- (void)enumerateSharedContainers:(id)arg1;
+- (id)fsDownloader;
 - (id)fsEventsMonitor;
 - (id)fsReader;
+- (id)fsUploader;
 - (id)fsWriter;
+- (id)init;
 - (id)initWithAccountID:(id)arg1 salt:(id)arg2;
+- (BOOL)isCancelled;
+- (id)localContainersMatchingSearchString:(id)arg1 db:(id)arg2 error:(id*)arg3;
 - (id)lostItemThrottle;
 - (void)markAccountMigrationComplete;
+- (id)newConnection:(id)arg1;
+- (id)newConnectionWithLabel:(id)arg1 error:(id*)arg2;
+- (id)newPrivateLocalContainerFromPQLResultSet:(id)arg1 error:(id*)arg2;
+- (id)newPrivateServerZoneFromPQLResultSet:(id)arg1 error:(id*)arg2;
+- (id)newSharedLocalContainerFromPQLResultSet:(id)arg1 error:(id*)arg2;
+- (id)newSharedServerZoneFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)notificationManager;
+- (BOOL)openDBWithError:(id*)arg1;
 - (BOOL)openWithError:(id*)arg1;
 - (id)operationFailureThrottle;
+- (id)ownerIdentityForKey:(id)arg1;
+- (id)ownerIdentityForName:(id)arg1;
+- (id)ownerIdentityForName:(id)arg1 db:(id)arg2;
+- (id)ownerKeyForName:(id)arg1 db:(id)arg2;
+- (id)ownerNameForKey:(id)arg1 db:(id)arg2;
+- (void)preventDatabaseFromBeingReused;
+- (id)privateContainerByID:(id)arg1;
+- (id)privateContainerByMangledID:(id)arg1;
+- (id)privateLocalContainerByID:(id)arg1 db:(id)arg2;
+- (struct PQLResultSet { Class x1; }*)privateLocalContainersEnumerator:(id)arg1;
+- (id)privateServerZoneByID:(id)arg1 db:(id)arg2;
+- (struct PQLResultSet { Class x1; }*)privateServerZonesEnumerator:(id)arg1;
 - (void)registerClient:(id)arg1;
+- (void)registerPackageExtension:(id)arg1;
 - (void)resume;
+- (void)resumeAllTransfers;
 - (id)root;
 - (id)rootDirPath;
-- (id)serverTruthConnection;
+- (BOOL)saveLocalContainerToDB:(id)arg1;
+- (BOOL)saveServerZoneToDB:(id)arg1;
+- (id)serverDB;
+- (id)serverState;
+- (id)serverZoneByRowID:(id)arg1;
 - (void)setAppSupportDirPath:(id)arg1;
 - (void)setCacheDirPath:(id)arg1;
+- (void)setOwnerIdentity:(id)arg1 forName:(id)arg2;
 - (void)setRootDirPath:(id)arg1;
+- (void)setupDatabase;
+- (id)sharedContainerByMangledID:(id)arg1;
+- (struct PQLResultSet { Class x1; }*)sharedLocalContainersEnumerator:(id)arg1;
+- (id)sharedServerZoneByName:(id)arg1 ownerName:(id)arg2 db:(id)arg3;
+- (struct PQLResultSet { Class x1; }*)sharedServerZonesEnumerator:(id)arg1;
+- (id)sharedSyncContext;
+- (id)singleLocalContainerMatchingSearchString:(id)arg1 db:(id)arg2 error:(id*)arg3;
 - (id)stageRegistry;
+- (struct PQLResultSet { Class x1; }*)stagedItemsEnumerator;
+- (void)stopDBWatcher;
 - (id)syncAppContainerThrottle;
+- (id)syncContextForContextIdentifier:(id)arg1 isShared:(BOOL)arg2;
+- (id)syncContextForZone:(id)arg1;
+- (id)syncContextForZone:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)ubiquityTokenSalt;
 - (void)unregisterClient:(id)arg1;
+- (void)userDefaultsChanged;
+- (BOOL)validateDatabase:(id)arg1 serverTruth:(BOOL)arg2 error:(id*)arg3;
 
 @end

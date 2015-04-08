@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class NSMutableSet;
+@class NSMutableDictionary, NSMutableSet;
 
 @interface BKSEventFocusManager : NSObject {
     NSMutableSet *_currentState;
     BOOL _needsFlush;
-    NSMutableSet *_pendingState;
+    NSMutableDictionary *_pendingStatesByPriority;
     BOOL _systemAppControlsFocusOnMainDisplay;
 }
 
 @property(readonly) NSMutableSet * currentState;
 @property BOOL needsFlush;
-@property(readonly) NSMutableSet * pendingState;
+@property(readonly) NSMutableDictionary * pendingStatesByPriority;
 @property BOOL systemAppControlsFocusOnMainDisplay;
 
 + (id)sharedInstance;
@@ -22,11 +22,13 @@
 - (id)currentState;
 - (void)dealloc;
 - (void)deferEventsForClientWithProperties:(id)arg1 toClientWithProperties:(id)arg2;
+- (void)deferEventsForClientWithProperties:(id)arg1 toClientWithProperties:(id)arg2 withPriority:(int)arg3;
 - (id)description;
 - (void)flush;
 - (id)init;
 - (BOOL)needsFlush;
-- (id)pendingState;
+- (id)pendingStatesByPriority;
+- (void)reallyFlushWithSet:(id)arg1;
 - (void)setForegroundApplicationOnMainDisplay:(id)arg1 pid:(int)arg2;
 - (void)setNeedsFlush:(BOOL)arg1;
 - (void)setSystemAppControlsFocusOnMainDisplay:(BOOL)arg1;

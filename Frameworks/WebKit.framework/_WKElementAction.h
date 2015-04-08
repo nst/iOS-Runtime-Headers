@@ -36,7 +36,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_initWithTitle:(id)arg1 actionHandler:(id)arg2 type:(int)arg3;
-- (void)_runActionWithElementInfo:(id)arg1 view:(id)arg2;
+- (void)_runActionWithElementInfo:(id)arg1 forActionSheetAssistant:(id)arg2;
 - (void)dealloc;
 - (id)dismissalHandler;
 - (void)setDismissalHandler:(id)arg1;

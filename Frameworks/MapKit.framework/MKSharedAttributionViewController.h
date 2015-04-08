@@ -7,6 +7,7 @@
 @interface MKSharedAttributionViewController : UITableViewController <MKStackingViewControllerPreferredSizeUse> {
     NSAttributedString *_attribution;
     <MKPlaceSharedAttributionDelegate> *_delegate;
+    BOOL _isSelectable;
 }
 
 @property(copy) NSAttributedString * attribution;
@@ -14,6 +15,7 @@
 @property <MKPlaceSharedAttributionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property BOOL isSelectable;
 @property(readonly) BOOL requiresPreferredContentSizeInStackingView;
 @property(readonly) Class superclass;
 
@@ -23,10 +25,12 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
+- (BOOL)isSelectable;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (BOOL)requiresPreferredContentSizeInStackingView;
 - (void)setAttribution:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIsSelectable:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

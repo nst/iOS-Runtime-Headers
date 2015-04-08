@@ -66,6 +66,7 @@
 - (id)initWithPID:(int)arg1;
 - (id)initWithPID:(int)arg1 options:(unsigned int)arg2;
 - (id)initWithPID:(int)arg1 orTask:(unsigned int)arg2 options:(unsigned int)arg3;
+- (id)initWithPID:(int)arg1 task:(unsigned int)arg2 processName:(id)arg3 is64Bit:(BOOL)arg4 options:(unsigned int)arg5;
 - (id)initWithTask:(unsigned int)arg1;
 - (id)initWithTask:(unsigned int)arg1 options:(unsigned int)arg2;
 - (void)initializeSamplingContext:(BOOL)arg1;

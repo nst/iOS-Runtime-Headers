@@ -81,6 +81,7 @@
         float ty; 
     } _preRotationInputViewTransform;
     UIView *_preRotationSnapshot;
+    BOOL _prevInputViewIsOnScreen;
     BOOL _requiresConstraintUpdate;
     unsigned int _rotationState;
     UIScrollView *_scrollViewForTransition;
@@ -134,6 +135,7 @@
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_aligningInsetsForChildInputViewController:(id)arg1;
 - (int)_clipCornersOfView:(id)arg1;
+- (void)_collectTransitionTimeStatistics:(unsigned int)arg1;
 - (void)_finishRotationFromInterfaceOrientation:(int)arg1;
 - (void)_forcePreLayoutHostViewFrame;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
@@ -148,6 +150,7 @@
 - (BOOL)_subviewUsesClassicLayout:(id)arg1;
 - (void)_updateBackdropViews;
 - (void)_updateBounceAnimation:(id)arg1;
+- (BOOL)_useLiveRotation;
 - (id)_viewControllerForAutorotation;
 - (id)accessoryViewHeightConstraint;
 - (void)animateAccessoryViewVisibility:(BOOL)arg1 withDuration:(float)arg2;
@@ -160,6 +163,7 @@
 - (void)clearInteractiveTransitionStateIfNecessary;
 - (void)clearViewSizingConstraints:(unsigned int)arg1;
 - (void)completeKeyboardDismiss:(unsigned int)arg1;
+- (id)containerView;
 - (id)controllerDelegate;
 - (id)currentTransition;
 - (void)dealloc;
@@ -186,6 +190,7 @@
 - (BOOL)isChangingPlacement;
 - (BOOL)isOnScreen;
 - (BOOL)isRotating;
+- (BOOL)isSplitting;
 - (BOOL)isTranslating;
 - (BOOL)isUndocked;
 - (unsigned int)keyboardDismissModeForPublicMode:(int)arg1;
@@ -205,6 +210,7 @@
 - (id)postRotationInputViewSet;
 - (id)postRotationPlacement;
 - (void)postStartNotifications:(unsigned int)arg1 withInfo:(id)arg2;
+- (void)postTransitionEndNotification;
 - (void)prepareForTransition;
 - (void)prepareKeyboardHeightChangeWithDelta:(float)arg1 duration:(float)arg2;
 - (void)pushAnimationStyle:(id)arg1;
@@ -265,6 +271,5 @@
 - (void)willResume:(id)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)window:(id)arg1 statusBarWillChangeFromHeight:(float)arg2 toHeight:(float)arg3;
-- (id)windowForAutorotation;
 
 @end

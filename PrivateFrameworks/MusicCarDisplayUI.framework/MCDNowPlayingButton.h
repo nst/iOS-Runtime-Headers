@@ -15,8 +15,8 @@
 + (id)buttonWithHeight:(float)arg1;
 
 - (void).cxx_destruct;
-- (void)_focusStateDidChange;
-- (BOOL)_isFocusableElement;
+- (BOOL)canBecomeFocused;
+- (void)focusedViewDidChange;
 - (BOOL)hidesLeftBorder;
 - (void)layoutSubviews;
 - (void)setHidesLeftBorder:(BOOL)arg1;

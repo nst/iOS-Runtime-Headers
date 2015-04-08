@@ -12,7 +12,6 @@
     struct { 
         unsigned int hasRegisteredImages : 1; 
         unsigned int supportsBlockGeneration : 1; 
-        unsigned int disconnectedFromAssetManager : 1; 
     } _assetFlags;
     _UIAssetManager *_assetManager;
     NSString *_assetName;
@@ -34,9 +33,7 @@
 
 - (id)_assetManager;
 - (void)_clearResolvedImageResources;
-- (BOOL)_containsImagesInPath:(id)arg1;
 - (id)_defaultTraitCollection;
-- (void)_disconnectFromAssetManager;
 - (id)_initWithAssetName:(id)arg1 forManager:(id)arg2;
 - (id)_mutableCatalog;
 - (void)_registerImage:(id)arg1 withTraitCollection:(id)arg2 cache:(BOOL)arg3;

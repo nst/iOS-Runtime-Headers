@@ -11,6 +11,7 @@
 @property(copy) NSNumber * emergencyCall;
 @property BOOL faceTime;
 @property BOOL faceTimeAudio;
+@property BOOL speakerphoneCall;
 
 + (id)call;
 + (id)callWithDictionary:(id)arg1 context:(id)arg2;
@@ -26,5 +27,7 @@
 - (void)setEmergencyCall:(id)arg1;
 - (void)setFaceTime:(BOOL)arg1;
 - (void)setFaceTimeAudio:(BOOL)arg1;
+- (void)setSpeakerphoneCall:(BOOL)arg1;
+- (BOOL)speakerphoneCall;
 
 @end

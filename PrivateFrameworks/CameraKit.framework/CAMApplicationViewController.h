@@ -15,9 +15,7 @@
     BOOL __didApplyConfigurationToCameraView;
     BOOL __dismissingCameraRoll;
     BOOL __dismissingCameraRollForSuspension;
-    BOOL __handlesVolumeButtons;
     BOOL __hasLockedSinceLastConfigurationChange;
-    BOOL __ignoringVolumeButtons;
     int __lockToResetToken;
     UIView *__rootContainerView;
     BOOL __shouldRetryDismissal;
@@ -49,9 +47,7 @@
 @property BOOL _didApplyConfigurationToCameraView;
 @property(getter=_isDismissingCameraRoll,setter=_setDismissingCameraRoll:) BOOL _dismissingCameraRoll;
 @property(getter=_isDismissingCameraRollForSuspension,setter=_setDismissingCameraRollForSuspension:) BOOL _dismissingCameraRollForSuspension;
-@property(setter=_setHandlesVolumeButtons:) BOOL _handlesVolumeButtons;
 @property(setter=_setHasLockedSinceLastConfigurationChange:) BOOL _hasLockedSinceLastConfigurationChange;
-@property(setter=_setIgnoringVolumeButtons:) BOOL _ignoringVolumeButtons;
 @property(readonly) int _lockToResetToken;
 @property(readonly) UIView * _rootContainerView;
 @property(readonly) BOOL _shouldRetryDismissal;
@@ -76,16 +72,14 @@
 - (id)_cameraRollNotificationToken;
 - (void)_cameraRollReload:(id)arg1;
 - (id)_cameraRollViewController;
+- (void)_createPhysicalCaptureRecognizerIfNecessary;
 - (id)_currentPhotoBrowser;
 - (void)_defaultCameraDevice:(id*)arg1 cameraMode:(id*)arg2;
 - (id)_dictionaryFromPackedArray:(id)arg1;
 - (BOOL)_didApplyConfigurationToCameraView;
+- (void)_didPerformPhysicalCapture:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
-- (void)_handleVolumeButtonDown;
-- (void)_handleVolumeButtonUp;
-- (BOOL)_handlesVolumeButtons;
 - (BOOL)_hasLockedSinceLastConfigurationChange;
-- (BOOL)_ignoringVolumeButtons;
 - (BOOL)_isDismissingCameraRoll;
 - (BOOL)_isDismissingCameraRollForSuspension;
 - (void)_kickoffCameraControllerPreview;
@@ -98,11 +92,8 @@
 - (void)_saveConfiguration;
 - (void)_setDismissingCameraRoll:(BOOL)arg1;
 - (void)_setDismissingCameraRollForSuspension:(BOOL)arg1;
-- (void)_setHandlesVolumeButtons:(BOOL)arg1;
 - (void)_setHasLockedSinceLastConfigurationChange:(BOOL)arg1;
-- (void)_setIgnoringVolumeButtons:(BOOL)arg1;
 - (void)_setShouldShowCameraRoll:(BOOL)arg1;
-- (void)_setWantsVolumeButtonEvents:(BOOL)arg1;
 - (void)_setupLockToResetNotifications;
 - (BOOL)_shouldResetMode:(id)arg1;
 - (BOOL)_shouldResumeTorch;
@@ -114,7 +105,7 @@
 - (id)_stringForTimerDuration:(int)arg1;
 - (void)_teardownLockToResetNotifications;
 - (void)_updateCameraRollSession;
-- (void)_updateVolumeButtonEventsAbility;
+- (void)_updatePhysicalButtonCapturedEnabled;
 - (void)animateBlurForSuspension;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
@@ -139,6 +130,7 @@
 - (void)photoBrowserControllerWillBeginPaging:(id)arg1;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)preferencesDidChange;
+- (BOOL)prefersStatusBarHidden;
 - (void)prepareAlbumNavigationControllerForReuse:(id)arg1 withCameraRoll:(id)arg2;
 - (void)prepareForDefaultImageSnapshot;
 - (void)prepareForDismissal;

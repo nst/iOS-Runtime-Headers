@@ -44,6 +44,8 @@
 - (id)activeMessageTracker;
 - (id)appMonitor;
 - (id)backgroundAppMsgFilter;
+- (void)deregisterForMessage:(id)arg1 receiver:(id)arg2;
+- (void)deregisterReceiver:(id)arg1;
 - (void)dispatchMessage:(id)arg1 target:(id)arg2;
 - (id)endPoint;
 - (id)foregroundApps;
@@ -75,7 +77,6 @@
 - (BOOL)start;
 - (BOOL)stop;
 - (void)trackActiveHomeKitAppsForNewConnection:(BOOL)arg1;
-- (void)unregisterForForMessage:(id)arg1 receiver:(id)arg2;
 - (id)uuid;
 - (id)xpcClients;
 - (id)xpcListener;

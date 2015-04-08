@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSMutableArray, NSString;
+@class NSMutableOrderedSet, NSString;
 
 @interface SPSearchResultSection : PBCodable <NSCopying> {
     NSString *_category;
@@ -14,7 +14,7 @@
         unsigned int flags : 1; 
     } _has;
     NSString *_icon;
-    NSMutableArray *_results;
+    NSMutableOrderedSet *_resultSet;
     NSString *_scheme;
 }
 
@@ -29,10 +29,10 @@
 @property(readonly) BOOL hasIcon;
 @property(readonly) BOOL hasScheme;
 @property(retain) NSString * icon;
-@property(retain) NSMutableArray * results;
 @property(retain) NSString * scheme;
 
 - (void)addResults:(id)arg1;
+- (void)addResults:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)category;
 - (void)clearResults;
 - (void)copyTo:(id)arg1;
@@ -52,8 +52,11 @@
 - (BOOL)hasScheme;
 - (unsigned int)hash;
 - (id)icon;
+- (unsigned int)indexOfResult:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)removeResultsAtIndex:(unsigned int)arg1;
+- (id)resultSet;
 - (id)results;
 - (id)resultsAtIndex:(unsigned int)arg1;
 - (unsigned int)resultsCount;
@@ -65,7 +68,6 @@
 - (void)setHasDomain:(BOOL)arg1;
 - (void)setHasFlags:(BOOL)arg1;
 - (void)setIcon:(id)arg1;
-- (void)setResults:(id)arg1;
 - (void)setScheme:(id)arg1;
 - (void)writeTo:(id)arg1;
 

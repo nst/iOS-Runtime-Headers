@@ -15,6 +15,7 @@
 @property BOOL disableContinuity;
 @property BOOL drawDebugViewColors;
 @property BOOL immediateAlarmCreation;
+@property BOOL largeListViewDisclosingEventDetails;
 @property(retain) NSNumber * lastSuspendTime;
 @property(retain) NSNumber * lastViewMode;
 @property(retain) NSNumber * lastViewedDate;
@@ -23,6 +24,7 @@
 @property unsigned int promptForCommentWhenDeclining;
 @property BOOL requestSyncOnApplicationLaunch;
 @property(retain) NSString * searchString;
+@property(getter=isShortResumeToTodayTimeout) BOOL shortResumeToTodayTimeout;
 @property BOOL showDebugGridOverlay;
 @property BOOL showEventsInPhoneMonthView;
 @property BOOL showExperimentalUI;
@@ -47,6 +49,8 @@
 - (BOOL)drawDebugViewColors;
 - (BOOL)immediateAlarmCreation;
 - (id)init;
+- (BOOL)isShortResumeToTodayTimeout;
+- (BOOL)largeListViewDisclosingEventDetails;
 - (id)lastSuspendTime;
 - (id)lastViewMode;
 - (id)lastViewedDate;
@@ -62,6 +66,7 @@
 - (void)setDisableContinuity:(BOOL)arg1;
 - (void)setDrawDebugViewColors:(BOOL)arg1;
 - (void)setImmediateAlarmCreation:(BOOL)arg1;
+- (void)setLargeListViewDisclosingEventDetails:(BOOL)arg1;
 - (void)setLastSuspendTime:(id)arg1;
 - (void)setLastViewMode:(id)arg1;
 - (void)setLastViewedDate:(id)arg1;
@@ -70,6 +75,7 @@
 - (void)setPromptForCommentWhenDeclining:(unsigned int)arg1;
 - (void)setRequestSyncOnApplicationLaunch:(BOOL)arg1;
 - (void)setSearchString:(id)arg1;
+- (void)setShortResumeToTodayTimeout:(BOOL)arg1;
 - (void)setShowDebugGridOverlay:(BOOL)arg1;
 - (void)setShowEventsInPhoneMonthView:(BOOL)arg1;
 - (void)setShowExperimentalUI:(BOOL)arg1;

@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextField, UIView, _UIAlertControllerTextField;
+@class UITextField, UIView, UIVisualEffectView, _UIAlertControllerTextField;
 
 @interface _UIAlertControllerTextFieldView : UIView {
-    UIView *_borderContainerView;
+    UIVisualEffectView *_borderContainerView;
     UIView *_borderView;
     UIView *_innerContentView;
     _UIAlertControllerTextField *_textField;

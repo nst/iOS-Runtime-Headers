@@ -10,8 +10,6 @@
 
 @property(readonly) TSCHChartValueAxisLabelsLayoutItem * axisValueLabelsLayoutItem;
 
-+ (id)selectionPathType;
-
 - (id)axisValueLabelsLayoutItem;
 - (void)buildSubTree;
 - (void)dealloc;

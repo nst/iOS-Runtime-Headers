@@ -36,7 +36,6 @@
 + (id)cpl_safeUnarchiveObjectWithFile:(id)arg1;
 + (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 + (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
-+ (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 + (void)initialize;
 + (id)pl_safeUnarchiveObjectWithData:(id)arg1;
 + (id)pl_safeUnarchiveObjectWithFile:(id)arg1;
@@ -86,7 +85,6 @@
 - (id)init;
 - (id)initForReadingWithData:(id)arg1;
 - (id)initWithStream:(id)arg1;
-- (id)moments_safeInitForReadingWithData:(id)arg1;
 - (id)pl_safeInitForReadingWithData:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
 - (BOOL)requiresSecureCoding;

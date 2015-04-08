@@ -99,11 +99,14 @@
         float glowSize; 
         float glowSpread; 
     } outerGlow;
+    unsigned int outputBlendMode;
     float outputOpacity;
     int renderStrategy;
     float scalefactor;
     float shapeOpacity;
 }
+
+@property(readonly) unsigned int outputBlendMode;
 
 + (id)adjustOpacity:(id)arg1 by:(float)arg2;
 + (id)bevelEmbossFrom:(id)arg1 withSize:(unsigned int)arg2 soften:(unsigned int)arg3 angle:(float)arg4 altitude:(float)arg5 highlightRed:(float)arg6 highlightGreen:(float)arg7 highlightBlue:(float)arg8 highlightOpacity:(float)arg9 shadowRed:(float)arg10 shadowGreen:(float)arg11 shadowBlue:(float)arg12 shadowOpacity:(float)arg13;
@@ -146,6 +149,7 @@
 - (void)_updateRenderStrategyFromEffect:(unsigned int)arg1;
 - (void)applyCustomForegroundColor:(struct CGColor { }*)arg1;
 - (void)applyCustomForegroundColor:(struct CGColor { }*)arg1 tintEffectColors:(BOOL)arg2;
+- (int)cgBlendModeForOutputBlending;
 - (id)compositeEffectStackWithShapeImage:(id)arg1 withScale:(float)arg2;
 - (struct { float x1; float x2; float x3; float x4; })effectInsetsWithScale:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })effectPaddingWithScale:(float)arg1;
@@ -166,10 +170,12 @@
 - (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1 withScale:(float)arg2;
 - (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1 withScale:(float)arg2 ciContext:(id)arg3;
 - (id)optimizedSingleBlurEffectCompositeWithShapeImage:(id)arg1;
+- (unsigned int)outputBlendMode;
 - (id)processedImageFromShapeImage:(id)arg1;
 - (id)processedImageFromShapeImage:(id)arg1 withScale:(float)arg2;
 - (id)processedImageFromShapePath:(struct CGPath { }*)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)scaleEffectParametersBy:(float)arg1;
 - (id)standardEffectCompositeWithShapeImage:(id)arg1;
+- (void)updateOutputBlendingWithInteriorFillHeuristic;
 
 @end

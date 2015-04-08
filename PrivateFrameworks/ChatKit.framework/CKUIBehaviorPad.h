@@ -8,6 +8,7 @@
 - (struct CGSize { float x1; float x2; })attachmentBrowserDefaultSizeForSquare;
 - (float)attachmentBrowserGridInterItemSpacing;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contactPhotoTranscriptInsets;
+- (unsigned int)defaultConversationViewingMessageCount;
 - (struct CGSize { float x1; float x2; })documentIconSize;
 - (float)leftSplitPaneMaximumWidth;
 - (float)leftSplitPaneMinimumWidth;
@@ -15,14 +16,13 @@
 - (float)leftSplitPaneWidthFraction;
 - (BOOL)lowClearanceInLandscape;
 - (unsigned int)numberOfButtonsInPhotoPicker;
-- (float)photoPickerMaxZoomedPhotoHeight;
+- (float)photoPickerMaxPopoverPhotoHeight;
 - (float)photoPickerPopoverWidth;
 - (BOOL)photoPickerShouldZoomOnSelection;
 - (BOOL)presentForwardingUIModally;
 - (BOOL)presentsFullscreenInViewService;
 - (BOOL)presentsQuickLookController;
 - (BOOL)presentsReaderController;
-- (BOOL)shouldDimTranscript;
 - (BOOL)shouldReconfigureNewComposeOnRotation;
 - (BOOL)shouldRefreshAlternateAddressesSheet;
 - (BOOL)shouldShowContactPhotosInConversationList;

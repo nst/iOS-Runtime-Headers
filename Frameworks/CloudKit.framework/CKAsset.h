@@ -5,6 +5,7 @@
 @class CKRecord, CKRecordID, NSData, NSDate, NSNumber, NSString, NSURL;
 
 @interface CKAsset : NSObject <CKRecordValue, NSSecureCoding> {
+    int _arrayIndex;
     NSString *_assetHandleUUID;
     NSData *_assetKey;
     NSData *_authRequest;
@@ -14,6 +15,7 @@
     NSString *_downloadBaseURL;
     NSURL *_downloadURL;
     NSDate *_downloadURLExpiration;
+    BOOL _downloaded;
     NSNumber *_fileID;
     NSURL *_fileURL;
     NSNumber *_generationCountToSave;
@@ -23,7 +25,6 @@
     CKRecord *_record;
     CKRecordID *_recordID;
     NSString *_recordKey;
-    NSString *_referenceIdentifierString;
     NSData *_referenceSignature;
     NSString *_requestor;
     NSData *_signature;
@@ -34,6 +35,7 @@
     NSData *_wrappedAssetKey;
 }
 
+@property int arrayIndex;
 @property(retain) NSString * assetHandleUUID;
 @property(retain) NSData * assetKey;
 @property(copy) NSData * authRequest;
@@ -45,6 +47,7 @@
 @property(retain) NSString * downloadBaseURL;
 @property(retain) NSURL * downloadURL;
 @property(retain) NSDate * downloadURLExpiration;
+@property BOOL downloaded;
 @property(readonly) NSNumber * fileID;
 @property(copy) NSURL * fileURL;
 @property(retain) NSNumber * generationCountToSave;
@@ -55,14 +58,13 @@
 @property CKRecord * record;
 @property(retain) CKRecordID * recordID;
 @property(copy) NSString * recordKey;
-@property(retain) NSString * referenceIdentifierString;
 @property(retain) NSData * referenceSignature;
 @property(retain) NSString * requestor;
 @property(copy) NSData * signature;
 @property unsigned long long size;
 @property(readonly) Class superclass;
 @property(copy) NSString * uploadReceipt;
-@property(getter=isUploaded) BOOL uploaded;
+@property BOOL uploaded;
 @property BOOL wasCached;
 @property(retain) NSData * wrappedAssetKey;
 
@@ -72,6 +74,7 @@
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)_initBare;
+- (int)arrayIndex;
 - (id)assetHandleUUID;
 - (id)assetKey;
 - (id)authRequest;
@@ -82,6 +85,7 @@
 - (id)downloadBaseURL;
 - (id)downloadURL;
 - (id)downloadURLExpiration;
+- (BOOL)downloaded;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fileID;
 - (id)fileURL;
@@ -93,14 +97,13 @@
 - (id)initWithFileURL:(id)arg1;
 - (id)initWithFileURL:(id)arg1 signature:(id)arg2 assetHandleUUID:(id)arg3;
 - (id)inlineData;
-- (BOOL)isUploaded;
 - (id)owner;
 - (id)record;
 - (id)recordID;
 - (id)recordKey;
-- (id)referenceIdentifierString;
 - (id)referenceSignature;
 - (id)requestor;
+- (void)setArrayIndex:(int)arg1;
 - (void)setAssetHandleUUID:(id)arg1;
 - (void)setAssetKey:(id)arg1;
 - (void)setAuthRequest:(id)arg1;
@@ -109,6 +112,7 @@
 - (void)setDownloadBaseURL:(id)arg1;
 - (void)setDownloadURL:(id)arg1;
 - (void)setDownloadURLExpiration:(id)arg1;
+- (void)setDownloaded:(BOOL)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)setGenerationCountToSave:(id)arg1;
 - (void)setHasSize:(BOOL)arg1;
@@ -117,7 +121,6 @@
 - (void)setRecord:(id)arg1;
 - (void)setRecordID:(id)arg1;
 - (void)setRecordKey:(id)arg1;
-- (void)setReferenceIdentifierString:(id)arg1;
 - (void)setReferenceSignature:(id)arg1;
 - (void)setRequestor:(id)arg1;
 - (void)setSignature:(id)arg1;
@@ -129,6 +132,7 @@
 - (id)signature;
 - (unsigned long long)size;
 - (id)uploadReceipt;
+- (BOOL)uploaded;
 - (BOOL)wasCached;
 - (id)wrappedAssetKey;
 

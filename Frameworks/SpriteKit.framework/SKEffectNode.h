@@ -21,7 +21,6 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)filter;
-- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqualToNode:(id)arg1;

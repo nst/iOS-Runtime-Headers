@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@class AMSBTLEAdvertisementManager, NSString, NSTimer, UIActivityIndicatorView, UISwitch;
+@class AMSBTLEAdvertisementManager, NSString, NSTimer, UIActivityIndicatorView, UITextField;
 
-@interface CABTMIDILocalPeripheralViewController : UIViewController <ServiceNameEditedDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UISwitch *advertiseSwitch;
+@interface CABTMIDILocalPeripheralViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     int advertiseTimeout;
     NSTimer *advertiseTimer;
     BOOL advertising;
@@ -14,6 +13,7 @@
     UIActivityIndicatorView *indicator;
     BOOL isErrorMessage;
     NSTimer *messageTimer;
+    UITextField *serviceNameField;
     NSString *statusString;
     NSString *theServiceName;
 }
@@ -32,6 +32,7 @@
 - (void)cleanup;
 - (void)deactivateController:(id)arg1;
 - (void)dealloc;
+- (void)didChangePreferredContentSize:(id)arg1;
 - (void)didReceiveMemoryWarning;
 - (BOOL)disconnectLocalPeripheral;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -39,15 +40,16 @@
 - (void)messageTimerFired:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)serviceNameEdited:(id)arg1;
 - (void)setStatusString:(id)arg1 animateIndicator:(BOOL)arg2 isError:(BOOL)arg3;
 - (id)statusString;
 - (BOOL)stopAdvertisingServiceWithCompletionBlock:(id)arg1 error:(id*)arg2;
 - (void)stopTimers;
-- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (void)textFieldDidBeginEditing:(id)arg1;
+- (void)textFieldDidEndEditing:(id)arg1;
+- (void)textFieldDone:(id)arg1;
 - (id)title;
 - (void)updateAdvertiseUI;
 - (void)viewDidLoad;

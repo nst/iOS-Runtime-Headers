@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPFileCoordinatorDelegate>, NSError, NSHashTable, NSObject<OS_dispatch_queue>, SFUCryptoKey, TSPDocumentProperties, TSUZipFileArchive;
+@class <TSPFileCoordinatorDelegate>, NSData, NSError, NSHashTable, NSObject<OS_dispatch_queue>, NSString, SFUCryptoKey, TSPDocumentProperties, TSUZipFileArchive;
 
 @interface TSPPackage : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
@@ -21,17 +21,22 @@
     TSUZipFileArchive *_zipArchive;
 }
 
+@property(readonly) TSUZipFileArchive * componentZipArchive;
 @property(readonly) SFUCryptoKey * decryptionKey;
 @property(readonly) TSPDocumentProperties * documentProperties;
 @property(readonly) <TSPFileCoordinatorDelegate> * fileCoordinatorDelegate;
 @property(readonly) unsigned long long fileFormatVersion;
 @property(readonly) BOOL isClosed;
+@property(readonly) BOOL isPasswordProtected;
 @property(readonly) NSError * lastReloadError;
 @property(readonly) unsigned char packageIdentifier;
 @property(readonly) int packageType;
+@property(readonly) NSString * passwordHint;
+@property(readonly) NSData * passwordVerifier;
 @property(retain) TSUZipFileArchive * zipArchive;
 
 + (id)dataEntryPathForFilename:(id)arg1;
++ (BOOL)isValidPackageAtURL:(id)arg1;
 + (id)newLazyPackageWithURL:(id)arg1 packageIdentifier:(unsigned char)arg2 decryptionKey:(id)arg3 fileCoordinatorDelegate:(id)arg4;
 + (id)newPackageWithURL:(id)arg1 packageIdentifier:(unsigned char)arg2 decryptionKey:(id)arg3 fileCoordinatorDelegate:(id)arg4 error:(id*)arg5;
 + (id)objectArchiveEntryPathForPackageLocator:(id)arg1;
@@ -41,6 +46,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)checkPassword:(id)arg1;
+- (id)componentZipArchive;
 - (BOOL)containsData:(id)arg1;
 - (void)copyComponent:(id)arg1 toPackageURL:(id)arg2 packageLocator:(id)arg3 zipFileWriter:(id)arg4 encryptionKey:(id)arg5 completion:(id)arg6;
 - (id)dataAtRelativePath:(id)arg1 allowDecryption:(BOOL)arg2 error:(id*)arg3;
@@ -48,6 +54,7 @@
 - (void)didCloseDocument;
 - (void)didReadFileFormatVersion:(unsigned long long)arg1;
 - (void)didReferenceData:(id)arg1;
+- (BOOL)didReloadZipArchive:(id)arg1 error:(id*)arg2;
 - (void)didRetrieveDecryptionKey:(id)arg1;
 - (id)documentProperties;
 - (unsigned long long)encodedLengthForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(BOOL)arg2;
@@ -60,8 +67,10 @@
 - (id)initWithURL:(id)arg1 zipArchiveOrNil:(id)arg2 packageIdentifier:(unsigned char)arg3 documentProperties:(id)arg4 decryptionKey:(id)arg5 fileCoordinatorDelegate:(id)arg6 error:(id*)arg7;
 - (BOOL)isClosed;
 - (BOOL)isPasswordProtected;
+- (id)keyFromPassword:(id)arg1;
+- (id)keyFromPassword:(id)arg1 passwordVerifier:(id)arg2;
 - (id)lastReloadError;
-- (id)newDataStorageAtRelativePath:(id)arg1;
+- (id)newDataStorageAtRelativePath:(id)arg1 decryptionInfo:(id)arg2;
 - (id)newDocumentPropertiesWithURL:(id)arg1 zipProvider:(id)arg2 error:(id*)arg3;
 - (id)newRawDataReadChannelAtRelativePath:(id)arg1;
 - (id)newRawReadChannelForComponent:(id)arg1;
@@ -69,6 +78,9 @@
 - (id)newZipArchiveFromPackageURL:(id)arg1 isLazyLoading:(BOOL)arg2 error:(id*)arg3;
 - (unsigned char)packageIdentifier;
 - (int)packageType;
+- (id)passwordHint;
+- (id)passwordVerifier;
+- (void)peformSynchronousAccessToZipArchive:(id)arg1;
 - (void)prepareForDocumentReplacementWithSuccess:(BOOL)arg1 forSafeSave:(BOOL)arg2 originalURL:(id)arg3;
 - (BOOL)reloadZipArchiveIfNeededWithURLImpl:(id)arg1 isLazyLoading:(BOOL)arg2 error:(id*)arg3;
 - (void)setZipArchive:(id)arg1;

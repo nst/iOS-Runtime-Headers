@@ -8,6 +8,7 @@
 + (void)initialize;
 + (id)sharedPreferences;
 
+- (id)_languageCode;
 - (BOOL)_storeModeEnabled;
 - (id)consoleLoggingLevel;
 - (id)earlyDetectThresholdOffset;
@@ -15,7 +16,6 @@
 - (BOOL)fileLoggingIsEnabled;
 - (id)fileLoggingLevel;
 - (BOOL)hasExplicitlySetVoiceTriggerEnabled;
-- (id)languageCode;
 - (id)localizedTriggerPhrase;
 - (id)localizedTriggerPhraseForLanguageCode:(id)arg1;
 - (id)loggingThresholdOffset;
@@ -27,7 +27,6 @@
 - (void)setFileLoggingIsEnabled:(BOOL)arg1;
 - (void)setFileLoggingLevel:(id)arg1;
 - (void)setLanguageCode:(id)arg1;
-- (void)setLanguageCodeWithoutUpdate:(id)arg1;
 - (void)setLoggingThresholdOffset:(id)arg1;
 - (void)setOnetimeRemoteAssetQueryRanSuccessfully:(BOOL)arg1;
 - (void)setPhraseSpotterEnabled:(BOOL)arg1;

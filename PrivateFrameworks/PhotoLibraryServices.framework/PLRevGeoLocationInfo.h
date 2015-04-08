@@ -24,8 +24,10 @@
 @property unsigned int providerVersion;
 
 + (id)_namingOrderForAssetReverseGeoDescription;
++ (id)_newRevGeoLocationInfoFromData:(id)arg1;
 + (unsigned int)currentVersion;
 + (BOOL)isValidFromData:(id)arg1;
++ (id)newDataFromRevGeoLocationInfo:(id)arg1;
 + (unsigned int)qualityTypeForPointInCountryCode:(id)arg1 withDataProviderId:(id)arg2;
 + (id)sortedNameInfoComparatorWithHomeAtEnd:(BOOL)arg1;
 
@@ -37,7 +39,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)geoMapItem;
-- (id)init;
 - (id)initWithData:(id)arg1;
 - (BOOL)isHome;
 - (BOOL)isValid;

@@ -50,6 +50,7 @@
 + (id)APDLocalizedString:(id)arg1 valueIfMissing:(id)arg2 table:(id)arg3 bundle:(id)arg4;
 + (id)APDResourcesBundle;
 + (id)APDResourcesBundleURL;
++ (id)MCD_bundle;
 + (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3 inBundleWithURL:(id)arg4;
 + (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2 inBundleWithURL:(id)arg3;
 + (id)__geoBundle;
@@ -137,6 +138,7 @@
 - (id)XPCServiceBundles;
 - (void)__static;
 - (void)_accessibilityInitializeContainerLogic;
+- (id)_assistantUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
 - (id)_cachedMainBundleResourcePath;
 - (struct __CFBundle { }*)_cfBundle;
 - (id)_gkBundleVersion;
@@ -158,6 +160,7 @@
 - (id)appStoreReceiptURL;
 - (id)assistantUILocalizedStringForKey:(id)arg1 table:(id)arg2;
 - (id)assistantUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
+- (id)assistantUILocalizedStringFromSiriLanguageForKey:(id)arg1 table:(id)arg2;
 - (id)builtInPlugInsPath;
 - (id)builtInPlugInsURL;
 - (id)bundleIdentifier;

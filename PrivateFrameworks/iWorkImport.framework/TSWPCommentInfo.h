@@ -45,6 +45,7 @@
 - (int)annotationType;
 - (id)author;
 - (id)commentStorage;
+- (void)commentWillBeAddedToDocumentRoot;
 - (void)commitText:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 - (id)creationDateString;
@@ -53,21 +54,22 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4 commentStorage:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4 wpStorage:(id)arg5;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4 wpStorage:(id)arg5 commentStorage:(id)arg6;
 - (BOOL)isLockable;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct CommentInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeInfoArchive {} *x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct CommentInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ShapeInfoArchive {} *x5; struct Reference {} *x6; }*)arg1 unarchiver:(id)arg2;
 - (id)pathSourceForExportCommentOutline;
 - (Class)repClass;
-- (void)saveToArchive:(struct CommentInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeInfoArchive {} *x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct CommentInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ShapeInfoArchive {} *x5; struct Reference {} *x6; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (id)searchForAnnotationsWithHitBlock:(id)arg1;
 - (void)setAuthor:(id)arg1;
 - (void)setHostingModel:(id)arg1;
 - (id)storage;
 - (BOOL)supportsAttachedComments;
 - (BOOL)supportsHyperlinks;
 - (BOOL)wantsAnnotationPopover;
-- (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
+- (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 
 @end

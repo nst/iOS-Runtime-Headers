@@ -2,33 +2,53 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@class UILabel;
+@class NSArray, UIActivityIndicatorView, UILabel;
 
 @interface CACentralTableViewCell : UITableViewCell {
+    NSArray *_activityHConstraints;
+    UIActivityIndicatorView *_activityIndicator;
+    NSArray *_activityVConstraints;
     UILabel *_connectionStatusLabel;
     UILabel *_deviceNameLabel;
     UILabel *_inputLabel;
+    NSArray *_labelConstraints;
     UILabel *_outputLabel;
     UILabel *_slashLabel;
 }
 
+@property(retain) NSArray * activityHConstraints;
+@property(retain) UIActivityIndicatorView * activityIndicator;
+@property(retain) NSArray * activityVConstraints;
 @property(retain) UILabel * connectionStatusLabel;
 @property(retain) UILabel * deviceNameLabel;
 @property(retain) UILabel * inputLabel;
+@property(retain) NSArray * labelConstraints;
 @property(retain) UILabel * outputLabel;
 @property(retain) UILabel * slashLabel;
 
+- (id)activityHConstraints;
+- (id)activityIndicator;
+- (id)activityVConstraints;
 - (id)connectionStatusLabel;
+- (void)createInitialConstraints;
+- (void)dealloc;
 - (id)deviceNameLabel;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)inputLabel;
+- (id)labelConstraints;
 - (id)outputLabel;
+- (void)setActivityHConstraints:(id)arg1;
+- (void)setActivityIndicator:(id)arg1;
+- (void)setActivityVConstraints:(id)arg1;
 - (void)setConnectionStatusLabel:(id)arg1;
 - (void)setDeviceNameLabel:(id)arg1;
 - (void)setInputLabel:(id)arg1;
+- (void)setLabelConstraints:(id)arg1;
 - (void)setOutputLabel:(id)arg1;
 - (void)setSlashLabel:(id)arg1;
 - (id)slashLabel;
+- (void)startIndicator;
+- (void)stopIndicator;
 - (void)updateConstraints;
 
 @end

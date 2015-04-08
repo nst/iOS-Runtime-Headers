@@ -6,7 +6,6 @@
 
 @interface VRCredentialReference : NSObject {
     LAClient *_client;
-    NSString *_creatorDisplayName;
     NSData *_credentialHandle;
     <LAUIDelegate> *_delegateProxy;
     NSDictionary *_lastEvaluatePolicyResult;

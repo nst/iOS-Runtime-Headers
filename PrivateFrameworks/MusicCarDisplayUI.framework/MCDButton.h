@@ -17,9 +17,9 @@
 + (id)buttonWithType:(int)arg1;
 
 - (void).cxx_destruct;
-- (void)_focusStateDidChange;
-- (BOOL)_isFocusableElement;
 - (void)_updateButtonStyle;
+- (BOOL)canBecomeFocused;
+- (void)focusedViewDidChange;
 - (id)labelTemplateString;
 - (void)layoutSubviews;
 - (void)setLabelTemplateString:(id)arg1;

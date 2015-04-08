@@ -17,7 +17,6 @@
 
 - (void)addAdditionalChildLayersToArray:(id)arg1;
 - (void)addChildRep:(id)arg1;
-- (BOOL)canDrawInParallel;
 - (BOOL)canSelectChildRep:(id)arg1;
 - (id)childReps;
 - (id)childRepsForHitTesting;
@@ -33,7 +32,6 @@
 - (void)insertChildRep:(id)arg1 above:(id)arg2;
 - (void)insertChildRep:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)insertChildRep:(id)arg1 below:(id)arg2;
-- (BOOL)mustDrawOnMainThreadForInteractiveCanvas;
 - (id)mutableContainerInfo;
 - (void)recursivelyPerformSelector:(SEL)arg1;
 - (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;
@@ -43,7 +41,7 @@
 - (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (void)removeChildRep:(id)arg1;
 - (void)replaceChildRep:(id)arg1 with:(id)arg2;
-- (void)selectChildRep:(id)arg1;
+- (void)selectChildRep:(id)arg1 extendingSelection:(BOOL)arg2;
 - (void)setChildReps:(id)arg1;
 - (void)updateChildrenFromLayout;
 - (id)visibleChildLayouts;

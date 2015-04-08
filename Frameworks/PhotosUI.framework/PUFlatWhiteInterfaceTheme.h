@@ -7,11 +7,13 @@
 @interface PUFlatWhiteInterfaceTheme : NSObject <PUInterfaceTheme> {
 }
 
+@property(readonly) UIColor * albumBadgeInTitleColor;
 @property(readonly) UIColor * albumListBackgroundColor;
 @property(readonly) float albumListDisabledAlbumStackViewAlpha;
 @property(readonly) float albumListDisabledAlbumTitleAlpha;
 @property(readonly) UIFont * albumListSubtitleLabelFont;
 @property(readonly) UIFont * albumListTitleLabelFont;
+@property(readonly) UIColor * badgeOverThumbnailColor;
 @property(readonly) UIColor * bannerBackgroundColor;
 @property(readonly) float bannerHeight;
 @property(readonly) UIColor * cloudFeedBackgroundColor;
@@ -109,12 +111,14 @@
 
 - (id)_commentsFont;
 - (id)_themeImageWithBaseName:(id)arg1;
+- (id)albumBadgeInTitleColor;
 - (id)albumListBackgroundColor;
 - (float)albumListDisabledAlbumStackViewAlpha;
 - (float)albumListDisabledAlbumTitleAlpha;
 - (id)albumListSubtitleLabelFont;
 - (id)albumListTitleLabelFont;
 - (id)attributedStringForCloudFeedGroupHeaderWithText:(id)arg1;
+- (id)badgeOverThumbnailColor;
 - (id)bannerBackgroundColor;
 - (float)bannerHeight;
 - (id)cloudFeedBackgroundColor;

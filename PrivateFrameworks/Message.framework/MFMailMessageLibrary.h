@@ -148,7 +148,6 @@
 - (id)initWithPath:(id)arg1;
 - (unsigned int)integerForQuery:(id)arg1 withTextArgument:(id)arg2;
 - (void)invalidateAndWait;
-- (BOOL)isKeyBagUnlocked;
 - (BOOL)isMessageContentsLocallyAvailable:(id)arg1;
 - (BOOL)isProtectedDataAvailable:(struct sqlite3 { }*)arg1;
 - (id)itemsRequiringIndexingForContentIndex:(id)arg1 limit:(unsigned int)arg2;

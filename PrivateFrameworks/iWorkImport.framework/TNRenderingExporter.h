@@ -52,8 +52,10 @@
 - (struct vector<unsigned int, std::__1::allocator<unsigned int> > { unsigned int *x1; unsigned int *x2; struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { unsigned int *x_3_1_1; } x3; })p_pageStartArray;
 - (id)pageController;
 - (unsigned int)pageCount;
+- (int)pageIndexFromQuickLookSheet:(id)arg1;
 - (BOOL)preparePage:(unsigned int)arg1;
 - (double)progressForCurrentPage;
+- (id)quickLookSheets;
 - (void)setRenderingAllSheets:(BOOL)arg1;
 - (void)setSheetIndex:(unsigned int)arg1 andPageIndex:(unsigned int)arg2;
 - (void)setup;

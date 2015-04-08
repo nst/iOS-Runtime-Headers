@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSURL, SFUCryptoKey;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class <TSPCryptoInfo>, NSURL;
 
 @interface TSPTemporaryDataStorage : TSPFileDataStorage {
     NSURL *_URL;
-    SFUCryptoKey *_decryptionKey;
+    <TSPCryptoInfo> *_decryptionInfo;
     BOOL _gilligan_isRemote;
     BOOL _isMissingData;
     BOOL _isMissingOriginalData;
@@ -17,17 +22,17 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)decryptionKey;
+- (id)decryptionInfo;
 - (BOOL)gilligan_isRemote;
-- (id)initWithURL:(id)arg1;
-- (id)initWithURL:(id)arg1 decryptionKey:(id)arg2;
+- (id)initWithURL:(id)arg1 decryptionInfo:(id)arg2;
 - (BOOL)isMissingData;
 - (BOOL)isMissingOriginalData;
+- (unsigned long long)length;
 - (void)performIOChannelReadWithAccessor:(id)arg1;
 - (void)performReadWithAccessor:(id)arg1;
 - (void)setGilligan_isRemote:(BOOL)arg1;
 - (void)setIsMissingData:(BOOL)arg1;
 - (void)setIsMissingOriginalData:(BOOL)arg1;
-- (BOOL)writeData:(id)arg1 toPackageWriter:(id)arg2 preferredFilename:(id)arg3 filename:(id*)arg4 didCopyDataToPackage:(BOOL*)arg5 isMissingData:(BOOL*)arg6;
+- (id)writeData:(id)arg1 toPackageWriter:(id)arg2 infoMessage:(struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg3 preferredFilename:(id)arg4;
 
 @end

@@ -33,9 +33,9 @@
 - (void)_didSelectURL:(id)arg1;
 - (void)_dismissViewController;
 - (void)_dismissWithOption:(id)arg1;
+- (void)_displayLocationsMenuFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_finishStitching;
 - (id)_initWithRemoteViewController:(id)arg1 inMode:(unsigned int)arg2 uploadURLOrNil:(id)arg3;
-- (void)_preferredContentSizeChanged:(struct CGSize { float x1; float x2; })arg1;
 - (void)_prepareForDeletionIfNecessary;
 - (id)_remoteViewController;
 - (void)_setRemoteViewController:(id)arg1;

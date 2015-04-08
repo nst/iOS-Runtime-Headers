@@ -105,6 +105,7 @@
         unsigned int pendingPresentMasterViewController : 1; 
         unsigned int pendingUpdateTargetDisplayMode : 1; 
         unsigned int collapsingClockwise : 1; 
+        unsigned int firstResponderChangedFromPostTransitionResponder : 1; 
     } _splitViewControllerFlags;
     UIView *_underBarSeparatorView;
     BOOL _useChangingBoundsLayout;
@@ -114,7 +115,7 @@
 @property(getter=_didChangeBoundsBlock,setter=_setDidChangeBoundsBlock:,copy) id _didChangeBoundsBlock;
 @property(setter=_setDisplayModeButtonItemTitle:,copy) NSString * _displayModeButtonItemTitle;
 @property(setter=_setPresentsInFadingPopover:) BOOL _presentsInFadingPopover;
-@property(getter=_preservedDetailController,setter=_setPreservedDetailController:,retain) UIViewController * _preservedDetailController;
+@property(setter=_setPreservedDetailController:,retain) UIViewController * _preservedDetailController;
 @property(setter=_setResizesDetailOnSlide:) BOOL _resizesDetailOnSlide;
 @property(getter=isCollapsed,readonly) BOOL collapsed;
 @property(copy,readonly) NSString * debugDescription;
@@ -167,6 +168,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrameWithPopoverControllerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_didChangeBoundsBlock;
+- (void)_didChangeToFirstResponder:(id)arg1;
 - (void)_didTransitionTraitCollection;
 - (BOOL)_disableAutomaticKeyboardBehavior;
 - (void)_dismissMasterViewController:(BOOL)arg1;
@@ -203,7 +205,7 @@
 - (void)_popoverController:(id)arg1 didChangeFromVisible:(BOOL)arg2;
 - (void)_popoverController:(id)arg1 willAnimateToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_popoverController:(id)arg1 willChangeToVisible:(BOOL)arg2;
-- (void)_prepareForInitialCompactLayout;
+- (void)_prepareForCompactLayout;
 - (void)_presentGestureAttemptedWithPresentedPopoverController:(id)arg1;
 - (void)_presentMasterViewController:(BOOL)arg1;
 - (BOOL)_presentsInFadingPopover;

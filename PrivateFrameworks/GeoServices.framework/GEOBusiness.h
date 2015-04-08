@@ -74,6 +74,7 @@
 - (id)_attributionMapForResponse:(id)arg1;
 - (BOOL)_booleanValueForAmenity:(id)arg1;
 - (id)_currentOperatingHoursForTimeZone:(id)arg1;
+- (id)_firstPhotoOfSize:(int)arg1;
 - (BOOL)_goodForKids;
 - (BOOL)_hasAmenitiesContainingKeys:(id)arg1;
 - (BOOL)_hasAnyAmenities;
@@ -90,6 +91,7 @@
 - (id)_localizedCategoryNamesForType:(unsigned int)arg1;
 - (unsigned long long)_muid;
 - (float)_normalizedUserRatingScore;
+- (id)_photosOfSize:(int)arg1;
 - (unsigned int)_priceRange;
 - (unsigned int)_sampleSizeForUserRatingScore;
 - (id)_stringForAmenity:(id)arg1;
@@ -137,7 +139,7 @@
 - (BOOL)hasURL;
 - (unsigned int)hash;
 - (id)initWithBusinessURL:(id)arg1 phoneNumber:(id)arg2 muid:(unsigned long long)arg3 attributionID:(id)arg4 sampleSizeForUserRatingScore:(unsigned int)arg5 normalizedUserRatingScore:(float)arg6;
-- (id)initWithPlaceDataEntity:(id)arg1 rating:(id)arg2 hours:(id)arg3 reviews:(id)arg4 photos:(id)arg5;
+- (id)initWithPlaceDataEntity:(id)arg1 rating:(id)arg2 hours:(id)arg3 reviews:(id)arg4 photos:(id)arg5 entityAttribution:(id)arg6;
 - (BOOL)isClosed;
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedCategories;

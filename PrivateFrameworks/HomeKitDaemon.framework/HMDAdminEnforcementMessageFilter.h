@@ -21,7 +21,6 @@
 - (void)addHomeWithUUID:(id)arg1 administratorName:(id)arg2;
 - (void)addObjectWithUUID:(id)arg1 containedInHome:(id)arg2;
 - (id)adminsOfHomes;
-- (id)homeUUIDForTargetUUIDForMessage:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (id)localAdminName;
 - (id)localAdministratorName;

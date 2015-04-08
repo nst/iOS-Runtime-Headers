@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCHStyleActAlike>, NSString, TSCHChartAxis, TSCHChartAxisID, TSCHChartModel, TSUFastReadInvalidatingCache;
+@class <TSCHStyleActAlike>, NSArray, NSString, TSCHChartAxis, TSCHChartAxisID, TSCHChartModel, TSUFastReadInvalidatingCache, TSULocale;
 
-@interface TSCHChartAxis : NSObject <TSCHStyleOwning, TSCHUnretainedParent> {
+@interface TSCHChartAxis : NSObject <TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent> {
     TSUFastReadInvalidatingCache *mAnalysisCache;
     TSCHChartAxisID *mAxisID;
     TSCHChartModel *mChartModel;
     TSUFastReadInvalidatingCache *mInterceptCache;
+    TSUFastReadInvalidatingCache *mMultiDataSetAnalysisCache;
     <TSCHStyleActAlike> *mNonStyle;
     unsigned int mNonStyleIndex;
     TSCHChartAxis *mNonTransientCounterpart;
@@ -23,8 +24,11 @@
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL isCategory;
 @property(readonly) BOOL isRangeContinuous;
+@property(readonly) TSULocale * locale;
 @property(readonly) TSCHChartModel * model;
+@property(readonly) NSArray * referenceLines;
 @property(readonly) Class superclass;
+@property(readonly) BOOL supportsReferenceLines;
 
 + (id)axisForInfo:(id)arg1;
 + (id)defaultNumberFormat;
@@ -32,6 +36,7 @@
 + (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfLabelsForInfo:(id)arg1 onlyHeight:(BOOL)arg2;
 + (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfSeriesLabelsForInfo:(id)arg1;
 + (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfSeriesLabelsForInfo:(id)arg1 onlyHeight:(BOOL)arg2;
++ (unsigned char)styleOwnerPathType;
 
 - (void)adjustMinMaxForDataRangeInAnalysis:(id)arg1;
 - (int)adjustedNumberFormatType;
@@ -45,6 +50,10 @@
 - (id)computeMinorGridlinesFromMajorGridlinesInAnalysis:(id)arg1;
 - (id)context;
 - (int)currentAxisScaleSetting;
+- (double)currentDataSetModelAverage;
+- (double)currentDataSetModelMax;
+- (double)currentDataSetModelMedian;
+- (double)currentDataSetModelMin;
 - (id)customFormatForGridValueType:(int)arg1;
 - (id)dataFormatter;
 - (id)dataFormatterForSeries:(id)arg1 index:(unsigned int)arg2;
@@ -61,6 +70,7 @@
 - (id)formattedStringForSeries:(id)arg1 index:(unsigned int)arg2;
 - (id)formattedStringForSeries:(id)arg1 index:(unsigned int)arg2 multiDataSetIndex:(unsigned int)arg3;
 - (id)g_genericToDefaultPropertyMap;
+- (id)g_operationPropertyNameForGenericProperty:(int)arg1;
 - (id)gridValueAxisToModelValue:(double)arg1;
 - (int)gridValueType;
 - (BOOL)hasCustomFormatForGridValueType:(int)arg1;
@@ -70,13 +80,14 @@
 - (unsigned int)indexForSelectionPathLabelIndex:(unsigned int)arg1;
 - (id)initWithAxisID:(id)arg1 model:(id)arg2;
 - (id)inspectorStringForSeries:(id)arg1 index:(unsigned int)arg2 value:(id)arg3;
-- (id)inspectorStringForValue:(id)arg1;
 - (int)intValueForProperty:(int)arg1 defaultValue:(int)arg2;
 - (id)interceptAnalysis;
 - (double)interceptForAxis:(id)arg1;
+- (void)invalidateMultiDataSetAnalysis;
 - (void)invalidateTransientState;
 - (BOOL)isCategory;
 - (BOOL)isRangeContinuous;
+- (id)locale;
 - (id)majorGridLocations;
 - (double)max;
 - (double)min;
@@ -84,9 +95,11 @@
 - (id)model;
 - (double)modelMax;
 - (double)modelMin;
+- (id)multiDataSetAnalysis;
 - (unsigned int)nonStyleIndex;
 - (id)nonstyle;
 - (id)objectValueForProperty:(int)arg1;
+- (id)operationPropertyNameFromGenericProperty:(int)arg1;
 - (id)p_axisAnalysisFromCurrentModel;
 - (id)p_axisDataFormatterFromCurrentModel;
 - (int)p_axisGridValueType;
@@ -95,21 +108,26 @@
 - (id)p_fixupNegativeStyleForDataFormatter:(id)arg1;
 - (id)p_genericToDefaultPropertyMap;
 - (id)p_interceptAnalysisFromCurrentModel;
+- (id)p_multiDataAxisAnalysisFromCurrentModel;
 - (unsigned int)p_rangeCount;
-- (id)p_swapTuplesForMutations:(id)arg1 forImport:(BOOL)arg2;
+- (void)p_setupMultiDataSetAnalysisCacheIfNeeded;
 - (void)propertiesWereMutated:(id)arg1;
 - (double)range;
+- (id)referenceLineAtIndex:(unsigned int)arg1;
+- (id)referenceLineWithUUID:(id)arg1;
+- (id)referenceLines;
 - (unsigned int)selectionPathLabelIndexForIndex:(unsigned int)arg1;
 - (unsigned int)selectionPathLabelIndexForMultiDataSetIndex:(unsigned int)arg1;
 - (void)setNonStyle:(id)arg1 index:(unsigned int)arg2;
 - (void)setStyle:(id)arg1 index:(unsigned int)arg2;
+- (BOOL)shouldAnalyzeAxisValue:(double)arg1;
 - (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfLabelsForInfo:(id)arg1 enumerator:(id)arg2 onlyHeight:(BOOL)arg3;
 - (int)specificPropertyForGeneric:(int)arg1;
 - (id)style;
 - (unsigned int)styleIndex;
 - (BOOL)supportsFormattedStringForInvalidValue;
-- (id)swapTuplesForMutations:(id)arg1;
-- (id)swapTuplesForMutationsForImport:(id)arg1;
+- (BOOL)supportsReferenceLines;
+- (id)swapTuplesForMutations:(id)arg1 forImport:(BOOL)arg2;
 - (id)swapTuplesForParagraphStyleMutations:(id)arg1 forReferencingProperty:(int)arg2;
 - (double)unitSpaceCenterValueForSeries:(id)arg1 index:(unsigned int)arg2;
 - (double)unitSpaceCenterValueForValue:(double)arg1;
@@ -128,7 +146,8 @@
 - (void)updateAxisDateInterceptInAnalysis:(id)arg1;
 - (void)updateGridValueTypeInterceptInAnalysis:(id)arg1;
 - (void)updateMinMaxGridLocationsInAnalysis:(id)arg1;
-- (void)updateModelMinMaxInAnalysis:(id)arg1;
+- (void)updateModelAxisAnalysis:(id)arg1;
+- (void)updateMultiDataModelAxisAnalysis:(id)arg1;
 - (id)valueForFormattedString:(id)arg1;
 - (id)valueForProperty:(int)arg1;
 

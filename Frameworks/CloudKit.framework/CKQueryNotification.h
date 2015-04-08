@@ -5,13 +5,14 @@
 @class CKRecordID, NSDictionary;
 
 @interface CKQueryNotification : CKNotification <NSSecureCoding> {
-    BOOL _isPublicDatabase;
+    int _databaseScope;
     int _queryNotificationReason;
     NSDictionary *_recordFields;
     CKRecordID *_recordID;
 }
 
-@property BOOL isPublicDatabase;
+@property int databaseScope;
+@property(readonly) BOOL isPublicDatabase;
 @property int queryNotificationReason;
 @property(copy) NSDictionary * recordFields;
 @property(copy) CKRecordID * recordID;
@@ -20,6 +21,7 @@
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
+- (int)databaseScope;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -28,7 +30,7 @@
 - (int)queryNotificationReason;
 - (id)recordFields;
 - (id)recordID;
-- (void)setIsPublicDatabase:(BOOL)arg1;
+- (void)setDatabaseScope:(int)arg1;
 - (void)setQueryNotificationReason:(int)arg1;
 - (void)setRecordFields:(id)arg1;
 - (void)setRecordID:(id)arg1;

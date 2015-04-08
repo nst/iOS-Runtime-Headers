@@ -8,6 +8,7 @@
     float _keycapOpacity;
     BOOL _lightKeyboard;
     float _lightKeycapOpacity;
+    BOOL _useEmojiStyles;
 }
 
 @property(readonly) int backdropStyle;
@@ -19,9 +20,10 @@
 @property(readonly) BOOL whiteText;
 
 + (int)backdropStyleForStyle:(int)arg1;
-+ (id)configForAppearance:(int)arg1;
++ (id)configForAppearance:(int)arg1 inputMode:(id)arg2;
 + (id)darkConfig;
 + (id)defaultConfig;
++ (id)defaultEmojiConfig;
 
 - (int)backdropStyle;
 - (float)blurRadius;

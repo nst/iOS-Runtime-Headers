@@ -51,6 +51,7 @@
 - (BOOL)supportsIncrementalResize;
 - (BOOL)supportsInterSetDepthGap;
 - (BOOL)supportsMinorGridlines;
+- (BOOL)supportsReferenceLines;
 - (BOOL)supportsSeriesFill;
 - (BOOL)supportsSeriesShadow;
 - (BOOL)supportsSeriesStroke;

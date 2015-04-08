@@ -5,6 +5,7 @@
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface PLSQLiteConnection : NSObject {
+    int _cacheSize;
     NSString *_cachedClassName;
     struct sqlite3 { } *_dbConnection;
     NSString *_dbLock;
@@ -16,6 +17,7 @@
     NSString *_transactionLock;
 }
 
+@property int cacheSize;
 @property(retain) NSString * cachedClassName;
 @property struct sqlite3 { }* dbConnection;
 @property(retain) NSString * dbLock;
@@ -36,12 +38,14 @@
 - (void)beginTransaction;
 - (int)bindEntry:(id)arg1 toPreparedStatement:(id)arg2 atBindPosition:(int)arg3;
 - (void)buildColumnInsert:(id*)arg1 andValueInsert:(id*)arg2 forEntry:(id)arg3;
+- (int)cacheSize;
 - (id)cachedClassName;
 - (void)checkPointDB;
 - (void)closeConnection;
 - (BOOL)copyDatabaseToPath:(id)arg1;
 - (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3;
 - (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withTableFilters:(id)arg4 vacuumDB:(BOOL)arg5;
+- (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withTableFilters:(id)arg4 vacuumDB:(BOOL)arg5 withCacheSize:(int)arg6;
 - (void)createCoveringIndexOnTable:(id)arg1 forColumns:(id)arg2;
 - (void)createIndexOnTable:(id)arg1 forColumn:(id)arg2;
 - (void)createTableName:(id)arg1 withColumns:(id)arg2;
@@ -62,6 +66,7 @@
 - (void)hashEntryKeyKeys:(id)arg1;
 - (id)init;
 - (id)initWithFilePath:(id)arg1;
+- (id)initWithFilePath:(id)arg1 withCacheSize:(int)arg2;
 - (BOOL)isTransactionInProgress;
 - (void)loadArrayValuesIntoEntry:(id)arg1;
 - (void)loadDynamicValuesIntoEntry:(id)arg1;
@@ -70,6 +75,7 @@
 - (id)lookupValueForEntryKey:(id)arg1 forKey:(id)arg2 forNumberValue:(long)arg3;
 - (id)mergeDataFromOtherDBFile:(id)arg1;
 - (BOOL)openCurrentFile;
+- (BOOL)openCurrentFileWithCacheSize:(int)arg1;
 - (BOOL)passesIntegrityCheck;
 - (id)performQuery:(id)arg1;
 - (id)performStatement:(id)arg1;
@@ -85,6 +91,7 @@
 - (void)runTrimQuery:(id)arg1;
 - (double)schemaVersionForTable:(id)arg1;
 - (void)setAllNullValuesForEntryKey:(id)arg1 forKey:(id)arg2 toValue:(id)arg3 withFilters:(id)arg4;
+- (void)setCacheSize:(int)arg1;
 - (void)setCachedClassName:(id)arg1;
 - (void)setDbConnection:(struct sqlite3 { }*)arg1;
 - (void)setDbLock:(id)arg1;

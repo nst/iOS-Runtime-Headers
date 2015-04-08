@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (id)documentRoot;
 - (id)initWithOwner:(id)arg1;
+- (id)objectLocale;
 - (id)owner;
 - (void)setOwner:(id)arg1;
 - (void)willModify;

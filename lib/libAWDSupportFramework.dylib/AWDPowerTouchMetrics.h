@@ -5,6 +5,7 @@
 @interface AWDPowerTouchMetrics : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int tocuhTotalUserInteractionDuration : 1; 
         unsigned int touchStateActiveDuration : 1; 
         unsigned int touchStateAnticipateDuration : 1; 
         unsigned int touchStateOffDuration : 1; 
@@ -12,8 +13,10 @@
         unsigned int touchStateOthersDuration : 1; 
         unsigned int touchStateReadyDuration : 1; 
         unsigned int touchTotalPowerMicroWatt : 1; 
+        unsigned int touchTotalUserTouchCount : 1; 
     } _has;
     unsigned long long _timestamp;
+    unsigned int _tocuhTotalUserInteractionDuration;
     unsigned int _touchStateActiveDuration;
     unsigned int _touchStateAnticipateDuration;
     unsigned int _touchStateOffDuration;
@@ -21,9 +24,11 @@
     unsigned int _touchStateOthersDuration;
     unsigned int _touchStateReadyDuration;
     unsigned int _touchTotalPowerMicroWatt;
+    unsigned int _touchTotalUserTouchCount;
 }
 
 @property BOOL hasTimestamp;
+@property BOOL hasTocuhTotalUserInteractionDuration;
 @property BOOL hasTouchStateActiveDuration;
 @property BOOL hasTouchStateAnticipateDuration;
 @property BOOL hasTouchStateOffDuration;
@@ -31,7 +36,9 @@
 @property BOOL hasTouchStateOthersDuration;
 @property BOOL hasTouchStateReadyDuration;
 @property BOOL hasTouchTotalPowerMicroWatt;
+@property BOOL hasTouchTotalUserTouchCount;
 @property unsigned long long timestamp;
+@property unsigned int tocuhTotalUserInteractionDuration;
 @property unsigned int touchStateActiveDuration;
 @property unsigned int touchStateAnticipateDuration;
 @property unsigned int touchStateOffDuration;
@@ -39,12 +46,14 @@
 @property unsigned int touchStateOthersDuration;
 @property unsigned int touchStateReadyDuration;
 @property unsigned int touchTotalPowerMicroWatt;
+@property unsigned int touchTotalUserTouchCount;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasTimestamp;
+- (BOOL)hasTocuhTotalUserInteractionDuration;
 - (BOOL)hasTouchStateActiveDuration;
 - (BOOL)hasTouchStateAnticipateDuration;
 - (BOOL)hasTouchStateOffDuration;
@@ -52,11 +61,13 @@
 - (BOOL)hasTouchStateOthersDuration;
 - (BOOL)hasTouchStateReadyDuration;
 - (BOOL)hasTouchTotalPowerMicroWatt;
+- (BOOL)hasTouchTotalUserTouchCount;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTocuhTotalUserInteractionDuration:(BOOL)arg1;
 - (void)setHasTouchStateActiveDuration:(BOOL)arg1;
 - (void)setHasTouchStateAnticipateDuration:(BOOL)arg1;
 - (void)setHasTouchStateOffDuration:(BOOL)arg1;
@@ -64,7 +75,9 @@
 - (void)setHasTouchStateOthersDuration:(BOOL)arg1;
 - (void)setHasTouchStateReadyDuration:(BOOL)arg1;
 - (void)setHasTouchTotalPowerMicroWatt:(BOOL)arg1;
+- (void)setHasTouchTotalUserTouchCount:(BOOL)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
+- (void)setTocuhTotalUserInteractionDuration:(unsigned int)arg1;
 - (void)setTouchStateActiveDuration:(unsigned int)arg1;
 - (void)setTouchStateAnticipateDuration:(unsigned int)arg1;
 - (void)setTouchStateOffDuration:(unsigned int)arg1;
@@ -72,7 +85,9 @@
 - (void)setTouchStateOthersDuration:(unsigned int)arg1;
 - (void)setTouchStateReadyDuration:(unsigned int)arg1;
 - (void)setTouchTotalPowerMicroWatt:(unsigned int)arg1;
+- (void)setTouchTotalUserTouchCount:(unsigned int)arg1;
 - (unsigned long long)timestamp;
+- (unsigned int)tocuhTotalUserInteractionDuration;
 - (unsigned int)touchStateActiveDuration;
 - (unsigned int)touchStateAnticipateDuration;
 - (unsigned int)touchStateOffDuration;
@@ -80,6 +95,7 @@
 - (unsigned int)touchStateOthersDuration;
 - (unsigned int)touchStateReadyDuration;
 - (unsigned int)touchTotalPowerMicroWatt;
+- (unsigned int)touchTotalUserTouchCount;
 - (void)writeTo:(id)arg1;
 
 @end

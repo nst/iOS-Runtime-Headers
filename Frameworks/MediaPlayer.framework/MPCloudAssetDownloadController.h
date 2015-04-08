@@ -8,6 +8,7 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableDictionary *_downloadSessions;
     BOOL _downloadSessionsPaused;
+    NSObject<OS_dispatch_queue> *_downloadsQueue;
     MPCloudAssetDownloadSessionIdentifier *_prioritizedDownloadSessionIdentifier;
 }
 

@@ -5,31 +5,31 @@
 @class NSString;
 
 @interface PUCropAspect : NSObject {
-    unsigned int _height;
+    float _height;
     NSString *_localizedName;
-    unsigned int _width;
+    float _width;
 }
 
-@property(readonly) unsigned int height;
+@property(readonly) float height;
 @property(readonly) NSString * localizedName;
 @property(readonly) float ratio;
-@property(readonly) unsigned int width;
+@property(readonly) float width;
 
 + (id)allAspectsWithOriginalSize:(struct CGSize { float x1; float x2; })arg1 currentSize:(struct CGSize { float x1; float x2; })arg2;
 
 - (void).cxx_destruct;
-- (id)_initWithWidth:(unsigned int)arg1 height:(unsigned int)arg2 localizedName:(id)arg3;
+- (id)_initWithWidth:(float)arg1 height:(float)arg2 localizedName:(id)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })constrainRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 boundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 boundingAngle:(float)arg3 minSize:(struct CGSize { float x1; float x2; })arg4;
-- (unsigned int)height;
+- (id)description;
+- (float)height;
 - (float)heightForWidth:(float)arg1;
 - (id)init;
-- (id)initWithWidth:(unsigned int)arg1 height:(unsigned int)arg2;
+- (id)initWithWidth:(float)arg1 height:(float)arg2;
 - (id)inverseAspect;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToCropAspect:(id)arg1;
 - (id)localizedName;
 - (float)ratio;
-- (unsigned int)width;
+- (float)width;
 - (float)widthForHeight:(float)arg1;
 
 @end

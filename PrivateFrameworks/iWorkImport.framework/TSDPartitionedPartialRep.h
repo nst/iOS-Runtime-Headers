@@ -5,20 +5,14 @@
 @interface TSDPartitionedPartialRep : TSDRep {
 }
 
-- (void)addBitmapsToRenderingQualityInfo:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clipRect;
-- (void)didUpdateLayer:(id)arg1;
-- (BOOL)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (id)hyperlinkRegions;
-- (id)i_queueForTileProvider;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layerFrameInScaledCanvas;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_clipRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_convertBaseToNaturalRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })p_edgeInsetsForClipping;
 - (struct CGImage { }*)p_newImageForCachingBaseRep;
-- (void)resetCachedPartitionedRendering;
 - (void)willBeRemoved;
 
 @end

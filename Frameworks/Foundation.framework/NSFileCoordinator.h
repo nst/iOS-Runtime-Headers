@@ -42,8 +42,8 @@
 + (id)filePresenters;
 + (void)removeFilePresenter:(id)arg1;
 + (void)tsp_addFilePresenter:(id)arg1;
-+ (BOOL)tsp_coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 filePresenter:(id)arg3 error:(id*)arg4 byAccessor:(id)arg5;
-+ (BOOL)tsp_coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 filePresenter:(id)arg5 error:(id*)arg6 byAccessor:(id)arg7;
++ (BOOL)tsp_coordinateReadingItemAtURL:(id)arg1 urlType:(int)arg2 options:(unsigned int)arg3 filePresenter:(id)arg4 error:(id*)arg5 byAccessor:(id)arg6;
++ (BOOL)tsp_coordinateReadingItemAtURL:(id)arg1 urlType:(int)arg2 options:(unsigned int)arg3 writingItemAtURL:(id)arg4 options:(unsigned int)arg5 filePresenter:(id)arg6 error:(id*)arg7 byAccessor:(id)arg8;
 + (BOOL)tsp_coordinateWritingItemAtURL:(id)arg1 options:(unsigned int)arg2 filePresenter:(id)arg3 error:(id*)arg4 byAccessor:(id)arg5;
 + (BOOL)tsp_coordinateWritingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 filePresenter:(id)arg5 error:(id*)arg6 byAccessor:(id)arg7;
 + (void)tsp_removeFilePresenter:(id)arg1;

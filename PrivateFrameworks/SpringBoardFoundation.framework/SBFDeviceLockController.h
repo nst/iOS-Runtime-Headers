@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSString, PCPersistentTimer, SBFPasscodeLockAssertionManager, SBFPasscodeLockDisableAssertion;
+@class NSDictionary, NSObject<OS_dispatch_queue>, NSString, PCPersistentTimer, SBFPasscodeLockAssertionManager, SBFPasscodeLockDisableAssertion;
 
 @interface SBFDeviceLockController : NSObject {
     SBFPasscodeLockAssertionManager *_assertionManager;
@@ -17,13 +17,18 @@
     BOOL _lastPasscodeLockStateWasLocked;
     int _lockState;
     BOOL _okToSendNotifications;
+    NSDictionary *_originalDefaultsForRollback;
+    NSObject<OS_dispatch_queue> *_persistentStateQueue;
     struct __CFRunLoopObserver { } *_runLoopObserver;
     BOOL _shouldFetchPasscodeLockState;
+    BOOL _speculativePasscodeFailureChargeOutstanding;
     SBFPasscodeLockDisableAssertion *_transientPasscodeCheckingAssertion;
 }
 
++ (id)_copyLockControllerDefaults;
 + (id)_journalPath;
 + (id)_journaledDefaultsAndTypes;
++ (void)_loadLockControllerDefaults:(id)arg1;
 + (void)_loadLockControllerDefaultsJournalIfNecessary;
 + (id)_lockStateDefaults;
 + (void)_updateLockControllerDefaultsJournal;
@@ -32,12 +37,16 @@
 - (void)_cachePassword:(id)arg1;
 - (void)_clearBlockedState;
 - (void)_clearUnblockTimer;
+- (void)_commitSpeculativeFailureCharge;
 - (void)_enablePasscodeLockImmediately:(BOOL)arg1;
+- (void)_evaluatePendingWipe;
 - (void)_keybagLockStateChangedTo:(int)arg1;
 - (void)_lockStateChangedFrom:(int)arg1 to:(int)arg2;
 - (void)_noteBlockedReasonsMayHaveChanged;
 - (void)_notePasscodeLockedOrBlockedStateMayHaveChanged:(BOOL)arg1;
 - (void)_notifyOfFirstUnlock;
+- (void)_persistentStateQueue_beginSpeculativeFailureCharge;
+- (void)_persistentStateQueue_cancelSpeculativeFailureCharge;
 - (void)_removeDeviceLockDisableAssertion:(id)arg1;
 - (void)_scheduleUnblockTimer;
 - (void)_sendBlockStateChangeNotification;
@@ -65,8 +74,10 @@
 - (BOOL)isPasscodeLockedOrBlocked;
 - (BOOL)isPermanentlyBlocked:(double*)arg1;
 - (id)lastLockDate;
+- (void)notePasscodeEntryBegan;
+- (void)notePasscodeEntryCancelled;
 - (void)setBlockedForThermalCondition:(BOOL)arg1;
 - (void)synchronize;
-- (void)updateLockControllerDefaultsWithBlock:(id)arg1 journaled:(BOOL)arg2;
+- (id)updateLockControllerDefaultsWithBlock:(id)arg1 journaled:(BOOL)arg2;
 
 @end

@@ -5,16 +5,27 @@
 @class CUIRenditionKey, NSString;
 
 @interface CUINamedImage : NSObject {
+    struct _cuiniproperties { 
+        unsigned int isVectorBased : 1; 
+        unsigned int hasSliceInformation : 1; 
+        unsigned int hasAlignmentInformation : 1; 
+        unsigned int resizingMode : 2; 
+        unsigned int templateRenderingMode : 3; 
+        unsigned int exifOrientation : 4; 
+        unsigned int _reserved : 20; 
+    } _imageProperties;
     CUIRenditionKey *_key;
     NSString *_name;
+    float _scale;
+    NSString *_signature;
     unsigned int _storageRef;
 }
 
 @property(readonly) struct { float x1; float x2; float x3; float x4; } alignmentEdgeInsets;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRect;
 @property(readonly) int blendMode;
 @property(readonly) struct { float x1; float x2; float x3; float x4; } edgeInsets;
 @property(readonly) int exifOrientation;
+@property(readonly) BOOL hasAlignmentInformation;
 @property(readonly) BOOL hasSliceInformation;
 @property(readonly) struct CGImage { }* image;
 @property(readonly) int imageType;
@@ -24,11 +35,12 @@
 @property(copy) NSString * name;
 @property(readonly) float opacity;
 @property(readonly) int resizingMode;
-@property(readonly) float scale;
+@property float scale;
 @property(readonly) struct CGSize { float x1; float x2; } size;
 @property(readonly) int templateRenderingMode;
 
 - (id)UIImage;
+- (void)_cacheRenditionProperties;
 - (id)_rendition;
 - (id)_renditionForSpecificKey:(id)arg1;
 - (id)_themeStore;
@@ -41,6 +53,7 @@
 - (struct { float x1; float x2; float x3; float x4; })edgeInsets;
 - (int)exifOrientation;
 - (int)graphicsClass;
+- (BOOL)hasAlignmentInformation;
 - (BOOL)hasSliceInformation;
 - (int)idiom;
 - (struct CGImage { }*)image;
@@ -55,8 +68,10 @@
 - (float)positionOfSliceBoundary:(unsigned int)arg1;
 - (id)renditionKey;
 - (int)resizingMode;
+- (int)resizingModeWithSubtype:(int)arg1;
 - (float)scale;
 - (void)setName:(id)arg1;
+- (void)setScale:(float)arg1;
 - (struct CGSize { float x1; float x2; })size;
 - (int)sizeClassHorizontal;
 - (int)sizeClassVertical;

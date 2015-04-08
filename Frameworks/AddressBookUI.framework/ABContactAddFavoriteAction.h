@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPropertyBestFaceTimeQuery, NSArray;
+@class ABPropertyBestIDSValueQuery, NSArray;
 
-@interface ABContactAddFavoriteAction : ABPropertyAction <ABPropertyBestFaceTimeQueryDelegate> {
+@interface ABContactAddFavoriteAction : ABPropertyAction <ABPropertyBestIDSValueQueryDelegate> {
     BOOL _allowFaceTimeAudioFavorites;
     BOOL _allowFaceTimeFavorites;
     BOOL _allowPhoneFavorites;
-    ABPropertyBestFaceTimeQuery *_bestFaceTimeQuery;
+    ABPropertyBestIDSValueQuery *_bestFaceTimeQuery;
     NSArray *_filteredPhoneItems;
     BOOL _hasFaceTimeAudioFavorite;
     BOOL _hasFaceTimeFavorite;
@@ -17,7 +17,7 @@
 @property BOOL allowFaceTimeAudioFavorites;
 @property BOOL allowFaceTimeFavorites;
 @property BOOL allowPhoneFavorites;
-@property(retain) ABPropertyBestFaceTimeQuery * bestFaceTimeQuery;
+@property(retain) ABPropertyBestIDSValueQuery * bestFaceTimeQuery;
 @property(retain) NSArray * filteredPhoneItems;
 @property BOOL hasFaceTimeAudioFavorite;
 @property BOOL hasFaceTimeFavorite;

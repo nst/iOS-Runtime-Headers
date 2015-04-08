@@ -26,7 +26,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (float)falloff;
-- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEnabled;

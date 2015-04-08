@@ -35,6 +35,7 @@
 - (void)_registerForMessages;
 - (void)configure:(id)arg1 queue:(id)arg2;
 - (id)currentRooms;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)home;
 - (id)initWithCoder:(id)arg1;

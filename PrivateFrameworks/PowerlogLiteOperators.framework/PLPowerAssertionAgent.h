@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableArray, NSMutableDictionary, PLCFNotificationOperatorComposition, PLEntryNotificationOperatorComposition, PLNSNotificationOperatorComposition, PLNSTimerOperatorComposition;
+@class NSMutableArray, NSMutableDictionary, PLCFNotificationOperatorComposition, PLEntryNotificationOperatorComposition, PLNSTimerOperatorComposition;
 
 @interface PLPowerAssertionAgent : PLAgent {
     NSMutableDictionary *_assertionAggregatedLastSample;
@@ -14,7 +14,6 @@
     PLNSTimerOperatorComposition *_assertionSnapShotTimer;
     PLEntryNotificationOperatorComposition *_batteryLevelNotificiations;
     PLEntryNotificationOperatorComposition *_canSleepNotification;
-    PLNSNotificationOperatorComposition *_dailyTaskNotification;
     BOOL _firstBufferDrain;
     PLNSTimerOperatorComposition *_runQueryTimer;
     PLEntryNotificationOperatorComposition *_wakeNotification;
@@ -30,7 +29,6 @@
 @property BOOL assertionSnapshotTimerActive;
 @property(retain) PLEntryNotificationOperatorComposition * batteryLevelNotificiations;
 @property(retain) PLEntryNotificationOperatorComposition * canSleepNotification;
-@property(retain) PLNSNotificationOperatorComposition * dailyTaskNotification;
 @property BOOL firstBufferDrain;
 @property(retain) PLNSTimerOperatorComposition * runQueryTimer;
 @property(retain) PLEntryNotificationOperatorComposition * wakeNotification;
@@ -42,6 +40,7 @@
 + (id)entryEventIntervalDefinitionAssertion;
 + (id)entryEventIntervalDefinitions;
 + (id)entryEventNoneDefinitions;
++ (id)entryEventPointDefinitionAggregateReset;
 + (id)entryEventPointDefinitionBufferStatus;
 + (id)entryEventPointDefinitionSnapshot;
 + (id)entryEventPointDefinitionSnapshotReason;
@@ -62,7 +61,6 @@
 - (id)bundleIDForAssertionProcessPID:(int)arg1;
 - (id)canSleepNotification;
 - (void)checkAssertionBufferFullNotificationRate;
-- (id)dailyTaskNotification;
 - (BOOL)firstBufferDrain;
 - (id)init;
 - (void)initOperatorDependancies;
@@ -70,9 +68,10 @@
 - (void)logAggregatedAssertionActivity;
 - (void)logEventIntervalAssertion;
 - (void)logEventIntervalAssertionWithReason:(id)arg1;
+- (void)logEventPointAggregateResetWithReason:(short)arg1 withPidCount:(int)arg2;
 - (void)logEventPointSnapshot;
 - (void)logEventPointSnapshotWithReason:(id)arg1;
-- (void)resetIOPMSetAssertionActivityAggregate;
+- (void)resetIOPMSetAssertionActivityAggregateWithReason:(short)arg1 withPidCount:(int)arg2;
 - (id)runQueryTimer;
 - (void)sanitizeAssertionNameForEntry:(id)arg1;
 - (void)setAssertionAggregatedLastSample:(id)arg1;
@@ -86,7 +85,6 @@
 - (void)setAssertionSnapshotTimerActive:(BOOL)arg1;
 - (void)setBatteryLevelNotificiations:(id)arg1;
 - (void)setCanSleepNotification:(id)arg1;
-- (void)setDailyTaskNotification:(id)arg1;
 - (void)setFirstBufferDrain:(BOOL)arg1;
 - (void)setRunQueryTimer:(id)arg1;
 - (void)setWakeNotification:(id)arg1;

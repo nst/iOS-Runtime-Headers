@@ -7,13 +7,26 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class TSDPathSource;
+@class NSObject<TSDContainerInfo>, NSString, TSDInfoGeometry, TSDPathSource, TSPObject<TSDOwningAttachment>;
 
-@interface TSDMaskInfo : TSDDrawableInfo <TSDMixing> {
+@interface TSDMaskInfo : TSDDrawableInfo <TSDInfoWithPathSource, TSDMixing> {
     TSDPathSource *mPathSource;
 }
 
-@property(retain) TSDPathSource * pathSource;
+@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
+@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
+@property(copy) TSDInfoGeometry * geometry;
+@property(readonly) unsigned int hash;
+@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
+@property BOOL matchesObjectPlaceholderGeometry;
+@property TSPObject<TSDOwningAttachment> * owningAttachment;
+@property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
+@property NSObject<TSDContainerInfo> * parentInfo;
+@property(copy) TSDPathSource * pathSource;
+@property(readonly) Class superclass;
 
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
@@ -23,13 +36,13 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct MaskArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct PathSourceArchive {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct MaskArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct PathSourceArchive {} *x6; }*)arg1 unarchiver:(id)arg2;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)objectForProperty:(int)arg1;
 - (id)pathSource;
 - (Class)repClass;
-- (void)saveToArchive:(struct MaskArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct PathSourceArchive {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct MaskArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct PathSourceArchive {} *x6; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setPathSource:(id)arg1;

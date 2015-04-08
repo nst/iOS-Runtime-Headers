@@ -19,6 +19,7 @@
 
 + (id)animationWithKeyPath:(id)arg1;
 
+- (id)TSDCAAnimationContextCache;
 - (id)TSD_animationForKeyPath:(id)arg1 atTime:(double)arg2;
 - (double)TSD_animationPercentFromAnimationTime:(double)arg1;
 - (BOOL)TSD_containsAnimationForKeyPath:(id)arg1;
@@ -30,8 +31,8 @@
 - (BOOL)isAdditive;
 - (BOOL)isCumulative;
 - (id)keyPath;
-- (id)p_adjustedResultWithValue:(id)arg1;
-- (id)p_interpolatedValueFrom:(id)arg1 to:(id)arg2 percent:(float)arg3;
+- (id)p_adjustedResultWithValue:(id)arg1 contextCache:(id)arg2;
+- (double)p_animationPercentFromAnimationTime:(double)arg1 contextCache:(id)arg2;
 - (void)setAdditive:(BOOL)arg1;
 - (void)setCumulative:(BOOL)arg1;
 - (void)setKeyPath:(id)arg1;

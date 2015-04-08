@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class CPSearchMatcher, NSArray, NSString;
+@class NSArray, NSString, SPMatcher;
 
 @interface SPTopHitIndexer : SPContentIndexer {
-    CPSearchMatcher *_matcher;
+    SPMatcher *_matcher;
     NSString *_queryString;
     NSArray *_searchDomains;
 }

@@ -10,6 +10,7 @@
 
 @interface CKDModifyWebSharingOperation : CKDDatabaseOperation {
     NSMutableSet *_fetchedRecordIDs;
+    int _numSaveAttempts;
     NSArray *_recordIDsToShare;
     NSArray *_recordIDsToShareReadWrite;
     NSArray *_recordIDsToUnshare;
@@ -24,17 +25,16 @@
     id _recordWebUnsharedBlock;
 
     NSMutableDictionary *_recordsToSaveByID;
-    NSMutableSet *_savedRecordIDs;
 }
 
 @property(retain) NSMutableSet * fetchedRecordIDs;
+@property int numSaveAttempts;
 @property(retain) NSArray * recordIDsToShare;
 @property(retain) NSArray * recordIDsToShareReadWrite;
 @property(retain) NSArray * recordIDsToUnshare;
 @property(copy) id recordWebSharedBlock;
 @property(copy) id recordWebUnsharedBlock;
 @property(retain) NSMutableDictionary * recordsToSaveByID;
-@property(retain) NSMutableSet * savedRecordIDs;
 
 - (void).cxx_destruct;
 - (struct _PCSIdentityData { }*)_copyShareProtectionFromRecord:(id)arg1 error:(id*)arg2;
@@ -48,20 +48,20 @@
 - (void)main;
 - (BOOL)makeStateTransition;
 - (id)nameForState:(unsigned int)arg1;
+- (int)numSaveAttempts;
 - (id)recordIDsToShare;
 - (id)recordIDsToShareReadWrite;
 - (id)recordIDsToUnshare;
 - (id)recordWebSharedBlock;
 - (id)recordWebUnsharedBlock;
 - (id)recordsToSaveByID;
-- (id)savedRecordIDs;
 - (void)setFetchedRecordIDs:(id)arg1;
+- (void)setNumSaveAttempts:(int)arg1;
 - (void)setRecordIDsToShare:(id)arg1;
 - (void)setRecordIDsToShareReadWrite:(id)arg1;
 - (void)setRecordIDsToUnshare:(id)arg1;
 - (void)setRecordWebSharedBlock:(id)arg1;
 - (void)setRecordWebUnsharedBlock:(id)arg1;
 - (void)setRecordsToSaveByID:(id)arg1;
-- (void)setSavedRecordIDs:(id)arg1;
 
 @end

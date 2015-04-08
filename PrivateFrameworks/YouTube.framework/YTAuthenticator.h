@@ -8,7 +8,6 @@
     int _accountAuthState;
     NSMutableArray *_deferredRequests;
     <YTAuthenticatorDelegate> *_delegate;
-    int _deviceAuthState;
 }
 
 + (id)authenticationDialogWithTarget:(id)arg1 action:(SEL)arg2;
@@ -16,14 +15,11 @@
 
 - (void)_addAccountAuthenticationObserers;
 - (void)_addDeferredRequest:(id)arg1 accountAuthRequired:(BOOL)arg2;
-- (void)_addDeviceAuthenticationObserers;
 - (void)_completeAuthenticationForDeferredRequests;
-- (void)_didAuthenticateDevice:(id)arg1;
 - (void)_failedToAuthenticateAccount:(id)arg1;
-- (void)_failedToAuthenticateDevice:(id)arg1;
 - (void)_removeAccountAuthenticationObservers;
 - (void)_removeDefferredRequests;
-- (void)_removeDeviceAuthenticationObservers;
+- (id)accountUsername;
 - (void)addAuthenticationHeadersToRequest:(id)arg1 accountAuthRequired:(BOOL)arg2;
 - (BOOL)cachedCredentialsValid;
 - (void)clearAccountInfo;
@@ -32,9 +28,9 @@
 - (id)init;
 - (void)invalidateToken;
 - (BOOL)isAccountAuthenticated;
-- (BOOL)isWaitingForAuthentication;
 - (BOOL)loadStoredCredentials;
-- (void)setAccount:(id)arg1 password:(id)arg2;
+- (void)setAuthenticatedOauth2Token:(id)arg1;
+- (void)setAuthenticatedUsername:(id)arg1 oauth2Token:(id)arg2 oauth2RefreshToken:(id)arg3 youTubeName:(id)arg4;
 - (void)setDelegate:(id)arg1;
 - (void)userCancelledAccountAuthentication;
 

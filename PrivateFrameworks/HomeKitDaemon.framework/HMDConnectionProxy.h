@@ -9,6 +9,9 @@
     unsigned int _activeMessageCount;
     NSObject<OS_dispatch_group> *_activeMessageTracker;
     NSString *_clientName;
+    BOOL _entitledForAPIAccess;
+    BOOL _entitledForBackgroundMode;
+    BOOL _entitledForSPIAccess;
     NSMutableSet *_pendingRequests;
     BOOL _ready;
     HMMessageDispatcher *_recvDispatcher;
@@ -19,19 +22,25 @@
 @property BOOL activated;
 @property unsigned int activeMessageCount;
 @property(retain) NSObject<OS_dispatch_group> * activeMessageTracker;
+@property(getter=isAuthorizedForHomeDataAccess,readonly) BOOL authorizedForHomeDataAccess;
 @property(retain) NSString * clientName;
+@property(readonly) int clientPid;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property(getter=isEntitledForAPIAccess,readonly) BOOL entitledForAPIAccess;
+@property(getter=isEntitledForBackgroundMode,readonly) BOOL entitledForBackgroundMode;
+@property(getter=isEntitledForSPIAccess,readonly) BOOL entitledForSPIAccess;
 @property(readonly) unsigned int hash;
+@property(readonly) NSString * name;
 @property(retain) NSMutableSet * pendingRequests;
 @property BOOL ready;
 @property(retain) HMMessageDispatcher * recvDispatcher;
+@property(readonly) id remoteProxy;
 @property(readonly) Class superclass;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 @property NSXPCConnection * xpcConnection;
 
 - (void).cxx_destruct;
-- (BOOL)_checkForAuthorizationForMessage:(id)arg1 client:(id)arg2 responseHandler:(id)arg3;
 - (void)activate;
 - (BOOL)activated;
 - (unsigned int)activeMessageCount;
@@ -44,6 +53,10 @@
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id)arg5;
 - (id)initWithConnection:(id)arg1 queue:(id)arg2 activeMessageTracker:(id)arg3 recvDispatcher:(id)arg4;
+- (BOOL)isAuthorizedForHomeDataAccess;
+- (BOOL)isEntitledForAPIAccess;
+- (BOOL)isEntitledForBackgroundMode;
+- (BOOL)isEntitledForSPIAccess;
 - (id)name;
 - (id)pendingRequests;
 - (BOOL)ready;

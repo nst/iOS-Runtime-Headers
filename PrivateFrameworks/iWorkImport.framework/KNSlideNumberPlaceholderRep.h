@@ -9,8 +9,6 @@
 
 - (BOOL)canBeginEditingChildRepOnDoubleTap:(id)arg1;
 - (BOOL)handleSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 withRecognizer:(id)arg2;
-- (BOOL)isDraggable;
-- (BOOL)isSelectable;
 - (BOOL)shouldBeginEditingOnSingleClick;
 
 @end

@@ -14,6 +14,8 @@
 @property int mode;
 @property float volume;
 
++ (BOOL)needsObjectUUID;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;

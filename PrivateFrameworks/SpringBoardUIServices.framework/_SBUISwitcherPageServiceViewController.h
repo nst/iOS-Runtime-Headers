@@ -8,9 +8,4 @@
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
-- (void)dealloc;
-- (void)didReceiveMemoryWarning;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewDidLoad;
-
 @end

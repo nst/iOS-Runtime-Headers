@@ -30,10 +30,9 @@
 - (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1;
 - (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2;
-- (void)selectChildRep:(id)arg1;
+- (void)selectChildRep:(id)arg1 extendingSelection:(BOOL)arg2;
 - (void)storage:(id)arg1 didChangeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 delta:(int)arg3 broadcastKind:(int)arg4;
 - (void)updateChildrenFromLayout;
-- (void)willBeRemoved;
 - (void)willBeginEditingContainedRep;
 - (void)willEndEditingContainedRep;
 

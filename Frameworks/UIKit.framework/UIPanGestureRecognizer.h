@@ -7,6 +7,10 @@
 @interface UIPanGestureRecognizer : UIGestureRecognizer {
     unsigned int _canPanHorizontally : 1;
     unsigned int _canPanVertically : 1;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _digitizerLocation;
     unsigned int _failsPastMaxTouches : 1;
     struct CGPoint { 
         float x; 
@@ -46,11 +50,13 @@
 - (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromSceneReferenceCoordinatesToView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 toSceneReferenceCoordinatesFromView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertVelocitySample:(id)arg1 fromSceneReferenceCoordinatesToView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })_digitizerLocation;
 - (void)_handleEndedTouches:(id)arg1 withFinalStateAdjustments:(id)arg2;
 - (float)_hysteresis;
 - (BOOL)_ignoresStationaryTouches;
 - (int)_lastTouchCount;
 - (struct UIOffset { float x1; float x2; })_offsetInViewFromSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg1 toSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (id)_previousVelocitySample;
 - (void)_processTouchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_removeHysteresisFromTranslation;
@@ -63,6 +69,7 @@
 - (struct CGPoint { float x1; float x2; })_shiftPanLocationToNewSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg1 lockingToAxis:(int)arg2;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
 - (void)_touchesListChangedFrom:(id)arg1 to:(id)arg2;
+- (void)_updateDigitizerLocationWithEvent:(id)arg1;
 - (BOOL)_updateMovingTouchesArraySavingOldArray:(id*)arg1;
 - (id)_velocitySample;
 - (void)_willBeginAfterSatisfyingFailureRequirements;

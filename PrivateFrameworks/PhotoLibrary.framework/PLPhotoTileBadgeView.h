@@ -22,6 +22,7 @@
 - (id)_badgeImageView;
 - (void)_commonPLPhotoTileBadgeViewInitialization;
 - (id)_textLabel;
+- (void)_updateBadgeImage;
 - (void)_updateBadgeText;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

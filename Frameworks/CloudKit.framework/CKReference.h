@@ -16,9 +16,7 @@
 @property(readonly) unsigned int referenceAction;
 @property(readonly) Class superclass;
 
-+ (id)parentStructureRefForItemID:(id)arg1 zoneName:(id)arg2;
 + (BOOL)supportsSecureCoding;
-+ (id)weakStructureRefForItemID:(id)arg1 zoneName:(id)arg2 forType:(BOOL)arg3;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

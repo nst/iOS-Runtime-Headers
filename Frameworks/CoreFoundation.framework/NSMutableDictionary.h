@@ -10,8 +10,6 @@
 + (BOOL)_processArgumentWithMutableDictionary:(id)arg1 object:(id)arg2 key:(id)arg3;
 + (BOOL)_processArgumentWithMutableDictionary:(id)arg1 object:(id)arg2 key:(id)arg3;
 + (id)dictionaryByInvertingDictionary:(id)arg1;
-+ (id)dictionaryByInvertingDictionary:(id)arg1;
-+ (id)dictionaryByInvertingDictionaryIfPossible:(id)arg1;
 + (id)dictionaryByInvertingDictionaryIfPossible:(id)arg1;
 + (id)dictionaryWithCapacity:(unsigned int)arg1;
 + (id)dictionaryWithSharedKeySet:(id)arg1;
@@ -19,6 +17,8 @@
 + (id)nonRetainingKeyAndValueDictionary;
 + (id)npkDictionaryWithObjectsAndKeys:(id)arg1;
 + (id)retainingKeyDictionary;
++ (id)tsu_dictionaryByInvertingDictionary:(id)arg1;
++ (id)tsu_dictionaryByInvertingDictionaryIfPossible:(id)arg1;
 + (id)vmDictionaryWithObjectsAndKeys:(id)arg1;
 
 - (id)CALsafeObjectForKey:(id)arg1 calculatedWithBlock:(id)arg2;
@@ -108,8 +108,6 @@
 - (id)mutableCopyDeep;
 - (void)npkSetObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1 withDefaultOfClass:(Class)arg2;
-- (id)objectForKey:(id)arg1 withDefaultOfClass:(Class)arg2;
-- (id)objectForKey:(id)arg1 withDefaultUsingBlock:(id)arg2;
 - (id)objectForKey:(id)arg1 withDefaultUsingBlock:(id)arg2;
 - (void)pl_applyOrientation:(int)arg1 toNormalizedPointWithXKey:(id)arg2 yKey:(id)arg3;
 - (void)pl_enforceCorrectValuesForMinKey:(id)arg1 maxKey:(id)arg2;
@@ -137,6 +135,13 @@
 - (void)setObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)setSafeObject:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
+- (void)tsp_addObject:(id)arg1 toArrayWithKey:(id)arg2;
+- (void)tsp_delayArchivingObjectDuringDeepCopy:(id)arg1;
+- (void)tsp_setDeepCopyObjectProxy:(id)arg1 forReferencedObject:(id)arg2;
+- (void)tsp_skipArchivingObjectDuringDeepCopy:(id)arg1;
+- (id)tsu_objectForKey:(id)arg1 withDefaultOfClass:(Class)arg2;
+- (id)tsu_objectForKey:(id)arg1 withDefaultUsingBlock:(id)arg2;
+- (void)tsu_setNonNilObject:(id)arg1 forKey:(id)arg2;
 - (void)tsu_setNonNilValueForKey:(id)arg1 fromDictionary:(id)arg2;
 - (void)vmSetObject:(id)arg1 forKey:(id)arg2;
 

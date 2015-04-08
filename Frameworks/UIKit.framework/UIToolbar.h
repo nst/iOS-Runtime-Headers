@@ -194,7 +194,6 @@
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
 - (void)setTranslucent:(BOOL)arg1;
 - (id)shadowImageForToolbarPosition:(int)arg1;
-- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 - (void)showButtonGroup:(int)arg1 withDuration:(double)arg2;
 - (void)showButtons:(int*)arg1 withCount:(int)arg2 withDuration:(double)arg3;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, NSMutableDictionary, NSOperationQueue, NSString, NSURL;
+@class BRCAccountSession, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSURL;
 
 @interface BRCFileProvider : NSObject <NSFileProvider> {
     NSMutableDictionary *_presentersIDsByURL;
+    NSObject<OS_dispatch_queue> *_privQueue;
     NSOperationQueue *_queue;
     BRCAccountSession *_session;
     NSURL *_url;
@@ -14,10 +15,10 @@
 @property(copy,readonly) NSString * _fileReactorID;
 @property(readonly) NSOperationQueue * _providedItemsOperationQueue;
 @property(copy,readonly) NSURL * _providedItemsURL;
-@property(retain) BRCAccountSession * accountSession;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property(retain) BRCAccountSession * session;
 @property(readonly) Class superclass;
 
 + (id)prettyNameForFilePresenterID:(id)arg1;
@@ -33,11 +34,11 @@
 - (id)_providedItemsURL;
 - (void)_registerPresenterForItemAtURL:(id)arg1 key:(id)arg2 session:(id)arg3;
 - (void)_unregisterPresenterForItemAtURL:(id)arg1 key:(id)arg2;
-- (id)accountSession;
 - (void)dumpToContext:(id)arg1;
 - (id)initWithURL:(id)arg1 name:(id)arg2;
 - (void)resume;
-- (void)setAccountSession:(id)arg1;
+- (id)session;
+- (void)setSession:(id)arg1;
 - (void)suspend;
 
 @end

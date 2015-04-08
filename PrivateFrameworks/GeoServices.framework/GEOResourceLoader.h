@@ -6,10 +6,12 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSMutableArray, NSString;
+@class GEOPowerAssertion, NSArray, NSData, NSMapTable, NSMutableArray, NSString;
 
 @interface GEOResourceLoader : NSObject {
     NSString *_additionalDirectoryToConsider;
+    BOOL _allowResumingPartialDownloads;
+    NSData *_auditToken;
     NSString *_baseURLString;
     BOOL _canceled;
 
@@ -18,10 +20,12 @@
     id _completionHandler;
 
     NSString *_directory;
+    NSMapTable *_inProgressResourceDownloads;
     NSMutableArray *_loadedResources;
     unsigned int _maxConcurrentLoads;
     int _numberOfCopiesInProgress;
     int _numberOfDownloadsInProgress;
+    GEOPowerAssertion *_powerAssertion;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -32,18 +36,20 @@
     NSMutableArray *_resourcesToLoad;
 }
 
+@property(retain) NSData * auditToken;
 @property(readonly) NSArray * loadedResources;
 
 - (void)_cleanup;
 - (BOOL)_establishHardLinkIfPossibleForResource:(id)arg1 toResource:(id)arg2 error:(id*)arg3;
 - (void)_loadNextResource;
-- (void)_loadResourceFromNetwork:(id)arg1 completionHandler:(id)arg2;
 - (id)_urlForResource:(id)arg1;
 - (void)_writeResourceToDisk:(id)arg1 withData:(id)arg2 orExistingPathOnDisk:(id)arg3 allowCreatingHardLink:(BOOL)arg4 checksum:(id)arg5 completionHandler:(id)arg6;
+- (id)auditToken;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithTargetDirectory:(id)arg1 baseURLString:(id)arg2 resources:(id)arg3 maximumConcurrentLoads:(unsigned int)arg4 additionalDirectoryToConsider:(id)arg5;
 - (id)loadedResources;
+- (void)setAuditToken:(id)arg1;
 - (void)startWithProgressHandler:(id)arg1 completionHandler:(id)arg2 priority:(long)arg3;
 
 @end

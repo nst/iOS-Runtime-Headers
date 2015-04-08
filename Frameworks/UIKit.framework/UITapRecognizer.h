@@ -13,6 +13,10 @@
     struct CGPoint { 
         float x; 
         float y; 
+    } _digitizerLocation;
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _location;
     double _maximumIntervalBetweenSuccessiveTaps;
     double _maximumSingleTapDuration;
@@ -36,6 +40,7 @@
 @property(readonly) NSArray * touches;
 
 - (void)_beginInteraction;
+- (struct CGPoint { float x1; float x2; })_digitizerLocation;
 - (float)_effectiveAllowableMovement;
 - (void)_interactionEndedTouch:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })_locationInSceneReferenceSpace;
@@ -43,6 +48,7 @@
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_reset;
+- (void)_updateDigitizerLocationForEvent:(id)arg1;
 - (float)allowableMovement;
 - (void)clearTapTimer;
 - (void)dealloc;

@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDCanonicalLocationSearchResult, GEOPDGeocodingResult, GEOPDLocationDirectedSearchResult, GEOPDMerchantLookupResult, GEOPDPlaceLookupResult, GEOPDPlaceRefinementResult, GEOPDReverseGeocodingResult, GEOPDSearchResult, GEOPDSiriSearchResult;
+@class GEOPDAutocompleteResult, GEOPDCanonicalLocationSearchResult, GEOPDGeocodingResult, GEOPDLocationDirectedSearchResult, GEOPDMerchantLookupResult, GEOPDPlaceLookupResult, GEOPDPlaceRefinementResult, GEOPDReverseGeocodingResult, GEOPDSearchResult, GEOPDSiriSearchResult;
 
 @interface GEOPDPlaceGlobalResult : PBCodable <NSCopying> {
+    GEOPDAutocompleteResult *_autocompleteResult;
     GEOPDCanonicalLocationSearchResult *_canonicalSearchResult;
     GEOPDGeocodingResult *_geocodingResult;
     GEOPDLocationDirectedSearchResult *_locationDirectedSearchResult;
@@ -16,8 +17,10 @@
     GEOPDSiriSearchResult *_siriSearchResult;
 }
 
+@property(retain) GEOPDAutocompleteResult * autocompleteResult;
 @property(retain) GEOPDCanonicalLocationSearchResult * canonicalSearchResult;
 @property(retain) GEOPDGeocodingResult * geocodingResult;
+@property(readonly) BOOL hasAutocompleteResult;
 @property(readonly) BOOL hasCanonicalSearchResult;
 @property(readonly) BOOL hasGeocodingResult;
 @property(readonly) BOOL hasLocationDirectedSearchResult;
@@ -35,6 +38,7 @@
 @property(retain) GEOPDSearchResult * searchResult;
 @property(retain) GEOPDSiriSearchResult * siriSearchResult;
 
+- (id)autocompleteResult;
 - (id)canonicalSearchResult;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -42,6 +46,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)geocodingResult;
+- (BOOL)hasAutocompleteResult;
 - (BOOL)hasCanonicalSearchResult;
 - (BOOL)hasGeocodingResult;
 - (BOOL)hasLocationDirectedSearchResult;
@@ -61,6 +66,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)reverseGeocodingResult;
 - (id)searchResult;
+- (void)setAutocompleteResult:(id)arg1;
 - (void)setCanonicalSearchResult:(id)arg1;
 - (void)setGeocodingResult:(id)arg1;
 - (void)setLocationDirectedSearchResult:(id)arg1;

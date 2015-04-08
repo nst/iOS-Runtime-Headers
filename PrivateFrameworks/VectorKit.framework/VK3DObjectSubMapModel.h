@@ -11,6 +11,11 @@
 
 @interface VK3DObjectSubMapModel : NSObject {
     VKBuildingFootprintMapModel *_buildingMapModel;
+    struct unique_ptr<ggl::FragmentedPool<ggl::FoggedBuilding::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::FoggedBuilding::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::FoggedBuilding::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::FoggedBuilding::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::FoggedBuilding::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    } _foggedObjectShaderSetupPool;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
             struct RenderState {} *__first_; 
@@ -41,9 +46,11 @@
             struct FragmentedPool<ggl::Building::Shader::Setup> {} *__first_; 
         } __ptr_; 
     } _objectShaderSetupPool;
+    int _vectorType;
 }
 
 @property VKBuildingFootprintMapModel * buildingMapModel;
+@property int vectorType;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -53,5 +60,7 @@
 - (id)initWithBuildingMapModel:(id)arg1;
 - (void)resetPools;
 - (void)setBuildingMapModel:(id)arg1;
+- (void)setVectorType:(int)arg1;
+- (int)vectorType;
 
 @end

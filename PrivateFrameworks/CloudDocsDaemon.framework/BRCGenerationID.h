@@ -4,7 +4,7 @@
 
 @class NSData, NSNumber, NSString;
 
-@interface BRCGenerationID : NSObject <NSCopying, NSSecureCoding, PQLBindable> {
+@interface BRCGenerationID : NSObject <NSCopying, NSSecureCoding, PQLValuable> {
     unsigned int _generationID;
     NSData *_signature;
 }
@@ -18,6 +18,7 @@
 @property(readonly) NSData * signature;
 @property(readonly) Class superclass;
 
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -31,7 +32,6 @@
 - (id)initWithFSGenerationID:(unsigned int)arg1;
 - (id)initWithRelativePath:(id)arg1;
 - (id)initWithSignature:(const void*)arg1 length:(unsigned int)arg2;
-- (id)initWithSqlite3Value:(struct Mem { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToFSGenerationID:(unsigned int)arg1;
 - (BOOL)isEqualToGenerationID:(id)arg1 orSignature:(id)arg2;

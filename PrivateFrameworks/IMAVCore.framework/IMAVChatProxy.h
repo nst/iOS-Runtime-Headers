@@ -25,7 +25,7 @@
 @property(readonly) BOOL isActive;
 @property(readonly) BOOL isCaller;
 @property(setter=setMute:) BOOL isMute;
-@property(readonly) BOOL isSendingAudio;
+@property BOOL isSendingAudio;
 @property(readonly) BOOL isStateFinal;
 @property(readonly) BOOL isVideo;
 @property(retain,readonly) IMHandle * otherIMHandle;
@@ -72,6 +72,7 @@
 - (unsigned int)sessionID;
 - (void)setConnectionTimeoutTime:(double)arg1;
 - (void)setInvitationTimeoutTime:(double)arg1;
+- (void)setIsSendingAudio:(BOOL)arg1;
 - (void)setMute:(BOOL)arg1;
 - (unsigned int)state;
 - (void)updateWithInfo:(id)arg1;

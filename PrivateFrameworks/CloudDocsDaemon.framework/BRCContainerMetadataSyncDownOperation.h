@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCContainerMetadataSyncPersistedState, BRCContainerScheduler, NSMutableArray, NSMutableDictionary, NSString;
+@class BRCAccountSession, BRCContainerMetadataSyncPersistedState, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface BRCContainerMetadataSyncDownOperation : BRCOperation <BRCOperationSubclass> {
+@interface BRCContainerMetadataSyncDownOperation : _BRCOperation <BRCOperationSubclass> {
     NSMutableArray *_desiredKeysForDesiredAssets;
     NSMutableArray *_recordIDsForDesiredAssets;
     NSMutableDictionary *_recordIDsToVersionETagsForDesiredAssets;
-    BRCContainerScheduler *_scheduler;
+    BRCAccountSession *_session;
     BRCContainerMetadataSyncPersistedState *_state;
 }
 
@@ -18,12 +18,11 @@
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)initWithContainerScheduler:(id)arg1 state:(id)arg2;
+- (id)initWithSession:(id)arg1 state:(id)arg2;
 - (void)main;
 - (void)performAfterCreatingZoneIfNeeded:(id)arg1;
 - (void)performAfterFetchingAssetContents:(id)arg1;
 - (void)performAfterFetchingRecordChanges:(id)arg1;
-- (void)performAfterSubscribingToZoneIfNeeded:(id)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
 
 @end

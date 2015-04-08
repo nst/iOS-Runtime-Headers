@@ -34,29 +34,29 @@
 
 + (id)_sharedCachesByBundleID;
 + (id)_sharedCachesQueue;
-+ (id)assetCacheWithApplicationBundleID:(id)arg1 dbPath:(id)arg2 fileDownloadPath:(id)arg3 packageDownloadPath:(id)arg4 packageUploadPath:(id)arg5;
++ (id)assetCacheWithApplicationBundleID:(id)arg1 dbPath:(id)arg2 fileDownloadPath:(id)arg3 packageDownloadPath:(id)arg4 packageUploadPath:(id)arg5 shouldEvictOnCreation:(BOOL)arg6;
 + (int)openFdForDownloadPath:(id)arg1 error:(id*)arg2;
 
 - (void).cxx_destruct;
 - (id)MMCS;
-- (id)_addAssetHandleForFileURL:(id)arg1 signature:(id)arg2 itemID:(id)arg3 error:(id*)arg4;
-- (void)_evictDownloadedFilesForced:(BOOL)arg1;
-- (void)_evictDownloadedFilesWithDatabase:(id)arg1 forced:(BOOL)arg2;
-- (void)_evictFilesForced:(BOOL)arg1;
-- (void)_evictPackagesForced:(BOOL)arg1;
-- (void)_expireAssetHandles;
+- (unsigned long long)_evictDownloadedFilesForced:(BOOL)arg1 evictNow:(BOOL)arg2;
+- (unsigned long long)_evictDownloadedFilesWithDatabase:(id)arg1 forced:(BOOL)arg2 evictNow:(BOOL)arg3;
+- (unsigned long long)_evictFilesForced:(BOOL)arg1 evictNow:(BOOL)arg2;
+- (unsigned long long)_evictPackagesForced:(BOOL)arg1 evictNow:(BOOL)arg2;
+- (void)_expireAssetHandlesWithCompletionBlock:(id)arg1;
+- (void)_expireAssetHandlesWithExpiryDate:(id)arg1 completionBlock:(id)arg2;
+- (id)_getAssetHandlesForDownloadedMMCSItems:(id)arg1 error:(id*)arg2;
+- (id)_saveData:(id)arg1 error:(id*)arg2;
 - (void)_scheduleEvictionForDownloadedFiles;
 - (void)_scheduleExpirationForAssetHandles;
 - (void)_unregisterItemIDs:(id)arg1;
-- (id)addAssetHandleForData:(id)arg1 signature:(id)arg2 error:(id*)arg3;
-- (id)addAssetHandleForDownloadedFileURL:(id)arg1 itemID:(unsigned long long)arg2 signature:(id)arg3 error:(id*)arg4;
 - (id)applicationBundleID;
 - (void)cancelExpiryTimer;
-- (void)clearForced:(BOOL)arg1;
+- (unsigned long long)clearForced:(BOOL)arg1;
 - (id)dbPath;
 - (id)dbPool;
 - (void)dealloc;
-- (void)evictAllFilesForced:(BOOL)arg1;
+- (unsigned long long)evictAllFilesForced:(BOOL)arg1;
 - (void)expireAssetHandlesIfNecessary;
 - (id)expiryTimer;
 - (id)fileDownloadPath;
@@ -67,6 +67,7 @@
 - (int)openFileDescriptorForItemID:(unsigned long long)arg1 itemType:(id*)arg2 error:(id*)arg3;
 - (id)packageDownloadPath;
 - (id)packageUploadPath;
+- (unsigned long long)predictedEvictedSizeForAllFilesForced:(BOOL)arg1;
 - (id)queue;
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setDbPath:(id)arg1;
@@ -81,5 +82,7 @@
 - (void)setQueue:(id)arg1;
 - (BOOL)startTrackingAssetHandles:(id)arg1 error:(id*)arg2;
 - (void)stopTrackingAssetHandlesByItemIDs:(id)arg1;
+- (id)trackDownloadedData:(id)arg1 signature:(id)arg2 error:(id*)arg3;
+- (id)trackDownloadedMMCSItems:(id)arg1 error:(id*)arg2;
 
 @end

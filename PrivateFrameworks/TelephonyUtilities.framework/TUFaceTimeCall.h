@@ -60,5 +60,6 @@
 - (double)startTime;
 - (id)totalDataUsed;
 - (void)updateForDisconnection;
+- (BOOL)wasDeclined;
 
 @end

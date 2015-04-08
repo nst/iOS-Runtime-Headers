@@ -26,7 +26,7 @@
     BOOL _isRouteOverpass;
     BOOL _isRouteRefineJunction;
     VKLabelNavRoadLabel *_junctionSign;
-    struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; unsigned long long x_1_1_12; id x_1_1_13; int x_1_1_14; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; unsigned char x3; unsigned char x4; unsigned char x5; struct { /* ? */ } *x6; } *_labelFeature;
+    struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; unsigned long long x_1_1_12; id x_1_1_13; int x_1_1_14; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; struct { float x_3_1_1; float x_3_1_2; } x3; unsigned char x4; unsigned char x5; unsigned char x6; struct { /* ? */ } *x7; BOOL x8; } *_labelFeature;
     int _largestRoadClass;
     NSString *_name;
     VKLabelNavRoad *_outgoingRoad;

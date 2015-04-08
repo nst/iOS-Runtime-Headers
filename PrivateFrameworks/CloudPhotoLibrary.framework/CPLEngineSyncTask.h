@@ -42,7 +42,7 @@
 - (void)setForeground:(BOOL)arg1;
 - (void)setTransportUserIdentifier:(id)arg1;
 - (void)taskDidFinishWithError:(id)arg1;
-- (void)taskDidProgress:(float)arg1;
+- (void)taskDidProgress:(float)arg1 userInfo:(id)arg2;
 - (id)taskIdentifier;
 - (id)transportUserIdentifier;
 

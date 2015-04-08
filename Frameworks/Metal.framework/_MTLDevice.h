@@ -3,10 +3,78 @@
  */
 
 @interface _MTLDevice : NSObject {
+    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; float x20; float x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; } *_limits;
+    long limits_init;
 }
 
+@property(readonly) const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; float x20; float x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; }* limits;
+@property(readonly) unsigned int maxBufferLength;
+@property(readonly) unsigned int maxColorAttachments;
+@property(readonly) unsigned int maxComputeBuffers;
+@property(readonly) unsigned int maxComputeInlineDataSize;
+@property(readonly) unsigned int maxComputeLocalMemorySizes;
+@property(readonly) unsigned int maxComputeSamplers;
+@property(readonly) unsigned int maxComputeTextures;
+@property(readonly) unsigned int maxComputeThreadgroupMemory;
+@property(readonly) unsigned int maxComputeThreadgroupSize;
+@property(readonly) unsigned int maxComputeThreadsPerThreadgroup;
+@property(readonly) unsigned int maxFragmentBuffers;
+@property(readonly) unsigned int maxFragmentInlineDataSize;
+@property(readonly) unsigned int maxFragmentSamplers;
+@property(readonly) unsigned int maxFragmentTextures;
+@property(readonly) unsigned int maxFramebufferStorageBits;
+@property(readonly) unsigned int maxInterpolants;
+@property(readonly) float maxLineWidth;
+@property(readonly) float maxPointSize;
+@property(readonly) unsigned int maxSampleCount;
+@property(readonly) unsigned int maxTextureDepth3D;
+@property(readonly) unsigned int maxTextureHeight2D;
+@property(readonly) unsigned int maxTextureHeight3D;
+@property(readonly) unsigned int maxTextureLayers;
+@property(readonly) unsigned int maxTextureWidth2D;
+@property(readonly) unsigned int maxTextureWidth3D;
+@property(readonly) unsigned int maxVertexAttributes;
+@property(readonly) unsigned int maxVertexBuffers;
+@property(readonly) unsigned int maxVertexInlineDataSize;
+@property(readonly) unsigned int maxVertexSamplers;
+@property(readonly) unsigned int maxVertexTextures;
+@property(readonly) unsigned int maxVisibilityQueryOffset;
+
 - (id)description;
+- (void)initLimits;
+- (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; float x20; float x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; }*)limits;
+- (unsigned int)maxBufferLength;
+- (unsigned int)maxColorAttachments;
+- (unsigned int)maxComputeBuffers;
+- (unsigned int)maxComputeInlineDataSize;
+- (unsigned int)maxComputeLocalMemorySizes;
+- (unsigned int)maxComputeSamplers;
+- (unsigned int)maxComputeTextures;
+- (unsigned int)maxComputeThreadgroupMemory;
+- (unsigned int)maxComputeThreadgroupSize;
+- (unsigned int)maxComputeThreadsPerThreadgroup;
+- (unsigned int)maxFragmentBuffers;
+- (unsigned int)maxFragmentInlineDataSize;
+- (unsigned int)maxFragmentSamplers;
+- (unsigned int)maxFragmentTextures;
+- (unsigned int)maxFramebufferStorageBits;
+- (unsigned int)maxInterpolants;
+- (float)maxLineWidth;
 - (unsigned int)maxMRT;
+- (float)maxPointSize;
+- (unsigned int)maxSampleCount;
+- (unsigned int)maxTextureDepth3D;
+- (unsigned int)maxTextureHeight2D;
+- (unsigned int)maxTextureHeight3D;
+- (unsigned int)maxTextureLayers;
+- (unsigned int)maxTextureWidth2D;
+- (unsigned int)maxTextureWidth3D;
+- (unsigned int)maxVertexAttributes;
+- (unsigned int)maxVertexBuffers;
+- (unsigned int)maxVertexInlineDataSize;
+- (unsigned int)maxVertexSamplers;
+- (unsigned int)maxVertexTextures;
+- (unsigned int)maxVisibilityQueryOffset;
 - (void)newComputePipelineStateWithFunction:(id)arg1 completionHandler:(id)arg2;
 - (id)newComputePipelineStateWithFunction:(id)arg1 error:(id*)arg2;
 - (void)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;

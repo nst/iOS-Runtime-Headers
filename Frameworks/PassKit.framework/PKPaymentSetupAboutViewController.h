@@ -13,9 +13,7 @@
 - (void)_showPrivacyView:(id)arg1;
 - (void)dealloc;
 - (void)done:(id)arg1;
-- (unsigned int)edgesForExtendedLayout;
 - (id)initWithAboutText:(id)arg1 privacyText:(id)arg2 presentedInModal:(BOOL)arg3;
 - (void)loadView;
-- (void)viewWillAppear:(BOOL)arg1;
 
 @end

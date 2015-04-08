@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
  */
 
-@class NSObject<OS_dispatch_queue>, NSXPCConnection;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSXPCConnection;
 
 @interface CLIndoorXPCProvider : NSObject {
     NSXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_frameworkQueue;
+    NSObject<OS_dispatch_source> *_interruptReconnection;
     struct optional<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > > { 
         bool m_initialized; 
         struct aligned_storage<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > > { 
@@ -23,17 +24,19 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_defaultErrHandler;
+- (id)_defaultErrHandler:(id)arg1;
 - (void)dealloc;
 - (id)impl;
 - (id)init;
 - (id)initWithConnection:(id)arg1;
+- (id)initWithEndpoint:(id)arg1;
 - (void)invalidate;
 - (void)withinQueueInitializeConnection;
 - (void)withinQueueInterruptionHandler;
 - (void)withinQueueInvalidate;
 - (void)withinQueueReconnectInvalidatedConnection;
-- (void)withinQueueReconnectInvalidatedConnectionDebounce;
-- (void)withinQueueScheduleDeferredReinitializeRemote:(struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { struct duration<long long, std::__1::ratio<1, 1000000000> > { long long x_1_1_1; } x1; })arg1;
+- (void)withinQueueReinitializeRemoteState;
+- (void)withinQueueScheduleReconnect:(struct duration<long long, std::__1::ratio<1, 1000000000> > { long long x1; })arg1 reason:(id)arg2 reinitializeConnection:(BOOL)arg3;
 - (int)withinQueueShouldReinitializeRemote:(struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { struct duration<long long, std::__1::ratio<1, 1000000000> > { long long x_1_1_1; } x1; })arg1;
 
 @end

@@ -18,6 +18,7 @@
 + (id)_newObjectIDsArrayWithMapping:(id)arg1 andEntries:(id)arg2 andCoordinator:(id)arg3;
 + (BOOL)_objectsInOrderedCollection:(id)arg1 formSubstringInOrderedCollection:(id)arg2;
 + (id)_replaceBaseline:(id)arg1 inOrderedSet:(id)arg2 withOrderedSet:(id)arg3;
++ (id)anyObjectFromCollection:(id)arg1;
 + (void)attemptToUpdatePermissionsForFileAtPath:(const char *)arg1 toLevel:(int)arg2;
 + (void)cleanupExternalReferenceLink:(const char *)arg1;
 + (BOOL)convertCString:(const char *)arg1 toUnsignedInt64:(unsigned long long*)arg2 withBase:(int)arg3;
@@ -38,6 +39,7 @@
 + (id)newMutableArrayFromCollection:(id)arg1 forParentContext:(id)arg2;
 + (id)newMutableOrderedSetFromCollection:(id)arg1;
 + (id)newMutableOrderedSetFromCollection:(id)arg1 forParentContext:(id)arg2;
++ (id)newMutableSetFromCollection:(id)arg1 byIntersectingWithCollection:(id)arg2;
 + (id)newMutableSetFromCollection:(id)arg1 byRemovingItems:(id)arg2;
 + (id)newMutableSetFromCollection:(id)arg1 forParentContext:(id)arg2;
 + (id)newOrderedSetFromCollection:(id)arg1;

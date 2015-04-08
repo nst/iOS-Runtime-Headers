@@ -25,5 +25,6 @@
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)initWithTable:(id)arg1;
 - (void)layoutSubviews;
+- (void)reloadData;
 
 @end

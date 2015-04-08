@@ -4,7 +4,7 @@
 
 @class CADisplayLink, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIDelayedAction, UIKBBackgroundView, UIKBKeyplaneView, UIKBRenderConfig, UIKBTree, UIKeyboardKeyplaneTransition, UIKeyboardSplitTransitionView, UISwipeGestureRecognizer, UIView, _UIKeyboardTypingSpeedLogger;
 
-@interface UIKeyboardLayoutStar : UIKeyboardLayout {
+@interface UIKeyboardLayoutStar : UIKeyboardLayout <UIKBEmojiHitTestResponder> {
     NSMutableSet *_accentInfo;
     UIKBTree *_activeKey;
     NSMutableSet *_allKeyplaneKeycaps;
@@ -31,6 +31,7 @@
     NSTimer *_flickPopuptimer;
     BOOL _ghostKeysEnabled;
     NSMutableSet *_hasAccents;
+    UIKBTree *_inactiveLanguageIndicator;
     int _initialBias;
     float _initialEdgeTranslation;
     float _initialPinchSeparation;
@@ -49,6 +50,7 @@
     NSString *_layoutTag;
     UISwipeGestureRecognizer *_leftSwipeRecognizer;
     NSString *_localizedInputKey;
+    UIView *_modalDisplayView;
     UIDelayedAction *_multitapAction;
     int _multitapCount;
     UIKBTree *_multitapKey;
@@ -60,7 +62,7 @@
     int _preferredTrackingChangeCount;
     double _prevTouchDownTime;
     double _prevTouchUpTime;
-    int _prevUpActions;
+    unsigned long long _prevUpActions;
     UIKBRenderConfig *_renderConfig;
     SEL _returnAction;
     SEL _returnLongAction;
@@ -92,7 +94,10 @@
 
 @property(retain) UIKBTree * activeKey;
 @property BOOL autoShift;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property BOOL didLongPress;
+@property(readonly) unsigned int hash;
 @property(readonly) UIKBTree * keyboard;
 @property(copy) NSString * keyboardName;
 @property(readonly) UIKBTree * keyplane;
@@ -100,6 +105,7 @@
 @property(retain) NSString * layoutTag;
 @property(copy) NSString * localizedInputKey;
 @property(readonly) NSString * localizedInputMode;
+@property(retain) UIView * modalDisplayView;
 @property int playKeyClickSoundOn;
 @property(copy) NSString * preTouchKeyplaneName;
 @property(retain) UIKBRenderConfig * renderConfig;
@@ -107,6 +113,7 @@
 @property BOOL shift;
 @property(readonly) BOOL showsDictationKey;
 @property(readonly) BOOL showsInternationalKey;
+@property(readonly) Class superclass;
 
 + (Class)_subclassForScreenTraits:(id)arg1;
 + (void)accessibilitySensitivityChanged;
@@ -119,7 +126,6 @@
 - (id)_keyplaneVariantsKeyForString:(id)arg1;
 - (void)_resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1 splitWidthsChanged:(BOOL)arg2;
 - (void)accessibilitySensitivityChanged;
-- (void)activateCompositeKey:(id)arg1 direction:(int)arg2 flickString:(id)arg3 popupInfo:(id)arg4;
 - (id)activationIndicatorView;
 - (id)activeKey;
 - (id)activeMultitapCompleteKey;
@@ -143,6 +149,7 @@
 - (void)clearAllTouchInfo;
 - (void)clearHandwritingStrokesIfNeededAndNotify:(BOOL)arg1;
 - (void)clearInfoForTouch:(id)arg1;
+- (void)clearTransientState;
 - (void)clearUnusedObjects:(BOOL)arg1;
 - (void)completeCommitTouchesPrecedingTouchDownWithKey:(id)arg1 withActions:(unsigned int)arg2 executionContext:(id)arg3;
 - (void)completeDeleteActionForTouchDownWithActions:(unsigned int)arg1 executionContext:(id)arg2;
@@ -151,17 +158,18 @@
 - (void)completeRetestForTouchUp:(id)arg1 timestamp:(double)arg2 interval:(double)arg3 executionContext:(id)arg4;
 - (void)completeSendStringActionForTouchDownWithKey:(id)arg1 withActions:(unsigned int)arg2 executionContext:(id)arg3;
 - (void)completeSendStringActionForTouchUp:(id)arg1 withActions:(int)arg2 timestamp:(double)arg3 interval:(double)arg4 didLongPress:(BOOL)arg5 prevActions:(int)arg6 executionContext:(id)arg7;
-- (id)compositeImageForKey:(id)arg1;
 - (void)continueFromInternationalActionForTouchUp:(id)arg1 withActions:(int)arg2 timestamp:(double)arg3 interval:(double)arg4 didLongPress:(BOOL)arg5 prevActions:(int)arg6 executionContext:(id)arg7;
 - (id)createKeyEventForStringAction:(id)arg1 forKey:(id)arg2 isPopupVariant:(BOOL)arg3 isMultitap:(BOOL)arg4 isFlick:(BOOL)arg5;
 - (int)currentKeyboardBias;
 - (id)currentKeyplane;
 - (id)currentKeyplaneView;
+- (void)deactivateActiveKey;
 - (void)deactivateActiveKeys;
 - (void)deactivateActiveKeysClearingTouchInfo:(BOOL)arg1 clearingDimming:(BOOL)arg2;
 - (void)dealloc;
 - (id)defaultKeyplaneForKeyplane:(id)arg1;
 - (id)defaultNameForKeyplaneName:(id)arg1;
+- (int)defaultSelectedVariantIndexForKey:(id)arg1 withActions:(unsigned long long)arg2;
 - (void)deleteHandwritingStrokesAtIndexes:(id)arg1;
 - (void)didClearInput;
 - (void)didFinishScreenGestureRecognition;
@@ -170,7 +178,7 @@
 - (void)didRotate;
 - (int)displayTypeHintForMoreKey;
 - (int)displayTypeHintForShiftKey;
-- (unsigned int)downActionFlagsForKey:(id)arg1;
+- (unsigned long long)downActionFlagsForKey:(id)arg1;
 - (void)downActionShiftWithKey:(id)arg1;
 - (struct CGSize { float x1; float x2; })dragGestureSize;
 - (BOOL)edgeSwipeGestureEnabled;
@@ -191,8 +199,6 @@
 - (id)generateInfoForTouch:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)getFlickCompositeImageForKey:(id)arg1 direction:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (id)getPopupBackgroundImageForKey:(id)arg1 direction:(int)arg2 popupInfo:(id)arg3 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (void)handleDelayedCentroidUpdate;
 - (void)handleDismissFlickView;
 - (void)handleDismissFlickView:(id)arg1;
@@ -206,6 +212,7 @@
 - (BOOL)hasAccentKey;
 - (BOOL)hasCandidateKeys;
 - (void)hideMenu:(id)arg1 forKey:(id)arg2;
+- (id)highlightedVariantListForStylingKey:(id)arg1;
 - (float)hitBuffer;
 - (BOOL)ignoresShiftState;
 - (void)incrementPunctuationIfNeeded:(id)arg1;
@@ -225,6 +232,7 @@
 - (id)keyHitTestClosestToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)keyHitTestContainingPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)keyHitTestWithoutCharging:(struct CGPoint { float x1; float x2; })arg1;
+- (id)keyViewHitTestForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)keyWithRepresentedString:(id)arg1;
 - (id)keyboard;
 - (id)keyboardLayoutWithBias:(int)arg1;
@@ -242,10 +250,11 @@
 - (id)localizedInputMode;
 - (void)logHandwritingData;
 - (void)longPressAction;
+- (id)modalDisplayView;
 - (id)multitapCompleteKeys;
 - (void)multitapExpired;
 - (void)multitapInterrupted;
-- (id)overlayCharacterImageForKey:(id)arg1 direction:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 flickString:(id)arg4 popupInfo:(id)arg5;
+- (void)nextToUseInputModeDidChange:(id)arg1;
 - (void)performHitTestForTouchInfo:(id)arg1 touchStage:(int)arg2 executionContextPassingUIKBTree:(id)arg3;
 - (BOOL)performReturnAction;
 - (BOOL)performSpaceAction;
@@ -254,6 +263,7 @@
 - (void)playKeyClickSound;
 - (int)playKeyClickSoundOn;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)populateFlickPopupsForKey:(id)arg1;
 - (id)popupKeyViews;
 - (id)preTouchKeyplaneName;
@@ -276,7 +286,6 @@
 - (void)setActiveKey:(id)arg1;
 - (void)setAutoShift:(BOOL)arg1;
 - (void)setAutoshift:(BOOL)arg1;
-- (void)setCompositeImage:(id)arg1 forKey:(id)arg2;
 - (void)setCurrencyKeysForCurrentLocaleOnKeyplane:(id)arg1;
 - (void)setDidLongPress:(BOOL)arg1;
 - (void)setDisableInteraction:(BOOL)arg1;
@@ -292,6 +301,7 @@
 - (void)setLayoutTag:(id)arg1;
 - (void)setLocalizedInputKey:(id)arg1;
 - (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
+- (void)setModalDisplayView:(id)arg1;
 - (void)setPasscodeOutlineAlpha:(float)arg1;
 - (void)setPlayKeyClickSoundOn:(int)arg1;
 - (void)setPreTouchKeyplaneName:(id)arg1;
@@ -349,7 +359,7 @@
 - (void)touchUp:(id)arg1 executionContext:(id)arg2;
 - (void)triggerSpaceKeyplaneSwitchIfNecessary;
 - (void)uninstallGestureRecognizers;
-- (unsigned int)upActionFlagsForKey:(id)arg1;
+- (unsigned long long)upActionFlagsForKey:(id)arg1;
 - (void)upActionShift;
 - (void)updateBackgroundCorners;
 - (void)updateBackgroundIfNeeded;
@@ -358,11 +368,13 @@
 - (void)updateKeyCentroids;
 - (void)updateKeyboardForKeyplane:(id)arg1;
 - (void)updateLayoutTags;
+- (void)updateLocalizedDisplayStringOnEmojiInternationalWithKeyplane:(id)arg1 withInputMode:(id)arg2;
 - (void)updateLocalizedKeys:(BOOL)arg1;
 - (void)updateLocalizedKeysOnKeyplane:(id)arg1;
 - (void)updateMoreAndInternationalKeys;
+- (void)updateSelectedVariantIndexForKey:(id)arg1 withActions:(unsigned long long)arg2 withPoint:(struct CGPoint { float x1; float x2; })arg3;
 - (void)updateShiftKeyState;
-- (void)updateTransitionWithFlags:(int)arg1;
+- (void)updateTransitionWithFlags:(unsigned long long)arg1;
 - (BOOL)useScaledGeometrySet;
 - (BOOL)usesAutoShift;
 - (int)visualStyleForKeyboardIfSplit:(BOOL)arg1;

@@ -6,8 +6,10 @@
 
 @interface PLCloudDownloadAgent : PLCloudScenarioProducer {
     NSObject<OS_dispatch_queue> *_agentQueue;
+    BOOL _initialDownloadDone;
     PLPhotoLibrary *_localLibrary;
     PLCloudPhotoLibraryManager *_remoteLibrary;
+    BOOL _waitingForInitialDownloadDone;
     struct { 
         int retries; 
         int state; 
@@ -18,6 +20,8 @@
 @property(retain) PLCloudPhotoLibraryManager * remoteLibrary;
 
 - (void)_beginPopulatingResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 startingAtOffset:(unsigned int)arg3 then:(id)arg4;
+- (void)_checkWalkStatusIfNeeded;
+- (void)_waitForDownloadDoneIfNeeded;
 - (void)activate;
 - (void)appInForeground:(id)arg1;
 - (unsigned int)batchSize;

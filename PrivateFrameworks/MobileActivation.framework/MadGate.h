@@ -10,6 +10,7 @@
 - (id)createActivationInfo;
 - (id)createRecertInfo;
 - (void)deactivateDevice;
+- (bool)getActivationBuild;
 - (id)getActivationState;
 - (id)handleActivationInfo:(id)arg1;
 - (id)handleReCertInfo:(id)arg1;
@@ -18,6 +19,7 @@
 - (void)performSelectorOnRemoteObject:(SEL)arg1 withParam:(id)arg2 completionBlock:(id)arg3 waitBlock:(id)arg4;
 - (void)reactivateDevice;
 - (bool)recertifyDevice;
+- (bool)recertifyDeviceSB;
 - (bool)unbrickDevice;
 
 @end

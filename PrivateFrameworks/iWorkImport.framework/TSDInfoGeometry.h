@@ -51,7 +51,7 @@
 - (BOOL)heightValid;
 - (BOOL)horizontalFlip;
 - (id)init;
-- (id)initWithArchive:(const struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Point {} *x3; struct Size {} *x4; unsigned int x5; float x6; int x7; unsigned int x8[1]; }*)arg1;
+- (id)initWithArchive:(const struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct Size {} *x6; unsigned int x7; float x8; }*)arg1;
 - (id)initWithCenter:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)initWithFullTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 widthValid:(BOOL)arg2 heightValid:(BOOL)arg3;
 - (id)initWithHeight:(float)arg1;
@@ -67,11 +67,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualExceptForPosition:(id)arg1;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)normalizedGeometry;
 - (struct CGPoint { float x1; float x2; })position;
-- (void)saveToArchive:(struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Point {} *x3; struct Size {} *x4; unsigned int x5; float x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct Size {} *x6; unsigned int x7; float x8; }*)arg1 archiver:(id)arg2;
 - (struct CGSize { float x1; float x2; })size;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformBasedOnPoint:(struct CGPoint { float x1; float x2; })arg1 centeredAtPoint:(struct CGPoint { float x1; float x2; })arg2;

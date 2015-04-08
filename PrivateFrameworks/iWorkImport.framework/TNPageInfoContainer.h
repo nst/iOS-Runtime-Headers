@@ -28,6 +28,7 @@
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)geometry;
+- (id)infoForSelectionPath:(id)arg1;
 - (id)initWithPageIndex:(unsigned int)arg1 pageController:(id)arg2;
 - (BOOL)isAnchoredToText;
 - (BOOL)isAttachedToBodyText;
@@ -44,5 +45,6 @@
 - (void)setGeometry:(id)arg1;
 - (void)setOwningAttachment:(id)arg1;
 - (void)setParentInfo:(id)arg1;
+- (void)setPrimitiveGeometry:(id)arg1;
 
 @end

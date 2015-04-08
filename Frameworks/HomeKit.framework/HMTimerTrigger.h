@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)_handleTriggerFired:(id)arg1;
 - (void)_registerNotificationHandlers;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fireDate;
 - (void)handleScheduleChangedNotification:(id)arg1;

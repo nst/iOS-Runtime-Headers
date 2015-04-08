@@ -200,7 +200,6 @@
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)setView:(id)arg1;
 - (void)setWidth:(float)arg1;
-- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 - (int)style;
 - (int)systemItem;
 - (int)tag;

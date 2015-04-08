@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDate, NSMutableArray, NSString, TPDocumentRoot, TPFootnoteLayoutController, TPOffscreenLayoutController, TPPageLayoutState, TSUMutablePointerSet, TSWPLayoutManager;
+@class NSDate, NSMutableArray, NSString, TPDocumentRoot, TPFootnoteLayoutController, TPPageLayoutState, TPSearchCanvasDelegate, TSUMutablePointerSet, TSWPLayoutManager;
 
 @interface TPPageController : NSObject <TPLayoutStateConsumer, TPLayoutStateProvider, TPPageLayoutInfoProvider, TSWPLayoutOwner> {
     int _backgroundLayoutEnabled;
@@ -12,14 +12,16 @@
     TSWPLayoutManager *_bodyLayoutManager;
     BOOL _checkedForBackUp;
     unsigned int _completePageCount;
+    unsigned int _didLayOutPageIndex;
     TPDocumentRoot *_documentRoot;
-    TPOffscreenLayoutController *_drawablesLayoutController;
     TPFootnoteLayoutController *_footnoteLayoutController;
     BOOL _handleBackgroundLayoutScheduled;
+    BOOL _isObservingNotifications;
     int _isScrolling;
     unsigned int _lastKnownPageCount;
     TSUMutablePointerSet *_layoutObservers;
     TPPageLayoutState *_layoutState;
+    TPSearchCanvasDelegate *_offscreenSearchDelegate;
     NSMutableArray *_pageGeneratorStack;
     struct multimap<unsigned int, TPPageLayout *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, TPPageLayout *> > > { 
         struct __tree<std::__1::__value_type<unsigned int, TPPageLayout *>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, TPPageLayout *>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, TPPageLayout *> > > { 
@@ -51,12 +53,14 @@
 - (void)accquireLockAndPerformAction:(id)arg1;
 - (void)addLayoutObserver:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })anchoredRangeForPageIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2;
+- (BOOL)archivedLayoutState:(id)arg1 setBodyLength:(unsigned int)arg2;
 - (void)archivedLayoutState:(id)arg1 setDocumentPageIndex:(unsigned int)arg2;
 - (void)archivedLayoutState:(id)arg1 setLastPageCount:(unsigned int)arg2;
 - (BOOL)archivedLayoutState:(id)arg1 setSectionHints:(id)arg2;
 - (void)archivedLayoutState:(id)arg1 setSectionIndex:(unsigned int)arg2;
 - (void)archivedLayoutState:(id)arg1 setSectionPageIndex:(unsigned int)arg2;
 - (BOOL)backgroundLayoutEnabled;
+- (unsigned int)bodyLengthForArchivedLayoutState:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })bodyRangeForPageIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2;
 - (BOOL)canProvideInfoForPageIndex:(unsigned int)arg1;
 - (BOOL)canProvideNumberingInfoForPageIndex:(unsigned int)arg1;
@@ -64,8 +68,8 @@
 - (int)contentFlagsForPageIndex:(unsigned int)arg1;
 - (void)d_timeLayout;
 - (void)dealloc;
-- (void)didScroll;
-- (void)didZoom;
+- (void)didScroll:(id)arg1;
+- (void)didZoom:(id)arg1;
 - (unsigned int)documentPageIndexForArchivedLayoutState:(id)arg1;
 - (unsigned int)firstPageIndexNeedingLayout;
 - (float)footerHeight;
@@ -89,6 +93,7 @@
 - (id)initWithDocumentRoot:(id)arg1;
 - (BOOL)isLayoutComplete;
 - (BOOL)isLayoutCompleteThroughPageIndex:(unsigned int)arg1;
+- (BOOL)isSectionInfo:(id)arg1 onPage:(unsigned int)arg2;
 - (unsigned int)lastPageCountForArchivedLayoutState:(id)arg1;
 - (void)layoutManager:(id)arg1 didClearDirtyRangeWithDelta:(int)arg2 afterCharIndex:(unsigned int)arg3;
 - (void)layoutManagerNeedsLayout:(id)arg1;
@@ -96,6 +101,7 @@
 - (void)layoutThroughPageIndex:(unsigned int)arg1 forLayoutController:(id)arg2;
 - (id)masterDrawableProviderForPageIndex:(unsigned int)arg1;
 - (BOOL)okToAnchorDrawable:(id)arg1 toPageIndex:(unsigned int)arg2;
+- (BOOL)okToAnchorDrawables:(id)arg1 toPageIndex:(unsigned int)arg2;
 - (void)p_advanceSectionIndex;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })p_anchoredRangeForPageIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2 allowAfterLayoutPoint:(BOOL)arg3;
 - (void)p_backgroundLayoutReadEntry;
@@ -136,6 +142,7 @@
 - (unsigned int)p_pageIndexForCharIndex:(unsigned int)arg1 caretAffinity:(int)arg2 forceLayout:(BOOL)arg3 searchAfterLayoutPoint:(BOOL)arg4;
 - (unsigned int)p_pageIndexForFootnoteIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2 searchAfterLayoutPoint:(BOOL)arg3;
 - (id)p_pageIndexPathForPageIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2 allowAfterLayoutPoint:(BOOL)arg3;
+- (id)p_pageInfoForBodySelection:(id)arg1;
 - (id)p_pageInfoForPageAtIndex:(unsigned int)arg1;
 - (id)p_pageMasterForPageIndex:(unsigned int)arg1 inSection:(id)arg2 sectionHint:(id)arg3;
 - (void)p_prepareLayoutStateForNextPage;
@@ -173,10 +180,10 @@
 - (unsigned int)pageIndexForFootnoteIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2;
 - (id)pageInfoForAttachmentAtBodyCharIndex:(unsigned int)arg1 selection:(id)arg2;
 - (id)pageInfoForPageIndex:(unsigned int)arg1;
+- (id)pageInfosForInfo:(id)arg1 withSelectionPath:(id)arg2;
 - (unsigned int)pageNumberForPageIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })pageRangeForSelection:(id)arg1 outEndIsValid:(BOOL*)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })pageRangeOfSectionIndex:(unsigned int)arg1;
-- (struct CGPoint { float x1; float x2; })positionForPositionerForDrawable:(id)arg1;
 - (void)removeLayoutObserver:(id)arg1;
 - (void)resumeBackgroundLayout;
 - (void)scheduleImmediateBackgroundLayout;
@@ -188,13 +195,12 @@
 - (unsigned int)sectionPageIndexForPageIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })sectionPageRangeForPageIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2 outEndIsValid:(BOOL*)arg3;
 - (void)setBackgroundLayoutEnabled:(BOOL)arg1;
-- (void)setupListenersForInteractiveCanvasController;
 - (BOOL)shouldHeaderFooterBeVisibleForPageIndex:(unsigned int)arg1;
 - (void)suspendBackgroundLayout;
 - (void)teardown;
 - (id)textWrapper;
-- (void)willScroll;
-- (void)willZoom;
+- (void)willScroll:(id)arg1;
+- (void)willZoom:(id)arg1;
 - (void)withPageLayoutAtIndex:(unsigned int)arg1 executeBlock:(id)arg2;
 - (void)withPageLayoutAtIndex:(unsigned int)arg1 preferredLayoutController:(id)arg2 executeBlock:(id)arg3;
 

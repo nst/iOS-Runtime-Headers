@@ -23,14 +23,13 @@
 - (unsigned short)cachedAppropriateState;
 - (id)cachedDisplayString;
 - (BOOL)cachedValuesAreValid;
-- (BOOL)canQueryHardPauseDigits;
 - (void)dealloc;
 - (id)displayString;
 - (id)init;
 - (void)modelStateChangedNotification:(id)arg1;
 - (void)resetCacheValidity;
 - (void)sendHardPauseDigits;
-- (void)sendHardPauseDigitsLocal;
+- (void)sendHardPauseDigitsLocally;
 - (void)sendHardPauseDigitsRelayed;
 - (void)setCachedAppropriateState:(unsigned short)arg1;
 - (void)setCachedDisplayString:(id)arg1;
@@ -39,6 +38,7 @@
 - (void)startListeningToHardPauseEvents;
 - (unsigned short)state;
 - (void)stopListeningForHardPauseEvents;
+- (BOOL)supportsQueryingHardPauseDigitsLocally;
 - (void)updateCachedValuesIfNecessary;
 
 @end

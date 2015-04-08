@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray;
+@class NSArray, _PFWeakReference;
 
 @interface _PFFetchedResultOrderedSetWrapper : NSOrderedSet {
     int _cd_rc;
     NSArray *_underlyingArray;
+    _PFWeakReference *_weakmoc;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;
@@ -37,7 +38,7 @@
 - (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)initWithArray:(id)arg1;
+- (id)initWithArray:(id)arg1 andContext:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToOrderedSet:(id)arg1;
 - (id)managedObjectIDAtIndex:(unsigned int)arg1;

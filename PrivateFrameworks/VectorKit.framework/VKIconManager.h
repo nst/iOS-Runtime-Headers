@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSArray, NSMapTable, NSMutableDictionary, NSString, VKResourceManager, _VKLocalIconAtlas;
+@class NSArray, NSLock, NSMapTable, NSMutableDictionary, NSString, VKResourceManager, _VKLocalIconAtlas;
 
 @interface VKIconManager : NSObject <GEOResourceManifestTileGroupObserver> {
     NSMapTable *_atlases;
+    NSLock *_atlasesLock;
     _VKLocalIconAtlas *_localAtlas;
     NSMutableDictionary *_nameToStyleManager;
     NSArray *_nonRegionalResourceNames;

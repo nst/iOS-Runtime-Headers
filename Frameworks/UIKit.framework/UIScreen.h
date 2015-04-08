@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UICoordinateSpace>, FBSDisplay, NSArray, NSDictionary, NSMutableArray, NSString, UIScreen, UIScreenMode, UISoftwareDimmingWindow, UITraitCollection, UIWindow, _UIScreenFixedCoordinateSpace, _UIScreenTransparentHitTestWindow;
+@class <UICoordinateSpace>, <UIFocusContainer>, FBSDisplay, NSArray, NSDictionary, NSMutableArray, NSString, UIScreen, UIScreenMode, UISoftwareDimmingWindow, UITraitCollection, UIView, UIWindow, UIWindow<UIFocusContainer>, _UIScreenFixedCoordinateSpace, _UIScreenTransparentHitTestWindow;
 
-@interface UIScreen : NSObject <UICoordinateSpace, UITraitEnvironment, _UITraitEnvironmentInternal> {
+@interface UIScreen : NSObject <UICoordinateSpace, UIFocusContainer, UITraitEnvironment, _UITraitEnvironmentInternal> {
+    UIWindow<UIFocusContainer> *__focusedWindow;
     NSArray *_availableDisplayModes;
     struct CGRect { 
         struct CGPoint { 
@@ -22,6 +23,7 @@
     _UIScreenTransparentHitTestWindow *_extendedJailHitTestWindow;
     FBSDisplay *_fbsDisplay;
     _UIScreenFixedCoordinateSpace *_fixedCoordinateSpace;
+    <UIFocusContainer> *_focusedItem;
     float _horizontalScale;
     int _interfaceOrientation;
     struct CGRect { 
@@ -87,6 +89,7 @@
         unsigned int wantsWideContentMargins : 1; 
         unsigned int queriedDeviceContentMargins : 1; 
         unsigned int hasCalculatedPointsPerInch : 1; 
+        unsigned int screenCreatedFBSDisplay : 1; 
     } _screenFlags;
     UISoftwareDimmingWindow *_softwareDimmingWindow;
     double _startedPausingWindows;
@@ -105,6 +108,7 @@
     BOOL _wantsSoftwareDimming;
 }
 
+@property(setter=_setFocusedWindow:) UIWindow<UIFocusContainer> * _focusedWindow;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _gkBounds;
 @property(readonly) float _gkScale;
 @property(setter=_setInterfaceOrientation:) int _interfaceOrientation;
@@ -123,6 +127,8 @@
 @property(copy,readonly) NSString * description;
 @property(retain) FBSDisplay * fbsDisplay;
 @property(readonly) <UICoordinateSpace> * fixedCoordinateSpace;
+@property(readonly) <UIFocusContainer> * focusedItem;
+@property(readonly) UIView * focusedView;
 @property(readonly) unsigned int hash;
 @property(getter=_jailOffset,setter=_setJailOffset:) struct CGPoint { float x1; float x2; } jailOffset;
 @property(getter=_jailOrientation,setter=_setJailOrientation:) int jailOrientation;
@@ -136,9 +142,11 @@
 @property(readonly) float nativeScale;
 @property(getter=_overrideTraitCollection,setter=_setOverrideTraitCollection:) UITraitCollection * overrideTraitCollection;
 @property int overscanCompensation;
+@property(readonly) <UIFocusContainer> * preferredFocusedItem;
 @property(retain,readonly) UIScreenMode * preferredMode;
 @property(readonly) float scale;
 @property(readonly) Class superclass;
+@property(readonly) BOOL supportsFocus;
 @property(readonly) UITraitCollection * traitCollection;
 @property BOOL wantsSoftwareDimming;
 
@@ -147,8 +155,10 @@
 + (void)_FBSDisplayDidPossiblyConnect:(id)arg1 withScene:(id)arg2 andPost:(BOOL)arg3;
 + (void)_FBSDisplayDidPossiblyDisconnect:(id)arg1;
 + (void)_FBSDisplayDidPossiblyDisconnect:(id)arg1 forSceneDestruction:(id)arg2;
++ (id)__availableScenes;
 + (id)__connectedFBSDisplays;
 + (id)__createPlugInScreenForFBSDisplay:(id)arg1;
++ (id)__sceneTrackingQueue;
 + (void)_beginDisableScreenUpdatesForSnapshot;
 + (void)_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:(BOOL)arg1;
 + (id)_carScreen;
@@ -184,7 +194,6 @@
 - (void)_beginObservingBacklightLevelNotifications;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForInterfaceOrientation:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsInPixels;
-- (BOOL)_canFocusViews;
 - (id)_capabilities;
 - (id)_capabilityForKey:(id)arg1;
 - (void)_computeMetrics;
@@ -199,6 +208,7 @@
 - (void)_endObservingBacklightLevelNotifications;
 - (void)_ensureConnectedIfPossible;
 - (void)_enumerateWindowsWithBlock:(id)arg1;
+- (id)_focusedWindow;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gkBounds;
 - (float)_gkScale;
 - (BOOL)_hasStatusBar;
@@ -213,6 +223,7 @@
 - (BOOL)_isExternal;
 - (BOOL)_isMainScreen;
 - (BOOL)_isOverscanned;
+- (BOOL)_isRightHandDrive;
 - (BOOL)_isRotatable;
 - (BOOL)_isUIElementLimited:(id)arg1;
 - (BOOL)_isWorkspaceCapable;
@@ -247,6 +258,9 @@
 - (unsigned int)_seed;
 - (void)_setCapability:(id)arg1 forKey:(id)arg2;
 - (void)_setDefaultTraitCollection:(id)arg1;
+- (void)_setExternalDeviceShouldInputText:(BOOL)arg1;
+- (void)_setFocusedItem:(id)arg1;
+- (void)_setFocusedWindow:(id)arg1;
 - (void)_setInterfaceOrientation:(int)arg1;
 - (void)_setJailOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setJailOrientation:(int)arg1;
@@ -294,12 +308,18 @@
 - (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
 - (id)fbsDisplay;
 - (id)fixedCoordinateSpace;
+- (id)focusedItem;
+- (id)focusedView;
+- (void)focusedViewDidChange;
+- (void)focusedViewWillChange;
 - (id)initWithDisplay:(id)arg1;
+- (BOOL)isAncestorOfItem:(id)arg1;
 - (id)mirroredScreen;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nativeBounds;
 - (float)nativeScale;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (int)overscanCompensation;
+- (id)preferredFocusedItem;
 - (id)preferredMode;
 - (float)rawBrightnessForBacklightLevel:(float)arg1;
 - (BOOL)sbs_isCarScreen;
@@ -312,11 +332,14 @@
 - (void)setBrightness:(float)arg1;
 - (void)setCurrentMode:(id)arg1;
 - (void)setFbsDisplay:(id)arg1;
+- (void)setNeedsPreferredFocusedItemUpdate;
 - (void)setOverscanCompensation:(int)arg1;
 - (void)setWantsSoftwareDimming:(BOOL)arg1;
+- (BOOL)shouldChangeFocusedItem:(id)arg1 heading:(unsigned int)arg2;
 - (id)snapshot;
 - (id)snapshotView;
 - (id)snapshotViewAfterScreenUpdates:(BOOL)arg1;
+- (BOOL)supportsFocus;
 - (id)traitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
 - (BOOL)wantsSoftwareDimming;

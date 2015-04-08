@@ -17,6 +17,7 @@
         unsigned int geniusId : 1; 
         unsigned int audioFormat : 1; 
         unsigned int discNumber : 1; 
+        unsigned int lyricsChecksum : 1; 
         unsigned int trackNumber : 1; 
         unsigned int userRating : 1; 
         unsigned int excludeFromShuffle : 1; 
@@ -24,6 +25,7 @@
     } _has;
     BOOL _hasVideo;
     NSString *_lyrics;
+    int _lyricsChecksum;
     MIPPlaybackInfo *_playbackInfo;
     int _trackNumber;
     int _userRating;
@@ -47,11 +49,13 @@
 @property(readonly) BOOL hasGenre;
 @property BOOL hasHasVideo;
 @property(readonly) BOOL hasLyrics;
+@property BOOL hasLyricsChecksum;
 @property(readonly) BOOL hasPlaybackInfo;
 @property BOOL hasTrackNumber;
 @property BOOL hasUserRating;
 @property BOOL hasVideo;
 @property(retain) NSString * lyrics;
+@property int lyricsChecksum;
 @property(retain) MIPPlaybackInfo * playbackInfo;
 @property int trackNumber;
 @property int userRating;
@@ -79,6 +83,7 @@
 - (BOOL)hasGenre;
 - (BOOL)hasHasVideo;
 - (BOOL)hasLyrics;
+- (BOOL)hasLyricsChecksum;
 - (BOOL)hasPlaybackInfo;
 - (BOOL)hasTrackNumber;
 - (BOOL)hasUserRating;
@@ -86,6 +91,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)lyrics;
+- (int)lyricsChecksum;
 - (void)mergeFrom:(id)arg1;
 - (id)playbackInfo;
 - (BOOL)readFrom:(id)arg1;
@@ -102,10 +108,12 @@
 - (void)setHasExcludeFromShuffle:(BOOL)arg1;
 - (void)setHasGeniusId:(BOOL)arg1;
 - (void)setHasHasVideo:(BOOL)arg1;
+- (void)setHasLyricsChecksum:(BOOL)arg1;
 - (void)setHasTrackNumber:(BOOL)arg1;
 - (void)setHasUserRating:(BOOL)arg1;
 - (void)setHasVideo:(BOOL)arg1;
 - (void)setLyrics:(id)arg1;
+- (void)setLyricsChecksum:(int)arg1;
 - (void)setPlaybackInfo:(id)arg1;
 - (void)setTrackNumber:(int)arg1;
 - (void)setUserRating:(int)arg1;

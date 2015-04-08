@@ -15,6 +15,7 @@
 
 - (BOOL)_downloadPasses;
 - (void)_rescheduleWithBackoff;
+- (void)checkConsistencyWithPaymentApplications:(id)arg1 secureElementCards:(id)arg2 completion:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithPaymentWebService:(id)arg1 delegate:(id)arg2;

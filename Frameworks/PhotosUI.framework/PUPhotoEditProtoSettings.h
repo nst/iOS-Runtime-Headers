@@ -12,6 +12,7 @@
     BOOL _showLevelIndicator;
     BOOL _showResetToolButton;
     BOOL _simulateDownload;
+    BOOL _simulateDownloadFailure;
     BOOL _useOldPhotosEditor2;
 }
 
@@ -24,6 +25,7 @@
 @property BOOL showLevelIndicator;
 @property BOOL showResetToolButton;
 @property BOOL simulateDownload;
+@property BOOL simulateDownloadFailure;
 @property BOOL useOldPhotosEditor2;
 
 + (id)settingsControllerModule;
@@ -45,10 +47,12 @@
 - (void)setShowLevelIndicator:(BOOL)arg1;
 - (void)setShowResetToolButton:(BOOL)arg1;
 - (void)setSimulateDownload:(BOOL)arg1;
+- (void)setSimulateDownloadFailure:(BOOL)arg1;
 - (void)setUseOldPhotosEditor2:(BOOL)arg1;
 - (BOOL)showLevelIndicator;
 - (BOOL)showResetToolButton;
 - (BOOL)simulateDownload;
+- (BOOL)simulateDownloadFailure;
 - (BOOL)useOldPhotosEditor2;
 
 @end

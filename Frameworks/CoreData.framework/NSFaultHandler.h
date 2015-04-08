@@ -14,6 +14,7 @@
 - (id)fulfillFault:(id)arg1 withContext:(id)arg2 forIndex:(unsigned int)arg3;
 - (id)initWithPersistenceStore:(id)arg1;
 - (id)retainedFulfillAggregateFaultForObject:(id)arg1 andRelationship:(id)arg2 withContext:(id)arg3;
+- (id)retainedOrderedFaultInformationForAggregateFaultForObject:(id)arg1 andRelationship:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (void)turnObject:(id)arg1 intoFaultWithContext:(id)arg2;
 
 @end

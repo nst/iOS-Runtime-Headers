@@ -7,21 +7,21 @@
 @interface TSDMutableCurvedShadow : TSDCurvedShadow {
 }
 
-@property TSUColor * TSUColor;
+@property(copy) TSUColor * TSUColor;
 @property float angle;
 @property struct CGColor { }* color;
 @property float curve;
 @property(getter=isEnabled) BOOL enabled;
 @property float offset;
 @property float opacity;
-@property int radius;
+@property float radius;
 
 - (void)setAngle:(float)arg1;
 - (void)setColor:(struct CGColor { }*)arg1;
 - (void)setCurve:(float)arg1;
 - (void)setOffset:(float)arg1;
 - (void)setOpacity:(float)arg1;
-- (void)setRadius:(int)arg1;
+- (void)setRadius:(float)arg1;
 - (void)setTSUColor:(id)arg1;
 
 @end

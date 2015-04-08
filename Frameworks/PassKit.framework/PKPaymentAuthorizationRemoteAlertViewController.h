@@ -35,6 +35,7 @@
 - (void)authorizationDidFinishWithError:(id)arg1;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
 - (void)authorizationDidSelectShippingMethod:(id)arg1;
+- (void)authorizationWillStart;
 - (void)dealloc;
 - (id)exportedObject;
 - (void)handleHomeButtonPressed;
@@ -53,6 +54,7 @@
 - (BOOL)shouldAutorotate;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)viewDidLoad;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

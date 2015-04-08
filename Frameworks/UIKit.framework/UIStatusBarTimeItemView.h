@@ -10,6 +10,7 @@
 
 - (id)contentsImage;
 - (void)dealloc;
+- (float)extraRightPadding;
 - (int)textStyle;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 

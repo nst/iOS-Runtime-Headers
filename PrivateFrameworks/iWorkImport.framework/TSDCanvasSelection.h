@@ -7,14 +7,12 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSSet, NSString, TSDDrawableInfo<TSDContainerInfo>;
+@class NSSet, NSString;
 
-@interface TSDCanvasSelection : TSKSelection <NSCopying, TSDCanvasSelection> {
-    TSDDrawableInfo<TSDContainerInfo> *mContainer;
+@interface TSDCanvasSelection : TSKSelection <TSDCanvasSelection> {
     NSSet *mInfos;
 }
 
-@property(readonly) TSDDrawableInfo<TSDContainerInfo> * container;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
@@ -28,7 +26,6 @@
 + (Class)archivedSelectionClass;
 + (id)emptySelection;
 
-- (id)container;
 - (BOOL)containsKindOfClass:(Class)arg1;
 - (BOOL)containsUnlockedKindOfClass:(Class)arg1;
 - (id)copyExcludingInfo:(id)arg1;
@@ -36,15 +33,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (unsigned int)hash;
 - (unsigned int)infoCount;
 - (id)infos;
 - (id)infosOfClass:(Class)arg1;
-- (id)initWithArchive:(const struct CanvasSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct CanvasSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Reference {} *x6; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithInfos:(id)arg1;
-- (id)initWithInfos:(id)arg1 andContainer:(id)arg2;
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
-- (void)saveToArchive:(struct CanvasSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct CanvasSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Reference {} *x6; }*)arg1 archiver:(id)arg2;
 - (unsigned int)unlockedInfoCount;
 - (id)unlockedInfos;
 

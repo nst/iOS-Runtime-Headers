@@ -2,29 +2,47 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class MKMapItem, NSArray, NSData, NSString, WBSParsecSearchMapsResultExtraCompletionItem;
+@class MKMapItem, NSArray, NSData, NSString, NSURL, WBSParsecSearchMapsResultExtraCompletionItem, WBSParsecSearchResult, WBSParsecSearchSession;
 
-@interface WBSParsecSearchMapsResult : WBSParsecSearchResult {
+@interface WBSParsecSearchMapsResult : WBSParsecSearchResult <WBSParsecMapsResultFeedbackDelegate, WBSParsecSearchResultPresentedInCard> {
     NSArray *_additionalMapItems;
     WBSParsecSearchMapsResultExtraCompletionItem *_extraCompletionItem;
+    WBSParsecSearchResult *_hiddenParsecResult;
     MKMapItem *_mapItem;
     NSData *_mapsData;
     NSString *_mapsDataType;
     NSString *_mapsResultType;
+    NSURL *_moreURL;
+    WBSParsecSearchSession *_parsecSearchSession;
 }
 
 @property(readonly) NSArray * additionalMapItems;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) WBSParsecSearchMapsResultExtraCompletionItem * extraCompletionItem;
+@property(readonly) unsigned int hash;
+@property(retain) WBSParsecSearchResult * hiddenParsecResult;
 @property(readonly) MKMapItem * mapItem;
 @property(readonly) NSData * mapsData;
 @property(readonly) NSString * mapsResultType;
+@property(readonly) NSURL * moreURL;
+@property(retain) WBSParsecSearchSession * parsecSearchSession;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)additionalMapItems;
 - (id)extraCompletionItem;
+- (id)hiddenParsecResult;
 - (id)initWithDictionary:(id)arg1;
 - (id)mapItem;
 - (id)mapsData;
 - (id)mapsResultType;
+- (id)moreURL;
+- (id)parsecSearchSession;
+- (void)placeViewController:(id)arg1 shouldLogFeedbackOfType:(int)arg2;
+- (void)placeViewControllerShouldLogFeedbackForDismissal:(id)arg1;
+- (void)setHiddenParsecResult:(id)arg1;
+- (void)setParsecSearchSession:(id)arg1;
+- (id)supportedStyleOverrides;
 
 @end

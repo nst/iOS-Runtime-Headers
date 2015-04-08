@@ -18,10 +18,7 @@
 @property(copy) NSNumber * instanceID;
 @property(copy) NSString * type;
 
-+ (id)serviceTypeFromUUIDString:(id)arg1;
-
 - (void).cxx_destruct;
-- (id)_mandatoryCharacteristicsForServiceType:(id)arg1;
 - (BOOL)_updateAndValidateCharacteristics;
 - (BOOL)_updateCharacteristic:(id)arg1;
 - (BOOL)_validateMandatoryCharacteristics;
@@ -39,6 +36,5 @@
 - (void)setInstanceID:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)type;
-- (id)validateAssociatedServiceType:(id)arg1;
 
 @end

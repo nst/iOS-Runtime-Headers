@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCDatabaseManager, NSObject<OS_dispatch_queue>;
+@class BRCAccountSession, NSObject<OS_dispatch_queue>;
 
 @interface BRCStagePersistedState : NSObject <NSSecureCoding> {
-    BRCDatabaseManager *_dbManager;
     long _latestGCStartTime;
     NSObject<OS_dispatch_queue> *_queue;
+    BRCAccountSession *_session;
 }
 
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 
-+ (id)loadFromClientStateInDBManager:(id)arg1;
++ (id)loadFromClientStateInSession:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

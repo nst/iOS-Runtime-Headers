@@ -61,9 +61,9 @@
 - (BOOL)editingAccessoryShouldAppearForCell:(id)arg1;
 - (BOOL)editingAccessoryShouldFadeForCell:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })editingAccessoryStartingRectForCell:(id)arg1 forNewEditingState:(BOOL)arg2 showingDeleteConfirmation:(BOOL)arg3;
-- (void)getTextLabelRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 detailTextLabelRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forCell:(id)arg3;
+- (void)getTextLabelRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 detailTextLabelRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forCell:(id)arg3 rowWidth:(float)arg4;
 - (id)imageViewForCell:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSizeForCell:(id)arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSizeForCell:(id)arg1 rowWidth:(float)arg2;
 - (void)layoutSubviewsOfCell:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })reorderControlEndingRectForCell:(id)arg1 forNewEditingState:(BOOL)arg2 showingDeleteConfirmation:(BOOL)arg3;
 - (BOOL)reorderControlShouldAppearForCell:(id)arg1;
@@ -76,5 +76,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectedBackgroundEndingRectForCell:(id)arg1 forNewEditingState:(BOOL)arg2;
 - (id)textLabelForCell:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForCell:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForCell:(id)arg1 rowWidth:(float)arg2;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray, NSNumber, NSString, NSURL;
+@class NSArray, NSDictionary, NSNumber, NSString, NSURL;
 
 @interface PKPaymentRegistrationResponse : PKPaymentWebServiceResponse {
     NSURL *_brokerURL;
@@ -11,6 +11,8 @@
     NSString *_deviceIdentifier;
     NSNumber *_maxCards;
     NSURL *_paymentServicesURL;
+    NSString *_primaryRegion;
+    NSDictionary *_regions;
     NSURL *_trustedServiceManagerURL;
 }
 
@@ -20,6 +22,8 @@
 @property(retain) NSString * deviceIdentifier;
 @property(retain) NSNumber * maxCards;
 @property(retain) NSURL * paymentServicesURL;
+@property(readonly) NSString * primaryRegion;
+@property(retain) NSDictionary * regions;
 @property(retain) NSURL * trustedServiceManagerURL;
 
 - (id)brokerURL;
@@ -30,12 +34,15 @@
 - (id)initWithData:(id)arg1;
 - (id)maxCards;
 - (id)paymentServicesURL;
+- (id)primaryRegion;
+- (id)regions;
 - (void)setBrokerURL:(id)arg1;
 - (void)setCardsOnFile:(id)arg1;
 - (void)setCertificates:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
 - (void)setMaxCards:(id)arg1;
 - (void)setPaymentServicesURL:(id)arg1;
+- (void)setRegions:(id)arg1;
 - (void)setTrustedServiceManagerURL:(id)arg1;
 - (id)trustedServiceManagerURL;
 

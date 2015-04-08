@@ -10,6 +10,7 @@
     NSBundle *_bundle;
     CUICatalog *_catalog;
     _UICache *_imageCache;
+    BOOL _isStarkAssetManager;
     BOOL _managingUIKitAssets;
     _UIAssetManager *_nextAssetManager;
     int _preferredIdiom;
@@ -17,6 +18,8 @@
     float _preferredScale;
     UITraitCollection *_preferredTraitCollection;
     CUIMutableCatalog *_runtimeCatalog;
+    _UIAssetManager *_starkAssetManager;
+    long _starkAssetManagerOnceToken;
     long onceToken_runtimeCatalog;
 }
 
@@ -28,12 +31,8 @@
 @property(retain) UITraitCollection * preferredTraitCollection;
 @property(readonly) CUIMutableCatalog * runtimeCatalog;
 
-+ (id)_assetManagerCache;
 + (void)_convertTraitCollection:(id)arg1 toCUIScale:(float*)arg2 CUIIdiom:(int*)arg3 UIKitIdiom:(int*)arg4 subtype:(int*)arg5;
-+ (void)_dropResourceReferencesForURL:(id)arg1;
-+ (void)_saveAssetManager:(id)arg1 forBundle:(id)arg2 lock:(BOOL)arg3;
 + (int)_userInterfaceIdiomForDeviceClass:(unsigned int)arg1;
-+ (float)_watchScreenScale;
 + (id)assetManagerForBundle:(id)arg1;
 + (id)createAssetNamed:(id)arg1 fromBundle:(id)arg2;
 + (id)sharedRuntimeAssetMap;
@@ -41,13 +40,12 @@
 
 - (id)_assetFromMapForName:(id)arg1;
 - (id)_catalog;
-- (void)_clearCachedResources;
 - (void)_clearCachedResources:(id)arg1;
-- (void)_disconnectImageAssets;
-- (id)_initWithName:(id)arg1 inBundle:(id)arg2 idiom:(int)arg3 lock:(BOOL)arg4;
+- (BOOL)_imageBelongsToUIKit:(id)arg1;
 - (void)_insertAssetIntoMap:(id)arg1 forName:(id)arg2;
 - (BOOL)_managingUIKitAssets;
 - (void)_removeAssetFromMap:(id)arg1;
+- (BOOL)_starkAssetManager;
 - (id)bundle;
 - (id)carFileName;
 - (id)dataNamed:(id)arg1;

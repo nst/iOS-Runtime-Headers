@@ -19,7 +19,6 @@
 - (void)dealloc;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (id)init;
-- (id)initForThemeAssetMapperWithCapacity:(unsigned int)arg1;
 - (id)initWithCFDictionary:(struct __CFDictionary { }*)arg1;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithCapacity:(unsigned int)arg1 keyCallBacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); }*)arg2 valueCallBacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;

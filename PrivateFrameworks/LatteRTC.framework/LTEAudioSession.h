@@ -32,9 +32,12 @@
 - (id)delegate;
 - (void)deregisterBlocksForDelegateNotifications;
 - (int)direction;
+- (id)initWithLocalAddress:(id)arg1 callID:(id)arg2 error:(id*)arg3;
 - (id)initWithLocalAddress:(id)arg1 error:(id*)arg2;
+- (id)initWithLocalAddress:(id)arg1 isOriginator:(BOOL)arg2 callID:(id)arg3 error:(id*)arg4;
 - (id)initWithLocalAddress:(id)arg1 isOriginator:(BOOL)arg2 error:(id*)arg3;
-- (id)initWithLocalAddress:(id)arg1 networkSockets:(id)arg2 isOriginator:(BOOL)arg3 error:(id*)arg4;
+- (id)initWithLocalAddress:(id)arg1 networkSockets:(id)arg2 isOriginator:(BOOL)arg3 callID:(id)arg4 error:(id*)arg5;
+- (id)initWithNetworkSockets:(id)arg1 isOriginator:(BOOL)arg2 callID:(id)arg3 error:(id*)arg4;
 - (id)initWithNetworkSockets:(id)arg1 isOriginator:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)isRTCPEnabled;
 - (BOOL)isRTCPTimeOutEnabled;

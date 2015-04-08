@@ -5,6 +5,7 @@
 @class NSMutableArray;
 
 @interface TSAPdfHyperlinkController : NSObject {
+    NSMutableArray *mDestinations;
     NSMutableArray *mHyperlinks;
 }
 

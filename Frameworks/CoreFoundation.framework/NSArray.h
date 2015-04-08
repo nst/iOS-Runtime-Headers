@@ -9,7 +9,7 @@
 
 @class AXEventPathInfoRepresentation, IMMessage, IMMessageItem, NSDictionary, NSString;
 
-@interface NSArray : NSObject <CKRecordValue, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable> {
+@interface NSArray : NSObject <CKRecordValue, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable, PQLBindable> {
 }
 
 @property(retain,readonly) IMMessageItem * __imLastMessageItem;
@@ -35,10 +35,8 @@
 + (id)arrayWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (id)arrayWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
 + (id)arrayWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
-+ (id)arrayWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
 + (id)arrayWithContentsOfFile:(id)arg1;
 + (id)arrayWithContentsOfURL:(id)arg1;
-+ (id)arrayWithInts:(int*)arg1 count:(unsigned int)arg2;
 + (id)arrayWithInts:(int*)arg1 count:(unsigned int)arg2;
 + (id)arrayWithObject:(id)arg1;
 + (id)arrayWithObjects:(id)arg1;
@@ -49,7 +47,6 @@
 + (id)arrayWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
 + (id)arrayWithSet:(id)arg1;
 + (id)arrayWithSet:(id)arg1 copyItems:(BOOL)arg2;
-+ (id)arrayWithUIntegers:(unsigned int*)arg1 count:(unsigned int)arg2;
 + (id)arrayWithValues:(id)arg1 inBlock:(id)arg2;
 + (id)axArrayByIgnoringNilElementsWithCount:(unsigned int)arg1;
 + (id)bw_selectedInputsArrayForBuiltInMicRouteDictionary:(id)arg1 dataSource:(id)arg2 polarPattern:(unsigned long)arg3;
@@ -57,6 +54,9 @@
 + (id)newArrayWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 + (id)newWithContentsOf:(id)arg1 immutable:(BOOL)arg2;
 + (BOOL)supportsSecureCoding;
++ (id)tsu_arrayWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
++ (id)tsu_arrayWithInts:(int*)arg1 count:(unsigned int)arg2;
++ (id)tsu_arrayWithUIntegers:(unsigned int*)arg1 count:(unsigned int)arg2;
 
 - (id)CAMLType;
 - (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
@@ -177,8 +177,6 @@
 - (id)allObjectsWithClass:(Class)arg1;
 - (id)allObjectsWithClass:(Class)arg1;
 - (void)appendJsonStringToString:(id)arg1;
-- (void)appendJsonStringToString:(id)arg1;
-- (id)arrayByAddingNonContainedObjectsFromArray:(id)arg1;
 - (id)arrayByAddingNonContainedObjectsFromArray:(id)arg1;
 - (id)arrayByAddingObject:(id)arg1;
 - (id)arrayByAddingObjectsFromArray:(id)arg1;
@@ -186,19 +184,13 @@
 - (id)arrayByExcludingObjectsInArray:(id)arg1;
 - (id)arrayByExcludingToObjectsInArray:(id)arg1;
 - (id)arrayByFlattening;
-- (id)arrayByFlattening;
 - (id)arrayByPerformingSpecifierUpdatesUsingBlock:(id)arg1;
 - (id)arrayByRemovingObject:(id)arg1;
 - (id)arrayByRemovingObjectsFromArray:(id)arg1;
 - (id)arrayByRemovingObjectsIdenticalToObjectsInArray:(id)arg1;
-- (id)arrayByRemovingObjectsIdenticalToObjectsInArray:(id)arg1;
-- (id)arrayByReversingOrder;
 - (id)arrayByReversingOrder;
 - (id)arrayByTransformingWithBlock:(id)arg1;
-- (id)arrayByTransformingWithBlock:(id)arg1;
 - (id)arrayOfObjectsPassingTest:(id)arg1;
-- (id)arrayOfObjectsPassingTest:(id)arg1;
-- (id)arrayWithObjectsInSet:(id)arg1;
 - (id)arrayWithObjectsInSet:(id)arg1;
 - (id)assetForIdentifier:(id)arg1;
 - (BOOL)b_boolAtIndex:(unsigned int)arg1;
@@ -273,11 +265,9 @@
 - (void)enumerateObjectsUsingBlock:(id)arg1;
 - (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (void)enumerateSnapshotObjectsUsingBlock:(id)arg1;
-- (void)enumerateSnapshotObjectsUsingBlock:(id)arg1;
 - (id)filteredArrayUsingPredicate:(id)arg1;
 - (id)firstObject;
 - (id)firstObjectCommonWithArray:(id)arg1;
-- (id)firstObjectPassingTest:(id)arg1;
 - (id)firstObjectPassingTest:(id)arg1;
 - (id)firstObjectPassingTest:(id)arg1;
 - (id)firstObjectPassingTest:(id)arg1;
@@ -296,13 +286,11 @@
 - (unsigned int)indexOfObjectPassingTest:(id)arg1;
 - (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (unsigned int)indexOfSmallestObject;
-- (unsigned int)indexOfSmallestObject;
 - (unsigned int)indexOfSpecifierWithID:(id)arg1;
 - (id)indexesOfObject:(id)arg1;
 - (id)indexesOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)indexesOfObjectIdenticalTo:(id)arg1;
 - (id)indexesOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)indexesOfObjects:(id)arg1;
 - (id)indexesOfObjects:(id)arg1;
 - (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (id)indexesOfObjectsPassingTest:(id)arg1;
@@ -314,15 +302,11 @@
 - (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
 - (id)initWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
-- (id)initWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithColorArray:(const struct RepeatedPtrField<TSP::Color> { void **x1; int x2; int x3; int x4; }*)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
-- (id)initWithGeometryArray:(const struct RepeatedPtrField<TSD::GeometryArchive> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (id)initWithInts:(int*)arg1 count:(unsigned int)arg2;
 - (id)initWithInts:(int*)arg1 count:(unsigned int)arg2;
 - (id)initWithObject:(id)arg1;
 - (id)initWithObjects:(id)arg1;
@@ -331,17 +315,13 @@
 - (id)initWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
-- (id)initWithProtobufStringArray:(const struct RepeatedPtrField<std::__1::basic_string<char> > { void **x1; int x2; int x3; int x4; }*)arg1;
 - (id)initWithSet:(id)arg1;
 - (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
-- (id)initWithUInt32Array:(const struct RepeatedField<unsigned int> { unsigned int *x1; int x2; int x3; }*)arg1;
-- (id)initWithUIntegers:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (id)intersectionWithArray:(id)arg1;
 - (id)intersectionWithArray:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToArray:(id)arg1;
-- (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (BOOL)isNSArray__;
+- (BOOL)kn_isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (id)lastFinishedMessage;
 - (id)lastIncomingFinishedMessage;
 - (id)lastIncomingMessage;
@@ -401,7 +381,6 @@
 - (unsigned int)pl_indexOfLastObjectPassingTest:(id)arg1;
 - (id)pl_shortDescription;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
-- (int)propertyAtIndex:(unsigned int)arg1;
 - (id)prs_arrayAtIndex:(unsigned int)arg1;
 - (id)prs_dictionaryAtIndex:(unsigned int)arg1;
 - (id)prs_filterObjectsUsingBlock:(id)arg1;
@@ -411,7 +390,6 @@
 - (id)prs_stringAtIndex:(unsigned int)arg1;
 - (id)pu_localizedComposedStringThatFitsWidth:(float)arg1 withMeasuringLabel:(id)arg2;
 - (id)pu_localizedComposedStringWithCount:(unsigned int)arg1;
-- (id)rangeCheckedObjectAtIndex:(unsigned int)arg1;
 - (id)rangeCheckedObjectAtIndex:(unsigned int)arg1;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
@@ -428,17 +406,12 @@
 - (id)safari_mapObjectsUsingBlock:(id)arg1;
 - (id)safari_numberAtIndex:(unsigned int)arg1;
 - (id)safari_stringAtIndex:(unsigned int)arg1;
-- (void)saveToColorArray:(struct RepeatedPtrField<TSP::Color> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (void)saveToGeometryArray:(struct RepeatedPtrField<TSD::GeometryArchive> { void **x1; int x2; int x3; int x4; }*)arg1 archiver:(id)arg2;
-- (void)saveToProtobufStringArray:(struct RepeatedPtrField<std::__1::basic_string<char> > { void **x1; int x2; int x3; int x4; }*)arg1;
-- (void)saveToUInt32Array:(struct RepeatedField<unsigned int> { unsigned int *x1; int x2; int x3; }*)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
+- (void)sfu_appendJsonStringToString:(id)arg1;
 - (id)shortDescription;
 - (id)shortDescription;
-- (id)shortDescription;
-- (id)shortDescriptionWithIndent:(id)arg1;
-- (id)shortDescriptionWithIndent:(id)arg1;
-- (id)shortDescriptionWithIndent:(id)arg1;
+- (id)shortDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2;
+- (id)shortDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2;
 - (id)sortedArrayFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingComparator:(id)arg3;
 - (id)sortedArrayHint;
 - (id)sortedArrayUsingComparator:(id)arg1;
@@ -450,10 +423,52 @@
 - (id)sortedArrayWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
 - (id)specifierForID:(id)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (id)stringsByAppendingPathComponent:(id)arg1;
 - (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)subarraysOfSize:(unsigned int)arg1;
-- (id)uniqueObjects;
+- (id)tsch_initTSCHChartGridValuesArrayWithProtobufGridRowArray:(const struct RepeatedPtrField<TSCH::GridRow> { void **x1; int x2; int x3; int x4; }*)arg1;
+- (id)tsch_initTSCHChartGridValuesWithProtobufGridRow:(const struct GridRow { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSCH::GridValue> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
+- (void)tsch_saveTSCHChartGridValuesArrayToProtobufGridRowArray:(struct RepeatedPtrField<TSCH::GridRow> { void **x1; int x2; int x3; int x4; }*)arg1;
+- (void)tsch_saveTSCHChartGridValuesToProtobufGridRow:(struct GridRow { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSCH::GridValue> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
+- (id)tsd_initWithExteriorTextWrapArray:(const struct RepeatedPtrField<TSD::ExteriorTextWrapArchive> { void **x1; int x2; int x3; int x4; }*)arg1;
+- (id)tsd_initWithGeometryArray:(const struct RepeatedPtrField<TSD::GeometryArchive> { void **x1; int x2; int x3; int x4; }*)arg1;
+- (void)tsd_saveToExteriorTextWrapArray:(struct RepeatedPtrField<TSD::ExteriorTextWrapArchive> { void **x1; int x2; int x3; int x4; }*)arg1 archiver:(id)arg2;
+- (void)tsd_saveToGeometryArray:(struct RepeatedPtrField<TSD::GeometryArchive> { void **x1; int x2; int x3; int x4; }*)arg1 archiver:(id)arg2;
+- (void)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 completion:(id)arg3;
+- (id)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (id)tsp_initWithColorArray:(const struct RepeatedPtrField<TSP::Color> { void **x1; int x2; int x3; int x4; }*)arg1;
+- (id)tsp_initWithNSRangeArray:(const struct RepeatedPtrField<TSP::Range> { void **x1; int x2; int x3; int x4; }*)arg1;
+- (id)tsp_initWithProtobufStringArray:(const struct RepeatedPtrField<std::__1::basic_string<char> > { void **x1; int x2; int x3; int x4; }*)arg1;
+- (id)tsp_initWithProtobufUUIDArray:(const struct RepeatedPtrField<TSP::UUID> { void **x1; int x2; int x3; int x4; }*)arg1;
+- (id)tsp_initWithUInt32Array:(const struct RepeatedField<unsigned int> { unsigned int *x1; int x2; int x3; }*)arg1;
+- (void)tsp_saveToColorArray:(struct RepeatedPtrField<TSP::Color> { void **x1; int x2; int x3; int x4; }*)arg1;
+- (void)tsp_saveToNSRangeArray:(struct RepeatedPtrField<TSP::Range> { void **x1; int x2; int x3; int x4; }*)arg1;
+- (void)tsp_saveToProtobufStringArray:(struct RepeatedPtrField<std::__1::basic_string<char> > { void **x1; int x2; int x3; int x4; }*)arg1;
+- (void)tsp_saveToProtobufUUIDArray:(struct RepeatedPtrField<TSP::UUID> { void **x1; int x2; int x3; int x4; }*)arg1;
+- (void)tsp_saveToUInt32Array:(struct RepeatedField<unsigned int> { unsigned int *x1; int x2; int x3; }*)arg1;
+- (int)tss_propertyAtIndex:(unsigned int)arg1;
+- (id)tsu_anyObject;
+- (id)tsu_arrayByAddingNonContainedObjectsFromArray:(id)arg1;
+- (id)tsu_arrayByFlattening;
+- (id)tsu_arrayByMappingObjectsUsingBlock:(id)arg1;
+- (id)tsu_arrayByRemovingObjectsIdenticalToObjectsInArray:(id)arg1;
+- (id)tsu_arrayByReversingOrder;
+- (id)tsu_arrayByTransformingWithBlock:(id)arg1;
+- (id)tsu_arrayOfObjectsPassingTest:(id)arg1;
+- (id)tsu_arrayWithObjectsInSet:(id)arg1;
+- (void)tsu_enumerateSnapshotObjectsUsingBlock:(id)arg1;
+- (id)tsu_firstObjectPassingTest:(id)arg1;
+- (unsigned int)tsu_indexOfSmallestObject;
+- (id)tsu_indexesOfObjects:(id)arg1;
+- (id)tsu_initWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
+- (id)tsu_initWithInts:(int*)arg1 count:(unsigned int)arg2;
+- (id)tsu_initWithUIntegers:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (id)tsu_intersectionWithArray:(id)arg1;
+- (id)tsu_objectPriorToObject:(id)arg1;
+- (id)tsu_onlyObject;
+- (id)tsu_rangeCheckedObjectAtIndex:(unsigned int)arg1;
+- (id)tsu_uniqueObjects;
 - (id)uniqueObjects;
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;

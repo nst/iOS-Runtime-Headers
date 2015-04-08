@@ -10,9 +10,10 @@
     double _locationLatitude;
     double _locationLongitude;
     unsigned long long _mapsIdentifier;
+    NSString *_mapsName;
     NSString *_name;
     NSString *_phoneNumber;
-    NSString *_shortName;
+    NSString *_rawName;
     NSURL *_url;
 }
 
@@ -23,9 +24,10 @@
 @property double locationLatitude;
 @property double locationLongitude;
 @property unsigned long long mapsIdentifier;
+@property(copy) NSString * mapsName;
 @property(copy) NSString * name;
 @property(copy) NSString * phoneNumber;
-@property(copy) NSString * shortName;
+@property(copy) NSString * rawName;
 @property(setter=setURL:,copy) NSURL * url;
 
 + (BOOL)supportsSecureCoding;
@@ -44,19 +46,21 @@
 - (double)locationLatitude;
 - (double)locationLongitude;
 - (unsigned long long)mapsIdentifier;
+- (id)mapsName;
 - (id)name;
 - (id)phoneNumber;
+- (id)rawName;
 - (void)setIndustryCategory:(id)arg1;
 - (void)setIndustryCode:(int)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLocationLatitude:(double)arg1;
 - (void)setLocationLongitude:(double)arg1;
 - (void)setMapsIdentifier:(unsigned long long)arg1;
+- (void)setMapsName:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
-- (void)setShortName:(id)arg1;
+- (void)setRawName:(id)arg1;
 - (void)setURL:(id)arg1;
-- (id)shortName;
 - (id)url;
 
 @end

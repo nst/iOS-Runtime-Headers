@@ -5,9 +5,7 @@
 @interface CAMPhoneApplicationSpec : CAMApplicationSpec {
 }
 
-- (int)bottomBarOrientation;
 - (BOOL)shouldCreateAvalancheIndicator;
-- (BOOL)shouldCreateBottomBar;
 - (BOOL)shouldCreateElapsedTimeView;
 - (BOOL)shouldCreateFiltersButton;
 - (BOOL)shouldCreateFlashButton;
@@ -20,7 +18,6 @@
 - (BOOL)shouldCreateSlalomIndicator;
 - (BOOL)shouldCreateStillDuringVideo;
 - (BOOL)shouldCreateTimerButton;
-- (BOOL)shouldCreateTopBar;
 - (BOOL)shouldCreateZoomSlider;
 
 @end

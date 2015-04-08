@@ -89,6 +89,7 @@
 - (void)_resetSearchFallbackNumbers;
 - (void)_sendStateChange:(int)arg1;
 - (id)_spliceLeftTimeSpans:(id)arg1 andNewTimeSpans:(id)arg2;
+- (void)_transitionToConflictFoundStateAndSearch;
 - (BOOL)availabilityRequestInProgress;
 - (id)availabilityRequestsQueue;
 - (double)availabilitySearchDurationMultiplier;

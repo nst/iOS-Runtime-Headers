@@ -2,6 +2,8 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class CALayer;
+
 @interface WebAVVideoLayer : CALayer <AVVideoLayer> {
     struct RetainPtr<WebAVPlayerController> { 
         void *m_ptr; 
@@ -21,11 +23,15 @@
             float height; 
         } size; 
     } _videoRect;
+    struct RetainPtr<CALayer> { 
+        void *m_ptr; 
+    } _videoSublayer;
 }
 
 @property(getter=isReadyForDisplay) BOOL readyForDisplay;
 @property int videoLayerGravity;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
+@property(retain) CALayer * videoSublayer;
 
 + (id)videoLayer;
 
@@ -39,7 +45,9 @@
 - (void)setReadyForDisplay:(BOOL)arg1;
 - (void)setVideoLayerGravity:(int)arg1;
 - (void)setVideoRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setVideoSublayer:(id)arg1;
 - (int)videoLayerGravity;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })videoRect;
+- (id)videoSublayer;
 
 @end

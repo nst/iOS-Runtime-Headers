@@ -39,6 +39,7 @@
 - (void)setUnmodifiedInput:(id)arg1;
 - (id)shiftModifiedInput;
 - (void)translateKeycode;
+- (void)translateStringToKeycode;
 - (id)unmodifiedInput;
 
 @end

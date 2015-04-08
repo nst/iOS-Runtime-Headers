@@ -19,6 +19,8 @@
 @property(retain) UILabel * recipientsLabel;
 @property(retain) UIImageView * unreadImageView;
 
++ (float)starkCellMarginWidth;
+
 - (id)dateLabel;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

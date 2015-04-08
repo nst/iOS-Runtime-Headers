@@ -7,27 +7,29 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class KNSlideNode, NSSet;
+@class KNSlideNode, NSOrderedSet;
 
 @interface KNSlideCollectionSelection : TSKSelection {
     KNSlideNode *mSlideNodeToEdit;
-    NSSet *mSlideNodes;
+    NSOrderedSet *mSlideNodes;
 }
 
 @property(getter=isEmpty,readonly) BOOL empty;
 @property(readonly) KNSlideNode * slideNodeToEdit;
-@property(readonly) NSSet * slideNodes;
+@property(readonly) NSOrderedSet * slideNodes;
+
++ (Class)archivedSelectionClass;
 
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithArchive:(const struct SlideCollectionSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; struct RepeatedPtrField<KN::SlideCollectionSelectionArchive_OutlineSelection> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Range {} *x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct SlideCollectionSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Reference {} *x6; struct RepeatedPtrField<KN::SlideCollectionSelectionArchive_OutlineSelection> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct Range {} *x8; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithSlideNode:(id)arg1;
 - (id)initWithSlideNodes:(id)arg1 slideNodeToEdit:(id)arg2;
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
-- (void)saveToArchive:(struct SlideCollectionSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; struct RepeatedPtrField<KN::SlideCollectionSelectionArchive_OutlineSelection> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Range {} *x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct SlideCollectionSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Reference {} *x6; struct RepeatedPtrField<KN::SlideCollectionSelectionArchive_OutlineSelection> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct Range {} *x8; }*)arg1 archiver:(id)arg2;
 - (id)slideNodeToEdit;
 - (id)slideNodes;
 

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <NSFilePresenter>, NSError, NSMutableSet, NSSet, NSString, NSURL, NSUUID;
+@class <NSFilePresenter>, NSError, NSMutableSet, NSSet, NSString, NSUUID;
 
-@interface TSPTemporaryObjectContextDelegate : NSObject <TSPFileCoordinatorDelegate, TSPObjectContextDelegate> {
+@interface TSPTemporaryObjectContextDelegate : NSObject <TSPObjectContextDelegate> {
     NSError *_error;
     BOOL _ignoreDocumentSupport;
-    NSURL *_packageURL;
     NSMutableSet *_persistenceWarnings;
 }
 
 @property(readonly) BOOL areNewExternalReferencesToDataAllowed;
 @property(readonly) NSUUID * baseUUIDForObjectUUID;
-@property(readonly) BOOL canUpgradeDocumentSupport;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSError * error;
@@ -21,7 +19,8 @@
 @property(readonly) unsigned int hash;
 @property BOOL ignoreDocumentSupport;
 @property(readonly) BOOL isDocumentSupportTemporary;
-@property(copy) NSURL * packageURL;
+@property(readonly) BOOL isInCollaborationMode;
+@property(readonly) BOOL isInReadOnlyMode;
 @property(readonly) NSSet * persistenceWarnings;
 @property(readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
 @property(readonly) Class superclass;
@@ -31,13 +30,11 @@
 - (id)error;
 - (BOOL)ignoreDocumentSupport;
 - (id)init;
-- (id)initWithPackageURL:(id)arg1;
-- (id)packageURL;
-- (void)performReadUsingAccessor:(id)arg1;
 - (id)persistenceWarnings;
-- (id)persistenceWarningsForData:(id)arg1 isReadable:(BOOL)arg2 isExternal:(BOOL)arg3;
+- (id)persistenceWarningsForData:(id)arg1 flags:(unsigned int)arg2;
 - (void)presentPersistenceError:(id)arg1;
+- (void)resumeAutosave;
 - (void)setIgnoreDocumentSupport:(BOOL)arg1;
-- (void)setPackageURL:(id)arg1;
+- (void)suspendAutosave;
 
 @end

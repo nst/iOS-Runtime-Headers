@@ -19,6 +19,7 @@
 - (BOOL)_isHostedInAnotherProcess;
 - (BOOL)_isWindowServerHostingManaged;
 - (BOOL)_matchingOptions:(id)arg1;
+- (BOOL)_usesWindowServerHitTesting;
 - (void)invalidate;
 - (void)setViewServiceHostView:(id)arg1;
 - (id)viewServiceHostView;

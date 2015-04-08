@@ -4,22 +4,22 @@
 
 @class NSArray;
 
-@interface CKFetchSharesOperationInfo : CKOperationInfo <NSSecureCoding> {
-    BOOL _isFetchAllSharesOperation;
-    NSArray *_shareIDsToFetch;
+@interface CKFetchSharesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
+    NSArray *_shareIDs;
+    NSArray *_zoneIDs;
 }
 
-@property BOOL isFetchAllSharesOperation;
-@property(retain) NSArray * shareIDsToFetch;
+@property(retain) NSArray * shareIDs;
+@property(retain) NSArray * zoneIDs;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isFetchAllSharesOperation;
-- (void)setIsFetchAllSharesOperation:(BOOL)arg1;
-- (void)setShareIDsToFetch:(id)arg1;
-- (id)shareIDsToFetch;
+- (void)setShareIDs:(id)arg1;
+- (void)setZoneIDs:(id)arg1;
+- (id)shareIDs;
+- (id)zoneIDs;
 
 @end

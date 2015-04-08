@@ -43,6 +43,7 @@
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (float)returnKeySymbolFrameInset;
+- (int)rowLimitForKey:(id)arg1;
 - (struct CGPoint { float x1; float x2; })secondaryShiftKeyOffset;
 - (void)setupLayoutSegments;
 - (float)shiftKeyFontSize;
@@ -51,7 +52,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shiftKeySymbolFrame;
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
-- (BOOL)shouldClearBaseDisplayStringForVariants;
+- (BOOL)shouldClearBaseDisplayStringForVariants:(id)arg1;
 - (float)skinnyKeyThreshold;
 - (float)smallKanaKeyFontSize;
 - (float)spaceKeyFontSize;
@@ -59,7 +60,7 @@
 - (float)symbolFrameInset;
 - (id)thinKeycapsFontName;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantDisplayFrameInsets;
-- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2;
+- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2 rowLimit:(int)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;
 - (float)zhuyinFirstToneKeyFontSize;
 

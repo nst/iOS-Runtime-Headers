@@ -9,14 +9,12 @@
     NSMutableDictionary *_sampleChannelsDaily;
     NSMutableDictionary *_sampleChannelsHalfHour;
     NSMutableDictionary *_sampleChannelsSignificantBattery;
-    PLEntryNotificationOperatorComposition *_wakeEntryNotifications;
 }
 
 @property(retain) PLEntryNotificationOperatorComposition * batteryLevelChangedNotifications;
 @property(retain) NSMutableDictionary * sampleChannelsDaily;
 @property(retain) NSMutableDictionary * sampleChannelsHalfHour;
 @property(retain) NSMutableDictionary * sampleChannelsSignificantBattery;
-@property(retain) PLEntryNotificationOperatorComposition * wakeEntryNotifications;
 
 + (id)entryEventBackwardDefinitionAmcStatsPerfCounters;
 + (id)entryEventBackwardDefinitionAppleEmbeddedPcieLinkStates;
@@ -92,7 +90,5 @@
 - (void)setSampleChannelsDaily:(id)arg1;
 - (void)setSampleChannelsHalfHour:(id)arg1;
 - (void)setSampleChannelsSignificantBattery:(id)arg1;
-- (void)setWakeEntryNotifications:(id)arg1;
-- (id)wakeEntryNotifications;
 
 @end

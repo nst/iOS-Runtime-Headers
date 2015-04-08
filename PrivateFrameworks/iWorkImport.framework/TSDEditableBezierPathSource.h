@@ -31,13 +31,11 @@
 @property(readonly) TSDBezierNode * firstNode;
 @property(readonly) BOOL hasSelectedNode;
 @property(readonly) BOOL isCompound;
-@property(readonly) BOOL isCurved;
 @property(readonly) BOOL isOpen;
 @property(readonly) TSDBezierNode * lastNode;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } nodeBounds;
 @property(retain) NSArray * nodeTypes;
 @property(retain) NSMutableArray * nodes;
-@property(readonly) struct CGPoint { float x1; float x2; } pathDelta;
 @property(readonly) struct CGPath { }* subpathForSelection;
 @property(retain) NSMutableArray * subpaths;
 
@@ -51,7 +49,6 @@
 - (void)alignToOrigin;
 - (BOOL)allNodesSelected;
 - (id)bezierNodeUnderPoint:(struct CGPoint { float x1; float x2; })arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 andTolerance:(float)arg3 returningType:(int*)arg4;
-- (BOOL)bezierPathUnderPoint:(struct CGPoint { float x1; float x2; })arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 tolerance:(float)arg3;
 - (id)bezierPathWithoutFlips;
 - (BOOL)canCloseSelectedNodes;
 - (BOOL)canConnectSelectedNodes;
@@ -73,23 +70,20 @@
 - (id)description;
 - (void)deselectAllNodes;
 - (float)distanceToPoint:(struct CGPoint { float x1; float x2; })arg1 subpathIndex:(unsigned int*)arg2 elementIndex:(unsigned int*)arg3 tValue:(float*)arg4 threshold:(float)arg5;
-- (id)editableBezierPathStartingAtZero;
 - (id)firstNode;
 - (BOOL)hasSelectedNode;
 - (id)init;
-- (id)initWithArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; bool x9; bool x10; int x11; unsigned int x12[1]; }*)arg1;
-- (id)insertNodeAtPoint:(struct CGPoint { float x1; float x2; })arg1 tolerance:(float)arg2;
+- (id)initWithArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct PointPathSourceArchive {} *x5; struct ScalarPathSourceArchive {} *x6; struct BezierPathSourceArchive {} *x7; struct CalloutPathSourceArchive {} *x8; struct ConnectionLinePathSourceArchive {} *x9; struct EditableBezierPathSourceArchive {} *x10; bool x11; bool x12; }*)arg1;
 - (BOOL)isCircular;
 - (BOOL)isClosed;
 - (BOOL)isCompound;
-- (BOOL)isCurved;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isOpen;
 - (BOOL)isRectangular;
 - (id)lastNode;
 - (void)lineToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)morphWithMorphInfo:(id)arg1;
 - (void)moveToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
@@ -100,17 +94,13 @@
 - (id)nodes;
 - (void)offsetSelectedEdgesByDelta:(struct CGPoint { float x1; float x2; })arg1;
 - (void)offsetSelectedNodesByDelta:(struct CGPoint { float x1; float x2; })arg1;
-- (void)p_adjustZeroBasedPathUsingDelta:(struct CGPoint { float x1; float x2; })arg1;
-- (void)p_adjustZeroBasedPathUsingDeltaFromPath:(id)arg1 isAdditive:(BOOL)arg2;
-- (struct CGPoint { float x1; float x2; })pathDelta;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })pathFlipTransform;
 - (struct CGPath { }*)pathWithoutFlips;
 - (Class)preferredRepClass;
-- (void)prependDeltaFromZeroBasedPath:(id)arg1;
 - (void)removeLastNode;
 - (void)removeNode:(id)arg1;
 - (void)reverseDirection;
-- (void)saveToArchive:(struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; bool x9; bool x10; int x11; unsigned int x12[1]; }*)arg1;
+- (void)saveToArchive:(struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct PointPathSourceArchive {} *x5; struct ScalarPathSourceArchive {} *x6; struct BezierPathSourceArchive {} *x7; struct CalloutPathSourceArchive {} *x8; struct ConnectionLinePathSourceArchive {} *x9; struct EditableBezierPathSourceArchive {} *x10; bool x11; bool x12; }*)arg1;
 - (void)selectAllNodes;
 - (void)selectSubpathForNode:(id)arg1 toggle:(BOOL)arg2;
 - (void)setBezierPath:(id)arg1;
@@ -133,9 +123,6 @@
 - (void)toggleNode:(id)arg1 toType:(int)arg2 prevNode:(id)arg3 nextNode:(id)arg4;
 - (void)toggleSelectedNodesToType:(int)arg1;
 - (void)transformUsingAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)translateBezierPathToStartAtZero;
-- (void)truncateDelta:(struct CGPoint { float x1; float x2; })arg1;
-- (void)truncateDeltaFromZeroBasedPath:(id)arg1;
 - (void)updateSmoothNodes;
 
 @end

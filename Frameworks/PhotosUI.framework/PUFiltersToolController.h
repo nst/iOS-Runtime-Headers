@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSMutableDictionary, NSString, PUFiltersToolControllerSpec, UICollectionView;
+@class NSArray, NSMutableDictionary, NSString, PUFiltersToolControllerSpec, UICollectionView, UICollectionViewFlowLayout;
 
 @interface PUFiltersToolController : PUPhotoEditToolController <UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView *__collectionView;
+    UICollectionViewFlowLayout *__collectionViewLayout;
     BOOL __needsThumbnails;
     unsigned int __selectedFilterIndex;
     NSMutableDictionary *__thumbnailImages;
@@ -14,6 +15,7 @@
 }
 
 @property(setter=_setCollectionView:,retain) UICollectionView * _collectionView;
+@property(setter=_setCollectionViewLayout:,retain) UICollectionViewFlowLayout * _collectionViewLayout;
 @property(readonly) BOOL _needsThumbnails;
 @property(setter=_setSelectedFilterIndex:) unsigned int _selectedFilterIndex;
 @property(setter=_setThumbnailImages:,retain) NSMutableDictionary * _thumbnailImages;
@@ -25,6 +27,7 @@
 
 - (void).cxx_destruct;
 - (id)_collectionView;
+- (id)_collectionViewLayout;
 - (BOOL)_filterIdentifierIsNoneEffect:(id)arg1;
 - (BOOL)_filterWithIdentifier:(id)arg1 isEqualToFilterWithIdentifier:(id)arg2;
 - (void)_loadStateFromModelAnimated:(BOOL)arg1;
@@ -36,6 +39,7 @@
 - (unsigned int)_selectedFilterIndex;
 - (id)_selectedIndexPath;
 - (void)_setCollectionView:(id)arg1;
+- (void)_setCollectionViewLayout:(id)arg1;
 - (void)_setNeedsThumbnails;
 - (void)_setSelectedFilterIndex:(unsigned int)arg1;
 - (void)_setSelectedFilterIndex:(unsigned int)arg1 animated:(BOOL)arg2 explicitly:(BOOL)arg3;
@@ -43,6 +47,7 @@
 - (id)_thumbnailImageForIndex:(unsigned int)arg1;
 - (id)_thumbnailImages;
 - (void)_updateCollectionView;
+- (void)_updateCollectionViewInsets;
 - (void)_updateEffectSelection;
 - (BOOL)canResetToDefaultValue;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
@@ -59,11 +64,11 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLayoutOrientation:(int)arg1;
 - (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
+- (void)specDidChange;
 - (id)toolbarIcon;
 - (void)updateViewConstraints;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

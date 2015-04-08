@@ -5,6 +5,7 @@
 @class NSData, NSDate, NSString;
 
 @interface CPLRecordChange : NSObject <NSCopying, NSSecureCoding> {
+    unsigned int _alterationTypeFlags;
     unsigned int _changeType;
     NSDate *_dateDeleted;
     NSString *_identifier;
@@ -31,6 +32,7 @@
 + (id)cplAdditionalSecureClassesForProperty:(id)arg1;
 + (id)deleteChangeWithIdentifier:(id)arg1;
 + (id)descriptionForChangeType:(unsigned int)arg1;
++ (int)maxInlineDataSize;
 + (id)newChangeWithIdentifier:(id)arg1 changeType:(unsigned int)arg2;
 + (id)newChangeWithType:(unsigned int)arg1;
 + (id)newRecord;
@@ -40,6 +42,7 @@
 - (void).cxx_destruct;
 - (BOOL)_addRealChangeToChangeBatch:(id)arg1 withStoredRecord:(id)arg2 andApplyToClientCache:(id)arg3 error:(id*)arg4;
 - (BOOL)addExpandedChangesToChangeBatch:(id)arg1 andApplyToClientCache:(id)arg2 error:(id*)arg3;
+- (unsigned int)alterationTypeFlags;
 - (BOOL)applyChange:(id)arg1 copyPropertiesToFinalChange:(id)arg2 forChangeType:(unsigned int)arg3 updatedProperty:(id*)arg4;
 - (void)awakeFromStorage;
 - (unsigned int)changeType;
@@ -82,6 +85,7 @@
 - (id)resources;
 - (id)resourcesDescription;
 - (id)secondaryIdentifier;
+- (void)setAlterationTypeFlags:(unsigned int)arg1;
 - (void)setChangeType:(unsigned int)arg1;
 - (void)setDateDeleted:(id)arg1;
 - (void)setIdentifier:(id)arg1;

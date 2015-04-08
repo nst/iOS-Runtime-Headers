@@ -41,6 +41,7 @@
 - (id)_connectionsForNewOutput:(id)arg1;
 - (id)_connectionsForNewVideoPreviewLayer:(id)arg1;
 - (long)_createFigCaptureSession;
+- (void)_determineMasterClock;
 - (id)_figCaptureSessionConfiguration;
 - (void)_handleConfigurationCommittedNotificationWithPayload:(id)arg1;
 - (void)_handleConfigurationDidBecomeLiveNotificationWithPayload:(id)arg1;
@@ -48,7 +49,7 @@
 - (void)_handleDidStopRunningNotificationWithPayload:(id)arg1;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (void)_handleServerConnectionDiedNotification;
-- (void)_makeConfigurationLive:(id)arg1 masterClock:(struct OpaqueCMClock { }*)arg2;
+- (void)_makeConfigurationLive:(id)arg1;
 - (void)_notifyMediaServerdDied;
 - (void)_notifySessionStarted;
 - (void)_notifySessionStopped;

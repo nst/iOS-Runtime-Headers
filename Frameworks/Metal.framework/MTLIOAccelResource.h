@@ -42,7 +42,7 @@
 @property(readonly) unsigned int hash;
 @property(copy) NSString * label;
 @property(readonly) unsigned int resourceID;
-@property(readonly) struct __IOAccelResource { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __IOAccelDevice {} *x2; struct __IOAccelShared {} *x3; void *x4; unsigned int x5; unsigned long long x6; struct IOAccelClientSharedRO {} *x7; struct IOAccelClientSharedRW {} *x8; unsigned long x9[0]; }* resourceRef;
+@property(readonly) struct __IOAccelResource { }* resourceRef;
 @property(readonly) unsigned int resourceSize;
 @property int responsibleProcess;
 @property(readonly) MTLResourceAllocationInfo * sharedAllocationInfo;
@@ -64,7 +64,7 @@
 - (BOOL)isPurgeable;
 - (id)label;
 - (unsigned int)resourceID;
-- (struct __IOAccelResource { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __IOAccelDevice {} *x2; struct __IOAccelShared {} *x3; void *x4; unsigned int x5; unsigned long long x6; struct IOAccelClientSharedRO {} *x7; struct IOAccelClientSharedRW {} *x8; unsigned long x9[0]; }*)resourceRef;
+- (struct __IOAccelResource { }*)resourceRef;
 - (unsigned int)resourceSize;
 - (int)responsibleProcess;
 - (void)setAllocationInfoShared:(id)arg1 andCached:(id)arg2;

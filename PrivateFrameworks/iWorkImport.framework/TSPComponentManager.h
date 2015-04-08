@@ -21,6 +21,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) TSPComponent * documentComponent;
+@property(readonly) TSPComponent * documentMetadataComponent;
 @property(readonly) TSPComponent * documentObjectContainerComponent;
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL isDocumentComponentTreeModified;
@@ -28,6 +29,7 @@
 @property(readonly) TSPComponent * packageMetadataComponent;
 @property(readonly) Class superclass;
 @property(readonly) TSPComponent * supportComponent;
+@property(readonly) TSPComponent * supportMetadataComponent;
 @property(readonly) TSPComponent * supportObjectContainerComponent;
 @property(retain) TSPComponent * viewStateComponent;
 
@@ -46,6 +48,7 @@
 - (void)discardOrphanedComponents;
 - (id)documentComponent;
 - (id)documentComponentImpl;
+- (id)documentMetadataComponent;
 - (id)documentObjectContainerComponent;
 - (void)endIgnoringCachedObjectEviction;
 - (void)enumerateComponents:(id)arg1;
@@ -67,6 +70,7 @@
 - (BOOL)shouldKeepAllCachedObjectsInMemory;
 - (id)supportComponent;
 - (id)supportComponentImpl;
+- (id)supportMetadataComponent;
 - (id)supportObjectContainerComponent;
 - (void)suspendLoadingModifiedFlushedComponentsAndWait;
 - (void)tearDown;

@@ -14,9 +14,10 @@
 
 @property(readonly) TSDStroke * bodyColumnStroke;
 @property(readonly) TSDStroke * bodyRowStroke;
-@property(readonly) TSDStroke * borderStrokeEvenIfNotVisible;
+@property(readonly) TSDStroke * bodyRowStrokeEvenIfNotVisible;
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) TSDStroke * defaultHorizontalBorderStroke;
+@property(readonly) TSDStroke * defaultHorizontalBorderStrokeEvenIfNotVisible;
 @property(readonly) TSDStroke * defaultVerticalBorderStroke;
 @property(copy,readonly) NSString * description;
 @property(readonly) TSDStroke * footerRowBodyColumnStroke;
@@ -37,16 +38,18 @@
 + (void)initDefaultPropertyMap:(id)arg1 presetID:(unsigned int)arg2 colors:(id)arg3 alternate:(int)arg4;
 + (void)initDefaultStrokePresetListInPropertyMap:(id)arg1 presetID:(unsigned int)arg2 colors:(id)arg3;
 + (id)nonEmphasisTableProperties;
-+ (id)p_magicMoveProperties;
++ (unsigned int)presetIDForStyleID:(id)arg1;
 + (id)properties;
 + (id)propertiesAllowingNSNull;
 + (id)styleIDForPreset:(unsigned int)arg1;
 
 - (id)bodyColumnStroke;
 - (id)bodyRowStroke;
-- (id)borderStrokeEvenIfNotVisible;
+- (id)bodyRowStrokeEvenIfNotVisible;
+- (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
 - (void)dealloc;
 - (id)defaultHorizontalBorderStroke;
+- (id)defaultHorizontalBorderStrokeEvenIfNotVisible;
 - (id)defaultVerticalBorderStroke;
 - (id)exteriorStrokeForStrokePreset:(unsigned int)arg1;
 - (id)footerRowBodyColumnStroke;
@@ -64,13 +67,14 @@
 - (id)horizontalStrokeForStrokePreset:(unsigned int)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(BOOL)arg4;
-- (void)loadTableStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct TableStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FillArchive {} *x3; struct Deprecated_TableStrokeArchive {} *x4; struct Deprecated_TableStrokeArchive {} *x5; struct Deprecated_TableStrokeArchive {} *x6; struct Deprecated_TableStrokeArchive {} *x7; struct Deprecated_TableStrokeArchive {} *x8; struct Deprecated_TableStrokeArchive {} *x9; struct Deprecated_TableStrokeArchive {} *x10; struct Deprecated_TableStrokeArchive {} *x11; struct Deprecated_TableStrokeArchive {} *x12; struct Deprecated_TableStrokeArchive {} *x13; struct Deprecated_TableStrokeArchive {} *x14; struct Deprecated_TableStrokeArchive {} *x15; bool x16; bool x17; bool x18; bool x19; bool x20; bool x21; bool x22; bool x23; struct Deprecated_TableStrokeArchive {} *x24; struct Deprecated_TableStrokeArchive {} *x25; struct Deprecated_TableStrokeArchive {} *x26; struct Deprecated_TableStrokeArchive {} *x27; struct StrokePresetListArchive {} *x28; bool x29; bool x30; bool x31; bool x32; bool x33; int x34; int x35; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x36; struct StrokeArchive {} *x37; struct StrokeArchive {} *x38; struct StrokeArchive {} *x39; struct StrokeArchive {} *x40; struct StrokeArchive {} *x41; struct StrokeArchive {} *x42; struct StrokeArchive {} *x43; struct StrokeArchive {} *x44; struct StrokeArchive {} *x45; struct StrokeArchive {} *x46; struct StrokeArchive {} *x47; struct StrokeArchive {} *x48; struct StrokeArchive {} *x49; struct StrokeArchive {} *x50; struct StrokeArchive {} *x51; struct StrokeArchive {} *x52; int x53; unsigned int x54[2]; }*)arg2 unarchiver:(id)arg3;
+- (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
+- (void)loadTableStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct TableStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; struct FillArchive {} *x4; struct Deprecated_TableStrokeArchive {} *x5; struct Deprecated_TableStrokeArchive {} *x6; struct Deprecated_TableStrokeArchive {} *x7; struct Deprecated_TableStrokeArchive {} *x8; struct Deprecated_TableStrokeArchive {} *x9; struct Deprecated_TableStrokeArchive {} *x10; struct Deprecated_TableStrokeArchive {} *x11; struct Deprecated_TableStrokeArchive {} *x12; struct Deprecated_TableStrokeArchive {} *x13; struct Deprecated_TableStrokeArchive {} *x14; struct Deprecated_TableStrokeArchive {} *x15; struct Deprecated_TableStrokeArchive {} *x16; bool x17; bool x18; bool x19; bool x20; bool x21; bool x22; bool x23; bool x24; struct Deprecated_TableStrokeArchive {} *x25; struct Deprecated_TableStrokeArchive {} *x26; struct Deprecated_TableStrokeArchive {} *x27; struct Deprecated_TableStrokeArchive {} *x28; struct StrokePresetListArchive {} *x29; bool x30; bool x31; bool x32; bool x33; bool x34; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x35; int x36; int x37; struct StrokeArchive {} *x38; struct StrokeArchive {} *x39; struct StrokeArchive {} *x40; struct StrokeArchive {} *x41; struct StrokeArchive {} *x42; struct StrokeArchive {} *x43; struct StrokeArchive {} *x44; struct StrokeArchive {} *x45; struct StrokeArchive {} *x46; struct StrokeArchive {} *x47; struct StrokeArchive {} *x48; struct StrokeArchive {} *x49; struct StrokeArchive {} *x50; struct StrokeArchive {} *x51; struct StrokeArchive {} *x52; struct StrokeArchive {} *x53; int x54; }*)arg2 unarchiver:(id)arg3;
 - (SEL)mapThemePropertyMapSelector;
 - (unsigned int)maskForStrokePreset:(unsigned int)arg1;
 - (unsigned int)maskForStrokePresets:(id)arg1;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
-- (void)saveTableStylePropertiesToArchive:(struct TableStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FillArchive {} *x3; struct Deprecated_TableStrokeArchive {} *x4; struct Deprecated_TableStrokeArchive {} *x5; struct Deprecated_TableStrokeArchive {} *x6; struct Deprecated_TableStrokeArchive {} *x7; struct Deprecated_TableStrokeArchive {} *x8; struct Deprecated_TableStrokeArchive {} *x9; struct Deprecated_TableStrokeArchive {} *x10; struct Deprecated_TableStrokeArchive {} *x11; struct Deprecated_TableStrokeArchive {} *x12; struct Deprecated_TableStrokeArchive {} *x13; struct Deprecated_TableStrokeArchive {} *x14; struct Deprecated_TableStrokeArchive {} *x15; bool x16; bool x17; bool x18; bool x19; bool x20; bool x21; bool x22; bool x23; struct Deprecated_TableStrokeArchive {} *x24; struct Deprecated_TableStrokeArchive {} *x25; struct Deprecated_TableStrokeArchive {} *x26; struct Deprecated_TableStrokeArchive {} *x27; struct StrokePresetListArchive {} *x28; bool x29; bool x30; bool x31; bool x32; bool x33; int x34; int x35; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x36; struct StrokeArchive {} *x37; struct StrokeArchive {} *x38; struct StrokeArchive {} *x39; struct StrokeArchive {} *x40; struct StrokeArchive {} *x41; struct StrokeArchive {} *x42; struct StrokeArchive {} *x43; struct StrokeArchive {} *x44; struct StrokeArchive {} *x45; struct StrokeArchive {} *x46; struct StrokeArchive {} *x47; struct StrokeArchive {} *x48; struct StrokeArchive {} *x49; struct StrokeArchive {} *x50; struct StrokeArchive {} *x51; struct StrokeArchive {} *x52; int x53; unsigned int x54[2]; }*)arg1 archiver:(id)arg2;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
+- (void)saveTableStylePropertiesToArchive:(struct TableStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; struct FillArchive {} *x4; struct Deprecated_TableStrokeArchive {} *x5; struct Deprecated_TableStrokeArchive {} *x6; struct Deprecated_TableStrokeArchive {} *x7; struct Deprecated_TableStrokeArchive {} *x8; struct Deprecated_TableStrokeArchive {} *x9; struct Deprecated_TableStrokeArchive {} *x10; struct Deprecated_TableStrokeArchive {} *x11; struct Deprecated_TableStrokeArchive {} *x12; struct Deprecated_TableStrokeArchive {} *x13; struct Deprecated_TableStrokeArchive {} *x14; struct Deprecated_TableStrokeArchive {} *x15; struct Deprecated_TableStrokeArchive {} *x16; bool x17; bool x18; bool x19; bool x20; bool x21; bool x22; bool x23; bool x24; struct Deprecated_TableStrokeArchive {} *x25; struct Deprecated_TableStrokeArchive {} *x26; struct Deprecated_TableStrokeArchive {} *x27; struct Deprecated_TableStrokeArchive {} *x28; struct StrokePresetListArchive {} *x29; bool x30; bool x31; bool x32; bool x33; bool x34; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x35; int x36; int x37; struct StrokeArchive {} *x38; struct StrokeArchive {} *x39; struct StrokeArchive {} *x40; struct StrokeArchive {} *x41; struct StrokeArchive {} *x42; struct StrokeArchive {} *x43; struct StrokeArchive {} *x44; struct StrokeArchive {} *x45; struct StrokeArchive {} *x46; struct StrokeArchive {} *x47; struct StrokeArchive {} *x48; struct StrokeArchive {} *x49; struct StrokeArchive {} *x50; struct StrokeArchive {} *x51; struct StrokeArchive {} *x52; struct StrokeArchive {} *x53; int x54; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (id)strokeForStrokePreset:(unsigned int)arg1;
 - (void)validate;

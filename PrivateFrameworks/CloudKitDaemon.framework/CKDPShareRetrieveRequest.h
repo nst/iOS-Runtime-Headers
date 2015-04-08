@@ -2,14 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPShareIdentifier;
+@class CKDPRecordZoneIdentifier, CKDPShareIdentifier;
 
 @interface CKDPShareRetrieveRequest : PBRequest <NSCopying> {
     CKDPShareIdentifier *_shareId;
+    CKDPRecordZoneIdentifier *_zoneId;
 }
 
 @property(readonly) BOOL hasShareId;
+@property(readonly) BOOL hasZoneId;
 @property(retain) CKDPShareIdentifier * shareId;
+@property(retain) CKDPRecordZoneIdentifier * zoneId;
 
 + (id)options;
 
@@ -19,6 +22,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasShareId;
+- (BOOL)hasZoneId;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -26,7 +30,9 @@
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setShareId:(id)arg1;
+- (void)setZoneId:(id)arg1;
 - (id)shareId;
 - (void)writeTo:(id)arg1;
+- (id)zoneId;
 
 @end

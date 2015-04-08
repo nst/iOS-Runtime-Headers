@@ -13,6 +13,6 @@
 @property(readonly) Class superclass;
 
 + (id)_billingValueInCell:(id)arg1 forItem:(id)arg2 isPlaceholder:(BOOL)arg3;
-+ (void)presentView:(id)arg1 withDataItem:(id)arg2;
++ (void)presentCell:(id)arg1 withDataItem:(id)arg2;
 
 @end

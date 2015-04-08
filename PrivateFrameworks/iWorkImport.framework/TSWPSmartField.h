@@ -30,18 +30,18 @@
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1;
-- (void)loadFromArchive:(const struct SmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; unsigned int x4[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct SmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; }*)arg1 unarchiver:(id)arg2;
 - (id)parentStorage;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (void)saveToArchive:(struct SmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; unsigned int x4[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct SmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setParentStorage:(id)arg1;
 - (int)smartFieldKind;
 - (int)styleAttributeArrayKind;
 - (id)text;
-- (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
-- (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

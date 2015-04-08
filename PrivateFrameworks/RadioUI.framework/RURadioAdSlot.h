@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class ADAdSlot, NSArray, NSData, NSString;
+@class ADAdSlot, NSArray, NSData, NSObject<OS_dispatch_queue>, NSString;
 
 @interface RURadioAdSlot : NSObject <ADAdSlotDelegate> {
+    NSObject<OS_dispatch_queue> *_accessQueue;
     ADAdSlot *_adSlot;
     NSArray *_adTracks;
+    BOOL _hasBegunPlayback;
 }
 
 @property(readonly) ADAdSlot * adSlot;

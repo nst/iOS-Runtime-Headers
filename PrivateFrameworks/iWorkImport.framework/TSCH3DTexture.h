@@ -13,6 +13,7 @@
 - (BOOL)canLoadCachedFullMipmapBufferForDataCache:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)didInitFromSOS;
 - (BOOL)hasCompleteData;
 - (unsigned int)hash;
 - (id)init;

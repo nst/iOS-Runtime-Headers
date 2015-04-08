@@ -2,21 +2,24 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSDate, NSDateFormatter, NSString, UIButton, UIDatePicker, UITableViewCell, UITextField;
+@class NSArray, NSDateFormatter, NSString, UIButton, UIDatePicker, UITableViewCell, UITextField;
 
-@interface PKPaymentCardManualEntryViewController : PKPaymentCardDetailsViewController <CRCameraReaderDelegate, UITextFieldDelegate> {
+@interface PKPaymentCardManualEntryViewController : PKPaymentCardDetailsViewController <PKPaymentCameraCaptureViewControllerDelegate, UITextFieldDelegate> {
     UITableViewCell *_cardHolderNameCell;
     UITableViewCell *_cardNumberCell;
     UITextField *_cardNumberField;
+    BOOL _cardNumberHasBecomeFirstResponder;
     NSDateFormatter *_dateFormatter;
-    NSDate *_expirationDate;
     UITableViewCell *_expirationDateCell;
     UITextField *_expirationDateField;
     UIDatePicker *_expirationDatePicker;
     BOOL _hasScrolledToShowFields;
+    BOOL _hasShown;
+    BOOL _isCUPDebit;
     UITextField *_nameField;
     UIButton *_photoButton;
     UITableViewCell *_securityCodeCell;
+    NSArray *_sortedCUPDebitBins;
     void *_unifiedMeCard;
 }
 
@@ -25,37 +28,42 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-- (void)_addFromCamera:(id)arg1;
+- (void)_cameraCaptureCancelButtonPressed:(id)arg1;
+- (void)_captureFromCamera:(id)arg1;
 - (id)_cardHolderNameCell;
 - (id)_cardNumberCell;
+- (void)_checkAndAdjustForCUPDebit:(id)arg1;
 - (void)_clearTextFieldColors;
 - (id)_defaultCell;
+- (void)_dismissCameraCaptureViewController:(id)arg1;
 - (void)_displayNewExpiration:(id)arg1;
 - (id)_expirationDateCell;
+- (BOOL)_isCUPDebit:(id)arg1;
 - (id)_name;
 - (id)_securityCodeCell;
+- (void)_setCUPDebitFieldsDisabled:(BOOL)arg1;
 - (void)_updateTextField:(id)arg1 withDate:(id)arg2;
-- (void)cameraReader:(id)arg1 didFailWithError:(id)arg2;
-- (void)cameraReader:(id)arg1 didRecognizeObjects:(id)arg2;
-- (void)cameraReaderDidCancel:(id)arg1;
-- (void)cameraReaderDidDisplayMessage:(id)arg1;
-- (void)cameraReaderDidEnd:(id)arg1;
-- (void)cameraReaderDidFindTarget:(id)arg1;
-- (void)cancelCameraCapture:(id)arg1;
+- (void)cameraCaptureViewController:(id)arg1 didRecognizeObjects:(id)arg2;
+- (void)cameraCaptureViewControllerDidFail:(id)arg1;
 - (void)dealloc;
+- (id)defaultHeaderViewSubTitle;
+- (id)defaultHeaderViewTitle;
+- (id)dummyTextField;
+- (id)firstEmptyField;
 - (void)handleNext:(id)arg1;
-- (id)headerView;
 - (id)initWithWebService:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3;
 - (BOOL)isComplete;
+- (BOOL)isEmpty;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (void)textFieldDidEndEditing:(id)arg1;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (BOOL)textFieldShouldClear:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -241,7 +241,7 @@
 - (BOOL)mayShareToMessagesOriginatingAccountIsManaged:(BOOL)arg1;
 - (BOOL)mayShowLocalAccountsForBundleID:(id)arg1 sourceAccountManagement:(int)arg2;
 - (void)migratePostDataMigrator;
-- (void)migrateWithContext:(int)arg1 passcodeWasSetInBackup:(BOOL)arg2;
+- (void)migrateWithContext:(int)arg1 passcodeWasSetInBackup:(BOOL)arg2 forceAllowHostPairing:(BOOL)arg3 completion:(id)arg4;
 - (int)newPasscodeEntryScreenType;
 - (void)notifyClientsToRecomputeCompliance;
 - (void)notifyDeviceUnlocked;
@@ -288,6 +288,7 @@
 - (void)removeWebContentFilterUserBlacklistedURLString:(id)arg1;
 - (void)rereadManagedAppAttributes;
 - (void)resetAllSettingsToDefaults;
+- (void)resetAllSettingsToDefaultsIsUserInitiated:(BOOL)arg1 completion:(id)arg2;
 - (void)respondToCurrentPasscodeRequestContinue:(BOOL)arg1 passcode:(id)arg2;
 - (void)respondToWarningsContinueInstallation:(BOOL)arg1;
 - (int)restrictedBoolValueForFeature:(id)arg1;
@@ -324,6 +325,7 @@
 - (BOOL)shouldDestroyOldKeybag;
 - (BOOL)shouldInstallStoredProfileForPurpose:(int)arg1;
 - (BOOL)shouldShowCloudConfigurationUI;
+- (BOOL)shouldShowSetupAssistant;
 - (BOOL)shouldSkipSetupPanes;
 - (BOOL)showProfileErrorUIWithProfileIdentifier:(id)arg1 outError:(id*)arg2;
 - (void)shutDown;
@@ -352,6 +354,7 @@
 - (BOOL)validatePasscode:(id)arg1 andUnlockContentProtectedDevice:(BOOL)arg2;
 - (id)valueForFeature:(id)arg1;
 - (id)valueRestrictionForFeature:(id)arg1;
+- (void)waitForMigrationIncludingPostRestoreMigration:(BOOL)arg1 completion:(id)arg2;
 - (BOOL)wasCloudConfigurationApplied;
 - (BOOL)wasTeslaCloudConfigurationApplied;
 - (id)webContentFilterEffectiveBlacklistedURLStrings;

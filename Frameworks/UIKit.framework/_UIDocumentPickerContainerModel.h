@@ -12,6 +12,7 @@
     NSMutableArray *_updateHandlers;
 }
 
+@property(readonly) BOOL afterInitialUpdate;
 @property(readonly) NSArray * modelObjects;
 @property(copy) NSArray * pickableTypes;
 @property unsigned int pickerMode;
@@ -20,6 +21,7 @@
 @property(retain) NSMutableArray * updateHandlers;
 
 - (id)addUpdateHandler:(id)arg1 weakSelf:(id)arg2;
+- (BOOL)afterInitialUpdate;
 - (void)dealloc;
 - (id)displayTitle;
 - (id)init;

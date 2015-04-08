@@ -32,13 +32,14 @@
 - (double)_timeIntervalUntilNextPermittedSyncAttemptWithNormalPriority;
 - (double)_timeIntervalUntilSyncOperationShouldBePruned:(id)arg1;
 - (id)dataStore;
-- (id)dateOfNextPermittedSyncAttemptWithPriority:(int)arg1;
+- (id)dateOfNextPermittedOperationWithPriority:(int)arg1;
 - (id)description;
 - (id)init;
 - (id)initWithPolicyString:(id)arg1;
+- (void)operationWithPriority:(int)arg1 didCompleteWithResult:(int)arg2;
+- (BOOL)permitsOperationWithPriority:(int)arg1;
+- (void)reloadRecordOfPastOperations;
 - (void)setDataStore:(id)arg1;
 - (void)setPolicyString:(id)arg1;
-- (void)syncAttemptWithPriority:(int)arg1 didCompleteWithResult:(int)arg2;
-- (BOOL)throttlingPolicyPermitsSyncAttemptWithPriority:(int)arg1;
 
 @end

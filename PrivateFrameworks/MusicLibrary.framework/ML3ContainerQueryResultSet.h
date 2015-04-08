@@ -13,13 +13,14 @@
 }
 
 - (void).cxx_destruct;
+- (void)_loadCurrentFullResults;
 - (BOOL)_updateToLibraryCurrentRevision;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long)entityLimit;
+- (unsigned int)entityLimit;
 - (void)enumeratePersistentIDsUsingBlock:(id)arg1;
-- (void)enumerateResultsUsingBlock:(id)arg1;
+- (void)enumerateSectionsUsingBlock:(id)arg1;
 - (id)initWithQuery:(id)arg1;
-- (void)resultAtIndex:(unsigned long)arg1 withCompletion:(id)arg2;
+- (long long)persistentIDAtIndex:(unsigned int)arg1;
 - (id)sortedBackingStoreForDisplayOrdering;
 
 @end

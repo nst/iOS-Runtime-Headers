@@ -9,7 +9,9 @@
 @property BOOL allowsActions;
 
 + (id)actionCellConfigurationClasses;
-+ (Class)musicProxyClass;
++ (int)groupingType;
++ (id)itemPersistentIDProperty;
++ (id)persistentIDProperty;
 
 - (BOOL)allowsActions;
 - (void)setAllowsActions:(BOOL)arg1;

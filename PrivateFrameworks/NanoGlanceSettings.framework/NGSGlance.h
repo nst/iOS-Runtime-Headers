@@ -10,6 +10,7 @@
     BOOL _cannotBeDisabled;
     BOOL _defaultGlance;
     NSString *_glanceBundleIdentifier;
+    BOOL _installed;
     NSString *_name;
     BOOL _prelaunch;
     NSString *_sockPuppetIdentifier;
@@ -21,6 +22,7 @@
 @property(getter=isDefaultGlance) BOOL defaultGlance;
 @property(copy) NSString * glanceBundleIdentifier;
 @property(readonly) NSString * glanceIdentifier;
+@property(getter=isInstalled) BOOL installed;
 @property(copy) NSString * name;
 @property BOOL prelaunch;
 @property(copy) NSString * sockPuppetIdentifier;
@@ -35,6 +37,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isActive;
 - (BOOL)isDefaultGlance;
+- (BOOL)isInstalled;
 - (id)name;
 - (BOOL)prelaunch;
 - (void)setActive:(BOOL)arg1;
@@ -42,6 +45,7 @@
 - (void)setCannotBeDisabled:(BOOL)arg1;
 - (void)setDefaultGlance:(BOOL)arg1;
 - (void)setGlanceBundleIdentifier:(id)arg1;
+- (void)setInstalled:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setPrelaunch:(BOOL)arg1;
 - (void)setSockPuppetIdentifier:(id)arg1;

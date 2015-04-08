@@ -8,6 +8,7 @@
     RCUIConfiguration *_UIConfiguration;
     RCAcousticAnnotationView *_acousticAnnotationView;
     UIView *_bottomLineView;
+    BOOL _capturing;
     BOOL _clipTimeMarkersToDuration;
     double _currentTime;
     unsigned int _currentTimeDisplayOptions;
@@ -19,6 +20,7 @@
         double endTime; 
     } _highlightTimeRange;
     BOOL _isScrollViewAutoScrolling;
+    BOOL _isScrollViewAutoScrollingBeginning;
     BOOL _isScrollViewAutoScrollingPaused;
     RCLayoutMetrics *_layoutMetrics;
     float _layoutWidth;
@@ -59,6 +61,7 @@
 
 @property(copy) RCUIConfiguration * UIConfiguration;
 @property(getter=isAutoscrolling,readonly) BOOL autoscrolling;
+@property BOOL capturing;
 @property BOOL clipTimeMarkersToDuration;
 @property double currentTime;
 @property unsigned int currentTimeDisplayOptions;
@@ -108,6 +111,7 @@
 - (void)_updateWaveformViewContentSizeAndOffset;
 - (struct { double x1; double x2; })_visibleTimeRangeForCurrentSelectionTimeRange;
 - (void)beginAutoscrollingAtTime:(double)arg1 atRate:(float)arg2;
+- (BOOL)capturing;
 - (BOOL)clipTimeMarkersToDuration;
 - (double)currentTime;
 - (unsigned int)currentTimeDisplayOptions;
@@ -128,8 +132,11 @@
 - (double)maximumSelectionDuration;
 - (void)pauseAutoscrolling;
 - (BOOL)playing;
+- (void)reloadOverlayOffsets;
 - (void)resumeAutoscrollingIfPaused;
 - (BOOL)screenUpdatesDisabled;
+- (void)scrollView:(id)arg1 didChangeContentOffsetToOffset:(struct CGPoint { float x1; float x2; })arg2;
+- (void)scrollView:(id)arg1 willChangeContentOffsetToOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -138,6 +145,7 @@
 - (struct { double x1; double x2; })selectedTimeRange;
 - (float)selectionVisibleMargin;
 - (void)setAutoscrolling:(BOOL)arg1;
+- (void)setCapturing:(BOOL)arg1;
 - (void)setClipTimeMarkersToDuration:(BOOL)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setCurrentTimeDisplayOptions:(unsigned int)arg1;
@@ -175,5 +183,6 @@
 - (void)waveformSelectionOverlay:(id)arg1 willBeginTrackingSelectionBeginTime:(BOOL)arg2 endTime:(BOOL)arg3 assetCurrentTime:(BOOL)arg4;
 - (double)waveformSelectionOverlay:(id)arg1 willChangeAssetCurrentTime:(double)arg2 isTracking:(BOOL)arg3;
 - (struct { double x1; double x2; })waveformSelectionOverlay:(id)arg1 willChangeSelectedTimeRange:(struct { double x1; double x2; })arg2 isTracking:(BOOL)arg3;
+- (double)waveformSelectionOverlayGetCurrentTime:(id)arg1;
 
 @end

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDAccessoryManager, HMMessageDispatcher, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMDAccessoryManager, HMMessageDispatcher, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMDAccessoryBrowser : NSObject <HMDAccessoryManagerDelegate, HMMessageReceiver> {
     HMDAccessoryManager *_accessoryManager;
+    NSMutableSet *_browsingXPCConnections;
     unsigned int _generationCounter;
     HMMessageDispatcher *_messageDispatcher;
     NSUUID *_uuid;
@@ -13,6 +14,7 @@
 }
 
 @property(retain) HMDAccessoryManager * accessoryManager;
+@property(retain) NSMutableSet * browsingXPCConnections;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property unsigned int generationCounter;
@@ -25,20 +27,25 @@
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
 - (void).cxx_destruct;
+- (void)_handleInvalidatedXPCConnection:(id)arg1;
 - (void)_handleRequestFetchNewAccessories:(id)arg1;
 - (void)_handleRequestSearchForNewAccessories:(id)arg1;
 - (void)_registerForMessages;
 - (void)_startDiscoveringAccessories;
 - (void)_stopDiscoveringAccessories;
+- (void)_stopSearchingWithXPCConnection:(id)arg1;
 - (id)accessoryManager;
 - (void)accessoryManager:(id)arg1 didFindNewAccessory:(id)arg2;
 - (void)accessoryManager:(id)arg1 didRemoveNewAccessory:(id)arg2;
+- (id)browsingXPCConnections;
+- (void)dealloc;
 - (unsigned int)generationCounter;
 - (id)initWithMessageDispatcher:(id)arg1 accessoryManager:(id)arg2;
 - (id)messageDispatcher;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (void)setAccessoryManager:(id)arg1;
+- (void)setBrowsingXPCConnections:(id)arg1;
 - (void)setGenerationCounter:(unsigned int)arg1;
 - (void)setMessageDispatcher:(id)arg1;
 - (void)setUuid:(id)arg1;

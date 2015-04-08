@@ -9,11 +9,13 @@
 }
 
 + (id)_appearanceForTraitCollection:(id)arg1 forClass:(Class)arg2 withContainerList:(id)arg3;
++ (BOOL)_hasAnyCustomizations;
 + (BOOL)_hasCustomizationsForTraitCollection:(id)arg1 class:(Class)arg2 guideClass:(Class)arg3;
-+ (id)appearancesAtNode:(id)arg1 withObject:(id)arg2;
++ (void)_setHasAnyCustomizations;
 
 - (void)_invalidateAppearanceInWindow:(id)arg1;
 - (BOOL)_isValidAppearanceForCustomizableObject:(id)arg1;
+- (id)_traitCollection;
 - (void)dealloc;
 
 @end

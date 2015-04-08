@@ -5,21 +5,21 @@
 @class <BRCAccountHandlerDelegate>, BRCAccountSession, NSObject<OS_dispatch_queue>, NSString;
 
 @interface BRCAccountHandler : NSObject {
-    BRCAccountSession *_accountSession;
     NSString *_currentAccountID;
     <BRCAccountHandlerDelegate> *_delegate;
     BOOL _hasSetMigrationComplete;
     NSObject<OS_dispatch_queue> *_migrationStatusSetterQueue;
     NSObject<OS_dispatch_queue> *_queue;
+    BRCAccountSession *_session;
 }
 
-@property(readonly) BRCAccountSession * accountSession;
 @property <BRCAccountHandlerDelegate> * delegate;
+@property(readonly) BRCAccountSession * session;
 
 + (void)_migrateAccountIfNecessaryForAccountID:(id)arg1;
 + (id)inSystemStoreAccountIDForUbiquityDataclass;
 + (id)inSystemStoreAccountIDWithServiceValidation:(BOOL)arg1;
-+ (id)inSystemStoreAccountIDWithServiceValidation:(BOOL)arg1 isServiceEnabled:(BOOL*)arg2 didCompleteFirstSyncDown:(BOOL*)arg3;
++ (id)inSystemStoreAccountIDWithServiceValidation:(BOOL)arg1 isServiceEnabled:(BOOL*)arg2 didCompleteMigration:(BOOL*)arg3;
 + (BOOL)isAccountStillUsingUbiquity;
 
 - (void).cxx_destruct;
@@ -33,7 +33,6 @@
 - (void)_updateAccountToAccountID:(id)arg1;
 - (void)_watchAccountChanges;
 - (id)accountIDPath;
-- (id)accountSession;
 - (BOOL)createCurrentAccountSessionWithID:(id)arg1 error:(id*)arg2;
 - (id)delegate;
 - (void)destroyCurrentSessionSynchronously;
@@ -41,6 +40,7 @@
 - (void)jetsamCloudDocsApps;
 - (void)markMigrationCompletedForDSID:(id)arg1;
 - (id)onDiskAccountID;
+- (id)session;
 - (void)setDelegate:(id)arg1;
 - (void)setMigrationStatus:(BOOL)arg1 forDSID:(id)arg2 shouldNotify:(BOOL)arg3;
 - (BOOL)setOnDiskAccountID:(id)arg1;

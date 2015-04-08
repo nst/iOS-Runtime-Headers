@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSWPShapeLayoutDelegate>, TSDWrapPolygon, TSWPLayout, TSWPPadding;
+@class <TSWPShapeLayoutDelegate>, TSDWrapSegments, TSWPLayout, TSWPPadding;
 
 @interface TSWPShapeLayout : TSDShapeLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver> {
-    TSDWrapPolygon *_cachedInteriorWrapPolygon;
+    TSDWrapSegments *_cachedInteriorWrapSegments;
     TSWPLayout *_containedLayout;
     <TSWPShapeLayoutDelegate> *_delegate;
     BOOL _observingStorage;
@@ -31,8 +31,6 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })autosizedTransform;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })autosizedTransformForInfoGeometry:(id)arg1;
 - (BOOL)autosizes;
-- (BOOL)canAspectRatioLockBeChangedByUser;
-- (id)childSearchTargets;
 - (id)children;
 - (unsigned int)columnCount;
 - (BOOL)columnsAreLeftToRight;
@@ -45,35 +43,32 @@
 - (id)delegate;
 - (id)dependentLayouts;
 - (id)dependentsOfTextLayout:(id)arg1;
-- (void)destroyContainedLayoutForInstructionalText;
 - (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
 - (id)initWithInfo:(id)arg1;
 - (void)insertChild:(id)arg1 above:(id)arg2;
 - (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)insertChild:(id)arg1 below:(id)arg2;
-- (id)instructionalStorageForContainedStorage:(id)arg1 storageKind:(int)arg2;
 - (id)interiorClippingPath;
 - (id)interiorWrapPath;
-- (id)interiorWrapPolygon;
+- (id)interiorWrapSegments;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (void)invalidatePath;
 - (void)invalidateSize;
 - (BOOL)isInvisibleAutosizingShape;
 - (id)layoutMargins;
 - (float)maxAutoGrowWidthForTextLayout:(id)arg1;
+- (float)maxAutoGrowWidthForTextLayout:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
+- (BOOL)parentAutosizes;
 - (id)pathSource;
 - (float)positionForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2 target:(id)arg3 outWidth:(float*)arg4 outGap:(float*)arg5;
 - (void)processChangedProperty:(int)arg1;
 - (Class)repClassForTextLayout:(id)arg1;
 - (void)replaceChild:(id)arg1 with:(id)arg2;
-- (BOOL)resizeMayChangeAspectRatio;
 - (void)setChildren:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (BOOL)shrinkTextToFit;
-- (void)storage:(id)arg1 didChangeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 delta:(int)arg3 broadcastKind:(int)arg4;
-- (BOOL)supportsRotation;
 - (BOOL)textLayoutShouldLayoutVertically:(id)arg1;
 - (BOOL)textLayoutShouldWrapAroundExternalDrawables:(id)arg1;
 - (id)textWrapper;

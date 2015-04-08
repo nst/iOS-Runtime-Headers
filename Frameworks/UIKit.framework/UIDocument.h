@@ -67,7 +67,7 @@
 + (id)_typeForContentsOfURL:(id)arg1 error:(id*)arg2;
 + (void)initialize;
 
-- (id)_activityTypeIdentifierForCloudDocument;
+- (id)_activityTypeIdentifierForCloudDocument:(BOOL*)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_autosaveWithCompletionHandler:(id)arg1;
@@ -76,7 +76,7 @@
 - (void)_changeWasDone:(id)arg1;
 - (void)_changeWasRedone:(id)arg1;
 - (void)_changeWasUndone:(id)arg1;
-- (void)_clearActivityForCloudDocument;
+- (void)_clearUserActivity;
 - (BOOL)_coordinateWritingItemAtURL:(id)arg1 error:(id*)arg2 byAccessor:(id)arg3;
 - (BOOL)_documentIsUbiquitous;
 - (id)_fileOpeningQueue;
@@ -89,13 +89,14 @@
 - (BOOL)_isInOpen;
 - (BOOL)_isOpen;
 - (void)_lockFileAccessQueueAndPerformBlock:(id)arg1;
+- (void)_manageUserActivity;
 - (void)_performBlock:(id)arg1 synchronouslyOnQueue:(id)arg2;
 - (void)_performBlockSynchronouslyOnMainThread:(id)arg1;
 - (id)_presentableFileNameForSaveOperation:(int)arg1 url:(id)arg2;
+- (void)_reallyManageUserActivity;
 - (void)_registerAsFilePresenterIfNecessary;
 - (void)_releaseUndoManager;
 - (void)_rescheduleAutosaving;
-- (void)_saveActivityForCloudDocumentIfAppropriate;
 - (void)_saveUnsavedChangesWithCompletionHandler:(id)arg1;
 - (void)_scheduleAutosaving;
 - (void)_scheduleAutosavingAfterDelay:(double)arg1 reset:(BOOL)arg2;
@@ -108,6 +109,7 @@
 - (void)_setOpen:(BOOL)arg1;
 - (void)_setUserActivity:(id)arg1;
 - (BOOL)_shouldAllowWritingInResponseToPresenterMessage;
+- (id)_titleForActivityContinuation;
 - (void)_unlockFileAccessQueue;
 - (void)_unregisterAsFilePresenterIfNecessary;
 - (void)_updateConflictState;

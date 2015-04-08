@@ -99,6 +99,7 @@
 - (BOOL)resetDevicePropertyValueForProperty:(unsigned short)arg1;
 - (unsigned short)saveFile:(id)arg1 to:(id)arg2;
 - (unsigned short)savePartialFile:(id)arg1 fromOffset:(unsigned long long)arg2 size:(unsigned long long)arg3 to:(id)arg4;
+- (unsigned short)savePartialFileMD5:(id)arg1 fromOffset:(unsigned long long)arg2 size:(unsigned long long)arg3 to:(id)arg4;
 - (id)sendRequest:(id)arg1 andReceiveData:(id)arg2 excessReceivedDataSize:(unsigned long long*)arg3 timeout:(double)arg4;
 - (id)sendRequest:(id)arg1 andReceiveData:(id)arg2 maxDataSize:(unsigned long)arg3 excessReceivedDataSize:(unsigned long long*)arg4 timeout:(double)arg5;
 - (id)sendRequest:(id)arg1 andSendData:(id)arg2;

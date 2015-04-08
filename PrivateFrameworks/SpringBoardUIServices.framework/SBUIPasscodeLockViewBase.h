@@ -22,6 +22,7 @@
     BOOL _mesaLockedOut;
     NSString *_passcode;
     BOOL _playsKeypadSounds;
+    BOOL _screenOn;
     BOOL _shouldResetForFailedPasscodeAttempt;
     BOOL _showsEmergencyCallButton;
     BOOL _showsStatusField;
@@ -43,6 +44,7 @@
 @property(getter=_luminosityBoost,setter=_setLuminosityBoost:) float luminosityBoost;
 @property(readonly) NSString * passcode;
 @property BOOL playsKeypadSounds;
+@property(getter=isScreenOn) BOOL screenOn;
 @property BOOL shouldResetForFailedPasscodeAttempt;
 @property BOOL showsEmergencyCallButton;
 @property BOOL showsStatusField;
@@ -100,6 +102,7 @@
 - (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isFirstResponder;
+- (BOOL)isScreenOn;
 - (id)passcode;
 - (BOOL)playsKeypadSounds;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
@@ -114,7 +117,9 @@
 - (void)setBiometricMatchMode:(unsigned int)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setKeyPressClicksPrewarmed:(BOOL)arg1;
 - (void)setPlaysKeypadSounds:(BOOL)arg1;
+- (void)setScreenOn:(BOOL)arg1;
 - (void)setShouldResetForFailedPasscodeAttempt:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (void)setShowsStatusField:(BOOL)arg1;

@@ -18,7 +18,7 @@
 @property(readonly) CMAccelerometerData * accelerometerData;
 @property double accelerometerUpdateInterval;
 @property(readonly) CMAmbientPressureData * ambientPressureData;
-@property(readonly) int attitudeReferenceFrame;
+@property(readonly) unsigned int attitudeReferenceFrame;
 @property(readonly) CMDeviceMotion * deviceMotion;
 @property(getter=isDeviceMotionActive,readonly) BOOL deviceMotionActive;
 @property(getter=isDeviceMotionAvailable,readonly) BOOL deviceMotionAvailable;
@@ -48,7 +48,7 @@
 - (double)accelerometerUpdateInterval;
 - (id)ambientPressureData;
 - (double)ambientPressureUpdateInterval;
-- (int)attitudeReferenceFrame;
+- (unsigned int)attitudeReferenceFrame;
 - (void)dealloc;
 - (void)deallocPrivate;
 - (id)deviceMotion;
@@ -126,10 +126,10 @@
 - (void)startAmbientPressureUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)startAmbientPressureUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)startDeviceMotionUpdates;
-- (void)startDeviceMotionUpdatesPrivateUsingReferenceFrame:(int)arg1 toQueue:(id)arg2 withHandler:(id)arg3;
+- (void)startDeviceMotionUpdatesPrivateUsingReferenceFrame:(unsigned int)arg1 toQueue:(id)arg2 withHandler:(id)arg3;
 - (void)startDeviceMotionUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
-- (void)startDeviceMotionUpdatesUsingReferenceFrame:(int)arg1;
-- (void)startDeviceMotionUpdatesUsingReferenceFrame:(int)arg1 toQueue:(id)arg2 withHandler:(id)arg3;
+- (void)startDeviceMotionUpdatesUsingReferenceFrame:(unsigned int)arg1;
+- (void)startDeviceMotionUpdatesUsingReferenceFrame:(unsigned int)arg1 toQueue:(id)arg2 withHandler:(id)arg3;
 - (void)startGyroUpdates;
 - (void)startGyroUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)startGyroUpdatesToQueue:(id)arg1 withHandler:(id)arg2;

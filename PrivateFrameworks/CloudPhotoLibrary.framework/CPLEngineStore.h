@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLEngineChangePipe, CPLEngineClientCache, CPLEngineCloudCache, CPLEngineIDMapping, CPLEngineLibrary, CPLEngineRemappedDeletes, CPLEngineResourceDownloadQueue, CPLEngineResourceStorage, CPLEngineResourceUploadQueue, CPLEngineTransientRepository, CPLPlatformObject, NSArray, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL;
+@class CPLEngineChangePipe, CPLEngineClientCache, CPLEngineCloudCache, CPLEngineIDMapping, CPLEngineLibrary, CPLEngineRemappedDeletes, CPLEngineResourceDownloadQueue, CPLEngineResourceStorage, CPLEngineResourceUploadQueue, CPLEngineTransientRepository, CPLPlatformObject, NSArray, NSDate, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface CPLEngineStore : NSObject <CPLAbstractObject, CPLEngineComponent> {
     BOOL _batchedTransactionDequeueIsScheduled;
@@ -10,6 +10,7 @@
     NSObject<OS_dispatch_queue> *_batchedTransactionsQueue;
     CPLEngineClientCache *_clientCache;
     CPLEngineCloudCache *_cloudCache;
+    CPLEngineChangePipe *_deletePushQueue;
     CPLEngineResourceDownloadQueue *_downloadQueue;
     CPLEngineLibrary *_engineLibrary;
     CPLEngineIDMapping *_idMapping;
@@ -29,14 +30,17 @@
 @property(readonly) CPLEngineClientCache * clientCache;
 @property(readonly) CPLEngineCloudCache * cloudCache;
 @property(copy,readonly) NSString * debugDescription;
+@property(readonly) CPLEngineChangePipe * deletePushQueue;
 @property(copy,readonly) NSString * description;
 @property(readonly) CPLEngineResourceDownloadQueue * downloadQueue;
 @property(readonly) CPLEngineLibrary * engineLibrary;
 @property(readonly) unsigned int hash;
 @property(readonly) CPLEngineIDMapping * idMapping;
+@property(readonly) NSDate * libraryCreationDate;
 @property(readonly) CPLPlatformObject * platformObject;
 @property(readonly) CPLEngineChangePipe * pullQueue;
 @property(readonly) CPLEngineChangePipe * pushQueue;
+@property(readonly) BOOL pushQueuesAreFull;
 @property(readonly) CPLEngineRemappedDeletes * remappedDeletes;
 @property(readonly) CPLEngineResourceStorage * resourceStorage;
 @property unsigned int state;
@@ -69,6 +73,7 @@
 - (id)componentName;
 - (id)createNewLibraryVersion;
 - (void)dealloc;
+- (id)deletePushQueue;
 - (id)description;
 - (id)downloadQueue;
 - (id)engineLibrary;
@@ -77,7 +82,9 @@
 - (id)idMapping;
 - (id)initWithEngineLibrary:(id)arg1;
 - (BOOL)isClientInSyncWithClientCache;
+- (id)libraryCreationDate;
 - (id)libraryVersion;
+- (id)libraryZoneName;
 - (void)openWithCompletionHandler:(id)arg1;
 - (void)performBatchedWriteTransactionWithBlock:(id)arg1 completionHandler:(id)arg2;
 - (id)performReadTransactionWithBlock:(id)arg1;
@@ -85,6 +92,7 @@
 - (id)platformObject;
 - (id)pullQueue;
 - (id)pushQueue;
+- (BOOL)pushQueuesAreFull;
 - (void)registerStorage:(id)arg1;
 - (id)remappedDeletes;
 - (BOOL)resetCompleteSyncStateWithCause:(id)arg1 error:(id*)arg2;
@@ -95,6 +103,7 @@
 - (id)storages;
 - (BOOL)storeClientIsInSyncWithClientCacheWithError:(id*)arg1;
 - (BOOL)storeLibraryVersion:(id)arg1 withError:(id*)arg2;
+- (BOOL)storeLibraryZoneName:(id)arg1 error:(id*)arg2;
 - (BOOL)storeUserIdentifier:(id)arg1 error:(id*)arg2;
 - (id)transientPullRepository;
 - (id)uploadQueue;

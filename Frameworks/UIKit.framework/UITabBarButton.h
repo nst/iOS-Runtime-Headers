@@ -65,9 +65,7 @@
 - (id)_buttonTintColorForState:(unsigned int)arg1;
 - (BOOL)_centerAllContents;
 - (id)_contentTintColorForState:(unsigned int)arg1;
-- (void)_focusStateDidChange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForSelectedIndicator;
-- (BOOL)_isFocusableElement;
 - (BOOL)_isSelected;
 - (void)_positionBadge;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_responderSelectionRectForWindow:(id)arg1;
@@ -102,7 +100,9 @@
 - (void)_updateSelectedIndicatorView;
 - (void)_updateToMatchCurrentState;
 - (BOOL)_useBarHeight;
+- (BOOL)canBecomeFocused;
 - (void)dealloc;
+- (void)focusedViewDidChange;
 - (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
 - (id)labelOffsetValue;
 - (void)layoutSubviews;

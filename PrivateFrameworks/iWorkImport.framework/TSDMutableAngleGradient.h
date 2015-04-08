@@ -20,6 +20,7 @@
 @property float opacity;
 @property(readonly) Class superclass;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)evenlyDistributeStops;
 - (void)insertGradientStop:(id)arg1;
 - (id)insertStopAtFraction:(float)arg1;

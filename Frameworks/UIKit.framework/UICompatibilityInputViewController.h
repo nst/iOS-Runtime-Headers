@@ -11,6 +11,7 @@
     UIView *_inputControllerSnapshot;
     UIKeyboardInputMode *_inputMode;
     BOOL _shouldRegenerateSizingConstraints;
+    BOOL _shouldSuppressRemoteInputController;
 }
 
 @property(retain) UIViewController * inputController;
@@ -43,12 +44,14 @@
 - (void)setInputMode:(id)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
+- (void)shouldUpdateInputMode:(id)arg1;
 - (void)snapshotCurrentDisplay;
 - (void)tearDownInputController;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willBeginTranslation;
+- (void)willResume:(id)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

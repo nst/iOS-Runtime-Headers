@@ -26,7 +26,6 @@
 - (id)effects;
 - (int)knobsModeForLabelType:(int)arg1 scene:(id)arg2;
 - (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })labelPositionDirectionForScene:(id)arg1 enumerator:(id)arg2;
-- (int)p_animationTextureSceneDelegateChunkPlane;
 - (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })p_categoryLabelsOffsetFromAccessor:(const struct ChartScenePropertyAccessor { id x1; id x2; }*)arg1;
 - (int)p_categoryStride:(id)arg1;
 - (void)p_renderCategoryLabels:(id)arg1;

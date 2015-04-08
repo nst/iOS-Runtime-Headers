@@ -35,6 +35,7 @@
 - (void)_updateSwitch;
 - (void)_updateSwitchDelayed;
 - (void)_updateUIWithError:(id)arg1;
+- (id)areReadReceiptsEnabled:(id)arg1;
 - (id)audioMessageSettingsSpecifierIdentifiers;
 - (id)blacklistSettingsSpecifierIdentifiers;
 - (id)bundle;
@@ -50,7 +51,9 @@
 - (id)getRaiseToListenEnabled:(id)arg1;
 - (id)getSMSRelayDevicesSummary:(id)arg1;
 - (id)getVideoMessageAutoKeep:(id)arg1;
+- (id)iMessageFilteringSpecifierIdentifiers;
 - (id)init;
+- (id)isConversationListFilteringEnabled:(id)arg1;
 - (id)isDeliveryReportsEnabled:(id)arg1;
 - (id)isMMSEnabled:(id)arg1;
 - (id)isMadridEnabled:(id)arg1;
@@ -65,11 +68,13 @@
 - (id)readReceiptSpecifierIdentifiers;
 - (id)sendAsSMSIdentifiers;
 - (void)setAudioMessageAutoKeep:(id)arg1 specifier:(id)arg2;
+- (void)setConversationListFilteringEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setDeliveryReportsEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setKeepMessages:(id)arg1 specifier:(id)arg2;
 - (void)setMMSEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setMadridEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setRaiseToListenEnabled:(id)arg1 specifier:(id)arg2;
+- (void)setReadReceiptsEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setSpecifierLoading:(id)arg1 loading:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)setVideoMessageAutoKeep:(id)arg1 specifier:(id)arg2;
 - (void)setWillSendGroupMMS:(id)arg1 specifier:(id)arg2;
@@ -87,6 +92,7 @@
 - (BOOL)shouldShowSMSRelaySettings;
 - (BOOL)shouldShowSendAsSMS;
 - (BOOL)shouldShowVideoMessageSettings;
+- (BOOL)shouldShowiMessageFilteringSettings;
 - (id)smsRelaySettingsSpecifierIdentifiers;
 - (id)specifiers;
 - (void)systemApplicationDidEnterBackground;

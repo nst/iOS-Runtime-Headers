@@ -2,24 +2,43 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UISegmentedControl, _UIDocumentPickerViewServiceViewController;
+@class <_UIDocumentPickerViewServiceViewController>, NSArray, UIButton, UISegmentedControl;
 
 @interface _UIDocumentPickerSortOrderView : UIControl {
-    _UIDocumentPickerViewServiceViewController *_serviceViewController;
+    NSArray *_compactConstraints;
+    int _listMode;
+    UIButton *_listModeToggle;
+    NSArray *_regularConstraints;
+    <_UIDocumentPickerViewServiceViewController> *_serviceViewController;
     UISegmentedControl *_sortOrder;
 }
 
-@property _UIDocumentPickerViewServiceViewController * serviceViewController;
+@property(copy) NSArray * compactConstraints;
+@property int listMode;
+@property(retain) UIButton * listModeToggle;
+@property(copy) NSArray * regularConstraints;
+@property <_UIDocumentPickerViewServiceViewController> * serviceViewController;
 @property(retain) UISegmentedControl * sortOrder;
 @property int value;
 
+- (void)_toggleListMode:(id)arg1;
+- (id)compactConstraints;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)listMode;
+- (id)listModeToggle;
+- (id)regularConstraints;
 - (id)serviceViewController;
+- (void)setCompactConstraints:(id)arg1;
+- (void)setListMode:(int)arg1;
+- (void)setListModeToggle:(id)arg1;
+- (void)setRegularConstraints:(id)arg1;
 - (void)setServiceViewController:(id)arg1;
 - (void)setSortOrder:(id)arg1;
 - (void)setValue:(int)arg1;
 - (id)sortOrder;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateForListMode;
 - (int)value;
 - (void)valueChanged:(id)arg1;
 

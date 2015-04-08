@@ -64,7 +64,6 @@
 - (void)setProtectionData:(id)arg1;
 - (void)setProtectionEtag:(id)arg1;
 - (void)setZoneID:(id)arg1;
-- (id)sharedItemID;
 - (id)zoneID;
 
 @end

@@ -55,7 +55,6 @@
 - (id)_allowedControlsForStillImageMode;
 - (id)_allowedControlsForTimelapseMode;
 - (id)_allowedControlsForVideoMode;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_backgroundEdgeInsetsForStyle:(int)arg1;
 - (id)_backgroundView;
 - (BOOL)_buttonsExpandHorizontally;
 - (void)_commonCAMTopBarInitialization;
@@ -66,10 +65,6 @@
 - (BOOL)_isHDRButtonExpanded;
 - (BOOL)_isTimerButtonExpanded;
 - (void)_layoutControls:(id)arg1 apply:(BOOL)arg2 withExpandedMenuButton:(id)arg3 collapsingMenuButton:(id)arg4 collapsingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
-- (void)_layoutDefaultMenuButton:(id)arg1;
-- (void)_layoutDefaultStyle;
-- (void)_layoutFloatingRecordingStyle;
-- (void)_layoutFloatingStyle;
 - (void)_setExpandedMenuButton:(id)arg1;
 - (void)_setExpandedMenuButtonTappableInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setFlashButtonExpanded:(BOOL)arg1;
@@ -122,6 +117,7 @@
 - (void)setStyle:(int)arg1;
 - (void)setStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setTimerButton:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)style;
 - (id)timerButton;
 

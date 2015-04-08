@@ -7,9 +7,10 @@
 @interface GKBaseComposeController : GKLoadableContentViewController <UITextViewDelegate> {
     UIScrollView *_backgroundView;
     NSArray *_composeHeaderFields;
+    NSLayoutConstraint *_contentHeightConstraint;
+    NSLayoutConstraint *_contentLeadingConstraint;
+    UIView *_contentView;
     GKContiguousContainerView *_headerFieldContainer;
-    NSLayoutConstraint *_headerFieldContainerLeadingConstraint;
-    NSLayoutConstraint *_headerFieldContainerTrailingConstraint;
     UIView *_intendedFirstResponder;
     struct CGRect { 
         struct CGPoint { 
@@ -22,42 +23,39 @@
         } size; 
     } _lastKnownKeyboardFrame;
     GKTextView *_messageField;
-    NSLayoutConstraint *_messageFieldLeadingConstraint;
     NSLayoutConstraint *_messageFieldTrailingConstraint;
     float _scrollContentInsetAdjustY;
-    UIView *_touchForwardView;
 }
 
 @property(retain) UIScrollView * backgroundView;
 @property(retain) NSArray * composeHeaderFields;
+@property(retain) NSLayoutConstraint * contentHeightConstraint;
+@property(retain) NSLayoutConstraint * contentLeadingConstraint;
+@property(retain) UIView * contentView;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
 @property(retain) GKContiguousContainerView * headerFieldContainer;
-@property(retain) NSLayoutConstraint * headerFieldContainerLeadingConstraint;
-@property(retain) NSLayoutConstraint * headerFieldContainerTrailingConstraint;
 @property UIView * intendedFirstResponder;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } lastKnownKeyboardFrame;
 @property(retain) GKTextView * messageField;
-@property(retain) NSLayoutConstraint * messageFieldLeadingConstraint;
 @property(retain) NSLayoutConstraint * messageFieldTrailingConstraint;
 @property float scrollContentInsetAdjustY;
 @property(readonly) Class superclass;
-@property(retain) UIView * touchForwardView;
 
 - (void)_adjustContentInsetForShowingKeyboard:(BOOL)arg1;
 - (BOOL)_gkWantsCustomRightBarButtonItemInViewService;
 - (void)_scrollSelectedTextToVisible;
 - (id)backgroundView;
 - (id)composeHeaderFields;
+- (id)contentHeightConstraint;
+- (id)contentLeadingConstraint;
+- (id)contentView;
 - (void)dealloc;
 - (void)didEnterLoadedState;
 - (void)didEnterLoadingState;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)didTouchBackground;
 - (id)headerFieldContainer;
-- (id)headerFieldContainerLeadingConstraint;
-- (id)headerFieldContainerTrailingConstraint;
 - (id)init;
 - (id)intendedFirstResponder;
 - (void)keyboardWillHideShow:(id)arg1;
@@ -65,27 +63,24 @@
 - (void)loadView;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })margins;
 - (id)messageField;
-- (id)messageFieldLeadingConstraint;
 - (void)messageFieldTextDidChange;
 - (id)messageFieldTrailingConstraint;
 - (float)scrollContentInsetAdjustY;
 - (void)setBackgroundView:(id)arg1;
 - (void)setComposeHeaderFields:(id)arg1;
+- (void)setContentHeightConstraint:(id)arg1;
+- (void)setContentLeadingConstraint:(id)arg1;
+- (void)setContentView:(id)arg1;
 - (void)setHeaderFieldContainer:(id)arg1;
-- (void)setHeaderFieldContainerLeadingConstraint:(id)arg1;
-- (void)setHeaderFieldContainerTrailingConstraint:(id)arg1;
 - (void)setIntendedFirstResponder:(id)arg1;
 - (void)setLastKnownKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMessageField:(id)arg1;
-- (void)setMessageFieldLeadingConstraint:(id)arg1;
 - (void)setMessageFieldText:(id)arg1;
 - (void)setMessageFieldTrailingConstraint:(id)arg1;
 - (void)setScrollContentInsetAdjustY:(float)arg1;
-- (void)setTouchForwardView:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidChangeSelection:(id)arg1;
-- (id)touchForwardView;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (id)viewMetricsForContainerView:(id)arg1;

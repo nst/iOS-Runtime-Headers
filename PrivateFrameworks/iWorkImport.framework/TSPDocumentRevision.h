@@ -6,27 +6,29 @@
 
 @interface TSPDocumentRevision : NSObject <NSCopying> {
     NSString *_identifier;
-    unsigned long long _sequence;
+    int _sequence;
 }
 
 @property(readonly) NSString * identifier;
 @property(readonly) NSString * revisionString;
-@property(readonly) unsigned long long sequence;
+@property(readonly) int sequence;
 
++ (id)documentRevisionAtURL:(id)arg1 passphrase:(id)arg2 error:(id*)arg3;
 + (id)revisionWithRevisionString:(id)arg1;
-+ (id)revisionWithSequence:(unsigned long long)arg1 identifier:(id)arg2;
++ (id)revisionWithSequence:(int)arg1 identifier:(id)arg2;
 
 - (void).cxx_destruct;
+- (int)compareSequenceFromRevision:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithRevisionString:(id)arg1;
-- (id)initWithSequence:(unsigned long long)arg1 identifier:(id)arg2;
+- (id)initWithSequence:(int)arg1 identifier:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)nextRevisionWithIdentifier:(id)arg1;
 - (id)revisionString;
-- (unsigned long long)sequence;
+- (int)sequence;
 
 @end

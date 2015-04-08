@@ -16,6 +16,7 @@
     unsigned int _avalancheBadgeShouldBeHidden : 1;
     unsigned int _badgeShouldBeVisible : 1;
     PLPhotoTileBadgeView *_badgeView;
+    float _badgeViewOptimalLayoutLowestTop;
     BOOL _centerContentVertically;
     BOOL _clientIsTemporarilyWallpaper;
     unsigned int _commentsTableVisible : 1;
@@ -65,6 +66,7 @@
     NSObject<OS_dispatch_source> *_dispatchTimer;
     UIGestureRecognizer *_doubleTapGestureRecognizer;
     float _doubleTapZoomScale;
+    NSString *_draftCommentText;
     BOOL _force1XCroppedImage;
     BOOL _forceNativeScreenScale;
     int _fullSizeImageRequestID;
@@ -79,8 +81,8 @@
         float height; 
     } _imageSize;
     PLExpandableImageView *_imageView;
+    BOOL _isLoadingFullSizeImage;
     unsigned int _isTVOut : 1;
-    int _lastDisplayedOrientation;
     unsigned int _lockedUnderCropOverlay : 1;
     float _minZoomScale;
     int _mode;
@@ -99,6 +101,7 @@
     BOOL _reviewing;
     PLImageScrollView *_scrollView;
     BOOL _shouldHideProgressIndicator;
+    BOOL _shouldUpdateBadgeViewOptimalLayout;
     UIGestureRecognizer *_singleTapGestureRecognizer;
     <PLPhotoTileViewControllerDelegate> *_tileDelegate;
     struct CGRect { 
@@ -123,6 +126,7 @@
     float _wallpaperLandscapeZoomScale;
     float _wallpaperPortraitZoomScale;
     BOOL _wantsCompactLayout;
+    BOOL _wasInCommentEditMode;
     unsigned int _zoomGesturesEnabled : 1;
     float _zoomScaleBeforeZooming;
     BOOL _zoomToFillInsteadOfToFit;
@@ -172,6 +176,7 @@
 - (void)_installSubview:(id)arg1;
 - (id)_newOriginalImageForPickerFromCachedData;
 - (void)_performDidEndZoomBlock;
+- (void)_performRotationUpdatesWithDuration:(double)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)_readOrientation:(int*)arg1 andSize:(struct CGSize { float x1; float x2; }*)arg2 fromImageData:(id)arg3;
 - (void)_removePlaceholderView;
 - (void)_repositionBadgeView;
@@ -217,7 +222,6 @@
 - (id)description;
 - (id)dictionaryWithCroppedImageForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 minimalCropDimension:(float)arg2 withOptions:(int)arg3;
 - (void)didLoadImage;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)ensureFullSizeImageLoaded;
 - (id)expandableImageView;
 - (BOOL)force1XCroppedImage;
@@ -252,8 +256,10 @@
 - (void)refreshTileWithFullScreenImage:(id)arg1 modelPhoto:(id)arg2;
 - (void)removeCommentsTable;
 - (void)resetZoom;
+- (void)restoreDraftCommentIfNecessary;
 - (void)retryDownload;
 - (BOOL)reviewing;
+- (void)saveDraftCommentIfNecessary;
 - (id)scrollView;
 - (struct CGSize { float x1; float x2; })scrollView:(id)arg1 contentSizeForZoomScale:(float)arg2 withProposedSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -300,7 +306,6 @@
 - (BOOL)tileIsOnScreen;
 - (id)unscaledImage;
 - (void)updateAfterCollapse;
-- (void)updateAfterZoomTransitionWithImage:(id)arg1;
 - (void)updateCenterOverlay;
 - (void)updateCloudDownloadProgress:(float)arg1;
 - (void)updateForVisibleOverlays:(BOOL)arg1;
@@ -315,8 +320,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)wantsCompactLayout;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (float)zoomToFillScale;
 - (float)zoomToFitScale;
 - (void)zoomToScale:(float)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;

@@ -42,11 +42,13 @@
 
 + (id)propertiesThatInvalidateLayout;
 
+- (void)beginDynamicOperation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForResize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })chartAreaFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })chartBodyFrame;
 - (unsigned int)dataSetIndex;
 - (void)dealloc;
+- (void)endDynamicOperation;
 - (id)hitChartElements:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
 - (id)initWithChartInfo:(id)arg1;
 - (void)invalidate;
@@ -69,7 +71,6 @@
 - (void)p_layoutNowForChartBodySize:(struct CGSize { float x1; float x2; })arg1;
 - (void)p_layoutNowForCircumscribingSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)p_layoutTree;
-- (void)processChanges:(id)arg1;
 - (id)renderersWithRep:(id)arg1;
 - (id)seriesIndexedPieWedgeExplosions;
 - (void)setDataSetIndex:(unsigned int)arg1;

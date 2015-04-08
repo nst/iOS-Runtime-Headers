@@ -5,8 +5,8 @@
 @class NSObject<OS_dispatch_data>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface TSPMemoryReadChannel : NSObject <TSUReadChannel> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_data> *_dispatchData;
+    NSObject<OS_dispatch_queue> *_readQueue;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -22,8 +22,8 @@
 - (id)initWithDispatchData:(id)arg1;
 - (id)initWithNSData:(id)arg1;
 - (BOOL)isValid;
-- (void)readFromOffset:(long long)arg1 length:(unsigned long)arg2 queue:(id)arg3 handler:(id)arg4;
-- (void)readWithQueue:(id)arg1 handler:(id)arg2;
+- (void)readFromOffset:(long long)arg1 length:(unsigned long)arg2 handler:(id)arg3;
+- (void)readWithHandler:(id)arg1;
 - (void)setLowWater:(unsigned long)arg1;
 
 @end

@@ -16,6 +16,7 @@
     NSData *_curData;
     unsigned int _curDataPos;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    BOOL _hasInitedCompression;
     BOOL _haveFinishedCompression;
     BOOL _haveFinishedStreaming;
     BOOL _haveFlushedZlib;
@@ -46,11 +47,11 @@
 @property unsigned int bufferSize;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property BOOL hasInitedCompression;
 @property(readonly) unsigned int hash;
 @property BOOL haveFinishedCompression;
 @property BOOL haveFinishedStreaming;
 @property(retain) NSFileHandle * humanLogFileHandle;
-@property(readonly) NSInputStream * inputStream;
 @property BOOL shouldCompress;
 @property <CKDProtobufMessageSigningDelegate> * signingDelegate;
 @property(readonly) Class superclass;
@@ -67,14 +68,15 @@
 - (id)binaryLogFileHandle;
 - (unsigned int)bufferSize;
 - (void)dealloc;
+- (BOOL)hasInitedCompression;
 - (BOOL)haveFinishedCompression;
 - (BOOL)haveFinishedStreaming;
 - (id)humanLogFileHandle;
 - (id)initWithCompression:(BOOL)arg1;
-- (id)inputStream;
-- (void)open;
+- (id)open;
 - (void)setBinaryLogFileHandle:(id)arg1;
 - (void)setBufferSize:(unsigned int)arg1;
+- (void)setHasInitedCompression:(BOOL)arg1;
 - (void)setHaveFinishedCompression:(BOOL)arg1;
 - (void)setHaveFinishedStreaming:(BOOL)arg1;
 - (void)setHumanLogFileHandle:(id)arg1;
@@ -84,5 +86,6 @@
 - (BOOL)shouldCompress;
 - (id)signingDelegate;
 - (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)tearDown;
 
 @end

@@ -40,7 +40,6 @@
 + (id)jobs;
 
 - (int)cancel;
-- (BOOL)isEqual:(id)arg1;
 - (int)mediaProgress;
 - (int)mediaSheets;
 - (int)mediaSheetsCompleted;

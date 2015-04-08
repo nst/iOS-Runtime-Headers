@@ -84,6 +84,7 @@
 - (void)_computeRowUpdates;
 - (void)_computeSectionUpdates;
 - (void)_computeVisibleBounds;
+- (void)_faultInRealHeightsOfNeededCells;
 - (id)_imageViewForView:(id)arg1;
 - (BOOL)_isReloadSectionUpdate;
 - (void)_setupAnimationForReorderingRow;

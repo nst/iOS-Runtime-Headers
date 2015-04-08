@@ -23,7 +23,6 @@
     CDBudget *energyBudget;
     NSMutableArray *fireDates;
     NSDate *fireWakeupDate;
-    NSArray *forecastList;
     NSDate *forecastStartDate;
     bool isClassCLocked;
     bool kEnableSyslog;
@@ -44,6 +43,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)addSlotToForecastList:(unsigned int)arg1;
 - (void)checkTimeZone;
 - (void)complete:(id)arg1;
 - (void)computeFireDateQueue;
@@ -58,6 +58,7 @@
 - (void)programTimer;
 - (void)setNCLaunchRecommendationHandler:(id)arg1;
 - (void)setNCLaunchRecommendationHandlerWithCompletion:(id)arg1;
+- (BOOL)slotIsPredictedForLaunch:(unsigned int)arg1;
 - (void)startEvent:(id)arg1;
 - (void)timerFired:(id)arg1;
 - (void)updateBARSwitch;

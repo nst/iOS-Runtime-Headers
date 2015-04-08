@@ -42,7 +42,6 @@
 - (void)_publishAssets:(id)arg1 andTrimmedVideoPathInfo:(id)arg2 toAlbum:(id)arg3 orCreateWithName:(id)arg4 comment:(id)arg5 invitationRecipients:(id)arg6 wantsPublicWebsite:(BOOL)arg7 completion:(id)arg8;
 - (id)_selectedVideo;
 - (BOOL)_sharedAlbumAllowsAdding:(struct NSObject { Class x1; }*)arg1;
-- (void)_showVideoTooLongAlert;
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;

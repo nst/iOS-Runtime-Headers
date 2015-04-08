@@ -7,6 +7,7 @@
 }
 
 + (id)axisForInfo:(id)arg1;
++ (unsigned char)styleOwnerPathType;
 
 - (id)computeMajorGridlinesFromMinMaxInAnalysis:(id)arg1;
 - (void)dealloc;

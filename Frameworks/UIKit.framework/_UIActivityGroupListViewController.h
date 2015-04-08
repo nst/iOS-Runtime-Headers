@@ -29,10 +29,12 @@
 - (void)dealloc;
 - (float)displayHeight;
 - (id)initWithActivityGroupViewControllers:(id)arg1 embedded:(BOOL)arg2;
+- (BOOL)isAirdropViewController:(id)arg1;
 - (BOOL)isEmbedded;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (id)placeholderLabel;
 - (float)preferredContentHeightForViewController:(id)arg1;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setActivityGroupViewControllers:(id)arg1;
 - (void)setDarkStyleOnLegacyApp:(BOOL)arg1;
 - (void)setEmbedded:(BOOL)arg1;
@@ -42,7 +44,6 @@
 - (void)updateVisibleActivityGroupViewControllers;
 - (id)viewControllerForItemAtIndexPath:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillLayoutSubviews;
 - (id)visibleActivityGroupViewControllers;
 
 @end

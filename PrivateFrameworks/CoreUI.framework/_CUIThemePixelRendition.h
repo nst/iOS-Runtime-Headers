@@ -9,6 +9,7 @@
     _CSIRenditionBlockData *_cachedBlockDataRGBX;
     CUIRenditionMetrics *_renditionMetrics;
     CUIRenditionSliceInformation *_sliceInformation;
+    unsigned long _sourceRowbytes;
     struct CGImage {} *image[16];
     unsigned int nimages;
     struct CGImage { } *unslicedImage;
@@ -26,6 +27,7 @@
 - (struct CGImage { }*)newImageFromCSIDataSlice:(struct _slice { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 ofBitmap:(struct _csibitmap { unsigned int x1; union { unsigned int x_2_1_1; struct _csibitmapflags { unsigned int x_2_2_1 : 1; unsigned int x_2_2_2 : 1; unsigned int x_2_2_3 : 30; } x_2_1_2; } x2; unsigned int x3; unsigned int x4; unsigned char x5[0]; }*)arg2 usingColorspace:(struct CGColorSpace { }*)arg3;
 - (void)setSharedBlockData:(id)arg1;
 - (id)sliceInformation;
+- (unsigned long)sourceRowbytes;
 - (struct CGImage { }*)unslicedImage;
 
 @end

@@ -2,11 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSMutableArray;
+
 @interface TSKAddedToDocumentContext_InsertingPrototype : TSKAddedToDocumentContext {
+    NSMutableArray *mInsertedTableInfos;
 }
 
+- (void)addInsertedTableInfo:(id)arg1;
 - (BOOL)autoUpdateSmartFields;
+- (void)dealloc;
 - (id)description;
+- (id)insertedTableInfos;
 - (BOOL)syncChanges;
 - (BOOL)uniqueBookmarks;
 - (BOOL)wasPasted;

@@ -43,6 +43,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCollectionViewLayout:(id)arg1;
 - (void)loadView;
+- (id)preferredFocusedItem;
 - (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
 - (void)setCollectionView:(id)arg1;
 - (void)setUseLayoutToLayoutNavigationTransitions:(BOOL)arg1;

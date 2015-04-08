@@ -8,17 +8,24 @@
 
 @class <PKPaymentOptionsViewControllerDelegate>, ABPostalAddressEditorNavigationController, NSString, PKPassSnapshotter, PKPaymentOptionsModel;
 
-@interface PKPaymentOptionsViewController : UITableViewController <ABPeoplePickerNavigationControllerDelegate, ABPostalAddressEditorDelegate> {
+@interface PKPaymentOptionsViewController : UITableViewController <ABPeoplePickerNavigationControllerDelegate, ABPostalAddressEditorDelegate, UITextFieldDelegate> {
     ABPostalAddressEditorNavigationController *_addressEditorViewController;
     <PKPaymentOptionsViewControllerDelegate> *_delegate;
+    BOOL _isEditable;
     PKPaymentOptionsModel *_optionsModel;
     int _optionsStyle;
     PKPassSnapshotter *_passSnapshotter;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
+    id _pickedABPersonHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _pickedABPropertyHandler;
 
+    BOOL _showDisclosureIndicators;
     NSString *_title;
 }
 
@@ -26,21 +33,28 @@
 @property <PKPaymentOptionsViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property(copy) id pickedABPersonHandler;
 @property(copy) id pickedABPropertyHandler;
+@property BOOL showDisclosureIndicators;
 @property(readonly) Class superclass;
 
-- (void)_handleDone:(id)arg1;
 - (id)_passSnapshotter;
 - (BOOL)_presentedModally;
 - (void)_showABPickerForPropertyID:(int)arg1 optionsGroup:(id)arg2;
 - (void)_showAddressEntryViewControllerForOptionsGroup:(id)arg1;
 - (void)_showEntryViewControllerForPropertyID:(int)arg1 optionsGroup:(id)arg2;
+- (void)_updateContactName;
+- (void)_updateNavigationBar;
 - (void)dealloc;
 - (id)delegate;
+- (id)initWithStyle:(int)arg1;
 - (id)initWithTitle:(id)arg1 optionsStyle:(int)arg2;
+- (id)initWithTitle:(id)arg1 optionsStyle:(int)arg2 editable:(BOOL)arg3;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2;
 - (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
+- (id)pickedABPersonHandler;
 - (id)pickedABPropertyHandler;
 - (void)postalAddressEditor:(id)arg1 finishedEditingContact:(id)arg2;
 - (void)postalAddressEditor:(id)arg1 finishedEditingProperty:(int)arg2 contact:(id)arg3;
@@ -48,17 +62,28 @@
 - (void)setBillingAddressOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setEmailOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id)arg3;
+- (void)setNameOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id)arg3;
 - (void)setPaymentPassOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id)arg3;
 - (void)setPhoneOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id)arg3;
+- (void)setPickedABPersonHandler:(id)arg1;
 - (void)setPickedABPropertyHandler:(id)arg1;
-- (void)setShippingAddressOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id)arg3;
-- (void)setShippingMethods:(id)arg1 currencyCode:(id)arg2 selectedIndex:(int)arg3 optionsChangedHandler:(id)arg4;
+- (void)setShippingAddressOptions:(id)arg1 selectedIndex:(int)arg2 displayMode:(id)arg3 displayName:(id)arg4 optionsChangedHandler:(id)arg5;
+- (void)setShippingMethods:(id)arg1 currencyCode:(id)arg2 selectedIndex:(int)arg3 displayMode:(id)arg4 optionsChangedHandler:(id)arg5;
+- (void)setShowDisclosureIndicators:(BOOL)arg1;
+- (BOOL)showDisclosureIndicators;
+- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (void)textFieldDidBeginEditing:(id)arg1;
 - (id)title;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

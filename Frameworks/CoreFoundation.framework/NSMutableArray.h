@@ -14,10 +14,10 @@
 + (id)cd_arrayWithDoubleValue:(double)arg1 repeated:(unsigned int)arg2;
 + (id)cd_arrayWithDoubleValuesStarting:(double)arg1 ending:(double)arg2 count:(unsigned int)arg3;
 + (id)copyNonRetainingArray;
-+ (id)instanceWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<double> { double *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
 + (id)nonRetainingArray;
 + (id)nonRetainingArray;
 + (id)nonRetainingArray;
++ (id)tsch_instanceWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<double> { double *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; }*)arg1 unarchiver:(id)arg2;
 
 - (void)MSRemoveOneObject:(id)arg1;
 - (void)MSRemoveOneObjectByPointerComparison:(id)arg1;
@@ -44,21 +44,17 @@
 - (void)addItemsMatchingExtensions:(id)arg1 orTypes:(id)arg2 fromFolder:(id)arg3;
 - (void)addItemsMatchingType:(id)arg1 fromFolder:(id)arg2;
 - (void)addNonNilObject:(id)arg1;
-- (void)addNonNilObject:(id)arg1;
 - (void)addObject:(id)arg1;
-- (void)addObjectNonNil:(id)arg1;
-- (void)addObjects:(id)arg1;
 - (void)addObjects:(id)arg1;
 - (void)addObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (void)addObjectsFromArray:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)addObjectsFromNonNilArray:(id)arg1;
-- (void)addObjectsFromNonNilArray:(id)arg1;
 - (void)addObjectsFromOrderedSet:(id)arg1;
 - (void)addObjectsFromOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)addObjectsFromSet:(id)arg1;
-- (void)addProperty:(int)arg1;
 - (void)axSafelyAddObject:(id)arg1;
+- (void)axSafelyAddObjectsFromArray:(id)arg1;
 - (id)ax_dequeueObject;
 - (void)ax_enqueueObject:(id)arg1;
 - (id)ax_lastEnqueuedObject;
@@ -85,12 +81,9 @@
 - (void)cr_insertObject:(id)arg1 usingComparator:(id)arg2;
 - (void)cr_removeObjectsStartingAtIndex:(unsigned int)arg1;
 - (id)dequeue;
-- (id)dequeue;
-- (void)enqueue:(id)arg1;
 - (void)enqueue:(id)arg1;
 - (void)exchangeObjectAtIndex:(unsigned int)arg1 withObjectAtIndex:(unsigned int)arg2;
 - (void)filterUsingPredicate:(id)arg1;
-- (id)initWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<double> { double *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
@@ -114,12 +107,12 @@
 - (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (void)moveObjectsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
 - (void)performSpecifierUpdatesUsingBlock:(id)arg1;
-- (id)pop_tsu;
+- (void)pl_addCFString:(struct __CFString { }*)arg1;
+- (void)pl_valuesChanged:(BOOL)arg1 forKey:(struct __CFString { }*)arg2;
 - (id)pop_tsu;
 - (void)ps_addPossibleObject:(id)arg1;
 - (void)ps_insertObject:(id)arg1 afterObject:(id)arg2;
 - (void)ps_insertObjectsFromArray:(id)arg1 afterObject:(id)arg2;
-- (void)push_tsu:(id)arg1;
 - (void)push_tsu:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeAllObjectsWithClass:(Class)arg1;
@@ -138,7 +131,6 @@
 - (void)removeObjectsAtIndexes:(id)arg1;
 - (void)removeObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (void)removeObjectsFromIndices:(unsigned int*)arg1 numIndices:(unsigned int)arg2;
-- (void)removeObjectsIdenticalToObjectsInArray:(id)arg1;
 - (void)removeObjectsIdenticalToObjectsInArray:(id)arg1;
 - (void)removeObjectsInArray:(id)arg1;
 - (void)removeObjectsInArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -166,7 +158,6 @@
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjectsFromSet:(id)arg2;
 - (void)rollObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 by:(int)arg2;
 - (void)safelyAddObject:(id)arg1;
-- (void)saveToArchive:(struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<double> { double *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
 - (void)setArray:(id)arg1;
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
@@ -187,6 +178,18 @@
 - (id)tk_lastEnqueuedObject;
 - (id)tk_nextDequeuedObject;
 - (void)trimObjectsFromIndex:(unsigned int)arg1;
-- (void)trimObjectsFromIndex:(unsigned int)arg1;
+- (void)tsce_addObjectNonNil:(id)arg1;
+- (id)tsch_initWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<double> { double *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; }*)arg1 unarchiver:(id)arg2;
+- (void)tsch_saveToArchive:(struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<double> { double *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; }*)arg1 archiver:(id)arg2;
+- (void)tss_addProperty:(int)arg1;
+- (void)tsu_addNonNilObject:(id)arg1;
+- (void)tsu_addObjects:(id)arg1;
+- (void)tsu_addObjectsFromNonNilArray:(id)arg1;
+- (id)tsu_dequeue;
+- (void)tsu_enqueue:(id)arg1;
+- (id)tsu_pop;
+- (void)tsu_push:(id)arg1;
+- (void)tsu_removeObjectsIdenticalToObjectsInArray:(id)arg1;
+- (void)tsu_trimObjectsFromIndex:(unsigned int)arg1;
 
 @end

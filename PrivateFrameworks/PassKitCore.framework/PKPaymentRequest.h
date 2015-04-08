@@ -15,7 +15,10 @@
     unsigned int _requiredBillingAddressFields;
     unsigned int _requiredShippingAddressFields;
     void *_shippingAddress;
+    BOOL _shippingEditable;
+    NSString *_shippingEditableMessage;
     NSArray *_shippingMethods;
+    unsigned int _shippingType;
     NSArray *_supportedNetworks;
 }
 
@@ -29,11 +32,15 @@
 @property unsigned int requiredBillingAddressFields;
 @property unsigned int requiredShippingAddressFields;
 @property void* shippingAddress;
+@property(getter=isShippingEditable) BOOL shippingEditable;
+@property(copy) NSString * shippingEditableMessage;
 @property(copy) NSArray * shippingMethods;
+@property unsigned int shippingType;
 @property(copy) NSArray * supportedNetworks;
 
 + (BOOL)supportsSecureCoding;
 
+- (id)_shippingTypeToString;
 - (id)_transactionAmount;
 - (id)applicationData;
 - (void*)billingAddress;
@@ -41,7 +48,9 @@
 - (id)currencyCode;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isShippingEditable;
 - (unsigned int)merchantCapabilities;
 - (id)merchantIdentifier;
 - (id)paymentSummaryItems;
@@ -57,10 +66,15 @@
 - (void)setRequiredBillingAddressFields:(unsigned int)arg1;
 - (void)setRequiredShippingAddressFields:(unsigned int)arg1;
 - (void)setShippingAddress:(void*)arg1;
+- (void)setShippingEditable:(BOOL)arg1;
+- (void)setShippingEditableMessage:(id)arg1;
 - (void)setShippingMethods:(id)arg1;
+- (void)setShippingType:(unsigned int)arg1;
 - (void)setSupportedNetworks:(id)arg1;
 - (void*)shippingAddress;
+- (id)shippingEditableMessage;
 - (id)shippingMethods;
+- (unsigned int)shippingType;
 - (id)supportedNetworks;
 
 @end

@@ -16,6 +16,6 @@
 - (void).cxx_destruct;
 - (void)close;
 - (id)initWithBufferedReadChannel:(id)arg1;
-- (void)readWithQueue:(id)arg1 handler:(id)arg2;
+- (void)readWithHandler:(id)arg1;
 
 @end

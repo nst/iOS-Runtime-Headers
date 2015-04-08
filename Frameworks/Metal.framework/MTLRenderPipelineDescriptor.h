@@ -69,6 +69,7 @@
 - (float)sampleCoverage;
 - (unsigned int)sampleMask;
 - (id)serializeFragmentData;
+- (id)serializedVertexData;
 - (void)setAlphaToCoverageEnabled:(BOOL)arg1;
 - (void)setAlphaToOneEnabled:(BOOL)arg1;
 - (void)setDepthAttachmentPixelFormat:(unsigned int)arg1;
@@ -82,7 +83,6 @@
 - (void)setVertexDescriptor:(id)arg1;
 - (void)setVertexFunction:(id)arg1;
 - (unsigned int)stencilAttachmentPixelFormat;
-- (BOOL)validate;
 - (void)validateWithDevice:(id)arg1;
 - (id)vertexDescriptor;
 - (id)vertexFunction;

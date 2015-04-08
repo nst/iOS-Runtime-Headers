@@ -21,6 +21,8 @@
 @property(readonly) unsigned int pageCountWithoutFillerPage;
 @property(readonly) NSArray * pageHints;
 
++ (BOOL)verifyHints:(id)arg1 withBodyStorage:(id)arg2 upToPageIndex:(unsigned int)arg3;
+
 - (BOOL)containsDocumentPageIndex:(unsigned int)arg1;
 - (id)copyForArchiving;
 - (void)dealloc;
@@ -29,13 +31,13 @@
 - (BOOL)hasPageHintOfKind:(int)arg1 atPageIndex:(unsigned int)arg2;
 - (BOOL)hasPageHintOfKind:(int)arg1 beforePageIndex:(unsigned int)arg2;
 - (id)init;
-- (id)initWithArchive:(const struct SectionHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TP::PageHintArchive> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct SectionHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TP::PageHintArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg1 unarchiver:(id)arg2;
 - (unsigned int)lastPageIndex;
 - (unsigned int)pageCount;
 - (unsigned int)pageCountWithoutFillerPage;
 - (id)pageHintForPageIndex:(unsigned int)arg1;
 - (id)pageHints;
-- (void)saveToArchive:(struct SectionHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TP::PageHintArchive> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2 context:(id)arg3 shouldArchiveHintBlock:(id)arg4;
+- (void)saveToArchive:(struct SectionHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TP::PageHintArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg1 archiver:(id)arg2 context:(id)arg3 shouldArchiveHintBlock:(id)arg4;
 - (void)setDocumentStartPageIndex:(unsigned int)arg1;
 - (void)setPageHints:(id)arg1;
 - (void)trimPageHintsFromPageIndex:(unsigned int)arg1;

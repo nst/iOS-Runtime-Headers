@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray, NSData, NSDate, NSDictionary, NSSet, NSString, NSURL, PKBarcode, PKImage, PKPassDisplayProfile, PKPaymentPass, UIImage;
+@class NSArray, NSData, NSDate, NSDictionary, NSNumber, NSSet, NSString, NSURL, PKBarcode, PKImage, PKPassDisplayProfile, PKPaymentPass, UIImage;
 
 @interface PKPass : PKObject <NSCopying, NSSecureCoding> {
     NSSet *_embeddedBeacons;
@@ -20,6 +20,7 @@
     NSURL *_passURL;
     NSDate *_relevantDate;
     BOOL _revoked;
+    NSNumber *_sequenceCounter;
     NSString *_serialNumber;
     int _sharingMethod;
     NSString *_sharingText;
@@ -68,6 +69,7 @@
 @property(readonly) NSString * pluralLocalizedName;
 @property(copy) NSDate * relevantDate;
 @property(getter=isRevoked) BOOL revoked;
+@property(copy) NSNumber * sequenceCounter;
 @property(copy) NSString * serialNumber;
 @property int sharingMethod;
 @property(copy) NSString * sharingText;
@@ -145,6 +147,7 @@
 - (id)paymentPass;
 - (id)pluralLocalizedName;
 - (id)relevantDate;
+- (id)sequenceCounter;
 - (id)serialNumber;
 - (void)setEmbeddedBeacons:(id)arg1;
 - (void)setEmbeddedLocations:(id)arg1;
@@ -159,6 +162,7 @@
 - (void)setPassURL:(id)arg1;
 - (void)setRelevantDate:(id)arg1;
 - (void)setRevoked:(BOOL)arg1;
+- (void)setSequenceCounter:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
 - (void)setSharingMethod:(int)arg1;
 - (void)setSharingText:(id)arg1;

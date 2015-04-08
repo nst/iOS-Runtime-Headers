@@ -25,10 +25,10 @@
 @property(readonly) unsigned int hash;
 @property(readonly) int layoutOrientation;
 @property float longSideMargin;
-@property(retain) UIButton * mainActionButton;
-@property(retain) UIButton * secondaryActionButton;
+@property(readonly) UIButton * mainActionButton;
+@property(readonly) UIButton * secondaryActionButton;
 @property(readonly) Class superclass;
-@property(copy) NSArray * toolButtons;
+@property(copy,readonly) NSArray * toolButtons;
 @property BOOL useTranslucentBackground;
 
 - (void).cxx_destruct;
@@ -39,9 +39,7 @@
 - (id)mainActionButton;
 - (id)secondaryActionButton;
 - (void)setLongSideMargin:(float)arg1;
-- (void)setMainActionButton:(id)arg1;
-- (void)setSecondaryActionButton:(id)arg1;
-- (void)setToolButtons:(id)arg1;
+- (void)setToolButtons:(id)arg1 mainActionButton:(id)arg2 secondaryActionButton:(id)arg3;
 - (void)setUseTranslucentBackground:(BOOL)arg1;
 - (void)setUseTranslucentBackground:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setupWithLayoutOrientation:(int)arg1;

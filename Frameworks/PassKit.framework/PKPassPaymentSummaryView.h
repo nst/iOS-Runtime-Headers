@@ -5,22 +5,27 @@
 @class <PKPassPaymentSummaryViewDelegate>, NSNumberFormatter, NSString, PKPaymentMessage, PKPaymentPass, PKPaymentTransaction, UITableView;
 
 @interface PKPassPaymentSummaryView : UIView <PKPassPaymentSummaryCellDelegate, UITableViewDataSource, UITableViewDelegate> {
+    BOOL _deepLinkingEnabled;
     <PKPassPaymentSummaryViewDelegate> *_delegate;
     PKPaymentMessage *_message;
+    NSString *_messageAppLaunchToken;
     NSNumberFormatter *_numberFormatter;
     PKPaymentPass *_pass;
     UITableView *_tableView;
     PKPaymentTransaction *_transaction;
+    NSString *_transactionAppLaunchToken;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <PKPassPaymentSummaryViewDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
-@property(retain) PKPaymentMessage * message;
-@property(retain) PKPaymentPass * pass;
+@property(readonly) PKPaymentMessage * message;
+@property(readonly) NSString * messageAppLaunchToken;
+@property(readonly) PKPaymentPass * pass;
 @property(readonly) Class superclass;
-@property(retain) PKPaymentTransaction * transaction;
+@property(readonly) PKPaymentTransaction * transaction;
+@property(readonly) NSString * transactionAppLaunchToken;
 
 - (id)_amountTextFromTransaction:(id)arg1;
 - (void)_configureCell:(id)arg1 forMessage:(id)arg2;
@@ -39,15 +44,13 @@
 - (id)initWithPaymentPass:(id)arg1;
 - (void)layoutSubviews;
 - (id)message;
+- (id)messageAppLaunchToken;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)pass;
 - (void)paymentSummaryCellDetailsButtonPressed:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMessage:(id)arg1;
-- (void)setMessage:(id)arg1 animated:(BOOL)arg2;
-- (void)setPass:(id)arg1;
-- (void)setTransaction:(id)arg1;
-- (void)setTransaction:(id)arg1 animated:(BOOL)arg2;
+- (void)setMessage:(id)arg1 appLaunchToken:(id)arg2 animated:(BOOL)arg3;
+- (void)setTransaction:(id)arg1 appLaunchToken:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
@@ -57,5 +60,6 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (id)transaction;
+- (id)transactionAppLaunchToken;
 
 @end

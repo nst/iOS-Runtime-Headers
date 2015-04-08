@@ -32,6 +32,7 @@
 - (id)changeTrackingContentFormatString;
 - (id)changeTrackingContentString;
 - (id)changeTrackingTitleString;
+- (void)commentWillBeAddedToDocumentRoot;
 - (void)commitText:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
@@ -42,6 +43,7 @@
 - (id)initWithChange:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToChangeDetails:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })p_rangeInStorage;
 - (void)p_updateChangeStrings;
 - (void)setAuthor:(id)arg1;
 - (void)setChange:(id)arg1;

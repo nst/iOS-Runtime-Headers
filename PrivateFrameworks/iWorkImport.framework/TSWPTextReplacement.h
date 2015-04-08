@@ -18,7 +18,7 @@
 - (int)delta;
 - (id)initWithSelection:(id)arg1 string:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })insertedRange;
-- (void)performWithStorage:(id)arg1 delta:(int)arg2 undoTransaction:(struct TSWPStorageTransaction { }*)arg3 replaceBlock:(id)arg4;
+- (void)performWithStorage:(id)arg1 delta:(int)arg2 actionBuilder:(struct TSWPStorageActionBuilder { }*)arg3 withFlags:(unsigned int)arg4 replaceBlock:(id)arg5;
 - (unsigned int)targetCharIndex;
 
 @end

@@ -35,6 +35,7 @@
 @property(readonly) NSArray * stations;
 @property(readonly) NSArray * userStations;
 
++ (id)_persistentStoreConfigurationOptions;
 + (void)_postAccountDidDeauthenticateNotification;
 + (id)_radioDatabasePath;
 + (id)_radioDirectoryPath;

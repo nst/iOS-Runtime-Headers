@@ -17,6 +17,7 @@
     NSNumber *_mailNumberOfPastDaysToSync;
     NSString *_password;
     BOOL _syncDefaultFoldersOnly;
+    NSNumber *_syncDefaultFoldersOnlyNum;
     NSNumber *_useSSL;
     NSString *_username;
 }
@@ -34,6 +35,7 @@
 @property(retain,readonly) NSNumber * mailNumberOfPastDaysToSync;
 @property(copy) NSString * password;
 @property BOOL syncDefaultFoldersOnly;
+@property(readonly) NSNumber * syncDefaultFoldersOnlyNum;
 @property(retain) NSNumber * useSSL;
 @property(copy) NSString * username;
 
@@ -71,6 +73,7 @@
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (BOOL)syncDefaultFoldersOnly;
+- (id)syncDefaultFoldersOnlyNum;
 - (id)title;
 - (id)useSSL;
 - (id)username;

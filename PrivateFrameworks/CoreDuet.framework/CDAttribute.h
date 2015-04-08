@@ -12,6 +12,7 @@
     NSString *_name;
     CDSession *_session;
     int _type;
+    NSMutableArray *activeReports;
     int conditionChangeToken;
     NSMutableDictionary *costCache;
     int focalAppToken;
@@ -23,6 +24,7 @@
     NSMutableArray *revocationCallbackList;
     int revocationToken;
     int systemConditionChangeToken;
+    NSMutableDictionary *tokenCache;
 }
 
 @property(readonly) NSObject<OS_dispatch_queue> * deferredRequestsQ;
@@ -63,6 +65,9 @@
 - (id)initWithSession:(id)arg1 name:(id)arg2 type:(int)arg3 integerId:(unsigned long long)arg4 error:(id*)arg5;
 - (unsigned long long)integerId;
 - (BOOL)isBypassClient;
+- (void)meteringInsertCachedToken:(id)arg1 meteringToken:(unsigned long long)arg2;
+- (unsigned int)meteringIsActive:(id)arg1;
+- (id)meteringLookupCachedToken:(id)arg1;
 - (unsigned long long)meteringStartedWithValue:(id)arg1 costDictionary:(id)arg2 onDate:(id)arg3 error:(id*)arg4;
 - (BOOL)meteringStoppedWithValue:(id)arg1 costDictionary:(id)arg2 onDate:(id)arg3 meteringToken:(unsigned long long)arg4 error:(id*)arg5;
 - (BOOL)meteringUpdateWithValue:(id)arg1 costDictionary:(id)arg2 onDate:(id)arg3 meteringToken:(unsigned long long)arg4 error:(id*)arg5;
@@ -103,5 +108,7 @@
 - (id)temporalForecastOfValue:(id)arg1 forHistoryWindow:(id)arg2 forecastType:(int)arg3 maximumElements:(unsigned long long)arg4 error:(id*)arg5;
 - (id)temporalForecastXPCObjectToArray:(id)arg1 attributeValue:(id)arg2 forecastType:(int)arg3 error:(id*)arg4;
 - (int)type;
+- (id)updateCostOnDownload:(id)arg1 meteringToken:(unsigned long long)arg2;
+- (void)updateDuetWithCost;
 
 @end

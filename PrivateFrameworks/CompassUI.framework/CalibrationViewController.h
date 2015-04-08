@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
  */
 
-@class CAShapeLayer, CalibrationBallView, CompassBackgroundView, NSMutableArray, UILabel;
+@class CAShapeLayer, CalibrationBallView, CompassBackgroundView, NSMutableArray, UIButton, UILabel;
 
 @interface CalibrationViewController : UIViewController {
     double _angleOfAwesome;
     double _angleToRim;
     CalibrationBallView *_ballView;
     NSMutableArray *_calibrationConstraints;
+    UIButton *_cancelButton;
     CompassBackgroundView *_compassBackgroundView;
     CAShapeLayer *_compassBackgroundViewMask;
     struct CGPoint { 
@@ -32,8 +33,10 @@
 }
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (double)_correctedAngleForCurrentOrientation:(double)arg1;
 - (void)addConstraints;
+- (void)cancel;
 - (BOOL)circleIsCompleted;
 - (double)completeCircle;
 - (void)dealloc;

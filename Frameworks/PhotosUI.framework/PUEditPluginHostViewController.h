@@ -32,6 +32,7 @@
 
 - (void).cxx_destruct;
 - (void)_addRemoteViewControllerIfNeeded;
+- (void)_beginContentEditingWithCompletionHandler:(id)arg1 timeout:(double)arg2;
 - (void)_beginDisablingIdleTimer;
 - (BOOL)_didHandleCancel;
 - (BOOL)_didHandleDone;
@@ -44,6 +45,7 @@
 - (void)_handleCancelButton:(id)arg1;
 - (void)_handleDoneButton:(id)arg1;
 - (id)_hostContext;
+- (void)_queryShouldShowCancelConfirmationWithResponseHandler:(id)arg1 timeout:(double)arg2;
 - (id)_remoteViewController;
 - (id)_request;
 - (void)_setDidHandleCancel:(BOOL)arg1;
@@ -59,10 +61,9 @@
 - (void)loadRemoteViewControllerWithCompletionHandler:(id)arg1;
 - (void)loadView;
 - (id)plugin;
+- (BOOL)prefersStatusBarHidden;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
-- (BOOL)pu_wantsStatusBarVisible;
 - (void)queryHandlingCapabilityForAdjustmentData:(id)arg1 withResponseHandler:(id)arg2 timeout:(double)arg3;
-- (void)queryShouldShowCancelConfirmationWithResponseHandler:(id)arg1 timeout:(double)arg2;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

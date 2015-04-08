@@ -8,16 +8,21 @@
     WBSParsecSearchCompletionResultSet *_bestResultSet;
     NSArray *_completionResultSets;
     double _maxAge;
+    unsigned int _sizeInBytes;
 }
 
 @property(readonly) WBSParsecSearchCompletionResultSet * bestCompletionResultSet;
 @property(readonly) NSArray * completionResultSets;
+@property(readonly) NSArray * errorCodesForCompletionResultSets;
 @property(readonly) double maxAge;
+@property(readonly) unsigned int sizeInBytes;
 
 - (void).cxx_destruct;
 - (id)bestCompletionResultSet;
 - (id)completionResultSets;
-- (id)initWithArray:(id)arg1 responseHeaders:(id)arg2 cache:(id)arg3;
+- (id)errorCodesForCompletionResultSets;
+- (id)initWithArray:(id)arg1 responseHeaders:(id)arg2 sizeInBytes:(unsigned int)arg3 cache:(id)arg4;
 - (double)maxAge;
+- (unsigned int)sizeInBytes;
 
 @end

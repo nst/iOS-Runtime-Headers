@@ -27,8 +27,6 @@
 @property(retain) NSString * snippet;
 @property(retain) NSString * uid;
 
-+ (id)reviewWithYelpJSON:(id)arg1;
-
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

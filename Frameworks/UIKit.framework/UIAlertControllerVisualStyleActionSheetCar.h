@@ -11,6 +11,8 @@
 - (id)defaultActionFont;
 - (id)highlightedActionContentColor;
 - (float)horizontalContentMargin;
+- (float)marginAboveTitleLabelFirstBaseline;
+- (float)marginBelowLastLabelLastBaseline;
 - (int)maximumNumberOfLinesInMessageLabel;
 - (int)maximumNumberOfLinesInTitleLabel;
 - (id)messageLabelColor;

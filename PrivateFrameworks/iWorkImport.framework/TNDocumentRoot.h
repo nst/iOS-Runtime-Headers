@@ -42,6 +42,7 @@
 + (struct CGSize { float x1; float x2; })previewImageSizeForType:(unsigned int)arg1;
 
 - (id).cxx_construct;
+- (id)UIStateForChart:(id)arg1;
 - (id)activeSheet;
 - (void)addSheet:(id)arg1 dolcContext:(id)arg2;
 - (unsigned int)applicationType;
@@ -56,7 +57,7 @@
 - (void)insertSheet:(id)arg1 sheetIndex:(unsigned int)arg2 context:(id)arg3;
 - (BOOL)isMultiPageForQuickLook;
 - (BOOL)isPrintingAllSheets;
-- (void)moveSheet:(id)arg1 toIndex:(unsigned int)arg2;
+- (void)moveSheetFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (id)nameForResolverContainer:(id)arg1;
 - (int)naturalAlignmentAtCharIndex:(unsigned int)arg1 inTextStorage:(id)arg2;
 - (void)p_addSidebarNodeForSheet:(id)arg1;
@@ -97,8 +98,11 @@
 - (void)setRemovedAllQuickCalcFunctions:(BOOL)arg1;
 - (void)setSelectedQuickCalcFunctions:(id)arg1;
 - (void)setSidebarChildren:(id)arg1 forSheet:(id)arg2;
+- (void)setStylesheet:(id)arg1 andThemeForImport:(id)arg2;
+- (void)setStylesheetForUpgradeToSingleStylesheet:(id)arg1;
 - (void)setTheme:(id)arg1;
 - (void)setThemeForTemplateImport:(id)arg1;
+- (void)setUIState:(id)arg1 forChart:(id)arg2;
 - (void)setUiState:(id)arg1;
 - (void)sheet:(id)arg1 insertedDrawable:(id)arg2;
 - (void)sheet:(id)arg1 removedDrawable:(id)arg2;
@@ -112,6 +116,7 @@
 - (id)uiState;
 - (BOOL)validName:(id)arg1 forRenamingSheet:(id)arg2;
 - (BOOL)validNameForNewSheet:(id)arg1;
+- (void)validateViewState:(id)arg1;
 - (int)verticalAlignmentForTextStorage:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOCarInfo, GEOMapRegion, GEOPlaceActionDetails;
+@class GEOCarInfo, GEOMapRegion, GEOPlaceActionDetails, NSString;
 
 @interface GEOMapsUsageFeedbackCollection : PBCodable <NSCopying> {
     int _actionType;
@@ -16,6 +16,7 @@
     } _has;
     GEOMapRegion *_mapRegion;
     GEOPlaceActionDetails *_placeActionDetails;
+    NSString *_providerId;
     int _sequenceNumber;
     struct { 
         unsigned long long _high; 
@@ -31,12 +32,14 @@
 @property(readonly) BOOL hasCarInfo;
 @property(readonly) BOOL hasMapRegion;
 @property(readonly) BOOL hasPlaceActionDetails;
+@property(readonly) BOOL hasProviderId;
 @property BOOL hasSequenceNumber;
 @property BOOL hasSessionID;
 @property BOOL hasSessionRelativeTimestamp;
 @property BOOL hasZoomLevel;
 @property(retain) GEOMapRegion * mapRegion;
 @property(retain) GEOPlaceActionDetails * placeActionDetails;
+@property(retain) NSString * providerId;
 @property int sequenceNumber;
 @property struct { unsigned long long x1; unsigned long long x2; } sessionID;
 @property double sessionRelativeTimestamp;
@@ -56,6 +59,7 @@
 - (BOOL)hasCarInfo;
 - (BOOL)hasMapRegion;
 - (BOOL)hasPlaceActionDetails;
+- (BOOL)hasProviderId;
 - (BOOL)hasSequenceNumber;
 - (BOOL)hasSessionID;
 - (BOOL)hasSessionRelativeTimestamp;
@@ -67,6 +71,7 @@
 - (id)mapRegion;
 - (void)mergeFrom:(id)arg1;
 - (id)placeActionDetails;
+- (id)providerId;
 - (BOOL)readFrom:(id)arg1;
 - (int)sequenceNumber;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
@@ -80,6 +85,7 @@
 - (void)setHasZoomLevel:(BOOL)arg1;
 - (void)setMapRegion:(id)arg1;
 - (void)setPlaceActionDetails:(id)arg1;
+- (void)setProviderId:(id)arg1;
 - (void)setSequenceNumber:(int)arg1;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSessionRelativeTimestamp:(double)arg1;

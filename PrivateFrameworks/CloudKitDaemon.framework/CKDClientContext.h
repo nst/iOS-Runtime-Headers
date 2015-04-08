@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKAccountInfo, CKContainerID, CKDAccount, CKDFlowControlManager, CKDMMCS, CKDMescalSession, CKDPCSManager, CKDServerConfiguration, CKDZoneGatekeeper, NSBundle, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSURL;
+@class CKAccountInfo, CKContainerID, CKDAccount, CKDFlowControlManager, CKDKeyValueDiskCache, CKDMMCS, CKDMescalSession, CKDPCSManager, CKDPublicIdentityLookupService, CKDServerConfiguration, CKDZoneGatekeeper, CKTimeLogger, NSBundle, NSHashTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL;
 
 @interface CKDClientContext : NSObject <CKLoggingProtocol> {
     CKDMMCS *_MMCS;
     CKDAccount *_account;
     CKAccountInfo *_accountInfoOverride;
-    BOOL _accountRefreshInProgress;
-    BOOL _accountReloadRequired;
+    BOOL _allowsPowerNapScheduling;
     NSString *_applicationAssetDbDirectory;
     NSBundle *_applicationBundle;
     NSString *_applicationBundleID;
@@ -24,10 +23,9 @@
     NSString *_applicationPackageUploadDirectory;
     NSString *_applicationRecordCacheDirectory;
     NSString *_applicationVersion;
-    struct { 
-        unsigned int val[8]; 
-    } _auditToken;
+    CKDPublicIdentityLookupService *_backgroundPublicIdentityLookupService;
     CKDZoneGatekeeper *_backgroundZoneGatekeeper;
+    int _cachedEnvironment;
     BOOL _canAccessProtectionData;
     BOOL _canSetDeviceIdentifier;
     CKDServerConfiguration *_config;
@@ -35,9 +33,11 @@
     CKContainerID *_containerID;
     NSString *_containerScopedUserID;
     NSString *_contextID;
+    int _darkWakeEnabled;
     NSMutableDictionary *_fakeErrorByClassName;
     BOOL _finishedAppProxySetup;
     CKDFlowControlManager *_flowControlManager;
+    CKDPublicIdentityLookupService *_foregroundPublicIdentityLookupService;
     CKDZoneGatekeeper *_foregroundZoneGatekeeper;
     BOOL _hasDataContainer;
     BOOL _hasSystemServiceEntitlement;
@@ -45,12 +45,15 @@
     CKDMescalSession *_mescalSession;
     NSMutableArray *_oldApplicationCaches;
     CKDPCSManager *_pcsManager;
+    NSHashTable *_proxies;
     NSURL *_publicCloudDBURL;
     NSURL *_publicDeviceServiceURL;
+    CKDKeyValueDiskCache *_publicIdentitiesDiskCache;
     NSURL *_publicShareServiceURL;
     BOOL _sandboxed;
-    NSObject<OS_dispatch_semaphore> *_sema;
     NSObject<OS_dispatch_queue> *_setupQueue;
+    NSObject<OS_dispatch_source> *_setupSource;
+    CKTimeLogger *_timeLogger;
     int _type;
     int _usesAPSPublicToken;
 }
@@ -58,8 +61,7 @@
 @property(retain) CKDMMCS * MMCS;
 @property(retain) CKDAccount * account;
 @property(readonly) CKAccountInfo * accountInfoOverride;
-@property BOOL accountRefreshInProgress;
-@property BOOL accountReloadRequired;
+@property BOOL allowsPowerNapScheduling;
 @property(retain) NSString * applicationAssetDbDirectory;
 @property(readonly) NSBundle * applicationBundle;
 @property(readonly) NSString * applicationBundleID;
@@ -75,8 +77,9 @@
 @property(retain) NSString * applicationRecordCacheDirectory;
 @property(retain) NSString * applicationVersion;
 @property(setter=setAPSEnvironmentString:,retain) NSString * apsEnvironmentString;
-@property struct { unsigned int x1[8]; } auditToken;
+@property(retain) CKDPublicIdentityLookupService * backgroundPublicIdentityLookupService;
 @property(retain) CKDZoneGatekeeper * backgroundZoneGatekeeper;
+@property int cachedEnvironment;
 @property(readonly) BOOL canAccessAccount;
 @property BOOL canAccessProtectionData;
 @property BOOL canSetDeviceIdentifier;
@@ -85,11 +88,13 @@
 @property(readonly) CKContainerID * containerID;
 @property(retain) NSString * containerScopedUserID;
 @property(readonly) NSString * contextID;
+@property int darkWakeEnabled;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSMutableDictionary * fakeErrorByClassName;
 @property BOOL finishedAppProxySetup;
 @property(retain) CKDFlowControlManager * flowControlManager;
+@property(retain) CKDPublicIdentityLookupService * foregroundPublicIdentityLookupService;
 @property(retain) CKDZoneGatekeeper * foregroundZoneGatekeeper;
 @property BOOL hasDataContainer;
 @property BOOL hasSystemServiceEntitlement;
@@ -98,13 +103,16 @@
 @property(retain) CKDMescalSession * mescalSession;
 @property(retain) NSMutableArray * oldApplicationCaches;
 @property(retain) CKDPCSManager * pcsManager;
+@property(retain) NSHashTable * proxies;
 @property(retain) NSURL * publicCloudDBURL;
 @property(retain) NSURL * publicDeviceServiceURL;
+@property(retain) CKDKeyValueDiskCache * publicIdentitiesDiskCache;
 @property(retain) NSURL * publicShareServiceURL;
 @property(getter=isSandboxed) BOOL sandboxed;
-@property(retain) NSObject<OS_dispatch_semaphore> * sema;
 @property(retain) NSObject<OS_dispatch_queue> * setupQueue;
+@property(retain) NSObject<OS_dispatch_source> * setupSource;
 @property(readonly) Class superclass;
+@property(retain) CKTimeLogger * timeLogger;
 @property(readonly) int type;
 @property int usesAPSPublicToken;
 
@@ -123,11 +131,13 @@
 - (id)_issueSandboxExtensionForPath:(id)arg1 error:(id*)arg2;
 - (void)_loadApplicationContainerPathAndType;
 - (void)_purgeOldCacheDirectories;
+- (void)_reloadAccount;
 - (BOOL)_setupDirectoriesWithClientProxy:(id)arg1 sandboxExtensions:(id*)arg2 error:(id*)arg3;
+- (void)_signalAccountReload;
 - (id)account;
 - (id)accountInfoOverride;
-- (BOOL)accountRefreshInProgress;
-- (BOOL)accountReloadRequired;
+- (void)addClientProxy:(id)arg1;
+- (BOOL)allowsPowerNapScheduling;
 - (id)applicationAssetDbDirectory;
 - (id)applicationBundle;
 - (id)applicationBundleID;
@@ -143,8 +153,9 @@
 - (id)applicationRecordCacheDirectory;
 - (id)applicationVersion;
 - (id)apsEnvironmentString;
-- (struct { unsigned int x1[8]; })auditToken;
+- (id)backgroundPublicIdentityLookupService;
 - (id)backgroundZoneGatekeeper;
+- (int)cachedEnvironment;
 - (BOOL)canAccessAccount;
 - (BOOL)canAccessProtectionData;
 - (BOOL)canSetDeviceIdentifier;
@@ -157,12 +168,14 @@
 - (id)containerID;
 - (id)containerScopedUserID;
 - (id)contextID;
+- (int)darkWakeEnabled;
 - (void)dealloc;
 - (id)description;
 - (id)fakeErrorByClassName;
 - (void)finishSetupWithClientProxy:(id)arg1 completionHandler:(id)arg2;
 - (BOOL)finishedAppProxySetup;
 - (id)flowControlManager;
+- (id)foregroundPublicIdentityLookupService;
 - (id)foregroundZoneGatekeeper;
 - (BOOL)hasDataContainer;
 - (BOOL)hasSystemServiceEntitlement;
@@ -174,15 +187,16 @@
 - (id)oldApplicationCaches;
 - (id)pcsManager;
 - (void)performRequest:(id)arg1;
+- (id)proxies;
 - (id)publicCloudDBURL;
 - (id)publicDeviceServiceURL;
+- (id)publicIdentitiesDiskCache;
+- (double)publicIdentitiesExpirationTimeout;
 - (id)publicShareServiceURL;
-- (void)reloadAccount;
-- (id)sema;
+- (void)removeClientProxy:(id)arg1;
 - (void)setAPSEnvironmentString:(id)arg1;
 - (void)setAccount:(id)arg1;
-- (void)setAccountRefreshInProgress:(BOOL)arg1;
-- (void)setAccountReloadRequired:(BOOL)arg1;
+- (void)setAllowsPowerNapScheduling:(BOOL)arg1;
 - (void)setApplicationAssetDbDirectory:(id)arg1;
 - (void)setApplicationCachesDirectory:(id)arg1;
 - (void)setApplicationContainerCloudKitDirectory:(id)arg1;
@@ -193,16 +207,19 @@
 - (void)setApplicationPackageUploadDirectory:(id)arg1;
 - (void)setApplicationRecordCacheDirectory:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
-- (void)setAuditToken:(struct { unsigned int x1[8]; })arg1;
+- (void)setBackgroundPublicIdentityLookupService:(id)arg1;
 - (void)setBackgroundZoneGatekeeper:(id)arg1;
+- (void)setCachedEnvironment:(int)arg1;
 - (void)setCanAccessProtectionData:(BOOL)arg1;
 - (void)setCanSetDeviceIdentifier:(BOOL)arg1;
 - (void)setConfig:(id)arg1;
 - (void)setContainerScopedUserID:(id)arg1;
+- (void)setDarkWakeEnabled:(int)arg1;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
 - (void)setFakeErrorByClassName:(id)arg1;
 - (void)setFinishedAppProxySetup:(BOOL)arg1;
 - (void)setFlowControlManager:(id)arg1;
+- (void)setForegroundPublicIdentityLookupService:(id)arg1;
 - (void)setForegroundZoneGatekeeper:(id)arg1;
 - (void)setHasDataContainer:(BOOL)arg1;
 - (void)setHasSystemServiceEntitlement:(BOOL)arg1;
@@ -211,19 +228,24 @@
 - (void)setMescalSession:(id)arg1;
 - (void)setOldApplicationCaches:(id)arg1;
 - (void)setPcsManager:(id)arg1;
+- (void)setProxies:(id)arg1;
 - (void)setPublicCloudDBURL:(id)arg1;
 - (void)setPublicDeviceServiceURL:(id)arg1;
+- (void)setPublicIdentitiesDiskCache:(id)arg1;
 - (void)setPublicShareServiceURL:(id)arg1;
 - (void)setSandboxed:(BOOL)arg1;
-- (void)setSema:(id)arg1;
 - (void)setSetupQueue:(id)arg1;
+- (void)setSetupSource:(id)arg1;
+- (void)setTimeLogger:(id)arg1;
 - (void)setUsesAPSPublicToken:(int)arg1;
 - (BOOL)setupAssetTransfersWithClientProxy:(id)arg1 error:(id*)arg2;
 - (BOOL)setupMMCSWrapperWithError:(id*)arg1;
 - (id)setupQueue;
+- (id)setupSource;
 - (void)showUserNotification:(struct __CFUserNotification { }*)arg1 withCompletionBlock:(id)arg2;
 - (void)startSetupWithClientProxy:(id)arg1 completionHandler:(id)arg2;
 - (void)tearDownAssetTransfers;
+- (id)timeLogger;
 - (int)type;
 - (int)usesAPSPublicToken;
 

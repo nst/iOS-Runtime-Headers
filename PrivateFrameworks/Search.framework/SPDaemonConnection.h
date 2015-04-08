@@ -14,7 +14,9 @@
 - (id)_connection;
 - (void)_resetConnection;
 - (void)_sendMessage:(id)arg1 info:(id)arg2 reply:(id)arg3;
+- (void)activate;
 - (void)cancelQuery:(id)arg1;
+- (void)deactivate;
 - (void)dealloc;
 - (void)endRecordUpdatesForApplication:(id)arg1 andCategory:(id)arg2;
 - (void)indexUpdatedContent:(id)arg1 moreComing:(BOOL)arg2;

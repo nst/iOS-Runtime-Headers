@@ -19,6 +19,7 @@
     BOOL _finished;
     BOOL _isCancelled;
     NSPredicate *_predicate;
+    int _retryCount;
     EKEventStore *_store;
 }
 
@@ -29,8 +30,10 @@
 
 + (id)searchWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;
 
+- (void)_startActualWithCompletion:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
+- (void)disconnect;
 - (id)initWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;
 - (id)startWithCompletion:(id)arg1;
 - (void)terminate;

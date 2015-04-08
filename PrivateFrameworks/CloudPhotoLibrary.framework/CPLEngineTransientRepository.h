@@ -8,7 +8,6 @@
     unsigned int _maximumCountOfRecordsInBatches;
     unsigned int _popState;
     NSMutableArray *_remainingClassesToBePopped;
-    unsigned int _state;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -19,6 +18,7 @@
 @property(readonly) Class superclass;
 
 + (id)orderedClassesForChanges;
++ (id)orderedClassesForChangesForLargeSync;
 + (id)orderedClassesForDelete;
 
 - (void).cxx_destruct;
@@ -27,9 +27,9 @@
 - (BOOL)_popChangeBatchOfChangedRecords:(id*)arg1 maximumCount:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)_popChangeBatchOfDeletedRecords:(id*)arg1 maximumCount:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)appendBatch:(id)arg1 alreadyMingled:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)beginTransientRepositoryWithError:(id*)arg1;
+- (unsigned int)countOfAssetChanges;
+- (unsigned int)countOfUnmingledRecords;
 - (BOOL)deleteMingledRecordsWithError:(id*)arg1;
-- (BOOL)endTransientRepositoryWithError:(id*)arg1;
 - (BOOL)hasRecordWithIdentifier:(id)arg1;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 - (unsigned int)maximumCountOfRecordsInBatches;

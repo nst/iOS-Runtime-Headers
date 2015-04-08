@@ -19,6 +19,8 @@
 - (void)_sendChangeNotificationsBasedOnDefaultsRemovalByDomain:(id)arg1;
 - (void)_setRequriesEncryptedBackupInLockdownWithEffectiveUserSettings:(id)arg1;
 - (BOOL)isSetupBuddyDone;
+- (id)quantizedAutoLockInSeconds:(id)arg1;
+- (id)quantizedGracePeriodInSeconds:(id)arg1;
 - (BOOL)sanitizedProfileSignerCertificateChainIsAllowedToWriteDefaults:(id)arg1;
 
 @end

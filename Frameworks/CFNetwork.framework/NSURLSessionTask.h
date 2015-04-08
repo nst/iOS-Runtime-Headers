@@ -10,7 +10,6 @@
 @class NSArray, NSDictionary, NSError, NSObject<OS_dispatch_queue>, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSession, NSValue;
 
 @interface NSURLSessionTask : NSObject <NSCopying> {
-    NSDictionary *__additionalHeaders;
     unsigned long __allowedProtocolTypes;
     bool __allowsCellular;
     NSDictionary *__backgroundTaskTimingData;
@@ -67,7 +66,6 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSDictionary * _additionalHeaders;
 @property unsigned long _allowedProtocolTypes;
 @property bool _allowsCellular;
 @property(copy) NSDictionary * _backgroundTaskTimingData;
@@ -131,7 +129,6 @@
 + (BOOL)supportsSecureCoding;
 + (id)taskForWrappedRequest:(id)arg1;
 
-- (id)_additionalHeaders;
 - (unsigned long)_allowedProtocolTypes;
 - (bool)_allowsCellular;
 - (id)_backgroundTaskTimingData;
@@ -206,6 +203,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)error;
+- (BOOL)headerWasAddedDuringCanonicalization:(id)arg1;
 - (id)initWithOriginalRequest:(id)arg1 updatedRequest:(id)arg2 ident:(unsigned int)arg3 session:(id)arg4;
 - (id)initWithTask:(id)arg1;
 - (id)originalRequest;
@@ -228,7 +226,6 @@
 - (void)setTaskDescription:(id)arg1;
 - (void)setTaskIdentifier:(unsigned int)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (void)set_additionalHeaders:(id)arg1;
 - (void)set_allowedProtocolTypes:(unsigned long)arg1;
 - (void)set_allowsCellular:(bool)arg1;
 - (void)set_backgroundTaskTimingData:(id)arg1;

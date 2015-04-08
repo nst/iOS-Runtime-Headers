@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITableViewDataSource>, <UITableViewDelegate>, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIColor, UIGobblerGestureRecognizer, UIImage, UILongPressGestureRecognizer, UIRefreshControl, UIScrollView, UISwipeGestureRecognizer, UITableViewCell, UITableViewCountView, UITableViewIndex, UITableViewIndexOverlayIndicatorView, UITableViewIndexOverlaySelectionView, UITableViewRowData, UITableViewWrapperView, UITouch, UIView, UIVisualEffect, _UITableViewDeleteAnimationSupport, _UITableViewReorderingSupport, _UITableViewUpdateSupport;
+@class <UITableViewDataSource>, <UITableViewDelegate>, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIColor, UIGobblerGestureRecognizer, UIImage, UILongPressGestureRecognizer, UIRefreshControl, UIScrollView, UISwipeGestureRecognizer, UITableViewCell, UITableViewCountView, UITableViewIndex, UITableViewIndexOverlayIndicatorView, UITableViewIndexOverlaySelectionView, UITableViewRowData, UITableViewWrapperView, UITouch, UIView, UIVisualEffect, UIWindow, _UITableViewDeleteAnimationSupport, _UITableViewReorderingSupport, _UITableViewUpdateSupport;
 
 @interface UITableView : UIScrollView <NSCoding, UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate> {
     UIView *_backgroundView;
@@ -28,6 +28,8 @@
     NSIndexPath *_firstResponderIndexPath;
     UIView *_firstResponderView;
     int _firstResponderViewType;
+    NSIndexPath *_focusedCellIndexPath;
+    int _focusedViewType;
     NSMutableDictionary *_headerFooterClassDict;
     NSMutableDictionary *_headerFooterNibMap;
     NSMutableArray *_hiddenSeparatorIndexPaths;
@@ -41,6 +43,7 @@
     NSTimer *_indexOverlayTimer;
     UIColor *_indexTrackingBackgroundColor;
     NSMutableArray *_insertItems;
+    UIWindow *_lastWindow;
     int _longPressAutoscrollDirection;
     NSTimer *_longPressAutoscrollTimer;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
@@ -176,6 +179,12 @@
         unsigned int delegateShouldDrawTopSeparatorForSection : 1; 
         unsigned int delegateWillBeginSwiping : 1; 
         unsigned int delegateDidEndSwiping : 1; 
+        unsigned int delegateCanFocusRow_deprecated : 1; 
+        unsigned int delegateCanFocusRow : 1; 
+        unsigned int delegateDidFocusRow : 1; 
+        unsigned int delegateDidUnfocusRow : 1; 
+        unsigned int delegateShouldChangeFocusedItem : 1; 
+        unsigned int delegateIndexPathForPreferredFocusedItem : 1; 
         unsigned int style : 1; 
         unsigned int separatorStyle : 3; 
         unsigned int wasEditing : 1; 
@@ -252,6 +261,8 @@
         unsigned int usingCustomLayoutMargins : 1; 
         unsigned int settingDefaultLayoutMargins : 1; 
         unsigned int deallocating : 1; 
+        unsigned int updateFocusAfterItemAnimations : 1; 
+        unsigned int remembersPreviouslyFocusedItem : 1; 
     } _tableFlags;
     UIView *_tableFooterView;
     UIView *_tableHeaderBackgroundView;
@@ -301,6 +312,7 @@
 @property float estimatedRowHeight;
 @property float estimatedSectionFooterHeight;
 @property float estimatedSectionHeaderHeight;
+@property(getter=_focusedCellIndexPath,setter=_setFocusedCellIndexPath:,copy) NSIndexPath * focusedCellIndexPath;
 @property(readonly) unsigned int hash;
 @property(getter=MPU_isInScrollTest,setter=MPU_setInScrollTest:) BOOL inScrollTest;
 @property(getter=_manuallyManagesSwipeUI,setter=_setManuallyManagesSwipeUI:) BOOL manuallyManagesSwipeUI;
@@ -346,6 +358,7 @@
 - (void)_adjustReusableTableCells;
 - (void)_adjustTableHeaderAndFooterViews;
 - (BOOL)_adjustsRowHeightsForSectionLocation;
+- (BOOL)_allowsFocusToLeaveViaHeading:(unsigned int)arg1;
 - (BOOL)_allowsReorderingWhenNotEditing;
 - (void)_animateSwipeCancelation;
 - (float)_animationDuration;
@@ -370,13 +383,17 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForIndexOverlay;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calloutTargetRectForCell:(id)arg1;
 - (BOOL)_canEditRowAtIndexPath:(id)arg1;
+- (BOOL)_canFocusCell:(id)arg1;
 - (BOOL)_canMoveRowAtIndexPath:(id)arg1;
 - (BOOL)_canPerformAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
 - (BOOL)_canSelectRowContainingHitView:(id)arg1;
 - (BOOL)_canSwipeCellAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_cancelCellReorder:(BOOL)arg1;
+- (BOOL)_cell:(id)arg1 shouldChangeFocusedItem:(id)arg2;
 - (id)_cellAfterIndexPath:(id)arg1;
 - (id)_cellContainerView;
+- (void)_cellDidBecomeFocused:(id)arg1;
+- (void)_cellDidBecomeUnfocused:(id)arg1;
 - (void)_cellDidHideSelectedBackground:(id)arg1;
 - (void)_cellDidShowSelectedBackground:(id)arg1;
 - (id)_cellReuseMapForType:(int)arg1;
@@ -465,11 +482,16 @@
 - (float)_externalIndexWidth;
 - (void)_finishedAnimatingCellReorder:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_finishedRemovingRemovalButtonForTableCell:(id)arg1;
+- (BOOL)_focusedCellContainedInRowsAtIndexPaths:(id)arg1;
+- (BOOL)_focusedCellContainedInSections:(id)arg1;
+- (id)_focusedCellIndexPath;
+- (void)_focusedViewWillChange:(id)arg1;
 - (float)_footerMarginWidth;
 - (float)_footerRightMarginWidth;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
+- (void)_getResponderRectsForXAxisMinRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 yMinRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 xMaxRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 yMaxRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 - (int)_globalReorderingRow;
 - (void)_handleSwipeDelete:(id)arg1;
 - (void)_handleSwipeDeleteGobbler:(id)arg1;
@@ -532,8 +554,10 @@
 - (id)_popReusableHeaderView:(BOOL)arg1;
 - (int)_popoverControllerStyle;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (void)_prolongIndexOverlayTimer;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_rawSeparatorInset;
 - (void)_reapTentativeViews;
+- (void)_rebuildGeometry;
 - (void)_recomputeSectionIndexTitleIndex;
 - (void)_rectChangedWithNewSize:(struct CGSize { float x1; float x2; })arg1 oldSize:(struct CGSize { float x1; float x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForRowAtIndexPath:(id)arg1 canGuess:(BOOL)arg2;
@@ -543,6 +567,7 @@
 - (void)_registerThing:(id)arg1 asNib:(BOOL)arg2 forViewType:(int)arg3 withReuseIdentifer:(id)arg4;
 - (void)_reloadDataIfNeeded;
 - (void)_reloadSectionHeaderFooters:(id)arg1 withRowAnimation:(int)arg2;
+- (BOOL)_remembersPreviouslyFocusedItem;
 - (void)_removeIndex;
 - (void)_removeTableViewGestureRecognizers;
 - (void)_removeWasCanceledForCell:(id)arg1;
@@ -552,7 +577,6 @@
 - (id)_reorderingIndexPath;
 - (id)_reorderingSupport;
 - (void)_resetDragSwipeAndTouchSelectFlags;
-- (void)_restartIndexOverlayTimer;
 - (void)_resumeReloads;
 - (void)_reuseHeaderFooterView:(id)arg1 isHeader:(BOOL)arg2 forSection:(int)arg3;
 - (void)_reuseTableViewCell:(id)arg1 withIndexPath:(id)arg2 didEndDisplaying:(BOOL)arg3;
@@ -599,6 +623,7 @@
 - (void)_setDrawsTopShadowInGroupedSections:(BOOL)arg1;
 - (void)_setEditing:(BOOL)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfCellWithReuseIdentifier:(id)arg2;
+- (void)_setFocusedCellIndexPath:(id)arg1;
 - (void)_setGestureRecognizerRequiresTableGestureRecognizersToFail:(id)arg1;
 - (void)_setHeaderAndFooterViewsFloat:(BOOL)arg1;
 - (void)_setHeight:(float)arg1 forRowAtIndexPath:(id)arg2;
@@ -611,6 +636,7 @@
 - (void)_setNeedsVisibleCellsUpdate:(BOOL)arg1 withFrames:(BOOL)arg2;
 - (void)_setPinsTableHeaderView:(BOOL)arg1;
 - (void)_setRefreshControl:(id)arg1;
+- (void)_setRemembersPreviouslyFocusedItem:(BOOL)arg1;
 - (void)_setRowCount:(unsigned int)arg1;
 - (void)_setSectionBorderWidth:(float)arg1;
 - (void)_setSectionContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -668,6 +694,7 @@
 - (float)_swipeToDeleteOffsetForRow:(int)arg1 inSection:(int)arg2;
 - (void)_systemTextSizeChanged;
 - (void)_tableCellAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_tableContentInset;
 - (void)_tableFooterHeightDidChangeToHeight:(float)arg1;
 - (id)_tableFooterView:(BOOL)arg1;
 - (id)_tableHeaderBackgroundView;
@@ -692,6 +719,8 @@
 - (void)_updateCellContentStringCallout:(id)arg1;
 - (void)_updateCellsToFocusable:(BOOL)arg1;
 - (void)_updateContentSize;
+- (void)_updateFocusedCellIndexPathIfNecessaryWithLastFocusedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_updateFocusedItemToIndexPath:(id)arg1;
 - (void)_updateIndex;
 - (void)_updateIndexDisplayedTitles;
 - (void)_updateIndexFrame;
@@ -752,6 +781,7 @@
 - (void)animateDeletionOfRowWithCell:(id)arg1;
 - (id)backgroundView;
 - (void)beginUpdates;
+- (BOOL)canBecomeFocused;
 - (BOOL)cancelTouchTracking;
 - (id)cellForRowAtIndexPath:(id)arg1;
 - (id)currentTouch;
@@ -820,6 +850,7 @@
 - (void)pl_scrollToBottom:(BOOL)arg1;
 - (void)pl_scrollToTop:(BOOL)arg1;
 - (void)pl_scrollToVisibleRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
+- (id)preferredFocusedItem;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForFooterInSection:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForHeaderInSection:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRowAtIndexPath:(id)arg1;

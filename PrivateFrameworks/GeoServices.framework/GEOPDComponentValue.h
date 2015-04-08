@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAddress, GEOPDAmenities, GEOPDBounds, GEOPDETA, GEOPDEntity, GEOPDFlyover, GEOPDHours, GEOPDPhoto, GEOPDPlaceInfo, GEOPDRating, GEOPDRawAttribute, GEOPDReview, GEOPDRoadAccessInfo, GEOPDStyleAttributes;
+@class GEOPDAddress, GEOPDAmenities, GEOPDBounds, GEOPDBusinessClaim, GEOPDETA, GEOPDEntity, GEOPDFlyover, GEOPDHours, GEOPDPhoto, GEOPDPlaceInfo, GEOPDRating, GEOPDRawAttribute, GEOPDReview, GEOPDRoadAccessInfo, GEOPDStyleAttributes;
 
 @interface GEOPDComponentValue : PBCodable <NSCopying> {
     GEOPDRoadAccessInfo *_accessInfo;
     GEOPDAddress *_address;
     GEOPDAmenities *_amenities;
     GEOPDBounds *_bounds;
+    GEOPDBusinessClaim *_businessClaim;
     GEOPDEntity *_entity;
     GEOPDETA *_eta;
     GEOPDFlyover *_flyover;
@@ -25,6 +26,7 @@
 @property(retain) GEOPDAddress * address;
 @property(retain) GEOPDAmenities * amenities;
 @property(retain) GEOPDBounds * bounds;
+@property(retain) GEOPDBusinessClaim * businessClaim;
 @property(retain) GEOPDEntity * entity;
 @property(retain) GEOPDETA * eta;
 @property(retain) GEOPDFlyover * flyover;
@@ -32,6 +34,7 @@
 @property(readonly) BOOL hasAddress;
 @property(readonly) BOOL hasAmenities;
 @property(readonly) BOOL hasBounds;
+@property(readonly) BOOL hasBusinessClaim;
 @property(readonly) BOOL hasEntity;
 @property(readonly) BOOL hasEta;
 @property(readonly) BOOL hasFlyover;
@@ -54,6 +57,7 @@
 - (id)address;
 - (id)amenities;
 - (id)bounds;
+- (id)businessClaim;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -66,6 +70,7 @@
 - (BOOL)hasAddress;
 - (BOOL)hasAmenities;
 - (BOOL)hasBounds;
+- (BOOL)hasBusinessClaim;
 - (BOOL)hasEntity;
 - (BOOL)hasEta;
 - (BOOL)hasFlyover;
@@ -90,6 +95,7 @@
 - (void)setAddress:(id)arg1;
 - (void)setAmenities:(id)arg1;
 - (void)setBounds:(id)arg1;
+- (void)setBusinessClaim:(id)arg1;
 - (void)setEntity:(id)arg1;
 - (void)setEta:(id)arg1;
 - (void)setFlyover:(id)arg1;

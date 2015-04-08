@@ -2,20 +2,23 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCGLWaveformRendererDelegate>, CADisplayLink, CALayer, EAGLContext, NSString, RCUIConfiguration, RCWaveformDataSource;
+@class <RCGLWaveformRendererDelegate>, CADisplayLink, CALayer, EAGLContext, NSString, NSTimer, RCUIConfiguration, RCWaveformDataSource, UIView;
 
 @interface RCGLWaveformRenderer : UIViewController <GLKViewDelegate, RCWaveformDataSourceObserver> {
     RCUIConfiguration *_UIConfiguration;
+    BOOL _activeDisplayLinkRequired;
     BOOL _buffersInitialized;
     float _cachedContentWidth;
     BOOL _centerKeylineRendered;
     BOOL _contentWidthDirty;
-    BOOL _creatingSnapshot;
     float _dataPointWidth;
     RCWaveformDataSource *_dataSource;
     CADisplayLink *_displayLink;
+    NSTimer *_displayLinkTerminationTimer;
     EAGLContext *_eaglContext;
     int _foregroundColorUniform;
+    BOOL _frequentUpdatesSegmentUpdatesExpectedHint;
+    BOOL _hasDisplayedPreGLContentCenterline;
     int _highlightColorTimelineRange;
     int _highlightColorUniform;
     struct { 
@@ -37,6 +40,7 @@
     int _modelviewUniform;
     BOOL _needsVisibleRangeRendering;
     BOOL _paused;
+    UIView *_preGLContentCenterline;
     BOOL _preparedForRendering;
     int _projectionUniform;
     struct { 
@@ -64,11 +68,13 @@
 }
 
 @property(copy) RCUIConfiguration * UIConfiguration;
+@property(getter=isActiveDisplayLinkRequired) BOOL activeDisplayLinkRequired;
 @property(readonly) float contentWidth;
 @property float dataPointWidth;
 @property(retain) RCWaveformDataSource * dataSource;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property BOOL frequentUpdatesSegmentUpdatesExpectedHint;
 @property(readonly) unsigned int hash;
 @property struct { double x1; double x2; } highlightTimeRange;
 @property(getter=isPaused) BOOL paused;
@@ -81,6 +87,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)UIConfiguration;
+- (void)_cancelScheduledTerminateDisplayLink;
 - (void)_clearRenderingState;
 - (unsigned int)_compileShaderOfType:(unsigned int)arg1 pathToSource:(id)arg2;
 - (BOOL)_currentViewportRequiresRenderingNewSegments;
@@ -91,26 +98,31 @@
 - (float)_nonCachedContentWidth;
 - (id)_pathForShader:(id)arg1;
 - (void)_performOrDispatchToMainThread:(id)arg1;
+- (void)_performScheduledTerminateDisplayLink;
 - (float)_pixelOffsetForTime:(double)arg1;
 - (float)_pixelsPerSecond;
 - (float)_pixelsPerSecondWithVisibleTimeRange:(struct { double x1; double x2; })arg1;
 - (void)_prepareForRendering;
 - (void)_renderCenterKeylineIfNeeded;
-- (void)_renderSegments:(id)arg1 isApproximatedWaveform:(BOOL)arg2;
-- (void)_renderVisibleTimeRange;
+- (void)_renderSegments:(id)arg1 timeRangeOfSegments:(struct { double x1; double x2; })arg2 isApproximatedWaveform:(BOOL)arg3;
+- (void)_renderVisibleTimeRangeImmediately;
+- (void)_scheduleTerminateDisplayLink;
 - (void)_setNeedsRendering;
-- (void)_setVisibleRangeNeedsRendering;
+- (void)_setNeedsVisibleTimeRangeRendering;
 - (void)_setupBuffers;
 - (void)_setupGL;
 - (void)_setupNotifications;
 - (void)_setupShaders;
 - (void)_startRendering;
+- (void)_startTemporarilyShowingPreGLCenterLine;
 - (void)_startUpdating;
 - (void)_stopRendering;
+- (void)_stopShowingPreGLCenterLine;
 - (void)_stopUpdating;
 - (void)_teardownNotifications;
 - (double)_timeForPixelOffset:(float)arg1;
 - (double)_timeForPixelOffset:(float)arg1 withVisibleTimeRange:(struct { double x1; double x2; })arg2;
+- (struct { double x1; double x2; })_timeRangeToRenderForVisibleTimeRange:(struct { double x1; double x2; })arg1;
 - (void)_updateClearColor;
 - (void)_updateForegroundColor;
 - (void)_updateHighlightTimeRange;
@@ -122,19 +134,23 @@
 - (float)dataPointWidth;
 - (id)dataSource;
 - (void)dealloc;
+- (BOOL)frequentUpdatesSegmentUpdatesExpectedHint;
 - (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)glkViewRenderingContextValidityDidChange:(id)arg1;
 - (struct { double x1; double x2; })highlightTimeRange;
 - (float)horizontalOffsetAtTime:(double)arg1;
 - (float)horizontalOffsetAtTime:(double)arg1 withVisibleTimeRange:(struct { double x1; double x2; })arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)isActiveDisplayLinkRequired;
 - (BOOL)isPaused;
 - (void)loadView;
 - (float)pointsPerSecondWithVisibleTimeRange:(struct { double x1; double x2; })arg1;
 - (id)rasterizeVisibleTimeRangeWithImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)rendererDelegate;
+- (void)setActiveDisplayLinkRequired:(BOOL)arg1;
 - (void)setDataPointWidth:(float)arg1;
 - (void)setDataSource:(id)arg1;
+- (void)setFrequentUpdatesSegmentUpdatesExpectedHint:(BOOL)arg1;
 - (void)setHighlightTimeRange:(struct { double x1; double x2; })arg1;
 - (void)setPaused:(BOOL)arg1;
 - (void)setRendererDelegate:(id)arg1;
@@ -146,6 +162,7 @@
 - (double)timeAtHorizontalOffset:(float)arg1;
 - (double)timeAtHorizontalOffset:(float)arg1 withVisibleTimeRange:(struct { double x1; double x2; })arg2;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;

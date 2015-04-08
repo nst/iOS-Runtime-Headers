@@ -4,7 +4,7 @@
 
 @class <PRSSessionController>, NSMutableData, NSString, NSURLSessionDataTask;
 
-@interface PRSRealQueryTask : PRSQueryTask <PRSParsecDataHandler> {
+@interface PRSRealQueryTask : PRSQueryTask <PRSParsecDataHandler, PRSTriggerTask> {
     BOOL _allowLocation;
     NSMutableData *_collectedData;
     NSURLSessionDataTask *_dataTask;
@@ -43,6 +43,7 @@
 - (void)cancel;
 - (id)collectedData;
 - (id)dataTask;
+- (void)decodeData:(id)arg1;
 - (BOOL)doCache;
 - (BOOL)doResume;
 - (id)factory;

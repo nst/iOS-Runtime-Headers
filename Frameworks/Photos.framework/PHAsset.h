@@ -58,6 +58,7 @@
 @property(readonly) BOOL isHDVideo;
 @property(readonly) BOOL isJPEG;
 @property(readonly) BOOL isPartOfBurst;
+@property(readonly) BOOL isRAW;
 @property(readonly) CLLocation * location;
 @property(readonly) NSData * locationData;
 @property(readonly) unsigned int mediaSubtypes;
@@ -105,10 +106,12 @@
 - (void).cxx_destruct;
 - (id)ALAssetURL;
 - (id)PTPProperties;
+- (id)__dictionaryWithContentsOfData:(id)arg1;
 - (id)_createPropertyObjectOfClass:(Class)arg1 properties:(id)arg2 isExtraObject:(BOOL)arg3;
 - (id)_fileURLForMetadataWithExtension:(id)arg1;
 - (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(id)arg2;
 - (void)_requestRenderedVideoForVideoURL:(id)arg1 adjustmentData:(id)arg2 canHandleAdjustmentData:(BOOL)arg3 resultHandler:(id)arg4;
+- (id)adjustmentsDebugMetadata;
 - (double)aspectRatio;
 - (int)assetSource;
 - (id)assetsLibraryURL;
@@ -136,8 +139,10 @@
 - (id)faceRegions;
 - (void)fetchKeywordsWithCompletionHandler:(id)arg1;
 - (void)fetchPropertySetsIfNeeded;
+- (id)fileURLForAdjustedFullsizeImage;
 - (id)fileURLForAdjustmentsDirectory;
 - (id)fileURLForDiagnosticFile;
+- (id)fileURLForFullsizeImage;
 - (id)fileURLForFullsizeRenderImage;
 - (id)fileURLForFullsizeRenderVideo;
 - (id)fileURLForLargePreview;
@@ -147,6 +152,7 @@
 - (id)fileURLForPrebakedLandscapeScrubberThumbnails;
 - (id)fileURLForPrebakedPortraitScrubberThumbnails;
 - (id)fileURLForSubstandardFullsizeRenderImage;
+- (id)fileURLForUnadjustedFullsizeImage;
 - (id)fileURLForVideoPreviewFile;
 - (id)fileURLForXMPFile;
 - (id)filename;
@@ -173,6 +179,7 @@
 - (BOOL)isPartOfBurst;
 - (BOOL)isPhoto;
 - (BOOL)isPhotoStreamPhoto;
+- (BOOL)isRAW;
 - (BOOL)isStreamedVideo;
 - (BOOL)isTimelapsePlaceholder;
 - (BOOL)isVideo;
@@ -190,6 +197,7 @@
 - (int)orientation;
 - (int)originalImageOrientation;
 - (id)originalMetadataProperties;
+- (id)pathForAdjustmentDataFile;
 - (id)pathForAdjustmentDirectory;
 - (id)pathForAdjustmentFile;
 - (id)pathForMutationsDirectory;

@@ -16,9 +16,7 @@
     } _shadowPathRect;
 }
 
-- (void)addAdditionalChildLayersToArray:(id)arg1;
 - (void)dealloc;
-- (void)didUpdateLayer:(id)arg1;
 - (BOOL)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
@@ -26,9 +24,6 @@
 - (id)p_childRepForInfo:(id)arg1;
 - (BOOL)p_headerFooterIsVisibleAndInteractive:(int)arg1;
 - (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (id)p_rasterizeHeaderRep:(id)arg1 type:(int)arg2 fragment:(int)arg3;
 - (id)p_repForHeaderLayout:(id)arg1;
-- (void)p_willBeginDynamicContentScaleChange:(id)arg1;
-- (void)willUpdateLayer:(id)arg1;
 
 @end

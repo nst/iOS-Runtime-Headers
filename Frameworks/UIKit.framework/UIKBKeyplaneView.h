@@ -35,8 +35,9 @@
 @property(retain) UIKBRenderConfig * renderConfig;
 @property(readonly) Class superclass;
 
-- (BOOL)_shouldDrawLowResBackground;
+- (BOOL)_shouldAllowKey:(id)arg1;
 - (void)activateKeys;
+- (id)activeKeyViews;
 - (void)addKeyToDelayedDeactivationSet:(id)arg1;
 - (BOOL)cacheDeferable;
 - (id)cacheIdentifierForKey:(id)arg1;
@@ -66,6 +67,7 @@
 - (void)layoutSubviews;
 - (void)performDelayedDeactivation:(id)arg1;
 - (void)purgeKeyViews;
+- (void)purgeLayerContents;
 - (void)purgeSubviews;
 - (void)removeFromSuperview;
 - (void)removeKeyFromDelayedDeactivationSet:(id)arg1;

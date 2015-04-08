@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSAsset, NSArray, NSData, NSString;
+@class MSAsset, NSArray, NSData, NSDate, NSString;
 
 @interface MSAssetCollection : NSObject <NSSecureCoding> {
     NSString *_assetCollectionID;
@@ -11,6 +11,7 @@
     NSString *_fileName;
     long long _initialFailureDate;
     MSAsset *_masterAsset;
+    NSDate *_serverUploadedDate;
     BOOL _wasDeleted;
 }
 
@@ -21,6 +22,7 @@
 @property long long initialFailureDate;
 @property(retain) MSAsset * masterAsset;
 @property(readonly) NSData * masterAssetHash;
+@property(retain) NSDate * serverUploadedDate;
 @property BOOL wasDeleted;
 
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
@@ -40,12 +42,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)masterAsset;
 - (id)masterAssetHash;
+- (id)serverUploadedDate;
 - (void)setAssetCollectionID:(id)arg1;
 - (void)setCtag:(id)arg1;
 - (void)setDerivedAssets:(id)arg1;
 - (void)setFileName:(id)arg1;
 - (void)setInitialFailureDate:(long long)arg1;
 - (void)setMasterAsset:(id)arg1;
+- (void)setServerUploadedDate:(id)arg1;
 - (void)setWasDeleted:(BOOL)arg1;
 - (BOOL)wasDeleted;
 

@@ -28,6 +28,6 @@
 - (id)shiftOnKeyImageName;
 - (float)skinnyKeyThreshold;
 - (float)symbolFrameInset;
-- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2;
+- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2 rowLimit:(int)arg3;
 
 @end

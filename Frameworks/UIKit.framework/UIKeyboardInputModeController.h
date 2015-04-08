@@ -11,10 +11,12 @@
     UIKeyboardInputMode *_currentInputMode;
     UIKeyboardInputMode *_currentUsedInputMode;
     <UIKeyboardInputModeControllerDelegate> *_delegate;
+    id _extensionMatchingContext;
     NSString *_inputModeContextIdentifier;
     NSArray *_inputModesWithoutHardwareSupport;
     UIKeyboardInputMode *_lastUsedInputMode;
     UIKeyboardInputMode *_nextInputModeToUse;
+    BOOL _shouldRunContinuousDiscovery;
     BOOL _skipExtensionInputModes;
     NSArray *defaultInputModes;
     NSArray *defaultKeyboardInputModes;
@@ -42,6 +44,7 @@
 @property(readonly) NSArray * enabledInputModeIdentifiers;
 @property(readonly) NSArray * enabledInputModeLanguages;
 @property(retain) NSArray * enabledInputModes;
+@property(retain) id extensionMatchingContext;
 @property(readonly) UIKeyboardInputMode * hardwareInputMode;
 @property(copy) NSString * inputModeContextIdentifier;
 @property(readonly) NSArray * inputModesWithoutHardwareSupport;
@@ -51,12 +54,16 @@
 @property(retain) UIKeyboardInputMode * nextInputModeToUse;
 @property(readonly) NSArray * normalizedEnabledInputModeIdentifiers;
 @property(retain) NSArray * normalizedInputModes;
+@property BOOL shouldRunContinuousDiscovery;
 @property(readonly) NSArray * supportedInputModeIdentifiers;
 
 + (id)sharedInputModeController;
 
 - (id)_MCFilteredExtensionIdentifiers;
+- (void)_beginContinuousDiscoveryIfNeeded;
 - (void)_clearAllExtensionIfNeeded;
+- (void)_removeExtensions:(id)arg1;
+- (void)_setCurrentAndNextInputModePreference;
 - (void)_setCurrentInputMode:(id)arg1 force:(BOOL)arg2;
 - (id)_systemInputModePassingTest:(id)arg1;
 - (id)activeInputModeIdentifiers;
@@ -83,6 +90,7 @@
 - (id)enabledInputModeLanguages;
 - (id)enabledInputModes;
 - (id)extensionInputModes;
+- (id)extensionMatchingContext;
 - (id)hardwareInputMode;
 - (BOOL)identifierIsValidSystemInputMode:(id)arg1;
 - (id)identifiersFromInputModes:(id)arg1;
@@ -111,12 +119,15 @@
 - (void)setDefaultRawInputModes:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabledInputModes:(id)arg1;
+- (void)setExtensionMatchingContext:(id)arg1;
 - (void)setInputModeContextIdentifier:(id)arg1;
 - (void)setKeyboardInputModeIdentifiers:(id)arg1;
 - (void)setKeyboardInputModes:(id)arg1;
 - (void)setLastUsedInputMode:(id)arg1;
 - (void)setNextInputModeToUse:(id)arg1;
 - (void)setNormalizedInputModes:(id)arg1;
+- (void)setShouldRunContinuousDiscovery:(BOOL)arg1;
+- (BOOL)shouldRunContinuousDiscovery;
 - (void)startConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)startDictationConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (id)suggestedInputModesForCurrentLocale;
@@ -128,5 +139,6 @@
 - (void)updateCurrentInputMode:(id)arg1;
 - (void)updateLastUsedInputMode:(id)arg1;
 - (BOOL)verifyKeyboardExtensionsWithApp;
+- (void)willEnterForeground:(id)arg1;
 
 @end

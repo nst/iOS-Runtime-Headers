@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class <MCDCarDisplayServiceProvider>, MCDNowPlayingButton, MPAVController, MPMediaQuery, NSIndexPath;
+@class <MCDCarDisplayServiceProvider>, MPAVController, MPMediaQuery, UIView;
 
 @interface MCD_OLD_TableViewController : UITableViewController {
     BOOL _alwaysShowNavBar;
-    MCDNowPlayingButton *_nowPlayingButton;
+    UIView *_nowPlayingButton;
     MPAVController *_player;
-    NSIndexPath *_previouslySelectedIndexPath;
     MPMediaQuery *_query;
     <MCDCarDisplayServiceProvider> *_serviceProvider;
     BOOL _viewHasAppeared;
@@ -29,17 +28,18 @@
 - (void)_presentNowPlayingViewController;
 - (void)_updateNowPlayingVisibility;
 - (BOOL)alwaysShowNavBar;
-- (void)dealloc;
 - (id)dequeueReusableCarDisplayCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (BOOL)hasRowsToDisplay;
 - (id)initWithQuery:(id)arg1 player:(id)arg2 serviceProvider:(id)arg3;
 - (id)player;
+- (id)preferredFocusedItem;
 - (id)query;
 - (id)serviceProvider;
 - (void)setAlwaysShowNavBar:(BOOL)arg1;
 - (void)setViewHasAppeared:(BOOL)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 shouldChangeFocusedItem:(id)arg2 fromRowAtIndexPath:(id)arg3;
 - (id)viewControllerForRowAtIndexPath:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;

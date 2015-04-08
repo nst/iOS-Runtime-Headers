@@ -9,7 +9,7 @@
 
 @class NSString;
 
-@interface TSWPSelection : TSKSelection <NSCopying, TSDTextSelection> {
+@interface TSWPSelection : TSKSelection <TSDTextSelection> {
     int _caretAffinity;
     unsigned int _headChar;
     unsigned int _leadingCharIndex;
@@ -59,6 +59,7 @@
 
 + (Class)archivedSelectionClass;
 + (BOOL)p_checkEndOfLineFlagForRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 leadingEdge:(BOOL*)arg2 type:(int*)arg3 endOfLine:(BOOL)arg4 storage:(id)arg5;
++ (id)selectionFromWPSelection:(id)arg1;
 + (id)selectionWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)selectionWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 type:(int)arg2 leadingEdge:(BOOL)arg3 storage:(id)arg4;
 
@@ -70,6 +71,7 @@
 - (BOOL)containsCharacterAtIndex:(unsigned int)arg1;
 - (BOOL)containsCharacterAtIndex:(unsigned int)arg1 allowRightEdge:(BOOL)arg2;
 - (id)copyWithNewRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)copyWithNewStyleInsertionBehavior:(int)arg1 caretAffinity:(int)arg2;
 - (id)copyWithNewType:(int)arg1;
 - (id)copyWithNewType:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)copyWithNewType:(int)arg1 smartFieldRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -82,7 +84,7 @@
 - (unsigned int)headChar;
 - (void)i_setVisualRanges:(const struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1;
 - (struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)i_visualRanges;
-- (id)initWithArchive:(const struct SelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Range {} *x3; int x4; int x5; struct Range {} *x6; int x7; int x8; unsigned int x9[1]; }*)arg1;
+- (id)initWithArchive:(const struct SelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Range {} *x5; int x6; int x7; struct Range {} *x8; int x9; }*)arg1;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithType:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 styleInsertionBehavior:(int)arg3 caretAffinity:(int)arg4;
 - (id)initWithType:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 styleInsertionBehavior:(int)arg3 caretAffinity:(int)arg4 smartFieldRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 leadingEdge:(BOOL)arg6 leadingCharIndex:(unsigned int)arg7;
@@ -100,10 +102,11 @@
 - (unsigned int)leadingCharIndex;
 - (BOOL)leadingEdge;
 - (unsigned int)leftEdge;
+- (BOOL)p_isEqual:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rawRange;
 - (unsigned int)rightEdge;
-- (void)saveToArchive:(struct SelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Range {} *x3; int x4; int x5; struct Range {} *x6; int x7; int x8; unsigned int x9[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct SelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Range {} *x5; int x6; int x7; struct Range {} *x8; int x9; }*)arg1 archiver:(id)arg2;
 - (void)setHeadChar:(unsigned int)arg1;
 - (void)setHeadChar:(unsigned int)arg1 tailChar:(unsigned int)arg2;
 - (void)setTailChar:(unsigned int)arg1;

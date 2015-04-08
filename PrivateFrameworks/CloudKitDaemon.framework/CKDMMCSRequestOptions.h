@@ -6,6 +6,7 @@
 
 @interface CKDMMCSRequestOptions : NSObject {
     BOOL _allowsCellularAccess;
+    BOOL _allowsPowerNapScheduling;
     NSString *_applicationBundleID;
     NSString *_applicationSecondaryID;
     NSString *_containerID;
@@ -14,6 +15,7 @@
 }
 
 @property BOOL allowsCellularAccess;
+@property BOOL allowsPowerNapScheduling;
 @property(retain) NSString * applicationBundleID;
 @property(retain) NSString * applicationSecondaryID;
 @property(retain) NSString * containerID;
@@ -24,12 +26,14 @@
 - (id)CKPropertiesDescription;
 - (id)MMCSOptions;
 - (BOOL)allowsCellularAccess;
+- (BOOL)allowsPowerNapScheduling;
 - (id)applicationBundleID;
 - (id)applicationSecondaryID;
 - (id)containerID;
 - (id)description;
 - (id)initWithOperation:(id)arg1;
 - (void)setAllowsCellularAccess:(BOOL)arg1;
+- (void)setAllowsPowerNapScheduling:(BOOL)arg1;
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setApplicationSecondaryID:(id)arg1;
 - (void)setContainerID:(id)arg1;

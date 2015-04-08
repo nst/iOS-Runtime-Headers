@@ -15,7 +15,6 @@
 + (id)nullFill;
 + (id)nullShadow;
 + (BOOL)p_hasShadow:(id)arg1;
-+ (BOOL)propertyMap:(id)arg1 equivalentTo:(id)arg2;
 + (id)shadowToChartsNullShadow:(id)arg1;
 + (void)updateStyleState:(id)arg1 forMutationsPerStyleOwner:(id)arg2;
 + (void)updateStyleState:(id)arg1 forPropertyMutationTuples:(id)arg2;

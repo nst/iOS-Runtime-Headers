@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)close;
-- (id)init;
+- (id)initWithAlwaysDefragmentData:(BOOL)arg1;
 - (id)serializedData;
 - (void)writeData:(id)arg1;
 

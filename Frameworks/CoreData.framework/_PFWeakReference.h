@@ -16,5 +16,6 @@
 - (id)initWithObject:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)object;
+- (id)retainedObject;
 
 @end

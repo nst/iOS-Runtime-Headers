@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <QLPreviewItem>, MPVolumeView, NSMutableDictionary, NSNumberFormatter, NSString, NSURL, QLArchiveViewer, QLPreviewItemsSource, UIBarButtonItem, UIDocumentInteractionController, UILabel, UINavigationController, UIView, UIViewController<QLPreviewContentControllerProtocol>, _UIAsyncInvocation;
+@class <QLPreviewItem>, MPVolumeView, NSArray, NSMutableDictionary, NSNumberFormatter, NSString, NSURL, QLArchiveViewer, QLPreviewItemsSource, UIBarButtonItem, UIDocumentInteractionController, UILabel, UINavigationController, UIView, UIViewController<QLPreviewContentControllerProtocol>, _UIAsyncInvocation;
 
 @interface QLPreviewControllerReserved : NSObject {
     UIBarButtonItem *actionItem;
@@ -31,19 +31,22 @@
     UIView *mainView;
     int mode;
     UINavigationController *navigationController;
+    NSArray *originalLeftBarButtonItems;
+    NSArray *originalRightBarButtonItems;
     int overlayState;
     NSMutableDictionary *pdfPreviewDataCache;
     UIBarButtonItem *playPauseButton;
     UIViewController<QLPreviewContentControllerProtocol> *previewContentController;
     <QLPreviewItem> *previewItem;
-    BOOL previousNavBarWasTranslucent;
-    int previousStatusBarStyle;
-    int previousToolbarStyle;
-    BOOL previousToolbarWasTranslucent;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id readyBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id restorePreviousStateBlock;
 
     UIBarButtonItem *routeButton;
     BOOL scrubbing;

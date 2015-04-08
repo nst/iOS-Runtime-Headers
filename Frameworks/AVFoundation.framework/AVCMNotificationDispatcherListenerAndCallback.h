@@ -19,6 +19,7 @@
 
 - (int (*)())callback;
 - (void)dealloc;
+- (id)init;
 - (id)initWithWeakReferenceToListener:(id)arg1 callback:(int (*)())arg2;
 - (id)listener;
 

@@ -4,18 +4,22 @@
 
 @class NSArray, NSString;
 
-@interface TSPPasteboard : NSObject {
+@interface TSPPasteboard : NSObject <TSPDecoder> {
     id _pasteboard;
 }
 
 @property(readonly) NSArray * URLs;
 @property(readonly) int changeCount;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned int hash;
 @property(readonly) BOOL isSmartCopy;
 @property(readonly) NSString * name;
 @property(readonly) int numberOfItems;
 @property(readonly) NSArray * richTextStrings;
 @property(copy) NSString * string;
 @property(readonly) NSArray * strings;
+@property(readonly) Class superclass;
 
 + (id)activePasteboardForName:(id)arg1;
 + (id)activePasteboards;
@@ -54,6 +58,9 @@
 - (oneway void)invalidate;
 - (BOOL)isSmartCopy;
 - (id)name;
+- (id)newReadChannelForDataWithIdentifier:(long long)arg1 info:(id)arg2;
+- (id)newReadChannelForMetadata;
+- (id)newReadChannelForRootObjectComponent;
 - (int)numberOfItems;
 - (id)pasteboardTypes;
 - (id)pasteboardTypesForItemSet:(id)arg1;

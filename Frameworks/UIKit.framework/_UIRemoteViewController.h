@@ -17,6 +17,7 @@
     UIActionSheet *_hostedActionSheet;
     UIDimmingView *_hostedDimmingView;
     BOOL _isFocusDeferred;
+    BOOL _isUpdatingSize;
     NSMutableArray *_preFencedCommitActions;
     int _preFencedCommitActionsLock;
     int _preferredStatusBarStyle;
@@ -48,6 +49,7 @@
     id _viewControllerOperatorProxy;
 }
 
+@property(setter=_setIsUpdatingSize:) BOOL _isUpdatingSize;
 @property(setter=_setTouchDeliveryPolicyAssertion:,retain) BKSTouchDeliveryPolicyAssertion * _touchDeliveryPolicyAssertion;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
@@ -61,6 +63,8 @@
 + (BOOL)__shouldAllowHostProcessToTakeFocus;
 + (BOOL)__shouldHostRemoteTextEffectsWindow;
 + (id)_requestViewController:(id)arg1 traitCollection:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 service:(id)arg4 connectionHandler:(id)arg5;
++ (BOOL)_shouldForwardViewWillTransitionToSize;
++ (BOOL)_shouldSendLegacyMethodsFromViewWillTransitionToSize;
 + (id)exportedInterface;
 + (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 connectionHandler:(id)arg3;
 + (id)requestViewController:(id)arg1 traitCollection:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 connectionHandler:(id)arg4;
@@ -113,6 +117,7 @@
 - (id)_initWithViewServiceBundleIdentifier:(id)arg1;
 - (void)_initializeAccessibilityPortInformation;
 - (BOOL)_isDeallocating;
+- (BOOL)_isUpdatingSize;
 - (void)_prepareTouchDeliveryPolicy;
 - (BOOL)_requiresKeyboardWindowWhenFirstResponder;
 - (void)_restoreTextEffectsRemoteView;
@@ -120,7 +125,9 @@
 - (BOOL)_serviceHasScrollToTopView;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setDeferred:(BOOL)arg1 forDisplayUUID:(id)arg2;
+- (void)_setIsUpdatingSize:(BOOL)arg1;
 - (void)_setTouchDeliveryPolicyAssertion:(id)arg1;
+- (BOOL)_shouldDeferEventsForFocusOnScreen:(id)arg1;
 - (void)_snapshotAdjustedMediaTiming:(id)arg1;
 - (void)_snapshotAndRemoveTextEffectsRemoteView;
 - (void)_statusBarHeightDidChange:(id)arg1;
@@ -128,6 +135,7 @@
 - (void)_terminateUnconditionallyThen:(id)arg1;
 - (id)_terminateWithError:(id)arg1;
 - (id)_touchDeliveryPolicyAssertion;
+- (void)_traitCollectionDidChange:(id)arg1;
 - (BOOL)_tryRetain;
 - (void)_updateTintColor;
 - (void)_updateTouchGrabbingView;
@@ -163,6 +171,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)synchronizeAnimationsInActions:(id)arg1;
+- (id)textEffectsWindowForServiceScreen;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidInvalidateIntrinsicContentSize;
@@ -171,5 +180,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

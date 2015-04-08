@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class AVAudioPayload, DTMFEventHandler, LTEAudioSessionConfig, NSMutableArray, NSObject<LTEConferenceDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, VCJitterBuffer, WRMClient;
+@class AVAudioPayload, DTMFEventHandler, LTEAudioSessionConfig, NSMutableArray, NSObject<LTEConferenceDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, VCJitterBuffer, WRMClient;
 
 @interface LTEConference : NSObject <WRMClientDelegate> {
     NSObject<LTEConferenceDelegate> *_delegate;
@@ -11,6 +11,7 @@
     LTEAudioSessionConfig *_sessionConfig;
     NSMutableArray *audioPayloads;
     char *bundleBuffer;
+    NSString *callID;
     unsigned int conferenceID;
     AVAudioPayload *currentAudioPayload;
     double dAudioHostTime;
@@ -26,6 +27,7 @@
     unsigned int packetTimeoutCheckCounter;
     NSObject<OS_dispatch_source> *pausedAudioHeartBeat;
     int preferredAudioCodec;
+    struct opaqueRTCReporting { } *reportingAgent;
     struct tagHANDLE { int x1; } *rtpHandle;
     int sampleRate;
     int samplesPerFrame;
@@ -71,6 +73,7 @@
 - (id)delegate;
 - (int)encodeAudio:(void*)arg1 numInputBytes:(int)arg2 outputBytes:(void*)arg3 numOutputBytes:(int)arg4 withPayload:(int*)arg5;
 - (id)init;
+- (void)initializeWRM;
 - (BOOL)isValid;
 - (void)lock;
 - (bool)onCaptureSound:(char *)arg1 numBytes:(int)arg2 numSamples:(int)arg3 timeStamp:(unsigned int)arg4 timeStampDelta:(int)arg5 bufferedSamples:(int)arg6 hostTime:(double)arg7 averagePower:(float)arg8 voiceActivity:(unsigned long)arg9;
@@ -78,7 +81,7 @@
 - (void)prepareForCall;
 - (void)pullDecodedMeshMode:(char *)arg1 timestamp:(unsigned int)arg2 numBytes:(int)arg3 numSamples:(int)arg4;
 - (void)reportRTCPPackets:(struct tagRTCPPACKET { struct tagRTCPCOMMON { unsigned int x_1_1_1 : 5; unsigned int x_1_1_2 : 1; unsigned int x_1_1_3 : 2; unsigned int x_1_1_4 : 8; unsigned short x_1_1_5; } x1; union { struct tagSR_RTCP { unsigned int x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; struct tagRTCPRR { unsigned int x_7_3_1; unsigned int x_7_3_2 : 8; unsigned int x_7_3_3 : 24; unsigned int x_7_3_4; unsigned int x_7_3_5; unsigned int x_7_3_6; unsigned int x_7_3_7; } x_1_2_7; } x_2_1_1; struct tagRR_RTCP { unsigned int x_2_2_1; struct tagRTCPRR { unsigned int x_2_3_1; unsigned int x_2_3_2 : 8; unsigned int x_2_3_3 : 24; unsigned int x_2_3_4; unsigned int x_2_3_5; unsigned int x_2_3_6; unsigned int x_2_3_7; } x_2_2_2; } x_2_1_2; struct tagSDES_RTCP { unsigned int x_3_2_1; struct tagRTCPSDES { unsigned char x_2_3_1; unsigned char x_2_3_2; BOOL x_2_3_3[258]; } x_3_2_2; } x_2_1_3; struct tagBYE_RTCP { unsigned int x_4_2_1; } x_2_1_4; struct tagAPP_RTCP { unsigned int x_5_2_1; BOOL x_5_2_2[4]; int x_5_2_3; int x_5_2_4; } x_2_1_5; struct tagFIR_RTCP { unsigned int x_6_2_1; unsigned short x_6_2_2[10]; } x_2_1_6; struct tagNACK_RTCP { unsigned int x_7_2_1; unsigned short x_7_2_2; unsigned short x_7_2_3; } x_2_1_7; struct tagPLI_RTCP { struct tagRTCP_FBCOMMON { unsigned int x_1_3_1; unsigned int x_1_3_2; } x_8_2_1; } x_2_1_8; struct tagSLI_RTCP { struct tagRTCP_FBCOMMON { unsigned int x_1_3_1; unsigned int x_1_3_2; } x_9_2_1; unsigned int x_9_2_2; } x_2_1_9; struct tagGenNACK_RTCP { struct tagRTCP_FBCOMMON { unsigned int x_1_3_1; unsigned int x_1_3_2; } x_10_2_1; unsigned short x_10_2_2; unsigned short x_10_2_3; } x_2_1_10; } x2; }*)arg1 withCount:(int)arg2;
-- (void)reportWRMMetrics:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; }*)arg1;
+- (void)reportWRMMetrics:(const struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; unsigned long long x17; unsigned long long x18; unsigned long long x19; unsigned long long x20; unsigned long long x21; }*)arg1;
 - (void)sendDTMFEvent:(id)arg1;
 - (int)sendSamples:(char *)arg1 numEncodedBytes:(int)arg2 withPayload:(int)arg3 timeStamp:(unsigned int)arg4 bufferedSamples:(int)arg5 hasNewSamples:(BOOL)arg6 voiceActivity:(BOOL)arg7;
 - (id)sessionConfig;
@@ -96,6 +99,7 @@
 - (void)setRtpTimeOutInterval:(double)arg1;
 - (void)setSessionConfig:(id)arg1;
 - (void)setStreamDirection:(int)arg1;
+- (void)setWRMMetricConfig:(struct { unsigned long long x1; }*)arg1;
 - (BOOL)setupAudioCodecWithPayload:(int)arg1;
 - (BOOL)setupAudioEncoders;
 - (void)setupRTPPayloadsWithDestinationIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
@@ -104,12 +108,14 @@
 - (void)startAudioWithCompletionHandler:(id)arg1;
 - (void)startCall;
 - (void)startPausedHeartbeat;
+- (void)startWRM;
 - (void)stopAudioWithCompletionHandler:(id)arg1;
 - (void)stopCall;
 - (void)stopPausedHeartbeat;
 - (void)stopSendDTMFEvent;
+- (void)stopWRM;
 - (id)supportedAudioPayloads;
+- (void)uninitializeWRM;
 - (void)unlock;
-- (void)wrmClient:(id)arg1 setMetricConfig:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; }*)arg2;
 
 @end

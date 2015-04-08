@@ -43,6 +43,8 @@
 - (float)getColumnInitialWidth:(unsigned char)arg1;
 - (float)getColumnWidth:(unsigned char)arg1;
 - (float)getColumnWidthResize:(unsigned char)arg1;
+- (float)getMinimumColumnWidth:(unsigned char)arg1;
+- (float)getMinimumRowHeight:(unsigned short)arg1;
 - (float)getRowHeight:(unsigned short)arg1;
 - (float)getRowHeightResize:(unsigned short)arg1;
 - (float)getRowInitialHeight:(unsigned short)arg1;
@@ -51,10 +53,17 @@
 - (id)initWithDynamicResizeInfo:(id)arg1;
 - (id)initWithMasterLayout:(id)arg1;
 - (id)initWithMasterLayout:(id)arg1 columnRegion:(id)arg2;
+- (id)initWithMasterLayout:(id)arg1 columnRegion:(id)arg2 rowRegion:(id)arg3;
 - (id)initWithMasterLayout:(id)arg1 rowRegion:(id)arg2;
 - (void)invalidate;
 - (void)p_captureRowColumnInformation:(id)arg1 columnRegion:(id)arg2 rowRegion:(id)arg3;
 - (id)rowHeights;
+- (float)totalCapturedColumnWidths;
+- (float)totalCapturedRowHeights;
+- (float)totalCurrentColumnWidths;
+- (float)totalCurrentRowHeights;
+- (float)totalMinimumColumnWidths;
+- (float)totalMinimumRowHeights;
 - (BOOL)valid;
 
 @end

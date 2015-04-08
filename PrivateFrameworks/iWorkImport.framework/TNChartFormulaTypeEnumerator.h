@@ -5,11 +5,11 @@
 @interface TNChartFormulaTypeEnumerator : NSObject {
     unsigned int _count;
     unsigned int _index;
-    int **_keys;
+    unsigned int **_keys;
 }
 
 - (void)dealloc;
 - (id)initWithChartFormulaStorage:(id)arg1;
-- (int)nextFormulaType;
+- (unsigned int)nextFormulaType;
 
 @end

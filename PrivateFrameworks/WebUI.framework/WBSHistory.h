@@ -21,6 +21,7 @@
 @property(readonly) unsigned int historyAgeLimitInDays;
 @property(readonly) unsigned int numberOfHistoryItems;
 @property(readonly) unsigned int numberOfHistoryItemsOnHistoryQueue;
+@property BOOL pushNotificationsAreInitialized;
 @property(readonly) Class superclass;
 
 + (void)clearExistingSharedHistory;
@@ -95,7 +96,10 @@
 - (unsigned int)numberOfHistoryItems;
 - (unsigned int)numberOfHistoryItemsOnHistoryQueue;
 - (void)performBlockAfterHistoryHasLoaded:(id)arg1;
+- (BOOL)pushNotificationsAreInitialized;
+- (void)resetCloudHistoryDataWithCompletionHandler:(id)arg1;
 - (void)savePendingChangesBeforeTerminationWithCompletionHandler:(id)arg1;
+- (void)setPushNotificationsAreInitialized:(BOOL)arg1;
 - (void)updateTitle:(id)arg1 forVisit:(id)arg2;
 - (void)waitUntilHistoryHasLoaded;
 

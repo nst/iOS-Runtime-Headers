@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, TPDocumentSettings, TPDrawablesZOrder, TPFloatingDrawables, TPInteractiveCanvasController, TPPageLayoutNotifier, TPPaginatedPageController, TPSection, TPTOCController, TPTheme, TSDThumbnailController, TSSStylesheet, TSWPStorage;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString, TPDocumentSettings, TPDrawablesZOrder, TPFloatingDrawables, TPInteractiveCanvasController, TPPageLayoutNotifier, TPPaginatedPageController, TPSection, TPTOCController, TPTheme, TSDThumbnailController, TSSStylesheet, TSWPChangeSession, TSWPStorage;
 
 @interface TPDocumentRoot : TSADocumentRoot <TSCEResolverContainer, TSDInfoUUIDPathPrefixComponentsProvider, TSDThumbnailProducer, TSTResolverContainerNameProvider, TSWPChangeSessionManager, TSWPChangeVisibility, TSWPDrawableOLC, TSWPStorageParent> {
+    TSWPChangeSession *_activeChangeSession;
     TSWPStorage *_bodyStorage;
     float _bottomMargin;
     NSMutableArray *_changeSessionHistory;
@@ -18,8 +19,10 @@
     float _footerMargin;
     float _headerMargin;
     struct __CFLocale { } *_hyphenationLocale;
+    TPInteractiveCanvasController *_interactiveCanvasController;
     BOOL _layoutBodyVertically;
     float _leftMargin;
+    TSWPChangeSession *_mostRecentChangeSession;
     BOOL _needsInitialization;
     BOOL _newDocument;
     NSArray *_obsoleteTOCStyles;
@@ -45,9 +48,9 @@
     float _topMargin;
     BOOL _usesSingleHeaderFooter;
     BOOL initiallyShowRuler;
-    TPInteractiveCanvasController *interactiveCanvasController;
 }
 
+@property(retain) TSWPChangeSession * activeChangeSession;
 @property(retain,readonly) TSWPStorage * bodyStorage;
 @property float bottomMargin;
 @property(retain) NSArray * changeSessionHistory;
@@ -61,6 +64,7 @@
 @property(retain,readonly) TPSection * firstSection;
 @property(retain) TPFloatingDrawables * floatingDrawables;
 @property float footerMargin;
+@property(readonly) BOOL hasTrackedChanges;
 @property(readonly) unsigned int hash;
 @property float headerMargin;
 @property BOOL initiallyShowRuler;
@@ -69,6 +73,8 @@
 @property(readonly) BOOL isTrackingChanges;
 @property BOOL layoutBodyVertically;
 @property float leftMargin;
+@property(retain) TSWPChangeSession * mostRecentChangeSession;
+@property(retain,readonly) NSArray * nonHiddenSections;
 @property unsigned int orientation;
 @property float pageScale;
 @property struct CGSize { float x1; float x2; } pageSize;
@@ -94,22 +100,20 @@
 
 - (id).cxx_construct;
 - (id)UIStateForChart:(id)arg1;
+- (id)activeChangeSession;
 - (unsigned int)applicationType;
 - (BOOL)autoListRecognition;
 - (BOOL)autoListTermination;
 - (id)bodyStorage;
 - (float)bodyWidth;
 - (float)bottomMargin;
-- (id)changeSessionAuthorCreatedWithCommand:(id*)arg1;
 - (id)changeSessionHistory;
 - (id)changeSessionManagerForModel:(id)arg1;
 - (id)changeVisibility;
 - (id)chartsUIState;
 - (id)childEnumerator;
 - (id)citationRecords;
-- (id)commandForConvertingFloatingDrawableToAnchored:(id)arg1;
 - (int)contentWritingDirection;
-- (id)createViewStateRoot;
 - (void)dealloc;
 - (void)didAddDrawable:(id)arg1;
 - (void)didEnterBackground;
@@ -122,8 +126,10 @@
 - (float)footnoteGap;
 - (int)footnoteKind;
 - (BOOL)footnotesShouldAffectBodyLayout;
+- (BOOL)hasTrackedChanges;
 - (float)headerMargin;
 - (struct __CFLocale { }*)hyphenationLocale;
+- (int)indexForObject:(id)arg1;
 - (id)initForThemeImportWithContext:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initUsingDefaultThemeWithContext:(id)arg1;
@@ -140,29 +146,28 @@
 - (BOOL)isTrackingChanges;
 - (BOOL)layoutBodyVertically;
 - (float)leftMargin;
+- (id)makeIsolatedStyleMapper;
+- (id)makeStyleMapper;
 - (id)markStringForFootnoteReferenceStorage:(id)arg1;
+- (id)modelEnumeratorWithFlags:(unsigned int)arg1 forObjectsPassingTest:(id)arg2;
 - (id)modelPathComponentForChild:(id)arg1;
+- (id)mostRecentChangeSession;
 - (id)nameForResolverContainer:(id)arg1;
 - (int)naturalAlignmentAtCharIndex:(unsigned int)arg1 inTextStorage:(id)arg2;
-- (unsigned int)nextRootSearchTargetIndexFromIndex:(unsigned int)arg1 forString:(id)arg2 options:(unsigned int)arg3 inDirection:(unsigned int)arg4;
+- (BOOL)needsToExplainEnablingChangeTracking;
 - (unsigned int)nextUntitledResolverIndex;
+- (id)nonHiddenSections;
 - (unsigned int)orientation;
 - (void)pCommonInitialization;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pConjureUpBodyRect;
 - (void)pCreateBodyStorage;
 - (void)pCreateDrawablesZOrderBodyStorage:(id)arg1 addAnchoredDrawables:(BOOL)arg2;
 - (void)pCreateFloatingDrawables;
-- (void)pCreateStylesheet;
 - (void)pFinishInitialization;
 - (void)pUpgradeSection:(id)arg1 documentVersion:(unsigned long long)arg2;
 - (unsigned int)p_autoNumberForStorage:(id)arg1 footnoteNumbering:(int)arg2 footnoteKind:(int)arg3;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })p_bodyHitRangeForString:(id)arg1 withOptions:(unsigned int)arg2 limitRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (unsigned int)p_nextRootSearchTargetInBodyOrFloatersFromIndex:(unsigned int)arg1 forString:(id)arg2 options:(unsigned int)arg3 inDirection:(unsigned int)arg4;
-- (BOOL)p_possibleHitInSectionMaster:(id)arg1 pageIndex:(unsigned int)arg2 withOptions:(unsigned int)arg3;
 - (id)p_previewImageWithImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)p_realTOCEntryStyleFromFakeTOCEntryStyle:(id)arg1 context:(id)arg2;
-- (unsigned int)p_scanBackwardsForNextRootSearchTargetInBodyOrFloatersFromIndex:(unsigned int)arg1 forString:(id)arg2 withOptions:(unsigned int)arg3;
-- (unsigned int)p_scanForwardsForNextRootSearchTargetInBodyOrFloatersFromIndex:(unsigned int)arg1 forString:(id)arg2 withOptions:(unsigned int)arg3;
 - (void)p_uniquifyTableNames;
 - (void)p_upgradeBodyTOC;
 - (void)p_upgradeTOCStyles;
@@ -188,13 +193,14 @@
 - (BOOL)resolverNameIsUsed:(id)arg1;
 - (id)resolversMatchingPrefix:(id)arg1;
 - (void)resumeBackgroundActivities;
-- (void)resumeThumbnailing;
 - (BOOL)reuseThumbnailerUntilIdleForIdentifier:(id)arg1;
 - (float)rightMargin;
+- (void)rollbackNextUntitledResolverIndex:(unsigned int)arg1;
 - (id)rootInfosForIdentifier:(id)arg1;
-- (unsigned int)rootSearchTargetCountThroughIndex:(unsigned int)arg1;
+- (unsigned int)saveNextUntitledResolverIndex;
 - (void)saveToArchiver:(id)arg1;
 - (id)sections;
+- (void)setActiveChangeSession:(id)arg1;
 - (void)setBodyStorage:(id)arg1 dolcContext:(id)arg2;
 - (void)setBottomMargin:(float)arg1;
 - (void)setChangeSessionHistory:(id)arg1;
@@ -205,10 +211,12 @@
 - (void)setFloatingDrawables:(id)arg1;
 - (void)setFooterMargin:(float)arg1;
 - (void)setHeaderMargin:(float)arg1;
+- (void)setIndex:(int)arg1 forObject:(id)arg2;
 - (void)setInitiallyShowRuler:(BOOL)arg1;
 - (void)setInteractiveCanvasController:(id)arg1;
 - (void)setLayoutBodyVertically:(BOOL)arg1;
 - (void)setLeftMargin:(float)arg1;
+- (void)setMostRecentChangeSession:(id)arg1;
 - (void)setOrientation:(unsigned int)arg1;
 - (void)setPageScale:(float)arg1;
 - (void)setPageSize:(struct CGSize { float x1; float x2; })arg1;
@@ -216,6 +224,8 @@
 - (void)setPrinterID:(id)arg1;
 - (void)setRightMargin:(float)arg1;
 - (void)setStylesheet:(id)arg1;
+- (void)setStylesheet:(id)arg1 andThemeForImport:(id)arg2;
+- (void)setStylesheetForUpgradeToSingleStylesheet:(id)arg1;
 - (void)setTheme:(id)arg1;
 - (void)setThemeForTemplateImport:(id)arg1;
 - (void)setTocController:(id)arg1;
@@ -228,11 +238,10 @@
 - (BOOL)shouldHyphenate;
 - (BOOL)shouldShowChangeKind:(int)arg1 date:(id)arg2;
 - (BOOL)shouldShowMarkupForChangeKind:(int)arg1 date:(id)arg2;
-- (void)startNewChangeSessionIfNecessaryGettingInsertAuthorCommand:(id*)arg1;
+- (id)storagesWithChanges;
 - (id)stylesheet;
 - (BOOL)supportHeaderFooterParagraphAlignmentInInspectors;
 - (void)suspendBackgroundActivities;
-- (void)suspendThumbnailing;
 - (BOOL)textIsVertical;
 - (id)theme;
 - (void)thumbnailContainerDidChange:(id)arg1;
@@ -256,7 +265,6 @@
 - (void)willEnterForeground;
 - (void)willHide;
 - (void)willRemoveDrawable:(id)arg1;
-- (void)withRootSearchTargetAtIndex:(unsigned int)arg1 executeBlock:(id)arg2;
 - (unsigned int)writingDirection;
 
 @end

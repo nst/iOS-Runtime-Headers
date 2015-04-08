@@ -15,6 +15,7 @@
     struct _NSScalarObjectID { Class x1; } *_currentGlobalID;
     NSSQLRow *_currentRow;
     NSSaveChangesRequest *_currentSaveRequest;
+    NSMutableDictionary *_deletedFOKRowsInCurrentSave;
     NSString *_externalDataLinksDirectory;
     NSString *_externalDataReferencesDirectory;
     NSMutableSet *_externalDataReferencesToDelete;
@@ -37,11 +38,13 @@
         unsigned int useSyntaxColoredLogging : 1; 
         unsigned int checkedExternalReferences : 1; 
         unsigned int fileProtectionType : 3; 
-        unsigned int _RESERVED : 23; 
+        unsigned int notifyFOKChanges : 1; 
+        unsigned int _RESERVED : 22; 
     } _sqlCoreFlags;
     NSMutableDictionary *_storeMetadata;
     struct __CFDictionary { } *_toManyCache;
     int _transactionInMemorySequence;
+    NSMutableDictionary *_updatedFOKRowsInCurrentSave;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -67,6 +70,7 @@
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
 + (void)setSQLGenerationV1Default:(BOOL)arg1;
 
+- (id)_allOrderKeysForDestination:(id)arg1 inRelationship:(id)arg2 error:(id*)arg3;
 - (id)_availableChannel;
 - (id)_availableChannelFromRegisteredChannels;
 - (void)_beginTransaction:(id)arg1;
@@ -93,6 +97,7 @@
 - (id)_newObjectGraphStyleForSQLRow:(id)arg1 withObject:(id)arg2;
 - (id)_newObjectIDForEntity:(id)arg1 referenceData64:(unsigned long long)arg2;
 - (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
+- (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (id)_newReservedKeysForEntities:(id)arg1 counts:(id)arg2;
 - (id)_newRowCacheRowForToManyUpdatesForRelationship:(id)arg1 rowCacheOriginal:(id)arg2 originalSnapshot:(id)arg3 value:(id)arg4 added:(id)arg5 deleted:(id)arg6 sourceRowPK:(long long)arg7 properties:(id)arg8 sourceObject:(id)arg9 newIndexes:(unsigned int**)arg10 reorderedIndexes:(char **)arg11;
 - (id)_newRowsForFetchPlan:(id)arg1 selectedBy:(SEL)arg2 withArgument:(id)arg3;
@@ -126,8 +131,11 @@
 - (void)beginTransaction;
 - (void)beginTransaction_NotificationFree;
 - (void)beginTransaction_core;
+- (void)cacheStatement:(id)arg1 forRequestWithIdentifier:(id)arg2;
+- (id)cachedStatementForRequestWithIdentifier:(id)arg1;
 - (id)changeSnapshotForObjectID:(id)arg1;
 - (id)channels;
+- (void)clearCachedInformationForRequestWithIdentifier:(id)arg1;
 - (void)commitBatchUpdateOnConnection:(id)arg1;
 - (void)commitChanges:(id)arg1;
 - (void)commitTransaction;
@@ -137,6 +145,7 @@
 - (id)correlationTableUpdateTrackerForRelationship:(id)arg1;
 - (id)countForFetchRequest:(id)arg1 inContext:(id)arg2;
 - (id)createChannel;
+- (void)createCorrelationTrackerUpdatesForDeletedObject:(id)arg1;
 - (id)currentContext;
 - (id)databaseUUID;
 - (void)dealloc;
@@ -191,6 +200,7 @@
 - (void)recordChangeSnapshot:(id)arg1 forObjectID:(id)arg2;
 - (void)recordToManyChangesForObject:(id)arg1 inRow:(id)arg2 usingTimestamp:(double)arg3 inserted:(BOOL)arg4;
 - (id)refreshObjects:(id)arg1;
+- (void)registerChangedFOKs:(id)arg1 deletions:(id)arg2 forSourceObject:(id)arg3 andRelationship:(id)arg4;
 - (void)registerChannel:(id)arg1;
 - (void)resetExternalDataReferencesDirectories;
 - (void)rollbackBatchUpdateOnConnection:(id)arg1;
@@ -207,6 +217,7 @@
 - (void)setExclusiveLockingMode:(BOOL)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setURL:(id)arg1;
+- (BOOL)shouldNotifyFOKChanges;
 - (id)type;
 - (void)unregisterChannel:(id)arg1;
 - (void)willRemoveFromPersistentStoreCoordinator:(id)arg1;

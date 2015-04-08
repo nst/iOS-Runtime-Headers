@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class <HKMedicalIDViewControllerDelegate>, HKEmergencyCardGroupTableItem, HKHealthStore, NSArray, NSString, _HKMedicalIDData;
+@class <HKMedicalIDViewControllerDelegate>, HKEmergencyCardContactsTableItem, HKEmergencyCardGroupTableItem, HKHealthStore, NSArray, NSString, _HKMedicalIDData;
 
 @interface HKMedicalIDViewController : UITableViewController <HKEmergencyCardDeletionDelegate, HKEmergencyCardEnabledDelegate, HKEmergencyCardRowHeightChangeDelegate, HKMedicalIDViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
+    void *_addressBook;
     BOOL _allowsEditing;
+    HKEmergencyCardContactsTableItem *_contactsItem;
     <HKMedicalIDViewControllerDelegate> *_delegate;
     NSArray *_footers;
     HKEmergencyCardGroupTableItem *_groupItem;
@@ -33,6 +35,7 @@
 + (BOOL)isSupportedOnThisDevice;
 
 - (void).cxx_destruct;
+- (void*)_addressBook;
 - (void)_buildPresentableTableItems;
 - (void)_buildTableItems;
 - (void)_cancelEditingTapped:(id)arg1;
@@ -42,6 +45,7 @@
 - (void)_editTapped:(id)arg1;
 - (id)_fetchMedicalIDDataSynchronously:(BOOL*)arg1;
 - (id)_newViewForFooterInSection:(int)arg1;
+- (void)_refreshEmergencyContactsAndReload:(BOOL)arg1;
 - (BOOL)allowsEditing;
 - (void)dealloc;
 - (id)delegate;

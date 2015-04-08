@@ -16,6 +16,7 @@
 - (id)descriptionForRegionTotalsWithOptions:(unsigned int)arg1;
 - (id)initWithTask:(unsigned int)arg1;
 - (id)initWithTask:(unsigned int)arg1 options:(unsigned int)arg2;
+- (id)initWithTask:(unsigned int)arg1 pid:(int)arg2 options:(unsigned int)arg3;
 - (id)regions;
 
 @end

@@ -7,34 +7,29 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class BRCGenerationID, NSDictionary, NSMutableSet, NSNumber, NSSet, NSString;
+@class BRCGenerationID, NSNumber, NSString;
 
 @interface BRCLocalStatInfo : BRCStatInfo {
     NSString *_bouncedName;
     NSNumber *_documentID;
     NSNumber *_fileID;
     BRCGenerationID *_generationID;
-    NSMutableSet *_liveConflictLoserEtags;
     NSString *_localName;
-    NSNumber *_parentFileID;
     NSNumber *_processingStamp;
-    NSMutableSet *_resolvedConflictLoserEtags;
     NSNumber *_stagedFileID;
     unsigned int _stagedGenerationID;
 }
 
 @property(readonly) NSString * bouncedName;
-@property(readonly) NSDictionary * conflictLoserState;
 @property(readonly) NSNumber * documentID;
 @property(readonly) NSNumber * fileID;
 @property(readonly) NSNumber * fileObjectID;
 @property(readonly) BRCGenerationID * generationID;
-@property(readonly) NSSet * liveConflictLoserEtags;
 @property(readonly) NSString * localName;
 @property(readonly) NSNumber * lostStamp;
-@property(readonly) NSNumber * parentFileID;
-@property(readonly) NSSet * resolvedConflictLoserEtags;
+@property(readonly) NSNumber * processingStamp;
 @property(readonly) NSNumber * stagedFileID;
+@property(readonly) NSNumber * stagedFileIDForDB;
 @property(readonly) unsigned int stagedGenerationID;
 
 + (BOOL)supportsSecureCoding;
@@ -49,25 +44,16 @@
 - (void)_markDead;
 - (void)_markLiveFromStageAsFault:(BOOL)arg1;
 - (void)_markLostAddingBackoffWithMode:(unsigned char)arg1 container:(id)arg2;
-- (void)_markRemovedFromFilesystem;
 - (void)_markReserved;
 - (void)_markStagedWithFileID:(id)arg1 generationID:(unsigned int)arg2 documentID:(id)arg3;
 - (void)_migrateBouncedNameToLocalName;
 - (void)_moveItemAsideWithUUIDString;
 - (void)_setCKInfo:(id)arg1;
-- (void)_setParentFileID:(id)arg1;
 - (void)_setParentID:(id)arg1;
-- (void)_updateAliasTargetWithItemID:(id)arg1;
-- (void)_updateLiveConflictLoserFromFSAtPath:(id)arg1 itemID:(id)arg2;
-- (void)_updateMetadataFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
+- (void)_updateMetadataFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3 isPackageFault:(BOOL)arg4;
 - (void)_updateStatMeta:(id)arg1;
-- (void)addLiveConflictLoserEtag:(id)arg1;
-- (void)addResolvedConflictLoserEtag:(id)arg1;
 - (id)bouncedName;
 - (BOOL)checkStateWithItemID:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
-- (void)clearLiveConflictLoserEtags;
-- (void)clearResolvedConflictLoserEtags;
-- (id)conflictLoserState;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptionWithContext:(id)arg1 origName:(id)arg2;
@@ -82,18 +68,15 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLocalStatInfo:(id)arg1;
 - (id)initWithRelativePath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
-- (id)liveConflictLoserEtags;
 - (id)localName;
 - (id)lostStamp;
-- (id)parentFileID;
 - (id)processingStamp;
-- (void)removeLiveConflictLoserEtag:(id)arg1;
-- (id)resolvedConflictLoserEtags;
 - (void)setFilename:(id)arg1;
 - (void)setFilename:(id)arg1 forceRename:(BOOL)arg2;
 - (id)stagedFileID;
+- (id)stagedFileIDForDB;
 - (unsigned int)stagedGenerationID;
-- (void)updateFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
-- (void)updateLocationAndMetaFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
+- (void)updateFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3 isPackageFault:(BOOL)arg4;
+- (void)updateLocationAndMetaFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3 isPackageFault:(BOOL)arg4;
 
 @end

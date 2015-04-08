@@ -22,6 +22,7 @@
 @property HMService * service;
 @property(copy) id value;
 
++ (id)characteristicTypeAsString:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

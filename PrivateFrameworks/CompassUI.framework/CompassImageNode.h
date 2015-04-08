@@ -26,7 +26,7 @@
 @property(retain) CompassImageNode * rightChild;
 
 - (id).cxx_construct;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)imageKey;
 - (id)insertImageWithSize:(struct CGSize { float x1; float x2; })arg1 key:(id)arg2;
 - (id)leftChild;

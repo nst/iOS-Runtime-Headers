@@ -13,7 +13,9 @@
     NSURL *_cachedURL;
 }
 
+- (void)_modelChanged;
 - (void)_removeCachedValues;
+- (void)_valuesChanged;
 - (void)cacheValues;
 - (void)dealloc;
 - (id)initWithItem:(id)arg1;

@@ -14,6 +14,5 @@
 - (float)rightClip;
 - (void)setLeftClip:(float)arg1;
 - (void)setRightClip:(float)arg1;
-- (void)setupForDrawingInLayer:(id)arg1 context:(struct CGContext { }*)arg2;
 
 @end

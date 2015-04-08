@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSString;
-
 @interface DAMailboxFetchMessageRequest : DAMailboxRequest {
     int _maxSize;
 }
 
 @property int maxSize;
-@property(copy) NSString * messageID;
 
 - (id)description;
 - (unsigned int)hash;

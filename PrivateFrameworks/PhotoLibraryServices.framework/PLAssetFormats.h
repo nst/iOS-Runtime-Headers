@@ -5,11 +5,14 @@
 @interface PLAssetFormats : NSObject {
 }
 
-+ (id)descriptionForFormat:(int)arg1;
++ (int)bestFormatWithSize:(struct CGSize { float x1; float x2; })arg1 contentMode:(int)arg2 demoteFactor:(double)arg3 srcAspectRatio:(double)arg4 isTableFormat:(BOOL*)arg5 desiredImagePixelSize:(struct CGSize { float x1; float x2; }*)arg6;
++ (id)descriptionForImageFormat:(int)arg1;
++ (id)descriptionForVideoFormat:(int)arg1;
 + (unsigned int)desiredLongSideForFullSizeFormat:(int)arg1;
 + (BOOL)formatIsBadgedForVideo:(int)arg1;
 + (BOOL)formatIsCropped:(int)arg1;
 + (BOOL)formatIsFullscreen:(int)arg1;
++ (BOOL)formatIsReferringToLatestVersion:(int)arg1;
 + (BOOL)formatSizeIsShortSide:(int)arg1;
 + (BOOL)isAlbumVideoPath:(id)arg1;
 + (unsigned int)maxLongSideForFullSizeFormat:(int)arg1;

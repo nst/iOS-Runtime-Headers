@@ -26,7 +26,7 @@
 @property(getter=isShowingSidebar,readonly) BOOL showingSidebar;
 @property(readonly) int sidebarViewMode;
 
-+ (id)uiLayoutFromArchive:(const struct DesktopUILayoutArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; bool x4; bool x5; bool x6; bool x7; int x8; int x9; unsigned int x10[1]; }*)arg1 unarchiver:(id)arg2 context:(id)arg3;
++ (id)uiLayoutFromArchive:(const struct DesktopUILayoutArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; bool x6; bool x7; bool x8; bool x9; int x10; bool x11; }*)arg1 unarchiver:(id)arg2 context:(id)arg3;
 
 - (id)archivedUILayoutInContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -40,7 +40,7 @@
 - (BOOL)isShowingSidebar;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)p_isShowingNavigatorViewInSidebar;
-- (void)saveToArchive:(struct DesktopUILayoutArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; bool x4; bool x5; bool x6; bool x7; int x8; int x9; unsigned int x10[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct DesktopUILayoutArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; bool x6; bool x7; bool x8; bool x9; int x10; bool x11; }*)arg1 archiver:(id)arg2;
 - (int)sidebarViewMode;
 
 @end

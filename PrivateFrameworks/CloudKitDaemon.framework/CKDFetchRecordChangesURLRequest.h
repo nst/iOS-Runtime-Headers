@@ -5,28 +5,35 @@
 @class CKRecordZoneID, NSArray, NSData, NSMutableArray;
 
 @interface CKDFetchRecordChangesURLRequest : CKDURLRequest {
+    int _changeTypes;
     CKRecordZoneID *_recordZoneID;
     NSArray *_requestedFields;
     NSMutableArray *_resultChangedRecords;
+    NSMutableArray *_resultChangedShares;
     NSData *_resultClientChangeTokenData;
     NSMutableArray *_resultDeletedRecordIdentifiers;
+    NSMutableArray *_resultDeletedShareIdentifiers;
     NSData *_resultServerChangeTokenData;
     unsigned int _resultsLimit;
     NSData *_serverChangeTokenData;
     int _status;
 }
 
+@property int changeTypes;
 @property(retain) CKRecordZoneID * recordZoneID;
 @property(retain) NSArray * requestedFields;
 @property(readonly) NSArray * resultChangedRecords;
+@property(readonly) NSArray * resultChangedShares;
 @property(retain) NSData * resultClientChangeTokenData;
 @property(readonly) NSArray * resultDeletedRecordIdentifiers;
+@property(readonly) NSArray * resultDeletedShareIdentifiers;
 @property(retain) NSData * resultServerChangeTokenData;
 @property unsigned int resultsLimit;
 @property(retain) NSData * serverChangeTokenData;
 @property int status;
 
 - (void).cxx_destruct;
+- (int)changeTypes;
 - (id)initWithRecordZoneID:(id)arg1 serverChangeTokenData:(id)arg2 requestedFields:(id)arg3;
 - (int)operationType;
 - (id)recordZoneID;
@@ -35,11 +42,14 @@
 - (id)requestOperations;
 - (id)requestedFields;
 - (id)resultChangedRecords;
+- (id)resultChangedShares;
 - (id)resultClientChangeTokenData;
 - (id)resultDeletedRecordIdentifiers;
+- (id)resultDeletedShareIdentifiers;
 - (id)resultServerChangeTokenData;
 - (unsigned int)resultsLimit;
 - (id)serverChangeTokenData;
+- (void)setChangeTypes:(int)arg1;
 - (void)setRecordZoneID:(id)arg1;
 - (void)setRequestedFields:(id)arg1;
 - (void)setResultClientChangeTokenData:(id)arg1;

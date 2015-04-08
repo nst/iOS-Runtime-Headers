@@ -14,11 +14,12 @@
 @property(retain) NSURL * webURL;
 
 + (void)launchAttributionURLs:(id)arg1 withAttributionApps:(id)arg2;
++ (void)launchAttributionURLs:(id)arg1 withAttributionApps:(id)arg2 completionHandler:(id)arg3;
 + (id)sharedController;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)lookUpAppStoreURLForBundle:(id)arg1;
+- (void)lookUpAppStoreURLForBundle:(id)arg1 completionHandler:(id)arg2;
 - (void)setStoreRequest:(id)arg1;
 - (void)setWebURL:(id)arg1;
 - (id)storeRequest;

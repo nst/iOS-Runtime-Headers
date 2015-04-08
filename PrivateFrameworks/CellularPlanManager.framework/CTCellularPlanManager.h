@@ -24,6 +24,7 @@
 - (void)_plansForRenewal:(BOOL)arg1 progress:(id)arg2 completion:(id)arg3 latitude:(id)arg4 longitude:(id)arg5;
 - (void)_reconnect;
 - (void)_subscriptionDetailsWithCompletion:(id)arg1 updateIfNeeded:(BOOL)arg2;
+- (void)carrierHandoffToken:(id)arg1;
 - (void)connectionSettings:(id)arg1;
 - (void)dealloc;
 - (void)didPurchasePlanWithIccid:(id)arg1 downloadProfile:(BOOL)arg2;

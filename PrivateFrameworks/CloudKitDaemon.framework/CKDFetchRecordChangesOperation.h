@@ -9,6 +9,7 @@
 @class CKRecordZoneID, CKServerChangeToken, NSArray, NSData;
 
 @interface CKDFetchRecordChangesOperation : CKDDatabaseOperation {
+    int _changeTypes;
     CKServerChangeToken *_clientChangeToken;
     NSArray *_desiredKeys;
     CKServerChangeToken *_previousServerChangeToken;
@@ -22,10 +23,16 @@
     NSData *_resultClientChangeTokenData;
     CKServerChangeToken *_resultServerChangeToken;
     unsigned int _resultsLimit;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _shareChangedBlock;
+
     BOOL _shouldFetchAssetContents;
     int _status;
 }
 
+@property int changeTypes;
 @property(retain) CKServerChangeToken * clientChangeToken;
 @property(retain) NSArray * desiredKeys;
 @property(retain) CKServerChangeToken * previousServerChangeToken;
@@ -35,12 +42,14 @@
 @property(retain) NSData * resultClientChangeTokenData;
 @property(retain) CKServerChangeToken * resultServerChangeToken;
 @property unsigned int resultsLimit;
+@property(copy) id shareChangedBlock;
 @property BOOL shouldFetchAssetContents;
 @property int status;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleFetchChangesRequestFinished:(id)arg1;
+- (int)changeTypes;
 - (id)clientChangeToken;
 - (id)desiredKeys;
 - (void)fillOutOperationResult:(id)arg1;
@@ -54,6 +63,7 @@
 - (id)resultClientChangeTokenData;
 - (id)resultServerChangeToken;
 - (unsigned int)resultsLimit;
+- (void)setChangeTypes:(int)arg1;
 - (void)setClientChangeToken:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
@@ -62,8 +72,10 @@
 - (void)setResultClientChangeTokenData:(id)arg1;
 - (void)setResultServerChangeToken:(id)arg1;
 - (void)setResultsLimit:(unsigned int)arg1;
+- (void)setShareChangedBlock:(id)arg1;
 - (void)setShouldFetchAssetContents:(BOOL)arg1;
 - (void)setStatus:(int)arg1;
+- (id)shareChangedBlock;
 - (BOOL)shouldFetchAssetContents;
 - (int)status;
 

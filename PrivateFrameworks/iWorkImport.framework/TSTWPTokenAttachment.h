@@ -14,6 +14,7 @@
     struct CGImage { } *mCachedImage;
     float mCachedImageScreenScale;
     TSTExpressionNode *mExpressionNode;
+    BOOL mHighlighted;
     BOOL mInInvalidate;
     struct CGRect { 
         struct CGPoint { 
@@ -37,6 +38,7 @@
 @property struct CGImage { }* cachedImage;
 @property float cachedImageScreenScale;
 @property(retain) TSTExpressionNode * expressionNode;
+@property(getter=isHighlighted) BOOL highlighted;
 @property(getter=neverShowsMenu) BOOL neverShowsMenu;
 @property(getter=isSelected) BOOL selected;
 
@@ -50,20 +52,22 @@
 - (id)detokenizedText;
 - (id)expressionNode;
 - (id)formulaPlainText;
-- (id)initFromArchive:(const struct TokenAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct UIGraphicalAttachment {} *x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initFromArchive:(const struct TokenAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct UIGraphicalAttachment {} *x5; struct Reference {} *x6; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 expressionNode:(id)arg2;
 - (void)invalidate;
 - (BOOL)isActive;
+- (BOOL)isHighlighted;
 - (BOOL)isSelected;
 - (BOOL)neverShowsMenu;
 - (void)requestRedraw;
-- (void)saveToArchive:(struct TokenAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct UIGraphicalAttachment {} *x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct TokenAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct UIGraphicalAttachment {} *x5; struct Reference {} *x6; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setCachedImage:(struct CGImage { }*)arg1;
 - (void)setCachedImageScreenScale:(float)arg1;
 - (void)setExpressionNode:(id)arg1;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)setNeverShowsMenu:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 

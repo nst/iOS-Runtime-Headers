@@ -5,12 +5,16 @@
 @class NSString;
 
 @interface PHCollection : PHObject {
+    BOOL _customSortAscending;
+    int _customSortKey;
     unsigned int _estimatedPhotosCount;
     unsigned int _estimatedVideosCount;
 }
 
 @property(readonly) BOOL canContainAssets;
 @property(readonly) BOOL canContainCollections;
+@property(readonly) BOOL customSortAscending;
+@property(readonly) int customSortKey;
 @property(readonly) unsigned int estimatedPhotosCount;
 @property(readonly) unsigned int estimatedVideosCount;
 @property(readonly) NSString * localizedTitle;
@@ -29,9 +33,12 @@
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (BOOL)collectionCanBePinned;
 - (BOOL)collectionHasFixedOrder;
+- (BOOL)customSortAscending;
+- (int)customSortKey;
 - (id)description;
 - (unsigned int)estimatedPhotosCount;
 - (unsigned int)estimatedVideosCount;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
 - (id)localizedTitle;
 
 @end

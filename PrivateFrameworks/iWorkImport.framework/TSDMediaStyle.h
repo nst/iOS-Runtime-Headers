@@ -18,22 +18,21 @@
 + (id)defaultValueForProperty:(int)arg1;
 + (id)imageStylePresetStyleDescriptor;
 + (void)initialize;
-+ (void)loadMediaStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct MediaStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StrokeArchive {} *x3; struct ShadowArchive {} *x4; struct ReflectionArchive {} *x5; float x6; int x7; unsigned int x8[1]; }*)arg2 unarchiver:(id)arg3;
++ (void)loadMediaStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct MediaStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StrokeArchive {} *x5; struct ShadowArchive {} *x6; struct ReflectionArchive {} *x7; float x8; }*)arg2 unarchiver:(id)arg3;
 + (id)movieStylePresetStyleDescriptor;
-+ (id)p_magicMoveProperties;
 + (id)properties;
 + (id)propertiesAllowingNSNull;
-+ (void)saveMediaStylePropertyMap:(id)arg1 toArchive:(struct MediaStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StrokeArchive {} *x3; struct ShadowArchive {} *x4; struct ReflectionArchive {} *x5; float x6; int x7; unsigned int x8[1]; }*)arg2 archiver:(id)arg3;
++ (void)saveMediaStylePropertyMap:(id)arg1 toArchive:(struct MediaStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StrokeArchive {} *x5; struct ShadowArchive {} *x6; struct ReflectionArchive {} *x7; float x8; }*)arg2 archiver:(id)arg3;
 + (BOOL)validateFloatValue:(float*)arg1 forProperty:(int)arg2;
 
 - (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
 - (id)initFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct MediaStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct MediaStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct MediaStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StyleArchive {} *x5; struct MediaStylePropertiesArchive {} *x6; unsigned int x7; }*)arg1 unarchiver:(id)arg2;
 - (SEL)mapThemePropertyMapSelector;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)presetKind;
-- (void)saveToArchive:(struct MediaStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct MediaStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct MediaStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StyleArchive {} *x5; struct MediaStylePropertiesArchive {} *x6; unsigned int x7; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 
 @end

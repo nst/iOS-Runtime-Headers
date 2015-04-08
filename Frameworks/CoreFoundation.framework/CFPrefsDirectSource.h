@@ -15,7 +15,7 @@
 - (id)createRequestNewContentMessageForDaemon:(BOOL)arg1;
 - (void)dealloc;
 - (BOOL)managed;
-- (void)sendFullyPreparedMessage:(id)arg1 settingValue:(void*)arg2 forKey:(struct __CFString { }*)arg3;
+- (void)sendFullyPreparedMessage:(id)arg1 settingValue:(void*)arg2 forKey:(struct __CFString { }*)arg3 retryCount:(int)arg4;
 - (BOOL)sendMessage:(id)arg1;
 - (void)setManaged:(BOOL)arg1;
 

@@ -37,6 +37,8 @@
 - (id)didStartHandler;
 - (id)didStopHandler;
 - (id)identifier;
+- (void)invokeDidStartIfNecessary:(BOOL)arg1 error:(id)arg2;
+- (void)invokeDidStopIfNecessary:(BOOL)arg1 error:(id)arg2;
 - (BOOL)isHost;
 - (BOOL)receivedDidStart;
 - (void)setDidStartHandler:(id)arg1;

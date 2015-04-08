@@ -7,8 +7,10 @@
 @interface CPLEngineResourceDownloadQueue : CPLEngineStorage <CPLAbstractObject> {
     NSMutableArray *_backgroundActiveTasks;
     NSObject<OS_dispatch_queue> *_downloadQueue;
+    NSMutableArray *_highPriorityActiveTaskGroups;
     NSMutableArray *_highPriorityActiveTasks;
     NSMutableArray *_highPriorityTasksQueue;
+    NSMutableArray *_lowPriorityActiveTaskGroups;
     NSMutableArray *_lowPriorityActiveTasks;
     NSMutableArray *_lowPriorityTasksQueue;
     BOOL _shouldRequestABackgroundDownloadSyncPhase;
@@ -24,25 +26,35 @@
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_addTask:(id)arg1 toPrioritizedQueue:(id)arg2;
+- (unsigned int)_availableSlotsForDownloadTaskGroupsOfHighPriority:(BOOL)arg1;
 - (BOOL)_cancelDownloadTask:(id)arg1;
+- (BOOL)_deferOneLowPriorityActiveTaskGroup;
+- (void)_dequeueTasks:(id*)arg1 taskGroups:(id*)arg2 maxTaskGroupCount:(unsigned int)arg3 ofHighPriority:(BOOL)arg4;
 - (void)_downloadTaskDidFail:(id)arg1 withError:(id)arg2 completionHandler:(id)arg3;
 - (void)_downloadTaskDidSucceed:(id)arg1 completionHandler:(id)arg2;
 - (id)_downloadTaskForLocalResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(BOOL)arg3 background:(BOOL)arg4 backgroundTaskIdentifier:(unsigned int)arg5 didStartHandler:(id)arg6 progressHandler:(id)arg7 completionHandler:(id)arg8;
 - (void)_enqueueDownloadTask:(id)arg1;
+- (void)_enqueueDownloadTasks:(id)arg1;
 - (id)_failedTaskWithCompletionHandler:(id)arg1 error:(id)arg2;
-- (void)_finishDownloadTask:(id)arg1 error:(id)arg2;
+- (id)_finishDownloadTask:(id)arg1 inError:(id)arg2;
 - (BOOL)_hasActiveForegroundTasks;
 - (void)_processQueuedDownloadTasks;
 - (id)_realDownloadTaskForCloudResource:(id)arg1 clientBundleID:(id)arg2 didStartHandler:(id)arg3 progressHandler:(id)arg4 completionHandler:(id)arg5;
 - (void)_reallyDispatchDownloadTask:(id)arg1;
+- (void)_reallyDispatchDownloadTasks:(id)arg1 lowPriorityTaskGroups:(id)arg2 highPriorityTaskGroups:(id)arg3;
 - (id)_resourceStorageCopyTaskForResource:(id)arg1 clientBundleID:(id)arg2 didStartHandler:(id)arg3 progressHandler:(id)arg4 completionHandler:(id)arg5;
+- (id)_transport:(id)arg1 setupTransportTaskIfNeededForTask:(id)arg2;
 - (unsigned int)countOfQueuedDownloadTasks;
 - (id)dequeueBackgroundDownloadTaskForResourceType:(unsigned int)arg1 withCompletionHandler:(id)arg2;
+- (id)dequeueBackgroundDownloadTasks:(unsigned int)arg1 forResourceType:(unsigned int)arg2 eachWithCompletionHandler:(id)arg3;
 - (BOOL)dequeueNextBackgroundDownloadTask:(id*)arg1 resourceType:(unsigned int)arg2 taskIdentifier:(unsigned int*)arg3 error:(id*)arg4;
+- (BOOL)dequeueNextBackgroundDownloadTasks:(unsigned int)arg1 resourceType:(unsigned int)arg2 localResources:(id*)arg3 taskIdentifiers:(id*)arg4 error:(id*)arg5;
 - (id)downloadTaskForLocalResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(BOOL)arg3 didStartHandler:(id)arg4 progressHandler:(id)arg5 completionHandler:(id)arg6;
 - (BOOL)enqueueBackgroundDownloadTaskForResource:(id)arg1 taskIdentifier:(unsigned int)arg2 error:(id*)arg3;
 - (id)enumeratorForDownloadedResources;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
+- (void)launchDownloadTasks:(id)arg1;
 - (BOOL)markBackgroundDownloadTaskForResourceAsSuceeded:(id)arg1 taskIdentifier:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)reenqueueBackgroundDownloadTaskForResource:(id)arg1 taskIdentifier:(unsigned int)arg2 bumpRetryCount:(BOOL)arg3 didDiscard:(BOOL*)arg4 error:(id*)arg5;
 - (BOOL)removeAllBackgroundDownloadTasksForItemWithIdentifier:(id)arg1 error:(id*)arg2;

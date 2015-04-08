@@ -6,10 +6,10 @@
 
 @interface SBFStaticWallpaperView : SBFWallpaperView {
     SBFColorBoxes *_colorBoxes;
+    UIImage *_displayedImage;
     UIImage *_image;
     NSMutableSet *_mappedBackdropKeys;
-    BOOL _treatWallpaper;
-    UIImage *_treatedImage;
+    BOOL _sampleAndDiplayedImageAreSame;
 }
 
 @property(retain) SBFColorBoxes * colorBoxes;
@@ -19,19 +19,23 @@
 
 - (id)_averageColorInContentViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 smudgeRadius:(float)arg2;
 - (id)_blurredImage;
-- (void)_cacheTreatedImage;
+- (void)_cacheImagesIfNeededTreated:(BOOL)arg1;
 - (unsigned int)_colorBoxSize;
 - (id)_computeAverageColor;
 - (id)_createColorBoxes;
 - (id)_displayedImage;
+- (id)_displayedImageKey;
 - (id)_imageForBackdropParameters:(struct { int x1; int x2; int x3; })arg1 includeTint:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })_imageSize;
 - (id)_mappedImageKeyForParameters:(struct { int x1; int x2; int x3; })arg1 includingTint:(BOOL)arg2;
-- (id)_newTreatedImage;
 - (void)_removeMappedBlurs;
+- (id)_repeatingGradientImageWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (void)_resetColorBoxes;
+- (id)_sampleImageKey;
+- (void)_setSampleImage:(id)arg1;
 - (void)_setupContentView;
-- (id)_treatedImageKey;
+- (void)_setupSampleImage:(id)arg1 treated:(BOOL)arg2;
+- (void)_setupWallpaperImage:(id)arg1 treated:(BOOL)arg2;
 - (id)_untintedImageForBackdropParameters:(struct { int x1; int x2; int x3; })arg1;
 - (id)_wallpaperImageForAnalysis;
 - (float)_zoomScale;

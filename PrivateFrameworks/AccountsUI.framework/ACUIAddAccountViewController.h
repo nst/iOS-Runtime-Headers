@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class ACUIAccountViewProvidersManager, NSArray, NSString;
+@class ACUIAccountViewProvidersManager, NSArray, NSString, PSSpecifier;
 
 @interface ACUIAddAccountViewController : PSListController <ACUISetupViewControllerDelegate> {
     BOOL _dontShowSecondLevelOtherAccountTypes;
+    PSSpecifier *_gmailSpecifier;
     unsigned char _originalCellFlag;
     unsigned char _originalWifiFlag;
     NSArray *_preEnabledDataclasses;
@@ -18,6 +19,7 @@
 @property(readonly) ACUIAccountViewProvidersManager * viewProvidersManager;
 
 - (void).cxx_destruct;
+- (void)_createGmailAccountTapped:(id)arg1;
 - (id)_specifierForAOLAccount;
 - (id)_specifierForExchangeAccount;
 - (id)_specifierForGmailAccount;
@@ -29,6 +31,7 @@
 - (void)dealloc;
 - (id)giantSpecifierWithName:(id)arg1 forAccountTypeID:(id)arg2;
 - (id)init;
+- (void)nonModalDataclassConfigurationControllerDidCompleteWithSuccess:(BOOL)arg1;
 - (void)setupViewControllerDidDismiss:(id)arg1;
 - (id)specifierForOtherAccounts;
 - (id)specifiers;

@@ -8,7 +8,7 @@
 
 @class <CKTranscriptCollectionViewControllerDelegate>, CKAudioController, CKConversation, CKTranscriptCollectionView, IMChat, NSArray, NSIndexSet, NSObject<OS_dispatch_group>, NSString, UITapGestureRecognizer, UIView<CKGradientReferenceView>;
 
-@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
+@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate> {
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -34,6 +34,7 @@
     } _peekSampleTranslation;
     BOOL _peeking;
     float _rightBalloonMaxWidth;
+    BOOL _shouldLoadDefaultConversationViewingMessageCountOnAppear;
     BOOL _transcriptUpdateAnimated;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -65,6 +66,7 @@
 @property struct CGPoint { float x1; float x2; } peekSampleTranslation;
 @property(getter=isPeeking) BOOL peeking;
 @property(readonly) float rightBalloonMaxWidth;
+@property BOOL shouldLoadDefaultConversationViewingMessageCountOnAppear;
 @property(readonly) Class superclass;
 @property(getter=isTranscriptUpdateAnimated) BOOL transcriptUpdateAnimated;
 @property(copy) id transcriptUpdateCompletion;
@@ -156,6 +158,7 @@
 - (id)messagePartForBalloonView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })peekSampleTranslation;
 - (void)performResumeDeferredSetup;
+- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)prepareForSuspend;
 - (void)previewDidChange:(id)arg1;
 - (void)raiseGestureRecognized:(id)arg1;
@@ -188,12 +191,15 @@
 - (void)setPeekSampleTranslation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPeeking:(BOOL)arg1;
 - (void)setScrollAnchor:(float)arg1;
+- (void)setShouldLoadDefaultConversationViewingMessageCountOnAppear:(BOOL)arg1;
 - (void)setTranscriptUpdateAnimated:(BOOL)arg1;
 - (void)setTranscriptUpdateCompletion:(id)arg1;
 - (void)setUpdateAnimationGroup:(id)arg1;
+- (BOOL)shouldLoadDefaultConversationViewingMessageCountOnAppear;
 - (BOOL)shouldShowMenuForBalloonView:(id)arg1;
 - (void)stopPlayingAudio;
 - (void)touchUpInsideMessageCellFailureButton:(id)arg1;
+- (void)touchUpInsideReportSpamCellButton:(id)arg1;
 - (void)touchUpInsideStatusCellButton:(id)arg1;
 - (id)transcriptUpdateCompletion;
 - (void)transferRestored:(id)arg1;

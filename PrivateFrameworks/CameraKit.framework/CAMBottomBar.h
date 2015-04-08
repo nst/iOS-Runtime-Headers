@@ -52,7 +52,7 @@
 @property(retain) CAMFlipButton * flipButton;
 @property(retain) CAMImageWell * imageWell;
 @property(retain) CAMModeDial * modeDial;
-@property(readonly) int orientation;
+@property int orientation;
 @property(retain) CAMShutterButton * shutterButton;
 @property(retain) CAMSlalomIndicatorView * slalomIndicatorView;
 @property(retain) CAMShutterButton * stillDuringVideoButton;
@@ -74,6 +74,7 @@
 - (void)_layoutForHorizontalOrientation;
 - (void)_layoutForVerticalOrientation;
 - (void)_layoutMenuButtons:(id)arg1 apply:(BOOL)arg2 withExpandedMenuButton:(id)arg3 collapsingMenuButton:(id)arg4 collapsingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
+- (void)_removeAllConstraints;
 - (void)_setExpandedMenuButton:(id)arg1;
 - (void)_setHDRButtonExpanded:(BOOL)arg1;
 - (void)_setTimerButtonExpanded:(BOOL)arg1;
@@ -94,6 +95,7 @@
 - (void)_setupVerticalImageWellConstraints;
 - (void)_setupVerticalModeDialConstraints;
 - (void)_setupVerticalShutterButtonConstraints;
+- (void)_setupVerticalSlalomIndicatorConstraints;
 - (BOOL)_shouldHideElapsedTimeView;
 - (BOOL)_shouldHideFlipButton;
 - (BOOL)_shouldHideHDRButton;
@@ -103,6 +105,7 @@
 - (id)_stillDuringVideoButtonBottomLayoutSpacer;
 - (void)_updateBackgroundStyleAnimated:(BOOL)arg1;
 - (void)_updateHiddenViewsForButtonExpansionAnimated:(BOOL)arg1;
+- (void)_updateImageWellInsetsForOrientation;
 - (int)backgroundStyle;
 - (id)backgroundView;
 - (id)cancelButton;
@@ -131,6 +134,7 @@
 - (void)setHDRButton:(id)arg1;
 - (void)setImageWell:(id)arg1;
 - (void)setModeDial:(id)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)setShutterButton:(id)arg1;
 - (void)setSlalomIndicatorView:(id)arg1;
 - (void)setStillDuringVideoButton:(id)arg1;

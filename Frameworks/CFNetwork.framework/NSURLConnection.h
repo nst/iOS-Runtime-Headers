@@ -16,6 +16,7 @@
 @property(copy,readonly) NSURLRequest * originalRequest;
 @property(readonly) Class superclass;
 
++ (void)_collectTimingDataWithOptions:(unsigned int)arg1;
 + (BOOL)_collectsTimingData;
 + (void)_geo_sendAsynchronousRequest:(id)arg1 connectionProperties:(id)arg2 completionHandler:(id)arg3;
 + (void)_geo_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 connectionProperties:(id)arg3 completionHandler:(id)arg4;
@@ -28,6 +29,7 @@
 + (void)_setMIMETypesWithNoSizeLimit:(id)arg1;
 + (void)_setSweeperInterval:(unsigned int)arg1;
 + (unsigned int)_sweeperInterval;
++ (unsigned int)_timingDataOptions;
 + (BOOL)canHandleRequest:(id)arg1;
 + (id)connectionWithRequest:(id)arg1 delegate:(id)arg2;
 + (struct __CFRunLoop { }*)resourceLoaderRunLoop;

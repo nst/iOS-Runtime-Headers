@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSCalendar, NSMutableArray, NSMutableDictionary, NSObject<PLAlbumProtocol>, NSSet, PLFetchingAlbum, PLGenericAlbum, PLInFlightAssetsAlbum, PLManagedAlbum, PLManagedObjectContext, PLThumbnailManager;
+@class NSArray, NSCalendar, NSMutableArray, NSMutableDictionary, NSObject<PLAlbumProtocol>, NSSet, PLFetchingAlbum, PLGenericAlbum, PLInFlightAssetsAlbum, PLManagedAlbum, PLManagedAlbumList, PLManagedFolder, PLManagedObjectContext, PLThumbnailManager;
 
 @interface PLPhotoLibrary : NSObject {
     PLGenericAlbum *_allImportedPhotosAlbum;
@@ -26,6 +26,8 @@
     NSMutableArray *_photoStreamAlbums;
     NSMutableDictionary *_photoStreamAlbumsByStreamID;
     NSSet *_rawImageFileExtensions;
+    PLManagedAlbumList *_rootAlbumList;
+    PLManagedFolder *_rootFolder;
     PLThumbnailManager *_thumbnailManager;
     NSMutableArray *_transactionCompletionHandlers;
     PLFetchingAlbum *_userLibraryAlbum;
@@ -42,6 +44,8 @@
 @property(copy,readonly) NSArray * photoStreamAlbums;
 @property(copy,readonly) NSArray * photoStreamAlbumsForPreferences;
 @property(copy,readonly) NSArray * placeAlbums;
+@property(retain,readonly) PLManagedAlbumList * rootAlbumList;
+@property(retain,readonly) PLManagedFolder * rootFolder;
 @property(retain,readonly) NSObject<PLAlbumProtocol> * savedPhotosAlbum;
 @property(retain,readonly) PLThumbnailManager * thumbnailManager;
 @property(copy,readonly) NSArray * userAlbums;
@@ -155,14 +159,14 @@
 + (id)videosPath;
 
 - (id)_allAssetsForDeletion:(id)arg1;
-- (void)_batchDeleteAssets:(id)arg1 inManagedObjectContext:(id)arg2;
+- (void)_batchDeleteAssets:(id)arg1 inManagedObjectContext:(id)arg2 withReason:(id)arg3;
 - (void)_calculatePendingItemCountsAfterOTARestoreWithMangedObjectContext:(id)arg1;
 - (BOOL)_checkMomentAnalysisCompletion;
 - (void)_deleteObsoleteMetadataFiles;
 - (void)_filterAlbums:(id)arg1 toTrashableAlbums:(id*)arg2 deletableAlbums:(id*)arg3 otherAlbums:(id*)arg4;
 - (void)_filterAssets:(id)arg1 toTrashableAssets:(id*)arg2 deletableAssets:(id*)arg3 otherAssets:(id*)arg4;
 - (BOOL)_hasAtLeastOneItem:(BOOL)arg1;
-- (BOOL)_hasPendingAssets;
+- (BOOL)_hasPendingAssetsIgnoreiTunes:(BOOL)arg1;
 - (id)_init;
 - (void)_linkAsideAlbumMetadataForOTARestore;
 - (void)_loadFileExtensionInformation;
@@ -175,7 +179,7 @@
 - (void)_userApplyTrashedState:(short)arg1 toAlbums:(id)arg2;
 - (void)_userApplyTrashedState:(short)arg1 toAssets:(id)arg2;
 - (void)_userDeleteAlbums:(id)arg1;
-- (void)_userDeleteAssets:(id)arg1;
+- (void)_userDeleteAssets:(id)arg1 withReason:(id)arg2;
 - (void)_withDispatchGroup:(id)arg1 synchronously:(BOOL)arg2 performBlock:(id)arg3 completionHandler:(id)arg4;
 - (void)_withDispatchGroup:(id)arg1 synchronously:(BOOL)arg2 performTransaction:(id)arg3 completionHandler:(id)arg4;
 - (void)addCompletionHandlerToCurrentTransaction:(id)arg1;
@@ -204,14 +208,13 @@
 - (void)clientApplicationWillEnterForeground;
 - (unsigned int)concurrencyType;
 - (void)copyAssetToCameraRoll:(id)arg1;
-- (id)countOfAllPhotosAndVideos;
 - (unsigned int)countOfLocalAlbumsContainingAssets:(id)arg1 assetsInSomeAlbumCount:(int*)arg2;
 - (id)dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (void)dealloc;
 - (BOOL)deleteAllDiagnosticFiles:(id*)arg1;
 - (void)deleteAllImages;
-- (void)deleteITunesSyncedContent;
-- (void)deleteImages:(id)arg1;
+- (void)deleteFailedInMemoryCameraAsset:(id)arg1;
+- (void)deleteITunesSyncedContentWithReason:(id)arg1;
 - (id)duplicatePhotoStreamPhotosForPhotos:(id)arg1;
 - (unsigned int)editableAlbumCount;
 - (struct NSObject { Class x1; }*)eventAlbumContainingPhoto:(id)arg1;
@@ -224,6 +227,7 @@
 - (void)flushDCIMAlbums;
 - (void)flushPhotoStreamAlbums;
 - (BOOL)getPhotoCount:(unsigned int*)arg1 videoCount:(unsigned int*)arg2;
+- (BOOL)getPhotoCount:(unsigned int*)arg1 videoCount:(unsigned int*)arg2 excludeTrashed:(BOOL)arg3 excludeInvisible:(BOOL)arg4 excludeCloudShared:(BOOL)arg5;
 - (id)globalValueForKey:(id)arg1;
 - (BOOL)hasAtLeastOneItem;
 - (BOOL)hasAtLeastOnePhoto;
@@ -288,12 +292,14 @@
 - (void)removeFromKnownPhotoStreamAlbums:(id)arg1;
 - (void)removeInflightAssets:(id)arg1;
 - (void)resetCachedImportAlbumsIfNeededForAlbum:(id)arg1;
+- (id)rootAlbumList;
+- (id)rootFolder;
 - (struct NSObject { Class x1; }*)savedPhotosAlbum;
 - (void)setGlobalValue:(id)arg1 forKey:(id)arg2;
 - (void)setLastImportSessionUUID:(id)arg1;
 - (void)setManagedObjectContext:(id)arg1;
 - (struct NSObject { Class x1; }*)syncProgressAlbum;
-- (id)syncProgressAlbums;
+- (id)syncProgressAlbumsIgnoreiTunes:(BOOL)arg1;
 - (id)syncedAlbums;
 - (void)testForRecoveryInBackground;
 - (id)thumbnailManager;

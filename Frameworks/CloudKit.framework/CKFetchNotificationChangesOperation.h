@@ -26,7 +26,7 @@
 }
 
 @property(copy) id fetchNotificationChangesCompletionBlock;
-@property(readonly) BOOL moreComing;
+@property BOOL moreComing;
 @property(copy) id notificationChangedBlock;
 @property(copy) CKServerChangeToken * previousServerChangeToken;
 @property(retain) CKServerChangeToken * resultServerChangeToken;
@@ -46,6 +46,7 @@
 - (id)resultServerChangeToken;
 - (unsigned int)resultsLimit;
 - (void)setFetchNotificationChangesCompletionBlock:(id)arg1;
+- (void)setMoreComing:(BOOL)arg1;
 - (void)setNotificationChangedBlock:(id)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
 - (void)setResultServerChangeToken:(id)arg1;

@@ -68,6 +68,7 @@
 - (void)_displayValuesDidChange:(id)arg1;
 - (void)_dynamicPropertiesDidChange:(id)arg1;
 - (void)_invisiblePropertiesDidChange:(id)arg1;
+- (void)_libraryCloudLibraryAvailabilityDidChange:(id)arg1;
 - (void)_libraryContentsDidChange:(id)arg1;
 - (void)_libraryUIDDidChange:(id)arg1;
 - (void)_loadProperties:(id)arg1 ofEntityWithIdentifier:(long long)arg2 ML3EntityClass:(Class)arg3 completionBlock:(id)arg4;

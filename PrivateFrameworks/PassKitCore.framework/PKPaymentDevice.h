@@ -35,11 +35,13 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)provisioningDataWithCompletionHandler:(id)arg1;
 - (void)queueConnectionToTrustedServiceManager;
+- (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1;
+- (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1 withCompletion:(id)arg2;
 - (void)queueConnectionToTrustedServiceManagerWithCompletion:(id)arg1;
 - (void)registrationDataWithAuthToken:(id)arg1 completionHandler:(id)arg2;
 - (void)rewrapDataWithDeviceIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (void)secureElementSigningKeyTypeWithCompletion:(id)arg1;
-- (void)setRegistrationFlag;
+- (void)setRegistrationRegionMap:(id)arg1;
 - (void)setSkipLocationCheck:(BOOL)arg1;
 - (BOOL)skipLocationCheck;
 

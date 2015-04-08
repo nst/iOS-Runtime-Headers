@@ -11,7 +11,11 @@
 @property(retain) NSString * tzid;
 
 + (id)blocksAfterDate:(id)arg1 untilDate:(id)arg2 forTimeZone:(id)arg3;
++ (int)matchTypeForSubarray:(id)arg1 inTZChangeArray:(id)arg2;
 + (id)name;
++ (BOOL)perfectMatchForSubarray:(id)arg1 inTZChangeArray:(id)arg2;
++ (id)quickTimeZoneNames;
++ (id)slowTimeZoneNames;
 + (id)timeZoneWithSystemTimeZoneName:(id)arg1;
 
 - (id)_previousDSTTransitionForDate:(id)arg1 timezone:(id)arg2;

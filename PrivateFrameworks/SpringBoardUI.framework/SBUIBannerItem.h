@@ -22,12 +22,16 @@
 - (BOOL)isCritical;
 - (BOOL)isSticky;
 - (id)lockScreenActionContextWithContext:(id)arg1;
+- (id)message;
 - (BOOL)overridesQuietMode;
 - (unsigned int)priority;
 - (id)pullDownNotification;
+- (BOOL)shouldPlayLightsAndSirens;
+- (BOOL)shouldShowModalSubActions;
 - (id)sortDate;
 - (id)sound;
 - (id)subActionLabels;
 - (id)subActions;
+- (id)title;
 
 @end

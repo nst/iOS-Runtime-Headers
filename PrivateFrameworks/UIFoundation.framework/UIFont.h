@@ -29,6 +29,7 @@
 + (id)_lightSystemFontOfSize:(float)arg1;
 + (id)_opticalBoldSystemFontOfSize:(float)arg1;
 + (id)_opticalSystemFontOfSize:(float)arg1;
++ (float)_readableWidth;
 + (id)_sharedFontCache;
 + (id)_sharedZeroPointFont;
 + (BOOL)_shouldUseDefaultFont;
@@ -179,6 +180,7 @@
 - (unsigned int)numberOfGlyphs;
 - (float)pointSize;
 - (id)rc_textStyle;
+- (float)readableWidth;
 - (unsigned int)renderingMode;
 - (id)screenFontWithRenderingMode:(unsigned int)arg1;
 - (void)setInContext:(struct CGContext { }*)arg1;

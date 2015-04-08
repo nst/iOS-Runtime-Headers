@@ -6,12 +6,19 @@
    See Warning(s) below.
  */
 
-@class CKModifyRecordsOperation, NSArray, NSString;
+@class BRCServerZone, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface BRCSyncUpOperation : BRCOperation <BRCOperationSubclass> {
+@interface BRCSyncUpOperation : _BRCOperation <BRCOperationSubclass> {
+    NSMutableDictionary *_conflictLosersToResolveByRecordID;
     float _cost;
-    CKModifyRecordsOperation *_modifyOperation;
-    NSArray *_recordsNeedingSharingInfo;
+    NSMutableArray *_deletedRecordIDs;
+    NSMutableArray *_deletedShareIDs;
+    NSMutableDictionary *_recordIDsToDeleteToEtags;
+    NSMutableArray *_recordsNeedingSharingInfo;
+    NSMutableArray *_recordsToSave;
+    unsigned long long _requestID;
+    BRCServerZone *_serverZone;
+    NSString *_stageID;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -19,27 +26,48 @@
 
 }
 
+@property(retain) NSMutableDictionary * conflictLosersToResolveByRecordID;
 @property(readonly) float cost;
 @property(copy,readonly) NSString * debugDescription;
+@property(retain) NSMutableArray * deletedRecordIDs;
+@property(retain) NSMutableArray * deletedShareIDs;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
-@property(readonly) CKModifyRecordsOperation * modifyOperation;
-@property(readonly) NSArray * recordsNeedingSharingInfo;
+@property(retain) NSMutableDictionary * recordIDsToDeleteToEtags;
+@property(retain) NSMutableArray * recordsNeedingSharingInfo;
+@property(retain) NSMutableArray * recordsToSave;
+@property(retain) BRCServerZone * serverZone;
+@property(retain) NSString * stageID;
 @property(readonly) Class superclass;
 @property(copy) id syncUpCompletionBlock;
 
-+ (id)modifyRecordsOperationForContainer:(id)arg1 maxCost:(float)arg2 cost:(float*)arg3 retryAfter:(unsigned long long*)arg4 recordsNeedingSharingInfo:(id*)arg5;
-+ (id)syncUpOperationForContainer:(id)arg1 maxCost:(float)arg2 retryAfter:(unsigned long long*)arg3;
++ (id)syncUpOperationForZone:(id)arg1 maxCost:(float)arg2 retryAfter:(unsigned long long*)arg3;
 
 - (void).cxx_destruct;
+- (void)_scheduleModifyRecordsOperation;
+- (id)conflictLosersToResolveByRecordID;
 - (float)cost;
+- (id)deletedRecordIDs;
+- (id)deletedShareIDs;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (id)initWithContainer:(id)arg1 cost:(float)arg2 modifyOperation:(id)arg3 recordsNeedingSharingInfo:(id)arg4;
+- (id)initWithZone:(id)arg1;
 - (void)main;
-- (id)modifyOperation;
+- (BOOL)prepareWithMaxCost:(float)arg1 retryAfter:(unsigned long long*)arg2;
+- (id)recordIDsToDeleteToEtags;
 - (id)recordsNeedingSharingInfo;
+- (id)recordsToSave;
+- (id)serverZone;
+- (void)setConflictLosersToResolveByRecordID:(id)arg1;
+- (void)setDeletedRecordIDs:(id)arg1;
+- (void)setDeletedShareIDs:(id)arg1;
+- (void)setRecordIDsToDeleteToEtags:(id)arg1;
+- (void)setRecordsNeedingSharingInfo:(id)arg1;
+- (void)setRecordsToSave:(id)arg1;
+- (void)setServerZone:(id)arg1;
+- (void)setStageID:(id)arg1;
 - (void)setSyncUpCompletionBlock:(id)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (id)stageID;
 - (id)syncUpCompletionBlock;
 
 @end

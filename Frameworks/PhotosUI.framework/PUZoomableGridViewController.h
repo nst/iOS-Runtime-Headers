@@ -99,6 +99,7 @@
 - (void)didReceiveMemoryWarning;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (void)getEmptyPlaceholderViewTitle:(id*)arg1 message:(id*)arg2;
 - (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out BOOL*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;
 - (void)gridZoomTransitionDidFinish:(BOOL)arg1;
 - (void)handleLongPressGesture:(id)arg1;
@@ -135,7 +136,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
-- (BOOL)wantsAssetCounts;
 - (BOOL)wantsGlobalFooter;
 - (unsigned int)zoomLevel;
 - (id)zoomLevelManager;

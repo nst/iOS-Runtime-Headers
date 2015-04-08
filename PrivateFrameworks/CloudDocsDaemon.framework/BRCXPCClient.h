@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, NSCountedSet, NSSet, NSString, NSXPCConnection;
+@class BRCAccountSession, NSCountedSet, NSMutableDictionary, NSOperationQueue, NSSet, NSString, NSXPCConnection;
 
-@interface BRCXPCClient : NSObject <BRCProcessMonitorDelegate> {
-    BRCAccountSession *_accountSession;
+@interface BRCXPCClient : NSObject <BRCForegroundClient, BRCProcessMonitorDelegate> {
+    NSOperationQueue *_acceptOperationQueue;
     NSString *_applicationIdenfier;
     int _clientPid;
     NSXPCConnection *_connection;
@@ -15,10 +15,14 @@
     BOOL _dieOnInvalidate;
     NSSet *_entitledContainerIDs;
     BOOL _entitlementsCached;
+    BOOL _hasCloudServices;
     BOOL _invalidated;
     BOOL _isForeground;
     BOOL _isProxyEntitled;
+    BOOL _isSharingPrivateInterfaceEntitled;
     BOOL _isUsingUbiquity;
+    NSMutableDictionary *_runningAcceptOperations;
+    BRCAccountSession *_session;
 }
 
 @property(readonly) NSString * bundleID;
@@ -28,18 +32,22 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) BOOL dieOnInvalidate;
 @property(readonly) NSSet * entitledContainerIDs;
+@property(readonly) BOOL hasPrivateSharingInterfaceEntitlement;
 @property(readonly) unsigned int hash;
+@property(readonly) NSString * identifier;
 @property BOOL isUsingUbiquity;
+@property(retain) BRCAccountSession * session;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)__cacheEntitlements;
 - (void)_addExternalDocumentReferenceTo:(id)arg1 underParent:(id)arg2 forceReparent:(BOOL)arg3 reply:(id)arg4;
 - (BOOL)_canCreateContainerWithID:(id)arg1 error:(id*)arg2;
+- (BOOL)_cloudEnabledPrecheckStatusForContainerIDs:(id)arg1 bundleID:(id)arg2;
 - (BOOL)_cloudEnabledStatusForContainerIDs:(id)arg1 bundleID:(id)arg2 auditToken:(struct { unsigned int x1[8]; })arg3;
-- (BOOL)_cloudSyncTCCDisabledForContainerMeta:(id)arg1 enabledBundleIDs:(id)arg2;
+- (BOOL)_cloudSyncTCCDisabledForContainerMeta:(id)arg1 disabledBundleIDs:(id)arg2;
 - (id)_containerIDsForPid:(int)arg1;
-- (id)_enabledBundleIDs;
+- (id)_disabledBundleIDs;
 - (BOOL)_entitlementBooleanValueForKey:(id)arg1;
 - (id)_entitlementValueForKey:(id)arg1 ofClass:(Class)arg2;
 - (BOOL)_hasAccessToContainerID:(id)arg1 error:(id*)arg2;
@@ -47,7 +55,6 @@
 - (BOOL)_isContainerAccessAllowed;
 - (BOOL)_isContainerProxyEntitled;
 - (BOOL)_isContainerProxyWithError:(id*)arg1;
-- (void)_mutateToLoggedInClientWithSession:(id)arg1;
 - (void)_setupContainerID:(id)arg1 andSendReply:(id)arg2;
 - (void)_startDownloadItemsAtURLs:(id)arg1 pos:(unsigned int)arg2 options:(unsigned int)arg3 error:(id)arg4 reply:(id)arg5;
 - (void)_startMonitoringProcessIfNeeded;
@@ -65,15 +72,18 @@
 - (id)description;
 - (BOOL)dieOnInvalidate;
 - (id)entitledContainerIDs;
-- (id)initWithConnection:(id)arg1 accountSession:(id)arg2;
+- (BOOL)hasPrivateSharingInterfaceEntitlement;
+- (id)identifier;
+- (id)initWithConnection:(id)arg1 session:(id)arg2;
 - (void)invalidate;
 - (BOOL)isSandboxed;
 - (BOOL)isUsingUbiquity;
 - (id)issueContainerExtensionForURL:(id)arg1 error:(id*)arg2;
-- (unsigned int)loggedStatus;
 - (void)process:(int)arg1 didBecomeForeground:(BOOL)arg2;
 - (void)removeContainer:(id)arg1;
+- (id)session;
 - (void)setIsUsingUbiquity:(BOOL)arg1;
-- (id)setupContainer:(id)arg1 root:(id)arg2 error:(id*)arg3;
+- (void)setSession:(id)arg1;
+- (id)setupPrivateContainer:(id)arg1 root:(id)arg2 error:(id*)arg3;
 
 @end

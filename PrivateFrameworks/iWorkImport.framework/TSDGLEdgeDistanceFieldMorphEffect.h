@@ -73,7 +73,7 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_affineTransformWithTextureAdjustment:(struct { float x1; float x2; float x3; })arg1 textureSize:(struct CGSize { float x1; float x2; })arg2;
 - (float)p_errorFromApplyingTextureAdjustment:(struct { float x1; float x2; float x3; })arg1 toOutgoingScanlineCenters:(struct CGPoint { float x1; float x2; }*)arg2 outgoingScanlineZeroes:(struct CGPoint { float x1; float x2; }*)arg3 incomingScanlineCenters:(struct CGPoint { float x1; float x2; }*)arg4 incomingScanlineZeroes:(struct CGPoint { float x1; float x2; }*)arg5 samples:(unsigned int)arg6;
 - (float)p_errorFromApplyingTextureAdjustment:(struct { float x1; float x2; float x3; })arg1 toOutgoingValue:(float)arg2 incomingValue:(float)arg3 sample:(unsigned int)arg4 sampleCount:(unsigned int)arg5;
-- (void)p_fillScanlineCenters:(struct CGPoint { float x1; float x2; }*)arg1 scanlineMinMaxZeroes:(struct CGPoint { float x1; float x2; }*)arg2 samples:(unsigned int)arg3 fromTexture:(unsigned int)arg4 textureSize:(struct CGSize { float x1; float x2; })arg5;
+- (BOOL)p_fillScanlineCenters:(struct CGPoint { float x1; float x2; }*)arg1 scanlineMinMaxZeroes:(struct CGPoint { float x1; float x2; }*)arg2 samples:(unsigned int)arg3 fromTexture:(unsigned int)arg4 textureSize:(struct CGSize { float x1; float x2; })arg5;
 - (void)setIsTextStyleIdenticalExceptSize:(BOOL)arg1;
 - (void)setupIfNecessary;
 - (void)setupShaderWithMorphPercent:(float)arg1 MVPMatrix:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg2 generateTextureMatrices:(BOOL)arg3;

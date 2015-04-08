@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableSet, NSObject<TSDInfo>, NSSet, NSString, TPInteractiveCanvasController, TSDLayoutGeometry;
+@class NSMutableSet, NSObject<TSDInfo>, NSSet, NSString, TSDLayoutGeometry;
 
 @interface TSDLayout : TSDAbstractLayout <TSKSearchTarget> {
     struct CGPoint { 
@@ -59,7 +59,6 @@
 @property(copy) TSDLayoutGeometry * dynamicGeometry;
 @property(readonly) unsigned int hash;
 @property(readonly) NSObject<TSDInfo> * info;
-@property(readonly) TPInteractiveCanvasController * interactiveCanvasController;
 @property(readonly) BOOL invalidGeometry;
 @property(readonly) BOOL isStrokeBeingManipulated;
 @property(readonly) int layoutState;
@@ -81,6 +80,7 @@
 - (struct CGPoint { float x1; float x2; })calculatePointFromSearchReference:(id)arg1;
 - (BOOL)canAspectRatioLockBeChangedByUser;
 - (BOOL)canFlip;
+- (BOOL)canvasShouldScrollForSelectionPath:(id)arg1;
 - (struct CGPoint { float x1; float x2; })capturedInfoPositionForAttachment;
 - (struct CGPoint { float x1; float x2; })centerForConnecting;
 - (struct CGPoint { float x1; float x2; })centerForRotation;
@@ -113,7 +113,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialBoundsForStandardKnobs;
 - (id)initialInfoGeometry;
 - (id)inspectorGeometry;
-- (id)interactiveCanvasController;
 - (BOOL)invalidGeometry;
 - (void)invalidate;
 - (void)invalidateChildren;
@@ -124,17 +123,18 @@
 - (void)invalidateSize;
 - (BOOL)isBeingManipulated;
 - (BOOL)isBeingTransformed;
+- (BOOL)isDraggable;
 - (BOOL)isInGroup;
 - (BOOL)isInTopLevelContainerForEditing;
+- (BOOL)isSelectable;
 - (BOOL)isStrokeBeingManipulated;
 - (id)layoutController;
+- (id)layoutForSelectionPath:(id)arg1;
 - (id)layoutGeometryFromInfo;
-- (void)layoutSearchForAnnotationWithHitBlock:(id)arg1;
 - (int)layoutState;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })layoutTransformInInfoSpace:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGSize { float x1; float x2; })maximumFrameSizeForChild:(id)arg1;
 - (struct CGSize { float x1; float x2; })minimumSize;
-- (id)newCommandToMoveByOffset:(struct CGPoint { float x1; float x2; })arg1 whenDistributingLayoutsByOffsets:(id)arg2;
 - (BOOL)orderedBefore:(id)arg1;
 - (id)originalGeometry;
 - (id)originalPureGeometry;
@@ -145,6 +145,7 @@
 - (void)p_recursiveInvalidate;
 - (void)p_registerWithLayoutController:(id)arg1;
 - (void)p_unregisterWithLayoutController:(id)arg1;
+- (BOOL)parentAutosizes;
 - (void)parentDidChange;
 - (void)parentWillChangeTo:(id)arg1;
 - (void)pauseDynamicTransformation;
@@ -154,8 +155,10 @@
 - (id)pureGeometryInParent;
 - (id)pureGeometryInRoot;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })pureTransformInRoot;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPresentingAnnotationPopoverForSelection:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectInRootForSelectionPath:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectInRootForZoomingToSelectionPath:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectInRootOfAutoZoomContextOfSelectionPath:(id)arg1;
 - (id)reliedOnLayouts;
 - (void)removeConnectedLayout:(id)arg1;
 - (Class)repClassOverride;
@@ -182,6 +185,7 @@
 - (void)updateChildrenFromInfo;
 - (void)validate;
 - (void)validateFromLastInterimPosition;
+- (float)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(float)arg2;
 - (void)willBeAddedToLayoutController:(id)arg1;
 - (void)willBeRemovedFromLayoutController:(id)arg1;
 

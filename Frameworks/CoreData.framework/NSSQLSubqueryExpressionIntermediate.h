@@ -26,7 +26,7 @@
 
 - (void)_createCollectionJoinsForFetchInContext:(id)arg1;
 - (void)_createSelectClauseInFetchWithContext:(id)arg1;
-- (id)_generateSQLForVariableExpression:(id)arg1 inContext:(id)arg2;
+- (id)_generateSQLForVariableExpression:(id)arg1 allowToMany:(BOOL)arg2 inContext:(id)arg3;
 - (BOOL)_isKeypathScopedToSubquery:(id)arg1;
 - (void)_promoteJoinsForSubqueryScopedKeypath:(id)arg1;
 - (void)_promoteJoinsForSubqueryScopedKeypaths;

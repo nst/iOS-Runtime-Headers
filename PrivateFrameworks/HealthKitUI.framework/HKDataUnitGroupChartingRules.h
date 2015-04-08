@@ -10,23 +10,26 @@
     NSArray *_defaultYAxisChartBoundsRules;
     NSDictionary *_defaultYAxisChartBoundsRulesByUnit;
     NSMutableDictionary *_rulesByTimeScope;
+    BOOL _shouldAllowDecimalPrecision;
     BOOL _shouldHideAverageLine;
     BOOL _shouldOverrideMinYValue;
+    BOOL _shouldPadMinMaxValues;
     BOOL _shouldStartDayAtNoon;
-    BOOL _shouldUseFullYAxisRange;
 }
 
 @property(readonly) int defaultChartStyle;
 @property(retain) NSArray * defaultYAxisChartBoundsRules;
 @property(retain) NSDictionary * defaultYAxisChartBoundsRulesByUnit;
+@property BOOL shouldAllowDecimalPrecision;
 @property BOOL shouldHideAverageLine;
 @property BOOL shouldOverrideMinYValue;
+@property BOOL shouldPadMinMaxValues;
 @property BOOL shouldStartDayAtNoon;
-@property BOOL shouldUseFullYAxisRange;
 
 - (void).cxx_destruct;
 - (id)_ruleForKey:(id)arg1 timeScope:(int)arg2;
 - (void)_setRule:(id)arg1 forKey:(id)arg2 timeScope:(int)arg3;
+- (void)calculateAdjustedBoundsForMin:(double)arg1 max:(double)arg2 minOut:(double*)arg3 maxOut:(double*)arg4 decimalPrecision:(int*)arg5 unit:(id)arg6;
 - (float)chartPointLineWidthForTimeScope:(int)arg1;
 - (float)chartPointRadiusForTimeScope:(int)arg1;
 - (int)chartStyleForTimeScope:(int)arg1;
@@ -42,13 +45,15 @@
 - (void)setDefaultYAxisChartBoundsRules:(id)arg1;
 - (void)setDefaultYAxisChartBoundsRulesByUnit:(id)arg1;
 - (void)setIntervalComponents:(id)arg1 forTimeScope:(int)arg2;
+- (void)setShouldAllowDecimalPrecision:(BOOL)arg1;
 - (void)setShouldHideAverageLine:(BOOL)arg1;
 - (void)setShouldOverrideMinYValue:(BOOL)arg1;
+- (void)setShouldPadMinMaxValues:(BOOL)arg1;
 - (void)setShouldStartDayAtNoon:(BOOL)arg1;
-- (void)setShouldUseFullYAxisRange:(BOOL)arg1;
+- (BOOL)shouldAllowDecimalPrecision;
 - (BOOL)shouldHideAverageLine;
 - (BOOL)shouldOverrideMinYValue;
+- (BOOL)shouldPadMinMaxValues;
 - (BOOL)shouldStartDayAtNoon;
-- (BOOL)shouldUseFullYAxisRange;
 
 @end

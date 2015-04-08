@@ -2,21 +2,36 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSString;
+@class NSString, NSURL;
 
 @interface PRSEngagementFeedback : PRSFeedback {
+    unsigned int _action_area;
+    NSString *_action_card_type;
+    NSURL *_action_destination;
+    unsigned int _action_type;
     NSString *_fbr;
     NSString *_local_result;
     NSString *_parsec_result;
+    BOOL _userReturnedToResultsList;
 }
 
+@property unsigned int action_area;
+@property(retain) NSString * action_card_type;
+@property(retain) NSURL * action_destination;
+@property unsigned int action_type;
 @property(retain) NSString * fbr;
 @property(retain) NSString * local_result;
 @property(retain) NSString * parsec_result;
+@property BOOL userReturnedToResultsList;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (unsigned int)action_area;
+- (id)action_card_type;
+- (id)action_destination;
+- (id)action_target;
+- (unsigned int)action_type;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fbr;
 - (id)initWithCoder:(id)arg1;
@@ -24,10 +39,16 @@
 - (id)local_result;
 - (id)parsec_result;
 - (id)plist;
+- (void)setAction_area:(unsigned int)arg1;
+- (void)setAction_card_type:(id)arg1;
+- (void)setAction_destination:(id)arg1;
+- (void)setAction_type:(unsigned int)arg1;
 - (void)setFbr:(id)arg1;
 - (void)setLocal_result:(id)arg1;
 - (void)setParsec_result:(id)arg1;
+- (void)setUserReturnedToResultsList:(BOOL)arg1;
 - (id)type;
+- (BOOL)userReturnedToResultsList;
 - (void)validate;
 
 @end

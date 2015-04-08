@@ -4,7 +4,7 @@
 
 @class KNClassicStylesheetRecord, NSArray, NSString;
 
-@interface KNMasterSlide : KNAbstractSlide <TSKTransformableObject, TSSThemeAsset> {
+@interface KNMasterSlide : KNAbstractSlide <TSKTransformableObject> {
     NSArray *mBodyListStyles;
     NSArray *mBodyParagraphStyles;
     BOOL mCalculatedHasBug16580905;
@@ -44,14 +44,16 @@
 + (id)p_defaultMasterGuideColor;
 + (void)setMasterGuideColor:(id)arg1;
 
+- (void)acceptVisitor:(id)arg1;
+- (void)addBuild:(id)arg1;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
-- (id)alignmentGuides;
-- (id)alignmentGuidesForEditing;
 - (id)bodyListStyles;
 - (id)bodyParagraphStyles;
-- (id)childEnumerator;
+- (unsigned int)buildChunkCount;
+- (id)buildChunks;
+- (unsigned int)buildCount;
+- (id)builds;
 - (id)classicStylesheetRecord;
-- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (BOOL)containsProperty:(int)arg1;
 - (id)copyWithContext:(id)arg1 andSlideNode:(id)arg2;
 - (void)dealloc;
@@ -61,12 +63,11 @@
 - (id)imagePlaceholders;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithSlideNode:(id)arg1 context:(id)arg2;
+- (void)insertBuildChunk:(id)arg1 afterChunk:(id)arg2 generateIdentifier:(BOOL)arg3;
 - (int)intValueForProperty:(int)arg1;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (BOOL)isObjectVisible;
 - (BOOL)isThemeContent;
-- (BOOL)isThemeEquivalent:(id)arg1;
-- (SEL)mapThemeAssetSelector;
 - (id)name;
 - (id)nonPlaceholderObjects;
 - (id)objectForProperty:(int)arg1;
@@ -74,6 +75,8 @@
 - (id)p_defaultTagForDrawable:(id)arg1;
 - (id)p_defaultThumbnailTextForPlaceholder:(id)arg1;
 - (id)packageLocator;
+- (void)removeBuild:(id)arg1;
+- (void)removeBuildChunk:(id)arg1 rollbackGeneratedIdentifier:(BOOL)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setBodyListStyles:(id)arg1;
 - (void)setBodyParagraphStyles:(id)arg1;
@@ -91,5 +94,6 @@
 - (void)updatePlaceholderText;
 - (void)wasAddedToTheme:(id)arg1;
 - (void)willBeAddedToTheme:(id)arg1;
+- (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

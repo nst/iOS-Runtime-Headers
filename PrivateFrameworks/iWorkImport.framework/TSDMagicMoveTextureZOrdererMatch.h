@@ -23,6 +23,7 @@
 @property int outgoingZIndex;
 
 - (id)animationMatch;
+- (void)dealloc;
 - (id)description;
 - (id)incomingTexture;
 - (int)incomingZIndex;

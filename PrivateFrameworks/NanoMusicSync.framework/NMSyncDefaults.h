@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoMusicSync.framework/NanoMusicSync
  */
 
-@class NSDate, NSNumber;
+@class MPMediaPlaylist, NSDate, NSNumber, NSString;
 
 @interface NMSyncDefaults : NSObject {
     BOOL _assetSyncEnabled;
@@ -15,11 +15,13 @@
     BOOL _needsSync;
     int _notifyToken;
     NSNumber *_numberOfSyncedAssetSyncPlaylistSongs;
+    NSString *_pairingID;
 }
 
 @property(getter=isAssetSyncEnabled) BOOL assetSyncEnabled;
 @property(copy) NSNumber * assetSyncLimit;
 @property unsigned int assetSyncLimitType;
+@property(retain) MPMediaPlaylist * assetSyncPlaylist;
 @property(copy) NSNumber * assetSyncPlaylistPersistentID;
 @property(copy) NSNumber * lastFullySentAssetSyncPlaylistPersistentID;
 @property(copy) NSNumber * lastFullySentAssetSyncPlaylistVersion;
@@ -29,15 +31,17 @@
 + (id)sharedDefaults;
 
 - (void).cxx_destruct;
+- (id)_associatedObject;
+- (void)_clearAssetSyncPlaylistDependentDefaults;
 - (void)_handleRemoteChangeIgnoringSenderPID:(BOOL)arg1;
 - (void)_perDeviceSettingsDidResetNotification:(id)arg1;
-- (void)_readDefaults;
+- (void)_reloadPropertiesFromDefaults;
 - (void)_setNeedsSynchronize;
-- (void)_writeChanges;
+- (void)_writePropertiesToDefaults;
 - (id)assetSyncLimit;
 - (unsigned int)assetSyncLimitType;
+- (id)assetSyncPlaylist;
 - (id)assetSyncPlaylistPersistentID;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (BOOL)isAssetSyncEnabled;
@@ -48,6 +52,7 @@
 - (void)setAssetSyncEnabled:(BOOL)arg1;
 - (void)setAssetSyncLimit:(id)arg1;
 - (void)setAssetSyncLimitType:(unsigned int)arg1;
+- (void)setAssetSyncPlaylist:(id)arg1;
 - (void)setAssetSyncPlaylistPersistentID:(id)arg1;
 - (void)setLastFullySentAssetSyncPlaylistPersistentID:(id)arg1;
 - (void)setLastFullySentAssetSyncPlaylistVersion:(id)arg1;

@@ -83,6 +83,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEmpty;
+- (BOOL)isEqual:(id)arg1;
 - (int)lineCapStyle;
 - (int)lineJoinStyle;
 - (void)lineToPoint:(struct CGPoint { float x1; float x2; })arg1;

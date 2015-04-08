@@ -5,20 +5,28 @@
 @class TPPdfHyperlinkController;
 
 @interface TPRenderingExporter : TSARenderingExporter {
+    BOOL mDidLimitPageLayout;
     TPPdfHyperlinkController *mHyperlinkController;
+    int mLastPageIndexForLayout;
     unsigned int mPageCount;
     unsigned int mPageIndex;
 }
 
+@property(readonly) BOOL didLimitPageLayout;
+@property int lastPageIndexForLayout;
+
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsRect;
 - (id)currentInfos;
 - (void)dealloc;
+- (BOOL)didLimitPageLayout;
 - (BOOL)hasMoreThanOnePageToPrint;
 - (BOOL)incrementPage;
 - (id)initWithDocumentRoot:(id)arg1;
+- (int)lastPageIndexForLayout;
 - (unsigned int)pageCount;
 - (BOOL)preparePage:(unsigned int)arg1;
 - (double)progressForCurrentPage;
+- (void)setLastPageIndexForLayout:(int)arg1;
 - (void)setup;
 - (void)teardown;
 - (double)totalProgess;

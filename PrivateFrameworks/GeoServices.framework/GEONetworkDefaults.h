@@ -7,11 +7,13 @@
 @interface GEONetworkDefaults : NSObject {
     NSString *_cacheFilePath;
     NSMutableArray *_completionHandlers;
+    int _configChangedToken;
     BOOL _isRegistering;
     NSDictionary *_networkDefaults;
     NSLock *_networkDefaultsLock;
 }
 
++ (void)setRunningInDaemon:(BOOL)arg1;
 + (id)sharedNetworkDefaults;
 
 - (void)_registrationComplete;

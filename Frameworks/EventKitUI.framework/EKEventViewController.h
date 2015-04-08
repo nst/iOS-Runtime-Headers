@@ -70,7 +70,7 @@
 @property int editorHideTransition;
 @property int editorShowTransition;
 @property(retain) EKEvent * event;
-@property(retain) UIViewController * eventDetailContainer;
+@property UIViewController * eventDetailContainer;
 @property(readonly) unsigned int hash;
 @property BOOL hideNavigationBar;
 @property float leftInset;
@@ -85,7 +85,7 @@
 @property(readonly) Class superclass;
 @property float topInset;
 
-+ (void)adjustLayoutForCell:(id)arg1 tableViewWidth:(float)arg2 numRowsInSection:(unsigned int)arg3 cellRow:(unsigned int)arg4;
++ (void)adjustLayoutForCell:(id)arg1 tableViewWidth:(float)arg2 numRowsInSection:(unsigned int)arg3 cellRow:(unsigned int)arg4 forceLayout:(BOOL)arg5;
 + (void)setDefaultDatesForEvent:(id)arg1;
 
 - (void).cxx_destruct;

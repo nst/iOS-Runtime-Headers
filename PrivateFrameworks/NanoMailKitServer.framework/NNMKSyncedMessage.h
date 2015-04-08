@@ -19,6 +19,7 @@
     unsigned int _status;
     unsigned int _statusVersion;
     BOOL _usedNotificationPriorityForMessageSync;
+    BOOL _usedProtectedChannelForMessageSync;
 }
 
 @property(retain) NSMutableSet * attachmentsContentIdsNotYetSynced;
@@ -35,6 +36,7 @@
 @property unsigned int status;
 @property unsigned int statusVersion;
 @property BOOL usedNotificationPriorityForMessageSync;
+@property BOOL usedProtectedChannelForMessageSync;
 
 - (void).cxx_destruct;
 - (id)attachmentsContentIdsNotYetSynced;
@@ -64,8 +66,10 @@
 - (void)setStatus:(unsigned int)arg1;
 - (void)setStatusVersion:(unsigned int)arg1;
 - (void)setUsedNotificationPriorityForMessageSync:(BOOL)arg1;
+- (void)setUsedProtectedChannelForMessageSync:(BOOL)arg1;
 - (unsigned int)status;
 - (unsigned int)statusVersion;
 - (BOOL)usedNotificationPriorityForMessageSync;
+- (BOOL)usedProtectedChannelForMessageSync;
 
 @end

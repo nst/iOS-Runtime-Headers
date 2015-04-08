@@ -101,7 +101,6 @@
 - (id)initWithName:(id)arg1 TXTRecord:(id)arg2;
 - (BOOL)isAdobeRGBSupported;
 - (BOOL)isBonjour;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)isFromMCProfile;
 - (BOOL)isIPPS;
 - (BOOL)isLocal;

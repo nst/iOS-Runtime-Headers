@@ -42,9 +42,11 @@
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
 
 - (id)URL;
+- (id)_allOrderKeysForDestination:(id)arg1 inRelationship:(id)arg2 error:(id*)arg3;
 - (id)_defaultMetadata;
 - (void)_didLoadMetadata;
 - (BOOL)_isMetadataDirty;
+- (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (Class)_objectIDClass;
 - (void)_preflightCrossCheck;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
@@ -55,6 +57,7 @@
 - (BOOL)_unload:(id*)arg1;
 - (void)_updateMetadata;
 - (id)_updatedMetadataWithSeed:(id)arg1 includeVersioning:(BOOL)arg2;
+- (void)clearCachedInformationForRequestWithIdentifier:(id)arg1;
 - (id)configurationName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

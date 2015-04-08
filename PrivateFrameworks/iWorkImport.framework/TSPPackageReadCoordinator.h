@@ -21,11 +21,19 @@
     TSPFinalizeHandlerQueue *_finalizeHandlerQueue;
     NSObject<OS_dispatch_queue> *_ioCompletionQueue;
     NSObject<OS_dispatch_queue> *_ioQueue;
+    TSPObject *_metadataObject;
     NSObject<OS_dispatch_queue> *_objectQueue;
     NSMapTable *_objects;
     TSPPackage *_package;
     NSURL *_packageURL;
     TSPPersistedObjectUUIDMap *_persistedUUIDMap;
+    struct vector<std::__1::auto_ptr<TSP::PersistedObjectUUIDMapOperation>, std::__1::allocator<std::__1::auto_ptr<TSP::PersistedObjectUUIDMapOperation> > > { 
+        struct auto_ptr<TSP::PersistedObjectUUIDMapOperation> {} *__begin_; 
+        struct auto_ptr<TSP::PersistedObjectUUIDMapOperation> {} *__end_; 
+        struct __compressed_pair<std::__1::auto_ptr<TSP::PersistedObjectUUIDMapOperation> *, std::__1::allocator<std::__1::auto_ptr<TSP::PersistedObjectUUIDMapOperation> > > { 
+            struct auto_ptr<TSP::PersistedObjectUUIDMapOperation> {} *__first_; 
+        } __end_cap_; 
+    } _persistedUUIDMapOperations;
     int _preferredPackageType;
     NSObject<OS_dispatch_queue> *_readCompletionQueue;
     struct hash_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
@@ -80,6 +88,7 @@
     } _readIdentifiers;
     unsigned long long _readVersion;
     unsigned long long _saveToken;
+    BOOL _skipDocumentUpgrade;
     unsigned long long _writeVersion;
 }
 
@@ -89,6 +98,7 @@
 @property(readonly) TSPDocumentRevision * documentRevision;
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL isReadingFromDocument;
+@property(readonly) TSPObject * metadataObject;
 @property(readonly) int preferredPackageType;
 @property(readonly) unsigned long long readVersion;
 @property(readonly) unsigned long long saveToken;
@@ -109,9 +119,13 @@
 - (id)error;
 - (id)externalObjectForIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isReadFinished:(BOOL)arg3;
 - (unsigned long long)fileFormatVersion;
+- (BOOL)hasDocumentVersionUUID;
 - (id)init;
-- (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 documentResourceDataProvider:(id)arg5 areExternalDataReferencesAllowed:(BOOL)arg6;
+- (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 documentResourceDataProvider:(id)arg5 areExternalDataReferencesAllowed:(BOOL)arg6 skipDocumentUpgrade:(BOOL)arg7;
 - (BOOL)isReadingFromDocument;
+- (id)metadataObject;
+- (long long)metadataObjectIdentifier;
+- (unsigned char)packageIdentifier;
 - (int)preferredPackageType;
 - (void)prepareForFullDocumentUpgrade;
 - (void)prepareForFullDocumentUpgradeImpl;
@@ -131,6 +145,7 @@
 - (void)reader:(id)arg1 didResetObjectIdentifierForObject:(id)arg2 originalObjectIdentifier:(long long)arg3;
 - (void)reader:(id)arg1 didResetObjectUUID:(id)arg2 forObjectIdentifier:(long long)arg3 originalObjectUUID:(id)arg4;
 - (id)reader:(id)arg1 wantsDataForIdentifier:(long long)arg2;
+- (long long)reader:(id)arg1 wantsObjectIdentifierForUUID:(id)arg2;
 - (BOOL)requestDocumentResourcesUsingDataProvider:(id)arg1;
 - (unsigned long long)saveToken;
 - (void)setError:(id)arg1;

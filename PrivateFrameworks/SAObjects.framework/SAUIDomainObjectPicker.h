@@ -10,6 +10,5 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (Class)pickerViewControllerClass;
 
 @end

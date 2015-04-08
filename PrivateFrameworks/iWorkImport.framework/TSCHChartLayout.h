@@ -63,6 +63,7 @@
 - (id)hitChartElements:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
 - (id)initWithChartInfo:(id)arg1;
 - (void)invalidate;
+- (void)invalidateCachedOriginRelativeToChartAreaFrame;
 - (BOOL)isValid;
 - (void)layoutForChartAreaSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutForChartBodySize:(struct CGSize { float x1; float x2; })arg1;

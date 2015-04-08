@@ -30,6 +30,17 @@
     unsigned int _resolveFramebuffer;
     BOOL _shouldDeleteFramebuffer;
     unsigned int _stencilRenderbuffer;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _viewBounds;
+    float _viewContentScaleFactor;
 }
 
 @property(retain) EAGLContext * context;
@@ -53,6 +64,8 @@
 @property BOOL shouldDeleteFramebuffer;
 @property(readonly) UIImage * snapshot;
 @property unsigned int stencilRenderbuffer;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } viewBounds;
+@property float viewContentScaleFactor;
 
 + (Class)layerClass;
 
@@ -112,8 +125,12 @@
 - (void)setResolveFramebuffer:(unsigned int)arg1;
 - (void)setShouldDeleteFramebuffer:(BOOL)arg1;
 - (void)setStencilRenderbuffer:(unsigned int)arg1;
+- (void)setViewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setViewContentScaleFactor:(float)arg1;
 - (BOOL)shouldDeleteFramebuffer;
 - (id)snapshot;
 - (unsigned int)stencilRenderbuffer;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })viewBounds;
+- (float)viewContentScaleFactor;
 
 @end

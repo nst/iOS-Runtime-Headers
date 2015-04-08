@@ -2,31 +2,29 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableDictionary;
+@class NSMutableArray;
 
 @interface PLRevGeoPlace : NSObject {
     BOOL _isHome;
-    NSMutableDictionary *_placeTypeInfoMap;
+    NSMutableArray *_placeTypeInfoMap[15];
 }
 
 @property BOOL isHome;
-@property(readonly) NSMutableDictionary * placeTypeInfoMap;
 
 + (id)sortedAdditionalPlaceInfoComparator;
 
+- (void)_addPlaceName:(id)arg1 placeInfo:(id)arg2 forOrderType:(unsigned int)arg3;
 - (unsigned int)_dominantOrderTypeForPlaceType:(int)arg1 lastOrderType:(unsigned int)arg2;
-- (void)addPlaceName:(id)arg1 placeInfo:(id)arg2 forOrderType:(unsigned int)arg3 updateExisting:(BOOL)arg4;
+- (void)_mergeGEOMapItem:(id)arg1;
+- (id)_placeInfosForOrderType:(unsigned int)arg1 createIfNeeded:(BOOL)arg2;
+- (void)_removePlacesInPlaceInfos:(id)arg1 fromOrderType:(unsigned int)arg2;
 - (id)bestPlaceInfoForOrderType:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithGEOMapItem:(id)arg1;
 - (BOOL)isHome;
-- (void)mergeCommonDataForGEOMapItem:(id)arg1 updateExisting:(BOOL)arg2;
-- (void)mergeGEOMapItem:(id)arg1 updateExisting:(BOOL)arg2;
-- (id)placeInfoSetForOrderType:(unsigned int)arg1;
-- (id)placeTypeInfoMap;
-- (void)removePlacesInPlaceInfoSet:(id)arg1 fromOrderType:(unsigned int)arg2;
+- (id)placeInfosForOrderType:(unsigned int)arg1;
 - (void)setIsHome:(BOOL)arg1;
 
 @end

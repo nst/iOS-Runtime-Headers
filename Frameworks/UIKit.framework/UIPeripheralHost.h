@@ -9,6 +9,7 @@
 @class CADisplayLink, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIInputViewPostPinningReloadState, UIInputViewSet, UIInputViewTransition, UIKeyboard, UIKeyboardAutomatic, UIKeyboardRotationState, UIPanGestureRecognizer, UIPeripheralHostState, UIPeripheralHostView, UIResponder, UIScrollView, UITextEffectsWindow, UIView;
 
 @interface UIPeripheralHost : NSObject <UIGestureRecognizerDelegate, UIKeyboardKeyplaneTransitionDelegate, UIScrollViewIntersectionDelegate> {
+    double __transitionStartTime;
     float _ambiguousControlCenterActivationMargin;
     BOOL _animateCornerRefresh;
     BOOL _animationFencingEnabled;
@@ -166,6 +167,7 @@
 
 @property(retain) UIInputViewSet * _inputViews;
 @property UIInputViewSet * _transientInputViews;
+@property double _transitionStartTime;
 @property float ambiguousControlCenterActivationMargin;
 @property BOOL animationFencingEnabled;
 @property(readonly) BOOL animationsEnabled;
@@ -196,6 +198,7 @@
 
 + (void)_releaseSharedInstance;
 + (id)activeInstance;
++ (id)endPlacementForInputViewSet:(id)arg1;
 + (float)gridViewRubberBandValueForValue:(float)arg1 target:(float)arg2 timeInterval:(float)arg3 velocity:(float*)arg4;
 + (Class)hostViewClass;
 + (id)passthroughViews;
@@ -217,7 +220,6 @@
 - (BOOL)_hasPostPinningReloadState;
 - (BOOL)_hostFirstResponder:(id)arg1 onBehalfOfResponder:(id)arg2;
 - (id)_inheritedRenderConfig;
-- (void)_inputModeChanged:(id)arg1;
 - (void)_inputModeChangedWhileContextTracked;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_inputViewRectToAvoid;
 - (id)_inputViews;
@@ -236,6 +238,7 @@
 - (void)_preserveInputViewsWithId:(id)arg1 animated:(BOOL)arg2;
 - (void)_preserveInputViewsWithId:(id)arg1 animated:(BOOL)arg2 reset:(BOOL)arg3;
 - (void)_reloadInputViewsForResponder:(id)arg1;
+- (id)_renderConfigForCurrentResponder;
 - (void)_resignFirstResponderIfHostingOnBehalfOfResponder:(id)arg1;
 - (BOOL)_restoreInputViewsWithId:(id)arg1 animated:(BOOL)arg2;
 - (id)_screenForFirstResponder:(id)arg1;
@@ -247,6 +250,7 @@
 - (void)_stopPinningInputViewsOnBehalfOfResponder:(id)arg1;
 - (void)_trackInputModeIfNecessary:(id)arg1;
 - (id)_transientInputViews;
+- (double)_transitionStartTime;
 - (void)_updateBounceAnimation:(id)arg1;
 - (void)_updateContainerWindowLevel;
 - (float)accessoryViewFadeDuration:(id)arg1;
@@ -316,6 +320,7 @@
 - (void)implBoundsHeightChangeDoneForGeometry:(struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })arg1;
 - (id)init;
 - (void)initializeTranslateGestureRecognizer;
+- (void)inputModeChangedForRenderConfig:(id)arg1;
 - (id)inputViews;
 - (void)invalidateDisplayLink;
 - (BOOL)isHostingActiveImpl;
@@ -415,6 +420,7 @@
 - (void)setUndockedWithOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)set_inputViews:(id)arg1;
 - (void)set_transientInputViews:(id)arg1;
+- (void)set_transitionStartTime:(double)arg1;
 - (void)setkeyboardAttachedViewHeight:(float)arg1;
 - (BOOL)shouldApplySettingsForBackdropView:(id)arg1;
 - (BOOL)shouldUseHideNotificationForGeometry:(struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })arg1;

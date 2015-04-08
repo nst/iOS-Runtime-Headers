@@ -60,7 +60,7 @@
 - (void)activateSelection;
 - (id)addDragRecognizer;
 - (void)addGestureRecognizersToView:(id)arg1;
-- (id)addHighlightLinkRecognizerToView:(id)arg1;
+- (id)addHighlightLinkRecognizerToView:(id)arg1 withHighlightDelay:(BOOL)arg2;
 - (id)addLoupeGestureRecognizer:(BOOL)arg1 toView:(id)arg2;
 - (id)addOneFingerDoubleTapRecognizer:(SEL)arg1 toView:(id)arg2;
 - (id)addOneFingerDoubleTapRecognizerToView:(id)arg1;

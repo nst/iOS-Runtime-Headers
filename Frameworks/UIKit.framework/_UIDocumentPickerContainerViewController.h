@@ -2,35 +2,34 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIViewController, _UIDocumentPickerContainerModel, _UIDocumentPickerViewServiceViewController, _UINavigationControllerPalette;
+@class <_UIDocumentPickerServiceViewController>, NSString, UIViewController<_UIDocumentPickerContainedViewController>, _UIDocumentPickerContainerModel, _UIDocumentPickerViewServiceViewController, _UINavigationControllerPalette;
 
 @interface _UIDocumentPickerContainerViewController : UIViewController <_UIDocumentPickerServiceInvalidating> {
-    UIViewController *_childViewController;
+    UIViewController<_UIDocumentPickerContainedViewController> *_childViewController;
     _UIDocumentPickerContainerModel *_model;
     BOOL _rootContainer;
     _UINavigationControllerPalette *_searchPalette;
-    _UIDocumentPickerViewServiceViewController *_serviceViewController;
+    _UIDocumentPickerViewServiceViewController *_weak_serviceViewController;
 }
 
-@property(retain) UIViewController * childViewController;
+@property(retain) UIViewController<_UIDocumentPickerContainedViewController> * childViewController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
 @property(retain) _UIDocumentPickerContainerModel * model;
 @property(getter=isRootContainer) BOOL rootContainer;
 @property(retain) _UINavigationControllerPalette * searchPalette;
-@property _UIDocumentPickerViewServiceViewController * serviceViewController;
+@property <_UIDocumentPickerServiceViewController> * serviceViewController;
 @property(readonly) Class superclass;
 
-- (void)_doneButtonPressed;
 - (id)_mangledFilenameForURL:(id)arg1;
 - (void)_pickCurrentLocationForUpload:(id)arg1;
+- (void)_sortOrderViewChanged:(id)arg1;
 - (void)_tryExportingFile:(id)arg1 toLocation:(id)arg2;
 - (void)_updateForServiceView;
 - (id)childViewController;
 - (void)dealloc;
 - (void)didMoveToParentViewController:(id)arg1;
-- (void)displayModeChanged;
 - (void)ensureChildViewController;
 - (id)initWithModel:(id)arg1;
 - (id)initWithURL:(id)arg1;
@@ -48,7 +47,9 @@
 - (void)setupPalettes;
 - (void)teardownPalettes;
 - (id)url;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 
 @end

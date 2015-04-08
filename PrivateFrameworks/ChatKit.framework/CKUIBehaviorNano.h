@@ -108,7 +108,6 @@
 - (float)smallTranscriptSpace;
 - (id)stampTranscriptBoldTextAttributes;
 - (id)stampTranscriptTextAttributes;
-- (float)statusButtonCharge;
 - (float)summaryDateConversationListSpace;
 - (BOOL)supportsContiguousAttachments;
 - (id)systemGrayChevronImage;
@@ -126,6 +125,7 @@
 - (float)topTranscriptSpace;
 - (id)transcriptBackgroundColor;
 - (id)transcriptBoldTextFont;
+- (float)transcriptButtonCharge;
 - (id)transcriptDeemphasizedTextColor;
 - (id)transcriptDrawerFont;
 - (float)transcriptDrawerMaxContentOffsetXForMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

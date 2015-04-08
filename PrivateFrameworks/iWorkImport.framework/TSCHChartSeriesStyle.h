@@ -14,7 +14,6 @@
 + (id)identifierForRoleIndex:(unsigned int)arg1 ordinal:(unsigned int)arg2;
 + (id)imageFillProperties;
 + (int)muxDefaultPropertyForSpecificProperty:(int)arg1;
-+ (id)p_magicMoveProperties;
 + (id)presetStyleDescriptorForOrdinal:(unsigned int)arg1;
 + (id)properties;
 
@@ -22,7 +21,7 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(BOOL)arg4;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)p_upgrade3DChartProperties:(id)arg1;
 - (void)p_upgrade3DFillSubclassTSDFill:(id)arg1;
 - (void)p_upgradeBubbleChartProperties:(id)arg1;

@@ -33,6 +33,10 @@
 + (id)whitelistedCommands;
 
 - (void).cxx_destruct;
+- (BOOL)_checkAuthorizationForMessage:(id)arg1 errorReason:(id*)arg2;
+- (void)_handleElectDeviceForIDSSession:(id)arg1;
+- (void)_handleElectDeviceForUserResponse:(id)arg1 error:(id)arg2 responseQueue:(id)arg3 completion:(id)arg4;
+- (BOOL)_handleInternalIDSMessage:(id)arg1 fromID:(id)arg2;
 - (void)_handleSecureClientMessage:(id)arg1 fromID:(id)arg2;
 - (void)_handleSecureServerMessage:(id)arg1 fromID:(id)arg2;
 - (void)_sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id)arg5;
@@ -42,6 +46,8 @@
 - (id)activeServerSecureSessions;
 - (id)adminMsgFilter;
 - (void)configureNotificationDispatcher:(id)arg1;
+- (void)deregisterForMessage:(id)arg1 receiver:(id)arg2;
+- (void)deregisterReceiver:(id)arg1;
 - (void)dispatchMessage:(id)arg1 target:(id)arg2;
 - (void)electDeviceForUser:(id)arg1 destination:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
 - (id)identityRegistry;
@@ -70,6 +76,5 @@
 - (void)setRemoteAccessPeer:(id)arg1 forHome:(id)arg2;
 - (void)setRemoteGateways:(id)arg1;
 - (id)transientDevices;
-- (void)unregisterForForMessage:(id)arg1 receiver:(id)arg2;
 
 @end

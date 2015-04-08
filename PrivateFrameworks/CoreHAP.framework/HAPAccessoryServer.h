@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class <HAPKeyStore>, HAPAccessory, NSArray, NSString;
+@class <HAPKeyStore>, HAPAccessory, NSArray, NSHashTable, NSObject<OS_dispatch_queue>, NSString;
 
 @interface HAPAccessoryServer : NSObject {
     NSArray *_accessories;
     NSString *_homeName;
     NSString *_identifier;
+    NSObject<OS_dispatch_queue> *_internalDelegateQueue;
+    NSHashTable *_internalDelegates;
     <HAPKeyStore> *_keyStore;
     NSString *_name;
     NSString *_pairSetupPassword;
@@ -18,8 +20,11 @@
 }
 
 @property(copy) NSArray * accessories;
+@property(readonly) BOOL hasPairings;
 @property(copy) NSString * homeName;
 @property(copy) NSString * identifier;
+@property(readonly) NSObject<OS_dispatch_queue> * internalDelegateQueue;
+@property(readonly) NSHashTable * internalDelegates;
 @property <HAPKeyStore> * keyStore;
 @property(readonly) int linkType;
 @property(copy) NSString * name;
@@ -32,7 +37,10 @@
 + (BOOL)isAccessoryServerWithIdentifierPaired:(id)arg1 keyStore:(id)arg2;
 
 - (void).cxx_destruct;
+- (id)_serverIdentifier;
+- (id)_serverName;
 - (id)accessories;
+- (void)addInternalDelegate:(id)arg1;
 - (id)briefDescription;
 - (void)continuePairingAfterAuthPrompt;
 - (void)discoverAccessories;
@@ -40,10 +48,14 @@
 - (void)discoverDescriptorsForCharacteristic:(id)arg1;
 - (void)discoverServices:(id)arg1 forAccessory:(id)arg2;
 - (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id)arg3 queue:(id)arg4;
+- (void)enumerateInternalDelegatesUsingBlock:(id)arg1;
+- (BOOL)hasPairings;
 - (id)homeName;
 - (id)identifier;
 - (void)identifyWithCompletion:(id)arg1;
 - (id)init;
+- (id)internalDelegateQueue;
+- (id)internalDelegates;
 - (BOOL)isPaired;
 - (BOOL)isReachable;
 - (BOOL)isUnconnected;
@@ -56,6 +68,7 @@
 - (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (void)readValueForDescriptor:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)removeInternalDelegate:(id)arg1;
 - (BOOL)removePairingForControllerWithName:(id)arg1 publicKey:(id)arg2 completion:(id)arg3;
 - (void)setAccessories:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;

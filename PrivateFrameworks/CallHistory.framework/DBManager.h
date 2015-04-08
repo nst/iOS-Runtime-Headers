@@ -10,24 +10,28 @@
 
 @property(retain) NSPersistentStoreCoordinator * fPersistentStoreCoordinator;
 
-+ (BOOL)destroyDBAtLocation:(id)arg1;
++ (id)dbOptions:(BOOL)arg1;
++ (BOOL)destroyDBAtLocation:(id)arg1 withModelAtLocation:(id)arg2;
 + (id)entityDescriptionHavingName:(id)arg1 forContext:(id)arg2;
 + (id)getPersistenCoordinator:(id)arg1;
 + (id)getPropertyValueForKey:(id)arg1 forContext:(id)arg2;
 + (id)getStoreURLforContext:(id)arg1;
-+ (id)instanceWithInitDBAtURL:(id)arg1 modelURL:(id)arg2;
-+ (id)instanceWithUsingDBAtURL:(id)arg1 modelURL:(id)arg2;
++ (int)getVersionForMappingModel:(id)arg1;
++ (id)instanceWithModelURL:(id)arg1;
 + (int)isDataStoreAtURLInitialized:(id)arg1 withModelAtURL:(id)arg2;
 + (id)mangedObjectWithURI:(id)arg1 inContext:(id)arg2;
-+ (BOOL)migrateDataStoreAtLocation:(id)arg1 withDstModelAtLocation:(id)arg2;
-+ (id)migrationOptions;
++ (BOOL)migrateDataStoreAtLocation:(id)arg1 withGetDestinationModel:(id)arg2 isEncrypted:(BOOL)arg3;
++ (BOOL)moveDBAtLocation:(id)arg1 toLocation:(id)arg2 withModelAtLocation:(id)arg3;
 + (BOOL)replacePersistentStore:(id)arg1 withURL:(id)arg2;
 + (void)setPropertyValue:(id)arg1 forKey:(id)arg2 forContext:(id)arg3;
++ (int)versionForDBAtLocation:(id)arg1;
 
 - (void).cxx_destruct;
+- (BOOL)addDataStoreAtLocation:(id)arg1 isEncrypted:(BOOL)arg2;
 - (id)createManagedObjectContext;
 - (id)fPersistentStoreCoordinator;
 - (id)init;
+- (void)removeDataStoreAtLocation:(id)arg1;
 - (void)setFPersistentStoreCoordinator:(id)arg1;
 
 @end

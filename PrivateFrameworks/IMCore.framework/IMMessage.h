@@ -70,7 +70,7 @@
 + (id)instantMessageWithText:(id)arg1 messageSubject:(id)arg2 flags:(unsigned long long)arg3;
 + (id)locatingMessageWithGuid:(id)arg1 error:(id)arg2;
 + (id)messageFromIMMessageItem:(id)arg1 sender:(id)arg2 subject:(id)arg3;
-+ (id)messageFromIMMessageItemDictionary:(id)arg1 sender:(id)arg2 subject:(id)arg3;
++ (id)messageFromIMMessageItemDictionary:(id)arg1 body:(id)arg2 sender:(id)arg3 subject:(id)arg4;
 + (id)messageWithLocation:(id)arg1 flags:(unsigned long long)arg2 error:(id)arg3 guid:(id)arg4;
 
 - (id)__ck_attachmentText:(BOOL)arg1;

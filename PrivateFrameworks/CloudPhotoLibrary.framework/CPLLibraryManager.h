@@ -92,11 +92,14 @@
 - (void)deleteResourcesIfSafe:(id)arg1 completionHandler:(id)arg2;
 - (id)description;
 - (BOOL)diagnosticsEnabled;
+- (void)disableMingling;
 - (void)disableSynchronizationWithReason:(id)arg1;
 - (void)discardCurrentSession;
 - (void)downloadOriginalsOfType:(id)arg1 localIdentifiers:(id)arg2 destinationURL:(id)arg3 progressIdentifier:(id)arg4 completionHandler:(id)arg5;
 - (id)effectiveClientBundleIdentifier;
+- (void)enableMingling;
 - (void)enableSynchronizationWithReason:(id)arg1;
+- (void)getCloudCacheForRecordWithIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (void)getCloudIdentifiersForLocalIdentifiers:(id)arg1 completionHandler:(id)arg2;
 - (void)getListOfComponentsWithCompletionHandler:(id)arg1;
 - (void)getLocalIdentifiersForCloudIdentifiers:(id)arg1 completionHandler:(id)arg2;

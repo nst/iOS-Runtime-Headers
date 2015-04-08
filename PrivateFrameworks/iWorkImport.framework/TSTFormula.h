@@ -18,7 +18,6 @@
     } mHostCell;
     TSTTableInfo *mHostInfo;
     NSString *mInitialWhitespace;
-    BOOL mRequireEqualsToken;
     BOOL mSyntaxError;
 }
 
@@ -26,11 +25,10 @@
 @property(getter=isEmpty) BOOL empty;
 @property(retain) TSTExpressionNode * expressionTree;
 @property BOOL fixupFormulas;
-@property(readonly) struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; } formula;
+@property(readonly) struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; unsigned int x_2_1_3 : 1; } x2; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_3_1_1; } x3; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_4_1_1; } x4; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_5_1_1; } x5; } formula;
 @property(readonly) BOOL formulaFixupsShouldStick;
 @property(readonly) BOOL formulaWasFixable;
 @property(copy) NSString * initialWhitespace;
-@property BOOL requireEqualsToken;
 @property(getter=isSyntaxError) BOOL syntaxError;
 
 + (id)doubleQuoteCharacters;
@@ -40,16 +38,20 @@
 + (id)leadingSingleQuoteEscapeCharacters;
 + (id)leftParenCharacters;
 + (id)p_charactersToTemporarilyChopOffEndToFixSyntaxError;
++ (unsigned int)parenCountAtCharIndex:(unsigned int)arg1 inStorage:(id)arg2;
++ (unsigned int)parenCountAtCharIndex:(unsigned int)arg1 unmatchedParenCount:(unsigned int)arg2 quoteContext:(int)arg3 inStorage:(id)arg4;
++ (int)quoteContextAtCharIndex:(unsigned int)arg1 previousContext:(int)arg2 inStorage:(id)arg3;
 + (id)rightParenCharacters;
 + (id)singleQuoteCharacters;
 
 - (id).cxx_construct;
 - (id)calculationEngine;
+- (BOOL)canSimplify;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)expressionTree;
 - (BOOL)fixupFormulas;
-- (struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; })formula;
+- (struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; unsigned int x_2_1_3 : 1; } x2; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_3_1_1; } x3; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_4_1_1; } x4; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_5_1_1; } x5; })formula;
 - (id)formulaDetokenizedText;
 - (BOOL)formulaFixupsShouldStick;
 - (id)formulaPlainText;
@@ -57,7 +59,7 @@
 - (BOOL)hasBareArgumentPlaceholders;
 - (id)initWithCalculationEngine:(id)arg1 expressionTree:(id)arg2 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 hostTable:(id)arg4;
 - (id)initWithCalculationEngine:(id)arg1 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 hostTable:(id)arg3;
-- (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 TSCEFormula:(const struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; }*)arg4 ownerID:(struct __CFUUID { }*)arg5;
+- (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 TSCEFormula:(const struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; unsigned int x_2_1_3 : 1; } x2; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_3_1_1; } x3; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_4_1_1; } x4; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_5_1_1; } x5; }*)arg4 ownerID:(struct __CFUUID { }*)arg5;
 - (id)initialWhitespace;
 - (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2;
 - (BOOL)isEmpty;
@@ -67,14 +69,13 @@
 - (id)p_formulaAsTextReturningTokenValues:(BOOL)arg1;
 - (void)reparseWithStorage:(id)arg1;
 - (void)reparseWithStorage:(id)arg1 adjustExpressionTree:(id)arg2;
-- (BOOL)requireEqualsToken;
 - (void)reset;
 - (void)setCalculationEngine:(id)arg1;
 - (void)setEmpty:(BOOL)arg1;
 - (void)setExpressionTree:(id)arg1;
 - (void)setFixupFormulas:(BOOL)arg1;
 - (void)setInitialWhitespace:(id)arg1;
-- (void)setRequireEqualsToken:(BOOL)arg1;
 - (void)setSyntaxError:(BOOL)arg1;
+- (id)simplify;
 
 @end

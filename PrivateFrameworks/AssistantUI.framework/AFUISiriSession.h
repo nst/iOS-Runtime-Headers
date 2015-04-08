@@ -112,6 +112,7 @@
 - (void)setLockState:(unsigned int)arg1;
 - (void)setOverriddenApplicationContext:(id)arg1 withSMSContext:(id)arg2;
 - (id)speechSynthesis;
+- (BOOL)speechSynthesisShouldStartSpeaking:(id)arg1;
 - (void)speechSynthesisWillStartSpeaking:(id)arg1;
 - (void)startCorrectedRequestWithText:(id)arg1 correctionIdentifier:(id)arg2;
 - (void)startRequestWithOptions:(id)arg1;

@@ -35,6 +35,7 @@
 + (void)_updateStateRestorationIdentifierMap;
 + (void)clearTextInputContextIdentifier:(id)arg1;
 + (id)objectWithRestorationIdentifierPath:(id)arg1;
++ (id)tswp_currentFirstResponder;
 
 - (id)_asTextSelection;
 - (void)_becomeFirstResponder;
@@ -225,6 +226,7 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)tswp_findFirstResponder:(id)arg1;
 - (id)undoManager;
 - (void)updateUserActivityState:(id)arg1;
 - (id)userActivity;

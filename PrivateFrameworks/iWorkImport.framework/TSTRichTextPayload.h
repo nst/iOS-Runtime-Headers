@@ -10,6 +10,8 @@
 
 @property(retain) TSWPStorage * storage;
 
++ (id)payloadWithStorage:(id)arg1;
+
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;

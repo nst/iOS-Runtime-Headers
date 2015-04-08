@@ -42,6 +42,7 @@
 - (id)formatPercent:(double)arg1;
 - (id)formatPhoneNumber:(double)arg1;
 - (int)formatType;
+- (id)formatValue:(double)arg1 inWorkbook:(id)arg2;
 - (id)initWithDefaultFormatString;
 - (id)initWithExcelFormatString:(id)arg1;
 - (bool)isNegativeRed;

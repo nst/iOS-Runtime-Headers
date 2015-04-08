@@ -25,6 +25,7 @@
 - (void)authorizationDidPresent;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
 - (void)authorizationDidSelectShippingMethod:(id)arg1;
+- (void)authorizationWillStart;
 - (id)controller;
 - (void)dealloc;
 - (id)delegate;

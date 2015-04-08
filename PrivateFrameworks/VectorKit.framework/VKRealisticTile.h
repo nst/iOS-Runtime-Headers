@@ -27,10 +27,12 @@
         struct Texture2D {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     } _defaultLandTextureVariant;
-    struct shared_ptr<ggl::Fog::FogUniformData> { 
-        struct FogUniformData {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    } _fogUniformData;
+    struct FogInfo { 
+        struct shared_ptr<ggl::Fog::FogUniformData> { 
+            struct FogUniformData {} *__ptr_; 
+            struct __shared_weak_count {} *__cntrl_; 
+        } _fogUniformData; 
+    } _fogInfo;
     struct map<std::__1::basic_string<char>, unsigned long, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned long> > > { 
         struct __tree<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, unsigned long> > > { 
             struct __tree_node<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, void *> {} *__begin_node_; 
@@ -102,7 +104,7 @@
 @property(readonly) struct RealisticMesh { int (**x1)(); char *x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; struct shared_ptr<ggl::RealisticCasingFacade::RealisticVertexData> { struct RealisticVertexData {} *x_8_1_1; struct __shared_weak_count {} *x_8_1_2; } x8; }* coastlineMesh;
 @property(readonly) struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; } defaultLandTexture;
 @property(readonly) struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; } defaultLandTextureVariant;
-@property(readonly) struct shared_ptr<ggl::Fog::FogUniformData> { struct FogUniformData {} *x1; struct __shared_weak_count {} *x2; } fogUniformData;
+@property(readonly) struct FogInfo { struct shared_ptr<ggl::Fog::FogUniformData> { struct FogUniformData {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; }* fogInfo;
 @property(readonly) /* Warning: unhandled struct encoding: '{vector<std::__1::unique_ptr<md::TexturedDrawable' */ struct * landDrawables; /* unknown property attribute:  std::__1::default_delete<md::TexturedDrawable> >}}} */
 @property(readonly) float landZ;
 @property(readonly) NSArray * realisticRoadGroups;
@@ -112,8 +114,6 @@
 @property(retain) VKAnimation * startDrawingAnimation;
 @property(readonly) struct * waterDrawables; /* unknown property attribute:  std::__1::default_delete<md::TexturedDrawable> >}}} */
 @property(readonly) float waterZ;
-
-+ (void)updateFogUniforms:(const struct shared_ptr<ggl::Fog::FogUniformData> { struct FogUniformData {} *x1; struct __shared_weak_count {} *x2; }*)arg1 withLayoutContext:(id)arg2 toWorld:(const struct Matrix<double, 4, 4> { double x1[16]; }*)arg3;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -131,7 +131,7 @@
 - (void)dealloc;
 - (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })defaultLandTexture;
 - (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })defaultLandTextureVariant;
-- (struct shared_ptr<ggl::Fog::FogUniformData> { struct FogUniformData {} *x1; struct __shared_weak_count {} *x2; })fogUniformData;
+- (struct FogInfo { struct shared_ptr<ggl::Fog::FogUniformData> { struct FogUniformData {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; }*)fogInfo;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 modelTile:(id)arg2 styleManager:(id)arg3 sharedResources:(id)arg4 contentScale:(float)arg5 device:(struct Device { }*)arg6;
 - (struct vector<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> >, std::__1::allocator<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > > > { struct unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > {} *x1; struct unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > {} *x2; struct __compressed_pair<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > *, std::__1::allocator<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > > > { struct unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > {} *x_3_1_1; } x3; }*)landDrawables;
 - (float)landZ;

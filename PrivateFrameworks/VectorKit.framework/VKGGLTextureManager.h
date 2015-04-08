@@ -27,6 +27,10 @@
     } _textureDictionary;
     NSObject<OS_dispatch_queue> *_textureQueue;
     unsigned int _tileGroupIdentifier;
+    struct shared_ptr<ggl::Texture2D> { 
+        struct Texture2D {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _whiteTexture;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -46,5 +50,6 @@
 - (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 forScale:(float)arg2;
 - (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 forScale:(float)arg2 mipmap:(BOOL)arg3 repeatWrap:(BOOL)arg4;
 - (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 mipmap:(BOOL)arg2 repeatWrap:(BOOL)arg3;
+- (struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; bool x12; bool x13; bool x14; unsigned int x15; unsigned int x16; int x17; int x18; }*)whiteTexture;
 
 @end

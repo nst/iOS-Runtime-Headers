@@ -69,6 +69,7 @@
 + (float)heightForLastRow;
 + (float)heightForRowAtIndex:(unsigned int)arg1;
 + (float)heightForRowAtIndex:(unsigned int)arg1 interfaceOrientation:(int)arg2;
++ (float)interRowOverlap;
 + (unsigned int)numberOfRows;
 + (unsigned int)numberOfRowsForInterfaceOrientation:(int)arg1;
 + (void)setScreenTraits:(id)arg1;

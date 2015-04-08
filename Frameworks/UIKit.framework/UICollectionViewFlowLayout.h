@@ -66,6 +66,7 @@
 }
 
 @property struct CGSize { float x1; float x2; } estimatedItemSize;
+@property(getter=_estimatesSizes,readonly) BOOL estimatesSizes;
 @property struct CGSize { float x1; float x2; } footerReferenceSize;
 @property struct CGSize { float x1; float x2; } headerReferenceSize;
 @property struct CGSize { float x1; float x2; } itemSize;

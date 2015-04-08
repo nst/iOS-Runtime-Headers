@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITextInputControllerDelegate>, <UITextInputDelegate>, <UITextInputTokenizer>, NSArray, NSDictionary, NSHashTable, NSLayoutManager, NSString, UIResponder<UITextInput>, UITextChecker, UITextInputTraits, UITextPosition, UITextRange, UIView, UIView<UITextInput>, UIView<UITextInputPrivate>, _UIDictationAttachment, _UITextInputControllerTokenizer, _UITextKitTextRange, _UITextServiceSession, _UITextUndoManager, _UITextUndoOperationTyping;
+@class <UITextInputControllerDelegate>, <UITextInputDelegate>, <UITextInputTokenizer>, NSArray, NSDictionary, NSHashTable, NSLayoutManager, NSSet, NSString, UIResponder<UITextInput>, UITextChecker, UITextInputTraits, UITextPosition, UITextRange, UIView, UIView<UITextInput>, UIView<UITextInputPrivate>, _UIDictationAttachment, _UITextInputControllerTokenizer, _UITextKitTextRange, _UITextServiceSession, _UITextUndoManager, _UITextUndoOperationTyping;
 
 @interface UITextInputController : NSObject <UITextInput, UITextInputAdditions, UITextInput_Internal> {
     BOOL _allowsEditingTextAttributes;
@@ -52,10 +52,12 @@
     NSDictionary *_typingAttributes;
     _UITextUndoManager *_undoManager;
     _UITextUndoOperationTyping *_undoOperationForCoalescing;
+    NSSet *_whitelistedTypingAttributes;
 }
 
 @property(getter=_proxyTextInput,readonly) UIResponder<UITextInput> * __content;
 @property(readonly) UIView<UITextInputPrivate> * _textSelectingContainer;
+@property(getter=_whitelistedTypingAttributes,setter=_setWhitelistedTypingAttributes:,copy) NSSet * _whitelistedTypingAttributes;
 @property BOOL allowsEditingTextAttributes;
 @property int autocapitalizationType;
 @property int autocorrectionType;
@@ -206,6 +208,7 @@
 - (void)_setSelectedTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2;
 - (id)_setSelectionRangeWithHistory:(id)arg1;
 - (void)_setUndoRedoInProgress:(BOOL)arg1;
+- (void)_setWhitelistedTypingAttributes:(id)arg1;
 - (void)_setupTextContainerView:(id)arg1;
 - (BOOL)_shouldConsiderTextViewForGeometry:(id)arg1;
 - (BOOL)_shouldHandleResponderAction:(SEL)arg1;

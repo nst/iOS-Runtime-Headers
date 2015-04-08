@@ -14,7 +14,8 @@
     struct { 
         unsigned int didFinishResolvingReferences : 1; 
         unsigned int needsUpgrade : 1; 
-        unsigned int isFromPasteboard : 1; 
+        unsigned int hasDocumentVersionUUID : 1; 
+        unsigned int isFromCopy : 1; 
         unsigned int isCrossDocumentPaste : 1; 
         unsigned int isCrossAppPaste : 1; 
         unsigned int delegateRespondsToDidResetObjectIdentifierForObject : 1; 
@@ -71,11 +72,12 @@
 @property(readonly) BOOL didFinishResolvingReferences;
 @property(retain) NSError * error;
 @property(readonly) unsigned long long fileFormatVersion;
+@property(readonly) BOOL hasDocumentVersionUUID;
 @property(readonly) BOOL hasReadFailure;
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL isCrossAppPaste;
 @property(readonly) BOOL isCrossDocumentPaste;
-@property(readonly) BOOL isFromPasteboard;
+@property(readonly) BOOL isFromCopy;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -84,6 +86,7 @@
 - (void)addUnarchivedObject:(id)arg1 unarchiver:(id)arg2;
 - (void)attemptedToReadInMemoryObject:(id)arg1 objectIdentifier:(long long)arg2;
 - (void)beginReadingWithCompletionQueue:(id)arg1 completion:(id)arg2;
+- (BOOL)canSetObjectUUIDForObject:(id)arg1;
 - (id)completionGroup;
 - (id)component;
 - (id)context;
@@ -94,15 +97,18 @@
 - (id)error;
 - (unsigned long long)fileFormatVersion;
 - (BOOL)finishUnarchiving;
+- (BOOL)hasDocumentVersionUUID;
 - (BOOL)hasReadFailure;
 - (id)init;
 - (id)initWithComponent:(id)arg1 finalizeHandlerQueue:(id)arg2 delegate:(id)arg3;
 - (BOOL)isCrossAppPaste;
 - (BOOL)isCrossDocumentPaste;
-- (BOOL)isFromPasteboard;
+- (BOOL)isFromCopy;
+- (BOOL)isObjectInDocument:(id)arg1;
 - (long long)modifyObjectTokenForNewObject;
 - (long long)newObjectIdentifier;
 - (id)newObjectUUIDForObject:(id)arg1;
+- (long long)objectIdentifierForUUID:(id)arg1;
 - (struct ObjectInfo { struct vector<TSP::ReferenceCompletionInfo, std::__1::allocator<TSP::ReferenceCompletionInfo> > { struct ReferenceCompletionInfo {} *x_1_1_1; struct ReferenceCompletionInfo {} *x_1_1_2; struct __compressed_pair<TSP::ReferenceCompletionInfo *, std::__1::allocator<TSP::ReferenceCompletionInfo> > { struct ReferenceCompletionInfo {} *x_3_2_1; } x_1_1_3; } x1; }*)objectInfoForIdentifier:(long long)arg1;
 - (id)objectUUIDMap;
 - (void)processObjectsToModify;

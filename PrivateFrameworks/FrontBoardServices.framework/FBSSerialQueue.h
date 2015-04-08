@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class NSArray, NSObject<OS_dispatch_queue>;
+@class NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
 
 @interface FBSSerialQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSArray *_mainRunLoopModes;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_semaphore> *_runLoopSemaphore;
     struct __CFRunLoopSource { } *_runLoopSource;
+    NSObject<OS_dispatch_queue> *_targetQueue;
 }
 
 + (id)queueWithDispatchQueue:(id)arg1;

@@ -16,7 +16,7 @@
 
 @property(copy) id dealHandler;
 
-+ (id)requestWithBusinesMetadata:(id)arg1;
++ (id)requestWithMapItem:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)dealHandler;

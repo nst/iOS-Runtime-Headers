@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSArray, NSCache, NSObject<OS_dispatch_queue>, PHPhotoLibrary;
+@class NSArray, NSCache, NSObject<OS_dispatch_queue>, NSSet, PHPhotoLibrary;
 
 @interface PHBatchFetchingArray : NSArray {
     unsigned int _batchSize;
@@ -12,11 +12,13 @@
     unsigned int _firstBatchIndex;
     NSObject<OS_dispatch_queue> *_firstBatchQueue;
     NSArray *_oids;
+    NSSet *_oidsSet;
     PHPhotoLibrary *_photoLibrary;
     unsigned int _propertyHint;
 }
 
 @property(readonly) NSArray * oids;
+@property(readonly) NSSet * oidsSet;
 @property(readonly) PHPhotoLibrary * photoLibrary;
 
 + (BOOL)accessInstanceVariablesDirectly;
@@ -38,7 +40,9 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (id)oids;
+- (id)oidsSet;
 - (id)photoLibrary;
+- (void)prefetchObjectsAtIndexes:(id)arg1;
 - (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

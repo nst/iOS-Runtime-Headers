@@ -5,6 +5,7 @@
 @class NSMutableArray;
 
 @interface GEOUsageCollectionRequest : PBRequest <NSCopying> {
+    NSMutableArray *_abExperimentAssignments;
     NSMutableArray *_directionsFeedbackCollections;
     NSMutableArray *_leaveNowFeedbackCollections;
     NSMutableArray *_mapsLaunchFeedbackCollections;
@@ -12,11 +13,12 @@
     NSMutableArray *_placeDataCacheFeedbackCollections;
     NSMutableArray *_stateTimingFeedbackCollections;
     NSMutableArray *_suggestionsFeedbackCollections;
-    NSMutableArray *_trafficRerouteFeedbackCollections;
+    NSMutableArray *_tileSetStateFeedbackCollections;
     NSMutableArray *_transitAppLaunchFeedbackCollections;
     NSMutableArray *_usageCollections;
 }
 
+@property(retain) NSMutableArray * abExperimentAssignments;
 @property(retain) NSMutableArray * directionsFeedbackCollections;
 @property(retain) NSMutableArray * leaveNowFeedbackCollections;
 @property(retain) NSMutableArray * mapsLaunchFeedbackCollections;
@@ -24,10 +26,14 @@
 @property(retain) NSMutableArray * placeDataCacheFeedbackCollections;
 @property(retain) NSMutableArray * stateTimingFeedbackCollections;
 @property(retain) NSMutableArray * suggestionsFeedbackCollections;
-@property(retain) NSMutableArray * trafficRerouteFeedbackCollections;
+@property(retain) NSMutableArray * tileSetStateFeedbackCollections;
 @property(retain) NSMutableArray * transitAppLaunchFeedbackCollections;
 @property(retain) NSMutableArray * usageCollections;
 
+- (id)abExperimentAssignmentAtIndex:(unsigned int)arg1;
+- (id)abExperimentAssignments;
+- (unsigned int)abExperimentAssignmentsCount;
+- (void)addAbExperimentAssignment:(id)arg1;
 - (void)addDirectionsFeedbackCollection:(id)arg1;
 - (void)addLeaveNowFeedbackCollection:(id)arg1;
 - (void)addMapsLaunchFeedbackCollection:(id)arg1;
@@ -35,9 +41,10 @@
 - (void)addPlaceDataCacheFeedbackCollection:(id)arg1;
 - (void)addStateTimingFeedbackCollection:(id)arg1;
 - (void)addSuggestionsFeedbackCollection:(id)arg1;
-- (void)addTrafficRerouteFeedbackCollection:(id)arg1;
+- (void)addTileSetStateFeedbackCollection:(id)arg1;
 - (void)addTransitAppLaunchFeedbackCollection:(id)arg1;
 - (void)addUsageCollection:(id)arg1;
+- (void)clearAbExperimentAssignments;
 - (void)clearDirectionsFeedbackCollections;
 - (void)clearLeaveNowFeedbackCollections;
 - (void)clearMapsLaunchFeedbackCollections;
@@ -45,7 +52,7 @@
 - (void)clearPlaceDataCacheFeedbackCollections;
 - (void)clearStateTimingFeedbackCollections;
 - (void)clearSuggestionsFeedbackCollections;
-- (void)clearTrafficRerouteFeedbackCollections;
+- (void)clearTileSetStateFeedbackCollections;
 - (void)clearTransitAppLaunchFeedbackCollections;
 - (void)clearUsageCollections;
 - (void)copyTo:(id)arg1;
@@ -74,6 +81,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
+- (void)setAbExperimentAssignments:(id)arg1;
 - (void)setDirectionsFeedbackCollections:(id)arg1;
 - (void)setLeaveNowFeedbackCollections:(id)arg1;
 - (void)setMapsLaunchFeedbackCollections:(id)arg1;
@@ -81,7 +89,7 @@
 - (void)setPlaceDataCacheFeedbackCollections:(id)arg1;
 - (void)setStateTimingFeedbackCollections:(id)arg1;
 - (void)setSuggestionsFeedbackCollections:(id)arg1;
-- (void)setTrafficRerouteFeedbackCollections:(id)arg1;
+- (void)setTileSetStateFeedbackCollections:(id)arg1;
 - (void)setTransitAppLaunchFeedbackCollections:(id)arg1;
 - (void)setUsageCollections:(id)arg1;
 - (id)stateTimingFeedbackCollectionAtIndex:(unsigned int)arg1;
@@ -90,9 +98,9 @@
 - (id)suggestionsFeedbackCollectionAtIndex:(unsigned int)arg1;
 - (id)suggestionsFeedbackCollections;
 - (unsigned int)suggestionsFeedbackCollectionsCount;
-- (id)trafficRerouteFeedbackCollectionAtIndex:(unsigned int)arg1;
-- (id)trafficRerouteFeedbackCollections;
-- (unsigned int)trafficRerouteFeedbackCollectionsCount;
+- (id)tileSetStateFeedbackCollectionAtIndex:(unsigned int)arg1;
+- (id)tileSetStateFeedbackCollections;
+- (unsigned int)tileSetStateFeedbackCollectionsCount;
 - (id)transitAppLaunchFeedbackCollectionAtIndex:(unsigned int)arg1;
 - (id)transitAppLaunchFeedbackCollections;
 - (unsigned int)transitAppLaunchFeedbackCollectionsCount;

@@ -2,56 +2,56 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSPointerArray;
+@class TSTMutableStrokeLayer, TSTStrokeLayer;
 
-@interface TSTStrokeLayerStack : NSObject {
-    int _maxStrokeIndex;
+@interface TSTStrokeLayerStack : TSTStrokeLayerAbstractStack {
+    TSTMutableStrokeLayer *_clearedStrokeLayer;
+    TSTStrokeLayer *_customStrokeLayer;
+    TSTStrokeLayer *_defaultStrokeLayer;
+    TSTMutableStrokeLayer *_dynamicStrokeLayer;
+    TSTMutableStrokeLayer *_spillStrokeLayer;
     int _stackKind;
-    NSPointerArray *_strokeLayers;
     int _type;
-    struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
-    } mRWLock;
 }
 
-@property int maxStrokeIndex;
+@property(retain) TSTMutableStrokeLayer * clearedStrokeLayer;
+@property(retain) TSTStrokeLayer * customStrokeLayer;
+@property(retain) TSTStrokeLayer * defaultStrokeLayer;
+@property(retain) TSTMutableStrokeLayer * dynamicStrokeLayer;
+@property(retain) TSTMutableStrokeLayer * spillStrokeLayer;
 @property int stackKind;
-@property(retain) NSPointerArray * strokeLayers;
 @property int type;
 
-+ (float)maxWidthForLeftStrokes:(id)arg1 mergedWithRightStrokes:(id)arg2 atRowIndex:(int)arg3;
-+ (float)maxWidthForLeftStrokes:(id)arg1 mergedWithRightStrokes:(id)arg2 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg3 cachedMax:(float)arg4;
-+ (float)maxWidthForTopStrokes:(id)arg1 mergedWithBottomStrokes:(id)arg2 atColumnIndex:(int)arg3;
-+ (float)maxWidthForTopStrokes:(id)arg1 mergedWithBottomStrokes:(id)arg2 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg3 cachedMax:(float)arg4;
-+ (id)mergeLeftStrokes:(id)arg1 withRightStrokes:(id)arg2;
-+ (id)mergeTopStrokes:(id)arg1 withBottomStrokes:(id)arg2;
 + (id)strokeLayerStackWithStackKind:(int)arg1;
-+ (id)strokeLayerStackWithStackKind:(int)arg1 andStrokeLayer:(id)arg2 atLayerIndex:(int)arg3;
 
+- (id)clearedStrokeLayer;
+- (id)customStrokeLayer;
 - (void)dealloc;
-- (void)enumerateStrokesAndCapsFrom:(unsigned int)arg1 to:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateStrokesAndCapsInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1 usingBlock:(id)arg2;
-- (void)enumerateStrokesFrom:(unsigned int)arg1 to:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateStrokesInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1 usingBlock:(id)arg2;
-- (id)initMergedCopyWithMajorStrokes:(id)arg1 andMinorStrokes:(id)arg2;
+- (id)defaultStrokeLayer;
+- (id)dynamicStrokeLayer;
 - (id)initWithStackKind:(int)arg1;
-- (void)insertStroke:(id)arg1 atRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 atLayerIndex:(int)arg3;
-- (void)invalidateStrokesAtLayerIndex:(int)arg1;
-- (void)invalidateStrokesAtLayerIndex:(int)arg1 atRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2;
-- (void)lockForRead;
-- (void)lockForWrite;
-- (id)lookupStrokeAtIndex:(int)arg1;
-- (int)maxStrokeIndex;
-- (void)p_invalidateStrokesAtLayerIndex:(int)arg1;
-- (BOOL)replaceStrokeLayerAtLayerIndex:(int)arg1 withStrokeLayer:(id)arg2;
-- (void)setMaxStrokeIndex:(int)arg1;
+- (void)insertClearedStrokeAtRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
+- (void)insertDynamicStroke:(id)arg1 strokeOrder:(int)arg2 atRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg3;
+- (void)insertSpillStroke:(id)arg1 atRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2;
+- (void)invalidateClearedStrokesInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
+- (void)invalidateCustomStrokes;
+- (void)invalidateDynamicStrokes;
+- (void)invalidateDynamicStrokesInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
+- (void)invalidateSpillStrokes;
+- (id)portalledStrokeLayer;
+- (BOOL)replaceCustomStrokeLayerWith:(id)arg1;
+- (BOOL)replaceDefaultStrokeLayerWith:(id)arg1;
+- (BOOL)replaceDynamicStrokeLayerWith:(id)arg1;
+- (void)setClearedStrokeLayer:(id)arg1;
+- (void)setCustomStrokeLayer:(id)arg1;
+- (void)setDefaultStrokeLayer:(id)arg1;
+- (void)setDynamicStrokeLayer:(id)arg1;
+- (void)setSpillStrokeLayer:(id)arg1;
 - (void)setStackKind:(int)arg1;
-- (void)setStrokeLayers:(id)arg1;
 - (void)setType:(int)arg1;
+- (id)spillStrokeLayer;
 - (int)stackKind;
-- (id)strokeLayers;
+- (id)strokeLayerEnumeration;
 - (int)type;
-- (void)unlock;
 
 @end

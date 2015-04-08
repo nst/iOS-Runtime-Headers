@@ -9,6 +9,7 @@
     int _index;
     BOOL _loaded;
     BOOL _loading;
+    float _navigationBarVerticalOffset;
     BOOL _overlayHidden;
     NSString *_password;
     <QLPreviewItem> *_previewItem;
@@ -41,6 +42,7 @@
 @property int index;
 @property BOOL loaded;
 @property BOOL loading;
+@property float navigationBarVerticalOffset;
 @property(retain) NSString * password;
 @property(retain) <QLPreviewItem> * previewItem;
 @property int previewMode;
@@ -81,6 +83,9 @@
 - (BOOL)loaded;
 - (BOOL)loading;
 - (int)modalPresentationStyle;
+- (float)navigationBarVerticalOffset;
+- (BOOL)needsContentInset;
+- (BOOL)needsContentInsetEvenIfNavigationBarIsHidden;
 - (BOOL)overlayIsHidden;
 - (id)password;
 - (id)pdfPreviewData;
@@ -89,6 +94,7 @@
 - (id)printPageHelper;
 - (id)printPageRenderer;
 - (void)requiresDisplayBundle:(id)arg1 withHints:(id)arg2;
+- (id)scrollView;
 - (void)scrubToValue:(double)arg1;
 - (void)setClientContext:(struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })arg1;
 - (void)setDelegate:(id)arg1;
@@ -102,7 +108,9 @@
 - (void)setPreviewMode:(int)arg1;
 - (void)setupAirPlayView;
 - (void)togglePlayState;
+- (void)updateContentOffsetAnimated:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidUpdate;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -69,6 +69,7 @@
 @property(readonly) NSString * importSessionID;
 @property(readonly) BOOL isCameraRoll;
 @property(readonly) BOOL isCloudSharedAlbum;
+@property(readonly) BOOL isLastImportedAlbum;
 @property(readonly) BOOL isLibrary;
 @property(readonly) BOOL isMultipleContributorCloudSharedAlbum;
 @property(readonly) BOOL isOwnedCloudSharedAlbum;
@@ -78,11 +79,11 @@
 @property(readonly) BOOL isSmartCollection;
 @property(readonly) BOOL isStandInCollection;
 @property(readonly) BOOL isWallpaperCollection;
+@property(readonly) BOOL keyAssetsAtEnd;
 @property(readonly) NSArray * localizedLocationNames;
 @property(readonly) int pendingItemsCount;
 @property(readonly) int pendingItemsType;
 @property(readonly) int plAlbumKind;
-@property(readonly) BOOL pu_prefersShowingBottomContent;
 @property(readonly) PHQuery * query;
 @property(readonly) BOOL shouldDeleteWhenEmpty;
 @property(copy,readonly) id sortingComparator;
@@ -106,6 +107,7 @@
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsTrashedState;
 + (id)pl_PHAssetCollectionForAssetContainer:(id)arg1;
++ (id)pl_PHAssetCollectionForAssetContainer:(id)arg1 includeTrash:(BOOL)arg2;
 + (id)posterImageForAssetCollection:(id)arg1;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 subtype:(int)arg2;
@@ -147,6 +149,7 @@
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
 - (BOOL)isCameraRoll;
 - (BOOL)isCloudSharedAlbum;
+- (BOOL)isLastImportedAlbum;
 - (BOOL)isLibrary;
 - (BOOL)isMultipleContributorCloudSharedAlbum;
 - (BOOL)isOwnedCloudSharedAlbum;
@@ -156,6 +159,7 @@
 - (BOOL)isSmartCollection;
 - (BOOL)isStandInCollection;
 - (BOOL)isWallpaperCollection;
+- (BOOL)keyAssetsAtEnd;
 - (id)localizedLocationNames;
 - (id)localizedSharedByLabelAllowsEmail:(BOOL)arg1;
 - (id)localizedTitle;
@@ -164,7 +168,6 @@
 - (int)plAlbumKind;
 - (id)pl_assetContainer;
 - (BOOL)pl_isWallpaperAlbum;
-- (BOOL)pu_prefersShowingBottomContent;
 - (id)query;
 - (BOOL)shouldDeleteWhenEmpty;
 - (id)sortingComparator;

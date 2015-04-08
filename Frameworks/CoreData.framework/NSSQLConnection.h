@@ -25,7 +25,10 @@
 - (void)awake;
 - (void)beginTransaction;
 - (void)bindTempTableForBindIntarray:(id)arg1;
+- (void)cacheStatement:(id)arg1 forRequestWithIdentifier:(id)arg2;
+- (id)cachedStatementForRequestWithIdentifier:(id)arg1;
 - (BOOL)canConnect;
+- (void)clearCachedStatementForRequestWithIdentifier:(id)arg1;
 - (id)columnsToFetch;
 - (void)commitTransaction;
 - (void)connect;
@@ -42,6 +45,7 @@
 - (BOOL)databaseIsEmpty;
 - (void)dealloc;
 - (void)deleteRow:(id)arg1;
+- (id)deleteTransactionEntriesAfterPeerState:(id)arg1 forStoreName:(id)arg2;
 - (id)describeResults;
 - (void)didCreateSchema;
 - (void)disconnect;

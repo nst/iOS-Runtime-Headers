@@ -5,7 +5,7 @@
 @interface _UIAlertControllerAlertPresentationController : _UIAlertControllerPresentationController {
 }
 
-- (id)_presentationControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
+- (id)_presentationControllerForTraitCollection:(id)arg1;
 - (int)attributeToAlignAlertControllerViewBy;
 
 @end

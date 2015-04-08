@@ -9,11 +9,18 @@
 @interface PHImageRequestOptions : NSObject <NSCopying> {
     BOOL _allowPlaceholder;
     double _aspectRatioHint;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _cachingCompletedHandler;
+
+    BOOL _degradedFormatPreferJPEG;
     BOOL _deliveryFirstResultAsynchronously;
     int _deliveryMode;
     double _demoteFactor;
     double _downloadUpdateInterval;
     int _loadingMode;
+    BOOL _memoryCachingAllowed;
     BOOL _networkAccessAllowed;
     struct CGRect { 
         struct CGPoint { 
@@ -38,11 +45,14 @@
 
 @property BOOL allowPlaceholder;
 @property double aspectRatioHint;
+@property(copy) id cachingCompletedHandler;
+@property BOOL degradedFormatPreferJPEG;
 @property BOOL deliveryFirstResultAsynchronously;
 @property int deliveryMode;
 @property double demoteFactor;
 @property double downloadUpdateInterval;
 @property int loadingMode;
+@property(getter=isMemoryCachingAllowed) BOOL memoryCachingAllowed;
 @property(getter=isNetworkAccessAllowed) BOOL networkAccessAllowed;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } normalizedCropRect;
 @property(copy) id progressHandler;
@@ -56,13 +66,16 @@
 - (void).cxx_destruct;
 - (BOOL)allowPlaceholder;
 - (double)aspectRatioHint;
+- (id)cachingCompletedHandler;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)degradedFormatPreferJPEG;
 - (BOOL)deliveryFirstResultAsynchronously;
 - (int)deliveryMode;
 - (double)demoteFactor;
 - (id)description;
 - (double)downloadUpdateInterval;
 - (id)init;
+- (BOOL)isMemoryCachingAllowed;
 - (BOOL)isNetworkAccessAllowed;
 - (BOOL)isSynchronous;
 - (int)loadingMode;
@@ -72,11 +85,14 @@
 - (int)resizeMode;
 - (void)setAllowPlaceholder:(BOOL)arg1;
 - (void)setAspectRatioHint:(double)arg1;
+- (void)setCachingCompletedHandler:(id)arg1;
+- (void)setDegradedFormatPreferJPEG:(BOOL)arg1;
 - (void)setDeliveryFirstResultAsynchronously:(BOOL)arg1;
 - (void)setDeliveryMode:(int)arg1;
 - (void)setDemoteFactor:(double)arg1;
 - (void)setDownloadUpdateInterval:(double)arg1;
 - (void)setLoadingMode:(int)arg1;
+- (void)setMemoryCachingAllowed:(BOOL)arg1;
 - (void)setNetworkAccessAllowed:(BOOL)arg1;
 - (void)setNormalizedCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setProgressHandler:(id)arg1;

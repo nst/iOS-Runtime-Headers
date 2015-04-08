@@ -5,6 +5,10 @@
 @interface MCDComposersViewController : MCDArtistsViewController {
 }
 
-+ (Class)musicProxyClass;
++ (int)containerItemType;
++ (id)itemPersistentIDProperty;
++ (id)persistentIDProperty;
+
+- (void)defaultsDidChange;
 
 @end

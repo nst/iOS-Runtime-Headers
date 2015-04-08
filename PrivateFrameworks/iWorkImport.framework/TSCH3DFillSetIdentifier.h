@@ -10,9 +10,9 @@
 @class NSString;
 
 @interface TSCH3DFillSetIdentifier : NSObject {
-    int mFillPropertyType;
-    unsigned int mSeriesIndex;
-    NSString *mTextureSetID;
+    int _fillPropertyType;
+    int _seriesIndex;
+    NSString *_textureSetID;
 }
 
 @property(readonly) unsigned int seriesIndex;
@@ -22,17 +22,18 @@
 + (id)identifierWithContentsOfDictionary:(id)arg1;
 + (id)identifierWithFillName:(id)arg1 seriesName:(id)arg2 textureSetID:(id)arg3;
 + (id)identifierWithFillPropertyType:(int)arg1 seriesIndex:(unsigned int)arg2 textureSetID:(id)arg3;
-+ (id)instanceWithArchive:(const struct Chart3DFillArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DLightingModelArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; int x5; unsigned int x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
-+ (id)instanceWithDEPRECATEDArchive:(const struct DEPRECATEDChart3DFillArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FillArchive {} *x3; struct Chart3DLightingModelArchive {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; int x6; unsigned int x7; int x8; unsigned int x9[1]; }*)arg1 unarchiver:(id)arg2;
++ (id)instanceWithArchive:(const struct Chart3DFillArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Chart3DLightingModelArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; int x7; unsigned int x8; }*)arg1 unarchiver:(id)arg2;
++ (id)instanceWithDEPRECATEDArchive:(const struct DEPRECATEDChart3DFillArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct FillArchive {} *x5; struct Chart3DLightingModelArchive {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; int x8; unsigned int x9; }*)arg1 unarchiver:(id)arg2;
 
 - (unsigned int)countOfSeriesInFillSet;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (void)didInitFromSOS;
 - (int)fillPropertyTypeFromName:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithArchive:(const struct Chart3DFillArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DLightingModelArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; int x5; unsigned int x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct Chart3DFillArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Chart3DLightingModelArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; int x7; unsigned int x8; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithContentsOfDictionary:(id)arg1;
 - (id)initWithFillName:(id)arg1 seriesName:(id)arg2 textureSetID:(id)arg3;
 - (id)initWithFillPropertyType:(int)arg1 seriesIndex:(unsigned int)arg2 textureSetID:(id)arg3;
@@ -51,9 +52,10 @@
 - (id)p_version;
 - (id)sageFillName;
 - (id)sageSeriesName;
-- (void)saveToArchive:(struct Chart3DFillArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DLightingModelArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; int x5; unsigned int x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct Chart3DFillArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Chart3DLightingModelArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; int x7; unsigned int x8; }*)arg1 archiver:(id)arg2;
 - (unsigned int)seriesIndex;
 - (unsigned int)seriesIndexFromSageSeriesName:(id)arg1;
+- (void)setSeriesIndex:(unsigned int)arg1;
 - (id)textureSetFilename;
 - (id)textureSetID;
 

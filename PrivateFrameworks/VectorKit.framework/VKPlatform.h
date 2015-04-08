@@ -3,6 +3,7 @@
  */
 
 @interface VKPlatform : NSObject {
+    BOOL _lowPerformanceDevice;
     unsigned int _memSize;
     int _numCPUs;
     BOOL _proceduralRoadAlpha;
@@ -14,6 +15,7 @@
 
 @property(readonly) BOOL canMakeSharingThumbnails;
 @property(readonly) BOOL isPad;
+@property(readonly) BOOL lowPerformanceDevice;
 @property(readonly) float mainScreenPPI;
 @property(readonly) float mainScreenScale;
 @property(readonly) float maxContentScaleForRendering;
@@ -44,6 +46,7 @@
 - (void)dealloc;
 - (id)init;
 - (BOOL)isPad;
+- (BOOL)lowPerformanceDevice;
 - (float)mainScreenPPI;
 - (float)mainScreenScale;
 - (float)maxContentScaleForRendering;

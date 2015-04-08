@@ -7,14 +7,13 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <TSUStreamReadChannel>, NSObject<OS_dispatch_queue>, NSString;
+@class <TSUStreamReadChannel>, NSString;
 
 @interface TSUZipInflateReadChannel : NSObject <TSUStreamReadChannel> {
     unsigned int _CRC;
     char *_outBuffer;
     unsigned long _outBufferSize;
     <TSUStreamReadChannel> *_readChannel;
-    NSObject<OS_dispatch_queue> *_readQueue;
     unsigned long _remainingUncompressedSize;
     struct z_stream_s { 
         char *next_in; 
@@ -43,10 +42,10 @@
 - (void).cxx_destruct;
 - (void)close;
 - (void)dealloc;
-- (void)handleFailureWithQueue:(id)arg1 handler:(id)arg2 error:(id)arg3;
+- (void)handleFailureWithHandler:(id)arg1 error:(id)arg2;
 - (id)initWithReadChannel:(id)arg1 uncompressedSize:(unsigned long)arg2 CRC:(unsigned int)arg3 validateCRC:(BOOL)arg4;
 - (void)prepareBuffer;
-- (BOOL)processData:(id)arg1 inflateResult:(int*)arg2 CRC:(unsigned int*)arg3 isDone:(BOOL)arg4 handlerQueue:(id)arg5 handler:(id)arg6;
-- (void)readWithQueue:(id)arg1 handler:(id)arg2;
+- (BOOL)processData:(id)arg1 inflateResult:(int*)arg2 CRC:(unsigned int*)arg3 isDone:(BOOL)arg4 handler:(id)arg5;
+- (void)readWithHandler:(id)arg1;
 
 @end

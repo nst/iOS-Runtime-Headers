@@ -114,6 +114,16 @@
             struct FragmentedPool<ggl::BuildingFlat::Shader::Setup> {} *__first_; 
         } __ptr_; 
     } _fillShaderSetupPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::FoggedBuilding::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::FoggedBuilding::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::FoggedBuilding::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::FoggedBuilding::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::FoggedBuilding::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    } _foggedBuildingShaderSetupPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::FoggedBuildingTop::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::FoggedBuildingTop::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::FoggedBuildingTop::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::FoggedBuildingTop::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::FoggedBuildingTop::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    } _foggedTopShaderSetupPool;
     VKMercatorTerrainHeightCache *_heightCache;
     BOOL _initializedStyles;
     VK3DObjectSubMapModel *_landmarksModel;

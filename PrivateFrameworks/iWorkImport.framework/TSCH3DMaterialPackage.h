@@ -8,6 +8,7 @@
 + (id)package;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)didInitFromSOS;
 - (BOOL)hasCompleteData;
 - (unsigned int)hash;
 - (id)init;

@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, NSHashTable, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_group>, NSUUID;
+@class NSArray, NSHashTable, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_group>, NSUUID, TSPObject;
 
 @interface TSPArchiver : TSPArchiverBase {
     NSHashTable *_aggregatedCommandToModelReferences;
@@ -19,6 +19,7 @@
     NSObject<OS_dispatch_group> *_archiveGroup;
     unsigned long long _documentReadVersion;
     unsigned long long _documentWriteVersion;
+    TSPObject *_explicitComponentRootObject;
     BOOL _flags;
     NSUUID *_objectUUID;
     NSObject<OS_dispatch_group> *_serializeGroup;
@@ -35,6 +36,7 @@
 @property(readonly) NSObject<OS_dispatch_group> * archiveGroup;
 @property(readonly) unsigned long long documentReadVersion;
 @property(readonly) unsigned long long documentWriteVersion;
+@property(readonly) TSPObject * explicitComponentRootObject;
 @property unsigned long long messageVersion;
 @property(readonly) BOOL needsArchive;
 @property(readonly) NSUUID * objectUUID;
@@ -45,9 +47,6 @@
 
 - (void).cxx_destruct;
 - (id)addAlternateForMessageVersion:(unsigned long long)arg1;
-- (void)addOwnedSparseReferenceArray:(id)arg1 toArchive:(struct SparseReferenceArrayArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::SparseReferenceArrayArchive_Entry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg2;
-- (void)addSparseReferenceArray:(id)arg1 toArchive:(struct SparseReferenceArrayArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::SparseReferenceArrayArchive_Entry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg2;
-- (void)addSparseReferenceArray:(id)arg1 toArchive:(struct SparseReferenceArrayArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::SparseReferenceArrayArchive_Entry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg2 owned:(BOOL)arg3;
 - (void)aggregateReferencesFromArchiver:(id)arg1;
 - (id)aggregatedCommandToModelReferences;
 - (id)aggregatedDataReferences;
@@ -62,6 +61,7 @@
 - (void)cleanup;
 - (unsigned long long)documentReadVersion;
 - (unsigned long long)documentWriteVersion;
+- (id)explicitComponentRootObject;
 - (void)fail;
 - (id)initWithObject:(id)arg1;
 - (BOOL)needsArchive;
@@ -73,6 +73,6 @@
 - (id)serializedData;
 - (BOOL)shouldSaveAlternates;
 - (BOOL)success;
-- (BOOL)updateMessageInfo:(struct MessageInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5; unsigned int x6; struct RepeatedPtrField<TSP::FieldInfo> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; int x12; unsigned int x13[1]; }*)arg1 withArchiver:(id)arg2;
+- (BOOL)updateMessageInfo:(struct MessageInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; unsigned int x7; unsigned int x8; struct RepeatedPtrField<TSP::FieldInfo> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; struct RepeatedField<unsigned long long> { unsigned long long *x_12_1_1; int x_12_1_2; int x_12_1_3; } x12; int x13; }*)arg1 withArchiver:(id)arg2;
 
 @end

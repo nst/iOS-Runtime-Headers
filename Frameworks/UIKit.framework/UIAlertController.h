@@ -2,19 +2,23 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSAttributedString, NSMutableArray, NSObject<UIAlertControllerVisualStyleProviding>, NSSet, NSString, UIAlertAction, UIGestureRecognizer, UIPopoverController, UIView, UIViewController, _UIAlertControllerTextFieldViewController;
+@class NSArray, NSAttributedString, NSMutableArray, NSObject<UIAlertControllerVisualStyleProviding>, NSSet, NSString, UIAlertAction, UIPopoverController, UITapGestureRecognizer, UIView, UIViewController, _UIAlertControllerTextFieldViewController;
 
 @interface UIAlertController : UIViewController <UIAlertControllerContaining, UIAlertControllerVisualStyleProviding, _UIAlertControllerTextFieldViewControllerContaining> {
     UIPopoverController *__compatibilityPopoverController;
-    UIAlertAction *__defaultAlertAction;
     BOOL __shouldAllowNilParameters;
     BOOL __shouldFlipFrameForShimDismissal;
+    NSMutableArray *_actionDelimiterIndices;
     NSMutableArray *_actions;
+    NSAttributedString *_attributedDetailMessage;
     NSAttributedString *_attributedMessage;
     NSAttributedString *_attributedTitle;
-    UIGestureRecognizer *_backButtonDismissGestureRecognizer;
+    UITapGestureRecognizer *_backButtonDismissGestureRecognizer;
     UIAlertAction *_cancelAction;
     UIViewController *_contentViewController;
+    UIAlertAction *_defaultAction;
+    BOOL _hasPreservedInputViews;
+    BOOL _hidden;
     NSSet *_linkedAlertControllers;
     NSString *_message;
     id _ownedTransitioningDelegate;
@@ -26,12 +30,14 @@
     BOOL _textFieldsHidden;
 }
 
+@property(readonly) NSArray * _actionDelimiterIndices;
 @property(readonly) NSMutableArray * _actions;
 @property(readonly) UIAlertAction * _cancelAction;
 @property(setter=_setCompatibilityPopoverController:) UIPopoverController * _compatibilityPopoverController;
 @property(setter=_setDefaultAlertAction:) UIAlertAction * _defaultAlertAction;
 @property(readonly) UIView * _dimmingView;
 @property(readonly) UIView * _foregroundView;
+@property(getter=_isHidden,setter=_setHidden:) BOOL _hidden;
 @property(readonly) int _resolvedStyle;
 @property(readonly) BOOL _shouldAlignToKeyboard;
 @property(setter=_setShouldAllowNilParameters:) BOOL _shouldAllowNilParameters;
@@ -39,12 +45,14 @@
 @property BOOL _shouldFlipFrameForShimDismissal;
 @property(readonly) BOOL _shouldProvideDimmingView;
 @property(setter=_setTextFieldsHidden:) BOOL _textFieldsHidden;
-@property(readonly) NSArray * actions;
+@property NSArray * actions;
+@property(getter=_attributedDetailMessage,setter=_setAttributedDetailMessage:,copy) NSAttributedString * attributedDetailMessage;
 @property(getter=_attributedMessage,setter=_setAttributedMessage:,copy) NSAttributedString * attributedMessage;
 @property(getter=_attributedTitle,setter=_setAttributedTitle:,copy) NSAttributedString * attributedTitle;
 @property(retain) UIViewController * contentViewController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property(getter=_hasPreservedInputViews,setter=_setHasPreservedInputViews:) BOOL hasPreservedInputViews;
 @property(readonly) unsigned int hash;
 @property(copy) NSString * message;
 @property int preferredStyle;
@@ -59,19 +67,26 @@
 + (BOOL)_shouldUsePresentationController;
 + (id)alertControllerWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(int)arg3;
 + (id)notifyMeConfirmationControllerWithHandler:(id)arg1;
++ (id)pu_alertForCPLEnableError:(id)arg1 actionHandler:(id)arg2 cancelHandler:(id)arg3;
++ (id)pu_alertForStorageUpgradeLoadFailure;
++ (id)pu_deleteITunesContentAlertWithAssetCount:(int)arg1 includesPhotos:(BOOL)arg2 includesVideos:(BOOL)arg3 actionHandler:(id)arg4 cancelHandler:(id)arg5;
 
-- (void)_actionChanged:(id)arg1;
+- (id)_actionDelimiterIndices;
 - (void)_actionViewHighlightChanged:(id)arg1;
 - (void)_actionViewTapped:(id)arg1;
 - (id)_actions;
 - (void)_addActionWithTitle:(id)arg1 image:(id)arg2 style:(int)arg3 handler:(id)arg4;
 - (void)_addActionWithTitle:(id)arg1 style:(int)arg2 handler:(id)arg3;
 - (void)_addActionWithTitle:(id)arg1 style:(int)arg2 handler:(id)arg3 shouldDismissHandler:(id)arg4;
+- (void)_addSectionDelimiter;
 - (id)_alertControllerContainer;
 - (id)_alertControllerView;
 - (void)_attemptAnimatedDismissWithGestureRecognizer:(id)arg1;
+- (id)_attributedDetailMessage;
 - (id)_attributedMessage;
 - (id)_attributedTitle;
+- (void)_becomeFirstResponderIfAppropriate;
+- (int)_buttonTypeForBackGestureForIdiom:(int)arg1;
 - (BOOL)_canDismissWithGestureRecognizer;
 - (id)_cancelAction;
 - (void)_clearActionHandlers;
@@ -91,8 +106,12 @@
 - (id)_foregroundView;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (void)_gkAddCancelButtonWithNoAction;
+- (void)_handleReturn;
 - (BOOL)_hasContentToDisplay;
+- (BOOL)_hasPreservedInputViews;
+- (BOOL)_idiomSupportsBackGesture:(int)arg1;
 - (void)_installBackGestureRecognizer;
+- (BOOL)_isHidden;
 - (BOOL)_isPresentedAsPopover;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_logBeingDismissed;
@@ -100,6 +119,7 @@
 - (int)_modalPresentationStyleForResolvedStyle;
 - (struct __CFString { }*)_powerLoggingEventName;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (void)_preserveInputViewsAnimated:(BOOL)arg1;
 - (void)_recomputePreferredContentSize;
 - (void)_reevaluateResolvedStyle;
 - (void)_removeAllTextFields;
@@ -107,21 +127,28 @@
 - (BOOL)_requiresCustomPresentationController;
 - (int)_resolvedStyle;
 - (void)_resolvedStyleChanged;
+- (void)_restoreInputViewsAnimated:(BOOL)arg1;
 - (void)_returnKeyPressedInLastTextField;
+- (void)_setActions:(id)arg1;
+- (void)_setAttributedDetailMessage:(id)arg1;
 - (void)_setAttributedMessage:(id)arg1;
 - (void)_setAttributedTitle:(id)arg1;
 - (void)_setCompatibilityPopoverController:(id)arg1;
 - (void)_setDefaultAlertAction:(id)arg1;
+- (void)_setHasPreservedInputViews:(BOOL)arg1;
+- (void)_setHidden:(BOOL)arg1;
 - (void)_setShouldAllowNilParameters:(BOOL)arg1;
 - (void)_setShouldEnsureContentControllerViewIsVisibleOnAppearance:(BOOL)arg1;
 - (void)_setStyleProvider:(id)arg1;
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (BOOL)_shouldAlignToKeyboard;
 - (BOOL)_shouldAllowNilParameters;
+- (BOOL)_shouldBecomeFirstResponder;
 - (BOOL)_shouldDismissAction:(id)arg1;
 - (BOOL)_shouldEnsureContentControllerViewIsVisibleOnAppearance;
 - (BOOL)_shouldFitWidthToContentViewControllerWidth;
 - (BOOL)_shouldFlipFrameForShimDismissal;
+- (BOOL)_shouldPreserveInputViews;
 - (BOOL)_shouldProvideDimmingView;
 - (BOOL)_shouldSizeToFillSuperview;
 - (id)_styleProvider;
@@ -133,9 +160,11 @@
 - (void)_updateShouldAlignToKeyboard;
 - (void)_updateViewFrameForLandscapePresentationInShimIfNecessary;
 - (BOOL)_viewControllerIsPresentedInPopover:(id)arg1;
+- (id)_visualStyle;
 - (id)actions;
 - (void)addAction:(id)arg1;
 - (void)addTextFieldWithConfigurationHandler:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
 - (id)cancelAction;
 - (id)contentViewController;
 - (void)dealloc;
@@ -160,8 +189,8 @@
 - (id)textFields;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)unlinkAlertController:(id)arg1;
-- (void)viewDidAppear;
-- (void)viewDidDisappear;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

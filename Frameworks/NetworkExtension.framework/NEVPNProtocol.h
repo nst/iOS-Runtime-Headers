@@ -21,6 +21,7 @@
     int _keychainDomain;
     NSString *_passwordEncryption;
     NEKeychainItem *_passwordKeychainItem;
+    NSData *_passwordReference;
     NEProxySettings *_proxySettings;
     NSString *_serverAddress;
     int _type;

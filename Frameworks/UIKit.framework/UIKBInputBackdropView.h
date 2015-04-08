@@ -32,6 +32,7 @@
             float height; 
         } size; 
     } _savedStartRect;
+    int _style;
     float _transitionGap;
     float _transitionLeftOffset;
 }
@@ -49,6 +50,7 @@
 - (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 leftOffset:(float)arg2 gapWidth:(float)arg3 progress:(float)arg4 innerCorners:(unsigned int)arg5;
 - (void)_setInitialProgressWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setProgress:(float)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)_setRenderConfig:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 primaryBackdrop:(BOOL)arg2;
 - (id)inputBackdropFullView;

@@ -8,6 +8,7 @@
     <NSObject> *_containerStatusObserver;
     NSMutableDictionary *_containersByID;
     BOOL _didFetchAllContainers;
+    struct br_pacer_t { } *_invalidationPacer;
 }
 
 + (id)containerCache;

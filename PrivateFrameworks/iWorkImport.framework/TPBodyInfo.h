@@ -32,6 +32,7 @@
 @property NSObject<TSDContainerInfo> * parentInfo;
 @property(readonly) <TSWPOffscreenColumn> * previousTargetLastColumn;
 @property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
+@property(readonly) TSWPStorage * storage;
 @property(readonly) Class superclass;
 
 - (id)bodyStorage;
@@ -40,6 +41,7 @@
 - (id)copyWithContext:(id)arg1;
 - (id)geometry;
 - (void)inflateBodyLayout:(id)arg1;
+- (id)infoForSelectionPath:(id)arg1;
 - (BOOL)isAnchoredToText;
 - (BOOL)isAttachedToBodyText;
 - (BOOL)isFloatingAboveText;
@@ -60,5 +62,7 @@
 - (void)setGeometry:(id)arg1;
 - (void)setOwningAttachment:(id)arg1;
 - (void)setParentInfo:(id)arg1;
+- (void)setPrimitiveGeometry:(id)arg1;
+- (id)storage;
 
 @end

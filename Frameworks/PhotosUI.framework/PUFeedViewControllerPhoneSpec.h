@@ -26,7 +26,7 @@
 - (struct CGSize { float x1; float x2; })minimumVideoTileSize;
 - (id)photoBrowserSpec;
 - (id)photosPickerSpec;
-- (int)promptType;
+- (int)promptStyle;
 - (BOOL)shouldHideBarsInLandscape;
 - (BOOL)shouldShowLikeButtonForCollectionViewType:(int)arg1;
 - (BOOL)shouldShowSeeAllInSectionFootersInCollectionViewType:(int)arg1;

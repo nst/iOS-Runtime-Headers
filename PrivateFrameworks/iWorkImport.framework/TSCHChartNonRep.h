@@ -34,7 +34,9 @@
 - (BOOL)renderElements;
 - (BOOL)renderElementsShadowOnly;
 - (BOOL)renderElementsWithoutShadows;
+- (BOOL)renderGrid;
 - (BOOL)renderLabels;
+- (BOOL)renderReferenceLines;
 - (id)renderSeriesIndexSet;
 - (BOOL)renderTrendLinesForSeriesIndex:(unsigned int)arg1;
 - (id)renderValueIndexSetForSeries:(unsigned int)arg1;

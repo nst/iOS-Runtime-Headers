@@ -11,9 +11,7 @@
 + (BOOL)setLabelWrapBounds:(const struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; }*)arg1 forScene:(id)arg2;
 + (void)setSelectionPath:(id)arg1 selectionMode:(int)arg2 forScene:(id)arg3;
 
-- (void)addTitleAnimationToClips:(id)arg1;
 - (BOOL)isAnnotated;
-- (int)p_animationTextureSceneDelegateChunkPlane;
 - (void)p_renderLabel:(id)arg1;
 - (void)renderAnnotatedLabels:(id)arg1;
 - (id)renderInfoForSelectionPath:(id)arg1 info:(id)arg2;

@@ -7,8 +7,10 @@
 
 - (id)defaultDataFileName;
 - (id)genericToSpecificPropertyMap;
+- (unsigned int)gridOffsetToSeriesForScatterFormat:(int)arg1;
 - (void)p_initializeAxisIDs;
 - (Class)presetImagerClass;
+- (int)representativeGridValueAxisType;
 - (unsigned int)styleIndexForAxisID:(id)arg1;
 - (id)supportedAxisScales;
 - (id)supportedSeriesTypes;

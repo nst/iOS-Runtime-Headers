@@ -70,6 +70,8 @@
 @property(readonly) Class superclass;
 @property(copy) NSURL * url;
 
++ (id)passPlaceholder;
+
 - (id)_contentTypeByStrippingZipIfNeeded:(BOOL)arg1;
 - (id)_imageScalingKeyForImageScale:(unsigned int)arg1;
 - (id)attachmentManager;
@@ -136,6 +138,7 @@
 - (id)mimeType;
 - (id)part;
 - (id)pass;
+- (id)passWithError:(id*)arg1;
 - (id)path;
 - (id)previewItemTitle;
 - (id)previewItemURL;

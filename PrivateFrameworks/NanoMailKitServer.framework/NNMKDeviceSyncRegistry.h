@@ -14,6 +14,7 @@
     BOOL _isMoreMessagesRequestPending;
     BOOL _organizeByThread;
     NSString *_path;
+    BOOL _protectedChannelSupported;
     NNMKSyncedMailbox *_syncedMailbox;
 }
 
@@ -26,6 +27,7 @@
 @property BOOL isMoreMessagesRequestPending;
 @property BOOL organizeByThread;
 @property(readonly) NSString * path;
+@property BOOL protectedChannelSupported;
 @property(retain) NNMKSyncedMailbox * syncedMailbox;
 
 - (void).cxx_destruct;
@@ -62,6 +64,7 @@
 - (id)oldestDateReceived;
 - (BOOL)organizeByThread;
 - (id)path;
+- (BOOL)protectedChannelSupported;
 - (void)removeSyncedAccountForAccountWithId:(id)arg1;
 - (void)removeSyncedMessageForMessageWithId:(id)arg1;
 - (void)removeSyncedMessagesBeforeDateReceived:(id)arg1 adjustDateReceivedCapForAdding:(BOOL)arg2;
@@ -75,6 +78,7 @@
 - (void)setIsMoreMessagesRequestPending:(BOOL)arg1;
 - (void)setMoreMessagesRequestPending:(BOOL)arg1;
 - (void)setOrganizeByThread:(BOOL)arg1;
+- (void)setProtectedChannelSupported:(BOOL)arg1;
 - (void)setSyncedMailbox:(id)arg1;
 - (id)syncedAccountForAccountWithId:(id)arg1;
 - (id)syncedAccountIdsResendRequested;

@@ -22,7 +22,7 @@
 - (void)_revertAutoValuesOnModel:(id)arg1;
 - (void)_setBusy:(BOOL)arg1;
 - (void)disableAutoEnhanceOnModel:(id)arg1;
-- (void)enableAutoEnhanceOnModel:(id)arg1 baseImage:(id)arg2 valuesCalculator:(id)arg3 animated:(BOOL)arg4 completionHandler:(id)arg5;
+- (void)enableAutoEnhanceOnModel:(id)arg1 baseImage:(id)arg2 valuesCalculator:(id)arg3 allowRedEye:(BOOL)arg4 animated:(BOOL)arg5 completionHandler:(id)arg6;
 - (void)invalidateCachedAdjustments;
 - (BOOL)isAutoEnhanceEnabledForModel:(id)arg1;
 - (BOOL)isBusy;

@@ -6,6 +6,9 @@
     const char *_identifier;
 }
 
++ (void)_prepareStackCache;
++ (id)callStackSymbols;
++ (void)discardCallStackSymbols:(id)arg1;
 + (id)transaction:(const char *)arg1;
 
 - (void)dealloc;

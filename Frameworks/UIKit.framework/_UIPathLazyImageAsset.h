@@ -14,7 +14,6 @@
 @property(copy) NSArray * imagePaths;
 
 - (void)_clearResolvedImageResources;
-- (BOOL)_containsImagesInPath:(id)arg1;
 - (void)dealloc;
 - (BOOL)haveCGCacheImages;
 - (id)imagePaths;

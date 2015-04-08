@@ -10,9 +10,6 @@
 @class TSDDrawableInfo;
 
 @interface TSWPDrawableAttachment : TSWPAttachment {
-    float _cachedDescent;
-    unsigned int _cachedHash;
-    BOOL _cachedWasPICT;
     TSDDrawableInfo *_drawableInfo;
     float _hOffset;
     int _hOffsetType;
@@ -31,13 +28,13 @@
 
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (void)attachDrawable:(id)arg1;
+- (void)clearParentStorageForDealloc;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (float)descent;
 - (id)detachDrawable;
 - (id)drawable;
 - (int)elementKind;
-- (unsigned long long)enabledKnobMask;
 - (float)hOffset;
 - (int)hOffsetType;
 - (void)infoChanged;
@@ -51,9 +48,10 @@
 - (BOOL)isHTMLWrap;
 - (BOOL)isPartitioned;
 - (BOOL)isSearchable;
-- (void)loadMessage:(const struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; unsigned int x4; float x5; unsigned int x6; float x7; int x8; unsigned int x9[1]; }*)arg1 fromUnarchiver:(id)arg2;
+- (void)loadMessage:(const struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; unsigned int x6; float x7; unsigned int x8; float x9; }*)arg1 fromUnarchiver:(id)arg2;
+- (id)objectsForStyleMigrating;
 - (Class)positionerClass;
-- (void)saveMessage:(struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; unsigned int x4; float x5; unsigned int x6; float x7; int x8; unsigned int x9[1]; }*)arg1 toArchiver:(id)arg2;
+- (void)saveMessage:(struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; unsigned int x6; float x7; unsigned int x8; float x9; }*)arg1 toArchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setHOffset:(float)arg1;
 - (void)setHOffsetType:(int)arg1;
@@ -62,13 +60,14 @@
 - (void)setVOffsetType:(int)arg1;
 - (BOOL)specifiesEnabledKnobMask;
 - (id)subclassInitFromUnarchiver:(id)arg1;
+- (BOOL)supportsUUID;
 - (id)textRepresentationForCopy;
 - (id)textStorages;
 - (float)vOffset;
 - (int)vOffsetType;
-- (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
-- (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

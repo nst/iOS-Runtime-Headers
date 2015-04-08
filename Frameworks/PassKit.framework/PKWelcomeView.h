@@ -12,29 +12,28 @@
     UIImageView *_headerView;
     NSAttributedString *_message;
     UITextView *_messageView;
+    UIImageView *_shadowView;
+    BOOL _showActivityIndicator;
     NSAttributedString *_title;
     UITextView *_titleView;
 }
 
 @property(retain) UIButton * actionButton;
-@property(retain,readonly) UIActivityIndicatorView * activityIndicator;
 @property(retain) UIImage * headerImage;
 @property(copy) NSAttributedString * message;
+@property BOOL showActivityIndicator;
 @property(copy) NSAttributedString * title;
 
-+ (void)beginTrackingAction;
 + (float)bodySeparation;
 + (float)defaultHeight;
-+ (void)endTrackingAction;
 + (float)headerImageRegionHeight;
 + (BOOL)isAvailable;
-+ (BOOL)isPerformingAction;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })margins;
 + (id)messageFont;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textInsets;
 + (id)titleFont;
 
 - (id)actionButton;
-- (id)activityIndicator;
 - (void)dealloc;
 - (id)headerImage;
 - (id)init;
@@ -45,7 +44,9 @@
 - (void)setActionButton:(id)arg1;
 - (void)setHeaderImage:(id)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setShowActivityIndicator:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
+- (BOOL)showActivityIndicator;
 - (id)title;
 
 @end

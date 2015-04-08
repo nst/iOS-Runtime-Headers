@@ -27,6 +27,7 @@
 - (void)setUseSimplifiedEffect:(BOOL)arg1;
 - (void)setValue:(int)arg1;
 - (BOOL)shouldIgnoreForegroundColor;
+- (BOOL)shouldRespectOutputBlending;
 - (int)state;
 - (BOOL)useSimplifiedEffect;
 - (int)value;

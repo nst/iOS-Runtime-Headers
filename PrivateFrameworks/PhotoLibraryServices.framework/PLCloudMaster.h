@@ -24,12 +24,15 @@
 
 + (id)allCloudMastersInManagedObjectContext:(id)arg1;
 + (id)cloudMasterWithGUID:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)cloudMastersByGUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)cloudMastersWithGUIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 withCloudMasterGUID:(id)arg2;
 
 - (void)applyPropertiesFromCPLMasterChange:(id)arg1;
+- (void)applyResourcesFromCPLMasterChange:(id)arg1 inPhotoLibrary:(id)arg2;
+- (id)assetUUIDToCloudResources;
 - (void)awakeFromInsert;
 - (id)cloudResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
 - (id)cloudResourcesForResourceType:(unsigned int)arg1;

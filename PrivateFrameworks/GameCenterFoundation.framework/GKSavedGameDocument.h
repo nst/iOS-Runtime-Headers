@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSDate, NSOperationQueue, NSString, NSURL;
+@class NSDate, NSFileVersion, NSOperationQueue, NSString, NSURL;
 
 @interface GKSavedGameDocument : NSObject <NSFilePresenter> {
     NSString *_deviceName;
     NSURL *_fileURL;
+    NSFileVersion *_fileVersion;
     BOOL _hasConflict;
     BOOL _isConflictVersion;
     NSDate *_modificationDate;
@@ -17,6 +18,7 @@
 @property(copy,readonly) NSString * description;
 @property(retain) NSString * deviceName;
 @property(retain) NSURL * fileURL;
+@property(retain) NSFileVersion * fileVersion;
 @property BOOL hasConflict;
 @property(readonly) unsigned int hash;
 @property BOOL isConflictVersion;
@@ -35,6 +37,7 @@
 - (id)description;
 - (id)deviceName;
 - (id)fileURL;
+- (id)fileVersion;
 - (BOOL)hasConflict;
 - (id)initWithFileURL:(id)arg1;
 - (BOOL)isConflictVersion;
@@ -53,6 +56,7 @@
 - (void)saveData:(id)arg1 completionHandler:(id)arg2;
 - (void)setDeviceName:(id)arg1;
 - (void)setFileURL:(id)arg1;
+- (void)setFileVersion:(id)arg1;
 - (void)setHasConflict:(BOOL)arg1;
 - (void)setIsConflictVersion:(BOOL)arg1;
 - (void)setMetadata:(id)arg1;

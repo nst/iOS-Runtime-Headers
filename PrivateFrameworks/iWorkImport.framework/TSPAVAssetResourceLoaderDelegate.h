@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPDataStorage>, <TSUReadChannel>, NSObject<OS_dispatch_queue>, NSString;
+@class <TSUReadChannel>, NSObject<OS_dispatch_queue>, NSString, TSPData;
 
 @interface TSPAVAssetResourceLoaderDelegate : NSObject <AVAssetResourceLoaderDelegate> {
-    NSObject<OS_dispatch_queue> *_concurrentRequestQueue;
-    NSString *_contentTypeUTI;
-    <TSPDataStorage> *_dataStorage;
+    TSPData *_data;
+    long long _dataLength;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     <TSUReadChannel> *_readChannel;
+    NSObject<OS_dispatch_queue> *_requestHandlingQueue;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -18,11 +18,12 @@
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_provideData:(id)arg1 untilRequestCancelledForResourceLoadingRequest:(id)arg2;
+- (void)_provideContentInformationToLoadingRequest:(id)arg1;
+- (void)_provideDataToLoadingRequest:(id)arg1;
+- (void)_provideNextDataBlockToLoadingRequest:(id)arg1 completion:(id)arg2;
 - (void)dealloc;
 - (id)delegateQueue;
-- (id)init;
-- (id)initWithDataStorage:(id)arg1 contentTypeUTI:(id)arg2;
+- (id)initWithData:(id)arg1;
 - (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 
 @end

@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <TSADocumentRootDelegate>, NSArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, SFUCryptoKey, TSAAnnotationCache, TSAFunctionBrowserState, TSAShortcutController, TSCECalculationEngine, TSKViewState, TSTCustomFormatList;
+@class <TSADocumentRootDelegate>, NSArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, SFUCryptoKey, TSAAnnotationCache, TSAFunctionBrowserState, TSAShortcutController, TSCECalculationEngine, TSKCustomFormatList, TSKViewState, TSPLazyReference, TSTCustomFormatList, TSUWeakReference;
 
 @interface TSADocumentRoot : TSWPDocumentRoot <TSKImportExportDelegate> {
     TSAAnnotationCache *_annotationCache;
@@ -15,7 +15,10 @@
     TSCECalculationEngine *_calculationEngine;
     NSString *_creationLanguage;
     unsigned int _creationLanguageWritingDirection;
-    <TSADocumentRootDelegate> *_delegate;
+    TSUWeakReference *_delegateReference;
+    TSTCustomFormatList *_deprecatedTablesCustomFormatList;
+    BOOL _didLoadControllers;
+    BOOL _didLoadDocumentFromRevert;
     SFUCryptoKey *_documentCacheDecryptionKey;
     NSObject<OS_dispatch_queue> *_documentCacheDecryptionKeyAccessQueue;
     long _documentCacheOnceToken;
@@ -25,10 +28,10 @@
     BOOL _needsMovieCompatibilityUpgrade;
     int _needsToCaptureViewState;
     TSAShortcutController *_shortcutController;
-    TSTCustomFormatList *_tablesCustomFormatList;
+    TSKCustomFormatList *_tablesCustomFormatList;
     NSString *_templateIdentifier;
     NSMutableDictionary *_upgradeState;
-    TSKViewState *_viewState;
+    TSPLazyReference *_viewStateReference;
     NSMutableSet *_warnings;
 }
 
@@ -37,11 +40,12 @@
 @property(readonly) NSString * defaultDraftName;
 @property <TSADocumentRootDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(getter=isDocumentEditedSinceLastSave,readonly) BOOL documentEditedSinceLastSave;
+@property BOOL didLoadDocumentFromRevert;
 @property BOOL hasPreUFFVersion;
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL importingDesignDemoDoc;
 @property(readonly) BOOL isBrowsingVersions;
+@property(readonly) BOOL isClosed;
 @property(readonly) NSSet * missingFontWarningMessages;
 @property(readonly) NSString * name;
 @property BOOL needsMovieCompatibilityUpgrade;
@@ -51,17 +55,19 @@
 
 + (id)buildVersionHistoryPath;
 + (id)buildVersionHistoryPathPreUFF;
++ (id)keyPathsForValuesAffectingMaxMediaItemFileSize;
 + (void)localizeChartInfo:(id)arg1 withTemplateBundle:(id)arg2;
 + (void)localizeModelObject:(id)arg1 withTemplateBundle:(id)arg2;
 + (void)localizeTableInfo:(id)arg1 withTemplateBundle:(id)arg2;
 + (void)localizeTextStorage:(id)arg1 withTemplateBundle:(id)arg2;
-+ (id)persistenceWarningsForData:(id)arg1 isReadable:(BOOL)arg2 isExternal:(BOOL)arg3;
++ (id)persistenceWarningsForData:(id)arg1 flags:(unsigned int)arg2;
 + (struct CGSize { float x1; float x2; })previewImageMaxSizeForType:(unsigned int)arg1;
 + (struct CGSize { float x1; float x2; })previewImageSizeForType:(unsigned int)arg1;
 + (unsigned int)previewTypeForCurrentDevice;
 + (void)removeExistingPreviewsForDocumentAtPath:(id)arg1;
 + (id)scaledPreviewImageForType:(unsigned int)arg1 scalableImage:(id)arg2;
 + (id)supportedPreviewImageExtensions;
++ (id)supportedScalablePreviewNames;
 + (void)writePreviewImage:(id)arg1 group:(id)arg2 queue:(id)arg3 dataConsumerProvider:(id)arg4 completion:(id)arg5;
 + (void)writePreviewImage:(id)arg1 toPath:(id)arg2 withIntermediateDirectories:(BOOL)arg3 name:(id)arg4 group:(id)arg5 queue:(id)arg6 completion:(id)arg7;
 + (BOOL)writePreviewImagesToPackageDataWriter:(id)arg1 scalableImage:(id)arg2;
@@ -81,7 +87,7 @@
 - (id)commandForPropagatingPresetChangeCommand:(id)arg1 alwaysPreserveAppearance:(BOOL)arg2;
 - (int)compareLocationSortingInfo:(id)arg1 toSortingInfo:(id)arg2;
 - (id)consolidatedDocumentWarningsFromWarnings:(id)arg1;
-- (id)createViewStateRoot;
+- (id)createViewStateRootForContinuation:(BOOL)arg1;
 - (id)creationLanguage;
 - (id)customFormatList;
 - (id)dataFromDocumentCachePath:(id)arg1;
@@ -90,11 +96,11 @@
 - (id)delegate;
 - (void)didDownloadDocumentResources:(id)arg1 failedOrCancelledDocumentResources:(id)arg2 error:(id)arg3;
 - (void)didEnterBackground;
+- (BOOL)didLoadDocumentFromRevert;
 - (void)didSaveWithEncryptionChange;
 - (id)documentCachePath;
 - (void)documentCacheWasInvalidated;
 - (void)documentDidLoad;
-- (void)documentDidSave;
 - (void)enumerateStylesheetsUsingBlock:(id)arg1;
 - (BOOL)exportToPath:(id)arg1 exporter:(id)arg2 delegate:(id)arg3 error:(id*)arg4;
 - (BOOL)exportToPath:(id)arg1 exporter:(id)arg2 error:(id*)arg3;
@@ -108,9 +114,11 @@
 - (void)initializeForImport;
 - (void)insertTextPresetDisplayItemsPreservingGrouping:(id)arg1 insertAtBeginningOfGroup:(BOOL)arg2;
 - (void)invalidateViewState;
-- (BOOL)isDocumentEditedSinceLastSave;
+- (BOOL)isClosed;
 - (BOOL)isMultiPageForQuickLook;
-- (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct Reference {} *x11; struct Reference {} *x12; bool x13; int x14; unsigned int x15[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DocumentArchive {} *x5; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x12; struct Reference {} *x13; struct Reference {} *x14; struct Reference {} *x15; struct Reference {} *x16; bool x17; }*)arg1 unarchiver:(id)arg2;
+- (id)makeIsolatedStyleMapper;
+- (id)makeStyleMapper;
 - (id)missingFontWarningMessages;
 - (id)name;
 - (id)namedTextStyles;
@@ -119,6 +127,7 @@
 - (struct CGImageSource { }*)newImageSourceForDocumentCachePath:(id)arg1;
 - (void)pUpgradeHyperlinks;
 - (void)pUpgradeHyperlinksInStorage:(id)arg1;
+- (void)p_cleanupColumnStyles;
 - (id)p_documentCacheDecryptionKey;
 - (id)p_documentCacheDecryptionKeyAccessQueue;
 - (void)p_initializeDocumentCacheIfNeeded;
@@ -129,7 +138,12 @@
 - (void)p_replaceStyles:(id)arg1 andChildrenWithVariationOfStyle:(id)arg2;
 - (void)p_updateBuildVersionHistoryWithVersionOfTemplateBundle:(id)arg1;
 - (void)p_updateCreationLanguage;
+- (void)p_updateCreationLanguageAndLocale;
+- (void)p_upgradeCustomFormatList;
+- (void)p_upgradeDocumentCreationLocale;
+- (void)p_upgradeTablesIfNeeded;
 - (id)packageDataForWrite;
+- (void)pauseRecalculation;
 - (void)performHyperlinkUpgradesIfNecessaryForVersion:(unsigned long long)arg1;
 - (void)performStylesheetUpdatesIfNecessaryForVersion:(unsigned long long)arg1;
 - (void)prepareForSavingAsTemplate;
@@ -142,14 +156,17 @@
 - (id)referencedStylesOfClass:(Class)arg1;
 - (void)removeWarning:(id)arg1;
 - (void)resumeBackgroundActivities;
+- (void)resumeRecalculation;
 - (void)resumeThumbnailing;
-- (void)saveToArchive:(struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct Reference {} *x11; struct Reference {} *x12; bool x13; int x14; unsigned int x15[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DocumentArchive {} *x5; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x12; struct Reference {} *x13; struct Reference {} *x14; struct Reference {} *x15; struct Reference {} *x16; bool x17; }*)arg1 archiver:(id)arg2;
 - (void)setAnnotationCache:(id)arg1;
 - (void)setBuildVersionHistory:(id)arg1;
 - (void)setCalculationEngine:(id)arg1;
 - (void)setCreationLanguage:(id)arg1;
-- (void)setCustomFormatList:(id)arg1;
+- (void)setCustomFormatListToUpgrade:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDidLoadDocumentFromRevert:(BOOL)arg1;
+- (void)setDocumentCreationLocale:(id)arg1;
 - (void)setFunctionBrowserState:(id)arg1;
 - (void)setHasPreUFFVersion:(BOOL)arg1;
 - (void)setNeedsMovieCompatibilityUpgrade:(BOOL)arg1;
@@ -157,17 +174,20 @@
 - (void)setTemplateIdentifier:(id)arg1;
 - (id)shortcutController;
 - (BOOL)shouldAllowDrawableInGroups:(id)arg1 forImport:(BOOL)arg2;
-- (void)stashUpgradeState:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct Reference {} *x11; struct Reference {} *x12; bool x13; int x14; unsigned int x15[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)stashUpgradeState:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DocumentArchive {} *x5; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x12; struct Reference {} *x13; struct Reference {} *x14; struct Reference {} *x15; struct Reference {} *x16; bool x17; }*)arg1 unarchiver:(id)arg2;
 - (void)suspendBackgroundActivities;
 - (void)suspendThumbnailing;
 - (id)templateIdentifier;
 - (id)uniqueDocumentCachePathForProposedPath:(id)arg1;
 - (void)updateViewStateWithRoot:(id)arg1;
 - (void)updateWritingDirection:(unsigned int)arg1;
+- (void)upgradeCellStyles;
 - (id)upgradeState;
-- (void)upgradeTextStylesForUnity;
+- (void)upgradeTextStylesForUnityAfterSingleStylesheetUpgrade;
+- (void)upgradeTextStylesForUnityBeforeSingleStylesheetUpgrade;
 - (void)upgradeTextStylesForUnityPlusFromFileFormatVersion:(unsigned long long)arg1;
 - (void)upgradeTextboxPresets;
+- (void)upgradeToSingleStylesheet;
 - (id)viewState;
 - (id)warningLocationDescriptionForAffectedObjects:(id)arg1 sortingInfo:(id*)arg2;
 - (id)warnings;

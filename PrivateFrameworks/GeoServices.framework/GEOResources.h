@@ -5,6 +5,7 @@
 @class GEOVersionManifest, NSMutableArray, NSString;
 
 @interface GEOResources : PBCodable <NSCopying> {
+    NSString *_abExperimentURL;
     NSString *_addressCorrectionInitURL;
     NSString *_addressCorrectionUpdateURL;
     NSMutableArray *_announcementsSupportedLanguages;
@@ -16,6 +17,7 @@
     NSString *_batchReverseGeocoderURL;
     NSString *_businessCallerIDURL;
     NSString *_businessNameResolutionURL;
+    NSString *_businessPortalBaseURL;
     NSString *_directionsURL;
     NSString *_dispatcherURL;
     NSString *_etaURL;
@@ -52,6 +54,7 @@
     NSMutableArray *_xmls;
 }
 
+@property(retain) NSString * abExperimentURL;
 @property(retain) NSString * addressCorrectionInitURL;
 @property(retain) NSString * addressCorrectionUpdateURL;
 @property(retain) NSMutableArray * announcementsSupportedLanguages;
@@ -63,12 +66,14 @@
 @property(retain) NSString * batchReverseGeocoderURL;
 @property(retain) NSString * businessCallerIDURL;
 @property(retain) NSString * businessNameResolutionURL;
+@property(retain) NSString * businessPortalBaseURL;
 @property(retain) NSString * directionsURL;
 @property(retain) NSString * dispatcherURL;
 @property(retain) NSString * etaURL;
 @property(retain) NSMutableArray * fontChecksums;
 @property(retain) NSMutableArray * fonts;
 @property(retain) NSString * forwardGeocoderURL;
+@property(readonly) BOOL hasAbExperimentURL;
 @property(readonly) BOOL hasAddressCorrectionInitURL;
 @property(readonly) BOOL hasAddressCorrectionUpdateURL;
 @property(readonly) BOOL hasAnnouncementsURL;
@@ -77,6 +82,7 @@
 @property(readonly) BOOL hasBatchReverseGeocoderURL;
 @property(readonly) BOOL hasBusinessCallerIDURL;
 @property(readonly) BOOL hasBusinessNameResolutionURL;
+@property(readonly) BOOL hasBusinessPortalBaseURL;
 @property(readonly) BOOL hasDirectionsURL;
 @property(readonly) BOOL hasDispatcherURL;
 @property(readonly) BOOL hasEtaURL;
@@ -127,6 +133,7 @@
 @property(retain) NSMutableArray * xmlChecksums;
 @property(retain) NSMutableArray * xmls;
 
+- (id)abExperimentURL;
 - (void)addAnnouncementsSupportedLanguages:(id)arg1;
 - (void)addAttribution:(id)arg1;
 - (void)addAttributionBadge:(id)arg1;
@@ -160,6 +167,7 @@
 - (id)batchReverseGeocoderURL;
 - (id)businessCallerIDURL;
 - (id)businessNameResolutionURL;
+- (id)businessPortalBaseURL;
 - (void)clearAnnouncementsSupportedLanguages;
 - (void)clearAttributionBadges;
 - (void)clearAttributions;
@@ -191,6 +199,7 @@
 - (id)fonts;
 - (unsigned int)fontsCount;
 - (id)forwardGeocoderURL;
+- (BOOL)hasAbExperimentURL;
 - (BOOL)hasAddressCorrectionInitURL;
 - (BOOL)hasAddressCorrectionUpdateURL;
 - (BOOL)hasAnnouncementsURL;
@@ -199,6 +208,7 @@
 - (BOOL)hasBatchReverseGeocoderURL;
 - (BOOL)hasBusinessCallerIDURL;
 - (BOOL)hasBusinessNameResolutionURL;
+- (BOOL)hasBusinessPortalBaseURL;
 - (BOOL)hasDirectionsURL;
 - (BOOL)hasDispatcherURL;
 - (BOOL)hasEtaURL;
@@ -247,6 +257,7 @@
 - (id)reverseGeocoderVersionsURL;
 - (id)searchAttributionManifestURL;
 - (id)searchURL;
+- (void)setAbExperimentURL:(id)arg1;
 - (void)setAddressCorrectionInitURL:(id)arg1;
 - (void)setAddressCorrectionUpdateURL:(id)arg1;
 - (void)setAnnouncementsSupportedLanguages:(id)arg1;
@@ -258,6 +269,7 @@
 - (void)setBatchReverseGeocoderURL:(id)arg1;
 - (void)setBusinessCallerIDURL:(id)arg1;
 - (void)setBusinessNameResolutionURL:(id)arg1;
+- (void)setBusinessPortalBaseURL:(id)arg1;
 - (void)setDirectionsURL:(id)arg1;
 - (void)setDispatcherURL:(id)arg1;
 - (void)setEtaURL:(id)arg1;

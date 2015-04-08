@@ -18,7 +18,13 @@
     id _cloudDataDeletedNotificationHandler;
 
     HMDCloudDataSyncStateFilter *_cloudDataSyncStateFilter;
-    BOOL _cloudRecordExists;
+    BOOL _cloudHomeDataRecordExists;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _cloudMetadataDeletedNotificationHandler;
+
+    BOOL _cloudMetadataRecordExists;
     NSData *_cloudServerTokenData;
     HMMessageDispatcher *_configSyncDispatcher;
     CKContainer *_container;
@@ -29,6 +35,7 @@
 
     NSObject<OS_dispatch_source> *_controllerKeyPollTimer;
     CKDatabase *_database;
+    BOOL _decryptionFailed;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -39,7 +46,10 @@
     CKSubscription *_homeDataBlobSubscription;
     CKRecord *_homeDataRecord;
     HMDHomeManager *_homeManager;
-    NSString *_lastChangeTag;
+    NSString *_lastHomeDataChangeTag;
+    NSString *_lastMetadataChangeTag;
+    CKRecordID *_metadataBlobRecordID;
+    CKRecord *_metadataRecord;
     HMMessageDispatcher *_msgDispatcher;
     BOOL _needConflictResolution;
     NSMutableArray *_pendingFetchedRecords;
@@ -54,7 +64,9 @@
 @property(retain) NSObject<OS_dispatch_queue> * clientCallbackQueue;
 @property(copy) id cloudDataDeletedNotificationHandler;
 @property(retain) HMDCloudDataSyncStateFilter * cloudDataSyncStateFilter;
-@property BOOL cloudRecordExists;
+@property BOOL cloudHomeDataRecordExists;
+@property(copy) id cloudMetadataDeletedNotificationHandler;
+@property BOOL cloudMetadataRecordExists;
 @property(retain) NSData * cloudServerTokenData;
 @property(retain) HMMessageDispatcher * configSyncDispatcher;
 @property(retain) CKContainer * container;
@@ -62,6 +74,7 @@
 @property(retain) NSObject<OS_dispatch_source> * controllerKeyPollTimer;
 @property(retain) CKDatabase * database;
 @property(copy,readonly) NSString * debugDescription;
+@property BOOL decryptionFailed;
 @property(copy,readonly) NSString * description;
 @property(copy) id fetchCompletionHandler;
 @property(readonly) unsigned int hash;
@@ -70,9 +83,12 @@
 @property(retain) CKSubscription * homeDataBlobSubscription;
 @property(retain) CKRecord * homeDataRecord;
 @property HMDHomeManager * homeManager;
-@property(retain) NSString * lastChangeTag;
+@property(retain) NSString * lastHomeDataChangeTag;
+@property(retain) NSString * lastMetadataChangeTag;
 @property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
 @property(readonly) NSUUID * messageTargetUUID;
+@property(retain) CKRecordID * metadataBlobRecordID;
+@property(retain) CKRecord * metadataRecord;
 @property(retain) HMMessageDispatcher * msgDispatcher;
 @property BOOL needConflictResolution;
 @property(retain) NSMutableArray * pendingFetchedRecords;
@@ -90,28 +106,33 @@
 - (void)_fetchExistingRecord:(id)arg1;
 - (void)_fetchNewChangesWithCompletionHandler:(id)arg1;
 - (void)_handleAccountStatus:(int)arg1 completionHandler:(id)arg2 error:(id)arg3;
+- (void)_handleChangedMetadataRecordWithEncodedData:(id)arg1;
 - (void)_handleChangedRecordWithEncodedData:(id)arg1;
+- (void)_handleControllerKeyAvailable;
 - (void)_handleFetchCompletedWithError:(id)arg1 serverToken:(id)arg2 completionHandler:(id)arg3;
 - (void)_handleKeychainSyncChanged:(id)arg1;
 - (void)_handleKeychainSyncStateChanged:(BOOL)arg1;
 - (BOOL)_isControllerKeyAvailable;
 - (void)_registerForMessages;
 - (void)_registerForPushNotifications;
-- (void)_resetCloudDataForCurrentAccount:(id)arg1;
-- (void)_resetRecordState;
+- (void)_resetCloudDataAndDeleteMetadataForCurrentAccount:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)_resetHomeDataRecordState;
+- (void)_resetMetadataRecordState;
 - (void)_setupSubscription;
 - (void)_startControllerKeyPollTimer;
 - (void)_startFetchPollTimer;
 - (void)_stopControllerKeyPollTimer;
 - (void)_stopFetchPollTimer;
 - (void)_updateCloudDataSyncFilterState:(BOOL)arg1;
-- (void)_uploadHomeData:(id)arg1 completionHandler:(id)arg2;
+- (void)_uploadHomeData:(id)arg1 metadata:(id)arg2 completionHandler:(id)arg3;
 - (BOOL)accountActive;
 - (id)callbackQueue;
 - (id)clientCallbackQueue;
 - (id)cloudDataDeletedNotificationHandler;
 - (id)cloudDataSyncStateFilter;
-- (BOOL)cloudRecordExists;
+- (BOOL)cloudHomeDataRecordExists;
+- (id)cloudMetadataDeletedNotificationHandler;
+- (BOOL)cloudMetadataRecordExists;
 - (id)cloudServerTokenData;
 - (id)configSyncDispatcher;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
@@ -122,6 +143,8 @@
 - (id)controllerKeyPollTimer;
 - (id)convertCKErrorToHMError:(id)arg1;
 - (id)database;
+- (void)dealloc;
+- (BOOL)decryptionFailed;
 - (id)fetchCompletionHandler;
 - (void)fetchCurrentAccountStateWithCompletionHandler:(id)arg1;
 - (id)homeDataBlobRecordID;
@@ -130,15 +153,18 @@
 - (id)homeDataRecord;
 - (id)homeManager;
 - (id)initWithCloudServerTokenData:(id)arg1 messageDispatcher:(id)arg2 cloudDataSyncStateFilter:(id)arg3 homeManager:(id)arg4 callbackQueue:(id)arg5;
-- (id)lastChangeTag;
+- (id)lastHomeDataChangeTag;
+- (id)lastMetadataChangeTag;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
+- (id)metadataBlobRecordID;
+- (id)metadataRecord;
 - (id)msgDispatcher;
 - (BOOL)needConflictResolution;
 - (id)pendingFetchedRecords;
 - (id)pollTimer;
 - (id)pushConnection;
-- (void)resetCloudDataForCurrentAccount:(id)arg1;
+- (void)resetCloudDataAndDeleteMetadataForCurrentAccount:(BOOL)arg1 completionHandler:(id)arg2;
 - (id)serverTokenData;
 - (void)setAccountActive:(BOOL)arg1;
 - (void)setCallbackQueue:(id)arg1;
@@ -146,7 +172,10 @@
 - (void)setCloudDataDeletedNotificationBlock:(id)arg1;
 - (void)setCloudDataDeletedNotificationHandler:(id)arg1;
 - (void)setCloudDataSyncStateFilter:(id)arg1;
-- (void)setCloudRecordExists:(BOOL)arg1;
+- (void)setCloudHomeDataRecordExists:(BOOL)arg1;
+- (void)setCloudMetadataDeletedNotificationBlock:(id)arg1;
+- (void)setCloudMetadataDeletedNotificationHandler:(id)arg1;
+- (void)setCloudMetadataRecordExists:(BOOL)arg1;
 - (void)setCloudServerTokenData:(id)arg1;
 - (void)setConfigSyncDispatcher:(id)arg1;
 - (void)setContainer:(id)arg1;
@@ -155,13 +184,17 @@
 - (void)setControllerKeyPollTimer:(id)arg1;
 - (void)setDataAvailableFromCloudCompletionBlock:(id)arg1;
 - (void)setDatabase:(id)arg1;
+- (void)setDecryptionFailed:(BOOL)arg1;
 - (void)setFetchCompletionHandler:(id)arg1;
 - (void)setHomeDataBlobRecordID:(id)arg1;
 - (void)setHomeDataBlobRecordZone:(id)arg1;
 - (void)setHomeDataBlobSubscription:(id)arg1;
 - (void)setHomeDataRecord:(id)arg1;
 - (void)setHomeManager:(id)arg1;
-- (void)setLastChangeTag:(id)arg1;
+- (void)setLastHomeDataChangeTag:(id)arg1;
+- (void)setLastMetadataChangeTag:(id)arg1;
+- (void)setMetadataBlobRecordID:(id)arg1;
+- (void)setMetadataRecord:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setNeedConflictResolution:(BOOL)arg1;
 - (void)setPendingFetchedRecords:(id)arg1;
@@ -170,7 +203,7 @@
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)updateAccountStatusChanged:(BOOL)arg1 completionHandler:(id)arg2;
-- (void)uploadHomeData:(id)arg1 completionHandler:(id)arg2;
+- (void)uploadHomeData:(id)arg1 metadata:(id)arg2 completionHandler:(id)arg3;
 - (id)uuid;
 - (id)workQueue;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPComponentWriteChannel>, NSString;
+@class <TSPComponentWriteChannel>, <TSPMutableCryptoInfo>, NSString;
 
 @interface TSPCryptoComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
     char *_buffer;
@@ -10,6 +10,9 @@
         unsigned int ctx[96]; 
     } _ccHmacContext;
     struct _CCCryptor { } *_cryptor;
+    unsigned long _decryptedBlockLength;
+    unsigned long _encodedBlockLength;
+    <TSPMutableCryptoInfo> *_encryptionInfo;
     <TSPComponentWriteChannel> *_writeChannel;
 }
 
@@ -20,10 +23,12 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_writeData:(id)arg1 updateHmac:(BOOL)arg2;
+- (BOOL)_finalizeBlockForClosing:(BOOL)arg1;
+- (BOOL)_initializeBlock;
+- (void)_writeData:(id)arg1 isDecryptedData:(BOOL)arg2;
 - (void)close;
 - (void)dealloc;
-- (id)initWithWriteChannel:(id)arg1 encryptionKey:(id)arg2;
+- (id)initWithWriteChannel:(id)arg1 encryptionInfo:(id)arg2;
 - (void)writeData:(id)arg1;
 
 @end

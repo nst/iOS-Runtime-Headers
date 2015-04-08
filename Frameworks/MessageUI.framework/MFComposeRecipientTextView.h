@@ -21,7 +21,7 @@
         unsigned int length; 
     } _dragSourceRange;
     BOOL _editable;
-    BOOL _focused;
+    BOOL _expanded;
     int _hideLastAtomComma;
     UIColor *_inactiveTextColor;
     UITextView *_inactiveTextView;
@@ -51,7 +51,7 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) BOOL didIgnoreFirstResponderResign;
 @property BOOL editable;
-@property BOOL focused;
+@property BOOL expanded;
 @property(readonly) unsigned int hash;
 @property int hideLastAtomComma;
 @property(retain) UIColor * inactiveTextColor;
@@ -143,8 +143,8 @@
 - (void)dragStartedWithItems:(id)arg1;
 - (void)dropItems:(id)arg1;
 - (BOOL)editable;
+- (BOOL)expanded;
 - (BOOL)finishEnteringRecipient;
-- (BOOL)focused;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDraggedItem:(id)arg1 isPivotView:(out BOOL*)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDroppedItem:(id)arg1;
 - (BOOL)hasContent;
@@ -177,7 +177,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setEditable:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setFocused:(BOOL)arg1;
+- (void)setExpanded:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHideLastAtomComma:(int)arg1;
 - (void)setInactiveTextColor:(id)arg1;

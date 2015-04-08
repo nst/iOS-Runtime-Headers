@@ -8,7 +8,6 @@
     NSDictionary *_additionalProperties;
     NSUUID *_documentUUID;
     unsigned long long _fileFormatVersion;
-    NSUUID *_nextVersionUUID;
     TSPDocumentRevision *_revision;
     NSUUID *_shareUUID;
     NSUUID *_versionUUID;
@@ -17,13 +16,13 @@
 @property(copy) NSDictionary * additionalProperties;
 @property(copy) NSUUID * documentUUID;
 @property unsigned long long fileFormatVersion;
-@property(readonly) NSUUID * nextVersionUUID;
 @property(copy) TSPDocumentRevision * revision;
 @property(readonly) NSUUID * shareUUID;
 @property(readonly) NSUUID * versionUUID;
 
 + (BOOL)documentIsEncryptedAtURL:(id)arg1;
 + (id)documentPropertiesRelativePath;
++ (id)documentRevisionAtURL:(id)arg1;
 + (id)documentUUIDAtURL:(id)arg1;
 + (id)shareIdentifierRelativePath;
 
@@ -42,7 +41,6 @@
 - (id)initWithDocumentURL:(id)arg1 error:(id*)arg2;
 - (id)initWithFilePackageURL:(id)arg1 zipArchive:(id)arg2 allowMissingPropertyList:(BOOL)arg3 error:(id*)arg4;
 - (id)initWithPropertiesURL:(id)arg1 error:(id*)arg2;
-- (id)nextVersionUUID;
 - (void)readDocumentPropertiesFromDictionary:(id)arg1;
 - (id)revision;
 - (void)setAdditionalProperties:(id)arg1;

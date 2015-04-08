@@ -7,14 +7,15 @@
 @interface WBSCloudHistoryVisitIdentifier : NSObject <NSCopying> {
     WBSHistoryItem *_associatedHistoryItem;
     WBSHistoryVisit *_associatedHistoryVisit;
+    unsigned int _hash;
     NSString *_urlString;
     double _visitTime;
 }
 
 @property(retain) WBSHistoryItem * associatedHistoryItem;
 @property(retain) WBSHistoryVisit * associatedHistoryVisit;
-@property(copy) NSString * urlString;
-@property double visitTime;
+@property(copy,readonly) NSString * urlString;
+@property(readonly) double visitTime;
 
 - (void).cxx_destruct;
 - (id)associatedHistoryItem;
@@ -26,8 +27,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)setAssociatedHistoryItem:(id)arg1;
 - (void)setAssociatedHistoryVisit:(id)arg1;
-- (void)setUrlString:(id)arg1;
-- (void)setVisitTime:(double)arg1;
 - (id)urlString;
 - (double)visitTime;
 

@@ -28,6 +28,7 @@
 - (id)initWithPixelWidth:(unsigned int)arg1 pixelHeight:(unsigned int)arg2;
 - (id)pixelData;
 - (unsigned int)pixelFormat;
+- (unsigned long)rowbytes;
 - (void)setAllowsMultiPassEncoding:(BOOL)arg1;
 - (void)setPixelData:(id)arg1;
 - (void)setPixelFormat:(unsigned int)arg1;

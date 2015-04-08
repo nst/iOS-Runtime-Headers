@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAddressFilter, GEOPDAmenitiesFilter, GEOPDBoundsFilter, GEOPDETAFilter, GEOPDEntityFilter, GEOPDFlyoverFilter, GEOPDHoursFilter, GEOPDPhotoFilter, GEOPDPlaceInfoFilter, GEOPDRatingFilter, GEOPDRawAttributeFilter, GEOPDReviewFilter, GEOPDRoadAccessInfoFilter, GEOPDStyleAttributesFilter;
+@class GEOPDAddressFilter, GEOPDAmenitiesFilter, GEOPDBoundsFilter, GEOPDBusinessClaimFilter, GEOPDETAFilter, GEOPDEntityFilter, GEOPDFlyoverFilter, GEOPDHoursFilter, GEOPDPhotoFilter, GEOPDPlaceInfoFilter, GEOPDRatingFilter, GEOPDRawAttributeFilter, GEOPDReviewFilter, GEOPDRoadAccessInfoFilter, GEOPDStyleAttributesFilter;
 
 @interface GEOPDComponentFilter : PBCodable <NSCopying> {
     GEOPDRoadAccessInfoFilter *_accessInfoFilter;
     GEOPDAddressFilter *_addressFilter;
     GEOPDAmenitiesFilter *_amenitiesFilter;
     GEOPDBoundsFilter *_boundsFilter;
+    GEOPDBusinessClaimFilter *_businessClaimFilter;
     GEOPDEntityFilter *_entityFilter;
     GEOPDETAFilter *_etaFilter;
     GEOPDFlyoverFilter *_flyoverFilter;
@@ -25,6 +26,7 @@
 @property(retain) GEOPDAddressFilter * addressFilter;
 @property(retain) GEOPDAmenitiesFilter * amenitiesFilter;
 @property(retain) GEOPDBoundsFilter * boundsFilter;
+@property(retain) GEOPDBusinessClaimFilter * businessClaimFilter;
 @property(retain) GEOPDEntityFilter * entityFilter;
 @property(retain) GEOPDETAFilter * etaFilter;
 @property(retain) GEOPDFlyoverFilter * flyoverFilter;
@@ -32,6 +34,7 @@
 @property(readonly) BOOL hasAddressFilter;
 @property(readonly) BOOL hasAmenitiesFilter;
 @property(readonly) BOOL hasBoundsFilter;
+@property(readonly) BOOL hasBusinessClaimFilter;
 @property(readonly) BOOL hasEntityFilter;
 @property(readonly) BOOL hasEtaFilter;
 @property(readonly) BOOL hasFlyoverFilter;
@@ -54,6 +57,7 @@
 - (id)addressFilter;
 - (id)amenitiesFilter;
 - (id)boundsFilter;
+- (id)businessClaimFilter;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -66,6 +70,7 @@
 - (BOOL)hasAddressFilter;
 - (BOOL)hasAmenitiesFilter;
 - (BOOL)hasBoundsFilter;
+- (BOOL)hasBusinessClaimFilter;
 - (BOOL)hasEntityFilter;
 - (BOOL)hasEtaFilter;
 - (BOOL)hasFlyoverFilter;
@@ -94,6 +99,7 @@
 - (void)setAddressFilter:(id)arg1;
 - (void)setAmenitiesFilter:(id)arg1;
 - (void)setBoundsFilter:(id)arg1;
+- (void)setBusinessClaimFilter:(id)arg1;
 - (void)setEntityFilter:(id)arg1;
 - (void)setEtaFilter:(id)arg1;
 - (void)setFlyoverFilter:(id)arg1;

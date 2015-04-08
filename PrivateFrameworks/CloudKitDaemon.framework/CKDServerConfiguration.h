@@ -34,6 +34,7 @@
 - (id)mescalCertURLForContainer:(id)arg1;
 - (unsigned long)mescalServerVersionForContainer:(id)arg1;
 - (id)mescalSessionURLForContainer:(id)arg1;
+- (double)publicIdentitiesExpirationTimeoutForContainer:(id)arg1;
 - (void)setAllowedAppVersionsCache:(id)arg1;
 - (void)setExpiry:(id)arg1;
 - (void)setValues:(id)arg1;

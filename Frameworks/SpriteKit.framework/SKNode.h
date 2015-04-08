@@ -56,7 +56,6 @@
 @property float zPosition;
 @property float zRotation;
 
-+ (unsigned int)hashDataWithBuffer:(char *)arg1 ofSize:(unsigned long)arg2;
 + (id)node;
 + (id)nodeWithFileNamed:(id)arg1;
 
@@ -102,14 +101,13 @@
 - (BOOL)hasActions;
 - (BOOL)hasChildren;
 - (BOOL)hasUniformAlphaAndIsVisible;
-- (unsigned int)hash;
 - (BOOL)inParentHierarchy:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)insertChild:(id)arg1 atIndex:(int)arg2;
 - (BOOL)intersectsNode:(id)arg1;
 - (BOOL)intersectsNode:(id)arg1 useAlphaTest:(BOOL)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToNode:(id)arg1;
 - (BOOL)isHidden;
 - (BOOL)isPaused;
 - (BOOL)isUserInteractionEnabled;

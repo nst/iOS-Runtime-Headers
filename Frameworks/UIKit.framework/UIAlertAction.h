@@ -6,14 +6,14 @@
    See Warning(s) below.
  */
 
-@class <_UIAlertActionRepresenting>, NSString, UIAlertController, UIImage;
+@class <_UIAlertActionRepresenting>, NSString, UIAlertController, UIColor, UIImage, UIViewController;
 
 @interface UIAlertAction : NSObject <NSCopying> {
     UIAlertController *__alertController;
     NSString *__descriptiveText;
-    BOOL __isDefault;
     <_UIAlertActionRepresenting> *__representer;
     BOOL _checked;
+    UIViewController *_contentViewController;
     BOOL _enabled;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -21,6 +21,8 @@
     id _handler;
 
     UIImage *_image;
+    UIColor *_imageTintColor;
+    BOOL _isDefault;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -33,12 +35,15 @@
 
     int _style;
     NSString *_title;
+    int _titleTextAlignment;
+    UIColor *_titleTextColor;
 }
 
 @property(setter=_setAlertController:) UIAlertController * _alertController;
 @property(setter=_setDescriptiveText:,copy) NSString * _descriptiveText;
 @property(setter=_setIsDefault:) BOOL _isDefault;
 @property(setter=_setRepresenter:) <_UIAlertActionRepresenting> * _representer;
+@property(getter=_contentViewController,setter=_setContentViewController:,retain) UIViewController * contentViewController;
 @property(getter=isEnabled) BOOL enabled;
 @property(copy) id handler;
 @property(retain) UIImage * image;
@@ -47,20 +52,31 @@
 @property int style;
 @property(copy) NSString * title;
 
++ (id)_actionWithContentViewController:(id)arg1 style:(int)arg2;
 + (id)_actionWithTitle:(id)arg1 descriptiveText:(id)arg2 image:(id)arg3 style:(int)arg4 handler:(id)arg5 shouldDismissHandler:(id)arg6;
 + (id)_actionWithTitle:(id)arg1 image:(id)arg2 style:(int)arg3 handler:(id)arg4 shouldDismissHandler:(id)arg5;
 + (id)actionWithTitle:(id)arg1 style:(int)arg2 handler:(id)arg3;
 
 - (id)_alertController;
+- (id)_contentViewController;
 - (id)_descriptiveText;
+- (void)_didAddContentViewController;
+- (id)_imageTintColor;
 - (BOOL)_isChecked;
 - (BOOL)_isDefault;
 - (id)_representer;
 - (void)_setAlertController:(id)arg1;
 - (void)_setChecked:(BOOL)arg1;
+- (void)_setContentViewController:(id)arg1;
 - (void)_setDescriptiveText:(id)arg1;
+- (void)_setImageTintColor:(id)arg1;
 - (void)_setIsDefault:(BOOL)arg1;
 - (void)_setRepresenter:(id)arg1;
+- (void)_setTitleTextAlignment:(int)arg1;
+- (void)_setTitleTextColor:(id)arg1;
+- (int)_titleTextAlignment;
+- (id)_titleTextColor;
+- (void)_willAddContentViewController;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

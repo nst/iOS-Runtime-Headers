@@ -25,12 +25,14 @@
 @property(getter=_isBackup,readonly) BOOL _isBackup;
 @property(getter=isConflict,readonly) BOOL conflict;
 @property(getter=isDiscardable) BOOL discardable;
+@property(copy,readonly) NSString * etag;
 @property(readonly) BOOL hasLocalContents;
 @property(readonly) BOOL hasThumbnail;
 @property(copy,readonly) NSString * localizedName;
 @property(copy,readonly) NSString * localizedNameOfSavingComputer;
 @property(copy,readonly) NSDate * modificationDate;
 @property(copy,readonly) NSString * originalPOSIXName;
+@property(copy,readonly) NSString * originatorName;
 @property(retain,readonly) <NSCoding> * persistentIdentifier;
 @property(getter=isResolved) BOOL resolved;
 @property(readonly) unsigned long long size;
@@ -64,6 +66,7 @@
 + (id)currentVersionOfItemAtURL:(id)arg1;
 + (void)discoverUbiquitousVersionsOfItemAtURL:(id)arg1 completionHandler:(id)arg2;
 + (void)getNonlocalVersionsOfItemAtURL:(id)arg1 completionHandler:(id)arg2;
++ (void)getNonlocalVersionsOfItemAtURL:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)otherVersionsOfItemAtURL:(id)arg1;
 + (BOOL)removeOtherVersionsOfItemAtURL:(id)arg1 error:(id*)arg2;
@@ -84,6 +87,7 @@
 - (BOOL)_preserveConflictVersionLocally;
 - (BOOL)_setDocumentInfo:(id)arg1;
 - (void)dealloc;
+- (id)etag;
 - (BOOL)hasLocalContents;
 - (BOOL)hasThumbnail;
 - (unsigned int)hash;
@@ -97,6 +101,7 @@
 - (id)localizedNameOfSavingComputer;
 - (id)modificationDate;
 - (id)originalPOSIXName;
+- (id)originatorName;
 - (id)persistentIdentifier;
 - (BOOL)removeAndReturnError:(id*)arg1;
 - (id)replaceItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;

@@ -9,7 +9,6 @@
 - (void)didUpdateLayer:(id)arg1;
 - (BOOL)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (BOOL)handleSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)p_hasContent;
 - (id)repForHandleSingleTap;
 

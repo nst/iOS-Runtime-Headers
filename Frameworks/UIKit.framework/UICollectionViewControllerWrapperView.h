@@ -8,5 +8,6 @@
 - (id)_collectionViewController;
 - (id)_viewControllerToNotifyOnLayoutSubviews;
 - (void)didMoveToSuperview;
+- (id)preferredFocusedItem;
 
 @end

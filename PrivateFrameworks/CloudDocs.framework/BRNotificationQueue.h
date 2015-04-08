@@ -14,7 +14,6 @@
 @property(readonly) unsigned int count;
 
 - (void)_filterIndex:(id)arg1;
-- (void)_processCallBacks;
 - (void)addDequeueCallback:(id)arg1;
 - (void)addNotification:(id)arg1 asDead:(BOOL)arg2;
 - (unsigned int)count;
@@ -23,6 +22,7 @@
 - (void)dequeue:(unsigned int)arg1 block:(id)arg2;
 - (id)description;
 - (id)init;
+- (void)processDequeueCallbacks;
 - (void)removeAllObjects;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class <WBSParsecSearchSessionDelegate>, NSMutableArray, NSMutableDictionary, NSURLSession, WBSCompletionQuery, WBSParsecSearchClient, WBSParsecSearchResultCache;
+@class <WBSCompletionListItem>, <WBSParsecSearchSessionDelegate>, NSMutableArray, NSMutableDictionary, NSURLSession, WBSCompletionQuery, WBSParsecSearchClient, WBSParsecSearchResult, WBSParsecSearchResultCache;
 
 @interface WBSParsecSearchSession : NSObject {
     WBSParsecSearchClient *_client;
@@ -10,12 +10,8 @@
     <WBSParsecSearchSessionDelegate> *_delegate;
     NSMutableArray *_feedbackActions;
     BOOL _hasRespondedToCurrentQuery;
-    struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { 
-        struct duration<long long, std::__1::ratio<1, 1000000000> > { 
-            long long __rep_; 
-        } __d_; 
-    } _latestQueryTimestamp;
-    double _minimumIntervalBetweenQueriesFromResponseHeaders;
+    WBSParsecSearchResult *_lastHiddenParsecResult;
+    <WBSCompletionListItem> *_lastLocalResultHidingParsecResult;
     NSMutableDictionary *_resultSetPrefixCache;
     WBSParsecSearchResultCache *_searchResultCache;
     struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { 
@@ -62,8 +58,7 @@
 - (id)currentQuery;
 - (void)dealloc;
 - (id)delegate;
-- (void)didDisplayCompletionListItems:(id)arg1 forQuery:(id)arg2;
-- (void)didDisplayCompletionListItems:(id)arg1 hidingParsecResult:(id)arg2 forQuery:(id)arg3;
+- (void)didDisplayCompletionListItems:(id)arg1 hidingParsecResult:(id)arg2 inFavorOfLocalResult:(id)arg3 forQuery:(id)arg4;
 - (void)didReceiveLocalResultsForQuery:(id)arg1;
 - (void)didReceiveWebSuggestionsForQuery:(id)arg1 fromSearchProvider:(id)arg2;
 - (id)initWithClient:(id)arg1;
@@ -74,7 +69,8 @@
 - (float)uiScale;
 - (void)userDidCancelSession;
 - (void)userDidCancelSession:(int)arg1;
+- (void)userDidEngageWithCardShowingResult:(id)arg1 onCardOfType:(id)arg2 actionType:(id)arg3 actionTarget:(id)arg4 destination:(id)arg5;
+- (void)userDidEngageWithCompletionListItem:(id)arg1 withCardActionDictionary:(id)arg2;
 - (void)userDidSelectCompletionListItem:(id)arg1;
-- (void)userDidSelectCompletionListItem:(id)arg1 hidingParsecResult:(id)arg2;
 
 @end

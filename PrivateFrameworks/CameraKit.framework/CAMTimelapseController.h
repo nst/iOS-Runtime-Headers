@@ -51,6 +51,8 @@
 - (BOOL)_ignoringTimerCallbacksForTearDown;
 - (BOOL)_ignoringTimerCallbacksWaitingForCaptureResponse;
 - (id)_inFlightTimelapseUUIDs;
+- (void)_notifyAGGDForDidStartCapturingWithState:(id)arg1;
+- (void)_notifyAGGDForDidStopCapturingWithState:(id)arg1;
 - (void)_notifyInsufficientDiskSpaceForContinuingCapture;
 - (void)_notifyInsufficientDiskSpaceForStartingCaptureWithNeededBytes:(long long)arg1 availableBytes:(long long)arg2;
 - (id)_pendingCompletedStates;

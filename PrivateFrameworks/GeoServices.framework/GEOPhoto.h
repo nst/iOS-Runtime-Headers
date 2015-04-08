@@ -19,8 +19,8 @@
 @property int photoType;
 @property(retain) NSString * uid;
 
-+ (id)photoWithYelpUserJSON:(id)arg1;
-
+- (id)_bestURLForSize:(int)arg1;
+- (id)_photoInfoForSize:(int)arg1 includeSmallerSizes:(BOOL)arg2;
 - (void)addPhotoInfo:(id)arg1;
 - (void)clearPhotoInfos;
 - (void)copyTo:(id)arg1;

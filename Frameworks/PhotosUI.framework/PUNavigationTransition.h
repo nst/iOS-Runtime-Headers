@@ -9,12 +9,14 @@
     UINavigationController *_navigationController;
     double _popDuration;
     double _pushDuration;
+    BOOL _wasStatusBarHiddenBeforeTransition;
 }
 
 @property(setter=_setOperation:) int _operation;
 @property UINavigationController * navigationController;
 @property(readonly) double popDuration;
 @property(readonly) double pushDuration;
+@property BOOL wasStatusBarHiddenBeforeTransition;
 
 + (id)animationControllerForOperation:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3 inNavigationController:(id)arg4;
 + (BOOL)shouldCrossFadeBottomBarsForNavigationController:(id)arg1;
@@ -33,9 +35,11 @@
 - (double)popDuration;
 - (double)pushDuration;
 - (void)setNavigationController:(id)arg1;
+- (void)setWasStatusBarHiddenBeforeTransition:(BOOL)arg1;
 - (void)transitionDidStartOperation:(int)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (double)transitionDuration:(id)arg1;
 - (void)transitionWillAnimateOperation:(int)arg1 interactive:(BOOL)arg2;
 - (void)transitionWillStartOperation:(int)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
+- (BOOL)wasStatusBarHiddenBeforeTransition;
 
 @end

@@ -2,29 +2,35 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIButton, UILabel;
+@class <PKPaymentSetupPrivacyFooterViewDelegate>, NSString, UITextView;
 
-@interface PKPaymentSetupPrivacyFooterView : UIView {
+@interface PKPaymentSetupPrivacyFooterView : UIView <UITextViewDelegate> {
     int _context;
-    UIButton *_linkButton;
-    UILabel *_message;
+    <PKPaymentSetupPrivacyFooterViewDelegate> *_delegate;
+    UITextView *_message;
 }
 
 @property int context;
-@property(retain) UIButton * linkButton;
-@property(retain) UILabel * message;
+@property(copy,readonly) NSString * debugDescription;
+@property <PKPaymentSetupPrivacyFooterViewDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned int hash;
+@property(retain) UITextView * message;
+@property(readonly) Class superclass;
 
-- (id)_highlightedStringAttributes;
-- (id)_normalStringAttributes;
+- (id)_linkColor;
+- (id)_linkTextAttributes;
+- (id)_textAttributes;
 - (int)context;
 - (void)dealloc;
+- (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(int)arg2;
 - (void)layoutSubviews;
-- (id)linkButton;
 - (id)message;
 - (void)setContext:(int)arg1;
-- (void)setLinkButton:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 
 @end

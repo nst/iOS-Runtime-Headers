@@ -13,6 +13,7 @@
     NSSet *_paymentApplications;
     NSString *_primaryAccountIdentifier;
     NSString *_primaryAccountNumberSuffix;
+    NSString *_sanitizedPrimaryAccountNumber;
     BOOL _supportsDPANNotifications;
     BOOL _supportsFPANNotifications;
     NSString *_transactionPushTopic;
@@ -30,6 +31,7 @@
 @property(copy) NSSet * paymentApplications;
 @property(copy) NSString * primaryAccountIdentifier;
 @property(copy) NSString * primaryAccountNumberSuffix;
+@property(copy) NSString * sanitizedPrimaryAccountNumber;
 @property BOOL supportsDPANNotifications;
 @property BOOL supportsFPANNotifications;
 @property(copy) NSString * transactionPushTopic;
@@ -60,6 +62,8 @@
 - (id)paymentApplications;
 - (id)primaryAccountIdentifier;
 - (id)primaryAccountNumberSuffix;
+- (id)sanitizedDeviceAccountNumber;
+- (id)sanitizedPrimaryAccountNumber;
 - (void)setAppURLScheme:(id)arg1;
 - (void)setAssociatedApplicationIdentifiers:(id)arg1;
 - (void)setDevicePaymentApplication:(id)arg1;
@@ -68,6 +72,7 @@
 - (void)setPaymentApplications:(id)arg1;
 - (void)setPrimaryAccountIdentifier:(id)arg1;
 - (void)setPrimaryAccountNumberSuffix:(id)arg1;
+- (void)setSanitizedPrimaryAccountNumber:(id)arg1;
 - (void)setSupportsDPANNotifications:(BOOL)arg1;
 - (void)setSupportsFPANNotifications:(BOOL)arg1;
 - (void)setTransactionPushTopic:(id)arg1;

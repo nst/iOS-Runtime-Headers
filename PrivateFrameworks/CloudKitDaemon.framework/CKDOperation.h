@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class <NSObject>, CKDClientContext, CKDClientProxy, CKDOperation, CKDURLRequest, CKOperationResult, NSDate, NSError, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
+@class <NSObject>, CKDClientContext, CKDClientProxy, CKDOperation, CKDURLRequest, CKOperationResult, CKTimeLogger, NSDate, NSError, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface CKDOperation : NSOperation <CKDFlowControllable> {
     BOOL _allowsCellularAccess;
+    BOOL _allowsPowerNapScheduling;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSMutableArray *_childOperations;
     CKDClientContext *_context;
@@ -26,12 +27,14 @@
     NSDate *_startDate;
     unsigned int _state;
     NSObject<OS_dispatch_group> *_stateTransitionGroup;
+    CKTimeLogger *_timeLogger;
     BOOL _useEncryption;
     BOOL _usesBackgroundSession;
 }
 
 @property(readonly) unsigned int QOSClass;
 @property BOOL allowsCellularAccess;
+@property BOOL allowsPowerNapScheduling;
 @property(retain) NSObject<OS_dispatch_queue> * callbackQueue;
 @property(retain) NSMutableArray * childOperations;
 @property(retain) CKDClientContext * context;
@@ -56,6 +59,7 @@
 @property(retain) NSDate * startDate;
 @property unsigned int state;
 @property(retain) NSObject<OS_dispatch_group> * stateTransitionGroup;
+@property(retain) CKTimeLogger * timeLogger;
 @property BOOL useEncryption;
 @property BOOL usesBackgroundSession;
 
@@ -71,6 +75,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)addAndRunChildOperation:(id)arg1;
 - (BOOL)allowsCellularAccess;
+- (BOOL)allowsPowerNapScheduling;
 - (id)callbackQueue;
 - (void)cancel;
 - (id)childOperations;
@@ -107,6 +112,7 @@
 - (id)requestUUIDs;
 - (id)sectionID;
 - (void)setAllowsCellularAccess:(BOOL)arg1;
+- (void)setAllowsPowerNapScheduling:(BOOL)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setChildOperations:(id)arg1;
 - (void)setContext:(id)arg1;
@@ -126,6 +132,7 @@
 - (void)setStartDate:(id)arg1;
 - (void)setState:(unsigned int)arg1;
 - (void)setStateTransitionGroup:(id)arg1;
+- (void)setTimeLogger:(id)arg1;
 - (void)setUseEncryption:(BOOL)arg1;
 - (void)setUsesBackgroundSession:(BOOL)arg1;
 - (BOOL)shouldCheckAppVersion;
@@ -135,6 +142,7 @@
 - (id)startDate;
 - (unsigned int)state;
 - (id)stateTransitionGroup;
+- (id)timeLogger;
 - (BOOL)useEncryption;
 - (BOOL)usesBackgroundSession;
 

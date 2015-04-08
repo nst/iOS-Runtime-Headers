@@ -4,7 +4,7 @@
 
 @class <CKRecipientSelectionControllerDelegate>, ABPeoplePickerNavigationController, CKComposeRecipientView, CKPendingConversation, CKRecipientSearchListController, MFComposeRecipient, NSArray, NSMutableDictionary, NSString, UIScrollView, UIView;
 
-@interface CKRecipientSelectionController : CKViewController <ABPeoplePickerNavigationControllerDelegate, CKRecipientSearchListControllerDelegate, MFComposeRecipientTextViewDelegate, MFGroupDetailViewControllerDelegate, UINavigationControllerDelegate> {
+@interface CKRecipientSelectionController : CKViewController <ABPeoplePickerNavigationControllerDelegate, CKRecipientSearchListControllerDelegate, MFComposeRecipientTextViewDelegate, MFGroupDetailViewControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate> {
     NSArray *_addressBookProperties;
     CKPendingConversation *_conversation;
     <CKRecipientSelectionControllerDelegate> *_delegate;
@@ -127,6 +127,8 @@
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
+- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
+- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (unsigned int)presentationOptionsForRecipient:(id)arg1;
 - (BOOL)preventAtomization;
 - (id)recentContactForPresentedABCard;

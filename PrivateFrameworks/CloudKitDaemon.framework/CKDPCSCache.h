@@ -25,7 +25,7 @@
 - (void).cxx_destruct;
 - (void)_initCache;
 - (void)clearCache;
-- (void)fetchPCSForItemWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(BOOL)arg3 withCompletionHandler:(id)arg4;
+- (void)fetchPCSForItemWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id)arg3;
 - (id)fetchPCSItemForCacheBlock;
 - (id)init;
 - (id)itemIDToPCSCacheItem;

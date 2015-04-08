@@ -13,7 +13,6 @@
 
 - (id)_modeSpecifiers;
 - (id)_volumeSpecifiers;
-- (void)addVolumesForStream:(id)arg1;
 - (id)device;
 - (id)deviceSpecifiers;
 - (id)disconnectedSpecifiers;

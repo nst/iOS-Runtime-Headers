@@ -93,7 +93,8 @@
         unsigned int isNested : 1; 
         unsigned int searchHidNavigationBar : 1; 
         unsigned int suppressMixedOrientationPop : 1; 
-        unsigned int isLayingOutBars : 1; 
+        unsigned int disappearingViewControllerIsBeingRemoved : 1; 
+        unsigned int isWrappingDuringAdaptation : 1; 
     } _navigationControllerFlags;
     UIView *_navigationTransitionView;
     int _savedNavBarStyleBeforeSheet;
@@ -255,7 +256,6 @@
 - (BOOL)_isCrossfadingInTabBar;
 - (BOOL)_isCrossfadingOutTabBar;
 - (BOOL)_isInteractiveCustomNavigationTransition;
-- (BOOL)_isLayingOutBarsDuringStatusBarUpdate;
 - (BOOL)_isNavigationBarEffectivelyVisible;
 - (BOOL)_isNavigationBarVisible;
 - (BOOL)_isNestedNavigationController;
@@ -310,9 +310,10 @@
 - (void)_presentationTransitionUnwrapViewController:(id)arg1;
 - (void)_presentationTransitionWrapViewController:(id)arg1 forTransitionContext:(id)arg2;
 - (void)_propagateContentAdjustmentsForControllersWithSharedViews;
+- (void)_pu_setCurrentNavigationTransition:(id)arg1;
 - (BOOL)_reallyWantsFullScreenLayout;
 - (void)_releaseContainerViews;
-- (void)_repositionPaletteWithNavigationBarHidden:(BOOL)arg1 duration:(double)arg2;
+- (void)_repositionPaletteWithNavigationBarHidden:(BOOL)arg1 duration:(double)arg2 shouldUpdateNavigationItems:(BOOL)arg3;
 - (void)_resetBottomBarHiddenState;
 - (id)_screenEdgePanGestureRecognizer;
 - (float)_scrollViewBottomContentInsetForViewController:(id)arg1;
@@ -340,13 +341,13 @@
 - (void)_setInteractionController:(id)arg1;
 - (void)_setInteractiveAnimationCoordinator:(id)arg1;
 - (void)_setIsNestedNavigationController:(BOOL)arg1;
+- (void)_setIsWrappingDuringAdaptation:(BOOL)arg1;
 - (void)_setKeyboardAppearedNotificationToken:(id)arg1;
 - (void)_setKeyboardNotificationToken:(id)arg1;
 - (void)_setNavbarAnimationId:(id)arg1;
 - (void)_setNavigationBarHidden:(BOOL)arg1 edge:(unsigned int)arg2 duration:(double)arg3;
 - (void)_setNavigationBarHidden:(BOOL)arg1 edgeIfNotNavigating:(unsigned int)arg2 duration:(double)arg3;
 - (void)_setNavigationBarHidesCompletelyOffscreen:(BOOL)arg1;
-- (void)_setNeedsStatusBarAppearanceUpdateWithoutBarLayout;
 - (void)_setPreferredContentSizeFromChildContentContainer:(id)arg1;
 - (void)_setSearchHidNavigationBar:(BOOL)arg1;
 - (void)_setStoreBarStyle:(int)arg1 clientInterface:(id)arg2;
@@ -425,7 +426,6 @@
 - (id)_viewForContentInPopover;
 - (id)_viewsWithDisabledInteractionGivenTransitionContext:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
-- (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (BOOL)_willPerformCustomNavigationTransitionForPop;
 - (BOOL)_willPerformCustomNavigationTransitionForPush;
 - (BOOL)allowUserInteractionDuringTransition;
@@ -514,12 +514,15 @@
 - (id)popViewControllerWithTransition:(int)arg1;
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (id)preferredFocusedItem;
 - (int)preferredInterfaceOrientationForPresentation;
 - (int)preferredStatusBarStyle;
 - (BOOL)pretendNavBarHidden;
 - (id)previousViewController;
 - (id)pu_currentInteractiveTransition;
 - (id)pu_currentNavigationTransition;
+- (void)pu_navigationTransitionDidEnd:(id)arg1;
+- (void)pu_navigationTransitionWillStart:(id)arg1;
 - (void)pu_popToViewController:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (void)pu_popViewControllerAnimated:(BOOL)arg1 interactive:(BOOL)arg2;
 - (void)pu_pushViewController:(id)arg1 withTransition:(id)arg2 animated:(BOOL)arg3 isInteractive:(BOOL)arg4;
@@ -574,6 +577,7 @@
 - (id)tabBarItem;
 - (id)toolbar;
 - (id)topViewController;
+- (void)traitCollectionDidChange:(id)arg1;
 - (BOOL)transcriptControllerIsVisible;
 - (void)updateTabBarItemForViewController:(id)arg1;
 - (void)updateTitleForViewController:(id)arg1;

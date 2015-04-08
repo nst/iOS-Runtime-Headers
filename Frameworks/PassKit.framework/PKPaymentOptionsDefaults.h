@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class CNContact, NSString;
+@class CNContact, NSDictionary, NSString;
 
 @interface PKPaymentOptionsDefaults : NSObject <PKPassbookSettingsOptionsDelegate> {
+    NSDictionary *_defaultBillingAddresses;
 }
 
 @property(copy,readonly) NSString * debugDescription;
-@property(retain) CNContact * defaultBillingAddress;
+@property(retain) NSDictionary * defaultBillingAddresses;
 @property(retain) CNContact * defaultContactEmail;
+@property(retain) CNContact * defaultContactName;
 @property(retain) CNContact * defaultContactPhone;
 @property(retain) NSString * defaultPaymentPassIdentifier;
 @property(retain) CNContact * defaultShippingAddress;
@@ -21,16 +23,23 @@
 
 - (id)_contactForKeychainKey:(id)arg1;
 - (void)_keychainData:(id*)arg1 forKey:(id)arg2;
+- (id)_rawDefaultBillingAddresses;
+- (void)_setContact:(id)arg1 forKeychainKey:(id)arg2;
 - (void)_setContact:(id)arg1 propertyID:(int)arg2 forKeychainKey:(id)arg3;
 - (void)_setKeychainData:(id)arg1 forKey:(id)arg2;
-- (id)defaultBillingAddress;
+- (id)defaultBillingAddressForPaymentPass:(id)arg1;
+- (id)defaultBillingAddresses;
 - (id)defaultContactEmail;
+- (id)defaultContactName;
 - (id)defaultContactPhone;
 - (id)defaultPaymentPassIdentifier;
 - (id)defaultShippingAddress;
+- (void)deleteDefaultBillingAddress:(id)arg1;
 - (id)init;
-- (void)setDefaultBillingAddress:(id)arg1;
+- (void)setDefaultBillingAddress:(id)arg1 forPaymentPass:(id)arg2;
+- (void)setDefaultBillingAddresses:(id)arg1;
 - (void)setDefaultContactEmail:(id)arg1;
+- (void)setDefaultContactName:(id)arg1;
 - (void)setDefaultContactPhone:(id)arg1;
 - (void)setDefaultPaymentPassIdentifier:(id)arg1;
 - (void)setDefaultShippingAddress:(id)arg1;

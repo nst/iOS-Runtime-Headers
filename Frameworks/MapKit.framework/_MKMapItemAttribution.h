@@ -10,6 +10,7 @@
 
 @property(readonly) NSArray * attributionApps;
 @property(readonly) NSArray * attributionURLs;
+@property(readonly) NSString * providerID;
 @property(readonly) NSString * providerName;
 @property(readonly) BOOL requiresAttributionInCallout;
 
@@ -17,6 +18,7 @@
 - (id)attributionApps;
 - (id)attributionURLs;
 - (id)initWithGEOMapItemAttribution:(id)arg1;
+- (id)providerID;
 - (id)providerLogoImageForScale:(float)arg1;
 - (id)providerName;
 - (id)providerSnippetLogoImageForScale:(float)arg1;

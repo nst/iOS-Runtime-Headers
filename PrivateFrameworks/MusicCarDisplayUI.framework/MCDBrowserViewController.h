@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class <MCDCarDisplayServiceProvider>, MPAVController, NSMapTable, NSString, UIButton, UITabBarController;
+@class <MCDCarDisplayServiceProvider>, MPAVController, NSMapTable, NSString, UIAlertView, UIButton, UITabBarController;
 
-@interface MCDBrowserViewController : UINavigationController <UITabBarControllerDelegate> {
+@interface MCDBrowserViewController : UINavigationController <RUCarPlayAlertViewDelegate, UITabBarControllerDelegate> {
     UITabBarController *_hostTabBarController;
     BOOL _libraryHasSongs;
+    UIAlertView *_mirroredAlert;
     NSMapTable *_noContentViews;
     UIButton *_nowPlayingButton;
     MPAVController *_player;
@@ -24,6 +25,7 @@
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)MCD_pushNowPlayingViewControllerAnimated:(BOOL)arg1;
 - (void)_accountsDidChangeNotification:(id)arg1;
 - (id)_createViewControllerForIdentifier:(id)arg1;
 - (BOOL)_isNowPlayingAvailable;
@@ -34,9 +36,9 @@
 - (void)_tabBarDidChangeViewControllers:(id)arg1;
 - (void)_updateNowPlayingVisibility;
 - (void)dealloc;
+- (void)didDismissAlertView:(id)arg1;
 - (id)hostTabBarController;
 - (id)initWithHostTabBarController:(id)arg1;
-- (void)music_pushNowPlayingViewControllerAnimated:(BOOL)arg1;
 - (id)nowPlayingButton;
 - (id)player;
 - (void)pushNowPlaying:(BOOL)arg1;
@@ -48,5 +50,6 @@
 - (void)setServiceProvider:(id)arg1;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)willPresentAlertView:(id)arg1;
 
 @end

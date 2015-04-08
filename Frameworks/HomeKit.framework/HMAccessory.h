@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class <HMAccessoryDelegate>, HMHome, HMMessageDispatcher, HMRoom, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class <HMAccessoryDelegate>, HMHome, HMMessageDispatcher, HMRoom, NSArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMAccessory : NSObject <HMMessageReceiver, NSSecureCoding> {
     BOOL _blocked;
@@ -13,7 +13,6 @@
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;
     BOOL _paired;
-    NSMutableDictionary *_pendingRequests;
     BOOL _reachable;
     HMRoom *_room;
     NSArray *_services;
@@ -37,7 +36,6 @@
 @property(retain) HMMessageDispatcher * msgDispatcher;
 @property(copy) NSString * name;
 @property BOOL paired;
-@property(retain) NSMutableDictionary * pendingRequests;
 @property(getter=isReachable) BOOL reachable;
 @property HMRoom * room;
 @property(copy) NSArray * services;
@@ -62,6 +60,7 @@
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2;
 - (void)configureMessageDispatcher:(id)arg1;
 - (void)copyFrom:(id)arg1;
+- (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (void)enableNotification:(BOOL)arg1 forCharacteristic:(id)arg2 completionHandler:(id)arg3;
@@ -85,7 +84,6 @@
 - (id)msgDispatcher;
 - (id)name;
 - (BOOL)paired;
-- (id)pendingRequests;
 - (void)readValueForCharacteristic:(id)arg1 completionHandler:(id)arg2;
 - (id)room;
 - (id)services;
@@ -98,12 +96,12 @@
 - (void)setName:(id)arg1;
 - (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
 - (void)setPaired:(BOOL)arg1;
-- (void)setPendingRequests:(id)arg1;
 - (void)setReachable:(BOOL)arg1;
 - (void)setRoom:(id)arg1;
 - (void)setServices:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (void)unconfigure;
 - (void)updateAssociatedServiceType:(id)arg1 forService:(id)arg2 completionHandler:(id)arg3;
 - (void)updateAuthorizationData:(id)arg1 forService:(id)arg2 characteristic:(id)arg3 completionHandler:(id)arg4;
 - (void)updateName:(id)arg1 completionHandler:(id)arg2;

@@ -5,6 +5,8 @@
 @interface CTCellularPlanJsonResponseParser : NSObject {
 }
 
++ (BOOL)parseCreateSessionResponseData:(id)arg1 intoSessionId:(id*)arg2 podId:(id*)arg3 urls:(id*)arg4 error:(id*)arg5;
++ (BOOL)parseHandoffTokenResponseData:(id)arg1 intoHandoffToken:(id*)arg2 error:(id*)arg3;
 + (BOOL)parseInitiatePurchaseResponseData:(id)arg1 intoShouldPurchase:(BOOL*)arg2 responseCode:(int*)arg3 responseText:(id*)arg4 buddyML:(id*)arg5 error:(id*)arg6;
 + (BOOL)parsePurchaseResponseData:(id)arg1 intoShouldDownloadProfile:(BOOL*)arg2 iccid:(id*)arg3 responseCode:(int*)arg4 responseText:(id*)arg5 error:(id*)arg6;
 + (BOOL)parseSubscriptionsResponseData:(id)arg1 intoSubscriptions:(id*)arg2 error:(id*)arg3;

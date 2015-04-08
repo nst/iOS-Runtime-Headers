@@ -82,18 +82,15 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)childProgressForBundleID:(id)arg1 andPhase:(unsigned int)arg2;
 + (id)currentProgress;
-+ (id)downloadProgressWithBRCLocalItem:(id)arg1;
 + (id)keyPathsForValuesAffectingInstallPhase;
 + (id)keyPathsForValuesAffectingInstallState;
 + (id)keyPathsForValuesAffectingLocalizedAdditionalDescription;
 + (id)keyPathsForValuesAffectingLocalizedDescription;
-+ (id)progressWithBRCLocalItem:(id)arg1 totalSize:(long long)arg2;
 + (id)progressWithTotalUnitCount:(long long)arg1;
 + (id)publishingKeyForApp:(id)arg1 withPhase:(unsigned int)arg2;
 + (void)removeSubscriber:(id)arg1;
 + (id)sf_publishingKeyForApp:(id)arg1 sessionID:(id)arg2;
 + (id)sf_transferStateAsString:(int)arg1;
-+ (id)uploadProgressWithBRCLocalItem:(id)arg1;
 
 - (id)_LSDescription;
 - (void)__notifyRemoteObserversOfValueForKey:(id)arg1 inUserInfo:(BOOL)arg2;

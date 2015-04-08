@@ -33,6 +33,7 @@
     unsigned int _regionsCount;
     unsigned int _regionsSize;
     int _scanningMask;
+    unsigned int _suspensionToken;
     unsigned int _task;
     struct _VMUThreadNode { unsigned long long x1; unsigned int x2; unsigned int x3; unsigned int *x4; } *_threads;
     unsigned int _threadsCount;
@@ -61,7 +62,7 @@
 - (void*)contentForNode:(unsigned int)arg1;
 - (void)dealloc;
 - (void)detachFromTask;
-- (void)enumerateNodesWithBlock:(id)arg1;
+- (unsigned int)enumerateNodesWithBlock:(id)arg1;
 - (BOOL)exactScanningEnabled;
 - (id)initWithTask:(unsigned int)arg1;
 - (id)labelForMallocNode:(unsigned int)arg1;

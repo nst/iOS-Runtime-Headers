@@ -107,9 +107,6 @@
 - (void)_cancelConnectionLifetimeTimer;
 - (void)_checkForAuthPrompt;
 - (BOOL)_checkPairedState;
-- (id)_convertFromBTLEValue:(id)arg1 metadata:(id)arg2;
-- (id)_convertToBTLEValue:(id)arg1 metadata:(id)arg2;
-- (id)_convertValueToTLV:(id)arg1 characteristic:(id)arg2 authorizationData:(id)arg3 error:(id*)arg4;
 - (void)_createPrimaryAccessoryFromAdvertisementData;
 - (id)_decryptData:(id)arg1 error:(id*)arg2;
 - (BOOL)_delegateRespondsToSelector:(SEL)arg1;
@@ -150,6 +147,8 @@
 - (void)_readValueForCharacteristic:(id)arg1 withCompletionHandler:(id)arg2 queue:(id)arg3;
 - (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id)arg4;
 - (void)_resetState;
+- (id)_serverIdentifier;
+- (id)_serverName;
 - (void)_setupBTLEConnectionToPeripheral;
 - (BOOL)_shouldEnableSessionSecurity;
 - (void)_updateConnectionLifetimeTimer;
@@ -177,10 +176,11 @@
 - (void)handleDisconnectionWithError:(id)arg1 withQueue:(id)arg2 withCompletion:(id)arg3;
 - (id)hapCharacteristicReadCompletionQueues;
 - (id)hapCharacteristicWriteCompletionQueues;
+- (BOOL)hasPairings;
 - (id)identifier;
 - (id)identifyCharacteristic;
 - (void)identifyWithCompletion:(id)arg1;
-- (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 browser:(id)arg4 keyStore:(id)arg5;
+- (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 browser:(id)arg5 keyStore:(id)arg6;
 - (BOOL)isDisconnecting;
 - (BOOL)isPaired;
 - (int)linkType;

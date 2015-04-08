@@ -2,14 +2,19 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKStarRatingAndLabelView, NSDate, NSMutableArray, NSString, UIImage, UIImageView, UILabel;
+@class MKStarRatingAndLabelView, NSDate, NSLayoutConstraint, NSString, UIImage, UIImageView, UILabel;
 
 @interface MKPlaceReviewsViewCell : UITableViewCell {
     UILabel *_authorLabel;
+    NSLayoutConstraint *_authorLabelBaselineConstraint;
+    NSDate *_date;
     UILabel *_dateLabel;
+    NSLayoutConstraint *_dateLabelBaselineConstraint;
     UIImageView *_pictureView;
     UILabel *_reviewLabel;
-    NSMutableArray *_scaledConstraints;
+    NSLayoutConstraint *_reviewLabelBaselineConstraint;
+    NSLayoutConstraint *_reviewLabelHeightConstraint;
+    NSLayoutConstraint *_reviewLabelToBottomConstraint;
     MKStarRatingAndLabelView *_starView;
 }
 
@@ -18,7 +23,6 @@
 @property UIImage * picture;
 @property unsigned int rating;
 @property NSString * reviewText;
-@property(retain) NSMutableArray * scaledConstraints;
 
 + (float)intrinsicContentHeight;
 + (id)reuseIdentifier;
@@ -28,14 +32,13 @@
 - (void)dealloc;
 - (id)fontForAuthor;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)prepareForReuse;
-- (id)scaledConstraints;
+- (void)layoutMarginsDidChange;
+- (void)refreshMarginConstraints;
 - (void)setAuthor:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setPicture:(id)arg1;
 - (void)setRating:(unsigned int)arg1;
 - (void)setReviewText:(id)arg1;
-- (void)setScaledConstraints:(id)arg1;
 - (void)updateConstraints;
 
 @end

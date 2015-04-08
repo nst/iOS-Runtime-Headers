@@ -22,7 +22,7 @@
 
 - (void).cxx_destruct;
 - (void)_lockedFireReadyQueuedFetches;
-- (id)_lockedGetQueuedFetchForOperation:(id)arg1;
+- (id)_lockedGetQueuedFetchForOperation:(id)arg1 ofClass:(Class)arg2;
 - (void)_lockedRescheduleQueuedFetchesTimer;
 - (id)context;
 - (void)dealloc;
@@ -31,6 +31,7 @@
 - (id)queue;
 - (id)queuedFetches;
 - (void)requestFetchOfRecordWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)requestFetchOfShareWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id)arg3;
 - (id)runningFetches;
 - (void)setContext:(id)arg1;
 - (void)setOpQueue:(id)arg1;

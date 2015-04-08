@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class <PKPassLibraryDelegate>, NSXPCConnection, PKAsyncCache, PKPassLibraryExportedProxy;
+@class <PKPassLibraryDelegate>, PKAsyncCache, PKXPCService;
 
 @interface PKPassLibrary : NSObject <PKPassLibraryExportedInterface> {
-    NSXPCConnection *_connection;
     <PKPassLibraryDelegate> *_delegate;
-    PKPassLibraryExportedProxy *_exportedProxy;
     PKAsyncCache *_libraryCache;
+    PKXPCService *_remoteService;
 }
 
 @property <PKPassLibraryDelegate> * delegate;
 
-+ (void)_tearDownPassLibraryConnection:(id)arg1 exportedProxy:(id)arg2;
 + (BOOL)isPassLibraryAvailable;
 + (BOOL)isPaymentPassActivationAvailable;
 
@@ -21,7 +19,6 @@
 - (void)_applyDataAccessorToObjects:(id)arg1;
 - (id)_errorHandlerWithCompletion:(id)arg1;
 - (id)_errorHandlerWithSemaphore:(id)arg1;
-- (void)_establishPassLibraryConnection;
 - (void)_getArchivedObjectWithUniqueID:(id)arg1 completion:(id)arg2;
 - (void)_getPassWithUniqueID:(id)arg1 completion:(id)arg2;
 - (void)_getPassesAndCatalogOfPassTypes:(unsigned int)arg1 limitResults:(BOOL)arg2 withRetries:(unsigned int)arg3 handler:(id)arg4;
@@ -29,11 +26,10 @@
 - (id)_passesOfType:(unsigned int)arg1 withRetries:(unsigned int)arg2;
 - (id)_passesWithRetries:(unsigned int)arg1;
 - (void)_postLibraryChangeWithUserInfo:(id)arg1;
-- (void)_registerForApplicationLifeCycleNotifications;
-- (void)_sendResumed;
-- (void)_sendSuspended;
-- (void)_tearDownPassLibraryConnection;
-- (void)_unregisterForApplicationLifeCycleNotifications;
+- (id)_remoteObjectProxy;
+- (id)_remoteObjectProxyWithErrorHandler:(id)arg1;
+- (id)_remoteObjectProxyWithFailureHandler:(id)arg1;
+- (id)_remoteObjectProxyWithSemaphore:(id)arg1;
 - (void)activatePaymentPass:(id)arg1 withActivationCode:(id)arg2 completion:(id)arg3;
 - (void)activatePaymentPass:(id)arg1 withActivationData:(id)arg2 completion:(id)arg3;
 - (void)addFakeBulletin;
@@ -66,6 +62,7 @@
 - (void)noteAccountDeleted;
 - (void)noteObjectSharedWithUniqueID:(id)arg1;
 - (void)nukeDatabaseAndExit;
+- (void)openPaymentSetup;
 - (void)passAdded:(id)arg1;
 - (void)passRemoved:(id)arg1;
 - (void)passUpdated:(id)arg1;

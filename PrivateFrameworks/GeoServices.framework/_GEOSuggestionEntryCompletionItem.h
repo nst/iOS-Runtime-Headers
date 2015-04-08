@@ -22,7 +22,6 @@
 @property(readonly) NSData * metadata;
 @property(readonly) Class superclass;
 
-- (void)applyToLegacySearch:(id)arg1;
 - (id)calloutTitle;
 - (id)completionLocation;
 - (void)dealloc;

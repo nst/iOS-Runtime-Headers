@@ -39,7 +39,7 @@
 - (id)meshTransformForProgress:(float)arg1;
 - (void)rebuildBackgroundAndShadowTransitions;
 - (void)rebuildBackgroundGradientTransitions;
-- (void)rebuildControlKeys:(int)arg1;
+- (void)rebuildControlKeys:(unsigned long long)arg1;
 - (void)rebuildFromKeyplane:(id)arg1 toKeyplane:(id)arg2 keyboardType:(int)arg3 orientation:(int)arg4;
 - (void)rebuildMoreIntlKeys;
 - (void)rebuildPositionTransition;

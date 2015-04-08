@@ -27,6 +27,7 @@
 - (void)submitUsageForTraitsWithAction:(int)arg1;
 - (void)submitUsageForTraitsWithAction:(int)arg1 flyoverAnimationID:(unsigned long long)arg2;
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2;
+- (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2 providerID:(id)arg3;
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapRegion:(id)arg2 zoomLevel:(double)arg3;
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)ticketForForwardGeocodeAddress:(id)arg1 traits:(id)arg2;
@@ -34,9 +35,9 @@
 - (id)ticketForMUIDs:(id)arg1 includeETA:(BOOL)arg2 traits:(id)arg3;
 - (id)ticketForMUIDs:(id)arg1 resultProviderID:(int)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
 - (id)ticketForMapItemToRefine:(id)arg1 traits:(id)arg2;
-- (id)ticketForMerchantCode:(id)arg1 paymentNetwork:(id)arg2 transactionDate:(id)arg3 transactionLocation:(id)arg4 traits:(id)arg5;
+- (id)ticketForMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 paymentNetwork:(id)arg3 transactionDate:(id)arg4 transactionLocation:(id)arg5 traits:(id)arg6;
 - (id)ticketForPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3;
-- (id)ticketForProblem:(id)arg1 mapItemForProblemContext:(id)arg2 traits:(id)arg3;
+- (id)ticketForProblem:(id)arg1 mapItemForProblemContext:(id)arg2 mapItemForStartDirectionsSearchInput:(id)arg3 mapitemForEndDirectionsSearchInput:(id)arg4 traits:(id)arg5;
 - (id)ticketForReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeETA:(BOOL)arg2 traits:(id)arg3;
 - (id)ticketForReverseGeocodeDroppedPinCoordinate:(struct { double x1; double x2; })arg1 traits:(id)arg2;
 - (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 maxResults:(unsigned int)arg3 includeETA:(BOOL)arg4 traits:(id)arg5;

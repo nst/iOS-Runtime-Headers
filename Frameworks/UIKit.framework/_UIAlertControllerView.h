@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSLayoutConstraint, NSMutableArray, NSString, UIAlertController, UIAlertControllerVisualStyle, UICollectionView, UILabel, UIView, UIView<UIAlertControllerBackgroundView>, _UIAlertControllerActionView, _UIAlertControllerCollectionViewFlowLayout, _UIAlertControllerShadowedScrollView, _UIKeyboardLayoutAlignmentView;
+@class NSLayoutConstraint, NSMutableArray, NSString, UIAlertController, UIAlertControllerVisualStyle, UICollectionView, UILabel, UIView, UIView<UIAlertControllerBackgroundView>, _UIAlertControllerCollectionViewFlowLayout, _UIAlertControllerShadowedScrollView, _UIKeyboardLayoutAlignmentView;
 
-@interface _UIAlertControllerView : UIView <UICollectionViewDataSource, UIScrollViewDelegate> {
+@interface _UIAlertControllerView : UIView <UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate> {
     UICollectionView *_actionCollectionView;
+    NSMutableArray *_actionViews;
     UIAlertController *_alertController;
     BOOL _alignsToKeyboard;
     UIView<UIAlertControllerBackgroundView> *_backdropView;
@@ -16,6 +17,7 @@
     NSLayoutConstraint *_centerXConstraint;
     NSLayoutConstraint *_centerYConstraint;
     NSLayoutConstraint *_collectionViewHeightConstraint;
+    NSLayoutConstraint *_collectionViewHorizontalAlignmentConstraint;
     NSLayoutConstraint *_collectionViewTopAlignmentConstraint;
     NSLayoutConstraint *_collectionViewWidthConstraint;
     _UIAlertControllerShadowedScrollView *_contentScrollView;
@@ -32,13 +34,14 @@
     NSLayoutConstraint *_contentViewControllerViewRightConstraint;
     NSLayoutConstraint *_contentViewControllerViewTopConstraint;
     NSLayoutConstraint *_contentViewTopConstraint;
+    UILabel *_detailMessageLabel;
+    NSLayoutConstraint *_detailMessageLabelTopAlignmentConstraint;
     UIView *_dimmingView;
     NSMutableArray *_dimmingViewConstraints;
     NSMutableArray *_dimmingViewConstraintsForActionSheetStyle;
     NSMutableArray *_dimmingViewConstraintsForAlertStyle;
     NSMutableArray *_dimmingViewForegroundViewBottomConstraints;
     NSMutableArray *_dimmingViewForegroundViewTopConstraints;
-    _UIAlertControllerActionView *_discreteCancelActionView;
     NSLayoutConstraint *_discreteCancelActionViewHeightConstraint;
     NSLayoutConstraint *_discreteCancelActionViewLeadingConstraint;
     NSLayoutConstraint *_discreteCancelActionViewTopConstraint;
@@ -81,6 +84,7 @@
 @property(retain) NSLayoutConstraint * centerXConstraint;
 @property(retain) NSLayoutConstraint * centerYConstraint;
 @property(retain) NSLayoutConstraint * collectionViewHeightConstraint;
+@property(retain) NSLayoutConstraint * collectionViewHorizontalAlignmentConstraint;
 @property(retain) NSLayoutConstraint * collectionViewTopAlignmentConstraint;
 @property(retain) NSLayoutConstraint * collectionViewWidthConstraint;
 @property(retain) NSLayoutConstraint * contentScrollViewBottomConstraint;
@@ -95,6 +99,7 @@
 @property(retain) NSLayoutConstraint * contentViewTopConstraint;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property(retain) NSLayoutConstraint * detailMessageLabelTopAlignmentConstraint;
 @property(retain) NSLayoutConstraint * discreteCancelActionViewHeightConstraint;
 @property(retain) NSLayoutConstraint * discreteCancelActionViewLeadingConstraint;
 @property(retain) NSLayoutConstraint * discreteCancelActionViewTopConstraint;
@@ -122,20 +127,22 @@
 - (void)_UIAppearance_setShowsCancelAction:(BOOL)arg1;
 - (void)_actionLayoutDirectionChanged;
 - (BOOL)_actionLayoutIsVertical;
+- (id)_actionViewsForCollectionView;
 - (void)_actionsChanged;
-- (id)_actionsForCollectionView;
-- (void)_applyCollectionViewConstraints;
 - (void)_applyContentViewControllerContainerViewConstraints;
+- (void)_applyDetailMessageConstraints;
 - (void)_applyKeyboardAlignmentViewsConstraints;
 - (void)_applyMessageConstraints;
 - (void)_applyTitleConstraints;
 - (void)_applyViewConstraints;
+- (id)_attributedDetailMessage;
 - (id)_attributedMessage;
 - (id)_attributedTitle;
 - (float)_availableWidthForHorizontalLayout:(BOOL)arg1;
 - (id)_bottomMostViewToAlignDiscreteCancelActionViewTo;
 - (BOOL)_buttonsAreTopMost;
 - (BOOL)_canLayOutActionsHorizontally;
+- (id)_cancelActionView;
 - (struct CGSize { float x1; float x2; })_collectionViewSizeForHorizontalLayout:(BOOL)arg1 itemSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_contentSizeChanged;
 - (struct CGSize { float x1; float x2; })_contentViewControllerSize;
@@ -144,6 +151,7 @@
 - (id)_foregroundView;
 - (BOOL)_hasAttributedMessage;
 - (BOOL)_hasAttributedTitle;
+- (BOOL)_hasDetailMessage;
 - (BOOL)_hasDiscreteCancelAction;
 - (BOOL)_hasMessage;
 - (BOOL)_hasTitle;
@@ -157,13 +165,13 @@
 - (float)_marginBetweenContentAndDiscreteCancelAction;
 - (struct CGSize { float x1; float x2; })_minimumSizeForAllActions;
 - (int)_numberOfActionsForCollectionView;
-- (id)_orderedActionsForCollectionView;
+- (id)_orderedActionViewsForCollectionView;
 - (void)_prepareActionCollectionView;
 - (void)_prepareBackdropViewConstraints;
-- (void)_prepareCancelView;
 - (void)_prepareContentScrollView;
 - (void)_prepareContentView;
 - (void)_prepareContentViewControllerContainerView;
+- (void)_prepareDetailMessageLabel;
 - (void)_prepareDimmingView;
 - (void)_prepareDimmingViewConstraints;
 - (void)_prepareForegroundView;
@@ -175,26 +183,34 @@
 - (void)_recomputeAlignedDescriptiveLabelTextWidth;
 - (void)_reevaluateSuperviewSizingConstraints;
 - (void)_removeContentViewController;
-- (void)_removeDiscreteCancelActionView;
+- (void)_setAttributedDetailMessage:(id)arg1;
+- (void)_setAttributedMessage:(id)arg1;
+- (void)_setAttributedTitle:(id)arg1;
+- (void)_setMessage:(id)arg1;
+- (void)_setTitle:(id)arg1;
 - (void)_setVisualStyle:(id)arg1;
 - (BOOL)_shouldHaveCancelActionInCollectionView;
 - (BOOL)_shouldTreatEmptyStringsAsNil;
 - (struct CGSize { float x1; float x2; })_sizeForLayoutWidthDetermination;
 - (void)_sizeOfContentViewControllerChanged;
+- (void)_updateActionViewStyle:(id)arg1;
 - (void)_updateBackdrop;
-- (void)_updateCellStyle:(id)arg1;
+- (void)_updateCollectionViewForVisualStyleChange;
+- (void)_updateConstraintConstants;
 - (void)_updateCornerRadius;
+- (void)_updateDefaultAction;
 - (void)_updateInsets;
 - (void)_updateLabelFontSizes;
 - (void)_updateLabelMaximumLines;
 - (void)_updateLabelTextColor;
-- (void)_updateStyle;
+- (void)_updateStyleForIdiomChange:(BOOL)arg1;
 - (void)_updateVisualAltitude;
 - (float)_verticalLayoutWidth;
 - (id)_visualStyle;
 - (BOOL)_wantsHorizontalActionSheet;
 - (BOOL)_wantsHorizontalAlert;
 - (BOOL)_wantsHorizontalCollectionViewLayout;
+- (id)actionDelimiterIndices;
 - (id)actions;
 - (id)alertController;
 - (BOOL)alignsToKeyboard;
@@ -204,9 +220,11 @@
 - (BOOL)cancelActionIsDiscrete;
 - (id)centerXConstraint;
 - (id)centerYConstraint;
+- (BOOL)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)collectionViewHeightConstraint;
+- (id)collectionViewHorizontalAlignmentConstraint;
 - (id)collectionViewTopAlignmentConstraint;
 - (id)collectionViewWidthConstraint;
 - (id)contentScrollViewBottomConstraint;
@@ -222,6 +240,7 @@
 - (id)contentViewTopConstraint;
 - (void)dealloc;
 - (id)defaultAction;
+- (id)detailMessageLabelTopAlignmentConstraint;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (id)discreteCancelActionViewHeightConstraint;
@@ -235,9 +254,9 @@
 - (BOOL)inPopover;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)layoutOrientation;
-- (void)layoutSubviews;
 - (id)message;
 - (id)messageLabelTopAlignmentConstraint;
+- (id)preferredFocusedItem;
 - (void)setAlertController:(id)arg1;
 - (void)setAlignsToKeyboard:(BOOL)arg1;
 - (void)setBackdropViewBottomConstraint:(id)arg1;
@@ -246,6 +265,7 @@
 - (void)setCenterXConstraint:(id)arg1;
 - (void)setCenterYConstraint:(id)arg1;
 - (void)setCollectionViewHeightConstraint:(id)arg1;
+- (void)setCollectionViewHorizontalAlignmentConstraint:(id)arg1;
 - (void)setCollectionViewTopAlignmentConstraint:(id)arg1;
 - (void)setCollectionViewWidthConstraint:(id)arg1;
 - (void)setContentScrollViewBottomConstraint:(id)arg1;
@@ -258,6 +278,7 @@
 - (void)setContentViewControllerViewRightConstraint:(id)arg1;
 - (void)setContentViewControllerViewTopConstraint:(id)arg1;
 - (void)setContentViewTopConstraint:(id)arg1;
+- (void)setDetailMessageLabelTopAlignmentConstraint:(id)arg1;
 - (void)setDiscreteCancelActionViewHeightConstraint:(id)arg1;
 - (void)setDiscreteCancelActionViewLeadingConstraint:(id)arg1;
 - (void)setDiscreteCancelActionViewTopConstraint:(id)arg1;
@@ -278,7 +299,6 @@
 - (int)tintAdjustmentMode;
 - (id)title;
 - (id)titleLabelTopAlignmentConstraint;
-- (void)updateDefaultAction;
 - (id)widthConstraint;
 - (void)willMoveToSuperview:(id)arg1;
 

@@ -30,6 +30,7 @@
 - (id)postButton;
 - (float)preferredHeight;
 - (void)setDelegate:(id)arg1;
+- (void)setText:(id)arg1;
 - (id)textView;
 - (void)textViewDidChange:(id)arg1;
 - (id)trimmedText;

@@ -12,6 +12,7 @@
     NSString *_localIdentifier;
     NSString *_remoteIdentifier;
     NEKeychainItem *_sharedSecretKeychainItem;
+    NSData *_sharedSecretReference;
     BOOL _useExtendedAuthentication;
 }
 

@@ -13,8 +13,8 @@
 + (BOOL)_isSystemWindow;
 
 - (id)_presentationViewController;
+- (BOOL)_shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)alertController;
-- (void)dealloc;
 - (id)init;
 - (void)presentAlertController:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
 

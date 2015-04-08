@@ -2,24 +2,34 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDate, NSMapTable, NSString, NSURL, _UIDocumentPickerContainerModel;
+@class NSDate, NSMapTable, NSString, NSURL, _UIDocumentPickerContainerModel, _UIDocumentPickerURLContainerModel;
 
-@interface _UIDocumentPickerContainerItem : NSObject {
+@interface _UIDocumentPickerContainerItem : NSObject <_UIDocumentPickerDirectoryObserverItem> {
     id _item;
+    _UIDocumentPickerURLContainerModel *_model;
+    int _modelDisplayCount;
+    id _observer;
     NSString *_pickabilityReason;
     BOOL _pickable;
+    id _resourceIdentifier;
     NSMapTable *_thumbnailsBySize;
     int _type;
+    _UIDocumentPickerURLContainerModel *_weak_model;
     _UIDocumentPickerContainerModel *_weak_parentModel;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned int hash;
 @property(retain) id item;
+@property(retain,readonly) _UIDocumentPickerContainerModel * model;
 @property _UIDocumentPickerContainerModel * parentModel;
 @property(copy) NSString * pickabilityReason;
 @property BOOL pickable;
 @property(readonly) NSDate * sortDate;
 @property(retain,readonly) NSString * subtitle;
 @property(retain,readonly) NSString * subtitle2;
+@property(readonly) Class superclass;
 @property(retain) NSMapTable * thumbnailsBySize;
 @property(retain,readonly) NSString * title;
 @property(readonly) int type;
@@ -33,12 +43,21 @@
 - (id)_blockingThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)_createThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)_defaultThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
+- (void)_ensureModelPresent;
+- (id)_formattedSubtitleForNumberOfItems:(unsigned int)arg1;
+- (void)_modelChanged;
+- (id)_resourceIdentifier;
+- (void)_valuesChanged;
 - (void)dealloc;
+- (void)decrementModelDisplayCount;
 - (id)description;
 - (unsigned int)hash;
+- (void)incrementModelDisplayCount;
 - (id)initWithItem:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)item;
+- (id)model;
+- (id)modificationDate;
 - (id)parentModel;
 - (id)pickabilityReason;
 - (BOOL)pickable;

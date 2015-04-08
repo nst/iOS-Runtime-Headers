@@ -34,6 +34,7 @@
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (void)addLayoutSegment:(id)arg1;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
+- (id)biuKeyImageName;
 - (id)boldKeyImageName;
 - (BOOL)boldTextEnabled;
 - (id)controlKeyBackgroundColorName;
@@ -48,6 +49,7 @@
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
 - (id)displayContentsForKey:(id)arg1;
+- (float)emojiPopupDividerKeyOffset;
 - (int)enabledBlendForm;
 - (id)extraPasscodePaddleTraits;
 - (id)globalEmojiKeyImageName;
@@ -66,6 +68,7 @@
 - (void)lowQualityTraits:(id)arg1;
 - (void)modifyKeyTraitsForPasscode:(id)arg1 forKey:(id)arg2 onKeyplane:(id)arg3;
 - (void)modifyTraitsForDetachedInputSwitcher:(id)arg1 withKey:(id)arg2;
+- (void)modifyTraitsForDividerVariant:(id)arg1 withKey:(id)arg2;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)passcodeActiveControlKeyTraits;
@@ -89,7 +92,7 @@
 - (id)shiftKeyImageName;
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
-- (BOOL)shouldClearBaseDisplayStringForVariants;
+- (BOOL)shouldClearBaseDisplayStringForVariants:(id)arg1;
 - (float)skinnyKeyThreshold;
 - (id)thinKeycapsFontName;
 - (id)thinTextFontName;

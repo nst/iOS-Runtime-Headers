@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCDatabaseManager;
+@class BRCAccountSession;
 
 @interface BRCClientRanksPersistedState : NSObject <NSSecureCoding> {
-    BRCDatabaseManager *_dbManager;
     unsigned long long _nextItemRowID;
     unsigned long long _nextNotifRank;
     unsigned long long _nextPackageItemRank;
-    unsigned long long _nextSyncDownRank;
+    BRCAccountSession *_session;
 }
 
 @property(readonly) unsigned long long nextItemRowID;
 @property unsigned long long nextNotifRank;
 @property unsigned long long nextPackageItemRank;
-@property unsigned long long nextSyncDownRank;
 
-+ (id)loadFromClientStateInDBManager:(id)arg1;
++ (id)loadFromClientStateInSession:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -31,9 +29,7 @@
 - (unsigned long long)nextItemRowID;
 - (unsigned long long)nextNotifRank;
 - (unsigned long long)nextPackageItemRank;
-- (unsigned long long)nextSyncDownRank;
 - (void)setNextNotifRank:(unsigned long long)arg1;
 - (void)setNextPackageItemRank:(unsigned long long)arg1;
-- (void)setNextSyncDownRank:(unsigned long long)arg1;
 
 @end

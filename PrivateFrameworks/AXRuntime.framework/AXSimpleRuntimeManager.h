@@ -30,6 +30,11 @@
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
+    id _outgoingValuePreprocessor;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _parameterizedAttributeCallback;
 
 
@@ -49,6 +54,7 @@
 @property(copy) id attributeCallback;
 @property(copy) id clientObserverCallback;
 @property(copy) id hitTestCallback;
+@property(copy) id outgoingValuePreprocessor;
 @property(copy) id parameterizedAttributeCallback;
 @property(copy) id performActionCallback;
 @property(copy) id setAttributeCallback;
@@ -60,6 +66,7 @@
 - (id)attributeCallback;
 - (id)clientObserverCallback;
 - (id)hitTestCallback;
+- (id)outgoingValuePreprocessor;
 - (id)parameterizedAttributeCallback;
 - (id)performActionCallback;
 - (void)setApplicationElementCallback:(id)arg1;
@@ -67,6 +74,7 @@
 - (void)setAttributeCallback:(id)arg1;
 - (void)setClientObserverCallback:(id)arg1;
 - (void)setHitTestCallback:(id)arg1;
+- (void)setOutgoingValuePreprocessor:(id)arg1;
 - (void)setParameterizedAttributeCallback:(id)arg1;
 - (void)setPerformActionCallback:(id)arg1;
 - (void)setSetAttributeCallback:(id)arg1;

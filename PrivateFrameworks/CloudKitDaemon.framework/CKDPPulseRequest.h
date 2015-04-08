@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPPulseData, CKDPResource, CKDPShareIdentifier, NSData, NSString;
+@class CKDPPulseData, CKDPShareIdentifier, NSData, NSString;
 
 @interface CKDPPulseRequest : PBRequest <NSCopying> {
     int _apnsEnv;
@@ -16,7 +16,6 @@
     CKDPPulseData *_pulseData;
     NSData *_pushToken;
     BOOL _reset;
-    CKDPResource *_resource;
     CKDPShareIdentifier *_shareId;
 }
 
@@ -28,13 +27,11 @@
 @property(readonly) BOOL hasPulseData;
 @property(readonly) BOOL hasPushToken;
 @property BOOL hasReset;
-@property(readonly) BOOL hasResource;
 @property(readonly) BOOL hasShareId;
 @property long long lookbackWindowMillis;
 @property(retain) CKDPPulseData * pulseData;
 @property(retain) NSData * pushToken;
 @property BOOL reset;
-@property(retain) CKDPResource * resource;
 @property(retain) CKDPShareIdentifier * shareId;
 
 + (id)options;
@@ -52,7 +49,6 @@
 - (BOOL)hasPulseData;
 - (BOOL)hasPushToken;
 - (BOOL)hasReset;
-- (BOOL)hasResource;
 - (BOOL)hasShareId;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -63,7 +59,6 @@
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (BOOL)reset;
-- (id)resource;
 - (Class)responseClass;
 - (void)setApnsEnv:(int)arg1;
 - (void)setEtag:(id)arg1;
@@ -74,7 +69,6 @@
 - (void)setPulseData:(id)arg1;
 - (void)setPushToken:(id)arg1;
 - (void)setReset:(BOOL)arg1;
-- (void)setResource:(id)arg1;
 - (void)setShareId:(id)arg1;
 - (id)shareId;
 - (void)writeTo:(id)arg1;

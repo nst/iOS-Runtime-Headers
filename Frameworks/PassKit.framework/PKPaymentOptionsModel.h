@@ -34,10 +34,11 @@
 - (void)dealloc;
 - (id)init;
 - (id)modelChangedHandler;
+- (id)optionGroupForGroupType:(id)arg1;
 - (id)optionGroups;
 - (void)setModelChangedHandler:(id)arg1;
-- (void)setOptionGroupType:(id)arg1 options:(id)arg2 selectedIndex:(int)arg3 newItemHandler:(id)arg4 pickedItemHandler:(id)arg5 selectedValueChangedHandler:(id)arg6;
+- (void)setOptionGroupType:(id)arg1 options:(id)arg2 selectedIndex:(int)arg3 displayMode:(id)arg4 displayName:(id)arg5 editable:(BOOL)arg6 newItemHandler:(id)arg7 pickedItemHandler:(id)arg8 selectedValueChangedHandler:(id)arg9;
 - (void)setPaymentPasses:(id)arg1 selectedIndex:(int)arg2 selectedValueChangedHandler:(id)arg3;
-- (void)setShippingMethods:(id)arg1 currencyCode:(id)arg2 selectedIndex:(int)arg3 selectedValueChangedHandler:(id)arg4;
+- (void)setShippingMethods:(id)arg1 currencyCode:(id)arg2 selectedIndex:(int)arg3 displayMode:(id)arg4 selectedValueChangedHandler:(id)arg5;
 
 @end

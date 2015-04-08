@@ -33,6 +33,7 @@
 - (void).cxx_destruct;
 - (void)_prepareIncrementalDetails;
 - (BOOL)_shouldPerformFullReloadForCollectionListChangeNotifications:(id)arg1 collectionChangeNotifications:(id)arg2;
+- (BOOL)affectsSectionsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)changedIndexPaths;
 - (id)changedSections;
 - (id)contentChangedIndexPaths;

@@ -15,6 +15,7 @@
 + (id)clientWithConnection:(id)arg1;
 
 - (void)dealloc;
+- (id)description;
 - (id)initWithConnection:(id)arg1;
 - (unsigned long long)requestedUpdates;
 - (void)sendMessage:(id)arg1 withError:(id*)arg2;

@@ -19,8 +19,8 @@
 - (BOOL)allowSlideshowButton;
 - (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(BOOL)arg4;
 - (void)didTapHeaderView:(id)arg1;
-- (id)emptyPlaceholderView;
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
+- (id)newEmptyPlaceholderView;
 - (id)newGridLayout;
 - (id)searchResultDataSource;
 - (void)searchResultHasPendingChanges:(id)arg1;

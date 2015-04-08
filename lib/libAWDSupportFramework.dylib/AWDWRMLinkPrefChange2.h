@@ -9,6 +9,8 @@
         unsigned int count : 1; 
         unsigned int nCallActive : 1; 
         unsigned int nCallIdle : 1; 
+        unsigned int nCelluarBadEcio : 1; 
+        unsigned int nCelluarBadLQM : 1; 
         unsigned int nCelluarBadRSRP : 1; 
         unsigned int nCelluarBadSignal : 1; 
         unsigned int nCellularNotReady : 1; 
@@ -31,6 +33,8 @@
     } _has;
     unsigned int _nCallActive;
     unsigned int _nCallIdle;
+    unsigned int _nCelluarBadEcio;
+    unsigned int _nCelluarBadLQM;
     unsigned int _nCelluarBadRSRP;
     unsigned int _nCelluarBadSignal;
     unsigned int _nCellularNotReady;
@@ -57,6 +61,8 @@
 @property BOOL hasCount;
 @property BOOL hasNCallActive;
 @property BOOL hasNCallIdle;
+@property BOOL hasNCelluarBadEcio;
+@property BOOL hasNCelluarBadLQM;
 @property BOOL hasNCelluarBadRSRP;
 @property BOOL hasNCelluarBadSignal;
 @property BOOL hasNCellularNotReady;
@@ -79,6 +85,8 @@
 @property BOOL hasTimestamp;
 @property unsigned int nCallActive;
 @property unsigned int nCallIdle;
+@property unsigned int nCelluarBadEcio;
+@property unsigned int nCelluarBadLQM;
 @property unsigned int nCelluarBadRSRP;
 @property unsigned int nCelluarBadSignal;
 @property unsigned int nCellularNotReady;
@@ -108,6 +116,8 @@
 - (BOOL)hasCount;
 - (BOOL)hasNCallActive;
 - (BOOL)hasNCallIdle;
+- (BOOL)hasNCelluarBadEcio;
+- (BOOL)hasNCelluarBadLQM;
 - (BOOL)hasNCelluarBadRSRP;
 - (BOOL)hasNCelluarBadSignal;
 - (BOOL)hasNCellularNotReady;
@@ -133,6 +143,8 @@
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)nCallActive;
 - (unsigned int)nCallIdle;
+- (unsigned int)nCelluarBadEcio;
+- (unsigned int)nCelluarBadLQM;
 - (unsigned int)nCelluarBadRSRP;
 - (unsigned int)nCelluarBadSignal;
 - (unsigned int)nCellularNotReady;
@@ -157,6 +169,8 @@
 - (void)setHasCount:(BOOL)arg1;
 - (void)setHasNCallActive:(BOOL)arg1;
 - (void)setHasNCallIdle:(BOOL)arg1;
+- (void)setHasNCelluarBadEcio:(BOOL)arg1;
+- (void)setHasNCelluarBadLQM:(BOOL)arg1;
 - (void)setHasNCelluarBadRSRP:(BOOL)arg1;
 - (void)setHasNCelluarBadSignal:(BOOL)arg1;
 - (void)setHasNCellularNotReady:(BOOL)arg1;
@@ -179,6 +193,8 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setNCallActive:(unsigned int)arg1;
 - (void)setNCallIdle:(unsigned int)arg1;
+- (void)setNCelluarBadEcio:(unsigned int)arg1;
+- (void)setNCelluarBadLQM:(unsigned int)arg1;
 - (void)setNCelluarBadRSRP:(unsigned int)arg1;
 - (void)setNCelluarBadSignal:(unsigned int)arg1;
 - (void)setNCellularNotReady:(unsigned int)arg1;

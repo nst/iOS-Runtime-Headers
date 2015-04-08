@@ -12,7 +12,7 @@
     GEORPMapLocation *_correctedMapLocation;
     GEORPCorrectedSearch *_correctedSearch;
     GEORPDirectionsProblem *_directionsProblem;
-    NSMutableArray *_photos;
+    NSMutableArray *_photoWithMetadatas;
     GEORPPlaceProblem *_placeProblem;
 }
 
@@ -30,13 +30,13 @@
 @property(readonly) BOOL hasCorrectedSearch;
 @property(readonly) BOOL hasDirectionsProblem;
 @property(readonly) BOOL hasPlaceProblem;
-@property(retain) NSMutableArray * photos;
+@property(retain) NSMutableArray * photoWithMetadatas;
 @property(retain) GEORPPlaceProblem * placeProblem;
 
 - (void)addCorrectedField:(id)arg1;
-- (void)addPhoto:(id)arg1;
+- (void)addPhotoWithMetadata:(id)arg1;
 - (void)clearCorrectedFields;
-- (void)clearPhotos;
+- (void)clearPhotoWithMetadatas;
 - (id)comments;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -61,9 +61,9 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)photoAtIndex:(unsigned int)arg1;
-- (id)photos;
-- (unsigned int)photosCount;
+- (id)photoWithMetadataAtIndex:(unsigned int)arg1;
+- (id)photoWithMetadatas;
+- (unsigned int)photoWithMetadatasCount;
 - (id)placeProblem;
 - (BOOL)readFrom:(id)arg1;
 - (void)setComments:(id)arg1;
@@ -73,7 +73,7 @@
 - (void)setCorrectedMapLocation:(id)arg1;
 - (void)setCorrectedSearch:(id)arg1;
 - (void)setDirectionsProblem:(id)arg1;
-- (void)setPhotos:(id)arg1;
+- (void)setPhotoWithMetadatas:(id)arg1;
 - (void)setPlaceProblem:(id)arg1;
 - (void)writeTo:(id)arg1;
 

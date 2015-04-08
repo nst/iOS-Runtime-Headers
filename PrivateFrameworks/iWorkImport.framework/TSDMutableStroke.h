@@ -9,11 +9,11 @@
 
 @property float actualWidth;
 @property int cap;
-@property(retain) TSUColor * color;
+@property(copy) TSUColor * color;
 @property BOOL dontClearBackground;
 @property int join;
 @property float miterLimit;
-@property(retain) TSDStrokePattern * pattern;
+@property(copy) TSDStrokePattern * pattern;
 @property float width;
 
 + (id)emptyStroke;

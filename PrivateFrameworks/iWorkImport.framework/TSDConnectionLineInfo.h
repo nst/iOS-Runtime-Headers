@@ -7,25 +7,21 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSString, TSDDrawableInfo;
+@class NSUUID, TSDDrawableInfo;
 
 @interface TSDConnectionLineInfo : TSDShapeInfo {
-    TSDDrawableInfo *mConnectedFrom;
-    NSString *mConnectedFromUUIDString;
-    TSDDrawableInfo *mConnectedTo;
-    NSString *mConnectedToUUIDString;
+    NSUUID *mConnectedFromID;
+    NSUUID *mConnectedToID;
     struct { 
         unsigned int connectedFrom : 1; 
         unsigned int connectedTo : 1; 
     } mInvalidFlags;
 }
 
-@property(retain) TSDDrawableInfo * connectedFrom;
-@property(copy) NSString * connectedFromUUIDString;
-@property(retain) TSDDrawableInfo * connectedTo;
-@property(copy) NSString * connectedToUUIDString;
-
-+ (id)cleanupInfos:(id)arg1 duringCommand:(id)arg2 updateGeometries:(BOOL)arg3;
+@property TSDDrawableInfo * connectedFrom;
+@property(retain) NSUUID * connectedFromID;
+@property TSDDrawableInfo * connectedTo;
+@property(retain) NSUUID * connectedToID;
 
 - (void)acceptVisitor:(id)arg1;
 - (BOOL)canAnchor;
@@ -33,27 +29,27 @@
 - (id)computeLayoutInfoGeometry;
 - (void)computeLayoutInfoGeometry:(id*)arg1 andPathSource:(id*)arg2;
 - (id)connectedFrom;
-- (id)connectedFromUUIDString;
+- (id)connectedFromID;
 - (id)connectedTo;
-- (id)connectedToUUIDString;
+- (id)connectedToID;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (void)didCopy;
 - (id)initFromUnarchiver:(id)arg1;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct ConnectionLineArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeArchive {} *x3; struct Reference {} *x4; struct Reference {} *x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct ConnectionLineArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ShapeArchive {} *x5; struct Reference {} *x6; struct Reference {} *x7; }*)arg1 unarchiver:(id)arg2;
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)performBlockWithTemporaryLayout:(id)arg1;
 - (id)presetKind;
 - (Class)repClass;
-- (void)saveGeometryToArchive:(struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Point {} *x3; struct Size {} *x4; unsigned int x5; float x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
-- (void)saveToArchive:(struct ConnectionLineArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeArchive {} *x3; struct Reference {} *x4; struct Reference {} *x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveGeometryToArchive:(struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct Size {} *x6; unsigned int x7; float x8; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ConnectionLineArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ShapeArchive {} *x5; struct Reference {} *x6; struct Reference {} *x7; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setConnectedFrom:(id)arg1;
-- (void)setConnectedFromUUIDString:(id)arg1;
+- (void)setConnectedFromID:(id)arg1;
 - (void)setConnectedTo:(id)arg1;
-- (void)setConnectedToUUIDString:(id)arg1;
+- (void)setConnectedToID:(id)arg1;
 - (void)willCopyWithOtherDrawables:(id)arg1;
 
 @end

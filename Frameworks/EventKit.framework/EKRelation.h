@@ -2,27 +2,40 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSSet, NSString;
 
 @interface EKRelation : NSObject {
     NSString *_entityName;
-    NSString *_inversePropertyName;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _inversePropertyIsApplicable;
+
+    NSSet *_inversePropertyNames;
     BOOL _ownsRelated;
     BOOL _toMany;
 }
 
-@property(readonly) NSString * inversePropertyName;
+@property(copy) id inversePropertyIsApplicable;
+@property(readonly) NSSet * inversePropertyNames;
 @property(readonly) BOOL ownsRelatedObject;
 @property(readonly) BOOL toMany;
 
-+ (id)relationWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3;
-+ (id)relationWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3 ownsRelated:(BOOL)arg4;
++ (id)relationWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyNames:(id)arg3;
++ (id)relationWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyNames:(id)arg3 ownsRelated:(BOOL)arg4;
 
 - (void)dealloc;
 - (id)description;
-- (id)initWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3 ownsRelated:(BOOL)arg4;
-- (id)inversePropertyName;
+- (id)initWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyNames:(id)arg3 ownsRelated:(BOOL)arg4;
+- (id)inversePropertyIsApplicable;
+- (id)inversePropertyNames;
 - (BOOL)ownsRelatedObject;
+- (void)setInversePropertyIsApplicable:(id)arg1;
+- (BOOL)shouldSetInverseProperty:(id)arg1 onObject:(id)arg2 forObject:(id)arg3;
 - (BOOL)toMany;
 
 @end

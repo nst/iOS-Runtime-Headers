@@ -10,6 +10,7 @@
 
 @property(copy,readonly) NSDictionary * allHeaderFields;
 @property(readonly) int statusCode;
+@property(readonly) BOOL tsu_isSuccess;
 
 + (BOOL)isErrorStatusCode:(int)arg1;
 + (id)localizedStringForStatusCode:(int)arg1;
@@ -40,5 +41,6 @@
 - (void)radio_mescalVerifyData:(id)arg1 withCompletionHandler:(id)arg2;
 - (int)sl_twitterResponseType:(id)arg1;
 - (int)statusCode;
+- (BOOL)tsu_isSuccess;
 
 @end

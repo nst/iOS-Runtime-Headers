@@ -5,18 +5,23 @@
 @class CPLResourceIdentity, NSString;
 
 @interface CPLResource : NSObject <NSCopying, NSSecureCoding> {
+    BOOL _canGenerateDerivative;
     BOOL _generateDerivative;
     CPLResourceIdentity *_identity;
     NSString *_itemIdentifier;
     unsigned int _resourceType;
 }
 
+@property BOOL canGenerateDerivative;
 @property BOOL generateDerivative;
 @property(retain) CPLResourceIdentity * identity;
 @property(copy) NSString * itemIdentifier;
 @property unsigned int resourceType;
 
++ (BOOL)cplShouldIgnorePropertyForEquality:(id)arg1;
++ (float)derivativeGenerationThreshold;
 + (id)descriptionForResourceType:(unsigned int)arg1;
++ (BOOL)hasPriorityBoostForResourceType:(unsigned int)arg1;
 + (unsigned int)maxPixelSizeForResourceType:(unsigned int)arg1;
 + (id)normalizedResourcesFromResources:(id)arg1;
 + (id)shortDescriptionForResourceType:(unsigned int)arg1;
@@ -24,6 +29,7 @@
 
 - (void).cxx_destruct;
 - (id)bestFileNameForResource;
+- (BOOL)canGenerateDerivative;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)deleteAfterUpload;
 - (id)description;
@@ -36,8 +42,8 @@
 - (id)initWithResourceIdentity:(id)arg1 itemIdentifier:(id)arg2 resourceType:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)itemIdentifier;
-- (unsigned int)maxPixelSizeForPhotoResource;
 - (unsigned int)resourceType;
+- (void)setCanGenerateDerivative:(BOOL)arg1;
 - (void)setDeleteAfterUpload:(BOOL)arg1;
 - (void)setGenerateDerivative:(BOOL)arg1;
 - (void)setIdentity:(id)arg1;

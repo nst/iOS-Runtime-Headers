@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)_initBare;
+- (id)_initWithSubscriptionType:(int)arg1 subscriptionID:(id)arg2 options:(unsigned int)arg3;
 - (void)_validateSubscriptionOptions:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;

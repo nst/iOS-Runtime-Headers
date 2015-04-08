@@ -40,6 +40,7 @@
 - (id)_calendarForEventComponents:(BOOL)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)_dateComponentsInSystemCalendarFromDate:(id)arg1;
+- (id)_dateFromComponents:(id)arg1 timeZone:(id)arg2;
 - (id)_dateInSystemCalendarFromComponents:(id)arg1;
 - (void)_datePickerChanged:(id)arg1;
 - (void)_datePickerDoubleTapped:(id)arg1;

@@ -26,6 +26,7 @@
     NSMutableDictionary *_handlerMap;
     double _idleTimerInterval;
     NSObject<OS_dispatch_source> *_idleTimerSource;
+    BOOL _shutdown;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -58,6 +59,7 @@
 - (void)setHandlerForMessageName:(id)arg1 handler:(id)arg2;
 - (void)setIdleTimerInterval:(double)arg1;
 - (void)setShutdownHandler:(id)arg1;
+- (BOOL)shutdown;
 - (id)shutdownHandler;
 - (void)startListening;
 

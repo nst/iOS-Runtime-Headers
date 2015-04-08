@@ -256,8 +256,6 @@
 @property int transportTypeForTravelTimes;
 @property(retain) NSData * zilchPoints;
 
-- (void)_applyBasicSearchProperties;
-- (void)_applyDisplayableSearchProperties;
 - (void)addAdditionalPlaceType:(int)arg1;
 - (void)addBusinessID:(unsigned long long)arg1;
 - (void)addFilterByBusinessCategory:(id)arg1;

@@ -11,14 +11,13 @@
     UIKBKeyDisplayContents *_fallbackContents;
     BOOL _fillPath;
     BOOL _force1xImages;
-    int _highlightedVariantIndex;
+    NSArray *_highlightedVariantsList;
     BOOL _isCustomGlyph;
     NSString *_secondaryDisplayString;
     NSString *_secondaryDisplayStringImage;
     BOOL _secondaryIsCustomGlyph;
     BOOL _stringKeycapOverImage;
-    NSArray *_variantDisplayImages;
-    NSArray *_variantDisplayStrings;
+    NSArray *_variantDisplayContents;
 }
 
 @property int displayPathType;
@@ -27,14 +26,13 @@
 @property(retain) UIKBKeyDisplayContents * fallbackContents;
 @property BOOL fillPath;
 @property BOOL force1xImages;
-@property int highlightedVariantIndex;
+@property(retain) NSArray * highlightedVariantsList;
 @property BOOL isCustomGlyph;
 @property(retain) NSString * secondaryDisplayString;
 @property(retain) NSString * secondaryDisplayStringImage;
 @property BOOL secondaryIsCustomGlyph;
 @property BOOL stringKeycapOverImage;
-@property(retain) NSArray * variantDisplayImages;
-@property(retain) NSArray * variantDisplayStrings;
+@property(retain) NSArray * variantDisplayContents;
 
 + (id)displayContents;
 
@@ -46,7 +44,7 @@
 - (id)fallbackContents;
 - (BOOL)fillPath;
 - (BOOL)force1xImages;
-- (int)highlightedVariantIndex;
+- (id)highlightedVariantsList;
 - (BOOL)isCustomGlyph;
 - (id)secondaryDisplayString;
 - (id)secondaryDisplayStringImage;
@@ -57,16 +55,14 @@
 - (void)setFallbackContents:(id)arg1;
 - (void)setFillPath:(BOOL)arg1;
 - (void)setForce1xImages:(BOOL)arg1;
-- (void)setHighlightedVariantIndex:(int)arg1;
+- (void)setHighlightedVariantsList:(id)arg1;
 - (void)setIsCustomGlyph:(BOOL)arg1;
 - (void)setSecondaryDisplayString:(id)arg1;
 - (void)setSecondaryDisplayStringImage:(id)arg1;
 - (void)setSecondaryIsCustomGlyph:(BOOL)arg1;
 - (void)setStringKeycapOverImage:(BOOL)arg1;
-- (void)setVariantDisplayImages:(id)arg1;
-- (void)setVariantDisplayStrings:(id)arg1;
+- (void)setVariantDisplayContents:(id)arg1;
 - (BOOL)stringKeycapOverImage;
-- (id)variantDisplayImages;
-- (id)variantDisplayStrings;
+- (id)variantDisplayContents;
 
 @end

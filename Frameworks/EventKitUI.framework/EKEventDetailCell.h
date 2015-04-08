@@ -22,6 +22,7 @@
 + (float)detailsTopVerticalInset;
 
 - (void).cxx_destruct;
+- (float)detailsLeftInset;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 style:(int)arg3;
 - (BOOL)isEditable;

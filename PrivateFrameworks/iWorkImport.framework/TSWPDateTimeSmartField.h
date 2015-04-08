@@ -49,7 +49,6 @@
 - (void)setUpdatePlan:(int)arg1;
 - (int)smartFieldKind;
 - (long)timeStyle;
-- (void)updateInParentStorageWithDolcContext:(id)arg1 undoTransaction:(struct TSWPStorageTransaction { struct vector<TSWPStorageTransactionObject, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_1_1_1; struct TSWPStorageTransactionObject {} *x_1_1_2; struct __compressed_pair<TSWPStorageTransactionObject *, std::__1::allocator<TSWPStorageTransactionObject> > { struct TSWPStorageTransactionObject {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; }*)arg2;
 - (int)updatePlan;
 
 @end

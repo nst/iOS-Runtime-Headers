@@ -4,10 +4,11 @@
 
 @class <BWBracketSettingsProvider>, <BWStillImageCaptureStatusDelegate>, BWBracketSettings, BWFigVideoCaptureDevice, BWNodeInput, BWNodeOutput, FigCaptureStillImageSettings, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
-@interface BWStillImageCoordinatorNode : BWNode <BWFigVideoDeviceStillImageCaptureDelegate> {
+@interface BWStillImageCoordinatorNode : BWNode <BWBracketSettingsProvider, BWFigVideoDeviceStillImageCaptureDelegate> {
     BWBracketSettings *_bracketSettings;
     BWFigVideoCaptureDevice *_captureDevice;
     int _captureType;
+    <BWBracketSettingsProvider> *_clientBracketSettingsProvider;
     int _clientExpectedImagesForRequest;
     int _clientReceivedImagesForRequest;
     FigCaptureStillImageSettings *_currentRequestSettings;
@@ -38,6 +39,7 @@
 @property <BWStillImageCaptureStatusDelegate> * stillImageCaptureStatusDelegate;
 @property(readonly) BWNodeInput * stillImageInput;
 @property(readonly) Class superclass;
+@property(readonly) int worstCaseInitialMaxBracketedCaptureBufferCount;
 
 + (void)initialize;
 
@@ -55,6 +57,8 @@
 - (void)_servicePrepareBracketQueue;
 - (long)_validateStillImageRequestForSettings:(id)arg1;
 - (void)_willCaptureStillImage;
+- (int)bracketCountForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; long long x11; }*)arg2 stillImageSettings:(id)arg3;
+- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; long long x11; }*)arg2 stillImageSettings:(id)arg3;
 - (void)captureDevice:(id)arg1 stillImageCaptureError:(long)arg2;
 - (void)captureDeviceDidCompleteStillImageCapture:(id)arg1;
 - (void)captureDeviceWillBeginStillImageCapture:(id)arg1;
@@ -75,5 +79,7 @@
 - (id)sisOutput;
 - (id)stillImageCaptureStatusDelegate;
 - (id)stillImageInput;
+- (int)worstCaseInitialMaxBracketCountForBracketingMode:(int)arg1;
+- (int)worstCaseInitialMaxBracketedCaptureBufferCount;
 
 @end

@@ -94,6 +94,7 @@
 - (float)maxAnchorY;
 - (struct CGSize { float x1; float x2; })maxSize;
 - (struct CGSize { float x1; float x2; })measuredSizeWithFlags:(unsigned int)arg1;
+- (struct CGSize { float x1; float x2; })measuredSizeWithFlags:(unsigned int)arg1 minSize:(struct CGSize { float x1; float x2; })arg2 maxSize:(struct CGSize { float x1; float x2; })arg3;
 - (struct CGSize { float x1; float x2; })minSize;
 - (int)naturalAlignment;
 - (int)naturalDirection;

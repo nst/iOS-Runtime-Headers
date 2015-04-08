@@ -33,6 +33,7 @@
 + (id)matchedRangesForString:(id)arg1 withRegularExpression:(struct URegularExpression { }*)arg2;
 
 - (void)__speechJobFinished:(id)arg1;
+- (void)__speechJobStarted:(id)arg1;
 - (void)_checkForLanguageMigration:(id)arg1;
 - (void)_clearSpeechQueue;
 - (void)_continueSpeaking;
@@ -43,7 +44,6 @@
 - (void)_speechJobFinished:(BOOL)arg1 action:(id)arg2;
 - (void)_startNextSpeechJob;
 - (void)_stopSpeaking:(id)arg1;
-- (void)_testSpeechTransforms;
 - (void)clearSpeechQueue;
 - (void)continueSpeaking;
 - (void)dealloc;
@@ -57,7 +57,6 @@
 - (void)setOriginalSpeechRateForJobOverride:(id)arg1;
 - (void)setSpeechEnabled:(BOOL)arg1;
 - (BOOL)showControlCenterControls;
-- (void)showControlCenterControls:(BOOL)arg1;
 - (BOOL)speechEnabled;
 - (void)speechSynthesizer:(id)arg1 didContinueSpeakingRequest:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(BOOL)arg3 withError:(id)arg4;

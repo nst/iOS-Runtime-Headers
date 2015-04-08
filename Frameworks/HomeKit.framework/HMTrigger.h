@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class HMHome, HMMessageDispatcher, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMHome, HMMessageDispatcher, NSArray, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMTrigger : NSObject <HMMessageReceiver, NSSecureCoding> {
     NSMutableArray *_currentActionSets;
@@ -11,7 +11,6 @@
     NSDate *_lastFireDate;
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;
-    NSMutableDictionary *_pendingRequests;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
@@ -28,7 +27,6 @@
 @property(readonly) NSUUID * messageTargetUUID;
 @property(retain) HMMessageDispatcher * msgDispatcher;
 @property(copy) NSString * name;
-@property(retain) NSMutableDictionary * pendingRequests;
 @property(readonly) Class superclass;
 @property(retain) NSUUID * uuid;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
@@ -43,6 +41,7 @@
 - (void)addActionSet:(id)arg1 completionHandler:(id)arg2;
 - (void)configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3;
 - (id)currentActionSets;
+- (void)dealloc;
 - (void)enable:(BOOL)arg1 completionHandler:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (void)handleTriggerActivatedNotification:(id)arg1;
@@ -59,7 +58,6 @@
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
 - (id)name;
-- (id)pendingRequests;
 - (void)removeActionSet:(id)arg1 completionHandler:(id)arg2;
 - (id)serializeForAdd;
 - (void)setCurrentActionSets:(id)arg1;
@@ -68,9 +66,9 @@
 - (void)setLastFireDate:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPendingRequests:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (void)unconfigure;
 - (void)updateName:(id)arg1 completionHandler:(id)arg2;
 - (id)uuid;
 - (id)workQueue;

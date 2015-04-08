@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class <HMHomeDelegate>, HMHomeManager, HMMessageDispatcher, HMRoom, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class <HMHomeDelegate>, HMHomeManager, HMMessageDispatcher, HMPendingRequests, HMRoom, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMHome : NSObject <HMMessageReceiver, NSSecureCoding> {
     NSArray *_actions;
@@ -19,9 +19,7 @@
     HMHomeManager *_homeManager;
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;
-    NSMutableArray *_pendingAccessoriesTransactions;
-    NSMutableDictionary *_pendingRequests;
-    NSMutableArray *_pendingTriggerTransactions;
+    HMPendingRequests *_pendingRequests;
     BOOL _primary;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -48,9 +46,7 @@
 @property(readonly) NSUUID * messageTargetUUID;
 @property(retain) HMMessageDispatcher * msgDispatcher;
 @property(copy) NSString * name;
-@property(retain) NSMutableArray * pendingAccessoriesTransactions;
-@property(retain) NSMutableDictionary * pendingRequests;
-@property(retain) NSMutableArray * pendingTriggerTransactions;
+@property(retain) HMPendingRequests * pendingRequests;
 @property(getter=isPrimary) BOOL primary;
 @property(copy,readonly) NSArray * rooms;
 @property(copy,readonly) NSArray * serviceGroups;
@@ -70,6 +66,7 @@
 - (void)_handleMultipleCharacteristicValuesUpdated:(id)arg1;
 - (void)_handlePairedAccessoryErrorNotification:(id)arg1;
 - (void)_registerNotificationHandlers;
+- (void)_removeServices:(id)arg1;
 - (void)_removeUser:(id)arg1 confirm:(BOOL)arg2 completionHandler:(id)arg3;
 - (id)accessories;
 - (id)accessoryWithUUID:(id)arg1;
@@ -87,7 +84,7 @@
 - (void)addUserWithoutConfirmation:(id)arg1 privilege:(unsigned int)arg2 completionHandler:(id)arg3;
 - (void)addZoneWithName:(id)arg1 completionHandler:(id)arg2;
 - (void)assignAccessory:(id)arg1 toRoom:(id)arg2 completionHandler:(id)arg3;
-- (void)configure:(id)arg1 uuid:(id)arg2 primary:(BOOL)arg3 messageDispatcher:(id)arg4;
+- (void)configure:(id)arg1 uuid:(id)arg2 primary:(BOOL)arg3 messageDispatcher:(id)arg4 pendingRequests:(id)arg5;
 - (id)currentAccessories;
 - (id)currentActionSets;
 - (id)currentActions;
@@ -96,6 +93,7 @@
 - (id)currentTriggers;
 - (id)currentUsers;
 - (id)currentZones;
+- (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -128,14 +126,13 @@
 - (void)migrateDelegatesToHome:(id)arg1 withCompletion:(id)arg2;
 - (id)msgDispatcher;
 - (id)name;
-- (id)pendingAccessoriesTransactions;
 - (id)pendingRequests;
-- (id)pendingTriggerTransactions;
 - (void)readCharacteristicValues:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)removeAccessory:(id)arg1 completionHandler:(id)arg2;
 - (void)removeActionSet:(id)arg1 completionHandler:(id)arg2;
 - (void)removeRoom:(id)arg1 completionHandler:(id)arg2;
 - (void)removeServiceGroup:(id)arg1 completionHandler:(id)arg2;
+- (void)removeServices:(id)arg1;
 - (void)removeTrigger:(id)arg1 completionHandler:(id)arg2;
 - (void)removeUser:(id)arg1 completionHandler:(id)arg2;
 - (void)removeUserWithoutConfirmation:(id)arg1 completionHandler:(id)arg2;
@@ -161,9 +158,7 @@
 - (void)setHomeManager:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPendingAccessoriesTransactions:(id)arg1;
 - (void)setPendingRequests:(id)arg1;
-- (void)setPendingTriggerTransactions:(id)arg1;
 - (void)setPrimary:(BOOL)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
@@ -171,6 +166,7 @@
 - (id)triggerWithUUID:(id)arg1;
 - (id)triggers;
 - (void)unblockAccessory:(id)arg1 completionHandler:(id)arg2;
+- (void)unconfigureHome;
 - (void)updateName:(id)arg1 completionHandler:(id)arg2;
 - (id)users;
 - (id)uuid;

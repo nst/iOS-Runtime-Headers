@@ -11,7 +11,6 @@
     UIPrintInfo *_observedPrintInfo;
     BOOL _observingRotation;
     UIViewController *_parentController;
-    BOOL _parentHasNoPopover;
     UIPopoverController *_poverController;
     UIPrintInteractionController *_printInteractionController;
     PKPrinter *_printer;
@@ -42,7 +41,6 @@
 - (void)_presentWindow;
 - (id)_removeRollsFrom:(id)arg1;
 - (void)cancelPrinting;
-- (void)controllerDidDisappear;
 - (int)copies;
 - (void)dealloc;
 - (void)dismissAnimated:(BOOL)arg1;
@@ -59,7 +57,11 @@
 - (void)presentPrintPanelAnimated:(BOOL)arg1;
 - (void)presentPrintPanelFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)presentPrintPanelFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
+- (void)printPanelDidDisappear;
+- (void)printPaperViewDidDisappear;
+- (void)printRangeViewDidDisappear;
 - (id)printer;
+- (void)printerBrowserViewDidDisappear;
 - (void)setCopies:(int)arg1;
 - (void)setDuplex:(BOOL)arg1;
 - (void)setPageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

@@ -5,7 +5,6 @@
 @class NSString, TSARenderingExporter;
 
 @interface TSAPdfRenderingExporterDelegate : NSObject <TSARenderingExporterDelegate> {
-    float mMaxPixels;
     NSString *mPassphraseOpen;
     NSString *mPassphrasePrintCopy;
     TSARenderingExporter *mRenderingExporter;
@@ -21,7 +20,6 @@
 - (void)releaseCGContext:(struct CGContext { }*)arg1;
 - (int)renderingQuality;
 - (void)setCopyPassphrase:(id)arg1 hint:(id)arg2;
-- (void)setMaxPixels:(float)arg1;
 - (void)setPassphrase:(id)arg1 hint:(id)arg2;
 - (void)setPrintPassphrase:(id)arg1 hint:(id)arg2;
 - (void)setRenderingQuality:(int)arg1;

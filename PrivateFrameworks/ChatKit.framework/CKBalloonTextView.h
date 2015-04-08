@@ -21,7 +21,6 @@
 @property(readonly) Class superclass;
 
 - (id)attributedText;
-- (BOOL)canBecomeFirstResponder;
 - (float)capOffsetFromBoundsTop;
 - (void)dealloc;
 - (void)didMoveToWindow;

@@ -40,6 +40,7 @@
 - (void)_start;
 - (void)_updateNewAccessories:(id)arg1;
 - (id)accessories;
+- (void)dealloc;
 - (id)delegate;
 - (id)discoveredAccessories;
 - (unsigned int)generationCounter;

@@ -37,6 +37,7 @@
 - (void)_deleteOrphanedEntityRevisionsAndSave:(BOOL)arg1;
 - (void)_deleteRecordingsWithDurationLessThan:(double)arg1 passingTest:(id)arg2;
 - (id)_entityRevisionWithRecordingID:(long long)arg1;
+- (void)_enumerateFetchedRecordingsCustomLabels:(id)arg1;
 - (void)_enumerateSavedRecordingsAndEntityRevisionInArrayOfManagedObjects:(id)arg1 createIfNeeded:(BOOL)arg2 block:(id)arg3;
 - (void)_handleExternalModelDidSaveNotification:(id)arg1;
 - (void)_handleInternalModelDidSaveNotification:(id)arg1;

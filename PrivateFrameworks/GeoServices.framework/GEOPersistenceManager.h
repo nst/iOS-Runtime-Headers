@@ -5,10 +5,10 @@
 @interface GEOPersistenceManager : NSObject {
 }
 
-+ (BOOL)createMuidMappingDirectoryWithError:(id*)arg1;
-+ (BOOL)phoneNumberMuidMappingFileExists;
-+ (BOOL)readPhoneNumberMuidMapping:(id*)arg1 uniquePhoneNumbers:(id*)arg2 error:(id*)arg3;
-+ (BOOL)readPhoneNumberMuidMapping:(id*)arg1 uniquePhoneNumbers:(id*)arg2 version:(id*)arg3 error:(id*)arg4;
-+ (BOOL)writePhoneNumberMuidMappingForMapping:(id)arg1 uniquePhoneNumbers:(id)arg2 error:(id*)arg3;
++ (BOOL)createMuidMappingDirectoryForPath:(id)arg1 WithError:(id*)arg2;
++ (BOOL)phoneNumberMuidMappingFileExistsAtPath:(id)arg1;
++ (BOOL)readPhoneNumberMuidMapping:(id*)arg1 uniquePhoneNumbers:(id*)arg2 atPath:(id)arg3 error:(id*)arg4;
++ (BOOL)readPhoneNumberMuidMapping:(id*)arg1 uniquePhoneNumbers:(id*)arg2 version:(id*)arg3 atPath:(id)arg4 error:(id*)arg5;
++ (BOOL)writePhoneNumberMuidMappingForMapping:(id)arg1 uniquePhoneNumbers:(id)arg2 toPath:(id)arg3 error:(id*)arg4;
 
 @end

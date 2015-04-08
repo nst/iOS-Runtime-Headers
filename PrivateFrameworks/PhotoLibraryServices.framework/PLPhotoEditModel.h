@@ -5,6 +5,8 @@
 @class NSArray, NSDictionary, NSString;
 
 @interface PLPhotoEditModel : NSObject <NSCopying> {
+    int _appliedOrientation;
+    BOOL _autoCropped;
     NSArray *_autoRedEyeCorrections;
     NSString *_autoSmartColorIdentifier;
     float _autoSmartColorLevel;
@@ -42,7 +44,6 @@
         } size; 
     } _normalizedCropRect;
     NSArray *_redEyeCorrections;
-    unsigned int _rotation;
     float _shadowsLevelOffset;
     BOOL _smartBWEnabled;
     float _smartBWLevel;
@@ -61,6 +62,8 @@
     float _whiteBalanceFaceWarmth;
 }
 
+@property(readonly) int appliedOrientation;
+@property(getter=isAutoCropped,readonly) BOOL autoCropped;
 @property(copy,readonly) NSArray * autoRedEyeCorrections;
 @property(copy,readonly) NSString * autoSmartColorIdentifier;
 @property(readonly) float autoSmartColorLevel;
@@ -79,18 +82,20 @@
 @property(readonly) float colorContrastLevelOffset;
 @property(readonly) float colorVibrancyLevelOffset;
 @property(readonly) float contrastLevelOffset;
+@property(getter=isCropConstrained,readonly) BOOL cropConstrained;
 @property(readonly) int cropConstraintHeight;
 @property(readonly) int cropConstraintWidth;
 @property(copy,readonly) NSString * effectFilterName;
 @property(readonly) int effectFilterVersion;
 @property(readonly) float exposureLevelOffset;
+@property(readonly) BOOL hasAnyAutoEnhancement;
 @property(readonly) BOOL hasIdentityCrop;
+@property(readonly) BOOL hasRedEyeCorrections;
 @property(readonly) float highlightsLevelOffset;
 @property(copy,readonly) NSArray * legacyAutoEnhanceFilters;
 @property(readonly) BOOL legacyAutoEnhanceIsOn;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } normalizedCropRect;
 @property(copy,readonly) NSArray * redEyeCorrections;
-@property(readonly) unsigned int rotation;
 @property(readonly) float shadowsLevelOffset;
 @property(getter=isSmartBWEnabled,readonly) BOOL smartBWEnabled;
 @property(readonly) float smartBWLevel;
@@ -112,11 +117,9 @@
 + (void)_loadReferenceLevelsFromCIFilterWithName:(id)arg1 attributeKeys:(id)arg2 intoLevelStructs:(struct { /* ? */ }**)arg3;
 + (void)_loadSubfilterReferenceLevelsIfNeeded;
 + (float)_referenceValueOfType:(int)arg1 fromLevels:(struct { float x1; float x2; float x3; })arg2;
-+ (float)angleForRotation:(unsigned int)arg1;
 + (int)identityCropConstraint;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })identityNormalizedCropRect;
 + (int)identityOrientation;
-+ (unsigned int)identityRotation;
 + (float)referenceBWGrainLevelOfType:(int)arg1;
 + (float)referenceBWHueLevelOfType:(int)arg1;
 + (float)referenceBWNeutralGammaLevelOfType:(int)arg1;
@@ -142,6 +145,8 @@
 
 - (void)_copyValuesFromModel:(id)arg1 interpolationStartModel:(id)arg2 progress:(float)arg3;
 - (id)_debugDictionaryRepresentation;
+- (BOOL)_shouldEarlyExitComparisonToModel:(id)arg1 returnValue:(BOOL*)arg2;
+- (int)appliedOrientation;
 - (id)autoRedEyeCorrections;
 - (id)autoSmartColorIdentifier;
 - (float)autoSmartColorLevel;
@@ -168,24 +173,39 @@
 - (id)effectFilterName;
 - (int)effectFilterVersion;
 - (float)exposureLevelOffset;
+- (BOOL)hasAnyAutoEnhancement;
 - (BOOL)hasIdentityCrop;
+- (BOOL)hasRedEyeCorrections;
 - (float)highlightsLevelOffset;
 - (id)init;
+- (BOOL)isAutoCropped;
+- (BOOL)isCropConstrained;
+- (BOOL)isCropConstraintEqualToPhotoEditModel:(id)arg1;
+- (BOOL)isEffectFilterEqualToPhotoEditModel:(id)arg1;
 - (BOOL)isEqualToPhotoEditModel:(id)arg1;
 - (BOOL)isGeometryEqualToPhotoEditModel:(id)arg1;
 - (BOOL)isGeometryIdentity;
 - (BOOL)isIdentityModel;
+- (BOOL)isRedEyeCorrectionEqualToPhotoEditModel:(id)arg1;
 - (BOOL)isSmartBWEnabled;
+- (BOOL)isSmartBWPrecisionEqualToPhotoEditModel:(id)arg1;
 - (BOOL)isSmartColorEnabled;
+- (BOOL)isSmartColorPrecisionEqualToPhotoEditModel:(id)arg1;
 - (BOOL)isSmartToneEnabled;
+- (BOOL)isSmartTonePrecisionEqualToPhotoEditModel:(id)arg1;
 - (BOOL)isVisuallyEqualToPhotoEditModel:(id)arg1;
 - (BOOL)isWhiteBalanceEnabled;
 - (id)legacyAutoEnhanceFilters;
 - (BOOL)legacyAutoEnhanceIsOn;
 - (id)mutableCopy;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })normalizedCropRect;
+- (id)pl_aggregateKeysForPreviousPhotoEditModel:(id)arg1;
+- (id)pl_aggregateNameForEffectFilter;
+- (struct CGSize { float x1; float x2; })pl_dataCropConstraintSizeForImageGeometry:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pl_dataCropRectForImageGeometry:(id)arg1 straightenAngle:(float)arg2;
+- (BOOL)pl_isCropConstraintEnabled;
+- (BOOL)pl_isCropEnabled;
 - (id)redEyeCorrections;
-- (unsigned int)rotation;
 - (float)shadowsLevelOffset;
 - (float)smartBWLevel;
 - (id)smartBWStatistics;

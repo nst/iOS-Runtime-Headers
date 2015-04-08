@@ -19,5 +19,6 @@
 - (id)pass;
 - (id)paymentApplication;
 - (BOOL)requiresBillingAddress;
+- (int)status;
 
 @end

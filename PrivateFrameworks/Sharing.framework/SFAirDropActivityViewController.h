@@ -9,6 +9,8 @@
     SFAirDropActiveIconView *_airDropActiveIconView;
     NSLayoutConstraint *_airDropIconLeftConstraint;
     SFAirDropIconView *_airDropIconView;
+    NSLayoutConstraint *_airDropInactiveIconLeftConstraint;
+    SFAirDropActiveIconView *_airDropInactiveIconView;
     ALAssetsLibrary *_assetsLibrary;
     int _attachmentCount;
     SFAirDropBrowser *_browser;
@@ -36,6 +38,8 @@
     int _sharedItemsRequestID;
     NSMutableDictionary *_sharedItemsRequestIDToPreviewPhoto;
     UILabel *_titleLabel;
+    UILabel *_wirelessAccessPointLabel;
+    NSLayoutConstraint *_wirelessAccessPointRightConstraint;
     SFWirelessSettingsController *_wirelessSettings;
 }
 

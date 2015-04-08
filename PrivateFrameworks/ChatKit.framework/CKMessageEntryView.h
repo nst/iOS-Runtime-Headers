@@ -33,8 +33,6 @@
         float width; 
         float height; 
     } _deleteAudioRecordingButtonSize;
-    BOOL _dimmed;
-    UIView *_dimmingView;
     unsigned int _displayMode;
     UIView *_dividerLine;
     BOOL _failedRecipients;
@@ -100,7 +98,6 @@
 @property(retain) UIButton * deleteAudioRecordingButton;
 @property struct CGSize { float x1; float x2; } deleteAudioRecordingButtonSize;
 @property(copy,readonly) NSString * description;
-@property(getter=isDimmed) BOOL dimmed;
 @property unsigned int displayMode;
 @property(retain) UIView * dividerLine;
 @property(getter=hasFailedRecipients) BOOL failedRecipients;
@@ -177,7 +174,6 @@
 - (BOOL)isAudioJoystickVisible;
 - (BOOL)isCharacterCountHidden;
 - (BOOL)isComposingRecipient;
-- (BOOL)isDimmed;
 - (BOOL)isKeyboardVisible;
 - (BOOL)isPerformingJoystickSendAction;
 - (BOOL)isRecording;
@@ -241,7 +237,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDeleteAudioRecordingButton:(id)arg1;
 - (void)setDeleteAudioRecordingButtonSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setDimmed:(BOOL)arg1;
 - (void)setDisplayMode:(unsigned int)arg1;
 - (void)setDividerLine:(id)arg1;
 - (void)setFailedRecipients:(BOOL)arg1;

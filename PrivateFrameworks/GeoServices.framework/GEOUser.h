@@ -14,8 +14,6 @@
 @property(retain) GEOPhoto * image;
 @property(retain) NSString * name;
 
-+ (id)userWithYelpJSON:(id)arg1;
-
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

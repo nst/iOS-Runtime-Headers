@@ -25,6 +25,7 @@
 + (id)downloadedDocumentContainerDirectoryURL;
 + (id)localizationBundleForDocumentContainerURL:(id)arg1;
 + (id)localizationBundleForDocumentURL:(id)arg1;
++ (void)setBundledDocumentContainerDirectoryURL:(id)arg1;
 + (id)templateZipURLForTemplateName:(id)arg1;
 
 - (id)bundledDocumentContainerURL;

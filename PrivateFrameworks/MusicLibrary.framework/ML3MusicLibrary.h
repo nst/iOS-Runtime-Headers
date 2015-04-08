@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class <ML3MusicLibraryDelegate>, ML3AccountCacheDatabase, ML3Container, ML3DatabaseConnectionPool, ML3DatabaseMetadata, ML3LibraryNotificationManager, ML3SortMapSections, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class <ML3MusicLibraryDelegate>, ML3AccountCacheDatabase, ML3Container, ML3DatabaseConnectionPool, ML3DatabaseMetadata, ML3LibraryNotificationManager, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface ML3MusicLibrary : NSObject <ML3DatabaseConnectionDelegate, ML3DatabaseConnectionPoolDelegate> {
     ML3AccountCacheDatabase *_accountCacheDatabase;
@@ -19,7 +19,6 @@
     NSMutableDictionary *_optimizedLibraryEntityFilterPredicatesByEntityClass;
     NSObject<OS_dispatch_queue> *_serialQueue;
     struct iPhoneSortKeyBuilder { } *_sortKeyBuilder;
-    ML3SortMapSections *_sortMapSections;
     NSString *_syncLibraryUID;
 }
 
@@ -206,6 +205,7 @@
 - (BOOL)mediaRestrictionEnabled;
 - (void)migratePresignedValidity;
 - (struct { long long x1; int x2; })nameOrderForString:(id)arg1;
+- (void)notifyCloudLibraryAvailabilityDidChange;
 - (void)notifyContentsDidChange;
 - (void)notifyDisplayValuesPropertyDidChange;
 - (void)notifyInvisiblePropertyDidChange;
@@ -247,8 +247,6 @@
 - (void)setSyncGenerationID:(long long)arg1;
 - (void)setSyncLibraryID:(id)arg1;
 - (BOOL)setValue:(id)arg1 forDatabaseProperty:(id)arg2;
-- (id)sortMapHeaders;
-- (id)sortMapSections;
 - (BOOL)supportsUbiquitousPlaybackPositions;
 - (long long)syncGenerationID;
 - (long long)syncIdFromMultiverseId:(id)arg1;

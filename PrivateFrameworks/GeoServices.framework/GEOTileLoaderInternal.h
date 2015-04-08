@@ -8,7 +8,7 @@
 
 @class <GEOTileLoaderInternalDelegate>, GEOTileLoaderConfiguration, GEOTilePool, GEOTileServerProxy, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
-@interface GEOTileLoaderInternal : GEOTileLoader <GEOResourceManifestTileGroupObserver, GEOTileServerProxyDelegate> {
+@interface GEOTileLoaderInternal : GEOTileLoader <GEOExperimentConfigurationObserver, GEOResourceManifestTileGroupObserver, GEOTileServerProxyDelegate> {
     GEOTilePool *_cache;
     GEOTileLoaderConfiguration *_config;
     int _diskHits;
@@ -140,6 +140,7 @@
 - (id)description;
 - (int)diskHits;
 - (void)endPreloadSessionForClient:(id)arg1;
+- (void)experimentConfigurationDidChange:(id)arg1;
 - (void)expireTilesWithPredicate:(id)arg1;
 - (id)init;
 - (id)initWithConfiguration:(id)arg1;

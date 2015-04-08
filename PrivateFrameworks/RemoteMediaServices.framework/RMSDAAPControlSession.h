@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class <RMSDAAPControlSessionDelegate>, NSString, RMSDAAPLoginManager, RMSDAAPNowPlayingManager, RMSDAAPRequestManager, RMSDAAPTouchRemoteManager, RMSService;
+@class <RMSDAAPControlSessionDelegate>, NSString, RMSDAAPLoginManager, RMSDAAPNowPlayingManager, RMSDAAPRequestManager, RMSDAAPTouchRemoteManager, RMSNowPlayingInfo, RMSService;
 
 @interface RMSDAAPControlSession : NSObject <RMSDAAPControlSession, RMSDAAPNowPlayingManagerDelegate, RMSDAAPRequestManagerDelegate, RMSDAAPTouchRemoteManagerDelegate> {
     <RMSDAAPControlSessionDelegate> *_delegate;
     RMSDAAPLoginManager *_loginManager;
+    RMSNowPlayingInfo *_nowPlayingInfo;
     RMSDAAPNowPlayingManager *_nowPlayingManager;
     RMSDAAPRequestManager *_requestManager;
     RMSService *_service;

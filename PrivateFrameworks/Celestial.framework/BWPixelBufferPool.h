@@ -33,6 +33,7 @@
 - (struct __CVBuffer { }*)newPixelBuffer;
 - (long)preallocate;
 - (void)preallocateWithCompletionHandler:(id)arg1;
+- (void)prefetchWithCompletionHandler:(id)arg1;
 - (void)setCVPixelBufferPool:(struct __CVPixelBufferPool { }*)arg1 attributes:(struct __CFDictionary { }*)arg2;
 
 @end

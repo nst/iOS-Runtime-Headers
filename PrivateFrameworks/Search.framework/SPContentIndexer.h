@@ -17,6 +17,7 @@
     unsigned int _version;
 }
 
++ (void)cooldown;
 + (id)indexerForDisplayIdentifier:(id)arg1 category:(id)arg2;
 + (void)preheat;
 + (void)shutdown;

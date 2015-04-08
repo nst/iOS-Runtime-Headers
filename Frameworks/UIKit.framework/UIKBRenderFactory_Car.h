@@ -5,9 +5,12 @@
 @interface UIKBRenderFactory_Car : UIKBRenderFactory {
 }
 
+@property(readonly) float carScale;
+
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)activeKeyColor;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
+- (float)carScale;
 - (float)defaultKeyFontSize;
 - (id)displayContentsForKey:(id)arg1;
 - (id)dividerColor;

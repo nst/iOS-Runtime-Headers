@@ -21,6 +21,7 @@
     NSMutableArray *_backlightBuckets;
     unsigned int _dispOnCount;
     unsigned int _displayIdlePercentage;
+    unsigned int _frameRateResidencyPercentage;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int alsAutoBrightnessChangeCount : 1; 
@@ -38,9 +39,12 @@
         unsigned int alsBrightnessEnableCnt : 1; 
         unsigned int dispOnCount : 1; 
         unsigned int displayIdlePercentage : 1; 
+        unsigned int frameRateResidencyPercentage : 1; 
         unsigned int mieCount : 1; 
         unsigned int mieDuration : 1; 
         unsigned int pluggedDisplayOnDuration : 1; 
+        unsigned int residencyPercentage30Hz : 1; 
+        unsigned int residencyPercentage60Hz : 1; 
         unsigned int totalBacklightPower : 1; 
         unsigned int totalDisplayPower : 1; 
         unsigned int unpluggedDisplayOnDuration : 1; 
@@ -48,6 +52,8 @@
     unsigned int _mieCount;
     unsigned int _mieDuration;
     unsigned int _pluggedDisplayOnDuration;
+    unsigned int _residencyPercentage30Hz;
+    unsigned int _residencyPercentage60Hz;
     unsigned long long _timestamp;
     unsigned int _totalBacklightPower;
     unsigned int _totalDisplayPower;
@@ -70,6 +76,7 @@
 @property(retain) NSMutableArray * backlightBuckets;
 @property unsigned int dispOnCount;
 @property unsigned int displayIdlePercentage;
+@property unsigned int frameRateResidencyPercentage;
 @property BOOL hasAlsAutoBrightnessChangeCount;
 @property BOOL hasAlsAutoBrightnessCurveE0A;
 @property BOOL hasAlsAutoBrightnessCurveE0B;
@@ -85,9 +92,12 @@
 @property BOOL hasAlsBrightnessEnableCnt;
 @property BOOL hasDispOnCount;
 @property BOOL hasDisplayIdlePercentage;
+@property BOOL hasFrameRateResidencyPercentage;
 @property BOOL hasMieCount;
 @property BOOL hasMieDuration;
 @property BOOL hasPluggedDisplayOnDuration;
+@property BOOL hasResidencyPercentage30Hz;
+@property BOOL hasResidencyPercentage60Hz;
 @property BOOL hasTimestamp;
 @property BOOL hasTotalBacklightPower;
 @property BOOL hasTotalDisplayPower;
@@ -95,6 +105,8 @@
 @property unsigned int mieCount;
 @property unsigned int mieDuration;
 @property unsigned int pluggedDisplayOnDuration;
+@property unsigned int residencyPercentage30Hz;
+@property unsigned int residencyPercentage60Hz;
 @property unsigned long long timestamp;
 @property unsigned int totalBacklightPower;
 @property unsigned int totalDisplayPower;
@@ -125,6 +137,7 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)dispOnCount;
 - (unsigned int)displayIdlePercentage;
+- (unsigned int)frameRateResidencyPercentage;
 - (BOOL)hasAlsAutoBrightnessChangeCount;
 - (BOOL)hasAlsAutoBrightnessCurveE0A;
 - (BOOL)hasAlsAutoBrightnessCurveE0B;
@@ -140,9 +153,12 @@
 - (BOOL)hasAlsBrightnessEnableCnt;
 - (BOOL)hasDispOnCount;
 - (BOOL)hasDisplayIdlePercentage;
+- (BOOL)hasFrameRateResidencyPercentage;
 - (BOOL)hasMieCount;
 - (BOOL)hasMieDuration;
 - (BOOL)hasPluggedDisplayOnDuration;
+- (BOOL)hasResidencyPercentage30Hz;
+- (BOOL)hasResidencyPercentage60Hz;
 - (BOOL)hasTimestamp;
 - (BOOL)hasTotalBacklightPower;
 - (BOOL)hasTotalDisplayPower;
@@ -154,6 +170,8 @@
 - (unsigned int)mieDuration;
 - (unsigned int)pluggedDisplayOnDuration;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)residencyPercentage30Hz;
+- (unsigned int)residencyPercentage60Hz;
 - (void)setAlsAutoBrightnessChangeCount:(unsigned int)arg1;
 - (void)setAlsAutoBrightnessCurveE0A:(int)arg1;
 - (void)setAlsAutoBrightnessCurveE0B:(int)arg1;
@@ -170,6 +188,7 @@
 - (void)setBacklightBuckets:(id)arg1;
 - (void)setDispOnCount:(unsigned int)arg1;
 - (void)setDisplayIdlePercentage:(unsigned int)arg1;
+- (void)setFrameRateResidencyPercentage:(unsigned int)arg1;
 - (void)setHasAlsAutoBrightnessChangeCount:(BOOL)arg1;
 - (void)setHasAlsAutoBrightnessCurveE0A:(BOOL)arg1;
 - (void)setHasAlsAutoBrightnessCurveE0B:(BOOL)arg1;
@@ -185,9 +204,12 @@
 - (void)setHasAlsBrightnessEnableCnt:(BOOL)arg1;
 - (void)setHasDispOnCount:(BOOL)arg1;
 - (void)setHasDisplayIdlePercentage:(BOOL)arg1;
+- (void)setHasFrameRateResidencyPercentage:(BOOL)arg1;
 - (void)setHasMieCount:(BOOL)arg1;
 - (void)setHasMieDuration:(BOOL)arg1;
 - (void)setHasPluggedDisplayOnDuration:(BOOL)arg1;
+- (void)setHasResidencyPercentage30Hz:(BOOL)arg1;
+- (void)setHasResidencyPercentage60Hz:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasTotalBacklightPower:(BOOL)arg1;
 - (void)setHasTotalDisplayPower:(BOOL)arg1;
@@ -195,6 +217,8 @@
 - (void)setMieCount:(unsigned int)arg1;
 - (void)setMieDuration:(unsigned int)arg1;
 - (void)setPluggedDisplayOnDuration:(unsigned int)arg1;
+- (void)setResidencyPercentage30Hz:(unsigned int)arg1;
+- (void)setResidencyPercentage60Hz:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTotalBacklightPower:(unsigned int)arg1;
 - (void)setTotalDisplayPower:(unsigned int)arg1;

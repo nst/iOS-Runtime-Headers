@@ -2,19 +2,19 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, PLCloudSharedAlbum, PUPhotoStreamComposeServiceViewController, PUPhotosPickerViewController, PUVideoTrimQueueController, UIBarButtonItem, UIPopoverController, UISegmentedControl, UIViewController;
+@class NSArray, NSString, PLCloudSharedAlbum, PUPhotoStreamComposeServiceViewController, PUPhotosPickerViewController, PUVideoTrimQueueController, UIBarButtonItem, UISegmentedControl, UIViewController;
 
-@interface PUCloudSharedAlbumViewController : PUPhotosAlbumViewController <PLAlbumStreamingOptionsViewControllerDelegate, PUPhotoStreamComposeServiceDelegate, PUVideoTrimQueueControllerDelegate, UIPopoverControllerDelegate> {
+@interface PUCloudSharedAlbumViewController : PUPhotosAlbumViewController <PLAlbumStreamingOptionsViewControllerDelegate, PUPhotoStreamComposeServiceDelegate, PUVideoTrimQueueControllerDelegate, UIPopoverPresentationControllerDelegate> {
     BOOL __canContributeToCloudSharedAlbum;
     UIBarButtonItem *__optionsBarButtonItem;
     UIBarButtonItem *__optionsBarButtonSpacerItem;
-    UIPopoverController *__optionsPopoverController;
+    UIViewController *__optionsPopoverRootViewController;
     UIViewController *__optionsViewController;
     int __selectedItemIndex;
     UIBarButtonItem *__switcherBarButtonItem;
     UISegmentedControl *__switcherSegmentedControl;
+    NSArray *__transitioningOptionsViewControllers;
     PUPhotosPickerViewController *_activePhotosPickerViewController;
-    PLCloudSharedAlbum *_album;
     PUPhotoStreamComposeServiceViewController *_composeServiceController;
     BOOL _displayingOptions;
     PUVideoTrimQueueController *_trimController;
@@ -23,11 +23,12 @@
 @property(setter=_setCanContributeToCloudSharedAlbum:) BOOL _canContributeToCloudSharedAlbum;
 @property(setter=_setOptionsBarButtonItem:,retain) UIBarButtonItem * _optionsBarButtonItem;
 @property(setter=_setOptionsBarButtonSpacerItem:,retain) UIBarButtonItem * _optionsBarButtonSpacerItem;
-@property(setter=_setOptionsPopoverController:,retain) UIPopoverController * _optionsPopoverController;
+@property(setter=_setOptionsPopoverRootViewController:,retain) UIViewController * _optionsPopoverRootViewController;
 @property(setter=_setOptionsViewController:,retain) UIViewController * _optionsViewController;
 @property(setter=_setSelectedItemIndex:) int _selectedItemIndex;
 @property(setter=_setSwitcherBarButtonItem:,retain) UIBarButtonItem * _switcherBarButtonItem;
 @property(setter=_setSwitcherSegmentedControl:,retain) UISegmentedControl * _switcherSegmentedControl;
+@property(setter=_setTransitioningOptionsViewControllers:,retain) NSArray * _transitioningOptionsViewControllers;
 @property(retain) PLCloudSharedAlbum * album;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
@@ -45,24 +46,26 @@
 - (id)_optionsBarButtonItem;
 - (void)_optionsBarButtonItemPressed:(id)arg1;
 - (id)_optionsBarButtonSpacerItem;
-- (id)_optionsPopoverController;
+- (id)_optionsPopoverRootViewController;
 - (id)_optionsViewController;
+- (void)_presentOptionsPopoverFromBarButtonItem:(id)arg1;
 - (int)_selectedItemIndex;
 - (void)_setCanContributeToCloudSharedAlbum:(BOOL)arg1;
 - (void)_setOptionsBarButtonItem:(id)arg1;
 - (void)_setOptionsBarButtonSpacerItem:(id)arg1;
-- (void)_setOptionsPopoverController:(id)arg1;
+- (void)_setOptionsPopoverRootViewController:(id)arg1;
 - (void)_setOptionsViewController:(id)arg1;
 - (void)_setSelectedItemIndex:(int)arg1;
 - (void)_setSwitcherBarButtonItem:(id)arg1;
 - (void)_setSwitcherSegmentedControl:(id)arg1;
+- (void)_setTransitioningOptionsViewControllers:(id)arg1;
 - (BOOL)_shouldShowOptionsSwitcherInToolbar;
 - (id)_suppressionContexts;
 - (id)_switcherBarButtonItem;
 - (id)_switcherSegmentedControl;
+- (id)_transitioningOptionsViewControllers;
 - (void)_updateOptionsView;
 - (void)_updateOptionsViewInsets;
-- (id)album;
 - (void)albumStreamingOptionsViewController:(id)arg1 didCompleteWithReason:(int)arg2;
 - (BOOL)canAddToOtherAlbumContent;
 - (BOOL)canDeleteContent;
@@ -76,9 +79,9 @@
 - (id)newToolbarItems;
 - (void)photoStreamComposeService:(id)arg1 didPostComment:(id)arg2;
 - (void)photoStreamComposeServiceDidCancel:(id)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
-- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1 existingFetchResults:(id)arg2;
 - (void)setDisplayingOptions:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldShowTabBar;
@@ -92,5 +95,6 @@
 - (BOOL)wantsAddContentInToolbar;
 - (BOOL)wantsAddPlaceholderAtEndOfSection:(int)arg1;
 - (BOOL)wantsGlobalFooter;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

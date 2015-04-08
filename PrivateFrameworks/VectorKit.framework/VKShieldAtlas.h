@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMapTable, VKPShieldPack;
+@class NSLock, NSMapTable, VKPShieldPack;
 
 @interface VKShieldAtlas : NSObject {
     NSMapTable *_atlasToImages;
+    NSLock *_atlasToImagesLock;
     VKPShieldPack *_shieldPack;
 }
 

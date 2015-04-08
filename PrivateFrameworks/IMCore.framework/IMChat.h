@@ -171,6 +171,7 @@
 - (void)_participant:(id)arg1 statusChanged:(int)arg2;
 - (id)_pendingParticipants;
 - (id)_performQueryWithKey:(id)arg1 loadImmediately:(BOOL)arg2 block:(id)arg3;
+- (id)_performQueryWithKey:(id)arg1 loadImmediately:(BOOL)arg2 block:(id)arg3 completion:(id)arg4;
 - (void)_postNotification:(id)arg1 userInfo:(id)arg2;
 - (void)_postNotification:(id)arg1 userInfo:(id)arg2 shouldLog:(BOOL)arg3;
 - (id)_previousAccountForService:(id)arg1;
@@ -289,6 +290,7 @@
 - (id)lastIncomingMessage;
 - (id)lastMessage;
 - (void)leave;
+- (void)loadAttachments:(id)arg1;
 - (id)loadFrequentRepliesLimit:(unsigned int)arg1 loadImmediately:(BOOL)arg2;
 - (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned int)arg2;
 - (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned int)arg2 loadImmediately:(BOOL)arg3;
@@ -300,6 +302,7 @@
 - (BOOL)localUserIsTyping;
 - (void)markAllLocationShareItemsAsUnactionable;
 - (void)markAllMessagesAsRead;
+- (void)markAsSpam;
 - (void)markChatItemAsPlayed:(id)arg1;
 - (void)markChatItemAsSaved:(id)arg1;
 - (void)markMessageAsRead:(id)arg1;

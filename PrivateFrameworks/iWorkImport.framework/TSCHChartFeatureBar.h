@@ -17,6 +17,7 @@
 - (float)maxDepthRatio;
 - (void)p_initializeAxisIDs;
 - (Class)presetImagerClass;
+- (int)representativeGridValueAxisType;
 - (float)sageMaxDepthRatio;
 - (Class)stageClass;
 - (id)supportedAxisScales;

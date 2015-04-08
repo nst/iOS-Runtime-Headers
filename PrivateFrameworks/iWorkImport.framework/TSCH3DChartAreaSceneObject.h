@@ -10,8 +10,4 @@
 + (struct MeshData { id x1; id x2; })createMeshForSeries:(id)arg1;
 + (BOOL)supportsChartSeriesDepthOffset;
 
-- (BOOL)alwaysRenderForElementBlendAnimationClip;
-- (id)areaClipPlaneEffect;
-- (void)postAddDataToGeometryResourceAnimationData:(id)arg1;
-
 @end

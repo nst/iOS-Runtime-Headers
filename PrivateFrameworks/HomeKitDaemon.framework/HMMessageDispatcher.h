@@ -17,7 +17,10 @@
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
 - (void).cxx_destruct;
+- (void)_deregisterForMessage:(id)arg1 receiver:(id)arg2 token:(id)arg3;
 - (void)_sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
+- (void)deregisterForMessage:(id)arg1 receiver:(id)arg2;
+- (void)deregisterReceiver:(id)arg1;
 - (void)dispatchMessage:(id)arg1 target:(id)arg2;
 - (id)initWithTransport:(id)arg1;
 - (BOOL)isRemoteSource;
@@ -31,7 +34,6 @@
 - (void)setTransport:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)transport;
-- (void)unregisterForForMessage:(id)arg1 receiver:(id)arg2;
 - (id)workQueue;
 
 @end

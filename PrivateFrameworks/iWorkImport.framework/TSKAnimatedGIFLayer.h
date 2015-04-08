@@ -16,5 +16,6 @@
 - (void)dealloc;
 - (void)display;
 - (void)setController:(id)arg1;
+- (void)teardown;
 
 @end

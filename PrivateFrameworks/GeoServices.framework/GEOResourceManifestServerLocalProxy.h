@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOResourceManifestServerProxyDelegate>, GEOActiveTileGroup, GEOResourceLoader, GEOResourceManifestConfiguration, GEOResourceManifestDownload, NSError, NSLock, NSMutableArray, NSMutableData, NSMutableDictionary, NSString, NSTimer, NSURLConnection;
+@class <GEOResourceManifestServerProxyDelegate>, GEOActiveTileGroup, GEOResourceLoader, GEOResourceManifestConfiguration, GEOResourceManifestDownload, NSError, NSLock, NSMutableArray, NSMutableData, NSString, NSTimer, NSURLConnection;
 
 @interface GEOResourceManifestServerLocalProxy : NSObject <GEOResourceManifestServerProxy, NSURLConnectionDelegate> {
     GEOActiveTileGroup *_activeTileGroup;
@@ -11,21 +11,22 @@
     GEOResourceManifestConfiguration *_configuration;
     NSURLConnection *_connection;
     <GEOResourceManifestServerProxyDelegate> *_delegate;
-    BOOL _isObservingManifestReachability;
-    BOOL _isObservingTileGroupReachability;
+    double _lastManifestRetryTimestamp;
     NSError *_lastResourceManifestLoadError;
+    double _lastTileGroupRetryTimestamp;
     NSString *_loadingTileGroupUniqueIdentifier;
     unsigned int _manifestRetryCount;
     NSMutableArray *_manifestUpdateCompletionHandlers;
     NSTimer *_manifestUpdateTimer;
     GEOResourceLoader *_resourceLoader;
     GEOResourceManifestDownload *_resourceManifest;
-    NSMutableDictionary *_resourceRetainCounts;
     NSMutableData *_responseData;
     NSString *_responseETag;
     BOOL _started;
     unsigned int _tileGroupRetryCount;
     NSTimer *_tileGroupUpdateTimer;
+    BOOL _wantsManifestUpdateOnReachabilityChange;
+    BOOL _wantsTileGroupUpdateOnReachabilityChange;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -36,7 +37,7 @@
 
 - (void)_activeTileGroupOverridesChanged:(id)arg1;
 - (void)_cancelConnection;
-- (BOOL)_changeActiveTileGroup:(id)arg1 flushTileCache:(BOOL)arg2 error:(id*)arg3;
+- (void)_changeActiveTileGroup:(id)arg1 flushTileCache:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)_cleanupConnection;
 - (void)_considerChangingActiveTileGroup;
 - (void)_countryProvidersDidChange:(id)arg1;
@@ -46,10 +47,9 @@
 - (id)_manifestURL;
 - (void)_notifyManifestUpdateCompletionHandlers:(id)arg1;
 - (void)_purgeOldRegionalResources;
+- (void)_purgeOldResources;
 - (void)_reachabilityChanged:(id)arg1;
-- (void)_registerReachabilityObserver:(unsigned int)arg1;
 - (id)_resourceInfosForTileGroup:(id)arg1;
-- (void)_retainResource:(id)arg1;
 - (void)_scheduleTileGroupUpdateTimerWithTimeInterval:(double)arg1;
 - (void)_scheduleUpdateTimerWithTimeInterval:(double)arg1;
 - (void)_startServer;
@@ -73,9 +73,7 @@
 - (void)getResourceManifestWithHandler:(id)arg1;
 - (id)initWithDelegate:(id)arg1 configuration:(id)arg2;
 - (void)openConnection;
-- (oneway void)releaseResources:(id)arg1;
 - (oneway void)resetActiveTileGroup;
-- (oneway void)retainResources:(id)arg1;
 - (id)serverQueue;
 - (oneway void)setActiveTileGroupIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;

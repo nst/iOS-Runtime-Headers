@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <SYSerialization>, <SYStoreDelegate>, NMSMessageCenter, NSDictionary, NSMutableDictionary, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSUUID, SYPersistentStore, SYRetryTimer, SYVectorClock;
+@class <SYSerialization>, <SYStoreDelegate>, NMSMessageCenter, NSDictionary, NSError, NSMutableDictionary, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSUUID, SYPersistentStore, SYRetryTimer, SYVectorClock;
 
 @interface SYStore : NSObject <IDSServiceDelegate, NMSMessageCenterDelegate, SYChangeTrackingWithErrors> {
     BOOL _allowsDeletes;
@@ -44,6 +44,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _nextBatchStep;
 
+    NSError *_overflowRetryError;
     NSObject<OS_dispatch_source> *_overflowRetryTimer;
     NSUUID *_pairedDeviceID;
     SYPersistentStore *_persistentStore;
@@ -99,9 +100,8 @@
 - (void)_copyPeerClockFromMessageHeaderIfNecessary:(id)arg1;
 - (void)_devicePaired:(id)arg1;
 - (void)_deviceUnpaired:(id)arg1;
-- (void)_handleIDSOverflow;
+- (void)_handleIDSOverflowWithError:(id)arg1;
 - (BOOL)_isPairedWithDevice:(id)arg1;
-- (BOOL)_isUsingGenericCache;
 - (void)_listenForPrefsChangeNotifications;
 - (id)_pathForMessageCenterCache;
 - (void)_postBatchEndMessageWithState:(id)arg1 error:(id)arg2 then:(id)arg3;

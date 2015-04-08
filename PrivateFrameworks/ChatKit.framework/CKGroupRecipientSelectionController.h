@@ -23,7 +23,6 @@
 - (id)initWithConversation:(id)arg1;
 - (void)loadView;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })navigationBarInsetsForRecipientSelectionController:(id)arg1;
-- (BOOL)peoplePickerShouldUsePopovers;
 - (void)recipientAvailibilitiesDidUpdate;
 - (void)recipientSelectionController:(id)arg1 didFinishAvailaiblityLookupForRecipient:(id)arg2;
 - (void)recipientSelectionController:(id)arg1 textDidChange:(id)arg2;

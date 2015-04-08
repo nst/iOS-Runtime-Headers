@@ -13,14 +13,12 @@
     id _animations;
 
     double _duration;
-    BOOL _earlyLayoutIsNeeded;
     BOOL _skipCallbacks;
     BOOL _updateStatusBarIfNecessary;
 }
 
 @property(copy) id animations;
 @property double duration;
-@property BOOL earlyLayoutIsNeeded;
 @property BOOL skipCallbacks;
 @property BOOL updateStatusBarIfNecessary;
 
@@ -28,10 +26,8 @@
 - (id)animations;
 - (void)dealloc;
 - (double)duration;
-- (BOOL)earlyLayoutIsNeeded;
 - (void)setAnimations:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setEarlyLayoutIsNeeded:(BOOL)arg1;
 - (void)setSkipCallbacks:(BOOL)arg1;
 - (void)setUpdateStatusBarIfNecessary:(BOOL)arg1;
 - (BOOL)skipCallbacks;

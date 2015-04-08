@@ -10,6 +10,7 @@
 }
 
 @property(readonly) NSArray * applicationTemplateVariants;
+@property(readonly) NSString * collaboratorPersonID;
 @property TSADocumentRoot * documentRoot;
 @property(retain) <TSADownloadDelegate> * downloadDelegate;
 @property(readonly) NSArray * importableDocumentTypes;
@@ -28,14 +29,25 @@
 - (BOOL)URLIsValidForImportedHyperlink:(id)arg1;
 - (id)applicationTemplateVariants;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
+- (id)collaboratorNameForDocumentShareID:(id)arg1;
+- (id)collaboratorPersonID;
+- (id)collaboratorPersonIDKey;
+- (id)documentPreferenceKeyPrefix;
 - (id)documentRoot;
 - (Class)documentRootClass;
 - (id)downloadDelegate;
 - (id)existingNestedDocumentPathForPath:(id)arg1;
+- (BOOL)hasIWorkAuthorName;
+- (id)iCloudDocumentPreferenceKeyForDocumentShareID:(id)arg1 isMatchingKey:(BOOL*)arg2;
+- (id)iCloudPreferenceKeys;
+- (id)iCloudPreferencesForDocumentShareID:(id)arg1;
+- (unsigned int)iWorkAuthorColorIndex;
+- (id)iWorkAuthorName;
 - (id)importableDocumentTypes;
 - (id)init;
 - (id)invalidURLSchemes;
 - (BOOL)isReadableDocumentType:(id)arg1;
+- (id)keyPathForICloudPreferenceKey:(id)arg1;
 - (float)maximumAspectRatioForPreviewImage;
 - (float)mimimumAspectRatioForPreviewImage;
 - (id)nativeDocumentExtension;
@@ -45,11 +57,19 @@
 - (void)persistenceError:(id)arg1;
 - (id)readableDocumentTypes;
 - (void)registerDefaults;
+- (void)registerICloudPreferences;
 - (void)setDocumentRoot:(id)arg1;
 - (void)setDownloadDelegate:(id)arg1;
+- (void)setICloudPreferences:(id)arg1 forDocumentShareID:(id)arg2;
+- (void)setIWorkAuthorColorIndex:(unsigned int)arg1;
+- (void)setIWorkAuthorName:(id)arg1;
+- (BOOL)shouldShowLogMenu;
+- (id)stringForICloudPreferenceKey:(id)arg1 defaultValueGenerator:(id)arg2;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentExtension;
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;
+- (void)ubiquitousKeyValueStoreDidChange:(id)arg1;
+- (void)wakeUpDownloadManager;
 
 @end

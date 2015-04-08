@@ -32,7 +32,7 @@
 - (void)_didSelectURL:(id)arg1;
 - (void)_dismissViewController;
 - (void)_dismissWithOption:(id)arg1;
-- (void)_preferredContentSizeChanged:(struct CGSize { float x1; float x2; })arg1;
+- (void)_displayLocationsMenuFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)_remoteViewController;
 - (BOOL)_requiresCustomPresentationController;
@@ -47,6 +47,7 @@
 - (unsigned int)documentPickerMode;
 - (id)initWithDocumentTypes:(id)arg1 inMode:(unsigned int)arg2;
 - (id)initWithURL:(id)arg1 inMode:(unsigned int)arg2;
+- (void)loadView;
 - (int)modalPresentationStyle;
 - (void)setAlertController:(id)arg1;
 - (void)setAuxiliaryOptions:(id)arg1;

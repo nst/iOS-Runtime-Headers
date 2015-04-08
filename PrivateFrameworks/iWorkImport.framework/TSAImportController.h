@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <NSFilePresenter>, <TSAImportDelegate>, <TSKImporter>, NSError, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_group>, NSOperationQueue, NSString, NSURL, NSUUID, TSPObjectContext, TSUProgressContext, TSUTemporaryDirectory;
+@class <NSFilePresenter>, <TSAImportDelegate>, <TSKImporter>, NSError, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_group>, NSOperationQueue, NSString, NSURL, NSUUID, TSKCollaborationState, TSPObjectContext, TSUProgressContext, TSUTemporaryDirectory;
 
 @interface TSAImportController : NSObject <NSFilePresenter, TSADocumentRootDelegate, TSKImportExportDelegate, TSPObjectContextDelegate> {
     NSMutableArray *_deferredWriters;
@@ -32,7 +32,7 @@
 
 @property(readonly) BOOL areNewExternalReferencesToDataAllowed;
 @property(readonly) NSUUID * baseUUIDForObjectUUID;
-@property(readonly) BOOL canUpgradeDocumentSupport;
+@property(readonly) TSKCollaborationState * collaborationState;
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * defaultDraftName;
 @property <TSAImportDelegate> * delegate;
@@ -50,6 +50,8 @@
 @property(readonly) BOOL isBrowsingVersions;
 @property(readonly) BOOL isDocumentSupportTemporary;
 @property(readonly) BOOL isImportCancelled;
+@property(readonly) BOOL isInCollaborationMode;
+@property(readonly) BOOL isInReadOnlyMode;
 @property(readonly) BOOL isPasswordProtected;
 @property(readonly) NSString * name;
 @property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
@@ -71,6 +73,7 @@
 - (void)addIncompatibleMovieInfo:(id)arg1 withCompatibilityLevel:(int)arg2;
 - (void)addPersistenceWarnings:(id)arg1;
 - (void)addWarning:(id)arg1;
+- (id)additionalDocumentPropertiesForWrite;
 - (BOOL)areNewExternalReferencesToDataAllowed;
 - (BOOL)beginImport;
 - (void)beginImportAsync;
@@ -97,6 +100,7 @@
 - (id)makeObjectContextWithTemplateInfo:(id)arg1 error:(id*)arg2;
 - (id)name;
 - (BOOL)needsFileCoordination;
+- (id)packageDataForWrite;
 - (void)prepareForImportDisplayingProgress:(BOOL)arg1;
 - (void)presentPersistenceError:(id)arg1;
 - (void)presentedItemDidMoveToURL:(id)arg1;

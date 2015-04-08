@@ -13,7 +13,7 @@
 
 @class <GEORoutePreloadSession>, <VKMapModeObserver>, <VKMapModelDelegate>, <VKOverlayContainerRouteDelegate>, <VKRouteMatchedAnnotationPresentation>, GEOFeatureStyleAttributes, GEOResourceManifestConfiguration, NSArray, NSLocale, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, VKAnimation, VKAnnotationMarker, VKAnnotationModel, VKBuildingFootprintMapModel, VKDebugModel, VKGridModel, VKHybridRasterMapModel, VKLabelMarker, VKLabelModel, VKMapRasterizer, VKMercatorTerrainHeightCache, VKOverlayContainerModel, VKPolygonMapModel, VKPolylineOverlay, VKPolylineOverlayPainter, VKRasterMapModel, VKRasterOverlayMapModel, VKRasterOverlayTileSource, VKRasterTrafficMapModel, VKRealisticMapModel, VKRiverMapModel, VKRoadMapModel, VKRoadTrafficMapModel, VKSharedResources, VKSkyModel, VKStyleManager, VKTileProvider, VKTrafficTileSource;
 
-@interface VKMapModel : VKModelObject <GEOResourceManifestTileGroupObserver, VKLabelModelDelegate, VKOverlayContainerDelegate, VKPolylineGroupOverlayObserver, VKTileProviderClient> {
+@interface VKMapModel : VKModelObject <GEOExperimentConfigurationObserver, GEOResourceManifestTileGroupObserver, VKLabelModelDelegate, VKOverlayContainerDelegate, VKPolylineGroupOverlayObserver, VKTileProviderClient> {
     BOOL _activeMapLayers[4][34];
     VKStyleManager *_activeStyleManager;
     GEOResourceManifestConfiguration *_additionalManifestConfiguration;
@@ -193,6 +193,7 @@
 - (void)_setStyleManagerFromMapType:(int)arg1;
 - (void)_setStyleTransitionProgress:(float)arg1 targetStyle:(unsigned int)arg2 step:(int)arg3;
 - (float)_styleTransitionProgress;
+- (float)_tileSelectionScale;
 - (void)_transitionFromMode:(int)arg1 toMode:(int)arg2 animated:(BOOL)arg3;
 - (void)_tryTransitionAndPreloadIfNecessary:(id)arg1;
 - (void)_updateOverlayTileSource;
@@ -245,6 +246,7 @@
 - (void)disableRoadClass:(BOOL)arg1 withRoadClass:(int)arg2;
 - (BOOL)disableRoads;
 - (BOOL)dynamicMapModesEnabled;
+- (void)experimentConfigurationDidChange:(id)arg1;
 - (id)externalAnchors;
 - (id)externalTrafficIncidents;
 - (void)flushCaches:(BOOL)arg1;

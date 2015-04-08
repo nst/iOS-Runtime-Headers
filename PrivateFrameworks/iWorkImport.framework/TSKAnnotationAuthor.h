@@ -18,6 +18,8 @@
 @property(readonly) TSUColor * flagStrokeColor;
 @property(readonly) TSUColor * gradientEndColor;
 @property(readonly) TSUColor * gradientStartColor;
+@property(readonly) TSUColor * indicatorDarkColor;
+@property(readonly) TSUColor * indicatorLightColor;
 @property(readonly) NSString * menuSwatchColorForAuthor;
 @property(copy) NSString * name;
 @property(readonly) TSUColor * popoverAuthorLabelColor;
@@ -25,6 +27,7 @@
 @property(readonly) TSUColor * popoverColor;
 @property(readonly) BOOL showAuthorComments;
 @property(readonly) TSUColor * sidebarChangeBarColor;
+@property(readonly) TSUColor * sidebarDecoratorLineColor;
 @property(readonly) TSUColor * sidebarHoverColor;
 @property(readonly) TSUColor * sidebarSelectedBorderColor;
 @property(readonly) TSUColor * sidebarSelectedColor;
@@ -38,7 +41,13 @@
 + (id)authorColorNameForIndex:(unsigned int)arg1;
 + (id)authorMenuSwatchColorForIndex:(unsigned int)arg1;
 + (id)authorStorageColorForIndex:(unsigned int)arg1;
++ (id)authorTextMarkupColorForIndex:(unsigned int)arg1;
 + (id)defaultAuthorName;
++ (id)indicatorDarkColorByLightColor:(id)arg1;
++ (id)indicatorDarkColorForIndex:(unsigned int)arg1;
++ (id)indicatorLightColorForIndex:(unsigned int)arg1;
++ (id)normalizedAuthorNameForAuthorName:(id)arg1;
++ (unsigned int)p_authorColorIndexWithColor:(id)arg1 forIndicator:(BOOL)arg2;
 + (unsigned int)presetColorCount;
 
 - (BOOL)allowsImplicitComponentOwnership;
@@ -55,6 +64,8 @@
 - (id)gradientEndColor;
 - (id)gradientStartColor;
 - (unsigned int)hash;
+- (id)indicatorDarkColor;
+- (id)indicatorLightColor;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 name:(id)arg2 color:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
@@ -69,6 +80,7 @@
 - (void)setStorageColor:(id)arg1;
 - (BOOL)showAuthorComments;
 - (id)sidebarChangeBarColor;
+- (id)sidebarDecoratorLineColor;
 - (id)sidebarHoverColor;
 - (id)sidebarSelectedBorderColor;
 - (id)sidebarSelectedColor;

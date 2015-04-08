@@ -56,6 +56,7 @@
 @property(readonly) Class superclass;
 
 + (BOOL)anyRequestLoading;
++ (id)authenticationFailureError;
 + (id)serviceUnavailableError;
 + (unsigned int)uniqueQueryID;
 

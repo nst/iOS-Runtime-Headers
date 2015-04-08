@@ -2,6 +2,8 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
+@class NSMutableArray;
+
 @interface AWDPowerBBCallMetrics : PBCodable <NSCopying> {
     unsigned int _bBAndDataPowerMicroWatt;
     unsigned int _bBPowerMicroWatt;
@@ -18,6 +20,7 @@
         unsigned int connectedSleepDuration : 1; 
         unsigned int connectedSleepDurationData : 1; 
     } _has;
+    NSMutableArray *_metrics;
     unsigned long long _timestamp;
 }
 
@@ -34,16 +37,20 @@
 @property BOOL hasConnectedSleepDuration;
 @property BOOL hasConnectedSleepDurationData;
 @property BOOL hasTimestamp;
+@property(retain) NSMutableArray * metrics;
 @property unsigned long long timestamp;
 
+- (void)addMetrics:(id)arg1;
 - (unsigned int)bBAndDataPowerMicroWatt;
 - (unsigned int)bBPowerMicroWatt;
 - (unsigned int)bBTotalAndDataDuration;
 - (unsigned int)bBTotalCallDuration;
+- (void)clearMetrics;
 - (unsigned int)connectedSleepDuration;
 - (unsigned int)connectedSleepDurationData;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasBBAndDataPowerMicroWatt;
@@ -56,6 +63,9 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)metrics;
+- (id)metricsAtIndex:(unsigned int)arg1;
+- (unsigned int)metricsCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBBAndDataPowerMicroWatt:(unsigned int)arg1;
 - (void)setBBPowerMicroWatt:(unsigned int)arg1;
@@ -70,6 +80,7 @@
 - (void)setHasConnectedSleepDuration:(BOOL)arg1;
 - (void)setHasConnectedSleepDurationData:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
+- (void)setMetrics:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

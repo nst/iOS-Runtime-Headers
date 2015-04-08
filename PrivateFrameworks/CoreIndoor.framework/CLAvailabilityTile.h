@@ -8,15 +8,31 @@
     double _availabilityZScoreConfidenceInterval;
     struct { 
         unsigned int availabilityZScoreConfidenceInterval : 1; 
+        unsigned int locationOfInterestMergeRadiusKM : 1; 
+        unsigned int preferPredictionWithinNActivityCycles : 1; 
+        unsigned int prefetchMaxFloorCount : 1; 
+        unsigned int prefetchRadiusKM : 1; 
     } _has;
+    unsigned int _locationOfInterestMergeRadiusKM;
     LocalizerParameters *_parameterOverrides;
+    unsigned int _preferPredictionWithinNActivityCycles;
+    unsigned int _prefetchMaxFloorCount;
+    unsigned int _prefetchRadiusKM;
     NSMutableArray *_venues;
 }
 
 @property double availabilityZScoreConfidenceInterval;
 @property BOOL hasAvailabilityZScoreConfidenceInterval;
+@property BOOL hasLocationOfInterestMergeRadiusKM;
 @property(readonly) BOOL hasParameterOverrides;
+@property BOOL hasPreferPredictionWithinNActivityCycles;
+@property BOOL hasPrefetchMaxFloorCount;
+@property BOOL hasPrefetchRadiusKM;
+@property unsigned int locationOfInterestMergeRadiusKM;
 @property(retain) LocalizerParameters * parameterOverrides;
+@property unsigned int preferPredictionWithinNActivityCycles;
+@property unsigned int prefetchMaxFloorCount;
+@property unsigned int prefetchRadiusKM;
 @property(retain) NSMutableArray * venues;
 
 - (void).cxx_destruct;
@@ -28,15 +44,31 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasAvailabilityZScoreConfidenceInterval;
+- (BOOL)hasLocationOfInterestMergeRadiusKM;
 - (BOOL)hasParameterOverrides;
+- (BOOL)hasPreferPredictionWithinNActivityCycles;
+- (BOOL)hasPrefetchMaxFloorCount;
+- (BOOL)hasPrefetchRadiusKM;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)locationOfInterestMergeRadiusKM;
 - (void)mergeFrom:(id)arg1;
 - (id)parameterOverrides;
+- (unsigned int)preferPredictionWithinNActivityCycles;
+- (unsigned int)prefetchMaxFloorCount;
+- (unsigned int)prefetchRadiusKM;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAvailabilityZScoreConfidenceInterval:(double)arg1;
 - (void)setHasAvailabilityZScoreConfidenceInterval:(BOOL)arg1;
+- (void)setHasLocationOfInterestMergeRadiusKM:(BOOL)arg1;
+- (void)setHasPreferPredictionWithinNActivityCycles:(BOOL)arg1;
+- (void)setHasPrefetchMaxFloorCount:(BOOL)arg1;
+- (void)setHasPrefetchRadiusKM:(BOOL)arg1;
+- (void)setLocationOfInterestMergeRadiusKM:(unsigned int)arg1;
 - (void)setParameterOverrides:(id)arg1;
+- (void)setPreferPredictionWithinNActivityCycles:(unsigned int)arg1;
+- (void)setPrefetchMaxFloorCount:(unsigned int)arg1;
+- (void)setPrefetchRadiusKM:(unsigned int)arg1;
 - (void)setVenues:(id)arg1;
 - (id)venues;
 - (id)venuesAtIndex:(unsigned int)arg1;

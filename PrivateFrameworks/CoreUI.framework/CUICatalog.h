@@ -3,7 +3,6 @@
  */
 
 @interface CUICatalog : NSObject {
-    unsigned int _purgeWhenFinished : 1;
     unsigned int _storageRef;
 }
 
@@ -25,7 +24,6 @@
 - (void)clearCachedImageResources;
 - (id)dataWithName:(id)arg1;
 - (id)dataWithName:(id)arg1 deviceIdiom:(int)arg2 deviceSubtype:(unsigned int)arg3 memoryClass:(unsigned int)arg4 graphicsClass:(unsigned int)arg5;
-- (void)dealloc;
 - (id)debugDescription;
 - (BOOL)drawGlyphs:(const unsigned short*)arg1 atPositions:(const struct CGPoint { float x1; float x2; }*)arg2 inContext:(struct CGContext { }*)arg3 withFont:(struct __CTFont { }*)arg4 count:(unsigned int)arg5 stylePresetName:(id)arg6 styleConfiguration:(id)arg7 foregroundColor:(struct CGColor { }*)arg8;
 - (struct CGColor { }*)equivalentForegroundColorForStylePresetWithName:(id)arg1 styleConfiguration:(id)arg2;
@@ -41,6 +39,7 @@
 - (id)imagesWithName:(id)arg1;
 - (id)initWithName:(id)arg1 fromBundle:(id)arg2;
 - (id)initWithName:(id)arg1 fromBundle:(id)arg2 error:(id*)arg3;
+- (id)initWithURL:(id)arg1 error:(id*)arg2;
 - (id)newShapeEffectPresetForStylePresetName:(id)arg1 styleConfiguration:(id)arg2;
 - (id)newShapeEffectPresetWithRenditionKey:(id)arg1;
 - (id)newShapeEffectStackForStylePresetName:(id)arg1 styleConfiguration:(id)arg2 foregroundColor:(struct CGColor { }*)arg3;

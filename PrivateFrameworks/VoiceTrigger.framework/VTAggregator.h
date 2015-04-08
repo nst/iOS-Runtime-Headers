@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface VTAggregator : NSObject {
     double _cumulativeDowntime;
     double _cumulativeUptime;
     unsigned int _currentState;
+    NSString *_languageCode;
     double _lastAggTime;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_timer;
@@ -21,5 +22,6 @@
 - (id)init;
 - (void)logActivation;
 - (void)logTimeVoiceTriggerTransitionsToState:(unsigned int)arg1;
+- (void)setLanguageCode:(id)arg1;
 
 @end

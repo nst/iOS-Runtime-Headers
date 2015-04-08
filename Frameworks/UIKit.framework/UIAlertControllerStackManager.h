@@ -30,7 +30,7 @@
 - (id)autorelease;
 - (void)dealloc;
 - (id)init;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 
 @end

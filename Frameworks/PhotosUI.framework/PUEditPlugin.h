@@ -2,18 +2,21 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSExtension, NSString, UIImage;
+@class NSExtension, NSString, UIImage, _PUEditPluginApplicationExtensionActivity;
 
 @interface PUEditPlugin : NSObject {
+    _PUEditPluginApplicationExtensionActivity *__applicationExtensionActivity;
     NSExtension *_extension;
 }
 
+@property(readonly) _PUEditPluginApplicationExtensionActivity * _applicationExtensionActivity;
 @property(readonly) NSExtension * extension;
 @property(readonly) UIImage * icon;
 @property(readonly) UIImage * smallIcon;
 @property(readonly) NSString * title;
 
 - (void).cxx_destruct;
+- (id)_applicationExtensionActivity;
 - (id)extension;
 - (unsigned int)hash;
 - (id)icon;

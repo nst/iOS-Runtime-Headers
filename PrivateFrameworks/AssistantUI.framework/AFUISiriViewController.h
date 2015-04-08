@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUISiriViewControllerDataSource>, <AFUISiriViewControllerDelegate>, AFUIRequestOptions, AFUISiriRemoteViewController, AFUISiriSession, AFUISiriView, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSTimer, SiriUIAudioRoutePickerController, UIStatusBar;
+@class <AFUISiriViewControllerDataSource>, <AFUISiriViewControllerDelegate>, AFUIRequestOptions, AFUISiriRemoteViewController, AFUISiriSession, AFUISiriView, NSNumber, NSObject<OS_dispatch_queue>, NSString, SiriUIAudioRoutePickerController, UIStatusBar;
 
 @interface AFUISiriViewController : UIViewController <AFUISiriRemoteViewControllerDataSource, AFUISiriRemoteViewControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate> {
     BOOL _active;
@@ -16,7 +16,6 @@
     BOOL _hasCalledEndAppearanceTransition;
     BOOL _inHoldToTalkMode;
     BOOL _isStark;
-    NSTimer *_manualEndpointTimer;
     BOOL _mapsGatekeeperEnabled;
     NSNumber *_recordingStartedTimeValue;
     AFUISiriRemoteViewController *_remoteViewController;
@@ -44,7 +43,6 @@
 @property(readonly) unsigned int hash;
 @property(getter=_isInHoldToTalkMode,setter=_setInHoldToTalkMode:) BOOL inHoldToTalkMode;
 @property BOOL isStark;
-@property(getter=_manualEndpointTimer,setter=_setManualEndpointTimer:,retain) NSTimer * manualEndpointTimer;
 @property BOOL mapsGatekeeperEnabled;
 @property(getter=_recordingStartedTimeValue,setter=_setRecordingStartedTimeValue:,retain) NSNumber * recordingStartedTimeValue;
 @property(getter=_remoteViewController,readonly) AFUISiriRemoteViewController * remoteViewController;
@@ -71,7 +69,6 @@
 - (BOOL)_holdToTalkThresholdHasElapsed;
 - (void)_holdToTalkTriggerDidReleaseFromSource:(int)arg1;
 - (BOOL)_isInHoldToTalkMode;
-- (id)_manualEndpointTimer;
 - (double)_manualEndpointingThreshold;
 - (void)_presentRemoteViewController;
 - (id)_recordingStartedTimeValue;
@@ -87,7 +84,6 @@
 - (void)_setHasCalledBeginAppearanceTransition:(BOOL)arg1;
 - (void)_setHasCalledEndAppearanceTransition:(BOOL)arg1;
 - (void)_setInHoldToTalkMode:(BOOL)arg1;
-- (void)_setManualEndpointTimer:(id)arg1;
 - (void)_setRecordingStartedTimeValue:(id)arg1;
 - (void)_setShowAudioRoutePicker:(BOOL)arg1;
 - (void)_setStatusBar:(id)arg1;

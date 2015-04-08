@@ -2,31 +2,36 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSString;
+@class CKRecordZoneID, NSString;
 
 @interface CKShareID : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_ownerName;
     NSString *_shareName;
+    CKRecordZoneID *_zoneID;
 }
 
-@property(retain) NSString * ownerName;
-@property(retain) NSString * shareName;
+@property(copy) NSString * shareName;
+@property(copy) CKRecordZoneID * zoneID;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
+- (id)brc_containerID;
+- (id)brc_itemID;
 - (id)ckShortDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithShareName:(id)arg1 ownerName:(id)arg2;
+- (id)initWithDocumentItem:(id)arg1;
+- (id)initWithItemID:(id)arg1 zoneID:(id)arg2;
+- (id)initWithRecordID:(id)arg1;
+- (id)initWithShareName:(id)arg1 zoneID:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (id)ownerName;
-- (void)setOwnerName:(id)arg1;
 - (void)setShareName:(id)arg1;
+- (void)setZoneID:(id)arg1;
 - (id)shareName;
+- (id)zoneID;
 
 @end

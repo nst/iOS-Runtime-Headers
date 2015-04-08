@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKDayViewControllerDataSource>, <EKDayViewControllerDelegate>, CalendarOccurrencesCollection, EKDayView, EKDayViewWithGutters, EKEventEditViewController, EKEventGestureController, NSCalendar, NSDateComponents, NSString, ScrollSpringFactory, UIScrollView, UIView;
+@class <EKDayViewControllerDataSource>, <EKDayViewControllerDelegate>, CalendarOccurrencesCollection, EKDayView, EKDayViewWithGutters, EKEventEditViewController, EKEventGestureController, NSCalendar, NSDateComponents, NSString, NSTimer, ScrollSpringFactory, UIScrollView, UIView;
 
 @interface EKDayViewController : UIViewController <BlockableScrollViewDelegate, EKDayViewDataSource, EKDayViewDelegate, EKEventGestureControllerDelegate, UIScrollViewDelegate> {
     BOOL _adjustingForDeceleration;
@@ -57,8 +57,10 @@
     unsigned int _settingDateFromScrolling : 1;
     BOOL _shouldAutoscrollAfterAppearance;
     BOOL _shouldAutoscrollOnNextActivation;
+    NSTimer *_showNowTimer;
     BOOL _showsBanner;
     NSDateComponents *_targetDateComponents;
+    BOOL _transitionedToSameDay;
     BOOL _viewAppeared;
 }
 
@@ -86,22 +88,28 @@
 @property(copy) NSDateComponents * pendingPreviousDate;
 @property BOOL shouldAutoscrollAfterAppearance;
 @property BOOL shouldAutoscrollOnNextActivation;
+@property(retain) NSTimer * showNowTimer;
 @property BOOL showsBanner;
 @property(readonly) Class superclass;
+@property BOOL transitionedToSameDay;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
 - (void)_beginParallaxStateIfPossible;
+- (BOOL)_canScrollToNow;
+- (BOOL)_canShowNowAfterScrollViewDidEndDecelerating:(id)arg1;
 - (void)_cleanUpTargetDateComponents;
 - (void)_completeDecelerationIfNeeded;
 - (void)_completeScrollingAnimationIfNeeded;
 - (id)_createGutterDayViewWithDayView:(id)arg1;
+- (void)_didRespondToApplicationDidBecomeActiveStateChange;
 - (void)_endParallaxStateIfNeeded;
 - (id)_eventGestureSuperview;
 - (id)_eventsForDay:(id)arg1;
 - (void)_highlightDayViewDate:(double)arg1 isAllDay:(BOOL)arg2;
 - (BOOL)_isCalendarDate:(id)arg1 sameDayAsComponents:(id)arg2;
+- (BOOL)_isCurrentDayToday;
 - (BOOL)_isViewInVisibleRect:(id)arg1;
 - (void)_localeChanged:(id)arg1;
 - (void)_notifyDelegateOfSelectedDateChange;
@@ -109,8 +117,9 @@
 - (void)_relayoutDays;
 - (void)_relayoutDaysDuringScrolling;
 - (void)_relayoutDaysDuringScrollingAndPerformDayChanges:(BOOL)arg1;
-- (void)_scrollDayViewAfterAppearence:(BOOL)arg1;
-- (void)_scrollDayViewAfterAppearenceIfNeeded;
+- (void)_scrollDayViewAfterAppearance:(BOOL)arg1;
+- (void)_scrollDayViewAfterAppearanceIfNeeded;
+- (void)_scrollToNowOnScrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)_scrollViewDidEndDecelerating:(id)arg1 notifyParallxState:(BOOL)arg2;
 - (void)_setDayView:(id)arg1 toDate:(id)arg2;
 - (void)_setDisplayDate:(id)arg1 forRepeat:(BOOL)arg2;
@@ -118,7 +127,13 @@
 - (void)_setDisplayDateInternal:(id)arg1;
 - (void)_setHorizontalContentOffsetUsingSpringAnimation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setNextAndPreviousFirstVisibleSecondToCurrent;
+- (BOOL)_shouldRespondToApplicationDidBecomeActiveStateChange;
+- (BOOL)_shouldScrollToNow;
+- (void)_showNowAfterScrollViewDidEndDecelerating:(id)arg1;
+- (double)_showNowDelay;
+- (void)_showNowTimerFired:(id)arg1;
 - (void)_showWeekNumbersPreferenceChanged:(id)arg1;
+- (void)_stopShowNowTimer;
 - (void)_updateAllDayAreaHeight;
 - (float)_weightedAllDayHeightForView:(id)arg1 visibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)allowsDaySwitching;
@@ -144,6 +159,7 @@
 - (id)dayView:(id)arg1 eventsForStartDate:(id)arg2 endDate:(id)arg3;
 - (void)dayView:(id)arg1 firstVisibleSecondChanged:(unsigned int)arg2;
 - (void)dayView:(id)arg1 isPinchingDayViewWithScale:(float)arg2;
+- (void)dayView:(id)arg1 scrollViewWillBeginDragging:(id)arg2;
 - (void)dayViewDidTapEmptySpace:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -222,15 +238,19 @@
 - (void)setPendingPreviousDate:(id)arg1;
 - (void)setShouldAutoscrollAfterAppearance:(BOOL)arg1;
 - (void)setShouldAutoscrollOnNextActivation:(BOOL)arg1;
+- (void)setShowNowTimer:(id)arg1;
 - (void)setShowsBanner:(BOOL)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setToDay:(id)arg1 normalizedOffset:(float)arg2;
+- (void)setTransitionedToSameDay:(BOOL)arg1;
 - (BOOL)shouldAutoscrollAfterAppearance;
 - (BOOL)shouldAutoscrollOnNextActivation;
+- (id)showNowTimer;
 - (BOOL)showsBanner;
 - (void)significantTimeChangeOccurred;
 - (float)timedRegionOriginForEventGestureController:(id)arg1;
 - (id)touchTrackingViewForEventGestureController:(id)arg1;
+- (BOOL)transitionedToSameDay;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;

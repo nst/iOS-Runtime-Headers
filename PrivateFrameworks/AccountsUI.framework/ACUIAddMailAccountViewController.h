@@ -6,6 +6,7 @@
 }
 
 - (id)giantSpecifierWithName:(id)arg1 forAccountTypeID:(id)arg2;
+- (void)nonModalDataclassConfigurationControllerDidCompleteWithSuccess:(BOOL)arg1;
 - (id)specifierForOtherAccounts;
 - (void)viewWillAppear:(BOOL)arg1;
 

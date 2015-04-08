@@ -72,7 +72,7 @@
 - (void)_setGestureRecognizers:(id)arg1;
 - (void)_setNeedsDisplay;
 - (BOOL)_showsAuthoringEnvironment;
-- (BOOL)_supportsJiterringSyncRedraw;
+- (BOOL)_supportsJitteringSyncRedraw;
 - (void)_systemTimeAnimationStarted:(id)arg1;
 - (void)_updateGestureRecognizers;
 - (BOOL)allowsCameraControl;

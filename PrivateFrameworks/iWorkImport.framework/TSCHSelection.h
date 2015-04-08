@@ -7,31 +7,44 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, TSCHChartDrawableInfo, TSCHSelectionPath;
+@class NSArray, NSSet, TSCHChartDrawableInfo, TSCHSelectionPath, TSCHSelectionPathType;
 
-@interface TSCHSelection : TSKSelection <NSCopying> {
+@interface TSCHSelection : TSKSelection {
     TSCHChartDrawableInfo *mInfo;
     NSArray *mPaths;
 }
 
 @property(retain,readonly) TSCHChartDrawableInfo * chartInfo;
 @property(copy,readonly) TSCHSelectionPath * firstPath;
+@property(readonly) unsigned int pathCount;
+@property(copy,readonly) TSCHSelectionPathType * pathType;
+@property(copy,readonly) NSSet * pathTypes;
 @property(copy,readonly) NSArray * paths;
 @property(readonly) BOOL returnChartFrameForAutoscroll;
 
 + (Class)archivedSelectionClass;
++ (id)emptySelectionWithChartInfo:(id)arg1;
++ (id)selectionWithChartInfo:(id)arg1 paths:(id)arg2;
 
 - (id)chartInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)firstPath;
+- (unsigned int)hash;
 - (id)init;
-- (id)initFromArchive:(const struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct RepeatedPtrField<TSCH::ChartSelectionPathArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)initFromArchive:(const struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableSelectionArchive {} *x5; struct Reference {} *x6; struct RepeatedPtrField<TSCH::ChartSelectionPathArchive> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithChartInfo:(id)arg1 path:(id)arg2;
 - (id)initWithChartInfo:(id)arg1 paths:(id)arg2;
+- (id)initWithPaths:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)pathCount;
+- (id)pathType;
+- (id)pathTypes;
 - (id)paths;
 - (BOOL)returnChartFrameForAutoscroll;
-- (void)saveToArchive:(struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct RepeatedPtrField<TSCH::ChartSelectionPathArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableSelectionArchive {} *x5; struct Reference {} *x6; struct RepeatedPtrField<TSCH::ChartSelectionPathArchive> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; }*)arg1 archiver:(id)arg2;
+- (id)selectionByAddingPathsFromArray:(id)arg1;
+- (id)selectionByRemovingPathsFromArray:(id)arg1;
 
 @end

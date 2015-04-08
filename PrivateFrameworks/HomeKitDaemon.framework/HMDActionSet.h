@@ -44,6 +44,7 @@
 - (id)actions;
 - (void)configure:(id)arg1 queue:(id)arg2;
 - (id)currentActions;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)execute:(id)arg1;
 - (void)executeWithTriggerSource:(id)arg1;

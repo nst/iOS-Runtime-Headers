@@ -2,16 +2,26 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADFill, OADOrientedBounds;
+@class OADFill;
 
 @interface CMImageFillMapper : CMMapper {
-    OADOrientedBounds *mBounds;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } mBounds;
     OADFill *mFill;
 }
 
+- (id).cxx_construct;
 - (id)blipAtIndex:(unsigned int)arg1;
 - (id)convertMetafileToPdf:(id)arg1 state:(id)arg2;
-- (id)initWithOadFill:(id)arg1 bounds:(id)arg2 parent:(id)arg3;
+- (id)initWithOadFill:(id)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 parent:(id)arg3;
 - (BOOL)isCropped;
 - (id)mainSubBlip;
 - (void)mapAt:(id)arg1 withState:(id)arg2;

@@ -12,34 +12,22 @@
 + (void)setLowDetailedGeometriesForScene:(id)arg1;
 + (BOOL)shouldCreateMeshSeriesStorage;
 
-- (void)addZAxisAnimationToClips:(id)arg1 scene:(id)arg2;
 - (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })adjustedScaleForInfoChartScale:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1 scene:(id)arg2;
-- (BOOL)alwaysRenderForElementBlendAnimationClip;
 - (BOOL)applyEffectsForProperties:(id)arg1 series:(id)arg2 index:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg3 pipeline:(id)arg4 injectEffectsUsingBlock:(id)arg5;
-- (id)areaClipPlaneEffect;
-- (BOOL)blendOpaqueForElementBlendAnimationClip;
-- (BOOL)blendOpaqueForRotationAnimationElementBlendAnimationClip;
-- (BOOL)canOptimizePositiveOnlyForGrowAnimation;
-- (float)capFudgeForGrowAnimation;
 - (float)chartOpacityForScene:(id)arg1;
-- (float)clipFudgeForGrowAnimation;
-- (BOOL)delayOpaqueForElementBlendAnimationClip;
-- (BOOL)delayOpaqueForRotationAnimationElementBlendAnimationClip;
 - (id)delegateFromScene:(id)arg1;
 - (float)depthForScene:(id)arg1;
 - (id)elementPropertiesFromScene:(id)arg1;
 - (struct GeometryResource { int x1; struct ObjcSharedPtr<TSCH3DResource> { id x_2_1_1; } x2; struct GeometryArrays { unsigned int x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; struct ObjcSharedPtr<TSCH3DGeometry> { id x_4_1_1; } x4; })geometryForSeries:(id)arg1 index:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 scene:(id)arg3;
 - (Class)getBounds3DClass;
 - (void)getBounds:(id)arg1;
+- (void)getSceneObjectElementsBounds:(id)arg1;
 - (void)getSelectionKnobsPositions:(id)arg1;
-- (BOOL)growNeedsPerElementAlphaBlendingForDeliveryStyle:(unsigned int)arg1;
 - (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })labelObjectSpacePosition:(unsigned int)arg1 axisValue:(double)arg2 intercept:(double)arg3;
 - (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })labelOffset:(unsigned int)arg1 labelSize:(const struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg2 textureSize:(const struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg3 dataSpaceValue:(float)arg4;
 - (id)modelEnumeratorFromScene:(id)arg1;
-- (void)p_addZAxisAnimationToClips:(id)arg1 scene:(id)arg2 zStart:(float)arg3;
 - (BOOL)p_isRenderPassDelayedForDelegate:(id)arg1;
 - (void)p_processItems:(id)arg1 processItemsClass:(Class)arg2;
-- (void)postAddDataToGeometryResourceAnimationData:(id)arg1;
 - (void)postrenderElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; }*)arg1;
 - (void)prerenderElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; }*)arg1;
 - (void)rayPick:(id)arg1;
@@ -57,8 +45,6 @@
 - (BOOL)shouldDelayForChartOpacity:(float)arg1;
 - (BOOL)shouldRenderEachValue;
 - (BOOL)shouldRenderSeries:(id)arg1;
-- (BOOL)shouldUpdateBlendOpaqueForRotationAnimationElementBlendAnimationClip;
-- (BOOL)shouldUpdateDelayOpaqueForRotationAnimationElementBlendAnimationClip;
 - (BOOL)transparencyDepthMask;
 - (void)updateLightingEffectsState:(id)arg1 scene:(id)arg2;
 

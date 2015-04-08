@@ -124,6 +124,7 @@
 - (id)getLocalizedStringSync:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithQueue:(id)arg1;
 - (BOOL)isAddressBookContactASuggestion;
 - (BOOL)isAddressBookContactASuggestionSync;
 - (BOOL)isEqual:(id)arg1;

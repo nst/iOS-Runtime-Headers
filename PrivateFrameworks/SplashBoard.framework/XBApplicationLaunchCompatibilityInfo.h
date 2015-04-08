@@ -30,7 +30,9 @@
 @property(readonly) Class superclass;
 
 + (id)_compatibilityInfoForBundleIdentifier:(id)arg1 creatingIfNecessaryWithBundle:(id)arg2 andSandboxPath:(id)arg3;
++ (id)_compatibilityInfoForBundleIdentifier:(id)arg1 creatingIfNecessaryWithBundle:(id)arg2 andSandboxPath:(id)arg3 lazy:(BOOL)arg4;
 + (id)compatibilityInfoForBundleIdentifier:(id)arg1;
++ (void)removeCachedLaunchImagesInfoForBundleIdentifier:(id)arg1 forgetApp:(BOOL)arg2;
 + (void)removeCompatibilityInfoForBundleIdentifier:(id)arg1;
 
 - (id)_baseAppLaunchImagePath;

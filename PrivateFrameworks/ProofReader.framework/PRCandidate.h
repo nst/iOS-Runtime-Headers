@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface PRCandidate : NSObject {
+    BOOL _blacklisted;
     double _errorScore;
     double _lmScore;
     NSString *_string;
@@ -20,8 +21,10 @@
 - (id)description;
 - (double)errorScore;
 - (id)initWithString:(id)arg1 errorScore:(double)arg2;
+- (BOOL)isBlacklisted;
 - (double)languageModelScore;
 - (double)score;
+- (void)setBlacklisted:(BOOL)arg1;
 - (void)setErrorScore:(double)arg1;
 - (void)setLanguageModelScore:(double)arg1;
 - (id)string;

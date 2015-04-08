@@ -7,12 +7,14 @@
 @interface _MKLocalSearchMerchantParameters : NSObject <NSCopying> {
     NSString *_merchantCode;
     NSString *_paymentNetwork;
+    NSString *_rawMerchantCode;
     NSDate *_transactionDate;
     CLLocation *_transactionLocation;
 }
 
 @property(copy) NSString * merchantCode;
 @property(copy) NSString * paymentNetwork;
+@property(copy) NSString * rawMerchantCode;
 @property(retain) NSDate * transactionDate;
 @property(retain) CLLocation * transactionLocation;
 
@@ -20,8 +22,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)merchantCode;
 - (id)paymentNetwork;
+- (id)rawMerchantCode;
 - (void)setMerchantCode:(id)arg1;
 - (void)setPaymentNetwork:(id)arg1;
+- (void)setRawMerchantCode:(id)arg1;
 - (void)setTransactionDate:(id)arg1;
 - (void)setTransactionLocation:(id)arg1;
 - (id)transactionDate;

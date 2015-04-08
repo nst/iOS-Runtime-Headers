@@ -135,6 +135,9 @@
 - (unsigned int)lineBreakByHyphenatingBeforeIndex:(unsigned int)arg1 withinRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)nextWordFromIndex:(unsigned int)arg1 forward:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withNumberOfLines:(unsigned int)arg2;
+- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withNumberOfLines:(unsigned int)arg2 forceWordWrap:(BOOL)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfTextBlock:(id)arg1 atIndex:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfTextList:(id)arg1 atIndex:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfTextTable:(id)arg1 atIndex:(unsigned int)arg2;

@@ -6,9 +6,11 @@
 
 @interface TPPageLayout : TSWPPageLayout <TPAttachmentLayoutParent, TSWPColumnMetrics, TSWPLayoutParent> {
     BOOL _childLayoutsValid;
+    BOOL _childTextLayoutsNeedInvalidationForExteriorWrap;
     unsigned int _contentFlags;
     TPInflatableFootnoteContainerLayout *_footnoteContainerLayout;
     <TSWPHeaderFooterProvider> *_headerFooterProvider;
+    int _inInvalidationClusterCount;
     TPMarginAdjustLayout *_marginAdjustLayout;
     <TPMasterDrawableProvider> *_masterDrawableProvider;
     TSURetainedPointerKeyDictionary *_oldChildLayouts;
@@ -28,7 +30,6 @@
 @property(readonly) NSArray * floatingDrawableLayouts;
 @property(readonly) TPFootnoteContainerLayout * footnoteContainerLayout;
 @property(readonly) TSWPPadding * layoutMargins;
-@property(readonly) TPMarginAdjustLayout * marginAdjustLayout;
 @property(readonly) <TPMasterDrawableProvider> * masterDrawableProvider;
 @property(readonly) unsigned int pageCount;
 @property(readonly) unsigned int pageIndex;
@@ -46,6 +47,7 @@
 - (id)anchoredDrawableLayouts;
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)beginResizeWrapInvalidationCluster;
 - (id)bodyLayout;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bodyRect;
 - (id)childTextLayoutsForExteriorWrap;
@@ -55,6 +57,7 @@
 - (void)dealloc;
 - (id)dependentLayouts;
 - (id)dependentsOfTextLayout:(id)arg1;
+- (void)endResizeWrapInvalidationCluster;
 - (void)evacuateOldChildLayoutCache;
 - (id)existingAttachmentLayoutForInfo:(id)arg1;
 - (id)floatingDrawableLayouts;
@@ -81,13 +84,13 @@
 - (id)layoutMargins;
 - (id)layoutsCausingWrapOnTextLayoutTarget:(id)arg1 ignoreIntersection:(BOOL)arg2;
 - (id)layoutsForProvidingGuidesForChildLayouts;
-- (id)marginAdjustLayout;
 - (id)masterDrawableProvider;
 - (float)maxAutoGrowHeightForTextLayout:(id)arg1;
 - (float)maxAutoGrowWidthForTextLayout:(id)arg1;
 - (int)naturalAlignmentForTextLayout:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
 - (void)p_addLayoutsForInfos:(id)arg1 toArray:(id)arg2;
+- (id)p_childLayoutInParentLayout:(id)arg1 forChildInfo:(id)arg2;
 - (id)p_existingChildLayoutForInfo:(id)arg1;
 - (void)p_insertBodyLayout;
 - (id)p_insertChildLayoutForInfo:(id)arg1;
@@ -96,7 +99,7 @@
 - (void)p_insertValidatedFloatingLayouts;
 - (void)p_insertValidatedMarginAdjustLayout;
 - (void)p_insertValidatedMasterLayouts;
-- (void)p_invalidatePageControllerForDynamicOperation;
+- (BOOL)p_isHeaderFooterLayout:(id)arg1;
 - (id)p_orderedChildInfos;
 - (void)p_populateOldChildLayoutsWithLayouts:(id)arg1;
 - (void)p_sortChildLayouts;

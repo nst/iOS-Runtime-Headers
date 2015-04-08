@@ -9,6 +9,11 @@
 
 - (BOOL)_connectIfNecessary;
 - (id)_serviceName;
-- (void)triggerCommand:(int)arg1;
+- (id)currentFocusedElement;
+- (id)currentRotorName;
+- (id)lastScreenChange;
+- (id)lastSoundsPlayed;
+- (id)lastSpokenPhrases;
+- (BOOL)triggerCommand:(int)arg1;
 
 @end

@@ -13,10 +13,13 @@
     NSArray *_zOrderMatches;
 }
 
+@property(readonly) NSArray * flattenableAnimationMatches;
 @property(readonly) unsigned int zOrderIntersectionsCount;
 
 - (void)dealloc;
+- (id)flattenableAnimationMatches;
 - (id)initWithAnimationMatches:(id)arg1;
+- (void)p_addFlattenableAnimationMatches:(id)arg1 toArray:(id)arg2;
 - (void)p_addVisibleTexturesFromMatches:(id)arg1 toArray:(id)arg2 interpolatedPercent:(float)arg3;
 - (void)p_adjustZOrdererMatchesZIndexByTextureType:(id)arg1;
 - (id)p_arrayBySortingMatches:(id)arg1 withInterpolatedPercent:(float)arg2;

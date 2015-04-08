@@ -18,9 +18,12 @@
 - (void)endDynamicAdaptiveLayout;
 - (id)initWithLayoutController:(id)arg1;
 - (BOOL)isRootLayoutForInspectorGeometry;
+- (BOOL)isSavedShiftForInfo:(id)arg1 equalToOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)layoutController;
 - (id)layoutsForProvidingGuidesForChildLayouts;
 - (id)p_shiftedObjects;
 - (BOOL)providesGuidesForChildLayouts;
+- (void)resetLayout:(id)arg1 forInfo:(id)arg2;
+- (void)updateRootLayoutShiftFor:(id)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
 
 @end

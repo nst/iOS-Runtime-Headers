@@ -29,7 +29,6 @@
 @property BOOL connected;
 @property(retain) NSString * deviceUUID;
 @property BOOL isConnecting;
-@property BOOL isPaired;
 @property float leftBatteryLevel;
 @property(retain) NSDate * leftBatteryLowDate;
 @property(retain) NSString * leftFirmwareVersion;

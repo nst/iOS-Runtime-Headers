@@ -2,8 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class <TSKMultiTableRemapping>;
+
 @interface TSKAddedToDocumentContext : NSObject {
 }
+
+@property(retain) <TSKMultiTableRemapping> * multiTableRemapper;
 
 + (id)changeTrackingSubstorageForCopyContext;
 + (id)dragCopyContext;
@@ -21,16 +25,19 @@
 + (id)unhidingContext;
 
 - (void)addDrawable:(id)arg1;
+- (void)addDrawables:(id)arg1;
+- (void)addInsertedTableInfo:(id)arg1;
 - (id)addedDrawables;
 - (BOOL)autoUpdateSmartFields;
 - (BOOL)changeTrackingSubstorage;
 - (id)importerID;
+- (id)insertedTableInfos;
 - (BOOL)invokeDOLC;
 - (BOOL)matchStyle;
+- (id)multiTableRemapper;
 - (BOOL)preserveChangeTracking;
-- (void)setTableIDMap:(struct __CFDictionary { }*)arg1;
+- (void)setMultiTableRemapper:(id)arg1;
 - (BOOL)syncChanges;
-- (struct __CFDictionary { }*)tableIDMap;
 - (id)undoContext;
 - (BOOL)uniqueBookmarks;
 - (BOOL)wasDragMoved;

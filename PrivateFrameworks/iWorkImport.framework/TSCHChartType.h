@@ -41,7 +41,6 @@
 - (id)animationDeliveryStylesForFilter:(id)arg1;
 - (id)animationFiltersWithDefaultFilters:(id)arg1;
 - (BOOL)approximatesTitleAccommodationUsingLegendSize;
-- (id)cascadeTimeSliceWithChartInfo:(id)arg1 renderSeriesProvider:(id)arg2 animationClass:(Class)arg3;
 - (id)categoryAxisIDs;
 - (float)categoryAxisTitleRotation;
 - (int)chartBodyBoundsDefinition;
@@ -55,6 +54,7 @@
 - (int)deprecated3DShadowSpecificProperty;
 - (BOOL)drawValueLabelsForZero;
 - (BOOL)explosionAffectsChartBodyBounds;
+- (id)filteredStyleOwnersFromStyleOwners:(id)arg1;
 - (id)g_genericToSpecificPropertyMapArea;
 - (id)g_genericToSpecificPropertyMapBar;
 - (id)g_genericToSpecificPropertyMapBubble;
@@ -68,6 +68,7 @@
 - (id)g_genericToSpecificPropertyMapStackedColumn;
 - (id)g_genericToSpecificPropertyMapTwoAxis;
 - (id)genericToSpecificPropertyMap;
+- (unsigned int)gridOffsetToSeriesForScatterFormat:(int)arg1;
 - (id)imageWithPreset:(id)arg1 target:(int)arg2 imageSize:(struct CGSize { float x1; float x2; })arg3 imageScale:(float)arg4 swatchFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 documentRoot:(id)arg6 shouldCache:(BOOL*)arg7;
 - (id)init;
 - (id)initWithFeatureClass:(Class)arg1;
@@ -76,20 +77,25 @@
 - (BOOL)isPie;
 - (Class)layoutClass;
 - (BOOL)layoutFrameShouldEncloseInfoGeometry;
-- (id)linearTimeSliceWithChartInfo:(id)arg1 renderSeriesProvider:(id)arg2 animationClass:(Class)arg3;
 - (unsigned int)maxCellsToCheckForGridValueType;
 - (struct CGSize { float x1; float x2; })minimumChartBodySize;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (struct CGSize { float x1; float x2; })mungeBodySize:(struct CGSize { float x1; float x2; })arg1;
 - (id)otherDimensionChartType;
 - (id)p_debugDescription;
 - (unsigned int)presentationDimension;
 - (Class)presetImagerClass;
 - (Class)repClass;
+- (int)representativeGridValueAxisType;
 - (BOOL)requiresSeparateLabelsRenderPass;
 - (BOOL)requiresYAxisOrdinal;
 - (BOOL)reverseSingleColumnLegendOrder;
+- (struct TSCH3DChartRotationLimit { float x1; float x2; float x3; float x4; })rotation3DLimit;
+- (float)rotation3DMaxX;
+- (float)rotation3DMaxY;
+- (float)rotation3DMinX;
+- (float)rotation3DMinY;
 - (Class)sageGeometeryHelperClass;
 - (int)stackingSignRule;
 - (unsigned int)styleIndexForAxisID:(id)arg1;
@@ -121,6 +127,7 @@
 - (BOOL)supportsMultipleSeriesTypes;
 - (BOOL)supportsMultipleValueScales;
 - (BOOL)supportsPercentNumberFormatting;
+- (BOOL)supportsReferenceLines;
 - (BOOL)supportsReverseChunking;
 - (BOOL)supportsSeriesFill;
 - (BOOL)supportsSeriesLabels;
@@ -135,7 +142,6 @@
 - (BOOL)supportsValueAxisLabelsPosition;
 - (BOOL)supportsValueLabels;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })swatchImageEdgeInsetsForSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)timeSliceWithChartInfo:(id)arg1 renderSeriesProvider:(id)arg2 animationClass:(Class)arg3 deliveryStyle:(unsigned int)arg4;
 - (id)titlePositionerWithInfo:(id)arg1 scene:(id)arg2;
 - (void)updateTitlesForExportingModel:(id)arg1 info:(id)arg2;
 - (id)userInterfaceName;

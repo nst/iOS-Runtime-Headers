@@ -10,5 +10,6 @@
 - (id)formattedStringForSeries:(id)arg1 index:(unsigned int)arg2;
 - (BOOL)supportsAxisValueLabels;
 - (BOOL)supportsFormattedStringForInvalidValue;
+- (BOOL)usesPercentNumberFormatPropertyForSeriesDataFormatting;
 
 @end

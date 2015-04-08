@@ -13,15 +13,15 @@
 }
 
 - (id).cxx_construct;
-- (void)addRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 andSize:(struct CGSize { float x1; float x2; })arg2 andPaddingInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 andIsCheckbox:(BOOL)arg4;
-- (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })begin;
+- (void)addRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 andSize:(struct CGSize { float x1; float x2; })arg2 andPaddingInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 andIsCheckbox:(BOOL)arg4;
+- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })begin;
 - (unsigned int)count;
 - (void)dealloc;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })getPaddingInsets;
 - (struct CGSize { float x1; float x2; })getSize;
 - (id)init;
 - (BOOL)isCheckbox;
-- (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })iter;
+- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })iter;
 - (void)reset;
 
 @end

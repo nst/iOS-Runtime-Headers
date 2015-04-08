@@ -2,15 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFProtectedSQLiteConnection;
+@class MFProtectedSQLiteConnection, NSArray;
 
 @interface _MFLibrarySQLiteConnectionWrapper : NSObject {
     MFProtectedSQLiteConnection *_connection;
+    BOOL _invalid;
     unsigned int _refcount;
+    NSArray *_stack;
     BOOL _writer;
 }
 
 @property(readonly) MFProtectedSQLiteConnection * connection;
+@property BOOL invalid;
 @property(readonly) unsigned int refcount;
 @property(readonly) BOOL writer;
 
@@ -21,7 +24,9 @@
 - (unsigned int)decrementRefcount;
 - (unsigned int)incrementRefcount;
 - (id)initWithConnection:(id)arg1 forWriting:(BOOL)arg2;
+- (BOOL)invalid;
 - (unsigned int)refcount;
+- (void)setInvalid:(BOOL)arg1;
 - (BOOL)writer;
 
 @end

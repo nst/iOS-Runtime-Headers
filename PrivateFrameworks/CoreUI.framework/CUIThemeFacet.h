@@ -40,7 +40,6 @@
 + (void)initialize;
 + (unsigned int)themeForBundleIdentifier:(id)arg1 error:(id*)arg2;
 + (unsigned int)themeNamed:(id)arg1 forBundleIdentifier:(id)arg2 error:(id*)arg3;
-+ (void)themeUnregisterThemeRef:(unsigned int)arg1;
 + (unsigned int)themeWithContentsOfURL:(id)arg1 error:(id*)arg2;
 
 - (void)_applyFixedAttributesToKey:(id)arg1;
@@ -66,8 +65,11 @@
 - (struct CGSize { float x1; float x2; })_thumbnailSizeForRendition:(id)arg1;
 - (void)_updateSpecificRenditionKey:(id)arg1 isFocused:(BOOL*)arg2 owner:(id)arg3 userInfo:(id)arg4;
 - (float)alpha;
+- (float)alphaWithKeyAdjustment:(id)arg1;
 - (int)blendMode;
 - (id)blendModeAsCAFilterString;
+- (id)blendModeAsCAFilterStringWithKeyAjustment:(id)arg1;
+- (int)blendModeWithKeyAdjustment:(id)arg1;
 - (int)controlSize;
 - (struct CGImage { }*)copyLayerImageContentsAndCenter:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
 - (struct CGImage { }*)copyLayerImageContentsAndCenter:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 renditionKey:(id)arg2;

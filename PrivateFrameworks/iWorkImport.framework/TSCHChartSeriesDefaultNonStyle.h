@@ -32,7 +32,7 @@
 - (float)floatValueForProperty:(int)arg1;
 - (int)intValueForProperty:(int)arg1;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (BOOL)overridesProperty:(int)arg1;
 - (id)properties;
 - (oneway void)release;

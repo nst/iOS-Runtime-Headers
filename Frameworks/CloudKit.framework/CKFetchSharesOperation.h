@@ -8,25 +8,25 @@
 
 @class NSArray, NSMutableDictionary;
 
-@interface CKFetchSharesOperation : CKOperation {
+@interface CKFetchSharesOperation : CKDatabaseOperation {
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _fetchSharesCompletionBlock;
 
-    BOOL _isFetchAllSharesOperation;
     NSMutableDictionary *_shareIDErrors;
     NSArray *_shareIDs;
     NSMutableDictionary *_sharesByShareID;
+    NSMutableDictionary *_zoneIDErrors;
+    NSArray *_zoneIDs;
 }
 
 @property(copy) id fetchSharesCompletionBlock;
-@property BOOL isFetchAllSharesOperation;
 @property(retain) NSMutableDictionary * shareIDErrors;
-@property(copy) NSArray * shareIDs;
+@property(readonly) NSArray * shareIDs;
 @property(retain) NSMutableDictionary * sharesByShareID;
-
-+ (id)fetchAllSharesOperation;
+@property(retain) NSMutableDictionary * zoneIDErrors;
+@property(readonly) NSArray * zoneIDs;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
@@ -34,16 +34,18 @@
 - (void)_handleProgressCallback:(id)arg1;
 - (id)fetchSharesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
+- (id)init;
 - (id)initWithShareIDs:(id)arg1;
-- (BOOL)isFetchAllSharesOperation;
+- (id)initWithZoneIDs:(id)arg1;
 - (void)performCKOperation;
 - (void)setFetchSharesCompletionBlock:(id)arg1;
-- (void)setIsFetchAllSharesOperation:(BOOL)arg1;
 - (void)setShareIDErrors:(id)arg1;
-- (void)setShareIDs:(id)arg1;
 - (void)setSharesByShareID:(id)arg1;
+- (void)setZoneIDErrors:(id)arg1;
 - (id)shareIDErrors;
 - (id)shareIDs;
 - (id)sharesByShareID;
+- (id)zoneIDErrors;
+- (id)zoneIDs;
 
 @end

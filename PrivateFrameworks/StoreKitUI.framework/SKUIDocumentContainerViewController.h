@@ -46,6 +46,7 @@
 - (void)_sendOnViewAttributesChangeWithAttributes:(id)arg1;
 - (void)_setChildViewController:(id)arg1;
 - (void)_showAccountViewControllerWithURL:(id)arg1;
+- (void)_showLegacyStorePageWithRequest:(id)arg1 page:(id)arg2 pageType:(int)arg3 URLResponse:(id)arg4;
 - (id)_sidepackViewControllerWithOptions:(id)arg1 clientContext:(id)arg2;
 - (id)contentScrollView;
 - (void)dealloc;

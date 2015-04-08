@@ -9,6 +9,7 @@
     UIKBKeyView *_keyView;
 }
 
+- (id)contentsKeyView;
 - (void)dealloc;
 - (void)dimKeyCaps:(float)arg1 duration:(float)arg2;
 - (void)displayLayer:(id)arg1;

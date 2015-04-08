@@ -24,6 +24,7 @@
 @property(copy,readonly) NSString * serviceType;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
++ (id)serviceTypeAsString:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

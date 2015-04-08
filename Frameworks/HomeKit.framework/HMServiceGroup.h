@@ -2,14 +2,13 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class HMHome, HMMessageDispatcher, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMHome, HMMessageDispatcher, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMServiceGroup : NSObject <HMMessageReceiver, NSSecureCoding> {
     NSMutableArray *_currentServices;
     HMHome *_home;
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;
-    NSMutableDictionary *_pendingRequests;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
@@ -23,7 +22,6 @@
 @property(readonly) NSUUID * messageTargetUUID;
 @property(retain) HMMessageDispatcher * msgDispatcher;
 @property(copy,readonly) NSString * name;
-@property(retain) NSMutableDictionary * pendingRequests;
 @property(copy,readonly) NSArray * services;
 @property(readonly) Class superclass;
 @property(retain) NSUUID * uuid;
@@ -36,6 +34,7 @@
 - (void)addService:(id)arg1 completionHandler:(id)arg2;
 - (void)configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3;
 - (id)currentServices;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)handleServiceAddedNotification:(id)arg1;
 - (void)handleServiceGroupRenamedNotification:(id)arg1;
@@ -49,16 +48,15 @@
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
 - (id)name;
-- (id)pendingRequests;
 - (void)removeService:(id)arg1 completionHandler:(id)arg2;
-- (void)removeServicesForAccessory:(id)arg1;
+- (void)removeServices:(id)arg1;
 - (id)services;
 - (void)setCurrentServices:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
-- (void)setPendingRequests:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (void)unconfigure;
 - (void)updateName:(id)arg1 completionHandler:(id)arg2;
 - (id)uuid;
 - (id)workQueue;

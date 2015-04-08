@@ -9,7 +9,6 @@
 }
 
 - (void)_addAttributionInfo:(id)arg1;
-- (void)_mapItemsWithTraits:(id)arg1 handler:(id)arg2;
 - (id)attributionInfoForSourceIdentifier:(id)arg1 sourceVersion:(unsigned int)arg2;
 - (void)dealloc;
 

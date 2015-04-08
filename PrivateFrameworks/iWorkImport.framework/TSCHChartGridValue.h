@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface TSCHChartGridValue : NSObject {
 }
 
@@ -10,8 +15,11 @@
 + (id)dateValueWithDouble:(double)arg1;
 + (id)dateValueWithNSDate:(id)arg1;
 + (id)durationValueWithDouble:(double)arg1;
++ (id)instanceWithArchive:(const struct GridValue { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; double x6; double x7; double x8; }*)arg1;
 + (id)numberValueWithDouble:(double)arg1;
++ (void)saveGridValue:(id)arg1 toArchive:(struct GridValue { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; double x6; double x7; double x8; }*)arg2;
 
 - (id)init;
+- (id)initWithArchive:(const struct GridValue { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; double x6; double x7; double x8; }*)arg1;
 
 @end

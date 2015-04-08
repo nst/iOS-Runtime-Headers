@@ -27,7 +27,9 @@
 - (void)setDepthBias:(float)arg1 slopeScale:(float)arg2 clamp:(float)arg3;
 - (void)setDepthStencilState:(id)arg1;
 - (void)setFragmentBuffer:(id)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
+- (void)setFragmentBufferOffset:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)setFragmentBuffers:(const id*)arg1 offsets:(const unsigned int*)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)setFragmentBytes:(const void*)arg1 length:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setFragmentSamplerState:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setFragmentSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 atIndex:(unsigned int)arg4;
 - (void)setFragmentSamplerStates:(const id*)arg1 lodMinClamps:(const float*)arg2 lodMaxClamps:(const float*)arg3 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
@@ -41,7 +43,9 @@
 - (void)setStencilReferenceValue:(unsigned int)arg1;
 - (void)setTriangleFillMode:(unsigned int)arg1;
 - (void)setVertexBuffer:(id)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
+- (void)setVertexBufferOffset:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)setVertexBuffers:(const id*)arg1 offsets:(const unsigned int*)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)setVertexBytes:(const void*)arg1 length:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setVertexSamplerState:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setVertexSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 atIndex:(unsigned int)arg4;
 - (void)setVertexSamplerStates:(const id*)arg1 lodMinClamps:(const float*)arg2 lodMaxClamps:(const float*)arg3 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;

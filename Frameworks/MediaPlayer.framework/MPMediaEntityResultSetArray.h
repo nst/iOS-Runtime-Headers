@@ -19,7 +19,6 @@
 - (unsigned int)count;
 - (id)initWithResultSet:(id)arg1 queryCriteria:(id)arg2 entityType:(unsigned int)arg3 library:(id)arg4;
 - (id)objectAtIndex:(unsigned int)arg1;
-- (void)objectAtIndex:(unsigned int)arg1 withCompletion:(id)arg2;
 - (id)sectionInfo;
 
 @end

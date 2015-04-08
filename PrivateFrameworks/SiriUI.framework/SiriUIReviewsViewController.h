@@ -86,6 +86,7 @@
 - (void)siriDidLayoutSnippetView;
 - (id)totalRatingView;
 - (struct UIOffset { float x1; float x2; })totalRatingViewOffset;
+- (void)updateSubtitle;
 - (float)verticalSpaceNeededForRatingView;
 
 @end

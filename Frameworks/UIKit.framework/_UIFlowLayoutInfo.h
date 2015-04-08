@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDictionary, NSMutableArray, UICollectionViewFlowLayout;
+@class NSArray, NSMutableArray, UICollectionViewFlowLayout;
 
 @interface _UIFlowLayoutInfo : NSObject {
     struct CGSize { 
@@ -19,7 +19,11 @@
         float height; 
     } _layoutSize;
     BOOL _leftToRight;
-    NSDictionary *_rowAlignmentOptions;
+    struct { 
+        int commonRowHorizontalAlignment; 
+        int lastRowHorizontalAlignment; 
+        int rowVerticalAlignment; 
+    } _rowAlignmentOptions;
     NSMutableArray *_sections;
     BOOL _useFloatingHeaderFooter;
     BOOL _usesFloatingHeaderFooter;
@@ -42,7 +46,7 @@
 @property(readonly) NSArray * invalidatedIndexPaths;
 @property UICollectionViewFlowLayout * layout;
 @property BOOL leftToRight;
-@property(retain) NSDictionary * rowAlignmentOptions;
+@property struct { int x1; int x2; int x3; } rowAlignmentOptions;
 @property(readonly) NSMutableArray * sections;
 @property BOOL usesFloatingHeaderFooter;
 
@@ -60,7 +64,7 @@
 - (id)invalidatedIndexPaths;
 - (id)layout;
 - (BOOL)leftToRight;
-- (id)rowAlignmentOptions;
+- (struct { int x1; int x2; int x3; })rowAlignmentOptions;
 - (id)sections;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDimension:(float)arg1;
@@ -68,7 +72,7 @@
 - (void)setHorizontal:(BOOL)arg1;
 - (void)setLayout:(id)arg1;
 - (void)setLeftToRight:(BOOL)arg1;
-- (void)setRowAlignmentOptions:(id)arg1;
+- (void)setRowAlignmentOptions:(struct { int x1; int x2; int x3; })arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1 forItemAtIndexPath:(id)arg2;
 - (void)setUsesFloatingHeaderFooter:(BOOL)arg1;
 - (id)snapshot;

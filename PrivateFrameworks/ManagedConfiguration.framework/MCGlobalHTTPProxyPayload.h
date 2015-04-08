@@ -7,7 +7,9 @@
 @interface MCGlobalHTTPProxyPayload : MCPayload {
     NSString *_credentialUUID;
     BOOL _proxyCaptiveLoginAllowed;
+    NSNumber *_proxyCaptiveLoginAllowedNum;
     BOOL _proxyPACFallbackAllowed;
+    NSNumber *_proxyPACFallbackAllowedNum;
     NSString *_proxyPACURLString;
     NSString *_proxyPassword;
     NSString *_proxyServer;
@@ -18,7 +20,9 @@
 
 @property(retain) NSString * credentialUUID;
 @property BOOL proxyCaptiveLoginAllowed;
+@property(retain) NSNumber * proxyCaptiveLoginAllowedNum;
 @property BOOL proxyPACFallbackAllowed;
+@property(retain) NSNumber * proxyPACFallbackAllowedNum;
 @property(retain) NSString * proxyPACURLString;
 @property(retain) NSString * proxyPassword;
 @property(retain) NSString * proxyServer;
@@ -37,7 +41,9 @@
 - (id)installationWarnings;
 - (id)payloadDescriptionKeyValueSections;
 - (BOOL)proxyCaptiveLoginAllowed;
+- (id)proxyCaptiveLoginAllowedNum;
 - (BOOL)proxyPACFallbackAllowed;
+- (id)proxyPACFallbackAllowedNum;
 - (id)proxyPACURLString;
 - (id)proxyPassword;
 - (id)proxyServer;
@@ -46,7 +52,9 @@
 - (id)proxyUsername;
 - (void)setCredentialUUID:(id)arg1;
 - (void)setProxyCaptiveLoginAllowed:(BOOL)arg1;
+- (void)setProxyCaptiveLoginAllowedNum:(id)arg1;
 - (void)setProxyPACFallbackAllowed:(BOOL)arg1;
+- (void)setProxyPACFallbackAllowedNum:(id)arg1;
 - (void)setProxyPACURLString:(id)arg1;
 - (void)setProxyPassword:(id)arg1;
 - (void)setProxyServer:(id)arg1;

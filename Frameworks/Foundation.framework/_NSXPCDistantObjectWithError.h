@@ -16,7 +16,7 @@
 
 @property(copy) id errorBlock;
 
-- (id)_initWithConnection:(id)arg1 proxyNumber:(unsigned long long)arg2 interface:(id)arg3 error:(id)arg4;
+- (id)_initWithConnection:(id)arg1 proxyNumber:(unsigned long long)arg2 generationCount:(unsigned long long)arg3 interface:(id)arg4 error:(id)arg5;
 - (void)dealloc;
 - (id)errorBlock;
 - (void)forwardInvocation:(id)arg1;

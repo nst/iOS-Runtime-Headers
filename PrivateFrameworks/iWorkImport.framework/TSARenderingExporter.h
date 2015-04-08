@@ -50,7 +50,6 @@
 - (double)progressForCurrentPage;
 - (void)quit;
 - (BOOL)setInfosToCurrentPage;
-- (void)setMaxPixels:(float)arg1;
 - (void)setPaginate:(BOOL)arg1;
 - (void)setProgressContext:(id)arg1;
 - (void)setup;

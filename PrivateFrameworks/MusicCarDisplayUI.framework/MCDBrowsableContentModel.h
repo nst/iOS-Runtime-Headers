@@ -9,11 +9,18 @@
     NSString *_bundleID;
     NSCache *_fetchedItems;
     NSMutableDictionary *_identifiersToIndexPaths;
+    NSObject<OS_dispatch_queue> *_imageProcessQueue;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _imageSize;
     NSMapTable *_indexPathsToViewControllers;
+    NSCache *_resizedImages;
     NSObject<OS_dispatch_queue> *_serialAccessQueue;
 }
 
 @property(copy,readonly) NSString * bundleID;
+@property struct CGSize { float x1; float x2; } imageSize;
 
 - (void).cxx_destruct;
 - (void)_contentItemsUpdated:(id)arg1;
@@ -22,18 +29,23 @@
 - (void)_notifyLoadOfIndexPath:(id)arg1;
 - (void)_nowPlayingDidChangeNotifiction:(id)arg1;
 - (void)_playbackInitiatedNotification:(id)arg1;
+- (void)_populateImageForItem:(id)arg1;
+- (id)_updateFectedItemForIndexPath:(id)arg1 withContentItem:(struct _MRContentItem { }*)arg2;
+- (id)artworkImageForContentItem:(id)arg1;
 - (id)bundleID;
 - (id)contentItemForIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)fetchChildrenAtIndexPath:(id)arg1 forRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 completionHandler:(id)arg3;
 - (void)getCountOfItemsForIndexPath:(id)arg1 completionHandler:(id)arg2;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithBundleID:(id)arg1;
 - (void)initiatePlaybackAtIndexPath:(id)arg1;
 - (id)listenerForIndexPath:(id)arg1;
 - (void)loadBrowsableContentForIndexPath:(id)arg1;
 - (void)registerListener:(id)arg1 forIndexPath:(id)arg2;
 - (BOOL)remoteAppIsPlaying;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)unregisterListenerAtIndexPath:(id)arg1;
 
 @end

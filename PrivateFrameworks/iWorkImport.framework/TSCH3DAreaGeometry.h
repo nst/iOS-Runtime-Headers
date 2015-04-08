@@ -36,6 +36,7 @@
 - (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })bottomTopAtPosition:(float)arg1;
 - (int)capCount;
 - (unsigned int)capOffset;
+- (id)elementsBoundsPositions;
 - (void)generateArrays;
 - (int)geometryCount;
 - (id)init;

@@ -2,16 +2,20 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSLayoutConstraint, NSMutableArray, NSString, UIAlertAction, UIAlertControllerVisualStyle, UIGestureRecognizer, UIImageView, UILabel, UIView;
+@class NSLayoutConstraint, NSMutableArray, NSString, UIAlertAction, UIAlertControllerVisualStyle, UIImageView, UILabel, UITapGestureRecognizer, UIView, UIView<UIAlertControllerBackgroundView>;
 
 @interface _UIAlertControllerActionView : UIView <UIGestureRecognizerDelegate, _UIAlertActionRepresenting> {
     UIAlertAction *_action;
+    NSMutableArray *_contentViewControllerConstraints;
+    UIView *_contentViewControllerContainerView;
     NSLayoutConstraint *_descriptiveLabelWidthConstraint;
     BOOL _discrete;
     BOOL _hasDescriptiveText;
+    BOOL _highlighted;
+    NSLayoutConstraint *_labelContainerLeadingConstraint;
+    NSLayoutConstraint *_labelContainerTrailingConstraint;
     NSLayoutConstraint *_minimumHeightConstraint;
-    unsigned int _roundedCorners;
-    UIGestureRecognizer *_selectGestureRecognizer;
+    UITapGestureRecognizer *_selectGestureRecognizer;
     UIAlertControllerVisualStyle *_visualStyle;
     UIImageView *checkView;
     UILabel *descriptiveLabel;
@@ -19,7 +23,7 @@
     SEL highlightAction;
     id highlightTarget;
     NSMutableArray *highlightedBackgroundConstraints;
-    UIView *highlightedBackgroundContainerView;
+    UIView<UIAlertControllerBackgroundView> *highlightedBackgroundContainerView;
     UIImageView *imageView;
     UILabel *label;
     UIView *labelContainerView;
@@ -39,13 +43,24 @@
 @property(readonly) Class superclass;
 @property UIAlertControllerVisualStyle * visualStyle;
 
+- (void)_action:(id)arg1 changedToBeDefault:(BOOL)arg2;
 - (void)_action:(id)arg1 changedToChecked:(BOOL)arg2;
 - (void)_action:(id)arg1 changedToEnabled:(BOOL)arg2;
+- (void)_action:(id)arg1 changedToTitle:(id)arg2;
+- (void)_action:(id)arg1 changedToTitleTextAlignment:(int)arg2;
+- (void)_action:(id)arg1 updatedImageTintColor:(id)arg2;
+- (void)_action:(id)arg1 updatedTitleTextColor:(id)arg2;
+- (BOOL)_buttonsShouldShowPressedState:(id)arg1;
+- (id)_computedTintColor;
 - (void)_contentSizeChanged;
-- (void)_focusStateDidChange;
+- (BOOL)_idiomSupportsSelectGesture:(int)arg1;
 - (void)_installSelectGestureRecognizer;
-- (BOOL)_isFocusableElement;
 - (float)_minimumLabelScaleFactor;
+- (int)_physicalButtonTypeForBackGesture;
+- (int)_physicalButtonTypeForSelectGesture;
+- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_prepareConstraints;
 - (void)_prepareConstraintsForDescriptiveText:(BOOL)arg1;
 - (void)_recomputeBackgroundColor;
@@ -57,15 +72,18 @@
 - (void)_uninstallSelectGestureRecognizer;
 - (void)_updateBackgroundView;
 - (void)_updateFontSize;
+- (void)_updateLabelContainerConstraints;
 - (void)_updateMinimumHeight;
 - (void)_updateStyle;
-- (void)_updateTextAlignmentForDescriptiveText:(BOOL)arg1;
+- (void)_updateTextAlignmentForDescriptiveText:(BOOL)arg1 titleTextAlignment:(int)arg2;
 - (id)action;
 - (float)alignedDescriptiveLabelTextWidth;
+- (BOOL)canBecomeFocused;
 - (float)currentDescriptiveLabelTextWidth;
 - (void)dealloc;
 - (id)description;
 - (BOOL)discrete;
+- (void)focusedViewDidChange;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isHighlighted;
 - (void)setAction:(id)arg1;
@@ -73,6 +91,7 @@
 - (void)setDiscrete:(BOOL)arg1;
 - (void)setHighlightTarget:(id)arg1 action:(SEL)arg2;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelectedTarget:(id)arg1 action:(SEL)arg2;
 - (void)setVisualStyle:(id)arg1;
 - (id)tintColor;

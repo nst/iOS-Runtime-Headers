@@ -59,6 +59,7 @@
 - (id)_editedGeometryImageWithBaseImage:(id)arg1;
 - (id)_editedImage;
 - (void)_invalidateCachedFilters;
+- (BOOL)_isOrientationMirrored;
 - (struct CGImage { }*)_newCGImageFromEditedCIImage:(id)arg1;
 - (id)_renderingQueue;
 - (id)_smartBWAdjustments;

@@ -62,6 +62,7 @@
 - (id)allTargets;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)canBecomeFirstResponder;
+- (BOOL)canBecomeFocused;
 - (BOOL)cancelMouseTracking;
 - (BOOL)cancelTouchTracking;
 - (void)cancelTrackingWithEvent:(id)arg1;

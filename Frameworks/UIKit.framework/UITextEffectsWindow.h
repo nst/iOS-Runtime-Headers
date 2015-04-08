@@ -46,6 +46,7 @@
 - (BOOL)_canActAsKeyWindowForScreen:(id)arg1;
 - (BOOL)_canAffectStatusBarAppearance;
 - (void)_configureContextOptions:(id)arg1;
+- (void)_createSystemGestureGateGestureRecognizerIfNeeded;
 - (void)_didRemoveSubview:(id)arg1;
 - (BOOL)_disableViewScaling;
 - (void)_handleStatusBarOrientationChange:(id)arg1;

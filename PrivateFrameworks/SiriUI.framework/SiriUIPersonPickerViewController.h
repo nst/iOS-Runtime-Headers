@@ -16,11 +16,10 @@
 - (void).cxx_destruct;
 - (id)_abAssistantManager;
 - (void)_dismissPicker;
-- (void)_pickerButtonTapped:(id)arg1;
 - (id)_pickerResponseForPerson:(void*)arg1;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void)viewDidLoad;
+- (void)showPicker:(id)arg1;
 
 @end

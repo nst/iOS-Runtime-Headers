@@ -39,7 +39,7 @@
 - (id)infoForCitation:(id)arg1 isFootnote:(BOOL)arg2;
 - (id)infosForAdjacentCitations:(id)arg1 isFootnote:(BOOL)arg2;
 - (id)init;
-- (BOOL)isEndNoteAvailable;
+- (BOOL)isEndNoteAvailableInContext:(id)arg1;
 - (BOOL)launchEndNote:(BOOL)arg1;
 - (id)outputStyles;
 - (id)p_getProxyObject;

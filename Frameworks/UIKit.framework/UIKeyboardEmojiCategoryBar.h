@@ -2,34 +2,42 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSString, UIImage, UIKeyboardEmojiCategoryController;
+@class NSString, UIKeyboardEmojiCategoryController, UIKeyboardEmojiGraphicsTraits, UIView;
 
 @interface UIKeyboardEmojiCategoryBar : UIKBKeyView <UIKeyboardEmojiCategoryControl> {
     UIKeyboardEmojiCategoryController *_categoryController;
-    UIImage *_darkDivider;
-    int _dividerTotal;
-    NSMutableArray *_dividerViews;
-    UIImage *_plainDivider;
-    NSMutableArray *_segmentViews;
+    UIKeyboardEmojiGraphicsTraits *_emojiGraphicsTraits;
+    BOOL _isScrubbing;
+    float _scrubStartXLocation;
+    UIView *_scrubView;
     int _selected;
-    UIImage *_selectedDivider;
-    int _total;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
+@property(retain) UIKeyboardEmojiGraphicsTraits * emojiGraphicsTraits;
 @property(readonly) unsigned int hash;
+@property(retain) UIView * scrubView;
 @property int selectedIndex;
 @property(readonly) Class superclass;
 
+- (void)animateScrubberToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })categorySelectedCircleRect:(int)arg1;
 - (void)dealloc;
+- (id)emojiGraphicsTraits;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDivider:(int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
-- (void)releaseImagesAndViews;
+- (void)receiveNotifictaion:(id)arg1;
+- (id)scrubView;
 - (int)selectedIndex;
-- (void)sendActionsForControlEvents:(unsigned int)arg1;
-- (void)setCategory:(id)arg1;
+- (void)setCategory:(int)arg1;
+- (void)setEmojiGraphicsTraits:(id)arg1;
+- (void)setScrubView:(id)arg1;
 - (void)setSelectedIndex:(int)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)updateCategory;
 
 @end

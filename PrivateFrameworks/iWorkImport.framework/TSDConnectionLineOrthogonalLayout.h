@@ -5,12 +5,10 @@
 @interface TSDConnectionLineOrthogonalLayout : TSDConnectionLineAbstractLayout {
 }
 
-- (void)addEndpointSnapsToXs:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg1 andYs:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg2;
 - (struct CGPoint { float x1; float x2; })axisSnapPoint:(struct CGPoint { float x1; float x2; })arg1 toXs:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; })arg2 toYs:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; })arg3 withThreshold:(float)arg4;
 - (BOOL)canEndpointsCoincide;
 - (struct CGPoint { float x1; float x2; })controlPointForPointA:(struct CGPoint { float x1; float x2; })arg1 pointB:(struct CGPoint { float x1; float x2; })arg2 andOriginalA:(struct CGPoint { float x1; float x2; })arg3 originalB:(struct CGPoint { float x1; float x2; })arg4;
 - (id)createConnectedPathFrom:(id)arg1 to:(id)arg2 withControlPoints:(struct CGPoint { float x1; float x2; }[3])arg3;
-- (struct CGPoint { float x1; float x2; })getControlKnobPosition:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })orthoRectOfLayout:(id)arg1 outset:(float)arg2;
 
 @end

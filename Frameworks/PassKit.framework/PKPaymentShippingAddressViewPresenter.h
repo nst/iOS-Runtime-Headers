@@ -12,6 +12,6 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (void)presentView:(id)arg1 withDataItem:(id)arg2;
++ (void)presentCell:(id)arg1 withDataItem:(id)arg2;
 
 @end

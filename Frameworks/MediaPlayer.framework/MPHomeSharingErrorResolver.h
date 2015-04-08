@@ -2,15 +2,20 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPHomeSharingML3DataProvider, NSData, NSError, NSString, NSURL, SSAuthorizationRequest;
+@class MPHomeSharingML3DataProvider, NSData, NSError, NSMutableArray, NSString, NSURL, SSAuthorizationRequest;
 
 @interface MPHomeSharingErrorResolver : MPAVErrorResolver <SSAuthorizationRequestDelegate> {
     unsigned long long _accountID;
+    NSData *_accountTokenData;
+    SSAuthorizationRequest *_activeRequest;
+    BOOL _atLeastOneAuthorizationRequestSuccessful;
     MPHomeSharingML3DataProvider *_dataProvider;
+    unsigned long long _downloaderAccountID;
+    NSData *_downloaderAccountTokenData;
     NSError *_error;
+    unsigned long long _familyAccountID;
     NSURL *_keybagURL;
-    SSAuthorizationRequest *_request;
-    NSData *_tokenData;
+    NSMutableArray *_requests;
 }
 
 @property(retain) MPHomeSharingML3DataProvider * dataProvider;
@@ -21,10 +26,13 @@
 
 - (void).cxx_destruct;
 - (BOOL)_errorIsFairPlayError:(id)arg1;
+- (void)_performMachineAuthorization;
+- (void)_processNextAuthorizationRequest;
 - (void)authorizationRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)dataProvider;
 - (void)dealloc;
-- (id)initWithTokenData:(id)arg1 forAccountID:(unsigned long long)arg2 keybagURL:(id)arg3;
+- (id)initWithKeybagURL:(id)arg1 accountID:(unsigned long long)arg2 accountTokenData:(id)arg3;
+- (id)initWithKeybagURL:(id)arg1 accountID:(unsigned long long)arg2 accountTokenData:(id)arg3 downloaderAccountID:(unsigned long long)arg4 downloaderAccountTokenData:(id)arg5 familyAccountID:(unsigned long long)arg6;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
 - (void)resolveError:(id)arg1;

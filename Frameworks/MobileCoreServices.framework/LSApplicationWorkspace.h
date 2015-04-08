@@ -32,6 +32,7 @@
 - (id)deviceIdentifierForAdvertising;
 - (id)deviceIdentifierForVendor;
 - (id)directionsApplications;
+- (void)enumerateBundlesOfType:(unsigned int)arg1 usingBlock:(id)arg2;
 - (BOOL)establishConnection;
 - (BOOL)getClaimedActivityTypes:(id*)arg1 domains:(id*)arg2;
 - (void)getKnowledgeUUID:(id*)arg1 andSequenceNumber:(id*)arg2;
@@ -54,6 +55,8 @@
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 userInfo:(id)arg3;
 - (id)placeholderApplications;
 - (id)pluginsWithIdentifiers:(id)arg1 protocols:(id)arg2 version:(id)arg3;
+- (id)pluginsWithIdentifiers:(id)arg1 protocols:(id)arg2 version:(id)arg3 applyFilter:(id)arg4;
+- (id)pluginsWithIdentifiers:(id)arg1 protocols:(id)arg2 version:(id)arg3 withFilter:(id)arg4;
 - (id)privateURLSchemes;
 - (id)publicURLSchemes;
 - (BOOL)registerApplication:(id)arg1;

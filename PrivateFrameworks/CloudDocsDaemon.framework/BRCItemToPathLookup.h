@@ -2,53 +2,56 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCLocalContainer, BRCLocalItem, BRCRelativePath, BRCServerItem, NSURL;
+@class BRCLocalItem, BRCRelativePath, BRCServerItem, BRCServerZone, NSURL;
 
 @interface BRCItemToPathLookup : NSObject {
-    BRCLocalContainer *_container;
-    BOOL _documentIDMayStillExist;
+    BOOL _cleanupFaults;
     struct { 
         unsigned int byFileID : 1; 
         unsigned int byDocumentID : 1; 
+        unsigned int byEnclosure : 1; 
         unsigned int byPath : 1; 
         unsigned int parent : 1; 
     } _fetched;
+    BOOL _fileSystemIDMayStillExist;
     BRCLocalItem *_item;
     BRCRelativePath *_matchByDocumentID;
+    BRCRelativePath *_matchByEnclosure;
     BRCRelativePath *_matchByFileID;
     BRCRelativePath *_matchByPath;
     unsigned long long _parentFileID;
     BRCRelativePath *_parentPath;
     BRCServerItem *_serverItem;
+    BRCServerZone *_serverZone;
 }
 
-@property(readonly) BRCRelativePath * byDocumentID;
-@property(readonly) BRCRelativePath * byFileID;
+@property(readonly) BRCRelativePath * byFileSystemID;
 @property(readonly) BRCRelativePath * byPath;
 @property(readonly) NSURL * coordinationURL;
-@property(readonly) BOOL documentIDMayStillExist;
-@property(readonly) unsigned long long parentFileID;
+@property(readonly) BOOL fileSystemIDMayStillExist;
 @property(readonly) BRCRelativePath * parentPath;
 
++ (id)_resolveEnclosureWithEnclosureFd:(int)arg1 serverZone:(id)arg2 expectedDocumentID:(unsigned int)arg3 expectedFileName:(id)arg4 cleanupFaults:(BOOL)arg5;
 + (id)lookupForItem:(id)arg1;
-+ (id)lookupForServerItem:(id)arg1;
++ (id)lookupForServerItem:(id)arg1 cleanupFaults:(BOOL)arg2;
++ (id)resolveEnclosureWithPath:(id)arg1 cleanupFaults:(BOOL)arg2;
 
 - (void).cxx_destruct;
 - (BOOL)_fetchByDocumentID;
+- (BOOL)_fetchByEnclosure;
 - (BOOL)_fetchByFileID;
 - (BOOL)_fetchByPath;
-- (BOOL)_fetchParent;
-- (id)byDocumentID;
-- (id)byFileID;
+- (void)_fetchParent;
+- (id)byFileSystemID;
 - (id)byPath;
 - (void)closePaths;
+- (BOOL)computeLogicalPath:(id*)arg1 physicalPath:(id*)arg2 isDirectory:(BOOL*)arg3;
 - (id)coordinationURL;
 - (void)dealloc;
 - (id)description;
-- (BOOL)documentIDMayStillExist;
+- (BOOL)fileSystemIDMayStillExist;
 - (id)initWithItem:(id)arg1;
-- (id)initWithServerItem:(id)arg1;
-- (unsigned long long)parentFileID;
+- (id)initWithServerItem:(id)arg1 cleanupFaults:(BOOL)arg2;
 - (id)parentPath;
 
 @end

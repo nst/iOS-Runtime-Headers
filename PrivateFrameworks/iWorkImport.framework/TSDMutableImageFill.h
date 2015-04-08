@@ -4,7 +4,7 @@
 
 @class TSPData, TSUColor;
 
-@interface TSDMutableImageFill : TSDImageFill {
+@interface TSDMutableImageFill : TSDImageFill <NSCopying> {
 }
 
 @property struct CGSize { float x1; float x2; } fillSize;

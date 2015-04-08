@@ -17,8 +17,8 @@
 @property(copy) NSString * sourceID;
 
 - (void).cxx_destruct;
-- (void)applyToLegacySearch:(id)arg1;
 - (id)calloutTitle;
+- (id)copyStorage;
 - (id)description;
 - (id)displayLines;
 - (id)geoCompletionItem;

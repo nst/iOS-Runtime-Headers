@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceCardReviewsControllerDelegate>, ABMonogrammer, GEORating, MKMapItem, NSString, _MKPlaceViewController;
+@class <MKPlaceCardReviewsControllerDelegate>, ABMonogrammer, GEORating, MKMapItem, NSMutableArray, NSMutableDictionary, NSString, _MKPlaceViewController;
 
 @interface MKPlaceReviewsViewController : UITableViewController <MKPlaceAttributionCellProvider, MKPlaceReviewsViewCheckInWriteCellDelegate, MKStackingViewControllerPreferredSizeUse> {
+    NSMutableDictionary *_cachedMaskedImages;
     BOOL _hasAttribution;
     MKMapItem *_mapItem;
     ABMonogrammer *_monogrammer;
@@ -14,6 +15,7 @@
     BOOL _showAttribution;
     BOOL _showCheckInAndWriteReviewButtons;
     BOOL _showMoreReviewsButton;
+    NSMutableArray *_viewDidAppearBlocks;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -31,6 +33,7 @@
 @property BOOL showCheckInAndWriteReviewButtons;
 @property BOOL showMoreReviewsButton;
 @property(readonly) Class superclass;
+@property(retain) NSMutableArray * viewDidAppearBlocks;
 
 - (void).cxx_destruct;
 - (void)_showReviewWithID:(id)arg1;
@@ -55,6 +58,7 @@
 - (void)setShowAttribution:(BOOL)arg1;
 - (void)setShowCheckInAndWriteReviewButtons:(BOOL)arg1;
 - (void)setShowMoreReviewsButton:(BOOL)arg1;
+- (void)setViewDidAppearBlocks:(id)arg1;
 - (BOOL)showAttribution;
 - (BOOL)showAttributionButtons;
 - (BOOL)showCheckInAndWriteReviewButtons;
@@ -66,6 +70,8 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)viewDidAppear:(BOOL)arg1;
+- (id)viewDidAppearBlocks;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

@@ -6,12 +6,13 @@
    See Warning(s) below.
  */
 
-@class <CKDAccountInfoProvider>, <CKDResponseBodyParser>, CKDClientContext, CKDProtobufStreamWriter, CKDProtocolTranslator, NSArray, NSData, NSDate, NSDictionary, NSError, NSFileHandle, NSHTTPURLResponse, NSInputStream, NSMutableArray, NSMutableData, NSMutableDictionary, NSOperationQueue, NSString, NSURL, NSURLRequest, NSURLSessionConfiguration, NSURLSessionDataTask;
+@class <CKDAccountInfoProvider>, <CKDResponseBodyParser>, CKDClientContext, CKDProtobufStreamWriter, CKDProtocolTranslator, CKTimeLogger, NSArray, NSData, NSDate, NSDictionary, NSError, NSFileHandle, NSHTTPURLResponse, NSInputStream, NSMutableArray, NSMutableData, NSMutableDictionary, NSOperationQueue, NSString, NSURL, NSURLRequest, NSURLSessionConfiguration, NSURLSessionDataTask;
 
 @interface CKDURLRequest : NSObject <CKDFlowControllable, CKDProtobufMessageSigningDelegate, CKDURLSessionTaskDelegate> {
     <CKDAccountInfoProvider> *_accountInfoProvider;
     BOOL _allowAutomaticRedirects;
     BOOL _allowsCellularAccess;
+    BOOL _allowsPowerNapScheduling;
     NSFileHandle *_binaryRequestFileHandle;
     NSString *_binaryRequestLogFilePath;
     NSFileHandle *_binaryResponseFileHandle;
@@ -80,6 +81,7 @@
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
     CKDProtobufStreamWriter *_streamWriter;
+    CKTimeLogger *_timeLogger;
     double _timeoutInterval;
     CKDProtocolTranslator *_translator;
     NSURLSessionDataTask *_urlSessionTask;
@@ -91,6 +93,7 @@
 @property(readonly) NSDictionary * additionalHeaderValues;
 @property BOOL allowAutomaticRedirects;
 @property BOOL allowsCellularAccess;
+@property BOOL allowsPowerNapScheduling;
 @property(retain) NSFileHandle * binaryRequestFileHandle;
 @property(retain) NSString * binaryRequestLogFilePath;
 @property(retain) NSFileHandle * binaryResponseFileHandle;
@@ -147,6 +150,7 @@
 @property(retain) NSString * sourceApplicationSecondaryIdentifier;
 @property(readonly) CKDProtobufStreamWriter * streamWriter;
 @property(readonly) Class superclass;
+@property(retain) CKTimeLogger * timeLogger;
 @property double timeoutInterval;
 @property(retain) CKDProtocolTranslator * translator;
 @property(readonly) NSURL * url;
@@ -195,6 +199,7 @@
 - (void)_setupConfiguration;
 - (void)_setupMescal;
 - (void)_setupPublicDatabaseURL;
+- (void)_tearDownStreamWriter;
 - (id)_versionHeader;
 - (id)acceptContentType;
 - (id)accountInfoProvider;
@@ -203,6 +208,7 @@
 - (BOOL)allowsAnonymousAccount;
 - (BOOL)allowsAuthedAccount;
 - (BOOL)allowsCellularAccess;
+- (BOOL)allowsPowerNapScheduling;
 - (id)binaryRequestFileHandle;
 - (id)binaryRequestLogFilePath;
 - (id)binaryResponseFileHandle;
@@ -282,6 +288,7 @@
 - (void)setAccountInfoProvider:(id)arg1;
 - (void)setAllowAutomaticRedirects:(BOOL)arg1;
 - (void)setAllowsCellularAccess:(BOOL)arg1;
+- (void)setAllowsPowerNapScheduling:(BOOL)arg1;
 - (void)setBinaryRequestFileHandle:(id)arg1;
 - (void)setBinaryRequestLogFilePath:(id)arg1;
 - (void)setBinaryResponseFileHandle:(id)arg1;
@@ -314,6 +321,7 @@
 - (void)setSessionConfiguration:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
+- (void)setTimeLogger:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (void)setTranslator:(id)arg1;
 - (void)setUrlSessionTask:(id)arg1;
@@ -325,6 +333,7 @@
 - (id)streamWriter;
 - (void)tearDownResources;
 - (void)tearDownResourcesAndReleaseTheZoneLocks;
+- (id)timeLogger;
 - (double)timeoutInterval;
 - (id)translator;
 - (void)updateSignatureWithReceivedBytes:(id)arg1;

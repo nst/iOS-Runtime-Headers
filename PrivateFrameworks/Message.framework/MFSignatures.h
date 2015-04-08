@@ -6,6 +6,9 @@
 }
 
 + (id)sharedInstance;
++ (id)signatureMarkupFormat:(id)arg1;
++ (id)signaturePlainTextFormat:(id)arg1;
++ (id)stripSignatureMarkup:(id)arg1;
 
 - (id)_getValue:(id)arg1;
 - (id)_modelSpecificLocalizedStringKeyForKey:(id)arg1;
@@ -22,10 +25,7 @@
 - (id)signatureForAccount:(id)arg1;
 - (id)signatureForSendingEmailAddress:(id)arg1;
 - (id)signatureMarkupForSendingEmailAddress:(id)arg1;
-- (id)signatureMarkupFormat:(id)arg1;
 - (id)signaturePlainTextForSendingEmailAddress:(id)arg1;
-- (id)signaturePlainTextFormat:(id)arg1;
-- (id)stripSignatureMarkup:(id)arg1;
 - (BOOL)useAccountSignatures;
 
 @end

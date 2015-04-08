@@ -45,6 +45,7 @@
 - (float)maximumHeight;
 - (float)preferredContentHeight;
 - (void)proximityStateDidChange:(BOOL)arg1;
+- (void)requestDismissalEnabled:(BOOL)arg1;
 - (void)requestPreferredContentHeight:(float)arg1;
 - (void)requestProximityMonitoringEnabled:(BOOL)arg1;
 - (void)setActionEnabled:(BOOL)arg1 atIndex:(unsigned int)arg2;

@@ -29,7 +29,6 @@
 - (id)persistentIDProperty;
 - (BOOL)sectionsPersistentIDColumnIsDistinct;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
-- (id)selectPersistentIDsSQLAndPropertiesForResultSet:(id)arg1 ordered:(BOOL)arg2;
 - (void)setIsFastCountable:(BOOL)arg1;
 
 @end

@@ -31,11 +31,11 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)allocateConstructorAndPrototypeWithSuperClassInfo:(id)arg1;
+- (struct pair<JSC::JSObject *, JSC::JSObject *> { struct JSObject {} *x1; struct JSObject {} *x2; })allocateConstructorAndPrototype;
 - (id)constructor;
 - (void)dealloc;
-- (id)initWithContext:(id)arg1 forClass:(Class)arg2 superClassInfo:(id)arg3;
-- (void)reallocateConstructorAndOrPrototype;
+- (id)initWithContext:(id)arg1 forClass:(Class)arg2;
+- (struct JSObject { struct Structure {} *x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct CopyWriteBarrier<JSC::Butterfly> { struct Butterfly {} *x_6_1_1; } x6; unsigned int x7; }*)prototype;
 - (id)wrapperForObject:(id)arg1;
 
 @end

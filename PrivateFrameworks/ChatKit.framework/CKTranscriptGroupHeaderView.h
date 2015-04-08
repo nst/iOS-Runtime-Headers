@@ -18,8 +18,6 @@
 @property(retain) UIView * separator;
 @property(retain) MFComposeRecipientTextView * textView;
 
-- (id)_groupHeaderComposeRecipients;
-- (void)_handleConversationRecipientsChanged:(id)arg1;
 - (id)actionButton;
 - (id)backdropView;
 - (id)conversation;

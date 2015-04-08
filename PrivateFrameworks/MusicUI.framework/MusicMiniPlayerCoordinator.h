@@ -2,25 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSString, UIActionSheet;
-
-@interface MusicMiniPlayerCoordinator : RUMiniPlayerCoordinator <UIActionSheetDelegate> {
-    UIActionSheet *_repeatActionSheet;
+@interface MusicMiniPlayerCoordinator : RUMiniPlayerCoordinator {
 }
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 + (id)sharedCoordinator;
 
-- (void).cxx_destruct;
 - (id)_init;
 - (Class)_miniPlayerPlaybackControlsViewClass;
+- (void)_setRepeatType:(unsigned int)arg1;
 - (void)_startGeniusPlaylistFromItem:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)dealloc;
 - (id)initWithPlaybackCoordinator:(id)arg1;
 - (void)miniPlayerActionsViewController:(id)arg1 didSelectAction:(int)arg2;
 - (BOOL)playbackControls:(id)arg1 changedRepeatType:(unsigned int)arg2;

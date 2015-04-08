@@ -74,6 +74,7 @@
 - (id)candidateList;
 - (void)changeToKeyplane:(id)arg1;
 - (void)clearShiftIfNecessaryForEndedTouch:(id)arg1;
+- (void)clearTransientState;
 - (void)clearUnusedObjects:(BOOL)arg1;
 - (void)commitTouches:(id)arg1;
 - (void)commitTouches:(id)arg1 executionContext:(id)arg2;

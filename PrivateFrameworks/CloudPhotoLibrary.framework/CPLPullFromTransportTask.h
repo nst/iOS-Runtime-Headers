@@ -2,31 +2,41 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLEngineTransportDownloadBatchTask>, <CPLPullFromTransportTaskDelegate>, NSData, NSObject<OS_dispatch_queue>, NSString;
+@class <CPLEngineTransportDownloadBatchTask>, <CPLEngineTransportGetAssetCountsTask>, <CPLPullFromTransportTaskDelegate>, NSData, NSObject<OS_dispatch_queue>, NSString;
 
 @interface CPLPullFromTransportTask : CPLEngineSyncTask {
     NSString *_clientCacheIdentifier;
-    BOOL _didBeginTransientRepository;
     BOOL _didGetSomeChanges;
     <CPLEngineTransportDownloadBatchTask> *_downloadTask;
+    <CPLEngineTransportGetAssetCountsTask> *_getAssetCountsTask;
     NSData *_initialSyncAnchor;
+    BOOL _isPostPushPhase;
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _resetSyncAnchor;
+    BOOL _shouldGetAssetCounts;
 }
 
 @property(retain) <CPLPullFromTransportTaskDelegate> * delegate;
 @property(readonly) BOOL didGetSomeChanges;
+@property BOOL isPostPushPhase;
+@property BOOL shouldGetAssetCounts;
 
 - (void).cxx_destruct;
 - (void)_finishTaskWithErrorAndCleanupIfNecessary:(id)arg1;
 - (void)_handleNewBatch:(id)arg1 newSyncAnchor:(id)arg2;
 - (void)_launch;
+- (void)_launchPullTasks;
 - (void)cancel;
 - (BOOL)didGetSomeChanges;
 - (id)initWithEngineLibrary:(id)arg1;
+- (BOOL)isPostPushPhase;
 - (void)launch;
 - (void)pause;
 - (void)resume;
+- (void)setIsPostPushPhase:(BOOL)arg1;
+- (void)setShouldGetAssetCounts:(BOOL)arg1;
+- (BOOL)shouldGetAssetCounts;
+- (void)taskDidFinishWithError:(id)arg1;
 - (id)taskIdentifier;
 
 @end

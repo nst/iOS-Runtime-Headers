@@ -76,7 +76,7 @@
 - (void)_addVisit:(id)arg1;
 - (id)_autocompleteTriggersFromSynchronizationQueue;
 - (void)_collapseDailyVisitsToWeekly;
-- (void)_padDailyCountsForNewVisitAtTime:(double)arg1;
+- (void)_padDailyCountsForNewVisitAtTime:(double)arg1 indexOfNewVisit:(int*)arg2;
 - (struct Vector<double, 0, WTF::CrashOnOverflow> { double *x1; unsigned int x2; unsigned int x3; })_timesForSynthesizedVisitsPreceedingDailyAndWeeklyRange:(unsigned int)arg1;
 - (struct Vector<double, 0, WTF::CrashOnOverflow> { double *x1; unsigned int x2; unsigned int x3; })_timesForVisits:(unsigned int)arg1 toSynthesizeBetweenStartTime:(double)arg2 endTime:(double)arg3;
 - (struct Vector<double, 0, WTF::CrashOnOverflow> { double *x1; unsigned int x2; unsigned int x3; })_timesOfVisitsToSynthesizeFromDailyAndWeeklyCounts;

@@ -44,6 +44,7 @@
 - (void)_invalidateVisualSliderThumbnailsForMode:(id)arg1;
 - (float)_levelForAdjustmentScrollViewOffset:(float)arg1 inMode:(id)arg2;
 - (id)_levelSliderForMode:(id)arg1;
+- (void)_reloadLayoutDependentUIFromOrientation:(int)arg1 toOrientation:(int)arg2 withTransitionCoordinator:(id)arg3;
 - (void)_resyncAdjustmentScrollViewOffset;
 - (void)_saveVisualSliderImage:(id)arg1 forMode:(id)arg2 intensityIndex:(int)arg3;
 - (void)_setCurrentModeLevelSliderOffset:(float)arg1 animatedBaseValueIndicator:(BOOL)arg2;
@@ -83,11 +84,11 @@
 - (id)selectedToolbarIcon;
 - (void)setLayoutOrientation:(int)arg1;
 - (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
+- (void)specDidChange;
 - (id)toolbarIcon;
 - (void)updateViewConstraints;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)visualLevelSlider:(id)arg1 imageForIntensityIndex:(int)arg2;
 - (int)visualLevelSliderNumberOfThumbnails:(id)arg1;

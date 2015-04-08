@@ -18,9 +18,9 @@
 - (void).cxx_destruct;
 - (void)__provideItemAtURL:(id)arg1 toReaderWithID:(id)arg2 session:(id)arg3 completionHandler:(id)arg4;
 - (void)_cancelProvidingItemAtURL:(id)arg1 toReaderWithID:(id)arg2;
+- (void)_documentWasMadeLive:(id)arg1;
 - (id)_fileReactorID;
 - (BOOL)_hasPendingReaderForDocumentID:(id)arg1;
-- (void)_itemWasMadeLive:(id)arg1;
 - (id)_physicalURLForURL:(id)arg1;
 - (void)_provideItemAtURL:(id)arg1 toReaderWithID:(id)arg2 completionHandler:(id)arg3;
 - (void)_registerPresenterForItemAtURL:(id)arg1 key:(id)arg2 session:(id)arg3;

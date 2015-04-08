@@ -2,19 +2,15 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, PLCloudSharedAlbum, PUPhotoStreamRecipientViewController, UIBarButtonItem;
+@class PLCloudSharedAlbum, PUPhotoStreamRecipientViewController, UIBarButtonItem;
 
-@interface PUAddSubscribersViewController : UIViewController <UIAlertViewDelegate> {
+@interface PUAddSubscribersViewController : UIViewController {
     UIBarButtonItem *_addButton;
     PLCloudSharedAlbum *_album;
     PUPhotoStreamRecipientViewController *_composeRecipientController;
 }
 
 @property(readonly) PLCloudSharedAlbum * album;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addButtonHandler;
@@ -24,7 +20,6 @@
 - (void)_saveAndDismiss;
 - (BOOL)_validateRecipientsToAdd:(id)arg1;
 - (id)album;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)backingNavigationControllerForComposeRecipientViewController:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;

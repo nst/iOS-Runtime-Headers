@@ -9,6 +9,7 @@
     NSString *_content;
     NSDate *_expirationDate;
     BOOL _expiresOnNextTransaction;
+    BOOL _hasAssociatedPaymentApplication;
     NSString *_identifier;
     NSDate *_messageDate;
 }
@@ -17,6 +18,7 @@
 @property(copy) NSString * content;
 @property(copy) NSDate * expirationDate;
 @property BOOL expiresOnNextTransaction;
+@property BOOL hasAssociatedPaymentApplication;
 @property(copy) NSString * identifier;
 @property(copy) NSDate * messageDate;
 
@@ -30,6 +32,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
 - (BOOL)expiresOnNextTransaction;
+- (BOOL)hasAssociatedPaymentApplication;
 - (unsigned int)hash;
 - (id)identifier;
 - (id)init;
@@ -41,6 +44,7 @@
 - (void)setContent:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setExpiresOnNextTransaction:(BOOL)arg1;
+- (void)setHasAssociatedPaymentApplication:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setMessageDate:(id)arg1;
 

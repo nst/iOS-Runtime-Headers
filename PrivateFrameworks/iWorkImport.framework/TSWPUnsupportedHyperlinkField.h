@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (id)href;
 - (id)initFromUnarchiver:(id)arg1;
-- (const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; bool x5; int x6; unsigned int x7[1]; }*)placeholderSmartFieldArchiveFromUnarchiver:(id)arg1;
+- (const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct SmartFieldArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; bool x7; }*)placeholderSmartFieldArchiveFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setHref:(id)arg1;
 - (int)smartFieldKind;

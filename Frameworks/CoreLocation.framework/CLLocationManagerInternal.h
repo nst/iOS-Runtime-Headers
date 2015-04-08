@@ -44,6 +44,7 @@
         } rawCoordinate; 
         double rawCourse; 
         int floor; 
+        unsigned int integrity; 
     } fLocation;
     NSString *fLocationEventType;
     double fLocationRequestAccuracy;

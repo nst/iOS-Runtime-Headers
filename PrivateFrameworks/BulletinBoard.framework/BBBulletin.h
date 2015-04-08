@@ -237,6 +237,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isLoading;
+- (BOOL)isPlayingSound;
 - (void)killSound;
 - (id)lastInterruptDate;
 - (id)lifeAssertions;

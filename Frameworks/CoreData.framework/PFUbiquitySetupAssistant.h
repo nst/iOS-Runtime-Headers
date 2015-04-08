@@ -129,6 +129,7 @@
 - (id)failSetupError;
 - (BOOL)finishSetupForStore:(id)arg1 error:(id*)arg2;
 - (void)finishSetupWithRetry:(id)arg1;
+- (void)fixdictionary:(id)arg1 withDeletes:(id)arg2;
 - (id)getCurrentUbiquityIdentityToken;
 - (id)init;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 andStoreOptions:(id)arg2 forPersistentStoreOfType:(id)arg3 atURL:(id)arg4;

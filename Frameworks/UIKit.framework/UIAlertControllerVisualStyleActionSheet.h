@@ -27,6 +27,7 @@
 - (id)messageLabelFont;
 - (float)minimumActionHeight;
 - (id)regularActionFont;
+- (float)sectionDelimitingSeparatorDimension;
 - (void)setDescriptor:(id)arg1;
 - (id)titleLabelColor;
 - (id)titleLabelFont;

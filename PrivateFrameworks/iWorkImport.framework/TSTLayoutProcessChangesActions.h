@@ -3,14 +3,14 @@
  */
 
 @interface TSTLayoutProcessChangesActions : NSObject {
-    BOOL _layoutInvalidate;
-    BOOL _layoutInvalidateChildren;
-    BOOL _layoutInvalidateProvider;
-    BOOL _layoutInvalidateSize;
-    BOOL _layoutInvalidateTableNameVisibility;
-    BOOL _layoutSpacesInvalidateCoordinates;
-    BOOL _layoutSpacesInvalidateTableOffsets;
-    BOOL _layoutUpdateChildren;
+    BOOL mLayoutInvalidate;
+    BOOL mLayoutInvalidateChildren;
+    BOOL mLayoutInvalidateProvider;
+    BOOL mLayoutInvalidateSize;
+    BOOL mLayoutInvalidateTableNameVisibility;
+    BOOL mLayoutSpacesInvalidateCoordinates;
+    BOOL mLayoutSpacesInvalidateTableOffsets;
+    BOOL mLayoutUpdateChildren;
 }
 
 @property BOOL layoutInvalidate;

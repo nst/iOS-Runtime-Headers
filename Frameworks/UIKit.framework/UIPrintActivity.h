@@ -11,7 +11,6 @@
 @property(retain) UIViewController * wrapperViewController;
 
 - (id)_activityImage;
-- (void)_cleanup;
 - (id)_embeddedActivityViewController;
 - (void)activityDidFinish:(BOOL)arg1;
 - (id)activityTitle;

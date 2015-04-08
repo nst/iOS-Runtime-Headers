@@ -9,6 +9,7 @@
 @class NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
 
 @interface SPXPCConnection : NSObject {
+    NSString *_bundleID;
     NSObject<OS_xpc_object> *_conn;
     id _context;
 
@@ -23,10 +24,12 @@
     id _messageHandler;
 
     NSMutableSet *_outstandingMessages;
+    NSObject<OS_dispatch_queue> *_outstandingMessagesQueue;
     BOOL _ownsQueue;
     int _timeoutDisabled;
 }
 
+@property(readonly) NSString * bundleID;
 @property(retain) id context;
 @property(copy) id disconnectHandler;
 @property(copy) id messageHandler;
@@ -39,6 +42,7 @@
 - (void)_removeMessage:(id)arg1;
 - (void)_sendMessage:(id)arg1 handler:(id)arg2;
 - (void)_setEventHandlerOnConnection:(id)arg1;
+- (id)bundleID;
 - (id)context;
 - (void)dealloc;
 - (id)disconnectHandler;

@@ -11,9 +11,13 @@
 
 - (id)_newSelectStatementWithFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2;
 - (id)_originalRowForUpdate:(id)arg1;
+- (void)_setupBindVariablesForCachedStatement:(id)arg1 usingValues:(id)arg2;
+- (id)_statementForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 countOnly:(BOOL)arg3 nestingLevel:(unsigned int)arg4;
 - (id)connections;
 - (id)createConnection;
 - (void)dealloc;
+- (id)generateSQLStatmentForSourcesAndOrderKeysForDestination:(id)arg1 inManyToMany:(id)arg2;
+- (id)generateSQLStatmentForSourcesAndOrderKeysForDestination:(id)arg1 inToMany:(id)arg2;
 - (Class)generatorClass;
 - (BOOL)hasOpenConnections;
 - (id)initWithSQLCore:(id)arg1;

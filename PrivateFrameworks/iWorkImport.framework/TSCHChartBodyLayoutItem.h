@@ -13,10 +13,12 @@
 - (struct CGPath { }*)newDragAndDropHighlightPathForSelection:(id)arg1;
 - (void)p_addRendererOfClass:(Class)arg1 andRep:(id)arg2 toArray:(id)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_calcDrawingRectForModel:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_calcDrawingRectForReferenceLines;
 - (id)p_errorBarSubselectionKnobsForSeries:(id)arg1 axisID:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_exactLabelsDrawingRectForSeries:(id)arg1;
 - (void)p_layoutOutward;
 - (void)p_nudgeBarElementFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 usingBarModelCache:(id)arg2 unitSpaceValueBegin:(double)arg3 unitSpaceValueEnd:(double)arg4;
+- (id)p_refLineSubselectionKnobsForStyleSwapIndex:(unsigned int)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_transformForRenderingLabelForBarColSeries:(unsigned int)arg1 forGroup:(unsigned int)arg2 outElementSize:(struct CGSize { float x1; float x2; }*)arg3 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_transformForRenderingLabelForLineAreaSeries:(unsigned int)arg1 forGroup:(unsigned int)arg2 outElementSize:(struct CGSize { float x1; float x2; }*)arg3 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 - (id)p_trendLineEquationSubselectionKnobsForSeries:(id)arg1;

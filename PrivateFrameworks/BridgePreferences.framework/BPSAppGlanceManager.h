@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/BridgePreferences.framework/BridgePreferences
  */
 
-@class NGSGlance, NGSSettingsManager, NSString, PSListController;
+@class BPSInternalGlanceManager, NGSGlance, NSString, PSListController;
 
-@interface BPSAppGlanceManager : NSObject <NGSSettingsManagerDelegate> {
+@interface BPSAppGlanceManager : NSObject <BPSInternalGlanceObserverDelegate> {
     NGSGlance *_glance;
     PSListController *_listControllerDelegate;
-    NGSSettingsManager *_manager;
+    BPSInternalGlanceManager *_manager;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -15,11 +15,12 @@
 @property(retain) NGSGlance * glance;
 @property(readonly) unsigned int hash;
 @property PSListController * listControllerDelegate;
-@property(retain) NGSSettingsManager * manager;
+@property(retain) BPSInternalGlanceManager * manager;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_logGlanceDescriptions;
+- (void)dealloc;
 - (id)glance;
 - (id)glanceSpecifierForIdentifier:(id)arg1;
 - (id)init;

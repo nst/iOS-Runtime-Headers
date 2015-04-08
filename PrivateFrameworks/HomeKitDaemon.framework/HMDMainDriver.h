@@ -44,6 +44,7 @@
 - (id)idsTransport;
 - (id)init;
 - (void)initBackgroundTaskAgentForTimerTriggers;
+- (void)logError:(id)arg1 component:(id)arg2;
 - (id)messageDispatcher;
 - (id)msgFilterChain;
 - (id)notificationRelayDispatcher;

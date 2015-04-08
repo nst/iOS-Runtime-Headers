@@ -2,26 +2,34 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSString, NSURLRequest;
+@class NSArray, NSDictionary, NSString, NSURLRequest;
 
 @interface PRSSearchFeedback : PRSFeedback {
     BOOL _cached;
+    NSDictionary *_client_error;
+    NSString *_connectionType;
     int _delta;
     int _delta_ref;
     BOOL _error;
     NSString *_error_code;
     int _latency;
+    long long _responseSize;
+    NSArray *_serverStatus;
     int _ttfb;
     int _type;
     NSURLRequest *_urlRequest;
 }
 
 @property BOOL cached;
+@property(retain) NSDictionary * client_error;
+@property(readonly) NSString * connectionType;
 @property int delta;
 @property int delta_ref;
 @property BOOL error;
 @property(retain) NSString * error_code;
 @property int latency;
+@property long long responseSize;
+@property(retain) NSArray * serverStatus;
 @property int ttfb;
 @property(retain) NSURLRequest * urlRequest;
 
@@ -29,6 +37,8 @@
 
 - (void).cxx_destruct;
 - (BOOL)cached;
+- (id)client_error;
+- (id)connectionType;
 - (int)delta;
 - (int)delta_ref;
 - (void)encodeWithCoder:(id)arg1;
@@ -36,15 +46,20 @@
 - (id)error_code;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFeedback:(id)arg1;
-- (id)initWithInput:(id)arg1 type:(int)arg2 timestamp:(int)arg3;
+- (id)initWithInput:(id)arg1 type:(int)arg2 timestamp:(int)arg3 connectionType:(id)arg4;
 - (int)latency;
 - (id)plist;
+- (long long)responseSize;
+- (id)serverStatus;
 - (void)setCached:(BOOL)arg1;
+- (void)setClient_error:(id)arg1;
 - (void)setDelta:(int)arg1;
 - (void)setDelta_ref:(int)arg1;
 - (void)setError:(BOOL)arg1;
 - (void)setError_code:(id)arg1;
 - (void)setLatency:(int)arg1;
+- (void)setResponseSize:(long long)arg1;
+- (void)setServerStatus:(id)arg1;
 - (void)setTtfb:(int)arg1;
 - (void)setUrlRequest:(id)arg1;
 - (int)ttfb;

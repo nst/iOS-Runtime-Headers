@@ -16,6 +16,8 @@
     NSString *_longDescription;
     NSURL *_passURL;
     NSString *_primaryAccountNumber;
+    NSString *_primaryAccountNumberPrefix;
+    NSString *_region;
     NSString *_sanitizedPrimaryAccountNumber;
     int _status;
     NSString *_termsID;
@@ -35,6 +37,8 @@
 @property(copy) NSString * longDescription;
 @property(copy) NSURL * passURL;
 @property(copy) NSString * primaryAccountNumber;
+@property(copy) NSString * primaryAccountNumberPrefix;
+@property(copy) NSString * region;
 @property(copy) NSString * sanitizedPrimaryAccountNumber;
 @property int status;
 @property(readonly) NSString * statusDescription;
@@ -63,6 +67,8 @@
 - (id)longDescription;
 - (id)passURL;
 - (id)primaryAccountNumber;
+- (id)primaryAccountNumberPrefix;
+- (id)region;
 - (id)sanitizedPrimaryAccountNumber;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setCardSecurityCode:(id)arg1;
@@ -75,6 +81,8 @@
 - (void)setLongDescription:(id)arg1;
 - (void)setPassURL:(id)arg1;
 - (void)setPrimaryAccountNumber:(id)arg1;
+- (void)setPrimaryAccountNumberPrefix:(id)arg1;
+- (void)setRegion:(id)arg1;
 - (void)setSanitizedPrimaryAccountNumber:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setTermsID:(id)arg1;

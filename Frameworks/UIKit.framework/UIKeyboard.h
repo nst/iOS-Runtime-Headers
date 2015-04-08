@@ -53,7 +53,7 @@
 - (BOOL)_isAutomaticKeyboard;
 - (id)_keyplaneForKey:(id)arg1;
 - (id)_keyplaneNamed:(id)arg1;
-- (void)_moveWithEvent:(id)arg1;
+- (BOOL)_mayRemainFocused;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
@@ -70,8 +70,10 @@
 - (void)_wheelChangedWithEvent:(id)arg1;
 - (void)acceptAutocorrection;
 - (void)activate;
+- (BOOL)allowExternalChangeForFocusHeading:(unsigned int)arg1 cursorLocation:(int)arg2;
 - (void)autoAdjustOrientation;
 - (void)autoAdjustOrientationForSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)canBecomeFocused;
 - (BOOL)canDismiss;
 - (BOOL)canHandleEvent:(id)arg1;
 - (BOOL)caretBlinks;
@@ -132,6 +134,7 @@
 - (void)setShowPredictionBar:(BOOL)arg1;
 - (void)setShowsCandidatesInline:(BOOL)arg1;
 - (void)setTypingEnabled:(BOOL)arg1;
+- (BOOL)shouldChangeFocusedItem:(id)arg1 heading:(unsigned int)arg2;
 - (BOOL)shouldSaveMinimizationState;
 - (BOOL)showPredictionBar;
 - (BOOL)showsCandidatesInline;

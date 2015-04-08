@@ -29,11 +29,11 @@
 @property(readonly) int workImageVersion;
 
 - (void).cxx_destruct;
-- (void)_finishWithSuccess:(BOOL)arg1;
+- (void)_finishWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (void)_performRevertToOriginalOperation;
 - (void)_performSaveContentEditingOutput;
 - (void)_performSaveEditsOperation;
-- (void)_renderAndSaveBaseImage:(id)arg1 withOrientation:(int)arg2 baseImageURL:(id)arg3;
+- (void)_renderAndSaveBaseImage:(id)arg1 withOrientation:(int)arg2 orientationForModelData:(int)arg3 baseImageURL:(id)arg4;
 - (void)_transitionToState:(int)arg1;
 - (void)beginSaveOperationWithCompletionHandler:(id)arg1;
 - (void)cancelSaveOperation;

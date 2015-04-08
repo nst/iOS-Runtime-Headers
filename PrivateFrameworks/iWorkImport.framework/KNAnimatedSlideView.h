@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNAnimatedSlideModel, KNPlaybackSession, KNSlide, KNSlideNode, NSIndexSet, NSMutableArray, NSMutableSet, NSSet, NSString, TSDCanvas, TSUNoCopyDictionary;
+@class KNAnimatedSlideModel, KNAnimatedSlideView, KNPlaybackSession, KNSlide, KNSlideNode, NSIndexSet, NSMutableArray, NSMutableSet, NSSet, NSString, TSDCanvas, TSDTexturedRectangle, TSUNoCopyDictionary;
 
 @interface KNAnimatedSlideView : NSObject <TSDCanvasDelegate, TSDConnectedInfoReplacing> {
     NSMutableSet *mActiveAnimatedBuilds;
@@ -14,6 +14,7 @@
     TSDCanvas *mCanvas;
     NSMutableArray *mChunks;
     unsigned int mCurrentEventIndex;
+    NSMutableArray *mDelayedAnimations;
     SEL mEventAnimationActiveCallbackSelector;
     id mEventAnimationActiveCallbackTarget;
     SEL mEventEndCallbackSelector;
@@ -24,6 +25,7 @@
     SEL mEventStartCallbackSelector;
     id mEventStartCallbackTarget;
     BOOL mEventTriggered;
+    TSDTexturedRectangle *mIncomingTexture;
     BOOL mIsInDelayBeforeActiveAnimations;
     int mIsTexturePreloadingCancelled;
     SEL mMovieEndCallbackSelector;
@@ -31,6 +33,7 @@
     NSMutableSet *mMovieRenderers;
     SEL mMovieStartCallbackSelector;
     id mMovieStartCallbackTarget;
+    TSDTexturedRectangle *mOutgoingTexture;
     BOOL mPlaysAutomaticTransitions;
     BOOL mQueuedTrigger;
     KNPlaybackSession *mSession;
@@ -38,6 +41,7 @@
     BOOL mSkipDelayOnTransition;
     KNSlide *mSlide;
     BOOL mSlideIsBuildable;
+    KNSlideNode *mSlideNode;
     unsigned int mSlideNumber;
     TSUNoCopyDictionary *mTextureSetForRepMap;
     NSMutableSet *mTextureSets;
@@ -55,6 +59,7 @@
 @property(copy) NSIndexSet * eventIndexesToAnimate;
 @property(readonly) BOOL hasBuilds;
 @property(readonly) unsigned int hash;
+@property(retain) TSDTexturedRectangle * incomingTexture;
 @property(readonly) BOOL isAnimating;
 @property(readonly) BOOL isDoneAnimating;
 @property(readonly) BOOL isMovieAnimating;
@@ -62,6 +67,8 @@
 @property(readonly) BOOL isNonMovieAnimationAnimating;
 @property(readonly) KNAnimatedSlideModel * model;
 @property(readonly) NSSet * movieRenderers;
+@property(readonly) KNAnimatedSlideView * nextASV;
+@property(retain) TSDTexturedRectangle * outgoingTexture;
 @property BOOL playsAutomaticTransitions;
 @property(readonly) KNPlaybackSession * session;
 @property BOOL skipDelayOnTransition;
@@ -85,6 +92,7 @@
 - (id)eventIndexesToAnimate;
 - (BOOL)hasBuilds;
 - (BOOL)hasTransitionAtEventIndex:(int)arg1;
+- (id)incomingTexture;
 - (id)infoToConnectToForConnectionLineConnectedToInfo:(id)arg1;
 - (id)infosCurrentlyVisible;
 - (id)infosVisibleAtEvent:(unsigned int)arg1 ignoreBuildVisibility:(BOOL)arg2;
@@ -98,9 +106,12 @@
 - (BOOL)isNonMovieAnimationActive;
 - (BOOL)isNonMovieAnimationAnimating;
 - (BOOL)isPrintingCanvas;
+- (BOOL)isRenderingForKPF;
 - (id)model;
 - (void)movieHasFinishedPlayback:(id)arg1;
 - (id)movieRenderers;
+- (id)nextASV;
+- (id)outgoingTexture;
 - (void)p_addMovieRenderer:(id)arg1;
 - (void)p_animateBuild:(id)arg1;
 - (void)p_animateBuild:(id)arg1 afterDelay:(double)arg2;
@@ -110,11 +121,14 @@
 - (void)p_clearMovieRenderers;
 - (id)p_getRenderersAtEventIndex:(int)arg1;
 - (id)p_infosForSlide;
+- (void)p_initializeTextureSetForRep:(id)arg1 info:(id)arg2 eventIndex:(unsigned int)arg3 shouldPrepareBuildAnimation:(BOOL)arg4 ignoreBuildVisibility:(BOOL)arg5 isRenderingToContext:(BOOL)arg6 buildInfos:(id)arg7 postInitBlock:(id)arg8;
 - (double)p_minimumDelay;
 - (void)p_movieStarted:(id)arg1;
+- (void)p_performAnimationWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3 delay:(double)arg4;
 - (void)p_recursivelyRemoveCallbackObserversFromAnimatedBuilds:(id)arg1;
+- (void)p_removeDelayedAnimation:(id)arg1;
 - (void)p_removeMovieRenderer:(id)arg1;
-- (void)p_renderTexturesForEvent:(unsigned int)arg1 onBaseLayer:(id)arg2 intoContext:(struct CGContext { }*)arg3 shouldPrepareBuildAnimation:(BOOL)arg4 ignoreBuildVisibility:(BOOL)arg5;
+- (void)p_renderTexturesOnBaseLayer:(id)arg1 atEvent:(unsigned int)arg2 shouldPrepareBuildAnimation:(BOOL)arg3 ignoreBuildVisibility:(BOOL)arg4;
 - (void)p_resetMovieTextures;
 - (void)p_setupTransitionStartTime;
 - (BOOL)p_shouldAddInfoToTree:(id)arg1;
@@ -124,7 +138,6 @@
 - (void)pauseAnimations;
 - (BOOL)playAutomaticEvents;
 - (BOOL)playsAutomaticTransitions;
-- (void)preloadTexturesForEvent:(unsigned int)arg1 ignoreBuildVisibility:(BOOL)arg2;
 - (void)preloadTexturesForEvent:(unsigned int)arg1 ignoreBuildVisibility:(BOOL)arg2 priority:(long)arg3 completionHandler:(id)arg4;
 - (void)registerForEventAnimationActiveCallback:(SEL)arg1 target:(id)arg2;
 - (void)registerForEventEndCallback:(SEL)arg1 target:(id)arg2;
@@ -134,11 +147,8 @@
 - (void)registerForMovieStartCallback:(SEL)arg1 target:(id)arg2;
 - (void)removeActiveAnimatedBuild:(id)arg1;
 - (void)renderCurrentEvent;
-- (void)renderCurrentEventPreparingNextEvent:(BOOL)arg1;
 - (void)renderEvent:(unsigned int)arg1 intoContext:(struct CGContext { }*)arg2 ignoreBuildVisibility:(BOOL)arg3;
 - (void)renderEvent:(unsigned int)arg1 onBaseLayer:(id)arg2 shouldPrepareBuildAnimation:(BOOL)arg3;
-- (void)renderEvent:(unsigned int)arg1 onBaseLayer:(id)arg2 shouldPrepareBuildAnimation:(BOOL)arg3 isIncomingSlideInTransition:(BOOL)arg4;
-- (void)renderEvent:(unsigned int)arg1 shouldPrepareBuildAnimation:(BOOL)arg2 shouldPrepareTransition:(BOOL)arg3;
 - (id)repsCurrentlyVisible;
 - (void)reset;
 - (void)resumeAnimationsIfPaused;
@@ -146,7 +156,9 @@
 - (void)setEventHasTriggered:(BOOL)arg1;
 - (void)setEventIndex:(unsigned int)arg1;
 - (void)setEventIndexesToAnimate:(id)arg1;
+- (void)setIncomingTexture:(id)arg1;
 - (void)setNewDestinationSlideNode:(id)arg1;
+- (void)setOutgoingTexture:(id)arg1;
 - (void)setPlaysAutomaticTransitions:(BOOL)arg1;
 - (void)setSkipDelayOnTransition:(BOOL)arg1;
 - (void)setTexture:(id)arg1 forRep:(id)arg2;

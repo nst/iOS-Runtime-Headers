@@ -24,6 +24,8 @@
     NSString *_modelNumber;
     NSString *_name;
     BOOL _notPresentInIAPAccessoriesArray;
+    unsigned int _pointOfInterestDataFormatMaximumSupportedVersion;
+    BOOL _pointOfInterestHandoffEnabled;
     NSString *_preferredApp;
     NSDictionary *_protocols;
     NSString *_serialNumber;
@@ -51,6 +53,8 @@
 @property(copy) NSString * modelNumber;
 @property(copy) NSString * name;
 @property BOOL notPresentInIAPAccessoriesArray;
+@property unsigned int pointOfInterestDataFormatMaximumSupportedVersion;
+@property BOOL pointOfInterestHandoffEnabled;
 @property(copy) NSString * preferredApp;
 @property(retain) NSDictionary * protocols;
 @property(copy) NSString * serialNumber;
@@ -80,6 +84,8 @@
 - (id)modelNumber;
 - (id)name;
 - (BOOL)notPresentInIAPAccessoriesArray;
+- (unsigned int)pointOfInterestDataFormatMaximumSupportedVersion;
+- (BOOL)pointOfInterestHandoffEnabled;
 - (id)preferredApp;
 - (id)protocols;
 - (void)removeSession:(id)arg1;
@@ -104,6 +110,8 @@
 - (void)setModelNumber:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setNotPresentInIAPAccessoriesArray:(BOOL)arg1;
+- (void)setPointOfInterestDataFormatMaximumSupportedVersion:(unsigned int)arg1;
+- (void)setPointOfInterestHandoffEnabled:(BOOL)arg1;
 - (void)setPreferredApp:(id)arg1;
 - (void)setProtocols:(id)arg1;
 - (void)setSerialNumber:(id)arg1;

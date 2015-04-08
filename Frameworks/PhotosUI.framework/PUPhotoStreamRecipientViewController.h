@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class IDSBatchIDQueryController, MFComposeRecipientView, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSMutableSet, NSNumber, NSString, UIPopoverController, UIScrollView, UITableView;
+@class ABPeoplePickerNavigationController, IDSBatchIDQueryController, MFComposeRecipientView, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSMutableSet, NSNumber, NSString, UIScrollView, UITableView;
 
-@interface PUPhotoStreamRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, IDSBatchIDQueryControllerDelegate, MFComposeRecipientViewDelegate, MFContactsSearchConsumer, UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface PUPhotoStreamRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, IDSBatchIDQueryControllerDelegate, MFComposeRecipientViewDelegate, MFContactsSearchConsumer, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     float _bottomTableOffset;
     NSNumber *_currentSearchTaskID;
     id _delegate;
     IDSBatchIDQueryController *_idsBatchIDQueryController;
     float _lastHeight;
-    UIPopoverController *_peoplePickerPopoverController;
+    ABPeoplePickerNavigationController *_peoplePickerPresentedController;
     NSArray *_properties;
     UIScrollView *_recipientContainerView;
     MFComposeRecipientView *_recipientView;
@@ -39,8 +39,7 @@
 
 - (void).cxx_destruct;
 - (void*)_addressBook;
-- (void)_dismissPeoplePicker:(id)arg1;
-- (void)_forceDismissPeoplePickerPopover;
+- (void)_dismissPeoplePicker;
 - (void)_searchForRecipientWithText:(id)arg1;
 - (id)_searchManager;
 - (id)_selectedNormalizedPhoneForRecipient:(id)arg1;
@@ -74,7 +73,8 @@
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (void)prepareForPopoverPresentation:(id)arg1;
 - (id)recipients;
 - (void)setBottomTableOffset:(float)arg1;
 - (void)setDelegate:(id)arg1;
@@ -88,5 +88,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

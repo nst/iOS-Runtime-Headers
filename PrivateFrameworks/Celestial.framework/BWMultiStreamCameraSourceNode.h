@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWDeferredMetadataCache, BWFigVideoCaptureDevice, BWNodeOutput, NSArray, NSDictionary, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
+@class BWDeferredMetadataCache, BWFigVideoCaptureDevice, BWNodeOutput, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface BWMultiStreamCameraSourceNode : BWSourceNode <BWFigCameraSourceNode> {
     float _aeMaxGain;
@@ -13,6 +13,7 @@
         int width; 
         int height; 
     } _cropAspectRatio;
+    int _currentFirmwareStillImageOutputRetainedBufferCount;
     BOOL _deferMetadataCreation;
     BWDeferredMetadataCache *_deferredMetadataCache;
     BWNodeOutput *_detectedFacesOutput;
@@ -21,6 +22,8 @@
     NSMutableArray *_detectedFacesRingBuffer;
     struct OpaqueFigSimpleMutex { } *_detectedFacesRingBufferMutex;
     BOOL _discardUnstableSphereVideoFrames;
+    NSMutableDictionary *_dutyCycleMetadataCache;
+    int _firmwareStillImageOutputRetainedBufferCountOverride;
     BOOL _highResStillImageCaptureEnabled;
     float _lastRequestedZoomFactor;
     float _maxFrameRate;
@@ -87,6 +90,7 @@
 
 - (long)_bringStreamUpToDate;
 - (void)_enableOutputs;
+- (int)_firmwareStillImageOutputRetainedBufferCountForClientBracketCount:(int)arg1;
 - (void)_flushOutRemainingBuffers;
 - (id)_initWithCaptureDevice:(id)arg1;
 - (float)_ispAppliedZoomFactorFromSampleBufferMetadataDictionary:(id)arg1 outputIndex:(int)arg2;
@@ -98,6 +102,7 @@
 - (BOOL)_shouldEnableStreamPreviewOutput;
 - (void)_unregisterFromStreamNotifications;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_updateDigitalZoomForOutputIndex:(int)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
+- (void)_updateDutyCycleMetadataCacheForActiveFormatIndex:(int)arg1;
 - (long)_updateFormatIndex;
 - (float)_updateMaxIspZoomFactor;
 - (void)_updateMetadataConfigurations;
@@ -115,6 +120,7 @@
 - (id)detectedFacesOutputConfiguration;
 - (BOOL)detectedFacesOutputEnabled;
 - (BOOL)discardUnstableSphereVideoFrames;
+- (int)firmwareStillImageOutputRetainedBufferCountOverride;
 - (int)formatIndex;
 - (BOOL)hasNonLiveConfigurationChanges;
 - (BOOL)highResStillImageCaptureEnabled;
@@ -126,6 +132,7 @@
 - (id)nodeSubType;
 - (struct CGSize { float x1; float x2; })overscanPercentage;
 - (struct { int x1; int x2; })preferredPreviewDimensions;
+- (long)prepareForClientStillImageBracketWithCount:(int)arg1;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (id)previewOutput;
 - (BOOL)previewOutputEnabled;
@@ -136,6 +143,7 @@
 - (void)setDetectedFacesOutputConfiguration:(id)arg1;
 - (void)setDetectedFacesOutputEnabled:(BOOL)arg1;
 - (void)setDiscardUnstableSphereVideoFrames:(BOOL)arg1;
+- (void)setFirmwareStillImageOutputRetainedBufferCountOverride:(int)arg1;
 - (void)setFormatIndex:(int)arg1;
 - (void)setHighResStillImageCaptureEnabled:(BOOL)arg1;
 - (void)setMaxFrameRate:(float)arg1;

@@ -2,23 +2,29 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData;
+@class GEORPUserSearchInput, NSData;
 
 @interface GEORPDirectionsProblem : PBCodable <NSCopying> {
     NSData *_directionsResponseId;
+    GEORPUserSearchInput *_endWaypoint;
     struct { 
         unsigned int problematicStepIndex : 1; 
     } _has;
     NSData *_overviewScreenshotImageData;
     unsigned int _problematicStepIndex;
+    GEORPUserSearchInput *_startWaypoint;
 }
 
 @property(retain) NSData * directionsResponseId;
+@property(retain) GEORPUserSearchInput * endWaypoint;
 @property(readonly) BOOL hasDirectionsResponseId;
+@property(readonly) BOOL hasEndWaypoint;
 @property(readonly) BOOL hasOverviewScreenshotImageData;
 @property BOOL hasProblematicStepIndex;
+@property(readonly) BOOL hasStartWaypoint;
 @property(retain) NSData * overviewScreenshotImageData;
 @property unsigned int problematicStepIndex;
+@property(retain) GEORPUserSearchInput * startWaypoint;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -26,9 +32,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)directionsResponseId;
+- (id)endWaypoint;
 - (BOOL)hasDirectionsResponseId;
+- (BOOL)hasEndWaypoint;
 - (BOOL)hasOverviewScreenshotImageData;
 - (BOOL)hasProblematicStepIndex;
+- (BOOL)hasStartWaypoint;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -36,9 +45,12 @@
 - (unsigned int)problematicStepIndex;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDirectionsResponseId:(id)arg1;
+- (void)setEndWaypoint:(id)arg1;
 - (void)setHasProblematicStepIndex:(BOOL)arg1;
 - (void)setOverviewScreenshotImageData:(id)arg1;
 - (void)setProblematicStepIndex:(unsigned int)arg1;
+- (void)setStartWaypoint:(id)arg1;
+- (id)startWaypoint;
 - (void)writeTo:(id)arg1;
 
 @end

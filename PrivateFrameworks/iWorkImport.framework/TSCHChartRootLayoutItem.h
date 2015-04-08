@@ -64,6 +64,7 @@
 - (void)endResizeOperation;
 - (id)initWithChartInfo:(id)arg1;
 - (id)initWithParent:(id)arg1;
+- (void)invalidateSeriesIndexedPieWedgeExplosions;
 - (void)invalidateTransientModel;
 - (BOOL)isInResize;
 - (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })layoutSettings;
@@ -71,6 +72,7 @@
 - (id)model;
 - (void)p_layoutInward;
 - (void)p_layoutOutward;
+- (void)p_updatePieWedgeExplosionsFromModel;
 - (id)renderersWithRep:(id)arg1;
 - (id)root;
 - (id)seriesIndexedPieWedgeExplosions;
@@ -83,7 +85,6 @@
 - (struct CGSize { float x1; float x2; })startingSize;
 - (void)updateLayoutOffset;
 - (void)updateLayoutSize;
-- (void)updatePieWedgeExplosionsFromModel;
 - (void)updateSizeDuringResizeTo:(struct CGSize { float x1; float x2; })arg1;
 
 @end

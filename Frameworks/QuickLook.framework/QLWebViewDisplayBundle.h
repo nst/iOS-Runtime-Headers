@@ -20,7 +20,6 @@
     unsigned int _isXMLContent : 1;
     int _lastPage;
     unsigned int _loadStarted : 1;
-    float _navigationBarVerticalOffset;
     NSData *_pdfPreviewData;
     QLPreviewConverter *_previewConverter;
     NSURLRequest *_previewRequest;
@@ -44,7 +43,6 @@
 - (id)_scrubView:(BOOL)arg1;
 - (void)_showScrubberIfNeeded:(double)arg1;
 - (void)_tearDownWebView;
-- (void)_updateContentOffsetAnimated:(BOOL)arg1;
 - (BOOL)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
 - (int)airPlayMode;
 - (id)alertViewForUIWebPDFViewHandler:(id)arg1;
@@ -55,6 +53,8 @@
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)gestureRecognizersForFullScreenDisplay;
 - (void)loadWithHints:(id)arg1;
+- (BOOL)needsContentInset;
+- (BOOL)needsContentInsetEvenIfNavigationBarIsHidden;
 - (int)numberOfPagesInScrubView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { float x1; float x2; })arg2;
 - (int)pageCount;
@@ -64,11 +64,11 @@
 - (id)previewConverter;
 - (id)printPageHelper;
 - (void)scrollToPage:(unsigned int)arg1;
+- (id)scrollView;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrubView:(id)arg1 didSelectPageAtIndex:(unsigned int)arg2;
 - (struct CGSize { float x1; float x2; })scrubView:(id)arg1 pageSizeAtIndex:(unsigned int)arg2;
 - (id)scrubView:(id)arg1 thumbnailOperationForPageAtIndex:(unsigned int)arg2;
-- (void)setNavigationBarVerticalOffset:(float)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPreviewItem:(id)arg1;
 - (void)setPreviewMode:(int)arg1;
@@ -80,7 +80,6 @@
 - (void)userInteractedWithScrubView:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;

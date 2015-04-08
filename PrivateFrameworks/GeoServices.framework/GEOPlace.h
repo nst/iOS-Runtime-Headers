@@ -82,7 +82,6 @@
 @property(retain) GEOTimezone * timezone;
 @property int type;
 @property long long uID;
-@property(retain,readonly) NSString * yelpID;
 
 + (id)_placesFromDirectionsAction:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;
 + (id)_placesFromPresentAction:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;
@@ -168,6 +167,7 @@
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2 addressDictionary:(id)arg3;
 - (id)initWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 muid:(unsigned long long)arg6 attributionID:(id)arg7 sampleSizeForUserRatingScore:(unsigned int)arg8 normalizedUserRatingScore:(float)arg9;
+- (id)initWithName:(id)arg1 placeType:(int)arg2 areaInMeters:(double)arg3;
 - (id)initWithPlaceInfo:(id)arg1 entity:(id)arg2 address:(id)arg3 bounds:(id)arg4 roadAccessInfo:(id)arg5;
 - (id)initWithPlacemark:(id)arg1;
 - (id)initWithUrlRepresentation:(id)arg1;
@@ -219,6 +219,5 @@
 - (long long)uID;
 - (id)urlRepresentation;
 - (void)writeTo:(id)arg1;
-- (id)yelpID;
 
 @end

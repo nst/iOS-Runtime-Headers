@@ -2,15 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPUserAlias, NSMutableArray;
+@class CKDPUserAlias, NSMutableArray, NSString;
 
 @interface CKDPUserQueryRequest : PBRequest <NSCopying> {
     CKDPUserAlias *_alias;
+    NSString *_pcsServiceType;
     NSMutableArray *_sortedBys;
 }
 
 @property(retain) CKDPUserAlias * alias;
 @property(readonly) BOOL hasAlias;
+@property(readonly) BOOL hasPcsServiceType;
+@property(retain) NSString * pcsServiceType;
 @property(retain) NSMutableArray * sortedBys;
 
 + (id)options;
@@ -24,13 +27,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasAlias;
+- (BOOL)hasPcsServiceType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)pcsServiceType;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setAlias:(id)arg1;
+- (void)setPcsServiceType:(id)arg1;
 - (void)setSortedBys:(id)arg1;
 - (id)sortedByAtIndex:(unsigned int)arg1;
 - (id)sortedBys;

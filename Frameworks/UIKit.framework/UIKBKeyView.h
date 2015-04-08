@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CALayer, NSString, UIKBRenderConfig, UIKBTree, UIKeyboardMenuView;
+@class CALayer, NSString, UIKBKeyView, UIKBRenderConfig, UIKBTree, UIKeyboardMenuView;
 
 @interface UIKBKeyView : UIView <UIKBCacheableView> {
     NSString *_cachedTraitsHashString;
@@ -35,6 +35,7 @@
 @property(readonly) int cachedRenderFlags;
 @property(retain) NSString * cachedTraitsHashString;
 @property(readonly) float cachedWidth;
+@property(readonly) UIKBKeyView * contentsKeyView;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } displayInsets;
@@ -47,6 +48,7 @@
 @property BOOL renderAsMask;
 @property(retain) UIKBRenderConfig * renderConfig;
 @property(readonly) Class superclass;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } variantFrame;
 
 - (void)_applyAppearanceInvocations;
 - (id)_generateBackdropMaskImage;
@@ -59,7 +61,9 @@
 - (int)cachedRenderFlags;
 - (id)cachedTraitsHashString;
 - (float)cachedWidth;
+- (id)contentsKeyView;
 - (void)dealloc;
+- (int)didInputSubTree:(id)arg1;
 - (void)dimKeyCaps:(float)arg1 duration:(float)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })displayInsets;
 - (void)displayLayer:(id)arg1;
@@ -80,8 +84,11 @@
 - (void)setPopupMenu:(id)arg1;
 - (void)setRenderAsMask:(BOOL)arg1;
 - (void)setRenderConfig:(id)arg1;
+- (id)subTreeHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (int)textEffectsVisibilityLevel;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })variantFrame;
+- (void)willDisplayModalActionView:(id)arg1 withSubTreeKeyView:(id)arg2 completion:(id)arg3;
 
 @end

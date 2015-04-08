@@ -20,13 +20,13 @@
 
 + (id)sharedAdvertiser;
 
-- (void)activityPayloadForAdvertisementPayload:(id)arg1 requestedByDeviceIdentifier:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)activityPayloadForAdvertisementPayload:(id)arg1 requestedByDevice:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)advertiseAdvertisementPayload:(id)arg1 options:(id)arg2;
 - (id)connectionProxy;
 - (id)currentAdvertisement;
 - (void)dealloc;
 - (id)delegate;
-- (void)didSendPayloadForActivityIdentifier:(id)arg1 toDeviceIdentifier:(id)arg2 error:(id)arg3;
+- (void)didSendPayloadForActivityIdentifier:(id)arg1 toDevice:(id)arg2 error:(id)arg3;
 - (id)init;
 - (void)setConnectionProxy:(id)arg1;
 - (void)setCurrentAdvertisement:(id)arg1;

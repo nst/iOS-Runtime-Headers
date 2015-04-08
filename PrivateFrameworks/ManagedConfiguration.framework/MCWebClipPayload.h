@@ -2,24 +2,30 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSData, NSString, NSURL;
+@class NSData, NSNumber, NSString, NSURL;
 
 @interface MCWebClipPayload : MCPayload {
     NSURL *_URL;
     BOOL _fullScreen;
+    NSNumber *_fullScreenNum;
     NSData *_iconData;
     BOOL _isRemovable;
+    NSNumber *_isRemovableNum;
     NSString *_label;
     BOOL _precomposed;
+    NSNumber *_precomposedNum;
     NSString *_savedIdentifier;
 }
 
 @property(retain,readonly) NSURL * URL;
 @property(readonly) BOOL fullScreen;
+@property(readonly) NSNumber * fullScreenNum;
 @property(retain,readonly) NSData * iconData;
 @property(readonly) BOOL isRemovable;
+@property(readonly) NSNumber * isRemovableNum;
 @property(retain,readonly) NSString * label;
 @property(readonly) BOOL precomposed;
+@property(readonly) NSNumber * precomposedNum;
 @property(retain) NSString * savedIdentifier;
 
 + (id)localizedPluralForm;
@@ -30,12 +36,15 @@
 - (id)URL;
 - (id)description;
 - (BOOL)fullScreen;
+- (id)fullScreenNum;
 - (id)iconData;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (BOOL)isRemovable;
+- (id)isRemovableNum;
 - (id)label;
 - (id)payloadDescriptionKeyValueSections;
 - (BOOL)precomposed;
+- (id)precomposedNum;
 - (id)savedIdentifier;
 - (void)setSavedIdentifier:(id)arg1;
 - (id)stubDictionary;

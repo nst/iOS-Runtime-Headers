@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/BridgePreferences.framework/BridgePreferences
  */
 
-@class BBSectionInfo, NGSGlance, NGSSettingsManager, NPSDomainAccessor, NSMutableArray, NSMutableDictionary, NSString, PSSpecifier;
+@class BBSectionInfo, BPSInternalGlanceManager, NGSGlance, NPSDomainAccessor, NSMutableArray, NSMutableDictionary, NSString, PSSpecifier;
 
-@interface BPSNotificationAppController : PSListController <NGSSettingsManagerDelegate> {
+@interface BPSNotificationAppController : PSListController <BPSInternalGlanceObserverDelegate> {
     NPSDomainAccessor *_bbAppsSettings;
     BBSectionInfo *_bbSectionInfo;
     NSString *_bundleIdentifier;
     NGSGlance *_glance;
-    NGSSettingsManager *_manager;
+    BPSInternalGlanceManager *_manager;
     BOOL _mirrorSettings;
     NSMutableArray *_notificationApplicationSpecifiers;
     NSMutableArray *_notificationSpecifiers;
@@ -24,7 +24,7 @@
 @property(copy,readonly) NSString * description;
 @property(retain) NGSGlance * glance;
 @property(readonly) unsigned int hash;
-@property(retain) NGSSettingsManager * manager;
+@property(retain) BPSInternalGlanceManager * manager;
 @property(readonly) BOOL mirrorSettings;
 @property(retain) NSMutableArray * notificationApplicationSpecifiers;
 @property(readonly) NSMutableArray * notificationSpecifiers;
@@ -47,6 +47,7 @@
 - (id)bundleIdentifier;
 - (BOOL)caresAboutSubsections;
 - (id)customGroupSpecifierForDescription:(id)arg1;
+- (void)dealloc;
 - (id)glance;
 - (id)glanceSpecifierForIdentifier:(id)arg1;
 - (id)init;

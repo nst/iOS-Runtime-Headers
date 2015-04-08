@@ -7,20 +7,20 @@
 @interface CKPackageSection : NSObject {
     int _index;
     NSData *_signature;
-    long long _size;
+    unsigned long long _size;
 }
 
 @property(readonly) int index;
 @property(readonly) NSData * signature;
-@property long long size;
+@property unsigned long long size;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)description;
 - (int)index;
-- (id)initWithIndex:(int)arg1 signature:(id)arg2 size:(long long)arg3;
-- (void)setSize:(long long)arg1;
+- (id)initWithIndex:(int)arg1 signature:(id)arg2 size:(unsigned long long)arg3;
+- (void)setSize:(unsigned long long)arg1;
 - (id)signature;
-- (long long)size;
+- (unsigned long long)size;
 
 @end

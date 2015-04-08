@@ -2,17 +2,21 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPaymentSetupViewControllerDelegate>, CLInUseAssertion, NSString, PKPaymentCredential, PKPaymentSetupPrivacyFooterView, PKPaymentWebService, PKWeakReference, RemoteUIController, UITextField;
+@class <PKPaymentSetupViewControllerDelegate>, CLInUseAssertion, NSString, PKPaymentCredential, PKPaymentWebService, PKWeakReference, RemoteUIController, UITextField;
 
 @interface PKPaymentCardDetailsViewController : PKPaymentSetupTableViewController <UITextFieldDelegate> {
     CLInUseAssertion *_CLInUse;
     UITextField *_cscField;
+    UITextField *_dummyTextField;
+    BOOL _hideSetupLaterButton;
+    BOOL _isCUPDebit;
     float _maxHeaderWidth;
     BOOL _maxHeaderWidthCalculated;
     PKPaymentCredential *_paymentCredential;
-    PKPaymentSetupPrivacyFooterView *_privacyView;
     PKWeakReference *_setupDelegate;
+    BOOL _termsPresented;
     RemoteUIController *_termsUIController;
+    BOOL _verifying;
     PKPaymentWebService *_webService;
 }
 
@@ -21,9 +25,11 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property BOOL hideSetupLaterButton;
 @property(retain) PKPaymentCredential * paymentCredential;
 @property <PKPaymentSetupViewControllerDelegate> * setupDelegate;
 @property(readonly) Class superclass;
+@property(getter=isVerifying,readonly) BOOL verifying;
 @property(retain) PKPaymentWebService * webService;
 
 + (void)handleDownloadedPasses:(id)arg1 fromViewController:(id)arg2 withCompletion:(id)arg3;
@@ -32,6 +38,8 @@
 
 - (id)_contextSpecificStringForAggdKey:(id)arg1;
 - (void)_handlePassSuccessfullyAdded:(id)arg1;
+- (id)_imageForCredential:(id)arg1;
+- (void)_setNavigationBarEnabled:(BOOL)arg1;
 - (void)_showEligibilityIssueWithCredential:(id)arg1 completion:(id)arg2;
 - (void)_showProvisioningError:(id)arg1 completion:(id)arg2;
 - (BOOL)_showSetupAssistantVerificationAlertForRecord:(id)arg1 pass:(id)arg2;
@@ -43,28 +51,32 @@
 - (void)checkCard:(id)arg1 withCompletion:(id)arg2;
 - (id)cscField;
 - (void)dealloc;
-- (void)dismissPrivacyView:(id)arg1;
+- (id)defaultHeaderViewSubTitle;
+- (id)defaultHeaderViewTitle;
 - (void)displayTermsForCredential:(id)arg1 withCompletion:(id)arg2;
+- (id)dummyTextField;
 - (void)handleNext:(id)arg1;
 - (id)headerView;
+- (BOOL)hideSetupLaterButton;
 - (id)initWithWebService:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3;
 - (BOOL)isComplete;
+- (BOOL)isVerifying;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)paymentCredential;
 - (void)provisionCard:(id)arg1 withCompletion:(id)arg2;
 - (void)setCscField:(id)arg1;
+- (void)setHideSetupLaterButton:(BOOL)arg1;
 - (void)setPaymentCredential:(id)arg1;
 - (void)setSetupDelegate:(id)arg1;
 - (void)setWebService:(id)arg1;
 - (id)setupDelegate;
-- (void)showPrivacy:(id)arg1;
+- (void)setupLater:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)textFieldDidChange:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

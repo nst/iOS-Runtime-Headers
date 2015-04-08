@@ -4,7 +4,7 @@
 
 @class TSUColor;
 
-@interface TSDMutableColorFill : TSDColorFill {
+@interface TSDMutableColorFill : TSDColorFill <NSCopying> {
 }
 
 @property float brightness;
@@ -13,6 +13,7 @@
 @property float opacity;
 @property float saturation;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setBrightness:(float)arg1;
 - (void)setColor:(id)arg1;
 - (void)setHue:(float)arg1;

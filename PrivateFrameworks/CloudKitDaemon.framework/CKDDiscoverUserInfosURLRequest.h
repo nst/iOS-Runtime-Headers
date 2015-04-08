@@ -18,6 +18,7 @@
     id _progressBlock;
 
     NSArray *_userRecordIDsToDiscover;
+    BOOL _wantsProtectionInfo;
 }
 
 @property(retain) NSMutableDictionary * emailAliasToEmailAddress;
@@ -25,6 +26,7 @@
 @property(retain) NSMutableDictionary * hashedEmailByRequestID;
 @property(copy) id progressBlock;
 @property(retain) NSArray * userRecordIDsToDiscover;
+@property BOOL wantsProtectionInfo;
 
 - (void).cxx_destruct;
 - (id)emailAliasToEmailAddress;
@@ -42,6 +44,8 @@
 - (void)setHashedEmailByRequestID:(id)arg1;
 - (void)setProgressBlock:(id)arg1;
 - (void)setUserRecordIDsToDiscover:(id)arg1;
+- (void)setWantsProtectionInfo:(BOOL)arg1;
 - (id)userRecordIDsToDiscover;
+- (BOOL)wantsProtectionInfo;
 
 @end

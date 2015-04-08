@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKContainer, CKOperationInfo, CKPlaceholderOperation, NSArray, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
+@class CKContainer, CKOperationInfo, CKPlaceholderOperation, CKTimeLogger, NSArray, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface CKOperation : NSOperation {
     BOOL _allowsCellularAccess;
@@ -21,6 +21,7 @@
     NSString *_sectionID;
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
+    CKTimeLogger *_timeLogger;
     NSObject<OS_dispatch_source> *_timeoutSource;
     int _usesBackgroundSessionOverride;
 }
@@ -42,6 +43,7 @@
 @property(retain) NSString * sectionID;
 @property(retain) NSString * sourceApplicationBundleIdentifier;
 @property(retain) NSString * sourceApplicationSecondaryIdentifier;
+@property(retain) CKTimeLogger * timeLogger;
 @property(retain) NSObject<OS_dispatch_source> * timeoutSource;
 @property BOOL usesBackgroundSession;
 @property int usesBackgroundSessionOverride;
@@ -96,12 +98,14 @@
 - (void)setSectionID:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
+- (void)setTimeLogger:(id)arg1;
 - (void)setTimeoutSource:(id)arg1;
 - (void)setUsesBackgroundSession:(BOOL)arg1;
 - (void)setUsesBackgroundSessionOverride:(int)arg1;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
 - (void)start;
+- (id)timeLogger;
 - (id)timeoutSource;
 - (BOOL)usesBackgroundSession;
 - (int)usesBackgroundSessionOverride;

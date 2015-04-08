@@ -3,50 +3,45 @@
  */
 
 @interface TSTConfiguration : NSObject {
-    BOOL _allowsFullyFilteredTables;
-    BOOL _cellEditorsCanScrollToNonLocalTableSelection;
-    BOOL _disableImplicitNaming;
-    BOOL _formulaCellEditorSupportsTextTokenEditor;
-    BOOL _formulaEditorEvaluatesFormulas;
-    BOOL _pasteFilterHidingAsUserHiding;
-    BOOL _showReferenceHighlightsOnFormulaCellSelection;
-    BOOL _supportsComplexReorganizeUI;
-    BOOL _supportsInlineAttachments;
-    BOOL _supportsQuickFilterUI;
-    BOOL _supportsTableColumnAutocomplete;
-    BOOL _tokenizeFormulaStringLiterals;
     BOOL mAllowFreeformFormulaText;
     BOOL mAllowHorizontalAutoresize;
     BOOL mAllowWhitespaceInFormulas;
+    BOOL mAllowsFullyFilteredTables;
     BOOL mArrowKeyAtEdgeWhileEditingNavigates;
     BOOL mArrowKeysNavigateWhenEditingBeganByTyping;
     BOOL mArrowKeysWrap;
     BOOL mBackTabWraps;
     BOOL mBeginEditingOnSingleTap;
+    BOOL mControlCellUIAlwaysVisible;
     BOOL mCornersCanDragResize;
     BOOL mCreateLargeDefaultTables;
+    BOOL mDisableImplicitNaming;
     BOOL mDragByHandleOnly;
     BOOL mExportPermanentHidingState;
     BOOL mExportsCellAnnotations;
     BOOL mExportsCellComments;
     BOOL mFollowsLinksOnFirstTap;
-    BOOL mFormulaEqualsTokenIsSelectable;
+    BOOL mFormulaCellEditorSupportsTextTokenEditor;
+    BOOL mFormulaEditorEvaluatesFormulas;
     BOOL mHasLargerFonts;
     BOOL mHeadersFrozenByDefault;
     unsigned int mMaxNumberOfColumns;
     unsigned int mMaxNumberOfPopulatedCells;
     unsigned int mMaxNumberOfRows;
+    BOOL mPasteFilterHidingAsUserHiding;
     BOOL mPastesTile;
     BOOL mRequireMatchedFunctionTokens;
     BOOL mReturnWhileEditingNavigates;
     BOOL mSelectionUsesBezierPath;
     BOOL mSelectsCellOnInitialTap;
+    BOOL mShowReferenceHighlightsOnFormulaCellSelection;
     BOOL mShowsCellOverflowIndicator;
     BOOL mShowsHideUnhideUI;
     BOOL mSupportsAutoResizedTables;
     BOOL mSupportsAutofill;
     BOOL mSupportsBidiTablesUI;
     BOOL mSupportsCanvasReferenceEditing;
+    BOOL mSupportsComplexReorganizeUI;
     BOOL mSupportsContainedTextEditing;
     BOOL mSupportsControlCells;
     BOOL mSupportsCreateChartFromSelection;
@@ -55,18 +50,22 @@
     BOOL mSupportsFrozenHeaders;
     BOOL mSupportsHiddenCells;
     BOOL mSupportsImplicitEditing;
+    BOOL mSupportsInlineAttachments;
     BOOL mSupportsMergedCells;
+    BOOL mSupportsQuickFilterUI;
     BOOL mSupportsRepeatHeaderRowsOnEachPage;
-    BOOL mSupportsResumingTextEditing;
     BOOL mSupportsRowColumnAdderKnob;
+    BOOL mSupportsTableColumnAutocomplete;
     BOOL mSupportsTableTranspose;
     BOOL mTabAtEdgeAddsColumn;
     BOOL mTabAtEdgeAddsRow;
     BOOL mTabWhileEditingNavigates;
     BOOL mTableNameEnabledInNewTables;
+    BOOL mTokenizeFormulaStringLiterals;
     BOOL mUsesLimitedAutomaticFormatParsing;
     BOOL mUsesLimitedNumberFormatInspector;
     BOOL mUsesWholeChromeResizer;
+    BOOL mcellEditorsCanScrollToNonLocalTableSelection;
 }
 
 @property BOOL allowFreeformFormulaText;
@@ -79,6 +78,7 @@
 @property BOOL backTabWraps;
 @property BOOL beginEditingOnSingleTap;
 @property BOOL cellEditorsCanScrollToNonLocalTableSelection;
+@property BOOL controlCellUIAlwaysVisible;
 @property BOOL cornersCanDragResize;
 @property BOOL createLargeDefaultTables;
 @property BOOL disableImplicitNaming;
@@ -89,7 +89,6 @@
 @property BOOL followsLinksOnFirstTap;
 @property BOOL formulaCellEditorSupportsTextTokenEditor;
 @property BOOL formulaEditorEvaluatesFormulas;
-@property BOOL formulaEqualsTokenIsSelectable;
 @property BOOL hasLargerFonts;
 @property BOOL headersFrozenByDefault;
 @property unsigned int maxNumberOfColumns;
@@ -121,7 +120,6 @@
 @property BOOL supportsMergedCells;
 @property BOOL supportsQuickFilterUI;
 @property BOOL supportsRepeatHeaderRowsOnEachPage;
-@property BOOL supportsResumingTextEditing;
 @property BOOL supportsRowColumnAdderKnob;
 @property BOOL supportsTableColumnAutocomplete;
 @property BOOL supportsTableTranspose;
@@ -147,6 +145,7 @@
 - (BOOL)backTabWraps;
 - (BOOL)beginEditingOnSingleTap;
 - (BOOL)cellEditorsCanScrollToNonLocalTableSelection;
+- (BOOL)controlCellUIAlwaysVisible;
 - (BOOL)cornersCanDragResize;
 - (BOOL)createLargeDefaultTables;
 - (BOOL)disableImplicitNaming;
@@ -157,7 +156,6 @@
 - (BOOL)followsLinksOnFirstTap;
 - (BOOL)formulaCellEditorSupportsTextTokenEditor;
 - (BOOL)formulaEditorEvaluatesFormulas;
-- (BOOL)formulaEqualsTokenIsSelectable;
 - (BOOL)hasLargerFonts;
 - (BOOL)headersFrozenByDefault;
 - (id)init;
@@ -180,6 +178,7 @@
 - (void)setBackTabWraps:(BOOL)arg1;
 - (void)setBeginEditingOnSingleTap:(BOOL)arg1;
 - (void)setCellEditorsCanScrollToNonLocalTableSelection:(BOOL)arg1;
+- (void)setControlCellUIAlwaysVisible:(BOOL)arg1;
 - (void)setCornersCanDragResize:(BOOL)arg1;
 - (void)setCreateLargeDefaultTables:(BOOL)arg1;
 - (void)setDisableImplicitNaming:(BOOL)arg1;
@@ -190,7 +189,6 @@
 - (void)setFollowsLinksOnFirstTap:(BOOL)arg1;
 - (void)setFormulaCellEditorSupportsTextTokenEditor:(BOOL)arg1;
 - (void)setFormulaEditorEvaluatesFormulas:(BOOL)arg1;
-- (void)setFormulaEqualsTokenIsSelectable:(BOOL)arg1;
 - (void)setHasLargerFonts:(BOOL)arg1;
 - (void)setHeadersFrozenByDefault:(BOOL)arg1;
 - (void)setMaxNumberOfColumns:(unsigned int)arg1;
@@ -222,7 +220,6 @@
 - (void)setSupportsMergedCells:(BOOL)arg1;
 - (void)setSupportsQuickFilterUI:(BOOL)arg1;
 - (void)setSupportsRepeatHeaderRowsOnEachPage:(BOOL)arg1;
-- (void)setSupportsResumingTextEditing:(BOOL)arg1;
 - (void)setSupportsRowColumnAdderKnob:(BOOL)arg1;
 - (void)setSupportsTableColumnAutocomplete:(BOOL)arg1;
 - (void)setSupportsTableTranspose:(BOOL)arg1;
@@ -254,7 +251,6 @@
 - (BOOL)supportsMergedCells;
 - (BOOL)supportsQuickFilterUI;
 - (BOOL)supportsRepeatHeaderRowsOnEachPage;
-- (BOOL)supportsResumingTextEditing;
 - (BOOL)supportsRowColumnAdderKnob;
 - (BOOL)supportsTableColumnAutocomplete;
 - (BOOL)supportsTableTranspose;

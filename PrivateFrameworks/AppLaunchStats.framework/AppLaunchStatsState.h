@@ -2,9 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-@class AppLaunchStatsSaveAndRestore, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface AppLaunchStatsState : NSObject <DuetLoggerProtocol, DuetSaveAndRestore> {
+@class AppLaunchStatsSaveAndRestore, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+
+@interface AppLaunchStatsState : NSObject <DuetLoggerProtocol, DuetSaveAndRestore, PCInterfaceMonitorDelegate> {
     long long BGDataBudgetCap;
     long long BGDataCarryCap;
     long long _BGMinSlotData;
@@ -24,6 +28,11 @@
     unsigned long long appForecastQuality;
     NSMutableDictionary *appsAliveInLSTDict;
     NSMutableArray *cacheAppsforFullDebug;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id clientCallBack;
+
     NSMutableArray *dailyAppForecastSlots;
     NSMutableArray *dailyDataBGBudgetSlots;
     NSMutableArray *dailyDataBudgetSlots;
@@ -84,6 +93,8 @@
 @property(retain) NSMutableArray * dataForecastArray;
 @property unsigned long long dataForecastQuality;
 @property(readonly) float dataWifiMultiplier;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property bool doUniformBudget;
 @property BOOL enableBlackListCheck;
 @property(readonly) BOOL enableBudgetCheck;
@@ -104,6 +115,7 @@
 @property(readonly) bool hasCellConnected;
 @property bool hasTransitionedToCoreDuet;
 @property(readonly) bool hasWifiConnected;
+@property(readonly) unsigned int hash;
 @property bool isBatteryChargerConnected;
 @property bool isDataResourceAvailable;
 @property bool isDeviceInCall;
@@ -115,6 +127,7 @@
 @property(retain) NSMutableArray * powerFetchForecastArray;
 @property(retain) NSMutableArray * powerPushForecastArray;
 @property(retain) NSMutableArray * recentLaunchArrays;
+@property(readonly) Class superclass;
 @property(retain) NSMutableArray * weeklyLaunchArrays;
 
 - (void).cxx_destruct;
@@ -172,6 +185,8 @@
 - (bool)hasTransitionedToCoreDuet;
 - (bool)hasWifiConnected;
 - (id)init;
+- (void)interfaceLinkQualityChanged:(id)arg1 previousLinkQuality:(int)arg2;
+- (void)interfaceReachabilityChanged:(id)arg1;
 - (bool)isBatteryChargerConnected;
 - (bool)isChargeOnWifiOrCellOn;
 - (bool)isDataResourceAvailable;
@@ -196,6 +211,7 @@
 - (void)setAppForecastArray:(id)arg1;
 - (void)setAppForecastQuality:(unsigned long long)arg1;
 - (void)setAppsAliveInLSTDict:(id)arg1;
+- (void)setClientblock:(id)arg1;
 - (void)setDailyAppForecastSlots:(id)arg1;
 - (void)setDailyDataBGBudgetSlots:(id)arg1;
 - (void)setDailyDataBudgetSlots:(id)arg1;

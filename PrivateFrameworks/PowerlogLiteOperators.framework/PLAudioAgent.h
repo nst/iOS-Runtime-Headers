@@ -45,9 +45,11 @@
 - (id)audioHardware;
 - (double)audioPowerForRoute:(id)arg1 forVolume:(double)arg2;
 - (id)audioPowerModel;
+- (double)convertSpeakerProtectionModeledPowerToTotalSpeakerPower:(double)arg1;
 - (void)createAirPlayAccountingEvents:(id)arg1;
 - (void)createAudioAccountingEvents:(id)arg1;
 - (void)createBluetoothAccountingEvents:(id)arg1;
+- (void)createCarPlayAccountingEvents:(id)arg1;
 - (id)entryRoutingOld;
 - (id)entrySpeakerPowerOld;
 - (BOOL)headphonesConnected;

@@ -2,40 +2,52 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, TIKeyboardOutput;
+@class NSArray, NSString;
 
 @interface _UIInputViewControllerOutput : NSObject <NSCopying, NSSecureCoding> {
-    TIKeyboardOutput *_keyboardOutput;
-    int _positionOffset;
+    NSArray *_keyboardOutputs;
     NSString *_primaryLanguage;
+    BOOL _requiresInputManagerSync;
     BOOL _shouldAdvanceInputMode;
+    BOOL _shouldAdvanceResponder;
     BOOL _shouldDismiss;
+    BOOL _shouldPostReturnKeyNotification;
 }
 
-@property(retain) TIKeyboardOutput * keyboardOutput;
-@property int positionOffset;
+@property(retain) NSArray * keyboardOutputs;
 @property(copy) NSString * primaryLanguage;
+@property BOOL requiresInputManagerSync;
 @property BOOL shouldAdvanceInputMode;
+@property BOOL shouldAdvanceResponder;
 @property BOOL shouldDismiss;
+@property BOOL shouldPostReturnKeyNotification;
 
 + (BOOL)supportsSecureCoding;
 
+- (id)_currentKeyboardOutput;
+- (void)_pushNewKeyboardOutput;
+- (void)adjustTextPositionByCharacterOffset:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)createKeyboardOutputIfNecessary;
 - (void)dealloc;
+- (void)deleteBackward;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)insertText:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id)keyboardOutput;
-- (int)positionOffset;
+- (id)keyboardOutputs;
 - (id)primaryLanguage;
-- (void)setKeyboardOutput:(id)arg1;
-- (void)setPositionOffset:(int)arg1;
+- (BOOL)requiresInputManagerSync;
+- (void)setKeyboardOutputs:(id)arg1;
 - (void)setPrimaryLanguage:(id)arg1;
+- (void)setRequiresInputManagerSync:(BOOL)arg1;
 - (void)setShouldAdvanceInputMode:(BOOL)arg1;
+- (void)setShouldAdvanceResponder:(BOOL)arg1;
 - (void)setShouldDismiss:(BOOL)arg1;
+- (void)setShouldPostReturnKeyNotification:(BOOL)arg1;
 - (BOOL)shouldAdvanceInputMode;
+- (BOOL)shouldAdvanceResponder;
 - (BOOL)shouldDismiss;
+- (BOOL)shouldPostReturnKeyNotification;
 
 @end

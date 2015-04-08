@@ -20,7 +20,7 @@
 @property(copy) id imageHandler;
 @property(retain) GEOPhotoInfo * info;
 
-+ (id)requestWithBusinessMetadata:(id)arg1 info:(id)arg2;
++ (id)requestWithMapItem:(id)arg1 info:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)handleData:(id)arg1;

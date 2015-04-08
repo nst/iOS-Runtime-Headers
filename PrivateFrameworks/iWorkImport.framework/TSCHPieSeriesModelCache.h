@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSCHChartInfo, TSCHChartModel, TSCHChartSeries, TSDFill, TSDShadow, TSDStroke, TSWPParagraphStyle;
+@class NSString, TSCHChartAxis, TSCHChartInfo, TSCHChartModel, TSCHChartSeries, TSDFill, TSDShadow, TSDStroke, TSWPParagraphStyle;
 
 @interface TSCHPieSeriesModelCache : NSObject {
+    TSCHChartAxis *mAxis;
     TSCHChartInfo *mChartInfo;
     TSCHChartModel *mChartModel;
     TSCHChartSeries *mCurrentSeries;
@@ -33,6 +34,7 @@
     float mWedgeExplosion;
 }
 
+@property(readonly) TSCHChartAxis * axis;
 @property(readonly) float effectiveLabelExplosion;
 @property(readonly) float effectiveWedgeExplosion;
 @property(readonly) double endAngle;
@@ -55,6 +57,7 @@
 @property(readonly) double totalValue;
 @property(readonly) float wedgeExplosion;
 
+- (id)axis;
 - (void)dealloc;
 - (float)effectiveLabelExplosion;
 - (float)effectiveWedgeExplosion;

@@ -24,7 +24,7 @@
 @property(readonly) NSDictionary * locationToSafeSaveFile;
 @property(readonly) NSDictionary * locationToStatus;
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
-@property(readonly) NSURL * presentedItemURL;
+@property(copy,readonly) NSURL * presentedItemURL;
 @property(copy,readonly) NSURL * primaryPresentedItemURL;
 @property(readonly) Class superclass;
 @property(readonly) PFUbiquityLocation * ubiquityRootLocation;

@@ -32,7 +32,7 @@
             unsigned int wordLearningEnabled : 1; 
             unsigned int autocorrectionEnabled : 1; 
             unsigned int shortcutConversionEnabled : 1; 
-            unsigned int typologyLoggingEnabled : 1; 
+            unsigned int candidateSelectionPredictionEnabled : 1; 
             unsigned int autocapitalizationEnabled : 1; 
         } fields; 
     } _mask;
@@ -48,6 +48,7 @@
 @property BOOL autocorrectionEnabled;
 @property BOOL autocorrectionListUIAutoDisplayMode;
 @property BOOL autocorrectionListUIDisplayed;
+@property BOOL candidateSelectionPredictionEnabled;
 @property(copy) NSString * clientIdentifier;
 @property(retain) TIKeyboardCandidate * currentCandidate;
 @property(retain) TIDocumentState * documentState;
@@ -80,6 +81,7 @@
 - (BOOL)autocorrectionEnabled;
 - (BOOL)autocorrectionListUIAutoDisplayMode;
 - (BOOL)autocorrectionListUIDisplayed;
+- (BOOL)candidateSelectionPredictionEnabled;
 - (id)clientIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentCandidate;
@@ -105,6 +107,7 @@
 - (void)setAutocorrectionEnabled:(BOOL)arg1;
 - (void)setAutocorrectionListUIAutoDisplayMode:(BOOL)arg1;
 - (void)setAutocorrectionListUIDisplayed:(BOOL)arg1;
+- (void)setCandidateSelectionPredictionEnabled:(BOOL)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setCurrentCandidate:(id)arg1;
 - (void)setDocumentState:(id)arg1;

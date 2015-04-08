@@ -8,11 +8,13 @@
     int _gender;
     BOOL _isCustom;
     NSString *_languageCode;
+    BOOL _wasInitalizedFromDictionaryRepresentation;
 }
 
 @property int gender;
 @property BOOL isCustom;
 @property(readonly) NSString * languageCode;
+@property(readonly) BOOL wasInitalizedFromDictionaryRepresentation;
 
 + (BOOL)supportsSecureCoding;
 
@@ -25,11 +27,13 @@
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)initWithLanguageCode:(id)arg1;
 - (id)initWithLanguageCode:(id)arg1 gender:(int)arg2 isCustom:(BOOL)arg3;
 - (BOOL)isCustom;
 - (BOOL)isEqual:(id)arg1;
 - (id)languageCode;
 - (void)setGender:(int)arg1;
 - (void)setIsCustom:(BOOL)arg1;
+- (BOOL)wasInitalizedFromDictionaryRepresentation;
 
 @end

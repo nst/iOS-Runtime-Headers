@@ -5,7 +5,7 @@
 @class NSOrderedSet, NSString;
 
 @interface PLManagedFolder : PLGenericAlbum <PLAlbumContainer> {
-    BOOL _adjustingChildOrderKeys;
+    BOOL _needsFixedOrderKeysComplianceUpdate;
     BOOL _needsPersistenceUpdate;
 }
 
@@ -20,16 +20,16 @@
 @property(readonly) int filter;
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL isFolder;
+@property BOOL needsFixedOrderKeysComplianceUpdate;
 @property BOOL needsPersistenceUpdate;
 @property(readonly) Class superclass;
 @property(readonly) unsigned int unreadAlbumsCount;
 
++ (id)childKeyForOrdering;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertInManagedObjectContext:(id)arg1;
 
-- (BOOL)_childOrderKeysAreValid;
-- (void)_handleChildOrderKeys;
 - (id)_prettyDescription;
 - (id)_typeDescription;
 - (void)addChildCollections:(id)arg1;
@@ -46,12 +46,13 @@
 - (BOOL)canEditContainers;
 - (BOOL)canPerformEditOperation:(unsigned int)arg1;
 - (id)childKeyForOrdering;
-- (id)childToOrderKeyMap;
 - (id)containers;
 - (unsigned int)containersCount;
 - (id)containersRelationshipName;
 - (unsigned int)count;
+- (id)descriptionOfChildCollectionOrderValues;
 - (void)didSave;
+- (void)enforceFixedOrderKeyCompliance;
 - (int)filter;
 - (BOOL)hasAtLeastOneAlbum;
 - (id)identifier;
@@ -59,10 +60,14 @@
 - (void)insertObject:(id)arg1 inChildCollectionsAtIndex:(unsigned int)arg2;
 - (BOOL)isEmpty;
 - (BOOL)isValidKindForPersistence;
+- (void)migration_handleChildOrderKeys;
+- (id)migration_newOrderKeyChild:(id)arg1;
+- (id)migration_sortedOrderKeysForChildrenUsingMap:(id)arg1;
+- (void)moveChildCollectionsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
 - (id)mutableAssets;
+- (BOOL)needsFixedOrderKeysComplianceUpdate;
 - (BOOL)needsPersistenceUpdate;
 - (BOOL)needsReordering;
-- (id)newOrderKeyChild:(id)arg1;
 - (void)persistMetadataToFileSystem;
 - (unsigned int)photosCount;
 - (void)preheatAlbumsAtIndexes:(id)arg1 forProperties:(id)arg2 relationships:(id)arg3;
@@ -76,9 +81,9 @@
 - (void)removePersistedFileSystemData;
 - (void)replaceChildCollectionsAtIndexes:(id)arg1 withChildCollections:(id)arg2;
 - (void)replaceObjectInChildCollectionsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)setNeedsFixedOrderKeysComplianceUpdate:(BOOL)arg1;
 - (void)setNeedsPersistenceUpdate:(BOOL)arg1;
 - (void)setNeedsReordering;
-- (id)sortedOrderKeysForChildrenUsingMap:(id)arg1;
 - (unsigned int)unreadAlbumsCount;
 - (void)updateAlbumsOrderIfNeeded;
 - (unsigned int)videosCount;

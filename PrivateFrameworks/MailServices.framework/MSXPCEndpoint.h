@@ -5,8 +5,6 @@
 @interface MSXPCEndpoint : MSMailDefaultService {
 }
 
-+ (id)newConnectionForProtocol:(id)arg1;
-
 - (void)connectionForProtocol:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 

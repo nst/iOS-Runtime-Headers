@@ -8,7 +8,7 @@
 @property(readonly) struct CGSize { float x1; float x2; } thumbnailCellSize;
 @property(readonly) float thumbnailEdgeMaxLength;
 
-- (id)newThumbnailsCollectionLayout;
+- (void)configureThumbnailsCollectionLayout:(id)arg1;
 - (struct CGSize { float x1; float x2; })thumbnailCellSize;
 - (float)thumbnailEdgeMaxLength;
 

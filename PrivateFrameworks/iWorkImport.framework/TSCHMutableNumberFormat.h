@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface TSCHMutableNumberFormat : TSCHNumberFormat <TSCHCustomFormatPasteSupport> {
+@interface TSCHMutableNumberFormat : TSCHNumberFormat <TSCHCustomFormatUpdateSupport> {
 }
 
 @property unsigned int base;
@@ -37,5 +37,6 @@
 - (void)setUseAccountingStyle:(BOOL)arg1;
 - (void)setValueType:(int)arg1;
 - (void)updateAfterPasteForDocumentRoot:(id)arg1 pasteboardCustomFormatList:(id)arg2;
+- (void)upgradePreU2_0CustomFormatsForDocumentRoot:(id)arg1;
 
 @end

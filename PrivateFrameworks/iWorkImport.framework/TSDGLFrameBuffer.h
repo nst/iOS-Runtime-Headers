@@ -26,6 +26,8 @@
     NSArray *_textureLookupInfosByAttachment;
 }
 
+@property(readonly) unsigned int currentGLTexture;
+@property(readonly) NSString * currentGLTextureName;
 @property(readonly) BOOL isBound;
 @property(copy) NSString * name;
 @property BOOL shouldDeleteTexturesOnTeardown;
@@ -43,6 +45,7 @@
 - (void)bindFramebufferWithBindingOption:(int)arg1;
 - (unsigned int)currentGLTexture;
 - (unsigned int)currentGLTextureAtAttachment:(unsigned int)arg1;
+- (id)currentGLTextureName;
 - (int)currentTextureIndexAtAttachment:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;
@@ -51,6 +54,7 @@
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 textureCount:(unsigned int)arg2;
 - (BOOL)isBound;
 - (id)name;
+- (id)p_currentTextureLookupInfoAtAttachment:(unsigned int)arg1;
 - (BOOL)p_isCurrentDrawBuffersEqualToDrawbuffers:(unsigned int*)arg1 count:(int)arg2;
 - (void)p_setDrawBuffersAndReadBuffer;
 - (void)p_setFramebufferTextureAtAttachmentIndex:(int)arg1 bindingOption:(int)arg2;

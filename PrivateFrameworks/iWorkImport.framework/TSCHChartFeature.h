@@ -22,7 +22,9 @@
 - (int)deprecated3DBevelEdgesSpecificProperty;
 - (int)deprecated3DShadowSpecificProperty;
 - (BOOL)drawValueLabelsForZero;
+- (id)filteredStyleOwnersFromStyleOwners:(id)arg1;
 - (id)genericToSpecificPropertyMap;
+- (unsigned int)gridOffsetToSeriesForScatterFormat:(int)arg1;
 - (id)init;
 - (id)initWithChartType:(id)arg1;
 - (id)initialSceneWithChartInfo:(id)arg1 layoutSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })arg2;
@@ -34,6 +36,7 @@
 - (void)p_initializeAxisIDs;
 - (Class)p_selectAxisClassForScale:(int)arg1 linearClass:(Class)arg2 logClass:(Class)arg3 percentClass:(Class)arg4;
 - (Class)presetImagerClass;
+- (int)representativeGridValueAxisType;
 - (BOOL)requiresYAxisOrdinal;
 - (BOOL)reverseSingleColumnLegendOrder;
 - (float)sageMaxDepthRatio;
@@ -62,6 +65,7 @@
 - (BOOL)supportsMoreThanOneLiveCategory;
 - (BOOL)supportsMultipleSeriesTypes;
 - (BOOL)supportsPercentNumberFormatting;
+- (BOOL)supportsReferenceLines;
 - (BOOL)supportsReverseChunking;
 - (BOOL)supportsSeriesLabels;
 - (BOOL)supportsSharedAndSeparateX;

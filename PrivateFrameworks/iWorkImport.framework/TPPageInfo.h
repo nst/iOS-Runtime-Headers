@@ -36,6 +36,7 @@
 - (void)dealloc;
 - (id)documentRoot;
 - (id)geometry;
+- (id)infoForSelectionPath:(id)arg1;
 - (id)initWithPageIndex:(unsigned int)arg1 documentRoot:(id)arg2 layoutInfoProvider:(id)arg3;
 - (BOOL)isAnchoredToText;
 - (BOOL)isAttachedToBodyText;
@@ -52,5 +53,6 @@
 - (void)setGeometry:(id)arg1;
 - (void)setOwningAttachment:(id)arg1;
 - (void)setParentInfo:(id)arg1;
+- (void)setPrimitiveGeometry:(id)arg1;
 
 @end

@@ -71,6 +71,7 @@
 - (id)init;
 - (BOOL)isBluetoothAvailable;
 - (BOOL)isConnected;
+- (BOOL)isPartiallyConnected;
 - (BOOL)isScanning;
 - (id)loadedDevices;
 - (void)loadedDevicesDidChange;

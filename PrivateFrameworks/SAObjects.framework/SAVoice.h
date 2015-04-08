@@ -9,6 +9,7 @@
 
 @property(copy) NSString * gender;
 @property(copy) NSString * languageString;
+@property(copy) NSString * masteredVersion;
 @property(copy) NSString * name;
 @property(copy) NSString * quality;
 
@@ -19,10 +20,12 @@
 - (id)gender;
 - (id)groupIdentifier;
 - (id)languageString;
+- (id)masteredVersion;
 - (id)name;
 - (id)quality;
 - (void)setGender:(id)arg1;
 - (void)setLanguageString:(id)arg1;
+- (void)setMasteredVersion:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setQuality:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;

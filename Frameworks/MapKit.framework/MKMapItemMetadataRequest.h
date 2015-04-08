@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKMapItemMetadata, NSURL, NSURLRequest;
+@class MKMapItem, NSURL, NSURLRequest;
 
 @interface MKMapItemMetadataRequest : NSObject {
-    MKMapItemMetadata *_businessMetadata;
+    MKMapItem *_mapItem;
 }
 
-@property(retain) MKMapItemMetadata * businessMetadata;
+@property(retain) MKMapItem * mapItem;
 @property(readonly) NSURL * url;
 @property(readonly) NSURLRequest * urlRequest;
 
 - (void).cxx_destruct;
-- (id)businessMetadata;
 - (void)handleData:(id)arg1;
 - (void)handleError:(id)arg1;
-- (void)setBusinessMetadata:(id)arg1;
+- (id)mapItem;
+- (void)setMapItem:(id)arg1;
 - (id)url;
 - (id)urlRequest;
 

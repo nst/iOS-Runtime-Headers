@@ -34,7 +34,9 @@
 - (id)initWithInfo:(id)arg1 initialCharIndex:(unsigned int)arg2 maxSize:(struct CGSize { float x1; float x2; })arg3;
 - (unsigned int)initialCharIndex;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
+- (BOOL)isDraggable;
 - (BOOL)isLastLayoutInTOC;
+- (BOOL)isSelectable;
 - (id)layoutMargins;
 - (void)layoutSearchForString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id)arg3;
 - (float)maxAutoGrowHeightForTextLayout:(id)arg1;

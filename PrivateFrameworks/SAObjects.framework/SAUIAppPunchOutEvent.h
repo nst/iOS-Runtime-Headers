@@ -19,6 +19,7 @@
 @property(copy) NSString * refId;
 @property(readonly) Class superclass;
 
++ (id)afui_appPunchOutEventWithRefId:(id)arg1 URL:(id)arg2 appDisplayName:(id)arg3 bundleId:(id)arg4;
 + (id)appPunchOutEvent;
 + (id)appPunchOutEventWithDictionary:(id)arg1 context:(id)arg2;
 

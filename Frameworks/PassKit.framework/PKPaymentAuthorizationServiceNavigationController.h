@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <UIViewControllerTransitioningDelegate>, PKPaymentAuthorizationServiceViewController;
+@class <UIViewControllerTransitioningDelegate>, PKPaymentAuthorizationLayout, PKPaymentAuthorizationServiceViewController;
 
 @interface PKPaymentAuthorizationServiceNavigationController : UINavigationController {
     PKPaymentAuthorizationServiceViewController *_authorizationViewController;
+    PKPaymentAuthorizationLayout *_layout;
     <UIViewControllerTransitioningDelegate> *_paymentTransitioningDelegate;
 }
 
@@ -20,6 +21,7 @@
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setAuthorizationViewController:(id)arg1;
 - (void)setPaymentTransitioningDelegate:(id)arg1;
-- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidLoad;
 
 @end

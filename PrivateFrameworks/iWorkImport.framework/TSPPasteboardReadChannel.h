@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSPPasteboard;
+@class NSObject<OS_dispatch_queue>, NSString, TSPPasteboard;
 
 @interface TSPPasteboardReadChannel : NSObject <TSUStreamReadChannel> {
     TSPPasteboard *_pasteboard;
     NSString *_pasteboardType;
+    NSObject<OS_dispatch_queue> *_readQueue;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -16,8 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)close;
-- (id)init;
 - (id)initWithPasteboard:(id)arg1 pasteboardType:(id)arg2;
-- (void)readWithQueue:(id)arg1 handler:(id)arg2;
+- (void)readWithHandler:(id)arg1;
 
 @end

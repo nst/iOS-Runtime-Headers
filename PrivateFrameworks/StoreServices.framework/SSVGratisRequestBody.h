@@ -7,6 +7,7 @@
 @interface SSVGratisRequestBody : NSObject <NSCopying> {
     NSNumber *_accountID;
     NSMutableDictionary *_additionalParameters;
+    NSArray *_applications;
     BOOL _backgroundRequest;
     NSArray *_bundleIdentifiers;
     NSArray *_itemIdentifiers;
@@ -15,6 +16,7 @@
 
 @property(readonly) NSData * JSONBodyData;
 @property(copy) NSNumber * accountIdentifier;
+@property(copy) NSArray * applications;
 @property(getter=isBackgroundRequest) BOOL backgroundRequest;
 @property(readonly) NSMutableDictionary * bodyDictionary;
 @property(copy) NSArray * bundleIdentifiers;
@@ -25,6 +27,7 @@
 - (void).cxx_destruct;
 - (id)JSONBodyData;
 - (id)accountIdentifier;
+- (id)applications;
 - (id)bodyDictionary;
 - (id)bundleIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -35,6 +38,7 @@
 - (id)propertyListBodyData;
 - (int)requestStyle;
 - (void)setAccountIdentifier:(id)arg1;
+- (void)setApplications:(id)arg1;
 - (void)setBackgroundRequest:(BOOL)arg1;
 - (void)setBundleIdentifiers:(id)arg1;
 - (void)setItemIdentifiers:(id)arg1;

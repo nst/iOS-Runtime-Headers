@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class NSArray, NSString, RURadioDataSource;
+@class MCDNoContentView, NSArray, NSString, RURadioDataSource, UIView;
 
 @interface MCDRadioViewController : MCD_OLD_TableViewController <RURadioDataSourceDelegate> {
+    UIView *_MCD_tableView;
     RURadioDataSource *_dataSource;
     NSString *_featuredStationNamesBrief;
     NSArray *_featuredStations;
     NSArray *_myStations;
+    MCDNoContentView *_placeholderView;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -18,8 +20,11 @@
 
 - (void).cxx_destruct;
 - (void)_categorizeStations;
+- (BOOL)_isNetworkTypeAllowed:(int)arg1;
+- (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_radioDataSourceDidInvalidate:(id)arg1;
 - (id)_stationFromIndexPath:(id)arg1;
+- (void)_updateViewForNetworkType:(int)arg1;
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1 serviceProvider:(id)arg2;
 - (void)radioDataSourceDidInvalidate:(id)arg1;
@@ -27,5 +32,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)viewControllerForRowAtIndexPath:(id)arg1;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

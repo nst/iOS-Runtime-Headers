@@ -44,12 +44,14 @@
 - (unsigned int)numberOfAddedEvents;
 - (int)outEventForInfo:(id)arg1;
 - (id)p_animatedBuildForInfo:(id)arg1 event:(int)arg2 buildIn:(BOOL)arg3;
+- (id)p_applyThemeCurvesToBuildAttributes:(id)arg1;
 - (id)p_convertToBuildEvents:(id)arg1;
 - (id)p_createBuildAnimationRecords:(id)arg1 info:(id)arg2 event:(int)arg3 start:(double)arg4 eventStart:(double)arg5 animateAtEndOfPreviousBuild:(BOOL)arg6 previousAnimatedBuild:(id)arg7 movieDrawables:(id)arg8;
 - (id)p_createInfoListFromRendererList:(id)arg1;
 - (id)p_createMovieBuild:(id)arg1 stageIndex:(int)arg2 buildChunk:(id)arg3 startTime:(double)arg4 eventStartTime:(double)arg5 event:(int)arg6 animateAtEndOfPreviousBuild:(BOOL)arg7;
 - (BOOL)p_determineVisiblityOfInfo:(id)arg1 inOverloadedEvent:(int)arg2 duringEvent:(int)arg3;
 - (int)p_eventNumberForInfo:(id)arg1 animationType:(int)arg2 defaultResult:(int)arg3;
+- (id)p_getCurrentDocumentRoot;
 - (void)p_insertInitialMovies;
 - (void)p_setRenderer:(id)arg1 forAnimatedBuild:(id)arg2;
 - (void)p_updatePreviousAndFinalAttributes;

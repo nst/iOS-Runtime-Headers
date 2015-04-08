@@ -10,6 +10,7 @@
         float x; 
         float y; 
     } _initialDragPoint;
+    int _initialKeyState;
     struct CGPoint { 
         float x; 
         float y; 
@@ -24,6 +25,7 @@
 
 @property BOOL dragged;
 @property struct CGPoint { float x1; float x2; } initialDragPoint;
+@property int initialKeyState;
 @property struct CGPoint { float x1; float x2; } initialPoint;
 @property(retain) UIKBTree * key;
 @property(retain) UIKBTree * keyplane;
@@ -35,12 +37,14 @@
 - (void)dealloc;
 - (BOOL)dragged;
 - (struct CGPoint { float x1; float x2; })initialDragPoint;
+- (int)initialKeyState;
 - (struct CGPoint { float x1; float x2; })initialPoint;
 - (id)key;
 - (id)keyplane;
 - (BOOL)maySuppressUpAction;
 - (void)setDragged:(BOOL)arg1;
 - (void)setInitialDragPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInitialKeyState:(int)arg1;
 - (void)setInitialPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setKey:(id)arg1;
 - (void)setKeyplane:(id)arg1;

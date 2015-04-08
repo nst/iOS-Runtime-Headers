@@ -9,7 +9,7 @@
 
 @class NSObject<TSDContainerInfo>, NSString, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSWPStorage;
 
-@interface KNNoteInfo : TSPObject <TSDContainerInfo, TSKDocumentObject, TSWPStorageParent> {
+@interface KNNoteInfo : TSPObject <TSDContainerInfo, TSKDocumentObject, TSKTransformableObject, TSWPStorageParent> {
     TSWPStorage *mContainedStorage;
     struct CGRect { 
         struct CGPoint { 
@@ -44,6 +44,8 @@
 @property(readonly) Class superclass;
 @property(readonly) int verticalAlignment;
 
++ (BOOL)needsObjectUUID;
+
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (BOOL)autoListRecognition;
 - (BOOL)autoListTermination;
@@ -56,6 +58,7 @@
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForPrinting;
 - (id)geometry;
+- (id)infoForSelectionPath:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 containedStorage:(id)arg2;
@@ -65,26 +68,28 @@
 - (BOOL)isInlineWithText;
 - (BOOL)isThemeContent;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct NoteArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct NoteArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; }*)arg1 unarchiver:(id)arg2;
+- (id)objectUUIDPath;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
 - (id)parentInfo;
 - (Class)repClass;
-- (void)saveToArchive:(struct NoteArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct NoteArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setContainedStorage:(id)arg1;
 - (void)setFrameForPrinting:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setOwningAttachment:(id)arg1;
 - (void)setParentInfo:(id)arg1;
+- (void)setPrimitiveGeometry:(id)arg1;
 - (void)setShrinkTextForPrinting:(BOOL)arg1;
 - (BOOL)shouldHideEmptyBullets;
 - (BOOL)shrinkTextForPrinting;
 - (BOOL)textIsVertical;
 - (int)verticalAlignment;
-- (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
-- (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

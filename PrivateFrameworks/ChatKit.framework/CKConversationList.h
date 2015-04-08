@@ -40,7 +40,7 @@
 - (id)conversations;
 - (void)dealloc;
 - (void)deleteConversation:(id)arg1;
-- (void)deleteConversationsAtIndexes:(id)arg1;
+- (void)deleteConversations:(id)arg1;
 - (id)description;
 - (id)firstUnreadFilteredConversationIgnoringMessages:(id)arg1;
 - (BOOL)hasActiveConversations;

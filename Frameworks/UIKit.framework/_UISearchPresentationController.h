@@ -42,8 +42,8 @@
 
 - (void)_exciseSearchBarFromCurrentContext;
 - (void)_placeSearchBarBackIntoOriginalContext;
-- (id)_presentationControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
-- (id)_presentedViewControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
+- (id)_presentationControllerForTraitCollection:(id)arg1;
+- (id)_presentedViewControllerForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (BOOL)_shouldKeepCurrentFirstResponder;
 - (BOOL)_shouldRespectDefinesPresentationContext;
 - (void)_transitionFromDidEnd;

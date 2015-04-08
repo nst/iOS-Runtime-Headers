@@ -8,7 +8,7 @@
 
 @class <MKLocationProvider>, <MKLocationRecorder>, CLHeading, CLLocation, GEOLocation, GEOLocationShifter, NSBundle, NSError, NSHashTable, NSMutableArray, NSString, NSTimer, _MKWiFiObserver;
 
-@interface MKLocationManager : NSObject <MKLocationProviderDelegate, _MKWiFiObserverDelegate> {
+@interface MKLocationManager : NSObject <GEOResourceManifestTileGroupObserver, MKLocationProviderDelegate, _MKWiFiObserverDelegate> {
     BOOL _airplaneModeEnabled;
     BOOL _airplaneModeEnabledIsValid;
     struct __SCPreferences { } *_airplaneModePrefs;
@@ -204,6 +204,7 @@
 - (void)requestWhenInUseAuthorizationWithPrompt;
 - (void)reset;
 - (void)resetAfterResumeIfNecessary;
+- (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
 - (void)setActivityType:(int)arg1;
 - (void)setAllowUpdateCoalescing:(BOOL)arg1;
 - (void)setAuthorizationRequestBlock:(id)arg1;

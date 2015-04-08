@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact, CNContactIdentifier, NSArray, NSData, NSDateComponents, NSString;
+@class CNContact, CNContactIdentifier, CRRecentContact, NSArray, NSData, NSDateComponents, NSString;
 
 @interface CNContact : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     void *_addressBook;
@@ -60,6 +60,7 @@
 @property(copy,readonly) NSString * previousFamilyName;
 @property(copy,readonly) NSString * primarySourceName;
 @property(getter=isReadonly,readonly) BOOL readonly;
+@property(retain) CRRecentContact * recentContact;
 @property(readonly) void* record;
 @property(readonly) int recordID;
 @property(readonly) unsigned int recordType;
@@ -163,6 +164,7 @@
 - (id)preferredContactForPhoto;
 - (id)previousFamilyName;
 - (id)primarySourceName;
+- (id)recentContact;
 - (void*)record;
 - (int)recordID;
 - (unsigned int)recordType;
@@ -176,6 +178,7 @@
 - (void)setPhoto:(id)arg1;
 - (void)setPreferredForName:(BOOL)arg1;
 - (void)setPreferredForPhoto:(BOOL)arg1;
+- (void)setRecentContact:(id)arg1;
 - (void)setSource:(void*)arg1;
 - (id)socialProfiles;
 - (void*)source;

@@ -17,6 +17,7 @@
     id _fetchingVersionsDoneBlock;
 
     BOOL _finished;
+    BOOL _includeCachedVersions;
     <BRNonLocalVersionSending> *_sender;
     BOOL _state;
     NSMutableArray *_versions;
@@ -31,11 +32,13 @@
 @property(copy) id fetchingVersionsDoneBlock;
 @property(getter=isFinished) BOOL finished;
 @property(readonly) unsigned int hash;
+@property BOOL includeCachedVersions;
 @property(readonly) Class superclass;
 @property(readonly) NSMutableArray * versions;
 
 - (BOOL)__advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
 - (BOOL)__finishIfCancelled;
+- (void)_addVersion:(id)arg1 forEtag:(id)arg2;
 - (BOOL)_advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
 - (void)_senderInvalidate;
 - (BOOL)_setVersionStoreForDocumentAtURL:(id)arg1 error:(id*)arg2;
@@ -44,16 +47,19 @@
 - (id)description;
 - (id)error;
 - (id)fetchingVersionsDoneBlock;
+- (BOOL)includeCachedVersions;
 - (id)initWithDocumentURL:(id)arg1;
 - (BOOL)isConcurrent;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
+- (oneway void)newCachedVersionAtURL:(id)arg1 size:(id)arg2 etag:(id)arg3 hasThumbnail:(BOOL)arg4 displayName:(id)arg5 lastEditorDeviceName:(id)arg6 lastEditorFormattedName:(id)arg7 modificationDate:(id)arg8;
+- (oneway void)newFaultVersionAtURL:(id)arg1 faultURL:(id)arg2 faultExtension:(id)arg3 etag:(id)arg4 hasThumbnail:(BOOL)arg5 displayName:(id)arg6 lastEditorDeviceName:(id)arg7 lastEditorFormattedName:(id)arg8 modificationDate:(id)arg9;
 - (oneway void)newThumbnailForVersionWithEtag:(id)arg1;
-- (oneway void)newVersionAtURL:(id)arg1 faultURL:(id)arg2 faultExtension:(id)arg3 etag:(id)arg4 hasThumbnail:(BOOL)arg5 lastEditorDeviceName:(id)arg6;
 - (void)setError:(id)arg1;
 - (void)setExecuting:(BOOL)arg1;
 - (void)setFetchingVersionsDoneBlock:(id)arg1;
 - (void)setFinished:(BOOL)arg1;
+- (void)setIncludeCachedVersions:(BOOL)arg1;
 - (void)start;
 - (id)versions;
 - (oneway void)versionsDone;

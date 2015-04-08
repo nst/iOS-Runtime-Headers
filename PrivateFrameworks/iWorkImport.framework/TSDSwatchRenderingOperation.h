@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<TSSPreset>, NSString, TSKDocumentRoot, UIView;
+@class NSObject, NSObject<TSSPreset>, NSString, TSKDocumentRoot, UIView;
 
 @interface TSDSwatchRenderingOperation : NSOperation {
     struct CGImage { } *mDeliveredImage;
@@ -16,6 +16,7 @@
     unsigned int mInsertPopoverPageNumber;
     unsigned int mInsertPopoverPageType;
     NSObject<TSSPreset> *mPreset;
+    NSObject *mRenderingTicket;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -37,6 +38,7 @@
 @property unsigned int insertPopoverPageNumber;
 @property unsigned int insertPopoverPageType;
 @property(readonly) NSObject<TSSPreset> * preset;
+@property(retain) NSObject * renderingTicket;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } swatchFrame;
 @property(retain) UIView * view;
 
@@ -57,9 +59,11 @@
 - (void)p_deliverResultOnMainThread:(id)arg1;
 - (struct CGImage { }*)p_newSwatchPressedStateBackgroundFromCGImage:(struct CGImage { }*)arg1;
 - (id)preset;
+- (id)renderingTicket;
 - (void)setIdentifier:(id)arg1;
 - (void)setInsertPopoverPageNumber:(unsigned int)arg1;
 - (void)setInsertPopoverPageType:(unsigned int)arg1;
+- (void)setRenderingTicket:(id)arg1;
 - (void)setView:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })swatchEdgeInsets;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })swatchFrame;

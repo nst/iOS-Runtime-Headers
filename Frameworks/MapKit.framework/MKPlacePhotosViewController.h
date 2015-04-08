@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceCardPhotosControllerDelegate>, MKMapItem, NSString, _MKPlacePhotosCollectionView;
+@class <MKPlaceCardPhotosControllerDelegate>, MKMapItem, NSString, _MKPlacePhotosCollectionView, _MKPlaceViewController;
 
 @interface MKPlacePhotosViewController : UITableViewController <MKPlaceAttributionCellProvider, MKStackingViewControllerPreferredSizeUse, UICollectionViewDataSource, UICollectionViewDelegate> {
     BOOL _hasAttribution;
     MKMapItem *_mapItem;
+    _MKPlaceViewController *_owner;
     _MKPlacePhotosCollectionView *_photoGrid;
     float _photoWidth;
     <MKPlaceCardPhotosControllerDelegate> *_photosControllerDelegate;
@@ -21,6 +22,7 @@
 @property BOOL hasAttribution;
 @property(readonly) unsigned int hash;
 @property(retain) MKMapItem * mapItem;
+@property _MKPlaceViewController * owner;
 @property(retain) _MKPlacePhotosCollectionView * photoGrid;
 @property float photoWidth;
 @property <MKPlaceCardPhotosControllerDelegate> * photosControllerDelegate;
@@ -49,6 +51,7 @@
 - (id)mapItem;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (id)owner;
 - (id)photoGrid;
 - (float)photoWidth;
 - (id)photos;
@@ -57,6 +60,7 @@
 - (BOOL)requiresPreferredContentSizeInStackingView;
 - (void)setHasAttribution:(BOOL)arg1;
 - (void)setMapItem:(id)arg1;
+- (void)setOwner:(id)arg1;
 - (void)setPhotoGrid:(id)arg1;
 - (void)setPhotoWidth:(float)arg1;
 - (void)setPhotosControllerDelegate:(id)arg1;
@@ -70,8 +74,10 @@
 - (BOOL)showMorePhotosButton;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;

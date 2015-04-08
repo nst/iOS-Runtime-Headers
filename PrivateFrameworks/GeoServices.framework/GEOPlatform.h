@@ -13,7 +13,6 @@
 - (id)clientCapabilities;
 - (id)hardwareIdentifier;
 - (BOOL)isInternalInstall;
-- (BOOL)isMainScreenHiDPI;
 - (BOOL)mapsFeatureFreedomEnabled;
 - (id)osVersion;
 - (BOOL)supportsNavigation;

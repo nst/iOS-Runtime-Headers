@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPAssetUploadTokenRetrieveResponse, CKDPDeleteCommentResponse, CKDPDeleteContainerResponse, CKDPGetCommentResponse, CKDPGetCommentsResponse, CKDPGetLikesResponse, CKDPInvitationAcceptResponse, CKDPInvitationDeclineResponse, CKDPInvitationQueryResponse, CKDPLikeResponse, CKDPMescalCertificateResponse, CKDPMescalSessionInfoResponse, CKDPMescalSignatureResponse, CKDPNotificationMarkReadResponse, CKDPNotificationSyncResponse, CKDPOperation, CKDPPkiRegisterResponse, CKDPPkiRetrieveResponse, CKDPPostCommentResponse, CKDPPromoteContainerSchemaResponse, CKDPPulseResponse, CKDPQueryRetrieveResponse, CKDPRecordDeleteResponse, CKDPRecordRetrieveChangesResponse, CKDPRecordRetrieveResponse, CKDPRecordRetrieveVersionsResponse, CKDPRecordSaveResponse, CKDPResetContainerResponse, CKDPResponseOperationResult, CKDPSetBadgeCountResponse, CKDPShareCreateResponse, CKDPShareDeleteResponse, CKDPShareParticipantCreateResponse, CKDPShareParticipantDeleteResponse, CKDPShareParticipantUpdateResponse, CKDPShareRetrieveResponse, CKDPSubscriptionCreateResponse, CKDPSubscriptionDeleteResponse, CKDPSubscriptionRetrieveResponse, CKDPTokenRegistrationResponse, CKDPTokenUnregistrationResponse, CKDPUnlikeResponse, CKDPUserAvailableQuotaResponse, CKDPUserPrivacySettingsBatchLookupResponse, CKDPUserPrivacySettingsResetResponse, CKDPUserPrivacySettingsRetrieveResponse, CKDPUserPrivacySettingsUpdateResponse, CKDPUserQueryResponse, CKDPUserRetrieveResponse, CKDPZoneDeleteResponse, CKDPZoneRetrieveResponse, CKDPZoneSaveResponse;
+@class CKDPAssetUploadTokenRetrieveResponse, CKDPDeleteCommentResponse, CKDPDeleteContainerResponse, CKDPGetCommentResponse, CKDPGetCommentsResponse, CKDPGetLikesResponse, CKDPLikeResponse, CKDPMescalCertificateResponse, CKDPMescalSessionInfoResponse, CKDPMescalSignatureResponse, CKDPNotificationMarkReadResponse, CKDPNotificationSyncResponse, CKDPOperation, CKDPPkiRegisterResponse, CKDPPkiRetrieveResponse, CKDPPostCommentResponse, CKDPPromoteContainerSchemaResponse, CKDPPulseResponse, CKDPQueryRetrieveResponse, CKDPRecordDeleteResponse, CKDPRecordRetrieveChangesResponse, CKDPRecordRetrieveResponse, CKDPRecordRetrieveVersionsResponse, CKDPRecordSaveResponse, CKDPResetContainerResponse, CKDPResponseOperationResult, CKDPSetBadgeCountResponse, CKDPShareAcceptResponse, CKDPShareDeleteResponse, CKDPShareRetrieveResponse, CKDPShareSaveResponse, CKDPShareTokenDeleteResponse, CKDPShareTokenRetrieveResponse, CKDPShareTokenSaveResponse, CKDPSubscriptionCreateResponse, CKDPSubscriptionDeleteResponse, CKDPSubscriptionRetrieveResponse, CKDPTokenRegistrationResponse, CKDPTokenUnregistrationResponse, CKDPUnlikeResponse, CKDPUserAvailableQuotaResponse, CKDPUserPrivacySettingsBatchLookupResponse, CKDPUserPrivacySettingsResetResponse, CKDPUserPrivacySettingsRetrieveResponse, CKDPUserPrivacySettingsUpdateResponse, CKDPUserQueryResponse, CKDPUserRetrieveResponse, CKDPWebAuthTokenRetrieveResponse, CKDPZoneDeleteResponse, CKDPZoneRetrieveChangesResponse, CKDPZoneRetrieveResponse, CKDPZoneSaveResponse;
 
 @interface CKDPResponseOperation : PBCodable <NSCopying> {
     CKDPAssetUploadTokenRetrieveResponse *_assetUploadTokenRetrieveResponse;
@@ -14,9 +14,6 @@
     struct { 
         unsigned int operationCost : 1; 
     } _has;
-    CKDPInvitationAcceptResponse *_invitationAcceptResponse;
-    CKDPInvitationDeclineResponse *_invitationDeclineResponse;
-    CKDPInvitationQueryResponse *_invitationQueryResponse;
     CKDPLikeResponse *_likeResponse;
     CKDPMescalCertificateResponse *_mescalCertificateResponse;
     CKDPMescalSessionInfoResponse *_mescalSessionInfoResponse;
@@ -39,13 +36,13 @@
     CKDPOperation *_response;
     CKDPResponseOperationResult *_result;
     CKDPSetBadgeCountResponse *_setBadgeCountResponse;
-    CKDPShareCreateResponse *_shareCreateResponse;
+    CKDPShareAcceptResponse *_shareAcceptResponse;
     CKDPShareDeleteResponse *_shareDeleteResponse;
-    CKDPShareParticipantCreateResponse *_shareParticipantCreateResponse;
-    CKDPShareParticipantDeleteResponse *_shareParticipantDeleteResponse;
-    CKDPShareParticipantUpdateResponse *_shareParticipantUpdateResponse;
     CKDPShareRetrieveResponse *_shareRetrieveResponse;
-    CKDPShareCreateResponse *_shareSetKeyResponse;
+    CKDPShareSaveResponse *_shareSaveResponse;
+    CKDPShareTokenDeleteResponse *_shareTokenDeleteResponse;
+    CKDPShareTokenRetrieveResponse *_shareTokenRetrieveResponse;
+    CKDPShareTokenSaveResponse *_shareTokenSaveResponse;
     CKDPSubscriptionCreateResponse *_subscriptionCreateResponse;
     CKDPSubscriptionDeleteResponse *_subscriptionDeleteResponse;
     CKDPSubscriptionRetrieveResponse *_subscriptionRetrieveResponse;
@@ -59,7 +56,9 @@
     CKDPUserPrivacySettingsUpdateResponse *_userPrivacySettingsUpdateResponse;
     CKDPUserQueryResponse *_userQueryResponse;
     CKDPUserRetrieveResponse *_userRetrieveResponse;
+    CKDPWebAuthTokenRetrieveResponse *_webAuthTokenRetrieveResponse;
     CKDPZoneDeleteResponse *_zoneDeleteResponse;
+    CKDPZoneRetrieveChangesResponse *_zoneRetrieveChangesResponse;
     CKDPZoneRetrieveResponse *_zoneRetrieveResponse;
     CKDPZoneSaveResponse *_zoneSaveResponse;
 }
@@ -76,9 +75,6 @@
 @property(readonly) BOOL hasGetCommentResponse;
 @property(readonly) BOOL hasGetCommentsResponse;
 @property(readonly) BOOL hasGetLikesResponse;
-@property(readonly) BOOL hasInvitationAcceptResponse;
-@property(readonly) BOOL hasInvitationDeclineResponse;
-@property(readonly) BOOL hasInvitationQueryResponse;
 @property(readonly) BOOL hasLikeResponse;
 @property(readonly) BOOL hasMescalCertificateResponse;
 @property(readonly) BOOL hasMescalSessionInfoResponse;
@@ -101,13 +97,13 @@
 @property(readonly) BOOL hasResponse;
 @property(readonly) BOOL hasResult;
 @property(readonly) BOOL hasSetBadgeCountResponse;
-@property(readonly) BOOL hasShareCreateResponse;
+@property(readonly) BOOL hasShareAcceptResponse;
 @property(readonly) BOOL hasShareDeleteResponse;
-@property(readonly) BOOL hasShareParticipantCreateResponse;
-@property(readonly) BOOL hasShareParticipantDeleteResponse;
-@property(readonly) BOOL hasShareParticipantUpdateResponse;
 @property(readonly) BOOL hasShareRetrieveResponse;
-@property(readonly) BOOL hasShareSetKeyResponse;
+@property(readonly) BOOL hasShareSaveResponse;
+@property(readonly) BOOL hasShareTokenDeleteResponse;
+@property(readonly) BOOL hasShareTokenRetrieveResponse;
+@property(readonly) BOOL hasShareTokenSaveResponse;
 @property(readonly) BOOL hasSubscriptionCreateResponse;
 @property(readonly) BOOL hasSubscriptionDeleteResponse;
 @property(readonly) BOOL hasSubscriptionRetrieveResponse;
@@ -121,12 +117,11 @@
 @property(readonly) BOOL hasUserPrivacySettingsUpdateResponse;
 @property(readonly) BOOL hasUserQueryResponse;
 @property(readonly) BOOL hasUserRetrieveResponse;
+@property(readonly) BOOL hasWebAuthTokenRetrieveResponse;
 @property(readonly) BOOL hasZoneDeleteResponse;
+@property(readonly) BOOL hasZoneRetrieveChangesResponse;
 @property(readonly) BOOL hasZoneRetrieveResponse;
 @property(readonly) BOOL hasZoneSaveResponse;
-@property(retain) CKDPInvitationAcceptResponse * invitationAcceptResponse;
-@property(retain) CKDPInvitationDeclineResponse * invitationDeclineResponse;
-@property(retain) CKDPInvitationQueryResponse * invitationQueryResponse;
 @property(retain) CKDPLikeResponse * likeResponse;
 @property(retain) CKDPMescalCertificateResponse * mescalCertificateResponse;
 @property(retain) CKDPMescalSessionInfoResponse * mescalSessionInfoResponse;
@@ -149,13 +144,13 @@
 @property(retain) CKDPOperation * response;
 @property(retain) CKDPResponseOperationResult * result;
 @property(retain) CKDPSetBadgeCountResponse * setBadgeCountResponse;
-@property(retain) CKDPShareCreateResponse * shareCreateResponse;
+@property(retain) CKDPShareAcceptResponse * shareAcceptResponse;
 @property(retain) CKDPShareDeleteResponse * shareDeleteResponse;
-@property(retain) CKDPShareParticipantCreateResponse * shareParticipantCreateResponse;
-@property(retain) CKDPShareParticipantDeleteResponse * shareParticipantDeleteResponse;
-@property(retain) CKDPShareParticipantUpdateResponse * shareParticipantUpdateResponse;
 @property(retain) CKDPShareRetrieveResponse * shareRetrieveResponse;
-@property(retain) CKDPShareCreateResponse * shareSetKeyResponse;
+@property(retain) CKDPShareSaveResponse * shareSaveResponse;
+@property(retain) CKDPShareTokenDeleteResponse * shareTokenDeleteResponse;
+@property(retain) CKDPShareTokenRetrieveResponse * shareTokenRetrieveResponse;
+@property(retain) CKDPShareTokenSaveResponse * shareTokenSaveResponse;
 @property(retain) CKDPSubscriptionCreateResponse * subscriptionCreateResponse;
 @property(retain) CKDPSubscriptionDeleteResponse * subscriptionDeleteResponse;
 @property(retain) CKDPSubscriptionRetrieveResponse * subscriptionRetrieveResponse;
@@ -169,7 +164,9 @@
 @property(retain) CKDPUserPrivacySettingsUpdateResponse * userPrivacySettingsUpdateResponse;
 @property(retain) CKDPUserQueryResponse * userQueryResponse;
 @property(retain) CKDPUserRetrieveResponse * userRetrieveResponse;
+@property(retain) CKDPWebAuthTokenRetrieveResponse * webAuthTokenRetrieveResponse;
 @property(retain) CKDPZoneDeleteResponse * zoneDeleteResponse;
+@property(retain) CKDPZoneRetrieveChangesResponse * zoneRetrieveChangesResponse;
 @property(retain) CKDPZoneRetrieveResponse * zoneRetrieveResponse;
 @property(retain) CKDPZoneSaveResponse * zoneSaveResponse;
 
@@ -190,9 +187,6 @@
 - (BOOL)hasGetCommentResponse;
 - (BOOL)hasGetCommentsResponse;
 - (BOOL)hasGetLikesResponse;
-- (BOOL)hasInvitationAcceptResponse;
-- (BOOL)hasInvitationDeclineResponse;
-- (BOOL)hasInvitationQueryResponse;
 - (BOOL)hasLikeResponse;
 - (BOOL)hasMescalCertificateResponse;
 - (BOOL)hasMescalSessionInfoResponse;
@@ -215,13 +209,13 @@
 - (BOOL)hasResponse;
 - (BOOL)hasResult;
 - (BOOL)hasSetBadgeCountResponse;
-- (BOOL)hasShareCreateResponse;
+- (BOOL)hasShareAcceptResponse;
 - (BOOL)hasShareDeleteResponse;
-- (BOOL)hasShareParticipantCreateResponse;
-- (BOOL)hasShareParticipantDeleteResponse;
-- (BOOL)hasShareParticipantUpdateResponse;
 - (BOOL)hasShareRetrieveResponse;
-- (BOOL)hasShareSetKeyResponse;
+- (BOOL)hasShareSaveResponse;
+- (BOOL)hasShareTokenDeleteResponse;
+- (BOOL)hasShareTokenRetrieveResponse;
+- (BOOL)hasShareTokenSaveResponse;
 - (BOOL)hasSubscriptionCreateResponse;
 - (BOOL)hasSubscriptionDeleteResponse;
 - (BOOL)hasSubscriptionRetrieveResponse;
@@ -235,13 +229,12 @@
 - (BOOL)hasUserPrivacySettingsUpdateResponse;
 - (BOOL)hasUserQueryResponse;
 - (BOOL)hasUserRetrieveResponse;
+- (BOOL)hasWebAuthTokenRetrieveResponse;
 - (BOOL)hasZoneDeleteResponse;
+- (BOOL)hasZoneRetrieveChangesResponse;
 - (BOOL)hasZoneRetrieveResponse;
 - (BOOL)hasZoneSaveResponse;
 - (unsigned int)hash;
-- (id)invitationAcceptResponse;
-- (id)invitationDeclineResponse;
-- (id)invitationQueryResponse;
 - (BOOL)isEqual:(id)arg1;
 - (id)likeResponse;
 - (void)mergeFrom:(id)arg1;
@@ -274,9 +267,6 @@
 - (void)setGetCommentsResponse:(id)arg1;
 - (void)setGetLikesResponse:(id)arg1;
 - (void)setHasOperationCost:(BOOL)arg1;
-- (void)setInvitationAcceptResponse:(id)arg1;
-- (void)setInvitationDeclineResponse:(id)arg1;
-- (void)setInvitationQueryResponse:(id)arg1;
 - (void)setLikeResponse:(id)arg1;
 - (void)setMescalCertificateResponse:(id)arg1;
 - (void)setMescalSessionInfoResponse:(id)arg1;
@@ -299,13 +289,13 @@
 - (void)setResponse:(id)arg1;
 - (void)setResult:(id)arg1;
 - (void)setSetBadgeCountResponse:(id)arg1;
-- (void)setShareCreateResponse:(id)arg1;
+- (void)setShareAcceptResponse:(id)arg1;
 - (void)setShareDeleteResponse:(id)arg1;
-- (void)setShareParticipantCreateResponse:(id)arg1;
-- (void)setShareParticipantDeleteResponse:(id)arg1;
-- (void)setShareParticipantUpdateResponse:(id)arg1;
 - (void)setShareRetrieveResponse:(id)arg1;
-- (void)setShareSetKeyResponse:(id)arg1;
+- (void)setShareSaveResponse:(id)arg1;
+- (void)setShareTokenDeleteResponse:(id)arg1;
+- (void)setShareTokenRetrieveResponse:(id)arg1;
+- (void)setShareTokenSaveResponse:(id)arg1;
 - (void)setSubscriptionCreateResponse:(id)arg1;
 - (void)setSubscriptionDeleteResponse:(id)arg1;
 - (void)setSubscriptionRetrieveResponse:(id)arg1;
@@ -319,16 +309,18 @@
 - (void)setUserPrivacySettingsUpdateResponse:(id)arg1;
 - (void)setUserQueryResponse:(id)arg1;
 - (void)setUserRetrieveResponse:(id)arg1;
+- (void)setWebAuthTokenRetrieveResponse:(id)arg1;
 - (void)setZoneDeleteResponse:(id)arg1;
+- (void)setZoneRetrieveChangesResponse:(id)arg1;
 - (void)setZoneRetrieveResponse:(id)arg1;
 - (void)setZoneSaveResponse:(id)arg1;
-- (id)shareCreateResponse;
+- (id)shareAcceptResponse;
 - (id)shareDeleteResponse;
-- (id)shareParticipantCreateResponse;
-- (id)shareParticipantDeleteResponse;
-- (id)shareParticipantUpdateResponse;
 - (id)shareRetrieveResponse;
-- (id)shareSetKeyResponse;
+- (id)shareSaveResponse;
+- (id)shareTokenDeleteResponse;
+- (id)shareTokenRetrieveResponse;
+- (id)shareTokenSaveResponse;
 - (id)subscriptionCreateResponse;
 - (id)subscriptionDeleteResponse;
 - (id)subscriptionRetrieveResponse;
@@ -342,8 +334,10 @@
 - (id)userPrivacySettingsUpdateResponse;
 - (id)userQueryResponse;
 - (id)userRetrieveResponse;
+- (id)webAuthTokenRetrieveResponse;
 - (void)writeTo:(id)arg1;
 - (id)zoneDeleteResponse;
+- (id)zoneRetrieveChangesResponse;
 - (id)zoneRetrieveResponse;
 - (id)zoneSaveResponse;
 

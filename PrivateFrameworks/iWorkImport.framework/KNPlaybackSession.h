@@ -6,16 +6,16 @@
    See Warning(s) below.
  */
 
-@class <TSDCanvasDelegate>, KNAnimatedSlideView, KNAnimationContext, KNShow, KNSlideNode, NSMutableArray, NSObject, NSString, TSULRUCache;
+@class <TSDCanvasDelegate>, KNAnimatedSlideView, KNAnimationContext, KNShow, KNSlideNode, NSMutableArray, NSObject, NSString, TSDBitmapRenderingQualityInfo, TSULRUCache;
 
 @interface KNPlaybackSession : NSObject <TSDAnimationSession> {
     BOOL _isExitingShow;
     TSULRUCache *mASVCache;
     KNSlideNode *mAlternateNextSlideNode;
     KNAnimationContext *mAnimationContext;
+    TSDBitmapRenderingQualityInfo *mBitmapRenderingQualityInfo;
     NSMutableArray *mBreadCrumbTrail;
     <TSDCanvasDelegate> *mCanvasDelegate;
-    NSObject *mCurrentRenderingTicket;
     KNSlideNode *mCurrentSlideNode;
     BOOL mDisableAutoAnimationRemoval;
 
@@ -24,7 +24,9 @@
     id mEndShowHandler;
 
     BOOL mHasEndShowHandlerBeenCancelled;
+    NSObject *mIncomingRenderingTicket;
     KNSlideNode *mLastVisitedSlideNode;
+    NSObject *mOutgoingRenderingTicket;
     int mPlayMode;
     BOOL mShouldAlwaysSetCurrentGLContextWhenDrawing;
     BOOL mShouldAnimateNullTransitions;
@@ -43,6 +45,7 @@
 
 @property KNSlideNode * alternateNextSlideNode;
 @property(readonly) KNAnimationContext * animationContext;
+@property(retain) TSDBitmapRenderingQualityInfo * bitmapRenderingQualityInfo;
 @property(retain) NSMutableArray * breadCrumbTrail;
 @property <TSDCanvasDelegate> * canvasDelegate;
 @property(readonly) KNAnimatedSlideView * currentCachedAnimatedSlideView;
@@ -53,6 +56,7 @@
 @property(readonly) unsigned int hash;
 @property BOOL isExitingShow;
 @property(readonly) BOOL isPreview;
+@property(readonly) KNAnimatedSlideView * nextAnimatedSlideViewAfterCurrent;
 @property int playMode;
 @property BOOL shouldAlwaysSetCurrentGLContextWhenDrawing;
 @property BOOL shouldAnimateNullTransitions;
@@ -74,6 +78,7 @@
 - (id)animatedSlideViewFor:(id)arg1 setupTransition:(BOOL)arg2;
 - (id)animationContext;
 - (BOOL)atBegginingOfDeck;
+- (id)bitmapRenderingQualityInfo;
 - (id)breadCrumb;
 - (id)breadCrumbTrail;
 - (void)cancelEndShowHandler;
@@ -103,6 +108,7 @@
 - (id)newFinalTextureForOutgoingSlide;
 - (id)newInitialTextureForIncomingSlide;
 - (id)newTransitionTo:(id)arg1;
+- (id)nextAnimatedSlideViewAfterCurrent;
 - (id)nextSlideAfterCurrent;
 - (id)nextSlideNodeAfterCurrent;
 - (id)nextSlideNodeAfterSlideNode:(id)arg1;
@@ -110,11 +116,12 @@
 - (void)p_setCurrentSlideNode:(id)arg1;
 - (int)playMode;
 - (id)previousSlideNodeBeforeCurrent;
-- (void)renderConcurrentlyOutgoingSlideTexture:(id)arg1 andIncomingSlideTexture:(id)arg2;
+- (id)renderConcurrentlyOutgoingSlideTexture:(id)arg1 andIncomingSlideTexture:(id)arg2;
 - (void)renderTextureContentsIfNeeded:(id)arg1;
 - (void)renderTextureSetContentsIfNeeded:(id)arg1;
 - (id)repForInfo:(id)arg1 onCanvas:(id)arg2;
 - (void)setAlternateNextSlideNode:(id)arg1;
+- (void)setBitmapRenderingQualityInfo:(id)arg1;
 - (void)setBreadCrumbTrail:(id)arg1;
 - (void)setCanvasDelegate:(id)arg1;
 - (void)setDisableAutoAnimationRemoval:(BOOL)arg1;
@@ -151,5 +158,6 @@
 - (unsigned int)slideNumberForSlideNode:(id)arg1;
 - (id)textureSetForRep:(id)arg1 context:(id)arg2 shouldRender:(BOOL)arg3;
 - (id)textureSetForRep:(id)arg1 shouldRender:(BOOL)arg2;
+- (void)waitUntilSlideTextureRenderingIsCompleteForIdentifier:(id)arg1;
 
 @end

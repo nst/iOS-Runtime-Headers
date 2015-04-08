@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNOffscreenController, KNPdfHyperlinkController, KNSlideNode, NSArray, NSMutableArray, NSSet, NSString;
+@class KNOffscreenController, KNPdfHyperlinkController, KNSlideNode, NSArray, NSMutableArray, NSOrderedSet, NSString;
 
 @interface KNRenderingExporter : TSARenderingExporter <TSDCanvasDelegate> {
     unsigned int mCurrentBuildIndex;
@@ -24,10 +24,11 @@
     BOOL mPrintingSelectedSlides;
     BOOL mPrintingSkippedSlides;
     BOOL mPrintingSlideNumbers;
-    NSSet *mSelectedSlideNodes;
+    NSOrderedSet *mSelectedSlideNodes;
     unsigned int mSlidesPerPage;
 }
 
+@property(readonly) unsigned int currentBuildIndex;
 @property(retain) KNSlideNode * currentSlideNode;
 @property(readonly) unsigned int currentSlideNumber;
 @property(copy,readonly) NSString * debugDescription;
@@ -48,7 +49,9 @@
 @property(getter=isPrintingSelectedSlides) BOOL printingSelectedSlides;
 @property(getter=isPrintingSkippedSlides) BOOL printingSkippedSlides;
 @property(getter=isPrintingSlideNumbers) BOOL printingSlideNumbers;
-@property(copy) NSSet * selectedSlideNodes;
+@property(readonly) unsigned int rangeEnd;
+@property(readonly) unsigned int rangeStart;
+@property(copy) NSOrderedSet * selectedSlideNodes;
 @property(readonly) NSArray * slidesForPrinting;
 @property unsigned int slidesPerPage;
 @property(readonly) float spaceForSlideNumbers;
@@ -57,6 +60,7 @@
 
 - (void)addAnchorPointForSlide:(id)arg1 context:(struct CGContext { }*)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsRect;
+- (unsigned int)currentBuildIndex;
 - (id)currentInfos;
 - (id)currentSlideNode;
 - (unsigned int)currentSlideNumber;
@@ -89,12 +93,16 @@
 - (unsigned int)p_slideNumberForSlideNode:(id)arg1;
 - (id)p_slideNumberStringForSlideNode:(id)arg1 buildIndex:(unsigned int)arg2;
 - (unsigned int)pageCount;
+- (int)pageIndexFromQuickLookSlideNode:(id)arg1;
 - (float)pageMargin;
 - (BOOL)preparePage:(unsigned int)arg1;
 - (int)printLayout;
 - (id)printTitle;
 - (id)printView;
 - (double)progressForCurrentPage;
+- (id)quickLookSlideNodes;
+- (unsigned int)rangeEnd;
+- (unsigned int)rangeStart;
 - (id)selectedSlideNodes;
 - (void)setCurrentSlideNode:(id)arg1;
 - (void)setOffscreenController:(id)arg1;
@@ -116,6 +124,7 @@
 - (void)setSlidesPerPage:(unsigned int)arg1;
 - (void)setup;
 - (BOOL)shouldSuppressBackgrounds;
+- (id)slideIndexesToPrint;
 - (id)slidesForPrinting;
 - (unsigned int)slidesPerPage;
 - (float)spaceForSlideNumbers;

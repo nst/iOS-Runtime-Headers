@@ -53,6 +53,7 @@
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (id)TSDCAAnimationContextCache;
 - (id)TSD_animationForKeyPath:(id)arg1 atTime:(double)arg2;
 - (double)TSD_animationPercentByApplyingTimingFunctionForKeyPath:(id)arg1 atTime:(double)arg2;
 - (BOOL)TSD_containsAnimationForKeyPath:(id)arg1;
@@ -85,7 +86,9 @@
 - (BOOL)isEnabled;
 - (BOOL)isRemovedOnCompletion;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)p_getValue:(id*)arg1 animationPercent:(double*)arg2 atTime:(double)arg3 initialValue:(id)arg4;
+- (double)p_animationPercentByApplyingTimingFunctionForKeyPath:(id)arg1 atTime:(double)arg2 contextCache:(id)arg3;
+- (void)p_getValue:(id*)arg1 animationPercent:(double*)arg2 atTime:(double)arg3 initialValue:(id)arg4 contextCache:(id)arg5;
+- (id)p_valueAtTime:(double)arg1 initialValue:(id)arg2 contextCache:(id)arg3;
 - (void)performCompletionBlock:(BOOL)arg1;
 - (id)pkui_completionHandler;
 - (id)pkui_didStartHandler;

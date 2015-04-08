@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPDocumentRoot : TSKDocumentRoot {
+@interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex> {
 }
 
 @property(getter=isChangeTrackingEnabled,readonly) BOOL changeTrackingEnabled;
@@ -10,6 +10,8 @@
 
 - (id)changeSessionManagerForModel:(id)arg1;
 - (id)changeVisibility;
+- (void)dealloc;
+- (void)documentDidLoad;
 - (id)documentFonts;
 - (struct __CFLocale { }*)hyphenationLocale;
 - (BOOL)isChangeTrackingEnabled;

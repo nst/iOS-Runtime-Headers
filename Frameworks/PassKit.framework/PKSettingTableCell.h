@@ -12,6 +12,7 @@
 
 @property(readonly) SEL action;
 @property(getter=isOn) BOOL on;
+@property UISwitch * settingSwitch;
 @property(readonly) id target;
 
 - (SEL)action;
@@ -21,7 +22,9 @@
 - (BOOL)isOn;
 - (void)layoutSubviews;
 - (void)setOn:(BOOL)arg1;
+- (void)setSettingSwitch:(id)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
+- (id)settingSwitch;
 - (id)target;
 
 @end

@@ -11,7 +11,7 @@
     NSURL *_url;
 }
 
-@property(retain) NSString * displayTitle;
+@property(copy) NSString * displayTitle;
 @property(retain) NSArray * modelObjects;
 @property(retain) _UIDocumentPickerDirectoryObserver * observer;
 @property(retain) NSURL * url;
@@ -22,6 +22,7 @@
 + (id)tagColorsByTag;
 
 - (id)_containerListDidChange;
+- (BOOL)afterInitialUpdate;
 - (void)callUpdateHandlerWithNewItems:(id)arg1 diff:(id)arg2;
 - (void)dealloc;
 - (id)description;

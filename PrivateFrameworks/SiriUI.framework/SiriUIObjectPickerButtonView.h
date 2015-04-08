@@ -14,6 +14,8 @@
 @property(readonly) UIButton * button;
 @property BOOL showsTopKeyline;
 
++ (float)defaultHeight;
+
 - (void).cxx_destruct;
 - (id)button;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

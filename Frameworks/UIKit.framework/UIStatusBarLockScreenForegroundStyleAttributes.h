@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStatusBarLockScreenForegroundStyleAttributes : UIStatusBarNewUIForegroundStyleAttributes {
+@interface UIStatusBarLockScreenForegroundStyleAttributes : UIStatusBarForegroundStyleAttributes {
 }
 
 - (int)activityIndicatorStyleWithSyncActivity:(BOOL)arg1;

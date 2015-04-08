@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSArray, NSMapTable, NSString, VKGenericShieldGenerator, VKResourceManager;
+@class NSArray, NSLock, NSMapTable, NSString, VKGenericShieldGenerator, VKResourceManager;
 
 @interface VKShieldManager : NSObject <GEOResourceManifestTileGroupObserver> {
     struct _GEOGenericContainer<md::ShieldCacheKey, VKShieldArtwork *, std::__1::hash<md::ShieldCacheKey>, std::__1::equal_to<md::ShieldCacheKey>, geo::GEOGenericContainerWeakReferenceTag, 0, 0, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> { 
@@ -52,6 +52,7 @@
         unsigned int _currentCount; 
     } _artworkPool;
     NSMapTable *_atlases;
+    NSLock *_atlasesLock;
     struct _GEOGenericContainer<md::GenericShieldCacheKey, VKShieldArtwork *, std::__1::hash<md::GenericShieldCacheKey>, std::__1::equal_to<md::GenericShieldCacheKey>, geo::GEOGenericContainerWeakReferenceTag, 0, 0, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> { 
         struct mutex { 
             struct _opaque_pthread_mutex_t { 
@@ -100,6 +101,7 @@
     } _genericArtworks;
     VKGenericShieldGenerator *_genericShieldGenerator;
     NSMapTable *_indexes;
+    NSLock *_indexesLock;
     NSArray *_nonRegionalResourceNames;
     VKResourceManager *_resourceManager;
     unsigned int _tileGroupIdentifier;

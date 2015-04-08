@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableArray, NSString, NSXPCListenerEndpoint;
+@class NSString, NSXPCListenerEndpoint;
 
 @interface CacheDeleteServiceListener : CacheDeleteListener <CacheDeleteServiceProtocol, NSXPCListenerDelegate> {
 
@@ -20,7 +20,6 @@
   /* Error parsing encoded ivar type info: @? */
     id _notify;
 
-    NSMutableArray *_pendingReplies;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -44,7 +43,6 @@
 @property(readonly) NSXPCListenerEndpoint * endpoint;
 @property(readonly) unsigned int hash;
 @property(copy) id notify;
-@property(retain) NSMutableArray * pendingReplies;
 @property(copy) id periodic;
 @property(copy) id purge;
 @property(copy) id purgeable;
@@ -55,7 +53,6 @@
 - (id)endpoint;
 - (id)initWithName:(id)arg1 anonymous:(BOOL)arg2;
 - (id)notify;
-- (id)pendingReplies;
 - (id)periodic;
 - (id)purge;
 - (id)purgeable;
@@ -68,7 +65,6 @@
 - (void)setCancel:(id)arg1;
 - (void)setNotify:(id)arg1;
 - (void)setNotifyCallback:(id)arg1;
-- (void)setPendingReplies:(id)arg1;
 - (void)setPeriodic:(id)arg1;
 - (void)setPurge:(id)arg1;
 - (void)setPurgeable:(id)arg1;

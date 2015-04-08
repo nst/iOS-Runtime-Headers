@@ -13,11 +13,12 @@
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
++ (float)defaultExtendedControlHeight;
+
 - (void)_handleKeyboardShowOrHide:(id)arg1;
 - (void)_setupKeyboardInteraction;
 - (BOOL)_shouldShowHideKeyboard;
 - (BOOL)_shouldUseFullMetrics;
-- (float)barHeight;
 - (void)dealloc;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleTap;

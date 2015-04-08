@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL;
+@class NSArray, NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL;
 
 @interface AppleSpell : NSObject {
     NSMutableArray *_altBundleURLs;
@@ -15,11 +15,14 @@
     NSMutableArray *_globalBindictDataArray;
     NSMutableArray *_globalNameBindictDataArray;
     NSMutableArray *_globalNegBindictDataArray;
+    unsigned int *_keyboardHistogram;
     NSMutableDictionary *_languageCounts;
     struct __CFDictionary { } *_languageModelDicts;
     unsigned int _languageModelWordCount;
     double _lastDecayLanguageModels;
     double _lastFindNames;
+    NSData *_lastKeyEventData;
+    double _lastKeyboardHistogramRecording;
     NSString *_lastLanguage;
     double _lastLanguageCounts;
     double _lastMaintainLanguageModels;

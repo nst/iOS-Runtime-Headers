@@ -2,9 +2,20 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIDocumentPickerExtensionRemoteViewController : _UIDocumentPickerRemoteViewController {
+@class NSString;
+
+@interface _UIDocumentPickerExtensionRemoteViewController : _UIDocumentPickerRemoteViewController <_UIDocumentPickerViewControllerExtensionHost> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
+
++ (id)exportedInterface;
 + (id)serviceViewControllerInterface;
+
+- (void)_displayLocationMenu:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_doneButtonPressed;
 
 @end

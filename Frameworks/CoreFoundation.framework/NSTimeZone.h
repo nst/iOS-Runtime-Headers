@@ -10,7 +10,6 @@
 @property(copy,readonly) NSData * data;
 @property(copy,readonly) NSString * name;
 
-+ (id)ICSQuickTimeZoneNames;
 + (id)abbreviationDictionary;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)calendarTimeZone;

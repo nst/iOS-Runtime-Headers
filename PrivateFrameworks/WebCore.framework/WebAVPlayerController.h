@@ -136,6 +136,7 @@
 - (id)playerControllerProxy;
 - (BOOL)playerViewController:(id)arg1 shouldExitFullScreenWithReason:(int)arg2;
 - (double)rate;
+- (void)resetState;
 - (void)seekChapterBackward:(id)arg1;
 - (void)seekChapterForward:(id)arg1;
 - (void)seekToBeginning:(id)arg1;

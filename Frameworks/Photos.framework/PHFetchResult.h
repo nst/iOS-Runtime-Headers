@@ -27,20 +27,23 @@
 @property(readonly) PHQuery * query;
 
 + (id)_batchFetchingArrayForObjectIDs:(id)arg1 fetchResult:(id)arg2;
-+ (id)bulkFetchResultForAssetsWithObjectIDs:(id)arg1 changeDetails:(BOOL)arg2;
-+ (id)fetchObjectIDs:(id)arg1;
++ (id)cleanedAndSortedOIDsFrom:(id)arg1 usingFetchOptions:(id)arg2;
++ (id)fetchObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)fetchObjectIDsForCombinableFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)pl_fetchResultContainingAssetContainer:(id)arg1;
++ (id)pl_fetchResultContainingAssetContainer:(id)arg1 includeTrash:(BOOL)arg2;
 + (id)pl_fetchResultForAssetContainerList:(id)arg1;
 + (id)pl_fetchResultForStandInAssetCollection:(id)arg1;
 + (id)pl_filterPredicateForAssetContainer:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)changeHandlingKey;
-- (id)changeHandlingValue;
+- (id)changeHandlingValueUsingSeedOids:(id)arg1 withChange:(id)arg2 usingManagedObjectContext:(id)arg3;
 - (int)chunkSizeForFetch;
 - (int)collectionFetchType;
 - (id)containerIdentifier;
 - (BOOL)containsObject:(id)arg1;
+- (id)copyWithOptions:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
@@ -53,13 +56,15 @@
 - (id)fetchRequest;
 - (id)fetchResultWithChangeHandlingValue:(id)arg1;
 - (id)fetchedObjectIDs;
+- (id)fetchedObjectIDsSet;
 - (id)fetchedObjects;
+- (id)fetchedObjectsUsingManagedObjectContext:(id)arg1;
 - (id)firstObject;
 - (void)getMediaTypeCounts;
 - (unsigned int)indexOfObject:(id)arg1;
 - (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithQuery:(id)arg1;
-- (id)initWithQuery:(id)arg1 oids:(id)arg2 registerIfNeeded:(BOOL)arg3;
+- (id)initWithQuery:(id)arg1 oids:(id)arg2 registerIfNeeded:(BOOL)arg3 usingManagedObjectContext:(id)arg4;
 - (BOOL)interestedInChange:(id)arg1;
 - (BOOL)isRegisteredForChangeNotificationDeltas;
 - (id)lastObject;
@@ -69,6 +74,7 @@
 - (id)objectsAtIndexes:(id)arg1;
 - (id)photoLibrary;
 - (id)pl_photoLibraryObject;
+- (void)prefetchObjectsAtIndexes:(id)arg1;
 - (id)query;
 - (void)setChunkSizeForFetch:(int)arg1;
 - (void)setRegisteredForChangeNotificationDeltas:(BOOL)arg1;

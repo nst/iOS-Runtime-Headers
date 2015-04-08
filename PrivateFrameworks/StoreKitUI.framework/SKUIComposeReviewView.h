@@ -8,6 +8,16 @@
     int _currentBodyLength;
     <SKUIComposeReviewViewDelegate> *_delegate;
     SKUIComposeReviewHeaderView *_headerView;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _keyboardFrame;
     unsigned int _loading : 1;
     SULoadingView *_loadingView;
     SKUIReviewMetadata *_review;

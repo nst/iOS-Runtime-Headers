@@ -11,8 +11,6 @@
 @property(retain) NSArray * responderViews;
 
 - (void).cxx_destruct;
-- (void)attemptToMakeAFirstResponder;
-- (void)didMoveToWindow;
 - (id)responderViews;
 - (void)setResponderViews:(id)arg1;
 

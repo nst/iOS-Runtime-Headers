@@ -7,19 +7,22 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class KNAbstractSlide, KNAnimationInfo, KNAnimationPluginMenu, KNBuildAttributes, KNBuildChunk, NSArray, NSSet, NSString, TSDDrawableInfo, TSDEditableBezierPathSource, TSUColor;
+@class KNAbstractSlide, KNAnimationInfo, KNAnimationPluginMenu, KNBuildAttributes, KNBuildChunk, NSArray, NSMutableDictionary, NSSet, NSString, NSUUID, TSDBezierPathSource, TSDDrawableInfo, TSDEditableBezierPathSource, TSUColor;
 
 @interface KNBuild : TSPObject <KNInspectableAnimation, NSCopying, TSKTransformableObject> {
-    KNBuildAttributes *mAttributes;
+    KNBuildAttributes *_attributes;
+    NSMutableDictionary *_buildChunkIDMap;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } mCachedActiveChunkRange;
-    BOOL mCachedActiveChunkRangeIsValid;
-    NSArray *mCachedChunks;
-    NSString *mDelivery;
-    TSDDrawableInfo *mDrawable;
-    KNAbstractSlide *mSlide;
+    } _cachedActiveChunkRange;
+    BOOL _cachedActiveChunkRangeIsValid;
+    NSArray *_cachedChunks;
+    int _chunkIDSeed;
+    NSString *_delivery;
+    TSDDrawableInfo *_drawable;
+    NSUUID *_drawableId;
+    KNAbstractSlide *_slide;
 }
 
 @property(readonly) unsigned int actionAcceleration;
@@ -41,6 +44,13 @@
 @property(readonly) BOOL customBounce;
 @property(readonly) BOOL customDecay;
 @property(readonly) unsigned int customDeliveryOption;
+@property(readonly) float customDetail;
+@property(readonly) TSDBezierPathSource * customEffectTimingCurve1;
+@property(readonly) TSDBezierPathSource * customEffectTimingCurve2;
+@property(readonly) TSDBezierPathSource * customEffectTimingCurve3;
+@property(readonly) NSString * customEffectTimingCurveThemeName1;
+@property(readonly) NSString * customEffectTimingCurveThemeName2;
+@property(readonly) NSString * customEffectTimingCurveThemeName3;
 @property(readonly) unsigned int customJiggleIntensity;
 @property(readonly) BOOL customMotionBlur;
 @property(readonly) unsigned int customRepeatCount;
@@ -59,30 +69,36 @@
 @property(readonly) double durationDefaultForInitialChunk;
 @property(readonly) NSString * effect;
 @property(readonly) unsigned int endOffset;
+@property(readonly) unsigned int expectedChunkCount;
 @property(readonly) unsigned int firstActiveChunkIndexInBuild;
 @property(readonly) KNBuildChunk * firstChunk;
 @property(readonly) unsigned int firstChunkIndexOnSlide;
 @property(readonly) BOOL hasComplement;
 @property(readonly) BOOL hasInactiveChunks;
 @property(readonly) unsigned int hash;
-@property(readonly) unsigned int index;
-@property(readonly) unsigned int indexOrderedByFirstChunk;
+@property(readonly) TSDDrawableInfo * i_drawable;
 @property(readonly) NSSet * inspectableAttributes;
 @property(readonly) BOOL isActionBuild;
 @property(readonly) BOOL isActionMotionBuild;
 @property(readonly) BOOL isEmphasisBuild;
-@property(readonly) BOOL isFirst;
+@property(readonly) BOOL isOnSlide;
 @property(readonly) unsigned int lastActiveChunkIndexInBuild;
 @property(readonly) unsigned int lastChunkIndexOnSlide;
 @property(readonly) NSString * localizedEffect;
+@property(readonly) int randomNumberSeed;
 @property KNAbstractSlide * slide;
 @property(readonly) unsigned int startOffset;
 @property(readonly) Class superclass;
 @property(readonly) BOOL supportsBounce;
+@property(readonly) BOOL supportsCustomDetail;
+@property(readonly) BOOL supportsCustomEffectTimingCurve1;
+@property(readonly) BOOL supportsCustomEffectTimingCurve2;
+@property(readonly) BOOL supportsCustomEffectTimingCurve3;
 @property(readonly) BOOL supportsCustomTextDelivery;
 @property(readonly) BOOL supportsDelivery;
 @property(readonly) BOOL supportsDirection;
 @property(readonly) BOOL supportsDuration;
+@property(readonly) BOOL supportsRandomNumberSeed;
 @property(readonly) NSString * title;
 
 + (id)buildWithEffect:(id)arg1 animationType:(int)arg2 drawable:(id)arg3;
@@ -105,15 +121,22 @@
 - (id)attributes;
 - (BOOL)canEditAnimations;
 - (unsigned int)chunkCount;
+- (id)chunkForIdentifier:(id)arg1;
 - (id)chunks;
 - (id)color;
-- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (id)copyPreservingUUID:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)createNewChunks;
 - (float)custom3DChartRotation;
 - (BOOL)customBounce;
 - (BOOL)customDecay;
 - (unsigned int)customDeliveryOption;
+- (float)customDetail;
+- (id)customEffectTimingCurve1;
+- (id)customEffectTimingCurve2;
+- (id)customEffectTimingCurve3;
+- (id)customEffectTimingCurveThemeName1;
+- (id)customEffectTimingCurveThemeName2;
+- (id)customEffectTimingCurveThemeName3;
 - (unsigned int)customJiggleIntensity;
 - (BOOL)customMotionBlur;
 - (unsigned int)customRepeatCount;
@@ -125,6 +148,7 @@
 - (unsigned int)deliveryStyle;
 - (id)deliveryWithoutDowngrading;
 - (id)description;
+- (void)didInitFromSOS;
 - (unsigned int)direction;
 - (id)directionMenu;
 - (unsigned int)directionType;
@@ -134,15 +158,21 @@
 - (id)effect;
 - (unsigned int)endChunkIndexFromEndOffset:(unsigned int)arg1;
 - (unsigned int)endOffset;
+- (unsigned int)expectedChunkCount;
 - (unsigned int)firstActiveChunkIndexInBuild;
 - (id)firstChunk;
 - (unsigned int)firstChunkIndexOnSlide;
 - (BOOL)hasComplement;
 - (BOOL)hasComplementInBuilds:(id)arg1;
 - (BOOL)hasInactiveChunks;
+- (id)i_buildChunkForChunkIdentifier:(id)arg1;
+- (void)i_deregisterBuildChunkWithChunkIdentifier:(id)arg1;
+- (id)i_drawable;
+- (void)i_generateAndApplyNewChunkIdentifierToChunk:(id)arg1;
 - (void)i_invalidateChunkCache;
-- (unsigned int)index;
-- (unsigned int)indexOrderedByFirstChunk;
+- (void)i_registerBuildChunkIdentifierForChunk:(id)arg1;
+- (void)i_resetChunkIDSeed;
+- (void)i_rollbackChunkIDSeedForChunk:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithSlide:(id)arg1 effect:(id)arg2 buildType:(int)arg3 context:(id)arg4;
 - (id)inspectableAttributes;
@@ -150,16 +180,19 @@
 - (BOOL)isActionMotionBuild;
 - (BOOL)isComplementOfBuild:(id)arg1;
 - (BOOL)isEmphasisBuild;
-- (BOOL)isFirst;
+- (BOOL)isOnSlide;
 - (unsigned int)lastActiveChunkIndexInBuild;
 - (unsigned int)lastChunkIndexOnSlide;
-- (void)loadFromArchive:(const struct BuildArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; double x5; struct BuildAttributesArchive {} *x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct BuildArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; double x7; struct BuildAttributesArchive {} *x8; int x9; }*)arg1 unarchiver:(id)arg2;
 - (id)localizedEffect;
+- (id)p_buildChunkIDMap;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })p_calculateActiveChunkRange;
 - (id)p_chunkAtIndex:(unsigned int)arg1;
 - (id)p_chunkTitleByTruncatingTitle:(id)arg1 toLength:(unsigned int)arg2;
+- (BOOL)p_supportsCustomEffectTimingCurveForLayoutStyles:(id)arg1;
 - (BOOL)p_supportsCustomTextDeliveryOptionsForAttributes:(id)arg1;
-- (void)saveToArchive:(struct BuildArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; double x5; struct BuildAttributesArchive {} *x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
+- (int)randomNumberSeed;
+- (void)saveToArchive:(struct BuildArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; double x7; struct BuildAttributesArchive {} *x8; int x9; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setDelivery:(id)arg1;
@@ -167,11 +200,17 @@
 - (void)setSlide:(id)arg1;
 - (id)slide;
 - (unsigned int)startOffset;
+- (BOOL)supportsAcceleration;
 - (BOOL)supportsBounce;
+- (BOOL)supportsCustomDetail;
+- (BOOL)supportsCustomEffectTimingCurve1;
+- (BOOL)supportsCustomEffectTimingCurve2;
+- (BOOL)supportsCustomEffectTimingCurve3;
 - (BOOL)supportsCustomTextDelivery;
 - (BOOL)supportsDelivery;
 - (BOOL)supportsDirection;
 - (BOOL)supportsDuration;
+- (BOOL)supportsRandomNumberSeed;
 - (id)title;
 
 @end

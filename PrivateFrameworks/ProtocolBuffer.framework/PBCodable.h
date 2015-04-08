@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class NSData;
+@class NSData, NSString;
 
-@interface PBCodable : NSObject <NSSecureCoding> {
+@interface PBCodable : NSObject <NSSecureCoding, PQLValuable> {
 }
 
 @property(readonly) NSData * data;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (id)options;
 + (BOOL)supportsSecureCoding;
 
@@ -24,6 +29,7 @@
 - (id)nmr_valueForPotentiallyUndefinedKey:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)redact;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (void)writeTo:(id)arg1;
 
 @end

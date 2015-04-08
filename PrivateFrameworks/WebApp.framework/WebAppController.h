@@ -21,12 +21,9 @@
             float height; 
         } size; 
     } _inputViewScreenBoundsAfterRotation;
-    BOOL _isRotating;
     BOOL _isSuspended;
-    BOOL _landscapeToLandscape;
     UIView *_loadingView;
     int _orientation;
-    int _pendingOrientation;
     unsigned int _rotationEdgePin;
     struct CGRect { 
         struct CGPoint { 
@@ -78,13 +75,13 @@
 - (id)containerViewForAuthenticationPanel;
 - (void)continueAfterCertificateAlertWithContext:(id)arg1;
 - (void)dealloc;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)downloadManager:(id)arg1 downloadDidFail:(id)arg2;
 - (void)downloadManager:(id)arg1 hasData:(id)arg2 forFinishedDownload:(id)arg3;
 - (id)genericMessageForError:(id)arg1;
 - (BOOL)handleCertificateError:(id)arg1 inWebView:(id)arg2;
 - (id)initForWebClipURL:(id)arg1;
-- (void)layoutLandscapeSubviews;
-- (void)layoutPortraitSubviews;
+- (void)layoutWebview;
 - (void)loadInputAddress:(id)arg1;
 - (void)logInFromAuthenticationManager:(id)arg1 withCredential:(id)arg2 forChallenge:(id)arg3;
 - (void)resume;
@@ -127,9 +124,7 @@
 - (void)webView:(id)arg1 didFailProvisionalLoadWithError:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (void)webViewDidFinishLoad:(id)arg1;
-- (void)window:(id)arg1 didRotateFromInterfaceOrientation:(int)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
-- (void)window:(id)arg1 willAnimateRotationToInterfaceOrientation:(int)arg2 duration:(double)arg3;
-- (void)window:(id)arg1 willRotateToInterfaceOrientation:(int)arg2 duration:(double)arg3;
 
 @end

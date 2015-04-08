@@ -13,18 +13,23 @@
 
 @property(readonly) NSArray * attributionApps;
 @property(readonly) NSArray * attributionURLs;
+@property(readonly) NSString * providerID;
 @property(readonly) NSString * providerName;
 @property(readonly) BOOL requiresAttributionInCallout;
+@property(readonly) NSString * webBaseActionURL;
 
+- (id)_yelpHTTPURLForRequirement:(int)arg1 withUID:(id)arg2 writeAReview:(BOOL)arg3;
 - (id)attributionApps;
 - (id)attributionURLs;
 - (void)dealloc;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 poiID:(id)arg3;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 yelpID:(id)arg3;
+- (id)providerID;
 - (id)providerLogoPathForScale:(float)arg1;
 - (id)providerName;
 - (id)providerSnippetLogoPathForScale:(float)arg1;
 - (BOOL)requiresAttributionInCallout;
+- (id)webBaseActionURL;
 
 @end

@@ -16,6 +16,7 @@
 @property(readonly) BOOL isPasswordProtected;
 @property(readonly) BOOL isValid;
 @property(readonly) int packageType;
+@property(readonly) NSString * passwordHint;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -30,6 +31,7 @@
 - (struct CGImage { }*)newCGImageAtRelativePath:(id)arg1;
 - (struct CGImageSource { }*)newCGImageSourceAtRelativePath:(id)arg1;
 - (int)packageType;
+- (id)passwordHint;
 - (void)performReadUsingAccessor:(id)arg1;
 
 @end

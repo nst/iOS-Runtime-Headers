@@ -17,6 +17,7 @@
     float _padding;
     float _rating;
     NSMutableArray *_ratingViews;
+    int _starStyle;
 }
 
 @property(retain) UIImage * emptyStarHighlightedImage;
@@ -28,10 +29,10 @@
 @property(getter=isHighlighted) BOOL highlighted;
 @property int numberOfRatingLevels;
 @property float rating;
+@property int starStyle;
 
 - (void).cxx_destruct;
 - (void)_layoutStarViewsCreatingIfNeeded:(BOOL)arg1;
-- (void)_setStarStyle:(int)arg1;
 - (void)commonInit;
 - (void)didMoveToWindow;
 - (id)emptyStarHighlightedImage;
@@ -58,6 +59,8 @@
 - (void)setNumberOfRatingLevels:(int)arg1;
 - (void)setPadding:(float)arg1;
 - (void)setRating:(float)arg1;
+- (void)setStarStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (int)starStyle;
 
 @end

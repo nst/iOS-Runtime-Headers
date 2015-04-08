@@ -4,7 +4,7 @@
 
 @class NSArray;
 
-@interface CKModifySharesOperationInfo : CKOperationInfo {
+@interface CKModifySharesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     NSArray *_shareIDsToDelete;
     NSArray *_sharesToSave;
 }

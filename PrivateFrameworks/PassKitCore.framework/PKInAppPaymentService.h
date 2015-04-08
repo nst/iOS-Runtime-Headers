@@ -2,24 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSLock, NSXPCConnection;
+@class PKXPCService;
 
 @interface PKInAppPaymentService : NSObject {
-    NSXPCConnection *_connection;
-    NSLock *_connectionLock;
+    PKXPCService *_remoteService;
 }
 
-- (id)_connection;
-- (id)_connectionWithTeardownExisting:(BOOL)arg1 createNewIfNecessary:(BOOL)arg2;
-- (id)_errorHandlerWithCompletion:(id)arg1;
-- (void)_establishPaymentServiceConnection;
-- (void)_registerForApplicationLifeCycleNotifications;
-- (void)_registerForInAppPaymentServiceNotifications;
-- (void)_sendResumed;
-- (void)_sendSuspended;
-- (void)_tearDownPaymentServiceConnection;
-- (void)_unregisterForApplicationLifeCycleNotifications;
-- (void)_unregisterForPaymentServiceNotifications;
+- (id)_remoteObjectProxy;
+- (id)_remoteObjectProxyWithErrorHandler:(id)arg1;
+- (id)_remoteObjectProxyWithFailureHandler:(id)arg1;
+- (id)_remoteObjectProxyWithSemaphore:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)presentInAppPaymentInterfaceWithPaymentRequest:(id)arg1 forHostIdentifier:(id)arg2 orientation:(id)arg3 completion:(id)arg4;

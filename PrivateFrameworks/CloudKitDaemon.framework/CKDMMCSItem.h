@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKAsset, CKRecordID, NSData, NSError, NSMutableArray, NSNumber, NSString, NSURL;
+@class CKAsset, CKPackage, CKRecordID, NSData, NSError, NSMutableArray, NSNumber, NSString, NSURL;
 
 @interface CKDMMCSItem : NSObject {
     CKAsset *_asset;
@@ -14,6 +14,7 @@
     NSNumber *_deviceID;
     NSError *_error;
     NSNumber *_fileID;
+    NSURL *_fileURL;
     BOOL _finished;
     NSNumber *_generationID;
     BOOL _hasOffset;
@@ -21,23 +22,23 @@
     unsigned long long _itemID;
     unsigned long long _offset;
     NSString *_owner;
-    unsigned long _packageIndex;
-    NSString *_path;
+    CKPackage *_package;
+    unsigned int _packageIndex;
     double _progress;
     CKRecordID *_recordID;
     NSString *_recordKey;
     NSString *_recordType;
-    NSString *_referenceIdentifierString;
     NSData *_referenceSignature;
     NSString *_requestor;
     NSMutableArray *_sectionItems;
     NSData *_signature;
     unsigned long long _size;
+    NSString *_trackingUUID;
     NSString *_uploadReceipt;
     NSData *_wrappedAssetKey;
 }
 
-@property(readonly) CKAsset * asset;
+@property(retain) CKAsset * asset;
 @property(retain) NSData * assetKey;
 @property(retain) NSData * authRequest;
 @property(retain) NSString * authToken;
@@ -46,26 +47,26 @@
 @property(retain) NSNumber * deviceID;
 @property(retain) NSError * error;
 @property(retain) NSNumber * fileID;
-@property(readonly) NSURL * fileURL;
-@property(getter=isFinished) BOOL finished;
+@property(retain) NSURL * fileURL;
+@property BOOL finished;
 @property(retain) NSNumber * generationID;
 @property BOOL hasOffset;
 @property BOOL hasSize;
 @property unsigned long long itemID;
 @property unsigned long long offset;
 @property(retain) NSString * owner;
-@property unsigned long packageIndex;
-@property(retain) NSString * path;
+@property(retain) CKPackage * package;
+@property unsigned int packageIndex;
 @property double progress;
 @property(retain) CKRecordID * recordID;
 @property(retain) NSString * recordKey;
 @property(retain) NSString * recordType;
-@property(retain) NSString * referenceIdentifierString;
 @property(retain) NSData * referenceSignature;
 @property(retain) NSString * requestor;
 @property(retain) NSMutableArray * sectionItems;
 @property(retain) NSData * signature;
 @property unsigned long long size;
+@property(retain) NSString * trackingUUID;
 @property(retain) NSString * uploadReceipt;
 @property(retain) NSData * wrappedAssetKey;
 
@@ -84,30 +85,28 @@
 - (id)error;
 - (id)fileID;
 - (id)fileURL;
+- (BOOL)finished;
 - (id)generationID;
-- (BOOL)getFileSize:(unsigned long long*)arg1 withError:(id*)arg2;
+- (BOOL)getFileSize:(unsigned long long*)arg1 error:(id*)arg2;
 - (BOOL)hasOffset;
 - (BOOL)hasSize;
-- (unsigned int)hash;
 - (id)init;
 - (id)initWithAsset:(id)arg1;
 - (id)initWithPackage:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFinished;
 - (unsigned long long)itemID;
 - (unsigned long long)offset;
 - (int)openFileDescriptorWithError:(id*)arg1;
 - (id)owner;
-- (unsigned long)packageIndex;
-- (id)path;
+- (id)package;
+- (unsigned int)packageIndex;
 - (double)progress;
 - (id)recordID;
 - (id)recordKey;
 - (id)recordType;
-- (id)referenceIdentifierString;
 - (id)referenceSignature;
 - (id)requestor;
 - (id)sectionItems;
+- (void)setAsset:(id)arg1;
 - (void)setAssetKey:(id)arg1;
 - (void)setAuthRequest:(id)arg1;
 - (void)setAuthToken:(id)arg1;
@@ -116,6 +115,7 @@
 - (void)setDeviceID:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setFileID:(id)arg1;
+- (void)setFileURL:(id)arg1;
 - (void)setFinished:(BOOL)arg1;
 - (void)setGenerationID:(id)arg1;
 - (void)setHasOffset:(BOOL)arg1;
@@ -123,22 +123,23 @@
 - (void)setItemID:(unsigned long long)arg1;
 - (void)setOffset:(unsigned long long)arg1;
 - (void)setOwner:(id)arg1;
-- (void)setPackageIndex:(unsigned long)arg1;
-- (void)setPath:(id)arg1;
+- (void)setPackage:(id)arg1;
+- (void)setPackageIndex:(unsigned int)arg1;
 - (void)setProgress:(double)arg1;
 - (void)setRecordID:(id)arg1;
 - (void)setRecordKey:(id)arg1;
 - (void)setRecordType:(id)arg1;
-- (void)setReferenceIdentifierString:(id)arg1;
 - (void)setReferenceSignature:(id)arg1;
 - (void)setRequestor:(id)arg1;
 - (void)setSectionItems:(id)arg1;
 - (void)setSignature:(id)arg1;
 - (void)setSize:(unsigned long long)arg1;
+- (void)setTrackingUUID:(id)arg1;
 - (void)setUploadReceipt:(id)arg1;
 - (void)setWrappedAssetKey:(id)arg1;
 - (id)signature;
 - (unsigned long long)size;
+- (id)trackingUUID;
 - (id)uploadReceipt;
 - (id)wrappedAssetKey;
 

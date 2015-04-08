@@ -9,7 +9,7 @@
 
 @class NSSet, NSString, TSSPropertyMap, TSSStyle, TSSStylesheet;
 
-@interface TSSStyle : TSPObject <NSCopying, TSKModel, TSKTransformableObject, TSSPropertySource, TSSPropertyValueValidator, TSSStyleClient, TSSStyleObject, TSSThemeAsset> {
+@interface TSSStyle : TSPObject <NSCopying, TSKModel, TSKTransformableObject, TSSPropertySource, TSSPropertyValueValidator, TSSStyleClient, TSSStyleObject> {
     BOOL mIsVariation;
     NSString *mName;
     TSSPropertyMap *mOverridePropertyMap;
@@ -22,6 +22,7 @@
 @property(readonly) NSSet * children;
 @property(readonly) NSString * contentTag;
 @property(copy,readonly) NSString * debugDescription;
+@property(readonly) NSSet * descendants;
 @property(copy,readonly) NSString * description;
 @property(readonly) TSSStyle * firstIdentifiedAncestor;
 @property(readonly) unsigned int hash;
@@ -46,7 +47,7 @@
 + (id)defaultValueForProperty:(int)arg1;
 + (id)description;
 + (float)fontSizeForFontSize:(float)arg1 scalingFactor:(float)arg2;
-+ (int)muxDefaultPropertyForSpecificProperty:(int)arg1;
++ (BOOL)needsObjectUUID;
 + (struct __CTFont { }*)pCreateFontWithName:(id)arg1 fontSize:(float)arg2;
 + (id)pReplacementForMissingFontName:(id)arg1 outBold:(int*)arg2 outItalic:(int*)arg3 outQuiet:(BOOL*)arg4;
 + (id)properties;
@@ -69,7 +70,6 @@
 - (id)boxedValueForProperty:(int)arg1;
 - (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
 - (id)children;
-- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (id)componentRootObject;
 - (void)constrainShadowForSwatchGeneration;
 - (id)constrainShapeStyleForContext:(id)arg1;
@@ -83,6 +83,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1 context:(id)arg2;
 - (void)dealloc;
 - (BOOL)definesProperty:(int)arg1;
+- (id)descendants;
 - (double)doubleValueForProperty:(int)arg1;
 - (void)fadeReflectionForSwatchGeneration;
 - (id)firstIdentifiedAncestor;
@@ -95,7 +96,6 @@
 - (id)init;
 - (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(BOOL)arg4;
-- (int)intValueForMUXedProperty:(int)arg1;
 - (int)intValueForProperty:(int)arg1;
 - (BOOL)isAncestorOf:(id)arg1;
 - (BOOL)isChildOf:(id)arg1;
@@ -106,12 +106,11 @@
 - (BOOL)isIdentified;
 - (BOOL)isNamed;
 - (BOOL)isParentOf:(id)arg1;
-- (BOOL)isThemeEquivalent:(id)arg1;
+- (BOOL)isRelatedTo:(id)arg1;
 - (BOOL)isVariation;
-- (void)loadCharacterStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct CharacterStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; bool x4; bool x5; bool x6; bool x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct Color {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; int x11; int x12; int x13; int x14; float x15; float x16; int x17; bool x18; bool x19; bool x20; bool x21; struct Color {} *x22; struct ShadowArchive {} *x23; float x24; float x25; struct Color {} *x26; struct Color {} *x27; float x28; bool x29; bool x30; bool x31; bool x32; struct Color {} *x33; float x34; int x35; struct RepeatedPtrField<TSWP::FontFeatureArchive> { void **x_36_1_1; int x_36_1_2; int x_36_1_3; int x_36_1_4; } x36; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x37; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x38; bool x39; bool x40; bool x41; int x42; unsigned int x43[2]; }*)arg2 unarchiver:(id)arg3;
-- (void)loadFromArchive:(const struct StyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct Reference {} *x5; struct Reference {} *x6; bool x7; int x8; unsigned int x9[1]; }*)arg1 unarchiver:(id)arg2;
-- (void)loadParagraphStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct ParagraphStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; float x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Color {} *x6; bool x7; bool x8; bool x9; bool x10; float x11; float x12; bool x13; bool x14; bool x15; bool x16; struct LineSpacingArchive {} *x17; int x18; float x19; struct Point {} *x20; float x21; float x22; float x23; unsigned int x24; struct TabsArchive {} *x25; bool x26; bool x27; bool x28; bool x29; int x30; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x31; struct StrokeArchive {} *x32; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x33; bool x34; bool x35; bool x36; bool x37; int x38; struct Reference {} *x39; struct Reference {} *x40; int x41; unsigned int x42[2]; }*)arg2 unarchiver:(id)arg3;
-- (SEL)mapThemeAssetSelector;
+- (void)loadCharacterStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct CharacterStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; float x4; bool x5; bool x6; bool x7; bool x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct Color {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; int x12; int x13; int x14; int x15; float x16; float x17; int x18; bool x19; bool x20; bool x21; bool x22; struct Color {} *x23; struct ShadowArchive {} *x24; float x25; float x26; struct Color {} *x27; struct Color {} *x28; float x29; bool x30; bool x31; bool x32; bool x33; struct Color {} *x34; float x35; int x36; struct RepeatedPtrField<TSWP::FontFeatureArchive> { void **x_37_1_1; int x_37_1_2; int x_37_1_3; int x_37_1_4; } x37; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x38; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x39; bool x40; bool x41; bool x42; int x43; }*)arg2 unarchiver:(id)arg3;
+- (void)loadFromArchive:(const struct StyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct Reference {} *x7; struct Reference {} *x8; bool x9; }*)arg1 unarchiver:(id)arg2;
+- (void)loadParagraphStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct ParagraphStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; int x4; float x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct Color {} *x7; bool x8; bool x9; bool x10; bool x11; float x12; float x13; bool x14; bool x15; bool x16; bool x17; struct LineSpacingArchive {} *x18; int x19; float x20; struct Point {} *x21; float x22; float x23; struct TabsArchive {} *x24; float x25; unsigned int x26; bool x27; bool x28; bool x29; bool x30; int x31; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x32; struct StrokeArchive {} *x33; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x34; bool x35; bool x36; bool x37; bool x38; int x39; struct Reference {} *x40; struct Reference {} *x41; int x42; }*)arg2 unarchiver:(id)arg3;
 - (id)name;
 - (id)newOverridePropertyMapWithPropertyMap:(id)arg1;
 - (id)objectForProperty:(int)arg1;
@@ -138,9 +137,9 @@
 - (void)replaceReferencedStylesUsingBlock:(id)arg1;
 - (id)rootAncestor;
 - (id)rootIdentifiedAncestor;
-- (void)saveCharacterStylePropertiesToArchive:(struct CharacterStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; bool x4; bool x5; bool x6; bool x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct Color {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; int x11; int x12; int x13; int x14; float x15; float x16; int x17; bool x18; bool x19; bool x20; bool x21; struct Color {} *x22; struct ShadowArchive {} *x23; float x24; float x25; struct Color {} *x26; struct Color {} *x27; float x28; bool x29; bool x30; bool x31; bool x32; struct Color {} *x33; float x34; int x35; struct RepeatedPtrField<TSWP::FontFeatureArchive> { void **x_36_1_1; int x_36_1_2; int x_36_1_3; int x_36_1_4; } x36; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x37; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x38; bool x39; bool x40; bool x41; int x42; unsigned int x43[2]; }*)arg1 archiver:(id)arg2;
-- (void)saveParagraphStylePropertiesToArchive:(struct ParagraphStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; float x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Color {} *x6; bool x7; bool x8; bool x9; bool x10; float x11; float x12; bool x13; bool x14; bool x15; bool x16; struct LineSpacingArchive {} *x17; int x18; float x19; struct Point {} *x20; float x21; float x22; float x23; unsigned int x24; struct TabsArchive {} *x25; bool x26; bool x27; bool x28; bool x29; int x30; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x31; struct StrokeArchive {} *x32; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x33; bool x34; bool x35; bool x36; bool x37; int x38; struct Reference {} *x39; struct Reference {} *x40; int x41; unsigned int x42[2]; }*)arg1 archiver:(id)arg2;
-- (void)saveToArchive:(struct StyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct Reference {} *x5; struct Reference {} *x6; bool x7; int x8; unsigned int x9[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveCharacterStylePropertiesToArchive:(struct CharacterStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; float x4; bool x5; bool x6; bool x7; bool x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct Color {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; int x12; int x13; int x14; int x15; float x16; float x17; int x18; bool x19; bool x20; bool x21; bool x22; struct Color {} *x23; struct ShadowArchive {} *x24; float x25; float x26; struct Color {} *x27; struct Color {} *x28; float x29; bool x30; bool x31; bool x32; bool x33; struct Color {} *x34; float x35; int x36; struct RepeatedPtrField<TSWP::FontFeatureArchive> { void **x_37_1_1; int x_37_1_2; int x_37_1_3; int x_37_1_4; } x37; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x38; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x39; bool x40; bool x41; bool x42; int x43; }*)arg1 archiver:(id)arg2;
+- (void)saveParagraphStylePropertiesToArchive:(struct ParagraphStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; int x4; float x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct Color {} *x7; bool x8; bool x9; bool x10; bool x11; float x12; float x13; bool x14; bool x15; bool x16; bool x17; struct LineSpacingArchive {} *x18; int x19; float x20; struct Point {} *x21; float x22; float x23; struct TabsArchive {} *x24; float x25; unsigned int x26; bool x27; bool x28; bool x29; bool x30; int x31; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x32; struct StrokeArchive {} *x33; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x34; bool x35; bool x36; bool x37; bool x38; int x39; struct Reference {} *x40; struct Reference {} *x41; int x42; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct StyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct Reference {} *x7; struct Reference {} *x8; bool x9; }*)arg1 archiver:(id)arg2;
 - (void)setBoolValue:(BOOL)arg1 forProperty:(int)arg2;
 - (void)setBoxedValue:(id)arg1 forProperty:(int)arg2;
 - (void)setCGFloatValue:(float)arg1 forProperty:(int)arg2;

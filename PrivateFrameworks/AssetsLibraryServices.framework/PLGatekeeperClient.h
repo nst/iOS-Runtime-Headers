@@ -42,6 +42,7 @@
 - (void)automaticallyDeleteEmptyAlbum:(id)arg1;
 - (void)batchSaveAssetsWithJobDictionaries:(id)arg1 handler:(id)arg2;
 - (id)cacheDeleteDebug:(id)arg1;
+- (void)cancelCPLDownloadImageDataWithVirtualTaskIdentifiers:(id)arg1 completionHandler:(id)arg2;
 - (void)cancelCPLDownloadWithContext:(id)arg1;
 - (void)cleanupForStoreDemoMode;
 - (void)cleanupModelAfteriTunesRestore;
@@ -78,8 +79,8 @@
 - (int)getCurrentModelVersion;
 - (id)getKeywordsForAssetWithUUID:(id)arg1;
 - (void)getLibrarySizes:(id)arg1;
-- (void)getNonLocalResourceInfo:(id)arg1;
 - (void)getPhotosAndVideosCountWithHandler:(id)arg1;
+- (void)getSandboxExtensionForPath:(id)arg1 completionHandler:(id)arg2;
 - (void)getSearchIndexProgress:(id)arg1;
 - (id)getThumbnailImageDataForBulletinWithRecordID:(unsigned int)arg1;
 - (BOOL)hasCompletedMomentAnalysis;
@@ -88,8 +89,10 @@
 - (void)importFileSystemAssetsWaitingForReply:(BOOL)arg1;
 - (id)incompleteRestoreProcesses;
 - (id)init;
+- (BOOL)isReadyForCloudPhotoLibrary;
 - (int)keyForEmailAddress:(id)arg1;
 - (void)launchAssetsd;
+- (void)maintainCachedAlbumCounts;
 - (void)notifyAboutTerminationDueToUncaughtException:(id)arg1;
 - (void)pauseCloudPhotos;
 - (id)personInfoDictionaryForPersonID:(id)arg1;
@@ -102,7 +105,6 @@
 - (void)rebuildCloudFeed;
 - (void)rebuildMomentLists;
 - (void)rebuildMomentsIncremental:(BOOL)arg1;
-- (void)recalculateCachedAlbumCounts;
 - (void)recoverFromCrashIfNeeded;
 - (void)reloadMomentGenerationOptions;
 - (void)removeLocalDuplicates;
@@ -111,6 +113,7 @@
 - (id)replyQueue;
 - (void)requestAccessWithHandler:(id)arg1;
 - (void)requestAdjustmentDataForAsset:(id)arg1 withDataBlob:(BOOL)arg2 networkAccessAllowed:(BOOL)arg3 trackCPLDownload:(BOOL)arg4 handler:(id)arg5;
+- (void)requestCPLDownloadImageDataForAssets:(id)arg1 format:(int)arg2 doneTokens:(id)arg3 completionHandler:(id)arg4;
 - (void)requestImageDataForAsset:(id)arg1 format:(int)arg2 allowPlaceholder:(BOOL)arg3 wantURLOnly:(BOOL)arg4 networkAccessAllowed:(BOOL)arg5 trackCPLDownload:(BOOL)arg6 handler:(id)arg7;
 - (void)requestMasterThumbnailForAssetUUID:(id)arg1 handler:(id)arg2;
 - (void)requestVideoURLForAsset:(id)arg1 format:(int)arg2 networkAccessAllowed:(BOOL)arg3 streamingAllowed:(BOOL)arg4 trackCPLDownload:(BOOL)arg5 handler:(id)arg6;
@@ -132,6 +135,7 @@
 - (void)softResetSyncStatusWithCompletionHandler:(id)arg1;
 - (void)syncWithCloudPhotoLibrary;
 - (void)takeStatisticsSnapshotSinceDate:(id)arg1 completionHandler:(id)arg2;
+- (void)unloadImageFilesForAsset:(id)arg1 minimumFormat:(int)arg2 completionHandler:(id)arg3;
 - (void)unpauseCloudPhotos;
 - (void)updateCameraPreviewWellImage:(id)arg1;
 - (void)updateLocationDataForAssetUUID:(id)arg1;
@@ -141,6 +145,7 @@
 - (void)updateStatusOfCPLDownloadWithContext:(id)arg1;
 - (void)updateThumbnailsForPhotos:(id)arg1 waitForReply:(BOOL)arg2 assignNewIndex:(BOOL)arg3 forceRefresh:(BOOL)arg4;
 - (void)verifyAndRepairOrphanedAssets;
+- (void)waitForSearchIndexExistence;
 - (void)waitUntilConnectionSendsAllMessages;
 - (void)writeDataInBackground:(id)arg1 toFileURL:(id)arg2;
 

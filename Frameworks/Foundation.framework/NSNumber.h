@@ -9,7 +9,7 @@
 
 @class NSNumber, NSString;
 
-@interface NSNumber : NSValue <CKRecordValue, PQLBindable, PQLResultSetInitializer, TSCHChartGridValue, TSDMixing> {
+@interface NSNumber : NSValue <CKRecordValue, PQLValuable, PQLValuable, TSCHChartGridValue, TSDMixing> {
 }
 
 @property(readonly) BOOL boolValue;
@@ -49,9 +49,9 @@
 + (id)cr_numberWithCRContactGroupKind:(unsigned int)arg1;
 + (id)cr_numberWithCRContactID:(long long)arg1;
 + (id)cr_numberWithCRRecentID:(long long)arg1;
-+ (id)instanceWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (id)numberWithBool:(BOOL)arg1;
-+ (id)numberWithCGFloat:(float)arg1;
 + (id)numberWithCGFloat:(float)arg1;
 + (id)numberWithCGFloat:(float)arg1;
 + (id)numberWithCGFloat:(float)arg1;
@@ -64,8 +64,6 @@
 + (id)numberWithLong:(long)arg1;
 + (id)numberWithLongLong:(long long)arg1;
 + (id)numberWithShort:(short)arg1;
-+ (id)numberWithStyleInt:(int)arg1;
-+ (id)numberWithStyleProperty:(int)arg1;
 + (id)numberWithUnsignedChar:(unsigned char)arg1;
 + (id)numberWithUnsignedInt:(unsigned int)arg1;
 + (id)numberWithUnsignedInteger:(unsigned int)arg1;
@@ -77,6 +75,11 @@
 + (BOOL)parseString:(id)arg1 intoSInt64:(long long*)arg2;
 + (BOOL)parseString:(id)arg1 intoUInt64:(unsigned long long*)arg2;
 + (BOOL)supportsSecureCoding;
++ (id)tsch_instanceWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 unarchiver:(id)arg2;
++ (id)tsch_numberWithStyleInt:(int)arg1;
++ (id)tsch_numberWithStyleProperty:(int)arg1;
++ (id)tsch_optionalNumberWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 unarchiver:(id)arg2;
++ (void)tsch_saveOptionalNumber:(id)arg1 toArchive:(struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg2 archiver:(id)arg3;
 
 - (id)CAMLType;
 - (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
@@ -85,7 +88,6 @@
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; bool x10; }*)arg4;
 - (id)CA_roundToIntegerFromValue:(id)arg1;
-- (float)CGFloatValue;
 - (float)CGFloatValue;
 - (float)CGFloatValue;
 - (id)MPMediaLibraryDataProviderSystemML3CoercedString;
@@ -101,7 +103,6 @@
 - (bool)_getCString:(char *)arg1 length:(int)arg2 multiplier:(double)arg3;
 - (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;
 - (int)_reverseCompare:(id)arg1;
-- (void)appendJsonStringToString:(id)arg1;
 - (void)appendJsonStringToString:(id)arg1;
 - (BOOL)boolValue;
 - (id)brc_documentID;
@@ -127,8 +128,6 @@
 - (float)floatValue;
 - (unsigned int)hash;
 - (BOOL)hk_hasFloatingPointValue;
-- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
-- (id)initWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithBool:(BOOL)arg1;
 - (id)initWithCGFloat:(float)arg1;
 - (id)initWithCPLArchiver:(id)arg1;
@@ -160,18 +159,21 @@
 - (long long)longLongValue;
 - (long)longValue;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (id)ml_stringValueForSQL;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
-- (int)propertyValue;
 - (long long)rc_persistentIDValue;
-- (void)saveToArchive:(struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
+- (void)sfu_appendJsonStringToString:(id)arg1;
 - (short)shortValue;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (id)stringValue;
-- (int)styleIntValue;
-- (int)stylePropertyValue;
+- (id)tsch_initWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 unarchiver:(id)arg2;
+- (void)tsch_saveToArchive:(struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 archiver:(id)arg2;
+- (int)tsch_styleIntValue;
+- (int)tsch_stylePropertyValue;
+- (int)tss_propertyValue;
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
 - (unsigned int)unsignedIntegerValue;

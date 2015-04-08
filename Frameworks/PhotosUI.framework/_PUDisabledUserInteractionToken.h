@@ -6,13 +6,17 @@
 
 @interface _PUDisabledUserInteractionToken : NSObject {
     NSString *_identifier;
+    int _reason;
 }
 
 @property(copy) NSString * identifier;
+@property int reason;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)identifier;
+- (int)reason;
 - (void)setIdentifier:(id)arg1;
+- (void)setReason:(int)arg1;
 
 @end

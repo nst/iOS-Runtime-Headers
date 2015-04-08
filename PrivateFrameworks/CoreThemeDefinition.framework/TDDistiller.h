@@ -20,6 +20,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
 
+    int _fileCompression;
     BOOL _finished;
     BOOL _incremental;
     TDLogger *_logger;
@@ -41,6 +42,7 @@
 @property(retain) NSThread * callbackThread;
 @property(getter=isCancelled) BOOL cancelled;
 @property(copy) id completionHandler;
+@property int fileCompression;
 @property(getter=isFinished) BOOL finished;
 @property(getter=isIncremental) BOOL incremental;
 @property(retain) TDLogger * logger;
@@ -92,6 +94,7 @@
 - (BOOL)distillZeroCodeArtworkInfo:(id)arg1 ofType:(int)arg2;
 - (BOOL)distillZeroCodeArtworkInfoOfType:(int)arg1;
 - (id)documentPath;
+- (int)fileCompression;
 - (void)finishDistillationWithSuccess:(BOOL)arg1;
 - (id)initWithDocument:(id)arg1 outputPath:(id)arg2;
 - (id)initWithDocument:(id)arg1 outputPath:(id)arg2 attemptIncremental:(BOOL)arg3;
@@ -114,6 +117,7 @@
 - (void)setCallbackThread:(id)arg1;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setCompletionHandler:(id)arg1;
+- (void)setFileCompression:(int)arg1;
 - (void)setFinished:(BOOL)arg1;
 - (void)setIncremental:(BOOL)arg1;
 - (void)setLogger:(id)arg1;

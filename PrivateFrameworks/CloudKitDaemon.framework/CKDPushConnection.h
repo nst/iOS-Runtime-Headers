@@ -8,6 +8,7 @@
     APSConnection *_apsConnection;
     NSString *_apsEnvironmentString;
     NSMapTable *_callbacks;
+    BOOL _darkWakeEnabled;
     NSMutableSet *_enabledTopics;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_tokensCache;
@@ -19,6 +20,7 @@
 @property(retain) APSConnection * apsConnection;
 @property(retain) NSString * apsEnvironmentString;
 @property(retain) NSMapTable * callbacks;
+@property BOOL darkWakeEnabled;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSMutableSet * enabledTopics;
@@ -30,7 +32,7 @@
 @property(retain) NSMutableSet * topicsAwaitingPublicToken;
 @property(retain) NSMutableDictionary * topicsToWaitingAppContainerTuples;
 
-+ (id)sharedConnectionForAPSEnvironmentString:(id)arg1;
++ (id)sharedConnectionForAPSEnvironmentString:(id)arg1 darkWakeEnabled:(BOOL)arg2;
 
 - (void).cxx_destruct;
 - (void)_addWaitingAppContainerTuple:(id)arg1 forTopic:(id)arg2;
@@ -43,15 +45,17 @@
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
 - (void)connectionDidReconnect:(id)arg1;
+- (BOOL)darkWakeEnabled;
 - (void)dealloc;
 - (id)enabledTopics;
-- (id)initWithEnvironment:(id)arg1;
+- (id)initWithEnvironment:(id)arg1 darkWakeEnabled:(BOOL)arg2;
 - (id)queue;
 - (void)requestTokenForAppContainerTuple:(id)arg1 useAPSPublicToken:(BOOL)arg2;
 - (void)revokeTokenForAppContainerTuple:(id)arg1;
 - (void)setAPSEnvironmentString:(id)arg1;
 - (void)setApsConnection:(id)arg1;
 - (void)setCallbacks:(id)arg1;
+- (void)setDarkWakeEnabled:(BOOL)arg1;
 - (void)setEnabledTopics:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setTokensCache:(id)arg1;

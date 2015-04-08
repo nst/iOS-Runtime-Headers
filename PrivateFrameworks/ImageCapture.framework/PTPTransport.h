@@ -24,8 +24,10 @@
     id _delegate;
     BOOL _delegateNeedsResponse;
     unsigned long long _excessReceivedDataSize;
+    BOOL _failedMD5;
     unsigned char _headerBuffer[12];
     BOOL _headerBufferFound;
+    unsigned char _md5[16];
     PTPOperationResponsePacket *_response;
     BOOL _responseReceived;
     int _role;
@@ -48,6 +50,7 @@
 - (unsigned long long)excessReceivedDataSize;
 - (id)init;
 - (int)lockCallbackThreadMutex;
+- (id)md5;
 - (id)response;
 - (BOOL)responseReceived;
 - (int)role;

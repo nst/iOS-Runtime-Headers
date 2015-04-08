@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CALayer, CAMAnimationDelegate, CAMAvalancheIndicatorView, CAMBlurredSnapshotView, CAMBottomBar, CAMCameraSpec, CAMCaptureController, CAMElapsedTimeView, CAMExposureBiasTextView, CAMFilterButton, CAMFlashBadge, CAMFlashButton, CAMFlipButton, CAMGridView, CAMHDRBadge, CAMHDRButton, CAMHardwareLockIndicatorView, CAMImageWell, CAMLowDiskSpaceAlertView, CAMModeDial, CAMPanoramaView, CAMPreviewView, CAMShutterButton, CAMSlalomIndicatorView, CAMTimerButton, CAMTimerIndicatorView, CAMTopBar, CAMTorchPatternController, CAMZoomSlider, NSDate, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_source>, NSString, NSTimer, PLCameraIrisAnimationView, PLCameraOverlayTextLabelView, PLPreviewOverlayView, UIAlertView, UIImageView, UILongPressGestureRecognizer, UIPanGestureRecognizer, UISwipeGestureRecognizer, UITapGestureRecognizer, UIView;
+@class CALayer, CAMAnimationDelegate, CAMAvalancheIndicatorView, CAMBlurredSnapshotView, CAMBottomBar, CAMCameraSpec, CAMCaptureController, CAMDisabledModeOverlayView, CAMElapsedTimeView, CAMExposureBiasTextView, CAMFilterButton, CAMFlashBadge, CAMFlashButton, CAMFlipButton, CAMGridView, CAMHDRBadge, CAMHDRButton, CAMHardwareLockIndicatorView, CAMImageWell, CAMLowDiskSpaceAlertView, CAMModeDial, CAMMotionController, CAMPanoramaView, CAMPhysicalCaptureRecognizer, CAMPreviewView, CAMShutterButton, CAMShutterIndicatorView, CAMSlalomIndicatorView, CAMTimerButton, CAMTimerIndicatorView, CAMTopBar, CAMTorchPatternController, CAMZoomSlider, NSDate, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_source>, NSString, NSTimer, PLCameraIrisAnimationView, PLCameraOverlayTextLabelView, PLPreviewOverlayView, UIAlertView, UIImageView, UILongPressGestureRecognizer, UIPanGestureRecognizer, UISwipeGestureRecognizer, UITapGestureRecognizer, UIView;
 
 @interface CAMCameraView : UIView <CAMBottomBarDelegate, CAMModeDialDataSource, CAMStillImageCaptureRequestDelegate, CAMTimerButtonDelegate, CAMTopBarDelegate, CAMZoomSliderDelegate, PLCameraControllerDelegate, PLCameraPanoramaViewDelegate, UIAccelerometerDelegate, UIGestureRecognizerDelegate> {
     CAMHDRBadge *__HDRBadge;
@@ -23,7 +23,7 @@
     CAMBlurredSnapshotView *__captureSnapshotView;
     BOOL __capturing;
     BOOL __capturingAvalancheForDelayedCapture;
-    BOOL __capturingFromVolumeButtons;
+    BOOL __capturingFromPhysicalButton;
     BOOL __changingModes;
     CAMBlurredSnapshotView *__currentDeviceBackSnapshotView;
     CAMBlurredSnapshotView *__currentDeviceFrontSnapshotView;
@@ -32,6 +32,7 @@
     BOOL __delayedCaptureIndicatorVisible;
     NSObject<OS_dispatch_source> *__delayedCaptureTimer;
     int __desiredNumberOfAvalancheCaptures;
+    CAMDisabledModeOverlayView *__disabledModeOverlayView;
     CAMElapsedTimeView *__elapsedTimeView;
     float __exposureBiasPanStartValue;
     CAMExposureBiasTextView *__exposureBiasTextView;
@@ -56,14 +57,18 @@
     BOOL __ignoringAutomaticBadgeUpdatesForAvalancheIndicator;
     BOOL __ignoringSubsequentAvalancheCaptureRequests;
     CAMImageWell *__imageWell;
+    BOOL __interrupted;
     NSDate *__lastAutoTimerCaptureDate;
     NSDate *__lastDelayedCaptureIndicatorUpdateDate;
     struct CGPoint { 
         float x; 
         float y; 
     } __lastFocusPanPoint;
+    int __layoutStyle;
     CAMModeDial *__modeDial;
+    BOOL __modeDisabledForLayout;
     CAMBlurredSnapshotView *__modeSwitchingSnapshotView;
+    CAMMotionController *__motionController;
     BOOL __needToStartAvalancheSound;
     UISwipeGestureRecognizer *__nextModeGestureRecognizer;
     UIView *__nonWidescreenSquareBottomMarginLayoutSpacer;
@@ -84,8 +89,10 @@
     BOOL __receivedInitialPreviewDidStartNotification;
     BOOL __recoveringFromServerError;
     int __remainingDelayedCaptureTicks;
+    BOOL __resetTimerDurationAfterDelayedCapture;
     BOOL __reviewingImagePickerCapture;
     CAMShutterButton *__shutterButton;
+    CAMShutterIndicatorView *__shutterIndicator;
     CAMSlalomIndicatorView *__slalomIndicator;
     UITapGestureRecognizer *__slalomIndicatorTapGestureRecognizer;
     CAMShutterButton *__stillDuringVideoButton;
@@ -153,13 +160,13 @@
     CALayer *_panoramaPreviewLayer;
     float _panoramaProgress;
     CAMPanoramaView *_panoramaView;
+    CAMPhysicalCaptureRecognizer *_physicalCaptureRecognizer;
     UIView *_previewContainerView;
     struct CGSize { 
         float width; 
         float height; 
     } _previewContentSize;
     BOOL _previewOriginShouldBeZero;
-    unsigned int _previewStartedBeforeViewMovedToWindow : 1;
     CAMPreviewView *_previewView;
     int _previewViewAspectMode;
     UIView *_previewViewSnapshotView;
@@ -189,7 +196,6 @@
     BOOL _userChangedHDRAfterFlash;
     BOOL _userInteractionLoggingEnabled;
     int _videoFlashMode;
-    unsigned int _wasInterrupted : 1;
 }
 
 @property(readonly) CAMHDRBadge * _HDRBadge;
@@ -211,7 +217,7 @@
 @property(readonly) CAMBlurredSnapshotView * _captureSnapshotView;
 @property(getter=_isCapturing,setter=_setCapturing:) BOOL _capturing;
 @property(setter=_setCapturingAvalancheForDelayedCapture:) BOOL _capturingAvalancheForDelayedCapture;
-@property(readonly) BOOL _capturingFromVolumeButtons;
+@property(readonly) BOOL _capturingFromPhysicalButton;
 @property(getter=_isChangingModes,setter=_setChangingModes:) BOOL _changingModes;
 @property(readonly) CAMBlurredSnapshotView * _currentDeviceBackSnapshotView;
 @property(readonly) CAMBlurredSnapshotView * _currentDeviceFrontSnapshotView;
@@ -220,6 +226,7 @@
 @property(getter=_isDelayedCaptureIndicatorVisible,setter=_setDelayedCaptureIndicatorVisible:) BOOL _delayedCaptureIndicatorVisible;
 @property(readonly) NSObject<OS_dispatch_source> * _delayedCaptureTimer;
 @property int _desiredNumberOfAvalancheCaptures;
+@property(readonly) CAMDisabledModeOverlayView * _disabledModeOverlayView;
 @property(readonly) CAMElapsedTimeView * _elapsedTimeView;
 @property(readonly) float _exposureBiasPanStartValue;
 @property(readonly) CAMExposureBiasTextView * _exposureBiasTextView;
@@ -241,12 +248,16 @@
 @property(setter=_setIgnoringAutomaticBadgeUpdatesForAvalancheIndicator:) BOOL _ignoringAutomaticBadgeUpdatesForAvalancheIndicator;
 @property(readonly) BOOL _ignoringSubsequentAvalancheCaptureRequests;
 @property(readonly) CAMImageWell * _imageWell;
+@property(getter=_isInterrupted,setter=_setInterrupted:) BOOL _interrupted;
 @property(readonly) NSDate * _lastAutoTimerCaptureDate;
 @property(readonly) NSDate * _lastDelayedCaptureIndicatorUpdateDate;
 @property(readonly) struct CGPoint { float x1; float x2; } _lastFocusPanPoint;
+@property(setter=_setLayoutStyle:) int _layoutStyle;
 @property(getter=_isLockedToPortraitOrientation,readonly) BOOL _lockedToPortraitOrientation;
 @property(readonly) CAMModeDial * _modeDial;
+@property(getter=_isModeDisabledForLayout,setter=_setModeDisabledForLayout:) BOOL _modeDisabledForLayout;
 @property(readonly) CAMBlurredSnapshotView * _modeSwitchingSnapshotView;
+@property(readonly) CAMMotionController * _motionController;
 @property(readonly) BOOL _needToStartAvalancheSound;
 @property(readonly) UISwipeGestureRecognizer * _nextModeGestureRecognizer;
 @property(readonly) UIView * _nonWidescreenSquareBottomMarginLayoutSpacer;
@@ -267,11 +278,13 @@
 @property(readonly) BOOL _receivedInitialPreviewDidStartNotification;
 @property(setter=_setRecoveringFromServerError:) BOOL _recoveringFromServerError;
 @property(readonly) int _remainingDelayedCaptureTicks;
+@property(getter=_resetTimerDurationAfterDelayedCapture,setter=_setResetTimerDurationAfterDelayedCapture:) BOOL _resetTimerDurationAfterDelayedCapture;
 @property(getter=_isReviewingImagePickerCapture,setter=_setReviewingImagePickerCapture:) BOOL _reviewingImagePickerCapture;
 @property(readonly) BOOL _shouldBlurWhenSessionStops;
 @property(readonly) BOOL _shouldPausePreviewDuringCapture;
 @property(readonly) BOOL _shouldStartPreviewWhenApplicationBecomesActive;
 @property(readonly) CAMShutterButton * _shutterButton;
+@property(readonly) CAMShutterIndicatorView * _shutterIndicator;
 @property(readonly) CAMSlalomIndicatorView * _slalomIndicator;
 @property(readonly) UITapGestureRecognizer * _slalomIndicatorTapGestureRecognizer;
 @property(readonly) CAMShutterButton * _stillDuringVideoButton;
@@ -311,6 +324,7 @@
 @property int lastSelectedHDRMode;
 @property int lastSelectedPhotoFlashMode;
 @property(readonly) PLPreviewOverlayView * overlayView;
+@property(retain) CAMPhysicalCaptureRecognizer * physicalCaptureRecognizer;
 @property(readonly) UIView * previewContainerView;
 @property(readonly) CAMPreviewView * previewView;
 @property int previewViewAspectMode;
@@ -334,9 +348,11 @@
 - (void)_aeafLockTimerDidFire;
 - (struct __CFString { }*)_aggregateDictionaryKeyForCameraMode:(int)arg1 device:(int)arg2;
 - (struct __CFString { }*)_aggregateDictionaryKeyForFlashMode:(int)arg1;
+- (struct __CFString { }*)_aggregateDictionaryKeyForPhysicalButtonType:(int)arg1;
 - (BOOL)_allowExposureBiasForMode:(int)arg1;
 - (BOOL)_allowExposureBiasTextView;
 - (BOOL)_allowFocusRectPanning;
+- (BOOL)_allowsPhysicalCaptureInteraction;
 - (BOOL)_allowsStillFromVideoMode;
 - (BOOL)_allowsStillFromVideoModeWhenNotRecording;
 - (void)_applicationDidBecomeActive:(id)arg1;
@@ -346,6 +362,7 @@
 - (void)_applicationSuspended:(id)arg1;
 - (void)_applyModeSwitchingBlurAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
 - (void)_applyTopBarRotationForDeviceOrientation:(int)arg1;
+- (int)_appropriateLayoutStyleForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_attachVideoPreviewToEffectsRenderer;
 - (BOOL)_avalancheCaptureAsSoonAsPossible;
 - (BOOL)_avalancheCaptureInProgress;
@@ -364,6 +381,7 @@
 - (id)_bottomBar;
 - (int)_bottomBarBackgroundStyleForMode:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bottomBarFrame;
+- (int)_bottomBarOrientation;
 - (void)_cameraOrientationChanged:(id)arg1;
 - (BOOL)_canAutoExposeAtPoint;
 - (BOOL)_canAutoFocusAtPoint;
@@ -380,7 +398,7 @@
 - (void)_captureStillImageWithRequest:(id)arg1;
 - (void)_capturedPhotoWithCaptureDictionary:(id)arg1 metadata:(id)arg2;
 - (BOOL)_capturingAvalancheForDelayedCapture;
-- (BOOL)_capturingFromVolumeButtons;
+- (BOOL)_capturingFromPhysicalButton;
 - (void)_checkDiskSpaceAfterCapture;
 - (void)_cleanupAfterZPositionAnimations;
 - (void)_cleanupPostVideoCaptureState;
@@ -395,10 +413,13 @@
 - (id)_constraintsForLivePreviewContainerWithMode:(int)arg1;
 - (id)_constraintsForLivePreviewMaskWithMode:(int)arg1;
 - (id)_constraintsForLivePreviewWithMode:(int)arg1;
+- (id)_constraintsForTimerIndicator:(id)arg1 viewToMatch:(id)arg2;
 - (id)_constraintsForTimerIndicatorWithHorizontalBottomBarForMode:(int)arg1;
 - (id)_constraintsForTimerIndicatorWithVerticalBottomBarForMode:(int)arg1;
 - (id)_constraintsForVerticalBottomBar;
 - (id)_constraintsForZoomSliderWithHorizontalBottomBar;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_counterRotatingTransformForInterfaceOrientation:(int)arg1;
+- (BOOL)_counterRotatingViewNeedsTransform;
 - (void)_createAvalancheIndicatorIfNecessary;
 - (void)_createBottomBarIfNecessary;
 - (void)_createControlsForCurrentModeIfNecessary;
@@ -441,9 +462,10 @@
 - (int)_desiredNumberOfAvalancheCaptures;
 - (void)_destroyAllControls;
 - (void)_deviceOrientationChanged:(id)arg1;
-- (int)_deviceOrientationForPreviewView;
+- (int)_deviceOrientationForExposureBiasUI;
 - (int)_deviceOrientationForUI;
 - (BOOL)_didEverMoveToWindow;
+- (id)_disabledModeOverlayView;
 - (void)_diskSpaceDidChange;
 - (float)_effectiveExposureBias;
 - (float)_effectiveExposureBiasMovementForTranslation:(struct CGPoint { float x1; float x2; })arg1;
@@ -510,7 +532,9 @@
 - (void)_incrementInflightImageRequests;
 - (void)_indicateDelayedCaptureProgressUsingTorch;
 - (BOOL)_initialLayoutNeededForBadge:(id)arg1;
+- (BOOL)_initialLayoutNeededForHardwareLockIndicator:(id)arg1;
 - (void)_initializeExposureBiasSliderParameters;
+- (int)_interfaceOrientationForPreviewView;
 - (float)_interpolatedTopBarHeight;
 - (void)_invalidateConstraintsForMaskingChange;
 - (BOOL)_isAvalancheIndicatorVisible;
@@ -520,10 +544,13 @@
 - (BOOL)_isChangingModes;
 - (BOOL)_isDelayedCaptureIndicatorVisible;
 - (BOOL)_isFlipping;
+- (BOOL)_isFullscreen;
 - (BOOL)_isHDRSuggested;
 - (BOOL)_isHidingBadgesForFilterUI;
 - (BOOL)_isInstantBurstEnabled;
+- (BOOL)_isInterrupted;
 - (BOOL)_isLockedToPortraitOrientation;
+- (BOOL)_isModeDisabledForLayout;
 - (BOOL)_isPerformingFilterTransition;
 - (BOOL)_isPostprocessing;
 - (BOOL)_isPreparingToRecord;
@@ -545,17 +572,21 @@
 - (id)_lastDelayedCaptureIndicatorUpdateDate;
 - (struct CGPoint { float x1; float x2; })_lastFocusPanPoint;
 - (void)_layoutBottomCenteredView:(id)arg1 forOrientation:(int)arg2;
+- (void)_layoutCounterRotatingView;
 - (void)_layoutExposureBiasTextViewForOrientation:(int)arg1;
 - (void)_layoutFlashBadgeForOrientation:(int)arg1;
 - (void)_layoutHDRBadgeForOrientation:(int)arg1;
 - (void)_layoutHardwareLockIndicatorForOrientation:(int)arg1;
+- (int)_layoutStyle;
 - (void)_layoutTopBarForOrientation:(int)arg1;
 - (void)_layoutTopCenteredView:(id)arg1 forOrientation:(int)arg2;
 - (void)_lockFocus:(BOOL)arg1 andExposure:(BOOL)arg2 initiatedByUser:(BOOL)arg3;
 - (BOOL)_longPressTapIsDown;
 - (BOOL)_modeChangeSwipeMatchesExposureBiasPanDirection;
 - (id)_modeDial;
+- (int)_modeDialOrientation;
 - (id)_modeSwitchingSnapshotView;
+- (id)_motionController;
 - (BOOL)_needToStartAvalancheSound;
 - (id)_newSnapshotView;
 - (id)_nextModeGestureRecognizer;
@@ -563,7 +594,6 @@
 - (unsigned int)_numFilterSelectionsBeforeCapture;
 - (int)_numberOfInflightStillImageRequests;
 - (int)_numberOfTicksForTimerDuration:(int)arg1;
-- (int)_orientationForGestureRecognizers;
 - (BOOL)_panFocus:(BOOL)arg1 exposure:(BOOL)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
 - (BOOL)_panningExposureBias;
 - (BOOL)_panningExposureRect;
@@ -595,14 +625,17 @@
 - (BOOL)_recoveringFromServerError;
 - (void)_registerForSystemSound;
 - (int)_remainingDelayedCaptureTicks;
+- (void)_removeAllConstaints;
+- (void)_removeBottomBar;
 - (void)_removeModeSwitchingBlurAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
-- (void)_removeVideoCaptureControls;
+- (void)_removeTopBar;
 - (void)_removeVideoCaptureFileAtPath:(id)arg1;
 - (void)_resetAggregateInfoForPhotoFilters;
 - (void)_resetDiskSpaceWarning;
 - (void)_resetExposureBias;
 - (void)_resetFaceTracking;
 - (void)_resetInflightImageRequests;
+- (BOOL)_resetTimerDurationAfterDelayedCapture;
 - (void)_resetZoom;
 - (void)_rotateCameraControlsAndInterface;
 - (void)_scheduleFocusDidStartTimeout;
@@ -633,6 +666,10 @@
 - (void)_setHidingBadgesForFilterUI:(BOOL)arg1;
 - (void)_setIgnoringAutomaticBadgeUpdatesDuringCapture:(BOOL)arg1;
 - (void)_setIgnoringAutomaticBadgeUpdatesForAvalancheIndicator:(BOOL)arg1;
+- (void)_setInterrupted:(BOOL)arg1;
+- (void)_setLayoutStyle:(int)arg1;
+- (void)_setModeDisabledForLayout:(BOOL)arg1;
+- (void)_setModeDisabledForLayout:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setNumFilterSelectionsBeforeCapture:(unsigned int)arg1;
 - (void)_setPendingModeIndex:(int)arg1;
 - (void)_setPerformingDelayedCapture:(BOOL)arg1;
@@ -643,6 +680,7 @@
 - (void)_setPreviewViewAspectMode:(int)arg1;
 - (void)_setProcessingHDR:(BOOL)arg1;
 - (void)_setRecoveringFromServerError:(BOOL)arg1;
+- (void)_setResetTimerDurationAfterDelayedCapture:(BOOL)arg1;
 - (void)_setReviewingImagePickerCapture:(BOOL)arg1;
 - (void)_setReviewingImagePickerCapture:(BOOL)arg1 updateUI:(BOOL)arg2;
 - (void)_setShouldShowFocus:(BOOL)arg1;
@@ -670,6 +708,10 @@
 - (void)_setupZoomSliderConstraints;
 - (BOOL)_shouldApplyRotationDirectlyToTopBarForOrientation:(int)arg1 cameraMode:(int)arg2;
 - (BOOL)_shouldBlurWhenSessionStops;
+- (BOOL)_shouldCreateBottomBar;
+- (BOOL)_shouldCreateTopBar;
+- (BOOL)_shouldDisableCaptureDueToLayoutForMode:(int)arg1;
+- (BOOL)_shouldDisableModeForLayout:(int)arg1;
 - (BOOL)_shouldEnableFilterButton;
 - (BOOL)_shouldEnableFlashButton;
 - (BOOL)_shouldEnableFlipButton;
@@ -678,6 +720,7 @@
 - (BOOL)_shouldEnableModeDial;
 - (BOOL)_shouldEnableShutterButton;
 - (BOOL)_shouldEnableZoomSlider;
+- (BOOL)_shouldHideCancelButton;
 - (BOOL)_shouldHideElapsedTimeViewForMode:(int)arg1;
 - (BOOL)_shouldHideExposureBiasTextViewForMode:(int)arg1;
 - (BOOL)_shouldHideFilterButtonForMode:(int)arg1;
@@ -703,6 +746,7 @@
 - (BOOL)_shouldResetFocusWhenSubjectAreaChanged;
 - (BOOL)_shouldShowFocus;
 - (BOOL)_shouldShowFocusAttachmentAsLocked;
+- (BOOL)_shouldShowShutterButtonDisabled;
 - (BOOL)_shouldStartDelayedCapture;
 - (BOOL)_shouldStartPreviewWhenApplicationBecomesActive;
 - (BOOL)_shouldUseAvalancheForDelayedCapture;
@@ -715,9 +759,9 @@
 - (void)_showDiskSpaceWarning;
 - (BOOL)_showExposureBiasSliderOnChange;
 - (void)_showTorchDisabledAlert;
-- (void)_showVideoCaptureControls;
 - (id)_shutterButton;
 - (int)_shutterButtonModeForCameraMode:(int)arg1 isCapturing:(BOOL)arg2;
+- (id)_shutterIndicator;
 - (void)_simpleRemoteActionDidOccur:(id)arg1;
 - (id)_slalomIndicator;
 - (id)_slalomIndicatorTapGestureRecognizer;
@@ -769,9 +813,11 @@
 - (void)_updateCaptureAggregateDictionariesForResponse:(id)arg1;
 - (void)_updateConstraintsForMode:(int)arg1;
 - (void)_updateDelayedCaptureIndicatorWithFace:(id)arg1;
+- (void)_updateDisabledModeUIAnimated:(BOOL)arg1;
+- (void)_updateDisabledStateForCurrentModeAnimated:(BOOL)arg1;
 - (void)_updateEnabledControlsWithReason:(id)arg1;
 - (void)_updateEnabledControlsWithReason:(id)arg1 forceLog:(BOOL)arg2;
-- (void)_updateExposureBiasPanGestureRecognizersForOrientation:(int)arg1;
+- (void)_updateExposureBiasPanGestureRecognizersForOrientation;
 - (void)_updateExposureBiasViews;
 - (void)_updateExposureBiasViewsWithExposureBias:(float)arg1;
 - (void)_updateFilterAggregateDictionaries;
@@ -791,11 +837,13 @@
 - (void)_updateHardwareLockIndicatorStateAnimated:(BOOL)arg1;
 - (void)_updateHardwareLockIndicatorVisibility;
 - (void)_updateImageWellFromTimelapseThumbnailImage:(id)arg1;
+- (void)_updateLayoutStyleForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateMaskingViewForCameraMode:(int)arg1 animated:(BOOL)arg2;
 - (void)_updateModeSwitchingAvailability;
-- (void)_updateModeSwitchingGestureRecognizersForOrientation:(int)arg1;
+- (void)_updateModeSwitchingGestureRecognizersForLayoutStyle;
 - (void)_updatePanoramaImageQueue;
 - (void)_updatePreviewContentSizeWithCleanAperture:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_updatePreviewCounterRotatingViewForRotationStyle;
 - (void)_updatePreviewForFocusDidEnd;
 - (void)_updatePreviewWellImage:(id)arg1;
 - (void)_updateSlalomIndicator;
@@ -898,7 +946,6 @@
 - (void)didPlayVideoRecordingSound;
 - (void)didShowZoomSlider:(id)arg1;
 - (void)disableCamera;
-- (void)embedControlsIntoNavigationItem:(id)arg1 animated:(BOOL)arg2;
 - (void)enableCamera;
 - (void)flashButtonDidChangeAvailability:(id)arg1;
 - (void)flashButtonDidChangeFlashMode:(id)arg1;
@@ -924,6 +971,10 @@
 - (void)panoramaView:(id)arg1 didChangeDirection:(int)arg2;
 - (void)pausePreview;
 - (void)performPostcapturePreviewForVideoAtPath:(id)arg1;
+- (void)physicalCaptureButtonCancelled:(int)arg1;
+- (void)physicalCaptureButtonPressed:(int)arg1;
+- (void)physicalCaptureButtonReleased:(int)arg1;
+- (id)physicalCaptureRecognizer;
 - (void)prepareForDefaultImageSnapshot;
 - (id)previewContainerView;
 - (id)previewView;
@@ -944,6 +995,7 @@
 - (void)setImagePickerWantsVolumeButtonEvents:(BOOL)arg1;
 - (void)setLastSelectedHDRMode:(int)arg1;
 - (void)setLastSelectedPhotoFlashMode:(int)arg1;
+- (void)setPhysicalCaptureRecognizer:(id)arg1;
 - (void)setPreviewViewAspectMode:(int)arg1;
 - (void)setPreviewViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setRotationStyle:(int)arg1;
@@ -980,6 +1032,7 @@
 - (int)videoFlashMode;
 - (id)videoPreviewView;
 - (void)viewDidAppear;
+- (void)viewDidDisappear;
 - (void)viewWillBeDisplayed;
 - (void)viewWillBeRemoved;
 - (void)zoomSliderDidBeginAutozooming:(id)arg1;

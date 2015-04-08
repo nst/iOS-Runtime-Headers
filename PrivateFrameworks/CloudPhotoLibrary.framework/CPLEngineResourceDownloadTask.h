@@ -15,6 +15,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _cancelHandler;
 
+    BOOL _cancelledByEngine;
     NSString *_clientBundleID;
     CPLResource *_cloudResource;
 
@@ -38,11 +39,14 @@
     id _progressHandler;
 
     unsigned int _taskIdentifierForQueue;
+    BOOL _transportOwnsTask;
     <CPLEngineTransportTask> *_transportTask;
+    BOOL _wantsTransportTask;
 }
 
 @property(getter=isBackgroundTask) BOOL backgroundTask;
 @property(readonly) id cancelHandler;
+@property(getter=isCancelledByEngine) BOOL cancelledByEngine;
 @property(retain) NSString * clientBundleID;
 @property(retain) CPLResource * cloudResource;
 @property(readonly) id completionHandler;
@@ -50,7 +54,9 @@
 @property(readonly) id launchHandler;
 @property(readonly) id progressHandler;
 @property unsigned int taskIdentifierForQueue;
+@property BOOL transportOwnsTask;
 @property(retain) <CPLEngineTransportTask> * transportTask;
+@property BOOL wantsTransportTask;
 
 - (void).cxx_destruct;
 - (id)cancelHandler;
@@ -61,15 +67,21 @@
 - (id)didStartHandler;
 - (id)initWithLaunchHandler:(id)arg1 cancelHandler:(id)arg2 didStartHandler:(id)arg3 progressHandler:(id)arg4 completionHandler:(id)arg5;
 - (BOOL)isBackgroundTask;
+- (BOOL)isCancelledByEngine;
 - (void)launch;
 - (id)launchHandler;
 - (id)progressHandler;
 - (void)setBackgroundTask:(BOOL)arg1;
+- (void)setCancelledByEngine:(BOOL)arg1;
 - (void)setClientBundleID:(id)arg1;
 - (void)setCloudResource:(id)arg1;
 - (void)setTaskIdentifierForQueue:(unsigned int)arg1;
+- (void)setTransportOwnsTask:(BOOL)arg1;
 - (void)setTransportTask:(id)arg1;
+- (void)setWantsTransportTask:(BOOL)arg1;
 - (unsigned int)taskIdentifierForQueue;
+- (BOOL)transportOwnsTask;
 - (id)transportTask;
+- (BOOL)wantsTransportTask;
 
 @end

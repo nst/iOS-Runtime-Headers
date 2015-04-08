@@ -8,7 +8,6 @@
     BLTSettingSyncServer *_connection;
     BOOL _dndEnabled;
     BOOL _dndStateUpdatedAtLeastOnce;
-    int _dndStatus;
     BOOL _isDNDMirrorEnabled;
     BOOL _isWristDetectDisabled;
     NPSManager *_npsManager;

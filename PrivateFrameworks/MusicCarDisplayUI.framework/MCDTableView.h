@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDTableView : MusicTableView {
+@interface MCDTableView : UITableView {
     BOOL _shouldShowHeadersAndFooters;
 }
 
 @property BOOL shouldShowHeadersAndFooters;
 
-- (void)_moveWithEvent:(id)arg1;
-- (void)_selectAndScrollToIndexPath:(id)arg1;
 - (BOOL)_shouldShowHeadersAndFooters;
-- (void)selectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3;
+- (BOOL)canBecomeFirstResponder;
 - (void)setShouldShowHeadersAndFooters:(BOOL)arg1;
 - (BOOL)shouldShowHeadersAndFooters;
 

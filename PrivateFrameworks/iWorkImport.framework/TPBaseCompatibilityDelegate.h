@@ -14,6 +14,7 @@
 
 - (id)backwardsCompatibleTypeForType:(id)arg1;
 - (id)epubExportCategories;
+- (id)epubExportLanguageCodes;
 - (Class)exportOptionsControllerClass;
 - (id)exportableTypes;
 - (Class)exporterClassForType:(id)arg1 options:(id)arg2;

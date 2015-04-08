@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCHStyleActAlike>, NSArray, NSString, TSCHChartStyleState;
+@class <TSCHStyleActAlike>, NSArray, NSString;
 
 @interface TSCHChartStylePreset : TSPObject <TSCHStyleSwapSupporting, TSPCopying, TSSPreset> {
     NSArray *mCategoryAxisStyles;
     <TSCHStyleActAlike> *mChartStyle;
     <TSCHStyleActAlike> *mLegendStyle;
     NSArray *mParagraphStyles;
+    <TSCHStyleActAlike> *mRefLineStyle;
+    NSArray *mRefLineStyles;
     NSArray *mSeriesStyles;
     struct __CFUUID { } *mUUID;
     NSArray *mValueAxisStyles;
@@ -16,18 +18,19 @@
 
 @property(readonly) NSArray * categoryAxisStyles;
 @property(readonly) <TSCHStyleActAlike> * chartStyle;
-@property(readonly) TSCHChartStyleState * chartStyleState;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
 @property(readonly) <TSCHStyleActAlike> * legendStyle;
 @property(readonly) NSArray * paragraphStyles;
 @property(readonly) NSString * presetKind;
+@property(readonly) <TSCHStyleActAlike> * refLineStyle;
 @property(readonly) NSArray * seriesStyles;
 @property(readonly) Class superclass;
 @property(readonly) struct __CFUUID { }* uuid;
 @property(readonly) NSArray * valueAxisStyles;
 
++ (BOOL)needsObjectUUID;
 + (id)p_getDefaultErrorBarColor:(id)arg1 valueAxisStyles:(id)arg2;
 + (id)p_getDefaultTrendLineShadowColor:(id)arg1;
 + (id)p_getDefaultTrendLineStrokeColor:(id)arg1;
@@ -53,15 +56,16 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6;
-- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7;
-- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 uuid:(struct __CFUUID { }*)arg8;
+- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 refLineStyle:(id)arg8;
+- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 refLineStyle:(id)arg8 uuid:(struct __CFUUID { }*)arg9;
 - (BOOL)isEquivalentToPreset:(id)arg1;
 - (BOOL)isEquivalentToPreset:(id)arg1 outReasons:(id*)arg2;
-- (BOOL)isThemeEquivalent:(id)arg1;
 - (id)legendStyle;
+- (id)nsuuid;
 - (id)p_initWithContext:(id)arg1;
 - (id)paragraphStyles;
 - (id)presetKind;
+- (id)refLineStyle;
 - (void)saveToArchiver:(id)arg1;
 - (id)seriesStyles;
 - (id)styleOwnerFromSwapType:(int)arg1 andIndex:(unsigned int)arg2;

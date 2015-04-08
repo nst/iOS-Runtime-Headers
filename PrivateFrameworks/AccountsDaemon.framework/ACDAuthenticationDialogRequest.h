@@ -6,10 +6,12 @@
    See Warning(s) below.
  */
 
-@class ACAccount, NSURL;
+@class ACAccount, NSString, NSURL;
 
 @interface ACDAuthenticationDialogRequest : NSObject {
     ACAccount *_account;
+    NSString *_authDelegateClassBundlePath;
+    NSString *_authDelegateClassName;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -20,15 +22,21 @@
 }
 
 @property(retain) ACAccount * account;
+@property(copy) NSString * authDelegateClassBundlePath;
+@property(copy) NSString * authDelegateClassName;
 @property(copy) id completion;
 @property BOOL confirmationRequired;
 @property(copy) NSURL * url;
 
 - (void).cxx_destruct;
 - (id)account;
+- (id)authDelegateClassBundlePath;
+- (id)authDelegateClassName;
 - (id)completion;
 - (BOOL)confirmationRequired;
 - (void)setAccount:(id)arg1;
+- (void)setAuthDelegateClassBundlePath:(id)arg1;
+- (void)setAuthDelegateClassName:(id)arg1;
 - (void)setCompletion:(id)arg1;
 - (void)setConfirmationRequired:(BOOL)arg1;
 - (void)setUrl:(id)arg1;

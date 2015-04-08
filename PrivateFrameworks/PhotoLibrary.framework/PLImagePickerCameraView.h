@@ -18,7 +18,6 @@
     BOOL _displayedInPopover;
     NSDictionary *_imagePickerOptions;
     int _photoSavingOptions;
-    BOOL _showingCropOverlay;
     BOOL _showsCropRegion;
     PLPhotoTileViewController *_tileViewController;
     BOOL _wantsImageData;
@@ -42,7 +41,6 @@
 @property(readonly) unsigned int hash;
 @property(retain) NSDictionary * imagePickerOptions;
 @property int photoSavingOptions;
-@property(getter=isShowingCropOverlay) BOOL showingCropOverlay;
 @property BOOL showsCropRegion;
 @property(readonly) Class superclass;
 @property(readonly) PLPhotoTileViewController * tileViewController;
@@ -59,17 +57,16 @@
 - (BOOL)_isRetakingPhoto;
 - (id)_mostRecentCaptureResponse;
 - (void)_previewVideoAtPath:(id)arg1;
-- (void)_removeVideoCaptureControls;
 - (void)_resetImageTile;
 - (void)_setEnabledGestures:(int)arg1;
 - (void)_setManipulatingCrop:(BOOL)arg1;
 - (void)_setRetakingPhoto:(BOOL)arg1;
 - (void)_setWindowEdgeClip:(int)arg1;
 - (BOOL)_shouldBlurWhenSessionStops;
+- (BOOL)_shouldHideCancelButton;
 - (BOOL)_shouldPausePreviewDuringCapture;
 - (BOOL)_shouldSkipPostcaptureReview;
 - (BOOL)_shouldStartPreviewWhenApplicationBecomesActive;
-- (void)_showVideoCaptureControls;
 - (BOOL)_supportsPreviewingAfterCapture;
 - (void)_updateImageEditability;
 - (id)_videoView;
@@ -94,12 +91,10 @@
 - (id)customOverlayView;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (void)embedControlsIntoNavigationItem:(id)arg1 animated:(BOOL)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)imagePickerOptions;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 spec:(id)arg2;
 - (BOOL)isDisplayedInPopover;
-- (BOOL)isShowingCropOverlay;
 - (void)performPostcapturePreviewForVideoAtPath:(id)arg1;
 - (int)photoSavingOptions;
 - (BOOL)photoTileViewControllerIsDisplayingLandscape:(id)arg1;
@@ -112,7 +107,6 @@
 - (void)setDisplayedInPopover:(BOOL)arg1;
 - (void)setImagePickerOptions:(id)arg1;
 - (void)setPhotoSavingOptions:(int)arg1;
-- (void)setShowingCropOverlay:(BOOL)arg1;
 - (void)setShowsCropRegion:(BOOL)arg1;
 - (void)setWantsImageData:(BOOL)arg1;
 - (BOOL)showsCropRegion;

@@ -55,6 +55,7 @@
 - (id)thumbData;
 - (unsigned int)type;
 - (void)updateBasicMetadata;
+- (BOOL)updateBasicMetadataIfNotRAW;
 - (BOOL)updatedBasicMetadata;
 - (long)writeDataToFile:(int)arg1 fromOffset:(long long)arg2 ofLength:(long long*)arg3;
 

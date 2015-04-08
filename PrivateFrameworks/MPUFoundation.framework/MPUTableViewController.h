@@ -8,6 +8,7 @@
     Class _cellConfigurationClass;
     BOOL _hasAppearedOnce;
     int _numberOfActionRows;
+    BOOL _shouldDeselectImmediately;
     BOOL _shouldUpdateVisibleCellsWhenVisible;
     UITableView *_tableView;
     NSMutableArray *_visibleActionRows;
@@ -18,6 +19,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property BOOL shouldDeselectImmediately;
 @property(readonly) BOOL shouldScrollToFirstDataSourceSectionOnInitialAppearance;
 @property(readonly) Class superclass;
 @property(readonly) UITableView * tableView;
@@ -67,6 +69,8 @@
 - (id)sectionIndexTitlesForTableView:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setShouldDeselectImmediately:(BOOL)arg1;
+- (BOOL)shouldDeselectImmediately;
 - (BOOL)shouldScrollToFirstDataSourceSectionOnInitialAppearance;
 - (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (id)tableView;

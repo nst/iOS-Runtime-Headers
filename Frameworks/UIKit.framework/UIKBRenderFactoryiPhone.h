@@ -44,6 +44,7 @@
 - (float)returnKeyFontSize;
 - (struct CGPoint { float x1; float x2; })returnKeyOffset;
 - (struct CGPoint { float x1; float x2; })rightArrowKeyOffset;
+- (int)rowLimitForKey:(id)arg1;
 - (struct CGPoint { float x1; float x2; })secondaryShiftKeyOffset;
 - (void)setupLayoutSegments;
 - (id)shiftDeleteGlyphTraits;
@@ -59,7 +60,7 @@
 - (struct CGPoint { float x1; float x2; })stringKeyOffset;
 - (struct CGPoint { float x1; float x2; })undoKeyOffset;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantDisplayFrameInsets;
-- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2;
+- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2 rowLimit:(int)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantPaddedFrameInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;
 - (struct CGPoint { float x1; float x2; })variantSymbolTextOffset;

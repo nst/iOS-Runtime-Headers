@@ -21,6 +21,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property(readonly) BOOL isSearchingWithNoContactSelected;
 @property(readonly) BOOL shouldShowGroups;
 @property(readonly) Class superclass;
 @property(readonly) CNContact * unsavedContact;
@@ -51,6 +52,7 @@
 - (id)initWithModel:(id)arg1;
 - (void)insertProperty:(int*)arg1 insertValue:(id*)arg2 insertLabel:(id*)arg3;
 - (BOOL)isNavigationButtonEnabled:(int)arg1;
+- (BOOL)isSearchingWithNoContactSelected;
 - (void)linksUpdatedForPerson:(void*)arg1;
 - (void)loadState;
 - (void)loadView;

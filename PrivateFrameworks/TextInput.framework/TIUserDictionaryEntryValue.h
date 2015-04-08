@@ -31,6 +31,7 @@
 - (void)setShortcut:(id)arg1;
 - (void)setTimestamp:(id)arg1;
 - (id)shortcut;
+- (id)shortcutForSorting;
 - (id)timestamp;
 
 @end

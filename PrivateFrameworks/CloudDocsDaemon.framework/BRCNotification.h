@@ -13,6 +13,7 @@
     unsigned long long _parentFileID;
     BRCItemID *_parentID;
     NSSet *_parentIDs;
+    NSString *_unsaltedBookmarkData;
 }
 
 @property(readonly) NSString * aliasContainerID;
@@ -25,14 +26,15 @@
 @property(readonly) NSNumber * parentFileObjectID;
 @property(readonly) BRCItemID * parentID;
 @property(retain) NSSet * parentIDs;
+@property(retain) NSString * unsaltedBookmarkData;
 @property(readonly) NSURL * url;
 
++ (id)notificationGatheredFromItem:(id)arg1;
 + (id)notificationWithAliasItem:(id)arg1 targetItemNotification:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_setupFileIDsWithLocalItem:(id)arg1;
-- (void)_setupWithNonAliasItem:(id)arg1 diffs:(unsigned long long)arg2;
+- (void)_addAliasDecoration:(id)arg1;
 - (id)aliasContainerID;
 - (BOOL)canMerge:(id)arg1;
 - (Class)classForCoder;
@@ -40,10 +42,11 @@
 - (id)containerIDsWithReverseAliases;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)generateLogicalExtension:(id)arg1 physicalExtension:(id)arg2;
+- (id)initWithAliasItem:(id)arg1 itemDiffs:(unsigned long long)arg2;
 - (id)initWithLocalItem:(id)arg1 itemDiffs:(unsigned long long)arg2;
-- (id)initWithLocalItem:(id)arg1 itemDiffs:(unsigned long long)arg2 updateDiffs:(unsigned short)arg3;
 - (id)itemID;
 - (void)merge:(id)arg1;
+- (id)notificationByStrippingSharingInfoIfNeeded;
 - (unsigned long long)oldParentFileID;
 - (id)oldParentFileObjectID;
 - (unsigned long long)parentFileID;
@@ -52,5 +55,8 @@
 - (id)parentIDs;
 - (void)setContainerIDsWithReverseAliases:(id)arg1;
 - (void)setParentIDs:(id)arg1;
+- (void)setUnsaltedBookmarkData:(id)arg1;
+- (id)subclassDescription;
+- (id)unsaltedBookmarkData;
 
 @end

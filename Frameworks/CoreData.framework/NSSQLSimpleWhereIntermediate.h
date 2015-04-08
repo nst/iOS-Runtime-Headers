@@ -19,7 +19,7 @@
 - (id)_generateSQLForConst:(id)arg1 inAttribute:(id)arg2 expression:(id)arg3 inContext:(id)arg4;
 - (id)_generateSQLForConst:(id)arg1 inManyToMany:(id)arg2 expression:(id)arg3 inContext:(id)arg4;
 - (id)_generateSQLForConst:(id)arg1 inToMany:(id)arg2 inContext:(id)arg3;
-- (id)_generateSQLForConstKeyArray:(id)arg1 targetEntity:(id)arg2 inContext:(id)arg3;
+- (id)_generateSQLForConstKeyArray:(id)arg1 targetEntity:(id)arg2 reboundFrom:(id)arg3 inContext:(id)arg4;
 - (id)_generateSQLForMatchingOperator:(id)arg1 inContext:(id)arg2;
 - (id)_generateSQLForString:(id)arg1 expressionPath:(id)arg2 wildStart:(BOOL)arg3 wildEnd:(BOOL)arg4 allowToMany:(BOOL)arg5 inContext:(id)arg6;
 - (id)_generateSQLForWildSubStringForGlob:(id)arg1 wildStart:(BOOL)arg2 wildEnd:(BOOL)arg3;

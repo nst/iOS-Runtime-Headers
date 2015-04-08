@@ -19,6 +19,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)CKPropertiesDescription;
 - (BOOL)accountWantsPushRegistration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

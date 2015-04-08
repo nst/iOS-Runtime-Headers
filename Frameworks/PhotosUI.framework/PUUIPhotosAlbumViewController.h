@@ -34,7 +34,7 @@
 - (id)initWithSpec:(id)arg1;
 - (void)loadView;
 - (BOOL)pu_wantsNavigationBarVisible;
-- (void)setAlbum:(id)arg1;
+- (void)setAlbum:(id)arg1 existingFetchResults:(id)arg2;
 - (void)viewDidLoad;
 
 @end

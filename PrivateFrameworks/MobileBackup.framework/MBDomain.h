@@ -5,6 +5,8 @@
 @class NSDictionary, NSSet, NSString;
 
 @interface MBDomain : NSObject {
+    int _fileDescriptor;
+    int _fileDescriptorRefCount;
     NSString *_name;
     NSDictionary *_relativePathAggregateDictionaryGroups;
     NSDictionary *_relativePathDomainRedirects;
@@ -88,11 +90,13 @@
 + (double)systemDomainsMinSupportedVersion;
 + (double)systemDomainsVersion;
 
+- (void)_releaseFileDescriptor;
 - (int)compare:(id)arg1;
 - (id)containerID;
 - (int)containerType;
 - (void)dealloc;
 - (id)description;
+- (int)fileDescriptor;
 - (unsigned int)hash;
 - (id)initWithName:(id)arg1 plist:(id)arg2;
 - (id)initWithName:(id)arg1 rootPath:(id)arg2;

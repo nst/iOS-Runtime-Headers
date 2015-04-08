@@ -31,10 +31,13 @@
 
 - (id)_indexesOfCompatibleSection:(id)arg1;
 - (BOOL)_shouldIgnoreQuery:(id)arg1;
+- (void)activate;
 - (void)addDeserializer:(id)arg1;
+- (void)addSearchThroughSectionWithQuery:(id)arg1;
 - (void)addSections:(id)arg1;
 - (BOOL)cleanupObsoleteResults;
 - (void)clear;
+- (void)deactivate;
 - (void)dealloc;
 - (id)delegate;
 - (void)handleOptionsForNewSections:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSHashTable, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, NSURL, TSPArchiverManager, TSPComponentExternalReferenceMap, TSPDocumentRevision, TSPObjectContainer, TSPObjectContext, TSPPackageMetadata, TSUPathSet;
+@class NSHashTable, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, NSURL, TSPArchiverManager, TSPComponentExternalReferenceMap, TSPDataAttributesSnapshot, TSPDocumentRevision, TSPObject, TSPObjectContainer, TSPObjectContext, TSPPackageMetadata, TSUPathSet;
 
 @interface TSPPackageWriteCoordinator : NSObject <TSPArchiverManagerDelegate, TSPComponentWriterDelegate, TSPDataArchiver, TSPExternalReferenceDelegate, TSPObjectModifyDelegate> {
     TSPArchiverManager *_archiverManager;
@@ -35,6 +35,7 @@
     } _componentPropertiesSnapshot;
     NSObject<OS_dispatch_queue> *_componentQueue;
     TSPObjectContext *_context;
+    TSPDataAttributesSnapshot *_dataAttributesSnapshot;
     NSMutableArray *_dataFinalizeHandlers;
     BOOL _didWriteMetadata;
     BOOL _didWriteObjectContainer;
@@ -48,6 +49,7 @@
     unsigned long long _fileFormatVersion;
     BOOL _isCancelled;
     BOOL _isRecoverableError;
+    TSPObject *_metadataObject;
     NSObject<OS_dispatch_queue> *_metadataQueue;
     NSHashTable *_modifiedObjectsDuringWrite;
     NSObject<OS_dispatch_queue> *_modifyObjectQueue;
@@ -183,12 +185,12 @@
 - (void)archiveComponent:(id)arg1 locator:(id)arg2 storeOutsideObjectArchive:(BOOL)arg3 rootObject:(id)arg4 withPackageWriter:(id)arg5;
 - (void)calculateExternalReferences;
 - (id)componentForObjectIdentifier:(long long)arg1 objectOrNil:(id)arg2;
-- (long long)componentIdentifierForObjectIdentifier:(long long)arg1 objectOrNil:(id)arg2;
+- (long long)componentIdentifierForObjectIdentifier:(long long)arg1 objectOrNil:(id)arg2 objectUUIDOrNil:(id)arg3;
 - (void)componentWriter:(id)arg1 canSkipArchivingStronglyReferencedObject:(id)arg2 fromComponentRootObject:(id)arg3 completion:(id)arg4;
 - (void)componentWriter:(id)arg1 locatorForClaimingComponent:(id)arg2 queue:(id)arg3 completion:(id)arg4;
 - (BOOL)componentWriter:(id)arg1 object:(id)arg2 belongsToLinkedComponent:(id)arg3;
 - (void)componentWriter:(id)arg1 wantsComponentOfObject:(id)arg2 queue:(id)arg3 completion:(id)arg4;
-- (id)componentWriter:(id)arg1 wantsExplicitComponentRootObjectForObject:(id)arg2 claimingComponent:(id)arg3;
+- (id)componentWriter:(id)arg1 wantsExplicitComponentRootObjectForObject:(id)arg2 archiverOrNil:(id)arg3 claimingComponent:(id)arg4 hasArchiverAccessLock:(BOOL)arg5;
 - (void)componentWriterNeedsDocumentRecovery:(id)arg1;
 - (void)componentWriterWantsDelayedObjects:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (void)copyComponent:(id)arg1 locator:(id)arg2 packageWriter:(id)arg3;
@@ -202,10 +204,11 @@
 - (void)enqueueRootObject:(id)arg1 forceArchive:(BOOL)arg2 completion:(id)arg3;
 - (void)enqueueRootObjectImpl:(id)arg1 forceArchive:(BOOL)arg2 completion:(id)arg3;
 - (void)enumerateWrittenObjectsWithBlock:(id)arg1;
-- (id)explicitComponentRootObjectForObject:(id)arg1 claimingComponent:(id)arg2 isInComponentQueue:(BOOL)arg3;
+- (id)explicitComponentRootObjectForObject:(id)arg1;
+- (id)explicitComponentRootObjectForObject:(id)arg1 archiverOrNil:(id)arg2 claimingComponent:(id)arg3 isInComponentQueue:(BOOL)arg4 hasArchiverAccessLock:(BOOL)arg5;
 - (id)init;
-- (id)initWithContext:(id)arg1 documentRevision:(id)arg2 saveToken:(unsigned long long)arg3 packageIdentifier:(unsigned char)arg4 fileFormatVersion:(unsigned long long)arg5 preferredPackageType:(int)arg6;
-- (id)initWithContext:(id)arg1 documentRevision:(id)arg2 saveToken:(unsigned long long)arg3 packageIdentifier:(unsigned char)arg4 fileFormatVersion:(unsigned long long)arg5 preferredPackageType:(int)arg6 packageWriteCoordinator:(id)arg7 captureSnapshots:(BOOL)arg8;
+- (id)initWithContext:(id)arg1 documentRevision:(id)arg2 saveToken:(unsigned long long)arg3 packageIdentifier:(unsigned char)arg4 fileFormatVersion:(unsigned long long)arg5 preferredPackageType:(int)arg6 metadataObject:(id)arg7 dataAttributesSnapshot:(id)arg8;
+- (id)initWithContext:(id)arg1 documentRevision:(id)arg2 saveToken:(unsigned long long)arg3 packageIdentifier:(unsigned char)arg4 fileFormatVersion:(unsigned long long)arg5 preferredPackageType:(int)arg6 metadataObject:(id)arg7 dataAttributesSnapshot:(id)arg8 packageWriteCoordinator:(id)arg9 captureSnapshots:(BOOL)arg10;
 - (BOOL)isComponentExternal:(id)arg1 wasWritten:(BOOL*)arg2 wasCopied:(BOOL*)arg3;
 - (BOOL)isComponentPersisted:(id)arg1;
 - (BOOL)isObjectInExternalPackage:(id)arg1 claimingComponent:(id*)arg2;
@@ -222,11 +225,12 @@
 - (BOOL)shouldLinkComponentOfObject:(id)arg1;
 - (void)stopCapturingSnapshots;
 - (void)updateExternalReferencesForLinkedComponent:(id)arg1;
-- (void)updateObjectContextForSuccessfulSaveWithPackageWriter:(id)arg1;
+- (void)updateObjectContextForSuccessfulSaveWithPackageWriter:(id)arg1 packageURL:(id)arg2;
 - (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;
 - (void)writeComponent:(id)arg1 rootObjectOrNil:(id)arg2 forceArchive:(BOOL)arg3 withPackageWriter:(id)arg4;
 - (void)writeExternalReferences:(id)arg1 andUpdateLazyReferences:(id)arg2 withPackageWriter:(id)arg3 forComponent:(id)arg4 locator:(id)arg5;
 - (void)writeRemainingComponentsWithPackageWriter:(id)arg1 completionQueue:(id)arg2 completion:(id)arg3;
+- (void)writeRemainingRootObjectsAndRelatedComponents:(id)arg1 withPackageWriter:(id)arg2 completionQueue:(id)arg3 completion:(id)arg4;
 - (void)writeRootObject:(id)arg1 withPackageWriter:(id)arg2 saveOperationState:(id)arg3 completionQueue:(id)arg4 completion:(id)arg5;
 - (unsigned int)writeRootObject:(id)arg1 withPackageWriter:(id)arg2 saveOperationState:(id)arg3 error:(id*)arg4;
 - (void)writeRootObjectAndRelatedComponents:(id)arg1 withPackageWriter:(id)arg2 completionQueue:(id)arg3 completion:(id)arg4;

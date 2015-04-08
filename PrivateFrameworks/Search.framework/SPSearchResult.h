@@ -17,6 +17,7 @@
     unsigned long long _identifier;
     unsigned int _numberOfSummaryLines;
     NSMutableArray *_rows;
+    long long _score;
     NSString *_subtitle;
     NSString *_summary;
     NSString *_title;
@@ -76,6 +77,8 @@
 @property(retain) PRSImage * rt_glyph;
 @property BOOL rt_newline;
 @property(retain) NSString * rt_text;
+@property unsigned int score;
+@property long long score;
 @property(retain) NSString * section_header;
 @property(retain) NSString * string_format;
 @property(retain) NSString * subtitle;
@@ -125,6 +128,7 @@
 - (id)rows;
 - (id)rowsAtIndex:(unsigned int)arg1;
 - (unsigned int)rowsCount;
+- (long long)score;
 - (void)setAdditionalProperties:(id)arg1;
 - (void)setAuxiliarySubtitle:(id)arg1;
 - (void)setAuxiliaryTitle:(id)arg1;
@@ -137,6 +141,7 @@
 - (void)setNumberOfSummaryLines:(unsigned int)arg1;
 - (void)setResultURL:(id)arg1;
 - (void)setRows:(id)arg1;
+- (void)setScore:(long long)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setSummary:(id)arg1;
 - (void)setTitle:(id)arg1;

@@ -5,6 +5,7 @@
 @class NSHashTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, PLPhotoLibrary;
 
 @interface PHPhotoLibrary : NSObject {
+    PLPhotoLibrary *_changeHandlingPhotoLibrary;
     NSMutableDictionary *_changeNotificationInfo;
     NSMutableDictionary *_changeRequests;
     NSMutableSet *_deletes;
@@ -21,6 +22,7 @@
     NSMutableSet *_updates;
 }
 
+@property(retain) PLPhotoLibrary * changeHandlingPhotoLibrary;
 @property(retain) NSMutableDictionary * changeNotificationInfo;
 @property(retain) NSMutableDictionary * changeRequests;
 @property(retain) NSMutableSet * deletes;
@@ -39,6 +41,7 @@
 + (Class)PHObjectClassForEntityName:(id)arg1;
 + (Class)PHObjectClassForOID:(id)arg1;
 + (id)_effectiveRootEntity:(id)arg1;
++ (void)_forceUserInterfaceReload;
 + (int)authorizationStatus;
 + (Class)classForFetchType:(id)arg1;
 + (void)requestAuthorization:(id)arg1;
@@ -52,6 +55,7 @@
 - (void)_commitTransaction:(id)arg1;
 - (void)_processPendingChanges;
 - (void)assertTransaction;
+- (id)changeHandlingPhotoLibrary;
 - (id)changeNotificationInfo;
 - (id)changeRequestForUUID:(id)arg1;
 - (id)changeRequests;
@@ -89,6 +93,7 @@
 - (void)registerUUID:(id)arg1 forSaveToken:(id)arg2;
 - (id)removeUuidForSaveToken:(id)arg1;
 - (id)saveTokensToKnownUUIDs;
+- (void)setChangeHandlingPhotoLibrary:(id)arg1;
 - (void)setChangeNotificationInfo:(id)arg1;
 - (void)setChangeRequest:(id)arg1 forUUID:(id)arg2;
 - (void)setChangeRequests:(id)arg1;

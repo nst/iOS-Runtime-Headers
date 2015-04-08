@@ -3,6 +3,7 @@
  */
 
 @interface MTLDebugFunctionArgument : NSObject {
+    unsigned int bufferLength;
     unsigned int bufferOffset;
     BOOL hasBeenUsed;
     BOOL hasLodClamp;

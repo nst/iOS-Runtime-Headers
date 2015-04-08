@@ -20,7 +20,6 @@
     NSString *_owner;
     CKDPProtectionInfo *_protectionInfo;
     CKDPRecordIdentifier *_recordId;
-    NSString *_referenceIdentifier;
     NSData *_referenceSignature;
     NSString *_requestor;
     NSData *_signature;
@@ -46,7 +45,6 @@
 @property(readonly) BOOL hasOwner;
 @property(readonly) BOOL hasProtectionInfo;
 @property(readonly) BOOL hasRecordId;
-@property(readonly) BOOL hasReferenceIdentifier;
 @property(readonly) BOOL hasReferenceSignature;
 @property(readonly) BOOL hasRequestor;
 @property(readonly) BOOL hasSignature;
@@ -56,7 +54,6 @@
 @property(retain) NSString * owner;
 @property(retain) CKDPProtectionInfo * protectionInfo;
 @property(retain) CKDPRecordIdentifier * recordId;
-@property(retain) NSString * referenceIdentifier;
 @property(retain) NSData * referenceSignature;
 @property(retain) NSString * requestor;
 @property(retain) NSData * signature;
@@ -86,7 +83,6 @@
 - (BOOL)hasOwner;
 - (BOOL)hasProtectionInfo;
 - (BOOL)hasRecordId;
-- (BOOL)hasReferenceIdentifier;
 - (BOOL)hasReferenceSignature;
 - (BOOL)hasRequestor;
 - (BOOL)hasSignature;
@@ -100,7 +96,6 @@
 - (id)protectionInfo;
 - (BOOL)readFrom:(id)arg1;
 - (id)recordId;
-- (id)referenceIdentifier;
 - (id)referenceSignature;
 - (id)requestor;
 - (void)setContentBaseURL:(id)arg1;
@@ -116,7 +111,6 @@
 - (void)setOwner:(id)arg1;
 - (void)setProtectionInfo:(id)arg1;
 - (void)setRecordId:(id)arg1;
-- (void)setReferenceIdentifier:(id)arg1;
 - (void)setReferenceSignature:(id)arg1;
 - (void)setRequestor:(id)arg1;
 - (void)setSignature:(id)arg1;

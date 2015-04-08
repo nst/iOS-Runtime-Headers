@@ -13,6 +13,6 @@
 @property(readonly) Class superclass;
 
 + (id)_valueForItem:(id)arg1;
-+ (void)presentView:(id)arg1 withDataItem:(id)arg2;
++ (void)presentCell:(id)arg1 withDataItem:(id)arg2;
 
 @end

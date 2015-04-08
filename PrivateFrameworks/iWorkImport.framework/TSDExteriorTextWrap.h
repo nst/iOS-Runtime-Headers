@@ -32,13 +32,13 @@
 - (int)direction;
 - (int)fitType;
 - (id)init;
-- (id)initWithArchive:(const struct ExteriorTextWrapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; float x7; bool x8; int x9; unsigned int x10[1]; }*)arg1;
+- (id)initWithArchive:(const struct ExteriorTextWrapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; unsigned int x7; float x8; float x9; bool x10; }*)arg1;
 - (id)initWithIsHTMLWrap:(BOOL)arg1 type:(int)arg2 direction:(int)arg3 fitType:(int)arg4 margin:(float)arg5 alphaThreshold:(float)arg6;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isHTMLWrap;
 - (float)margin;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)saveToArchive:(struct ExteriorTextWrapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; float x7; bool x8; int x9; unsigned int x10[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ExteriorTextWrapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; unsigned int x7; float x8; float x9; bool x10; }*)arg1 archiver:(id)arg2;
 - (int)type;
 
 @end

@@ -6,10 +6,12 @@
 
 @interface MKStackingViewController : UIViewController <UIScrollViewDelegate> {
     _MKStackingContentView *_contentView;
+    unsigned int _countOfCurrentLayoutInvocations;
     _MKStackingPlaceholderView *_headerPlaceholderView;
     UIView *_headerView;
     NSLayoutConstraint *_heightCompressionResistanceConstraint;
     NSLayoutConstraint *_heightHuggingConstraint;
+    BOOL _isBuildingView;
     BOOL _isComputingInitialViewControllerPreferredHeight;
     BOOL _isScrollingProgrammaticallyToViewController;
     UIScrollView *_scrollView;
@@ -24,6 +26,7 @@
     NSArray *_viewControllers;
     NSMapTable *_viewControllersToPreferredHeightConstraints;
     NSMutableSet *_viewControllersWithObservedTitles;
+    NSLayoutConstraint *_widthConstraint;
     BOOL _willRelayoutForPreferredContentSizeChange;
 }
 
@@ -83,6 +86,8 @@
 - (id)viewControllers;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

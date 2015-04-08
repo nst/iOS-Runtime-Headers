@@ -64,6 +64,7 @@
 - (id)info;
 - (id)initWithModel:(id)arg1 chartType:(id)arg2 seriesType:(id)arg3;
 - (double)intercept;
+- (BOOL)isStackedPercentageThatRoundsDownToZero;
 - (BOOL)isValid;
 - (BOOL)isValidNonZero;
 - (id)model;

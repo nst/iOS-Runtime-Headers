@@ -8,11 +8,11 @@
 + (id)sharedUIKitDelegate;
 
 - (void)_webthread_webView:(id)arg1 attachRootLayer:(id)arg2;
-- (void)addInputString:(id)arg1 fromVariantKey:(BOOL)arg2;
 - (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2;
 - (id)checkSpellingOfString:(id)arg1;
 - (struct CGPoint { float x1; float x2; })contentsPointForWebView:(id)arg1;
 - (void)deleteFromInput;
+- (void)deleteFromInputwithFlags:(unsigned int)arg1;
 - (int)deviceOrientation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentVisibleRectForWebView:(id)arg1;
 - (int)getPasteboardChangeCount;

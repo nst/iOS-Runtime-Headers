@@ -2,41 +2,53 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, GEOStructuredAddress, NSString;
+@class GEOLatLng, GEOStructuredAddress, NSMutableArray, NSString;
 
 @interface GEOWaypointID : PBCodable <NSCopying> {
     GEOStructuredAddress *_addressHint;
+    NSMutableArray *_formattedAddressLineHints;
     struct { 
         unsigned int muid : 1; 
         unsigned int resultProviderId : 1; 
+        unsigned int placeTypeHint : 1; 
     } _has;
     GEOLatLng *_locationHint;
     unsigned long long _muid;
     NSString *_placeNameHint;
+    int _placeTypeHint;
     unsigned long long _resultProviderId;
 }
 
 @property(retain) GEOStructuredAddress * addressHint;
+@property(retain) NSMutableArray * formattedAddressLineHints;
 @property(readonly) BOOL hasAddressHint;
 @property(readonly) BOOL hasLocationHint;
 @property BOOL hasMuid;
 @property(readonly) BOOL hasPlaceNameHint;
+@property BOOL hasPlaceTypeHint;
 @property BOOL hasResultProviderId;
 @property(retain) GEOLatLng * locationHint;
 @property unsigned long long muid;
 @property(retain) NSString * placeNameHint;
+@property int placeTypeHint;
 @property unsigned long long resultProviderId;
 
+- (void)addFormattedAddressLineHint:(id)arg1;
 - (id)addressHint;
+- (void)clearFormattedAddressLineHints;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)formattedAddressLineHintAtIndex:(unsigned int)arg1;
+- (id)formattedAddressLineHints;
+- (unsigned int)formattedAddressLineHintsCount;
 - (BOOL)hasAddressHint;
 - (BOOL)hasLocationHint;
 - (BOOL)hasMuid;
 - (BOOL)hasPlaceNameHint;
+- (BOOL)hasPlaceTypeHint;
 - (BOOL)hasResultProviderId;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -44,14 +56,18 @@
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)muid;
 - (id)placeNameHint;
+- (int)placeTypeHint;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned long long)resultProviderId;
 - (void)setAddressHint:(id)arg1;
+- (void)setFormattedAddressLineHints:(id)arg1;
 - (void)setHasMuid:(BOOL)arg1;
+- (void)setHasPlaceTypeHint:(BOOL)arg1;
 - (void)setHasResultProviderId:(BOOL)arg1;
 - (void)setLocationHint:(id)arg1;
 - (void)setMuid:(unsigned long long)arg1;
 - (void)setPlaceNameHint:(id)arg1;
+- (void)setPlaceTypeHint:(int)arg1;
 - (void)setResultProviderId:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 

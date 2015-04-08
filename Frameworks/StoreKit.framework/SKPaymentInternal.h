@@ -12,6 +12,7 @@
     int _quantity;
     NSData *_requestData;
     NSDictionary *_requestParameters;
+    BOOL _simulatesAskToBuyInSandbox;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

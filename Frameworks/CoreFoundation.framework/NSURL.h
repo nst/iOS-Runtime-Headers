@@ -4,7 +4,7 @@
 
 @class NSArray, NSNumber, NSString, NSURL;
 
-@interface NSURL : NSObject <NSCopying, NSSecureCoding, PQLBindable, QLPreviewItem, TSUDownloadItem> {
+@interface NSURL : NSObject <NSCopying, NSSecureCoding, PQLValuable, PQLValuable, QLPreviewItem, TSUDownloadItem> {
     NSURL *_baseURL;
     void *_clients;
     void *_reserved;
@@ -20,6 +20,7 @@
 @property(readonly) int addressBookUID;
 @property(copy,readonly) NSURL * baseURL;
 @property(readonly) NSString * br_lastEditorDeviceName;
+@property(readonly) NSString * br_lastEditorName;
 @property(readonly) int callService;
 @property(readonly) BOOL ckShouldShowComposeUI;
 @property(copy,readonly) NSString * debugDescription;
@@ -142,7 +143,7 @@
 + (id)davCompatibleFilenameForFilename:(id)arg1;
 + (id)davCompatibleFilenameForFilename:(id)arg1;
 + (void)downloadManager:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
-+ (void)downloadManager:(id)arg1 task:(id)arg2 didFinishDownloadingToURL:(id)arg3;
++ (BOOL)downloadManager:(id)arg1 task:(id)arg2 didFinishDownloadingToURL:(id)arg3 error:(id*)arg4;
 + (id)escapedStringForString:(id)arg1;
 + (id)faceTimeAcceptURLWithURL:(id)arg1;
 + (id)faceTimeAcceptURLWithURL:(id)arg1 conferenceID:(id)arg2;
@@ -158,21 +159,19 @@
 + (id)faceTimeURLWithPhoneNumber:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5;
 + (id)faceTimeURLWithURL:(id)arg1;
 + (id)filePathURLWithEscapes:(id)arg1;
-+ (id)filePathURLWithEscapes:(id)arg1;
 + (id)fileURLWithFileSystemRepresentation:(const char *)arg1 isDirectory:(BOOL)arg2 relativeToURL:(id)arg3;
 + (id)fileURLWithPath:(id)arg1;
 + (id)fileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2;
 + (id)fileURLWithPathComponents:(id)arg1;
 + (id)iDiskSmallNameCompatibleNameForFilename:(id)arg1;
 + (id)improperlyEscapedString:(id)arg1;
-+ (id)improperlyEscapedString:(id)arg1;
 + (id)mapsURLWithAddress:(id)arg1;
 + (id)mapsURLWithQuery:(id)arg1;
 + (id)mapsURLWithSourceAddress:(id)arg1 destinationAddress:(id)arg2;
-+ (id)properlyEscapedString:(id)arg1;
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (id)properlyEscapedString:(id)arg1;
 + (id)queryStringForDictionary:(id)arg1 escapedValues:(BOOL)arg2;
-+ (id)relativeURLWithEscapes:(id)arg1;
 + (id)relativeURLWithEscapes:(id)arg1;
 + (id)resourceValuesForKeys:(id)arg1 fromBookmarkData:(id)arg2;
 + (id)safari_URLWithDataAsString:(id)arg1;
@@ -180,6 +179,10 @@
 + (id)safari_URLWithUserTypedString:(id)arg1;
 + (void)safari_enumeratePossibleURLsForUserTypedString:(id)arg1 withBlock:(id)arg2;
 + (struct _NSRange { unsigned int x1; unsigned int x2; })safari_hostAndPortRangeFromUserTypedString:(id)arg1;
++ (id)sfu_filePathURLWithEscapes:(id)arg1;
++ (id)sfu_improperlyEscapedString:(id)arg1;
++ (id)sfu_properlyEscapedString:(id)arg1;
++ (id)sfu_relativeURLWithEscapes:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)telephonyURLForTelEmergency;
 + (id)telephonyURLForTelEmergencyCall;
@@ -223,7 +226,6 @@
 - (id)URLByResolvingSymlinksInPath;
 - (id)URLBySettingQueryParameterValue:(id)arg1 forKey:(id)arg2;
 - (id)URLByStandardizingPath;
-- (id)URLExceptPrivate;
 - (id)URLWithNewQueryParameterDictionary:(id)arg1;
 - (id)URLWithUsername:(id)arg1;
 - (id)URLWithUsername:(id)arg1;
@@ -261,8 +263,8 @@
 - (BOOL)_isSafeFileForBackgroundUpload:(int)arg1;
 - (id)_mobilePhonePathParameters;
 - (id)_mobilePhoneQueryParameters;
+- (void)_performWithPhysicalURL:(id)arg1;
 - (id)_phoneNumberConvertNumbersToLatin:(BOOL)arg1;
-- (id)_physicalURL;
 - (long long)_promiseExtensionConsume;
 - (void)_promiseExtensionRelease:(long long)arg1;
 - (id)_relativeURLPath;
@@ -318,6 +320,7 @@
 - (void)br_bookmarkableStringWithEtag:(BOOL)arg1 completion:(id)arg2;
 - (id)br_cloudDocsContainer;
 - (id)br_containerID;
+- (id)br_containerIDForDocumentsContainerURL;
 - (void)br_containerIDsWithExternalReferencesWithHandler:(id)arg1;
 - (id)br_debugDescription;
 - (BOOL)br_getTagNames:(id*)arg1 error:(id*)arg2;
@@ -326,17 +329,24 @@
 - (BOOL)br_isExternalDocumentReference;
 - (BOOL)br_isInCloudDocsPrivateStorages;
 - (BOOL)br_isInMobileDocuments;
+- (BOOL)br_isInSameVolumeAsURL:(id)arg1;
 - (BOOL)br_isParentOfURL:(id)arg1;
+- (BOOL)br_isParentOfURL:(id)arg1 strictly:(BOOL)arg2;
+- (BOOL)br_isStrictlyInMobileDocuments;
 - (id)br_lastEditorDeviceName;
+- (id)br_lastEditorName;
 - (id)br_pathRelativeToMobileDocuments;
 - (void)br_preCacheBookmarkData:(id)arg1 versionEtag:(id)arg2;
 - (BOOL)br_setTagNames:(id)arg1 error:(id*)arg2;
+- (id)brc_applicationBundleID;
+- (id)brc_applicationContainerID;
 - (id)brc_attributesValues:(id)arg1 container:(id)arg2 lookup:(id)arg3;
 - (id)brc_fileReferenceFileID;
 - (BOOL)brc_fileReferenceParseIntoVolumeID:(id*)arg1 fileID:(id*)arg2 andRelativePath:(id*)arg3;
 - (id)brc_fileReferenceRelativePath;
 - (id)brc_fileReferenceVolumeID;
 - (id)brc_issueSandboxExtensionOfClass:(const char *)arg1 error:(id*)arg2;
+- (id)brc_localizedApplicationName;
 - (id)cacheKeyRepresentation;
 - (int)callService;
 - (BOOL)checkPromisedItemIsReachableAndReturnError:(id*)arg1;
@@ -381,6 +391,8 @@
 - (id)host;
 - (id)hostWithoutWWW;
 - (id)iCloudFamilyURL;
+- (id)iCloudSharingURL;
+- (id)iCloudSharingURL_noFragment;
 - (id)iTunesStoreURL;
 - (id)iWorkApplicationName;
 - (id)iWorkDocumentName;
@@ -407,7 +419,6 @@
 - (BOOL)isAccountURL;
 - (BOOL)isAppStoreURL;
 - (BOOL)isAssetURL;
-- (BOOL)isAssetsLibraryURL;
 - (BOOL)isBasebandLogURL;
 - (BOOL)isEmergencyCallURL;
 - (BOOL)isEmergencyURL;
@@ -434,17 +445,14 @@
 - (BOOL)isMailToURL;
 - (BOOL)isMemberOfClass:(Class)arg1;
 - (BOOL)isMusicStoreURL;
-- (BOOL)isOnNonHFSVolume;
 - (BOOL)isOnRemoteFileSystem;
 - (BOOL)isPlayImmediatelyURL;
-- (BOOL)isRelative;
 - (BOOL)isRelative;
 - (BOOL)isSafeExternalURL;
 - (BOOL)isShowNowPlayingURL;
 - (BOOL)isSpringboardHandledURL;
 - (BOOL)isStoreServicesURL;
 - (BOOL)isStoreServicesURL;
-- (BOOL)isUbiquitous;
 - (BOOL)isUpgradeURL;
 - (BOOL)isValidFaceTimeURL;
 - (BOOL)isVoicemailURL;
@@ -452,6 +460,7 @@
 - (BOOL)isWebcalURL;
 - (BOOL)isiWorkURL;
 - (id)itmsURL;
+- (id)keynoteLiveURL;
 - (id)lastPathComponent;
 - (id)lastPathComponent;
 - (id)lastPathComponent;
@@ -471,7 +480,6 @@
 - (id)path;
 - (id)pathComponents;
 - (id)pathDecodedAndWithoutTrailingSlashRemoved;
-- (id)pathExceptPrivate;
 - (id)pathExtension;
 - (id)pathWithoutDecodingAndRemovingTrailingSlash;
 - (id)pathWithoutTrailingRemovingSlash;
@@ -525,7 +533,9 @@
 - (BOOL)setResourceValue:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (BOOL)setResourceValues:(id)arg1 error:(id*)arg2;
 - (void)setTemporaryResourceValue:(id)arg1 forKey:(id)arg2;
+- (BOOL)sfu_isRelative;
 - (id)shortcutIdentifier;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (id)standardizedURL;
 - (BOOL)startAccessingSecurityScopedResource;
@@ -534,10 +544,23 @@
 - (BOOL)suppressAssist;
 - (id)telephonyParameterDictionary;
 - (long long)totalBytesExpectedToBeDownloaded;
+- (id)tsp_URLExceptPrivate;
+- (id)tsp_embeddedUTI;
+- (BOOL)tsp_getIsUbiquitousValue:(BOOL*)arg1 error:(id*)arg2;
+- (BOOL)tsp_isAssetsLibraryURL;
+- (BOOL)tsp_isIWorkAVAssetURL;
+- (BOOL)tsp_isOnNonHFSVolume;
+- (BOOL)tsp_isUbiquitous;
+- (id)tsp_pathExceptPrivate;
 - (id)tsu_UTI;
 - (id)tsu_UTI;
 - (BOOL)tsu_conformsToUTI:(id)arg1;
 - (BOOL)tsu_conformsToUTI:(id)arg1;
+- (id)tsu_documentIdentifier;
+- (unsigned long long)tsu_fileSize;
+- (BOOL)tsu_isFileSizeTooLargeForSharing;
+- (BOOL)tsu_isShared;
+- (BOOL)tsu_isSharedWithMe;
 - (void)tsu_performSecurityScopedResourceAccessAsynchronouslyUsingBlock:(id)arg1;
 - (void)tsu_performSecurityScopedResourceAccessUsingBlock:(id)arg1;
 - (id)twitterURL;

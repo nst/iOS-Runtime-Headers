@@ -27,6 +27,7 @@
 - (BOOL)_setupAttachment:(id)arg1 withMimeBody:(id)arg2 error:(id*)arg3;
 - (void)addProvider:(id)arg1 forBaseURL:(id)arg2;
 - (id)attachmentForCID:(id)arg1;
+- (id)attachmentForContentID:(id)arg1;
 - (id)attachmentForData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3 contentID:(id)arg4 context:(id)arg5;
 - (id)attachmentForTextAttachment:(id)arg1 error:(id*)arg2;
 - (id)attachmentForURL:(id)arg1 error:(id*)arg2;
@@ -41,6 +42,7 @@
 - (void)fetchDataSynchronouslyForAttachment:(id)arg1;
 - (id)imageScalingQueue;
 - (id)init;
+- (void)loadAttachmentURL:(id)arg1 forContextID:(id)arg2;
 - (id)metadataForAttachment:(id)arg1 forKey:(id)arg2;
 - (void)recordPasteboardAttachmentsForURLs:(id)arg1 forContextID:(id)arg2;
 - (void)recordUndoAttachmentsForURLs:(id)arg1 forContextID:(id)arg2;

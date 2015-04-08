@@ -10,6 +10,7 @@
     UILabel *_label;
     float _labelAlpha;
     int _state;
+    BOOL _touchRecognizingHint;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -21,6 +22,7 @@
 @property float labelAlpha;
 @property int state;
 @property(readonly) Class superclass;
+@property BOOL touchRecognizingHint;
 
 - (void)_applyStateWithTextOverride:(id)arg1 completionHandler:(id)arg2;
 - (BOOL)_canEmphasizeState:(int)arg1;
@@ -38,6 +40,8 @@
 - (void)setLabelAlpha:(float)arg1;
 - (void)setState:(int)arg1;
 - (void)setState:(int)arg1 textOverride:(id)arg2 completionHandler:(id)arg3;
+- (void)setTouchRecognizingHint:(BOOL)arg1;
 - (int)state;
+- (BOOL)touchRecognizingHint;
 
 @end

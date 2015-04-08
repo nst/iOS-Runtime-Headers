@@ -36,8 +36,8 @@
 - (void)_processBatchImageJob:(id)arg1;
 - (void)_processCrashRecoveryJob:(id)arg1;
 - (void)_processDaemonJob:(id)arg1;
-- (void)_processDeletePhotoStreamAssetsWithUUIDs:(id)arg1;
-- (void)_processDeletePhotoStreamDataJob:(id)arg1;
+- (void)_processDeletePhotoStreamAssetsWithUUIDs:(id)arg1 withReason:(id)arg2;
+- (void)_processDeletePhotoStreamDataJob:(id)arg1 withReason:(id)arg2;
 - (void)_processImageJob:(id)arg1;
 - (void)_processImportImageJob:(id)arg1;
 - (void)_processIngestedSyncedAssetJob:(id)arg1;

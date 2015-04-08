@@ -7,28 +7,38 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class BRCItemID, BRCServerContainer, BRCStatInfo, BRCVersion, NSNumber, NSString;
+@class BRCAccountSession, BRCItemID, BRCLocalContainer, BRCServerZone, BRCStatInfo, BRCVersion, NSNumber, NSString;
 
 @interface BRCServerItem : NSObject <BRCItem> {
-    BRCServerContainer *_container;
+    BRCLocalContainer *_container;
     BRCItemID *_itemID;
     BRCVersion *_latestVersion;
     BOOL _needsInsert;
     NSString *_originalName;
-    NSNumber *_rank;
+    NSNumber *_ownerKey;
+    long long _rank;
+    BRCServerZone *_serverZone;
+    BRCAccountSession *_session;
+    unsigned int _sharingOptions;
     BRCStatInfo *_st;
+    BRCServerZone *_zone;
 }
 
-@property(readonly) BRCServerContainer * container;
+@property(readonly) BRCLocalContainer * container;
 @property(readonly) BOOL isAlias;
 @property(readonly) BOOL isDead;
 @property(readonly) BOOL isDirectory;
 @property(readonly) BOOL isDocument;
 @property(readonly) BOOL isLive;
+@property(readonly) BOOL isPackage;
 @property(readonly) BRCItemID * itemID;
 @property(readonly) BRCVersion * latestVersion;
 @property(readonly) NSString * originalName;
-@property(readonly) NSNumber * rank;
+@property(readonly) NSNumber * ownerKey;
+@property(readonly) long long rank;
+@property(readonly) BRCServerZone * serverZone;
+@property(readonly) BRCAccountSession * session;
+@property unsigned int sharingOptions;
 @property(readonly) BRCStatInfo * st;
 
 + (BOOL)supportsSecureCoding;
@@ -40,7 +50,7 @@
 - (id)descriptionWithContext:(id)arg1;
 - (unsigned long long)diffAgainstServerItem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initFromPQLResultSet:(id)arg1 container:(id)arg2 error:(id*)arg3;
+- (id)initFromPQLResultSet:(id)arg1 serverZone:(id)arg2 error:(id*)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithServerItem:(id)arg1;
 - (BOOL)isAlias;
@@ -48,10 +58,17 @@
 - (BOOL)isDirectory;
 - (BOOL)isDocument;
 - (BOOL)isLive;
+- (BOOL)isPackage;
 - (id)itemID;
 - (id)latestVersion;
+- (id)newLocalItemWithServerZone:(id)arg1 dbRowID:(unsigned long long)arg2;
 - (id)originalName;
-- (id)rank;
+- (id)ownerKey;
+- (long long)rank;
+- (id)serverZone;
+- (id)session;
+- (void)setSharingOptions:(unsigned int)arg1;
+- (unsigned int)sharingOptions;
 - (id)st;
 - (BOOL)validateLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 

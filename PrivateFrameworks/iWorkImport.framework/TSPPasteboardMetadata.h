@@ -7,7 +7,10 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSHashTable;
+
 @interface TSPPasteboardMetadata : TSPObject {
+    NSHashTable *_dataReferences;
     BOOL _isCrossAppPaste;
     BOOL _isCrossDocumentPaste;
     struct PasteboardMetadata { 
@@ -15,6 +18,8 @@
         struct UnknownFieldSet { 
             struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *fields_; 
         } _unknown_fields_; 
+        unsigned int _has_bits_[1]; 
+        int _cached_size_; 
         struct RepeatedField<unsigned int> { 
             unsigned int *elements_; 
             int current_size_; 
@@ -28,12 +33,11 @@
             int allocated_size_; 
             int total_size_; 
         } datas_; 
-        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *source_document_uuid_; 
-        int _cached_size_; 
-        unsigned int _has_bits_[1]; 
+        struct UUID {} *source_document_uuid_; 
     } _message;
 }
 
+@property(readonly) NSHashTable * dataReferences;
 @property(readonly) BOOL isCrossAppPaste;
 @property(readonly) BOOL isCrossDocumentPaste;
 
@@ -42,10 +46,13 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)dataReferences;
 - (id)initFromUnarchiver:(id)arg1;
+- (id)initWithContext:(id)arg1;
+- (id)initWithContext:(id)arg1 dataReferences:(id)arg2;
 - (BOOL)isCrossAppPaste;
 - (BOOL)isCrossDocumentPaste;
-- (struct PasteboardMetadata { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::DataInfo> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; int x8; unsigned int x9[1]; }*)message;
+- (struct PasteboardMetadata { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct RepeatedPtrField<TSP::DataInfo> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct UUID {} *x9; }*)message;
 - (void)saveToArchiver:(id)arg1;
 - (long long)tsp_identifier;
 

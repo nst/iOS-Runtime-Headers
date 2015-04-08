@@ -2,40 +2,66 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
+@class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
+
 @interface PLPreheatItem : NSObject {
+    int _CPLNotifyRegistrationToken;
+    BOOL _CPLPrefetching;
+    BOOL _CPLPrefetchingCancelled;
+    NSString *_CPLPrefetchingDoneToken;
+    NSObject<OS_dispatch_queue> *_CPLPrefetchingIsolationQueue;
+    NSObject<OS_dispatch_group> *_CPLPrefetchingWaitGroup;
+    BOOL _CPLPrefetchingWasCancelled;
+    NSString *_assetUUID;
     int _bestFormat;
+    BOOL _didCompleteCPLPrefetchingWithSuccessOrError;
     int _format;
-    BOOL _heated;
     int _imageType;
     struct CGSize { 
         float width; 
         float height; 
     } _optimalSourcePixelSize;
     int _prefetchCount;
+    NSString *_virtualCPLTaskIdentifier;
 }
 
+@property(readonly) BOOL CPLPrefetching;
+@property(readonly) NSObject<OS_dispatch_group> * CPLPrefetchingWaitGroup;
+@property BOOL CPLPrefetchingWasCancelled;
+@property(readonly) NSString * assetUUID;
 @property int bestFormat;
+@property BOOL didCompleteCPLPrefetchingWithSuccessOrError;
 @property(readonly) int format;
-@property BOOL heated;
 @property(readonly) int imageType;
 @property(readonly) struct CGSize { float x1; float x2; } optimalSourcePixelSize;
+@property(retain) NSString * virtualCPLTaskIdentifier;
 
+- (BOOL)CPLPrefetching;
+- (id)CPLPrefetchingWaitGroup;
+- (BOOL)CPLPrefetchingWasCancelled;
 - (BOOL)addImageHandler:(id)arg1;
+- (id)assetUUID;
 - (int)bestFormat;
 - (id)cachedImage:(BOOL*)arg1;
 - (id)cachedImageIfAvailable:(BOOL*)arg1;
-- (void)cancelPreheatRequest;
+- (void)cancelPreheatRequestWithCompletionHandler:(id)arg1;
+- (void)dealloc;
 - (int)decrementPrefetchCount;
+- (id)description;
+- (BOOL)didCompleteCPLPrefetchingWithSuccessOrError;
 - (int)format;
 - (BOOL)hasPrefetchCount;
-- (BOOL)heated;
 - (int)imageType;
 - (int)incrementPrefetchCount;
+- (id)initForCPLPrefetchingWithAssetUUID:(id)arg1 format:(int)arg2;
 - (BOOL)isCancelled;
 - (struct CGSize { float x1; float x2; })optimalSourcePixelSize;
 - (void)resetPrefetchCount;
 - (void)setBestFormat:(int)arg1;
-- (void)setHeated:(BOOL)arg1;
+- (void)setCPLPrefetchingWasCancelled:(BOOL)arg1;
+- (void)setDidCompleteCPLPrefetchingWithSuccessOrError:(BOOL)arg1;
+- (void)setVirtualCPLTaskIdentifier:(id)arg1;
 - (void)startPreheatRequestWithCompletionHandler:(id)arg1;
+- (id)virtualCPLTaskIdentifier;
 
 @end

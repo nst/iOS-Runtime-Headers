@@ -28,6 +28,7 @@
 @property _UIDocumentPickerDocumentTableViewController * tableView;
 @property(retain) UILabel * titleLabel;
 
++ (float)estimatedHeight;
 + (struct CGSize { float x1; float x2; })thumbnailSize;
 
 - (id)cloudButton;

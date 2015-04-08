@@ -9,7 +9,6 @@
 - (id)newPhotoBrowserControllerForPhotoAtIndexPath:(id)arg1 assetCollections:(id)arg2 dataSource:(id)arg3;
 - (BOOL)shouldShowPhotoScrubber;
 - (BOOL)shouldShowToolbarItemsInNavigationBar;
-- (BOOL)shouldUsePopovers;
 - (unsigned int)supportedInterfaceOrientations;
 
 @end

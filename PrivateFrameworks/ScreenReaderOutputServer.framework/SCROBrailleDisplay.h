@@ -144,6 +144,7 @@
 - (void)handleCommandMoveRightForDispatcher:(id)arg1;
 - (void)handleCommandPanLeftForDispatcher:(id)arg1;
 - (void)handleCommandPanRightForDispatcher:(id)arg1;
+- (void)handleCommandReturnBrailleEvent:(id)arg1 forDispatcher:(id)arg2;
 - (void)handleCommandRouterKeyEvent:(id)arg1 forDispatcher:(id)arg2;
 - (void)handleCommandToggleContractedBrailleEvent:(id)arg1 forDispatcher:(id)arg2;
 - (void)handleCommandToggleEightDotBrailleEvent:(id)arg1 forDispatcher:(id)arg2;

@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)_pickerController;
+- (void)_showPicker:(id)arg1;
 - (void)configureReusableTransparentFooterView:(id)arg1;
 - (float)desiredHeightForTransparentFooterView;
 - (float)desiredHeightForWidth:(float)arg1;

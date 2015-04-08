@@ -13,21 +13,25 @@
     NSString *_audioFileDir;
     BOOL _audioLoggingEnabled;
     NSString *_configData;
-    NSString *_configLocale;
+    NSString *_configLanguageCode;
     NSString *_configPath;
     NSString *_configVersion;
     int _earlyDetectResetTimer;
     double _earlyDetectTime;
+    unsigned int _extraSamplesAtStart;
     double _hardwareSampleRate;
     int _hasTriggeredNotifyToken;
     int _heartbeatCounter;
     BOOL _inactivityTimerSet;
     BOOL _isInactiveUser;
+    BOOL _isMaximized;
+    NSString *_languageCode;
     int _languageCodeChangedNotificationToken;
     NSObject<OS_dispatch_source> *_languageCodeChangedSource;
+    double _lastDowntime;
     unsigned int _lastEventEnd;
     double _lastScore;
-    NSString *_locale;
+    double _lastUptime;
     int _loggingPreDelayTimer;
     NSObject<OS_dispatch_queue> *_loggingQueue;
     int _loggingResetTimer;
@@ -35,8 +39,8 @@
     NSObject<OS_dispatch_queue> *_ndetectQueue;
     NSMutableArray *_nonceTriggerEvents;
     int _nonceTriggerNotificationToken;
+    int _numFramesFromPreTrigger;
     BOOL _phraseSpotterEnabled;
-    BOOL _pretriggered;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -81,8 +85,9 @@
 - (void)_commonInit;
 - (BOOL)_configureWithConfig:(id)arg1 resourcePath:(id)arg2 triggerThreshold:(double)arg3;
 - (BOOL)_configureWithDefaults;
-- (void)_handleAssetChange;
+- (void)_handleAssetChangeForLanguageCode:(id)arg1;
 - (void)_initSingleton;
+- (void)_languageCodeChanged;
 - (void)_listenForLanguageCodeUpdates;
 - (void)_listenForNonceTrigger;
 - (void)_listenForSuggestedThreshold;
@@ -96,7 +101,7 @@
 - (void)_unlistenForLanguageCodeUpdates;
 - (void)_unlistenForNonceTrigger;
 - (void)_unlistenForSuggestedThreshold;
-- (void)_updateLocale;
+- (void)_updateLanguageCode:(id)arg1;
 - (void)_updateSuggestedThreshold;
 - (id)analyze:(struct AudioBuffer { unsigned int x1; unsigned int x2; void *x3; })arg1;
 - (void)dealloc;

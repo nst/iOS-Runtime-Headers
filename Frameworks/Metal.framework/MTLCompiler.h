@@ -31,6 +31,7 @@
 - (void)compileFunction:(id)arg1 stateData:(id)arg2 completionHandler:(id)arg3;
 - (void)compileFunction:(id)arg1 stateData:(id)arg2 options:(unsigned int)arg3 completionHandler:(id)arg4;
 - (void)compileRequest:(id)arg1 completionHandler:(id)arg2;
+- (void)compileVertexFunction:(id)arg1 serializedPipelineDescriptorData:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id)arg5;
 - (void)compileVertexFunction:(id)arg1 serializedVertexDescriptor:(id)arg2 stateData:(id)arg3 completionHandler:(id)arg4;
 - (void)compileVertexFunction:(id)arg1 serializedVertexDescriptor:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id)arg5;
 - (struct MTLCompilerConnectionManager { int (**x1)(); }*)compilerConnectionManager;

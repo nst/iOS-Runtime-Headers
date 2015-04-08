@@ -22,6 +22,7 @@
     float _opacity;
     unsigned int _pixelFormat;
     NSData *_rawData;
+    unsigned long _rowbytes;
     unsigned int _scaleFactor;
     struct CGSize { 
         float width; 
@@ -49,7 +50,9 @@
 @property int templateRenderingMode;
 @property(copy) NSString * utiType;
 
++ (int)fileCompression;
 + (void)initialize;
++ (void)setFileCompression:(int)arg1;
 
 - (id)CSIRepresentationWithCompression:(BOOL)arg1;
 - (void)_addNodes:(id)arg1 toNodeList:(struct _csigradientdatanode { unsigned int x1; float x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; }*)arg2;

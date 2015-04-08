@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTCoordinateArray, TSTLayout, TSTLayoutSpaceBundle, TSTMasterLayout;
+@class TSTCoordinateArray, TSTLayout, TSTLayoutSpaceBezierPathCache, TSTLayoutSpaceBundle, TSTMasterLayout;
 
 @interface TSTLayoutSpace : NSObject {
+    TSTLayoutSpaceBezierPathCache *mBezierPathCache;
     TSTCoordinateArray *mBodyColumnCoordinates;
     TSTCoordinateArray *mBodyRowCoordinates;
     TSTLayoutSpaceBundle *mBundle;
@@ -112,6 +113,7 @@
     float mViewScale;
 }
 
+@property(readonly) TSTLayoutSpaceBezierPathCache * bezierPathCache;
 @property(readonly) TSTLayoutSpaceBundle * bundle;
 @property BOOL drawBlackAndWhite;
 @property BOOL drawPreventAntialias;
@@ -135,6 +137,7 @@
 @property float viewScale;
 
 - (id).cxx_construct;
+- (id)bezierPathCache;
 - (id)bundle;
 - (void)dealloc;
 - (id)description;

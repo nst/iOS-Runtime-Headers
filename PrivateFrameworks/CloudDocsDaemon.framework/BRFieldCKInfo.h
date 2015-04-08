@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface BRFieldCKInfo : PBCodable <NSCopying, PQLBindable, PQLResultSetInitializer> {
+@interface BRFieldCKInfo : PBCodable <NSCopying, PQLValuable> {
     NSString *_etag;
     struct { 
         unsigned int knownToServer : 1; 
@@ -25,10 +25,11 @@
 @property(readonly) Class superclass;
 @property BOOL wasCached;
 
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
+
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
@@ -36,11 +37,10 @@
 - (BOOL)hasKnownToServer;
 - (BOOL)hasWasCached;
 - (unsigned int)hash;
-- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initWithRecord:(id)arg1;
-- (id)initWithSqlite3Value:(struct Mem { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)knownToServer;
+- (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCKInfoFieldsInRecord:(id)arg1;
 - (void)setEtag:(id)arg1;

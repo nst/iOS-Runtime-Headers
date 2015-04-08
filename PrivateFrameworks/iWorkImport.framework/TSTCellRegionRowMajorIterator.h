@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface TSTCellRegionRowMajorIterator : NSObject <TSTCellRegionIterating> {
-    struct { 
+    struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
             unsigned char column; 

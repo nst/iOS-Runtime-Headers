@@ -3,11 +3,20 @@
  */
 
 @interface TSTLayoutDynamicResizeInfoAccordion : TSTLayoutDynamicResizeInfo {
+    float _heightFactor;
+    float _widthFactor;
 }
+
+@property(readonly) float heightFactor;
+@property(readonly) float widthFactor;
 
 - (float)applyResizeHeightFactor:(float)arg1;
 - (float)applyResizeWidthFactor:(float)arg1;
 - (void)captureNewMinimumRowHeights:(id)arg1;
+- (float)heightFactor;
+- (id)initWithDynamicResizeInfo:(id)arg1;
+- (id)initWithMasterLayout:(id)arg1 columnRegion:(id)arg2 rowRegion:(id)arg3;
 - (float)p_applyAccordionResizeFactor:(float)arg1 region:(id)arg2 direction:(int)arg3 totalOfCaptured:(float)arg4 count:(unsigned short)arg5 capturedArray:(float*)arg6 currentArray:(float*)arg7 minimumArray:(float*)arg8;
+- (float)widthFactor;
 
 @end

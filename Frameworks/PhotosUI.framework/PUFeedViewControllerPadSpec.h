@@ -26,7 +26,7 @@
 - (id)photoBrowserSpec;
 - (id)photosPickerSpec;
 - (id)popoverFeedViewControllerSpec;
-- (int)promptType;
+- (int)promptStyle;
 - (BOOL)shouldHideBarsInLandscape;
 - (BOOL)shouldShowCommentBadgesInCollectionViewType:(int)arg1;
 - (BOOL)shouldShowDatesInSectionFootersInCollectionViewType:(int)arg1;

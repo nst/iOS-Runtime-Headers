@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CLLocation, CPLAdjustments, NSArray, NSDate, NSString;
+@class CLLocation, CPLAdjustments, NSArray, NSDate, NSNumber, NSString;
 
 @interface CPLAssetChange : CPLItemChange {
     NSDate *_addedDate;
@@ -27,8 +27,10 @@
     NSString *_momentName;
     int _orientation;
     unsigned int _originalChoice;
+    NSArray *_people;
     NSArray *_resources;
     NSString *_timeZoneName;
+    NSNumber *_timeZoneOffset;
 }
 
 @property(copy) NSDate * addedDate;
@@ -53,8 +55,10 @@
 @property(copy) NSString * momentName;
 @property int orientation;
 @property unsigned int originalChoice;
+@property(copy) NSArray * people;
 @property(copy) NSArray * resources;
 @property(copy) NSString * timeZoneName;
+@property(copy) NSNumber * timeZoneOffset;
 
 - (void).cxx_destruct;
 - (BOOL)addExpandedChangesToChangeBatch:(id)arg1 andApplyToClientCache:(id)arg2 error:(id*)arg3;
@@ -86,6 +90,7 @@
 - (id)momentName;
 - (int)orientation;
 - (unsigned int)originalChoice;
+- (id)people;
 - (void)prepareForStorage;
 - (id)propertiesDescription;
 - (id)propertiesForChangeType:(unsigned int)arg1;
@@ -114,11 +119,14 @@
 - (void)setMomentName:(id)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)setOriginalChoice:(unsigned int)arg1;
+- (void)setPeople:(id)arg1;
 - (void)setRelatedIdentifier:(id)arg1;
 - (void)setResources:(id)arg1;
 - (void)setTimeZoneName:(id)arg1;
+- (void)setTimeZoneOffset:(id)arg1;
 - (BOOL)supportsResources;
 - (id)timeZoneName;
+- (id)timeZoneOffset;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id*)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id*)arg2;
 

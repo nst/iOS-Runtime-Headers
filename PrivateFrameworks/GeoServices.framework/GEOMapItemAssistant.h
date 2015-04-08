@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOAddress, GEOFeatureStyleAttributes, GEOLocation, GEOMapItemClientAttributes, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOPDFlyover, GEOPDPlace, GEOPlace, NSArray, NSData, NSDate, NSDictionary, NSString, NSURL;
+@class GEOAddress, GEOFeatureStyleAttributes, GEOLocation, GEOMapItemClientAttributes, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOPDBusinessClaim, GEOPDFlyover, GEOPDPlace, GEOPlace, NSArray, NSData, NSDate, NSDictionary, NSString, NSURL;
 
 @interface GEOMapItemAssistant : NSObject <GEOMapItemPrivate> {
     NSDictionary *_addressDictionary;
@@ -15,10 +15,6 @@
     NSString *_phoneNumber;
     GEOPlace *_place;
     unsigned int _sampleSizeForUserRatingScore;
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    } _sessionID;
 }
 
 @property(getter=_additionalPlaceInfos,readonly) NSArray * additionalPlaceInfos;
@@ -26,6 +22,7 @@
 @property(getter=_areaInMeters,readonly) double areaInMeters;
 @property(readonly) NSArray * areasOfInterest;
 @property(getter=_attribution,readonly) GEOMapItemPlaceAttribution * attribution;
+@property(getter=_businessClaim,readonly) GEOPDBusinessClaim * businessClaim;
 @property(getter=_businessURL,readonly) NSString * businessURL;
 @property(readonly) struct { double x1; double x2; } centerCoordinate;
 @property(getter=_clientAttributes,readonly) GEOMapItemClientAttributes * clientAttributes;
@@ -51,6 +48,7 @@
 @property(getter=_goodForKids,readonly) BOOL goodForKids;
 @property(getter=_hasAnyAmenities,readonly) BOOL hasAnyAmenities;
 @property(getter=_hasAreaInMeters,readonly) BOOL hasAreaInMeters;
+@property(getter=_hasBusinessClaim,readonly) BOOL hasBusinessClaim;
 @property(getter=_hasCurrentOperatingHours,readonly) BOOL hasCurrentOperatingHours;
 @property(getter=_hasDelivery,readonly) BOOL hasDelivery;
 @property(getter=_hasDeliveryAmenity,readonly) BOOL hasDeliveryAmenity;
@@ -62,7 +60,6 @@
 @property(getter=_hasPriceRange,readonly) BOOL hasPriceRange;
 @property(getter=_hasResolvablePartialInformation,readonly) BOOL hasResolvablePartialInformation;
 @property(getter=_hasResultProviderID,readonly) BOOL hasResultProviderID;
-@property(getter=_hasSessionGUID,readonly) BOOL hasSessionGUID;
 @property(getter=_hasTakesReservationsAmenity,readonly) BOOL hasTakesReservationsAmenity;
 @property(getter=_hasTelephone,readonly) BOOL hasTelephone;
 @property(getter=_hasUserRatingScore,readonly) BOOL hasUserRatingScore;
@@ -87,8 +84,6 @@
 @property(getter=_reviewsAttribution,readonly) GEOMapItemReviewsAttribution * reviewsAttribution;
 @property(getter=_roadAccessPoints,readonly) NSArray * roadAccessPoints;
 @property(getter=_sampleSizeForUserRatingScore,readonly) unsigned int sampleSizeForUserRatingScore;
-@property(getter=_sequenceNumber,readonly) unsigned int sequenceNumber;
-@property(getter=_sessionGUID,readonly) struct { unsigned long long x1; unsigned long long x2; } sessionGUID;
 @property(getter=_styleAttributes,readonly) GEOFeatureStyleAttributes * styleAttributes;
 @property(readonly) Class superclass;
 @property(getter=_takesReservations,readonly) BOOL takesReservations;
@@ -101,7 +96,9 @@
 - (id)_additionalPlaceInfos;
 - (double)_areaInMeters;
 - (id)_arrivalMapRegionForTransportType:(int)arg1;
+- (id)_asPlaceInfo;
 - (id)_attribution;
+- (id)_businessClaim;
 - (id)_businessURL;
 - (id)_clientAttributes;
 - (unsigned long long)_customIconID;
@@ -111,6 +108,7 @@
 - (BOOL)_goodForKids;
 - (BOOL)_hasAnyAmenities;
 - (BOOL)_hasAreaInMeters;
+- (BOOL)_hasBusinessClaim;
 - (BOOL)_hasCurrentOperatingHours;
 - (BOOL)_hasDelivery;
 - (BOOL)_hasDeliveryAmenity;
@@ -123,7 +121,6 @@
 - (BOOL)_hasPriceRange;
 - (BOOL)_hasResolvablePartialInformation;
 - (BOOL)_hasResultProviderID;
-- (BOOL)_hasSessionGUID;
 - (BOOL)_hasTakesReservationsAmenity;
 - (BOOL)_hasTelephone;
 - (BOOL)_hasTravelTimeForTransportType:(int)arg1;
@@ -149,8 +146,6 @@
 - (id)_reviewsAttribution;
 - (id)_roadAccessPoints;
 - (unsigned int)_sampleSizeForUserRatingScore;
-- (unsigned int)_sequenceNumber;
-- (struct { unsigned long long x1; unsigned long long x2; })_sessionGUID;
 - (id)_spokenAddressForLocale:(id)arg1;
 - (id)_styleAttributes;
 - (BOOL)_takesReservations;

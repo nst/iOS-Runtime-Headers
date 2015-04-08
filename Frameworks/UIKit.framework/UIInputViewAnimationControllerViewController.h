@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIViewControllerAnimatedTransitioning_Keyboard>, <UIViewControllerContextTransitioning>, NSString;
+@class <UIViewControllerAnimatedTransitioning_Keyboard>, <UIViewControllerContextTransitioning>, NSString, UIInputViewSetPlacement;
 
 @interface UIInputViewAnimationControllerViewController : NSObject <UIInputViewAnimationController> {
     <UIViewControllerAnimatedTransitioning_Keyboard> *_animator;
     <UIViewControllerContextTransitioning> *_context;
+    UIInputViewSetPlacement *_endPlacement;
 }
 
 @property(copy,readonly) NSString * debugDescription;

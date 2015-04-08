@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPObjectContextDelegate>, NSData, NSHashTable, NSMapTable, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSProgress, NSRecursiveLock, NSString, NSURL, NSUUID, SFUCryptoKey, TSPComponentManager, TSPDataManager, TSPDocumentProperties, TSPDocumentResourceDataProvider, TSPDocumentResourceManager, TSPDocumentRevision, TSPDocumentSaveOperationState, TSPObject, TSPObjectContainer, TSPObjectContext, TSPObjectUUIDMap, TSPPackage, TSPPackageWriteCoordinator, TSPSupportManager, TSUTemporaryDirectory;
+@class <TSPObjectContextDelegate>, NSData, NSHashTable, NSMapTable, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSProgress, NSRecursiveLock, NSString, NSURL, NSUUID, SFUCryptoKey, TSPComponentManager, TSPDataDownloadManager, TSPDataManager, TSPDocumentMetadata, TSPDocumentProperties, TSPDocumentResourceDataProvider, TSPDocumentResourceManager, TSPDocumentRevision, TSPDocumentSaveOperationState, TSPObject, TSPObjectContainer, TSPObjectContext, TSPObjectUUIDMap, TSPPackage, TSPPackageWriteCoordinator, TSPSupportManager, TSPSupportMetadata, TSUTemporaryDirectory;
 
 @interface TSPObjectContext : NSObject <TSPDocumentResourceDownloader, TSPFileCoordinatorDelegate, TSPLazyReferenceDelegate, TSPObjectDelegate, TSPPassphraseConsumer, TSPSupportDirectoryDelegate> {
     TSPComponentManager *_componentManager;
+    TSPDataDownloadManager *_dataDownloadManager;
     TSPDataManager *_dataManager;
     SFUCryptoKey *_decryptionKey;
     <TSPObjectContextDelegate> *_delegate;
+    TSPDocumentMetadata *_documentMetadata;
     TSPObject *_documentObject;
     TSPObjectContainer *_documentObjectContainer;
     TSPPackage *_documentPackage;
@@ -28,14 +30,15 @@
         unsigned int delegateRespondsToAreExternalReferencesToDataAllowedAtURL : 1; 
         unsigned int delegateRespondsToBaseUUIDForObjectUUID : 1; 
         unsigned int delegateRespondsToPreserveDocumentRevisionIdentifierForSequenceZero : 1; 
-        unsigned int delegateRespondsToIsEstimatedDocumentDataSizeNotificationEnabled : 1; 
-        unsigned int delegateRespondsToDidChangeEstimatedDocumentDataSize : 1; 
         unsigned int delegateRespondsToFilePresenter : 1; 
         unsigned int delegateRespondsToSupportDirectoryURL : 1; 
         unsigned int delegateRespondsToIgnoreDocumentSupport : 1; 
         unsigned int delegateRespondsToIsDocumentSupportTemporary : 1; 
+        unsigned int delegateRespondsToNewObjectUUID : 1; 
+        unsigned int delegateRespondsToIsInCollaborationMode : 1; 
+        unsigned int delegateRespondsToIsInReadOnlyMode : 1; 
+        unsigned int skipDocumentUpgrade : 1; 
     } _flags;
-    TSPDocumentResourceDataProvider *_gilligan_documentResourceDataProvider;
     BOOL _isWaitingForEndSave;
     long long _lastObjectIdentifier;
     struct hash_map<const long long, NSMutableArray *, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, NSMutableArray *> > > { 
@@ -83,9 +86,8 @@
     NSObject<OS_dispatch_queue> *_runLoadObserversQueue;
     TSPDocumentSaveOperationState *_saveOperationState;
     unsigned long long _saveToken;
-    NSString *_savedPassphrase;
-    BOOL _shouldSavePassphrase;
     TSPSupportManager *_supportManager;
+    TSPSupportMetadata *_supportMetadata;
     TSPObject *_supportObject;
     TSPObjectContainer *_supportObjectContainer;
     TSPPackage *_supportPackage;
@@ -99,11 +101,14 @@
 @property(readonly) BOOL areNewExternalReferencesToDataAllowed;
 @property(readonly) TSPComponentManager * componentManager;
 @property(readonly) TSPObjectContext * context;
+@property(readonly) TSPDataDownloadManager * dataDownloadManager;
 @property(readonly) TSPDataManager * dataManager;
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) SFUCryptoKey * decryptionKey;
 @property <TSPObjectContextDelegate> * delegate;
 @property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long documentDataSize;
+@property(readonly) TSPDocumentMetadata * documentMetadata;
 @property(readonly) TSPObject * documentObject;
 @property(retain) TSPObjectContainer * documentObjectContainer;
 @property(readonly) TSPPackage * documentPackage;
@@ -111,11 +116,10 @@
 @property(readonly) TSPDocumentProperties * documentProperties;
 @property(readonly) TSPDocumentResourceManager * documentResourceManager;
 @property(retain) TSPDocumentRevision * documentRevision;
+@property(readonly) unsigned long long documentSize;
 @property(readonly) NSURL * documentURL;
 @property(readonly) NSUUID * documentUUID;
-@property(readonly) unsigned long long estimatedDocumentDataSize;
 @property(readonly) long long estimatedDownloadSize;
-@property(retain) TSPDocumentResourceDataProvider * gilligan_documentResourceDataProvider;
 @property(readonly) unsigned int hash;
 @property(readonly) BOOL ignoreDocumentResourcesWhileReading;
 @property(readonly) BOOL ignoreDocumentSupport;
@@ -124,6 +128,8 @@
 @property(readonly) BOOL isDocumentModified;
 @property(readonly) BOOL isDocumentSupportTemporary;
 @property(readonly) BOOL isEstimatedDownloadSizePrecise;
+@property(readonly) BOOL isInCollaborationMode;
+@property(readonly) BOOL isInReadOnlyMode;
 @property(readonly) BOOL isPasswordProtected;
 @property(readonly) BOOL isSupportModified;
 @property(readonly) NSData * keychainGenericItem;
@@ -137,11 +143,13 @@
 @property(readonly) NSString * service;
 @property(readonly) Class superclass;
 @property(readonly) TSPSupportManager * supportManager;
+@property(readonly) TSPSupportMetadata * supportMetadata;
 @property(retain) TSPObject * supportObject;
 @property(retain) TSPObjectContainer * supportObjectContainer;
 @property(readonly) TSPPackage * supportPackage;
 @property(readonly) NSUUID * versionUUID;
 
++ (id)documentRevisionAtURL:(id)arg1 passphrase:(id)arg2 error:(id*)arg3;
 + (BOOL)dumpMessagesForDocument:(id)arg1 decryptionKey:(id)arg2 toURL:(id)arg3;
 + (void)garbageCollectDocumentSupportWithKnownDocumentUUIDs:(id)arg1 delegate:(id)arg2;
 + (BOOL)isNativeDirectoryFormatURL:(id)arg1;
@@ -151,11 +159,11 @@
 + (id)requestDownloadingDocumentResourcesForURL:(id)arg1 decryptionKey:(id)arg2;
 + (BOOL)requestDownloadingDocumentResourcesForURL:(id)arg1 decryptionKey:(id)arg2 usingDataProvider:(id)arg3;
 + (id)supportBundleURLForUUID:(id)arg1 delegate:(id)arg2;
-+ (id)supportURLForDocumentURL:(id)arg1 coordinateRead:(BOOL)arg2 delegate:(id)arg3 error:(id*)arg4;
 + (void)waitForPendingEndSaveGroup:(id)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)UUIDsFromObjects:(id)arg1;
 - (void)addLoadObserver:(id)arg1 action:(SEL)arg2 forLazyReference:(id)arg3;
 - (void)addLoadObserver:(id)arg1 action:(SEL)arg2 forObjectIdentifier:(long long)arg3 objectOrNil:(id)arg4;
 - (id)addLoadedObjectsAndEnqueueNotifications:(id)arg1;
@@ -171,6 +179,7 @@
 - (void)beginWriteOperation;
 - (void)beginWriteWithOriginalURL:(id)arg1;
 - (void)beginWriteWithOriginalURL:(id)arg1 relativeURLForExternalData:(id)arg2;
+- (BOOL)canSetObjectUUIDForObject:(id)arg1;
 - (void)cancelDownloads;
 - (void)checkforDataWarningsWithPackageURL:(id)arg1;
 - (void)close;
@@ -178,28 +187,37 @@
 - (BOOL)containsDataConformingToUTI:(id)arg1;
 - (id)context;
 - (BOOL)continueReadingDocumentObjectFromPackageURL:(id)arg1 documentResourceDataProvider:(id)arg2 areExternalDataReferencesAllowed:(BOOL)arg3 error:(id*)arg4;
+- (void)createInternalMetadataIfNeeded;
 - (id)currentPackageDataWriter;
+- (id)dataDownloadManager;
 - (id)dataManager;
-- (id)dataOrNilForIdentifier:(long long)arg1;
 - (id)dataWithContentsOfPackagePath:(id)arg1;
+- (id)dataWithDigest:(id)arg1;
+- (id)dataWithDigest:(id)arg1 preferredFilename:(id)arg2 canDownload:(BOOL)arg3 downloadPriority:(int)arg4;
+- (id)dataWithLegacyDataIdentifier:(long long)arg1;
 - (void)dealloc;
 - (id)decryptionKey;
 - (id)delegate;
 - (id)deterministicObjectUUIDRelativeToObject:(id)arg1 offset:(unsigned long long)arg2;
-- (void)didAddData:(id)arg1;
 - (BOOL)didFinishSuccessfullyReadingObjects:(id)arg1 readCoordinator:(id)arg2 finalizeHandlerQueue:(id)arg3;
 - (void)didFinishUsingDocumentResourceDataProvider:(id)arg1 withSuccess:(BOOL)arg2;
 - (void)didMoveSupportToURL:(id)arg1;
 - (void)didMoveToURL:(id)arg1;
 - (void)didReadDocumentObject:(id)arg1;
+- (void)didReadSupportObject:(id)arg1;
+- (unsigned long long)documentDataSize;
+- (id)documentMetadata;
 - (id)documentObject;
 - (id)documentObjectContainer;
+- (unsigned long long)documentObjectSize;
 - (id)documentPackage;
 - (id)documentPasswordHint;
 - (id)documentProperties;
+- (id)documentResourceDataWithDigestString:(id)arg1 locator:(id)arg2 filename:(id)arg3;
 - (id)documentResourceManager;
 - (id)documentRevision;
 - (id)documentRoot;
+- (unsigned long long)documentSize;
 - (id)documentURL;
 - (id)documentUUID;
 - (id)downloadWithDelegate:(id)arg1 description:(id)arg2;
@@ -209,10 +227,8 @@
 - (void)endWriteOperation;
 - (BOOL)endWriteWithSuccess:(BOOL)arg1 error:(id*)arg2;
 - (void)enumerateDocumentResourcesUsingBlock:(id)arg1;
-- (unsigned long long)estimatedDocumentDataSize;
 - (unsigned long long)estimatedDocumentSize;
 - (long long)estimatedDownloadSize;
-- (id)gilligan_documentResourceDataProvider;
 - (BOOL)ignoreDocumentResourcesWhileReading;
 - (BOOL)ignoreDocumentSupport;
 - (BOOL)ignoreUnknownContentWhileReading;
@@ -220,17 +236,21 @@
 - (id)incrementDocumentRevisionWithIdentifier:(id)arg1;
 - (long long)incrementLastObjectIdentifier:(long long)arg1;
 - (id)init;
-- (id)initForQuickLookWithURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3 passphrase:(id)arg4;
+- (id)initForQuickLookWithURL:(id)arg1 appDocumentResourcesURL:(id)arg2 appDocumentResourcesMetadataURL:(id)arg3 delegate:(id)arg4 passphrase:(id)arg5 error:(id*)arg6;
 - (id)initForSpotlightWithURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithDelegate:(id)arg1 documentResourceManager:(id)arg2;
-- (id)initWithURL:(id)arg1 delegate:(id)arg2 documentResourceManager:(id)arg3 mode:(unsigned int)arg4 error:(id*)arg5 passphrase:(id)arg6;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 documentResourceManager:(id)arg3 mode:(unsigned int)arg4 passphrase:(id)arg5 skipDocumentUpgrade:(BOOL)arg6 error:(id*)arg7;
 - (id)initWithURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3;
-- (id)initWithURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3 passphrase:(id)arg4;
-- (id)initWithURL:(id)arg1 delegate:(id)arg2 mode:(unsigned int)arg3 error:(id*)arg4 passphrase:(id)arg5;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 mode:(unsigned int)arg3 passphrase:(id)arg4 skipDocumentUpgrade:(BOOL)arg5 error:(id*)arg6;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 passphrase:(id)arg3 error:(id*)arg4;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 passphrase:(id)arg3 skipDocumentUpgrade:(BOOL)arg4 error:(id*)arg5;
 - (BOOL)isDocumentModified;
 - (BOOL)isDocumentSupportTemporary;
 - (BOOL)isEstimatedDownloadSizePrecise;
+- (BOOL)isInCollaborationMode;
+- (BOOL)isInReadOnlyMode;
+- (BOOL)isObjectInDocument:(id)arg1;
 - (BOOL)isPasswordProtected;
 - (BOOL)isSupportModified;
 - (id)keychainGenericItem;
@@ -240,16 +260,19 @@
 - (id)newDocumentResourceDataProvider;
 - (long long)newObjectIdentifier;
 - (id)newObjectUUIDForObject:(id)arg1;
-- (void)notifyEstimatedDocumentDataSizeChanged;
 - (id)objectForIdentifier:(long long)arg1;
+- (id)objectLocale;
 - (id)objectUUIDMap;
 - (id)objectWithUUID:(id)arg1;
+- (id)objectWithUUID:(id)arg1 onlyIfLoaded:(BOOL)arg2 validateNewObjects:(BOOL)arg3 identifier:(long long*)arg4;
 - (id)objectWithUUIDPath:(id)arg1;
+- (id)objectsFromUUIDs:(id)arg1;
 - (int)packageType;
 - (id)passphraseHint;
 - (id)passwordVerifier;
-- (id)peekNextVersionUUID;
+- (void)performAsynchronousWriteOperationOnDocumentState:(id)arg1;
 - (void)performReadOperation:(id)arg1;
+- (void)performReadOperationOnDocumentState:(id)arg1;
 - (void)performReadOperationOnKnownObjects:(id)arg1;
 - (void)performReadUsingAccessor:(id)arg1;
 - (void)performReadUsingAccessorImpl:(id)arg1;
@@ -258,6 +281,7 @@
 - (void)prepareForDocumentReplacementWithSuccess:(BOOL)arg1 forSafeSave:(BOOL)arg2;
 - (id)prepareSaveProgress;
 - (void)prepareToReadSupportObjectWithDocumentResourceDataProvider:(id)arg1 areExternalDataReferencesAllowed:(BOOL)arg2 accessor:(id)arg3;
+- (void)proxyObjectMapping:(id)arg1 willProxyReferencedObject:(id)arg2;
 - (BOOL)readComponent:(id)arg1 isWeakReference:(BOOL)arg2 documentPackage:(id)arg3 supportPackage:(id)arg4 rootObject:(id*)arg5 allObjects:(id*)arg6 error:(id*)arg7;
 - (BOOL)readComponent:(id)arg1 isWeakReference:(BOOL)arg2 rootObject:(id*)arg3 allObjects:(id*)arg4 error:(id*)arg5;
 - (BOOL)readDocumentObjectFromDatabasePackageURL:(id)arg1 error:(id*)arg2;
@@ -269,6 +293,7 @@
 - (void)removeObjectModifyDelegate:(id)arg1;
 - (void)replaceDocumentObject:(id)arg1;
 - (void)resetDocumentRevision;
+- (void)resumeAutosave;
 - (void)resumeLoadingModifiedFlushedComponents;
 - (BOOL)saveToURL:(id)arg1 packageType:(int)arg2 encryptionKey:(id)arg3 originalURL:(id)arg4 error:(id*)arg5;
 - (unsigned long long)saveToken;
@@ -278,7 +303,6 @@
 - (void)setDocumentObject:(id)arg1;
 - (void)setDocumentObjectContainer:(id)arg1;
 - (void)setDocumentRevision:(id)arg1;
-- (void)setGilligan_documentResourceDataProvider:(id)arg1;
 - (void)setLastObjectIdentifier:(long long)arg1;
 - (BOOL)setPassphrase:(id)arg1;
 - (void)setPreferredPackageType:(int)arg1;
@@ -287,9 +311,11 @@
 - (void)setSupportObjectImpl:(id)arg1;
 - (id)supportDirectoryURL;
 - (id)supportManager;
+- (id)supportMetadata;
 - (id)supportObject;
 - (id)supportObjectContainer;
 - (id)supportPackage;
+- (void)suspendAutosave;
 - (void)suspendLoadingModifiedFlushedComponentsAndWait;
 - (id)temporaryDirectory;
 - (BOOL)updateDocumentUUIDPreserveOriginalDocumentSupport:(BOOL)arg1 preserveShareUUID:(BOOL)arg2 error:(id*)arg3;

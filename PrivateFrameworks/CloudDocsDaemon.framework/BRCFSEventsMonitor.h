@@ -42,12 +42,14 @@
 @property <BRCFSEventsDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) unsigned int hash;
+@property BOOL isCancelled;
 @property(readonly) BRCRelativePath * root;
 @property(readonly) Class superclass;
 @property(readonly) BOOL volumeIsCaseSensitive;
 
 - (void).cxx_destruct;
 - (void)_cancel;
+- (void)cancel;
 - (void)close;
 - (id)db;
 - (void)dealloc;
@@ -55,6 +57,7 @@
 - (void)didProcessEventID:(unsigned long long)arg1;
 - (void)fseventAtPath:(id)arg1 withFlags:(unsigned long)arg2 andID:(unsigned long long)arg3 eventIndex:(unsigned int)arg4 eventCount:(unsigned int)arg5 initialScan:(BOOL)arg6;
 - (id)initWithAccountSession:(id)arg1;
+- (BOOL)isCancelled;
 - (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(BOOL)arg2;
 - (BOOL)openWithRootPath:(id)arg1 error:(id*)arg2;
 - (void)reset;
@@ -62,9 +65,11 @@
 - (id)root;
 - (void)setDB:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIsCancelled:(BOOL)arg1;
 - (BOOL)setUpRootAtPath:(id)arg1 error:(id*)arg2;
 - (BOOL)setUpStreamSynchronously:(BOOL)arg1 error:(id*)arg2;
 - (void)signalAfterCurrentFSEvent:(id)arg1;
+- (void)stopWatcher;
 - (void)suspend;
 - (BOOL)volumeIsCaseSensitive;
 

@@ -18,6 +18,7 @@
 - (id)_chatInfo;
 - (id)_chatInfoForSaving;
 - (void)_forceReloadChats:(BOOL)arg1;
+- (void)_makeAllAttachmentsClassC;
 - (void)_rebuildSpotlightDatabaseFor18306262;
 - (BOOL)_saveChats;
 - (void)addChat:(id)arg1;

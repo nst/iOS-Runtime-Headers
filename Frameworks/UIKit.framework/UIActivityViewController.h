@@ -6,15 +6,16 @@
    See Warning(s) below.
  */
 
-@class <UIActivityViewControllerDelegate>, NSArray, NSOperationQueue, NSString, SFAirDropActivityViewController, UIActivity, UIAlertController, UIViewController, _UIActivityApplicationExtensionDiscovery, _UIActivityGroupListViewController, _UIAlertControllerShimPresenter;
+@class <UIActivityViewControllerDelegate>, NSArray, NSOperationQueue, NSString, SFAirDropActivityViewController, UIActivity, UIAlertAction, UIAlertController, UIViewController, _UIActivityApplicationExtensionDiscovery, _UIActivityGroupListViewController, _UIAlertControllerShimPresenter;
 
-@interface UIActivityViewController : UIViewController <SFAirDropActivityViewControllerDelegate, UIActivityGroupViewControllerDelegate, UIAlertControllerContaining, UIViewControllerRestoration> {
+@interface UIActivityViewController : UIViewController <SFAirDropActivityViewControllerDelegate, UIActivityGroupViewControllerDataSource, UIActivityGroupViewControllerDelegate, UIAlertControllerContaining, UIViewControllerRestoration> {
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id __popoverDismissalAction;
 
     UIActivity *_activity;
+    UIAlertAction *_activityAlertCancelAction;
     UIAlertController *_activityAlertController;
     _UIAlertControllerShimPresenter *_activityAlertControllerShimPresenter;
     _UIActivityGroupListViewController *_activityGroupListViewController;
@@ -24,7 +25,6 @@
     UIViewController *_activityViewController;
     <UIActivityViewControllerDelegate> *_airDropDelegate;
     SFAirDropActivityViewController *_airDropViewController;
-    BOOL _airdropped;
     BOOL _allowsEmbedding;
     NSArray *_applicationActivities;
     _UIActivityApplicationExtensionDiscovery *_applicationExtensionDiscovery;
@@ -52,6 +52,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _preCompletionHandler;
 
+    BOOL _shouldMatchOnlyUserElectedExtensions;
     BOOL _showKeyboardAutomatically;
     NSString *_subject;
     int _totalProviderCount;
@@ -61,6 +62,7 @@
 
 @property(copy) id _popoverDismissalAction;
 @property(retain) UIActivity * activity;
+@property(retain) UIAlertAction * activityAlertCancelAction;
 @property(retain) UIAlertController * activityAlertController;
 @property(retain) _UIAlertControllerShimPresenter * activityAlertControllerShimPresenter;
 @property(retain) _UIActivityGroupListViewController * activityGroupListViewController;
@@ -70,7 +72,6 @@
 @property(retain) UIViewController * activityViewController;
 @property <UIActivityViewControllerDelegate> * airDropDelegate;
 @property(retain) SFAirDropActivityViewController * airDropViewController;
-@property BOOL airdropped;
 @property BOOL allowsEmbedding;
 @property(copy) NSArray * applicationActivities;
 @property(retain) _UIActivityApplicationExtensionDiscovery * applicationExtensionDiscovery;
@@ -89,6 +90,7 @@
 @property Class originalPopoverBackgroundViewClass;
 @property BOOL performActivityForStateRestoration;
 @property(copy) id preCompletionHandler;
+@property BOOL shouldMatchOnlyUserElectedExtensions;
 @property BOOL showKeyboardAutomatically;
 @property(readonly) BOOL sourceIsManaged;
 @property(copy) NSString * subject;
@@ -114,6 +116,7 @@
 - (id)_availableActivitiesForItems:(id)arg1;
 - (id)_availableActivitiesForItems:(id)arg1 applicationExtensionActivities:(id)arg2;
 - (void)_cancel;
+- (void)_changeActionButtonToDone;
 - (void)_cleanupActivityWithSuccess:(BOOL)arg1;
 - (void)_cleanupActivityWithSuccess:(BOOL)arg1 items:(id)arg2 error:(id)arg3;
 - (id)_containedAlertController;
@@ -141,10 +144,13 @@
 - (void)_updateActivities:(id)arg1 animated:(BOOL)arg2;
 - (void)_updateActivityItems:(id)arg1;
 - (void)_updateActivityItems:(id)arg1 animated:(BOOL)arg2;
+- (void)_updatePreferredContentSizes;
 - (id)activity;
+- (id)activityAlertCancelAction;
 - (id)activityAlertController;
 - (id)activityAlertControllerShimPresenter;
 - (id)activityGroupListViewController;
+- (id)activityGroupViewController:(id)arg1 availableActivitiesInCategory:(int)arg2;
 - (void)activityGroupViewController:(id)arg1 didSelectActivity:(id)arg2;
 - (id)activityItemProviderOperationQueue;
 - (id)activityItems;
@@ -155,7 +161,6 @@
 - (void)airDropActivityRequestingSharedItemsWithCompletionHandler:(id)arg1;
 - (id)airDropDelegate;
 - (id)airDropViewController;
-- (BOOL)airdropped;
 - (BOOL)allowsEmbedding;
 - (id)applicationActivities;
 - (id)applicationExtensionDiscovery;
@@ -180,6 +185,7 @@
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)setActivity:(id)arg1;
+- (void)setActivityAlertCancelAction:(id)arg1;
 - (void)setActivityAlertController:(id)arg1;
 - (void)setActivityAlertControllerShimPresenter:(id)arg1;
 - (void)setActivityGroupListViewController:(id)arg1;
@@ -189,7 +195,6 @@
 - (void)setActivityViewController:(id)arg1;
 - (void)setAirDropDelegate:(id)arg1;
 - (void)setAirDropViewController:(id)arg1;
-- (void)setAirdropped:(BOOL)arg1;
 - (void)setAllowsEmbedding:(BOOL)arg1;
 - (void)setApplicationActivities:(id)arg1;
 - (void)setApplicationExtensionDiscovery:(id)arg1;
@@ -201,10 +206,12 @@
 - (void)setExcludedActivityTypes:(id)arg1;
 - (void)setIncludedActivityTypes:(id)arg1;
 - (void)setMailAutosaveIdentifier:(id)arg1;
+- (void)setModalPresentationStyle:(int)arg1;
 - (void)setOriginalPopoverBackgroundStyle:(int)arg1;
 - (void)setOriginalPopoverBackgroundViewClass:(Class)arg1;
 - (void)setPerformActivityForStateRestoration:(BOOL)arg1;
 - (void)setPreCompletionHandler:(id)arg1;
+- (void)setShouldMatchOnlyUserElectedExtensions:(BOOL)arg1;
 - (void)setShowKeyboardAutomatically:(BOOL)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setTotalProviderCount:(int)arg1;
@@ -212,6 +219,7 @@
 - (void)setWillDismissActivityViewController:(BOOL)arg1;
 - (void)set_popoverDismissalAction:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldMatchOnlyUserElectedExtensions;
 - (BOOL)showKeyboardAutomatically;
 - (BOOL)sourceIsManaged;
 - (id)subject;
@@ -224,6 +232,8 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)willDismissActivityViewController;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

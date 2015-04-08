@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class <WBSParsecSearchClientStorage>, CLLocation, CLLocationManager, NSArray, NSMutableDictionary, NSNumber, NSString, NSThread, NSTimer, NSURL, NSURLQueryItem, NSURLSessionConfiguration, NSURLSessionTask, WBSParsecSearchMescalSession;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class <WBSParsecSearchClientStorage>, CLLocation, CLLocationManager, GEOUserSessionEntity, NSArray, NSMutableDictionary, NSNumber, NSString, NSThread, NSTimer, NSURL, NSURLQueryItem, NSURLSessionConfiguration, NSURLSessionTask, WBSParsecSearchMescalSession;
 
 @interface WBSParsecSearchClient : NSObject <CLLocationManagerDelegate> {
     NSString *_applicationNameForUserAgent;
@@ -19,19 +23,32 @@
     NSString *_firstUseDescriptionText;
     NSString *_firstUseLearnMoreText;
     NSString *_firstUseLearnMoreURLString;
+    GEOUserSessionEntity *_geoUserSessionEntity;
+    struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { 
+        struct duration<long long, std::__1::ratio<1, 1000000000> > { 
+            long long __rep_; 
+        } __d_; 
+    } _latestQueryTimestamp;
     CLLocation *_location;
     CLLocationManager *_locationManager;
     NSThread *_locationThread;
     unsigned int _maximumCachedQueriesToSend;
     unsigned int _maximumCachedResultsToSend;
+    NSURL *_mescalCertificateURL;
+    BOOL _mescalEnabled;
     WBSParsecSearchMescalSession *_mescalSession;
+    NSURL *_mescalSetupURL;
+    unsigned int _mescalVersionNumber;
     double _minimumIntervalBetweenQueriesFromBag;
+    double _minimumIntervalBetweenQueriesFromSearchResponse;
     unsigned int _minimumQueryLength;
     NSArray *_optionalQueryItems;
     NSNumber *_otherRenderTimeout;
     NSString *_recentlyUsedAppIdentifierListString;
     NSArray *_recentlyUsedAppIdentifierWhitelist;
     BOOL _safeModeEnabled;
+    NSMutableDictionary *_screenScaleToSpriteImageDictionary;
+    NSMutableDictionary *_screenScaleToSpriteMapDictionary;
     NSURL *_searchFallbackURL;
     NSNumber *_searchRenderTimeout;
     NSURL *_searchURL;
@@ -49,6 +66,7 @@
     NSURL *_userGUIDFallbackURL;
     NSURL *_userGUIDURL;
     BOOL _usesLedBelly;
+    BOOL _usesSprites;
     int ipChangeNotificationToken;
 }
 
@@ -63,12 +81,15 @@
 @property(readonly) NSString * firstUseDescriptionText;
 @property(readonly) NSString * firstUseLearnMoreText;
 @property(readonly) NSString * firstUseLearnMoreURLString;
+@property(readonly) GEOUserSessionEntity * geoUserSessionEntity;
 @property(readonly) unsigned int hash;
+@property /* Warning: unhandled struct encoding: '{time_point<std::__1::chrono::steady_clock' */ struct  latestQueryTimestamp; /* unknown property attribute:  1000000000> >=q}} */
 @property(readonly) CLLocation * location;
 @property(readonly) unsigned int maximumCachedQueriesToSend;
 @property(readonly) unsigned int maximumCachedResultsToSend;
 @property(readonly) WBSParsecSearchMescalSession * mescalSession;
 @property(readonly) double minimumIntervalBetweenQueriesFromBag;
+@property double minimumIntervalBetweenQueriesFromSearchResponse;
 @property(readonly) unsigned int minimumQueryLength;
 @property(readonly) NSArray * optionalQueryItems;
 @property(readonly) NSNumber * otherRenderTimeout;
@@ -82,13 +103,16 @@
 @property(copy) NSArray * supportedDomainIdentifiers;
 @property(readonly) NSURLSessionConfiguration * urlSessionConfiguration;
 
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_configureMescalFromDictionary:(id)arg1;
+- (void)_createMescalSession;
 - (void)_currentLocaleDidChange:(id)arg1;
 - (id)_customFlightQueryItem;
 - (void)_fetchConfiguration;
 - (void)_fetchUserGUIDIfNeeded;
 - (void)_generateBagImagesFromDictionary:(id)arg1;
+- (void)_generateSpriteImagesFromArray:(id)arg1;
 - (BOOL)_hasLocationServicesEffectiveBundleEntitlement;
 - (id)_localeQueryItem;
 - (id)_locationSourceForLocation:(id)arg1;
@@ -97,6 +121,7 @@
 - (void)_performBlockOnLocationThread:(id)arg1;
 - (void)_performBlockOnLocationThread:(id)arg1 wait:(BOOL)arg2;
 - (void)_performBlockOnLocationThreadAndWait:(id)arg1;
+- (void)_refreshGEOUserSession;
 - (void)_requestDeviceIP;
 - (void)_setDeviceIP:(id)arg1;
 - (void)_setUserGUID:(id)arg1 expirationDate:(id)arg2;
@@ -113,10 +138,12 @@
 - (id)firstUseDescriptionText;
 - (id)firstUseLearnMoreText;
 - (id)firstUseLearnMoreURLString;
+- (id)geoUserSessionEntity;
 - (id)imageForIdentifier:(id)arg1 withScale:(float)arg2;
 - (id)initWithStorage:(id)arg1 applicationNameForUserAgent:(id)arg2;
 - (void)invalidate;
 - (BOOL)isEnabled;
+- (struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { struct duration<long long, std::__1::ratio<1, 1000000000> > { long long x_1_1_1; } x1; })latestQueryTimestamp;
 - (id)location;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
@@ -125,6 +152,7 @@
 - (unsigned int)maximumCachedResultsToSend;
 - (id)mescalSession;
 - (double)minimumIntervalBetweenQueriesFromBag;
+- (double)minimumIntervalBetweenQueriesFromSearchResponse;
 - (unsigned int)minimumQueryLength;
 - (id)optionalQueryItems;
 - (id)otherRenderTimeout;
@@ -134,8 +162,11 @@
 - (id)searchRenderTimeout;
 - (id)searchURL;
 - (id)secretKeyQueryItem;
+- (void)setLatestQueryTimestamp:(struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { struct duration<long long, std::__1::ratio<1, 1000000000> > { long long x_1_1_1; } x1; })arg1;
+- (void)setMinimumIntervalBetweenQueriesFromSearchResponse:(double)arg1;
 - (void)setSafeModeEnabled:(BOOL)arg1;
 - (void)setSupportedDomainIdentifiers:(id)arg1;
+- (id)spriteImageForIdentifier:(id)arg1 withScale:(float)arg2;
 - (void)startUpdatingLocation;
 - (void)stopUpdatingLocation;
 - (id)storage;

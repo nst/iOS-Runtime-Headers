@@ -6,6 +6,7 @@
 
 @interface VKScreenCameraController : VKCameraController <VKCameraControllerDelegate> {
     VKAnnotationTrackingCameraController *_annotationTrackingCameraController;
+    int _annotationTrackingHeadingAnimationDisplayRate;
     int _annotationTrackingZoomStyle;
     double _beganDoublePanPitch;
     struct VKEdgeInsets { 
@@ -36,6 +37,7 @@
 }
 
 @property(getter=isAnimatingToTrackAnnotation,readonly) BOOL animatingToTrackAnnotation;
+@property int annotationTrackingHeadingAnimationDisplayRate;
 @property int annotationTrackingZoomStyle;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
@@ -49,6 +51,7 @@
 @property(getter=isTrackingHeading,readonly) BOOL trackingHeading;
 
 - (id).cxx_construct;
+- (int)annotationTrackingHeadingAnimationDisplayRate;
 - (int)annotationTrackingZoomStyle;
 - (void)cameraController:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
 - (void)cameraController:(id)arg1 canZoomInDidChange:(BOOL)arg2;
@@ -62,12 +65,14 @@
 - (void)cameraControllerDidFinishInitialTrackingAnimation:(id)arg1;
 - (void)dealloc;
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (id)init;
 - (BOOL)isAnimating;
 - (BOOL)isAnimatingToTrackAnnotation;
 - (BOOL)isPitchable;
 - (BOOL)isTrackingHeading;
 - (double)rubberBandOffsetForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4;
 - (void)runAnimation:(id)arg1;
+- (void)setAnnotationTrackingHeadingAnimationDisplayRate:(int)arg1;
 - (void)setAnnotationTrackingZoomStyle:(int)arg1;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setIsPitchable:(BOOL)arg1;

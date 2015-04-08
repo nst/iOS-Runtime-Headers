@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class ATAsset, ATClientController, ATLegacyAssetLink, ATLegacyMessageLink, ATSession, ATUserDefaults, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class ATAsset, ATClientController, ATDeviceDiskUsageProvider, ATLegacyAssetLink, ATLegacyMessageLink, ATSession, ATUserDefaults, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface ATLegacyDeviceSyncManager : ATDeviceSyncManager <ATEnvironmentMonitorObserver, ATLegacyAssetLinkProgressDelegate, ATSessionObserver> {
     ATLegacyAssetLink *_assetLink;
@@ -28,8 +28,7 @@
     NSMutableDictionary *_dataclassTimers;
     NSMutableArray *_dataclasses;
     ATUserDefaults *_defaults;
-    NSMutableDictionary *_diskUsageInfo;
-    NSObject<OS_dispatch_queue> *_diskUsageQueue;
+    ATDeviceDiskUsageProvider *_diskUsageProvider;
     unsigned long _grappaId;
     BOOL _localSyncRequest;
     BOOL _localSyncRequestCanceled;
@@ -62,7 +61,6 @@
 - (void)_sendDiskUsageForDataClasses:(id)arg1;
 - (void)_sendInstalledAssets;
 - (void)_sendSyncAllowed;
-- (void)_updatePurgeableStorageUsage;
 - (void)assetLink:(id)arg1 didUpdateOverallProgress:(double)arg2;
 - (void)cancelSyncOnMessageLink:(id)arg1;
 - (void)environmentMonitorDidChangePower:(id)arg1;

@@ -8,6 +8,7 @@
     NSString *_administrativeArea;
     NSDecimalNumber *_amount;
     NSString *_currencyCode;
+    BOOL _hasAssociatedPaymentApplication;
     NSString *_identifier;
     NSString *_locality;
     double _locationAltitude;
@@ -30,6 +31,8 @@
 @property(copy) NSDecimalNumber * amount;
 @property(copy) NSString * currencyCode;
 @property(readonly) NSString * displayLocation;
+@property BOOL hasAssociatedPaymentApplication;
+@property(readonly) BOOL hasLocalDeviceSource;
 @property(readonly) BOOL hasNotificationServiceSource;
 @property(copy) NSString * identifier;
 @property(retain) NSString * locality;
@@ -41,7 +44,6 @@
 @property double locationLongitude;
 @property double locationVerticalAccuracy;
 @property(retain) PKMerchant * merchant;
-@property(readonly) BOOL originatedFromThisDevice;
 @property(copy) NSNumber * persistentIdentifier;
 @property int technologyType;
 @property(copy) NSDate * transactionDate;
@@ -61,6 +63,8 @@
 - (id)description;
 - (id)displayLocation;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasAssociatedPaymentApplication;
+- (BOOL)hasLocalDeviceSource;
 - (BOOL)hasNotificationServiceSource;
 - (unsigned int)hash;
 - (id)identifier;
@@ -77,11 +81,11 @@
 - (double)locationLongitude;
 - (double)locationVerticalAccuracy;
 - (id)merchant;
-- (BOOL)originatedFromThisDevice;
 - (id)persistentIdentifier;
 - (void)setAdministrativeArea:(id)arg1;
 - (void)setAmount:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
+- (void)setHasAssociatedPaymentApplication:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLocality:(id)arg1;
 - (void)setLocation:(id)arg1;

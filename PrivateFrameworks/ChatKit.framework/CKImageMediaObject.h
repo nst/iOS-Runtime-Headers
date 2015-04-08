@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKImageData;
+@class CKImageData, UIImage;
 
 @interface CKImageMediaObject : CKMediaObject {
     CKImageData *_backgroundImageData;
     CKImageData *_imageData;
+    UIImage *_thumbnail;
 }
 
 @property(retain,readonly) CKImageData * imageData;
+@property(retain) UIImage * thumbnail;
 
 + (id)UTITypes;
 + (Class)__ck_attachmentItemClass;
@@ -27,5 +29,7 @@
 - (id)imageData;
 - (id)location;
 - (int)mediaType;
+- (void)setThumbnail:(id)arg1;
+- (id)thumbnail;
 
 @end

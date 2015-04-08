@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SAAceSerializable>, NSArray, NSData, NSNumber, NSString, SADistance, SALocation;
+@class <SAAceSerializable>, NSArray, NSData, NSDate, NSNumber, NSString, SADistance, SALocation;
 
 @interface SALocalSearchMapItem : SADomainObject {
 }
@@ -13,6 +13,8 @@
 @property(copy) NSString * directionRole;
 @property(retain) SADistance * distance;
 @property(copy) NSNumber * distanceInMiles;
+@property(copy) NSString * extSessionGuid;
+@property(copy) NSDate * extSessionGuidCreatedTimestamp;
 @property(copy) NSString * label;
 @property(copy) NSNumber * localSearchProviderId;
 @property(retain) SALocation * location;
@@ -32,6 +34,8 @@
 - (id)distance;
 - (id)distanceInMiles;
 - (id)encodedClassName;
+- (id)extSessionGuid;
+- (id)extSessionGuidCreatedTimestamp;
 - (id)groupIdentifier;
 - (id)label;
 - (id)localSearchProviderId;
@@ -45,6 +49,8 @@
 - (void)setDirectionRole:(id)arg1;
 - (void)setDistance:(id)arg1;
 - (void)setDistanceInMiles:(id)arg1;
+- (void)setExtSessionGuid:(id)arg1;
+- (void)setExtSessionGuidCreatedTimestamp:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLocalSearchProviderId:(id)arg1;
 - (void)setLocation:(id)arg1;

@@ -5,26 +5,24 @@
 @class NSArray, NSDictionary, NSMutableSet, NSSet;
 
 @interface MPMediaQueryCriteria : NSObject <NSCopying> {
-    NSArray *_collectionPropertiesToFetchArray;
+    NSSet *_collectionPropertiesToFetch;
     unsigned int _entityOrder;
     NSMutableSet *_filterPredicates;
     int _groupingType;
     BOOL _ignoreSystemFilterPredicates;
-    NSArray *_itemPropertiesToFetchArray;
+    NSSet *_itemPropertiesToFetch;
     NSDictionary *_orderingDirectionMappings;
     NSArray *_orderingProperties;
     BOOL _useSections;
 }
 
 @property(copy) NSSet * collectionPropertiesToFetch;
-@property(readonly) NSArray * collectionPropertiesToFetchArray;
 @property unsigned int entityOrder;
 @property(readonly) BOOL excludesEntitiesWithBlankNames;
 @property(copy) NSSet * filterPredicates;
 @property int groupingType;
 @property BOOL ignoreSystemFilterPredicates;
 @property(copy) NSSet * itemPropertiesToFetch;
-@property(readonly) NSArray * itemPropertiesToFetchArray;
 @property(copy) NSDictionary * orderingDirectionMappings;
 @property(copy) NSArray * orderingProperties;
 @property(readonly) BOOL specifiesPlaylistItems;
@@ -33,13 +31,11 @@
 - (id)ML3CollectionsQueryInLibrary:(id)arg1;
 - (id)ML3ItemsQueryInLibrary:(id)arg1;
 - (id)ML3ItemsQueryInLibrary:(id)arg1 orderingTerms:(id)arg2 nameBlankProperty:(id)arg3;
-- (id)ML3OrderingTermForMPOrderingProperty:(id)arg1;
-- (id)ML3OrderingTermsForGroupingType:(int)arg1 isFastCountable:(BOOL*)arg2;
-- (id)ML3OrderingTermsForMPOrderingProperties:(id)arg1;
+- (id)ML3OrderingTermsForGroupingType:(int)arg1;
+- (id)ML3OrderingTermsForMPOrderingProperties:(id)arg1 directionalityMapping:(id)arg2 entityClass:(Class)arg3;
 - (void)addFilterPredicate:(id)arg1;
 - (void)addFilterPredicates:(id)arg1;
 - (id)collectionPropertiesToFetch;
-- (id)collectionPropertiesToFetchArray;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned int)entityOrder;
@@ -51,7 +47,6 @@
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)itemPropertiesToFetch;
-- (id)itemPropertiesToFetchArray;
 - (id)orderingDirectionMappings;
 - (id)orderingProperties;
 - (id)predicateForProperty:(id)arg1;

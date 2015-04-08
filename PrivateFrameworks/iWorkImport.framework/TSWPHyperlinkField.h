@@ -40,8 +40,9 @@
 - (id)initWithContext:(id)arg1 url:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFileURL;
-- (void)loadFromArchive:(const struct HyperlinkFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct HyperlinkFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
+- (void)loadFromArchive:(const struct HyperlinkFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct SmartFieldArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; }*)arg1 unarchiver:(id)arg2;
+- (void)p_performHyperlinkSelector:(SEL)arg1 onStorage:(id)arg2;
+- (void)saveToArchive:(struct HyperlinkFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct SmartFieldArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (int)scheme;
 - (void)setURL:(id)arg1;
@@ -50,5 +51,7 @@
 - (id)url;
 - (id)urlPrefix;
 - (id)urlReference;
+- (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
+- (void)willBeRemovedFromDocumentRoot:(id)arg1 storage:(id)arg2;
 
 @end

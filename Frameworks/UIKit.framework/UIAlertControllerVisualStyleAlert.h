@@ -24,6 +24,7 @@
 - (id)messageLabelColor;
 - (id)messageLabelFont;
 - (float)minimumActionHeight;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })presentationAnimationStartTransform;
 - (id)regularActionFont;
 - (void)setDescriptor:(id)arg1;
 - (id)titleLabelColor;

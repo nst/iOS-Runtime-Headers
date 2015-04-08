@@ -17,7 +17,7 @@
 @property(readonly) Class superclass;
 
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1;
-+ (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 prefetchedProperties:(id)arg2 library:(id)arg3;
++ (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

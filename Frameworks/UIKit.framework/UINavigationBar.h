@@ -47,7 +47,6 @@
         unsigned int cancelledTransition : 1; 
         unsigned int animationCount : 4; 
         unsigned int backgroundLayoutNeedsUpdate : 1; 
-        unsigned int backgroundImageNeedsUpdate : 1; 
     } _navbarFlags;
     BOOL _needsUpdateBackIndicatorImage;
     UISwipeGestureRecognizer *_popSwipeGestureRecognizer;
@@ -174,6 +173,7 @@
 - (void)_fadeViewsIn:(id)arg1;
 - (void)_fadeViewsOut:(id)arg1;
 - (void)_finishInteractiveTransition:(float)arg1 completionSpeed:(float)arg2 completionCurve:(int)arg3;
+- (id)_focusableViews;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3;
 - (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3 forItemAtIndex:(unsigned int)arg4;
@@ -190,6 +190,7 @@
 - (void)_hideButtonsAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (BOOL)_hidesShadow;
 - (void)_incrementAnimationCountIfNecessary;
+- (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 - (BOOL)_isAlwaysHidden;
 - (BOOL)_isCondensed;
 - (BOOL)_isIncomingButtonSameAsOutgoingButtonOnLeft:(BOOL)arg1;
@@ -273,6 +274,7 @@
 - (id)_titleTextColor;
 - (int)_transitionForOldItems:(id)arg1 newItems:(id)arg2;
 - (void)_updateBackIndicatorImage;
+- (void)_updateBackIndicatorViewTintColor;
 - (void)_updateBackgroundColor;
 - (void)_updateBackgroundImage;
 - (void)_updateInteractiveStatusBarTransitionPercent:(float)arg1 isFinished:(BOOL)arg2 didComplete:(BOOL)arg3 completionSpeed:(float)arg4 completionCurve:(int)arg5;
@@ -304,6 +306,7 @@
 - (id)barTintColor;
 - (id)buttonItemShadowColor;
 - (id)buttonItemTextColor;
+- (BOOL)canBecomeFocused;
 - (id)createButtonWithContents:(id)arg1 width:(float)arg2 barStyle:(int)arg3 buttonStyle:(int)arg4 isRight:(BOOL)arg5;
 - (id)currentBackButton;
 - (id)currentLeftView;
@@ -340,6 +343,7 @@
 - (id)navigationItems;
 - (void)popNavigationItem;
 - (id)popNavigationItemAnimated:(BOOL)arg1;
+- (id)preferredFocusedItem;
 - (id)prompt;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })promptBounds;
 - (id)promptView;

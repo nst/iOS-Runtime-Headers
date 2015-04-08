@@ -68,7 +68,7 @@
 - (void)initializeLayers;
 - (struct CGImage { }*)keyImageWithToken:(id)arg1;
 - (id)outerCenterDropShadow;
-- (void)rebuildControlKeys:(int)arg1;
+- (void)rebuildControlKeys:(unsigned long long)arg1;
 - (void)rebuildFromKeyplane:(id)arg1 toKeyplane:(id)arg2 keyboardType:(int)arg3 orientation:(int)arg4;
 - (void)rebuildTransitionForSplitStyleChange:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectEnclosingKeyplane:(id)arg1;

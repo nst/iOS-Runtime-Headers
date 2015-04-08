@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCDatabaseManager, NSUUID;
+@class BRCAccountSession, NSUUID;
 
 @interface BRCFSEventsPersistedState : NSObject <NSSecureCoding> {
-    BRCDatabaseManager *_dbManager;
     unsigned long long _latestEventID;
     unsigned long long _rootID;
+    BRCAccountSession *_session;
     NSUUID *_streamUUID;
 }
 
@@ -15,7 +15,7 @@
 @property unsigned long long rootID;
 @property(retain) NSUUID * streamUUID;
 
-+ (id)loadFromClientStateInDBManager:(id)arg1;
++ (id)loadFromClientStateInSession:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
